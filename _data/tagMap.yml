@@ -1,6 +1,7 @@
 jekyll:
     - {fileName: 2017-01-21-create-jekyll-blog, updated: '2017-01-21 22:37:25 +0900'}
     - {fileName: 2017-01-22-jekyll-category-tag, updated: '2017-01-22 08:52:22 +0900'}
+    - {fileName: 2017-12-06-my-wiki, updated: '2017-12-07 22:43:59 +0900'}
 ideavim:
     - {fileName: 2017-01-30-ideavim-build, updated: '2017-01-30 21:22:53 +0900'}
 open-source:
@@ -138,11 +139,19 @@ perl:
     - {fileName: 2017-09-20-regex-prime, updated: '2017-09-20 20:56:55 +0900'}
 regex:
     - {fileName: 2017-09-20-regex-prime, updated: '2017-09-20 20:56:55 +0900'}
+wiki:
+    - {fileName: 2017-12-06-my-wiki, updated: '2017-12-07 22:43:59 +0900'}
+vimwiki:
+    - {fileName: 2017-12-06-my-wiki, updated: '2017-12-07 22:43:59 +0900'}
+blog:
+    - {fileName: 2017-12-06-my-wiki, updated: '2017-12-07 22:43:59 +0900'}
 book:
     - {fileName: book, updated: '2017-12-05 19:19:56 +0900'}
     - {fileName: Code-Complete-2, updated: '2017-12-05 21:53:52 +0900'}
+    - {fileName: git, updated: '2017-12-05 21:53:52 +0900'}
 jolt-award:
     - {fileName: Code-Complete-2, updated: '2017-12-05 21:53:52 +0900'}
+    - {fileName: git, updated: '2017-12-05 21:53:52 +0900'}
 font:
     - {fileName: coding-font, updated: '2017-12-01 06:02:30 +0900'}
 config:
