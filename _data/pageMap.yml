@@ -26,20 +26,27 @@ index:
     parent: null
     url: /wiki/index
     updated: '2017-11-29 21:37:03 +0900'
-git:
+groovy:
     type: wiki
-    title: git
-    summary: null
-    parent: book
-    url: /wiki/git
-    updated: '2017-12-05 21:53:52 +0900'
+    title: Groovy
+    summary: 'A multi-faceted language for the Java platform'
+    parent: programming-language
+    url: /wiki/groovy
+    updated: '2017-12-03 15:01:36 +0900'
+Gradle:
+    type: wiki
+    title: Gradle
+    summary: 'Gradle Build Tool'
+    parent: index
+    url: /wiki/Gradle
+    updated: '2017-12-08 23:17:46 +0900'
 2017-12-06-my-wiki:
     type: blog
     title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
     summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
     parent: null
     url: /blog/2017/12/06/my-wiki
-    updated: '2017-12-07 22:43:59 +0900'
+    updated: '2017-12-06 21:44:18 +0900'
 2017-07-31-hammerspoon-tutorial-00-start:
     type: blog
     title: 'Hammerspoon 튜토리얼 00 - 시작하기'
@@ -47,20 +54,13 @@ git:
     parent: null
     url: /blog/2017/07/31/hammerspoon-tutorial-00-start
     updated: '2017-07-31 21:57:27 +0900'
-2017-03-27-tmux-ascii-control:
+2017-04-02-jwp-00-prepare:
     type: blog
-    title: 'tmux 키 조합에서 C--가 불가능한 이유.'
-    summary: '"결론: ascii 코드값 때문."'
+    title: 'Next JWP Study #00'
+    summary: 'NextStep Java Web Programming Study 준비 작업.'
     parent: null
-    url: /blog/2017/03/27/tmux-ascii-control
-    updated: '2017-03-27 22:57:52 +0900'
-2017-04-03-emacs-start:
-    type: blog
-    title: 'emacs 사용 시작!'
-    summary: '하지만 Vim은 포기하지 않는다.'
-    parent: null
-    url: /blog/2017/04/02/emacs-start
-    updated: '2017-04-02 16:33:24 +0900'
+    url: /blog/2017/04/02/jwp-00-prepare
+    updated: '2017-04-02 12:15:32 +0900'
 2017-04-03-jwp-01:
     type: blog
     title: 'Next JWP Study #01'
@@ -215,13 +215,13 @@ vim-conceallevel:
     parent: null
     url: /blog/2017/07/30/luarocks
     updated: '2017-07-30 16:32:25 +0900'
-2017-04-02-jwp-00-prepare:
+2017-04-03-emacs-start:
     type: blog
-    title: 'Next JWP Study #00'
-    summary: 'NextStep Java Web Programming Study 준비 작업.'
+    title: 'emacs 사용 시작!'
+    summary: '하지만 Vim은 포기하지 않는다.'
     parent: null
-    url: /blog/2017/04/02/jwp-00-prepare
-    updated: '2017-04-02 12:15:32 +0900'
+    url: /blog/2017/04/02/emacs-start
+    updated: '2017-04-02 16:33:24 +0900'
 2017-08-01-hammerspoon-tutorial-01:
     type: blog
     title: 'Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동'
@@ -271,13 +271,13 @@ vim-conceallevel:
     parent: null
     url: /blog/2017/09/20/regex-prime
     updated: '2017-09-20 20:56:55 +0900'
-programming-language:
-    type: wiki
-    title: '프로그래밍 언어'
-    summary: null
-    parent: index
-    url: /wiki/programming-language
-    updated: '2017-12-03 15:01:36 +0900'
+2017-03-27-tmux-ascii-control:
+    type: blog
+    title: 'tmux 키 조합에서 C--가 불가능한 이유.'
+    summary: '"결론: ascii 코드값 때문."'
+    parent: null
+    url: /blog/2017/03/27/tmux-ascii-control
+    updated: '2017-03-27 22:57:52 +0900'
 book:
     type: wiki
     title: 도서
@@ -320,13 +320,6 @@ frac1e:
     parent: index
     url: /wiki/frac1e
     updated: '2017-12-03 09:44:20 +0900'
-mathjax-latex:
-    type: wiki
-    title: 'MathJax로 LaTeX 사용하기'
-    summary: null
-    parent: index
-    url: /wiki/mathjax-latex
-    updated: '2017-11-28 22:56:29 +0900'
 google-search-console-remove-outdated-content:
     type: wiki
     title: 'Google Search Console - Remove outdated content'
@@ -334,20 +327,20 @@ google-search-console-remove-outdated-content:
     parent: index
     url: /wiki/google-search-console-remove-outdated-content
     updated: '2017-11-28 08:50:10 +0900'
-gradle:
+programming-language:
     type: wiki
-    title: Gradle
-    summary: 'Gradle Build Tool'
+    title: '프로그래밍 언어'
+    summary: null
     parent: index
-    url: /wiki/gradle
-    updated: '2017-12-03 17:13:32 +0900'
-groovy:
-    type: wiki
-    title: Groovy
-    summary: 'A multi-faceted language for the Java platform'
-    parent: programming-language
-    url: /wiki/groovy
+    url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
+mathjax-latex:
+    type: wiki
+    title: 'MathJax로 LaTeX 사용하기'
+    summary: null
+    parent: index
+    url: /wiki/mathjax-latex
+    updated: '2017-11-28 22:56:29 +0900'
 java_home:
     type: wiki
     title: 'java_home 명령어'
