@@ -155,10 +155,12 @@ font:
 config:
     - {fileName: coding-font, updated: '2017-12-01 06:02:30 +0900'}
 proverb:
-    - {fileName: Conway-s-law, updated: '2017-12-04 21:34:28 +0900'}
+    - {fileName: Conway-s-law, updated: '2017-12-09 22:38:13 +0900'}
+    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
     - {fileName: proverb, updated: '2017-12-04 09:10:02 +0900'}
 law:
-    - {fileName: Conway-s-law, updated: '2017-12-04 21:34:28 +0900'}
+    - {fileName: Conway-s-law, updated: '2017-12-09 22:38:13 +0900'}
+    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
 test:
     - {fileName: default-post, updated: '2017-04-02 12:15:32 +0900'}
 math:
@@ -179,13 +181,15 @@ jvm-lang:
 groovy:
     - {fileName: groovy, updated: '2017-12-03 15:01:36 +0900'}
 index:
-    - {fileName: index, updated: '2017-11-29 21:37:03 +0900'}
+    - {fileName: index, updated: '2017-12-09 22:37:39 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 mac:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
+bug:
+    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
 latex:
     - {fileName: mathjax-latex, updated: '2017-11-28 22:56:29 +0900'}
 programming:

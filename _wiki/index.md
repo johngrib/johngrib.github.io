@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2017-11-29 21:37:03 +0900
+updated : 2017-12-09 22:37:39 +0900
 tags    : index
 toc     : true
 public  : true
@@ -21,5 +21,6 @@ comment : false
     * [[Groovy]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
     * [[Conway-s-law]]{콘웨이의 법칙}
+    * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
 * [[book]]{도서}
     * [[Code-Complete-2]]
