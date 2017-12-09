@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 콘웨이의 법칙
+title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2017-12-04 21:34:28 +0900
+updated : 2017-12-09 22:38:13 +0900
 tags    : proverb law
 toc     : true
 public  : true
