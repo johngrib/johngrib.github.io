@@ -148,7 +148,7 @@ blog:
 book:
     - {fileName: book, updated: '2017-12-05 19:19:56 +0900'}
     - {fileName: Code-Complete-2, updated: '2017-12-05 21:53:52 +0900'}
-    - {fileName: The-Jargon-File, updated: '2017-12-10 00:26:55 +0900'}
+    - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
 jolt-award:
     - {fileName: Code-Complete-2, updated: '2017-12-05 21:53:52 +0900'}
 font:
@@ -182,7 +182,7 @@ jvm-lang:
 groovy:
     - {fileName: groovy, updated: '2017-12-03 15:01:36 +0900'}
 index:
-    - {fileName: index, updated: '2017-12-10 00:31:18 +0900'}
+    - {fileName: index, updated: '2017-12-10 14:20:55 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
@@ -197,8 +197,10 @@ programming:
     - {fileName: programming-language, updated: '2017-12-03 15:01:36 +0900'}
 culture:
     - {fileName: proverb, updated: '2017-12-09 23:26:49 +0900'}
+rfc:
+    - {fileName: RFC, updated: '2017-12-10 14:21:02 +0900'}
 hacker:
-    - {fileName: The-Jargon-File, updated: '2017-12-10 00:26:55 +0900'}
+    - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
 trouble-shooting:
     - {fileName: vim-conceallevel, updated: '2017-11-29 17:47:59 +0900'}
 yaml:

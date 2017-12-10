@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2017-12-10 00:31:18 +0900
+updated : 2017-12-10 14:20:55 +0900
 tags    : index
 toc     : true
 public  : true
@@ -22,6 +22,7 @@ comment : false
 * [[proverb]]{속담, 법칙, 관용어 모음}
     * [[Conway-s-law]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
+* [[RFC]]
 * [[The-Jargon-File]]
 * [[vim-conceallevel]]{conceallevel (Vim)}
 * [[YAML]]
