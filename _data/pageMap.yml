@@ -1,10 +1,10 @@
-2017-07-14-aheui-explained:
+2017-07-30-luarocks:
     type: blog
-    title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
-    summary: '아희 재밌네'
+    title: 'luarocks로 Hammerspoon 패키지 관리하기'
+    summary: '유한락스가 아니라 루아락스로 깨끗하게'
     parent: null
-    url: /blog/2017/07/14/aheui-explained
-    updated: '2017-07-14 23:00:17 +0900'
+    url: /blog/2017/07/30/luarocks
+    updated: '2017-07-30 16:32:25 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -12,6 +12,13 @@ yaml:
     parent: index
     url: /wiki/yaml
     updated: '2017-12-02 16:45:25 +0900'
+URI:
+    type: wiki
+    title: URI
+    summary: 'Uniform Resource Identifier'
+    parent: index
+    url: /wiki/URI
+    updated: '2017-12-12 22:05:28 +0900'
 The-Jargon-File:
     type: wiki
     title: 'The Jargon File'
@@ -25,7 +32,7 @@ RFC:
     summary: '일련번호가 매겨진 인터넷 표준 문서'
     parent: index
     url: /wiki/RFC
-    updated: '2017-12-12 06:47:43 +0900'
+    updated: '2017-12-12 22:06:20 +0900'
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -46,7 +53,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2017-12-10 14:20:55 +0900'
+    updated: '2017-12-12 06:54:40 +0900'
 groovy:
     type: wiki
     title: Groovy
@@ -82,27 +89,20 @@ book:
     parent: null
     url: /blog/2017/12/06/my-wiki
     updated: '2017-12-06 21:44:18 +0900'
-2017-08-06-hammerspoon-tutorial-04:
+2017-08-07-hammerspoon-tutorial-05:
     type: blog
-    title: 'Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다'
-    summary: '결론은 터미널'
+    title: 'Hammerspoon 튜토리얼 05 - chooser를 사용해 봅시다'
+    summary: '클립보드 히스토리도 만들어 봅시다'
     parent: null
-    url: /blog/2017/08/06/hammerspoon-tutorial-04
-    updated: '2017-08-06 13:35:00 +0900'
-2017-04-10-jwp-03:
+    url: /blog/2017/08/07/hammerspoon-tutorial-05
+    updated: '2017-08-07 09:33:00 +0900'
+2017-04-13-jwp-04:
     type: blog
-    title: 'Next JWP Study #03'
-    summary: '"HTTP 이해: 두 번째 시간"'
+    title: 'Next JWP Study #04'
+    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
     parent: null
-    url: /blog/2017/04/11/jwp-03
-    updated: '2017-04-11 22:47:18 +0900'
-2017-04-17-jwp-05:
-    type: blog
-    title: 'Next JWP Study #05'
-    summary: 'HTTP 웹 서버와 Servlet'
-    parent: null
-    url: /blog/2017/04/17/jwp-05
-    updated: '2017-04-17 15:20:00 +0900'
+    url: /blog/2017/04/13/jwp-04
+    updated: '2017-04-13 12:15:32 +0900'
 2017-04-20-jwp-06:
     type: blog
     title: 'Next JWP Study #06'
@@ -201,6 +201,13 @@ book:
     parent: null
     url: /blog/2017/07/06/vim-game-code-break
     updated: '2017-07-06 00:15:00 +0900'
+2017-07-14-aheui-explained:
+    type: blog
+    title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
+    summary: '아희 재밌네'
+    parent: null
+    url: /blog/2017/07/14/aheui-explained
+    updated: '2017-07-14 23:00:17 +0900'
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -208,13 +215,6 @@ vim-conceallevel:
     parent: index
     url: /wiki/vim-conceallevel
     updated: '2017-11-29 17:47:59 +0900'
-2017-07-30-luarocks:
-    type: blog
-    title: 'luarocks로 Hammerspoon 패키지 관리하기'
-    summary: '유한락스가 아니라 루아락스로 깨끗하게'
-    parent: null
-    url: /blog/2017/07/30/luarocks
-    updated: '2017-07-30 16:32:25 +0900'
 2017-07-31-hammerspoon-tutorial-00-start:
     type: blog
     title: 'Hammerspoon 튜토리얼 00 - 시작하기'
@@ -243,20 +243,20 @@ vim-conceallevel:
     parent: null
     url: /blog/2017/08/05/hammerspoon-tutorial-03
     updated: '2017-08-05 12:11:00 +0900'
-2017-04-13-jwp-04:
+2017-08-06-hammerspoon-tutorial-04:
     type: blog
-    title: 'Next JWP Study #04'
-    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
+    title: 'Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다'
+    summary: '결론은 터미널'
     parent: null
-    url: /blog/2017/04/13/jwp-04
-    updated: '2017-04-13 12:15:32 +0900'
-2017-08-07-hammerspoon-tutorial-05:
+    url: /blog/2017/08/06/hammerspoon-tutorial-04
+    updated: '2017-08-06 13:35:00 +0900'
+2017-04-17-jwp-05:
     type: blog
-    title: 'Hammerspoon 튜토리얼 05 - chooser를 사용해 봅시다'
-    summary: '클립보드 히스토리도 만들어 봅시다'
+    title: 'Next JWP Study #05'
+    summary: 'HTTP 웹 서버와 Servlet'
     parent: null
-    url: /blog/2017/08/07/hammerspoon-tutorial-05
-    updated: '2017-08-07 09:33:00 +0900'
+    url: /blog/2017/04/17/jwp-05
+    updated: '2017-04-17 15:20:00 +0900'
 2017-08-23-0.30000000000000004:
     type: blog
     title: '0.1 + 0.2 == 0.30000000000000004'
@@ -271,6 +271,13 @@ vim-conceallevel:
     parent: null
     url: /blog/2017/09/20/regex-prime
     updated: '2017-09-20 20:56:55 +0900'
+2017-04-10-jwp-03:
+    type: blog
+    title: 'Next JWP Study #03'
+    summary: '"HTTP 이해: 두 번째 시간"'
+    parent: null
+    url: /blog/2017/04/11/jwp-03
+    updated: '2017-04-11 22:47:18 +0900'
 programming-language:
     type: wiki
     title: '프로그래밍 언어'
@@ -278,13 +285,6 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-mathjax-latex:
-    type: wiki
-    title: 'MathJax로 LaTeX 사용하기'
-    summary: null
-    parent: index
-    url: /wiki/mathjax-latex
-    updated: '2017-11-28 22:56:29 +0900'
 Code-Complete-2:
     type: wiki
     title: 'Code Complete 2nd Edition by Steve McConnell'
@@ -299,13 +299,13 @@ coding-font:
     parent: index
     url: /wiki/coding-font
     updated: '2017-12-01 06:02:30 +0900'
-java_home:
+mathjax-latex:
     type: wiki
-    title: 'java_home 명령어'
-    summary: 'return a value for $JAVA_HOME'
+    title: 'MathJax로 LaTeX 사용하기'
+    summary: null
     parent: index
-    url: /wiki/java_home
-    updated: '2017-12-03 15:01:36 +0900'
+    url: /wiki/mathjax-latex
+    updated: '2017-11-28 22:56:29 +0900'
 default-post:
     type: blog
     title: 'sample title'
@@ -327,13 +327,20 @@ google-search-console-remove-outdated-content:
     parent: index
     url: /wiki/google-search-console-remove-outdated-content
     updated: '2017-11-28 08:50:10 +0900'
-2017-04-08-jwp-02:
+java_home:
+    type: wiki
+    title: 'java_home 명령어'
+    summary: 'return a value for $JAVA_HOME'
+    parent: index
+    url: /wiki/java_home
+    updated: '2017-12-03 15:01:36 +0900'
+2017-03-13-uri-url:
     type: blog
-    title: 'Next JWP Study #02'
-    summary: 'HTTP 이해'
+    title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'
+    summary: '"결론: URL은 URI의 부분집합."'
     parent: null
-    url: /blog/2017/04/08/jwp-02
-    updated: '2017-04-08 21:29:47 +0900'
+    url: /blog/2017/03/13/uri-url
+    updated: '2017-03-13 21:30:46 +0900'
 2017-04-03-emacs-start:
     type: blog
     title: 'emacs 사용 시작!'
@@ -341,13 +348,6 @@ google-search-console-remove-outdated-content:
     parent: null
     url: /blog/2017/04/02/emacs-start
     updated: '2017-04-02 16:33:24 +0900'
-2017-04-03-vim-tmux-t-ut:
-    type: blog
-    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
-    summary: '"`set t_ut=`로 한 방에 해결"'
-    parent: null
-    url: /blog/2017/04/03/vim-tmux-t-ut
-    updated: '2017-04-03 07:33:49 +0900'
 2017-04-03-jwp-01:
     type: blog
     title: 'Next JWP Study #01'
@@ -355,6 +355,20 @@ google-search-console-remove-outdated-content:
     parent: null
     url: /blog/2017/04/05/jwp-01
     updated: '2017-04-05 21:52:28 +0900'
+2017-04-08-jwp-02:
+    type: blog
+    title: 'Next JWP Study #02'
+    summary: 'HTTP 이해'
+    parent: null
+    url: /blog/2017/04/08/jwp-02
+    updated: '2017-04-08 21:29:47 +0900'
+2017-04-03-vim-tmux-t-ut:
+    type: blog
+    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
+    summary: '"`set t_ut=`로 한 방에 해결"'
+    parent: null
+    url: /blog/2017/04/03/vim-tmux-t-ut
+    updated: '2017-04-03 07:33:49 +0900'
 2017-03-27-tmux-ascii-control:
     type: blog
     title: 'tmux 키 조합에서 C--가 불가능한 이유.'
@@ -369,13 +383,6 @@ google-search-console-remove-outdated-content:
     parent: null
     url: /blog/2017/04/02/jwp-00-prepare
     updated: '2017-04-02 12:15:32 +0900'
-2017-03-13-uri-url:
-    type: blog
-    title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'
-    summary: '"결론: URL은 URI의 부분집합."'
-    parent: null
-    url: /blog/2017/03/13/uri-url
-    updated: '2017-03-13 21:30:46 +0900'
 2017-03-12-telegram-bot:
     type: blog
     title: '텔레그램 봇 스켈레톤 만들기.'

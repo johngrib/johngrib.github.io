@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2017-12-10 14:20:55 +0900
+updated : 2017-12-12 06:54:40 +0900
 tags    : index
 toc     : true
 public  : true
@@ -24,5 +24,6 @@ comment : false
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
 * [[RFC]]
 * [[The-Jargon-File]]
+* [[URI]]
 * [[vim-conceallevel]]{conceallevel (Vim)}
 * [[YAML]]
