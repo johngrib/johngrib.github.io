@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2017-12-17 02:30:13 +0900
+updated : 2017-12-17 08:45:57 +0900
 tags    :
 toc     : true
 public  : true
@@ -104,7 +104,7 @@ latex   : true
 * Null pointer의 개념은 컴퓨터 과학자 [Tony Hoare(토니 호어)](https://en.wikipedia.org/wiki/Tony_Hoare )가 1965년에 창안했다.
     * 1959년에 [Quick sort 알고리즘](https://academic.oup.com/comjnl/article/5/1/10/395338 )을 고안한 사람이다.
     * 1980년 [Turing award](https://amturing.acm.org/award_winners/hoare_4622167.cfm ) 수상자.
-    * 2009년에는 [Null pointer의 개념이 10억 달러 이상의 피해를 끼친 실수였다고 후회했다](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare ).
+    * 2009년에는 [Null pointer의 개념이 10억 달러 이상의 피해를 끼친 실수였다고 후회했다(동영상)](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare ).
 
 | 읽는 방법      | 널, null        |
 | 약어           | NUL             |
@@ -166,6 +166,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 
 * 눈에 보이지 않는 문자.
 * 왼쪽 화살표키 처럼 생긴, 왼쪽 글자를 지우는 키
+* `^H`를 입력하는 것이 백스페이스보다 편리한 경우가 많다. 백스페이스는 기본 위치에서 너무 멀다.
 
 | 읽는 방법      | 백 스페이스, backspace |
 | 약어           | BS                     |
@@ -183,8 +184,13 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 ## Tab
 
 * 보통 캡스락 키 위에 있는 키.
+* 타자기에서 표를 작성/정렬을 편하게 하기 위해 발명됐다. 입력할 때마다 캐리지가 다음 탭 스탑으로 이동하는 방식.
+    * F.W Hillard가 [1900년 8월 22일에 미국에서 특허](http://pdfpiw.uspto.gov/.piw?docid=00720520&PageNum=1&&IDKey=289D668C7D94&HomeUrl=http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1%2526Sect2=HITOFF%2526d=PALL%2526p=1%2526u=%25252Fnetahtml%25252FPTO%25252Fsrchnum.htm%2526r=1%2526f=G%2526l=50%2526s1=0720520.PN.%2526OS=PN/0720520%2526RS=PN/0720520 )를 냈다.
+    * 특허를 읽어보면 왜 탭이 `^I`로 표기되는지 알 수 있다.
+        * 탭 스탑에서 캐리지를 멈춰주는 (금속) 막대기가 "tabulator-rack  I"이다.
 * 일반적인 UNIX 환경에서 탭의 공백 사이즈는 스페이스 8개이다.
 * 몇몇 에디터, bash 터미널에선 코드 자동 완성 단축키로 사용한다.
+* TSV 파일은 'Tab Seperated Values'의 약자이며, Tab을 구분자로 사용한 자료가 담긴 파일을 말한다.
 
 | 읽는 방법      | 탭, taB, horizontal tab         |
 | 약어           | HT                              |
@@ -761,7 +767,7 @@ val hello = "hello, world"
 * [Less-than sign(wikipedia)](https://en.wikipedia.org/wiki/Less-than_sign )
 * [Greater-than_sign(wikipedia)](https://en.wikipedia.org/wiki/Greater-than_sign )
 
-## `=`
+## `=` Equals sign
 
 * 이퀄스, 같다.
 * 대부분의 프로그래밍 언어에서 대입 연산자로 사용한다.
