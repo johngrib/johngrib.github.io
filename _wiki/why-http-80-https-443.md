@@ -3,7 +3,7 @@ layout  : wiki
 title   : http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?
 summary : 80은 처음부터 지정, 443은 나중에 요청을 받아 빈 공간으로 순서대로 배정
 date    : 2017-12-12 23:19:48 +0900
-updated : 2017-12-13 13:12:40 +0900
+updated : 2017-12-17 09:11:39 +0900
 tags    : http rfc
 toc     : true
 public  : true
@@ -21,13 +21,13 @@ latex   : false
 모르고 있었다면 간단한 실험으로도 알 수 있다.
 
 * http 프로토콜
-    * [ ] [[http://www.google.com]] - http 프로토콜. 구글이 망하지만 않는다면 잘 접속된다.
-    * [ ] [[http://www.google.com:80]] - `80` 포트를 명시했다. 잘 접속된다.
-    * [X] [[http://www.google.com:81]] - `81` 포트를 명시했다. 목적이 다른 포트이므로 접속이 안 된다.
+    * [ ] [http://www.google.com](http://www.google.com ) - http 프로토콜. 구글이 망하지만 않는다면 잘 접속된다.
+    * [ ] [http://www.google.com:80](http://www.google.com:80 ) - `80` 포트를 명시했다. 잘 접속된다.
+    * [X] [http://www.google.com:81](http://www.google.com:81 ) - `81` 포트를 명시했다. 목적이 다른 포트이므로 접속이 안 된다.
 * https 프로토콜
-    * [ ] [[https://www.google.com]] - https 프로토콜. 잘 접속된다.
-    * [ ] [[https://www.google.com:443]] - `443` 포트를 명시했다. 잘 접속된다.
-    * [X] [[https://www.google.com:444]] - `444` 포트를 명시했다. 목적이 다른 포트이므로 접속이 안 된다.
+    * [ ] [https://www.google.com](https://www.google.com ) - https 프로토콜. 잘 접속된다.
+    * [ ] [https://www.google.com:443](https://www.google.com:443 ) - `443` 포트를 명시했다. 잘 접속된다.
+    * [X] [https://www.google.com:444](https://www.google.com:444 ) - `444` 포트를 명시했다. 목적이 다른 포트이므로 접속이 안 된다.
 
 이는 `80`과 `443`이 기본 포트 번호이기 때문이다. 포트 번호를 생략하면 기본 포트를 사용하게 된다.
 
@@ -70,7 +70,7 @@ latex   : false
 
 ### RFC 7540
 
-이번엔 2015년 5월에 나온 [RFC 7540](https://tools.ietf.org/html/rfc7540)(Hypertext Transfer Protocol Version 2 (HTTP/2))을 찾아보자.
+이번엔 2015년 5월에 나온 [RFC 7540](https://tools.ietf.org/html/rfc7540 )(Hypertext Transfer Protocol Version 2 (HTTP/2))을 찾아보자.
 
 3 절에 `80`, `443` 포트와 관련된 설명이 나와 있다.
 
@@ -99,7 +99,7 @@ HTTP/2는 동일한 기본 포트 넘버를 공유한다: "http" URI는 80, "htt
 
 ### 히스토리
 
-구글링을 하다 찾아낸 [howtogeek.com의 관련 질문/답변](https://www.howtogeek.com/233383/why-was-80-chosen-as-the-default-http-port-and-443-as-the-default-https-port/)에 `80`, `443`과 관련된 히스토리가 답변으로 소개되어 있다.
+구글링을 하다 찾아낸 [howtogeek.com의 관련 질문/답변](https://www.howtogeek.com/233383/why-was-80-chosen-as-the-default-http-port-and-443-as-the-default-https-port/ )에 `80`, `443`과 관련된 히스토리가 답변으로 소개되어 있다.
 
 요약하고 설명을 추가해 보았다.
 
@@ -108,7 +108,7 @@ HTTP/2는 동일한 기본 포트 넘버를 공유한다: "http" URI는 80, "htt
 * 1991년 : [HTTP 0.9 문서](https://www.w3.org/Protocols/HTTP/AsImplemented.html )
     * Connection 항목에 `If the port number is not specified, 80 is always assumed for HTTP.`라고 적혀 있다.
     * 이 문서는 최초로 작성된 HTTP 버전 문서이다.
-* 1992년 7월 : [RFC 1060](https://tools.ietf.org/html/rfc1060 )이 [RFC 1340](https://tools.ietf.org/html/rfc1340 )으로 개정됨.
+* 1992년 7월 : [RFC 1060](ttps://tools.ietf.org/html/rfc1060 )이 [RFC 1340](https://tools.ietf.org/html/rfc1340 )으로 개정됨.
     * 알려진 포트 넘버 항목(Page 11)에 `80` 포트가 `World Wide Web HTTP`로 언급되었다.
     * 공식적으로 `80` 포트가 지정된 것.
     * 그러나 `443`은 아직 언급되지 않았다.
@@ -121,11 +121,11 @@ https           443/udp    https  MCom
 #                          Kipp E.B. Hickman <kipp@mcom.com>
 ```
     * Kipp E.B. Hickman의 요청에 의해 `443` 포트가 추가된 것으로 보인다.
-        * [Hickman의 홈페이지](http://home.mcom.com/people/kipp/)를 보면 Mosaic Communications Corp의 일원이었음을 알 수 있다.
+        * [Hickman의 홈페이지](http://home.mcom.com/people/kipp/ )를 보면 Mosaic Communications Corp의 일원이었음을 알 수 있다.
 
 그렇다면 왜 `443` 일까?
 
-* [[https://www.rfc-editor.org/info/rfc1700]]를 보면 `443`포트가 지정된 RFC [RFC 1700](https://tools.ietf.org/html/rfc1700 )은 [RFC 1340](https://www.rfc-editor.org/rfc/rfc1340.txt )을 개정한 것임을 알 수 있다.
+* [www.rfc-editor.org/info/rfc1700](https://www.rfc-editor.org/info/rfc1700 )를 보면 `443`포트가 지정된 RFC [RFC 1700](https://tools.ietf.org/html/rfc1700 )은 [RFC 1340](https://www.rfc-editor.org/rfc/rfc1340.txt )을 개정한 것임을 알 수 있다.
 * [RFC 1340](https://www.rfc-editor.org/rfc/rfc1340.txt )을 읽어보면 포트 번호가 `374`에서 바로 `512`로 건너뛴 것을 알 수 있다(Page 18).
     * 즉 `375` ~ `511`은 아예 언급이 없다.
 ```
@@ -167,7 +167,7 @@ https           443/udp    https  MCom
     * [RFC 1700](https://tools.ietf.org/html/rfc1700 ) - ASSIGNED NUMBERS : RFC 1340의 개정
         * [RFC 1700(rfc editor)](https://www.rfc-editor.org/info/rfc1700 )
     * [RFC 3232](https://www.rfc-editor.org/rfc/rfc3232.txt ) - Assigned Numbers: RFC 1700 is Replaced by an On-line Database : RFC 1700의 개정
-    * [https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) - RFC 3232 이후 포트 번호를 확인할 수 있는 곳
+    * [https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml ) - RFC 3232 이후 포트 번호를 확인할 수 있는 곳
 * HTTP
     * [HTTP 0.9 문서](https://www.w3.org/Protocols/HTTP/AsImplemented.html )
     * [RFC 2616](http://www.rfc-editor.org/rfc/rfc2616.txt ) : Hypertext Transfer Protocol -- HTTP/1.1
