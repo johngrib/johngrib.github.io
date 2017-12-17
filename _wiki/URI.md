@@ -2,7 +2,7 @@
 layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
-updated : 2017-12-17 23:25:01 +0900
+updated : 2017-12-18 08:53:49 +0900
 tags    : http
 toc     : true
 public  : true
@@ -24,7 +24,7 @@ latex   : false
 * 인터넷 상의 정보 리소스를 고유하게 식별할 수 있다.
 * URI는 URL과 URN이라는 두 가지 형태가 존재한다.
 
-다음은 [RFC 3986의 3. Syntax Components]에서 발췌한 URI의 syntax example이다.
+다음은 [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt )의 3. Syntax Components에서 발췌한 URI의 syntax example이다.
 
 ```
 The following are two example URIs and their component parts:
@@ -77,5 +77,5 @@ http://johngrib.github.io/wiki/URI.md#fragment
 
 # Links
 
-* [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt)
+* [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt )
 
