@@ -2,7 +2,7 @@
 layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
-updated : 2017-12-18 09:38:39 +0900
+updated : 2017-12-18 23:00:44 +0900
 tags    : http
 toc     : true
 public  : true
@@ -106,6 +106,10 @@ http://johngrib.github.io/wiki/URI.md#fragment
 | $9   | fragment  | Related           |
 
 URI의 창시자가 직접 만든 정규식이니 유용하게 사용하자.
+
+## 상대 URL을 절대 URL로 파싱하는 알고리즘
+
+RFC 3986의 5.2.  Relative Resolution(29~33 쪽)에 나와 있다.
 
 # Links
 
