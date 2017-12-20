@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2017-12-13 21:23:10 +0900
+updated : 2017-12-20 13:13:05 +0900
 tags    : index
 toc     : true
 public  : true
@@ -26,7 +26,8 @@ comment : false
 * [[special-chars]]
 * [[The-Jargon-File]]
 * [[URI]]
-* [[vim-conceallevel]]{conceallevel (Vim)}
+* [[Vim]]
+    * [[vim-conceallevel]]{conceallevel (Vim)}
 * [[why]]
     * [[why-http-80-https-443]]
 * [[YAML]]
