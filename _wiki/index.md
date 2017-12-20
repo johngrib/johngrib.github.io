@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2017-12-20 13:13:05 +0900
+updated : 2017-12-20 15:48:25 +0900
 tags    : index
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ comment : false
 * [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
 * [[Gradle]]
 * [[java_home]]{java_home 명령어}
+* [[legend]]
 * [[mathjax-latex]]{MathJax로 latex 사용하기}
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
