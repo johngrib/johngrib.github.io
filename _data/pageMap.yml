@@ -1,10 +1,10 @@
-2017-08-01-hammerspoon-tutorial-01:
+2017-08-04-hammerspoon-tutorial-02:
     type: blog
-    title: 'Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동'
-    summary: '윈도우즈에는 있으나 맥에는 없는 그것'
+    title: 'Hammerspoon 튜토리얼 02 - 클립보드 확장 기능을 만들어 봅시다'
+    summary: '복붙을 편하게!'
     parent: null
-    url: /blog/2017/08/01/hammerspoon-tutorial-01
-    updated: '2017-08-01 22:47:08 +0900'
+    url: /blog/2017/08/04/hammerspoon-tutorial-02
+    updated: '2017-08-04 21:32:22 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -75,6 +75,13 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2017-12-19 15:32:02 +0900'
+mathjax-latex:
+    type: wiki
+    title: 'MathJax로 LaTeX 사용하기'
+    summary: null
+    parent: how-to
+    url: /wiki/mathjax-latex
+    updated: '2017-12-23 18:18:43 +0900'
 Lubarsky-s-Law-of-Cybernetic-Entomology:
     type: wiki
     title: '루바르스키의 사이버네틱 곤충학 법칙(Lubarsky''s Law of Cybernetic Entomology)'
@@ -88,14 +95,21 @@ legend:
     summary: null
     parent: index
     url: /wiki/legend
-    updated: '2017-12-20 23:25:02 +0900'
+    updated: '2017-12-21 01:14:40 +0900'
 index:
     type: wiki
     title: 'wiki index'
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2017-12-20 15:48:25 +0900'
+    updated: '2017-12-23 18:20:13 +0900'
+how-to:
+    type: wiki
+    title: 'HOW TO'
+    summary: null
+    parent: index
+    url: /wiki/how-to
+    updated: '2017-12-23 18:20:55 +0900'
 groovy:
     type: wiki
     title: Groovy
@@ -131,20 +145,13 @@ book:
     parent: null
     url: /blog/2017/12/06/my-wiki
     updated: '2017-12-06 21:44:18 +0900'
-coding-font:
-    type: wiki
-    title: '코딩 폰트'
-    summary: '내가 선호하는 코딩 폰트를 기록한다'
-    parent: index
-    url: /wiki/coding-font
-    updated: '2017-12-01 06:02:30 +0900'
-2017-05-09-jwp-09:
+2017-05-04-input-source:
     type: blog
-    title: 'Next JWP Study #09'
-    summary: 'Spring MVC 실습'
+    title: 'Vim 사용시 한/영 전환 문제 해결하기'
+    summary: 'hammerspoon으로 해결'
     parent: null
-    url: /blog/2017/05/09/jwp-09
-    updated: '2017-05-09 10:45:58 +0900'
+    url: /blog/2017/05/04/input-source
+    updated: '2017-05-04 22:05:30 +0900'
 2017-05-14-jwp-10:
     type: blog
     title: 'Next JWP Study #10'
@@ -152,13 +159,6 @@ coding-font:
     parent: null
     url: /blog/2017/05/14/jwp-10
     updated: '2017-05-14 14:10:50 +0900'
-2017-05-16-jwp-11:
-    type: blog
-    title: 'Next JWP Study #11'
-    summary: 'DI 기반 단위 테스트'
-    parent: null
-    url: /blog/2017/05/16/jwp-11
-    updated: '2017-05-16 21:36:06 +0900'
 2017-05-20-jwp-12:
     type: blog
     title: 'Next JWP Study #12'
@@ -222,6 +222,13 @@ coding-font:
     parent: null
     url: /blog/2017/07/31/hammerspoon-tutorial-00-start
     updated: '2017-07-31 21:57:27 +0900'
+2017-08-01-hammerspoon-tutorial-01:
+    type: blog
+    title: 'Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동'
+    summary: '윈도우즈에는 있으나 맥에는 없는 그것'
+    parent: null
+    url: /blog/2017/08/01/hammerspoon-tutorial-01
+    updated: '2017-08-01 22:47:08 +0900'
 programming-language:
     type: wiki
     title: '프로그래밍 언어'
@@ -229,13 +236,6 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-2017-08-04-hammerspoon-tutorial-02:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 02 - 클립보드 확장 기능을 만들어 봅시다'
-    summary: '복붙을 편하게!'
-    parent: null
-    url: /blog/2017/08/04/hammerspoon-tutorial-02
-    updated: '2017-08-04 21:32:22 +0900'
 2017-08-05-hammerspoon-tutorial-03:
     type: blog
     title: 'Hammerspoon 튜토리얼 03 - 한영 전환 키를 만들어 봅시다'
@@ -271,34 +271,6 @@ programming-language:
     parent: null
     url: /blog/2017/09/20/regex-prime
     updated: '2017-09-20 20:56:55 +0900'
-2017-05-04-input-source:
-    type: blog
-    title: 'Vim 사용시 한/영 전환 문제 해결하기'
-    summary: 'hammerspoon으로 해결'
-    parent: null
-    url: /blog/2017/05/04/input-source
-    updated: '2017-05-04 22:05:30 +0900'
-mathjax-latex:
-    type: wiki
-    title: 'MathJax로 LaTeX 사용하기'
-    summary: null
-    parent: index
-    url: /wiki/mathjax-latex
-    updated: '2017-11-28 22:56:29 +0900'
-Code-Complete-2:
-    type: wiki
-    title: 'Code Complete 2nd Edition by Steve McConnell'
-    summary: '코드 컴플리트 - 스티브 맥코넬'
-    parent: book
-    url: /wiki/Code-Complete-2
-    updated: '2017-12-05 21:53:52 +0900'
-2017-05-14-hhkb-jp-tmk:
-    type: blog
-    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
-    summary: '해피해킹을 더욱 해피하게'
-    parent: null
-    url: /blog/2017/05/14/hhkb-jp-tmk
-    updated: '2017-05-14 15:50:31 +0900'
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -306,6 +278,34 @@ java_home:
     parent: index
     url: /wiki/java_home
     updated: '2017-12-03 15:01:36 +0900'
+google-search-console-remove-outdated-content:
+    type: wiki
+    title: 'Google Search Console - Remove outdated content'
+    summary: '구글 웹 도구 - 오래된 콘텐츠 삭제'
+    parent: index
+    url: /wiki/google-search-console-remove-outdated-content
+    updated: '2017-11-28 08:50:10 +0900'
+Code-Complete-2:
+    type: wiki
+    title: 'Code Complete 2nd Edition by Steve McConnell'
+    summary: '코드 컴플리트 - 스티브 맥코넬'
+    parent: book
+    url: /wiki/Code-Complete-2
+    updated: '2017-12-05 21:53:52 +0900'
+coding-font:
+    type: wiki
+    title: '코딩 폰트'
+    summary: '내가 선호하는 코딩 폰트를 기록한다'
+    parent: index
+    url: /wiki/coding-font
+    updated: '2017-12-01 06:02:30 +0900'
+2017-05-16-jwp-11:
+    type: blog
+    title: 'Next JWP Study #11'
+    summary: 'DI 기반 단위 테스트'
+    parent: null
+    url: /blog/2017/05/16/jwp-11
+    updated: '2017-05-16 21:36:06 +0900'
 default-post:
     type: blog
     title: 'sample title'
@@ -320,13 +320,27 @@ frac1e:
     parent: index
     url: /wiki/frac1e
     updated: '2017-12-03 09:44:20 +0900'
-google-search-console-remove-outdated-content:
-    type: wiki
-    title: 'Google Search Console - Remove outdated content'
-    summary: '구글 웹 도구 - 오래된 콘텐츠 삭제'
-    parent: index
-    url: /wiki/google-search-console-remove-outdated-content
-    updated: '2017-11-28 08:50:10 +0900'
+2017-04-03-vim-tmux-t-ut:
+    type: blog
+    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
+    summary: '"`set t_ut=`로 한 방에 해결"'
+    parent: null
+    url: /blog/2017/04/03/vim-tmux-t-ut
+    updated: '2017-04-03 07:33:49 +0900'
+2017-05-09-jwp-09:
+    type: blog
+    title: 'Next JWP Study #09'
+    summary: 'Spring MVC 실습'
+    parent: null
+    url: /blog/2017/05/09/jwp-09
+    updated: '2017-05-09 10:45:58 +0900'
+2017-05-14-hhkb-jp-tmk:
+    type: blog
+    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
+    summary: '해피해킹을 더욱 해피하게'
+    parent: null
+    url: /blog/2017/05/14/hhkb-jp-tmk
+    updated: '2017-05-14 15:50:31 +0900'
 2017-04-03-jwp-01:
     type: blog
     title: 'Next JWP Study #01'
@@ -341,13 +355,6 @@ google-search-console-remove-outdated-content:
     parent: null
     url: /blog/2017/04/22/jwp-06
     updated: '2017-04-22 23:36:10 +0900'
-2017-04-17-jwp-05:
-    type: blog
-    title: 'Next JWP Study #05'
-    summary: 'HTTP 웹 서버와 Servlet'
-    parent: null
-    url: /blog/2017/04/17/jwp-05
-    updated: '2017-04-17 15:20:00 +0900'
 2017-04-25-jwp-07:
     type: blog
     title: 'Next JWP Study #07'
@@ -355,6 +362,13 @@ google-search-console-remove-outdated-content:
     parent: null
     url: /blog/2017/04/26/jwp-07
     updated: '2017-04-26 21:49:43 +0900'
+2017-04-17-jwp-05:
+    type: blog
+    title: 'Next JWP Study #05'
+    summary: 'HTTP 웹 서버와 Servlet'
+    parent: null
+    url: /blog/2017/04/17/jwp-05
+    updated: '2017-04-17 15:20:00 +0900'
 2017-05-01-jwp-08:
     type: blog
     title: 'Next JWP Study #08'
@@ -362,13 +376,13 @@ google-search-console-remove-outdated-content:
     parent: null
     url: /blog/2017/05/01/jwp-08
     updated: '2017-05-01 07:33:10 +0900'
-2017-04-02-jwp-00-prepare:
+2017-03-27-tmux-ascii-control:
     type: blog
-    title: 'Next JWP Study #00'
-    summary: 'NextStep Java Web Programming Study 준비 작업.'
+    title: 'tmux 키 조합에서 C--가 불가능한 이유.'
+    summary: '"결론: ascii 코드값 때문."'
     parent: null
-    url: /blog/2017/04/02/jwp-00-prepare
-    updated: '2017-04-02 12:15:32 +0900'
+    url: /blog/2017/03/27/tmux-ascii-control
+    updated: '2017-03-27 22:57:52 +0900'
 2017-04-08-jwp-02:
     type: blog
     title: 'Next JWP Study #02'
@@ -383,13 +397,6 @@ google-search-console-remove-outdated-content:
     parent: null
     url: /blog/2017/04/11/jwp-03
     updated: '2017-04-11 22:47:18 +0900'
-2017-04-03-vim-tmux-t-ut:
-    type: blog
-    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
-    summary: '"`set t_ut=`로 한 방에 해결"'
-    parent: null
-    url: /blog/2017/04/03/vim-tmux-t-ut
-    updated: '2017-04-03 07:33:49 +0900'
 2017-04-13-jwp-04:
     type: blog
     title: 'Next JWP Study #04'
@@ -404,13 +411,13 @@ google-search-console-remove-outdated-content:
     parent: null
     url: /blog/2017/04/02/emacs-start
     updated: '2017-04-02 16:33:24 +0900'
-2017-03-27-tmux-ascii-control:
+2017-04-02-jwp-00-prepare:
     type: blog
-    title: 'tmux 키 조합에서 C--가 불가능한 이유.'
-    summary: '"결론: ascii 코드값 때문."'
+    title: 'Next JWP Study #00'
+    summary: 'NextStep Java Web Programming Study 준비 작업.'
     parent: null
-    url: /blog/2017/03/27/tmux-ascii-control
-    updated: '2017-03-27 22:57:52 +0900'
+    url: /blog/2017/04/02/jwp-00-prepare
+    updated: '2017-04-02 12:15:32 +0900'
 2017-03-13-uri-url:
     type: blog
     title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'

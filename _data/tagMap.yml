@@ -182,8 +182,10 @@ jvm-lang:
     - {fileName: groovy, updated: '2017-12-03 15:01:36 +0900'}
 groovy:
     - {fileName: groovy, updated: '2017-12-03 15:01:36 +0900'}
+how-to:
+    - {fileName: how-to, updated: '2017-12-23 18:20:55 +0900'}
 index:
-    - {fileName: index, updated: '2017-12-20 15:48:25 +0900'}
+    - {fileName: index, updated: '2017-12-23 18:20:13 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
@@ -191,11 +193,11 @@ java:
 mac:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 story:
-    - {fileName: legend, updated: '2017-12-20 23:25:02 +0900'}
+    - {fileName: legend, updated: '2017-12-21 01:14:40 +0900'}
 bug:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
 latex:
-    - {fileName: mathjax-latex, updated: '2017-11-28 22:56:29 +0900'}
+    - {fileName: mathjax-latex, updated: '2017-12-23 18:18:43 +0900'}
 programming:
     - {fileName: programming-language, updated: '2017-12-03 15:01:36 +0900'}
 culture:
