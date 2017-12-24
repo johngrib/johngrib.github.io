@@ -171,7 +171,9 @@ math:
     - {fileName: frac1e, updated: '2017-12-03 09:44:20 +0900'}
 google:
     - {fileName: google-search-console-remove-outdated-content, updated: '2017-11-28 08:50:10 +0900'}
-    - {fileName: googling, updated: '2017-12-24 00:26:32 +0900'}
+    - {fileName: googling, updated: '2017-12-24 11:44:31 +0900'}
+twitter:
+    - {fileName: googling, updated: '2017-12-24 11:44:31 +0900'}
 gradle:
     - {fileName: Gradle, updated: '2017-12-08 23:17:46 +0900'}
 tool:
