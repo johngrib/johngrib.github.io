@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2017-12-23 18:22:42 +0900
+updated : 2017-12-24 23:21:16 +0900
 tags    : index
 toc     : true
 public  : true
@@ -18,6 +18,7 @@ comment : false
 * [[how-to]]
     * [[googling]]
     * [[mathjax-latex]]
+* [[http-message]]
 * [[java_home]]{java_home 명령어}
 * [[legend]]
 * [[programming-language]]{프로그래밍 언어}
