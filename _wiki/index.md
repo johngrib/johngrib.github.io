@@ -24,6 +24,7 @@ comment : false
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
+    * [[airplain-rule]]
     * [[Conway-s-law]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
 * [[RFC]]
