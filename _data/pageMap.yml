@@ -1,10 +1,10 @@
-2017-08-05-hammerspoon-tutorial-03:
+2017-08-06-hammerspoon-tutorial-04:
     type: blog
-    title: 'Hammerspoon 튜토리얼 03 - 한영 전환 키를 만들어 봅시다'
-    summary: 'Esc - 영문전환도 만들어 봅시다'
+    title: 'Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다'
+    summary: '결론은 터미널'
     parent: null
-    url: /blog/2017/08/05/hammerspoon-tutorial-03
-    updated: '2017-08-05 12:11:00 +0900'
+    url: /blog/2017/08/06/hammerspoon-tutorial-04
+    updated: '2017-08-06 13:35:00 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -159,6 +159,13 @@ airplain-rule:
     parent: proverb
     url: /wiki/airplain-rule
     updated: '2017-12-25 13:07:43 +0900'
+2017-12-30-review2017:
+    type: blog
+    title: '2017년 회고'
+    summary: '인생 최고의 1년이었다'
+    parent: null
+    url: /blog/2017/12/30/review2017
+    updated: '2017-12-30 23:19:10 +0900'
 2017-12-06-my-wiki:
     type: blog
     title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
@@ -173,20 +180,13 @@ frac1e:
     parent: index
     url: /wiki/frac1e
     updated: '2017-12-03 09:44:20 +0900'
-2017-05-23-jwp-13:
+2017-05-27-jwp-14:
     type: blog
-    title: 'Next JWP Study #13'
-    summary: 'AOP 개념 및 로그인 기반 테스트'
+    title: 'Next JWP Study #14'
+    summary: 'ORM 및 Spring Data JPA'
     parent: null
-    url: /blog/2017/05/23/jwp-13
-    updated: '2017-05-23 22:05:44 +0900'
-2017-05-29-jwp-15:
-    type: blog
-    title: 'Next JWP Study #15'
-    summary: 'RESTful API 설계'
-    parent: null
-    url: /blog/2017/05/29/jwp-15
-    updated: '2017-05-29 19:54:06 +0900'
+    url: /blog/2017/05/27/jwp-14
+    updated: '2017-05-27 18:00:40 +0900'
 2017-06-01-jwp-16:
     type: blog
     title: 'Next JWP Study #16'
@@ -236,6 +236,13 @@ frac1e:
     parent: null
     url: /blog/2017/08/04/hammerspoon-tutorial-02
     updated: '2017-08-04 21:32:22 +0900'
+2017-08-05-hammerspoon-tutorial-03:
+    type: blog
+    title: 'Hammerspoon 튜토리얼 03 - 한영 전환 키를 만들어 봅시다'
+    summary: 'Esc - 영문전환도 만들어 봅시다'
+    parent: null
+    url: /blog/2017/08/05/hammerspoon-tutorial-03
+    updated: '2017-08-05 12:11:00 +0900'
 programming-language:
     type: wiki
     title: '프로그래밍 언어'
@@ -243,13 +250,6 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-2017-08-06-hammerspoon-tutorial-04:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다'
-    summary: '결론은 터미널'
-    parent: null
-    url: /blog/2017/08/06/hammerspoon-tutorial-04
-    updated: '2017-08-06 13:35:00 +0900'
 2017-08-07-hammerspoon-tutorial-05:
     type: blog
     title: 'Hammerspoon 튜토리얼 05 - chooser를 사용해 봅시다'
@@ -285,13 +285,20 @@ google-search-console-remove-outdated-content:
     parent: index
     url: /wiki/google-search-console-remove-outdated-content
     updated: '2017-11-28 08:50:10 +0900'
-2017-05-27-jwp-14:
+2017-05-29-jwp-15:
     type: blog
-    title: 'Next JWP Study #14'
-    summary: 'ORM 및 Spring Data JPA'
+    title: 'Next JWP Study #15'
+    summary: 'RESTful API 설계'
     parent: null
-    url: /blog/2017/05/27/jwp-14
-    updated: '2017-05-27 18:00:40 +0900'
+    url: /blog/2017/05/29/jwp-15
+    updated: '2017-05-29 19:54:06 +0900'
+default-post:
+    type: blog
+    title: 'sample title'
+    summary: 'sample summary'
+    parent: null
+    url: /blog/2017/04/02/default-post
+    updated: '2017-04-02 12:15:32 +0900'
 Code-Complete-2:
     type: wiki
     title: 'Code Complete 2nd Edition by Steve McConnell'
@@ -306,20 +313,13 @@ coding-font:
     parent: index
     url: /wiki/coding-font
     updated: '2017-12-01 06:02:30 +0900'
-default-post:
+2017-04-10-jwp-03:
     type: blog
-    title: 'sample title'
-    summary: 'sample summary'
+    title: 'Next JWP Study #03'
+    summary: '"HTTP 이해: 두 번째 시간"'
     parent: null
-    url: /blog/2017/04/02/default-post
-    updated: '2017-04-02 12:15:32 +0900'
-2017-04-08-jwp-02:
-    type: blog
-    title: 'Next JWP Study #02'
-    summary: 'HTTP 이해'
-    parent: null
-    url: /blog/2017/04/08/jwp-02
-    updated: '2017-04-08 21:29:47 +0900'
+    url: /blog/2017/04/11/jwp-03
+    updated: '2017-04-11 22:47:18 +0900'
 2017-05-14-hhkb-jp-tmk:
     type: blog
     title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
@@ -334,13 +334,6 @@ default-post:
     parent: null
     url: /blog/2017/05/16/jwp-11
     updated: '2017-05-16 21:36:06 +0900'
-2017-05-14-jwp-10:
-    type: blog
-    title: 'Next JWP Study #10'
-    summary: 'DI 및 Spring DI'
-    parent: null
-    url: /blog/2017/05/14/jwp-10
-    updated: '2017-05-14 14:10:50 +0900'
 2017-05-20-jwp-12:
     type: blog
     title: 'Next JWP Study #12'
@@ -348,6 +341,20 @@ default-post:
     parent: null
     url: /blog/2017/05/20/jwp-12
     updated: '2017-05-20 20:44:40 +0900'
+2017-05-14-jwp-10:
+    type: blog
+    title: 'Next JWP Study #10'
+    summary: 'DI 및 Spring DI'
+    parent: null
+    url: /blog/2017/05/14/jwp-10
+    updated: '2017-05-14 14:10:50 +0900'
+2017-05-23-jwp-13:
+    type: blog
+    title: 'Next JWP Study #13'
+    summary: 'AOP 개념 및 로그인 기반 테스트'
+    parent: null
+    url: /blog/2017/05/23/jwp-13
+    updated: '2017-05-23 22:05:44 +0900'
 2017-04-03-vim-tmux-t-ut:
     type: blog
     title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
@@ -404,13 +411,6 @@ default-post:
     parent: null
     url: /blog/2017/04/17/jwp-05
     updated: '2017-04-17 15:20:00 +0900'
-2017-04-10-jwp-03:
-    type: blog
-    title: 'Next JWP Study #03'
-    summary: '"HTTP 이해: 두 번째 시간"'
-    parent: null
-    url: /blog/2017/04/11/jwp-03
-    updated: '2017-04-11 22:47:18 +0900'
 2017-04-20-jwp-06:
     type: blog
     title: 'Next JWP Study #06'
@@ -418,6 +418,13 @@ default-post:
     parent: null
     url: /blog/2017/04/22/jwp-06
     updated: '2017-04-22 23:36:10 +0900'
+2017-04-08-jwp-02:
+    type: blog
+    title: 'Next JWP Study #02'
+    summary: 'HTTP 이해'
+    parent: null
+    url: /blog/2017/04/08/jwp-02
+    updated: '2017-04-08 21:29:47 +0900'
 2017-04-03-jwp-01:
     type: blog
     title: 'Next JWP Study #01'
