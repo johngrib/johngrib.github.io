@@ -74,7 +74,14 @@ proverb:
     summary: null
     parent: index
     url: /wiki/proverb
-    updated: '2017-12-25 13:08:40 +0900'
+    updated: '2018-01-07 18:19:06 +0900'
+Postel-s-law:
+    type: wiki
+    title: '포스텔의 법칙(Postel''s law)'
+    summary: '받을 때는 관대하게, 보낼 때는 엄격하게.'
+    parent: proverb
+    url: /wiki/Postel-s-law
+    updated: '2018-01-07 18:18:15 +0900'
 mathjax-latex:
     type: wiki
     title: 'MathJax로 LaTeX 사용하기'
@@ -102,7 +109,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2017-12-24 23:21:16 +0900'
+    updated: '2018-01-07 17:46:07 +0900'
 http-message:
     type: wiki
     title: 'HTTP 메시지'
@@ -173,27 +180,20 @@ airplain-rule:
     parent: null
     url: /blog/2017/12/06/my-wiki
     updated: '2017-12-06 21:44:18 +0900'
-frac1e:
+google-search-console-remove-outdated-content:
     type: wiki
-    title: 'n개의 제비뽑기에 n번 도전'
-    summary: 1/e
+    title: 'Google Search Console - Remove outdated content'
+    summary: '구글 웹 도구 - 오래된 콘텐츠 삭제'
     parent: index
-    url: /wiki/frac1e
-    updated: '2017-12-03 09:44:20 +0900'
-2017-05-27-jwp-14:
+    url: /wiki/google-search-console-remove-outdated-content
+    updated: '2017-11-28 08:50:10 +0900'
+2017-05-29-jwp-15:
     type: blog
-    title: 'Next JWP Study #14'
-    summary: 'ORM 및 Spring Data JPA'
+    title: 'Next JWP Study #15'
+    summary: 'RESTful API 설계'
     parent: null
-    url: /blog/2017/05/27/jwp-14
-    updated: '2017-05-27 18:00:40 +0900'
-2017-06-01-jwp-16:
-    type: blog
-    title: 'Next JWP Study #16'
-    summary: 'Test, OOP 피드백 (끝)'
-    parent: null
-    url: /blog/2017/06/01/jwp-16
-    updated: '2017-06-01 19:52:40 +0900'
+    url: /blog/2017/05/29/jwp-15
+    updated: '2017-05-29 19:54:06 +0900'
 2017-07-09-vim-game-code-break:
     type: blog
     title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
@@ -278,20 +278,20 @@ java_home:
     parent: index
     url: /wiki/java_home
     updated: '2017-12-03 15:01:36 +0900'
-google-search-console-remove-outdated-content:
-    type: wiki
-    title: 'Google Search Console - Remove outdated content'
-    summary: '구글 웹 도구 - 오래된 콘텐츠 삭제'
-    parent: index
-    url: /wiki/google-search-console-remove-outdated-content
-    updated: '2017-11-28 08:50:10 +0900'
-2017-05-29-jwp-15:
+2017-06-01-jwp-16:
     type: blog
-    title: 'Next JWP Study #15'
-    summary: 'RESTful API 설계'
+    title: 'Next JWP Study #16'
+    summary: 'Test, OOP 피드백 (끝)'
     parent: null
-    url: /blog/2017/05/29/jwp-15
-    updated: '2017-05-29 19:54:06 +0900'
+    url: /blog/2017/06/01/jwp-16
+    updated: '2017-06-01 19:52:40 +0900'
+frac1e:
+    type: wiki
+    title: 'n개의 제비뽑기에 n번 도전'
+    summary: 1/e
+    parent: index
+    url: /wiki/frac1e
+    updated: '2017-12-03 09:44:20 +0900'
 default-post:
     type: blog
     title: 'sample title'
@@ -320,27 +320,6 @@ coding-font:
     parent: null
     url: /blog/2017/04/11/jwp-03
     updated: '2017-04-11 22:47:18 +0900'
-2017-05-14-hhkb-jp-tmk:
-    type: blog
-    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
-    summary: '해피해킹을 더욱 해피하게'
-    parent: null
-    url: /blog/2017/05/14/hhkb-jp-tmk
-    updated: '2017-05-14 15:50:31 +0900'
-2017-05-16-jwp-11:
-    type: blog
-    title: 'Next JWP Study #11'
-    summary: 'DI 기반 단위 테스트'
-    parent: null
-    url: /blog/2017/05/16/jwp-11
-    updated: '2017-05-16 21:36:06 +0900'
-2017-05-20-jwp-12:
-    type: blog
-    title: 'Next JWP Study #12'
-    summary: 'Spring Boot by Tests'
-    parent: null
-    url: /blog/2017/05/20/jwp-12
-    updated: '2017-05-20 20:44:40 +0900'
 2017-05-14-jwp-10:
     type: blog
     title: 'Next JWP Study #10'
@@ -348,6 +327,13 @@ coding-font:
     parent: null
     url: /blog/2017/05/14/jwp-10
     updated: '2017-05-14 14:10:50 +0900'
+2017-05-20-jwp-12:
+    type: blog
+    title: 'Next JWP Study #12'
+    summary: 'Spring Boot by Tests'
+    parent: null
+    url: /blog/2017/05/20/jwp-12
+    updated: '2017-05-20 20:44:40 +0900'
 2017-05-23-jwp-13:
     type: blog
     title: 'Next JWP Study #13'
@@ -355,6 +341,20 @@ coding-font:
     parent: null
     url: /blog/2017/05/23/jwp-13
     updated: '2017-05-23 22:05:44 +0900'
+2017-05-16-jwp-11:
+    type: blog
+    title: 'Next JWP Study #11'
+    summary: 'DI 기반 단위 테스트'
+    parent: null
+    url: /blog/2017/05/16/jwp-11
+    updated: '2017-05-16 21:36:06 +0900'
+2017-05-27-jwp-14:
+    type: blog
+    title: 'Next JWP Study #14'
+    summary: 'ORM 및 Spring Data JPA'
+    parent: null
+    url: /blog/2017/05/27/jwp-14
+    updated: '2017-05-27 18:00:40 +0900'
 2017-04-03-vim-tmux-t-ut:
     type: blog
     title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
@@ -362,27 +362,6 @@ coding-font:
     parent: null
     url: /blog/2017/04/03/vim-tmux-t-ut
     updated: '2017-04-03 07:33:49 +0900'
-2017-05-01-jwp-08:
-    type: blog
-    title: 'Next JWP Study #08'
-    summary: 'MVC 프레임워크 3단계 실습'
-    parent: null
-    url: /blog/2017/05/01/jwp-08
-    updated: '2017-05-01 07:33:10 +0900'
-2017-04-25-jwp-07:
-    type: blog
-    title: 'Next JWP Study #07'
-    summary: '중간 점검'
-    parent: null
-    url: /blog/2017/04/26/jwp-07
-    updated: '2017-04-26 21:49:43 +0900'
-2017-05-09-jwp-09:
-    type: blog
-    title: 'Next JWP Study #09'
-    summary: 'Spring MVC 실습'
-    parent: null
-    url: /blog/2017/05/09/jwp-09
-    updated: '2017-05-09 10:45:58 +0900'
 2017-05-04-input-source:
     type: blog
     title: 'Vim 사용시 한/영 전환 문제 해결하기'
@@ -390,48 +369,20 @@ coding-font:
     parent: null
     url: /blog/2017/05/04/input-source
     updated: '2017-05-04 22:05:30 +0900'
-2017-04-02-jwp-00-prepare:
+2017-05-14-hhkb-jp-tmk:
     type: blog
-    title: 'Next JWP Study #00'
-    summary: 'NextStep Java Web Programming Study 준비 작업.'
+    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
+    summary: '해피해킹을 더욱 해피하게'
     parent: null
-    url: /blog/2017/04/02/jwp-00-prepare
-    updated: '2017-04-02 12:15:32 +0900'
-2017-04-13-jwp-04:
+    url: /blog/2017/05/14/hhkb-jp-tmk
+    updated: '2017-05-14 15:50:31 +0900'
+2017-05-09-jwp-09:
     type: blog
-    title: 'Next JWP Study #04'
-    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
+    title: 'Next JWP Study #09'
+    summary: 'Spring MVC 실습'
     parent: null
-    url: /blog/2017/04/13/jwp-04
-    updated: '2017-04-13 12:15:32 +0900'
-2017-04-17-jwp-05:
-    type: blog
-    title: 'Next JWP Study #05'
-    summary: 'HTTP 웹 서버와 Servlet'
-    parent: null
-    url: /blog/2017/04/17/jwp-05
-    updated: '2017-04-17 15:20:00 +0900'
-2017-04-20-jwp-06:
-    type: blog
-    title: 'Next JWP Study #06'
-    summary: 'JDBC 라이브러리 구현'
-    parent: null
-    url: /blog/2017/04/22/jwp-06
-    updated: '2017-04-22 23:36:10 +0900'
-2017-04-08-jwp-02:
-    type: blog
-    title: 'Next JWP Study #02'
-    summary: 'HTTP 이해'
-    parent: null
-    url: /blog/2017/04/08/jwp-02
-    updated: '2017-04-08 21:29:47 +0900'
-2017-04-03-jwp-01:
-    type: blog
-    title: 'Next JWP Study #01'
-    summary: '단위 테스트와 리팩토링'
-    parent: null
-    url: /blog/2017/04/05/jwp-01
-    updated: '2017-04-05 21:52:28 +0900'
+    url: /blog/2017/05/09/jwp-09
+    updated: '2017-05-09 10:45:58 +0900'
 2017-04-03-emacs-start:
     type: blog
     title: 'emacs 사용 시작!'
@@ -439,6 +390,34 @@ coding-font:
     parent: null
     url: /blog/2017/04/02/emacs-start
     updated: '2017-04-02 16:33:24 +0900'
+2017-04-20-jwp-06:
+    type: blog
+    title: 'Next JWP Study #06'
+    summary: 'JDBC 라이브러리 구현'
+    parent: null
+    url: /blog/2017/04/22/jwp-06
+    updated: '2017-04-22 23:36:10 +0900'
+2017-04-17-jwp-05:
+    type: blog
+    title: 'Next JWP Study #05'
+    summary: 'HTTP 웹 서버와 Servlet'
+    parent: null
+    url: /blog/2017/04/17/jwp-05
+    updated: '2017-04-17 15:20:00 +0900'
+2017-04-25-jwp-07:
+    type: blog
+    title: 'Next JWP Study #07'
+    summary: '중간 점검'
+    parent: null
+    url: /blog/2017/04/26/jwp-07
+    updated: '2017-04-26 21:49:43 +0900'
+2017-05-01-jwp-08:
+    type: blog
+    title: 'Next JWP Study #08'
+    summary: 'MVC 프레임워크 3단계 실습'
+    parent: null
+    url: /blog/2017/05/01/jwp-08
+    updated: '2017-05-01 07:33:10 +0900'
 2017-03-27-tmux-ascii-control:
     type: blog
     title: 'tmux 키 조합에서 C--가 불가능한 이유.'
@@ -446,6 +425,41 @@ coding-font:
     parent: null
     url: /blog/2017/03/27/tmux-ascii-control
     updated: '2017-03-27 22:57:52 +0900'
+2017-01-22-jekyll-category-tag:
+    type: blog
+    title: 'Jekyll 블로그에 태그 추가하기.'
+    summary: '마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.'
+    parent: null
+    url: /blog/2017/01/22/jekyll-category-tag
+    updated: '2017-01-22 08:52:22 +0900'
+2017-04-03-jwp-01:
+    type: blog
+    title: 'Next JWP Study #01'
+    summary: '단위 테스트와 리팩토링'
+    parent: null
+    url: /blog/2017/04/05/jwp-01
+    updated: '2017-04-05 21:52:28 +0900'
+2017-04-13-jwp-04:
+    type: blog
+    title: 'Next JWP Study #04'
+    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
+    parent: null
+    url: /blog/2017/04/13/jwp-04
+    updated: '2017-04-13 12:15:32 +0900'
+2017-04-02-jwp-00-prepare:
+    type: blog
+    title: 'Next JWP Study #00'
+    summary: 'NextStep Java Web Programming Study 준비 작업.'
+    parent: null
+    url: /blog/2017/04/02/jwp-00-prepare
+    updated: '2017-04-02 12:15:32 +0900'
+2017-04-08-jwp-02:
+    type: blog
+    title: 'Next JWP Study #02'
+    summary: 'HTTP 이해'
+    parent: null
+    url: /blog/2017/04/08/jwp-02
+    updated: '2017-04-08 21:29:47 +0900'
 2017-03-13-uri-url:
     type: blog
     title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'
@@ -474,13 +488,6 @@ coding-font:
     parent: null
     url: /blog/2017/01/30/ideavim-build
     updated: '2017-01-30 21:22:53 +0900'
-2017-01-22-jekyll-category-tag:
-    type: blog
-    title: 'Jekyll 블로그에 태그 추가하기.'
-    summary: '마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.'
-    parent: null
-    url: /blog/2017/01/22/jekyll-category-tag
-    updated: '2017-01-22 08:52:22 +0900'
 2017-01-21-create-jekyll-blog:
     type: blog
     title: 'github에 Jekyll 블로그를 만들었다.'

@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2017-12-24 23:21:16 +0900
+updated : 2018-01-07 17:46:07 +0900
 tags    : index
 toc     : true
 public  : true
@@ -27,6 +27,7 @@ comment : false
     * [[airplain-rule]]
     * [[Conway-s-law]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
+    * [[Postel-s-law]]
 * [[RFC]]
 * [[special-chars]]
 * [[The-Jargon-File]]
