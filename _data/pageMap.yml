@@ -1,10 +1,10 @@
-2017-08-06-hammerspoon-tutorial-04:
+2017-08-07-hammerspoon-tutorial-05:
     type: blog
-    title: 'Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다'
-    summary: '결론은 터미널'
+    title: 'Hammerspoon 튜토리얼 05 - chooser를 사용해 봅시다'
+    summary: '클립보드 히스토리도 만들어 봅시다'
     parent: null
-    url: /blog/2017/08/06/hammerspoon-tutorial-04
-    updated: '2017-08-06 13:35:00 +0900'
+    url: /blog/2017/08/07/hammerspoon-tutorial-05
+    updated: '2017-08-07 09:33:00 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -60,7 +60,7 @@ special-chars:
     summary: '특수문자 검색하다 빡쳐서 작성한 문서'
     parent: index
     url: /wiki/special-chars
-    updated: '2017-12-17 08:45:57 +0900'
+    updated: '2018-01-10 16:52:03 +0900'
 RFC:
     type: wiki
     title: 'RFC(Request For Comment)'
@@ -81,7 +81,7 @@ Postel-s-law:
     summary: '받을 때는 관대하게, 보낼 때는 엄격하게.'
     parent: proverb
     url: /wiki/Postel-s-law
-    updated: '2018-01-07 18:18:15 +0900'
+    updated: '2018-01-07 18:20:48 +0900'
 mathjax-latex:
     type: wiki
     title: 'MathJax로 LaTeX 사용하기'
@@ -109,7 +109,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-01-07 17:46:07 +0900'
+    updated: '2018-01-10 16:50:05 +0900'
 http-message:
     type: wiki
     title: 'HTTP 메시지'
@@ -152,6 +152,13 @@ Conway-s-law:
     parent: proverb
     url: /wiki/Conway-s-law
     updated: '2017-12-10 00:47:52 +0900'
+braille-pattern-chars:
+    type: wiki
+    title: '점자 패턴 문자(Braille pattern)'
+    summary: null
+    parent: index
+    url: /wiki/braille-pattern-chars
+    updated: '2018-01-10 21:14:25 +0900'
 book:
     type: wiki
     title: 도서
@@ -187,20 +194,13 @@ google-search-console-remove-outdated-content:
     parent: index
     url: /wiki/google-search-console-remove-outdated-content
     updated: '2017-11-28 08:50:10 +0900'
-2017-05-29-jwp-15:
+2017-06-01-jwp-16:
     type: blog
-    title: 'Next JWP Study #15'
-    summary: 'RESTful API 설계'
+    title: 'Next JWP Study #16'
+    summary: 'Test, OOP 피드백 (끝)'
     parent: null
-    url: /blog/2017/05/29/jwp-15
-    updated: '2017-05-29 19:54:06 +0900'
-2017-07-09-vim-game-code-break:
-    type: blog
-    title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
-    summary: '혼돈! 파괴! Vim!'
-    parent: null
-    url: /blog/2017/07/06/vim-game-code-break
-    updated: '2017-07-06 00:15:00 +0900'
+    url: /blog/2017/06/01/jwp-16
+    updated: '2017-06-01 19:52:40 +0900'
 2017-07-14-aheui-explained:
     type: blog
     title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
@@ -243,6 +243,13 @@ google-search-console-remove-outdated-content:
     parent: null
     url: /blog/2017/08/05/hammerspoon-tutorial-03
     updated: '2017-08-05 12:11:00 +0900'
+2017-08-06-hammerspoon-tutorial-04:
+    type: blog
+    title: 'Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다'
+    summary: '결론은 터미널'
+    parent: null
+    url: /blog/2017/08/06/hammerspoon-tutorial-04
+    updated: '2017-08-06 13:35:00 +0900'
 programming-language:
     type: wiki
     title: '프로그래밍 언어'
@@ -250,13 +257,6 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-2017-08-07-hammerspoon-tutorial-05:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 05 - chooser를 사용해 봅시다'
-    summary: '클립보드 히스토리도 만들어 봅시다'
-    parent: null
-    url: /blog/2017/08/07/hammerspoon-tutorial-05
-    updated: '2017-08-07 09:33:00 +0900'
 2017-08-23-0.30000000000000004:
     type: blog
     title: '0.1 + 0.2 == 0.30000000000000004'
@@ -271,6 +271,13 @@ programming-language:
     parent: null
     url: /blog/2017/09/20/regex-prime
     updated: '2017-09-20 20:56:55 +0900'
+2017-05-29-jwp-15:
+    type: blog
+    title: 'Next JWP Study #15'
+    summary: 'RESTful API 설계'
+    parent: null
+    url: /blog/2017/05/29/jwp-15
+    updated: '2017-05-29 19:54:06 +0900'
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -278,13 +285,13 @@ java_home:
     parent: index
     url: /wiki/java_home
     updated: '2017-12-03 15:01:36 +0900'
-2017-06-01-jwp-16:
+2017-07-09-vim-game-code-break:
     type: blog
-    title: 'Next JWP Study #16'
-    summary: 'Test, OOP 피드백 (끝)'
+    title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
+    summary: '혼돈! 파괴! Vim!'
     parent: null
-    url: /blog/2017/06/01/jwp-16
-    updated: '2017-06-01 19:52:40 +0900'
+    url: /blog/2017/07/06/vim-game-code-break
+    updated: '2017-07-06 00:15:00 +0900'
 frac1e:
     type: wiki
     title: 'n개의 제비뽑기에 n번 도전'
