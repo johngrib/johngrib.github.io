@@ -160,6 +160,10 @@ book:
 special-chars:
     - {fileName: braille-pattern-chars, updated: '2018-01-10 21:14:25 +0900'}
     - {fileName: special-chars, updated: '2018-01-10 16:52:03 +0900'}
+스크랩:
+    - {fileName: clipping, updated: '2018-01-11 14:13:56 +0900'}
+tldr:
+    - {fileName: clipping, updated: '2018-01-11 14:13:56 +0900'}
 jolt-award:
     - {fileName: Code-Complete-2, updated: '2017-12-05 21:53:52 +0900'}
 font:
@@ -200,7 +204,7 @@ http:
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-01-10 16:50:05 +0900'}
+    - {fileName: index, updated: '2018-01-11 14:12:31 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
@@ -222,6 +226,8 @@ rfc:
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 hacker:
     - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
+번역:
+    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING, updated: '2018-01-11 22:23:52 +0900'}
 trouble-shooting:
     - {fileName: vim-conceallevel, updated: '2017-12-20 13:13:32 +0900'}
 why:

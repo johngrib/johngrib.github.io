@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-01-10 16:50:05 +0900
+updated : 2018-01-11 14:12:31 +0900
 tags    : index
 toc     : true
 public  : true
@@ -12,6 +12,7 @@ comment : false
 * [[book]]{도서}
     * [[Code-Complete-2]]
 * [[braille-pattern-chars]]
+* [[clipping]]{글 모음 및 요약}
 * [[coding-font]]{코딩 폰트}
 * [[frac1e]]{n개의 제비뽑기에 n번 도전}
 * [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
