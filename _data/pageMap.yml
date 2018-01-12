@@ -1,10 +1,10 @@
-2017-08-23-0.30000000000000004:
+2017-09-20-regex-prime:
     type: blog
-    title: '0.1 + 0.2 == 0.30000000000000004'
-    summary: '자나깨나 부동소수점 조심'
+    title: '소수를 판별하는 정규식'
+    summary: '1진법을 사용해 소수를 판별하자!'
     parent: null
-    url: /blog/2017/08/23/0.30000000000000004
-    updated: '2017-08-23 18:15:32 +0900'
+    url: /blog/2017/09/20/regex-prime
+    updated: '2017-09-20 20:56:55 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -12,6 +12,13 @@ yaml:
     parent: index
     url: /wiki/yaml
     updated: '2017-12-02 16:45:25 +0900'
+toda-seiji-scientia:
+    type: wiki
+    title: '스키엔티아 - 도다 세이지 만화'
+    summary: SCIENTIA
+    parent: book
+    url: /wiki/toda-seiji-scientia
+    updated: '2018-01-13 07:10:02 +0900'
 THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING:
     type: wiki
     title: 'THE NEXT BIG BLUE-COLLAR JOB IS CODING'
@@ -19,13 +26,27 @@ THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING:
     parent: clipping
     url: /wiki/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING
     updated: '2018-01-12 10:46:53 +0900'
+review-2018:
+    type: wiki
+    title: '2018년 리뷰 모음'
+    summary: null
+    parent: index
+    url: /wiki/review-2018
+    updated: '2018-01-13 07:03:16 +0900'
+review:
+    type: wiki
+    title: '리뷰 모음'
+    summary: null
+    parent: index
+    url: /wiki/review
+    updated: '2018-01-13 06:52:54 +0900'
 index:
     type: wiki
     title: 'wiki index'
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-01-12 23:36:26 +0900'
+    updated: '2018-01-13 07:00:13 +0900'
 clipping:
     type: wiki
     title: '글 모음 및 요약'
@@ -33,27 +54,13 @@ clipping:
     parent: index
     url: /wiki/clipping
     updated: '2018-01-11 14:13:56 +0900'
-2017-12-06-my-wiki:
-    type: blog
-    title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
-    summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
-    parent: null
-    url: /blog/2017/12/06/my-wiki
-    updated: '2017-12-06 21:44:18 +0900'
-2017-03-13-uri-url:
-    type: blog
-    title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'
-    summary: '"결론: URL은 URI의 부분집합."'
-    parent: null
-    url: /blog/2017/03/13/uri-url
-    updated: '2017-03-13 21:30:46 +0900'
-2017-04-02-jwp-00-prepare:
-    type: blog
-    title: 'Next JWP Study #00'
-    summary: 'NextStep Java Web Programming Study 준비 작업.'
-    parent: null
-    url: /blog/2017/04/02/jwp-00-prepare
-    updated: '2017-04-02 12:15:32 +0900'
+book:
+    type: wiki
+    title: 도서
+    summary: null
+    parent: index
+    url: /wiki/book
+    updated: '2017-12-05 19:19:56 +0900'
 2017-04-03-emacs-start:
     type: blog
     title: 'emacs 사용 시작!'
@@ -61,13 +68,6 @@ clipping:
     parent: null
     url: /blog/2017/04/02/emacs-start
     updated: '2017-04-02 16:33:24 +0900'
-2017-04-03-jwp-01:
-    type: blog
-    title: 'Next JWP Study #01'
-    summary: '단위 테스트와 리팩토링'
-    parent: null
-    url: /blog/2017/04/05/jwp-01
-    updated: '2017-04-05 21:52:28 +0900'
 2017-04-03-vim-tmux-t-ut:
     type: blog
     title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
@@ -257,6 +257,13 @@ clipping:
     parent: null
     url: /blog/2017/08/07/hammerspoon-tutorial-05
     updated: '2017-08-07 09:33:00 +0900'
+2017-08-23-0.30000000000000004:
+    type: blog
+    title: '0.1 + 0.2 == 0.30000000000000004'
+    summary: '자나깨나 부동소수점 조심'
+    parent: null
+    url: /blog/2017/08/23/0.30000000000000004
+    updated: '2017-08-23 18:15:32 +0900'
 why-http-80-https-443:
     type: wiki
     title: 'http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?'
@@ -264,20 +271,13 @@ why-http-80-https-443:
     parent: why
     url: /wiki/why-http-80-https-443
     updated: '2017-12-17 09:11:39 +0900'
-2017-09-20-regex-prime:
+2017-12-06-my-wiki:
     type: blog
-    title: '소수를 판별하는 정규식'
-    summary: '1진법을 사용해 소수를 판별하자!'
+    title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
+    summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
     parent: null
-    url: /blog/2017/09/20/regex-prime
-    updated: '2017-09-20 20:56:55 +0900'
-2017-03-27-tmux-ascii-control:
-    type: blog
-    title: 'tmux 키 조합에서 C--가 불가능한 이유.'
-    summary: '"결론: ascii 코드값 때문."'
-    parent: null
-    url: /blog/2017/03/27/tmux-ascii-control
-    updated: '2017-03-27 22:57:52 +0900'
+    url: /blog/2017/12/06/my-wiki
+    updated: '2017-12-06 21:44:18 +0900'
 2017-12-30-review2017:
     type: blog
     title: '2017년 회고'
@@ -292,13 +292,13 @@ airplain-rule:
     parent: proverb
     url: /wiki/airplain-rule
     updated: '2017-12-25 13:07:43 +0900'
-book:
-    type: wiki
-    title: 도서
-    summary: null
-    parent: index
-    url: /wiki/book
-    updated: '2017-12-05 19:19:56 +0900'
+2017-04-03-jwp-01:
+    type: blog
+    title: 'Next JWP Study #01'
+    summary: '단위 테스트와 리팩토링'
+    parent: null
+    url: /blog/2017/04/05/jwp-01
+    updated: '2017-04-05 21:52:28 +0900'
 braille-pattern-chars:
     type: wiki
     title: '점자 패턴 문자(Braille pattern)'
@@ -306,13 +306,13 @@ braille-pattern-chars:
     parent: index
     url: /wiki/braille-pattern-chars
     updated: '2018-01-10 21:14:25 +0900'
-2017-03-12-telegram-bot:
-    type: blog
-    title: '텔레그램 봇 스켈레톤 만들기.'
-    summary: 'node.js, heroku로 만드는 텔레그램 챗봇.'
-    parent: null
-    url: /blog/2017/03/12/telegram-bot
-    updated: '2017-03-12 21:08:16 +0900'
+why:
+    type: wiki
+    title: why
+    summary: null
+    parent: index
+    url: /wiki/why
+    updated: '2017-12-13 12:20:03 +0900'
 Code-Complete-2:
     type: wiki
     title: 'Code Complete 2nd Edition by Steve McConnell'
@@ -390,13 +390,13 @@ http-message:
     parent: index
     url: /wiki/http-message
     updated: '2017-12-25 11:41:18 +0900'
-why:
+vim-conceallevel:
     type: wiki
-    title: why
-    summary: null
-    parent: index
-    url: /wiki/why
-    updated: '2017-12-13 12:20:03 +0900'
+    title: 'conceallevel (Vim)'
+    summary: 'Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자'
+    parent: Vim
+    url: /wiki/vim-conceallevel
+    updated: '2017-12-20 13:13:32 +0900'
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -446,6 +446,20 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-01-07 18:19:06 +0900'
+Vim:
+    type: wiki
+    title: Vim
+    summary: null
+    parent: index
+    url: /wiki/Vim
+    updated: '2017-12-20 13:13:21 +0900'
+URI:
+    type: wiki
+    title: URI
+    summary: 'Uniform Resource Identifier'
+    parent: index
+    url: /wiki/URI
+    updated: '2017-12-18 23:00:44 +0900'
 RFC:
     type: wiki
     title: 'RFC(Request For Comment)'
@@ -467,34 +481,34 @@ The-Jargon-File:
     parent: book
     url: /wiki/The-Jargon-File
     updated: '2017-12-10 00:55:18 +0900'
-vim-conceallevel:
-    type: wiki
-    title: 'conceallevel (Vim)'
-    summary: 'Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자'
-    parent: Vim
-    url: /wiki/vim-conceallevel
-    updated: '2017-12-20 13:13:32 +0900'
-URI:
-    type: wiki
-    title: URI
-    summary: 'Uniform Resource Identifier'
-    parent: index
-    url: /wiki/URI
-    updated: '2017-12-18 23:00:44 +0900'
-Vim:
-    type: wiki
-    title: Vim
-    summary: null
-    parent: index
-    url: /wiki/Vim
-    updated: '2017-12-20 13:13:21 +0900'
-2017-01-30-ideavim-build:
+2017-03-27-tmux-ascii-control:
     type: blog
-    title: 'IdeaVIM 빌드가 안 되는 문제 해결.'
-    summary: '"결론: 삽질 끝에 공식 계정에 물어보고 해결."'
+    title: 'tmux 키 조합에서 C--가 불가능한 이유.'
+    summary: '"결론: ascii 코드값 때문."'
     parent: null
-    url: /blog/2017/01/30/ideavim-build
-    updated: '2017-01-30 21:22:53 +0900'
+    url: /blog/2017/03/27/tmux-ascii-control
+    updated: '2017-03-27 22:57:52 +0900'
+2017-04-02-jwp-00-prepare:
+    type: blog
+    title: 'Next JWP Study #00'
+    summary: 'NextStep Java Web Programming Study 준비 작업.'
+    parent: null
+    url: /blog/2017/04/02/jwp-00-prepare
+    updated: '2017-04-02 12:15:32 +0900'
+2017-03-12-telegram-bot:
+    type: blog
+    title: '텔레그램 봇 스켈레톤 만들기.'
+    summary: 'node.js, heroku로 만드는 텔레그램 챗봇.'
+    parent: null
+    url: /blog/2017/03/12/telegram-bot
+    updated: '2017-03-12 21:08:16 +0900'
+2017-03-13-uri-url:
+    type: blog
+    title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'
+    summary: '"결론: URL은 URI의 부분집합."'
+    parent: null
+    url: /blog/2017/03/13/uri-url
+    updated: '2017-03-13 21:30:46 +0900'
 2017-03-08-til-indent-style:
     type: blog
     title: '중괄호 인덴트 스타일을 조사해 보았다.'
@@ -502,6 +516,13 @@ Vim:
     parent: null
     url: /blog/2017/03/08/til-indent-style
     updated: '2017-03-08 23:00:00 +0900'
+2017-01-30-ideavim-build:
+    type: blog
+    title: 'IdeaVIM 빌드가 안 되는 문제 해결.'
+    summary: '"결론: 삽질 끝에 공식 계정에 물어보고 해결."'
+    parent: null
+    url: /blog/2017/01/30/ideavim-build
+    updated: '2017-01-30 21:22:53 +0900'
 2017-01-22-jekyll-category-tag:
     type: blog
     title: 'Jekyll 블로그에 태그 추가하기.'
