@@ -3,11 +3,11 @@ layout  : wiki
 title   : THE NEXT BIG BLUE-COLLAR JOB IS CODING
 summary : 다음 세대 블루 칼라의 대표적인 일자리는 코딩이다
 date    : 2018-01-11 14:15:00 +0900
-updated : 2018-01-11 22:37:56 +0900
+updated : 2018-01-12 10:46:53 +0900
 tags    : 번역
 toc     : true
 public  : true
-parent  : index
+parent  : clipping
 latex   : false
 ---
 * TOC

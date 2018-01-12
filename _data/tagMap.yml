@@ -204,7 +204,7 @@ http:
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-01-11 14:12:31 +0900'}
+    - {fileName: index, updated: '2018-01-12 23:36:26 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
@@ -227,7 +227,7 @@ rfc:
 hacker:
     - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
 번역:
-    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING, updated: '2018-01-11 22:23:52 +0900'}
+    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING, updated: '2018-01-12 10:46:53 +0900'}
 trouble-shooting:
     - {fileName: vim-conceallevel, updated: '2017-12-20 13:13:32 +0900'}
 why:
