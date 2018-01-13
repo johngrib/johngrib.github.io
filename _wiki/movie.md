@@ -3,7 +3,7 @@ layout  : wiki
 title   : 영화, TV 시리즈
 summary :
 date    : 2018-01-13 11:18:04 +0900
-updated : 2018-01-13 11:23:24 +0900
+updated : 2018-01-13 15:56:06 +0900
 tags    : movie
 toc     : true
 public  : true
@@ -14,3 +14,4 @@ latex   : false
 {:toc}
 
 * [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]]
+* [[HOT-FUZZ]]
