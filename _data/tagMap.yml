@@ -154,7 +154,7 @@ law:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
     - {fileName: Postel-s-law, updated: '2018-01-07 18:20:48 +0900'}
 book:
-    - {fileName: book, updated: '2017-12-05 19:19:56 +0900'}
+    - {fileName: book, updated: '2018-01-13 11:10:56 +0900'}
     - {fileName: Code-Complete-2, updated: '2017-12-05 21:53:52 +0900'}
     - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
 special-chars:
@@ -204,7 +204,7 @@ http:
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-01-13 07:00:13 +0900'}
+    - {fileName: index, updated: '2018-01-13 11:15:42 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
@@ -217,14 +217,16 @@ bug:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
 latex:
     - {fileName: mathjax-latex, updated: '2017-12-23 18:18:43 +0900'}
+media:
+    - {fileName: media, updated: '2018-01-13 11:09:35 +0900'}
 programming:
     - {fileName: programming-language, updated: '2017-12-03 15:01:36 +0900'}
 culture:
     - {fileName: proverb, updated: '2018-01-07 18:19:06 +0900'}
 review:
-    - {fileName: review, updated: '2018-01-13 06:52:54 +0900'}
-    - {fileName: review-2018, updated: '2018-01-13 07:03:16 +0900'}
-    - {fileName: toda-seiji-scientia, updated: '2018-01-13 07:10:02 +0900'}
+    - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
+    - {fileName: review-2018, updated: '2018-01-13 11:15:11 +0900'}
+    - {fileName: toda-seiji-scientia, updated: '2018-01-13 07:19:51 +0900'}
 rfc:
     - {fileName: RFC, updated: '2017-12-12 22:06:20 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
@@ -233,9 +235,9 @@ hacker:
 번역:
     - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING, updated: '2018-01-12 10:46:53 +0900'}
 만화책:
-    - {fileName: toda-seiji-scientia, updated: '2018-01-13 07:10:02 +0900'}
+    - {fileName: toda-seiji-scientia, updated: '2018-01-13 07:19:51 +0900'}
 sf:
-    - {fileName: toda-seiji-scientia, updated: '2018-01-13 07:10:02 +0900'}
+    - {fileName: toda-seiji-scientia, updated: '2018-01-13 07:19:51 +0900'}
 trouble-shooting:
     - {fileName: vim-conceallevel, updated: '2017-12-20 13:13:32 +0900'}
 why:

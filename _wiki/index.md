@@ -2,16 +2,13 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-01-13 07:00:13 +0900
+updated : 2018-01-13 11:15:42 +0900
 tags    : index
 toc     : true
 public  : true
 comment : false
 ---
 
-* [[book]]{도서}
-    * [[Code-Complete-2]]
-    * [[toda-seiji-scientia]]
 * [[braille-pattern-chars]]
 * [[clipping]]{글 모음 및 요약}
     * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
@@ -25,6 +22,12 @@ comment : false
 * [[http-message]]
 * [[java_home]]{java_home 명령어}
 * [[legend]]
+* [[media]]
+    * [[book]]{도서}
+        * [[Code-Complete-2]]
+        * [[toda-seiji-scientia]]
+    * [[review]]
+        * [[review-2018]]
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
@@ -32,8 +35,6 @@ comment : false
     * [[Conway-s-law]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
     * [[Postel-s-law]]
-* [[review]]
-    * [[review-2018]]
 * [[RFC]]
 * [[special-chars]]
 * [[The-Jargon-File]]

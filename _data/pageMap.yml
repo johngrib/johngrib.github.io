@@ -1,10 +1,10 @@
-2017-09-20-regex-prime:
+2017-12-06-my-wiki:
     type: blog
-    title: '소수를 판별하는 정규식'
-    summary: '1진법을 사용해 소수를 판별하자!'
+    title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
+    summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
     parent: null
-    url: /blog/2017/09/20/regex-prime
-    updated: '2017-09-20 20:56:55 +0900'
+    url: /blog/2017/12/06/my-wiki
+    updated: '2017-12-06 21:44:18 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -18,7 +18,7 @@ toda-seiji-scientia:
     summary: SCIENTIA
     parent: book
     url: /wiki/toda-seiji-scientia
-    updated: '2018-01-13 07:10:02 +0900'
+    updated: '2018-01-13 07:19:51 +0900'
 THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING:
     type: wiki
     title: 'THE NEXT BIG BLUE-COLLAR JOB IS CODING'
@@ -30,23 +30,30 @@ review-2018:
     type: wiki
     title: '2018년 리뷰 모음'
     summary: null
-    parent: index
+    parent: review
     url: /wiki/review-2018
-    updated: '2018-01-13 07:03:16 +0900'
+    updated: '2018-01-13 11:15:11 +0900'
 review:
     type: wiki
     title: '리뷰 모음'
     summary: null
-    parent: index
+    parent: media
     url: /wiki/review
-    updated: '2018-01-13 06:52:54 +0900'
+    updated: '2018-01-13 11:14:57 +0900'
+media:
+    type: wiki
+    title: 미디어
+    summary: null
+    parent: index
+    url: /wiki/media
+    updated: '2018-01-13 11:09:35 +0900'
 index:
     type: wiki
     title: 'wiki index'
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-01-13 07:00:13 +0900'
+    updated: '2018-01-13 11:15:42 +0900'
 clipping:
     type: wiki
     title: '글 모음 및 요약'
@@ -58,9 +65,9 @@ book:
     type: wiki
     title: 도서
     summary: null
-    parent: index
+    parent: media
     url: /wiki/book
-    updated: '2017-12-05 19:19:56 +0900'
+    updated: '2018-01-13 11:10:56 +0900'
 2017-04-03-emacs-start:
     type: blog
     title: 'emacs 사용 시작!'
@@ -75,13 +82,6 @@ book:
     parent: null
     url: /blog/2017/04/03/vim-tmux-t-ut
     updated: '2017-04-03 07:33:49 +0900'
-2017-04-08-jwp-02:
-    type: blog
-    title: 'Next JWP Study #02'
-    summary: 'HTTP 이해'
-    parent: null
-    url: /blog/2017/04/08/jwp-02
-    updated: '2017-04-08 21:29:47 +0900'
 2017-04-10-jwp-03:
     type: blog
     title: 'Next JWP Study #03'
@@ -264,6 +264,13 @@ book:
     parent: null
     url: /blog/2017/08/23/0.30000000000000004
     updated: '2017-08-23 18:15:32 +0900'
+2017-09-20-regex-prime:
+    type: blog
+    title: '소수를 판별하는 정규식'
+    summary: '1진법을 사용해 소수를 판별하자!'
+    parent: null
+    url: /blog/2017/09/20/regex-prime
+    updated: '2017-09-20 20:56:55 +0900'
 why-http-80-https-443:
     type: wiki
     title: 'http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?'
@@ -271,13 +278,6 @@ why-http-80-https-443:
     parent: why
     url: /wiki/why-http-80-https-443
     updated: '2017-12-17 09:11:39 +0900'
-2017-12-06-my-wiki:
-    type: blog
-    title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
-    summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
-    parent: null
-    url: /blog/2017/12/06/my-wiki
-    updated: '2017-12-06 21:44:18 +0900'
 2017-12-30-review2017:
     type: blog
     title: '2017년 회고'
@@ -292,20 +292,6 @@ airplain-rule:
     parent: proverb
     url: /wiki/airplain-rule
     updated: '2017-12-25 13:07:43 +0900'
-2017-04-03-jwp-01:
-    type: blog
-    title: 'Next JWP Study #01'
-    summary: '단위 테스트와 리팩토링'
-    parent: null
-    url: /blog/2017/04/05/jwp-01
-    updated: '2017-04-05 21:52:28 +0900'
-braille-pattern-chars:
-    type: wiki
-    title: '점자 패턴 문자(Braille pattern)'
-    summary: null
-    parent: index
-    url: /wiki/braille-pattern-chars
-    updated: '2018-01-10 21:14:25 +0900'
 why:
     type: wiki
     title: why
@@ -313,6 +299,20 @@ why:
     parent: index
     url: /wiki/why
     updated: '2017-12-13 12:20:03 +0900'
+braille-pattern-chars:
+    type: wiki
+    title: '점자 패턴 문자(Braille pattern)'
+    summary: null
+    parent: index
+    url: /wiki/braille-pattern-chars
+    updated: '2018-01-10 21:14:25 +0900'
+2017-04-08-jwp-02:
+    type: blog
+    title: 'Next JWP Study #02'
+    summary: 'HTTP 이해'
+    parent: null
+    url: /blog/2017/04/08/jwp-02
+    updated: '2017-04-08 21:29:47 +0900'
 Code-Complete-2:
     type: wiki
     title: 'Code Complete 2nd Edition by Steve McConnell'
@@ -425,6 +425,13 @@ mathjax-latex:
     parent: how-to
     url: /wiki/mathjax-latex
     updated: '2017-12-23 18:18:43 +0900'
+Vim:
+    type: wiki
+    title: Vim
+    summary: null
+    parent: index
+    url: /wiki/Vim
+    updated: '2017-12-20 13:13:21 +0900'
 Postel-s-law:
     type: wiki
     title: '포스텔의 법칙(Postel''s law)'
@@ -446,13 +453,6 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-01-07 18:19:06 +0900'
-Vim:
-    type: wiki
-    title: Vim
-    summary: null
-    parent: index
-    url: /wiki/Vim
-    updated: '2017-12-20 13:13:21 +0900'
 URI:
     type: wiki
     title: URI
@@ -460,6 +460,13 @@ URI:
     parent: index
     url: /wiki/URI
     updated: '2017-12-18 23:00:44 +0900'
+The-Jargon-File:
+    type: wiki
+    title: 'The Jargon File'
+    summary: '해커들의 은어 사전'
+    parent: book
+    url: /wiki/The-Jargon-File
+    updated: '2017-12-10 00:55:18 +0900'
 RFC:
     type: wiki
     title: 'RFC(Request For Comment)'
@@ -474,13 +481,13 @@ special-chars:
     parent: index
     url: /wiki/special-chars
     updated: '2018-01-10 16:52:03 +0900'
-The-Jargon-File:
-    type: wiki
-    title: 'The Jargon File'
-    summary: '해커들의 은어 사전'
-    parent: book
-    url: /wiki/The-Jargon-File
-    updated: '2017-12-10 00:55:18 +0900'
+2017-04-03-jwp-01:
+    type: blog
+    title: 'Next JWP Study #01'
+    summary: '단위 테스트와 리팩토링'
+    parent: null
+    url: /blog/2017/04/05/jwp-01
+    updated: '2017-04-05 21:52:28 +0900'
 2017-03-27-tmux-ascii-control:
     type: blog
     title: 'tmux 키 조합에서 C--가 불가능한 이유.'
