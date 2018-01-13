@@ -40,20 +40,27 @@ review:
     parent: media
     url: /wiki/review
     updated: '2018-01-13 11:14:57 +0900'
+movie:
+    type: wiki
+    title: '영화, TV 시리즈'
+    summary: null
+    parent: media
+    url: /wiki/movie
+    updated: '2018-01-13 11:18:10 +0900'
 media:
     type: wiki
     title: 미디어
     summary: null
     parent: index
     url: /wiki/media
-    updated: '2018-01-13 11:09:35 +0900'
+    updated: '2018-01-13 11:20:36 +0900'
 index:
     type: wiki
     title: 'wiki index'
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-01-13 11:15:42 +0900'
+    updated: '2018-01-13 11:17:22 +0900'
 clipping:
     type: wiki
     title: '글 모음 및 요약'
@@ -68,27 +75,20 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-01-13 11:10:56 +0900'
-2017-04-03-emacs-start:
+Code-Complete-2:
+    type: wiki
+    title: 'Code Complete 2nd Edition by Steve McConnell'
+    summary: '코드 컴플리트 - 스티브 맥코넬'
+    parent: book
+    url: /wiki/Code-Complete-2
+    updated: '2017-12-05 21:53:52 +0900'
+2017-04-08-jwp-02:
     type: blog
-    title: 'emacs 사용 시작!'
-    summary: '하지만 Vim은 포기하지 않는다.'
+    title: 'Next JWP Study #02'
+    summary: 'HTTP 이해'
     parent: null
-    url: /blog/2017/04/02/emacs-start
-    updated: '2017-04-02 16:33:24 +0900'
-2017-04-03-vim-tmux-t-ut:
-    type: blog
-    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
-    summary: '"`set t_ut=`로 한 방에 해결"'
-    parent: null
-    url: /blog/2017/04/03/vim-tmux-t-ut
-    updated: '2017-04-03 07:33:49 +0900'
-2017-04-10-jwp-03:
-    type: blog
-    title: 'Next JWP Study #03'
-    summary: '"HTTP 이해: 두 번째 시간"'
-    parent: null
-    url: /blog/2017/04/11/jwp-03
-    updated: '2017-04-11 22:47:18 +0900'
+    url: /blog/2017/04/08/jwp-02
+    updated: '2017-04-08 21:29:47 +0900'
 2017-04-13-jwp-04:
     type: blog
     title: 'Next JWP Study #04'
@@ -292,13 +292,13 @@ airplain-rule:
     parent: proverb
     url: /wiki/airplain-rule
     updated: '2017-12-25 13:07:43 +0900'
-why:
-    type: wiki
-    title: why
-    summary: null
-    parent: index
-    url: /wiki/why
-    updated: '2017-12-13 12:20:03 +0900'
+2017-04-03-vim-tmux-t-ut:
+    type: blog
+    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
+    summary: '"`set t_ut=`로 한 방에 해결"'
+    parent: null
+    url: /blog/2017/04/03/vim-tmux-t-ut
+    updated: '2017-04-03 07:33:49 +0900'
 braille-pattern-chars:
     type: wiki
     title: '점자 패턴 문자(Braille pattern)'
@@ -306,20 +306,20 @@ braille-pattern-chars:
     parent: index
     url: /wiki/braille-pattern-chars
     updated: '2018-01-10 21:14:25 +0900'
-2017-04-08-jwp-02:
-    type: blog
-    title: 'Next JWP Study #02'
-    summary: 'HTTP 이해'
-    parent: null
-    url: /blog/2017/04/08/jwp-02
-    updated: '2017-04-08 21:29:47 +0900'
-Code-Complete-2:
+why:
     type: wiki
-    title: 'Code Complete 2nd Edition by Steve McConnell'
-    summary: '코드 컴플리트 - 스티브 맥코넬'
-    parent: book
-    url: /wiki/Code-Complete-2
-    updated: '2017-12-05 21:53:52 +0900'
+    title: why
+    summary: null
+    parent: index
+    url: /wiki/why
+    updated: '2017-12-13 12:20:03 +0900'
+2017-04-10-jwp-03:
+    type: blog
+    title: 'Next JWP Study #03'
+    summary: '"HTTP 이해: 두 번째 시간"'
+    parent: null
+    url: /blog/2017/04/11/jwp-03
+    updated: '2017-04-11 22:47:18 +0900'
 coding-font:
     type: wiki
     title: '코딩 폰트'
@@ -432,6 +432,13 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
+URI:
+    type: wiki
+    title: URI
+    summary: 'Uniform Resource Identifier'
+    parent: index
+    url: /wiki/URI
+    updated: '2017-12-18 23:00:44 +0900'
 Postel-s-law:
     type: wiki
     title: '포스텔의 법칙(Postel''s law)'
@@ -453,13 +460,6 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-01-07 18:19:06 +0900'
-URI:
-    type: wiki
-    title: URI
-    summary: 'Uniform Resource Identifier'
-    parent: index
-    url: /wiki/URI
-    updated: '2017-12-18 23:00:44 +0900'
 The-Jargon-File:
     type: wiki
     title: 'The Jargon File'
@@ -467,13 +467,6 @@ The-Jargon-File:
     parent: book
     url: /wiki/The-Jargon-File
     updated: '2017-12-10 00:55:18 +0900'
-RFC:
-    type: wiki
-    title: 'RFC(Request For Comment)'
-    summary: '일련번호가 매겨진 인터넷 표준 문서'
-    parent: index
-    url: /wiki/RFC
-    updated: '2017-12-12 22:06:20 +0900'
 special-chars:
     type: wiki
     title: '특수문자 모음'
@@ -481,6 +474,20 @@ special-chars:
     parent: index
     url: /wiki/special-chars
     updated: '2018-01-10 16:52:03 +0900'
+RFC:
+    type: wiki
+    title: 'RFC(Request For Comment)'
+    summary: '일련번호가 매겨진 인터넷 표준 문서'
+    parent: index
+    url: /wiki/RFC
+    updated: '2017-12-12 22:06:20 +0900'
+2017-04-03-emacs-start:
+    type: blog
+    title: 'emacs 사용 시작!'
+    summary: '하지만 Vim은 포기하지 않는다.'
+    parent: null
+    url: /blog/2017/04/02/emacs-start
+    updated: '2017-04-02 16:33:24 +0900'
 2017-04-03-jwp-01:
     type: blog
     title: 'Next JWP Study #01'
