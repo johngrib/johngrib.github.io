@@ -35,7 +35,7 @@ layout: home
     <H3>최근 변경된 문서</H3>
     <ul class="post-list">
 {% assign documents = site.wiki | sort: 'updated' | reverse %}
-{% for doc in documents limit: 10 %}
+{% for doc in documents limit: 30 %}
     {% if doc.public == true and doc.title != 'wiki index'%}
         <li>
             <div>
