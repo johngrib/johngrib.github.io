@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTTP 메시지
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2017-12-25 11:41:18 +0900
+updated : 2018-01-14 17:33:01 +0900
 tags    : http
 toc     : true
 public  : true
@@ -207,6 +207,13 @@ Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF
 ### 206 Partial Content
 ### 300 Multiple Choices
 ### 301 Moved Permanently
+
+[RFC 7231 - 6.4.2 301 Moved Permanently ](https://tools.ietf.org/html/rfc7231#section-6.4.2 )
+
+리소스가 영구히 옮겨져 다른 URI를 할당받은 경우를 의미한다.
+
+응답에는 앞으로 해당 자원에 접근할 때 참조할 수 있도록 변경된 URI '들'이 포함된다.
+
 ### 302 Found
 ### 303 See Other
 ### 304 Not Modified
