@@ -61,13 +61,20 @@ media:
     parent: index
     url: /wiki/media
     updated: '2018-01-13 11:20:36 +0900'
+legend:
+    type: wiki
+    title: '레전드 모음'
+    summary: null
+    parent: index
+    url: /wiki/legend
+    updated: '2018-01-16 22:20:48 +0900'
 index:
     type: wiki
     title: 'wiki index'
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-01-13 15:39:51 +0900'
+    updated: '2018-01-15 17:20:46 +0900'
 http-message:
     type: wiki
     title: 'HTTP 메시지'
@@ -110,27 +117,20 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-01-13 11:10:56 +0900'
-default-post:
+2017-04-13-jwp-04:
     type: blog
-    title: 'sample title'
-    summary: 'sample summary'
+    title: 'Next JWP Study #04'
+    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
     parent: null
-    url: /blog/2017/04/02/default-post
-    updated: '2017-04-02 12:15:32 +0900'
-2017-04-25-jwp-07:
+    url: /blog/2017/04/13/jwp-04
+    updated: '2017-04-13 12:15:32 +0900'
+2017-05-01-jwp-08:
     type: blog
-    title: 'Next JWP Study #07'
-    summary: '중간 점검'
+    title: 'Next JWP Study #08'
+    summary: 'MVC 프레임워크 3단계 실습'
     parent: null
-    url: /blog/2017/04/26/jwp-07
-    updated: '2017-04-26 21:49:43 +0900'
-2017-05-04-input-source:
-    type: blog
-    title: 'Vim 사용시 한/영 전환 문제 해결하기'
-    summary: 'hammerspoon으로 해결'
-    parent: null
-    url: /blog/2017/05/04/input-source
-    updated: '2017-05-04 22:05:30 +0900'
+    url: /blog/2017/05/01/jwp-08
+    updated: '2017-05-01 07:33:10 +0900'
 2017-05-09-jwp-09:
     type: blog
     title: 'Next JWP Study #09'
@@ -292,6 +292,13 @@ airplain-rule:
     parent: proverb
     url: /wiki/airplain-rule
     updated: '2017-12-25 13:07:43 +0900'
+2017-04-25-jwp-07:
+    type: blog
+    title: 'Next JWP Study #07'
+    summary: '중간 점검'
+    parent: null
+    url: /blog/2017/04/26/jwp-07
+    updated: '2017-04-26 21:49:43 +0900'
 why:
     type: wiki
     title: why
@@ -306,13 +313,6 @@ vim-conceallevel:
     parent: Vim
     url: /wiki/vim-conceallevel
     updated: '2017-12-20 13:13:32 +0900'
-Vim:
-    type: wiki
-    title: Vim
-    summary: null
-    parent: index
-    url: /wiki/Vim
-    updated: '2017-12-20 13:13:21 +0900'
 Code-Complete-2:
     type: wiki
     title: 'Code Complete 2nd Edition by Steve McConnell'
@@ -334,20 +334,20 @@ Conway-s-law:
     parent: proverb
     url: /wiki/Conway-s-law
     updated: '2017-12-10 00:47:52 +0900'
-2017-05-01-jwp-08:
+default-post:
     type: blog
-    title: 'Next JWP Study #08'
-    summary: 'MVC 프레임워크 3단계 실습'
+    title: 'sample title'
+    summary: 'sample summary'
     parent: null
-    url: /blog/2017/05/01/jwp-08
-    updated: '2017-05-01 07:33:10 +0900'
-URI:
-    type: wiki
-    title: URI
-    summary: 'Uniform Resource Identifier'
-    parent: index
-    url: /wiki/URI
-    updated: '2017-12-18 23:00:44 +0900'
+    url: /blog/2017/04/02/default-post
+    updated: '2017-04-02 12:15:32 +0900'
+2017-05-04-input-source:
+    type: blog
+    title: 'Vim 사용시 한/영 전환 문제 해결하기'
+    summary: 'hammerspoon으로 해결'
+    parent: null
+    url: /blog/2017/05/04/input-source
+    updated: '2017-05-04 22:05:30 +0900'
 frac1e:
     type: wiki
     title: 'n개의 제비뽑기에 n번 도전'
@@ -383,13 +383,13 @@ groovy:
     parent: programming-language
     url: /wiki/groovy
     updated: '2017-12-03 15:01:36 +0900'
-The-Jargon-File:
+Vim:
     type: wiki
-    title: 'The Jargon File'
-    summary: '해커들의 은어 사전'
-    parent: book
-    url: /wiki/The-Jargon-File
-    updated: '2017-12-10 00:55:18 +0900'
+    title: Vim
+    summary: null
+    parent: index
+    url: /wiki/Vim
+    updated: '2017-12-20 13:13:21 +0900'
 how-to:
     type: wiki
     title: 'HOW TO'
@@ -397,20 +397,20 @@ how-to:
     parent: index
     url: /wiki/how-to
     updated: '2017-12-23 18:22:50 +0900'
-RFC:
+URI:
     type: wiki
-    title: 'RFC(Request For Comment)'
-    summary: '일련번호가 매겨진 인터넷 표준 문서'
+    title: URI
+    summary: 'Uniform Resource Identifier'
     parent: index
-    url: /wiki/RFC
-    updated: '2017-12-12 22:06:20 +0900'
-proverb:
+    url: /wiki/URI
+    updated: '2017-12-18 23:00:44 +0900'
+The-Jargon-File:
     type: wiki
-    title: '속담, 법칙, 관용어 모음'
-    summary: null
-    parent: index
-    url: /wiki/proverb
-    updated: '2018-01-07 18:19:06 +0900'
+    title: 'The Jargon File'
+    summary: '해커들의 은어 사전'
+    parent: book
+    url: /wiki/The-Jargon-File
+    updated: '2017-12-10 00:55:18 +0900'
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -418,13 +418,13 @@ java_home:
     parent: index
     url: /wiki/java_home
     updated: '2017-12-03 15:01:36 +0900'
-legend:
+RFC:
     type: wiki
-    title: '레전드 모음'
-    summary: null
+    title: 'RFC(Request For Comment)'
+    summary: '일련번호가 매겨진 인터넷 표준 문서'
     parent: index
-    url: /wiki/legend
-    updated: '2017-12-21 01:14:40 +0900'
+    url: /wiki/RFC
+    updated: '2017-12-12 22:06:20 +0900'
 Lubarsky-s-Law-of-Cybernetic-Entomology:
     type: wiki
     title: '루바르스키의 사이버네틱 곤충학 법칙(Lubarsky''s Law of Cybernetic Entomology)'
@@ -439,6 +439,13 @@ mathjax-latex:
     parent: how-to
     url: /wiki/mathjax-latex
     updated: '2017-12-23 18:18:43 +0900'
+proverb:
+    type: wiki
+    title: '속담, 법칙, 관용어 모음'
+    summary: null
+    parent: index
+    url: /wiki/proverb
+    updated: '2018-01-07 18:19:06 +0900'
 programming-language:
     type: wiki
     title: '프로그래밍 언어'
@@ -467,13 +474,6 @@ Postel-s-law:
     parent: null
     url: /blog/2017/04/02/jwp-00-prepare
     updated: '2017-04-02 12:15:32 +0900'
-2017-04-03-jwp-01:
-    type: blog
-    title: 'Next JWP Study #01'
-    summary: '단위 테스트와 리팩토링'
-    parent: null
-    url: /blog/2017/04/05/jwp-01
-    updated: '2017-04-05 21:52:28 +0900'
 2017-03-27-tmux-ascii-control:
     type: blog
     title: 'tmux 키 조합에서 C--가 불가능한 이유.'
@@ -488,13 +488,13 @@ Postel-s-law:
     parent: null
     url: /blog/2017/04/22/jwp-06
     updated: '2017-04-22 23:36:10 +0900'
-2017-04-03-vim-tmux-t-ut:
+2017-04-03-jwp-01:
     type: blog
-    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
-    summary: '"`set t_ut=`로 한 방에 해결"'
+    title: 'Next JWP Study #01'
+    summary: '단위 테스트와 리팩토링'
     parent: null
-    url: /blog/2017/04/03/vim-tmux-t-ut
-    updated: '2017-04-03 07:33:49 +0900'
+    url: /blog/2017/04/05/jwp-01
+    updated: '2017-04-05 21:52:28 +0900'
 2017-04-17-jwp-05:
     type: blog
     title: 'Next JWP Study #05'
@@ -502,13 +502,13 @@ Postel-s-law:
     parent: null
     url: /blog/2017/04/17/jwp-05
     updated: '2017-04-17 15:20:00 +0900'
-2017-04-08-jwp-02:
+2017-04-03-vim-tmux-t-ut:
     type: blog
-    title: 'Next JWP Study #02'
-    summary: 'HTTP 이해'
+    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
+    summary: '"`set t_ut=`로 한 방에 해결"'
     parent: null
-    url: /blog/2017/04/08/jwp-02
-    updated: '2017-04-08 21:29:47 +0900'
+    url: /blog/2017/04/03/vim-tmux-t-ut
+    updated: '2017-04-03 07:33:49 +0900'
 2017-04-03-emacs-start:
     type: blog
     title: 'emacs 사용 시작!'
@@ -516,13 +516,6 @@ Postel-s-law:
     parent: null
     url: /blog/2017/04/02/emacs-start
     updated: '2017-04-02 16:33:24 +0900'
-2017-04-13-jwp-04:
-    type: blog
-    title: 'Next JWP Study #04'
-    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
-    parent: null
-    url: /blog/2017/04/13/jwp-04
-    updated: '2017-04-13 12:15:32 +0900'
 2017-04-10-jwp-03:
     type: blog
     title: 'Next JWP Study #03'
@@ -530,6 +523,13 @@ Postel-s-law:
     parent: null
     url: /blog/2017/04/11/jwp-03
     updated: '2017-04-11 22:47:18 +0900'
+2017-04-08-jwp-02:
+    type: blog
+    title: 'Next JWP Study #02'
+    summary: 'HTTP 이해'
+    parent: null
+    url: /blog/2017/04/08/jwp-02
+    updated: '2017-04-08 21:29:47 +0900'
 2017-03-12-telegram-bot:
     type: blog
     title: '텔레그램 봇 스켈레톤 만들기.'
