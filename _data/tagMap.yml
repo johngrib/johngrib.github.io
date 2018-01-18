@@ -101,6 +101,8 @@ OOP:
     - {fileName: 2017-04-10-jwp-03, updated: '2017-04-11 22:47:18 +0900'}
 Gerald-Weinberg:
     - {fileName: 2017-04-10-jwp-03, updated: '2017-04-11 22:47:18 +0900'}
+    - {fileName: Edsel-edict, updated: '2018-01-18 21:33:38 +0900'}
+    - {fileName: secret-of-consulting, updated: '2018-01-18 21:54:01 +0900'}
 AWS:
     - {fileName: 2017-04-13-jwp-04, updated: '2017-04-13 12:15:32 +0900'}
 구름입력기:
@@ -172,6 +174,7 @@ config:
     - {fileName: coding-font, updated: '2017-12-01 06:02:30 +0900'}
 proverb:
     - {fileName: Conway-s-law, updated: '2017-12-10 00:47:52 +0900'}
+    - {fileName: Edsel-edict, updated: '2018-01-18 21:33:38 +0900'}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
     - {fileName: Postel-s-law, updated: '2018-01-07 18:20:48 +0900'}
     - {fileName: proverb, updated: '2018-01-07 18:19:06 +0900'}
@@ -212,7 +215,7 @@ http:
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-01-15 17:20:46 +0900'}
+    - {fileName: index, updated: '2018-01-18 21:34:57 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
@@ -233,11 +236,14 @@ culture:
     - {fileName: proverb, updated: '2018-01-07 18:19:06 +0900'}
 review:
     - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
-    - {fileName: review-2018, updated: '2018-01-13 15:39:25 +0900'}
+    - {fileName: review-2018, updated: '2018-01-18 21:54:27 +0900'}
+    - {fileName: secret-of-consulting, updated: '2018-01-18 21:54:01 +0900'}
     - {fileName: toda-seiji-scientia, updated: '2018-01-13 07:19:51 +0900'}
 rfc:
     - {fileName: RFC, updated: '2017-12-12 22:06:20 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
+consulting:
+    - {fileName: secret-of-consulting, updated: '2018-01-18 21:54:01 +0900'}
 hacker:
     - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
 번역:
