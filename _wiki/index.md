@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-01-15 17:20:46 +0900
+updated : 2018-01-18 09:03:18 +0900
 tags    : index
 toc     : true
 public  : true
@@ -36,6 +36,7 @@ comment : false
 * [[proverb]]{속담, 법칙, 관용어 모음}
     * [[airplain-rule]]
     * [[Conway-s-law]]
+    * [[Edsel-edict]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
     * [[Postel-s-law]]
 * [[RFC]]
