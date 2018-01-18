@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-01-18 09:03:18 +0900
+updated : 2018-01-18 21:34:57 +0900
 tags    : index
 toc     : true
 public  : true
@@ -25,6 +25,7 @@ comment : false
 * [[media]]
     * [[book]]{도서}
         * [[Code-Complete-2]]
+        * [[secret-of-consulting]]
         * [[toda-seiji-scientia]]
     * [[review]]
         * [[review-2018]]
