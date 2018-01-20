@@ -2,12 +2,14 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-01-18 21:34:57 +0900
+updated : 2018-01-20 18:53:49 +0900
 tags    : index
 toc     : true
 public  : true
 comment : false
 ---
+
+* [[diary]]
 
 * [[braille-pattern-chars]]
 * [[clipping]]{글 모음 및 요약}
@@ -27,11 +29,13 @@ comment : false
         * [[Code-Complete-2]]
         * [[secret-of-consulting]]
         * [[toda-seiji-scientia]]
+        * [[그림으로-보는-서양검술-메모]]
     * [[review]]
         * [[review-2018]]
     * [[movie]]
         * [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]]
         * [[HOT-FUZZ]]{뜨거운 녀석들}
+        * [[Walking-Dead]]
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
 * [[proverb]]{속담, 법칙, 관용어 모음}

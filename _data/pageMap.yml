@@ -1,10 +1,10 @@
-airplain-rule:
+book:
     type: wiki
-    title: '비행기 법칙'
-    summary: '복잡성은 실패할 확률을 높인다'
-    parent: proverb
-    url: /wiki/airplain-rule
-    updated: '2017-12-25 13:07:43 +0900'
+    title: 도서
+    summary: null
+    parent: media
+    url: /wiki/book
+    updated: '2018-01-20 18:36:25 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -12,6 +12,13 @@ yaml:
     parent: index
     url: /wiki/yaml
     updated: '2017-12-02 16:45:25 +0900'
+Walking-Dead:
+    type: wiki
+    title: 'The Walking Dead'
+    summary: '워킹 데드'
+    parent: movie
+    url: /wiki/Walking-Dead
+    updated: '2018-01-20 18:41:33 +0900'
 toda-seiji-scientia:
     type: wiki
     title: '스키엔티아 - 도다 세이지 만화'
@@ -46,7 +53,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-01-18 21:54:27 +0900'
+    updated: '2018-01-20 18:51:35 +0900'
 review:
     type: wiki
     title: '리뷰 모음'
@@ -60,7 +67,7 @@ movie:
     summary: null
     parent: media
     url: /wiki/movie
-    updated: '2018-01-13 15:56:06 +0900'
+    updated: '2018-01-20 18:41:19 +0900'
 media:
     type: wiki
     title: 미디어
@@ -81,7 +88,14 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-01-18 21:34:57 +0900'
+    updated: '2018-01-20 18:53:49 +0900'
+HTTP-THE-DEFINITIVE-GUIDE:
+    type: wiki
+    title: 'HTTP - THE DEFINITIVE GUIDE'
+    summary: 'HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'
+    parent: book
+    url: /wiki/HTTP-THE-DEFINITIVE-GUIDE
+    updated: '2018-01-20 18:34:16 +0900'
 http-message:
     type: wiki
     title: 'HTTP 메시지'
@@ -102,7 +116,7 @@ Edsel-edict:
     summary: '새것을 도입할 때에는 한 번에 하나씩 하자'
     parent: proverb
     url: /wiki/Edsel-edict
-    updated: '2018-01-18 21:33:38 +0900'
+    updated: '2018-01-18 22:01:04 +0900'
 DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
     type: wiki
     title: '더크 젠틀리의 전체론적 탐정 사무소'
@@ -110,6 +124,20 @@ DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
     parent: movie
     url: /wiki/DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY
     updated: '2018-01-13 12:28:13 +0900'
+diary-2018:
+    type: wiki
+    title: '2018 Diary'
+    summary: null
+    parent: diary
+    url: /wiki/diary-2018
+    updated: '2018-01-20 17:58:08 +0900'
+diary:
+    type: wiki
+    title: Diary
+    summary: null
+    parent: index
+    url: /wiki/diary
+    updated: '2018-01-20 17:47:01 +0900'
 clipping:
     type: wiki
     title: '글 모음 및 요약'
@@ -124,48 +152,27 @@ braille-pattern-chars:
     parent: index
     url: /wiki/braille-pattern-chars
     updated: '2018-01-10 21:14:25 +0900'
-book:
+그림으로-보는-서양검술-메모:
     type: wiki
-    title: 도서
+    title: '그림으로 보는 서양검술 메모'
+    summary: '삐라따 님의 검술 메모를 출판한 책'
+    parent: book
+    url: /wiki/그림으로-보는-서양검술-메모
+    updated: '2018-01-20 18:16:43 +0900'
+'2018-01-20':
+    type: wiki
+    title: '2018-01-20 토요일'
     summary: null
-    parent: media
-    url: /wiki/book
-    updated: '2018-01-13 11:10:56 +0900'
-frac1e:
+    parent: diary-2018
+    url: /wiki/2018-01-20
+    updated: '2018-01-20 18:49:55 +0900'
+google-search-console-remove-outdated-content:
     type: wiki
-    title: 'n개의 제비뽑기에 n번 도전'
-    summary: 1/e
+    title: 'Google Search Console - Remove outdated content'
+    summary: '구글 웹 도구 - 오래된 콘텐츠 삭제'
     parent: index
-    url: /wiki/frac1e
-    updated: '2017-12-03 09:44:20 +0900'
-2017-05-09-jwp-09:
-    type: blog
-    title: 'Next JWP Study #09'
-    summary: 'Spring MVC 실습'
-    parent: null
-    url: /blog/2017/05/09/jwp-09
-    updated: '2017-05-09 10:45:58 +0900'
-2017-05-14-jwp-10:
-    type: blog
-    title: 'Next JWP Study #10'
-    summary: 'DI 및 Spring DI'
-    parent: null
-    url: /blog/2017/05/14/jwp-10
-    updated: '2017-05-14 14:10:50 +0900'
-2017-05-16-jwp-11:
-    type: blog
-    title: 'Next JWP Study #11'
-    summary: 'DI 기반 단위 테스트'
-    parent: null
-    url: /blog/2017/05/16/jwp-11
-    updated: '2017-05-16 21:36:06 +0900'
-2017-05-20-jwp-12:
-    type: blog
-    title: 'Next JWP Study #12'
-    summary: 'Spring Boot by Tests'
-    parent: null
-    url: /blog/2017/05/20/jwp-12
-    updated: '2017-05-20 20:44:40 +0900'
+    url: /wiki/google-search-console-remove-outdated-content
+    updated: '2017-11-28 08:50:10 +0900'
 2017-05-23-jwp-13:
     type: blog
     title: 'Next JWP Study #13'
@@ -173,13 +180,6 @@ frac1e:
     parent: null
     url: /blog/2017/05/23/jwp-13
     updated: '2017-05-23 22:05:44 +0900'
-2017-05-27-jwp-14:
-    type: blog
-    title: 'Next JWP Study #14'
-    summary: 'ORM 및 Spring Data JPA'
-    parent: null
-    url: /blog/2017/05/27/jwp-14
-    updated: '2017-05-27 18:00:40 +0900'
 2017-05-29-jwp-15:
     type: blog
     title: 'Next JWP Study #15'
@@ -292,13 +292,6 @@ why-http-80-https-443:
     parent: why
     url: /wiki/why-http-80-https-443
     updated: '2017-12-17 09:11:39 +0900'
-2017-05-04-input-source:
-    type: blog
-    title: 'Vim 사용시 한/영 전환 문제 해결하기'
-    summary: 'hammerspoon으로 해결'
-    parent: null
-    url: /blog/2017/05/04/input-source
-    updated: '2017-05-04 22:05:30 +0900'
 why:
     type: wiki
     title: why
@@ -306,6 +299,13 @@ why:
     parent: index
     url: /wiki/why
     updated: '2017-12-13 12:20:03 +0900'
+airplain-rule:
+    type: wiki
+    title: '비행기 법칙'
+    summary: '복잡성은 실패할 확률을 높인다'
+    parent: proverb
+    url: /wiki/airplain-rule
+    updated: '2017-12-25 13:07:43 +0900'
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -313,6 +313,20 @@ vim-conceallevel:
     parent: Vim
     url: /wiki/vim-conceallevel
     updated: '2017-12-20 13:13:32 +0900'
+Vim:
+    type: wiki
+    title: Vim
+    summary: null
+    parent: index
+    url: /wiki/Vim
+    updated: '2017-12-20 13:13:21 +0900'
+URI:
+    type: wiki
+    title: URI
+    summary: 'Uniform Resource Identifier'
+    parent: index
+    url: /wiki/URI
+    updated: '2017-12-18 23:00:44 +0900'
 Code-Complete-2:
     type: wiki
     title: 'Code Complete 2nd Edition by Steve McConnell'
@@ -341,34 +355,48 @@ default-post:
     parent: null
     url: /blog/2017/04/02/default-post
     updated: '2017-04-02 12:15:32 +0900'
-Vim:
+The-Jargon-File:
     type: wiki
-    title: Vim
+    title: 'The Jargon File'
+    summary: '해커들의 은어 사전'
+    parent: book
+    url: /wiki/The-Jargon-File
+    updated: '2017-12-10 00:55:18 +0900'
+RFC:
+    type: wiki
+    title: 'RFC(Request For Comment)'
+    summary: '일련번호가 매겨진 인터넷 표준 문서'
+    parent: index
+    url: /wiki/RFC
+    updated: '2017-12-12 22:06:20 +0900'
+proverb:
+    type: wiki
+    title: '속담, 법칙, 관용어 모음'
     summary: null
     parent: index
-    url: /wiki/Vim
-    updated: '2017-12-20 13:13:21 +0900'
-URI:
+    url: /wiki/proverb
+    updated: '2018-01-07 18:19:06 +0900'
+programming-language:
     type: wiki
-    title: URI
-    summary: 'Uniform Resource Identifier'
+    title: '프로그래밍 언어'
+    summary: null
     parent: index
-    url: /wiki/URI
-    updated: '2017-12-18 23:00:44 +0900'
-2017-05-14-hhkb-jp-tmk:
+    url: /wiki/programming-language
+    updated: '2017-12-03 15:01:36 +0900'
+frac1e:
+    type: wiki
+    title: 'n개의 제비뽑기에 n번 도전'
+    summary: 1/e
+    parent: index
+    url: /wiki/frac1e
+    updated: '2017-12-03 09:44:20 +0900'
+2017-05-27-jwp-14:
     type: blog
-    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
-    summary: '해피해킹을 더욱 해피하게'
+    title: 'Next JWP Study #14'
+    summary: 'ORM 및 Spring Data JPA'
     parent: null
-    url: /blog/2017/05/14/hhkb-jp-tmk
-    updated: '2017-05-14 15:50:31 +0900'
-google-search-console-remove-outdated-content:
-    type: wiki
-    title: 'Google Search Console - Remove outdated content'
-    summary: '구글 웹 도구 - 오래된 콘텐츠 삭제'
-    parent: index
-    url: /wiki/google-search-console-remove-outdated-content
-    updated: '2017-11-28 08:50:10 +0900'
+    url: /blog/2017/05/27/jwp-14
+    updated: '2017-05-27 18:00:40 +0900'
 googling:
     type: wiki
     title: '구글링하는 방법'
@@ -390,62 +418,6 @@ groovy:
     parent: programming-language
     url: /wiki/groovy
     updated: '2017-12-03 15:01:36 +0900'
-The-Jargon-File:
-    type: wiki
-    title: 'The Jargon File'
-    summary: '해커들의 은어 사전'
-    parent: book
-    url: /wiki/The-Jargon-File
-    updated: '2017-12-10 00:55:18 +0900'
-how-to:
-    type: wiki
-    title: 'HOW TO'
-    summary: null
-    parent: index
-    url: /wiki/how-to
-    updated: '2017-12-23 18:22:50 +0900'
-RFC:
-    type: wiki
-    title: 'RFC(Request For Comment)'
-    summary: '일련번호가 매겨진 인터넷 표준 문서'
-    parent: index
-    url: /wiki/RFC
-    updated: '2017-12-12 22:06:20 +0900'
-proverb:
-    type: wiki
-    title: '속담, 법칙, 관용어 모음'
-    summary: null
-    parent: index
-    url: /wiki/proverb
-    updated: '2018-01-07 18:19:06 +0900'
-java_home:
-    type: wiki
-    title: 'java_home 명령어'
-    summary: 'return a value for $JAVA_HOME'
-    parent: index
-    url: /wiki/java_home
-    updated: '2017-12-03 15:01:36 +0900'
-programming-language:
-    type: wiki
-    title: '프로그래밍 언어'
-    summary: null
-    parent: index
-    url: /wiki/programming-language
-    updated: '2017-12-03 15:01:36 +0900'
-Lubarsky-s-Law-of-Cybernetic-Entomology:
-    type: wiki
-    title: '루바르스키의 사이버네틱 곤충학 법칙(Lubarsky''s Law of Cybernetic Entomology)'
-    summary: '버그는 언제나 한 마리가 더 있다.'
-    parent: proverb
-    url: /wiki/Lubarsky-s-Law-of-Cybernetic-Entomology
-    updated: '2017-12-09 22:39:56 +0900'
-mathjax-latex:
-    type: wiki
-    title: 'MathJax로 LaTeX 사용하기'
-    summary: null
-    parent: how-to
-    url: /wiki/mathjax-latex
-    updated: '2017-12-23 18:18:43 +0900'
 Postel-s-law:
     type: wiki
     title: '포스텔의 법칙(Postel''s law)'
@@ -453,76 +425,34 @@ Postel-s-law:
     parent: proverb
     url: /wiki/Postel-s-law
     updated: '2018-01-07 18:20:48 +0900'
-2017-04-13-jwp-04:
-    type: blog
-    title: 'Next JWP Study #04'
-    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
-    parent: null
-    url: /blog/2017/04/13/jwp-04
-    updated: '2017-04-13 12:15:32 +0900'
-2017-04-03-emacs-start:
-    type: blog
-    title: 'emacs 사용 시작!'
-    summary: '하지만 Vim은 포기하지 않는다.'
-    parent: null
-    url: /blog/2017/04/02/emacs-start
-    updated: '2017-04-02 16:33:24 +0900'
-2017-04-03-vim-tmux-t-ut:
-    type: blog
-    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
-    summary: '"`set t_ut=`로 한 방에 해결"'
-    parent: null
-    url: /blog/2017/04/03/vim-tmux-t-ut
-    updated: '2017-04-03 07:33:49 +0900'
-2017-04-08-jwp-02:
-    type: blog
-    title: 'Next JWP Study #02'
-    summary: 'HTTP 이해'
-    parent: null
-    url: /blog/2017/04/08/jwp-02
-    updated: '2017-04-08 21:29:47 +0900'
-2017-05-01-jwp-08:
-    type: blog
-    title: 'Next JWP Study #08'
-    summary: 'MVC 프레임워크 3단계 실습'
-    parent: null
-    url: /blog/2017/05/01/jwp-08
-    updated: '2017-05-01 07:33:10 +0900'
-2017-04-25-jwp-07:
-    type: blog
-    title: 'Next JWP Study #07'
-    summary: '중간 점검'
-    parent: null
-    url: /blog/2017/04/26/jwp-07
-    updated: '2017-04-26 21:49:43 +0900'
-2017-04-10-jwp-03:
-    type: blog
-    title: 'Next JWP Study #03'
-    summary: '"HTTP 이해: 두 번째 시간"'
-    parent: null
-    url: /blog/2017/04/11/jwp-03
-    updated: '2017-04-11 22:47:18 +0900'
-2017-04-20-jwp-06:
-    type: blog
-    title: 'Next JWP Study #06'
-    summary: 'JDBC 라이브러리 구현'
-    parent: null
-    url: /blog/2017/04/22/jwp-06
-    updated: '2017-04-22 23:36:10 +0900'
-2017-04-17-jwp-05:
-    type: blog
-    title: 'Next JWP Study #05'
-    summary: 'HTTP 웹 서버와 Servlet'
-    parent: null
-    url: /blog/2017/04/17/jwp-05
-    updated: '2017-04-17 15:20:00 +0900'
-2017-04-03-jwp-01:
-    type: blog
-    title: 'Next JWP Study #01'
-    summary: '단위 테스트와 리팩토링'
-    parent: null
-    url: /blog/2017/04/05/jwp-01
-    updated: '2017-04-05 21:52:28 +0900'
+how-to:
+    type: wiki
+    title: 'HOW TO'
+    summary: null
+    parent: index
+    url: /wiki/how-to
+    updated: '2017-12-23 18:22:50 +0900'
+mathjax-latex:
+    type: wiki
+    title: 'MathJax로 LaTeX 사용하기'
+    summary: null
+    parent: how-to
+    url: /wiki/mathjax-latex
+    updated: '2017-12-23 18:18:43 +0900'
+Lubarsky-s-Law-of-Cybernetic-Entomology:
+    type: wiki
+    title: '루바르스키의 사이버네틱 곤충학 법칙(Lubarsky''s Law of Cybernetic Entomology)'
+    summary: '버그는 언제나 한 마리가 더 있다.'
+    parent: proverb
+    url: /wiki/Lubarsky-s-Law-of-Cybernetic-Entomology
+    updated: '2017-12-09 22:39:56 +0900'
+java_home:
+    type: wiki
+    title: 'java_home 명령어'
+    summary: 'return a value for $JAVA_HOME'
+    parent: index
+    url: /wiki/java_home
+    updated: '2017-12-03 15:01:36 +0900'
 2017-03-27-tmux-ascii-control:
     type: blog
     title: 'tmux 키 조합에서 C--가 불가능한 이유.'
@@ -530,20 +460,97 @@ Postel-s-law:
     parent: null
     url: /blog/2017/03/27/tmux-ascii-control
     updated: '2017-03-27 22:57:52 +0900'
-2017-04-02-jwp-00-prepare:
+2017-04-10-jwp-03:
     type: blog
-    title: 'Next JWP Study #00'
-    summary: 'NextStep Java Web Programming Study 준비 작업.'
+    title: 'Next JWP Study #03'
+    summary: '"HTTP 이해: 두 번째 시간"'
     parent: null
-    url: /blog/2017/04/02/jwp-00-prepare
-    updated: '2017-04-02 12:15:32 +0900'
-2017-03-12-telegram-bot:
+    url: /blog/2017/04/11/jwp-03
+    updated: '2017-04-11 22:47:18 +0900'
+2017-04-13-jwp-04:
     type: blog
-    title: '텔레그램 봇 스켈레톤 만들기.'
-    summary: 'node.js, heroku로 만드는 텔레그램 챗봇.'
+    title: 'Next JWP Study #04'
+    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
     parent: null
-    url: /blog/2017/03/12/telegram-bot
-    updated: '2017-03-12 21:08:16 +0900'
+    url: /blog/2017/04/13/jwp-04
+    updated: '2017-04-13 12:15:32 +0900'
+2017-04-17-jwp-05:
+    type: blog
+    title: 'Next JWP Study #05'
+    summary: 'HTTP 웹 서버와 Servlet'
+    parent: null
+    url: /blog/2017/04/17/jwp-05
+    updated: '2017-04-17 15:20:00 +0900'
+2017-05-20-jwp-12:
+    type: blog
+    title: 'Next JWP Study #12'
+    summary: 'Spring Boot by Tests'
+    parent: null
+    url: /blog/2017/05/20/jwp-12
+    updated: '2017-05-20 20:44:40 +0900'
+2017-05-16-jwp-11:
+    type: blog
+    title: 'Next JWP Study #11'
+    summary: 'DI 기반 단위 테스트'
+    parent: null
+    url: /blog/2017/05/16/jwp-11
+    updated: '2017-05-16 21:36:06 +0900'
+2017-04-20-jwp-06:
+    type: blog
+    title: 'Next JWP Study #06'
+    summary: 'JDBC 라이브러리 구현'
+    parent: null
+    url: /blog/2017/04/22/jwp-06
+    updated: '2017-04-22 23:36:10 +0900'
+2017-04-25-jwp-07:
+    type: blog
+    title: 'Next JWP Study #07'
+    summary: '중간 점검'
+    parent: null
+    url: /blog/2017/04/26/jwp-07
+    updated: '2017-04-26 21:49:43 +0900'
+2017-05-01-jwp-08:
+    type: blog
+    title: 'Next JWP Study #08'
+    summary: 'MVC 프레임워크 3단계 실습'
+    parent: null
+    url: /blog/2017/05/01/jwp-08
+    updated: '2017-05-01 07:33:10 +0900'
+2017-05-14-jwp-10:
+    type: blog
+    title: 'Next JWP Study #10'
+    summary: 'DI 및 Spring DI'
+    parent: null
+    url: /blog/2017/05/14/jwp-10
+    updated: '2017-05-14 14:10:50 +0900'
+2017-05-14-hhkb-jp-tmk:
+    type: blog
+    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
+    summary: '해피해킹을 더욱 해피하게'
+    parent: null
+    url: /blog/2017/05/14/hhkb-jp-tmk
+    updated: '2017-05-14 15:50:31 +0900'
+2017-05-04-input-source:
+    type: blog
+    title: 'Vim 사용시 한/영 전환 문제 해결하기'
+    summary: 'hammerspoon으로 해결'
+    parent: null
+    url: /blog/2017/05/04/input-source
+    updated: '2017-05-04 22:05:30 +0900'
+2017-05-09-jwp-09:
+    type: blog
+    title: 'Next JWP Study #09'
+    summary: 'Spring MVC 실습'
+    parent: null
+    url: /blog/2017/05/09/jwp-09
+    updated: '2017-05-09 10:45:58 +0900'
+2017-04-03-emacs-start:
+    type: blog
+    title: 'emacs 사용 시작!'
+    summary: '하지만 Vim은 포기하지 않는다.'
+    parent: null
+    url: /blog/2017/04/02/emacs-start
+    updated: '2017-04-02 16:33:24 +0900'
 2017-03-13-uri-url:
     type: blog
     title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'
@@ -551,13 +558,41 @@ Postel-s-law:
     parent: null
     url: /blog/2017/03/13/uri-url
     updated: '2017-03-13 21:30:46 +0900'
-2017-03-08-til-indent-style:
+2017-03-12-telegram-bot:
     type: blog
-    title: '중괄호 인덴트 스타일을 조사해 보았다.'
-    summary: 'K&R style, Allman style.'
+    title: '텔레그램 봇 스켈레톤 만들기.'
+    summary: 'node.js, heroku로 만드는 텔레그램 챗봇.'
     parent: null
-    url: /blog/2017/03/08/til-indent-style
-    updated: '2017-03-08 23:00:00 +0900'
+    url: /blog/2017/03/12/telegram-bot
+    updated: '2017-03-12 21:08:16 +0900'
+2017-04-03-vim-tmux-t-ut:
+    type: blog
+    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
+    summary: '"`set t_ut=`로 한 방에 해결"'
+    parent: null
+    url: /blog/2017/04/03/vim-tmux-t-ut
+    updated: '2017-04-03 07:33:49 +0900'
+2017-04-02-jwp-00-prepare:
+    type: blog
+    title: 'Next JWP Study #00'
+    summary: 'NextStep Java Web Programming Study 준비 작업.'
+    parent: null
+    url: /blog/2017/04/02/jwp-00-prepare
+    updated: '2017-04-02 12:15:32 +0900'
+2017-04-08-jwp-02:
+    type: blog
+    title: 'Next JWP Study #02'
+    summary: 'HTTP 이해'
+    parent: null
+    url: /blog/2017/04/08/jwp-02
+    updated: '2017-04-08 21:29:47 +0900'
+2017-04-03-jwp-01:
+    type: blog
+    title: 'Next JWP Study #01'
+    summary: '단위 테스트와 리팩토링'
+    parent: null
+    url: /blog/2017/04/05/jwp-01
+    updated: '2017-04-05 21:52:28 +0900'
 2017-01-30-ideavim-build:
     type: blog
     title: 'IdeaVIM 빌드가 안 되는 문제 해결.'
@@ -565,6 +600,13 @@ Postel-s-law:
     parent: null
     url: /blog/2017/01/30/ideavim-build
     updated: '2017-01-30 21:22:53 +0900'
+2017-03-08-til-indent-style:
+    type: blog
+    title: '중괄호 인덴트 스타일을 조사해 보았다.'
+    summary: 'K&R style, Allman style.'
+    parent: null
+    url: /blog/2017/03/08/til-indent-style
+    updated: '2017-03-08 23:00:00 +0900'
 2017-01-22-jekyll-category-tag:
     type: blog
     title: 'Jekyll 블로그에 태그 추가하기.'
