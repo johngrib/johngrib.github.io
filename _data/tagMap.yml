@@ -149,9 +149,11 @@ vimwiki:
 blog:
     - {fileName: 2017-12-06-my-wiki, updated: '2017-12-06 21:44:18 +0900'}
 diary:
-    - {fileName: '2018-01-20', updated: '2018-01-20 18:49:55 +0900'}
+    - {fileName: '2018-01-20', updated: '2018-01-20 22:59:09 +0900'}
     - {fileName: diary, updated: '2018-01-20 17:47:01 +0900'}
     - {fileName: diary-2018, updated: '2018-01-20 17:58:08 +0900'}
+block-chain:
+    - {fileName: '2018-01-20', updated: '2018-01-20 22:59:09 +0900'}
 review:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-20 18:16:43 +0900'}
     - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
