@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-01-20 18:53:49 +0900
+updated : 2018-01-23 08:54:58 +0900
 tags    : index
 toc     : true
 public  : true
@@ -27,6 +27,8 @@ comment : false
 * [[media]]
     * [[book]]{도서}
         * [[Code-Complete-2]]
+        * [[HTTP-no-Kyokasho]]
+        * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
         * [[secret-of-consulting]]
         * [[toda-seiji-scientia]]
         * [[그림으로-보는-서양검술-메모]]

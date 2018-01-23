@@ -156,8 +156,9 @@ block-chain:
     - {fileName: '2018-01-20', updated: '2018-01-20 22:59:09 +0900'}
 review:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-20 18:16:43 +0900'}
+    - {fileName: HTTP-no-Kyokasho, updated: '2018-01-23 09:10:54 +0900'}
     - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
-    - {fileName: review-2018, updated: '2018-01-20 18:51:35 +0900'}
+    - {fileName: review-2018, updated: '2018-01-23 09:09:27 +0900'}
     - {fileName: secret-of-consulting, updated: '2018-01-18 21:54:01 +0900'}
     - {fileName: toda-seiji-scientia, updated: '2018-01-13 07:19:51 +0900'}
 만화책:
@@ -173,7 +174,7 @@ law:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
     - {fileName: Postel-s-law, updated: '2018-01-07 18:20:48 +0900'}
 book:
-    - {fileName: book, updated: '2018-01-20 18:36:25 +0900'}
+    - {fileName: book, updated: '2018-01-23 08:54:27 +0900'}
     - {fileName: Code-Complete-2, updated: '2017-12-05 21:53:52 +0900'}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE, updated: '2018-01-20 18:34:16 +0900'}
     - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
@@ -232,11 +233,12 @@ how-to:
     - {fileName: how-to, updated: '2017-12-23 18:22:50 +0900'}
 http:
     - {fileName: http-message, updated: '2018-01-14 17:33:01 +0900'}
+    - {fileName: HTTP-no-Kyokasho, updated: '2018-01-23 09:10:54 +0900'}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE, updated: '2018-01-20 18:34:16 +0900'}
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-01-20 18:53:49 +0900'}
+    - {fileName: index, updated: '2018-01-23 08:54:58 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
