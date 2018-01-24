@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-01-23 09:09:27 +0900
+updated : 2018-01-24 21:36:36 +0900
 tags    : review
 toc     : true
 public  : true
@@ -13,6 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
+* 2018-01-24 완독 [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
 * 2018-01-23 완독 [[HTTP-no-Kyokasho]]{그림으로 배우는 HTTP & 네트워크}
 * 2018-01-20 완독 [[그림으로-보는-서양검술-메모]] - 롱소드 편, 레이피어 편
 * 2018-01-18 완독 [[secret-of-consulting]]
