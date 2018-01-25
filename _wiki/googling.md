@@ -3,8 +3,8 @@ layout  : wiki
 title   : 구글링하는 방법
 summary : 구글 및 여러 검색 서비스 사용법
 date    : 2017-12-23 18:23:50 +0900
-updated : 2017-12-25 14:45:08 +0900
-tags    : google twitter
+updated : 2018-01-25 23:12:25 +0900
+tags    : google twitter facebook
 toc     : true
 public  : true
 parent  : how-to
@@ -51,7 +51,19 @@ latex   : false
 
 트위터 검색하는 방법.
 
+## 고급 검색
+
 * [https://twitter.com/search-advanced](https://twitter.com/search-advanced ) - 여기서 검색하면 된다.
+
+## min_retweets
+
+* 최소 리트윗 수 검색
+
+```
+starwars min_retweets:1000
+```
+
+위와 같이 검색하면 `starwars`가 들어간 트윗 중 1000 회 이상 리트윗된 트윗을 찾는다.
 
 # Facebook
 

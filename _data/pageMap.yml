@@ -117,6 +117,13 @@ HOT-FUZZ:
     parent: movie
     url: /wiki/HOT-FUZZ
     updated: '2018-01-13 16:02:28 +0900'
+googling:
+    type: wiki
+    title: '구글링하는 방법'
+    summary: '구글 및 여러 검색 서비스 사용법'
+    parent: how-to
+    url: /wiki/googling
+    updated: '2018-01-25 23:12:25 +0900'
 Edsel-edict:
     type: wiki
     title: '에젤 강령(Edsel edict)'
@@ -180,27 +187,20 @@ book:
     parent: diary-2018
     url: /wiki/2018-01-20
     updated: '2018-01-20 22:59:09 +0900'
-googling:
+Gradle:
     type: wiki
-    title: '구글링하는 방법'
-    summary: '구글 및 여러 검색 서비스 사용법'
-    parent: how-to
-    url: /wiki/googling
-    updated: '2017-12-25 14:45:08 +0900'
-2017-05-29-jwp-15:
+    title: Gradle
+    summary: 'Gradle Build Tool'
+    parent: index
+    url: /wiki/Gradle
+    updated: '2017-12-08 23:17:46 +0900'
+2017-06-01-jwp-16:
     type: blog
-    title: 'Next JWP Study #15'
-    summary: 'RESTful API 설계'
+    title: 'Next JWP Study #16'
+    summary: 'Test, OOP 피드백 (끝)'
     parent: null
-    url: /blog/2017/05/29/jwp-15
-    updated: '2017-05-29 19:54:06 +0900'
-2017-07-09-vim-game-code-break:
-    type: blog
-    title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
-    summary: '혼돈! 파괴! Vim!'
-    parent: null
-    url: /blog/2017/07/06/vim-game-code-break
-    updated: '2017-07-06 00:15:00 +0900'
+    url: /blog/2017/06/01/jwp-16
+    updated: '2017-06-01 19:52:40 +0900'
 2017-07-14-aheui-explained:
     type: blog
     title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
@@ -285,6 +285,13 @@ googling:
     parent: null
     url: /blog/2017/12/30/review2017
     updated: '2017-12-30 23:19:10 +0900'
+2017-05-29-jwp-15:
+    type: blog
+    title: 'Next JWP Study #15'
+    summary: 'RESTful API 설계'
+    parent: null
+    url: /blog/2017/05/29/jwp-15
+    updated: '2017-05-29 19:54:06 +0900'
 why-http-80-https-443:
     type: wiki
     title: 'http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?'
@@ -292,13 +299,6 @@ why-http-80-https-443:
     parent: why
     url: /wiki/why-http-80-https-443
     updated: '2017-12-17 09:11:39 +0900'
-why:
-    type: wiki
-    title: why
-    summary: null
-    parent: index
-    url: /wiki/why
-    updated: '2017-12-13 12:20:03 +0900'
 airplain-rule:
     type: wiki
     title: '비행기 법칙'
@@ -306,6 +306,13 @@ airplain-rule:
     parent: proverb
     url: /wiki/airplain-rule
     updated: '2017-12-25 13:07:43 +0900'
+why:
+    type: wiki
+    title: why
+    summary: null
+    parent: index
+    url: /wiki/why
+    updated: '2017-12-13 12:20:03 +0900'
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -320,13 +327,6 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-URI:
-    type: wiki
-    title: URI
-    summary: 'Uniform Resource Identifier'
-    parent: index
-    url: /wiki/URI
-    updated: '2017-12-18 23:00:44 +0900'
 Code-Complete-2:
     type: wiki
     title: 'Code Complete 2nd Edition by Steve McConnell'
@@ -355,6 +355,13 @@ default-post:
     parent: null
     url: /blog/2017/04/02/default-post
     updated: '2017-04-02 12:15:32 +0900'
+URI:
+    type: wiki
+    title: URI
+    summary: 'Uniform Resource Identifier'
+    parent: index
+    url: /wiki/URI
+    updated: '2017-12-18 23:00:44 +0900'
 The-Jargon-File:
     type: wiki
     title: 'The Jargon File'
@@ -383,13 +390,6 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-Postel-s-law:
-    type: wiki
-    title: '포스텔의 법칙(Postel''s law)'
-    summary: '받을 때는 관대하게, 보낼 때는 엄격하게.'
-    parent: proverb
-    url: /wiki/Postel-s-law
-    updated: '2018-01-07 18:20:48 +0900'
 frac1e:
     type: wiki
     title: 'n개의 제비뽑기에 n번 도전'
@@ -404,20 +404,20 @@ google-search-console-remove-outdated-content:
     parent: index
     url: /wiki/google-search-console-remove-outdated-content
     updated: '2017-11-28 08:50:10 +0900'
-2017-06-01-jwp-16:
-    type: blog
-    title: 'Next JWP Study #16'
-    summary: 'Test, OOP 피드백 (끝)'
-    parent: null
-    url: /blog/2017/06/01/jwp-16
-    updated: '2017-06-01 19:52:40 +0900'
-Gradle:
+Postel-s-law:
     type: wiki
-    title: Gradle
-    summary: 'Gradle Build Tool'
-    parent: index
-    url: /wiki/Gradle
-    updated: '2017-12-08 23:17:46 +0900'
+    title: '포스텔의 법칙(Postel''s law)'
+    summary: '받을 때는 관대하게, 보낼 때는 엄격하게.'
+    parent: proverb
+    url: /wiki/Postel-s-law
+    updated: '2018-01-07 18:20:48 +0900'
+2017-07-09-vim-game-code-break:
+    type: blog
+    title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
+    summary: '혼돈! 파괴! Vim!'
+    parent: null
+    url: /blog/2017/07/06/vim-game-code-break
+    updated: '2017-07-06 00:15:00 +0900'
 groovy:
     type: wiki
     title: Groovy
@@ -551,13 +551,13 @@ java_home:
     parent: null
     url: /blog/2017/04/11/jwp-03
     updated: '2017-04-11 22:47:18 +0900'
-2017-01-22-jekyll-category-tag:
+2017-04-03-jwp-01:
     type: blog
-    title: 'Jekyll 블로그에 태그 추가하기.'
-    summary: '마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.'
+    title: 'Next JWP Study #01'
+    summary: '단위 테스트와 리팩토링'
     parent: null
-    url: /blog/2017/01/22/jekyll-category-tag
-    updated: '2017-01-22 08:52:22 +0900'
+    url: /blog/2017/04/05/jwp-01
+    updated: '2017-04-05 21:52:28 +0900'
 2017-03-27-tmux-ascii-control:
     type: blog
     title: 'tmux 키 조합에서 C--가 불가능한 이유.'
@@ -593,13 +593,6 @@ java_home:
     parent: null
     url: /blog/2017/04/02/emacs-start
     updated: '2017-04-02 16:33:24 +0900'
-2017-04-03-jwp-01:
-    type: blog
-    title: 'Next JWP Study #01'
-    summary: '단위 테스트와 리팩토링'
-    parent: null
-    url: /blog/2017/04/05/jwp-01
-    updated: '2017-04-05 21:52:28 +0900'
 2017-03-13-uri-url:
     type: blog
     title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'
@@ -628,6 +621,13 @@ java_home:
     parent: null
     url: /blog/2017/03/08/til-indent-style
     updated: '2017-03-08 23:00:00 +0900'
+2017-01-22-jekyll-category-tag:
+    type: blog
+    title: 'Jekyll 블로그에 태그 추가하기.'
+    summary: '마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.'
+    parent: null
+    url: /blog/2017/01/22/jekyll-category-tag
+    updated: '2017-01-22 08:52:22 +0900'
 2017-01-21-create-jekyll-blog:
     type: blog
     title: 'github에 Jekyll 블로그를 만들었다.'
