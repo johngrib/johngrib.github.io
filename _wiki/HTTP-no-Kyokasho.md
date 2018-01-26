@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : HTTP no Kyoukasho(HTTP の 敎科書)
-summary : 그림으로 배우는 HTTP & 네트워크
+title   : (책) 그림으로 배우는 HTTP & 네트워크
+summary : HTTP no Kyoukasho(HTTP の 敎科書)
 date    : 2018-01-23 09:07:01 +0900
-updated : 2018-01-23 09:10:54 +0900
+updated : 2018-01-26 21:36:43 +0900
 tags    : review http
 toc     : true
 public  : true

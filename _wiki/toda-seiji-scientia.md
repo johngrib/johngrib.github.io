@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 스키엔티아 - 도다 세이지 만화
+title   : (책) 스키엔티아 - 도다 세이지
 summary : SCIENTIA
 date    : 2018-01-13 07:01:27 +0900
-updated : 2018-01-13 07:19:51 +0900
+updated : 2018-01-26 21:40:15 +0900
 tags    : review 만화책 sf
 toc     : true
 public  : true

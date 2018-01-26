@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : Code Complete 2nd Edition by Steve McConnell
-summary : 코드 컴플리트 - 스티브 맥코넬
+title   : (책) 코드 컴플리트 - 스티브 맥코넬
+summary : Code Complete 2nd Edition by Steve McConnell
 date    : 2017-12-05 19:22:28 +0900
-updated : 2017-12-05 21:53:52 +0900
+updated : 2018-01-26 21:35:22 +0900
 tags    : book jolt-award
 toc     : true
 public  : true

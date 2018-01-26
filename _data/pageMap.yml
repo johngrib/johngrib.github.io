@@ -21,11 +21,11 @@ Walking-Dead:
     updated: '2018-01-20 18:41:33 +0900'
 toda-seiji-scientia:
     type: wiki
-    title: '스키엔티아 - 도다 세이지 만화'
+    title: '(책) 스키엔티아 - 도다 세이지'
     summary: SCIENTIA
     parent: book
     url: /wiki/toda-seiji-scientia
-    updated: '2018-01-13 07:19:51 +0900'
+    updated: '2018-01-26 21:40:15 +0900'
 THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING:
     type: wiki
     title: 'THE NEXT BIG BLUE-COLLAR JOB IS CODING'
@@ -49,11 +49,11 @@ special-chars:
     updated: '2018-01-10 16:52:03 +0900'
 secret-of-consulting:
     type: wiki
-    title: '컨설팅의 비밀 - 제랄드 와인버그'
-    summary: 'The Secrets of Consulting by Gerald M. Weinberg'
+    title: '(책) The Secrets of Consulting by Gerald M. Weinberg'
+    summary: '컨설팅의 비밀 - 제랄드 와인버그'
     parent: book
     url: /wiki/secret-of-consulting
-    updated: '2018-01-18 21:54:01 +0900'
+    updated: '2018-01-26 21:37:49 +0900'
 review-2018:
     type: wiki
     title: '2018년 리뷰 모음'
@@ -98,18 +98,18 @@ index:
     updated: '2018-01-26 12:59:30 +0900'
 HTTP-THE-DEFINITIVE-GUIDE:
     type: wiki
-    title: 'HTTP - THE DEFINITIVE GUIDE'
-    summary: 'HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'
+    title: '(책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'
+    summary: 'HTTP - THE DEFINITIVE GUIDE'
     parent: book
     url: /wiki/HTTP-THE-DEFINITIVE-GUIDE
-    updated: '2018-01-20 18:34:16 +0900'
+    updated: '2018-01-26 21:37:19 +0900'
 HTTP-no-Kyokasho:
     type: wiki
-    title: 'HTTP no Kyoukasho(HTTP の 敎科書)'
-    summary: '그림으로 배우는 HTTP & 네트워크'
+    title: '(책) 그림으로 배우는 HTTP & 네트워크'
+    summary: 'HTTP no Kyoukasho(HTTP の 敎科書)'
     parent: book
     url: /wiki/HTTP-no-Kyokasho
-    updated: '2018-01-23 09:10:54 +0900'
+    updated: '2018-01-26 21:36:43 +0900'
 http-message:
     type: wiki
     title: 'HTTP 메시지'
@@ -140,11 +140,11 @@ Edsel-edict:
     updated: '2018-01-18 22:01:04 +0900'
 DOM-Enlightenment-by-Cody-Lindley:
     type: wiki
-    title: 'DOM Enlightenment by Cody Lindley'
-    summary: 'DOM을 깨우치다 - 가치에 대한 완전한 이해'
+    title: '(책) DOM을 깨우치다 - 가치에 대한 완전한 이해'
+    summary: 'DOM Enlightenment by Cody Lindley'
     parent: book
     url: /wiki/DOM-Enlightenment-by-Cody-Lindley
-    updated: '2018-01-24 21:39:05 +0900'
+    updated: '2018-01-26 21:36:08 +0900'
 DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
     type: wiki
     title: '더크 젠틀리의 전체론적 탐정 사무소'
@@ -166,6 +166,13 @@ diary:
     parent: index
     url: /wiki/diary
     updated: '2018-01-20 17:47:01 +0900'
+Code-Complete-2:
+    type: wiki
+    title: '(책) 코드 컴플리트 - 스티브 맥코넬'
+    summary: 'Code Complete 2nd Edition by Steve McConnell'
+    parent: book
+    url: /wiki/Code-Complete-2
+    updated: '2018-01-26 21:35:22 +0900'
 braille-pattern-chars:
     type: wiki
     title: '점자 패턴 문자(Braille pattern)'
@@ -179,14 +186,14 @@ book:
     summary: null
     parent: media
     url: /wiki/book
-    updated: '2018-01-26 12:59:39 +0900'
+    updated: '2018-01-26 21:39:56 +0900'
 그림으로-보는-서양검술-메모:
     type: wiki
-    title: '그림으로 보는 서양검술 메모'
+    title: '(책) 그림으로 보는 서양검술 메모'
     summary: '삐라따 님의 검술 메모를 출판한 책'
     parent: book
     url: /wiki/그림으로-보는-서양검술-메모
-    updated: '2018-01-20 18:16:43 +0900'
+    updated: '2018-01-26 21:38:27 +0900'
 '2018-01-20':
     type: wiki
     title: '2018-01-20 토요일'
@@ -201,20 +208,13 @@ groovy:
     parent: programming-language
     url: /wiki/groovy
     updated: '2017-12-03 15:01:36 +0900'
-2017-07-09-vim-game-code-break:
+2017-07-14-aheui-explained:
     type: blog
-    title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
-    summary: '혼돈! 파괴! Vim!'
+    title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
+    summary: '아희 재밌네'
     parent: null
-    url: /blog/2017/07/06/vim-game-code-break
-    updated: '2017-07-06 00:15:00 +0900'
-2017-07-30-luarocks:
-    type: blog
-    title: 'luarocks로 Hammerspoon 패키지 관리하기'
-    summary: '유한락스가 아니라 루아락스로 깨끗하게'
-    parent: null
-    url: /blog/2017/07/30/luarocks
-    updated: '2017-07-30 16:32:25 +0900'
+    url: /blog/2017/07/14/aheui-explained
+    updated: '2017-07-14 23:00:17 +0900'
 2017-07-31-hammerspoon-tutorial-00-start:
     type: blog
     title: 'Hammerspoon 튜토리얼 00 - 시작하기'
@@ -327,13 +327,13 @@ URI:
     parent: index
     url: /wiki/URI
     updated: '2017-12-18 23:00:44 +0900'
-Code-Complete-2:
+The-Jargon-File:
     type: wiki
-    title: 'Code Complete 2nd Edition by Steve McConnell'
-    summary: '코드 컴플리트 - 스티브 맥코넬'
+    title: 'The Jargon File'
+    summary: '해커들의 은어 사전'
     parent: book
-    url: /wiki/Code-Complete-2
-    updated: '2017-12-05 21:53:52 +0900'
+    url: /wiki/The-Jargon-File
+    updated: '2017-12-10 00:55:18 +0900'
 coding-font:
     type: wiki
     title: '코딩 폰트'
@@ -355,13 +355,6 @@ default-post:
     parent: null
     url: /blog/2017/04/02/default-post
     updated: '2017-04-02 12:15:32 +0900'
-The-Jargon-File:
-    type: wiki
-    title: 'The Jargon File'
-    summary: '해커들의 은어 사전'
-    parent: book
-    url: /wiki/The-Jargon-File
-    updated: '2017-12-10 00:55:18 +0900'
 RFC:
     type: wiki
     title: 'RFC(Request For Comment)'
@@ -390,6 +383,13 @@ Postel-s-law:
     parent: proverb
     url: /wiki/Postel-s-law
     updated: '2018-01-07 18:20:48 +0900'
+mathjax-latex:
+    type: wiki
+    title: 'MathJax로 LaTeX 사용하기'
+    summary: null
+    parent: how-to
+    url: /wiki/mathjax-latex
+    updated: '2017-12-23 18:18:43 +0900'
 frac1e:
     type: wiki
     title: 'n개의 제비뽑기에 n번 도전'
@@ -404,27 +404,6 @@ google-search-console-remove-outdated-content:
     parent: index
     url: /wiki/google-search-console-remove-outdated-content
     updated: '2017-11-28 08:50:10 +0900'
-mathjax-latex:
-    type: wiki
-    title: 'MathJax로 LaTeX 사용하기'
-    summary: null
-    parent: how-to
-    url: /wiki/mathjax-latex
-    updated: '2017-12-23 18:18:43 +0900'
-Gradle:
-    type: wiki
-    title: Gradle
-    summary: 'Gradle Build Tool'
-    parent: index
-    url: /wiki/Gradle
-    updated: '2017-12-08 23:17:46 +0900'
-2017-07-14-aheui-explained:
-    type: blog
-    title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
-    summary: '아희 재밌네'
-    parent: null
-    url: /blog/2017/07/14/aheui-explained
-    updated: '2017-07-14 23:00:17 +0900'
 Lubarsky-s-Law-of-Cybernetic-Entomology:
     type: wiki
     title: '루바르스키의 사이버네틱 곤충학 법칙(Lubarsky''s Law of Cybernetic Entomology)'
@@ -432,13 +411,20 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: proverb
     url: /wiki/Lubarsky-s-Law-of-Cybernetic-Entomology
     updated: '2017-12-09 22:39:56 +0900'
-how-to:
+Gradle:
     type: wiki
-    title: 'HOW TO'
-    summary: null
+    title: Gradle
+    summary: 'Gradle Build Tool'
     parent: index
-    url: /wiki/how-to
-    updated: '2017-12-23 18:22:50 +0900'
+    url: /wiki/Gradle
+    updated: '2017-12-08 23:17:46 +0900'
+2017-07-30-luarocks:
+    type: blog
+    title: 'luarocks로 Hammerspoon 패키지 관리하기'
+    summary: '유한락스가 아니라 루아락스로 깨끗하게'
+    parent: null
+    url: /blog/2017/07/30/luarocks
+    updated: '2017-07-30 16:32:25 +0900'
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -446,27 +432,20 @@ java_home:
     parent: index
     url: /wiki/java_home
     updated: '2017-12-03 15:01:36 +0900'
-2017-05-16-jwp-11:
+how-to:
+    type: wiki
+    title: 'HOW TO'
+    summary: null
+    parent: index
+    url: /wiki/how-to
+    updated: '2017-12-23 18:22:50 +0900'
+2017-04-03-emacs-start:
     type: blog
-    title: 'Next JWP Study #11'
-    summary: 'DI 기반 단위 테스트'
+    title: 'emacs 사용 시작!'
+    summary: '하지만 Vim은 포기하지 않는다.'
     parent: null
-    url: /blog/2017/05/16/jwp-11
-    updated: '2017-05-16 21:36:06 +0900'
-2017-04-20-jwp-06:
-    type: blog
-    title: 'Next JWP Study #06'
-    summary: 'JDBC 라이브러리 구현'
-    parent: null
-    url: /blog/2017/04/22/jwp-06
-    updated: '2017-04-22 23:36:10 +0900'
-2017-06-01-jwp-16:
-    type: blog
-    title: 'Next JWP Study #16'
-    summary: 'Test, OOP 피드백 (끝)'
-    parent: null
-    url: /blog/2017/06/01/jwp-16
-    updated: '2017-06-01 19:52:40 +0900'
+    url: /blog/2017/04/02/emacs-start
+    updated: '2017-04-02 16:33:24 +0900'
 2017-04-25-jwp-07:
     type: blog
     title: 'Next JWP Study #07'
@@ -474,13 +453,20 @@ java_home:
     parent: null
     url: /blog/2017/04/26/jwp-07
     updated: '2017-04-26 21:49:43 +0900'
-2017-05-29-jwp-15:
+2017-07-09-vim-game-code-break:
     type: blog
-    title: 'Next JWP Study #15'
-    summary: 'RESTful API 설계'
+    title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
+    summary: '혼돈! 파괴! Vim!'
     parent: null
-    url: /blog/2017/05/29/jwp-15
-    updated: '2017-05-29 19:54:06 +0900'
+    url: /blog/2017/07/06/vim-game-code-break
+    updated: '2017-07-06 00:15:00 +0900'
+2017-06-01-jwp-16:
+    type: blog
+    title: 'Next JWP Study #16'
+    summary: 'Test, OOP 피드백 (끝)'
+    parent: null
+    url: /blog/2017/06/01/jwp-16
+    updated: '2017-06-01 19:52:40 +0900'
 2017-05-01-jwp-08:
     type: blog
     title: 'Next JWP Study #08'
@@ -488,6 +474,13 @@ java_home:
     parent: null
     url: /blog/2017/05/01/jwp-08
     updated: '2017-05-01 07:33:10 +0900'
+2017-05-29-jwp-15:
+    type: blog
+    title: 'Next JWP Study #15'
+    summary: 'RESTful API 설계'
+    parent: null
+    url: /blog/2017/05/29/jwp-15
+    updated: '2017-05-29 19:54:06 +0900'
 2017-05-04-input-source:
     type: blog
     title: 'Vim 사용시 한/영 전환 문제 해결하기'
@@ -495,6 +488,13 @@ java_home:
     parent: null
     url: /blog/2017/05/04/input-source
     updated: '2017-05-04 22:05:30 +0900'
+2017-05-09-jwp-09:
+    type: blog
+    title: 'Next JWP Study #09'
+    summary: 'Spring MVC 실습'
+    parent: null
+    url: /blog/2017/05/09/jwp-09
+    updated: '2017-05-09 10:45:58 +0900'
 2017-05-27-jwp-14:
     type: blog
     title: 'Next JWP Study #14'
@@ -509,13 +509,6 @@ java_home:
     parent: null
     url: /blog/2017/05/23/jwp-13
     updated: '2017-05-23 22:05:44 +0900'
-2017-05-09-jwp-09:
-    type: blog
-    title: 'Next JWP Study #09'
-    summary: 'Spring MVC 실습'
-    parent: null
-    url: /blog/2017/05/09/jwp-09
-    updated: '2017-05-09 10:45:58 +0900'
 2017-05-14-hhkb-jp-tmk:
     type: blog
     title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
@@ -530,6 +523,13 @@ java_home:
     parent: null
     url: /blog/2017/05/14/jwp-10
     updated: '2017-05-14 14:10:50 +0900'
+2017-05-16-jwp-11:
+    type: blog
+    title: 'Next JWP Study #11'
+    summary: 'DI 기반 단위 테스트'
+    parent: null
+    url: /blog/2017/05/16/jwp-11
+    updated: '2017-05-16 21:36:06 +0900'
 2017-05-20-jwp-12:
     type: blog
     title: 'Next JWP Study #12'
@@ -537,6 +537,20 @@ java_home:
     parent: null
     url: /blog/2017/05/20/jwp-12
     updated: '2017-05-20 20:44:40 +0900'
+2017-03-08-til-indent-style:
+    type: blog
+    title: '중괄호 인덴트 스타일을 조사해 보았다.'
+    summary: 'K&R style, Allman style.'
+    parent: null
+    url: /blog/2017/03/08/til-indent-style
+    updated: '2017-03-08 23:00:00 +0900'
+2017-04-20-jwp-06:
+    type: blog
+    title: 'Next JWP Study #06'
+    summary: 'JDBC 라이브러리 구현'
+    parent: null
+    url: /blog/2017/04/22/jwp-06
+    updated: '2017-04-22 23:36:10 +0900'
 2017-04-17-jwp-05:
     type: blog
     title: 'Next JWP Study #05'
@@ -544,41 +558,6 @@ java_home:
     parent: null
     url: /blog/2017/04/17/jwp-05
     updated: '2017-04-17 15:20:00 +0900'
-2017-01-22-jekyll-category-tag:
-    type: blog
-    title: 'Jekyll 블로그에 태그 추가하기.'
-    summary: '마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.'
-    parent: null
-    url: /blog/2017/01/22/jekyll-category-tag
-    updated: '2017-01-22 08:52:22 +0900'
-2017-04-03-emacs-start:
-    type: blog
-    title: 'emacs 사용 시작!'
-    summary: '하지만 Vim은 포기하지 않는다.'
-    parent: null
-    url: /blog/2017/04/02/emacs-start
-    updated: '2017-04-02 16:33:24 +0900'
-2017-04-13-jwp-04:
-    type: blog
-    title: 'Next JWP Study #04'
-    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
-    parent: null
-    url: /blog/2017/04/13/jwp-04
-    updated: '2017-04-13 12:15:32 +0900'
-2017-04-10-jwp-03:
-    type: blog
-    title: 'Next JWP Study #03'
-    summary: '"HTTP 이해: 두 번째 시간"'
-    parent: null
-    url: /blog/2017/04/11/jwp-03
-    updated: '2017-04-11 22:47:18 +0900'
-2017-04-03-jwp-01:
-    type: blog
-    title: 'Next JWP Study #01'
-    summary: '단위 테스트와 리팩토링'
-    parent: null
-    url: /blog/2017/04/05/jwp-01
-    updated: '2017-04-05 21:52:28 +0900'
 2017-04-08-jwp-02:
     type: blog
     title: 'Next JWP Study #02'
@@ -586,6 +565,13 @@ java_home:
     parent: null
     url: /blog/2017/04/08/jwp-02
     updated: '2017-04-08 21:29:47 +0900'
+2017-03-27-tmux-ascii-control:
+    type: blog
+    title: 'tmux 키 조합에서 C--가 불가능한 이유.'
+    summary: '"결론: ascii 코드값 때문."'
+    parent: null
+    url: /blog/2017/03/27/tmux-ascii-control
+    updated: '2017-03-27 22:57:52 +0900'
 2017-04-03-vim-tmux-t-ut:
     type: blog
     title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
@@ -600,20 +586,27 @@ java_home:
     parent: null
     url: /blog/2017/04/02/jwp-00-prepare
     updated: '2017-04-02 12:15:32 +0900'
-2017-03-27-tmux-ascii-control:
+2017-04-03-jwp-01:
     type: blog
-    title: 'tmux 키 조합에서 C--가 불가능한 이유.'
-    summary: '"결론: ascii 코드값 때문."'
+    title: 'Next JWP Study #01'
+    summary: '단위 테스트와 리팩토링'
     parent: null
-    url: /blog/2017/03/27/tmux-ascii-control
-    updated: '2017-03-27 22:57:52 +0900'
-2017-03-12-telegram-bot:
+    url: /blog/2017/04/05/jwp-01
+    updated: '2017-04-05 21:52:28 +0900'
+2017-04-13-jwp-04:
     type: blog
-    title: '텔레그램 봇 스켈레톤 만들기.'
-    summary: 'node.js, heroku로 만드는 텔레그램 챗봇.'
+    title: 'Next JWP Study #04'
+    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
     parent: null
-    url: /blog/2017/03/12/telegram-bot
-    updated: '2017-03-12 21:08:16 +0900'
+    url: /blog/2017/04/13/jwp-04
+    updated: '2017-04-13 12:15:32 +0900'
+2017-04-10-jwp-03:
+    type: blog
+    title: 'Next JWP Study #03'
+    summary: '"HTTP 이해: 두 번째 시간"'
+    parent: null
+    url: /blog/2017/04/11/jwp-03
+    updated: '2017-04-11 22:47:18 +0900'
 2017-03-13-uri-url:
     type: blog
     title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'
@@ -621,13 +614,13 @@ java_home:
     parent: null
     url: /blog/2017/03/13/uri-url
     updated: '2017-03-13 21:30:46 +0900'
-2017-03-08-til-indent-style:
+2017-03-12-telegram-bot:
     type: blog
-    title: '중괄호 인덴트 스타일을 조사해 보았다.'
-    summary: 'K&R style, Allman style.'
+    title: '텔레그램 봇 스켈레톤 만들기.'
+    summary: 'node.js, heroku로 만드는 텔레그램 챗봇.'
     parent: null
-    url: /blog/2017/03/08/til-indent-style
-    updated: '2017-03-08 23:00:00 +0900'
+    url: /blog/2017/03/12/telegram-bot
+    updated: '2017-03-12 21:08:16 +0900'
 2017-01-30-ideavim-build:
     type: blog
     title: 'IdeaVIM 빌드가 안 되는 문제 해결.'
@@ -635,6 +628,13 @@ java_home:
     parent: null
     url: /blog/2017/01/30/ideavim-build
     updated: '2017-01-30 21:22:53 +0900'
+2017-01-22-jekyll-category-tag:
+    type: blog
+    title: 'Jekyll 블로그에 태그 추가하기.'
+    summary: '마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.'
+    parent: null
+    url: /blog/2017/01/22/jekyll-category-tag
+    updated: '2017-01-22 08:52:22 +0900'
 2017-01-21-create-jekyll-blog:
     type: blog
     title: 'github에 Jekyll 블로그를 만들었다.'
