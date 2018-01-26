@@ -160,6 +160,7 @@ review:
     - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
     - {fileName: review-2018, updated: '2018-01-24 21:36:36 +0900'}
     - {fileName: secret-of-consulting, updated: '2018-01-18 21:54:01 +0900'}
+    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER, updated: '2018-01-26 12:59:19 +0900'}
     - {fileName: toda-seiji-scientia, updated: '2018-01-13 07:19:51 +0900'}
 만화책:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-20 18:16:43 +0900'}
@@ -174,7 +175,7 @@ law:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
     - {fileName: Postel-s-law, updated: '2018-01-07 18:20:48 +0900'}
 book:
-    - {fileName: book, updated: '2018-01-24 21:36:56 +0900'}
+    - {fileName: book, updated: '2018-01-26 12:59:39 +0900'}
     - {fileName: Code-Complete-2, updated: '2017-12-05 21:53:52 +0900'}
     - {fileName: DOM-Enlightenment-by-Cody-Lindley, updated: '2018-01-24 21:39:05 +0900'}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE, updated: '2018-01-20 18:34:16 +0900'}
@@ -247,7 +248,7 @@ http:
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-01-24 21:36:19 +0900'}
+    - {fileName: index, updated: '2018-01-26 12:59:30 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
@@ -271,6 +272,8 @@ rfc:
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 consulting:
     - {fileName: secret-of-consulting, updated: '2018-01-18 21:54:01 +0900'}
+web:
+    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER, updated: '2018-01-26 12:59:19 +0900'}
 hacker:
     - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
 번역:
