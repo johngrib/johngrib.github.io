@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-01-26 18:36:32 +0900
+updated : 2018-01-27 14:54:20 +0900
 tags    : review
 toc     : true
 public  : true
@@ -15,17 +15,18 @@ latex   : false
 
 ## 책 - 공부
 
-* 2018-01-26 완독 [[TEXT-BOOK-OF-THE-WEB-ENGINEER]]{웹 엔지니어의 교과서}
-* 2018-01-24 완독 [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
-* 2018-01-23 완독 [[HTTP-no-Kyokasho]]{그림으로 배우는 HTTP & 네트워크}
-* 2018-01-18 완독 [[secret-of-consulting]]
+* 2018-01-26 [[TEXT-BOOK-OF-THE-WEB-ENGINEER]]{웹 엔지니어의 교과서}
+* 2018-01-24 [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
+* 2018-01-23 [[HTTP-no-Kyokasho]]{그림으로 배우는 HTTP & 네트워크}
+* 2018-01-18 [[secret-of-consulting]]
 
 ## 책 - 흥미
 
-* 2018-01-20 완독 [[그림으로-보는-서양검술-메모]] - 롱소드 편, 레이피어 편
-* 2018-01-12 감상 [[toda-seiji-scientia]]{스키엔티아 - 도다 세이지 만화}
+* 2018-01-27 [[HELL-BOY]] - Vol. 1. 파멸의 씨앗
+* 2018-01-20 [[그림으로-보는-서양검술-메모]] - 롱소드 편, 레이피어 편
+* 2018-01-12 [[toda-seiji-scientia]]{스키엔티아 - 도다 세이지 만화}
 
 ## 영화/드라마
 
-* 2018-01-13 감상 [[HOT-FUZZ]]{뜨거운 녀석들}
-* 2018-01-11 감상 [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]] [시즌 2](/wiki/DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY/#season-02)
+* 2018-01-13 [[HOT-FUZZ]]{뜨거운 녀석들}
+* 2018-01-11 [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]] [시즌 2](/wiki/DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY/#season-02)

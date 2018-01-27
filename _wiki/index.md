@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-01-26 12:59:30 +0900
+updated : 2018-01-27 14:52:28 +0900
 tags    : index
 toc     : true
 public  : true
@@ -28,6 +28,7 @@ comment : false
     * [[book]]{도서}
         * [[Code-Complete-2]]
         * [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
+        * [[HELL-BOY]]
         * [[HTTP-no-Kyokasho]]
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
         * [[secret-of-consulting]]

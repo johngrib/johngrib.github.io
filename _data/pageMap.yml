@@ -60,7 +60,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-01-26 18:36:32 +0900'
+    updated: '2018-01-27 14:54:20 +0900'
 review:
     type: wiki
     title: '리뷰 모음'
@@ -95,7 +95,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-01-26 12:59:30 +0900'
+    updated: '2018-01-27 14:52:28 +0900'
 HTTP-THE-DEFINITIVE-GUIDE:
     type: wiki
     title: '(책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'
@@ -124,6 +124,13 @@ HOT-FUZZ:
     parent: movie
     url: /wiki/HOT-FUZZ
     updated: '2018-01-13 16:02:28 +0900'
+HELL-BOY:
+    type: wiki
+    title: '(책) 헬보이'
+    summary: 'HELL BOY'
+    parent: book
+    url: /wiki/HELL-BOY
+    updated: '2018-01-27 14:59:04 +0900'
 googling:
     type: wiki
     title: '구글링하는 방법'
@@ -186,7 +193,7 @@ book:
     summary: null
     parent: media
     url: /wiki/book
-    updated: '2018-01-26 21:39:56 +0900'
+    updated: '2018-01-27 14:53:45 +0900'
 그림으로-보는-서양검술-메모:
     type: wiki
     title: '(책) 그림으로 보는 서양검술 메모'
@@ -201,27 +208,20 @@ book:
     parent: diary-2018
     url: /wiki/2018-01-20
     updated: '2018-01-20 22:59:09 +0900'
-groovy:
-    type: wiki
-    title: Groovy
-    summary: 'A multi-faceted language for the Java platform'
-    parent: programming-language
-    url: /wiki/groovy
-    updated: '2017-12-03 15:01:36 +0900'
-2017-07-14-aheui-explained:
+2017-05-04-input-source:
     type: blog
-    title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
-    summary: '아희 재밌네'
+    title: 'Vim 사용시 한/영 전환 문제 해결하기'
+    summary: 'hammerspoon으로 해결'
     parent: null
-    url: /blog/2017/07/14/aheui-explained
-    updated: '2017-07-14 23:00:17 +0900'
-2017-07-31-hammerspoon-tutorial-00-start:
+    url: /blog/2017/05/04/input-source
+    updated: '2017-05-04 22:05:30 +0900'
+2017-07-30-luarocks:
     type: blog
-    title: 'Hammerspoon 튜토리얼 00 - 시작하기'
-    summary: '일단 맥이 있어야 한다'
+    title: 'luarocks로 Hammerspoon 패키지 관리하기'
+    summary: '유한락스가 아니라 루아락스로 깨끗하게'
     parent: null
-    url: /blog/2017/07/31/hammerspoon-tutorial-00-start
-    updated: '2017-07-31 21:57:27 +0900'
+    url: /blog/2017/07/30/luarocks
+    updated: '2017-07-30 16:32:25 +0900'
 2017-08-01-hammerspoon-tutorial-01:
     type: blog
     title: 'Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동'
@@ -418,13 +418,20 @@ Gradle:
     parent: index
     url: /wiki/Gradle
     updated: '2017-12-08 23:17:46 +0900'
-2017-07-30-luarocks:
+groovy:
+    type: wiki
+    title: Groovy
+    summary: 'A multi-faceted language for the Java platform'
+    parent: programming-language
+    url: /wiki/groovy
+    updated: '2017-12-03 15:01:36 +0900'
+2017-07-31-hammerspoon-tutorial-00-start:
     type: blog
-    title: 'luarocks로 Hammerspoon 패키지 관리하기'
-    summary: '유한락스가 아니라 루아락스로 깨끗하게'
+    title: 'Hammerspoon 튜토리얼 00 - 시작하기'
+    summary: '일단 맥이 있어야 한다'
     parent: null
-    url: /blog/2017/07/30/luarocks
-    updated: '2017-07-30 16:32:25 +0900'
+    url: /blog/2017/07/31/hammerspoon-tutorial-00-start
+    updated: '2017-07-31 21:57:27 +0900'
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -453,6 +460,13 @@ how-to:
     parent: null
     url: /blog/2017/04/26/jwp-07
     updated: '2017-04-26 21:49:43 +0900'
+2017-07-14-aheui-explained:
+    type: blog
+    title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
+    summary: '아희 재밌네'
+    parent: null
+    url: /blog/2017/07/14/aheui-explained
+    updated: '2017-07-14 23:00:17 +0900'
 2017-07-09-vim-game-code-break:
     type: blog
     title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
@@ -460,13 +474,6 @@ how-to:
     parent: null
     url: /blog/2017/07/06/vim-game-code-break
     updated: '2017-07-06 00:15:00 +0900'
-2017-06-01-jwp-16:
-    type: blog
-    title: 'Next JWP Study #16'
-    summary: 'Test, OOP 피드백 (끝)'
-    parent: null
-    url: /blog/2017/06/01/jwp-16
-    updated: '2017-06-01 19:52:40 +0900'
 2017-05-01-jwp-08:
     type: blog
     title: 'Next JWP Study #08'
@@ -474,20 +481,13 @@ how-to:
     parent: null
     url: /blog/2017/05/01/jwp-08
     updated: '2017-05-01 07:33:10 +0900'
-2017-05-29-jwp-15:
+2017-06-01-jwp-16:
     type: blog
-    title: 'Next JWP Study #15'
-    summary: 'RESTful API 설계'
+    title: 'Next JWP Study #16'
+    summary: 'Test, OOP 피드백 (끝)'
     parent: null
-    url: /blog/2017/05/29/jwp-15
-    updated: '2017-05-29 19:54:06 +0900'
-2017-05-04-input-source:
-    type: blog
-    title: 'Vim 사용시 한/영 전환 문제 해결하기'
-    summary: 'hammerspoon으로 해결'
-    parent: null
-    url: /blog/2017/05/04/input-source
-    updated: '2017-05-04 22:05:30 +0900'
+    url: /blog/2017/06/01/jwp-16
+    updated: '2017-06-01 19:52:40 +0900'
 2017-05-09-jwp-09:
     type: blog
     title: 'Next JWP Study #09'
@@ -495,20 +495,6 @@ how-to:
     parent: null
     url: /blog/2017/05/09/jwp-09
     updated: '2017-05-09 10:45:58 +0900'
-2017-05-27-jwp-14:
-    type: blog
-    title: 'Next JWP Study #14'
-    summary: 'ORM 및 Spring Data JPA'
-    parent: null
-    url: /blog/2017/05/27/jwp-14
-    updated: '2017-05-27 18:00:40 +0900'
-2017-05-23-jwp-13:
-    type: blog
-    title: 'Next JWP Study #13'
-    summary: 'AOP 개념 및 로그인 기반 테스트'
-    parent: null
-    url: /blog/2017/05/23/jwp-13
-    updated: '2017-05-23 22:05:44 +0900'
 2017-05-14-hhkb-jp-tmk:
     type: blog
     title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
@@ -516,6 +502,20 @@ how-to:
     parent: null
     url: /blog/2017/05/14/hhkb-jp-tmk
     updated: '2017-05-14 15:50:31 +0900'
+2017-05-29-jwp-15:
+    type: blog
+    title: 'Next JWP Study #15'
+    summary: 'RESTful API 설계'
+    parent: null
+    url: /blog/2017/05/29/jwp-15
+    updated: '2017-05-29 19:54:06 +0900'
+2017-05-27-jwp-14:
+    type: blog
+    title: 'Next JWP Study #14'
+    summary: 'ORM 및 Spring Data JPA'
+    parent: null
+    url: /blog/2017/05/27/jwp-14
+    updated: '2017-05-27 18:00:40 +0900'
 2017-05-14-jwp-10:
     type: blog
     title: 'Next JWP Study #10'
@@ -537,6 +537,13 @@ how-to:
     parent: null
     url: /blog/2017/05/20/jwp-12
     updated: '2017-05-20 20:44:40 +0900'
+2017-05-23-jwp-13:
+    type: blog
+    title: 'Next JWP Study #13'
+    summary: 'AOP 개념 및 로그인 기반 테스트'
+    parent: null
+    url: /blog/2017/05/23/jwp-13
+    updated: '2017-05-23 22:05:44 +0900'
 2017-03-08-til-indent-style:
     type: blog
     title: '중괄호 인덴트 스타일을 조사해 보았다.'

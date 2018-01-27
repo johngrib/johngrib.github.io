@@ -3,7 +3,7 @@ layout  : wiki
 title   : 도서
 summary :
 date    : 2017-12-05 19:19:56 +0900
-updated : 2018-01-26 21:39:56 +0900
+updated : 2018-01-27 14:53:45 +0900
 tags    : book
 toc     : true
 public  : true
@@ -24,6 +24,7 @@ latex   : false
 
 ## 책 - 만화
 
+* [[HELL-BOY]]
 * [[toda-seiji-scientia]]
 
 ## 책 - 취미
