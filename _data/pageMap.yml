@@ -1,10 +1,10 @@
-Code-Complete-2:
+clipping:
     type: wiki
-    title: '(책) 코드 컴플리트 - 스티브 맥코넬'
-    summary: 'Code Complete 2nd Edition by Steve McConnell'
-    parent: book
-    url: /wiki/Code-Complete-2
-    updated: '2018-01-26 21:35:22 +0900'
+    title: '글 모음 및 요약'
+    summary: null
+    parent: index
+    url: /wiki/clipping
+    updated: '2018-01-11 14:13:56 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -60,7 +60,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-01-27 14:54:20 +0900'
+    updated: '2018-01-28 18:53:09 +0900'
 review:
     type: wiki
     title: '리뷰 모음'
@@ -102,7 +102,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-01-28 09:09:32 +0900'
+    updated: '2018-01-28 18:52:29 +0900'
 HTTP-THE-DEFINITIVE-GUIDE:
     type: wiki
     title: '(책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'
@@ -180,13 +180,13 @@ diary:
     parent: index
     url: /wiki/diary
     updated: '2018-01-20 17:47:01 +0900'
-clipping:
+Code-Complete-2:
     type: wiki
-    title: '글 모음 및 요약'
-    summary: null
-    parent: index
-    url: /wiki/clipping
-    updated: '2018-01-11 14:13:56 +0900'
+    title: '(책) 코드 컴플리트 - 스티브 맥코넬'
+    summary: 'Code Complete 2nd Edition by Steve McConnell'
+    parent: book
+    url: /wiki/Code-Complete-2
+    updated: '2018-01-26 21:35:22 +0900'
 braille-pattern-chars:
     type: wiki
     title: '점자 패턴 문자(Braille pattern)'
@@ -200,7 +200,14 @@ book:
     summary: null
     parent: media
     url: /wiki/book
-    updated: '2018-01-27 14:53:45 +0900'
+    updated: '2018-01-28 18:52:43 +0900'
+전생검신:
+    type: wiki
+    title: '(책) 전생검신'
+    summary: null
+    parent: book
+    url: /wiki/전생검신
+    updated: '2018-01-28 19:09:06 +0900'
 그림으로-보는-서양검술-메모:
     type: wiki
     title: '(책) 그림으로 보는 서양검술 메모'
@@ -222,20 +229,13 @@ book:
     parent: null
     url: /blog/2017/05/04/input-source
     updated: '2017-05-04 22:05:30 +0900'
-2017-07-31-hammerspoon-tutorial-00-start:
+2017-08-01-hammerspoon-tutorial-01:
     type: blog
-    title: 'Hammerspoon 튜토리얼 00 - 시작하기'
-    summary: '일단 맥이 있어야 한다'
+    title: 'Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동'
+    summary: '윈도우즈에는 있으나 맥에는 없는 그것'
     parent: null
-    url: /blog/2017/07/31/hammerspoon-tutorial-00-start
-    updated: '2017-07-31 21:57:27 +0900'
-2017-08-04-hammerspoon-tutorial-02:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 02 - 클립보드 확장 기능을 만들어 봅시다'
-    summary: '복붙을 편하게!'
-    parent: null
-    url: /blog/2017/08/04/hammerspoon-tutorial-02
-    updated: '2017-08-04 21:32:22 +0900'
+    url: /blog/2017/08/01/hammerspoon-tutorial-01
+    updated: '2017-08-01 22:47:08 +0900'
 why-http-80-https-443:
     type: wiki
     title: 'http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?'
@@ -299,13 +299,6 @@ The-Jargon-File:
     parent: book
     url: /wiki/The-Jargon-File
     updated: '2017-12-10 00:55:18 +0900'
-airplain-rule:
-    type: wiki
-    title: '비행기 법칙'
-    summary: '복잡성은 실패할 확률을 높인다'
-    parent: proverb
-    url: /wiki/airplain-rule
-    updated: '2017-12-25 13:07:43 +0900'
 RFC:
     type: wiki
     title: 'RFC(Request For Comment)'
@@ -313,6 +306,13 @@ RFC:
     parent: index
     url: /wiki/RFC
     updated: '2017-12-12 22:06:20 +0900'
+airplain-rule:
+    type: wiki
+    title: '비행기 법칙'
+    summary: '복잡성은 실패할 확률을 높인다'
+    parent: proverb
+    url: /wiki/airplain-rule
+    updated: '2017-12-25 13:07:43 +0900'
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -334,6 +334,13 @@ Postel-s-law:
     parent: proverb
     url: /wiki/Postel-s-law
     updated: '2018-01-07 18:20:48 +0900'
+mathjax-latex:
+    type: wiki
+    title: 'MathJax로 LaTeX 사용하기'
+    summary: null
+    parent: how-to
+    url: /wiki/mathjax-latex
+    updated: '2017-12-23 18:18:43 +0900'
 coding-font:
     type: wiki
     title: '코딩 폰트'
@@ -355,13 +362,6 @@ default-post:
     parent: null
     url: /blog/2017/04/02/default-post
     updated: '2017-04-02 12:15:32 +0900'
-mathjax-latex:
-    type: wiki
-    title: 'MathJax로 LaTeX 사용하기'
-    summary: null
-    parent: how-to
-    url: /wiki/mathjax-latex
-    updated: '2017-12-23 18:18:43 +0900'
 Lubarsky-s-Law-of-Cybernetic-Entomology:
     type: wiki
     title: '루바르스키의 사이버네틱 곤충학 법칙(Lubarsky''s Law of Cybernetic Entomology)'
@@ -383,20 +383,13 @@ how-to:
     parent: index
     url: /wiki/how-to
     updated: '2017-12-23 18:22:50 +0900'
-2017-08-01-hammerspoon-tutorial-01:
+2017-08-04-hammerspoon-tutorial-02:
     type: blog
-    title: 'Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동'
-    summary: '윈도우즈에는 있으나 맥에는 없는 그것'
+    title: 'Hammerspoon 튜토리얼 02 - 클립보드 확장 기능을 만들어 봅시다'
+    summary: '복붙을 편하게!'
     parent: null
-    url: /blog/2017/08/01/hammerspoon-tutorial-01
-    updated: '2017-08-01 22:47:08 +0900'
-frac1e:
-    type: wiki
-    title: 'n개의 제비뽑기에 n번 도전'
-    summary: 1/e
-    parent: index
-    url: /wiki/frac1e
-    updated: '2017-12-03 09:44:20 +0900'
+    url: /blog/2017/08/04/hammerspoon-tutorial-02
+    updated: '2017-08-04 21:32:22 +0900'
 groovy:
     type: wiki
     title: Groovy
@@ -404,6 +397,13 @@ groovy:
     parent: programming-language
     url: /wiki/groovy
     updated: '2017-12-03 15:01:36 +0900'
+frac1e:
+    type: wiki
+    title: 'n개의 제비뽑기에 n번 도전'
+    summary: 1/e
+    parent: index
+    url: /wiki/frac1e
+    updated: '2017-12-03 09:44:20 +0900'
 Gradle:
     type: wiki
     title: Gradle
@@ -411,13 +411,13 @@ Gradle:
     parent: index
     url: /wiki/Gradle
     updated: '2017-12-08 23:17:46 +0900'
-2017-05-29-jwp-15:
+2017-06-01-jwp-16:
     type: blog
-    title: 'Next JWP Study #15'
-    summary: 'RESTful API 설계'
+    title: 'Next JWP Study #16'
+    summary: 'Test, OOP 피드백 (끝)'
     parent: null
-    url: /blog/2017/05/29/jwp-15
-    updated: '2017-05-29 19:54:06 +0900'
+    url: /blog/2017/06/01/jwp-16
+    updated: '2017-06-01 19:52:40 +0900'
 2017-05-14-hhkb-jp-tmk:
     type: blog
     title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
@@ -425,13 +425,6 @@ Gradle:
     parent: null
     url: /blog/2017/05/14/hhkb-jp-tmk
     updated: '2017-05-14 15:50:31 +0900'
-2017-08-05-hammerspoon-tutorial-03:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 03 - 한영 전환 키를 만들어 봅시다'
-    summary: 'Esc - 영문전환도 만들어 봅시다'
-    parent: null
-    url: /blog/2017/08/05/hammerspoon-tutorial-03
-    updated: '2017-08-05 12:11:00 +0900'
 2017-05-14-jwp-10:
     type: blog
     title: 'Next JWP Study #10'
@@ -439,6 +432,13 @@ Gradle:
     parent: null
     url: /blog/2017/05/14/jwp-10
     updated: '2017-05-14 14:10:50 +0900'
+2017-08-05-hammerspoon-tutorial-03:
+    type: blog
+    title: 'Hammerspoon 튜토리얼 03 - 한영 전환 키를 만들어 봅시다'
+    summary: 'Esc - 영문전환도 만들어 봅시다'
+    parent: null
+    url: /blog/2017/08/05/hammerspoon-tutorial-03
+    updated: '2017-08-05 12:11:00 +0900'
 2017-05-16-jwp-11:
     type: blog
     title: 'Next JWP Study #11'
@@ -446,6 +446,13 @@ Gradle:
     parent: null
     url: /blog/2017/05/16/jwp-11
     updated: '2017-05-16 21:36:06 +0900'
+2017-05-20-jwp-12:
+    type: blog
+    title: 'Next JWP Study #12'
+    summary: 'Spring Boot by Tests'
+    parent: null
+    url: /blog/2017/05/20/jwp-12
+    updated: '2017-05-20 20:44:40 +0900'
 2017-08-06-hammerspoon-tutorial-04:
     type: blog
     title: 'Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다'
@@ -467,27 +474,13 @@ Gradle:
     parent: null
     url: /blog/2017/09/20/regex-prime
     updated: '2017-09-20 20:56:55 +0900'
-2017-07-30-luarocks:
+2017-07-31-hammerspoon-tutorial-00-start:
     type: blog
-    title: 'luarocks로 Hammerspoon 패키지 관리하기'
-    summary: '유한락스가 아니라 루아락스로 깨끗하게'
+    title: 'Hammerspoon 튜토리얼 00 - 시작하기'
+    summary: '일단 맥이 있어야 한다'
     parent: null
-    url: /blog/2017/07/30/luarocks
-    updated: '2017-07-30 16:32:25 +0900'
-2017-05-20-jwp-12:
-    type: blog
-    title: 'Next JWP Study #12'
-    summary: 'Spring Boot by Tests'
-    parent: null
-    url: /blog/2017/05/20/jwp-12
-    updated: '2017-05-20 20:44:40 +0900'
-2017-07-14-aheui-explained:
-    type: blog
-    title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
-    summary: '아희 재밌네'
-    parent: null
-    url: /blog/2017/07/14/aheui-explained
-    updated: '2017-07-14 23:00:17 +0900'
+    url: /blog/2017/07/31/hammerspoon-tutorial-00-start
+    updated: '2017-07-31 21:57:27 +0900'
 2017-05-23-jwp-13:
     type: blog
     title: 'Next JWP Study #13'
@@ -495,13 +488,13 @@ Gradle:
     parent: null
     url: /blog/2017/05/23/jwp-13
     updated: '2017-05-23 22:05:44 +0900'
-2017-07-09-vim-game-code-break:
+2017-07-30-luarocks:
     type: blog
-    title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
-    summary: '혼돈! 파괴! Vim!'
+    title: 'luarocks로 Hammerspoon 패키지 관리하기'
+    summary: '유한락스가 아니라 루아락스로 깨끗하게'
     parent: null
-    url: /blog/2017/07/06/vim-game-code-break
-    updated: '2017-07-06 00:15:00 +0900'
+    url: /blog/2017/07/30/luarocks
+    updated: '2017-07-30 16:32:25 +0900'
 2017-05-27-jwp-14:
     type: blog
     title: 'Next JWP Study #14'
@@ -509,13 +502,27 @@ Gradle:
     parent: null
     url: /blog/2017/05/27/jwp-14
     updated: '2017-05-27 18:00:40 +0900'
-2017-06-01-jwp-16:
+2017-07-14-aheui-explained:
     type: blog
-    title: 'Next JWP Study #16'
-    summary: 'Test, OOP 피드백 (끝)'
+    title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
+    summary: '아희 재밌네'
     parent: null
-    url: /blog/2017/06/01/jwp-16
-    updated: '2017-06-01 19:52:40 +0900'
+    url: /blog/2017/07/14/aheui-explained
+    updated: '2017-07-14 23:00:17 +0900'
+2017-05-29-jwp-15:
+    type: blog
+    title: 'Next JWP Study #15'
+    summary: 'RESTful API 설계'
+    parent: null
+    url: /blog/2017/05/29/jwp-15
+    updated: '2017-05-29 19:54:06 +0900'
+2017-07-09-vim-game-code-break:
+    type: blog
+    title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
+    summary: '혼돈! 파괴! Vim!'
+    parent: null
+    url: /blog/2017/07/06/vim-game-code-break
+    updated: '2017-07-06 00:15:00 +0900'
 google-search-console-remove-outdated-content:
     type: wiki
     title: 'Google Search Console - Remove outdated content'

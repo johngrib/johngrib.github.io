@@ -158,7 +158,7 @@ review:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
     - {fileName: HTTP-no-Kyokasho, updated: '2018-01-26 21:36:43 +0900'}
     - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
-    - {fileName: review-2018, updated: '2018-01-27 14:54:20 +0900'}
+    - {fileName: review-2018, updated: '2018-01-28 18:53:09 +0900'}
     - {fileName: secret-of-consulting, updated: '2018-01-26 21:37:49 +0900'}
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER, updated: '2018-01-26 12:59:19 +0900'}
     - {fileName: toda-seiji-scientia, updated: '2018-01-26 21:40:15 +0900'}
@@ -168,6 +168,16 @@ review:
     - {fileName: toda-seiji-scientia, updated: '2018-01-26 21:40:15 +0900'}
 무술:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
+book:
+    - {fileName: 전생검신, updated: '2018-01-28 19:09:06 +0900'}
+    - {fileName: book, updated: '2018-01-28 18:52:43 +0900'}
+    - {fileName: Code-Complete-2, updated: '2018-01-26 21:35:22 +0900'}
+    - {fileName: DOM-Enlightenment-by-Cody-Lindley, updated: '2018-01-26 21:36:08 +0900'}
+    - {fileName: HELL-BOY, updated: '2018-01-27 14:59:04 +0900'}
+    - {fileName: HTTP-THE-DEFINITIVE-GUIDE, updated: '2018-01-26 21:37:19 +0900'}
+    - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
+fantasy:
+    - {fileName: 전생검신, updated: '2018-01-28 19:09:06 +0900'}
 complexity:
     - {fileName: airplain-rule, updated: '2017-12-25 13:07:43 +0900'}
 law:
@@ -175,13 +185,6 @@ law:
     - {fileName: Conway-s-law, updated: '2017-12-10 00:47:52 +0900'}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
     - {fileName: Postel-s-law, updated: '2018-01-07 18:20:48 +0900'}
-book:
-    - {fileName: book, updated: '2018-01-27 14:53:45 +0900'}
-    - {fileName: Code-Complete-2, updated: '2018-01-26 21:35:22 +0900'}
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley, updated: '2018-01-26 21:36:08 +0900'}
-    - {fileName: HELL-BOY, updated: '2018-01-27 14:59:04 +0900'}
-    - {fileName: HTTP-THE-DEFINITIVE-GUIDE, updated: '2018-01-26 21:37:19 +0900'}
-    - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
 special-chars:
     - {fileName: braille-pattern-chars, updated: '2018-01-10 21:14:25 +0900'}
     - {fileName: special-chars, updated: '2018-01-10 16:52:03 +0900'}
@@ -250,7 +253,7 @@ http:
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-01-28 09:09:32 +0900'}
+    - {fileName: index, updated: '2018-01-28 18:52:29 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:

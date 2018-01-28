@@ -3,7 +3,7 @@ layout  : wiki
 title   : 도서
 summary :
 date    : 2017-12-05 19:19:56 +0900
-updated : 2018-01-27 14:53:45 +0900
+updated : 2018-01-28 18:52:43 +0900
 tags    : book
 toc     : true
 public  : true
@@ -30,3 +30,4 @@ latex   : false
 ## 책 - 취미
 
 * [[그림으로-보는-서양검술-메모]]
+* [[전생검신]]

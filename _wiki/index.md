@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-01-28 09:09:32 +0900
+updated : 2018-01-28 18:52:29 +0900
 tags    : index
 toc     : true
 public  : true
@@ -36,6 +36,7 @@ comment : false
         * [[TEXT-BOOK-OF-THE-WEB-ENGINEER]]{웹 엔지니어의 교과서}
         * [[toda-seiji-scientia]]
         * [[그림으로-보는-서양검술-메모]]
+        * [[전생검신]]
     * [[review]]
         * [[review-2018]]
     * [[movie]]
