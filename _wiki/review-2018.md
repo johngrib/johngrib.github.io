@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-01-28 18:53:09 +0900
+updated : 2018-01-29 23:05:56 +0900
 tags    : review
 toc     : true
 public  : true
@@ -29,5 +29,6 @@ latex   : false
 
 ## 영화/드라마
 
+* 2018-01-29 [[Walking-Dead]] 시즌 7
 * 2018-01-13 [[HOT-FUZZ]]{뜨거운 녀석들}
 * 2018-01-11 [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]] [시즌 2](/wiki/DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY/#season-02)

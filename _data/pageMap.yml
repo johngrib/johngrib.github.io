@@ -18,7 +18,7 @@ Walking-Dead:
     summary: '워킹 데드'
     parent: movie
     url: /wiki/Walking-Dead
-    updated: '2018-01-20 18:41:33 +0900'
+    updated: '2018-01-29 23:06:09 +0900'
 toda-seiji-scientia:
     type: wiki
     title: '(책) 스키엔티아 - 도다 세이지'
@@ -60,7 +60,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-01-28 18:53:09 +0900'
+    updated: '2018-01-29 23:05:56 +0900'
 review:
     type: wiki
     title: '리뷰 모음'
@@ -207,7 +207,7 @@ book:
     summary: null
     parent: book
     url: /wiki/전생검신
-    updated: '2018-01-28 19:09:06 +0900'
+    updated: '2018-01-29 10:15:38 +0900'
 그림으로-보는-서양검술-메모:
     type: wiki
     title: '(책) 그림으로 보는 서양검술 메모'

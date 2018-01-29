@@ -158,7 +158,7 @@ review:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
     - {fileName: HTTP-no-Kyokasho, updated: '2018-01-26 21:36:43 +0900'}
     - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
-    - {fileName: review-2018, updated: '2018-01-28 18:53:09 +0900'}
+    - {fileName: review-2018, updated: '2018-01-29 23:05:56 +0900'}
     - {fileName: secret-of-consulting, updated: '2018-01-26 21:37:49 +0900'}
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER, updated: '2018-01-26 12:59:19 +0900'}
     - {fileName: toda-seiji-scientia, updated: '2018-01-26 21:40:15 +0900'}
@@ -169,7 +169,7 @@ review:
 무술:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
 book:
-    - {fileName: 전생검신, updated: '2018-01-28 19:09:06 +0900'}
+    - {fileName: 전생검신, updated: '2018-01-29 10:15:38 +0900'}
     - {fileName: book, updated: '2018-01-28 18:52:43 +0900'}
     - {fileName: Code-Complete-2, updated: '2018-01-26 21:35:22 +0900'}
     - {fileName: DOM-Enlightenment-by-Cody-Lindley, updated: '2018-01-26 21:36:08 +0900'}
@@ -177,7 +177,7 @@ book:
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE, updated: '2018-01-26 21:37:19 +0900'}
     - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
 fantasy:
-    - {fileName: 전생검신, updated: '2018-01-28 19:09:06 +0900'}
+    - {fileName: 전생검신, updated: '2018-01-29 10:15:38 +0900'}
 complexity:
     - {fileName: airplain-rule, updated: '2017-12-25 13:07:43 +0900'}
 law:
@@ -209,10 +209,10 @@ test:
 netflix:
     - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY, updated: '2018-01-13 12:28:13 +0900'}
     - {fileName: HOT-FUZZ, updated: '2018-01-13 16:02:28 +0900'}
-    - {fileName: Walking-Dead, updated: '2018-01-20 18:41:33 +0900'}
+    - {fileName: Walking-Dead, updated: '2018-01-29 23:06:09 +0900'}
 drama:
     - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY, updated: '2018-01-13 12:28:13 +0900'}
-    - {fileName: Walking-Dead, updated: '2018-01-20 18:41:33 +0900'}
+    - {fileName: Walking-Dead, updated: '2018-01-29 23:06:09 +0900'}
 html:
     - {fileName: DOM-Enlightenment-by-Cody-Lindley, updated: '2018-01-26 21:36:08 +0900'}
 DOM:
@@ -291,7 +291,7 @@ sf:
 trouble-shooting:
     - {fileName: vim-conceallevel, updated: '2017-12-20 13:13:32 +0900'}
 zombie:
-    - {fileName: Walking-Dead, updated: '2018-01-20 18:41:33 +0900'}
+    - {fileName: Walking-Dead, updated: '2018-01-29 23:06:09 +0900'}
 why:
     - {fileName: why, updated: '2017-12-13 12:20:03 +0900'}
 yaml:
