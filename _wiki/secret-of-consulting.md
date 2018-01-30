@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : (책) The Secrets of Consulting by Gerald M. Weinberg
-summary : 컨설팅의 비밀 - 제랄드 와인버그
+title   : (책) 컨설팅의 비밀 - 제랄드 와인버그
+summary : The Secrets of Consulting by Gerald M. Weinberg
 date    : 2018-01-18 21:36:01 +0900
-updated : 2018-01-26 21:37:49 +0900
+updated : 2018-01-30 22:42:26 +0900
 tags    : review consulting Gerald-Weinberg
 toc     : true
 public  : true
