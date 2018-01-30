@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-01-28 18:52:29 +0900
+updated : 2018-01-30 22:41:40 +0900
 tags    : index
 toc     : true
 public  : true
@@ -33,6 +33,7 @@ comment : false
         * [[HTTP-no-Kyokasho]]
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
         * [[secret-of-consulting]]
+        * [[Software-Craftsman]]{소프트웨어 장인}
         * [[TEXT-BOOK-OF-THE-WEB-ENGINEER]]{웹 엔지니어의 교과서}
         * [[toda-seiji-scientia]]
         * [[그림으로-보는-서양검술-메모]]
@@ -50,6 +51,7 @@ comment : false
     * [[Conway-s-law]]
     * [[Edsel-edict]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
+    * [[orange-juice-test]]
     * [[Postel-s-law]]
 * [[RFC]]
 * [[special-chars]]
