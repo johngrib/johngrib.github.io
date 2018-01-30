@@ -81,7 +81,7 @@ orange-juice-test:
     summary: '항상 대안을 제시하라'
     parent: proverb
     url: /wiki/orange-juice-test
-    updated: '2018-01-30 23:08:02 +0900'
+    updated: '2018-01-30 23:16:57 +0900'
 movie:
     type: wiki
     title: '영화, TV 시리즈'
