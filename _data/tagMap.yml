@@ -159,9 +159,9 @@ review:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
     - {fileName: HTTP-no-Kyokasho, updated: '2018-01-26 21:36:43 +0900'}
     - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
-    - {fileName: review-2018, updated: '2018-01-29 23:05:56 +0900'}
+    - {fileName: review-2018, updated: '2018-02-01 22:08:23 +0900'}
     - {fileName: secret-of-consulting, updated: '2018-01-30 22:42:26 +0900'}
-    - {fileName: Software-Craftsman, updated: '2018-01-30 22:44:21 +0900'}
+    - {fileName: Software-Craftsman, updated: '2018-02-01 22:56:16 +0900'}
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER, updated: '2018-01-26 12:59:19 +0900'}
     - {fileName: toda-seiji-scientia, updated: '2018-01-26 21:40:15 +0900'}
 만화책:
@@ -285,6 +285,10 @@ rfc:
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 consulting:
     - {fileName: secret-of-consulting, updated: '2018-01-30 22:42:26 +0900'}
+장인정신:
+    - {fileName: Software-Craftsman, updated: '2018-02-01 22:56:16 +0900'}
+괴담:
+    - {fileName: Software-Craftsman, updated: '2018-02-01 22:56:16 +0900'}
 web:
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER, updated: '2018-01-26 12:59:19 +0900'}
 hacker:

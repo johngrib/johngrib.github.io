@@ -53,7 +53,7 @@ Software-Craftsman:
     summary: 'The Software Craftman-Professionalism, Pragmatism, Pride by Sandro Mancuso'
     parent: book
     url: /wiki/Software-Craftsman
-    updated: '2018-01-30 22:44:21 +0900'
+    updated: '2018-02-01 22:56:16 +0900'
 2017-04-03-emacs-start:
     type: blog
     title: 'emacs 사용 시작!'
@@ -74,7 +74,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-01-29 23:05:56 +0900'
+    updated: '2018-02-01 22:08:23 +0900'
 review:
     type: wiki
     title: '리뷰 모음'
