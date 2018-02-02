@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-02 21:28:36 +0900
+updated : 2018-02-02 21:58:49 +0900
 tags    : index
 toc     : true
 public  : true
@@ -34,6 +34,7 @@ comment : false
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
         * [[secret-of-consulting]]
         * [[Software-Craftsman]]{소프트웨어 장인}
+        * [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}
         * [[TEXT-BOOK-OF-THE-WEB-ENGINEER]]{웹 엔지니어의 교과서}
         * [[toda-seiji-scientia]]
         * [[그림으로-보는-서양검술-메모]]

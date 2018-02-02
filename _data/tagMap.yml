@@ -159,9 +159,10 @@ review:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
     - {fileName: HTTP-no-Kyokasho, updated: '2018-01-26 21:36:43 +0900'}
     - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
-    - {fileName: review-2018, updated: '2018-02-02 21:34:47 +0900'}
+    - {fileName: review-2018, updated: '2018-02-02 21:58:36 +0900'}
     - {fileName: secret-of-consulting, updated: '2018-01-30 22:42:26 +0900'}
     - {fileName: Software-Craftsman, updated: '2018-02-01 22:56:16 +0900'}
+    - {fileName: Take-the-Bully-by-the-Horns, updated: '2018-02-02 22:55:21 +0900'}
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER, updated: '2018-01-26 12:59:19 +0900'}
     - {fileName: toda-seiji-scientia, updated: '2018-01-26 21:40:15 +0900'}
 만화책:
@@ -264,7 +265,7 @@ http:
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-02-02 21:28:36 +0900'}
+    - {fileName: index, updated: '2018-02-02 21:58:49 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
@@ -284,6 +285,7 @@ media:
     - {fileName: media, updated: '2018-01-13 11:20:36 +0900'}
 soft-skill:
     - {fileName: orange-juice-test, updated: '2018-01-30 23:16:57 +0900'}
+    - {fileName: Take-the-Bully-by-the-Horns, updated: '2018-02-02 22:55:21 +0900'}
 programming:
     - {fileName: programming-language, updated: '2017-12-03 15:01:36 +0900'}
 culture:

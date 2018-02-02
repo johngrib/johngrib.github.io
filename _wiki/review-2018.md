@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-02-02 21:34:47 +0900
+updated : 2018-02-02 21:58:36 +0900
 tags    : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 ## 책 - 공부
 
+* 2018-02-02 [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}
 * 2018-02-01 [[Software-Craftsman]]{소프트웨어 장인}
 * 2018-01-26 [[TEXT-BOOK-OF-THE-WEB-ENGINEER]]{웹 엔지니어의 교과서}
 * 2018-01-24 [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
