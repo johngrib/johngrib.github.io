@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki index
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-01-30 22:41:40 +0900
+updated : 2018-02-02 21:28:36 +0900
 tags    : index
 toc     : true
 public  : true
@@ -41,6 +41,7 @@ comment : false
     * [[review]]
         * [[review-2018]]
     * [[movie]]
+        * [[ALPHAGO]]
         * [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]]
         * [[HOT-FUZZ]]{뜨거운 녀석들}
         * [[Walking-Dead]]

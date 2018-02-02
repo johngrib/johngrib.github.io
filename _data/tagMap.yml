@@ -159,7 +159,7 @@ review:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
     - {fileName: HTTP-no-Kyokasho, updated: '2018-01-26 21:36:43 +0900'}
     - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
-    - {fileName: review-2018, updated: '2018-02-01 22:08:23 +0900'}
+    - {fileName: review-2018, updated: '2018-02-02 21:34:47 +0900'}
     - {fileName: secret-of-consulting, updated: '2018-01-30 22:42:26 +0900'}
     - {fileName: Software-Craftsman, updated: '2018-02-01 22:56:16 +0900'}
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER, updated: '2018-01-26 12:59:19 +0900'}
@@ -187,6 +187,21 @@ law:
     - {fileName: Conway-s-law, updated: '2017-12-10 00:47:52 +0900'}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
     - {fileName: Postel-s-law, updated: '2018-01-07 18:20:48 +0900'}
+netflix:
+    - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
+    - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY, updated: '2018-01-13 12:28:13 +0900'}
+    - {fileName: HOT-FUZZ, updated: '2018-01-13 16:02:28 +0900'}
+    - {fileName: Walking-Dead, updated: '2018-01-29 23:06:09 +0900'}
+alphago:
+    - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
+바둑:
+    - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
+google:
+    - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
+    - {fileName: google-search-console-remove-outdated-content, updated: '2017-11-28 08:50:10 +0900'}
+    - {fileName: googling, updated: '2018-01-25 23:12:25 +0900'}
+AI:
+    - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
 special-chars:
     - {fileName: braille-pattern-chars, updated: '2018-01-10 21:14:25 +0900'}
     - {fileName: special-chars, updated: '2018-01-10 16:52:03 +0900'}
@@ -209,10 +224,6 @@ proverb:
     - {fileName: proverb, updated: '2018-01-07 18:19:06 +0900'}
 test:
     - {fileName: default-post, updated: '2017-04-02 12:15:32 +0900'}
-netflix:
-    - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY, updated: '2018-01-13 12:28:13 +0900'}
-    - {fileName: HOT-FUZZ, updated: '2018-01-13 16:02:28 +0900'}
-    - {fileName: Walking-Dead, updated: '2018-01-29 23:06:09 +0900'}
 drama:
     - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY, updated: '2018-01-13 12:28:13 +0900'}
     - {fileName: Walking-Dead, updated: '2018-01-29 23:06:09 +0900'}
@@ -226,9 +237,6 @@ math:
     - {fileName: frac1e, updated: '2017-12-03 09:44:20 +0900'}
 확률:
     - {fileName: frac1e, updated: '2017-12-03 09:44:20 +0900'}
-google:
-    - {fileName: google-search-console-remove-outdated-content, updated: '2017-11-28 08:50:10 +0900'}
-    - {fileName: googling, updated: '2018-01-25 23:12:25 +0900'}
 twitter:
     - {fileName: googling, updated: '2018-01-25 23:12:25 +0900'}
 facebook:
@@ -246,7 +254,7 @@ groovy:
     - {fileName: groovy, updated: '2017-12-03 15:01:36 +0900'}
 movie:
     - {fileName: HOT-FUZZ, updated: '2018-01-13 16:02:28 +0900'}
-    - {fileName: movie, updated: '2018-01-20 18:41:19 +0900'}
+    - {fileName: movie, updated: '2018-02-02 21:34:13 +0900'}
 how-to:
     - {fileName: how-to, updated: '2017-12-23 18:22:50 +0900'}
 http:
@@ -256,7 +264,7 @@ http:
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-01-30 22:41:40 +0900'}
+    - {fileName: index, updated: '2018-02-02 21:28:36 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
