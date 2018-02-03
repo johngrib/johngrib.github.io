@@ -140,11 +140,11 @@ legend:
     updated: '2018-01-16 22:20:48 +0900'
 index:
     type: wiki
-    title: 'wiki index'
+    title: wiki
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-02-02 21:58:49 +0900'
+    updated: '2018-02-03 15:25:34 +0900'
 HTTP-THE-DEFINITIVE-GUIDE:
     type: wiki
     title: '(책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'

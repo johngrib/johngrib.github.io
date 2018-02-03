@@ -1,8 +1,8 @@
 ---
 layout  : wikiindex
-title   : wiki index
+title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-02 21:58:49 +0900
+updated : 2018-02-03 15:25:34 +0900
 tags    : index
 toc     : true
 public  : true
