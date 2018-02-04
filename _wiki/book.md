@@ -3,7 +3,7 @@ layout  : wiki
 title   : 도서
 summary :
 date    : 2017-12-05 19:19:56 +0900
-updated : 2018-01-28 18:52:43 +0900
+updated : 2018-02-04 17:41:16 +0900
 tags    : book
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 ## 책 - 개발
 
+* [[Clean-Code]]
 * [[Code-Complete-2]]
 * [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
 * [[HTTP-no-Kyokasho]]
