@@ -35,14 +35,14 @@ dataList.forEach(function collectTagMap(data) {
         }
         tagMap[tag].push({
             fileName: data.fileName,
-            updated: data.updated || data.date,
+            // updated: data.updated || data.date,
         });
     });
 });
 
 for(tag in tagMap) {
-    tagMap[tag].sort(function sortByModifiedDateTime(a, b) {
-        return a.modified < b.modified;
+    tagMap[tag].sort(function sortByFileName(a, b) {
+        return a.fileName.toLowerCase().localeCompare(b.fileName.toLowerCase());
     });
 }
 saveTagMap(tagMap);
