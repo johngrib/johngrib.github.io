@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-04 11:05:12 +0900
+updated : 2018-02-04 15:26:14 +0900
 tags    : index
 toc     : true
 public  : true
@@ -21,6 +21,7 @@ comment : false
 * [[how-to]]
     * [[googling]]
     * [[mathjax-latex]]
+    * [[von-neumann-extractor]]
 * [[http-message]]
 * [[java_home]]{java_home 명령어}
 * [[legend]]
