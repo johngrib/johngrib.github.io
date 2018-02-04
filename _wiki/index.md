@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-04 15:26:14 +0900
+updated : 2018-02-04 16:22:11 +0900
 tags    : index
 toc     : true
 public  : true
@@ -28,6 +28,7 @@ comment : false
 * [[mac-keyboard-shortcuts]]
 * [[media]]
     * [[book]]{도서}
+        * [[Clean-Code]]
         * [[Code-Complete-2]]
         * [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
         * [[HELL-BOY]]
@@ -51,6 +52,7 @@ comment : false
     * [[Groovy]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
     * [[airplain-rule]]
+    * [[Boy-Scout-Rule]]
     * [[Conway-s-law]]
     * [[Edsel-edict]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
