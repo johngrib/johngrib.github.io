@@ -173,7 +173,8 @@ review:
     - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
 book:
     - {fileName: 전생검신, updated: '2018-01-29 10:15:38 +0900'}
-    - {fileName: book, updated: '2018-01-28 18:52:43 +0900'}
+    - {fileName: book, updated: '2018-02-04 17:41:16 +0900'}
+    - {fileName: Clean-Code, updated: '2018-02-04 16:25:41 +0900'}
     - {fileName: Code-Complete-2, updated: '2018-01-26 21:35:22 +0900'}
     - {fileName: DOM-Enlightenment-by-Cody-Lindley, updated: '2018-01-26 21:36:08 +0900'}
     - {fileName: HELL-BOY, updated: '2018-01-27 14:59:04 +0900'}
@@ -203,6 +204,11 @@ google:
     - {fileName: googling, updated: '2018-01-25 23:12:25 +0900'}
 AI:
     - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
+rule:
+    - {fileName: Boy-Scout-Rule, updated: '2018-02-04 17:41:51 +0900'}
+Uncle-Bob:
+    - {fileName: Boy-Scout-Rule, updated: '2018-02-04 17:41:51 +0900'}
+    - {fileName: Clean-Code, updated: '2018-02-04 16:25:41 +0900'}
 special-chars:
     - {fileName: braille-pattern-chars, updated: '2018-01-10 21:14:25 +0900'}
     - {fileName: special-chars, updated: '2018-01-10 16:52:03 +0900'}
@@ -222,7 +228,7 @@ proverb:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
     - {fileName: orange-juice-test, updated: '2018-01-30 23:16:57 +0900'}
     - {fileName: Postel-s-law, updated: '2018-01-07 18:20:48 +0900'}
-    - {fileName: proverb, updated: '2018-01-07 18:19:06 +0900'}
+    - {fileName: proverb, updated: '2018-02-04 17:39:56 +0900'}
 test:
     - {fileName: default-post, updated: '2017-04-02 12:15:32 +0900'}
 drama:
@@ -266,7 +272,7 @@ http:
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-02-04 15:26:14 +0900'}
+    - {fileName: index, updated: '2018-02-04 16:22:11 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
@@ -297,7 +303,7 @@ soft-skill:
 programming:
     - {fileName: programming-language, updated: '2017-12-03 15:01:36 +0900'}
 culture:
-    - {fileName: proverb, updated: '2018-01-07 18:19:06 +0900'}
+    - {fileName: proverb, updated: '2018-02-04 17:39:56 +0900'}
 rfc:
     - {fileName: RFC, updated: '2017-12-12 22:06:20 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
