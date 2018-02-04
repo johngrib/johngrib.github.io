@@ -1,337 +1,337 @@
 jekyll:
-    - {fileName: 2017-01-21-create-jekyll-blog, updated: '2017-01-21 22:37:25 +0900'}
-    - {fileName: 2017-01-22-jekyll-category-tag, updated: '2017-01-22 08:52:22 +0900'}
-    - {fileName: 2017-12-06-my-wiki, updated: '2017-12-06 21:44:18 +0900'}
+    - {fileName: 2017-01-21-create-jekyll-blog}
+    - {fileName: 2017-01-22-jekyll-category-tag}
+    - {fileName: 2017-12-06-my-wiki}
 ideavim:
-    - {fileName: 2017-01-30-ideavim-build, updated: '2017-01-30 21:22:53 +0900'}
+    - {fileName: 2017-01-30-ideavim-build}
 open-source:
-    - {fileName: 2017-01-30-ideavim-build, updated: '2017-01-30 21:22:53 +0900'}
+    - {fileName: 2017-01-30-ideavim-build}
 jetBrains:
-    - {fileName: 2017-01-30-ideavim-build, updated: '2017-01-30 21:22:53 +0900'}
+    - {fileName: 2017-01-30-ideavim-build}
 intelliJ:
-    - {fileName: 2017-01-30-ideavim-build, updated: '2017-01-30 21:22:53 +0900'}
+    - {fileName: 2017-01-30-ideavim-build}
 삽질:
-    - {fileName: 2017-01-30-ideavim-build, updated: '2017-01-30 21:22:53 +0900'}
+    - {fileName: 2017-01-30-ideavim-build}
 TIL:
-    - {fileName: 2017-03-08-til-indent-style, updated: '2017-03-08 23:00:00 +0900'}
-    - {fileName: 2017-03-27-tmux-ascii-control, updated: '2017-03-27 22:57:52 +0900'}
-    - {fileName: 2017-08-23-0.30000000000000004, updated: '2017-08-23 18:15:32 +0900'}
+    - {fileName: 2017-03-08-til-indent-style}
+    - {fileName: 2017-03-27-tmux-ascii-control}
+    - {fileName: 2017-08-23-0.30000000000000004}
 style:
-    - {fileName: 2017-03-08-til-indent-style, updated: '2017-03-08 23:00:00 +0900'}
+    - {fileName: 2017-03-08-til-indent-style}
 node-js:
-    - {fileName: 2017-03-12-telegram-bot, updated: '2017-03-12 21:08:16 +0900'}
+    - {fileName: 2017-03-12-telegram-bot}
 telegram:
-    - {fileName: 2017-03-12-telegram-bot, updated: '2017-03-12 21:08:16 +0900'}
+    - {fileName: 2017-03-12-telegram-bot}
 heroku:
-    - {fileName: 2017-03-12-telegram-bot, updated: '2017-03-12 21:08:16 +0900'}
+    - {fileName: 2017-03-12-telegram-bot}
 chatbot:
-    - {fileName: 2017-03-12-telegram-bot, updated: '2017-03-12 21:08:16 +0900'}
+    - {fileName: 2017-03-12-telegram-bot}
 bot:
-    - {fileName: 2017-03-12-telegram-bot, updated: '2017-03-12 21:08:16 +0900'}
+    - {fileName: 2017-03-12-telegram-bot}
 uri:
-    - {fileName: 2017-03-13-uri-url, updated: '2017-03-13 21:30:46 +0900'}
+    - {fileName: 2017-03-13-uri-url}
 url:
-    - {fileName: 2017-03-13-uri-url, updated: '2017-03-13 21:30:46 +0900'}
+    - {fileName: 2017-03-13-uri-url}
 rfc3986:
-    - {fileName: 2017-03-13-uri-url, updated: '2017-03-13 21:30:46 +0900'}
+    - {fileName: 2017-03-13-uri-url}
 tmux:
-    - {fileName: 2017-03-27-tmux-ascii-control, updated: '2017-03-27 22:57:52 +0900'}
-    - {fileName: 2017-04-03-vim-tmux-t-ut, updated: '2017-04-03 07:33:49 +0900'}
+    - {fileName: 2017-03-27-tmux-ascii-control}
+    - {fileName: 2017-04-03-vim-tmux-t-ut}
 ascii:
-    - {fileName: 2017-03-27-tmux-ascii-control, updated: '2017-03-27 22:57:52 +0900'}
+    - {fileName: 2017-03-27-tmux-ascii-control}
 study:
-    - {fileName: 2017-05-01-jwp-08, updated: '2017-05-01 07:33:10 +0900'}
-    - {fileName: 2017-04-02-jwp-00-prepare, updated: '2017-04-02 12:15:32 +0900'}
-    - {fileName: 2017-04-08-jwp-02, updated: '2017-04-08 21:29:47 +0900'}
-    - {fileName: 2017-04-10-jwp-03, updated: '2017-04-10 22:47:18 +0900'}
-    - {fileName: 2017-04-13-jwp-04, updated: '2017-04-13 12:15:32 +0900'}
-    - {fileName: 2017-04-17-jwp-05, updated: '2017-04-17 15:20:00 +0900'}
-    - {fileName: 2017-04-20-jwp-06, updated: '2017-04-22 23:36:10 +0900'}
-    - {fileName: 2017-04-25-jwp-07, updated: '2017-04-26 21:49:43 +0900'}
-    - {fileName: 2017-04-03-jwp-01, updated: '2017-04-05 21:52:28 +0900'}
-    - {fileName: 2017-05-09-jwp-09, updated: '2017-05-09 10:45:58 +0900'}
-    - {fileName: 2017-05-14-jwp-10, updated: '2017-05-14 14:10:50 +0900'}
-    - {fileName: 2017-05-16-jwp-11, updated: '2017-05-16 21:36:06 +0900'}
-    - {fileName: 2017-05-20-jwp-12, updated: '2017-05-20 20:44:40 +0900'}
-    - {fileName: 2017-05-23-jwp-13, updated: '2017-05-23 22:05:44 +0900'}
-    - {fileName: 2017-05-27-jwp-14, updated: '2017-05-27 18:00:40 +0900'}
-    - {fileName: 2017-05-29-jwp-15, updated: '2017-05-29 19:54:06 +0900'}
-    - {fileName: 2017-06-01-jwp-16, updated: '2017-06-01 19:52:40 +0900'}
+    - {fileName: 2017-04-02-jwp-00-prepare}
+    - {fileName: 2017-04-03-jwp-01}
+    - {fileName: 2017-04-08-jwp-02}
+    - {fileName: 2017-04-10-jwp-03}
+    - {fileName: 2017-04-13-jwp-04}
+    - {fileName: 2017-04-17-jwp-05}
+    - {fileName: 2017-04-20-jwp-06}
+    - {fileName: 2017-04-25-jwp-07}
+    - {fileName: 2017-05-01-jwp-08}
+    - {fileName: 2017-05-09-jwp-09}
+    - {fileName: 2017-05-14-jwp-10}
+    - {fileName: 2017-05-16-jwp-11}
+    - {fileName: 2017-05-20-jwp-12}
+    - {fileName: 2017-05-23-jwp-13}
+    - {fileName: 2017-05-27-jwp-14}
+    - {fileName: 2017-05-29-jwp-15}
+    - {fileName: 2017-06-01-jwp-16}
 jwp:
-    - {fileName: 2017-05-01-jwp-08, updated: '2017-05-01 07:33:10 +0900'}
-    - {fileName: 2017-04-02-jwp-00-prepare, updated: '2017-04-02 12:15:32 +0900'}
-    - {fileName: 2017-04-08-jwp-02, updated: '2017-04-08 21:29:47 +0900'}
-    - {fileName: 2017-04-10-jwp-03, updated: '2017-04-10 22:47:18 +0900'}
-    - {fileName: 2017-04-13-jwp-04, updated: '2017-04-13 12:15:32 +0900'}
-    - {fileName: 2017-04-17-jwp-05, updated: '2017-04-17 15:20:00 +0900'}
-    - {fileName: 2017-04-20-jwp-06, updated: '2017-04-22 23:36:10 +0900'}
-    - {fileName: 2017-04-25-jwp-07, updated: '2017-04-26 21:49:43 +0900'}
-    - {fileName: 2017-04-03-jwp-01, updated: '2017-04-05 21:52:28 +0900'}
-    - {fileName: 2017-05-09-jwp-09, updated: '2017-05-09 10:45:58 +0900'}
-    - {fileName: 2017-05-14-jwp-10, updated: '2017-05-14 14:10:50 +0900'}
-    - {fileName: 2017-05-16-jwp-11, updated: '2017-05-16 21:36:06 +0900'}
-    - {fileName: 2017-05-20-jwp-12, updated: '2017-05-20 20:44:40 +0900'}
-    - {fileName: 2017-05-23-jwp-13, updated: '2017-05-23 22:05:44 +0900'}
-    - {fileName: 2017-05-27-jwp-14, updated: '2017-05-27 18:00:40 +0900'}
-    - {fileName: 2017-05-29-jwp-15, updated: '2017-05-29 19:54:06 +0900'}
-    - {fileName: 2017-06-01-jwp-16, updated: '2017-06-01 19:52:40 +0900'}
+    - {fileName: 2017-04-02-jwp-00-prepare}
+    - {fileName: 2017-04-03-jwp-01}
+    - {fileName: 2017-04-08-jwp-02}
+    - {fileName: 2017-04-10-jwp-03}
+    - {fileName: 2017-04-13-jwp-04}
+    - {fileName: 2017-04-17-jwp-05}
+    - {fileName: 2017-04-20-jwp-06}
+    - {fileName: 2017-04-25-jwp-07}
+    - {fileName: 2017-05-01-jwp-08}
+    - {fileName: 2017-05-09-jwp-09}
+    - {fileName: 2017-05-14-jwp-10}
+    - {fileName: 2017-05-16-jwp-11}
+    - {fileName: 2017-05-20-jwp-12}
+    - {fileName: 2017-05-23-jwp-13}
+    - {fileName: 2017-05-27-jwp-14}
+    - {fileName: 2017-05-29-jwp-15}
+    - {fileName: 2017-06-01-jwp-16}
 aws:
-    - {fileName: 2017-04-02-jwp-00-prepare, updated: '2017-04-02 12:15:32 +0900'}
+    - {fileName: 2017-04-02-jwp-00-prepare}
 emacs:
-    - {fileName: 2017-04-03-emacs-start, updated: '2017-04-03 16:33:24 +0900'}
+    - {fileName: 2017-04-03-emacs-start}
 evil:
-    - {fileName: 2017-04-03-emacs-start, updated: '2017-04-03 16:33:24 +0900'}
+    - {fileName: 2017-04-03-emacs-start}
 vim:
-    - {fileName: 2017-04-03-vim-tmux-t-ut, updated: '2017-04-03 07:33:49 +0900'}
-    - {fileName: 2017-05-04-input-source, updated: '2017-05-04 22:05:30 +0900'}
-    - {fileName: 2017-07-09-vim-game-code-break, updated: '2017-07-09 00:15:00 +0900'}
-    - {fileName: Vim, updated: '2017-12-20 13:13:21 +0900'}
-    - {fileName: vim-conceallevel, updated: '2017-12-20 13:13:32 +0900'}
+    - {fileName: 2017-04-03-vim-tmux-t-ut}
+    - {fileName: 2017-05-04-input-source}
+    - {fileName: 2017-07-09-vim-game-code-break}
+    - {fileName: Vim}
+    - {fileName: vim-conceallevel}
 fix:
-    - {fileName: 2017-04-03-vim-tmux-t-ut, updated: '2017-04-03 07:33:49 +0900'}
+    - {fileName: 2017-04-03-vim-tmux-t-ut}
 소트웍스-앤솔러지:
-    - {fileName: 2017-04-08-jwp-02, updated: '2017-04-08 21:29:47 +0900'}
+    - {fileName: 2017-04-08-jwp-02}
 Martin-Fowler:
-    - {fileName: 2017-04-08-jwp-02, updated: '2017-04-08 21:29:47 +0900'}
+    - {fileName: 2017-04-08-jwp-02}
 OOP:
-    - {fileName: 2017-04-08-jwp-02, updated: '2017-04-08 21:29:47 +0900'}
+    - {fileName: 2017-04-08-jwp-02}
 개발자:
-    - {fileName: 2017-04-10-jwp-03, updated: '2017-04-10 22:47:18 +0900'}
+    - {fileName: 2017-04-10-jwp-03}
 프로그래밍-심리학:
-    - {fileName: 2017-04-10-jwp-03, updated: '2017-04-10 22:47:18 +0900'}
+    - {fileName: 2017-04-10-jwp-03}
 Gerald-Weinberg:
-    - {fileName: 2017-04-10-jwp-03, updated: '2017-04-10 22:47:18 +0900'}
-    - {fileName: Edsel-edict, updated: '2018-01-18 22:01:04 +0900'}
-    - {fileName: orange-juice-test, updated: '2018-01-30 23:16:57 +0900'}
-    - {fileName: secret-of-consulting, updated: '2018-01-30 22:42:26 +0900'}
+    - {fileName: 2017-04-10-jwp-03}
+    - {fileName: Edsel-edict}
+    - {fileName: orange-juice-test}
+    - {fileName: secret-of-consulting}
 AWS:
-    - {fileName: 2017-04-13-jwp-04, updated: '2017-04-13 12:15:32 +0900'}
+    - {fileName: 2017-04-13-jwp-04}
 구름입력기:
-    - {fileName: 2017-05-04-input-source, updated: '2017-05-04 22:05:30 +0900'}
+    - {fileName: 2017-05-04-input-source}
 hammerspoon:
-    - {fileName: 2017-05-04-input-source, updated: '2017-05-04 22:05:30 +0900'}
-    - {fileName: 2017-07-30-luarocks, updated: '2017-07-30 16:32:25 +0900'}
-    - {fileName: 2017-07-31-hammerspoon-tutorial-00-start, updated: '2017-07-31 21:57:27 +0900'}
-    - {fileName: 2017-08-01-hammerspoon-tutorial-01, updated: '2017-08-01 22:47:08 +0900'}
-    - {fileName: 2017-08-04-hammerspoon-tutorial-02, updated: '2017-08-04 21:32:22 +0900'}
-    - {fileName: 2017-08-05-hammerspoon-tutorial-03, updated: '2017-08-05 12:11:00 +0900'}
-    - {fileName: 2017-08-06-hammerspoon-tutorial-04, updated: '2017-08-06 13:35:00 +0900'}
-    - {fileName: 2017-08-07-hammerspoon-tutorial-05, updated: '2017-08-07 09:33:00 +0900'}
+    - {fileName: 2017-05-04-input-source}
+    - {fileName: 2017-07-30-luarocks}
+    - {fileName: 2017-07-31-hammerspoon-tutorial-00-start}
+    - {fileName: 2017-08-01-hammerspoon-tutorial-01}
+    - {fileName: 2017-08-04-hammerspoon-tutorial-02}
+    - {fileName: 2017-08-05-hammerspoon-tutorial-03}
+    - {fileName: 2017-08-06-hammerspoon-tutorial-04}
+    - {fileName: 2017-08-07-hammerspoon-tutorial-05}
 karabiner:
-    - {fileName: 2017-05-04-input-source, updated: '2017-05-04 22:05:30 +0900'}
+    - {fileName: 2017-05-04-input-source}
 input-source:
-    - {fileName: 2017-05-04-input-source, updated: '2017-05-04 22:05:30 +0900'}
+    - {fileName: 2017-05-04-input-source}
 hhkb:
-    - {fileName: 2017-05-14-hhkb-jp-tmk, updated: '2017-05-14 15:50:31 +0900'}
+    - {fileName: 2017-05-14-hhkb-jp-tmk}
 keyboard:
-    - {fileName: 2017-05-14-hhkb-jp-tmk, updated: '2017-05-14 15:50:31 +0900'}
+    - {fileName: 2017-05-14-hhkb-jp-tmk}
 tmk:
-    - {fileName: 2017-05-14-hhkb-jp-tmk, updated: '2017-05-14 15:50:31 +0900'}
+    - {fileName: 2017-05-14-hhkb-jp-tmk}
 mockito:
-    - {fileName: 2017-05-16-jwp-11, updated: '2017-05-16 21:36:06 +0900'}
+    - {fileName: 2017-05-16-jwp-11}
 DI:
-    - {fileName: 2017-05-16-jwp-11, updated: '2017-05-16 21:36:06 +0900'}
+    - {fileName: 2017-05-16-jwp-11}
 game:
-    - {fileName: 2017-07-09-vim-game-code-break, updated: '2017-07-09 00:15:00 +0900'}
+    - {fileName: 2017-07-09-vim-game-code-break}
 aheui:
-    - {fileName: 2017-07-14-aheui-explained, updated: '2017-07-14 23:00:17 +0900'}
+    - {fileName: 2017-07-14-aheui-explained}
 lua:
-    - {fileName: 2017-07-30-luarocks, updated: '2017-07-30 16:32:25 +0900'}
+    - {fileName: 2017-07-30-luarocks}
 luarocks:
-    - {fileName: 2017-07-30-luarocks, updated: '2017-07-30 16:32:25 +0900'}
+    - {fileName: 2017-07-30-luarocks}
 perl:
-    - {fileName: 2017-09-20-regex-prime, updated: '2017-09-20 20:56:55 +0900'}
+    - {fileName: 2017-09-20-regex-prime}
 regex:
-    - {fileName: 2017-09-20-regex-prime, updated: '2017-09-20 20:56:55 +0900'}
+    - {fileName: 2017-09-20-regex-prime}
 wiki:
-    - {fileName: 2017-12-06-my-wiki, updated: '2017-12-06 21:44:18 +0900'}
+    - {fileName: 2017-12-06-my-wiki}
 vimwiki:
-    - {fileName: 2017-12-06-my-wiki, updated: '2017-12-06 21:44:18 +0900'}
+    - {fileName: 2017-12-06-my-wiki}
 blog:
-    - {fileName: 2017-12-06-my-wiki, updated: '2017-12-06 21:44:18 +0900'}
+    - {fileName: 2017-12-06-my-wiki}
 diary:
-    - {fileName: '2018-01-20', updated: '2018-01-20 22:59:09 +0900'}
-    - {fileName: diary, updated: '2018-01-20 17:47:01 +0900'}
-    - {fileName: diary-2018, updated: '2018-01-20 17:58:08 +0900'}
+    - {fileName: '2018-01-20'}
+    - {fileName: diary}
+    - {fileName: diary-2018}
 block-chain:
-    - {fileName: '2018-01-20', updated: '2018-01-20 22:59:09 +0900'}
+    - {fileName: '2018-01-20'}
 review:
-    - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
-    - {fileName: HTTP-no-Kyokasho, updated: '2018-01-26 21:36:43 +0900'}
-    - {fileName: review, updated: '2018-01-13 11:14:57 +0900'}
-    - {fileName: review-2018, updated: '2018-02-02 21:58:36 +0900'}
-    - {fileName: secret-of-consulting, updated: '2018-01-30 22:42:26 +0900'}
-    - {fileName: Software-Craftsman, updated: '2018-02-01 22:56:16 +0900'}
-    - {fileName: Take-the-Bully-by-the-Horns, updated: '2018-02-02 22:55:21 +0900'}
-    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER, updated: '2018-01-26 12:59:19 +0900'}
-    - {fileName: toda-seiji-scientia, updated: '2018-01-26 21:40:15 +0900'}
+    - {fileName: 그림으로-보는-서양검술-메모}
+    - {fileName: HTTP-no-Kyokasho}
+    - {fileName: review}
+    - {fileName: review-2018}
+    - {fileName: secret-of-consulting}
+    - {fileName: Software-Craftsman}
+    - {fileName: Take-the-Bully-by-the-Horns}
+    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
+    - {fileName: toda-seiji-scientia}
 만화책:
-    - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
-    - {fileName: HELL-BOY, updated: '2018-01-27 14:59:04 +0900'}
-    - {fileName: toda-seiji-scientia, updated: '2018-01-26 21:40:15 +0900'}
+    - {fileName: 그림으로-보는-서양검술-메모}
+    - {fileName: HELL-BOY}
+    - {fileName: toda-seiji-scientia}
 무술:
-    - {fileName: 그림으로-보는-서양검술-메모, updated: '2018-01-26 21:38:27 +0900'}
+    - {fileName: 그림으로-보는-서양검술-메모}
 book:
-    - {fileName: 전생검신, updated: '2018-01-29 10:15:38 +0900'}
-    - {fileName: book, updated: '2018-02-04 17:41:16 +0900'}
-    - {fileName: Clean-Code, updated: '2018-02-04 16:25:41 +0900'}
-    - {fileName: Code-Complete-2, updated: '2018-01-26 21:35:22 +0900'}
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley, updated: '2018-01-26 21:36:08 +0900'}
-    - {fileName: HELL-BOY, updated: '2018-01-27 14:59:04 +0900'}
-    - {fileName: HTTP-THE-DEFINITIVE-GUIDE, updated: '2018-02-04 07:15:37 +0900'}
-    - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
+    - {fileName: 전생검신}
+    - {fileName: book}
+    - {fileName: Clean-Code}
+    - {fileName: Code-Complete-2}
+    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
+    - {fileName: HELL-BOY}
+    - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
+    - {fileName: The-Jargon-File}
 fantasy:
-    - {fileName: 전생검신, updated: '2018-01-29 10:15:38 +0900'}
+    - {fileName: 전생검신}
 complexity:
-    - {fileName: airplain-rule, updated: '2017-12-25 13:07:43 +0900'}
+    - {fileName: airplain-rule}
 law:
-    - {fileName: airplain-rule, updated: '2017-12-25 13:07:43 +0900'}
-    - {fileName: Conway-s-law, updated: '2017-12-10 00:47:52 +0900'}
-    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
-    - {fileName: Postel-s-law, updated: '2018-01-07 18:20:48 +0900'}
+    - {fileName: airplain-rule}
+    - {fileName: Conway-s-law}
+    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
+    - {fileName: Postel-s-law}
 netflix:
-    - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
-    - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY, updated: '2018-01-13 12:28:13 +0900'}
-    - {fileName: HOT-FUZZ, updated: '2018-01-13 16:02:28 +0900'}
-    - {fileName: Walking-Dead, updated: '2018-01-29 23:06:09 +0900'}
+    - {fileName: ALPHAGO}
+    - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY}
+    - {fileName: HOT-FUZZ}
+    - {fileName: Walking-Dead}
 alphago:
-    - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
+    - {fileName: ALPHAGO}
 바둑:
-    - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
+    - {fileName: ALPHAGO}
 google:
-    - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
-    - {fileName: google-search-console-remove-outdated-content, updated: '2017-11-28 08:50:10 +0900'}
-    - {fileName: googling, updated: '2018-01-25 23:12:25 +0900'}
+    - {fileName: ALPHAGO}
+    - {fileName: google-search-console-remove-outdated-content}
+    - {fileName: googling}
 AI:
-    - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
+    - {fileName: ALPHAGO}
 rule:
-    - {fileName: Boy-Scout-Rule, updated: '2018-02-04 17:47:46 +0900'}
+    - {fileName: Boy-Scout-Rule}
 Uncle-Bob:
-    - {fileName: Boy-Scout-Rule, updated: '2018-02-04 17:47:46 +0900'}
-    - {fileName: Clean-Code, updated: '2018-02-04 16:25:41 +0900'}
+    - {fileName: Boy-Scout-Rule}
+    - {fileName: Clean-Code}
 special-chars:
-    - {fileName: braille-pattern-chars, updated: '2018-01-10 21:14:25 +0900'}
-    - {fileName: special-chars, updated: '2018-01-10 16:52:03 +0900'}
+    - {fileName: braille-pattern-chars}
+    - {fileName: special-chars}
 스크랩:
-    - {fileName: clipping, updated: '2018-01-11 14:13:56 +0900'}
+    - {fileName: clipping}
 tldr:
-    - {fileName: clipping, updated: '2018-01-11 14:13:56 +0900'}
+    - {fileName: clipping}
 jolt-award:
-    - {fileName: Code-Complete-2, updated: '2018-01-26 21:35:22 +0900'}
+    - {fileName: Code-Complete-2}
 font:
-    - {fileName: coding-font, updated: '2017-12-01 06:02:30 +0900'}
+    - {fileName: coding-font}
 config:
-    - {fileName: coding-font, updated: '2017-12-01 06:02:30 +0900'}
+    - {fileName: coding-font}
 proverb:
-    - {fileName: Conway-s-law, updated: '2017-12-10 00:47:52 +0900'}
-    - {fileName: Edsel-edict, updated: '2018-01-18 22:01:04 +0900'}
-    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
-    - {fileName: orange-juice-test, updated: '2018-01-30 23:16:57 +0900'}
-    - {fileName: Postel-s-law, updated: '2018-01-07 18:20:48 +0900'}
-    - {fileName: proverb, updated: '2018-02-04 17:39:56 +0900'}
+    - {fileName: Conway-s-law}
+    - {fileName: Edsel-edict}
+    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
+    - {fileName: orange-juice-test}
+    - {fileName: Postel-s-law}
+    - {fileName: proverb}
 test:
-    - {fileName: default-post, updated: '2017-04-02 12:15:32 +0900'}
+    - {fileName: default-post}
 drama:
-    - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY, updated: '2018-01-13 12:28:13 +0900'}
-    - {fileName: Walking-Dead, updated: '2018-01-29 23:06:09 +0900'}
+    - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY}
+    - {fileName: Walking-Dead}
 html:
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley, updated: '2018-01-26 21:36:08 +0900'}
+    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
 DOM:
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley, updated: '2018-01-26 21:36:08 +0900'}
+    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
 o-reilly:
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley, updated: '2018-01-26 21:36:08 +0900'}
+    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
 math:
-    - {fileName: frac1e, updated: '2017-12-03 09:44:20 +0900'}
+    - {fileName: frac1e}
 확률:
-    - {fileName: frac1e, updated: '2017-12-03 09:44:20 +0900'}
+    - {fileName: frac1e}
 twitter:
-    - {fileName: googling, updated: '2018-01-25 23:12:25 +0900'}
-    - {fileName: labs-strava-com-heatmap, updated: '2018-02-04 11:48:36 +0900'}
+    - {fileName: googling}
+    - {fileName: labs-strava-com-heatmap}
 facebook:
-    - {fileName: googling, updated: '2018-01-25 23:12:25 +0900'}
+    - {fileName: googling}
 gradle:
-    - {fileName: Gradle, updated: '2017-12-08 23:17:46 +0900'}
+    - {fileName: Gradle}
 tool:
-    - {fileName: Gradle, updated: '2017-12-08 23:17:46 +0900'}
+    - {fileName: Gradle}
 language:
-    - {fileName: groovy, updated: '2017-12-03 15:01:36 +0900'}
-    - {fileName: programming-language, updated: '2017-12-03 15:01:36 +0900'}
+    - {fileName: groovy}
+    - {fileName: programming-language}
 jvm-lang:
-    - {fileName: groovy, updated: '2017-12-03 15:01:36 +0900'}
+    - {fileName: groovy}
 groovy:
-    - {fileName: groovy, updated: '2017-12-03 15:01:36 +0900'}
+    - {fileName: groovy}
 movie:
-    - {fileName: HOT-FUZZ, updated: '2018-01-13 16:02:28 +0900'}
-    - {fileName: movie, updated: '2018-02-02 21:34:13 +0900'}
+    - {fileName: HOT-FUZZ}
+    - {fileName: movie}
 how-to:
-    - {fileName: how-to, updated: '2018-02-04 15:57:05 +0900'}
+    - {fileName: how-to}
 http:
-    - {fileName: http-message, updated: '2018-01-14 17:33:01 +0900'}
-    - {fileName: HTTP-no-Kyokasho, updated: '2018-01-26 21:36:43 +0900'}
-    - {fileName: HTTP-THE-DEFINITIVE-GUIDE, updated: '2018-02-04 07:15:37 +0900'}
-    - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
-    - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
+    - {fileName: http-message}
+    - {fileName: HTTP-no-Kyokasho}
+    - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
+    - {fileName: URI}
+    - {fileName: why-http-80-https-443}
 index:
-    - {fileName: index, updated: '2018-02-04 16:22:11 +0900'}
+    - {fileName: index}
 bash:
-    - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
+    - {fileName: java_home}
 java:
-    - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
+    - {fileName: java_home}
 mac:
-    - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
-    - {fileName: mac-keyboard-shortcuts, updated: '2018-01-30 10:59:24 +0900'}
+    - {fileName: java_home}
+    - {fileName: mac-keyboard-shortcuts}
 tools:
-    - {fileName: labs-strava-com-heatmap, updated: '2018-02-04 11:48:36 +0900'}
-    - {fileName: tools, updated: '2018-02-04 11:48:31 +0900'}
+    - {fileName: labs-strava-com-heatmap}
+    - {fileName: tools}
 map:
-    - {fileName: labs-strava-com-heatmap, updated: '2018-02-04 11:48:36 +0900'}
+    - {fileName: labs-strava-com-heatmap}
 보안:
-    - {fileName: labs-strava-com-heatmap, updated: '2018-02-04 11:48:36 +0900'}
+    - {fileName: labs-strava-com-heatmap}
 story:
-    - {fileName: legend, updated: '2018-01-16 22:20:48 +0900'}
+    - {fileName: legend}
 bug:
-    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology, updated: '2017-12-09 22:39:56 +0900'}
+    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
 단축키:
-    - {fileName: mac-keyboard-shortcuts, updated: '2018-01-30 10:59:24 +0900'}
+    - {fileName: mac-keyboard-shortcuts}
 latex:
-    - {fileName: mathjax-latex, updated: '2017-12-23 18:18:43 +0900'}
+    - {fileName: mathjax-latex}
 media:
-    - {fileName: media, updated: '2018-01-13 11:20:36 +0900'}
+    - {fileName: media}
 soft-skill:
-    - {fileName: orange-juice-test, updated: '2018-01-30 23:16:57 +0900'}
-    - {fileName: Take-the-Bully-by-the-Horns, updated: '2018-02-02 22:55:21 +0900'}
+    - {fileName: orange-juice-test}
+    - {fileName: Take-the-Bully-by-the-Horns}
 programming:
-    - {fileName: programming-language, updated: '2017-12-03 15:01:36 +0900'}
+    - {fileName: programming-language}
 culture:
-    - {fileName: proverb, updated: '2018-02-04 17:39:56 +0900'}
+    - {fileName: proverb}
 rfc:
-    - {fileName: RFC, updated: '2017-12-12 22:06:20 +0900'}
-    - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
+    - {fileName: RFC}
+    - {fileName: why-http-80-https-443}
 consulting:
-    - {fileName: secret-of-consulting, updated: '2018-01-30 22:42:26 +0900'}
+    - {fileName: secret-of-consulting}
 장인정신:
-    - {fileName: Software-Craftsman, updated: '2018-02-01 22:56:16 +0900'}
+    - {fileName: Software-Craftsman}
 괴담:
-    - {fileName: Software-Craftsman, updated: '2018-02-01 22:56:16 +0900'}
+    - {fileName: Software-Craftsman}
 web:
-    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER, updated: '2018-01-26 12:59:19 +0900'}
+    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
 hacker:
-    - {fileName: The-Jargon-File, updated: '2017-12-10 00:55:18 +0900'}
+    - {fileName: The-Jargon-File}
 번역:
-    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING, updated: '2018-01-12 10:46:53 +0900'}
+    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 sf:
-    - {fileName: toda-seiji-scientia, updated: '2018-01-26 21:40:15 +0900'}
+    - {fileName: toda-seiji-scientia}
 trouble-shooting:
-    - {fileName: vim-conceallevel, updated: '2017-12-20 13:13:32 +0900'}
+    - {fileName: vim-conceallevel}
 Von-Neumann:
-    - {fileName: von-neumann-extractor, updated: '2018-02-04 15:55:33 +0900'}
+    - {fileName: von-neumann-extractor}
 random:
-    - {fileName: von-neumann-extractor, updated: '2018-02-04 15:55:33 +0900'}
+    - {fileName: von-neumann-extractor}
 zombie:
-    - {fileName: Walking-Dead, updated: '2018-01-29 23:06:09 +0900'}
+    - {fileName: Walking-Dead}
 why:
-    - {fileName: why, updated: '2017-12-13 12:20:03 +0900'}
+    - {fileName: why}
 yaml:
-    - {fileName: yaml, updated: '2017-12-02 16:45:25 +0900'}
+    - {fileName: yaml}
 data-format:
-    - {fileName: yaml, updated: '2017-12-02 16:45:25 +0900'}
+    - {fileName: yaml}
