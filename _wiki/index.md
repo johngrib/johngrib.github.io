@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-03 15:25:34 +0900
+updated : 2018-02-04 11:05:12 +0900
 tags    : index
 toc     : true
 public  : true
@@ -58,6 +58,8 @@ comment : false
 * [[RFC]]
 * [[special-chars]]
 * [[The-Jargon-File]]
+* [[tools]]
+    * [[labs-strava-com-heatmap]]
 * [[URI]]
 * [[Vim]]
     * [[vim-conceallevel]]{conceallevel (Vim)}

@@ -240,6 +240,7 @@ math:
     - {fileName: frac1e, updated: '2017-12-03 09:44:20 +0900'}
 twitter:
     - {fileName: googling, updated: '2018-01-25 23:12:25 +0900'}
+    - {fileName: labs-strava-com-heatmap, updated: '2018-02-04 11:48:36 +0900'}
 facebook:
     - {fileName: googling, updated: '2018-01-25 23:12:25 +0900'}
 gradle:
@@ -265,7 +266,7 @@ http:
     - {fileName: URI, updated: '2017-12-18 23:00:44 +0900'}
     - {fileName: why-http-80-https-443, updated: '2017-12-17 09:11:39 +0900'}
 index:
-    - {fileName: index, updated: '2018-02-03 15:25:34 +0900'}
+    - {fileName: index, updated: '2018-02-04 11:05:12 +0900'}
 bash:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
 java:
@@ -273,6 +274,13 @@ java:
 mac:
     - {fileName: java_home, updated: '2017-12-03 15:01:36 +0900'}
     - {fileName: mac-keyboard-shortcuts, updated: '2018-01-30 10:59:24 +0900'}
+tools:
+    - {fileName: labs-strava-com-heatmap, updated: '2018-02-04 11:48:36 +0900'}
+    - {fileName: tools, updated: '2018-02-04 11:48:31 +0900'}
+map:
+    - {fileName: labs-strava-com-heatmap, updated: '2018-02-04 11:48:36 +0900'}
+보안:
+    - {fileName: labs-strava-com-heatmap, updated: '2018-02-04 11:48:36 +0900'}
 story:
     - {fileName: legend, updated: '2018-01-16 22:20:48 +0900'}
 bug:
