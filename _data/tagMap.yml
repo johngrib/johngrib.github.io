@@ -205,9 +205,9 @@ google:
 AI:
     - {fileName: ALPHAGO, updated: '2018-02-02 21:39:05 +0900'}
 rule:
-    - {fileName: Boy-Scout-Rule, updated: '2018-02-04 17:41:51 +0900'}
+    - {fileName: Boy-Scout-Rule, updated: '2018-02-04 17:47:46 +0900'}
 Uncle-Bob:
-    - {fileName: Boy-Scout-Rule, updated: '2018-02-04 17:41:51 +0900'}
+    - {fileName: Boy-Scout-Rule, updated: '2018-02-04 17:47:46 +0900'}
     - {fileName: Clean-Code, updated: '2018-02-04 16:25:41 +0900'}
 special-chars:
     - {fileName: braille-pattern-chars, updated: '2018-01-10 21:14:25 +0900'}
