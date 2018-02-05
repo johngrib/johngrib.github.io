@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-05 09:40:35 +0900
+updated : 2018-02-05 12:55:31 +0900
 tags    : index
 toc     : true
 public  : true
@@ -34,6 +34,7 @@ comment : false
         * [[HELL-BOY]]
         * [[HTTP-no-Kyokasho]]
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
+        * [[SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness]]
         * [[secret-of-consulting]]
         * [[Software-Craftsman]]{소프트웨어 장인}
         * [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}

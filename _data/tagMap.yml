@@ -179,6 +179,7 @@ book:
     - {fileName: DOM-Enlightenment-by-Cody-Lindley}
     - {fileName: HELL-BOY}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
+    - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
     - {fileName: The-Jargon-File}
 fantasy:
     - {fileName: 전생검신}
@@ -309,6 +310,8 @@ culture:
 rfc:
     - {fileName: RFC}
     - {fileName: why-http-80-https-443}
+science:
+    - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
 consulting:
     - {fileName: secret-of-consulting}
 장인정신:

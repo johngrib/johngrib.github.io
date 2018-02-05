@@ -1,10 +1,10 @@
-coding-font:
+Conway-s-law:
     type: wiki
-    title: '코딩 폰트'
-    summary: '내가 선호하는 코딩 폰트를 기록한다'
-    parent: index
-    url: /wiki/coding-font
-    updated: '2017-12-01 06:02:30 +0900'
+    title: '콘웨이의 법칙(Conway''s law)'
+    summary: '소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.'
+    parent: proverb
+    url: /wiki/Conway-s-law
+    updated: '2017-12-10 00:47:52 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -96,6 +96,13 @@ secret-of-consulting:
     parent: book
     url: /wiki/secret-of-consulting
     updated: '2018-01-30 22:42:26 +0900'
+SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness:
+    type: wiki
+    title: '(책) SCIENTIFIC AMERICAN 의식의 비밀'
+    summary: 'SECRET OF CONSCIOUSNESS'
+    parent: book
+    url: /wiki/SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness
+    updated: '2018-02-05 22:29:54 +0900'
 review-2018:
     type: wiki
     title: '2018년 리뷰 모음'
@@ -179,7 +186,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-02-05 09:40:35 +0900'
+    updated: '2018-02-05 12:55:31 +0900'
 HTTP-THE-DEFINITIVE-GUIDE:
     type: wiki
     title: '(책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'
@@ -187,13 +194,6 @@ HTTP-THE-DEFINITIVE-GUIDE:
     parent: book
     url: /wiki/HTTP-THE-DEFINITIVE-GUIDE
     updated: '2018-02-05 07:50:29 +0900'
-HTTP-no-Kyokasho:
-    type: wiki
-    title: '(책) 그림으로 배우는 HTTP & 네트워크'
-    summary: 'HTTP no Kyoukasho(HTTP の 敎科書)'
-    parent: book
-    url: /wiki/HTTP-no-Kyokasho
-    updated: '2018-01-26 21:36:43 +0900'
 2017-07-09-vim-game-code-break:
     type: blog
     title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
@@ -201,6 +201,13 @@ HTTP-no-Kyokasho:
     parent: null
     url: /blog/2017/07/09/vim-game-code-break
     updated: '2017-07-09 00:15:00 +0900'
+HTTP-no-Kyokasho:
+    type: wiki
+    title: '(책) 그림으로 배우는 HTTP & 네트워크'
+    summary: 'HTTP no Kyoukasho(HTTP の 敎科書)'
+    parent: book
+    url: /wiki/HTTP-no-Kyokasho
+    updated: '2018-01-26 21:36:43 +0900'
 http-message:
     type: wiki
     title: 'HTTP 메시지'
@@ -278,13 +285,6 @@ Code-Complete-2:
     parent: book
     url: /wiki/Code-Complete-2
     updated: '2018-01-26 21:35:22 +0900'
-clipping:
-    type: wiki
-    title: '글 모음 및 요약'
-    summary: null
-    parent: index
-    url: /wiki/clipping
-    updated: '2018-01-11 14:13:56 +0900'
 '2018-01-20':
     type: wiki
     title: '2018-01-20 토요일'
@@ -306,13 +306,13 @@ clipping:
     parent: book
     url: /wiki/전생검신
     updated: '2018-01-29 10:15:38 +0900'
-Clean-Code:
+clipping:
     type: wiki
-    title: '(책) 클린 코드 - 로버트 C. 마틴'
-    summary: '애자일 소프트웨어 장인 정신'
-    parent: book
-    url: /wiki/Clean-Code
-    updated: '2018-02-04 16:25:41 +0900'
+    title: '글 모음 및 요약'
+    summary: null
+    parent: index
+    url: /wiki/clipping
+    updated: '2018-01-11 14:13:56 +0900'
 ALPHAGO:
     type: wiki
     title: 'ALPHAGO (2017)'
@@ -341,6 +341,13 @@ braille-pattern-chars:
     parent: index
     url: /wiki/braille-pattern-chars
     updated: '2018-01-10 21:14:25 +0900'
+Clean-Code:
+    type: wiki
+    title: '(책) 클린 코드 - 로버트 C. 마틴'
+    summary: '애자일 소프트웨어 장인 정신'
+    parent: book
+    url: /wiki/Clean-Code
+    updated: '2018-02-04 16:25:41 +0900'
 2017-05-14-jwp-10:
     type: blog
     title: 'Next JWP Study #10'
@@ -355,6 +362,13 @@ airplain-rule:
     parent: proverb
     url: /wiki/airplain-rule
     updated: '2017-12-25 13:07:43 +0900'
+coding-font:
+    type: wiki
+    title: '코딩 폰트'
+    summary: '내가 선호하는 코딩 폰트를 기록한다'
+    parent: index
+    url: /wiki/coding-font
+    updated: '2017-12-01 06:02:30 +0900'
 why-http-80-https-443:
     type: wiki
     title: 'http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?'
@@ -404,13 +418,13 @@ frac1e:
     parent: index
     url: /wiki/frac1e
     updated: '2017-12-03 09:44:20 +0900'
-2017-05-01-jwp-08:
+2017-09-20-regex-prime:
     type: blog
-    title: 'Next JWP Study #08'
-    summary: 'MVC 프레임워크 3단계 실습'
+    title: '소수를 판별하는 정규식'
+    summary: '1진법을 사용해 소수를 판별하자!'
     parent: null
-    url: /blog/2017/05/01/jwp-08
-    updated: '2017-05-01 07:33:10 +0900'
+    url: /blog/2017/09/20/regex-prime
+    updated: '2017-09-20 20:56:55 +0900'
 2017-08-06-hammerspoon-tutorial-04:
     type: blog
     title: 'Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다'
@@ -418,27 +432,13 @@ frac1e:
     parent: null
     url: /blog/2017/08/06/hammerspoon-tutorial-04
     updated: '2017-08-06 13:35:00 +0900'
-2017-08-07-hammerspoon-tutorial-05:
+default-post:
     type: blog
-    title: 'Hammerspoon 튜토리얼 05 - chooser를 사용해 봅시다'
-    summary: '클립보드 히스토리도 만들어 봅시다'
+    title: 'sample title'
+    summary: 'sample summary'
     parent: null
-    url: /blog/2017/08/07/hammerspoon-tutorial-05
-    updated: '2017-08-07 09:33:00 +0900'
-google-search-console-remove-outdated-content:
-    type: wiki
-    title: 'Google Search Console - Remove outdated content'
-    summary: '구글 웹 도구 - 오래된 콘텐츠 삭제'
-    parent: index
-    url: /wiki/google-search-console-remove-outdated-content
-    updated: '2017-11-28 08:50:10 +0900'
-2017-08-04-hammerspoon-tutorial-02:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 02 - 클립보드 확장 기능을 만들어 봅시다'
-    summary: '복붙을 편하게!'
-    parent: null
-    url: /blog/2017/08/04/hammerspoon-tutorial-02
-    updated: '2017-08-04 21:32:22 +0900'
+    url: /blog/2017/04/02/default-post
+    updated: '2017-04-02 12:15:32 +0900'
 Gradle:
     type: wiki
     title: Gradle
@@ -446,13 +446,20 @@ Gradle:
     parent: index
     url: /wiki/Gradle
     updated: '2017-12-08 23:17:46 +0900'
-2017-08-23-0.30000000000000004:
+2017-08-07-hammerspoon-tutorial-05:
     type: blog
-    title: '0.1 + 0.2 == 0.30000000000000004'
-    summary: '자나깨나 부동소수점 조심'
+    title: 'Hammerspoon 튜토리얼 05 - chooser를 사용해 봅시다'
+    summary: '클립보드 히스토리도 만들어 봅시다'
     parent: null
-    url: /blog/2017/08/23/0.30000000000000004
-    updated: '2017-08-23 18:15:32 +0900'
+    url: /blog/2017/08/07/hammerspoon-tutorial-05
+    updated: '2017-08-07 09:33:00 +0900'
+2017-08-04-hammerspoon-tutorial-02:
+    type: blog
+    title: 'Hammerspoon 튜토리얼 02 - 클립보드 확장 기능을 만들어 봅시다'
+    summary: '복붙을 편하게!'
+    parent: null
+    url: /blog/2017/08/04/hammerspoon-tutorial-02
+    updated: '2017-08-04 21:32:22 +0900'
 2017-08-01-hammerspoon-tutorial-01:
     type: blog
     title: 'Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동'
@@ -474,13 +481,6 @@ Gradle:
     parent: null
     url: /blog/2017/12/06/my-wiki
     updated: '2017-12-06 21:44:18 +0900'
-Conway-s-law:
-    type: wiki
-    title: '콘웨이의 법칙(Conway''s law)'
-    summary: '소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.'
-    parent: proverb
-    url: /wiki/Conway-s-law
-    updated: '2017-12-10 00:47:52 +0900'
 Vim:
     type: wiki
     title: Vim
@@ -502,13 +502,13 @@ The-Jargon-File:
     parent: book
     url: /wiki/The-Jargon-File
     updated: '2017-12-10 00:55:18 +0900'
-2017-09-20-regex-prime:
+2017-08-23-0.30000000000000004:
     type: blog
-    title: '소수를 판별하는 정규식'
-    summary: '1진법을 사용해 소수를 판별하자!'
+    title: '0.1 + 0.2 == 0.30000000000000004'
+    summary: '자나깨나 부동소수점 조심'
     parent: null
-    url: /blog/2017/09/20/regex-prime
-    updated: '2017-09-20 20:56:55 +0900'
+    url: /blog/2017/08/23/0.30000000000000004
+    updated: '2017-08-23 18:15:32 +0900'
 RFC:
     type: wiki
     title: 'RFC(Request For Comment)'
@@ -516,13 +516,13 @@ RFC:
     parent: index
     url: /wiki/RFC
     updated: '2017-12-12 22:06:20 +0900'
-default-post:
-    type: blog
-    title: 'sample title'
-    summary: 'sample summary'
-    parent: null
-    url: /blog/2017/04/02/default-post
-    updated: '2017-04-02 12:15:32 +0900'
+google-search-console-remove-outdated-content:
+    type: wiki
+    title: 'Google Search Console - Remove outdated content'
+    summary: '구글 웹 도구 - 오래된 콘텐츠 삭제'
+    parent: index
+    url: /wiki/google-search-console-remove-outdated-content
+    updated: '2017-11-28 08:50:10 +0900'
 Postel-s-law:
     type: wiki
     title: '포스텔의 법칙(Postel''s law)'
@@ -551,27 +551,6 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/04/05/jwp-01
     updated: '2017-04-05 21:52:28 +0900'
-2017-05-14-hhkb-jp-tmk:
-    type: blog
-    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
-    summary: '해피해킹을 더욱 해피하게'
-    parent: null
-    url: /blog/2017/05/14/hhkb-jp-tmk
-    updated: '2017-05-14 15:50:31 +0900'
-2017-07-30-luarocks:
-    type: blog
-    title: 'luarocks로 Hammerspoon 패키지 관리하기'
-    summary: '유한락스가 아니라 루아락스로 깨끗하게'
-    parent: null
-    url: /blog/2017/07/30/luarocks
-    updated: '2017-07-30 16:32:25 +0900'
-2017-08-05-hammerspoon-tutorial-03:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 03 - 한영 전환 키를 만들어 봅시다'
-    summary: 'Esc - 영문전환도 만들어 봅시다'
-    parent: null
-    url: /blog/2017/08/05/hammerspoon-tutorial-03
-    updated: '2017-08-05 12:11:00 +0900'
 2017-05-16-jwp-11:
     type: blog
     title: 'Next JWP Study #11'
@@ -579,6 +558,20 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/05/16/jwp-11
     updated: '2017-05-16 21:36:06 +0900'
+2017-08-05-hammerspoon-tutorial-03:
+    type: blog
+    title: 'Hammerspoon 튜토리얼 03 - 한영 전환 키를 만들어 봅시다'
+    summary: 'Esc - 영문전환도 만들어 봅시다'
+    parent: null
+    url: /blog/2017/08/05/hammerspoon-tutorial-03
+    updated: '2017-08-05 12:11:00 +0900'
+2017-07-30-luarocks:
+    type: blog
+    title: 'luarocks로 Hammerspoon 패키지 관리하기'
+    summary: '유한락스가 아니라 루아락스로 깨끗하게'
+    parent: null
+    url: /blog/2017/07/30/luarocks
+    updated: '2017-07-30 16:32:25 +0900'
 2017-05-20-jwp-12:
     type: blog
     title: 'Next JWP Study #12'
@@ -586,6 +579,13 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/05/20/jwp-12
     updated: '2017-05-20 20:44:40 +0900'
+2017-05-23-jwp-13:
+    type: blog
+    title: 'Next JWP Study #13'
+    summary: 'AOP 개념 및 로그인 기반 테스트'
+    parent: null
+    url: /blog/2017/05/23/jwp-13
+    updated: '2017-05-23 22:05:44 +0900'
 2017-07-14-aheui-explained:
     type: blog
     title: '아희 ''Hello, World!''에 코멘트를 달아 보았다.'
@@ -607,13 +607,6 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/05/29/jwp-15
     updated: '2017-05-29 19:54:06 +0900'
-2017-05-23-jwp-13:
-    type: blog
-    title: 'Next JWP Study #13'
-    summary: 'AOP 개념 및 로그인 기반 테스트'
-    parent: null
-    url: /blog/2017/05/23/jwp-13
-    updated: '2017-05-23 22:05:44 +0900'
 2017-05-27-jwp-14:
     type: blog
     title: 'Next JWP Study #14'
@@ -621,6 +614,13 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/05/27/jwp-14
     updated: '2017-05-27 18:00:40 +0900'
+2017-03-12-telegram-bot:
+    type: blog
+    title: '텔레그램 봇 스켈레톤 만들기.'
+    summary: 'node.js, heroku로 만드는 텔레그램 챗봇.'
+    parent: null
+    url: /blog/2017/03/12/telegram-bot
+    updated: '2017-03-12 21:08:16 +0900'
 2017-04-17-jwp-05:
     type: blog
     title: 'Next JWP Study #05'
@@ -628,13 +628,6 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/04/17/jwp-05
     updated: '2017-04-17 15:20:00 +0900'
-2017-04-08-jwp-02:
-    type: blog
-    title: 'Next JWP Study #02'
-    summary: 'HTTP 이해'
-    parent: null
-    url: /blog/2017/04/08/jwp-02
-    updated: '2017-04-08 21:29:47 +0900'
 2017-05-09-jwp-09:
     type: blog
     title: 'Next JWP Study #09'
@@ -649,20 +642,20 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/05/04/input-source
     updated: '2017-05-04 22:05:30 +0900'
-2017-04-13-jwp-04:
+2017-05-14-hhkb-jp-tmk:
     type: blog
-    title: 'Next JWP Study #04'
-    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
+    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
+    summary: '해피해킹을 더욱 해피하게'
     parent: null
-    url: /blog/2017/04/13/jwp-04
-    updated: '2017-04-13 12:15:32 +0900'
-2017-04-25-jwp-07:
+    url: /blog/2017/05/14/hhkb-jp-tmk
+    updated: '2017-05-14 15:50:31 +0900'
+2017-05-01-jwp-08:
     type: blog
-    title: 'Next JWP Study #07'
-    summary: '중간 점검'
+    title: 'Next JWP Study #08'
+    summary: 'MVC 프레임워크 3단계 실습'
     parent: null
-    url: /blog/2017/04/26/jwp-07
-    updated: '2017-04-26 21:49:43 +0900'
+    url: /blog/2017/05/01/jwp-08
+    updated: '2017-05-01 07:33:10 +0900'
 2017-04-20-jwp-06:
     type: blog
     title: 'Next JWP Study #06'
@@ -670,6 +663,20 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/04/22/jwp-06
     updated: '2017-04-22 23:36:10 +0900'
+2017-04-25-jwp-07:
+    type: blog
+    title: 'Next JWP Study #07'
+    summary: '중간 점검'
+    parent: null
+    url: /blog/2017/04/26/jwp-07
+    updated: '2017-04-26 21:49:43 +0900'
+2017-04-13-jwp-04:
+    type: blog
+    title: 'Next JWP Study #04'
+    summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
+    parent: null
+    url: /blog/2017/04/13/jwp-04
+    updated: '2017-04-13 12:15:32 +0900'
 2017-04-03-vim-tmux-t-ut:
     type: blog
     title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
@@ -677,6 +684,13 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/04/03/vim-tmux-t-ut
     updated: '2017-04-03 07:33:49 +0900'
+2017-04-08-jwp-02:
+    type: blog
+    title: 'Next JWP Study #02'
+    summary: 'HTTP 이해'
+    parent: null
+    url: /blog/2017/04/08/jwp-02
+    updated: '2017-04-08 21:29:47 +0900'
 2017-03-27-tmux-ascii-control:
     type: blog
     title: 'tmux 키 조합에서 C--가 불가능한 이유.'
@@ -691,13 +705,6 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/04/02/jwp-00-prepare
     updated: '2017-04-02 12:15:32 +0900'
-2017-03-12-telegram-bot:
-    type: blog
-    title: '텔레그램 봇 스켈레톤 만들기.'
-    summary: 'node.js, heroku로 만드는 텔레그램 챗봇.'
-    parent: null
-    url: /blog/2017/03/12/telegram-bot
-    updated: '2017-03-12 21:08:16 +0900'
 2017-03-13-uri-url:
     type: blog
     title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'
