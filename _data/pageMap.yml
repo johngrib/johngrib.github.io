@@ -179,7 +179,7 @@ HTTP-THE-DEFINITIVE-GUIDE:
     summary: 'HTTP - THE DEFINITIVE GUIDE'
     parent: book
     url: /wiki/HTTP-THE-DEFINITIVE-GUIDE
-    updated: '2018-02-04 07:15:37 +0900'
+    updated: '2018-02-05 07:50:29 +0900'
 HTTP-no-Kyokasho:
     type: wiki
     title: '(책) 그림으로 배우는 HTTP & 네트워크'

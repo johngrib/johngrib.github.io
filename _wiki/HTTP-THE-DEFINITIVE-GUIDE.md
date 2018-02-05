@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가
 summary : HTTP - THE DEFINITIVE GUIDE
 date    : 2018-01-20 18:20:21 +0900
-updated : 2018-02-04 07:15:37 +0900
+updated : 2018-02-05 07:50:29 +0900
 tags    : book http
 toc     : true
 public  : true
@@ -17,7 +17,6 @@ latex   : false
 
 * 웹 개발자가 반드시 읽어야 하는 책.
 * 728 페이지나 되는 두꺼운 책이다.
-* 나는 현재 "3부 15장 엔터티와 인코딩"을 읽고 있다.
 
 ## Links
 
