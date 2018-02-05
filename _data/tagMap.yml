@@ -176,6 +176,7 @@ book:
     - {fileName: book}
     - {fileName: Clean-Code}
     - {fileName: Code-Complete-2}
+    - {fileName: DevOps-Troubleshooting}
     - {fileName: DOM-Enlightenment-by-Cody-Lindley}
     - {fileName: HELL-BOY}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
@@ -224,6 +225,11 @@ font:
     - {fileName: coding-font}
 config:
     - {fileName: coding-font}
+linux:
+    - {fileName: command-line}
+    - {fileName: DevOps-Troubleshooting}
+command-line:
+    - {fileName: command-line}
 proverb:
     - {fileName: Conway-s-law}
     - {fileName: Edsel-edict}
