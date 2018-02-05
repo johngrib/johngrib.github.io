@@ -109,7 +109,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-02-05 10:12:51 +0900'
+    updated: '2018-02-05 22:48:35 +0900'
 review:
     type: wiki
     title: '리뷰 모음'
@@ -193,7 +193,7 @@ HTTP-THE-DEFINITIVE-GUIDE:
     summary: 'HTTP - THE DEFINITIVE GUIDE'
     parent: book
     url: /wiki/HTTP-THE-DEFINITIVE-GUIDE
-    updated: '2018-02-05 07:50:29 +0900'
+    updated: '2018-02-05 22:51:00 +0900'
 2017-07-09-vim-game-code-break:
     type: blog
     title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
