@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-04 16:22:11 +0900
+updated : 2018-02-05 09:40:35 +0900
 tags    : index
 toc     : true
 public  : true
@@ -47,6 +47,7 @@ comment : false
         * [[ALPHAGO]]
         * [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]]
         * [[HOT-FUZZ]]{뜨거운 녀석들}
+        * [[Las-chicas-del-cable]]
         * [[Walking-Dead]]
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]

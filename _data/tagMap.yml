@@ -193,6 +193,7 @@ netflix:
     - {fileName: ALPHAGO}
     - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY}
     - {fileName: HOT-FUZZ}
+    - {fileName: Las-chicas-del-cable}
     - {fileName: Walking-Dead}
 alphago:
     - {fileName: ALPHAGO}
@@ -233,6 +234,7 @@ test:
     - {fileName: default-post}
 drama:
     - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY}
+    - {fileName: Las-chicas-del-cable}
     - {fileName: Walking-Dead}
 html:
     - {fileName: DOM-Enlightenment-by-Cody-Lindley}

@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-02-02 21:58:36 +0900
+updated : 2018-02-05 10:12:51 +0900
 tags    : review
 toc     : true
 public  : true
@@ -31,6 +31,7 @@ latex   : false
 
 ## 영화/드라마
 
+* 2018-02-04 [[Las-chicas-del-cable]]{마드리드 모던걸} [시즌 1](/wiki/Las-chicas-del-cable/#season-01)
 * 2018-02-02 [[ALPHAGO]]{알파고 다큐멘터리}
 * 2018-01-29 [[Walking-Dead]] 시즌 7
 * 2018-01-13 [[HOT-FUZZ]]{뜨거운 녀석들}
