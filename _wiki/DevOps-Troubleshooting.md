@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅스 서버 트러블슈팅 기법
 summary : DevOps Troubleshooting - Linux Server Best Practices
 date    : 2017-12-05 19:22:28 +0900
-updated : 2018-02-06 06:56:57 +0900
+updated : 2018-02-06 22:18:01 +0900
 tags    : book linux
 toc     : true
 public  : true
@@ -36,6 +36,8 @@ latex   : false
 * 시스템의 주요 자원은 CPU, RAM, 디스크 I/O, 네트워크.
 
 ### 시스템 부하
+
+* [[uptime]] 명령어를 사용해 확인할 것.
 
 
 
