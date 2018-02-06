@@ -3,11 +3,11 @@ layout  : wiki
 title   : java_home 명령어
 summary : return a value for $JAVA_HOME
 date    : 2017-12-03 15:01:36 +0900
-updated : 2017-12-03 15:01:36 +0900
+updated : 2018-02-06 12:33:34 +0900
 tags    : bash java mac
 toc     : true
 public  : true
-parent  : index
+parent  : command-line
 latex   : false
 ---
 * TOC
