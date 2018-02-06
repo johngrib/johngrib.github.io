@@ -102,7 +102,7 @@ Software-Engineering-Code-of-Ethics:
     summary: 'Software Engineering Code of Ethics'
     parent: clipping
     url: /wiki/Software-Engineering-Code-of-Ethics
-    updated: '2018-02-06 23:15:45 +0900'
+    updated: '2018-02-07 06:48:10 +0900'
 Software-Craftsman:
     type: wiki
     title: '(책) 소프트웨어 장인 - 프로페셔널리즘, 실용주의, 자부심'
@@ -130,7 +130,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-02-05 22:48:35 +0900'
+    updated: '2018-02-07 06:23:26 +0900'
 review:
     type: wiki
     title: '리뷰 모음'
