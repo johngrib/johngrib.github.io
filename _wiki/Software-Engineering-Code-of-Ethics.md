@@ -3,7 +3,7 @@ layout  : wiki
 title   : 소프트웨어 공학 윤리 강령과 업무 규범
 summary : Software Engineering Code of Ethics
 date    : 2018-02-06 23:11:38 +0900
-updated : 2018-02-06 23:15:45 +0900
+updated : 2018-02-07 06:48:10 +0900
 tags    : ACM IEEE ethics 번역
 toc     : true
 public  : true
@@ -13,31 +13,28 @@ latex   : false
 * TOC
 {:toc}
 
-## 원문
+## 짧은 버전
 
-Short Version
+다음은 스티브 맥코넬의 [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발} 20장 윤리 강령과 업무 규범, 283쪽에 실린 내용을 인용한 것이다.
 
-Software engineers shall commit themselves to making the analysis, specification, design, development, testing and maintenance of software a beneficial and respected profession. In accordance with their commitment to the health, safety and welfare of the public, software engineers shall adhere to the following Eight Principles:
-
-1. PUBLIC - Software engineers shall act consistently with the public interest.
-
-2. CLIENT AND EMPLOYER - Software engineers shall act in a manner that is in the best interests of their client and employer consistent with the public interest.
-
-3. PRODUCT - Software engineers shall ensure that their products and related modifications meet the highest professional standards possible.
-
-4. JUDGMENT - Software engineers shall maintain integrity and independence in their professional judgment.
-
-5. MANAGEMENT - Software engineering managers and leaders shall subscribe to and promote an ethical approach to the management of software development and maintenance.
-
-6. PROFESSION - Software engineers shall advance the integrity and reputation of the profession consistent with the public interest.
-
-7. COLLEAGUES - Software engineers shall be fair to and supportive of their colleagues.
-
-8. SELF - Software engineers shall participate in lifelong learning regarding the practice of their profession and shall promote an ethical approach to the practice of the profession.
-
-## 번역
-
-짧은 버전
+>
+**소프트웨어공학 윤리 강령과 업무 규범**
+<br /> <br />
+소프트웨어 엔지니어는 소프트웨어의 분석, 명세, 설계, 개발, 테스팅, 유지보수가 유익하고 존경받는 전문직이 되도록 헌신해야 한다.  
+공공의 행복, 안전, 번영에 대한 헌신과 더불어, 소프트웨어 엔지니어는 다음의 여덟 가지 원칙을 준수해야 한다.
+<br />
+1. **공공** 소프트웨어 엔지니어는 공익을 위해 일관되게 행동해야 한다.
+2. **고객과 고용주** 소프트웨어 엔지니어는 공익을 위하면서 고객과 고용주에게 최대의 이익을 주는 방향으로 행동해야 한다.
+3. **제품** 소프트웨어 엔지니어는 그들의 제품과 관련된 변경들이 가능한 한 최고의 업무 규범에 부합되도록 해야 한다.
+4. **판단** 소프트웨어 엔지니어는 그들의 판단이 전문가로서 무결하고, 독립적이도록 유지해야 한다.
+5. **관리** 소프트웨어공학 관리자와 리더는 소프트웨어 개발과 유지보수의 관리에 대한 윤리적인 접근 방식을 승인하고, 장려해야 한다.
+6. **전문직** 소프트웨어 엔지니어는 공공의 이익과 대치하지 않으면서, 전문직으로서의 무결성과 평판을 향상시켜야 한다.
+7. **동료** 소프트웨어 엔지니어는 그들의 동료에 대해 공정, 협조적이어야 한다.
+8. **자신** 소프트웨어 엔지니어는 그들의 전문 업무에 관한 평생 교육에 참여해야 하며, 전문 업무에 대한 윤리적인 접근 방식을 장려해야 한다.
+<br /> <br />
+이 강령은 ACM과 IEEE Computer Society가 채택했고, 소프트웨어 엔지니어에게 윤리적이고 전문적인 가이드 라인을 제공한다.
+<br />
+©1998 SEEP Excutive Commitee.
 
 ## Links
 
