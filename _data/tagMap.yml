@@ -326,12 +326,19 @@ consulting:
     - {fileName: Software-Craftsman}
 괴담:
     - {fileName: Software-Craftsman}
+ACM:
+    - {fileName: Software-Engineering-Code-of-Ethics}
+IEEE:
+    - {fileName: Software-Engineering-Code-of-Ethics}
+ethics:
+    - {fileName: Software-Engineering-Code-of-Ethics}
+번역:
+    - {fileName: Software-Engineering-Code-of-Ethics}
+    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 web:
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
 hacker:
     - {fileName: The-Jargon-File}
-번역:
-    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 sf:
     - {fileName: toda-seiji-scientia}
 trouble-shooting:

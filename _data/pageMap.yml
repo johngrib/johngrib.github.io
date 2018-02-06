@@ -1,10 +1,10 @@
-default-post:
-    type: blog
-    title: 'sample title'
-    summary: 'sample summary'
-    parent: null
-    url: /blog/2017/04/02/default-post
-    updated: '2017-04-02 12:15:32 +0900'
+DevOps-Troubleshooting:
+    type: wiki
+    title: '(책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅스 서버 트러블슈팅 기법'
+    summary: 'DevOps Troubleshooting - Linux Server Best Practices'
+    parent: book
+    url: /wiki/DevOps-Troubleshooting
+    updated: '2018-02-06 22:18:01 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -39,7 +39,7 @@ uptime:
     summary: '현재 시간, 시스템 부팅 후 경과된 시간, 로그인 사용자, 시스템 부하율을 보여준다.'
     parent: command-line
     url: /wiki/uptime
-    updated: '2018-02-06 12:46:04 +0900'
+    updated: '2018-02-06 22:25:08 +0900'
 tools:
     type: wiki
     title: tools
@@ -96,6 +96,13 @@ special-chars:
     parent: index
     url: /wiki/special-chars
     updated: '2018-01-10 16:52:03 +0900'
+Software-Engineering-Code-of-Ethics:
+    type: wiki
+    title: '소프트웨어 공학 윤리 강령과 업무 규범'
+    summary: 'Software Engineering Code of Ethics'
+    parent: clipping
+    url: /wiki/Software-Engineering-Code-of-Ethics
+    updated: '2018-02-06 23:15:45 +0900'
 Software-Craftsman:
     type: wiki
     title: '(책) 소프트웨어 장인 - 프로페셔널리즘, 실용주의, 자부심'
@@ -144,7 +151,7 @@ PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     summary: 'PROFESSIONAL SOFTWARE DEVELOPMENT'
     parent: book
     url: /wiki/PROFESSIONAL-SOFTWARE-DEVELOPMENT
-    updated: '2018-02-06 08:59:20 +0900'
+    updated: '2018-02-06 23:05:06 +0900'
 orange-juice-test:
     type: wiki
     title: '오렌지 주스 테스트'
@@ -187,13 +194,6 @@ legend:
     parent: index
     url: /wiki/legend
     updated: '2018-01-16 22:20:48 +0900'
-Las-chicas-del-cable:
-    type: wiki
-    title: '마드리드 모던걸'
-    summary: 'Las chicas del cable'
-    parent: movie
-    url: /wiki/Las-chicas-del-cable
-    updated: '2018-02-05 10:20:21 +0900'
 2017-07-09-vim-game-code-break:
     type: blog
     title: '레거시 코드를 파괴하는 Vim 벽돌 깨기'
@@ -201,6 +201,13 @@ Las-chicas-del-cable:
     parent: null
     url: /blog/2017/07/09/vim-game-code-break
     updated: '2017-07-09 00:15:00 +0900'
+Las-chicas-del-cable:
+    type: wiki
+    title: '마드리드 모던걸'
+    summary: 'Las chicas del cable'
+    parent: movie
+    url: /wiki/Las-chicas-del-cable
+    updated: '2018-02-05 10:20:21 +0900'
 labs-strava-com-heatmap:
     type: wiki
     title: 'STRAVA LABS HEATMAP'
@@ -221,7 +228,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-02-06 12:33:43 +0900'
+    updated: '2018-02-06 23:11:04 +0900'
 HTTP-THE-DEFINITIVE-GUIDE:
     type: wiki
     title: '(책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'
@@ -278,13 +285,6 @@ Edsel-edict:
     parent: proverb
     url: /wiki/Edsel-edict
     updated: '2018-01-18 22:01:04 +0900'
-DOM-Enlightenment-by-Cody-Lindley:
-    type: wiki
-    title: '(책) DOM을 깨우치다 - 가치에 대한 완전한 이해'
-    summary: 'DOM Enlightenment by Cody Lindley'
-    parent: book
-    url: /wiki/DOM-Enlightenment-by-Cody-Lindley
-    updated: '2018-01-26 21:36:08 +0900'
 '2018-01-20':
     type: wiki
     title: '2018-01-20 토요일'
@@ -306,13 +306,13 @@ DOM-Enlightenment-by-Cody-Lindley:
     parent: book
     url: /wiki/전생검신
     updated: '2018-01-29 10:15:38 +0900'
-DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
+DOM-Enlightenment-by-Cody-Lindley:
     type: wiki
-    title: '더크 젠틀리의 전체론적 탐정 사무소'
-    summary: 'DIRK GENTLY''S HOLISTIC DETECTIVE AGENCY'
-    parent: movie
-    url: /wiki/DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY
-    updated: '2018-01-13 12:28:13 +0900'
+    title: '(책) DOM을 깨우치다 - 가치에 대한 완전한 이해'
+    summary: 'DOM Enlightenment by Cody Lindley'
+    parent: book
+    url: /wiki/DOM-Enlightenment-by-Cody-Lindley
+    updated: '2018-01-26 21:36:08 +0900'
 ALPHAGO:
     type: wiki
     title: 'ALPHAGO (2017)'
@@ -362,13 +362,13 @@ Code-Complete-2:
     parent: book
     url: /wiki/Code-Complete-2
     updated: '2018-01-26 21:35:22 +0900'
-diary-2018:
+DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
     type: wiki
-    title: '2018 Diary'
-    summary: null
-    parent: diary
-    url: /wiki/diary-2018
-    updated: '2018-01-20 17:58:08 +0900'
+    title: '더크 젠틀리의 전체론적 탐정 사무소'
+    summary: 'DIRK GENTLY''S HOLISTIC DETECTIVE AGENCY'
+    parent: movie
+    url: /wiki/DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY
+    updated: '2018-01-13 12:28:13 +0900'
 command-line:
     type: wiki
     title: '커맨드 라인 명령어 및 사용법 모음'
@@ -376,6 +376,20 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-06 12:42:50 +0900'
+Conway-s-law:
+    type: wiki
+    title: '콘웨이의 법칙(Conway''s law)'
+    summary: '소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.'
+    parent: proverb
+    url: /wiki/Conway-s-law
+    updated: '2018-02-06 22:50:23 +0900'
+diary-2018:
+    type: wiki
+    title: '2018 Diary'
+    summary: null
+    parent: diary
+    url: /wiki/diary-2018
+    updated: '2018-01-20 17:58:08 +0900'
 diary:
     type: wiki
     title: Diary
@@ -383,20 +397,13 @@ diary:
     parent: index
     url: /wiki/diary
     updated: '2018-01-20 17:47:01 +0900'
-DevOps-Troubleshooting:
+Postel-s-law:
     type: wiki
-    title: '(책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅스 서버 트러블슈팅 기법'
-    summary: 'DevOps Troubleshooting - Linux Server Best Practices'
-    parent: book
-    url: /wiki/DevOps-Troubleshooting
-    updated: '2018-02-06 06:56:57 +0900'
-2017-05-14-jwp-10:
-    type: blog
-    title: 'Next JWP Study #10'
-    summary: 'DI 및 Spring DI'
-    parent: null
-    url: /blog/2017/05/14/jwp-10
-    updated: '2017-05-14 14:10:50 +0900'
+    title: '포스텔의 법칙(Postel''s law)'
+    summary: '받을 때는 관대하게, 보낼 때는 엄격하게.'
+    parent: proverb
+    url: /wiki/Postel-s-law
+    updated: '2018-01-07 18:20:48 +0900'
 2017-01-22-jekyll-category-tag:
     type: blog
     title: 'Jekyll 블로그에 태그 추가하기.'
@@ -425,13 +432,6 @@ airplain-rule:
     parent: null
     url: /blog/2017/12/30/review2017
     updated: '2017-12-30 23:19:10 +0900'
-2017-12-06-my-wiki:
-    type: blog
-    title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
-    summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
-    parent: null
-    url: /blog/2017/12/06/my-wiki
-    updated: '2017-12-06 21:44:18 +0900'
 frac1e:
     type: wiki
     title: 'n개의 제비뽑기에 n번 도전'
@@ -446,13 +446,13 @@ google-search-console-remove-outdated-content:
     parent: index
     url: /wiki/google-search-console-remove-outdated-content
     updated: '2017-11-28 08:50:10 +0900'
-2017-09-20-regex-prime:
+2017-12-06-my-wiki:
     type: blog
-    title: '소수를 판별하는 정규식'
-    summary: '1진법을 사용해 소수를 판별하자!'
+    title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
+    summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
     parent: null
-    url: /blog/2017/09/20/regex-prime
-    updated: '2017-09-20 20:56:55 +0900'
+    url: /blog/2017/12/06/my-wiki
+    updated: '2017-12-06 21:44:18 +0900'
 Gradle:
     type: wiki
     title: Gradle
@@ -467,6 +467,13 @@ groovy:
     parent: programming-language
     url: /wiki/groovy
     updated: '2017-12-03 15:01:36 +0900'
+2017-09-20-regex-prime:
+    type: blog
+    title: '소수를 판별하는 정규식'
+    summary: '1진법을 사용해 소수를 판별하자!'
+    parent: null
+    url: /blog/2017/09/20/regex-prime
+    updated: '2017-09-20 20:56:55 +0900'
 2017-08-23-0.30000000000000004:
     type: blog
     title: '0.1 + 0.2 == 0.30000000000000004'
@@ -537,13 +544,6 @@ groovy:
     parent: null
     url: /blog/2017/06/01/jwp-16
     updated: '2017-06-01 19:52:40 +0900'
-2017-05-29-jwp-15:
-    type: blog
-    title: 'Next JWP Study #15'
-    summary: 'RESTful API 설계'
-    parent: null
-    url: /blog/2017/05/29/jwp-15
-    updated: '2017-05-29 19:54:06 +0900'
 Lubarsky-s-Law-of-Cybernetic-Entomology:
     type: wiki
     title: '루바르스키의 사이버네틱 곤충학 법칙(Lubarsky''s Law of Cybernetic Entomology)'
@@ -551,6 +551,13 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: proverb
     url: /wiki/Lubarsky-s-Law-of-Cybernetic-Entomology
     updated: '2017-12-09 22:39:56 +0900'
+2017-05-29-jwp-15:
+    type: blog
+    title: 'Next JWP Study #15'
+    summary: 'RESTful API 설계'
+    parent: null
+    url: /blog/2017/05/29/jwp-15
+    updated: '2017-05-29 19:54:06 +0900'
 2017-05-27-jwp-14:
     type: blog
     title: 'Next JWP Study #14'
@@ -579,27 +586,20 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: null
     url: /blog/2017/05/16/jwp-11
     updated: '2017-05-16 21:36:06 +0900'
-Conway-s-law:
-    type: wiki
-    title: '콘웨이의 법칙(Conway''s law)'
-    summary: '소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.'
-    parent: proverb
-    url: /wiki/Conway-s-law
-    updated: '2017-12-10 00:47:52 +0900'
-Postel-s-law:
-    type: wiki
-    title: '포스텔의 법칙(Postel''s law)'
-    summary: '받을 때는 관대하게, 보낼 때는 엄격하게.'
-    parent: proverb
-    url: /wiki/Postel-s-law
-    updated: '2018-01-07 18:20:48 +0900'
-2017-05-14-hhkb-jp-tmk:
+default-post:
     type: blog
-    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
-    summary: '해피해킹을 더욱 해피하게'
+    title: 'sample title'
+    summary: 'sample summary'
     parent: null
-    url: /blog/2017/05/14/hhkb-jp-tmk
-    updated: '2017-05-14 15:50:31 +0900'
+    url: /blog/2017/04/02/default-post
+    updated: '2017-04-02 12:15:32 +0900'
+2017-05-14-jwp-10:
+    type: blog
+    title: 'Next JWP Study #10'
+    summary: 'DI 및 Spring DI'
+    parent: null
+    url: /blog/2017/05/14/jwp-10
+    updated: '2017-05-14 14:10:50 +0900'
 programming-language:
     type: wiki
     title: '프로그래밍 언어'
@@ -607,6 +607,13 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
+2017-05-14-hhkb-jp-tmk:
+    type: blog
+    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
+    summary: '해피해킹을 더욱 해피하게'
+    parent: null
+    url: /blog/2017/05/14/hhkb-jp-tmk
+    updated: '2017-05-14 15:50:31 +0900'
 2017-05-09-jwp-09:
     type: blog
     title: 'Next JWP Study #09'
@@ -621,13 +628,6 @@ programming-language:
     parent: null
     url: /blog/2017/05/04/input-source
     updated: '2017-05-04 22:05:30 +0900'
-2017-05-01-jwp-08:
-    type: blog
-    title: 'Next JWP Study #08'
-    summary: 'MVC 프레임워크 3단계 실습'
-    parent: null
-    url: /blog/2017/05/01/jwp-08
-    updated: '2017-05-01 07:33:10 +0900'
 RFC:
     type: wiki
     title: 'RFC(Request For Comment)'
@@ -635,6 +635,13 @@ RFC:
     parent: index
     url: /wiki/RFC
     updated: '2017-12-12 22:06:20 +0900'
+2017-05-01-jwp-08:
+    type: blog
+    title: 'Next JWP Study #08'
+    summary: 'MVC 프레임워크 3단계 실습'
+    parent: null
+    url: /blog/2017/05/01/jwp-08
+    updated: '2017-05-01 07:33:10 +0900'
 2017-04-25-jwp-07:
     type: blog
     title: 'Next JWP Study #07'
