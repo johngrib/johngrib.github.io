@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-06 08:48:05 +0900
+updated : 2018-02-06 12:33:43 +0900
 tags    : index
 toc     : true
 public  : true
@@ -66,7 +66,8 @@ comment : false
 * [[The-Jargon-File]]
 * [[tools]]
     * [[command-line]]
-        * [[java_home]]{java_home 명령어}
+        * [[java_home]]
+        * [[uptime]]
     * [[useful-site]]
         * [[labs-strava-com-heatmap]]
 * [[URI]]

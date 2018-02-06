@@ -285,6 +285,7 @@ index:
     - {fileName: index}
 bash:
     - {fileName: java_home}
+    - {fileName: uptime}
 java:
     - {fileName: java_home}
 mac:
