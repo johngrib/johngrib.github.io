@@ -15,7 +15,6 @@ disqus_shortname: johngrib
 
 # Build settings
 plugins:
-  - jekyll-feed
   - jekyll-paginate
   - jekyll-gist
 
