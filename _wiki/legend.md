@@ -3,11 +3,11 @@ layout  : wiki
 title   : 레전드 모음
 summary :
 date    : 2017-12-03 15:01:36 +0900
-updated : 2018-01-16 22:20:48 +0900
+updated : 2018-02-07 21:33:42 +0900
 tags    : story
 toc     : true
 public  : true
-parent  : index
+parent  : clipping
 latex   : false
 ---
 * TOC

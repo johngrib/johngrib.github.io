@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-06 23:11:04 +0900
+updated : 2018-02-07 21:33:26 +0900
 tags    : index
 toc     : true
 public  : true
@@ -13,18 +13,16 @@ comment : false
 
 * [[braille-pattern-chars]]
 * [[clipping]]{글 모음 및 요약}
+    * [[legend]]
     * [[Software-Engineering-Code-of-Ethics]]
     * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
 * [[coding-font]]{코딩 폰트}
-* [[frac1e]]{n개의 제비뽑기에 n번 도전}
-* [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
 * [[Gradle]]
 * [[how-to]]
     * [[googling]]
     * [[mathjax-latex]]
     * [[von-neumann-extractor]]
 * [[http-message]]
-* [[legend]]
 * [[mac-keyboard-shortcuts]]
 * [[media]]
     * [[book]]{도서}
@@ -32,6 +30,7 @@ comment : false
         * [[Code-Complete-2]]
         * [[DevOps-Troubleshooting]]
         * [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
+        * [[Geek-Atlas]]
         * [[HELL-BOY]]
         * [[HTTP-no-Kyokasho]]
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
@@ -68,12 +67,15 @@ comment : false
 * [[tools]]
     * [[command-line]]
         * [[java_home]]
+        * [[top]]
         * [[uptime]]
     * [[useful-site]]
+        * [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
         * [[labs-strava-com-heatmap]]
 * [[URI]]
 * [[Vim]]
     * [[vim-conceallevel]]{conceallevel (Vim)}
 * [[why]]
+    * [[frac1e]]{n개의 제비뽑기에 n번 도전}
     * [[why-http-80-https-443]]
 * [[YAML]]

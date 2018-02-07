@@ -3,11 +3,11 @@ layout  : wiki
 title   : STRAVA LABS HEATMAP
 summary : 운동 위치추적 앱 스트라바가 공개한 열 지도
 date    : 2018-02-04 11:05:57 +0900
-updated : 2018-02-04 11:48:36 +0900
+updated : 2018-02-07 21:30:38 +0900
 tags    : tools map 보안 twitter
 toc     : true
 public  : true
-parent  : tools
+parent  : useful-site
 latex   : false
 ---
 * TOC
