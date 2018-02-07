@@ -39,7 +39,7 @@ adsense: false
     <ul class="post-list">
 {% assign documents = site.wiki | sort: 'updated' | reverse %}
 {% for doc in documents limit: 30 %}
-    {% if doc.public == true and doc.title != 'wiki index'%}
+    {% if doc.public == true and doc.title != 'wiki'%}
         <li>
             <div>
                 <a class="post-link" href="{{ doc.url | prepend: site.baseurl }}">
