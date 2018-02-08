@@ -252,6 +252,12 @@ proverb:
     - {fileName: proverb}
 test:
     - {fileName: default-post}
+bash:
+    - {fileName: df}
+    - {fileName: du}
+    - {fileName: java_home}
+    - {fileName: top}
+    - {fileName: uptime}
 drama:
     - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY}
     - {fileName: Las-chicas-del-cable}
@@ -305,10 +311,6 @@ index:
     - {fileName: index}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
-bash:
-    - {fileName: java_home}
-    - {fileName: top}
-    - {fileName: uptime}
 java:
     - {fileName: java_home}
 mac:

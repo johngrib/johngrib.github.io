@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-08 12:14:11 +0900
+updated : 2018-02-08 22:50:01 +0900
 tags    : index
 toc     : true
 public  : true
@@ -69,6 +69,8 @@ comment : false
 * [[The-Jargon-File]]
 * [[tools]]
     * [[command-line]]
+        * [[df]]
+        * [[du]]
         * [[java_home]]
         * [[top]]
         * [[uptime]]

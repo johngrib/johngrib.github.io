@@ -256,7 +256,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-02-08 12:14:11 +0900'
+    updated: '2018-02-08 22:50:01 +0900'
 HTTP-THE-DEFINITIVE-GUIDE:
     type: wiki
     title: '(책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'
@@ -396,14 +396,21 @@ Grote-Reber-home-made-radio-astronomy:
     summary: '10년간 세계 유일의 전파천문학자'
     parent: legend
     url: /wiki/Grote-Reber-home-made-radio-astronomy
-    updated: '2018-02-08 12:38:44 +0900'
+    updated: '2018-02-08 13:19:30 +0900'
 DevOps-Troubleshooting:
     type: wiki
     title: '(책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅스 서버 트러블슈팅 기법'
     summary: 'DevOps Troubleshooting - Linux Server Best Practices'
     parent: book
     url: /wiki/DevOps-Troubleshooting
-    updated: '2018-02-06 22:18:01 +0900'
+    updated: '2018-02-08 22:32:03 +0900'
+df:
+    type: wiki
+    title: 'df 명령어'
+    summary: '파일 시스템의 남은 용량을 알려준다'
+    parent: command-line
+    url: /wiki/df
+    updated: '2018-02-08 22:58:06 +0900'
 diary:
     type: wiki
     title: Diary
@@ -432,6 +439,13 @@ DOM-Enlightenment-by-Cody-Lindley:
     parent: book
     url: /wiki/DOM-Enlightenment-by-Cody-Lindley
     updated: '2018-01-26 21:36:08 +0900'
+du:
+    type: wiki
+    title: 'du 명령어'
+    summary: 'disk usage. 디스크 사용 현황을 본다.'
+    parent: command-line
+    url: /wiki/du
+    updated: '2018-02-08 23:11:05 +0900'
 Edsel-edict:
     type: wiki
     title: '에젤 강령(Edsel edict)'
