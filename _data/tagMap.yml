@@ -179,6 +179,7 @@ book:
     - {fileName: Code-Complete-2}
     - {fileName: DevOps-Troubleshooting}
     - {fileName: DOM-Enlightenment-by-Cody-Lindley}
+    - {fileName: Effective-Java}
     - {fileName: Geek-Atlas}
     - {fileName: HELL-BOY}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
@@ -269,6 +270,9 @@ DOM:
 o-reilly:
     - {fileName: DOM-Enlightenment-by-Cody-Lindley}
     - {fileName: Geek-Atlas}
+java:
+    - {fileName: Effective-Java}
+    - {fileName: java_home}
 math:
     - {fileName: frac1e}
 확률:
@@ -311,8 +315,6 @@ index:
     - {fileName: index}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
-java:
-    - {fileName: java_home}
 mac:
     - {fileName: java_home}
     - {fileName: mac-keyboard-shortcuts}

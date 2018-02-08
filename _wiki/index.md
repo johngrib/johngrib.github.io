@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-08 22:50:01 +0900
+updated : 2018-02-09 06:30:38 +0900
 tags    : index
 toc     : true
 public  : true
@@ -33,6 +33,7 @@ comment : false
         * [[Code-Complete-2]]
         * [[DevOps-Troubleshooting]]
         * [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
+        * [[Effective-Java]]
         * [[Geek-Atlas]]
         * [[HELL-BOY]]
         * [[HTTP-no-Kyokasho]]

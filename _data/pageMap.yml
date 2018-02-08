@@ -1,10 +1,10 @@
-diary-2018:
+DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
     type: wiki
-    title: '2018 Diary'
-    summary: null
-    parent: diary
-    url: /wiki/diary-2018
-    updated: '2018-01-20 17:58:08 +0900'
+    title: '더크 젠틀리의 전체론적 탐정 사무소'
+    summary: 'DIRK GENTLY''S HOLISTIC DETECTIVE AGENCY'
+    parent: movie
+    url: /wiki/DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY
+    updated: '2018-01-13 12:28:13 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -256,7 +256,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-02-08 22:50:01 +0900'
+    updated: '2018-02-09 06:30:38 +0900'
 HTTP-THE-DEFINITIVE-GUIDE:
     type: wiki
     title: '(책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'
@@ -418,6 +418,13 @@ diary:
     parent: index
     url: /wiki/diary
     updated: '2018-01-20 17:47:01 +0900'
+diary-2018:
+    type: wiki
+    title: '2018 Diary'
+    summary: null
+    parent: diary
+    url: /wiki/diary-2018
+    updated: '2018-01-20 17:58:08 +0900'
 googling:
     type: wiki
     title: '구글링하는 방법'
@@ -425,13 +432,6 @@ googling:
     parent: how-to
     url: /wiki/googling
     updated: '2018-01-25 23:12:25 +0900'
-DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
-    type: wiki
-    title: '더크 젠틀리의 전체론적 탐정 사무소'
-    summary: 'DIRK GENTLY''S HOLISTIC DETECTIVE AGENCY'
-    parent: movie
-    url: /wiki/DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY
-    updated: '2018-01-13 12:28:13 +0900'
 DOM-Enlightenment-by-Cody-Lindley:
     type: wiki
     title: '(책) DOM을 깨우치다 - 가치에 대한 완전한 이해'
@@ -453,6 +453,13 @@ Edsel-edict:
     parent: proverb
     url: /wiki/Edsel-edict
     updated: '2018-01-18 22:01:04 +0900'
+Effective-Java:
+    type: wiki
+    title: '(책) 이펙티브 자바 2판'
+    summary: 'Effective Java 2/E by Joshua Bloch'
+    parent: book
+    url: /wiki/Effective-Java
+    updated: '2018-02-09 06:55:00 +0900'
 frac1e:
     type: wiki
     title: 'n개의 제비뽑기에 n번 도전'
