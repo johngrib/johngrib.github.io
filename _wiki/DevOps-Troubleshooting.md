@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅스 서버 트러블슈팅 기법
 summary : DevOps Troubleshooting - Linux Server Best Practices
 date    : 2017-12-05 19:22:28 +0900
-updated : 2018-02-06 22:18:01 +0900
+updated : 2018-02-08 22:32:03 +0900
 tags    : book linux
 toc     : true
 public  : true
@@ -16,6 +16,8 @@ latex   : false
 ## 개요
 
 * 이 책의 대상 독자 : 리눅스 시스템 경험이 많지 않은 개발자와 QA.
+
+굉장히 실용적인 책이다. 데브옵스가 마주할 수 있는 다양한 문제 상황과 해결책을 제시한다.
 
 # 요약 정리
 
@@ -33,12 +35,15 @@ latex   : false
 
 ## 02 왜 서버가 이렇게 느리지? CPU, RAM 그리고 디스크 I/O의 자원 고갈
 
-* 시스템의 주요 자원은 CPU, RAM, 디스크 I/O, 네트워크.
+* 시스템 부하 조사 방법 및 분석 방법
+    * [[uptime]] 사용법
+    * [[top]] 사용법
+    * sysstat 사용법
+    * sar 사용법
 
-### 시스템 부하
+## 03 왜 시스템이 부팅되지 않을까? 부팅 문제 해결하기
 
-* [[uptime]] 명령어를 사용해 확인할 것.
-
+## 04 왜 디스크에 쓸 수 없는가? 용량이 가득 찼거나 오류가 생긴 디스크 문제 해결하기
 
 
 ## Links
