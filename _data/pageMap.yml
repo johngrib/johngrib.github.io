@@ -1,10 +1,10 @@
-diary:
+diary-2018:
     type: wiki
-    title: Diary
+    title: '2018 Diary'
     summary: null
-    parent: index
-    url: /wiki/diary
-    updated: '2018-01-20 17:47:01 +0900'
+    parent: diary
+    url: /wiki/diary-2018
+    updated: '2018-01-20 17:58:08 +0900'
 yaml:
     type: wiki
     title: YAML
@@ -221,7 +221,7 @@ legend:
     summary: null
     parent: clipping
     url: /wiki/legend
-    updated: '2018-02-07 21:33:42 +0900'
+    updated: '2018-02-08 12:16:58 +0900'
 Las-chicas-del-cable:
     type: wiki
     title: '마드리드 모던걸'
@@ -243,13 +243,20 @@ java_home:
     parent: command-line
     url: /wiki/java_home
     updated: '2018-02-06 12:33:34 +0900'
+James-Gosling-super-programmer:
+    type: wiki
+    title: '무협지 주인공 제임스 고슬링(James Gosling)'
+    summary: '중학생 때 전산학과에 침입해 독학으로 프로그래밍을 터득'
+    parent: legend
+    url: /wiki/James-Gosling-super-programmer
+    updated: '2018-02-08 12:13:57 +0900'
 index:
     type: wiki
     title: wiki
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-02-07 21:39:10 +0900'
+    updated: '2018-02-08 12:14:11 +0900'
 HTTP-THE-DEFINITIVE-GUIDE:
     type: wiki
     title: '(책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가'
@@ -278,13 +285,6 @@ how-to:
     parent: index
     url: /wiki/how-to
     updated: '2018-02-04 15:57:05 +0900'
-HOT-FUZZ:
-    type: wiki
-    title: '뜨거운 녀석들'
-    summary: 'HOT FUZZ'
-    parent: movie
-    url: /wiki/HOT-FUZZ
-    updated: '2018-01-13 16:02:28 +0900'
 '2018-01-20':
     type: wiki
     title: '2018-01-20 토요일'
@@ -306,13 +306,13 @@ HOT-FUZZ:
     parent: book
     url: /wiki/전생검신
     updated: '2018-01-29 10:15:38 +0900'
-HELL-BOY:
+HOT-FUZZ:
     type: wiki
-    title: '(책) 헬보이'
-    summary: 'HELL BOY'
-    parent: book
-    url: /wiki/HELL-BOY
-    updated: '2018-01-27 14:59:04 +0900'
+    title: '뜨거운 녀석들'
+    summary: 'HOT FUZZ'
+    parent: movie
+    url: /wiki/HOT-FUZZ
+    updated: '2018-01-13 16:02:28 +0900'
 ALPHAGO:
     type: wiki
     title: 'ALPHAGO (2017)'
@@ -320,6 +320,13 @@ ALPHAGO:
     parent: movie
     url: /wiki/ALPHAGO
     updated: '2018-02-02 21:39:05 +0900'
+Bill-Atkinson-productivity:
+    type: wiki
+    title: '빌 앳킨슨(Bill Atkinson)의 생산성'
+    summary: '프로그램을 6배 빠르게 하고, 보고서에 -2000 줄을 작성했다고 써서 냈다.'
+    parent: legend
+    url: /wiki/Bill-Atkinson-productivity
+    updated: '2018-02-08 12:08:52 +0900'
 book:
     type: wiki
     title: 도서
@@ -362,13 +369,13 @@ Code-Complete-2:
     parent: book
     url: /wiki/Code-Complete-2
     updated: '2018-01-26 21:35:22 +0900'
-googling:
+HELL-BOY:
     type: wiki
-    title: '구글링하는 방법'
-    summary: '구글 및 여러 검색 서비스 사용법'
-    parent: how-to
-    url: /wiki/googling
-    updated: '2018-01-25 23:12:25 +0900'
+    title: '(책) 헬보이'
+    summary: 'HELL BOY'
+    parent: book
+    url: /wiki/HELL-BOY
+    updated: '2018-01-27 14:59:04 +0900'
 command-line:
     type: wiki
     title: '커맨드 라인 명령어 및 사용법 모음'
@@ -383,13 +390,13 @@ Conway-s-law:
     parent: proverb
     url: /wiki/Conway-s-law
     updated: '2018-02-06 22:50:23 +0900'
-google-search-console-remove-outdated-content:
+Grote-Reber-home-made-radio-astronomy:
     type: wiki
-    title: 'Google Search Console - Remove outdated content'
-    summary: '구글 웹 도구 - 오래된 콘텐츠 삭제'
-    parent: useful-site
-    url: /wiki/google-search-console-remove-outdated-content
-    updated: '2018-02-07 21:31:00 +0900'
+    title: '집에서 전파망원경을 만든 그로트 레버(Grote Reber)'
+    summary: '10년간 세계 유일의 전파천문학자'
+    parent: legend
+    url: /wiki/Grote-Reber-home-made-radio-astronomy
+    updated: '2018-02-08 12:38:44 +0900'
 DevOps-Troubleshooting:
     type: wiki
     title: '(책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅스 서버 트러블슈팅 기법'
@@ -397,20 +404,20 @@ DevOps-Troubleshooting:
     parent: book
     url: /wiki/DevOps-Troubleshooting
     updated: '2018-02-06 22:18:01 +0900'
-Geek-Atlas:
+diary:
     type: wiki
-    title: '(책) 긱 아틀라스 - 과학과 기술의 발상지 129곳'
-    summary: 'The Geek Atlas'
-    parent: book
-    url: /wiki/Geek-Atlas
-    updated: '2018-02-07 21:16:31 +0900'
-diary-2018:
-    type: wiki
-    title: '2018 Diary'
+    title: Diary
     summary: null
-    parent: diary
-    url: /wiki/diary-2018
-    updated: '2018-01-20 17:58:08 +0900'
+    parent: index
+    url: /wiki/diary
+    updated: '2018-01-20 17:47:01 +0900'
+googling:
+    type: wiki
+    title: '구글링하는 방법'
+    summary: '구글 및 여러 검색 서비스 사용법'
+    parent: how-to
+    url: /wiki/googling
+    updated: '2018-01-25 23:12:25 +0900'
 DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
     type: wiki
     title: '더크 젠틀리의 전체론적 탐정 사무소'
@@ -439,6 +446,27 @@ frac1e:
     parent: why
     url: /wiki/frac1e
     updated: '2018-02-07 21:29:36 +0900'
+Geek-Atlas:
+    type: wiki
+    title: '(책) 긱 아틀라스 - 과학과 기술의 발상지 129곳'
+    summary: 'The Geek Atlas'
+    parent: book
+    url: /wiki/Geek-Atlas
+    updated: '2018-02-07 21:16:31 +0900'
+gerald-weinberg-language-king:
+    type: wiki
+    title: '프로그래밍 언어를 하나도 만들지 않은 제랄드 와인버그'
+    summary: null
+    parent: legend
+    url: /wiki/gerald-weinberg-language-king
+    updated: '2018-02-08 12:04:33 +0900'
+google-search-console-remove-outdated-content:
+    type: wiki
+    title: 'Google Search Console - Remove outdated content'
+    summary: '구글 웹 도구 - 오래된 콘텐츠 삭제'
+    parent: useful-site
+    url: /wiki/google-search-console-remove-outdated-content
+    updated: '2018-02-07 21:31:00 +0900'
 2017-05-16-jwp-11:
     type: blog
     title: 'Next JWP Study #11'
@@ -453,20 +481,6 @@ frac1e:
     parent: null
     url: /blog/2017/01/22/jekyll-category-tag
     updated: '2017-01-22 08:52:22 +0900'
-coding-font:
-    type: wiki
-    title: '코딩 폰트'
-    summary: '내가 선호하는 코딩 폰트를 기록한다'
-    parent: index
-    url: /wiki/coding-font
-    updated: '2017-12-01 06:02:30 +0900'
-Gradle:
-    type: wiki
-    title: Gradle
-    summary: 'Gradle Build Tool'
-    parent: index
-    url: /wiki/Gradle
-    updated: '2017-12-08 23:17:46 +0900'
 groovy:
     type: wiki
     title: Groovy
@@ -474,6 +488,20 @@ groovy:
     parent: programming-language
     url: /wiki/groovy
     updated: '2017-12-03 15:01:36 +0900'
+default-post:
+    type: blog
+    title: 'sample title'
+    summary: 'sample summary'
+    parent: null
+    url: /blog/2017/04/02/default-post
+    updated: '2017-04-02 12:15:32 +0900'
+coding-font:
+    type: wiki
+    title: '코딩 폰트'
+    summary: '내가 선호하는 코딩 폰트를 기록한다'
+    parent: index
+    url: /wiki/coding-font
+    updated: '2017-12-01 06:02:30 +0900'
 airplain-rule:
     type: wiki
     title: '비행기 법칙'
@@ -621,13 +649,13 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-default-post:
-    type: blog
-    title: 'sample title'
-    summary: 'sample summary'
-    parent: null
-    url: /blog/2017/04/02/default-post
-    updated: '2017-04-02 12:15:32 +0900'
+Gradle:
+    type: wiki
+    title: Gradle
+    summary: 'Gradle Build Tool'
+    parent: index
+    url: /wiki/Gradle
+    updated: '2017-12-08 23:17:46 +0900'
 2017-05-14-jwp-10:
     type: blog
     title: 'Next JWP Study #10'

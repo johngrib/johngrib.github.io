@@ -102,6 +102,7 @@ OOP:
 Gerald-Weinberg:
     - {fileName: 2017-04-10-jwp-03}
     - {fileName: Edsel-edict}
+    - {fileName: gerald-weinberg-language-king}
     - {fileName: orange-juice-test}
     - {fileName: secret-of-consulting}
 AWS:
@@ -209,6 +210,16 @@ google:
     - {fileName: googling}
 AI:
     - {fileName: ALPHAGO}
+story:
+    - {fileName: Bill-Atkinson-productivity}
+    - {fileName: gerald-weinberg-language-king}
+    - {fileName: Grote-Reber-home-made-radio-astronomy}
+    - {fileName: James-Gosling-super-programmer}
+    - {fileName: legend}
+Bill-Atkinson:
+    - {fileName: Bill-Atkinson-productivity}
+Steve-Jobs:
+    - {fileName: Bill-Atkinson-productivity}
 rule:
     - {fileName: Boy-Scout-Rule}
 Uncle-Bob:
@@ -258,6 +269,7 @@ math:
     - {fileName: frac1e}
 science:
     - {fileName: Geek-Atlas}
+    - {fileName: Grote-Reber-home-made-radio-astronomy}
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
 map:
     - {fileName: Geek-Atlas}
@@ -291,6 +303,8 @@ http:
     - {fileName: why-http-80-https-443}
 index:
     - {fileName: index}
+James-Gosling:
+    - {fileName: James-Gosling-super-programmer}
 bash:
     - {fileName: java_home}
     - {fileName: top}
@@ -305,8 +319,6 @@ tools:
     - {fileName: tools}
 보안:
     - {fileName: labs-strava-com-heatmap}
-story:
-    - {fileName: legend}
 letter:
     - {fileName: letter-case}
 case:
