@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-07 21:39:10 +0900
+updated : 2018-02-08 12:14:11 +0900
 tags    : index
 toc     : true
 public  : true
@@ -14,6 +14,9 @@ comment : false
 * [[braille-pattern-chars]]
 * [[clipping]]{글 모음 및 요약}
     * [[legend]]
+        * [[Bill-Atkinson-productivity]]
+        * [[gerald-weinberg-language-king]]
+        * [[James-Gosling-super-programmer]]
     * [[Software-Engineering-Code-of-Ethics]]
     * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
 * [[coding-font]]{코딩 폰트}
