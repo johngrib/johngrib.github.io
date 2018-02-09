@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2018-01-10 16:52:03 +0900
+updated : 2018-02-09 13:20:18 +0900
 tags    : special-chars
 toc     : true
 public  : true
@@ -266,11 +266,11 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
     * 덕분에 여러 OS에서 텍스트 파일을 공유해 관리하거나 코딩을 하면, 이것 때문에 짜증나는 일이 생길 때가 있다.
     * 여러 OS에서 git 사용시 주의.
 
-| WINDOWS, MS-DOS | UNIX, LINUX, macOS |
-|-----------------|--------------------|
-| CR LF           | LF                 |
-| \r\n            | \n                 |
-| 0D0A            | 0A                 |
+| WINDOWS, MS-DOS | UNIX, LINUX, macOS | Classic Mac |
+|-----------------|--------------------|-------------|
+| CR LF           | LF                 | CR          |
+| \r\n            | \n                 | \r          |
+| 0D0A            | 0A                 | 0D          |
 
 * [The Great Newline Schism](https://blog.codinghorror.com/the-great-newline-schism/ ) - [stackoverflow.com](https://stackoverflow.com/ )을 만든 제프 앳우드가 자신의 블로그 codinghorror에 쓴 글.
 
