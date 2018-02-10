@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-02-07 06:23:26 +0900
+updated : 2018-02-10 20:39:07 +0900
 tags    : review
 toc     : true
 public  : true
@@ -26,6 +26,7 @@ latex   : false
 
 ## 책 - 흥미
 
+* 2018-02-09 [[전생검신]] 35권. 무신
 * 2018-02-05 [[SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness]]{Scientific American 의식의 비밀}
 * 2018-01-28 [[전생검신]] 34권. 준비
 * 2018-01-27 [[HELL-BOY]] - Vol. 1. 파멸의 씨앗
