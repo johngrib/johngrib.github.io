@@ -156,38 +156,6 @@ diary:
     - {fileName: diary-2018}
 block-chain:
     - {fileName: '2018-01-20'}
-review:
-    - {fileName: 그림으로-보는-서양검술-메모}
-    - {fileName: HTTP-no-Kyokasho}
-    - {fileName: review}
-    - {fileName: review-2018}
-    - {fileName: secret-of-consulting}
-    - {fileName: Software-Craftsman}
-    - {fileName: Take-the-Bully-by-the-Horns}
-    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
-    - {fileName: toda-seiji-scientia}
-만화책:
-    - {fileName: 그림으로-보는-서양검술-메모}
-    - {fileName: HELL-BOY}
-    - {fileName: toda-seiji-scientia}
-무술:
-    - {fileName: 그림으로-보는-서양검술-메모}
-book:
-    - {fileName: 전생검신}
-    - {fileName: book}
-    - {fileName: Clean-Code}
-    - {fileName: Code-Complete-2}
-    - {fileName: DevOps-Troubleshooting}
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
-    - {fileName: Effective-Java}
-    - {fileName: Geek-Atlas}
-    - {fileName: HELL-BOY}
-    - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
-    - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
-    - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
-    - {fileName: The-Jargon-File}
-fantasy:
-    - {fileName: 전생검신}
 complexity:
     - {fileName: airplain-rule}
 law:
@@ -221,6 +189,20 @@ Bill-Atkinson:
     - {fileName: Bill-Atkinson-productivity}
 Steve-Jobs:
     - {fileName: Bill-Atkinson-productivity}
+book:
+    - {fileName: book}
+    - {fileName: Clean-Code}
+    - {fileName: Code-Complete-2}
+    - {fileName: DevOps-Troubleshooting}
+    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
+    - {fileName: Effective-Java}
+    - {fileName: Geek-Atlas}
+    - {fileName: HELL-BOY}
+    - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
+    - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
+    - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
+    - {fileName: The-Jargon-File}
+    - {fileName: 전생검신}
 rule:
     - {fileName: Boy-Scout-Rule}
 Uncle-Bob:
@@ -300,6 +282,10 @@ jvm-lang:
     - {fileName: groovy}
 groovy:
     - {fileName: groovy}
+만화책:
+    - {fileName: HELL-BOY}
+    - {fileName: toda-seiji-scientia}
+    - {fileName: 그림으로-보는-서양검술-메모}
 movie:
     - {fileName: HOT-FUZZ}
     - {fileName: movie}
@@ -311,6 +297,16 @@ http:
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
     - {fileName: URI}
     - {fileName: why-http-80-https-443}
+review:
+    - {fileName: HTTP-no-Kyokasho}
+    - {fileName: review}
+    - {fileName: review-2018}
+    - {fileName: secret-of-consulting}
+    - {fileName: Software-Craftsman}
+    - {fileName: Take-the-Bully-by-the-Horns}
+    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
+    - {fileName: toda-seiji-scientia}
+    - {fileName: 그림으로-보는-서양검술-메모}
 index:
     - {fileName: index}
 James-Gosling:
@@ -380,3 +376,7 @@ yaml:
     - {fileName: yaml}
 data-format:
     - {fileName: yaml}
+무술:
+    - {fileName: 그림으로-보는-서양검술-메모}
+fantasy:
+    - {fileName: 전생검신}
