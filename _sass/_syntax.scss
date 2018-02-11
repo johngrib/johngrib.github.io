@@ -1,4 +1,7 @@
 /* Monokai Theme from https://github.com/richleland/pygments-css/blob/master/monokai.css */
+code {
+    font-family: Consolas, "Courier New", Courier;
+}
 .highlight {
     .hll { background-color: #49483e }
     .c { color: #75715e } /* Comment */
