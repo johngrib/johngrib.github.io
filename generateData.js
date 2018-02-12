@@ -17,6 +17,10 @@ const dataList = list.map(function collectData(file) {
 
     return row != null;
 
+}).filter(function removePrivate(row) {
+
+    return row.public != 'false';
+
 }).sort(function sortByFileName(a, b) {
 
     return a.fileName.toLowerCase().localeCompare(b.fileName.toLowerCase());
