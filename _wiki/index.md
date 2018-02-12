@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-09 06:30:38 +0900
+updated : 2018-02-13 21:52:04 +0900
 tags    : index
 toc     : true
 public  : true
@@ -35,6 +35,7 @@ comment : false
         * [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
         * [[Effective-Java]]
         * [[Geek-Atlas]]
+        * [[GoF-Design-Pattern]]
         * [[HELL-BOY]]
         * [[HTTP-no-Kyokasho]]
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
@@ -55,6 +56,8 @@ comment : false
         * [[HOT-FUZZ]]{뜨거운 녀석들}
         * [[Las-chicas-del-cable]]
         * [[Walking-Dead]]
+* design-pattern
+    * builder-pattern
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
@@ -73,11 +76,15 @@ comment : false
         * [[df]]
         * [[du]]
         * [[java_home]]
+        * [[brew]]
         * [[top]]
         * [[uptime]]
     * [[useful-site]]
         * [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
         * [[labs-strava-com-heatmap]]
+* [[til]]
+    * [[git-checkout-specific-files]]
+    * [[trouble-shooting-node-7-install]]
 * [[URI]]
 * [[Vim]]
     * [[vim-conceallevel]]{conceallevel (Vim)}

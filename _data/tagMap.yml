@@ -197,6 +197,7 @@ book:
     - {fileName: DOM-Enlightenment-by-Cody-Lindley}
     - {fileName: Effective-Java}
     - {fileName: Geek-Atlas}
+    - {fileName: GoF-Design-Pattern}
     - {fileName: HELL-BOY}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
     - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
@@ -211,6 +212,17 @@ Uncle-Bob:
 special-chars:
     - {fileName: braille-pattern-chars}
     - {fileName: special-chars}
+bash:
+    - {fileName: brew}
+    - {fileName: df}
+    - {fileName: du}
+    - {fileName: java_home}
+    - {fileName: top}
+    - {fileName: uptime}
+mac:
+    - {fileName: brew}
+    - {fileName: java_home}
+    - {fileName: mac-keyboard-shortcuts}
 스크랩:
     - {fileName: clipping}
 tldr:
@@ -233,14 +245,6 @@ proverb:
     - {fileName: orange-juice-test}
     - {fileName: Postel-s-law}
     - {fileName: proverb}
-test:
-    - {fileName: default-post}
-bash:
-    - {fileName: df}
-    - {fileName: du}
-    - {fileName: java_home}
-    - {fileName: top}
-    - {fileName: uptime}
 drama:
     - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY}
     - {fileName: Las-chicas-del-cable}
@@ -266,6 +270,13 @@ science:
 map:
     - {fileName: Geek-Atlas}
     - {fileName: labs-strava-com-heatmap}
+til:
+    - {fileName: git-checkout-specific-files}
+    - {fileName: til}
+git:
+    - {fileName: git-checkout-specific-files}
+design-pattern:
+    - {fileName: GoF-Design-Pattern}
 twitter:
     - {fileName: googling}
     - {fileName: labs-strava-com-heatmap}
@@ -311,9 +322,6 @@ index:
     - {fileName: index}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
-mac:
-    - {fileName: java_home}
-    - {fileName: mac-keyboard-shortcuts}
 tools:
     - {fileName: labs-strava-com-heatmap}
     - {fileName: tools}
@@ -360,10 +368,12 @@ web:
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
 hacker:
     - {fileName: The-Jargon-File}
+trouble-shooting:
+    - {fileName: til}
+    - {fileName: trouble-shooting-node-7-install}
+    - {fileName: vim-conceallevel}
 sf:
     - {fileName: toda-seiji-scientia}
-trouble-shooting:
-    - {fileName: vim-conceallevel}
 Von-Neumann:
     - {fileName: von-neumann-extractor}
 random:
