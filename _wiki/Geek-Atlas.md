@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) 긱 아틀라스 - 과학과 기술의 발상지 129곳
 summary : The Geek Atlas
 date    : 2018-02-07 12:59:19 +0900
-updated : 2018-02-07 21:16:31 +0900
+updated : 2018-02-13 21:38:46 +0900
 tags    : book o-reilly science map
 toc     : true
 public  : true
@@ -15,11 +15,13 @@ latex   : false
 
 ## 개요 및 감상
 
-과학 기술을 테마로 삼은 여행 서적이라 할 수 있다! (신난다)
+과학 기술을 테마로 삼은 보물같은 (희귀한) 여행 안내서.
+
+칼 세이건의 산책로, 스위스의 CERN, 멘델이 유전학을 연구한 수도원(!), 앨런 튜링의 동상, 차분 기관이 있는 곳 등 128 곳의 위치와 과학 상식을 흥미롭게 소개한다.
+
+읽다 보면 과학이 더 좋아진다.
 
 [긱 아틀라스 지도(google.com/maps)](https://www.google.com/maps/d/u/0/viewer?mid=1Vvy_nZv1O8b7etSBOonheel-pt8&hl=ko )만 보아도 굉장히 기분 좋고 신이 난다.
-
-세계 곳곳의 유명한 연구소와 박물관 등을 소개하며, 각 챕터마다 관련 과학 지식을 재미있게 소개해준다.
 
 언제 읽어도 즐겁다.
 
