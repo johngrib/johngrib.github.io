@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-13 21:52:04 +0900
+updated : 2018-02-18 00:18:56 +0900
 tags    : index
 toc     : true
 public  : true
@@ -56,8 +56,8 @@ comment : false
         * [[HOT-FUZZ]]{뜨거운 녀석들}
         * [[Las-chicas-del-cable]]
         * [[Walking-Dead]]
-* design-pattern
-    * builder-pattern
+* [[design-pattern]]
+    * [[builder-pattern]]
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
 * [[proverb]]{속담, 법칙, 관용어 모음}

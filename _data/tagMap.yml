@@ -223,6 +223,17 @@ mac:
     - {fileName: brew}
     - {fileName: java_home}
     - {fileName: mac-keyboard-shortcuts}
+programming:
+    - {fileName: builder-pattern}
+    - {fileName: design-pattern}
+    - {fileName: programming-language}
+design-pattern:
+    - {fileName: builder-pattern}
+    - {fileName: GoF-Design-Pattern}
+lombok:
+    - {fileName: builder-pattern}
+effective-java:
+    - {fileName: builder-pattern}
 스크랩:
     - {fileName: clipping}
 tldr:
@@ -275,8 +286,6 @@ til:
     - {fileName: til}
 git:
     - {fileName: git-checkout-specific-files}
-design-pattern:
-    - {fileName: GoF-Design-Pattern}
 twitter:
     - {fileName: googling}
     - {fileName: labs-strava-com-heatmap}
@@ -342,8 +351,6 @@ media:
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
-programming:
-    - {fileName: programming-language}
 culture:
     - {fileName: proverb}
 rfc:
