@@ -234,6 +234,7 @@ lombok:
     - {fileName: builder-pattern}
 effective-java:
     - {fileName: builder-pattern}
+    - {fileName: Effective-Java}
 스크랩:
     - {fileName: clipping}
 tldr:
