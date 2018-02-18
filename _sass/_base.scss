@@ -12,6 +12,9 @@ blockquote {
     margin:0;
     padding: 5px 20px;
     border-left: 10px solid #CCCCCC;
+    p {
+        line-height: 2;
+    }
 }
 code,pre {
     font-family:  $coding-font;
