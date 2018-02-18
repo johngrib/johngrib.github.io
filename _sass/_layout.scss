@@ -6,6 +6,14 @@
     }
 }
 
+@media (min-width: 800px) {
+  body {
+    width: 800px;
+    margin: auto;
+    border: 1px solid #d0d0d0;
+  }
+}
+
 div.gsc-control-cse {
     padding: 0;
 }
