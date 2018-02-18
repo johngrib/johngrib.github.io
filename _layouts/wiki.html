@@ -60,5 +60,11 @@ layout: document
     <article class="post-content">
         {{ content }}
     </article>
+
+{% if page.comment != false %}
+    {% include comment.html %}
+{% endif%}
+
 </div>
 {% include createLink.html %}
+
