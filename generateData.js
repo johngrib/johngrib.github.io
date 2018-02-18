@@ -60,7 +60,7 @@ saveTagList(tagList)
 
 const pageMap = {};
 dataList.sort(function(a, b) {
-    return a.modified < b.modified;
+    return a.url.toLowerCase().localeCompare(b.url.toLowerCase());
 }).forEach(function(page) {
 
     pageMap[page.fileName] = {
