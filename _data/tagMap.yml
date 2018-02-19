@@ -150,6 +150,7 @@ vimwiki:
     - {fileName: 2017-12-06-my-wiki}
 blog:
     - {fileName: 2017-12-06-my-wiki}
+    - {fileName: utterances}
 diary:
     - {fileName: '2018-01-20'}
     - {fileName: diary}
@@ -160,6 +161,7 @@ complexity:
     - {fileName: airplain-rule}
 law:
     - {fileName: airplain-rule}
+    - {fileName: Brooks-s-law}
     - {fileName: Conway-s-law}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
     - {fileName: Postel-s-law}
@@ -200,6 +202,7 @@ book:
     - {fileName: GoF-Design-Pattern}
     - {fileName: HELL-BOY}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
+    - {fileName: Mythical-Man-Month}
     - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
     - {fileName: The-Jargon-File}
@@ -223,6 +226,9 @@ mac:
     - {fileName: brew}
     - {fileName: java_home}
     - {fileName: mac-keyboard-shortcuts}
+Fred-Brooks:
+    - {fileName: Brooks-s-law}
+    - {fileName: Mythical-Man-Month}
 programming:
     - {fileName: builder-pattern}
     - {fileName: design-pattern}
@@ -335,6 +341,7 @@ James-Gosling:
 tools:
     - {fileName: labs-strava-com-heatmap}
     - {fileName: tools}
+    - {fileName: utterances}
 보안:
     - {fileName: labs-strava-com-heatmap}
 letter:
@@ -382,6 +389,8 @@ trouble-shooting:
     - {fileName: vim-conceallevel}
 sf:
     - {fileName: toda-seiji-scientia}
+github:
+    - {fileName: utterances}
 Von-Neumann:
     - {fileName: von-neumann-extractor}
 random:

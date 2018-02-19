@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-18 00:18:56 +0900
+updated : 2018-02-19 12:52:04 +0900
 tags    : index
 toc     : true
 public  : true
@@ -39,6 +39,7 @@ comment : false
         * [[HELL-BOY]]
         * [[HTTP-no-Kyokasho]]
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
+        * [[Mythical-Man-Month]]
         * [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]
         * [[SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness]]
         * [[secret-of-consulting]]
@@ -58,11 +59,13 @@ comment : false
         * [[Walking-Dead]]
 * [[design-pattern]]
     * [[builder-pattern]]
+    * factory-method-pattern
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
     * [[airplain-rule]]
     * [[Boy-Scout-Rule]]
+    * [[Brooks-s-law]]
     * [[Conway-s-law]]
     * [[Edsel-edict]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
@@ -82,6 +85,7 @@ comment : false
     * [[useful-site]]
         * [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
         * [[labs-strava-com-heatmap]]
+        * [[utterances]]
 * [[til]]
     * [[git-checkout-specific-files]]
     * [[trouble-shooting-node-7-install]]
