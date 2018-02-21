@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) 맨먼스 미신 - 소프트웨어 공학에 관한 에세이
 summary : The Mythical Man-Month - Essays on Software Engineering
 date    : 2018-02-19 12:52:55 +0900
-updated : 2018-02-21 13:05:43 +0900
+updated : 2018-02-21 22:38:43 +0900
 tags    : book Fred-Brooks
 toc     : true
 public  : true
@@ -27,7 +27,7 @@ latex   : false
 
 * [1999년 튜링상 수상자](https://amturing.acm.org/award_winners/brooks_1002187.cfm).
 * [노스 캐롤라이나 대학 컴퓨터 과학과를 설립했다](http://cs.unc.edu/people/frederick-p-brooks-jr/).
-* 논문 "은총알은 없다"를 쓴 사람이다.
+* 논문 [[No-Silver-Bullet]]{은총알은 없다}를 쓴 사람이다.
     * "은총알은 없다"는 맨먼스 미신 20주년 기념판의 16장에 수록되어 있다.
 
 ## 인상적인 부분 내용 정리
@@ -67,11 +67,19 @@ latex   : false
 그러나 이 방식을 25년 동안 적용해 오면서, 생산성 향상이 외과 수술 팀 구조에 기인한 게 아니라,
 그 프로젝트 내의 전문성이 아주 높았기 때문이란 걸 알게 되었다.
 
+### 16장. 은총알은 없다
+
+[[No-Silver-Bullet]] 참고.
+
+* (1986년 기준으로) 앞으로 10년간 소프트웨어 분야에서 프로그래밍 생산성을 10배 이상 향상시킬 발전은 나타나지 않을 것이다.
+* 소프트웨어 개발은 본질적으로 빠른 발전이 불가능한 분야이다.
+
 ## Links
 
 * [맨먼스 미신(인사이트 출판사)](http://www.insightbook.co.kr/ppp/%EB%A7%A8%EB%A8%BC%EC%8A%A4-%EB%AF%B8%EC%8B%A0)
 * [[Brooks-s-law]]{브룩스의 법칙}
 * [프레드 브룩스의 홈페이지](http://www.cs.unc.edu/~brooks/)
 * [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{(책) Professional 소프트웨어 개발}
+* [[No-Silver-Bullet]]{은총알은 없다}
 
 
