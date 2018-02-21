@@ -157,6 +157,8 @@ diary:
     - {fileName: diary-2018}
 block-chain:
     - {fileName: '2018-01-20'}
+sql:
+    - {fileName: 2018-02-26-sql-char-comparison}
 complexity:
     - {fileName: airplain-rule}
 law:
@@ -229,6 +231,7 @@ mac:
 Fred-Brooks:
     - {fileName: Brooks-s-law}
     - {fileName: Mythical-Man-Month}
+    - {fileName: No-Silver-Bullet}
 programming:
     - {fileName: builder-pattern}
     - {fileName: design-pattern}
@@ -260,6 +263,7 @@ proverb:
     - {fileName: Conway-s-law}
     - {fileName: Edsel-edict}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
+    - {fileName: No-Silver-Bullet}
     - {fileName: orange-juice-test}
     - {fileName: Postel-s-law}
     - {fileName: proverb}

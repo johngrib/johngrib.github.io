@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-19 12:52:04 +0900
+updated : 2018-02-21 20:47:37 +0900
 tags    : index
 toc     : true
 public  : true
@@ -69,6 +69,7 @@ comment : false
     * [[Conway-s-law]]
     * [[Edsel-edict]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
+    * [[No-Silver-Bullet]]
     * [[orange-juice-test]]
     * [[Postel-s-law]]
 * [[RFC]]
