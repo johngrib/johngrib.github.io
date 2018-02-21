@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-02-13 20:18:40 +0900
+updated : 2018-02-21 22:45:57 +0900
 tags    : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 ## 책 - 공부
 
+* 2018-02-21 [[Mythical-Man-Month]]{맨먼스 미신}
 * 2018-02-06 [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발}
 * 2018-02-05 [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드} - 약 두 달간 읽어서 간신히 끝까지 읽었다.
 * 2018-02-02 [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}
