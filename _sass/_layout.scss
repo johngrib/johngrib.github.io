@@ -95,6 +95,10 @@ table.gsc-search-box {
 .toc {
     background: #EEE;
 }
+.post-tag a {
+    color: #888888;
+    text-decoration: none;
+}
 @media (max-width: 1120px) {
     .page-content .wrapper:before {
         display: none;
