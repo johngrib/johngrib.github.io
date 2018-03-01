@@ -1,5 +1,5 @@
 ---
-layout  : wiki
+layout  : category
 title   : 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
@@ -13,4 +13,3 @@ latex   : false
 * TOC
 {:toc}
 
-* [[review-2018]]

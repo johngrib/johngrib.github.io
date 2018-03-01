@@ -1,5 +1,5 @@
 ---
-layout  : wiki
+layout  : category
 title   : 글 모음 및 요약
 summary :
 date    : 2018-01-11 10:30:30 +0900
@@ -13,7 +13,4 @@ latex   : false
 * TOC
 {:toc}
 
-* [[legend]]
-* [[Software-Engineering-Code-of-Ethics]]
-* [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
 

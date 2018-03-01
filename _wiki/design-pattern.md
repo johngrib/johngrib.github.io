@@ -1,5 +1,5 @@
 ---
-layout  : wiki
+layout  : category
 title   : 디자인 패턴
 summary :
 date    : 2018-02-12 08:18:46 +0900
@@ -13,4 +13,3 @@ latex   : false
 * TOC
 {:toc}
 
-* [[builder-pattern]]

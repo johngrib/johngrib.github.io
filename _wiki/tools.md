@@ -1,5 +1,5 @@
 ---
-layout  : wiki
+layout  : category
 title   : tools
 summary : 도구 및 사이트 소개
 date    : 2018-02-04 11:05:57 +0900
@@ -13,5 +13,3 @@ latex   : false
 * TOC
 {:toc}
 
-* [[command-line]]
-* [[useful-site]]

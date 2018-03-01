@@ -1,5 +1,5 @@
 ---
-layout  : wiki
+layout  : category
 title   : Vim
 summary :
 date    : 2017-11-29 17:47:59 +0900
@@ -13,6 +13,4 @@ latex   : false
 * TOC
 {:toc}
 
-# Tips
 
-* [[vim-conceallevel]]{conceallevel (Vim)}

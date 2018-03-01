@@ -1,5 +1,5 @@
 ---
-layout  : wiki
+layout  : category
 title   : why
 summary :
 date    : 2017-12-12 23:19:48 +0900
@@ -13,5 +13,3 @@ latex   : false
 * TOC
 {:toc}
 
-* [[frac1e]]{n개의 제비뽑기에 n번 도전}
-* [[why-http-80-https-443]]{http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?}

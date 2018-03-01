@@ -1,5 +1,5 @@
 ---
-layout  : wiki
+layout  : category
 title   : Today I Learned
 summary : 내가 오늘 배운 것들
 date    : 2018-02-12 14:00:30 +0900
@@ -13,5 +13,3 @@ latex   : false
 * TOC
 {:toc}
 
-* [[git-checkout-specific-files]]{git에서 다른 브랜치의 특정 파일만 체크아웃하기}
-* [[trouble-shooting-node-7-install]]{Mac에서 Node 7 버전으로 다운그레이드}

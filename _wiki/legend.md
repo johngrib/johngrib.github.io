@@ -1,5 +1,5 @@
 ---
-layout  : wiki
+layout  : category
 title   : 레전드 모음
 summary :
 date    : 2017-12-03 15:01:36 +0900
@@ -13,8 +13,4 @@ latex   : false
 * TOC
 {:toc}
 
-* [[Bill-Atkinson-productivity]]
-* [[gerald-weinberg-language-king]]
-* [[Grote-Reber-home-made-radio-astronomy]]
-* [[James-Gosling-super-programmer]]
 

@@ -1,5 +1,5 @@
 ---
-layout  : wiki
+layout  : category
 title   : 커맨드 라인 명령어 및 사용법 모음
 summary : 
 date    : 2018-02-06 07:01:45 +0900
@@ -13,6 +13,3 @@ latex   : false
 * TOC
 {:toc}
 
-* [[brew]]
-* [[java_home]]
-* [[uptime]]
