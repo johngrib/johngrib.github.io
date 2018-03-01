@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-02-21 22:45:57 +0900
+updated : 2018-03-01 17:37:56 +0900
 tags    : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 ## 책 - 공부
 
+* 2018-03-01 [[Design-for-Hackers]]{해커를 위한 디자인 레슨}
 * 2018-02-21 [[Mythical-Man-Month]]{맨먼스 미신}
 * 2018-02-06 [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발}
 * 2018-02-05 [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드} - 약 두 달간 읽어서 간신히 끝까지 읽었다.
