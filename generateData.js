@@ -70,8 +70,20 @@ dataList.sort(function(a, b) {
         parent: page.parent,
         url: page.url,
         updated: page.updated || page.date,
+        children: [],
     };
 
+});
+
+dataList.forEach(function(page) {
+    if(page.parent && page.parent != 'index') {
+
+        var parent = pageMap[page.parent];
+
+        if(parent && parent.children) {
+            parent.children.push(page.fileName);
+        }
+    }
 });
 
 savePageList(pageMap);
@@ -165,6 +177,7 @@ function getFiles(path, type, array){
                 'path': path + '/' + fileName,
                 'type': type,
                 'name': fileName,
+                'children': [],
             };
             return array.push(obj);
         }
