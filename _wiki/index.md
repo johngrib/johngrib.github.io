@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-02-21 20:47:37 +0900
+updated : 2018-03-04 00:39:17 +0900
 tags    : index
 toc     : true
 public  : true
@@ -60,6 +60,7 @@ comment : false
 * [[design-pattern]]
     * [[builder-pattern]]
     * factory-method-pattern
+    * [[static-factory-method-pattern]]
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
@@ -83,10 +84,14 @@ comment : false
         * [[brew]]
         * [[top]]
         * [[uptime]]
+    * [[mac-apps]]
+        * [[Shortcat]]
     * [[useful-site]]
         * [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
         * [[labs-strava-com-heatmap]]
         * [[utterances]]
+    * [[web-browser-extension]]
+        * [[vimium]]
 * [[til]]
     * [[git-checkout-specific-files]]
     * [[trouble-shooting-node-7-install]]

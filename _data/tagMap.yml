@@ -87,6 +87,7 @@ vim:
     - {fileName: 2017-07-09-vim-game-code-break}
     - {fileName: Vim}
     - {fileName: vim-conceallevel}
+    - {fileName: vimium}
 fix:
     - {fileName: 2017-04-03-vim-tmux-t-ut}
 소트웍스-앤솔러지:
@@ -197,6 +198,7 @@ book:
     - {fileName: book}
     - {fileName: Clean-Code}
     - {fileName: Code-Complete-2}
+    - {fileName: Design-for-Hackers}
     - {fileName: DevOps-Troubleshooting}
     - {fileName: DOM-Enlightenment-by-Cody-Lindley}
     - {fileName: Effective-Java}
@@ -228,6 +230,7 @@ mac:
     - {fileName: brew}
     - {fileName: java_home}
     - {fileName: mac-keyboard-shortcuts}
+    - {fileName: Shortcat}
 Fred-Brooks:
     - {fileName: Brooks-s-law}
     - {fileName: Mythical-Man-Month}
@@ -267,6 +270,8 @@ proverb:
     - {fileName: orange-juice-test}
     - {fileName: Postel-s-law}
     - {fileName: proverb}
+design:
+    - {fileName: Design-for-Hackers}
 drama:
     - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY}
     - {fileName: Las-chicas-del-cable}
@@ -395,6 +400,10 @@ sf:
     - {fileName: toda-seiji-scientia}
 github:
     - {fileName: utterances}
+chrome:
+    - {fileName: vimium}
+firefox:
+    - {fileName: vimium}
 Von-Neumann:
     - {fileName: von-neumann-extractor}
 random:
