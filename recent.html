@@ -6,6 +6,7 @@ adsense: false
 {% raw %}
 <div id="app">
     <H3>최근 변경된 문서</H3>
+    <template>
     <ul class="post-list">
         <li v-for="doc in list">
             <div>
@@ -21,6 +22,7 @@ adsense: false
             </div>
         </li>
     </ul>
+    </template>
 </div>
 {% endraw %}
 <script src="/js/vue.js"></script>
