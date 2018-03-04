@@ -239,14 +239,17 @@ programming:
     - {fileName: builder-pattern}
     - {fileName: design-pattern}
     - {fileName: programming-language}
+    - {fileName: static-factory-method-pattern}
 design-pattern:
     - {fileName: builder-pattern}
     - {fileName: GoF-Design-Pattern}
+    - {fileName: static-factory-method-pattern}
 lombok:
     - {fileName: builder-pattern}
 effective-java:
     - {fileName: builder-pattern}
     - {fileName: Effective-Java}
+    - {fileName: static-factory-method-pattern}
 스크랩:
     - {fileName: clipping}
 tldr:
@@ -286,6 +289,8 @@ o-reilly:
 java:
     - {fileName: Effective-Java}
     - {fileName: java_home}
+    - {fileName: private-constructor}
+    - {fileName: use-java-primitive-type-for-performance}
 math:
     - {fileName: frac1e}
 확률:
@@ -368,6 +373,9 @@ media:
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
+tip:
+    - {fileName: private-constructor}
+    - {fileName: use-java-primitive-type-for-performance}
 culture:
     - {fileName: proverb}
 rfc:
@@ -398,6 +406,8 @@ trouble-shooting:
     - {fileName: vim-conceallevel}
 sf:
     - {fileName: toda-seiji-scientia}
+performance:
+    - {fileName: use-java-primitive-type-for-performance}
 github:
     - {fileName: utterances}
 chrome:

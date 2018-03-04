@@ -56,7 +56,7 @@
     children: []
 2017-04-02-jwp-00-prepare:
     type: blog
-    title: 'Next JWP Study #00'
+    title: 'Next JWP Study 00'
     summary: 'NextStep Java Web Programming Study 준비 작업.'
     parent: null
     url: /blog/2017/04/02/jwp-00-prepare
@@ -80,7 +80,7 @@
     children: []
 2017-04-03-jwp-01:
     type: blog
-    title: 'Next JWP Study #01'
+    title: 'Next JWP Study 01'
     summary: '단위 테스트와 리팩토링'
     parent: null
     url: /blog/2017/04/05/jwp-01
@@ -88,7 +88,7 @@
     children: []
 2017-04-08-jwp-02:
     type: blog
-    title: 'Next JWP Study #02'
+    title: 'Next JWP Study 02'
     summary: 'HTTP 이해'
     parent: null
     url: /blog/2017/04/08/jwp-02
@@ -96,7 +96,7 @@
     children: []
 2017-04-10-jwp-03:
     type: blog
-    title: 'Next JWP Study #03'
+    title: 'Next JWP Study 03'
     summary: '"HTTP 이해: 두 번째 시간"'
     parent: null
     url: /blog/2017/04/10/jwp-03
@@ -104,7 +104,7 @@
     children: []
 2017-04-13-jwp-04:
     type: blog
-    title: 'Next JWP Study #04'
+    title: 'Next JWP Study 04'
     summary: '"HTTP 이해: 리팩토링과 AWS 배포"'
     parent: null
     url: /blog/2017/04/13/jwp-04
@@ -112,7 +112,7 @@
     children: []
 2017-04-17-jwp-05:
     type: blog
-    title: 'Next JWP Study #05'
+    title: 'Next JWP Study 05'
     summary: 'HTTP 웹 서버와 Servlet'
     parent: null
     url: /blog/2017/04/17/jwp-05
@@ -120,7 +120,7 @@
     children: []
 2017-04-20-jwp-06:
     type: blog
-    title: 'Next JWP Study #06'
+    title: 'Next JWP Study 06'
     summary: 'JDBC 라이브러리 구현'
     parent: null
     url: /blog/2017/04/22/jwp-06
@@ -128,7 +128,7 @@
     children: []
 2017-04-25-jwp-07:
     type: blog
-    title: 'Next JWP Study #07'
+    title: 'Next JWP Study 07'
     summary: '중간 점검'
     parent: null
     url: /blog/2017/04/26/jwp-07
@@ -136,7 +136,7 @@
     children: []
 2017-05-01-jwp-08:
     type: blog
-    title: 'Next JWP Study #08'
+    title: 'Next JWP Study 08'
     summary: 'MVC 프레임워크 3단계 실습'
     parent: null
     url: /blog/2017/05/01/jwp-08
@@ -152,7 +152,7 @@
     children: []
 2017-05-09-jwp-09:
     type: blog
-    title: 'Next JWP Study #09'
+    title: 'Next JWP Study 09'
     summary: 'Spring MVC 실습'
     parent: null
     url: /blog/2017/05/09/jwp-09
@@ -168,7 +168,7 @@
     children: []
 2017-05-14-jwp-10:
     type: blog
-    title: 'Next JWP Study #10'
+    title: 'Next JWP Study 10'
     summary: 'DI 및 Spring DI'
     parent: null
     url: /blog/2017/05/14/jwp-10
@@ -176,7 +176,7 @@
     children: []
 2017-05-16-jwp-11:
     type: blog
-    title: 'Next JWP Study #11'
+    title: 'Next JWP Study 11'
     summary: 'DI 기반 단위 테스트'
     parent: null
     url: /blog/2017/05/16/jwp-11
@@ -184,7 +184,7 @@
     children: []
 2017-05-20-jwp-12:
     type: blog
-    title: 'Next JWP Study #12'
+    title: 'Next JWP Study 12'
     summary: 'Spring Boot by Tests'
     parent: null
     url: /blog/2017/05/20/jwp-12
@@ -192,7 +192,7 @@
     children: []
 2017-05-23-jwp-13:
     type: blog
-    title: 'Next JWP Study #13'
+    title: 'Next JWP Study 13'
     summary: 'AOP 개념 및 로그인 기반 테스트'
     parent: null
     url: /blog/2017/05/23/jwp-13
@@ -200,7 +200,7 @@
     children: []
 2017-05-27-jwp-14:
     type: blog
-    title: 'Next JWP Study #14'
+    title: 'Next JWP Study 14'
     summary: 'ORM 및 Spring Data JPA'
     parent: null
     url: /blog/2017/05/27/jwp-14
@@ -208,7 +208,7 @@
     children: []
 2017-05-29-jwp-15:
     type: blog
-    title: 'Next JWP Study #15'
+    title: 'Next JWP Study 15'
     summary: 'RESTful API 설계'
     parent: null
     url: /blog/2017/05/29/jwp-15
@@ -216,7 +216,7 @@
     children: []
 2017-06-01-jwp-16:
     type: blog
-    title: 'Next JWP Study #16'
+    title: 'Next JWP Study 16'
     summary: 'Test, OOP 피드백 (끝)'
     parent: null
     url: /blog/2017/06/01/jwp-16
@@ -477,7 +477,7 @@ design-pattern:
     parent: index
     url: /wiki/design-pattern
     updated: '2018-02-18 00:20:43 +0900'
-    children: [builder-pattern]
+    children: [builder-pattern, static-factory-method-pattern]
 DevOps-Troubleshooting:
     type: wiki
     title: '(책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅스 서버 트러블슈팅 기법'
@@ -548,7 +548,7 @@ Effective-Java:
     summary: 'Effective Java 2/E by Joshua Bloch'
     parent: book
     url: /wiki/Effective-Java
-    updated: '2018-02-18 22:20:32 +0900'
+    updated: '2018-03-04 19:18:08 +0900'
     children: []
 frac1e:
     type: wiki
@@ -684,7 +684,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-03-04 00:39:17 +0900'
+    updated: '2018-03-04 21:52:39 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -814,6 +814,14 @@ Postel-s-law:
     url: /wiki/Postel-s-law
     updated: '2018-01-07 18:20:48 +0900'
     children: []
+private-constructor:
+    type: wiki
+    title: 'Java에서 객체가 생성되는 것을 막는 방법'
+    summary: 'private 생성자를 선언한다'
+    parent: til
+    url: /wiki/private-constructor
+    updated: '2018-03-04 18:22:22 +0900'
+    children: []
 PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     type: wiki
     title: '(책) Professional 소프트웨어 개발'
@@ -910,6 +918,14 @@ special-chars:
     url: /wiki/special-chars
     updated: '2018-02-09 13:20:18 +0900'
     children: []
+static-factory-method-pattern:
+    type: wiki
+    title: '정적 팩토리 메서드(static factory method)'
+    summary: 'static 메서드로 객체 생성을 캡슐화한다'
+    parent: design-pattern
+    url: /wiki/static-factory-method-pattern
+    updated: '2018-03-04 13:03:09 +0900'
+    children: []
 Take-the-Bully-by-the-Horns:
     type: wiki
     title: '(책) 함부로 말하는 사람과 대화하는 법'
@@ -949,7 +965,7 @@ til:
     parent: index
     url: /wiki/til
     updated: '2018-02-13 21:00:13 +0900'
-    children: [git-checkout-specific-files, trouble-shooting-node-7-install]
+    children: [git-checkout-specific-files, private-constructor, trouble-shooting-node-7-install, use-java-primitive-type-for-performance]
 toda-seiji-scientia:
     type: wiki
     title: '(책) 스키엔티아 - 도다 세이지'
@@ -997,6 +1013,14 @@ URI:
     parent: index
     url: /wiki/URI
     updated: '2017-12-18 23:00:44 +0900'
+    children: []
+use-java-primitive-type-for-performance:
+    type: wiki
+    title: 'Java Autoboxing 자동 변환 주의점'
+    summary: 'Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다'
+    parent: til
+    url: /wiki/use-java-primitive-type-for-performance
+    updated: '2018-03-04 18:21:59 +0900'
     children: []
 useful-site:
     type: wiki

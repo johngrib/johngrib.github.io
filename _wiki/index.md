@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-03-04 00:39:17 +0900
+updated : 2018-03-04 17:03:17 +0900
 tags    : index
 toc     : true
 public  : true
@@ -94,7 +94,9 @@ comment : false
         * [[vimium]]
 * [[til]]
     * [[git-checkout-specific-files]]
+    * [[private-constructor]]
     * [[trouble-shooting-node-7-install]]
+    * [[use-java-primitive-type-for-performance]]
 * [[URI]]
 * [[Vim]]
     * [[vim-conceallevel]]{conceallevel (Vim)}
