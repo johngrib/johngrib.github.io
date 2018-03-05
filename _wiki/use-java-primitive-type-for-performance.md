@@ -3,11 +3,11 @@ layout  : wiki
 title   : Java Autoboxing 자동 변환 주의점
 summary : Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다
 date    : 2018-03-04 13:47:40 +0900
-updated : 2018-03-04 18:21:59 +0900
+updated : 2018-03-05 16:22:11 +0900
 tags    : java tip performance
 toc     : true
 public  : true
-parent  : til
+parent  : Java
 latex   : false
 ---
 * TOC
