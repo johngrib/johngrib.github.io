@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : equals 메소드
-summary : equals 메소드 주석 번역
+title   : java.lang.Object.equals 메소드
+summary : Object.equals 메소드 주석 번역
 date    : 2018-03-07 21:40:19 +0900
-updated : 2018-03-07 23:15:57 +0900
+updated : 2018-03-07 23:19:23 +0900
 tags    : java 번역
 toc     : true
 public  : true

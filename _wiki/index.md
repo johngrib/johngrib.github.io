@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-03-04 21:59:18 +0900
+updated : 2018-03-07 21:39:29 +0900
 tags    : index
 toc     : true
 public  : true
@@ -63,6 +63,10 @@ comment : false
     * [[static-factory-method-pattern]]
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
+    * [[Java]]
+        * [[Object-equals]]
+        * [[private-constructor]]
+        * [[use-java-primitive-type-for-performance]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
     * [[airplain-rule]]
     * [[Boy-Scout-Rule]]
@@ -94,9 +98,7 @@ comment : false
         * [[vimium]]
 * [[til]]
     * [[git-checkout-specific-files]]
-    * [[private-constructor]]
     * [[trouble-shooting-node-7-install]]
-    * [[use-java-primitive-type-for-performance]]
 * [[URI]]
 * [[Vim]]
     * [[vim-conceallevel]]{conceallevel (Vim)}

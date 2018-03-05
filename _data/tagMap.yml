@@ -238,6 +238,7 @@ Fred-Brooks:
 programming:
     - {fileName: builder-pattern}
     - {fileName: design-pattern}
+    - {fileName: Java}
     - {fileName: programming-language}
     - {fileName: static-factory-method-pattern}
 design-pattern:
@@ -288,7 +289,9 @@ o-reilly:
     - {fileName: Geek-Atlas}
 java:
     - {fileName: Effective-Java}
+    - {fileName: Java}
     - {fileName: java_home}
+    - {fileName: Object-equals}
     - {fileName: private-constructor}
     - {fileName: use-java-primitive-type-for-performance}
 math:
@@ -318,6 +321,7 @@ tool:
     - {fileName: Gradle}
 language:
     - {fileName: groovy}
+    - {fileName: Java}
     - {fileName: programming-language}
 jvm-lang:
     - {fileName: groovy}
@@ -370,6 +374,10 @@ latex:
     - {fileName: mathjax-latex}
 media:
     - {fileName: media}
+번역:
+    - {fileName: Object-equals}
+    - {fileName: Software-Engineering-Code-of-Ethics}
+    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
@@ -393,9 +401,6 @@ IEEE:
     - {fileName: Software-Engineering-Code-of-Ethics}
 ethics:
     - {fileName: Software-Engineering-Code-of-Ethics}
-번역:
-    - {fileName: Software-Engineering-Code-of-Ethics}
-    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 web:
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
 hacker:

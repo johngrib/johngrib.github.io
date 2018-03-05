@@ -548,7 +548,7 @@ Effective-Java:
     summary: 'Effective Java 2/E by Joshua Bloch'
     parent: book
     url: /wiki/Effective-Java
-    updated: '2018-03-04 19:18:08 +0900'
+    updated: '2018-03-07 20:49:33 +0900'
     children: []
 frac1e:
     type: wiki
@@ -684,7 +684,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-03-04 21:59:18 +0900'
+    updated: '2018-03-07 21:39:29 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -694,6 +694,14 @@ James-Gosling-super-programmer:
     url: /wiki/James-Gosling-super-programmer
     updated: '2018-02-08 12:13:57 +0900'
     children: []
+Java:
+    type: wiki
+    title: Java
+    summary: null
+    parent: programming-language
+    url: /wiki/Java
+    updated: '2018-03-05 16:14:12 +0900'
+    children: [Object-equals, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -798,6 +806,14 @@ No-Silver-Bullet:
     url: /wiki/No-Silver-Bullet
     updated: '2018-02-21 22:34:10 +0900'
     children: []
+Object-equals:
+    type: wiki
+    title: 'equals 메소드'
+    summary: 'equals 메소드 주석 번역'
+    parent: Java
+    url: /wiki/Object-equals
+    updated: '2018-03-07 23:10:30 +0900'
+    children: []
 orange-juice-test:
     type: wiki
     title: '오렌지 주스 테스트'
@@ -818,9 +834,9 @@ private-constructor:
     type: wiki
     title: 'Java에서 객체가 생성되는 것을 막는 방법'
     summary: 'private 생성자를 선언한다'
-    parent: til
+    parent: Java
     url: /wiki/private-constructor
-    updated: '2018-03-04 18:22:22 +0900'
+    updated: '2018-03-05 16:17:51 +0900'
     children: []
 PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     type: wiki
@@ -837,7 +853,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [groovy]
+    children: [groovy, Java]
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -860,7 +876,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-03-01 17:37:56 +0900'
+    updated: '2018-03-05 10:24:14 +0900'
     children: []
 RFC:
     type: wiki
@@ -892,7 +908,7 @@ Shortcat:
     summary: null
     parent: mac-apps
     url: /wiki/Shortcat
-    updated: '2018-03-03 23:28:07 +0900'
+    updated: '2018-03-07 21:14:05 +0900'
     children: []
 Software-Craftsman:
     type: wiki
@@ -965,7 +981,7 @@ til:
     parent: index
     url: /wiki/til
     updated: '2018-02-13 21:00:13 +0900'
-    children: [git-checkout-specific-files, private-constructor, trouble-shooting-node-7-install, use-java-primitive-type-for-performance]
+    children: [git-checkout-specific-files, trouble-shooting-node-7-install]
 toda-seiji-scientia:
     type: wiki
     title: '(책) 스키엔티아 - 도다 세이지'
@@ -1018,9 +1034,9 @@ use-java-primitive-type-for-performance:
     type: wiki
     title: 'Java Autoboxing 자동 변환 주의점'
     summary: 'Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다'
-    parent: til
+    parent: Java
     url: /wiki/use-java-primitive-type-for-performance
-    updated: '2018-03-04 18:21:59 +0900'
+    updated: '2018-03-05 16:22:11 +0900'
     children: []
 useful-site:
     type: wiki
