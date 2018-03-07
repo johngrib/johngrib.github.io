@@ -3,7 +3,7 @@ layout  : wiki
 title   : Shortcat
 summary :
 date    : 2018-03-03 19:46:09 +0900
-updated : 2018-03-03 23:28:07 +0900
+updated : 2018-03-07 21:14:05 +0900
 tags    : mac
 toc     : true
 public  : true
@@ -19,6 +19,7 @@ latex   : true
 * MacOS의 gui 오브젝트를 키보드로 검색해서 클릭할 수 있게 해 준다.
 * 크롬 웹 브라우저 확장 프로그램 Vimium의 `f` 키와 비슷한 느낌으로 사용할 수 있다.
 
+**MacOs Sierra에서는 잘 죽는다. 거의 안 쓰게 된다.**
 
 ![Shortcat](https://files.shortcatapp.com/shortcat-screencast-network.gif)
 
