@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) 이펙티브 자바 2판
 summary : Effective Java 2/E by Joshua Bloch
 date    : 2018-02-09 06:31:21 +0900
-updated : 2018-03-04 19:18:08 +0900
+updated : 2018-03-07 20:49:33 +0900
 tags    : book java effective-java
 toc     : true
 public  : true
@@ -21,13 +21,18 @@ latex   : false
 
 ## 규칙 목록
 
-1. 생성자 대신 [[static-factory-method-pattern]]{정적 팩터리 메서드}를 사용할 수 없는지 생각해 보라
-2. 생성자 인자가 많을 때는 [[builder-pattern]]{Builder 패턴} 적용을 고려하라
-3. private 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계하라
-4. 객체 생성을 막을 때는 [[private-constructor]]{private 생성자}를 사용하라
-5. 불필요한 객체는 만들지 말라
-6. 유효기간이 지난 객체 참조는 폐기하라
-7. 종료자 사용을 피하라
+* 객체의 생성과 삭제
+    * 규칙 1. 생성자 대신 [[static-factory-method-pattern]]{정적 팩터리 메서드}를 사용할 수 없는지 생각해 보라
+    * 규칙 2. 생성자 인자가 많을 때는 [[builder-pattern]]{Builder 패턴} 적용을 고려하라
+    * 규칙 3. private 생성자나 enum 자료형은 싱글턴 패턴을 따르도록 설계하라
+    * 규칙 4. 객체 생성을 막을 때는 [[private-constructor]]{private 생성자}를 사용하라
+    * 규칙 5. 불필요한 객체는 만들지 말라
+    * 규칙 6. 유효기간이 지난 객체 참조는 폐기하라
+    * 규칙 7. 종료자 사용을 피하라
+* 모든 객체의 공통 메서드
+    * 규칙 8. equals를 재정의할 때는 일반 규약을 따르라
+    * 규칙 9. equals를 재정의할 때는 반드시 hashCode도 재정의하라
+    * 규칙 10. toString은 항상 재정의하라
 
 ## Links
 
