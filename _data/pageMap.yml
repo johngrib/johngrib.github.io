@@ -808,11 +808,11 @@ No-Silver-Bullet:
     children: []
 Object-equals:
     type: wiki
-    title: 'equals 메소드'
-    summary: 'equals 메소드 주석 번역'
+    title: 'java.lang.Object.equals 메소드'
+    summary: null
     parent: Java
     url: /wiki/Object-equals
-    updated: '2018-03-07 23:10:30 +0900'
+    updated: '2018-03-08 23:00:25 +0900'
     children: []
 orange-juice-test:
     type: wiki
