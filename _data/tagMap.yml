@@ -87,7 +87,10 @@ vim:
     - {fileName: 2017-07-09-vim-game-code-break}
     - {fileName: Vim}
     - {fileName: vim-conceallevel}
+    - {fileName: vim-f-hangul}
+    - {fileName: vim-ycm-python3}
     - {fileName: vimium}
+    - {fileName: vimwiki}
 fix:
     - {fileName: 2017-04-03-vim-tmux-t-ut}
 소트웍스-앤솔러지:
@@ -135,6 +138,7 @@ DI:
     - {fileName: 2017-05-16-jwp-11}
 game:
     - {fileName: 2017-07-09-vim-game-code-break}
+    - {fileName: TETRIS-EFFECT}
 aheui:
     - {fileName: 2017-07-14-aheui-explained}
 lua:
@@ -147,6 +151,7 @@ regex:
     - {fileName: 2017-09-20-regex-prime}
 wiki:
     - {fileName: 2017-12-06-my-wiki}
+    - {fileName: vimwiki}
 vimwiki:
     - {fileName: 2017-12-06-my-wiki}
 blog:
@@ -168,6 +173,29 @@ law:
     - {fileName: Conway-s-law}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
     - {fileName: Postel-s-law}
+algorithm:
+    - {fileName: algorithm}
+book:
+    - {fileName: Algorithms-to-Live-By}
+    - {fileName: book}
+    - {fileName: Clean-Code}
+    - {fileName: Code-Complete-2}
+    - {fileName: Design-for-Hackers}
+    - {fileName: DevOps-Troubleshooting}
+    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
+    - {fileName: Effective-Java}
+    - {fileName: Geek-Atlas}
+    - {fileName: GoF-Design-Pattern}
+    - {fileName: HELL-BOY}
+    - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
+    - {fileName: Mythical-Man-Month}
+    - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
+    - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
+    - {fileName: The-Jargon-File}
+    - {fileName: 전생검신}
+    - {fileName: 한국과학문학상-수상작품집-제2회}
+algirithm:
+    - {fileName: Algorithms-to-Live-By}
 netflix:
     - {fileName: ALPHAGO}
     - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY}
@@ -194,23 +222,6 @@ Bill-Atkinson:
     - {fileName: Bill-Atkinson-productivity}
 Steve-Jobs:
     - {fileName: Bill-Atkinson-productivity}
-book:
-    - {fileName: book}
-    - {fileName: Clean-Code}
-    - {fileName: Code-Complete-2}
-    - {fileName: Design-for-Hackers}
-    - {fileName: DevOps-Troubleshooting}
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
-    - {fileName: Effective-Java}
-    - {fileName: Geek-Atlas}
-    - {fileName: GoF-Design-Pattern}
-    - {fileName: HELL-BOY}
-    - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
-    - {fileName: Mythical-Man-Month}
-    - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
-    - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
-    - {fileName: The-Jargon-File}
-    - {fileName: 전생검신}
 rule:
     - {fileName: Boy-Scout-Rule}
 Uncle-Bob:
@@ -292,19 +303,30 @@ java:
     - {fileName: Java}
     - {fileName: java_home}
     - {fileName: Object-equals}
+    - {fileName: Object-hashCode}
+    - {fileName: Object-toString}
     - {fileName: private-constructor}
     - {fileName: use-java-primitive-type-for-performance}
+fish:
+    - {fileName: fish-shell}
+terminal:
+    - {fileName: fish-shell}
 math:
     - {fileName: frac1e}
+    - {fileName: secretary-problem}
 확률:
     - {fileName: frac1e}
+map:
+    - {fileName: geacron}
+    - {fileName: Geek-Atlas}
+    - {fileName: labs-strava-com-heatmap}
+history:
+    - {fileName: geacron}
+    - {fileName: TETRIS-EFFECT}
 science:
     - {fileName: Geek-Atlas}
     - {fileName: Grote-Reber-home-made-radio-astronomy}
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
-map:
-    - {fileName: Geek-Atlas}
-    - {fileName: labs-strava-com-heatmap}
 til:
     - {fileName: git-checkout-specific-files}
     - {fileName: til}
@@ -347,8 +369,10 @@ review:
     - {fileName: review}
     - {fileName: review-2018}
     - {fileName: secret-of-consulting}
+    - {fileName: Shunsho-juwa}
     - {fileName: Software-Craftsman}
     - {fileName: Take-the-Bully-by-the-Horns}
+    - {fileName: TETRIS-EFFECT}
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
     - {fileName: toda-seiji-scientia}
     - {fileName: 그림으로-보는-서양검술-메모}
@@ -356,10 +380,15 @@ index:
     - {fileName: index}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
+von-neumann:
+    - {fileName: John-von-Neumann}
+sort:
+    - {fileName: John-von-Neumann}
 tools:
     - {fileName: labs-strava-com-heatmap}
     - {fileName: tools}
     - {fileName: utterances}
+    - {fileName: 미세먼지-정보}
 보안:
     - {fileName: labs-strava-com-heatmap}
 letter:
@@ -376,8 +405,12 @@ media:
     - {fileName: media}
 번역:
     - {fileName: Object-equals}
+    - {fileName: Object-hashCode}
+    - {fileName: Object-toString}
     - {fileName: Software-Engineering-Code-of-Ethics}
     - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
+소수:
+    - {fileName: Object-hashCode}
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
@@ -391,6 +424,8 @@ rfc:
     - {fileName: why-http-80-https-443}
 consulting:
     - {fileName: secret-of-consulting}
+교육:
+    - {fileName: Shunsho-juwa}
 장인정신:
     - {fileName: Software-Craftsman}
 괴담:
@@ -411,10 +446,15 @@ trouble-shooting:
     - {fileName: vim-conceallevel}
 sf:
     - {fileName: toda-seiji-scientia}
+    - {fileName: 한국과학문학상-수상작품집-제2회}
 performance:
     - {fileName: use-java-primitive-type-for-performance}
 github:
     - {fileName: utterances}
+plugin:
+    - {fileName: vim-f-hangul}
+python:
+    - {fileName: vim-ycm-python3}
 chrome:
     - {fileName: vimium}
 firefox:
@@ -433,5 +473,7 @@ data-format:
     - {fileName: yaml}
 무술:
     - {fileName: 그림으로-보는-서양검술-메모}
+미세먼지:
+    - {fileName: 미세먼지-정보}
 fantasy:
     - {fileName: 전생검신}

@@ -350,6 +350,22 @@ airplain-rule:
     url: /wiki/airplain-rule
     updated: '2017-12-25 13:07:43 +0900'
     children: []
+algorithm:
+    type: wiki
+    title: 알고리즘
+    summary: null
+    parent: index
+    url: /wiki/algorithm
+    updated: '2018-03-31 18:01:51 +0900'
+    children: [secretary-problem]
+Algorithms-to-Live-By:
+    type: wiki
+    title: '(책) 알고리즘, 인생을 계산하다'
+    summary: null
+    parent: book
+    url: /wiki/Algorithms-to-Live-By
+    updated: '2018-04-01 21:27:47 +0900'
+    children: []
 ALPHAGO:
     type: wiki
     title: 'ALPHAGO (2017)'
@@ -373,7 +389,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [Clean-Code, Code-Complete-2, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Software-Craftsman, Take-the-Bully-by-the-Horns, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 전생검신]
+    children: [Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 전생검신, 한국과학문학상-수상작품집-제2회]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -453,7 +469,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [brew, df, du, java_home, top, uptime]
+    children: [brew, df, du, fish-shell, java_home, top, uptime]
 Conway-s-law:
     type: wiki
     title: '콘웨이의 법칙(Conway''s law)'
@@ -548,7 +564,15 @@ Effective-Java:
     summary: 'Effective Java 2/E by Joshua Bloch'
     parent: book
     url: /wiki/Effective-Java
-    updated: '2018-03-07 20:49:33 +0900'
+    updated: '2018-03-11 14:10:23 +0900'
+    children: []
+fish-shell:
+    type: wiki
+    title: 'fish shell'
+    summary: '자동 완성이 편리하고 눈이 즐거운 셸'
+    parent: command-line
+    url: /wiki/fish-shell
+    updated: '2018-03-12 23:07:23 +0900'
     children: []
 frac1e:
     type: wiki
@@ -557,6 +581,14 @@ frac1e:
     parent: why
     url: /wiki/frac1e
     updated: '2018-02-07 21:29:36 +0900'
+    children: []
+geacron:
+    type: wiki
+    title: 'GeaCron, 옐로우의 세계'
+    summary: '연도별 세계 지도를 볼 수 있는 사이트'
+    parent: useful-site
+    url: /wiki/geacron
+    updated: '2018-03-10 21:09:27 +0900'
     children: []
 Geek-Atlas:
     type: wiki
@@ -684,7 +716,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-03-07 21:39:29 +0900'
+    updated: '2018-04-03 22:20:59 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -701,7 +733,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [Object-equals, private-constructor, use-java-primitive-type-for-performance]
+    children: [Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -709,6 +741,14 @@ java_home:
     parent: command-line
     url: /wiki/java_home
     updated: '2018-02-06 12:33:34 +0900'
+    children: []
+John-von-Neumann:
+    type: wiki
+    title: '존 폰 노이만(John von Neumann)'
+    summary: '천재는 오직 폰 노이만 뿐이다(von Neumann was the only genius)'
+    parent: legend
+    url: /wiki/John-von-Neumann
+    updated: '2018-04-03 22:36:56 +0900'
     children: []
 labs-strava-com-heatmap:
     type: wiki
@@ -733,7 +773,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer]
+    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann]
 letter-case:
     type: wiki
     title: '대문자를 upper case, 소문자를 lower case라 부르는 이유'
@@ -814,6 +854,22 @@ Object-equals:
     url: /wiki/Object-equals
     updated: '2018-03-08 23:00:25 +0900'
     children: []
+Object-hashCode:
+    type: wiki
+    title: 'java.lang.Object.hashCode 메소드'
+    summary: null
+    parent: Java
+    url: /wiki/Object-hashCode
+    updated: '2018-03-10 18:45:35 +0900'
+    children: []
+Object-toString:
+    type: wiki
+    title: 'java.lang.Object.toString 메소드'
+    summary: null
+    parent: Java
+    url: /wiki/Object-toString
+    updated: '2018-03-11 15:12:10 +0900'
+    children: []
 orange-juice-test:
     type: wiki
     title: '오렌지 주스 테스트'
@@ -876,7 +932,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-03-05 10:24:14 +0900'
+    updated: '2018-03-29 22:52:17 +0900'
     children: []
 RFC:
     type: wiki
@@ -902,6 +958,14 @@ secret-of-consulting:
     url: /wiki/secret-of-consulting
     updated: '2018-01-30 22:42:26 +0900'
     children: []
+secretary-problem:
+    type: wiki
+    title: '비서 문제(Secretary problem)'
+    summary: '37% 법칙'
+    parent: algorithm
+    url: /wiki/secretary-problem
+    updated: '2018-04-01 21:36:33 +0900'
+    children: []
 Shortcat:
     type: wiki
     title: Shortcat
@@ -909,6 +973,14 @@ Shortcat:
     parent: mac-apps
     url: /wiki/Shortcat
     updated: '2018-03-07 21:14:05 +0900'
+    children: []
+Shunsho-juwa:
+    type: wiki
+    title: '(책) 수학자의 공부'
+    summary: '수학자 오카 기요시의 일본 교육 비판'
+    parent: book
+    url: /wiki/Shunsho-juwa
+    updated: '2018-03-14 09:03:34 +0900'
     children: []
 Software-Craftsman:
     type: wiki
@@ -949,6 +1021,14 @@ Take-the-Bully-by-the-Horns:
     parent: book
     url: /wiki/Take-the-Bully-by-the-Horns
     updated: '2018-02-02 22:55:21 +0900'
+    children: []
+TETRIS-EFFECT:
+    type: wiki
+    title: '(책) 테트리스 이펙트'
+    summary: '테트리스 개발과 저작권 분쟁 이야기'
+    parent: book
+    url: /wiki/TETRIS-EFFECT
+    updated: '2018-03-20 23:21:57 +0900'
     children: []
 TEXT-BOOK-OF-THE-WEB-ENGINEER:
     type: wiki
@@ -1045,7 +1125,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2018-02-20 22:07:53 +0900'
-    children: [google-search-console-remove-outdated-content, labs-strava-com-heatmap, utterances]
+    children: [geacron, google-search-console-remove-outdated-content, labs-strava-com-heatmap, utterances, 미세먼지-정보]
 utterances:
     type: wiki
     title: utterances.es
@@ -1061,7 +1141,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [vim-conceallevel]
+    children: [vim-conceallevel, vim-f-hangul, vim-ycm-python3, vimwiki]
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -1070,6 +1150,22 @@ vim-conceallevel:
     url: /wiki/vim-conceallevel
     updated: '2017-12-20 13:13:32 +0900'
     children: []
+vim-f-hangul:
+    type: wiki
+    title: vim-f-hangul
+    summary: 'vim에서 f로 한글을 검색하는 플러그인'
+    parent: Vim
+    url: /wiki/vim-f-hangul
+    updated: '2018-03-18 22:51:56 +0900'
+    children: []
+vim-ycm-python3:
+    type: wiki
+    title: 'youcompleteme를 python3로 구동하기'
+    summary: 'python2 좀 그만 쓰자'
+    parent: Vim
+    url: /wiki/vim-ycm-python3
+    updated: '2018-03-21 23:24:50 +0900'
+    children: []
 vimium:
     type: wiki
     title: 'Vimium - The hacker''s browser'
@@ -1077,6 +1173,14 @@ vimium:
     parent: web-browser-extension
     url: /wiki/vimium
     updated: '2018-03-04 01:15:09 +0900'
+    children: []
+vimwiki:
+    type: wiki
+    title: 'Vimwiki 사용법'
+    summary: '로컬에서 Vim으로 관리하는 나만의 위키'
+    parent: Vim
+    url: /wiki/vimwiki
+    updated: '2018-03-29 22:48:12 +0900'
     children: []
 von-neumann-extractor:
     type: wiki
@@ -1134,6 +1238,14 @@ yaml:
     url: /wiki/그림으로-보는-서양검술-메모
     updated: '2018-01-26 21:38:27 +0900'
     children: []
+미세먼지-정보:
+    type: wiki
+    title: '미세먼지 정보 모음'
+    summary: '미세먼지 대응에 대한 나의 노하우를 기록한다'
+    parent: useful-site
+    url: /wiki/미세먼지-정보
+    updated: '2018-04-02 21:13:51 +0900'
+    children: []
 전생검신:
     type: wiki
     title: '(책) 전생검신'
@@ -1141,4 +1253,12 @@ yaml:
     parent: book
     url: /wiki/전생검신
     updated: '2018-02-10 20:40:15 +0900'
+    children: []
+한국과학문학상-수상작품집-제2회:
+    type: wiki
+    title: '(책) 제2회 한국과학문학상 수상작품집'
+    summary: null
+    parent: book
+    url: /wiki/한국과학문학상-수상작품집-제2회
+    updated: '2018-03-15 20:41:22 +0900'
     children: []
