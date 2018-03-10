@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.hashCode 메소드
 summary :
 date    : 2018-03-09 18:54:19 +0900
-updated : 2018-03-10 14:23:49 +0900
+updated : 2018-03-10 18:45:35 +0900
 tags    : java 번역 소수
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : true
 
 버전: Java 1.8
 
-## 개요
+## 원문
 
 ```java
 /**
@@ -55,6 +55,8 @@ latex   : true
  */
 public native int hashCode();
 ```
+
+## 번역
 
 hashCode 메소드는 객체의 해시코드 값을 리턴합니다.
 
@@ -140,6 +142,8 @@ public int hashCode() {
 }
 ```
 
+#### 번역
+
 hashCode 메소드는 this 집합(Set)의 해시코드 값을 리턴합니다.
 
 한 집합의 해시 코드는 집합에 포함된 모든 원소의 해시코드 값의 합계로 정의됩니다.
@@ -177,6 +181,8 @@ public int hashCode() {
 }
 ```
 
+#### 번역
+
 이 메소드는 this 리스트의 해시 코드를 리턴합니다.
 
 이 구현은 List 인터페이스의 hashCode 메소드 문서에 정의된 코드를 그대로 적용한 것입니다.
@@ -209,6 +215,8 @@ public int hashCode() {
  */
 int hashCode();
 ```
+
+#### 번역
 
 이 메소드는 this 리스트의 해시 코드 값을 리턴합니다.
 
