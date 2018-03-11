@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) 이펙티브 자바 2판
 summary : Effective Java 2/E by Joshua Bloch
 date    : 2018-02-09 06:31:21 +0900
-updated : 2018-03-07 20:49:33 +0900
+updated : 2018-03-11 14:10:23 +0900
 tags    : book java effective-java
 toc     : true
 public  : true
@@ -33,6 +33,7 @@ latex   : false
     * 규칙 8. equals를 재정의할 때는 일반 규약을 따르라
     * 규칙 9. equals를 재정의할 때는 반드시 hashCode도 재정의하라
     * 규칙 10. toString은 항상 재정의하라
+    * 규칙 11. clone을 재정의할 때는 신중하라
 
 ## Links
 
