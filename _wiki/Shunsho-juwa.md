@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) 수학자의 공부
 summary : 수학자 오카 기요시의 일본 교육 비판
 date    : 2018-03-13 22:36:38 +0900
-updated : 2018-03-13 23:13:09 +0900
+updated : 2018-03-14 09:03:34 +0900
 tags    : review 교육
 toc     : true
 public  : true
@@ -86,3 +86,11 @@ latex   : false
 이웃에 살던 여자아이가 읽고 싶다고 해서 그 책을 빌려주었던 기억도 난다.
 돌이켜보면, 그 무렵부터 무자비한 행위를 증오하는 정의감이 내 안에 싹텄던 게 아닌가 싶다.
 남을 돌아볼 줄 아는 마음도 사막의 식물처럼 천천히 자라났던 것 같다.
+
+## Links
+
+* [교보문고](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=&barcode=9791188635023)
+* [Shunsho juwa(amazon.com)](https://www.amazon.com/Shunsho-juwa-Kiyoshi-Oka/dp/4044094640)
+
+* [오카 기요시(세인트 앤드류스 대학)](http://www-history.mcs.st-andrews.ac.uk/Biographies/Oka.html)
+* [오카 기요시(wikipedia)](https://ko.wikipedia.org/wiki/%EC%98%A4%EC%B9%B4_%EA%B8%B0%EC%9A%94%EC%8B%9C)
