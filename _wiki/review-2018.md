@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-03-13 23:17:36 +0900
+updated : 2018-03-15 20:41:39 +0900
 tags    : review
 toc     : true
 public  : true
@@ -28,6 +28,7 @@ latex   : false
 
 ## 책 - 흥미
 
+* 2018-03-15 [[한국과학문학상-수상작품집-제2회]]
 * 2018-03-13 [[Shunsho-juwa]]{수학자의 공부}
 * 2018-02-13 [[Geek-Atlas]]
 * 2018-02-09 [[전생검신]] 35권. 무신
