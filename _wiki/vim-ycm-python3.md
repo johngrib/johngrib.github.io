@@ -3,7 +3,7 @@ layout  : wiki
 title   : youcompleteme를 python3로 구동하기
 summary : python2 좀 그만 쓰자
 date    : 2018-03-21 22:48:40 +0900
-updated : 2018-03-21 23:19:07 +0900
+updated : 2018-03-21 23:24:50 +0900
 tags    : vim python
 toc     : true
 public  : true
@@ -19,7 +19,7 @@ ycm을 python3로 구동하려면 일단 사용하고 있는 Vim이 `python3` �
 
 Vim의 `python` 옵션은 `--version`으로 확인할 수 있다.
 
-```
+```sh
 $ vim --version | grep python
 +comments          +libcall           +python            +vreplace
 +conceal           +linebreak         -python3           +wildignore
@@ -43,6 +43,12 @@ $ brew install vim --with-python3
 별 생각 없이 기본 옵션으로 빌드하면 `python2` 옵션이 달려 나오므로 주의해야 한다.
 
 빌드가 끝났을 때 `vim --version`으로 확인해 보면 `python3`가 있을 것이다.
+
+```sh
+$ vim --version | grep python
++comments          +libcall           -python            +vreplace
++conceal           +linebreak         +python3           +wildignore
+```
 
 ## .vimrc 설정
 
@@ -96,6 +102,8 @@ ycm은 Vim을 위한 자동 완성 플러그인이므로, 다음 옵션들이 �
 * `--java-completer` : IntelliJ와 Vim을 함께 사용한다면 이 옵션은 넣지 말자. Vim에서 Java 파일을 열었을 때 Eclipse 설정 파일과 캐시 파일을 자동으로 생성한다.
 
 필요한 옵션을 확인하고, 옵션에서 요구하는 컴파일러들도 설치했다면 다음과 같이 명령을 실행해주면 된다.
+
+단, 그냥 `install.py`를 실행하면 `python2`로 빌드하는 수가 있으므로 반드시 `python3`로 실행해 주도록 한다.
 
 ```sh
 $ python3 ./install.py --clang-completer --go-completer --rust-completer --js-completer
