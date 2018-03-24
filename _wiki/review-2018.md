@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-03-23 22:36:46 +0900
+updated : 2018-03-25 08:31:13 +0900
 tags    : review
 toc     : true
 public  : true
@@ -40,6 +40,7 @@ latex   : false
 
 ## 영화/드라마
 
+* 2018-03-25 Pacific Rim: Uprising - 마징가 오마주와 재해석된 보스 보로트가 좋았다!
 * 2018-03-01 Disney Moana - 아름다운 영화였다
 * 2018-03-01 Rogue One: A Star Wars Story
 * 2018-02-24 Discovery Manhunt: Unabomber
