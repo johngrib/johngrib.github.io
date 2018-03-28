@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2018-03-28 22:28:26 +0900
+updated : 2018-03-28 22:47:11 +0900
 tags    : vim wiki
 toc     : true
 public  : true
@@ -181,14 +181,14 @@ Vimwiki는 크게 다음 몇 가지 기능만 기억하면 충분히 유용하�
 * `Enter`키로 링크를 타고 이동할 수 있다.
 * `BackSpace`키로 이전 문서로 돌아갈 수 있다.
 
+팁 : 새로 작성한 문서는 꼭 `index.md`에 링크를 추가해주는 것이 좋다.
+
 ### 마크다운 표 편집 기능
 
 * `:VimwikiTable` 명령으로 마크다운의 표 기본 서식을 입력할 수 있다.
     * 표에서 `tab`을 입력하면 커서가 표의 다음 칸으로 이동한다.
     * 표에서 `Shift + tab`을 입력하면 커서가 표의 이전 칸으로 이동한다.
     * 표에서 입력을 마칠 때마다, 표의 구분선이 자동으로 정렬된다.
-
-팁 : 새로 작성한 문서는 꼭 `index.md`에 링크를 추가해주는 것이 좋다.
 
 ### 검색 기능
 
@@ -347,5 +347,6 @@ Startify와 함께 사용하는지 아닌지에 따라 Vimwiki의 활용도는 �
 
 
 * [Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자](/blog/2017/12/06/my-wiki/ )
+* [[vim-conceallevel]]{Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자}
 
 
