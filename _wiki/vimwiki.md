@@ -3,11 +3,11 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2018-03-28 22:47:11 +0900
+updated : 2018-03-29 22:48:12 +0900
 tags    : vim wiki
 toc     : true
 public  : true
-parent  : how-to
+parent  : Vim
 latex   : false
 ---
 * TOC
