@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-03-28 15:49:50 +0900
+updated : 2018-03-29 22:52:17 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-03-29 82년생 김지영
 * 2018-03-28 미로 속의 암소
 * 2018-03-23 행성 대관람차 - 곽재식 소설집
 * 2018-03-20 [[TETRIS-EFFECT]]
