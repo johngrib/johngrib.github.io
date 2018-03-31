@@ -73,6 +73,9 @@ h1 {
     font-size: 2.2rem;
     margin: 0px;
 }
+.post-content h1 {
+    border-bottom: 3px solid $theme-color;
+}
 h2 {
     font-size: 1.8em;
     border-bottom: 1px solid $theme-color;
