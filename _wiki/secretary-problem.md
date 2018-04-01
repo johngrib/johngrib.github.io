@@ -3,7 +3,7 @@ layout  : wiki
 title   : 비서 문제(Secretary problem)
 summary : 37% 법칙
 date    : 2018-03-31 18:03:21 +0900
-updated : 2018-04-01 11:38:16 +0900
+updated : 2018-04-01 18:52:06 +0900
 tags    : math
 toc     : true
 public  : true
@@ -32,7 +32,7 @@ latex   : true
 
 가장 뛰어난 지원자를 합격시킬 확률을 최대로 하려면 인사담당자는 어떻게 해야 할까?
 
-이 문제는 이미 해결된 것으로, 해답은 `37%`의 지원자 면접을 본 다음 이후 먼저 면접을 본 사람들보다 뛰어난 지원자가 나타나면 즉시 채용을 하는 것이다.
+이 문제는 이미 해결된 것으로, 해답은 약 `37%`의 지원자들을 먼저 면접을 본 다음, 이후 먼저 면접을 본 사람들보다 뛰어난 지원자가 나타나면 즉시 채용을 하는 것이다.
 
 다음의 방법을 수행하면 된다.
 
@@ -260,7 +260,7 @@ console.log(result);
 즉, 지원자가 1000명이라면 369명을 살펴보고 이후에 합격자를 뽑으면 된다.
 
 
-## 사실은 37%가 아니라 36.78..%
+## 사실은 37%가 아니라 $$\frac{1}{e} = 36.78..\%$$
 
 앞에서 4 ~ 9명인 경우를 계산한 코드는 순열을 이용하기 때문에 $$O(n!)$$로 돌아간다.
 
@@ -271,12 +271,90 @@ console.log(result);
 
 따라서 더 나은 알고리즘을 찾아 적용하거나, 수학으로 풀어내는 방법이 바람직하다고 할 수 있다.
 
+다음과 같이 변수를 선언하고 생각을 시작하자.
 
-Wikipedia의 [Secretary problem](https://en.wikipedia.org/wiki/Secretary_problem#Deriving_the_optimal_policy )를 읽어보면 이 문제를 수학으로 계산해보면 $$ \frac{1}{e} $$가 나온다고 한다.
+* $$n$$ 명의 지원자가 있다.
+    * 최고의 지원자를 $$\alpha$$라 하자.
+    * 살펴보기 그룹을 $$\beta$$라 하자.
+* $$r$$ 전략 : $$r$$ 명째부터 커트라인 점수를 넘어서는 최초의 지원자를 합격시킨다.
+    * $$r - 1$$ 명까지 살펴보고 커트라인 점수를 정한다.
+    * 즉, 살펴보기 그룹 $$\beta$$는 $$r - 1$$ 명이다.
+* 지원자가 $$n$$명일 때 $$r$$ 전략의 성공 확률을 $$P(r)$$ 이라 하자.
+    * 즉, $$n$$명 중 $$A$$가 채용될 확률을 $$P(r)$$ 이라 한다.
+
+이에 대해 다음과 같이 정리할 수 있을 것이다.
+
+$$
+\begin{align}
+\text{r 전략의 성공 확률} & = \alpha\text{가 1등으로 면접볼 때 r 전략의 성공 확률} \\
+    & + \alpha\text{가 2등으로 면접볼 때 r 전략의 성공 확률} \\
+    & + \alpha\text{가 3등으로 면접볼 때 r 전략의 성공 확률} \\
+    & ... \\
+    & + \alpha\text{가 n등으로 면접볼 때 r 전략의 성공 확률} \\
+\end{align}
+$$
+
+그런데 $$\alpha$$가 살펴보기 그룹 $$\beta$$안에 있다면 전략은 무조건 실패하므로, $$\alpha$$가 면접을 보는 순서가 $$r$$보다 작은 경우는 생각할 필요가 없다.
+
+따라서 다음과 같이 줄일 수 있다.
+
+$$
+\begin{align}
+\text{r 전략의 성공 확률} & = \alpha\text{가 r등으로 면접볼 때 r 전략의 성공 확률} \\
+    & + \alpha\text{가 r + 1등으로 면접볼 때 r 전략의 성공 확률} \\
+    & + \alpha\text{가 r + 2등으로 면접볼 때 r 전략의 성공 확률} \\
+    & ... \\
+    & + \alpha\text{가 n등으로 면접볼 때 r 전략의 성공 확률} \\
+\end{align}
+$$
+
+그렇다면 $$r$$ 전략의 성공 확률 $$P(r)$$은 다음과 같을 것이다.
+
+$$
+\begin{align}
+P(r) & = \sum_{i = r}^{n}P(\text{A가 i 번째 순서} \cap \text{i 번째 지원자를 합격시킴}) \\
+    & = \sum_{i = r}^{n}P(\text{A가 i 번째 순서}) \times P(\text{i 번째 지원자를 합격시킴}) \\
+    & = \sum_{i = r}^{n}P(\text{A가 i 번째 순서}) \times P(\text{i보다 먼저 면접을 보는 지원자들 중 최고 점수를 가진 지원자가} \beta \text{에 있음}) \\
+    & = \sum_{i = r}^{n}\frac{1}{n} \times \frac{r - 1}{i - 1} \\
+    & = \frac{r - 1}{n}\sum_{i = r}^{n}\frac{1}{i - 1}
+\end{align}
+$$
+
+이제 성공 확률이 최대가 되게 하는 $$r$$의 값을 구해보자.
+
+일단 다음과 같이 정의한다.
+
+* $$\lim_{n \to \infty}n$$ &nbsp;
+* $$x = \lim_{n \to \infty}\frac{r}{n}$$ &nbsp;
+* $$t = \lim_{n \to \infty}\frac{i}{n}$$ &nbsp;
+* $$dt = \lim_{n \to \infty}\frac{1}{n}$$ &nbsp;
+
+그리고 식을 다음과 같이 조작하면 $$P(x) = −x \ln (x)$$ 임을 알 수 있다.
+
+$$
+\begin{align}
+P(x) & = \lim_{n\to\infty}\frac{r - 1}{n}\sum_{i = r}^{n}\frac{1}{i - 1} \\
+    & = \lim_{n\to\infty}\frac{r}{n}\sum_{i = r}^{n}\frac{1}{i} \\
+    & = x\lim_{n\to\infty}\sum_{i = r}^{n}\frac{n}{i} \times \frac{1}{n} \\
+    & = x\lim_{n\to\infty}\sum_{i = r}^{n}\frac{n}{i} dt \\
+    & = x \int_{x}^{1}\frac{1}{t}dt \\
+    & = −x \ln (x) \\
+\end{align}
+$$
+
+마지막으로 $$P(x)$$이 최대가 되게 하는 $$x$$의 값을 구하기 위해 미분하여 근을 구하면 $$\frac{1}{e}$$ 가 나온다.
+
+그런데 $$x = \lim_{n \to \infty} \frac{r}{n}$$ 이므로,
+
+무수히 많은 $$n$$ 명의 지원자가 있을 때 $$\alpha$$를 채용할 확률을 최대화하려면 $$n \times \frac{1}{e}$$ 명의 지원자를 살펴보고 커트라인을 정해야 한다는 결론이 나온다.
+
+한편, $$P(\frac{1}{e}) = - \frac{1}{e} \times \ln(\frac{1}{e}) = \frac{1}{e}$$ [이므로](https://m.wolframalpha.com/input/?i=%E2%88%92+%281%2Fe%29+ln+%28+1%2Fe+%29 ), 전체 지원자의 $$\frac{1}{e}$$를 살펴보는 전략을 따를 때 $$\alpha$$를 고용할 확률 또한 $$\frac{1}{e}$$ 가 된다.
+
+
+참고로 $$\frac{1}{e}$$의 값은 다음과 같다.
 
 $$ \frac{1}{e} = 0.3678794411714...$$
 
-과정은 이 문서에서는 소개하지 않기로 한다.
 
 
 # Links
@@ -286,3 +364,4 @@ $$ \frac{1}{e} = 0.3678794411714...$$
 * [비서문제 최고의 배우자 찾기 - 이승훈, 유원대학교 교양융합학부 교수](https://horizon.kias.re.kr/archives/allarticles/mathematics/%EC%B5%9C%EA%B3%A0%EC%9D%98-%EB%B0%B0%EC%9A%B0%EC%9E%90-%EC%B0%BE%EA%B8%B0/ )
 
 * [[Algorithms-to-Live-By]]
+
