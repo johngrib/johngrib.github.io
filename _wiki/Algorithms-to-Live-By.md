@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) 알고리즘, 인생을 계산하다
 summary :
 date    : 2018-01-26 21:35:22 +0900
-updated : 2018-03-31 17:59:58 +0900
+updated : 2018-04-01 21:27:47 +0900
 tags    : book algirithm
 toc     : true
 public  : true
@@ -13,6 +13,9 @@ latex   : false
 * TOC
 {:toc}
 
+
+
+* [[secretary-problem]]
 
 
 # Links
