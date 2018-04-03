@@ -3,7 +3,7 @@ layout  : wiki
 title   : 존 폰 노이만(John von Neumann)
 summary : 천재는 오직 폰 노이만 뿐이다(von Neumann was the only genius)
 date    : 2018-04-03 22:22:28 +0900
-updated : 2018-04-03 22:36:56 +0900
+updated : 2018-04-03 22:57:19 +0900
 tags    : von-neumann sort
 toc     : true
 public  : true
@@ -23,6 +23,8 @@ latex   : false
 
 
 ## 머지 소트(merge sort)
+
+* [[Algorithms-to-Live-By]] 513쪽. 미주 3장 9.
 
 >
 '프로그램 내장' 컴퓨터용으로 최초로 씌어진 코드는 정렬을 효율적으로 하는 프로그램이었다.
