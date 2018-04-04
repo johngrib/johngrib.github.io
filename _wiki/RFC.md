@@ -3,11 +3,11 @@ layout  : wiki
 title   : RFC(Request For Comment)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2018-02-21 12:30:36 +0900
+updated : 2018-04-04 09:06:15 +0900
 tags    : rfc
 toc     : true
 public  : true
-parent  : index
+parent  : what
 latex   : false
 ---
 * TOC

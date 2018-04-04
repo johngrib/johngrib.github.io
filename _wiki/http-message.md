@@ -3,11 +3,11 @@ layout  : wiki
 title   : HTTP 메시지
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2018-01-14 17:33:01 +0900
+updated : 2018-04-04 09:06:37 +0900
 tags    : http
 toc     : true
 public  : true
-parent  : index
+parent  : what
 latex   : false
 ---
 * TOC
