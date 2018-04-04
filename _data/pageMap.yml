@@ -334,6 +334,14 @@
     url: /blog/2018/02/26/sql-char-comparison
     updated: '2018-02-26 21:09:03 +0900'
     children: []
+17-EQUATIONS-THAT-CHANGED-THE-WORLD:
+    type: wiki
+    title: '(책) 세계를 바꾼 17가지 방정식'
+    summary: ""
+    parent: book
+    url: /wiki/17-EQUATIONS-THAT-CHANGED-THE-WORLD
+    updated: '2018-04-12 13:04:33 +0900'
+    children: []
 '2018-01-20':
     type: wiki
     title: '2018-01-20 토요일'
@@ -357,14 +365,14 @@ algorithm:
     parent: index
     url: /wiki/algorithm
     updated: '2018-03-31 18:01:51 +0900'
-    children: [secretary-problem]
+    children: [von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
     title: '(책) 알고리즘, 인생을 계산하다'
     summary: null
     parent: book
     url: /wiki/Algorithms-to-Live-By
-    updated: '2018-04-01 21:27:47 +0900'
+    updated: '2018-04-12 12:30:46 +0900'
     children: []
 ALPHAGO:
     type: wiki
@@ -373,6 +381,14 @@ ALPHAGO:
     parent: movie
     url: /wiki/ALPHAGO
     updated: '2018-02-02 21:39:05 +0900'
+    children: []
+Bayes-theorem:
+    type: wiki
+    title: '베이즈 정리(Bayes'' theorem)'
+    summary: 'p(A|B) = p(A) * p(B|A) / p(B)'
+    parent: math
+    url: /wiki/Bayes-theorem
+    updated: '2018-04-09 14:00:59 +0900'
     children: []
 Bill-Atkinson-productivity:
     type: wiki
@@ -389,7 +405,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 전생검신, 한국과학문학상-수상작품집-제2회]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 전생검신, 한국과학문학상-수상작품집-제2회]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -402,9 +418,9 @@ braille-pattern-chars:
     type: wiki
     title: '점자 패턴 문자(Braille pattern)'
     summary: null
-    parent: index
+    parent: what
     url: /wiki/braille-pattern-chars
-    updated: '2018-01-10 21:14:25 +0900'
+    updated: '2018-04-04 09:05:19 +0900'
     children: []
 brew:
     type: wiki
@@ -478,6 +494,22 @@ Conway-s-law:
     url: /wiki/Conway-s-law
     updated: '2018-02-20 09:00:21 +0900'
     children: []
+cookie-problem:
+    type: wiki
+    title: '쿠키 문제(The cookie problem)'
+    summary: '베이즈 이론 연습문제'
+    parent: problem
+    url: /wiki/cookie-problem
+    updated: '2018-04-15 11:35:51 +0900'
+    children: []
+Cromwell-s-rule:
+    type: wiki
+    title: '크롬웰의 법칙(Cromwell''s rule)'
+    summary: '논리적으로 참 거짓이 명확하지 않은 사건에 대하여 0, 1의 확률을 주면 안 된다는 법칙'
+    parent: math
+    url: /wiki/Cromwell-s-rule
+    updated: '2018-04-08 20:39:13 +0900'
+    children: []
 Design-for-Hackers:
     type: wiki
     title: '(책) 해커를 위한 디자인 레슨'
@@ -526,6 +558,14 @@ diary-2018:
     url: /wiki/diary-2018
     updated: '2018-01-20 17:58:08 +0900'
     children: ['2018-01-20']
+dice-problem:
+    type: wiki
+    title: '주사위 문제'
+    summary: ""
+    parent: problem
+    url: /wiki/dice-problem
+    updated: '2018-04-14 08:51:36 +0900'
+    children: []
 DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
     type: wiki
     title: '더크 젠틀리의 전체론적 탐정 사무소'
@@ -578,9 +618,9 @@ frac1e:
     type: wiki
     title: 'n개의 제비뽑기에 n번 도전'
     summary: 1/e
-    parent: why
+    parent: math
     url: /wiki/frac1e
-    updated: '2018-02-07 21:29:36 +0900'
+    updated: '2018-04-08 20:40:46 +0900'
     children: []
 geacron:
     type: wiki
@@ -642,9 +682,9 @@ Gradle:
     type: wiki
     title: Gradle
     summary: 'Gradle Build Tool'
-    parent: index
+    parent: tools
     url: /wiki/Gradle
-    updated: '2017-12-08 23:17:46 +0900'
+    updated: '2018-04-08 19:47:47 +0900'
     children: []
 groovy:
     type: wiki
@@ -685,14 +725,14 @@ how-to:
     parent: index
     url: /wiki/how-to
     updated: '2018-02-04 15:57:05 +0900'
-    children: [googling, mathjax-latex, von-neumann-extractor]
+    children: [googling, mathjax-latex]
 http-message:
     type: wiki
     title: 'HTTP 메시지'
     summary: null
-    parent: index
+    parent: what
     url: /wiki/http-message
-    updated: '2018-01-14 17:33:01 +0900'
+    updated: '2018-04-04 09:06:37 +0900'
     children: []
 HTTP-no-Kyokasho:
     type: wiki
@@ -716,7 +756,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-04-03 22:20:59 +0900'
+    updated: '2018-04-14 14:45:22 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -748,7 +788,7 @@ John-von-Neumann:
     summary: '천재는 오직 폰 노이만 뿐이다(von Neumann was the only genius)'
     parent: legend
     url: /wiki/John-von-Neumann
-    updated: '2018-04-03 22:36:56 +0900'
+    updated: '2018-04-03 22:57:19 +0900'
     children: []
 labs-strava-com-heatmap:
     type: wiki
@@ -782,6 +822,14 @@ letter-case:
     url: /wiki/letter-case
     updated: '2018-02-07 22:46:36 +0900'
     children: []
+locomotive-problem:
+    type: wiki
+    title: '기관차 문제(locomotive problem)'
+    summary: '기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자'
+    parent: problem
+    url: /wiki/locomotive-problem
+    updated: '2018-04-14 19:24:37 +0900'
+    children: []
 Lubarsky-s-Law-of-Cybernetic-Entomology:
     type: wiki
     title: '루바르스키의 사이버네틱 곤충학 법칙(Lubarsky''s Law of Cybernetic Entomology)'
@@ -806,6 +854,14 @@ mac-keyboard-shortcuts:
     url: /wiki/mac-keyboard-shortcuts
     updated: '2018-01-30 10:59:24 +0900'
     children: []
+math:
+    type: wiki
+    title: 수학
+    summary: null
+    parent: index
+    url: /wiki/math
+    updated: '2018-04-08 20:38:32 +0900'
+    children: [Bayes-theorem, Cromwell-s-rule, frac1e, secretary-problem]
 mathjax-latex:
     type: wiki
     title: 'MathJax로 LaTeX 사용하기'
@@ -822,6 +878,22 @@ media:
     url: /wiki/media
     updated: '2018-01-13 11:20:36 +0900'
     children: [book, movie, review]
+MnM-problem:
+    type: wiki
+    title: 'M&M 문제'
+    summary: null
+    parent: problem
+    url: /wiki/MnM-problem
+    updated: '2018-04-10 22:46:59 +0900'
+    children: []
+Monty-Hall-problem:
+    type: wiki
+    title: '몬티 홀 문제(Monty Hall problem)'
+    summary: ""
+    parent: problem
+    url: /wiki/Monty-Hall-problem
+    updated: '2018-04-15 11:37:47 +0900'
+    children: []
 movie:
     type: wiki
     title: '영화, TV 시리즈'
@@ -894,6 +966,14 @@ private-constructor:
     url: /wiki/private-constructor
     updated: '2018-03-05 16:17:51 +0900'
     children: []
+problem:
+    type: wiki
+    title: 문제
+    summary: ""
+    parent: index
+    url: /wiki/problem
+    updated: '2018-04-08 23:17:36 +0900'
+    children: [cookie-problem, dice-problem, locomotive-problem, MnM-problem, Monty-Hall-problem]
 PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     type: wiki
     title: '(책) Professional 소프트웨어 개발'
@@ -909,7 +989,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [groovy, Java]
+    children: [groovy, Java, yaml]
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -932,15 +1012,15 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-03-29 22:52:17 +0900'
+    updated: '2018-04-12 13:06:14 +0900'
     children: []
 RFC:
     type: wiki
     title: 'RFC(Request For Comment)'
     summary: '일련번호가 매겨진 인터넷 표준 문서'
-    parent: index
+    parent: what
     url: /wiki/RFC
-    updated: '2018-02-21 12:30:36 +0900'
+    updated: '2018-04-04 09:06:15 +0900'
     children: []
 SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness:
     type: wiki
@@ -962,9 +1042,9 @@ secretary-problem:
     type: wiki
     title: '비서 문제(Secretary problem)'
     summary: '37% 법칙'
-    parent: algorithm
+    parent: math
     url: /wiki/secretary-problem
-    updated: '2018-04-01 21:36:33 +0900'
+    updated: '2018-04-08 20:39:37 +0900'
     children: []
 Shortcat:
     type: wiki
@@ -1002,9 +1082,9 @@ special-chars:
     type: wiki
     title: '특수문자 모음'
     summary: '특수문자 검색하다 빡쳐서 작성한 문서'
-    parent: index
+    parent: what
     url: /wiki/special-chars
-    updated: '2018-02-09 13:20:18 +0900'
+    updated: '2018-04-12 21:02:50 +0900'
     children: []
 static-factory-method-pattern:
     type: wiki
@@ -1054,6 +1134,14 @@ THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING:
     url: /wiki/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING
     updated: '2018-01-12 10:46:53 +0900'
     children: []
+Think-Bayes:
+    type: wiki
+    title: '(책) 파이썬을 활용한 베이지안 통계'
+    summary: '동전 던지기와 하키 승률로 배우는 데이터 분석'
+    parent: ""
+    url: /wiki/Think-Bayes
+    updated: '2018-04-15 07:50:00 +0900'
+    children: []
 til:
     type: wiki
     title: 'Today I Learned'
@@ -1077,7 +1165,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [command-line, mac-apps, useful-site, web-browser-extension]
+    children: [command-line, Gradle, mac-apps, useful-site, web-browser-extension]
 top:
     type: wiki
     title: 'top 명령어'
@@ -1106,9 +1194,9 @@ URI:
     type: wiki
     title: URI
     summary: 'Uniform Resource Identifier'
-    parent: index
+    parent: what
     url: /wiki/URI
-    updated: '2017-12-18 23:00:44 +0900'
+    updated: '2018-04-08 19:46:57 +0900'
     children: []
 use-java-primitive-type-for-performance:
     type: wiki
@@ -1141,7 +1229,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [vim-conceallevel, vim-f-hangul, vim-ycm-python3, vimwiki]
+    children: [vim-conceallevel, vim-f-hangul, vim-rest-console, vim-ycm-python3, vimwiki]
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -1157,6 +1245,14 @@ vim-f-hangul:
     parent: Vim
     url: /wiki/vim-f-hangul
     updated: '2018-03-18 22:51:56 +0900'
+    children: []
+vim-rest-console:
+    type: wiki
+    title: 'vim-rest-console 사용법'
+    summary: 'vim을 cURL 클라이언트로 사용하자'
+    parent: Vim
+    url: /wiki/vim-rest-console
+    updated: '2018-04-12 21:57:49 +0900'
     children: []
 vim-ycm-python3:
     type: wiki
@@ -1180,15 +1276,15 @@ vimwiki:
     summary: '로컬에서 Vim으로 관리하는 나만의 위키'
     parent: Vim
     url: /wiki/vimwiki
-    updated: '2018-03-29 22:48:12 +0900'
+    updated: '2018-04-05 22:24:13 +0900'
     children: []
 von-neumann-extractor:
     type: wiki
     title: '폰 노이만식 난수 생성법(Basic von Neumann extractor)'
     summary: '0과 1이 발생할 확률이 다른 경우 사용하자'
-    parent: how-to
+    parent: algorithm
     url: /wiki/von-neumann-extractor
-    updated: '2018-02-04 15:55:33 +0900'
+    updated: '2018-04-08 15:12:05 +0900'
     children: []
 Walking-Dead:
     type: wiki
@@ -1206,6 +1302,14 @@ web-browser-extension:
     url: /wiki/web-browser-extension
     updated: '2018-03-04 00:38:25 +0900'
     children: [vimium]
+what:
+    type: wiki
+    title: what
+    summary: null
+    parent: index
+    url: /wiki/what
+    updated: '2018-04-04 09:04:07 +0900'
+    children: [braille-pattern-chars, http-message, RFC, special-chars, URI]
 why:
     type: wiki
     title: why
@@ -1213,7 +1317,7 @@ why:
     parent: index
     url: /wiki/why
     updated: '2018-02-07 21:29:47 +0900'
-    children: [frac1e, letter-case, why-http-80-https-443]
+    children: [letter-case, why-http-80-https-443]
 why-http-80-https-443:
     type: wiki
     title: 'http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?'
@@ -1226,9 +1330,9 @@ yaml:
     type: wiki
     title: YAML
     summary: 'YAML Ain''t Markup Language'
-    parent: index
+    parent: programming-language
     url: /wiki/yaml
-    updated: '2017-12-02 16:45:25 +0900'
+    updated: '2018-04-08 19:48:46 +0900'
     children: []
 그림으로-보는-서양검술-메모:
     type: wiki

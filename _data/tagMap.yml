@@ -1,3 +1,9 @@
+math:
+    - {fileName: 17-EQUATIONS-THAT-CHANGED-THE-WORLD}
+    - {fileName: Cromwell-s-rule}
+    - {fileName: frac1e}
+    - {fileName: math}
+    - {fileName: secretary-problem}
 jekyll:
     - {fileName: 2017-01-21-create-jekyll-blog}
     - {fileName: 2017-01-22-jekyll-category-tag}
@@ -88,6 +94,7 @@ vim:
     - {fileName: Vim}
     - {fileName: vim-conceallevel}
     - {fileName: vim-f-hangul}
+    - {fileName: vim-rest-console}
     - {fileName: vim-ycm-python3}
     - {fileName: vimium}
     - {fileName: vimwiki}
@@ -212,6 +219,13 @@ google:
     - {fileName: googling}
 AI:
     - {fileName: ALPHAGO}
+bayes:
+    - {fileName: Bayes-theorem}
+    - {fileName: cookie-problem}
+    - {fileName: dice-problem}
+    - {fileName: locomotive-problem}
+    - {fileName: MnM-problem}
+    - {fileName: Monty-Hall-problem}
 story:
     - {fileName: Bill-Atkinson-productivity}
     - {fileName: gerald-weinberg-language-king}
@@ -285,6 +299,10 @@ proverb:
     - {fileName: orange-juice-test}
     - {fileName: Postel-s-law}
     - {fileName: proverb}
+history:
+    - {fileName: Cromwell-s-rule}
+    - {fileName: geacron}
+    - {fileName: TETRIS-EFFECT}
 design:
     - {fileName: Design-for-Hackers}
 drama:
@@ -311,18 +329,12 @@ fish:
     - {fileName: fish-shell}
 terminal:
     - {fileName: fish-shell}
-math:
-    - {fileName: frac1e}
-    - {fileName: secretary-problem}
 확률:
     - {fileName: frac1e}
 map:
     - {fileName: geacron}
     - {fileName: Geek-Atlas}
     - {fileName: labs-strava-com-heatmap}
-history:
-    - {fileName: geacron}
-    - {fileName: TETRIS-EFFECT}
 science:
     - {fileName: Geek-Atlas}
     - {fileName: Grote-Reber-home-made-radio-astronomy}
@@ -363,6 +375,7 @@ http:
     - {fileName: HTTP-no-Kyokasho}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
     - {fileName: URI}
+    - {fileName: vim-rest-console}
     - {fileName: why-http-80-https-443}
 review:
     - {fileName: HTTP-no-Kyokasho}
@@ -465,6 +478,8 @@ random:
     - {fileName: von-neumann-extractor}
 zombie:
     - {fileName: Walking-Dead}
+what:
+    - {fileName: what}
 why:
     - {fileName: why}
 yaml:

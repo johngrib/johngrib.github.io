@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-04-03 22:20:59 +0900
+updated : 2018-04-14 14:45:22 +0900
 tags    : index
 toc     : true
 public  : true
@@ -12,8 +12,7 @@ comment : false
 * [[diary]]
 
 * [[algorithm]]
-    * [[secretary-problem]]
-* [[braille-pattern-chars]]
+    * [[von-neumann-extractor]]
 * [[clipping]]{글 모음 및 요약}
     * [[legend]]
         * [[Bill-Atkinson-productivity]]
@@ -23,15 +22,19 @@ comment : false
     * [[Software-Engineering-Code-of-Ethics]]
     * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
 * [[coding-font]]{코딩 폰트}
-* [[Gradle]]
 * [[how-to]]
     * [[googling]]
     * [[mathjax-latex]]
-    * [[von-neumann-extractor]]
-* [[http-message]]
 * [[mac-keyboard-shortcuts]]
+* [[math]]
+    * [[Bayes-theorem]]
+    * [[Cromwell-s-rule]]
+    * [[frac1e]]{n개의 제비뽑기에 n번 도전}
+    * rule-of-succession
+    * [[secretary-problem]]
 * [[media]]
     * [[book]]{도서}
+        * [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]
         * [[Algorithms-to-Live-By]]
         * [[Clean-Code]]
         * [[Code-Complete-2]]
@@ -47,11 +50,13 @@ comment : false
         * [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]
         * [[SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness]]
         * [[secret-of-consulting]]
-        * [[Software-Craftsman]]{소프트웨어 장인}
         * [[Shunsho-juwa]]{수학자의 공부}
+        * [[Software-Craftsman]]{소프트웨어 장인}
         * [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}
         * [[TETRIS-EFFECT]]
         * [[TEXT-BOOK-OF-THE-WEB-ENGINEER]]{웹 엔지니어의 교과서}
+        * [[The-Jargon-File]]
+        * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
         * [[toda-seiji-scientia]]
         * [[그림으로-보는-서양검술-메모]]
         * [[전생검신]]
@@ -67,6 +72,12 @@ comment : false
 * [[design-pattern]]
     * [[builder-pattern]]
     * [[static-factory-method-pattern]]
+* [[problem]]
+    * [[cookie-problem]]
+    * [[dice-problem]]
+    * [[locomotive-problem]]
+    * [[MnM-problem]]
+    * [[Monty-Hall-problem]]
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
     * [[Java]]
@@ -75,6 +86,7 @@ comment : false
         * [[Object-toString]]
         * [[private-constructor]]
         * [[use-java-primitive-type-for-performance]]
+    * [[YAML]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
     * [[airplain-rule]]
     * [[Boy-Scout-Rule]]
@@ -85,9 +97,6 @@ comment : false
     * [[No-Silver-Bullet]]
     * [[orange-juice-test]]
     * [[Postel-s-law]]
-* [[RFC]]
-* [[special-chars]]
-* [[The-Jargon-File]]
 * [[tools]]
     * [[command-line]]
         * [[df]]
@@ -97,6 +106,7 @@ comment : false
         * [[brew]]
         * [[top]]
         * [[uptime]]
+    * [[Gradle]]
     * [[mac-apps]]
         * [[Shortcat]]
     * [[useful-site]]
@@ -110,17 +120,21 @@ comment : false
 * [[til]]
     * [[git-checkout-specific-files]]
     * [[trouble-shooting-node-7-install]]
-* [[URI]]
 * [[Vim]]
     * [[vim-conceallevel]]{conceallevel (Vim)}
     * [[vim-f-hangul]]
     * [[vim-ycm-python3]]
+    * [[vim-rest-console]]
     * [[vimwiki]]
+* [[what]]
+    * [[braille-pattern-chars]]
+    * [[http-message]]
+    * [[RFC]]
+    * [[special-chars]]
+    * [[URI]]
 * [[why]]
-    * [[frac1e]]{n개의 제비뽑기에 n번 도전}
     * [[letter-case]]
     * [[why-http-80-https-443]]
-* [[YAML]]
 
 ---
 
