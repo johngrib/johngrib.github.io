@@ -3,9 +3,8 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2018-03-29 22:48:12 +0900
+updated : 2018-04-05 12:21:23 +0900
 tags    : vim wiki
-toc     : true
 public  : true
 parent  : Vim
 latex   : false
@@ -337,6 +336,96 @@ Vimwiki는 [Vim-startify](https://github.com/mhinz/vim-startify )와 함께 사�
 Vimwiki 사용 중 session을 저장하고, 저장한 session을 필요할 때마다 불러오는 방식으로 사용하면 적절하다.
 
 Startify와 함께 사용하는지 아닌지에 따라 Vimwiki의 활용도는 큰 차이가 난다고 생각한다.
+
+## Vimscript 서포트 코드
+
+### 메타데이터의 `updated` 항목 자동 업데이트
+
+파일을 편집할 때마다 `updated`의 시간을 손으로 편집해주는 건 굉장히 귀찮은 일이다.
+
+따라서 다음과 같이 호출하면 `updated`의 시간을 자동으로 현재 시간으로 수정해주는 함수를 `.vimrc`에 추가해주자.
+
+```viml
+function! LastModified()
+    if g:md_modify_disabled
+        return
+    endif
+  if &modified
+    " echo('markdown updated time modified')
+    let save_cursor = getpos(".")
+    let n = min([10, line("$")])
+    keepjumps exe '1,' . n . 's#^\(.\{,10}updated\s*: \).*#\1' .
+          \ strftime('%Y-%m-%d %H:%M:%S +0900') . '#e'
+    call histdel('search', -1)
+    call setpos('.', save_cursor)
+  endif
+endfun
+```
+
+### 새로운 문서 파일을 만들었을 때 기본 형식이 입력되도록 한다
+
+메타 데이터를 일일이 입력하는 것 역시 귀찮으니 다음과 같이 `.vimrc`에 추가해주자.
+
+`g:vimwiki_list` 배열의 `path` 경로를 확인하여,
+현재 파일이 Vimwiki의 하위 경로에 있고, 내용이 한 줄 밖에 없다면
+메타 데이터 기본 값을 넣어주는 함수이다.
+
+```viml
+function! NewTemplate()
+
+    let l:wiki_directory = v:false
+
+    for wiki in g:vimwiki_list
+        if expand('%:p:h') . '/' == wiki.path
+            let l:wiki_directory = v:true
+            break
+        endif
+    endfor
+
+    if !l:wiki_directory
+        return
+    endif
+
+    if line("$") > 1
+        return
+    endif
+
+    let l:template = []
+    call add(l:template, '---')
+    call add(l:template, 'layout  : wiki')
+    call add(l:template, 'title   : ')
+    call add(l:template, 'summary : ')
+    call add(l:template, 'date    : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
+    call add(l:template, 'updated : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
+    call add(l:template, 'tags    : ')
+    call add(l:template, 'toc     : true')
+    call add(l:template, 'public  : true')
+    call add(l:template, 'parent  : ')
+    call add(l:template, 'latex   : false')
+    call add(l:template, '---')
+    call add(l:template, '* TOC')
+    call add(l:template, '{:toc}')
+    call add(l:template, '')
+    call add(l:template, '# ')
+    call setline(1, l:template)
+    execute 'normal! G'
+    execute 'normal! $'
+
+    echom 'new wiki page has created'
+endfunction
+```
+
+### augroup 등록
+
+위의 두 함수를 다음과 같이 `autocmd`로 등록하고, `augroup`으로 묶어주면 된다.
+
+```viml
+augroup vimwikiauto
+    autocmd BufWritePre *.md call LastModified()
+    autocmd BufRead,BufNewFile *.md call NewTemplate()
+augroup END
+```
+
 
 ## Links
 
