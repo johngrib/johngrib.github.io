@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2018-04-05 12:21:23 +0900
+updated : 2018-04-05 17:27:34 +0900
 tags    : vim wiki
 public  : true
 parent  : Vim
@@ -11,7 +11,6 @@ latex   : false
 ---
 * TOC
 {:toc}
-
 
 ## 개요
 
@@ -362,6 +361,12 @@ function! LastModified()
 endfun
 ```
 
+위의 함수가 자동으로 호출되도록 `autocmd`로 등록해준다.
+
+```viml
+autocmd BufWritePre *.md call LastModified()
+```
+
 ### 새로운 문서 파일을 만들었을 때 기본 형식이 입력되도록 한다
 
 메타 데이터를 일일이 입력하는 것 역시 귀찮으니 다음과 같이 `.vimrc`에 추가해주자.
@@ -415,14 +420,46 @@ function! NewTemplate()
 endfunction
 ```
 
+위의 함수가 자동으로 호출되도록 `autocmd`로 등록해준다.
+
+```viml
+autocmd BufRead,BufNewFile *.md call NewTemplate()
+```
+
+### 자동 저장 기능
+
+* 기왕이면 자동 저장 기능도 있으면 좋을 것 같다.
+* 그러나 모든 파일을 자동으로 저장하고 싶지는 않다.
+    * 위키 경로에 있는 `.md` 파일만 저장하도록 한다.
+    * 아직 파일로 저장하지 않고, 버퍼에만 있는 파일은 저장하지 않는다.
+    * 즉, 1번만 저장하면, 이후부터는 자동으로 저장된다.
+
+```viml
+function! CustomSave()
+    " 시간을 업데이트한다
+    call LastModified()
+    " 파일이 있는 경우에만 저장한다
+    if !empty(glob(expand('%:p')))
+       w
+    endif
+endfunction
+```
+
+위의 함수가 자동으로 호출되도록 `autocmd`로 등록해준다.
+
+```viml
+autocmd CursorHold,InsertLeave,TextChanged *wiki/*.md call CustomSave()
+```
+
 ### augroup 등록
 
-위의 두 함수를 다음과 같이 `autocmd`로 등록하고, `augroup`으로 묶어주면 된다.
+위의 함수들을 다음과 같이 `autocmd`로 등록하고, `augroup`으로 묶어주면 된다.
 
 ```viml
 augroup vimwikiauto
     autocmd BufWritePre *.md call LastModified()
     autocmd BufRead,BufNewFile *.md call NewTemplate()
+    autocmd CursorHold,InsertLeave,TextChanged *wiki/*.md call CustomSave()
 augroup END
 ```
 
