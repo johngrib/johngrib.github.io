@@ -3,7 +3,7 @@ layout  : wiki
 title   : 베이즈 정리(Bayes' theorem)
 summary : p(A|B) = p(A) * p(B|A) / p(B)
 date    : 2018-04-08 20:50:58 +0900
-updated : 2018-04-08 23:14:26 +0900
+updated : 2018-04-08 23:18:52 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -17,7 +17,7 @@ latex   : true
 
 * 두 확률 변수의 사전 확률과 사후 확률 사이의 관계를 나타내는 정리.
 
-$$ p(A \mid B) = \frac{p(B \mid A) \space p(A)}{p(B)} \propto p(X \mid A) \space p(A) $$
+$$ p(A \mid B) = \frac{p(B \mid A) \space p(A)}{p(B)} \propto p(B \mid A) \space p(A) $$
 
 ## 식에 대한 설명
 
