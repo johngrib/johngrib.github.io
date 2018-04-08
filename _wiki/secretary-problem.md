@@ -3,11 +3,11 @@ layout  : wiki
 title   : 비서 문제(Secretary problem)
 summary : 37% 법칙
 date    : 2018-03-31 18:03:21 +0900
-updated : 2018-04-01 21:36:33 +0900
+updated : 2018-04-08 20:39:37 +0900
 tags    : math
 toc     : true
 public  : true
-parent  : algorithm
+parent  : math
 latex   : true
 ---
 * TOC

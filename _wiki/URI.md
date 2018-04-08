@@ -2,11 +2,11 @@
 layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
-updated : 2017-12-18 23:00:44 +0900
+updated : 2018-04-08 19:46:57 +0900
 tags    : http
 toc     : true
 public  : true
-parent  : index
+parent  : what
 latex   : false
 ---
 * TOC
