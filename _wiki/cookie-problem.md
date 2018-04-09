@@ -3,7 +3,7 @@ layout  : wiki
 title   : 쿠키 문제(The cookie problem)
 summary : 베이즈 이론 연습문제
 date    : 2018-04-09 09:14:07 +0900
-updated : 2018-04-09 10:36:27 +0900
+updated : 2018-04-09 21:33:33 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -100,4 +100,5 @@ $$
 
 # Links
 
+* [[Think-Bayes]]
 * <https://allendowney.blogspot.kr/2011/10/all-your-bayes-are-belong-to-us.html >
