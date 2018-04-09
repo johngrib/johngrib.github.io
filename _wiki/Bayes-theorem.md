@@ -3,7 +3,7 @@ layout  : wiki
 title   : 베이즈 정리(Bayes' theorem)
 summary : p(A|B) = p(A) * p(B|A) / p(B)
 date    : 2018-04-08 20:50:58 +0900
-updated : 2018-04-09 13:45:23 +0900
+updated : 2018-04-09 14:00:59 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -17,7 +17,7 @@ latex   : true
 
 * 두 확률 변수의 사전 확률과 사후 확률 사이의 관계를 나타내는 정리.
 
-$$ p(A \mid B) = \frac{p(B \mid A) \space p(A)}{p(B)} \propto p(A \mid B) \space p(A) $$
+$$ p(A \mid B) = \frac{p(B \mid A) \space p(A)}{p(B)} \propto \mathcal{L}(A \mid B) \space p(A) $$
 
 ## 식에 대한 설명
 
@@ -37,6 +37,9 @@ $$ p(B) \space p(A \mid B) = p(A) \space p(B \mid A) $$
 
 $$ p(A \mid B) = {p(A) \space p(B \mid A) \over p(B)} $$
 
+## 가능도(우도)
+
+$$ \mathcal{L}(A \mid B) = p(B \mid A) $$ 이며, A가 주어졌을 때 B의 가능도(우도)라 부른다.
 
 ## 베이즈 이론의 통시적 해석
 
