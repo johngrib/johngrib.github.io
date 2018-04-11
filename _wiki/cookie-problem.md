@@ -3,7 +3,7 @@ layout  : wiki
 title   : 쿠키 문제(The cookie problem)
 summary : 베이즈 이론 연습문제
 date    : 2018-04-09 09:14:07 +0900
-updated : 2018-04-09 21:33:33 +0900
+updated : 2018-04-11 22:55:20 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -28,6 +28,8 @@ latex   : true
 그렇다면 이 때 이 바닐라 쿠키가 그릇1에서 나왔을 가능성은?
 
 # 풀이
+
+## 손으로 풀기
 
 바닐라 쿠키가 나온 상태에서 그릇 1의 가능성을 따지는 것이므로 다음의 식을 풀면 된다.
 
@@ -97,8 +99,41 @@ $$
 
 따라서, 답은 $$3 \over 5$$ 이다.
 
+## Think-Bayes 책에서 제공하는 라이브러리를 사용해 풀기
+
+* [cookie.py](https://github.com/AllenDowney/ThinkBayes/blob/master/code/cookie.py )
+
+```python
+"""This file contains code for use with "Think Bayes",
+by Allen B. Downey, available from greenteapress.com
+
+Copyright 2012 Allen B. Downey
+License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
+"""
+
+from thinkbayes import Pmf
+
+pmf = Pmf()
+pmf.Set('Bowl 1', 0.5)  # p(B1)
+pmf.Set('Bowl 2', 0.5)  # p(B2)
+
+pmf.Mult('Bowl 1', 0.75)    # p(B1) * p(V | B1)
+pmf.Mult('Bowl 2', 0.5)     # p(B2) * p(V | B2)
+
+pmf.Normalize()
+
+print pmf.Prob('Bowl 1')
+```
+
+위의 파이썬 코드를 실행하면 `0.6`이 나온다.
+
+```bash
+$ python cookie.py
+0.6
+```
 
 # Links
 
 * [[Think-Bayes]]
+    * [cookie.py](https://github.com/AllenDowney/ThinkBayes/blob/master/code/cookie.py )
 * <https://allendowney.blogspot.kr/2011/10/all-your-bayes-are-belong-to-us.html >
