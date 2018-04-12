@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2018-04-04 09:04:34 +0900
+updated : 2018-04-12 21:02:50 +0900
 tags    : special-chars
 toc     : true
 public  : true
@@ -769,7 +769,8 @@ val hello = "hello, world"
 
 ## `=` Equals sign
 
-* 이퀄스, 같다.
+* 이퀄스, 등호, 같다.
+* 1557년 무렵에 만들어진 기호이다.
 * 대부분의 프로그래밍 언어에서 대입 연산자로 사용한다.
 * `==`는 다수의 프로그래밍 언어에서 비교 연산자로 사용한다.
     * JavaScript, PHP 등에서는 `===`도 사용한다.
@@ -783,6 +784,24 @@ val hello = "hello, world"
 * [RFC 20](https://tools.ietf.org/html/rfc20#section-4.2 )
 * [fileformat.info/info/unicode/char/3D](http://www.fileformat.info/info/unicode/char/3D )
 * [Equals_sign(wikipedia)](https://en.wikipedia.org/wiki/Equals_sign )
+
+### 등호의 기원
+
+이언 스튜어트의 [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]{세계를 바꾼 17가지 방정식} 머리말에서 발췌.
+
+>
+방정식의 힘은 그 근원이 단순하다.
+방정식은 두 계산이 서로 달라 보여도 답이 같다는 것을 말해 준다.
+핵심 기호는 등호(=)다.
+대다수 수학 기호의 기원은 고대의 안개 속으로 사라졌든가 아니면 반대로 너무나 최근에 생겨서 그 기원이 무엇인지 전혀 의심할 여지가 없다.
+그러나 등호는 450년도 더 전에 등장했음에도 불구하고 만든 사람뿐만이 아니라 만든 이유까지 알려져 있다는 점에서 특별하다.
+등호는 로버트 레코드(Robert Recorde)가 1557년에 "지혜의 숫돌(The Whetstone of Witte)"에서 처음 선보였다.
+레코드는 "~는 ~와 같다"라는 말을 지루하게 반복하지 않도록 서로 평행한 두 선을 사용했다.
+(그는 '쌍둥이'라는 뜻의 사어인 'gemowe'를 썼다.)
+그가 그 기호를 쓴 것은 "세상에서 그 두 선만큼 똑같은 것은 없기" 때문이었다.
+레코드의 선택은 옳았다.
+등호는 450년이라는 오랜 세월 동안 사용되었다.
+
 
 ### Perl 언어의 `=`가 포함된 연산자
 
