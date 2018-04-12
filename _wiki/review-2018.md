@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-03-29 22:52:17 +0900
+updated : 2018-04-12 13:06:14 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-04-12 [[Algorithms-to-Live-By]]
 * 2018-03-29 82년생 김지영
 * 2018-03-28 미로 속의 암소
 * 2018-03-23 행성 대관람차 - 곽재식 소설집
@@ -42,6 +43,7 @@ latex   : false
 
 ## 영화/드라마
 
+* 2018-04-07 레모니 스니켓의 위험한 대결 시즌2
 * 2018-03-25 Pacific Rim: Uprising - 마징가 오마주와 재해석된 보스 보로트가 좋았다!
 * 2018-03-01 Disney Moana - 아름다운 영화였다
 * 2018-03-01 Rogue One: A Star Wars Story
