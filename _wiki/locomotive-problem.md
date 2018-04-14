@@ -3,7 +3,7 @@ layout  : wiki
 title   : 기관차 문제(locomotive problem)
 summary : 기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자
 date    : 2018-04-14 12:04:06 +0900
-updated : 2018-04-14 19:21:48 +0900
+updated : 2018-04-14 19:24:37 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : true
 
 # 개요
 
+* 이 문서는 [[Think-Bayes]] 책 43~45쪽을 공부한 내용이다.
 * 프레드릭 모스텔러(Frederick Mosteller)의 "모스텔러의 확률 고급 문제 50선과 해답"을 보면 기관차 문제가 있다.
 
 >
