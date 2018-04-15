@@ -222,6 +222,7 @@ AI:
 bayes:
     - {fileName: Bayes-theorem}
     - {fileName: cookie-problem}
+    - {fileName: Copernican-Principle}
     - {fileName: dice-problem}
     - {fileName: locomotive-problem}
     - {fileName: MnM-problem}
@@ -299,6 +300,8 @@ proverb:
     - {fileName: orange-juice-test}
     - {fileName: Postel-s-law}
     - {fileName: proverb}
+추정:
+    - {fileName: Copernican-Principle}
 history:
     - {fileName: Cromwell-s-rule}
     - {fileName: geacron}

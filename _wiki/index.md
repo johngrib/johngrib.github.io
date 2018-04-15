@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-04-14 14:45:22 +0900
+updated : 2018-04-15 16:44:05 +0900
 tags    : index
 toc     : true
 public  : true
@@ -91,6 +91,7 @@ comment : false
     * [[airplain-rule]]
     * [[Boy-Scout-Rule]]
     * [[Brooks-s-law]]
+    * [[Copernican-Principle]]
     * [[Conway-s-law]]
     * [[Edsel-edict]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}

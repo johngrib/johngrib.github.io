@@ -502,6 +502,14 @@ cookie-problem:
     url: /wiki/cookie-problem
     updated: '2018-04-15 11:35:51 +0900'
     children: []
+Copernican-Principle:
+    type: wiki
+    title: '코페르니쿠스 원리(Copernican Principle)와 방법론(Copernicus Method)'
+    summary: '아무런 정보가 없을 때 종말을 추정하는 방법'
+    parent: proverb
+    url: /wiki/Copernican-Principle
+    updated: '2018-04-15 17:12:08 +0900'
+    children: []
 Cromwell-s-rule:
     type: wiki
     title: '크롬웰의 법칙(Cromwell''s rule)'
@@ -564,7 +572,7 @@ dice-problem:
     summary: ""
     parent: problem
     url: /wiki/dice-problem
-    updated: '2018-04-14 08:51:36 +0900'
+    updated: '2018-04-15 12:37:36 +0900'
     children: []
 DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
     type: wiki
@@ -756,7 +764,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-04-14 14:45:22 +0900'
+    updated: '2018-04-15 16:44:05 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -828,7 +836,7 @@ locomotive-problem:
     summary: '기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자'
     parent: problem
     url: /wiki/locomotive-problem
-    updated: '2018-04-14 19:24:37 +0900'
+    updated: '2018-04-15 16:11:21 +0900'
     children: []
 Lubarsky-s-Law-of-Cybernetic-Entomology:
     type: wiki
@@ -884,7 +892,7 @@ MnM-problem:
     summary: null
     parent: problem
     url: /wiki/MnM-problem
-    updated: '2018-04-10 22:46:59 +0900'
+    updated: '2018-04-15 12:11:30 +0900'
     children: []
 Monty-Hall-problem:
     type: wiki
@@ -997,7 +1005,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-02-21 22:37:29 +0900'
-    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Edsel-edict, Lubarsky-s-Law-of-Cybernetic-Entomology, No-Silver-Bullet, orange-juice-test, Postel-s-law]
+    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, Lubarsky-s-Law-of-Cybernetic-Entomology, No-Silver-Bullet, orange-juice-test, Postel-s-law]
 review:
     type: wiki
     title: '리뷰 모음'
