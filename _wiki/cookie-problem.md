@@ -3,7 +3,7 @@ layout  : wiki
 title   : 쿠키 문제(The cookie problem)
 summary : 베이즈 이론 연습문제
 date    : 2018-04-09 09:14:07 +0900
-updated : 2018-04-11 22:55:20 +0900
+updated : 2018-04-15 10:10:20 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -50,6 +50,7 @@ $$ p(B_1 \mid V) = {p(B_1) \space p(V \mid B_1) \over p(V)} $$
 | $$p(B_1)$$        | 그릇1을 선택할 확률                            | $$ 1 \over 2 $$                  |
 | $$p(V)$$          | 바닐라 쿠키를 선택할 확률                      | 모름                             |
 | $$p(V \mid B_1)$$ | 그릇1에서 바닐라 쿠키를 선택할 확률            | $$ {30 \over 40} = {3 \over 4}$$ |
+| $$p(V \mid B_2)$$ | 그릇2에서 바닐라 쿠키를 선택할 확률            | $$ {20 \over 40} = {1 \over 2}$$ |
 | $$p(B_1 \mid V)$$ | 바닐라 쿠키를 선택했는데 그릇1에서 나왔을 확률 | 이 값이 답이다                   |
 
 바닐라 쿠키를 선택할 확률 $$p(V)$$를 먼저 구해보자.
@@ -131,6 +132,57 @@ print pmf.Prob('Bowl 1')
 $ python cookie.py
 0.6
 ```
+
+
+
+## 직접 코딩해 풀기
+
+
+[[Think-Bayes]] 저자가 제공하는 라이브러리를 사용하는 것은 편리한 일이지만,
+파이썬2에서만 돌아가고 상속구조가 있어 한 눈에 보기 불편하다는 단점이 있다.
+
+그래서 책의 소스코드를 보고 다음과 같이 자바스크립트로 문제를 풀어 보았다.
+
+
+```javascript
+// 사전 분포
+const pmf = {
+    'Bowl1': (1/2), // p(B_1)
+    'Bowl2': (1/2), // p(B_2)
+};
+
+// 우도
+const pvb1 = (3/4);
+const pvb2 = (1/2);
+
+
+// p(B_1) * p(V|B_1)
+// p(B_2) * p(V|B_2)
+pmf['Bowl1'] = pmf['Bowl1'] * pvb1;
+pmf['Bowl2'] = pmf['Bowl2'] * pvb2;
+
+// 정규화
+function normalize(dict) {
+    const values = Object.values(dict);
+    const sum = values.reduce((a, b) => a + b);
+    const result = {};
+    Object.keys(dict).forEach((key) => {
+        result[key] = dict[key] / sum;
+    });
+    return result;
+}
+
+console.log(normalize(pmf));
+
+// 결과는 { Bowl1: 0.6, Bowl2: 0.4 }
+```
+
+`normalize`를 사용하는 방식이 인상적이다.
+
+* 그 결과로, `B_1`과 `B_2`를 한 번에 구할 수 있다.
+* 한편, `normalize`가 `p(V)`를 계산해 적용하는 작업이므로 수작업으로 `p(V)`를 계산하지 않아도 된다는 장점이 있다.
+
+
 
 # Links
 
