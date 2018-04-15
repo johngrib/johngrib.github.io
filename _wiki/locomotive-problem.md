@@ -3,7 +3,7 @@ layout  : wiki
 title   : 기관차 문제(locomotive problem)
 summary : 기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자
 date    : 2018-04-14 12:04:06 +0900
-updated : 2018-04-15 15:02:46 +0900
+updated : 2018-04-15 15:32:25 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : true
 
 # 개요
 
-* 이 문서는 [[Think-Bayes]] 책 43~46쪽을 공부한 내용이다.
+* 이 문서는 [[Think-Bayes]] 책 43~49쪽을 공부한 내용이다.
 * 프레드릭 모스텔러(Frederick Mosteller)의 "모스텔러의 확률 고급 문제 50선과 해답"을 보면 기관차 문제가 있다.
 
 >
@@ -59,6 +59,10 @@ latex   : true
 | $$p(D \mid H_{x})$$  | x면체 주사위를 던져 60이 나올 확률            | $$\frac{1}{x}$$    |
 | $$p(D)$$             | 주사위를 던져 60이 나올 확률                  | 아직 모름          |
 
+* 편의상 철도 회사가 보유한 총 철도의 수가 n이라 하자.
+    * 즉, $$p(H_{60})$$은 철도 회사가 보유한 n 대의 기관차 중 우리가 목격한 노선 위를 지나는 기관차가 60대일 확률이다.
+    * 즉, 우리가 구하려 하는 것은 총 기관차 수 n 중에서 관찰 대상인 노선에서 운행되는 기관차의 수이다.
+
 ## p(D)를 구하자
 
 $$p(D)$$의 개념은 다음과 같다.
@@ -97,6 +101,7 @@ $$
 $$p(D) = \lim_{m \to \infty} \frac{1}{m-59} \times \left( H_m - H_{59} \right)$$
 
 그런데, n이 너무 커지면 곤란하기도 하고, 현실의 열차가 무한히 많을 수는 없으니 편의상 1000 까지만 따져 보도록 하자.
+
 
 $$p(D) = \frac{1}{1000 - 59} \times \left( H_{1000} - H_{59} \right)$$
 
@@ -344,6 +349,8 @@ $$
 
 그렇다면 다음과 같이 계산할 수 있을 것이다.
 
+* [train2.js](https://github.com/johngrib/think-bayes-study/blob/master/code/train2.js )
+
 ```javascript
 function main(max) {
     const hypos = range(1, max);
@@ -375,11 +382,60 @@ main(2000); // 171.33818109150928
 | 2000   | 약 552.18          | 약 **171.34**       |
 
 
+
+## 사전 확률의 대안
+
+* 위와 같은 상황에서는 가급적이면 신뢰할 수 있는 데이터를 많이 수집하는 것이 좋다.
+* 철도 회사의 규모를 알아내기 위해 기관차 운송 분야 전문가와 인터뷰를 하는 것도 방법.
+
+여기에서는 로버트 [엑스텔(Robert Axtell)의 멱법칙](http://science.sciencemag.org/content/293/5536/1818/tab-pdf )을 사용해보도록 하자.
+
+멱법칙 : 주어진 규모의 회사 크기는 규모의 분포의 역수이다.
+
+$$PMF(x) \propto \left( \frac{1}{x} \right)^{a}$$
+
+멱법칙 사전 확률을 고려하면 다음과 같이 `init`함수를 수정할 수 있다.
+
+* [train3.js](https://github.com/johngrib/think-bayes-study/blob/master/code/train3.js )
+
+```javascript
+function init(hypos) {
+    const dict = {};
+    const alpha = 1
+    hypos.forEach((h) => {
+        dict[h] = Math.pow(h, -alpha);
+    });
+    return dict;
+}
+```
+
+그리고 다음 코드를 다시 실행해보면 다음과 같은 결과가 나온다.
+
+```javascript
+main(500);  // 130.70846986255998
+main(1000); // 133.27523137503073
+main(2000); // 133.99746308073068
+```
+
+| 상한선 | 60 사후평균 | 60,30,90 사후평균 | 멱법칙 적용 60,30,90 |
+|--------|-------------|-------------------|----------------------|
+| 500    | 약 207.08   | 약 151.85         | 약 **130.71**        |
+| 1000   | 약 333.42   | 약 164.31         | 약 **133.28**        |
+| 2000   | 약 552.18   | 약 171.34         | 약 **134.00**        |
+
+차이가 더 줄어들었음을 알 수 있다.
+
+시험삼아 멱법칙 적용 코드에 `hypos` 값으로 `2000000`을 넣어봤더니 `134.25418932762943`가 나왔다.
+
+숫자가 더 커져도 변동폭은 크지 않을 것으로 보인다.
+
+
 # Links
 
 * [[Think-Bayes]]
 * [Fifty Challenging Problems in Probability with Solutions By Frederick Mosteller](http://store.doverpublications.com/0486653552.html )
 * [조화수(wikipedia)](https://ko.wikipedia.org/wiki/%EC%A1%B0%ED%99%94%EC%88%98 )
+* [Zipf Distribution of U.S. Firm Sizes by Robert L. Axtell](http://science.sciencemag.org/content/293/5536/1818/tab-pdf )
 
 {% raw %}
 <script>
