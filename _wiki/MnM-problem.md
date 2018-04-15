@@ -3,7 +3,7 @@ layout  : wiki
 title   : M&M 문제
 summary :
 date    : 2018-04-09 22:31:42 +0900
-updated : 2018-04-10 22:46:59 +0900
+updated : 2018-04-15 12:11:30 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -37,6 +37,8 @@ latex   : true
 이 때 노랑 초콜렛이 1994년에 생산한 봉지에서 나왔을 확률은 얼마일까?
 
 # 풀이
+
+## 손으로 계산해서 풀기
 
 문제는 녹색, 노랑 초콜렛이 각 봉지에서 하나씩 나온 상태에서 1994년 생산 봉지에서 노랑 초콜렛이 나왔을 가능성을 따지는 것이다.
 
@@ -108,6 +110,104 @@ $$
 
 그러므로, 답은 $$\frac{20}{27}$$이 된다.
 
+
+## 직접 코딩해 풀기
+
+다음은 [[Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
+
+* [m_and_m.js](https://github.com/johngrib/think-bayes-study/blob/master/code/m_and_m.js )
+
+```javascript
+// hypos: 가설의 배열
+// 가설의 배열을 돌며 같은 경우의 수 1을 부여한다
+function init(hypos) {
+    const dict = {};
+    hypos.forEach((h) => {
+        dict[h] = 1;
+    });
+    return dict;
+}
+
+// 모든 가설을 돌며 mix의 dataName에 해당하는 값을 곱해 업데이트한다
+function update(p, dataName) {
+
+    Object.keys(p).forEach((hypo) => {
+
+        // p(H_dataName) * p(D | H_dataName)
+        p[hypo] = p[hypo] * likelihood(p, hypo, dataName);
+    });
+
+    return normalize(p);
+}
+
+// p(D | H_dataName)
+function likelihood(dict, hypo, dataName) {
+    const bag = dataName[0];
+    const color = dataName[1];
+    return hypotheses[hypo][bag][color];
+}
+
+// 모든 가설의 확률의 비율을 유지하며, 총합이 1이 되도록 정규화한다
+function normalize(p) {
+    const values = Object.values(p);
+    const sum = values.reduce((a, b) => a + b);
+    const result = {};
+    Object.keys(p).forEach((key) => {
+        result[key] = p[key] / sum;
+    });
+    return result;
+}
+
+const mix94 = {
+    'brown': 30,
+    'yellow': 20,
+    'red': 20,
+    'green': 10,
+    'orange': 10,
+    'tan': 10,
+};
+const mix96 = {
+    'blue': 24,
+    'green': 20,
+    'orange': 16,
+    'yellow': 14,
+    'red': 13,
+    'brown': 13,
+};
+const hypotheses = {
+    'A': {
+        'bag1': mix94,
+        'bag2': mix96,
+    },
+    'B': {
+        'bag1': mix96,
+        'bag2': mix94,
+    }
+};
+
+function main() {
+
+    const suite = init(['A', 'B']);
+
+    let result;
+
+    result = update(suite, ['bag1', 'yellow']);
+    result = update(suite, ['bag2', 'green']);
+
+    console.log(result);
+}
+
+main();
+```
+
+위의 코드를 실행하면 다음과 같은 결과가 나온다.
+
+```bash
+$ $ node m_and_m.js
+{ A: 0.7407407407407407, B: 0.25925925925925924 }
+```
+
+$$\frac{20}{27} \approx 0.740740...$$ 이므로 손으로 계산한 값과 같다고 볼 수 있다.
 
 # Links
 
