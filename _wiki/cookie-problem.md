@@ -3,7 +3,7 @@ layout  : wiki
 title   : 쿠키 문제(The cookie problem)
 summary : 베이즈 이론 연습문제
 date    : 2018-04-09 09:14:07 +0900
-updated : 2018-04-15 10:10:20 +0900
+updated : 2018-04-15 10:48:11 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -143,6 +143,8 @@ $ python cookie.py
 
 그래서 책의 소스코드를 보고 다음과 같이 자바스크립트로 문제를 풀어 보았다.
 
+[cookie.js](https://github.com/johngrib/think-bayes-study/blob/master/cookie.js )
+[cookie2.js](https://github.com/johngrib/think-bayes-study/blob/master/cookie2.js )
 
 ```javascript
 // 사전 분포
@@ -181,7 +183,6 @@ console.log(normalize(pmf));
 
 * 그 결과로, `B_1`과 `B_2`를 한 번에 구할 수 있다.
 * 한편, `normalize`가 `p(V)`를 계산해 적용하는 작업이므로 수작업으로 `p(V)`를 계산하지 않아도 된다는 장점이 있다.
-
 
 
 # Links
