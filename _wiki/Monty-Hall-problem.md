@@ -3,7 +3,7 @@ layout  : wiki
 title   : 몬티 홀 문제(Monty Hall problem)
 summary : 
 date    : 2018-04-11 12:20:40 +0900
-updated : 2018-04-11 21:58:46 +0900
+updated : 2018-04-15 11:37:47 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -35,6 +35,8 @@ latex   : true
 참가자가 선택을 고수하는 것과, 바꾸는 것 둘 중 어느쪽이 더 유리한가?
 
 # 풀이
+
+## 손으로 계산해서 풀기
 
 다음과 같은 상황을 가정하자.
 
@@ -103,6 +105,83 @@ $$
 결과는 음수이므로, 선택을 바꾸는 쪽이 더 유리하다.
 
 한편 $$p(H_c)p(D \mid H_c)$$가 $$p(H_a) \space p(D \mid H_a)$$의 두 배이므로, 선택을 바꾸는 쪽이 두 배 더 유리하다는 것도 알 수 있다.
+
+
+## 직접 코딩해 풀기
+
+다음은 [[Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
+
+* [monty.js](https://github.com/johngrib/think-bayes-study/blob/master/code/monty.js )
+
+```javascript
+// hypos: 가설의 배열
+// 가설의 배열을 돌며 같은 경우의 수 1을 부여한다
+function init(hypos) {
+    const dict = {};
+    hypos.forEach((h) => {
+        dict[h] = 1;
+    });
+    return dict;
+}
+
+// 모든 가설을 돌며 mix의 dataName에 해당하는 값을 곱해 업데이트한다
+function update(p, dataName) {
+
+    Object.keys(p).forEach((hypo) => {
+        const like = likelihood(p, hypo, dataName);
+
+        // p(H_dataName) * p(D | H_dataName)
+        p[hypo] = p[hypo] * likelihood(p, hypo, dataName);
+    });
+
+    return normalize(p);
+}
+
+// p(D | H_dataName) 를 계산한다
+function likelihood(dict, hypo, dataName) {
+    if (hypo == dataName) {
+        return 0;
+    }
+    // p(D | H_a)
+    if (hypo == 'A') {
+        return 1/2;
+    }
+    return 1;
+}
+
+// 모든 가설의 확률의 비율을 유지하며, 총합이 1이 되도록 정규화한다
+function normalize(p) {
+    const values = Object.values(p);
+    const sum = values.reduce((a, b) => a + b);
+    const result = {};
+    Object.keys(p).forEach((key) => {
+        result[key] = p[key] / sum;
+    });
+    return result;
+}
+
+function main() {
+
+    const hypos = ['A', 'B', 'C'];
+    const pmf = init(hypos);
+    const result = update(pmf, 'B');
+    console.log(result);
+}
+
+main();
+```
+
+위의 코드를 실행해 보면 다음과 같은 결과가 나온다.
+
+```bash
+$ node monty.js
+{ A: 0.3333333333333333, B: 0, C: 0.6666666666666666 }
+```
+
+선택을 C로 바꾸는 쪽이 두 배 유리하다는 것을 알 수 있다.
+
+
+
 
 # Links
 
