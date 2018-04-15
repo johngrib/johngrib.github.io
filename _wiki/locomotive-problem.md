@@ -3,7 +3,7 @@ layout  : wiki
 title   : 기관차 문제(locomotive problem)
 summary : 기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자
 date    : 2018-04-14 12:04:06 +0900
-updated : 2018-04-15 15:32:25 +0900
+updated : 2018-04-15 16:03:25 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -428,6 +428,79 @@ main(2000); // 133.99746308073068
 시험삼아 멱법칙 적용 코드에 `hypos` 값으로 `2000000`을 넣어봤더니 `134.25418932762943`가 나왔다.
 
 숫자가 더 커져도 변동폭은 크지 않을 것으로 보인다.
+
+
+
+## 신뢰구간 적용해보기
+
+이번에는 위에서 계산한 분포 목록을 사용하여 90% 신뢰구간을 구해보자.
+
+5분위와 95분위 값을 계산하면, 90% 신뢰구간을 구할 수 있다.
+
+이미 normalize를 했기 때문에 그대로 순서대로 더해주기만 하면 되겠다.
+
+* 5분위 : 0~5% 에 해당하는 값을 모두 더해주면 된다.
+* 95분위 : 0~95% 에 해당하는 값을 모두 더해주면 된다.
+
+다음과 같이 `main` 함수만 조금 고쳐주면 된다.
+
+* [train3.js](https://github.com/johngrib/think-bayes-study/blob/master/code/train3.js )
+
+```javascript
+function main(max) {
+    const hypos = range(1, max);
+    const pmf = init(hypos);
+
+    let result = update(pmf, 60);
+    result = update(pmf, 30);
+    result = update(pmf, 90);
+
+    const result2 = normalize(result);
+
+    const keys = Object.keys(result2);
+
+    let p5 = 0;
+    let p5total = 0;
+    for(let i = 0; i < keys.length; i++) {
+        const val = keys[i];
+        const prob = result2[val];
+        p5total += prob;
+        if (p5total >= 0.05) {
+            p5 = val;
+            break;
+        }
+    }
+
+    let p95 = 0;
+    let p95total = 0;
+    for(let i = 0; i < keys.length; i++) {
+        const val = keys[i];
+        const prob = result2[val];
+        p95total += prob;
+        if (p95total >= 0.95) {
+            p95 = val;
+            break;
+        }
+    }
+    console.log({ '5%': p5, '95%': p95});
+}
+
+```
+
+위의 코드를 실행해보면 다음과 같은 결과가 나온다.
+
+```javascript
+main(500);  // { '5%': '91', '95%': '235' }
+main(1000); // { '5%': '91', '95%': '242' }
+main(2000); // { '5%': '91', '95%': '243' }
+```
+
+즉, (2000의 경우) 90% 신뢰구간은 `(91, 243)` 이다.
+
+여기까지 공부했는데 약간 김 빠지긴 하지만 신뢰구간이 너무 넓어, 그닥 정확한 자료가 아님을 알 수 있다.
+
+하긴 열차 3대만 목격했을 뿐인 상황에서 이정도면 꽤 놀라운 추정을 했다고는 볼 수 있겠다.
+
 
 
 # Links
