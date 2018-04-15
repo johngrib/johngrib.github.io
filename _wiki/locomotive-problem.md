@@ -3,7 +3,7 @@ layout  : wiki
 title   : 기관차 문제(locomotive problem)
 summary : 기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자
 date    : 2018-04-14 12:04:06 +0900
-updated : 2018-04-15 14:54:04 +0900
+updated : 2018-04-15 15:02:46 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -349,6 +349,7 @@ function main(max) {
     const hypos = range(1, max);
     const pmf = init(hypos);
 
+    // 60, 30, 90번 기관차를 목격
     let result = update(pmf, 60);
     result = update(pmf, 30);
     result = update(pmf, 90);
