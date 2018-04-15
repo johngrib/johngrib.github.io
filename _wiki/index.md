@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-04-15 16:44:05 +0900
+updated : 2018-04-15 17:47:43 +0900
 tags    : index
 toc     : true
 public  : true
@@ -98,6 +98,7 @@ comment : false
     * [[No-Silver-Bullet]]
     * [[orange-juice-test]]
     * [[Postel-s-law]]
+    * [[Zipf-s-law]]
 * [[tools]]
     * [[command-line]]
         * [[df]]
