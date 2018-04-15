@@ -3,7 +3,7 @@ layout  : wiki
 title   : 쿠키 문제(The cookie problem)
 summary : 베이즈 이론 연습문제
 date    : 2018-04-09 09:14:07 +0900
-updated : 2018-04-15 10:48:11 +0900
+updated : 2018-04-15 11:35:51 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -143,8 +143,8 @@ $ python cookie.py
 
 그래서 책의 소스코드를 보고 다음과 같이 자바스크립트로 문제를 풀어 보았다.
 
-[cookie.js](https://github.com/johngrib/think-bayes-study/blob/master/cookie.js )
-[cookie2.js](https://github.com/johngrib/think-bayes-study/blob/master/cookie2.js )
+* [cookie.js](https://github.com/johngrib/think-bayes-study/blob/master/code/cookie.js )
+* [cookie2.js](https://github.com/johngrib/think-bayes-study/blob/master/code/cookie2.js )
 
 ```javascript
 // 사전 분포
