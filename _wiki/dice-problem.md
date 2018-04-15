@@ -3,7 +3,7 @@ layout  : wiki
 title   : 주사위 문제
 summary : 
 date    : 2018-04-13 22:42:24 +0900
-updated : 2018-04-14 08:51:36 +0900
+updated : 2018-04-15 12:37:36 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -23,6 +23,9 @@ latex   : true
 
 
 # 풀이
+
+## 손으로 계산해 풀기
+
 
 * 5 개의 가설(Hypothesis)을 생각할 수 있다.
     * 4면체 주사위를 던졌다.
@@ -146,6 +149,79 @@ $$
 | 8면체  | 약 0.294117647058824 |
 | 12면체 | 약 0.196078431372549 |
 | 20면체 | 약 0.117647058823529 |
+
+
+## 직접 코딩해 풀기
+
+
+다음은 [[Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
+
+* [dice.js](https://github.com/johngrib/think-bayes-study/blob/master/code/dice.js )
+
+
+```javascript
+// hypos: 가설의 배열
+// 가설의 배열을 돌며 같은 경우의 수 1을 부여한다
+function init(hypos) {
+    const dict = {};
+    hypos.forEach((h) => {
+        dict[h] = 1;
+    });
+    return dict;
+}
+
+// 모든 가설을 돌며 mix의 data에 해당하는 값을 곱해 업데이트한다
+function update(dict, data) {
+
+    Object.keys(dict).forEach((hypo) => {
+        dict[hypo] = dict[hypo] * likelihood(hypo, data);
+    });
+
+    return normalize(dict);
+}
+
+// p(D | H_n)
+function likelihood(hypo, data) {
+    if (hypo < data) {
+        return 0;
+    }
+    return 1 / hypo;
+}
+
+// 모든 가설의 확률의 비율을 유지하며, 총합이 1이 되도록 정규화한다
+function normalize(dict) {
+    const values = Object.values(dict);
+    const sum = values.reduce((a, b) => a + b);
+    const result = {};
+    Object.keys(dict).forEach((key) => {
+        result[key] = dict[key] / sum;
+    });
+    return result;
+}
+
+function main() {
+
+    const hypos = [4, 6, 8, 12, 20];
+    const pmf = init(hypos);
+    const result = update(pmf, 6);
+    console.log(result);
+}
+
+main();
+```
+
+위의 코드를 실행하면 다음의 결과가 출력된다.
+
+```bash
+$ node dice.js
+{ '4': 0,
+  '6': 0.3921568627450981,
+  '8': 0.2941176470588236,
+  '12': 0.19607843137254904,
+  '20': 0.11764705882352944 }
+```
+
+코드를 잘 읽어보면 `p(D)`는 일일이 구할 필요가 없으며, `p(Hn)` 도 비율만 맞춰주면 된다는 것을 알 수 있다.
 
 # Links
 
