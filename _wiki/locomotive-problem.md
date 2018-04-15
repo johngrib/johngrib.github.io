@@ -3,7 +3,7 @@ layout  : wiki
 title   : 기관차 문제(locomotive problem)
 summary : 기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자
 date    : 2018-04-14 12:04:06 +0900
-updated : 2018-04-15 14:29:07 +0900
+updated : 2018-04-15 14:32:55 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -159,6 +159,11 @@ $$
 당연히 `60대 중의 1대일 가능성`이 `61대 중의 1대일 가능성`이나, `62대 중의 1대일 가능성`보다 크기 때문이다.
 
 ### 코드를 짜서 사후확률을 계산해 보자
+
+다음은 [[Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
+
+* [train.js](https://github.com/johngrib/think-bayes-study/blob/master/code/train.js )
+
 
 ```javascript
 // hypos: 가설의 배열
