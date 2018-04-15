@@ -3,7 +3,7 @@ layout  : wiki
 title   : 기관차 문제(locomotive problem)
 summary : 기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자
 date    : 2018-04-14 12:04:06 +0900
-updated : 2018-04-15 16:11:21 +0900
+updated : 2018-04-15 18:36:29 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -502,13 +502,20 @@ main(2000); // { '5%': '91', '95%': '243' }
 하긴 열차 3대만 목격했을 뿐인 상황에서 이정도면 꽤 놀라운 추정을 했다고는 볼 수 있겠다.
 
 
+# 함께 읽기
+
+* [[Bayes-theorem]]
+* [[Think-Bayes]]
+* [[Zipf-s-law]]
+* [[Copernican-Principle]]
+
 
 # Links
 
-* [[Think-Bayes]]
 * [Fifty Challenging Problems in Probability with Solutions By Frederick Mosteller](http://store.doverpublications.com/0486653552.html )
 * [조화수(wikipedia)](https://ko.wikipedia.org/wiki/%EC%A1%B0%ED%99%94%EC%88%98 )
 * [Zipf Distribution of U.S. Firm Sizes by Robert L. Axtell](http://science.sciencemag.org/content/293/5536/1818/tab-pdf )
+    * [PDF](http://www2.econ.iastate.edu/tesfatsi/USFirmSizesAreZipfDistributed.RAxtell2001.pdf )
 
 {% raw %}
 <script>
