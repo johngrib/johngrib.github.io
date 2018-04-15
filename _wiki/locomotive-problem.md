@@ -3,7 +3,7 @@ layout  : wiki
 title   : 기관차 문제(locomotive problem)
 summary : 기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자
 date    : 2018-04-14 12:04:06 +0900
-updated : 2018-04-15 14:32:55 +0900
+updated : 2018-04-15 14:54:04 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : true
 
 # 개요
 
-* 이 문서는 [[Think-Bayes]] 책 43~45쪽을 공부한 내용이다.
+* 이 문서는 [[Think-Bayes]] 책 43~46쪽을 공부한 내용이다.
 * 프레드릭 모스텔러(Frederick Mosteller)의 "모스텔러의 확률 고급 문제 50선과 해답"을 보면 기관차 문제가 있다.
 
 >
@@ -233,7 +233,8 @@ $ node train.js | pbcopy
 
 ## 기대값을 구해보자
 
-하지만 원하는 값은 이런 결과가 아니므로, 관점을 바꾸어 기대값을 구해 보도록 하자.
+하지만 원하는 값은 이런 결과가 아니므로
+관점을 바꾸어 기대값, 즉 사후 확률의 평균을 구해 보도록 하자.
 
 $$
 \begin{align}
@@ -302,6 +303,75 @@ $$
     <div><input type="button" value="WolframAlpha에 물어보기" onClick="wolfram()"/></div>
 </div>
 {% endraw %}
+
+
+
+## 사전 확률로 할 수 있는 것
+
+균등 분포가 1 ~ 1000 일 때, 사후 확률의 평균은 333이 나왔다.
+
+>
+상한값이 500이라면 사후 확률 평균은 207일 것이고,
+상한값이 2000이라면 사후 확률 평균은 552일 것이다.
+
+```javascript
+function main(max) {
+    const hypos = range(1, max);
+    const pmf = init(hypos);
+    let result = update(pmf, 60);
+
+    const result2 = normalize(result);
+    const rs = Object.keys(result2).reduce((a, b) => {
+        return a + (b * result2[b])
+    }, 0);
+    console.log(rs);
+}
+main(500);  // 207.07922798340903
+main(2000); // 552.179017164631
+```
+
+이런 방식으로는 상한값이 커질수록 사후 확률 평균도 커지게 되므로 바람직하지 않다.
+
+따라서 데이터를 추가로 확보하면서 값이 조정되도록 해야 한다.
+
+책에서는 60호 기관차에 이어 30번, 90번 기관차도 본 경우를 제시한다.
+
+아마도 이런 경우의 사후 확률은 다음과 같이 식을 세우면 될 것 같다.
+
+$$
+p(D | H_{60}) \times p(D | H_{30}) \times p(D | H_{90})
+$$
+
+그렇다면 다음과 같이 계산할 수 있을 것이다.
+
+```javascript
+function main(max) {
+    const hypos = range(1, max);
+    const pmf = init(hypos);
+
+    let result = update(pmf, 60);
+    result = update(pmf, 30);
+    result = update(pmf, 90);
+
+    const result2 = normalize(result);
+    const rs = Object.keys(result2).reduce((a, b) => {
+        return a + (b * result2[b])
+    }, 0);
+    console.log(rs);
+}
+
+main(500);  // 151.84958795903844
+main(1000); // 164.30558642273365
+main(2000); // 171.33818109150928
+```
+
+`30`, `90`번 기관차를 본 데이터의 영향을 받아 사후 확률의 평균들의 차이가 줄었음을 알 수 있다.
+
+| 상한선 | 60번 열차 사후평균 | 60, 30, 90 사후평균 |
+|--------|--------------------|---------------------|
+| 500    | 약 207.08          | 약 **151.85**       |
+| 1000   | 약 333.42          | 약 **164.31**       |
+| 2000   | 약 552.18          | 약 **171.34**       |
 
 
 # Links
