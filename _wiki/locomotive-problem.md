@@ -3,7 +3,7 @@ layout  : wiki
 title   : 기관차 문제(locomotive problem)
 summary : 기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자
 date    : 2018-04-14 12:04:06 +0900
-updated : 2018-04-14 19:24:37 +0900
+updated : 2018-04-15 14:29:07 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -158,6 +158,72 @@ $$
 
 당연히 `60대 중의 1대일 가능성`이 `61대 중의 1대일 가능성`이나, `62대 중의 1대일 가능성`보다 크기 때문이다.
 
+### 코드를 짜서 사후확률을 계산해 보자
+
+```javascript
+// hypos: 가설의 배열
+// 가설의 배열을 돌며 같은 경우의 수 1을 부여한다
+function init(hypos) {
+    const dict = {};
+    hypos.forEach((h) => {
+        dict[h] = 1;
+    });
+    return dict;
+}
+
+// 모든 가설을 돌며 mix의 data에 해당하는 값을 곱해 업데이트한다
+function update(dict, data) {
+
+    Object.keys(dict).forEach((hypo) => {
+        dict[hypo] = dict[hypo] * likelihood(hypo, data);
+    });
+
+    return normalize(dict);
+}
+
+// p(D | H_n)
+function likelihood(hypo, data) {
+    if (hypo < data) {
+        return 0;
+    }
+    return 1 / hypo;
+}
+
+// 모든 가설의 확률의 비율을 유지하며, 총합이 1이 되도록 정규화한다
+function normalize(dict) {
+    const values = Object.values(dict);
+    const sum = values.reduce((a, b) => a + b);
+    const result = {};
+    Object.keys(dict).forEach((key) => {
+        result[key] = dict[key] / sum;
+    });
+    return result;
+}
+
+function range(start, size) {
+    return [...Array(size).keys()].map((n) => n + start);
+}
+
+function main() {
+    const hypos = range(1, 1000);
+    const pmf = init(hypos);
+    const result = update(pmf, 60);
+
+    Object.keys(result).forEach((k) => {
+        console.log(k + '\t' + result[k])
+    });
+}
+
+main();
+```
+
+위의 코드를 실행해서 엑셀에 붙여넣고 차트를 그려보면 다음과 같이 나온다.
+
+```bash
+$ node train.js | pbcopy
+```
+
+![train-graph](https://user-images.githubusercontent.com/1855714/38775199-8f1b2274-40b7-11e8-9038-4df7be310dd4.jpg )
 
 
 ## 기대값을 구해보자
@@ -179,6 +245,28 @@ $$
 
 즉, 333대의 열차가 있을 것이라고 기대할 수 있다.
 
+한편 위의 자바스크립트 코드 중 `main`함수만 다음과 같이 수정해주면 기대값을 구할 수 있다.
+
+```javascript
+function main() {
+    const hypos = range(1, 1000);
+    const pmf = init(hypos);
+    const result = update(pmf, 60);
+
+    Object.keys(result).forEach((k) => {
+        console.log(k + '\t' + result[k])
+    });
+
+    // 기대값 rs를 구한다
+    const result2 = normalize(result);
+    const rs = Object.keys(result2).reduce((a, b) => {
+        return a + (b * result2[b])
+    }, 0);
+    console.log(rs);
+}
+```
+
+위의 코드를 실행해보면 `333.41989326371095`가 나온다.
 
 
 ### 기대값을 구하는 공식을 만들어 보자
