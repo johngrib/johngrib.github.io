@@ -88,6 +88,20 @@ dataList.forEach(function(page) {
 
 savePageList(pageMap);
 
+
+let parentMapStr = '';
+dataList.forEach(function(page) {
+    if(page.parent && page.parent != 'index') {
+        var parent = pageMap[page.parent];
+        if (parent.url) {
+            var parentUrl = parent.url.replace(/^\/wiki\//, '');
+            var pageUrl = page.url.replace(/^\/wiki\//, '');
+            parentMapStr += pageUrl + '\t' + parentUrl + '\t' + parent.title + '\n';
+        }
+    }
+});
+saveParentMap(parentMapStr);
+
 function saveTagMap(tagMap) {
     fs.writeFile("./_data/tagMap.yml", YAML.stringify(tagMap), function(err) {
         if(err) {
@@ -112,6 +126,15 @@ function savePageList(pageMap) {
             return console.log(err);
         }
         console.log("pageMap saved.");
+    });
+}
+
+function saveParentMap(parentMapStr) {
+    fs.writeFile("./parent.txt", parentMapStr, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+        console.log("parent saved.");
     });
 }
 
