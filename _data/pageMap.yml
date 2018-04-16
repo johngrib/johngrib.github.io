@@ -980,7 +980,7 @@ problem:
     summary: ""
     parent: index
     url: /wiki/problem
-    updated: '2018-04-08 23:17:36 +0900'
+    updated: '2018-04-16 20:58:12 +0900'
     children: [cookie-problem, dice-problem, locomotive-problem, MnM-problem, Monty-Hall-problem]
 PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     type: wiki
