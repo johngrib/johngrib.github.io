@@ -337,10 +337,10 @@
 17-EQUATIONS-THAT-CHANGED-THE-WORLD:
     type: wiki
     title: '(책) 세계를 바꾼 17가지 방정식'
-    summary: ""
+    summary: '쉽고 재미있는, 훌륭한 교양 수학책'
     parent: book
     url: /wiki/17-EQUATIONS-THAT-CHANGED-THE-WORLD
-    updated: '2018-04-12 13:04:33 +0900'
+    updated: '2018-04-18 20:44:02 +0900'
     children: []
 '2018-01-20':
     type: wiki
@@ -1020,7 +1020,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-04-12 13:06:14 +0900'
+    updated: '2018-04-18 20:45:30 +0900'
     children: []
 RFC:
     type: wiki
