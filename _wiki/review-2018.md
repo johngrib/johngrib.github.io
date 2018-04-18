@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-04-12 13:06:14 +0900
+updated : 2018-04-18 20:45:30 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-04-18 [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]{세계를 바꾼 17가지 방정식}
 * 2018-04-12 [[Algorithms-to-Live-By]]
 * 2018-03-29 82년생 김지영
 * 2018-03-28 미로 속의 암소
