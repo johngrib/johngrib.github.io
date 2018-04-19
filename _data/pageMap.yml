@@ -405,7 +405,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 전생검신, 한국과학문학상-수상작품집-제2회]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 전생검신, 한국과학문학상-수상작품집-제2회]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -486,6 +486,14 @@ command-line:
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
     children: [brew, df, du, fish-shell, java_home, top, uptime]
+Computer-Science-Distilled:
+    type: wiki
+    title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
+    summary: ""
+    parent: book
+    url: /wiki/Computer-Science-Distilled
+    updated: '2018-04-19 21:07:04 +0900'
+    children: []
 Conway-s-law:
     type: wiki
     title: '콘웨이의 법칙(Conway''s law)'
@@ -614,6 +622,14 @@ Effective-Java:
     url: /wiki/Effective-Java
     updated: '2018-03-11 14:10:23 +0900'
     children: []
+euro-problem:
+    type: wiki
+    title: '유로 문제(euro problem)'
+    summary: '동전이 한 쪽으로 기울었다는 것을 증명하자'
+    parent: problem
+    url: /wiki/euro-problem
+    updated: '2018-04-19 22:27:57 +0900'
+    children: []
 fish-shell:
     type: wiki
     title: 'fish shell'
@@ -694,6 +710,14 @@ Gradle:
     url: /wiki/Gradle
     updated: '2018-04-08 19:47:47 +0900'
     children: []
+GRAVITY-EXPRESS:
+    type: wiki
+    title: '(책) 그래비티 익스프레스(GRAVITY EXPRESS)'
+    summary: '게놈 익스프레스와 함께 강력하게 추천하는 교양 과학책'
+    parent: book
+    url: /wiki/GRAVITY-EXPRESS
+    updated: '2018-04-20 21:24:47 +0900'
+    children: []
 groovy:
     type: wiki
     title: Groovy
@@ -764,7 +788,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-04-15 17:47:43 +0900'
+    updated: '2018-04-20 20:46:43 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -981,7 +1005,7 @@ problem:
     parent: index
     url: /wiki/problem
     updated: '2018-04-16 20:58:12 +0900'
-    children: [cookie-problem, dice-problem, locomotive-problem, MnM-problem, Monty-Hall-problem]
+    children: [cookie-problem, dice-problem, euro-problem, locomotive-problem, MnM-problem, Monty-Hall-problem]
 PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     type: wiki
     title: '(책) Professional 소프트웨어 개발'
@@ -1020,7 +1044,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-04-18 20:45:30 +0900'
+    updated: '2018-04-20 21:29:36 +0900'
     children: []
 RFC:
     type: wiki

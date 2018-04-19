@@ -225,6 +225,7 @@ bayes:
     - {fileName: cookie-problem}
     - {fileName: Copernican-Principle}
     - {fileName: dice-problem}
+    - {fileName: euro-problem}
     - {fileName: locomotive-problem}
     - {fileName: MnM-problem}
     - {fileName: Monty-Hall-problem}
@@ -293,6 +294,8 @@ linux:
     - {fileName: DevOps-Troubleshooting}
 command-line:
     - {fileName: command-line}
+computer-science:
+    - {fileName: Computer-Science-Distilled}
 proverb:
     - {fileName: Conway-s-law}
     - {fileName: Edsel-edict}
@@ -341,6 +344,7 @@ map:
     - {fileName: labs-strava-com-heatmap}
 science:
     - {fileName: Geek-Atlas}
+    - {fileName: GRAVITY-EXPRESS}
     - {fileName: Grote-Reber-home-made-radio-astronomy}
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
 til:
