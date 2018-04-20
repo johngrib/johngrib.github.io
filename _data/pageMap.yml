@@ -70,14 +70,6 @@
     url: /blog/2017/04/03/emacs-start
     updated: '2017-04-03 16:33:24 +0900'
     children: []
-2017-04-03-vim-tmux-t-ut:
-    type: blog
-    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
-    summary: '"`set t_ut=`로 한 방에 해결"'
-    parent: null
-    url: /blog/2017/04/03/vim-tmux-t-ut
-    updated: '2017-04-03 07:33:49 +0900'
-    children: []
 2017-04-03-jwp-01:
     type: blog
     title: 'Next JWP Study 01'
@@ -1261,7 +1253,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [vim-conceallevel, vim-f-hangul, vim-rest-console, vim-ycm-python3, vimwiki]
+    children: [vim-conceallevel, vim-f-hangul, vim-rest-console, vim-tmux-t-ut, vim-ycm-python3, vimwiki]
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -1285,6 +1277,14 @@ vim-rest-console:
     parent: Vim
     url: /wiki/vim-rest-console
     updated: '2018-04-12 21:57:49 +0900'
+    children: []
+vim-tmux-t-ut:
+    type: wiki
+    title: 'tmux vim에서 나타나는 배경색 번짐 문제 해결'
+    summary: 'set t_ut= 로 한 방에 해결'
+    parent: Vim
+    url: /wiki/vim-tmux-t-ut
+    updated: '2017-04-03 07:33:49 +0900'
     children: []
 vim-ycm-python3:
     type: wiki

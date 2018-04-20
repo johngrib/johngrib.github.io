@@ -42,7 +42,7 @@ rfc3986:
     - {fileName: 2017-03-13-uri-url}
 tmux:
     - {fileName: 2017-03-27-tmux-ascii-control}
-    - {fileName: 2017-04-03-vim-tmux-t-ut}
+    - {fileName: vim-tmux-t-ut}
 ascii:
     - {fileName: 2017-03-27-tmux-ascii-control}
 study:
@@ -87,19 +87,6 @@ emacs:
     - {fileName: 2017-04-03-emacs-start}
 evil:
     - {fileName: 2017-04-03-emacs-start}
-vim:
-    - {fileName: 2017-04-03-vim-tmux-t-ut}
-    - {fileName: 2017-05-04-input-source}
-    - {fileName: 2017-07-09-vim-game-code-break}
-    - {fileName: Vim}
-    - {fileName: vim-conceallevel}
-    - {fileName: vim-f-hangul}
-    - {fileName: vim-rest-console}
-    - {fileName: vim-ycm-python3}
-    - {fileName: vimium}
-    - {fileName: vimwiki}
-fix:
-    - {fileName: 2017-04-03-vim-tmux-t-ut}
 소트웍스-앤솔러지:
     - {fileName: 2017-04-08-jwp-02}
 Martin-Fowler:
@@ -118,6 +105,17 @@ Gerald-Weinberg:
     - {fileName: secret-of-consulting}
 AWS:
     - {fileName: 2017-04-13-jwp-04}
+vim:
+    - {fileName: 2017-05-04-input-source}
+    - {fileName: 2017-07-09-vim-game-code-break}
+    - {fileName: Vim}
+    - {fileName: vim-conceallevel}
+    - {fileName: vim-f-hangul}
+    - {fileName: vim-rest-console}
+    - {fileName: vim-tmux-t-ut}
+    - {fileName: vim-ycm-python3}
+    - {fileName: vimium}
+    - {fileName: vimwiki}
 구름입력기:
     - {fileName: 2017-05-04-input-source}
 hammerspoon:
@@ -474,6 +472,8 @@ github:
     - {fileName: utterances}
 plugin:
     - {fileName: vim-f-hangul}
+fix:
+    - {fileName: vim-tmux-t-ut}
 python:
     - {fileName: vim-ycm-python3}
 chrome:
