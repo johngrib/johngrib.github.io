@@ -3,7 +3,7 @@ layout  : wiki
 title   : 유로 문제(euro problem)
 summary : 동전이 한 쪽으로 기울었다는 것을 증명하자
 date    : 2018-04-19 22:01:22 +0900
-updated : 2018-04-19 22:27:57 +0900
+updated : 2018-04-21 03:39:19 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -26,42 +26,208 @@ LSE(런던 경제 대학)의 교수 Barry Blight는
 
 # 풀이
 
-* 가설 $$H_x$$ : 앞면이 나올 확률이 $$x \over 100$$ 이다.
+## 가설과 데이터 정의
+
+* 가설 $$H_x$$ : 앞면이 나올 확률이 0부터 100까지 중 $$x\%$$  이다.
+    * 즉, 101가지의 가설이 가능: $$H_0, \space H_1, \space ..., \space H_{100}$$
     * 앞면이 나올 확률 : $$x \over 100$$
     * 뒷면이 나올 확률 : $$100 - x \over 100$$
+* 데이터
+    * 250번 회전을 시켰더니 앞면 140회, 뒷면 110회가 나왔다.
 
-그렇다면 다음의 가설들을 검토할 수 있다.
+표로 정리해보면 다음과 같을 것이다.
 
-$$H_0, \space H_1, \space H_2, \space ..., \space H_{99}, \space H_{100}$$
+| 식                    | 설명                                                          | 값                                                                                  |
+|-----------------------|---------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| $$p(H_0)$$            | 앞면이 나올 확률이 0인 가설일 확률                            | 0                                                                                   |
+| $$p(H_1)$$            | 앞면이 나올 확률이 $$1 \over 100$$인 가설일 확률              | $$1 \over 101 $$                                                                    |
+| ...                   | ...                                                           | ...                                                                                 |
+| $$p(H_{100})$$        | 앞면이 나올 확률이 $$100 \over 100$$인 가설일 확률            | $$1 \over 101 $$                                                                    |
+| $$p(D \mid H_0)$$     | 가설 $$H_0$$인 상태에서, 앞면 140회, 뒷면 110회가 나올 확률   | $$\left(\frac{0}{100}\right)^{140}\left(\frac{100}{100}\right)^{110}$$ |
+| $$p(D \mid H_1)$$     | 가설 $$H_1$$인 상태에서, 앞면 140회, 뒷면 110회가 나올 확률   | $$\left(\frac{1}{100}\right)^{140}\left(\frac{99}{100}\right)^{110}$$  |
+| ...                   | ...                                                           | ...                                                                                 |
+| $$p(D \mid H_{100})$$ | 가설 $$H_100$$인 상태에서, 앞면 140회, 뒷면 110회가 나올 확률 | $$\left(\frac{100}{100}\right)^{140}\left(\frac{0}{100}\right)^{110}$$ |
+| $$p(D)$$              | 문제의 동전을 던져 앞면 140회, 뒷면 110회가 나올 확률         | $$\sum_{n = 0}^{100}p(D \mid H_n)$$                                                 |
 
-$$H_{50}$$에 가까울수록 공정한 동전일 가능성이 높다고 할 수 있을 것이다.
 
-각 가설의 확률을 계산해보면...
+## 사후 확률을 계산하자
+
+이제 각 가설별 사후 확률을 계산할 수 있다.
+
+[[Bayes-theorem]]에 의해 사후 확률은 다음과 같다.
 
 $$
 \begin{align}
-H_0 & = \left(\frac{0}{100}\right)^{140} \times \left(\frac{100}{100}\right)^{110} \\
-H_1 & = \left(\frac{1}{100}\right)^{140} \times \left(\frac{99}{100}\right)^{110} \\
-H_2 & = \left(\frac{2}{100}\right)^{140} \times \left(\frac{98}{100}\right)^{110} \\
-... \\
-H_{99} & = \left(\frac{99}{100}\right)^{140} \times \left(\frac{1}{100}\right)^{110} \\
-H_{100} & = \left(\frac{100}{100}\right)^{140} \times \left(\frac{0}{100}\right)^{110} \\
+p(H_n \mid D) & = {p(H_n) \times p(D \mid H_n) \over p(D)} \\
+    & = {\frac{1}{101} \left(\frac{n}{100}\right)^{140}\left(\frac{100 - n}{100}\right)^{110} \over p(D)} \\
 \end{align}
 $$
 
-거듭제곱이 너무 많아 손으로 직접 계산하기 번거로우므로 코딩을 하자.
+손으로 직접 계산하기 번거로운 상태이므로 그냥 코딩을 하도록 하자.
+
+다음은 [ThinkBayes2의 eury.py](https://github.com/AllenDowney/ThinkBayes2/blob/master/code/euro.py )를 참고하여 Javascript로 작성한 코드이다.
+
+* [eury.js](https://github.com/johngrib/think-bayes-study/blob/master/code/euro.js )
 
 ```javascript
+// hypos: 가설의 배열
+// 가설의 배열을 돌며 같은 경우의 수 1을 부여한다
+function init(hypos) {
+    const dict = {};
+    hypos.forEach((h) => {
+        dict[h] = 1;
+    });
+    return dict;
+}
+
+function update(dict, data) {
+
+    Object.keys(dict).forEach((hypo) => {
+        dict[hypo] = dict[hypo] * likelihood(data, hypo);
+    });
+    return normalize(dict);
+}
+
+// p(D | H_n)
+function likelihood(data, hypo) {
+    const x = hypo;
+    if (data == 'H') {
+        return x/100.0;
+    }
+    return (100 - x)/100.0;
+}
+
+function range(start, size) {
+    return [...Array(size).keys()].map((n) => n + start);
+}
+
+// 모든 가설의 확률의 비율을 유지하며, 총합이 1이 되도록 정규화한다
+function normalize(dict) {
+    const values = Object.values(dict);
+    const sum = values.reduce((a, b) => a + b);
+    const result = {};
+    Object.keys(dict).forEach((key) => {
+        result[key] = dict[key] / sum;
+    });
+    return result;
+}
+
+function main(max) {
+    const hypos = range(0, max);
+    let suite = init(hypos);
+
+    const datasetA = range(1, 140).map(() => 'H');
+    const datasetB = range(1, 110).map(() => 'T');
+    const dataset = datasetA.concat(datasetB);
+
+    dataset.forEach((coin) => {
+        suite = update(suite, coin);
+    });
+    Object.keys(suite).forEach((key) => {
+        console.log(key + '\t' + suite[key]);
+    });
+}
+
+main(101)
 ```
 
+위의 코드를 실행한 결과를 복사하여...
 
----
+```bash
+$ node euro.js | pbcopy
+```
 
-* 5 개의 가설(Hypothesis)을 생각할 수 있다.
-    * 4면체 주사위를 던졌다.
-    * 6면체 주사위를 던졌다.
-    * 8면체 주사위를 던졌다.
-    * 12면체 주사위를 던졌다.
-    * 20면체 주사위를 던졌다.
-* 데이터 D : 주사위를 던져 `6`이 나왔다.
+엑셀에 붙여넣은 다음 차트를 그리면 다음과 같은 결과가 나온다.
+
+![result](https://user-images.githubusercontent.com/1855714/39066356-be9cec42-450f-11e8-9c61-9920ddff0138.jpg )
+
+## 사후 확률 요약
+
+### 가장 높은 확률의 값
+
+위에서 실행한 결과 중 가장 큰 값을 갖는 가설을 찾아보면 `0.127453180583913`가 나온 $$H_{56}$$이라는 것도 알 수 있다.
+
+약 `12.745%`라 할 수 있겠다.
+
+$$H_{56}$$은 앞면이 나올 확률이 `56%`인 가설을 의미하는데,
+앞면과 뒷면의 비율이 $$\frac{140}{250} = 0.56$$ 이므로
+동전을 던져 관측한 비율과 모수의 최대 우도 추정값이 일치했다고 할 수 있다.
+
+### 평균(Mean)과 중간값(Median)
+
+평균은 다음과 같이 구할 수 있다.
+
+```javascript
+let mean = 0;
+Object.keys(suite).forEach((key) => {
+    mean += key * suite[key];
+});
+console.log('mean : ' + mean);
+```
+
+실행해보면 다음과 같이 나온다.
+
+```bash
+mean : 55.95238095238094
+```
+
+중간값은 정 가운데에 위치하는 하나의 값을 구하면 되므로, `55`라 할 수 있다.
+
+### 신뢰구간
+
+이번에는 위에서 계산한 분포 목록을 사용하여 90% 신뢰구간을 구해보자.
+
+5분위와 95분위 값을 계산하면, 90% 신뢰구간을 구할 수 있다.
+
+이미 normalize를 했기 때문에 그대로 순서대로 더해주기만 하면 되겠다.
+
+* 5분위 : 0~5% 에 해당하는 값을 모두 더해주면 된다.
+* 95분위 : 0~95% 에 해당하는 값을 모두 더해주면 된다.
+
+90% 신뢰구간은 다음과 같이 계산할 수 있다.
+
+```javascript
+const keys = Object.keys(suite);
+
+let p5 = 0;
+let p5total = 0;
+for(let i = 0; i < keys.length; i++) {
+    const val = keys[i];
+    const prob = suite[val];
+    p5total += prob;
+    if (p5total >= 0.05) {
+        p5 = val;
+        break;
+    }
+}
+
+let p95 = 0;
+let p95total = 0;
+for(let i = 0; i < keys.length; i++) {
+    const val = keys[i];
+    const prob = suite[val];
+    p95total += prob;
+    if (p95total >= 0.95) {
+        p95 = val;
+        break;
+    }
+}
+console.log({ '5%': p5, '95%': p95});
+```
+
+실행해보면 다음과 같은 결과가 나온다.
+
+```bash
+{ '5%': '51', '95%': '61' }
+```
+
+즉, 90% 신뢰구간은 `(51, 61)`이다.
+
+## 문제의 동전은 평평한가?
+
+이에 대해서는 $$H_{50}$$의 사후 확률을 조사해볼 수 있을 것이다.
+
+위에서 계산했던 사후 확률 분포에서 `50`, 즉 동전이 완전히 공정할 경우의 확률은 `0.020976526129544662` 이다.
+
+이는 약 `2.09%`에 해당한다.
 
