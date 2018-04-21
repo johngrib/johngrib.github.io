@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-04-21 12:00:50 +0900
+updated : 2018-04-24 21:08:13 +0900
 tags    : index
 toc     : true
 public  : true
@@ -22,6 +22,7 @@ comment : false
         * [[John-von-Neumann]]
     * [[Software-Engineering-Code-of-Ethics]]
     * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
+    * [[You-and-Your-Research]]
 * [[coding-font]]{코딩 폰트}
 * [[how-to]]
     * [[googling]]
@@ -31,7 +32,7 @@ comment : false
     * [[Bayes-theorem]]
     * [[Cromwell-s-rule]]
     * [[frac1e]]{n개의 제비뽑기에 n번 도전}
-    * rule-of-succession
+    * [[rule-of-succession]]
     * [[secretary-problem]]
 * [[media]]
     * [[book]]{도서}
@@ -62,6 +63,7 @@ comment : false
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
         * [[toda-seiji-scientia]]
         * [[그림으로-보는-서양검술-메모]]
+        * [[슈뢰딩거의-고양희]]
         * [[전생검신]]
         * [[한국과학문학상-수상작품집-제2회]]
     * [[review]]
@@ -83,6 +85,7 @@ comment : false
     * [[locomotive-problem]]
     * [[MnM-problem]]
     * [[Monty-Hall-problem]]
+    * [[Oliver-s-blood]]
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
     * [[Java]]
@@ -128,6 +131,7 @@ comment : false
     * [[useful-site]]
         * [[geacron]]
         * [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
+        * [[httpbin.org]]
         * [[labs-strava-com-heatmap]]
         * [[utterances]]
         * [[미세먼지-정보]]

@@ -5,8 +5,8 @@
 - algorithm
 - alphago
 - ascii
-- AWS
 - aws
+- AWS
 - bash
 - bayes
 - Bill-Atkinson
@@ -25,6 +25,7 @@
 - consulting
 - culture
 - data-format
+- db
 - design
 - design-pattern
 - DI
@@ -52,7 +53,6 @@
 - hacker
 - hammerspoon
 - heroku
-- hhkb
 - history
 - how-to
 - html
@@ -78,7 +78,6 @@
 - linux
 - lombok
 - lua
-- luarocks
 - mac
 - map
 - Martin-Fowler
@@ -108,7 +107,6 @@
 - soft-skill
 - sort
 - special-chars
-- sql
 - stat
 - Steve-Jobs
 - story
@@ -116,11 +114,11 @@
 - style
 - telegram
 - terminal
-- til
+- Think-Bayes
 - TIL
+- til
 - tip
 - tldr
-- tmk
 - tmux
 - tool
 - tools
@@ -131,8 +129,8 @@
 - url
 - vim
 - vimwiki
-- von-neumann
 - Von-Neumann
+- von-neumann
 - web
 - what
 - why
@@ -140,6 +138,7 @@
 - yaml
 - zombie
 - 개발자
+- 공부
 - 괴담
 - 교육
 - 구름입력기

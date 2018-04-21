@@ -150,14 +150,6 @@
     url: /blog/2017/05/09/jwp-09
     updated: '2017-05-09 10:45:58 +0900'
     children: []
-2017-05-14-hhkb-jp-tmk:
-    type: blog
-    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
-    summary: '해피해킹을 더욱 해피하게'
-    parent: null
-    url: /blog/2017/05/14/hhkb-jp-tmk
-    updated: '2017-05-14 15:50:31 +0900'
-    children: []
 2017-05-14-jwp-10:
     type: blog
     title: 'Next JWP Study 10'
@@ -230,62 +222,6 @@
     url: /blog/2017/07/14/aheui-explained
     updated: '2017-07-14 23:00:17 +0900'
     children: []
-2017-07-30-luarocks:
-    type: blog
-    title: 'luarocks로 Hammerspoon 패키지 관리하기'
-    summary: '유한락스가 아니라 루아락스로 깨끗하게'
-    parent: null
-    url: /blog/2017/07/30/luarocks
-    updated: '2017-07-30 16:32:25 +0900'
-    children: []
-2017-07-31-hammerspoon-tutorial-00-start:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 00 - 시작하기'
-    summary: '일단 맥이 있어야 한다'
-    parent: null
-    url: /blog/2017/07/31/hammerspoon-tutorial-00-start
-    updated: '2017-07-31 21:57:27 +0900'
-    children: []
-2017-08-01-hammerspoon-tutorial-01:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동'
-    summary: '윈도우즈에는 있으나 맥에는 없는 그것'
-    parent: null
-    url: /blog/2017/08/01/hammerspoon-tutorial-01
-    updated: '2017-08-01 22:47:08 +0900'
-    children: []
-2017-08-04-hammerspoon-tutorial-02:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 02 - 클립보드 확장 기능을 만들어 봅시다'
-    summary: '복붙을 편하게!'
-    parent: null
-    url: /blog/2017/08/04/hammerspoon-tutorial-02
-    updated: '2017-08-04 21:32:22 +0900'
-    children: []
-2017-08-05-hammerspoon-tutorial-03:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 03 - 한영 전환 키를 만들어 봅시다'
-    summary: 'Esc - 영문전환도 만들어 봅시다'
-    parent: null
-    url: /blog/2017/08/05/hammerspoon-tutorial-03
-    updated: '2017-08-05 12:11:00 +0900'
-    children: []
-2017-08-06-hammerspoon-tutorial-04:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다'
-    summary: '결론은 터미널'
-    parent: null
-    url: /blog/2017/08/06/hammerspoon-tutorial-04
-    updated: '2017-08-06 13:35:00 +0900'
-    children: []
-2017-08-07-hammerspoon-tutorial-05:
-    type: blog
-    title: 'Hammerspoon 튜토리얼 05 - chooser를 사용해 봅시다'
-    summary: '클립보드 히스토리도 만들어 봅시다'
-    parent: null
-    url: /blog/2017/08/07/hammerspoon-tutorial-05
-    updated: '2017-08-07 09:33:00 +0900'
-    children: []
 2017-08-23-0.30000000000000004:
     type: blog
     title: '0.1 + 0.2 == 0.30000000000000004'
@@ -293,38 +229,6 @@
     parent: null
     url: /blog/2017/08/23/0.30000000000000004
     updated: '2017-08-23 18:15:32 +0900'
-    children: []
-2017-09-20-regex-prime:
-    type: blog
-    title: '소수를 판별하는 정규식'
-    summary: '1진법을 사용해 소수를 판별하자!'
-    parent: null
-    url: /blog/2017/09/20/regex-prime
-    updated: '2017-09-20 20:56:55 +0900'
-    children: []
-2017-12-06-my-wiki:
-    type: blog
-    title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
-    summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
-    parent: null
-    url: /blog/2017/12/06/my-wiki
-    updated: '2017-12-06 21:44:18 +0900'
-    children: []
-2017-12-30-review2017:
-    type: blog
-    title: '2017년 회고'
-    summary: '인생 최고의 1년이었다'
-    parent: null
-    url: /blog/2017/12/30/review2017
-    updated: '2017-12-30 23:19:10 +0900'
-    children: []
-2018-02-26-sql-char-comparison:
-    type: blog
-    title: 'MySQL에서 ''a'' = ''a ''가 true로 평가된다?'
-    summary: 'DB알못의 어떤 리서치'
-    parent: null
-    url: /blog/2018/02/26/sql-char-comparison
-    updated: '2018-02-26 21:09:03 +0900'
     children: []
 17-EQUATIONS-THAT-CHANGED-THE-WORLD:
     type: wiki
@@ -357,7 +261,7 @@ algorithm:
     parent: index
     url: /wiki/algorithm
     updated: '2018-03-31 18:01:51 +0900'
-    children: [von-neumann-extractor]
+    children: [regex-prime, von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
     title: '(책) 알고리즘, 인생을 계산하다'
@@ -380,7 +284,7 @@ Bayes-theorem:
     summary: 'p(A|B) = p(A) * p(B|A) / p(B)'
     parent: math
     url: /wiki/Bayes-theorem
-    updated: '2018-04-09 14:00:59 +0900'
+    updated: '2018-04-22 18:56:03 +0900'
     children: []
 Bill-Atkinson-productivity:
     type: wiki
@@ -397,7 +301,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 전생검신, 한국과학문학상-수상작품집-제2회]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 한국과학문학상-수상작품집-제2회]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -453,7 +357,7 @@ clipping:
     parent: index
     url: /wiki/clipping
     updated: '2018-02-07 21:34:09 +0900'
-    children: [legend, Software-Engineering-Code-of-Ethics, THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]
+    children: [legend, Software-Engineering-Code-of-Ethics, THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING, You-and-Your-Research]
 Code-Complete-2:
     type: wiki
     title: '(책) 코드 컴플리트 - 스티브 맥코넬'
@@ -500,7 +404,7 @@ cookie-problem:
     summary: '베이즈 이론 연습문제'
     parent: problem
     url: /wiki/cookie-problem
-    updated: '2018-04-15 11:35:51 +0900'
+    updated: '2018-04-24 20:48:48 +0900'
     children: []
 Copernican-Principle:
     type: wiki
@@ -572,7 +476,7 @@ dice-problem:
     summary: ""
     parent: problem
     url: /wiki/dice-problem
-    updated: '2018-04-15 12:37:36 +0900'
+    updated: '2018-04-24 20:48:57 +0900'
     children: []
 DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
     type: wiki
@@ -620,7 +524,7 @@ euro-problem:
     summary: '동전이 한 쪽으로 기울었다는 것을 증명하자'
     parent: problem
     url: /wiki/euro-problem
-    updated: '2018-04-21 03:39:19 +0900'
+    updated: '2018-04-24 20:49:06 +0900'
     children: []
 fish-shell:
     type: wiki
@@ -726,6 +630,70 @@ Grote-Reber-home-made-radio-astronomy:
     url: /wiki/Grote-Reber-home-made-radio-astronomy
     updated: '2018-02-08 13:19:30 +0900'
     children: []
+hammerspoon:
+    type: wiki
+    title: Hammerspoon
+    summary: 'macOS용 자동화 도구'
+    parent: mac-apps
+    url: /wiki/hammerspoon
+    updated: '2018-04-21 11:29:38 +0900'
+    children: [hammerspoon-luarocks, hammerspoon-tutorial-00, hammerspoon-tutorial-01, hammerspoon-tutorial-02, hammerspoon-tutorial-03, hammerspoon-tutorial-04, hammerspoon-tutorial-05]
+hammerspoon-luarocks:
+    type: wiki
+    title: 'luarocks로 Hammerspoon 패키지 관리하기'
+    summary: '유한락스가 아니라 루아락스로 깨끗하게'
+    parent: hammerspoon
+    url: /wiki/hammerspoon-luarocks
+    updated: '2018-04-21 11:48:11 +0900'
+    children: []
+hammerspoon-tutorial-00:
+    type: wiki
+    title: 'Hammerspoon 튜토리얼 00 - 시작하기'
+    summary: '일단 맥이 있어야 한다'
+    parent: hammerspoon
+    url: /wiki/hammerspoon-tutorial-00
+    updated: '2018-04-21 11:24:48 +0900'
+    children: []
+hammerspoon-tutorial-01:
+    type: wiki
+    title: 'Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동'
+    summary: '윈도우즈에는 있으나 맥에는 없는 그것'
+    parent: hammerspoon
+    url: /wiki/hammerspoon-tutorial-01
+    updated: '2018-04-21 11:31:44 +0900'
+    children: []
+hammerspoon-tutorial-02:
+    type: wiki
+    title: 'Hammerspoon 튜토리얼 02 - 클립보드 확장 기능을 만들어 봅시다'
+    summary: '복붙을 편하게!'
+    parent: hammerspoon
+    url: /wiki/hammerspoon-tutorial-02
+    updated: '2018-04-21 11:37:42 +0900'
+    children: []
+hammerspoon-tutorial-03:
+    type: wiki
+    title: 'Hammerspoon 튜토리얼 03 - 한영 전환 키를 만들어 봅시다'
+    summary: 'Esc - 영문전환도 만들어 봅시다'
+    parent: hammerspoon
+    url: /wiki/hammerspoon-tutorial-03
+    updated: '2018-04-21 11:39:59 +0900'
+    children: []
+hammerspoon-tutorial-04:
+    type: wiki
+    title: 'Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다'
+    summary: '결론은 터미널'
+    parent: hammerspoon
+    url: /wiki/hammerspoon-tutorial-04
+    updated: '2018-04-21 11:41:57 +0900'
+    children: []
+hammerspoon-tutorial-05:
+    type: wiki
+    title: 'Hammerspoon 튜토리얼 05 - chooser를 사용해 봅시다'
+    summary: '클립보드 히스토리도 만들어 봅시다'
+    parent: hammerspoon
+    url: /wiki/hammerspoon-tutorial-05
+    updated: '2018-04-21 11:44:18 +0900'
+    children: []
 HELL-BOY:
     type: wiki
     title: '(책) 헬보이'
@@ -733,6 +701,14 @@ HELL-BOY:
     parent: book
     url: /wiki/HELL-BOY
     updated: '2018-01-27 14:59:04 +0900'
+    children: []
+hhkb-jp-tmk:
+    type: wiki
+    title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
+    summary: '해피해킹을 더욱 해피하게'
+    parent: tools
+    url: /wiki/hhkb-jp-tmk
+    updated: '2018-04-21 11:37:09 +0900'
     children: []
 HOT-FUZZ:
     type: wiki
@@ -774,13 +750,21 @@ HTTP-THE-DEFINITIVE-GUIDE:
     url: /wiki/HTTP-THE-DEFINITIVE-GUIDE
     updated: '2018-02-05 22:51:00 +0900'
     children: []
+httpbin.org:
+    type: wiki
+    title: 'httpbin(1) HTTP Request & Response Service'
+    summary: 'mock 데이터가 필요할 때 사용하기 좋다'
+    parent: useful-site
+    url: /wiki/httpbin.org
+    updated: '2018-04-22 21:28:11 +0900'
+    children: []
 index:
     type: wiki
     title: wiki
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-04-20 20:46:43 +0900'
+    updated: '2018-04-24 21:08:13 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -852,7 +836,7 @@ locomotive-problem:
     summary: '기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자'
     parent: problem
     url: /wiki/locomotive-problem
-    updated: '2018-04-15 18:36:29 +0900'
+    updated: '2018-04-24 20:49:14 +0900'
     children: []
 Lubarsky-s-Law-of-Cybernetic-Entomology:
     type: wiki
@@ -869,7 +853,7 @@ mac-apps:
     parent: tools
     url: /wiki/mac-apps
     updated: '2018-03-03 19:45:04 +0900'
-    children: [Shortcat]
+    children: [hammerspoon, Shortcat]
 mac-keyboard-shortcuts:
     type: wiki
     title: '맥 키보드 단축키'
@@ -885,7 +869,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Cromwell-s-rule, frac1e, secretary-problem]
+    children: [Bayes-theorem, Cromwell-s-rule, frac1e, rule-of-succession, secretary-problem]
 mathjax-latex:
     type: wiki
     title: 'MathJax로 LaTeX 사용하기'
@@ -908,7 +892,7 @@ MnM-problem:
     summary: null
     parent: problem
     url: /wiki/MnM-problem
-    updated: '2018-04-15 12:11:30 +0900'
+    updated: '2018-04-24 20:49:22 +0900'
     children: []
 Monty-Hall-problem:
     type: wiki
@@ -916,7 +900,7 @@ Monty-Hall-problem:
     summary: ""
     parent: problem
     url: /wiki/Monty-Hall-problem
-    updated: '2018-04-15 11:37:47 +0900'
+    updated: '2018-04-24 20:49:29 +0900'
     children: []
 movie:
     type: wiki
@@ -926,6 +910,14 @@ movie:
     url: /wiki/movie
     updated: '2018-02-02 21:34:13 +0900'
     children: [ALPHAGO, DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY, HOT-FUZZ, Las-chicas-del-cable, Walking-Dead]
+my-wiki:
+    type: wiki
+    title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
+    summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
+    parent: Vim
+    url: /wiki/my-wiki
+    updated: '2018-04-21 11:58:23 +0900'
+    children: []
 Mythical-Man-Month:
     type: wiki
     title: '(책) 맨먼스 미신 - 소프트웨어 공학에 관한 에세이'
@@ -966,6 +958,14 @@ Object-toString:
     url: /wiki/Object-toString
     updated: '2018-03-11 15:12:10 +0900'
     children: []
+Oliver-s-blood:
+    type: wiki
+    title: '올리버의 혈액형 문제(Oliver''s blood)'
+    summary: '흔한 혈액형으로는 유죄로 몰 수 없지'
+    parent: problem
+    url: /wiki/Oliver-s-blood
+    updated: '2018-04-24 20:49:44 +0900'
+    children: []
 orange-juice-test:
     type: wiki
     title: '오렌지 주스 테스트'
@@ -997,7 +997,7 @@ problem:
     parent: index
     url: /wiki/problem
     updated: '2018-04-16 20:58:12 +0900'
-    children: [cookie-problem, dice-problem, euro-problem, locomotive-problem, MnM-problem, Monty-Hall-problem]
+    children: [cookie-problem, dice-problem, euro-problem, locomotive-problem, MnM-problem, Monty-Hall-problem, Oliver-s-blood]
 PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     type: wiki
     title: '(책) Professional 소프트웨어 개발'
@@ -1022,6 +1022,14 @@ proverb:
     url: /wiki/proverb
     updated: '2018-02-21 22:37:29 +0900'
     children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, Lubarsky-s-Law-of-Cybernetic-Entomology, No-Silver-Bullet, orange-juice-test, Postel-s-law, Zipf-s-law]
+regex-prime:
+    type: wiki
+    title: '소수를 판별하는 정규식'
+    summary: '1진법을 사용해 소수를 판별하자!'
+    parent: algorithm
+    url: /wiki/regex-prime
+    updated: '2018-04-21 12:01:21 +0900'
+    children: []
 review:
     type: wiki
     title: '리뷰 모음'
@@ -1029,14 +1037,22 @@ review:
     parent: media
     url: /wiki/review
     updated: '2018-01-13 11:14:57 +0900'
-    children: [review-2018]
+    children: [review-2017, review-2018]
+review-2017:
+    type: wiki
+    title: '2017년 회고'
+    summary: '인생 최고의 1년이었다'
+    parent: review
+    url: /wiki/review-2017
+    updated: '2018-04-21 11:52:48 +0900'
+    children: []
 review-2018:
     type: wiki
     title: '2018년 리뷰 모음'
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-04-20 21:29:36 +0900'
+    updated: '2018-04-24 20:28:11 +0900'
     children: []
 RFC:
     type: wiki
@@ -1045,6 +1061,14 @@ RFC:
     parent: what
     url: /wiki/RFC
     updated: '2018-04-04 09:06:15 +0900'
+    children: []
+rule-of-succession:
+    type: wiki
+    title: '후속 규칙(Rule of succession)'
+    summary: '(w + 1) / (n + 2)'
+    parent: math
+    url: /wiki/rule-of-succession
+    updated: '2018-04-24 21:56:04 +0900'
     children: []
 SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness:
     type: wiki
@@ -1110,6 +1134,14 @@ special-chars:
     url: /wiki/special-chars
     updated: '2018-04-12 21:02:50 +0900'
     children: []
+sql-char-comparison:
+    type: wiki
+    title: 'MySQL에서 ''a'' = ''a ''가 true로 평가된다?'
+    summary: 'DB알못의 어떤 리서치'
+    parent: why
+    url: /wiki/sql-char-comparison
+    updated: '2018-04-21 11:15:30 +0900'
+    children: []
 static-factory-method-pattern:
     type: wiki
     title: '정적 팩토리 메서드(static factory method)'
@@ -1162,9 +1194,9 @@ Think-Bayes:
     type: wiki
     title: '(책) 파이썬을 활용한 베이지안 통계'
     summary: '동전 던지기와 하키 승률로 배우는 데이터 분석'
-    parent: ""
+    parent: book
     url: /wiki/Think-Bayes
-    updated: '2018-04-15 07:50:00 +0900'
+    updated: '2018-04-24 20:48:05 +0900'
     children: []
 til:
     type: wiki
@@ -1189,7 +1221,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [command-line, Gradle, mac-apps, useful-site, web-browser-extension]
+    children: [command-line, Gradle, hhkb-jp-tmk, mac-apps, useful-site, web-browser-extension]
 top:
     type: wiki
     title: 'top 명령어'
@@ -1237,7 +1269,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2018-02-20 22:07:53 +0900'
-    children: [geacron, google-search-console-remove-outdated-content, labs-strava-com-heatmap, utterances, 미세먼지-정보]
+    children: [geacron, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, utterances, 미세먼지-정보]
 utterances:
     type: wiki
     title: utterances.es
@@ -1253,7 +1285,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [vim-conceallevel, vim-f-hangul, vim-rest-console, vim-tmux-t-ut, vim-ycm-python3, vimwiki]
+    children: [my-wiki, vim-conceallevel, vim-f-hangul, vim-rest-console, vim-tmux-t-ut, vim-ycm-python3, vimwiki]
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -1349,7 +1381,7 @@ why:
     parent: index
     url: /wiki/why
     updated: '2018-02-07 21:29:47 +0900'
-    children: [letter-case, why-http-80-https-443]
+    children: [letter-case, sql-char-comparison, why-http-80-https-443]
 why-http-80-https-443:
     type: wiki
     title: 'http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?'
@@ -1365,6 +1397,14 @@ yaml:
     parent: programming-language
     url: /wiki/yaml
     updated: '2018-04-08 19:48:46 +0900'
+    children: []
+You-and-Your-Research:
+    type: wiki
+    title: '(요약) 당신과 당신의 연구'
+    summary: '남들보다 10% 더 공부하고, 중요한 문제를 연구하고, 항상 준비할 것'
+    parent: clipping
+    url: /wiki/You-and-Your-Research
+    updated: '2018-04-23 10:31:52 +0900'
     children: []
 Zipf-s-law:
     type: wiki
@@ -1389,6 +1429,14 @@ Zipf-s-law:
     parent: useful-site
     url: /wiki/미세먼지-정보
     updated: '2018-04-02 21:13:51 +0900'
+    children: []
+슈뢰딩거의-고양희:
+    type: wiki
+    title: '(책) 슈뢰딩거의 고양희'
+    summary: '반-바지. SF 단편집'
+    parent: book
+    url: /wiki/슈뢰딩거의-고양희
+    updated: '2018-04-22 17:16:53 +0900'
     children: []
 전생검신:
     type: wiki

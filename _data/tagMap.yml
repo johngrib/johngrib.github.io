@@ -3,11 +3,12 @@ math:
     - {fileName: Cromwell-s-rule}
     - {fileName: frac1e}
     - {fileName: math}
+    - {fileName: rule-of-succession}
     - {fileName: secretary-problem}
 jekyll:
     - {fileName: 2017-01-21-create-jekyll-blog}
     - {fileName: 2017-01-22-jekyll-category-tag}
-    - {fileName: 2017-12-06-my-wiki}
+    - {fileName: my-wiki}
 ideavim:
     - {fileName: 2017-01-30-ideavim-build}
 open-source:
@@ -120,23 +121,18 @@ vim:
     - {fileName: 2017-05-04-input-source}
 hammerspoon:
     - {fileName: 2017-05-04-input-source}
-    - {fileName: 2017-07-30-luarocks}
-    - {fileName: 2017-07-31-hammerspoon-tutorial-00-start}
-    - {fileName: 2017-08-01-hammerspoon-tutorial-01}
-    - {fileName: 2017-08-04-hammerspoon-tutorial-02}
-    - {fileName: 2017-08-05-hammerspoon-tutorial-03}
-    - {fileName: 2017-08-06-hammerspoon-tutorial-04}
-    - {fileName: 2017-08-07-hammerspoon-tutorial-05}
+    - {fileName: hammerspoon}
+    - {fileName: hammerspoon-luarocks}
+    - {fileName: hammerspoon-tutorial-00}
+    - {fileName: hammerspoon-tutorial-01}
+    - {fileName: hammerspoon-tutorial-02}
+    - {fileName: hammerspoon-tutorial-03}
+    - {fileName: hammerspoon-tutorial-04}
+    - {fileName: hammerspoon-tutorial-05}
 karabiner:
     - {fileName: 2017-05-04-input-source}
 input-source:
     - {fileName: 2017-05-04-input-source}
-hhkb:
-    - {fileName: 2017-05-14-hhkb-jp-tmk}
-keyboard:
-    - {fileName: 2017-05-14-hhkb-jp-tmk}
-tmk:
-    - {fileName: 2017-05-14-hhkb-jp-tmk}
 mockito:
     - {fileName: 2017-05-16-jwp-11}
 DI:
@@ -146,30 +142,12 @@ game:
     - {fileName: TETRIS-EFFECT}
 aheui:
     - {fileName: 2017-07-14-aheui-explained}
-lua:
-    - {fileName: 2017-07-30-luarocks}
-luarocks:
-    - {fileName: 2017-07-30-luarocks}
-perl:
-    - {fileName: 2017-09-20-regex-prime}
-regex:
-    - {fileName: 2017-09-20-regex-prime}
-wiki:
-    - {fileName: 2017-12-06-my-wiki}
-    - {fileName: vimwiki}
-vimwiki:
-    - {fileName: 2017-12-06-my-wiki}
-blog:
-    - {fileName: 2017-12-06-my-wiki}
-    - {fileName: utterances}
 diary:
     - {fileName: '2018-01-20'}
     - {fileName: diary}
     - {fileName: diary-2018}
 block-chain:
     - {fileName: '2018-01-20'}
-sql:
-    - {fileName: 2018-02-26-sql-char-comparison}
 complexity:
     - {fileName: airplain-rule}
 law:
@@ -227,6 +205,9 @@ bayes:
     - {fileName: locomotive-problem}
     - {fileName: MnM-problem}
     - {fileName: Monty-Hall-problem}
+    - {fileName: Oliver-s-blood}
+    - {fileName: rule-of-succession}
+    - {fileName: Think-Bayes}
 story:
     - {fileName: Bill-Atkinson-productivity}
     - {fileName: gerald-weinberg-language-king}
@@ -302,6 +283,15 @@ proverb:
     - {fileName: orange-juice-test}
     - {fileName: Postel-s-law}
     - {fileName: proverb}
+Think-Bayes:
+    - {fileName: cookie-problem}
+    - {fileName: dice-problem}
+    - {fileName: euro-problem}
+    - {fileName: locomotive-problem}
+    - {fileName: MnM-problem}
+    - {fileName: Monty-Hall-problem}
+    - {fileName: Oliver-s-blood}
+    - {fileName: Think-Bayes}
 추정:
     - {fileName: Copernican-Principle}
 history:
@@ -336,6 +326,7 @@ terminal:
     - {fileName: fish-shell}
 확률:
     - {fileName: frac1e}
+    - {fileName: rule-of-succession}
 map:
     - {fileName: geacron}
     - {fileName: Geek-Atlas}
@@ -367,10 +358,14 @@ jvm-lang:
     - {fileName: groovy}
 groovy:
     - {fileName: groovy}
+lua:
+    - {fileName: hammerspoon-luarocks}
 만화책:
     - {fileName: HELL-BOY}
     - {fileName: toda-seiji-scientia}
     - {fileName: 그림으로-보는-서양검술-메모}
+keyboard:
+    - {fileName: hhkb-jp-tmk}
 movie:
     - {fileName: HOT-FUZZ}
     - {fileName: movie}
@@ -380,12 +375,14 @@ http:
     - {fileName: http-message}
     - {fileName: HTTP-no-Kyokasho}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
+    - {fileName: httpbin.org}
     - {fileName: URI}
     - {fileName: vim-rest-console}
     - {fileName: why-http-80-https-443}
 review:
     - {fileName: HTTP-no-Kyokasho}
     - {fileName: review}
+    - {fileName: review-2017}
     - {fileName: review-2018}
     - {fileName: secret-of-consulting}
     - {fileName: Shunsho-juwa}
@@ -422,6 +419,14 @@ latex:
     - {fileName: mathjax-latex}
 media:
     - {fileName: media}
+wiki:
+    - {fileName: my-wiki}
+    - {fileName: vimwiki}
+vimwiki:
+    - {fileName: my-wiki}
+blog:
+    - {fileName: my-wiki}
+    - {fileName: utterances}
 번역:
     - {fileName: Object-equals}
     - {fileName: Object-hashCode}
@@ -438,6 +443,10 @@ tip:
     - {fileName: use-java-primitive-type-for-performance}
 culture:
     - {fileName: proverb}
+perl:
+    - {fileName: regex-prime}
+regex:
+    - {fileName: regex-prime}
 rfc:
     - {fileName: RFC}
     - {fileName: why-http-80-https-443}
@@ -455,6 +464,8 @@ IEEE:
     - {fileName: Software-Engineering-Code-of-Ethics}
 ethics:
     - {fileName: Software-Engineering-Code-of-Ethics}
+db:
+    - {fileName: sql-char-comparison}
 web:
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
 hacker:
@@ -465,6 +476,7 @@ trouble-shooting:
     - {fileName: vim-conceallevel}
 sf:
     - {fileName: toda-seiji-scientia}
+    - {fileName: 슈뢰딩거의-고양희}
     - {fileName: 한국과학문학상-수상작품집-제2회}
 performance:
     - {fileName: use-java-primitive-type-for-performance}
@@ -494,6 +506,8 @@ yaml:
     - {fileName: yaml}
 data-format:
     - {fileName: yaml}
+공부:
+    - {fileName: You-and-Your-Research}
 stat:
     - {fileName: Zipf-s-law}
 무술:
