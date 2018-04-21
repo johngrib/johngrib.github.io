@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-04-21 11:42:35 +0900
+updated : 2018-04-21 12:00:50 +0900
 tags    : index
 toc     : true
 public  : true
@@ -12,6 +12,7 @@ comment : false
 * [[diary]]
 
 * [[algorithm]]
+    * [[regex-prime]]
     * [[von-neumann-extractor]]
 * [[clipping]]{글 모음 및 요약}
     * [[legend]]
@@ -65,6 +66,7 @@ comment : false
         * [[한국과학문학상-수상작품집-제2회]]
     * [[review]]
         * [[review-2018]]
+        * [[review-2017]]
     * [[movie]]
         * [[ALPHAGO]]
         * [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]]
@@ -121,6 +123,7 @@ comment : false
             * [[hammerspoon-tutorial-03]]
             * [[hammerspoon-tutorial-04]]
             * [[hammerspoon-tutorial-05]]
+            * [[hammerspoon-luarocks]]
         * [[Shortcat]]
     * [[useful-site]]
         * [[geacron]]
@@ -134,6 +137,7 @@ comment : false
     * [[git-checkout-specific-files]]
     * [[trouble-shooting-node-7-install]]
 * [[Vim]]
+    * [[my-wiki]]
     * [[vim-conceallevel]]{conceallevel (Vim)}
     * [[vim-f-hangul]]
     * [[vim-rest-console]]
