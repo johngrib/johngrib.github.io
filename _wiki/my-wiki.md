@@ -1,12 +1,14 @@
 ---
-layout  : post
+layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
+updated : 2018-04-21 11:58:23 +0900
 tags    : wiki vimwiki jekyll blog
 toc     : true
 comment : true
 public  : true
+parent  : Vim
 ---
 * TOC
 {:toc}
@@ -20,7 +22,7 @@ public  : true
 만약 내가 `test`라는 단어에 커서를 놓고 엔터를 입력하면,
 
 * `test.md` 파일을 열어준다. 파일이 없다면 새로 만들고 열어준다.
-* 링크를 생성한 `test`에는 대괄호를 두 개 입혀 `[[test]]`라고 표시한다.
+* 링크를 생성한 `test`에는 대괄호를 두 개 입혀 `\[[test]]`라고 표시한다.
 * 좀 전에 보던 파일로 돌아가려면 백스페이스 키를 누르면 된다.
 
 즉, 어떤 단어에 대해 기록하고 싶은 것이 있다면 그냥 엔터를 누르고 원하는 내용을 기록하면 된다.  
@@ -42,7 +44,7 @@ public  : true
 * Vimwiki가 있으니 엔터 키 하나로 새로운 항목을 추가하고 링크도 연결할 수 있다. 이보다 편하긴 어렵다.
 * 로컬에서 예상치 못한 귀찮은 문제가 생기면 Vimscript로 해결하면 된다.
 * 웹에서 링크 연결하는 문제는 Javascript를 써서 해결하자.
-    * `[[test]]`를 `<a href="../test.md">test</a>`로 리플레이스하면 될 것 같다.
+    * `\[[test]]`를 `<a href="../test.md">test</a>`로 리플레이스하면 될 것 같다.
 
 ### 검색 기능이 있어야 한다
 
@@ -102,14 +104,14 @@ let g:vimwiki_conceallevel = 0
 ```
 
 * `wiki.syntax`를 `markdown`를 설정하지 않고 기본 값으로 둔 이유.
-    * 엔터 키로 생성하는 링크가 `[[ ]]`가 아니라 `[  ]()`의 형태로 생성된다. 이렇게 되면 Vimwiki만 쓰기엔 좋은데 Jekyll과 함께 쓰기가 짜증난다. Vimwiki는 링크 위치를 설정 값을 보고 찾아가지만, Jekyll은 그러지 못한다.
+    * 엔터 키로 생성하는 링크가 `\[[ ]]`가 아니라 `[  ]()`의 형태로 생성된다. 이렇게 되면 Vimwiki만 쓰기엔 좋은데 Jekyll과 함께 쓰기가 짜증난다. Vimwiki는 링크 위치를 설정 값을 보고 찾아가지만, Jekyll은 그러지 못한다.
 
 * `vimwiki_conceallevel`을 `0`으로 설정한 이유.
     * Vimwiki는 기본적으로 사용자에게 몇몇 특수문자를 보여주지 않도록 설정되어 있다.
     * 문제는 Vim에 익숙한 사용자일수록 이게 더 불편하고, 숨기는 문자가 많을수록 속도가 느려질 수 있다는 것이다.
     * 아무 것도 숨기지 않도록 `0`으로 설정하는 것이 정신건강에 좋다.
 
-### `[[test]]`형식의 Vimwiki 링크를 html `<a>` 태그로 보여준다.
+### `\[[test]]`형식의 Vimwiki 링크를 html `<a>` 태그로 보여준다.
 
 [_includes/createLink.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/createLink.html) 파일을 만들고 다음과 같이 Javascript 코드를 짜 넣었다.
 
@@ -125,8 +127,8 @@ let g:vimwiki_conceallevel = 0
 
 위의 javascript 코드는 다음과 같은 두 가지 패턴에 대해 `<a>` 태그를 생성한다.
 
-* `[[test]]{테스트}` => `<a href="../test">테스트</a>`
-* `[[test]]` => `<a href="../test">test</a>`
+* `\[[test]]{테스트}` => `<a href="../test">테스트</a>`
+* `\[[test]]` => `<a href="../test">test</a>`
 
 이제 `_includes/createLink.html`을 위키 레이아웃에 집어넣으면 Vimwiki의 링크 형식이 웹으로 볼 때에는 `<a>`태그 링크로 보이게 된다.
 
@@ -168,7 +170,7 @@ let g:vimwiki_conceallevel = 0
 ##### 링크 30000 개
 
 극단적인 경우도 테스트해보고 싶어서 링크 30000개를 테스트해 보았다.  
-링크 20000개는 `[[test]]{테스트}`의 형식이고, 10000개는 `[[test]]`의 형식이었다.
+링크 20000개는 `\[[test]]{테스트}`의 형식이고, 10000개는 `\[[test]]`의 형식이었다.
 
 일단 가장 큰 차이가 나는 건 빌드 시간. 하지만 15초 정도는 얼마든지 기다릴 수 있다.  
 빌드된 웹 페이지를 Jekyll 로컬 서버로 띄워 크롬에서 열어보니 4초 정도 걸린다.  
