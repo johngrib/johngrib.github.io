@@ -1,12 +1,14 @@
 ---
-layout  : post
+layout  : wiki
 title   : Hammerspoon 튜토리얼 04 - 웹뷰와 urlevent 기능을 사용해 봅시다
 summary : 결론은 터미널
 date    : 2017-08-06 13:35:00 +0900
+updated : 2018-04-21 11:41:57 +0900
 tags    : hammerspoon
 toc     : true
 comment : true
 public  : true
+parent  : hammerspoon
 ---
 * TOC
 {:toc}

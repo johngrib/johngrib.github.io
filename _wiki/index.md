@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-04-20 20:46:43 +0900
+updated : 2018-04-21 11:42:35 +0900
 tags    : index
 toc     : true
 public  : true
@@ -112,7 +112,15 @@ comment : false
         * [[top]]
         * [[uptime]]
     * [[Gradle]]
+    * [[hhkb-jp-tmk]]
     * [[mac-apps]]
+        * [[hammerspoon]]
+            * [[hammerspoon-tutorial-00]]
+            * [[hammerspoon-tutorial-01]]
+            * [[hammerspoon-tutorial-02]]
+            * [[hammerspoon-tutorial-03]]
+            * [[hammerspoon-tutorial-04]]
+            * [[hammerspoon-tutorial-05]]
         * [[Shortcat]]
     * [[useful-site]]
         * [[geacron]]
@@ -140,6 +148,7 @@ comment : false
     * [[URI]]
 * [[why]]
     * [[letter-case]]
+    * [[sql-char-comparison]]
     * [[why-http-80-https-443]]
 
 ---

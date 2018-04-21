@@ -1,12 +1,14 @@
 ---
-layout  : post
+layout  : wiki
 title   : Hammerspoon 튜토리얼 03 - 한영 전환 키를 만들어 봅시다
 summary : Esc - 영문전환도 만들어 봅시다
 date    : 2017-08-05 12:11:00 +0900
+updated : 2018-04-21 11:39:59 +0900
 tags    : hammerspoon
 toc     : true
 comment : true
 public  : true
+parent  : hammerspoon
 ---
 * TOC
 {:toc}

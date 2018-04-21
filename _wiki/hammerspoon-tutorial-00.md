@@ -1,12 +1,14 @@
 ---
-layout  : post
+layout  : wiki
 title   : Hammerspoon 튜토리얼 00 - 시작하기
 summary : 일단 맥이 있어야 한다
 date    : 2017-07-31 21:57:27 +0900
+updated : 2018-04-21 11:24:48 +0900
 tags    : hammerspoon
 toc     : true
 comment : true
 public  : true
+parent  : hammerspoon
 ---
 * TOC
 {:toc}

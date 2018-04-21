@@ -1,12 +1,14 @@
 ---
-layout  : post
+layout  : wiki
 title   : Hammerspoon 튜토리얼 02 - 클립보드 확장 기능을 만들어 봅시다
 summary : 복붙을 편하게!
 date    : 2017-08-04 21:32:22 +0900
+updated : 2018-04-21 11:37:42 +0900
 tags    : hammerspoon
 toc     : true
 comment : true
 public  : true
+parent  : hammerspoon
 ---
 * TOC
 {:toc}
@@ -187,7 +189,7 @@ end
 * `F15`: 앱 선택/실행 전담
 * `F16`: 윈도우 사이즈 조정/이동 전담
 
-(사실 저는 좀 [특수한 키보드](/blog/2017/05/14/hhkb-jp-tmk)를 사용하고 있어서 `F16` 키가 있습니다.)
+(사실 저는 좀 [[hhkb-jp-tmk]]{특수한 키보드}를 사용하고 있어서 `F16` 키가 있습니다.)
 
 Karabiner-Elements와 Hammerspoon 모두
 [`F20` 키 까지 지원](http://www.hammerspoon.org/docs/hs.keycodes.html#map)하니

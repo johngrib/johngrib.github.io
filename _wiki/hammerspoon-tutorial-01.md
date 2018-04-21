@@ -1,19 +1,22 @@
 ---
-layout  : post
+layout  : wiki
 title   : Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동
 summary : 윈도우즈에는 있으나 맥에는 없는 그것
 date    : 2017-08-01 22:47:08 +0900
+updated : 2018-04-21 11:31:44 +0900
 tags    : hammerspoon
 toc     : true
 comment : true
 public  : true
+parent  : hammerspoon
 ---
 * TOC
 {:toc}
 
 # 윈도우 힌트 기능을 사용해 봅시다
 
-[이전 글](/blog/2017/07/31/hammerspoon-tutorial-00-start)의 마지막에서는 단축키에 앱 활성화 기능을 붙여 보았습니다.  
+[[hammerspoon-tutorial-00]]{이전 글}의 마지막에서는 단축키에 앱 활성화 기능을 붙여 보았습니다.  
+
 자주 사용하는 앱 9개 정도를 골라 단축키를 바인딩하면 무척 편리하게 사용할 수 있습니다.
 
 이번에는 앱 활성화와 함께 사용하기 좋은 기능인 `windowHints`를 사용해 봅시다.
@@ -141,7 +144,7 @@ hs.hotkey.bind(mod, '9', move_win(right, top, half_width, half_height))
 
 # Links
 
-* [Hammerspoon 튜토리얼 00](/blog/2017/07/31/hammerspoon-tutorial-00-start)
+* [[hammerspoon-tutorial-00]]
 * [API 문서](http://www.hammerspoon.org/docs/index.html)
     * [hs.keycodes.map](http://www.hammerspoon.org/docs/hs.keycodes.html#map): 설정 가능한 키 목록을 볼 수 있습니다.
     * [hs.application.launchOrFocus](http://www.hammerspoon.org/docs/hs.application.html#launchOrFocus)
