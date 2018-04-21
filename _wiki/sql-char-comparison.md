@@ -1,11 +1,13 @@
 ---
-layout  : post
+layout  : wiki
 title   : MySQL에서 'a' = 'a '가 true로 평가된다?
 summary : DB알못의 어떤 리서치
 date    : 2018-02-26 21:09:03 +0900
-tags    : sql
+updated : 2018-04-21 11:15:30 +0900
+tags    : db
 toc     : true
 public  : true
+parent  : why
 latex   : false
 ---
 * TOC
