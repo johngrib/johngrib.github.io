@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-04-22 17:20:04 +0900
+updated : 2018-04-22 20:50:31 +0900
 tags    : review
 toc     : true
 public  : true
@@ -47,6 +47,9 @@ latex   : false
 
 ## 영화/드라마
 
+* 2018-04-22 I AM NOT AN EASY MAN - 거꾸로 가는 남자. [IMDB](https://www.imdb.com/title/tt6857988/ )
+* 2018-04-22 THE DRESS MAKER - 원작도 읽어보고 싶은 영화
+* 2018-04-21 산타 클라리타 다이어트 시즌 2 [IMDB](https://www.imdb.com/title/tt5580540/ ) - 시즌2 재밌었다.
 * 2018-04-07 레모니 스니켓의 위험한 대결 시즌2
 * 2018-03-25 Pacific Rim: Uprising - 마징가 오마주와 재해석된 보스 보로트가 좋았다!
 * 2018-03-01 Disney Moana - 아름다운 영화였다
