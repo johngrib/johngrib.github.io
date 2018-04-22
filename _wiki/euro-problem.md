@@ -3,7 +3,7 @@ layout  : wiki
 title   : 유로 문제(euro problem)
 summary : 동전이 한 쪽으로 기울었다는 것을 증명하자
 date    : 2018-04-19 22:01:22 +0900
-updated : 2018-04-22 10:46:11 +0900
+updated : 2018-04-22 10:53:25 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -293,5 +293,13 @@ function init(hypos) {
 
 이와 같이 데이터가 충분히 많은 경우
 서로 다른 사전 확률로 시작해도
-거의 동일한 사후 확률로 수렴하는 것을 **사전 분포 범람**이라 부른다.
+거의 동일한 사후 확률로 수렴하는 것을 **사전 분포 범람(swamping the priors)**이라 부른다.
+
+
+# Links
+
+* [[Bayes-theorem]]
+* [[Think-Bayes]]
+* [[Cromwell-s-rule]]
+
 
