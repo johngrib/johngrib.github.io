@@ -3,7 +3,7 @@ layout  : wiki
 title   : 유로 문제(euro problem)
 summary : 동전이 한 쪽으로 기울었다는 것을 증명하자
 date    : 2018-04-19 22:01:22 +0900
-updated : 2018-04-22 10:53:25 +0900
+updated : 2018-04-22 10:56:24 +0900
 tags    : bayes
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : true
 
 # 개요
 
+* 이 문서는 [[Think-Bayes]] 책 53~58쪽을 공부한 내용이다.
 * David MacKay는 정보 이론, 추론, 학습 알고리즘 분야에 다음 문제를 제안했다.
 
 >
