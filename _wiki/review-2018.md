@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-04-22 20:50:31 +0900
+updated : 2018-04-23 20:37:57 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-04-23 미적분 다이어리
 * 2018-04-22 [[슈뢰딩거의-고양희]]
 * 2018-04-20 [[GRAVITY-EXPRESS]]{그래비티 익스프레스}
 * 2018-04-19 [[Computer-Science-Distilled]]{한 권으로 그리는 컴퓨터 과학 로드맵}
