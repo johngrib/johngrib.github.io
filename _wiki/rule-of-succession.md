@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : 후속 규칙(Rule of succession)
-summary : (w + 1) / (n + 2)
+summary : (s + 1) / (n + 2)
 date    : 2018-04-06 06:40:22 +0900
-updated : 2018-04-24 21:56:04 +0900
+updated : 2018-04-24 22:03:17 +0900
 tags    : math 확률 bayes
 toc     : true
 public  : true
