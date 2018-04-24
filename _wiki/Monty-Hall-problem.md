@@ -3,8 +3,8 @@ layout  : wiki
 title   : 몬티 홀 문제(Monty Hall problem)
 summary : 
 date    : 2018-04-11 12:20:40 +0900
-updated : 2018-04-15 11:37:47 +0900
-tags    : bayes
+updated : 2018-04-24 20:49:29 +0900
+tags    : Think-Bayes bayes
 toc     : true
 public  : true
 parent  : problem

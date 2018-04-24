@@ -3,8 +3,8 @@ layout  : wiki
 title   : 주사위 문제
 summary : 
 date    : 2018-04-13 22:42:24 +0900
-updated : 2018-04-15 12:37:36 +0900
-tags    : bayes
+updated : 2018-04-24 20:48:57 +0900
+tags    : Think-Bayes bayes
 toc     : true
 public  : true
 parent  : problem

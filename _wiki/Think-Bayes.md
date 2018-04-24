@@ -3,11 +3,11 @@ layout  : wiki
 title   : (책) 파이썬을 활용한 베이지안 통계
 summary : 동전 던지기와 하키 승률로 배우는 데이터 분석
 date    : 2018-04-08 23:07:56 +0900
-updated : 2018-04-15 07:50:00 +0900
-tags    : 
+updated : 2018-04-24 20:48:05 +0900
+tags    : Think-Bayes bayes
 toc     : true
 public  : true
-parent  : 
+parent  : book
 latex   : false
 ---
 * TOC
