@@ -1,0 +1,30 @@
+---
+layout  : wiki
+title   : (책) CONCRETE MATHEMATICS(구체수학)
+summary : 로널드 그레이엄과 도널드 커누스, 오렌 파타슈닉의 Stanford 강의 교재
+date    : 2018-04-25 22:17:17 +0900
+updated : 2018-04-25 22:17:17 +0900
+tags    : book
+toc     : true
+public  : true
+parent  : book
+latex   : false
+---
+* TOC
+{:toc}
+
+# 개요
+
+이 책의 저자는 다음과 같다.
+
+* 로널드 L. 그레이엄
+* 도널드 E. 커누스
+* 오렌 파타슈닉
+
+더 이상의 설명은 필요 없을 듯.
+
+# Links
+
+* [프로그래머를 위한 단단한 수학 책, 'CONCRETE MATHEMATICS 구체 수학'(도서출판 인사이트)](http://www.insightbook.co.kr/12759 )
+* [류광의 번역 이야기](http://occamsrazr.net/tt/search/concrete%20math ) - 류광님 블로그 concrete math 검색 결과
+
