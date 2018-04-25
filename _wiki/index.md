@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-04-24 21:08:13 +0900
+updated : 2018-04-25 22:06:18 +0900
 tags    : index
 toc     : true
 public  : true
@@ -79,13 +79,6 @@ comment : false
     * [[builder-pattern]]
     * [[static-factory-method-pattern]]
 * [[problem]]
-    * [[cookie-problem]]
-    * [[dice-problem]]
-    * [[euro-problem]]
-    * [[locomotive-problem]]
-    * [[MnM-problem]]
-    * [[Monty-Hall-problem]]
-    * [[Oliver-s-blood]]
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
     * [[Java]]
@@ -107,6 +100,15 @@ comment : false
     * [[orange-juice-test]]
     * [[Postel-s-law]]
     * [[Zipf-s-law]]
+* [[study]]
+    * [[study-think-bayes]]
+        * [[cookie-problem]]
+        * [[dice-problem]]
+        * [[euro-problem]]
+        * [[locomotive-problem]]
+        * [[MnM-problem]]
+        * [[Monty-Hall-problem]]
+        * [[Oliver-s-blood]]
 * [[tools]]
     * [[command-line]]
         * [[df]]
@@ -133,6 +135,7 @@ comment : false
         * [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
         * [[httpbin.org]]
         * [[labs-strava-com-heatmap]]
+        * [[mathdict]]
         * [[utterances]]
         * [[미세먼지-정보]]
     * [[web-browser-extension]]

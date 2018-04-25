@@ -3,6 +3,7 @@ math:
     - {fileName: Cromwell-s-rule}
     - {fileName: frac1e}
     - {fileName: math}
+    - {fileName: mathdict}
     - {fileName: rule-of-succession}
     - {fileName: secretary-problem}
 jekyll:
@@ -64,6 +65,7 @@ study:
     - {fileName: 2017-05-27-jwp-14}
     - {fileName: 2017-05-29-jwp-15}
     - {fileName: 2017-06-01-jwp-16}
+    - {fileName: study}
 jwp:
     - {fileName: 2017-04-02-jwp-00-prepare}
     - {fileName: 2017-04-03-jwp-01}
@@ -207,6 +209,7 @@ bayes:
     - {fileName: Monty-Hall-problem}
     - {fileName: Oliver-s-blood}
     - {fileName: rule-of-succession}
+    - {fileName: study-think-bayes}
     - {fileName: Think-Bayes}
 story:
     - {fileName: Bill-Atkinson-productivity}
@@ -415,6 +418,13 @@ bug:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
 단축키:
     - {fileName: mac-keyboard-shortcuts}
+번역:
+    - {fileName: mathdict}
+    - {fileName: Object-equals}
+    - {fileName: Object-hashCode}
+    - {fileName: Object-toString}
+    - {fileName: Software-Engineering-Code-of-Ethics}
+    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 latex:
     - {fileName: mathjax-latex}
 media:
@@ -427,12 +437,6 @@ vimwiki:
 blog:
     - {fileName: my-wiki}
     - {fileName: utterances}
-번역:
-    - {fileName: Object-equals}
-    - {fileName: Object-hashCode}
-    - {fileName: Object-toString}
-    - {fileName: Software-Engineering-Code-of-Ethics}
-    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 소수:
     - {fileName: Object-hashCode}
 soft-skill:

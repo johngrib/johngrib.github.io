@@ -402,7 +402,7 @@ cookie-problem:
     type: wiki
     title: '쿠키 문제(The cookie problem)'
     summary: '베이즈 이론 연습문제'
-    parent: problem
+    parent: study-think-bayes
     url: /wiki/cookie-problem
     updated: '2018-04-24 20:48:48 +0900'
     children: []
@@ -474,7 +474,7 @@ dice-problem:
     type: wiki
     title: '주사위 문제'
     summary: ""
-    parent: problem
+    parent: study-think-bayes
     url: /wiki/dice-problem
     updated: '2018-04-24 20:48:57 +0900'
     children: []
@@ -522,7 +522,7 @@ euro-problem:
     type: wiki
     title: '유로 문제(euro problem)'
     summary: '동전이 한 쪽으로 기울었다는 것을 증명하자'
-    parent: problem
+    parent: study-think-bayes
     url: /wiki/euro-problem
     updated: '2018-04-24 20:49:06 +0900'
     children: []
@@ -764,7 +764,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-04-24 21:08:13 +0900'
+    updated: '2018-04-25 22:06:18 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -834,7 +834,7 @@ locomotive-problem:
     type: wiki
     title: '기관차 문제(locomotive problem)'
     summary: '기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자'
-    parent: problem
+    parent: study-think-bayes
     url: /wiki/locomotive-problem
     updated: '2018-04-24 20:49:14 +0900'
     children: []
@@ -870,6 +870,14 @@ math:
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
     children: [Bayes-theorem, Cromwell-s-rule, frac1e, rule-of-succession, secretary-problem]
+mathdict:
+    type: wiki
+    title: '대한수학회 수학용어 사전'
+    summary: '수학용어 번역시 꼭 참고하자'
+    parent: useful-site
+    url: /wiki/mathdict
+    updated: '2018-04-25 21:06:47 +0900'
+    children: []
 mathjax-latex:
     type: wiki
     title: 'MathJax로 LaTeX 사용하기'
@@ -890,7 +898,7 @@ MnM-problem:
     type: wiki
     title: 'M&M 문제'
     summary: null
-    parent: problem
+    parent: study-think-bayes
     url: /wiki/MnM-problem
     updated: '2018-04-24 20:49:22 +0900'
     children: []
@@ -898,7 +906,7 @@ Monty-Hall-problem:
     type: wiki
     title: '몬티 홀 문제(Monty Hall problem)'
     summary: ""
-    parent: problem
+    parent: study-think-bayes
     url: /wiki/Monty-Hall-problem
     updated: '2018-04-24 20:49:29 +0900'
     children: []
@@ -962,7 +970,7 @@ Oliver-s-blood:
     type: wiki
     title: '올리버의 혈액형 문제(Oliver''s blood)'
     summary: '흔한 혈액형으로는 유죄로 몰 수 없지'
-    parent: problem
+    parent: study-think-bayes
     url: /wiki/Oliver-s-blood
     updated: '2018-04-24 20:49:44 +0900'
     children: []
@@ -997,7 +1005,7 @@ problem:
     parent: index
     url: /wiki/problem
     updated: '2018-04-16 20:58:12 +0900'
-    children: [cookie-problem, dice-problem, euro-problem, locomotive-problem, MnM-problem, Monty-Hall-problem, Oliver-s-blood]
+    children: []
 PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     type: wiki
     title: '(책) Professional 소프트웨어 개발'
@@ -1065,10 +1073,10 @@ RFC:
 rule-of-succession:
     type: wiki
     title: '후속 규칙(Rule of succession)'
-    summary: '(w + 1) / (n + 2)'
+    summary: '(s + 1) / (n + 2)'
     parent: math
     url: /wiki/rule-of-succession
-    updated: '2018-04-24 21:56:04 +0900'
+    updated: '2018-04-24 22:03:17 +0900'
     children: []
 SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness:
     type: wiki
@@ -1150,6 +1158,22 @@ static-factory-method-pattern:
     url: /wiki/static-factory-method-pattern
     updated: '2018-03-04 13:03:09 +0900'
     children: []
+study:
+    type: wiki
+    title: study
+    summary: ""
+    parent: index
+    url: /wiki/study
+    updated: '2018-04-25 22:04:58 +0900'
+    children: [study-think-bayes]
+study-think-bayes:
+    type: wiki
+    title: '(study) 파이썬을 활용한 베이지안 통계'
+    summary: ""
+    parent: study
+    url: /wiki/study-think-bayes
+    updated: '2018-04-25 22:05:44 +0900'
+    children: [cookie-problem, dice-problem, euro-problem, locomotive-problem, MnM-problem, Monty-Hall-problem, Oliver-s-blood]
 Take-the-Bully-by-the-Horns:
     type: wiki
     title: '(책) 함부로 말하는 사람과 대화하는 법'
@@ -1269,7 +1293,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2018-02-20 22:07:53 +0900'
-    children: [geacron, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, utterances, 미세먼지-정보]
+    children: [geacron, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, mathdict, utterances, 미세먼지-정보]
 utterances:
     type: wiki
     title: utterances.es
