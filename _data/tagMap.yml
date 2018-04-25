@@ -1,11 +1,13 @@
 math:
     - {fileName: 17-EQUATIONS-THAT-CHANGED-THE-WORLD}
+    - {fileName: c-m-01-Recurrent-Problems}
     - {fileName: Cromwell-s-rule}
     - {fileName: frac1e}
     - {fileName: math}
     - {fileName: mathdict}
     - {fileName: rule-of-succession}
     - {fileName: secretary-problem}
+    - {fileName: study-concrete-math}
 jekyll:
     - {fileName: 2017-01-21-create-jekyll-blog}
     - {fileName: 2017-01-22-jekyll-category-tag}
@@ -166,6 +168,7 @@ book:
     - {fileName: book}
     - {fileName: Clean-Code}
     - {fileName: Code-Complete-2}
+    - {fileName: CONCRETE-MATH}
     - {fileName: Design-for-Hackers}
     - {fileName: DevOps-Troubleshooting}
     - {fileName: DOM-Enlightenment-by-Cody-Lindley}
@@ -323,6 +326,8 @@ java:
     - {fileName: Object-toString}
     - {fileName: private-constructor}
     - {fileName: use-java-primitive-type-for-performance}
+excel:
+    - {fileName: excel-sumifs}
 fish:
     - {fileName: fish-shell}
 terminal:

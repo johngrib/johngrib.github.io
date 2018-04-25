@@ -301,7 +301,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 한국과학문학상-수상작품집-제2회]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 한국과학문학상-수상작품집-제2회]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -341,6 +341,14 @@ builder-pattern:
     parent: design-pattern
     url: /wiki/builder-pattern
     updated: '2018-02-18 00:20:50 +0900'
+    children: []
+c-m-01-Recurrent-Problems:
+    type: wiki
+    title: '구체수학 01. 재귀적인 문제들'
+    summary: '01. Recurrent Problems'
+    parent: study-concrete-math
+    url: /wiki/c-m-01-Recurrent-Problems
+    updated: '2018-04-26 23:16:47 +0900'
     children: []
 Clean-Code:
     type: wiki
@@ -389,6 +397,14 @@ Computer-Science-Distilled:
     parent: book
     url: /wiki/Computer-Science-Distilled
     updated: '2018-04-19 21:07:04 +0900'
+    children: []
+CONCRETE-MATH:
+    type: wiki
+    title: '(책) CONCRETE MATHEMATICS(구체수학)'
+    summary: '로널드 그레이엄과 도널드 커누스, 오렌 파타슈닉의 Stanford 강의 교재'
+    parent: book
+    url: /wiki/CONCRETE-MATH
+    updated: '2018-04-25 22:17:17 +0900'
     children: []
 Conway-s-law:
     type: wiki
@@ -525,6 +541,14 @@ euro-problem:
     parent: study-think-bayes
     url: /wiki/euro-problem
     updated: '2018-04-24 20:49:06 +0900'
+    children: []
+excel-sumifs:
+    type: wiki
+    title: '(Excel) SUMIFS 함수 사용법'
+    summary: '조건에 맞는 값의 sum 값을 구한다'
+    parent: til
+    url: /wiki/excel-sumifs
+    updated: '2018-04-26 21:10:37 +0900'
     children: []
 fish-shell:
     type: wiki
@@ -764,7 +788,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-04-25 22:06:18 +0900'
+    updated: '2018-04-26 21:58:06 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1165,7 +1189,15 @@ study:
     parent: index
     url: /wiki/study
     updated: '2018-04-25 22:04:58 +0900'
-    children: [study-think-bayes]
+    children: [study-concrete-math, study-think-bayes]
+study-concrete-math:
+    type: wiki
+    title: '(study) Concrete Mathematics(구체수학)'
+    summary: ""
+    parent: study
+    url: /wiki/study-concrete-math
+    updated: '2018-04-25 22:16:17 +0900'
+    children: [c-m-01-Recurrent-Problems]
 study-think-bayes:
     type: wiki
     title: '(study) 파이썬을 활용한 베이지안 통계'
@@ -1229,7 +1261,7 @@ til:
     parent: index
     url: /wiki/til
     updated: '2018-02-13 21:00:13 +0900'
-    children: [git-checkout-specific-files, trouble-shooting-node-7-install]
+    children: [excel-sumifs, git-checkout-specific-files, trouble-shooting-node-7-install]
 toda-seiji-scientia:
     type: wiki
     title: '(책) 스키엔티아 - 도다 세이지'

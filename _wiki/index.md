@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-04-25 22:06:18 +0900
+updated : 2018-04-26 21:58:06 +0900
 tags    : index
 toc     : true
 public  : true
@@ -41,6 +41,7 @@ comment : false
         * [[Clean-Code]]
         * [[Code-Complete-2]]
         * [[Computer-Science-Distilled]]
+        * [[CONCRETE-MATH]]
         * [[DevOps-Troubleshooting]]
         * [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
         * [[Effective-Java]]
@@ -101,6 +102,8 @@ comment : false
     * [[Postel-s-law]]
     * [[Zipf-s-law]]
 * [[study]]
+    * [[study-concrete-math]]
+        * [[c-m-01-Recurrent-Problems]]
     * [[study-think-bayes]]
         * [[cookie-problem]]
         * [[dice-problem]]
@@ -141,6 +144,7 @@ comment : false
     * [[web-browser-extension]]
         * [[vimium]]
 * [[til]]
+    * [[excel-sumifs]]
     * [[git-checkout-specific-files]]
     * [[trouble-shooting-node-7-install]]
 * [[Vim]]
