@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 01. 재귀적인 문제들
 summary : 01. Recurrent Problems
 date    : 2018-04-26 21:58:11 +0900
-updated : 2018-04-26 23:16:47 +0900
+updated : 2018-04-27 07:15:36 +0900
 tags    : math
 toc     : true
 public  : true
@@ -18,6 +18,8 @@ latex   : true
 * 이 문서는 [[CONCRETE-MATH]]책의 1 ~ 6 쪽을 공부하며 메모한 것입니다.
 
 # 하노이의 탑(THE TOWER OF HANOI)
+
+* 프랑스 수학자 에두아르 뤼카(Edouard Lucas)가 1883년에 만든 문제.
 
 ![하노이의 탑](https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Tower_of_Hanoi.jpeg/450px-Tower_of_Hanoi.jpeg)
 
@@ -139,6 +141,43 @@ $$
 
 
 # 평면의 선들(LINES IN THE PLANE)
+
+* 1826년 스위스 수학자 야콥 슈타이너(Jacob Steiner)가 처음으로 풀은 문제.
+
+>
+피자 칼로 피자를 n번 직선으로 자른다고 할 때 피자 조각이 최대 몇 개나 나올까?
+
+이 문제를 다음과 같이 표현할 수 있다.
+
+>
+평면에 놓인 $$n$$개의 선(직선)으로 정의되는 영역의 최대 개수 $$L_n$$이 무엇인가?
+
+## 작은 사례부터 생각한다
+
+* 선이 0 개라면 피자는 하나.
+    * $$L_0 = 1$$ &nbsp;
+* 선이 1 개라면 피자는 둘.
+    * $$L_1 = 2$$ &nbsp;
+* 선이 2 개라면 피자는 넷.
+    * $$L_2 = 4$$ &nbsp;
+* 선이 3 개라면 피자는 일곱.
+
+{% raw %}
+<svg width="160" height="130">
+    <g>
+        <path d="M 151,93 L 11,30" stroke="#00f"></path>
+        <path d="M 151,30 L 11,95" stroke="#000"></path>
+        <path d="M 110,113 L 123,12" stroke="#000"></path>
+        <text x="140" y="20" font-size="20" fill="#f00"> d </text>
+        <text x="60" y="30"> 1a </text>
+        <text x="20" y="60"> 2a </text>
+        <text x="60" y="90"> 2b </text>
+        <text x="98" y="70"> 1b </text>
+        <text x="130" y="70"> 1c </text>
+        <text x="121" y="102"> 2c </text>
+    </g>
+</svg>
+{% endraw %}
 
 
 # Links
