@@ -348,7 +348,7 @@ c-m-01-Recurrent-Problems:
     summary: '01. Recurrent Problems'
     parent: study-concrete-math
     url: /wiki/c-m-01-Recurrent-Problems
-    updated: '2018-04-26 23:16:47 +0900'
+    updated: '2018-04-27 07:15:36 +0900'
     children: []
 Clean-Code:
     type: wiki
@@ -1196,7 +1196,7 @@ study-concrete-math:
     summary: ""
     parent: study
     url: /wiki/study-concrete-math
-    updated: '2018-04-25 22:16:17 +0900'
+    updated: '2018-04-27 06:05:17 +0900'
     children: [c-m-01-Recurrent-Problems]
 study-think-bayes:
     type: wiki
