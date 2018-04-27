@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-04-26 21:58:06 +0900
+updated : 2018-06-03 14:16:46 +0900
 tags    : index
 toc     : true
 public  : true
@@ -52,6 +52,7 @@ comment : false
         * [[HTTP-no-Kyokasho]]
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
         * [[Mythical-Man-Month]]
+        * [[PATTERN-ON-THE-STONE]]
         * [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]
         * [[SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness]]
         * [[secret-of-consulting]]
@@ -66,6 +67,7 @@ comment : false
         * [[그림으로-보는-서양검술-메모]]
         * [[슈뢰딩거의-고양희]]
         * [[전생검신]]
+        * [[토끼의-아리아]]
         * [[한국과학문학상-수상작품집-제2회]]
     * [[review]]
         * [[review-2018]]
@@ -88,6 +90,7 @@ comment : false
         * [[Object-toString]]
         * [[private-constructor]]
         * [[use-java-primitive-type-for-performance]]
+    * [[Python3]]
     * [[YAML]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
     * [[airplain-rule]]
@@ -103,7 +106,21 @@ comment : false
     * [[Zipf-s-law]]
 * [[study]]
     * [[study-concrete-math]]
-        * [[c-m-01-Recurrent-Problems]]
+        * [[c-m-01-Recurrent-Problems-01]]
+        * [[c-m-01-Recurrent-Problems-02]]
+        * [[c-m-01-Recurrent-Problems-03]]
+        * [[c-m-01-Recurrent-Problems-Exercises]]
+        * [[c-m-02-Sums-01]]
+        * [[c-m-02-Sums-02]]
+        * [[c-m-02-Sums-03]]
+        * [[c-m-02-Sums-04]]
+        * [[c-m-02-Sums-05]]
+        * [[c-m-02-Sums-06]]
+        * [[c-m-02-Sums-07]]
+        * [[c-m-02-Sums-Exercises]]
+        * [[c-m-03-Integer-Functions-01]]
+        * [[c-m-03-Integer-Functions-02]]
+        * [[c-m-05-Binomial-Coefficients-04]]
     * [[study-think-bayes]]
         * [[cookie-problem]]
         * [[dice-problem]]

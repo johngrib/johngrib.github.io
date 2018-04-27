@@ -1,6 +1,20 @@
 math:
     - {fileName: 17-EQUATIONS-THAT-CHANGED-THE-WORLD}
-    - {fileName: c-m-01-Recurrent-Problems}
+    - {fileName: c-m-01-Recurrent-Problems-01}
+    - {fileName: c-m-01-Recurrent-Problems-02}
+    - {fileName: c-m-01-Recurrent-Problems-03}
+    - {fileName: c-m-01-Recurrent-Problems-Exercises}
+    - {fileName: c-m-02-Sums-01}
+    - {fileName: c-m-02-Sums-02}
+    - {fileName: c-m-02-Sums-03}
+    - {fileName: c-m-02-Sums-04}
+    - {fileName: c-m-02-Sums-05}
+    - {fileName: c-m-02-Sums-06}
+    - {fileName: c-m-02-Sums-07}
+    - {fileName: c-m-02-Sums-Exercises}
+    - {fileName: c-m-03-Integer-Functions-01}
+    - {fileName: c-m-03-Integer-Functions-02}
+    - {fileName: c-m-05-Binomial-Coefficients-04}
     - {fileName: Cromwell-s-rule}
     - {fileName: frac1e}
     - {fileName: math}
@@ -362,6 +376,7 @@ language:
     - {fileName: groovy}
     - {fileName: Java}
     - {fileName: programming-language}
+    - {fileName: Python3}
 jvm-lang:
     - {fileName: groovy}
 groovy:
@@ -486,6 +501,7 @@ trouble-shooting:
 sf:
     - {fileName: toda-seiji-scientia}
     - {fileName: 슈뢰딩거의-고양희}
+    - {fileName: 토끼의-아리아}
     - {fileName: 한국과학문학상-수상작품집-제2회}
 performance:
     - {fileName: use-java-primitive-type-for-performance}

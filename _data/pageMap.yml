@@ -301,7 +301,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 한국과학문학상-수상작품집-제2회]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -342,13 +342,125 @@ builder-pattern:
     url: /wiki/builder-pattern
     updated: '2018-02-18 00:20:50 +0900'
     children: []
-c-m-01-Recurrent-Problems:
+c-m-01-Recurrent-Problems-01:
     type: wiki
-    title: '구체수학 01. 재귀적인 문제들'
-    summary: '01. Recurrent Problems'
+    title: '구체수학 01.재귀적인 문제들.01.하노이의 탑'
+    summary: '01.RECURRENT PROBLEMS'
     parent: study-concrete-math
-    url: /wiki/c-m-01-Recurrent-Problems
-    updated: '2018-04-27 07:15:36 +0900'
+    url: /wiki/c-m-01-Recurrent-Problems-01
+    updated: '2018-05-18 06:41:05 +0900'
+    children: []
+c-m-01-Recurrent-Problems-02:
+    type: wiki
+    title: '구체수학 01.재귀적인 문제들.02.평면의 선들'
+    summary: '01.RECURRENT PROBLEMS'
+    parent: study-concrete-math
+    url: /wiki/c-m-01-Recurrent-Problems-02
+    updated: '2018-05-18 07:04:14 +0900'
+    children: []
+c-m-01-Recurrent-Problems-03:
+    type: wiki
+    title: '구체수학 01.재귀적인 문제들.03.요세푸스 문제'
+    summary: '01.RECURRENT PROBLEMS'
+    parent: study-concrete-math
+    url: /wiki/c-m-01-Recurrent-Problems-03
+    updated: '2018-05-21 20:20:37 +0900'
+    children: []
+c-m-01-Recurrent-Problems-Exercises:
+    type: wiki
+    title: '구체수학 01.재귀적인 문제들.연습문제'
+    summary: '01.RECURRENT PROBLEMS.Exercises'
+    parent: study-concrete-math
+    url: /wiki/c-m-01-Recurrent-Problems-Exercises
+    updated: '2018-06-02 09:44:05 +0900'
+    children: []
+c-m-02-Sums-01:
+    type: wiki
+    title: '구체수학 02.합.01.표기법'
+    summary: 02.SUMS.01.NOTATION
+    parent: study-concrete-math
+    url: /wiki/c-m-02-Sums-01
+    updated: '2018-05-18 13:32:39 +0900'
+    children: []
+c-m-02-Sums-02:
+    type: wiki
+    title: '구체수학 02.합.02.합과 점화식'
+    summary: '02.SUMS.02.SUMS AND RECURRENCES'
+    parent: study-concrete-math
+    url: /wiki/c-m-02-Sums-02
+    updated: '2018-05-21 21:25:46 +0900'
+    children: []
+c-m-02-Sums-03:
+    type: wiki
+    title: '구체수학 02.합.03.합의 조작'
+    summary: '02.SUMS.03.MANIPULATION OF SUMS'
+    parent: study-concrete-math
+    url: /wiki/c-m-02-Sums-03
+    updated: '2018-05-19 10:34:12 +0900'
+    children: []
+c-m-02-Sums-04:
+    type: wiki
+    title: '구체수학 02.합.04.다중합'
+    summary: '02.SUMS.03.MULTIPLE SUMS'
+    parent: study-concrete-math
+    url: /wiki/c-m-02-Sums-04
+    updated: '2018-05-19 10:34:45 +0900'
+    children: []
+c-m-02-Sums-05:
+    type: wiki
+    title: '구체수학 02.합.05.일반적인 방법들'
+    summary: '02.SUMS.05.GENERAL METHODS'
+    parent: study-concrete-math
+    url: /wiki/c-m-02-Sums-05
+    updated: '2018-05-22 18:50:35 +0900'
+    children: []
+c-m-02-Sums-06:
+    type: wiki
+    title: '구체수학 02.합.06.유한-무한 미적분'
+    summary: '02.SUMS.06.FINITE AND INFINITE CALCULUS'
+    parent: study-concrete-math
+    url: /wiki/c-m-02-Sums-06
+    updated: '2018-05-27 16:37:36 +0900'
+    children: []
+c-m-02-Sums-07:
+    type: wiki
+    title: '구체수학 02.합.07.무한합'
+    summary: '02.SUMS.06.INFINITE SUMS'
+    parent: study-concrete-math
+    url: /wiki/c-m-02-Sums-07
+    updated: '2018-05-30 23:21:21 +0900'
+    children: []
+c-m-02-Sums-Exercises:
+    type: wiki
+    title: '구체수학 02.합.Exercises'
+    summary: 02.SUMS.Exercises
+    parent: study-concrete-math
+    url: /wiki/c-m-02-Sums-Exercises
+    updated: '2018-06-01 21:28:43 +0900'
+    children: []
+c-m-03-Integer-Functions-01:
+    type: wiki
+    title: '구체수학 03.정수 함수.01.바닥과 천장'
+    summary: '03.Integer Functions.01.FLOORS AND CEILINGS'
+    parent: study-concrete-math
+    url: /wiki/c-m-03-Integer-Functions-01
+    updated: '2018-06-03 14:10:47 +0900'
+    children: []
+c-m-03-Integer-Functions-02:
+    type: wiki
+    title: '구체수학 03.정수 함수.02.바닥 천장 함수의 응용'
+    summary: '03.Integer Functions.01.FLOOR/CEILING APPLICATIONS'
+    parent: study-concrete-math
+    url: /wiki/c-m-03-Integer-Functions-02
+    updated: '2018-06-03 23:22:10 +0900'
+    children: []
+c-m-05-Binomial-Coefficients-04:
+    type: wiki
+    title: '구체수학 05.이항계수.04.생성함수'
+    summary: '02.SUMS.06.FINITE AND INFINITE CALCULUS'
+    parent: study-concrete-math
+    url: /wiki/c-m-05-Binomial-Coefficients-04
+    updated: '2018-05-22 18:43:06 +0900'
     children: []
 Clean-Code:
     type: wiki
@@ -404,7 +516,7 @@ CONCRETE-MATH:
     summary: '로널드 그레이엄과 도널드 커누스, 오렌 파타슈닉의 Stanford 강의 교재'
     parent: book
     url: /wiki/CONCRETE-MATH
-    updated: '2018-04-25 22:17:17 +0900'
+    updated: '2018-05-23 20:20:35 +0900'
     children: []
 Conway-s-law:
     type: wiki
@@ -788,7 +900,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-04-26 21:58:06 +0900'
+    updated: '2018-06-03 14:16:46 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1006,6 +1118,14 @@ orange-juice-test:
     url: /wiki/orange-juice-test
     updated: '2018-01-30 23:16:57 +0900'
     children: []
+PATTERN-ON-THE-STONE:
+    type: wiki
+    title: '(책) 생각하는 기계'
+    summary: ""
+    parent: book
+    url: /wiki/PATTERN-ON-THE-STONE
+    updated: '2018-05-26 22:15:42 +0900'
+    children: []
 Postel-s-law:
     type: wiki
     title: '포스텔의 법칙(Postel''s law)'
@@ -1045,7 +1165,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [groovy, Java, yaml]
+    children: [groovy, Java, Python3, yaml]
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -1054,6 +1174,14 @@ proverb:
     url: /wiki/proverb
     updated: '2018-02-21 22:37:29 +0900'
     children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, Lubarsky-s-Law-of-Cybernetic-Entomology, No-Silver-Bullet, orange-juice-test, Postel-s-law, Zipf-s-law]
+Python3:
+    type: wiki
+    title: Python3
+    summary: ""
+    parent: programming-language
+    url: /wiki/Python3
+    updated: '2018-05-02 21:25:22 +0900'
+    children: []
 regex-prime:
     type: wiki
     title: '소수를 판별하는 정규식'
@@ -1084,7 +1212,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-04-24 20:28:11 +0900'
+    updated: '2018-06-06 21:52:01 +0900'
     children: []
 RFC:
     type: wiki
@@ -1197,7 +1325,7 @@ study-concrete-math:
     parent: study
     url: /wiki/study-concrete-math
     updated: '2018-04-27 06:05:17 +0900'
-    children: [c-m-01-Recurrent-Problems]
+    children: [c-m-01-Recurrent-Problems-01, c-m-01-Recurrent-Problems-02, c-m-01-Recurrent-Problems-03, c-m-01-Recurrent-Problems-Exercises, c-m-02-Sums-01, c-m-02-Sums-02, c-m-02-Sums-03, c-m-02-Sums-04, c-m-02-Sums-05, c-m-02-Sums-06, c-m-02-Sums-07, c-m-02-Sums-Exercises, c-m-03-Integer-Functions-01, c-m-03-Integer-Functions-02, c-m-05-Binomial-Coefficients-04]
 study-think-bayes:
     type: wiki
     title: '(study) 파이썬을 활용한 베이지안 통계'
@@ -1500,7 +1628,15 @@ Zipf-s-law:
     summary: null
     parent: book
     url: /wiki/전생검신
-    updated: '2018-02-10 20:40:15 +0900'
+    updated: '2018-05-24 20:40:00 +0900'
+    children: []
+토끼의-아리아:
+    type: wiki
+    title: '(책) 토끼의 아리아 - 곽재식 소설집'
+    summary: ""
+    parent: book
+    url: /wiki/토끼의-아리아
+    updated: '2018-04-27 21:50:53 +0900'
     children: []
 한국과학문학상-수상작품집-제2회:
     type: wiki
