@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 01. 재귀적인 문제들
 summary : 01. Recurrent Problems
 date    : 2018-04-26 21:58:11 +0900
-updated : 2018-04-27 07:15:36 +0900
+updated : 2018-04-27 15:50:18 +0900
 tags    : math
 toc     : true
 public  : true
@@ -158,16 +158,43 @@ $$
     * $$L_0 = 1$$ &nbsp;
 * 선이 1 개라면 피자는 둘.
     * $$L_1 = 2$$ &nbsp;
+
+{% raw %}
+<svg width="160" height="130">
+    <g>
+        <path d="M 11,95 L 151,30" stroke="#000"></path>
+        <text x="60" y="30"> a </text>
+        <text x="60" y="90"> b </text>
+    </g>
+</svg>
+{% endraw %}
+
+
 * 선이 2 개라면 피자는 넷.
     * $$L_2 = 4$$ &nbsp;
+
+{% raw %}
+<svg width="160" height="130">
+    <g>
+        <path d="M 11,95 L 151,30" stroke="#000"></path>
+        <path d="M 110,113 L 123,12" stroke="#000"></path>
+
+        <text x="140" y="20"> d </text>
+        <text x="60" y="30"> a </text>
+        <text x="60" y="90"> b </text>
+        <text x="130" y="70"> c </text>
+    </g>
+</svg>
+{% endraw %}
+
 * 선이 3 개라면 피자는 일곱.
 
 {% raw %}
 <svg width="160" height="130">
     <g>
+        <path d="M 11,95 L 151,30" stroke="#000"></path>
+        <path d="M 123,12 L 110,113" stroke="#000"></path>
         <path d="M 151,93 L 11,30" stroke="#00f"></path>
-        <path d="M 151,30 L 11,95" stroke="#000"></path>
-        <path d="M 110,113 L 123,12" stroke="#000"></path>
         <text x="140" y="20" font-size="20" fill="#f00"> d </text>
         <text x="60" y="30"> 1a </text>
         <text x="20" y="60"> 2a </text>
