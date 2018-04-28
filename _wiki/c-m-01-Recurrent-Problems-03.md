@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 01.재귀적인 문제들.03.요세푸스 문제
 summary : 01.RECURRENT PROBLEMS
 date    : 2018-04-26 21:58:11 +0900
-updated : 2018-04-28 16:49:43 +0900
+updated : 2018-04-29 00:44:08 +0900
 tags    : math
 toc     : true
 public  : true
@@ -65,6 +65,8 @@ latex   : true
 * `1`부터 세어나가며 죽인다고 할 때 죽이는 순서는 `2, 4, 6, 8, 10, 3, 7, 1, 9` 이다.
 * 따라서, `J(10) = 5`
 
+추측 : `J(10) = 5` 이니까, $$J(n) = { n \over 2 }$$이 아닐까?
+
 `n`이 작을 때 `n`과 `J(n)`과의 관계를 간단히 표로 정리해 보자.
 
 | n | J(n) | 죽는 순서     |
@@ -78,6 +80,7 @@ latex   : true
 
 곰곰히 살펴보면 다음과 같은 사실을 알 수 있다.
 
+* `J(3) = 3`이고, `J(4) = 1` 이므로 위의 추측은 틀렸다.
 * `2, 4, 6...` 과 같이 첫 루프에서는 짝수 번호가 전부 죽는다는 것을 알 수 있다.
 * 따라서 `J(n)`은 항상 홀수이다.
 * `n`이 짝수이면, 첫 루프에서 짝수가 전부 죽고 인원수가 절반이 된다.
@@ -358,7 +361,8 @@ $$
     * 이를 회전시키면 `1001001(2) = 64 + 8 + 1 = 73` 이다.
     * $$100 = 2^6 + 36 $$ 이므로, $$l = 36$$ 이고, $$2l + 1$$에 의해 `73`이 맞다.
 
-## 재귀시키는 경우
+
+## 최초의 추측 J(n) = n/2 를 생각해보자
 
 즉 함수 `J(n)`은 다음과 같은 작업을 한다.
 
@@ -372,7 +376,379 @@ $$
 
 예를 들어 `101101101101011(2)`를 충분히 회전시키면 `0`이 전부 삭제되어 `1111111111(2) = 1023`이 남게 될 것이다.
 
+* 이제 최초의 추측 $$J(n) = \frac{n}{2}$$ 에 대해 생각해보자.
+* 이 추측은 틀린 가설이었다.
+    * 이제는 해가 있으니 해를 사용하면 이 추측이 참인 경우를 판정 가능하다.
 
+$$
+\begin{align}
+J(n)        & = \frac{n}{2} \\
+J(2^m + l)  & = \frac{2^m + l}{2} \\
+2l + 1      & = \frac{2^m + l}{2} \\
+4l + 2      & = 2^m + l \\
+3l          & = 2^m - 2 \\
+l           & = \frac{2^m - 2}{3} \\
+\end{align}
+$$
+
+즉, $$l = \frac{2^m - 2}{3}$$ 이 `정수`인 경우에 한하여 추측은 들어맞게 된다.
+
+다음은 $$J(n) = \frac{n}{2}$$ 를 만족시키는 몇몇 경우이다.
+
+| m   | $$l$$ | $$n = 2^m + l$$   | $$J(n) = 2l + 1 = \frac{n}{2}$$   | n(이진수)   |
+| --- | --:   | ----------------: | --------------------------------: | ----------: |
+| 1   | 0     | 2                 | 1                                 | 10          |
+| 3   | 2     | 10                | 5                                 | 1010        |
+| 5   | 10    | 42                | 21                                | 101010      |
+| 7   | 42    | 170               | 85                                | 10101010    |
+
+* 이진수를 보면 흥미로운 패턴을 보인다.
+
+
+## 일반화 : 레퍼토리법(repertoire method)
+
+### f(n) 으로 일반화해보자
+
+이제 `J(n)`과 비슷한 함수를 만나게 되었을 때에도 쉽게 풀 수 있도록 `J(n)`함수를 일반화해보자.
+
+`J(n)`의 점화식은 다음과 같았다.
+
+$$
+\begin{array}{ll}
+J(1)      & = 1; \\
+J(2n)     & = 2J(n) - 1, \quad for \; n \ge 1 \\
+J(2n + 1) & = 2J(n) + 1, \quad for \; n \ge 1 \\
+\end{array}
+$$
+
+이를 일반화하기 위해 상수 $$\alpha, \beta, \gamma$$를 도입한 함수 `f(n)`을 만들어 보자.
+
+$$
+\begin{array}{ll}
+f(1)      & = \alpha ; \\
+f(2n)     & = 2f(n) + \beta, \quad for \; n \ge 1 \\
+f(2n + 1) & = 2f(n) + \gamma, \quad for \; n \ge 1 \\
+\end{array}
+$$
+
+n 이 작은 경우에 대한 테이블도 만들어 보자.
+
+$$
+\begin{array}{l|l}
+n   & f(n)                          \\  \hline
+1   & \alpha                        \\  \hline
+2   & 2 \alpha + 1 \beta            \\
+3   & 2 \alpha + \qquad    1 \gamma \\  \hline
+4   & 4 \alpha + 3 \beta            \\
+5   & 4 \alpha + 2 \beta + 1 \gamma \\
+6   & 4 \alpha + 1 \beta + 2 \gamma \\
+7   & 4 \alpha + \qquad    3 \gamma \\  \hline
+8   & 8 \alpha + 7 \beta            \\
+9   & 8 \alpha + 6 \beta + 1 \gamma \\
+\end{array}
+$$
+
+* $$\alpha$$는 `n` 미만의 가장 큰 2의 거듭제곱으로 보인다.
+* $$\beta$$는 `1`씩 감소해, `0`까지 가는 것 같다.
+* $$\gamma$$는 `0`에서 출발하여 `1`씩 증가하는 것 같다.
+
+발견한 특징들을 사용해 다음과 같이 표현해보자.
+
+$$
+\begin{align}
+n   & = 2^m + l \quad \text{(이전과 같다)} \\
+f(n) & = A(n)\alpha + B(n)\beta + C(n)\gamma \\
+\end{align}
+$$
+
+그리고 다음과 같은 추측을 할 수 있다.
+
+##### 식 1.14
+
+$$
+\begin{align}
+A(n) & = 2^m \\
+B(n) & = 2^m - 1 - l \\
+C(n) & = l \\
+\end{align}
+$$
+
+수학적 귀납법으로 이를 증명하는 것은 생략하자. (별로 배울 것이 없다고 한다)
+
+대신, $$\alpha = 1, \beta = 0, \gamma = 0$$ 인 경우에 한해 생각해보자.
+
+$$
+\begin{align}
+A(1) & = 1; \\
+A(2n) & = 2A(n), \quad for \; n \ge 1   \\
+A(2n + 1) & = 2A(n), \quad for \; n \ge 1   \\
+\end{align}
+$$
+
+그리고 다음의 사실도 알 수 있다.
+
+$$
+\begin{align}
+A(n) & = 2^m \\
+A(2^m + l) & = 2^m \\
+\end{align}
+$$
+
+### 점화식에 f(n)을 적용해보자
+
+$$
+\begin{array}{ll}
+f(1)      & = \alpha ; \\
+f(2n)     & = 2f(n) + \beta, \quad for \; n \ge 1 \\
+f(2n + 1) & = 2f(n) + \gamma, \quad for \; n \ge 1 \\
+\end{array}
+$$
+
+#### f(n) = 1 인 경우
+
+위의 점화식에 `f(n) = 1`을 대입해 보자.
+
+* 첫번째 식은 다음과 같이 정리된다.
+
+$$
+\begin{align}
+f(1) & = \alpha \\
+1    & = \alpha \\
+\end{align}
+$$
+
+* 두번째 식은 다음과 같다.
+    * `f(n)`은 `n`이 무엇이건 간에 `1`을 리턴하므로, `f(2n)`도 `1` 이라는 점을 활용한다.
+
+$$
+\begin{align}
+f(2n)   & = 2f(n) + \beta \\
+1       & = 2 \cdot 1 + \beta \\
+-1      & = \beta \\
+\end{align}
+$$
+
+* 세번째 식은 다음과 같다.
+
+$$
+\begin{array}{rl}
+f(2n + 1)   & = 2f(n) + \gamma \\
+1           & = 2 \cdot 1 + \gamma \\
+-1          & = \gamma \\
+\end{array}
+$$
+
+따라서, $$\alpha = 1, \; \beta = -1, \; \gamma = -1$$ 이다.
+
+이를 $$ f(n) = A(n)\alpha + B(n)\beta + C(n)\gamma $$에 적용해 보면, 다음과 같이 된다.
+
+$$
+\begin{align}
+f(n) & = A(n) - B(n) - C(n) \\
+    & = 1 \\
+\end{align}
+$$
+
+#### f(n) = n 인 경우
+
+위에서 한 것과 비슷하게 `f(n) = n` 인 경우를 생각해보자.
+
+* 첫번째 점화식은 다음과 같이 정리된다.
+
+$$
+\begin{align}
+f(1) & = \alpha \\
+1    & = \alpha \\
+\end{align}
+$$
+
+* 두번째 식은 다음과 같다.
+
+$$
+\begin{align}
+f(2n)   & = 2f(n) + \beta \\
+2n      & = 2 \cdot n + \beta \\
+0       & = \beta \\
+\end{align}
+$$
+
+* 세번째 식은 다음과 같다.
+
+$$
+\begin{array}{rl}
+f(2n + 1)   & = 2f(n) + \gamma \\
+2n + 1      & = 2 \cdot n + \gamma \\
+1           & = \gamma \\
+\end{array}
+$$
+
+따라서, $$\alpha = 1, \; \beta = 0, \; \gamma = 1$$ 이다.
+
+이를 $$ f(n) = A(n)\alpha + B(n)\beta + C(n)\gamma $$에 적용해 보면, 다음과 같이 된다.
+
+$$
+\begin{align}
+f(n) & = A(n) + C(n) \\
+    & = n \\
+\end{align}
+$$
+
+#### 종합
+
+이것으로 증명은 끝났다.
+
+결과를 종합하면 다음과 같다!
+
+$$
+\begin{align}
+A(n) & = 2^m, \quad where \; n = 2^m + l \; and \; 0 \le l \lt 2^m; \\
+A(n) - B(n) - C(n) & = 1; \\
+A(n) + C(n) & = n; \\
+\end{align}
+$$
+
+이러한 방식으로 점화식을 풀어내는 것을 레퍼토리법(repertoire method)이라 부른다.
+
+>
+레퍼토리법에서는 우선 알고 있는 해에 대한 일반적인 매개변수들의 설정들을 구한다.
+그러면 우리가 풀 수 있는 특별한 경우들에 대한 레퍼토리가 마련된다.
+그런 다음에는 특별한 경우들을 결합해서 일반적인 경우를 얻는다.
+이를 위해서는 독립 매개변수 개수(지금 예에서는 $$\alpha, \, \beta, \, \gamma$$ 세 개)만큼의
+개별적인 특수해들이 필요하다.
+
+
+일반식을 얻어낸 김에 [식1.14](#식-114)를 확인해보자.
+
+식 1.14는 다음과 같은 추측이었다.
+
+$$
+\begin{align}
+A(n) & = 2^m \\
+B(n) & = 2^m - 1 - l \\
+C(n) & = l \\
+\end{align}
+$$
+
+* `A(n)`은 자명하므로 따로 확인할 필요가 없다.
+* `B(n)`은 다음과 같이 볼 수 있다.
+
+$$
+\begin{align}
+A(n) - B(n) - C(n) & = 1 \\
+- A(n) + B(n) + C(n) & = -1 \\
+B(n) & = A(n) - C(n) - 1 \\
+2^m -1 -l & = A(n) - C(n) - 1 \\
+2^m -l & = A(n) - C(n) \\
+2^m -l & = 2^m - l \\
+\end{align}
+$$
+
+* `C(n)`은 다음과 같이 볼 수 있다.
+
+$$
+\begin{align}
+A(n) + C(n) & = n; \\
+A(n) + l & = n \\
+2^m + l & = n \\
+\end{align}
+$$
+
+## 일반화된 점화식에 2진법 방법 적용하기
+
+[2진법으로 풀면 쉽게 풀린다](#2진법으로-풀면-쉽게-풀린다)에서 구했던 2진법 `J` 점화식을 다시 떠올려 보자.
+
+$$b_m = 1$$일 때,
+
+$$
+\begin{align}
+J(n)
+    & = (b_{m - 1} b_{m - 2} ... b_1 b_0 b_m)_2 \\
+J((b_m b_{m - 1} b_{m - 2} ... b_1 b_0)_2)
+    & = (b_{m - 1} b_{m - 2} ... b_1 b_0 b_m)_2 \\
+\end{align}
+$$
+
+2진법 방식의 일반화를 위해 다음과 같이 정의하자.
+
+* $$\beta_0 = \beta$$ &nbsp;
+* $$\beta_1 = \gamma$$ &nbsp;
+
+점화식은 다음과 같았다.
+
+$$
+\begin{array}{ll}
+f(1)      & = \alpha ; \\
+f(2n)     & = 2f(n) + \beta, \quad for \; n \ge 1 \\
+f(2n + 1) & = 2f(n) + \gamma, \quad for \; n \ge 1 \\
+\end{array}
+$$
+
+여기에 $$\beta_0 = \beta$$과 $$\beta_1 = \gamma$$를 적용하면 다음과 같이 된다.
+
+$$
+\begin{array}{ll}
+f(1)      & = \alpha ; \\
+f(2n + 0) & = 2f(n) + \beta_0, \quad for \; n \ge 1 \\
+f(2n + 1) & = 2f(n) + \beta_1, \quad for \; n \ge 1 \\
+\end{array}
+$$
+
+두번째와 세번째 점화식은 다음과 같이 하나로 합칠 수 있다.
+
+$$
+f(2n + j) = 2f(n) + \beta_j, \quad for \; j = 0,1 \; and \; n \ge 1\\
+$$
+
+이 점화식을 2진법으로 전개해 보면 다음과 같다.
+
+$$
+\begin{align}
+f((b_m b_{m-1} ... b_1 b_0)_2)
+    & = 2f((b_m b_{m-1} ... b_3 b_2 b_1)_2) + \beta_{b_0} \\
+    & = 4f((b_m b_{m-1} ... b_3 b_2)_2) + \beta_{b_1} + \beta_{b_0} \\
+    & = 8f((b_m b_{m-1} ... b_3)_2) + \beta_{b_2} + \beta_{b_1} + \beta_{b_0} \\
+    & ... \\
+    & = 2^m f((b_m)_2) + 2^{m - 1} \beta_{b_{m-1}} + ... + 2\beta_{b_1} + \beta{b_0} \\
+    & = 2^m \alpha + 2^{m - 1} \beta_{b_{m-1}} + ... + 2 \beta_{b_1} + \beta_{b_0} \\
+    & = (\alpha \beta_{b_{m-1}} ... \beta_{b_1} \beta_{b_0})_2 \\
+\end{align}
+$$
+
+$$\alpha$$가 제일 앞에 있는 이유는, 제일 앞의 $$b_m = 1 = \alpha$$이기 때문이다.
+
+그리고 한참 위에서 작성했던 표를 (새로운 관점으로) 다음과 같이 작성할 수 있다.
+
+$$
+\begin{array}{l|r}
+n   & f(n)                          \\  \hline
+1   & \alpha                        \\  \hline
+2   & 2 \alpha + 1 \beta            \\
+3   & 2 \alpha + 1 \gamma           \\  \hline
+4   & 4 \alpha + 2 \beta + 1 \beta  \\
+5   & 4 \alpha + 2 \beta + 1 \gamma \\
+6   & 4 \alpha + 2 \gamma + 1 \beta \\
+7   & 4 \alpha + 2 \gamma + 1 \gamma \\
+8   & 8 \alpha + 4 \beta + 2 \beta + 1 \beta  \\
+9   & 8 \alpha + 4 \beta + 2 \beta + 1 \gamma \\
+\end{array}
+$$
+
+$$ n = 100 = (1100100)_2$$ 인 경우를 생각해 보자.
+
+* $$\beta_0 = \beta$$ &nbsp;
+* $$\beta_1 = \gamma$$ &nbsp;
+
+일단 위와 같이 2진법으로 표기된 $$ 0 \Rightarrow \beta \,$$이고, 2진법으로 표기된 $$ 1 \Rightarrow \gamma \,$$ 이므로
+
+요세푸스 값 $$\alpha = 1, \; \beta = -1, \; \gamma = 1$$ 을 적용해보면 다음과 같다.
+
+$$
+\begin{array}{r}
+n    & = & ( \; 1 &   1 &  0  &  0 &  1 &  0 &  0 & )_2 & = 100 \\  \hline
+f(n) & = & ( \; 1 &   1 & -1  & -1 &  1 & -1 & -1 & )_2 &       \\
+     & = &    +64 & +32 & -16 & -8 & +4 & -2 & -1 &     & = 74  \\
+\end{array}
+$$
 
 # Links
 
