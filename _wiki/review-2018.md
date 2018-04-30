@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-04-29 14:04:59 +0900
+updated : 2018-04-30 23:33:08 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-04-27 [[PATTERN-ON-THE-STONE]]{생각하는 기계}
 * 2018-04-27 [[토끼의-아리아]]
 * 2018-04-24 이승훈 교수의 실용 수학
 * 2018-04-23 미적분 다이어리
