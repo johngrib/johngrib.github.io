@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.02.합과 점화식
 summary : 02.SUMS.02.SUMS AND RECURRENCES
 date    : 2018-05-02 22:02:21 +0900
-updated : 2018-05-02 23:10:32 +0900
+updated : 2018-05-03 22:24:14 +0900
 tags    : math
 toc     : true
 public  : true
@@ -28,6 +28,8 @@ S_0 & = a_0;  \\
 S_n & = S_{n-1} + a_n, \quad for \; n \gt 0   \\
 \end{align}
 $$
+
+## 예제
 
 다음과 같은 식이 있다고 하자.
 
@@ -59,6 +61,74 @@ $$
 
 $$
 R_n = A(n) \alpha + B(n) \beta + C(n) \gamma
+$$
+
+레퍼토리법을 사용해 `A(n)`, `B(n)`, `C(n)`을 구하자.
+
+### A(n)을 구하자
+
+$$R_n = 1$$ 이라면
+
+$$
+\begin{align}
+R_0 & = A(0) \alpha + B(0) \beta + C(0) \gamma \\
+    & = \alpha = 1 \\
+R_1 & = A(1) \alpha + B(1) \beta + C(1) \gamma \\
+    & = \alpha  + \beta + \gamma = 1 \\
+R_2 & = A(2) \alpha + B(2) \beta + C(2) \gamma \\
+    & = \alpha  + 2 \beta + 3 \gamma = 1 \\
+\\
+\therefore & \; \alpha = 1, \; \beta = 0, \; \gamma = 0 \\
+\\
+R_n & = 1 = A(n) \alpha + B(n) \beta + C(n) \gamma \quad 이므로 \\
+A(n) & = 1 \; 이다.
+\end{align}
+$$
+
+### B(n)을 구하자
+
+$$R_n = n$$ 이라면
+
+$$
+\begin{align}
+R_0 & = A(0) \alpha + B(0) \beta + C(0) \gamma \\
+    & = \alpha = 0 \\
+R_1 & = A(1) \alpha + B(1) \beta + C(1) \gamma \\
+    & = \alpha  + \beta + \gamma = 1 \\
+R_2 & = A(2) \alpha + B(2) \beta + C(2) \gamma \\
+    & = \alpha  + 2 \beta + 3 \gamma = 2 \\
+\\
+\therefore & \; \alpha = 0, \; \beta = 1, \; \gamma = 0 \\
+\\
+R_n & = n = A(n) \alpha + B(n) \beta + C(n) \gamma \quad 이므로 \\
+B(n) & = n \; 이다.
+\end{align}
+$$
+
+### C(n)을 구하자
+
+$$R_n = n^2$$ 이라면
+
+$$
+\begin{align}
+R_0 & = A(0) \alpha + B(0) \beta + C(0) \gamma \\
+    & = \alpha = 0 \\
+R_1 & = A(1) \alpha + B(1) \beta + C(1) \gamma \\
+    & = \alpha  + \beta + \gamma = 1 \\
+R_2 & = A(2) \alpha + B(2) \beta + C(2) \gamma \\
+    & = \alpha  + 2 \beta + 3 \gamma = 4 \\
+\\
+\therefore & \; \alpha = 0, \; \beta = -1, \; \gamma = 2 \\
+\\
+R_n & = n^2 \\
+    & = A(n) \alpha + B(n) \beta + C(n) \gamma \\
+    & = - B(n) + 2 C(n) \\
+n^2 & = - B(n) + 2 C(n) \\
+    & = - n + 2 C(n) \\
+\\
+n^2 & + n = 2 C(n) \; 이므로 \\
+C(n) & = \frac{n^2 + n}{2} \; 이다.
+\end{align}
 $$
 
 # Links
