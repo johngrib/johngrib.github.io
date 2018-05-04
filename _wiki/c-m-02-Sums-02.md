@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.02.합과 점화식
 summary : 02.SUMS.02.SUMS AND RECURRENCES
 date    : 2018-05-02 22:02:21 +0900
-updated : 2018-05-03 22:24:14 +0900
+updated : 2018-05-04 23:29:28 +0900
 tags    : math
 toc     : true
 public  : true
@@ -26,7 +26,7 @@ $$
 \begin{align}
 S_0 & = a_0;  \\
 S_n & = S_{n-1} + a_n, \quad for \; n \gt 0   \\
-\end{align}
+\end{align}\tag{2.6}\label{2.6}
 $$
 
 ## 예제
@@ -41,7 +41,7 @@ $$
 \begin{align}
 R_0 & = \alpha;   \\
 R_n & = R_{n - 1} + \beta + \gamma \cdot n, \quad for \; n \gt 0 \\
-\end{align}
+\end{align}\tag{2.7}\label{2.7}
 $$
 
 작은 값들부터 넣어보며 생각해보면 다음을 알 수 있다.
@@ -130,6 +130,46 @@ n^2 & + n = 2 C(n) \; 이므로 \\
 C(n) & = \frac{n^2 + n}{2} \; 이다.
 \end{align}
 $$
+
+### 응용
+
+다음과 같은 합이 있다고 하자.
+
+$$\sum_{k = 0}^n (a + bk)$$
+
+점화식은 다음과 같을 것이다.
+
+$$
+\begin{align}
+S_0 & = a;  \\
+S_n & = S_{n-1} + a + bn, \quad for \; n \gt 0   \\
+\end{align}
+$$
+
+그렇다면 $$\eqref{2.7}$$과 같은 방식으로, 다음과 같이 점화식을 꾸밀 수 있다.
+
+$$
+\begin{align}
+R_0 & = \alpha;   \\
+R_n & = R_{n - 1} + \beta + \gamma \cdot n, \quad for \; n \gt 0 \\
+    & = R_{n - 1} + a     + b \cdot n \\
+\\
+\therefore a & = \alpha = \beta \\
+           b & = \gamma \\
+\end{align}
+$$
+
+이를 $$ A(n) \alpha + B(n) \beta + C(n) \gamma $$ 에 대입해보면 다음과 같이 될 것이다.
+
+$$
+\begin{align}
+aA(n) & + aB(n) + bC(n) \\
+    & = a + a n + b \times \frac{n^2 + n}{2} \\
+    & = a(n + 1) + \frac{b(n+1)n}{2} \\
+\end{align}
+$$
+
+
 
 # Links
 
