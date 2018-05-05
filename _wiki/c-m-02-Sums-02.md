@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.02.합과 점화식
 summary : 02.SUMS.02.SUMS AND RECURRENCES
 date    : 2018-05-02 22:02:21 +0900
-updated : 2018-05-04 23:29:28 +0900
+updated : 2018-05-05 13:45:15 +0900
 tags    : math
 toc     : true
 public  : true
@@ -168,6 +168,80 @@ aA(n) & + aB(n) + bC(n) \\
     & = a(n + 1) + \frac{b(n+1)n}{2} \\
 \end{align}
 $$
+
+### 검증
+
+검증해보고 싶다.
+
+$$\sum_{k = 0}^n (a + bk)$$
+
+이를 풀어 쓰면 구조를 이해하기 쉬울 것 같다.
+
+$$
+\begin{align}
+& \sum_{k = 0}^n (a + 7k) \\
+& = (a + b \cdot 0) + (a + b \cdot 1) + (a + b \cdot 2) + ... + (a + b \cdot n) \\
+\\
+& \text{0 ~ n 까지 모두 n + 1 개의 항이 있으므로} \\
+\\
+& = a \cdot (n + 1) + b \cdot (0 + 1 + 2 + ... + n) \\
+& = a \cdot (n + 1) + b \cdot \frac{(n+1)(0 + n)}{2} \\
+& = a \cdot (n + 1) + b \cdot \frac{(n+1)n}{2} \\
+\end{align}
+$$
+
+일반해와 똑같은 모양이 나왔다.
+
+## 예제: 하노이의 탑
+
+하노이의 탑 점화식은 다음과 같다.
+
+$$
+\begin{align}
+T_0 & = 0; \\
+T_n & = 2T_{n-1} + 1, \quad for \; n \gt 0. \\
+\end{align}
+$$
+
+양변을 $$2^n$$으로 나누면 $$\eqref{2.6}$$과 같은 모양이 된다.
+
+$$
+\begin{align}
+\frac{T_0}{2^n} & = 0; \\
+\frac{T_n}{2^n} & = \frac{2T_{n-1}}{2^n} + \frac{1}{2^n}, \quad for \; n \gt 0. \\
+\\
+S_n & = \frac{T_n}{2^n} \; \text{이라 하자.} \\
+\\
+S_n & = \frac{T_n}{2^n} \\
+    & = S_{n-1} + 2^{-n}, \quad for \; n \gt 0. \\
+\end{align}
+$$
+
+그렇다면 $$2^{-n}$$씩 더해가는 것이므로 다음과 같이 표현할 수 있다.
+
+$$
+\begin{align}
+S_n & = \sum_{k = 1}^n 2^{-k} \\
+    & = \left(\frac{1}{2}\right)^1 + \left(\frac{1}{2}\right)^2 + ... + \left(\frac{1}{2}\right)^n \\
+\end{align}
+$$
+
+고등학교 때 배운 등비수열의 합 공식 $$S_n = \frac{S_1 \cdot (r^n - 1)}{r - 1}$$ 을 적용해 보면
+
+$$
+\begin{align}
+S_n & = \sum_{k = 1}^n 2^{-k} \\
+    & = {\frac{1}{2} \cdot ((\frac{1}{2})^n - 1) \over \frac{1}{2} - 1} \\
+    & = - \left(\frac{1}{2}\right)^n + 1 \\
+\frac{T_n}{2^n}
+    & = - \left(\frac{1}{2}\right)^n + 1 \\
+T_n & = - 1 + 2^n \\
+\end{align}
+$$
+
+따라서 하노이의 탑에 `n`개의 원판이 있을 때, 이를 옮기는 최소한의 횟수는 $$2^n - 1$$ 임을 알 수 있다.
+
+
 
 
 
