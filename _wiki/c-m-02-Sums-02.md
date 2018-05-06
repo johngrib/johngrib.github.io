@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.02.합과 점화식
 summary : 02.SUMS.02.SUMS AND RECURRENCES
 date    : 2018-05-02 22:02:21 +0900
-updated : 2018-05-05 13:45:15 +0900
+updated : 2018-05-07 07:12:56 +0900
 tags    : math
 toc     : true
 public  : true
@@ -180,7 +180,7 @@ $$\sum_{k = 0}^n (a + bk)$$
 $$
 \begin{align}
 & \sum_{k = 0}^n (a + 7k) \\
-& = (a + b \cdot 0) + (a + b \cdot 1) + (a + b \cdot 2) + ... + (a + b \cdot n) \\
+& = \underbrace{(a + b \cdot 0) + (a + b \cdot 1) + (a + b \cdot 2) + ... + (a + b \cdot n)}_{n+1 개} \\
 \\
 & \text{0 ~ n 까지 모두 n + 1 개의 항이 있으므로} \\
 \\
@@ -241,8 +241,76 @@ $$
 
 따라서 하노이의 탑에 `n`개의 원판이 있을 때, 이를 옮기는 최소한의 횟수는 $$2^n - 1$$ 임을 알 수 있다.
 
+### 일반화
 
+위의 풀이법을 사용하면 다음 형태의 점화식을 일반화할 수 있을 것 같다.
 
+$$
+a_n T_n = b_n T_{n-1} + c_n
+$$
+
+양 변에 $$s_n$$을 곱하자. (단, $$s_n b_n = s_{n-1} a_{n-1}$$.)
+
+$$
+\begin{align}
+s_n a_n T_n
+    & = s_n b_n T_{n-1} + s_n c_n \\
+    & = s_{n-1} a_{n-1} T_{n-1} + s_n c_n \\
+S_n & = (S_{n-1}) + s_n c_n \quad (S_n = s_n a_n T_n \text{이라 하자}) \\
+    & = (S_{n-2} + s_{n-1} c_{n-1}) + s_n c_n \\
+    & ... \\
+    & = S_0 + s_1 c_1 + s_2 c_2 + ... + s_n c_n \\
+    & = s_0 a_0 T_0 + \sum_{k = 1}^n s_k c_k \\
+    & = s_1 b_1 T_0 + \sum_{k = 1}^n s_k c_k \\
+\\
+한편, \; & S_n = s_n a_n T_n \quad 이므로 \\
+T_n & = \frac{1}{s_n a_n} \cdot S_n \\
+    & = \frac{1}{s_n a_n} \left( s_1 b_1 T_0 + \sum_{k = 1}^n s_k c_k \right) \\
+\end{align}
+$$
+
+#### 검증
+
+위의 일반해를 하노이의 탑으로 검증해 보자.
+
+하노이의 탑 점화식은 다음과 같았다.
+
+$$
+\begin{align}
+T_0 & = 0; \\
+T_n & = 2T_{n-1} + 1, \quad for \; n \gt 0. \\
+\end{align}
+$$
+
+일반화에 사용한 형태의 점화식이 다음과 같았으므로,
+
+$$ a_n T_n = b_n T_{n-1} + c_n $$
+
+하노이의 탑에서 각 변수의 값은 다음과 같다.
+
+* $$ a_n = 1 $$ &nbsp;
+* $$ b_n = 2 $$ &nbsp;
+* $$ c_n = 1 $$ &nbsp;
+* $$ T_0 = 0 $$ &nbsp;
+
+따라서 일반해는 다음과 같다.
+
+$$
+\require{cancel}
+\begin{align}
+s_n b_n & = s_{n-1}a_{n-1} \; 이므로 \\
+s_n \cdot 2 & = s_{n-1} \\
+s_n & = 2^{-n} \\
+\\
+T_n & = \frac{1}{s_n a_n} \left( s_1 b_1 T_0 + \sum_{k = 1}^n s_k c_k \right) \\
+    & = \frac{1}{s_n a_n} \left(\sum_{k = 1}^n s_k c_k \right) \\
+    & = \frac{1}{s_n} \left(\sum_{k = 1}^n s_k \right) \\
+    & = 2^n \sum_{k = 1}^n 2^{-k} \\
+    & = 2^n {\cancel{\frac{1}{2}} ( 1 - (\frac{1}{2})^n ) \over \cancel{1 - \frac{1}{2}}} \\
+    & = 2^n - 2^n \cdot \frac{1}{2^n} \\
+    & = 2^n - 1 \\
+\end{align}
+$$
 
 
 # Links
