@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.02.합과 점화식
 summary : 02.SUMS.02.SUMS AND RECURRENCES
 date    : 2018-05-02 22:02:21 +0900
-updated : 2018-05-07 20:59:50 +0900
+updated : 2018-05-07 21:22:06 +0900
 tags    : math
 toc     : true
 public  : true
@@ -401,8 +401,8 @@ n C_n   & = (n+1) C_{n-1} + 2n \\
 \\
 a_n & = n \\
 b_n & = n + 1 \\
-c_1 & = 2n - 2 = 0 \quad \because C_1 = 0 + 0 \\
-c_2 & = 2n + 2 = 6 \quad \because 2 C_2 = 3 C_1 + c_2 \\
+c_1 & = 0 \quad \because C_1 = 0 + 0 \\
+c_2 & = 6 \quad \because 2 C_2 = 3 C_1 + c_2 \\
 c_n & = 2n \\
 \\
 s_n b_n
