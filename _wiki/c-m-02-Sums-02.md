@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.02.합과 점화식
 summary : 02.SUMS.02.SUMS AND RECURRENCES
 date    : 2018-05-02 22:02:21 +0900
-updated : 2018-05-07 07:24:16 +0900
+updated : 2018-05-07 20:59:50 +0900
 tags    : math
 toc     : true
 public  : true
@@ -13,6 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
+이 문서는 [[CONCRETE-MATH]] **2장.합 - 2.합과 점화식**을 공부한 노트입니다.
 
 $$
 S_n = \sum_{k = 0}^{n} a_k
@@ -245,6 +246,7 @@ $$
 
 $$
 a_n T_n = b_n T_{n-1} + c_n
+    \tag{2.9}\label{2.9}
 $$
 
 양 변에 $$s_n$$을 곱하자. (단, $$s_n b_n = s_{n-1} a_{n-1}$$.)
@@ -260,11 +262,16 @@ S_n & = (S_{n-1}) + s_n c_n \quad (S_n = s_n a_n T_n \text{이라 하자}) \\
     & = S_0 + s_1 c_1 + s_2 c_2 + ... + s_n c_n \\
     & = s_0 a_0 T_0 + \sum_{k = 1}^n s_k c_k \\
     & = s_1 b_1 T_0 + \sum_{k = 1}^n s_k c_k \\
-\\
+\end{align}
+$$
+
+$$
+\begin{align}
 한편, \; & S_n = s_n a_n T_n \quad 이므로 \\
 T_n & = \frac{1}{s_n a_n} \cdot S_n \\
     & = \frac{1}{s_n a_n} \left( s_1 b_1 T_0 + \sum_{k = 1}^n s_k c_k \right) \\
 \end{align}
+\tag{2.10}\label{2.10}
 $$
 
 ## 검증
@@ -310,7 +317,187 @@ T_n & = \frac{1}{s_n a_n} \left( s_1 b_1 T_0 + \sum_{k = 1}^n s_k c_k \right) \\
 \end{align}
 $$
 
+# 예제: quick-sort 퀵 소트
+
+퀵 소트의 점화식은 다음과 같다.
+
+$$
+\begin{align}
+C_0 & = 0; \\
+C_1 & = 0; \\
+C_n & = n + 1 + \frac{2}{n} \sum_{k=0}^{n-1} C_k , \quad for \; n \gt 1. \\
+C_n & = \text{n개 항목을 퀵 소트로 정렬할 때 비교 횟수의 평균} \\
+\end{align}
+$$
+
+점화식을 정리해 보자.
+
+일단 양 변에 `n`을 곱해서, 분모의 `n`을 제거한다.
+
+$$
+\begin{align}
+C_n
+    & = n + 1 + \frac{2}{n} \sum_{k=0}^{n-1} C_k , \quad for \; n \gt 1. \\
+n \cdot C_n
+    & = n^2 + n + 2 \sum_{k=0}^{n-1} C_k , \quad for \; n \gt 1. \\
+\\
+n을 & \; n-1 \text{로 대체한다.} \\
+(n - 1) \cdot C_{n-1}
+    & = (n-1)^2 + (n-1) + 2 \sum_{k=0}^{n-2} C_k , \quad for \; n - 1 \gt 1. \\
+\end{align}
+$$
+
+위의 식에서 아래 식을 빼보자.
+
+$$
+\begin{array}{c|rllll}
+    & n \cdot C_n
+    & = n^2
+    & + n
+    & + 2 \sum_{k=0}^{n-1} C_k \\
+{\color{red}-}
+    & (n - 1) \cdot C_{n-1}
+    & = (n-1)^2
+    & + (n-1)
+    & + 2 \sum_{k=0}^{n-2} C_k \\
+\hline
+    & nC_n - (n-1)C_{n-1}
+    & =
+    & 2n
+    & + 2C_{n-1}
+\end{array}
+$$
+
+즉, 다음과 같다.
+
+$$
+\begin{align}
+nC_n - (n-1)C_{n-1}
+    & = 2n + 2C_{n-1}, & \quad for \; n \gt 2. \\
+nC_n
+    & = 2n + 2C_{n-1} + (n - 1)C_{n-1} \\
+nC_n
+    & = 2n + (n + 1)C_{n-1} \\
+\end{align}
+$$
+
+그리고 점화식은 다음과 같이 정리된다.
+
+$$
+\begin{align}
+C_0 & = 0; \\
+C_1 & = 0; \\
+C_2 & = 3; \\
+n C_n & = (n+1) C_{n-1} + 2n , \quad for \; n \gt 2. \\
+\end{align}
+$$
+
+식 $$\eqref{2.9}$$를 참고해 꾸며보자.
+
+$$
+\begin{align}
+a_n T_n & = b_n T_{n-1} + c_n \\
+n C_n   & = (n+1) C_{n-1} + 2n \\
+\\
+a_n & = n \\
+b_n & = n + 1 \\
+c_1 & = 2n - 2 = 0 \quad \because C_1 = 0 + 0 \\
+c_2 & = 2n + 2 = 6 \quad \because 2 C_2 = 3 C_1 + c_2 \\
+c_n & = 2n \\
+\\
+s_n b_n
+    & = s_{n-1} a_{n-1} \; 에서 \\
+s_n & = s_{n-1} \cdot \frac{a_{n-1}}{b_n} \\
+    & = (s_{n-2} \cdot \frac{a_{n-2}}{b_{n-1}}) \cdot \frac{a_{n-1}}{b_n} \\
+    & = { a_1 a_2 ... a_{n-1} \over b_2 b_3 ... b_n } \\
+    & = { 1 \cdot 2 \cdot ... \cdot n-1 \over 3 \cdot 4 \cdot ... \cdot (n-1) \cdot n \cdot (n + 1)} \\
+    & = { 1 \cdot 2 \over n (n + 1)} \\
+\end{align}
+$$
+
+식 $$\eqref{2.10}$$을 적용하자.
+
+$$
+\require{cancel}
+\begin{align}
+T_n & = \frac{1}{s_n a_n} \left( s_1 b_1 T_0 + \sum_{k = 1}^n s_k c_k \right) \\
+C_n & = { 1 \over \frac{1 \cdot 2}{n(n+1)} \cdot n } \left( s_1 b_1 C_0 + \sum_{k = 1}^n s_k c_k \right) \\
+    & = { 1 \over \frac{1 \cdot 2}{\cancel{n}(n+1)} \cdot \cancel{n} } \left( \sum_{k = 1}^n s_k c_k \right) \\
+    & = { n + 1 \over 2 } \sum_{k = 1}^n s_k c_k \\
+    & = { n + 1 \over 2 } \sum_{k = 1}^n {2 \over k(k+1)} \cdot c_k \\
+    & = (n + 1) \sum_{k = 1}^n {1 \over k(k+1)} \cdot c_k \\
+    & = (n + 1)
+        \left(
+            \frac{1}{1 \cdot 2} \cdot 0
+            + \frac{1}{2 \cdot 3} \cdot 6
+            + \sum_{k = 3}^n {1 \over k(k+1)} \cdot c_k
+        \right)\\
+    & = (n + 1)
+        \left( 0 + 1 + \sum_{k = 3}^n {1 \over k(k+1)} \cdot 2k \right)\\
+    & = 2(n + 1)
+        \left( \frac{1}{2} + \sum_{k = 3}^n {1 \over \cancel{k}(k+1)} \cdot \cancel{k} \right)\\
+    & = 2(n + 1)
+        \left( \frac{1}{2} + \sum_{k = 3}^n {1 \over k+1} \right)\\
+    & = 2(n + 1)
+        \left( \frac{1}{2} + \sum_{k = 1}^n {1 \over k+1} - \frac{1}{1+1} - \frac{1}{1+2} \right)\\
+    & = 2(n + 1)
+        \left( \sum_{k = 1}^n {1 \over k+1} - \frac{1}{3} \right)\\
+    & = 2(n + 1) \sum_{k = 1}^n {1 \over k+1} - \frac{2(n+1)}{3}, \quad for \; n \gt 1. \\
+\end{align}
+$$
+
+## 퀵 소트 점화식의 닫힌 형식
+
+위에서 얻은 퀵 소트 점화식의 해는 다음과 같았다.
+
+$$
+\begin{align}
+C_n & = 2(n + 1) \sum_{k = 1}^n {1 \over k+1} - \frac{2(n+1)}{3}, \quad for \; n \gt 1. \\
+\end{align}
+$$
+
+해를 잘 살펴보면 [조화수(Harmonic number)](https://ko.wikipedia.org/wiki/%EC%A1%B0%ED%99%94%EC%8%98 )가 식의 중간에 들어가 있음을 알 수 있다.
+
+$$
+\begin{align}
+조화수 \, H_n
+    & = 1 + \frac{1}{2} + ... + \frac{1}{n} \\
+    & = \sum_{k=1}^n \frac{1}{k} \\
+\end{align}
+$$
+
+퀵 소트 점화식의 해를 조화수를 사용해 정리해 보자.
+
+$$ \sum_{k=1}^n \frac{1}{k+1} $$ 만 떼어서 작업하는 쪽이 편할 것 같다.
+
+$$
+\begin{align}
+\sum_{k=1}^n \frac{1}{k+1}
+    & = \sum_{k=2}^{n+1} \frac{1}{k} \\
+    & = \sum_{k=1}^{n+1} \frac{1}{k} - \frac{1}{1} \\
+    & = \sum_{k=1}^{n} \frac{1}{k} - \frac{1}{1} + \frac{1}{n+1} \\
+    & = \sum_{k=1}^{n} \frac{1}{k} - \frac{n}{n+1} \\
+    & = H_n - \frac{n}{n+1} \\
+\\
+\end{align}
+$$
+
+간단하게 된 합을 적용해 보자.
+
+$$
+\require{cancel}
+\begin{align}
+C_n & = 2(n + 1) \sum_{k = 1}^n {1 \over k+1} - \frac{2(n+1)}{3}, \quad for \; n \gt 1. \\
+    & = 2(n + 1) (H_n - \frac{n}{n+1}) - \frac{2(n+1)}{3} \\
+    & = 2(n + 1) H_n - \frac{2 \cancel{(n+1)}n}{\cancel{n+1}} - \frac{2(n+1)}{3} \\
+    & = 2(n + 1) H_n - 2n - \frac{2(n+1)}{3} \\
+    & = 2(n + 1) H_n - 2n - \frac{2n}{3} - \frac{2}{3} \\
+    & = 2(n + 1) H_n - \frac{8n}{3} - \frac{2}{3}, \quad for \; n \gt 1. \\
+\end{align}
+$$
+
 
 # Links
 
 * [[CONCRETE-MATH]]
+* [조화수(wikipedia)](https://ko.wikipedia.org/wiki/%EC%A1%B0%ED%99%94%EC%88%98 )
