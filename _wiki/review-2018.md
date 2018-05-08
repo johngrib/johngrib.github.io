@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-04-30 23:33:08 +0900
+updated : 2018-05-08 21:18:09 +0900
 tags    : review
 toc     : true
 public  : true
@@ -51,6 +51,8 @@ latex   : false
 
 ## 영화/드라마
 
+* 2018-05-08 Avengers: Infinity War
+* 2018-05-06 Legion 시즌 1
 * 2018-04-29 TRUMP: AN AMERICAN DREAM - 도널드 트럼프를 다룬 다큐멘터리.
 * 2018-04-22 I AM NOT AN EASY MAN - 거꾸로 가는 남자. [IMDB](https://www.imdb.com/title/tt6857988/ )
 * 2018-04-22 THE DRESS MAKER - 원작도 읽어보고 싶은 영화
