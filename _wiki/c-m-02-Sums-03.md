@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.03.합의 조작
 summary : 02.SUMS.03.MANIPULATION OF SUMS
 date    : 2018-05-09 22:00:21 +0900
-updated : 2018-05-09 23:02:40 +0900
+updated : 2018-05-11 22:41:13 +0900
 tags    : math
 toc     : true
 public  : true
@@ -35,6 +35,7 @@ $$
 \sum_{k \in K} a_k = \sum_{p(k) \in K} a_{p(k)}
 $$
 
+
 # 법칙의 응용: 등차수열의 일반합
 
 $$
@@ -58,3 +59,43 @@ S   & = \frac{1}{2}(2a + bn)(n + 1) \\
 $$
 
 
+## 합의 추가적인 성질들
+
+서로 다른 색인 집합을 결합할 때의 규칙.
+
+$$
+\text{if K and K' are any sets of integers, then} \\
+    \sum_{k \in K} a_k         + \sum_{k \in K'} a_k
+  = \sum_{k \in K \cap K'} a_k + \sum_{k \in K \cup K'} a_k \\
+\tag{2.20}\label{2.20}
+$$
+
+### 응용
+
+서로 소인 두 색인 집합을 합친다.
+
+$$
+\sum_{k = 1}^m a_k + \sum_{k = m}^n a_k
+    = a_m + \sum_{k = 1}^n a_k, \quad for \; 1 \le m \le n.
+$$
+
+합에서 항 하나를 분리한다.
+
+$$
+\sum_{0 \le k \le n} a_k = a_0 + \sum_{1 \le k \le n} a_k, \quad for \; n \ge 0.
+$$
+
+# 섭동법(perturbation method)
+
+$$
+\begin{align}
+S_n
+    & = \sum_{0 \le k \le n} a_k \\
+\\
+S_n + a_{n+1}
+    & = \sum_{0 \le k \le n+1} a_k \\
+    & = a_0 + \sum_{1 \le k \le n+1} a_k \\
+    & = a_0 + \sum_{1 \le k+1 \le n+1} a_{k+1} \\
+    & = a_0 + \sum_{0 \le k \le n} a_{k+1} \\
+\end{align}
+$$
