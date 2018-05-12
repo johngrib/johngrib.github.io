@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.03.합의 조작
 summary : 02.SUMS.03.MANIPULATION OF SUMS
 date    : 2018-05-09 22:00:21 +0900
-updated : 2018-05-11 22:41:13 +0900
+updated : 2018-05-12 18:02:23 +0900
 tags    : math
 toc     : true
 public  : true
@@ -98,4 +98,23 @@ S_n + a_{n+1}
     & = a_0 + \sum_{1 \le k+1 \le n+1} a_{k+1} \\
     & = a_0 + \sum_{0 \le k \le n} a_{k+1} \\
 \end{align}
+\tag{2.24}\label{2.24}
 $$
+
+## 예: 등비수열의 합 공식 유도
+
+$$
+\begin{align}
+S_n & = \sum_{0 \le k \le n} ax^k. \\
+S_n + ax^{n+1}
+    & = ax^0 + \sum_{0 \le k \le n} ax^{k+1} \quad \because \eqref{2.24} \\
+    & = a + x \sum_{0 \le k \le n} ax^k \\
+    & = a + x \cdot S_n \\
+S_n & = a + x \cdot S_n - ax^{n+1} \\
+S_n - x \cdot S_n & = a - ax^{n+1} \\
+S_n (1 - x) & = a (1 - x^{n+1}) \\
+\\
+S_n & = { a (1 - x^{n+1}) \over 1 - x}, \quad for \; x \ne 1. \\
+\end{align}
+$$
+
