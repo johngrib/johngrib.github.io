@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.03.합의 조작
 summary : 02.SUMS.03.MANIPULATION OF SUMS
 date    : 2018-05-09 22:00:21 +0900
-updated : 2018-05-12 18:02:23 +0900
+updated : 2018-05-12 19:08:47 +0900
 tags    : math
 toc     : true
 public  : true
@@ -101,7 +101,7 @@ S_n + a_{n+1}
 \tag{2.24}\label{2.24}
 $$
 
-## 예: 등비수열의 합 공식 유도
+## 예1: 등비수열의 합 공식 유도
 
 $$
 \begin{align}
@@ -118,3 +118,76 @@ S_n & = { a (1 - x^{n+1}) \over 1 - x}, \quad for \; x \ne 1. \\
 \end{align}
 $$
 
+## 예2: 조금 더 복잡한 형태의 합에 섭동 기법 적용
+
+$$
+\begin{align}
+S_n & = \sum_{0 \le k \le n} k 2^k \\
+\\
+S_n + (n+1) \cdot 2^{n+1}
+    & = 0 \cdot 2^0 + \sum_{0 \le k \le n} (k+1) \cdot 2^{k+1} \quad \because \eqref{2.24} \\
+    & = \sum_{0 \le k \le n} (k+1) \cdot 2^{k+1} \\
+    & = \sum_{0 \le k \le n} k 2^{k+1} + \sum_{0 \le k \le n} 2^{k+1} \\
+    & = \sum_{0 \le k \le n} k 2^k \cdot 2 + \sum_{0 \le k \le n} 2^k \cdot 2 \\
+    & = 2S_n + 2 \sum_{0 \le k \le n} 2^k \\
+    & = 2S_n + 2 \cdot \frac{2^0 (1 - 2^{n+1})}{1 - 2} \\
+    & = 2S_n + 2 (-1 + 2^{n+1}) \\
+    & = 2S_n + (2^{n+2} -2) \\
+    \\
+S_n - 2S_n
+    & = (2^{n+2} -2) - (n+1)2^{n+1} \\
+    & = 2 \cdot 2^{n+1} -2 - n2^{n+1} - 2^{n+1} \\
+    & = 2^{n+1} -n2^{n+1} - 2 \\
+-S_n & = (1 - n)2^{n+1} - 2 \\
+\\
+S_n & = (n - 1)2^{n+1} + 2 \\
+\end{align}
+$$
+
+## 예3: 예2의 일반화(2대신 x 사용)
+
+$$
+\require{cancel}
+\begin{align}
+S_n & = \sum_{0 \le k \le n} k x^k \\
+\\
+S_n + (n+1) \cdot x^{n+1}
+    & = 0 \cdot x^0 + \sum_{0 \le k \le n} (k+1) \cdot x^{k+1} \quad \because \eqref{2.24} \\
+    & = \sum_{0 \le k \le n} (k+1) \cdot x^{k+1} \\
+    & = \sum_{0 \le k \le n} k x^{k+1} + \sum_{0 \le k \le n} x^{k+1} \\
+    & = \sum_{0 \le k \le n} k x^k \cdot x + \sum_{0 \le k \le n} x^k \cdot x \\
+    & = xS_n + x \sum_{0 \le k \le n} x^k \\
+    & = xS_n + x \cdot \frac{\cancel{x^0} (1 - x^{n+1})}{1 - x} \\
+    & = xS_n + \frac{x - x^{n+2}}{1 - x} \\
+S_n - xS_n
+    & = - (n+1) \cdot x^{n+1} + \frac{x - x^{n+2}}{1 - x} \\
+S_n(1 - x)
+    & = {-(n+1) \cdot x^{n+1} \cdot (1-x) \over (1-x)} + \frac{x - x^{n+2}}{(1 - x)} \\
+S_n & = {-(n+1) \cdot x^{n+1} \cdot (1-x) \over (1-x)^2} + \frac{x - x^{n+2}}{(1 - x)^2} \\
+S_n & = {\left( -(n+1) \cdot x^{n+1} \cdot (1-x) \right) + x - x^{n+2} \over (1-x)^2} \\
+S_n & = {\left( -(n+1) \cdot x^{n+1} +(n+1) \cdot x^{n+2} \right) + x - x^{n+2} \over (1-x)^2} \\
+S_n & = { (n+1-1)x^{n+2} - (n+1)x^{n+1} + x \over (1-x)^2} \\
+S_n & = { nx^{n+2} - (n+1)x^{n+1} + x \over (1-x)^2}, \quad for \; x \ne 1. \\
+\\
+\end{align}
+$$
+
+## 닫힌 형식을 미분해보면
+
+다음과 같이 합의 식을 닫힌 형식으로 풀어낸 것을 미분해 보자.
+
+$$
+\underbrace{ \sum_{k=0}^n x^k }_\text{합의 식}
+=
+\underbrace{ 1 - x^{n+1} \over 1 -x }_\text{닫힌 형식}
+$$
+
+양변에서 x의 도함수를 취하면(미분하면) 다음과 같다. (어차피 다 덧셈이라 가능)
+
+$$
+\begin{align}
+\sum_{k=0}^n k x^{k-1}
+    & = { (1-x)(-(n+1)x^n) + 1 - x^{n+1} \over (1-x)^2 } \\
+    & = { 1 - (n+1)x^n + nx^{n+1} \over (1-x)^2 } \\
+\end{align}
+$$
