@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.04.다중합
 summary : 02.SUMS.03.MULTIPLE SUMS
 date    : 2018-05-13 10:35:14 +0900
-updated : 2018-05-14 21:10:28 +0900
+updated : 2018-05-14 21:27:11 +0900
 tags    : math
 toc     : true
 public  : true
@@ -63,9 +63,7 @@ $$
 }_{모든 정수 j에 대한 \sum_{k} a_{j,k} [P(j,k)]들의 합}
 $$
 
-## 합산 순서 교환 법칙
-
-* interchanging the order of summation
+## 합산 순서 교환 법칙(interchanging the order of summation)
 
 $$
 \begin{align}
@@ -79,7 +77,7 @@ $$
 * 어차피 덧셈이라 순서가 바뀌어도 결과는 달라지지 않는다.
 * 따라서 어느 쪽이 계산이 더 쉬울지 고려해서 계산하기 편한 쪽을 고른다.
 
-# 일반 분배법칙(general distributive law)
+## 일반 분배법칙(general distributive law)
 
 이번 장 처음에 나온 $$ \sum_{1 \le j,k \le 3} a_j b_k $$ 를 풀어보자.
 
@@ -110,4 +108,33 @@ $$
 $$
 \sum_{ j \in J \\ k \in K } a_j b_k = \left( \sum_{j \in J} a_j \right)\left( \sum_{k \in K} b_k\right)
 \tag{2.28}\label{2.28}
+$$
+
+## 합산 순서 교환 기본 법칙의 변형들
+
+크게 두 가지 버전이 있다.
+
+### vanilla version
+
+* $$\eqref{2.27}$$과 똑같은 원리.
+* `j`, `k`의 limit가 독립적일 때 사용.
+
+$$
+\begin{align}
+\sum_{j \in J} \sum_{k \in K} a_{j,k}
+    & = \sum_{j \in J \\ k \in K} a_{j,k} \\
+    & = \sum_\color{red}{k \in K} \sum_\color{red}{j \in J} a_{j,k}
+\end{align}
+\tag{2.29}\label{2.29}
+$$
+
+### rocky road version
+
+* 안쪽 합의 범위가 바깥쪽 합의 색인 변수에 의존적인 경우에 사용.
+
+$$
+\sum_{j \in J} \sum_{k \in K(j)} a_{j,k} = \sum_\color{red}{k \in K'} \sum_\color{red}{j \in J'(k)} a_{j,k} \\
+\text{단, 다음 조건을 만족해야 한다.} \\
+[j \in J][k \in K(j)] = [k \in K'][j \in J'(k)]
+\tag{2.30}\label{2.30}
 $$
