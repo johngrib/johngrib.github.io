@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.04.다중합
 summary : 02.SUMS.03.MULTIPLE SUMS
 date    : 2018-05-13 10:35:14 +0900
-updated : 2018-05-14 21:27:11 +0900
+updated : 2018-05-15 23:17:40 +0900
 tags    : math
 toc     : true
 public  : true
@@ -137,4 +137,33 @@ $$
 \text{단, 다음 조건을 만족해야 한다.} \\
 [j \in J][k \in K(j)] = [k \in K'][j \in J'(k)]
 \tag{2.30}\label{2.30}
+$$
+
+* 조건식을 좀 더 자세히 살펴보자.
+    * 좌변을 **인수분해**(factorization)하여 우변을 얻은 것이라고 책에서는 표현한다.
+
+$$
+[j \in J][k \in K(j)] = [k \in K'][j \in J'(k)]
+$$
+
+## 유용한 인수분해
+
+$$
+\begin{align}
+[1 \le j \le n][j \le k \le n]
+    & = [1 \le j \le k \le n] \\
+    & = [1 \le k \le n][1 \le j \le k]
+\end{align}
+$$
+
+## 아이버슨식 공식을 사용한 변환식
+
+위의 공식을 활용하면 다음이 가능하다.
+
+$$
+\begin{align}
+\sum_{j = 1}^n \sum_{k = j}^n a_{j,k}
+    & = \sum_{1 \le j \le k n} a_{j,k} \\
+    & = \sum_\color{red}{k=1}^n \sum_\color{red}{j=1}^\color{red}k a_{j,k} \\
+\end{align}
 $$
