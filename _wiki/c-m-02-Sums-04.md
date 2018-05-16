@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.04.다중합
 summary : 02.SUMS.03.MULTIPLE SUMS
 date    : 2018-05-13 10:35:14 +0900
-updated : 2018-05-15 23:17:40 +0900
+updated : 2018-05-16 22:23:06 +0900
 tags    : math
 toc     : true
 public  : true
@@ -167,3 +167,304 @@ $$
     & = \sum_\color{red}{k=1}^n \sum_\color{red}{j=1}^\color{red}k a_{j,k} \\
 \end{align}
 $$
+
+아무래도 좌변보다 우변이 사용하기 쉬워 보인다.
+
+### 응용: 상삼각 배열의 합을 단순한 단일합으로 표현하기
+
+다음 식을 단순하게 정리하고 싶다고 하자.
+
+$$
+\sum_{1 \le j \le k \le n} a_j a_k
+$$
+
+식만 갖고는 생각하기 어려우니까 단순하게 다음과 같은 배열이 있다고 상상해 보자.
+
+위의 식은 아래 배열의 파란색 항목(대각선)과 빨간색 항목의 합이라 할 수 있다.
+
+$$
+\begin{bmatrix}
+\color{blue}{a_1 a_1}
+    & \color{red}{a_1 a_2}
+    & \color{red}{a_1 a_3}
+    & \color{red}\cdots
+    & \color{red}{a_1 a_n}
+\\
+a_2 a_1
+    & \color{blue}{a_2 a_2}
+    & \color{red}{a_2 a_3}
+    & \color{red}{\cdots}
+    & \color{red}{a_2 a_n}
+\\
+a_3 a_1
+    & a_3 a_2
+    & \color{blue}{a_3 a_3}
+    & \color{red}{\cdots}
+    & \color{red}{a_3 a_n}
+\\
+\vdots
+    & \vdots
+    & \vdots
+    & \color{blue}{\ddots}
+    & \color{red}{\vdots}
+\\
+a_n a_1
+    & a_n a_2
+    & a_n a_3
+    & \cdots
+    & \color{blue}{a_n a_n}
+\\
+\end{bmatrix}
+$$
+
+삼각형 모양이니까... 이를 다음과 같이 축약하여 표현할 수 있을 것이다.
+
+$$
+S_\unicode{0x25F9} = \sum_{1 \le j \le k \le n} a_j a_k
+$$
+
+$$
+\begin{bmatrix}
+\color{blue}{a_1 a_1}
+    & \color{red}{a_1 a_2}
+    & \color{red}{a_1 a_3}
+    & \color{red}\cdots
+    & \color{red}{a_1 a_n}
+\\
+    & \color{blue}{a_2 a_2}
+    & \color{red}{a_2 a_3}
+    & \color{red}{\cdots}
+    & \color{red}{a_2 a_n}
+\\
+    &
+    & \color{blue}{a_3 a_3}
+    & \color{red}{\cdots}
+    & \color{red}{a_3 a_n}
+\\
+    &
+    &
+    & \color{blue}{\ddots}
+    & \color{red}{\vdots}
+\\
+    &
+    &
+    &
+    & \color{blue}{a_n a_n}
+\\
+\end{bmatrix}
+$$
+
+**즉, 우리의 목표는 $$S_\unicode{0x25F9}$$을 단순하게 정리하는 것이다.**
+
+한편, 파란색 항목과 까만색 항목의 합은 다음과 같이 표현할 수 있을 것이다.
+
+$$
+S_\unicode{0x25FA} = \sum_{1 \le k \le j \le n} a_j a_k
+$$
+
+$$
+\begin{bmatrix}
+\color{blue}{a_1 a_1}
+    &
+    &
+    &
+    &
+\\
+a_2 a_1
+    & \color{blue}{a_2 a_2}
+    &
+    &
+    &
+\\
+a_3 a_1
+    & a_3 a_2
+    & \color{blue}{a_3 a_3}
+    &
+    &
+\\
+\vdots
+    & \vdots
+    & \vdots
+    & \color{blue}{\ddots}
+    &
+\\
+a_n a_1
+    & a_n a_2
+    & a_n a_3
+    & \cdots
+    & \color{blue}{a_n a_n}
+\\
+\end{bmatrix}
+$$
+
+곰곰히 살펴보면 $$S_\unicode{0x25F9} = S_\unicode{0x25FA}$$ 라는 것을 알 수 있다!
+
+($$a_1 \cdot a_2 = a_2 \cdot a_1 $$ 이기 때문)
+
+이 아이디어를 식으로 표현하면 다음과 같다.
+
+$$
+\begin{align}
+S_\unicode{0x25F9}
+    & = \sum_{1 \le j \le k \le n} a_j a_k \\
+    & = \sum_{1 \le k \le j \le n} a_k a_j \\
+    & = \sum_{1 \le k \le j \le n} a_j a_k \\
+    & = S_\unicode{0x25FA} \\
+\end{align}
+$$
+
+덧붙여, 다음 사실도 알 수 있다.
+
+$$
+\begin{array}{cccc}
+[1 \le j \le k \le n] & + & [1 \le k \le j \le n]
+& = &
+[1 \le j,k \le n] & + & [1 \le j = k \le n]
+\\
+가 & & 나 & & 다 & & 라 \\
+\end{array}
+$$
+
+어려운 식 같지만 하나씩 살펴보면 이해할 수 있다.
+
+* 가. $$ [1 \le j \le k \le n] $$ 은 다음을 말한다.
+
+$$
+\begin{bmatrix}
+a_1 a_1
+    & a_1 a_2
+    & a_1 a_3
+    & \cdots
+    & a_1 a_n
+\\
+    & a_2 a_2
+    & a_2 a_3
+    & \cdots
+    & a_2 a_n
+\\
+    &
+    & a_3 a_3
+    & \cdots
+    & a_3 a_n
+\\
+    &
+    &
+    & \ddots
+    & \vdots
+\\
+    &
+    &
+    &
+    & a_n a_n
+\\
+\end{bmatrix}
+$$
+
+* 나. $$ [1 \le k \le j \le n] $$ 은 다음을 말한다.
+
+$$
+\begin{bmatrix}
+a_1 a_1
+    &
+    &
+    &
+    &
+\\
+a_2 a_1
+    & a_2 a_2
+    &
+    &
+    &
+\\
+a_3 a_1
+    & a_3 a_2
+    & a_3 a_3
+    &
+    &
+\\
+\vdots
+    & \vdots
+    & \vdots
+    & \ddots
+    &
+\\
+a_n a_1
+    & a_n a_2
+    & a_n a_3
+    & \cdots
+    & a_n a_n
+\\
+\end{bmatrix}
+$$
+
+* 다. $$[1 \le j,k \le n]$$는 다음을 말한다.
+
+$$
+\begin{bmatrix}
+a_1 a_1
+    & a_1 a_2
+    & a_1 a_3
+    & \cdots
+    & a_1 a_n
+\\
+a_2 a_1
+    & a_2 a_2
+    & a_2 a_3
+    & \cdots
+    & a_2 a_n
+\\
+a_3 a_1
+    & a_3 a_2
+    & a_3 a_3
+    & \cdots
+    & a_3 a_n
+\\
+\vdots
+    & \vdots
+    & \vdots
+    & \ddots
+    & \vdots
+\\
+a_n a_1
+    & a_n a_2
+    & a_n a_3
+    & \cdots
+    & a_n a_n
+\\
+\end{bmatrix}
+$$
+
+* 라. $$ [1 \le j = k \le n] $$ 는 다음을 말한다.
+
+$$
+\begin{bmatrix}
+a_1 a_1 & & & & \\
+& a_2 a_2 & & & \\
+& & a_3 a_3 & & \\
+& & & \ddots & \\
+& & & & a_n a_n \\
+\end{bmatrix}
+$$
+
+* `가 + 나 = 다 + 라`임을 어렵지 않게 알 수 있다.
+
+아무튼, 이를 통해 다음을 유도할 수 있다.
+
+$$
+\begin{align}
+2S_\unicode{0x25F9}
+    & = S_\unicode{0x25F9} + S_\unicode{0x25FA} \\
+    & \color{gray}{= \text{오른쪽 위 삼각형} + \text{왼쪽 아래 삼각형} }\\
+    & = \sum_{1 \le j,k \le n} a_j a_k + \sum_{1 \le j = k \le n} a_j a_k \\
+    & \color{gray}{= \text{전체} + \text{대각선} }\\
+    & = \left( \sum_{j=1}^n a_j \right) \left( \sum_{k=1}^n a_k \right) + \sum_{1 \le j = k \le n} a_j a_k \\
+    & = \left( \sum_{k=1}^n a_k \right)^2 + \sum_{1 \le j = k \le n} a_j a_k \\
+    & = \left( \sum_{k=1}^n a_k \right)^2 + \sum_{k=1}^n (a_k)^2 \\
+\\
+\therefore
+S_\unicode{0x25F9}
+    & = \frac{1}{2} \left( \left( \sum_{k=1}^n a_k \right)^2 + \sum_{k=1}^n (a_k)^2 \right) \\
+\end{align}
+$$
+
+
