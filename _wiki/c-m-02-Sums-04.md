@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.04.다중합
 summary : 02.SUMS.03.MULTIPLE SUMS
 date    : 2018-05-13 10:35:14 +0900
-updated : 2018-05-16 22:23:06 +0900
+updated : 2018-05-17 14:42:18 +0900
 tags    : math
 toc     : true
 public  : true
@@ -464,6 +464,124 @@ $$
 \therefore
 S_\unicode{0x25F9}
     & = \frac{1}{2} \left( \left( \sum_{k=1}^n a_k \right)^2 + \sum_{k=1}^n (a_k)^2 \right) \\
+\end{align}
+$$
+
+
+### 응용: 또 다른 형태의 이중합을 정리하기
+
+$$
+S = \sum_{1 \le j \lt k \le n} (a_k - a_j)(b_k - b_j)
+$$
+
+이번에는 위의 식을 정리해 보자.
+
+* 책을 보면 "`j`와 `k`의 교환에 대칭성이 존재한다."고 한다.
+    * `j`와 `k`를 서로 바꾸어도 똑같다는 말이다.
+
+$$
+\begin{align}
+S   & = \sum_{1 \le j \lt k \le n} (a_k - a_j)(b_k - b_j) \\
+    & = \sum_{1 \le k \lt j \le n} (a_j - a_k)(b_j - b_k) \\
+    & = \sum_{1 \le k \lt j \le n} (a_k - a_j)(b_k - b_j) \\
+\end{align}
+$$
+
+이를 다음과 같이 `2S = ...`의 형태로 정리할 수 있는데,
+
+$$
+\begin{align}
+2S
+    & = \sum_{1 \le j,k \le n} (a_j - a_k)(b_j - b_k)
+        - \sum_{1 \le j = k \le n} (a_j - a_k)(b_j - b_k) \\
+\end{align}
+$$
+
+그 이유는 다음과 같다.
+
+$$
+\begin{array}{ccccccc}
+[1 \le j \lt k \le n] & + & [1 \le k \lt j \le n]
+& = & [1 \le j,k \le n] & - & [1 \le j = k \le n]
+\\
+{ 오른쪽 위 삼각형 \\ (대각선 제외) } & + & { 왼쪽 아래 삼각형 \\ (대각선 제외) }
+& = & 전체 & - & 대각선
+\end{array}
+$$
+
+이제 계속 정리해 보자.
+
+$$
+\begin{align}
+2S  & = \sum_{1 \le j,k \le n} (a_j - a_k)(b_j - b_k)
+        - \sum_{1 \le j = k \le n} (a_j - a_k)(b_j - b_k) \\
+    & = \sum_{1 \le j,k \le n} (a_j - a_k)(b_j - b_k) - 0 \\
+    & \color{gray}{ \qquad \because
+        \text{두번째 합의 조건이 } j=k \text{ 이므로, } a_j - a_k = 0, \, b_j - b_k = 0
+    }\\
+    & = \sum_{1 \le j,k \le n} (a_j - a_k)(b_j - b_k) \\
+    & \qquad \color{gray}{\text{괄호를 전개하면}} \\
+    & =
+        \sum_{1 \le j,k \le n} a_j b_j
+      - \sum_{1 \le j,k \le n} a_j b_k
+      - \sum_{1 \le j,k \le n} a_k b_j
+      + \sum_{1 \le j,k \le n} a_k b_k \\
+    & =
+    \left(
+        \sum_{1 \le j,k \le n} a_j b_j
+      + \sum_{1 \le j,k \le n} a_k b_k
+    \right)
+    -
+    \left(
+        \sum_{1 \le j,k \le n} a_j b_k
+      + \sum_{1 \le j,k \le n} a_k b_j
+    \right) \\ \\
+    & = 2 \sum_{1 \le j,k \le n} a_k b_k - 2 \sum_{1 \le j,k \le n} a_j b_k \\
+    & = 2 \left( \sum_{1 \le k \le n} \sum_{1 \le j \le n} a_k b_k \right)
+        - 2 \sum_{1 \le j,k \le n} a_j b_k \\
+    & = 2 \left( \sum_{1 \le k \le n} a_k b_k \sum_{1 \le j \le n} 1 \right)
+        - 2 \sum_{1 \le j,k \le n} a_j b_k \\
+    & = 2 \left( \sum_{1 \le k \le n} a_k b_k n \right)
+        - 2 \sum_{1 \le j,k \le n} a_j b_k \\
+    & = 2n \left( \sum_{1 \le k \le n} a_k b_k \right)
+        - 2 \sum_{1 \le j,k \le n} a_j b_k \\
+    & = 2n \left( \sum_{1 \le k \le n} a_k b_k \right)
+        - 2 \left( \sum_{k=1}^n a_k \right) \left( \sum_{k=1}^n b_k \right) \\
+    & \color{gray}{\text{양 변을 2로 나누자}} \\
+S   & = n \left( \sum_{1 \le k \le n} a_k b_k \right)
+        - \left( \sum_{k=1}^n a_k \right) \left( \sum_{k=1}^n b_k \right) \\
+\sum_{1 \le j \lt k \le n} (a_k - a_j)(b_k - b_j)
+    & = n \left( \sum_{1 \le k \le n} a_k b_k \right)
+        - \left( \sum_{k=1}^n a_k \right) \left( \sum_{k=1}^n b_k \right) \\
+\left( \sum_{k=1}^n a_k \right) \left( \sum_{k=1}^n b_k \right)
+    & = n \left( \sum_{1 \le k \le n} a_k b_k \right)
+        - \sum_{1 \le j \lt k \le n} (a_k - a_j)(b_k - b_j) \\
+    & = n \sum_{k=1}^n a_k b_k
+        - \sum_{1 \le j \lt k \le n} (a_k - a_j)(b_k - b_j) \\
+\\
+\end{align}
+$$
+
+이를 통해 다음 항등식을 얻어내었다.
+
+$$
+\left( \sum_{k=1}^n a_k \right) \left( \sum_{k=1}^n b_k \right)
+    = n \sum_{k=1}^n a_k b_k
+        - \sum_{1 \le j \lt k \le n} (a_k - a_j)(b_k - b_j) \\
+$$
+
+#### 체비쇼프 단조 부등식(Chebyshev's monotonic inequalities)
+
+체비쇼프 단조 부등식은 위에서 얻어낸 항등식의 사례 중 하나이다.
+
+$$
+\begin{align}
+\left( \sum_{k=1}^n a_k \sum_{k=1}^n b_k \right)
+    & \le n \sum_{k=1}^n a_k b_k,
+    \quad if \; a_1 \le \cdots \le a_n \; and \; b_1 \le \cdots \le b_n; \\
+\left( \sum_{k=1}^n a_k \sum_{k=1}^n b_k \right)
+    & \ge n \sum_{k=1}^n a_k b_k,
+    \quad if \; a_1 \le \cdots \le a_n \; and \; b_1 \ge \cdots \ge b_n; \\
 \end{align}
 $$
 
