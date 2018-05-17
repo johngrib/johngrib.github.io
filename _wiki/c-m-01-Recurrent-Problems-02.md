@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 01.재귀적인 문제들.02.평면의 선들
 summary : 01.RECURRENT PROBLEMS
 date    : 2018-04-26 21:58:11 +0900
-updated : 2018-04-28 16:48:24 +0900
+updated : 2018-05-18 07:04:14 +0900
 tags    : math
 toc     : true
 public  : true
@@ -118,9 +118,18 @@ $$
 \end{align}
 $$
 
+이 점화식을 python 코드로 표현하면 다음과 같다.
+
+```python
+def L(n):
+    if n == 0:
+        return 1
+    return L(n-1) + n
+```
+
 ## 점화식의 닫힌 형태의 해
 
-이제 점화식의 닫힌 형식의 해를 구하자.
+이제 점화식의 닫힌 형식의 해를 구하자. (재귀나 루프가 아닌 형태의 해를 구하자.)
 
 $$L_n = L_{n-1} + n, \quad for \; n \gt 0$$
 
@@ -148,10 +157,10 @@ L_n & = L_{n-1} + n \\
 \end{align}
 $$
 
-한편 $$S_n = { n(n + 1) \over 2 }$$ 이므로, 해는 다음과 같다.
+한편, $$S_n = { n(n + 1) \over 2 }$$ (`1`부터 `n`까지 더한 결과)이므로, 해는 다음과 같다.
 
 $$
-L_n = {n(n+1) \over 2} + 1 , \quad for \; n \ge 0
+L_n = 1 + {n(n+1) \over 2}, \quad for \; n \ge 0
 $$
 
 이제 수학적 귀납법으로 해를 검증해보자.
@@ -159,14 +168,28 @@ $$
 $$
 \begin{align}
 L_n & = L_{n-1} + n \\
-    & = \left({(n-1)(n) \over 2} + 1 \right) + n \\
-    & = {n^2 - n \over 2} + 1 + \frac{2n}{2} \\
-    & = {n^2 + n \over 2} + 1 \\
-    & = {n(n + 1) \over 2} + 1 \\
+    & = \left(1 + {(n-1)(n) \over 2} \right) + n \\
+    & = 1 + {n^2 - n \over 2} + \frac{2n}{2} \\
+    & = 1 + {n^2 + n \over 2} \\
+    & = 1 + {n(n + 1) \over 2} \\
 \end{align}
 $$
 
-어렵지 않게 검증할 수 있다.
+첫 번째 라인과 마지막 라인만 놓고 보면 닫힌 형태의 해를 찾아냈음을 알 수 있다.
+
+$$
+\begin{align}
+L_n & = L_{n-1} + n \\
+    & = 1 + {n(n + 1) \over 2} \\
+\end{align}
+$$
+
+이를 코드로 표현하면 다음과 같다. 함수 `L(n)`에서 재귀를 제거했다고 볼 수 있겠다.
+
+```python
+def L(n):
+    return 1 + (n * (n+1))/2
+```
 
 
 ## 평면의 선 변형 문제
@@ -241,6 +264,19 @@ Z_n & = L_{2n} - 2n \\
 \end{align}
 $$
 
+위의 식의 첫 번째 라인은 점화식이므로 다음과 같이 재귀 함수로 표현할 수 있다.
+
+```python
+def Z(n):
+    return L(2*n) - 2*n
+```
+
+마지막 라인의 닫힌 형식은 다음과 같다. 재귀를 제거한 형태이지만 두 함수는 완전히 똑같은 결과를 낸다. 최적화했다고도 볼 수 있겠다.
+
+```python
+def Z(n):
+    return 2*n*n - n + 1
+```
 
 
 # Links
