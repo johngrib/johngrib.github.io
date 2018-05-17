@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.04.다중합
 summary : 02.SUMS.03.MULTIPLE SUMS
 date    : 2018-05-13 10:35:14 +0900
-updated : 2018-05-17 21:59:13 +0900
+updated : 2018-05-17 22:57:16 +0900
 tags    : math
 toc     : true
 public  : true
@@ -586,7 +586,7 @@ $$
 $$
 
 
-### 교환법칙?
+## 교환법칙?
 
 다중합과 단일합의 일반적인 합산 색인 변경 연산 사이의 관계를 살펴본다.
 
@@ -625,3 +625,95 @@ $$
 $$
 
 이는 교환 법칙과 똑같다.
+
+## 구체적인 다중합의 예
+
+$$ S_n = \sum_{1 \le j \lt k \le n} \frac{1}{k - j} $$
+
+작은 값부터 생각해 보자.
+
+$$
+S_1 = \sum_{1 \le j \lt k \le 1} \frac{1}{k - j} = 0 \\
+$$
+
+* $$1 \le j \lt k \le 1$$ 이므로, $$j = k = 1$$ 이어야 한다.
+* 그러나 $$ k - j $$ 가 분모에 있으므로 이 합은 더할 항이 하나도 없다.
+    * 따라서 `0` 이다.
+
+$$
+\begin{align}
+S_2 & = \sum_{1 \le j \lt k \le 2} \frac{1}{k - j} \\
+    & = \sum_{j = 1 \\ k = 2} \frac{1}{k - j} \\
+    & = \frac{1}{2 - 1} \\
+    & = 1 \\
+\end{align}
+$$
+
+* $$1 \le j \lt k \le 2$$ 를 만족시키는 `j`, `k`는 `j = 1`, `k = 2` 밖에 없다.
+    * 따라서 `1` 이다.
+
+$$
+\begin{align}
+S_3 & = \sum_{1 \le j \lt k \le 3} \frac{1}{k - j} \\
+    & = \frac{1}{2-1} + \frac{1}{3-1} + \frac{1}{3-2} \\
+    & = 1 + \frac{1}{2} + 1 \\
+    & = \frac{5}{2} \\
+\end{align}
+$$
+
+* $$1 \le j \lt k \le 3$$ 를 만족시키는 `(j, k)`는 `(1,2)`,`(1,3)`,`(2,3)` 밖에 없다.
+    * 따라서 결과는 `5/2`.
+
+이제 이 식을 정리해 보자.
+
+$$
+\begin{align}
+S_n & = \sum_{1 \le j \lt k \le n} \frac{1}{k - j} \\
+    & = \sum_{1 \le k \le n} \sum_{1 \le j \lt k} \frac{1}{k-j} \\
+    & \color{gray}{\text{안쪽 루프를 j에 대한 것으로 정리}} \\
+    & = \sum_{1 \le k \le n} \sum_{1 \le k-j \lt k} \frac{1}{j} \\
+    & \color{gray}{\text{j를 k - j 로 교체}} \\
+    & = \sum_{1 \le k \le n} \; \sum_{1-k \le -j \lt k-k} \frac{1}{j} \\
+    & = \sum_{1 \le k \le n} \; \sum_{0 \lt j \lt k-1} \frac{1}{j} \\
+    & \color{gray}{\text{안쪽 루프 인덱스를 j 위주로 정리}} \\
+    & = \sum_{1 \le k \le n} H_{k-1} \\
+    & \color{gray}{\text{조화수이므로 } H_{k-1} \text{ 로 교체}} \\
+    & = \sum_{1 \le k+1 \le n} H_{k} \\
+    & = \sum_{0 \le k \lt n} H_{k} \\
+\end{align}
+$$
+
+모양이 꽤 단순해졌지만, 아직 우리는 조화수의 합을 구하는 식을 모른다.
+
+그래서 다른 방법으로 풀어야 한다.
+
+$$
+\begin{align}
+S_n & = \sum_{1 \le j \lt k \le n} \frac{1}{k - j} \\
+    & = \sum_{1 \le j \lt k+j \le n} \frac{1}{k + j - j} \\
+    & \color{gray}{\text{k를 k + j 로 치환}} \\
+    & = \sum_{1 \le j \lt k+j \le n} \frac{1}{k} \\
+    & = \sum_{1 \le k \le n} \; \sum_{1 \le j \le n-k} \frac{1}{k} \\
+    & \color{gray}{\text{안쪽 루프를 j에 대한 것으로 정리}} \\
+    & = \sum_{1 \le k \le n} \; \sum_{1 \le j \le n-k} (\frac{1}{k} + 0 \cdot j) \\
+    & = \sum_{1 \le k \le n} (n-k) \cdot \frac{1}{k} \\
+    & \color{gray}{1 \le j \le n-k \text{를 만족시키는 j는 } n-k \text{개.}} \\
+    & = \sum_{1 \le k \le n} \left( \frac{n}{k} - \frac{k}{k} \right) \\
+    & = \sum_{1 \le k \le n} \left( \frac{n}{k} - 1 \right) \\
+    & = \sum_{1 \le k \le n} \frac{n}{k} - \sum_{1 \le k \le n} 1 \\
+    & = n \left( \sum_{1 \le k \le n} \frac{1}{k} \right) - n \\
+    & = n H_n - n \\
+    & \color{gray}{\text{조화수이므로 } H_{n} \text{ 으로 교체}} \\
+\end{align}
+$$
+
+$$
+\begin{array}{crccc}
+\therefore & S_n & = n H_n - n \\
+\therefore & \sum_{0 \le k \lt n} H_{k} & = n H_n - n \\
+\end{array}
+\\
+\color{gray}{\text{앞에서 먼저 구한 식을 활용}} \\
+$$
+
+
