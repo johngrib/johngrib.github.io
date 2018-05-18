@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.04.다중합
 summary : 02.SUMS.03.MULTIPLE SUMS
 date    : 2018-05-13 10:35:14 +0900
-updated : 2018-05-17 22:57:16 +0900
+updated : 2018-05-18 22:13:24 +0900
 tags    : math
 toc     : true
 public  : true
@@ -25,6 +25,15 @@ $$
     & + a_3 b_1 + a_3 b_2 + a_3 b_3 \\
 \end{align}
 $$
+
+위의 식을 python으로 표현하면 다음과 같다.
+
+```python
+sum = 0
+for j in range(1, 3+1):
+    for k in range(1, 3+1):
+        sum += a[j] * b[k]
+```
 
 ## 아이버슨의 관례 사용
 
