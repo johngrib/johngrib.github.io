@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.02.합과 점화식
 summary : 02.SUMS.02.SUMS AND RECURRENCES
 date    : 2018-05-02 22:02:21 +0900
-updated : 2018-05-07 21:22:06 +0900
+updated : 2018-05-18 21:48:30 +0900
 tags    : math
 toc     : true
 public  : true
@@ -19,7 +19,11 @@ $$
 S_n = \sum_{k = 0}^{n} a_k
 $$
 
-위의 식은 다음 점화식과 같다.
+위의 식은 다음과 같다.
+
+$$ S_n = a_0 + a_1 + a_2 + ... + a_n $$
+
+한편으로는 다음 점화식과 같다고도 볼 수 있다.
 
 $$
 \begin{align}
@@ -43,6 +47,17 @@ R_n & = R_{n - 1} + \beta + \gamma \cdot n, \quad for \; n \gt 0 \\
 \end{align}\tag{2.7}\label{2.7}
 $$
 
+python 으로 표현하자면 다음과 같을 것이다.
+
+```python
+def R(n):
+    if n == 0:
+        return alpha
+    return R(n-1) + beta + gamma * n
+
+# alpha, beta, gamma의 값은 아직 모른다
+```
+
 작은 값들부터 넣어보며 생각해보면 다음을 알 수 있다.
 
 $$
@@ -62,73 +77,105 @@ $$
 R_n = A(n) \alpha + B(n) \beta + C(n) \gamma
 $$
 
-레퍼토리법을 사용해 `A(n)`, `B(n)`, `C(n)`을 구하자.
+그리고 다음과 같은 경우들을 생각해보자.
 
-### A(n)을 구하자
+### R_n = 1 인 경우
 
 $$R_n = 1$$ 이라면
 
 $$
 \begin{align}
 R_0 & = A(0) \alpha + B(0) \beta + C(0) \gamma \\
-    & = \alpha = 1 \\
+    & = \color{red}{\alpha = 1} \\
+\\
 R_1 & = A(1) \alpha + B(1) \beta + C(1) \gamma \\
-    & = \alpha  + \beta + \gamma = 1 \\
+    & = R_0  + (\beta + \gamma \cdot 1) \\
+    & = \color{red}{\alpha  + \beta + \gamma = 1} \\
+\\
 R_2 & = A(2) \alpha + B(2) \beta + C(2) \gamma \\
-    & = \alpha  + 2 \beta + 3 \gamma = 1 \\
+    & = R_1 + (\beta + \gamma \cdot 2)\\
+    & = (\alpha  + \beta + \gamma) + (\beta + \gamma \cdot 2)\\
+    & = \color{red}{\alpha  + 2 \beta + 3 \gamma = 1} \\
+\\
+& \left.
+    \begin{array}{ll}
+        \alpha & = 1 \\
+        \alpha + \beta + \gamma & = 0 \\
+        \alpha + 2\beta + 3\gamma & = 0 \\
+    \end{array}
+\right\}
+\text{ 이므로}
 \\
 \therefore & \; \alpha = 1, \; \beta = 0, \; \gamma = 0 \\
 \\
-R_n & = 1 = A(n) \alpha + B(n) \beta + C(n) \gamma \quad 이므로 \\
-A(n) & = 1 \; 이다.
+R_n & = A(n) \alpha + B(n) \beta + C(n) \\
+    & = A(n) \cdot 1 + B(n) \cdot 0 + C(n) \cdot 0 \\
+\\
+A(n)    & = 1 \quad \because R_n = 1 \\
 \end{align}
 $$
 
-## B(n)을 구하자
+* 잘 생각해 보면 이 점화식대로라면, $$R_n$$의 값이 무엇이건 간에 $$A_n = 1$$ 이라는 것을 알 수 있다.
+* $$B(n), C(n)$$은 `0`과 곱하므로 지금 시점에서는 알아낼 방법이 없다.
+
+## R_n = n 인 경우
 
 $$R_n = n$$ 이라면
 
 $$
 \begin{align}
 R_0 & = A(0) \alpha + B(0) \beta + C(0) \gamma \\
-    & = \alpha = 0 \\
+    & = \color{red}{\alpha = 0} \\
 R_1 & = A(1) \alpha + B(1) \beta + C(1) \gamma \\
-    & = \alpha  + \beta + \gamma = 1 \\
+    & = \color{red}{\alpha  + \beta + \gamma = 1} \\
 R_2 & = A(2) \alpha + B(2) \beta + C(2) \gamma \\
-    & = \alpha  + 2 \beta + 3 \gamma = 2 \\
+    & = \color{red}{\alpha  + 2 \beta + 3 \gamma = 2} \\
 \\
 \therefore & \; \alpha = 0, \; \beta = 1, \; \gamma = 0 \\
 \\
-R_n & = n = A(n) \alpha + B(n) \beta + C(n) \gamma \quad 이므로 \\
-B(n) & = n \; 이다.
+R_n & = A(n) \alpha + B(n) \beta + C(n) \gamma \\
+    & = A(n) \cdot 0 + B(n) \cdot 1 + C(n) \cdot 0 \\
+\\
+B(n) & = n \quad \because R_n = n \\
 \end{align}
 $$
 
-## C(n)을 구하자
+* 잘 생각해 보면 이 점화식대로라면, $$R_n$$의 값이 무엇이건 간에 $$B_n = n$$ 라는 것을 알 수 있다.
+* $$A(n), C(n)$$은 `0`과 곱하므로 지금 시점에서는 알아낼 방법이 없다.
+
+## R_n = n^2 인 경우
 
 $$R_n = n^2$$ 이라면
 
 $$
 \begin{align}
 R_0 & = A(0) \alpha + B(0) \beta + C(0) \gamma \\
-    & = \alpha = 0 \\
+    & = \color{red}{\alpha = 0} \\
 R_1 & = A(1) \alpha + B(1) \beta + C(1) \gamma \\
-    & = \alpha  + \beta + \gamma = 1 \\
+    & = \color{red}{\alpha  + \beta + \gamma = 1} \\
 R_2 & = A(2) \alpha + B(2) \beta + C(2) \gamma \\
-    & = \alpha  + 2 \beta + 3 \gamma = 4 \\
+    & = \color{red}{\alpha  + 2 \beta + 3 \gamma = 4} \\
 \\
 \therefore & \; \alpha = 0, \; \beta = -1, \; \gamma = 2 \\
+\\
+B(n) & = n \\
+& \because R_n = \alpha + n \cdot \beta + C(n) \gamma
+\\
 \\
 R_n & = n^2 \\
     & = A(n) \alpha + B(n) \beta + C(n) \gamma \\
     & = - B(n) + 2 C(n) \\
 n^2 & = - B(n) + 2 C(n) \\
     & = - n + 2 C(n) \\
+n^2 & + n = 2 C(n) \\
 \\
-n^2 & + n = 2 C(n) \; 이므로 \\
-C(n) & = \frac{n^2 + n}{2} \; 이다.
+C(n) & = \frac{n^2 + n}{2} \\
 \end{align}
 $$
+
+* 잘 생각해 보면 이 점화식대로라면, $$R_n$$의 값이 무엇이건 간에 $$C_n = \frac{n^2 + n}{2}$$ 라는 것을 알 수 있다.
+    * $$\frac{n(n+1)}{2} \cdot \gamma = 1 \cdot \gamma + 2 \cdot \gamma + ... + n \cdot \gamma$$ 이기 때문이다.
+* $$A(n)$$은 `0`과 곱하므로 지금 시점에서는 알아낼 방법이 없다.
 
 ## 응용
 
@@ -136,7 +183,17 @@ $$
 
 $$\sum_{k = 0}^n (a + bk)$$
 
-점화식은 다음과 같을 것이다.
+python으로는 다음과 같을 것이다.
+
+```python
+def sigma(n):
+    sum = 0
+    for k in range(0, n+1):
+        sum += a + b*k
+    return sum
+```
+
+위 합의 점화식은 다음과 같다.
 
 $$
 \begin{align}
@@ -145,16 +202,33 @@ S_n & = S_{n-1} + a + bn, \quad for \; n \gt 0   \\
 \end{align}
 $$
 
+python으로는 다음과 같을 것이다.
+
+```python
+def S(n):
+    if n == 0:
+        return a
+    return S(n-1) + a + (b*n)
+```
+
+
 그렇다면 $$\eqref{2.7}$$과 같은 방식으로, 다음과 같이 점화식을 꾸밀 수 있다.
 
 $$
 \begin{align}
 R_0 & = \alpha;   \\
-R_n & = R_{n - 1} + \beta + \gamma \cdot n, \quad for \; n \gt 0 \\
+R_n & = \color{gray}{R_{n - 1} + \beta + \gamma \cdot n}, \quad for \; n \gt 0 \\
     & = R_{n - 1} + a     + b \cdot n \\
-\\
-\therefore a & = \alpha = \beta \\
-           b & = \gamma \\
+\end{align}
+$$
+
+모양이 같으므로, 어렵지 않게 다음의 사실을 알아낼 수 있다.
+
+$$
+\begin{align}
+a   & = \alpha \quad \because S_0 = R_0 \\
+a   & = \beta \\
+b   & = \gamma \\
 \end{align}
 $$
 
@@ -163,8 +237,9 @@ $$
 $$
 \begin{align}
 aA(n) & + aB(n) + bC(n) \\
-    & = a + a n + b \times \frac{n^2 + n}{2} \\
+    & = a \cdot 1 + a \cdot n + b \cdot \frac{n^2 + n}{2} \\
     & = a(n + 1) + \frac{b(n+1)n}{2} \\
+R_n & = a(n + 1) + \frac{b(n+1)n}{2} \\
 \end{align}
 $$
 
@@ -202,6 +277,13 @@ T_n & = 2T_{n-1} + 1, \quad for \; n \gt 0. \\
 \end{align}
 $$
 
+```python
+def T(n):
+    if n == 0:
+        return 0
+    return 2*T(n-1) + 1
+```
+
 양변을 $$2^n$$으로 나누면 $$\eqref{2.6}$$과 같은 모양이 된다.
 
 $$
@@ -216,6 +298,16 @@ S_n & = \frac{T_n}{2^n} \\
 \end{align}
 $$
 
+```python
+def S(n):
+    if n == 0:
+        return 0
+    return S(n-1) + 2**(-n)
+
+def T(n):
+    return S(n) * (2**n)
+```
+
 그렇다면 $$2^{-n}$$씩 더해가는 것이므로 다음과 같이 표현할 수 있다.
 
 $$
@@ -224,6 +316,17 @@ S_n & = \sum_{k = 1}^n 2^{-k} \\
     & = \left(\frac{1}{2}\right)^1 + \left(\frac{1}{2}\right)^2 + ... + \left(\frac{1}{2}\right)^n \\
 \end{align}
 $$
+
+```python
+def S(n):
+    sum = 0
+    for k in range(1, n+1):
+        sum += 2**(-k)
+    return sum
+
+def T(n):
+    return S(n) * (2**n)
+```
 
 고등학교 때 배운 등비수열의 합 공식 $$S_n = \frac{S_1 \cdot (r^n - 1)}{r - 1}$$ 을 적용해 보면
 
@@ -240,6 +343,12 @@ $$
 
 따라서 하노이의 탑에 `n`개의 원판이 있을 때, 이를 옮기는 최소한의 횟수는 $$2^n - 1$$ 임을 알 수 있다.
 
+```python
+# 최적화 완료
+def T(n):
+    return 2**n - 1
+```
+
 ## 일반화
 
 위의 풀이법을 사용하면 다음 형태의 점화식을 일반화할 수 있을 것 같다.
@@ -254,10 +363,12 @@ $$
 $$
 \begin{align}
 s_n a_n T_n
-    & = s_n b_n T_{n-1} + s_n c_n \\
-    & = s_{n-1} a_{n-1} T_{n-1} + s_n c_n \\
-S_n & = (S_{n-1}) + s_n c_n \quad (S_n = s_n a_n T_n \text{이라 하자}) \\
-    & = (S_{n-2} + s_{n-1} c_{n-1}) + s_n c_n \\
+    & = \color{red}{s_n     b_n}     T_{n-1} + s_n c_n \\
+    & = \color{red}{s_{n-1} a_{n-1}} T_{n-1} + s_n c_n \\
+\\
+S_n & = (S_{n-1}) + s_n c_n \quad \color{gray}{(S_n = s_n a_n T_n \text{이라 하자})} \\
+    & = (S_{n-2} + s_{n-1} c_{n-1}) + s_n c_n \quad \color{gray}{(재귀)} \\
+    & = (S_{n-3} + s_{n-2} c_{n-2} + s_{n-1} c_{n-1}) + s_n c_n \quad \color{gray}{(재귀)} \\
     & ... \\
     & = S_0 + s_1 c_1 + s_2 c_2 + ... + s_n c_n \\
     & = s_0 a_0 T_0 + \sum_{k = 1}^n s_k c_k \\
