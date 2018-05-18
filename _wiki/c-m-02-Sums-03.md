@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.03.합의 조작
 summary : 02.SUMS.03.MANIPULATION OF SUMS
 date    : 2018-05-09 22:00:21 +0900
-updated : 2018-05-12 19:08:47 +0900
+updated : 2018-05-18 22:06:02 +0900
 tags    : math
 toc     : true
 public  : true
@@ -23,10 +23,23 @@ $$
 \sum_{k \in K} c a_k = c \sum_{k \in K} a_k
 $$
 
+이유는 다음과 같다.
+
+$$
+ca_1 + ca_2 + ... + ca_n = c ( a_1 + a_2 + ... + a_n )
+$$
+
 ## 결합법칙(associative law)
 
 $$
 \sum_{k \in K} (a_k + b_k) = \sum_{k \in K} a_k + \sum_{k \in K} b_k
+$$
+
+이유는 다음과 같다.
+
+$$
+(a_1 + b_1) + (a_2 + b_2) + ... + (a_n + b_n)
+= (a_1 + a_2 + ... + a_n) + (b_1 + b_2 + ... + b_n)
 $$
 
 ## 교환법칙(commutative law)
@@ -70,19 +83,34 @@ $$
 \tag{2.20}\label{2.20}
 $$
 
+### 예
+
+`K = [1,2,3]` 이고 `K' = [3,4,5]` 라면 다음과 같이 된다는 말이다.
+
+$$
+(a_1 + a_2 + a_3) + (a_3 + a_4 + a_5)
+= (a_3)
++ (a_1 + a_2 + a_3 + a_4 + a_5)
+$$
+
 ### 응용
 
 서로 소인 두 색인 집합을 합친다.
 
 $$
+\begin{align}
 \sum_{k = 1}^m a_k + \sum_{k = m}^n a_k
-    = a_m + \sum_{k = 1}^n a_k, \quad for \; 1 \le m \le n.
+    & = a_m + \sum_{k = 1}^n a_k, \quad for \; 1 \le m \le n. \\
+(a_1 + a_2 + ... + \color{red}{a_m}) + (\color{red}{a_m} + a_{m+1} + ... + a_n)
+    & = \color{red}{a_m} + (a_1 + a_2 + ... + \color{red}{a_m} + ... + a_n)
+\\
+\end{align}
 $$
 
 합에서 항 하나를 분리한다.
 
 $$
-\sum_{0 \le k \le n} a_k = a_0 + \sum_{1 \le k \le n} a_k, \quad for \; n \ge 0.
+\sum_{0 \le k \le n} a_k = \color{red}{a_0} + \sum_{\color{red}1 \le k \le n} a_k, \quad for \; n \ge 0.
 $$
 
 # 섭동법(perturbation method)
