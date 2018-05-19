@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.03.합의 조작
 summary : 02.SUMS.03.MANIPULATION OF SUMS
 date    : 2018-05-09 22:00:21 +0900
-updated : 2018-05-18 22:06:02 +0900
+updated : 2018-05-19 10:34:12 +0900
 tags    : math
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+이 문서는 [[CONCRETE-MATH]] **2장.합 - 2.합의 조작**을 공부한 노트입니다.
 
 # 법칙들
 
@@ -219,3 +221,8 @@ $$
     & = { 1 - (n+1)x^n + nx^{n+1} \over (1-x)^2 } \\
 \end{align}
 $$
+
+
+# Links
+
+* [[CONCRETE-MATH]]
