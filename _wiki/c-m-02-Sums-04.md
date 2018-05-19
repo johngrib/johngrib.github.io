@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.04.다중합
 summary : 02.SUMS.03.MULTIPLE SUMS
 date    : 2018-05-13 10:35:14 +0900
-updated : 2018-05-18 22:13:24 +0900
+updated : 2018-05-19 10:34:45 +0900
 tags    : math
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+이 문서는 [[CONCRETE-MATH]] **2장.합 - 4.다중합**을 공부한 노트입니다.
 
 # 둘 이상의 색인을 사용하기
 
@@ -726,3 +728,6 @@ $$
 $$
 
 
+# Links
+
+* [[CONCRETE-MATH]]
