@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.05.일반적인 방법들
 summary : 02.SUMS.05.GENERAL METHODS
 date    : 2018-05-19 10:40:25 +0900
-updated : 2018-05-19 11:26:43 +0900
+updated : 2018-05-19 13:09:07 +0900
 tags    : math
 toc     : true
 public  : true
@@ -95,6 +95,105 @@ def Box(n):
 ```
 
 
+# 방법 1: 답을 추측하고 귀납법으로 증명한다
+
+> Method 1: Guess the answer, prove it by induction.
+
+일단 위에서 얻은 답은 잊어버리자.
+
+그리고 이 책을 읽고 있는 내가 열심히 생각해서 다음과 같은 답을 추측했다고 치자.
+
+$$
+\Box_n = { n(n+\frac{1}{2})(n+1) \over 3 }, \quad for \; n \ge 0.
+$$
+
+* 여기에서 중요한 것은 **열심히 생각해서 떠올려 추측하는 것**.
+* 별 생각이 안 난다면 이 방법은 사용할 수 없다.
+* 주관식 답을 찍는 것과 비슷하다. 그러나 그것보다는 조금 더 열심히 생각해야 한다.
+
+이 답이 맞을 수도 있고, 틀릴 수도 있다.
+
+그러니 수학적 귀납법으로 맞는지를 확인하면 된다.
+
+수학적 귀납법으로 위의 추측을 검증하는 방법은 다음과 같다.
+
+* 점화식을 준비한다.
+* 점화식에 추측한 답을 대입해 모순이 없는지를 확인하면 된다.
+
+그렇다면 주어진 문제를 통해 점화식을 만들어 보자.
+
+* 재귀 함수를 만드는 과정과 똑같다.
+* 재귀가 멈추는 조건인 `n = 0`일 때부터 만들자.
+
+$$\Box_0 = 0^2 = 0$$
+
+* 이제 $$\Box_n$$과 $$\Box_{n-1}$$의 관계를 찾아주면 된다.
+
+$$
+\begin{align}
+\Box_n & = \sum_{0 \le k \le n} k^2, \quad for \; n \ge 0. \\
+    & = 0^2 + 1^2 + 2^2 + ... + (n-1)^2 + n^2 \\
+    & = \left( 0^2 + 1^2 + 2^2 + ... + (n-1)^2 \right) + n^2 \\
+    & = \left( \Box_{n-1} \right) + n^2 \\
+\end{align}
+$$
+
+따라서 점화식은 다음과 같이 꾸밀 수 있을 것이다.
+
+$$
+\begin{align}
+\Box_0 & = 0; \\
+\Box_n & = \Box_{n-1} + n^2, \quad for \; n \le 0. \\
+\end{align}
+$$
+
+```python
+def box(n):
+    if n == 0:
+        return 0
+    return Box(n-1) + n**2
+```
+
+이제 점화식에 추측한 식을 넣어보고, 모순이 없는지를 확인하면 된다.
+
+$$
+\require{cancel}
+\begin{align}
+\Box_n & = \Box_{n-1} + n^2 \\
+\\
+\left( { n(n+\frac{1}{2})(n+1) \over 3 } \right)
+    & = \left( { (n-1)(n - 1+\frac{1}{2})(n - 1 +1) \over 3 } \right) + n^2 \\
+    & \color{gray}{\text{양 변에 3을 곱하자}}\\
+n(n+\frac{1}{2})(n+1)
+    & = (n-1)(n - 1+\frac{1}{2})(n - 1 +1) + 3n^2 \\
+n(n+\frac{1}{2})(n+1)
+    & = (n-1)(n - \frac{1}{2})n + 3n^2 \\
+    & \color{gray}{\text{양 변을 n으로 나누자}}\\
+(n+\frac{1}{2})(n+1)
+    & = (n-1)(n - \frac{1}{2}) + 3n \\
+n^2 + \frac{3}{2} \cdot n + \frac{1}{2}
+    & = (n-1)(n - \frac{1}{2}) + 3n \\
+\cancel{n^2} + \frac{3}{2} \cdot n + \cancel{\frac{1}{2}}
+    & = \cancel{n^2} - \frac{3}{2} \cdot n + \cancel{\frac{1}{2}} + 3n \\
+\frac{3}{2} \cdot n
+    & = - \frac{3}{2} \cdot n  + 3n \\
+\frac{6}{2} \cdot n & = 3n \\
+3n & = 3n \\
+\end{align}
+$$
+
+따라서 추측이 맞다고 볼 수 있다.
+
+그리고 추측한 값은, 다음과 같이 변형해보면 방법 0에서 알아낸 식과 똑같다.
+
+$$
+\begin{align}
+\Box_n & = { n(n+\frac{1}{2})(n+1) \over 3 } \\
+    & = { n \cdot 2 \cdot (n+\frac{1}{2})(n+1) \over 2 \cdot 3 } \\
+    & = { n (2n+1)(n+1) \over 6 } \\
+    & = { n (n+1)(2n+1) \over 6 } \\
+\end{align}
+$$
 
 # Links
 
