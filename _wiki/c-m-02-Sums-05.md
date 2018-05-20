@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.05.일반적인 방법들
 summary : 02.SUMS.05.GENERAL METHODS
 date    : 2018-05-19 10:40:25 +0900
-updated : 2018-05-19 13:09:07 +0900
+updated : 2018-05-20 23:15:09 +0900
 tags    : math
 toc     : true
 public  : true
@@ -194,6 +194,107 @@ $$
     & = { n (n+1)(2n+1) \over 6 } \\
 \end{align}
 $$
+
+
+# 방법 2: 합을 어지럽힌다(섭동)
+
+> Method 2: Perturb the sum.
+
+섭동법은 다음과 같은 방법이다.
+
+* 합 $$S_{n+1}$$ 을 다음 두 가지 방법으로 표현한다.
+    * 첫번째: 합의 마지막 항을 뽑아낸다.
+        * 예: $$S_{n+1} = S_n + a_{n+1}$$
+    * 두번째: 합의 첫 항을 뽑아낸다.
+        * 예: $$S_{n+1} = a_0 + \sum_{1 \le k \le n+1} a_k = a_0 + \sum_{0 \le k \le n} a_{k+1}$$
+* 첫번째 식과 두번째 식을 같다고 놓고, 적절히 조작해서 $$S_n$$으로 표현한다.
+
+섭동법을 적용해보자.
+
+* 첫번째: 합의 마지막 항을 뽑아낸다.
+
+$$ \Box_{n+1} = \Box_n + (n+1)^2 $$
+
+* 두번째: 합의 첫 항을 뽑아낸다.
+
+$$
+\begin{align}
+\Box_{n+1}
+    & = 0^2 + \sum_{1 \le k \le n+1} k^2 \\
+    & = 0^2 + \sum_{0 \le k \le n} (k+1)^2 \\
+\end{align}
+$$
+
+* 이제 둘을 조합한다.
+
+$$
+\begin{align}
+\Box_n + (n+1)^2
+    & = 0^2 + \sum_{0 \le k \le n} (k+1)^2 \\
+    & = \sum_{0 \le k \le n} (k^2 + 2k + 1) \\
+    & = \sum_{0 \le k \le n} k^2 + \sum_{0 \le k \le n} 2k + \sum_{0 \le k \le n} 1 \\
+    & = \Box_n + \sum_{0 \le k \le n} 2k + \sum_{0 \le k \le n} 1 \\
+    & = \Box_n + 2 \sum_{0 \le k \le n} k + (n + 1) \\
+    & = \Box_n + 2 \cdot \frac{n(n+1)}{2} + (n + 1) \\
+    & = \Box_n + n(n+1) + (n + 1) \\
+\\
+\Box_n + (n+1)^2
+    & = \Box_n + n^2 + 2n + 1 \\
+\end{align}
+$$
+
+`0 = 0` 모양이 나와 작업이 실패하였다.
+
+그렇다면 조금 더 머리를 굴려서 $$\sum k^2$$ 모양이 남도록 조작을 할 궁리를 해야 한다.
+
+방금 양 변이 $$\sum k^2 ... = \sum k^2 ...$$의 모양이 되어 $$\Box_n$$이 소거되었는데, 혹시 $$\sum k^3$$을 사용하면 양 변이 $$\sum k^3 ... = \sum k^3 ...$$ 이 되고 $$\sum k^2$$가 남을 가능성은 없을까? 궁금하니 시도해 보자.
+
+일단 다음과 같이 세제곱의 합을 정의하자.
+
+$$ \unicode{0x2750}_n = \sum_{0 \le k \le n} k^3 $$
+
+그렇다면 다음과 같이 섭동법을 적용해 보자.
+
+* 첫번째: 합의 마지막 항을 뽑아낸다.
+
+$$\unicode{0x2750}_{n+1} = \unicode{0x2750}_n + (n+1)^3$$
+
+* 두번째: 합의 첫 항을 뽑아낸다.
+
+$$
+\unicode{0x2750}_{n+1} = 0^3 + \sum_{0 \le k \le n} (k+1)^3
+$$
+
+* 이제 둘을 조합한다.
+
+$$
+\begin{align}
+\unicode{0x2750}_n + (n+1)^3
+    & = 0^3 + \sum_{0 \le k \le n} (k+1)^3 \\
+    & = \sum_{0 \le k \le n} (k^3 + 3k^2 + 3k +1) \\
+    & = \sum_{0 \le k \le n} k^3 + \sum_{0 \le k \le n}3k^2 + \sum_{0 \le k \le n}3k + \sum_{0 \le k \le n}1 \\
+    & = \unicode{0x2750}_n + \sum_{0 \le k \le n}3k^2 + \sum_{0 \le k \le n}3k + \sum_{0 \le k \le n}1 \\
+(n+1)^3
+    & = \sum_{0 \le k \le n}3k^2 + \sum_{0 \le k \le n}3k + \sum_{0 \le k \le n}1 \\
+(n+1)^3
+    & = 3 \Box_n + \sum_{0 \le k \le n}3k + \sum_{0 \le k \le n}1 \\
+n^3 + 3n^2 + 3n + 1
+    & = 3 \Box_n + 3 \cdot \frac{n(n+1)}{2} + (n+1) \\
+2n^3 + 6n^2 + 6n + 2
+    & = 6 \Box_n + 3 n(n+1) + 2(n+1) \\
+2n^3 + 6n^2 + 6n + 2
+    & = 6 \Box_n + 3n^2 + 5n + 2 \\
+2n^3 + 3n^2 + n
+    & = 6 \Box_n \\
+\Box_n
+    & = { 2n^3 + 3n^2 + n \over 6 } \\
+    & = { n(2n^2 + 3n + 1) \over 6 } \\
+    & = { n(n + 1)(2n + 1) \over 6 } \\
+\end{align}
+$$
+
+닫힌 형식을 구했다!
+
 
 # Links
 
