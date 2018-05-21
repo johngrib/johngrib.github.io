@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.05.일반적인 방법들
 summary : 02.SUMS.05.GENERAL METHODS
 date    : 2018-05-19 10:40:25 +0900
-updated : 2018-05-20 23:15:09 +0900
+updated : 2018-05-21 23:21:00 +0900
 tags    : math
 toc     : true
 public  : true
@@ -195,6 +195,8 @@ $$
 \end{align}
 $$
 
+닫힌 형식을 구했다!
+
 
 # 방법 2: 합을 어지럽힌다(섭동)
 
@@ -295,6 +297,210 @@ $$
 
 닫힌 형식을 구했다!
 
+
+# 방법 3: 레퍼토리를 구축한다
+
+> Build a repertoire.
+
+일단 점화식은 다음과 같다.
+
+$$
+\begin{align}
+\Box_0 & = 0; \\
+\Box_n & = \Box_{n-1} + n^2, \quad for \; n \le 0. \\
+\end{align}
+$$
+
+레퍼토리법을 적용하려면 이를 일반화해야 한다.
+
+그 다음, 일반식에 위의 점화식을 적용하여 답을 구하면 된다.
+
+## 일반식 만들기
+
+$$n^2$$을 사용하는 점화식이므로 일반식은 다음과 같다.
+
+$$
+\begin{align}
+R_0 & = \alpha; \\
+R_n & = R_{n-1} + \beta + \gamma n + \delta n^2, \quad for \; n \le 0. \\
+\end{align}
+$$
+
+그리고 닫힌 형태의 해가 다음과 같다고 하자.
+
+$$
+R_n = A(n) \alpha + B(n) \beta + C(n) \gamma + D(n) \delta
+$$
+
+1. $$\alpha$$는 초항이고, 항을 거듭해가며 더해도 딱 한 번만 더해지므로 $$A(n) = 1$$이다.
+2. $$\beta$$는 항을 거듭해가며 더해가는 상수이므로 $$B(n) = n$$이다.
+3. $$\gamma$$는 항을 거듭해가며 `n`을 몇 번 더해가는지이므로 $$C(n) = \frac{n(n+1)}{2}$$이다.
+4. $$\delta$$는 항을 거듭해가며 `n^2`을 몇 번 더해가는지... 인데 **아직 모른다**.
+    * $$D(n)$$만 구하면 되겠다.
+
+>
+참고: 1, 2, 3 항목이 잘 이해가지 않으면 [[c-m-02-Sums-02]]{02.합.02.합과 점화식} 문서를 다시 읽고 레퍼토리법을 복습하자.
+
+$$\alpha, \beta, \gamma$$는 쉽게 구했지만 $$\delta$$는 아직 구하지 못했다.
+
+$$R_n = n^3$$ 이라면
+
+$$
+\begin{align}
+R_0 & = A(0) \alpha + B(0) \beta + C(0) \gamma + D(0) \gamma \\
+    & = \color{red}{\alpha = 0^3} \\
+    & \therefore \alpha = 0 \\
+\\
+R_1 & = A(1) \alpha + B(1) \beta + C(1) \gamma + D(1) \gamma \\
+    & = \alpha + \beta + \gamma \cdot 1 + \delta \cdot 1^2 = 1^3 \\
+    & = \alpha + \beta + \gamma + \delta = 1 \\
+    & = \color{red}{\beta + \gamma + \delta = 1} \\
+\\
+R_2 & = A(2) \alpha + B(2) \beta + C(2) \gamma + D(2) \gamma \\
+    & = \alpha + \beta \cdot 2 + \gamma \cdot (1+2) + \delta \cdot (1^2 + 2^2) = 2^3 \\
+    & = \color{red}{2 \beta + 3 \gamma + 5 \delta = 8} \\
+\\
+R_3 & = A(3) \alpha + B(3) \beta + C(3) \gamma + D(3) \gamma \\
+    & = \alpha + \beta \cdot 3 + \gamma \cdot (1+2+3) + \delta \cdot (1^2 + 2^2 + 3^2) = 3^3 \\
+    & = \color{red}{3 \beta + 6 \gamma + 14 \delta = 27} \\
+\end{align}
+$$
+
+변수가 셋, 식이 셋이니 이제 연립 방정식을 풀 수 있다.
+
+$$
+\begin{cases}
+\beta + \gamma + \delta & = 1 \\
+2\beta + 3\gamma + 5\delta & = 8 \\
+3\beta + 6\gamma + 14\delta & = 27 \\
+\end{cases}
+$$
+
+$$ \beta + \gamma + \delta = 1 $$를 써서 나머지 두 식을 심플하게 바꿔보자.
+
+$$
+\begin{cases}
+\beta + \gamma + \delta & = 1 & ... (가) \\
+2\beta + 3\gamma + 5\delta & = 8 & ... (나) \\
+3\beta + 6\gamma + 14\delta & = 27 & ... (다) \\
+\end{cases}
+\\
+\color{gray}{\text{식 하나를 소거하자.}}
+\\
+\begin{cases}
+- \beta + 2 \delta & = 5 & ... (나 - 3가) \\
+- 3\beta + 8\delta & = 21 & ... (다 - 6가) \\
+\end{cases}
+\\
+\color{gray}{\text{이제 변수 하나의 값을 구할 수 있다.}}
+\\
+\begin{array}{c|ccc}
+    & - 3\beta & + 6 \delta & = 15 \\
+-   & - 3\beta & + 8 \delta & = 21 \\ \hline
+    &          & - 2 \delta & = -6 \\
+\end{array}
+\\
+\\
+\begin{array}{lll}
+\therefore \delta & = 3 \\
+\therefore \beta & = 1      & \because -\beta + 2\delta = 5\\
+\therefore \gamma & = -3    & \because \beta + \gamma + \delta = 1\\
+\end{array}
+$$
+
+이제 $$D(n)$$을 구하기 위해 다음과 같이 식을 꾸밀 수 있다.
+
+$$
+\begin{align}
+R_n & = A(n) \alpha + B(n) \beta + C(n) \gamma + D(n) \delta \\
+\\
+n^3 & = A(n) \cdot 0 + B(n) \cdot 1 + C(n) \cdot (-3) + D(n) \cdot 3 \\
+    & = B(n) -3 C(n) + 3 D(n) \\
+\\
+3 D(n) & = n^3 - B(n) + 3 C(n) \\
+    & = n^3 - n + 3 \cdot \frac{n(n+1)}{2} \\
+6 D(n) & = 2 n^3 - 2n + 3 n(n+1) \\
+    & = 2 n^3 - 2n + 3n^2 + 3n \\
+    & = 2 n^3 + 3n^2 + n \\
+D(n) & = { 2 n^3 + 3n^2 + n \over 6 } \\
+     & = { n(2 n^2 + 3n + 1) \over 6 } \\
+     & = { n(n+1)(2n+1) \over 6 } \\
+\end{align}
+$$
+
+이제 `D(n)`까지 다 구했다.
+
+따라서 $$\Box_n = D(n)$$ 이 된다.
+
+## 문제를 해결하기
+
+일반식은 다음과 같다.
+
+$$ R_n = A(n) \alpha + B(n) \beta + C(n) \gamma + D(n) \delta $$
+
+그리고 `A(n)`, `B(n)`, `C(n)`, `D(n)`는 다음과 같다.
+
+$$
+\begin{cases}
+A(n) & = 1 \\
+B(n) & = n \\
+C(n) & = \sum_{k=0}^n k = \frac{n(n+1)}{2} \\
+D(n) & = \sum_{k=0}^n k^2 = { n(n+1)(2n+1) \over 6 } \\
+\end{cases}
+$$
+
+그리고 일반화한 점화식은 다음과 같다.
+
+$$
+\begin{align}
+R_0 & = \alpha; \\
+R_n & = R_{n-1} + \beta + \gamma n + \delta n^2, \quad for \; n \le 0. \\
+\end{align}
+$$
+
+
+마지막으로 해결해야 하는 점화식은 다음과 같았다!
+
+$$
+\begin{align}
+\Box_0 & = 0; \\
+\Box_n & = \Box_{n-1} + n^2, \quad for \; n \le 0. \\
+\end{align}
+$$
+
+일반 점화식과 비교해 보자.
+
+$$
+\begin{align}
+R_n = & R_{n-1} + \beta + \gamma n + \delta n^2 \\
+\Box_n = & \Box_{n-1} + n^2 \\
+\end{align}
+$$
+
+모양이 심플해서 각 변수를 다음과 같이 설정하면, $$R_n = \Box_n$$ 이 된다는 것을 알 수 있다.
+
+$$
+\\
+\begin{cases}
+\alpha & = 0 \\
+\beta & = 0 \\
+\gamma & = 0 \\
+\delta & = 1 \\
+\end{cases}
+$$
+
+따라서 일반식을 적용하면 다음과 같이 된다.
+
+$$
+\begin{align}
+R_n & = D(n) \\
+    & = { n(n+1)(2n+1) \over 6 } \\
+\\
+\therefore \Box_n & = { n(n+1)(2n+1) \over 6 } \\
+\end{align}
+$$
+
+닫힌 형식을 구했다!
 
 # Links
 
