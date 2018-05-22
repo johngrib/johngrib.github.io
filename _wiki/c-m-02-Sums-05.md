@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.05.일반적인 방법들
 summary : 02.SUMS.05.GENERAL METHODS
 date    : 2018-05-19 10:40:25 +0900
-updated : 2018-05-21 23:21:00 +0900
+updated : 2018-05-22 16:05:14 +0900
 tags    : math
 toc     : true
 public  : true
@@ -501,6 +501,168 @@ R_n & = D(n) \\
 $$
 
 닫힌 형식을 구했다!
+
+
+# 방법 4: 합을 적분으로 대체한다
+
+> Replace sums by integrals.
+
+* 이산수학이 아니라 미적분을 배운 사람들은 $$\sum$$ 보다 $$\int$$ 이 더 익숙할 것이다.
+* **교재의 목표는 독자가 $$\sum$$에 익숙해지는 것이다.**
+    * 두 방식의 아이디어는 아주 비슷하다.
+
+이를 밑변의 길이가 `1`이고 높이가 `k^2`인 직사각형들의 넓이의 합으로 생각할 수 있다.
+
+$$
+\begin{align}
+\Box_n & = 0^2 + 1^2 + 2^2 + ... + n^2 \\
+    & = 1 \cdot 0^2 + 1 \cdot 1^2 + 1 \cdot 2^2 + ... + 1 \cdot n^2 \\
+    & \color{gray}{= 밑 \cdot 높 + 밑 \cdot 높 + 밑 \cdot 높 + ... + 밑 \cdot n^2 } \\
+\end{align}
+$$
+
+![integral](https://user-images.githubusercontent.com/1855714/40342951-6e092800-5dc8-11e8-940f-4dd19a822c64.png )
+
+* $$ f(x) = x^2 $$ &nbsp;
+* 위의 그래프에서 곡선 아래쪽 면적의 넓이는 다음과 같다.
+    * $$ \int_0^n x^2 dx = \frac{1}{3} \cdot n^3$$ &nbsp;
+* 그런데 $$\Box_n$$은 직사각형들의 넓이의 총합이므로, 곡선 아래쪽의 면적을 확인해야 할 필요가 있다.
+
+즉, 다음과 같이 생각할 수 있다.
+
+$$\Box_n = \text{곡선 아래쪽의 넓이} + \text{곡선 위쪽 남은 부분들의 넓이}$$
+
+그리고 곡선 아래쪽의 넓이는 적분을 통해 구할 수 있다.
+
+$$
+\begin{align}
+\text{곡선 아래쪽의 넓이}
+    & = \int_0^n x^2 dx \\
+    & = \frac{1}{3} \cdot n^3 \\
+\end{align}
+$$
+
+그렇다면 곡선 위쪽의 넓이만 구하면 된다.
+
+## 곡선 위쪽의 넓이를 구하자
+
+곡선 위쪽의 넓이 $$E_n$$은 다음과 같이 표현할 수 있다.
+
+$$
+\require{cancel}
+\begin{align}
+E_n & = \Box_n - \text{곡선 아래쪽의 넓이} \\
+    & = \Box_n - \frac{1}{3} \cdot n^3 \\
+    & = (\Box_{n-1} +n^2) - \frac{1}{3} \cdot n^3 \\
+\\
+한편, & \; E_{n-1} \text{를 정리해보면 다음을 알 수 있다.}\\
+    & E_{n-1} = \Box_{n-1} - \frac{1}{3} \cdot (n-1)^3 \\
+    & \color{red}{\Box_{n-1}} = E_{n-1} + \frac{1}{3} \cdot (n-1)^3 \\
+    & E_{n-1}\text{를 대입하자.} \\
+\\
+E_n & = (\color{red}{\Box_{n-1}} +n^2) - \frac{1}{3} \cdot n^3 \\
+    & = \left(\color{red}{E_{n-1} + \frac{1}{3} \cdot (n-1)^3} + n^2 \right) - \frac{1}{3} \cdot n^3 \\
+    & = E_{n-1} + \frac{1}{3} \cdot (n-1)^3 + n^2 - \frac{1}{3} \cdot n^3 \\
+    & = E_{n-1} + \frac{1}{3} \cdot (\cancel{n^3} - 3n^2 + 3n -1) + n^2 - \cancel{\frac{1}{3} \cdot n^3} \\
+    & = E_{n-1} + \frac{ \cancel{- 3n^2} + 3n -1}{3} + \cancel{\frac{3n^2}{3}} \\
+    & = E_{n-1} + \frac{3n -1}{3} \\
+    & = E_{n-1} + n - \frac{1}{3} \\
+\\
+\therefore E_n & = E_{n-1} + n - \frac{1}{3} \\
+\\
+\end{align}
+$$
+
+$$ E_0 = 0 $$이므로, $$E_n$$의 닫힌 형식은 다음과 같이 구할 수 있을 것이다.
+
+$$
+\begin{align}
+E_0 & = 0 \\
+E_1 & = 0 + 1 - \frac{1}{3} \\
+E_2 & = (0 + 1 - \frac{1}{3}) + 2 - \frac{1}{3} \\
+... \\
+& \text{항이 하나 올라갈 때마다 n을 더하고 } \frac{1}{3} \text{을 빼고 있다.} \\
+\\
+\therefore E_n & = \sum_{0 \le k \le n} k - \frac{1}{3} \cdot n \\
+    & = \frac{n(n+1)}{2} - \frac{1}{3} \cdot n \\
+    & = \frac{n^2 + n}{2} - \frac{n}{3} \\
+    & = \frac{3n^2 + 3n}{6} - \frac{2n}{6} \\
+    & = \frac{3n^2 + n}{6} \\
+\end{align}
+$$
+
+결과를 정리해 보자.
+
+$$
+\begin{array}{cccc}
+\Box_n
+    & = & \text{곡선 아래쪽의 넓이} & + & \text{곡선 위쪽 남은 부분들의 넓이} \\
+    & = & \frac{n^3}{3} & + & \frac{3n^2 + n}{6} \\
+\end{array}
+$$
+
+이제 답을 구할 수 있을 것 같다.
+
+$$
+\begin{align}
+\Box_n
+    & = \frac{n^3}{3} + \frac{3n^2 + n}{6} \\
+    & = \frac{2n^3}{6} + \frac{3n^2 + n}{6} \\
+    & = \frac{2n^3 + 3n^2 + n}{6} \\
+    & = {n(2n^2 + 3n + 1) \over 6} \\
+    & = {n(n+1)(2n+1) \over 6} \\
+\end{align}
+$$
+
+닫힌 형식을 구했다!
+
+## 곡선 위쪽의 넓이를 적분으로 구하자
+
+문제는 풀었지만, 곡선 위쪽의 넓이를 적분으로 구하는 것도 연습할 가치가 있을 것 같다.
+
+이것도 해보자.
+
+곡선 위쪽의 넓이 $$E_n$$을 다음과 같이 표현하는 것도 가능할 것이다.
+
+$$
+\require{cancel}
+\begin{align}
+E_n & = \text{0번째 직사각형의 넓이 - 0번째 직사각형 곡선 아래쪽 넓이} \\
+    & \quad + \text{1번째 직사각형의 넓이 - 1번째 직사각형 곡선 아래쪽 넓이} \\
+    & \quad + \text{2번째 직사각형의 넓이 - 2번째 직사각형 곡선 아래쪽 넓이} \\
+    & \quad ... \\
+    & \quad + \text{n번째 직사각형의 넓이 - n번째 직사각형 곡선 아래쪽 넓이} \\
+\\
+    & = \sum_{1 \le k \le n} \left( k^2 - \int_{k-1}^{k} x^2 dx \right)\\
+    & = \sum_{1 \le k \le n} \left( k^2 - \left( \color{red}{\frac{k^3}{3} - \frac{(k-1)^3}{3}} \right) \right)\\
+    & = \sum_{1 \le k \le n} \left( \frac{3k^2}{3} - \frac{k^3}{3} + \frac{(k-1)^3}{3} \right)\\
+    & = \frac{1}{3} \sum_{1 \le k \le n} \left( 3k^2 - k^3 + (k-1)^3 \right)\\
+    & = \frac{1}{3} \sum_{1 \le k \le n} \left( \cancel{3k^2} - \cancel{k^3} + \cancel{k^3} - \cancel{3k^2} + 3k - 1 \right)\\
+    & = \frac{1}{3} \sum_{1 \le k \le n} \left( 3k - 1 \right)\\
+    & = \frac{1}{3} \left( \sum_{1 \le k \le n} 3k - \sum_{1 \le k \le n} 1 \right) \\
+    & = \frac{1}{3} \left( 3 \sum_{1 \le k \le n} k - n \right) \\
+    & = \frac{1}{3} \left( 3 \cdot \frac{n(n+1)}{2} - n \right) \\
+    & = \frac{n(n+1)}{2} - \frac{n}{3} \\
+    & = \frac{3n(n+1)}{6} - \frac{2n}{6} \\
+    & = \frac{3n^2+3n}{6} - \frac{2n}{6} \\
+    & = \frac{3n^2+n}{6} \\
+\\
+\therefore E_n & = \frac{3n^2+n}{6} \\
+\end{align}
+$$
+
+윗 절에서 구한 $$E_n$$과 똑같다.
+
+책에 있는 학생 주석엔 "미적분에 중독된 사람들을 위한 방법이다.(This is for people addicted to calculus.)" 라고 되어 있었지만, 이 방법이 더 쉽고 간편한 것 같다.
+
+# 그 외의 방법들 (방법 6, 7)
+
+다음 방법들은 이번 챕터에서 배우지 않고 다음 챕터에서 배운다.
+
+* 방법 6: 유한 미적분을 사용한다. (Method 6: Use finite calculus.)
+    * **2.6 유한-무한 미적분**에서 배운다.
+* 방법 7: 생성함수를 사용한다. (Method 7: Use generating functions.)
+    * **5.4 생성함수**에서 배운다.
 
 # Links
 
