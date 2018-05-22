@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.05.일반적인 방법들
 summary : 02.SUMS.05.GENERAL METHODS
 date    : 2018-05-19 10:40:25 +0900
-updated : 2018-05-22 18:44:11 +0900
+updated : 2018-05-22 18:50:35 +0900
 tags    : math
 toc     : true
 public  : true
@@ -663,6 +663,8 @@ $$
     * [[c-m-02-Sums-06]]{2.6 유한-무한 미적분}에서 배운다.
 * 방법 7: 생성함수를 사용한다. (Method 7: Use generating functions.)
     * [[c-m-05-Binomial-Coefficients-04]]{5.4 생성함수}에서 배운다.
+
+
 # Links
 
 * [[CONCRETE-MATH]]
