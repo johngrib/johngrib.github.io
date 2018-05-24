@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.06.유한-무한 미적분
 summary : 02.SUMS.06.FINITE AND INFINITE CALCULUS
 date    : 2018-05-22 16:05:14 +0900
-updated : 2018-05-23 22:58:22 +0900
+updated : 2018-05-24 23:18:50 +0900
 tags    : math
 toc     : true
 public  : true
@@ -333,6 +333,185 @@ $$
     & = \frac{1}{m+1} \cdot \left( n^{\underline{m+1}} \right)\\
     & = {n^{\underline{m+1}} \over m+1} \\
 \\
+\end{align}
+$$
+
+잘 살펴보면, 적분과 비슷한 모양이라 외우기 쉽다.
+
+$$
+\begin{align}
+\text{적분} \quad
+    & \int_0^n x^m dx
+    & = { n^{m+1} \over m+1 }
+\\
+\text{내림제곱의 합산} \quad
+    & \sum_{0 \le k \lt n} k^{\underline{m}}
+    & = { n^{\underline{m+1}} \over m+1 }
+\end{align}
+$$
+
+## 내림제곱의 합산을 응용하기
+
+### $$ \sum_0^n k = \frac{n(n+1)}{2}$$ 의 증명
+
+`m = 1`인 경우엔 다음과 같이 모양이 단순해진다.
+
+$$
+k^{\underline 1} = k
+$$
+
+여기에 내림제곱의 합산 공식을 적용하면 자연스럽게 $$\sum k$$를 유도할 수 있다.
+(부등호 $$\lt$$에 주의)
+
+$$
+\begin{align}
+\sum_{0 \le k \color{red}\lt n} k
+    & = \sum_{0 \le k \lt n} k^{\underline 1} \\
+    & = { n^{\underline{1+1}} \over 1 + 1 } \\
+    & \color{gray}{
+        \quad
+        \because
+        \sum_{0 \le k \lt n} k^{\underline{m}} = { n^{\underline{m+1}} \over m+1 }
+    } \\
+    & = { n^{\underline{2}} \over 2 } \\
+    & = { n(n-1) \over 2 } \\
+\end{align}
+$$
+
+만약 범위를 $$0 \le k \lt n$$ 이 아니라 $$0 \le k \le n$$로 조정하면 다음과 같이 될 것이다.
+
+방법은 간단하다. `n`에 `n+1`을 대입하면 된다.
+
+$$
+\begin{align}
+\sum_{0 \le k \le n} k
+    & = { (n+1)(n+1-1) \over 2 } \\
+    & = { n(n+1) \over 2 } \\
+\end{align}
+$$
+
+또는 n 을 추가로 더해 유도하는 방법도 있을 것이다.
+
+$$
+\begin{align}
+\sum_{0 \le k \le n} k
+    & = \left( \sum_{0 \le k \lt n} k \right) + n \\
+    & = { n(n-1) \over 2 } + n \\
+    & = { n^2 - n + 2n \over 2 } \\
+    & = { n^2 + n \over 2 } = { n(n+1) \over 2 } \\
+\end{align}
+$$
+
+### $$ \sum_0^n k^2 = \frac{n(n+1)(2n+1)}{6} $$ 의 증명
+
+$$
+\begin{align}
+k^{\color{red}{\underline 2}}
+    & = k \cdot (k-1) \\
+    & = k^2 - k \\
+\therefore
+k^2 & = k^{\color{red}{\underline 2}} + k \\
+    & = k^{\color{red}{\underline 2}} + k^{\color{red}{\underline 1}}\\
+\end{align}
+$$
+
+이 결과를 $$\sum k^2$$에 대입해 보자.
+
+$$
+\begin{align}
+\sum_{0 \le k \color{red}\lt n} k^2
+    & = \sum_{0 \le k \lt n} (k^{\underline 2} + k^{\underline 1}) \\
+    & = \sum_{0 \le k \lt n} k^{\underline 2} + \sum_{0 \le k \lt n} k^{\underline 1} \\
+    & = { n^{\underline 3} \over 3 } + { n^{\underline 2} \over 2 }\\
+    & \color{gray}{
+        \quad
+        \because
+        \sum_{0 \le k \lt n} k^{\underline{m}} = { n^{\underline{m+1}} \over m+1 }
+    } \\
+    & = { 2 n^{\underline 3} + 3 n^{\underline 2} \over 6 }\\
+    & = { 2 n(n-1)(n-2) + 3 n(n-1) \over 6 }\\
+    & = { n(n-1)(2(n-2) + 3) \over 6 }\\
+    & = { n(n-1)(2n-1) \over 6 }\\
+\end{align}
+$$
+
+만약 범위를 $$0 \le k \lt n$$ 이 아니라 $$0 \le k \le n$$로 조정하면 다음과 같이 될 것이다.
+
+방법은 간단하다. `n`에 `n+1`을 대입하면 된다.
+
+$$
+\begin{align}
+\sum_{0 \le k \le n} k^2
+    & = { (n+1)(n+1-1)(2(n+1)-1) \over 6 }\\
+    & = { (n+1)(n)(2n+1) \over 6 }\\
+\end{align}
+$$
+
+너무 쉬워서 어이가 없을 정도다. 고등학생 때 이걸 배웠다면 얼마나 좋았을까.
+
+### $$ \sum_0^n k^3 $$ 은 어떻게 될까?
+
+세제곱수의 합은 아직 알지 못하므로 이번 기회에 유도해 두면 편할 것 같다.
+
+일단 제곱수의 합을 증명할 때와 같이 내림제곱을 사용하여 활용하기 적당한 식을 만들어 보자.
+
+$$
+\begin{align}
+k^{\color{red}{\underline 3}}
+    & = k \cdot (k-1) \cdot (k-2) \\
+    & = k(k-1)(k-2) \\
+    & = k(k^2 -3k + 2) \\
+    & = k^3 -3k^2 + 2k \\
+    & = k^3 -3k^2 + 2k^{\color{red}{\underline 1}} \\
+    & = k^3 -3(k^{\color{red}{\underline 2}} + k^{\color{red}{\underline 1}}) + 2k^{\color{red}{\underline 1}} \\
+    & \quad \because \color{gray}{\text{거듭제곱의 합 증명 참고}} \\
+    & = k^3 -3k^{\color{red}{\underline 2}} - k^{\color{red}{\underline 1}} \\
+\therefore
+k^3 & = k^{\color{red}{\underline 3}} + 3k^{\color{red}{\underline 2}} + k^{\color{red}{\underline 1}} \\
+\end{align}
+$$
+
+이제 합 식을 다음과 같이 꾸밀 수 있게 되었다.
+
+$$
+\begin{align}
+\sum_{a \le k \lt b} k^3
+    & = \sum_{a \le k \lt b} \left( k^{\underline 3} + 3k^{\underline 2} + k^{\underline 1} \right) \\
+    & = { k^{\underline 4} \over 4 } + { 3k^{\underline 3} \over 3 } + { k^{\underline 2} \over 2 } \biggr\rvert_a^b \\
+    & = { k^{\underline 4} \over 4 } + k^{\underline 3} + { k^{\underline 2} \over 2 } \biggr\rvert_a^b \\
+    & = \left( { b^{\underline 4} \over 4 } + b^{\underline 3} + { b^{\underline 2} \over 2 } \right)
+        - \left( { a^{\underline 4} \over 4 } + a^{\underline 3} + { a^{\underline 2} \over 2 } \right) \\
+\end{align}
+$$
+
+그렇다면 $$ \sum_0^n k^3 $$ 은 다음과 같이 구할 수 있을 것이다.
+
+$$
+\require{cancel}
+\begin{align}
+\sum_{0 \le k \lt n} k^3
+    & = { n^{\underline 4} \over 4 } + n^{\underline 3} + { n^{\underline 2} \over 2 } \\
+    & = { n^{\underline 4} + 4n^{\underline 3} + 2n^{\underline 2} \over 4 } \\
+    & = { n(n-1)(n-2)(n-3) + 4n(n-1)(n-2) + 2n(n-1) \over 4 } \\
+    & = { n(n-1) \biggr( (n-2)(n-3) + 4(n-2) + 2 \biggr) \over 4 } \\
+    & = { n(n-1) ( n^2 - 5n + 6 + 4n -8 + 2 ) \over 4 } \\
+    & = { n(n-1) ( n^2 -n ) \over 4 } \\
+    & = { n(n-1) \cdot n(n-1) \over 4 } \\
+    & = { n^2(n-1)^2 \over 4 } \\
+\end{align}
+$$
+
+이제 $$0$$부터 $$n-1$$ 까지의 $$k^3$$의 합을 구했으므로 $$\sum_{0 \le k \le n} k^3$$을 구할 수 있다.
+
+다음과 같이 `n` 대신 `n+1`을 대입하면 될 것이다.
+
+$$
+\require{cancel}
+\begin{align}
+\sum_{0 \le k \le n} k^3
+    & = { (n+1)^2(n+1-1)^2 \over 4 } \\
+    & = { (n+1)^2 \cdot n^2 \over 4 } \\
+    & = { n^2(n+1)^2 \over 4 } \\
 \end{align}
 $$
 
