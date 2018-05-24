@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.06.유한-무한 미적분
 summary : 02.SUMS.06.FINITE AND INFINITE CALCULUS
 date    : 2018-05-22 16:05:14 +0900
-updated : 2018-05-25 06:25:29 +0900
+updated : 2018-05-25 06:45:58 +0900
 tags    : math
 toc     : true
 public  : true
@@ -498,7 +498,8 @@ $$
 \sum_{a \le k \lt b} k^3
     & = \sum_{a \le k \lt b} \left( k^{\underline 3} + 3k^{\underline 2} + k^{\underline 1} \right) \\
     & = { k^{\underline 4} \over 4 } + { 3k^{\underline 3} \over 3 } + { k^{\underline 2} \over 2 } \biggr\rvert_a^b \\
-    & = { k^{\underline 4} \over 4 } + k^{\underline 3} + { k^{\underline 2} \over 2 } \biggr\rvert_a^b \\
+    & = { k^{\underline 4} \over 4 } + k^{\underline 3} + { k^{\underline 2} \over 2 } \biggr\rvert_a^b \quad
+    \color{gray}{\text{책에는 여기까지만 나와 있다.}} \\
     & = \left( { b^{\underline 4} \over 4 } + b^{\underline 3} + { b^{\underline 2} \over 2 } \right)
         - \left( { a^{\underline 4} \over 4 } + a^{\underline 3} + { a^{\underline 2} \over 2 } \right) \\
 \end{align}
@@ -534,6 +535,41 @@ $$
     & = { n^2(n+1)^2 \over 4 } \\
 \end{align}
 $$
+
+### 내림제곱의 또다른 특징
+
+다음과 같이 직접 다루는 것이 가능한 경우가 많다.
+
+다음은 널리 알려진 곱셈 공식이다.
+
+$$
+(x+y)^2 = x^2 + 2xy + y^2
+$$
+
+이와 유사하게 내림제곱에서도 다음이 가능하다.
+
+$$
+(x+y)^{\underline 2} = x^{\underline 2} + 2x^{\underline 1}y^{\underline 1} + y^{\underline 2}
+$$
+
+이유는 다음과 같다.
+
+$$
+\begin{align}
+(x+y)^{\underline 2}
+    & = (x+y)(x+y-1) \\
+    & = x^2 +xy -x +xy +y^2 -y \\
+    & = (x^2 -x) +2xy +(y^2 -y) \\
+    & = (x^2 -x^{\underline 1}) +2xy +(y^2 -y^{\underline 1}) \\
+    & = x^{\underline 2} +2xy +y^{\underline 2} \\
+    & \quad \color{gray}{\because k^2 = k^{\underline 2} + k^{\underline 1}} \\
+    & = x^{\underline 2} +2x^{\underline 1}y^{\underline 1} +y^{\underline 2} \\
+\end{align}
+$$
+
+한편, $$(x+y)^m$$ 과 $$(x+y)^{\underline m}$$ 도 유사한 관계가 있다고 한다.
+
+증명은 5장 연습문제 37번에서 한다.
 
 # Links
 
