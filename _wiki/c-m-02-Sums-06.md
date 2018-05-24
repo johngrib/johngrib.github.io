@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.06.유한-무한 미적분
 summary : 02.SUMS.06.FINITE AND INFINITE CALCULUS
 date    : 2018-05-22 16:05:14 +0900
-updated : 2018-05-25 06:45:58 +0900
+updated : 2018-05-25 06:57:34 +0900
 tags    : math
 toc     : true
 public  : true
@@ -536,7 +536,7 @@ $$
 \end{align}
 $$
 
-### 내림제곱의 또다른 특징
+# 내림제곱의 또다른 특징
 
 다음과 같이 직접 다루는 것이 가능한 경우가 많다.
 
@@ -570,6 +570,35 @@ $$
 한편, $$(x+y)^m$$ 과 $$(x+y)^{\underline m}$$ 도 유사한 관계가 있다고 한다.
 
 증명은 5장 연습문제 37번에서 한다.
+
+
+# 내림제곱의 지수가 - 인 경우
+
+다음과 같이 "더해가며 나누는 것"으로 생각할 수 있을 것이다.
+
+$$
+\begin{align}
+x^{\underline 3} & = x(x-1)(x-2) \\
+x^{\underline 2} & = x(x-1) \\
+x^{\underline 1} & = x \\
+x^{\underline 0} & = 1 \\
+x^{\underline -1} & = { 1 \over (x+1) } \\
+x^{\underline -2} & = { 1 \over (x+1)(x+2) } \\
+x^{\underline -3} & = { 1 \over (x+1)(x+2)(x+3) } \\
+\end{align}
+$$
+
+따라서 다음과 같이 정의할 수 있다.
+
+$$
+x^{\underline -m} = { 1 \over (x+1)(x+2)...(x+m) }, \quad for \; m \gt 0 \\
+$$
+
+지수 `m`에는 실수를 넣을 수도 있고, 복소수를 넣을 수도 있다고 한다.
+(숫자 타입이 다 들어가네?)
+이에 대해서는 5장에서 다룬다고 한다.
+
+
 
 # Links
 
