@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.06.유한-무한 미적분
 summary : 02.SUMS.06.FINITE AND INFINITE CALCULUS
 date    : 2018-05-22 16:05:14 +0900
-updated : 2018-05-24 23:18:50 +0900
+updated : 2018-05-25 06:25:29 +0900
 tags    : math
 toc     : true
 public  : true
@@ -19,6 +19,8 @@ latex   : true
 
 ## 무한 미적분(infinite calculus)
 
+### 미분연산자 D
+
 무한 미적분은 미분연산자(differential operator) D의 성질을 토대로 한다.
 
 $$
@@ -33,8 +35,48 @@ $$
 D(x^m) = mx^{m-1}
 $$
 
+### D 연산자의 역함수는 $$\int$$
+
+적분 기호 $$\int$$.
+
+* 상식대로 미분의 역함수는 적분이다.
+    * 위에서 미분 연산자로 `D`가 나왔으므로, `D`의 역함수 역할을 하는 연산자는 적분 기호 $$\int$$ 이다.
+    * 반도함수(anti-derivative) 연산자라고도 부른다.
+
+책에 실린 두 연산자의 관계는 다음과 같다.
+
+$$
+g(x) = Df(x) \quad \text{if and only if} \quad \int g(x)dx = f(x) + C
+$$
+
+번역서에는 다음과 같이 나와 있다.
+
+$$
+만일 \int g(x)dx = f(x) + C \quad \text{이면, 그리고 오직 그럴 때만} \quad g(x) = Df(x)
+$$
+
+나는 다음과 같이 심플하게 이해했다. 고등학교에서 배운 그대로다.
+
+* $$g(x)$$를 적분해서 나온 결과를 $$f(x) + C$$라 하자.
+* 그렇다면 $$f(x)$$를 미분하면 $$g(x)$$가 나온다.
+
+
+### 정적분(definite integrals)
+
+* $$g(x) = Df(x)$$ 이면 다음이 성립한다.
+    * ( $$f(x)$$를 미분한 결과가 $$g(x)$$이면 다음이 성립한다. )
+
+$$
+\begin{align}
+\int_a^b g(x) dx
+    & = f(x) \mid_a^b \\
+    & = f(b) - f(a) \\
+\end{align}
+$$
 
 ## 유한 미적분(finite calculus)
+
+### 차분연산자 $$\Delta$$
 
 깔끔하고 체계적인 방식으로 합산에 접근할 수 있다.
 
@@ -72,6 +114,144 @@ $$
     & = 3x^2 + 3x + 1 \\
 \end{align}
 $$
+
+
+### $$\Delta$$ 연산자의 역함수는 $$\sum$$
+
+* 반차분(anti-difference) 연산자라고도 한다.
+
+책에 실린 두 연산자의 관계는 다음과 같다.
+
+$$
+g(x) = \Delta f(x) \quad \text{if and only if} \quad \sum g(x) \delta x = f(x) + C
+$$
+
+번역서에는 다음과 같이 나와 있다.
+
+$$
+만일 \sum g(x) \delta x = f(x) + C \quad \text{이면, 그리고 오직 그럴 때만} \quad g(x) = \Delta f(x)
+$$
+
+나는 다음과 같이 심플하게 이해했다.
+
+* $$\sum g(x) \delta x$$의 닫힌 형식을 $$f(x) + C$$ 라 하자.
+    * `C`는 적분 상수(적분 결과로 튀어나온 값이 무엇인지 모르는 상수).
+* 그렇다면 $$f(x)$$ 에 $$\Delta$$ 연산자를 적용하면 $$g(x)$$가 된다.
+
+$$\Delta$$를 풀어 식으로 표현하자면 다음과 같다.
+
+$$
+\begin{align}
+\Delta f(x)
+    & = g(x) \\
+    & = f(x+1) - f(x) \\
+\\
+\end{align}
+$$
+
+
+
+### 정합(definite sums)
+
+* $$g(x) = \Delta f(x)$$ 이면 다음이 성립한다. (단, $$b \ge a$$)
+    * ( $$g(x) = f(x+1) - f(x)$$이면 다음이 성립한다. )
+
+$$
+\begin{align}
+\sum_a^b g(x) \delta x
+    & = f(x) \mid_a^b \\
+    & = f(b) - f(a) \\
+    & = \sum_{k=a}^{b-1} g(k) \\
+    & = \sum_{a \le k \lt b} g(k), \quad \text{ for integers } b \ge a \\
+\end{align}
+$$
+
+이유는 다음과 같다.
+
+$$
+\require{cancel}
+\begin{align}
+\sum_{k=a}^{b-1} g(k)
+    & = \sum_{k=a}^{b-1} \Delta f(k) \\
+    & = \sum_{k=a}^{b-1} \left( f(k+1) - f(k) \right) \\
+    & = \sum_{k=a}^{b-1} \left( - f(k) - f(k+1) \right) \\
+\\
+    & = - f(a) + \cancel{f(a+1)} \\
+    & \quad - \cancel{f(a+1)} + \cancel{f(a+2)} \\
+    & \quad - \cancel{f(a+2)} + \cancel{f(a+3)} \\
+    & \quad ... \\
+    & \quad - \cancel{f(b - 1)} + f(b) \\
+\\
+    & = -f(a) + f(b) \\
+\\
+\therefore
+\sum_{k=a}^{b-1} g(k)
+    & = -f(a) + f(b) \\
+한편 \; \sum_a^b g(x) \delta x
+    & = f(b) - f(a) \; 이므로,\\
+\sum_a^b g(x) \delta x
+    & = \sum_{k=a}^{b-1} g(k) \\
+\end{align}
+$$
+
+#### 망원합(telescoping sum)
+
+위에서 나온 $$\sum (f(k+1) - f(k))$$ 와 같이, 전개했을 때 최초항과 마지막 항만 남는 모양의 합을 망원합(telescoping sum)이라 부른다.
+
+쉽게 표현하자면 다음과 같다.
+
+$$
+\begin{align}
+\sum_{0 \le k \le n} (f(k+1) - f(k))
+    & = \sum_{0 \le k \le n} (-f(k) + f(k+1)) \\
+    & = -f(0)+f(1) \\
+    & \quad -f(1)+f(2) \\
+    & \quad -f(2)+f(3) \\
+    & \quad ... \\
+    & \quad -f(n)+f(n+1) \\
+    & = -f(0)+f(n+1) \\
+\end{align}
+$$
+
+#### $$b \lt a$$ 인 경우
+
+정합의 정의는 다음과 같았다.
+
+$$
+\begin{align}
+\sum_a^b g(x) \delta x
+    & = f(x) \mid_a^b \\
+    & = f(b) - f(a) \\
+\end{align}
+$$
+
+따라서 $$b \lt a$$라면 다음이 성립한다.
+
+$$
+\begin{align}
+\sum_a^b g(x) \delta x
+    & = f(b) - f(a) \\
+    & = -(f(a) - f(b)) \\
+    & = - \sum_{\color{red}b}^{\color{red}a} g(x) \delta x
+\end{align}
+$$
+
+* 그냥 더해가는 방향이 다를 뿐이라고 생각하면 심플하다.
+* 어차피 적분과 아이디어는 같다.
+
+같은 논리로 적분의 다음 항등식을 합산에 응용할 수 있다.
+
+$$
+\int_a^{\color{red}b} + \int_{\color{red}b}^c = \int_a^c
+$$
+
+즉, 합산에서는 다음과 같다.
+
+$$
+\sum_a^{\color{red}b} g(x) \delta x + \sum_{\color{red}b}^c g(x) \delta x = \sum_a^c g(x) \delta x
+$$
+
+
 
 ## mth power 함수
 
@@ -139,167 +319,7 @@ $$
 \end{align}
 $$
 
-## D 연산자의 역함수는 $$\int$$
 
-드디어 적분 기호 $$\int$$ 가 나온다.
-
-* 상식대로 미분의 역함수는 적분이다.
-    * 위에서 미분 연산자로 `D`가 나왔으므로, `D`의 역함수 역할을 하는 연산자는 적분 기호 $$\int$$ 이다.
-    * 반도함수(anti-derivative) 연산자라고도 부른다.
-
-책에 실린 두 연산자의 관계는 다음과 같다.
-
-$$
-g(x) = Df(x) \quad \text{if and only if} \quad \int g(x)dx = f(x) + C
-$$
-
-번역서에는 다음과 같이 나와 있다.
-
-$$
-만일 \int g(x)dx = f(x) + C \quad \text{이면, 그리고 오직 그럴 때만} \quad g(x) = Df(x)
-$$
-
-나는 다음과 같이 심플하게 이해했다.
-
-* $$g(x)$$를 적분해서 나온 결과를 $$f(x) + C$$라 하자.
-* 그렇다면 $$f(x)$$를 미분하면 $$g(x)$$가 나온다.
-
-
-## $$\Delta$$ 연산자의 역함수는 $$\sum$$
-
-* 반차분(anti-difference) 연산자라고도 한다.
-
-책에 실린 두 연산자의 관계는 다음과 같다.
-
-$$
-g(x) = \Delta f(x) \quad \text{if and only if} \quad \sum g(x) \delta x = f(x) + C
-$$
-
-번역서에는 다음과 같이 나와 있다.
-
-$$
-만일 \sum g(x) \delta x = f(x) + C \quad \text{이면, 그리고 오직 그럴 때만} \quad g(x) = \Delta f(x)
-$$
-
-나는 다음과 같이 심플하게 이해했다.
-
-* $$\sum g(x) \delta x$$의 닫힌 형식을 $$f(x) + C$$ 라 하자.
-    * `C`는 적분 상수(적분 결과로 튀어나온 값이 무엇인지 모르는 상수).
-* 그렇다면 $$f(x)$$ 에 $$\Delta$$ 연산자를 적용하면 $$g(x)$$가 된다.
-
-$$\Delta$$를 풀어 식으로 표현하자면 다음과 같다.
-
-$$
-\begin{align}
-\Delta f(x)
-    & = g(x) \\
-    & = f(x+1) - f(x) \\
-\\
-\end{align}
-$$
-
-## 정적분(definite integrals)
-
-* $$g(x) = Df(x)$$ 이면 다음이 성립한다.
-    * ( $$f(x)$$를 미분한 결과가 $$g(x)$$이면 다음이 성립한다. )
-
-
-$$
-\begin{align}
-\int_a^b g(x) dx
-    & = f(x) \mid_a^b \\
-    & = f(b) - f(a) \\
-\end{align}
-$$
-
-## 정합(definite sums)
-
-* $$g(x) = \Delta f(x)$$ 이면 다음이 성립한다. (단, $$b \ge a$$)
-    * ( $$g(x) = f(x+1) - f(x)$$이면 다음이 성립한다. )
-
-$$
-\begin{align}
-\sum_a^b g(x) \delta x
-    & = f(x) \mid_a^b \\
-    & = f(b) - f(a) \\
-    & = \sum_{k=a}^{b-1} g(k) \\
-    & = \sum_{a \le k \lt b} g(k), \quad \text{ for integers } b \ge a \\
-\end{align}
-$$
-
-이유는 다음과 같다.
-
-$$
-\require{cancel}
-\begin{align}
-\sum_{k=a}^{b-1} g(k)
-    & = \sum_{k=a}^{b-1} \Delta f(k) \\
-    & = \sum_{k=a}^{b-1} \left( f(k+1) - f(k) \right) \\
-    & = (\cancel{f(a+1)} - f(a)) \\
-    & \quad + (f(a+2) - \cancel{f(a+1)}) \\
-    & \quad + (f(a+3) - f(a+2)) \\
-    & \quad + ... \\
-    & \quad + (f(b) - f(b - 1)) \\
-\\
-    & = (\cancel{f(a+1)} - f(a)) \\
-    & \quad + (\cancel{f(a+2)} - \cancel{f(a+1)}) \\
-    & \quad + (\cancel{f(a+3)} - \cancel{f(a+2)}) \\
-    & \quad + ... \\
-    & \quad + (f(b) - \cancel{f(b - 1)}) \\
-\\
-    & = -f(a) + f(b) \\
-\\
-\therefore
-\sum_{k=a}^{b-1} g(k)
-    & = -f(a) + f(b) \\
-한편 \; \sum_a^b g(x) \delta x
-    & = f(b) - f(a) \; 이므로,\\
-\sum_a^b g(x) \delta x
-    & = \sum_{k=a}^{b-1} g(k) \\
-\end{align}
-$$
-
-### 망원합(telescoping sum)
-
-위에서 나온 $$\sum (f(k+1) - f(k))$$ 와 같이, 전개했을 때 최초항과 마지막 항만 남는 모양의 합을 망원합(telescoping sum)이라 부른다.
-
-### $$b \lt a$$ 인 경우
-
-정합의 정의는 다음과 같았다.
-
-$$
-\begin{align}
-\sum_a^b g(x) \delta x
-    & = f(x) \mid_a^b \\
-    & = f(b) - f(a) \\
-\end{align}
-$$
-
-따라서 $$b \lt a$$라면 다음이 성립한다.
-
-$$
-\begin{align}
-\sum_a^b g(x) \delta x
-    & = f(b) - f(a) \\
-    & = -(f(a) - f(b)) \\
-    & = - \sum_{\color{red}b}^{\color{red}a} g(x) \delta x
-\end{align}
-$$
-
-* 그냥 더해가는 방향이 다를 뿐이라고 생각하면 심플하다.
-* 어차피 적분과 아이디어는 같다.
-
-같은 논리로 적분의 다음 항등식을 합산에 응용할 수 있다.
-
-$$
-\int_a^{\color{red}b} + \int_{\color{red}b}^c = \int_a^c
-$$
-
-즉, 합산에서는 다음과 같다.
-
-$$
-\sum_a^{\color{red}b} g(x) \delta x + \sum_{\color{red}b}^c g(x) \delta x = \sum_a^c g(x) \delta x
-$$
 
 # 일반 법칙: 내림제곱의 합산
 
