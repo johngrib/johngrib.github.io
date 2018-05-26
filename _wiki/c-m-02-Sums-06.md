@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.06.유한-무한 미적분
 summary : 02.SUMS.06.FINITE AND INFINITE CALCULUS
 date    : 2018-05-22 16:05:14 +0900
-updated : 2018-05-25 06:57:34 +0900
+updated : 2018-05-26 22:11:30 +0900
 tags    : math
 toc     : true
 public  : true
@@ -321,7 +321,7 @@ $$
 
 
 
-# 일반 법칙: 내림제곱의 합산
+# 법칙: 내림제곱의 합산
 
 위에서 배운 모든 표기법을 조합하여 다음을 유도할 수 있다.
 
@@ -596,9 +596,200 @@ $$
 
 지수 `m`에는 실수를 넣을 수도 있고, 복소수를 넣을 수도 있다고 한다.
 (숫자 타입이 다 들어가네?)
+
 이에 대해서는 5장에서 다룬다고 한다.
 
+참고로 차분 연산자 또한 내림제곱이 음수일 때에도 성립한다고 한다.
 
+$$
+\Delta x^{\underline m} = mx^{\underline{m-1}}
+$$
+
+# 내림제곱의 지수법칙
+
+다음은 일반적인 거듭제곱의 지수법칙이다.
+
+$$
+x^{m+n} = x^m x^n
+$$
+
+내림제곱에서는 다음과 같다.
+
+$$
+x^{\underline{m+n}} = x^{\underline m} (x-m)^n, \quad \text{integers m and n}
+$$
+
+이유는 다음과 같다.
+
+$$
+\begin{align}
+x^{\underline{m+n}}
+    & = \overbrace{x(x-1)(x-2)...(x-(m+n-1))}^{m+n개} \\
+    & = \overbrace{x(x-1)(x-2)...(x-(m-1))}^{m개} \\
+    & \quad \times \overbrace{(x-m)(x-(m+1))(x-(m+2))...(x-(m+n-1))}^{n개} \\
+\\
+    & = x^{\underline m} (x-m)^n \\
+\end{align}
+$$
+
+# 내림제곱 합산 법칙의 일반화
+
+## $$\ln x$$ 의 이산 버전은 조화수 $$ H_n $$
+
+위에서 언급되었던 내림제곱의 합산 법칙은 다음과 같다.
+
+$$
+\begin{align}
+\sum_{0 \le k \lt n} k^{\underline{m}}
+    & = { k^{\underline{m+1}} \over m+1 } \biggr\rvert_0^n \\
+    & = { n^{\underline{m+1}} \over m+1 }, \quad \text{for integers } m, n \ge 0 \\
+\end{align}
+$$
+
+이제 내림제곱이 음수에 대해서도 작동한다는 것을 알게 되었으므로,
+법칙을 다음과 같이 일반화할 수 있다.
+
+$$
+\begin{align}
+\sum_a^b x^{\underline{m}} \delta x = \frac{x^{\underline{m+1}}}{m+1} \biggr\rvert_a^b, \quad for \; m \ne -1
+\end{align}
+$$
+
+이제 $$m = -1$$ 인 경우만 알아보면 될 것 같다.
+
+즉, $$x^{\underline{-1}}$$을 유한적분한 $$\sum_{0 \le k \lt n} x^{\underline{-1}}$$ 의 해가 어떻게 되는지를 알아내면 된다.
+
+쉽게 표현하자면, 유한 미분했을 때 $$x^{\underline{-1}}$$가 나오는 식 $$f(x)$$를 찾아야 한다.
+
+$$
+\Delta f(x) = x^{\underline{-1}} = \frac{1}{x+1}
+$$
+
+$$\Delta f(x) = f(x+1) - f(x)$$ 이므로, $$f(x+1) - f(x)$$ 모양을 만족하는 함수를 찾으면 될 것 같다.
+
+참고로 무한 미적분에서 $$x^-1$$을 적분하면 $$\ln x$$가 나온다.
+
+$$ \int_a^b dx = \ln x \biggr\rvert_a^b$$
+
+따라서 이번 과제는 $$\ln x$$의 이산 버전을 찾는 셈이기도 하다.
+
+자 그렇다면 이제 어떻게 찾아야 할지를 열심히 생각해야 한다.
+
+...그런데 책에서 바로 답을 알려준다.
+
+$$
+f(x) = \frac{1}{1} + \frac{1}{2} + ... + \frac{1}{x}
+$$
+
+아하 이거라면 $$\Delta f(x) = \frac{1}{x+1}$$이 될 것 같다.
+
+이유는 다음과 같다.
+
+$$
+\begin{align}
+\Delta f(x)
+    & = f(x+1) - f(x) \\
+    & = (\frac{1}{1} + \frac{1}{2} + ... + \frac{1}{x} + \frac{1}{x+1}) - (\frac{1}{1} + \frac{1}{2} + ... + \frac{1}{x}) \\
+    & = \frac{1}{x+1} \\
+\end{align}
+$$
+
+사실 이것은 예전에 배운 적 있는 조화수 $$H_n$$이다.
+
+
+$$H_n = \sum_{k=1}^n \frac{1}{k} = \frac{1}{1} + \frac{1}{2} + ... + \frac{1}{n}$$
+
+책에 의하면 이로 인해 $$H_n$$은 연속함수 $$\ln x$$의 이산 버전인 셈이라 한다.
+
+아무튼 $$x^{\underline{-1}}$$을 유한적분한 식이 조화수라는 것도 알게 되었다.
+
+이제 다음과 같이 정리할 수 있다.
+
+$$
+\sum_a^b x^{\underline m} \delta x =
+\begin{cases}
+    { x^{\underline{m+1}} \over m+1 } \biggr\rvert_a^b, & if \; m \ne -1 \\
+    H_x \biggr\rvert_a^b & if \; m - -1 \\
+\end{cases}
+$$
+
+## $$e^x$$의 이산 버전은 $$2^x$$
+
+$$\ln x$$를 찾았는데 $$e^x$$의 이산 버전을 안 찾을 수는 없을 것이다.
+
+참고로 무한 미적분에서의 $$e^x$$는 미분해도 $$e^x$$인 멋지고 유용한 녀석이다.
+
+$$D e^x = e^x$$
+
+그렇다면 유한 미적분에서는 어떨까?
+
+다음의 항등식을 만족시키는 $$f(x)$$를 찾으면 될 것 같다.
+
+$$\Delta f(x) = f(x)$$
+
+다음과 같이 정리할 수 있을 것 같다.
+
+$$
+\begin{align}
+f(x)
+    & = \Delta f(x) \\
+    & = f(x+1) - f(x) \\
+\\
+\therefore 2f(x) & = f(x+1) \\
+\end{align}
+$$
+
+이는 다음 항으로 갈 때마다 `2`씩 곱해 간다는 의미이다.
+
+심플하게 다음과 같이 정리할 수 있다.
+
+$$
+f(x) = 2^x
+$$
+
+시험삼아 유한 미분(차분)을 해 보자.
+
+$$
+\begin{align}
+\Delta f(x) & = f(x+1) - f(x) \\
+    & = 2^{x+1} - 2^x \\
+    & = 2^x \cdot (2 - 1) \\
+    & = 2^x \\
+\end{align}
+$$
+
+오 정말 미분했을 때 자기 자신이 나온다.
+
+그렇다면 `2`가 아니라 다른 수가 있는 경우엔 어떻게 미분할 수 있을까?
+
+다음과 같이 하면 된다.
+
+$$
+\begin{align}
+\Delta(c^x) & = c^{x+1} - c^x \\
+    & = c^x \cdot (c - 1) \\
+    & = (c-1)c^x \\
+\end{align}
+$$
+
+이를 통해 $$c^x$$의 반차분은 $$\frac{c^x}{c-1}$$가 된다는 것을 알 수 있다.
+
+따라서 다음과 같이 정리할 수 있다.
+
+$$
+\begin{align}
+\sum_{a \le k \lt b} c^k
+    & = \sum_a^b c^x \delta x \\
+    & = \frac{c^x}{c-1} \biggr\rvert_a^b \\
+    & = \frac{c^b}{c-1} - \frac{c^a}{c-1} \\
+\\
+\therefore
+\sum_{a \le k \lt b} c^k
+    & = \frac{c^b - c^a}{c-1}, \quad for \; c \ne 1 \\
+\end{align}
+$$
+
+이것은 고등학교 때 배운 등비수열의 합의 일반식이기도 하다.
 
 # Links
 
