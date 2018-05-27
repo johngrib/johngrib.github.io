@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.06.유한-무한 미적분
 summary : 02.SUMS.06.FINITE AND INFINITE CALCULUS
 date    : 2018-05-22 16:05:14 +0900
-updated : 2018-05-27 12:09:21 +0900
+updated : 2018-05-27 16:37:36 +0900
 tags    : math
 toc     : true
 public  : true
@@ -860,6 +860,143 @@ $$
 * 유한 미적분의 경우: $$ \Delta(uv) = u\Delta v + Ev\Delta u $$ &nbsp;
 
 참고로, 무한 미적분에서는 유한 미적분에서 `f(x+1)`의 `1`이 `0`으로 수렴하기 때문에 `E`가 사라진다.
+
+
+그리고 양변에 부정합을 취해주면,
+
+$$
+\begin{align}
+\Delta(uv)
+    & = u\Delta v + E v\Delta u \\
+    & \color{gray}{\text{ 양 변에 부정합을 취해주자 }} \\
+\sum \Delta(uv)
+    & = \sum(u\Delta v + E v\Delta u) \\
+uv  & = \sum u\Delta v + \sum E v\Delta u \\
+\\
+\therefore
+\sum u\Delta v & = uv - \sum Ev \Delta u
+\end{align}
+$$
+
+위의 식에 등장하는 세 항 모두에 한계(범위)를 지정하면 부정합은 정합이 된다.
+(부정적분이 정적분이 되는 것과 비슷)
+
+## 부분합산의 응용: $$\sum x 2^x \delta x$$
+
+* $$\int xe^x dx$$ &nbsp;
+    * 흔히 부분적분으로 적분하는 함수이다.
+* $$\sum x2^x \delta x$$ &nbsp;
+    * 위의 식의 이산 버전이다.
+
+$$\sum x2^x \delta x$$에 부분합산을 사용해 보자.
+
+일단 다음과 같이 정의하고 풀이를 시작하자.
+
+$$
+\begin{align}
+x   & = u(x) \\
+2^x & = \Delta v(x) \\
+\\
+그러므로 \\
+\\
+\Delta u(x) & = 1 \\
+v(x) & = 2^x \\
+Ev(x) & = 2^{x+1} \\
+\end{align}
+$$
+
+이를 위에서 얻어낸 공식에 대입하자.
+
+$$
+\begin{align}
+\sum u\Delta v
+    & = uv - \sum Ev \Delta u \\
+\sum u(x) \Delta v(x) \delta x
+    & = u(x) v(x) - \sum E v(x) \Delta u(x) \delta x \\
+\sum x 2^x \delta x
+    & = x 2^x - \sum 2^{x+1} \cdot 1 \delta x \\
+    & = x 2^x - (2^{x+1} + C ) \\
+    & = 2^x ( x - 2 ) - C \\
+\end{align}
+$$
+
+이제 한계(범위)를 부여하자.
+
+$$
+\begin{align}
+\sum_{k=0}^n k2^k
+    & = \sum_0^{n+1} x2^x \delta x \\
+    & = x2^x - 2^{x+1} - C \biggr\rvert_0^{n+1} \\
+    & = 2^x(x-2) \biggr\rvert_0^{n+1} \\
+    & = \biggr( 2^{n+1}(n+1-2) - C \biggr) - \biggr( 2^0(0-2) - C \biggr) \\
+    & = \biggr( 2^{n+1}(n-1) -C \biggr) - \biggr( -2 - C \biggr) \\
+    & = 2^{n+1}(n-1) + 2 \\
+
+\end{align}
+$$
+
+## 부분합산의 응용: $$\sum_{0 \le k \lt n} kH_k x$$
+
+이번에는 다음을 풀어 보자.
+
+$$
+\sum_{0 \le k \lt n} kH_k
+$$
+
+일단 다음과 같이 정의하고 풀이를 시작하자.
+
+$$
+\begin{align}
+H_x & = u(x) \\
+x   & = x^{\underline 1} \\
+x   & = \Delta v(x) \\
+\\
+그러므로 \\
+\\
+\Delta u(x) & = x^{\underline{-1}} \\
+v(x) & = \frac{x^{\underline 2}}{2} \\
+Ev(x) & = \frac{(x+1)^{\underline 2}}{2} \\
+\end{align}
+$$
+
+이를 위에서 얻은 공식에 대입하자.
+
+`uv` 순서를 지켜야 덜 헷갈리므로 $$ \sum_{0 \le k \lt n} kH_k $$를 $$\sum_{0 \le k \lt n} H_k k $$로 바꾸고 푸는 쪽이 좋을 것 같다.
+
+$$
+\begin{align}
+\sum u\Delta v
+    & = uv - \sum Ev \Delta u \\
+\sum u(x) \Delta v(x) \delta x
+    & = u(x) v(x) - \sum E v(x) \Delta u(x) \delta x \\
+\\
+\sum H_x x \delta x
+    & = H_x \frac{x^{\underline 2}}{2} - \sum \frac{(x+1)^{\underline 2}}{2} x^{\underline{-1}} \delta x \\
+    & = H_x \frac{x^{\underline 2}}{2} - \frac{1}{2} \sum (x+1)^{\underline 2} x^{\underline{-1}} \delta x \\
+    & = H_x \frac{x^{\underline 2}}{2} - \frac{1}{2} \sum (x+1)(x) x^{\underline{-1}} \delta x \\
+    & = H_x \frac{x^{\underline 2}}{2} - \frac{1}{2} \sum (x+1)(x) \frac{1}{x+1} \delta x \\
+    & = H_x \frac{x^{\underline 2}}{2} - \frac{1}{2} \sum x \delta x \\
+    & = H_x \frac{x^{\underline 2}}{2} - \frac{1}{2} \sum x^{\underline 1} \delta x \\
+    & = H_x \frac{x^{\underline 2}}{2} - \frac{1}{2} ( \frac{x^{\underline 2}}{2} + C ) \\
+    & = H_x \frac{x^{\underline 2}}{2} - \frac{x^{\underline 2}}{4} + C \\
+    & = \frac{x^{\underline 2}}{2}(H_x - \frac{1}{2}) + C \\
+\end{align}
+$$
+
+이제 한계(범위)를 주자.
+
+$$
+\begin{align}
+\sum_{0 \le k \lt n} kH_k
+    & = \sum_0^n xH_x \delta x \\
+    & = \frac{x^{\underline 2}}{2}(H_x - \frac{1}{2}) + C \biggr\rvert_0^n \\
+    & = \biggr( \frac{n^{\underline 2}}{2}(H_n - \frac{1}{2}) \biggr)
+    -
+    \biggr( \frac{0^{\underline 2}}{2}(H_0 - \frac{1}{2}) \biggr) \\
+    & = \frac{n^{\underline 2}}{2}(H_n - \frac{1}{2}) \\
+\end{align}
+$$
+
 
 
 # 차분 목록
