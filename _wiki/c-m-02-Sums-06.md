@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.06.유한-무한 미적분
 summary : 02.SUMS.06.FINITE AND INFINITE CALCULUS
 date    : 2018-05-22 16:05:14 +0900
-updated : 2018-05-26 23:34:23 +0900
+updated : 2018-05-27 12:09:21 +0900
 tags    : math
 toc     : true
 public  : true
@@ -806,6 +806,87 @@ $$
 $$
 
 이것은 고등학교 때 배운 등비수열의 합 일반식을 증명하는 방법이기도 하다.
+
+# 부분합산
+
+이번에는 $$\Delta f(x)g(x)$$ 에 대해 알아보자.
+
+"부분합산은 미적분의 부분적분(integration by parts)에 대응된다."
+
+일단 무한 미적분에서는 다음과 같이 처리한다.
+
+* $$ D(uv) = uDv + vDu $$ &nbsp;
+* $$ \int uDv + \int vDu = uv $$ &nbsp;
+
+유한 미적분에서는 다음과 같다.
+
+$$
+\begin{align}
+\Delta(f(x))
+    & = f(x+1) - f(x) \\
+    & \color{gray}{\text{ f(x) 에 u(x)v(x) 를 넣어보자 }} \\
+\Delta(u(x)v(x))
+    & = u(x+1)v(x+1) - u(x)v(x) \\
+    & = u(x+1)v(x+1) - u(x)v(x) + \color{red}{ u(x)v(x+1) - u(x)v(x+1) } \\
+    & = u(x) \biggr( v(x+1) -v(x) \biggr) + v(x+1) \biggr( u(x+1) - u(x) \biggr)\\
+    & = u(x) \Delta v(x) + v(x+1) \Delta u(x) \\
+\\
+\therefore \Delta uv & = u\Delta v + v\Delta u \\
+\end{align}
+$$
+
+그리고 일일이 `f(x+1)`을 쓰는 건 귀찮으니 다음과 같은 표기법을 추가하자.
+
+$$ Ef(x) = f(x+1) $$
+
+`E`는 자리이동 연산자(shift operator)라고 부른다.
+
+이제 `E`를 적용하면 다음과 같이 정리할 수 있다.
+
+$$
+\begin{align}
+\Delta a(x)b(x)
+    & = a(x)\Delta b(x) + b(x+1)\Delta a(x) \\
+    & = a(x)\Delta b(x) + Eb(x)\Delta a(x) \\
+\\
+\therefore
+\Delta(ab) & = a\Delta b + E b\Delta a
+\end{align}
+$$
+
+이제 유한/무한 부분미적분을 요약할 수 있다.
+
+* 무한 미적분의 경우: $$ D(uv) = uDv + vDu $$ &nbsp;
+* 유한 미적분의 경우: $$ \Delta(uv) = u\Delta v + Ev\Delta u $$ &nbsp;
+
+참고로, 무한 미적분에서는 유한 미적분에서 `f(x+1)`의 `1`이 `0`으로 수렴하기 때문에 `E`가 사라진다.
+
+
+# 차분 목록
+
+다음은 책에 있는 지금까지 나온 차분 식을 옮겨온 것이다.
+
+* 왼쪽 열의 식을 차분하면 오른쪽 열이 나온다.
+* 오른쪽 열의 식을 반차분하면 왼쪽 열이 나온다.
+
+예를 들어 첫번째 행은 "$$x^{\underline 0}$$을 차분하면 $$0$$이 된다"로 보면 적당하다.
+
+| $$f=\sum g$$                     | $$\Delta f=g$$                       | 참고               |
+|----------------------------------|--------------------------------------|--------------------|
+| $$x^{\underline 0}=1$$           | 0                                    |                    |
+| $$x^{\underline 1}=x$$           | 1                                    |                    |
+| $$x^{\underline 2}=x(x-1)$$      | $$2x$$                               |                    |
+| $$x^{\underline m}$$             | $$mx^{\underline{m-1}}$$             |                    |
+| $$\frac{x^{\underline m}}{m+1}$$ | $$x^{\underline{m}}$$                | $$m\ne-1$$인 경우  |
+| $$H_x$$                          | $$x^{\underline{-1}}=\frac{1}{x+1}$$ | $$m=1$$인 경우     |
+| $$2^x$$                          | $$(2-1)2^x = 2^x$$                   | c는 상수           |
+| $$c^x$$                          | $$(c-1)c^x$$                         | c는 상수           |
+| $$\frac{c^x}{c-1}$$              | $$c^x$$                              | c는 상수           |
+| $$cu$$                           | $$c\Delta u$$                        | c는 상수           |
+| $$uv$$                           | $$u\Delta v + Ev \Delta u$$          | $$Ef(x) = f(x+1)$$ |
+
+
+
 
 # Links
 
