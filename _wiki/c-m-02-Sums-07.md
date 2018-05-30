@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.07.무한합
 summary : 02.SUMS.06.INFINITE SUMS
 date    : 2018-05-27 17:04:23 +0900
-updated : 2018-05-29 22:48:39 +0900
+updated : 2018-05-30 23:21:21 +0900
 tags    : math
 toc     : true
 public  : true
@@ -241,26 +241,14 @@ $$
 Absolutely convergent sums over two or more indices can always be summed first with respect to any one of those indices.  
 둘 이상의 색인들에 관한 절대수렴 합은 항상 그 색인들 중 하나에 관해 먼저 합산할 수 있다.
 
-다음은 이에 대한 증명이다.
+말하자면, 색인이 여럿 있는 절대수렴 합은, 색인별로 먼저 합을 구해도 된다는 뜻이다.
 
-만약 $$J$$와 $$\{ K_j \mid j \in J \}$$의 원소들이 다음 조건을 만족하는 색인들의 임의의 집합들이라면,
+증명은 책에 자세히 나와 있으므로 생략한다.
 
-$$
-\sum_{ j \in J \\ k \in K_j } a_{j,k} \; \text{가 A에 절대수렴한다}
-$$
 
-각 $$j \in J$$에 대해 다음 두 조건을 모두 만족하는 복소수 $$A_j$$들이 존재한다.
 
-$$
-\sum_{k \in K_j} a_{j,k}가 A_j에 \; 절대수렴한다. \\
-\sum_{j \in J} A_j가 A에 \; 절대수렴한다. \\
-$$
 
-이 때, 더하는 항 중에 음수가 있으면 골치아프므로 다음과 같이 모든 항이 양수라고 가정하자.
+# Links
 
-* 가정: 모든 쌍 $$(j, k) \in M$$ 에 대해, $$a_{j,k} \ge 0$$ 이다.
+* [[CONCRETE-MATH]]
 
-이 가정 하에 증명을 완료하게 되면, 다음과 같은 응용이 가능하다.
-
-* 실수의 경우 양수부/음수부로 쪼개어, 음수부만 똑같이 증명해주면 된다.
-* 복소수의 경우 실수부/허수부를 나누어 각각 양수인 경우와 음수인 경우의 증명을 해주면 된다.
