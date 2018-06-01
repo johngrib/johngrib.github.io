@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 01.재귀적인 문제들.연습문제
 summary : 01.RECURRENT PROBLEMS.Exercises
 date    : 2018-06-01 21:28:05 +0900
-updated : 2018-06-02 07:04:00 +0900
+updated : 2018-06-02 07:09:28 +0900
 tags    : math
 toc     : true
 public  : true
@@ -97,6 +97,10 @@ $$
 | 6 | $$\beta$$                                   |
 
 그렇다면 `n` 값이 4보다 크다면, 5로 나눈 나머지를 새로운 `n`으로 삼아 계산하면 된다.
+
+따라서 이 문제의 답은 위의 표가 된다고 할 수 있다.
+
+코드로 표현한다면 어떨까?
 
 python이라면 다음과 같이 표현할 수 있을 것이다. 
 
