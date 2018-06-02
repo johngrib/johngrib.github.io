@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.01.바닥과 천장
 summary : 03.Integer Functions.01.FLOORS AND CEILINGS
 date    : 2018-06-01 21:31:43 +0900
-updated : 2018-06-02 23:02:52 +0900
+updated : 2018-06-02 23:28:08 +0900
 tags    : math
 toc     : true
 public  : true
@@ -104,7 +104,7 @@ print(math.ceil(-math.pi))  # -3
 ## 규칙들
 
 $$
-\floor x = x \iff {\text{x is an integer} \\ \text{x는 정수}} \iff \ceil x = x
+\floor x = x \iff \text{x is an integer} \iff \ceil x = x
 $$
 
 * 위의 규칙은 다음을 의미한다.
@@ -116,7 +116,7 @@ $$
 ---
 
 $$
-\ceil x - \floor x = [ {\text{x is not an integer} \\ \text{x는 정수가 아님}} ]
+\ceil x - \floor x = [ \text{x is not an integer} ]
 $$
 
 * 위의 규칙은 아이버슨의 관례를 사용했다.
