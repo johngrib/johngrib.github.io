@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 01.재귀적인 문제들.연습문제
 summary : 01.RECURRENT PROBLEMS.Exercises
 date    : 2018-06-01 21:28:05 +0900
-updated : 2018-06-02 07:09:28 +0900
+updated : 2018-06-02 09:44:05 +0900
 tags    : math
 toc     : true
 public  : true
@@ -138,6 +138,19 @@ Q(4)
     \end{cases}
 $$
 
+재할당을 할 수 없거나 하지 않기로 약속한 환경이라면 다음과 같이 `if`를 하나 더 추가하여 한 번 더 재귀하는 것도 방법이겠다.
+
+```python
+def Q(n):
+    if n == 0:
+        return alpha
+    if n == 1:
+        return beta
+    if n > 4:
+        return Q(n % 5)
+
+    return (1 + Q(n-1)) / Q(n-2)
+```
 
 물론 순환 주기가 5 밖에 안 되기 때문에 다음과 같이 `if` 문을 잔뜩 사용한 하드 코드도 하나의 방법이겠지만, 별로 바람직해 보이지는 않는다.
 
