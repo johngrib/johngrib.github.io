@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
-updated : 2018-06-03 17:06:26 +0900
+updated : 2018-06-03 23:22:10 +0900
 tags    : math
 toc     : true
 public  : true
@@ -124,6 +124,107 @@ for i in range(2**16):
 
 print('end')
 ```
+
+## $$\floor{\sqrt{\floor x}} = \floor{\sqrt x}, \; real \; x \ge 0$$를 증명하라
+
+$$\biggr\lfloor \sqrt{\floor x} \biggr\rfloor = \floor{\sqrt x}, \; real \; x \ge 0$$
+
+* `real`은 `실수`를 의미한다
+* 즉, 문제 조건의 `x`는 **0 이상의 실수**이다.
+
+일단 다음과 같이 정의하자.
+
+$$
+m = \biggr\lfloor \sqrt{ \floor x } \biggr\rfloor
+$$
+
+그렇다면 $$\sqrt{\floor x}$$의 범위는 다음과 같을 것이다.
+
+$$
+m \le \sqrt{\floor x} \lt m + 1
+$$
+
+세 항이 모두 음수가 아니므로, 전체를 제곱해도 부등호는 변화가 없을 것이다.
+
+$$
+m^2 \le \floor x \lt (m + 1)^2
+$$
+
+여기에서 두 가지 부등식을 끌어낼 수 있다.
+
+$$
+\begin{align}
+m^2 & \le x \\
+    & \color{gray}{ \because n \le x \iff n \le \floor x } \\
+x   & \lt (m+1)^2 \\
+    & \color{gray}{ \because x \lt n \iff \floor x \lt n } \\
+\end{align}
+$$
+
+이제 둘을 종합하면 다음을 얻을 수 있다.
+
+$$
+m^2 \le x \lt (m + 1)^2
+$$
+
+세 항에 모두 제곱근을 취하자.
+
+$$
+\begin{align}
+m & \le \sqrt x \lt m + 1 \\
+m & = \floor{\sqrt x} \\
+& \color{gray}{ \because \floor x = n \iff n \le x \lt n + 1 } \\
+\therefore
+m   & = \biggr\lfloor \sqrt{ \floor x } \biggr\rfloor = \floor{\sqrt x} \\
+\end{align}
+$$
+
+## $$\ceil{\sqrt{\ceil x}} = \ceil{\sqrt x}, \; real \; x \ge 0$$을 증명하라
+
+바로 윗 절과 비슷한 방법으로 증명이 가능하다.
+
+일단 다음을 정의한다.
+
+$$
+m = \biggr\lceil \sqrt{ \ceil x } \biggr\rceil
+$$
+
+그렇다면 $$\sqrt{\ceil x}$$의 범위는 다음과 같을 것이다.
+
+$$
+m - 1 \lt \sqrt{\ceil x} \le m
+$$
+
+역시 세 항이 모두 음수가 아니므로, 제곱하자.
+
+$$
+(m - 1)^2 \lt \ceil x \le m^2
+$$
+
+그리고 두 부등식을 이끌어내어, 종합하자.
+
+$$
+\begin{align}
+x   & \le m^2 \\
+    & \color{gray}{ \because x \le n \iff \ceil x \le n } \\
+(m-1)^2 & \lt x \\
+    & \color{gray}{ \because n \lt x \iff n \lt \ceil x } \\
+\therefore (m-1)^2 & \lt x \le m^2 \\
+\end{align}
+$$
+
+이제 제곱근을 취한다.
+
+$$
+\begin{align}
+(m-1) & \lt \sqrt x \le m \\
+m   & = \ceil{\sqrt x} \\
+    & \color{gray}{ \because \ceil x = n \iff n -1 \lt x \le n } \\
+\therefore
+m   & = \biggr\lceil \sqrt{ \ceil x } \biggr\rceil = \ceil{\sqrt x} \\
+\end{align}
+$$
+
 
 # Links
 
