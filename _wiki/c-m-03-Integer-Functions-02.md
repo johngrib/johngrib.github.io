@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
-updated : 2018-06-03 23:22:10 +0900
+updated : 2018-06-06 23:14:19 +0900
 tags    : math
 toc     : true
 public  : true
@@ -225,6 +225,119 @@ m   & = \biggr\lceil \sqrt{ \ceil x } \biggr\rceil = \ceil{\sqrt x} \\
 \end{align}
 $$
 
+## 일반화
+
+위에서 푼 문제를 일반화해보자.
+
+* `f(x)`가 `어떤 실수 구간에 대한 임의의 연속 단조증가 함수`이며, 다음을 만족한다고 하자.
+
+$$
+\begin{array}{rcl}
+f(x) = \text{integer} \quad & \Rightarrow & x = \text{integer} \\
+\end{array}
+$$
+
+그렇다면, 위의 조건을 만족하는 함수 `f(x)`에 대해 다음의 두 식이 항상 성립한다.
+
+$$
+\floor{f(x)} = \floor{f( \floor x )} \\
+\ceil{f(x)} = \ceil{ f( \ceil x ) }
+$$
+
+### 무슨 뜻인지 이해해보자 : 조건
+
+$$
+\begin{array}{rcl}
+f(x) = \text{integer} \quad & \Rightarrow & x = \text{integer} \\
+\text{함수 f의 리턴값 f(x)가 integer} & 이면 & \text{입력값 x는 integer 이다.}
+\end{array}
+$$
+
+* 리턴값 `f(x)`가 integer 라면, 입력값 `x`는 integer 라는 것을 알 수 있다는 말이다.
+* 그러나 위의 명제의 역은 참이 아닐 수 있음을 기억해 두어야 할 것 같다.
+    * (입력값 `x`가 integer 라고 해서 리턴값이 무조건 integer 라고 할 수는 없다.)
+
+예를 들어 다음은 이러한 조건에 맞는 함수의 예라고 할 수 있겠다.
+
+```python
+def f(x):
+    return x / 2
+```
+
+* 리턴값이 integer라면, 입력값 `x`는 짝수일 것이므로 반드시 integer 일 수 밖에 없다.
+* 그러나 입력값이 integer라고 해도, 리턴값이 integer가 아닌 경우도 있다.
+    * `f(3)`의 값은 `1.5`이기 때문이다.
+
+### 무슨 뜻인지 이해해보자 : 어떤 실수 구간에 대한...
+
+그리고 "어떤 실수 구간에 대한 임의의 연속 단조증가 함수" 에 대해서는 다음과 같이 이해하였다.
+
+* `실수 구간에 대한` : 함수 `f`에 넣어줄 인자 `x`와 리턴값 `f(x)`가 실수라는 말이다.
+* `연속` : 그래프를 그렸을 때 선이 끊어지지 않고 계속 이어진다는 뜻이다.
+* `단조증가` : `x1 < x2` 일 때, 리턴값도 `f(x1) < f(x2)`의 관계가 있음을 말한다.
+    * 계속 오르기만 하는 환상의 주식 그래프를 상상해 보자.
+
+정리하자면 다음과 같다.
+
+* 모든 실수 범위의 입력값 `x`와, 실수 범위의 리턴값 `f(x)`로 그래프를 그렸을 때, 그래프가 끊임 없이 이어지고, 계속해서 오른쪽 위로 상승하는 모양이다.
+* 그런 와중에 입력값 `x`가 integer 이면, 리턴값 `f(x)`도 integer 이다.
+
+### $$\ceil{f(x)} = \ceil{f( \ceil x )}$$ 의 증명
+
+세 가지 경우로 나누어 생각할 수 있다.
+
+* $$ x = \ceil x $$ 인 경우
+    * 명백하므로 증명할 필요가 없다.
+* $$ x \gt \ceil x $$인 경우
+    * 이건 불가능한 경우이다.
+* $$ x \lt \ceil x $$ 인 경우
+    * 좀 더 정확히는 $$\floor x \lt x \lt \ceil x$$인 경우라 할 수 있겠다.
+    * 이 경우만 증명하면 되겠다.
+
+$$
+\begin{align}
+x & \lt \ceil x \\
+f(x) & \lt f( \ceil x ) \\
+    & \color{gray}{\because \text{f 는 단조증가 함수이기 때문이다.}} \\
+\ceil{f(x)} & \le \ceil{ f( \ceil x ) } \\
+    & \color{gray}{\because \ceil \ \text{은 비감소 함수이기 때문이다.}} \\
+\end{align}
+$$
+
+이 때, 다음의 조건을 만족하는 임의의 수 $$y$$가 반드시 존재할 것이다.
+
+$$
+x \le y \lt \ceil x \\
+f(y) = \ceil{f(x)} \\
+$$
+
+이제 이 문제의 조건이 `함수 f의 리턴값 f(x)가 integer 이면 입력값 x는 integer이다`라는 점을 떠올려보자.
+
+* $$f(y) = \ceil{f(x)}$$ 이니까, $$f(y)$$는 integer 이다.
+* 따라서, $$y$$는 integer 이다.
+
+그런데 부등식을 써 놓고 다시 잘 생각해보면 모순이 발생했다는 것을 알 수 있다.
+
+$$
+\begin{cases}
+\floor x \lt x \le y \lt \ceil x \\
+y \text{는 integer이다.} \\
+\end{cases}
+$$
+
+$$\floor x$$ 와 $$\ceil x$$ 의 차이는 1 이므로, 둘 사이에 다른 정수가 있다는 것은 말이 안 된다.
+
+따라서 다음의 식에서 부등호는 빠져야 한다.
+
+$$
+\ceil{f(x)} \le \ceil{ f( \ceil x ) } \\
+$$
+
+결론적으로 다음 등식이 남게 된다.
+
+$$
+\ceil{f(x)} = \ceil{ f( \ceil x ) } \\
+$$
 
 # Links
 
