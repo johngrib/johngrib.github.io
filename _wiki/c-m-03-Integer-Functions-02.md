@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
-updated : 2018-06-06 23:14:19 +0900
+updated : 2018-06-10 18:21:56 +0900
 tags    : math
 toc     : true
 public  : true
@@ -15,6 +15,8 @@ $$
 \def\ceil#1{\lceil #1 \rceil}
 \def\floor#1{\lfloor #1 \rfloor}
 \def\frfr#1{\{ #1 \}}
+\def\bigceil#1{ \biggr\lceil #1 \biggr\rceil }
+\def\bigfloor#1{ \biggr\lfloor #1 \biggr\rfloor }
 $$
 
 * TOC
@@ -127,7 +129,7 @@ print('end')
 
 ## $$\floor{\sqrt{\floor x}} = \floor{\sqrt x}, \; real \; x \ge 0$$를 증명하라
 
-$$\biggr\lfloor \sqrt{\floor x} \biggr\rfloor = \floor{\sqrt x}, \; real \; x \ge 0$$
+$$\bigfloor{ \sqrt{\floor x} } = \floor{\sqrt x}, \; real \; x \ge 0$$
 
 * `real`은 `실수`를 의미한다
 * 즉, 문제 조건의 `x`는 **0 이상의 실수**이다.
@@ -135,7 +137,7 @@ $$\biggr\lfloor \sqrt{\floor x} \biggr\rfloor = \floor{\sqrt x}, \; real \; x \g
 일단 다음과 같이 정의하자.
 
 $$
-m = \biggr\lfloor \sqrt{ \floor x } \biggr\rfloor
+m = \bigfloor{ \sqrt{ \floor x } }
 $$
 
 그렇다면 $$\sqrt{\floor x}$$의 범위는 다음과 같을 것이다.
@@ -338,6 +340,68 @@ $$
 $$
 \ceil{f(x)} = \ceil{ f( \ceil x ) } \\
 $$
+
+### 중요한 특수 경우
+
+위에서 증명한 정리의 특수한 경우.
+
+$$m, n$$이 정수이고, 분모인 $$n$$은 양수인 정수라면 다음 두 가지가 성립한다.
+
+$$
+\begin{align}
+\bigfloor{ \frac{x+m}{n} } & = \bigfloor{ \frac{\floor x + m}{n} } \\
+\bigceil{ \frac{x+m}{n} } & = \bigceil{ \frac{\ceil x + m}{n} } \\
+\end{align}
+$$
+
+$$m = 0$$ 이라면 다음과 같을 것이다.
+
+$$
+\begin{align}
+\bigfloor{ \frac{x}{n} } & = \bigfloor{ \frac{\floor x}{n} } \\
+\bigceil{ \frac{x}{n} } & = \bigceil{ \frac{\ceil x}{n} } \\
+\end{align}
+$$
+
+둘 다 생각하기 귀찮으므로 바닥 함수만 놓고 생각해보자.
+
+$$m = 0, n = 10$$ 이라면 다음 사실을 알 수 있다.
+
+$$
+\bigfloor{ \frac{x}{10} } = \bigfloor{ \frac{\floor x}{10} } \\
+$$
+
+중첩이 되는 것 같다? $$x$$에 $$\frac{x}{10}$$를 넣어 보자.
+
+$$
+\begin{align}
+\bigfloor{ \frac{\frac{x}{10}}{10} } & = \bigfloor{ \frac{\floor{ \frac{x}{10} }}{10} } \\
+\bigfloor{ \frac{x}{100} } & = \bigfloor{ \frac{\floor{ \frac{x}{10} }}{10} } \\
+\bigfloor{ \frac{x}{100} } & = \bigfloor{ \frac{\floor{ \frac{ \floor x}{10} }}{10} } \\
+\because & \color{gray}{\bigfloor{ \frac{x}{10} } = \bigfloor{ \frac{\floor x}{10} }} \\
+\end{align}
+$$
+
+위의 식의 왼쪽은 다음을 의미한다.
+
+```python
+# 100 으로 나누고, 나머지를 버린 결과를 리턴한다.
+def ft100(x):
+    return x // 100
+```
+
+오른쪽은 다음을 의미한다.
+
+```python
+# 10 으로 나누고, 나머지를 버리고, 10으로 나누고, 나머지를 버리고 리턴한다.
+def ft10_10(x):
+    x = x // 10
+    x = x // 10
+    return x
+```
+
+100 으로 나누어 나머지를 버리거나, 10으로 나누어 나머지를 버리는 일을 두 번 반복하나 똑같다는 의미이다.
+
 
 # Links
 
