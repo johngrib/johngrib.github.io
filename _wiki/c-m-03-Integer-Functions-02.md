@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
-updated : 2018-06-10 18:21:56 +0900
+updated : 2018-06-10 23:46:23 +0900
 tags    : math
 toc     : true
 public  : true
@@ -401,6 +401,45 @@ def ft10_10(x):
 ```
 
 100 으로 나누어 나머지를 버리거나, 10으로 나누어 나머지를 버리는 일을 두 번 반복하나 똑같다는 의미이다.
+
+# 두 번째 문제
+
+다음 명제를 증명 또는 반증하자.
+
+$$
+\ceil{ \sqrt{ \floor x } } \stackrel{?}{=} \ceil{ \sqrt x }, \quad { real \\ 실수 } \; x \ge 0 \\
+$$
+
+이 문제는 다음의 값들을 대입해보며 풀어보면 쉽게 반증할 수 있다.
+
+* $$\pi$$ : [원주율](https://www.wolframalpha.com/input/?i=pi ).
+    * 약 `3.1415926535897...`
+    * `파이(/paɪ/)`라고 읽는다.
+* $$e$$ : [자연상수](https://www.wolframalpha.com/input/?i=mathematical+constant+e ).
+    * 약 `2.7182818284590...`
+* $$\phi$$ : [황금비](https://www.wolframalpha.com/input/?i=phi ).
+    * 약 `1.618033988749...`
+    * `파이(/faɪ/)`라고 읽는다.
+
+계산하기 귀찮으니 컴퓨터로 해결하자.
+
+```python
+import math
+
+def test(x):
+    left = math.ceil(math.sqrt(math.floor(x)))
+    right = math.ceil(math.sqrt(x))
+    return left == right
+
+phi = (1 + math.sqrt(5)) / 2
+
+print(math.pi, test(math.pi))   # 3.141592653589793 True
+print(math.e, test(math.e))     # 2.718281828459045 True
+print(phi, test(phi))           # 1.618033988749895 False
+```
+
+* $$\phi$$(phi)가 `False`가 나왔다.
+* 따라서 위의 명제는 참이 아니다.
 
 
 # Links
