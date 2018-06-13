@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
-updated : 2018-06-13 20:09:33 +0900
+updated : 2018-06-13 22:27:44 +0900
 tags    : math
 toc     : true
 public  : true
@@ -595,6 +595,82 @@ x \text{가 정수} \\
 or \\
 \sqrt{ \floor x } \text{ 가 정수가 아니다.} \\
 $$
+
+# 세 번째 문제
+
+## 새로운 표기법: 폐구간과 열린 구간
+
+* [C.A.R. Hoare](https://en.wikipedia.org/wiki/Tony_Hoare ), [Lyle Ramshaw](https://dblp.uni-trier.de/pers/hd/r/Ramshaw:Lyle )가 제안한 표기법.
+* 개발자에게는 익숙한 표기법이다.
+
+### 폐구간(closed interval)
+
+$$[\alpha..\beta]$$
+
+* $$\alpha \le x \le \beta $$ 인 집합을 의미한다.
+    * 즉 $$\alpha, \alpha+1, \alpha+2, ..., \beta$$ 의 집합을 의미한다.
+    * python이라면 `list(range(alpha, beta+1))`
+```python
+>>> alpha = 3
+>>> beta = 6
+>>> list(range(alpha, beta+1))
+[3, 4, 5, 6]
+```
+    * 원소의 개수는
+        * $$\alpha, \beta$$가 정수이면 $$\beta - \alpha + 1$$
+        * $$\alpha, \beta$$가 실수이면 $$\floor{\beta} - \ceil{\alpha} + 1$$
+
+### 열린 구간(open interval)
+
+$$(\alpha..\beta)$$
+
+* $$\alpha \lt x \lt \beta $$ 인 집합을 의미한다.
+    * 즉 $$\alpha+1, \alpha+2, ..., \beta - 1$$ 의 집합을 의미한다.
+    * python이라면 `list(range(alpha + 1, beta))`
+```python
+>>> alpha = 3
+>>> beta = 6
+>>> list(range(alpha + 1, beta))
+[4, 5]
+```
+    * 원소의 개수는
+        * $$\alpha, \beta$$가 정수이면 $$\beta - \alpha - 1$$
+        * $$\alpha, \beta$$가 실수이고 $$\alpha \ne \beta$$ 이면, $$\ceil{\beta} - \floor{\alpha} - 1$$
+
+### 반개구간(half-open interval)
+
+반개구간은 두 가지가 있다.
+
+$$[\alpha..\beta)$$
+
+* $$\alpha \le x \lt \beta $$ 인 집합을 의미한다.
+    * 즉 $$\alpha, \alpha+1, ..., \beta - 1$$ 의 집합을 의미한다.
+    * python이라면 `list(range(alpha, beta))`
+```python
+>>> alpha = 3
+>>> beta = 6
+>>> list(range(alpha, beta))
+[3, 4, 5]
+```
+    * 원소의 개수는
+        * $$\alpha, \beta$$가 정수이면 $$\beta - \alpha$$
+        * $$\alpha, \beta$$가 실수이면 $$\ceil{\beta} - \ceil{\alpha}$$
+
+$$(\alpha..\beta]$$
+
+* $$\alpha \lt x \le \beta $$ 인 집합을 의미한다.
+    * 즉 $$\alpha+1, \alpha+2, ..., \beta$$ 의 집합을 의미한다.
+    * python이라면 `list(range(alpha+1, beta+1))`
+```python
+>>> alpha = 3
+>>> beta = 6
+>>> list(range(alpha + 1, beta + 1))
+[4, 5, 6]
+```
+    * 원소의 개수는
+        * $$\alpha, \beta$$가 정수이면 $$\beta - \alpha$$
+        * $$\alpha, \beta$$가 실수이면 $$\floor{\beta} - \floor{\alpha}$$
+
 
 # Links
 
