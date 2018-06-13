@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
-updated : 2018-06-13 22:27:44 +0900
+updated : 2018-06-13 22:39:00 +0900
 tags    : math
 toc     : true
 public  : true
@@ -671,6 +671,14 @@ $$(\alpha..\beta]$$
         * $$\alpha, \beta$$가 정수이면 $$\beta - \alpha$$
         * $$\alpha, \beta$$가 실수이면 $$\floor{\beta} - \floor{\alpha}$$
 
+## 표기법: 나누어 떨어짐
+
+$$ a \backslash b$$
+
+* `a` 가 `b` 로 나누어 떨어짐을 의미한다.
+* 즉 `a`가 `b`의 배수임을 의미한다.
+    * `8 \ 2` 는 참이다.
+    * `8 \ 3` 은 거짓이다.
 
 # Links
 
