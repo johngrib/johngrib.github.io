@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
-updated : 2018-06-10 23:46:23 +0900
+updated : 2018-06-13 20:09:33 +0900
 tags    : math
 toc     : true
 public  : true
@@ -441,6 +441,160 @@ print(phi, test(phi))           # 1.618033988749895 False
 * $$\phi$$(phi)가 `False`가 나왔다.
 * 따라서 위의 명제는 참이 아니다.
 
+## $$\ceil{ \sqrt{ \floor x } } = \ceil{ \sqrt{ x } }$$일 필요충분조건은?
+
+* 윗 절에서 테스트 한 결과
+    * $$x = \pi$$ 인 경우엔 참.
+    * $$x = e $$ 인 경우엔 참.
+    * $$x = \phi$$ 인 경우엔 **거짓**.
+
+책에서는 "좀 더 실험해보면, x가 9와 10 사이일 때에도 등식이 성립하지 않음을 알 수 있다."고 한다.
+
+나는 다음과 같이 python으로 돌려 보았다.
+
+```python
+import math
+
+def test(x):
+    left = math.ceil(math.sqrt(math.floor(x)))
+    right = math.ceil(math.sqrt(x))
+    return left == right
+
+def say(num, result):
+    print(f'{num:7.2f} {str(result):s}')
+
+i = 0.0
+step = 0.01
+pre = test(i)
+
+say(i, pre)
+
+while (i <= 100):
+    num = round(i, 3)
+    result = test(num)
+    if pre != result:
+        say(num, result)
+    pre = result
+    i += step
+```
+
+실행해보면 다음과 같은 결과가 나온다.
+
+```
+   0.00 True
+   0.01 False
+   1.00 True
+   1.01 False
+   2.00 True
+   4.01 False
+   5.00 True
+   9.01 False
+  10.00 True
+  16.01 False
+  17.00 True
+  25.01 False
+  26.00 True
+  36.01 False
+  37.00 True
+  49.01 False
+  50.00 True
+  64.01 False
+  65.00 True
+  81.01 False
+  82.00 True
+```
+
+결과를 표로 정리해 보았다.
+
+| 범위 (0.01 단위)           | $$\ceil{\sqrt{\floor x}}=\ceil{\sqrt x}$$ |                         |
+|----------------------------|-------------------------------------------|-------------------------|
+| $$ 0.01 \le x \lt 1.00$$   | `False`                                   |                         |
+| $$ x = 1.00 $$             | `True`                                    |                         |
+| $$ 1.00 \lt x \lt 2.00$$   | `False`                                   | $$\phi$$ 가 있는 범위   |
+| $$ 2.00 \le x \le 4.00$$   | `True`                                    | $$e, \pi$$ 가 있는 범위 |
+| $$ 4.00 \lt x \lt 5.00$$   | `False`                                   |                         |
+| $$ 5.00 \le x \le 9.00$$   | `True`                                    |                         |
+| $$ 9.00 \lt x \lt 10.00$$  | `False`                                   | 책에서 알려준 범위      |
+| $$ 10.00 \le x \le 16.00$$ | `True`                                    |                         |
+| $$ 16.00 \lt x \lt 17.00$$ | `False`                                   |                         |
+| ...                        | ...                                       | 생략                    |
+
+### False 의 조건
+
+책에서는 `False`의 조건이 다음과 같다고 말한다.
+
+$$
+m^2 \lt x \lt m^2 + 1
+$$
+
+`False`로 나온 범위들을 살펴보면 위의 조건을 만족하고 있음을 알 수 있다.
+
+$$
+\begin{array}{cc}
+1.00 \lt x \lt 2.00 & = & 1^2 \lt x \lt 1^2 + 1\\
+4.00 \lt x \lt 5.00 & = & 2^2 \lt x \lt 2^2 + 1\\
+9.00 \lt x \lt 10.00 & = & 3^2 \lt x \lt 3^2 + 1\\
+16.00 \lt x \lt 17.00 & = & 4^2 \lt x \lt 4^2 + 1\\
+... & & ...
+\end{array}
+$$
+
+그렇다면 다음과 같이 전제하고 식을 풀어 보자.
+
+* 조건
+    * $$ x = m^2 + a $$ &nbsp;
+    * $$m$$은 0보다 큰 정수
+    * $$0 \lt a \lt 1$$ &nbsp;
+
+$$
+\begin{align}
+\ceil{ \sqrt{ \floor x } } & = \ceil{ \sqrt{ x } } \\
+\ceil{ \sqrt{ \floor{m^2 + a} } } & = \ceil{ \sqrt{ m^2 + a } } \\
+\ceil{ \sqrt{ m^2 } } & = \ceil{ \sqrt{ m^2 + a } } \\
+\ceil{ m } & = \ceil{ \sqrt{ m^2 + a } } \\
+m          & = \ceil{ m + 0.\Box\Box } \\
+m          & = m+1 \\
+\end{align}
+$$
+
+잘못된 결과가 나왔다. 즉, 책에 나온 조건을 검증했다.
+
+### True 의 조건
+
+한편, 책에서 말하고 있는 `True`의 조건은 다음과 같다.
+
+$$
+\begin{cases}
+x = 0 \\
+m^2 + 1 \le x \le (m+1)^2 \\
+\end{cases}
+$$
+
+이번에도 위에서 정리한 표를 참고해 다음과 같이 정리해 보았다.
+
+$$
+\begin{array}{cc}
+1.00 \le x \le 1.00 & = & 0^2+1 \le x \le (0+1)^2\\
+2.00 \le x \le 4.00 & = & 1^2+1 \le x \le (1+1)^2\\
+5.00 \le x \le 9.00 & = & 2^2+1 \le x \le (2+1)^2\\
+10.00 \le x \le 16.00 & = & 3^2+1 \le x \le (3+1)^2\\
+... & & ...
+\end{array}
+$$
+
+### 결론
+
+따라서
+
+$$\ceil{ \sqrt{ \floor x } } = \ceil{ \sqrt{ x } }$$
+
+를 만족시키는 필요충분조건은 다음과 같다고 할 수 있다.
+
+$$
+x \text{가 정수} \\
+or \\
+\sqrt{ \floor x } \text{ 가 정수가 아니다.} \\
+$$
 
 # Links
 
