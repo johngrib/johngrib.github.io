@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-06-08 13:23:40 +0900
+updated : 2018-06-18 08:47:10 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-06-18 INTERIOR ONE BOOK(윤소연 지음)
 * 2018-06-08 싱글부터 노년까지 인테리어 가이드북
 * 2018-06-06 생각하지 않는 정리법
 * 2018-06-04 생존 인테리어
