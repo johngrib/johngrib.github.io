@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
-updated : 2018-06-14 22:21:35 +0900
+updated : 2018-06-18 23:15:57 +0900
 tags    : math
 toc     : true
 public  : true
@@ -703,6 +703,100 @@ def isWin(n):
 
 ### 이 게임에서 돈을 딸 수 있을까?
 
+기대값을 구해보면 대충 알 수 있을 것 같다.
+
+기대값은 다음과 같이 구할 수 있을 것이다.
+
+$$
+\begin{align}
+& (5달러) \times (승리하는경우) + (-1달러) \times (패배하는경우) \over 승리하는경우 + 패배하는경우 \\
+& = \frac{5W - L}{1000} = \frac{5W - (1000 - W)}{1000} \\
+\\
+& = \frac{6W - 1000}{1000}
+\end{align}
+$$
+
+이제 승리하는 경우의 수(W)가 얼마인지만 계산하면 된다.
+
+#### python으로 풀어 보자
+
+물론 코딩하면 아주 쉽게 구할 수 있다.
+
+```python
+import math
+import numpy
+
+def isWin(n):
+    # pow3 = n ** (1/3)
+    pow3 = numpy.cbrt(n)
+    return 0 == (n % math.floor(pow3))
+
+W = 0
+
+for i in range(1, 1000 + 1):
+    num = i
+    if isWin(num):
+        W += 1
+
+print(W) # 172
+```
+
+* $$\sqrt[3]{ n }$$ 계산을 할 때 부동소수점 때문에 결과가 달라질 수 있어서 `numpy`를 사용했다.
+* 결과는 `172`
+    * 따라서 기대값은 $$ \frac{6 \times 172 - 1000}{1000} = \frac{4}{125} = 0.032 $$
+    * 한 게임에 `0.032`달러를 벌 수 있는 셈이다.
+    * 즉, 이 게임은 여러 차례 플레이할수록 (소액이지만) 돈을 벌 확률이 높다.
+
+#### 수학으로 풀어 보자
+
+책에서는 좀 더 복잡하지만 확실한 방법으로 `172`를 계산해 낸다.
+
+다음은 책을 참고하여, 내 수준에 맞게 훨씬 자세히 풀어본 것이다.
+
+$$
+\begin{align}
+W & = \sum_{n=1}^{1000} \biggr[ \text{숫자 n 은 승리 번호이다} \biggr] \\
+& = \sum_{\color{blue}{1 \le n \le 1000}} \biggr[ \floor{ \sqrt[3]{n} } \backslash n \biggr] \\
+& = \sum_{n} \biggr[ \floor{\sqrt[3] n} \backslash n \biggr] \biggr[ \color{blue}{1 \le n \le 1000} \biggr] \\
+\\
+& = \sum_{k,n}\biggr[k=\floor{\sqrt[3] n}\biggr]\biggr[k \backslash n \biggr]\biggr[1\le n\le 1000 \biggr]\\
+& = \sum_{k, n} \biggr[ k = \floor{\sqrt[3] n} \biggr] \biggr[\color{blue}{n=km}\biggr]\biggr[ 1 \le n \le 1000 \biggr] \\
+& \qquad \color{gray}{ \because \text{ n 은 k의 배수 } } \\
+& = \sum_{k,m,n} \biggr[ k^3 \le n \lt (k+1)^3 \biggr]\biggr[n=km \biggr]\biggr[ 1 \le n \le 1000 \biggr] \\
+& \qquad \color{gray}{ \because k = \floor{ \sqrt[3] n } \text{을 만족시키는 n의 범위 }} \\
+& = \sum_{k,m,n} \biggr[ k^3 \le n \lt (k+1)^3 \biggr]\biggr[n=km \biggr]\biggr[ 1 \le n \lt 1000 \biggr] \\
+& \quad + \sum_{k,m,n} \biggr[ k^3 \le n \lt (k+1)^3 \biggr]\biggr[n=km \biggr]\biggr[ n = 1000 \biggr] \\
+& \qquad \color{gray}{ \because n = 1000 \text{인 경우를 분리 }} \\
+& = 1 + \sum_{k,m,n} \biggr[ k^3 \le n \lt (k+1)^3 \biggr]\biggr[n=km \biggr]\biggr[ 1 \le n \lt 1000 \biggr] \\
+& \qquad \color{gray}{ \because n = 1000 \text{인 경우는 1이다 }} \\
+& = 1 + \sum_{k,m} \biggr[ k^3 \le km \lt (k+1)^3 \biggr]\biggr[ 1 \le km \lt 1000 \biggr] \\
+& \qquad \color{gray}{ \because n = km} \\
+& = 1 + \sum_{k,m} \biggr[ k^2 \le m \lt \frac{(k+1)^3}{k} \biggr]\biggr[ k의 \ 범위 \biggr] \\
+& \qquad \color{gray}{ \because \text{m은 k와 n의 관계가 배수이기 때문에 넣은 것이었다}} \\
+& = 1 + \sum_{k,m} \biggr[ k^2 \le m \lt \frac{(k+1)^3}{k} \biggr]\biggr[ 1 \le k \lt 10 \biggr] \\
+& \qquad \color{gray}{ \because k = \floor{ \sqrt[3] n }} \\
+& = 1 + \sum_{k,m} \biggr[ m \in \color{red}[ k^2 .. \frac{(k+1)^3}{k}\color{red}) \biggr]\biggr[ 1 \le k \lt 10 \biggr] \\
+& \qquad \color{gray}{ \because 반개구간 \ 적용} \\
+& = 1 + \sum_{1 \le k \lt 10} \biggr[ \color{red}[ k^2 .. \frac{(k+1)^3}{k}\color{red}) \biggr] \\
+& = 1 + \sum_{1 \le k \lt 10} \biggr( \ceil{ \frac{(k+1)^3}{k} } \biggr)
+- \sum_{1 \le k \lt 10} \biggr( \ceil{ k^2 } \biggr) \\
+& \qquad \color{gray}{ \because ``A부터\ B까지"는 ``1부터\ B"에서 ``1부터\ A"를 \text{ 뺀 것과 똑같다 }} \\
+& = 1 + \sum_{1 \le k \lt 10} \biggr( \ceil{ \frac{k^3 + 3k^2 + 3k + 1}{k} } - \ceil{ k^2 }\biggr) \\
+& = 1 + \sum_{1 \le k \lt 10} \biggr( \ceil{ k^2 + 3k + 3 + \frac{1}{k} } - \ceil{ k^2 }\biggr)\\
+& = 1 + \sum_{1 \le k \lt 10} \biggr( \ceil{ 3k + 3 + \frac{1}{k} }\biggr) \\
+& = 1 + \sum_{1 \le k \lt 10} (3k + 4) \\
+& = 1 + \sum_{1 \le k \lt 10} 3k + 4 \cdot 9\\
+& = 1 + 3 \cdot \sum_{1 \le k \lt 10} k + 36\\
+& = 3 \cdot \sum_{1 \le k \lt 10} k + 37\\
+& = 3 \cdot \frac{9 \cdot 10}{2} + 37\\
+& = 3 \cdot 45 + 37\\
+& = 135 + 37\\
+\\
+& = 172\\
+\\
+\\
+\end{align}
+$$
 
 
 # Links
