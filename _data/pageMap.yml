@@ -452,7 +452,7 @@ c-m-03-Integer-Functions-02:
     summary: '03.Integer Functions.01.FLOOR/CEILING APPLICATIONS'
     parent: study-concrete-math
     url: /wiki/c-m-03-Integer-Functions-02
-    updated: '2018-06-03 23:22:10 +0900'
+    updated: '2018-06-18 23:15:57 +0900'
     children: []
 c-m-05-Binomial-Coefficients-04:
     type: wiki
@@ -1212,7 +1212,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-06-06 21:52:01 +0900'
+    updated: '2018-06-18 08:47:10 +0900'
     children: []
 RFC:
     type: wiki
