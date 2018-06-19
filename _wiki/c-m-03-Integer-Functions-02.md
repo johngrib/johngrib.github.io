@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
-updated : 2018-06-19 06:35:23 +0900
+updated : 2018-06-20 22:04:17 +0900
 tags    : math
 toc     : true
 public  : true
@@ -784,7 +784,7 @@ W & = \sum_{n=1}^{1000} \biggr[ \text{숫자 n 은 승리 번호이다} \biggr] 
 & = 1 + \sum_{1 \le k \lt 10} \biggr( \ceil{ \frac{k^3 + 3k^2 + 3k + 1}{k} } - \ceil{ k^2 }\biggr) \\
 & = 1 + \sum_{1 \le k \lt 10} \biggr( \ceil{ k^2 + 3k + 3 + \frac{1}{k} } - \ceil{ k^2 }\biggr)\\
 & = 1 + \sum_{1 \le k \lt 10} \biggr( \ceil{ 3k + 3 + \frac{1}{k} }\biggr) \\
-& = 1 + \sum_{1 \le k \lt 10} (3k + 4) \\
+& = 1 + \color{red}{\sum_{1 \le k \lt 10} (3k + 4)} \\
 & = 1 + \sum_{1 \le k \lt 10} 3k + 4 \cdot 9\\
 & = 1 + 3 \cdot \sum_{1 \le k \lt 10} k + 36\\
 & = 3 \cdot \sum_{1 \le k \lt 10} k + 37\\
@@ -798,6 +798,82 @@ W & = \sum_{n=1}^{1000} \biggr[ \text{숫자 n 은 승리 번호이다} \biggr] 
 \end{align}
 $$
 
+### 일반화
+
+이제 구체 수학 클럽 도박장 문제의 `1000`을 `N`으로 확장하여 일반화해보자.
+
+위의 문제에서는 $$1 \le k \le 10$$ 이었으므로, `k`의 최대값은 `10`이었다.
+
+* $$1 \le k \lt 10$$ 아닌가? 하는 생각이 들 수도 있는데, `k = 10`인 경우(`n = 1000`인 경우)를 분리했기 때문에 식에 `1 +`가 붙었음을 잊으면 안된다.
+
+이제 다음과 같이 정의하자.
+
+$$K = k의 \ 최대값$$
+
+다음과 같이 표현할 수도 있다.
+
+$$K = \floor{ \sqrt[3] N }$$
+
+그렇다면 `N`에 대한 승리 번호 개수 `W`는 다음과 같이 계산하여 일반식을 끌어낼 수 있다. 흐름은 앞의 문제 풀이와 비슷하다.
+
+$$
+\begin{align}
+W   & = \sum_{n=1}^{N}[\text{숫자 n은 승리 번호이다}] \\
+    & = \sum_{\color{blue}{1 \le n \le N}} \biggr[ \floor{ \sqrt[3] n } \backslash n \biggr] \\
+    & = \sum_{k,n} \biggr[ k = \floor{ \sqrt[3] n } \biggr]\biggr[ k \backslash n \biggr]\biggr[\color{blue}{1 \le n \le N} \biggr] \\
+    & = \sum_{k,n} \biggr[ k = \floor{ \sqrt[3] n } \biggr]\biggr[ k \backslash n \biggr]\biggr[1 \le n \color{blue}{\lt} N \biggr] + \sum_{k,n} \biggr[ k = \floor{ \sqrt[3] n } \biggr]\biggr[ k \backslash n \biggr]\biggr[n = N \biggr] \\
+    & \quad \color{gray}{ \because n = N\text{ 인 경우를 분리 }} \\
+    & = \color{red}{\sum_{1 \le k \lt K} (3k + 4)} + \sum_{k,n} \biggr[ k = \floor{ \sqrt[3] n } \biggr]\biggr[ k \backslash n \biggr]\biggr[n = N \biggr] \\
+    & \quad \color{gray}{ \because \text{ 앞의 문제에서 풀었던 방식을 그대로 적용 }} \\
+    & \quad \color{gray}{ \quad \text{ 이제 오른쪽만 정리하면 된다 }} \\
+\\
+    & = \sum_{1 \le k \lt K} (3k + 4) + \sum_m [ K^3 \le n \le N ][n = Km][n = N] \\
+    & \quad \color{gray}{ \because K = \floor{ \sqrt[3] n } \text{을 만족시키는 n의 범위 적용 }} \\
+\\
+    & = \sum_{1 \le k \lt K} (3k + 4) + \sum_m [ K^3 \le Km \le N ] \\
+    & = \sum_{1 \le k \color{blue}{\le K-1}} (3k + 4) + \sum_m [ K^3 \le Km \le N ] \\
+\\
+    & = 3 \times \sum_{1 \le k \le K-1} k + 4(K-1) + \sum_m [ K^3 \le Km \le N ] \\
+    & = 3 \times \frac{(K-1)(K-1+1)}{2} + 4(K-1) + \sum_m [ K^3 \le Km \le N ] \\
+    & = \frac{3}{2} \cdot (K-1)K + 4K-4 + \sum_m [ K^3 \le Km \le N ] \\
+    & = \frac{3}{2} K^2 - \frac{3}{2}K + 4K - 4 + \sum_m [ K^3 \le Km \le N ] \\
+\\
+    & = \frac{3}{2} K^2+\frac{5}{2}K -4 + \color{blue}{\sum_m [ K^3 \le Km \le N ]} \\
+    & = \left(\frac{3}{2} K^2+\frac{5}{2}K -4\right) + \sum_m [ K^2 \le m \le \frac{N}{K} ] \\
+    & = \left(\frac{3}{2} K^2+\frac{5}{2}K -4\right) + \sum_m \biggr[ m \in [K^2 .. \frac{N}{K}] \biggr] \\
+\\
+& = \left(\frac{3}{2} K^2+\frac{5}{2}K -4\right) +\left(\floor{\frac{N}{K}} - K^2 + 1 \right) \\
+    & \quad \color{gray}{ \because m \in [K^2 .. \frac{N}{K}] \text{을 만족시키는 m의 개수}} \\
+& = \floor{\frac{N}{K}} + \frac{3}{2} K^2 - K^2 + \frac{5}{2}K - 4 + 1 \\
+\\
+\therefore
+W   & = \floor{\frac{N}{K}} + \frac{1}{2} K^2 + \frac{5}{2}K - 3,
+    \quad K = \floor{ \sqrt[3] N } \\
+\end{align}
+$$
+
+그런데, 일반해를 잘 살펴보면 다음의 사실을 알 수 있다.
+
+$$
+\begin{align}
+W   & = \floor{\frac{N}{K}} + \frac{1}{2} K^2 + \frac{5}{2}K - 3 \\
+& = \color{red}{\bigfloor{\frac{N}{ \floor{N^{1 \over 3}}}} } + \color{blue}{\frac{1}{2} \floor{N^{2 \over 3}} } + \frac{5}{2}\floor{N^{1 \over 3}} - 3 \\
+\end{align}
+$$
+
+* 이 식을 알고리즘의 시간 복잡도 분석할 때처럼 생각해 보자.
+    * 바닥 함수는 일단 무시하고 생각해 보자.
+    * `N`이 붙은 항 위주로 근사값을 생각해보자.
+    * 그러면 다음과 같이 간략화된 식을 생각할 수 있다.
+
+$$
+\color{red}{N^{2 \over 3}} + \color{blue}{\frac{1}{2} N^{2 \over 3}} + \frac{5}{2}{N^{1 \over 3}} \\
+= \frac{3}{2} N^{2 \over 3} + \frac{5}{2}{N^{1 \over 3}} \\
+$$
+
+Big O 표기법을 적용해 본다면 $$O(n^{2 \over 3})$$라고도 할 수 있을 것 같다.
+
+책을 읽어 보면 `N`이 커질수록 위의 근사값 식과 실제 식 사이의 오차가 줄어든다는 것을 알 수 있다.
 
 # Links
 
