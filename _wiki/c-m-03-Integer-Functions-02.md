@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
-updated : 2018-06-20 22:04:17 +0900
+updated : 2018-06-20 22:21:35 +0900
 tags    : math
 toc     : true
 public  : true
@@ -874,6 +874,27 @@ $$
 Big O 표기법을 적용해 본다면 $$O(n^{2 \over 3})$$라고도 할 수 있을 것 같다.
 
 책을 읽어 보면 `N`이 커질수록 위의 근사값 식과 실제 식 사이의 오차가 줄어든다는 것을 알 수 있다.
+
+
+# 네 번째 문제
+
+## 스펙트럼(spectrum)
+
+양의 실수 $$\alpha$$에 대해 다음과 같이 스펙트럼을 정의하자.
+
+$$
+Spec(\alpha) = \{ \floor{ \alpha }, \floor{ 2\alpha }, \floor{ 3\alpha }, ... \}
+$$
+
+예를 들어 $$\alpha = \frac{1}{2} = 0.5$$인 경우, 스펙트럼은 다음과 같이 나온다.
+
+$$
+\begin{array}{rrccccccccccc}
+Spec(0.5) & = \{ & \floor{0.5},& \floor{1},& \floor{1.5},& \floor{2},& \floor{2.5},& \floor{3},& \floor{3.5}, & ... \} \\
+    & = \{ & 0,& 1,& 1,& 2,& 2,& 3,& 3, & ...\} \\
+\end{array}
+$$
+
 
 # Links
 
