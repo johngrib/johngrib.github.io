@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-06-19 08:24:12 +0900
+updated : 2018-06-22 09:24:47 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-06-22 BAD CHOICES(알고리즘 라이프)
 * 2018-06-19 Domain Driven Design Quickly(도메인 주도 설계란 무엇인가?)
 * 2018-06-18 INTERIOR ONE BOOK(윤소연 지음)
 * 2018-06-08 싱글부터 노년까지 인테리어 가이드북
