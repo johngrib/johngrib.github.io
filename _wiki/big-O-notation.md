@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2018-06-24 20:23:00 +0900
+updated : 2018-06-24 21:50:54 +0900
 tags    : 
 toc     : true
 public  : true
@@ -205,6 +205,7 @@ function test(listA, listB) {
 # Links 및 참고문헌
 
 * [Big_O_notation(wikipedia)](https://en.wikipedia.org/wiki/Big_O_notation )
+* [INTRODUCTION TO ALGORITHMS THIRD EDITION(CLRS)](https://mitpress.mit.edu/books/introduction-algorithms-third-edition )
 * [다양한 예제로 학습하는 데이터 구조와 알고리즘 for Java](http://www.insightbook.co.kr/book/programming-insight/%EB%8B%A4%EC%96%91%ED%95%9C-%EC%98%88%EC%A0%9C%EB%A1%9C-%ED%95%99%EC%8A%B5%ED%95%98%EB%8A%94-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-for-java )
     * [책의 소스코드(github)](https://github.com/careermonk/DataStructureAndAlgorithmsMadeEasyInJava )
 * [코딩 인터뷰 완전 분석(Cracking the Coding Interview, Sixth Edition)(인사이트 출판사)](http://www.insightbook.co.kr/12103 )
