@@ -261,7 +261,7 @@ algorithm:
     parent: index
     url: /wiki/algorithm
     updated: '2018-03-31 18:01:51 +0900'
-    children: [regex-prime, von-neumann-extractor]
+    children: [big-O-notation, regex-prime, von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
     title: '(책) 알고리즘, 인생을 계산하다'
@@ -285,6 +285,14 @@ Bayes-theorem:
     parent: math
     url: /wiki/Bayes-theorem
     updated: '2018-04-22 18:56:03 +0900'
+    children: []
+big-O-notation:
+    type: wiki
+    title: '빅 오 표기법(Big O notation)'
+    summary: '알고리즘의 효율성을 나타내는 표기법이다'
+    parent: algorithm
+    url: /wiki/big-O-notation
+    updated: '2018-06-24 18:56:44 +0900'
     children: []
 Bill-Atkinson-productivity:
     type: wiki
@@ -452,7 +460,7 @@ c-m-03-Integer-Functions-02:
     summary: '03.Integer Functions.01.FLOOR/CEILING APPLICATIONS'
     parent: study-concrete-math
     url: /wiki/c-m-03-Integer-Functions-02
-    updated: '2018-06-18 23:15:57 +0900'
+    updated: '2018-06-20 22:21:35 +0900'
     children: []
 c-m-05-Binomial-Coefficients-04:
     type: wiki
@@ -900,7 +908,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-06-03 14:16:46 +0900'
+    updated: '2018-06-24 17:32:44 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1212,7 +1220,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-06-18 08:47:10 +0900'
+    updated: '2018-06-22 09:24:47 +0900'
     children: []
 RFC:
     type: wiki
