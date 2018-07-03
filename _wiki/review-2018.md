@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-06-24 23:12:15 +0900
+updated : 2018-07-03 15:51:11 +0900
 tags    : review
 toc     : true
 public  : true
@@ -67,6 +67,7 @@ latex   : false
 
 ## 영화/드라마
 
+* 2018-07-03 Pirates of the Caribbean: Dead Men Tell No Tales
 * 2018-05-08 Avengers: Infinity War
 * 2018-05-06 Legion 시즌 1
 * 2018-04-29 TRUMP: AN AMERICAN DREAM - 도널드 트럼프를 다룬 다큐멘터리.
