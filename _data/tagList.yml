@@ -25,8 +25,8 @@
 - algorithm
 - alphago
 - ascii
-- AWS
 - aws
+- AWS
 - bash
 - bayes
 - Bill-Atkinson
@@ -68,6 +68,7 @@
 - Gerald-Weinberg
 - git
 - github
+- go
 - google
 - gradle
 - groovy
@@ -125,6 +126,7 @@
 - rule
 - science
 - sf
+- sha
 - soft-skill
 - sort
 - special-chars
@@ -136,8 +138,8 @@
 - telegram
 - terminal
 - Think-Bayes
-- TIL
 - til
+- TIL
 - tip
 - tldr
 - tmux
@@ -145,6 +147,7 @@
 - tools
 - trouble-shooting
 - twitter
+- 'ultisnips,'
 - Uncle-Bob
 - uri
 - url

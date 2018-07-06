@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-07-06 10:46:31 +0900
+updated : 2018-08-24 21:37:32 +0900
 tags    : index
 toc     : true
 public  : true
@@ -24,10 +24,13 @@ comment : false
     * [[Software-Engineering-Code-of-Ethics]]
     * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
     * [[You-and-Your-Research]]
+    * [[King-O-The-Cats]]
 * [[coding-font]]{코딩 폰트}
 * [[how-to]]
     * [[googling]]
     * [[mathjax-latex]]
+* [[links]]
+    * [[links-2018]]
 * [[mac-keyboard-shortcuts]]
 * [[math]]
     * [[Bayes-theorem]]
@@ -43,6 +46,7 @@ comment : false
         * [[Code-Complete-2]]
         * [[Computer-Science-Distilled]]
         * [[CONCRETE-MATH]]
+        * [[Designing-Data-Intensive-Applications]]
         * [[DevOps-Troubleshooting]]
         * [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
         * [[Effective-Java]]
@@ -86,6 +90,7 @@ comment : false
 * [[programming-language]]{프로그래밍 언어}
     * [[Groovy]]
     * [[Java]]
+        * [[java8]]
         * [[Object-equals]]
         * [[Object-hashCode]]
         * [[Object-toString]]
@@ -122,6 +127,12 @@ comment : false
         * [[c-m-03-Integer-Functions-01]]
         * [[c-m-03-Integer-Functions-02]]
         * [[c-m-05-Binomial-Coefficients-04]]
+    * [[study-data-intensive-application]]
+        * [[d-i-a-01-reliable-scalable-maintainable]]
+        * [[d-i-a-02-data-models-and-query-languages]]
+        * [[d-i-a-03-storage-and-retrieval]]
+        * [[d-i-a-04-encoding-and-evolution]]
+        * [[d-i-a-05-replication]]
     * [[study-think-bayes]]
         * [[cookie-problem]]
         * [[dice-problem]]
@@ -132,11 +143,13 @@ comment : false
         * [[Oliver-s-blood]]
 * [[tools]]
     * [[command-line]]
+        * [[brew]]
+        * [[date]]
         * [[df]]
         * [[du]]
         * [[fish-shell]]
         * [[java_home]]
-        * [[brew]]
+        * [[sha256sum]]
         * [[top]]
         * [[uptime]]
     * [[Gradle]]
@@ -173,12 +186,15 @@ comment : false
     * [[vim-tmux-t-ut]]
     * [[vim-ycm-python3]]
     * [[vimwiki]]
+    * [[vim-go-with-ultisnips]]
 * [[what]]
     * [[Continuous-Integration]]
     * [[braille-pattern-chars]]
+    * [[groupId-artifactId]]
     * [[http-message]]
     * [[RFC]]
     * [[special-chars]]
+    * [[Unix-philosophy]]
     * [[URI]]
 * [[why]]
     * [[letter-case]]

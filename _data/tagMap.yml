@@ -281,9 +281,11 @@ special-chars:
     - {fileName: special-chars}
 bash:
     - {fileName: brew}
+    - {fileName: date}
     - {fileName: df}
     - {fileName: du}
     - {fileName: java_home}
+    - {fileName: sha256sum}
     - {fileName: top}
     - {fileName: uptime}
 mac:
@@ -366,8 +368,10 @@ o-reilly:
     - {fileName: Geek-Atlas}
 java:
     - {fileName: Effective-Java}
+    - {fileName: groupId-artifactId}
     - {fileName: Java}
     - {fileName: java_home}
+    - {fileName: java8}
     - {fileName: Object-equals}
     - {fileName: Object-hashCode}
     - {fileName: Object-toString}
@@ -439,6 +443,14 @@ von-neumann:
     - {fileName: John-von-Neumann}
 sort:
     - {fileName: John-von-Neumann}
+번역:
+    - {fileName: King-O-The-Cats}
+    - {fileName: mathdict}
+    - {fileName: Object-equals}
+    - {fileName: Object-hashCode}
+    - {fileName: Object-toString}
+    - {fileName: Software-Engineering-Code-of-Ethics}
+    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 보안:
     - {fileName: labs-strava-com-heatmap}
 letter:
@@ -449,13 +461,6 @@ bug:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
 단축키:
     - {fileName: mac-keyboard-shortcuts}
-번역:
-    - {fileName: mathdict}
-    - {fileName: Object-equals}
-    - {fileName: Object-hashCode}
-    - {fileName: Object-toString}
-    - {fileName: Software-Engineering-Code-of-Ethics}
-    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 latex:
     - {fileName: mathjax-latex}
 media:
@@ -487,6 +492,8 @@ rfc:
     - {fileName: why-http-80-https-443}
 consulting:
     - {fileName: secret-of-consulting}
+sha:
+    - {fileName: sha256sum}
 교육:
     - {fileName: Shunsho-juwa}
 장인정신:
@@ -515,6 +522,10 @@ github:
     - {fileName: utterances}
 plugin:
     - {fileName: vim-f-hangul}
+'ultisnips,':
+    - {fileName: vim-go-with-ultisnips}
+go:
+    - {fileName: vim-go-with-ultisnips}
 fix:
     - {fileName: vim-tmux-t-ut}
 python:

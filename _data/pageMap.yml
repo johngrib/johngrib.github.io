@@ -252,7 +252,7 @@
     summary: '삐라따 님의 검술 메모를 출판한 책'
     parent: book
     url: /wiki/그림으로-보는-서양검술-메모
-    updated: '2018-01-26 21:38:27 +0900'
+    updated: '2018-07-25 11:39:28 +0900'
     children: []
 미세먼지-정보:
     type: wiki
@@ -357,7 +357,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -533,7 +533,7 @@ clipping:
     parent: index
     url: /wiki/clipping
     updated: '2018-02-07 21:34:09 +0900'
-    children: [legend, Software-Engineering-Code-of-Ethics, THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING, You-and-Your-Research]
+    children: [King-O-The-Cats, legend, Software-Engineering-Code-of-Ethics, THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING, You-and-Your-Research]
 Code-Complete-2:
     type: wiki
     title: '(책) 코드 컴플리트 - 스티브 맥코넬'
@@ -557,7 +557,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [brew, df, du, fish-shell, java_home, top, uptime]
+    children: [brew, date, df, du, fish-shell, java_home, sha256sum, top, uptime]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -580,7 +580,7 @@ Continuous-Integration:
     summary: ""
     parent: what
     url: /wiki/Continuous-Integration
-    updated: '2018-07-06 16:21:27 +0900'
+    updated: '2018-07-10 18:40:25 +0900'
     children: []
 Conway-s-law:
     type: wiki
@@ -614,6 +614,54 @@ Cromwell-s-rule:
     url: /wiki/Cromwell-s-rule
     updated: '2018-04-08 20:39:13 +0900'
     children: []
+d-i-a-01-reliable-scalable-maintainable:
+    type: wiki
+    title: '데이터 중심 애플리케이션 설계.01.신뢰성,확장성,유지보수성.'
+    summary: '01.Reliable, Scalable, and Maintainable Applications'
+    parent: study-data-intensive-application
+    url: /wiki/d-i-a-01-reliable-scalable-maintainable
+    updated: '2018-07-07 05:12:42 +0900'
+    children: []
+d-i-a-02-data-models-and-query-languages:
+    type: wiki
+    title: '데이터 중심 애플리케이션 설계.02.데이터 모델과 질의 언어'
+    summary: '02.Data Models and Query Languages'
+    parent: study-data-intensive-application
+    url: /wiki/d-i-a-02-data-models-and-query-languages
+    updated: '2018-07-08 18:44:27 +0900'
+    children: []
+d-i-a-03-storage-and-retrieval:
+    type: wiki
+    title: '데이터 중심 애플리케이션 설계.03.저장소와 검색'
+    summary: '03.Storage and Retrieval'
+    parent: study-data-intensive-application
+    url: /wiki/d-i-a-03-storage-and-retrieval
+    updated: '2018-07-08 18:44:58 +0900'
+    children: []
+d-i-a-04-encoding-and-evolution:
+    type: wiki
+    title: '데이터 중심 애플리케이션 설계.04.부호화와 발전'
+    summary: '04.Encoding and Evolution'
+    parent: study-data-intensive-application
+    url: /wiki/d-i-a-04-encoding-and-evolution
+    updated: '2018-07-08 18:45:06 +0900'
+    children: []
+d-i-a-05-replication:
+    type: wiki
+    title: '데이터 중심 애플리케이션 설계.05.복제'
+    summary: 05.Replication
+    parent: study-data-intensive-application
+    url: /wiki/d-i-a-05-replication
+    updated: '2018-07-09 23:05:05 +0900'
+    children: []
+date:
+    type: wiki
+    title: 'date 명령어'
+    summary: '날짜나 시간을 출력하거나 설정한다'
+    parent: command-line
+    url: /wiki/date
+    updated: '2018-08-03 06:06:43 +0900'
+    children: []
 Design-for-Hackers:
     type: wiki
     title: '(책) 해커를 위한 디자인 레슨'
@@ -630,6 +678,14 @@ design-pattern:
     url: /wiki/design-pattern
     updated: '2018-02-18 00:20:43 +0900'
     children: [builder-pattern, static-factory-method-pattern]
+Designing-Data-Intensive-Applications:
+    type: wiki
+    title: '(책) 데이터 중심 애플리케이션 설계'
+    summary: ""
+    parent: book
+    url: /wiki/Designing-Data-Intensive-Applications
+    updated: '2018-07-06 23:22:57 +0900'
+    children: []
 DevOps-Troubleshooting:
     type: wiki
     title: '(책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅스 서버 트러블슈팅 기법'
@@ -830,6 +886,14 @@ Grote-Reber-home-made-radio-astronomy:
     url: /wiki/Grote-Reber-home-made-radio-astronomy
     updated: '2018-02-08 13:19:30 +0900'
     children: []
+groupId-artifactId:
+    type: wiki
+    title: 'Maven의 groupId 와 artifactId, 그리고 version'
+    summary: ""
+    parent: what
+    url: /wiki/groupId-artifactId
+    updated: '2018-07-21 22:57:42 +0900'
+    children: []
 hammerspoon:
     type: wiki
     title: Hammerspoon
@@ -964,7 +1028,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-07-06 10:46:31 +0900'
+    updated: '2018-08-24 21:37:32 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -981,7 +1045,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java8, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -990,6 +1054,14 @@ java_home:
     url: /wiki/java_home
     updated: '2018-02-06 12:33:34 +0900'
     children: []
+java8:
+    type: wiki
+    title: 'Java 8'
+    summary: ""
+    parent: Java
+    url: /wiki/java8
+    updated: '2018-07-25 17:09:16 +0900'
+    children: []
 John-von-Neumann:
     type: wiki
     title: '존 폰 노이만(John von Neumann)'
@@ -997,6 +1069,14 @@ John-von-Neumann:
     parent: legend
     url: /wiki/John-von-Neumann
     updated: '2018-04-03 22:57:19 +0900'
+    children: []
+King-O-The-Cats:
+    type: wiki
+    title: '고양이의 왕(The King O'' Cats)'
+    summary: ""
+    parent: clipping
+    url: /wiki/King-O-The-Cats
+    updated: '2018-07-29 00:13:44 +0900'
     children: []
 labs-strava-com-heatmap:
     type: wiki
@@ -1029,6 +1109,22 @@ letter-case:
     parent: why
     url: /wiki/letter-case
     updated: '2018-02-07 22:46:36 +0900'
+    children: []
+links:
+    type: wiki
+    title: Links
+    summary: '다시 읽고 싶은 기사 링크 모음'
+    parent: index
+    url: /wiki/links
+    updated: '2018-07-29 17:35:50 +0900'
+    children: [links-2018]
+links-2018:
+    type: wiki
+    title: '2018년 읽은 인상적인 글 링크 모음'
+    summary: ""
+    parent: links
+    url: /wiki/links-2018
+    updated: '2018-07-30 23:03:24 +0900'
     children: []
 locomotive-problem:
     type: wiki
@@ -1276,7 +1372,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-07-03 15:51:11 +0900'
+    updated: '2018-08-21 22:37:15 +0900'
     children: []
 RFC:
     type: wiki
@@ -1317,6 +1413,14 @@ secretary-problem:
     parent: math
     url: /wiki/secretary-problem
     updated: '2018-04-08 20:39:37 +0900'
+    children: []
+sha256sum:
+    type: wiki
+    title: 'sha256sum 명령어'
+    summary: 'compute and check SHA256 message digest'
+    parent: command-line
+    url: /wiki/sha256sum
+    updated: '2018-08-24 22:12:12 +0900'
     children: []
 Shortcat:
     type: wiki
@@ -1381,7 +1485,7 @@ study:
     parent: index
     url: /wiki/study
     updated: '2018-04-25 22:04:58 +0900'
-    children: [study-concrete-math, study-think-bayes]
+    children: [study-concrete-math, study-data-intensive-application, study-think-bayes]
 study-concrete-math:
     type: wiki
     title: '(study) Concrete Mathematics(구체수학)'
@@ -1390,6 +1494,14 @@ study-concrete-math:
     url: /wiki/study-concrete-math
     updated: '2018-04-27 06:05:17 +0900'
     children: [c-m-01-Recurrent-Problems-01, c-m-01-Recurrent-Problems-02, c-m-01-Recurrent-Problems-03, c-m-01-Recurrent-Problems-Exercises, c-m-02-Sums-01, c-m-02-Sums-02, c-m-02-Sums-03, c-m-02-Sums-04, c-m-02-Sums-05, c-m-02-Sums-06, c-m-02-Sums-07, c-m-02-Sums-Exercises, c-m-03-Integer-Functions-01, c-m-03-Integer-Functions-02, c-m-05-Binomial-Coefficients-04]
+study-data-intensive-application:
+    type: wiki
+    title: '(study) Designing Data-Intensive Applications(데이터 중심 어플리케이션 설계)'
+    summary: ""
+    parent: study
+    url: /wiki/study-data-intensive-application
+    updated: '2018-07-06 23:08:47 +0900'
+    children: [d-i-a-01-reliable-scalable-maintainable, d-i-a-02-data-models-and-query-languages, d-i-a-03-storage-and-retrieval, d-i-a-04-encoding-and-evolution, d-i-a-05-replication]
 study-think-bayes:
     type: wiki
     title: '(study) 파이썬을 활용한 베이지안 통계'
@@ -1486,6 +1598,14 @@ trouble-shooting-node-7-install:
     url: /wiki/trouble-shooting-node-7-install
     updated: '2018-02-12 15:09:45 +0900'
     children: []
+Unix-philosophy:
+    type: wiki
+    title: 'Unix philosophy'
+    summary: '유닉스 철학'
+    parent: what
+    url: /wiki/Unix-philosophy
+    updated: '2018-07-15 10:18:57 +0900'
+    children: []
 uptime:
     type: wiki
     title: 'uptime 명령어'
@@ -1533,7 +1653,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [my-wiki, vim-conceallevel, vim-f-hangul, vim-rest-console, vim-tmux-t-ut, vim-ycm-python3, vimwiki]
+    children: [my-wiki, vim-conceallevel, vim-f-hangul, vim-go-with-ultisnips, vim-rest-console, vim-tmux-t-ut, vim-ycm-python3, vimwiki]
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -1549,6 +1669,14 @@ vim-f-hangul:
     parent: Vim
     url: /wiki/vim-f-hangul
     updated: '2018-03-18 22:51:56 +0900'
+    children: []
+vim-go-with-ultisnips:
+    type: wiki
+    title: 'Ultisnips와 vim-go를 같이 사용할 때 발생하는 E734 에러 해결'
+    summary: '+= 는 list 타입에만 쓰자'
+    parent: Vim
+    url: /wiki/vim-go-with-ultisnips
+    updated: '2018-08-24 09:55:32 +0900'
     children: []
 vim-rest-console:
     type: wiki
@@ -1621,7 +1749,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [braille-pattern-chars, Continuous-Integration, http-message, RFC, special-chars, URI]
+    children: [braille-pattern-chars, Continuous-Integration, groupId-artifactId, http-message, RFC, special-chars, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
