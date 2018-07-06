@@ -166,18 +166,40 @@ diary:
     - {fileName: diary-2018}
 block-chain:
     - {fileName: '2018-01-20'}
-complexity:
-    - {fileName: airplain-rule}
-law:
-    - {fileName: airplain-rule}
-    - {fileName: Brooks-s-law}
-    - {fileName: Conway-s-law}
-    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
-    - {fileName: Postel-s-law}
-    - {fileName: Zipf-s-law}
-algorithm:
-    - {fileName: algorithm}
+review:
+    - {fileName: 그림으로-보는-서양검술-메모}
+    - {fileName: HTTP-no-Kyokasho}
+    - {fileName: review}
+    - {fileName: review-2017}
+    - {fileName: review-2018}
+    - {fileName: secret-of-consulting}
+    - {fileName: Shunsho-juwa}
+    - {fileName: Software-Craftsman}
+    - {fileName: Take-the-Bully-by-the-Horns}
+    - {fileName: TETRIS-EFFECT}
+    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
+    - {fileName: toda-seiji-scientia}
+만화책:
+    - {fileName: 그림으로-보는-서양검술-메모}
+    - {fileName: HELL-BOY}
+    - {fileName: toda-seiji-scientia}
+무술:
+    - {fileName: 그림으로-보는-서양검술-메모}
+tools:
+    - {fileName: 미세먼지-정보}
+    - {fileName: labs-strava-com-heatmap}
+    - {fileName: tools}
+    - {fileName: utterances}
+미세먼지:
+    - {fileName: 미세먼지-정보}
+sf:
+    - {fileName: 슈뢰딩거의-고양희}
+    - {fileName: 토끼의-아리아}
+    - {fileName: 한국과학문학상-수상작품집-제2회}
+    - {fileName: toda-seiji-scientia}
 book:
+    - {fileName: 전생검신}
+    - {fileName: 한국과학문학상-수상작품집-제2회}
     - {fileName: Algorithms-to-Live-By}
     - {fileName: book}
     - {fileName: Clean-Code}
@@ -195,8 +217,19 @@ book:
     - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
     - {fileName: The-Jargon-File}
+fantasy:
     - {fileName: 전생검신}
-    - {fileName: 한국과학문학상-수상작품집-제2회}
+complexity:
+    - {fileName: airplain-rule}
+law:
+    - {fileName: airplain-rule}
+    - {fileName: Brooks-s-law}
+    - {fileName: Conway-s-law}
+    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
+    - {fileName: Postel-s-law}
+    - {fileName: Zipf-s-law}
+algorithm:
+    - {fileName: algorithm}
 algirithm:
     - {fileName: Algorithms-to-Live-By}
 netflix:
@@ -383,10 +416,6 @@ groovy:
     - {fileName: groovy}
 lua:
     - {fileName: hammerspoon-luarocks}
-만화책:
-    - {fileName: HELL-BOY}
-    - {fileName: toda-seiji-scientia}
-    - {fileName: 그림으로-보는-서양검술-메모}
 keyboard:
     - {fileName: hhkb-jp-tmk}
 movie:
@@ -402,19 +431,6 @@ http:
     - {fileName: URI}
     - {fileName: vim-rest-console}
     - {fileName: why-http-80-https-443}
-review:
-    - {fileName: HTTP-no-Kyokasho}
-    - {fileName: review}
-    - {fileName: review-2017}
-    - {fileName: review-2018}
-    - {fileName: secret-of-consulting}
-    - {fileName: Shunsho-juwa}
-    - {fileName: Software-Craftsman}
-    - {fileName: Take-the-Bully-by-the-Horns}
-    - {fileName: TETRIS-EFFECT}
-    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
-    - {fileName: toda-seiji-scientia}
-    - {fileName: 그림으로-보는-서양검술-메모}
 index:
     - {fileName: index}
 James-Gosling:
@@ -423,11 +439,6 @@ von-neumann:
     - {fileName: John-von-Neumann}
 sort:
     - {fileName: John-von-Neumann}
-tools:
-    - {fileName: labs-strava-com-heatmap}
-    - {fileName: tools}
-    - {fileName: utterances}
-    - {fileName: 미세먼지-정보}
 보안:
     - {fileName: labs-strava-com-heatmap}
 letter:
@@ -498,11 +509,6 @@ trouble-shooting:
     - {fileName: til}
     - {fileName: trouble-shooting-node-7-install}
     - {fileName: vim-conceallevel}
-sf:
-    - {fileName: toda-seiji-scientia}
-    - {fileName: 슈뢰딩거의-고양희}
-    - {fileName: 토끼의-아리아}
-    - {fileName: 한국과학문학상-수상작품집-제2회}
 performance:
     - {fileName: use-java-primitive-type-for-performance}
 github:
@@ -535,9 +541,3 @@ data-format:
     - {fileName: You-and-Your-Research}
 stat:
     - {fileName: Zipf-s-law}
-무술:
-    - {fileName: 그림으로-보는-서양검술-메모}
-미세먼지:
-    - {fileName: 미세먼지-정보}
-fantasy:
-    - {fileName: 전생검신}

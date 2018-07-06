@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-06-24 17:32:44 +0900
+updated : 2018-07-06 10:46:31 +0900
 tags    : index
 toc     : true
 public  : true
@@ -174,6 +174,7 @@ comment : false
     * [[vim-ycm-python3]]
     * [[vimwiki]]
 * [[what]]
+    * [[Continuous-Integration]]
     * [[braille-pattern-chars]]
     * [[http-message]]
     * [[RFC]]
