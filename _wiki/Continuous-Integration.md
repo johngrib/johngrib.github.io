@@ -3,7 +3,7 @@ layout  : wiki
 title   : Continuous Integration(지속적 통합)
 summary : 
 date    : 2018-07-06 10:46:27 +0900
-updated : 2018-07-06 16:21:27 +0900
+updated : 2018-07-10 18:40:25 +0900
 tags    : 
 toc     : true
 public  : true
@@ -68,6 +68,18 @@ usually each person integrates at least daily - leading to multiple integrations
 # AWS의 "지속적 통합이란 무엇입니까?" 요약
 
 * [지속적 통합이란 무엇입니까?](https://aws.amazon.com/ko/devops/continuous-integration/ )
+
+>
+**지속적 통합**은 자동화된 빌드 및 테스트가 수행된 후,
+개발자가 코드 변경 사항을 중앙 리포지토리에 정기적으로 병합하는 데브옵스 소프트웨어 개발 방식입니다.
+
+* 지속적 통합의 목표
+    * 소프트웨어 품질 개선.
+    * 개발자 생산성 향상
+    * 버그를 빨리 찾아내는 것.
+    * 새로운 소프트웨어 업데이트 검증 시간 최소화.
+    * 배포 소요 시간 최소화.
+
 
 
 # Links
