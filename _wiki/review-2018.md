@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-07-14 13:05:23 +0900
+updated : 2018-07-16 23:37:27 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-07-16 [[Designing-Data-Intensive-Applications]]{데이터 중심 애플리케이션 설계}
 * 2018-07-14 [[전생검신]] 38권. 선제공격
 * 2018-06-24 인프라 엔지니어의 교과서 - 괜찮은 책이었다. 매년 개정판이 나왔으면 좋겠다.
 * 2018-06-22 BAD CHOICES(알고리즘 라이프)
