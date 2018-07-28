@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-07-25 11:36:42 +0900
+updated : 2018-07-28 22:37:58 +0900
 tags    : review
 toc     : true
 public  : true
@@ -70,6 +70,8 @@ latex   : false
 
 ## 영화/드라마
 
+* 2018-07-28 [Extinction](https://www.netflix.com/title/80236421 )
+* 2018-07-07 Ant-Man and the Wasp
 * 2018-07-03 Pirates of the Caribbean: Dead Men Tell No Tales
 * 2018-05-08 Avengers: Infinity War
 * 2018-05-06 Legion 시즌 1
