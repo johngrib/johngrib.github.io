@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-07-28 22:37:58 +0900
+updated : 2018-07-29 19:27:00 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-07-29 [[전생검신]] 39권. 금오도
 * 2018-07-25 [[그림으로-보는-서양검술-메모]] - 외전 플레이트 아머 편
 * 2018-07-16 [[Designing-Data-Intensive-Applications]]{데이터 중심 애플리케이션 설계}
 * 2018-07-14 [[전생검신]] 38권. 선제공격
