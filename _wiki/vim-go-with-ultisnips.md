@@ -3,7 +3,7 @@ layout  : wiki
 title   : Ultisnips와 vim-go를 같이 사용할 때 발생하는 E734 에러 해결
 summary : += 는 list 타입에만 쓰자
 date    : 2018-08-23 23:14:09 +0900
-updated : 2018-08-23 23:38:07 +0900
+updated : 2018-08-24 09:55:32 +0900
 tags    : ultisnips, go
 toc     : true
 public  : true
@@ -78,6 +78,8 @@ endfunction
 ```
 
 이렇게 수정하니 에러가 싹 사라졌다. 쉽게 해결해서 다행이다.
+
+그러나 역시 가장 쉬운 해결 방법은 `g:UltiSnipsSnippetDirectories`를 `.vimrc`에서 직접 정의해 주는 것일듯.
 
 # Links
 
