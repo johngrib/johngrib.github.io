@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-08-21 22:37:15 +0900
+updated : 2018-08-26 18:23:02 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-08-26 엔지니어를 위한 블록체인 프로그래밍
 * 2018-08-21 미니멀라이프 시간과 돈 사용법
 * 2018-08-20 THE BFG
 * 2018-08-01 자전거를 못 타는 아이(RAOUL TABURIN)
