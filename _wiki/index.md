@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-08-24 21:37:32 +0900
+updated : 2018-09-01 18:01:11 +0900
 tags    : index
 toc     : true
 public  : true
@@ -147,9 +147,13 @@ comment : false
         * [[date]]
         * [[df]]
         * [[du]]
+        * [[fc]]
         * [[fish-shell]]
+        * [[grep]]
+        * [[history]]
         * [[java_home]]
         * [[sha256sum]]
+        * [[sort]]
         * [[top]]
         * [[uptime]]
     * [[Gradle]]

@@ -557,7 +557,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [brew, date, df, du, fish-shell, java_home, sha256sum, top, uptime]
+    children: [brew, date, df, du, fc, fish-shell, grep, history, java_home, sha256sum, sort, top, uptime]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -782,6 +782,14 @@ excel-sumifs:
     url: /wiki/excel-sumifs
     updated: '2018-04-26 21:10:37 +0900'
     children: []
+fc:
+    type: wiki
+    title: 'fc 명령어'
+    summary: '명령어 입력/편집, 나열, 재실행 등을 할 수 있다'
+    parent: command-line
+    url: /wiki/fc
+    updated: '2018-08-29 09:45:22 +0900'
+    children: []
 fish-shell:
     type: wiki
     title: 'fish shell'
@@ -869,6 +877,14 @@ GRAVITY-EXPRESS:
     parent: book
     url: /wiki/GRAVITY-EXPRESS
     updated: '2018-04-20 21:24:47 +0900'
+    children: []
+grep:
+    type: wiki
+    title: 'grep 명령어'
+    summary: 'file pattern searcher'
+    parent: command-line
+    url: /wiki/grep
+    updated: '2018-08-31 13:16:01 +0900'
     children: []
 groovy:
     type: wiki
@@ -974,6 +990,14 @@ hhkb-jp-tmk:
     url: /wiki/hhkb-jp-tmk
     updated: '2018-04-21 11:37:09 +0900'
     children: []
+history:
+    type: wiki
+    title: 'bash 명령어 history 다루기'
+    summary: '사용법 및 잡다한 팁 요약'
+    parent: command-line
+    url: /wiki/history
+    updated: '2018-09-02 21:51:46 +0900'
+    children: []
 HOT-FUZZ:
     type: wiki
     title: '뜨거운 녀석들'
@@ -1028,7 +1052,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-08-24 21:37:32 +0900'
+    updated: '2018-09-01 18:01:11 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1372,7 +1396,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-08-21 22:37:15 +0900'
+    updated: '2018-09-02 11:35:20 +0900'
     children: []
 RFC:
     type: wiki
@@ -1453,6 +1477,14 @@ Software-Engineering-Code-of-Ethics:
     parent: clipping
     url: /wiki/Software-Engineering-Code-of-Ethics
     updated: '2018-02-07 06:48:10 +0900'
+    children: []
+sort:
+    type: wiki
+    title: 'sort 명령어'
+    summary: 정렬한다
+    parent: command-line
+    url: /wiki/sort
+    updated: '2018-08-31 09:59:37 +0900'
     children: []
 special-chars:
     type: wiki
@@ -1684,7 +1716,7 @@ vim-rest-console:
     summary: 'vim을 cURL 클라이언트로 사용하자'
     parent: Vim
     url: /wiki/vim-rest-console
-    updated: '2018-04-12 21:57:49 +0900'
+    updated: '2018-09-05 22:31:54 +0900'
     children: []
 vim-tmux-t-ut:
     type: wiki
@@ -1764,7 +1796,7 @@ why-http-80-https-443:
     summary: '80은 처음부터 지정, 443은 나중에 요청을 받아 빈 공간으로 순서대로 배정'
     parent: why
     url: /wiki/why-http-80-https-443
-    updated: '2017-12-17 09:11:39 +0900'
+    updated: '2018-09-09 11:20:07 +0900'
     children: []
 yaml:
     type: wiki
