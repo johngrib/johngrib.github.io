@@ -3,7 +3,7 @@ layout  : wiki
 title   : bash 명령어 history 다루기
 summary : 사용법 및 잡다한 팁 요약
 date    : 2018-09-01 18:01:04 +0900
-updated : 2018-09-02 11:32:46 +0900
+updated : 2018-09-02 21:51:46 +0900
 tags    : bash
 toc     : true
 public  : true
@@ -99,6 +99,15 @@ shopt -u histappend
 * `shopt -u histappend`: Bash의 `histappend` 옵션을 끈다.
 
 이제 터미널을 여러 개 쓰거나 탭을 많이 열어놔도 히스토리를 같이 쓸 수 있다.
+
+### 히스토리 사이즈 설정
+
+`.bashrc`에 다음과 같이 적당한 숫자로 설정하자.
+
+```sh
+export HISTSIZE=2000
+export HISTFILESIZE=2000
+```
 
 ## [[fc]] 명령어
 
