@@ -3,7 +3,7 @@ layout  : wiki
 title   : http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?
 summary : 80은 처음부터 지정, 443은 나중에 요청을 받아 빈 공간으로 순서대로 배정
 date    : 2017-12-12 23:19:48 +0900
-updated : 2017-12-17 09:11:39 +0900
+updated : 2018-09-09 11:20:07 +0900
 tags    : http rfc
 toc     : true
 public  : true
@@ -155,6 +155,55 @@ https           443/udp    https  MCom
     * RFC 1700 이전까지는 빈 포트 번호였다.
     * Kipp E.B. Hickman의 요청으로 1994년 10월에 RFC 1700 문서에 `443`이 추가되었다.
     * `443`인 이유는 빈 칸에 순서대로 배정하다 보니 그렇게 된 것 같다.
+
+## 부록
+
+`nmap` 명령어를 사용하면 열려 있는 포트 번호를 쉽게 확인할 수 있다.
+
+* google.com의 경우 기본값을 사용하고 있음을 알 수 있다.
+
+```sh
+$ nmap  www.google.com
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-09-09 11:12 KST
+Nmap scan report for www.google.com (172.217.161.196)
+Host is up (0.045s latency).
+rDNS record for 172.217.161.196: kix07s03-in-f4.1e100.net
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+```
+
+* gnu.org도 마찬가지
+
+```sh
+$ nmap www.gnu.org
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-09-09 11:16 KST
+Nmap scan report for www.gnu.org (208.118.235.148)
+Host is up (0.23s latency).
+rDNS record for 208.118.235.148: wildebeest.gnu.org
+Not shown: 998 filtered ports
+PORT    STATE SERVICE
+80/tcp  open  http
+443/tcp open  https
+```
+
+* github.com의 경우 ssh와 git을 위한 포트가 추가로 열려 있다.
+
+```sh
+$ nmap www.github.com
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-09-09 11:16 KST
+Nmap scan report for www.github.com (192.30.255.112)
+Host is up (0.15s latency).
+Other addresses for www.github.com (not scanned): 192.30.255.113
+rDNS record for 192.30.255.112: lb-192-30-255-112-sea.github.com
+Not shown: 996 filtered ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+443/tcp  open  https
+9418/tcp open  git
+```
 
 ## Links
 
