@@ -557,7 +557,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [brew, date, df, du, fc, fish-shell, grep, history, java_home, sha256sum, sort, top, uptime]
+    children: [brew, date, df, du, fc, fish-shell, gpg, grep, history, java_home, sha256sum, sort, top, uptime]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -862,6 +862,14 @@ googling:
     url: /wiki/googling
     updated: '2018-01-25 23:12:25 +0900'
     children: []
+gpg:
+    type: wiki
+    title: 'GnuPG 사용법'
+    summary: 'GnuPG, the GNU Privacy Guard'
+    parent: command-line
+    url: /wiki/gpg
+    updated: '2018-09-10 22:46:23 +0900'
+    children: []
 Gradle:
     type: wiki
     title: Gradle
@@ -1052,7 +1060,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-09-01 18:01:11 +0900'
+    updated: '2018-09-10 14:24:04 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1396,7 +1404,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-09-02 11:35:20 +0900'
+    updated: '2018-09-09 18:34:08 +0900'
     children: []
 RFC:
     type: wiki

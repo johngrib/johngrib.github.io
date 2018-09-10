@@ -408,12 +408,17 @@ twitter:
     - {fileName: labs-strava-com-heatmap}
 facebook:
     - {fileName: googling}
+'bash,':
+    - {fileName: gpg}
+    - {fileName: grep}
+'암호화,':
+    - {fileName: gpg}
+GNU:
+    - {fileName: gpg}
 gradle:
     - {fileName: Gradle}
 tool:
     - {fileName: Gradle}
-'bash,':
-    - {fileName: grep}
 검색:
     - {fileName: grep}
 language:
