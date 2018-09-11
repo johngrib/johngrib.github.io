@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-11 11:41:37 +0900
+updated : 2018-09-11 12:01:34 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -271,6 +271,12 @@ B65GoPB9OoB/A7tk
 $ echo 'hello testuser!' | gpg -ea --recipient testuser > to_testuser.txt
 ```
 
+또는 `--output 파일명` 옵션을 사용해도 된다. `-o`로도 쓸 수 있다.
+
+```sh
+$ echo 'hello testuser!' | gpg -o to_testuser.txt -ea --recipient testuser
+```
+
 이제 친구는 이 파일을 testuser에게 이메일이나 메신저로 전송하면 된다.
 
 testuser가 갖고 있는 개인 키가 아니면 복호화가 불가능한(적어도 RSA 2048이 깨지기 전까지는) 안전한 메시지이므로 안심하고 보낼 수 있다.
@@ -290,6 +296,15 @@ hello testuser!
 ```
 
 친구가 보낸 메시지는 바로 `hello testuser!` 였다.
+
+결과를 파일로 저장하고 싶다면 `--output 파일명` 옵션을 사용한다. `-o`로도 쓸 수 있다.
+
+```sh
+$ gpg -o decrypted.txt --decrypt testmsg.txt
+$ cat decrypted.txt
+
+hello testuser!
+```
 
 ## 비밀 키 import
 
