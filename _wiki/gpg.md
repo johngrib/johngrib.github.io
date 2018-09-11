@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-10 22:46:23 +0900
+updated : 2018-09-11 10:06:42 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -154,7 +154,7 @@ gAAKCRDUAoZI0Pf+cxh2B/9pR8HzVLc+CXLPlRzsji3euxKyFWO7m1qzUceC7tg2
 hXgaufiBLDph19X6QKqZFRzcLLWlSyp9cAdfXwnMvgeTtqDGUb/6w4MbVgGO3V8G
 d2inubF86PkRAxXuroaQguUj2/d75Xu3g4b3/HmfwytFWj0N5Yz86gn0xFUHP2BD
 5hU4AK84tfzn9hrUmbAyYNsdR5mC5k00Z4sArI70gC6e4N4IdOewzADm+ysO3NVk
-OKDHlxb0V8sfbsdxOnjb2XNasdd3P52beWsTT6FFohc4tJoWzNJbrGkZkUhLaak3
+(생략)
 ufIMNQazrGeSnOo4L7mGKpYIGoyUVPcY7i9Slzo6YYxnuQENBFuWILQBCAC8zneN
 SaiChy6i0WeHW//jWv1EmM5qxQnXAEncOh7tJYJyCCn9XHxkyzqXYd49y7X+ZM/J
 VtpyxApWEaEKP6ZF2T/nYCO1zbm3qXO/5kEDBmuIctLv+3CMfWM4xxZBk8l2F/5y
@@ -241,7 +241,7 @@ Version: GnuPG v1
 hQEMA5DmoKGLUuVCAQgAl4BaAa6WziQpnyPO9uiGCrkCJTMFgJMPJ7AcX6IXa5kS
 e4ux32gieoBIkeg30LgTpwprPoBCS3l4h8nWE5X3GpPUC+gkde2STyP1FSbCon/C
 4/I/Zo6p2/3UDAtXyzKZAELG/IXgyX+sut8mfinmdFRoT6xB77GcOITDtrX0DAoJ
-v21B0/MeNV5l8gjtSp3vDEs0bnYl/E2+99685RMl0yhTp4STyZzWG6cYkHjitiIj
+(생략)
 AhAhb8ADIDA21XLcZ0z7vVFEuhvPheWgWN0RouatRnI7t7zaiCm3t5OQtDmoMhLF
 ssafE4at7QwoCHS6tUw+hI3nvGYyFMzJdTmMnAxFbNJLAbdAekveojWeDahnwTDm
 l/9XIBCX5wt7K4/gNGEqqC9jDNqgmWDdtFUM/uPjPsHZajZG3uOIbfsxTQT9X7l9
@@ -276,6 +276,37 @@ hello testuser!
 
 친구가 보낸 메시지는 바로 `hello testuser!` 였다.
 
+# 암호 관리 주의 사항
+
+* 이 웹 페이지의 글은 개인의 의견을 개진한 것입니다.
+    * 만일 이 글을 읽는 여러분께서 암호나 비밀 통신과 관련된 문제에 관한 조언이 필요할 경우, **암호학 전문가** 또는 **변호사**를 찾아 상담받기를 권장합니다.
+    * 저는 암호학 전문가나 변호사가 아닙니다.
+* 이 글은 자신을 위해 gpg 도구의 사용 방법을 메모해 둔 것입니다.
+* 귀하가 이 글을 읽고 시도한 모든 일에 대해 저는 책임을 지지 않습니다.
+
+---
+
+* 암호화 알고리즘은 만능이 아닙니다. 언젠가는 깨질 수 있습니다.
+    * 컴퓨터 연산 능력의 발전에 의해 한때 강력했던 암호가 brute force 앞에 무의미해질 수 있습니다.
+    * 암호가 우연히 깨지는 경우도 있습니다.
+    * 당분간만 비밀로 유지할 필요가 있는 메시지만 암호화하세요.
+    * 자신의 개인 키를 공공 장소나 인터넷 카페, 도서관 같은 곳에서 복사하거나 저장하지 마세요.
+        * 가족이나 친구와 함께 사용하는 컴퓨터에 개인 키를 보관하지 마세요.
+    * 키를 주기적으로 교체하세요.
+    * 전화번호나 생일, 집 주소 같은 자신의 신상 정보를 암호 생성이나 관리에 사용하지 마세요.
+        * 추측하기 쉬운 문자열을 비밀 키의 패스워드로 사용하지 마세요.
+        * 주민등록 번호, 계좌번호, 전화번호, 집 주소 동 호수, 우편번호, 연속/반복된 숫자, 사전에 있는 단어를 사용하지 마세요.
+* **사람의 건강이나 생명, 재산, 정치적 문제 등이 걸린 중요한 메시지는 컴퓨터에 보관하지 마세요.**
+    * 누군가 당신의 컴퓨터에 침투해 암호화된 메시지를 가져가 복호화를 시도할 수 있습니다.
+    * 낡은 컴퓨터를 판매하거나 양도하거나 버릴 때에는 반드시 키와 암호화된 메시지를 삭제하고 하드디스크를 포맷하세요.
+* 다른 사람의 비밀 키를 우연히 획득했다면, 가능한 한 빨리 비밀 키의 주인에게 제보하세요.
+    * 타인의 비밀 키를 복제하지 마세요.
+    * 타인의 비밀 키를 사용해 무언가를 암호화하거나 복호화하지 마세요.
+    * 타인의 비밀 키나 공개 키를 분석하는 시도를 하지 마세요.
+* 비밀 키를 타인에게 복사해주지 마세요.
+    * 가족이나 연인에게도 복사해주지 마세요.
+* export한 비밀 키를 모니터로 볼 때, 주위를 살펴 cctv나 비밀 카메라 또는 창문이 없는지 확인하세요.
+
 
 # Links
 
@@ -284,3 +315,5 @@ hello testuser!
 * [RSA(cryptosystem) (wikipedia)](https://en.wikipedia.org/wiki/RSA_(cryptosystem) )
     * [RSA 암호(wikipedia)](https://ko.wikipedia.org/wiki/RSA_%EC%95%94%ED%98%B8 )
 * [pgp.key-server.io](https://pgp.key-server.io/ )
+* [The comp.security.pgp FAQ (www.pgp.net)](http://www.pgp.net/pgpnet/pgp-faq/pgp-faq.html )
+    * [Security Questions (www.pgp.net)](http://www.pgp.net/pgpnet/pgp-faq/pgp-faq-security-questions.html )
