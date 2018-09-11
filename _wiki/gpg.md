@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-11 12:01:34 +0900
+updated : 2018-09-11 13:11:05 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -367,3 +367,4 @@ gpg> save
 * [pgp.key-server.io](https://pgp.key-server.io/ )
 * [The comp.security.pgp FAQ (www.pgp.net)](http://www.pgp.net/pgpnet/pgp-faq/pgp-faq.html )
     * [Security Questions (www.pgp.net)](http://www.pgp.net/pgpnet/pgp-faq/pgp-faq-security-questions.html )
+* [GnuPG 리눅스에서 안전하게 통신하기](http://www.linuxlab.co.kr/docs/01-01-3.htm )
