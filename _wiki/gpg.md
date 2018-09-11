@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-11 10:06:42 +0900
+updated : 2018-09-11 11:26:10 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -275,6 +275,26 @@ hello testuser!
 ```
 
 친구가 보낸 메시지는 바로 `hello testuser!` 였다.
+
+## 비밀 키 import
+
+비밀 키를 등록하는 방법은 간단하다 `--import` 옵션을 사용하면 된다.
+
+```sh
+$ gpg --import 비밀키파일
+```
+
+한편 비밀 키의 비밀번호는 다음과 같이 `--edit-key` 옵션으로 변경할 수 있다.
+
+그러면 `gpg>`라는 프롬프트가 나타나는데 `passwd`를 입력하면 기존 비밀번호/신규 비밀번호를 물어본다.
+
+이후 `save`를 입력하면 변경 절차가 완료된다.
+
+```sh
+$ gpg --edit-key 비밀키아이디
+gpg> passwd
+gpg> save
+```
 
 # 암호 관리 주의 사항
 
