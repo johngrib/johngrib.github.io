@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-11 11:26:10 +0900
+updated : 2018-09-11 11:41:37 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -195,6 +195,21 @@ gpg: sending key 21831..... to hkp://pgp.key-server.io
 
 testuser의 공개 키로 암호화한 것은 testuser의 개인 키로만 복호화할 수 있으므로
 testuser가 개인 키가 유출되지 않도록 잘 관리한다면 충분히 안전하게 메시지를 주고 받을 수 있게 된 것이다.
+
+### 해지 인증서(Revocation Certificate) 만들기
+
+키를 분실했거나 의도치 않게 유출되었다면, 해지 인증서를 만들어 키 서버에 올리는 것이 좋다.
+
+해지 인증서는 `--gen-revoke` 옵션으로 만들 수 있다.
+
+```sh
+$ gpg --output revoke.asc --gen-revoke 키아이디
+```
+
+해지 인증서를 `--import` 한 다음, 키 서버로 전송하면 된다.
+
+이후 키 서버로 들어가 키를 검색해 보면 `revoke`되었다는 표시가 뜨는 것을 확인할 수 있다.
+
 
 ## 공개 키 import
 
