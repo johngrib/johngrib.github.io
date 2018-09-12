@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-12 23:14:49 +0900
+updated : 2018-09-13 08:30:59 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -79,30 +79,61 @@ alias gpg='gpg2'
 
 # 키 목록 보기
 
-`gpg --list-public-keys testuser`를 입력해보자.
+* `--list-keys`, `-k` : 공개 키 목록을 본다. `--list-public-keys` 옵션과 똑같다.
+* `--list-secret-keys`, `-K` : 비밀 키 목록을 본다.
 
 ```sh
-$ gpg --list-public-keys testuser
-pub   rsa2048 2018-09-10 [SC] [expires: 2020-09-09]
-      ABCDE...
-uid           [ultimate] testuser <testuser@___.com>
-sub   rsa2048 2018-09-10 [E] [expires: 2020-09-09]
+$ gpg -k
+----------------------------------
+pub   rsa4096 2018-09-10 [SC] [expires: 2019-03-11]
+      78BC79BB
+uid           [ultimate] kim <kim@gpgtest.com>
+sub   rsa4096 2018-09-10 [E]
+
+pub   rsa2048 2018-09-11 [SC] [revoked: 2018-09-11]
+      90F92F0
+uid           [ revoked] lee <lee@gpgtest.com>
+
+pub   rsa2048 2018-03-14 [SC]
+      C475C477
+uid           [ unknown] park <park@gpgtest.com>
+sub   rsa2048 2018-03-14 [E]
 ```
 
-* `testuser`의 공개키가 위와 같이 등록되어 있음을 알 수 있다.
-* 잘 살펴보면 `RSA 2048` 암호화 알고리즘으로 만들어진 키라는 사실도 알 수 있다.
+* `pub`: 공개 키.
+* `uid`: user id.
+* `sub`: sub key.
+* `[SC]`: 해당 키가 Signing 과 Certificate 용도로 사용된다는 의미.
+* `[E]`: 해당 키가 Encryption 용도로 사용된다는 의미.
+* `[expires: yyyy-mm-dd]`: 유효 기한.
+* TRUST VALUES
+    * ultimate, full, marginal, never, undefined, expired, unknown 순으로 신뢰도가 낮아진다.
+    * `[ultimate]`: 완전히 신뢰할 수 있는 키.
+    * `[revoked]`: 해지된 키.
+    * `[unknown]`: 신뢰할 수 없는, 모르는 사람의 키.
 
-한편, `gpg --list-secret-keys testuser`를 입력하면 비밀키 등록을 확인할 수 있다.
+한편, `--list-secret-keys`는 출력 결과가 **약간** 다르다.
 
 ```sh
-$ gpg --list-secret-keys testuser
-sec   rsa2048 2018-09-10 [SC] [expires: 2020-09-09]
-      ABCDE...
-uid           [ultimate] testuser <testuser@___.com>
-ssb   rsa2048 2018-09-10 [E] [expires: 2020-09-09]
+$ gpg --list-secret-keys
+----------------------------------
+sec   rsa4096 2018-09-10 [SC] [expires: 2019-03-11]
+      78BC79BB
+uid           [ultimate] kim <kim@gpgtest.com>
+ssb   rsa4096 2018-09-10 [E]
+
+sec   rsa2048 2018-09-11 [SC] [revoked: 2018-09-11]
+      90F92F0
+uid           [ revoked] lee <lee@gpgtest.com>
+
+sec   rsa2048 2018-03-14 [SC]
+      C475C477
+uid           [ unknown] park <park@gpgtest.com>
+ssb   rsa2048 2018-03-14 [E]
 ```
 
-* 그냥 `gpg --list-keys`로 확인하는 방법도 있다.
+* `sec`: 비밀 키.
+* `ssb`: secret sub key.
 
 
 # 새로운 키 생성
