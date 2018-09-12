@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-12 22:51:33 +0900
+updated : 2018-09-12 23:14:49 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -75,6 +75,35 @@ $ gpg --version
 ```sh
 alias gpg='gpg2'
 ```
+
+
+# 키 목록 보기
+
+`gpg --list-public-keys testuser`를 입력해보자.
+
+```sh
+$ gpg --list-public-keys testuser
+pub   rsa2048 2018-09-10 [SC] [expires: 2020-09-09]
+      ABCDE...
+uid           [ultimate] testuser <testuser@___.com>
+sub   rsa2048 2018-09-10 [E] [expires: 2020-09-09]
+```
+
+* `testuser`의 공개키가 위와 같이 등록되어 있음을 알 수 있다.
+* 잘 살펴보면 `RSA 2048` 암호화 알고리즘으로 만들어진 키라는 사실도 알 수 있다.
+
+한편, `gpg --list-secret-keys testuser`를 입력하면 비밀키 등록을 확인할 수 있다.
+
+```sh
+$ gpg --list-secret-keys testuser
+sec   rsa2048 2018-09-10 [SC] [expires: 2020-09-09]
+      ABCDE...
+uid           [ultimate] testuser <testuser@___.com>
+ssb   rsa2048 2018-09-10 [E] [expires: 2020-09-09]
+```
+
+* 그냥 `gpg --list-keys`로 확인하는 방법도 있다.
+
 
 # 새로운 키 생성
 
@@ -157,36 +186,10 @@ ssb   rsa4096 2018-09-10 [E]
 * 비밀 sub key
 
 
-# 키 목록 보기
-
-`gpg --list-public-keys testuser`를 입력해보자.
-
-```sh
-$ gpg --list-public-keys testuser
-pub   rsa2048 2018-09-10 [SC] [expires: 2020-09-09]
-      ABCDE...
-uid           [ultimate] testuser <testuser@___.com>
-sub   rsa2048 2018-09-10 [E] [expires: 2020-09-09]
-```
-
-* `testuser`의 공개키가 위와 같이 등록되어 있음을 알 수 있다.
-* 잘 살펴보면 `RSA 2048` 암호화 알고리즘으로 만들어진 키라는 사실도 알 수 있다.
-
-한편, `gpg --list-secret-keys testuser`를 입력하면 비밀키 등록을 확인할 수 있다.
-
-```sh
-$ gpg --list-secret-keys testuser
-sec   rsa2048 2018-09-10 [SC] [expires: 2020-09-09]
-      ABCDE...
-uid           [ultimate] testuser <testuser@___.com>
-ssb   rsa2048 2018-09-10 [E] [expires: 2020-09-09]
-```
-
-* 그냥 `gpg --list-keys`로 확인하는 방법도 있다.
-
 # 공개 키 export
 
 * 나의 **공개 키**로 암호화한 메시지는 나의 **비밀 키**로 복호화할 수 있다.
+* 따라서 나의 공개 키를 다른 사람에게 주면, 다른 사람은 내 공개 키를 이용해 내게 보낼 메시지를 암호화할 수 있다.
 
 > 주의: 절대 **비밀 키**가 다른 사람에게 넘어가지 않도록 조심하자.  
 인터넷에 공개하거나 다른 사람에게 복사해줘도 되는 것은 **공개 키** 뿐이다.
