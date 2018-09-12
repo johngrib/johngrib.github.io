@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-12 15:36:48 +0900
+updated : 2018-09-12 16:42:43 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -232,7 +232,8 @@ testuser가 개인 키가 유출되지 않도록 잘 관리한다면 충분히 �
 
 ### 해지 인증서(Revocation Certificate) 만들기
 
-키를 분실했거나 의도치 않게 유출되었다면, 해지 인증서를 만들어 키 서버에 올리는 것이 좋다.
+* 키를 분실했거나 의도치 않게 유출되었다면, 해지 인증서를 만들어 키 서버에 올리는 것이 좋다.
+* 키를 처음 생성했을 때 해지 인증서를 함께 만들어 비밀 키와 함께 오프라인 저장장치에 보관하는 것을 권장.
 
 해지 인증서는 `--gen-revoke` 옵션으로 만들 수 있다.
 
