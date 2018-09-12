@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-11 13:11:05 +0900
+updated : 2018-09-12 13:12:22 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -68,6 +68,7 @@ $ gpg --full-generate-key
 
 * 어떤 암호화 알고리즘을 사용할 것인지?
 * 키의 유효기간은 어떻게 할 것인지?
+    * 주의: 키 유효 기한은 **2년 이하**를 권장하며, 불편하더라도 몇 달 주기로 유효 기한을 연장하거나 새로 생성한 키로 교체하는 것이 좋습니다.
 * 사용자의 Real name은?
 * 사용자의 email 주소는?
 
@@ -328,6 +329,8 @@ gpg> save
 
 # 암호 관리 주의 사항
 
+## 꼭 읽으세요
+
 * 이 웹 페이지의 글은 개인의 의견을 개진한 것입니다.
     * 만일 이 글을 읽는 여러분께서 암호나 비밀 통신과 관련된 문제에 관한 조언이 필요할 경우, **암호학 전문가** 또는 **변호사**를 찾아 상담받기를 권장합니다.
     * 저는 암호학 전문가나 변호사가 아닙니다.
@@ -357,6 +360,46 @@ gpg> save
     * 가족이나 연인에게도 복사해주지 마세요.
 * export한 비밀 키를 모니터로 볼 때, 주위를 살펴 cctv나 비밀 카메라 또는 창문이 없는지 확인하세요.
 
+---
+
+## 유효 기한에 대하여
+
+* 키 유효 기한은 2년 이하를 권장합니다.
+    * 불편하더라도 몇 달 주기로 유효 기한을 연장하거나 새로 생성한 키로 교체하는 것이 좋습니다.
+* 만료가 없는 키를 생성했다 하더라도 다음과 같이 만료일을 수정할 수 있습니다.
+
+```sh
+$ gpg --edit-key 키아이디
+```
+
+이후 아래와 같이 `expire`를 입력하고, 기간을 설정해주고(`6m`: 6개월) 저장한 다음 종료하면 됩니다.
+
+
+```sh
+$ gpg --edit-key 키아이디
+
+gpg> expire
+
+Changing expiration time for the primary key.
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 6m
+Key expires at 월  3/11 12:22:33 2019 KST
+Is this correct? (y/N) y
+
+sec  rsa4096/....
+     created: 2018-09-10  expires: 2019-03-11  usage: SC  
+     trust: ultimate      validity: ultimate
+ssb  rsa4096/....
+     created: 2018-09-10  expires: never       usage: E   
+[ultimate] (1). testuser <testuser@___.com>
+
+gpg> save
+```
 
 # Links
 
@@ -368,3 +411,5 @@ gpg> save
 * [The comp.security.pgp FAQ (www.pgp.net)](http://www.pgp.net/pgpnet/pgp-faq/pgp-faq.html )
     * [Security Questions (www.pgp.net)](http://www.pgp.net/pgpnet/pgp-faq/pgp-faq-security-questions.html )
 * [GnuPG 리눅스에서 안전하게 통신하기](http://www.linuxlab.co.kr/docs/01-01-3.htm )
+
+* [OpenPGP Best Practices (riseup.net)](https://riseup.net/en/security/message-security/openpgp/gpg-best-practices )
