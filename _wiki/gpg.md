@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-13 08:41:54 +0900
+updated : 2018-09-13 08:57:14 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -243,6 +243,20 @@ $ gpg --armor --export testuser > testuser.asc
 * 친구는 보내고 싶은 메시지나 파일을 testuser의 공개 키로 암호화하여 보내줄 것이다.
 * 친구가 보내준 암호화된 파일을, testuser는 자신의 비밀 키로 복호할 수 있다.
 
+testuser의 공개 키로 암호화한 것은 testuser의 비밀 키로만 복호화할 수 있으므로
+testuser가 비밀 키가 유출되지 않도록 잘 관리한다면 충분히 안전하게 메시지를 주고 받을 수 있게 된 것이다.
+
+## 키 서버로 전송하기
+
+주의 : 키 서버로 자신의 공개 키를 올리기 전에 다음을 읽고 충분히 고민할 것.
+
+* 키 서버에 공개 키를 한 번 올리면 절대 지울 수 없습니다. (게다가 키 서버들끼리 정보를 공유.)
+* 비밀 키를 분실하거나 유출해도 지울 수 없습니다.
+    * Revocation Certificate 만을 키 서버에 추가로 올려, 해당 공개키를 사용하지 말 것을 알릴 수 있을 뿐입니다.
+* 공개 키를 올릴 때 자신의 Real Name과 email이 전 세계에 알려지므로, 신상정보를 스스로 퍼뜨리는 행위일 수 있습니다.
+    * 자신의 아이디나 이메일에 들어간 단어가 다른 사람을 자극하거나 공격하지는 않는지 숙고하세요.
+    * 자신의 이름과 이메일을 사용해 올바르지 못하거나 불법적인 행동을 하지 마세요.
+
 공개 키는 친구에게 보내는 것 뿐 아니라 다음과 같이 키 서버로 전송해 세상에 퍼뜨릴 수도 있다.
 
 [pgp.key-server.io](https://pgp.key-server.io/ )를 선택해 전송해 보았다.
@@ -252,11 +266,9 @@ $ gpg --keyserver pgp.key-server.io --send-key 키아이디
 gpg: sending key 21831..... to hkp://pgp.key-server.io
 ```
 
-이제 지구상의 누군가가 testuser에게 암호화된 메시지를 보내고 싶다면
-키 서버에서 testuser를 검색해 공개 키를 얻어, 메시지를 암호화해 testuser에게 보낼 수 있다.
+이제 지구상의 누군가가 나에게 암호화된 메시지를 보내고 싶다면
+키 서버에서 내 아이디나 이메일을 검색해 공개 키를 얻어, 메시지를 암호화해 나한테 보내줄 수 있다.
 
-testuser의 공개 키로 암호화한 것은 testuser의 비밀 키로만 복호화할 수 있으므로
-testuser가 비밀 키가 유출되지 않도록 잘 관리한다면 충분히 안전하게 메시지를 주고 받을 수 있게 된 것이다.
 
 ## 해지 인증서(Revocation Certificate) 만들기
 
