@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-13 08:30:59 +0900
+updated : 2018-09-13 08:37:21 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -138,32 +138,22 @@ ssb   rsa2048 2018-03-14 [E]
 
 # 새로운 키 생성
 
-* 다음과 같이 `--gen-key` 옵션을 주면 새로운 키 쌍을 만들 수 있다.
-* Mac에서는 `--gen-key` 옵션을 쓰면 기본 옵션으로 진행한다.
-    * 옵션을 상세히 설정하고 싶다면 `--full-generate-key`를 쓰면 된다.
+* `--gen-key`
+* `--full-generate-key` : MacOS에서는 이 옵션을 쓰지 않으면 몇 가지 질문이 생략되고 기본 값으로 설정된다.
 
 ```sh
 $ gpg --gen-key
 ```
 
-또는
-
-```sh
-$ gpg --full-generate-key
-```
-
 그러면 몇 가지 문답을 거쳐 키를 생성하게 된다.
-
-문답의 내용은 다음과 같다.
 
 * 어떤 암호화 알고리즘을 사용할 것인지?
 * 키의 유효기간은 어떻게 할 것인지?
-    * 주의: 키 유효 기한은 **1년 이하**를 권장하며, 불편하더라도 몇 달 주기로 유효 기한을 연장하거나 새로 생성한 키로 교체하는 것이 좋다.
-    * 유효 기한이 무제한인 키를 키 서버에 업로드했는데 키를 분실하면 잘못된 키가 영원히 유지될 수도 있다.
+    * 주의: 키 유효 기한은 **1년 이하**를 권장.
+    * 불편하더라도 몇 달 주기로 유효 기한을 연장하거나 새로 생성한 키로 교체하는 것이 좋다.
+    * 무기한인 키를 키 서버에 업로드했는데 키를 분실하면 잘못된 키가 영원히 유지될 수도 있다.
 * 사용자의 Real name은?
 * 사용자의 email 주소는?
-
-(여기에서는 사용자로 `testuser`, `testuser@___.com`이라 입력했다.)
 
 문답을 완료하고 랜덤 바이트가 생성되면, 다음과 같이 공개 키와 비밀키가 생성되었음을 알려준다.
 
@@ -171,43 +161,16 @@ $ gpg --full-generate-key
 public and secret key created and signed.
 
 pub   rsa4096 2018-09-10 [SC]
-      ABCDE...
+      4AB3AA77
 uid                      testuser <testuser@___.com>
 sub   rsa2048 2018-09-10 [E]
 ```
 
-비밀 키가 잘 생성되었는지 확인하려면 `--list-secret-keys`로 조회하면 된다.
-
-```sh
-$ gpg --list-secret-keys 
-
-~/.gnupg/pubring.kbx
-----------------------------------
-sec   rsa4096 2018-09-10 [SC] [expires: 2019-03-11]
-      81BC466EE11
-uid           [ultimate] testuser <testuser@___.com>
-ssb   rsa4096 2018-09-10 [E]
-```
-
-여기에서 각 항목의 의미는 다음과 같다.
-
-* `pub` : 공개 키(primary).
-* `sec` : 비밀 키(primary).
-    * `[SC]` : 이 키는 Sign과 Certificate 용도로 사용한다는 의미.
-* `uid` : user id
-* `sub` : 서브 키.
-* `ssb` : 비밀 서브 키(secret sub key).
-    * `[E]` : 이 키는 Encryption 용도로 사용한다는 의미.
-
-즉 공개 키와 비밀 키는 각각 두 개의 키(primary key, sub key)로 구성되어 있다.
-
 ## 키의 구성
 
 * 하나의 키는 관례적으로 두 개의 서브 키로 구성된다.
-    * 키(top-level key) : 서명할 때 쓴다.
+    * 키(primary key) : 서명할 때 쓴다.
     * 서브 키(sub key) : 암호화/복호화할 때 쓴다.
-
-참고: top level key는 primary key라고도 부른다.
 
 따라서 `--gen-key`로 키를 생성하면 다음과 같이 4개의 키가 생성되는 셈이다.
 
