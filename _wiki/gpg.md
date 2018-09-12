@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-12 16:42:43 +0900
+updated : 2018-09-12 21:21:40 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -64,9 +64,7 @@ $ sudo apt-get install gnupg
 $ brew install gnupg
 ```
 
-# 간단 사용법
-
-## 버전 확인
+# 버전 확인
 
 ```sh
 $ gpg --version
@@ -78,7 +76,7 @@ $ gpg --version
 alias gpg='gpg2'
 ```
 
-## 새로운 키 생성
+# 새로운 키 생성
 
 * 다음과 같이 `--gen-key` 옵션을 주면 새로운 키 쌍을 만들 수 있다.
 * Mac에서는 `--gen-key` 옵션을 쓰면 기본 옵션으로 진행한다.
@@ -118,7 +116,7 @@ uid                      testuser <testuser@___.com>
 sub   rsa2048 2018-09-10 [E]
 ```
 
-## 키 목록 보기
+# 키 목록 보기
 
 `gpg --list-public-keys testuser`를 입력해보자.
 
@@ -145,7 +143,7 @@ ssb   rsa2048 2018-09-10 [E] [expires: 2020-09-09]
 
 * 그냥 `gpg --list-keys`로 확인하는 방법도 있다.
 
-## 공개 키 export
+# 공개 키 export
 
 * 나의 **공개 키**로 암호화한 메시지는 나의 **개인 키**로 복호화할 수 있다.
 
@@ -230,7 +228,7 @@ gpg: sending key 21831..... to hkp://pgp.key-server.io
 testuser의 공개 키로 암호화한 것은 testuser의 개인 키로만 복호화할 수 있으므로
 testuser가 개인 키가 유출되지 않도록 잘 관리한다면 충분히 안전하게 메시지를 주고 받을 수 있게 된 것이다.
 
-### 해지 인증서(Revocation Certificate) 만들기
+## 해지 인증서(Revocation Certificate) 만들기
 
 * 키를 분실했거나 의도치 않게 유출되었다면, 해지 인증서를 만들어 키 서버에 올리는 것이 좋다.
 * 키를 처음 생성했을 때 해지 인증서를 함께 만들어 비밀 키와 함께 오프라인 저장장치에 보관하는 것을 권장.
@@ -246,7 +244,7 @@ $ gpg --output revoke.asc --gen-revoke 키아이디
 이후 키 서버로 들어가 키를 검색해 보면 `revoke`되었다는 표시가 뜨는 것을 확인할 수 있다.
 
 
-## 공개 키 import
+# 공개 키 import
 
 한편, testuser의 친구는 testuser의 공개 키를 가져와 자신의 컴퓨터에 등록하기로 하였다.
 
@@ -270,7 +268,7 @@ uid                  testuser <testuser@___.com>
 sub   2048R/8B52E542 2018-09-10 [expires: 2020-09-09]
 ```
 
-## 암호화
+# 암호화
 
 이제 친구가 testuser에게 암호화된 메시지를 보낸다고 하자.
 
@@ -317,7 +315,7 @@ $ echo 'hello testuser!' | gpg -o to_testuser.txt -ea --recipient testuser
 testuser가 갖고 있는 개인 키가 아니면 복호화가 불가능한(적어도 RSA 2048이 깨지기 전까지는) 안전한 메시지이므로 안심하고 보낼 수 있다.
 
 
-## 복호화
+# 복호화
 
 testuser는 친구가 보낸 파일을 받아 복호화하려 한다.
 
@@ -341,7 +339,7 @@ $ cat decrypted.txt
 hello testuser!
 ```
 
-## 비밀 키 import
+# 비밀 키 import
 
 비밀 키를 등록하는 방법은 간단하다 `--import` 옵션을 사용하면 된다.
 
