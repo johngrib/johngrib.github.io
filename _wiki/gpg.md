@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-13 08:37:21 +0900
+updated : 2018-09-13 08:38:41 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -77,6 +77,51 @@ alias gpg='gpg2'
 ```
 
 
+
+# 새로운 키 생성
+
+* `--gen-key`
+* `--full-generate-key` : MacOS에서는 이 옵션을 쓰지 않으면 몇 가지 질문이 생략되고 기본 값으로 설정된다.
+
+```sh
+$ gpg --gen-key
+```
+
+그러면 몇 가지 문답을 거쳐 키를 생성하게 된다.
+
+* 어떤 암호화 알고리즘을 사용할 것인지?
+* 키의 유효기간은 어떻게 할 것인지?
+    * 주의: 키 유효 기한은 **1년 이하**를 권장.
+    * 불편하더라도 몇 달 주기로 유효 기한을 연장하거나 새로 생성한 키로 교체하는 것이 좋다.
+    * 무기한인 키를 키 서버에 업로드했는데 키를 분실하면 잘못된 키가 영원히 유지될 수도 있다.
+* 사용자의 Real name은?
+* 사용자의 email 주소는?
+
+문답을 완료하고 랜덤 바이트가 생성되면, 다음과 같이 공개 키와 비밀키가 생성되었음을 알려준다.
+
+```
+public and secret key created and signed.
+
+pub   rsa4096 2018-09-10 [SC]
+      4AB3AA77
+uid                      testuser <testuser@___.com>
+sub   rsa2048 2018-09-10 [E]
+```
+
+## 키의 구성
+
+* 하나의 키는 관례적으로 두 개의 서브 키로 구성된다.
+    * 키(primary key) : 서명할 때 쓴다.
+    * 서브 키(sub key) : 암호화/복호화할 때 쓴다.
+
+따라서 `--gen-key`로 키를 생성하면 다음과 같이 4개의 키가 생성되는 셈이다.
+
+* 공개 primary key
+* 공개 sub key
+* 비밀 primary key
+* 비밀 sub key
+
+
 # 키 목록 보기
 
 * `--list-keys`, `-k` : 공개 키 목록을 본다. `--list-public-keys` 옵션과 똑같다.
@@ -134,50 +179,6 @@ ssb   rsa2048 2018-03-14 [E]
 
 * `sec`: 비밀 키.
 * `ssb`: secret sub key.
-
-
-# 새로운 키 생성
-
-* `--gen-key`
-* `--full-generate-key` : MacOS에서는 이 옵션을 쓰지 않으면 몇 가지 질문이 생략되고 기본 값으로 설정된다.
-
-```sh
-$ gpg --gen-key
-```
-
-그러면 몇 가지 문답을 거쳐 키를 생성하게 된다.
-
-* 어떤 암호화 알고리즘을 사용할 것인지?
-* 키의 유효기간은 어떻게 할 것인지?
-    * 주의: 키 유효 기한은 **1년 이하**를 권장.
-    * 불편하더라도 몇 달 주기로 유효 기한을 연장하거나 새로 생성한 키로 교체하는 것이 좋다.
-    * 무기한인 키를 키 서버에 업로드했는데 키를 분실하면 잘못된 키가 영원히 유지될 수도 있다.
-* 사용자의 Real name은?
-* 사용자의 email 주소는?
-
-문답을 완료하고 랜덤 바이트가 생성되면, 다음과 같이 공개 키와 비밀키가 생성되었음을 알려준다.
-
-```
-public and secret key created and signed.
-
-pub   rsa4096 2018-09-10 [SC]
-      4AB3AA77
-uid                      testuser <testuser@___.com>
-sub   rsa2048 2018-09-10 [E]
-```
-
-## 키의 구성
-
-* 하나의 키는 관례적으로 두 개의 서브 키로 구성된다.
-    * 키(primary key) : 서명할 때 쓴다.
-    * 서브 키(sub key) : 암호화/복호화할 때 쓴다.
-
-따라서 `--gen-key`로 키를 생성하면 다음과 같이 4개의 키가 생성되는 셈이다.
-
-* 공개 primary key
-* 공개 sub key
-* 비밀 primary key
-* 비밀 sub key
 
 
 # 공개 키 export
