@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-12 22:38:53 +0900
+updated : 2018-09-12 22:42:12 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -105,7 +105,7 @@ $ gpg --full-generate-key
 
 (여기에서는 사용자로 `testuser`, `testuser@___.com`이라 입력했다.)
 
-문답을 완료하고 랜덤 바이트가 생성되면, 다음과 같이 키가 생성되었음을 알려준다.
+문답을 완료하고 랜덤 바이트가 생성되면, 다음과 같이 공개 키와 비밀키가 생성되었음을 알려준다.
 
 ```
 public and secret key created and signed.
@@ -119,12 +119,12 @@ sub   rsa2048 2018-09-10 [E]
 여기에서 각 항목의 의미는 다음과 같다.
 
 * `pub` : 공개 키(primary).
-* `[SC]` : 이 키는 Sign과 Certificate 용도로 사용한다는 의미.
-* `uid` : user id
+    * `[SC]` : 이 키는 Sign과 Certificate 용도로 사용한다는 의미.
+    * `uid` : user id
 * `sub` : 서브 키.
-* `[E]` : 이 키는 Encryption 용도로 사용한다는 의미.
+    * `[E]` : 이 키는 Encryption 용도로 사용한다는 의미.
 
-즉, 키 하나는 primary key와 sub key로 구성되어 있다.
+즉, 그런데 공개 키와 비밀 키는 각각 primary key와 sub key로 구성되어 있다.
 
 ## 키의 구성
 
