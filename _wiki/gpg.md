@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-12 22:42:12 +0900
+updated : 2018-09-12 22:51:33 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -116,15 +116,30 @@ uid                      testuser <testuser@___.com>
 sub   rsa2048 2018-09-10 [E]
 ```
 
+비밀 키가 잘 생성되었는지 확인하려면 `--list-secret-keys`로 조회하면 된다.
+
+```sh
+$ gpg --list-secret-keys 
+
+~/.gnupg/pubring.kbx
+----------------------------------
+sec   rsa4096 2018-09-10 [SC] [expires: 2019-03-11]
+      81BC466EE11
+uid           [ultimate] testuser <testuser@___.com>
+ssb   rsa4096 2018-09-10 [E]
+```
+
 여기에서 각 항목의 의미는 다음과 같다.
 
 * `pub` : 공개 키(primary).
+* `sec` : 비밀 키(primary).
     * `[SC]` : 이 키는 Sign과 Certificate 용도로 사용한다는 의미.
-    * `uid` : user id
+* `uid` : user id
 * `sub` : 서브 키.
+* `ssb` : 비밀 서브 키(secret sub key).
     * `[E]` : 이 키는 Encryption 용도로 사용한다는 의미.
 
-즉, 그런데 공개 키와 비밀 키는 각각 primary key와 sub key로 구성되어 있다.
+즉 공개 키와 비밀 키는 각각 두 개의 키(primary key, sub key)로 구성되어 있다.
 
 ## 키의 구성
 
