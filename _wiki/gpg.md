@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-12 21:21:40 +0900
+updated : 2018-09-12 22:27:08 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -115,6 +115,32 @@ pub   rsa4096 2018-09-10 [SC]
 uid                      testuser <testuser@___.com>
 sub   rsa2048 2018-09-10 [E]
 ```
+
+여기에서 각 항목의 의미는 다음과 같다.
+
+* `pub` : 공개 키(primary).
+* `[SC]` : 이 키는 Sign과 Certificate 용도로 사용한다는 의미.
+* `uid` : user id
+* `sub` : 서브 키.
+* `[E]` : 이 키는 Encryption 용도로 사용한다는 의미.
+
+즉, 키 하나는 primary key와 sub key로 구성되어 있다.
+
+## 키의 구성
+
+* 하나의 키는 관례적으로 두 개의 서브 키로 구성된다.
+    * 키(top-level key) : 서명할 때 쓴다.
+    * 서브 키(sub key) : 암호화/복호화할 때 쓴다.
+
+참고: top level key는 primary key라고도 부른다.
+
+따라서 `--gen-key`로 키를 생성하면 다음과 같이 4개의 키가 생성되는 셈이다.
+
+* 공개 primary key
+* 공개 sub key
+* 비밀 primary key
+* 비밀 sub key
+
 
 # 키 목록 보기
 
@@ -411,5 +437,7 @@ gpg> save
 
 * [OpenPGP Best Practices (riseup.net)](https://riseup.net/en/security/message-security/openpgp/gpg-best-practices )
 * [CREATING THE PERFECT GPG KEYPAIR (alexcabal.com)](https://alexcabal.com/creating-the-perfect-gpg-keypair/ )
+* [RFC 4880 - OpenPGP Message Format 5.5](https://tools.ietf.org/html/rfc4880#section-5.5 )
+* <https://wiki.debian.org/Subkeys >
 
 
