@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-13 08:38:41 +0900
+updated : 2018-09-13 08:41:54 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -66,16 +66,7 @@ $ brew install gnupg
 
 # 버전 확인
 
-```sh
-$ gpg --version
-```
-
-`gpg2`가 깔려 있다면 사용의 통일성을 위해 다음과 같이 `alias`를 지정하는 것도 방법이다.
-
-```sh
-alias gpg='gpg2'
-```
-
+* `--version`
 
 
 # 새로운 키 생성
