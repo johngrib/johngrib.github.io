@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-13 09:05:52 +0900
+updated : 2018-09-13 09:11:42 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -325,15 +325,20 @@ gpg> save
 
 # 암호화
 
-이제 친구가 testuser에게 암호화된 메시지를 보낸다고 하자.
+* 필수
+    * `--encrypt`, `-e`: 암호화.
+    * `--recipient`, `-r`: 누구의 공개 키를 사용해 암호화할 것인지를 지정한다.
+* 선택
+    * `--armor`, `-a`: ASCII 문자를 사용해 출력한다.
+    * `--output`, `-o`: 출력 파일명을 지정한다.
 
-암호화할 때에는 `--encrypt` 옵션을 주면 된다.
+친구가 testuser에게 암호화된 메시지를 보낸다고 하자.
 
 ```sh
 $ echo 'hello testuser!' | gpg --encrypt --armor --recipient testuser
 ```
 
-또는 다음과 같이 `--encrypt`와 `--armor`를 축약한 `-ea` 옵션을 사용해도 된다.
+축약 옵션을 사용해도 된다.
 
 ```sh
 $ echo 'hello testuser!' | gpg -ea --recipient testuser
@@ -359,7 +364,7 @@ B65GoPB9OoB/A7tk
 $ echo 'hello testuser!' | gpg -ea --recipient testuser > to_testuser.txt
 ```
 
-또는 `--output 파일명` 옵션을 사용해도 된다. `-o`로도 쓸 수 있다.
+또는 `--output` 옵션을 사용해도 된다. `-o`로도 쓸 수 있다.
 
 ```sh
 $ echo 'hello testuser!' | gpg -o to_testuser.txt -ea --recipient testuser
