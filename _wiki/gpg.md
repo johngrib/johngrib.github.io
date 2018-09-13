@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-13 12:18:46 +0900
+updated : 2018-09-13 15:57:35 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -98,6 +98,9 @@ pub   rsa4096 2018-09-10 [SC]
 uid                      testuser <testuser@___.com>
 sub   rsa2048 2018-09-10 [E]
 ```
+
+* 주의
+    * 스마트 카드를 사용하는 경우, 스마트카드에서 지원하는 암호화 알고리즘을 먼저 조사하는 것이 좋다.
 
 ## 키의 구성
 
