@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-13 10:28:20 +0900
+updated : 2018-09-13 12:18:46 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -438,6 +438,181 @@ ssb  rsa4096/....
 gpg> save
 ```
 
+# 서명
+
+* 비밀 키를 사용해 암호화하는 것을 서명이라 한다.
+* 서명은 공개 키로 복호화할 수 있다.
+
+비밀 키를 사용해 메시지를 암호화하는 것을 서명이라 한다.
+
+서명을 통해 다음의 이득을 얻을 수 있다.
+
+* Authentication(인증): 개인 키의 소유자가 해당 메시지를 암호화했음을 인증할 수 있다.
+* Integrity(손상 없음): 메시지가 서명된 이후 누군가에 의해 변경/조작되었는지 여부를 알 수 있다.
+* Non-repudiation(부인 방지): 서명 사실을 증명하는 증거가 될 수 있다.
+
+공개 키를 가진 사람이라면 누구나 서명을 확인할 수 있으므로 다양한 분야에서 폭넓게 쓰인다.
+
+## 서명 검증하기
+
+* `--verify`
+
+```sh
+$ gpg --verify test.asc 
+
+gpg: Signature made Thu 13 Sep 2018 01:37:42 AM UTC using RSA key ID BC80D990
+gpg: Good signature from "lee <lee@gpgtest.com>"
+Primary key fingerprint: C80B C466
+```
+
+## 서명하기
+
+* `--sign`, `-s`: 비밀 키를 사용해 전자 서명을 할 수 있다.
+
+```sh
+$ cat msg.txt
+
+345-2346-3345 계좌에서 100만원을 인출해 234-3456-456-123 계좌로 입금하세요.
+
+$ # 서명한다
+$ gpg --sign --armor msg.txt
+
+$ cat msg.txt.asc
+-----BEGIN PGP MESSAGE-----
+
+owEBYwKc/ZANAwAIASGDG1S8gNmQAawcYgloZWxsby50eHRbmcfmaGVsbG8gd29y
+bGQhCokCMwQAAQgAHRYhBHheS3jFxseLxGnukCGDG1S8gNmQBQJbmcfmAAoJECGD
+G1S8gNmQbI0P/3yr5hO445dEfUO8r+r4pdJHxSy0aScvPcjs1F8PMc+plK3XHWD4
++13v8I30ipyq2KuGbA3cJnBy3MUT2msJKvgEuWmI6YQcZtTiyHwPQa+zA9zw8egu8
+RRL/6hQubRASn6NRU06h7/r9vVETv4N7q7TGrltBsodfxe8Zx7LhBkrGXYd7KIGZ
+3DhbG9cSP4N1pybLfCmvO0+nCgAnGBoFeSX4Mu6Z5B7kjUC5UyBo5/xgxZlgry/o
+0lgX01Bd9wMNU2FyX5ZZgajfTP+kQQnAMOrgnzq1ry3yL34F3gSLNimJMXhRUboP
+jo+IOBbno42X//GwNQbOkNoH03aAEZRpVZw5xp9koUtm1uFkPvHorn8YeWCs0VAL
+wMIwkY2e19XeEsPI8p3gNt4+Pu/ir2eZ6FR6QXgMxTMLSX5zRo1Mg4HdZHKsDDJO
+eS6Gcdn+5kILKNClmXifNbXfkPdalaazpGeSHDvOunyYFoftwhMvn9jeyuv68LO1
+jvXkJjIJR+E/zCY4HlSGhw5ajLcLQ6X8oI0k3OUa/WflB+wIDWsISfoeJpnwIKw+
+keSwyUMXlv68CmmO89W7FJN5JoytRnRS3hBtZMK3gFH/DsWUmgDWXJHC
+=cnAL
+-----END PGP MESSAGE-----
+```
+
+서명한 파일을 받는 쪽(공개 키를 갖고 있는 쪽)에서는 다음과 같이 복호화하여 메시지를 읽어볼 수 있다.
+
+```sh
+$ gpg -d test.asc 
+
+345-2346-3345 계좌에서 100만원을 인출해 234-3456-456-123 계좌로 입금하세요.
+
+gpg: Signature made Thu 13 Sep 2018 01:37:42 AM UTC using RSA key ID BC80D990
+gpg: Good signature from "lee <lee@gpgtest.com>"
+Primary key fingerprint: 5B79 C4C7 ...
+```
+
+일부러 심각한 예제 메시지를 선택했다. 메시지의 내용이 중요할수록 서명도 중요하기 때문이다.
+
+내가 나의 비밀 키를 통해 위의 메시지를 서명했다면, 내 공개 키를 갖고 있는 은행의 어느 지점에서 메시지를 받아도
+
+* 내 메시지를 복호화해서 볼 수 있다.
+* 보낸 사람이 나라는 사실도 확인할 수 있다.
+* 만약 누군가 메시지를 가로채 입금 계좌번호를 변경해도 변조된 메시지라는 사실을 알아챌 수 있다.
+
+서명한 파일을 수정하고 `--verify`로 검사해보면 문제가 있고 인증이 안된다는 출력을 볼 수 있다.
+
+## 원문을 보존하며 서명하기
+
+* `--clear-sign`, `--clearsign`
+
+```sh
+$ gpg --clearsign msg.txt
+
+$ cat msg.txt.asc 
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+선거 공약대로 345-2346-3345 계좌에서 100만원을 인출해 234-3456-456-123 계좌로 입금하세요.
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEeF5LeMXGx4vEae6QIYMbVLyA2ZAFAluZzXIACgkQIYMbVLyA
+4ZAo+Q//Xk/42INpTo7olUhJsfUcnOiCCxaNf9Ee0qjwYYn6h1GWH0CpfSQIVOQA
+ZJq9S/EzCZ8fhATAz75sNyQgHaiKnbYfSD4qAhil3KlKU8A7XJ8630gWrSuk9QQ+
+DozglD6HJ1mmgfCvz/gMlbgC8Unt4AD8UPoGgh254F5Z5JkJBACikFm0BNn6OUtt
+oXj2CmlJNhPHJiFyoJyVnaZtyVMiL0d+Kl1SuzXMuRjTtJNEfXBeYEiDrEERWIhY
+YI7zVXnW4TojRp+IoK8cyWxVgCeALcN0gG3X0pkIPQerAEcRIYna1Kt/J2Ta23nx
+P8DfRZhfdiKwW1Z68yNBxCCtOzZRomW5S20uqP5J8XdYVkDR/vby6OPKX0DIrcaO
+BsDqgjvUtKLI4fctzCASHNXGOIV+EhWO2wJ4FRxFH/h58V99z+to/xEXy5xJA6CS
+peq33banFmFCX8W5Jgw1QX0lIMGtiYyv4YqOTRo4XA+iym6K2nPYoKalN/Dn/rmJ
+SZh3mngkFrcgADl0TkHcGi5z8S+fOl7TOpsmyKl0hQQgNy/6kEo=
+=ekDW
+-----END PGP SIGNATURE-----
+```
+
+* 서명된 파일을 읽어 보면 위와 같이 원본 메시지가 위쪽에 함께 들어가 있음을 알 수 있다.
+* 원본 메시지를 읽어볼 수 있기 때문에 공개 키가 없는 사람에게 보여도 상관 없거나 보여줘야 하는 메시지를 서명할 수 있다.
+
+원본 메시지만을 읽어보고 싶다면 다음과 같이 복호화하면 된다.
+
+```sh
+$ gpg -d msg.txt.asc 
+선거 공약대로 345-2346-3345 계좌에서 100만원을 인출해 234-3456-456-123 계좌로 입금하세요.
+gpg: Signature made 목  9/13 11:37:38 2018 KST
+gpg:                using RSA key 9EE92
+gpg: Good signature from "lee <lee@gpgtest.com>"
+```
+
+그렇다면 수록된 원본 메시지를 수정해보면 어떨까?
+
+(`100만원`을 `100원`으로 바꿔 보았다.)
+
+```sh
+$ gpg -d msg.txt.asc 
+
+선거 공약대로 345-2346-3345 계좌에서 100원을 인출해 234-3456-456-123 계좌로 입금하세요.
+
+gpg: Signature made 목  9/13 11:37:38 2018 KST
+gpg:                using RSA key 69EE904
+gpg: BAD signature from "lee <lee@gpgtest.com>"
+
+$ gpg --verify hello.txt.asc 
+
+gpg: Signature made 목  9/13 11:37:38 2018 KST
+gpg:                using RSA key 69EE904
+gpg: BAD signature from "lee <lee@gpgtest.com>"
+```
+
+그러면 `-d`로 복호화해도, `--verify`로 검증해도 `BAD signature`라는 출력이 나온다.
+
+## 원문 파일과 따로 서명하기
+
+* `--detach-sign`, `-b`: 원문과 분리된 서명 파일을 생성한다.
+
+원본 파일의 용량이 크다면 서명 파일을 따로 생성해서 함께 보내주는 방법도 있다.
+
+gpg로 서명 파일과 원본 파일을 함께 검사해보는 방식으로 메시지의 변조 여부를 알 수 있다.
+
+```sh
+$ gpg --detach-sign -a msg.txt 
+```
+
+검증은 다음과 같이 할 수 있다.
+
+```sh
+# gpg --verify 서명파일 원본파일
+$ gpg --verify msg.txt.asc msg.txt
+gpg: Signature made 목  9/13 11:58:29 2018 KST
+gpg:                using RSA key EE91
+gpg: Good signature from "lee <lee@gpgtest.com>"
+```
+
+만약 메시지가 변경되었다면 다음과 같이 `BAD signature`가 출력된다.
+
+```sh
+$ gpg --verify msg.txt.asc msg.txt
+gpg: Signature made 목  9/13 11:58:29 2018 KST
+gpg:                using RSA key EE91
+gpg: BAD signature from "lee <lee@gpgtest.com>"
+```
+
 # Links
 
 * [RFC 4880 - OpenPGP Message Format 5.5](https://tools.ietf.org/html/rfc4880#section-5.5 )
@@ -458,5 +633,6 @@ gpg> save
     * [OpenPGP Best Practices (riseup.net)](https://riseup.net/en/security/message-security/openpgp/gpg-best-practices )
     * [GnuPG 리눅스에서 안전하게 통신하기](http://www.linuxlab.co.kr/docs/01-01-3.htm )
     * [CREATING THE PERFECT GPG KEYPAIR (alexcabal.com)](https://alexcabal.com/creating-the-perfect-gpg-keypair/ )
+    * [How to gpg sign a file without encryption](https://access.redhat.com/solutions/1541303 )
 
 
