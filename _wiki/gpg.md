@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-13 09:11:42 +0900
+updated : 2018-09-13 10:28:20 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -440,18 +440,23 @@ gpg> save
 
 # Links
 
+* [RFC 4880 - OpenPGP Message Format 5.5](https://tools.ietf.org/html/rfc4880#section-5.5 )
 * [gnupg.org](https://www.gnupg.org/index.html )
-* [Getting Started with Gnu Privacy Guard](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Step_by_Step_Guide/ch-gnupg.html )
+* [pgp.key-server.io](https://pgp.key-server.io/ )
 * [RSA(cryptosystem) (wikipedia)](https://en.wikipedia.org/wiki/RSA_(cryptosystem) )
     * [RSA 암호(wikipedia)](https://ko.wikipedia.org/wiki/RSA_%EC%95%94%ED%98%B8 )
-* [pgp.key-server.io](https://pgp.key-server.io/ )
-* [The comp.security.pgp FAQ (www.pgp.net)](http://www.pgp.net/pgpnet/pgp-faq/pgp-faq.html )
-    * [Security Questions (www.pgp.net)](http://www.pgp.net/pgpnet/pgp-faq/pgp-faq-security-questions.html )
-* [GnuPG 리눅스에서 안전하게 통신하기](http://www.linuxlab.co.kr/docs/01-01-3.htm )
-
-* [OpenPGP Best Practices (riseup.net)](https://riseup.net/en/security/message-security/openpgp/gpg-best-practices )
-* [CREATING THE PERFECT GPG KEYPAIR (alexcabal.com)](https://alexcabal.com/creating-the-perfect-gpg-keypair/ )
-* [RFC 4880 - OpenPGP Message Format 5.5](https://tools.ietf.org/html/rfc4880#section-5.5 )
+* [Digital signature(wikipedia)](https://en.wikipedia.org/wiki/Digital_signature )
+    * [디지털 서명(wikipedia)](https://ko.wikipedia.org/wiki/%EB%94%94%EC%A7%80%ED%84%B8_%EC%84%9C%EB%AA%85 )
 * <https://wiki.debian.org/Subkeys >
+
+---
+
+* 사용법 및 주의점
+    * [The comp.security.pgp FAQ (www.pgp.net)](http://www.pgp.net/pgpnet/pgp-faq/pgp-faq.html )
+    * [Security Questions (www.pgp.net)](http://www.pgp.net/pgpnet/pgp-faq/pgp-faq-security-questions.html )
+    * [Getting Started with Gnu Privacy Guard](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Step_by_Step_Guide/ch-gnupg.html )
+    * [OpenPGP Best Practices (riseup.net)](https://riseup.net/en/security/message-security/openpgp/gpg-best-practices )
+    * [GnuPG 리눅스에서 안전하게 통신하기](http://www.linuxlab.co.kr/docs/01-01-3.htm )
+    * [CREATING THE PERFECT GPG KEYPAIR (alexcabal.com)](https://alexcabal.com/creating-the-perfect-gpg-keypair/ )
 
 
