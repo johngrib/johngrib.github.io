@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-13 08:57:14 +0900
+updated : 2018-09-13 09:05:52 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -288,7 +288,7 @@ $ gpg --output revoke.asc --gen-revoke 키아이디
 
 # 공개 키 import
 
-한편, testuser의 친구는 testuser의 공개 키를 가져와 자신의 컴퓨터에 등록하기로 하였다.
+testuser의 친구가 testuser의 공개 키를 가져와 자신의 컴퓨터에 등록하는 상황이라 하자.
 
 공개 키 파일을 준비한 다음, 다음과 같이 `--import` 옵션을 사용하면 된다.
 
@@ -299,15 +299,28 @@ gpg: Total number processed: 1
 gpg:               imported: 1  (RSA: 1)
 ```
 
-`--list-public-keys`로 등록된 키 목록을 보면 testuser의 공개 키가 등록되어 있음을 알 수 있다.
+# 비밀 키 import
+
+`--import` 옵션을 사용하면 된다.
 
 ```sh
-$ gpg --list-public-keys
-~/.gnupg/pubring.gpg
---------------------------------
-pub   2048R/D0F7FE73 2018-09-10 [expires: 2020-09-09]
-uid                  testuser <testuser@___.com>
-sub   2048R/8B52E542 2018-09-10 [expires: 2020-09-09]
+$ gpg --import 비밀키파일
+```
+
+# 비밀 키 비밀번호 변경
+
+비밀 키의 비밀번호는 `--edit-key` 옵션으로 변경할 수 있다.
+
+`gpg>` 프롬프트가 나타났을 때 `passwd`를 입력하면 기존 비밀번호/신규 비밀번호를 물어본다.
+
+물어보는 대로 입력하고 `save`를 치면 변경 절차가 완료된다.
+
+```sh
+$ gpg --edit-key 비밀키아이디
+
+gpg> passwd
+
+gpg> save
 ```
 
 # 암호화
@@ -379,26 +392,6 @@ $ gpg -o decrypted.txt --decrypt testmsg.txt
 $ cat decrypted.txt
 
 hello testuser!
-```
-
-# 비밀 키 import
-
-비밀 키를 등록하는 방법은 간단하다 `--import` 옵션을 사용하면 된다.
-
-```sh
-$ gpg --import 비밀키파일
-```
-
-한편 비밀 키의 비밀번호는 다음과 같이 `--edit-key` 옵션으로 변경할 수 있다.
-
-그러면 `gpg>`라는 프롬프트가 나타나는데 `passwd`를 입력하면 기존 비밀번호/신규 비밀번호를 물어본다.
-
-이후 `save`를 입력하면 변경 절차가 완료된다.
-
-```sh
-$ gpg --edit-key 비밀키아이디
-gpg> passwd
-gpg> save
 ```
 
 # 유효 기한 관리
