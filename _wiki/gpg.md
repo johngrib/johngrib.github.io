@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-14 10:18:09 +0900
+updated : 2018-09-14 10:31:01 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -115,6 +115,17 @@ sub   rsa2048 2018-09-10 [E]
 * 비밀 primary key
 * 비밀 sub key
 
+## 문제 해결: random byte 생성 과정에서 다음으로 넘어가지 못하는 경우
+
+* Linux에서 `--gen-key`로 새로운 키를 생성하는 도중 발생 가능한 문제.
+* random byte 생성 과정에서 터무니 없이 오래 걸리거나, 멈춰 버리는 경우가 있다.
+    * vagrant나 docker 에서도 발생한다. 디바이스로 수집하는 엔트로피를 충분히 수집하지 못해 발생하는 문제인듯.
+
+다음과 같이 `urandom`을 사용하게 해주면 문제가 해결된다.
+
+```sh
+$ sudo apt-get install -y rng-tools && sudo rngd -r /dev/urandom
+```
 
 # 키 목록 보기
 
@@ -687,4 +698,10 @@ sub   rsa2048 2018-09-13 [E] [expires: 2019-09-13]
     * [CREATING THE PERFECT GPG KEYPAIR (alexcabal.com)](https://alexcabal.com/creating-the-perfect-gpg-keypair/ )
     * [How to gpg sign a file without encryption](https://access.redhat.com/solutions/1541303 )
 
+---
 
+* random byte 문제 해결
+    * [GPG does not have enough entropy](https://serverfault.com/a/214620 )
+    * [How to Generate Enough 'Entropy' for GPG Key Generation Process on Fedora Linux](https://it.toolbox.com/blogs/edmonbegoli/how-to-generate-enough-entropy-for-gpg-key-generation-process-on-fedora-linux-041410 )
+    * [(Linux) random number generators](http://egloos.zum.com/studyfoss/v/5168232 )
+    * [docker에서 GnuPG 키 생성 문제 해결과 파일 암호화/복호화 하기](http://blog.saltfactory.net/generate-gpg-key-inside-docker/ )
