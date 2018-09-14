@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-13 15:57:35 +0900
+updated : 2018-09-14 10:18:09 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -615,6 +615,55 @@ gpg: Signature made 목  9/13 11:58:29 2018 KST
 gpg:                using RSA key EE91
 gpg: BAD signature from "lee <lee@gpgtest.com>"
 ```
+
+## 타인의 공개 키에 서명하기
+
+* `--sign-key`: 타인의 공개 키에 나의 서명을 덧붙여 TRUST VALUE를 상향시킬 수 있다.
+    * 대면하며 함께 일하는 신원이 분명한 직장 동료나, 친한 친구 등의 공개 키에만 서명하도록 한다.
+    * 타인의 공개 키 신뢰성을 내 아이디, 이름, 이메일을 걸고 보증하는 것이므로 신중히 결정하도록 한다.
+
+```sh
+$ gpg --sign-key myfriend
+
+pub  rsa2048/81D89
+     created: 2018-09-13  expires: 2019-09-13  usage: SC  
+     trust: unknown       validity: unknown
+sub  rsa2048/CB3A1
+     created: 2018-09-13  expires: 2019-09-13  usage: E   
+[ unknown] (1). myfriend <myfriend@gpgtest.com>
+
+pub  rsa2048/81D89
+     created: 2018-09-13  expires: 2019-09-13  usage: SC  
+     trust: unknown       validity: unknown
+ Primary key fingerprint: F6BE E0DF F81D 89FF
+
+     myfriend <myfriend@gpgtest.com>
+
+This key is due to expire on 2019-09-13.
+Are you sure that you want to sign this key with your
+key "lee <lee@gpgtest.com>" (54B90)
+
+Really sign? (y/N) y
+```
+
+이후 공개 키 목록을 다시 조회해 보면, `unknown`이었던 myfriend의 TRUST VALUE가 `full`로 올라갔음을 확인할 수 있다.
+
+```sh
+$ gpg -k
+~/.gnupg/pubring.kbx
+----------------------------------
+pub   rsa4096 2018-09-10 [SC] [expires: 2019-03-11]
+      81D89
+uid           [ultimate] lee <lee@gpgtest.com>
+sub   rsa4096 2018-09-10 [E]
+
+pub   rsa2048 2018-09-13 [SC] [expires: 2019-09-13]
+      FF3002
+uid           [  full  ] myfriend <myfriend@gpgtest.com>
+sub   rsa2048 2018-09-13 [E] [expires: 2019-09-13]
+```
+
+
 
 # Links
 
