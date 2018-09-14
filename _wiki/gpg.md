@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-14 10:31:01 +0900
+updated : 2018-09-14 14:47:14 +0900
 tags    : bash, 암호화, GNU
 toc     : true
 public  : true
@@ -49,6 +49,7 @@ GnuPG : GNU Privacy Guard. GPG 라고도 한다.
     * 가족이나 연인에게도 복사해주지 마세요.
 * export한 비밀 키를 모니터로 볼 때, 주위를 살펴 cctv나 비밀 카메라 또는 창문이 없는지 확인하세요.
 
+# help
 
 # install
 
@@ -125,6 +126,17 @@ sub   rsa2048 2018-09-10 [E]
 
 ```sh
 $ sudo apt-get install -y rng-tools && sudo rngd -r /dev/urandom
+```
+
+## 해지 인증서(Revocation Certificate) 만들기
+
+* 새로운 키를 생성했다면 키를 분실했거나 의도치 않게 유출되었을 때를 대비해 해지 인증서를 만들어 두어야 한다.
+* 비밀 키와 함께 오프라인 저장장치에 보관하는 것을 권장.
+
+해지 인증서는 `--gen-revoke` 옵션으로 만들 수 있다.
+
+```sh
+$ gpg --output revoke.asc --gen-revoke 키아이디
 ```
 
 # 키 목록 보기
@@ -284,18 +296,12 @@ gpg: sending key 21831..... to hkp://pgp.key-server.io
 키 서버에서 내 아이디나 이메일을 검색해 공개 키를 얻어, 메시지를 암호화해 나한테 보내줄 수 있다.
 
 
-## 해지 인증서(Revocation Certificate) 만들기
+## 해지 인증서(Revocation Certificate) 사용하기
 
-* 키를 분실했거나 의도치 않게 유출되었다면, 해지 인증서를 만들어 키 서버에 올리는 것이 좋다.
-* 키를 처음 생성했을 때 해지 인증서를 함께 만들어 비밀 키와 함께 오프라인 저장장치에 보관하는 것을 권장.
+* 키를 분실했거나 의도치 않게 유출되었다면, 해지 인증서를 키 서버에 올려야 한다.
+    * 해지 인증서를 올리면 내 비밀 키는 유출되었으므로 신뢰할 수 없다고 세상에 알리는 것과 같다.
 
-해지 인증서는 `--gen-revoke` 옵션으로 만들 수 있다.
-
-```sh
-$ gpg --output revoke.asc --gen-revoke 키아이디
-```
-
-해지 인증서를 `--import` 한 다음, 키 서버로 전송하면 된다.
+미리 만들어 둔 해지 인증서를 `--import` 한 다음, 키 서버로 전송하면 된다.
 
 이후 키 서버로 들어가 키를 검색해 보면 `revoke`되었다는 표시가 뜨는 것을 확인할 수 있다.
 
