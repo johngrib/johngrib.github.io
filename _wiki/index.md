@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-09-10 14:24:04 +0900
+updated : 2018-09-14 16:38:04 +0900
 tags    : index
 toc     : true
 public  : true
@@ -188,6 +188,7 @@ comment : false
     * [[vim-conceallevel]]{conceallevel (Vim)}
     * [[vim-f-hangul]]
     * [[vim-rest-console]]
+    * [[vim-tagbar-with-markdown]]
     * [[vim-tmux-t-ut]]
     * [[vim-ycm-python3]]
     * [[vimwiki]]

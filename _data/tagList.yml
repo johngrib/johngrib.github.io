@@ -15,7 +15,7 @@
 - 소수
 - 소트웍스-앤솔러지
 - 스크랩
-- '암호화,'
+- 암호화
 - 장인정신
 - 추정
 - 프로그래밍-심리학
@@ -30,7 +30,6 @@
 - AWS
 - aws
 - bash
-- 'bash,'
 - bayes
 - Bill-Atkinson
 - block-chain
@@ -106,6 +105,7 @@
 - lua
 - mac
 - map
+- markdown
 - Martin-Fowler
 - math
 - media
@@ -139,6 +139,7 @@
 - story
 - study
 - style
+- tagbar
 - telegram
 - terminal
 - Think-Bayes
@@ -151,14 +152,14 @@
 - tools
 - trouble-shooting
 - twitter
-- 'ultisnips,'
+- ultisnips
 - Uncle-Bob
 - uri
 - url
 - vim
 - vimwiki
-- von-neumann
 - Von-Neumann
+- von-neumann
 - web
 - what
 - why
