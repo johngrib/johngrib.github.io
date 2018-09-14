@@ -3,8 +3,8 @@ layout  : wiki
 title   : grep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2018-08-31 13:16:01 +0900
-tags    : bash, 검색
+updated : 2018-09-14 17:06:32 +0900
+tags    : bash 검색
 toc     : true
 public  : true
 parent  : command-line

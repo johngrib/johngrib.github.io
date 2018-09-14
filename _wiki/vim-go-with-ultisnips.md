@@ -3,8 +3,8 @@ layout  : wiki
 title   : Ultisnips와 vim-go를 같이 사용할 때 발생하는 E734 에러 해결
 summary : += 는 list 타입에만 쓰자
 date    : 2018-08-23 23:14:09 +0900
-updated : 2018-08-24 09:55:32 +0900
-tags    : ultisnips, go
+updated : 2018-09-14 17:06:40 +0900
+tags    : ultisnips go
 toc     : true
 public  : true
 parent  : Vim
