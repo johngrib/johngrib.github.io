@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-09-14 16:38:04 +0900
+updated : 2018-09-18 17:20:39 +0900
 tags    : index
 toc     : true
 public  : true
@@ -88,6 +88,7 @@ comment : false
     * [[static-factory-method-pattern]]
 * [[problem]]
 * [[programming-language]]{프로그래밍 언어}
+    * [[Golang]]
     * [[Groovy]]
     * [[Java]]
         * [[java8]]
@@ -142,6 +143,11 @@ comment : false
         * [[Monty-Hall-problem]]
         * [[Oliver-s-blood]]
 * [[tools]]
+    * [[aws]]
+        * [[Amazon-Route-53]]
+        * [[AWS-Auto-Scaling]]
+        * [[billing-aws]]
+        * [[Elastic-Load-Balancing]]
     * [[command-line]]
         * [[brew]]
         * [[date]]
@@ -153,10 +159,16 @@ comment : false
         * [[grep]]
         * [[history]]
         * [[java_home]]
+        * [[openssl]]
         * [[sha256sum]]
         * [[sort]]
         * [[top]]
         * [[uptime]]
+        * [[yes-command]]
+    * [[Excel]]
+        * [[excel-sumifs]]
+        * [[excel-transpos]]
+        * [[excel-vba-setting]]
     * [[Gradle]]
     * [[hhkb-jp-tmk]]
     * [[mac-apps]]
@@ -180,25 +192,28 @@ comment : false
     * [[web-browser-extension]]
         * [[vimium]]
 * [[til]]
-    * [[excel-sumifs]]
     * [[git-checkout-specific-files]]
     * [[trouble-shooting-node-7-install]]
+    * [[vagrant-docker-get-start]]
 * [[Vim]]
     * [[my-wiki]]
     * [[vim-conceallevel]]{conceallevel (Vim)}
     * [[vim-f-hangul]]
+    * [[vim-go-auto-import]]
+    * [[vim-go-with-ultisnips]]
+    * [[vim-persistent-undo]]
     * [[vim-rest-console]]
     * [[vim-tagbar-with-markdown]]
     * [[vim-tmux-t-ut]]
     * [[vim-ycm-python3]]
     * [[vimwiki]]
-    * [[vim-go-with-ultisnips]]
 * [[what]]
     * [[Continuous-Integration]]
     * [[braille-pattern-chars]]
     * [[groupId-artifactId]]
     * [[http-message]]
     * [[RFC]]
+    * [[rouge-supported-languages]]
     * [[special-chars]]
     * [[Unix-philosophy]]
     * [[URI]]

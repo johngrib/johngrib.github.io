@@ -326,6 +326,30 @@ ALPHAGO:
     url: /wiki/ALPHAGO
     updated: '2018-02-02 21:39:05 +0900'
     children: []
+Amazon-Route-53:
+    type: wiki
+    title: 'Amazon Route 53'
+    summary: ""
+    parent: aws
+    url: /wiki/Amazon-Route-53
+    updated: '2018-09-16 22:06:15 +0900'
+    children: []
+aws:
+    type: wiki
+    title: AWS
+    summary: 'Amazon Web Services 관련'
+    parent: tools
+    url: /wiki/aws
+    updated: '2018-09-16 09:35:54 +0900'
+    children: [Amazon-Route-53, AWS-Auto-Scaling, billing-aws, Elastic-Load-Balancing]
+AWS-Auto-Scaling:
+    type: wiki
+    title: 'AWS Auto Scaling'
+    summary: ""
+    parent: aws
+    url: /wiki/AWS-Auto-Scaling
+    updated: '2018-09-16 22:06:33 +0900'
+    children: []
 Bayes-theorem:
     type: wiki
     title: '베이즈 정리(Bayes'' theorem)'
@@ -349,6 +373,14 @@ Bill-Atkinson-productivity:
     parent: legend
     url: /wiki/Bill-Atkinson-productivity
     updated: '2018-02-08 12:08:52 +0900'
+    children: []
+billing-aws:
+    type: wiki
+    title: 'AWS 요금'
+    summary: '가랑비에 옷이 젖지 않도록 하자'
+    parent: aws
+    url: /wiki/billing-aws
+    updated: '2018-09-17 10:13:03 +0900'
     children: []
 book:
     type: wiki
@@ -557,7 +589,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [brew, date, df, du, fc, fish-shell, gpg, grep, history, java_home, sha256sum, sort, top, uptime]
+    children: [brew, date, df, du, fc, fish-shell, gpg, grep, history, java_home, openssl, sha256sum, sort, top, uptime, yes-command]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -766,6 +798,14 @@ Effective-Java:
     url: /wiki/Effective-Java
     updated: '2018-03-11 14:10:23 +0900'
     children: []
+Elastic-Load-Balancing:
+    type: wiki
+    title: 'AWS ELB - Elastic Load Balancing'
+    summary: 'AWS 로드 밸런서'
+    parent: aws
+    url: /wiki/Elastic-Load-Balancing
+    updated: '2018-09-16 22:06:25 +0900'
+    children: []
 euro-problem:
     type: wiki
     title: '유로 문제(euro problem)'
@@ -774,13 +814,37 @@ euro-problem:
     url: /wiki/euro-problem
     updated: '2018-04-24 20:49:06 +0900'
     children: []
+Excel:
+    type: wiki
+    title: Excel
+    summary: ""
+    parent: tools
+    url: /wiki/Excel
+    updated: '2018-09-17 11:13:03 +0900'
+    children: [excel-sumifs, excel-transpos, excel-vba-setting]
 excel-sumifs:
     type: wiki
-    title: '(Excel) SUMIFS 함수 사용법'
+    title: 'SUMIFS 함수 사용법'
     summary: '조건에 맞는 값의 sum 값을 구한다'
-    parent: til
+    parent: Excel
     url: /wiki/excel-sumifs
-    updated: '2018-04-26 21:10:37 +0900'
+    updated: '2018-09-17 11:13:38 +0900'
+    children: []
+excel-transpos:
+    type: wiki
+    title: 'Excel 행과 열 바꾸는 방법'
+    summary: ""
+    parent: Excel
+    url: /wiki/excel-transpos
+    updated: '2018-09-17 13:49:55 +0900'
+    children: []
+excel-vba-setting:
+    type: wiki
+    title: 'Excel VBA 셋팅하기'
+    summary: ""
+    parent: Excel
+    url: /wiki/excel-vba-setting
+    updated: '2018-09-17 12:50:46 +0900'
     children: []
 fc:
     type: wiki
@@ -845,6 +909,14 @@ GoF-Design-Pattern:
     parent: book
     url: /wiki/GoF-Design-Pattern
     updated: '2018-02-12 08:51:18 +0900'
+    children: []
+Golang:
+    type: wiki
+    title: Go
+    summary: 'Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.'
+    parent: programming-language
+    url: /wiki/Golang
+    updated: '2018-09-18 17:21:01 +0900'
     children: []
 google-search-console-remove-outdated-content:
     type: wiki
@@ -1028,7 +1100,7 @@ http-message:
     summary: null
     parent: what
     url: /wiki/http-message
-    updated: '2018-04-04 09:06:37 +0900'
+    updated: '2018-09-16 16:12:32 +0900'
     children: []
 HTTP-no-Kyokasho:
     type: wiki
@@ -1060,7 +1132,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-09-14 16:38:04 +0900'
+    updated: '2018-09-18 17:20:39 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1156,7 +1228,7 @@ links-2018:
     summary: ""
     parent: links
     url: /wiki/links-2018
-    updated: '2018-07-30 23:03:24 +0900'
+    updated: '2018-09-14 22:54:00 +0900'
     children: []
 locomotive-problem:
     type: wiki
@@ -1302,6 +1374,14 @@ Oliver-s-blood:
     url: /wiki/Oliver-s-blood
     updated: '2018-04-24 20:49:44 +0900'
     children: []
+openssl:
+    type: wiki
+    title: 'openssl 명령어'
+    summary: 'cryptography toolkit'
+    parent: command-line
+    url: /wiki/openssl
+    updated: '2018-09-14 23:37:18 +0900'
+    children: []
 orange-juice-test:
     type: wiki
     title: '오렌지 주스 테스트'
@@ -1357,7 +1437,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [groovy, Java, Python3, yaml]
+    children: [Golang, groovy, Java, Python3, yaml]
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -1404,7 +1484,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-09-09 18:34:08 +0900'
+    updated: '2018-09-16 23:25:06 +0900'
     children: []
 RFC:
     type: wiki
@@ -1413,6 +1493,14 @@ RFC:
     parent: what
     url: /wiki/RFC
     updated: '2018-04-04 09:06:15 +0900'
+    children: []
+rouge-supported-languages:
+    type: wiki
+    title: 'Rouge가 지원하는 언어 목록'
+    summary: 'Github Jekyll의 syntax highlight용 언어 키워드 모음'
+    parent: what
+    url: /wiki/rouge-supported-languages
+    updated: '2018-09-17 23:51:26 +0900'
     children: []
 rule-of-succession:
     type: wiki
@@ -1500,7 +1588,7 @@ special-chars:
     summary: '특수문자 검색하다 빡쳐서 작성한 문서'
     parent: what
     url: /wiki/special-chars
-    updated: '2018-04-12 21:02:50 +0900'
+    updated: '2018-09-17 18:17:33 +0900'
     children: []
 sql-char-comparison:
     type: wiki
@@ -1605,7 +1693,7 @@ til:
     parent: index
     url: /wiki/til
     updated: '2018-02-13 21:00:13 +0900'
-    children: [excel-sumifs, git-checkout-specific-files, trouble-shooting-node-7-install]
+    children: [git-checkout-specific-files, trouble-shooting-node-7-install, vagrant-docker-get-start]
 toda-seiji-scientia:
     type: wiki
     title: '(책) 스키엔티아 - 도다 세이지'
@@ -1621,7 +1709,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [command-line, Gradle, hhkb-jp-tmk, mac-apps, useful-site, web-browser-extension]
+    children: [aws, command-line, Excel, Gradle, hhkb-jp-tmk, mac-apps, useful-site, web-browser-extension]
 top:
     type: wiki
     title: 'top 명령어'
@@ -1686,6 +1774,14 @@ utterances:
     url: /wiki/utterances
     updated: '2018-02-20 22:32:19 +0900'
     children: []
+vagrant-docker-get-start:
+    type: wiki
+    title: 'Vagrant와 Docker에 CentOS, Ubuntu 설치하기'
+    summary: '간단하게 가상 환경을 꾸며보자'
+    parent: til
+    url: /wiki/vagrant-docker-get-start
+    updated: '2018-09-16 22:05:58 +0900'
+    children: []
 Vim:
     type: wiki
     title: Vim
@@ -1693,7 +1789,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [my-wiki, vim-conceallevel, vim-f-hangul, vim-go-with-ultisnips, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-ycm-python3, vimwiki]
+    children: [my-wiki, vim-conceallevel, vim-f-hangul, vim-go-with-ultisnips, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-ycm-python3, vimwiki]
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -1710,6 +1806,14 @@ vim-f-hangul:
     url: /wiki/vim-f-hangul
     updated: '2018-03-18 22:51:56 +0900'
     children: []
+vim-go-auto-import:
+    type: wiki
+    title: 'vim-go auto import 설정하기'
+    summary: '그래 안 될 리가 없지'
+    parent: ""
+    url: /wiki/vim-go-auto-import
+    updated: '2018-09-18 17:29:18 +0900'
+    children: []
 vim-go-with-ultisnips:
     type: wiki
     title: 'Ultisnips와 vim-go를 같이 사용할 때 발생하는 E734 에러 해결'
@@ -1717,6 +1821,14 @@ vim-go-with-ultisnips:
     parent: Vim
     url: /wiki/vim-go-with-ultisnips
     updated: '2018-09-14 17:06:40 +0900'
+    children: []
+vim-persistent-undo:
+    type: wiki
+    title: 'Vim persistent_undo 기능 사용하기'
+    summary: 'Vim을 재실행해도 undo를 쓸 수 있다'
+    parent: Vim
+    url: /wiki/vim-persistent-undo
+    updated: '2018-09-18 16:15:36 +0900'
     children: []
 vim-rest-console:
     type: wiki
@@ -1797,7 +1909,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [braille-pattern-chars, Continuous-Integration, groupId-artifactId, http-message, RFC, special-chars, Unix-philosophy, URI]
+    children: [braille-pattern-chars, Continuous-Integration, groupId-artifactId, http-message, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
@@ -1821,6 +1933,14 @@ yaml:
     parent: programming-language
     url: /wiki/yaml
     updated: '2018-04-08 19:48:46 +0900'
+    children: []
+yes-command:
+    type: wiki
+    title: 'yes 명령어'
+    summary: '문자열을 반복 출력한다'
+    parent: command-line
+    url: /wiki/yes-command
+    updated: '2018-09-15 22:29:16 +0900'
     children: []
 You-and-Your-Research:
     type: wiki

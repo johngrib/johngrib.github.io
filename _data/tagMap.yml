@@ -26,6 +26,7 @@ jekyll:
     - {fileName: 2017-01-21-create-jekyll-blog}
     - {fileName: 2017-01-22-jekyll-category-tag}
     - {fileName: my-wiki}
+    - {fileName: rouge-supported-languages}
 ideavim:
     - {fileName: 2017-01-30-ideavim-build}
 open-source:
@@ -102,6 +103,11 @@ jwp:
     - {fileName: 2017-06-01-jwp-16}
 aws:
     - {fileName: 2017-04-02-jwp-00-prepare}
+    - {fileName: Amazon-Route-53}
+    - {fileName: aws}
+    - {fileName: AWS-Auto-Scaling}
+    - {fileName: billing-aws}
+    - {fileName: Elastic-Load-Balancing}
 emacs:
     - {fileName: 2017-04-03-emacs-start}
 evil:
@@ -130,6 +136,8 @@ vim:
     - {fileName: Vim}
     - {fileName: vim-conceallevel}
     - {fileName: vim-f-hangul}
+    - {fileName: vim-go-auto-import}
+    - {fileName: vim-persistent-undo}
     - {fileName: vim-rest-console}
     - {fileName: vim-tagbar-with-markdown}
     - {fileName: vim-tmux-t-ut}
@@ -249,6 +257,11 @@ google:
     - {fileName: googling}
 AI:
     - {fileName: ALPHAGO}
+devops:
+    - {fileName: Amazon-Route-53}
+    - {fileName: AWS-Auto-Scaling}
+    - {fileName: Elastic-Load-Balancing}
+    - {fileName: vagrant-docker-get-start}
 bayes:
     - {fileName: Bayes-theorem}
     - {fileName: cookie-problem}
@@ -272,6 +285,8 @@ Bill-Atkinson:
     - {fileName: Bill-Atkinson-productivity}
 Steve-Jobs:
     - {fileName: Bill-Atkinson-productivity}
+money:
+    - {fileName: billing-aws}
 rule:
     - {fileName: Boy-Scout-Rule}
 Uncle-Bob:
@@ -290,10 +305,12 @@ bash:
     - {fileName: grep}
     - {fileName: history}
     - {fileName: java_home}
+    - {fileName: openssl}
     - {fileName: sha256sum}
     - {fileName: sort}
     - {fileName: top}
     - {fileName: uptime}
+    - {fileName: yes-command}
 mac:
     - {fileName: brew}
     - {fileName: java_home}
@@ -383,8 +400,15 @@ java:
     - {fileName: Object-toString}
     - {fileName: private-constructor}
     - {fileName: use-java-primitive-type-for-performance}
+ms:
+    - {fileName: Excel}
 excel:
     - {fileName: excel-sumifs}
+    - {fileName: excel-transpos}
+    - {fileName: excel-vba-setting}
+vba:
+    - {fileName: excel-transpos}
+    - {fileName: excel-vba-setting}
 fish:
     - {fileName: fish-shell}
 terminal:
@@ -406,6 +430,14 @@ til:
     - {fileName: til}
 git:
     - {fileName: git-checkout-specific-files}
+language:
+    - {fileName: Golang}
+    - {fileName: groovy}
+    - {fileName: Java}
+    - {fileName: programming-language}
+    - {fileName: Python3}
+golang:
+    - {fileName: Golang}
 twitter:
     - {fileName: googling}
     - {fileName: labs-strava-com-heatmap}
@@ -413,6 +445,7 @@ facebook:
     - {fileName: googling}
 암호화:
     - {fileName: gpg}
+    - {fileName: openssl}
 GNU:
     - {fileName: gpg}
 gradle:
@@ -421,11 +454,6 @@ tool:
     - {fileName: Gradle}
 검색:
     - {fileName: grep}
-language:
-    - {fileName: groovy}
-    - {fileName: Java}
-    - {fileName: programming-language}
-    - {fileName: Python3}
 jvm-lang:
     - {fileName: groovy}
 groovy:
@@ -488,6 +516,11 @@ blog:
     - {fileName: utterances}
 소수:
     - {fileName: Object-hashCode}
+aes:
+    - {fileName: openssl}
+sha:
+    - {fileName: openssl}
+    - {fileName: sha256sum}
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
@@ -503,10 +536,11 @@ regex:
 rfc:
     - {fileName: RFC}
     - {fileName: why-http-80-https-443}
+github:
+    - {fileName: rouge-supported-languages}
+    - {fileName: utterances}
 consulting:
     - {fileName: secret-of-consulting}
-sha:
-    - {fileName: sha256sum}
 교육:
     - {fileName: Shunsho-juwa}
 장인정신:
@@ -531,13 +565,22 @@ trouble-shooting:
     - {fileName: vim-conceallevel}
 performance:
     - {fileName: use-java-primitive-type-for-performance}
-github:
-    - {fileName: utterances}
+vagrant:
+    - {fileName: vagrant-docker-get-start}
+docker:
+    - {fileName: vagrant-docker-get-start}
+centos:
+    - {fileName: vagrant-docker-get-start}
+ubuntu:
+    - {fileName: vagrant-docker-get-start}
+vm:
+    - {fileName: vagrant-docker-get-start}
 plugin:
     - {fileName: vim-f-hangul}
-ultisnips:
-    - {fileName: vim-go-with-ultisnips}
 go:
+    - {fileName: vim-go-auto-import}
+    - {fileName: vim-go-with-ultisnips}
+ultisnips:
     - {fileName: vim-go-with-ultisnips}
 tagbar:
     - {fileName: vim-tagbar-with-markdown}
