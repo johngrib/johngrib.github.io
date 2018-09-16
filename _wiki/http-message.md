@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTTP 메시지
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2018-04-04 09:06:37 +0900
+updated : 2018-09-16 16:12:32 +0900
 tags    : http
 toc     : true
 public  : true
@@ -217,6 +217,14 @@ Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF
 ### 302 Found
 ### 303 See Other
 ### 304 Not Modified
+
+[RFC 7232 - 4.1. 304 Not Modified](https://tools.ietf.org/html/rfc7232#section-4.1 )
+
+* 조건부 GET/HEAD 리퀘스트에 대한 응답이다.
+    * 이미 똑같은 응답을 한 적이 있고, 서버의 리소스는 변경되지 않았으므로 또 보내지 않겠다는 의미.
+    * 클라이언트에 저장된 리소스를 사용하도록 유도한다.
+* 정보 전송을 최소화하는 것이 304의 목적이다.
+
 ### 305 Use Proxy
 ### 307 Temporary Redirect
 ### 400 Bad Request
@@ -267,5 +275,6 @@ Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF
 # Links
 
 * [RFC 7231](https://tools.ietf.org/html/rfc7231 ) - Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content
+* [RFC 7232](https://tools.ietf.org/html/rfc7232 ) - Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests
 * [RFC 2616](https://tools.ietf.org/html/rfc2616 ) - Hypertext Transfer Protocol -- HTTP/1.1
 * [MDN: HTTP 메시지](https://developer.mozilla.org/ko/docs/Web/HTTP/Messages)
