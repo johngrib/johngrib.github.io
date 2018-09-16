@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-09-09 18:34:08 +0900
+updated : 2018-09-16 23:25:06 +0900
 tags    : review
 toc     : true
 public  : true
@@ -76,6 +76,7 @@ latex   : false
 
 ## 영화/드라마
 
+* 2018-09-16 포청천 개봉부전기(包青天 开封府传奇) - 포청천 비긴즈. 재밌어서 58부작이 전혀 길게 느껴지지 않았다.
 * 2018-09-08 [Searching](https://www.imdb.com/title/tt7668870/ )
 * 2018-07-28 [Extinction](https://www.netflix.com/title/80236421 )
 * 2018-07-07 Ant-Man and the Wasp
