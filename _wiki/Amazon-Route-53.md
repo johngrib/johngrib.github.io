@@ -3,8 +3,8 @@ layout  : wiki
 title   : Amazon Route 53
 summary : 
 date    : 2018-09-16 09:37:08 +0900
-updated : 2018-09-16 15:18:25 +0900
-tags    : aws
+updated : 2018-09-16 22:06:15 +0900
+tags    : aws devops
 toc     : true
 public  : true
 parent  : aws

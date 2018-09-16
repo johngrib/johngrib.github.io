@@ -3,8 +3,8 @@ layout  : wiki
 title   : AWS ELB - Elastic Load Balancing
 summary : AWS 로드 밸런서
 date    : 2018-09-16 18:23:02 +0900
-updated : 2018-09-16 19:36:34 +0900
-tags    : aws
+updated : 2018-09-16 22:06:25 +0900
+tags    : aws devops
 toc     : true
 public  : true
 parent  : aws

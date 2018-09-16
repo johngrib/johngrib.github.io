@@ -3,8 +3,8 @@ layout  : wiki
 title   : AWS Auto Scaling
 summary : 
 date    : 2018-09-16 21:41:33 +0900
-updated : 2018-09-16 22:02:13 +0900
-tags    : aws
+updated : 2018-09-16 22:06:33 +0900
+tags    : aws devops
 toc     : true
 public  : true
 parent  : aws

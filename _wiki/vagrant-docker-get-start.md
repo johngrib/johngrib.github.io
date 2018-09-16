@@ -3,8 +3,8 @@ layout  : wiki
 title   : Vagrant와 Docker에 CentOS, Ubuntu 설치하기
 summary : 간단하게 가상 환경을 꾸며보자
 date    : 2018-09-15 09:26:59 +0900
-updated : 2018-09-15 11:14:15 +0900
-tags    : vagrant docker centos ubuntu vm
+updated : 2018-09-16 22:05:58 +0900
+tags    : vagrant docker centos ubuntu vm devops
 toc     : true
 public  : true
 parent  : til
