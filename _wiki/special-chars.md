@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2018-04-12 21:02:50 +0900
+updated : 2018-09-17 18:17:33 +0900
 tags    : special-chars
 toc     : true
 public  : true
@@ -1029,6 +1029,11 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * Unix에서 Home 디렉토리를 의미한다.
 * Vim에서는 대소문자 토글에 사용한다.
 * Perl 언어에서 정규식 매칭 연산자로 `=~`를 사용한다.
+* Excel의 찾기에서 와일드카드를 이스케이핑할 때 사용한다.
+    * `*` : 모든 글자
+    * `~*` : *
+    * `?` : 한 글자
+    * `~?` : ?
 
 | 읽는 방법   | 물결, tilde, not   |
 | 유니코드    | 'TILDE' (U+007E)   |
@@ -1038,6 +1043,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * [RFC 20](https://tools.ietf.org/html/rfc20#section-4.2 )
 * [fileformat.info/info/unicode/char/7E](http://www.fileformat.info/info/unicode/char/7E )
 * [Tilde(wikipedia)](https://en.wikipedia.org/wiki/Tilde )
+* [Using wildcard characters in searches (support.office.com)](https://support.office.com/en-us/article/using-wildcard-characters-in-searches-ef94362e-9999-4350-ad74-4d2371110adb )
 
 ## Links
 
