@@ -1132,7 +1132,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-09-18 17:20:39 +0900'
+    updated: '2018-09-18 20:45:41 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1452,7 +1452,15 @@ Python3:
     summary: ""
     parent: programming-language
     url: /wiki/Python3
-    updated: '2018-05-02 21:25:22 +0900'
+    updated: '2018-09-18 20:37:27 +0900'
+    children: [python3-simple-file-sharing]
+python3-simple-file-sharing:
+    type: wiki
+    title: 'python3로 간단하게 파일 전송하기'
+    summary: '같은 사무실이면 메신저로 보내지 말고 python3 -m http.server'
+    parent: Python3
+    url: /wiki/python3-simple-file-sharing
+    updated: '2018-09-18 23:08:50 +0900'
     children: []
 regex-prime:
     type: wiki
@@ -1812,7 +1820,7 @@ vim-go-auto-import:
     summary: '그래 안 될 리가 없지'
     parent: ""
     url: /wiki/vim-go-auto-import
-    updated: '2018-09-18 17:29:18 +0900'
+    updated: '2018-09-18 17:41:33 +0900'
     children: []
 vim-go-with-ultisnips:
     type: wiki

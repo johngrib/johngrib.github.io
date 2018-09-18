@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-09-18 17:20:39 +0900
+updated : 2018-09-18 20:45:41 +0900
 tags    : index
 toc     : true
 public  : true
@@ -98,6 +98,7 @@ comment : false
         * [[private-constructor]]
         * [[use-java-primitive-type-for-performance]]
     * [[Python3]]
+        * [[python3-simple-file-sharing]]
     * [[YAML]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
     * [[airplain-rule]]

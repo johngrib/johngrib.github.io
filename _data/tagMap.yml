@@ -529,6 +529,13 @@ tip:
     - {fileName: use-java-primitive-type-for-performance}
 culture:
     - {fileName: proverb}
+python:
+    - {fileName: python3-simple-file-sharing}
+    - {fileName: vim-ycm-python3}
+ip:
+    - {fileName: python3-simple-file-sharing}
+curl:
+    - {fileName: python3-simple-file-sharing}
 perl:
     - {fileName: regex-prime}
 regex:
@@ -588,8 +595,6 @@ markdown:
     - {fileName: vim-tagbar-with-markdown}
 fix:
     - {fileName: vim-tmux-t-ut}
-python:
-    - {fileName: vim-ycm-python3}
 chrome:
     - {fileName: vimium}
 firefox:
