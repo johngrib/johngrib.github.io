@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim-go auto import 설정하기
 summary : 그래 안 될 리가 없지
 date    : 2018-09-18 17:18:21 +0900
-updated : 2018-09-18 17:29:18 +0900
+updated : 2018-09-18 17:41:33 +0900
 tags    : go vim
 toc     : true
 public  : true
@@ -58,3 +58,5 @@ func main() {
 * <https://github.com/fatih/vim-go >
 * <https://github.com/fatih/vim-go-tutorial/blob/master/vimrc#L109 >
 * <https://github.com/golang/tools >
+* [goimports vs gofmt](http://goinbigdata.com/goimports-vs-gofmt/ )
+    * `goimports`가 `gofmt`가 할 수 있는 모든 것을 할 수 있으면서 기능도 더 많다는 결론.
