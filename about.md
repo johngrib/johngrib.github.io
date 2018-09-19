@@ -48,6 +48,12 @@ comment: false
 
 # Public Key
 
+```sh
+curl https://keybase.io/johngrib/key.asc | gpg --import
+```
+
+* <https://keybase.io/johngrib/key.asc >
+
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
