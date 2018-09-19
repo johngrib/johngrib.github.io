@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-09-18 20:45:41 +0900
+updated : 2018-09-19 11:44:50 +0900
 tags    : index
 toc     : true
 public  : true
@@ -167,6 +167,7 @@ comment : false
         * [[uptime]]
         * [[yes-command]]
     * [[Excel]]
+        * [[excel-remove-circular-reference]]
         * [[excel-sumifs]]
         * [[excel-transpos]]
         * [[excel-vba-setting]]

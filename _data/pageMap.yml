@@ -821,7 +821,15 @@ Excel:
     parent: tools
     url: /wiki/Excel
     updated: '2018-09-17 11:13:03 +0900'
-    children: [excel-sumifs, excel-transpos, excel-vba-setting]
+    children: [excel-remove-circular-reference, excel-sumifs, excel-transpos, excel-vba-setting]
+excel-remove-circular-reference:
+    type: wiki
+    title: '엑셀 셀 순환 참조 문제 해결하기'
+    summary: ""
+    parent: Excel
+    url: /wiki/excel-remove-circular-reference
+    updated: '2018-09-19 11:49:01 +0900'
+    children: []
 excel-sumifs:
     type: wiki
     title: 'SUMIFS 함수 사용법'
@@ -1132,7 +1140,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-09-18 20:45:41 +0900'
+    updated: '2018-09-19 11:44:50 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1908,7 +1916,7 @@ web-browser-extension:
     summary: ""
     parent: tools
     url: /wiki/web-browser-extension
-    updated: '2018-03-04 00:38:25 +0900'
+    updated: '2018-09-19 10:42:09 +0900'
     children: [vimium]
 what:
     type: wiki

@@ -403,6 +403,7 @@ java:
 ms:
     - {fileName: Excel}
 excel:
+    - {fileName: excel-remove-circular-reference}
     - {fileName: excel-sumifs}
     - {fileName: excel-transpos}
     - {fileName: excel-vba-setting}
