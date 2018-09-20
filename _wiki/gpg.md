@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-20 10:51:10 +0900
+updated : 2018-09-20 11:13:46 +0900
 tags    : bash 암호화 GNU
 toc     : true
 public  : true
@@ -780,3 +780,9 @@ $ keybase device add
     * [How to Generate Enough 'Entropy' for GPG Key Generation Process on Fedora Linux](https://it.toolbox.com/blogs/edmonbegoli/how-to-generate-enough-entropy-for-gpg-key-generation-process-on-fedora-linux-041410 )
     * [(Linux) random number generators](http://egloos.zum.com/studyfoss/v/5168232 )
     * [docker에서 GnuPG 키 생성 문제 해결과 파일 암호화/복호화 하기](http://blog.saltfactory.net/generate-gpg-key-inside-docker/ )
+
+---
+
+* <https://keybase.io/ >
+    * <https://librewiki.net/wiki/Keybase >
+    * <https://keybase.io/docs/command_line >
