@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-20 10:07:40 +0900
+updated : 2018-09-20 10:51:10 +0900
 tags    : bash 암호화 GNU
 toc     : true
 public  : true
@@ -680,7 +680,76 @@ uid           [  full  ] myfriend <myfriend@gpgtest.com>
 sub   rsa2048 2018-09-13 [E] [expires: 2019-09-13]
 ```
 
+# 부록: keybase 사용하기
 
+* <https://keybase.io/ >
+
+>
+Keybase aims to provide public keys that can be trusted without any backchannel communication. If you need someone's public key, you should be able to get it, and know it's the right one, without talking to them in person.
+
+* 암호화 관련 이런 저런 기능을 제공하는 서비스.
+* 공개 키 서버로도 사용할 수 있다.
+* 인터넷에서 자신의 신원을 증명하는 용도로도 사용할 수 있다.
+    * 익명을 선호한다면 가입/사용하기 전에 고민해 볼 것.
+
+keybase 커맨드 라인 도구는 맥이라면 다음과 같이 설치할 수 있다.
+
+```sh
+$ brew tap homebrew/cask
+$ brew cask install keybase
+```
+
+## 회원가입/로그인
+
+* <https://keybase.io >에서 회원 가입이 가능하다.
+* 커맨드 라인에서도 회원 가입이 가능하다.
+
+```sh
+$ keybase signup
+```
+
+* 로그인은 다음과 같이 한다.
+
+```sh
+$ keybase login
+```
+
+## 공개 키 업로드하기
+
+다음 명령어를 입력한 다음, 공개 키 목록에서 업로드할 공개 키의 번호를 선택하면 된다.
+
+```sh
+$ keybase pgp select
+```
+
+그러면 다음과 같이 공개 키가 업로드 된다.
+
+<https://keybase.io/johngrib/key.asc >
+
+즉, 이제 내 공개 키가 필요한 사람이 있다면 다음 커맨드만 알려주면 된다.
+
+```sh
+$ curl https://keybase.io/johngrib/key.asc | gpg --import
+```
+
+## keybase 스마트폰 앱 사용하기
+
+* keybase 스마트폰 앱을 쓰면 폰에서도 공개키로 암호화해서 친구나 동료에게 메시지를 보낼 수 있다.
+* 공개 키 암호화 알고리즘이 필요한 대화는 keybase 앱으로 쉽게 할 수 있다.
+
+휴대폰에 먼저 keybase 앱을 설치한다.
+
+* <https://keybase.io/download >
+
+앱을 열고 `login` 한 다음, 내 컴퓨터로 지정한 장치로 인증 선택.
+
+```sh
+$ keybase device add
+```
+
+이후 `2) Mobile phone`을 선택하면 터미널에 QR 코드가 출력된다.
+
+휴대폰으로 QR 코드를 찍으면 앱에 로그인하게 된다.
 
 # Links
 
