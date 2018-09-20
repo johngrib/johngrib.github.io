@@ -3,11 +3,11 @@ layout  : wiki
 title   : vim-go auto import 설정하기
 summary : 그래 안 될 리가 없지
 date    : 2018-09-18 17:18:21 +0900
-updated : 2018-09-21 08:31:52 +0900
+updated : 2018-09-21 08:36:09 +0900
 tags    : golang vim
 toc     : true
 public  : true
-parent  : 
+parent  : Golang
 latex   : false
 ---
 * TOC
