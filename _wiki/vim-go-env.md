@@ -3,7 +3,7 @@ layout  : wiki
 title   : go를 위한 vim 환경설정
 summary : 사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다
 date    : 2018-09-21 08:29:49 +0900
-updated : 2018-09-21 11:39:34 +0900
+updated : 2018-09-21 11:50:28 +0900
 tags    : vim golang
 toc     : true
 public  : true
@@ -19,6 +19,7 @@ latex   : false
 
 ```viml
 " 유명한 플러그인들
+Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
