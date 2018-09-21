@@ -137,6 +137,8 @@ vim:
     - {fileName: vim-conceallevel}
     - {fileName: vim-f-hangul}
     - {fileName: vim-go-auto-import}
+    - {fileName: vim-go-env}
+    - {fileName: vim-go-with-ultisnips}
     - {fileName: vim-persistent-undo}
     - {fileName: vim-rest-console}
     - {fileName: vim-tagbar-with-markdown}
@@ -439,6 +441,9 @@ language:
     - {fileName: Python3}
 golang:
     - {fileName: Golang}
+    - {fileName: vim-go-auto-import}
+    - {fileName: vim-go-env}
+    - {fileName: vim-go-with-ultisnips}
 twitter:
     - {fileName: googling}
     - {fileName: labs-strava-com-heatmap}
@@ -585,9 +590,6 @@ vm:
     - {fileName: vagrant-docker-get-start}
 plugin:
     - {fileName: vim-f-hangul}
-go:
-    - {fileName: vim-go-auto-import}
-    - {fileName: vim-go-with-ultisnips}
 ultisnips:
     - {fileName: vim-go-with-ultisnips}
 tagbar:

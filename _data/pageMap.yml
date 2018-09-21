@@ -925,7 +925,7 @@ Golang:
     parent: programming-language
     url: /wiki/Golang
     updated: '2018-09-18 17:21:01 +0900'
-    children: []
+    children: [vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
 google-search-console-remove-outdated-content:
     type: wiki
     title: 'Google Search Console - Remove outdated content'
@@ -948,7 +948,7 @@ gpg:
     summary: 'GnuPG, the GNU Privacy Guard'
     parent: command-line
     url: /wiki/gpg
-    updated: '2018-09-14 17:04:25 +0900'
+    updated: '2018-09-20 11:13:46 +0900'
     children: []
 Gradle:
     type: wiki
@@ -1140,7 +1140,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-09-19 11:44:50 +0900'
+    updated: '2018-09-21 11:40:30 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1805,7 +1805,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [my-wiki, vim-conceallevel, vim-f-hangul, vim-go-with-ultisnips, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-ycm-python3, vimwiki]
+    children: [my-wiki, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-ycm-python3, vimwiki]
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -1826,17 +1826,25 @@ vim-go-auto-import:
     type: wiki
     title: 'vim-go auto import 설정하기'
     summary: '그래 안 될 리가 없지'
-    parent: ""
+    parent: Golang
     url: /wiki/vim-go-auto-import
-    updated: '2018-09-18 17:41:33 +0900'
+    updated: '2018-09-21 08:36:09 +0900'
+    children: []
+vim-go-env:
+    type: wiki
+    title: 'go를 위한 vim 환경설정'
+    summary: '사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다'
+    parent: Golang
+    url: /wiki/vim-go-env
+    updated: '2018-09-21 11:39:34 +0900'
     children: []
 vim-go-with-ultisnips:
     type: wiki
     title: 'Ultisnips와 vim-go를 같이 사용할 때 발생하는 E734 에러 해결'
     summary: '+= 는 list 타입에만 쓰자'
-    parent: Vim
+    parent: Golang
     url: /wiki/vim-go-with-ultisnips
-    updated: '2018-09-14 17:06:40 +0900'
+    updated: '2018-09-21 08:36:26 +0900'
     children: []
 vim-persistent-undo:
     type: wiki
