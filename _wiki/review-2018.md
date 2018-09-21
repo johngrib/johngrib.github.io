@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-09-16 23:25:06 +0900
+updated : 2018-09-21 23:36:19 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-09-21 [AN INTRODUCTION TO PROGRAMMING IN GO](http://codingnuri.com/golang-book/ )
 * 2018-08-30 [[전생검신]] 40권. 부활
 * 2018-08-26 엔지니어를 위한 블록체인 프로그래밍
 * 2018-08-21 미니멀라이프 시간과 돈 사용법
