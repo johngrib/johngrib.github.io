@@ -3,7 +3,7 @@ layout  : wiki
 title   : RFC(Request For Comment)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2018-04-04 09:06:15 +0900
+updated : 2018-09-22 20:58:40 +0900
 tags    : rfc
 toc     : true
 public  : true
@@ -61,3 +61,11 @@ latex   : false
 * Etymology of "Foo"
 * "Foo"의 어원
 * [https://www.ietf.org/rfc/rfc3092.txt](https://www.ietf.org/rfc/rfc3092.txt)
+
+## RFC 4122
+
+* A Universally Unique IDentifier (UUID) URN Namespace
+* UUID, GUID를 정의하고 생성 알고리즘을 기술한다.
+    * UUID : Universally Unique IDentifier
+    * GUID : Globally Unique IDentifier
+* <https://tools.ietf.org/html/rfc4122 >
