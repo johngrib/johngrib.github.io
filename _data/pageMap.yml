@@ -589,7 +589,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [brew, date, df, du, fc, fish-shell, gpg, grep, history, java_home, openssl, sha256sum, sort, top, uptime, yes-command]
+    children: [brew, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes-command]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -1140,7 +1140,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-09-21 11:40:30 +0900'
+    updated: '2018-09-24 13:06:42 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1326,6 +1326,14 @@ movie:
     url: /wiki/movie
     updated: '2018-02-02 21:34:13 +0900'
     children: [ALPHAGO, DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY, HOT-FUZZ, Las-chicas-del-cable, Walking-Dead]
+my-bash-cheatsheet:
+    type: wiki
+    title: '나의 bash cheatsheet'
+    summary: ""
+    parent: command-line
+    url: /wiki/my-bash-cheatsheet
+    updated: '2018-09-24 13:08:33 +0900'
+    children: []
 my-wiki:
     type: wiki
     title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
@@ -1500,7 +1508,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-09-16 23:25:06 +0900'
+    updated: '2018-09-21 23:36:19 +0900'
     children: []
 RFC:
     type: wiki
@@ -1508,7 +1516,7 @@ RFC:
     summary: '일련번호가 매겨진 인터넷 표준 문서'
     parent: what
     url: /wiki/RFC
-    updated: '2018-04-04 09:06:15 +0900'
+    updated: '2018-09-22 20:58:40 +0900'
     children: []
 rouge-supported-languages:
     type: wiki
@@ -1836,7 +1844,7 @@ vim-go-env:
     summary: '사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다'
     parent: Golang
     url: /wiki/vim-go-env
-    updated: '2018-09-21 11:39:34 +0900'
+    updated: '2018-09-21 11:50:28 +0900'
     children: []
 vim-go-with-ultisnips:
     type: wiki

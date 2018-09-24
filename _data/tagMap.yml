@@ -307,6 +307,7 @@ bash:
     - {fileName: grep}
     - {fileName: history}
     - {fileName: java_home}
+    - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
     - {fileName: sha256sum}
     - {fileName: sort}

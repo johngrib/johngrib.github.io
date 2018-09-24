@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-09-21 11:40:30 +0900
+updated : 2018-09-24 13:06:42 +0900
 tags    : index
 toc     : true
 public  : true
@@ -169,6 +169,7 @@ comment : false
         * [[top]]
         * [[uptime]]
         * [[yes-command]]
+        * [[my-bash-cheatsheet]]
     * [[Excel]]
         * [[excel-remove-circular-reference]]
         * [[excel-sumifs]]
