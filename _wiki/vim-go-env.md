@@ -3,7 +3,7 @@ layout  : wiki
 title   : go를 위한 vim 환경설정
 summary : 사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다
 date    : 2018-09-21 08:29:49 +0900
-updated : 2018-09-21 11:50:28 +0900
+updated : 2018-09-27 22:04:30 +0900
 tags    : vim golang
 toc     : true
 public  : true
@@ -101,7 +101,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 let g:go_test_timeout = '10s'
 ```
 
-## Quckfix 윈도우 사용하기
+## Quickfix 윈도우 사용하기
 
 * 빌드 도중 경고나 에러가 있으면 Quickfix 윈도우가 자동으로 열려 목록을 볼 수 있다.
 * 파일명, 문제가 된 row/col, 문제 사유, 문제와 관련된 다른 파일 등의 정보를 보여준다.
