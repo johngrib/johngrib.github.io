@@ -299,6 +299,7 @@ special-chars:
     - {fileName: special-chars}
 bash:
     - {fileName: brew}
+    - {fileName: csplit}
     - {fileName: date}
     - {fileName: df}
     - {fileName: du}

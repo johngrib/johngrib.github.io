@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-09-24 13:06:42 +0900
+updated : 2018-09-28 08:07:38 +0900
 tags    : index
 toc     : true
 public  : true
@@ -154,6 +154,7 @@ comment : false
         * [[Elastic-Load-Balancing]]
     * [[command-line]]
         * [[brew]]
+        * [[csplit]]
         * [[date]]
         * [[df]]
         * [[du]]

@@ -589,7 +589,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [brew, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes-command]
+    children: [brew, csplit, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes-command]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -645,6 +645,14 @@ Cromwell-s-rule:
     parent: math
     url: /wiki/Cromwell-s-rule
     updated: '2018-04-08 20:39:13 +0900'
+    children: []
+csplit:
+    type: wiki
+    title: 'csplit 명령어'
+    summary: '주어진 조건에 따라 파일을 분할한다'
+    parent: command-line
+    url: /wiki/csplit
+    updated: '2018-09-28 08:16:20 +0900'
     children: []
 d-i-a-01-reliable-scalable-maintainable:
     type: wiki
@@ -1140,7 +1148,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-09-24 13:06:42 +0900'
+    updated: '2018-09-28 08:07:38 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1508,7 +1516,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-09-21 23:36:19 +0900'
+    updated: '2018-09-26 22:38:11 +0900'
     children: []
 RFC:
     type: wiki
@@ -1844,7 +1852,7 @@ vim-go-env:
     summary: '사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다'
     parent: Golang
     url: /wiki/vim-go-env
-    updated: '2018-09-21 11:50:28 +0900'
+    updated: '2018-09-27 22:04:30 +0900'
     children: []
 vim-go-with-ultisnips:
     type: wiki
