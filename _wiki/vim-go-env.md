@@ -3,7 +3,7 @@ layout  : wiki
 title   : go를 위한 vim 환경설정
 summary : 사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다
 date    : 2018-09-21 08:29:49 +0900
-updated : 2018-09-27 22:04:30 +0900
+updated : 2018-09-28 12:12:39 +0900
 tags    : vim golang
 toc     : true
 public  : true
@@ -222,9 +222,45 @@ fmt.Println("${1:s}")
 * `:GoRename` - 변수, 함수명 변경을 도와준다. 훌륭하다.
 * `:GoFreevars` - 비주얼 모드에서 사용. 범위 내의 변수들 중 extract 해도 문제 없을 변수 목록을 만들어 준다.
 
+## Debugger 사용
+
+* [2018년 3월 27일 vim-go 업데이트](https://github.com/fatih/vim-go/blob/master/CHANGELOG.md#117---march-27-2018 ) 부터 디버거 기능 지원.
+    * vim-go의 개발자인 Fatih Arslan님 [트위터](https://twitter.com/fatih/status/978652722835656704 ).
+
+### 설치
+
+* [devle](https://github.com/derekparker/delve )를 설치한다.
+    * 설치 방법은 [delve installaion 문서](https://github.com/derekparker/delve/tree/master/Documentation/installation ) 참고.
+
+### 사용
+
+다음 명령어들만 알아두면된다. 적당히 매핑해서 쓰면 될듯.
+
+* `:GoDebugStart`
+* `:GoDebugTest`
+* `:GoDebugBreakpoint`
+* `:GoDebugContinue`
+* `:GoDebugNext`
+* `:GoDebugStep`
+* `:GoDebugStop`
+* `:GoDebugRestart`
+
+### 문제 해결
+
+2018년 7월 15일, [delve의 업데이트](https://github.com/derekparker/delve/pull/1230 )로 인해, vim-go의 디버거 기능이 작동하지 않는 문제가 발생했다.
+
+돌려보면 엉뚱한 에러 메시지만 자꾸 나오는데, 아직 머지되지는 않았지만 [문제를 해결한 Pull Request](https://github.com/fatih/vim-go/pull/1992 )가 있어 적용해 보았더니 잘 작동하였다.
+
+
 # Links
 
 * [vim-go](https://github.com/fatih/vim-go )
     * vim-go 개발자 후원하기: <https://patreon.com/fatih >
 * [Tutorial for vim-go](https://github.com/fatih/vim-go-tutorial )
+
+---
+
+* Debugger
+    * [devle](https://github.com/derekparker/delve )
+    * [delve installaion](https://github.com/derekparker/delve/tree/master/Documentation/installation )
 
