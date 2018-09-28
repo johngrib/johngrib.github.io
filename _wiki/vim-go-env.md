@@ -3,7 +3,7 @@ layout  : wiki
 title   : go를 위한 vim 환경설정
 summary : 사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다
 date    : 2018-09-21 08:29:49 +0900
-updated : 2018-09-28 12:12:39 +0900
+updated : 2018-09-28 23:00:07 +0900
 tags    : vim golang
 toc     : true
 public  : true
@@ -245,7 +245,9 @@ fmt.Println("${1:s}")
 * `:GoDebugStop`
 * `:GoDebugRestart`
 
-### 문제 해결
+## 문제 해결
+
+### delve 업데이트로 인한 debugger 오작동 문제
 
 2018년 7월 15일, [delve의 업데이트](https://github.com/derekparker/delve/pull/1230 )로 인해, vim-go의 디버거 기능이 작동하지 않는 문제가 발생했다.
 
