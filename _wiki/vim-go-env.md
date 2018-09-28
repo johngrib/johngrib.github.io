@@ -3,7 +3,7 @@ layout  : wiki
 title   : go를 위한 vim 환경설정
 summary : 사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다
 date    : 2018-09-21 08:29:49 +0900
-updated : 2018-09-28 23:00:07 +0900
+updated : 2018-09-28 23:04:19 +0900
 tags    : vim golang
 toc     : true
 public  : true
@@ -253,6 +253,18 @@ fmt.Println("${1:s}")
 
 돌려보면 엉뚱한 에러 메시지만 자꾸 나오는데, 아직 머지되지는 않았지만 [문제를 해결한 Pull Request](https://github.com/fatih/vim-go/pull/1992 )가 있어 적용해 보았더니 잘 작동하였다.
 
+### K 커맨드 :GoDoc 매핑 문제
+
+* vim-go는 자동으로 `K`키에 `:GoDoc`을 맵핑시킨다.
+* 그런데 나는 `K`에 다른 기능을 매핑시켜 쓰고 있었으므로, 이 설정이 마음에 들지 않았다.
+
+찾아보니 [관련 이슈](https://github.com/fatih/vim-go/issues/140 )가 있었다.
+
+다음과 같이 설정하면 vim-go가 `K`에 `:GoDoc`을 맵핑시키지 않는다.
+
+```viml
+let g:go_doc_keywordprg_enabled = 0
+```
 
 # Links
 
