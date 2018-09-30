@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-09-20 11:13:46 +0900
+updated : 2018-10-01 08:55:18 +0900
 tags    : bash 암호화 GNU
 toc     : true
 public  : true
@@ -751,6 +751,93 @@ $ keybase device add
 
 휴대폰으로 QR 코드를 찍으면 앱에 로그인하게 된다.
 
+
+
+# 부록: git commit에 sign하기
+
+## .gitconfig 설정
+
+* git commit에 자신의 비밀 키로 서명하는 것은 바람직한 습관이다.
+* 오픈 소스 프로젝트나 회사의 특성에 따라 commit 에 sign을 요구하는 경우가 있다.
+
+`~/.gitconfig` 파일의 `user` 섹션에 `signingkey` 값을 추가하고, 자신의 키 아이디를 입력한다.
+
+```
+[user]
+    email = johngrib@test.com
+    name = John Grib
+    signingkey = 1234ABCDE
+```
+
+이후 `git commit`에 `-S` 옵션을 붙이면 커밋할 때 자동으로 비밀 키로 서명을 한다.
+
+일일이 `-S` 옵션을 붙이는 게 귀찮으므로 나는 다음과 같이 설정하였다.
+
+```
+[user]
+    email = johngrib@test.com
+    name = John Grib
+    signingkey = 1234ABCDE
+[commit]
+    gpgsign = true
+```
+
+이렇게 하면 `-S` 옵션을 주지 않아도 자동으로 서명을 한다.
+
+## .gitconfig 모듈화하기
+
+* 나는 `.gitconfig` 파일을 github의 [dotfiles](https://github.com/johngrib/dotfiles/blob/master/.gitconfig ) repo에 올려 관리하고 있다.
+* 그렇다면 `signingkey` 값도 함께 공개된 github repo에 올려도 될까?
+    * 어차피 commit에 서명해서 github에 push하면 `Verified` 눌렀을 때 `GPG key ID`를 보여준다.
+    * 서명해서 커밋한다면 key id는 공개될 수 밖에 없는 것으로 보인다.
+
+그래도 별로 올리고 싶지 않다던가, 집 컴퓨터와 회사 컴퓨터 설정에서 다른 부분만을 따로 관리하고 싶다면 다음 방법들이 있을 것이다.
+
+1. `.gitconfig`를 github repo로 관리하지 않는다.
+2. `.gitconfig`에서 특정 중요 값만 분리해 include하는 방식을 쓴다.
+
+나는 두 번째 방법을 선택했다.
+
+`.gitconfig`에는 파일을 include 할 수 있는 기능이 있다.
+
+다음과 같이 하면 된다.
+
+```
+[include]
+    path = ~/dotfiles/.gitconfig
+```
+
+따라서 나는 다음과 같이 두 개의 파일로 나누어 include 하게 했다.
+
+* `~/dotfiles/.gitconfig` : github 에 올려 관리하는 파일.
+* `~/.gitconfig` : github 에 올리지 않는 정보가 들어있는 파일.
+    * 이 파일에 `~/dotfiles/.gitconfig`를 include 한다.
+    * 이 파일은 로컬에서만 관리한다.
+
+```
+[user]
+    name = John Grib
+    email = 이메일 주소
+    signingkey = 1234ABCDE
+[commit]
+    gpgsign = true
+[include]
+    path = ~/dotfiles/.gitconfig
+```
+
+그리고 github repo로 관리하고 있는 `~/dotfiles/.gitconfig` 파일에서는 `[user]`, `[commit]` 섹션을 삭제해주면 된다.
+
+## github에 공개 키 등록하기
+
+commit에 서명을 하기 시작했다면 github에도 공개키를 등록하여, github이 서명을 알아보도록 설정한다.
+
+* <https://github.com/settings/keys >
+
+로그인하고 위의 링크로 들어가 `GPG keys`에 `gpg --export --armor 키아이디`로 가져온 공개 키를 복붙해 등록해주면 된다.
+
+이후 github에서 서명된 commit 옆에 `Verified`가 나타난다.
+클릭해보면 **This commit was signed with a verified signature.** 라는 문구가 나오며 프로필 사진과 사용자 아이디, GPG key ID도 함께 보여준다.
+
 # Links
 
 * [RFC 4880 - OpenPGP Message Format 5.5](https://tools.ietf.org/html/rfc4880#section-5.5 )
@@ -786,3 +873,10 @@ $ keybase device add
 * <https://keybase.io/ >
     * <https://librewiki.net/wiki/Keybase >
     * <https://keybase.io/docs/command_line >
+
+---
+
+* git 서명 관련
+    * [Managing commit signature verification (help.github.com)](https://help.github.com/articles/managing-commit-signature-verification/ )
+    * [Git 도구 - 내 작업에 서명하기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%EB%82%B4-%EC%9E%91%EC%97%85%EC%97%90-%EC%84%9C%EB%AA%85%ED%95%98%EA%B8%B0 )
+
