@@ -443,9 +443,12 @@ language:
     - {fileName: Python3}
 golang:
     - {fileName: Golang}
+    - {fileName: golang-cheatsheet}
     - {fileName: vim-go-auto-import}
     - {fileName: vim-go-env}
     - {fileName: vim-go-with-ultisnips}
+cheatsheet:
+    - {fileName: golang-cheatsheet}
 twitter:
     - {fileName: googling}
     - {fileName: labs-strava-com-heatmap}

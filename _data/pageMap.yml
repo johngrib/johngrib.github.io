@@ -933,7 +933,15 @@ Golang:
     parent: programming-language
     url: /wiki/Golang
     updated: '2018-09-18 17:21:01 +0900'
-    children: [vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
+    children: [golang-cheatsheet, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
+golang-cheatsheet:
+    type: wiki
+    title: 'Go cheatsheet'
+    summary: 'golang을 배우면서 까먹기 쉬운 것들을 적어두자'
+    parent: Golang
+    url: /wiki/golang-cheatsheet
+    updated: '2018-10-01 10:39:22 +0900'
+    children: []
 google-search-console-remove-outdated-content:
     type: wiki
     title: 'Google Search Console - Remove outdated content'
@@ -956,7 +964,7 @@ gpg:
     summary: 'GnuPG, the GNU Privacy Guard'
     parent: command-line
     url: /wiki/gpg
-    updated: '2018-09-20 11:13:46 +0900'
+    updated: '2018-10-01 08:59:26 +0900'
     children: []
 Gradle:
     type: wiki
@@ -1148,7 +1156,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-09-28 08:07:38 +0900'
+    updated: '2018-10-01 10:30:39 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1516,7 +1524,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-09-26 22:38:11 +0900'
+    updated: '2018-09-29 21:48:56 +0900'
     children: []
 RFC:
     type: wiki
@@ -1852,7 +1860,7 @@ vim-go-env:
     summary: '사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다'
     parent: Golang
     url: /wiki/vim-go-env
-    updated: '2018-09-27 22:04:30 +0900'
+    updated: '2018-09-28 23:04:19 +0900'
     children: []
 vim-go-with-ultisnips:
     type: wiki
