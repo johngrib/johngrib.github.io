@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-10-01 08:55:18 +0900
+updated : 2018-10-01 08:59:26 +0900
 tags    : bash 암호화 GNU
 toc     : true
 public  : true
@@ -770,6 +770,8 @@ $ keybase device add
 ```
 
 이후 `git commit`에 `-S` 옵션을 붙이면 커밋할 때 자동으로 비밀 키로 서명을 한다.
+
+**비밀 키를 사용해 서명하는 것이므로, 커밋할 때마다 gpg가 패스워드를 물어본다.**
 
 일일이 `-S` 옵션을 붙이는 게 귀찮으므로 나는 다음과 같이 설정하였다.
 
