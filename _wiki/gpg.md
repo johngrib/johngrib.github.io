@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-10-01 08:59:26 +0900
+updated : 2018-10-01 14:38:10 +0900
 tags    : bash 암호화 GNU
 toc     : true
 public  : true
@@ -785,6 +785,23 @@ $ keybase device add
 ```
 
 이렇게 하면 `-S` 옵션을 주지 않아도 자동으로 서명을 한다.
+
+## 문제 해결: Mac에서 signingkey 설정 후 commit이 안 될 경우
+
+다음을 시도해 보도록 하자.
+
+* `gnupg`를 업데이트 한다.
+* pinetry-mac 을 설치한다.
+* gpg-agent를 kill.
+
+```sh
+$ brew upgrade gnupg
+$ brew install pinetry-mac
+$ echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+$ killall gpg-agent
+```
+
+이후 재시도해본다.
 
 ## .gitconfig 모듈화하기
 
