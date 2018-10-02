@@ -910,6 +910,14 @@ gerald-weinberg-language-king:
     url: /wiki/gerald-weinberg-language-king
     updated: '2018-02-08 12:04:33 +0900'
     children: []
+ginkgo:
+    type: wiki
+    title: 'Ginkgo 사용하기'
+    summary: 'BDD Testing Framework for Go'
+    parent: Golang
+    url: /wiki/ginkgo
+    updated: '2018-10-02 13:33:54 +0900'
+    children: []
 git-checkout-specific-files:
     type: wiki
     title: 'git에서 다른 브랜치의 특정 파일만 체크아웃하기'
@@ -933,14 +941,14 @@ Golang:
     parent: programming-language
     url: /wiki/Golang
     updated: '2018-09-18 17:21:01 +0900'
-    children: [golang-cheatsheet, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
+    children: [ginkgo, golang-cheatsheet, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
 golang-cheatsheet:
     type: wiki
     title: 'Go cheatsheet'
     summary: 'golang을 배우면서 까먹기 쉬운 것들을 적어두자'
     parent: Golang
     url: /wiki/golang-cheatsheet
-    updated: '2018-10-01 10:39:22 +0900'
+    updated: '2018-10-01 11:04:54 +0900'
     children: []
 google-search-console-remove-outdated-content:
     type: wiki
@@ -964,7 +972,7 @@ gpg:
     summary: 'GnuPG, the GNU Privacy Guard'
     parent: command-line
     url: /wiki/gpg
-    updated: '2018-10-01 08:59:26 +0900'
+    updated: '2018-10-01 14:38:10 +0900'
     children: []
 Gradle:
     type: wiki
@@ -1156,7 +1164,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-10-01 10:30:39 +0900'
+    updated: '2018-10-02 13:07:53 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki

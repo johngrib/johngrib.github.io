@@ -430,6 +430,15 @@ science:
     - {fileName: GRAVITY-EXPRESS}
     - {fileName: Grote-Reber-home-made-radio-astronomy}
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
+golang:
+    - {fileName: ginkgo}
+    - {fileName: Golang}
+    - {fileName: golang-cheatsheet}
+    - {fileName: vim-go-auto-import}
+    - {fileName: vim-go-env}
+    - {fileName: vim-go-with-ultisnips}
+test:
+    - {fileName: ginkgo}
 til:
     - {fileName: git-checkout-specific-files}
     - {fileName: til}
@@ -441,12 +450,6 @@ language:
     - {fileName: Java}
     - {fileName: programming-language}
     - {fileName: Python3}
-golang:
-    - {fileName: Golang}
-    - {fileName: golang-cheatsheet}
-    - {fileName: vim-go-auto-import}
-    - {fileName: vim-go-env}
-    - {fileName: vim-go-with-ultisnips}
 cheatsheet:
     - {fileName: golang-cheatsheet}
 twitter:

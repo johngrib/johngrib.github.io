@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-10-01 10:30:39 +0900
+updated : 2018-10-02 13:07:53 +0900
 tags    : index
 toc     : true
 public  : true
@@ -89,6 +89,7 @@ comment : false
 * [[problem]]
 * [[programming-language]]{프로그래밍 언어}
     * [[Golang]]
+        * [[ginkgo]]
         * [[golang-cheatsheet]]
         * [[vim-go-auto-import]]
         * [[vim-go-env]]
