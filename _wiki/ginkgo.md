@@ -3,7 +3,7 @@ layout  : wiki
 title   : Ginkgo 사용하기
 summary : BDD Testing Framework for Go
 date    : 2018-10-02 10:55:21 +0900
-updated : 2018-10-02 13:33:54 +0900
+updated : 2018-10-02 21:28:49 +0900
 tags    : golang test
 toc     : true
 public  : true
@@ -75,7 +75,7 @@ import (
     . "github.com/onsi/gomega"
 )
 
-func TestCart(t *testing.T) {
+func TestGinkgo(t *testing.T) {
     RegisterFailHandler(Fail)
     RunSpecs(t, "Test functions Suite")
 }
@@ -94,7 +94,7 @@ var _ = Describe("Test functions",
 )
 ```
 
-`ginkgo -r`을 실행해보면 테스트를 수행한다.
+* `go test` 또는 `ginkgo -r`을 실행해보면 테스트를 수행한다.
 
 ![image](https://user-images.githubusercontent.com/1855714/46329142-908d7480-c646-11e8-8bcd-41b6e09f2d0c.png )
 
