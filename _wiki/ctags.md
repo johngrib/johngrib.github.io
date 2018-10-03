@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2018-10-03 22:43:36 +0900
+updated : 2018-10-03 23:48:53 +0900
 tags    : bash vim ctags golang
 toc     : true
 public  : true
@@ -16,7 +16,8 @@ latex   : false
 # ctags?
 
 * ctags는 소스코드를 탐색해 함수명, 변수명, 클래스명, 인터페이스명 등을 수집하고 위치를 기록한 인덱싱 파일(`tags`)을 만들어 주는 도구다.
-* 인덱싱 파일이 있으면 변수나 함수가 정의된 곳을 찾아보거나 특정 함수를 호출하는 모든 위치를 조회하는 등, 여러모로 편리하므로 다양한 에디터/IDE에서 ctags를 사용한다.
+* 프로젝트 내 변수나 함수가 정의된 곳을 찾아보거나 특정 함수를 호출하는 모든 위치를 조회할 수 있다.
+* 다양한 에디터/IDE에서 ctags를 사용한다.
     * Vim에서도 기본적으로 tags 파일을 사용하도록 설정되어 있으며, 관련 기능이 매우 다양하다.
 * ctags, Exuberant ctags, Universal ctags 등 종류가 다양하다.
 
@@ -113,7 +114,7 @@ $ echo 'tags' >> ./.git/info/exclude
 
 * `ctags`는 자동으로 돌아가는 종류의 명령이 아니다.
     * 명령을 실행시켜 주지 않으면 `tags` 파일이 갱신되지 않는다.
-* vim에서는 `autocmd`를 쓰면 파일이 저장될 때마다 `tags` 파일이 갱신되도록 설정할 수 있다.
+* `autocmd`를 사용하여 파일을 저장할 때마다 `tags` 파일이 갱신되도록 설정할 수 있다.
 
 ```viml
 autocmd BufWritePost * call system("ctags -R")
