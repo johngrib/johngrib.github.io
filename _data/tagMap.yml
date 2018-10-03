@@ -133,6 +133,7 @@ AWS:
 vim:
     - {fileName: 2017-05-04-input-source}
     - {fileName: 2017-07-09-vim-game-code-break}
+    - {fileName: ctags}
     - {fileName: Vim}
     - {fileName: vim-conceallevel}
     - {fileName: vim-f-hangul}
@@ -300,6 +301,7 @@ special-chars:
 bash:
     - {fileName: brew}
     - {fileName: csplit}
+    - {fileName: ctags}
     - {fileName: date}
     - {fileName: df}
     - {fileName: du}
@@ -380,6 +382,16 @@ history:
     - {fileName: Cromwell-s-rule}
     - {fileName: geacron}
     - {fileName: TETRIS-EFFECT}
+ctags:
+    - {fileName: ctags}
+golang:
+    - {fileName: ctags}
+    - {fileName: ginkgo}
+    - {fileName: Golang}
+    - {fileName: golang-cheatsheet}
+    - {fileName: vim-go-auto-import}
+    - {fileName: vim-go-env}
+    - {fileName: vim-go-with-ultisnips}
 design:
     - {fileName: Design-for-Hackers}
 drama:
@@ -430,13 +442,6 @@ science:
     - {fileName: GRAVITY-EXPRESS}
     - {fileName: Grote-Reber-home-made-radio-astronomy}
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
-golang:
-    - {fileName: ginkgo}
-    - {fileName: Golang}
-    - {fileName: golang-cheatsheet}
-    - {fileName: vim-go-auto-import}
-    - {fileName: vim-go-env}
-    - {fileName: vim-go-with-ultisnips}
 test:
     - {fileName: ginkgo}
 til:

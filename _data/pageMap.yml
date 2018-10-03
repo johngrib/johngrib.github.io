@@ -589,7 +589,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [brew, csplit, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes-command]
+    children: [brew, csplit, ctags, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes-command]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -653,6 +653,14 @@ csplit:
     parent: command-line
     url: /wiki/csplit
     updated: '2018-09-28 08:16:20 +0900'
+    children: []
+ctags:
+    type: wiki
+    title: 'ctags 명령어'
+    summary: '소스코드를 분석해 인덱싱 파일을 만든다'
+    parent: command-line
+    url: /wiki/ctags
+    updated: '2018-10-03 22:43:36 +0900'
     children: []
 d-i-a-01-reliable-scalable-maintainable:
     type: wiki
@@ -916,7 +924,7 @@ ginkgo:
     summary: 'BDD Testing Framework for Go'
     parent: Golang
     url: /wiki/ginkgo
-    updated: '2018-10-02 13:33:54 +0900'
+    updated: '2018-10-02 21:28:49 +0900'
     children: []
 git-checkout-specific-files:
     type: wiki
@@ -1164,7 +1172,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-10-02 13:07:53 +0900'
+    updated: '2018-10-03 22:41:57 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki

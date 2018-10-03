@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-10-02 13:07:53 +0900
+updated : 2018-10-03 22:41:57 +0900
 tags    : index
 toc     : true
 public  : true
@@ -157,6 +157,7 @@ comment : false
     * [[command-line]]
         * [[brew]]
         * [[csplit]]
+        * [[ctags]]
         * [[date]]
         * [[df]]
         * [[du]]
