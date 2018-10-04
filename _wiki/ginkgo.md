@@ -3,7 +3,7 @@ layout  : wiki
 title   : Ginkgo 사용하기
 summary : BDD Testing Framework for Go
 date    : 2018-10-02 10:55:21 +0900
-updated : 2018-10-02 21:28:49 +0900
+updated : 2018-10-04 16:44:56 +0900
 tags    : golang test
 toc     : true
 public  : true
@@ -30,6 +30,11 @@ matcher 라이브러리 `gomega` 설치.
 ```sh
 $ go get github.com/onsi/gomega
 ```
+
+# 실행
+
+* `ginkgo -r` : 하위 디렉토리의 테스트 코드를 모두 탐색하며 테스트를 수행한다.
+* `ginkgo watch -r` : 실행을 종료하지 않고, 변경 사항이 생길 때마다 테스트를 수행한다.
 
 # vim에서 사용하기
 
