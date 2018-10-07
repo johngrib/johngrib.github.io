@@ -278,6 +278,26 @@ bayes:
     - {fileName: rule-of-succession}
     - {fileName: study-think-bayes}
     - {fileName: Think-Bayes}
+bash:
+    - {fileName: bc}
+    - {fileName: brew}
+    - {fileName: csplit}
+    - {fileName: ctags}
+    - {fileName: date}
+    - {fileName: df}
+    - {fileName: du}
+    - {fileName: fc}
+    - {fileName: gpg}
+    - {fileName: grep}
+    - {fileName: history}
+    - {fileName: java_home}
+    - {fileName: my-bash-cheatsheet}
+    - {fileName: openssl}
+    - {fileName: sha256sum}
+    - {fileName: sort}
+    - {fileName: top}
+    - {fileName: uptime}
+    - {fileName: yes-command}
 story:
     - {fileName: Bill-Atkinson-productivity}
     - {fileName: gerald-weinberg-language-king}
@@ -298,25 +318,6 @@ Uncle-Bob:
 special-chars:
     - {fileName: braille-pattern-chars}
     - {fileName: special-chars}
-bash:
-    - {fileName: brew}
-    - {fileName: csplit}
-    - {fileName: ctags}
-    - {fileName: date}
-    - {fileName: df}
-    - {fileName: du}
-    - {fileName: fc}
-    - {fileName: gpg}
-    - {fileName: grep}
-    - {fileName: history}
-    - {fileName: java_home}
-    - {fileName: my-bash-cheatsheet}
-    - {fileName: openssl}
-    - {fileName: sha256sum}
-    - {fileName: sort}
-    - {fileName: top}
-    - {fileName: uptime}
-    - {fileName: yes-command}
 mac:
     - {fileName: brew}
     - {fileName: java_home}

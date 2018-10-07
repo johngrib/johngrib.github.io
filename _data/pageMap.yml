@@ -358,6 +358,14 @@ Bayes-theorem:
     url: /wiki/Bayes-theorem
     updated: '2018-04-22 18:56:03 +0900'
     children: []
+bc:
+    type: wiki
+    title: bc
+    summary: 'An arbitrary precision calculator language'
+    parent: programming-language
+    url: /wiki/bc
+    updated: '2018-10-07 21:29:56 +0900'
+    children: []
 big-O-notation:
     type: wiki
     title: '빅 오 표기법(Big O notation)'
@@ -660,7 +668,7 @@ ctags:
     summary: '소스코드를 분석해 인덱싱 파일을 만든다'
     parent: command-line
     url: /wiki/ctags
-    updated: '2018-10-03 22:43:36 +0900'
+    updated: '2018-10-03 23:48:53 +0900'
     children: []
 d-i-a-01-reliable-scalable-maintainable:
     type: wiki
@@ -924,7 +932,7 @@ ginkgo:
     summary: 'BDD Testing Framework for Go'
     parent: Golang
     url: /wiki/ginkgo
-    updated: '2018-10-02 21:28:49 +0900'
+    updated: '2018-10-04 16:44:56 +0900'
     children: []
 git-checkout-specific-files:
     type: wiki
@@ -1172,7 +1180,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-10-03 22:41:57 +0900'
+    updated: '2018-10-07 20:34:12 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1485,7 +1493,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [Golang, groovy, Java, Python3, yaml]
+    children: [bc, Golang, groovy, Java, Python3, yaml]
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -1540,7 +1548,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-09-29 21:48:56 +0900'
+    updated: '2018-10-07 15:46:35 +0900'
     children: []
 RFC:
     type: wiki
