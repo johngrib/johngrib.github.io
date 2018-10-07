@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-10-03 23:30:09 +0900
+updated : 2018-10-07 15:46:35 +0900
 tags    : review
 toc     : true
 public  : true
@@ -78,8 +78,10 @@ latex   : false
 * 2018-01-18 [[secret-of-consulting]]
 * 2018-01-12 [[toda-seiji-scientia]]{스키엔티아 - 도다 세이지 만화}
 
-## 영화/드라마
+## 영화/드라마/애니메이션
 
+* 2018-10-07 토탈 리콜(1990)
+* 2018-10-06 겁쟁이 페달 시즌2
 * 2018-09-16 포청천 개봉부전기(包青天 开封府传奇) - 포청천 비긴즈. 재밌어서 58부작이 전혀 길게 느껴지지 않았다.
 * 2018-09-08 [Searching](https://www.imdb.com/title/tt7668870/ )
 * 2018-07-28 [Extinction](https://www.netflix.com/title/80236421 )
