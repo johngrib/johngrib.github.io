@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2018-04-08 19:47:47 +0900
+updated : 2018-10-08 22:21:21 +0900
 tags    : gradle tool
 toc     : true
 public  : true
@@ -56,6 +56,12 @@ Total time: 0.979 secs
 ```bash
 # Gradle 실행시 JVM 최대 힙 사이즈를 1GB로 설정한다.
 export GRADLE_OPTS=-Xmx1024m
+```
+
+### 테스트 하나만 구동하기
+
+```sh
+gradle clean test --tests "package.class.method"
 ```
 
 ## Links
