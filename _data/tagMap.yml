@@ -417,6 +417,10 @@ java:
     - {fileName: Object-toString}
     - {fileName: private-constructor}
     - {fileName: use-java-primitive-type-for-performance}
+encryption:
+    - {fileName: encryption}
+    - {fileName: gpg}
+    - {fileName: openssl}
 ms:
     - {fileName: Excel}
 excel:
@@ -463,9 +467,6 @@ twitter:
     - {fileName: labs-strava-com-heatmap}
 facebook:
     - {fileName: googling}
-암호화:
-    - {fileName: gpg}
-    - {fileName: openssl}
 GNU:
     - {fileName: gpg}
 gradle:

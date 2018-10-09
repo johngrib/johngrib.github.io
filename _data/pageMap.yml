@@ -830,6 +830,14 @@ Elastic-Load-Balancing:
     url: /wiki/Elastic-Load-Balancing
     updated: '2018-09-16 22:06:25 +0900'
     children: []
+encryption:
+    type: wiki
+    title: Encryption
+    summary: '암호화 정보 이것저것'
+    parent: what
+    url: /wiki/encryption
+    updated: '2018-10-09 23:19:38 +0900'
+    children: []
 euro-problem:
     type: wiki
     title: '유로 문제(euro problem)'
@@ -988,7 +996,7 @@ gpg:
     summary: 'GnuPG, the GNU Privacy Guard'
     parent: command-line
     url: /wiki/gpg
-    updated: '2018-10-01 14:38:10 +0900'
+    updated: '2018-10-09 22:34:10 +0900'
     children: []
 Gradle:
     type: wiki
@@ -996,7 +1004,7 @@ Gradle:
     summary: 'Gradle Build Tool'
     parent: tools
     url: /wiki/Gradle
-    updated: '2018-04-08 19:47:47 +0900'
+    updated: '2018-10-08 22:21:21 +0900'
     children: []
 GRAVITY-EXPRESS:
     type: wiki
@@ -1180,7 +1188,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-10-07 20:34:12 +0900'
+    updated: '2018-10-09 22:35:57 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1436,7 +1444,7 @@ openssl:
     summary: 'cryptography toolkit'
     parent: command-line
     url: /wiki/openssl
-    updated: '2018-09-14 23:37:18 +0900'
+    updated: '2018-10-09 22:34:00 +0900'
     children: []
 orange-juice-test:
     type: wiki
@@ -1981,7 +1989,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [braille-pattern-chars, Continuous-Integration, groupId-artifactId, http-message, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
+    children: [braille-pattern-chars, Continuous-Integration, encryption, groupId-artifactId, http-message, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-10-07 20:34:12 +0900
+updated : 2018-10-09 22:35:57 +0900
 tags    : index
 toc     : true
 public  : true
@@ -219,6 +219,7 @@ comment : false
 * [[what]]
     * [[Continuous-Integration]]
     * [[braille-pattern-chars]]
+    * [[encryption]]
     * [[groupId-artifactId]]
     * [[http-message]]
     * [[RFC]]
