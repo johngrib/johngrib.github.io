@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-10-07 15:46:35 +0900
+updated : 2018-10-10 07:54:31 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-10-10 [인크립션: 실용주의 암호화](https://thebook.io/006879/ )
 * 2018-10-03 [염소가 된 인간](http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9791159310997)
 * 2018-09-29 [오류가 발생했습니다](http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9791196250126 ) - 이산화 작가의 SF 장편. 읽어갈수록 행복했다.
 * 2018-09-25 [[전생검신]] 41권. 칠요의 시련
