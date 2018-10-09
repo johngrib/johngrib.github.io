@@ -3,7 +3,7 @@ layout  : wiki
 title   : openssl 명령어
 summary : cryptography toolkit
 date    : 2018-09-14 22:54:57 +0900
-updated : 2018-09-14 23:37:18 +0900
+updated : 2018-10-09 21:58:20 +0900
 tags    : bash 암호화 aes sha
 toc     : true
 public  : true
@@ -128,3 +128,5 @@ E657 is prime
 # Links
 
 * <https://www.madboa.com/geek/openssl/ >
+* [블록 암호 운용 방식(wikipedia)](https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A1%9D_%EC%95%94%ED%98%B8_%EC%9A%B4%EC%9A%A9_%EB%B0%A9%EC%8B%9D )
+
