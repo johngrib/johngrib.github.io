@@ -3,8 +3,8 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-10-01 14:38:10 +0900
-tags    : bash 암호화 GNU
+updated : 2018-10-09 22:34:10 +0900
+tags    : bash encryption GNU
 toc     : true
 public  : true
 parent  : command-line
