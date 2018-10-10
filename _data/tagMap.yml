@@ -420,6 +420,7 @@ java:
 encryption:
     - {fileName: encryption}
     - {fileName: gpg}
+    - {fileName: Kerckhoffs-s-principle}
     - {fileName: openssl}
 ms:
     - {fileName: Excel}

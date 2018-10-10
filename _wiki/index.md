@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-10-09 22:35:57 +0900
+updated : 2018-10-10 09:27:00 +0900
 tags    : index
 toc     : true
 public  : true
@@ -110,9 +110,10 @@ comment : false
     * [[airplain-rule]]
     * [[Boy-Scout-Rule]]
     * [[Brooks-s-law]]
-    * [[Copernican-Principle]]
     * [[Conway-s-law]]
+    * [[Copernican-Principle]]
     * [[Edsel-edict]]
+    * [[Kerckhoffs-s-principle]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
     * [[No-Silver-Bullet]]
     * [[orange-juice-test]]

@@ -1188,7 +1188,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-10-09 22:35:57 +0900'
+    updated: '2018-10-10 09:27:00 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1229,6 +1229,14 @@ John-von-Neumann:
     parent: legend
     url: /wiki/John-von-Neumann
     updated: '2018-04-03 22:57:19 +0900'
+    children: []
+Kerckhoffs-s-principle:
+    type: wiki
+    title: '커코프의 원칙(Kerckhoffs''s principle)'
+    summary: '암호의 안전성은 알고리즘이 아니라 키의 비밀성에만 의존해야 한다'
+    parent: proverb
+    url: /wiki/Kerckhoffs-s-principle
+    updated: '2018-10-10 09:57:22 +0900'
     children: []
 King-O-The-Cats:
     type: wiki
@@ -1509,7 +1517,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-02-21 22:37:29 +0900'
-    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, Lubarsky-s-Law-of-Cybernetic-Entomology, No-Silver-Bullet, orange-juice-test, Postel-s-law, Zipf-s-law]
+    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, No-Silver-Bullet, orange-juice-test, Postel-s-law, Zipf-s-law]
 Python3:
     type: wiki
     title: Python3
@@ -1556,7 +1564,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-10-07 15:46:35 +0900'
+    updated: '2018-10-10 07:54:31 +0900'
     children: []
 RFC:
     type: wiki
