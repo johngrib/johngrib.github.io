@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-10-09 22:34:10 +0900
+updated : 2018-10-10 13:01:11 +0900
 tags    : bash encryption GNU
 toc     : true
 public  : true
@@ -791,7 +791,7 @@ $ keybase device add
 다음을 시도해 보도록 하자.
 
 * `gnupg`를 업데이트 한다.
-* pinetry-mac 을 설치한다.
+* pinentry-mac 을 설치한다.
 * gpg-agent를 kill.
 
 ```sh
