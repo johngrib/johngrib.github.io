@@ -3,7 +3,7 @@ layout  : wiki
 title   : Encryption
 summary : 암호화 정보 이것저것
 date    : 2018-10-09 22:35:58 +0900
-updated : 2018-10-09 23:19:38 +0900
+updated : 2018-10-10 10:04:16 +0900
 tags    : encryption
 toc     : true
 public  : true
@@ -27,5 +27,6 @@ latex   : false
 * [[gpg]]{gpg 사용법}
 * [블록 암호 운용 방식(wikipedia)](https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A1%9D_%EC%95%94%ED%98%B8_%EC%9A%B4%EC%9A%A9_%EB%B0%A9%EC%8B%9D )
 * [Names of large numbers (wikipedia)](https://en.wikipedia.org/wiki/Names_of_large_numbers )
+* [[Kerckhoffs-s-principle]]
 
 
