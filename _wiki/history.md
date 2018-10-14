@@ -3,7 +3,7 @@ layout  : wiki
 title   : bash 명령어 history 다루기
 summary : 사용법 및 잡다한 팁 요약
 date    : 2018-09-01 18:01:04 +0900
-updated : 2018-09-02 21:51:46 +0900
+updated : 2018-10-14 10:12:24 +0900
 tags    : bash
 toc     : true
 public  : true
@@ -86,7 +86,7 @@ function update_history {
     history -c
     history -r
 }
-PROMPT_COMMAND='update_history'
+PROMPT_COMMAND="share_history; $PROMPT_COMMAND"
 shopt -u histappend
 ```
 
@@ -99,6 +99,11 @@ shopt -u histappend
 * `shopt -u histappend`: Bash의 `histappend` 옵션을 끈다.
 
 이제 터미널을 여러 개 쓰거나 탭을 많이 열어놔도 히스토리를 같이 쓸 수 있다.
+
+* `PROMPT_COMMAND` 설정 주의
+    * `PROMPT_COMMAND="share_history"` - 이렇게 설정하면 터미널이 디폴트로 지정한 프롬프트 커맨드가 실행되지 않는다.
+    * 예를 들어, 새로운 터미널 탭을 열었는데 작업 디렉토리가 이어지지 않을 수 있다.
+    * `PROMPT_COMMAND="share_history; $PROMPT_COMMAND"` - 이렇게 설정해 주도록 하자.
 
 ### 히스토리 사이즈 설정
 
