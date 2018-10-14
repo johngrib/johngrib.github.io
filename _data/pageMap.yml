@@ -836,7 +836,7 @@ encryption:
     summary: '암호화 정보 이것저것'
     parent: what
     url: /wiki/encryption
-    updated: '2018-10-09 23:19:38 +0900'
+    updated: '2018-10-10 10:04:16 +0900'
     children: []
 euro-problem:
     type: wiki
@@ -965,7 +965,7 @@ Golang:
     parent: programming-language
     url: /wiki/Golang
     updated: '2018-09-18 17:21:01 +0900'
-    children: [ginkgo, golang-cheatsheet, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
+    children: [ginkgo, golang-cheatsheet, golang-struct-padding, golang-types, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
 golang-cheatsheet:
     type: wiki
     title: 'Go cheatsheet'
@@ -973,6 +973,22 @@ golang-cheatsheet:
     parent: Golang
     url: /wiki/golang-cheatsheet
     updated: '2018-10-01 11:04:54 +0900'
+    children: []
+golang-struct-padding:
+    type: wiki
+    title: 'Golang struct alignment padding'
+    summary: '구조체 멤버 정렬 순서에 따라 구조체 크기가 달라진다'
+    parent: Golang
+    url: /wiki/golang-struct-padding
+    updated: '2018-10-14 22:59:01 +0900'
+    children: []
+golang-types:
+    type: wiki
+    title: 'Go type'
+    summary: 'Golang의 타입'
+    parent: Golang
+    url: /wiki/golang-types
+    updated: '2018-10-14 21:48:34 +0900'
     children: []
 google-search-console-remove-outdated-content:
     type: wiki
@@ -996,7 +1012,7 @@ gpg:
     summary: 'GnuPG, the GNU Privacy Guard'
     parent: command-line
     url: /wiki/gpg
-    updated: '2018-10-09 22:34:10 +0900'
+    updated: '2018-10-10 13:01:11 +0900'
     children: []
 Gradle:
     type: wiki
@@ -1132,7 +1148,7 @@ history:
     summary: '사용법 및 잡다한 팁 요약'
     parent: command-line
     url: /wiki/history
-    updated: '2018-09-02 21:51:46 +0900'
+    updated: '2018-10-14 10:12:24 +0900'
     children: []
 HOT-FUZZ:
     type: wiki
@@ -1188,7 +1204,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-10-10 09:27:00 +0900'
+    updated: '2018-10-14 21:47:36 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1564,7 +1580,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-10-10 07:54:31 +0900'
+    updated: '2018-10-13 20:19:34 +0900'
     children: []
 RFC:
     type: wiki

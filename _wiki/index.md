@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-10-10 09:27:00 +0900
+updated : 2018-10-14 21:47:36 +0900
 tags    : index
 toc     : true
 public  : true
@@ -92,6 +92,8 @@ comment : false
     * [[Golang]]
         * [[ginkgo]]
         * [[golang-cheatsheet]]
+        * [[golang-struct-padding]]
+        * [[golang-types]]
         * [[vim-go-auto-import]]
         * [[vim-go-env]]
         * [[vim-go-with-ultisnips]]

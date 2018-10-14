@@ -390,6 +390,8 @@ golang:
     - {fileName: ginkgo}
     - {fileName: Golang}
     - {fileName: golang-cheatsheet}
+    - {fileName: golang-struct-padding}
+    - {fileName: golang-types}
     - {fileName: vim-go-auto-import}
     - {fileName: vim-go-env}
     - {fileName: vim-go-with-ultisnips}
@@ -463,6 +465,12 @@ language:
     - {fileName: Python3}
 cheatsheet:
     - {fileName: golang-cheatsheet}
+padding:
+    - {fileName: golang-struct-padding}
+alignment:
+    - {fileName: golang-struct-padding}
+type:
+    - {fileName: golang-types}
 twitter:
     - {fileName: googling}
     - {fileName: labs-strava-com-heatmap}
