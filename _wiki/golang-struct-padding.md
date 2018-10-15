@@ -3,7 +3,7 @@ layout  : wiki
 title   : Golang struct alignment padding
 summary : 구조체 멤버 정렬 순서에 따라 구조체 크기가 달라진다
 date    : 2018-10-14 21:47:38 +0900
-updated : 2018-10-15 10:00:44 +0900
+updated : 2018-10-15 10:07:01 +0900
 tags    : golang padding alignment
 toc     : true
 public  : true
@@ -383,7 +383,7 @@ fmt.Printf("%d\n", &newFooBaz.y)    // 824633802920
 * `z`가 들어간다.
     * `z`는 4 byte 이므로 4칸씩 건너뛰며 들어갈 곳을 찾는다.
     * 따라서 체크하는 곳은 912, 916, 920... 이면서 `x`보다 뒤인 곳.
-    * 914가 비어 있으므로 들어간다.
+    * 916이 비어 있으므로 들어간다.
 
 | 912     | 913 | 914 | 915 |
 | x       |     |     |     |
