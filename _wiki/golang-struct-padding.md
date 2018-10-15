@@ -3,7 +3,7 @@ layout  : wiki
 title   : Golang struct alignment padding
 summary : 구조체 멤버 정렬 순서에 따라 구조체 크기가 달라진다
 date    : 2018-10-14 21:47:38 +0900
-updated : 2018-10-15 10:07:01 +0900
+updated : 2018-10-15 10:15:05 +0900
 tags    : golang padding alignment
 toc     : true
 public  : true
@@ -418,6 +418,7 @@ fmt.Printf("%d\n", &newFooBaz.y)    // 824633802920
 
 # Links
 
+* [Size and alignment guarantees (golang.org)](https://golang.org/ref/spec#Size_and_alignment_guarantees )
 * [Data structure alignment](https://en.wikipedia.org/wiki/Data_structure_alignment )
 * <https://stackoverflow.com/questions/39063530/optimising-datastructure-word-alignment-padding-in-golang >
 
