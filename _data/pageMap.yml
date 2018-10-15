@@ -980,7 +980,7 @@ golang-struct-padding:
     summary: '구조체 멤버 정렬 순서에 따라 구조체 크기가 달라진다'
     parent: Golang
     url: /wiki/golang-struct-padding
-    updated: '2018-10-14 22:59:01 +0900'
+    updated: '2018-10-15 10:15:05 +0900'
     children: []
 golang-types:
     type: wiki
@@ -1029,6 +1029,14 @@ GRAVITY-EXPRESS:
     parent: book
     url: /wiki/GRAVITY-EXPRESS
     updated: '2018-04-20 21:24:47 +0900'
+    children: []
+gray-code:
+    type: wiki
+    title: '그레이 코드(Gray code)'
+    summary: 'reflected binary Gray code'
+    parent: what
+    url: /wiki/gray-code
+    updated: '2018-10-15 23:33:23 +0900'
     children: []
 grep:
     type: wiki
@@ -1204,7 +1212,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-10-14 21:47:36 +0900'
+    updated: '2018-10-15 21:40:29 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -2013,7 +2021,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [braille-pattern-chars, Continuous-Integration, encryption, groupId-artifactId, http-message, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
+    children: [braille-pattern-chars, Continuous-Integration, encryption, gray-code, groupId-artifactId, http-message, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

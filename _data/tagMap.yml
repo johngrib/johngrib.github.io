@@ -242,6 +242,7 @@ law:
     - {fileName: Zipf-s-law}
 algorithm:
     - {fileName: algorithm}
+    - {fileName: gray-code}
 algirithm:
     - {fileName: Algorithms-to-Live-By}
 netflix:
@@ -482,6 +483,8 @@ gradle:
     - {fileName: Gradle}
 tool:
     - {fileName: Gradle}
+binary:
+    - {fileName: gray-code}
 검색:
     - {fileName: grep}
 jvm-lang:
