@@ -3,7 +3,7 @@ layout  : wiki
 title   : Go cheatsheet
 summary : golang을 배우면서 까먹기 쉬운 것들을 적어두자
 date    : 2018-10-01 10:30:40 +0900
-updated : 2018-10-19 22:17:39 +0900
+updated : 2018-10-19 22:21:31 +0900
 tags    : golang cheatsheet
 toc     : true
 public  : true
@@ -16,6 +16,8 @@ latex   : false
 # 연산자
 
 ## Arithmetic operators
+
+<https://golang.org/ref/spec#Arithmetic_operators >
 
 ```
 +    sum                    integers, floats, complex values, strings
