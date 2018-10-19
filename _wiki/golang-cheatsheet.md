@@ -3,7 +3,7 @@ layout  : wiki
 title   : Go cheatsheet
 summary : golang을 배우면서 까먹기 쉬운 것들을 적어두자
 date    : 2018-10-01 10:30:40 +0900
-updated : 2018-10-01 11:04:54 +0900
+updated : 2018-10-19 22:17:39 +0900
 tags    : golang cheatsheet
 toc     : true
 public  : true
@@ -12,6 +12,47 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+# 연산자
+
+## Arithmetic operators
+
+```
++    sum                    integers, floats, complex values, strings
+-    difference             integers, floats, complex values
+*    product                integers, floats, complex values
+/    quotient               integers, floats, complex values
+%    remainder              integers
+
+&    bitwise AND            integers
+|    bitwise OR             integers
+^    bitwise XOR            integers
+&^   bit clear (AND NOT)    integers
+
+<<   left shift             integer << unsigned integer
+>>   right shift            integer >> unsigned integer
+```
+
+
+## Operator precedence
+
+<https://golang.org/ref/spec#Operator_precedence >
+
+연산자 우선순위는 다음과 같다.
+
+```
+Precedence    Operator
+    5             *  /  %  <<  >>  &  &^
+    4             +  -  |  ^
+    3             ==  !=  <  <=  >  >=
+    2             &&
+    1             ||
+```
+
+
+
+
+
 
 # getter와 setter
 
