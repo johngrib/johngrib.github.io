@@ -612,7 +612,7 @@ CONCRETE-MATH:
     summary: '로널드 그레이엄과 도널드 커누스, 오렌 파타슈닉의 Stanford 강의 교재'
     parent: book
     url: /wiki/CONCRETE-MATH
-    updated: '2018-05-23 20:20:35 +0900'
+    updated: '2018-10-19 08:31:49 +0900'
     children: []
 Continuous-Integration:
     type: wiki
@@ -853,7 +853,15 @@ Excel:
     parent: tools
     url: /wiki/Excel
     updated: '2018-09-17 11:13:03 +0900'
-    children: [excel-remove-circular-reference, excel-sumifs, excel-transpos, excel-vba-setting]
+    children: [excel-hot-keys, excel-remove-circular-reference, excel-sumifs, excel-transpos, excel-vba-setting]
+excel-hot-keys:
+    type: wiki
+    title: '엑셀 단축키 모음'
+    summary: ""
+    parent: Excel
+    url: /wiki/excel-hot-keys
+    updated: '2018-11-01 09:45:21 +0900'
+    children: []
 excel-remove-circular-reference:
     type: wiki
     title: '엑셀 셀 순환 참조 문제 해결하기'
@@ -902,6 +910,14 @@ fish-shell:
     url: /wiki/fish-shell
     updated: '2018-03-12 23:07:23 +0900'
     children: []
+floating-point:
+    type: wiki
+    title: 'Floating Point 부동소수점'
+    summary: null
+    parent: what
+    url: /wiki/floating-point
+    updated: '2018-10-29 11:40:34 +0900'
+    children: []
 frac1e:
     type: wiki
     title: 'n개의 제비뽑기에 n번 도전'
@@ -909,6 +925,14 @@ frac1e:
     parent: math
     url: /wiki/frac1e
     updated: '2018-04-08 20:40:46 +0900'
+    children: []
+gcd:
+    type: wiki
+    title: 'GCD - Greatest Common Divisor'
+    summary: 최대공약수
+    parent: math
+    url: /wiki/gcd
+    updated: '2018-10-26 11:58:49 +0900'
     children: []
 geacron:
     type: wiki
@@ -965,14 +989,22 @@ Golang:
     parent: programming-language
     url: /wiki/Golang
     updated: '2018-09-18 17:21:01 +0900'
-    children: [ginkgo, golang-cheatsheet, golang-struct-padding, golang-types, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
+    children: [ginkgo, golang-cheatsheet, golang-dependency-manager, golang-struct-padding, golang-types, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
 golang-cheatsheet:
     type: wiki
     title: 'Go cheatsheet'
     summary: 'golang을 배우면서 까먹기 쉬운 것들을 적어두자'
     parent: Golang
     url: /wiki/golang-cheatsheet
-    updated: '2018-10-01 11:04:54 +0900'
+    updated: '2018-10-19 22:21:31 +0900'
+    children: []
+golang-dependency-manager:
+    type: wiki
+    title: 'Go dependency manager'
+    summary: '사람들이 많이 쓰는 걸 쓰자'
+    parent: Golang
+    url: /wiki/golang-dependency-manager
+    updated: '2018-10-21 17:51:17 +0900'
     children: []
 golang-struct-padding:
     type: wiki
@@ -1036,7 +1068,7 @@ gray-code:
     summary: 'reflected binary Gray code'
     parent: what
     url: /wiki/gray-code
-    updated: '2018-10-15 23:33:23 +0900'
+    updated: '2018-10-15 23:41:01 +0900'
     children: []
 grep:
     type: wiki
@@ -1212,7 +1244,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-10-15 21:40:29 +0900'
+    updated: '2018-11-01 09:03:39 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1357,7 +1389,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Cromwell-s-rule, frac1e, rule-of-succession, secretary-problem]
+    children: [Bayes-theorem, Cromwell-s-rule, frac1e, gcd, rule-of-succession, secretary-problem]
 mathdict:
     type: wiki
     title: '대한수학회 수학용어 사전'
@@ -1409,10 +1441,10 @@ movie:
 my-bash-cheatsheet:
     type: wiki
     title: '나의 bash cheatsheet'
-    summary: ""
+    summary: 'bash tip 모음'
     parent: command-line
     url: /wiki/my-bash-cheatsheet
-    updated: '2018-09-24 13:08:33 +0900'
+    updated: '2018-10-17 13:11:53 +0900'
     children: []
 my-wiki:
     type: wiki
@@ -1533,7 +1565,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [bc, Golang, groovy, Java, Python3, yaml]
+    children: [bc, Golang, groovy, Java, Python3, TOML, yaml]
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -1588,7 +1620,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-10-13 20:19:34 +0900'
+    updated: '2018-10-27 19:17:55 +0900'
     children: []
 RFC:
     type: wiki
@@ -1806,6 +1838,14 @@ toda-seiji-scientia:
     url: /wiki/toda-seiji-scientia
     updated: '2018-01-26 21:40:15 +0900'
     children: []
+TOML:
+    type: wiki
+    title: TOML
+    summary: 'Tom''s Obvious, Minimal Language'
+    parent: programming-language
+    url: /wiki/TOML
+    updated: '2018-10-23 11:01:12 +0900'
+    children: []
 tools:
     type: wiki
     title: tools
@@ -1893,7 +1933,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [my-wiki, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-ycm-python3, vimwiki]
+    children: [my-wiki, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'
@@ -1966,6 +2006,14 @@ vim-tmux-t-ut:
     url: /wiki/vim-tmux-t-ut
     updated: '2017-04-03 07:33:49 +0900'
     children: []
+vim-with-space-char:
+    type: wiki
+    title: 'Vim 공백 문자 조작 설정'
+    summary: ""
+    parent: Vim
+    url: /wiki/vim-with-space-char
+    updated: '2018-10-31 10:00:21 +0900'
+    children: []
 vim-ycm-python3:
     type: wiki
     title: 'youcompleteme를 python3로 구동하기'
@@ -2021,7 +2069,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [braille-pattern-chars, Continuous-Integration, encryption, gray-code, groupId-artifactId, http-message, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
+    children: [braille-pattern-chars, Continuous-Integration, encryption, floating-point, gray-code, groupId-artifactId, http-message, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

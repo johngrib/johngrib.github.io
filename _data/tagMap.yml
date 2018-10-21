@@ -17,6 +17,7 @@ math:
     - {fileName: c-m-05-Binomial-Coefficients-04}
     - {fileName: Cromwell-s-rule}
     - {fileName: frac1e}
+    - {fileName: gcd}
     - {fileName: math}
     - {fileName: mathdict}
     - {fileName: rule-of-succession}
@@ -144,6 +145,7 @@ vim:
     - {fileName: vim-rest-console}
     - {fileName: vim-tagbar-with-markdown}
     - {fileName: vim-tmux-t-ut}
+    - {fileName: vim-with-space-char}
     - {fileName: vim-ycm-python3}
     - {fileName: vimium}
     - {fileName: vimwiki}
@@ -391,6 +393,7 @@ golang:
     - {fileName: ginkgo}
     - {fileName: Golang}
     - {fileName: golang-cheatsheet}
+    - {fileName: golang-dependency-manager}
     - {fileName: golang-struct-padding}
     - {fileName: golang-types}
     - {fileName: vim-go-auto-import}
@@ -428,10 +431,13 @@ encryption:
 ms:
     - {fileName: Excel}
 excel:
+    - {fileName: excel-hot-keys}
     - {fileName: excel-remove-circular-reference}
     - {fileName: excel-sumifs}
     - {fileName: excel-transpos}
     - {fileName: excel-vba-setting}
+hotkey:
+    - {fileName: excel-hot-keys}
 vba:
     - {fileName: excel-transpos}
     - {fileName: excel-vba-setting}
@@ -439,6 +445,9 @@ fish:
     - {fileName: fish-shell}
 terminal:
     - {fileName: fish-shell}
+binary:
+    - {fileName: floating-point}
+    - {fileName: gray-code}
 확률:
     - {fileName: frac1e}
     - {fileName: rule-of-succession}
@@ -483,8 +492,6 @@ gradle:
     - {fileName: Gradle}
 tool:
     - {fileName: Gradle}
-binary:
-    - {fileName: gray-code}
 검색:
     - {fileName: grep}
 jvm-lang:
@@ -603,6 +610,11 @@ trouble-shooting:
     - {fileName: til}
     - {fileName: trouble-shooting-node-7-install}
     - {fileName: vim-conceallevel}
+toml:
+    - {fileName: TOML}
+data-format:
+    - {fileName: TOML}
+    - {fileName: yaml}
 performance:
     - {fileName: use-java-primitive-type-for-performance}
 vagrant:
@@ -640,8 +652,6 @@ what:
 why:
     - {fileName: why}
 yaml:
-    - {fileName: yaml}
-data-format:
     - {fileName: yaml}
 공부:
     - {fileName: You-and-Your-Research}

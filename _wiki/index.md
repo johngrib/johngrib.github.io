@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-10-15 21:40:29 +0900
+updated : 2018-11-01 09:03:39 +0900
 tags    : index
 toc     : true
 public  : true
@@ -36,6 +36,7 @@ comment : false
     * [[Bayes-theorem]]
     * [[Cromwell-s-rule]]
     * [[frac1e]]{n개의 제비뽑기에 n번 도전}
+    * [[gcd]]
     * [[rule-of-succession]]
     * [[secretary-problem]]
 * [[media]]
@@ -92,6 +93,7 @@ comment : false
     * [[Golang]]
         * [[ginkgo]]
         * [[golang-cheatsheet]]
+        * [[golang-dependency-manager]]
         * [[golang-struct-padding]]
         * [[golang-types]]
         * [[vim-go-auto-import]]
@@ -107,6 +109,7 @@ comment : false
         * [[use-java-primitive-type-for-performance]]
     * [[Python3]]
         * [[python3-simple-file-sharing]]
+    * [[TOML]]
     * [[YAML]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
     * [[airplain-rule]]
@@ -179,6 +182,7 @@ comment : false
         * [[yes-command]]
         * [[my-bash-cheatsheet]]
     * [[Excel]]
+        * [[excel-hot-keys]]
         * [[excel-remove-circular-reference]]
         * [[excel-sumifs]]
         * [[excel-transpos]]
@@ -217,12 +221,14 @@ comment : false
     * [[vim-rest-console]]
     * [[vim-tagbar-with-markdown]]
     * [[vim-tmux-t-ut]]
+    * [[vim-with-space-char]]
     * [[vim-ycm-python3]]
     * [[vimwiki]]
 * [[what]]
-    * [[Continuous-Integration]]
     * [[braille-pattern-chars]]
+    * [[Continuous-Integration]]
     * [[encryption]]
+    * [[floating-point]]
     * [[gray-code]]
     * [[groupId-artifactId]]
     * [[http-message]]
