@@ -3,7 +3,7 @@ layout  : wiki
 title   : Go dependency manager
 summary : 사람들이 많이 쓰는 걸 쓰자
 date    : 2018-10-21 10:19:44 +0900
-updated : 2018-10-21 17:24:14 +0900
+updated : 2018-10-21 17:51:17 +0900
 tags    : golang
 toc     : true
 public  : true
@@ -163,8 +163,12 @@ $ # 추가
 $ dep ensure -add github.com/pkg/errors
 
 $ # 업데이트
+$ dep ensure
 $ dep ensure -update
 $ dep ensure -update github.com/foo/bar
+
+$ # -v 옵션을 주면 진행상황을 출력한다
+$ dep ensure -v
 ```
 
 ### dep check
