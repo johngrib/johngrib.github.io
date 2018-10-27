@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-10-13 20:19:34 +0900
+updated : 2018-10-27 19:17:55 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-10-27 [[전생검신]] 42권. 시련의 끝에서
 * 2018-10-13 [적게 벌어도 잘사는 노후 50년](https://www.kyobobook.co.kr/product/detailViewKor.laf?&mallGb=KOR&ejkGb=KOR&barcode=9791185035901&orderClick=LBB&Kc=SETRETAgendasearch )
 * 2018-10-10 [인크립션: 실용주의 암호화](https://thebook.io/006879/ )
 * 2018-10-03 [염소가 된 인간](http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9791159310997)
