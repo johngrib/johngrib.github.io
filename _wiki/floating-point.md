@@ -3,7 +3,7 @@ layout  : wiki
 title   : Floating Point 부동소수점
 summary :
 date    : 2018-10-28 08:03:23 +0900
-updated : 2018-10-28 22:04:10 +0900
+updated : 2018-10-29 10:28:43 +0900
 tags    : binary
 toc     : true
 public  : true
@@ -368,6 +368,109 @@ fmt.Println(foo - bar)  // -2
 * 그러나 1, 2가 커지가 결과가 이상하게 나와버린다.
 * 크기 비교는 올바르게 나왔지만 `foo - bar`가 `-2`가 나왔다. 수학적으로는 `-1`이 나와야 한다.
 
+# Rounding
+
+>
+4.3 Rounding-direction attributes  
+Rounding takes a number regarded as infinitely precise and, if necessary, modifies it to fit in the destination’s format while signaling the inexact exception, underflow, or overflow when appropriate (see 7). Except where stated otherwise, every operation shall be performed as if it first produced an intermediate result correct to infinite precision and with unbounded range, and then rounded that result according to one of the attributes in this clause.
+
+* 무한한 정밀도가 필요한 숫자를 다룰 때 반올림이 사용된다.
+* 필요한 경우, 대상 포맷에 맞추기 위해 반올림으로 숫자를 변경한다.
+
+>
+4.3.1 Rounding-directionattributestonearest  
+In the following two rounding-direction attributes, an infinitely precise result with magnitude at least $$b^{emax}(b − \frac{1}{2} b^{1−p})$$ shall round to $$\infty$$ with no change in sign; here emax and p are determined by the destination format (see 3.3). With:
+- **roundTiesToEven**, the floating-point number nearest to the infinitely precise result shall be delivered; if the two nearest floating-point numbers bracketing an unrepresentable infinitely precise result are equally near, the one with an even least significant digit shall be delivered
+- roundTiesToAway, the floating-point number nearest to the infinitely precise result shall be delivered; if the two nearest floating-point numbers bracketing an unrepresentable infinitely precise result are equally near, the one with larger magnitude shall be delivered.
+
+* roundTiesToEven : 부동 소수점으로 표현할 수 없는 무한한 정밀도가 있는 숫자를 표현할 때, 두 개의 부동 소수점 숫자가 표현하려 하는 숫자와 똑같이 가까운 경우, 더 작은 최하위 숫자를 갖고 있는 숫자를 선택한다.
+
+>
+4.3.3 Rounding attribute requirements  
+An implementation of this standard shall provide roundTiesToEven and the three directed rounding attributes. A decimal format implementation of this standard shall provide roundTiesToAway as a user-selectable rounding-direction attribute. The rounding attribute roundTiesToAway is not required for a binary format implementation.  
+The **roundTiesToEven** rounding-direction attribute shall be the default rounding-direction attribute for results in binary formats. The default rounding-direction attribute for results in decimal formats is language- defined, but should be roundTiesToEven.
+
+* binary format에서는 **roundTiesToEven**을 쓴다.
+
+## 0.1 + 0.2 = 0.30000000000000004
+
+유명한 케이스인 `0.1 + 0.2 = 0.30000000000000004`를 시뮬레이션 해보자.
+
+`0.1` + `0.2` 를 해보면 `0.3` 이 아니라 `0.30000000000000004`가 나온다는 것은 널리 알려진 사실이다.
+
+일단 `0.1`, `0.2`, `0.3`, `0.30000000000000004`의 비트를 보면 다음과 같다.
+
+```
+                                                                   ,,,,
+0.1: 0_01111111011_1001100110011001100110011001100110011001100110011010
+0.2: 0_01111111100_1001100110011001100110011001100110011001100110011010
+0.3: 0_01111111101_0011001100110011001100110011001100110011001100110011
+0.30000000000000004
+   : 0_01111111101_0011001100110011001100110011001100110011001100110100
+```
+
+* `0.1`과 `0.2`는 이진법으로 표현했을 때 `1001`이 무한히 반복되는 무한소수이다.
+* 그런데 `0.1`과 `0.2`의 비트 마지막 부분을 잘 관찰해 보면 `1001`반복이 `1010`으로 손상되어 있음을 알 수 있다.
+* 반올림 때문이다.
+    * `10011` 을 `10100`으로 반올림하고, 마지막 `0`을 잘라내면 `1010`이 된다.
+
+두 수를 더해보자. 자릿수 변화를 알기 쉽도록 오른쪽 끝에 `\\`를 표시했다.
+
+```
+0.1 = 0_01111111011_1001100110011001100110011001100110011001100110011010  \\
+0.2 = 0_01111111100_1001100110011001100110011001100110011001100110011010  \\
+```
+
+더해주려면 $$e$$ 값을 맞춰줘야 한다. 결과가 될 0.3 기준으로 지수를 맞춰보면 다음과 같을 것이다.
+(컴퓨터는 아직 계산하지 않은 결과에 맞추지 않겠지만 이해를 쉽게 하기 위해 0.3에 맞추었다.)
+
+```
+0.1 = 0_01111111101_011001100110011001100110011001100110011001100110011010\\
+0.2 = 0_01111111101_11001100110011001100110011001100110011001100110011010 \\
+```
+
+덧셈을 위해 둘 다 소수점을 왼쪽으로 이동시키면서 생략했던 `1.`을 살려놓았다.
+
+이제 두 수의 가수부만 떼어다 계산해보면 다음과 같은 결과가 나온다.
+
+```
+   011001100110011001100110011001100110011001100110011010
+ + 11001100110011001100110011001100110011001100110011010
+ =100110011001100110011001100110011001100110011001100111
+```
+
+이제 이 값을 그대로 double로 표현해보자.
+
+제일 앞의 1은 생략될 것이다.
+
+```
+00110011001100110011001100110011001100110011001100111
+                                                   ^ 여기까지가 52자
+```
+
+그 다음은 길이를 52자로 맞춰야 한다. 현재 길이는 53자이므로, 마지막의 1을 반올림해야 한다.
+
+```
+0011001100110011001100110011001100110011001100110100
+                                                   ^
+```
+
+이제 이렇게 얻은 가수부를 지수부와 합쳐서 표현하면 다음과 같이 된다.
+
+```
+// 0.30000000000000004
+0_01111111101_0011001100110011001100110011001100110011001100110100
+```
+
+그냥 0.3 의 비트와 비교해 보면 반올림된 0.1과 0.2의 영향을 받아 0.3보다 조금 더 큰 숫자가 되었음을 알 수 있다.
+
+```
+// 0.3
+0_01111111101_0011001100110011001100110011001100110011001100110011
+// 0.30000000000000004                                         ^^^
+0_01111111101_0011001100110011001100110011001100110011001100110100
+                                                               ^^^
+```
 
 # Links
 
@@ -377,6 +480,12 @@ fmt.Println(foo - bar)  // -2
     * [PDF: IEEE Standard for Floating-Point Arithmetic (irem.univ-reunion.fr)](http://irem.univ-reunion.fr/IMG/pdf/ieee-754-2008.pdf )
 * <https://www.google.co.kr/search?q=ieee+754-1985+filetype%3Apdf >
     * [754-1985 - IEEE Standard for Binary Floating-Point Arithmetic](https://ieeexplore.ieee.org/document/30711 ) - superseded
+
+---
+
+* [https://0.30000000000000004.com](https://0.30000000000000004.com)
+* [메아리 저널의 2015년 11월 14일 글](http://j.mearie.org/post/133187760423/inaccuracy-and-inexactness-of-floating-point)
+* [IEEE 부동 소수점 오류의 이해를 위한 자습서(archive.fo)](http://archive.fo/ZGda8 ) - Microsoft Support의 글인데 원문이 삭제되었다.
 
 # 참고문헌
 
