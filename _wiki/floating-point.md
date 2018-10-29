@@ -3,7 +3,7 @@ layout  : wiki
 title   : Floating Point 부동소수점
 summary :
 date    : 2018-10-28 08:03:23 +0900
-updated : 2018-10-29 10:28:43 +0900
+updated : 2018-10-29 11:40:34 +0900
 tags    : binary
 toc     : true
 public  : true
@@ -267,6 +267,8 @@ The range of the encoding’s biased exponent E shall include:
 
 ## $$+\infty$$
 
+* 무한대는 E가 전부 1이고, T가 전부 0이다.
+
 | 32 bit | 0_11111111_00000000000000000000000                                 |
 | hex    | 7F80 0000                                                          |
 | 64 bit | 0_11111111111_0000000000000000000000000000000000000000000000000000 |
@@ -279,7 +281,49 @@ The range of the encoding’s biased exponent E shall include:
 | 64 bit | 1_11111111111_0000000000000000000000000000000000000000000000000000 |
 | hex    | FFF0 0000 0000 0000                                                |
 
-## 0.0
+## NaN
+
+Not A Number.
+
+>
+6.2 Operations with NaNs  
+Two different kinds of NaN, signaling and quiet, shall be supported in all floating-point operations. Signaling NaNs afford representations for uninitialized variables and arithmetic-like enhancements (such as complex-affine infinities or extremely wide range) that are not in the scope of this standard. Quiet NaNs should, by means left to the implementer’s discretion, afford retrospective diagnostic information inherited from invalid or unavailable data and results. To facilitate propagation of diagnostic information contained in NaNs, as much of that information as possible should be preserved in NaN results of operations.
+
+NaN에는 두 종류가 있다.
+
+* signaling NaN : 초기화되지 않은 변수나 표준에서 벗어난 연산 등을 표현한다.
+* quiet NaN : 예외처리, 잘못된 값이나 사용 불가능한 데이터 등을 표현하는 데 사용하도록 (프로그래밍 언어) 구현자의 재량에 맡김.
+
+>
+6.2.1 NaN encodings in binary formats  
+(생략)  
+All binary NaN bit strings have all the bits of the biased exponent field E set to 1 (see 3.4).
+A **quiet NaN** bit string should be encoded with the first bit ($$d_1$$) of the trailing significand field T being **1**.
+A **signaling NaN** bit string should be encoded with the first bit of the trailing significand field being **0**.
+If the first bit of the trailing significand field is 0, **some other bit of the trailing significand field must be non-zero to distinguish the NaN from infinity**.
+In the preferred encoding just described, a signaling NaN shall be quieted by setting $$d_1$$ to 1, leaving the remaining bits of T unchanged.
+For binary formats, the payload is encoded in the $$p−2$$ least significant bits of the trailing significand field.
+
+NaN은 다음과 같이 표현한다.
+
+* NaN의 E는 전부 1이다. (무한대와 같은 E를 갖고 있다.)
+* 그러나 무한대와 달리 T 는 0이 아니며, T의 값에 따라 NaN의 타입을 구분한다.
+* quiet NaN
+    * T의 첫 번째 비트가 **1**이다.
+* signaling NaN
+    * T의 첫 번째 비트가 **0**이다.
+        * 첫 번째 비트를 1로 바꾸면 quiet NaN이 된다.
+    * 무한대와 구별하기 위해 그 뒤에 다른 값을 넣어준다.
+    * 보통은 마지막에 1을 넣어주는 것 같다.
+
+| 64 bit | 0_11111111111_1000000000000000000000000000000000000000000000000000 |
+| hex    | 7FF8 0000 0000 0000                                                |
+| 64 bit | 0_11111111111_0000000000000000000000000000000000000000000000000001 |
+| hex    | 7FF0 0000 0000 0001                                                |
+
+## 0.0 과 1.0
+
+0.0 과 1.0 은 부정규 숫자는 아니지만 값을 보고 싶어 넣어 보았다.
 
 | 32 bit | 0_00000000_00000000000000000000000                                 |
 | hex    | 0000 0000                                                          |
