@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : Vim 공백 문자 설정
+title   : Vim 공백 문자 조작 설정
 summary : 
 date    : 2018-10-31 08:32:31 +0900
-updated : 2018-10-31 09:15:27 +0900
+updated : 2018-10-31 10:00:21 +0900
 tags    : vim
 toc     : true
 public  : true
@@ -112,3 +112,66 @@ highlight SpecialKey guifg=#ff0000
 ```
 
 편안하게 코딩할 수 있도록, 글자 색과 다르며 다소 연한 색을 쓰는 것이 좋다.
+
+# smarttab, tabstop, softtabstop, expandtab, shiftwidth
+
+* smarttab
+    * shiftwidth, tabstop, softtabstop을 참조하여, 탭과 백 스페이스 키의 동작을 보조해준다.
+* tabstop
+    * 파일의 tab을 스페이스 몇 개로 보여주는지를 설정한다.
+    * 약자는 `ts`.
+    * 기본값은 `8`.
+* softtabstop
+    * expandtab이 설정되어 있다면 텍스트 편집중에 tab 키로 softtabstop에 지정된 숫자만큼의 스페이스를 입력해준다.
+    * 약자는 `sts`.
+* expandtab
+    * Insert 모드에서 탭 키를 누르면 탭이 아니라 스페이스를 입력한다.
+    * 입력하는 스페이스의 수는 softtabstop에서 지정한 값이다.
+    * 탭 키로 sts만큼 스페이스를 입력하고, 백 스페이스로 sts만큼 스페이스를 삭제한다.
+    * 스페이스 기반이라도 동작은 탭을 추가하고 삭제할 때와 똑같아서 `set list`를 설정해두지 않으면 구분하기 어렵다.
+        * 간격도 착착 맞춰준다.
+    * 약자는 `et`
+    * `set noexpandtab`으로 off 할 수 있다.
+* shiftwidth
+    * `<<`, `>>`과 오토 인덴팅의 스페이스 수를 지정한다.
+
+나는 다음과 같이 설정하여 사용하고 있다.
+
+```viml
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab
+```
+
+만약 언어별로 탭/스페이스, 인덴팅 깊이를 구분하고 있다면 다음과 같이 설정하면 된다.
+
+예를 들어 Go 언어를 사용한다면 다음과 같이 설정할 수 있다.
+
+```viml
+autocmd FileType go setlocal nolist
+autocmd FileType go setlocal tabstop=4 shiftwidth=4 noexpandtab smarttab
+```
+
+# retab
+
+* `:retab`을 입력하면 파일 내의 탭을 `tabstop` 만큼의 스페이스로 바꿔준다.
+* `:retab 4`를 입력하면 탭을 `4` 스페이스로 바꿔준다.
+* visual 모드로 범위를 선택하고 사용하는 쪽이 바람직하다.
+
+# backspace
+
+* 백 스페이스가 지울 수 있는 것과 없는 것을 설정한다.
+* 약자는 `bs`.
+
+세 가지 값을 지정할 수 있다.
+
+* indent : 오토 인덴트를 지울 수 있다.
+    * 가령 인덴팅에 4개의 스페이스를 사용하고 있다면, 백 스페이스를 한 번 눌러서 인덴팅의 스페이스 4개를 지울 수 있다.
+* eol : end of line을 지워서, 두 줄을 하나로 합칠 수 있다.
+* start : 행의 시작 지점을 지울 수 있다.
+    * eol과 start를 함께 설정하면 백 스페이스로 이번 줄을 다 지우고 나서, 더 누르면 바로 윗줄 제일 오른쪽 글자부터 지우기 시작한다.
+
+나는 다음과 같이 설정하여 사용하고 있다.
+
+```viml
+set bs=indent,eol,start
+```
+
