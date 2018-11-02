@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2018-11-02 22:25:09 +0900
+updated : 2018-11-02 22:29:56 +0900
 tags    : vim wiki
 public  : true
 parent  : Vim
@@ -365,6 +365,23 @@ blacklist에서 Vimwiki만 제거하거나, 다음과 같이 blacklist를 다 �
 let g:ycm_filetype_blacklist = {}
 ```
 
+## UltiSnips와 함께 사용하기
+
+Vimwiki에서 [UltiSnips](https://github.com/SirVer/ultisnips )를 사용하려 할 때 가장 문제가 되는 것은 테이블에서 컬럼을 이동하는 단축키인 `<Tab>`과 UltiSnips의 자동 완성 단축키인 `<Tab>`이 겹치는 것이다.
+
+다음과 같이 문제를 해결할 수 있다.
+
+```viml
+" Vimwiki의 테이블 단축키를 사용하지 않도록 한다
+let g:vimwiki_table_mappings = 0
+
+augroup vimwikiauto
+    " <C-s> 로 테이블에서 오른쪽 컬럼으로 이동한다.
+    autocmd FileType vimwiki inoremap <C-s> <C-r>=vimwiki#tbl#kbd_tab()<CR>
+    " <C-a> 로 테이블에서 왼쪽 컬럼으로 이동한다.
+    autocmd FileType vimwiki inoremap <C-a> <Left><C-r>=vimwiki#tbl#kbd_shift_tab()<CR>
+augroup END
+```
 
 ## Vimscript 서포트 코드
 
