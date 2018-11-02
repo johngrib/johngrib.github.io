@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2018-04-05 22:24:13 +0900
+updated : 2018-11-02 22:25:09 +0900
 tags    : vim wiki
 public  : true
 parent  : Vim
@@ -337,6 +337,34 @@ Vimwiki는 [Vim-startify](https://github.com/mhinz/vim-startify )와 함께 사�
 Vimwiki 사용 중 session을 저장하고, 저장한 session을 필요할 때마다 불러오는 방식으로 사용하면 적절하다.
 
 Startify와 함께 사용하는지 아닌지에 따라 Vimwiki의 활용도는 큰 차이가 난다고 생각한다.
+
+## YouCompleteMe와 함께 사용하기
+
+자동완성 플러그인 [YouCompleteMe](https://github.com/Valloric/YouCompleteMe )는 기본적으로 Vimwiki를 무시하도록 설정되어 있다.
+
+```viml
+let g:ycm_filetype_blacklist = {
+    \ 'tagbar' : 1,
+    \ 'qf' : 1,
+    \ 'notes' : 1,
+    \ 'markdown' : 1,
+    \ 'unite' : 1,
+    \ 'text' : 1,
+    \ 'vimwiki' : 1,
+    \ 'pandoc' : 1,
+    \ 'infolog' : 1,
+    \ 'mail' : 1
+    \}
+```
+
+아래에서 넷째 줄을 보면 `vimwiki`가 있기 때문에 YouCompleteMe가 동작하지 않는 것이다.
+
+blacklist에서 Vimwiki만 제거하거나, 다음과 같이 blacklist를 다 비워주도록 설정하면, Vimwiki에서 YouCompleteMe의 자동완성 기능을 사용할 수 있다.
+
+```viml
+let g:ycm_filetype_blacklist = {}
+```
+
 
 ## Vimscript 서포트 코드
 
