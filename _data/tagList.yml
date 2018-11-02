@@ -28,8 +28,9 @@
 - alignment
 - alphago
 - ascii
-- aws
+- automata
 - AWS
+- aws
 - bash
 - bayes
 - Bill-Atkinson
@@ -49,6 +50,7 @@
 - computer-science
 - config
 - consulting
+- cs
 - ctags
 - culture
 - curl
@@ -157,9 +159,10 @@
 - telegram
 - terminal
 - test
+- theory-of-computation
 - Think-Bayes
-- TIL
 - til
+- TIL
 - tip
 - tldr
 - tmux
@@ -179,8 +182,8 @@
 - vim
 - vimwiki
 - vm
-- Von-Neumann
 - von-neumann
+- Von-Neumann
 - web
 - what
 - why

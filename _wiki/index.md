@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-11-01 09:03:39 +0900
+updated : 2018-11-02 11:14:54 +0900
 tags    : index
 toc     : true
 public  : true
@@ -147,6 +147,8 @@ comment : false
         * [[d-i-a-03-storage-and-retrieval]]
         * [[d-i-a-04-encoding-and-evolution]]
         * [[d-i-a-05-replication]]
+    * [[study-kocw-automata-theory-of-computation]]
+        * [[a-t-o-c-01-mathematical]]
     * [[study-think-bayes]]
         * [[cookie-problem]]
         * [[dice-problem]]

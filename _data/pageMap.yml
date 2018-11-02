@@ -294,6 +294,14 @@
     url: /wiki/한국과학문학상-수상작품집-제2회
     updated: '2018-03-15 20:41:22 +0900'
     children: []
+a-t-o-c-01-mathematical:
+    type: wiki
+    title: '오토마타 및 계산이론.01'
+    summary: 'Mathematical Preliminaries and Notation'
+    parent: study-kocw-automata-theory-of-computation
+    url: /wiki/a-t-o-c-01-mathematical
+    updated: '2018-11-02 22:15:22 +0900'
+    children: []
 airplain-rule:
     type: wiki
     title: '비행기 법칙'
@@ -1244,7 +1252,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-11-01 09:03:39 +0900'
+    updated: '2018-11-02 11:14:54 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1749,7 +1757,7 @@ study:
     parent: index
     url: /wiki/study
     updated: '2018-04-25 22:04:58 +0900'
-    children: [study-concrete-math, study-data-intensive-application, study-think-bayes]
+    children: [study-concrete-math, study-data-intensive-application, study-kocw-automata-theory-of-computation, study-think-bayes]
 study-concrete-math:
     type: wiki
     title: '(study) Concrete Mathematics(구체수학)'
@@ -1766,6 +1774,14 @@ study-data-intensive-application:
     url: /wiki/study-data-intensive-application
     updated: '2018-07-06 23:08:47 +0900'
     children: [d-i-a-01-reliable-scalable-maintainable, d-i-a-02-data-models-and-query-languages, d-i-a-03-storage-and-retrieval, d-i-a-04-encoding-and-evolution, d-i-a-05-replication]
+study-kocw-automata-theory-of-computation:
+    type: wiki
+    title: '(study) 오토마타 및 계산이론'
+    summary: 'automata and theory of computation'
+    parent: study
+    url: /wiki/study-kocw-automata-theory-of-computation
+    updated: '2018-11-02 11:13:35 +0900'
+    children: [a-t-o-c-01-mathematical]
 study-think-bayes:
     type: wiki
     title: '(study) 파이썬을 활용한 베이지안 통계'

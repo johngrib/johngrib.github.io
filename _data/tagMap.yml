@@ -233,6 +233,10 @@ book:
     - {fileName: The-Jargon-File}
 fantasy:
     - {fileName: 전생검신}
+automata:
+    - {fileName: a-t-o-c-01-mathematical}
+theory-of-computation:
+    - {fileName: a-t-o-c-01-mathematical}
 complexity:
     - {fileName: airplain-rule}
 law:
@@ -602,6 +606,8 @@ ethics:
     - {fileName: Software-Engineering-Code-of-Ethics}
 db:
     - {fileName: sql-char-comparison}
+cs:
+    - {fileName: study-kocw-automata-theory-of-computation}
 web:
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
 hacker:
