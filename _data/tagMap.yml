@@ -235,8 +235,10 @@ fantasy:
     - {fileName: 전생검신}
 automata:
     - {fileName: a-t-o-c-01-mathematical}
+    - {fileName: a-t-o-c-02-three-basic-concepts}
 theory-of-computation:
     - {fileName: a-t-o-c-01-mathematical}
+    - {fileName: a-t-o-c-02-three-basic-concepts}
 complexity:
     - {fileName: airplain-rule}
 law:
@@ -445,6 +447,10 @@ hotkey:
 vba:
     - {fileName: excel-transpos}
     - {fileName: excel-vba-setting}
+cs:
+    - {fileName: f-l-a-00-preface}
+    - {fileName: study-formal-languages-and-automata}
+    - {fileName: study-kocw-automata-theory-of-computation}
 fish:
     - {fileName: fish-shell}
 terminal:
@@ -606,8 +612,6 @@ ethics:
     - {fileName: Software-Engineering-Code-of-Ethics}
 db:
     - {fileName: sql-char-comparison}
-cs:
-    - {fileName: study-kocw-automata-theory-of-computation}
 web:
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
 hacker:

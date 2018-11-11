@@ -300,7 +300,15 @@ a-t-o-c-01-mathematical:
     summary: 'Mathematical Preliminaries and Notation'
     parent: study-kocw-automata-theory-of-computation
     url: /wiki/a-t-o-c-01-mathematical
-    updated: '2018-11-02 22:15:22 +0900'
+    updated: '2018-11-03 23:16:16 +0900'
+    children: []
+a-t-o-c-02-three-basic-concepts:
+    type: wiki
+    title: '오토마타 및 계산이론.02'
+    summary: 'Three Basic Concepts'
+    parent: study-kocw-automata-theory-of-computation
+    url: /wiki/a-t-o-c-02-three-basic-concepts
+    updated: '2018-11-04 16:39:32 +0900'
     children: []
 airplain-rule:
     type: wiki
@@ -380,7 +388,7 @@ big-O-notation:
     summary: '알고리즘의 효율성을 나타내는 표기법이다'
     parent: algorithm
     url: /wiki/big-O-notation
-    updated: '2018-06-24 21:50:54 +0900'
+    updated: '2018-11-07 18:22:17 +0900'
     children: []
 Bill-Atkinson-productivity:
     type: wiki
@@ -902,6 +910,14 @@ excel-vba-setting:
     url: /wiki/excel-vba-setting
     updated: '2018-09-17 12:50:46 +0900'
     children: []
+f-l-a-00-preface:
+    type: wiki
+    title: '형식언어와 오토마타.00.서문'
+    summary: Preface
+    parent: study-formal-languages-and-automata
+    url: /wiki/f-l-a-00-preface
+    updated: '2018-11-12 00:19:35 +0900'
+    children: []
 fc:
     type: wiki
     title: 'fc 명령어'
@@ -1252,7 +1268,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-11-02 11:14:54 +0900'
+    updated: '2018-11-12 00:21:17 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1628,7 +1644,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-10-27 19:17:55 +0900'
+    updated: '2018-11-09 23:20:41 +0900'
     children: []
 RFC:
     type: wiki
@@ -1757,7 +1773,7 @@ study:
     parent: index
     url: /wiki/study
     updated: '2018-04-25 22:04:58 +0900'
-    children: [study-concrete-math, study-data-intensive-application, study-kocw-automata-theory-of-computation, study-think-bayes]
+    children: [study-concrete-math, study-data-intensive-application, study-formal-languages-and-automata, study-kocw-automata-theory-of-computation, study-think-bayes]
 study-concrete-math:
     type: wiki
     title: '(study) Concrete Mathematics(구체수학)'
@@ -1774,6 +1790,14 @@ study-data-intensive-application:
     url: /wiki/study-data-intensive-application
     updated: '2018-07-06 23:08:47 +0900'
     children: [d-i-a-01-reliable-scalable-maintainable, d-i-a-02-data-models-and-query-languages, d-i-a-03-storage-and-retrieval, d-i-a-04-encoding-and-evolution, d-i-a-05-replication]
+study-formal-languages-and-automata:
+    type: wiki
+    title: '(study) FORMAL LANGUAGES AND AUTOMATA'
+    summary: ""
+    parent: study
+    url: /wiki/study-formal-languages-and-automata
+    updated: '2018-11-12 00:08:19 +0900'
+    children: [f-l-a-00-preface]
 study-kocw-automata-theory-of-computation:
     type: wiki
     title: '(study) 오토마타 및 계산이론'
@@ -1781,7 +1805,7 @@ study-kocw-automata-theory-of-computation:
     parent: study
     url: /wiki/study-kocw-automata-theory-of-computation
     updated: '2018-11-02 11:13:35 +0900'
-    children: [a-t-o-c-01-mathematical]
+    children: [a-t-o-c-01-mathematical, a-t-o-c-02-three-basic-concepts]
 study-think-bayes:
     type: wiki
     title: '(study) 파이썬을 활용한 베이지안 통계'
