@@ -449,6 +449,8 @@ vba:
     - {fileName: excel-vba-setting}
 cs:
     - {fileName: f-l-a-00-preface}
+    - {fileName: f-l-a-01-00}
+    - {fileName: f-l-a-01-01}
     - {fileName: study-formal-languages-and-automata}
     - {fileName: study-kocw-automata-theory-of-computation}
 fish:

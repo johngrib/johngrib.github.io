@@ -916,7 +916,23 @@ f-l-a-00-preface:
     summary: Preface
     parent: study-formal-languages-and-automata
     url: /wiki/f-l-a-00-preface
-    updated: '2018-11-12 00:19:35 +0900'
+    updated: '2018-11-12 08:59:52 +0900'
+    children: []
+f-l-a-01-00:
+    type: wiki
+    title: '형식언어와 오토마타.01.00'
+    summary: 'INTRODUCTION TO THE THEORY OF COMPUTATION'
+    parent: study-formal-languages-and-automata
+    url: /wiki/f-l-a-01-00
+    updated: '2018-11-12 11:22:12 +0900'
+    children: []
+f-l-a-01-01:
+    type: wiki
+    title: '형식언어와 오토마타.01.01'
+    summary: 'MATHEMATICAL PRELIMINARIES AND NOTATION'
+    parent: study-formal-languages-and-automata
+    url: /wiki/f-l-a-01-01
+    updated: '2018-11-12 11:12:58 +0900'
     children: []
 fc:
     type: wiki
@@ -1268,7 +1284,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-11-12 00:21:17 +0900'
+    updated: '2018-11-12 09:34:59 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1797,7 +1813,7 @@ study-formal-languages-and-automata:
     parent: study
     url: /wiki/study-formal-languages-and-automata
     updated: '2018-11-12 00:08:19 +0900'
-    children: [f-l-a-00-preface]
+    children: [f-l-a-00-preface, f-l-a-01-00, f-l-a-01-01]
 study-kocw-automata-theory-of-computation:
     type: wiki
     title: '(study) 오토마타 및 계산이론'

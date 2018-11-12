@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-11-12 00:21:17 +0900
+updated : 2018-11-12 09:34:59 +0900
 tags    : index
 toc     : true
 public  : true
@@ -149,6 +149,8 @@ comment : false
         * [[d-i-a-05-replication]]
     * [[study-formal-languages-and-automata]]
         * [[f-l-a-00-preface]]
+        * [[f-l-a-01-00]]
+        * [[f-l-a-01-01]]
     * [[study-kocw-automata-theory-of-computation]]
         * [[a-t-o-c-01-mathematical]]
     * [[study-think-bayes]]
