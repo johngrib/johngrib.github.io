@@ -3,7 +3,7 @@ layout  : wiki
 title   : 형식언어와 오토마타.00.서문
 summary : Preface
 date    : 2018-11-12 00:06:18 +0900
-updated : 2018-11-12 00:19:35 +0900
+updated : 2018-11-12 08:59:52 +0900
 tags    : cs
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 공부하는 목적
+# THEORY OF COMPUTATION(계산 이론)을 공부하는 목적
 
 1. to familiarize students with the foundations and principles of computer science,
     * **컴퓨터 과학의 기초와 원리에 익숙해지도록 한다.**
