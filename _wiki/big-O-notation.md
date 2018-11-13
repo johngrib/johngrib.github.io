@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2018-11-07 18:22:17 +0900
+updated : 2018-11-13 22:41:14 +0900
 tags    : 
 toc     : true
 public  : true
@@ -31,6 +31,42 @@ big-$$O$$, big-$$\Omega$$, big-$$\Theta$$는 각각 상한, 하한, 딱 맞는 �
     * 점근적 하한에 대한 표기법.
 * big-$$\Theta$$
     * `빅-세타` 라고 읽는다.
+
+## TAOCP도 찾아보자
+
+TAOCP 1권의 **1.2.11.1 O 표기법** 챕터를 찾아보자.
+
+> Let’s look at some more examples. We know that
+
+그럼 예들을 좀 더 보자. 다음은 우리가 알고 있는 것이다.
+
+$$ 1^2 + 2^2 + ... + n^2 = \frac{1}{3}n(n + \frac{1}{2})(n+1) = \frac{1}{3}n^3 + \frac{1}{2}n^2 + \frac{1}{6}n $$
+
+> so it follows that
+
+이로부터 다음을 얻는다.
+
+$$
+\begin{align}
+1^2 + 2^2 + ... + n^2 & = O(n^4) & \quad (2) \\
+1^2 + 2^2 + ... + n^2 & = O(n^3) & \quad (3) \\
+1^2 + 2^2 + ... + n^2 & = \frac{1}{3}n^3 + O(n^2) & \quad (4) \\
+\end{align}
+$$
+
+> Equation (2) is rather crude, but not incorrect; Eq. (3) is a stronger statement; and Eq. (4) is stronger yet.
+
+식 (2)가 상당히 대략적이긴 하지만, 그렇다고 부정확한 것은 아니다.
+식 (3)은 좀 더 엄정한 서술이다.
+그리고 식 (4)는 더욱 엄정하다.
+
+(중략)
+
+>
+The O-notation is a big help in approximation work, since it describes briefly a concept that occurs often and it suppresses detailed information that is usually irrelevant. Furthermore, it can be manipulated algebraically in familiar ways, although certain important differences need to be kept in mind. The most important consideration is the idea of one-way equalities: We write $$ \frac{1}{2}n^2 + n = O(n^2) $$, but we never write $$ O(n^2) = \frac{1}{2}n^2 + n $$. (Or else, since $$ \frac{1}{4}n^2 = O(n^2) $$, we might come up with the absurd relation $$ \frac{1}{4}n^2 = \frac{1}{2}n^2 + n$$.) We always use the convention that the right-hand side of an equation does not give more information than the left-hand side; the right-hand side is a “crudification” of the left.
+
+O 표기법은 자주 나타나는 개념을 간략히 서술하고 대체로 별 상관이 없는 세부 정보를 숨긴다는 점에서 근사를 다룰 때 큰 도움이 된다. 더 나아가서, 이 O들을 익숙한 대수적 방법으로 조작하는 것이 가능하다. 단, 몇 가지 중요한 차이들은 염두에 두어야 하는데, 가장 중요한 것이 단방향 상등(one-way equality)이라는 개념이다. 즉, $$ \frac{1}{2}n^2 + n = O(n^2) $$이라고 쓸 수는 있지만 $$ O(n^2) = \frac{1}{2}n^2 + n $$이라고는 **절대 쓸 수 없다**. (만일 그런 표기가 허용된다면, $$ \frac{1}{4}n^2 = O(n^2) $$이므로 $$ \frac{1}{4}n^2 = \frac{1}{2}n^2 + n$$이라는 터무니없는 결과가 나온다.) 이 표기법이 관련된 등식에서는 항상 등식의 우변이 좌변보다 더 자세한 정보를 제공하지 않는다는 관례를 사용한다. 즉, 우변은 항상 좌변보다 조악한 버전인 것이다.
+
 
 # 증가량 비교
 
