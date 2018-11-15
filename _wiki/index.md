@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-11-13 08:29:40 +0900
+updated : 2018-11-14 23:24:34 +0900
 tags    : index
 toc     : true
 public  : true
@@ -13,6 +13,7 @@ comment : false
 
 * [[algorithm]]
     * [[big-O-notation]]
+    * [[egyptian-multiplication]]
     * [[regex-prime]]
     * [[von-neumann-extractor]]
 * [[clipping]]{글 모음 및 요약}

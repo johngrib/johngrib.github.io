@@ -235,10 +235,8 @@ fantasy:
     - {fileName: 전생검신}
 automata:
     - {fileName: a-t-o-c-01-mathematical}
-    - {fileName: a-t-o-c-02-three-basic-concepts}
 theory-of-computation:
     - {fileName: a-t-o-c-01-mathematical}
-    - {fileName: a-t-o-c-02-three-basic-concepts}
 complexity:
     - {fileName: airplain-rule}
 law:
