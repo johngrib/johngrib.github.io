@@ -3,7 +3,7 @@ layout  : wiki
 title   : 고대 이집트 곱셈법
 summary : EGYPTIAN MULTIPLICATION
 date    : 2018-11-14 23:24:36 +0900
-updated : 2018-11-16 09:55:06 +0900
+updated : 2018-11-16 10:11:05 +0900
 tags    : 
 toc     : true
 public  : true
@@ -248,4 +248,86 @@ func multiply(a, b int) int {
     return result + multiply(half(a), b+b)
 }
 ```
+
+# 거듭제곱
+
+이번에는 곱셈을 알고 있다고 하자. 그리고 거듭제곱을 풀어야 한다고 생각하자.
+
+곱셈을 모르는 상태에서 덧셈을 반복해 곱셈의 결과를 내는 것과, 곱셈을 알고 있는 상태에서 곱셈을 반복해 거듭제곱의 결과를 구하는 것은 굉장히 비슷한 구조를 갖고 있다.
+
+TAOCP 2권. 4.6.3. Evaluation of Powers를 읽어보면 다음과 같은 거듭제곱 알고리즘이 나온다.
+
+>
+Algorithm A (Right-to-left binary method for exponentiation). This algorithm evaluates $$ x^n $$, where n is a positive integer. (Here x belongs to any algebraic system in which an associative multiplication, with identity element 1, has been defined.)  
+A1. [Initialize.] Set $$ N \leftarrow n, Y \leftarrow 1, Z \leftarrow x $$.  
+A2. [Halve N.] (At this point, $$ x^n = YZ^N $$.) Set $$ t \leftarrow N\mod 2 $$ and $$ N ← ⌊N/2⌋ $$. If $$ t = 0 $$, skip to step A5.  
+A3. [Multiply Y by Z.] Set $$Y ← Z$$ times $$Y$$.  
+A4. [$$N = 0$$?] If $$N = 0$$, the algorithm terminates, with $$Y$$ as the answer.  
+A5. [Square Z.] Set $$Z ← Z$$ times $$Z$$, and return to step A2.  
+
+아이디어는 덧셈을 하는 방식과 크게 다르지 않은 것 같다.
+
+열심히 읽고 참고하여 다음과 같이 Go 코드로 작성해 보았다.
+
+```go
+func power(x, n int) int {
+    // A1
+    N := n
+    Y := 1
+    Z := x
+    fmt.Printf("A1: %10d %10d %10d\n", N, Y, Z)
+
+    for i := 0; i < 30; i++ {
+        // A2
+        t := N % 2
+        N = half(N)
+
+        // A3
+        if t != 0 {
+            Y = Z * Y
+            if N == 0 {
+                // A4
+                fmt.Printf("A4: %10d %10d %10d\n", N, Y, Z)
+                fmt.Println("result ", Y)
+                return Y
+            }
+        }
+        // A5
+        Z = Z * Z
+        fmt.Printf("A5: %10d %10d %10d\n", N, Y, Z)
+    }
+    return 0
+}
+```
+
+이 power 함수로 $$ 2^23 $$을 계산해 보았더니 다음과 같은 출력을 얻을 수 있었다.
+
+```
+A1:         23          1          2
+A5:         11          2          4
+A5:          5          8         16
+A5:          2        128        256
+A5:          1        128      65536
+A4:          0    8388608      65536
+result  8388608
+```
+
+>
+The great calculator al-Kāshī stated Algorithm A in A.D. 1427 [Istoriko-Mat. Issledovani.. 7 (1954), 256–257]. The method is closely related to a procedure for multiplication that was actually used by Egyptian mathematicians as early as 2000 B.C.; for if we change step A3 to “Y ← Y + Z” and step A5 to “Z ← Z + Z”, and if we set Y to zero instead of unity in step A1, the algorithm terminates with Y = nx. [See A. B. Chace, The Rhind Mathematical Papyrus (1927); W. W. Struve, Quellen und Studien zur Geschichte der Mathematik A1 (1930).] This is a practical method for multiplication by hand, since it involves only the simple operations of doubling, halving, and adding. It is often called the “Russian peasant method” of multiplication, since Western visitors to Russia in the nineteenth century found the method in wide use there.
+
+* 알고리즘 A는 1427년에 위대한 수학자 al-Kāshī가 기록한 바 있다.
+* 이 방법은 적어도 B.C. 2000년부터 이집트 수학자들이 사용한 방법과 비슷하다.
+    * A3를 $$ Y \leftarrow Y + Z $$로 바꾸고, A5를 $$ Z \leftarrow Z + Z $$로 바꾸고, A1에서 $$ Y larrow_left 0 $$으로 하면, $$ Y = nx $$가 결과로 나오게 된다.
+* 이 알고리즘은 "러시아 농부의 곱셈 방법"이라고도 불리곤 한다.
+    * 19세기에 서양 사람들이 러시아에 갔을 때 러시아에서 이 방법이 많이 사용되고 있었기 때문이다.
+
+알고리즘 A는 다음 횟수만큼 곱셈을 한다.
+
+$$ \lfloor \log_2 n \rfloor + \nu(n) $$
+
+* $$ \nu(n) $$ : 숫자 n의 2진 표현에서 1의 개수.
+
+이 알고리즘은 최적의 방법은 아니다.
+
+
 
