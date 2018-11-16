@@ -3,7 +3,7 @@ layout  : wiki
 title   : 고대 이집트 곱셈법
 summary : EGYPTIAN MULTIPLICATION
 date    : 2018-11-14 23:24:36 +0900
-updated : 2018-11-16 10:21:16 +0900
+updated : 2018-11-16 10:54:03 +0900
 tags    : 
 toc     : true
 public  : true
@@ -299,7 +299,7 @@ func power(x, n int) int {
 }
 ```
 
-이 power 함수로 $$ 2^23 $$을 계산해 보았더니 다음과 같은 출력을 얻을 수 있었다.
+이 power 함수로 $$ 2^{23} $$을 계산해 보았더니 다음과 같은 출력을 얻을 수 있었다.
 
 ```
 A1:         23          1          2
