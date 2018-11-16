@@ -3,7 +3,7 @@ layout  : wiki
 title   : 고대 이집트 곱셈법
 summary : EGYPTIAN MULTIPLICATION
 date    : 2018-11-14 23:24:36 +0900
-updated : 2018-11-16 10:16:11 +0900
+updated : 2018-11-16 10:21:16 +0900
 tags    : 
 toc     : true
 public  : true
@@ -241,11 +241,10 @@ func multiply(a, b int) int {
     if a == 1 {
         return b
     }
-    result := 0
     if isOdd(a) {
-        result += b
+        return b + multiply(half(a), b+b)
     }
-    return result + multiply(half(a), b+b)
+    return multiply(half(a), b+b)
 }
 ```
 
