@@ -3,7 +3,7 @@ layout  : wiki
 title   : 고대 이집트 곱셈법
 summary : EGYPTIAN MULTIPLICATION
 date    : 2018-11-14 23:24:36 +0900
-updated : 2018-11-15 23:49:32 +0900
+updated : 2018-11-16 09:55:06 +0900
 tags    : 
 toc     : true
 public  : true
@@ -70,6 +70,39 @@ $$
 $$ 1101000_2 = 104_{10} $$
 
 결과는 `104` 이다.
+
+다음은 이 과정을 Go 코드로 작성한 것이다.
+
+```go
+func multiply(a, b int) int {
+    count := 1
+    for count != b {
+        a = a << 1
+        count += count
+    }
+    return a
+}
+
+func ExampleMultiply() {
+    fmt.Println(multiply(13, 8))
+    // Output:
+    // 104
+}
+```
+
+물론 $$ \log_2 $$를 사용한다면 더 심플한 코드를 작성할 수 있다.
+
+```go
+func multiply(a, b int) int {
+    return a << log2(b)
+}
+
+func log2(num int) uint {
+    return uint(math.Log2(float64(num)))
+}
+```
+
+하지만 여기에서는 로그는 고사하고 덧셈 밖에 모르고 있으니 이 코드는 반칙이다.
 
 # 곱하는 수가 2의 거듭제곱이 아니라면?
 
@@ -168,4 +201,51 @@ a \times 60
     & = a \lt\lt 6 - a \lt\lt 2 \\
 \end{align}
 $$
+
+## 홀짝을 구분해 계산하기
+
+모든 자연수는 홀수 또는 짝수이기 때문에 다음과 같이 표현할 수 있을 것이다.
+
+* n이 짝수인 경우. $$ \ n = \frac{n}{2} + \frac{n}{2} $$
+* n이 홀수인 경우. $$ \ n - 1 = \frac{n-1}{2} + \frac{n-1}{2} $$
+
+$$ a \times b $$를 계산할 때 다음의 방법을 따르면 된다.
+
+* a 가 1 이면 답은 b 이다.
+* a 가 홀수이면 결과에 b를 한 번 더한다.
+* a를 반으로 나누고(내림), b를 2배 한 다음, 새로운 a와 새로운 b의 곱을 결과에 더한다.
+    * a 는 점점 반으로 줄어서 언젠간 1이 될 것이다.
+
+곱셈, 나눗셈을 모르는데 홀짝은 어떻게 구분하나?
+
+* 곱셈 나눗셈을 몰라도, 이진법을 알고 있다면 마지막 비트가 1인지만 확인하면 된다.
+```go
+func isOdd(n int) bool {
+    return (n & 0x1) == 1
+}
+```
+
+나눗셈을 모르는데 반으로 나누는 것은 어떻게 하나?
+
+* 오른쪽으로 비트 쉬프트를 한 번만 하면 된다.
+```go
+func half(n int) int {
+    return n >> 1
+}
+```
+
+그러면 다음과 같은 코드를 작성할 수 있다.
+```go
+// multiply returns a * b.
+func multiply(a, b int) int {
+    if a == 1 {
+        return b
+    }
+    result := 0
+    if isOdd(a) {
+        result += b
+    }
+    return result + multiply(half(a), b+b)
+}
+```
 
