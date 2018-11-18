@@ -836,7 +836,7 @@ egyptian-multiplication:
     summary: 'EGYPTIAN MULTIPLICATION'
     parent: algorithm
     url: /wiki/egyptian-multiplication
-    updated: '2018-11-15 12:19:53 +0900'
+    updated: '2018-11-16 10:54:03 +0900'
     children: []
 Elastic-Load-Balancing:
     type: wiki
@@ -940,7 +940,7 @@ f-l-a-01-02:
     summary: 'THREE BASIC CONCEPTS'
     parent: study-formal-languages-and-automata
     url: /wiki/f-l-a-01-02
-    updated: '2018-11-14 22:57:33 +0900'
+    updated: '2018-11-17 23:34:14 +0900'
     children: []
 fc:
     type: wiki
@@ -1292,7 +1292,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-11-14 23:24:34 +0900'
+    updated: '2018-11-18 22:04:12 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1510,6 +1510,14 @@ Mythical-Man-Month:
     url: /wiki/Mythical-Man-Month
     updated: '2018-02-21 22:38:43 +0900'
     children: []
+Naming-Principle:
+    type: wiki
+    title: '명명 원칙(The Naming Principle)'
+    summary: ""
+    parent: proverb
+    url: /wiki/Naming-Principle
+    updated: '2018-11-18 22:31:43 +0900'
+    children: []
 No-Silver-Bullet:
     type: wiki
     title: '은총알은 없다(No Silver Bullet)'
@@ -1621,7 +1629,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-02-21 22:37:29 +0900'
-    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, No-Silver-Bullet, orange-juice-test, Postel-s-law, Zipf-s-law]
+    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, orange-juice-test, Postel-s-law, Zipf-s-law]
 Python3:
     type: wiki
     title: Python3

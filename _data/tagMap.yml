@@ -371,6 +371,7 @@ proverb:
     - {fileName: Conway-s-law}
     - {fileName: Edsel-edict}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
+    - {fileName: Naming-Principle}
     - {fileName: No-Silver-Bullet}
     - {fileName: orange-juice-test}
     - {fileName: Postel-s-law}
@@ -565,6 +566,10 @@ vimwiki:
 blog:
     - {fileName: my-wiki}
     - {fileName: utterances}
+principle:
+    - {fileName: Naming-Principle}
+naming:
+    - {fileName: Naming-Principle}
 소수:
     - {fileName: Object-hashCode}
 aes:
