@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2018-09-17 18:17:33 +0900
+updated : 2018-11-20 16:44:19 +0900
 tags    : special-chars
 toc     : true
 public  : true
@@ -941,6 +941,9 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
     * start of string anchor로 사용한다. 즉, 문자열이 시작하는 지점.
     * 해당하지 않는 문자 그룹 지정에 사용한다. `[^abc]`는 `a`, `b`, `c`가 아닌 모든 문자를 의미한다.
 * Vim에서는 정규표현식과 비슷한 의미로 사용한다. 커서를 현재 라인의 첫 글자로 옮긴다.
+* LaTeX에서는 뒤에 오는 오브젝트를 윗 첨자로 올릴 때 사용한다.
+    * `\pi^3`은 $$ \pi^3 $$이 된다.
+    * `\log_2^8`은 $$ \log_2^8 $$이 된다.
 
 | 읽는 방법   | 카렛, 캐럿, caret, control   |
 | 유니코드    | 'CIRCUMFLEX ACCENT' (U+005E) |
