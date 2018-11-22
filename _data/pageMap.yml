@@ -1292,7 +1292,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-11-18 22:04:12 +0900'
+    updated: '2018-11-22 10:58:17 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1493,6 +1493,14 @@ my-bash-cheatsheet:
     parent: command-line
     url: /wiki/my-bash-cheatsheet
     updated: '2018-10-17 13:11:53 +0900'
+    children: []
+my-keyboard:
+    type: wiki
+    title: '내 키보드 레이아웃'
+    summary: ""
+    parent: index
+    url: /wiki/my-keyboard
+    updated: '2018-11-22 11:07:09 +0900'
     children: []
 my-wiki:
     type: wiki
@@ -1780,7 +1788,7 @@ special-chars:
     summary: '특수문자 검색하다 빡쳐서 작성한 문서'
     parent: what
     url: /wiki/special-chars
-    updated: '2018-09-17 18:17:33 +0900'
+    updated: '2018-11-20 16:44:19 +0900'
     children: []
 sql-char-comparison:
     type: wiki

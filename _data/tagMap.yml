@@ -514,6 +514,7 @@ lua:
     - {fileName: hammerspoon-luarocks}
 keyboard:
     - {fileName: hhkb-jp-tmk}
+    - {fileName: my-keyboard}
 movie:
     - {fileName: HOT-FUZZ}
     - {fileName: movie}
