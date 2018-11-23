@@ -1292,7 +1292,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-11-22 10:58:17 +0900'
+    updated: '2018-11-23 09:30:17 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -2013,7 +2013,15 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [my-wiki, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
+    children: [my-wiki, vim-auto-completion, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
+vim-auto-completion:
+    type: wiki
+    title: 'vim 자동완성 기능 사용하기'
+    summary: 'abbr, ycm, UltiSnips 사용법'
+    parent: Vim
+    url: /wiki/vim-auto-completion
+    updated: '2018-11-23 09:41:30 +0900'
+    children: []
 vim-conceallevel:
     type: wiki
     title: 'conceallevel (Vim)'

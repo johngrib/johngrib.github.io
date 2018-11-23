@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-11-22 10:58:17 +0900
+updated : 2018-11-23 09:30:17 +0900
 tags    : index
 toc     : true
 public  : true
@@ -225,6 +225,7 @@ comment : false
     * [[vagrant-docker-get-start]]
 * [[Vim]]
     * [[my-wiki]]
+    * [[vim-auto-completion]]
     * [[vim-conceallevel]]{conceallevel (Vim)}
     * [[vim-f-hangul]]
     * [[vim-persistent-undo]]
