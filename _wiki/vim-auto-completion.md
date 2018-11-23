@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : abbr, ycm, UltiSnips 사용법
 date    : 2018-11-22 23:10:03 +0900
-updated : 2018-11-23 09:41:30 +0900
+updated : 2018-11-23 09:50:40 +0900
 tags    : vim
 toc     : true
 public  : true
@@ -83,7 +83,7 @@ latex   : false
     * abbr은 본래 snippet 자동완성이 아니라 축약어 기능이라는 점에 주의.
     * snippet 용도로 사용하는 것은 UltiSnips쪽이 훨씬 강력하고 `abbr` 특유의 이런저런 짜증나는 문제가 없다.
 
-## 스크립트 실행 기능
+## vim 스크립트 실행 기능
 
 `<expr>`을 사용하면 스크립트 실행 결과로 완성해 준다.
 
@@ -110,6 +110,8 @@ iabbr <expr> __branch system("git rev-parse --abbrev-ref HEAD")
     * 뻔하니 생략.
 * __branch
     * 현재 git branch를 완성해 준다.
+
+## shell 스크립트 실행 기능
 
 마지막 예제인 `__branch`에서 사용한 `system` 함수에 주목하자.
 
