@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : abbr, ycm, UltiSnips 사용법
 date    : 2018-11-22 23:10:03 +0900
-updated : 2018-11-23 09:50:40 +0900
+updated : 2018-11-23 12:05:01 +0900
 tags    : vim
 toc     : true
 public  : true
@@ -14,8 +14,6 @@ latex   : false
 {:toc}
 
 # 요약
-
-이 글은 Vim 기준이며, NeoVim에서는 안 돌아갈 수도 있습니다.
 
 * vim에서 자동완성을 사용하는 방법은 엄청나게 많다.
 * 이 글에서는 세 가지 방법을 소개한다.
@@ -131,4 +129,271 @@ iabbr <expr> __branch system("git rev-parse --abbrev-ref HEAD")
 
 당연히 자신이 작성한 셸 스크립트를 실행할 수도 있다.
 
+셸 스크립트 뿐만이 아니라 자신이 좋아하는 프로그래밍 언어로 작성한 도구를 호출해 사용할 수도 있다.
+
 이를 응용하면 여러 가지 흑마법이 가능하지만, 이 글의 주제는 아니므로 다루지 않는다.
+
+
+# youcompleteme + UltiSnips
+
+ycm과 UltiSnips를 활용하면 편리한 자동완성 환경을 갖출 수 있다.
+
+## ycm 설치
+
+경험상 ycm을 문제 없이 설치하려면 다음과 같이 해야 했다.
+
+* vim 설치시 `--with-python3` 옵션을 준다.
+    * 요즘은 디폴트 옵션이 되어서, 이제 저 옵션을 생략해도 된다.
+* 자동 완성 기능을 사용할 언어의 컴파일러를 각각 설치한다. (특히 새 컴퓨터에서 주의)
+* ycm 플러그인 설치 후 `python3`를 사용해 ycm의 `install.py`를 실행한다.
+    * 반드시 주로 사용하는 언어를 옵션으로 지정해 준다.
+        * 언어 옵션은 `python3 ./install.py --help`로 확인할 수 있다.
+    * vim-plug를 사용하면 이 귀찮은 작업을 간편하게 자동화할 수 있다.
+    * vim-plug는 vim 플러그인을 clone만 하지 않고, 지정한 셸 명령을 실행해 주기 때문이다.
+
+경험상 ycm은 그냥 설치하지 말고, 위와 같이 자신이 주로 사용하는 언어의 completer를 옵션으로 줘야 문제 없이 잘 설치되는 것 같다.
+
+다음은 내 ycm 플러그인 설치 설정이다. 플러그인 관리자는 vim-plug.
+
+```viml
+Plug 'valloric/youcompleteme', { 'do': 'python3 ./install.py --clang-completer --go-completer --rust-completer --js-completer'}
+```
+
+## ycm 설정
+
+다음은 나의 ycm 설정 전체이다.
+
+```viml
+let g:ycm_key_list_select_completion = ['<C-n>']
+let g:ycm_key_list_previous_completion=['<C-p>']
+
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_filetype_blacklist = {}
+```
+
+### 키 설정
+
+나는 첫번째와 두 번째, list completion 키를 `<C-n>`, `<C-p>`를 설정해 사용하고 있다.
+
+```viml
+let g:ycm_key_list_select_completion = ['<C-n>']
+let g:ycm_key_list_previous_completion=['<C-p>']
+```
+
+* 기본값인 `<Tab>`을 쓰면 UltiSnips의 `<Tab>`과 충돌하기 때문에 ycm/UltiSnips 둘 중 하나는 바꿔줘야 한다.
+* vim은 기본적으로 `<C-n>`, `<C-p>`를 사용해 단어 완성을 해주는데 ycm을 이렇게 설정해주면 vim 기본 동작이 확장된 것처럼 작동해서 사용감이 좋다.
+
+### python 경로 설정
+
+```viml
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+```
+
+* ycm은 python을 사용하므로 경로를 지정해 줘야 돌아간다.
+* 위치를 모르겠다면(그럴리가) `$ which python3`로 알아낼 수 있다.
+
+### 자동 완성 소스로 주석과 문자열 추가 기정
+
+```viml
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_complete_in_comments = 1
+```
+
+* 이렇게 하면 주석과 문자열도 자동 완성에 사용할 소스로 수집한다.
+* 주석에 들어간 단어들이 자동완성되면 은근히 편리하다.
+
+### 한 글자만 입력해도 작동할 것
+
+```viml
+let g:ycm_min_num_of_chars_for_completion = 1
+```
+
+* 이렇게 하면 한 글자만 입력해도 자동완성 후보 목록을 보여준다.
+
+### 블랙리스트 목록 비우기
+
+```viml
+let g:ycm_filetype_blacklist = {}
+```
+
+* 이렇게 하면 ycm이 모든 파일 타입에서 자동 완성 후보를 보여준다.
+* 참고로 ycm이 기본적으로 무시하도록 되어 있는 파일 타입은 다음과 같다.
+
+```viml
+let g:ycm_filetype_blacklist = {
+    \ 'tagbar' : 1,
+    \ 'qf' : 1,
+    \ 'notes' : 1,
+    \ 'markdown' : 1,
+    \ 'unite' : 1,
+    \ 'text' : 1,
+    \ 'vimwiki' : 1,
+    \ 'pandoc' : 1,
+    \ 'infolog' : 1,
+    \ 'mail' : 1
+    \}
+```
+
+
+## UltiSnips 설치
+
+UltiSnips의 설치는 쉽다. 플러그인 관리자는 vim-plug.
+
+```viml
+Plug 'SirVer/ultisnips'
+```
+
+## UltiSnips 설정
+
+다음은 나의 ultisnips 설정이다.
+
+```viml
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips']
+let g:UltiSnipsSnippetDirectories = ['UltiSnips']
+```
+
+### UltiSnips 확장 단축키 지정
+
+```viml
+let g:UltiSnipsExpandTrigger="<Tab>"
+```
+
+* ycm 목록에 나온 snippet 키워드를 선택한 다음 `<Tab>`을 누르면 자동 완성이 되도록 한다.
+
+### snippet 완성 후 점프 키 지정
+
+```viml
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+```
+
+* 완성 후 입력 위치를 `<Tab>`과 `<S-Tab>`(shift + tab)으로 전/후로 이동할 수 있다.
+* 자세한 사용법은 좀 더 밑에서...
+
+### snippet 편집기를 여는 방향 지정
+
+```viml
+let g:UltiSnipsEditSplit="vertical"
+```
+
+* 코딩중에 필요한 snippet이 생겼을 때 바로 snippet 파일을 불러 편집할 수 있다.
+* 엄청 편한 기능이다.
+* 이 옵션은 snippet 파일을 불러왔을 때 화면을 좌우로 분할한다는 것을 의미한다.
+* 취향대로 설정하자.
+
+### snippet 위치 지정
+
+```viml
+" let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips']
+let g:UltiSnipsSnippetDirectories = ['UltiSnips']
+```
+
+* 나만의 snippets 경로를 지정할 수 있다.
+* `~/.vim/UltiSnips/`에 snippet 파일을 모아놓고, 위와 같이 설정하면 된다.
+
+## ycm, UltiSnips의 기본적인 사용
+
+`~/.vim/UltiSnip/javascript.snippets` 파일에
+다음과 같은 snippet이 있다고 하자.
+
+```
+snippet fori
+for (var ${1:prop} in ${2:object}) {
+    ${0:$2[$1]}
+}
+endsnippet
+```
+
+* 코딩을 하다가 `for`라고 쓰면 ycm이 자동으로 자동 완성 후보를 보여준다.
+
+![for](https://user-images.githubusercontent.com/1855714/48926044-86347c00-ef0d-11e8-82e0-50fa0a7e8155.png )
+
+* `<C-n>`, `<C-p>`로 위아래로 움직여 선택을 할 수 있다.
+* `<snip>`이라 되어 있는 것은 UltiSnips가 자동 완성을 보조해준다는 뜻이다.
+* `fori`를 선택한 다음 `<Tab>`을 입력하면, 다음과 같이 자동완성된다.
+
+![for completed](https://user-images.githubusercontent.com/1855714/48926090-11157680-ef0e-11e8-905e-f62b71a42d93.png)
+
+커서가 자동으로 `prop`로 옮겨져 있는데, 여기에서 `item`이라 써보면...
+
+![image](https://user-images.githubusercontent.com/1855714/48926105-43bf6f00-ef0e-11e8-9eb4-aba95adab0c1.png)
+
+아래쪽에 있는 `prop`도 같이 `item`으로 실시간으로 수정된다.
+
+snippet을 다시 잘 살펴보자. 두 위치를 똑같이 `${1}`로 지정했기 때문임을 추측할 수 있다.
+
+```
+snippet fori
+for (var ${1:prop} in ${2:object}) {
+    ${0:$2[$1]}
+}
+endsnippet
+```
+
+이 상태에서 `<Tab>`을 한 번 눌러보면 `${2}`위치로 커서가 점프한다.
+
+![image](https://user-images.githubusercontent.com/1855714/48926158-bf212080-ef0e-11e8-9008-d7b537dc611d.png)
+
+`list`라고 쓰면 아래와 같이 바뀐다.
+
+![image](https://user-images.githubusercontent.com/1855714/48926173-ebd53800-ef0e-11e8-99bc-1bc40919e9e6.png)
+
+`<Tab>`과 `<S-Tab>`으로 `${1}`과 `${2}`를 왔다갔다 할 수 있다.
+
+
+## UltiSnips로 셸 명령 실행 결과를 가져오기
+
+흥미롭게도 UltiSnips는 셸 명령어나 셸 스크립트 실행 결과를 사용할 수 있다.
+
+다음과 같은 snippet을 작성해 보자.
+
+```
+snippet today
+Today is the `date +%d.%m.%y`.
+endsnippet
+```
+
+이렇게 하면 ``` ` ` ``` 안쪽의 `date +%d.%m.%y`는 bash에서 실행한 결과로 대체된다.
+
+즉, `today`를 입력하고 `<Tab>`을 누르면 `Today is the 23.11.18.`과 같이 자동완성된다.
+
+`abbr <expr> system(...)`과 비슷하니, 편리하게 사용하도록 하자.
+
+## UltiSnips에서 python 함수 정의해 사용하기
+
+
+
+
+# 문제 해결
+
+## neovim 에서 ycm, UltiSnips가 돌아가지 않는 문제 해결하기
+
+neovim에서 실행하면 다음과 같이 출력되며 ycm과 UltiSnips를 사용할 수 없다고 나온다.
+
+```
+$ nvim
+YouCompleteMe unavailable: requires Vim compiled with Python (2.7.1+ or 3.4+) support.
+UltiSnips requires py >= 2.7 or py3
+```
+
+ycm과 UltiSnips가 vim의 python support를 쓰기 때문에 생기는 문제다.
+
+pip로 neovim을 업그레이드하면 해결되는 문제이므로 신경을 끄도록 하자.
+
+```bash
+$ sudo pip3 install --upgrade neovim
+```
+
+
+# Links
+
+* [Using YouCompleteMe with Neovim #1315](https://github.com/neovim/neovim/issues/1315 )
