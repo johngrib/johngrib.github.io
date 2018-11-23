@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : vim 자동완성 기능 사용하기
-summary : abbr, ycm, UltiSnips 사용법
+summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2018-11-23 12:34:25 +0900
+updated : 2018-11-23 13:07:11 +0900
 tags    : vim
 toc     : true
 public  : true
@@ -16,10 +16,61 @@ latex   : false
 # 요약
 
 * vim에서 자동완성을 사용하는 방법은 엄청나게 많다.
-* 이 글에서는 세 가지 방법을 소개한다.
+* 이 글에서는 네 가지 방법을 소개한다.
+    * &lt;C-p&gt;, &lt;C-n&gt; 사용
+        * vim의 기본 자동완성이며, 어떤 플러그인도 없는 기본 vim에서도 사용할 수 있다.
+    * &lt;C-x&gt; 사용
+        * 이 기능은 서버의 설정 파일을 수정하는 데에만 vim을 쓰는 사람에게 특히 유용할 것이다.
     * :abbreviate 사용
-    * youcompleteme 사용
-    * UltiSnips 사용
+        * vim의 기본 자동완성이며, 어떤 플러그인도 없는 기본 vim에서도 사용할 수 있다.
+        * 평범한 자동완성으로도 사용할 수 있을 뿐만 아니라, 셸 스크립트도 실행할 수 있다.
+    * youcompleteme + UltiSnips 사용
+        * 자신만의 snippet 파일을 만들어가며 점점 더 편해지는 즐거움이 있다.
+        * 셸 스크립트를 실행할 수 있으며, python 코드도 돌아가기 때문에 자유도가 높다.
+
+# &lt;C-p&gt;, &lt;C-n&gt;
+
+Vim의 기본 자동완성이라 할 수 있다.
+
+* `<C-p>`: ctrl + p 를 의미한다.
+* `<C-n>`: ctrl + n 을 의미한다.
+
+insert 모드에서 `<C-p>` 또는 `<C-n>`을 입력하면, `complete`옵션에서 지정한 위치의 키워드를 기반으로 자동완성해준다.
+
+* IDE의 자동완성과는 다르게, 주석이나 문자열 안에 있는 단어들도 모두 찾아준다.
+
+## complete 옵션
+
+다음 명령으로 내 `complete`가 어떻게 설정되어 있는지 확인할 수 있다.
+
+```viml
+:set complete?
+```
+
+나는 다음과 같이 설정되어 있는데, 내가 직접 한 건 아니고 ycm 등이 자동으로 설정해준 것 같다.
+
+```
+complete=.,w,b,u,t,i
+```
+
+* `.`: 현재 편집중인 버퍼의 모든 단어를 자동완성 소스로 사용한다.
+* `w`: vim에 현재 열려 있는 window들의 모든 단어를 사용한다.
+* `b`: 버퍼 리스트에 있고 로드된 버퍼들의 모든 단어를 사용한다.
+* `u`: 버퍼 리스트에 있고 로드되지 않은 버퍼들의 모든 단어를 사용한다.
+* `t`: tag completion을 사용한다. ctags를 사용한다면 당연한 설정.
+* `i`: 현재 파일과 include된 파일의 단어를 사용한다.
+
+자세한 내용은 `:help complete`로 확인.
+
+# &lt;C-x&gt;
+
+insert 모드에서만 지원하는 자동완성 기능이다.
+
+10가지 이상의 기능이 있지만 내가 자주 쓰는 두 가지만 나열해 본다.
+
+* `<C-x><C-l>` : 라인 단위 자동 완성. 단어 완성이 아니라 줄 전체를 완성해 준다.
+* `<C-x><C-f>` : 파일명, 경로 자동완성. vim을 즐겨 쓰지 않는 사람이라도 이 기능은 유용할 것이다.
+    * 설정파일을 수정하는 데에만 vim을 쓴다면 특히 이 기능은 유용하다.
 
 # :abbreviate
 
@@ -370,6 +421,10 @@ endsnippet
 
 ## UltiSnips에서 python 함수 정의해 사용하기
 
+```viml
+:help Ultisnips-python
+```
+
 ### 예제: 오른쪽에 대문자 나타나게 하기
 
 다음 snippet을 보자.
@@ -440,14 +495,29 @@ snip.rv = formatVariableName(t[1])
 endsnippet
 ```
 
-## help
+## UltiSnips에서 vimscript 사용하기
 
-더 자세히 알고 싶다면 도움말을 보자. 모든 정보가 담겨 있다.
+`!v`를 사용하면 vimscript를 사용할 수 있다.
 
-```viml
-:help Ultisnips-python
+다음 snippet을 사용해 보자.
+
+```perl
+snippet indent
+Indent is: `!v indent(".")`.
+endsnippet
 ```
 
+인덴트가 없는 상태에서 `indent<Tab>`을 입력하면 다음과 같은 결과가 나온다.
+
+```
+Indent is: 0.
+```
+
+그렇다면 이번엔 `    indent<Tab>`을 입력해 보자. 숫자 부분에 `4`가 완성된다.
+
+```
+    Indent is: 4.
+```
 
 # 문제 해결
 
