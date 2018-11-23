@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : abbr, ycm, UltiSnips 사용법
 date    : 2018-11-22 23:10:03 +0900
-updated : 2018-11-23 12:05:01 +0900
+updated : 2018-11-23 12:34:25 +0900
 tags    : vim
 toc     : true
 public  : true
@@ -305,7 +305,7 @@ let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 `~/.vim/UltiSnip/javascript.snippets` 파일에
 다음과 같은 snippet이 있다고 하자.
 
-```
+```perl
 snippet fori
 for (var ${1:prop} in ${2:object}) {
     ${0:$2[$1]}
@@ -331,7 +331,7 @@ endsnippet
 
 snippet을 다시 잘 살펴보자. 두 위치를 똑같이 `${1}`로 지정했기 때문임을 추측할 수 있다.
 
-```
+```perl
 snippet fori
 for (var ${1:prop} in ${2:object}) {
     ${0:$2[$1]}
@@ -356,7 +356,7 @@ endsnippet
 
 다음과 같은 snippet을 작성해 보자.
 
-```
+```perl
 snippet today
 Today is the `date +%d.%m.%y`.
 endsnippet
@@ -370,7 +370,83 @@ endsnippet
 
 ## UltiSnips에서 python 함수 정의해 사용하기
 
+### 예제: 오른쪽에 대문자 나타나게 하기
 
+다음 snippet을 보자.
+
+```perl
+snippet wow
+${1:Text}`!p snip.rv = (30-2*len(t[1]))*' '+t[1].upper()`
+endsnippet
+```
+
+python에 익숙하다면 `!p snip.rv = ` 이후의 코드의 의미를 알 수 있을 것이다.
+
+* `(30-2*len(t[1]))*' '` : 공백 `' '`을 `30 - 2 * len(t[1])` 만큼 만든다.
+* `t[1].upper()` : `t[1]`을 대문자로 바꾼다.
+
+`wow`를 쓰고 `<Tab>`으로 자동완성한 다음 `asdf oh...`를 쓰면 다음과 같이 된다.
+
+```
+asdf oh...          ASDF OH...
+```
+
+가장 오른쪽의 ... 까지 합하여 전부 30자이며, 오른쪽에는 내가 작성한 `asdf oh...`의 대문자가 나타나는 것이다.
+
+### 예제: 입력한 두 단어의 순서 바꾸기
+
+```perl
+snippet "([^\s].*)\.return" "Return (postfix)" r
+return `!p snip.rv = match.group(1)`$0
+endsnippet
+```
+
+이 snippet을 등록하고 `hello.return`을 쓴 다음 `<Tab>`을 누르면...
+
+```
+return hello
+```
+
+return hello
+위와 같은 결과가 나온다.
+
+* `r` : 정규표현식을 사용하겠다는 의미이다.
+* `match.group(1)`: `([^\s].*)`에 매치된 결과를 가져온다. `hello`가 해당.
+
+### 예제: javascript import
+
+다음은 웹 서핑을 하다가 찾아낸 snippet인데 특히 javascript 사용자에게 유용할 듯하여 소개한다.
+
+<https://gist.github.com/mutewinter/825f44bfd3aa810088ea5de2f61bad63 >
+
+![import](https://camo.githubusercontent.com/df94f1ae23a02ecbee681d966d116468187604bb/68747470733a2f2f692e696d6775722e636f6d2f737a624c7752722e676966 )
+
+멋지다! `ii<Tab>`을 누르는 것만으로 돌아간다!
+
+snippet은 다음과 같다.
+
+```perl
+snippet ii "magic import" b
+import `!p
+def formatVariableName(path):
+  parts = path.split('/')
+  module = parts[0]
+  if len(parts) > 1:
+    return parts[-1]
+  else:
+    return re.sub(r'[_\-]', '', module.title())
+snip.rv = formatVariableName(t[1])
+` from '${1}';$0
+endsnippet
+```
+
+## help
+
+더 자세히 알고 싶다면 도움말을 보자. 모든 정보가 담겨 있다.
+
+```viml
+:help Ultisnips-python
+```
 
 
 # 문제 해결
