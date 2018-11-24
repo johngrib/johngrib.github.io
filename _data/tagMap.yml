@@ -234,10 +234,6 @@ book:
     - {fileName: The-Jargon-File}
 fantasy:
     - {fileName: 전생검신}
-automata:
-    - {fileName: a-t-o-c-01-mathematical}
-theory-of-computation:
-    - {fileName: a-t-o-c-01-mathematical}
 complexity:
     - {fileName: airplain-rule}
 law:
@@ -452,8 +448,8 @@ cs:
     - {fileName: f-l-a-01-00}
     - {fileName: f-l-a-01-01}
     - {fileName: f-l-a-01-02}
+    - {fileName: f-l-a-02-01}
     - {fileName: study-formal-languages-and-automata}
-    - {fileName: study-kocw-automata-theory-of-computation}
 fish:
     - {fileName: fish-shell}
 terminal:
