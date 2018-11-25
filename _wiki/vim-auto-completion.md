@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2018-11-23 13:07:11 +0900
+updated : 2018-11-25 12:48:44 +0900
 tags    : vim
 toc     : true
 public  : true
@@ -467,6 +467,35 @@ return hello
 
 * `r` : 정규표현식을 사용하겠다는 의미이다.
 * `match.group(1)`: `([^\s].*)`에 매치된 결과를 가져온다. `hello`가 해당.
+
+### 예제: html 태그 자동완성하기
+
+`<div>`를 작성한 이후에 `</div>`를 또 작성하는 일은 귀찮다.
+
+이걸 자동화해보자.
+
+```perl
+snippet "<([^\s].*)" "tag <...></...>" r
+`!p snip.rv='<'+match.group(1)+'>'+'</'+match.group(1)+'>'`$0
+endsnippet
+```
+
+위의 snippet을 쓰면...
+
+* `<html` 이라 쓰고 탭 키를 누르면 `<html></html>`로 자동 완성된다.
+* `<div` 라 쓰고 탭 키를 누르면 `<div></div>`로 자동 완성된다.
+
+조금 더 눈에 띄는 걸 좋아한다면 다음 방법을 사용해보자.
+
+```perl
+snippet <
+<${1:tag}>`!p snip.rv = '</'+t[1]+'>'`$0
+endsnippet
+```
+
+`<`을 입력하고 탭 키를 누르면 된다.
+
+![tag](https://user-images.githubusercontent.com/1855714/48975289-43f77000-f0b0-11e8-9ef2-9b454f8199be.gif)
 
 ### 예제: javascript import
 
