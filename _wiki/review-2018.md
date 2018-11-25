@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-11-09 23:20:41 +0900
+updated : 2018-11-25 21:20:29 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-11-25 [[전생검신]] 43권. 전전반측
 * 2018-11-09 [컴퓨터 과학이 여는 세계](http://www.yes24.co.kr/24/goods/17976737 )
 * 2018-11-05 [Talking to Humans](http://espressobook.com/@tthumans ). [English](https://www.talkingtohumans.com/download.html )
 * 2018-11-04 [위험한 과학책](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788952773326&orderClick=LAG&Kc= ). 원제는 [What if?](https://www.amazon.com/What-Scientific-Hypothetical-Questions-International/dp/0544456866 ).
