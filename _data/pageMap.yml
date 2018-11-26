@@ -940,7 +940,15 @@ f-l-a-02-01:
     summary: 'DETERMINISTIC FINITE ACCEPTERS'
     parent: study-formal-languages-and-automata
     url: /wiki/f-l-a-02-01
-    updated: '2018-11-25 00:06:31 +0900'
+    updated: '2018-11-25 22:38:20 +0900'
+    children: []
+f-l-a-02-02:
+    type: wiki
+    title: '형식언어와 오토마타.02.02'
+    summary: 'NONDETERMINISTIC FINITE ACCEPTERS'
+    parent: study-formal-languages-and-automata
+    url: /wiki/f-l-a-02-02
+    updated: '2018-11-26 23:29:55 +0900'
     children: []
 fc:
     type: wiki
@@ -1292,7 +1300,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-11-24 22:47:03 +0900'
+    updated: '2018-11-26 23:27:56 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1684,7 +1692,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-11-09 23:20:41 +0900'
+    updated: '2018-11-25 21:20:29 +0900'
     children: []
 RFC:
     type: wiki
@@ -1837,7 +1845,7 @@ study-formal-languages-and-automata:
     parent: study
     url: /wiki/study-formal-languages-and-automata
     updated: '2018-11-12 00:08:19 +0900'
-    children: [f-l-a-00-preface, f-l-a-01-00, f-l-a-01-01, f-l-a-01-02, f-l-a-02-01]
+    children: [f-l-a-00-preface, f-l-a-01-00, f-l-a-01-01, f-l-a-01-02, f-l-a-02-01, f-l-a-02-02]
 study-think-bayes:
     type: wiki
     title: '(study) 파이썬을 활용한 베이지안 통계'
@@ -2012,7 +2020,7 @@ vim-auto-completion:
     summary: 'vim을 똑똑하게 사용하자'
     parent: Vim
     url: /wiki/vim-auto-completion
-    updated: '2018-11-23 13:07:11 +0900'
+    updated: '2018-11-25 12:48:44 +0900'
     children: []
 vim-conceallevel:
     type: wiki

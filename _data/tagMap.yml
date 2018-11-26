@@ -449,6 +449,7 @@ cs:
     - {fileName: f-l-a-01-01}
     - {fileName: f-l-a-01-02}
     - {fileName: f-l-a-02-01}
+    - {fileName: f-l-a-02-02}
     - {fileName: study-formal-languages-and-automata}
 fish:
     - {fileName: fish-shell}
