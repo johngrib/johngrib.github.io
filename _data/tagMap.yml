@@ -491,6 +491,10 @@ alignment:
     - {fileName: golang-struct-padding}
 type:
     - {fileName: golang-types}
+gloang:
+    - {fileName: golang-waitgroup-add}
+goroutine:
+    - {fileName: golang-waitgroup-add}
 twitter:
     - {fileName: googling}
     - {fileName: labs-strava-com-heatmap}

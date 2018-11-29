@@ -948,7 +948,7 @@ f-l-a-02-02:
     summary: 'NONDETERMINISTIC FINITE ACCEPTERS'
     parent: study-formal-languages-and-automata
     url: /wiki/f-l-a-02-02
-    updated: '2018-11-26 23:29:55 +0900'
+    updated: '2018-11-28 21:35:16 +0900'
     children: []
 fc:
     type: wiki
@@ -1045,7 +1045,7 @@ Golang:
     parent: programming-language
     url: /wiki/Golang
     updated: '2018-09-18 17:21:01 +0900'
-    children: [ginkgo, golang-cheatsheet, golang-dependency-manager, golang-struct-padding, golang-types, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
+    children: [ginkgo, golang-cheatsheet, golang-dependency-manager, golang-struct-padding, golang-types, golang-waitgroup-add, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
 golang-cheatsheet:
     type: wiki
     title: 'Go cheatsheet'
@@ -1077,6 +1077,14 @@ golang-types:
     parent: Golang
     url: /wiki/golang-types
     updated: '2018-10-14 21:48:34 +0900'
+    children: []
+golang-waitgroup-add:
+    type: wiki
+    title: 'Go WaitGroup에 1외에 다른 값을 Add 하면?'
+    summary: '더하는 숫자가 중요한 게 아니라 0을 맞추는 게 중요'
+    parent: Golang
+    url: /wiki/golang-waitgroup-add
+    updated: '2018-11-29 11:07:27 +0900'
     children: []
 google-search-console-remove-outdated-content:
     type: wiki
@@ -1300,7 +1308,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-11-26 23:27:56 +0900'
+    updated: '2018-11-29 07:42:51 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki

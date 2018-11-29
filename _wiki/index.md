@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-11-26 23:27:56 +0900
+updated : 2018-11-29 07:42:51 +0900
 tags    : index
 toc     : true
 public  : true
@@ -97,6 +97,7 @@ comment : false
         * [[golang-dependency-manager]]
         * [[golang-struct-padding]]
         * [[golang-types]]
+        * [[golang-waitgroup-add]]
         * [[vim-go-auto-import]]
         * [[vim-go-env]]
         * [[vim-go-with-ultisnips]]
