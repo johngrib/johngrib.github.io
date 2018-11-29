@@ -3,7 +3,7 @@ layout  : wiki
 title   : Go WaitGroup에 1외에 다른 값을 Add 하면?
 summary : 더하는 숫자가 중요한 게 아니라 0을 맞추는 게 중요
 date    : 2018-11-29 07:42:53 +0900
-updated : 2018-11-29 11:07:27 +0900
+updated : 2018-11-29 11:11:32 +0900
 tags    : gloang goroutine
 toc     : true
 public  : true
@@ -201,10 +201,10 @@ func (wg *WaitGroup) Wait() {
 
 # 실행해보자
 
-## PASS: 일반적인 경우
+## PASS: 전형적인 경우
 
 * one, two, three를 출력하는 간단한 예제를 작성해 보았다.
-* 가장 일반적인 경우로, `Add(1)` 하나에 고루틴 하나씩 돌아간다.
+* 가장 전형적인 예제로, `Add(1)` 하나에 고루틴 하나씩 돌아간다.
 
 ```go
 package main
