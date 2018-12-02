@@ -1029,22 +1029,22 @@ git:
     parent: tools
     url: /wiki/git
     updated: '2018-12-02 10:12:20 +0900'
-    children: [git-alias]
+    children: [git-alias, git-checkout-specific-files]
 git-alias:
     type: wiki
     title: '편리한 git alias 설정하기'
-    summary: '내가 쓰고 있는 git alias를 설명한다'
+    summary: '나만의 git alias를 만들어 보자'
     parent: git
     url: /wiki/git-alias
-    updated: '2018-12-02 12:23:45 +0900'
+    updated: '2018-12-02 14:16:21 +0900'
     children: []
 git-checkout-specific-files:
     type: wiki
     title: 'git에서 다른 브랜치의 특정 파일만 체크아웃하기'
     summary: 'git checkout [branch] -- [path] 로 해결'
-    parent: til
+    parent: git
     url: /wiki/git-checkout-specific-files
-    updated: '2018-02-13 21:13:01 +0900'
+    updated: '2018-12-02 14:32:59 +0900'
     children: []
 GoF-Design-Pattern:
     type: wiki
@@ -1324,7 +1324,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-12-02 10:26:33 +0900'
+    updated: '2018-12-02 14:32:50 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1933,7 +1933,7 @@ til:
     parent: index
     url: /wiki/til
     updated: '2018-02-13 21:00:13 +0900'
-    children: [git-checkout-specific-files, trouble-shooting-node-7-install, vagrant-docker-get-start]
+    children: [trouble-shooting-node-7-install, vagrant-docker-get-start]
 toda-seiji-scientia:
     type: wiki
     title: '(책) 스키엔티아 - 도다 세이지'
