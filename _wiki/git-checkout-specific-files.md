@@ -3,11 +3,11 @@ layout  : wiki
 title   : git에서 다른 브랜치의 특정 파일만 체크아웃하기
 summary : git checkout [branch] -- [path] 로 해결
 date    : 2018-02-13 21:10:21 +0900
-updated : 2018-02-13 21:13:01 +0900
+updated : 2018-12-02 14:32:59 +0900
 tags    : til git
 toc     : true
 public  : true
-parent  : til
+parent  : git
 latex   : false
 ---
 * TOC
