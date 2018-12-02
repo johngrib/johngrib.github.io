@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2018-12-02 14:15:46 +0900
+updated : 2018-12-02 14:16:21 +0900
 tags    : fzf git bash
 toc     : true
 public  : true
@@ -296,8 +296,7 @@ alias.ch=!git checkout $(git branch -vv | grep -v '^\*' | fzf | awk '{print $1}'
 alias.a=!git add $(git status -s | fzf -m | awk '{print $2}')
 alias.cleanbranch=!git branch -d $(git branch --merged | grep -v '^\*\|\<master$')
 alias.deletebranch=!git branch -d $(git branch | grep -v '^\*\|\<master$' | fzf -m)
-alias.alias=!git config --list | egrep '^alias.+' | sed -e 's/^alias\.//' | sed -e 's/^[^=]*=/\'$'\033[31m&\033[(B\033[m/'
-alias.as=!git config --list | egrep '^alias.+'
+alias.alias=!git config --list | egrep '^alias.+'
 alias.diffs=!git diff $(git status -s | egrep '^\s*M' | awk '{print $2}' | fzf -m)
 alias.sync=!f() { git fetch $1 && git reset --hard $1/$(git b0); }; f
 ```
