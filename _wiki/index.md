@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-11-29 07:42:51 +0900
+updated : 2018-12-02 10:26:33 +0900
 tags    : index
 toc     : true
 public  : true
@@ -197,6 +197,8 @@ comment : false
         * [[excel-sumifs]]
         * [[excel-transpos]]
         * [[excel-vba-setting]]
+    * [[git]]
+        * [[git-alias]]
     * [[Gradle]]
     * [[hhkb-jp-tmk]]
     * [[mac-apps]]

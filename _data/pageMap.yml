@@ -1022,6 +1022,22 @@ ginkgo:
     url: /wiki/ginkgo
     updated: '2018-10-04 16:44:56 +0900'
     children: []
+git:
+    type: wiki
+    title: git
+    summary: ""
+    parent: tools
+    url: /wiki/git
+    updated: '2018-12-02 10:12:20 +0900'
+    children: [git-alias]
+git-alias:
+    type: wiki
+    title: '편리한 git alias 설정하기'
+    summary: '내가 쓰고 있는 git alias를 설명한다'
+    parent: git
+    url: /wiki/git-alias
+    updated: '2018-12-02 12:23:45 +0900'
+    children: []
 git-checkout-specific-files:
     type: wiki
     title: 'git에서 다른 브랜치의 특정 파일만 체크아웃하기'
@@ -1084,7 +1100,7 @@ golang-waitgroup-add:
     summary: '더하는 숫자가 중요한 게 아니라 0을 맞추는 게 중요'
     parent: Golang
     url: /wiki/golang-waitgroup-add
-    updated: '2018-11-29 11:07:27 +0900'
+    updated: '2018-11-29 11:11:32 +0900'
     children: []
 google-search-console-remove-outdated-content:
     type: wiki
@@ -1308,7 +1324,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-11-29 07:42:51 +0900'
+    updated: '2018-12-02 10:26:33 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1941,7 +1957,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [aws, command-line, Excel, Gradle, hhkb-jp-tmk, mac-apps, useful-site, web-browser-extension]
+    children: [aws, command-line, Excel, git, Gradle, hhkb-jp-tmk, mac-apps, useful-site, web-browser-extension]
 top:
     type: wiki
     title: 'top 명령어'

@@ -291,6 +291,7 @@ bash:
     - {fileName: df}
     - {fileName: du}
     - {fileName: fc}
+    - {fileName: git-alias}
     - {fileName: gpg}
     - {fileName: grep}
     - {fileName: history}
@@ -472,11 +473,15 @@ science:
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
 test:
     - {fileName: ginkgo}
+git:
+    - {fileName: git}
+    - {fileName: git-alias}
+    - {fileName: git-checkout-specific-files}
+fzf:
+    - {fileName: git-alias}
 til:
     - {fileName: git-checkout-specific-files}
     - {fileName: til}
-git:
-    - {fileName: git-checkout-specific-files}
 language:
     - {fileName: Golang}
     - {fileName: groovy}
