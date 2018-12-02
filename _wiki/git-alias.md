@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2018-12-02 12:44:19 +0900
+updated : 2018-12-02 14:12:03 +0900
 tags    : fzf git bash
 toc     : true
 public  : true
@@ -270,7 +270,7 @@ git bb m, merged : List merged branches excluding the current and master branche
 
 매일 쓰는 alias라면 괜찮겠지만 자주 안 쓰는 alias는 잊을 수도 있다.
 
-물론 `.gitconfig` 파일을 열어 보면 되지만, 그것도 귀찮으니 그냥 모든 git alias를 조회하는 alias를 추가하도록 g자ㅏ.
+물론 `.gitconfig` 파일을 열어 보면 되지만, 그것도 귀찮으니 그냥 모든 git alias를 조회하는 alias를 추가하도록 하자.
 
 ```perl
 [alias]
