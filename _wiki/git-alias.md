@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2018-12-02 14:12:03 +0900
+updated : 2018-12-02 14:15:46 +0900
 tags    : fzf git bash
 toc     : true
 public  : true
@@ -280,7 +280,7 @@ git bb m, merged : List merged branches excluding the current and master branche
 이제 `git alias`를 입력하면 모든 git alias를 볼 수 있다.
 
 ```
-$ git as
+$ git alias
 alias.l=log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 alias.lh=!git l | head -n 25
 alias.s=status -s
