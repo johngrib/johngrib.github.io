@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2018-12-02 14:16:21 +0900
+updated : 2018-12-04 09:02:25 +0900
 tags    : fzf git bash
 toc     : true
 public  : true
@@ -263,6 +263,69 @@ git bb m, merged : List merged branches excluding the current and master branche
 
 각 옵션 앞에 `-`, `--`를 붙일까 말까 고민했지만 그냥 이 정도가 편한 것 같아서 더 건드리지는 않았다.
 
+### merged branch clean 도우미 만들기
+
+위의 `git bb clean`은 다음 명령을 실행한다.
+
+```sh
+git branch -d $(git branch --merged | grep -v '^\*\|\<master$')
+```
+
+이 기능은 잘 작동한다.
+
+그러나 여러 대의 컴퓨터로 작업을 하다 보면
+같은 이름을 가진 브랜치라도 헤드의 값이 달라서
+내가 보기에는 머지된 것 같은데 `--merged`로는 나오지 않는 브랜치가 발생할 수 있다.
+
+사실 이건 내가 착각한 것일 뿐 `--merged`의 오작동이 아니다.
+
+그러나 어쨌든 불편한 건 불편한 것이므로 다음과 같은 alias를 만들어 보았다.
+
+```perl
+blist = "!git branch | grep -v '^\\*'"
+blist-merged = "!git branch --merged | grep -v '^\\*\\|\\<master$'"
+bclean = "! # Search and delete merged branches;\n\
+    git branch -d $(git blist-merged); \
+    for branch in $(git blist) ; do \
+        echo \"\nSearch :\\033[32m $branch \\033[0m\"; \
+        if [ $(git l | grep $branch -c) -gt 0 ]; then \
+            git l | egrep \"Merge.*$branch\" -C 2; \
+            read -p \"Delete $branch? [y|n] \" -r; \
+            REPLY=${REPLY:-"n"}; \
+            if [ $REPLY = \"y\" ]; then \
+                git branch -D $branch; \
+                echo \"\\033[32m$branch \\033[0mhas been\\033[31m deleted\\033[0m.\n\"; \
+            fi; \
+        fi; \
+    done \n\
+"
+```
+
+이 alias는 밤에 잠을 자다가 떠오른 아이디어였는데, 낮에도 이런 괜찮은 생각이 떠오르면 좋겠다.
+
+아무튼 이 `bclean`을 `git bb clean`으로 등록해 두고 실행하면 다음과 같이 돌아간다.
+
+![gitbbc](https://user-images.githubusercontent.com/1855714/49380943-339d6000-f756-11e8-93de-2274e3b4a5c3.gif)
+
+* 이 alias를 실행하면 일단 다음 명령어를 실행해 merged branch를 일괄적으로 삭제한다.
+
+```sh
+git branch -d $(git branch --merged | grep -v '^\*\|\<master$')
+```
+
+* 그리고 브랜치 목록을 조회한 다음, for 루프를 돈다.
+    * git log graph에서 `Merge.*브랜치이름`의 문자열을 찾아 보여준다.
+    * 위에서 보여준 해당 브랜치 이름을 삭제할 것인지를 물어본다.
+
+어느 정도는 수작업으로 하던 것이었기에 이렇게 만들어 놓으니 편리하고 재미있다.
+
+`git bb c`, `git bb clean`, `git bclean` 모두 잘 동작한다.
+
+검색 결과의 윗줄/아랫줄을 보여주는 라인 수를 조절하고 싶다면 다음 구문의 `-C 2`에서 2를 변경하면 된다.
+
+```
+git l | egrep \"Merge.*$branch\" -C 2; \
+```
 
 # 헷갈릴 때 사용하는 alias 추가하기
 
