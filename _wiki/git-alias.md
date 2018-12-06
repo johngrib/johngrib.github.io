@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2018-12-04 09:02:25 +0900
+updated : 2018-12-06 09:47:34 +0900
 tags    : fzf git bash
 toc     : true
 public  : true
@@ -327,6 +327,48 @@ git branch -d $(git branch --merged | grep -v '^\*\|\<master$')
 git l | egrep \"Merge.*$branch\" -C 2; \
 ```
 
+## fzf preview를 사용해 미리보기 기능 추가하기
+
+fzf의 preview 옵션을 사용하면 뭔가 일일이 확인하고 선택하는 과정을 단축할 수 있다.
+
+### 브랜치 선택기에 로그 그래프 미리보기 기능 추가하기
+
+ch를 다음과 같이 수정해보자.
+
+```perl
+[alias]
+    ch = "!git checkout $(git bselect)"
+    bselect = "! # select branch with preview; \n\
+        f() { \
+            _height=$(stty size | awk '{print $1}');\
+            git branch | egrep -v '^\\*' | fzf --preview \"git l {1} | head -n $_height\"; \
+        }; f"
+```
+
+* 하나의 알리아스로 만들어도 되겠지만 `bselect`는 여러모로 쓸모가 있을 것 같아 따로 만들었다.
+* 터미널 높이 길이 값으로 `$LINES`를 쓰면 더 깔끔했겠지만, git alias 설정 문자열 내에서는 `$LINES`값이 제대로 출력되지 않아 `stty size`를 사용했다.
+
+![gitch](https://user-images.githubusercontent.com/1855714/49552798-6901a380-f938-11e8-9c62-8b9228492f55.gif)
+
+### add 파일 선택기에 미리보기 기능 추가하기
+
+이번엔 a를 다음과 같이 수정하자.
+
+```perl
+[alias]
+    a = "! # add files with fzf preview diffs; \n\
+        f() { \
+            _height=$(stty size | awk '{print $1}');\
+            git s | fzf -m --preview \"git diff {2} | head -n $_height | pygmentize\" | awk '{print $2}' | xargs git add; \
+        }; f"
+```
+
+* 코드 미리보기에 색깔을 칠해주기 위해 [Pygment](http://pygments.org/)를 사용했다.
+    * 설치는 심플하게 `pip3 install Pygments`
+
+![gita_](https://user-images.githubusercontent.com/1855714/49553461-2392a580-f93b-11e8-9117-ea0d32c24ee0.gif)
+
+
 # 헷갈릴 때 사용하는 alias 추가하기
 
 이제 꽤 많은 alias가 추가되었다.
@@ -387,3 +429,7 @@ alias.sync=!f() { git fetch $1 && git reset --hard $1/$(git b0); }; f
 * [2.7 Git Basics - Git Aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases )
 * [Git alias with parameters](https://jondavidjohn.com/git-aliases-parameters/ )
 * <https://github.com/johngrib/dotfiles/blob/master/.gitconfig >
+
+* 도구
+    * <https://github.com/junegunn/fzf >
+    * <http://pygments.org/ >
