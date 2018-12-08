@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2018-12-06 09:47:34 +0900
+updated : 2018-12-08 12:05:50 +0900
 tags    : fzf git bash
 toc     : true
 public  : true
@@ -368,6 +368,37 @@ ch를 다음과 같이 수정해보자.
 
 ![gita_](https://user-images.githubusercontent.com/1855714/49553461-2392a580-f93b-11e8-9117-ea0d32c24ee0.gif)
 
+#### 파일 이름 옆에 변경 라인 숫자 보여주기
+
+이 글을 작성하고 며칠이 지났다.
+
+각 파일별 변경된 라인 숫자를 보여주면 좀 더 편할 것 같아서 다음과 같이 수정해 보았다.
+
+```perl
+a = "!git diff-select | xargs git add"
+diff-select = "! # add files with fzf preview diffs; \n\
+    f() { \
+        _height=$(stty size | awk '{print $1}');\
+        git diff-info \
+        | fzf -m --header \"$(git diff --shortstat)\" --preview \
+            \"if [[ {1} == '??' ]]; then cat {3}; else git diff {3}; fi \
+            | head -n $_height \
+            | pygmentize\" \
+        | awk '{print $3}'; \
+    }; f"
+diff-info = "! # get diff info;\n\
+    fileA=/tmp/git-s-$(uuidgen); \
+    fileB=/tmp/git-diff-$(uuidgen); \
+    git s | awk '{print $2,$1}' > $fileA; \
+    git diff --numstat | awk '{print $3,$1,$2}' > $fileB; \
+    join -t' ' -a 1 $fileA $fileB | awk '{print $2, \"(+\"$3 \",-\"$4\")\", $1}' | sed 's/(+,-)/./' | column -t -s' ' ; \
+    rm -f $fileA $fileB; \
+"
+```
+
+실행하면 다음과 같이 아래쪽에 변경에 대한 전체 정보가 나오고, 각 파일별로 추가/삭제 정보가 나온다.
+
+![image](https://user-images.githubusercontent.com/1855714/49681236-6db58b80-fae1-11e8-8b39-11a24531cfbb.png)
 
 # 헷갈릴 때 사용하는 alias 추가하기
 
