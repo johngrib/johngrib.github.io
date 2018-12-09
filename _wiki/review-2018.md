@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-12-05 08:20:20 +0900
+updated : 2018-12-09 22:42:23 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-12-09 [노트지능](http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9788963221380 ) - 별로 도움이 안 되는 책이었다.
 * 2018-12-05 [풍선인간](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=164179524) - 초능력 추리물. 너무 재미없고... 별로였다.
 * 2018-11-25 [[전생검신]] 43권. 전전반측
 * 2018-11-09 [컴퓨터 과학이 여는 세계](http://www.yes24.co.kr/24/goods/17976737 )
