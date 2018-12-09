@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2018-12-08 12:05:50 +0900
+updated : 2018-12-09 17:22:05 +0900
 tags    : fzf git bash
 toc     : true
 public  : true
@@ -447,6 +447,23 @@ alias.sync=!f() { git fetch $1 && git reset --hard $1/$(git b0); }; f
 ```
 
 ![image](https://user-images.githubusercontent.com/1855714/49335205-8d097000-f62c-11e8-9ba1-97ab3d49d792.png)
+
+## alias 설명서를 보기 좋게 다듬어 보자
+
+* `column` 명령어를 사용하면 터미널에 출력되는 문자열을 표와 같이 정렬할 수 있다.
+
+```perl
+alias = "!# Prints all aliases.;\n\
+    git config --list | egrep '^alias.+' | sed -e 's/^alias\\.//' | sed -e 's/^[^=]*=/\\'$'\\033[31m&\\033[(B\\033[m/' | column -t -s'=' | sed 's/!#* *//; s/;$//' | cut -c1-85"
+```
+
+* 위의 alias 명령어를 사용하면 `!# ...;\n\` 의 `...` 영역에 설명을 쓸 수 있다.
+
+다음은 나중에 사용하기 쉽도록 설명을 추가한 것이다.
+
+구글 번역기를 열심히 돌리며 영작했다.
+
+![image](https://user-images.githubusercontent.com/1855714/49694946-5efcd080-fbd6-11e8-9aed-2c678882c010.png)
 
 # 나의 git config
 
