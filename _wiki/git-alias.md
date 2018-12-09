@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2018-12-09 17:22:05 +0900
+updated : 2018-12-09 17:29:07 +0900
 tags    : fzf git bash
 toc     : true
 public  : true
@@ -454,7 +454,13 @@ alias.sync=!f() { git fetch $1 && git reset --hard $1/$(git b0); }; f
 
 ```perl
 alias = "!# Prints all aliases.;\n\
-    git config --list | egrep '^alias.+' | sed -e 's/^alias\\.//' | sed -e 's/^[^=]*=/\\'$'\\033[31m&\\033[(B\\033[m/' | column -t -s'=' | sed 's/!#* *//; s/;$//' | cut -c1-85"
+    git config --list \
+    | egrep '^alias.+' \
+    | sed -e 's/^alias\\.//' \
+    | sed -e 's/^[^=]*=/\\'$'\\033[31m&\\033[(B\\033[m/' \
+    | column -t -s'=' \
+    | sed 's/!#* *//; s/;$//' \
+    | cut -c1-85"
 ```
 
 * 위의 alias 명령어를 사용하면 `!# ...;\n\` 의 `...` 영역에 설명을 쓸 수 있다.
