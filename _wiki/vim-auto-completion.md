@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2018-11-25 12:48:44 +0900
+updated : 2018-12-10 21:23:00 +0900
 tags    : vim
 toc     : true
 public  : true
@@ -38,6 +38,8 @@ Vim의 기본 자동완성이라 할 수 있다.
 insert 모드에서 `<C-p>` 또는 `<C-n>`을 입력하면, `complete`옵션에서 지정한 위치의 키워드를 기반으로 자동완성해준다.
 
 * IDE의 자동완성과는 다르게, 주석이나 문자열 안에 있는 단어들도 모두 찾아준다.
+* 보통은 아무런 설정 없이 insert 모드에서 `<C-p>`, `<C-n>` 만 눌러도 vim의 단어 완성을 사용할 수 있다.
+    * 더 자세히 알고 싶지 않다면 아래의 `complete` 옵션은 읽지 않아도 좋다.
 
 ## complete 옵션
 
@@ -64,6 +66,8 @@ complete=.,w,b,u,t,i
 
 # &lt;C-x&gt;
 
+* ctrl + x 입력.
+
 insert 모드에서만 지원하는 자동완성 기능이다.
 
 10가지 이상의 기능이 있지만 내가 자주 쓰는 두 가지만 나열해 본다.
@@ -71,6 +75,7 @@ insert 모드에서만 지원하는 자동완성 기능이다.
 * `<C-x><C-l>` : 라인 단위 자동 완성. 단어 완성이 아니라 줄 전체를 완성해 준다.
 * `<C-x><C-f>` : 파일명, 경로 자동완성. vim을 즐겨 쓰지 않는 사람이라도 이 기능은 유용할 것이다.
     * 설정파일을 수정하는 데에만 vim을 쓴다면 특히 이 기능은 유용하다.
+    * 예를 들어 `~/` 를 쓰고 ctrl+x ctrl-f 를 입력하면, home 경로의 파일들 (.bashrc 등등) 이름이 자동완성된다.
 
 # :abbreviate
 
@@ -202,13 +207,25 @@ ycm과 UltiSnips를 활용하면 편리한 자동완성 환경을 갖출 수 있
     * vim-plug를 사용하면 이 귀찮은 작업을 간편하게 자동화할 수 있다.
     * vim-plug는 vim 플러그인을 clone만 하지 않고, 지정한 셸 명령을 실행해 주기 때문이다.
 
-경험상 ycm은 그냥 설치하지 말고, 위와 같이 자신이 주로 사용하는 언어의 completer를 옵션으로 줘야 문제 없이 잘 설치되는 것 같다.
+경험상 ycm은 그냥 설치하지 말고, 자신이 주로 사용하는 언어의 completer를 옵션으로 줘야 문제 없이 잘 설치되는 것 같다.
+
+* 단, youcompleteme의 java 지원은 별로다.
+    * `--java-completer`는 사용하지 않기를 권장한다.
 
 다음은 내 ycm 플러그인 설치 설정이다. 플러그인 관리자는 vim-plug.
 
 ```viml
 Plug 'valloric/youcompleteme', { 'do': 'python3 ./install.py --clang-completer --go-completer --rust-completer --js-completer'}
 ```
+
+만약 vim-plug를 사용하지 않거나, 다른 문제가 있다면 youcompleteme가 설치된 경로(~/.vim 의 하위 디렉토리를 찾아볼 것)로 찾아 들어가 명령어를 입력해 수동으로 설치한다.
+
+다음은 내가 사용하는 설치 명령어이다.
+
+```sh
+$ python3 ./install.py --clang-completer --go-completer --rust-completer --js-completer
+```
+
 
 ## ycm 설정
 
@@ -247,7 +264,7 @@ let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 * ycm은 python을 사용하므로 경로를 지정해 줘야 돌아간다.
 * 위치를 모르겠다면(그럴리가) `$ which python3`로 알아낼 수 있다.
 
-### 자동 완성 소스로 주석과 문자열 추가 기정
+### 자동 완성 소스로 주석과 문자열 추가 지정
 
 ```viml
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
