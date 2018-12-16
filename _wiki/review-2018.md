@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-12-09 22:42:23 +0900
+updated : 2018-12-17 00:12:08 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-12-16 [개발자를 위한 하룻밤에 읽는 Go 언어 이야기](http://www.hanbit.co.kr/store/books/look.php?p_code=E8544486990 )
 * 2018-12-09 [노트지능](http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9788963221380 ) - 별로 도움이 안 되는 책이었다.
 * 2018-12-05 [풍선인간](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=164179524) - 초능력 추리물. 너무 재미없고... 별로였다.
 * 2018-11-25 [[전생검신]] 43권. 전전반측
@@ -89,6 +90,10 @@ latex   : false
 
 ## 영화/드라마/애니메이션
 
+* 2018-12-15 [Spider-Man: Into the [[Spider-Verse]]](https://www.imdb.com/title/tt4633694/ )
+* 2018-12-09 [카우보이의 노래](https://www.imdb.com/title/tt6412452/?ref_=tt_rt )
+* 2018-12-08 드라마 사조영웅전 2017
+* 2018-12-01 [Bohemian Rhapsody](https://www.imdb.com/title/tt1727824/?ref_=nv_sr_1 )
 * 2018-10-07 토탈 리콜(1990)
 * 2018-10-06 겁쟁이 페달 시즌2
 * 2018-09-16 포청천 개봉부전기(包青天 开封府传奇) - 포청천 비긴즈. 재밌어서 58부작이 전혀 길게 느껴지지 않았다.
