@@ -397,7 +397,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HELL-BOY, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -916,7 +916,7 @@ f-l-a-01-00:
     summary: 'INTRODUCTION TO THE THEORY OF COMPUTATION'
     parent: study-formal-languages-and-automata
     url: /wiki/f-l-a-01-00
-    updated: '2018-11-12 11:22:12 +0900'
+    updated: '2018-12-15 22:29:22 +0900'
     children: []
 f-l-a-01-01:
     type: wiki
@@ -924,7 +924,7 @@ f-l-a-01-01:
     summary: 'MATHEMATICAL PRELIMINARIES AND NOTATION'
     parent: study-formal-languages-and-automata
     url: /wiki/f-l-a-01-01
-    updated: '2018-11-13 21:24:54 +0900'
+    updated: '2018-12-16 14:05:06 +0900'
     children: []
 f-l-a-01-02:
     type: wiki
@@ -932,7 +932,7 @@ f-l-a-01-02:
     summary: 'THREE BASIC CONCEPTS'
     parent: study-formal-languages-and-automata
     url: /wiki/f-l-a-01-02
-    updated: '2018-11-17 23:34:14 +0900'
+    updated: '2018-12-16 14:40:27 +0900'
     children: []
 f-l-a-02-01:
     type: wiki
@@ -940,7 +940,7 @@ f-l-a-02-01:
     summary: 'DETERMINISTIC FINITE ACCEPTERS'
     parent: study-formal-languages-and-automata
     url: /wiki/f-l-a-02-01
-    updated: '2018-11-25 22:38:20 +0900'
+    updated: '2018-12-16 16:32:17 +0900'
     children: []
 f-l-a-02-02:
     type: wiki
@@ -948,7 +948,15 @@ f-l-a-02-02:
     summary: 'NONDETERMINISTIC FINITE ACCEPTERS'
     parent: study-formal-languages-and-automata
     url: /wiki/f-l-a-02-02
-    updated: '2018-11-28 21:35:16 +0900'
+    updated: '2018-12-16 16:59:27 +0900'
+    children: []
+f-l-a-02-03:
+    type: wiki
+    title: '형식언어와 오토마타.02.03'
+    summary: 'EQUIVALENCE OF DETERMINISTIC AND NONDETERMINISTIC FINITE ACCEPTERS'
+    parent: study-formal-languages-and-automata
+    url: /wiki/f-l-a-02-03
+    updated: '2018-12-16 18:34:41 +0900'
     children: []
 fc:
     type: wiki
@@ -1036,7 +1044,7 @@ git-alias:
     summary: '나만의 git alias를 만들어 보자'
     parent: git
     url: /wiki/git-alias
-    updated: '2018-12-02 14:16:21 +0900'
+    updated: '2018-12-09 17:29:07 +0900'
     children: []
 git-checkout-specific-files:
     type: wiki
@@ -1116,7 +1124,7 @@ googling:
     summary: '구글 및 여러 검색 서비스 사용법'
     parent: how-to
     url: /wiki/googling
-    updated: '2018-01-25 23:12:25 +0900'
+    updated: '2018-12-09 21:57:55 +0900'
     children: []
 gpg:
     type: wiki
@@ -1181,6 +1189,14 @@ groupId-artifactId:
     parent: what
     url: /wiki/groupId-artifactId
     updated: '2018-07-21 22:57:42 +0900'
+    children: []
+grow-together:
+    type: wiki
+    title: '(책) 함께 자라기'
+    summary: ""
+    parent: book
+    url: /wiki/grow-together
+    updated: '2018-12-18 22:57:29 +0900'
     children: []
 hammerspoon:
     type: wiki
@@ -1324,7 +1340,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-12-02 14:32:50 +0900'
+    updated: '2018-12-19 20:29:53 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1424,11 +1440,11 @@ links:
     children: [links-2018]
 links-2018:
     type: wiki
-    title: '2018년 읽은 인상적인 글 링크 모음'
-    summary: ""
+    title: '2018년 링크 모음'
+    summary: '해묵은 웹 브라우저 탭 정리'
     parent: links
     url: /wiki/links-2018
-    updated: '2018-09-14 22:54:00 +0900'
+    updated: '2018-12-18 08:44:50 +0900'
     children: []
 locomotive-problem:
     type: wiki
@@ -1716,7 +1732,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-11-25 21:20:29 +0900'
+    updated: '2018-12-17 00:12:08 +0900'
     children: []
 RFC:
     type: wiki
@@ -1869,7 +1885,7 @@ study-formal-languages-and-automata:
     parent: study
     url: /wiki/study-formal-languages-and-automata
     updated: '2018-11-12 00:08:19 +0900'
-    children: [f-l-a-00-preface, f-l-a-01-00, f-l-a-01-01, f-l-a-01-02, f-l-a-02-01, f-l-a-02-02]
+    children: [f-l-a-00-preface, f-l-a-01-00, f-l-a-01-01, f-l-a-01-02, f-l-a-02-01, f-l-a-02-02, f-l-a-02-03]
 study-think-bayes:
     type: wiki
     title: '(study) 파이썬을 활용한 베이지안 통계'
@@ -2044,7 +2060,7 @@ vim-auto-completion:
     summary: 'vim을 똑똑하게 사용하자'
     parent: Vim
     url: /wiki/vim-auto-completion
-    updated: '2018-11-25 12:48:44 +0900'
+    updated: '2018-12-10 21:23:00 +0900'
     children: []
 vim-conceallevel:
     type: wiki

@@ -83,6 +83,7 @@ study:
     - {fileName: 2017-05-27-jwp-14}
     - {fileName: 2017-05-29-jwp-15}
     - {fileName: 2017-06-01-jwp-16}
+    - {fileName: grow-together}
     - {fileName: study}
 jwp:
     - {fileName: 2017-04-02-jwp-00-prepare}
@@ -451,6 +452,7 @@ cs:
     - {fileName: f-l-a-01-02}
     - {fileName: f-l-a-02-01}
     - {fileName: f-l-a-02-02}
+    - {fileName: f-l-a-02-03}
     - {fileName: study-formal-languages-and-automata}
 fish:
     - {fileName: fish-shell}
@@ -517,6 +519,8 @@ jvm-lang:
     - {fileName: groovy}
 groovy:
     - {fileName: groovy}
+agile:
+    - {fileName: grow-together}
 lua:
     - {fileName: hammerspoon-luarocks}
 keyboard:
