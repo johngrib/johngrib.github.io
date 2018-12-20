@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-12-17 00:12:08 +0900
+updated : 2018-12-20 21:49:44 +0900
 tags    : review
 toc     : true
 public  : true
@@ -16,6 +16,7 @@ latex   : false
 
 ## 책
 
+* 2018-12-20 [함께 자라기](http://www.insightbook.co.kr/13227 ) - 주위의 모든 이에게 추천하고 싶은 책이다.
 * 2018-12-16 [개발자를 위한 하룻밤에 읽는 Go 언어 이야기](http://www.hanbit.co.kr/store/books/look.php?p_code=E8544486990 )
 * 2018-12-09 [노트지능](http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9788963221380 ) - 별로 도움이 안 되는 책이었다.
 * 2018-12-05 [풍선인간](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=164179524) - 초능력 추리물. 너무 재미없고... 별로였다.
