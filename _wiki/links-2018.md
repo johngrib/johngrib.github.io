@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 링크 모음
 summary : 해묵은 웹 브라우저 탭 정리
 date    : 2018-07-29 17:37:52 +0900
-updated : 2018-12-18 08:44:50 +0900
+updated : 2018-12-22 12:55:52 +0900
 tags    : 
 toc     : true
 public  : true
@@ -106,6 +106,7 @@ latex   : false
 * [IRIDIUM BROWSER: A BROWSER SECURING YOUR PRIVACY. THAT’S IT.](https://iridiumbrowser.de/ ), [번역](https://www.clien.net/service/board/news/9526383 )
 * [jondot/awesome-devenv](https://github.com/jondot/awesome-devenv )
 * [PopClip Extensions](https://pilotmoon.com/popclip/extensions/ )
+* [Remove Image Background FREE](https://www.remove.bg/ )
 * [stefanbuck/awesome-browser-extensions-for-github](https://github.com/stefanbuck/awesome-browser-extensions-for-github )
 * [Ultimate Hacking Keyboard](https://ultimatehackingkeyboard.com/ )
 
@@ -140,6 +141,7 @@ latex   : false
 * 2012-12-03 [개발자의 역량 측정 메트릭](http://m.blog.daum.net/_blog/_m/articleView.do?blogid=0ISrw&articleno=7864712 )
 * 2013-01-05 [옥스포드 대학 뉴 컬리지에 얽힌 이야기...](http://gibssong.blogspot.com/2013/01/blog-post_5.html?m=1 )
 * 2015-01-22 [9 PUZZLE WEBSITES TO SHARPEN YOUR PROGRAMMING SKILLS](https://www.improgrammer.net/9-puzzle-websites-to-sharpen-your-programming-skills/ )
+* 2015-10-23 [Do not remain nameless to yourself](http://www.lettersofnote.com/2015/10/do-not-remain-nameless-to-yourself.html?m=1 ), [리처드 파인만의 "스스로 무명인이 되지 말아라"](https://m.facebook.com/395206470818992/posts/783545258651776/)
 * 2016-03-03 [How To Create 3D Graphics Using Canvas](https://docs.microsoft.com/ko-kr/previous-versions/windows/internet-explorer/ie-developer/samples/hh535759(v=vs.85) )
 * 2016-03-18 [초보자를 위한 시스템 해킹 공부 가이드라인](https://www.slideshare.net/H4C/ss-59722847 )
 * 2016-03-27 [알고리즘 공부 시작하기 좋은 조합](https://gooddaytocode.blogspot.com/2016/03/blog-post.html?m=1 )
