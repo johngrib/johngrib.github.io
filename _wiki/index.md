@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-12-19 20:58:09 +0900
+updated : 2018-12-23 17:36:33 +0900
 tags    : index
 toc     : true
 public  : true
@@ -160,6 +160,7 @@ comment : false
         * [[f-l-a-02-02]]
         * [[f-l-a-02-03]]
         * [[f-l-a-02-04]]
+        * [[f-l-a-03-01]]
     * [[study-think-bayes]]
         * [[cookie-problem]]
         * [[dice-problem]]

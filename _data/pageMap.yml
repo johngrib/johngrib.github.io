@@ -966,6 +966,14 @@ f-l-a-02-04:
     url: /wiki/f-l-a-02-04
     updated: '2018-12-20 10:36:32 +0900'
     children: []
+f-l-a-03-01:
+    type: wiki
+    title: '형식언어와 오토마타.03.01'
+    summary: 'REDUCTION OF THE NUMBER OF STATES IN FINITE AUTOMATA'
+    parent: study-formal-languages-and-automata
+    url: /wiki/f-l-a-03-01
+    updated: '2018-12-23 18:12:13 +0900'
+    children: []
 fc:
     type: wiki
     title: 'fc 명령어'
@@ -1348,7 +1356,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-12-19 20:58:09 +0900'
+    updated: '2018-12-23 17:36:33 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1452,7 +1460,7 @@ links-2018:
     summary: '해묵은 웹 브라우저 탭 정리'
     parent: links
     url: /wiki/links-2018
-    updated: '2018-12-18 08:44:50 +0900'
+    updated: '2018-12-23 12:22:52 +0900'
     children: []
 locomotive-problem:
     type: wiki
@@ -1740,7 +1748,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-12-17 00:12:08 +0900'
+    updated: '2018-12-22 22:49:52 +0900'
     children: []
 RFC:
     type: wiki
@@ -1893,7 +1901,7 @@ study-formal-languages-and-automata:
     parent: study
     url: /wiki/study-formal-languages-and-automata
     updated: '2018-11-12 00:08:19 +0900'
-    children: [f-l-a-00-preface, f-l-a-01-00, f-l-a-01-01, f-l-a-01-02, f-l-a-02-01, f-l-a-02-02, f-l-a-02-03, f-l-a-02-04]
+    children: [f-l-a-00-preface, f-l-a-01-00, f-l-a-01-01, f-l-a-01-02, f-l-a-02-01, f-l-a-02-02, f-l-a-02-03, f-l-a-02-04, f-l-a-03-01]
 study-think-bayes:
     type: wiki
     title: '(study) 파이썬을 활용한 베이지안 통계'
