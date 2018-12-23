@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 링크 모음
 summary : 해묵은 웹 브라우저 탭 정리
 date    : 2018-07-29 17:37:52 +0900
-updated : 2018-12-23 09:24:51 +0900
+updated : 2018-12-23 12:22:52 +0900
 tags    : 
 toc     : true
 public  : true
@@ -116,6 +116,7 @@ latex   : false
 # Dev etc.
 
 * 2016-01-13 [기술 조직이 사업에 걸림돌이 될 때, 정렬 함정(Alignment Trap)](http://blog.fupfin.com/?p=127 )
+* 2016-09-02 [사이언티픽 게이머즈 시즌2 #10 구식 마이크로 칩을 발굴하다](http://blog.ncsoft.com/?p=19597 )
 * 2016-12-10 [오픈소스 프로젝트에 소스코드 기여해보기 - GNOME문자표에 한글표기와 베트남어발음추가](http://blog.studioego.info/m/4004 )
 * 2017 [GOOGLE MAPS’S MOAT; How far ahead of Apple Maps is Google Maps?](https://www.justinobeirne.com/google-maps-moat ) * 2017-01-15 [압축 알고리즘 르네상스 (1)](http://j.mearie.org/post/155896363363/compression-algorithm-renaissance-part-1 ), [(2)](http://j.mearie.org/post/155924859934/compression-algorithm-renaissance-part-2 )
 * 2017-03-18 [Composing Software: An Introduction](https://medium.com/javascript-scene/composing-software-an-introduction-27b72500d6ea ), [소프트웨어 합성: 개요](https://midojeong.github.io/2018/03/16/composing-software-intro/ )
@@ -182,10 +183,12 @@ latex   : false
 
 # Science, Math
 
+* 2009-10-04 [Domino Chain Reaction](https://youtu.be/5JCm5FY-dEY )
 * 2013-04-29 [테일러 급수의 이해와 활용 (Taylor series)](http://darkpgmr.tistory.com/59 )
 * 2014-03-10 [(박수칠) 중복조합의 기호에는 왜 H가 사용될까?](https://orbi.kr/0004410969 )
 * 2015-11-03 [서울대 최병선 교수의 통계학 저서 pdf 버전 무료공개](http://m.cafe.daum.net/statsas/3E53/167?svc=sns& )
 * 2016-08-09 [(공지) (지식나눔) 네이버과학 "수학공식 포스터"](https://m.blog.naver.com/PostView.nhn?blogId=nv_science&logNo=220783363886&proxyReferer=https%3A%2F%2Ft.co%2FDhG3omiSQV%3Famp%3D1 )
+* 2017-11-22 [시공간의 휘어짐이 물체의 낙하를 만들어내는 원리](https://www.youtube.com/watch?v=T3nmFqVdaho )
 * 2018-01-15 [사다리 게임, 절대 걸리지 않는 법](http://docs.likejazz.com/ghost-leg-probabilities/ )
 * 2018-10-13 [This is how a mechanical binary counter works](https://twitter.com/ThingsWork/status/1051219022988173312 )
 
@@ -219,10 +222,14 @@ latex   : false
 * 2018-11-08 [스즈미야 하루히 마지막화 다시보다가 발견한것](http://gall.dcinside.com/mgallery/board/view/?id=haruhiism&no=4509&page=1 )
 * 2018-11-08 [피어클리벤의 금화 팬아트](https://britg.kr/review-single/70159/ )
 * [90년대 게임잡지 디지털 복원](http://www.gamemeca.com/magazine/ )
+* [Generating fantasy maps](http://mewo2.com/notes/terrain/ ), [mewo2/terrain](https://github.com/mewo2/terrain )
 * [Role-playing Games Stack Exchange](https://rpg.stackexchange.com/ )
+* [초여명 RPG 가이드](https://www.dropbox.com/s/7kyopd3cypsa296/%EC%B4%88%EC%97%AC%EB%AA%85%20RPG%20%EA%B0%80%EC%9D%B4%EB%93%9C.pdf?dl=0 )
 * [한국국토정보공사 3천여 명의 측량사들이 전국을 누비며 찾아낸 우리지역 진짜 숨은 맛집](https://www.google.com/maps/d/u/0/viewer?mid=19uLxtFsE0qARKu7Zy3BLFso0-2M&h&ll=36.563968299513505%2C127.85745900000006&z=7 )
 
 # Cute
 
-* 2018-12-12 [고양이, 개구리](https://twitter.com/animal_collect_/status/1072808662836658181 )
+* 2016-11-04 [아기 코알라](https://twitter.com/Kaikaiwang0818/status/794437793694916608 )
+* 2018-03-10 [아기 염소](https://twitter.com/AMAZlNGNATURE/status/972300025530339328 )
 * 2018-10-24 [펭귄](https://twitter.com/Cloudpath1994/status/1055120364957626368 )
+* 2018-12-12 [고양이, 개구리](https://twitter.com/animal_collect_/status/1072808662836658181 )
