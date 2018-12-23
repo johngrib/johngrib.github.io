@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 링크 모음
 summary : 해묵은 웹 브라우저 탭 정리
 date    : 2018-07-29 17:37:52 +0900
-updated : 2018-12-22 12:55:52 +0900
+updated : 2018-12-23 09:24:51 +0900
 tags    : 
 toc     : true
 public  : true
@@ -66,6 +66,7 @@ latex   : false
 * 2012-08-30 [(Objective-C) nil 제대로 알자](https://soulpark.wordpress.com/2012/08/30/objective_c_understanding-nil/ )
 * 2014-02-23 [How Goroutines Work](https://blog.nindalf.com/posts/how-goroutines-work/ ), [고루틴은 어떻게 동작하는가?](https://stonzeteam.github.io/How-Goroutines-Work/ )
 * 2015-05-15 [코루틴(Coroutine) 이해하기](https://kwangyulseo.com/2015/05/15/%EC%BD%94%EB%A3%A8%ED%8B%B4coroutine-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/ )
+* 2016-12-22 [Multi Thread 환경에서의 올바른 Singleton](https://medium.com/@joongwon/multi-thread-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%EC%9D%98-%EC%98%AC%EB%B0%94%EB%A5%B8-singleton-578d9511fd42 )
 * 2017-01-04 [Java의 숨겨진 비용을 파악하고 앱 성능 향상하기](https://academy.realm.io/kr/posts/360andev-jake-wharton-java-hidden-costs-android/ )
 * 2017-10-11 [코드 리뷰 이야기(1)](https://www.popit.kr/%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0-%EC%9D%B4%EC%95%BC%EA%B8%B0-1/ ), [코드 리뷰 이야기(2)](https://www.popit.kr/%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0-%EC%9D%B4%EC%95%BC%EA%B8%B02/ )
 * 2018-04-09 [Explaining promises and callbacks while implementing a sorting algorithm](https://wanago.io/2018/04/09/explaining-promises-and-callbacks-while-implementing-a-sorting-algorithm/ )
@@ -75,6 +76,7 @@ latex   : false
 * 2018-06-30 [Timsort — the fastest sorting algorithm you’ve never heard of](https://hackernoon.com/timsort-the-fastest-sorting-algorithm-youve-never-heard-of-36b28417f399 )
 * 2018-07-31 [How to fix dragging animation in UI with simple math](https://uxdesign.cc/how-to-fix-dragging-animation-in-ui-with-simple-math-4bbc10deccf7 )
 * 2018-09-05 [한글라이즈 재재작기 1부](https://www.slideshare.net/sublee/ss-113085659 ), [2부](https://www.slideshare.net/sublee/2-113085538 )
+* 2018-09-18 [따로 놀던 슬랙봇, gRPC 통해 하나 되기](https://engineering.linecorp.com/ko/blog/combining-slackbots-into-one-with-grpc/ )
 * 2018-10-20 [자바의 새로운 도약: OpenJDK(Feat. Oracle JDK Subscription)](http://taewan.kim/post/openjdk/ )
 * <https://shitcode.net/ >
 * [huytd/kanban-app](https://github.com/huytd/kanban-app ) - Look ma, no Electron!
@@ -97,6 +99,7 @@ latex   : false
 * 2018-04-16 [한국어 지원을 출시한 Google Fonts를 소개합니다.](https://developers-kr.googleblog.com/2018/04/google-fonts.html?m=1 )
 * 2018-09-19 [전천후 프로토콜 분석기 ‘와이어샤크’를 아시나요?](http://www.ciokorea.com/news/39640#csidxed867e5ade19a7d807103974f6a3fd8 )
 * [browsh-org/browsh](https://github.com/browsh-org/browsh )
+* [CloudPing.info](https://www.cloudping.info/ )
 * [Convert images to LaTeX](https://mathpix.com/ )
 * [cyrus-and/gdb-dashboard](https://github.com/cyrus-and/gdb-dashboard ) - Modular visual interface for GDB in Python
 * [earth a visualization of global weather conditions forecast by supercomputers](https://earth.nullschool.net/#current/particulates/surface/level/overlay=pm2.5/orthographic=-231.08,37.26,1646 )
@@ -123,17 +126,20 @@ latex   : false
 * 2018-04-24 [(NDC 18) "일정 급하다고 주먹구구로 해결하지 말라, 조직까지 망가진다"](http://www.thisisgame.com/webzine/gameevent/nboard/227/?n=82128&utm_source=twitter&utm_medium=outlink&utm_campaign=dedukisa&utm_content=82128 )
 * 2018-04-26 [(NDC 18) "MS, 블리자드 그리고 넥슨은 어떻게 개발하나요?"](http://www.thisisgame.com/webzine/gameevent/nboard/227/?n=82227 ) - 세 기업의 업무 프로세스를 보고 얻은 인사이트 10가지
 * 2018-05-03 [Configuration Management, Application Automation, and The Future](https://medium.com/@echohack/configuration-management-application-automation-and-the-future-92507891289d )
+* 2018-06-28 [스포카 크리에이터 행동 강령 소개](https://spoqa.github.io/2018/06/28/code-of-conduct.html )
 * 2018-06-29 [Cats, Qubits, and Teleportation: The Spooky World of Quantum Computation (Part One)](https://www.infoq.com/articles/quantum-computing-intro-one ), [(Part Two)](https://www.infoq.com/articles/quantum-computing-algoritms-two ), [(Part Three)](https://www.infoq.com/articles/quantum-computing-applications-three ), [1편](https://encodent.com/quantum-study/infoq-quantum-computing-intro-one ), [2편](https://encodent.com/quantum-study/infoq-quantum-computing-algoritms-two ), [3편](https://encodent.com/quantum-study/infoq-quantum-computing-applications-three )
+* 2018-07-04 [Microsoft + GitHub = Empowering Developers](https://blogs.microsoft.com/blog/2018/06/04/microsoft-github-empowering-developers/ ), [마이크로소프트 + 깃헙 = 개발자의 역량 강화](http://www.looah.com/article/view/2079 )
 * 2018-08-31 [도도 파이터 제작기](https://spoqa.github.io/2018/08/31/dodo-fighter-pt1.html )
 * 2018-10-29 [How to Make a Roguelike](http://www.gamasutra.com/blogs/JoshGe/20181029/329512/How_to_Make_a_Roguelike.php )
 * [Integerous/goQuality-dev-contents](https://github.com/Integerous/goQuality-dev-contents ) - 고퀄리티 개발 컨텐츠 모음
 
 # Machine Learning
 
-* 2018-06-25 [AI bots trained for 180 years a day to beat humans at Dota 2](https://www.theverge.com/2018/6/25/17492918/openai-dota-2-bot-ai-five-5v5-matches ), [AI, 5천년을 연습해 인간을 게임에서 이기다](http://newspeppermint.com/2018/06/27/aiwondota2/ )
 * 2017-08-31 [(카카오AI리포트) 머신러닝 적용의 실제: 하용호 카카오 Machine Intelligence 파트장](https://brunch.co.kr/@kakao-it/104/ )
 * 2017-09-10 [자습해도 모르겠던 딥러닝, 머리속에 인스톨 시켜드립니다. 하용호](https://www.slideshare.net/yongho/ss-79607172 )
 * 2018-05-07 [The Visual Studio Blog - Introducing Visual Studio IntelliCode](https://blogs.msdn.microsoft.com/visualstudio/2018/05/07/introducing-visual-studio-intellicode/ )
+* 2018-06-25 [AI bots trained for 180 years a day to beat humans at Dota 2](https://www.theverge.com/2018/6/25/17492918/openai-dota-2-bot-ai-five-5v5-matches ), [AI, 5천년을 연습해 인간을 게임에서 이기다](http://newspeppermint.com/2018/06/27/aiwondota2/ )
+* 2018-12-05 [AI-Assisted Code Completion Suggestions Come to C++ via IntelliCode](https://blogs.msdn.microsoft.com/vcblog/2018/12/05/cppintellicode/ )
 
 
 # Study, Life
@@ -162,10 +168,13 @@ latex   : false
 * 2018-08-16 [면접에 떨어졌다고 좌절할 필요 없는 이유](https://iamsang.com/blog/2018/08/16/no-interview-frustration/ )
 * 2018-09-15 [개발자에서 개발팀장이 되기까지 겪은 다섯가지 큰 실수](https://muchtrans.com/translations/techie-tech-lead-my-5-biggest-mistakes.ko.html )
 * 2018-10-05 [(Why) 라디오 땜질하는 이분, 한국 반도체의 뿌리입니다](http://news.chosun.com/site/data/html_dir/2018/10/05/2018100502625.html )
+* 2018-10-09 [진짜 궁서체](https://twitter.com/pamina7776/status/1049470199945023488 )
 * 2018-10-16 [알고리즘 공부, 어떻게 해야하나요?](http://baactree.tistory.com/52 )
 * 2018-10-22 [망한 PC방 인수해서 3년 운영한 이야기](http://m.ruliweb.com/best/board/300143/read/39599965 )
 * 2018-10-23 [멘붕이 왔을 때 활용해 보자! - 업무에 우선 순위를 매기는 방법](http://isao76.egloos.com/m/2656078 )
 * 2018-11-20 [장동수님 인터뷰](https://www.facebook.com/tyzapzi/videos/vb.306660186475656/501140083727655/?type=2&theater )
+* 2018-12-10 [The Friendship That Made Google Huge](https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge )
+* [Build Your Own Text Editor](https://viewsourcecode.org/snaptoken/kilo/index.html )
 * [D3 Graph Theory](https://mrpandey.github.io/d3graphTheory/ ) - Learn graph theory interactively.
 * [HOW DNS WORKS](https://howdns.works/ )
 * [Teach Yourself Computer Science](https://teachyourselfcs.com/ )
@@ -178,6 +187,7 @@ latex   : false
 * 2015-11-03 [서울대 최병선 교수의 통계학 저서 pdf 버전 무료공개](http://m.cafe.daum.net/statsas/3E53/167?svc=sns& )
 * 2016-08-09 [(공지) (지식나눔) 네이버과학 "수학공식 포스터"](https://m.blog.naver.com/PostView.nhn?blogId=nv_science&logNo=220783363886&proxyReferer=https%3A%2F%2Ft.co%2FDhG3omiSQV%3Famp%3D1 )
 * 2018-01-15 [사다리 게임, 절대 걸리지 않는 법](http://docs.likejazz.com/ghost-leg-probabilities/ )
+* 2018-10-13 [This is how a mechanical binary counter works](https://twitter.com/ThingsWork/status/1051219022988173312 )
 
 # BlockChain
 
@@ -206,7 +216,13 @@ latex   : false
 * 2018-04-06 [(임진왜란 만화)명량해전 그 시작과 끝](http://m.ruliweb.com/family/212/board/1010/read/30594904?search_type=member_srl&search_key=234586 )
 * 2018-06-03 [“대동여지도 만들려 백두산 수차례 답사? 김정호 신화는 허구”](http://m.hankookilbo.com/News/Read/201806011820745892 )
 * 2018-09-12 [세상은 이렇게 끝난다](https://britg.kr/novel-group/novel-post/?np_id=126446&novel_post_id=65913 ) - 이산화 작가 단편 소설
+* 2018-11-08 [스즈미야 하루히 마지막화 다시보다가 발견한것](http://gall.dcinside.com/mgallery/board/view/?id=haruhiism&no=4509&page=1 )
 * 2018-11-08 [피어클리벤의 금화 팬아트](https://britg.kr/review-single/70159/ )
 * [90년대 게임잡지 디지털 복원](http://www.gamemeca.com/magazine/ )
 * [Role-playing Games Stack Exchange](https://rpg.stackexchange.com/ )
 * [한국국토정보공사 3천여 명의 측량사들이 전국을 누비며 찾아낸 우리지역 진짜 숨은 맛집](https://www.google.com/maps/d/u/0/viewer?mid=19uLxtFsE0qARKu7Zy3BLFso0-2M&h&ll=36.563968299513505%2C127.85745900000006&z=7 )
+
+# Cute
+
+* 2018-12-12 [고양이, 개구리](https://twitter.com/animal_collect_/status/1072808662836658181 )
+* 2018-10-24 [펭귄](https://twitter.com/Cloudpath1994/status/1055120364957626368 )
