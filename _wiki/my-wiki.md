@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2018-04-21 11:58:23 +0900
+updated : 2018-12-24 09:07:21 +0900
 tags    : wiki vimwiki jekyll blog
 toc     : true
 comment : true
@@ -244,6 +244,29 @@ public: true
 </html>
 {% endraw %}
 ```
+
+이제 사이트맵을 만들어 구글에 등록해줘야 한다.
+
+사이트맵은 xml 파일이지만, liquid를 사용해 jekyll이 동적으로 생성하도록 하면 된다.
+
+내가 작성한 사이트맵 파일은 다음 링크로 들어가면 참고할 수 있다.
+
+[sitemap.xml](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/master/sitemap.xml )
+
+그리고 [search.console.com](https://search.google.com/search-console )에 들어가서 사이트맵 uri를 입력해주면 된다.
+
+사이트맵을 등록하고 3~4일쯤 지나면, 블로그의 글이 구글에서 검색된다.
+
+처음 사이트맵을 등록하면 며칠이 지나도 검색이 안 되어서 내가 잘못 등록한 건가? 하는 생각을 하게 되는데
+마음 편하게 일주일 정도 기다려 보길 권한다.
+
+오늘 발행한 글이 며칠 기다려야 검색이 된다는 것은 성격 급한 내게는 꽤 답답한 일이었다.
+
+하지만 익숙해진 지금은 신경쓰지 않는다.
+
+잘못 쓴 내용이 있을 경우 수정할 여유가 있다는 말이기도 하고,
+검색에 빨리 걸린다고 해서 안 달리는 댓글이 더 달리는 것도 아니다.
+
 
 ### history 기능
 
