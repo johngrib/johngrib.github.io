@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 리뷰 모음
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-12-22 22:49:52 +0900
+updated : 2018-12-25 17:19:50 +0900
 tags    : review
 toc     : true
 public  : true
@@ -91,6 +91,8 @@ latex   : false
 
 ## 영화/드라마/애니메이션
 
+* 2018-12-25 [Bird Box](https://www.imdb.com/title/tt2737304/ )
+* 2018-12-23 [Thor: Ragnarok](https://www.imdb.com/title/tt3501632/ )
 * 2018-12-22 [Trumbo](https://www.imdb.com/title/tt3203606/ )
 * 2018-12-15 [Spider-Man: Into the [[Spider-Verse]]](https://www.imdb.com/title/tt4633694/ )
 * 2018-12-09 [카우보이의 노래](https://www.imdb.com/title/tt6412452/?ref_=tt_rt )
