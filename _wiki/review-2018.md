@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 2018년 리뷰 모음
+title   : 2018년에 읽은 책, 시청한 영화/드라마/애니메이션
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-12-26 08:26:28 +0900
+updated : 2018-12-26 09:07:24 +0900
 tags    : review
 toc     : true
 public  : true
