@@ -235,6 +235,28 @@ book:
     - {fileName: The-Jargon-File}
 fantasy:
     - {fileName: 전생검신}
+bash:
+    - {fileName: ag}
+    - {fileName: bc}
+    - {fileName: brew}
+    - {fileName: csplit}
+    - {fileName: ctags}
+    - {fileName: date}
+    - {fileName: df}
+    - {fileName: du}
+    - {fileName: fc}
+    - {fileName: git-alias}
+    - {fileName: gpg}
+    - {fileName: grep}
+    - {fileName: history}
+    - {fileName: java_home}
+    - {fileName: my-bash-cheatsheet}
+    - {fileName: openssl}
+    - {fileName: sha256sum}
+    - {fileName: sort}
+    - {fileName: top}
+    - {fileName: uptime}
+    - {fileName: yes-command}
 complexity:
     - {fileName: airplain-rule}
 law:
@@ -283,27 +305,6 @@ bayes:
     - {fileName: rule-of-succession}
     - {fileName: study-think-bayes}
     - {fileName: Think-Bayes}
-bash:
-    - {fileName: bc}
-    - {fileName: brew}
-    - {fileName: csplit}
-    - {fileName: ctags}
-    - {fileName: date}
-    - {fileName: df}
-    - {fileName: du}
-    - {fileName: fc}
-    - {fileName: git-alias}
-    - {fileName: gpg}
-    - {fileName: grep}
-    - {fileName: history}
-    - {fileName: java_home}
-    - {fileName: my-bash-cheatsheet}
-    - {fileName: openssl}
-    - {fileName: sha256sum}
-    - {fileName: sort}
-    - {fileName: top}
-    - {fileName: uptime}
-    - {fileName: yes-command}
 story:
     - {fileName: Bill-Atkinson-productivity}
     - {fileName: gerald-weinberg-language-king}

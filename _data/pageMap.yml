@@ -294,6 +294,14 @@
     url: /wiki/한국과학문학상-수상작품집-제2회
     updated: '2018-03-15 20:41:22 +0900'
     children: []
+ag:
+    type: wiki
+    title: 'ag, the silver searcher'
+    summary: 'A code-searching tool similar to ack, but faster.'
+    parent: command-line
+    url: /wiki/ag
+    updated: '2018-12-27 22:13:31 +0900'
+    children: []
 airplain-rule:
     type: wiki
     title: '비행기 법칙'
@@ -597,7 +605,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [brew, csplit, ctags, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes-command]
+    children: [ag, brew, csplit, ctags, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes-command]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -1356,7 +1364,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-12-23 17:36:33 +0900'
+    updated: '2018-12-27 22:01:38 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1572,7 +1580,7 @@ my-wiki:
     summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
     parent: Vim
     url: /wiki/my-wiki
-    updated: '2018-12-24 09:07:21 +0900'
+    updated: '2018-12-27 21:41:52 +0900'
     children: []
 Mythical-Man-Month:
     type: wiki
