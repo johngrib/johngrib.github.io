@@ -1093,7 +1093,7 @@ Golang:
     parent: programming-language
     url: /wiki/Golang
     updated: '2018-09-18 17:21:01 +0900'
-    children: [ginkgo, golang-cheatsheet, golang-dependency-manager, golang-struct-padding, golang-types, golang-waitgroup-add, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
+    children: [ginkgo, golang-cheatsheet, golang-dependency-manager, golang-reflect, golang-struct-padding, golang-types, golang-waitgroup-add, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
 golang-cheatsheet:
     type: wiki
     title: 'Go cheatsheet'
@@ -1109,6 +1109,14 @@ golang-dependency-manager:
     parent: Golang
     url: /wiki/golang-dependency-manager
     updated: '2018-10-21 17:51:17 +0900'
+    children: []
+golang-reflect:
+    type: wiki
+    title: 'Golang reflect 사용법'
+    summary: '라이브러리 만들 때에만 쓰고 남용하지 말자'
+    parent: Golang
+    url: /wiki/golang-reflect
+    updated: '2018-12-29 23:46:26 +0900'
     children: []
 golang-struct-padding:
     type: wiki
@@ -1364,7 +1372,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2018-12-27 22:01:38 +0900'
+    updated: '2018-12-29 18:35:32 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1468,7 +1476,7 @@ links-2018:
     summary: '해묵은 웹 브라우저 탭 정리'
     parent: links
     url: /wiki/links-2018
-    updated: '2018-12-23 12:22:52 +0900'
+    updated: '2018-12-29 18:21:57 +0900'
     children: []
 locomotive-problem:
     type: wiki
@@ -1756,7 +1764,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-12-26 10:48:23 +0900'
+    updated: '2018-12-29 14:16:53 +0900'
     children: []
 RFC:
     type: wiki
