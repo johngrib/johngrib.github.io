@@ -399,6 +399,7 @@ golang:
     - {fileName: Golang}
     - {fileName: golang-cheatsheet}
     - {fileName: golang-dependency-manager}
+    - {fileName: golang-reflect}
     - {fileName: golang-struct-padding}
     - {fileName: golang-types}
     - {fileName: vim-go-auto-import}
@@ -495,6 +496,8 @@ language:
     - {fileName: Python3}
 cheatsheet:
     - {fileName: golang-cheatsheet}
+reflect:
+    - {fileName: golang-reflect}
 padding:
     - {fileName: golang-struct-padding}
 alignment:
