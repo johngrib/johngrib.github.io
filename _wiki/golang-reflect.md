@@ -3,7 +3,7 @@ layout  : wiki
 title   : Golang reflect 사용법
 summary : 라이브러리 만들 때에만 쓰고 남용하지 말자
 date    : 2018-12-29 18:38:23 +0900
-updated : 2018-12-29 23:17:48 +0900
+updated : 2018-12-29 23:43:23 +0900
 tags    : golang reflect
 toc     : true
 public  : true
@@ -222,6 +222,53 @@ sub is private method
 * private 함수 정보는 가져올 수 없는 것 같다.
     * reflect로 사용할 일이 있는 메소드는 public으로 작성해야겠다.
 
+## 메소드 실행하기
+
+* method 에 `Call`만 해주면 된다.
+    * 단, 모든 입력 파라미터가 `reflect.Value`여야 한다.
+
+```go
+func printRes(ret []reflect.Value) {
+    fmt.Printf("returns %d values\n", len(ret))
+    for i, retValue := range ret {
+        fmt.Printf("  %d => %v (type: %s)\n", i, retValue, retValue.Type())
+    }
+}
+
+func main() {
+    var t T
+
+    ret1 := reflect.ValueOf(&t).
+        MethodByName("Prints").
+        Call(
+            []reflect.Value{
+                reflect.ValueOf("hello"),
+                reflect.ValueOf(3),
+            },
+        )
+    printRes(ret1)
+
+    ret2 := reflect.ValueOf(&t).
+        MethodByName("Add").
+        Call(
+            []reflect.Value{
+                reflect.ValueOf(37),
+                reflect.ValueOf(5),
+            },
+        )
+    printRes(ret2)
+}
+```
+
+실행하면 다음과 같은 결과가 나온다.
+
+```
+returns 2 values
+  0 => hello 3 (type: string)
+  1 => <nil> (type: error)
+returns 1 values
+  0 => 42 (type: int)
+```
 
 # Links
 
