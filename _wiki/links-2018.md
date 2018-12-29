@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 링크 모음
 summary : 해묵은 웹 브라우저 탭 정리
 date    : 2018-07-29 17:37:52 +0900
-updated : 2018-12-23 12:22:52 +0900
+updated : 2018-12-29 18:21:57 +0900
 tags    : 
 toc     : true
 public  : true
@@ -78,6 +78,7 @@ latex   : false
 * 2018-09-05 [한글라이즈 재재작기 1부](https://www.slideshare.net/sublee/ss-113085659 ), [2부](https://www.slideshare.net/sublee/2-113085538 )
 * 2018-09-18 [따로 놀던 슬랙봇, gRPC 통해 하나 되기](https://engineering.linecorp.com/ko/blog/combining-slackbots-into-one-with-grpc/ )
 * 2018-10-20 [자바의 새로운 도약: OpenJDK(Feat. Oracle JDK Subscription)](http://taewan.kim/post/openjdk/ )
+* 2018-11-26 [Errors in Go: From denial to acceptance](https://evilmartians.com/chronicles/errors-in-go-from-denial-to-acceptance ), [번역](https://jihuichoi.github.io/posts/2018/12/errors-in-go-from-denial-to-acceptance/)
 * <https://shitcode.net/ >
 * [huytd/kanban-app](https://github.com/huytd/kanban-app ) - Look ma, no Electron!
 * [kmc7468/Aheuiplusplus](https://github.com/kmc7468/Aheuiplusplus ) - 아희++
@@ -115,6 +116,7 @@ latex   : false
 
 # Dev etc.
 
+* 2012-12-08 [The 4 H’s of Writing Error Messages](https://www.uxmas.com/2012/the-4-hs-of-writing-error-messages ), [번역](http://story.pxd.co.kr/1128 )
 * 2016-01-13 [기술 조직이 사업에 걸림돌이 될 때, 정렬 함정(Alignment Trap)](http://blog.fupfin.com/?p=127 )
 * 2016-09-02 [사이언티픽 게이머즈 시즌2 #10 구식 마이크로 칩을 발굴하다](http://blog.ncsoft.com/?p=19597 )
 * 2016-12-10 [오픈소스 프로젝트에 소스코드 기여해보기 - GNOME문자표에 한글표기와 베트남어발음추가](http://blog.studioego.info/m/4004 )
@@ -132,6 +134,7 @@ latex   : false
 * 2018-07-04 [Microsoft + GitHub = Empowering Developers](https://blogs.microsoft.com/blog/2018/06/04/microsoft-github-empowering-developers/ ), [마이크로소프트 + 깃헙 = 개발자의 역량 강화](http://www.looah.com/article/view/2079 )
 * 2018-08-31 [도도 파이터 제작기](https://spoqa.github.io/2018/08/31/dodo-fighter-pt1.html )
 * 2018-10-29 [How to Make a Roguelike](http://www.gamasutra.com/blogs/JoshGe/20181029/329512/How_to_Make_a_Roguelike.php )
+* 2018-12-26 [‘Doomba’ turns your Roomba’s cleaning maps into Doom levels](https://www.theverge.com/circuitbreaker/2018/12/26/18156600/doomba-roomba-cleaning-maps-doom-levels-rich-whitehouse ), [DOOMBA](http://www.richwhitehouse.com/index.php?postid=72 )
 * [Integerous/goQuality-dev-contents](https://github.com/Integerous/goQuality-dev-contents ) - 고퀄리티 개발 컨텐츠 모음
 
 # Machine Learning
