@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Golang reflect 사용법
-summary : reflect를 써야 하는 순간은 언젠가 올 테니까 미리 정리해 두자
+summary : 라이브러리 만들 때에만 쓰고 남용하지 말자
 date    : 2018-12-29 18:38:23 +0900
-updated : 2018-12-29 19:45:12 +0900
+updated : 2018-12-29 19:47:30 +0900
 tags    : golang reflect
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+* reflect를 써야 하는 순간은 언젠가 올 테니까 미리 정리해 두자
 
 # 기준 버전
 
