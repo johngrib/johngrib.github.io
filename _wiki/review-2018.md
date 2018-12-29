@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 회고
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-12-26 10:48:23 +0900
+updated : 2018-12-29 14:16:53 +0900
 tags    : review
 toc     : true
 public  : true
@@ -223,6 +223,8 @@ $$ \frac{365}{73} = 5 $$ 이므로, 5일에 한권 꼴로 책을 읽은 셈이�
 
 다음은 쭉 기록해 온 올해 본 것들의 목록이긴 한데... 빠진 것이 너무 많다.
 
+* 2018-12-29 [Star Wars: Episode VIII - The Last Jedi](https://www.imdb.com/title/tt9495224/ )
+* 2018-12-28 [Black Mirror: Bandersnatch](https://www.imdb.com/title/tt9495224/ )
 * 2018-12-25 [Bird Box](https://www.imdb.com/title/tt2737304/ )
 * 2018-12-23 [Thor: Ragnarok](https://www.imdb.com/title/tt3501632/ )
 * 2018-12-22 [Trumbo](https://www.imdb.com/title/tt3203606/ )
@@ -253,3 +255,16 @@ $$ \frac{365}{73} = 5 $$ 이므로, 5일에 한권 꼴로 책을 읽은 셈이�
 * 2018-01-29 [[Walking-Dead]] 시즌 7
 * 2018-01-13 [[HOT-FUZZ]]{뜨거운 녀석들}
 * 2018-01-11 [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]] [시즌 2](/wiki/DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY/#season-02)
+
+# 단편소설
+
+이 항목은 부랴부랴 집어넣었다.
+
+오래 기억하고 싶은 단편소설들.
+
+내가 읽은 순서대로 나열하였다.
+
+* [초공간 도약 항법의 개발](http://mirrorzine.kr/shortstory/123416 )
+* [일의 기쁨과 슬픔](http://magazine.changbi.com/q_posts/%EC%9D%BC%EC%9D%98-%EA%B8%B0%EC%81%A8%EA%B3%BC-%EC%8A%AC%ED%94%94/?board_id=2659 ) - 제21회 창비신인소설상 당선작
+* [세상은 이렇게 끝난다](https://britg.kr/novel-group/novel-post/?np_id=126446&novel_post_id=65913 )
+* [세상을 끝내는데 필요한 점프의 횟수](https://britg.kr/novel-group/novel-post/?np_id=147554&novel_post_id=73389 )
