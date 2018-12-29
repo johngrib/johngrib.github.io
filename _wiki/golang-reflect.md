@@ -3,7 +3,7 @@ layout  : wiki
 title   : Golang reflect 사용법
 summary : 라이브러리 만들 때에만 쓰고 남용하지 말자
 date    : 2018-12-29 18:38:23 +0900
-updated : 2018-12-29 23:43:23 +0900
+updated : 2018-12-29 23:46:26 +0900
 tags    : golang reflect
 toc     : true
 public  : true
@@ -274,3 +274,7 @@ returns 1 values
 
 * <https://golang.org/pkg/reflect/ >
 * <https://blog.golang.org/laws-of-reflection >
+* [Fun with the reflection package to analyse any function.](https://coderwall.com/p/b5dpwq/fun-with-the-reflection-package-to-analyse-any-function )
+* [Golang Reflection: Get Tag from struct field](https://stackoverflow.com/questions/23507033/golang-reflection-get-tag-from-struct-field )
+* [How to define multiple name tags in a struct](https://stackoverflow.com/questions/18635671/how-to-define-multiple-name-tags-in-a-struct )
+
