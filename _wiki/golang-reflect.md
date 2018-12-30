@@ -3,7 +3,7 @@ layout  : wiki
 title   : Golang reflect 사용법
 summary : 라이브러리 만들 때에만 쓰고 남용하지 말자
 date    : 2018-12-29 18:38:23 +0900
-updated : 2018-12-29 23:46:26 +0900
+updated : 2018-12-30 12:22:34 +0900
 tags    : golang reflect
 toc     : true
 public  : true
@@ -270,6 +270,70 @@ returns 1 values
   0 => 42 (type: int)
 ```
 
+## 패키지에 있는 함수 이름 모두 출력하기
+
+`calc`라는 이름의 패키지를 만들고, `simple.go`에 두 함수를 작성했다.
+
+```go
+package bar
+
+func Add(a, b int) int {
+    return a + b
+}
+
+func Sub(a, b int) int {
+    return a - b
+}
+```
+
+그리고 다음과 같이 실행하면...
+
+```go
+package main
+
+import (
+    "fmt"
+    "go/ast"
+    "go/parser"
+    "go/token"
+    "os"
+)
+
+const pkgName = "calc"
+
+func main() {
+    var pkgs map[string]*ast.Package // *ast.Package를 쓴다
+    pkgs, err := parser.ParseDir(token.NewFileSet(), pkgName, nil, 0)
+    if err != nil {
+        fmt.Println("Failed to parse package:", err)
+        os.Exit(1)
+    }
+
+    for _, pkg := range pkgs {
+        fmt.Println("package:", pkg.Name)
+
+        for _, file := range pkg.Files {
+            fmt.Println(" file:", file.Name)
+
+            for _, decl := range file.Decls {
+                if function, ok := decl.(*ast.FuncDecl); ok {
+                    fmt.Println(function.Name)
+                }
+            }
+        }
+    }
+}
+```
+
+`calc` 패키지 아래의 함수 이름들이 출력된다.
+
+```
+package: bar
+ file: bar
+Add
+Sub
+```
+
 # Links
 
 * <https://golang.org/pkg/reflect/ >
@@ -277,4 +341,5 @@ returns 1 values
 * [Fun with the reflection package to analyse any function.](https://coderwall.com/p/b5dpwq/fun-with-the-reflection-package-to-analyse-any-function )
 * [Golang Reflection: Get Tag from struct field](https://stackoverflow.com/questions/23507033/golang-reflection-get-tag-from-struct-field )
 * [How to define multiple name tags in a struct](https://stackoverflow.com/questions/18635671/how-to-define-multiple-name-tags-in-a-struct )
+
 
