@@ -3,7 +3,7 @@ layout  : wiki
 title   : Golang reflect 사용법
 summary : 라이브러리 만들 때에만 쓰고 남용하지 말자
 date    : 2018-12-29 18:38:23 +0900
-updated : 2018-12-30 12:36:25 +0900
+updated : 2018-12-30 12:44:06 +0900
 tags    : golang reflect
 toc     : true
 public  : true
@@ -66,6 +66,24 @@ type: string
 42 is string.
 type: []float32
 ```
+
+### map의 경우
+
+그런데 map의 경우 다음과 같이 하면 안 된다.
+
+```go
+case map:
+```
+
+map이 아니라 `map[...]...`로 타입을 완전히 써야 한다.
+
+
+```go
+case map[string]int:
+    fmt.Println("type:", reflect.ValueOf(value).Type())
+    fmt.Println(value, "is map.")
+```
+
 
 ## struct의 meta data를 뽑아보자
 
