@@ -3,7 +3,7 @@ layout  : wiki
 title   : Golang reflect 사용법
 summary : 라이브러리 만들 때에만 쓰고 남용하지 말자
 date    : 2018-12-29 18:38:23 +0900
-updated : 2018-12-30 12:22:34 +0900
+updated : 2018-12-30 12:36:25 +0900
 tags    : golang reflect
 toc     : true
 public  : true
@@ -23,6 +23,49 @@ latex   : false
 
 * 생각나는대로 만들어 보았다.
 * 생각나는대로 추가하자.
+
+## switch type 및 type 조사
+
+* switch type은 딱히 reflect를 사용하는 건 아니지만 알아는 두자.
+* `reflect.Value.Type()` 을 쓰면 타입을 알아낼 수 있다.
+
+```go
+package main
+
+import (
+    "fmt"
+    "reflect"
+)
+
+func typeSwitch(value interface{}) {
+    switch value.(type) {
+    case int:
+        fmt.Println("type:", reflect.ValueOf(value).Type())
+        fmt.Println(value, "is int.")
+    case string:
+        fmt.Println("type:", reflect.ValueOf(value).Type())
+        fmt.Println(value, "is string.")
+    default:
+        fmt.Println("type:", reflect.ValueOf(value).Type())
+    }
+}
+
+func main() {
+    typeSwitch(42)
+    typeSwitch("42")
+    typeSwitch([]float32{3.14})
+}
+```
+
+실행하면...
+
+```
+type: int
+42 is int.
+type: string
+42 is string.
+type: []float32
+```
 
 ## struct의 meta data를 뽑아보자
 
