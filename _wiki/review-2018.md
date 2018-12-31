@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 회고
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2018-12-29 14:16:53 +0900
+updated : 2018-12-31 15:46:10 +0900
 tags    : review
 toc     : true
 public  : true
@@ -75,8 +75,8 @@ git은 배우기 까다롭지만 일단 익숙해지면 즐겁게 사용할 수 
 
 ## 기본기 공부
 
-* [구체수학 스터디 노트](/study-concrete-math/ ) - 현재 임시 중단한 상태.
-* [계산이론, 형식언어, 오토마타 스터디 노트](/study-formal-languages-and-automata/ )
+* [구체수학 스터디 노트](/wiki/study-concrete-math/ ) - 현재 임시 중단한 상태.
+* [계산이론, 형식언어, 오토마타 스터디 노트](/wiki/study-formal-languages-and-automata/ )
 
 지난 한 해 동안은 이것저것 건드리기보다는 기본이 되는 몇 가지에 집중하려 했다.
 
