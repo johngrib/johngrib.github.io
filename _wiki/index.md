@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2018-12-30 17:35:59 +0900
+updated : 2019-01-01 11:50:18 +0900
 tags    : index
 toc     : true
 public  : true
@@ -77,9 +77,6 @@ comment : false
         * [[전생검신]]
         * [[토끼의-아리아]]
         * [[한국과학문학상-수상작품집-제2회]]
-    * [[review]]
-        * [[review-2018]]
-        * [[review-2017]]
     * [[movie]]
         * [[ALPHAGO]]
         * [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]]
@@ -129,6 +126,10 @@ comment : false
     * [[orange-juice-test]]
     * [[Postel-s-law]]
     * [[Zipf-s-law]]
+* [[review]]
+    * [[review-2019]]
+    * [[review-2018]]
+    * [[review-2017]]
 * [[study]]
     * [[study-concrete-math]]
         * [[c-m-01-Recurrent-Problems-01]]
