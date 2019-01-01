@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-01 11:50:18 +0900
+updated : 2019-01-01 14:32:05 +0900
 tags    : index
 toc     : true
 public  : true
@@ -79,7 +79,6 @@ comment : false
         * [[한국과학문학상-수상작품집-제2회]]
     * [[movie]]
         * [[ALPHAGO]]
-        * [[DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY]]
         * [[HOT-FUZZ]]{뜨거운 녀석들}
         * [[Las-chicas-del-cable]]
         * [[Walking-Dead]]

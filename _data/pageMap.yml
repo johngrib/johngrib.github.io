@@ -790,14 +790,6 @@ dice-problem:
     url: /wiki/dice-problem
     updated: '2018-04-24 20:48:57 +0900'
     children: []
-DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY:
-    type: wiki
-    title: '더크 젠틀리의 전체론적 탐정 사무소'
-    summary: 'DIRK GENTLY''S HOLISTIC DETECTIVE AGENCY'
-    parent: movie
-    url: /wiki/DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY
-    updated: '2018-01-13 12:28:13 +0900'
-    children: []
 DOM-Enlightenment-by-Cody-Lindley:
     type: wiki
     title: '(책) DOM을 깨우치다 - 가치에 대한 완전한 이해'
@@ -1380,7 +1372,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-01 11:50:18 +0900'
+    updated: '2019-01-01 14:32:05 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1573,7 +1565,7 @@ movie:
     parent: media
     url: /wiki/movie
     updated: '2018-02-02 21:34:13 +0900'
-    children: [ALPHAGO, DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY, HOT-FUZZ, Las-chicas-del-cable, Walking-Dead]
+    children: [ALPHAGO, HOT-FUZZ, Las-chicas-del-cable, Walking-Dead]
 my-bash-cheatsheet:
     type: wiki
     title: '나의 bash cheatsheet'

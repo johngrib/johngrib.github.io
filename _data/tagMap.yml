@@ -274,7 +274,6 @@ algirithm:
     - {fileName: Algorithms-to-Live-By}
 netflix:
     - {fileName: ALPHAGO}
-    - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY}
     - {fileName: HOT-FUZZ}
     - {fileName: Las-chicas-del-cable}
     - {fileName: Walking-Dead}
@@ -408,10 +407,6 @@ golang:
     - {fileName: vim-go-with-ultisnips}
 design:
     - {fileName: Design-for-Hackers}
-drama:
-    - {fileName: DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY}
-    - {fileName: Las-chicas-del-cable}
-    - {fileName: Walking-Dead}
 html:
     - {fileName: DOM-Enlightenment-by-Cody-Lindley}
 DOM:
@@ -566,6 +561,9 @@ sort:
     - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 보안:
     - {fileName: labs-strava-com-heatmap}
+drama:
+    - {fileName: Las-chicas-del-cable}
+    - {fileName: Walking-Dead}
 letter:
     - {fileName: letter-case}
 case:
