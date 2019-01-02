@@ -1318,14 +1318,6 @@ history:
     url: /wiki/history
     updated: '2018-10-14 10:12:24 +0900'
     children: []
-HOT-FUZZ:
-    type: wiki
-    title: '뜨거운 녀석들'
-    summary: 'HOT FUZZ'
-    parent: movie
-    url: /wiki/HOT-FUZZ
-    updated: '2018-01-13 16:02:28 +0900'
-    children: []
 how-to:
     type: wiki
     title: 'HOW TO'
@@ -1372,7 +1364,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-01 14:32:05 +0900'
+    updated: '2019-01-02 22:45:34 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1413,6 +1405,14 @@ John-von-Neumann:
     parent: legend
     url: /wiki/John-von-Neumann
     updated: '2018-04-03 22:57:19 +0900'
+    children: []
+kanban-scrum:
+    type: wiki
+    title: 'Kanban, Scrum'
+    summary: '칸반, 스크럼'
+    parent: what
+    url: /wiki/kanban-scrum
+    updated: '2019-01-02 23:25:59 +0900'
     children: []
 Kerckhoffs-s-principle:
     type: wiki
@@ -1565,7 +1565,7 @@ movie:
     parent: media
     url: /wiki/movie
     updated: '2018-02-02 21:34:13 +0900'
-    children: [ALPHAGO, HOT-FUZZ, Las-chicas-del-cable, Walking-Dead]
+    children: [ALPHAGO, Las-chicas-del-cable, Walking-Dead]
 my-bash-cheatsheet:
     type: wiki
     title: '나의 bash cheatsheet'
@@ -1764,7 +1764,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2018-12-31 15:46:10 +0900'
+    updated: '2019-01-02 10:56:48 +0900'
     children: []
 review-2019:
     type: wiki
@@ -1772,7 +1772,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-01-01 11:55:35 +0900'
+    updated: '2019-01-01 20:03:35 +0900'
     children: []
 RFC:
     type: wiki
@@ -2237,7 +2237,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [braille-pattern-chars, Continuous-Integration, encryption, floating-point, gray-code, groupId-artifactId, http-message, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
+    children: [braille-pattern-chars, Continuous-Integration, encryption, floating-point, gray-code, groupId-artifactId, http-message, kanban-scrum, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

@@ -274,7 +274,6 @@ algirithm:
     - {fileName: Algorithms-to-Live-By}
 netflix:
     - {fileName: ALPHAGO}
-    - {fileName: HOT-FUZZ}
     - {fileName: Las-chicas-del-cable}
     - {fileName: Walking-Dead}
 alphago:
@@ -524,14 +523,12 @@ groovy:
     - {fileName: groovy}
 agile:
     - {fileName: grow-together}
+    - {fileName: kanban-scrum}
 lua:
     - {fileName: hammerspoon-luarocks}
 keyboard:
     - {fileName: hhkb-jp-tmk}
     - {fileName: my-keyboard}
-movie:
-    - {fileName: HOT-FUZZ}
-    - {fileName: movie}
 how-to:
     - {fileName: how-to}
 http:
@@ -576,6 +573,8 @@ latex:
     - {fileName: mathjax-latex}
 media:
     - {fileName: media}
+movie:
+    - {fileName: movie}
 wiki:
     - {fileName: my-wiki}
     - {fileName: vimwiki}
