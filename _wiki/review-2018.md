@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 회고
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2019-01-01 18:15:39 +0900
+updated : 2019-01-02 10:56:48 +0900
 tags    : review
 toc     : true
 public  : true
@@ -253,7 +253,7 @@ $$ \frac{365}{73} = 5 $$ 이므로, 5일에 한권 꼴로 책을 읽은 셈이�
 * 2018-02-04 [[Las-chicas-del-cable]]{마드리드 모던걸} [시즌 1](/wiki/Las-chicas-del-cable/#season-01)
 * 2018-02-02 [[ALPHAGO]]{알파고 다큐멘터리}
 * 2018-01-29 [[Walking-Dead]] 시즌 7
-* 2018-01-13 [[HOT-FUZZ]]{뜨거운 녀석들}
+* 2018-01-13 HOT-FUZZ(뜨거운 녀석들)
 * 2018-01-11 DIRK-GENTLY-S-HOLISTIC-DETECTIVE-AGENCY 시즌 2
 
 # 단편소설
