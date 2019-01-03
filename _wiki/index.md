@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-02 22:45:34 +0900
+updated : 2019-01-03 21:10:43 +0900
 tags    : index
 toc     : true
 public  : true
@@ -152,6 +152,9 @@ comment : false
         * [[d-i-a-03-storage-and-retrieval]]
         * [[d-i-a-04-encoding-and-evolution]]
         * [[d-i-a-05-replication]]
+    * [[study-discrete-mathematics]]
+        * [[d-m-du-2016-01]]
+            * [[d-m-du-2016-01-00]]
     * [[study-formal-languages-and-automata]]
         * [[f-l-a-00-preface]]
         * [[f-l-a-01-00]]

@@ -718,6 +718,22 @@ d-i-a-05-replication:
     url: /wiki/d-i-a-05-replication
     updated: '2018-07-09 23:05:05 +0900'
     children: []
+d-m-du-2016-01:
+    type: wiki
+    title: '(study) 이산수학 - KOCW 수강 1'
+    summary: 'KOCW 동국대학교 주태우 교수님 2016년 1학기 강의 수강 노트'
+    parent: study-discrete-mathematics
+    url: /wiki/d-m-du-2016-01
+    updated: '2019-01-03 21:13:03 +0900'
+    children: [d-m-du-2016-01-00]
+d-m-du-2016-01-00:
+    type: wiki
+    title: '(study) 이산수학 - KOCW 1 - Chapter 1. Part 3.'
+    summary: Proofs
+    parent: d-m-du-2016-01
+    url: /wiki/d-m-du-2016-01-00
+    updated: '2019-01-04 00:16:06 +0900'
+    children: []
 date:
     type: wiki
     title: 'date 명령어'
@@ -1364,7 +1380,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-02 22:45:34 +0900'
+    updated: '2019-01-03 21:10:43 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1901,7 +1917,7 @@ study:
     parent: index
     url: /wiki/study
     updated: '2018-04-25 22:04:58 +0900'
-    children: [study-concrete-math, study-data-intensive-application, study-formal-languages-and-automata, study-think-bayes]
+    children: [study-concrete-math, study-data-intensive-application, study-discrete-mathematics, study-formal-languages-and-automata, study-think-bayes]
 study-concrete-math:
     type: wiki
     title: '(study) Concrete Mathematics(구체수학)'
@@ -1918,6 +1934,14 @@ study-data-intensive-application:
     url: /wiki/study-data-intensive-application
     updated: '2018-07-06 23:08:47 +0900'
     children: [d-i-a-01-reliable-scalable-maintainable, d-i-a-02-data-models-and-query-languages, d-i-a-03-storage-and-retrieval, d-i-a-04-encoding-and-evolution, d-i-a-05-replication]
+study-discrete-mathematics:
+    type: wiki
+    title: '(study) 이산수학'
+    summary: ""
+    parent: study
+    url: /wiki/study-discrete-mathematics
+    updated: '2019-01-03 21:03:40 +0900'
+    children: [d-m-du-2016-01]
 study-formal-languages-and-automata:
     type: wiki
     title: '(study) FORMAL LANGUAGES AND AUTOMATA'
