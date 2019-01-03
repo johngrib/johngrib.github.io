@@ -16,6 +16,8 @@ math:
     - {fileName: c-m-03-Integer-Functions-02}
     - {fileName: c-m-05-Binomial-Coefficients-04}
     - {fileName: Cromwell-s-rule}
+    - {fileName: d-m-du-2016-01}
+    - {fileName: d-m-du-2016-01-00}
     - {fileName: frac1e}
     - {fileName: gcd}
     - {fileName: math}
@@ -23,6 +25,7 @@ math:
     - {fileName: rule-of-succession}
     - {fileName: secretary-problem}
     - {fileName: study-concrete-math}
+    - {fileName: study-discrete-mathematics}
 jekyll:
     - {fileName: 2017-01-21-create-jekyll-blog}
     - {fileName: 2017-01-22-jekyll-category-tag}
