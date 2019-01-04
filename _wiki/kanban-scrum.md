@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kanban, Scrum
 summary : 칸반, 스크럼
 date    : 2019-01-02 22:45:37 +0900
-updated : 2019-01-02 23:25:59 +0900
+updated : 2019-01-04 23:09:27 +0900
 tags    : agile
 toc     : true
 public  : true
@@ -68,6 +68,6 @@ But integrating regularly to see the whole.
 
 * [Kanban vs Scrum - How to make the most of both (PDF)](https://www.crisp.se/file-uploads/Kanban-vs-Scrum.pdf )
 * [Kanban and Scrum - Making the Most of Both (Free version Download)](https://www.infoq.com/minibooks/kanban-scrum-minibook )
-* [Corss-functional team (wikipedia)](https://en.wikipedia.org/wiki/Cross-functional_team )
+* [Cross-functional team (wikipedia)](https://en.wikipedia.org/wiki/Cross-functional_team )
 * [자기조직화 (위키백과)](https://ko.wikipedia.org/wiki/%EC%9E%90%EA%B8%B0%EC%A1%B0%EC%A7%81%ED%99%94 )
     * [Self-organization](https://en.wikipedia.org/wiki/Self-organization )
