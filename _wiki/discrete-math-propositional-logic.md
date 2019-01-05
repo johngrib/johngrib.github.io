@@ -3,7 +3,7 @@ layout  : wiki
 title   : 명제 논리
 summary : Propositional Logic
 date    : 2019-01-05 17:39:32 +0900
-updated : 2019-01-05 18:23:27 +0900
+updated : 2019-01-05 19:22:10 +0900
 tags    : math
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : true
 
 # 조건문
 
-> Conditional Statement
+**Conditional Statement**
 
 ## 좋은 조건문의 영어 표현들
 
@@ -36,7 +36,122 @@ latex   : true
 | a necessary condition for p is q  | p 의 필요조건은 q 이다              |
 | q unless $$ \lnot $$p             | $$ \lnot $$p 가 아니면 q 이다       |
 
-## 논리적 동치 : $$ p \rightarrow q \equiv \lnot p \lor q $$
+
+## 역, 이, 대우
+
+**converse, inverse, contrapositive**
+
+* 조건문 $$ p → q $$ 에 대하여
+    * 역(converse) : $$ q → p $$
+    * 이(inverse) : $$ ¬p → ¬q $$
+    * 대우(contrapositive) : $$ ¬q → ¬p $$
+
+## 상호 조건문
+
+**biconditional**
+
+* p 와 q 두 명제가 같은 진리값을 갖는다.
+* $$(p → q) \land (q → p)$$ 와 똑같은 의미.
+
+>
+$$ p ↔ q $$
+
+진리표는 다음과 같다.
+
+| p | q | $$ p ↔ q $$ | $$(p → q) \land (q → p)$$ |
+| - | - | ---         | ---                       |
+| T | T | T           | T                         |
+| T | F | F           | F                         |
+| F | T | F           | F                         |
+| F | F | T           | T                         |
+
+다음과 같이 표현한다.
+
+
+| p if and only if q                  |                                         |
+| p is necessary and sufficient for q | p 는 q 의 필요충분 조건이다             |
+| if p then q, and conversely         | 만약 p 이면 q 이다. 그 반대도 성립한다. |
+| p iff q                             | p **if** and only **if** q 의 줄임말    |
+
+# 논리 연산자 우선순위
+
+| 연산자                | 우선순위 |
+|-----------------------|----------|
+| $$ \lnot $$           | 1        |
+| $$ \land $$           | 2        |
+| $$ \lor $$            | 3        |
+| $$ \rightarrow $$     | 4        |
+| $$ \leftrightarrow $$ | 5        |
+
+# 논리적 동치
+
+**Logical Equivalences**
+
+## 드 모르간의 법칙 De Morgan's Laws
+
+* $$ ¬(p \land q) \equiv ¬p \lor ¬q $$.
+* $$ ¬(p \lor q) \equiv ¬p \land ¬q $$.
+
+일반화하면 다음과 같다.
+
+$$ ¬( p_1 \lor p_2 \lor ... \lor p_n ) \equiv ( ¬p_1 \land ¬p_2 \land ... \land ¬p_n ) $$
+
+$$ ¬( p_1 \land p_2 \land ... \land p_n ) \equiv ( ¬p_1 \land ¬p_2 \land ... \land ¬p_n ) $$
+
+다음과 같이 표기할 수도 있다.
+
+$$ ¬( ∨_{j=1}^n p_j) \equiv ∧_{j=1}^n ¬p_j $$
+
+$$ ¬( ∧_{j=1}^n p_j) \equiv ∨_{j=1}^n ¬p_j $$
+
+## 논리적 동치식 모음
+
+* 동일법칙 Identity laws
+    * $$ p \land T \equiv p $$.
+    * $$ p \lor F \equiv p $$.
+* 지배법칙 Domination laws
+    * $$ p \land T \equiv T $$.
+    * $$ p \lor F \equiv F $$.
+* 등멱법칙 Idempotent laws
+    * $$ p \lor \equiv p $$.
+    * $$ p \land p \equiv p $$.
+* 이중부정법칙 Double negation law
+    * $$ ¬( ¬ p ) \equiv p $$.
+* 교환법칙 Commutative laws
+    * $$ p \lor q \equiv q \lor p $$.
+    * $$ p \land q \equiv q \land p $$.
+* 결합법칙 Associative laws
+    * $$ ( p ∨ q ) ∨ r \equiv p ∨ ( q ∨ r ) $$.
+    * $$ ( p ∧ q ) ∧ r \equiv p ∧ ( q ∧ r ) $$.
+* 분배법칙 Distributive laws
+    * $$ p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r) $$.
+    * $$ p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r) $$.
+* 드 모르간 법칙 De Morgan's laws
+    * $$ ¬(p ∧ q) ≡ ¬p ∨ ¬q $$.
+    * $$ ¬(p ∨ q) ≡ ¬p ∧ ¬q $$.
+* 흡수 법칙 Absorption laws
+    * $$ p ∨ (p ∧ q) ≡ p $$.
+    * $$ p ∧ (p ∨ q) ≡ p $$.
+* 부정법칙 Negation laws
+    * $$ p ∨ ¬p ≡ T $$.
+    * $$ p ∧ ¬p ≡ F $$.
+* 조건문을 포함한 경우
+    * $$p → q ≡ ¬p ∨ q$$.
+    * $$p → q ≡ ¬q → ¬p$$.
+    * $$p ∨ q ≡ ¬p → q$$.
+    * $$p ∧ q ≡ ¬(p → ¬q)$$.
+    * $$¬(p → q) ≡ p ∧ ¬q$$.
+    * $$(p → q) ∧ (p → r) ≡ p → (q ∧ r)$$.
+    * $$(p → r) ∧ (q → r) ≡ (p ∨ q) → r$$.
+    * $$(p → q) ∨ (p → r) ≡ p → (q ∨ r)$$.
+    * $$(p → r) ∨ (q → r) ≡ (p ∧ q) → r$$.
+* 상호 조건문을 포함한 경우
+    * $$p ↔ q ≡ (p → q) ∧ (q → p)$$.
+    * $$p ↔ q ≡ ¬p ↔ ¬q$$.
+    * $$p ↔ q ≡ (p ∧ q) ∨ (¬p ∧ ¬q)$$.
+    * $$¬(p ↔ q) ≡ p ↔ ¬q$$.
+
+## $$ p \rightarrow q \equiv \lnot p \lor q $$.
 
 이건 학생일 때 논리학 전공수업에서 배운 것인데 알아두면 편리하다.
 
@@ -78,48 +193,4 @@ $$6$$이 $$4$$의 배수이면, $$6$$은 $$2$$의 배수이다.
 
 * p가 거짓이고 q는 참인데, $$ p \rightarrow q $$는 참이다.
     * 이것으로 세 번째 경우를 이해할 수 있다.
-
-## 역, 이, 대우
-
-* 조건문 $$ p → q $$ 에 대하여
-    * 역(converse) : $$ q → p $$
-    * 이(inverse) : $$ ¬p → ¬q $$
-    * 대우(contrapositive) : $$ ¬q → ¬p $$
-
-## 상호 조건문
-
-> biconditional
-
-* p 와 q 두 명제가 같은 진리값을 갖는다.
-* $$(p → q) \land (q → p)$$ 와 똑같은 의미.
-
->
-$$ p ↔ q $$  
-
-진리표는 다음과 같다.
-
-| p | q | $$ p ↔ q $$ | $$(p → q) \land (q → p)$$ |
-| - | - | ---         | ---                       |
-| T | T | T           | T                         |
-| T | F | F           | F                         |
-| F | T | F           | F                         |
-| F | F | T           | T                         |
-
-다음과 같이 표현한다.
-
-
-| p if and only if q                  |                                         |
-| p is necessary and sufficient for q | p 는 q 의 필요충분 조건이다             |
-| if p then q, and conversely         | 만약 p 이면 q 이다. 그 반대도 성립한다. |
-| p iff q                             | p **if** and only **if** q 의 줄임말    |
-
-# 논리 연산자 우선순위
-
-| 연산자                | 우선순위 |
-|-----------------------|----------|
-| $$ \lnot $$           | 1        |
-| $$ \land $$           | 2        |
-| $$ \lor $$            | 3        |
-| $$ \rightarrow $$     | 4        |
-| $$ \leftrightarrow $$ | 5        |
 
