@@ -3,7 +3,7 @@ layout  : wiki
 title   : 명제 논리
 summary : Propositional Logic
 date    : 2019-01-05 17:39:32 +0900
-updated : 2019-01-05 19:22:10 +0900
+updated : 2019-01-05 20:11:49 +0900
 tags    : math
 toc     : true
 public  : true
@@ -193,4 +193,13 @@ $$6$$이 $$4$$의 배수이면, $$6$$은 $$2$$의 배수이다.
 
 * p가 거짓이고 q는 참인데, $$ p \rightarrow q $$는 참이다.
     * 이것으로 세 번째 경우를 이해할 수 있다.
+
+# 논리 회로
+
+**Logic Circuits**
+
+* NAND 는 &#124; 로 표기하기도 한다.
+    * $$ p \vert q \equiv \lnot(p \land q) $$.
+* NOR 는 $$ \downarrow $$로 표기하기도 한다.
+    * $$ p \downarrow q \equiv \lnot (p \lor q) $$.
 
