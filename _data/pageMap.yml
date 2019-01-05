@@ -732,7 +732,7 @@ d-m-du-2016-01-00:
     summary: Proofs
     parent: d-m-du-2016-01
     url: /wiki/d-m-du-2016-01-00
-    updated: '2019-01-04 00:16:06 +0900'
+    updated: '2019-01-05 17:56:57 +0900'
     children: []
 date:
     type: wiki
@@ -805,6 +805,14 @@ dice-problem:
     parent: study-think-bayes
     url: /wiki/dice-problem
     updated: '2018-04-24 20:48:57 +0900'
+    children: []
+discrete-math-propositional-logic:
+    type: wiki
+    title: '명제 논리'
+    summary: 'Propositional Logic'
+    parent: study-discrete-mathematics
+    url: /wiki/discrete-math-propositional-logic
+    updated: '2019-01-05 18:23:27 +0900'
     children: []
 DOM-Enlightenment-by-Cody-Lindley:
     type: wiki
@@ -1380,7 +1388,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-03 21:10:43 +0900'
+    updated: '2019-01-05 17:39:31 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1428,7 +1436,7 @@ kanban-scrum:
     summary: '칸반, 스크럼'
     parent: what
     url: /wiki/kanban-scrum
-    updated: '2019-01-02 23:25:59 +0900'
+    updated: '2019-01-04 23:09:27 +0900'
     children: []
 Kerckhoffs-s-principle:
     type: wiki
@@ -1485,7 +1493,7 @@ links:
     parent: index
     url: /wiki/links
     updated: '2018-07-29 17:35:50 +0900'
-    children: [links-2018]
+    children: [links-2018, links-2019]
 links-2018:
     type: wiki
     title: '2018년 링크 모음'
@@ -1493,6 +1501,14 @@ links-2018:
     parent: links
     url: /wiki/links-2018
     updated: '2018-12-29 18:21:57 +0900'
+    children: []
+links-2019:
+    type: wiki
+    title: '2019년 링크 모음'
+    summary: ""
+    parent: links
+    url: /wiki/links-2019
+    updated: '2019-01-04 18:29:19 +0900'
     children: []
 locomotive-problem:
     type: wiki
@@ -1788,7 +1804,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-01-01 20:03:35 +0900'
+    updated: '2019-01-04 23:11:55 +0900'
     children: []
 RFC:
     type: wiki
@@ -1940,8 +1956,8 @@ study-discrete-mathematics:
     summary: ""
     parent: study
     url: /wiki/study-discrete-mathematics
-    updated: '2019-01-03 21:03:40 +0900'
-    children: [d-m-du-2016-01]
+    updated: '2019-01-05 17:15:40 +0900'
+    children: [d-m-du-2016-01, discrete-math-propositional-logic]
 study-formal-languages-and-automata:
     type: wiki
     title: '(study) FORMAL LANGUAGES AND AUTOMATA'

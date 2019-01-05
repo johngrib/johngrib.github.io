@@ -18,6 +18,7 @@ math:
     - {fileName: Cromwell-s-rule}
     - {fileName: d-m-du-2016-01}
     - {fileName: d-m-du-2016-01-00}
+    - {fileName: discrete-math-propositional-logic}
     - {fileName: frac1e}
     - {fileName: gcd}
     - {fileName: math}
