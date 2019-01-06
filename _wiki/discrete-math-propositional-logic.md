@@ -3,7 +3,7 @@ layout  : wiki
 title   : 명제 논리
 summary : Propositional Logic
 date    : 2019-01-05 17:39:32 +0900
-updated : 2019-01-05 20:11:49 +0900
+updated : 2019-01-06 10:27:36 +0900
 tags    : math
 toc     : true
 public  : true
@@ -198,8 +198,8 @@ $$6$$이 $$4$$의 배수이면, $$6$$은 $$2$$의 배수이다.
 
 **Logic Circuits**
 
-* NAND 는 &#124; 로 표기하기도 한다.
+* NAND 는 &#124; 또는 $$ larrow_up $$로 표기하기도 한다. (참고: [Sheffer stroke](https://en.wikipedia.org/wiki/Sheffer_stroke#Truth_table ))
     * $$ p \vert q \equiv \lnot(p \land q) $$.
-* NOR 는 $$ \downarrow $$로 표기하기도 한다.
+* NOR 는 $$ \downarrow $$로 표기하기도 한다. (참고: [Logical NOR](https://en.wikipedia.org/wiki/Logical_NOR#Truth_table ))
     * $$ p \downarrow q \equiv \lnot (p \lor q) $$.
 
