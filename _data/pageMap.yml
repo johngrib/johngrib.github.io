@@ -725,14 +725,6 @@ d-m-du-2016-01:
     parent: study-discrete-mathematics
     url: /wiki/d-m-du-2016-01
     updated: '2019-01-03 21:13:03 +0900'
-    children: [d-m-du-2016-01-00]
-d-m-du-2016-01-00:
-    type: wiki
-    title: '(study) 이산수학 - KOCW 1 - Chapter 1. Part 3.'
-    summary: Proofs
-    parent: d-m-du-2016-01
-    url: /wiki/d-m-du-2016-01-00
-    updated: '2019-01-05 17:56:57 +0900'
     children: []
 date:
     type: wiki
@@ -812,7 +804,7 @@ discrete-math-propositional-logic:
     summary: 'Propositional Logic'
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-propositional-logic
-    updated: '2019-01-05 20:11:49 +0900'
+    updated: '2019-01-06 10:27:36 +0900'
     children: []
 discrete-math-quantifiers:
     type: wiki
@@ -820,7 +812,15 @@ discrete-math-quantifiers:
     summary: Quantifiers
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-quantifiers
-    updated: '2019-01-06 00:56:57 +0900'
+    updated: '2019-01-06 11:21:04 +0900'
+    children: []
+discrete-meth-inference-rules:
+    type: wiki
+    title: 추론규칙
+    summary: 'Rules of Inference'
+    parent: study-discrete-mathematics
+    url: /wiki/discrete-meth-inference-rules
+    updated: '2019-01-06 13:25:47 +0900'
     children: []
 DOM-Enlightenment-by-Cody-Lindley:
     type: wiki
@@ -1396,7 +1396,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-05 22:47:56 +0900'
+    updated: '2019-01-06 13:29:34 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1965,7 +1965,7 @@ study-discrete-mathematics:
     parent: study
     url: /wiki/study-discrete-mathematics
     updated: '2019-01-05 17:15:40 +0900'
-    children: [d-m-du-2016-01, discrete-math-propositional-logic, discrete-math-quantifiers]
+    children: [d-m-du-2016-01, discrete-math-propositional-logic, discrete-math-quantifiers, discrete-meth-inference-rules]
 study-formal-languages-and-automata:
     type: wiki
     title: '(study) FORMAL LANGUAGES AND AUTOMATA'
