@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-06 11:36:43 +0900
+updated : 2019-01-06 13:29:34 +0900
 tags    : index
 toc     : true
 public  : true
@@ -158,7 +158,6 @@ comment : false
         * [[discrete-math-quantifiers]]
         * [[discrete-meth-inference-rules]]
         * [[d-m-du-2016-01]]
-            * [[d-m-du-2016-01-00]]
     * [[study-formal-languages-and-automata]]
         * [[f-l-a-00-preface]]
         * [[f-l-a-01-00]]
