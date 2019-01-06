@@ -3,7 +3,7 @@ layout  : wiki
 title   : 추론규칙
 summary : Rules of Inference
 date    : 2019-01-06 11:36:44 +0900
-updated : 2019-01-06 12:58:43 +0900
+updated : 2019-01-06 13:25:47 +0900
 tags    : math
 toc     : true
 public  : true
@@ -178,4 +178,57 @@ $$  ((p → q) ∧ ¬p) → ¬q $$ 형태의 오류. p 가 거짓이고 q 가 �
 * "(p 이면 q 인데... p 가 아니니까) q 가 아니겠지?"
 * "(강아지는 동물인데... 얘는 강아지가 아니니까) 동물이 아니겠지?"
 
+# 한정 기호의 사용
 
+## 전칭 예시화
+
+**Universal instantiation (UI)**
+
+$$
+\begin{array}{l}
+    ∀x P(x) \\
+    \hline
+    ∴ P(c) \\
+\end{array}
+$$
+
+* 모든 x 에 대하여 P(x) 가 참이면, P(c) 는 참이다.
+
+## 전칭 일반화
+
+**Universal generalization**
+
+$$
+\begin{array}{l}
+    P(c) \text{ for an arbitrary } c \\
+    \hline
+    \therefore \forall x P(x) \\
+\end{array}
+$$
+
+* 임의의 c 에 대하여 P(c) 가 참이면, 모든 x 에 대해 P(x) 는 참이다.
+    * 임의의 c 에 대하여 : 정의역에 속하는 모든 원소를 모두 대입한다 할 지라도
+
+## 존재 예시화
+
+**Existential instantiation**
+
+$$
+\begin{array}{l}
+    \exists x P(x) \\
+    \hline
+    \therefore P(c) \text{ for some element } c \\
+\end{array}
+$$
+
+## 존재 일반화
+
+**Existential generalization**
+
+$$
+\begin{array}{l}
+    P(c) \text{ for some element } c \\
+    \hline
+    \therefore \exists x P(x) \\
+\end{array}
+$$
