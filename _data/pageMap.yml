@@ -798,6 +798,14 @@ dice-problem:
     url: /wiki/dice-problem
     updated: '2018-04-24 20:48:57 +0900'
     children: []
+discrete-math-inference-rules:
+    type: wiki
+    title: 추론규칙
+    summary: 'Rules of Inference'
+    parent: study-discrete-mathematics
+    url: /wiki/discrete-math-inference-rules
+    updated: '2019-01-06 13:32:33 +0900'
+    children: []
 discrete-math-propositional-logic:
     type: wiki
     title: '명제 논리'
@@ -813,14 +821,6 @@ discrete-math-quantifiers:
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-quantifiers
     updated: '2019-01-06 11:21:04 +0900'
-    children: []
-discrete-meth-inference-rules:
-    type: wiki
-    title: 추론규칙
-    summary: 'Rules of Inference'
-    parent: study-discrete-mathematics
-    url: /wiki/discrete-meth-inference-rules
-    updated: '2019-01-06 13:25:47 +0900'
     children: []
 DOM-Enlightenment-by-Cody-Lindley:
     type: wiki
@@ -1396,7 +1396,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-06 13:29:34 +0900'
+    updated: '2019-01-06 16:33:17 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1965,7 +1965,7 @@ study-discrete-mathematics:
     parent: study
     url: /wiki/study-discrete-mathematics
     updated: '2019-01-05 17:15:40 +0900'
-    children: [d-m-du-2016-01, discrete-math-propositional-logic, discrete-math-quantifiers, discrete-meth-inference-rules]
+    children: [d-m-du-2016-01, discrete-math-inference-rules, discrete-math-propositional-logic, discrete-math-quantifiers]
 study-formal-languages-and-automata:
     type: wiki
     title: '(study) FORMAL LANGUAGES AND AUTOMATA'
