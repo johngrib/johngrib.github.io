@@ -300,7 +300,7 @@ ag:
     summary: 'A code-searching tool similar to ack, but faster.'
     parent: command-line
     url: /wiki/ag
-    updated: '2018-12-27 22:13:31 +0900'
+    updated: '2019-01-06 22:57:10 +0900'
     children: []
 airplain-rule:
     type: wiki
@@ -566,6 +566,14 @@ c-m-05-Binomial-Coefficients-04:
     url: /wiki/c-m-05-Binomial-Coefficients-04
     updated: '2018-05-22 18:43:06 +0900'
     children: []
+cal:
+    type: wiki
+    title: 'cal, ncal'
+    summary: 'displays a calendar and the date of Easter'
+    parent: command-line
+    url: /wiki/cal
+    updated: '2019-01-06 22:43:06 +0900'
+    children: []
 Clean-Code:
     type: wiki
     title: '(책) 클린 코드 - 로버트 C. 마틴'
@@ -605,7 +613,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, csplit, ctags, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes-command]
+    children: [ag, brew, cal, csplit, ctags, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes-command]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -805,6 +813,14 @@ discrete-math-inference-rules:
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-inference-rules
     updated: '2019-01-06 13:32:33 +0900'
+    children: []
+discrete-math-proofs:
+    type: wiki
+    title: 증명
+    summary: Proofs
+    parent: study-discrete-mathematics
+    url: /wiki/discrete-math-proofs
+    updated: '2019-01-06 17:49:53 +0900'
     children: []
 discrete-math-propositional-logic:
     type: wiki
@@ -1396,7 +1412,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-06 16:33:17 +0900'
+    updated: '2019-01-06 21:27:07 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1965,7 +1981,7 @@ study-discrete-mathematics:
     parent: study
     url: /wiki/study-discrete-mathematics
     updated: '2019-01-05 17:15:40 +0900'
-    children: [d-m-du-2016-01, discrete-math-inference-rules, discrete-math-propositional-logic, discrete-math-quantifiers]
+    children: [d-m-du-2016-01, discrete-math-inference-rules, discrete-math-proofs, discrete-math-propositional-logic, discrete-math-quantifiers]
 study-formal-languages-and-automata:
     type: wiki
     title: '(study) FORMAL LANGUAGES AND AUTOMATA'

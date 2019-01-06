@@ -18,6 +18,7 @@ math:
     - {fileName: Cromwell-s-rule}
     - {fileName: d-m-du-2016-01}
     - {fileName: discrete-math-inference-rules}
+    - {fileName: discrete-math-proofs}
     - {fileName: discrete-math-propositional-logic}
     - {fileName: discrete-math-quantifiers}
     - {fileName: frac1e}
@@ -245,6 +246,7 @@ bash:
     - {fileName: ag}
     - {fileName: bc}
     - {fileName: brew}
+    - {fileName: cal}
     - {fileName: csplit}
     - {fileName: ctags}
     - {fileName: date}
