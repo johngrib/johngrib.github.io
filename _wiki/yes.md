@@ -3,7 +3,7 @@ layout  : wiki
 title   : yes 명령어
 summary : 문자열을 반복 출력한다
 date    : 2018-09-15 21:45:14 +0900
-updated : 2018-09-15 22:29:16 +0900
+updated : 2019-01-06 23:13:05 +0900
 tags    : bash
 toc     : true
 public  : true
@@ -87,8 +87,6 @@ $ yes 'I WILL NOT WASTE COMPUTING POWER'
 ```sh
 $ yes "$(seq 231 -1 16)" | while read i; do printf "\x1b[48;5;${i}m\n"; sleep .02; done
 ```
-
-
 
 # Links
 

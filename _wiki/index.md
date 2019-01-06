@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-06 21:27:07 +0900
+updated : 2019-01-06 23:14:17 +0900
 tags    : index
 toc     : true
 public  : true
@@ -204,7 +204,7 @@ comment : false
         * [[sort]]
         * [[top]]
         * [[uptime]]
-        * [[yes-command]]
+        * [[yes]]
         * [[my-bash-cheatsheet]]
     * [[Excel]]
         * [[excel-hot-keys]]
