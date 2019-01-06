@@ -3,7 +3,7 @@ layout  : wiki
 title   : 한정기호
 summary : Quantifiers
 date    : 2019-01-05 22:47:57 +0900
-updated : 2019-01-06 00:56:57 +0900
+updated : 2019-01-06 11:21:04 +0900
 tags    : math
 toc     : true
 public  : true
@@ -103,4 +103,58 @@ $$
 \end{align}
 $$
 
+
+# 한정기호 중첩
+
+**Nested Quantifiers**
+
+$$∀x∀yP(x,y)$$ 또는 $$∀y∀xP(x,y)$$
+
+* $$P(x,y)$$ is true for every pair x, y.
+* 모든 x, y에 대하여 $$P(x, y)$$가 참이다.
+
+$$∀x∃yP(x,y)$$ &nbsp;
+
+* For every x there is a y for which $$P(x,y)$$ is true.
+* 모든 x에 대하여 $$P(x, y)$$가 참이 되는 y 가 적어도 하나 존재한다.
+
+$$∃x∀yP(x,y)$$ &nbsp;
+
+* There is an x for which $$P(x,y)$$ is true for every y.
+* 어떤 x 가 존재하여, 모든 y에 대해 $$P(x,y)$$가 참이다.
+
+$$∃x∃y P(x,y)$$ 또는 $$∃y∃x P(x,y)$$
+
+* There is a pair x, y for which $$P(x, y)$$ is true.
+* $$P(x, y)$$가 참이 되는 x, y 쌍이 적어도 하나 존재한다.
+
+한정 순서가 크게 상관 없는 것처럼 보이지만, 두 한정 기호가 섞여 있을 때 순서가 바뀌면 참/거짓이 바뀌는 경우가 있으니 주의한다.
+
+다음 문장을 $$ ∀x ∀y ∃z Q(x,y,z) $$라는 식으로 옮겼다고 생각해 보자.
+
+* For all real numbers x and for all real numbers y there is a real number z such that $$x + y = z$$.
+* 모든 실수 x, 모든 실수 y에 대해 $$ x + y = z $$를 만족하는 z 가 존재한다.
+
+이것은 참이다.
+
+하지만 위의 문장을 $$ ∃z ∀x ∀y Q(x,y,z) $$ 와 같은 식으로 꾸미면 거짓이 된다.
+
+* There is a real number z such that for all real numbers x and for all real numbers y it is true that $$x + y = z$$.
+* 어떤 실수 z가 있는데, 모든 실수 x 와 모든 실수 y 에 대해 $$ x + y = z $$가 참인 결과가 나온다.
+
+
+## 예제
+
+$$ ∀x ∃y ( x + y = 0 ) $$ &nbsp;
+
+* 모든 x 에 대하여, $$x + y = 0$$ 을 만족하는 y 가 적어도 하나 존재한다.
+
+$$ ∀x ∀y ( x + y = y + x ) $$ &nbsp;
+
+* 모든 x, y 에 대하여, $$x + y = y + x$$ 가 성립한다.
+    * 교환법칙이 성립한다.
+
+$$ ∀x ∀y ∀z ( x + (y + z) = (x + y) + z) $$ &nbsp;
+
+* 모든 x, y, z 에 대하여, 결합법칙이 성립한다.
 
