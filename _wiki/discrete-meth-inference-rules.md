@@ -3,7 +3,7 @@ layout  : wiki
 title   : 추론규칙
 summary : Rules of Inference
 date    : 2019-01-06 11:36:44 +0900
-updated : 2019-01-06 13:25:47 +0900
+updated : 2019-01-06 13:32:33 +0900
 tags    : math
 toc     : true
 public  : true
@@ -171,7 +171,7 @@ $$ ((p → q) ∧ q) → p $$ 형태의 오류. p 가 거짓이고 q 가 참일 
 
 ## 가정 부정의 오류
 
-**fallacy of denying the hypothesis$$
+**fallacy of denying the hypothesis**
 
 $$  ((p → q) ∧ ¬p) → ¬q $$ 형태의 오류. p 가 거짓이고 q 가 참일 때 거짓이 된다.
 
