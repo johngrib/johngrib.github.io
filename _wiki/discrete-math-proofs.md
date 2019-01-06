@@ -3,7 +3,7 @@ layout  : wiki
 title   : 증명
 summary : Proofs
 date    : 2019-01-06 16:36:55 +0900
-updated : 2019-01-06 17:46:25 +0900
+updated : 2019-01-06 17:49:53 +0900
 tags    : math
 toc     : true
 public  : true
@@ -12,9 +12,6 @@ latex   : true
 ---
 * TOC
 {:toc}
-
-# 이 문서의 목적
-
 
 # 용어
 
