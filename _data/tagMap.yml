@@ -264,7 +264,7 @@ bash:
     - {fileName: sort}
     - {fileName: top}
     - {fileName: uptime}
-    - {fileName: yes-command}
+    - {fileName: yes}
 complexity:
     - {fileName: airplain-rule}
 law:

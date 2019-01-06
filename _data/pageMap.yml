@@ -613,7 +613,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes-command]
+    children: [ag, brew, cal, csplit, ctags, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -1412,7 +1412,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-06 21:27:07 +0900'
+    updated: '2019-01-06 23:14:17 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -2326,13 +2326,13 @@ yaml:
     url: /wiki/yaml
     updated: '2018-04-08 19:48:46 +0900'
     children: []
-yes-command:
+yes:
     type: wiki
     title: 'yes 명령어'
     summary: '문자열을 반복 출력한다'
     parent: command-line
-    url: /wiki/yes-command
-    updated: '2018-09-15 22:29:16 +0900'
+    url: /wiki/yes
+    updated: '2019-01-06 23:13:05 +0900'
     children: []
 You-and-Your-Research:
     type: wiki
