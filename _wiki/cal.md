@@ -3,7 +3,7 @@ layout  : wiki
 title   : cal, ncal
 summary : displays a calendar and the date of Easter
 date    : 2019-01-06 21:27:09 +0900
-updated : 2019-01-06 22:43:06 +0900
+updated : 2019-01-07 13:05:08 +0900
 tags    : bash
 toc     : true
 public  : true
@@ -41,7 +41,13 @@ $ CAL
 $ Cal
 ```
 
-## 이번달의 이전, 이후 월의 달력도 함께 본다
+## 이번달의 2달 전, 3달 후까지의 달력도 함께 본다
 ```sh
 $ cal -B2 -A3
+```
+
+## 전, 후 1달을 추가로 본다. (3개 달력 보기)
+```sh
+$ cal -3
+$ cal -3 10 2019
 ```
