@@ -572,7 +572,7 @@ cal:
     summary: 'displays a calendar and the date of Easter'
     parent: command-line
     url: /wiki/cal
-    updated: '2019-01-06 22:43:06 +0900'
+    updated: '2019-01-07 13:05:08 +0900'
     children: []
 Clean-Code:
     type: wiki
@@ -613,7 +613,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, top, uptime, yes]
+    children: [ag, brew, cal, csplit, ctags, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, sha256sum, sort, tail, top, uptime, yes]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -1412,7 +1412,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-06 23:14:17 +0900'
+    updated: '2019-01-06 23:17:40 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1998,6 +1998,14 @@ study-think-bayes:
     url: /wiki/study-think-bayes
     updated: '2018-04-25 22:05:44 +0900'
     children: [cookie-problem, dice-problem, euro-problem, locomotive-problem, MnM-problem, Monty-Hall-problem, Oliver-s-blood]
+tail:
+    type: wiki
+    title: 'tail 명령어'
+    summary: 'display the last part of a file'
+    parent: command-line
+    url: /wiki/tail
+    updated: '2019-01-06 23:43:13 +0900'
+    children: []
 Take-the-Bully-by-the-Horns:
     type: wiki
     title: '(책) 함부로 말하는 사람과 대화하는 법'

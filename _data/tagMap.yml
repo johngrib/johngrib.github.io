@@ -262,6 +262,7 @@ bash:
     - {fileName: openssl}
     - {fileName: sha256sum}
     - {fileName: sort}
+    - {fileName: tail}
     - {fileName: top}
     - {fileName: uptime}
     - {fileName: yes}
