@@ -3,7 +3,7 @@ layout  : wiki
 title   : 증명
 summary : Proofs
 date    : 2019-01-06 16:36:55 +0900
-updated : 2019-01-06 17:49:53 +0900
+updated : 2019-01-09 00:14:53 +0900
 tags    : math
 toc     : true
 public  : true
@@ -100,6 +100,36 @@ latex   : true
 
 * $$ p ↔ q $$의 형태를 갖는 정리를 증명하기 위해 $$ p → q $$와 $$ q → p $$가 모두 참임을 증명하는 방법.
 
+## 경우에 의한 증명
+
+**Proof by Cases**
+
+$$ ( p_1 ∨ p_2 ∨ ... ∨ p_n ) → q $$
+
+* $$ p_1 → q $$을 증명하고, $$ p_2 → q $$를 증명하고...
+* 모든 가능한 경우를 증명하는 것을 전수 증명(exhaustive proof)이라 한다.
+
+## 존재 증명
+
+**Existence Proofs**
+
+* $$ ∃x P(x) $$ 형태의 정리를 증명하는 것.
+* 생산적 존재 증명(A Constructive Existence Proof)
+    * $$ ∃x P(x) $$가 true 가 되게 하는 원소 x를 찾아내는 방법.
+* 비생산적 존재 증명(A Nonconstructive Existence Proof)
+    * 귀류법 등을 통해 존재하지 않을 리가 없다는 것을 증명하는 방법.
+    * 증명을 해도 존재 여부만 알 수 있다.
+
+## 유일성 증명
+
+**Uniqueness Proofs**
+
+$$ ∃x ( P(x) ∧ ∀y ( y \ne x → ¬ P(y) ) ) $$
+
+* 어떤 집합에서 하나의 원소만 어떤 특징을 갖고 있고, 나머지 다른 원소들은 그 특징이 없다는 것을 보이는 증명.
+    * 존재성(Existence) : 어떤 원소 x 가 주어진 특성을 갖고 있음을 보인다.
+    * 유일성(Uniqueness) : x 가 아닌 다른 원소는 주어진 특성이 없음을 보인다.
+        * 주어진 특성을 갖는 두 원소 x, y 가 $$x = y$$ 임을 보이는 방법도 있다.
 
 # Links
 
