@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-06 23:17:40 +0900
+updated : 2019-01-08 15:43:14 +0900
 tags    : index
 toc     : true
 public  : true
@@ -199,14 +199,15 @@ comment : false
         * [[grep]]
         * [[history]]
         * [[java_home]]
+        * [[my-bash-cheatsheet]]
         * [[openssl]]
+        * [[phpbrew]]
         * [[sha256sum]]
         * [[sort]]
         * [[tail]]
         * [[top]]
         * [[uptime]]
         * [[yes]]
-        * [[my-bash-cheatsheet]]
     * [[Excel]]
         * [[excel-hot-keys]]
         * [[excel-remove-circular-reference]]
