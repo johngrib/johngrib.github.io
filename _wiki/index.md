@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-08 15:43:14 +0900
+updated : 2019-01-09 20:50:35 +0900
 tags    : index
 toc     : true
 public  : true
@@ -57,7 +57,6 @@ comment : false
         * [[GoF-Design-Pattern]]
         * [[GRAVITY-EXPRESS]]
         * [[grow-together]]
-        * [[HELL-BOY]]
         * [[HTTP-no-Kyokasho]]
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
         * [[Mythical-Man-Month]]

@@ -204,7 +204,6 @@ review:
     - {fileName: toda-seiji-scientia}
 만화책:
     - {fileName: 그림으로-보는-서양검술-메모}
-    - {fileName: HELL-BOY}
     - {fileName: toda-seiji-scientia}
 무술:
     - {fileName: 그림으로-보는-서양검술-메모}
@@ -234,7 +233,6 @@ book:
     - {fileName: Effective-Java}
     - {fileName: Geek-Atlas}
     - {fileName: GoF-Design-Pattern}
-    - {fileName: HELL-BOY}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
     - {fileName: Mythical-Man-Month}
     - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
@@ -605,6 +603,8 @@ sha:
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
+php:
+    - {fileName: phpbrew}
 tip:
     - {fileName: private-constructor}
     - {fileName: use-java-primitive-type-for-performance}
