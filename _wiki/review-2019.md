@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-01-09 18:42:02 +0900
+updated : 2019-01-09 18:43:39 +0900
 tags    : review
 toc     : true
 public  : true
@@ -17,9 +17,7 @@ latex   : false
 
 * 2019-01-09 통찰, 평범에서 비범으로
 * 2019-01-04 전생검신 45권. 멸망의 기억
-* 2019-01-04 칸반과 스크럼
-    * [[kanban-scrum]]{칸반, 스크럼}
-    * [Kanban and Scrum - Making the Most of Both (Free version Download)](https://www.infoq.com/minibooks/kanban-scrum-minibook )
+* 2019-01-04 칸반과 스크럼. [[kanban-scrum]]{정리}, [PDF](https://www.infoq.com/minibooks/kanban-scrum-minibook )
 * 2019-01-01 [배시 셸로 완성하는 모의 해킹 기술](http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9788960775930 )(Penetration Testing with the Bash Shell)
 * 2019-01-01 전생검신 44권. 종말을 향하여
 
