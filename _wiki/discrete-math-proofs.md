@@ -3,7 +3,7 @@ layout  : wiki
 title   : 증명
 summary : Proofs
 date    : 2019-01-06 16:36:55 +0900
-updated : 2019-01-09 00:14:53 +0900
+updated : 2019-01-09 18:41:01 +0900
 tags    : math
 toc     : true
 public  : true
@@ -135,4 +135,8 @@ $$ ∃x ( P(x) ∧ ∀y ( y \ne x → ¬ P(y) ) ) $$
 
 * [정리 (wikipedia)](https://ko.wikipedia.org/wiki/%EC%A0%95%EB%A6%AC )
 * [증명 (wikipedia)](https://ko.wikipedia.org/wiki/%EC%A6%9D%EB%AA%85_(%EC%88%98%ED%95%99) )
+
+# 참고문헌
+
+* Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 
