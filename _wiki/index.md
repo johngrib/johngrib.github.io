@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-09 20:55:04 +0900
+updated : 2019-01-11 11:31:49 +0900
 tags    : index
 toc     : true
 public  : true
@@ -192,6 +192,7 @@ comment : false
         * [[ctags]]
         * [[date]]
         * [[df]]
+        * [[diff]]
         * [[du]]
         * [[fc]]
         * [[fish-shell]]

@@ -246,52 +246,52 @@
     url: /wiki/2018-01-20
     updated: '2018-01-20 22:59:09 +0900'
     children: []
-그림으로-보는-서양검술-메모:
+그림으로-보는-서양검술-메모:
     type: wiki
     title: '(책) 그림으로 보는 서양검술 메모'
     summary: '삐라따 님의 검술 메모를 출판한 책'
     parent: book
-    url: /wiki/그림으로-보는-서양검술-메모
+    url: /wiki/그림으로-보는-서양검술-메모
     updated: '2018-07-25 11:39:28 +0900'
     children: []
-미세먼지-정보:
+미세먼지-정보:
     type: wiki
     title: '미세먼지 정보 모음'
     summary: '미세먼지 대응에 대한 나의 노하우를 기록한다'
     parent: useful-site
-    url: /wiki/미세먼지-정보
+    url: /wiki/미세먼지-정보
     updated: '2018-04-02 21:13:51 +0900'
     children: []
-슈뢰딩거의-고양희:
+슈뢰딩거의-고양희:
     type: wiki
     title: '(책) 슈뢰딩거의 고양희'
     summary: '반-바지. SF 단편집'
     parent: book
-    url: /wiki/슈뢰딩거의-고양희
+    url: /wiki/슈뢰딩거의-고양희
     updated: '2018-04-22 17:16:53 +0900'
     children: []
-전생검신:
+전생검신:
     type: wiki
     title: '(책) 전생검신'
     summary: null
     parent: book
-    url: /wiki/전생검신
+    url: /wiki/전생검신
     updated: '2018-05-24 20:40:00 +0900'
     children: []
-토끼의-아리아:
+토끼의-아리아:
     type: wiki
     title: '(책) 토끼의 아리아 - 곽재식 소설집'
     summary: ""
     parent: book
-    url: /wiki/토끼의-아리아
+    url: /wiki/토끼의-아리아
     updated: '2018-04-27 21:50:53 +0900'
     children: []
-한국과학문학상-수상작품집-제2회:
+한국과학문학상-수상작품집-제2회:
     type: wiki
     title: '(책) 제2회 한국과학문학상 수상작품집'
     summary: null
     parent: book
-    url: /wiki/한국과학문학상-수상작품집-제2회
+    url: /wiki/한국과학문학상-수상작품집-제2회
     updated: '2018-03-15 20:41:22 +0900'
     children: []
 ag:
@@ -405,7 +405,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Foundation-series, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Foundation-series, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -613,7 +613,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, date, df, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, uptime, yes]
+    children: [ag, brew, cal, csplit, ctags, date, df, diff, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, uptime, yes]
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -805,6 +805,14 @@ dice-problem:
     parent: study-think-bayes
     url: /wiki/dice-problem
     updated: '2018-04-24 20:48:57 +0900'
+    children: []
+diff:
+    type: wiki
+    title: diff
+    summary: 'compare files line by line'
+    parent: command-line
+    url: /wiki/diff
+    updated: '2019-01-11 11:30:51 +0900'
     children: []
 discrete-math-inference-rules:
     type: wiki
@@ -1412,7 +1420,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-09 20:55:04 +0900'
+    updated: '2019-01-11 11:31:49 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1773,7 +1781,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [bc, Golang, groovy, Java, Python3, TOML, yaml]
+    children: [bc, Golang, groovy, Java, Python3, TOML, YAML]
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -1836,7 +1844,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-01-09 20:44:24 +0900'
+    updated: '2019-01-10 22:51:05 +0900'
     children: []
 RFC:
     type: wiki
@@ -2149,7 +2157,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2018-02-20 22:07:53 +0900'
-    children: [미세먼지-정보, geacron, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, mathdict, utterances]
+    children: [미세먼지-정보, geacron, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, mathdict, utterances]
 utterances:
     type: wiki
     title: utterances.es
@@ -2334,12 +2342,12 @@ why-http-80-https-443:
     url: /wiki/why-http-80-https-443
     updated: '2018-09-09 11:20:07 +0900'
     children: []
-yaml:
+YAML:
     type: wiki
     title: YAML
     summary: 'YAML Ain''t Markup Language'
     parent: programming-language
-    url: /wiki/yaml
+    url: /wiki/YAML
     updated: '2018-04-08 19:48:46 +0900'
     children: []
 yes:
