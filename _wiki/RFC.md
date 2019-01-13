@@ -3,7 +3,7 @@ layout  : wiki
 title   : RFC(Request For Comment)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2018-09-22 20:58:40 +0900
+updated : 2019-01-13 20:43:11 +0900
 tags    : rfc
 toc     : true
 public  : true
@@ -69,3 +69,42 @@ latex   : false
     * UUID : Universally Unique IDentifier
     * GUID : Globally Unique IDentifier
 * <https://tools.ietf.org/html/rfc4122 >
+
+## RFC 5424
+
+* The Syslog Protocol
+* <https://tools.ietf.org/html/rfc5424 >
+* Syslog Message Severities 가 정의된 문서이기도 하다.
+
+| Code | Severity                                 |
+|------|------------------------------------------|
+| 0    | Emergency: system is unusable            |
+| 1    | Alert: action must be taken immediately  |
+| 2    | Critical: critical conditions            |
+| 3    | Error: error conditions                  |
+| 4    | Warning: warning conditions              |
+| 5    | Notice: normal but significant condition |
+| 6    | Informational: informational messages    |
+| 7    | Debug: debug-level messages              |
+
+다양한 언어의 logger 라이브러리가 이 문서를 인용한다.
+
+예를 들어, [PSR-3 의 LoggerInterface](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md )는 이를 참고한다.
+
+```php
+<?php
+namespace Psr\Log;
+
+interface LoggerInterface
+{
+    public function emergency($message, array $context = array());
+    public function alert($message, array $context = array());
+    public function critical($message, array $context = array());
+    public function error($message, array $context = array());
+    public function warning($message, array $context = array());
+    public function notice($message, array $context = array());
+    public function info($message, array $context = array());
+    public function debug($message, array $context = array());
+    public function log($level, $message, array $context = array());
+}
+```
