@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-13 18:23:39 +0900
+updated : 2019-01-13 18:24:16 +0900
 tags    : index
 toc     : true
 public  : true
@@ -204,6 +204,7 @@ comment : false
         * [[my-bash-cheatsheet]]
         * [[openssl]]
         * [[phpbrew]]
+        * [[touch]]
         * [[sha256sum]]
         * [[sort]]
         * [[tail]]
