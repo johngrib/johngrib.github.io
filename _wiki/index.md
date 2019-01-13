@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-13 18:24:16 +0900
+updated : 2019-01-13 22:33:56 +0900
 tags    : index
 toc     : true
 public  : true
@@ -108,6 +108,8 @@ comment : false
         * [[Object-toString]]
         * [[private-constructor]]
         * [[use-java-primitive-type-for-performance]]
+    * [[php]]
+        * [[composer]]
     * [[Python3]]
         * [[python3-simple-file-sharing]]
     * [[TOML]]
