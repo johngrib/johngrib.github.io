@@ -4,7 +4,7 @@ title   : sha256sum 명령어
 summary : compute and check SHA256 message digest
 date    : 2018-08-24 21:37:34 +0900
 updated : 2018-08-24 22:12:12 +0900
-tags    : bash sha
+tags    : bash encryption command
 toc     : true
 public  : true
 parent  : command-line

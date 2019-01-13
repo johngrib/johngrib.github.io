@@ -4,7 +4,7 @@ title   : cal, ncal
 summary : displays a calendar and the date of Easter
 date    : 2019-01-06 21:27:09 +0900
 updated : 2019-01-07 13:05:08 +0900
-tags    : bash
+tags    : bash command
 toc     : true
 public  : true
 parent  : command-line

@@ -4,7 +4,7 @@ title   : df 명령어
 summary : 파일 시스템의 남은 용량을 알려준다
 date    : 2018-02-08 22:50:31 +0900
 updated : 2018-02-08 22:58:06 +0900
-tags    : bash
+tags    : bash command
 toc     : true
 public  : true
 parent  : command-line

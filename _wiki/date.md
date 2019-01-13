@@ -4,7 +4,7 @@ title   : date 명령어
 summary : 날짜나 시간을 출력하거나 설정한다
 date    : 2018-08-03 05:19:22 +0900
 updated : 2018-08-03 06:06:43 +0900
-tags    : bash
+tags    : bash command
 toc     : true
 public  : true
 parent  : command-line

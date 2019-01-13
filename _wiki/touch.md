@@ -4,7 +4,7 @@ title   : touch 명령어
 summary : change file access and modification times
 date    : 2019-01-13 18:10:46 +0900
 updated : 2019-01-13 18:22:50 +0900
-tags    : bash
+tags    : bash command
 toc     : true
 public  : true
 parent  : command-line

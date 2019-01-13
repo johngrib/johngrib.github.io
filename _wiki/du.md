@@ -4,7 +4,7 @@ title   : du 명령어
 summary : disk usage. 디스크 사용 현황을 본다.
 date    : 2018-02-08 22:58:36 +0900
 updated : 2018-02-08 23:11:05 +0900
-tags    : bash
+tags    : bash command
 toc     : true
 public  : true
 parent  : command-line

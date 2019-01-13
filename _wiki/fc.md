@@ -4,7 +4,7 @@ title   : fc 명령어
 summary : 명령어 입력/편집, 나열, 재실행 등을 할 수 있다
 date    : 2018-08-29 09:22:26 +0900
 updated : 2018-08-29 09:45:22 +0900
-tags    : bash
+tags    : bash command
 toc     : true
 public  : true
 parent  : command-line

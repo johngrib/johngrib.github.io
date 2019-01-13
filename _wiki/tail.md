@@ -4,7 +4,7 @@ title   : tail 명령어
 summary : display the last part of a file
 date    : 2019-01-06 23:17:41 +0900
 updated : 2019-01-06 23:43:13 +0900
-tags    : bash
+tags    : bash command
 toc     : true
 public  : true
 parent  : command-line

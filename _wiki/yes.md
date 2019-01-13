@@ -4,7 +4,7 @@ title   : yes 명령어
 summary : 문자열을 반복 출력한다
 date    : 2018-09-15 21:45:14 +0900
 updated : 2019-01-06 23:13:05 +0900
-tags    : bash
+tags    : bash command
 toc     : true
 public  : true
 parent  : command-line
