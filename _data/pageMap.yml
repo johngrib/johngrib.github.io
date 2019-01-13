@@ -246,52 +246,52 @@
     url: /wiki/2018-01-20
     updated: '2018-01-20 22:59:09 +0900'
     children: []
-그림으로-보는-서양검술-메모:
+그림으로-보는-서양검술-메모:
     type: wiki
     title: '(책) 그림으로 보는 서양검술 메모'
     summary: '삐라따 님의 검술 메모를 출판한 책'
     parent: book
-    url: /wiki/그림으로-보는-서양검술-메모
+    url: /wiki/그림으로-보는-서양검술-메모
     updated: '2018-07-25 11:39:28 +0900'
     children: []
-미세먼지-정보:
+미세먼지-정보:
     type: wiki
     title: '미세먼지 정보 모음'
     summary: '미세먼지 대응에 대한 나의 노하우를 기록한다'
     parent: useful-site
-    url: /wiki/미세먼지-정보
+    url: /wiki/미세먼지-정보
     updated: '2018-04-02 21:13:51 +0900'
     children: []
-슈뢰딩거의-고양희:
+슈뢰딩거의-고양희:
     type: wiki
     title: '(책) 슈뢰딩거의 고양희'
     summary: '반-바지. SF 단편집'
     parent: book
-    url: /wiki/슈뢰딩거의-고양희
+    url: /wiki/슈뢰딩거의-고양희
     updated: '2018-04-22 17:16:53 +0900'
     children: []
-전생검신:
+전생검신:
     type: wiki
     title: '(책) 전생검신'
     summary: null
     parent: book
-    url: /wiki/전생검신
+    url: /wiki/전생검신
     updated: '2018-05-24 20:40:00 +0900'
     children: []
-토끼의-아리아:
+토끼의-아리아:
     type: wiki
     title: '(책) 토끼의 아리아 - 곽재식 소설집'
     summary: ""
     parent: book
-    url: /wiki/토끼의-아리아
+    url: /wiki/토끼의-아리아
     updated: '2018-04-27 21:50:53 +0900'
     children: []
-한국과학문학상-수상작품집-제2회:
+한국과학문학상-수상작품집-제2회:
     type: wiki
     title: '(책) 제2회 한국과학문학상 수상작품집'
     summary: null
     parent: book
-    url: /wiki/한국과학문학상-수상작품집-제2회
+    url: /wiki/한국과학문학상-수상작품집-제2회
     updated: '2018-03-15 20:41:22 +0900'
     children: []
 ag:
@@ -405,7 +405,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Foundation-series, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Foundation-series, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -428,7 +428,7 @@ brew:
     summary: 'macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 brew.'
     parent: command-line
     url: /wiki/brew
-    updated: '2018-02-12 10:11:46 +0900'
+    updated: '2019-01-11 16:36:10 +0900'
     children: []
 Brooks-s-law:
     type: wiki
@@ -613,7 +613,15 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, date, df, diff, du, fc, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, uptime, yes]
+    children: [ag, brew, cal, csplit, ctags, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
+composer:
+    type: wiki
+    title: composer
+    summary: 'Dependency Manager for PHP'
+    parent: php
+    url: /wiki/composer
+    updated: '2019-01-13 22:54:23 +0900'
+    children: []
 Computer-Science-Distilled:
     type: wiki
     title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
@@ -1046,6 +1054,14 @@ fc:
     url: /wiki/fc
     updated: '2018-08-29 09:45:22 +0900'
     children: []
+find:
+    type: wiki
+    title: 'find 명령어'
+    summary: 'walk a file hierarchy'
+    parent: command-line
+    url: /wiki/find
+    updated: '2019-01-13 18:04:32 +0900'
+    children: []
 fish-shell:
     type: wiki
     title: 'fish shell'
@@ -1068,7 +1084,7 @@ Foundation-series:
     summary: '매번 읽다가 낙오하니 기록하며 읽어보자'
     parent: book
     url: /wiki/Foundation-series
-    updated: '2019-01-09 21:25:10 +0900'
+    updated: '2019-01-13 22:02:11 +0900'
     children: []
 frac1e:
     type: wiki
@@ -1420,7 +1436,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-11 11:31:49 +0900'
+    updated: '2019-01-13 22:33:56 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1734,6 +1750,14 @@ PATTERN-ON-THE-STONE:
     url: /wiki/PATTERN-ON-THE-STONE
     updated: '2018-05-26 22:15:42 +0900'
     children: []
+php:
+    type: wiki
+    title: php
+    summary: ""
+    parent: programming-language
+    url: /wiki/php
+    updated: '2019-01-13 22:34:44 +0900'
+    children: [composer]
 phpbrew:
     type: wiki
     title: phpbrew
@@ -1781,7 +1805,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [bc, Golang, groovy, Java, Python3, TOML, YAML]
+    children: [bc, Golang, groovy, Java, php, Python3, TOML, yaml]
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -1852,7 +1876,7 @@ RFC:
     summary: '일련번호가 매겨진 인터넷 표준 문서'
     parent: what
     url: /wiki/RFC
-    updated: '2018-09-22 20:58:40 +0900'
+    updated: '2019-01-13 20:43:11 +0900'
     children: []
 rouge-supported-languages:
     type: wiki
@@ -2110,6 +2134,14 @@ top:
     url: /wiki/top
     updated: '2018-02-07 21:26:59 +0900'
     children: []
+touch:
+    type: wiki
+    title: 'touch 명령어'
+    summary: 'change file access and modification times'
+    parent: command-line
+    url: /wiki/touch
+    updated: '2019-01-13 18:22:50 +0900'
+    children: []
 trouble-shooting-node-7-install:
     type: wiki
     title: '(문제해결) Mac에서 Node 7 버전으로 다운그레이드'
@@ -2157,7 +2189,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2018-02-20 22:07:53 +0900'
-    children: [미세먼지-정보, geacron, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, mathdict, utterances]
+    children: [미세먼지-정보, geacron, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, mathdict, utterances]
 utterances:
     type: wiki
     title: utterances.es
@@ -2342,12 +2374,12 @@ why-http-80-https-443:
     url: /wiki/why-http-80-https-443
     updated: '2018-09-09 11:20:07 +0900'
     children: []
-YAML:
+yaml:
     type: wiki
     title: YAML
     summary: 'YAML Ain''t Markup Language'
     parent: programming-language
-    url: /wiki/YAML
+    url: /wiki/yaml
     updated: '2018-04-08 19:48:46 +0900'
     children: []
 yes:

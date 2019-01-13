@@ -189,7 +189,7 @@ diary:
 block-chain:
     - {fileName: '2018-01-20'}
 review:
-    - {fileName: 그림으로-보는-서양검술-메모}
+    - {fileName: 그림으로-보는-서양검술-메모}
     - {fileName: HTTP-no-Kyokasho}
     - {fileName: review}
     - {fileName: review-2017}
@@ -203,26 +203,26 @@ review:
     - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
     - {fileName: toda-seiji-scientia}
 만화책:
-    - {fileName: 그림으로-보는-서양검술-메모}
+    - {fileName: 그림으로-보는-서양검술-메모}
     - {fileName: toda-seiji-scientia}
 무술:
-    - {fileName: 그림으로-보는-서양검술-메모}
+    - {fileName: 그림으로-보는-서양검술-메모}
 tools:
-    - {fileName: 미세먼지-정보}
+    - {fileName: 미세먼지-정보}
     - {fileName: labs-strava-com-heatmap}
     - {fileName: tools}
     - {fileName: utterances}
 미세먼지:
-    - {fileName: 미세먼지-정보}
+    - {fileName: 미세먼지-정보}
 sf:
-    - {fileName: 슈뢰딩거의-고양희}
-    - {fileName: 토끼의-아리아}
-    - {fileName: 한국과학문학상-수상작품집-제2회}
+    - {fileName: 슈뢰딩거의-고양희}
+    - {fileName: 토끼의-아리아}
+    - {fileName: 한국과학문학상-수상작품집-제2회}
     - {fileName: Foundation-series}
     - {fileName: toda-seiji-scientia}
 book:
-    - {fileName: 전생검신}
-    - {fileName: 한국과학문학상-수상작품집-제2회}
+    - {fileName: 전생검신}
+    - {fileName: 한국과학문학상-수상작품집-제2회}
     - {fileName: Algorithms-to-Live-By}
     - {fileName: book}
     - {fileName: Clean-Code}
@@ -240,7 +240,7 @@ book:
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
     - {fileName: The-Jargon-File}
 fantasy:
-    - {fileName: 전생검신}
+    - {fileName: 전생검신}
 bash:
     - {fileName: ag}
     - {fileName: bc}
@@ -253,6 +253,7 @@ bash:
     - {fileName: diff}
     - {fileName: du}
     - {fileName: fc}
+    - {fileName: find}
     - {fileName: git-alias}
     - {fileName: gpg}
     - {fileName: grep}
@@ -264,6 +265,33 @@ bash:
     - {fileName: sort}
     - {fileName: tail}
     - {fileName: top}
+    - {fileName: touch}
+    - {fileName: uptime}
+    - {fileName: yes}
+command:
+    - {fileName: ag}
+    - {fileName: brew}
+    - {fileName: cal}
+    - {fileName: composer}
+    - {fileName: csplit}
+    - {fileName: ctags}
+    - {fileName: date}
+    - {fileName: df}
+    - {fileName: diff}
+    - {fileName: du}
+    - {fileName: fc}
+    - {fileName: find}
+    - {fileName: gpg}
+    - {fileName: grep}
+    - {fileName: history}
+    - {fileName: java_home}
+    - {fileName: openssl}
+    - {fileName: phpbrew}
+    - {fileName: sha256sum}
+    - {fileName: sort}
+    - {fileName: tail}
+    - {fileName: top}
+    - {fileName: touch}
     - {fileName: uptime}
     - {fileName: yes}
 complexity:
@@ -372,6 +400,10 @@ linux:
     - {fileName: DevOps-Troubleshooting}
 command-line:
     - {fileName: command-line}
+php:
+    - {fileName: composer}
+    - {fileName: php}
+    - {fileName: phpbrew}
 computer-science:
     - {fileName: Computer-Science-Distilled}
 proverb:
@@ -437,6 +469,7 @@ encryption:
     - {fileName: gpg}
     - {fileName: Kerckhoffs-s-principle}
     - {fileName: openssl}
+    - {fileName: sha256sum}
 ms:
     - {fileName: Excel}
 excel:
@@ -523,8 +556,6 @@ gradle:
     - {fileName: Gradle}
 tool:
     - {fileName: Gradle}
-검색:
-    - {fileName: grep}
 jvm-lang:
     - {fileName: groovy}
 groovy:
@@ -597,16 +628,9 @@ naming:
     - {fileName: Naming-Principle}
 소수:
     - {fileName: Object-hashCode}
-aes:
-    - {fileName: openssl}
-sha:
-    - {fileName: openssl}
-    - {fileName: sha256sum}
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
-php:
-    - {fileName: phpbrew}
 tip:
     - {fileName: private-constructor}
     - {fileName: use-java-primitive-type-for-performance}
@@ -657,7 +681,7 @@ toml:
     - {fileName: TOML}
 data-format:
     - {fileName: TOML}
-    - {fileName: YAML}
+    - {fileName: yaml}
 performance:
     - {fileName: use-java-primitive-type-for-performance}
 vagrant:
@@ -695,7 +719,7 @@ what:
 why:
     - {fileName: why}
 yaml:
-    - {fileName: YAML}
+    - {fileName: yaml}
 공부:
     - {fileName: You-and-Your-Research}
 stat:
