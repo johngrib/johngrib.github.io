@@ -2,7 +2,7 @@
 layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
-updated : 2018-04-08 19:46:57 +0900
+updated : 2019-01-14 21:54:46 +0900
 tags    : http
 toc     : true
 public  : true
@@ -17,6 +17,23 @@ latex   : false
 * URI : **U**niform **R**esource **I**dentifier
     * URL : **U**niform **R**esource **L**ocator
     * URN : **U**niform **R**esource **N**ame
+
+# RFC 3986
+
+* [RFC3986](https://www.ietf.org/rfc/rfc3986.txt ) -  Uniform Resource Identifier (URI): Generic Syntax
+    * 1.1.3.  URI, URL, and URN
+
+>
+A URI can be further classified as a locator, a name, or both.  The
+term "Uniform Resource Locator" (URL) refers to the subset of URIs
+that, in addition to identifying a resource, provide a means of
+locating the resource by describing its primary access mechanism
+(e.g., its network "location").  The term "Uniform Resource Name"
+(URN) has been used historically to refer to both URIs under the
+"urn" scheme [RFC2141], which are required to remain globally unique
+and persistent even when the resource ceases to exist or becomes
+unavailable, and to any other URI with the properties of a name.
+
 
 # URI
 
@@ -91,7 +108,7 @@ http://johngrib.github.io/wiki/URI.md#fragment
 
 ![regex](../img/URI.regex.svg)
 
-만약 `http://www.ics.uci.edu/pub/ietf/uri/#Related`라는 URI를 이 정규식으로 파싱한다면 다음과 같은 캡처 그룹을 확보할 수 있다.
+만약 **http://www.ics.uci.edu/pub/ietf/uri/#Related**라는 URI를 이 정규식으로 파싱한다면 다음과 같은 캡처 그룹을 확보할 수 있다.
 
 | 그룹 | 컴포넌트  | 캡처한 내용       |
 |------|-----------|-------------------|
