@@ -21,6 +21,7 @@ math:
     - {fileName: discrete-math-proofs}
     - {fileName: discrete-math-propositional-logic}
     - {fileName: discrete-math-quantifiers}
+    - {fileName: discrete-math-sets}
     - {fileName: frac1e}
     - {fileName: gcd}
     - {fileName: math}
