@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-14 21:36:09 +0900
+updated : 2019-01-14 21:39:36 +0900
 tags    : index
 toc     : true
 public  : true
@@ -267,6 +267,7 @@ comment : false
     * [[gray-code]]
     * [[groupId-artifactId]]
     * [[http-message]]
+    * [[indent-style]]
     * [[kanban-scrum]]
     * [[RFC]]
     * [[rouge-supported-languages]]

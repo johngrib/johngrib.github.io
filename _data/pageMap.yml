@@ -22,14 +22,6 @@
     url: /blog/2017/01/30/ideavim-build
     updated: '2017-01-30 21:22:53 +0900'
     children: []
-2017-03-08-til-indent-style:
-    type: blog
-    title: '중괄호 인덴트 스타일을 조사해 보았다.'
-    summary: 'K&R style, Allman style.'
-    parent: null
-    url: /blog/2017/03/08/til-indent-style
-    updated: '2017-03-08 23:00:00 +0900'
-    children: []
 2017-03-12-telegram-bot:
     type: blog
     title: '텔레그램 봇 스켈레톤 만들기.'
@@ -1430,13 +1422,21 @@ httpbin.org:
     url: /wiki/httpbin.org
     updated: '2018-04-22 21:28:11 +0900'
     children: []
+indent-style:
+    type: wiki
+    title: '중괄호 인덴트 스타일'
+    summary: 'K&R style, Allman style'
+    parent: what
+    url: /wiki/indent-style
+    updated: '2019-01-14 21:41:31 +0900'
+    children: []
 index:
     type: wiki
     title: wiki
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-14 21:36:09 +0900'
+    updated: '2019-01-14 21:39:36 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -2349,7 +2349,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [braille-pattern-chars, Continuous-Integration, encryption, floating-point, gray-code, groupId-artifactId, http-message, kanban-scrum, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
+    children: [braille-pattern-chars, Continuous-Integration, encryption, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
