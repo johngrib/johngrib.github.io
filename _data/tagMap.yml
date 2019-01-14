@@ -182,7 +182,6 @@ aheui:
 diary:
     - {fileName: '2018-01-20'}
     - {fileName: diary}
-    - {fileName: diary-2018}
 block-chain:
     - {fileName: '2018-01-20'}
 review:

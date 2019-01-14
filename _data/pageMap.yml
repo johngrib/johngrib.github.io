@@ -788,16 +788,8 @@ diary:
     summary: null
     parent: index
     url: /wiki/diary
-    updated: '2018-01-20 17:47:01 +0900'
-    children: [diary-2018]
-diary-2018:
-    type: wiki
-    title: '2018 Diary'
-    summary: null
-    parent: diary
-    url: /wiki/diary-2018
-    updated: '2018-01-20 17:58:08 +0900'
-    children: ['2018-01-20']
+    updated: '2019-01-14 21:43:51 +0900'
+    children: []
 dice-problem:
     type: wiki
     title: '주사위 문제'
