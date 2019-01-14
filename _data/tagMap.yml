@@ -54,12 +54,6 @@ chatbot:
     - {fileName: 2017-03-12-telegram-bot}
 bot:
     - {fileName: 2017-03-12-telegram-bot}
-uri:
-    - {fileName: 2017-03-13-uri-url}
-url:
-    - {fileName: 2017-03-13-uri-url}
-rfc3986:
-    - {fileName: 2017-03-13-uri-url}
 TIL:
     - {fileName: 2017-03-27-tmux-ascii-control}
     - {fileName: 2017-08-23-0.30000000000000004}

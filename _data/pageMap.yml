@@ -30,14 +30,6 @@
     url: /blog/2017/03/12/telegram-bot
     updated: '2017-03-12 21:08:16 +0900'
     children: []
-2017-03-13-uri-url:
-    type: blog
-    title: 'URI와 URL 의미가 헷갈려서 조사해 보았다.'
-    summary: '"결론: URL은 URI의 부분집합."'
-    parent: null
-    url: /blog/2017/03/13/uri-url
-    updated: '2017-03-13 21:30:46 +0900'
-    children: []
 2017-03-27-tmux-ascii-control:
     type: blog
     title: 'tmux 키 조합에서 C--가 불가능한 이유.'
@@ -2156,7 +2148,7 @@ URI:
     summary: 'Uniform Resource Identifier'
     parent: what
     url: /wiki/URI
-    updated: '2018-04-08 19:46:57 +0900'
+    updated: '2019-01-14 21:54:46 +0900'
     children: []
 use-java-primitive-type-for-performance:
     type: wiki
