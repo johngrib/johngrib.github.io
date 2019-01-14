@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-13 22:33:56 +0900
+updated : 2019-01-14 21:36:09 +0900
 tags    : index
 toc     : true
 public  : true
@@ -69,7 +69,6 @@ comment : false
         * [[Software-Craftsman]]{소프트웨어 장인}
         * [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}
         * [[TETRIS-EFFECT]]
-        * [[TEXT-BOOK-OF-THE-WEB-ENGINEER]]{웹 엔지니어의 교과서}
         * [[The-Jargon-File]]
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
         * [[toda-seiji-scientia]]

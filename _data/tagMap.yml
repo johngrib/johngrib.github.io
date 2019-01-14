@@ -200,7 +200,6 @@ review:
     - {fileName: Software-Craftsman}
     - {fileName: Take-the-Bully-by-the-Horns}
     - {fileName: TETRIS-EFFECT}
-    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
     - {fileName: toda-seiji-scientia}
 만화책:
     - {fileName: 그림으로-보는-서양검술-메모}
@@ -669,8 +668,6 @@ ethics:
     - {fileName: Software-Engineering-Code-of-Ethics}
 db:
     - {fileName: sql-char-comparison}
-web:
-    - {fileName: TEXT-BOOK-OF-THE-WEB-ENGINEER}
 hacker:
     - {fileName: The-Jargon-File}
 trouble-shooting:

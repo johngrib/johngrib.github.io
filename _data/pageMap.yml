@@ -405,7 +405,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Foundation-series, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, TEXT-BOOK-OF-THE-WEB-ENGINEER, The-Jargon-File, Think-Bayes, toda-seiji-scientia]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 그림으로-보는-서양검술-메모, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Foundation-series, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes, toda-seiji-scientia]
 Boy-Scout-Rule:
     type: wiki
     title: '보이 스카웃 규칙'
@@ -1436,7 +1436,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-13 22:33:56 +0900'
+    updated: '2019-01-14 21:36:09 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1860,7 +1860,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2019-01-09 20:51:47 +0900'
+    updated: '2019-01-14 21:35:59 +0900'
     children: []
 review-2019:
     type: wiki
@@ -2061,14 +2061,6 @@ TETRIS-EFFECT:
     parent: book
     url: /wiki/TETRIS-EFFECT
     updated: '2018-03-20 23:21:57 +0900'
-    children: []
-TEXT-BOOK-OF-THE-WEB-ENGINEER:
-    type: wiki
-    title: '(책) 웹 엔지니어의 교과서'
-    summary: 'THE TEXT BOOK OF THE WEB ENGINEER'
-    parent: book
-    url: /wiki/TEXT-BOOK-OF-THE-WEB-ENGINEER
-    updated: '2018-01-26 12:59:19 +0900'
     children: []
 The-Jargon-File:
     type: wiki
