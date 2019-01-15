@@ -597,7 +597,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
+    children: [ag, brew, cal, csplit, ctags, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
 composer:
     type: wiki
     title: composer
@@ -677,6 +677,14 @@ ctags:
     parent: command-line
     url: /wiki/ctags
     updated: '2018-10-03 23:48:53 +0900'
+    children: []
+cut:
+    type: wiki
+    title: 'cut 명령어'
+    summary: 'cut out selected portions of each line of a file'
+    parent: command-line
+    url: /wiki/cut
+    updated: '2019-01-15 17:21:17 +0900'
     children: []
 d-i-a-01-reliable-scalable-maintainable:
     type: wiki
@@ -1428,7 +1436,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-14 22:12:52 +0900'
+    updated: '2019-01-15 17:09:11 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1860,7 +1868,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-01-10 22:51:05 +0900'
+    updated: '2019-01-15 00:17:14 +0900'
     children: []
 RFC:
     type: wiki

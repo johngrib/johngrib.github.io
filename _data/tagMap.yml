@@ -238,6 +238,7 @@ bash:
     - {fileName: cal}
     - {fileName: csplit}
     - {fileName: ctags}
+    - {fileName: cut}
     - {fileName: date}
     - {fileName: df}
     - {fileName: diff}
@@ -265,6 +266,7 @@ command:
     - {fileName: composer}
     - {fileName: csplit}
     - {fileName: ctags}
+    - {fileName: cut}
     - {fileName: date}
     - {fileName: df}
     - {fileName: diff}
