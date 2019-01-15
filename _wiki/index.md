@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-15 17:09:11 +0900
+updated : 2019-01-15 17:39:29 +0900
 tags    : index
 toc     : true
 public  : true
@@ -53,7 +53,6 @@ comment : false
         * [[DevOps-Troubleshooting]]
         * [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
         * [[Effective-Java]]
-        * [[Foundation-series]]
         * [[Geek-Atlas]]
         * [[GoF-Design-Pattern]]
         * [[GRAVITY-EXPRESS]]
