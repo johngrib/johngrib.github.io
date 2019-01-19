@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 공부 방법
 summary :
 date    : 2019-01-18 23:12:07 +0900
-updated : 2019-01-19 10:15:04 +0900
+updated : 2019-01-19 12:03:58 +0900
 tags    : study
 toc     : true
 public  : true
@@ -70,9 +70,11 @@ latex   : false
 
 # 프로그래밍
 
-## 새로운 언어/프레임워크를 공부할 때는 나만의 snippet 파일을 만들자
+## 나만의 snippet 파일을 만들자
 
 **vim에서 쓸 해당 언어의 자동완성 snippet 파일을 만든다.**
+
+특히 새로운 언어/프레임워크를 공부할 때 유용하다.
 
 * 왜 snippet 파일을 만들까?
     * 내 손에 맞는 자동완성 도구를 내 손으로 만드는 즐거움.
