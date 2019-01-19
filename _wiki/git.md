@@ -3,7 +3,7 @@ layout  : category
 title   : git
 summary : 
 date    : 2018-12-02 10:11:09 +0900
-updated : 2019-01-19 15:17:25 +0900
+updated : 2019-01-19 23:00:46 +0900
 tags    : git command
 toc     : true
 public  : true
@@ -47,6 +47,12 @@ $ git push origin --tags        # push 모든 tag
 ```sh
 $ git bisect start HEAD a42feb7
 $ git bisect run test.sh        # test.sh : 오류가 없으면 0, 있으면 1을 리턴하는 셸 스크립트
+```
+
+## reflog 사용
+```sh
+$ git reflog        # 로컬 HEAD 히스토리를 본다. 너무 오래된 것은 볼 수 없다.
+$ git show HEAD@{1} # 로컬 HEAD history 1번을 본다. 즉 git show HEAD 와 똑같다.
 ```
 
 # Documents
