@@ -3,7 +3,7 @@ layout  : category
 title   : git
 summary : 
 date    : 2018-12-02 10:11:09 +0900
-updated : 2019-01-19 23:15:07 +0900
+updated : 2019-01-19 23:23:30 +0900
 tags    : git command
 toc     : true
 public  : true
@@ -59,6 +59,11 @@ $ git bisect run test.sh        # test.sh : 오류가 없으면 0, 있으면 1�
 ```sh
 $ git reflog        # 로컬 HEAD 히스토리를 본다. 너무 오래된 것은 볼 수 없다.
 $ git show HEAD@{1} # 로컬 HEAD history 1번을 본다. 즉 git show HEAD 와 똑같다.
+```
+
+## commit
+```sh
+$ git commit -v     # 커밋 메시지 작성에 참고할 수 있도록, 변경 사항도 보여준다
 ```
 
 # Documents
