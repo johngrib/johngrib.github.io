@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : 나의 공부 방법
-summary : 기록해두지 않으면 좋은 방법도 쉬다가 까먹을 수 있다
+summary :
 date    : 2019-01-18 23:12:07 +0900
-updated : 2019-01-19 10:12:50 +0900
+updated : 2019-01-19 10:15:04 +0900
 tags    : study
 toc     : true
 public  : true
