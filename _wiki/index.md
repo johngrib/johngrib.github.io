@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-15 17:39:29 +0900
+updated : 2019-01-18 23:12:06 +0900
 tags    : index
 toc     : true
 public  : true
@@ -30,6 +30,7 @@ comment : false
 * [[how-to]]
     * [[googling]]
     * [[mathjax-latex]]
+    * [[my-study-method]]
 * [[links]]
     * [[links-2019]]
     * [[links-2018]]
