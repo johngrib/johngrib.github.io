@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2018-12-09 17:29:07 +0900
+updated : 2019-01-20 08:32:52 +0900
 tags    : fzf git bash
 toc     : true
 public  : true
@@ -42,7 +42,7 @@ latex   : false
 
 이러한 alias라면 확실히 편리하게 사용할 수 있을 것이다.
 
-그리고 다음 alias는 개인적으로 필수 alias라고 생각하는 것이다. 몇 년 전 예전 회사 동료 H 님에게 받은 이후로 잘 사용하고 있다. git의 log 그래프를 보기 좋게 해주니 이런 종류의 alias를 사용하지 않고 있었다면 반드시 등록해서 사용하도록 하자.
+그리고 다음 alias는 필수 alias라고 생각하는 것이다. 몇 년 전 예전 회사 동료 H 님에게 받은 이후로 잘 사용하고 있다. git의 log 그래프를 보기 좋게 해주니 이런 종류의 alias를 사용하지 않고 있었다면 반드시 등록해서 사용하도록 하자.
 
 ```perl
 [alias]
