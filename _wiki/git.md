@@ -3,7 +3,7 @@ layout  : category
 title   : git
 summary : 
 date    : 2018-12-02 10:11:09 +0900
-updated : 2019-01-16 23:20:54 +0900
+updated : 2019-01-19 15:17:25 +0900
 tags    : git command
 toc     : true
 public  : true
@@ -41,6 +41,12 @@ $ git tag -a tag_name 8d2c77f   # 8d2c77f commit 에 tag 붙이기
 $ git tag tag_name              # lightWeight tag 붙이기.
 $ git push orgin tag_name       # push tag
 $ git push origin --tags        # push 모든 tag
+```
+
+## bisect 를 사용하여 이진탐색으로 버그가 있는 commit 찾기
+```sh
+$ git bisect start HEAD a42feb7
+$ git bisect run test.sh        # test.sh : 오류가 없으면 0, 있으면 1을 리턴하는 셸 스크립트
 ```
 
 # Documents
