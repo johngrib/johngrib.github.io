@@ -3,7 +3,7 @@ layout  : category
 title   : git
 summary : 
 date    : 2018-12-02 10:11:09 +0900
-updated : 2019-01-19 23:00:46 +0900
+updated : 2019-01-19 23:15:07 +0900
 tags    : git command
 toc     : true
 public  : true
@@ -19,6 +19,12 @@ latex   : false
 $ git log --since=2.weeks   # 오늘부터 2주 전까지의 커밋 로그를 본다
 $ git log -S test           # 변경사항 중 test 검색
 $ git log --grep test       # test 를 포함하는 커밋 메시지 검색
+
+$ git log ref_a..ref_b          # 범위로 로그를 조회한다
+$ git log origin/master..HEAD   # origin/master 부터 로컬 헤드까지의 커밋을 본다
+
+$ git log ref_a...refb --left-right # ref_a 와 ref_b 의 교집합이 아닌 커밋 목록을 보여준다
+$ git log ref_a ref_b ^ref_c        # ref_a, ref_b 에는 있고, ref_c 에는 없는 커밋을 본다
 ```
 
 ## tracked 파일 삭제
