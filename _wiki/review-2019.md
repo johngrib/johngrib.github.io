@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-01-19 16:33:05 +0900
+updated : 2019-01-20 13:48:52 +0900
 tags    : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 # 책
 
+* 2019-01-20 Pro Git 2/E
 * 2019-01-19 수학 천재 튜링과 컴퓨터 혁명(Turing and the Universal Machine by Jon Agar)
 * 2019-01-15 Modern PHP
 * 2019-01-10 읽기 좋은 코드가 좋은 코드다 - 7년 전에 읽은 책을 다시 읽어 보았다.
