@@ -3,7 +3,7 @@ layout  : category
 title   : git
 summary : 
 date    : 2018-12-02 10:11:09 +0900
-updated : 2019-01-19 23:23:30 +0900
+updated : 2019-01-20 09:41:26 +0900
 tags    : git command
 toc     : true
 public  : true
@@ -25,6 +25,8 @@ $ git log origin/master..HEAD   # origin/master 부터 로컬 헤드까지의 �
 
 $ git log ref_a...refb --left-right # ref_a 와 ref_b 의 교집합이 아닌 커밋 목록을 보여준다
 $ git log ref_a ref_b ^ref_c        # ref_a, ref_b 에는 있고, ref_c 에는 없는 커밋을 본다
+
+$ git log -L :func_name:file_name   # 특정 파일의 특정 함수의 히스토리를 본다. 함수 범위는 자동으로 인식한다
 ```
 
 ## tracked 파일 삭제
@@ -65,5 +67,22 @@ $ git show HEAD@{1} # 로컬 HEAD history 1번을 본다. 즉 git show HEAD 와 
 ```sh
 $ git commit -v     # 커밋 메시지 작성에 참고할 수 있도록, 변경 사항도 보여준다
 ```
+
+## filter-branch 사용
+```sh
+$ git filter-branch --tree-filter 'rm -f passwords.txt' HEAD    # passwords.txt 파일을 모든 히스토리에서 삭제
+$ git filter-branch --commit-filter '
+    if [ "$GIT_AUTHOR_EMAIL" = "schacon@localhost" ];
+    then
+            GIT_AUTHOR_NAME="Scott Chacon";
+            GIT_AUTHOR_EMAIL="schacon@example.com";
+            git commit-tree "$@";
+    else
+            git commit-tree "$@";
+    fi' HEAD    # 모든 커밋의 이메일 주소를 수정한다
+```
+
+# 참고문헌
+* 프로 Git 2판 - 그림으로 이해하는 Git의 작동 원리와 사용법 / 스캇 샤콘, 벤 스트라웁 공저 / 박창우, 이성환, 최용재 공역 / 인사이트(insight) / 2016년 03월 30일
 
 # Documents
