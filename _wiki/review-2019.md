@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-01-20 23:13:33 +0900
+updated : 2019-01-22 13:32:55 +0900
 tags    : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 # 책
 
+* 2019-01-22 [[grow-together]]{함께 자라기} - 좋은 책이라 또 읽었다
 * 2019-01-20 The Nature of Software Development
 * 2019-01-20 Pro Git 2/E
 * 2019-01-19 수학 천재 튜링과 컴퓨터 혁명(Turing and the Universal Machine by Jon Agar)
