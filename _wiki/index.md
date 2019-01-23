@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-18 23:12:06 +0900
+updated : 2019-01-23 11:19:37 +0900
 tags    : index
 toc     : true
 public  : true
@@ -87,6 +87,7 @@ comment : false
     * [[static-factory-method-pattern]]
 * [[problem]]
 * [[programming-language]]{프로그래밍 언어}
+    * [[awk]]
     * [[bc]]
     * [[Golang]]
         * [[ginkgo]]
@@ -207,11 +208,11 @@ comment : false
         * [[my-bash-cheatsheet]]
         * [[openssl]]
         * [[phpbrew]]
-        * [[touch]]
         * [[sha256sum]]
         * [[sort]]
         * [[tail]]
         * [[top]]
+        * [[touch]]
         * [[uptime]]
         * [[yes]]
     * [[Excel]]
