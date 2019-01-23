@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-23 11:19:37 +0900
+updated : 2019-01-23 22:56:45 +0900
 tags    : index
 toc     : true
 public  : true
@@ -161,6 +161,7 @@ comment : false
         * [[discrete-math-inference-rules]]
         * [[discrete-math-proofs]]
         * [[discrete-math-sets]]
+        * [[discrete-math-functions]]
         * [[d-m-du-2016-01]]
     * [[study-formal-languages-and-automata]]
         * [[f-l-a-00-preface]]
