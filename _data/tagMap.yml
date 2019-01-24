@@ -465,6 +465,8 @@ encryption:
     - {fileName: Kerckhoffs-s-principle}
     - {fileName: openssl}
     - {fileName: sha256sum}
+blockchain:
+    - {fileName: ethereum-white-paper}
 ms:
     - {fileName: Excel}
 excel:

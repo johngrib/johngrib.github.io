@@ -820,7 +820,7 @@ discrete-math-functions:
     summary: Functions
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-functions
-    updated: '2019-01-24 00:03:46 +0900'
+    updated: '2019-01-24 22:15:10 +0900'
     children: []
 discrete-math-inference-rules:
     type: wiki
@@ -917,6 +917,14 @@ encryption:
     parent: what
     url: /wiki/encryption
     updated: '2018-10-10 10:04:16 +0900'
+    children: []
+ethereum-white-paper:
+    type: wiki
+    title: '이더리움 백서 요약'
+    summary: 'Ethereum White Paper'
+    parent: what
+    url: /wiki/ethereum-white-paper
+    updated: '2019-01-24 23:23:20 +0900'
     children: []
 euro-problem:
     type: wiki
@@ -1444,7 +1452,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-23 22:56:45 +0900'
+    updated: '2019-01-24 10:20:39 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -2365,7 +2373,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [braille-pattern-chars, Continuous-Integration, encryption, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
+    children: [braille-pattern-chars, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

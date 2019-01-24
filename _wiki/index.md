@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-23 22:56:45 +0900
+updated : 2019-01-24 10:20:39 +0900
 tags    : index
 toc     : true
 public  : true
@@ -278,6 +278,7 @@ comment : false
     * [[special-chars]]
     * [[Unix-philosophy]]
     * [[URI]]
+    * [[ethereum-white-paper]]
 * [[why]]
     * [[letter-case]]
     * [[sql-char-comparison]]
