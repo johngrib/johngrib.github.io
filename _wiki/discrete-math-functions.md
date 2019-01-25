@@ -3,7 +3,7 @@ layout  : wiki
 title   : 함수
 summary : Functions
 date    : 2019-01-23 22:56:50 +0900
-updated : 2019-01-24 22:15:10 +0900
+updated : 2019-01-25 10:42:51 +0900
 tags    : math
 toc     : true
 public  : true
@@ -170,6 +170,18 @@ The function f is a one-to-one correspondence, or a bijection, if it is both one
 * 단사 함수이면서 전사 함수인 함수를 전단사 함수라고 한다.
     * 일대일 대응이라고도 한다.
 
+## 역함수
+
+**inverse function**
+
+>
+Let $$f$$ be a one-to-one correspondence from the set A to the set B. The inverse function of $$f$$ is the function that assigns to an element b belonging to B the unique element a in A such that $$f (a) = b$$. The inverse function of f is denoted by $$f^{−1}$$. Hence, $$f^{−1}(b) = a$$ when $$f(a) = b$$.
+
+* $$f(a) = b$$ 의 역함수는 $$ f^{-1}(b) = a$$.
+* 전단사 함수는 역함수를 만들 수 있으므로 가역 함수(invertible function)이다.
+* 전단사 함수가 아닌 함수는 역함수를 만들 수 없으므로 비가역 함수(not invertible function)이다.
+
+
 # 용어 정리
 
 | English                            | 한국어         | 예/설명                                              |
@@ -193,3 +205,6 @@ The function f is a one-to-one correspondence, or a bijection, if it is both one
 | onto function                      | 전사 함수      | 공역과 치역이 같은 함수                              |
 | surjection                         | 전사 함수      |                                                      |
 | one-to-one correspondence function | 전단사 함수    | 일대일 대응 함수. 전사 함수이면서 단사 함수인 함수.  |
+| inverse function                   | 역함수         | $$f(a) = b$$ 의 역함수는 $$ f^{-1}(b) = a$$          |
+| invertible function                | 가역 함수      | 역함수를 만들 수 있는 함수(전단사 함수)              |
+| not invertible function            | 비가역 함수    | 역함수를 만들 수 없는 함수                           |
