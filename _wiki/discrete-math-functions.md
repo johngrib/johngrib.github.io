@@ -3,7 +3,7 @@ layout  : wiki
 title   : 함수
 summary : Functions
 date    : 2019-01-23 22:56:50 +0900
-updated : 2019-01-25 10:42:51 +0900
+updated : 2019-01-25 21:22:58 +0900
 tags    : math
 toc     : true
 public  : true
@@ -181,6 +181,67 @@ Let $$f$$ be a one-to-one correspondence from the set A to the set B. The invers
 * 전단사 함수는 역함수를 만들 수 있으므로 가역 함수(invertible function)이다.
 * 전단사 함수가 아닌 함수는 역함수를 만들 수 없으므로 비가역 함수(not invertible function)이다.
 
+## 합성함수
+
+**composition of functions**
+
+>
+Let $$g$$ be a function from the set A to the set B and let $$f$$ be a function from the set B to the set C.
+The composition of the functions $$f$$ and $$g$$, denoted for all $$a ∈ A$$ by $$f ◦ g$$, is defined by  
+$$(f ◦ g)(a) = f (g(a))$$
+
+* 함수 f와 g의 합성함수는 $$ f \circ g $$ 로 표기한다.
+* $$ (f ◦ g)(a) = f (g(a)) $$.
+
+## 함수의 그래프
+
+>
+Let $$f$$ be a function from the set A to the set B.
+The graph of the function $$f$$ is the set of ordered pairs $$\{(a,b) \vert a ∈ A \ and \ f(a) = b \}$$.
+
+* 함수 $$ f $$의 그래프는 $$\{(a,b) \vert a ∈ A \ and \ f(a) = b \}$$인 순서쌍의 집합이다.
+
+## 바닥 함수와 천장 함수
+
+**floor function, ceiling function**
+
+>
+The floor function assigns to the real number x the largest integer that is less than or equal to x.
+The value of the floor function at x is denoted by $$⌊x⌋$$.
+The ceiling function assigns to the real number x the smallest integer that is greater than or equal to x.
+The value of the ceiling function at x is denoted by $$⌈x⌉$$.
+
+* 바닥 함수 $$ ⌊x⌋ $$는 내림이다.
+* 천장 함수 $$ ⌈x⌉ $$는 올림이다.
+
+**바닥/천장 함수의 특징**(x는 실수, n은 정수)
+
+| $$ ⌊x⌋ = n \ ↔ \ n ≤ x < n + 1 $$  |
+| $$ ⌈x⌉ = n \ ↔ \ n - 1 < x ≤ n $$  |
+| $$ ⌊x⌋ = n \ ↔ \ x - 1 < n ≤ x $$  |
+| $$ ⌈x⌉ = n \ ↔ \ x ≤ n < x + 1 $$  |
+| $$ x - 1 < ⌊x⌋ ≤ x ≤ ⌈x⌉ < x + 1$$ |
+| $$ ⌊-x⌋ = -⌈x⌉ $$                  |
+| $$ ⌈-x⌉ = -⌊x⌋ $$                  |
+| $$ ⌊x+n⌋ = ⌊x⌋ + n $$              |
+| $$ ⌈x+n⌉ = ⌈x⌉ + n $$              |
+
+## 부분 함수
+
+**partial functions**
+
+>
+A partial function $$ f $$ from a set A to a set B is an assignment to each element a in a subset of A,
+called the domain of definition of $$ f $$, of a unique element b in B.
+The sets A and B are called the domain and codomain of $$ f $$, respectively.
+We say that $$ f $$ is undefined for elements in A that are not in the domain of definition of $$ f $$.
+When the domain of definition of $$ f $$ equals A, we say that $$ f $$ is a total function.
+
+* 정의된 정의역의 각 원소를 공역의 각 원소에 대응시키는 함수.
+* 정의된 정의역(domain of definition): 정의역의 부분집합.
+    * 정의된 정의역에 속하지 않는 원소에 대해서는 undefined 라 한다.
+* 부분 함수는 다른 함수와 동일하게 표기하며, 부분함수인지는 문맥을 보고 파악해야 한다.
+* 부분함수의 정의역이 원래의 정의역과 같을 때, 그 함수를 전체 함수(total function)라 한다.
 
 # 용어 정리
 
@@ -208,3 +269,14 @@ Let $$f$$ be a one-to-one correspondence from the set A to the set B. The invers
 | inverse function                   | 역함수         | $$f(a) = b$$ 의 역함수는 $$ f^{-1}(b) = a$$          |
 | invertible function                | 가역 함수      | 역함수를 만들 수 있는 함수(전단사 함수)              |
 | not invertible function            | 비가역 함수    | 역함수를 만들 수 없는 함수                           |
+| composition of functions           | 합성함수       | $$ f \circ g $$                                      |
+| floor function                     | 바닥 함수      | 내림                                                 |
+| ceiling function                   | 천장 함수      | 올림                                                 |
+| total function                     | 전체 함수      |                                                      |
+| partial function                   | 부분 함수      | 전체 함수의 정의역의 부분집합을 정의역으로 삼는 함수 |
+| domain of definition               | 정의된 정의역  | 부분 함수의 정의역                                   |
+
+# 참고문헌
+
+* Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
+
