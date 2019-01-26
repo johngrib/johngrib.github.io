@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) 이더리움 백서
 summary : Ethereum White Paper
 date    : 2019-01-22 22:56:21 +0900
-updated : 2019-01-26 13:31:52 +0900
+updated : 2019-01-26 15:32:02 +0900
 tags    : blockchain
 toc     : true
 public  : true
@@ -296,7 +296,7 @@ _S = APPLY(S, TX)   // ERROR
     * contract code: 계약 코드
     * storage: 스토리지 트리의 머클 루트
 
-[a59a93f:go-ethereum/core/state/state_object.go:91](https://github.com/ethereum/go-ethereum/blob/a59a93f476434f2805c8fd3e10bf1b2f579b078f/core/state/state_object.go#L91-L100 )에서 `Account struct`를 보면 다음과 같다.
+[2209fed:go-ethereum/core/state/state_object.go](https://github.com/ethereum/go-ethereum/blob/2209fede4e2cb19bc6336562fc41812ec1d56435/core/state/state_object.go#L96-L103 )에서 `Account struct`를 보면 다음과 같다.
 ```go
 // Account is the Ethereum consensus representation of accounts.
 // These objects are stored in the main account trie.
@@ -342,6 +342,47 @@ Note that "contracts" in Ethereum should not be seen as something that should be
 
 
 ## 메시지와 트랜잭션
+
+* transaction: 외부 소유 어카운트(EOA)가 보낼 메시지를 가지고 있는 서명된 데이터 패키지.
+* transaction은 다음을 포함한다.
+    * 메시지 수신자
+    * 메시지 발신자의 서명
+    * amount of ether: 발신자가 수신자에게 보내는 이더의 양
+    * optional data field
+    * STARTGAS 값: 트랜잭션 실행이 수행되도록 허용된 최대 계산 수
+    * GASPRICE 값: 매 계산단계마다 발신처가 지불하는 수수료
+
+**STARTGAS, GASPRICE**
+
+* 이더리움의 anti-Denial of Service model(anti-DoS)에 중요한 역할을 한다.
+* 각각의 트랜잭션은 코드 실행 시의 계산 단계 **최대값**을 설정해야 한다.
+    * 코드 내의 무한루프, 계산 낭비를 방지한다.
+* 계산의 기본 단위는 **gas**.
+* 일반적인 계산 단계의 비용은 **1 gas**.
+    * 1 gas 보다 비싼 계산도 있다.
+    * 트랜잭션 데이터에 있는 모든 바이트는 바이트당 **5 gas**의 수수료가 든다.
+    * 공격자가 수수료를 많이 지불하게 만드는 방식.
+
+[2209fed:go-ethereum/core/types/transaction.go](https://github.com/ethereum/go-ethereum/blob/2209fede4e2cb19bc6336562fc41812ec1d56435/core/types/transaction.go#L38-L72 )에서 `txdata struct`를 보면 다음과 같다.
+
+```go
+type txdata struct {
+    AccountNonce uint64          `json:"nonce"    gencodec:"required"`
+    Price        *big.Int        `json:"gasPrice" gencodec:"required"`
+    GasLimit     uint64          `json:"gas"      gencodec:"required"`
+    Recipient    *common.Address `json:"to"       rlp:"nil"` // nil means contract creation
+    Amount       *big.Int        `json:"value"    gencodec:"required"`
+    Payload      []byte          `json:"input"    gencodec:"required"`
+
+    // Signature values
+    V *big.Int `json:"v" gencodec:"required"`
+    R *big.Int `json:"r" gencodec:"required"`
+    S *big.Int `json:"s" gencodec:"required"`
+
+    // This is only used when marshaling to JSON.
+    Hash *common.Hash `json:"hash" rlp:"-"`
+}
+```
 
 ## 메시지
 
