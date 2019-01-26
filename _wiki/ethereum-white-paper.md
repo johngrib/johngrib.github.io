@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) 이더리움 백서
 summary : Ethereum White Paper
 date    : 2019-01-22 22:56:21 +0900
-updated : 2019-01-26 00:26:57 +0900
+updated : 2019-01-26 13:31:52 +0900
 tags    : blockchain
 toc     : true
 public  : true
@@ -258,6 +258,8 @@ _S = APPLY(S, TX)   // ERROR
 
 ## 철학
 
+철학은 [[Korean] White Paper](https://github.com/ethereum/wiki/wiki/%5BKorean%5D-White-Paper#%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80 )에는 없어서(2019년 1월 26일 기준), [White Paper](https://github.com/ethereum/wiki/wiki/White-Paper#philosophy )를 참고하여 요약하였다.
+
 * 단순함(Simplicity)
     * 이더리움 프로토콜은 가능한 한 단순해야 한다.
     * 평균적인 수준의 프로그래머가 전체 사양을 준수하고 구현할 수 있어야 한다.
@@ -282,20 +284,61 @@ _S = APPLY(S, TX)   // ERROR
 ## 이더리움 어카운트
 
 * 상태(state)
-    * 어카운트(account) object 로 구성된다.
+    * [어카운트(account) object들로 구성되어 있다.](https://github.com/ethereum/go-ethereum/blob/5d921fa3a0cea9d87e7fd391c0ddd3115d00d0c4/core/state/state_object.go#L66 )
 
-* 어카운트(account)는 다음과 같이 구성된다.
+* 각각의 어카운트는 다음을 갖고 있다.
     * 주소(20 byte)
     * 상태 변환(state transition)
-* 이더리움 어카운트는 네 개의 필드를 가지고 있다.
-    * nonce: 각 트랜잭션이 한번만 처리되게 하는 카운터
-    * 어카운트의 이더(ether) 잔고
-    * 어카운트의 계약 코드(없을 수도 있다)
-    * 어카운트의 저장 공간(처음엔 비어 있다)
+
+* 어카운트에는 다음의 네 개의 필드가 포함되어 있다.
+    * nonce: 각 트랜잭션이 한번만 처리되도록 하는 카운터
+    * ether balance: 이더 잔고
+    * contract code: 계약 코드
+    * storage: 스토리지 트리의 머클 루트
+
+[a59a93f:go-ethereum/core/state/state_object.go:91](https://github.com/ethereum/go-ethereum/blob/a59a93f476434f2805c8fd3e10bf1b2f579b078f/core/state/state_object.go#L91-L100 )에서 `Account struct`를 보면 다음과 같다.
+```go
+// Account is the Ethereum consensus representation of accounts.
+// These objects are stored in the main account trie.
+type Account struct {
+    Nonce    uint64
+    Balance  *big.Int
+    Root     common.Hash // merkle root of the storage trie
+    CodeHash []byte
+}
+```
 
 * 이더(ether)
-    * 이더리움의 연료.
+    * 이더리움의 암호-연료(crypto-fuel).
     * 트랜잭션 수수료를 지불하는데 사용.
+
+### EOA, CA
+
+|           | EOA                                                | CA                                        |
+|-----------|----------------------------------------------------|-------------------------------------------|
+| 의미      | Externally Owned Accounts                          | Contract Accounts                         |
+| 한국어(?) | 외부 소유 어카운트                                 | 컨트랙트 어카운트                         |
+| 코드      | 코드를 갖고 있지 않음                              | 코드를 갖고 있음                          |
+| 메시지    | 메시지를 보내려면 새 트랜잭션을 만들고 서명해야 함 | 메시지를 받을 때마다 자신의 코드를 활성화 |
+
+* CA는 코드 활성화를 통해 다음과 같은 일들을 할 수 있다.
+    * 받은 메시지를 읽고 내부 저장공간에 기록한다.
+    * 다른 메시지를 보낸다.
+    * 컨트랙트들을 차례로 생성한다.
+
+### 이더리움에서 컨트랙트란?
+
+>
+Note that "contracts" in Ethereum should not be seen as something that should be "fulfilled" or "complied with"; rather, they are more like "autonomous agents" that live inside of the Ethereum execution environment, always executing a specific piece of code when "poked" by a message or transaction, and having direct control over their own ether balance and their own key/value store to keep track of persistent variables.
+
+| 계약(사회)                                                      | 계약(이더리움)       |
+|-----------------------------------------------------------------|----------------------|
+| 이행해야 하는 것(fulfilled)<br/>준수해야 하는 것(complied with) | 일종의 자율 에이전트 |
+
+* 이더리움에서의 계약
+    * 일종의 자율 에이전트.
+    * 메시지나 트랜잭션이 도착하면 특정 코드를 실행한다.
+    * 자신의 이더 잔고와 key/value 저장소를 직접 통제한다.
 
 
 ## 메시지와 트랜잭션
@@ -312,4 +355,6 @@ _S = APPLY(S, TX)   // ERROR
 
 # Links
 
-* [Ethereum White Paper 한국어](https://github.com/ethereum/wiki/wiki/%5BKorean%5D-White-Paper )
+* [Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper )
+    * [Ethereum White Paper(web.archive.org)](https://web.archive.org/web/20190125161855/https://github.com/ethereum/wiki/wiki/White-Paper ) - 2019-01-25
+    * [Ethereum White Paper 한국어](https://github.com/ethereum/wiki/wiki/%5BKorean%5D-White-Paper )
