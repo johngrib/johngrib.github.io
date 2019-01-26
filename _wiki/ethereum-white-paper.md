@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) 이더리움 백서
 summary : Ethereum White Paper
 date    : 2019-01-22 22:56:21 +0900
-updated : 2019-01-26 15:32:02 +0900
+updated : 2019-01-26 17:12:28 +0900
 tags    : blockchain
 toc     : true
 public  : true
@@ -385,6 +385,44 @@ type txdata struct {
 ```
 
 ## 메시지
+
+* contract는 다른 contract에게 메시지를 전달할 수 있다.
+* message는 serialized 되지 않는 virtual object이며 이더리움 실행 환경에서만 존재한다.
+* message는 다음을 포함한다.
+    * 발신자 sender
+    * 수신자 recipient
+    * 메시지와 함께 전송되는 amount of ether
+    * optional data field
+    * STARTGAS 값
+
+[2209fed:go-ethereum/core/types/transaction.go](https://github.com/ethereum/go-ethereum/blob/2209fede4e2cb19bc6336562fc41812ec1d56435/core/types/transaction.go#L383-L395 )에서 `Message struct`를 보면 다음과 같다.
+
+```go
+type Message struct {
+    to         *common.Address
+    from       common.Address
+    nonce      uint64
+    amount     *big.Int
+    gasLimit   uint64
+    gasPrice   *big.Int
+    data       []byte
+    checkNonce bool
+}
+```
+
+* 메시지는 컨트랙트가 생성한다.
+    * 컨트랙트가 코드를 실행하다가 메시지 생성을 의미하는 CALL opcode 가 있으면 메시지를 생성하고 실행한다.
+* 트랜잭션이나 컨트랙트에 의해 할당된 gas 허용치
+    * 트랜잭션과 모든 하위 작업 실행에서 소모된 총 gas에 적용된다.
+
+**gas 사용 예**
+
+| 순서 | 작업                                                                    | 잔여 gas |
+|------|-------------------------------------------------------------------------|----------|
+| 0    | A(외부 실행자)가 B에게 트랜잭션과 1000 gas 를 보냄                      | 1000 gas |
+| 1    | B 가 (트랜잭션 코드 실행 등으로) 600 gas 를 사용하고 C 에게 메시지 전송 | 400 gas  |
+| 2    | C 가 내부 실행으로 300 gas 사용하고 B 에게 반환                         | 100 gas  |
+| 3    | (이제 B 는 100 gas 를 더 사용할 수 있다.)                               | 100 gas  |
 
 ## 이더리움 상태 변환 함수
 
