@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) 이더리움 백서
 summary : Ethereum White Paper
 date    : 2019-01-22 22:56:21 +0900
-updated : 2019-01-26 23:55:19 +0900
+updated : 2019-01-27 17:08:31 +0900
 tags    : blockchain
 toc     : true
 public  : true
@@ -515,6 +515,44 @@ if !self.storage[calldataload(0)]:
 
 
 ## 코드 실행
+
+* EVM: Ethereum Virtual Machine
+* EVM code
+    * stack 기반의 low-level 언어로 작성.
+    * operation 을 의미하는 바이트들로 이루어진 바이트코드
+    * (아희나 brainfuck 을 사용했던 경험을 떠올려보자)
+* 실행
+    * 기본적으로는 프로그램 카운터를 0 부터 증가시키면서 연산을 수행하는 무한 루프.
+* 실행을 멈추는 조건
+    * 코드의 마지막에 도달한다.
+    * 오류가 발생한다.
+    * STOP, RETURN 명령.
+
+**3 가지 데이터 저장 공간**
+
+| stack   | 스택.                                                | 실행이 끝나면 리셋된다         |
+| memory  | 길이 제한을 두지 않은 바이트 배열.                   | 실행이 끝나면 리셋된다         |
+| storage | The contract's long-term storage, a key/value store. | 컨트랙트를 영속적으로 보관한다 |
+
+**EVM 코드의 실행 모델**
+
+* 계산 상태는 8개 원소를 갖는 tuple 로 정의한다.
+
+```
+(block_state, transaction, message, code, memory, stack, pc, gas)
+```
+
+* `block_state` 는 모든 어카운트를 포함하는 전역 상태(global state) 이다.
+    * 잔고와 저장소(`storage`)가 `block_state` 에 들어 있다.
+* 다음을 반복한다.
+    * pc(프로그램 카운터) 값을 확인한다.
+    * 확인한 pc 값 번째 바이트의 명령을 실행한다.
+        * 만약 pc 값이 바이트 코드의 길이보다 크면 0 으로 한다.
+* 각각의 명령은 tuple 을 변화시킨다.
+    * ADD: stack 에서 pop 을 두 번 해서 나온 두 값을 더한 다음, 다시 stack 에 push 한다. (1 gas 사용, pc 1 증가)
+    * SSTORE: stack 에서 pop 을 두 번 한 다음, 먼저 꺼낸 값이 가리키는 컨트랙트 저장소 인덱스에 두 번째 값을 넣는다.
+    * 등등...
+
 
 ## 블록체인과 채굴
 
