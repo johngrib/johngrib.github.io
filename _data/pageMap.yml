@@ -820,7 +820,7 @@ discrete-math-functions:
     summary: Functions
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-functions
-    updated: '2019-01-24 22:15:10 +0900'
+    updated: '2019-01-25 21:22:58 +0900'
     children: []
 discrete-math-inference-rules:
     type: wiki
@@ -853,6 +853,14 @@ discrete-math-quantifiers:
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-quantifiers
     updated: '2019-01-06 11:21:04 +0900'
+    children: []
+discrete-math-sequences:
+    type: wiki
+    title: 수열
+    summary: Sequences
+    parent: study-discrete-mathematics
+    url: /wiki/discrete-math-sequences
+    updated: '2019-01-27 21:04:08 +0900'
     children: []
 discrete-math-sets:
     type: wiki
@@ -920,11 +928,11 @@ encryption:
     children: []
 ethereum-white-paper:
     type: wiki
-    title: '이더리움 백서 요약'
+    title: '(요약) 이더리움 백서'
     summary: 'Ethereum White Paper'
     parent: what
     url: /wiki/ethereum-white-paper
-    updated: '2019-01-24 23:23:20 +0900'
+    updated: '2019-01-27 17:33:05 +0900'
     children: []
 euro-problem:
     type: wiki
@@ -1452,7 +1460,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-24 10:20:39 +0900'
+    updated: '2019-01-27 19:57:15 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -2045,7 +2053,7 @@ study-discrete-mathematics:
     parent: study
     url: /wiki/study-discrete-mathematics
     updated: '2019-01-05 17:15:40 +0900'
-    children: [d-m-du-2016-01, discrete-math-functions, discrete-math-inference-rules, discrete-math-proofs, discrete-math-propositional-logic, discrete-math-quantifiers, discrete-math-sets]
+    children: [d-m-du-2016-01, discrete-math-functions, discrete-math-inference-rules, discrete-math-proofs, discrete-math-propositional-logic, discrete-math-quantifiers, discrete-math-sequences, discrete-math-sets]
 study-formal-languages-and-automata:
     type: wiki
     title: '(study) FORMAL LANGUAGES AND AUTOMATA'
