@@ -24,6 +24,7 @@ math:
     - {fileName: discrete-math-quantifiers}
     - {fileName: discrete-math-sequences}
     - {fileName: discrete-math-sets}
+    - {fileName: discrete-math-summations}
     - {fileName: frac1e}
     - {fileName: gcd}
     - {fileName: math}

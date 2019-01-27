@@ -870,6 +870,14 @@ discrete-math-sets:
     url: /wiki/discrete-math-sets
     updated: '2019-01-19 18:12:27 +0900'
     children: []
+discrete-math-summations:
+    type: wiki
+    title: '수열의 합'
+    summary: Summations
+    parent: study-discrete-mathematics
+    url: /wiki/discrete-math-summations
+    updated: '2019-01-27 22:18:50 +0900'
+    children: []
 DOM-Enlightenment-by-Cody-Lindley:
     type: wiki
     title: '(책) DOM을 깨우치다 - 가치에 대한 완전한 이해'
@@ -1460,7 +1468,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-01-27 19:57:15 +0900'
+    updated: '2019-01-27 21:09:12 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -2053,7 +2061,7 @@ study-discrete-mathematics:
     parent: study
     url: /wiki/study-discrete-mathematics
     updated: '2019-01-05 17:15:40 +0900'
-    children: [d-m-du-2016-01, discrete-math-functions, discrete-math-inference-rules, discrete-math-proofs, discrete-math-propositional-logic, discrete-math-quantifiers, discrete-math-sequences, discrete-math-sets]
+    children: [d-m-du-2016-01, discrete-math-functions, discrete-math-inference-rules, discrete-math-proofs, discrete-math-propositional-logic, discrete-math-quantifiers, discrete-math-sequences, discrete-math-sets, discrete-math-summations]
 study-formal-languages-and-automata:
     type: wiki
     title: '(study) FORMAL LANGUAGES AND AUTOMATA'
