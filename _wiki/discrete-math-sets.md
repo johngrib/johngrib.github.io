@@ -3,7 +3,7 @@ layout  : wiki
 title   : 집합
 summary : Sets
 date    : 2019-01-14 22:13:18 +0900
-updated : 2019-01-19 18:12:27 +0900
+updated : 2019-01-28 23:09:30 +0900
 tags    : math
 toc     : true
 public  : true
@@ -45,16 +45,6 @@ We use the notation $$A ⊆ B$$ to indicate that A is a subset of the set B.
 * 집합 A의 모든 원소가 집합 B의 원소이면 A는 B의 부분집합이다.
 * $$ A \subset B $$ : 진 부분집합(proper subset)
     * $$ A \subseteq B $$ 이고, $$ A \ne B $$ 이면 A는 B의 진 부분집합.
-
-## 집합의 크기(cardinality)
-
->
-Let S be a set.
-If there are exactly n distinct elements in S where n is a nonnegative integer,
-we say that S is a finite set and that n is the cardinality of S.
-The cardinality of S is denoted by $$ \vert S \vert $$.
-
-* 유한 집합(finite set) S의 크기는 $$ \vert S \vert $$로 표기한다.
 
 ## 멱집합(poser set)
 
@@ -121,23 +111,59 @@ $$ A_1 ∩ A_2 ∩ ... ∩ A_n = \bigcap_{i=1}^n A_i $$
 * 여집합은 $$ U - A $$이고, $$ \bar{A} $$로 표기한다.
 * $$ \bar{A} = \{ x ∈ U \vert x ∉ A \} $$
 
+# 집합의 항등
+
+| $$A ∩ U = A$$ <br> $$A ∪ \emptyset = A $$                      | 항등법칙         | Identity laws       |
+| $$A ∪ U = U$$ <br> $$A ∩ \emptyset = \emptyset $$              | 지배법칙         | Domination laws     |
+| $$A ∪ A = A$$ <br> $$A ∩ A = A$$                               | 멱등법칙         | Idempotent laws     |
+| $$ \overline{ (\bar{A}) } = A $$                               | 보원법칙         | Complementation law |
+| $$A ∪ B = B ∪ A$$ <br> $$ A ∩ B = B ∩ A $$                     | 교환법칙         | Commutative laws    |
+| $$A∪(B∪C) = (A∪B)∪C$$ <br> $$A∩(B∩C) = (A∩B)∩C$$               | 결합법칙         | Associative laws    |
+| $$A∪(B∩C)=(A∪B)∩(A∪C)$$<br>$$A∩(B∪C)=(A∩B)∪(A∩C)$$             | 분배법칙         | Distributive laws   |
+| $$\bar{A∩B}=\bar{A}∪\bar{B}$$<br>$$\bar{A∪B}=\bar{A}∩\bar{B}$$ | 드 모르간의 법칙 | De Morgan's laws    |
+| $$A ∪ (A ∩ B) = A$$ <br> $$A ∩ (A ∪ B) = A $$                  | 흡수법칙         | Absorption laws     |
+| $$A ∪ \bar{A} = U$$ <br> $$A ∩ \bar{A} = ∅ $$                  | 보수법칙         | Complement laws     |
+
+# datatype 과 집합
+
+>
+컴퓨터과학에서 이야기하는 "데이터형"이라고 하는 개념은 집합의 개념 위에 정의된다는 것에 주목하라.
+특히 **datatype, type**이란 집합과 그 집합을 구성하고 있는 개체에 적용할 수 있는 연산자들의 집합을 말한다.
+예를 들어 boolean 이란 집합 $$ \{ 0, 1 \} $$과, 그 원소인 0과 1을 피연산자로 하여 연산을 수행하는
+**AND, OR, NOT**과 같은 연산자들을 함께 지칭하는 것이다.
+
+# 집합의 크기
+
+**Cardinality of Sets**
+
+>
+Let S be a set.
+If there are exactly n distinct elements in S where n is a nonnegative integer,
+we say that S is a finite set and that n is the cardinality of S.
+The cardinality of S is denoted by $$ \vert S \vert $$.
+
+* 0 이상의 정수 $$n$$에 대하여, 집합 $$S$$에 $$n$$ 개의 서로 다른 원소가 존재하면
+    * $$S$$는 유한집합(finite set)이다.
+    * $$n$$은 집합 $$S$$의 크기(cardinality)이다.
+* 유한 집합(finite set) $$S$$의 크기는 $$ \vert S \vert $$로 표기한다.
+
 # 용어 정리
 
-| English                    | 한국어          | Example                                            |
-|----------------------------|-----------------|----------------------------------------------------|
-| element, member            | 원소            |                                                    |
-| roster method              | 원소나열법      | $$ O = \{ 1,2,3 \} $$                              |
-| set builder notation       | 조건 제시법     | $$ O = \{ x \vert x\text{는 짝수} \} $$            |
-| empty set, null set        | 공집합          | $$ \emptyset $$                                    |
-| singleton set              | 단일원소 집합   | $$ O = \{ 1 \} $$                                  |
-| venn diagrams              | 벤 다이어그램   |                                                    |
-| universal set              | 전체집합        | $$ U $$                                            |
-| subsets                    | 부분집합        |                                                    |
-| proper subset              | 진부분집합      |                                                    |
-| size of a set, cardinality | 집합의 크기     | $$ \vert \emptyset \vert = 0 $$                    |
-| power set                  | 멱집합          | $$ P(\{0,1\})=\{\emptyset,\{0\},\{1\},\{0,1\}\} $$ |
-| ordered n-tuples           | 순서가 있는 n짝 |                                                    |
-| ordered pairs              | 순서쌍          |                                                    |
+| English                    | 한국어           | Example, 설명                                      |
+|----------------------------|------------------|----------------------------------------------------|
+| element, member            | 원소             |                                                    |
+| roster method              | 원소나열법       | $$ O = \{ 1,2,3 \} $$                              |
+| set builder notation       | 조건 제시법      | $$ O = \{ x \vert x\text{는 짝수} \} $$            |
+| empty set, null set        | 공집합           | $$ \emptyset $$                                    |
+| singleton set              | 단일원소 집합    | $$ O = \{ 1 \} $$                                  |
+| venn diagrams              | 벤 다이어그램    |                                                    |
+| universal set              | 전체집합         | $$ U $$                                            |
+| subsets                    | 부분집합         |                                                    |
+| proper subset              | 진부분집합       |                                                    |
+| size of a set, cardinality | 집합의 크기      | $$ \vert \emptyset \vert = 0 $$                    |
+| power set                  | 멱집합           | $$ P(\{0,1\})=\{\emptyset,\{0\},\{1\},\{0,1\}\} $$ |
+| ordered n-tuples           | 순서가 있는 n짝  |                                                    |
+| ordered pairs              | 순서쌍           |                                                    |
 
 ## 조건 제시법의 예
 
@@ -163,26 +189,6 @@ $$
 * **[a, b]** : 닫힌 구간(closed interval)
 * **(a, b)** : 열린 구간(open interval)
 
-# 집합의 항등
-
-| $$A ∩ U = A$$ <br> $$A ∪ \emptyset = A $$                      | 항등법칙         | Identity laws       |
-| $$A ∪ U = U$$ <br> $$A ∩ \emptyset = \emptyset $$              | 지배법칙         | Domination laws     |
-| $$A ∪ A = A$$ <br> $$A ∩ A = A$$                               | 멱등법칙         | Idempotent laws     |
-| $$ \overline{ (\bar{A}) } = A $$                               | 보원법칙         | Complementation law |
-| $$A ∪ B = B ∪ A$$ <br> $$ A ∩ B = B ∩ A $$                     | 교환법칙         | Commutative laws    |
-| $$A∪(B∪C) = (A∪B)∪C$$ <br> $$A∩(B∩C) = (A∩B)∩C$$               | 결합법칙         | Associative laws    |
-| $$A∪(B∩C)=(A∪B)∩(A∪C)$$<br>$$A∩(B∪C)=(A∩B)∪(A∩C)$$             | 분배법칙         | Distributive laws   |
-| $$\bar{A∩B}=\bar{A}∪\bar{B}$$<br>$$\bar{A∪B}=\bar{A}∩\bar{B}$$ | 드 모르간의 법칙 | De Morgan's laws    |
-| $$A ∪ (A ∩ B) = A$$ <br> $$A ∩ (A ∪ B) = A $$                  | 흡수법칙         | Absorption laws     |
-| $$A ∪ \bar{A} = U$$ <br> $$A ∩ \bar{A} = ∅ $$                  | 보수법칙         | Complement laws     |
-
-# datatype 과 집합
-
->
-컴퓨터과학에서 이야기하는 "데이터형"이라고 하는 개념은 집합의 개념 위에 정의된다는 것에 주목하라.
-특히 **datatype, type**이란 집합과 그 집합을 구성하고 있는 개체에 적용할 수 있는 연산자들의 집합을 말한다.
-예를 들어 boolean 이란 집합 $$ \{ 0, 1 \} $$과, 그 원소인 0과 1을 피연산자로 하여 연산을 수행하는
-**AND, OR, NOT**과 같은 연산자들을 함께 지칭하는 것이다.
 
 # 참고문헌
 
