@@ -3,7 +3,7 @@ layout  : wiki
 title   : 집합
 summary : Sets
 date    : 2019-01-14 22:13:18 +0900
-updated : 2019-01-28 23:30:30 +0900
+updated : 2019-01-29 00:22:58 +0900
 tags    : math
 toc     : true
 public  : true
@@ -167,6 +167,48 @@ If there is a one-to-one function from A to B, the cardinality of A is less than
 * $$ \abs{A} \le \abs{B} $$이고, $$ \abs{A} \ne \abs{B} $$이면
     * A의 크기는 B보다 작다. $$ \abs{A} < \abs{B} $$.
 
+## 셀 수 있는 집합
+
+**Countable Sets**
+
+>
+A set that is either finite or has the same cardinality as the set of positive integers is called countable.
+A set that is not countable is called uncountable.
+When an infinite set S is countable,
+we denote the cardinality of S by $$ \aleph_0 $$
+(where $$\aleph$$ is aleph, the first letter of the Hebrew alphabet).
+We write $$\abs{S} = \aleph_0$$ and say that S has cardinality "**aleph null**".
+
+* **uncountable**(셀 수 없는) 집합
+* **countable**(셀 수 있는) 집합
+    * 원소의 수가 유한한 집합.
+    * 원소의 수가 무한한 집합 중, 원소의 수가 **양의 정수의 집합**과 같은 크기를 갖는 집합.
+        * 무한집합 S가 셀 수 있을 경우 S의 크기를 $$ \aleph_0 $$ 라고 표기한다. $$ \abs{S} = \aleph_0 $$.
+        * $$ \aleph_0 $$는 "알레프 널(aleph null)"이라 읽는다.
+
+* 무한 집합을 셀 수 있다는 말은 좀 이상하게 들릴 수 있다.
+    * 양의 정수의 집합으로부터 어떤 집합 S로의 일대일 대응이 가능하다면(전단사 함수) 셀 수 있다고 생각하자.
+
+### 모든 정수의 집합은 셀 수 있는가?
+
+* 모든 정수는 다음과 같이 나열할 수 있을 것이다. 인덱스를 매기기 애매하다.
+
+$$ ..., -3, -2, -1, 0, 1, 2, 3, ... $$
+
+* 나열하는 방법을 바꿔서, 다음과 같이 나열해 보자.
+
+$$ 0, 1, -1, 2, -2, 3, -3, ... $$
+
+이렇게 하면 양의 정수로 인덱스를 매길 수 있다. 전단사 함수 관계가 성립하는 것이다.
+
+| 1 | 2 | 3  | 4 | 5  | 6 | 7  | ... |
+| 0 | 1 | -1 | 2 | -2 | 3 | -3 | ... |
+
+따라서 모든 정수의 집합은 셀 수 있다.
+
+### 모든 양의 유리수의 집합은 셀 수 있는가?
+
+
 # 용어 정리
 
 | English                    | 한국어           | Example, 설명                                      |
@@ -185,6 +227,7 @@ If there is a one-to-one function from A to B, the cardinality of A is less than
 | ordered n-tuples           | 순서가 있는 n짝  |                                                    |
 | ordered pairs              | 순서쌍           |                                                    |
 | countable                  | 셀 수 있다(가산) |                                                    |
+| aleph                      | 알레프           | $$ \aleph $$                                       |
 
 ## 조건 제시법의 예
 
