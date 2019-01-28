@@ -3,7 +3,7 @@ layout  : wiki
 title   : 집합
 summary : Sets
 date    : 2019-01-14 22:13:18 +0900
-updated : 2019-01-28 23:09:30 +0900
+updated : 2019-01-28 23:30:30 +0900
 tags    : math
 toc     : true
 public  : true
@@ -147,6 +147,26 @@ The cardinality of S is denoted by $$ \vert S \vert $$.
     * $$n$$은 집합 $$S$$의 크기(cardinality)이다.
 * 유한 집합(finite set) $$S$$의 크기는 $$ \vert S \vert $$로 표기한다.
 
+>
+The sets A and B have the same cardinality if and only if there is a one-to-one correspondence from A to B.
+When A and B have the same cardinality, we write $$|A| = |B|$$.
+
+* 집합 A와 B가 같은 크기(same cardinality)이면
+    * A로부터 B로의 [전단사 함수](/wiki/discrete-math-functions/#전단사-함수)가 존재한다.
+    * 두 집합의 크기가 같을 때 $$\vert A \vert = \vert B \vert$$로 표기한다.
+
+$$
+\def\abs#1{\lvert #1 \rvert}
+$$
+
+>
+If there is a one-to-one function from A to B, the cardinality of A is less than or the same as the cardinality of B and we write $$\abs{A} ≤ \abs{B}$$. Moreover, when $$\abs{A} ≤ \abs{B}$$ and A and B have different cardinality, we say that the cardinality of A is less than the cardinality of B and we write $$\abs{A} < \abs{B}$$.
+
+* A로부터 B로의 [단사 함수](/wiki/discrete-math-functions/#단사-함수)가 있다면
+    * A의 크기는 B보다 작거나 같다. $$ \abs{A} \le \abs{B} $$.
+* $$ \abs{A} \le \abs{B} $$이고, $$ \abs{A} \ne \abs{B} $$이면
+    * A의 크기는 B보다 작다. $$ \abs{A} < \abs{B} $$.
+
 # 용어 정리
 
 | English                    | 한국어           | Example, 설명                                      |
@@ -164,6 +184,7 @@ The cardinality of S is denoted by $$ \vert S \vert $$.
 | power set                  | 멱집합           | $$ P(\{0,1\})=\{\emptyset,\{0\},\{1\},\{0,1\}\} $$ |
 | ordered n-tuples           | 순서가 있는 n짝  |                                                    |
 | ordered pairs              | 순서쌍           |                                                    |
+| countable                  | 셀 수 있다(가산) |                                                    |
 
 ## 조건 제시법의 예
 
