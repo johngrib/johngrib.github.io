@@ -3,7 +3,7 @@ layout  : category
 title   : git
 summary : 
 date    : 2018-12-02 10:11:09 +0900
-updated : 2019-01-20 09:41:26 +0900
+updated : 2019-01-29 16:43:48 +0900
 tags    : git command
 toc     : true
 public  : true
@@ -27,6 +27,11 @@ $ git log ref_a...refb --left-right # ref_a 와 ref_b 의 교집합이 아닌 �
 $ git log ref_a ref_b ^ref_c        # ref_a, ref_b 에는 있고, ref_c 에는 없는 커밋을 본다
 
 $ git log -L :func_name:file_name   # 특정 파일의 특정 함수의 히스토리를 본다. 함수 범위는 자동으로 인식한다
+```
+
+## 특정 커밋에서 변경된 파일 목록만 보기
+```sh
+$ git show f701c86 --name-only --pretty=""
 ```
 
 ## tracked 파일 삭제
