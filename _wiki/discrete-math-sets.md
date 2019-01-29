@@ -3,7 +3,7 @@ layout  : wiki
 title   : 집합
 summary : Sets
 date    : 2019-01-14 22:13:18 +0900
-updated : 2019-01-29 00:22:58 +0900
+updated : 2019-01-29 23:23:03 +0900
 tags    : math
 toc     : true
 public  : true
@@ -208,6 +208,27 @@ $$ 0, 1, -1, 2, -2, 3, -3, ... $$
 
 ### 모든 양의 유리수의 집합은 셀 수 있는가?
 
+다음과 같이 배열하면 순서대로 셀 수 있다.
+
+$$
+\require{enclose}
+\def\cir#1{ \enclose{circle}{#1} }
+
+\begin{matrix}
+\cir{1\over 1}&   &\cir{2 \over 1}& → &\cir{3 \over 1}&   &\cir{4 \over 1}& → &\cir{5 \over 1}& \cdots \\
+↓             & ↗ &               & ↙ &               & ↗ &               & ↙                          \\
+\cir{1\over 2}&   &    {2 \over 2}&   &\cir{3 \over 2}&   &{4 \over 2}    &   &{5 \over 2}    & \cdots \\
+              & ↙ &               & ↗ &               & ↙                                              \\
+\cir{1\over 3}&   &\cir{2 \over 3}&   &    {3 \over 3}&   &{4 \over 3}    &   &{5 \over 3}    & \cdots \\
+↓             & ↗ &               & ↙                                                       \\
+\cir{1\over 4}&   &    {2 \over 4}&   &    {3 \over 4}&   &{4 \over 4}    &   &{5 \over 4}    & \cdots \\
+              & ↙                                                                           \\
+\cir{1\over 5}&   &    {2 \over 5}&   &    {3 \over 5}&   &{4 \over 5}    &   &{5 \over 5}    & \cdots \\
+↓             &   & \vdots        &   & \vdots        &   & \vdots        &   & \vdots      \\
+\end{matrix}
+$$
+
+따라서 양의 유리수의 집합은 셀 수 있다.
 
 # 용어 정리
 
