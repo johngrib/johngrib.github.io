@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-27 21:09:12 +0900
+updated : 2019-01-29 10:54:54 +0900
 tags    : index
 toc     : true
 public  : true
@@ -71,7 +71,6 @@ comment : false
         * [[TETRIS-EFFECT]]
         * [[The-Jargon-File]]
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
-        * [[toda-seiji-scientia]]
         * [[그림으로-보는-서양검술-메모]]
         * [[슈뢰딩거의-고양희]]
         * [[전생검신]]
