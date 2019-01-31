@@ -3,7 +3,7 @@ layout  : wiki
 title   : 집합
 summary : Sets
 date    : 2019-01-14 22:13:18 +0900
-updated : 2019-01-29 23:23:03 +0900
+updated : 2019-02-01 00:20:04 +0900
 tags    : math
 toc     : true
 public  : true
@@ -189,6 +189,10 @@ We write $$\abs{S} = \aleph_0$$ and say that S has cardinality "**aleph null**".
 * 무한 집합을 셀 수 있다는 말은 좀 이상하게 들릴 수 있다.
     * 양의 정수의 집합으로부터 어떤 집합 S로의 일대일 대응이 가능하다면(전단사 함수) 셀 수 있다고 생각하자.
 
+> If A and B are countable sets, then $$A ∪ B$$ is also countable.
+
+* 집합 A와 집합 B와 셀 수 있는 집합이면, $$A ∪ B$$도 셀 수 있는 집합이다.
+
 ### 모든 정수의 집합은 셀 수 있는가?
 
 * 모든 정수는 다음과 같이 나열할 수 있을 것이다. 인덱스를 매기기 애매하다.
@@ -229,6 +233,12 @@ $$
 $$
 
 따라서 양의 유리수의 집합은 셀 수 있다.
+
+## 셀 수 없는 집합
+
+**An Uncountable Set**
+
+### Cantor diagonalization argument
 
 # 용어 정리
 
