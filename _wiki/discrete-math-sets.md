@@ -3,7 +3,7 @@ layout  : wiki
 title   : 집합
 summary : Sets
 date    : 2019-01-14 22:13:18 +0900
-updated : 2019-02-01 00:20:04 +0900
+updated : 2019-02-01 10:52:20 +0900
 tags    : math
 toc     : true
 public  : true
@@ -192,6 +192,18 @@ We write $$\abs{S} = \aleph_0$$ and say that S has cardinality "**aleph null**".
 > If A and B are countable sets, then $$A ∪ B$$ is also countable.
 
 * 집합 A와 집합 B와 셀 수 있는 집합이면, $$A ∪ B$$도 셀 수 있는 집합이다.
+
+### 슈뢰더-베른슈타인 정리
+
+**Schröder–Bernstein theorem**
+
+>
+If A and B are sets with $$\abs{A} ≤ \abs{B}$$ and $$\abs{B} ≤ \abs{A}$$, then $$\abs{A} = \abs{B}$$.
+In other words, if there are one-to-one functions $$f$$ from A to B and $$g$$ from B to A,
+then there is a one-to-one correspondence between A and B.
+
+* A, B 가 $$\abs{A} ≤ \abs{B}$$ 이고 $$\abs{B} ≤ \abs{A}$$, 이면 $$\abs{A} = \abs{B}$$ 이다.
+* 즉 A 에서 B 로의 단사 함수 $$f$$ 가 존재하고, B 로부터 A 로의 단사 함수 $$g$$ 가 존재하면 A와 B는 **전단사 함수 관계**이다.
 
 ### 모든 정수의 집합은 셀 수 있는가?
 
