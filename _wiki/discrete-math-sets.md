@@ -3,7 +3,7 @@ layout  : wiki
 title   : 집합
 summary : Sets
 date    : 2019-01-14 22:13:18 +0900
-updated : 2019-02-02 11:37:02 +0900
+updated : 2019-02-02 14:50:16 +0900
 tags    : math
 toc     : true
 public  : true
@@ -334,6 +334,20 @@ $$x$$ 는 다음과 같을 것이다.
 | $$x$$ | = | 0 | . | $$\color{blue}4$$ | $$\color{red}5$$ | $$\color{green}4$$ | $$\color{gold}4$$ | 4 |
 
 4와 5로만 구성된 수이지만, $$r_1$$ ~ $$r_5$$ 중 어느 숫자와도 같을 수 없다. 적어도 한 자리는 다른 숫자가 되기 때문이다.
+
+## 계산 가능, 계산 불가
+
+**coumputable, uncomputable**
+
+>
+We say that a function is **computable**
+if there is a computer program in some programming language that finds the values of this function.
+If a function is not computable we say it is **uncomputable**.
+
+* 계산 가능
+    * 어떤 프로그래밍 언어로 어떤 컴퓨터 프로그램을 짰을 때, 그 프로그램이 어떤 함수의 값을 계산해 낼 수 있다면, 그 함수는 **계산가능**하다고 한다.
+* 계산 불가능
+    * 어떤 프로그래밍 언어로 어떤 컴퓨터 프로그램을 짰을 때, 그 프로그램이 어떤 함수의 값을 계산해 낼 수 없다면, 그 함수는 **계산불가능**하다고 한다.
 
 
 # 용어 정리
