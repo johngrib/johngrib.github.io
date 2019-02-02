@@ -3,7 +3,7 @@ layout  : wiki
 title   : 집합
 summary : Sets
 date    : 2019-01-14 22:13:18 +0900
-updated : 2019-02-02 10:06:54 +0900
+updated : 2019-02-02 11:37:02 +0900
 tags    : math
 toc     : true
 public  : true
@@ -384,4 +384,8 @@ $$
 # 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
+
+# Links
+
+* [대각선 논법(위키백과)](https://ko.wikipedia.org/wiki/%EB%8C%80%EA%B0%81%EC%84%A0_%EB%85%BC%EB%B2%95 )
 
