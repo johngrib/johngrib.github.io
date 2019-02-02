@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-01-29 10:54:54 +0900
+updated : 2019-02-02 18:38:19 +0900
 tags    : index
 toc     : true
 public  : true
@@ -163,6 +163,7 @@ comment : false
         * [[discrete-math-functions]]
         * [[discrete-math-sequences]]
         * [[discrete-math-summations]]
+        * [[discrete-math-matrices]]
         * [[d-m-du-2016-01]]
     * [[study-formal-languages-and-automata]]
         * [[f-l-a-00-preface]]
