@@ -3,7 +3,7 @@ layout  : wiki
 title   : 행렬
 summary : Matrices
 date    : 2019-02-02 18:38:20 +0900
-updated : 2019-02-02 19:33:57 +0900
+updated : 2019-02-02 23:51:09 +0900
 tags    : math
 toc     : true
 public  : true
@@ -69,6 +69,17 @@ In other words, $$A+B=[a_{ij} + b_{ij}]$$.
 
 * $$ A + B = [ a_[ij] + b_{ij} ] $$.
 * 크기가 다른(모양이 다른) 두 행렬의 합은 구할 수 없다.
+
+## 행렬의 곱
+
+>
+Let A be an $$m \times k$$ matrix and B be a $$k \times n$$ matrix.
+The product of A and B, denoted by AB, is the $$m \times n$$ matrix with its $$(i, j)$$th entry equal to the sum of the products of the corresponding elements from the ith row of A and the j th column of B. In other words, if $$AB = [c_{ij}]$$, then  
+$$c_{ij} =a_{i1} \times b_{1j} + a_{i2} \times b_{2j} + ··· + a_{ik} \times b_{kj}$$.
+
+* $$m \times k$$ 행렬과 $$k \times n$$ 행렬의 곱은 $$m \times n$$ 행렬이다.
+* 행렬의 곱은 교환법칙이 성립하지 않는다(Matrix multiplication is not commutative).
+    * $$ A \times B \ne B \times A $$이므로 주의할 것.
 
 
 # 용어 정리
