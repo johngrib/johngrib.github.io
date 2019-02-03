@@ -3,7 +3,7 @@ layout  : wiki
 title   : 행렬
 summary : Matrices
 date    : 2019-02-02 18:38:20 +0900
-updated : 2019-02-02 23:51:09 +0900
+updated : 2019-02-03 21:58:14 +0900
 tags    : math
 toc     : true
 public  : true
@@ -81,17 +81,41 @@ $$c_{ij} =a_{i1} \times b_{1j} + a_{i2} \times b_{2j} + ··· + a_{ik} \times b
 * 행렬의 곱은 교환법칙이 성립하지 않는다(Matrix multiplication is not commutative).
     * $$ A \times B \ne B \times A $$이므로 주의할 것.
 
+## 항등 행렬
+
+**identity matrix of order n**: n차 항등 행렬
+
+>
+The identity matrix of order n is the $$n \times n$$ matrix $$I_n = [δ_{ij}]$$,
+where $$δ_{ij} = 1 $$ if $$i = j$$ and $$δ_{ij} = 0$$ if $$i̸=j$$.  
+Hence
+$$
+I_n =
+\begin{bmatrix}
+1 & 0 & \cdots & 0 \\
+0 & 1 & \cdots & 0 \\
+. & . &        & . \\
+. & . &        & . \\
+. & . &        & . \\
+0 & 0 & \cdots & 1 \\
+\end{bmatrix}
+$$
+
+* 항등 행렬은 $$ i = j $$ 인 원소가 `1`, $$ i \ne j $$인 원소가 `0`인 행렬이다.
 
 # 용어 정리
 
-| English       | 한국어      | 예/설명                                  |
-|---------------|-------------|------------------------------------------|
-| matrix        | 행렬        |                                          |
-| matrices      | 행렬(들)    |                                          |
-| square matrix | 정방 행렬   | 행과 열의 수가 같은 정사각형 모양의 행렬 |
-| row           | 행          |                                          |
-| column        | 열          |                                          |
-| element       | 행렬의 원소 |                                          |
+| English                    | 한국어       | 예/설명                                                          |
+|----------------------------|--------------|------------------------------------------------------------------|
+| matrix                     | 행렬         |                                                                  |
+| matrices                   | 행렬(들)     |                                                                  |
+| square matrix              | 정방 행렬    | 행과 열의 수가 같은 정사각형 모양의 행렬                         |
+| row                        | 행           |                                                                  |
+| column                     | 열           |                                                                  |
+| element                    | 행렬의 원소  |                                                                  |
+| identity matrix            | 항등행렬     | 2차 항등행렬: $$ \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} $$ |
+| identity matrix of order n | n차 항등행렬 |                                                                  |
+
 
 # 참고문헌
 
