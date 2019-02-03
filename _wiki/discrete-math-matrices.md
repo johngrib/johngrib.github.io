@@ -3,7 +3,7 @@ layout  : wiki
 title   : 행렬
 summary : Matrices
 date    : 2019-02-02 18:38:20 +0900
-updated : 2019-02-03 22:09:22 +0900
+updated : 2019-02-03 22:15:48 +0900
 tags    : math
 toc     : true
 public  : true
@@ -123,6 +123,19 @@ for $$i = 1,2, ... ,n$$ and $$j = 1,2,...,m$$.
 * 행렬 A의 전치 행렬 $$A^t$$ 는 A의 행과 열을 바꾼 행렬이다.
 * $$\begin{bmatrix} \red 1 & \red 2 & \red 3 \\ 4 & 5 & 6 \end{bmatrix}$$의 전치행렬은 $$\begin{bmatrix} \red 1 & 4 \\ \red 2 & 5 \\ \red 3 & 6 \end{bmatrix}$$.
 
+## 대칭행렬
+
+**symmetric**
+
+>
+A square matrix A is called **symmetric** if $$A = A^t$$.
+Thus $$A = [a_{ij}]$$ is symmetric if $$a_{ij} = a_{ji}$$
+for all $$i$$ and $$j$$ with $$1 ≤ i ≤ n$$ and $$1 ≤ j ≤ n$$.
+
+* $$ A = A^t $$ 이고 정방행렬이면 대칭행렬이다.
+* $$\begin{bmatrix} \red 1 & 1 & 0 \\ 1 & \red 0 & 1 \\ 0 & 1 & \red 0 \\ \end{bmatrix}$$는 대칭행렬이다.
+    * 왼쪽 위에서 오른쪽 아래로의 대각선 기준으로 대칭이라 생각하면 알아보기 쉽다.
+
 # 용어 정리
 
 | English                    | 한국어       | 예/설명                                                          |
@@ -136,6 +149,7 @@ for $$i = 1,2, ... ,n$$ and $$j = 1,2,...,m$$.
 | identity matrix            | 항등행렬     | 2차 항등행렬: $$ \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} $$ |
 | identity matrix of order n | n차 항등행렬 |                                                                  |
 | transpose                  | 전치 행렬    | 행과 열을 바꾼 행렬                                              |
+| symmetric                  | 대칭 행렬    |                                                                  |
 
 
 # 참고문헌
