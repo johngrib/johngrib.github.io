@@ -3,7 +3,7 @@ layout  : wiki
 title   : 행렬
 summary : Matrices
 date    : 2019-02-02 18:38:20 +0900
-updated : 2019-02-03 22:15:48 +0900
+updated : 2019-02-03 22:21:05 +0900
 tags    : math
 toc     : true
 public  : true
@@ -136,6 +136,11 @@ for all $$i$$ and $$j$$ with $$1 ≤ i ≤ n$$ and $$1 ≤ j ≤ n$$.
 * $$\begin{bmatrix} \red 1 & 1 & 0 \\ 1 & \red 0 & 1 \\ 0 & 1 & \red 0 \\ \end{bmatrix}$$는 대칭행렬이다.
     * 왼쪽 위에서 오른쪽 아래로의 대각선 기준으로 대칭이라 생각하면 알아보기 쉽다.
 
+## 0-1 행렬
+
+**zero-one matrices**
+
+
 # 용어 정리
 
 | English                    | 한국어       | 예/설명                                                          |
@@ -150,6 +155,7 @@ for all $$i$$ and $$j$$ with $$1 ≤ i ≤ n$$ and $$1 ≤ j ≤ n$$.
 | identity matrix of order n | n차 항등행렬 |                                                                  |
 | transpose                  | 전치 행렬    | 행과 열을 바꾼 행렬                                              |
 | symmetric                  | 대칭 행렬    |                                                                  |
+| zero-one matrix            | 0-1 행렬     | 0과 1만을 갖고 있는 행렬                                         |
 
 
 # 참고문헌
