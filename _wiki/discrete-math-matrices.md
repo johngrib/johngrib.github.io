@@ -3,7 +3,7 @@ layout  : wiki
 title   : 행렬
 summary : Matrices
 date    : 2019-02-02 18:38:20 +0900
-updated : 2019-02-03 22:21:05 +0900
+updated : 2019-02-03 22:36:58 +0900
 tags    : math
 toc     : true
 public  : true
@@ -140,6 +140,62 @@ for all $$i$$ and $$j$$ with $$1 ≤ i ≤ n$$ and $$1 ≤ j ≤ n$$.
 
 **zero-one matrices**
 
+* 원소가 0과 1만 있는 행렬.
+
+### 0-1 행렬의 결합과 만남
+
+**join, meet**
+
+>
+Let $$A = [a_{ij}]$$ and $$B = [b_{ij}]$$ be $$m \times n$$ zero–one matrices.
+Then the join of A and B is the zero–one matrix with $$(i, j)$$th entry $$a_{ij} ∨ b_{ij}$$.
+The join of A and B is denoted by $$A ∨ B$$.
+The meet of A and B is the zero–one matrix with $$(i,j)$$th entry $$a_{ij} ∧ b_{ij}$$.
+The meet of A and B is denoted by $$A ∧ B$$.
+
+* A와 B의 결합(join) 행렬
+    * $$ A ∨ B $$로 표기한다.
+    * $$(i,j) = a_{ij} ∨ b_{ij}$$ 를 원소로 한다. 평범한 or 연산이다.
+
+$$
+\text{join의 예}:
+\begin{bmatrix}
+0 & 0 \\
+1 & 1 \\
+\end{bmatrix}
+∨
+\begin{bmatrix}
+0 & 1 \\
+0 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 1 \\
+1 & 1 \\
+\end{bmatrix}
+$$
+
+* A와 B의 만남(meet) 행렬
+    * $$ A ∧ B $$로 표기한다.
+    * $$(i,j) = a_{ij} ∧ b_{ij}$$ 를 원소로 한다. 평범한 and 연산이다.
+
+$$
+\text{meet의 예}:
+\begin{bmatrix}
+0 & 0 \\
+1 & 1 \\
+\end{bmatrix}
+∧
+\begin{bmatrix}
+0 & 1 \\
+0 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+$$
 
 # 용어 정리
 
@@ -156,6 +212,8 @@ for all $$i$$ and $$j$$ with $$1 ≤ i ≤ n$$ and $$1 ≤ j ≤ n$$.
 | transpose                  | 전치 행렬    | 행과 열을 바꾼 행렬                                              |
 | symmetric                  | 대칭 행렬    |                                                                  |
 | zero-one matrix            | 0-1 행렬     | 0과 1만을 갖고 있는 행렬                                         |
+| join matrix                | 결합 행렬    | $$ A ∨ B $$                                                      |
+| meet matrix                | 만남 행렬    | $$ A ∧ B $$                                                      |
 
 
 # 참고문헌
