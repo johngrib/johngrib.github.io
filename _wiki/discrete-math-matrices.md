@@ -3,7 +3,7 @@ layout  : wiki
 title   : 행렬
 summary : Matrices
 date    : 2019-02-02 18:38:20 +0900
-updated : 2019-02-03 21:58:14 +0900
+updated : 2019-02-03 22:09:22 +0900
 tags    : math
 toc     : true
 public  : true
@@ -103,6 +103,26 @@ $$
 
 * 항등 행렬은 $$ i = j $$ 인 원소가 `1`, $$ i \ne j $$인 원소가 `0`인 행렬이다.
 
+## 전치 행렬
+
+**transpose**
+
+$$
+\def\red#1{\color{red} #1}
+$$
+
+>
+Let $$A = [a_{ij}]$$ be an $$m \times n$$ matrix.
+The transpose of A, denoted by $$A^t$$,
+is the $$n \times m$$ matrix obtained by interchanging the rows and columns of A.
+In other words,
+if $$A^t = [b_{ij}]$$,
+then $$b_{ij} = a_{ji}$$
+for $$i = 1,2, ... ,n$$ and $$j = 1,2,...,m$$.
+
+* 행렬 A의 전치 행렬 $$A^t$$ 는 A의 행과 열을 바꾼 행렬이다.
+* $$\begin{bmatrix} \red 1 & \red 2 & \red 3 \\ 4 & 5 & 6 \end{bmatrix}$$의 전치행렬은 $$\begin{bmatrix} \red 1 & 4 \\ \red 2 & 5 \\ \red 3 & 6 \end{bmatrix}$$.
+
 # 용어 정리
 
 | English                    | 한국어       | 예/설명                                                          |
@@ -115,6 +135,7 @@ $$
 | element                    | 행렬의 원소  |                                                                  |
 | identity matrix            | 항등행렬     | 2차 항등행렬: $$ \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} $$ |
 | identity matrix of order n | n차 항등행렬 |                                                                  |
+| transpose                  | 전치 행렬    | 행과 열을 바꾼 행렬                                              |
 
 
 # 참고문헌
