@@ -3,7 +3,7 @@ layout  : wiki
 title   : 행렬
 summary : Matrices
 date    : 2019-02-02 18:38:20 +0900
-updated : 2019-02-03 22:36:58 +0900
+updated : 2019-02-03 23:37:36 +0900
 tags    : math
 toc     : true
 public  : true
@@ -197,23 +197,88 @@ $$
 \end{bmatrix}
 $$
 
+### 0-1 행렬의 부울곱
+
+**Boolean product**
+
+>
+Let $$A = [a_{ij}]$$ be an $$m \times k$$ zero–one matrix
+and $$B = [b_{ij}]$$ be a $$k \times n$$ zero–one matrix.
+Then the Boolean product of A and B, denoted by $$A \odot B$$,
+is the $$m \times n$$ matrix with $$(i, j)$$th entry $$c_{ij}$$ where  
+$$c_{ij} = (a_{i1} ∧ b_{1j}) ∨ (a_{i2} ∧ b_{2j}) ∨ \cdots ∨ (a_{ik} ∧ b_{kj})$$
+
+* 행렬의 곱셈과 똑같다.
+    * 표기법으로 곱은 $$ ∧ $$(and), 합은 $$ ∨ $$(or) 를 쓰지만, 그냥 곱셈과 덧셈과 같다.
+
+$$
+\begin{align}
+    \begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
+    1 & 0 \\
+    \end{bmatrix}
+    \odot
+    \begin{bmatrix}
+    1 & 1 & 0 \\
+    0 & 1 & 1 \\
+    \end{bmatrix}
+    & =
+    \begin{bmatrix}
+    (1 ∧ 1) ∨ (0 ∧ 0) & (1 ∧ 1) ∨ (0 ∧ 1) &(1 ∧ 0) ∨ (0 ∧ 1) \\
+    (0 ∧ 1) ∨ (1 ∧ 0) & (0 ∧ 1) ∨ (1 ∧ 1) &(0 ∧ 0) ∨ (1 ∧ 1) \\
+    (1 ∧ 1) ∨ (0 ∧ 0) & (1 ∧ 1) ∨ (0 ∧ 1) &(1 ∧ 0) ∨ (0 ∧ 1) \\
+    \end{bmatrix} \\
+    & =
+    \begin{bmatrix}
+    1 ∨ 0 & 1 ∨ 0 & 0 ∨ 0 \\
+    0 ∨ 0 & 0 ∨ 1 & 0 ∨ 1 \\
+    1 ∨ 0 & 1 ∨ 0 & 0 ∨ 0 \\
+    \end{bmatrix} \\
+    & =
+    \begin{bmatrix}
+    1 & 1 & 0 \\
+    0 & 1 & 1 \\
+    1 & 1 & 0 \\
+    \end{bmatrix} \\
+\end{align}
+$$
+
+#### 부울곱의 거듭제곱
+
+**Boolean power**
+
+>
+Let A be a square zero–one matrix and let $$r$$ be a positive integer.
+The $$r$$th Boolean power of A is the Boolean product of $$r$$ factors of A.
+The $$r$$th Boolean product of A is denoted by $$A^{[r]}$$. Hence  
+$$A^{[r]} = \underbrace{ A \odot A \odot A \odot ... \odot A }_{r 개} $$
+
+* A 를 r 번 부울곱하는 것은 $$ A^{[r]} $$ 로 표기한다.
+    * 행렬의 부울 곱은 결합 법칙이 성립한다.
+* $$ A^{[0]} = I_n $$.
+    * $$ I_n $$은 항등 행렬.
+
+
 # 용어 정리
 
-| English                    | 한국어       | 예/설명                                                          |
-|----------------------------|--------------|------------------------------------------------------------------|
-| matrix                     | 행렬         |                                                                  |
-| matrices                   | 행렬(들)     |                                                                  |
-| square matrix              | 정방 행렬    | 행과 열의 수가 같은 정사각형 모양의 행렬                         |
-| row                        | 행           |                                                                  |
-| column                     | 열           |                                                                  |
-| element                    | 행렬의 원소  |                                                                  |
-| identity matrix            | 항등행렬     | 2차 항등행렬: $$ \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} $$ |
-| identity matrix of order n | n차 항등행렬 |                                                                  |
-| transpose                  | 전치 행렬    | 행과 열을 바꾼 행렬                                              |
-| symmetric                  | 대칭 행렬    |                                                                  |
-| zero-one matrix            | 0-1 행렬     | 0과 1만을 갖고 있는 행렬                                         |
-| join matrix                | 결합 행렬    | $$ A ∨ B $$                                                      |
-| meet matrix                | 만남 행렬    | $$ A ∧ B $$                                                      |
+| English                    | 한국어           | 예/설명                                                      |
+|----------------------------|------------------|--------------------------------------------------------------|
+| matrix                     | 행렬             |                                                              |
+| matrices                   | 행렬(들)         |                                                              |
+| square matrix              | 정방 행렬        | 행과 열의 수가 같은 정사각형 모양의 행렬                     |
+| row                        | 행               |                                                              |
+| column                     | 열               |                                                              |
+| element                    | 행렬의 원소      |                                                              |
+| identity matrix            | 항등행렬         | 2차 항등행렬: $$\begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix}$$ |
+| identity matrix of order n | n차 항등행렬     |                                                              |
+| transpose                  | 전치 행렬        | 행과 열을 바꾼 행렬                                          |
+| symmetric                  | 대칭 행렬        |                                                              |
+| zero-one matrix            | 0-1 행렬         | 0과 1만을 갖고 있는 행렬                                     |
+| join matrix                | 결합 행렬        | $$ A ∨ B $$                                                  |
+| meet matrix                | 만남 행렬        | $$ A ∧ B $$                                                  |
+| Boolean product of A and B | A와 B의 부울곱   | $$ A \odot B $$                                              |
+| $$r$$th Boolean power of A | A의 r번째 부울곱 | $$ A^{[r]}$$                                                 |
 
 
 # 참고문헌
