@@ -3,7 +3,7 @@ layout  : wiki
 title   : 행렬
 summary : Matrices
 date    : 2019-02-02 18:38:20 +0900
-updated : 2019-02-03 23:37:36 +0900
+updated : 2019-02-04 20:07:14 +0900
 tags    : math
 toc     : true
 public  : true
@@ -141,6 +141,7 @@ for all $$i$$ and $$j$$ with $$1 ≤ i ≤ n$$ and $$1 ≤ j ≤ n$$.
 **zero-one matrices**
 
 * 원소가 0과 1만 있는 행렬.
+    * [(0,1)의 두 수로 이루어진 체(Field) 위에서의 행렬처럼 생각하는 것이 조금 더 자연스럽다.](https://github.com/johngrib/johngrib.github.io/issues/47#issue-406243600 )
 
 ### 0-1 행렬의 결합과 만남
 
