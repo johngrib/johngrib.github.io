@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) 이더리움 백서
 summary : Ethereum White Paper
 date    : 2019-01-22 22:56:21 +0900
-updated : 2019-02-06 13:25:20 +0900
+updated : 2019-02-07 20:56:24 +0900
 tags    : blockchain
 toc     : true
 public  : true
@@ -677,6 +677,23 @@ def send(to, value):
 
 
 ## 신원조회/평판 시스템
+
+* 네임코인
+    * 최초의 알트코인(비트코인 이후 등장한 가상화폐들을 말한다)
+    * 이름, 도메인 네임, 이메일 등등을 등록하는 명의등록 시스템.
+
+명의등록 시스템의 기본적인 컨트랙트는 다음과 같은 형태를 갖는다.
+
+```python
+def register(name, value):
+    if !self.storage[name]:
+        self.storage[name] = value
+```
+
+* insert 만 가능한 db 의 형태.
+* 누구나 소량의 ether를 사용해 명의를 등록할 수 있고, 한 번 등록하면 영구히 보존된다.
+
+
 ## 분산형 파일 저장소
 ## 탈중앙화된 자율조직
 ## 추가적인 어플리케이션들
