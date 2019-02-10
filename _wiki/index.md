@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-02-02 18:38:19 +0900
+updated : 2019-02-10 21:30:49 +0900
 tags    : index
 toc     : true
 public  : true
@@ -40,6 +40,7 @@ comment : false
     * [[Cromwell-s-rule]]
     * [[frac1e]]{n개의 제비뽑기에 n번 도전}
     * [[gcd]]
+    * [[halting-problem]]
     * [[rule-of-succession]]
     * [[secretary-problem]]
 * [[media]]

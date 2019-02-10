@@ -491,6 +491,7 @@ cs:
     - {fileName: f-l-a-02-04}
     - {fileName: f-l-a-03-01}
     - {fileName: f-l-a-03-02}
+    - {fileName: halting-problem}
     - {fileName: study-formal-languages-and-automata}
 fish:
     - {fileName: fish-shell}

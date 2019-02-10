@@ -300,7 +300,7 @@ algorithm:
     summary: null
     parent: index
     url: /wiki/algorithm
-    updated: '2018-03-31 18:01:51 +0900'
+    updated: '2019-02-05 22:53:48 +0900'
     children: [big-O-notation, egyptian-multiplication, regex-prime, von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
@@ -372,7 +372,7 @@ big-O-notation:
     summary: '알고리즘의 효율성을 나타내는 표기법이다'
     parent: algorithm
     url: /wiki/big-O-notation
-    updated: '2018-11-13 22:41:14 +0900'
+    updated: '2019-02-05 19:45:33 +0900'
     children: []
 Bill-Atkinson-productivity:
     type: wiki
@@ -836,7 +836,7 @@ discrete-math-matrices:
     summary: Matrices
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-matrices
-    updated: '2019-02-02 19:33:57 +0900'
+    updated: '2019-02-04 20:07:14 +0900'
     children: []
 discrete-math-proofs:
     type: wiki
@@ -948,7 +948,7 @@ ethereum-white-paper:
     summary: 'Ethereum White Paper'
     parent: what
     url: /wiki/ethereum-white-paper
-    updated: '2019-01-27 17:33:05 +0900'
+    updated: '2019-02-07 21:11:06 +0900'
     children: []
 euro-problem:
     type: wiki
@@ -1342,6 +1342,14 @@ grow-together:
     url: /wiki/grow-together
     updated: '2019-01-22 22:30:47 +0900'
     children: []
+halting-problem:
+    type: wiki
+    title: '정지 문제'
+    summary: 'The Halting Problem'
+    parent: math
+    url: /wiki/halting-problem
+    updated: '2019-02-10 22:52:15 +0900'
+    children: []
 hammerspoon:
     type: wiki
     title: Hammerspoon
@@ -1476,7 +1484,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-02-02 18:38:19 +0900'
+    updated: '2019-02-10 21:30:49 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1637,7 +1645,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Cromwell-s-rule, frac1e, gcd, rule-of-succession, secretary-problem]
+    children: [Bayes-theorem, Cromwell-s-rule, frac1e, gcd, halting-problem, rule-of-succession, secretary-problem]
 mathdict:
     type: wiki
     title: '대한수학회 수학용어 사전'
@@ -1916,7 +1924,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-02-01 21:23:18 +0900'
+    updated: '2019-02-10 19:17:55 +0900'
     children: []
 RFC:
     type: wiki
