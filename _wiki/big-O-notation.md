@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2019-02-12 22:51:44 +0900
+updated : 2019-02-12 23:01:25 +0900
 tags    : 
 toc     : true
 public  : true
@@ -32,7 +32,7 @@ big-$$O$$, big-$$\Omega$$, big-$$\Theta$$는 각각 상한, 하한, 딱 맞는 �
 * big-$$\Theta$$
     * `빅-세타` 라고 읽는다.
 
-## $$O$$
+## rosen의 이산수학에서 찾아본 $$O$$ 표기법
 
 > Definition.  
 Let $$f$$ and $$g$$ be functions from the set of integers or the set of real numbers
