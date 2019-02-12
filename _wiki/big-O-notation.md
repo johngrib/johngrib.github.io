@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2019-02-12 23:28:25 +0900
+updated : 2019-02-12 23:54:55 +0900
 tags    : 
 toc     : true
 public  : true
@@ -145,6 +145,29 @@ $$
 The O-notation is a big help in approximation work, since it describes briefly a concept that occurs often and it suppresses detailed information that is usually irrelevant. Furthermore, it can be manipulated algebraically in familiar ways, although certain important differences need to be kept in mind. The most important consideration is the idea of one-way equalities: We write $$ \frac{1}{2}n^2 + n = O(n^2) $$, but we never write $$ O(n^2) = \frac{1}{2}n^2 + n $$. (Or else, since $$ \frac{1}{4}n^2 = O(n^2) $$, we might come up with the absurd relation $$ \frac{1}{4}n^2 = \frac{1}{2}n^2 + n$$.) We always use the convention that the right-hand side of an equation does not give more information than the left-hand side; the right-hand side is a “crudification” of the left.
 
 O 표기법은 자주 나타나는 개념을 간략히 서술하고 대체로 별 상관이 없는 세부 정보를 숨긴다는 점에서 근사를 다룰 때 큰 도움이 된다. 더 나아가서, 이 O들을 익숙한 대수적 방법으로 조작하는 것이 가능하다. 단, 몇 가지 중요한 차이들은 염두에 두어야 하는데, 가장 중요한 것이 단방향 상등(one-way equality)이라는 개념이다. 즉, $$ \frac{1}{2}n^2 + n = O(n^2) $$이라고 쓸 수는 있지만 $$ O(n^2) = \frac{1}{2}n^2 + n $$이라고는 **절대 쓸 수 없다**. (만일 그런 표기가 허용된다면, $$ \frac{1}{4}n^2 = O(n^2) $$이므로 $$ \frac{1}{4}n^2 = \frac{1}{2}n^2 + n$$이라는 터무니없는 결과가 나온다.) 이 표기법이 관련된 등식에서는 항상 등식의 우변이 좌변보다 더 자세한 정보를 제공하지 않는다는 관례를 사용한다. 즉, 우변은 항상 좌변보다 조악한 버전인 것이다.
+
+## rosen의 이산수학에서 찾아본 $$\Omega$$ 표기법
+
+> Definition  
+Let $$f$$ and $$g$$ be functions from the set of integers or the set of real numbers to the set of real numbers.
+We say that $$f(x)$$ is $$\Omega(g(x))$$ if there are positive constants $$C$$ and $$k$$ such that  
+$$ \vert f(x) \vert \gt C \vert g(x) \vert $$  
+whenever $$x \gt k$$. [This is read as "$$f(x)$$ is big-Omega of $$g(x)$$."]
+
+함수 $$f$$와 함수 $$g$$가 정수(or 실수)의 집합으로부터 실수의 집합으로의 함수라 하자.
+
+$$ x \gt \color{red}k $$ 일 때,
+$$ \vert f(x) \vert \ge \color{red}C \vert g(x) \vert $$ 를 만족하는
+상수 $$C, k $$ 가 존재하면,
+
+$$\text{ $f(x)$ 는 $\Omega(g(x))$ 이다. }$$
+
+라고 한다.
+
+이 때, $$ f(x) $$ 는 $$ g(x) $$의 "**big-Omega**" 라고 읽는다.
+
+(big-O 가 $$ \vert f(x) \vert \color{blue}\le C \vert g(x) \vert $$ 였음을 기억하자. 부등호 방향이 반대이다.)
+
 
 # 증가량 비교
 
