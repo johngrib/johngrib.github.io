@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2019-02-12 23:54:55 +0900
+updated : 2019-02-13 00:01:49 +0900
 tags    : 
 toc     : true
 public  : true
@@ -167,6 +167,24 @@ $$\text{ $f(x)$ 는 $\Omega(g(x))$ 이다. }$$
 이 때, $$ f(x) $$ 는 $$ g(x) $$의 "**big-Omega**" 라고 읽는다.
 
 (big-O 가 $$ \vert f(x) \vert \color{blue}\le C \vert g(x) \vert $$ 였음을 기억하자. 부등호 방향이 반대이다.)
+
+## rosen의 이산수학에서 찾아본 $$\Theta$$ 표기법
+
+> Definition  
+Let $$f$$ and $$g$$ be functions from the set of integers or the set of real numbers to the set of real numbers.
+We say that $$f(x)$$ is $$\Theta(g(x))$$ if $$f(x)$$ is $$O(g(x))$$ and $$f(x)$$ is $$\Omega(g(x))$$.
+When $$f(x)$$ is $$\Theta(g(x))$$ we say that f is big-Theta of $$g(x)$$, that $$f(x)$$ is of order $$g(x)$$, and that $$f(x)$$ and $$g(x)$$ are of the same order.
+
+함수 $$f$$와 함수 $$g$$가 정수(or 실수)의 집합으로부터 실수의 집합으로의 함수라 하자.
+
+$$f(x)$$가 $$O(g(x))$$이고, $$f(x)$$가 $$\Omega(g(x))$$ 이면,
+
+$$\text{ $f(x)$는 $\Theta(g(x))$ 이다.}$$
+
+라고 한다.
+
+한편, $$ f(x) $$ 가 $$ \Theta(g(x)) $$ 일 때 "$$f$$는 $$g(x)$$의 big-Theta" 라고 읽는다.
+
 
 
 # 증가량 비교
