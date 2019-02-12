@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2019-02-12 23:01:25 +0900
+updated : 2019-02-12 23:28:25 +0900
 tags    : 
 toc     : true
 public  : true
@@ -111,7 +111,7 @@ $$ 7x^2 $$ 은 $$ O(x^2) $$ 이기도 하다.
 
 이 때의 증인은 $$ k = 1, C = 8 $$ 이 된다.
 
-## TAOCP도 찾아보자
+## TAOCP에서 찾아본 $$ O $$ 표기법
 
 TAOCP 1권의 **1.2.11.1 O 표기법** 챕터를 찾아보자.
 
@@ -145,7 +145,6 @@ $$
 The O-notation is a big help in approximation work, since it describes briefly a concept that occurs often and it suppresses detailed information that is usually irrelevant. Furthermore, it can be manipulated algebraically in familiar ways, although certain important differences need to be kept in mind. The most important consideration is the idea of one-way equalities: We write $$ \frac{1}{2}n^2 + n = O(n^2) $$, but we never write $$ O(n^2) = \frac{1}{2}n^2 + n $$. (Or else, since $$ \frac{1}{4}n^2 = O(n^2) $$, we might come up with the absurd relation $$ \frac{1}{4}n^2 = \frac{1}{2}n^2 + n$$.) We always use the convention that the right-hand side of an equation does not give more information than the left-hand side; the right-hand side is a “crudification” of the left.
 
 O 표기법은 자주 나타나는 개념을 간략히 서술하고 대체로 별 상관이 없는 세부 정보를 숨긴다는 점에서 근사를 다룰 때 큰 도움이 된다. 더 나아가서, 이 O들을 익숙한 대수적 방법으로 조작하는 것이 가능하다. 단, 몇 가지 중요한 차이들은 염두에 두어야 하는데, 가장 중요한 것이 단방향 상등(one-way equality)이라는 개념이다. 즉, $$ \frac{1}{2}n^2 + n = O(n^2) $$이라고 쓸 수는 있지만 $$ O(n^2) = \frac{1}{2}n^2 + n $$이라고는 **절대 쓸 수 없다**. (만일 그런 표기가 허용된다면, $$ \frac{1}{4}n^2 = O(n^2) $$이므로 $$ \frac{1}{4}n^2 = \frac{1}{2}n^2 + n$$이라는 터무니없는 결과가 나온다.) 이 표기법이 관련된 등식에서는 항상 등식의 우변이 좌변보다 더 자세한 정보를 제공하지 않는다는 관례를 사용한다. 즉, 우변은 항상 좌변보다 조악한 버전인 것이다.
-
 
 # 증가량 비교
 
