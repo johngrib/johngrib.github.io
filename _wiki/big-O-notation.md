@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2019-02-05 19:45:33 +0900
+updated : 2019-02-12 22:51:44 +0900
 tags    : 
 toc     : true
 public  : true
@@ -31,6 +31,85 @@ big-$$O$$, big-$$\Omega$$, big-$$\Theta$$는 각각 상한, 하한, 딱 맞는 �
     * 점근적 하한에 대한 표기법.
 * big-$$\Theta$$
     * `빅-세타` 라고 읽는다.
+
+## $$O$$
+
+> Definition.  
+Let $$f$$ and $$g$$ be functions from the set of integers or the set of real numbers
+to the set of real numbers.
+We say that $$f(x)$$ is $$O(g(x))$$ if there are constants $$ C $$ and $$ k $$ such that  
+$$ \vert f(x) \vert \le C \vert g(x) \vert $$  
+whenever $$ x \gt k $$. [This is read as "$$f(x)$$ is big-oh of $$g(x)$$."]
+
+함수 $$f$$와 함수 $$g$$가 정수(or 실수)의 집합으로부터 실수의 집합으로의 함수라 하자.
+
+$$ x \gt \color{red}k $$ 일 때,
+$$ \vert f(x) \vert \le \color{red}C \vert g(x) \vert $$ 를 만족하는
+상수 $$C, k $$ 가 존재하면,
+
+$$\text{ $f(x)$ 는 $O(g(x))$ 이다. }$$
+
+라고 한다.
+
+이 때, $$ f(x) $$ 는 $$ g(x) $$의 "**big-oh**" 라고 읽는다.
+
+### $$O$$의 증인
+
+$$ \color{red} k, \color{red} C $$ 를 $$ f(x) $$ 가 $$ O(g(x)) $$ 라는 관계에 대한 증인(witness)이라 부른다.
+
+* 즉, $$ f(x) $$ 가 $$ O(g(x)) $$ 라는 것을 보이기 위해서는 $$ k, C $$ 를 찾으면 된다.
+* 만약 $$ k, C $$ 증인 한 쌍이 있다면, 무한히 많은 증인이 있다.
+    * $$ C \lt C', k \lt k' $$ 인 $$ k', C'$$ 도 증인이기 때문이다.
+
+![image](https://user-images.githubusercontent.com/1855714/52638241-e3403c80-2f14-11e9-93d2-7ce10d468d6e.png)
+
+위의 그래프를 보면 쉽게 이해할 수 있다.
+
+* $$ k $$ 의 최소값은 $$ Cg(x) > f(x) $$ 인 지점이다.
+* $$C$$ 의 후보는 모든 실수이기 때문에 $$ Cg(x) $$ 의 최고차항의 차수가 $$ f(x) $$ 의 최고차항의 차수보다 크거나 같다면, $$ f(x) $$는 최고차항의 계수가 얼마가 되었건 $$ Cg(x) $$의 증가율보다 클 수 없다.
+
+주의: big-O 표기를 사용할 때,
+$$ f(x) $$가 $$ O(g(x)) $$인 관계에 등장하는 함수 $$ g $$는 가능한 한 "작은" 것을 선택하자.
+
+### $$O$$ 예제
+
+#### 예제 1
+
+> $$ f(x) = x^2 + 2x + 1 $$ 은 $$ O(x^2) $$ 임을 보여라.
+
+$$ x \gt \color{red}1 $$ 일 때 다음이 성립한다.
+
+$$
+\begin{align}
+0 \le x^2 + 2x + 1
+    & \le x^2 + 2x^2 + x^2 \\
+    & \le \color{red}4x^2  \\
+\end{align}
+$$
+
+따라서 $$ k = \color{red}1, C = \color{red}4 $$ 가 "$$f(x)$$ 가 $$ O(x^2) $$인 것"의 증인이 된다.
+
+#### 예제 2
+
+> $$ 7x^2 $$ 이 $$ O(x^3) $$ 임을 보여라.
+
+일단 $$ k = 7 $$ 로 적당한 값을 잡자.
+
+$$
+\begin{align}
+x & \gt 7 \\
+x^3 & \gt 7x^2  \\
+\end{align}
+$$
+
+이제 $$ 7x^2 $$ 이 $$ O(x^3) $$ 이라 할 수 있다.
+
+증인은 $$ k = 7, C = 1 $$ 이다.
+
+**한편**, $$ x > 1 $$ 일 때 $$ 7x^2 \lt 8x^2 $$ 이 성립하므로
+$$ 7x^2 $$ 은 $$ O(x^2) $$ 이기도 하다.
+
+이 때의 증인은 $$ k = 1, C = 8 $$ 이 된다.
 
 ## TAOCP도 찾아보자
 
@@ -229,3 +308,4 @@ function test(listA, listB) {
 * 코딩인터뷰 완전분석 187가지 프로그래밍 문제와 해법 [개정판] / 게일 라크만 맥도웰 저 / 이창현 역 / 인사이트(insight) / 2017년 08월 14일
 * 컴퓨터과학이 여는 세계 / 이광근 저 / 인사이트(insight) / 2017년 02월 28일
 * The art of computer programming 1 기초 알고리즘(개정3판) / 도널드 커누스 저 / 한빛미디어 / 2006년 09월 18일
+* Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
