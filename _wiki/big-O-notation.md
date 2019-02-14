@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2019-02-13 00:01:49 +0900
+updated : 2019-02-14 20:45:54 +0900
 tags    : 
 toc     : true
 public  : true
@@ -17,7 +17,6 @@ latex   : true
 # 이 문서에 대하여
 
 * 종종 헷갈리곤 하는 정보를 기록한다.
-* 이 문서는 빅 오 표기법을 모르는 사람을 대상으로 삼지 않는다.
 
 # $$O, \Theta, \Omega$$
 
