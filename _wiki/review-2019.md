@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-02-16 20:42:22 +0900
+updated : 2019-02-16 20:43:19 +0900
 tags    : review
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 # 책
 
-* 2019-02-16 만화로 배우는 곤충의 진화 - [구매](http://www.yes24.com/Product/Goods/64708949), [사전연재를 시작하며](https://post.naver.com/viewer/postView.nhn?volumeNo=14156917 )
+* 2019-02-16 만화로 배우는 곤충의 진화 - [출판사 소개](http://www.hanbit.co.kr/store/books/look.php?p_code=B7076585695), [사전연재를 시작하며](https://post.naver.com/viewer/postView.nhn?volumeNo=14156917 )
 * 2019-02-15 암흑 성운(The Stars, Like Dust) - 아이작 아시모프의 소설인데 번역이 너무 일본어 번역 티가 난다.
 * 2019-02-14 누워서 읽는 퍼즐북 - 재밌다. 시간 가는 줄 모르고 읽었다.
 * 2019-02-12 전병선의 객체지향 이야기 - 추천하지 않는다.
