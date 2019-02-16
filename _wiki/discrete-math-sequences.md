@@ -3,7 +3,7 @@ layout  : wiki
 title   : 수열
 summary : Sequences
 date    : 2019-01-27 20:09:06 +0900
-updated : 2019-01-27 21:04:08 +0900
+updated : 2019-02-16 21:29:36 +0900
 tags    : math
 toc     : true
 public  : true
@@ -25,7 +25,7 @@ A sequence is a function from a subset of the set of integers
 We use the notation $$a_n$$ to denote the image of the integer $$n$$.
 We call $$a_n$$ a term of the sequence.
 
-* 수열은 정수 집합의 부분집합($$\{0, 1, 2, ... \}$$)으로부터 집합 S로의 함수이다.k
+* 수열은 정수 집합의 부분집합($$\{0, 1, 2, ... \}$$)으로부터 집합 S로의 함수이다.
 * 정수 $$n$$의 상(image)을 나타내기 위해서 $$a_n$$을 사용한다.
 * $$a_n$$을 수열의 항(term)이라고 한다$$a_n$$을 수열의 항(term)이라고 한다.
 
