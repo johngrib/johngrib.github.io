@@ -372,7 +372,7 @@ big-O-notation:
     summary: '알고리즘의 효율성을 나타내는 표기법이다'
     parent: algorithm
     url: /wiki/big-O-notation
-    updated: '2019-02-05 19:45:33 +0900'
+    updated: '2019-02-16 21:41:51 +0900'
     children: []
 Bill-Atkinson-productivity:
     type: wiki
@@ -838,6 +838,14 @@ discrete-math-matrices:
     url: /wiki/discrete-math-matrices
     updated: '2019-02-04 20:07:14 +0900'
     children: []
+discrete-math-modular:
+    type: wiki
+    title: '모듈러 연산(나머지 연산)'
+    summary: 'Modular Arithmetic'
+    parent: study-discrete-mathematics
+    url: /wiki/discrete-math-modular
+    updated: '2019-02-18 00:10:12 +0900'
+    children: []
 discrete-math-proofs:
     type: wiki
     title: 증명
@@ -868,7 +876,7 @@ discrete-math-sequences:
     summary: Sequences
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-sequences
-    updated: '2019-01-27 21:04:08 +0900'
+    updated: '2019-02-16 21:29:36 +0900'
     children: []
 discrete-math-sets:
     type: wiki
@@ -948,7 +956,7 @@ ethereum-white-paper:
     summary: 'Ethereum White Paper'
     parent: what
     url: /wiki/ethereum-white-paper
-    updated: '2019-02-07 21:11:06 +0900'
+    updated: '2019-02-11 15:54:54 +0900'
     children: []
 euro-problem:
     type: wiki
@@ -1348,7 +1356,7 @@ halting-problem:
     summary: 'The Halting Problem'
     parent: math
     url: /wiki/halting-problem
-    updated: '2019-02-10 22:52:15 +0900'
+    updated: '2019-02-16 21:34:30 +0900'
     children: []
 hammerspoon:
     type: wiki
@@ -1484,7 +1492,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-02-10 21:30:49 +0900'
+    updated: '2019-02-17 21:58:06 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1924,7 +1932,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-02-10 19:17:55 +0900'
+    updated: '2019-02-16 20:43:19 +0900'
     children: []
 RFC:
     type: wiki
@@ -2077,7 +2085,7 @@ study-discrete-mathematics:
     parent: study
     url: /wiki/study-discrete-mathematics
     updated: '2019-01-05 17:15:40 +0900'
-    children: [d-m-du-2016-01, discrete-math-functions, discrete-math-inference-rules, discrete-math-matrices, discrete-math-proofs, discrete-math-propositional-logic, discrete-math-quantifiers, discrete-math-sequences, discrete-math-sets, discrete-math-summations]
+    children: [d-m-du-2016-01, discrete-math-functions, discrete-math-inference-rules, discrete-math-matrices, discrete-math-modular, discrete-math-proofs, discrete-math-propositional-logic, discrete-math-quantifiers, discrete-math-sequences, discrete-math-sets, discrete-math-summations]
 study-formal-languages-and-automata:
     type: wiki
     title: '(study) FORMAL LANGUAGES AND AUTOMATA'
