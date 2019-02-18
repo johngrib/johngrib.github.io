@@ -3,7 +3,7 @@ layout  : wiki
 title   : 모듈러 연산(나머지 연산)
 summary : Modular Arithmetic
 date    : 2019-02-17 21:58:31 +0900
-updated : 2019-02-18 00:10:12 +0900
+updated : 2019-02-18 23:38:44 +0900
 tags    : math
 toc     : true
 public  : true
@@ -149,6 +149,42 @@ $$ab \mod m = ((a \mod m)(b \mod m)) \mod m.$$
 모듈로 m 합을 갖는 $$ Z_m $$ 은 교환 그룹(commutative group) 이라 불린다.
 
 두 연산을 모두 갖는 $$ Z_m $$ 은 교환 고리(commutative ring) 이라 불린다.
+
+# 알고리즘
+
+* 다음 함수는 몫과 나머지를 계산하는 기본적인 알고리즘을 js로 구현한 것이다.
+    * 이 알고리즘은 $$ O(q \log a) $$ 의 비트 동작을 사용한다.
+
+```js
+// a: integer
+// b: positive integer
+function div(a, d) {
+    let q = 0
+    let r = Math.abs(a)
+
+    // 나머지가 d 보다 작아질 때까지 a 에서 d 를 계속 뺀다
+    while (r >= d) {
+        r -= d      // 빼기가 끝난 다음 남은 것이 나머지
+        q += 1      // 빼기를 한 횟수가 몫
+    }
+    if (a < 0 && r > 0) {
+        r = d - r
+        q = -(q + 1)
+    }
+    return {
+        div: q,     // 몫
+        mod: r,     // 나머지
+    }
+}
+```
+
+실행 결과는 다음과 같다.
+
+```js
+div(10, 3)  // { div: 3, mod: 1 }
+div(17, 3)  // { div: 5, mod: 2 }
+div(-17, 3) // { div: -6, mod: 1 }
+```
 
 # 참고문헌
 
