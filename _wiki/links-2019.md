@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 링크 모음
 summary : 
 date    : 2019-01-04 15:30:13 +0900
-updated : 2019-01-22 21:20:36 +0900
+updated : 2019-02-18 22:03:12 +0900
 tags    : 
 toc     : true
 public  : true
@@ -16,6 +16,10 @@ latex   : false
 # Web, Architecture
 
 * 2018-12-10 [Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/?fbclid=IwAR34mOQSVzaMIyTeg74BbTqrCdZFjOV-78_v_K8QyRdVSw1580Ht-kAh25E) [한국어](https://docs.microsoft.com/ko-kr/azure/architecture/patterns/?fbclid=IwAR34mOQSVzaMIyTeg74BbTqrCdZFjOV-78_v_K8QyRdVSw1580Ht-kAh25E )
+
+# Programming
+
+* 2015-11-14 [모나드 괴담](https://xtendo.org/ko/monad#1 )
 
 # Dev etc.
 
