@@ -3,7 +3,7 @@ layout  : wiki
 title   : 모듈러 연산(나머지 연산)
 summary : Modular Arithmetic
 date    : 2019-02-17 21:58:31 +0900
-updated : 2019-02-19 23:52:34 +0900
+updated : 2019-02-19 23:54:22 +0900
 tags    : math
 toc     : true
 public  : true
@@ -39,20 +39,20 @@ This notation is used to express the quotient and remainder:
 $$
 \begin{align}
 q & = a \text{ div } d \\
-r & = a \mod d \\
+r & = a \bmod d \\
 \end{align}
 $$
 
 * `mod` 는 Java, Python 과 같은 프로그래밍 언어에서의 `%` 와 같다.
 * $$ 7 = 2 \times 3 + 1$$ 인 경우
     * $$2 = 7 \text{ div } 3 $$.
-    * $$ 7 \mod 2 = 1 $$.
+    * $$ 7 \bmod 2 = 1 $$.
 
 음수의 나눗셈은 어떻게 될까?
 
 * $$ -7 = 2 \times (-4) + 1$$ 로 생각한다.
     * 나머지 $$ r $$은 $$ 0 \le r \lt 2 $$ 여야 한다.
-    * $$ -7 \mod 2 = 1 $$.
+    * $$ -7 \bmod 2 = 1 $$.
 
 ## 모듈로 합동
 
@@ -61,24 +61,24 @@ $$
 >
 If $$a$$ and $$b$$ are integers and $$m$$ is a positive integer,
 then $$a$$ is congruent to $$b$$ modulo $$m$$ if $$m$$ divides $$a − b$$.
-We use the notation $$a ≡ b \ (\mod m)$$ to indicate that $$a$$ is congruent to $$b$$ modulo $$m$$.
-We say that $$a ≡ b \ (\mod m)$$ is a **congruence** and that $$m$$ is its **modulus**(plural moduli).
-If $$a$$ and $$b$$ are not congruent modulo $$m$$, we write $$ a \not ≡ b \ (\mod m)$$.
+We use the notation $$a ≡ b \ (\bmod m)$$ to indicate that $$a$$ is congruent to $$b$$ modulo $$m$$.
+We say that $$a ≡ b \ (\bmod m)$$ is a **congruence** and that $$m$$ is its **modulus**(plural moduli).
+If $$a$$ and $$b$$ are not congruent modulo $$m$$, we write $$ a \not ≡ b \ (\bmod m)$$.
 
 * 정수 $$ a, b $$와 양의 정수 $$ m $$에 대하여
     * $$ a - b $$ 가 $$m$$ 으로 나누어 떨어진다면,
         * $$a$$와 $$b$$는 **모듈로 $$m$$ 합동(a is congruent to b modulo m)**이다.
-* 모듈로 $$m$$ 합동의 표기. $$ a ≡ b \ (\mod m) $$.
-* 모듈로 $$m$$ 합동이 아님의 표기. $$ a \not ≡ b \ (\mod m) $$.
+* 모듈로 $$m$$ 합동의 표기. $$ a ≡ b \ (\bmod m) $$.
+* 모듈로 $$m$$ 합동이 아님의 표기. $$ a \not ≡ b \ (\bmod m) $$.
 
 ### 모듈로 합동의 필요충분조건
 
 >
 Let $$a$$ and $$b$$ be integers, and let $$m$$ be $$a$$ positive integer.
-Then $$a ≡ b \ (\mod m)$$ if and only if $$a \mod m = b \mod m$$.
+Then $$a ≡ b \ (\bmod m)$$ if and only if $$a \bmod m = b \bmod m$$.
 
-* $$ a \equiv b \ (\mod m) $$ 의 필요충분조건은
-    * $$ a \mod m = b \mod m $$.
+* $$ a \equiv b \ (\bmod m) $$ 의 필요충분조건은
+    * $$ a \bmod m = b \bmod m $$.
 
 >
 Let $$m$$ be a positive integer.
@@ -104,21 +104,21 @@ is called the congruence class of $$a$$ modulo $$m$$.
 
 >
 Let $$m$$ be a positive integer.  
-If $$a ≡ b \ (\mod m)$$ and $$c ≡ d \ (\mod m)$$,  
-then $$a + c ≡ b + d \ (\mod m)$$ and $$ac ≡ bd \ (\mod m)$$.
+If $$a ≡ b \ (\bmod m)$$ and $$c ≡ d \ (\bmod m)$$,  
+then $$a + c ≡ b + d \ (\bmod m)$$ and $$ac ≡ bd \ (\bmod m)$$.
 
 * 양의 정수 $$ m $$에 대하여
-    * $$a ≡ b \ (\mod m)$$ 이고 $$c ≡ d \ (\mod m)$$ 이면,
-    * $$a + c ≡ b + d \ (\mod m)$$ 이고 $$ac ≡ bd \ (\mod m)$$ 이다.
+    * $$a ≡ b \ (\bmod m)$$ 이고 $$c ≡ d \ (\bmod m)$$ 이면,
+    * $$a + c ≡ b + d \ (\bmod m)$$ 이고 $$ac ≡ bd \ (\bmod m)$$ 이다.
 * 양의 정수 $$ m $$에 대하여
     * $$a$$와 $$b$$ 가 $$m$$ 으로 나눴을 때의 나머지가 같고, $$c$$와 $$d$$가 $$m$$으로 나눴을 때의 나머지가 같다면
-    * $$a + c ≡ b + d \ (\mod m)$$ 이고 $$ac ≡ bd \ (\mod m)$$ 이다.
+    * $$a + c ≡ b + d \ (\bmod m)$$ 이고 $$ac ≡ bd \ (\bmod m)$$ 이다.
 
 >
 Let $$m$$ be a positive integer and let $$a$$ and $$b$$ be integers.
-Then $$(a + b) \mod m = ((a \mod m) + (b \mod m)) \mod m$$  
+Then $$(a + b) \bmod m = ((a \bmod m) + (b \bmod m)) \bmod m$$  
 and  
-$$a \times b \mod m = ((a \mod m) \times (b \mod m)) \mod m.$$
+$$a \times b \bmod m = ((a \bmod m) \times (b \bmod m)) \bmod m.$$
 
 ## 산술 모듈로 m
 
@@ -128,10 +128,10 @@ $$a \times b \mod m = ((a \mod m) \times (b \mod m)) \mod m.$$
 
 연산자 정의
 
-* $$ +_m $$: $$ Z_m $$ 의 두 원소에 대해 덧셈을 하고 $$ \mod m $$ 한다.
-    * $$ a +_m b = (a + b) \mod m $$.
-* $$ \cdot_m $$: $$ Z_m $$ 의 두 원소에 대해 곱셈을 하고 $$ \mod m $$ 한다.
-    * $$ a \cdot_m b = (a \times b) \mod m $$.
+* $$ +_m $$: $$ Z_m $$ 의 두 원소에 대해 덧셈을 하고 $$ \bmod m $$ 한다.
+    * $$ a +_m b = (a + b) \bmod m $$.
+* $$ \cdot_m $$: $$ Z_m $$ 의 두 원소에 대해 곱셈을 하고 $$ \bmod m $$ 한다.
+    * $$ a \cdot_m b = (a \times b) \bmod m $$.
 
 위의 두 연산자를 사용할 때 **산술 모듈로 m 한다**(we are said to be doing arithmetic modulo m)고 말한다.
 
@@ -190,9 +190,9 @@ div(-17, 3) // { div: -6, mod: 1 }
 
 ## 거듭제곱 수의 나머지 구하기
 
-$$ b^n \mod m $$ 의 나머지를 구할 때 $$ b^n $$ 이 꽤 큰 수라면 계산하기 곤란할 수 있다.
+$$ b^n \bmod m $$ 의 나머지를 구할 때 $$ b^n $$ 이 꽤 큰 수라면 계산하기 곤란할 수 있다.
 
-가령 $$ 7^{30} \mod 661 $$ 을 구한다고 하자.
+가령 $$ 7^{30} \bmod 661 $$ 을 구한다고 하자.
 
 * $$ b^n = 7^{30} = 22,539,340,290,692,258,087,863,249 $$ 이다.
     * JavaScript의 경우 `Number.MAX_SAFE_INTEGER`가 $$9,007,199,254,740,991$$ 이다.
