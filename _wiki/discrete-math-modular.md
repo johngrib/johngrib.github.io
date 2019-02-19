@@ -3,7 +3,7 @@ layout  : wiki
 title   : 모듈러 연산(나머지 연산)
 summary : Modular Arithmetic
 date    : 2019-02-17 21:58:31 +0900
-updated : 2019-02-19 23:04:36 +0900
+updated : 2019-02-19 23:52:34 +0900
 tags    : math
 toc     : true
 public  : true
@@ -118,7 +118,7 @@ then $$a + c ≡ b + d \ (\mod m)$$ and $$ac ≡ bd \ (\mod m)$$.
 Let $$m$$ be a positive integer and let $$a$$ and $$b$$ be integers.
 Then $$(a + b) \mod m = ((a \mod m) + (b \mod m)) \mod m$$  
 and  
-$$ab \mod m = ((a \mod m)(b \mod m)) \mod m.$$
+$$a \times b \mod m = ((a \mod m) \times (b \mod m)) \mod m.$$
 
 ## 산술 모듈로 m
 
@@ -187,6 +187,45 @@ div(10, 3)  // { div: 3, mod: 1 }
 div(17, 3)  // { div: 5, mod: 2 }
 div(-17, 3) // { div: -6, mod: 1 }
 ```
+
+## 거듭제곱 수의 나머지 구하기
+
+$$ b^n \mod m $$ 의 나머지를 구할 때 $$ b^n $$ 이 꽤 큰 수라면 계산하기 곤란할 수 있다.
+
+가령 $$ 7^{30} \mod 661 $$ 을 구한다고 하자.
+
+* $$ b^n = 7^{30} = 22,539,340,290,692,258,087,863,249 $$ 이다.
+    * JavaScript의 경우 `Number.MAX_SAFE_INTEGER`가 $$9,007,199,254,740,991$$ 이다.
+    * Java의 경우 `Long.MAX_VALUE`가 $$9,223,372,036,854,775,807$$ 이다.
+
+이런 경우라면 $$ 7^{30} $$ 을 계산한 다음 나머지를 구하는 방법을 사용하면 오버플로가 발생할 것이다.
+
+따라서 위의 모듈로 연산에서 배운 공식을 사용하여 문제를 분할해 해결하도록 하자.
+
+>
+$$a \times b \bmod m = ((a \bmod m) \times (b \bmod m)) \bmod m.$$
+
+$$
+\begin{align}
+7^{30} \bmod 661
+    & = ( 7^{15} \times 7^{15} ) \bmod 661 \\
+    & = ( (7^{15} \bmod 661) \times (7^{15} \bmod 661)) \bmod 661 \\
+    & = (21 \times 21) \bmod 661 \\
+    & = 441 \\
+\end{align}
+$$
+
+* 답은 [441](https://www.wolframalpha.com/input/?i=7%5E30+mod+661) 이다.
+    * 중간에 $$ 7^{15} \bmod 661 $$을 계산하는 과정은 생략했다.
+
+이 방법을 사용하면 $$ 7^{30} \bmod 661 $$ 은 $$ 7^{15} \bmod 661$$ 을 구하면 풀리는 문제가 된다.
+
+한편, $$7^{15} \bmod 661 = ((7^{10} \bmod 661) \times (7^5 \bmod 661)) \bmod 661 $$ 이므로...
+
+$$ 7^{30} \bmod 661 $$ 은 $$ 7^{10} \bmod 661, 7^{10} \bmod 661$$ 을 구하면 풀리는 문제인 것이다.
+
+이를 반복하면 아무리 거듭제곱의 수가 많아도 오버플로하지 않도록 관리하면서 계산하는 것이 가능해진다.
+
 
 # 참고문헌
 
