@@ -3,7 +3,7 @@ layout  : wiki
 title   : 모듈러 연산(나머지 연산)
 summary : Modular Arithmetic
 date    : 2019-02-17 21:58:31 +0900
-updated : 2019-02-18 23:38:44 +0900
+updated : 2019-02-19 23:04:36 +0900
 tags    : math
 toc     : true
 public  : true
@@ -151,6 +151,8 @@ $$ab \mod m = ((a \mod m)(b \mod m)) \mod m.$$
 두 연산을 모두 갖는 $$ Z_m $$ 은 교환 고리(commutative ring) 이라 불린다.
 
 # 알고리즘
+
+## 기본적인 몫과 나머지 구하기
 
 * 다음 함수는 몫과 나머지를 계산하는 기본적인 알고리즘을 js로 구현한 것이다.
     * 이 알고리즘은 $$ O(q \log a) $$ 의 비트 동작을 사용한다.
