@@ -3,7 +3,7 @@ layout  : wiki
 title   : 최대공약수와 최소공배수
 summary : Greatest Common Divisor, Least Common Multiple
 date    : 2018-10-26 11:33:33 +0900
-updated : 2019-02-21 17:56:25 +0900
+updated : 2019-02-21 18:06:38 +0900
 tags    : math
 toc     : true
 public  : true
@@ -86,6 +86,10 @@ $$d \vert a$$ 이고, $$ d \vert b $$라고 가정하자.
 
 **The Euclidean Algorithm**
 
+* 유클리드 호제법이라고도 한다.
+    * 互: 서로
+    * 除: 나누는
+    * 法: 알고리즘
 * go 언어로 작성한 유클리드 알고리즘.
 
 ```go
