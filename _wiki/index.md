@@ -2,7 +2,7 @@
 layout  : wikiindex
 title   : wiki
 date    : 2017-11-26 21:38:36 +0900
-updated : 2019-02-17 21:58:06 +0900
+updated : 2019-02-22 06:52:59 +0900
 tags    : index
 toc     : true
 public  : true
@@ -271,6 +271,7 @@ comment : false
     * [[braille-pattern-chars]]
     * [[Continuous-Integration]]
     * [[encryption]]
+    * [[ethereum-white-paper]]
     * [[floating-point]]
     * [[gray-code]]
     * [[groupId-artifactId]]
@@ -280,9 +281,9 @@ comment : false
     * [[RFC]]
     * [[rouge-supported-languages]]
     * [[special-chars]]
+    * [[units]]
     * [[Unix-philosophy]]
     * [[URI]]
-    * [[ethereum-white-paper]]
 * [[why]]
     * [[letter-case]]
     * [[sql-char-comparison]]

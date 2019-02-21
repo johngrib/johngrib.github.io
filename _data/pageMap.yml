@@ -844,7 +844,7 @@ discrete-math-modular:
     summary: 'Modular Arithmetic'
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-modular
-    updated: '2019-02-18 00:10:12 +0900'
+    updated: '2019-02-20 07:47:17 +0900'
     children: []
 discrete-math-proofs:
     type: wiki
@@ -1136,11 +1136,11 @@ frac1e:
     children: []
 gcd:
     type: wiki
-    title: 'GCD - Greatest Common Divisor'
-    summary: 최대공약수
+    title: '최대공약수와 최소공배수'
+    summary: 'Greatest Common Divisor, Least Common Multiple'
     parent: math
     url: /wiki/gcd
-    updated: '2018-10-26 11:58:49 +0900'
+    updated: '2019-02-21 18:06:38 +0900'
     children: []
 geacron:
     type: wiki
@@ -1492,7 +1492,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-02-17 21:58:06 +0900'
+    updated: '2019-02-22 06:52:59 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1612,7 +1612,7 @@ links-2019:
     summary: ""
     parent: links
     url: /wiki/links-2019
-    updated: '2019-01-22 21:20:36 +0900'
+    updated: '2019-02-18 22:03:12 +0900'
     children: []
 locomotive-problem:
     type: wiki
@@ -1932,7 +1932,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-02-16 20:43:19 +0900'
+    updated: '2019-02-21 22:28:53 +0900'
     children: []
 RFC:
     type: wiki
@@ -2198,6 +2198,14 @@ trouble-shooting-node-7-install:
     url: /wiki/trouble-shooting-node-7-install
     updated: '2018-02-12 15:09:45 +0900'
     children: []
+units:
+    type: wiki
+    title: 단위
+    summary: ""
+    parent: what
+    url: /wiki/units
+    updated: '2019-02-22 07:55:52 +0900'
+    children: []
 Unix-philosophy:
     type: wiki
     title: 'Unix philosophy'
@@ -2405,7 +2413,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [braille-pattern-chars, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, special-chars, Unix-philosophy, URI]
+    children: [braille-pattern-chars, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, special-chars, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
