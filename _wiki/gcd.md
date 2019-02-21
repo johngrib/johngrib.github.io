@@ -3,7 +3,7 @@ layout  : wiki
 title   : 최대공약수와 최소공배수
 summary : Greatest Common Divisor, Least Common Multiple
 date    : 2018-10-26 11:33:33 +0900
-updated : 2019-02-21 06:46:24 +0900
+updated : 2019-02-21 17:56:25 +0900
 tags    : math
 toc     : true
 public  : true
@@ -56,7 +56,7 @@ The least common multiple of $$a$$ and $$b$$ is denoted by $$lcm(a, b)$$.
 # 정리
 ## 최소공배수와 최대공약수의 곱
 
-$$ a \times b = gcd(a, b) \times lcm(a,b) $$
+$$ a × b = gcd(a, b) × lcm(a,b) $$
 
 ## a,b의 최대공약수와 b,r의 최대공약수
 
@@ -138,6 +138,84 @@ function wolfram() {
 </script>
 {% endraw %}
 
+# 베주의 정리와 베주의 항등식
+
+**Bézout's theorem**
+
+> If $$a$$ and $$b$$ are positive integers,
+then there exist integers $$s$$ and $$t$$ such that $$gcd(a, b) = sa + tb$$.
+
+* 양의 정수 $$a, b$$ 에 대하여
+    * $$ gcd(a, b) = sa + tb $$를 만족하는 정수 $$ s, t $$ 가 존재한다.
+
+**Bézout’s identity**
+
+> If $$a$$ and $$b$$ are positive integers,
+then integers $$s$$ and $$t$$ such that $$gcd(a, b) = sa + tb$$ are called Bézout coefficients of $$a$$ and $$b$$
+(after Étienne Bézout, a French mathematician of the eighteenth century).
+Also, the equation $$gcd(a, b) = sa + tb$$ is called **Bézout’s identity**.
+
+* 양의 정수 $$a, b$$에 대하여, $$ gcd(a,b) = sa + tb $$ 를 만족하는 정수 $$ s, t $$를 $$ a, b $$의 베주 계수라 부른다.
+* 방정식 $$gcd(a, b) = sa + tb$$를 베주의 항등식이라 부른다.
+
+**GCD as Linear Combinations**
+
+베주 항등식에 의해 $$gcd(a,b)$$는 $$a, b$$ 정수 계수를 갖는 선형결합으로 표현할 수 있다.
+
+$$ gcd(a,b) = sa + tb $$
+
+가령, $$ gcd(24, 60) = 12 $$이므로 $$ s = -2, \ t = 1 $$ 이다.
+
+$$
+\begin{align}
+gcd(24, 60)
+    & = 12 \\
+    & = -2 × 24 + 1 × 60 \\
+\end{align}
+$$
+
+숫자가 약간 커지면 유클리드 호제법을 사용하면 된다.
+
+$$gcd(625442, 215326)$$ 의 경우를 생각해 보자.
+
+$$
+\begin{align}
+625442 & = 2 × 215326 + 194790 \\
+215326 & = 1 × 194790 + 20536 \\
+194790 & = 9 × 20536 + 9966 \\
+20536 & = 2 × 9966 + 604 \\
+9966 & = 16 × 604 + 302 \\
+604 & = 2 × \color{red}{302} + 0 \\
+\end{align}
+\\
+\\
+\therefore \gcd(625442, 215326) = 302
+$$
+
+유클리드 호제법의 계산 과정을 참고해 적절히 대입하면 베주의 항등식으로 표현하기 용이하다.
+
+$$
+\begin{align}
+\color{red}{302}
+    & = 9966 - 16 × \color{purple}{604} \\
+    & = 9966 - 16 × (20536 - 2 × 9966) \\
+    & = - 16 × 20536 + 33 × \color{purple}{9966} \\
+    & = - 16 × 20536 + 33 × (194790 - 9 × 20536) \\
+    & = -(16 + 33 × 9) × 20536 + 33 × 194790 \\
+    & = -313 × \color{purple}{20536} + 33 × 194790 \\
+    & = -313 × (\color{blue}{215326} - 194790) + 33 × 194790 \\
+    & = -313 × \color{blue}{215326} + 346 × \color{purple}{194790} \\
+    & = -313 × \color{blue}{215326} + 346 × (\color{blue}{625442} - 2 × \color{blue}{215326}) \\
+    & = (-313 -2 × 346) × 215326 + 346 × 625442 \\
+\end{align}
+$$
+
+$$
+\therefore
+\color{red}{302}
+    = -1005 × \color{red}{215326} + 346 × \color{red}{625442} \\
+$$
+
 # 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
@@ -145,4 +223,5 @@ function wolfram() {
 # Links
 
 * <https://en.wikipedia.org/wiki/Greatest_common_divisor >
+* [베주 항등식(wikipedia)](https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%A3%BC_%ED%95%AD%EB%93%B1%EC%8B%9D )
 
