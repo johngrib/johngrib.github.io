@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-02-23 00:48:41 +0900
+updated : 2019-02-23 16:28:47 +0900
 tags    : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 # 책
 
+* 2019-02-23 조지 소로스: 영국은행을 굴복시킨 사나이
 * 2019-02-22 데즈카 오사무 불새 1권
 * 2019-02-21 무인과 거문고
 * 2019-02-16 만화로 배우는 곤충의 진화 - [출판사 소개](http://www.hanbit.co.kr/store/books/look.php?p_code=B7076585695), [사전연재를 시작하며](https://post.naver.com/viewer/postView.nhn?volumeNo=14156917 )
