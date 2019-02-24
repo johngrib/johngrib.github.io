@@ -19,6 +19,7 @@ math:
     - {fileName: d-m-du-2016-01}
     - {fileName: discrete-math-functions}
     - {fileName: discrete-math-inference-rules}
+    - {fileName: discrete-math-linear-congruences}
     - {fileName: discrete-math-matrices}
     - {fileName: discrete-math-modular}
     - {fileName: discrete-math-proofs}
