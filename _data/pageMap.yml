@@ -301,7 +301,7 @@ algorithm:
     parent: index
     url: /wiki/algorithm
     updated: '2019-02-05 22:53:48 +0900'
-    children: [big-O-notation, egyptian-multiplication, regex-prime, von-neumann-extractor]
+    children: [big-O-notation, egyptian-multiplication, p-np, regex-prime, von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
     title: '(책) 알고리즘, 인생을 계산하다'
@@ -1500,7 +1500,7 @@ index:
     summary: null
     parent: null
     url: /wiki/index
-    updated: '2019-02-24 00:13:19 +0900'
+    updated: null
     children: []
 James-Gosling-super-programmer:
     type: wiki
@@ -1814,6 +1814,14 @@ orange-juice-test:
     url: /wiki/orange-juice-test
     updated: '2018-01-30 23:16:57 +0900'
     children: []
+p-np:
+    type: wiki
+    title: 'P-NP 문제'
+    summary: ""
+    parent: algorithm
+    url: /wiki/p-np
+    updated: '2019-02-24 21:13:14 +0900'
+    children: []
 PATTERN-ON-THE-STONE:
     type: wiki
     title: '(책) 생각하는 기계'
@@ -1940,7 +1948,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-02-23 18:15:47 +0900'
+    updated: '2019-02-24 20:17:41 +0900'
     children: []
 RFC:
     type: wiki
