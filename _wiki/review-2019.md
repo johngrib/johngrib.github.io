@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-02-24 20:16:04 +0900
+updated : 2019-02-24 20:17:41 +0900
 tags    : review
 toc     : true
 public  : true
@@ -26,7 +26,7 @@ latex   : false
 * 2019-02-10 프로그래밍 수련법
 * 2019-02-04 전생검신 46권. 신투지존
 * 2019-02-03 훌륭한 프로그래머 되는 법 - 좋은/나쁜 프로그래머를 구분하는 요소는 '태도(attitude)'다.
-* 2019-01-30 파운데이션1 - 파운데이션
+* 2019-01-30 파운데이션 1권 - 파운데이션
 * 2019-01-23 Effective Debugging
 * 2019-01-22 [[grow-together]]{함께 자라기} - 좋은 책이라 또 읽었다
 * 2019-01-20 The Nature of Software Development
