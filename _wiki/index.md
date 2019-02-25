@@ -268,6 +268,7 @@ comment : false
     * [[vim-ycm-python3]]
     * [[vimwiki]]
 * [[what]]
+    * [[bootstrapping]]
     * [[braille-pattern-chars]]
     * [[Continuous-Integration]]
     * [[encryption]]
