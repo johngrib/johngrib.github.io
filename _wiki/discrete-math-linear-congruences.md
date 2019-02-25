@@ -3,7 +3,7 @@ layout  : wiki
 title   : 선형합동
 summary : Linear Congruences
 date    : 2019-02-24 00:13:22 +0900
-updated : 2019-02-24 17:01:57 +0900
+updated : 2019-02-26 00:20:17 +0900
 tags    : math
 toc     : true
 public  : true
@@ -161,6 +161,95 @@ $$
 
 따라서 $$x ≡ 6 \ (\bmod 7)$$ 인 정수 x, 즉 $$ -8, -1, 6, 13, 20, ... $$ 등이 합동의 해이다.
 
+
+# 중국인의 나머지 정리
+
+**The Chinese Remainder Theorem**
+
+>
+Let $$m_1, m_2, ..., m_n$$ be pairwise relatively prime positive integers
+greater than one and $$a_1, a_2, ..., a_n$$ arbitrary integers.
+Then the system  
+$$
+x ≡ a_1 (\bmod m_1), \\
+x ≡ a_2 (\bmod m_2), \\
+\vdots \\
+x ≡ a_n (\bmod m_n) \\
+\\
+$$
+has a unique solution modulo $$m = m_1 \cdot m_2 ... m_n$$.
+(That is, there is a solution $$x$$ with $$0 \le x \lt m$$,
+and all other solutions are congruent modulo $$m$$ to this solution.)
+
+* $$ m_1, m_2, ..., m_n $$가 모두 서로소인 양의 정수이고, $$ a_1, a_2, ..., a_n $$가 모두 임의의 정수라 할 때,
+    * 다음의 연립 합동식은 유일한 해를 갖는다.
+
+$$
+x ≡ a_1 (\bmod m_1), \\
+x ≡ a_2 (\bmod m_2), \\
+\vdots \\
+x ≡ a_n (\bmod m_n) \\
+\\
+$$
+
+* 그리고 그 해는 모듈로 $$m = m_1 \cdot m_2 ... m_n$$ 이다.
+    * 즉 $$ 0 \le x \lt m $$ 인 해 $$x$$가 있고, 모든 다른 해는 이 해에 모듈로 $$m$$ 합동이다.
+
+
+### 예제 4
+
+>
+알려지지 않은 숫자가 있다.
+3으로 나누면 2가 남고 5로 나누면 3이 남고 7로 나누면 2가 남는 수는 무엇인가?
+
+이 문제는 다음의 연립 합동식으로 생각할 수 있다.
+
+$$
+x ≡ 2 (\bmod 3), \\
+x ≡ 3 (\bmod 5), \\
+x ≡ 2 (\bmod 7) \\
+$$
+
+그리고 $$ m = 3 \times 5 \times 7 = 105 $$ 이므로,
+
+$$
+\begin{align}
+M_1 & = \frac{m}{3} = 35 \\
+M_2 & = \frac{m}{5} = 21 \\
+M_3 & = \frac{m}{7} = 15 \\
+\end{align}
+$$
+
+35 modulo 3의 역 $$ y_1 $$,
+21 modulo 5의 역 $$ y_2 $$,
+15 modulo 7의 역 $$ y_3 $$를 구하자.
+
+* $$35 y_1 ≡ 1 \ (\bmod 3)$$ 이므로 $$ y_1 = 2 $$
+* $$21 y_2 ≡ 1 \ (\bmod 5)$$ 이므로 $$ y_2 = 1 $$
+* $$15 y_3 ≡ 1 \ (\bmod 7)$$ 이므로 $$ y_3 = 1 $$
+
+그러므로 $$ x ≡ a_1 M_1 y_1 + a_2 M_2 y_2 + a_3 M_3 y_3 $$ 이고, 값을 대입해 계산해 보면...
+
+$$
+\begin{align}
+a_1 M_1 y_1 + a_2 M_2 y_2 + a_3 M_3 y_3
+    & = 2 \cdot 35 \cdot 2 + 3 \cdot 21 \cdot 1 + 2 \cdot 15 \cdot 1 \\
+    & = 140 + 63 + 30 \\
+    & = 233
+\end{align}
+$$
+
+233 이 문제의 답에 해당되긴 하지만 더 작은 수를 찾아보면 좋을 것 같다.
+
+$$
+\begin{align}
+x & ≡ 233 (\bmod 105) \\
+  & ≡ 128 (\bmod 105) \\
+  & ≡ 23 (\bmod 105) \\
+\end{align}
+$$
+
+따라서 문제의 조건에 들어맞는 가장 작은 자연수는 23 이다.
 
 
 # 참고문헌
