@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 회고
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2019-02-27 11:27:44 +0900
+updated : 2019-02-27 23:31:07 +0900
 tags    : review
 toc     : true
 public  : true
@@ -115,7 +115,7 @@ git은 배우기 까다롭지만 일단 익숙해지면 즐겁게 사용할 수 
 * [[슈뢰딩거의-고양희]]
     * 반-바지 님의 SF 단편 만화 모음집.
     * 말이 필요없는 2018년 최고의 만화라고 생각한다.
-* 전생검신
+* [[reincarnation-sword-master]]{전생검신}
     * 고대 중국 신화에 크툴루 신화를 접목한 판타지 소설.
     * 둘 다 좋아하는 나에겐 아주 즐거운 작품이다.
     * 재미있지만 너무 길다... 얼른 완결됐으면 좋겠다.
@@ -137,26 +137,26 @@ $$ \frac{365}{73} = 5 $$ 이므로, 5일에 한권 꼴로 책을 읽은 셈이�
 * 2018-12-16 [개발자를 위한 하룻밤에 읽는 Go 언어 이야기](http://www.hanbit.co.kr/store/books/look.php?p_code=E8544486990 )
 * 2018-12-09 [노트지능](http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9788963221380 ) - 별로 도움이 안 되는 책이었다.
 * 2018-12-05 [풍선인간](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=164179524) - 초능력 추리물. 너무 재미없고... 별로였다.
-* 2018-11-25 [[전생검신]] 43권. 전전반측
+* 2018-11-25 [[reincarnation-sword-master]]{전생검신} 43권. 전전반측
 * 2018-11-09 [컴퓨터 과학이 여는 세계](http://www.yes24.co.kr/24/goods/17976737 )
 * 2018-11-05 [Talking to Humans](http://espressobook.com/@tthumans ). [English](https://www.talkingtohumans.com/download.html )
 * 2018-11-04 [위험한 과학책](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788952773326&orderClick=LAG&Kc= ). 원제는 [What if?](https://www.amazon.com/What-Scientific-Hypothetical-Questions-International/dp/0544456866 ).
-* 2018-10-27 [[전생검신]] 42권. 시련의 끝에서
+* 2018-10-27 [[reincarnation-sword-master]]{전생검신} 42권. 시련의 끝에서
 * 2018-10-13 [적게 벌어도 잘사는 노후 50년](https://www.kyobobook.co.kr/product/detailViewKor.laf?&mallGb=KOR&ejkGb=KOR&barcode=9791185035901&orderClick=LBB&Kc=SETRETAgendasearch )
 * 2018-10-10 [인크립션: 실용주의 암호화](https://thebook.io/006879/ )
 * 2018-10-03 [염소가 된 인간](http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9791159310997)
 * 2018-09-29 [오류가 발생했습니다](http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9791196250126 ) - 이산화 작가의 SF 장편. 읽어갈수록 행복했다.
-* 2018-09-25 [[전생검신]] 41권. 칠요의 시련
+* 2018-09-25 [[reincarnation-sword-master]]{전생검신} 41권. 칠요의 시련
 * 2018-09-21 [AN INTRODUCTION TO PROGRAMMING IN GO](http://codingnuri.com/golang-book/ )
-* 2018-08-30 [[전생검신]] 40권. 부활
+* 2018-08-30 [[reincarnation-sword-master]]{전생검신} 40권. 부활
 * 2018-08-26 엔지니어를 위한 블록체인 프로그래밍
 * 2018-08-21 미니멀라이프 시간과 돈 사용법
 * 2018-08-20 THE BFG
 * 2018-08-01 자전거를 못 타는 아이(RAOUL TABURIN)
-* 2018-07-29 [[전생검신]] 39권. 금오도
+* 2018-07-29 [[reincarnation-sword-master]]{전생검신} 39권. 금오도
 * 2018-07-25 그림으로 보는 서양검술 메모 - 외전 플레이트 아머 편
 * 2018-07-16 [[Designing-Data-Intensive-Applications]]{데이터 중심 애플리케이션 설계}
-* 2018-07-14 [[전생검신]] 38권. 선제공격
+* 2018-07-14 [[reincarnation-sword-master]]{전생검신} 38권. 선제공격
 * 2018-06-24 인프라 엔지니어의 교과서 - 괜찮은 책이었다. 매년 개정판이 나왔으면 좋겠다.
 * 2018-06-22 BAD CHOICES(알고리즘 라이프)
 * 2018-06-19 Domain Driven Design Quickly(도메인 주도 설계란 무엇인가?)
@@ -167,8 +167,8 @@ $$ \frac{365}{73} = 5 $$ 이므로, 5일에 한권 꼴로 책을 읽은 셈이�
 * 2018-06-02 호쿠사이, 그림에 미친 노인
 * 2018-06-01 만화로 읽는 페르마의 마지막 정리 2
 * 2018-05-31 만화로 읽는 페르마의 마지막 정리 1
-* 2018-05-24 [[전생검신]] 37권. 귀환
-* 2018-05-22 [[전생검신]] 36권. 암천향
+* 2018-05-24 [[reincarnation-sword-master]]{전생검신} 37권. 귀환
+* 2018-05-22 [[reincarnation-sword-master]]{전생검신} 36권. 암천향
 * 2018-05-18 키친 다이닝룸(그래픽사 지음)
 * 2018-05-16 욕실 인테리어(유미정 지음)
 * 2018-05-14 백년 목
@@ -191,13 +191,13 @@ $$ \frac{365}{73} = 5 $$ 이므로, 5일에 한권 꼴로 책을 읽은 셈이�
 * 2018-03-01 [[Design-for-Hackers]]{해커를 위한 디자인 레슨}
 * 2018-02-21 [[Mythical-Man-Month]]{맨먼스 미신}
 * 2018-02-13 [[Geek-Atlas]]
-* 2018-02-09 [[전생검신]] 35권. 무신
+* 2018-02-09 [[reincarnation-sword-master]]{전생검신} 35권. 무신
 * 2018-02-06 [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발}
 * 2018-02-05 [[SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness]]{Scientific American 의식의 비밀}
 * 2018-02-05 [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드} - 약 두 달간 읽어서 간신히 끝까지 읽었다.
 * 2018-02-02 [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}
 * 2018-02-01 [[Software-Craftsman]]{소프트웨어 장인}
-* 2018-01-28 [[전생검신]] 34권. 준비
+* 2018-01-28 [[reincarnation-sword-master]]{전생검신} 34권. 준비
 * 2018-01-27 HELL-BOY - Vol. 1. 파멸의 씨앗
 * 2018-01-26 웹 엔지니어의 교과서
 * 2018-01-24 [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}

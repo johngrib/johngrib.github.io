@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-02-27 11:24:25 +0900
+updated : 2019-02-27 23:34:26 +0900
 tags    : review
 toc     : true
 public  : true
@@ -26,7 +26,7 @@ latex   : false
 * 2019-02-14 누워서 읽는 퍼즐북 - 재밌다. 시간 가는 줄 모르고 읽었다.
 * 2019-02-12 전병선의 객체지향 이야기 - 추천하지 않는다.
 * 2019-02-10 프로그래밍 수련법
-* 2019-02-04 전생검신 46권. 신투지존
+* 2019-02-04 [[reincarnation-sword-master]]{전생검신} 46권. 신투지존
 * 2019-02-03 훌륭한 프로그래머 되는 법 - 좋은/나쁜 프로그래머를 구분하는 요소는 '태도(attitude)'다.
 * 2019-01-30 파운데이션 1권 - 파운데이션
 * 2019-01-23 Effective Debugging
@@ -37,10 +37,10 @@ latex   : false
 * 2019-01-15 Modern PHP
 * 2019-01-10 읽기 좋은 코드가 좋은 코드다 - 7년 전에 읽은 책을 다시 읽어 보았다.
 * 2019-01-09 통찰, 평범에서 비범으로
-* 2019-01-04 전생검신 45권. 멸망의 기억
+* 2019-01-04 [[reincarnation-sword-master]]{전생검신} 45권. 멸망의 기억
 * 2019-01-04 칸반과 스크럼. [[kanban-scrum]]{정리}, [PDF](https://www.infoq.com/minibooks/kanban-scrum-minibook )
 * 2019-01-01 배시 셸로 완성하는 모의 해킹 기술(Penetration Testing with the Bash Shell)
-* 2019-01-01 전생검신 44권. 종말을 향하여
+* 2019-01-01 [[reincarnation-sword-master]]{전생검신} 44권. 종말을 향하여
 
 # 영화/드라마/애니메이션
 

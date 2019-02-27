@@ -72,7 +72,7 @@ comment : false
         * [[The-Jargon-File]]
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
         * [[슈뢰딩거의-고양희]]
-        * [[전생검신]]
+        * [[reincarnation-sword-master]]
         * [[토끼의-아리아]]
         * [[한국과학문학상-수상작품집-제2회]]
     * [[movie]]
