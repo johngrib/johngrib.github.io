@@ -248,7 +248,7 @@ comment : false
         * [[labs-strava-com-heatmap]]
         * [[mathdict]]
         * [[utterances]]
-        * [[미세먼지-정보]]
+        * [[fine-dust]]
     * [[web-browser-extension]]
         * [[vimium]]
 * [[til]]

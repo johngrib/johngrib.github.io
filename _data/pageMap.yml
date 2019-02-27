@@ -230,44 +230,36 @@
     url: /wiki/2018-01-20
     updated: '2019-02-27 11:28:14 +0900'
     children: []
-미세먼지-정보:
-    type: wiki
-    title: '미세먼지 정보 모음'
-    summary: '미세먼지 대응에 대한 나의 노하우를 기록한다'
-    parent: useful-site
-    url: /wiki/미세먼지-정보
-    updated: '2018-04-02 21:13:51 +0900'
-    children: []
-슈뢰딩거의-고양희:
+슈뢰딩거의-고양희:
     type: wiki
     title: '(책) 슈뢰딩거의 고양희'
     summary: '반-바지. SF 단편집'
     parent: book
-    url: /wiki/슈뢰딩거의-고양희
+    url: /wiki/슈뢰딩거의-고양희
     updated: '2018-04-22 17:16:53 +0900'
     children: []
-전생검신:
+전생검신:
     type: wiki
     title: '(책) 전생검신'
     summary: null
     parent: book
-    url: /wiki/전생검신
+    url: /wiki/전생검신
     updated: '2018-05-24 20:40:00 +0900'
     children: []
-토끼의-아리아:
+토끼의-아리아:
     type: wiki
     title: '(책) 토끼의 아리아 - 곽재식 소설집'
     summary: ""
     parent: book
-    url: /wiki/토끼의-아리아
+    url: /wiki/토끼의-아리아
     updated: '2018-04-27 21:50:53 +0900'
     children: []
-한국과학문학상-수상작품집-제2회:
+한국과학문학상-수상작품집-제2회:
     type: wiki
     title: '(책) 제2회 한국과학문학상 수상작품집'
     summary: null
     parent: book
-    url: /wiki/한국과학문학상-수상작품집-제2회
+    url: /wiki/한국과학문학상-수상작품집-제2회
     updated: '2018-03-15 20:41:22 +0900'
     children: []
 ag:
@@ -389,7 +381,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 슈뢰딩거의-고양희, 전생검신, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
 bootstrapping:
     type: wiki
     title: '부트스트래핑(bootstrapping)의 어원'
@@ -836,7 +828,7 @@ discrete-math-linear-congruences:
     summary: 'Linear Congruences'
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-linear-congruences
-    updated: '2019-02-26 00:20:17 +0900'
+    updated: '2019-02-27 22:26:04 +0900'
     children: []
 discrete-math-matrices:
     type: wiki
@@ -1117,6 +1109,14 @@ find:
     parent: command-line
     url: /wiki/find
     updated: '2019-01-13 18:04:32 +0900'
+    children: []
+fine-dust:
+    type: wiki
+    title: '미세먼지 정보 모음'
+    summary: '미세먼지 대응에 대한 나의 노하우를 기록한다'
+    parent: useful-site
+    url: /wiki/fine-dust
+    updated: '2018-04-02 21:13:51 +0900'
     children: []
 fish-shell:
     type: wiki
@@ -2261,7 +2261,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2018-02-20 22:07:53 +0900'
-    children: [미세먼지-정보, geacron, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, mathdict, utterances]
+    children: [fine-dust, geacron, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, mathdict, utterances]
 utterances:
     type: wiki
     title: utterances.es
