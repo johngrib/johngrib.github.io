@@ -71,7 +71,6 @@ comment : false
         * [[TETRIS-EFFECT]]
         * [[The-Jargon-File]]
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
-        * [[그림으로-보는-서양검술-메모]]
         * [[슈뢰딩거의-고양희]]
         * [[전생검신]]
         * [[토끼의-아리아]]
