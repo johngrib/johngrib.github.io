@@ -230,28 +230,28 @@
     url: /wiki/2018-01-20
     updated: '2019-02-27 11:28:14 +0900'
     children: []
-슈뢰딩거의-고양희:
+슈뢰딩거의-고양희:
     type: wiki
     title: '(책) 슈뢰딩거의 고양희'
     summary: '반-바지. SF 단편집'
     parent: book
-    url: /wiki/슈뢰딩거의-고양희
+    url: /wiki/슈뢰딩거의-고양희
     updated: '2018-04-22 17:16:53 +0900'
     children: []
-토끼의-아리아:
+토끼의-아리아:
     type: wiki
     title: '(책) 토끼의 아리아 - 곽재식 소설집'
     summary: ""
     parent: book
-    url: /wiki/토끼의-아리아
+    url: /wiki/토끼의-아리아
     updated: '2018-04-27 21:50:53 +0900'
     children: []
-한국과학문학상-수상작품집-제2회:
+한국과학문학상-수상작품집-제2회:
     type: wiki
     title: '(책) 제2회 한국과학문학상 수상작품집'
     summary: null
     parent: book
-    url: /wiki/한국과학문학상-수상작품집-제2회
+    url: /wiki/한국과학문학상-수상작품집-제2회
     updated: '2018-03-15 20:41:22 +0900'
     children: []
 ag:
@@ -373,7 +373,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 슈뢰딩거의-고양희, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, reincarnation-sword-master, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 슈뢰딩거의-고양희, 토끼의-아리아, 한국과학문학상-수상작품집-제2회, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, reincarnation-sword-master, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
 bootstrapping:
     type: wiki
     title: '부트스트래핑(bootstrapping)의 어원'
@@ -1534,6 +1534,14 @@ John-von-Neumann:
     url: /wiki/John-von-Neumann
     updated: '2018-04-03 22:57:19 +0900'
     children: []
+John-W-Backus:
+    type: wiki
+    title: '존 베커스, 문제 해결사 팀을 만들다'
+    summary: '포트란의 탄생'
+    parent: legend
+    url: /wiki/John-W-Backus
+    updated: '2019-02-28 13:05:17 +0900'
+    children: []
 kanban-scrum:
     type: wiki
     title: 'Kanban, Scrum'
@@ -1581,7 +1589,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann]
+    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus]
 letter-case:
     type: wiki
     title: '대문자를 upper case, 소문자를 lower case라 부르는 이유'

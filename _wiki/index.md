@@ -21,6 +21,7 @@ comment : false
         * [[gerald-weinberg-language-king]]
         * [[James-Gosling-super-programmer]]
         * [[John-von-Neumann]]
+        * [[John-W-Backus]]
     * [[Software-Engineering-Code-of-Ethics]]
     * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
     * [[You-and-Your-Research]]

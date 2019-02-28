@@ -188,11 +188,11 @@ diary:
 block-chain:
     - {fileName: '2018-01-20'}
 sf:
-    - {fileName: 슈뢰딩거의-고양희}
-    - {fileName: 토끼의-아리아}
-    - {fileName: 한국과학문학상-수상작품집-제2회}
+    - {fileName: 슈뢰딩거의-고양희}
+    - {fileName: 토끼의-아리아}
+    - {fileName: 한국과학문학상-수상작품집-제2회}
 book:
-    - {fileName: 한국과학문학상-수상작품집-제2회}
+    - {fileName: 한국과학문학상-수상작품집-제2회}
     - {fileName: Algorithms-to-Live-By}
     - {fileName: book}
     - {fileName: Clean-Code}
@@ -318,6 +318,7 @@ story:
     - {fileName: gerald-weinberg-language-king}
     - {fileName: Grote-Reber-home-made-radio-astronomy}
     - {fileName: James-Gosling-super-programmer}
+    - {fileName: John-W-Backus}
     - {fileName: legend}
 Bill-Atkinson:
     - {fileName: Bill-Atkinson-productivity}
