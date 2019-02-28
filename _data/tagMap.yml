@@ -190,26 +190,6 @@ block-chain:
 sf:
     - {fileName: 슈뢰딩거의-고양희}
     - {fileName: 토끼의-아리아}
-    - {fileName: 한국과학문학상-수상작품집-제2회}
-book:
-    - {fileName: 한국과학문학상-수상작품집-제2회}
-    - {fileName: Algorithms-to-Live-By}
-    - {fileName: book}
-    - {fileName: Clean-Code}
-    - {fileName: Code-Complete-2}
-    - {fileName: CONCRETE-MATH}
-    - {fileName: Design-for-Hackers}
-    - {fileName: DevOps-Troubleshooting}
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
-    - {fileName: Effective-Java}
-    - {fileName: Geek-Atlas}
-    - {fileName: GoF-Design-Pattern}
-    - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
-    - {fileName: Mythical-Man-Month}
-    - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
-    - {fileName: reincarnation-sword-master}
-    - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
-    - {fileName: The-Jargon-File}
 bash:
     - {fileName: ag}
     - {fileName: bc}
@@ -279,6 +259,24 @@ law:
 algorithm:
     - {fileName: algorithm}
     - {fileName: gray-code}
+book:
+    - {fileName: Algorithms-to-Live-By}
+    - {fileName: book}
+    - {fileName: Clean-Code}
+    - {fileName: Code-Complete-2}
+    - {fileName: CONCRETE-MATH}
+    - {fileName: Design-for-Hackers}
+    - {fileName: DevOps-Troubleshooting}
+    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
+    - {fileName: Effective-Java}
+    - {fileName: Geek-Atlas}
+    - {fileName: GoF-Design-Pattern}
+    - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
+    - {fileName: Mythical-Man-Month}
+    - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
+    - {fileName: reincarnation-sword-master}
+    - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
+    - {fileName: The-Jargon-File}
 algirithm:
     - {fileName: Algorithms-to-Live-By}
 netflix:

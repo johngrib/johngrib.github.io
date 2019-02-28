@@ -75,7 +75,6 @@ comment : false
         * [[슈뢰딩거의-고양희]]
         * [[reincarnation-sword-master]]
         * [[토끼의-아리아]]
-        * [[한국과학문학상-수상작품집-제2회]]
     * [[movie]]
         * [[ALPHAGO]]
         * [[HOT-FUZZ]]{뜨거운 녀석들}
