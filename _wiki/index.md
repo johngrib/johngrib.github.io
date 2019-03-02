@@ -75,7 +75,6 @@ comment : false
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
         * [[슈뢰딩거의-고양희]]
         * [[reincarnation-sword-master]]
-        * [[토끼의-아리아]]
     * [[movie]]
         * [[ALPHAGO]]
         * [[HOT-FUZZ]]{뜨거운 녀석들}

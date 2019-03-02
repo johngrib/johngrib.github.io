@@ -238,14 +238,6 @@
     url: /wiki/슈뢰딩거의-고양희
     updated: '2018-04-22 17:16:53 +0900'
     children: []
-토끼의-아리아:
-    type: wiki
-    title: '(책) 토끼의 아리아 - 곽재식 소설집'
-    summary: ""
-    parent: book
-    url: /wiki/토끼의-아리아
-    updated: '2018-04-27 21:50:53 +0900'
-    children: []
 ag:
     type: wiki
     title: 'ag, the silver searcher'
@@ -365,7 +357,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 슈뢰딩거의-고양희, 토끼의-아리아, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, reincarnation-sword-master, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 슈뢰딩거의-고양희, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, reincarnation-sword-master, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
 bootstrapping:
     type: wiki
     title: '부트스트래핑(bootstrapping)의 어원'
@@ -1948,7 +1940,7 @@ review-2018:
     summary: null
     parent: review
     url: /wiki/review-2018
-    updated: '2019-02-28 13:07:39 +0900'
+    updated: '2019-03-02 21:36:06 +0900'
     children: []
 review-2019:
     type: wiki

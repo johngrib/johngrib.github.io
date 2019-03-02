@@ -190,7 +190,6 @@ block-chain:
     - {fileName: '2018-01-20'}
 sf:
     - {fileName: 슈뢰딩거의-고양희}
-    - {fileName: 토끼의-아리아}
 bash:
     - {fileName: ag}
     - {fileName: bc}
