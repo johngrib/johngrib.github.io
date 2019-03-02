@@ -73,7 +73,7 @@ comment : false
         * [[TETRIS-EFFECT]]
         * [[The-Jargon-File]]
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
-        * [[슈뢰딩거의-고양희]]
+        * [[Schrodinger-s-goyang-Hee]]
         * [[reincarnation-sword-master]]
     * [[movie]]
         * [[ALPHAGO]]

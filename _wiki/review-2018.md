@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2018년 회고
 summary :
 date    : 2018-01-13 06:44:16 +0900
-updated : 2019-03-02 21:36:06 +0900
+updated : 2019-03-02 21:41:02 +0900
 tags    : review
 toc     : true
 public  : true
@@ -112,7 +112,7 @@ git은 배우기 까다롭지만 일단 익숙해지면 즐겁게 사용할 수 
 * [함께 자라기](http://www.insightbook.co.kr/13227 )
     * 12월에 읽었다는 점을 감안해도 역시 좋은 책이다.
     * 몇 번이고 다시 읽을 것 같다.
-* [[슈뢰딩거의-고양희]]
+* [[Schrodinger-s-goyang-Hee]]{슈뢰딩거의 고양희}
     * 반-바지 님의 SF 단편 만화 모음집.
     * 말이 필요없는 2018년 최고의 만화라고 생각한다.
 * [[reincarnation-sword-master]]{전생검신}
@@ -177,7 +177,7 @@ $$ \frac{365}{73} = 5 $$ 이므로, 5일에 한권 꼴로 책을 읽은 셈이�
 * 2018-04-27 토끼의 아리아
 * 2018-04-24 이승훈 교수의 실용 수학
 * 2018-04-23 미적분 다이어리
-* 2018-04-22 [[슈뢰딩거의-고양희]]
+* 2018-04-22 [[Schrodinger-s-goyang-Hee]]
 * 2018-04-20 [[GRAVITY-EXPRESS]]{그래비티 익스프레스}
 * 2018-04-19 [[Computer-Science-Distilled]]{한 권으로 그리는 컴퓨터 과학 로드맵}
 * 2018-04-18 [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]{세계를 바꾼 17가지 방정식}

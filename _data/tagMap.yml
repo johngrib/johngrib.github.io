@@ -188,8 +188,6 @@ diary:
     - {fileName: diary}
 block-chain:
     - {fileName: '2018-01-20'}
-sf:
-    - {fileName: 슈뢰딩거의-고양희}
 bash:
     - {fileName: ag}
     - {fileName: bc}
@@ -649,6 +647,8 @@ rfc:
 github:
     - {fileName: rouge-supported-languages}
     - {fileName: utterances}
+sf:
+    - {fileName: Schrodinger-s-goyang-Hee}
 consulting:
     - {fileName: secret-of-consulting}
 교육:
