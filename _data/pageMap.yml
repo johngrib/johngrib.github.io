@@ -230,20 +230,20 @@
     url: /wiki/2018-01-20
     updated: '2019-02-27 11:28:14 +0900'
     children: []
-슈뢰딩거의-고양희:
+슈뢰딩거의-고양희:
     type: wiki
     title: '(책) 슈뢰딩거의 고양희'
     summary: '반-바지. SF 단편집'
     parent: book
-    url: /wiki/슈뢰딩거의-고양희
+    url: /wiki/슈뢰딩거의-고양희
     updated: '2018-04-22 17:16:53 +0900'
     children: []
-토끼의-아리아:
+토끼의-아리아:
     type: wiki
     title: '(책) 토끼의 아리아 - 곽재식 소설집'
     summary: ""
     parent: book
-    url: /wiki/토끼의-아리아
+    url: /wiki/토끼의-아리아
     updated: '2018-04-27 21:50:53 +0900'
     children: []
 ag:
@@ -365,7 +365,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 슈뢰딩거의-고양희, 토끼의-아리아, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, reincarnation-sword-master, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, 슈뢰딩거의-고양희, 토끼의-아리아, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, reincarnation-sword-master, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
 bootstrapping:
     type: wiki
     title: '부트스트래핑(bootstrapping)의 어원'
@@ -812,7 +812,7 @@ discrete-math-linear-congruences:
     summary: 'Linear Congruences'
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-linear-congruences
-    updated: '2019-02-27 23:17:53 +0900'
+    updated: '2019-03-02 21:06:27 +0900'
     children: []
 discrete-math-matrices:
     type: wiki
@@ -1085,6 +1085,14 @@ fc:
     parent: command-line
     url: /wiki/fc
     updated: '2019-01-29 10:50:49 +0900'
+    children: []
+Fermat-s-little-theorem:
+    type: wiki
+    title: '페르마의 소정리'
+    summary: 'Fermat''s little theorem'
+    parent: math
+    url: /wiki/Fermat-s-little-theorem
+    updated: '2019-03-02 21:32:02 +0900'
     children: []
 find:
     type: wiki
@@ -1532,7 +1540,7 @@ John-W-Backus:
     summary: '포트란의 탄생'
     parent: legend
     url: /wiki/John-W-Backus
-    updated: '2019-02-28 13:05:17 +0900'
+    updated: '2019-03-01 17:01:12 +0900'
     children: []
 kanban-scrum:
     type: wiki
@@ -1612,7 +1620,7 @@ links-2019:
     summary: ""
     parent: links
     url: /wiki/links-2019
-    updated: '2019-02-18 22:03:12 +0900'
+    updated: '2019-03-02 21:10:39 +0900'
     children: []
 locomotive-problem:
     type: wiki
@@ -1653,7 +1661,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Cromwell-s-rule, frac1e, gcd, halting-problem, rule-of-succession, secretary-problem]
+    children: [Bayes-theorem, Cromwell-s-rule, Fermat-s-little-theorem, frac1e, gcd, halting-problem, rule-of-succession, secretary-problem]
 mathdict:
     type: wiki
     title: '대한수학회 수학용어 사전'
@@ -1948,7 +1956,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-02-27 23:34:26 +0900'
+    updated: '2019-03-01 22:41:32 +0900'
     children: []
 RFC:
     type: wiki

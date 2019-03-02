@@ -38,6 +38,7 @@ comment : false
 * [[math]]
     * [[Bayes-theorem]]
     * [[Cromwell-s-rule]]
+    * [[Fermat-s-little-theorem]]
     * [[frac1e]]{n개의 제비뽑기에 n번 도전}
     * [[gcd]]
     * [[halting-problem]]
