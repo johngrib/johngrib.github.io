@@ -1076,7 +1076,7 @@ Fermat-s-little-theorem:
     summary: 'Fermat''s little theorem'
     parent: math
     url: /wiki/Fermat-s-little-theorem
-    updated: '2019-03-02 21:32:02 +0900'
+    updated: '2019-03-03 17:42:20 +0900'
     children: []
 find:
     type: wiki
@@ -1645,7 +1645,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Cromwell-s-rule, Fermat-s-little-theorem, frac1e, gcd, halting-problem, rule-of-succession, secretary-problem]
+    children: [Bayes-theorem, Cromwell-s-rule, Fermat-s-little-theorem, frac1e, gcd, halting-problem, primitive-roots, rule-of-succession, secretary-problem]
 mathdict:
     type: wiki
     title: '대한수학회 수학용어 사전'
@@ -1837,6 +1837,14 @@ Postel-s-law:
     parent: proverb
     url: /wiki/Postel-s-law
     updated: '2018-01-07 18:20:48 +0900'
+    children: []
+primitive-roots:
+    type: wiki
+    title: '원시근(Primitive Roots)'
+    summary: ""
+    parent: math
+    url: /wiki/primitive-roots
+    updated: '2019-03-03 22:45:31 +0900'
     children: []
 private-constructor:
     type: wiki

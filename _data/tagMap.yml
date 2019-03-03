@@ -34,6 +34,7 @@ math:
     - {fileName: math}
     - {fileName: mathdict}
     - {fileName: p-np}
+    - {fileName: primitive-roots}
     - {fileName: rule-of-succession}
     - {fileName: secretary-problem}
     - {fileName: study-concrete-math}
