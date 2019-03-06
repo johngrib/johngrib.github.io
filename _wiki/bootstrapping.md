@@ -3,7 +3,7 @@ layout  : wiki
 title   : 부트스트래핑(bootstrapping)의 어원
 summary : 
 date    : 2019-02-25 10:40:19 +0900
-updated : 2019-03-06 23:32:12 +0900
+updated : 2019-03-06 23:34:08 +0900
 tags    : 
 toc     : true
 public  : true
@@ -29,7 +29,7 @@ CPU는 컴퓨터에 파워가 켜졌을 때 영구 기억 장치에 저장된 �
 
 * [위키백과](https://en.wikipedia.org/wiki/Bootstrapping )에서는 늪에 빠진 뮌하우젠 남작이 자신의 꽁지머리를 스스로 끌어당겨 물 밖으로 나간 일화를 소개한다.
     * 나무위키에서는 이 이야기가 미국에 전파될 때 "꽁지머리"가 "부츠"로 와전되었다고 한다. 정확한 출처는 모르겠다.
-* 모스크바에는 뮌하우젠 남작이 물에 빠진 자신을 구해내는 장면의 [동상](https://www.google.co.kr/search?q=moscow+baron+munchausen&lr=&complete=1&hl=ko&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi4o7fJ1O3gAhWDHqYKHexhBkkQ_AUIDigB&biw=1920&bih=977 )이 있는 모양이다. 사진만 봐도 아주 재미있다.
+* [모스크바에는 뮌하우젠 남작이 물에 빠진 자신을 구해내는 장면의 동상](https://www.google.co.kr/search?q=moscow+baron+munchausen&lr=&complete=1&hl=ko&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi4o7fJ1O3gAhWDHqYKHexhBkkQ_AUIDigB&biw=1920&bih=977 )이 있는 모양이다. 사진만 봐도 아주 재미있다.
 
 한편 뮌하우젠 남작의 모험은 한국어로 번역되어 출판되었다.
 
