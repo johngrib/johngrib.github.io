@@ -270,6 +270,7 @@ comment : false
 * [[what]]
     * [[bootstrapping]]
     * [[braille-pattern-chars]]
+    * [[Caesar-cipher]]
     * [[Continuous-Integration]]
     * [[encryption]]
     * [[ethereum-white-paper]]
