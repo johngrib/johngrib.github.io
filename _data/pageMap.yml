@@ -518,6 +518,14 @@ c-m-05-Binomial-Coefficients-04:
     url: /wiki/c-m-05-Binomial-Coefficients-04
     updated: '2018-05-22 18:43:06 +0900'
     children: []
+Caesar-cipher:
+    type: wiki
+    title: '카이사르 암호(Caesar cipher)'
+    summary: '자리이동식 암호법'
+    parent: what
+    url: /wiki/Caesar-cipher
+    updated: '2019-03-09 20:52:57 +0900'
+    children: []
 cal:
     type: wiki
     title: 'cal, ncal'
@@ -2437,7 +2445,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [bootstrapping, braille-pattern-chars, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, special-chars, units, Unix-philosophy, URI]
+    children: [bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, special-chars, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
