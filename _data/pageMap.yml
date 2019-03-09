@@ -356,7 +356,7 @@ bootstrapping:
     summary: ""
     parent: what
     url: /wiki/bootstrapping
-    updated: '2019-03-06 23:02:12 +0900'
+    updated: '2019-03-06 23:34:08 +0900'
     children: []
 Boy-Scout-Rule:
     type: wiki
@@ -796,7 +796,7 @@ discrete-math-linear-congruences:
     summary: 'Linear Congruences'
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-linear-congruences
-    updated: '2019-03-02 21:06:27 +0900'
+    updated: '2019-03-07 21:44:09 +0900'
     children: []
 discrete-math-matrices:
     type: wiki
@@ -1302,12 +1302,12 @@ grep:
     url: /wiki/grep
     updated: '2018-09-14 17:06:32 +0900'
     children: []
-groovy:
+Groovy:
     type: wiki
     title: Groovy
     summary: 'A multi-faceted language for the Java platform'
     parent: programming-language
-    url: /wiki/groovy
+    url: /wiki/Groovy
     updated: '2017-12-03 15:01:36 +0900'
     children: []
 Grote-Reber-home-made-radio-astronomy:
@@ -1877,7 +1877,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [awk, bc, Golang, groovy, Java, php, Python3, TOML, yaml]
+    children: [awk, bc, Golang, Groovy, Java, php, Python3, TOML, YAML]
 proverb:
     type: wiki
     title: '속담, 법칙, 관용어 모음'
@@ -1948,7 +1948,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-03-01 22:41:32 +0900'
+    updated: '2019-03-09 08:09:09 +0900'
     children: []
 RFC:
     type: wiki
@@ -2454,12 +2454,12 @@ why-http-80-https-443:
     url: /wiki/why-http-80-https-443
     updated: '2018-09-09 11:20:07 +0900'
     children: []
-yaml:
+YAML:
     type: wiki
     title: YAML
     summary: 'YAML Ain''t Markup Language'
     parent: programming-language
-    url: /wiki/yaml
+    url: /wiki/YAML
     updated: '2018-04-08 19:48:46 +0900'
     children: []
 yes:
