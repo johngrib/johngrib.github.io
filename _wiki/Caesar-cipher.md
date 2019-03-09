@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : 카이사르 암호(Caesar cipher)
-summary : 
+summary : 자리이동식 암호법
 date    : 2019-03-09 18:06:30 +0900
-updated : 2019-03-09 19:21:22 +0900
+updated : 2019-03-09 19:24:32 +0900
 tags    : encryption
 toc     : true
 public  : true
@@ -18,6 +18,8 @@ latex   : true
 * 카이사르 암호는 로마의 Julius Caesar가 사용했다고 전해지는 암호 시스템이다.
 * 각 알파벳을 세 글자 차이나는 글자로 치환하는 방식.
     * 예: **A**를**D**로, **X**를 **A**로 바꾸는 방식.
+
+단순히 알파벳의 자리를 옮기는 방식이기 때문에 자리이동식 암호법(shift cipher)이라고도 부른다.
 
 ## 암호화
 
