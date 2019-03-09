@@ -1,5 +1,15 @@
 <script>
     ;(function() {
+        var tags = document.querySelector('div.post-tag');
+        tags.innerHTML = tags.innerHTML
+            .trim()
+            .split(/\s+/)
+            .map(function(tag) {
+                return `<a href="/tag/#${tag}">#${tag}</a>`;
+            })
+            .join(' ');
+    })();
+    ;(function() {
         var post = document.querySelector('article.post-content');
 
         window.n = [];
