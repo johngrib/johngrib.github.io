@@ -3,7 +3,7 @@ layout  : wiki
 title   : 카이사르 암호(Caesar cipher)
 summary : 자리이동식 암호법
 date    : 2019-03-09 18:06:30 +0900
-updated : 2019-03-09 19:24:32 +0900
+updated : 2019-03-09 20:52:57 +0900
 tags    : encryption
 toc     : true
 public  : true
@@ -115,6 +115,86 @@ caesar(enc, decrypt);
 // "MEET YOU IN THE PARK"
 ```
 
+# 아핀 암호
+
+**Affine cipher**
+
+다음 함수를 사용하면 카이사르 암호를 일반화할 수 있다.
+
+$$ f(p) = (ap + b) \bmod 26 $$
+
+단, 다음의 조건을 만족해야 한다.
+
+* $$ a, b $$ 는 정수.
+* $$ \gcd(a, 26) = 1 $$.
+* $$ f $$ 는 전단사 함수(일대일 대응).
+
+## 아핀 암호의 해독
+
+$$
+f(p) = (ap + b) \bmod 26 = c\\
+$$
+
+p 를 암호화한 결과를 c라 하자.
+
+c는 $$ap + b$$와 $$\bmod 26$$에서 합동이므로 다음과 같이 생각할 수 있다.
+
+$$
+\begin{align}
+c     & ≡ ap + b (\bmod 26) \\
+c - b & ≡ ap (\bmod 26) \\
+\end{align}
+$$
+
+**a 모듈로 26**의 역 $$ \bar{a} $$를 알아낼 수 있다면 다음과 같이 p를 구할 수 있다.
+(전제에서 $$ \gcd(a, 26) = 1 $$ 이었으므로, **a 모듈로 26**의 역 $$\bar{a}$$는 존재한다.)
+
+$$
+\begin{align}
+c - b & ≡ ap (\bmod 26) \\
+\bar{a}(c-b) & ≡ a \bar{a} p (\bmod 26)  \\
+\bar{a}(c-b) & ≡ p (\bmod 26)  \\
+\end{align}
+$$
+
+## 글자 빈도 검사를 통한 아핀 암호의 해독
+
+카이사르 암호, 아핀 암호의 해독은 글자 빈도를 따져보면 풀 수 있는 경우가 많다.
+
+다음은 알파벳 빈도를 표로 나타낸 것이다.
+
+| Letter | Count | Frequency |
+|--------|-------|-----------|
+| E      | 21912 | 12.02     |
+| T      | 16587 | 9.10      |
+| A      | 14810 | 8.12      |
+| O      | 14003 | 7.68      |
+| I      | 13318 | 7.31      |
+| N      | 12666 | 6.95      |
+| S      | 11450 | 6.28      |
+| R      | 10977 | 6.02      |
+| H      | 10795 | 5.92      |
+| D      | 7874  | 4.32      |
+| L      | 7253  | 3.98      |
+| U      | 5246  | 2.88      |
+| C      | 4943  | 2.71      |
+| M      | 4761  | 2.61      |
+| F      | 4200  | 2.30      |
+| Y      | 3853  | 2.11      |
+| W      | 3819  | 2.09      |
+| G      | 3693  | 2.03      |
+| P      | 3316  | 1.82      |
+| B      | 2715  | 1.49      |
+| V      | 2019  | 1.11      |
+| K      | 1257  | 0.69      |
+| X      | 315   | 0.17      |
+| Q      | 205   | 0.11      |
+| J      | 188   | 0.10      |
+| Z      | 128   | 0.07      |
+
+* [자료 출처](http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html)
+
+
 
 # 참고문헌
 
@@ -123,3 +203,6 @@ caesar(enc, decrypt);
 # See also
 
 * [[discrete-math-modular]]{모듈러 연산(나머지 연산)}
+* [[/wiki/discrete-math-linear-congruences/#a-모듈로-m-의-역inverse]]{a 모듈로 m의 역}
+* [English Letter Frequency (based on a sample of 40,000 words)](http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html)
+* [Letter frequency](https://en.wikipedia.org/wiki/Letter_frequency)
