@@ -4,7 +4,7 @@ title   : Groovy
 summary : A multi-faceted language for the Java platform
 date    : 2017-12-03 15:01:36 +0900
 updated : 2017-12-03 15:01:36 +0900
-tags    : language jvm-lang groovy
+tag     : language jvm-lang groovy
 toc     : true
 public  : true
 parent  : programming-language
