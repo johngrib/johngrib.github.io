@@ -4,7 +4,7 @@ title   : n개의 제비뽑기에 n번 도전
 summary : 1/e
 date    : 2017-12-03 09:44:20 +0900
 updated : 2018-04-08 20:40:46 +0900
-tags    : math 확률
+tag     : math 확률
 toc     : true
 public  : true
 parent  : math

@@ -4,7 +4,7 @@ title   : uptime 명령어
 summary : 현재 시간, 시스템 부팅 후 경과된 시간, 로그인 사용자, 시스템 부하율을 보여준다.
 date    : 2018-02-06 12:33:02 +0900
 updated : 2018-02-06 22:25:08 +0900
-tags    : bash command
+tag     : bash command
 toc     : true
 public  : true
 parent  : command-line

@@ -4,7 +4,7 @@ title   : vim-f-hangul
 summary : vim에서 f로 한글을 검색하는 플러그인
 date    : 2018-03-18 22:48:58 +0900
 updated : 2018-03-18 22:51:56 +0900
-tags    : vim plugin
+tag     : vim plugin
 toc     : true
 public  : true
 parent  : Vim

@@ -4,7 +4,7 @@ title   : 구체수학 02.합.04.다중합
 summary : 02.SUMS.03.MULTIPLE SUMS
 date    : 2018-05-13 10:35:14 +0900
 updated : 2018-05-19 10:34:45 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-concrete-math

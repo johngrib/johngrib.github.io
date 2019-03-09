@@ -4,7 +4,7 @@ title   : 오렌지 주스 테스트
 summary : 항상 대안을 제시하라
 date    : 2018-01-30 23:08:02 +0900
 updated : 2018-01-30 23:16:57 +0900
-tags    : proverb soft-skill Gerald-Weinberg
+tag     : proverb soft-skill Gerald-Weinberg
 toc     : true
 public  : true
 parent  : proverb

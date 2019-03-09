@@ -4,7 +4,7 @@ title   : 명명 원칙(The Naming Principle)
 summary : 
 date    : 2018-11-18 22:04:16 +0900
 updated : 2018-11-18 22:31:43 +0900
-tags    : proverb principle naming
+tag     : proverb principle naming
 toc     : true
 public  : true
 parent  : proverb

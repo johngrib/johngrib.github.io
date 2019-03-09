@@ -4,7 +4,7 @@ title   : 정지 문제
 summary : The Halting Problem
 date    : 2019-02-10 21:30:53 +0900
 updated : 2019-02-16 21:34:30 +0900
-tags    : cs
+tag     : cs
 toc     : true
 public  : true
 parent  : math

@@ -4,7 +4,7 @@ title   : 구체수학 01.재귀적인 문제들.03.요세푸스 문제
 summary : 01.RECURRENT PROBLEMS
 date    : 2018-04-26 21:58:11 +0900
 updated : 2018-05-21 20:20:37 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-concrete-math

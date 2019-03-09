@@ -4,7 +4,7 @@ title   : (책) 함부로 말하는 사람과 대화하는 법
 summary : Take the Bully by the Horns
 date    : 2018-02-02 22:51:41 +0900
 updated : 2018-02-02 22:55:21 +0900
-tags    : review soft-skill
+tag     : review soft-skill
 toc     : true
 public  : true
 parent  : book

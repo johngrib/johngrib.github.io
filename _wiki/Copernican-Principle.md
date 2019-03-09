@@ -4,7 +4,7 @@ title   : 코페르니쿠스 원리(Copernican Principle)와 방법론(Copernicu
 summary : 아무런 정보가 없을 때 종말을 추정하는 방법
 date    : 2018-04-15 16:38:17 +0900
 updated : 2018-04-15 17:12:58 +0900
-tags    : 추정 bayes
+tag     : 추정 bayes
 toc     : true
 public  : true
 parent  : proverb

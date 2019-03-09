@@ -4,7 +4,7 @@ title   : 포스텔의 법칙(Postel's law)
 summary : 받을 때는 관대하게, 보낼 때는 엄격하게.
 date    : 2018-01-07 17:51:33 +0900
 updated : 2018-01-07 18:20:48 +0900
-tags    : proverb law
+tag     : proverb law
 toc     : true
 public  : true
 parent  : proverb

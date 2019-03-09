@@ -4,7 +4,7 @@ title   : 루바르스키의 사이버네틱 곤충학 법칙(Lubarsky's Law of 
 summary : 버그는 언제나 한 마리가 더 있다.
 date    : 2017-12-04 21:34:28 +0900
 updated : 2017-12-09 22:39:56 +0900
-tags    : proverb law bug
+tag     : proverb law bug
 toc     : true
 public  : true
 parent  : proverb

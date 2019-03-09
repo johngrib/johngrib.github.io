@@ -4,7 +4,7 @@ title   : 수열의 합
 summary : Summations
 date    : 2019-01-27 21:09:13 +0900
 updated : 2019-01-27 22:18:50 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics

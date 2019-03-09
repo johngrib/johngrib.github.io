@@ -4,7 +4,7 @@ title   : 데이터 중심 애플리케이션 설계.01.신뢰성,확장성,유�
 summary : 01.Reliable, Scalable, and Maintainable Applications
 date    : 2018-07-06 23:19:30 +0900
 updated : 2018-07-07 05:12:42 +0900
-tags    : 
+tag     : 
 toc     : true
 public  : true
 parent  : study-data-intensive-application

@@ -4,7 +4,7 @@ title   : ALPHAGO (2017)
 summary : 알파고 다큐멘터리
 date    : 2018-02-02 21:29:03 +0900
 updated : 2018-02-02 21:39:05 +0900
-tags    : netflix alphago 바둑 google AI
+tag     : netflix alphago 바둑 google AI
 toc     : true
 public  : true
 parent  : movie

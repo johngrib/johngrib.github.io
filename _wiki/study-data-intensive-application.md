@@ -4,7 +4,7 @@ title   : (study) Designing Data-Intensive Applications(데이터 중심 어플�
 summary : 
 date    : 2018-07-06 23:06:40 +0900
 updated : 2018-07-06 23:08:47 +0900
-tags    : 
+tag     : 
 toc     : true
 public  : true
 parent  : study

@@ -4,7 +4,7 @@ title   : (책) 세계를 바꾼 17가지 방정식
 summary : 쉽고 재미있는, 훌륭한 교양 수학책
 date    : 2018-04-12 13:00:57 +0900
 updated : 2018-04-18 20:44:02 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : book

@@ -4,7 +4,7 @@ title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
 updated : 2019-01-23 11:26:56 +0900
-tags    : command
+tag     : command
 toc     : true
 public  : true
 parent  : programming-language

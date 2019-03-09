@@ -4,7 +4,7 @@ title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
 updated : 2018-11-02 22:29:56 +0900
-tags    : vim wiki
+tag     : vim wiki
 public  : true
 parent  : Vim
 latex   : false

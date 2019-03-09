@@ -4,7 +4,7 @@ title   : youcompleteme를 python3로 구동하기
 summary : python2 좀 그만 쓰자
 date    : 2018-03-21 22:48:40 +0900
 updated : 2018-03-21 23:24:50 +0900
-tags    : vim python
+tag     : vim python
 toc     : true
 public  : true
 parent  : Vim

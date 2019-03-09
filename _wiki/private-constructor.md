@@ -4,7 +4,7 @@ title   : Java에서 객체가 생성되는 것을 막는 방법
 summary : private 생성자를 선언한다
 date    : 2018-03-04 13:47:40 +0900
 updated : 2018-03-05 16:17:51 +0900
-tags    : java tip
+tag     : java tip
 toc     : true
 public  : true
 parent  : Java

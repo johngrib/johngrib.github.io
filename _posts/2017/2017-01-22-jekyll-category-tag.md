@@ -3,7 +3,7 @@ layout  : post
 title   : Jekyll 블로그에 태그 추가하기.
 summary : 마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.
 date    : 2017-01-22 08:52:22 +0900
-tags    : jekyll
+tag     : jekyll
 toc     : true
 comment : true
 public  : true

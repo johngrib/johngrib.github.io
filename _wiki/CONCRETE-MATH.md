@@ -4,7 +4,7 @@ title   : (책) CONCRETE MATHEMATICS(구체수학)
 summary : 로널드 그레이엄과 도널드 커누스, 오렌 파타슈닉의 Stanford 강의 교재
 date    : 2018-04-25 22:17:17 +0900
 updated : 2018-10-19 08:31:49 +0900
-tags    : book
+tag     : book
 toc     : true
 public  : true
 parent  : book

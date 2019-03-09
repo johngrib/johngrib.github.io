@@ -4,7 +4,7 @@ title   : 대한수학회 수학용어 사전
 summary : 수학용어 번역시 꼭 참고하자
 date    : 2018-04-25 20:59:34 +0900
 updated : 2018-04-25 21:06:47 +0900
-tags    : math 번역
+tag     : math 번역
 toc     : true
 public  : true
 parent  : useful-site

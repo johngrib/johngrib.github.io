@@ -4,7 +4,7 @@ title   : GeaCron, 옐로우의 세계
 summary : 연도별 세계 지도를 볼 수 있는 사이트
 date    : 2018-03-10 19:13:32 +0900
 updated : 2018-03-10 21:09:27 +0900
-tags    : map history
+tag     : map history
 toc     : true
 public  : true
 parent  : useful-site

@@ -4,7 +4,7 @@ title   : cut 명령어
 summary : cut out selected portions of each line of a file
 date    : 2019-01-15 17:09:24 +0900
 updated : 2019-01-15 17:21:17 +0900
-tags    : bash command
+tag     : bash command
 toc     : true
 public  : true
 parent  : command-line

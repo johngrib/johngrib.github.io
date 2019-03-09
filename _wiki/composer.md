@@ -4,7 +4,7 @@ title   : composer
 summary : Dependency Manager for PHP
 date    : 2019-01-13 22:21:50 +0900
 updated : 2019-01-13 22:54:23 +0900
-tags    : php command
+tag     : php command
 toc     : true
 public  : true
 parent  : php

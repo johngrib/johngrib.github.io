@@ -4,7 +4,7 @@ title   : Floating Point 부동소수점
 summary :
 date    : 2018-10-28 08:03:23 +0900
 updated : 2018-10-29 11:40:34 +0900
-tags    : binary
+tag     : binary
 toc     : true
 public  : true
 parent  : what

@@ -4,7 +4,7 @@ title   : 소수를 판별하는 정규식
 summary : 1진법을 사용해 소수를 판별하자!
 date    : 2017-09-20 20:56:55 +0900
 updated : 2018-04-21 12:01:21 +0900
-tags    : perl regex
+tag     : perl regex
 toc     : true
 comment : true
 public  : true

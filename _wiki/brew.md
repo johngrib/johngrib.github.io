@@ -4,7 +4,7 @@ title   : Homebrew
 summary : macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 brew.
 date    : 2018-02-12 10:03:46 +0900
 updated : 2019-01-11 16:36:10 +0900
-tags    : bash mac command
+tag     : bash mac command
 toc     : true
 public  : true
 parent  : command-line

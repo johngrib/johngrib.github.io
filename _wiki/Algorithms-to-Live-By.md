@@ -4,7 +4,7 @@ title   : (책) 알고리즘, 인생을 계산하다
 summary :
 date    : 2018-01-26 21:35:22 +0900
 updated : 2018-04-12 12:30:46 +0900
-tags    : book algirithm
+tag     : book algirithm
 toc     : true
 public  : true
 parent  : book

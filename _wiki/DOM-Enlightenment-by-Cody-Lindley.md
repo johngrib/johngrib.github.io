@@ -4,7 +4,7 @@ title   : (책) DOM을 깨우치다 - 가치에 대한 완전한 이해
 summary : DOM Enlightenment by Cody Lindley
 date    : 2018-01-24 21:16:59 +0900
 updated : 2018-01-26 21:36:08 +0900
-tags    : book html DOM o-reilly
+tag     : book html DOM o-reilly
 toc     : true
 public  : true
 parent  : book

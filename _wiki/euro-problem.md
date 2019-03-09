@@ -4,7 +4,7 @@ title   : 유로 문제(euro problem)
 summary : 동전이 한 쪽으로 기울었다는 것을 증명하자
 date    : 2018-04-19 22:01:22 +0900
 updated : 2018-04-24 20:49:06 +0900
-tags    : Think-Bayes bayes
+tag     : Think-Bayes bayes
 toc     : true
 public  : true
 parent  : study-think-bayes

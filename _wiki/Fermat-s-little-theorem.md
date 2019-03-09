@@ -4,7 +4,7 @@ title   : 페르마의 소정리
 summary : Fermat's little theorem
 date    : 2019-03-02 21:17:20 +0900
 updated : 2019-03-03 17:42:20 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : math

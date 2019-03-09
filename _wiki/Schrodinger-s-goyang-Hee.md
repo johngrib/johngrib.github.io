@@ -4,7 +4,7 @@ title   : (책) 슈뢰딩거의 고양희
 summary : 반-바지. SF 단편집
 date    : 2018-04-22 16:53:16 +0900
 updated : 2018-04-22 17:16:53 +0900
-tags    : sf
+tag     : sf
 toc     : true
 public  : true
 parent  : book

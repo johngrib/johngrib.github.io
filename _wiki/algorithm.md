@@ -4,7 +4,7 @@ title   : 알고리즘
 summary :
 date    : 2018-03-31 18:01:38 +0900
 updated : 2019-02-05 22:53:48 +0900
-tags    : algorithm
+tag     : algorithm
 toc     : true
 public  : true
 parent  : index

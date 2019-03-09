@@ -4,7 +4,7 @@ title   : git
 summary : 
 date    : 2018-12-02 10:11:09 +0900
 updated : 2019-01-29 16:43:48 +0900
-tags    : git command
+tag     : git command
 toc     : true
 public  : true
 parent  : tools

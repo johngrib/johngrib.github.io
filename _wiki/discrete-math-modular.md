@@ -4,7 +4,7 @@ title   : 모듈러 연산(나머지 연산)
 summary : Modular Arithmetic
 date    : 2019-02-17 21:58:31 +0900
 updated : 2019-02-20 07:47:17 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics

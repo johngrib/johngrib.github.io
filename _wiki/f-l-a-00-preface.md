@@ -4,7 +4,7 @@ title   : 형식언어와 오토마타.00.서문
 summary : Preface
 date    : 2018-11-12 00:06:18 +0900
 updated : 2018-11-12 08:59:52 +0900
-tags    : cs
+tag     : cs
 toc     : true
 public  : true
 parent  : study-formal-languages-and-automata

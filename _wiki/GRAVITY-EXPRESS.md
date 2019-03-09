@@ -4,7 +4,7 @@ title   : (책) 그래비티 익스프레스(GRAVITY EXPRESS)
 summary : 게놈 익스프레스와 함께 강력하게 추천하는 교양 과학책
 date    : 2018-04-20 20:46:44 +0900
 updated : 2018-04-20 21:24:47 +0900
-tags    : science
+tag     : science
 toc     : true
 public  : true
 parent  : book

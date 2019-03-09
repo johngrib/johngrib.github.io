@@ -4,7 +4,7 @@ title   : 엑셀 단축키 모음
 summary : 
 date    : 2018-11-01 09:03:36 +0900
 updated : 2018-11-01 09:45:21 +0900
-tags    : excel hotkey
+tag     : excel hotkey
 toc     : true
 public  : true
 parent  : Excel

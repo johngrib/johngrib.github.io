@@ -4,7 +4,7 @@ title   : 집합
 summary : Sets
 date    : 2019-01-14 22:13:18 +0900
 updated : 2019-02-02 14:50:16 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics

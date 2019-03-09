@@ -4,7 +4,7 @@ title   : (요약) 당신과 당신의 연구
 summary : 남들보다 10% 더 공부하고, 중요한 문제를 연구하고, 항상 준비할 것
 date    : 2018-04-23 08:31:51 +0900
 updated : 2018-04-23 10:31:52 +0900
-tags    : 공부
+tag     : 공부
 toc     : true
 public  : true
 parent  : clipping

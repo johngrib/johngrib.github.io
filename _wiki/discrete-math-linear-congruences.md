@@ -4,7 +4,7 @@ title   : 선형합동
 summary : Linear Congruences
 date    : 2019-02-24 00:13:22 +0900
 updated : 2019-03-07 21:44:09 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics

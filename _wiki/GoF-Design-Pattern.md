@@ -4,7 +4,7 @@ title   : (책) GoF의 디자인 패턴
 summary : Design Patterns Elements of Reusable Object-Oriented Software
 date    : 2018-02-12 08:50:22 +0900
 updated : 2018-02-12 08:51:18 +0900
-tags    : book design-pattern
+tag     : book design-pattern
 toc     : true
 public  : true
 parent  : book

@@ -4,7 +4,7 @@ title   : (책) Professional 소프트웨어 개발
 summary : PROFESSIONAL SOFTWARE DEVELOPMENT
 date    : 2018-02-06 08:48:58 +0900
 updated : 2018-02-06 23:05:06 +0900
-tags    : book
+tag     : book
 toc     : true
 public  : true
 parent  : book

@@ -4,7 +4,7 @@ title   : 대문자를 upper case, 소문자를 lower case라 부르는 이유
 summary : 인쇄 식자공들이 소문자 활자를 아래쪽 상자에 담고, 대문자 활자를 위쪽 상자에 담았기 때문
 date    : 2018-02-07 21:41:02 +0900
 updated : 2018-02-07 22:46:36 +0900
-tags    : letter case
+tag     : letter case
 toc     : true
 public  : true
 parent  : why

@@ -4,7 +4,7 @@ title   : 구체수학 03.정수 함수.02.바닥 천장 함수의 응용
 summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
 updated : 2018-06-20 22:21:35 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-concrete-math

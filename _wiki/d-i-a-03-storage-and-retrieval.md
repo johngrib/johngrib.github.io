@@ -4,7 +4,7 @@ title   : 데이터 중심 애플리케이션 설계.03.저장소와 검색
 summary : 03.Storage and Retrieval
 date    : 2018-07-07 21:33:33 +0900
 updated : 2018-07-08 18:44:58 +0900
-tags    : 
+tag     : 
 toc     : true
 public  : true
 parent  : study-data-intensive-application

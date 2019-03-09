@@ -4,7 +4,7 @@ title   : 고대 이집트 곱셈법
 summary : EGYPTIAN MULTIPLICATION
 date    : 2018-11-14 23:24:36 +0900
 updated : 2018-11-16 10:54:03 +0900
-tags    : 
+tag     : 
 toc     : true
 public  : true
 parent  : algorithm

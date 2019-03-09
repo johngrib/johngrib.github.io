@@ -4,7 +4,7 @@ title   : 에젤 강령(Edsel edict)
 summary : 새것을 도입할 때에는 한 번에 하나씩 하자
 date    : 2018-01-18 21:06:12 +0900
 updated : 2018-01-18 22:01:04 +0900
-tags    : Gerald-Weinberg proverb
+tag     : Gerald-Weinberg proverb
 toc     : true
 public  : true
 parent  : proverb

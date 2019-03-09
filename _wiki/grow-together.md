@@ -4,7 +4,7 @@ title   : (책) 함께 자라기
 summary : 애자일 철학을 삶에 적용해 다른 사람들과 함께 성장하기
 date    : 2018-12-18 22:32:10 +0900
 updated : 2019-01-22 22:30:47 +0900
-tags    : agile study
+tag     : agile study
 toc     : true
 public  : true
 parent  : book

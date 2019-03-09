@@ -4,7 +4,7 @@ title   : Unix philosophy
 summary : 유닉스 철학
 date    : 2018-07-15 07:34:20 +0900
 updated : 2018-07-15 10:18:57 +0900
-tags    : 
+tag     : 
 toc     : true
 public  : true
 parent  : what

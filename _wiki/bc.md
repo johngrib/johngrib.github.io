@@ -4,7 +4,7 @@ title   : bc
 summary : An arbitrary precision calculator language
 date    : 2018-10-07 18:12:19 +0900
 updated : 2018-10-07 21:29:56 +0900
-tags    : bash
+tag     : bash
 toc     : true
 public  : true
 parent  : programming-language

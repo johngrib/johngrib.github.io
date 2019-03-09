@@ -4,7 +4,7 @@ title   : 구체수학 02.합.01.표기법
 summary : 02.SUMS.01.NOTATION
 date    : 2018-05-02 22:02:21 +0900
 updated : 2018-05-18 13:32:39 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-concrete-math

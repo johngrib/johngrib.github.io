@@ -4,7 +4,7 @@ title   : (책) 소프트웨어 장인 - 프로페셔널리즘, 실용주의, �
 summary : The Software Craftman-Professionalism, Pragmatism, Pride by Sandro Mancuso
 date    : 2018-01-30 22:43:43 +0900
 updated : 2018-02-01 22:56:16 +0900
-tags    : review 장인정신 괴담
+tag     : review 장인정신 괴담
 toc     : true
 public  : true
 parent  : book

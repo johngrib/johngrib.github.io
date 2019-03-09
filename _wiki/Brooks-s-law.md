@@ -4,7 +4,7 @@ title   : 브룩스의 법칙
 summary : 늦어진 소프트웨어 프로젝트에 인력을 추가로 투입하면 더 늦어지게 된다
 date    : 2018-02-20 22:59:38 +0900
 updated : 2018-02-21 20:59:54 +0900
-tags    : law Fred-Brooks
+tag     : law Fred-Brooks
 toc     : true
 public  : true
 parent  : proverb

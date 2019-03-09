@@ -4,7 +4,7 @@ title   : 나의 공부 방법
 summary :
 date    : 2019-01-18 23:12:07 +0900
 updated : 2019-01-19 12:03:58 +0900
-tags    : study
+tag     : study
 toc     : true
 public  : true
 parent  : how-to

@@ -4,7 +4,7 @@ title   : M&M 문제
 summary :
 date    : 2018-04-09 22:31:42 +0900
 updated : 2018-04-24 20:49:22 +0900
-tags    : Think-Bayes bayes
+tag     : Think-Bayes bayes
 toc     : true
 public  : true
 parent  : study-think-bayes

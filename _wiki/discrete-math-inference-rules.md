@@ -4,7 +4,7 @@ title   : 추론규칙
 summary : Rules of Inference
 date    : 2019-01-06 11:36:44 +0900
 updated : 2019-01-06 13:32:33 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics

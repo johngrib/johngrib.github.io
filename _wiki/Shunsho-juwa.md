@@ -4,7 +4,7 @@ title   : (책) 수학자의 공부
 summary : 수학자 오카 기요시의 일본 교육 비판
 date    : 2018-03-13 22:36:38 +0900
 updated : 2018-03-14 09:03:34 +0900
-tags    : review 교육
+tag     : review 교육
 toc     : true
 public  : true
 parent  : book

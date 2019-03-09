@@ -4,7 +4,7 @@ title   : 내 키보드 레이아웃
 summary : 
 date    : 2018-11-22 10:57:14 +0900
 updated : 2018-11-22 11:07:09 +0900
-tags    : keyboard
+tag     : keyboard
 toc     : true
 public  : true
 parent  : index

@@ -4,7 +4,7 @@ title   : Java 8
 summary : 
 date    : 2018-07-25 16:57:00 +0900
 updated : 2018-07-25 17:09:16 +0900
-tags    : java
+tag     : java
 toc     : true
 public  : true
 parent  : Java

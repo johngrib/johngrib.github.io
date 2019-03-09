@@ -4,7 +4,7 @@ title   : HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.
 summary : 해피해킹을 더욱 해피하게
 date    : 2017-05-14 15:50:31 +0900
 updated : 2018-04-21 11:37:09 +0900
-tags    : keyboard
+tag     : keyboard
 toc     : true
 comment : true
 public  : true

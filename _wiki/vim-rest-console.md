@@ -4,7 +4,7 @@ title   : vim-rest-console 사용법
 summary : vim을 cURL 클라이언트로 사용하자
 date    : 2018-04-12 21:41:12 +0900
 updated : 2018-09-05 22:31:54 +0900
-tags    : vim http
+tag     : vim http
 toc     : true
 public  : true
 parent  : Vim

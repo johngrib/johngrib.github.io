@@ -4,7 +4,7 @@ title   : httpbin(1) HTTP Request & Response Service
 summary : mock 데이터가 필요할 때 사용하기 좋다
 date    : 2018-04-22 21:21:07 +0900
 updated : 2018-04-22 21:28:11 +0900
-tags    : http
+tag     : http
 toc     : true
 public  : true
 parent  : useful-site

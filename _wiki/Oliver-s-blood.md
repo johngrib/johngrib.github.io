@@ -4,7 +4,7 @@ title   : 올리버의 혈액형 문제(Oliver's blood)
 summary : 흔한 혈액형으로는 유죄로 몰 수 없지
 date    : 2018-04-22 22:26:19 +0900
 updated : 2018-04-24 20:49:44 +0900
-tags    : Think-Bayes bayes
+tag     : Think-Bayes bayes
 toc     : true
 public  : true
 parent  : study-think-bayes

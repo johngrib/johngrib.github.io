@@ -4,7 +4,7 @@ title   : Excel 행과 열 바꾸는 방법
 summary : 
 date    : 2018-09-17 12:06:47 +0900
 updated : 2018-09-17 13:49:55 +0900
-tags    : excel vba
+tag     : excel vba
 toc     : true
 public  : true
 parent  : Excel

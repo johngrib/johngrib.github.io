@@ -4,7 +4,7 @@ title   : (책) HTTP 완벽 가이드 - 웹은 어떻게 동작하는가
 summary : HTTP - THE DEFINITIVE GUIDE
 date    : 2018-01-20 18:20:21 +0900
 updated : 2018-02-05 22:51:00 +0900
-tags    : book http
+tag     : book http
 toc     : true
 public  : true
 parent  : book

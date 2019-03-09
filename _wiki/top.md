@@ -4,7 +4,7 @@ title   : top 명령어
 summary : 시스템 프로세스 및 메모리 사용 상태를 확인한다
 date    : 2018-02-07 07:00:35 +0900
 updated : 2018-02-07 21:26:59 +0900
-tags    : bash command
+tag     : bash command
 toc     : true
 public  : true
 parent  : command-line

@@ -4,7 +4,7 @@ title   : Continuous Integration(지속적 통합)
 summary : 
 date    : 2018-07-06 10:46:27 +0900
 updated : 2018-07-10 18:40:25 +0900
-tags    : 
+tag     : 
 toc     : true
 public  : true
 parent  : what

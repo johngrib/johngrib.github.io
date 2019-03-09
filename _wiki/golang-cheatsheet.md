@@ -4,7 +4,7 @@ title   : Go cheatsheet
 summary : golang을 배우면서 까먹기 쉬운 것들을 적어두자
 date    : 2018-10-01 10:30:40 +0900
 updated : 2018-10-19 22:21:31 +0900
-tags    : golang cheatsheet
+tag     : golang cheatsheet
 toc     : true
 public  : true
 parent  : Golang

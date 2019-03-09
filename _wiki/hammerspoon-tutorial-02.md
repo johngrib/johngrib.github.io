@@ -4,7 +4,7 @@ title   : Hammerspoon 튜토리얼 02 - 클립보드 확장 기능을 만들어 
 summary : 복붙을 편하게!
 date    : 2017-08-04 21:32:22 +0900
 updated : 2018-04-21 11:37:42 +0900
-tags    : hammerspoon
+tag     : hammerspoon
 toc     : true
 comment : true
 public  : true

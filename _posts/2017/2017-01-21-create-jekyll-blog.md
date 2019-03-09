@@ -3,7 +3,7 @@ layout  : post
 title   : github에 Jekyll 블로그를 만들었다.
 summary : 누구나 만드는 github 공짜 블로그.
 date    : 2017-01-21 22:37:25 +0900
-tags    : jekyll
+tag     : jekyll
 toc     : true
 comment : true
 public  : true

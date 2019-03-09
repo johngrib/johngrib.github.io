@@ -4,7 +4,7 @@ title   : 원시근(Primitive Roots)
 summary : 
 date    : 2019-03-03 21:55:44 +0900
 updated : 2019-03-03 22:45:31 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : math

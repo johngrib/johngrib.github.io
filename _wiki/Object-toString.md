@@ -4,7 +4,7 @@ title   : java.lang.Object.toString 메소드
 summary :
 date    : 2018-03-10 23:04:50 +0900
 updated : 2018-03-11 15:12:10 +0900
-tags    : java 번역
+tag     : java 번역
 toc     : true
 public  : true
 parent  : Java

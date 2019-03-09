@@ -4,7 +4,7 @@ title   : csplit 명령어
 summary : 주어진 조건에 따라 파일을 분할한다
 date    : 2018-09-28 08:07:39 +0900
 updated : 2018-09-28 08:16:20 +0900
-tags    : bash command
+tag     : bash command
 toc     : true
 public  : true
 parent  : command-line

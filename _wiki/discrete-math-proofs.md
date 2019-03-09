@@ -4,7 +4,7 @@ title   : 증명
 summary : Proofs
 date    : 2019-01-06 16:36:55 +0900
 updated : 2019-01-09 18:41:01 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics

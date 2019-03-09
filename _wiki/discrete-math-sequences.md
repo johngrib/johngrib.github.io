@@ -4,7 +4,7 @@ title   : 수열
 summary : Sequences
 date    : 2019-01-27 20:09:06 +0900
 updated : 2019-02-16 21:29:36 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics

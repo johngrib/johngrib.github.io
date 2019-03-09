@@ -4,7 +4,7 @@ title   : phpbrew
 summary : Brew & manage PHP versions in pure PHP at HOME
 date    : 2019-01-08 15:43:24 +0900
 updated : 2019-01-08 22:43:54 +0900
-tags    : php command
+tag     : php command
 toc     : true
 public  : true
 parent  : command-line

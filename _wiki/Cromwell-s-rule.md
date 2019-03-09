@@ -4,7 +4,7 @@ title   : 크롬웰의 법칙(Cromwell's rule)
 summary : 논리적으로 참 거짓이 명확하지 않은 사건에 대하여 0, 1의 확률을 주면 안 된다는 법칙
 date    : 2018-04-08 15:13:06 +0900
 updated : 2018-04-08 20:39:13 +0900
-tags    : math history
+tag     : math history
 toc     : true
 public  : true
 parent  : math

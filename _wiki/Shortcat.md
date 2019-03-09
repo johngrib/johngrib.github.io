@@ -4,7 +4,7 @@ title   : Shortcat
 summary :
 date    : 2018-03-03 19:46:09 +0900
 updated : 2018-03-07 21:14:05 +0900
-tags    : mac
+tag     : mac
 toc     : true
 public  : true
 parent  : mac-apps

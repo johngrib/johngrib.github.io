@@ -4,7 +4,7 @@ title   : 지프의 법칙(Zipf's law)
 summary : 단어의 빈도는 단어 빈도 랭킹에 반비례한다
 date    : 2018-04-15 17:47:44 +0900
 updated : 2018-04-15 18:35:07 +0900
-tags    : law stat
+tag     : law stat
 toc     : true
 public  : true
 parent  : proverb

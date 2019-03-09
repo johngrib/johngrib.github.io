@@ -4,7 +4,7 @@ title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
 updated : 2018-11-20 16:44:19 +0900
-tags    : special-chars
+tag     : special-chars
 toc     : true
 public  : true
 parent  : what

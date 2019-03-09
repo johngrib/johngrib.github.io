@@ -4,7 +4,7 @@ title   : Ginkgo 사용하기
 summary : BDD Testing Framework for Go
 date    : 2018-10-02 10:55:21 +0900
 updated : 2018-10-04 16:44:56 +0900
-tags    : golang test
+tag     : golang test
 toc     : true
 public  : true
 parent  : Golang

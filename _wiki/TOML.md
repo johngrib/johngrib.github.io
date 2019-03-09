@@ -4,7 +4,7 @@ title   : TOML
 summary : Tom's Obvious, Minimal Language
 date    : 2018-10-23 10:06:00 +0900
 updated : 2018-10-23 11:01:12 +0900
-tags    : toml data-format
+tag     : toml data-format
 toc     : true
 public  : true
 parent  : programming-language

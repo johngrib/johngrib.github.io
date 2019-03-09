@@ -4,7 +4,7 @@ title   : (study) FORMAL LANGUAGES AND AUTOMATA
 summary : 
 date    : 2018-11-11 23:56:15 +0900
 updated : 2018-11-12 00:08:19 +0900
-tags    : cs
+tag     : cs
 toc     : true
 public  : true
 parent  : study

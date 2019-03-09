@@ -4,7 +4,7 @@ title   : 마드리드 모던걸
 summary : Las chicas del cable
 date    : 2018-02-05 09:42:32 +0900
 updated : 2018-02-05 10:20:21 +0900
-tags    : netflix drama 
+tag     : netflix drama 
 toc     : true
 public  : true
 parent  : movie

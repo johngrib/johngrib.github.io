@@ -4,7 +4,7 @@ title   : java.lang.Object.equals 메소드
 summary :
 date    : 2018-03-07 21:40:19 +0900
 updated : 2018-03-08 23:00:25 +0900
-tags    : java 번역
+tag     : java 번역
 toc     : true
 public  : true
 parent  : Java

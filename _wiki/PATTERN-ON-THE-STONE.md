@@ -4,7 +4,7 @@ title   : (책) 생각하는 기계
 summary : 
 date    : 2018-04-30 22:46:10 +0900
 updated : 2018-05-26 22:15:42 +0900
-tags    : 
+tag     : 
 toc     : true
 public  : true
 parent  : book

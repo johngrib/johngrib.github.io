@@ -4,7 +4,7 @@ title   : 구체수학 02.합.05.일반적인 방법들
 summary : 02.SUMS.05.GENERAL METHODS
 date    : 2018-05-19 10:40:25 +0900
 updated : 2018-05-22 18:50:35 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-concrete-math

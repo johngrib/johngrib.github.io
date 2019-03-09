@@ -4,7 +4,7 @@ title   : 고양이의 왕(The King O' Cats)
 summary : 
 date    : 2018-07-28 22:54:25 +0900
 updated : 2018-07-29 00:13:44 +0900
-tags    : 번역
+tag     : 번역
 toc     : true
 public  : true
 parent  : clipping

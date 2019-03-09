@@ -3,7 +3,7 @@ layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
 updated : 2019-01-14 21:54:46 +0900
-tags    : http
+tag     : http
 toc     : true
 public  : true
 parent  : what

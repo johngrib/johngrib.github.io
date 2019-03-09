@@ -4,7 +4,7 @@ title   : java.lang.Object.hashCode 메소드
 summary :
 date    : 2018-03-09 18:54:19 +0900
 updated : 2018-03-10 18:45:35 +0900
-tags    : java 번역 소수
+tag     : java 번역 소수
 toc     : true
 public  : true
 parent  : Java

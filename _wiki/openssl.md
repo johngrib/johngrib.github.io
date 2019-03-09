@@ -4,7 +4,7 @@ title   : openssl 명령어
 summary : cryptography toolkit
 date    : 2018-09-14 22:54:57 +0900
 updated : 2019-01-19 12:58:50 +0900
-tags    : bash encryption command
+tag     : bash encryption command
 toc     : true
 public  : true
 parent  : command-line

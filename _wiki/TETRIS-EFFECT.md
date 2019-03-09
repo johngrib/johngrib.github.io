@@ -4,7 +4,7 @@ title   : (책) 테트리스 이펙트
 summary : 테트리스 개발과 저작권 분쟁 이야기
 date    : 2018-03-20 22:25:10 +0900
 updated : 2018-03-20 23:21:57 +0900
-tags    : review game history
+tag     : review game history
 toc     : true
 public  : true
 parent  : book

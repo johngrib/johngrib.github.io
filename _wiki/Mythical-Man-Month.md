@@ -4,7 +4,7 @@ title   : (책) 맨먼스 미신 - 소프트웨어 공학에 관한 에세이
 summary : The Mythical Man-Month - Essays on Software Engineering
 date    : 2018-02-19 12:52:55 +0900
 updated : 2018-02-21 22:38:43 +0900
-tags    : book Fred-Brooks
+tag     : book Fred-Brooks
 toc     : true
 public  : true
 parent  : book

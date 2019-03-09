@@ -4,7 +4,7 @@ title   : 커코프의 원칙(Kerckhoffs's principle)
 summary : 암호의 안전성은 알고리즘이 아니라 키의 비밀성에만 의존해야 한다
 date    : 2018-10-10 09:27:05 +0900
 updated : 2018-10-10 09:57:22 +0900
-tags    : encryption
+tag     : encryption
 toc     : true
 public  : true
 parent  : proverb

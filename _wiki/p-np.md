@@ -4,7 +4,7 @@ title   : P-NP 문제
 summary : 
 date    : 2019-02-24 20:38:46 +0900
 updated : 2019-02-24 21:13:14 +0900
-tags    : math cs
+tag     : math cs
 toc     : true
 public  : true
 parent  : algorithm

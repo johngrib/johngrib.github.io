@@ -4,7 +4,7 @@ title   : HTTP 메시지
 summary :
 date    : 2017-12-24 23:21:39 +0900
 updated : 2018-09-16 16:12:32 +0900
-tags    : http
+tag     : http
 toc     : true
 public  : true
 parent  : what

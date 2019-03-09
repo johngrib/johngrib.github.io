@@ -4,7 +4,7 @@ title   : Kanban, Scrum
 summary : 칸반, 스크럼
 date    : 2019-01-02 22:45:37 +0900
 updated : 2019-01-04 23:09:27 +0900
-tags    : agile
+tag     : agile
 toc     : true
 public  : true
 parent  : what

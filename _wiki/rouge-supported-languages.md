@@ -4,7 +4,7 @@ title   : Rouge가 지원하는 언어 목록
 summary : Github Jekyll의 syntax highlight용 언어 키워드 모음
 date    : 2018-09-17 23:14:53 +0900
 updated : 2018-09-17 23:51:26 +0900
-tags    : github jekyll
+tag     : github jekyll
 toc     : true
 public  : true
 parent  : what

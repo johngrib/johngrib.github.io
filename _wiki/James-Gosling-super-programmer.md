@@ -4,7 +4,7 @@ title   : 무협지 주인공 제임스 고슬링(James Gosling)
 summary : 중학생 때 전산학과에 침입해 독학으로 프로그래밍을 터득
 date    : 2018-02-08 12:06:18 +0900
 updated : 2018-02-08 12:13:57 +0900
-tags    : story James-Gosling
+tag     : story James-Gosling
 toc     : true
 public  : true
 parent  : legend

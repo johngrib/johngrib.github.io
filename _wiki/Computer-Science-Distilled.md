@@ -4,7 +4,7 @@ title   : (책) 한 권으로 그리는 컴퓨터 과학 로드맵
 summary : 
 date    : 2018-04-19 20:38:31 +0900
 updated : 2018-04-19 21:07:04 +0900
-tags    : computer-science
+tag     : computer-science
 toc     : true
 public  : true
 parent  : book

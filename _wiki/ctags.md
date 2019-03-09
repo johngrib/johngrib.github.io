@@ -4,7 +4,7 @@ title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
 updated : 2018-10-03 23:48:53 +0900
-tags    : bash vim ctags golang command
+tag     : bash vim ctags golang command
 toc     : true
 public  : true
 parent  : command-line

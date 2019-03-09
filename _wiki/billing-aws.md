@@ -4,7 +4,7 @@ title   : AWS 요금
 summary : 가랑비에 옷이 젖지 않도록 하자
 date    : 2018-09-17 10:05:48 +0900
 updated : 2018-09-17 10:13:03 +0900
-tags    : aws money
+tag     : aws money
 toc     : true
 public  : true
 parent  : aws

@@ -3,7 +3,7 @@ layout  : wiki
 title   : The Jargon File
 summary : 해커들의 은어 사전
 updated : 2017-12-10 00:55:18 +0900
-tags    : book hacker
+tag     : book hacker
 toc     : true
 public  : true
 parent  : book

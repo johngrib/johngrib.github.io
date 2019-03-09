@@ -4,7 +4,7 @@ title   : 구체수학 02.합.03.합의 조작
 summary : 02.SUMS.03.MANIPULATION OF SUMS
 date    : 2018-05-09 22:00:21 +0900
 updated : 2018-05-19 10:34:12 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-concrete-math

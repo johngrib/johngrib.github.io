@@ -4,7 +4,7 @@ title   : 베이즈 정리(Bayes' theorem)
 summary : p(A|B) = p(A) * p(B|A) / p(B)
 date    : 2018-04-08 20:50:58 +0900
 updated : 2018-04-22 18:56:03 +0900
-tags    : bayes
+tag     : bayes
 toc     : true
 public  : true
 parent  : math

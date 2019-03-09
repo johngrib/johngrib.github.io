@@ -4,7 +4,7 @@ title   : YAML
 summary : YAML Ain't Markup Language
 date    : 2017-12-02 16:45:25 +0900
 updated : 2018-04-08 19:48:46 +0900
-tags    : yaml data-format
+tag     : yaml data-format
 toc     : true
 public  : true
 parent  : programming-language

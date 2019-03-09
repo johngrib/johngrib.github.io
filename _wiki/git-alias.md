@@ -4,7 +4,7 @@ title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
 updated : 2019-01-20 08:32:52 +0900
-tags    : fzf git bash
+tag     : fzf git bash
 toc     : true
 public  : true
 parent  : git

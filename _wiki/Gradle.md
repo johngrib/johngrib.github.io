@@ -4,7 +4,7 @@ title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
 updated : 2018-10-08 22:21:21 +0900
-tags    : gradle tool
+tag     : gradle tool
 toc     : true
 public  : true
 parent  : tools

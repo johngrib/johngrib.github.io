@@ -4,7 +4,7 @@ title   : diff
 summary : compare files line by line
 date    : 2019-01-11 11:27:49 +0900
 updated : 2019-01-11 11:30:51 +0900
-tags    : bash command
+tag     : bash command
 toc     : true
 public  : true
 parent  : command-line

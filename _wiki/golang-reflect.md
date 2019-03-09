@@ -4,7 +4,7 @@ title   : Golang reflect 사용법
 summary : 라이브러리 만들 때에만 쓰고 남용하지 말자
 date    : 2018-12-29 18:38:23 +0900
 updated : 2018-12-30 12:44:06 +0900
-tags    : golang reflect
+tag     : golang reflect
 toc     : true
 public  : true
 parent  : Golang

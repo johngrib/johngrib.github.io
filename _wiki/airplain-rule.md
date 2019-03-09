@@ -4,7 +4,7 @@ title   : 비행기 법칙
 summary : 복잡성은 실패할 확률을 높인다
 date    : 2017-12-25 13:02:38 +0900
 updated : 2017-12-25 13:07:43 +0900
-tags    : complexity law
+tag     : complexity law
 toc     : true
 public  : true
 parent  : proverb

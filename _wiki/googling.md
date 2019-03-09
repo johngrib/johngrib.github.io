@@ -4,7 +4,7 @@ title   : 구글링하는 방법
 summary : 구글 및 여러 검색 서비스 사용법
 date    : 2017-12-23 18:23:50 +0900
 updated : 2018-12-09 21:57:55 +0900
-tags    : google twitter facebook
+tag     : google twitter facebook
 toc     : true
 public  : true
 parent  : how-to

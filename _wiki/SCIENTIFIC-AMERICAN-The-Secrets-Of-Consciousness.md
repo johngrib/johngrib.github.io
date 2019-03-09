@@ -4,7 +4,7 @@ title   : (책) SCIENTIFIC AMERICAN 의식의 비밀
 summary : SECRET OF CONSCIOUSNESS
 date    : 2018-02-05 12:56:32 +0900
 updated : 2018-02-05 22:29:54 +0900
-tags    : book science
+tag     : book science
 toc     : true
 public  : true
 parent  : book

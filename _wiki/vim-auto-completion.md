@@ -4,7 +4,7 @@ title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
 updated : 2018-12-10 21:23:00 +0900
-tags    : vim
+tag     : vim
 toc     : true
 public  : true
 parent  : Vim

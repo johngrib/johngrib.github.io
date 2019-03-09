@@ -4,7 +4,7 @@ title   : Vim persistent_undo 기능 사용하기
 summary : Vim을 재실행해도 undo를 쓸 수 있다
 date    : 2018-09-18 16:05:10 +0900
 updated : 2018-09-18 16:15:36 +0900
-tags    : vim
+tag     : vim
 toc     : true
 public  : true
 parent  : Vim

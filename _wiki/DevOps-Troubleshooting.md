@@ -4,7 +4,7 @@ title   : (책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅�
 summary : DevOps Troubleshooting - Linux Server Best Practices
 date    : 2017-12-05 19:22:28 +0900
 updated : 2018-02-08 22:32:03 +0900
-tags    : book linux
+tag     : book linux
 toc     : true
 public  : true
 parent  : book

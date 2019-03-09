@@ -4,7 +4,7 @@ title   : 함수
 summary : Functions
 date    : 2019-01-23 22:56:50 +0900
 updated : 2019-01-25 21:22:58 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics

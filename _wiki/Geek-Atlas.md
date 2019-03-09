@@ -4,7 +4,7 @@ title   : (책) 긱 아틀라스 - 과학과 기술의 발상지 129곳
 summary : The Geek Atlas
 date    : 2018-02-07 12:59:19 +0900
 updated : 2018-02-13 21:38:46 +0900
-tags    : book o-reilly science map
+tag     : book o-reilly science map
 toc     : true
 public  : true
 parent  : book

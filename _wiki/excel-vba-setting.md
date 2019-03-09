@@ -4,7 +4,7 @@ title   : Excel VBA 셋팅하기
 summary : 
 date    : 2018-09-17 12:43:04 +0900
 updated : 2018-09-17 12:50:46 +0900
-tags    : excel vba
+tag     : excel vba
 toc     : true
 public  : true
 parent  : Excel

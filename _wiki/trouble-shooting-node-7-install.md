@@ -4,7 +4,7 @@ title   : (문제해결) Mac에서 Node 7 버전으로 다운그레이드
 summary : nodejs.org에서 받아서 해결
 date    : 2018-02-12 14:52:15 +0900
 updated : 2018-02-12 15:09:45 +0900
-tags    : trouble-shooting
+tag     : trouble-shooting
 toc     : true
 public  : true
 parent  : til

@@ -4,7 +4,7 @@ title   : 기관차 문제(locomotive problem)
 summary : 기관차 한 대의 번호를 보고 전체 기관차 수를 추정하자
 date    : 2018-04-14 12:04:06 +0900
 updated : 2018-04-24 20:49:14 +0900
-tags    : Think-Bayes bayes
+tag     : Think-Bayes bayes
 toc     : true
 public  : true
 parent  : study-think-bayes

@@ -4,7 +4,7 @@ title   : python3로 간단하게 파일 전송하기
 summary : 같은 사무실이면 메신저로 보내지 말고 python3 -m http.server
 date    : 2018-09-18 20:45:43 +0900
 updated : 2018-09-18 23:08:50 +0900
-tags    : python ip curl
+tag     : python ip curl
 toc     : true
 public  : true
 parent  : Python3

@@ -4,7 +4,7 @@ title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
 updated : 2019-02-16 21:41:51 +0900
-tags    : 
+tag     : 
 toc     : true
 public  : true
 parent  : algorithm

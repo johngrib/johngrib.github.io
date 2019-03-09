@@ -4,7 +4,7 @@ title   : utterances.es
 summary : Github issue 기반의 댓글 생성기
 date    : 2018-02-20 22:07:46 +0900
 updated : 2018-02-20 22:32:19 +0900
-tags    : tools github blog
+tag     : tools github blog
 toc     : true
 public  : true
 parent  : useful-site

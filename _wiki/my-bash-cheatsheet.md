@@ -4,7 +4,7 @@ title   : 나의 bash cheatsheet
 summary : bash tip 모음
 date    : 2018-09-24 13:06:49 +0900
 updated : 2018-10-17 13:11:53 +0900
-tags    : bash
+tag     : bash
 toc     : true
 public  : true
 parent  : command-line

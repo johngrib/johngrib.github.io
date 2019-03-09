@@ -4,7 +4,7 @@ title   : 구체수학 01.재귀적인 문제들.02.평면의 선들
 summary : 01.RECURRENT PROBLEMS
 date    : 2018-04-26 21:58:11 +0900
 updated : 2018-05-18 07:04:14 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-concrete-math

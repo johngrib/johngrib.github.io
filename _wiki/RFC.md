@@ -4,7 +4,7 @@ title   : RFC(Request For Comment)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
 updated : 2019-01-13 20:43:11 +0900
-tags    : rfc
+tag     : rfc
 toc     : true
 public  : true
 parent  : what

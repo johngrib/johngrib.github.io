@@ -4,7 +4,7 @@ title   : (책) 클린 코드 - 로버트 C. 마틴
 summary : 애자일 소프트웨어 장인 정신
 date    : 2018-01-26 21:35:22 +0900
 updated : 2018-02-04 16:25:41 +0900
-tags    : book Uncle-Bob
+tag     : book Uncle-Bob
 toc     : true
 public  : true
 parent  : book

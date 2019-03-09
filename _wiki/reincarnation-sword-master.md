@@ -4,7 +4,7 @@ title   : (책) 전생검신
 summary :
 date    : 2018-01-28 18:53:45 +0900
 updated : 2018-05-24 20:40:00 +0900
-tags    : book fantasy
+tag     : book fantasy
 toc     : true
 public  : true
 parent  : book

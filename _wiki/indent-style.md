@@ -4,7 +4,7 @@ title   : 중괄호 인덴트 스타일
 summary : K&R style, Allman style
 date    : 2017-03-08 23:00:00 +0900
 updated : 2019-01-14 21:41:31 +0900
-tags    :
+tag     :
 toc     : true
 public  : true
 parent  : what

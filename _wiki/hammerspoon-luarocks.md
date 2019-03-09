@@ -4,7 +4,7 @@ title   : luarocks로 Hammerspoon 패키지 관리하기
 summary : 유한락스가 아니라 루아락스로 깨끗하게
 date    : 2017-07-30 16:32:25 +0900
 updated : 2018-04-21 11:48:11 +0900
-tags    : hammerspoon lua
+tag     : hammerspoon lua
 toc     : true
 comment : true
 public  : true

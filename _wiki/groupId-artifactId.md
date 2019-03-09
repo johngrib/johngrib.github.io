@@ -4,7 +4,7 @@ title   : Maven의 groupId 와 artifactId, 그리고 version
 summary : 
 date    : 2018-07-21 08:09:07 +0900
 updated : 2018-07-21 22:57:42 +0900
-tags    : java
+tag     : java
 toc     : true
 public  : true
 parent  : what

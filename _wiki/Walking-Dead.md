@@ -4,7 +4,7 @@ title   : The Walking Dead
 summary : 워킹 데드
 date    : 2018-01-20 18:39:53 +0900
 updated : 2018-01-29 23:06:09 +0900
-tags    : netflix drama zombie
+tag     : netflix drama zombie
 toc     : true
 public  : true
 parent  : movie

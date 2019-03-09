@@ -4,7 +4,7 @@ title   : sort 명령어
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
 updated : 2018-08-31 09:59:37 +0900
-tags    : bash sort command
+tag     : bash sort command
 toc     : true
 public  : true
 parent  : command-line

@@ -4,7 +4,7 @@ title   : 주사위 문제
 summary : 
 date    : 2018-04-13 22:42:24 +0900
 updated : 2018-04-24 20:48:57 +0900
-tags    : Think-Bayes bayes
+tag     : Think-Bayes bayes
 toc     : true
 public  : true
 parent  : study-think-bayes

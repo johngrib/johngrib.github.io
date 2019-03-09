@@ -4,7 +4,7 @@ title   : (책) 해커를 위한 디자인 레슨
 summary : 디자인을 이해하는 공학적 사고방식
 date    : 2018-03-01 16:54:12 +0900
 updated : 2018-03-01 17:42:18 +0900
-tags    : book design
+tag     : book design
 toc     : true
 public  : true
 parent  : book

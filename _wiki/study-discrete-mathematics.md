@@ -4,7 +4,7 @@ title   : (study) 이산수학
 summary : 
 date    : 2019-01-03 21:03:00 +0900
 updated : 2019-01-05 17:15:40 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study

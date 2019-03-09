@@ -4,7 +4,7 @@ title   : 엑셀 셀 순환 참조 문제 해결하기
 summary : 
 date    : 2018-09-19 11:44:51 +0900
 updated : 2018-09-19 11:49:01 +0900
-tags    : excel
+tag     : excel
 toc     : true
 public  : true
 parent  : Excel

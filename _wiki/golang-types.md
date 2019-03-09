@@ -4,7 +4,7 @@ title   : Go type
 summary : Golang의 타입
 date    : 2018-10-14 17:04:19 +0900
 updated : 2018-10-14 21:48:34 +0900
-tags    : golang type
+tag     : golang type
 toc     : true
 public  : true
 parent  : Golang

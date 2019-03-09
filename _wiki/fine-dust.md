@@ -4,7 +4,7 @@ title   : 미세먼지 정보 모음
 summary : 미세먼지 대응에 대한 나의 노하우를 기록한다
 date    : 2018-03-24 11:07:17 +0900
 updated : 2018-04-02 21:13:51 +0900
-tags    : tools 미세먼지
+tag     : tools 미세먼지
 toc     : true
 public  : true
 parent  : useful-site

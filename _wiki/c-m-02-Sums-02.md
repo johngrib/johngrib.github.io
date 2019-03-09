@@ -4,7 +4,7 @@ title   : 구체수학 02.합.02.합과 점화식
 summary : 02.SUMS.02.SUMS AND RECURRENCES
 date    : 2018-05-02 22:02:21 +0900
 updated : 2018-05-21 21:25:46 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-concrete-math

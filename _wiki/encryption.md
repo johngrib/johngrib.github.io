@@ -4,7 +4,7 @@ title   : Encryption
 summary : 암호화 정보 이것저것
 date    : 2018-10-09 22:35:58 +0900
 updated : 2018-10-10 10:04:16 +0900
-tags    : encryption
+tag     : encryption
 toc     : true
 public  : true
 parent  : what

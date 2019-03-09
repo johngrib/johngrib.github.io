@@ -4,7 +4,7 @@ title   : 구체수학 01.재귀적인 문제들.01.하노이의 탑
 summary : 01.RECURRENT PROBLEMS
 date    : 2018-04-26 21:58:11 +0900
 updated : 2018-05-18 06:41:05 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-concrete-math

@@ -4,7 +4,7 @@ title   : 존 베커스, 문제 해결사 팀을 만들다
 summary : 포트란의 탄생
 date    : 2019-02-28 12:53:46 +0900
 updated : 2019-03-01 17:01:12 +0900
-tags    : story
+tag     : story
 toc     : true
 public  : true
 parent  : legend

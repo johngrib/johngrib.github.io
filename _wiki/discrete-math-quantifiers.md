@@ -4,7 +4,7 @@ title   : 한정기호
 summary : Quantifiers
 date    : 2019-01-05 22:47:57 +0900
 updated : 2019-01-06 11:21:04 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics

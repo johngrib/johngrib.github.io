@@ -4,7 +4,7 @@ title   : 집에서 전파망원경을 만든 그로트 레버(Grote Reber)
 summary : 10년간 세계 유일의 전파천문학자
 date    : 2018-02-08 12:06:18 +0900
 updated : 2018-02-08 13:19:30 +0900
-tags    : story science
+tag     : story science
 toc     : true
 public  : true
 parent  : legend

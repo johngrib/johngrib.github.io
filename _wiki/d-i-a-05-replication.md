@@ -4,7 +4,7 @@ title   : 데이터 중심 애플리케이션 설계.05.복제
 summary : 05.Replication
 date    : 2018-07-08 21:33:31 +0900
 updated : 2018-07-09 23:05:05 +0900
-tags    : 
+tag     : 
 toc     : true
 public  : true
 parent  : study-data-intensive-application

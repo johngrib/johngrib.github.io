@@ -4,7 +4,7 @@ title   : Go dependency manager
 summary : 사람들이 많이 쓰는 걸 쓰자
 date    : 2018-10-21 10:19:44 +0900
 updated : 2018-10-21 17:51:17 +0900
-tags    : golang
+tag     : golang
 toc     : true
 public  : true
 parent  : Golang

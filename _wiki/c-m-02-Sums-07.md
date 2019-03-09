@@ -4,7 +4,7 @@ title   : 구체수학 02.합.07.무한합
 summary : 02.SUMS.06.INFINITE SUMS
 date    : 2018-05-27 17:04:23 +0900
 updated : 2018-05-30 23:21:21 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-concrete-math

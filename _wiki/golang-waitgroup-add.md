@@ -4,7 +4,7 @@ title   : Go WaitGroup에 1외에 다른 값을 Add 하면?
 summary : 더하는 숫자가 중요한 게 아니라 0을 맞추는 게 중요
 date    : 2018-11-29 07:42:53 +0900
 updated : 2018-11-29 11:11:32 +0900
-tags    : gloang goroutine
+tag     : gloang goroutine
 toc     : true
 public  : true
 parent  : Golang

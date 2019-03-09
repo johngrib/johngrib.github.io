@@ -4,7 +4,7 @@ title   : 은총알은 없다(No Silver Bullet)
 summary : 생산성, 신뢰성, 단순성을 10배 이상 향상시킬 발전은 나타나지 않을 것이다
 date    : 2018-02-21 21:13:04 +0900
 updated : 2018-02-21 22:34:10 +0900
-tags    : proverb Fred-Brooks
+tag     : proverb Fred-Brooks
 toc     : true
 public  : true
 parent  : proverb

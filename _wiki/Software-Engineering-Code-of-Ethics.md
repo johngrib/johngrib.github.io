@@ -4,7 +4,7 @@ title   : 소프트웨어 공학 윤리 강령과 업무 규범
 summary : Software Engineering Code of Ethics
 date    : 2018-02-06 23:11:38 +0900
 updated : 2018-02-07 06:48:10 +0900
-tags    : ACM IEEE ethics 번역
+tag     : ACM IEEE ethics 번역
 toc     : true
 public  : true
 parent  : clipping

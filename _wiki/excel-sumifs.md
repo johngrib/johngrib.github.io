@@ -4,7 +4,7 @@ title   : SUMIFS 함수 사용법
 summary : 조건에 맞는 값의 sum 값을 구한다
 date    : 2018-04-26 17:52:29 +0900
 updated : 2018-09-17 11:13:38 +0900
-tags    : excel
+tag     : excel
 toc     : true
 public  : true
 parent  : Excel

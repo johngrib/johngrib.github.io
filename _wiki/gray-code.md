@@ -4,7 +4,7 @@ title   : 그레이 코드(Gray code)
 summary : reflected binary Gray code
 date    : 2018-10-15 21:40:31 +0900
 updated : 2018-10-15 23:41:01 +0900
-tags    : binary algorithm
+tag     : binary algorithm
 toc     : true
 public  : true
 parent  : what

@@ -4,7 +4,7 @@ title   : 부트스트래핑(bootstrapping)의 어원
 summary : 
 date    : 2019-02-25 10:40:19 +0900
 updated : 2019-03-06 23:34:08 +0900
-tags    : 
+tag     : 
 toc     : true
 public  : true
 parent  : what

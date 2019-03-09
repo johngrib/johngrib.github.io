@@ -4,7 +4,7 @@ title   : find 명령어
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
 updated : 2019-01-13 18:04:32 +0900
-tags    : bash command
+tag     : bash command
 toc     : true
 public  : true
 parent  : command-line

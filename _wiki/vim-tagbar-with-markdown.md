@@ -4,7 +4,7 @@ title   : vim tagbar에서 markdown을 적용시키자
 summary : .vimrc와 .ctags를 약간만 손보면 된다
 date    : 2018-09-14 16:38:19 +0900
 updated : 2018-09-14 16:58:16 +0900
-tags    : vim tagbar markdown
+tag     : vim tagbar markdown
 toc     : true
 public  : true
 parent  : Vim

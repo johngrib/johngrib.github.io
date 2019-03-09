@@ -4,7 +4,7 @@ title   : 명제 논리
 summary : Propositional Logic
 date    : 2019-01-05 17:39:32 +0900
 updated : 2019-01-06 10:27:36 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics

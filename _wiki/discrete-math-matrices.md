@@ -4,7 +4,7 @@ title   : 행렬
 summary : Matrices
 date    : 2019-02-02 18:38:20 +0900
 updated : 2019-02-04 20:07:14 +0900
-tags    : math
+tag     : math
 toc     : true
 public  : true
 parent  : study-discrete-mathematics
