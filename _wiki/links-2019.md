@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 링크 모음
 summary : 
 date    : 2019-01-04 15:30:13 +0900
-updated : 2019-03-02 21:10:39 +0900
+updated : 2019-03-10 23:57:57 +0900
 tag     : 
 toc     : true
 public  : true
@@ -31,6 +31,7 @@ latex   : false
 
 # Study, Life
 
+* 2010-02 [Stephen Wolfram: 만물이론을 찾는 계산](https://www.ted.com/talks/stephen_wolfram_computing_a_theory_of_everything?language=ko#t-1179202)
 * 2016-01-25 [[라이코스 이야기 8] 해고문화](https://estimastory.com/2016/01/25/layoff/ )
 * 2018-12-13 [구글 면접 후기](https://norang.io/diary/interview_review/ )
 * 2018-12-25 [[강의] 화면 녹화 프로그램 선택하기](https://sysnet4admin.blogspot.com/2018/12/blog-post_25.html )
