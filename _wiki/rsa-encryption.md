@@ -3,7 +3,7 @@ layout  : wiki
 title   : RSA 암호(RSA Encryption)
 summary : 
 date    : 2019-03-10 09:24:37 +0900
-updated : 2019-03-10 22:37:12 +0900
+updated : 2019-03-10 23:12:49 +0900
 tags    : encryption
 toc     : true
 public  : true
@@ -110,7 +110,7 @@ C^d & ≡ (M^e)^d \pmod n \\
 $$
 
 
-한편 $$p, q$$가 소수이므로 다음과 같이 페르마의 소정리를 사용할 수 있다.
+한편 $$p, q$$가 소수이므로 다음과 같이 [[Fermat-s-little-theorem]]{페르마의 소정리}를 사용할 수 있다.
 
 $$
 M^{p-1} ≡ 1 \pmod p \\
