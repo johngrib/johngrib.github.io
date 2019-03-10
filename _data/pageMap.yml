@@ -1974,6 +1974,14 @@ rouge-supported-languages:
     url: /wiki/rouge-supported-languages
     updated: '2018-09-17 23:51:26 +0900'
     children: []
+rsa-encryption:
+    type: wiki
+    title: 'RSA 암호(RSA Encryption)'
+    summary: ""
+    parent: what
+    url: /wiki/rsa-encryption
+    updated: '2019-03-10 22:37:12 +0900'
+    children: []
 rule-of-succession:
     type: wiki
     title: '후속 규칙(Rule of succession)'
@@ -2445,7 +2453,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, special-chars, units, Unix-philosophy, URI]
+    children: [bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, rsa-encryption, special-chars, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
