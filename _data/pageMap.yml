@@ -1612,7 +1612,7 @@ links-2019:
     summary: ""
     parent: links
     url: /wiki/links-2019
-    updated: '2019-03-02 21:10:39 +0900'
+    updated: '2019-03-12 14:47:37 +0900'
     children: []
 locomotive-problem:
     type: wiki
@@ -1869,7 +1869,7 @@ problem:
     parent: index
     url: /wiki/problem
     updated: '2018-04-16 20:58:12 +0900'
-    children: []
+    children: [two-eggs-100-floor]
 PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     type: wiki
     title: '(책) Professional 소프트웨어 개발'
@@ -1924,7 +1924,7 @@ reincarnation-sword-master:
     summary: null
     parent: book
     url: /wiki/reincarnation-sword-master
-    updated: '2018-05-24 20:40:00 +0900'
+    updated: '2019-03-13 12:33:03 +0900'
     children: []
 review:
     type: wiki
@@ -1956,7 +1956,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-03-09 08:09:09 +0900'
+    updated: '2019-03-13 12:30:48 +0900'
     children: []
 RFC:
     type: wiki
@@ -1980,7 +1980,7 @@ rsa-encryption:
     summary: ""
     parent: what
     url: /wiki/rsa-encryption
-    updated: '2019-03-10 22:37:12 +0900'
+    updated: '2019-03-10 23:12:49 +0900'
     children: []
 rule-of-succession:
     type: wiki
@@ -2237,6 +2237,14 @@ trouble-shooting-node-7-install:
     parent: til
     url: /wiki/trouble-shooting-node-7-install
     updated: '2018-02-12 15:09:45 +0900'
+    children: []
+two-eggs-100-floor:
+    type: wiki
+    title: '100층 건물과 2개의 계란 문제'
+    summary: ""
+    parent: problem
+    url: /wiki/two-eggs-100-floor
+    updated: '2019-03-13 23:42:13 +0900'
     children: []
 units:
     type: wiki
