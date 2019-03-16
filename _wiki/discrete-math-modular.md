@@ -3,7 +3,7 @@ layout  : wiki
 title   : 모듈러 연산(나머지 연산)
 summary : Modular Arithmetic
 date    : 2019-02-17 21:58:31 +0900
-updated : 2019-03-16 23:06:56 +0900
+updated : 2019-03-16 23:25:56 +0900
 tag     : math
 toc     : true
 public  : true
@@ -273,6 +273,49 @@ $$ 645 = 1010000100_2 $$ 이므로 `n = [0,0,1,0,0,0,0,1,0,1]` 이 된다.
 
 $$ 3^{644} \bmod 645 = 36 $$
 
+### 재귀 알고리즘으로 거듭제곱 수의 나머지 구하기
+
+$$
+\def\ceil#1{\lceil #1 \rceil}
+\def\floor#1{\lfloor #1 \rfloor}
+\def\frfr#1{\{ #1 \}}
+$$
+
+>
+$$a \times b \bmod m = ((a \bmod m) \times (b \bmod m)) \bmod m.$$
+
+위의 식을 응용하면 다음과 같은 방법으로 거듭제곱 수의 나머지를 구할 수 있다.
+
+* n 이 짝수인 경우.
+    * $$ b^n \bmod m = (b^{ n \over 2 } \bmod m)^2 \bmod m $$.
+* n 이 홀수인 경우.
+    * $$ b^n \bmod m = \biggl((b^{ \floor{ {n \over 2} }} \bmod m)^2 \bmod m \times b \bmod m \biggl) \bmod m $$.
+
+다음은 이 알고리즘을 자바스크립트 코드로 작성한 것이다.
+
+```js
+// b^n mod m
+function mpower(b, n, m) {
+    if (n == 0) {
+        return 1;
+    }
+    if (n % 2 == 0) {
+        const next = mpower(b, half(n), m);
+        return square(next) % m;
+    }
+
+    const next = mpower(b, half(n), m);
+    return ((square(next) % m) * (b % m)) % m;
+}
+
+function half(n) {
+    return parseInt(n / 2, 10);
+}
+
+function square(n) {
+    return n * n;
+}
+```
 
 # 참고문헌
 
