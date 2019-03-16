@@ -1726,6 +1726,14 @@ my-study-method:
     url: /wiki/my-study-method
     updated: '2019-01-19 12:03:58 +0900'
     children: []
+my-timer:
+    type: wiki
+    title: 타이머
+    summary: null
+    parent: tools
+    url: /wiki/my-timer
+    updated: '2019-03-16 19:45:22 +0900'
+    children: []
 my-wiki:
     type: wiki
     title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
@@ -1956,7 +1964,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-03-13 12:30:48 +0900'
+    updated: '2019-03-15 09:00:06 +0900'
     children: []
 RFC:
     type: wiki
@@ -2213,7 +2221,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [aws, command-line, Excel, git, Gradle, hhkb-jp-tmk, mac-apps, useful-site, web-browser-extension]
+    children: [aws, command-line, Excel, git, Gradle, hhkb-jp-tmk, mac-apps, my-timer, useful-site, web-browser-extension]
 top:
     type: wiki
     title: 'top 명령어'
