@@ -820,7 +820,7 @@ discrete-math-modular:
     summary: 'Modular Arithmetic'
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-modular
-    updated: '2019-02-20 07:47:17 +0900'
+    updated: '2019-03-16 23:25:56 +0900'
     children: []
 discrete-math-proofs:
     type: wiki
@@ -1964,7 +1964,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-03-15 09:00:06 +0900'
+    updated: '2019-03-17 16:15:56 +0900'
     children: []
 RFC:
     type: wiki
@@ -2238,6 +2238,14 @@ touch:
     url: /wiki/touch
     updated: '2019-01-13 18:22:50 +0900'
     children: []
+transistor:
+    type: wiki
+    title: 트랜지스터
+    summary: '전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자'
+    parent: what
+    url: /wiki/transistor
+    updated: '2019-03-17 23:45:48 +0900'
+    children: []
 trouble-shooting-node-7-install:
     type: wiki
     title: '(문제해결) Mac에서 Node 7 버전으로 다운그레이드'
@@ -2469,7 +2477,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, rsa-encryption, special-chars, units, Unix-philosophy, URI]
+    children: [bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

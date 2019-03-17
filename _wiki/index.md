@@ -286,6 +286,7 @@ comment : false
     * [[rouge-supported-languages]]
     * [[rsa-encryption]]
     * [[special-chars]]
+    * [[transistor]]
     * [[units]]
     * [[Unix-philosophy]]
     * [[URI]]
