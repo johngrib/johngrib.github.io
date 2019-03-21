@@ -342,6 +342,14 @@ billing-aws:
     url: /wiki/billing-aws
     updated: '2018-09-17 10:13:03 +0900'
     children: []
+Binomial-Theorem:
+    type: wiki
+    title: '이항 정리(Binomial Theorem)'
+    summary: ""
+    parent: math
+    url: /wiki/Binomial-Theorem
+    updated: '2019-03-21 23:12:39 +0900'
+    children: []
 book:
     type: wiki
     title: 도서
@@ -1653,7 +1661,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Cromwell-s-rule, Fermat-s-little-theorem, frac1e, gcd, halting-problem, primitive-roots, rule-of-succession, secretary-problem]
+    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, frac1e, gcd, halting-problem, primitive-roots, rule-of-succession, secretary-problem]
 mathdict:
     type: wiki
     title: '대한수학회 수학용어 사전'

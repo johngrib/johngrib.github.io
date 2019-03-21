@@ -37,6 +37,7 @@ comment : false
 * [[mac-keyboard-shortcuts]]
 * [[math]]
     * [[Bayes-theorem]]
+    * [[Binomial-Theorem]]
     * [[Cromwell-s-rule]]
     * [[Fermat-s-little-theorem]]
     * [[frac1e]]{n개의 제비뽑기에 n번 도전}
