@@ -1964,7 +1964,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-03-17 16:15:56 +0900'
+    updated: '2019-03-21 09:31:09 +0900'
     children: []
 RFC:
     type: wiki
@@ -2244,7 +2244,7 @@ transistor:
     summary: '전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자'
     parent: what
     url: /wiki/transistor
-    updated: '2019-03-17 23:45:48 +0900'
+    updated: '2019-03-21 11:04:44 +0900'
     children: []
 trouble-shooting-node-7-install:
     type: wiki
