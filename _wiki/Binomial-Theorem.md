@@ -3,7 +3,7 @@ layout  : wiki
 title   : 이항 정리(Binomial Theorem)
 summary : 
 date    : 2019-03-21 22:49:36 +0900
-updated : 2019-03-21 23:12:39 +0900
+updated : 2019-03-23 00:05:30 +0900
 tags    : math
 toc     : true
 public  : true
@@ -51,7 +51,34 @@ $$
 
 ## 따름 정리 2
 
+* n 이 음이 아닌 정수라면 다음이 성립한다.
+
+$$ \sum_{k=0}^n (-1)^k {n \atopwithdelims () k} = 0$$
+
+왜냐하면 $$ (-1 + 1)^n $$ 과 같은 형태이기 때문이다.
+
+$$
+\begin{align}
+(-1 + 1)^n & = \sum_{k=0}^n {n \atopwithdelims () k} (-1)^k 1^{n-k} \\
+0^n     & = \sum_{k=0}^n {n \atopwithdelims () k} (-1)^k \\
+\end{align}
+$$
+
 ## 따름 정리 3
+
+* n 이 음이 아닌 정수라면 다음이 성립한다.
+
+$$ \sum_{k=0}^n 2^k {n \atopwithdelims () k} = 3^n$$
+
+왜냐하면 $$ (1 + 2)^n $$ 과 같은 형태이기 때문이다.
+
+$$
+\begin{align}
+(1 + 2)^n & = \sum_{k=0}^n {n \atopwithdelims () k} 1^{n-k} 2^{k} \\
+3^n     & = \sum_{k=0}^n {n \atopwithdelims () k} 2^{k} \\
+\end{align}
+$$
+
 
 # 참고문헌
 
