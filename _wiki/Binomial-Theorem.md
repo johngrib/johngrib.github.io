@@ -3,7 +3,7 @@ layout  : wiki
 title   : 이항 정리(Binomial Theorem)
 summary : 
 date    : 2019-03-21 22:49:36 +0900
-updated : 2019-03-23 11:43:09 +0900
+updated : 2019-03-23 12:21:12 +0900
 tags    : math
 toc     : true
 public  : true
@@ -13,15 +13,19 @@ latex   : true
 * TOC
 {:toc}
 
+$$
+\def\com#1#2{ {#1 \atopwithdelims () #2 }}
+$$
+
 # 표기법: 조합
 
 * 조합을 의미하는 Combination 을 다음과 같이 괄호를 써서 위아래로 표기하고, 이항 계수라 부른다.
-* 의미는 똑같지만 $$aCb$$ 는 $$a \times C \times b$$로 착각하기 좋은 모양이라 $${a \atopwithdelims () b}$$를 선호한다.
+* 의미는 똑같지만 $$aCb$$ 는 $$a \times C \times b$$로 착각하기 좋은 모양이라 $$\com{a}{b}$$를 선호한다.
 
 $$
 \begin{align}
-a C b & = {a \atopwithdelims () b} \\
-3 C 2 & = {3 \atopwithdelims () 2} = 3 \\
+a C b & = \com{a}{b} \\
+3 C 2 & = \com{3}{2} = 3 \\
 \end{align}
 $$
 
@@ -31,8 +35,12 @@ $$
 
 $$
 \begin{align}
-(x+y)^n & = \sum_{j=0}^n {n \atopwithdelims () j} x^{n-j} y^j \\
-    & = {n \atopwithdelims () 0} x^{n} y^0 + {n \atopwithdelims () 1} x^{n-1} y^1 + ... + {n \atopwithdelims () n-1} x^{1} y^{n-1} + {n \atopwithdelims () n} x^{0} y^{n} \\
+(x+y)^n & = \sum_{j=0}^n \com{n}{j} x^{n-j} y^j \\
+    & = \com{n}{0} x^{n} y^0
+        + \com{n}{1} x^{n-1} y^1
+        + ...
+        + \com{n}{n-1} x^{1} y^{n-1}
+        + \com{n}{n} x^{0} y^{n} \\
 \end{align}
 $$
 
@@ -63,20 +71,20 @@ $$
 \end{array}
 $$
 
-즉, $$ (a+b)^n $$ 형태의 각 항의 계수는 조합 $${n \atopwithdelims () k}$$ 형태로 표현할 수 있다.
+즉, $$ (a+b)^n $$ 형태의 각 항의 계수는 조합 $$\com{n}{k}$$ 형태로 표현할 수 있다.
 
 ## 따름 정리 1
 
 * n 이 음이 아닌 정수라면 다음이 성립한다.
 
-$$ \sum_{k=0}^n {n \atopwithdelims () k} = 2^n $$
+$$ \sum_{k=0}^n \com{n}{k} = 2^n $$
 
 왜냐하면 $$ (1+1)^n $$ 과 같은 형태이기 때문이다.
 
 $$
 \begin{align}
-(1+1)^n & = \sum_{k=0}^n { n \atopwithdelims () k } 1^k 1^{n-k} \\
-    & = \sum_{k=0}^n { n \atopwithdelims () k } \\
+(1+1)^n & = \sum_{k=0}^n \com{n}{k} 1^k 1^{n-k} \\
+        & = \sum_{k=0}^n \com{n}{k} \\
 \end{align}
 $$
 
@@ -84,14 +92,14 @@ $$
 
 * n 이 음이 아닌 정수라면 다음이 성립한다.
 
-$$ \sum_{k=0}^n (-1)^k {n \atopwithdelims () k} = 0$$
+$$ \sum_{k=0}^n (-1)^k \com{n}{k} = 0$$
 
 왜냐하면 $$ (-1 + 1)^n $$ 과 같은 형태이기 때문이다.
 
 $$
 \begin{align}
-(-1 + 1)^n & = \sum_{k=0}^n {n \atopwithdelims () k} (-1)^k 1^{n-k} \\
-0^n     & = \sum_{k=0}^n {n \atopwithdelims () k} (-1)^k \\
+(-1 + 1)^n & = \sum_{k=0}^n \com{n}{k} (-1)^k 1^{n-k} \\
+0^n        & = \sum_{k=0}^n \com{n}{k} (-1)^k \\
 \end{align}
 $$
 
@@ -99,14 +107,49 @@ $$
 
 * n 이 음이 아닌 정수라면 다음이 성립한다.
 
-$$ \sum_{k=0}^n 2^k {n \atopwithdelims () k} = 3^n$$
+$$ \sum_{k=0}^n 2^k \com{n}{k} = 3^n$$
 
 왜냐하면 $$ (1 + 2)^n $$ 과 같은 형태이기 때문이다.
 
 $$
 \begin{align}
-(1 + 2)^n & = \sum_{k=0}^n {n \atopwithdelims () k} 1^{n-k} 2^{k} \\
-3^n     & = \sum_{k=0}^n {n \atopwithdelims () k} 2^{k} \\
+(1 + 2)^n & = \sum_{k=0}^n \com{n}{k} 1^{n-k} 2^{k} \\
+3^n       & = \sum_{k=0}^n \com{n}{k} 2^{k} \\
+\end{align}
+$$
+
+# 파스칼의 항등식
+
+**Pascal's Identity**
+
+> $$n, k$$ 가 양의 정수이고, $$n \ge k$$ 라면 다음이 성립한다.  
+$$ \com{n+1}{k} = \com{n}{k-1} + \com{n}{k}$$
+
+주머니 하나에 여러 색깔의 구슬 $$n+1$$ 개가 들어 있다고 하자.
+
+만약 이 주머니에서 $$k$$개의 구슬을 순서 상관없이 골라낸다고 하면 경우의 수는 $$\com{n+1}{k}$$가 될 것이다.
+
+그런데 이 경우의 수를 두 경우로 분할해서 생각할 수 있다.
+
+1. 빨간 구슬 한 개를 골라놓고 $$k-1$$개를 골라내는 경우. $$\com{n}{k-1}$$
+2. 빨간 구슬을 제외하고 $$k$$개를 골라내는 경우. $$\com{n}{k}$$
+
+따라서 다음과 같이 정리할 수 있다.
+
+$$\com{n+1}{k} = \com{n}{k-1} + \com{n}{k}$$
+
+그냥 식을 정리해서 증명하는 방법도 있다.
+
+$$
+\begin{align}
+\com{n+1}{k}
+    & = \com{n}{k-1} + \com{n}{k}\\
+    & = { n! \over (k-1)! (n-k+1)!} + { n! \over k!(n-k)! } \\
+    & = { n!k \over k! (n-k+1)!} + { n!(n-k+1) \over k!(n-k+1)! } \\
+    & = { n!k + n!(n-k+1) \over k!(n-k+1)! } \\
+    & = { n! (k + n-k+1) \over k!(n-k+1)! } \\
+    & = { n! (n+1) \over k!(n-k+1)! } \\
+    & = { (n+1)! \over k!(n+1-k)! } \\
 \end{align}
 $$
 
