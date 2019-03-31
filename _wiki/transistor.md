@@ -3,7 +3,7 @@ layout  : wiki
 title   : 트랜지스터
 summary : 전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자
 date    : 2019-03-17 18:08:43 +0900
-updated : 2019-03-31 19:56:47 +0900
+updated : 2019-03-31 19:59:38 +0900
 tags    : 
 toc     : true
 public  : true
@@ -128,6 +128,7 @@ ICBM 설계에 적용할 더 나은 기술을 선택하기 위해서였다.
 # Image References
 
 - <http://hyperphysics.phy-astr.gsu.edu/hbase/Solids/trans.html >
+- <https://en.wikipedia.org/wiki/P%E2%80%93n_diode > : 다이오드 이미지
 
 # 참고문헌
 
