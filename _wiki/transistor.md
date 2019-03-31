@@ -3,7 +3,7 @@ layout  : wiki
 title   : 트랜지스터
 summary : 전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자
 date    : 2019-03-17 18:08:43 +0900
-updated : 2019-03-26 22:43:28 +0900
+updated : 2019-03-31 19:56:47 +0900
 tags    : 
 toc     : true
 public  : true
@@ -36,6 +36,12 @@ latex   : false
 - 다음은 [윌리엄 쇼클리의 특허 문서](https://patents.google.com/patent/US2569347A/en )에서 캡처한 것이다.
 
 ![npn](/post-img/transistor/patent-npn.png)
+
+## 다이오드도 함께 보자
+
+p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지스터를 이해할 때 도움이 된다.
+
+![npn](/post-img/transistor/pn-diode.png)
 
 # npn 트랜지스터로 논리 게이트 만들기
 
