@@ -3,7 +3,7 @@ layout  : wiki
 title   : 트랜지스터
 summary : 전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자
 date    : 2019-03-17 18:08:43 +0900
-updated : 2019-03-31 19:59:38 +0900
+updated : 2019-03-31 20:42:22 +0900
 tags    : 
 toc     : true
 public  : true
@@ -42,6 +42,12 @@ latex   : false
 p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지스터를 이해할 때 도움이 된다.
 
 ![npn](/post-img/transistor/pn-diode.png)
+
+## 점접촉 트랜지스터와의 비교
+
+다음은 윌리엄 쇼클리의 [Electrons And Holes In Semiconductors](https://archive.org/details/ElectronsAndHolesInSemiconductors/page/n51 ) 35 쪽의 일부를 캡처한 사진이다.
+
+![symbol](/post-img/transistor/1950.png)
 
 # npn 트랜지스터로 논리 게이트 만들기
 
@@ -124,6 +130,7 @@ ICBM 설계에 적용할 더 나은 기술을 선택하기 위해서였다.
 - [The Nobel Prize in Physics 1956](https://www.nobelprize.org/prizes/physics/1956/summary/ )
 - [트랜지스터의 발명(야밤의 공대생 만화)](https://www.facebook.com/engineertoon/photos/pcb.484328328420694/484328051754055/?type=3&theater) - 즐겁게 읽을 수 있는 과학 역사 만화.
 - [Naming The Transistor](https://www.pbs.org/transistor/album1/pierce/naming.html )
+- [Electrons And Holes In Semiconductors by William Shockley(1950)](https://archive.org/details/ElectronsAndHolesInSemiconductors/page/n51 )
 
 # Image References
 
@@ -133,4 +140,5 @@ ICBM 설계에 적용할 더 나은 기술을 선택하기 위해서였다.
 # 참고문헌
 
 * 슈퍼컴퓨터를 사랑한 슈퍼맨 / 찰스 J. 머리 저 / 이재범 역 / 지식함지 / 2015년 08월 11일 / 원제 : The Supermen: The Story of Seymour Cray and the Technical Wizards Behind the Supercomputer
+* 트랜지스터의 개념 주워담기 1 / 이용훈 저 / Ohm사(오므사) / 2016년 05월 16일
 
