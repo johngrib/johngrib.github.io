@@ -253,7 +253,7 @@ algorithm:
     parent: index
     url: /wiki/algorithm
     updated: '2019-02-05 22:53:48 +0900'
-    children: [big-O-notation, egyptian-multiplication, p-np, regex-prime, von-neumann-extractor]
+    children: [average-complexity, big-O-notation, egyptian-multiplication, p-np, regex-prime, von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
     title: '(책) 알고리즘, 인생을 계산하다'
@@ -277,6 +277,14 @@ Amazon-Route-53:
     parent: aws
     url: /wiki/Amazon-Route-53
     updated: '2018-09-16 22:06:15 +0900'
+    children: []
+average-complexity:
+    type: wiki
+    title: '평균 계산 복잡도 구하기'
+    summary: 'Average Case Computational Complexity'
+    parent: algorithm
+    url: /wiki/average-complexity
+    updated: '2019-04-08 22:59:16 +0900'
     children: []
 awk:
     type: wiki

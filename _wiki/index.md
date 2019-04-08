@@ -10,6 +10,7 @@ comment : false
 * [[diary]]
 
 * [[algorithm]]
+    * [[average-complexity]]
     * [[big-O-notation]]
     * [[egyptian-multiplication]]
     * [[p-np]]
