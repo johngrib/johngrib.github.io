@@ -90,7 +90,19 @@ Vue.component('timer-list', {
             updateHistory(state);
         },
         getHistory: function() {
-            return history;
+            const showHistory = {};
+
+            for (let actName in history) {
+                const record = history[actName];
+                const act = [];
+
+                for (let date in record) {
+                    act.push(record[date]);
+                }
+                showHistory[actName] = act.sort((a, b) => a.date < b.date ? 1 : -1);
+            }
+
+            return showHistory;
         }
     }
 })
@@ -157,6 +169,10 @@ function updateHistory(state) {
     history[state.name] = historyData;
     setData(HISTORY_KEY, history);
 
+    // window.aa = activity;
+    // window.hh = history;
+    // window.ll = log;
+
     // log 일부 삭제
     if (dateList.length < 2) {
         return;
@@ -175,10 +191,6 @@ function updateHistory(state) {
 
     console.log('activity');
     console.log(activity.length);
-
-    // window.aa = activity;
-    // window.hh = history;
-    // window.ll = log;
 }
 
 (function main() {
