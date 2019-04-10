@@ -12,8 +12,6 @@ const template = `
                                     type="button" class="btn btn-danger" v-on:click="toggle(item)">Stop</button>
                                 <button v-else
                                     type="button" class="btn btn-success" v-on:click="toggle(item)">Start</button>
-                                <button v-if="!item.on"
-                                    type="button" class="btn btn-info" v-on:click="reset(item)">Reset</button>
                             </div>
                         </div>
                     </div>
