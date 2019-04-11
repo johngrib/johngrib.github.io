@@ -3,7 +3,7 @@ layout  : wiki
 title   : RFC(Request For Comment)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2019-01-13 20:43:11 +0900
+updated : 2019-04-11 23:34:07 +0900
 tag     : rfc
 toc     : true
 public  : true
@@ -69,6 +69,16 @@ latex   : false
     * UUID : Universally Unique IDentifier
     * GUID : Globally Unique IDentifier
 * <https://tools.ietf.org/html/rfc4122 >
+
+## RFC 4291
+
+* IP Version 6 Addressing Architecture
+* <https://tools.ietf.org/html/rfc4291 >
+
+## RFC 5321
+
+* Simple Mail Transfer Protocol(SMTP)
+* <https://tools.ietf.org/html/rfc5321 >
 
 ## RFC 5424
 
