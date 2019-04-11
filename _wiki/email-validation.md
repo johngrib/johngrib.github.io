@@ -3,7 +3,7 @@ layout  : wiki
 title   : 이메일 주소 형식 검증하기
 summary : Verify email address format
 date    : 2019-04-11 22:05:44 +0900
-updated : 2019-04-11 23:29:36 +0900
+updated : 2019-04-11 23:40:52 +0900
 tags    : email regex php
 toc     : true
 public  : true
@@ -197,7 +197,7 @@ private const EMAIL_REGEX = '/^'
 그리고 다음은 IPv6 테스트까지 포함한 테스트 코드이다.
 
 ```php
-describe('isValid', function() {
+describe('isValidAddress', function() {
 context('with valid email addresses', function(){
   given('addresses', function () {
     // see: https://blogs.msdn.microsoft.com/testing123/2009/02/06/email-address-test-cases/
