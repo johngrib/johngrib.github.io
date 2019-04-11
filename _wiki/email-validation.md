@@ -3,8 +3,8 @@ layout  : wiki
 title   : 이메일 주소 형식 검증하기
 summary : Verify email address format
 date    : 2019-04-11 22:05:44 +0900
-updated : 2019-04-11 23:42:10 +0900
-tags    : email regex php
+updated : 2019-04-11 23:52:52 +0900
+tag     : email regex php
 toc     : true
 public  : true
 parent  : index

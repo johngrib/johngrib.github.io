@@ -940,7 +940,7 @@ email-validation:
     summary: 'Verify email address format'
     parent: index
     url: /wiki/email-validation
-    updated: '2019-04-11 23:42:10 +0900'
+    updated: '2019-04-11 23:52:52 +0900'
     children: []
 encryption:
     type: wiki
