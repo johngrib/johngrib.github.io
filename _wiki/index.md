@@ -296,7 +296,7 @@ comment : false
     * [[letter-case]]
     * [[sql-char-comparison]]
     * [[why-http-80-https-443]]
-
+* [[email-validation]]
 ---
 
 # blog

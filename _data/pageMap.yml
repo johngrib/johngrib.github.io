@@ -934,6 +934,14 @@ Elastic-Load-Balancing:
     url: /wiki/Elastic-Load-Balancing
     updated: '2018-09-16 22:06:25 +0900'
     children: []
+email-validation:
+    type: wiki
+    title: '이메일 주소 형식 검증하기'
+    summary: 'Verify email address format'
+    parent: index
+    url: /wiki/email-validation
+    updated: '2019-04-11 23:29:36 +0900'
+    children: []
 encryption:
     type: wiki
     title: Encryption
