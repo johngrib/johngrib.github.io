@@ -284,7 +284,7 @@ average-complexity:
     summary: 'Average Case Computational Complexity'
     parent: algorithm
     url: /wiki/average-complexity
-    updated: '2019-04-08 22:59:16 +0900'
+    updated: '2019-04-15 22:29:09 +0900'
     children: []
 awk:
     type: wiki
@@ -332,7 +332,7 @@ big-O-notation:
     summary: '알고리즘의 효율성을 나타내는 표기법이다'
     parent: algorithm
     url: /wiki/big-O-notation
-    updated: '2019-02-16 21:41:51 +0900'
+    updated: '2019-04-15 22:29:16 +0900'
     children: []
 Bill-Atkinson-productivity:
     type: wiki

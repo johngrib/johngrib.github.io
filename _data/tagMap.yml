@@ -257,6 +257,8 @@ law:
     - {fileName: Zipf-s-law}
 algorithm:
     - {fileName: algorithm}
+    - {fileName: average-complexity}
+    - {fileName: big-O-notation}
     - {fileName: gray-code}
 book:
     - {fileName: Algorithms-to-Live-By}

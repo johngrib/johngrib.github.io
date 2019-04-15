@@ -3,8 +3,8 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2019-02-16 21:41:51 +0900
-tag     : 
+updated : 2019-04-15 22:29:16 +0900
+tag     : algorithm
 toc     : true
 public  : true
 parent  : algorithm
@@ -20,7 +20,7 @@ latex   : true
 
 # $$O, \Theta, \Omega$$
 
-big-$$O$$, big-$$\Omega$$, big-$$\Theta$$는 각각 상한, 하한, 딱 맞는 수행 시간을 의미한다.
+big-$$O$$, big-$$\Omega$$, big-$$\Theta$$는 각각 상한, 하한, 딱 맞는(또는 평균) 수행 시간을 의미한다.
 
 * big-$$O$$
     * `빅-오` 라고 읽는다.
@@ -335,6 +335,9 @@ function test(listA, listB) {
     * $$O(a \cdot s \cdot \log s + s \cdot a \cdot \log a) = O\biggr(a \cdot s (\log s + \log a)\biggr)$$.
     * 이보다 더 줄일 수는 없다.
 
+# 함께 읽기
+
+* [[average-complexity]]
 
 # Links 및 참고문헌
 
