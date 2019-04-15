@@ -3,7 +3,7 @@ layout  : wiki
 title   : 이메일 주소 형식 검증하기
 summary : Verify email address format
 date    : 2019-04-11 22:05:44 +0900
-updated : 2019-04-11 23:52:52 +0900
+updated : 2019-04-15 20:31:35 +0900
 tag     : email regex php
 toc     : true
 public  : true
@@ -260,10 +260,27 @@ context('with invalid email addresses', function(){
 });
 ```
 
+# php의 FILTER_VALIDATE_EMAIL을 사용하기
+
+- `FILTER_VALIDATE_EMAIL`을 사용하면 위와 같이 복잡한 정규식을 사용하지 않아도 된다.
+    - 이 필터는 [RFC 822](https://www.w3.org/Protocols/rfc822/ )를 따른다고 한다.
+    - 단, 이 방법을 사용하면 `@` 뒤쪽에 IPv4, IPv6 포맷의 도메인이 오는 경우를 검증하지 못한다.
+
+```php
+public function isValidAddress(string $address): bool
+{
+    return !empty($address) && filter_var($address, FILTER_VALIDATE_EMAIL);
+}
+```
+
+
+
 # Links
 
 * [RFC 4291](https://tools.ietf.org/html/rfc4291 ) - IP Version 6 Addressing Architecture
 * [RFC 5321](https://tools.ietf.org/html/rfc5321 ) - Simple Mail Transfer Protocol(SMTP)
+* [RFC 822](https://www.w3.org/Protocols/rfc822/ ) - Standard for ARPA Internet Text Messages
 * [emailregex.com](http://emailregex.com/ )
 * [Email Address test cases(MSDN)](https://blogs.msdn.microsoft.com/testing123/2009/02/06/email-address-test-cases/ )
 * [한 권으로 끝내는 정규표현식(Regular Expressions Cookbook)](http://www.hanbit.co.kr/store/books/look.php?p_code=B1048739715 )
+* [php Validate filters](https://www.php.net/manual/en/filter.filters.validate.php )
