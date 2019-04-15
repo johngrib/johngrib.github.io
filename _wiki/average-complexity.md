@@ -3,7 +3,7 @@ layout  : wiki
 title   : 평균 계산 복잡도 구하기
 summary : Average Case Computational Complexity
 date    : 2019-04-07 23:29:38 +0900
-updated : 2019-04-15 22:29:09 +0900
+updated : 2019-04-15 22:39:31 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -203,8 +203,6 @@ $$ E(X_5) = \sum_{k=1}^5 p_5(k) \times X_i(k) \\ $$
 수열이 랜덤하게 분포되어 있다면 확률은 다 똑같다.
 
 따라서 다음과 같이 식을 다시 쓸 수 있다.
-
-$$ E(X_5) = \sum_{k=1}^5 { 1 \over 5 } \times X_i(k) \\ $$
 
 $$
 \begin{align}

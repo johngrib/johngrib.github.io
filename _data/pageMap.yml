@@ -284,7 +284,7 @@ average-complexity:
     summary: 'Average Case Computational Complexity'
     parent: algorithm
     url: /wiki/average-complexity
-    updated: '2019-04-15 22:29:09 +0900'
+    updated: '2019-04-15 22:39:31 +0900'
     children: []
 awk:
     type: wiki
