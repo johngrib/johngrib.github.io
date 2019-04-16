@@ -1988,7 +1988,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-04-16 09:07:26 +0900'
+    updated: '2019-04-16 21:10:34 +0900'
     children: []
 RFC:
     type: wiki
