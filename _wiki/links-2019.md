@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 링크 모음
 summary : 
 date    : 2019-01-04 15:30:13 +0900
-updated : 2019-03-24 23:11:30 +0900
+updated : 2019-04-18 21:25:23 +0900
 tag     : 
 toc     : true
 public  : true
@@ -20,7 +20,9 @@ latex   : false
 # Programming
 
 * 2015-11-14 [모나드 괴담](https://xtendo.org/ko/monad#1 )
+* 2018-05-07 [기댓값의 선형성과 퀵소트의 시간복잡도](http://blog.theeluwin.kr/post/173667706318/기댓값의-선형성과-퀵소트의-시간복잡도 )
 * 2019-03-03 [난해한 함수형 프로그래밍 언어 평범한 한글 v0.3](https://github.com/dragonteros/unsuspected-hangeul )
+* 2019-04-11 [Mathematicians Discover the Perfect Way to Multiply](https://www.quantamagazine.org/mathematicians-discover-the-perfect-way-to-multiply-20190411/ )
 
 # Dev etc.
 
@@ -49,6 +51,7 @@ latex   : false
 * 2019-02-06 [암사자 마티타 이야기](https://gall.dcinside.com/mgallery/board/view?id=genrenovel&no=41153 )
 * 2019-03-02 [[아무튼, 주말] "내 공부 비결은 스톱워치" 마이스터高·부산大 기계과 나와 사법연수원 수석](http://m.chosun.com/svc/article.html?contid=2019030101455 )
 * 2019-03-22 [스컹크 웍스 엔지니어와의 대담](https://gall.dcinside.com/mgallery/board/view?id=war&no=686338 )
+* 2019-04-03 [언어 습득에 필요한 정보량을 알아냈다](http://www.hani.co.kr/arti/science/science_general/888481.html )
 
 # 소설
 
