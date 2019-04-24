@@ -272,6 +272,7 @@ comment : false
     * [[vim-ycm-python3]]
     * [[vimwiki]]
 * [[what]]
+    * [[agile]]
     * [[bootstrapping]]
     * [[braille-pattern-chars]]
     * [[Caesar-cipher]]

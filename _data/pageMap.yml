@@ -238,6 +238,14 @@ ag:
     url: /wiki/ag
     updated: '2019-01-06 22:57:10 +0900'
     children: []
+agile:
+    type: wiki
+    title: '애자일(agile)에 대한 토막글 모음'
+    summary: ""
+    parent: what
+    url: /wiki/agile
+    updated: '2019-04-24 23:05:08 +0900'
+    children: []
 airplain-rule:
     type: wiki
     title: '비행기 법칙'
@@ -2501,7 +2509,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
+    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
