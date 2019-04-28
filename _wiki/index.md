@@ -9,6 +9,7 @@ comment : false
 
 * [[diary]]
 
+* [[timeline]]
 * [[algorithm]]
     * [[average-complexity]]
     * [[big-O-notation]]
