@@ -3,7 +3,7 @@ layout  : wiki
 title   : 간단하게 만드는 랜덤런치 그룹 생성기
 summary : 
 date    : 2019-05-04 08:19:41 +0900
-updated : 2019-05-04 18:28:09 +0900
+updated : 2019-05-04 21:48:32 +0900
 tags    : 
 toc     : true
 public  : true
@@ -48,7 +48,7 @@ latex   : true
 
 동료들 이름을 텍스트 파일로 만들어 두면 그냥 bash 명령어 한 줄이면 끝날 것 같다는 생각이 들었기 때문이다.
 
-Node.js, Python 다 좋은 언어들이지만 이런 작업들은 그냥 bash 명령어 조합이 편하다.
+Node.js, Python 다 좋은 도구들이지만 이런 작업들은 그냥 bash 명령어 조합이 편하다.
 
 ## sort -R
 
