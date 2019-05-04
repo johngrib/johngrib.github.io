@@ -33,6 +33,7 @@ comment : false
     * [[googling]]
     * [[mathjax-latex]]
     * [[my-study-method]]
+    * [[random-luch]]
 * [[links]]
     * [[links-2019]]
     * [[links-2018]]

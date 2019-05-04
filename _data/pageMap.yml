@@ -1469,7 +1469,7 @@ how-to:
     parent: index
     url: /wiki/how-to
     updated: '2018-02-04 15:57:05 +0900'
-    children: [googling, mathjax-latex, my-study-method]
+    children: [googling, mathjax-latex, my-study-method, random-luch]
 http-message:
     type: wiki
     title: 'HTTP 메시지'
@@ -1949,6 +1949,14 @@ python3-simple-file-sharing:
     parent: Python3
     url: /wiki/python3-simple-file-sharing
     updated: '2018-09-18 23:08:50 +0900'
+    children: []
+random-luch:
+    type: wiki
+    title: '간단하게 만드는 랜덤런치 그룹 생성기'
+    summary: ""
+    parent: how-to
+    url: /wiki/random-luch
+    updated: '2019-05-04 18:24:33 +0900'
     children: []
 regex-prime:
     type: wiki
