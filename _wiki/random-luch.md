@@ -3,7 +3,7 @@ layout  : wiki
 title   : 간단하게 만드는 랜덤런치 그룹 생성기
 summary : 
 date    : 2019-05-04 08:19:41 +0900
-updated : 2019-05-04 18:24:33 +0900
+updated : 2019-05-04 18:28:09 +0900
 tags    : 
 toc     : true
 public  : true
@@ -109,11 +109,6 @@ $ sort rps.txt -R | cat -n
      1	보
      2	가위
      3	바위
-
-$ cat -n rps.txt
-     1	가위
-     2	바위
-     3	보
 ```
 
 ## modular를 써서 조를 편성하자
