@@ -47,6 +47,7 @@ comment : false
     * [[gcd]]
     * [[halting-problem]]
     * [[primitive-roots]]
+    * [[relations]]
     * [[rule-of-succession]]
     * [[secretary-problem]]
 * [[media]]

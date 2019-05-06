@@ -1685,7 +1685,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, frac1e, gcd, halting-problem, primitive-roots, rule-of-succession, secretary-problem]
+    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, frac1e, gcd, halting-problem, primitive-roots, relations, rule-of-succession, secretary-problem]
 mathdict:
     type: wiki
     title: '대한수학회 수학용어 사전'
@@ -1973,6 +1973,14 @@ reincarnation-sword-master:
     parent: book
     url: /wiki/reincarnation-sword-master
     updated: '2019-03-13 12:33:03 +0900'
+    children: []
+relations:
+    type: wiki
+    title: 관계(Relations)
+    summary: ""
+    parent: math
+    url: /wiki/relations
+    updated: '2019-05-07 00:05:03 +0900'
     children: []
 review:
     type: wiki
