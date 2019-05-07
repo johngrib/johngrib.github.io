@@ -3,7 +3,7 @@ layout  : wiki
 title   : 관계(Relations)
 summary : 
 date    : 2019-05-06 17:22:32 +0900
-updated : 2019-05-07 23:31:44 +0900
+updated : 2019-05-07 23:59:06 +0900
 tags    : math
 toc     : true
 public  : true
@@ -91,6 +91,32 @@ R_5 =
 \end{bmatrix}
 $$
 
+한편 방향성 그래프로 그리면 반사 관계를 쉽게 이해할 수 있다.
+
+반사적 관계는 다음과 같이 각 원소가 자신에게 돌아간다.
+
+{% raw %}
+<svg width="250" height="280" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="173.5" cy="69.5" rx="30" ry="30"/>
+	<text x="167.5" y="75.5" font-family="Times New Roman" font-size="20">2</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="61.5" cy="69.5" rx="30" ry="30"/>
+	<text x="55.5" y="75.5" font-family="Times New Roman" font-size="20">1</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="61.5" cy="184.5" rx="30" ry="30"/>
+	<text x="55.5" y="190.5" font-family="Times New Roman" font-size="20">3</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="173.5" cy="184.5" rx="30" ry="30"/>
+	<text x="167.5" y="190.5" font-family="Times New Roman" font-size="20">4</text>
+	<path stroke="black" stroke-width="1" fill="none" d="M 34.988,55.712 A 22.5,22.5 0 1 1 56.318,40.07"/>
+	<polygon fill="black" stroke-width="1" points="56.318,40.07 61.283,32.048 51.283,32.092"/>
+	<path stroke="black" stroke-width="1" fill="none" d="M 181.313,40.656 A 22.5,22.5 0 1 1 201.146,58.157"/>
+	<polygon fill="black" stroke-width="1" points="201.146,58.157 210.043,61.295 207.866,51.535"/>
+	<path stroke="black" stroke-width="1" fill="none" d="M 50.348,212.224 A 22.5,22.5 0 1 1 32.711,192.512"/>
+	<polygon fill="black" stroke-width="1" points="32.711,192.512 24.245,188.349 25.259,198.298"/>
+	<path stroke="black" stroke-width="1" fill="none" d="M 198.075,201.502 A 22.5,22.5 0 1 1 174.953,214.348"/>
+	<polygon fill="black" stroke-width="1" points="174.953,214.348 169.022,221.684 178.949,222.894"/>
+</svg>
+{% endraw %}
+
+
 ## 대칭, 반대칭적 관계
 
 * symmetric, antisymmetric
@@ -110,6 +136,23 @@ if $$(a, b) ∈ R$$ and $$(b, a) ∈ R$$, then $$a = b$$ is called antisymmetric
 * 대칭관계: $$M_r = [m_{ij}]$$에서 $$m_{ij} = m_{ji}$$ 이면 대칭관계.
 * 반대칭관계: $$M_r = [m_{ij}]$$에서 $$i \ne j$$ 일 때, $$m_{ij} = 0$$ 또는 $$m_{ji} = 0$$ 이면 반대칭 관계.
 
+방향성 그래프로 대칭 관계를 그려보면 양쪽 방향을 가리키는 화살표로 이해할 수 있다.
+
+만약 화살표가 한쪽 방향만 가리킨다면 대칭 관계가 아니다.
+
+{% raw %}
+<svg width="250" height="110" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="173.5" cy="69.5" rx="30" ry="30"/>
+	<text x="167.5" y="75.5" font-family="Times New Roman" font-size="20">2</text>
+	<ellipse stroke="black" stroke-width="1" fill="none" cx="61.5" cy="69.5" rx="30" ry="30"/>
+	<text x="55.5" y="75.5" font-family="Times New Roman" font-size="20">1</text>
+	<polygon stroke="black" stroke-width="1" points="91.5,69.5 143.5,69.5"/>
+	<polygon fill="black" stroke-width="1" points="143.5,69.5 135.5,64.5 135.5,74.5"/>
+	<polygon stroke="black" stroke-width="1" points="143.5,69.5 91.5,69.5"/>
+	<polygon fill="black" stroke-width="1" points="91.5,69.5 99.5,74.5 99.5,64.5"/>
+</svg>
+{% endraw %}
+
 ### 주의1. 관계에 있어 대칭과 반대칭은 반대 의미가 아니다
 
 $$R=\{(1,1),(2,2),(3,3),(4,4)\}$$ 같은 경우는 대칭이면서 반대칭이다.
@@ -125,6 +168,7 @@ $$
 
 ### 주의2. 반대칭과 비대칭(asymmetric relation)은 다르다
 
+* 대칭의 반대는 반대칭이 아니라 비대칭이다.
 * 비대칭은 $$ ∀a, b ∈ a R b \Rightarrow ¬ (b R a) $$.
 
 ### 대칭과 반대칭 예제
