@@ -3,7 +3,7 @@ layout  : wiki
 title   : 관계(Relations)
 summary : 
 date    : 2019-05-06 17:22:32 +0900
-updated : 2019-05-07 23:59:06 +0900
+updated : 2019-05-08 23:08:16 +0900
 tags    : math
 toc     : true
 public  : true
@@ -41,15 +41,49 @@ A binary relation from A to B is a subset of A $$\times$$ B.
 * "집합 A에 대한 관계"는 A에서 A로의 관계를 말한다.
 * 집합 A에 대한 관계는 $$A \times A$$의 부분집합이다.
 
-## 반사적 관계
+## 반사 관계
 
-* reflexive
+* reflexive relation
 
 > A relation R on a set A is called reflexive if $$(a, a) ∈ R$$ for every element $$a ∈ A$$.
 
-* 집합 A에 대한 관계 R이 있다고 하자.
-* A의 모든 원소 a 에 대해 $$(a, a) ∈ R$$ 이면, 반사적(reflexive)이라 한다.
-    * 즉, $$ ∀a((a,a) ∈ R)$$ 이면 (집합 A에 대한) 관계 R은 반사적이다.
+* 집합 A의 모든 원소 a 에 대해 $$(a, a) ∈ R$$ 인 관계.
+
+반사적 관계를 행렬로 표현하면 다음과 같은 모양을 갖는다.
+
+$$
+\begin{bmatrix}
+1  &   &   &     & \\
+   & 1 &   &     & \\
+   &   & 1 &     & \\
+   &   &   & ... & \\
+   &   &   &     & 1 \\
+\end{bmatrix}
+$$
+
+한편 비반사적 관계(irreflexive relation)는 $$(a, a) ∉ R$$ 이고, 다음과 같은 모양을 갖는다.
+
+$$
+\begin{bmatrix}
+0  &   &   &     & \\
+   & 0 &   &     & \\
+   &   & 0 &     & \\
+   &   &   & ... & \\
+   &   &   &     & 0 \\
+\end{bmatrix}
+$$
+
+다음은 반사적 관계도 아니고 비반사적 관계도 아닌 경우이다. (각 원소의 자기 자신과의 관계에 0과 1이 섞여 있다)
+
+$$
+\begin{bmatrix}
+0  &   &   &     & \\
+   & 1 &   &     & \\
+   &   & 0 &     & \\
+   &   &   & ... & \\
+   &   &   &     & 1 \\
+\end{bmatrix}
+$$
 
 예제를 보자.
 
