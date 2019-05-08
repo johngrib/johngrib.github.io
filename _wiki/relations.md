@@ -3,7 +3,7 @@ layout  : wiki
 title   : 관계(Relations)
 summary : 
 date    : 2019-05-06 17:22:32 +0900
-updated : 2019-05-08 23:08:16 +0900
+updated : 2019-05-08 23:17:57 +0900
 tags    : math
 toc     : true
 public  : true
@@ -151,7 +151,7 @@ $$
 {% endraw %}
 
 
-## 대칭, 반대칭적 관계
+## 대칭, 반대칭 관계
 
 * symmetric, antisymmetric
 
@@ -161,9 +161,9 @@ A relation R on a set A such that for all $$a, b ∈ A$$,
 if $$(a, b) ∈ R$$ and $$(b, a) ∈ R$$, then $$a = b$$ is called antisymmetric.
 
 * 집합 A에 대한 관계 R이 있다고 하자.
-* 관계 R이 모든 $$a,b ∈ A$$에 대해 $$(a,b) ∈ R$$ 일 때
-    * $$(b, a) ∈ R$$ 이면 대칭적(symmetric)이라 한다.
-    * $$(b, a) ∈ R$$ 이고, $$a = b$$ 를 만족하면 반대칭적(antisymmetric)이라 한다.
+* 집합 A의 원소 a, b에 대해,
+    * $$(a, b) ∈ R$$ 일 때, $$(b, a) ∈ R$$인 관계를 대칭(symmetric) 관계라 한다.
+    * $$(a, b) ∈ R$$ 일 때, $$(b, a) ∈ R$$ 이고, $$a = b$$ 인 관계를 반대칭(antisymmetric) 관계라 한다.
 
 행렬로 나타내면 쉽게 이해할 수 있다.
 
@@ -200,7 +200,7 @@ R = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-### 주의2. 반대칭과 비대칭(asymmetric relation)은 다르다
+### 주의2. 반대칭(antisymmetric)과 비대칭(asymmetric)은 다르다
 
 * 대칭의 반대는 반대칭이 아니라 비대칭이다.
 * 비대칭은 $$ ∀a, b ∈ a R b \Rightarrow ¬ (b R a) $$.
