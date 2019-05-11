@@ -138,6 +138,7 @@ comment : false
     * [[review-2018]]
     * [[review-2017]]
 * [[study]]
+    * [[study-note]]
     * [[study-concrete-math]]
         * [[c-m-01-Recurrent-Problems-01]]
         * [[c-m-01-Recurrent-Problems-02]]

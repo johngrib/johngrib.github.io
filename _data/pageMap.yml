@@ -2157,7 +2157,7 @@ study:
     parent: index
     url: /wiki/study
     updated: '2018-04-25 22:04:58 +0900'
-    children: [study-concrete-math, study-data-intensive-application, study-discrete-mathematics, study-formal-languages-and-automata, study-think-bayes]
+    children: [study-concrete-math, study-data-intensive-application, study-discrete-mathematics, study-formal-languages-and-automata, study-note, study-think-bayes]
 study-concrete-math:
     type: wiki
     title: '(study) Concrete Mathematics(구체수학)'
@@ -2190,6 +2190,14 @@ study-formal-languages-and-automata:
     url: /wiki/study-formal-languages-and-automata
     updated: '2018-11-12 00:08:19 +0900'
     children: [f-l-a-00-preface, f-l-a-01-00, f-l-a-01-01, f-l-a-01-02, f-l-a-02-01, f-l-a-02-02, f-l-a-02-03, f-l-a-02-04, f-l-a-03-01, f-l-a-03-02]
+study-note:
+    type: wiki
+    title: '공부, 학습 관련 토막글 모음'
+    summary: ""
+    parent: study
+    url: /wiki/study-note
+    updated: '2019-05-11 11:14:00 +0900'
+    children: []
 study-think-bayes:
     type: wiki
     title: '(study) 파이썬을 활용한 베이지안 통계'
