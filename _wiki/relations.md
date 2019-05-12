@@ -3,7 +3,7 @@ layout  : wiki
 title   : 관계(Relations)
 summary : 
 date    : 2019-05-06 17:22:32 +0900
-updated : 2019-05-08 23:17:57 +0900
+updated : 2019-05-12 17:50:57 +0900
 tags    : math
 toc     : true
 public  : true
@@ -434,7 +434,150 @@ $$R^1 =R$$ and $$R^{n+1} =R^n \circ R$$.
 
 * 집합 A에 대한 관계 R 이 전이적이라면, 자연수 n에 대하여 $$R^n ⊆ R$$ 이다.
 
+# 관계의 폐쇄(closure)
+
+> A path from a to b in the directed graph G
+is a sequence of edges $$(x_0,x_1), (x_1,x_2), (x_2,x_3),...,(x_{n−1},x_n)$$ in G,
+where n is a nonnegative integer, and $$x_0 = a$$ and $$x_n = b$$,
+that is, a sequence of edges where the terminal vertex of an edge is the same as the initial vertex in the next edge in the path.
+This path is denoted by $$x_0, x_1, x_2, ... , x_{n−1}, x_n$$ and has length n.
+We view the empty set of edges as a path of length zero from a to a.
+A path of length $$n ≥ 1$$ that begins and ends at the same vertex is called a circuit or cycle.
+
+* 방향성 그래프 G 에서 "a 에서 b 로의 경로"는 G의 모서리들의 순서쌍의 시퀀스로 표현한다.
+* 길이가 1 이상이고 한 정점에서 시작해서 시작한 정점에서 끝나는 경로를 회로(circuit) 또는 사이클(cycle)이라 부른다.
+
+>
+Let R be a relation on a set A.
+There is a path of length n, where n is a positive integer,
+from a to b if and only if $$(a, b) ∈ R$$n.
+
+* 길이가 n인 a 에서 b 로의 경로가 있다는 것과 $$ (a,b) ∈ R^n $$은 똑같은 표현이다.
+
+> Let R be a relation on a set A.
+The connectivity relation $$R^∗$$ consists of the pairs $$(a, b)$$ such that there is a path of length at least one from a to b in R.
+
+* $$R^n$$은 a 에서 b 로의 길이 n 의 경로가 있는 쌍 $$(a, b)$$로 구성된다.
+* 연결관계(connectivity relation) $$R^*$$
+    * R의 원소들 중 길이가 적어도 1 이상인 a 에서 b 로의 경로 순서쌍$$(a, b)$$로 구성된다.
+    * $$R^*$$는 모든 집합 $$R^n$$의 합집합이다.
+
+$$
+R^* = \bigcup^{\infty}_{n=1} R^n
+$$
+
+> The transitive closure of a relation R equals the connectivity relation $$R^∗$$.
+
+* 관계 $$R^*$$의 전이폐쇄(transitive closure)는 연결관계 $$R^*$$과 같다.
+
+> Let $$M_R$$ be the zero–one matrix of the relation R on a set with n elements.
+Then the zero–one matrix of the transitive closure $$R^∗$$ is  
+$$
+M_{R^∗} = M_{R} ∨ M_{R}^{[2]} ∨ M_{R}^{[3]} ∨ ... ∨ M_{R}^{[n]}
+$$
+
+예제를 풀어보자. 다음 관계 R의 전이폐쇄를 의미하는 0-1 행렬을 구하라.
+
+$$
+M_R =
+\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 1 & 0 \\
+\end{bmatrix}
+$$
+
+이걸 풀기 위해 먼저 $$M_R^{[2]}$$를 구하자.
+
+길이가 2인 a에서 b로 가는 경로가 존재하는가?
+
+| a | b | 존재 | 증거                                |
+|---|---|------|-------------------------------------|
+| 1 | 1 | 1    | $$(1,1), (1,1)$$ / $$(1,3), (3,1)$$ |
+| 1 | 2 | 1    | $$(1,3), (3,2)$$                    |
+| 1 | 3 | 1    | $$(1,1), (1,3)$$                    |
+| 2 | 1 | 0    |                                     |
+| 2 | 2 | 1    | $$(2,2), (2,2)$$                    |
+| 2 | 3 | 0    |                                     |
+| 3 | 1 | 1    | $$(3,1), (1,1)$$                    |
+| 3 | 2 | 1    | $$(3,2), (2,2)$$                    |
+| 3 | 3 | 1    | $$(3,1), (1,3)$$                    |
+
+위의 표를 참고하면 다음과 같이 행렬을 그릴 수 있다.
+
+$$
+M_R^{[2]} =
+\begin{bmatrix}
+1 & 1 & 1 \\
+0 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{bmatrix}
+$$
+
+이번엔 $$M_R^{[3]}$$을 구하자.
+
+길이가 3인 a에서 b로 가는 경로가 존재하는가?
+
+| a | b | 존재 | 증거                    |
+|---|---|------|-------------------------|
+| 1 | 1 | 1    | $$(1,1), (1,1), (1,1)$$ |
+| 1 | 2 | 1    | $$(1,1), (1,3), (3,2)$$ |
+| 1 | 3 | 1    | $$(1,1), (1,1), (1,3)$$ |
+| 2 | 1 | 0    |                         |
+| 2 | 2 | 1    | $$(2,2), (2,2), (2,2)$$ |
+| 2 | 3 | 0    |                         |
+| 3 | 1 | 1    | $$(3,1), (1,3), (1,1)$$ |
+| 3 | 2 | 1    | $$(3,2), (2,2), (2,2)$$ |
+| 3 | 3 | 1    | $$(3,1), (1,1), (1,3)$$ |
+
+위의 표를 참고하면 다음과 같이 행렬을 그릴 수 있다.
+
+$$
+M_R^{[3]} =
+\begin{bmatrix}
+1 & 1 & 1 \\
+0 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{bmatrix}
+$$
+
+잘 살펴보면 $$M_R^{[2]}$$과 $$M_R^{[3]}$$가 똑같으므로 계속 순환할 것임을 알 수 있다.
+
+따라서
+
+$$
+M_{R^∗} = M_{R} ∨ M_{R}^{[2]} ∨ M_{R}^{[3]} ∨ ... ∨ M_{R}^{[n]}
+$$
+
+$$
+M_{R^∗} =
+\begin{bmatrix}
+1 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 1 & 0 \\
+\end{bmatrix}
+∨
+\begin{bmatrix}
+1 & 1 & 1 \\
+0 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{bmatrix}
+∨
+\begin{bmatrix}
+1 & 1 & 1 \\
+0 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 1 & 1 \\
+0 & 1 & 0 \\
+1 & 1 & 1 \\
+\end{bmatrix}
+$$
+
+
 # 참고문헌
 
-* Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
+* Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등 저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 

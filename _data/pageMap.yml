@@ -1644,7 +1644,7 @@ links-2019:
     summary: ""
     parent: links
     url: /wiki/links-2019
-    updated: '2019-05-11 11:51:15 +0900'
+    updated: '2019-05-11 22:55:09 +0900'
     children: []
 locomotive-problem:
     type: wiki
@@ -1980,7 +1980,7 @@ relations:
     summary: ""
     parent: math
     url: /wiki/relations
-    updated: '2019-05-08 23:17:57 +0900'
+    updated: '2019-05-12 17:50:57 +0900'
     children: []
 review:
     type: wiki
