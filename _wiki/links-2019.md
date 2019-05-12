@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 링크 모음
 summary : 
 date    : 2019-01-04 15:30:13 +0900
-updated : 2019-05-11 11:51:15 +0900
+updated : 2019-05-11 22:55:09 +0900
 tag     : 
 toc     : true
 public  : true
@@ -32,6 +32,7 @@ latex   : false
 * 2019-01-02 [천만 명의 사용자에게 1분 내로 알림 보내기 (병렬프로세스의 최적화)](https://taetaetae.github.io/2019/01/02/faster-parallel-processes/ )
 * 2019-01-08 [[번역] 「Plants vs. Zombies」의 게임 튜토리얼에 대한 10가지 조언](http://sungkukpark.github.io/gamedesign/2019/01/08/ten-tutorial-tips-from-plants-vs-zombies-translatation.html ) [원문](http://www.gamasutra.com/view/news/165359 )
 * 2019-04-23 [우리 팀의 근무 수칙 - 에어비앤비 페이먼츠 엔지니어링](https://brunch.co.kr/@svillustrated/54 )
+* 2019-05-08 [주유의 IT 책 쓰기 불바다 강론 : 빠르게 포기하거나, 진짜로 저자가 되거나](https://issuu.com/iamhwchoi/docs/____it_________________4_ )
 * 2019-05-10 [Great developers are raised, not hired(뛰어난 개발자는 뽑히는 게 아니라 길러집니다).](https://muchtrans.com/translations/great-developers-are-raised.ko.html )
 
 # BlockChain
