@@ -132,6 +132,7 @@ comment : false
     * [[No-Silver-Bullet]]
     * [[orange-juice-test]]
     * [[Postel-s-law]]
+    * [[Schopenhauer-s-Law-Of-Entropy]]{쇼펜하우어의 엔트로피 법칙}
     * [[Zipf-s-law]]
 * [[review]]
     * [[review-2019]]

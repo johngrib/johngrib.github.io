@@ -1933,7 +1933,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-02-21 22:37:29 +0900'
-    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, orange-juice-test, Postel-s-law, Zipf-s-law]
+    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, Zipf-s-law]
 Python3:
     type: wiki
     title: Python3
@@ -2045,6 +2045,14 @@ rule-of-succession:
     parent: math
     url: /wiki/rule-of-succession
     updated: '2018-04-24 22:03:17 +0900'
+    children: []
+Schopenhauer-s-Law-Of-Entropy:
+    type: wiki
+    title: '쇼펜하우어의 엔트로피 법칙(Schopenhauer''s Law Of Entropy)'
+    summary: ""
+    parent: proverb
+    url: /wiki/Schopenhauer-s-Law-Of-Entropy
+    updated: '2019-05-13 22:58:33 +0900'
     children: []
 Schrodinger-s-goyang-Hee:
     type: wiki
