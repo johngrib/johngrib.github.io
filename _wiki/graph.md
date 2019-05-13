@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그래프(Graph)
 summary : 
 date    : 2019-05-13 23:13:33 +0900
-updated : 2019-05-13 23:56:26 +0900
+updated : 2019-05-13 23:59:17 +0900
 tags    : 
 toc     : true
 public  : true
@@ -65,7 +65,7 @@ Graphs that may include loops, and possibly multiple edges connecting the same p
 
 * 자기 자신과 연결하는 간선을 갖는 정점이 있다.
     * 이런 간선을 루프(loop)라고 한다.
-    * 루프와 다중 모간선을 갖는 그래프를 의사 그래프(pseudographs)라 부른다.
+    * 루프와 다중 간선을 갖는 그래프를 의사 그래프(pseudographs)라 부른다.
 
 <svg height="80" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <ellipse stroke="black" stroke-width="1" fill="none" cx="39.5" cy="39.5" rx="30" ry="30"/>
