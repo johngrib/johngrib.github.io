@@ -1318,6 +1318,14 @@ Gradle:
     url: /wiki/Gradle
     updated: '2018-10-08 22:21:21 +0900'
     children: []
+graph:
+    type: wiki
+    title: 그래프(Graph)
+    summary: ""
+    parent: math
+    url: /wiki/graph
+    updated: '2019-05-13 23:56:26 +0900'
+    children: []
 GRAVITY-EXPRESS:
     type: wiki
     title: '(책) 그래비티 익스프레스(GRAVITY EXPRESS)'
@@ -1685,7 +1693,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, frac1e, gcd, halting-problem, primitive-roots, relations, rule-of-succession, secretary-problem]
+    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, frac1e, gcd, graph, halting-problem, primitive-roots, relations, rule-of-succession, secretary-problem]
 mathdict:
     type: wiki
     title: '대한수학회 수학용어 사전'
