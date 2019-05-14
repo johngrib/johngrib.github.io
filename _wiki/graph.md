@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그래프(Graph)
 summary : 
 date    : 2019-05-13 23:13:33 +0900
-updated : 2019-05-13 23:59:17 +0900
+updated : 2019-05-14 09:43:56 +0900
 tags    : 
 toc     : true
 public  : true
@@ -93,6 +93,13 @@ The directed edge associated with the ordered pair $$(u, v)$$ is said to start a
 | 방향성 다중 그래프(directid multigraph)   | O           | X             | O              | O         |
 | 혼합그래프(Mixed graph)                   | O           | O             | O              | O         |
 
+> Two vertices u and v in an undirected graph G are called adjacent(or neighbors) in G if u and v are endpoints of an edge e of G.
+Such an edge e is called incident with the vertices u and v and e is said to connect u and v.
+
+* 비방향성 그래프에서
+    * 하나의 간선 양쪽의 두 정점을 "인접(adjacent)" 또는 "이웃(neighbors)"이라 한다.
+    * 이웃하는 두 정점을 연결하는 간선을 해당 정점에 붙어있다(incident)고도 하고, 두 정점을 연결한다(connect)고도 한다.
+    * 연결된 두 정점을 끝점(endpoints)이라 부른다.
 
 # 참고문헌
 
