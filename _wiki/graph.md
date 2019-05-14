@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그래프(Graph)
 summary : 
 date    : 2019-05-13 23:13:33 +0900
-updated : 2019-05-14 23:00:29 +0900
+updated : 2019-05-14 23:10:14 +0900
 tags    : 
 toc     : true
 public  : true
@@ -179,6 +179,16 @@ The initial vertex and terminal vertex of a loop are the same.
     * 정점 u 는 시작 정점이라 부른다.
     * 정점 $$\nu$$는 종료 또는 끝 정점이라 부른다.
     * 루프의 경우, 시작 정점과 끝 정점이 같다.
+
+> In a graph with directed edges the in-degree of a vertex v,
+denoted by $$deg^−(v)$$, is the number of edges with v as their terminal vertex.
+The out-degree of v, denoted by $$deg^+(v)$$, is the number of edges with v as their initial vertex.
+(Note that a loop at a vertex contributes 1 to both the in-degree and the out-degree of this vertex.)
+
+* 방향성 그래프에서 정점 $$\nu$$의 입력차수(in-degree)는 $$deg^-(\nu)$$로 표기한다.
+* 방향성 그래프에서 정점 $$\nu$$의 출력차수(in-degree)는 $$deg^+(\nu)$$로 표기한다.
+* 루프가 있으면 정점의 입력차수와 출력차수에 각각 1씩 추가한다.
+
 
 # 참고문헌
 
