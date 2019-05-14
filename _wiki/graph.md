@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그래프(Graph)
 summary : 
 date    : 2019-05-13 23:13:33 +0900
-updated : 2019-05-14 09:43:56 +0900
+updated : 2019-05-14 22:13:35 +0900
 tags    : 
 toc     : true
 public  : true
@@ -100,6 +100,73 @@ Such an edge e is called incident with the vertices u and v and e is said to con
     * 하나의 간선 양쪽의 두 정점을 "인접(adjacent)" 또는 "이웃(neighbors)"이라 한다.
     * 이웃하는 두 정점을 연결하는 간선을 해당 정점에 붙어있다(incident)고도 하고, 두 정점을 연결한다(connect)고도 한다.
     * 연결된 두 정점을 끝점(endpoints)이라 부른다.
+
+> The set of all neighbors of a vertex v of G = (V,E),
+denoted by N(v), is called the neighborhood of v.
+If A is a subset of V,
+we denote by N(A) the set of all vertices in G that are adjacent to at least one vertex in A.
+So, $$N(A) = \bigcup_{ \nu ∈ A } N(\nu)$$
+
+* 한 정점 $$\nu$$의 모든 이웃의 집합을 $$N(\nu)$$로 표기하고, 이를 $$\nu$$의 이웃(neighborhood of $$\nu$$)이라 한다.
+* $$N(A)$$는 $$A$$ 집합의 한 원소에 인접한 모든 정점들의 집합이다.
+    * 그러므로 $$N(A) = \bigcup_{ \nu ∈ A } N(\nu)$$ 이다.
+
+> The degree of a vertex in an undirected graph is the number of edges incident with it, except that a loop at a vertex contributes twice to the degree of that vertex. The degree of the vertex v is denoted by $$deg(v)$$.
+
+* 정점 하나에 붙어 있는 간선의 수를 정점의 차수(degree)라 부른다.
+    * loop가 있으면 차수에 2를 더한다.
+    * 정점 $$\nu$$의 차수는 $$deg(\nu)$$로 표기한다.
+* 차수가 0 인 정점은 연결된 간선이 하나도 없으며, "고립되었다(isolated)"고 표현한다.
+* 차수가 1 인 정점은 연결된 간선이 하나뿐이며, "늘어졌다(pendant: 목걸이)"고 표현한다.
+
+> THE HANDSHAKING THEOREM.  
+Let $$G = (V , E)$$ be an undirected graph with m edges. Then  
+$$2m = \sum_{\nu ∈ V} deg(\nu)$$  
+(Note that this applies even if multiple edges and loops are present.)
+
+* 악수 정리(Handshakiing Theorem)
+    * 그래프 $$G=(V,E)$$가 m 개의 모서리를 갖는 비방향성 그래프라면,
+        * $$2m = \sum_{\nu ∈ V} deg(\nu)$$.
+        * 이 정리는 다중 간선, 루프가 있을 때에도 성립한다.
+
+악수 정리의 원리는 단순하다. 삼각형을 생각해보자. 삼각형의 모든 정점은 2개의 간선을 갖는다.
+
+그렇다면 각 정점의 차수를 모두 더하면 $$2m = 2 + 2 + 2 = 6$$이 될 것이다.
+
+그러므로 $$m=3$$이다. 당연히 삼각형의 변은 3개.
+
+> An undirected graph has an even number of vertices of odd degree.
+
+* 비방향성 그래프에는 홀수 차수를 가진 정점들이 짝수 개 있다.
+
+이는 다음과 같이 증명할 수 있다.
+
+* $$V_1 = $$ 짝수 차수를 가진 정점들의 집합
+* $$V_2 = $$ 홀수 차수를 가진 정점들의 집합
+
+그렇다면 악수 정리를 사용해 식을 다음과 같이 꾸밀 수 있다.
+
+$$
+\begin{align}
+2m & = \sum_{ \nu ∈ V } deg(\nu) \\
+    & = \sum_{ \nu ∈ V_1 } deg(\nu) + \sum_{ \nu ∈ V_2 } deg(\nu)\\
+\end{align}
+$$
+
+그런데 $$\sum_{ \nu ∈ V_1 } deg(\nu)$$의 $$deg(\nu)$$는 짝수이므로, $$\sum_{ \nu ∈ V_1 } deg(\nu)$$도 짝수이다.
+
+그리고 $$2m$$도 짝수이므로 다음과 같은 모양이 된다.
+
+$$ 짝수 = 짝수 + \sum_{ \nu ∈ V_2 } deg(\nu) $$
+
+그러므로 $$\sum_{ \nu ∈ V_2 } deg(\nu)$$도 짝수가 된다.
+
+그런데 $$V_2$$는 홀수 차수를 가진 정점들의 집합이므로 $$deg(\nu)$$는 홀수다.
+
+따라서 $$\sum_{ \nu ∈ V_2 } \text{홀수}$$인 셈이므로, $$V_2$$의 원소의 개수는 짝수여야 한다.
+
+그러므로 홀수 차수의 정점들의 수는 짝수 개이다.
+
 
 # 참고문헌
 
