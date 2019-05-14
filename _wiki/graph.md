@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그래프(Graph)
 summary : 
 date    : 2019-05-13 23:13:33 +0900
-updated : 2019-05-14 22:13:35 +0900
+updated : 2019-05-14 23:00:29 +0900
 tags    : 
 toc     : true
 public  : true
@@ -167,6 +167,18 @@ $$ 짝수 = 짝수 + \sum_{ \nu ∈ V_2 } deg(\nu) $$
 
 그러므로 홀수 차수의 정점들의 수는 짝수 개이다.
 
+> When $$(u, v)$$ is an edge of the graph G with directed edges,
+u is said to be adjacent to v and v is said to be adjacent from u.
+The vertex u is called the initial vertex of $$(u, v)$$,
+and v is called the terminal or end vertex of $$(u, v)$$.
+The initial vertex and terminal vertex of a loop are the same.
+
+* 방향성 그래프의 간선 $$(u, v)$$에 대하여
+    * 간선 u 는 $$\nu$$에 인접한다고 한다.
+    * 정점 $$\nu$$는 u 로부터 인접된다고 한다.
+    * 정점 u 는 시작 정점이라 부른다.
+    * 정점 $$\nu$$는 종료 또는 끝 정점이라 부른다.
+    * 루프의 경우, 시작 정점과 끝 정점이 같다.
 
 # 참고문헌
 
