@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그래프(Graph)
 summary : 
 date    : 2019-05-13 23:13:33 +0900
-updated : 2019-05-15 09:59:12 +0900
+updated : 2019-05-15 23:00:52 +0900
 tags    : 
 toc     : true
 public  : true
@@ -195,6 +195,52 @@ $$
 $$
 
 * 방향성 그래프에서 입력차수의 총합과 출력차수의 총합, 그리고 모든 간선의 수는 같다.
+
+> A complete graph on n vertices, denoted by $$K_n$$,
+is a simple graph that contains exactly one edge between each pair of distinct vertices.
+
+* 완전 그래프(Complete graph)는 각 정점들이 하나의 간선으로 연결된 단순 그래프이다.
+* 모든 정점이 다른 나머지 정점들과 다 연결이 되어 있다.
+
+![image](https://user-images.githubusercontent.com/1855714/57778513-2d78ca00-775f-11e9-81b4-e5603fd3d0ab.png)
+
+> A cycle $$C_n, n ≥ 3$$, consists of n vertices $$\{v_1, v_2\}, \{v_2, v_3\}, ... , \{v_{n−1}, v_n\}$$, and $$\{v_n, v_1\}$$.
+
+* 사이클(Cycle)은 다음과 같이 $$v_i, v_{i+1}$$이 연결된 형태의 그래프이다.
+* 바퀴 모양이다.
+
+![image](https://user-images.githubusercontent.com/1855714/57778754-ab3cd580-775f-11e9-8207-610eb5feb079.png)
+
+> We obtain a wheel $$W_n$$ when we add an additional vertex to a cycle $$C_n$$, for $$n ≥ 3$$, and connect this new vertex to each of the n vertices in $$C_n$$, by new edges.
+
+* 휠(Wheel)은 한 정점이 다른 모든 정점과 연결되어 있다.
+* 가운데에 축이 있는 바퀴 모양이다.
+
+![image](https://user-images.githubusercontent.com/1855714/57779652-76ca1900-7761-11e9-93f4-65da6108ed81.png)
+
+> An n-dimensional hypercube, or n-cube, denoted by $$Q_n$$, is a graph that has vertices representing the $$2^n$$ bit strings of length n. Two vertices are adjacent if and only if the bit strings that they represent differ in exactly one bit position.
+
+* n 큐브(n-Cubes)는 길이 n의 $$2^n$$개의 비트 스트링을 나타내는 정점들을 갖는 그래프.
+    * 두 정점이 서로 인접해 있다면 이 두 정점의 비트 스트링은 1개의 비트만 다르다.
+
+![image](https://user-images.githubusercontent.com/1855714/57780075-741bf380-7762-11e9-9304-ba6cebe978bb.png)
+
+> Bipartite Graphs.  
+A simple graph G is called bipartite if its vertex set V can be partitioned into two disjoint sets $$V_1$$ and $$V_2$$ such that every edge in the graph connects a vertex in $$V_1$$ and a vertex in $$V_2$$ (so that no edge in G connects either two vertices in $$V_1$$ or two vertices in $$V_2$$). When this condition holds, we call the pair $$(V_1, V_2)$$ a bipartition of the vertex set V of G.
+
+* 단순 그래프에서 정점들의 집합 V가 교집합이 없는 집합 $$V_1$$, $$V_2$$로 나뉘고, 그래프의 모든 간선이 $$V_1$$의 한 정점과 $$V_2$$의 한 정점을 연결한다면, 이 그래프를 이분되었다(bipartited)고 한다.
+    * 단, $$V_1$$의 정점과 $$V_1$$의 정점을 연결하는 간선은 없다.
+    * 단, $$V_2$$의 정점과 $$V_2$$의 정점을 연결하는 간선은 없다.
+
+> A simple graph is bipartite if and only if it is possible to assign one of two different colors to each vertex of the graph so that no two adjacent vertices are assigned the same color.
+
+* 이분 그래프의 필요충분조건
+    * 두 인접한 정점들이 같은 색깔을 갖지 않도록 두 가지 색깔로 그래프의 모든 정점을 색칠할 수 있어야 한다.
+
+> A complete bipartite graph $$K_{m,n}$$ is a graph that has its vertex set partitioned into two subsets of m and n vertices, respectively with an edge between two vertices if and only if one vertex is in the first subset and the other vertex is in the second subset.
+
+* 완전 이분 그래프 $$K_{m,n}$$
+    * 정점의 집합이 m개, n개의 정점을 갖는 두 부분집합으로 나뉠 수 있는 그래프.
 
 # 참고문헌
 
