@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그래프(Graph)
 summary : 
 date    : 2019-05-13 23:13:33 +0900
-updated : 2019-05-15 23:00:52 +0900
+updated : 2019-05-15 23:48:20 +0900
 tags    : 
 toc     : true
 public  : true
@@ -241,6 +241,48 @@ A simple graph G is called bipartite if its vertex set V can be partitioned into
 
 * 완전 이분 그래프 $$K_{m,n}$$
     * 정점의 집합이 m개, n개의 정점을 갖는 두 부분집합으로 나뉠 수 있는 그래프.
+
+> HALL’S MARRIAGE THEOREM.  
+The bipartite graph $$G = (V , E)$$ with bipartition $$(V_1,V_2)$$ has a complete matching from $$V_1$$ to $$V_2$$ if and only if $$|N(A)| ≥ |A|$$ for all subsets A of $$V_1$$.
+
+* 이분 그래프가 $$V_1$$에서 $$V_2$$로 완전 매칭일 필요충분조건은 다음과 같다.
+    * $$V_1$$의 모든 부분집합 A 에 대해 $$\vert N(A) \vert ≥ \vert A \vert$$ 이다.
+        * 참고: `N(A)`는 A 집합의 한 원소에 인접한 모든 정점들의 집합이다.
+        * 참고: `|A|`는 집합 A의 원소의 개수.
+
+> A matching M in a simple graph $$G = (V,E)$$ is a subset of the set E of edges of the graph such that no two edges are incident with the same vertex.
+In other words, a matching is a subset of edges such that if {s,t} and {u,v} are distinct edges of the matching, then s, t, u, and v are distinct. A vertex that is the endpoint of an edge of a matching M is said to be matched in M; otherwise it is said to be unmatched.
+
+>  A maximum matching is a matching with the largest number of edges.
+
+> We say that a matching M in a bipartite graph $$G = (V,E)$$ with bipartition $$(V_1,V_2)$$ is a complete matching from $$V_1$$ to $$V_2$$ if every vertex in $$V_1$$ is the endpoint of an edge in the matching, or equivalently, if $$\vert M \vert = \vert V1 \vert$$.
+
+* Matching M은 그래프에서 연결된 정점을 공유하지 않는 간선들의 집합이다.
+    * 매칭 간선 $${s, t}$$와 간선 $${u, v}$$가 있을 때, $$s, t, u, v$$ 는 서로 다른 정점이다.
+* 최대 매칭(Maximum matching).
+    * 간선의 수가 최대인 매칭.
+* 완전 매칭(complete matching).
+    * $$V_1$$의 모든 정점들이 매칭되었거나, $$\vert M \vert = \vert V_1 \vert$$ 인 경우를 $$V_1$$에서 $$V_2$$로의 완전 매칭이라 한다.
+
+> A subgraph of a graph $$G = (V,E)$$ is a graph $$H = (W,F)$$, where $$W ⊆ V$$ and $$F ⊆ E$$.
+A subgraph H of G is a proper subgraph of G if $$H \ne G$$.
+
+* 그래프 $$G=(V,E)$$의 부 그래프(subgraph)는 $$H = (W,F)$$.
+    * $$W ⊆ V$$.
+    * $$F ⊆ E$$.
+* $$H \ne G$$ 이면 진 부그래프(proper subgraph)이다.
+
+> Let $$G = (V , E)$$ be a simple graph.
+The subgraph induced by a subset W of the vertex set V is the graph $$(W, F)$$,
+where the edge set F contains an edge in E if and only if both endpoints of this edge are in W .
+
+* 유도된 그래프(subgraph induced): 정점의 집합 V 의 부분집합 W 를 통해 유도된 부 그래프.
+
+> The union of two simple graphs $$G_1 = (V_1, E_1)$$ and $$G_2 = (V_2, E_2)$$ is the simple graph with vertexset$$V_1 ∪ V_2$$ and edge set $$E_1 ∪ E_2$$. The union of $$G_1$$ and $$G_2$$ is denoted by $$G_1 ∪ G_2$$.
+
+* 그래프 합집합
+    * 두 그래프의 합집합은 두 그래프의 정점들의 집합의 합집합과 두 그래프의 간선들의 합집합을 갖는 단순 그래프이다.
+
 
 # 참고문헌
 
