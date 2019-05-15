@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그래프(Graph)
 summary : 
 date    : 2019-05-13 23:13:33 +0900
-updated : 2019-05-14 23:10:14 +0900
+updated : 2019-05-15 09:59:12 +0900
 tags    : 
 toc     : true
 public  : true
@@ -189,6 +189,12 @@ The out-degree of v, denoted by $$deg^+(v)$$, is the number of edges with v as t
 * 방향성 그래프에서 정점 $$\nu$$의 출력차수(in-degree)는 $$deg^+(\nu)$$로 표기한다.
 * 루프가 있으면 정점의 입력차수와 출력차수에 각각 1씩 추가한다.
 
+> Let $$G = (V , E)$$ be a graph with directed edges. The  
+$$
+\sum_{ \nu ∈ V } deg^{-}(\nu) = \sum_{ \nu ∈ V } deg^{+}(\nu) = \vert E \vert
+$$
+
+* 방향성 그래프에서 입력차수의 총합과 출력차수의 총합, 그리고 모든 간선의 수는 같다.
 
 # 참고문헌
 
