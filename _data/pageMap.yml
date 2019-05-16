@@ -2413,7 +2413,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [my-wiki, vim-auto-completion, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
+    children: [my-wiki, vim-auto-completion, vim-coc, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
 vim-auto-completion:
     type: wiki
     title: 'vim 자동완성 기능 사용하기'
@@ -2421,6 +2421,14 @@ vim-auto-completion:
     parent: Vim
     url: /wiki/vim-auto-completion
     updated: '2018-12-10 21:23:00 +0900'
+    children: []
+vim-coc:
+    type: wiki
+    title: 'coc.nvim을 사용해보자'
+    summary: ""
+    parent: Vim
+    url: /wiki/vim-coc
+    updated: '2019-05-16 22:32:43 +0900'
     children: []
 vim-conceallevel:
     type: wiki

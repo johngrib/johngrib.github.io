@@ -268,6 +268,7 @@ comment : false
 * [[Vim]]
     * [[my-wiki]]
     * [[vim-auto-completion]]
+    * [[vim-coc]]
     * [[vim-conceallevel]]{conceallevel (Vim)}
     * [[vim-f-hangul]]
     * [[vim-persistent-undo]]
