@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그래프(Graph)
 summary : 
 date    : 2019-05-13 23:13:33 +0900
-updated : 2019-05-15 23:48:20 +0900
+updated : 2019-05-19 22:05:41 +0900
 tags    : 
 toc     : true
 public  : true
@@ -282,6 +282,150 @@ where the edge set F contains an edge in E if and only if both endpoints of this
 
 * 그래프 합집합
     * 두 그래프의 합집합은 두 그래프의 정점들의 집합의 합집합과 두 그래프의 간선들의 합집합을 갖는 단순 그래프이다.
+
+# 그래프 표현 방법
+
+## 인접 리스트(Adjacency Lists)
+
+* 각 정점별로 인접한 정점을 나열하는 방법이다.
+
+<svg id="test" width="120" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="5" cy="35" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="50" cy="14" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="100" cy="35" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="80" cy="70" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="20" cy="70" rx="3" ry="3" fill="black"></ellipse>
+    <polygon node="a,b" stroke-width="1" stroke="black" points=" 5,35 50,14"></polygon>
+    <polygon node="a,c" stroke-width="1" stroke="black" points=" 5,35 100,35"></polygon>
+    <polygon node="a,e" stroke-width="1" stroke="black" points=" 5,35 20,70"></polygon>
+    <polygon node="c,e" stroke-width="1" stroke="black" points=" 100,35 20,70"></polygon>
+    <polygon node="c,d" stroke-width="1" stroke="black" points=" 100,35 80,70"></polygon>
+    <polygon node="d,e" stroke-width="1" stroke="black" points=" 80,70 20,70"></polygon>
+    <text ref="a" font-size="10" x="5" y="29" text="a">a</text>
+    <text ref="b" font-size="10" x="50" y="8" text="b">b</text>
+    <text ref="c" font-size="10" x="100" y="29" text="c">c</text>
+    <text ref="d" font-size="10" x="80" y="64" text="d">d</text>
+    <text ref="e" font-size="10" x="20" y="64" text="e">e</text>
+</svg>
+
+| vertex | adjacent vertices |
+|--------|-------------------|
+| a      | b,c,e             |
+| b      | a                 |
+| c      | a,d,e             |
+| d      | c,e               |
+| e      | a,c,d             |
+
+* 방향성 그래프의 경우, 시작 정점별로 종료 정점들을 나열한다.
+
+## 인접 행렬(Adjacency Matrices)
+
+$$
+a_{ij} =
+\begin{cases}
+1 & \text{if {$v_i,v_j$}is an edge of G} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+만약 다음과 같은 그래프가 있다면...
+
+<svg id="test" width="120" height="70" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="10" cy="15" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="100" cy="15" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="10" cy="55" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="100" cy="55" rx="3" ry="3" fill="black"></ellipse>
+    <polygon node="a,b" stroke-width="1" stroke="black" points=" 10,15 100,15"></polygon>
+    <polygon node="a,c" stroke-width="1" stroke="black" points=" 10,15 10,55"></polygon>
+    <polygon node="a,d" stroke-width="1" stroke="black" points=" 10,15 100,55"></polygon>
+    <polygon node="b,c" stroke-width="1" stroke="black" points=" 100,15 10,55"></polygon>
+    <text ref="a" font-size="10" x="10" y="9" text="a">a</text>
+    <text ref="b" font-size="10" x="100" y="9" text="b">b</text>
+    <text ref="c" font-size="10" x="10" y="49" text="c">c</text>
+    <text ref="d" font-size="10" x="100" y="49" text="d">d</text>
+</svg>
+
+다음과 같이 표로 나타낼 수 있다.
+
+|   | a    | b    | c    | d    |
+| a |      | 연결 | 연결 | 연결 |
+| b | 연결 |      | 연결 |      |
+| c | 연결 | 연결 |      |      |
+| d | 연결 |      |      |      |
+
+이 표를 그대로 0, 1을 사용한 행렬로 나타내면 된다.
+
+$$
+\begin{bmatrix}
+0 & 1 & 1 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+\end{bmatrix}
+$$
+
+## 결합행렬(Incidence Matrices)
+
+정점과 간선의 연결을 표시하는 방법이다.
+
+$$
+m_{ij} =
+\begin{cases}
+1 & \text{when edge $e_j$ is incident with $\nu_i$} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+<svg id="test" width="120" height="90" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="10" cy="15" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="50" cy="15" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="100" cy="15" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="30" cy="65" rx="3" ry="3" fill="black"></ellipse>
+    <ellipse cx="75" cy="65" rx="3" ry="3" fill="black"></ellipse>
+    <polygon node="v1,v4" stroke-width="1" stroke="black" points=" 10,15 30,65"></polygon>
+    <polygon node="v1,v5" stroke-width="1" stroke="black" points=" 10,15 75,65"></polygon>
+    <polygon node="v2,v3" stroke-width="1" stroke="black" points=" 50,15 100,15"></polygon>
+    <polygon node="v2,v4" stroke-width="1" stroke="black" points=" 50,15 30,65"></polygon>
+    <polygon node="v2,v5" stroke-width="1" stroke="black" points=" 50,15 75,65"></polygon>
+    <polygon node="v3,v5" stroke-width="1" stroke="black" points=" 100,15 75,65"></polygon>
+    <text ref="v1" font-size="10" x="10" y="9" text="v1">v1</text>
+    <text ref="v2" font-size="10" x="50" y="9" text="v2">v2</text>
+    <text ref="v3" font-size="10" x="100" y="9" text="v3">v3</text>
+    <text ref="v4" font-size="10" x="30" y="74" text="v4">v4</text>
+    <text ref="v5" font-size="10" x="75" y="74" text="v5">v5</text>
+    <text ref="undefined" font-size="10" x="6" y="40" text="e1">e1</text>
+    <text ref="undefined" font-size="10" x="53" y="58" text="e2">e2</text>
+    <text ref="undefined" font-size="10" x="35" y="27" text="e3">e3</text>
+    <text ref="undefined" font-size="10" x="60" y="40" text="e4">e4</text>
+    <text ref="undefined" font-size="10" x="90" y="40" text="e5">e5</text>
+    <text ref="undefined" font-size="10" x="75" y="12" text="e6">e6</text>
+</svg>
+
+$$
+\begin{matrix}
+    & \begin{matrix} e_1 & e_2 & e_3 & e_4 & e_5 & e_6 \end{matrix} \\
+\begin{matrix} \nu_1 \\ \nu_2 \\ \nu_3 \\ \nu_4 \\ \nu_5 \end{matrix}
+    &
+  \begin{bmatrix}
+  1 \ & 1 \ & 0 \ & 0 \ & 0 \ & 0 \\
+  0 \ & 0 \ & 1 \ & 1 \ & 0 \ & 1 \\
+  0 \ & 0 \ & 0 \ & 0 \ & 1 \ & 1 \\
+  1 \ & 0 \ & 1 \ & 0 \ & 0 \ & 0 \\
+  0 \ & 1 \ & 0 \ & 1 \ & 1 \ & 0 \\
+  \end{bmatrix}
+\end{matrix}
+$$
+
+# 동형 그래프(Isomorphism of Graphs)
+
+>
+The simple graphs $$G_1 = (V_1, E_1)$$ and $$G_2 = (V_2, E_2)$$ are isomorphic if there exists a one-to-one and onto function $$f$$ from $$V_1$$ to $$V_2$$ with the property that a and b are adjacent in $$G_1$$ if and only if $$f(a)$$ and $$f(b)$$ are adjacent in $$G_2$$, for all a and b in $$V_1$$. Such a function $$f$$ is called an isomorphism$$^*$$. Two simple graphs that are not isomorphic are called nonisomorphic.
+
+* 두 단순 그래프 $$G_1 = (V_1, E_1)$$와 $$G_2 = (V_2, E_2)$$.
+    * $$V_1$$ 에서 $$V_2$$로의 함수 f 가 전단사 함수(일대일 대응)이고, $$V_1$$의 모든 a,b에 대해 a,b가 $$G_1$$에서 인접한다면 $$f(a), f(b)$$는 $$G_2$$에서 인접하고 그 역도 성립하면 함수 f 를 동형(isomorphic)이라 부른다.
+    * 동형이 아닌 두 산순 그래프를 비동형(nonisomorphic)이라 부른다.
+
+* isomorphism: iso(equal, 같다), morphe(form, 형태).
 
 
 # 참고문헌
