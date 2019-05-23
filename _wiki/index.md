@@ -267,6 +267,7 @@ comment : false
     * [[vagrant-docker-get-start]]
 * [[Vim]]
     * [[my-wiki]]
+    * [[two-views-of-vim]]
     * [[vim-auto-completion]]
     * [[vim-coc]]
     * [[vim-conceallevel]]{conceallevel (Vim)}

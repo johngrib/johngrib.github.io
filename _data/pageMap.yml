@@ -2342,6 +2342,14 @@ two-eggs-100-floor:
     url: /wiki/two-eggs-100-floor
     updated: '2019-03-13 23:42:13 +0900'
     children: []
+two-views-of-vim:
+    type: wiki
+    title: 'Vim, 두 가지 관점'
+    summary: '그리고 나의 vim 사용 습관'
+    parent: Vim
+    url: /wiki/two-views-of-vim
+    updated: '2019-05-23 17:36:33 +0900'
+    children: []
 units:
     type: wiki
     title: 단위
@@ -2413,7 +2421,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [my-wiki, vim-auto-completion, vim-coc, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
+    children: [my-wiki, two-views-of-vim, vim-auto-completion, vim-coc, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
 vim-auto-completion:
     type: wiki
     title: 'vim 자동완성 기능 사용하기'
