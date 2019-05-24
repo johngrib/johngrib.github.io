@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim, 두 가지 관점
 summary : 그리고 나의 vim 사용 습관
 date    : 2019-05-19 22:31:27 +0900
-updated : 2019-05-24 10:11:38 +0900
+updated : 2019-05-24 20:57:11 +0900
 tags    : vim
 toc     : true
 public  : true
@@ -73,9 +73,7 @@ Do not look in the (green)box.
 * 공역: vim 에디터에 표현 가능한 모든 문자열의 집합.
 * 치역: vim NORMAL 명령어로 만들어낼 수 있는 모든 문자열의 집합.
 
-![surjective function](https://user-images.githubusercontent.com/1855714/58082306-ab225700-7bf1-11e9-93cb-67b8f56350df.png )
-
-<style> img[alt="surjective function"] { max-width:  400px; display: block; } </style>
+| ![surjective function](https://user-images.githubusercontent.com/1855714/58082306-ab225700-7bf1-11e9-93cb-67b8f56350df.png ) |
 
 
 
