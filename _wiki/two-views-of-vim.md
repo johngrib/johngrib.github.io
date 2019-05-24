@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim, 두 가지 관점
 summary : 그리고 나의 vim 사용 습관
 date    : 2019-05-19 22:31:27 +0900
-updated : 2019-05-23 17:36:33 +0900
+updated : 2019-05-24 10:11:38 +0900
 tags    : vim
 toc     : true
 public  : true
@@ -18,7 +18,6 @@ If all you have is a hammer, everything looks like a nail.
 <br>
 버나드 바루흐의 고찰  
 망치를 든 사람에게는 모든 것이 못으로 보인다.
-
 
 
 이 글에서는 vim에 대한 나의 두 가지 관점과 내 vim 사용 습관에 관해 이야기한다.
@@ -685,7 +684,22 @@ endif
     * 기부자는 투표권을 받게 되며, 약 81가지 항목에 대한 찬/반 여부를 투표할 수 있게 된다.
     * 기부자는 vim.org의 [Hall of Honour](https://www.vim.org/sponsor/hall_of_honour.php )에 이름을 올릴 수 있다.
 
+# VIMRC 2019
 
+* 이 글은 [VIMRC 2019](https://lqez.github.io/vimrc2019/ )에서 사용한 발표 자료입니다([youtube](https://www.youtube.com/watch?v=lNWuf48vgV4 )).
+
+# Links
+
+
+* [레거시 코드를 파괴하는 Vim 벽돌 깨기](http://woowabros.github.io/tools/2017/07/06/vim-game-code-break.html )
+* [Rosetta Code](http://rosettacode.org/wiki/RIPEMD-160#Go )
+* [vim-startify](https://github.com/mhinz/vim-startify )
+* [wimwiki](https://github.com/vimwiki/vimwiki )
+* [fzf.vim](https://github.com/junegunn/fzf.vim )
+* [ultisnips](https://github.com/SirVer/ultisnips )
+* [vim-surround](https://github.com/tpope/vim-surround )
+* [vim-textobj-user](https://github.com/kana/vim-textobj-user )
+* [vim-easymotion](https://github.com/easymotion/vim-easymotion )
 
 # 이미지 출처
 
