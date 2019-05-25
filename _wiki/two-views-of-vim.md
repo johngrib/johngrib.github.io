@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim, 두 가지 관점
 summary : 그리고 나의 vim 사용 습관
 date    : 2019-05-19 22:31:27 +0900
-updated : 2019-05-24 20:57:11 +0900
+updated : 2019-05-25 09:39:43 +0900
 tags    : vim
 toc     : true
 public  : true
@@ -574,7 +574,7 @@ augroup END
 
 ## 다른 사람이 작성한 vimscript 도구의 실행
 
-Apple에 앱 스토어가 있다면 Vim에는 vim.org/scrripts 와 Vim Awesome이 있다.
+Apple에 앱 스토어가 있다면 Vim에는 vim.org/scripts 와 Vim Awesome이 있다.
 
 * <https://www.vim.org/scripts/index.php >
 * <https://vimawesome.com/ >
