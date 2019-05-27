@@ -3,7 +3,7 @@ layout  : wiki
 title   : 평균 계산 복잡도 구하기
 summary : Average Case Computational Complexity
 date    : 2019-04-07 23:29:38 +0900
-updated : 2019-04-15 22:39:31 +0900
+updated : 2019-05-27 14:08:24 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -93,7 +93,7 @@ function linearSearch(x, list) {
 * list의 길이가 $$n$$ 이라 하자.
 * 가능한 결과는 $$-1$$이 리턴되는 경우까지 합쳐서 모두 $$n+1$$개이다.
 * $$x$$가 리스트에 있을 확률을 $$p$$라 하자.
-* $$x$$가 리스트에 없을 확률을 $$q = p - 1$$라 하자.
+* $$x$$가 리스트에 없을 확률을 $$q = 1 - p$$라 하자.
 
 비교 연산은 매 루프마다 2번씩 일어난다. `i < list.length`와 `list[i] === x`
 
