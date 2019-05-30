@@ -2380,7 +2380,7 @@ URI:
     summary: 'Uniform Resource Identifier'
     parent: what
     url: /wiki/URI
-    updated: '2019-01-14 21:54:46 +0900'
+    updated: '2019-05-30 23:56:53 +0900'
     children: []
 use-java-primitive-type-for-performance:
     type: wiki

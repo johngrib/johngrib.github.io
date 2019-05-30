@@ -2,7 +2,7 @@
 layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
-updated : 2019-01-14 21:54:46 +0900
+updated : 2019-05-30 23:56:53 +0900
 tag     : http
 toc     : true
 public  : true
@@ -106,7 +106,7 @@ http://johngrib.github.io/wiki/URI.md#fragment
 
 이 정규식을 [regexper.com](https://regexper.com/#%5E((%5B%5E%3A%2F%3F%23%5D%2B)%3A)%3F(%5C%2F%5C%2F(%5B%5E%2F%3F%23%5D*))%3F(%5B%5E%3F%23%5D*)(%5C%3F(%5B%5E%23%5D*))%3F(%23(.*))%3F )에 넣고 돌리면 다음과 같은 기차 선로 다이어그램이 나온다(`//`를 `\/\/`로 수정해야 돌아간다).
 
-![regex](../img/URI.regex.svg)
+![regex](/post-img/URI/URI.regex.svg)
 
 만약 **http://www.ics.uci.edu/pub/ietf/uri/#Related**라는 URI를 이 정규식으로 파싱한다면 다음과 같은 캡처 그룹을 확보할 수 있다.
 
