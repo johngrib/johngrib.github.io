@@ -200,6 +200,7 @@ bash:
     - {fileName: date}
     - {fileName: df}
     - {fileName: diff}
+    - {fileName: docker}
     - {fileName: du}
     - {fileName: fc}
     - {fileName: find}
@@ -229,6 +230,7 @@ command:
     - {fileName: date}
     - {fileName: df}
     - {fileName: diff}
+    - {fileName: docker}
     - {fileName: du}
     - {fileName: fc}
     - {fileName: find}
@@ -420,6 +422,8 @@ golang:
     - {fileName: vim-go-with-ultisnips}
 design:
     - {fileName: Design-for-Hackers}
+container:
+    - {fileName: docker}
 html:
     - {fileName: DOM-Enlightenment-by-Cody-Lindley}
 DOM:

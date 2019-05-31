@@ -212,6 +212,7 @@ comment : false
         * [[date]]
         * [[df]]
         * [[diff]]
+        * [[docker]]
         * [[du]]
         * [[fc]]
         * [[find]]

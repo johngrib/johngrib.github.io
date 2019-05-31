@@ -597,7 +597,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
+    children: [ag, brew, cal, csplit, ctags, cut, date, df, diff, docker, du, fc, find, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
 composer:
     type: wiki
     title: composer
@@ -893,6 +893,14 @@ discrete-math-summations:
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-summations
     updated: '2019-01-27 22:18:50 +0900'
+    children: []
+docker:
+    type: wiki
+    title: docker
+    summary: ""
+    parent: command-line
+    url: /wiki/docker
+    updated: '2019-06-01 08:20:49 +0900'
     children: []
 DOM-Enlightenment-by-Cody-Lindley:
     type: wiki
