@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2019-06-01 22:23:21 +0900
+updated : 2019-06-01 22:45:39 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -68,19 +68,58 @@ $ docker image tag TARGET_IMAGE:TAG  NEW_IMAGE:TAG
 
 $ # 이미지 삭제
 $ docker image rm IMAGE:TAG
+$ docker image prune        # 실행중이 아닌 모든 컨테이너 삭제
 ```
 
 ## container
 ```sh
-$ docker container run -t IMAGE:TAG
+$ # 컨테이너 목록 보기
+$ docker container ls
+$ docker container ls -q    # 컨테이너 ID만 출력
+$ docker container ls -a    # 종료된 컨테이너 목록
+
+$ # 컨테이너를 실행하는 여러 방법들
+$ docker container run -it IMAGE:TAG
 $ docker container run -d -t IMAGE:TAG
-$ docker container run -t -p HOST_PORT:CONTAINER_PORT  IMAGE:TAG
-$ docker container run -t --name my_container  IMAGE:TAG
+$ docker container run -it -p HOST_PORT:CONTAINER_PORT  IMAGE:TAG
+$ docker container run -it --name my_container  IMAGE:TAG
+$ docker container run --rm IMAGE
 ```
 
-* `-d`: 백그라운드로(데몬) 실행
-* `-p`: 호스트 포트와 연결할 컨테이너 포트 지정
-* `--name`: 구동하는 컨테이너에 내가 지정한 이름을 붙인다
+* `-d`: 백그라운드로(데몬) 실행.
+* `-i`: Interactive.
+* `-t`: TTY 모드 사용.
+    * `-it`: `-i`와 `-t`를 합친 옵션.
+* `-p`: 호스트 포트와 연결할 컨테이너 포트 지정.
+* `--name`: 구동하는 컨테이너에 내가 지정한 이름을 붙인다.
+* `--rm`: 구동이 끝난 후 컨테이너를 삭제한다.
+
+```sh
+$ # 컨테이너 정지
+$ docker container stop CONTAINER_ID
+$ docker container stop CONTAINER_NAME
+
+$ # 컨테이너 재시작
+$ docker container restart CONTAINER_ID
+$ docker container restart CONTAINER_NAME
+
+$ # 컨테이너 삭제
+$ docker container rm CONTAINER_ID
+$ docker container rm CONTAINER_NAME
+$ docker container rm -f CONTAINER_NAME
+$ docker container prune                # 실행중이 아닌 모든 컨테이너 삭제
+
+$ # 컨테이너 표준 출력 보기
+$ docker container logs CONTAINER_ID
+$ docker container logs -f CONTAINER_ID  # tail -f 처럼 보여준다
+
+$ # 실행중인 컨테이너에서 명령 실행
+$ docker container exec CONTAINER_ID  COMMAND
+
+$ # 시스템 리소스 사용 상태 보기
+$ docker container stats
+```
+
 
 # Tutorial
 
@@ -236,3 +275,6 @@ $ docker container stop f6cb8fe1673a
 $ docker run -d -t -p 8080:3000 hello
 ```
 
+# Links
+
+* <https://docs.docker.com/engine/reference/commandline/cli/ >
