@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2019-06-01 17:38:17 +0900
+updated : 2019-06-01 17:56:35 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -12,6 +12,21 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+# Dockerfile instructions
+
+* `FROM`: 도커 이미지의 베이스가 될 이미지. 이미지는 Docker Hub에서 받아온다.
+    * `FROM imageName:tag` 형식.
+    * 예: `FROM ubuntu:14.04`, `FROM ubuntu:latest`
+* `ENV`: 환경 변수 정의.
+    * 예: `ENV foo bar`
+* `EXPOSE`: 컨테이너 외부로 노출할 포트를 지정한다.
+* `COPY`: 호스트 머신의 파일/디렉토리를 컨테이너 내부로 복사한다.
+* `RUN`: 컨테이너에서 실행할 명령.
+* `WORKDIR`: `cd`처럼 작업 디렉토리를 변경한다.
+* `CMD`: 컨테이너에서 실행할 프로세스를 지정.
+    * `RUN`은 컨테이너를 빌드할 때 실행, `CMD`는 컨테이너를 시작할 때 실행.
+
 
 # Examples
 ## Install
