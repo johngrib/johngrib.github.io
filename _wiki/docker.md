@@ -3,7 +3,7 @@ layout  : wiki
 title   : docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2019-06-01 08:20:49 +0900
+updated : 2019-06-01 15:46:02 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -14,6 +14,13 @@ latex   : false
 {:toc}
 
 # Examples
+## Install
+```sh
+$ # on Mac
+$ brew cask install docker
+$ open /Applications/Docker.app
+```
+
 ## helloworld 출력해 보기
 
 `helloworld`라는 이름의 간단한 셸 스크립트를 작성한다.
