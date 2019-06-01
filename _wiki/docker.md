@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2019-06-01 18:01:39 +0900
+updated : 2019-06-01 18:05:33 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -18,6 +18,8 @@ latex   : false
 * `FROM`: 도커 이미지의 베이스가 될 이미지. 이미지는 Docker Hub에서 받아온다.
     * `FROM imageName:tag` 형식.
     * 예: `FROM ubuntu:14.04`, `FROM ubuntu:latest`
+* `LABEL`: 이미지 정보. 만든 이의 이름 등을 작성한다.
+    * `MAINTAINER`는 이제 deprecated 되었으므로 `LABEL`을 사용한다.
 * `ENV`: 환경 변수 정의.
     * 예: `ENV foo bar`
 * `EXPOSE`: 컨테이너 외부로 노출할 포트를 지정한다.
@@ -25,6 +27,7 @@ latex   : false
 * `RUN`: 컨테이너에서 실행할 명령.
 * `WORKDIR`: `cd`처럼 작업 디렉토리를 변경한다.
 * `CMD`: 컨테이너에서 실행할 프로세스를 지정.
+    * `["명령", "옵션1", "옵션2"]`와 같은 형식으로 작성하자.
     * `RUN`은 컨테이너를 빌드할 때 실행, `CMD`는 컨테이너를 시작할 때 실행.
 
 
