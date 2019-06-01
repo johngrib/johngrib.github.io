@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2019-06-01 18:14:08 +0900
+updated : 2019-06-01 22:23:21 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -38,6 +38,51 @@ $ # on Mac
 $ brew cask install docker
 $ open /Applications/Docker.app
 ```
+
+## help
+```sh
+$ docker image --help
+$ docker container --help
+```
+
+## search
+```sh
+$ docker search nginx
+$ docker search nginx --limit 10
+```
+
+## image
+```sh
+$ # 이미지 빌드
+$ docker image build -t IMAGE     Dockerfile경로
+$ docker image build -t IMAGE:TAG Dockerfile경로
+
+$ # 이미지 목록 보기
+$ docker image ls
+
+$ # 이미지 다운로드
+$ docker image pull IMAGE:TAG
+
+$ # 이미지 태그 설정
+$ docker image tag TARGET_IMAGE:TAG  NEW_IMAGE:TAG
+
+$ # 이미지 삭제
+$ docker image rm IMAGE:TAG
+```
+
+## container
+```sh
+$ docker container run -t IMAGE:TAG
+$ docker container run -d -t IMAGE:TAG
+$ docker container run -t -p HOST_PORT:CONTAINER_PORT  IMAGE:TAG
+$ docker container run -t --name my_container  IMAGE:TAG
+```
+
+* `-d`: 백그라운드로(데몬) 실행
+* `-p`: 호스트 포트와 연결할 컨테이너 포트 지정
+* `--name`: 구동하는 컨테이너에 내가 지정한 이름을 붙인다
+
+# Tutorial
 
 ## helloworld 출력해 보기
 
@@ -150,14 +195,13 @@ CMD ["go", "run", "/hello/main.go"]
 
 그리고 다음 명령어를 실행해주면 컨테이너 환경에서 서버가 실행된다.
 
-```
+```sh
 $ # 이미지 빌드
 $ docker build -t hello:latest .
 $ # 컨테이너 실행
 $ docker container run -t -p 8080:3000 hello:latest
 ```
 
-* `-t`: 태그 지정
 * `-p`: 포트 지정. 포트는 `호스트:컨테이너` 형식으로 지정한다.
     * 예: `-p 8080:3000`은 컨테이너의 3000 포트를 호스트의 8080 포트로 연결하는 것.
 
