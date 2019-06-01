@@ -300,7 +300,7 @@ awk:
     summary: 'pattern-directed scanning and processing language'
     parent: programming-language
     url: /wiki/awk
-    updated: '2019-01-23 11:26:56 +0900'
+    updated: '2019-06-01 11:11:05 +0900'
     children: []
 aws:
     type: wiki
@@ -1660,7 +1660,7 @@ links-2019:
     summary: ""
     parent: links
     url: /wiki/links-2019
-    updated: '2019-05-11 22:55:09 +0900'
+    updated: '2019-06-01 11:03:15 +0900'
     children: []
 locomotive-problem:
     type: wiki
