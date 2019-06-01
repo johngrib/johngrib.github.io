@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2019-06-01 17:56:35 +0900
+updated : 2019-06-01 18:01:39 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -153,6 +153,12 @@ $ docker build -t hello:latest .
 $ # 컨테이너 실행
 $ docker container run -t -p 8080:3000 hello:latest
 ```
+
+* `-t`: 태그 지정
+* `-p`: 포트 지정. 포트는 `호스트:컨테이너` 형식으로 지정한다.
+    * 예: `-p 8080:3000`은 컨테이너의 3000 포트를 호스트의 8080 포트로 연결하는 것.
+
+실행되면 다음과 같이 요청을 보낼 수 있다.
 
 * `curl http://localhost:8080`을 입력하면 `Hello World`가 출력된다.
 * `curl http://localhost:8080/ping`을 입력하면 `pong`이 출력된다.
