@@ -30,6 +30,7 @@ comment : false
     * [[King-O-The-Cats]]
 * [[coding-font]]{코딩 폰트}
 * [[how-to]]
+    * [[docker]]
     * [[googling]]
     * [[mathjax-latex]]
     * [[my-study-method]]
@@ -212,7 +213,6 @@ comment : false
         * [[date]]
         * [[df]]
         * [[diff]]
-        * [[docker]]
         * [[du]]
         * [[fc]]
         * [[find]]

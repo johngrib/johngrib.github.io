@@ -597,7 +597,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, cut, date, df, diff, docker, du, fc, find, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
+    children: [ag, brew, cal, csplit, ctags, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
 composer:
     type: wiki
     title: composer
@@ -896,11 +896,11 @@ discrete-math-summations:
     children: []
 docker:
     type: wiki
-    title: docker
+    title: Docker
     summary: ""
-    parent: command-line
+    parent: how-to
     url: /wiki/docker
-    updated: '2019-06-01 15:46:02 +0900'
+    updated: '2019-06-01 16:09:15 +0900'
     children: []
 DOM-Enlightenment-by-Cody-Lindley:
     type: wiki
@@ -1485,7 +1485,7 @@ how-to:
     parent: index
     url: /wiki/how-to
     updated: '2018-02-04 15:57:05 +0900'
-    children: [googling, mathjax-latex, my-study-method, random-luch]
+    children: [docker, googling, mathjax-latex, my-study-method, random-luch]
 http-message:
     type: wiki
     title: 'HTTP 메시지'

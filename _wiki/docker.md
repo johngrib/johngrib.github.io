@@ -1,13 +1,13 @@
 ---
 layout  : wiki
-title   : docker
+title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2019-06-01 15:46:02 +0900
+updated : 2019-06-01 16:09:15 +0900
 tag     : bash command container
 toc     : true
 public  : true
-parent  : command-line
+parent  : how-to
 latex   : false
 ---
 * TOC
