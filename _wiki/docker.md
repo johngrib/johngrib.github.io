@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2019-06-01 22:45:39 +0900
+updated : 2019-06-01 23:07:09 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -275,6 +275,40 @@ $ docker container stop f6cb8fe1673a
 $ docker run -d -t -p 8080:3000 hello
 ```
 
+# docker-compose
+
+* docker-compose를 사용하면
+    * docker 명령에 옵션을 주렁주렁 붙이는 일을 `yml`로 편하게 할 수 있다.
+    * 여러 컨테이너의 실행을 `yml` 파일로 정의할 수 있어 편리하다.
+
+위에서 만든 go 웹 서버 디렉토리로 가서 다음과 같은 `docker-compose.yml` 파일을 작성하자.
+
+```yml
+version: "3.7"
+services:
+  go-helloworld:
+    image: helloworld:latest
+    ports:
+      - 8080:3000
+```
+
+그 다음 다음과 같이 `up`을 실행하면 컨테이너가 뜬다.
+```sh
+$ docker-compose up
+$ docker-compose up -d
+$ docker-compose up --build
+```
+
+* `-d`: 데몬으로 실행
+* `--build`: 빌드한 다음 실행
+
+컨테이너를 정지하려면 `down` 옵션을 주면 된다.
+```sh
+$ docker-compose down
+```
+
+
 # Links
 
 * <https://docs.docker.com/engine/reference/commandline/cli/ >
+* <https://docs.docker.com/compose/reference/up/ >
