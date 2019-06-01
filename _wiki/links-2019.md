@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 링크 모음
 summary : 
 date    : 2019-01-04 15:30:13 +0900
-updated : 2019-06-01 11:03:15 +0900
+updated : 2019-06-01 11:17:14 +0900
 tag     : 
 toc     : true
 public  : true
@@ -62,6 +62,7 @@ latex   : false
 * 2019-03-22 [스컹크 웍스 엔지니어와의 대담](https://gall.dcinside.com/mgallery/board/view?id=war&no=686338 )
 * 2019-03-24 [과잉성취자: 잘하는데 불안한 나, 혹시 '과잉성취자'일까?](https://www.bbc.com/korean/news-47683639 )
 * 2019-04-03 [언어 습득에 필요한 정보량을 알아냈다](http://www.hani.co.kr/arti/science/science_general/888481.html )
+* 2019-04-13 ['아마존' 12년의 가르침 "대충하면 빚이 돼 돌아온다"](http://news.chosun.com/site/data/html_dir/2019/04/12/2019041202335.html )
 * 2019-05-04 [외국어 배우기, 어렵고도 쉬운 길](https://news.v.daum.net/v/20190504142104152)
 * 2019-05-28 [[주진형 칼럼] 멘토는 없다](http://m.hani.co.kr/arti/opinion/column/895679.html )
 * 2019-09-19 [더 빠르고 제대로 배우는 사람들의 비밀은 무엇일까?](http://isao76.egloos.com/m/2352265 ) - 오류를 통해 배우는 것이 가장 유익한 학습 활동.
