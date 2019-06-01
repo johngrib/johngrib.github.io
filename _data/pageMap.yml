@@ -900,7 +900,7 @@ docker:
     summary: ""
     parent: how-to
     url: /wiki/docker
-    updated: '2019-06-01 18:05:33 +0900'
+    updated: '2019-06-01 18:14:08 +0900'
     children: []
 DOM-Enlightenment-by-Cody-Lindley:
     type: wiki

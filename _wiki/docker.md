@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2019-06-01 18:05:33 +0900
+updated : 2019-06-01 18:14:08 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -179,3 +179,16 @@ f6cb8fe1673a        hello:latest        "go run /hello/main.…"   6 minutes ago
 ```sh
 $ docker container stop f6cb8fe1673a
 ```
+
+다음과 같이 해도 된다.
+
+```sh
+$ docker container stop f6cb8fe1673a
+```
+
+만약 실행할 때 도커 컨테이너가 포어그라운드를 차지하는 것이 싫다면 `-d` 옵션을 주면 된다. 데몬으로 실행한다.
+
+```sh
+$ docker run -d -t -p 8080:3000 hello
+```
+
