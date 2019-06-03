@@ -602,9 +602,9 @@ commit-go-mod-go-sum:
     type: wiki
     title: 'go.mod와 go.sum 도 커밋해야 할까?'
     summary: 커밋하자
-    parent: golang
+    parent: Golang
     url: /wiki/commit-go-mod-go-sum
-    updated: '2019-06-03 13:51:56 +0900'
+    updated: '2019-06-03 23:55:59 +0900'
     children: []
 composer:
     type: wiki
@@ -1253,7 +1253,7 @@ Golang:
     parent: programming-language
     url: /wiki/Golang
     updated: '2018-09-18 17:21:01 +0900'
-    children: [ginkgo, golang-cheatsheet, golang-dependency-manager, golang-reflect, golang-struct-padding, golang-types, golang-waitgroup-add, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
+    children: [commit-go-mod-go-sum, ginkgo, golang-cheatsheet, golang-dependency-manager, golang-mod, golang-reflect, golang-struct-padding, golang-types, golang-waitgroup-add, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
 golang-cheatsheet:
     type: wiki
     title: 'Go cheatsheet'
@@ -1269,6 +1269,14 @@ golang-dependency-manager:
     parent: Golang
     url: /wiki/golang-dependency-manager
     updated: '2018-10-21 17:51:17 +0900'
+    children: []
+golang-mod:
+    type: wiki
+    title: '(번역) Go Modules 사용하기'
+    summary: ""
+    parent: Golang
+    url: /wiki/golang-mod
+    updated: '2019-06-03 23:56:40 +0900'
     children: []
 golang-reflect:
     type: wiki
