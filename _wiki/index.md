@@ -97,6 +97,7 @@ comment : false
     * [[awk]]
     * [[bc]]
     * [[Golang]]
+        * [[commit-go-mod-go-sum]]
         * [[ginkgo]]
         * [[golang-cheatsheet]]
         * [[golang-dependency-manager]]

@@ -598,6 +598,14 @@ command-line:
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
     children: [ag, brew, cal, csplit, ctags, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
+commit-go-mod-go-sum:
+    type: wiki
+    title: 'go.mod와 go.sum 도 커밋해야 할까?'
+    summary: 커밋하자
+    parent: golang
+    url: /wiki/commit-go-mod-go-sum
+    updated: '2019-06-03 13:51:56 +0900'
+    children: []
 composer:
     type: wiki
     title: composer
