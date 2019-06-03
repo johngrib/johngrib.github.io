@@ -3,11 +3,11 @@ layout  : wiki
 title   : go.mod와 go.sum 도 커밋해야 할까?
 summary : 커밋하자
 date    : 2019-06-02 23:23:24 +0900
-updated : 2019-06-03 13:51:56 +0900
+updated : 2019-06-03 23:55:59 +0900
 tags    : golang git
 toc     : true
 public  : true
-parent  : golang
+parent  : Golang
 latex   : false
 ---
 * TOC
@@ -24,6 +24,8 @@ latex   : false
 
 * 이 글의 결론은 "Yes".
     * "go.sum 파일을 체크인하면 다른 사람들이 당신과 같은 모듈을 사용하고 있는지 확인하는 데 도움이됩니다."
+
+## go help modules 인용
 
 참고로 위의 글에서 인용하고 있는 go module에 대한 글은 다음 명령어로 볼 수 있다.
 
@@ -69,6 +71,18 @@ $ go help modules
 결론: `go.mod`, `go.sum` 파일도 커밋하자.
 
 
+## The Go Blog의 Using Go Modules 인용
+
+<https://blog.golang.org/using-go-modules >
+
+>
+The go command uses the go.sum file to ensure that future downloads of these modules retrieve the same bits as the first download, to ensure the modules your project depends on do not change unexpectedly, whether for malicious, accidental, or other reasons. Both go.mod and go.sum should be checked into version control.
+
+go 커맨드는 `go.sum` 파일을 참고하여 처음 다운로드 받은 모듈과 나중에 다운로드 받는 모듈이
+같은 비트를 갖는지를 검사합니다.
+그를 통해 악의/우연적인 이유 또는 기타 등등의 복잡한 이유로
+프로젝트가 의존하는 모듈이 예상치 못하게 변형되는 일을 방지합니다.
+즉, go.mod 와 go.sum 모두 버전 관리 도구에 체크되어야 합니다.
 
 # Links
 
