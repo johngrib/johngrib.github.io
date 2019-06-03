@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) Go Modules 사용하기
 summary : 
 date    : 2019-06-02 23:23:24 +0900
-updated : 2019-06-03 23:56:40 +0900
+updated : 2019-06-04 08:12:00 +0900
 tags    : golang
 toc     : true
 public  : true
@@ -273,8 +273,127 @@ go 커맨드는 `go.sum` 파일을 참고하여 처음 다운로드 받은 모�
 즉, go.mod 와 go.sum 모두 버전 관리 도구에 체크되어야 합니다.
 
 
-**현재 작업중입니다.**
+# Upgrading dependencies
 
+> With Go modules, versions are referenced with semantic version tags.
+A semantic version has three parts: major, minor, and patch.
+For example, for v0.1.2, the major version is 0, the minor version is 1, and the patch version is 2.
+Let's walk through a couple minor version upgrades.
+In the next section, we’ll consider a major version upgrade.
+
+Go 모듈은 semantic version 태그 형식의 버전을 참조합니다.
+semantic version은 메이저, 마이너, 패치의 세 부분으로 구성됩니다.
+가령, v0.1.2의 경우 메이저 버전은 0 이고 마이너 버전은 1 이며 패치 버전은 2 입니다.
+이제 마이너 버전 업그레이드 작업을 직접 해봅시다.
+그리고 다음 섹션에서는 메이저 버전 업그레이드를 수행할 것입니다.
+
+> From the output of go list -m all, we can see we're using an untagged version of golang.org/x/text. Let's upgrade to the latest tagged version and test that everything still works:
+
+`go list -m all` 명령을 실행했을 때 화면에 출력된 결과를 보면 `golang.org/x/text`의 untagged version을 사용하고 있음을 알 수 있습니다. 이제 이것을 latest tagged version으로 업그레이드하고 잘 돌아가는지 테스트해 봅시다.
+
+```
+$ go get golang.org/x/text
+go: finding golang.org/x/text v0.3.0
+go: downloading golang.org/x/text v0.3.0
+go: extracting golang.org/x/text v0.3.0
+
+$ go test
+PASS
+ok      example.com/hello    0.013s
+$
+```
+
+> Woohoo! Everything passes. Let's take another look at go list -m all and the go.mod file:
+
+잘 돌아가네요. `go list -m all`과 `go.mod` 파일을 다시 살펴 봅시다.
+
+```
+$ go list -m all
+example.com/hello
+golang.org/x/text v0.3.0
+rsc.io/quote v1.5.2
+rsc.io/sampler v1.3.0
+
+$ cat go.mod
+module example.com/hello
+
+go 1.12
+
+require (
+    golang.org/x/text v0.3.0 // indirect
+    rsc.io/quote v1.5.2
+)
+$
+```
+
+> The golang.org/x/text package has been upgraded to the latest tagged version (v0.3.0).
+The go.mod file has been updated to specify v0.3.0 too.
+The indirect comment indicates a dependency is not used directly by this module,
+only indirectly by other module dependencies. See go help modules for details.
+
+`golang.org/x/text` 패키지가 latest tagged version(v0.3.0)으로 업그레이드 되었습니다.
+`go.mod` 파일에도 `v0.3.0`으로 업데이트되었네요.
+`// indirect` 주석은 모듈이 해당 디펜던시를 직접적으로 사용하지 않으며,
+다른 모듈 디펜던시들에 의해 간접적으로 사용되고 있음을 의미합니다.
+자세한 내용은 `go help modules` 명령으로 확인해보세요.
+
+> Now let's try upgrading the rsc.io/sampler minor version.
+Start the same way, by running go get and running tests:
+
+이제 `rsc.io/sampler`의 마이너 버전을 업그레이드 해봅시다.
+앞에서와 똑같은 방법으로 `go get` 명령을 실행하고 테스트를 돌려 봅시다.
+
+```
+$ go get rsc.io/sampler
+go: finding rsc.io/sampler v1.99.99
+go: downloading rsc.io/sampler v1.99.99
+go: extracting rsc.io/sampler v1.99.99
+
+$ go test
+--- FAIL: TestHello (0.00s)
+    hello_test.go:8: Hello() = "99 bottles of beer on the wall, 99 bottles of beer, ...", want "Hello, world."
+FAIL
+exit status 1
+FAIL    example.com/hello    0.014s
+$
+```
+
+> Uh, oh! The test failure shows that the latest version of rsc.io/sampler is incompatible with our usage.
+Let's list the available tagged versions of that module:
+
+앗! 테스트가 실패한 것을 보니 `rsc.io/sampler`의 최신 버전이 우리의 코드 사용과 호환되지 않는 모양입니다.
+문제의 모듈의 사용 가능한 tagged version 목록을 봐봅시다.
+
+```
+$ go list -m -versions rsc.io/sampler
+rsc.io/sampler v1.0.0 v1.2.0 v1.2.1 v1.3.0 v1.3.1 v1.99.99
+$
+```
+
+> We had been using v1.3.0;
+v1.99.99 is clearly no good.
+Maybe we can try using v1.3.1 instead:
+
+우리는 `v1.3.0`을 쓰고 있을 때 잘 돌아가는 걸 확인했었습니다.
+`v1.99.99`는 테스트가 실패한 버전입니다. `v1.3.1`을 한번 사용해 보기로 하겠습니다.
+
+```
+$ go get rsc.io/sampler@v1.3.1
+go: finding rsc.io/sampler v1.3.1
+go: downloading rsc.io/sampler v1.3.1
+go: extracting rsc.io/sampler v1.3.1
+
+$ go test
+PASS
+ok      example.com/hello    0.022s
+$
+```
+
+`go get` 명령어를 사용할 때 `@v1.3.1`을 명시한 것에 주목하세요.
+일반적으로 `go get` 명령어 인자에 버전을 명시할 수 있습니다.
+기본값은 `@latest` 이며 이 값은 최신 버전을 뜻합니다.
+
+**아직 작업중입니다.**
 
 # Links
 
