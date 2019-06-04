@@ -3,8 +3,8 @@ layout  : wiki
 title   : MacTeX를 설치해 보자
 summary : 
 date    : 2019-05-25 09:42:51 +0900
-updated : 2019-05-29 22:15:49 +0900
-tags    : 
+updated : 2019-06-04 21:18:17 +0900
+tag     : 
 toc     : true
 public  : false
 parent  : 

@@ -3,8 +3,8 @@ layout  : wiki
 title   : coc.nvim을 사용해보자
 summary : 
 date    : 2019-05-16 22:19:50 +0900
-updated : 2019-05-16 22:32:43 +0900
-tags    : vim
+updated : 2019-06-04 21:19:17 +0900
+tag     : vim
 toc     : true
 public  : true
 parent  : Vim

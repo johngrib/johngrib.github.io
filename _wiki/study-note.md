@@ -3,8 +3,8 @@ layout  : wiki
 title   : 공부, 학습 관련 토막글 모음
 summary : 
 date    : 2019-05-11 11:12:24 +0900
-updated : 2019-05-11 11:14:00 +0900
-tags    : 
+updated : 2019-06-04 21:20:22 +0900
+tag     : 
 toc     : true
 public  : true
 parent  : study

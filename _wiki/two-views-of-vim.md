@@ -3,8 +3,8 @@ layout  : wiki
 title   : Vim, 두 가지 관점
 summary : 그리고 나의 vim 사용 습관
 date    : 2019-05-19 22:31:27 +0900
-updated : 2019-05-25 09:39:43 +0900
-tags    : vim
+updated : 2019-06-04 21:20:06 +0900
+tag     : vim
 toc     : true
 public  : true
 parent  : Vim

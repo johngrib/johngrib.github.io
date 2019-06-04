@@ -3,8 +3,8 @@ layout  : wiki
 title   : 100층 건물과 2개의 계란 문제
 summary : 
 date    : 2019-03-13 21:07:50 +0900
-updated : 2019-03-13 23:42:13 +0900
-tags    : math
+updated : 2019-06-04 21:22:21 +0900
+tag     : math
 toc     : true
 public  : true
 parent  : problem

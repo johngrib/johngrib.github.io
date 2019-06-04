@@ -3,8 +3,8 @@ layout  : wiki
 title   : 이항 정리(Binomial Theorem)
 summary : 
 date    : 2019-03-21 22:49:36 +0900
-updated : 2019-03-23 12:40:51 +0900
-tags    : math
+updated : 2019-06-04 21:18:43 +0900
+tag     : math
 toc     : true
 public  : true
 parent  : math

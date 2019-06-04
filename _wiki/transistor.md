@@ -3,8 +3,8 @@ layout  : wiki
 title   : 트랜지스터
 summary : 전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자
 date    : 2019-03-17 18:08:43 +0900
-updated : 2019-03-31 20:42:22 +0900
-tags    : 
+updated : 2019-06-04 21:19:44 +0900
+tag     : 
 toc     : true
 public  : true
 parent  : what

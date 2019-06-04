@@ -3,8 +3,8 @@ layout  : wiki
 title   : 간단하게 만드는 랜덤런치 그룹 생성기
 summary : 
 date    : 2019-05-04 08:19:41 +0900
-updated : 2019-05-04 21:48:32 +0900
-tags    : 
+updated : 2019-06-04 21:19:37 +0900
+tag     : bash
 toc     : true
 public  : true
 parent  : how-to

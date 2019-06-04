@@ -3,8 +3,8 @@ layout  : wiki
 title   : 쇼펜하우어의 엔트로피 법칙(Schopenhauer's Law Of Entropy)
 summary : 
 date    : 2019-05-13 22:55:45 +0900
-updated : 2019-05-13 22:58:33 +0900
-tags    : 
+updated : 2019-06-04 21:21:14 +0900
+tag     : 
 toc     : true
 public  : true
 parent  : proverb

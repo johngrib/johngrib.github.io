@@ -3,8 +3,8 @@ layout  : wiki
 title   : 애자일(agile)에 대한 토막글 모음
 summary : 
 date    : 2019-04-24 22:55:36 +0900
-updated : 2019-04-24 23:05:08 +0900
-tags    : agile
+updated : 2019-06-04 21:21:27 +0900
+tag     : agile
 toc     : true
 public  : true
 parent  : what

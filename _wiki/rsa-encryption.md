@@ -3,8 +3,8 @@ layout  : wiki
 title   : RSA 암호(RSA Encryption)
 summary : 
 date    : 2019-03-10 09:24:37 +0900
-updated : 2019-03-10 23:12:49 +0900
-tags    : encryption
+updated : 2019-06-04 21:20:47 +0900
+tag     : encryption
 toc     : true
 public  : true
 parent  : what

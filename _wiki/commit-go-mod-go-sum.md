@@ -3,8 +3,8 @@ layout  : wiki
 title   : go.mod와 go.sum 도 커밋해야 할까?
 summary : 커밋하자
 date    : 2019-06-02 23:23:24 +0900
-updated : 2019-06-03 23:55:59 +0900
-tags    : golang git
+updated : 2019-06-04 21:17:56 +0900
+tag     : golang git
 toc     : true
 public  : true
 parent  : Golang

@@ -3,8 +3,8 @@ layout  : wiki
 title   : 그래프(Graph)
 summary : 
 date    : 2019-05-13 23:13:33 +0900
-updated : 2019-05-19 22:05:41 +0900
-tags    : 
+updated : 2019-06-04 21:22:08 +0900
+tag     : math
 toc     : true
 public  : true
 parent  : math

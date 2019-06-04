@@ -3,8 +3,8 @@ layout  : wiki
 title   : 관계(Relations)
 summary : 
 date    : 2019-05-06 17:22:32 +0900
-updated : 2019-05-12 17:50:57 +0900
-tags    : math
+updated : 2019-06-04 21:21:56 +0900
+tag     : math
 toc     : true
 public  : true
 parent  : math
