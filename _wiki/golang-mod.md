@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) Go Modules 사용하기
 summary : 
 date    : 2019-06-02 23:23:24 +0900
-updated : 2019-06-04 15:02:45 +0900
+updated : 2019-06-04 16:02:54 +0900
 tags    : golang
 toc     : true
 public  : true
@@ -29,16 +29,16 @@ Go 1.11과 1.12에는 새로운 디펜던시 관리 시스템인 모듈(modules)
 
 > A module is a collection of [Go packages](https://golang.org/ref/spec#Packages ) stored in a file tree with a go.mod file at its root. The go.mod file defines the module’s module path, which is also the import path used for the root directory, and its dependency requirements, which are the other modules needed for a successful build. Each dependency requirement is written as a module path and a specific [semantic version](http://semver.org/ ).
 
-모듈은 go.mod 파일이 루트 디렉토리에 있는 파일 트리에 저장된 Go 패키지의 모음입니다.
-go.mod 파일은 모듈의 모듈 경로(module path)를 정의하며, 여기에서 모듈 경로는 모듈의 루트 디렉토리이기도 한 import path 입니다.
-한편, go.mod 파일은 빌드에 필요한 각각의 디펜던시도 정의하며, 각각의 디펜던시는 모듈 경로와 semantic version으로 명시됩니다.
+모듈은 `go.mod` 파일이 루트 디렉터리에 있는 파일 트리에 저장된 Go 패키지의 모음입니다.
+`go.mod` 파일은 모듈의 모듈 경로(module path)를 정의하며, 여기에서 모듈 경로는 모듈의 루트 디렉터리이기도 한 import path 입니다.
+한편, `go.mod` 파일은 빌드에 필요한 각각의 디펜던시도 정의하며 각각의 디펜던시는 모듈 경로와 semantic version으로 명시됩니다.
 
 > As of Go 1.11, the go command enables the use of modules when the current directory or any parent directory has a go.mod, provided the directory is outside $GOPATH/src.
 (Inside $GOPATH/src, for compatibility, the go command still runs in the old GOPATH mode, even if a go.mod is found. See the go command documentation for details.)
 Starting in Go 1.13, module mode will be the default for all development.
 
-Go 1.11 에서 작업 경로가 `$GOPATH/src`의 바깥이며, 작업 경로나 그 부모 경로에 `go.mod` 파일이 있다면 go 커맨드는 모듈 기능을 활성화합니다. (호환성을 위해 `go.mod` 파일이 있더라도 작업 경로가 `$GOPATH/src` 하위의 경로라면 old GOPATH mode 로 돌아갑니다.)
-Go 1.13 부터는 모듈 모드가 디폴트 설정이 될 예정입니다.
+Go 1.11 에서 작업 경로가 `$GOPATH/src`의 바깥이며, 작업 경로나 그 부모 경로에 `go.mod` 파일이 있다면 go 커맨드는 모듈 기능을 활성화합니다. (호환성을 위해 `go.mod` 파일이 있더라도 작업 경로가 `$GOPATH/src` 하위의 경로라면 기존의 GOPATH 모드로 작동합니다.)
+Go 1.13부터는 모듈 모드가 디폴트 설정이 될 예정입니다.
 
 > This post walks through a sequence of common operations that arise when developing Go code with modules:  
 * Creating a new module.
@@ -64,7 +64,7 @@ Create a new, empty directory somewhere outside $GOPATH/src, cd into that direct
 
 새로운 모듈을 만들어 봅시다.
 
-`$GOPATH/src` 바깥의 경로에 새로운 디렉토리를 하나 만들고 다음과 같은 `hello.go`파일을 하나 만들어 봅시다.
+`$GOPATH/src` 바깥의 경로에 새로운 디렉터리를 하나 만들고 다음과 같은 `hello.go`파일을 하나 만들어 봅시다.
 
 ```go
 package hello
@@ -95,10 +95,10 @@ func TestHello(t *testing.T) {
 
 > At this point, the directory contains a package, but not a module, because there is no go.mod file. If we were working in /home/gopher/hello and ran go test now, we'd see:
 
-이 시점에서 이 디렉토리에는 패키지는 있지만 모듈은 없습니다.
-왜냐하면 여기엔 go.mod 파일이 없기 때문입니다.
+이 시점에서 이 디렉터리에는 패키지는 있지만, 모듈은 없습니다.
+왜냐하면 여기엔 `go.mod` 파일이 없기 때문입니다.
 
-만약 현재 디렉토리가 `/home/gopher/hello`이고, `go test`를 실행한다면 다음과 같은 결과가 나올 것입니다.
+만약 현재 디렉터리가 `/home/gopher/hello`이고, `go test`를 실행한다면 다음과 같은 결과가 나올 것입니다.
 
 ```
 $ go test
@@ -110,10 +110,10 @@ ok  	_/home/hopher/hello	0.020s
 Let's make the current directory the root of a module by using go mod init and then try go test again:
 
 마지막 라인은 전체 패키지 테스트의 요약입니다. (역: `_`로 시작하는 이상한 경로에 주목.)
-우리는 `$GOPATH` 외부에서 작업하고 있는데다가, 이 디렉토리는 모듈도 아닙니다.
-그래서 go 커맨드는 import path를 알 수 없으므로 현재 디렉토리 이름을 사용해 `_/home/gopher/hello`라는 이름의 가짜 경로를 만든 것입니다.
+우리는 `$GOPATH` 외부에서 작업하고 있는 데다가, 이 디렉터리는 모듈도 아닙니다.
+그래서 go 커맨드는 import path를 알 수 없으므로 현재 디렉터리 이름을 사용해 `_/home/gopher/hello`라는 이름의 가짜 경로를 만든 것입니다.
 
-`go mod init` 명령을 써서 현재 디렉토리를 모듈 루트로 만들고, `go test`를 다시 실행해 봅시다.
+`go mod init` 명령을 써서 현재 디렉터리를 모듈 루트로 만들고, `go test`를 다시 실행해 봅시다.
 
 ```
 $ go mod init example.com/hello
@@ -124,7 +124,7 @@ PASS
 ok  	example.com/hello	0.020s
 ```
 
-(역:  마지막 줄을 살펴보면 `_`로 시작하는 경로가 아니라 go mod init 으로 지정한 경로로 바뀌어 나옵니다)
+(역:  마지막 줄을 살펴보면 `_`로 시작하는 경로가 아니라 `go mod init`으로 지정한 경로로 바뀌어 나옵니다)
 
 > Congratulations! You’ve written and tested your first module.  
 The go mod init command wrote a go.mod file:
@@ -147,17 +147,18 @@ The package would automatically be recognized as part of the example.com/hello m
 with import path example.com/hello/world.
 
 `go.mod` 파일은 모듈의 루트에만 만들어집니다.
-그리고 하위 디렉토리의 패키지들은 각자 '모듈 패스 + 상대 경로'로 이루어진 import path를 자동으로 갖게 됩니다.
-예를 들어, world 라는 이름의 하위 디렉토리를 만들었다면 world 로 들어가서 `go mod init`명령을 실행할 할 필요가 없는 것입니다(하고 싶지도 않습니다).
-각 패키지는 자동으로 `example.com/hello` 모듈의 부분으로 인식므로, 결과적으로 world의 import path 는 `example.com/hello/world` 가 됩니다.
+그리고 하위 디렉터리의 패키지들은 각자 '모듈 패스 + 상대 경로'로 이루어진 import path를 자동으로 갖게 됩니다.
+예를 들어, `world`라는 이름의 하위 디렉터리를 만들었다면 `world`로 들어가서 `go mod init` 명령을 실행할 할 필요가 없는 것입니다(하고 싶지도 않습니다).
+각 패키지는 자동으로 `example.com/hello` 모듈의 부분으로 인식되므로, 결과적으로 `world`의 import path는 `example.com/hello/world`가 됩니다.
 
 # Adding a dependency
 
 > The primary motivation for Go modules was to improve the experience of using (that is, adding a dependency on) code written by other developers.  
 Let's update our hello.go to import rsc.io/quote and use it to implement Hello:
 
-Go 모듈을 만든 주된 이유는 다른 개발자들이 작성한 코드를 사용하는 경험(즉, 디펜던시를 추가하는 작업)을 더 좋게 향상시키기 위함이었습니다.  
-이제 우리의 `hello.go`를 업데이트 해봅시다. 이번에 할 작업은 `rsc.io/quote`를 import 하고 그것을 사용해 Hello를 구현하는 것입니다.
+Go 모듈을 만든 주된 이유는 다른 개발자들이 작성한 코드를 사용하는 경험(즉, 디펜던시를 추가하는 작업)을 더 좋게 향상시키기 위함이었습니다.
+
+이제 우리의 `hello.go`를 업데이트해 봅시다. 이번에 할 작업은 `rsc.io/quote`를 import하고 그것을 사용해 Hello를 구현하는 것입니다.
 
 ```go
 package hello
@@ -191,13 +192,15 @@ $
 
 > The go command resolves imports by using the specific dependency module versions listed in go.mod. When it encounters an import of a package not provided by any module in go.mod, the go command automatically looks up the module containing that package and adds it to go.mod, using the latest version. ("Latest" is defined as the latest tagged stable (non-[prerelease](https://semver.org/#spec-item-9 )) version, or else the latest tagged prerelease version, or else the latest untagged version.) In our example, go test resolved the new import rsc.io/quote to the module rsc.io/quote v1.5.2. It also downloaded two dependencies used by rsc.io/quote, namely rsc.io/sampler and golang.org/x/text. Only direct dependencies are recorded in the go.mod file:
 
-go 커맨드는 go.mod 파일에 나열된 디펜던시 모듈들의 버전을 참고해 각 모듈들을 가져옵니다.
-만약 어떤 패키지를 가져올 때 go.mod에 명시한 버전이 없다면 go 커맨드는 자동으로 해당 패키지가 포함된 모듈의 가장 최신 버전을 찾은 다음, go.mod 에 추가합니다. ("Latest"는 latest 태그가 붙은 stable(non-prerelease) 버전, 또는 latest 태그가 붙은 prerelease 버전입니다.)
-우리의 예제에서, `go test` 명령을 실행하자 `rsc.io/quote`의 v1.5.2를 새롭게 다운받았습니다.
-그리고 `rsc.io/quote`가 사용하는 `rsc.io/sampler`와 `golang.org/x/text`라는 두 개의 디펜던시도 함께 다운로드 받았습니다.
-go.mod 파일에는 직접적인 디펜던시들(direct dependencies)만 기록됩니다.
+go 커맨드는 `go.mod` 파일에 나열된 디펜던시 모듈들의 버전을 참고해 각 모듈을 가져옵니다.
 
-(역: go.mod 파일을 보면 `rsc.io/sampler`와 `golang.org/x/text`는 없고 `rsc.io/quote`만 있습니다.)
+만약 어떤 패키지를 가져올 때 `go.mod`에 명시한 버전이 없다면 go 커맨드는 자동으로 해당 패키지가 포함된 모듈의 가장 최신 버전을 찾은 다음, `go.mod`에 추가합니다. ("Latest"는 `latest` 태그가 붙은 stable(non-prerelease) 버전, 또는 `latest` 태그가 붙은 prerelease 버전입니다.)
+
+우리의 예제에서, `go test` 명령을 실행하자 `rsc.io/quote`의 `v1.5.2`를 새롭게 다운받았습니다.
+그리고 `rsc.io/quote`가 사용하는 `rsc.io/sampler`와 `golang.org/x/text`라는 두 개의 디펜던시도 함께 다운로드받았습니다.
+`go.mod` 파일에는 직접적인 디펜던시들(direct dependencies)만 기록됩니다.
+
+(역: `go.mod` 파일을 보면 `rsc.io/sampler`와 `golang.org/x/text`는 없고 `rsc.io/quote`만 있습니다.)
 
 ```
 $ cat go.mod
@@ -212,7 +215,7 @@ $
 > A second go test command will not repeat this work, since the go.mod is now up-to-date and the downloaded modules are cached locally (in $GOPATH/pkg/mod):
 
 이제 `go test` 명령을 또 실행해 보아도, 이런 작업을 반복하지 않습니다.
-go.mod 파일이 최신판으로 갱신되었고, 다운로드된 모듈들이 로컬($GOPATH/pkg/mod)에 캐시되었기 때문입니다.
+`go.mod` 파일이 최신판으로 갱신되었고, 다운로드된 모듈들이 로컬(`$GOPATH/pkg/mod`)에 캐시 되었기 때문입니다.
 
 ```
 $ go test
@@ -247,7 +250,7 @@ $
 The golang.org/x/text version v0.0.0-20170915032832-14c0d48ead0c is an example of a pseudo-version, which is the go command's version syntax for a specific untagged commit.  
 In addition to go.mod, the go command maintains a file named go.sum containing the expected cryptographic hashes of the content of specific module versions:
 
-`go list`의 출력에서 첫번째 줄은 현재 모듈을 의미합니다.
+`go list`의 출력에서 첫 번째 줄은 현재 모듈을 의미합니다.
 그 아랫줄부터는 모듈 경로 기준으로 정렬된 디펜던시 목록입니다.
 
 `golang.org/x/text` 오른쪽의 버전 `v0.0.0-20170915032832-14c0d48ead0c`는 의사 버전(pseudo-version)의 한 예라 할 수 있습니다. 이런 의사 버전은 버전 태그가 없는 커밋에 대해 go가 붙여주는 버전 형식입니다.
@@ -266,11 +269,11 @@ rsc.io/sampler v1.3.0/go.mod h1:T1hPZKmBbMNahiBKFy5HrXp6adAjACjK9...
 $
 ```
 
-go 커맨드는 `go.sum` 파일을 참고하여 처음 다운로드 받은 모듈과 나중에 다운로드 받는 모듈이
+go 커맨드는 `go.sum` 파일을 참고하여 처음 다운로드받은 모듈과 나중에 다운로드받는 모듈이
 같은 비트를 갖는지를 검사합니다.
 그를 통해 악의/우연적인 이유 또는 기타 등등의 복잡한 이유로
 프로젝트가 의존하는 모듈이 예상치 못하게 변형되는 일을 방지합니다.
-즉, go.mod 와 go.sum 모두 버전 관리 도구에 체크되어야 합니다.
+즉, `go.mod`와 `go.sum` 모두 버전 관리 도구에 체크되어야 합니다.
 
 
 # Upgrading dependencies
@@ -283,7 +286,8 @@ In the next section, we’ll consider a major version upgrade.
 
 Go 모듈은 semantic version 태그 형식의 버전을 참조합니다.
 semantic version은 메이저, 마이너, 패치의 세 부분으로 구성됩니다.
-가령, v0.1.2의 경우 메이저 버전은 0 이고 마이너 버전은 1 이며 패치 버전은 2 입니다.
+가령, v0.1.2의 경우 메이저 버전은 **0**이고 마이너 버전은 **1**이며 패치 버전은 **2**입니다.
+
 이제 마이너 버전 업그레이드 작업을 직접 해봅시다.
 그리고 다음 섹션에서는 메이저 버전 업그레이드를 수행할 것입니다.
 
@@ -305,7 +309,7 @@ $
 
 > Woohoo! Everything passes. Let's take another look at go list -m all and the go.mod file:
 
-잘 돌아가네요. `go list -m all`과 `go.mod` 파일을 다시 살펴 봅시다.
+잘 돌아가네요. `go list -m all`과 `go.mod` 파일을 다시 살펴봅시다.
 
 ```
 $ go list -m all
@@ -331,7 +335,7 @@ The go.mod file has been updated to specify v0.3.0 too.
 The indirect comment indicates a dependency is not used directly by this module,
 only indirectly by other module dependencies. See go help modules for details.
 
-`golang.org/x/text` 패키지가 latest tagged version(v0.3.0)으로 업그레이드 되었습니다.
+`golang.org/x/text` 패키지가 latest tagged version(v0.3.0)으로 업그레이드되었습니다.
 `go.mod` 파일에도 `v0.3.0`으로 업데이트되었네요.
 `// indirect` 주석은 모듈이 해당 디펜던시를 직접적으로 사용하지 않으며,
 다른 모듈 디펜던시들에 의해 간접적으로 사용되고 있음을 의미합니다.
@@ -340,7 +344,7 @@ only indirectly by other module dependencies. See go help modules for details.
 > Now let's try upgrading the rsc.io/sampler minor version.
 Start the same way, by running go get and running tests:
 
-이제 `rsc.io/sampler`의 마이너 버전을 업그레이드 해봅시다.
+이제 `rsc.io/sampler`의 마이너 버전을 업그레이드해 봅시다.
 앞에서와 똑같은 방법으로 `go get` 명령을 실행하고 테스트를 돌려 봅시다.
 
 ```
@@ -362,7 +366,7 @@ $
 Let's list the available tagged versions of that module:
 
 앗! 테스트가 실패한 것을 보니 `rsc.io/sampler`의 최신 버전이 우리의 코드 사용과 호환되지 않는 모양입니다.
-문제의 모듈의 사용 가능한 tagged version 목록을 봐봅시다.
+문제가 된 모듈의 사용 가능한 tagged version 목록을 봐봅시다.
 
 ```
 $ go list -m -versions rsc.io/sampler
@@ -391,7 +395,7 @@ $
 
 `go get` 명령어를 사용할 때 `@v1.3.1`을 명시한 것에 주목하세요.
 일반적으로 `go get` 명령어 인자에 버전을 명시할 수 있습니다.
-기본값은 `@latest` 이며 이 값은 최신 버전을 뜻합니다.
+기본값은 `@latest`이며 이 값은 최신 버전을 뜻합니다.
 
 
 # Adding a dependency on a new major version
@@ -474,9 +478,11 @@ Go 모듈의 주요 버전(v1, v2 등)들은 각자 다른 모듈 경로를 사�
 v2부터 살펴보면, 경로는 메이저 버전으로 끝나야 합니다.
 이 예시에서 `rsc.io/quote`의 v3은 더 이상 `rsc.io/quote`가 아니라,
 `rsc.io/quote/v3`이라는 모듈 경로로 식별됩니다.
+
 이러한 규칙은 semantic import versioning이라 하는데, 호환되지 않는 패키지들(메이저 버전이 다르다던가)이 각기 다른 이름을 갖도록 하는 방법입니다.
-한편, `rsc.io/quote`의 `v1.6.0`은 `v1.5.2`와 역호환되므로 `rsc.io/quote`라는 이름을 사용합니다.
-(이전 섹션에서 `rsc.io/sampler` `v1.99.99`는 `v1.3.0`과 역호환이 가능해야 했을 것입니다. 그러나 버그라던가 모듈의 동작을 착각하고 잘못 구현하는 등의 일이 일어날 수 있습니다.)
+
+한편, `rsc.io/quote`의 `v1.6.0`은 `v1.5.2`와 역 호환되므로 `rsc.io/quote`라는 이름을 사용합니다.
+(이전 섹션에서 `rsc.io/sampler` `v1.99.99`는 `v1.3.0`과 역 호환이 가능해야 했을 것입니다. 그러나 버그라던가 모듈의 동작을 착각하고 잘못 구현하는 등의 일이 일어날 수 있습니다.)
 
 > The go command allows a build to include at most one version of any particular module path,
 meaning at most one of each major version:
@@ -488,13 +494,16 @@ In this example, we wanted to use quote.Concurrency from rsc/quote/v3 v3.1.0 but
 The ability to migrate incrementally is especially important in a large program or codebase.
 
 go 커맨드는 빌드에 있어 특정 모듈 경로별로 최대 하나씩의 버전을 포함하는 것을 허용합니다.
-이는 각 메이저 버전당 최대 하나의 버전을 가질 수 있음을 의미합니다. (역: 메이저 버전별로 모듈 경로의 postfix 가 달라지기 때문에, path 하나에 version 하나를 매핑하는 심플한 key value 규칙인 셈입니다.)
+이는 각 메이저 버전당 최대 하나의 버전을 가질 수 있음을 의미합니다. (역: 메이저 버전별로 모듈 경로의 postfix가 달라지기 때문에, path 하나에 version 하나를 매핑하는 심플한 key value 규칙인 셈입니다.)
+
 예를 들면 `rsc.io/quote`과 `rsc.io/quote/v2`, `rsc.io/quote/v3`에 대해 각자 하나씩의 버전만 허용되는 식입니다.
+
 이 방식은 하나의 모듈 경로를 두고 일어날 수 있는 버전 중복 문제에 대한 명확한 규칙을 제공합니다.
 가령, `rsc.io/quote`를 사용하는 프로그램을 빌드할 때 `rsc.io/quote` `v1.5.2`도 쓰고 `rsc.io/quote` `v1.6.0`도 쓰는 것은 불가능합니다.
 그러면서도 다른 메이저 버전을 허용하기 때문에(모듈 경로가 다르므로) 점진적으로 새로운 메이저 버전으로 업그레이드하는 것도 가능합니다.
 
-이 예제에서 우리는 `rsc/quote/v3`의 `quote.Concurrency`를 `v1.5.2`에서 `v3.1.0`으로 마이그레이션하고 싶었지만 아직 준비가 되지 않은 상태입니다.
+이 예제에서 우리는 `rsc/quote/v3`의 `quote.Concurrency`를 `v1.5.2`에서 `v3.1.0`으로
+마이그레이션 하고 싶었지만 아직 준비되지 않은 상태입니다.
 점진적인 마이그레이션이 가능한 것은 특히 대규모의 코드 베이스를 가진 프로그램에 있어 매우 중요합니다.
 
 # Upgrading a dependency to a new major version
@@ -508,7 +517,7 @@ Reading the docs, we can see that Hello has become HelloV3:
 메이저 버전을 변경으로 인해 일부 API가 사라지거나 이름이 바뀌거나, 그 외의 다른 변경이 일어나는 등의 호환성 문제가 발생할 수 있음을 예상해야 합니다.
 문서를 읽어보면, `Hello`가 `HelloV3`으로 변경된 것을 알 수 있습니다.
 
-```
+```text
 $ go doc rsc.io/quote/v3
 package quote // import "rsc.io/quote"
 
@@ -576,7 +585,7 @@ ok      example.com/hello       0.014s
 
 > We've removed all our uses of rsc.io/quote, but it still shows up in go list -m all and in our go.mod file:
 
-우리는 `rsc.io/quote`를 사용하는 코드를 모두 제거 했습니다.
+우리는 `rsc.io/quote`를 사용하는 코드를 모두 제거했습니다.
 그러나 `go list -m all` 명령을 입력해보거나 `go.mod` 파일을 확인해 보면 아직 사라지지 않고 남아 있다는 것을 알 수 있습니다.
 
 ```
@@ -604,7 +613,7 @@ $
 Removing a dependency can only be done after checking all packages in a module, and all possible build tag combinations for those packages.
 An ordinary build command does not load this information, and so it cannot safely remove dependencies.
 
-왜 그럴까요? `go build`나 `go test`와 같은 명령으로 싱글 패키지를 빌드해보면, 뭔가 빠졌다던가 뭔가 추가해야 한다던가 하는 것들은 쉽게 알아낼 수 있습니다. 그러나 무언가가 없어도 된다고 말하는 것은 어려운 일입니다.
+왜 그럴까요? `go build`나 `go test`와 같은 명령으로 싱글 패키지를 빌드해보면, 뭔가 빠졌다던가 뭔가 추가해야 한다든가 하는 것들은 쉽게 알아낼 수 있습니다. 그러나 무언가가 없어도 된다고 말하는 것은 어려운 일입니다.
 디펜던시 제거는 모듈의 모든 패키지를 체크하고, 해당 패키지의 가능한 모든 빌드 태그 조합을 확인한 후에나 할 수 있는 일입니다.
 일반적인 빌드 명령은 이러한 정보를 로드하지 않으므로 디펜던시를 안전하게 제거할 수 없습니다.
 
@@ -612,7 +621,7 @@ An ordinary build command does not load this information, and so it cannot safel
 
 `go mod tidy` 명령은 다음과 같이 사용하지 않는 디펜던시를 제거합니다.
 
-```go
+```
 $ go mod tidy
 
 $ go list -m all

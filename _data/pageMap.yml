@@ -1276,7 +1276,7 @@ golang-mod:
     summary: ""
     parent: Golang
     url: /wiki/golang-mod
-    updated: '2019-06-04 15:02:45 +0900'
+    updated: '2019-06-04 16:02:54 +0900'
     children: []
 golang-reflect:
     type: wiki
