@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) Go Modules 사용하기
 summary : 
 date    : 2019-06-02 23:23:24 +0900
-updated : 2019-06-04 08:12:00 +0900
+updated : 2019-06-04 15:02:45 +0900
 tags    : golang
 toc     : true
 public  : true
@@ -393,7 +393,285 @@ $
 일반적으로 `go get` 명령어 인자에 버전을 명시할 수 있습니다.
 기본값은 `@latest` 이며 이 값은 최신 버전을 뜻합니다.
 
-**아직 작업중입니다.**
+
+# Adding a dependency on a new major version
+
+> Let's add a new function to our package:
+func Proverb returns a Go concurrency proverb, by calling quote.Concurrency,
+which is provided by the module rsc.io/quote/v3.
+First we update hello.go to add the new function:
+
+우리의 패키지에 새로운 함수를 추가해 봅시다.
+`func Proverb`는 `rsc.io/quote/v3`모듈의 `quote.Concurrency`가 호출하게 되며, Go의 concurrency 격언 문구를 리턴합니다.
+일단 `hello.go`에 새로운 함수를 추가하여 업데이트해 봅시다.
+
+```go
+package hello
+
+import (
+    "rsc.io/quote"
+    quoteV3 "rsc.io/quote/v3"
+)
+
+func Hello() string {
+    return quote.Hello()
+}
+
+func Proverb() string {
+    return quoteV3.Concurrency()
+}
+```
+
+> Then we add a test to hello_test.go:
+
+그리고 `hello_test.go`에 테스트 코드도 추가해 줍시다.
+
+```go
+func TestProverb(t *testing.T) {
+    want := "Concurrency is not parallelism."
+    if got := Proverb(); got != want {
+        t.Errorf("Proverb() = %q, want %q", got, want)
+    }
+}
+```
+
+> Then we can test our code:
+
+테스트를 돌려 봅시다.
+
+```
+$ go test
+go: finding rsc.io/quote/v3 v3.1.0
+go: downloading rsc.io/quote/v3 v3.1.0
+go: extracting rsc.io/quote/v3 v3.1.0
+PASS
+ok      example.com/hello    0.024s
+$
+```
+
+> Note that our module now depends on both rsc.io/quote and rsc.io/quote/v3:
+
+우리 모듈이 이제 `rsc.io/quote`와 `rsc.io/quote/v3`를 디펜던시로 갖고 있습니다.
+
+```
+$ go list -m rsc.io/q...
+rsc.io/quote v1.5.2
+rsc.io/quote/v3 v3.1.0
+$
+```
+
+> Each different major version (v1, v2, and so on) of a Go module uses a different module path:
+starting at v2, the path must end in the major version.
+In the example, v3 of rsc.io/quote is no longer rsc.io/quote: instead,
+it is identified by the module path rsc.io/quote/v3.
+This convention is called [semantic import versioning](https://research.swtch.com/vgo-import ),
+and it gives incompatible packages (those with different major versions) different names.
+In contrast, v1.6.0 of rsc.io/quote should be backwards-compatible with v1.5.2,
+so it reuses the name rsc.io/quote.
+(In the previous section, rsc.io/sampler v1.99.99 should have been backwards-compatible with rsc.io/sampler v1.3.0, but bugs or incorrect client assumptions about module behavior can both happen.)
+
+Go 모듈의 주요 버전(v1, v2 등)들은 각자 다른 모듈 경로를 사용합니다.
+v2부터 살펴보면, 경로는 메이저 버전으로 끝나야 합니다.
+이 예시에서 `rsc.io/quote`의 v3은 더 이상 `rsc.io/quote`가 아니라,
+`rsc.io/quote/v3`이라는 모듈 경로로 식별됩니다.
+이러한 규칙은 semantic import versioning이라 하는데, 호환되지 않는 패키지들(메이저 버전이 다르다던가)이 각기 다른 이름을 갖도록 하는 방법입니다.
+한편, `rsc.io/quote`의 `v1.6.0`은 `v1.5.2`와 역호환되므로 `rsc.io/quote`라는 이름을 사용합니다.
+(이전 섹션에서 `rsc.io/sampler` `v1.99.99`는 `v1.3.0`과 역호환이 가능해야 했을 것입니다. 그러나 버그라던가 모듈의 동작을 착각하고 잘못 구현하는 등의 일이 일어날 수 있습니다.)
+
+> The go command allows a build to include at most one version of any particular module path,
+meaning at most one of each major version:
+one rsc.io/quote, one rsc.io/quote/v2, one rsc.io/quote/v3, and so on.
+This gives module authors a clear rule about possible duplication of a single module path:
+it is impossible for a program to build with both rsc.io/quote v1.5.2 and rsc.io/quote v1.6.0.
+At the same time, allowing different major versions of a module (because they have different paths) gives module consumers the ability to upgrade to a new major version incrementally.
+In this example, we wanted to use quote.Concurrency from rsc/quote/v3 v3.1.0 but are not yet ready to migrate our uses of rsc.io/quote v1.5.2.
+The ability to migrate incrementally is especially important in a large program or codebase.
+
+go 커맨드는 빌드에 있어 특정 모듈 경로별로 최대 하나씩의 버전을 포함하는 것을 허용합니다.
+이는 각 메이저 버전당 최대 하나의 버전을 가질 수 있음을 의미합니다. (역: 메이저 버전별로 모듈 경로의 postfix 가 달라지기 때문에, path 하나에 version 하나를 매핑하는 심플한 key value 규칙인 셈입니다.)
+예를 들면 `rsc.io/quote`과 `rsc.io/quote/v2`, `rsc.io/quote/v3`에 대해 각자 하나씩의 버전만 허용되는 식입니다.
+이 방식은 하나의 모듈 경로를 두고 일어날 수 있는 버전 중복 문제에 대한 명확한 규칙을 제공합니다.
+가령, `rsc.io/quote`를 사용하는 프로그램을 빌드할 때 `rsc.io/quote` `v1.5.2`도 쓰고 `rsc.io/quote` `v1.6.0`도 쓰는 것은 불가능합니다.
+그러면서도 다른 메이저 버전을 허용하기 때문에(모듈 경로가 다르므로) 점진적으로 새로운 메이저 버전으로 업그레이드하는 것도 가능합니다.
+
+이 예제에서 우리는 `rsc/quote/v3`의 `quote.Concurrency`를 `v1.5.2`에서 `v3.1.0`으로 마이그레이션하고 싶었지만 아직 준비가 되지 않은 상태입니다.
+점진적인 마이그레이션이 가능한 것은 특히 대규모의 코드 베이스를 가진 프로그램에 있어 매우 중요합니다.
+
+# Upgrading a dependency to a new major version
+
+> Let's complete our conversion from using rsc.io/quote to using only rsc.io/quote/v3.
+Because of the major version change,
+we should expect that some APIs may have been removed, renamed, or otherwise changed in incompatible ways.
+Reading the docs, we can see that Hello has become HelloV3:
+
+이제 `rsc.io/quote`를 `rsc.io/quote/v3`으로 컨버전하는 작업을 해 봅시다.
+메이저 버전을 변경으로 인해 일부 API가 사라지거나 이름이 바뀌거나, 그 외의 다른 변경이 일어나는 등의 호환성 문제가 발생할 수 있음을 예상해야 합니다.
+문서를 읽어보면, `Hello`가 `HelloV3`으로 변경된 것을 알 수 있습니다.
+
+```
+$ go doc rsc.io/quote/v3
+package quote // import "rsc.io/quote"
+
+Package quote collects pithy sayings.
+
+func Concurrency() string
+func GlassV3() string
+func GoV3() string
+func HelloV3() string
+func OptV3() string
+$
+```
+
+> (There is also a [known bug](https://golang.org/issue/30778 ) in the output; the displayed import path has incorrectly dropped the /v3.)
+
+출력 결과를 보면 import path에서 `/v3`가 빠져 있는 버그가 있는데, 이미 알려진 버그입니다.)
+
+> We can update our use of quote.Hello() in hello.go to use quoteV3.HelloV3():
+
+이제 우리는 `hello.go`의 `quote.Hello()`를 `quoteV3.HelloV3()`으로 업데이트할 수 있습니다.
+
+```go
+package hello
+
+import quoteV3 "rsc.io/quote/v3"
+
+func Hello() string {
+    return quoteV3.HelloV3()
+}
+
+func Proverb() string {
+    return quoteV3.Concurrency()
+}
+```
+
+> And then at this point, there's no need for the renamed import anymore, so we can undo that:
+
+그리고 이제부터는 이름을 수정한 import를 쓸 필요가 없으므로 제거해 주도록 합시다.
+
+```go
+package hello
+
+import "rsc.io/quote/v3"
+
+func Hello() string {
+    return quote.HelloV3()
+}
+
+func Proverb() string {
+    return quote.Concurrency()
+}
+```
+
+> Let's re-run the tests to make sure everything is working:
+
+테스트를 다시 돌려 보면 잘 돌아갑니다.
+
+```
+$ go test
+PASS
+ok      example.com/hello       0.014s
+```
+
+# Removing unused dependencies
+
+> We've removed all our uses of rsc.io/quote, but it still shows up in go list -m all and in our go.mod file:
+
+우리는 `rsc.io/quote`를 사용하는 코드를 모두 제거 했습니다.
+그러나 `go list -m all` 명령을 입력해보거나 `go.mod` 파일을 확인해 보면 아직 사라지지 않고 남아 있다는 것을 알 수 있습니다.
+
+```
+$ go list -m all
+example.com/hello
+golang.org/x/text v0.3.0
+rsc.io/quote v1.5.2
+rsc.io/quote/v3 v3.1.0
+rsc.io/sampler v1.3.1
+$ cat go.mod
+module example.com/hello
+
+go 1.12
+
+require (
+    golang.org/x/text v0.3.0 // indirect
+    rsc.io/quote v1.5.2
+    rsc.io/quote/v3 v3.0.0
+    rsc.io/sampler v1.3.1 // indirect
+)
+$
+```
+
+> Why? Because building a single package, like with go build or go test, can easily tell when something is missing and needs to be added, but not when something can safely be removed.
+Removing a dependency can only be done after checking all packages in a module, and all possible build tag combinations for those packages.
+An ordinary build command does not load this information, and so it cannot safely remove dependencies.
+
+왜 그럴까요? `go build`나 `go test`와 같은 명령으로 싱글 패키지를 빌드해보면, 뭔가 빠졌다던가 뭔가 추가해야 한다던가 하는 것들은 쉽게 알아낼 수 있습니다. 그러나 무언가가 없어도 된다고 말하는 것은 어려운 일입니다.
+디펜던시 제거는 모듈의 모든 패키지를 체크하고, 해당 패키지의 가능한 모든 빌드 태그 조합을 확인한 후에나 할 수 있는 일입니다.
+일반적인 빌드 명령은 이러한 정보를 로드하지 않으므로 디펜던시를 안전하게 제거할 수 없습니다.
+
+> The go mod tidy command cleans up these unused dependencies:
+
+`go mod tidy` 명령은 다음과 같이 사용하지 않는 디펜던시를 제거합니다.
+
+```go
+$ go mod tidy
+
+$ go list -m all
+example.com/hello
+golang.org/x/text v0.3.0
+rsc.io/quote/v3 v3.1.0
+rsc.io/sampler v1.3.1
+
+$ cat go.mod
+module example.com/hello
+
+go 1.12
+
+require (
+    golang.org/x/text v0.3.0 // indirect
+    rsc.io/quote/v3 v3.1.0
+    rsc.io/sampler v1.3.1 // indirect
+)
+
+$ go test
+PASS
+ok      example.com/hello    0.020s
+```
+
+# Conclusion
+
+> Go modules are the future of dependency management in Go.
+Module functionality is now available in all supported Go versions (that is, in Go 1.11 and Go 1.12).
+
+Go 모듈은 Go의 디펜던시 관리의 미래입니다.
+모듈 기능은 현재 지원되는 모든 Go 버전(Go 1.11, 1.12)에서 사용할 수 있습니다.
+
+> This post introduced these workflows using Go modules:  
+* go mod init creates a new module, initializing the go.mod file that describes it.
+* go build, go test, and other package-building commands add new dependencies to go.mod as needed.
+* go list -m all prints the current module’s dependencies.
+* go get changes the required version of a dependency (or adds a new dependency).
+* go mod tidy removes unused dependencies.
+
+이 포스트는 Go 모듈을 사용하는 작업 흐름을 소개하였습니다.
+
+* `go mod init`은 새로운 모듈을 생성하고, 모듈을 설명하는 `go.mod` 파일을 초기화합니다.
+* `go build`와 `go test`, 그 외의 패키지 빌드 커맨드들은 필요에 따라 `go.mod`에 새로운 디펜던시를 추가합니다.
+* `go list -m all`은 현재 모듈의 디펜던시 목록을 보여줍니다.
+* `go get`은 필요한 버전의 디펜던시를 변경하거나 새로운 디펜던시를 추가합니다.
+* `go mod tidy`는 사용하지 않는 디펜던시를 제거합니다.
+
+> We encourage you to start using modules in your local development and to add go.mod and go.sum files to your projects.
+To provide feedback and help shape the future of dependency management in Go, please send us [bug reports](https://golang.org/issue/new ) or [experience reports](https://golang.org/wiki/ExperienceReports ).
+
+당신의 로컬 개발 환경에서 모듈 사용을 시작한다면 `go.mod`와 `go.sum`를 당신의 프로젝트에 추가하세요.
+피드백을 제공하고 싶거나 Go의 디펜던시 관리의 미래에 도움이 되고 싶다면 버그 리포트나 경험 보고서를 보내주세요.
+
+> Thanks for all your feedback and help improving modules.  
+
+여러분의 모든 피드백과 모듈을 향상하는 데 주신 도움에 감사드립니다.
+
+> By Tyler Bui-Palsulich and Eno Compton
+
 
 # Links
 
