@@ -1,5 +1,6 @@
 math:
     - {fileName: 17-EQUATIONS-THAT-CHANGED-THE-WORLD}
+    - {fileName: Binomial-Theorem}
     - {fileName: c-m-01-Recurrent-Problems-01}
     - {fileName: c-m-01-Recurrent-Problems-02}
     - {fileName: c-m-01-Recurrent-Problems-03}
@@ -31,14 +32,17 @@ math:
     - {fileName: Fermat-s-little-theorem}
     - {fileName: frac1e}
     - {fileName: gcd}
+    - {fileName: graph}
     - {fileName: math}
     - {fileName: mathdict}
     - {fileName: p-np}
     - {fileName: primitive-roots}
+    - {fileName: relations}
     - {fileName: rule-of-succession}
     - {fileName: secretary-problem}
     - {fileName: study-concrete-math}
     - {fileName: study-discrete-mathematics}
+    - {fileName: two-eggs-100-floor}
 jekyll:
     - {fileName: 2017-01-21-create-jekyll-blog}
     - {fileName: 2017-01-22-jekyll-category-tag}
@@ -144,8 +148,10 @@ vim:
     - {fileName: 2017-05-04-input-source}
     - {fileName: 2017-07-09-vim-game-code-break}
     - {fileName: ctags}
+    - {fileName: two-views-of-vim}
     - {fileName: Vim}
     - {fileName: vim-auto-completion}
+    - {fileName: vim-coc}
     - {fileName: vim-conceallevel}
     - {fileName: vim-f-hangul}
     - {fileName: vim-go-auto-import}
@@ -211,6 +217,7 @@ bash:
     - {fileName: java_home}
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
+    - {fileName: random-luch}
     - {fileName: sha256sum}
     - {fileName: sort}
     - {fileName: tail}
@@ -248,6 +255,10 @@ command:
     - {fileName: touch}
     - {fileName: uptime}
     - {fileName: yes}
+agile:
+    - {fileName: agile}
+    - {fileName: grow-together}
+    - {fileName: kanban-scrum}
 complexity:
     - {fileName: airplain-rule}
 law:
@@ -360,6 +371,14 @@ effective-java:
     - {fileName: builder-pattern}
     - {fileName: Effective-Java}
     - {fileName: static-factory-method-pattern}
+encryption:
+    - {fileName: Caesar-cipher}
+    - {fileName: encryption}
+    - {fileName: gpg}
+    - {fileName: Kerckhoffs-s-principle}
+    - {fileName: openssl}
+    - {fileName: rsa-encryption}
+    - {fileName: sha256sum}
 스크랩:
     - {fileName: clipping}
 tldr:
@@ -375,6 +394,25 @@ linux:
     - {fileName: DevOps-Troubleshooting}
 command-line:
     - {fileName: command-line}
+golang:
+    - {fileName: commit-go-mod-go-sum}
+    - {fileName: ctags}
+    - {fileName: ginkgo}
+    - {fileName: Golang}
+    - {fileName: golang-cheatsheet}
+    - {fileName: golang-dependency-manager}
+    - {fileName: golang-mod}
+    - {fileName: golang-reflect}
+    - {fileName: golang-struct-padding}
+    - {fileName: golang-types}
+    - {fileName: vim-go-auto-import}
+    - {fileName: vim-go-env}
+    - {fileName: vim-go-with-ultisnips}
+git:
+    - {fileName: commit-go-mod-go-sum}
+    - {fileName: git}
+    - {fileName: git-alias}
+    - {fileName: git-checkout-specific-files}
 php:
     - {fileName: composer}
     - {fileName: email-validation}
@@ -408,19 +446,6 @@ history:
     - {fileName: TETRIS-EFFECT}
 ctags:
     - {fileName: ctags}
-golang:
-    - {fileName: ctags}
-    - {fileName: ginkgo}
-    - {fileName: Golang}
-    - {fileName: golang-cheatsheet}
-    - {fileName: golang-dependency-manager}
-    - {fileName: golang-mod}
-    - {fileName: golang-reflect}
-    - {fileName: golang-struct-padding}
-    - {fileName: golang-types}
-    - {fileName: vim-go-auto-import}
-    - {fileName: vim-go-env}
-    - {fileName: vim-go-with-ultisnips}
 design:
     - {fileName: Design-for-Hackers}
 container:
@@ -448,12 +473,6 @@ email:
 regex:
     - {fileName: email-validation}
     - {fileName: regex-prime}
-encryption:
-    - {fileName: encryption}
-    - {fileName: gpg}
-    - {fileName: Kerckhoffs-s-principle}
-    - {fileName: openssl}
-    - {fileName: sha256sum}
 blockchain:
     - {fileName: ethereum-white-paper}
 ms:
@@ -486,6 +505,7 @@ cs:
 tools:
     - {fileName: fine-dust}
     - {fileName: labs-strava-com-heatmap}
+    - {fileName: my-timer}
     - {fileName: tools}
     - {fileName: utterances}
 미세먼지:
@@ -511,10 +531,6 @@ science:
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
 test:
     - {fileName: ginkgo}
-git:
-    - {fileName: git}
-    - {fileName: git-alias}
-    - {fileName: git-checkout-specific-files}
 fzf:
     - {fileName: git-alias}
 til:
@@ -566,9 +582,6 @@ jvm-lang:
     - {fileName: Groovy}
 groovy:
     - {fileName: Groovy}
-agile:
-    - {fileName: grow-together}
-    - {fileName: kanban-scrum}
 lua:
     - {fileName: hammerspoon-luarocks}
 keyboard:

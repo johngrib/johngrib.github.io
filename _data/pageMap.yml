@@ -244,7 +244,7 @@ agile:
     summary: ""
     parent: what
     url: /wiki/agile
-    updated: '2019-04-24 23:05:08 +0900'
+    updated: '2019-06-04 21:21:27 +0900'
     children: []
 airplain-rule:
     type: wiki
@@ -364,7 +364,7 @@ Binomial-Theorem:
     summary: ""
     parent: math
     url: /wiki/Binomial-Theorem
-    updated: '2019-03-23 12:40:51 +0900'
+    updated: '2019-06-04 21:18:43 +0900'
     children: []
 book:
     type: wiki
@@ -548,7 +548,7 @@ Caesar-cipher:
     summary: '자리이동식 암호법'
     parent: what
     url: /wiki/Caesar-cipher
-    updated: '2019-03-09 20:52:57 +0900'
+    updated: '2019-06-04 21:21:38 +0900'
     children: []
 cal:
     type: wiki
@@ -604,7 +604,7 @@ commit-go-mod-go-sum:
     summary: 커밋하자
     parent: Golang
     url: /wiki/commit-go-mod-go-sum
-    updated: '2019-06-03 23:55:59 +0900'
+    updated: '2019-06-04 21:17:56 +0900'
     children: []
 composer:
     type: wiki
@@ -1268,7 +1268,7 @@ golang-dependency-manager:
     summary: '사람들이 많이 쓰는 걸 쓰자'
     parent: Golang
     url: /wiki/golang-dependency-manager
-    updated: '2018-10-21 17:51:17 +0900'
+    updated: '2019-06-04 21:53:56 +0900'
     children: []
 golang-mod:
     type: wiki
@@ -1348,7 +1348,7 @@ graph:
     summary: ""
     parent: math
     url: /wiki/graph
-    updated: '2019-05-19 22:05:41 +0900'
+    updated: '2019-06-04 21:22:08 +0900'
     children: []
 GRAVITY-EXPRESS:
     type: wiki
@@ -1796,7 +1796,7 @@ my-timer:
     summary: null
     parent: tools
     url: /wiki/my-timer
-    updated: '2019-03-16 19:45:22 +0900'
+    updated: '2019-06-04 21:20:33 +0900'
     children: []
 my-wiki:
     type: wiki
@@ -1988,7 +1988,7 @@ random-luch:
     summary: ""
     parent: how-to
     url: /wiki/random-luch
-    updated: '2019-05-04 21:48:32 +0900'
+    updated: '2019-06-04 21:19:37 +0900'
     children: []
 regex-prime:
     type: wiki
@@ -2012,7 +2012,7 @@ relations:
     summary: ""
     parent: math
     url: /wiki/relations
-    updated: '2019-05-12 17:50:57 +0900'
+    updated: '2019-06-04 21:21:56 +0900'
     children: []
 review:
     type: wiki
@@ -2068,7 +2068,7 @@ rsa-encryption:
     summary: ""
     parent: what
     url: /wiki/rsa-encryption
-    updated: '2019-03-10 23:12:49 +0900'
+    updated: '2019-06-04 21:20:47 +0900'
     children: []
 rule-of-succession:
     type: wiki
@@ -2084,7 +2084,7 @@ Schopenhauer-s-Law-Of-Entropy:
     summary: ""
     parent: proverb
     url: /wiki/Schopenhauer-s-Law-Of-Entropy
-    updated: '2019-05-13 22:58:33 +0900'
+    updated: '2019-06-04 21:21:14 +0900'
     children: []
 Schrodinger-s-goyang-Hee:
     type: wiki
@@ -2236,7 +2236,7 @@ study-note:
     summary: ""
     parent: study
     url: /wiki/study-note
-    updated: '2019-05-11 11:14:00 +0900'
+    updated: '2019-06-04 21:20:22 +0900'
     children: []
 study-think-bayes:
     type: wiki
@@ -2308,7 +2308,7 @@ timeline:
     summary: ""
     parent: index
     url: /wiki/timeline
-    updated: '2019-04-28 00:07:14 +0900'
+    updated: '2019-06-04 21:21:03 +0900'
     children: []
 TOML:
     type: wiki
@@ -2348,7 +2348,7 @@ transistor:
     summary: '전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자'
     parent: what
     url: /wiki/transistor
-    updated: '2019-03-31 20:42:22 +0900'
+    updated: '2019-06-04 21:19:44 +0900'
     children: []
 trouble-shooting-node-7-install:
     type: wiki
@@ -2364,7 +2364,7 @@ two-eggs-100-floor:
     summary: ""
     parent: problem
     url: /wiki/two-eggs-100-floor
-    updated: '2019-03-13 23:42:13 +0900'
+    updated: '2019-06-04 21:22:21 +0900'
     children: []
 two-views-of-vim:
     type: wiki
@@ -2372,7 +2372,7 @@ two-views-of-vim:
     summary: '그리고 나의 vim 사용 습관'
     parent: Vim
     url: /wiki/two-views-of-vim
-    updated: '2019-05-25 09:39:43 +0900'
+    updated: '2019-06-04 21:20:06 +0900'
     children: []
 units:
     type: wiki
@@ -2460,7 +2460,7 @@ vim-coc:
     summary: ""
     parent: Vim
     url: /wiki/vim-coc
-    updated: '2019-05-16 22:32:43 +0900'
+    updated: '2019-06-04 21:19:17 +0900'
     children: []
 vim-conceallevel:
     type: wiki
