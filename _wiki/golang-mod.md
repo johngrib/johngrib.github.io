@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) Go Modules 사용하기
 summary : 
 date    : 2019-06-02 23:23:24 +0900
-updated : 2019-06-04 21:16:34 +0900
+updated : 2019-06-04 22:53:36 +0900
 tag     : golang 번역 the-go-blog
 toc     : true
 public  : true
@@ -681,6 +681,13 @@ To provide feedback and help shape the future of dependency management in Go, pl
 
 > By Tyler Bui-Palsulich and Eno Compton
 
+# License 관련 사항
+
+* 이 번역문의 원문은 [Creative Commons Attribution 3.0 라이센스](https://creativecommons.org/licenses/by/3.0/deed.ko )를 따릅니다.
+* 이 번역문의 원문에 첨부된 코드는 [BSD license](https://golang.org/LICENSE )를 따릅니다.
+* 이 번역문의 원문 주소는 <https://blog.golang.org/using-go-modules > 입니다.
+* 번역하는 과정에서 의역과 임의의 내용 추가가 있었습니다.
+* 코드는 가독성을 위해 임의로 공백 라인을 추가하였습니다.
 
 # Links
 
