@@ -414,6 +414,7 @@ golang:
     - {fileName: Golang}
     - {fileName: golang-cheatsheet}
     - {fileName: golang-dependency-manager}
+    - {fileName: golang-mod}
     - {fileName: golang-reflect}
     - {fileName: golang-struct-padding}
     - {fileName: golang-types}
@@ -527,6 +528,17 @@ language:
     - {fileName: Python3}
 cheatsheet:
     - {fileName: golang-cheatsheet}
+번역:
+    - {fileName: golang-mod}
+    - {fileName: King-O-The-Cats}
+    - {fileName: mathdict}
+    - {fileName: Object-equals}
+    - {fileName: Object-hashCode}
+    - {fileName: Object-toString}
+    - {fileName: Software-Engineering-Code-of-Ethics}
+    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
+the-go-blog:
+    - {fileName: golang-mod}
 reflect:
     - {fileName: golang-reflect}
 padding:
@@ -592,14 +604,6 @@ von-neumann:
 sort:
     - {fileName: John-von-Neumann}
     - {fileName: sort}
-번역:
-    - {fileName: King-O-The-Cats}
-    - {fileName: mathdict}
-    - {fileName: Object-equals}
-    - {fileName: Object-hashCode}
-    - {fileName: Object-toString}
-    - {fileName: Software-Engineering-Code-of-Ethics}
-    - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 보안:
     - {fileName: labs-strava-com-heatmap}
 drama:
