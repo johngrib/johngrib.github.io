@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) Go Modules 사용하기
 summary : Using Go Modules
 date    : 2019-06-02 23:23:24 +0900
-updated : 2019-06-06 13:52:16 +0900
+updated : 2019-06-06 16:41:48 +0900
 tag     : golang 번역 the-go-blog
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-* 원문: [Using Go Modules](https://blog.golang.org/using-go-modules ) (2019-03-19)
+* 원문: [Using Go Modules By Tyler Bui-Palsulich and Eno Compton](https://blog.golang.org/using-go-modules ) (2019-03-19)
 * 의역이 많으며 오역이 있을 수 있습니다.
 * (역: ...) 은 원문에 없는 말을 이해를 돕기 위해 제가 추가한 것입니다.
 
