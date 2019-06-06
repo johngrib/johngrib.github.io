@@ -1273,10 +1273,10 @@ golang-dependency-manager:
 golang-mod:
     type: wiki
     title: '(번역) Go Modules 사용하기'
-    summary: ""
+    summary: 'Using Go Modules'
     parent: Golang
     url: /wiki/golang-mod
-    updated: '2019-06-04 22:53:36 +0900'
+    updated: '2019-06-06 13:52:16 +0900'
     children: []
 golang-reflect:
     type: wiki
@@ -1300,7 +1300,7 @@ golang-the-laws-of-reflection:
     summary: 'The Laws of Reflection'
     parent: Golang
     url: /wiki/golang-the-laws-of-reflection
-    updated: '2019-06-06 13:21:21 +0900'
+    updated: '2019-06-06 13:52:27 +0900'
     children: []
 golang-types:
     type: wiki

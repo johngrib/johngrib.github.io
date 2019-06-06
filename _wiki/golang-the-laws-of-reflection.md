@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) 리플렉션의 규칙들
 summary : The Laws of Reflection
 date    : 2019-06-05 19:20:39 +0900
-updated : 2019-06-06 13:21:21 +0900
+updated : 2019-06-06 13:52:27 +0900
 tag     : golang 번역 the-go-blog reflection
 toc     : true
 public  : true
@@ -719,7 +719,7 @@ Go 언어의 이러한 리플렉션 규칙들을 이해한다면 훨씬 사용�
 
 리플렉션에 대해 다루지 않은 많은 정보(`channel`로 뭔가를 주고받고, 메모리를 할당하고, `slice`와 `map`을 사용하고, 메소드와 함수를 호출하는 등)가 있습니다. 그러나 이 글도 충분히 길어졌으므로, 그런 것들은 다음에 다른 글에서 알아보도록 하겠습니다.
 
-롭 파이크
+_By Rob Pike_
 
 # License 관련 사항
 
