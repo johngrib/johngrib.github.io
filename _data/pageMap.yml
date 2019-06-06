@@ -1284,7 +1284,7 @@ golang-reflect:
     summary: '라이브러리 만들 때에만 쓰고 남용하지 말자'
     parent: Golang
     url: /wiki/golang-reflect
-    updated: '2018-12-30 12:44:06 +0900'
+    updated: '2019-06-06 16:38:10 +0900'
     children: []
 golang-struct-padding:
     type: wiki

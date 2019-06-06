@@ -3,7 +3,7 @@ layout  : wiki
 title   : Golang reflect 사용법
 summary : 라이브러리 만들 때에만 쓰고 남용하지 말자
 date    : 2018-12-29 18:38:23 +0900
-updated : 2018-12-30 12:44:06 +0900
+updated : 2019-06-06 16:38:10 +0900
 tag     : golang reflect
 toc     : true
 public  : true
@@ -26,7 +26,6 @@ latex   : false
 
 ## switch type 및 type 조사
 
-* switch type은 딱히 reflect를 사용하는 건 아니지만 알아는 두자.
 * `reflect.Value.Type()` 을 쓰면 타입을 알아낼 수 있다.
 
 ```go
