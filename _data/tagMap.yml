@@ -398,6 +398,7 @@ golang:
     - {fileName: commit-go-mod-go-sum}
     - {fileName: ctags}
     - {fileName: ginkgo}
+    - {fileName: Go-Blog-translation}
     - {fileName: Golang}
     - {fileName: golang-cheatsheet}
     - {fileName: golang-dependency-manager}
@@ -537,15 +538,8 @@ fzf:
 til:
     - {fileName: git-checkout-specific-files}
     - {fileName: til}
-language:
-    - {fileName: Golang}
-    - {fileName: Groovy}
-    - {fileName: Java}
-    - {fileName: programming-language}
-    - {fileName: Python3}
-cheatsheet:
-    - {fileName: golang-cheatsheet}
 번역:
+    - {fileName: Go-Blog-translation}
     - {fileName: golang-mod}
     - {fileName: golang-the-laws-of-reflection}
     - {fileName: King-O-The-Cats}
@@ -556,8 +550,17 @@ cheatsheet:
     - {fileName: Software-Engineering-Code-of-Ethics}
     - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 the-go-blog:
+    - {fileName: Go-Blog-translation}
     - {fileName: golang-mod}
     - {fileName: golang-the-laws-of-reflection}
+language:
+    - {fileName: Golang}
+    - {fileName: Groovy}
+    - {fileName: Java}
+    - {fileName: programming-language}
+    - {fileName: Python3}
+cheatsheet:
+    - {fileName: golang-cheatsheet}
 reflect:
     - {fileName: golang-reflect}
 padding:

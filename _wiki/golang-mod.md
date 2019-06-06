@@ -3,11 +3,11 @@ layout  : wiki
 title   : (번역) Go Modules 사용하기
 summary : Using Go Modules
 date    : 2019-06-02 23:23:24 +0900
-updated : 2019-06-06 16:41:48 +0900
+updated : 2019-06-06 18:47:44 +0900
 tag     : golang 번역 the-go-blog
 toc     : true
 public  : true
-parent  : Golang
+parent  : Go-Blog-translation
 latex   : false
 ---
 * TOC

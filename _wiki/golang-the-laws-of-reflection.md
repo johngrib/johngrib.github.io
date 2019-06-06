@@ -3,11 +3,11 @@ layout  : wiki
 title   : (번역) 리플렉션의 규칙들
 summary : The Laws of Reflection
 date    : 2019-06-05 19:20:39 +0900
-updated : 2019-06-06 13:52:27 +0900
+updated : 2019-06-06 18:47:59 +0900
 tag     : golang 번역 the-go-blog reflection
 toc     : true
 public  : true
-parent  : Golang
+parent  : Go-Blog-translation
 latex   : false
 ---
 * TOC

@@ -1238,6 +1238,14 @@ git-checkout-specific-files:
     url: /wiki/git-checkout-specific-files
     updated: '2018-12-02 14:32:59 +0900'
     children: []
+Go-Blog-translation:
+    type: wiki
+    title: 'The Go Blog 번역글 모음'
+    summary: 'Go 언어의 공식 블로그의 글을 번역합니다'
+    parent: Golang
+    url: /wiki/Go-Blog-translation
+    updated: '2019-06-06 18:56:11 +0900'
+    children: [golang-mod, golang-the-laws-of-reflection]
 GoF-Design-Pattern:
     type: wiki
     title: '(책) GoF의 디자인 패턴'
@@ -1253,7 +1261,7 @@ Golang:
     parent: programming-language
     url: /wiki/Golang
     updated: '2018-09-18 17:21:01 +0900'
-    children: [commit-go-mod-go-sum, ginkgo, golang-cheatsheet, golang-dependency-manager, golang-mod, golang-reflect, golang-struct-padding, golang-the-laws-of-reflection, golang-types, golang-waitgroup-add, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
+    children: [commit-go-mod-go-sum, ginkgo, Go-Blog-translation, golang-cheatsheet, golang-dependency-manager, golang-reflect, golang-struct-padding, golang-types, golang-waitgroup-add, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
 golang-cheatsheet:
     type: wiki
     title: 'Go cheatsheet'
@@ -1274,9 +1282,9 @@ golang-mod:
     type: wiki
     title: '(번역) Go Modules 사용하기'
     summary: 'Using Go Modules'
-    parent: Golang
+    parent: Go-Blog-translation
     url: /wiki/golang-mod
-    updated: '2019-06-06 16:41:48 +0900'
+    updated: '2019-06-06 18:47:44 +0900'
     children: []
 golang-reflect:
     type: wiki
@@ -1298,9 +1306,9 @@ golang-the-laws-of-reflection:
     type: wiki
     title: '(번역) 리플렉션의 규칙들'
     summary: 'The Laws of Reflection'
-    parent: Golang
+    parent: Go-Blog-translation
     url: /wiki/golang-the-laws-of-reflection
-    updated: '2019-06-06 13:52:27 +0900'
+    updated: '2019-06-06 18:47:59 +0900'
     children: []
 golang-types:
     type: wiki
