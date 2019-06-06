@@ -1253,7 +1253,7 @@ Golang:
     parent: programming-language
     url: /wiki/Golang
     updated: '2018-09-18 17:21:01 +0900'
-    children: [commit-go-mod-go-sum, ginkgo, golang-cheatsheet, golang-dependency-manager, golang-mod, golang-reflect, golang-struct-padding, golang-types, golang-waitgroup-add, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
+    children: [commit-go-mod-go-sum, ginkgo, golang-cheatsheet, golang-dependency-manager, golang-mod, golang-reflect, golang-struct-padding, golang-the-laws-of-reflection, golang-types, golang-waitgroup-add, vim-go-auto-import, vim-go-env, vim-go-with-ultisnips]
 golang-cheatsheet:
     type: wiki
     title: 'Go cheatsheet'
@@ -1293,6 +1293,14 @@ golang-struct-padding:
     parent: Golang
     url: /wiki/golang-struct-padding
     updated: '2018-10-15 10:15:05 +0900'
+    children: []
+golang-the-laws-of-reflection:
+    type: wiki
+    title: '(번역) 리플렉션의 규칙들'
+    summary: 'The Laws of Reflection'
+    parent: Golang
+    url: /wiki/golang-the-laws-of-reflection
+    updated: '2019-06-06 13:21:21 +0900'
     children: []
 golang-types:
     type: wiki

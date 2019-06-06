@@ -404,6 +404,7 @@ golang:
     - {fileName: golang-mod}
     - {fileName: golang-reflect}
     - {fileName: golang-struct-padding}
+    - {fileName: golang-the-laws-of-reflection}
     - {fileName: golang-types}
     - {fileName: vim-go-auto-import}
     - {fileName: vim-go-env}
@@ -546,6 +547,7 @@ cheatsheet:
     - {fileName: golang-cheatsheet}
 번역:
     - {fileName: golang-mod}
+    - {fileName: golang-the-laws-of-reflection}
     - {fileName: King-O-The-Cats}
     - {fileName: mathdict}
     - {fileName: Object-equals}
@@ -555,12 +557,15 @@ cheatsheet:
     - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 the-go-blog:
     - {fileName: golang-mod}
+    - {fileName: golang-the-laws-of-reflection}
 reflect:
     - {fileName: golang-reflect}
 padding:
     - {fileName: golang-struct-padding}
 alignment:
     - {fileName: golang-struct-padding}
+reflection:
+    - {fileName: golang-the-laws-of-reflection}
 type:
     - {fileName: golang-types}
 gloang:
