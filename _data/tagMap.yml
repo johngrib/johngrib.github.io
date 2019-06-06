@@ -405,6 +405,7 @@ golang:
     - {fileName: golang-mod}
     - {fileName: golang-reflect}
     - {fileName: golang-struct-padding}
+    - {fileName: golang-subtests}
     - {fileName: golang-the-laws-of-reflection}
     - {fileName: golang-types}
     - {fileName: vim-go-auto-import}
@@ -541,6 +542,7 @@ til:
 번역:
     - {fileName: Go-Blog-translation}
     - {fileName: golang-mod}
+    - {fileName: golang-subtests}
     - {fileName: golang-the-laws-of-reflection}
     - {fileName: King-O-The-Cats}
     - {fileName: mathdict}
@@ -552,6 +554,7 @@ til:
 the-go-blog:
     - {fileName: Go-Blog-translation}
     - {fileName: golang-mod}
+    - {fileName: golang-subtests}
     - {fileName: golang-the-laws-of-reflection}
 language:
     - {fileName: Golang}
@@ -567,6 +570,8 @@ padding:
     - {fileName: golang-struct-padding}
 alignment:
     - {fileName: golang-struct-padding}
+testing:
+    - {fileName: golang-subtests}
 reflection:
     - {fileName: golang-the-laws-of-reflection}
 type:
