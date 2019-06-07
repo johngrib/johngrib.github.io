@@ -67,7 +67,7 @@ public: true
         const url = window.location.href;
         const req = /#([^\s]+)$/.exec(url);
         if(Array.isArray(req)) {
-            var selector = '#' + req.pop();
+            var selector = '#' + decodeURI(req.pop());
             showTag(selector);
         }
     })();
