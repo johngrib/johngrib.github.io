@@ -1244,8 +1244,8 @@ Go-Blog-translation:
     summary: 'Go 언어의 공식 블로그의 글을 번역합니다'
     parent: Golang
     url: /wiki/Go-Blog-translation
-    updated: '2019-06-06 19:02:50 +0900'
-    children: [golang-mod, golang-subtests, golang-the-laws-of-reflection]
+    updated: '2019-06-10 20:58:52 +0900'
+    children: [golang-debugging-what-you-deploy, golang-mod, golang-subtests, golang-the-laws-of-reflection]
 GoF-Design-Pattern:
     type: wiki
     title: '(책) GoF의 디자인 패턴'
@@ -1269,6 +1269,14 @@ golang-cheatsheet:
     parent: Golang
     url: /wiki/golang-cheatsheet
     updated: '2018-10-19 22:21:31 +0900'
+    children: []
+golang-debugging-what-you-deploy:
+    type: wiki
+    title: '(번역) Go 1.12에서 배포한 것을 디버깅하기'
+    summary: 'Debugging what you deploy in Go 1.12'
+    parent: Go-Blog-translation
+    url: /wiki/golang-debugging-what-you-deploy
+    updated: '2019-06-10 20:57:11 +0900'
     children: []
 golang-dependency-manager:
     type: wiki

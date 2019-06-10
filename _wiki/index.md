@@ -98,6 +98,7 @@ comment : false
     * [[bc]]
     * [[Golang]]
         * [[Go-Blog-translation]]
+            * [[golang-debugging-what-you-deploy]]{(번역) Go 1.12에서 배포한 것을 디버깅하기}
             * [[golang-mod]]
             * [[golang-subtests]]{(번역) 서브 테스트와 서브 벤치마크 사용하기}
             * [[golang-the-laws-of-reflection]]

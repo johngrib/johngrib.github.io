@@ -401,6 +401,7 @@ golang:
     - {fileName: Go-Blog-translation}
     - {fileName: Golang}
     - {fileName: golang-cheatsheet}
+    - {fileName: golang-debugging-what-you-deploy}
     - {fileName: golang-dependency-manager}
     - {fileName: golang-mod}
     - {fileName: golang-reflect}
@@ -541,6 +542,7 @@ til:
     - {fileName: til}
 번역:
     - {fileName: Go-Blog-translation}
+    - {fileName: golang-debugging-what-you-deploy}
     - {fileName: golang-mod}
     - {fileName: golang-subtests}
     - {fileName: golang-the-laws-of-reflection}
@@ -553,6 +555,7 @@ til:
     - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 the-go-blog:
     - {fileName: Go-Blog-translation}
+    - {fileName: golang-debugging-what-you-deploy}
     - {fileName: golang-mod}
     - {fileName: golang-subtests}
     - {fileName: golang-the-laws-of-reflection}
