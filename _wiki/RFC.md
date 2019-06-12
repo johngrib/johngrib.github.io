@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : RFC(Request For Comment)
+title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2019-04-11 23:34:07 +0900
+updated : 2019-06-12 21:40:36 +0900
 tag     : rfc
 toc     : true
 public  : true
@@ -13,8 +13,24 @@ latex   : false
 * TOC
 {:toc}
 
-몇 가지 RFC 문서를 소개하는 페이지.
+# Requests For Comments
 
+* IETF가 만든 규약 문서.
+    * IETF: 인터넷의 상호 접속성을 향상시키는 것을 목적으로 만들어진 단체.
+
+책 "리얼월드 HTTP"에서는 RFC에 대해 다음과 같이 소개한다.
+
+> RFC는 IETF라는 조직이 중심이 되어 유지 관리하는 통신의 상호접속성 유지를 위해 공통화된 사양서 모음입니다.
+'Requests for Comments'라는 이름인데 사양서라고 하니 조금 어색한 느낌도 있지만, 여기에는 역사적 이유가 있습니다.
+인터넷의 근간이 된 네트워크는 미국의 국방 예산으로 만들어져, 사양을 외부에 공개할 수 없었습니다.
+그래서 품질 향상을 위한 의견을 전 세계로부터 폭넓게 수집한다는 명목으로 사양을 공개했던 흔적이 RFC라는 명칭으로 남았습니다.  
+<br/>
+RFC에는 다양한 종류가 있고, 개개의 RFC는 'RFC 1945'처럼 RFC+숫자로 표기합니다.
+이미 정의된 포맷을 새로운 RFC에서 참조하기도 합니다.
+RFC에 문제가 있을 때는 새로운 버전의 RFC로 갱신되기도 하고,
+완전히 새로운 버전이 완성되면 폐기(obsolete)되는 일도 있습니다.
+
+# 몇몇 RFC 소개
 ## RFC 822
 
 * Standard for ARPA Internet Text Messages
@@ -118,3 +134,7 @@ interface LoggerInterface
     public function log($level, $message, array $context = array());
 }
 ```
+
+# 참고문헌
+
+* 리얼월드 HTTP 시부카와 요시키 저/김성훈 역 / 한빛미디어 / 2019년 04월 19일
