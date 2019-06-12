@@ -597,7 +597,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
+    children: [ag, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
 commit-go-mod-go-sum:
     type: wiki
     title: 'go.mod와 go.sum 도 커밋해야 할까?'
@@ -685,6 +685,14 @@ ctags:
     parent: command-line
     url: /wiki/ctags
     updated: '2018-10-03 23:48:53 +0900'
+    children: []
+curl:
+    type: wiki
+    title: 'curl 명령어'
+    summary: 'transfer a URL'
+    parent: command-line
+    url: /wiki/curl
+    updated: '2019-06-12 22:45:09 +0900'
     children: []
 cut:
     type: wiki

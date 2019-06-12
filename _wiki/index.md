@@ -215,6 +215,7 @@ comment : false
         * [[cal]]
         * [[csplit]]
         * [[ctags]]
+        * [[curl]]
         * [[cut]]
         * [[date]]
         * [[df]]
