@@ -1942,6 +1942,14 @@ phpbrew:
     url: /wiki/phpbrew
     updated: '2019-01-08 22:43:54 +0900'
     children: []
+port-number-registry:
+    type: wiki
+    title: '알려진 포트 넘버 목록'
+    summary: ""
+    parent: what
+    url: /wiki/port-number-registry
+    updated: '2019-06-12 22:08:33 +0900'
+    children: []
 Postel-s-law:
     type: wiki
     title: '포스텔의 법칙(Postel''s law)'
@@ -2629,7 +2637,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, RFC, rouge-supported-languages, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
+    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http-message, indent-style, kanban-scrum, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
