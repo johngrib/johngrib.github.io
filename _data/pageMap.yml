@@ -2100,7 +2100,7 @@ RFC:
     summary: '일련번호가 매겨진 인터넷 표준 문서'
     parent: what
     url: /wiki/RFC
-    updated: '2019-06-12 21:40:36 +0900'
+    updated: '2019-06-12 23:09:19 +0900'
     children: []
 rouge-supported-languages:
     type: wiki

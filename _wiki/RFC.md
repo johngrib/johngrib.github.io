@@ -3,7 +3,7 @@ layout  : wiki
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2019-06-12 21:40:36 +0900
+updated : 2019-06-12 23:09:19 +0900
 tag     : rfc
 toc     : true
 public  : true
@@ -33,9 +33,20 @@ RFC에 문제가 있을 때는 새로운 버전의 RFC로 갱신되기도 하고
 # 몇몇 RFC 소개
 ## RFC 822
 
-* Standard for ARPA Internet Text Messages
-* 인터넷 메일 포맷 표준
-* [https://www.w3.org/Protocols/rfc822/](https://www.w3.org/Protocols/rfc822/)
+* 1982-08-13 [STANDARD FOR THE FORMAT OF ARPA INTERNET TEXT MESSAGES](https://tools.ietf.org/html/rfc822 )
+    * 아르파 인터넷 텍스트 메시지 형식 표준
+* 업데이트
+    * 2013-03 [RFC 6854 - Update to Internet Message Format to Allow Group Syntax in the "From:" and "Sender:" Header Fields](https://tools.ietf.org/html/rfc6854 )
+    * 2008-10 [RFC 5322 - Internet Message Format](https://tools.ietf.org/html/rfc5322 )
+    * 2001-04 [RFC 2822 - Internet Message Format](https://tools.ietf.org/html/rfc2822 )
+
+이 문서의 머리말은 다음과 같이 시작한다.
+
+>
+By 1977, the Arpanet employed several informal standards for the text messages (mail) sent among its host computers. It was felt necessary to codify these practices and provide for those features that seemed imminent.  
+<br>
+1977 년 Arpanet은 호스트 컴퓨터간에 전송된 텍스트 메시지(**메일**)에 대해 여러 가지 비공식 표준을 사용했습니다. 이러한 관습을 문서화하고 임박한 기능을 제공하는 것이 필요하다고 느꼈습니다. 
+
 
 ## RFC 2045
 
