@@ -3,7 +3,7 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2019-06-13 08:59:57 +0900
+updated : 2019-06-13 22:38:25 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -47,6 +47,18 @@ User-Agent: curl/7.54.0
 Accept: */*
 Content-Type: text/html; charset=UTF=8
 Location: http://xxx...
+```
+
+User-Agent를 지정하는 두 가지 방법
+
+```sh
+$ curl \
+> -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0" \
+> http://localhost:8080
+
+$ curl -A \
+> "Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0" \
+> http://localhost:8080
 ```
 
 
