@@ -608,7 +608,7 @@ keyboard:
 how-to:
     - {fileName: how-to}
 http:
-    - {fileName: http-message}
+    - {fileName: http}
     - {fileName: HTTP-no-Kyokasho}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
     - {fileName: httpbin.org}

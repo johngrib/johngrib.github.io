@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : HTTP 메시지
+title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2018-09-16 16:12:32 +0900
+updated : 2019-06-13 23:19:47 +0900
 tag     : http
 toc     : true
 public  : true
@@ -12,10 +12,6 @@ latex   : false
 ---
 * TOC
 {:toc}
-
-# 개요
-
-HTTP로 메시지를 주고 받는 방식에 대해 설명한다.
 
 # Request
 
