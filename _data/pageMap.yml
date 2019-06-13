@@ -692,7 +692,7 @@ curl:
     summary: 'transfer a URL'
     parent: command-line
     url: /wiki/curl
-    updated: '2019-06-12 22:45:09 +0900'
+    updated: '2019-06-13 08:59:57 +0900'
     children: []
 cut:
     type: wiki
