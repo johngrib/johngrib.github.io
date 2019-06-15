@@ -2,7 +2,7 @@
 layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
-updated : 2019-05-30 23:56:53 +0900
+updated : 2019-06-15 09:26:07 +0900
 tag     : http
 toc     : true
 public  : true
@@ -71,7 +71,7 @@ URL 포맷은 크게 세 부분으로 이루어져 있다.
 예를 들어 `http://johngrib.github.io/wiki/URI/index.html`라는 URL이 있다면 다음과 같이 파악할 수 있다.
 
 * scheme: `http://`
-* 서버의 인터넷 주소: `johngrib.github.io`
+* 호스트: `johngrib.github.io`
 * 리소스: `/wiki/URI/index.html`
 
 ### fragment
