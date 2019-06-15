@@ -3,7 +3,7 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2019-06-15 12:33:05 +0900
+updated : 2019-06-15 17:24:45 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -63,10 +63,18 @@ $ curl -A \
 
 ## body 지정
 ```sh
+$ # form 보내기
+$ curl \
+> -d name="John Grib" \
+> -d hobby="coding" \
+> https://httpbin.org/anything
+
+$ # json 보내기
 $ curl -d '{"name":"john"}' \
 > -H "Content-Type: application/json" \
 > https://httpbin.org/anything
 
+$ # json 파일 이름을 지정하여 파일 내용 보내기
 $ curl -d @test.json \
 > -H "Content-Type: application/json" \
 > https://httpbin.org/anything
