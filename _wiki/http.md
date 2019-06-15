@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2019-06-15 10:10:25 +0900
+updated : 2019-06-15 17:04:15 +0900
 tag     : http
 toc     : true
 public  : true
@@ -12,6 +12,14 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+# Documents
+
+* 1991 [The Original HTTP as defined in 1991](https://www.w3.org/Protocols/HTTP/AsImplemented.html )
+    * 1.0이 유명해진 이후 HTTP/0.9 라고 불리게 되었다.
+* 1996-05 [RFC 1945](https://tools.ietf.org/html/rfc1945 ): HTTP/1.0
+* 1997-01 [RFC 2068](https://tools.ietf.org/html/rfc2068 ): HTTP/1.1
+* 2015-05 [RFC 7540](https://tools.ietf.org/html/rfc7540 ): HTTP/2
 
 # Request
 
