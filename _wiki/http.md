@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2019-06-13 23:19:47 +0900
+updated : 2019-06-15 10:02:20 +0900
 tag     : http
 toc     : true
 public  : true
@@ -253,6 +253,31 @@ Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF
 ### 412: Precondition Failed
 ### 413: Request Entity Too Large
 ### 414: Request-URI Too Large
+
+[RFC 7231 - 6.5.12 414 URI Too Long](https://tools.ietf.org/html/rfc7231#section-6.5.12 )
+
+요청 URL이 너무 길다.
+
+다음 글이 읽어볼 만 하다.
+
+[WWW FAQs: What is the maximum length of a URL?](https://boutell.com/newfaq/misc/urllength.html )
+
+링크된 글을 요약하자면 다음과 같다.
+
+* HTTP 사양에서 URL 길이에 제한은 없다.
+* 그러나 각 브라우저나 웹 서버는 길이에 제한을 두기도 한다.
+* 매우 긴 URL은 대체로 바람직하지 않다. 의미를 잘 담을 수 있는 압축적인 URL을 궁리하자.
+* 호환성을 위해 2000자 이상은 쓰지 않는 것이 좋겠다.
+
+| Browser           | limit | tested  | link                                                                  |
+|-------------------|-------|---------|-----------------------------------------------------------------------|
+| Internet Explorer | 2,083 |         | [Maximum URL length is 2,083 characters in Internet Explorer][ie2083] |
+| Firefox           | ?     | 10,000  |                                                                       |
+| Safari            | ?     | 80,000  |                                                                       |
+| Opera             | ?     | 190,000 |                                                                       |
+
+[ie2083]: https://support.microsoft.com/en-us/help/208427/maximum-url-length-is-2-083-characters-in-internet-explorer 
+
 ### 415: Unsupported Media Type
 ### 416: Requested range not satisfiable
 ### 417: Expectation Failed
