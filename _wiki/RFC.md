@@ -3,7 +3,7 @@ layout  : wiki
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2019-06-12 23:09:19 +0900
+updated : 2019-06-15 19:03:51 +0900
 tag     : rfc
 toc     : true
 public  : true
@@ -29,6 +29,39 @@ RFC에는 다양한 종류가 있고, 개개의 RFC는 'RFC 1945'처럼 RFC+숫�
 이미 정의된 포맷을 새로운 RFC에서 참조하기도 합니다.
 RFC에 문제가 있을 때는 새로운 버전의 RFC로 갱신되기도 하고,
 완전히 새로운 버전이 완성되면 폐기(obsolete)되는 일도 있습니다.
+
+# 관련 있는 문서 모음
+
+[rfcgraph](http://www.lysator.liu.se/~creideiki/rfcgraph/ )
+
+## HTTP
+
+![rfc-graph](/post-img/rfc/rfc_graph.jpg)
+
+이미지 출처: "리얼월드 HTTP" 36쪽.
+
+* 1977-11-21 [RFC-733][RFC-733] STANDARD FOR THE FORMAT OF ARPA NETWORK TEXT MESSAGES(1)
+* 1982-08-13 [RFC-822][RFC-822] STANDARD FOR THE FORMAT OF ARPA INTERNET TEXT MESSAGES
+* 1983-06 [RFC-850][RFC-850] Standard for Interchange of USENET Messages
+* 1986-02 [RFC-977][RFC-977] Network News Transfer Protocol
+* 1988-03 [RFC-1049][RFC-1049] A CONTENT-TYPE HEADER FIELD FOR INTERNET MESSAGES
+* 1991 [The Original HTTP as defined in 1991](https://www.w3.org/Protocols/HTTP/AsImplemented.html )
+* 1992-06 [RFC-1341][RFC-1341] MIME(Multipurpose Internet Mail Extensions)
+* 1994-03 [RFC-1590][RFC-1590] Media Type Registration Procedure
+* 1994-12 [RFC-1738][RFC-1738] Uniform Resource Locators (URL)
+* 1995-06 [RFC-1808][RFC-1808] Relative Uniform Resource Locators
+* 1995-11 [RFC-1866][RFC-1866] Hypertext Markup Language - 2.0
+* 1996-05 [RFC-1945][RFC-1945] Hypertext Transfer Protocol -- HTTP/1.0
+* 1996-11 [RFC-2045][RFC-2045] Multipurpose Internet Mail Extensions (MIME) Part One
+* 1996-11 [RFC-2046][RFC-2046] Multipurpose Internet Mail Extensions (MIME) Part Two
+* 1996-11 [RFC-2047][RFC-2047] Multipurpose Internet Mail Extensions (MIME) Part Three
+* 1996-11 [RFC-2048][RFC-2048] Multipurpose Internet Mail Extensions (MIME) Part Four
+* 1996-11 [RFC-2049][RFC-2049] Multipurpose Internet Mail Extensions (MIME) Part Five
+* 1997-01 [RFC 2068](https://tools.ietf.org/html/rfc2068 ): HTTP/1.1
+* 2000-06 [RFC-2854][RFC-2854] The 'text/html' Media Type
+* 2001-01 [RFC-3023][RFC-3023] XML Media Types
+* 2015-05 [RFC 7540](https://tools.ietf.org/html/rfc7540 ): HTTP/2
+
 
 # 몇몇 RFC 소개
 ## RFC 822
@@ -149,3 +182,25 @@ interface LoggerInterface
 # 참고문헌
 
 * 리얼월드 HTTP 시부카와 요시키 저/김성훈 역 / 한빛미디어 / 2019년 04월 19일
+
+
+[RFC-7540]: https://tools.ietf.org/html/rfc7540
+[RFC-3023]: https://tools.ietf.org/html/rfc3023
+[RFC-2854]: https://tools.ietf.org/html/rfc2854
+[RFC-2068]: https://tools.ietf.org/html/rfc2068
+[RFC-2049]: https://tools.ietf.org/html/rfc2049
+[RFC-2048]: https://tools.ietf.org/html/rfc2048
+[RFC-2047]: https://tools.ietf.org/html/rfc2047
+[RFC-2046]: https://tools.ietf.org/html/rfc2046
+[RFC-2045]: https://tools.ietf.org/html/rfc2045
+[RFC-1945]: https://tools.ietf.org/html/rfc1945
+[RFC-1866]: https://tools.ietf.org/html/rfc1866
+[RFC-1808]: https://tools.ietf.org/html/rfc1808
+[RFC-1738]: https://tools.ietf.org/html/rfc1738
+[RFC-1590]: https://tools.ietf.org/html/rfc1590
+[RFC-1341]: https://tools.ietf.org/html/rfc1341
+[RFC-1049]: https://tools.ietf.org/html/rfc1049
+[RFC-977]: https://tools.ietf.org/html/rfc977
+[RFC-850]: https://tools.ietf.org/html/rfc850
+[RFC-822]: https://tools.ietf.org/html/rfc822
+[RFC-733]: https://tools.ietf.org/html/rfc733
