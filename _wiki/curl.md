@@ -3,7 +3,7 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2019-06-13 22:38:25 +0900
+updated : 2019-06-15 12:33:05 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -60,6 +60,22 @@ $ curl -A \
 > "Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0" \
 > http://localhost:8080
 ```
+
+## body 지정
+```sh
+$ curl -d '{"name":"john"}' \
+> -H "Content-Type: application/json" \
+> https://httpbin.org/anything
+
+$ curl -d @test.json \
+> -H "Content-Type: application/json" \
+> https://httpbin.org/anything
+```
+
+* `-d`, `--data` 옵션을 쓰면 body를 지정할 수 있다.
+* `-d @FILE_NAME`: 텍스트 파일의 내용을 보낼 수 있다.
+* `--data-urlencode`: URL encode를 사용한다.
+* `--data-binary`: 바이너리 데이터를 전송할 때 사용한다.
 
 
 ## http 버전 지정
