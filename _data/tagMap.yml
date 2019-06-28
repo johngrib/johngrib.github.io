@@ -548,6 +548,7 @@ til:
     - {fileName: golang-mod}
     - {fileName: golang-subtests}
     - {fileName: golang-the-laws-of-reflection}
+    - {fileName: http-0-9}
     - {fileName: King-O-The-Cats}
     - {fileName: mathdict}
     - {fileName: Object-equals}
@@ -609,6 +610,7 @@ how-to:
     - {fileName: how-to}
 http:
     - {fileName: http}
+    - {fileName: http-0-9}
     - {fileName: HTTP-no-Kyokasho}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
     - {fileName: httpbin.org}
@@ -640,6 +642,8 @@ sort:
 drama:
     - {fileName: Las-chicas-del-cable}
     - {fileName: Walking-Dead}
+dictionary:
+    - {fileName: latency}
 letter:
     - {fileName: letter-case}
 case:

@@ -1550,6 +1550,14 @@ http:
     url: /wiki/http
     updated: '2019-06-15 19:05:33 +0900'
     children: []
+http-0-9:
+    type: wiki
+    title: '(번역) 1991년에 정의된 HTTP 문서(HTTP/0.9)'
+    summary: 'The Original HTTP as defined in 1991'
+    parent: what
+    url: /wiki/http-0-9
+    updated: '2019-06-27 22:37:52 +0900'
+    children: []
 HTTP-no-Kyokasho:
     type: wiki
     title: '(책) 그림으로 배우는 HTTP & 네트워크'
@@ -1677,6 +1685,14 @@ Las-chicas-del-cable:
     parent: movie
     url: /wiki/Las-chicas-del-cable
     updated: '2018-02-05 10:20:21 +0900'
+    children: []
+latency:
+    type: wiki
+    title: 지연시간(Latency)
+    summary: '요청이 처리되길 기다리는 시간'
+    parent: what
+    url: /wiki/latency
+    updated: '2019-06-28 17:08:16 +0900'
     children: []
 legend:
     type: wiki
@@ -2645,7 +2661,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, kanban-scrum, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
+    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, http-0-9, indent-style, kanban-scrum, latency, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
