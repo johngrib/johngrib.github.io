@@ -298,7 +298,6 @@ comment : false
     * [[floating-point]]
     * [[gray-code]]
     * [[groupId-artifactId]]
-    * [[http-0-9]]
     * [[http]]
     * [[indent-style]]
     * [[kanban-scrum]]
