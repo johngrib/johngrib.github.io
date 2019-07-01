@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2019-07-01 16:51:26 +0900
+updated : 2019-07-01 21:16:52 +0900
 tag     : http
 toc     : true
 public  : true
@@ -112,6 +112,7 @@ GET은 서버에 리소스 정보를 요청할 때 사용한다.
 [RFC 2616 - 9.5 POST](https://tools.ietf.org/html/rfc2616#section-9.5 )
 
 * 지정한 리소스에 데이터를 전송할 때 사용한다.
+* 멱등성(idempotent)을 갖지 않는다.
 
 >
 - Annotation of existing resources;
@@ -124,15 +125,21 @@ GET은 서버에 리소스 정보를 요청할 때 사용한다.
 * 폼 전송의 결과 등과 같은 데이터 블록을 데이터 처리 프로세스에 전송한다.
 * 추가(append) 작업으로 데이터베이스를 확장한다.
 
+요청이 성공했을 경우 다음과 같은 상태 코드를 돌려주곤 한다.
+
+| 201 Created | 새로운 리소스가 생성되었음. |
+|             |                             |
+
 #### PUT
 
 [RFC 2616 - 9.6 POST](https://tools.ietf.org/html/rfc2616#section-9.6 )
 
 * 지정한 리소스에 데이터를 입력해달라는 요청을 보낼 때 사용한다.
+* 멱등성을 갖는다.
 
 #### DELETE
 
-[RFC 2616 - 9.7 POST](https://tools.ietf.org/html/rfc2616#section-9.7 )
+[RFC 2616 - 9.7 DELETE](https://tools.ietf.org/html/rfc2616#section-9.7 )
 
 * 지정한 리소스를 삭제하는 요청을 보낼 때 사용한다.
 

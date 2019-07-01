@@ -1548,7 +1548,7 @@ http:
     summary: null
     parent: what
     url: /wiki/http
-    updated: '2019-07-01 16:51:26 +0900'
+    updated: '2019-07-01 21:16:52 +0900'
     children: []
 HTTP-no-Kyokasho:
     type: wiki
