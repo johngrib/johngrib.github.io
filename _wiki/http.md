@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2019-07-01 16:31:55 +0900
+updated : 2019-07-01 16:51:26 +0900
 tag     : http
 toc     : true
 public  : true
@@ -135,6 +135,12 @@ GET은 서버에 리소스 정보를 요청할 때 사용한다.
 [RFC 2616 - 9.7 POST](https://tools.ietf.org/html/rfc2616#section-9.7 )
 
 * 지정한 리소스를 삭제하는 요청을 보낼 때 사용한다.
+
+요청이 성공했을 경우 일반적으로 다음과 같은 상태 코드가 돌아온다.
+
+| 204 No Content | 삭제에 성공하여, 해당 리소스가 없음.       |
+| 200 OK         | 삭제 성공.                                 |
+| 202 Accepted   | 삭제 요청을 받아들였음. 나중에 삭제하겠다. |
 
 # Response
 
