@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2019-06-15 19:05:33 +0900
+updated : 2019-07-01 16:31:55 +0900
 tag     : http
 toc     : true
 public  : true
@@ -112,6 +112,17 @@ GET은 서버에 리소스 정보를 요청할 때 사용한다.
 [RFC 2616 - 9.5 POST](https://tools.ietf.org/html/rfc2616#section-9.5 )
 
 * 지정한 리소스에 데이터를 전송할 때 사용한다.
+
+>
+- Annotation of existing resources;
+- Posting a message to a bulletin board, newsgroup, mailing list, or similar group of articles;
+- Providing a block of data, such as the result of submitting a form, to a data-handling process;
+- Extending a database through an append operation.
+
+* 존재하는 리소스에 주석을 단다.
+* 게시판, 뉴스그룹, 메일링 리스트, 또는 비슷한 종류의 그룹에 메시지를 등록한다.
+* 폼 전송의 결과 등과 같은 데이터 블록을 데이터 처리 프로세스에 전송한다.
+* 추가(append) 작업으로 데이터베이스를 확장한다.
 
 #### PUT
 
