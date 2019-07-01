@@ -2,7 +2,7 @@
 layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
-updated : 2019-06-15 10:09:39 +0900
+updated : 2019-07-01 21:45:16 +0900
 tag     : http
 toc     : true
 public  : true
@@ -156,6 +156,27 @@ URI가 너무 길때 반환되는 414 스테이터스 코드가 RFC 7231에서 �
 
 [ie2083]: https://support.microsoft.com/en-us/help/208427/maximum-url-length-is-2-083-characters-in-internet-explorer 
 
+## (책) RESTful Web API 인용: URI와 URL의 차이에 대하여
+
+* 4장 하이퍼미디어, 59쪽
+
+> URL은 리소스를 식별하는 짧은 문자열이다. URI 역시 리소스를 식별하는 짧은 문자열이다. 모든 URL은 URI이다. 둘 모두 표준 RFC 3986에서 설명한다.  
+차이점이 뭘까? 이 책의 내용에서는 URI에서는 표현이 있다는 보장이 없다는 것이 차이점이다.
+URI는 식별자일 뿐이다. URL은 주소의 디레퍼런싱이 가능한 식별자다.
+이 말은 컴퓨터가 URL을 가지고 하부 리소스의 표현을 어떻게든 얻어올 수 있다는 말이다.  
+http: URI를 보면 컴퓨터가 HTTP GET 요청을 통해 표현을 얻어온다는 것을 알 것이다.
+ftp: URI를 보면 FTP 클라이언트를 켜고 특정 FTP 명령을 수행해서 컴퓨터가 표현을 가져올 수 있다.
+이 URI는 URL이다. 이것들은 연계된 프로토콜, 즉 이 리소스의 표현을 가져올 (컴퓨터가 따를 수 있는 매우 상세한) 규칙이 있다.  
+이제 URI지만 URL은 아닌 예를 보자. 바로 urn:isbn:9781449358063이다. 이것도 리소스를 지정한다.  이 책의 출판본이다.
+실제 출판된 책 중 하나를 지정하는 것은 아니고 전체 판의 추상적인 개념을 나타낸다(리소스가 무엇이든 될 수 있음을 기억하자).
+이 URI가 URL이 아닌 이유는 프로토콜이 없기 때문이다. 컴퓨터가 이 리소스의 표현을 얻어오는 일은 불가능하다.
+
+이 책의 저자는 매우 단순한 기준을 제시한다.
+
+* URI는 식별자일 뿐이다.
+* URL은 주소의 디레퍼런싱이 가능한 식별자다.
+
+즉, 이 책의 관점에서는 어떤 URI가 리소스의 표현(representation)을 가져올 수 있다면 그것은 URL 이다.
 
 # Links
 
@@ -164,9 +185,5 @@ URI가 너무 길때 반환되는 414 스테이터스 코드가 RFC 7231에서 �
 
 # 참고문헌
 
-* HTTP 완벽 가이드
-    * David Gourley, Brian Totty, Marjorie Sayer, Sailu Reddy, Anshu Aggarwal 지음 (2002, O'Reilly Media)
-    * 이응준, 정상일 옮김 (2016 초판 2쇄, Republic of Korea, Insight Press 2014(인사이트))
-    * [교보문고](http://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788966261208 )
-    * [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=49731592 )
-
+* HTTP 완벽 가이드 / 데이빗 고울리, 브라이언 토티, 마조리 세이어, 세일루 레디, 안슈 아가왈 공저 / 이응준, 정상일 공역 / 인사이트(insight) / 2014년 12월 15일
+* RESTful Web API / 레오나르드 리처드슨, 마이크 애먼슨, 샘 루비 공저 / 박세현, 박진형 공역 / 인사이트(insight) / 2017년 04월 17일
