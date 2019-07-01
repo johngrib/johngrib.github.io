@@ -3,7 +3,7 @@ layout  : wiki
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2019-06-15 19:03:51 +0900
+updated : 2019-07-01 21:28:16 +0900
 tag     : rfc
 toc     : true
 public  : true
@@ -178,6 +178,20 @@ interface LoggerInterface
     public function log($level, $message, array $context = array());
 }
 ```
+
+## RFC 6570
+
+* URI Template
+* <https://tools.ietf.org/html/rfc6570 >
+
+다음과 같은 형식의 URI Template를 제안한다.
+
+```text
+http://example.com/~{username}/
+http://example.com/dictionary/{term:1}/{term}
+http://example.com/search{?q,lang}
+```
+
 
 # 참고문헌
 
