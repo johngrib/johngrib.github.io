@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2018-12-10 21:23:00 +0900
+updated : 2019-07-02 11:38:06 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -189,12 +189,22 @@ iabbr <expr> __branch system("git rev-parse --abbrev-ref HEAD")
 
 이를 응용하면 여러 가지 흑마법이 가능하지만, 이 글의 주제는 아니므로 다루지 않는다.
 
+# 자동완성 플러그인 사용하기
 
-# youcompleteme + UltiSnips
+이 글에서는 다음의 세 플러그인을 다룬다.
+
+* youcompleteme
+* coc.nvim
+* UltiSnips
+
+나는 2019년 6월 이전까지는 youcompleteme + UltiSnips 조합으로 사용해왔으나,
+그 이후로는 coc.nvim + UltiSnips 조합으로만 사용하고 있다.
+
+## youcompleteme + UltiSnips
 
 ycm과 UltiSnips를 활용하면 편리한 자동완성 환경을 갖출 수 있다.
 
-## ycm 설치
+### ycm 설치
 
 경험상 ycm을 문제 없이 설치하려면 다음과 같이 해야 했다.
 
@@ -227,7 +237,7 @@ $ python3 ./install.py --clang-completer --go-completer --rust-completer --js-co
 ```
 
 
-## ycm 설정
+### ycm 설정
 
 다음은 나의 ycm 설정 전체이다.
 
@@ -243,7 +253,7 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_filetype_blacklist = {}
 ```
 
-### 키 설정
+#### 키 설정
 
 나는 첫번째와 두 번째, list completion 키를 `<C-n>`, `<C-p>`를 설정해 사용하고 있다.
 
@@ -255,7 +265,7 @@ let g:ycm_key_list_previous_completion=['<C-p>']
 * 기본값인 `<Tab>`을 쓰면 UltiSnips의 `<Tab>`과 충돌하기 때문에 ycm/UltiSnips 둘 중 하나는 바꿔줘야 한다.
 * vim은 기본적으로 `<C-n>`, `<C-p>`를 사용해 단어 완성을 해주는데 ycm을 이렇게 설정해주면 vim 기본 동작이 확장된 것처럼 작동해서 사용감이 좋다.
 
-### python 경로 설정
+#### python 경로 설정
 
 ```viml
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
@@ -264,7 +274,7 @@ let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 * ycm은 python을 사용하므로 경로를 지정해 줘야 돌아간다.
 * 위치를 모르겠다면(그럴리가) `$ which python3`로 알아낼 수 있다.
 
-### 자동 완성 소스로 주석과 문자열 추가 지정
+#### 자동 완성 소스로 주석과 문자열 추가 지정
 
 ```viml
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
@@ -275,7 +285,7 @@ let g:ycm_complete_in_comments = 1
 * 이렇게 하면 주석과 문자열도 자동 완성에 사용할 소스로 수집한다.
 * 주석에 들어간 단어들이 자동완성되면 은근히 편리하다.
 
-### 한 글자만 입력해도 작동할 것
+#### 한 글자만 입력해도 작동할 것
 
 ```viml
 let g:ycm_min_num_of_chars_for_completion = 1
@@ -283,7 +293,7 @@ let g:ycm_min_num_of_chars_for_completion = 1
 
 * 이렇게 하면 한 글자만 입력해도 자동완성 후보 목록을 보여준다.
 
-### 블랙리스트 목록 비우기
+#### 블랙리스트 목록 비우기
 
 ```viml
 let g:ycm_filetype_blacklist = {}
@@ -308,7 +318,7 @@ let g:ycm_filetype_blacklist = {
 ```
 
 
-## UltiSnips 설치
+### UltiSnips 설치
 
 UltiSnips의 설치는 쉽다. 플러그인 관리자는 vim-plug.
 
@@ -316,7 +326,7 @@ UltiSnips의 설치는 쉽다. 플러그인 관리자는 vim-plug.
 Plug 'SirVer/ultisnips'
 ```
 
-## UltiSnips 설정
+### UltiSnips 설정
 
 다음은 나의 ultisnips 설정이다.
 
@@ -329,7 +339,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 ```
 
-### UltiSnips 확장 단축키 지정
+#### UltiSnips 확장 단축키 지정
 
 ```viml
 let g:UltiSnipsExpandTrigger="<Tab>"
@@ -337,7 +347,7 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 
 * ycm 목록에 나온 snippet 키워드를 선택한 다음 `<Tab>`을 누르면 자동 완성이 되도록 한다.
 
-### snippet 완성 후 점프 키 지정
+#### snippet 완성 후 점프 키 지정
 
 ```viml
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
@@ -347,7 +357,7 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 * 완성 후 입력 위치를 `<Tab>`과 `<S-Tab>`(shift + tab)으로 전/후로 이동할 수 있다.
 * 자세한 사용법은 좀 더 밑에서...
 
-### snippet 편집기를 여는 방향 지정
+#### snippet 편집기를 여는 방향 지정
 
 ```viml
 let g:UltiSnipsEditSplit="vertical"
@@ -358,7 +368,7 @@ let g:UltiSnipsEditSplit="vertical"
 * 이 옵션은 snippet 파일을 불러왔을 때 화면을 좌우로 분할한다는 것을 의미한다.
 * 취향대로 설정하자.
 
-### snippet 위치 지정
+#### snippet 위치 지정
 
 ```viml
 " let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips']
@@ -368,7 +378,7 @@ let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 * 나만의 snippets 경로를 지정할 수 있다.
 * `~/.vim/UltiSnips/`에 snippet 파일을 모아놓고, 위와 같이 설정하면 된다.
 
-## ycm, UltiSnips의 기본적인 사용
+### ycm, UltiSnips의 기본적인 사용
 
 `~/.vim/UltiSnip/javascript.snippets` 파일에
 다음과 같은 snippet이 있다고 하자.
@@ -418,7 +428,7 @@ endsnippet
 `<Tab>`과 `<S-Tab>`으로 `${1}`과 `${2}`를 왔다갔다 할 수 있다.
 
 
-## UltiSnips로 셸 명령 실행 결과를 가져오기
+### UltiSnips로 셸 명령 실행 결과를 가져오기
 
 흥미롭게도 UltiSnips는 셸 명령어나 셸 스크립트 실행 결과를 사용할 수 있다.
 
@@ -436,13 +446,13 @@ endsnippet
 
 `abbr <expr> system(...)`과 비슷하니, 편리하게 사용하도록 하자.
 
-## UltiSnips에서 python 함수 정의해 사용하기
+### UltiSnips에서 python 함수 정의해 사용하기
 
 ```viml
 :help Ultisnips-python
 ```
 
-### 예제: 오른쪽에 대문자 나타나게 하기
+#### 예제: 오른쪽에 대문자 나타나게 하기
 
 다음 snippet을 보자.
 
@@ -465,7 +475,7 @@ asdf oh...          ASDF OH...
 
 가장 오른쪽의 ... 까지 합하여 전부 30자이며, 오른쪽에는 내가 작성한 `asdf oh...`의 대문자가 나타나는 것이다.
 
-### 예제: 입력한 두 단어의 순서 바꾸기
+#### 예제: 입력한 두 단어의 순서 바꾸기
 
 ```perl
 snippet "([^\s].*)\.return" "Return (postfix)" r
@@ -485,7 +495,7 @@ return hello
 * `r` : 정규표현식을 사용하겠다는 의미이다.
 * `match.group(1)`: `([^\s].*)`에 매치된 결과를 가져온다. `hello`가 해당.
 
-### 예제: html 태그 자동완성하기
+#### 예제: html 태그 자동완성하기
 
 `<div>`를 작성한 이후에 `</div>`를 또 작성하는 일은 귀찮다.
 
@@ -514,7 +524,7 @@ endsnippet
 
 ![tag](https://user-images.githubusercontent.com/1855714/48975289-43f77000-f0b0-11e8-9ef2-9b454f8199be.gif)
 
-### 예제: javascript import
+#### 예제: javascript import
 
 다음은 웹 서핑을 하다가 찾아낸 snippet인데 특히 javascript 사용자에게 유용할 듯하여 소개한다.
 
@@ -541,7 +551,7 @@ snip.rv = formatVariableName(t[1])
 endsnippet
 ```
 
-## UltiSnips에서 vimscript 사용하기
+### UltiSnips에서 vimscript 사용하기
 
 `!v`를 사용하면 vimscript를 사용할 수 있다.
 
@@ -564,6 +574,63 @@ Indent is: 0.
 ```
     Indent is: 4.
 ```
+
+## coc.nvim
+
+* coc.nvim은 VSCode와 비슷한 수준의 자동완성 기능을 제공하는 것을 목표로 하는 vim 플러그인이다.
+* 사용해보면 매우 만족스럽다. VSCode 만큼은 된다.
+    * youcompleteme에서 잘 안 되는 언어들이 매우 잘 되며, php/javascript 자동완성도 훌륭하다.
+    * UltiSnips와의 연동도 youcompleteme 만큼은 된다.
+
+### coc.nvim 설치
+
+Node.js와 yarn을 먼저 설치한 다음, `.vimrc`에서 다음과 같이 플러그인을 정의해주면 된다.
+
+```viml
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+```
+
+### 필요한 프로그래밍 언어의 랭귀지 서버 설치
+
+1. coc.nvim의 [Language-servers](https://github.com/neoclide/coc.nvim/wiki/Language-servers ) 문서에서 내가 사용하는 언어를 찾는다.
+2. 해당 언어 섹션에서 coc.nvim이 추천하는 랭귀지 서버 플러그인을 찾는다.
+3. 해당 랭귀지 서버 플러그인 저장소에 가서 추천하는 설치 방법으로 설치한다.
+
+보통은 `:CocInstall` 명령어를 사용해 필요한 언어의 랭귀지 서버를 설치하면 끝난다. 매우 간편하다.
+
+
+#### golang 랭귀지 서버 설치
+
+go 작성자들이 제공하는 `gopls`를 사용하도록 `coc-settings.json`에 다음과 같이 설정을 추가해주면 된다.
+
+`coc-settings.json` 파일은 `:CocConfig` 명령어를 입력하면 vim에서 바로 열 수 있다.
+
+```json
+{
+    "suggest.detailField": "abbr",
+    "suggest.enablePreview": false,
+    "languageserver": {
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["go"]
+        }
+    }
+}
+```
+
+#### php 랭귀지 서버 설치
+
+```viml
+:CocInstall coc-phpls
+```
+
+#### UltiSnips와의 연동
+
+```viml
+:CocInstall coc-ultisnips
+```
+
 
 # 문제 해결
 
