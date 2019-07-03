@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-06-30 22:55:37 +0900
+updated : 2019-07-03 22:43:04 +0900
 tag     : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 # 책
 
+* 2019-07-03 RESTful Web API
 * 2019-06-30 러닝 HTTP/2
 * 2019-06-24 리얼월드 HTTP
 * 2019-06-15 전생검신 51권 백련교의 과거
