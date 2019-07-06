@@ -3,7 +3,7 @@ layout  : wiki
 title   : Continuous Integration(지속적 통합)
 summary : 
 date    : 2018-07-06 10:46:27 +0900
-updated : 2019-07-06 22:56:35 +0900
+updated : 2019-07-06 23:17:44 +0900
 tag     : 
 toc     : true
 public  : true
@@ -80,9 +80,33 @@ usually each person integrates at least daily - leading to multiple integrations
     * 새로운 소프트웨어 업데이트 검증 시간 최소화.
     * 배포 소요 시간 최소화.
 
+# (책)마이크로서비스 아키텍처 구축
+
+챕터 6, 153쪽.
+
+> CI를 통한 핵심 목표는 모든 사람이 서로 동기를 맞추는 것이며,
+그것은 새롭게 체크인된 코드가 기존 코드와 적절히 통합됨을 보장함으로써 달성할 수 있다.
+이를 위해 CI 서버는 코드의 커밋을 감지하고, 체크아웃하고, 코드의 컴파일과 테스트 통과를 확인하는 것과 같은 몇 가지 검증을 한다.  
+CI 과정의 일부로 우리는 테스트를 위해 실행할 서비스를 배포하는 것처럼 추가 확인을 위한 산출물(artifact)을 자주 생성한다.
+이상적으로 각각 한 번씩만 이 산출물을 빌드하고 그 버전의 코드에 대한 배포로 사용하기 원한다.
+이것은 같은 작업을 반복하지 않기 위한 것이며, 이를 통해 배포된 산출물이 테스트에 사용된 것과 동일한 것임을 확신할 수 있다.
+이들 산출물의 재사용을 위해 우리는 CI 도구나 별도 시스템에서 제공되는 저장소와 같은 곳에 산출물을 저장한다.
+
+Jez Humble의 3 가지 질문.
+
+>
+* 하루에 한번 메인 브랜치에 체크인하는가?
+* 변경을 확인할 테스트 집합이 있는가?
+* 빌드가 깨졌을 때 팀이 그것을 최우선으로 해결하는가?
+
+
 
 
 # Links
 
 * [Continuous Integration(Martin Fowler)](https://martinfowler.com/articles/continuousIntegration.html )
 * [지속적 통합이란 무엇입니까? (aws)](https://aws.amazon.com/ko/devops/continuous-integration/ )
+
+# 참고문헌
+
+* 마이크로서비스 아키텍처 구축 / 샘 뉴먼 저 / 정성권 역 / 한빛미디어 / 초판 2쇄 2017년 05월 01일 / 원서 : Building Microservices: Designing Fine-Grained Systems
