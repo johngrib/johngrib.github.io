@@ -3,7 +3,7 @@ layout  : wiki
 title   : Continuous Integration(지속적 통합)
 summary : 
 date    : 2018-07-06 10:46:27 +0900
-updated : 2018-07-10 18:40:25 +0900
+updated : 2019-07-06 22:56:35 +0900
 tag     : 
 toc     : true
 public  : true
@@ -49,7 +49,7 @@ usually each person integrates at least daily - leading to multiple integrations
 
 ## Building a Feature with Continuous Integration
 
-몇 시간 안애 작업을 마칠 수 있는 작은 기능을 개발한다 치자.
+몇 시간 안에 작업을 마칠 수 있는 작은 기능을 개발한다 치자.
 
 1. 최신 통합 소스를 로컬에 다운받는다.
 2. 코드를 수정하고, 테스트 코드를 추가한다.
