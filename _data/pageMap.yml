@@ -2318,6 +2318,14 @@ Take-the-Bully-by-the-Horns:
     url: /wiki/Take-the-Bully-by-the-Horns
     updated: '2018-02-02 22:55:21 +0900'
     children: []
+test-double:
+    type: wiki
+    title: 'Test Double(테스트 더블)'
+    summary: null
+    parent: what
+    url: /wiki/test-double
+    updated: '2019-07-07 09:46:14 +0900'
+    children: []
 TETRIS-EFFECT:
     type: wiki
     title: '(책) 테트리스 이펙트'
@@ -2653,7 +2661,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, kanban-scrum, latency, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
+    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, kanban-scrum, latency, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

@@ -537,6 +537,7 @@ science:
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
 test:
     - {fileName: ginkgo}
+    - {fileName: test-double}
 fzf:
     - {fileName: git-alias}
 til:
