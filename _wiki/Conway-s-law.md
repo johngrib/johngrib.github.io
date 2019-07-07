@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2018-02-20 09:00:21 +0900
+updated : 2019-07-07 14:19:14 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -13,20 +13,20 @@ latex   : false
 * TOC
 {:toc}
 
-## 개요
+# 개요
 
 > Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.[^1]
 
 * 소프트웨어 구조는 해당 소프트웨어를 개발한 조직의 커뮤니케이션 구조를 닮게 된다.
 
-### 멜빈 콘웨이(Melvin E. Conway)
+# 멜빈 콘웨이(Melvin E. Conway)
 
 * 멜빈 콘웨이는 컴퓨터 과학자이자, 해커이다.
 * SAVE라 불리는 Burroughs 220을 위한 어셈블러를 작성한 바 있다.
 
-## 해석
+# 인용과 해석
 
-### The Jargon File에 수록된 콘웨이의 법칙
+## The Jargon File에 수록된 콘웨이의 법칙
 
 [[The-Jargon-File]]의 [콘웨이의 법칙 항목](http://www.catb.org/jargon/html/C/Conways-Law.html)에는 다음과 같은 말이 있다.
 
@@ -34,7 +34,7 @@ latex   : false
 
 **하나의 컴파일러를 만들기 위해 4개의 팀이 조직된다면, 4단계로 빌드하는 컴파일러가 나오게 된다.**
 
-#### Tom Cheatham의 추가 해석
+## Tom Cheatham의 추가 해석
 
 > If a group of N persons implements a COBOL compiler, there will be N-1 passes. Someone in the group has to be the manager.
 
@@ -42,7 +42,7 @@ latex   : false
 
 * 관료제를 중시한 코볼 업계를 돌려 비판한 말이라고 할 수 있겠다.
 
-### 스티브 맥코넬이 설명한 콘웨이의 법칙
+## 스티브 맥코넬이 설명한 콘웨이의 법칙
 
 [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발}에서 스티브 맥코넬은 다음과 같이 설명한다.
 
@@ -52,7 +52,7 @@ latex   : false
 영웅 개발자를 고용하고, 그들에게 전권을 주며, 기적을 만들어 내기 위해 영웅들을 자유롭게 놔두는 회사는 결국 기발할지는 모르지만 에러도 무지하게 많은 제품을 만들어 낸다.
 비효율적인 프로세스를 실행하는 회사의 제품은 유치하고 둔한 반면, 효과적이고 최적화된 조직은 조화롭고 아주 만족스러운 소프트웨어를 만들어 낸다.[^3]
 
-### 프레드 브룩스가 설명한 콘웨이의 법칙
+## 프레드 브룩스가 설명한 콘웨이의 법칙
 
 [[Mythical-Man-Month]]의 "10장 기록물 가설"을 읽어보면 프레드 브룩스가 콘웨이의 법칙을 설명한다.
 
@@ -65,7 +65,7 @@ latex   : false
 
 
 
-## Links
+# Links
 
 * [CONWAY'S LAW](http://www.melconway.com/Home/Conways_Law.html): Conway 홈페이지에 소개된 Conway's law.
 * [How Do Committees Invent? - Melvin E. Conway](http://www.melconway.com/Home/Committees_Paper.html): 1968년 Conway's law가 소개된 콘웨이의 페이퍼.
