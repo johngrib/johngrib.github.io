@@ -674,6 +674,8 @@ naming:
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
+방법론:
+    - {fileName: persona}
 tip:
     - {fileName: private-constructor}
     - {fileName: use-java-primitive-type-for-performance}

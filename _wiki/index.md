@@ -302,6 +302,7 @@ comment : false
     * [[indent-style]]
     * [[kanban-scrum]]
     * [[latency]]
+    * [[persona]]
     * [[port-number-registry]]
     * [[RFC]]
     * [[rouge-supported-languages]]

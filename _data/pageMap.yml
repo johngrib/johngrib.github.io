@@ -1942,6 +1942,14 @@ PATTERN-ON-THE-STONE:
     url: /wiki/PATTERN-ON-THE-STONE
     updated: '2018-05-26 22:15:42 +0900'
     children: []
+persona:
+    type: wiki
+    title: 페르소나(persona)
+    summary: '페르소나 디자인 방법론'
+    parent: what
+    url: /wiki/persona
+    updated: '2019-07-08 16:07:45 +0900'
+    children: []
 php:
     type: wiki
     title: php
@@ -2661,7 +2669,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, kanban-scrum, latency, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
+    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, kanban-scrum, latency, persona, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
