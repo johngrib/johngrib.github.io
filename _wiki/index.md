@@ -303,6 +303,7 @@ comment : false
     * [[kanban-scrum]]
     * [[latency]]
     * [[persona]]
+    * [[polite-software]]
     * [[port-number-registry]]
     * [[RFC]]
     * [[rouge-supported-languages]]

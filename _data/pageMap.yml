@@ -1966,6 +1966,14 @@ phpbrew:
     url: /wiki/phpbrew
     updated: '2019-01-08 22:43:54 +0900'
     children: []
+polite-software:
+    type: wiki
+    title: '예의 바른 소프트웨어'
+    summary: 'Polite Software'
+    parent: what
+    url: /wiki/polite-software
+    updated: '2019-07-08 22:23:43 +0900'
+    children: []
 port-number-registry:
     type: wiki
     title: '알려진 포트 넘버 목록'
@@ -2669,7 +2677,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, kanban-scrum, latency, persona, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
+    children: [agile, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, kanban-scrum, latency, persona, polite-software, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
