@@ -314,6 +314,13 @@ devops:
     - {fileName: AWS-Auto-Scaling}
     - {fileName: Elastic-Load-Balancing}
     - {fileName: vagrant-docker-get-start}
+network:
+    - {fileName: bandwidth}
+    - {fileName: latency}
+performance:
+    - {fileName: bandwidth}
+    - {fileName: latency}
+    - {fileName: use-java-primitive-type-for-performance}
 bayes:
     - {fileName: Bayes-theorem}
     - {fileName: cookie-problem}
@@ -641,8 +648,6 @@ sort:
 drama:
     - {fileName: Las-chicas-del-cable}
     - {fileName: Walking-Dead}
-dictionary:
-    - {fileName: latency}
 letter:
     - {fileName: letter-case}
 case:
@@ -729,8 +734,6 @@ data-format:
     - {fileName: YAML}
 unit:
     - {fileName: units}
-performance:
-    - {fileName: use-java-primitive-type-for-performance}
 vagrant:
     - {fileName: vagrant-docker-get-start}
 docker:

@@ -289,6 +289,7 @@ comment : false
     * [[vimwiki]]
 * [[what]]
     * [[agile]]
+    * [[bandwidth]]
     * [[bootstrapping]]
     * [[braille-pattern-chars]]
     * [[Caesar-cipher]]

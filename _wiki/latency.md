@@ -3,7 +3,7 @@ layout  : wiki
 title   : 지연시간(Latency)
 summary : 요청이 처리되길 기다리는 시간
 date    : 2019-06-28 16:30:28 +0900
-updated : 2019-07-09 16:19:36 +0900
+updated : 2019-07-09 16:35:44 +0900
 tag     : network performance
 toc     : true
 public  : true
@@ -117,3 +117,7 @@ TCP 연결 지연시간은 초기화(TCP 핸드세이크)에 걸리는 시간만
 * 러닝 HTTP/2 / 스티븐 루딘, 하비에르 가르사 저/강재준 역 / 한빛미디어 / 2018년 01월 22일
 * 시스템 성능 분석과 최적화 / 브렌든 그레그 저 / 오현석, 서형국 공역 / 위키북스 / 2015년 12월 15일
 * TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
+
+# See Also
+
+* [[bandwidth]]{대역폭(Bandwidth)}
