@@ -317,6 +317,7 @@ devops:
 network:
     - {fileName: bandwidth}
     - {fileName: latency}
+    - {fileName: osi-model}
 performance:
     - {fileName: bandwidth}
     - {fileName: latency}

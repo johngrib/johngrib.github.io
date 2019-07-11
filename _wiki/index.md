@@ -303,6 +303,7 @@ comment : false
     * [[indent-style]]
     * [[kanban-scrum]]
     * [[latency]]
+    * [[osi-model]]
     * [[persona]]
     * [[polite-software]]
     * [[port-number-registry]]
