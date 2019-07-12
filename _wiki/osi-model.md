@@ -3,7 +3,7 @@ layout  : wiki
 title   : OSI 7 계층 모형
 summary : 네트워킹을 여러 계층에서 동작하는 별도의 기능으로 분할한 모델
 date    : 2019-07-10 16:37:12 +0900
-updated : 2019-07-11 16:25:13 +0900
+updated : 2019-07-12 21:44:14 +0900
 tag     : network
 toc     : true
 public  : true
@@ -130,6 +130,72 @@ $$
 커넥터나 케이블 같은 단순한 물리 장비를 제외하면 거의 모든 네트워킹 장비는 여러 계층에서 동작한다.
 예를 들어 라우터는 보통 3 계층과 연관돼 있지만 2계층과 1계층을 구현한 두 개 이상의 장비 인터페이스를 포함하고 있다.
 그보다 더 좋은 질문은 "장비가 동작하는 가장 높은 계층은 무엇입니까?" 가 될 것이다.
+
+# TCP/IP 모델과의 비교
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">OSI 모델</th>
+      <th colspan="2">TCP/IP 모델</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>7</td>
+      <td>Application(응용)</td>
+      <td rowspan="3">4</td>
+      <td rowspan="3">Application(응용)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Presentation(표현)</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Session(세션)</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Transport(전송)</td>
+      <td>3</td>
+      <td>Host to Host Transport(호스트 간 전송)</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Network(네트워크)</td>
+      <td>2</td>
+      <td>Internet(인터넷)</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Data Link(데이터링크)</td>
+      <td>1</td>
+      <td>Network Interface(네트워크 인터페이스)</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Physical(물리)</td>
+      <td></td>
+      <td>(하드웨어)</td>
+    </tr>
+  </tbody>
+</table>
+
+**TCP/IP 구조 모델은 4개 계층으로 이루어져 있다.**
+
+* OSI 모델의 7개 계층들 중 6개와 대응된다.
+    * TCP/IP 모델은 물리 계층을 설명하지 않는다.
+* TCP/IP 구조의 핵심 계층은 **호스트 간 전송 계층**과 **인터넷 계층**이다.
+    * 전송 계층에서 동작하는 핵심 프로토콜이 TCP, UDP.
+    * 인터넷 계층에서 동작하는 핵심 프로토콜이 IP, 라우팅 프로토콜.
+
+**왜 TCP/IP 모델을 OSI 모델로 설명하지 않는가?**
+
+* TCP/IP 프로토콜 슈트(suite)가 OSI 모델보다 먼저 개발됐기 때문.
+
+![tcpip](/post-img/osi-model/tcpip.jpg )  
+이미지 출처: TCP/IP 완벽 가이드 8장. 그림 8-3.
 
 # Links
 
