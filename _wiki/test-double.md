@@ -3,7 +3,7 @@ layout  : wiki
 title   : Test Double(테스트 더블)
 summary :
 date    : 2019-07-07 07:46:18 +0900
-updated : 2019-07-07 09:46:14 +0900
+updated : 2019-07-13 18:37:21 +0900
 tag     : test
 toc     : true
 public  : true
@@ -49,8 +49,95 @@ xunits 문서에서 잘 설명하고 있지만 마틴 파울러의 소개가 간
 * Mock은 호출했을 때 사전에 정의된 명세대로의 결과를 돌려주도록 미리 프로그램되어있다. 예상치 못한 호출이 있을 경우 예외를 던질 수 있으며, 모든 호출이 예상된 것이었는지 확인할 수 있다.
 
 
+## (책) xUnit 테스트 패턴에서의 용어 정리
+
+다음은 "xUnit 테스트 패턴"의 부록 B를 참고해 작성한 것이다.
+
+* **SUT**: System Under `Test`, 테스트 대상 시스템, 테스트를 하려는 대상.
+
+<table>
+  <thead>
+    <tr>
+      <th>패턴</th>
+      <th>목적</th>
+      <th>동작이 있는가</th>
+      <th>SUT에 간접 입력 주입</th>
+      <th>SUT 간접 출력 처리</th>
+      <th>테스트(테스터)가 제공하는 값</th>
+      <th>예제</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> 가짜 객체<br/>Fake Object </td>
+      <td>(실행할 수 없는) 테스트를 (빠르게) 실행</td>
+      <td>있음</td>
+      <td>없음</td>
+      <td>간접 출력을 사용함</td>
+      <td>없음</td>
+      <td>메모리 데이터베이스 에뮬레이터</td>
+    </tr>
+    <tr>
+      <td>더미 객체<br/>Dummy Object</td>
+      <td>속성이나 메소드 인자</td>
+      <td>없음</td>
+      <td>하지 않음</td>
+      <td>하지 않음</td>
+      <td>없음</td>
+      <td>
+        <code class="highlighter-rouge">Null</code>,<br/>
+        <code class="highlighter-rouge">'Ignored String'</code>,<br/>
+        <code class="highlighter-rouge">new Object</code>
+      </td>
+    </tr>
+    <tr>
+      <td>모의 객체<br/>Mock Object</td>
+      <td>SUT의 간접 출력 검증</td>
+      <td>있음</td>
+      <td>선택 사항</td>
+      <td>기대 값과 비교해 정확한지 검증</td>
+      <td>입력(선택 사항)과 기대 출력</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>임시 테스트 스텁<br/>Temporary Test Stub</td>
+      <td>아직 작성하지 않은 프로시저 코드 대신에 집어넣기 위해</td>
+      <td>있음</td>
+      <td>없음</td>
+      <td>간접 출력을 사용함</td>
+      <td>없음</td>
+      <td>메모리 데이터베이스 에뮬레이터</td>
+    </tr>
+    <tr>
+      <td>테스트 스텁<br/>Test Stub</td>
+      <td>SUT의 간접 입력 검증</td>
+      <td>있음</td>
+      <td>한다</td>
+      <td>무시함</td>
+      <td>입력</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>테스트 스파이<br/>Test Spy</td>
+      <td>SUT의 간접 출력 검증</td>
+      <td>있음</td>
+      <td>선택 사항</td>
+      <td>나중에 검증하려고 갈무리해 둠</td>
+      <td>입력(선택 사항)</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
 
 # Links
 
 * [Test Double(xUnit Patterns.com)](http://xunitpatterns.com/Test%20Double.html )
 * [Test Double(MARTINFOWLER.com)](https://www.martinfowler.com/bliki/TestDouble.html )
+
+# 참고문헌
+
+* xUnit 테스트 패턴 / 제라드 메스자로스 저 / 박일 역 / 에이콘출판사 / 2011년 11월 10일 / 원제 : xUnit Test Patterns: Refactoring Test Code
