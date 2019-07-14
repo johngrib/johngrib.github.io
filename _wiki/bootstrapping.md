@@ -3,7 +3,7 @@ layout  : wiki
 title   : 부트스트래핑(bootstrapping)의 어원
 summary : 
 date    : 2019-02-25 10:40:19 +0900
-updated : 2019-03-06 23:34:08 +0900
+updated : 2019-07-14 22:40:39 +0900
 tag     : 
 toc     : true
 public  : true
@@ -89,11 +89,21 @@ CPU는 컴퓨터에 파워가 켜졌을 때 영구 기억 장치에 저장된 �
 
 * 해커스 세상을 바꾼 컴퓨터 천재들 10장 '홈브루 컴퓨터 클럽'에서 인용.
 
+# "TCP/IP 완벽 가이드"에서 말하는 부트스트래핑
+
+14장. 역순 주소 결정과 TCP/IP 역순 주소 결정 프로토콜
+
+> 여기서 해결해야 할 문제를 컴퓨터 분야에서는 부트스트래핑이라고 부른다.
+부트스트래핑이란 아무것도 없는 상태에서 어떤 것을 시작하는 것을 가리킨다.
+겉으로 보기에 이것은 불가능한 것처럼 보인다.
+왜냐하면 TCP/IP 통신에 필요한 IP 주소를 얻기 위해 TCP/IP를 사용하는 것이 모순이기 때문이다.
+
 # 참고문헌
 
 * 커니핸 교수의 Hello, Digital World / 브라이언 W. 커니핸 저 / 하성창 역 / 제이펍 / 2017년 08월 08일 / 원제: Understanding the Digital World: What You Need to Know about Computers, the Internet, Privacy, and Security
 * 허풍선이 남작의 모험 / 루돌프 에리히 라스페 저 / 이매진 역 / 황금가지 / 2018년 10월 19일
 * 클릭을 발명한 괴짜들 / 강태훈 저 / 궁리출판 / 2005년 03월 15일
 * 해커스 세상을 바꾼 컴퓨터 천재들 [무삭제판] / 스티븐 레비 저 / 박재호, 이혜영 공역 / 한빛미디어 / 2013년 08월 20일
+* TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
 
 

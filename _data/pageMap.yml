@@ -230,6 +230,14 @@
     url: /wiki/2018-01-20
     updated: '2019-02-27 11:28:14 +0900'
     children: []
+abbr:
+    type: wiki
+    title: '약어 모음'
+    summary: ""
+    parent: index
+    url: /wiki/abbr
+    updated: '2019-07-14 19:55:12 +0900'
+    children: []
 ag:
     type: wiki
     title: 'ag, the silver searcher'
@@ -388,7 +396,7 @@ bootstrapping:
     summary: ""
     parent: what
     url: /wiki/bootstrapping
-    updated: '2019-03-06 23:34:08 +0900'
+    updated: '2019-07-14 22:40:39 +0900'
     children: []
 Boy-Scout-Rule:
     type: wiki
