@@ -290,7 +290,6 @@ book:
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
     - {fileName: Mythical-Man-Month}
     - {fileName: PROFESSIONAL-SOFTWARE-DEVELOPMENT}
-    - {fileName: reincarnation-sword-master}
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
     - {fileName: The-Jargon-File}
 algirithm:
@@ -696,8 +695,6 @@ curl:
     - {fileName: python3-simple-file-sharing}
 perl:
     - {fileName: regex-prime}
-fantasy:
-    - {fileName: reincarnation-sword-master}
 rfc:
     - {fileName: RFC}
     - {fileName: why-http-80-https-443}

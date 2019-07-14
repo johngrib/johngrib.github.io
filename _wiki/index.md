@@ -82,7 +82,6 @@ comment : false
         * [[The-Jargon-File]]
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
         * [[Schrodinger-s-goyang-Hee]]
-        * [[reincarnation-sword-master]]
     * [[movie]]
         * [[ALPHAGO]]
         * [[HOT-FUZZ]]{뜨거운 녀석들}
