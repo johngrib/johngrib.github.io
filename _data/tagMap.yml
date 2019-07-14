@@ -315,6 +315,7 @@ devops:
     - {fileName: vagrant-docker-get-start}
 network:
     - {fileName: bandwidth}
+    - {fileName: IP}
     - {fileName: latency}
     - {fileName: osi-model}
 performance:

@@ -236,7 +236,7 @@ abbr:
     summary: ""
     parent: index
     url: /wiki/abbr
-    updated: '2019-07-14 23:04:17 +0900'
+    updated: '2019-07-14 23:16:42 +0900'
     children: []
 ag:
     type: wiki
@@ -1606,6 +1606,14 @@ index:
     url: /wiki/index
     updated: null
     children: []
+IP:
+    type: wiki
+    title: IP
+    summary: 'Internet Protocol'
+    parent: what
+    url: /wiki/IP
+    updated: '2019-07-14 23:47:00 +0900'
+    children: []
 James-Gosling-super-programmer:
     type: wiki
     title: '무협지 주인공 제임스 고슬링(James Gosling)'
@@ -2693,7 +2701,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, kanban-scrum, latency, osi-model, persona, polite-software, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
+    children: [agile, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
