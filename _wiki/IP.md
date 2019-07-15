@@ -3,7 +3,7 @@ layout  : wiki
 title   : IP
 summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
-updated : 2019-07-14 23:59:33 +0900
+updated : 2019-07-15 23:44:57 +0900
 tag     : network
 toc     : true
 public  : true
@@ -43,7 +43,7 @@ TCP/IP 완벽 가이드 15장에서 IP의 역사에 대해 다음과 같이 소�
 IP의 개발과정에서 획기적인 사건은 1981년 9월에 [RFC 791](https://tools.ietf.org/html/rfc791 ) "인터넷 프로토콜" 문서가 발표된 것이었다.
 그 전 해에 나왔던 [RFC 760](https://tools.ietf.org/html/rfc760 )을 개선한 이 표준은 지난 20년간 널리 쓰였던 IP 버전의 핵심 기능과 특성을 정의했다.
 
-# 버전에 대한 의문들
+# 의문점들
 
 **왜 IPv1은 없고 IPv4가 IP의 첫 버전인가?**
 
@@ -53,6 +53,10 @@ IP의 개발과정에서 획기적인 사건은 1981년 9월에 [RFC 791](https:
 
 * [RFC 1190](https://tools.ietf.org/html/rfc1190 ): Experimental Internet Stream Protocol, Version 2 (ST-II)
     * 인터넷 스트림 프로토콜 버전 2가 IPv5이다.
+
+**작동하는 최고 계층이 2계층인 장비들도 IP를 사용하는가?**
+
+* 리피터(repeater), 브리지(bridge), 스위치(switch) 같은 하위 수준 네트워크 연결 장비는 2계층(데이터 링크) 주소에 근거하여 트래픽을 통과시키기 때문에 IP 주소가 없어도 된다.
 
 # 참고문헌
 
