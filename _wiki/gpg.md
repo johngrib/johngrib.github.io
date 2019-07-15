@@ -796,7 +796,7 @@ $ keybase device add
 
 ```sh
 $ brew upgrade gnupg
-$ brew install pinetry-mac
+$ brew install pinentry-mac
 $ echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 $ killall gpg-agent
 ```
