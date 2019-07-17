@@ -3,7 +3,7 @@ layout  : wiki
 title   : IP
 summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
-updated : 2019-07-17 13:51:16 +0900
+updated : 2019-07-17 15:55:24 +0900
 tag     : network
 toc     : true
 public  : true
@@ -85,7 +85,7 @@ $$
 * IP 주소와는 달리 십진수가 아니라 십육진수로 표현한다.
     * 그리고 `.`이 아니라 `:`나 `-`로 이어붙인다.
 
-## 네트워크 ID와 호스트 ID
+## Network ID와 Host ID
 
 * 네트워크 ID: IP 주소 32비트 중 왼쪽 비트들
 * 호스트 ID: IP 주소 32비트 중 오른쪽 비트들
