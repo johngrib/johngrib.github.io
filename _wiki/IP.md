@@ -3,7 +3,7 @@ layout  : wiki
 title   : IP
 summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
-updated : 2019-07-17 15:55:24 +0900
+updated : 2019-07-17 15:57:24 +0900
 tag     : network
 toc     : true
 public  : true
@@ -138,9 +138,9 @@ $$
 
 크게 세 가지 방법이 있다.
 
-* 클래스 단위 주소 지정
-* 서브넷 마스크 사용
-* 클래스 비사용 주소 지정
+* 클래스 단위 주소 지정(Classful)
+* 서브넷 사용(Subnetted)
+* 클래스 비사용 주소 지정(Classless)
 
 이들 중 클래스 비사용 주소 지정은 주소 뒤에 `/숫자`형식의 값을 추가로 제공한다.
 
