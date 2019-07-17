@@ -3,7 +3,7 @@ layout  : wiki
 title   : IP
 summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
-updated : 2019-07-17 10:07:29 +0900
+updated : 2019-07-17 12:33:13 +0900
 tag     : network
 toc     : true
 public  : true
@@ -45,16 +45,17 @@ IP의 개발과정에서 획기적인 사건은 1981년 9월에 [RFC 791](https:
 
 # IP Address
 
-* IP 주소는 인터네트워크에서의 네트워크 계층(3계층) 데이터 전달에 쓰인다.
-    * 각각의 네트워크 인터페이스는 하나의 IP 주소를 필요로 한다.
-    * 즉, 어떤 장비가 인터네트워크에 여러 인터페이스로 연결되어 있다면 그 장비는 여러 개의 IP 주소를 갖는다.
-* IP 주소(IPv4)는 32비트 이진수.
-    * IPv6의 IP 주소는 127비트 이진수.
-    * 참고: MAC 주소는 48비트 이진수.
-* IP 주소의 최소값은 `0.0.0.0` 이고, 최대값은 `255.255.255.255`이다.
-    * 이론적으로는 $$2^{32} = 4,294,967,296$$개의 주소가 존재할 수 있다.
+**IP 주소는 인터네트워크에서의 네트워크 계층(3계층) 데이터 전달에 쓰인다.**
 
-## 32비트 이진수 IP 주소를 십진수 형식으로 변환하는 방법
+* 각각의 네트워크 인터페이스는 하나의 IP 주소를 필요로 한다.
+* 즉, 어떤 장비가 인터네트워크에 여러 인터페이스로 연결되어 있다면 그 장비는 여러 개의 IP 주소를 갖는다.
+
+**IP 주소(IPv4)는 32비트 이진수.**
+
+* IPv6의 IP 주소는 127비트 이진수.
+* 참고: MAC 주소는 48비트 이진수.
+
+## 32비트 이진수인 IPv4 주소를 십진수 형식으로 변환하는 방법
 
 이진수 주소로는 사람이 알아보기 어려우므로 IP 주소는 주로 `.`으로 구분된 4개의 십진수로 변환하여 사용하곤 한다.
 
@@ -72,6 +73,38 @@ IP의 개발과정에서 획기적인 사건은 1981년 9월에 [RFC 791](https:
 흔히 보는 IP 주소 형식이다.
 
 (MAC 주소는 48비트이며, IP 주소와는 달리 십진수가 아니라 십육진수로 표현한다. 그리고 `.`이 아니라 `-`로 이어붙인다.)
+
+
+## 주소공간
+
+IP 주소의 최소값은 `0.0.0.0` 이고, 최대값은 `255.255.255.255`이다.
+
+* 이론적으로는 $$2^{32} = 4,294,967,296$$개의 주소가 존재할 수 있다.
+* 주소 공간이 42억 개가 넘어가니 꽤 큰 편인데도, 예약된 주소 공간이 많아서 모든 주소를 사용할 수 없다.
+    * 예: `127`로 시작하는 주소($$2^{24} = 16,777,216$$개)는 loopback 주소로 예약되어 있음.
+
+다음은 [RFC 3330](https://tools.ietf.org/html/rfc3330 )(Special-Use IPv4 Addresses)을 참고하여 인용한 것이다.
+
+| Address Block    | Present Use                                   | Reference                                                   |
+|------------------|-----------------------------------------------|-------------------------------------------------------------|
+| 0.0.0.0/8        | "This" Network                                | [[RFC1700](https://tools.ietf.org/html/rfc1700 ), page 4]   |
+| 10.0.0.0/8       | Private-Use Networks                          | [[RFC1918](https://tools.ietf.org/html/rfc1918 )]           |
+| 14.0.0.0/8       | Public-Data Networks                          | [[RFC1700](https://tools.ietf.org/html/rfc1700 ), page 181] |
+| 24.0.0.0/8       | Cable Television Networks                     | --                                                          |
+| 39.0.0.0/8       | Reserved but subject  to allocation           | [[RFC1797](https://tools.ietf.org/html/rfc1797 )]           |
+| 127.0.0.0/8      | Loopback                                      | [[RFC1700](https://tools.ietf.org/html/rfc1700 ), page 5]   |
+| 128.0.0.0/16     | Reserved but subject to allocation            | --                                                          |
+| 169.254.0.0/16   | Link Local                                    | --                                                          |
+| 172.16.0.0/12    | Private-Use Networks                          | [[RFC1918](https://tools.ietf.org/html/rfc1918 )]           |
+| 191.255.0.0/16   | Reserved but subject to allocation            | --                                                          |
+| 192.0.0.0/24     | Reserved but subject to allocation            | --                                                          |
+| 192.0.2.0/24     | Test-Net                                      |                                                             |
+| 192.88.99.0/24   | 6to4 Relay Anycast                            | [[RFC3068](https://tools.ietf.org/html/rfc3068 )]           |
+| 192.168.0.0/16   | Private-Use Networks                          | [[RFC1918](https://tools.ietf.org/html/rfc1918 )]           |
+| 198.18.0.0/15    | Network Interconnect Device Benchmark Testing | [[RFC2544](https://tools.ietf.org/html/rfc2544 )]           |
+| 223.255.255.0/24 | Reserved but subject to allocation            | --                                                          |
+| 224.0.0.0/4      | Multicast                                     | [[RFC3171](https://tools.ietf.org/html/rfc3171 )]           |
+| 240.0.0.0/4      | Reserved for Future Use                       | [[RFC1700](https://tools.ietf.org/html/rfc1700 ), page 4]   |
 
 ## IP 주소의 중복 방지는 어떻게?
 
