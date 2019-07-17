@@ -3,7 +3,7 @@ layout  : wiki
 title   : 약어 모음
 summary : 
 date    : 2019-07-14 19:51:37 +0900
-updated : 2019-07-16 16:28:13 +0900
+updated : 2019-07-17 23:13:02 +0900
 tag     : 
 toc     : true
 public  : true
@@ -15,6 +15,8 @@ latex   : false
 
 * ARP: Address Resolution Protocol, 주소 결정 프로토콜
 * BGP: Border Gateway Protocol, 경계 경로 프로토콜
+* CIDR: Classless Inter-Domain Routing, 클래스 비사용 도메인 간 라우팅
+* IANA: Internet Assigned Numbers Authority, 인터넷 할당번호 관리기관
 * ICMP: Internet Control Message Protocol, 인터넷 제어 메시지 프로토콜
 * IP: Internet Protocol, 인터넷 프로토콜
 * IPng: IP Next Generation, 차세대 IP(IPv6)
