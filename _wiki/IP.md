@@ -3,7 +3,7 @@ layout  : wiki
 title   : IP
 summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
-updated : 2019-07-17 15:57:24 +0900
+updated : 2019-07-17 22:50:58 +0900
 tag     : network
 toc     : true
 public  : true
@@ -52,7 +52,7 @@ IP의 개발과정에서 획기적인 사건은 1981년 9월에 [RFC 791](https:
 
 **IP 주소(IPv4)는 32비트 이진수.**
 
-* IPv6의 IP 주소는 127비트 이진수.
+* IPv6의 IP 주소는 128비트 이진수.
 * 참고: MAC 주소는 48비트 이진수.
 
 ## 32비트 이진수인 IPv4 주소를 점으로 구분된 십진 형식으로 변환하는 방법
@@ -139,6 +139,7 @@ $$
 크게 세 가지 방법이 있다.
 
 * 클래스 단위 주소 지정(Classful)
+    * 원래 IPv4를 구성했던 네트워크 클래스는 더 이상 전역 인터넷에서 사용되지 않는다.
 * 서브넷 사용(Subnetted)
 * 클래스 비사용 주소 지정(Classless)
 
@@ -234,3 +235,4 @@ IP에게 있어 브리지와 스위치는 본질적으로 없는 것, 즉 장비
 # Links
 
 * <https://en.wikipedia.org/wiki/Dot-decimal_notation >
+* [TCP/IP 주소 지정 및 서브넷 구성 기본 사항의 이해(support.microsoft.com)](https://support.microsoft.com/ko-kr/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics )
