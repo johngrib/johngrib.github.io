@@ -3,7 +3,7 @@ layout  : wiki
 title   : 약어 모음
 summary : 
 date    : 2019-07-14 19:51:37 +0900
-updated : 2019-07-17 23:13:02 +0900
+updated : 2019-07-18 13:25:57 +0900
 tag     : 
 toc     : true
 public  : true
@@ -27,3 +27,5 @@ latex   : false
 * RARP: Reverse Address Resolution Protocol, 역순 주소 결정 프로토콜
 * RIP: Routing Information Protocol, 라우팅 정보 프로토콜
 * SLIP: Serial Line Internet Protocol, 직렬 회선 인터넷 프로토콜
+* TCP: Transmission Control Protocol, 전송 제어 프로토콜
+* UDP: User Datagram Protocol, 사용자 데이터그램 프로토콜
