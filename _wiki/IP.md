@@ -3,7 +3,7 @@ layout  : wiki
 title   : IP
 summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
-updated : 2019-07-19 17:20:28 +0900
+updated : 2019-07-19 17:42:29 +0900
 tag     : network
 toc     : true
 public  : true
@@ -223,7 +223,7 @@ IPv4의 IP 주소 최소값은 `0.0.0.0` 이고, 최대값은 `255.255.255.255`�
 | 224.0.0.0/4      | Multicast                                     | [[RFC3171](https://tools.ietf.org/html/rfc3171 )]           |
 | 240.0.0.0/4      | Reserved for Future Use                       | [[RFC1700](https://tools.ietf.org/html/rfc1700 ), page 4]   |
 
-## IPv4 특별한 주소 패턴
+### IPv4 특별한 주소 패턴
 
 주소가 `0`으로만 되어 있거나 `1`로만 되어 있으면 This, 또는 All의 의미를 갖게 된다.
 
