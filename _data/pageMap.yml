@@ -350,6 +350,14 @@ bc:
     url: /wiki/bc
     updated: '2018-10-07 21:29:56 +0900'
     children: []
+big-numbers:
+    type: wiki
+    title: '좀 큰 숫자들'
+    summary: ""
+    parent: index
+    url: /wiki/big-numbers
+    updated: '2019-07-19 15:00:25 +0900'
+    children: []
 big-O-notation:
     type: wiki
     title: '빅 오 표기법(Big O notation)'
@@ -1612,7 +1620,7 @@ IP:
     summary: 'Internet Protocol'
     parent: what
     url: /wiki/IP
-    updated: '2019-07-19 14:33:43 +0900'
+    updated: '2019-07-19 14:38:57 +0900'
     children: []
 James-Gosling-super-programmer:
     type: wiki
