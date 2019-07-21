@@ -236,7 +236,7 @@ abbr:
     summary: ""
     parent: index
     url: /wiki/abbr
-    updated: '2019-07-18 22:47:40 +0900'
+    updated: '2019-07-20 16:05:22 +0900'
     children: []
 ag:
     type: wiki
@@ -1172,7 +1172,7 @@ find:
     summary: 'walk a file hierarchy'
     parent: command-line
     url: /wiki/find
-    updated: '2019-01-13 18:04:32 +0900'
+    updated: '2019-07-21 18:57:21 +0900'
     children: []
 fine-dust:
     type: wiki

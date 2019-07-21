@@ -3,7 +3,7 @@ layout  : wiki
 title   : find 명령어
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2019-01-13 18:04:32 +0900
+updated : 2019-07-21 18:57:21 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -14,6 +14,14 @@ latex   : false
 {:toc}
 
 # Examples
+## 현재 디렉토리와 그 하위 디렉토리 전체에서 이름이 "README.md"인 파일을 찾는다.
+```sh
+$ find . -name 'README.md'
+```
+## 현재 디렉토리와 그 하위 디렉토리 전체에서 이름에 "test"가 들어가는 파일을 찾는다.
+```sh
+$ find . -name '*test*'
+```
 ## 하위 경로의 빈 디렉토리를 모두 찾아 삭제한다
 ```sh
 $ find . -type d -empty -delete
