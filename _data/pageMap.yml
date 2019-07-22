@@ -2166,6 +2166,14 @@ rouge-supported-languages:
     url: /wiki/rouge-supported-languages
     updated: '2018-09-17 23:51:26 +0900'
     children: []
+router:
+    type: wiki
+    title: Router(라우터)
+    summary: ""
+    parent: what
+    url: /wiki/router
+    updated: '2019-07-22 23:31:54 +0900'
+    children: []
 rsa-encryption:
     type: wiki
     title: 'RSA 암호(RSA Encryption)'
@@ -2709,7 +2717,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port-number-registry, RFC, rouge-supported-languages, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
+    children: [agile, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port-number-registry, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
