@@ -3,7 +3,7 @@ layout  : wiki
 title   : 약어 모음
 summary : 
 date    : 2019-07-14 19:51:37 +0900
-updated : 2019-07-20 16:05:22 +0900
+updated : 2019-07-21 23:16:00 +0900
 tag     : 
 toc     : true
 public  : true
@@ -17,6 +17,7 @@ latex   : false
 * BGP: Border Gateway Protocol, 경계 경로 프로토콜
 * CIDR: Classless Inter-Domain Routing, 클래스 비사용 도메인 간 라우팅
 * IANA: Internet Assigned Numbers Authority, 인터넷 할당번호 관리기관
+* ICMP: Internet Control Message Protocol, 인터넷 제어 메시지 프로토콜
 * ICMP: Internet Control Message Protocol, 인터넷 제어 메시지 프로토콜
 * IETF: Internet Engineering Task Force. 인터넷 엔지니어링 태스크 포스.
 * IKE: Internet Key Exchange, 인터넷 키 교환

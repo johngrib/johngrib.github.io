@@ -3,7 +3,7 @@ layout  : wiki
 title   : IP
 summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
-updated : 2019-07-20 00:28:43 +0900
+updated : 2019-07-22 23:18:51 +0900
 tag     : network
 toc     : true
 public  : true
@@ -14,6 +14,8 @@ latex   : true
 {:toc}
 
 # 개요
+
+IP 같은 네트워크 계층 프로토콜의 목적은 각 로컬 네트워크를 연결하여 더 큰 네트워크를 만드는 것이다.
 
 **IP는 [[osi-model]]의 3 계층 프로토콜에 해당된다.**
 
