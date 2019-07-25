@@ -696,6 +696,8 @@ curl:
     - {fileName: python3-simple-file-sharing}
 perl:
     - {fileName: regex-prime}
+web:
+    - {fileName: REST}
 rfc:
     - {fileName: RFC}
     - {fileName: why-http-80-https-443}

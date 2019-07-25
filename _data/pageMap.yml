@@ -2118,6 +2118,14 @@ relations:
     url: /wiki/relations
     updated: '2019-06-04 21:21:56 +0900'
     children: []
+REST:
+    type: wiki
+    title: REST
+    summary: ""
+    parent: what
+    url: /wiki/REST
+    updated: '2019-07-25 23:20:57 +0900'
+    children: []
 review:
     type: wiki
     title: '회고 모음'
@@ -2717,7 +2725,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port-number-registry, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
+    children: [agile, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port-number-registry, REST, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
