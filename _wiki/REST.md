@@ -3,7 +3,7 @@ layout  : wiki
 title   : REST
 summary : 
 date    : 2019-07-24 19:59:55 +0900
-updated : 2019-07-25 23:20:57 +0900
+updated : 2019-07-26 14:25:17 +0900
 tag     : web
 toc     : true
 public  : true
@@ -13,20 +13,82 @@ latex   : false
 * TOC
 {:toc}
 
-# REST
+# 개요
 
-* REST는 설계 제약 조건 모음을 말한다.[^rest-define]
-* Roy T. Fielding의 박사학위 논문에 최초로 소개되었다.
-    * 논문 이름은 "Architectural Styles and the Design of Network-based Software Architectures"
+이 개요는 논문을 읽고 나서 내 편의대로 요약한 것이므로, 정확한 내용은 원문을 참고할 것.
 
-# Architectural Styles and the Design of Network-based Software Architectures
+**REST?**
+
+* REST 아키텍처 스타일은 Roy T. Fielding의 박사학위 논문에 최초로 소개되었다.
+* 논문 이름은 "Architectural Styles and the Design of Network-based Software Architectures" (이하 "논문")
+* REST는 Representational State Transfer의 줄임말이다.
+    * "Representational State Transfer"는 REST가 추구하는 이상적인 웹 애플리케이션.
+
+**REST 아키텍처 스타일은 설계 제약 조건들의 집합으로 이루어져 있다.**
+
+* 아키텍처 스타일이란?
+    * 설계 제약 조건들의 집합이다.
+* REST 아키텍처 스타일이란?
+    * 현대적인 웹을 위해 로이 필딩이 만든 하이브리드 아키텍처 스타일이다.
+* 하이브리드 아키텍처 스타일이란?
+    * 기존 아키텍처 스타일(제약 조건들) 여러 개를 합쳐 만든 새로운 아키텍처 스타일을 말한다.
+
+**아키텍처 스타일의 평가 기준은?**
+
+* 성능(Performance)
+* 확장성(Scalability)
+* 단순성(Simplicity)
+* 수정용이성(Modifiability)
+* 가시성(Visibility)
+* 이식성(Portability)
+* 신뢰성(Reliability)
+
+**REST를 왜 만들었나?**
+
+* 정보를 구조적으로 저장하여 누구나(사람, 기계) 웹을 이용할 수 있도록 하고 싶다.
+* 사회의 발전에 웹이 따라갈 수 있어야 한다.
+* 하루가 다르게 커져가는 웹의 규모에 대응할 수 있어야 한다.
+
+**REST를 어떻게 만들 것인가?**
+
+* 기존의 아키텍처 스타일들의 장단점을 검토한다.
+* 필요한 효과를 기대할 수 있는 제약 조건들을 수집한다. => 완성!
+
+**REST를 이루는 제약 조건들**
+
+* 클라이언트-서버(Client-Server)
+* 상태 없음(Stateless)
+* 캐시(Cache)
+* 일관된 인터페이스(Uniform Interface)
+* 계층화된 시스템(Layered System)
+* 주문형 코드(Code-On-Demand)
+
+**Resource, Representation, Identifier**
+
+* 리소스
+    * 엔티티 집합의 개념적 매핑.
+    * 정보의 추상화.
+    * 세상의 무엇이든 리소스가 될 수 있다.
+    * 하나의 리소스는 여러 식별자를 가질 수 있음.
+* 식별자
+    * 리소스에 매핑된 일종의 이름.
+    * URI.
+    * 하나의 식별자는 하나의 리소스에만 매핑될 수 있음.
+* 표현(representation)
+    * 서버가 응답으로 보내주는 것은 리소스가 아니라, 리소스의 표현이다.
+    * 표현에는 데이터와 메타데이터가 들어있다.
+    * 서버는 클라이언트가 보낸 정보를 보고 클라이언트에 맞는 형태로 리소스에 근거한 표현을 돌려준다.
+    * 클라이언트는 메타데이터를 보고 데이터를 어떻게 해석할지를 알게 된다.
+
+# 논문 요약
+
+**Architectural Styles and the Design of Network-based Software Architectures**
 
 * 로이 필딩의 논문을 요약해본다.
 
 ## DEDICATION
 
-<https://www.ics.uci.edu/~fielding/pubs/dissertation/dedication.htm >
-
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/dedication.htm )
 **헌정**
 
 * 저자(로이 필딩)가 가족들과 팀 버너스 리에 대한 고마움을 이야기한다.
@@ -34,8 +96,7 @@ latex   : false
 
 ## ACKNOWLEDGMENTS
 
-<https://www.ics.uci.edu/~fielding/pubs/dissertation/acknowledgments.htm >
-
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/acknowledgments.htm )
 **감사의 말**
 
 * 저자가 박사 학위를 따기까지 직/간접적으로 도움을 준 모든 이들에게 감사를 표한다.
@@ -44,16 +105,14 @@ latex   : false
 
 ## CURRICULUM VITAE
 
-<https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_cv_2000.htm >
-
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_cv_2000.htm)
 **저자 약력**
 
 * 저자의 학력과 발표, 저술, 전문가로서의 활동 등을 나열한다.
 
 ## ABSTRACT OF THE DISSERTATION
 
-<https://www.ics.uci.edu/~fielding/pubs/dissertation/abstract.htm >
-
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/abstract.htm )
 **개요**
 
 * 설계, 정의, 배포(design, definition, deployment)를 가이드하는 최신 웹 아키텍처 모델이 필요하다고 생각하여 연구를 하게 됨.
@@ -84,8 +143,7 @@ latex   : false
 
 ## INTRODUCTION
 
-<https://www.ics.uci.edu/~fielding/pubs/dissertation/introduction.htm >
-
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/introduction.htm)
 **도입**
 
 * 지금까지의 소프트웨어 아키텍처 연구는 시스템을 부분과 부분으로 쪼개 연구하는 데에 중점을 두었다.
@@ -116,8 +174,7 @@ latex   : false
 
 ## CHAPTER 1. Software Architecture
 
-<https://www.ics.uci.edu/~fielding/pubs/dissertation/software_arch.htm >
-
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/software_arch.htm)
 **소프트웨어 아키텍처**
 
 이 챕터는 논문의 배경을 다루며, 여러 용어를 정의한다.
@@ -199,8 +256,7 @@ latex   : false
 
 ## CHAPTER 3. Network-based Architectural Styles
 
-<https://www.ics.uci.edu/~fielding/pubs/dissertation/net_arch_styles.htm >
-
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/net_arch_styles.htm )
 **네트워크 기반 아키텍처 스타일**
 
 이 챕터에서는 네트워크 기반 애플리케이션 아키텍처 스타일을 몇 가지 소개하고 분류한다.
@@ -235,8 +291,7 @@ latex   : false
 
 ## CHAPTER 4. Designing the Web Architecture: Problems and Insights
 
-<https://www.ics.uci.edu/~fielding/pubs/dissertation/web_arch_domain.htm >
-
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/web_arch_domain.htm )
 **웹 아키텍처 설계: 문제점과 통찰**
 
 * 이 장에서는 웹 아키텍처의 요구 사항과 핵심 통신 프로토콜에 대해 제안 된 개선 사항을 설계하고 평가할 때 직면하게되는 문제점에 대해 알아본다.
@@ -315,8 +370,7 @@ IETF의 활동을 통해 다음과 같은 과제를 얻을 수 있다.
 
 ## CHAPTER 5. Representational State Transfer (REST)
 
-<https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm >
-
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm )
 **REST 아키텍처 스타일**
 
 이 챕터의 내용 흐름은 다음과 같다.
@@ -338,51 +392,51 @@ IETF의 활동을 통해 다음과 같은 과제를 얻을 수 있다.
 
 1. Null 스타일로 시작.
     * 비어 있는 제약 조건 집합으로 시작.
-2. 클라이언트-서버 스타일의 제약 조건들을 추가한다.
+2. 클라이언트-서버(Client-Server) 제약 조건 추가.
     * 관심사의 분리(Separation of concerns)
         * 사용자 인터페이스와 데이터 저장소를 분리.
         * 클라이언트의 이식성(portability), 서버의 확장성(scalability) 확보.
-    * 상태 없음(Stateless)
-        * 클라이언트는 상태를 저장하지 않는다.
-        * 클라이언트의 각 요청은 서버가 요청을 이해하는 데에 필요한 모든 정보를 포함해야 한다.
-        * 세션 상태는 클라이언트에서 전적으로 유지된다.
-        * 가시성(visibility): 모니터링 시스템이 단일 요청만 관찰해도 요청의 전체 특성을 파악할 수 있다.
-        * 신뢰성(reliability): 부분적인 처리 실패에 대한 회복이 쉽다.
-        * 확장성(Scalability): 요청과 요청 사이에 상태를 저장하지 않아도 되므로 구현이 심플하여 확장성 향상.
-        * 단점: 똑같은 정보가 계속 왔다갔다 할 수 있다.
-    * 캐시(Cache)
-        * 캐싱을 통해 네트워크 효율성을 높인다.
-        * 요청에 대한 응답에 캐시 가능/불가능 여부가 들어 있어야 한다.
-        * 효율성(efficiency), 확장성(scalability), 사용자 인지 성능(user-perceived performance) 확보.
-        * 단점: 신선한 데이터와 캐싱된 오래된 데이터가 많이 다르면 신뢰성(reliability)이 저하된다.
-    * 일관된 인터페이스(Uniform Interface)
-        * 일관된 인터페이스는 REST의 핵심. 다른 아키텍처 스타일과의 가장 큰 차이점.
-        * 전체 시스템 아키텍처가 단순해짐.
-        * 가시성(visibility)이 향상됨.
-        * 구현체가 서비스와 별도로 독립적으로 진화할 가능성을 얻게 된다.
-        * 단점: 애플리케이션에 특화된 형태가 아니라 표준화된 형태로 데이터를 주고받게 되어 효율성이 떨어질 수 있다.
-    * 계층화된 시스템(Layered System)
-        * 인터넷 규모의 행동을 향상시키기 위해 추가한 제약 조건.
-        * 이 제약 조건을 추가하면 각 구성 요소가 계층을 넘어서 "보는(see)" 것을 막을 수 있다.
-        * 시스템 복잡도를 관리하기 용이.
-        * 레거시 서비스를 캡슐화할 수 있다.
-        * 확장성(scalability): 중개자를 통해 여러 네트워크 및 프로세서에서 서비스 부하 분산을 할 수 있다.
-        * 단점: 데이터 처리에 오버 헤드가 발생하여 사용자 인지 성능 저하.
-    * 주문형 코드(Code-On-Demand)
-        * 선택적 제약 조건. 장단점을 보고 선택하도록 한다.
-        * 애플릿, 스크립트의 형태로 코드를 다운로드, 실행하여 클라이언트 기능을 확장할 수 있도록 한다.
-        * 사전 구현에 필요한 기능의 수를 줄임으로써 클라이언트를 단순화.
-        * 시스템 확장성이 향상.
-        * 단점: 가시성 감소.
+3. 상태 없음(Stateless) 제약 조건 추가.
+    * 클라이언트는 상태를 저장하지 않는다.
+    * 클라이언트의 각 요청은 서버가 요청을 이해하는 데에 필요한 모든 정보를 포함해야 한다.
+    * 세션 상태는 클라이언트에서 전적으로 유지된다.
+    * 가시성(visibility): 모니터링 시스템이 단일 요청만 관찰해도 요청의 전체 특성을 파악할 수 있다.
+    * 신뢰성(reliability): 부분적인 처리 실패에 대한 회복이 쉽다.
+    * 확장성(Scalability): 요청과 요청 사이에 상태를 저장하지 않아도 되므로 구현이 심플하여 확장성 향상.
+    * 단점: 똑같은 정보가 계속 왔다갔다 할 수 있다.
+4. 캐시(Cache)
+    * 캐싱을 통해 네트워크 효율성을 높인다.
+    * 요청에 대한 응답에 캐시 가능/불가능 여부가 들어 있어야 한다.
+    * 효율성(efficiency), 확장성(scalability), 사용자 인지 성능(user-perceived performance) 확보.
+    * 단점: 신선한 데이터와 캐싱된 오래된 데이터가 많이 다르면 신뢰성(reliability)이 저하된다.
+5. 일관된 인터페이스(Uniform Interface)
+    * 일관된 인터페이스는 REST의 핵심. 다른 아키텍처 스타일과의 가장 큰 차이점.
+    * 전체 시스템 아키텍처가 단순해짐.
+    * 가시성(visibility)이 향상됨.
+    * 구현체가 서비스와 별도로 독립적으로 진화할 가능성을 얻게 된다.
+    * 단점: 애플리케이션에 특화된 형태가 아니라 표준화된 형태로 데이터를 주고받게 되어 효율성이 떨어질 수 있다.
+6. 계층화된 시스템(Layered System)
+    * 인터넷 규모의 행동을 향상시키기 위해 추가한 제약 조건.
+    * 이 제약 조건을 추가하면 각 콤포넌트가 계층을 넘어서 "보는(see)" 것을 막을 수 있다.
+    * 시스템 복잡도를 관리하기 용이.
+    * 레거시 서비스를 캡슐화할 수 있다.
+    * 확장성(scalability): 중개자를 통해 여러 네트워크 및 프로세서에서 서비스 부하 분산을 할 수 있다.
+    * 단점: 데이터 처리에 오버 헤드가 발생하여 사용자 인지 성능 저하.
+7. 주문형 코드(Code-On-Demand)
+    * 선택적 제약 조건. 장단점을 보고 선택하도록 한다.
+    * 애플릿, 스크립트의 형태로 코드를 다운로드, 실행하여 클라이언트 기능을 확장할 수 있도록 한다.
+    * 사전 구현에 필요한 기능의 수를 줄임으로써 클라이언트를 단순화.
+    * 시스템 확장성이 향상.
+    * 단점: 가시성 감소.
 
 ### 5.2 REST Architectural Elements
 
 **REST 아키텍처 요소** 
 
 * REST 스타일은 분산형 하이퍼미디어 시스템 내의 구조 요소의 추상화다.
-* REST는 구성요소의 역할, 다른 구성요소와의 상호작용에 대한 제약 및 중요한 데이터 구성요소의 해석에 초점을 맞춘다.
-    * 그를 위해 구성요소 구현 및 프로토콜 구문의 세부사항을 무시한다.
-* REST는 웹 아키텍처의 기초를 정의하는 구성요소, 커넥터 및 데이터에 대한 근본적인 제약조건을 포함한다.
+* REST는 콤포넌트의 역할, 다른 콤포넌트와의 상호작용에 대한 제약 및 중요한 데이터 콤포넌트의 해석에 초점을 맞춘다.
+    * 그를 위해 콤포넌트 구현 및 프로토콜 구문의 세부사항을 무시한다.
+* REST는 웹 아키텍처의 기초를 정의하는 콤포넌트, 커넥터 및 데이터에 대한 근본적인 제약조건을 포함한다.
 
 #### 5.2.1 Data Elements
 
@@ -500,6 +554,106 @@ REST의 모든 상호 작용은 무상태(stateless) 기반이다.
 
 #### 5.2.3 Components
 
+* 역할에 따라 분류한 콤포넌트.
+
+| Component     | Modern Web Examples                  |
+|---------------|--------------------------------------|
+| origin server | Apache httpd, Microsoft IIS          |
+| gateway       | Squid, CGI, Reverse Proxy            |
+| proxy         | CERN Proxy, Netscape Proxy, Gauntlet |
+| user agent    | Netscape Navigator, Lynx, MOMspider  |
+
+* 사용자 에이전트(user agent)
+    * 클라이언트 커넥터를 사용하여 요청을 시작.
+    * 응답의 최종 수신자.
+    * 예: 웹 브라우저.
+* 원본 서버(origin server)
+    * 서버 커넥터를 사용하여 요청 된 리소스의 네임 스페이스를 제어.
+    * 자원 표현에 대한 최종 출처.
+    * 자원 값 수정 요청의 최종 수신자.
+    * 각 오리진 서버는 서비스에 대한 자원 인터페이스로 일반 인터페이스를 제공한다.
+    * 리소스 구현 세부 정보는 인터페이스 뒤에 숨겨져 있다.
+* 중개 콤포넌트
+    * 프록시(proxy)
+        * 타 서비스의 인터페이스 캡슐화, 데이터 변환, 성능 향상, 보안 목적으로 클라이언트가 선택하는 중개자.
+    * 게이트웨이(gateway, reverse proxy)
+        * 데이터 변환, 성능 향상, 보안에 대해 다른 서비스의 인터페이스 캡슐화를 제공하는 매개체.
+        * 프록시와 게이트웨이의 차이점: 프록시를 사용할 시점은 클라이언트가 결정.
+
+### 5.3 REST Architectural Views
+
+**REST 아키텍처 관점**
+
+* 세 가지 관점에서 REST 디자인 원칙의 장단점을 논한다.
+    * 프로세스
+    * 커넥터
+    * 데이터
+
+비슷한 내용이 이어지므로 생략한다.
+
+## CHAPTER 6. Experience and Evaluation
+
+**경험과 평가**
+
+1994 년 이후, REST 아키텍처 스타일은 현대 웹 아키텍처의 설계 및 개발의 가이드가 되었다.
+
+이 장에서 저자는 HTTP, URI, HTML 등의 웹 표준에 REST가 어떤 영향을 끼쳤는지를 설명하고
+그 과정에서 얻은 경험에 대해 이야기한다.
+
+분량이 상당하고, 2019년에 HTTP를 다루는 웹 개발자의 입장에서 상식에 가까운 내용이 많아 내용은 생략하도록 한다.
+
+다만 기억해두고 싶은 몇 가지 내용만 기록해둔다.
+
+* REST: 웹이 어떻게 작동해야 하는지에 대한 아키텍처 모델.
+    * IETF와 W3C에서 HTTP, URI, HTML 등의 웹 아키텍처 표준을 정의하기 위해 개발된 것.
+* REST는 HTTP/1.0과 HTTP/1.1에 영향을 주었다.
+* "Representational State Transfer"라는 이름.
+    * 잘 설계된 웹 애플리케이션이 어떻게 동작하는지를 나타내기 위한 것.
+        * 웹 페이지들의 네트워크(가상 상태 기계)
+        * 애플리케이션 사용자의 링크 선택(상태 변환)
+        * 그 결과 돌아온 다음 페이지(애플리케이션의 다음 상태)
+* REST는 웹 프로토콜 표준의 용도를 모두 캡슐화하는 것은 아니다.
+    * REST는 일반적인 경우에 최적화되어 있음.
+
+REST가 URI 표준에 준 영향
+
+* 자원 개념의 재정의
+    * REST는 자원 자체를 돌려주는 방식으로 응답하지 않는다.
+    * URI는 문서를 식별하는 것이 아니라 개념을 식별하는 것.
+    * 리소스는 개념적 매핑. 
+* Manipulating Shadows
+    * 식별된 자원의 표현으로 적절한 것을 조작해 돌려주는 방식으로 응답. 
+* ...
+
+REST가 HTTP 표준에 준 영향
+
+* 확장성
+    * 프로토콜 버저닝
+    * 프로토콜 요소의 확장
+        * HTTP 메소드를 사용해 요청의 의미를 나타낸다.
+        * HTTP 응답 코드 규칙과 포맷에 영향을 줌.
+            * 1xx: 임시 정보 응답.
+            * 2xx: 요청 성공.
+            * 3xx: 리다이렉션.
+            * 4xx: 클라이언트 오류.
+            * 5xx: 서버 오류.
+    * ...
+* 자기 설명적 메시지
+    * 계층화된 인코딩.
+    * 캐시 컨트롤
+        * Cache-Control, Age, Etag 등의 헤더 필드들.
+    * 콘텐츠 협상
+* 성능
+ 
+## CONCLUSIONS
+
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/conclusions.htm )
+**결론**
+
+* REST의 장점과 의의를 이야기하고 마무리.
+
+
+
 
 # 참고문헌
 
@@ -508,6 +662,9 @@ REST의 모든 상호 작용은 무상태(stateless) 기반이다.
     * <https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm >
     * <https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf >
 
+# Links
+
+* [Content negotiation](https://developer.mozilla.org/ko/docs/Web/HTTP/Content_negotiation )
+
 # 미주
 
-[^rest-define]: RESTful Web API 3장. 35쪽.
