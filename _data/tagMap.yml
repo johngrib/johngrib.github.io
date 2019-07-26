@@ -318,6 +318,7 @@ network:
     - {fileName: IP}
     - {fileName: latency}
     - {fileName: osi-model}
+    - {fileName: port}
 performance:
     - {fileName: bandwidth}
     - {fileName: latency}

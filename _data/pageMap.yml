@@ -2014,13 +2014,13 @@ polite-software:
     url: /wiki/polite-software
     updated: '2019-07-08 22:23:43 +0900'
     children: []
-port-number-registry:
+port:
     type: wiki
-    title: '알려진 포트 넘버 목록'
+    title: 포트(port)
     summary: ""
     parent: what
-    url: /wiki/port-number-registry
-    updated: '2019-06-12 22:08:33 +0900'
+    url: /wiki/port
+    updated: '2019-07-26 20:58:45 +0900'
     children: []
 Postel-s-law:
     type: wiki
@@ -2725,7 +2725,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port-number-registry, REST, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
+    children: [agile, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port, REST, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why
