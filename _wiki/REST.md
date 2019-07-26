@@ -3,7 +3,7 @@ layout  : wiki
 title   : REST
 summary : 
 date    : 2019-07-24 19:59:55 +0900
-updated : 2019-07-26 14:25:17 +0900
+updated : 2019-07-26 14:33:48 +0900
 tag     : web
 toc     : true
 public  : true
@@ -195,8 +195,7 @@ latex   : false
 
 ## CHAPTER 2. Network-based Application Architectures
 
-<https://www.ics.uci.edu/~fielding/pubs/dissertation/net_app_arch.htm >
-
+[원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/net_app_arch.htm )
 **네트워크 기반의 애플리케이션 아키텍처**
 
 이 챕터에서는 논문이 다루는 범위를 "네트워크 기반 애플리케이션 아키텍처"로 정의한다.
