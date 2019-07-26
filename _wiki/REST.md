@@ -3,7 +3,7 @@ layout  : wiki
 title   : REST
 summary : 
 date    : 2019-07-24 19:59:55 +0900
-updated : 2019-07-26 14:37:14 +0900
+updated : 2019-07-26 14:39:18 +0900
 tag     : web
 toc     : true
 public  : true
@@ -191,7 +191,6 @@ latex   : false
     * 구성(configurations)은 시스템 실행 시간 동안 이루어지는 콤포넌트, 커넥터, 데이터 간 아키텍처 관계의 구조이다.
 * **아키텍처 스타일은 요소(elements)와 요소와의 관계를 제약하는 조건들의 집합이다.**
 
-쉽게 말해, 아키텍처 스타일은 금지 사항들의 집합이다.
 
 ## CHAPTER 2. Network-based Application Architectures
 
