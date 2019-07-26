@@ -3,7 +3,7 @@ layout  : wiki
 title   : REST
 summary : 
 date    : 2019-07-24 19:59:55 +0900
-updated : 2019-07-26 14:33:48 +0900
+updated : 2019-07-26 14:37:14 +0900
 tag     : web
 toc     : true
 public  : true
@@ -280,7 +280,7 @@ latex   : false
     * Virtual Machine (VM)
     * Remote Evaluation (REV)
     * Code on Demand (COD)
-    * Layered-Code-on-Demand-Client-Cache-Stateless-Server (LCODC$SS)
+    * Layered-Code-on-Demand -Client-Cache-Stateless-Server (LCODC$SS)
     * Mobile Agent (MA)
 * Peer-to-Peer Styles
     * Event-based Integration (EBI)
@@ -658,8 +658,8 @@ REST가 HTTP 표준에 준 영향
 
 * RESTful Web API / 레오나르드 리처드슨, 마이크 애먼슨, 샘 루비 공저 / 박세현, 박진형 공역 / 인사이트(insight) / 2017년 04월 17일
 * Architectural Styles and the Design of Network-based Software Architectures by Roy Thomas Fielding 2000
-    * <https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm >
-    * <https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf >
+    * [링크](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+    * [PDF](https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf)
 
 # Links
 
