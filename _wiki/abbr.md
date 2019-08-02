@@ -3,7 +3,7 @@ layout  : wiki
 title   : 약어 모음
 summary : 
 date    : 2019-07-14 19:51:37 +0900
-updated : 2019-07-21 23:16:00 +0900
+updated : 2019-08-02 23:41:02 +0900
 tag     : 
 toc     : true
 public  : true
@@ -28,9 +28,11 @@ latex   : false
 * IPv6: IP version 6, Internet Protocol version 6, IP 버전 6
 * ISP: Internet SErvice Provider, 인터넷 서비스 제공자
 * MTU: Maximum Transmission Unit, Maximum Transfer Unit. 네트워크의 최대 전송 단위.
+* NFS: Network File System, 네트워크 파일 시스템
 * PPP: Point-to-Point Protocol, 점대점 프로토콜
 * RARP: Reverse Address Resolution Protocol, 역순 주소 결정 프로토콜
 * RIP: Routing Information Protocol, 라우팅 정보 프로토콜
+* RTT: Round-Trip Time, 왕복 시간
 * SLIP: Serial Line Internet Protocol, 직렬 회선 인터넷 프로토콜
 * TCP: Transmission Control Protocol, 전송 제어 프로토콜
 * UDP: User Datagram Protocol, 사용자 데이터그램 프로토콜
