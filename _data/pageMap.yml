@@ -222,21 +222,13 @@
     url: /wiki/17-EQUATIONS-THAT-CHANGED-THE-WORLD
     updated: '2018-04-18 20:44:02 +0900'
     children: []
-'2018-01-20':
-    type: wiki
-    title: '2018-01-20 토요일'
-    summary: null
-    parent: diary-2018
-    url: /wiki/2018-01-20
-    updated: '2019-02-27 11:28:14 +0900'
-    children: []
 abbr:
     type: wiki
     title: '약어 모음'
     summary: ""
     parent: index
     url: /wiki/abbr
-    updated: '2019-08-02 23:41:02 +0900'
+    updated: '2019-08-03 21:39:52 +0900'
     children: []
 ag:
     type: wiki
@@ -828,8 +820,8 @@ diary:
     summary: null
     parent: index
     url: /wiki/diary
-    updated: '2019-01-14 21:43:51 +0900'
-    children: []
+    updated: '2019-08-04 22:27:19 +0900'
+    children: [memo-2019]
 dice-problem:
     type: wiki
     title: '주사위 문제'
@@ -1822,6 +1814,14 @@ media:
     url: /wiki/media
     updated: '2018-01-13 11:20:36 +0900'
     children: [book, movie]
+memo-2019:
+    type: wiki
+    title: '2019년 메모'
+    summary: ""
+    parent: diary
+    url: /wiki/memo-2019
+    updated: '2019-08-04 23:49:09 +0900'
+    children: []
 MnM-problem:
     type: wiki
     title: 'M&M 문제'

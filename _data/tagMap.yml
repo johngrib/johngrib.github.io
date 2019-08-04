@@ -190,11 +190,6 @@ game:
     - {fileName: TETRIS-EFFECT}
 aheui:
     - {fileName: 2017-07-14-aheui-explained}
-diary:
-    - {fileName: '2018-01-20'}
-    - {fileName: diary}
-block-chain:
-    - {fileName: '2018-01-20'}
 bash:
     - {fileName: ag}
     - {fileName: bc}
@@ -463,6 +458,8 @@ ctags:
     - {fileName: ctags}
 design:
     - {fileName: Design-for-Hackers}
+diary:
+    - {fileName: diary}
 container:
     - {fileName: docker}
 html:

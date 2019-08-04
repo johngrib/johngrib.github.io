@@ -3,7 +3,7 @@ layout  : wiki
 title   : Diary
 summary :
 date    : 2018-01-20 17:43:19 +0900
-updated : 2019-01-14 21:43:51 +0900
+updated : 2019-08-04 22:27:19 +0900
 tag     : diary
 toc     : true
 public  : true
@@ -14,4 +14,4 @@ latex   : false
 {:toc}
 
 
-* [[2018-01-20]] 토
+* [[memo-2019]]
