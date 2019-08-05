@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2018-11-02 22:29:56 +0900
+updated : 2019-08-05 15:19:26 +0900
 tag     : vim wiki
 public  : true
 parent  : Vim
@@ -400,7 +400,7 @@ function! LastModified()
         " echo('markdown updated time modified')
         let save_cursor = getpos(".")
         let n = min([10, line("$")])
-        exe 'keepjumps 1,' . n . 's/^\(.\{,10}updated\s*: \).*#\1' .
+        keepjumps exe '1,' . n . 's#^\(.\{,10}updated\s*: \).*#\1' .
             \ strftime('%Y-%m-%d %H:%M:%S +0900') . '#e'
         call histdel('search', -1)
         call setpos('.', save_cursor)
