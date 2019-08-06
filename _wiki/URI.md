@@ -2,7 +2,7 @@
 layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
-updated : 2019-08-07 00:15:21 +0900
+updated : 2019-08-07 00:23:47 +0900
 tag     : http
 toc     : true
 public  : true
@@ -65,6 +65,8 @@ The following are two example URIs and their component parts:
 URL 포맷은 크게 세 부분으로 이루어져 있다.
 
 * scheme: 리소스에 접근할 때 사용하는 프로토콜을 명시한다. `http:`, `ftp:`, `mailto:` 등이 이에 해당한다.
+    * scheme에는 `+`, `-`, `.` 그리고 문자만 사용할 수 있다.
+    * scheme은 대소문자를 구별하지 않지만 보통 소문자로 쓴다.
 * 호스트: 서버의 인터넷 주소
 * 리소스
 

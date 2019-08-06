@@ -2532,7 +2532,7 @@ URI:
     summary: 'Uniform Resource Identifier'
     parent: what
     url: /wiki/URI
-    updated: '2019-08-07 00:15:21 +0900'
+    updated: '2019-08-07 00:23:47 +0900'
     children: []
 use-java-primitive-type-for-performance:
     type: wiki
@@ -2692,7 +2692,7 @@ vimwiki:
     summary: '로컬에서 Vim으로 관리하는 나만의 위키'
     parent: Vim
     url: /wiki/vimwiki
-    updated: '2018-11-02 22:29:56 +0900'
+    updated: '2019-08-05 15:19:26 +0900'
     children: []
 von-neumann-extractor:
     type: wiki
