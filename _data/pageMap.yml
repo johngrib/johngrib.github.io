@@ -2532,7 +2532,7 @@ URI:
     summary: 'Uniform Resource Identifier'
     parent: what
     url: /wiki/URI
-    updated: '2019-07-01 21:45:16 +0900'
+    updated: '2019-08-07 00:15:21 +0900'
     children: []
 use-java-primitive-type-for-performance:
     type: wiki

@@ -2,7 +2,7 @@
 layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
-updated : 2019-07-01 21:45:16 +0900
+updated : 2019-08-07 00:15:21 +0900
 tag     : http
 toc     : true
 public  : true
@@ -37,7 +37,7 @@ unavailable, and to any other URI with the properties of a name.
 
 # URI
 
-* URI: 통합 자원 '식별자'
+* URI: 유일 자원 식별자
 * 인터넷 상의 정보 리소스를 고유하게 식별할 수 있다.
 * URI는 URL과 URN이라는 두 가지 형태가 존재한다.
 
@@ -59,7 +59,7 @@ The following are two example URIs and their component parts:
 
 ## URL
 
-* 통합 자원 '지시자'
+* 유일 자원 위치
 * 누구나 흔하게 접하는 그 URL이 맞다.
 
 URL 포맷은 크게 세 부분으로 이루어져 있다.
@@ -88,7 +88,7 @@ http://johngrib.github.io/wiki/URI.md#fragment
 
 ## URN
 
-* 통합 자원 '이름'
+* 유일 자원 '이름'
 * 리소스의 위치에 영향을 받지 않는 고유한 이름이다.
 * 위치 독립적이기 때문에 리소스가 다른 곳으로 옮겨져도 작동해야 한다.
 
