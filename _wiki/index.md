@@ -115,6 +115,7 @@ comment : false
     * [[Groovy]]
     * [[Java]]
         * [[java-abstract-class]]
+        * [[java-interface]]
         * [[java8]]
         * [[Object-equals]]
         * [[Object-hashCode]]
