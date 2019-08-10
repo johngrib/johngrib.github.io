@@ -114,6 +114,7 @@ comment : false
         * [[vim-go-with-ultisnips]]
     * [[Groovy]]
     * [[Java]]
+        * [[java-abstract-class]]
         * [[java8]]
         * [[Object-equals]]
         * [[Object-hashCode]]

@@ -474,6 +474,7 @@ java:
     - {fileName: groupId-artifactId}
     - {fileName: Java}
     - {fileName: java_home}
+    - {fileName: java-abstract-class}
     - {fileName: java8}
     - {fileName: Object-equals}
     - {fileName: Object-hashCode}
