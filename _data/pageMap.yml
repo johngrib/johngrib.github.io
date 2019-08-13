@@ -390,6 +390,14 @@ book:
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
     children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, DOM-Enlightenment-by-Cody-Lindley, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, Schrodinger-s-goyang-Hee, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
+book-log-2019:
+    type: wiki
+    title: '2019년 독서록'
+    summary: ""
+    parent: diary
+    url: /wiki/book-log-2019
+    updated: '2019-08-13 13:49:21 +0900'
+    children: []
 bootstrapping:
     type: wiki
     title: '부트스트래핑(bootstrapping)의 어원'
@@ -820,8 +828,8 @@ diary:
     summary: null
     parent: index
     url: /wiki/diary
-    updated: '2019-08-04 22:27:19 +0900'
-    children: [memo-2019]
+    updated: '2019-08-13 13:50:57 +0900'
+    children: [book-log-2019, memo-2019]
 dice-problem:
     type: wiki
     title: '주사위 문제'

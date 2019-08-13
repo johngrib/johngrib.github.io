@@ -8,6 +8,8 @@ comment : false
 ---
 
 * [[diary]]
+    * [[book-log-2019]]
+    * [[memo-2019]]
 
 * [[timeline]]
 * [[algorithm]]

@@ -273,6 +273,7 @@ algorithm:
 book:
     - {fileName: Algorithms-to-Live-By}
     - {fileName: book}
+    - {fileName: book-log-2019}
     - {fileName: Clean-Code}
     - {fileName: Code-Complete-2}
     - {fileName: CONCRETE-MATH}

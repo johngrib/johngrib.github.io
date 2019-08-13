@@ -1,9 +1,9 @@
 ---
-layout  : wiki
+layout  : category
 title   : Diary
 summary :
 date    : 2018-01-20 17:43:19 +0900
-updated : 2019-08-04 22:27:19 +0900
+updated : 2019-08-13 13:50:57 +0900
 tag     : diary
 toc     : true
 public  : true
@@ -14,4 +14,3 @@ latex   : false
 {:toc}
 
 
-* [[memo-2019]]
