@@ -1836,7 +1836,7 @@ memo-2019:
     summary: ""
     parent: diary
     url: /wiki/memo-2019
-    updated: '2019-08-09 23:06:25 +0900'
+    updated: '2019-08-13 13:30:19 +0900'
     children: []
 MnM-problem:
     type: wiki
@@ -2172,7 +2172,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-07-14 17:43:55 +0900'
+    updated: '2019-08-13 13:11:08 +0900'
     children: []
 RFC:
     type: wiki
@@ -2452,7 +2452,7 @@ timeline:
     summary: ""
     parent: index
     url: /wiki/timeline
-    updated: '2019-08-12 20:56:26 +0900'
+    updated: '2019-08-13 11:45:46 +0900'
     children: []
 TOML:
     type: wiki
