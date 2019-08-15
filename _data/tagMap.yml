@@ -721,6 +721,13 @@ IEEE:
     - {fileName: Software-Engineering-Code-of-Ethics}
 ethics:
     - {fileName: Software-Engineering-Code-of-Ethics}
+spring:
+    - {fileName: spring}
+    - {fileName: spring-bean-config-configuration}
+    - {fileName: spring-bean-config-xml}
+xml:
+    - {fileName: spring-bean-config-configuration}
+    - {fileName: spring-bean-config-xml}
 db:
     - {fileName: sql-char-comparison}
 hacker:

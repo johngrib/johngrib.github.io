@@ -329,6 +329,10 @@ comment : false
 * [[email-validation]]
 * [[abbr]]
 * [[big-numbers]]
+* [[spring]]
+    * [[spring-bean-config-xml]]
+    * [[spring-bean-config-configuration]]
+
 ---
 
 # blog
