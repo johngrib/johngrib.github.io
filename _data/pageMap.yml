@@ -400,11 +400,11 @@ book-log-2019:
     children: []
 bootstrapping:
     type: wiki
-    title: '부트스트래핑(bootstrapping)의 어원'
+    title: '부트스트래핑 (bootstrapping)의 어원'
     summary: ""
     parent: what
     url: /wiki/bootstrapping
-    updated: '2019-07-14 22:40:39 +0900'
+    updated: '2019-08-17 17:42:42 +0900'
     children: []
 Boy-Scout-Rule:
     type: wiki

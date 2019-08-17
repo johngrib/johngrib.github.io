@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 부트스트래핑(bootstrapping)의 어원
+title   : 부트스트래핑 (bootstrapping)의 어원
 summary : 
 date    : 2019-02-25 10:40:19 +0900
-updated : 2019-07-14 22:40:39 +0900
+updated : 2019-08-17 17:42:42 +0900
 tag     : 
 toc     : true
 public  : true
