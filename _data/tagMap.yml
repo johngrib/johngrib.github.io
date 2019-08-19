@@ -30,6 +30,7 @@ math:
     - {fileName: discrete-math-sets}
     - {fileName: discrete-math-summations}
     - {fileName: Fermat-s-little-theorem}
+    - {fileName: fibonacci}
     - {fileName: frac1e}
     - {fileName: gcd}
     - {fileName: graph}
