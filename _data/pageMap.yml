@@ -396,7 +396,7 @@ book-log-2019:
     summary: ""
     parent: diary
     url: /wiki/book-log-2019
-    updated: '2019-08-13 13:49:21 +0900'
+    updated: '2019-08-21 15:43:36 +0900'
     children: []
 bootstrapping:
     type: wiki
@@ -1852,7 +1852,7 @@ memo-2019:
     summary: ""
     parent: diary
     url: /wiki/memo-2019
-    updated: '2019-08-13 13:30:19 +0900'
+    updated: '2019-08-20 22:33:47 +0900'
     children: []
 MnM-problem:
     type: wiki
@@ -2188,7 +2188,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-08-13 13:11:08 +0900'
+    updated: '2019-08-21 15:44:36 +0900'
     children: []
 RFC:
     type: wiki
