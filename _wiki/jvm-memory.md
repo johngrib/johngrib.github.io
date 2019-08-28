@@ -3,7 +3,7 @@ layout  : wiki
 title   : JVM 메모리 구조와 GC
 summary :
 date    : 2019-08-28 15:52:08 +0900
-updated : 2019-08-28 23:27:51 +0900
+updated : 2019-08-29 00:17:57 +0900
 tag     : java
 toc     : true
 public  : true
@@ -163,16 +163,149 @@ Java 8 Hotspot JVM 구조
 <-------------- GC 대상 범위 ---------------->
 ```
 
+# Minor GC
+
+## Eden 에서 Survivor 영역으로
+
+현재 절판된 책 Java Performance Fundamental에는 Minor GC 과정에 대한 상세한 설명이 있다.
+
+다음 과정을 따라가며 이해하자.
+
+```ascii-art
+Eden
++---------------------------+
+| ( ) (  ) (   ) ( ) (    ) |
++---------------------------+
+
+Survivor 0              Survivor 1
++-------------------+   +-----------------+
+| ( ) (   ) ( ) ( ) |   |                 |
++-------------------+   +-----------------+
+```
+
+* Eden과 Survivor 0 이 꽉 찬 상태이다.
+* Eden이 꽉 찼으므로 Minor GC가 발생한다.
+* JVM이 Suspend 상태(Stop-the-world)로 들어간다.
+* 쓰레기와 쓰레기 아닌 것을 구분해야 하므로, Mark 작업을 시작한다.
+
+```ascii-art
+Eden
++---------------------------+
+| ( ) (  ) ( A ) ( ) (    ) |
++---------------------------+
+
+Survivor 0              Survivor 1
++-------------------+   +-----------------+
+| ( ) ( B ) (C) ( ) |   |                 |
++-------------------+   +-----------------+
+```
+
+* Mark 작업을 끝낸 결과, A, B, C가 쓰레기가 아니라는 표시를 달게 되었다.
+
+```ascii-art
+Eden
++---------------------------+
+| ( ) (  ) ( A ) ( ) (    ) |
++---------------------------+
+
+Survivor 0              Survivor 1
++-------------------+   +-----------------+
+| ( ) ( B ) (C) ( ) |   | ( A ) ( B ) (C) |
++-------------------+   +-----------------+
+```
+
+* Survivor 0 도 꽉 차 있어서 A가 Survivor 0 으로는 들어갈 수 없으므로, A, B, C를 Survivor 1 영역으로 복사했다.
+
+```ascii-art
+Eden
++---------------------------+
+|                           |
++---------------------------+
+
+Survivor 0              Survivor 1
++-------------------+   +-----------------+
+|                   |   | ( A ) ( B ) (C) |
++-------------------+   +-----------------+
+```
+
+* Eden과 Survivor 0 을 깨끗하게 비워버린다.
+* JVM의 Suspend 상태가 해제된다.
+
+## Survivor 에서 Old 영역으로 Promotion
+
+```ascii-art
+Eden
++---------------------------+
+| ( ) (  ) (   ) (A) (    ) |
++---------------------------+
+
+Survivor 0              Survivor 1
++-------------------+   +-------------------+
+|                   |   | ( ) (   ) (B) (M) |
++-------------------+   +-------------------+
+
+Old
++-------------------------------------------+
+| (   ) (    )                              |
++-------------------------------------------+
+```
+
+* Mark 작업을 마친 후 위와 같은 상태가 되었다고 하자.
+* M을 여러 차례의 GC 에서 살아남은 나이가 많은 객체라 하자.
+
+```ascii-art
+Eden
++---------------------------+
+| ( ) (  ) (   ) (A) (    ) |
++---------------------------+
+
+Survivor 0              Survivor 1
++-------------------+   +-------------------+
+| (A) (B)           |   | ( ) (   ) (B) (M) |
++-------------------+   +-------------------+
+
+Old
++-------------------------------------------+
+| (   ) (    ) (M)                          |
++-------------------------------------------+
+```
+
+* Survivor 0 에 A, B가 복사되었다.
+* Old 영역에 M이 복사되었다. Promotion 된 것이다.
+    * Minor GC에서 살아남아 Survivor로 이동할 때마다 객체의 Age 가 증가하는데, 이 Age가 일정 이상이 되면 Old 영역으로 이동하게 된다.
+* Promotion의 기준이 되는 Age는 `-XX:MaxTenuringThreshold` 옵션으로 설정할 수 있다.
+    * Java SE 8 에서의 default 값은 15 이다. 설정 가능한 범위는 0 ~ 15.[^technotes8]
+
+```ascii-art
+Eden
++---------------------------+
+|                           |
++---------------------------+
+
+Survivor 0              Survivor 1
++-------------------+   +-------------------+
+| (A) (B)           |   |                   |
++-------------------+   +-------------------+
+
+Old
++-------------------------------------------+
+| (   ) (    ) (M)                          |
++-------------------------------------------+
+```
+
+* Eden과 Survivor 1 이 깨끗하게 비워진다.
 
 # 참고문헌
 
-* [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 8)][tuning-guide8]
-* [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 9)][tuning-guide9]
-* [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 10)][tuning-guide10]
-* [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 11)][tuning-guide11]
-* [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 12)][tuning-guide12]
-* Java Performance Fundamental / 김한도 저 / 엑셈 / 초판 1쇄 2009년 09월 23일
-* JVM Performance Optimizing 및 성능분석 사례 / 류길현, 오명훈, 한승민 저 / 엑셈 / 초판 1쇄 2017년 09월 10일
+* 웹 문서
+    * [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 8)][tuning-guide8]
+    * [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 9)][tuning-guide9]
+    * [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 10)][tuning-guide10]
+    * [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 11)][tuning-guide11]
+    * [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 12)][tuning-guide12]
+* 도서
+    * Java Performance Fundamental / 김한도 저 / 엑셈 / 초판 1쇄 2009년 09월 23일
+    * JVM Performance Optimizing 및 성능분석 사례 / 류길현, 오명훈, 한승민 저 / 엑셈 / 초판 1쇄 2017년 09월 10일
 
 # 주석
 
@@ -181,6 +314,7 @@ Java 8 Hotspot JVM 구조
 [^tuning-guide10]: [Java SE 10 JVM GC Tuning Guide][tuning-guide10]
 [^tuning-guide11]: [Java SE 11 JVM GC Tuning Guide][tuning-guide11]
 [^tuning-guide12]: [Java SE 11 JVM GC Tuning Guide][tuning-guide12]
+[^technotes8]: [Java Platform, Standard Edition Tools Reference][technotes8]
 [^book2-Heap]: 1, JVM 메모리 구조. 20쪽.
 
 
@@ -189,3 +323,4 @@ Java 8 Hotspot JVM 구조
 [tuning-guide10]: https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm
 [tuning-guide11]: https://docs.oracle.com/javase/11/gctuning/garbage-collector-implementation.htm
 [tuning-guide12]: https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html
+[technotes8]: https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html
