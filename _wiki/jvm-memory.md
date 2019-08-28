@@ -3,7 +3,7 @@ layout  : wiki
 title   : JVM 메모리 구조와 GC
 summary :
 date    : 2019-08-28 15:52:08 +0900
-updated : 2019-08-29 00:17:57 +0900
+updated : 2019-08-29 07:57:51 +0900
 tag     : java
 toc     : true
 public  : true
@@ -214,7 +214,7 @@ Survivor 0              Survivor 1
 +-------------------+   +-----------------+
 ```
 
-* Survivor 0 도 꽉 차 있어서 A가 Survivor 0 으로는 들어갈 수 없으므로, A, B, C를 Survivor 1 영역으로 복사했다.
+* A, B, C를 Survivor 1 영역으로 복사했다.
 
 ```ascii-art
 Eden

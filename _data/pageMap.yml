@@ -1700,7 +1700,7 @@ jvm-memory:
     summary: null
     parent: Java
     url: /wiki/jvm-memory
-    updated: '2019-08-29 00:17:57 +0900'
+    updated: '2019-08-29 07:57:51 +0900'
     children: []
 kanban-scrum:
     type: wiki
