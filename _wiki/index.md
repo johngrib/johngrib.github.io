@@ -120,6 +120,7 @@ comment : false
         * [[java-abstract-class]]
         * [[java-interface]]
         * [[java8]]
+        * [[jvm-memory]]
         * [[Object-equals]]
         * [[Object-hashCode]]
         * [[Object-toString]]

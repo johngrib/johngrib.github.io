@@ -1645,7 +1645,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-interface, java8, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-interface, java8, jvm-memory, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1693,6 +1693,14 @@ John-W-Backus:
     parent: legend
     url: /wiki/John-W-Backus
     updated: '2019-03-01 17:01:12 +0900'
+    children: []
+jvm-memory:
+    type: wiki
+    title: 'JVM 메모리 구조와 GC'
+    summary: null
+    parent: Java
+    url: /wiki/jvm-memory
+    updated: '2019-08-28 23:27:51 +0900'
     children: []
 kanban-scrum:
     type: wiki

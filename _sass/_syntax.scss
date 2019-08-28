@@ -73,3 +73,10 @@ code {
     .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
     .lineno { color: #ffe5a0; }
 }
+
+.language-ascii-art {
+    display: inline-block;
+    font-family: monospace, Monaco, "Lucida Console";
+    letter-spacing: -0.1em;
+    line-height: 1.0em;
+}
