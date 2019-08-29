@@ -3,7 +3,7 @@ layout  : wiki
 title   : JVM 메모리 구조와 GC
 summary : 작성중인 문서
 date    : 2019-08-28 15:52:08 +0900
-updated : 2019-08-29 15:56:12 +0900
+updated : 2019-08-29 17:19:16 +0900
 tag     : java
 toc     : true
 public  : true
@@ -61,8 +61,12 @@ $$
     * Parallel Compaction을 쓰지 않으면 싱글 스레드만으로 메이저 컬렉션이 작동하게 되므로 확장성이 크게 제한될 수 있다.
     * `-XX:+UseParallelGC` 옵션을 지정하면 Parallel Compaction이 디폴트로 사용된다.
     * `-XX:-UseParallelOldGC` 옵션을 지정하면 Parallel Compaction을 사용하지 않는다.
-* Young Generation Collection 알고리즘: Parallel Scavenge
-* Old Generation Collection 알고리즘: Serial Mark-Sweep-Compact
+
+멀티 스레드를 사용한 컬렉션 사용이 Young 영역에 국한된다는 점에 주의.
+
+* Young Generation Collection 알고리즘: **Parallel** Scavenge
+* Old Generation Collection 알고리즘: **Serial** Mark-Sweep-Compact
+
 
 ### Concurrent Collectors
 
@@ -74,9 +78,35 @@ $$
 
 * 가비지 컬렉션 일시 정지가 짧은 것을 선호하는 애플리케이션을 위한 컬렉터. 
 * 이 방식은 프로세서 리소스를 가비지 컬렉션과 공유한다.
+* heap 메모리 영역의 크기가 클 때 적합하다.
+* GC의 일시 정지 시간을 줄이는 것이 목적이며, 크기가 큰 오래된 객체가 있는 경우에 적합하다.
 * `-XX:+UseConcMarkSweepGC` 옵션으로 CMS 컬렉터를 켤 수 있다.
 * Young Generation Collection 알고리즘: Parallel
 * Old Generation Collection 알고리즘: Concurrent Mark-Sweep
+
+**Concurrent Mark-Sweep 알고리즘**
+
+이 방식은 다음의 네 단계를 따른다.[^book2-concurrent-mark-sweep]
+
+1. Initial Mark Phase
+    * 애플리케이션 일시 정지.
+    * GC에 싱글 스레드를 사용.
+        * 애플리케이션의 Root set과 직접적으로 관계가 있는 살아있는 객체만 마크한다.
+2. Concurrent Mark Phase
+    * GC 스레드는 GC 작업을 하고, Working 스레드는 애플리케이션 작업을 한다.
+    * GC에 싱글 스레드를 사용.
+        * 바로 전 단계에서 체크한 객체가 바라보고 있는 객체들을 추적해 살아있는지 마크한다.
+3. Remark Phase
+    * 애플리케이션 일시 정지.
+    * GC에 멀티 스레드 사용.
+    * 마크한 객체를 다시 추적해, 살아있는지 확인한다.
+4. Concurrent Sweep Phase
+    * 애플리케이션은 멈추지 않고 작업을 계속한다.
+    * GC에 싱글 스레드 사용.
+    * Sweep: 살아있는 객체를 제외한 죽은 객체를 모두 삭제한다.
+    * compaction(조각 모음)은 하지 않는다.
+        * 따라서, Sweep을 하다 보면 단편화가 발생한다.
+        * Free List를 사용해 단편화를 최소화한다.
 
 #### Garbage-First Garbage Collector
 
@@ -88,6 +118,17 @@ $$
 * Young Generation Collection 알고리즘: Snapshot-At-The-Beginning(SATB)
 * Old Generation Collection 알고리즘: Snapshot-At-The-Beginning(SATB)
 
+G1GC만 Generational GC가 아니라는 점에 주의.
+
+"JVM Performance Optimizing 및 성능분석 사례"에 잘 설명되어 있다.[^book2-g1gc]
+
+* G1은 물리적 generation 구분을 없애고, 전체 heap을 1MB 단위의 리전(region)들로 다룬다.
+* G1 이라는 이름은 가비지로 가득찬 리전부터 컬렉션을 시작한다는 의미.
+    * 가비지로 꽉 찬 리전이 발견되면 바로 컬렉션을 돌린다.
+* Old 리전의 살아있는 객체는 다른 Old 리전으로 옮겨지며 compaction이 이뤄진다.
+* G1에서 Young, Old 영역 개념은 고정된 개념이 아니다.
+    * 객체가 새로 할당되는 리전들의 집합이 Young generation 이다.
+    * 프로모션이 일어나는 리전의 집합이 Old Generation 이다.
 
 
 ## GC 선택 가이드라인 요약
@@ -516,6 +557,8 @@ Old
 [^tuning-guide12]: [Java SE 11 JVM GC Tuning Guide][tuning-guide12]
 [^technotes8]: [Java Platform, Standard Edition Tools Reference][technotes8]
 [^book2-Heap]: 1, JVM 메모리 구조. 20쪽.
+[^book2-concurrent-mark-sweep]: 2, Garbage Collection. 41쪽.
+[^book2-g1gc]: 2, Garbage Collection. 49쪽.
 [^collectors8]: [Java SE 8 JVM GC Tuning Guide][collectors8]
 [^concurrent8]: [Java SE 8 JVM GC Tuning Guide][concurrent8]
 
