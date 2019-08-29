@@ -3,7 +3,7 @@ layout  : wiki
 title   : JVM 메모리 구조와 GC
 summary : 작성중인 문서
 date    : 2019-08-28 15:52:08 +0900
-updated : 2019-08-29 15:36:46 +0900
+updated : 2019-08-29 15:56:12 +0900
 tag     : java
 toc     : true
 public  : true
@@ -62,7 +62,7 @@ $$
     * `-XX:+UseParallelGC` 옵션을 지정하면 Parallel Compaction이 디폴트로 사용된다.
     * `-XX:-UseParallelOldGC` 옵션을 지정하면 Parallel Compaction을 사용하지 않는다.
 * Young Generation Collection 알고리즘: Parallel Scavenge
-* Old Generation Collection 알고리즘: Parallel Mark-Sweep-Compact
+* Old Generation Collection 알고리즘: Serial Mark-Sweep-Compact
 
 ### Concurrent Collectors
 
@@ -505,6 +505,7 @@ Old
 * 도서
     * Java Performance Fundamental / 김한도 저 / 엑셈 / 초판 1쇄 2009년 09월 23일
     * JVM Performance Optimizing 및 성능분석 사례 / 류길현, 오명훈, 한승민 저 / 엑셈 / 초판 1쇄 2017년 09월 10일
+    * 자바 성능 튜닝 / 스캇 오크스 저 / 최가인 역 / 비제이퍼블릭(BJ퍼블릭) / 초판 1쇄 2016년 03월 29일 / 원서: Java Performance: The Definitive Guide
 
 # 주석
 
