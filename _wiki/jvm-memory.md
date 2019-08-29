@@ -3,7 +3,7 @@ layout  : wiki
 title   : JVM 메모리 구조와 GC
 summary : 작성중인 문서
 date    : 2019-08-28 15:52:08 +0900
-updated : 2019-08-29 10:54:34 +0900
+updated : 2019-08-29 13:28:19 +0900
 tag     : java
 toc     : true
 public  : true
@@ -40,15 +40,17 @@ $$
 
 ## GC 종류 요약
 
-**Serial Collector**
+### Serial Collector
 
 * 싱글 스레드로 모든 종류의 가비지 컬렉션을 수행한다.
 * 싱글 프로세서 시스템에 가장 적합.
     * 멀티 프로세서 하드웨어를 활용할 수 없다.
     * 멀티 프로세서 환경에서도 소형 데이터셋(최대 100MB 정도)을 다루는 애플리케이션이라면 쓸만함.
 * 시스템 환경에 따라 선택되거나, `-XX:+UseSerialGC` 옵션으로 선택할 수 있다.
+* Young Generation Collection 알고리즘: Serial
+* Old Generation Collection 알고리즘: Serial Mark-Sweep-Compact
 
-**Parallel Collector**
+### Parallel Collector
 
 * 마이너 컬렉션을 병렬로 수행한다.
     * GC의 오버헤드를 현저하게 줄일 수 있다.
@@ -59,22 +61,32 @@ $$
     * Parallel Compaction을 쓰지 않으면 싱글 스레드만으로 메이저 컬렉션이 작동하게 되므로 확장성이 크게 제한될 수 있다.
     * `-XX:+UseParallelGC` 옵션을 지정하면 Parallel Compaction이 디폴트로 사용된다.
     * `-XX:-UseParallelOldGC` 옵션을 지정하면 Parallel Compaction을 사용하지 않는다.
+* Young Generation Collection 알고리즘: Parallel Scavenge
+* Old Generation Collection 알고리즘: Parallel Mark-Sweep-Compact
 
-**Concurrent Collectors**
+### Concurrent Collectors
 
 * 전체 처리량보다 응답 시간이 더 중요한 경우에 사용할 것.
     * 프로세서가 GC와 처리 역할을 나누어 일하기 때문에 일시 정지가 짧아진다.
     * 프로세서의 수를 늘릴수록 효과를 볼 수 있지만 한계가 있음.
-* Concurrent Mark Sweep(CMS) Collector
-    * 가비지 컬렉션 일시 정지가 짧은 것을 선호하는 애플리케이션을 위한 컬렉터. 
-    * 이 방식은 프로세서 리소스를 가비지 컬렉션과 공유한다.
-    * `-XX:+UseConcMarkSweepGC` 옵션으로 CMS 컬렉터를 켤 수 있다.
-* Garbage-First Garbage Collector
-    * G1GC 라고도 부른다.
-    * 서버 스타일 컬렉터.
-    * 큰 메모리를 가진 멀티 프로세서 머신을 위한 컬렉터.
-    * 높은 확률로 일시 정지 시간에 대한 목표와 높은 처리량을 달성할 것이다.
-    * `-XX:+UseG1GC` 옵션으로 G1 컬렉터를 켤 수 있다.
+
+#### Concurrent Mark Sweep(CMS) Collector
+
+* 가비지 컬렉션 일시 정지가 짧은 것을 선호하는 애플리케이션을 위한 컬렉터. 
+* 이 방식은 프로세서 리소스를 가비지 컬렉션과 공유한다.
+* `-XX:+UseConcMarkSweepGC` 옵션으로 CMS 컬렉터를 켤 수 있다.
+* Young Generation Collection 알고리즘: Parallel
+* Old Generation Collection 알고리즘: Concurrent Mark-Sweep
+
+#### Garbage-First Garbage Collector
+
+* G1GC 라고도 부른다.
+* 서버 스타일 컬렉터.
+* 큰 메모리를 가진 멀티 프로세서 머신을 위한 컬렉터.
+* 높은 확률로 일시 정지 시간에 대한 목표와 높은 처리량을 달성할 것이다.
+* `-XX:+UseG1GC` 옵션으로 G1 컬렉터를 켤 수 있다.
+* Young Generation Collection 알고리즘: Snapshot-At-The-Beginning(SATB)
+* Old Generation Collection 알고리즘: Snapshot-At-The-Beginning(SATB)
 
 
 
