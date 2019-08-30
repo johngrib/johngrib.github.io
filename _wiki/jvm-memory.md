@@ -3,11 +3,11 @@ layout  : wiki
 title   : JVM 메모리 구조와 GC
 summary : 작성중인 문서
 date    : 2019-08-28 15:52:08 +0900
-updated : 2019-08-29 17:19:16 +0900
+updated : 2019-08-30 12:18:55 +0900
 tag     : java
 toc     : true
 public  : true
-parent  : Java
+parent  : jvm
 latex   : true
 ---
 * TOC
@@ -533,7 +533,6 @@ Old
 ```
 
 * Eden과 Survivor 1 이 깨끗하게 비워진다.
-
 
 # 참고문헌
 

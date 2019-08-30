@@ -479,7 +479,9 @@ java:
     - {fileName: java-abstract-class}
     - {fileName: java-interface}
     - {fileName: java8}
+    - {fileName: jvm}
     - {fileName: jvm-memory}
+    - {fileName: jvm-stack}
     - {fileName: Object-equals}
     - {fileName: Object-hashCode}
     - {fileName: Object-toString}
