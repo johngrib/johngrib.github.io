@@ -729,6 +729,7 @@ spring:
     - {fileName: spring}
     - {fileName: spring-bean-config-configuration}
     - {fileName: spring-bean-config-xml}
+    - {fileName: spring-ioc}
 xml:
     - {fileName: spring-bean-config-configuration}
     - {fileName: spring-bean-config-xml}

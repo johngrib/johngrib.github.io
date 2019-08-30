@@ -2357,7 +2357,7 @@ spring:
     parent: index
     url: /wiki/spring
     updated: '2019-08-15 16:29:07 +0900'
-    children: [spring-bean-config-configuration, spring-bean-config-xml]
+    children: [spring-bean-config-configuration, spring-bean-config-xml, spring-ioc]
 spring-bean-config-configuration:
     type: wiki
     title: 'Configuration annotation을 통한 Spring Bean 설정'
@@ -2373,6 +2373,14 @@ spring-bean-config-xml:
     parent: spring
     url: /wiki/spring-bean-config-xml
     updated: '2019-08-15 22:11:42 +0900'
+    children: []
+spring-ioc:
+    type: wiki
+    title: IoC
+    summary: 'Inversion of Control'
+    parent: spring
+    url: /wiki/spring-ioc
+    updated: '2019-08-30 22:52:27 +0900'
     children: []
 sql-char-comparison:
     type: wiki

@@ -336,6 +336,7 @@ comment : false
 * [[spring]]
     * [[spring-bean-config-xml]]
     * [[spring-bean-config-configuration]]
+    * [[spring-ioc]]
 
 ---
 
