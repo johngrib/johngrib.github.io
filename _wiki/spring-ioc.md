@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC
 summary : Inversion of Control
 date    : 2019-08-30 22:39:18 +0900
-updated : 2019-08-31 10:56:28 +0900
+updated : 2019-08-31 12:47:31 +0900
 tag     : spring
 toc     : true
 public  : true
@@ -76,7 +76,6 @@ PicoContainer 프레임워크의 문서 [Inversion of Control History][history]�
 
 토비의 스프링 3.1 1권 92쪽에서는 다음과 같이 설명하고 있다.
 
-92쪽.
 >
 제어의 역전이라는 건, 간단히 프로그램의 제어 흐름 구조가 뒤바뀌는 것이라고 설명할 수 있다.  
 일반적으로 프로그램의 흐름은 main() 메소드와 같이 프로그램이 시작되는 지점에서 다음에 사용할 오브젝트를 결정하고,
@@ -106,7 +105,6 @@ PicoContainer 프레임워크의 문서 [Inversion of Control History][history]�
 애플리케이션 코드는 프레임워크가 짜놓은 틀에서 수동적으로 동작해야 한다.
 
 
-
 # docs.spring.io 를 읽어보자
 
 내가 IoC에 대해 조사하기로 마음먹은 이유는 Spring Framework 때문이다.
@@ -130,27 +128,6 @@ This chapter covers the Spring Framework implementation of the Inversion of Cont
 **객체가 자신과 함께 작동하는 객체를 생성자, 팩토리 메소드의 인자, 프로퍼티로만 받는 프로세스가 IoC다.**
 
 >
-The org.springframework.beans and org.springframework.context packages are the basis for Spring Framework’s IoC container. The [BeanFactory][doc-beanfactory] interface provides an advanced configuration mechanism capable of managing any type of object. [ApplicationContext][doc-application-context] is a sub-interface of BeanFactory. It adds:
-* Easier integration with Spring’s AOP features
-* Message resource handling (for use in internationalization)
-* Event publication
-* Application-layer specific contexts such as the WebApplicationContext for use in web applications.
-
->
-`org.springframework.beans` 및 `org.springframework.context` 패키지는 Spring Framework의 IoC 컨테이너의 기초를 이루고 있습니다. `BeanFactory` 인터페이스는 모든 타입의 객체를 관리할 수 있는 고급 구성 메커니즘을 제공합니다. `ApplicationContext`는 `BeanFactory`의 하위 인터페이스입니다. `ApplicationContext`에는 다음과 같은 것들을 추가합니다.  
-* Spring의 AOP 기능과의 간편한 통합
-* 메시지 자원 처리(국제화에 사용)
-* 이벤트 게시
-* 웹 애플리케이션에서 사용하기 위한 `WebApplicationContext`와 같은 애플리케이션 레이어 컨텍스트
-
->
-In short, the BeanFactory provides the configuration framework and basic functionality, and the ApplicationContext adds more enterprise-specific functionality. The ApplicationContext is a complete superset of the BeanFactory and is used exclusively in this chapter in descriptions of Spring’s IoC container. For more information on using the BeanFactory instead of the ApplicationContext, see [The BeanFactory][doc-beanf].
-
->
-간단히 말하자면, `BeanFactory`는 configuration 프레임워크와 기본적인 기능을 제공합니다. 그리고 `ApplicationContext`는 거기에 더 많은 엔터프라이즈 용도의 기능을 추가합니다. `ApplicationContext`는 `BeanFactory`의 완벽한 수퍼셋이며, 이 챕터에서 Spring IoC 컨테이너를 설명할 때 집중적으로 다룰 것입니다.
-`ApplicationContext`가 아니라 `BeanFactory` 사용에 대한 더 많은 정보는 `BeanFactory` 문서를 참고하세요.
-
->
 In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. Otherwise, a bean is simply one of many objects in your application. Beans, and the dependencies among them, are reflected in the configuration metadata used by a container.
 
 >
@@ -163,16 +140,199 @@ Bean에 대한 이야기도 나왔다.
 
 Bean의 정의도 매우 심플하다. Spring IoC 컨테이너가 라이프 사이클을 관리하는 객체가 Bean 이다.
 
+# PicoContainer의 IoC Overview
+
+PicoContainer의 [Inversion of Control Overview](http://picocontainer.com/inversion-of-control.html ) 문서에 이해를 돕는 쉬운 예제가 있기에 발췌한다.
+
+## IoC 컴포넌트와 냄새 나는 코드의 비교
+
+다음의 코드는 가장 간단한 IoC 컴포넌트라 할 수 있다.
+
+```java
+public interface Orange {
+  // methods
+}
+public class AppleImpl implements Apple {
+  private Orange orange;
+  public AppleImpl(Orange orange) {
+    this.orange = orange;
+  }
+  // other methods
+}
+```
+
+다음은 IoC 리팩토링이 필요한 냄새가 나는 코드이다. `new OrangeImpl()`에 주목.
+`OrangeImpl`에 커플링이 생겼고, 재사용할 수 없는 코드가 되어버렸다.
+위의 간단한 IoC 컴포넌트와 비교해 보자.
+
+```java
+public class AppleImpl implements Apple{
+  private Orange orange;
+  public Apple() {
+    this.orange = new OrangeImpl();
+  }
+  // other methods
+}
+```
+
+다음 코드에서도 냄새가 난다. 이것 역시 위의 간단한 IoC 컴포넌트와 비교해 보자.
+
+```java
+public class AppleImpl implements Apple {
+  private static Orange orange = OrangeFactory.getOrange();
+  public Apple() { }
+  // other methods
+}
+```
+
+## DI를 하는 3가지 방법
+
+한편 PicoContainer는 DI에 대해 다음과 같은 세 가지 예제를 보여준다.
+
+* Constructor Dependency Injection
+
+```java
+public interface Orange { 
+  // methods 
+} 
+
+public class AppleImpl implements Apple {
+  private Orange orange;
+  public AppleImpl(Orange orange) {
+    this.orange = orange; 
+  } 
+  // other methods 
+}
+```
+
+* Setter Dependency Injection
+
+```java
+public interface Orange { 
+  // methods 
+} 
+public class AppleImpl implements Apple {
+  private Orange orange;
+  public void setOrange(Orange orange) {
+    this.orange = orange; 
+  } 
+  // other methods 
+}
+```
+
+* Contextualized Dependency Lookup (Push Approach)
+
+```java
+public interface Orange { 
+  // methods 
+} 
+public class AppleImpl implements Apple, DependencyProvision {
+  private Orange orange;
+  public void doDependencyLookup(DependencyProvider dp) throws DependencyLookupExcpetion{
+    this.orange = (Orange) dp.lookup("Orange"); 
+  } 
+  // other methods 
+}
+```
+
+마지막은 Spring의 ApplicationContext에서 직접 Bean을 꺼내는 것과 비슷한 느낌이다.
+
+# Spring의 DI
+
+PicoContainer의 DI를 보았으니, Spring의 DI도 살펴보자.
+
+[Core 문서의 1.4.1. Dependency Injection][doc-1-4-1] 항목을 읽어보면 될 것 같다.
+
+>
+DI exists in two major variants: Constructor-based dependency injection and Setter-based dependency injection.
+
+>
+DI는 두 가지 방법이 있습니다. Constructor 기반 DI와 Seter 기반 DI.
+
+다음은 생성자 주입으로만 DI가 가능한 클래스의 예제이다.
+
+```java
+public class SimpleMovieLister {
+
+    // the SimpleMovieLister has a dependency on a MovieFinder
+    private MovieFinder movieFinder;
+
+    // a constructor so that the Spring container can inject a MovieFinder
+    public SimpleMovieLister(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // business logic that actually uses the injected MovieFinder is omitted...
+}
+```
+
+>
+Setter-based DI is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or a no-argument static factory method to instantiate your bean.  
+<br/>
+Setter 기반 DI는 인자가 없는 생성자나 인자가 없는 스태틱 팩토리 메서드를 호출하여 Bean을 인스턴스화한 다음,
+컨테이너가 Bean의 setter 메소드를 호출하는 방식으로 이루어진다.
+
+```java
+public class SimpleMovieLister {
+
+    // the SimpleMovieLister has a dependency on the MovieFinder
+    private MovieFinder movieFinder;
+
+    // a setter method so that the Spring container can inject a MovieFinder
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // business logic that actually uses the injected MovieFinder is omitted...
+}
+```
+
+>
+The ApplicationContext supports constructor-based and setter-based DI for the beans it manages. It also supports setter-based DI after some dependencies have already been injected through the constructor approach. You configure the dependencies in the form of a BeanDefinition, which you use in conjunction with PropertyEditor instances to convert properties from one format to another. However, most Spring users do not work with these classes directly (that is, programmatically) but rather with XML bean definitions, annotated components (that is, classes annotated with @Component, @Controller, and so forth), or @Bean methods in Java-based @Configuration classes. These sources are then converted internally into instances of BeanDefinition and used to load an entire Spring IoC container instance.
+
+이 부분을 대충 번역하면...
+
+>
+ApplicationContext는 관리하는 Bean에 대해 생성자 기반 및 설정자 기반 DI를 지원합니다. 또한 생성자 접근 방식을 통해 일부 종속성이 이미 주입 된 후의 세터 기반 DI도 지원합니다. BeanDefinition의 형태로 종속성을 설정하면 됩니다. (생략). 그러나 대부분의 Spring 사용자는 이러한 클래스를 직접 코딩해 사용하지는 않고 XML Bean 정의, 어노테이션이있는 컴포넌트 (@Component, @Controller 등으로 어노테이션이있는 클래스) 또는 Java 기반 @Configuration 클래스 안의 @Bean 메소드로 작업합니다. 이러한 소스는 내부적으로 BeanDefinition 인스턴스로 변환되어 전체 Spring IoC 컨테이너 인스턴스를로드하는 데 사용됩니다.
+
+예전에 정리한 두 문서와 관련이 있는 내용이다.
+
+* [[spring-bean-config-configuration]]{@Configuration을 통한 Spring Bean 설정}
+* [[spring-bean-config-xml]]{xml을 통한 Spring Bean 설정}
+
+## 생성자 기반 DI와 세터 기반 DI 중 어떤 것을 사용해야 할까?
+
+>
+The Spring team generally advocates constructor injection,
+
+Spring 팀은 생성자 주입 쪽을 선호한다고 한다. 그 이유는 다음과 같다.
+
+* immutable 객체로 만들 수 있다.
+* 디펜던시가 null이 되는 것을 예방할 수 있다.
+* 완전히 초기화된 상태로 호출한 곳에 리턴된다.
+
+세터 방식에 대해서는 다음과 같은 점을 생각해볼 만하다.
+
+* 세터 방식은 클래스 내에서 적합한 기본값을 할당할 수 있는 경우에만 사용해야 한다.
+    * 이렇게 하지 않으면 디펜던시를 사용할 때마다 null 체크를 해야 한다.
+* 디펜던시를 재구성하거나 재주입이 필요한 경우엔 유용하다.
+
 # 참고문헌
 
-* [On Inversion of Control by Stefano Mazzocchi][on-ioc]
-* Object Oriented Frameworks: a survey on methodological issues by Michael Mattsson
-    * [link1(www.semanticscholar.org)](https://www.semanticscholar.org/paper/Object-Oriented-Frameworks-%3A-A-Survey-of-Issues-Mattsson/1d13fcb7b9b2bef5e2be3728d3168588a0e55c47 )
-    * [link2(citeseerx.ist.psu.edu)](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.41.1127 )
-* [Inversion of Control History (picocontainer.com)][history]
-* 토비의 스프링 3.1 vol 1 / 이일민 저 / 에이콘출판사 / 초판 4쇄 2013년 06월 10일
-* GoF의 디자인 패턴 / Erich Gamma 외 3인 공저 / 김정아 역 / 피어슨에듀케이션코리아(PTG) / 초판 6쇄 2005년 10월 20일
-* GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
+* 웹 문서
+    * [On Inversion of Control by Stefano Mazzocchi][on-ioc]
+    * Object Oriented Frameworks: a survey on methodological issues by Michael Mattsson
+        * [link1(www.semanticscholar.org)](https://www.semanticscholar.org/paper/Object-Oriented-Frameworks-%3A-A-Survey-of-Issues-Mattsson/1d13fcb7b9b2bef5e2be3728d3168588a0e55c47 )
+        * [link2(citeseerx.ist.psu.edu)](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.41.1127 )
+    * PicoContainer
+        * [Inversion of Control History][history]
+        * [Inversion of Control Overview](http://picocontainer.com/inversion-of-control.html )
+    * Spring
+        * [Core Technologies][doc-core]
+* 서적
+    * 토비의 스프링 3.1 vol 1 / 이일민 저 / 에이콘출판사 / 초판 4쇄 2013년 06월 10일
+    * GoF의 디자인 패턴 / Erich Gamma 외 3인 공저 / 김정아 역 / 피어슨에듀케이션코리아(PTG) / 초판 6쇄 2005년 10월 20일
+    * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
 
 # 주석
 
@@ -187,6 +347,7 @@ Bean의 정의도 매우 심플하다. Spring IoC 컨테이너가 라이프 사�
 [oo-design]: https://groups.google.com/forum/#!msg/comp.lang.c++/KU-LQ3hINks/ouRSXPUpybkJ
 [doc-core]: https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html
 [doc-1-1]: https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-introduction
+[doc-1-4-1]: https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-factory-collaborators
 [doc-beanfactory]: https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/beans/factory/BeanFactory.html
 [doc-beanf]: https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-beanfactory
 [doc-application-context]: https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/ApplicationContext.html
