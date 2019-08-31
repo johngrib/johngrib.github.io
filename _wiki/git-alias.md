@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2019-01-20 08:32:52 +0900
+updated : 2019-08-31 18:54:03 +0900
 tag     : fzf git bash
 toc     : true
 public  : true
@@ -475,14 +475,14 @@ alias = "!# Prints all aliases.;\n\
 
 다음 링크에서 나의 최신 .gitconifg 파일을 볼 수 있다.
 
-* <https://github.com/johngrib/dotfiles/blob/master/.gitconfig >
+* [.gitconfig](https://github.com/johngrib/dotfiles/blob/master/.gitconfig )
 
 
 # Links
 
 * [2.7 Git Basics - Git Aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases )
 * [Git alias with parameters](https://jondavidjohn.com/git-aliases-parameters/ )
-* <https://github.com/johngrib/dotfiles/blob/master/.gitconfig >
+* [.gitconfig](https://github.com/johngrib/dotfiles/blob/master/.gitconfig )
 
 * 도구
     * <https://github.com/junegunn/fzf >

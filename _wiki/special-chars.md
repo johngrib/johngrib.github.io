@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2018-11-20 16:44:19 +0900
+updated : 2019-08-31 18:58:46 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -511,7 +511,7 @@ $$$$$$$a;   // "World"
 * C에서 address, C++와 PHP에서 reference로 사용한다.
 * Perl에서 사용자 정의 서브루틴을 호출하는 prefix로 사용한다.
 * URL의 queryString에서 `?`뒤에 이어지는 각 key=value 사이의 구분자로 사용한다.
-    * 예: [https://www.google.co.kr/search?hl=ko*&*q=ampersand](https://www.google.co.kr/search?hl=ko&q=ampersand )
+    * 예:[/search?hl=ko*&*q=ampersand](https://www.google.co.kr/search?hl=ko&q=ampersand )
 * Excel 함수에서 String concatenation에 사용한다.
 * Vim에서는 substitute(치환)를 반복하는 명령어로 쓴다.
 * 많은 프로그래밍 언어에서 비트 AND 연산자로 사용한다.
@@ -1050,6 +1050,6 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 
 ## Links
 
-* [http://www.catb.org/jargon/html/A/ASCII.html](http://www.catb.org/jargon/html/A/ASCII.html)
-* [https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)](https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block))
-* [http://man7.org/linux/man-pages/man7/ascii.7.html](http://man7.org/linux/man-pages/man7/ascii.7.html)
+* [ASCII (The Jargon File)]( http://www.catb.org/jargon/html/A/ASCII.html )
+* [Basic Latin (Unicode block) (wikipedia)]( https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block) )
+* [ASCII(7) (man7.org)]( http://man7.org/linux/man-pages/man7/ascii.7.html )

@@ -1268,7 +1268,7 @@ git-alias:
     summary: '나만의 git alias를 만들어 보자'
     parent: git
     url: /wiki/git-alias
-    updated: '2019-01-20 08:32:52 +0900'
+    updated: '2019-08-31 18:54:03 +0900'
     children: []
 git-checkout-specific-files:
     type: wiki
@@ -2356,7 +2356,7 @@ special-chars:
     summary: '특수문자 검색하다 빡쳐서 작성한 문서'
     parent: what
     url: /wiki/special-chars
-    updated: '2018-11-20 16:44:19 +0900'
+    updated: '2019-08-31 18:58:46 +0900'
     children: []
 spring:
     type: wiki
