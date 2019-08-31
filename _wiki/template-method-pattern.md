@@ -3,7 +3,7 @@ layout  : wiki
 title   : 템플릿 메소드 패턴(Template Method Pattern)
 summary : 알고리즘의 일부 단계를 서브클래스에서 정의한다
 date    : 2019-08-31 15:27:07 +0900
-updated : 2019-08-31 16:03:42 +0900
+updated : 2019-08-31 16:29:29 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -172,10 +172,10 @@ public abstract class CaffeineBeverage {
     void pourInCup() {
         System.out.println("컵에 따르는 중");
     }
-    
+
     // 이 메소드가 hook 메소드
     boolean customerWantsCondiments() {
-        return true;    
+        return true;
     }
 }
 ```

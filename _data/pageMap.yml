@@ -1572,7 +1572,7 @@ hollywood-principle:
     summary: '"Do not call us, we call You."'
     parent: proverb
     url: /wiki/hollywood-principle
-    updated: '2019-08-31 16:08:13 +0900'
+    updated: '2019-08-31 16:29:20 +0900'
     children: []
 how-to:
     type: wiki
@@ -2484,7 +2484,7 @@ template-method-pattern:
     summary: '알고리즘의 일부 단계를 서브클래스에서 정의한다'
     parent: design-pattern
     url: /wiki/template-method-pattern
-    updated: '2019-08-31 16:03:42 +0900'
+    updated: '2019-08-31 16:29:29 +0900'
     children: []
 test-double:
     type: wiki
