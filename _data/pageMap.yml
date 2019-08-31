@@ -1566,6 +1566,14 @@ history:
     url: /wiki/history
     updated: '2018-10-14 10:12:24 +0900'
     children: []
+hollywood-principle:
+    type: wiki
+    title: '헐리우드 원칙(Hollywood Principle)'
+    summary: '"Do not call us, we call You."'
+    parent: proverb
+    url: /wiki/hollywood-principle
+    updated: '2019-08-31 14:03:41 +0900'
+    children: []
 how-to:
     type: wiki
     title: 'HOW TO'
@@ -2133,7 +2141,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-02-21 22:37:29 +0900'
-    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, Zipf-s-law]
+    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, Zipf-s-law]
 Python3:
     type: wiki
     title: Python3
@@ -2380,7 +2388,7 @@ spring-ioc:
     summary: 'Inversion of Control'
     parent: spring
     url: /wiki/spring-ioc
-    updated: '2019-08-31 12:47:31 +0900'
+    updated: '2019-08-31 14:04:25 +0900'
     children: []
 sql-char-comparison:
     type: wiki

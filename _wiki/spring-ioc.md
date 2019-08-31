@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC
 summary : Inversion of Control
 date    : 2019-08-30 22:39:18 +0900
-updated : 2019-08-31 12:47:31 +0900
+updated : 2019-08-31 14:04:25 +0900
 tag     : spring
 toc     : true
 public  : true
@@ -38,23 +38,8 @@ The major difference between an object-oriented framework and a class library is
 >
 객체지향 프레임워크와 클래스 라이브러리의 큰 차이점은 프레임워크가 애플리케이션 코드를 호출한다는 것입니다. 일반적으로는 애플리케이션 코드가 클래스 라이브러리를 호출합니다. 이러한 제어의 역전(inversion of control)은 때때로 헐리우드 원칙이라고도 합니다. "우리에게 전화(call)하지 마세요. 우리가 당신을 부를(call) 것입니다".
 
-헐리우드 원칙은 "GoF의 디자인 패턴"의 템플릿 메서드 챕터에서 찾아볼 수 있다. GoF는 **inverted control**이라는 표현을 쓴다.
+* 참고: [[hollywood-principle]]{헐리우드 원칙}
 
-> Template methods lead to an inverted control structure that's sometimes referred to as "the Hollywood principle,"
-that is, "Don't call us, we'll call you".
-This refers to how a parent class calls the operations of a subclass and not the other way around.
-
-국내 출간된 GoF의 책에서는 다음과 같이 번역되어 있다.
-
-> 템플릿 메서드는 "할리우드 원칙(Hollywood principle)"이라는 역전된 제어 구조를 끌어냅니다.
-"전화하지 마세요. 우리가 연락할게요(Don't call us, we'll call you)."라는 것입니다.
-다시 말해, 부모 클래스는 서브클래스에 정의된 연산을 호출할 수 있지만 반대 방향의 호출은 안 됩니다.
-
-그리고 아래쪽에 역자인 김정아 님의 다음과 같은 주석이 있다.[^kim]
-
-> 옮긴이 주: 뽑기 어려운 사원에게 나중에 연락할 테니 자꾸 전화하지 말라는 회사 측의 말로 자주 쓰인다.
-1960년대 미국에서 면접관들이 쓰기 시작한 말인데,
-나중에 극장에서 배우들의 오디션을 보고 거절할 때 더 많이 써 유명해졌다.
 
 ## PicoContainer 문서를 통해 보는 IoC의 역사
 
@@ -316,6 +301,10 @@ Spring 팀은 생성자 주입 쪽을 선호한다고 한다. 그 이유는 다�
 * 세터 방식은 클래스 내에서 적합한 기본값을 할당할 수 있는 경우에만 사용해야 한다.
     * 이렇게 하지 않으면 디펜던시를 사용할 때마다 null 체크를 해야 한다.
 * 디펜던시를 재구성하거나 재주입이 필요한 경우엔 유용하다.
+
+# 함께 읽기
+
+* [[hollywood-principle]]{헐리우드 원칙}
 
 # 참고문헌
 

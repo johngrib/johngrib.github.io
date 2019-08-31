@@ -141,6 +141,7 @@ comment : false
     * [[Conway-s-law]]
     * [[Copernican-Principle]]
     * [[Edsel-edict]]
+    * [[hollywood-principle]]
     * [[Kerckhoffs-s-principle]]
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
     * [[Naming-Principle]]
