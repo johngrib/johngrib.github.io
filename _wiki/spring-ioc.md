@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC
 summary : Inversion of Control
 date    : 2019-08-30 22:39:18 +0900
-updated : 2019-08-31 01:24:51 +0900
+updated : 2019-08-31 10:56:28 +0900
 tag     : spring
 toc     : true
 public  : true
@@ -22,11 +22,13 @@ IoC에 대해 조사하던 도중, 트위터에서 [@wickedev88](https://twitter
 이 글을 읽고 몇 가지 사실을 알게 되었다.
 
 * 1998년 Avalon 커뮤니티에 Stefano Mazzocchi가 IoC 개념을 소개하였음.
-    * Mazzocchi가 IoC 개념의 창안자라고 생각하는 사람들도 있지만 사실이 아님.
+    * Mazzocchi가 IoC 개념의 창안자라고 생각하는 사람들도 있지만 Mazzocchi는 그렇지 않다고 한다.
 * Mazzocchi가 찾아낸 IoC의 최초 언급은 1996년 Michael Mattson의 논문.
     * [Object-Oriented Frameworks: A survey of methodological issues][o-o-framework]
 * 마틴 파울러가 IoC를 Dependency Injection으로 이름을 바꿨다.
     * Mazzocchi는 DI라는 명명은 적절하지 않은 것으로 보는듯.
+
+## Hollywood principle
 
 한편 Michael Mattson의 논문 Conclusions (98쪽) 부분을 읽어보면 다음과 같은 문단이 있다.
 
@@ -34,11 +36,45 @@ IoC에 대해 조사하던 도중, 트위터에서 [@wickedev88](https://twitter
 The major difference between an object-oriented framework and a class library is that the framework calls the application code. Normally the application code calls the class library. This inversion of control is sometimes named the Hollywood principle, "Do not call us, we call You".
 
 >
-객체지향 프레임워크와 클래스 라이브러리의 큰 차이점은 프레임워크가 애플리케이션 코드를 호출한다는 것입니다. 일반적으로는 애플리케이션 코드가 클래스 라이브러리를 호출합니다. 이러한 제어의 역전(inversion of control)은 때때로 헐리우드 원칙이라고도 합니다. "우리에게 전화(call)하지 마세요. 우리가 당신을 부를(call) 것입니다".[^we-call-you]
+객체지향 프레임워크와 클래스 라이브러리의 큰 차이점은 프레임워크가 애플리케이션 코드를 호출한다는 것입니다. 일반적으로는 애플리케이션 코드가 클래스 라이브러리를 호출합니다. 이러한 제어의 역전(inversion of control)은 때때로 헐리우드 원칙이라고도 합니다. "우리에게 전화(call)하지 마세요. 우리가 당신을 부를(call) 것입니다".
+
+헐리우드 원칙은 "GoF의 디자인 패턴"의 템플릿 메서드 챕터에서 찾아볼 수 있다. GoF는 **inverted control**이라는 표현을 쓴다.
+
+> Template methods lead to an inverted control structure that's sometimes referred to as "the Hollywood principle,"
+that is, "Don't call us, we'll call you".
+This refers to how a parent class calls the operations of a subclass and not the other way around.
+
+국내 출간된 GoF의 책에서는 다음과 같이 번역되어 있다.
+
+> 템플릿 메서드는 "할리우드 원칙(Hollywood principle)"이라는 역전된 제어 구조를 끌어냅니다.
+"전화하지 마세요. 우리가 연락할게요(Don't call us, we'll call you)."라는 것입니다.
+다시 말해, 부모 클래스는 서브클래스에 정의된 연산을 호출할 수 있지만 반대 방향의 호출은 안 됩니다.
+
+그리고 아래쪽에 역자인 김정아 님의 다음과 같은 주석이 있다.[^kim]
+
+> 옮긴이 주: 뽑기 어려운 사원에게 나중에 연락할 테니 자꾸 전화하지 말라는 회사 측의 말로 자주 쓰인다.
+1960년대 미국에서 면접관들이 쓰기 시작한 말인데,
+나중에 극장에서 배우들의 오디션을 보고 거절할 때 더 많이 써 유명해졌다.
+
+## PicoContainer 문서를 통해 보는 IoC의 역사
+
+PicoContainer 프레임워크의 문서 [Inversion of Control History][history]에는 IoC의 역사가 잘 나와 있다.
+
+![ioc-timeline](/post-img/spring-ioc/ioc-timeline.png)
+
+이 글에서 언급하는 선행 기술을 옮겨보자면 다음과 같다.
+
+* 1994: GoF가 템플릿 메서드 패턴에서 inverted control과 헐리우드 원칙을 이야기함.
+* 1994-08-14: Robert C. Martin, 즉 밥 아저씨. [OO Design Quality Metrics: An Analysis of Dependencies?][oo-design].
+* 1995-06: 밥 아저씨. Principle of Depenency Inversion. [The Principles of OOD](http://groups.google.com/group/comp.lang.c++/msg/30f7c7701209faba?dmode=source )
+* 1996-05: 밥 아저씨. The Dependency Inversion Principle.
+* 1996-02: Michael Mattesson의 논문 Object-Oriented Frameworks: A survey of methodological issues. "inversion of control" 등장.
+* 1998-06: Brian Foote와 Joseph Yoder. [Big Ball of Mud](http://www.laputan.org/mud/ ).
+* 1998-06: Ralph E. Johnson과 Brian Foote. [Designing Reusable Classes](http://www.laputan.org/drc/drc.html ). "inversion of control" 등장.
 
 # 토비의 스프링 3.1
 
-토비의 스프링 3.1 1권 92쪽에서 이러한 면(헐리우드 원칙)을 상세히 잘 설명하고 있다.
+토비의 스프링 3.1 1권 92쪽에서는 다음과 같이 설명하고 있다.
 
 92쪽.
 >
@@ -47,9 +83,7 @@ The major difference between an object-oriented framework and a class library is
 결정한 오브젝트를 생성하고, 만들어진 오브젝트에 있는 메소드를 호출하고,
 그 오브젝트 메소드 안에서 다음에 사용할 것을 결정하고 호출하는 식의 작업이 반복된다.
 이런 프로그램 구조에서 각 오브젝트는 프로그램 흐름을 결정하거나 사용할 오브젝트를 구성하는 작업에 능동적으로 참여한다.  
-(중략)
-
->
+(중략)  
 제어의 역전이란 이런 제어 흐름의 개념을 꺼꾸로 뒤집는 것이다.
 제어의 역전에서는 오브젝트가 자신이 사용할 오브젝트를 스스로 선택하지 않는다.
 당연히 생성하지도 않는다.
@@ -57,9 +91,7 @@ The major difference between an object-oriented framework and a class library is
 모든 제어 권한을 자신이 아닌 다른 대상에게 위임하기 때문이다.
 프로그램의 시작을 담당하는 main() 과 같은 엔트리 포인트를 제외하면
 모든 오브젝트는 이렇게 위임받은 제어 권한을 갖는 특별한 오브젝트에 의해 결정되고 만들어진다.  
-(중략)
-
->
+(중략)  
 프레임워크도 제어의 역전 개념이 적용된 대표적인 기술이다.
 프레임워크는 라이브러리의 다른 이름이 아니다.
 프레임워크는 단지 미리 만들어둔 반제품이나, 확장해서 사용할 수 있도록 준비된 추상 라이브러리의 집합이 아니다.
@@ -137,17 +169,22 @@ Bean의 정의도 매우 심플하다. Spring IoC 컨테이너가 라이프 사�
 * Object Oriented Frameworks: a survey on methodological issues by Michael Mattsson
     * [link1(www.semanticscholar.org)](https://www.semanticscholar.org/paper/Object-Oriented-Frameworks-%3A-A-Survey-of-Issues-Mattsson/1d13fcb7b9b2bef5e2be3728d3168588a0e55c47 )
     * [link2(citeseerx.ist.psu.edu)](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.41.1127 )
+* [Inversion of Control History (picocontainer.com)][history]
 * 토비의 스프링 3.1 vol 1 / 이일민 저 / 에이콘출판사 / 초판 4쇄 2013년 06월 10일
+* GoF의 디자인 패턴 / Erich Gamma 외 3인 공저 / 김정아 역 / 피어슨에듀케이션코리아(PTG) / 초판 6쇄 2005년 10월 20일
+* GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
 
 # 주석
 
-[^we-call-you]: "Do not call us, we call You" 헐리우드에서 오디션이 끝난 후 가수나 배우에게 하는 말로 보인다. [the phrase finder](https://www.phrases.org.uk/meanings/dont-call-us.html ) 참고.
 [^translate-hard]: 나에게 꽤 어려운 영어 문장이라 일단 의역했다.
+[^kim]: 김정아 님의 주석은 2005년 번역본에는 없고, 프로텍미디어에서 출판한 2015년 개정판에 있다.
 
 [on-ioc]: https://web.archive.org/web/20040413042810/http://www.betaversion.org/~stefano/linotype/news/38/
 [o-o-framework]: https://www.semanticscholar.org/paper/Object-Oriented-Frameworks-%3A-A-Survey-of-Issues-Mattsson/1d13fcb7b9b2bef5e2be3728d3168588a0e55c47
+[history]: http://picocontainer.com/inversion-of-control-history.html
 
 
+[oo-design]: https://groups.google.com/forum/#!msg/comp.lang.c++/KU-LQ3hINks/ouRSXPUpybkJ
 [doc-core]: https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html
 [doc-1-1]: https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-introduction
 [doc-beanfactory]: https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/beans/factory/BeanFactory.html

@@ -2380,7 +2380,7 @@ spring-ioc:
     summary: 'Inversion of Control'
     parent: spring
     url: /wiki/spring-ioc
-    updated: '2019-08-31 01:24:51 +0900'
+    updated: '2019-08-31 10:56:28 +0900'
     children: []
 sql-char-comparison:
     type: wiki
