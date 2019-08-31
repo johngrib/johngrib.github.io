@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC
 summary : Inversion of Control
 date    : 2019-08-30 22:39:18 +0900
-updated : 2019-08-31 14:04:25 +0900
+updated : 2019-08-31 16:08:26 +0900
 tag     : spring
 toc     : true
 public  : true
@@ -49,7 +49,7 @@ PicoContainer 프레임워크의 문서 [Inversion of Control History][history]�
 
 이 글에서 언급하는 선행 기술을 옮겨보자면 다음과 같다.
 
-* 1994: GoF가 템플릿 메서드 패턴에서 inverted control과 헐리우드 원칙을 이야기함.
+* 1994: GoF가 [[template-method-pattern]]{템플릿 메소드 패턴}에서 inverted control과 헐리우드 원칙을 이야기함.
 * 1994-08-14: Robert C. Martin, 즉 밥 아저씨. [OO Design Quality Metrics: An Analysis of Dependencies?][oo-design].
 * 1995-06: 밥 아저씨. Principle of Depenency Inversion. [The Principles of OOD](http://groups.google.com/group/comp.lang.c++/msg/30f7c7701209faba?dmode=source )
 * 1996-05: 밥 아저씨. The Dependency Inversion Principle.
@@ -305,6 +305,7 @@ Spring 팀은 생성자 주입 쪽을 선호한다고 한다. 그 이유는 다�
 # 함께 읽기
 
 * [[hollywood-principle]]{헐리우드 원칙}
+* [[template-method-pattern]]{템플릿 메소드 패턴}
 
 # 참고문헌
 

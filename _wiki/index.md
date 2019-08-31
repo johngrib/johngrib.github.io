@@ -93,6 +93,7 @@ comment : false
 * [[design-pattern]]
     * [[builder-pattern]]
     * [[static-factory-method-pattern]]
+    * [[template-method-pattern]]
 * [[problem]]
     * [[two-eggs-100-floor]]
 * [[programming-language]]{프로그래밍 언어}

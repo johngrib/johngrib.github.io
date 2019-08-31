@@ -373,6 +373,7 @@ design-pattern:
     - {fileName: builder-pattern}
     - {fileName: GoF-Design-Pattern}
     - {fileName: static-factory-method-pattern}
+    - {fileName: template-method-pattern}
 lombok:
     - {fileName: builder-pattern}
 effective-java:

@@ -3,7 +3,7 @@ layout  : wiki
 title   : 헐리우드 원칙(Hollywood Principle)
 summary : "Do not call us, we call You."
 date    : 2019-08-31 13:30:16 +0900
-updated : 2019-08-31 14:03:41 +0900
+updated : 2019-08-31 16:08:13 +0900
 tag     : 
 toc     : true
 public  : true
@@ -31,7 +31,7 @@ Our heroine could have had any number of good jobs behind a desk, but her passio
 
 ## GoF의 디자인 패턴
 
-헐리우드 원칙은 "GoF의 디자인 패턴"의 템플릿 메서드 챕터에서 찾아볼 수 있다. GoF는 **inverted control**이라는 표현을 쓴다.
+헐리우드 원칙은 "GoF의 디자인 패턴"의 [[template-method-pattern]]{템플릿 메서드 패턴}} 챕터에서 찾아볼 수 있다. GoF는 **inverted control**이라는 표현을 쓴다.
 
 > Template methods lead to an inverted control structure that's sometimes referred to as "the Hollywood principle,"
 that is, "Don't call us, we'll call you".
@@ -75,6 +75,7 @@ The major difference between an object-oriented framework and a class library is
 # 함께 읽기
 
 * [[spring-ioc]]{Inversion of Control}
+* [[template-method-pattern]]{템플릿 메소드 패턴}
 
 # 참고문헌
 
