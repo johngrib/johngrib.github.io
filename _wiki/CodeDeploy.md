@@ -3,7 +3,7 @@ layout  : wiki
 title   : AWS CodeDeploy
 summary : AWS 배포 서비스
 date    : 2019-09-04 21:30:27 +0900
-updated : 2019-09-04 21:44:37 +0900
+updated : 2019-09-04 22:17:02 +0900
 tag     : 
 toc     : true
 public  : true
@@ -15,6 +15,16 @@ latex   : false
 
 >
 AWS CodeDeploy는 개발자가 인스턴스에 대한 애플리케이션 배포를 자동화하고 필요에 따라 애플리케이션을 업데이트할 수 있는 배포 서비스입니다.
+
+# 서비스 시작과 정지
+
+```sh
+sudo service codedeploy-agent start
+```
+
+```sh
+$ sudo service codedeploy-agent stop
+```
 
 # 문제 해결
 
