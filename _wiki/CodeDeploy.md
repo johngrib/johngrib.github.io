@@ -3,7 +3,7 @@ layout  : wiki
 title   : AWS CodeDeploy
 summary : AWS 배포 서비스
 date    : 2019-09-04 21:30:27 +0900
-updated : 2019-09-04 22:17:02 +0900
+updated : 2019-09-04 23:14:57 +0900
 tag     : 
 toc     : true
 public  : true
@@ -75,6 +75,32 @@ ier:"...")
 여기에서 말하는 **key**가 뭔가 했더니 S3의 파일/디렉토리를 말하는 거였다.
 
 .travis.yml의 `key` 설정을 바꾸는 것으로 해결하였다.
+
+### CodeDeploy agent가 appspec.yml을 찾지 못하는 경우
+
+삽질하다 codedeploy agent의 작업 디렉토리를 날려버리자 그 이후부터 다음과 같은 에러 메시지가 나오기 시작했다.
+
+appspec.yml을 찾지 못하니 당연히 빌드 스크립트도 실행하지 못하고 계속 실패하는 상황.
+
+```text
+2019-09-04 13:27:00 INFO  [codedeploy-agent(685)]: [Aws::CodeDeployCommand::Clie
+nt 200 0.015194 0 retries] put_host_command_complete(command_status:"Failed",dia
+gnostics:{format:"JSON",payload:"{\"error_code\":5,\"script_name\":\"\",\"messag
+e\":\"The CodeDeploy agent did not find an AppSpec file within the unpacked revi
+sion directory at revision-relative path \\\"appspec.yml\\\". The revision was u
+npacked to directory \\\"/opt/codedeploy-agent/deployment-root/cdc2049a-398d-444
+0-b7dd-6ad66fa4332a/d-N9VOXSHIB/deployment-archive\\\", and the AppSpec file was
+expected but not found at path \\\"/opt/codedeploy-agent/deployment-root/cdc2049
+a-398d-4440-b7dd-6ad66fa4332a/d-N9VOXSHIB/deployment-archive/appspec.yml\\\".
+```
+
+로그를 읽어보면 다음 경로에 `appspec.yml`파일이 없는 것이 표면적인 이유이다.
+
+```
+/opt/codedeploy-agent/deployment-root/cdc2049a-398d-4440-b7dd-6ad66fa4332a/d-N9VOXSHIB/deployment-archive
+```
+
+따라서 경로를 만들어 주고, `appspec.yml` 파일을 복사해서 넣어줬더니 운 좋게도 문제가 해결되었다.
 
 # Links
 
