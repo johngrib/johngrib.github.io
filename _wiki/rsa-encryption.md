@@ -3,7 +3,7 @@ layout  : wiki
 title   : RSA 암호(RSA Encryption)
 summary : 
 date    : 2019-03-10 09:24:37 +0900
-updated : 2019-06-04 21:20:47 +0900
+updated : 2019-09-05 18:25:20 +0900
 tag     : encryption
 toc     : true
 public  : true
@@ -54,11 +54,14 @@ RSA 암호시스템에서 각 개인은 공개 키와 개인 키를 갖는다.
 Note that $$2537 = 43 \times 59$$, $$p = 43$$ and $$q = 59$$ are primes,
 and $$\gcd(e,(p − 1)(q − 1)) = gcd(13,42 \times 58) = 1$$.
 
-* 다음 조건들을 사용해 공개 키 $$(2537, 13)$$ 으로 평문 "**STOP**"을 암호화하시오.
-    * $$2537 = 43 \times 59$$.
-    * $$p = 43$$.
-    * $$q = 59$$.
-    * $$\gcd(e,(p − 1)(q − 1)) = \gcd(13,42 \times 58) = 1$$.
+다음 조건들을 사용해 공개 키 $$(2537, 13)$$ 으로 평문 "**STOP**"을 암호화하시오.
+
+$$
+2537 = 43 \times 59 \\
+p = 43 \\
+q = 59 \\
+\gcd(e,(p − 1)(q − 1)) = \gcd(13,42 \times 58) = 1
+$$
 
 일단 STOP 을 숫자로 변환하자. A 를 00, B를 01 이라 하면...
 

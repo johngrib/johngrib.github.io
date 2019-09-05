@@ -2260,7 +2260,7 @@ rsa-encryption:
     summary: ""
     parent: what
     url: /wiki/rsa-encryption
-    updated: '2019-06-04 21:20:47 +0900'
+    updated: '2019-09-05 18:25:20 +0900'
     children: []
 rule-of-succession:
     type: wiki
