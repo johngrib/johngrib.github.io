@@ -87,7 +87,6 @@ comment : false
         * [[Schrodinger-s-goyang-Hee]]
     * [[movie]]
         * [[ALPHAGO]]
-        * [[HOT-FUZZ]]{뜨거운 녀석들}
         * [[Las-chicas-del-cable]]
         * [[Walking-Dead]]
 * [[design-pattern]]
