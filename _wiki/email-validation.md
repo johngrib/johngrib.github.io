@@ -3,7 +3,7 @@ layout  : wiki
 title   : 이메일 주소 형식 검증하기
 summary : Verify email address format
 date    : 2019-04-11 22:05:44 +0900
-updated : 2019-04-15 20:31:35 +0900
+updated : 2019-09-05 18:21:40 +0900
 tag     : email regex php
 toc     : true
 public  : true
@@ -260,7 +260,7 @@ context('with invalid email addresses', function(){
 });
 ```
 
-# php의 FILTER_VALIDATE_EMAIL을 사용하기
+# php의 Filter 사용하기
 
 - `FILTER_VALIDATE_EMAIL`을 사용하면 위와 같이 복잡한 정규식을 사용하지 않아도 된다.
     - 이 필터는 [RFC 822](https://www.w3.org/Protocols/rfc822/ )를 따른다고 한다.
