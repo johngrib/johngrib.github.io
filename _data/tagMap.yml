@@ -726,6 +726,8 @@ IEEE:
     - {fileName: Software-Engineering-Code-of-Ethics}
 ethics:
     - {fileName: Software-Engineering-Code-of-Ethics}
+oop:
+    - {fileName: SOLID}
 spring:
     - {fileName: spring}
     - {fileName: spring-bean-config-configuration}

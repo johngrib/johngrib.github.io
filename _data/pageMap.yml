@@ -2149,7 +2149,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-02-21 22:37:29 +0900'
-    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, Zipf-s-law]
+    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Zipf-s-law]
 Python3:
     type: wiki
     title: Python3
@@ -2349,6 +2349,14 @@ Software-Engineering-Code-of-Ethics:
     parent: clipping
     url: /wiki/Software-Engineering-Code-of-Ethics
     updated: '2018-02-07 06:48:10 +0900'
+    children: []
+SOLID:
+    type: wiki
+    title: 'SOLID 원칙'
+    summary: '객체지향 5대 원칙'
+    parent: proverb
+    url: /wiki/SOLID
+    updated: '2019-09-05 18:18:30 +0900'
     children: []
 sort:
     type: wiki

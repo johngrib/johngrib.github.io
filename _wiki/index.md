@@ -150,6 +150,7 @@ comment : false
     * [[orange-juice-test]]
     * [[Postel-s-law]]
     * [[Schopenhauer-s-Law-Of-Entropy]]{쇼펜하우어의 엔트로피 법칙}
+    * [[SOLID]]
     * [[Zipf-s-law]]
 * [[review]]
     * [[review-2019]]
