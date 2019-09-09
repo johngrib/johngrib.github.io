@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2019-09-09 12:43:00 +0900
+updated : 2019-09-09 12:45:04 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -15,10 +15,10 @@ latex   : false
 
 # 개요
 
-> Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.[^1]
+> Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.[^origin]
 
 * 소프트웨어 구조는 해당 소프트웨어를 개발한 조직의 커뮤니케이션 구조를 닮게 된다.
-* 콘웨이가 논문을 Havard Business Review에 제출했을 때에는 가설을 입증할 수 없다는 이유로 거절당했다고 한다.[^2]
+* 콘웨이가 논문을 Havard Business Review에 제출했을 때에는 가설을 입증할 수 없다는 이유로 거절당했다고 한다.[^reject]
     * 그러나 개발자들 사이에서는 상식의 반열에 오른 법칙이다.
 
 # 멜빈 콘웨이(Melvin E. Conway)
@@ -85,7 +85,7 @@ The development of such a philosophy promises to unearth basic questions about v
 콘웨이 법칙은 "프로그램의 구조는 그것을 제작하는 조직의 구조를 반영한다"는 것이다.
 혼란스러운 회사는 혼란스러운 소프트웨어만 만들어낸다.
 영웅 개발자를 고용하고, 그들에게 전권을 주며, 기적을 만들어 내기 위해 영웅들을 자유롭게 놔두는 회사는 결국 기발할지는 모르지만 에러도 무지하게 많은 제품을 만들어 낸다.
-비효율적인 프로세스를 실행하는 회사의 제품은 유치하고 둔한 반면, 효과적이고 최적화된 조직은 조화롭고 아주 만족스러운 소프트웨어를 만들어 낸다.[^3]
+비효율적인 프로세스를 실행하는 회사의 제품은 유치하고 둔한 반면, 효과적이고 최적화된 조직은 조화롭고 아주 만족스러운 소프트웨어를 만들어 낸다.[^steve]
 
 ## 프레드 브룩스가 설명한 콘웨이의 법칙
 
@@ -139,8 +139,7 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 
 # 각주
 
-[^1]: [CONWAY'S LAW](http://www.melconway.com/Home/Conways_Law.html ): 콘웨이의 홈페이지에서 인용.
-[^2]: 마이크로서비스 아키텍처 구축 10.1
-[^3]: [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발} 184쪽.
-
+[^origin]: [CONWAY'S LAW](http://www.melconway.com/Home/Conways_Law.html ): 콘웨이의 홈페이지에서 인용.
+[^reject]: 마이크로서비스 아키텍처 구축 10.1
+[^steve]: [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발} 184쪽.
 [^bob]: 클린 아키텍처 16장 독립성. 158쪽.
