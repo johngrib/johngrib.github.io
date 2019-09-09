@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2019-07-07 15:11:06 +0900
+updated : 2019-09-09 12:43:00 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -111,6 +111,16 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 
 또한 본 연구는 조직 지표를 사용하여 구축된 예측 모델을 전통적인 코드 전환, 코드 복잡성, 코드 의존성 및 발표 전 결함 조치와 비교하여 조직 지표가 지금까지 사용한 기존 지표보다 더 나은 오류 발생 예측 변수임을 보여준다.
 
+## 콘웨이의 법칙에 대한 엉클 밥의 코멘트
+
+밥 아저씨(로버트 C. 마틴)은 저서 클린 아키텍처에서 다음과 같이 말한다.[^bob]
+
+>
+많은 팀으로 구성되며 관심사가 다양한 조직에서 어떤 시스템을 개발해야 한다면,
+각 팀이 독립적으로 행동하기 편한 아키텍처를 반드시 확보하여 개발하는 동안 팀들이 서로를 방해하지 않도록 해야 한다.
+이러한 아키텍처를 만들려면 잘 격리되어 독립적으로 개발 가능한 컴포넌트 단위로 시스템을 분할할 수 있어야 한다.
+그래야만 이들 컴포넌트를 독립적으로 작업할 수 있는 팀에 할당할 수 있다.
+
 # Links
 
 * [CONWAY'S LAW](http://www.melconway.com/Home/Conways_Law.html): Conway 홈페이지에 소개된 Conway's law.
@@ -125,9 +135,12 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 * 해커 영어사전 제3판 / Guy L. Steel Jr. Eric S.RayMond 편저, 한경훈 역 / 기전연구사 / 1판 1쇄 1998년 12월 25일
 * Professional 소프트웨어 개발 / 스티브 맥코넬 저 / 윤준호, 한지윤 공역 / 인사이트(insight) / 초판 4쇄 2006년 10월 13일 / 원제 : Professional Software Development (Addison-Wesley)
 * 마이크로서비스 아키텍처 구축 / 샘 뉴먼 저 / 정성권 역 / 한빛미디어 / 초판 2쇄 2017년 05월 01일 / 원서 : Building Microservices: Designing Fine-Grained Systems
+* 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
 
 # 각주
 
 [^1]: [CONWAY'S LAW](http://www.melconway.com/Home/Conways_Law.html ): 콘웨이의 홈페이지에서 인용.
 [^2]: 마이크로서비스 아키텍처 구축 10.1
 [^3]: [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발} 184쪽.
+
+[^bob]: 클린 아키텍처 16장 독립성. 158쪽.
