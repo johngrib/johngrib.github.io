@@ -3,8 +3,8 @@ layout  : wiki
 title   : AWS CodeDeploy
 summary : AWS 배포 서비스
 date    : 2019-09-04 21:30:27 +0900
-updated : 2019-09-04 23:14:57 +0900
-tag     : 
+updated : 2019-09-09 16:48:16 +0900
+tag     : aws
 toc     : true
 public  : true
 parent  : aws
@@ -19,7 +19,7 @@ AWS CodeDeploy는 개발자가 인스턴스에 대한 애플리케이션 배포�
 # 서비스 시작과 정지
 
 ```sh
-sudo service codedeploy-agent start
+$ sudo service codedeploy-agent start
 ```
 
 ```sh
