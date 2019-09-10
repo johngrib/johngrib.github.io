@@ -238,6 +238,7 @@ comment : false
         * [[grep]]
         * [[history]]
         * [[java_home]]
+        * [[lsof]]
         * [[my-bash-cheatsheet]]
         * [[openssl]]
         * [[phpbrew]]

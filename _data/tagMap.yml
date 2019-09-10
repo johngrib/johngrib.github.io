@@ -213,6 +213,7 @@ bash:
     - {fileName: grep}
     - {fileName: history}
     - {fileName: java_home}
+    - {fileName: lsof}
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
     - {fileName: random-luch}
@@ -245,6 +246,7 @@ command:
     - {fileName: grep}
     - {fileName: history}
     - {fileName: java_home}
+    - {fileName: lsof}
     - {fileName: openssl}
     - {fileName: phpbrew}
     - {fileName: sha256sum}
