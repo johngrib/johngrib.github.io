@@ -190,7 +190,6 @@ comment : false
         * [[discrete-math-matrices]]
         * [[discrete-math-modular]]
         * [[discrete-math-linear-congruences]]
-        * [[d-m-du-2016-01]]
     * [[study-formal-languages-and-automata]]
         * [[f-l-a-00-preface]]
         * [[f-l-a-01-00]]

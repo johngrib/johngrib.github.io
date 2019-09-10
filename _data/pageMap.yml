@@ -774,14 +774,6 @@ d-i-a-05-replication:
     url: /wiki/d-i-a-05-replication
     updated: '2018-07-09 23:05:05 +0900'
     children: []
-d-m-du-2016-01:
-    type: wiki
-    title: '(study) 이산수학 - KOCW 수강 1'
-    summary: 'KOCW 동국대학교 주태우 교수님 2016년 1학기 강의 수강 노트'
-    parent: study-discrete-mathematics
-    url: /wiki/d-m-du-2016-01
-    updated: '2019-01-03 21:13:03 +0900'
-    children: []
 date:
     type: wiki
     title: 'date 명령어'
@@ -2461,7 +2453,7 @@ study-discrete-mathematics:
     parent: study
     url: /wiki/study-discrete-mathematics
     updated: '2019-01-05 17:15:40 +0900'
-    children: [d-m-du-2016-01, discrete-math-functions, discrete-math-inference-rules, discrete-math-linear-congruences, discrete-math-matrices, discrete-math-modular, discrete-math-proofs, discrete-math-propositional-logic, discrete-math-quantifiers, discrete-math-sequences, discrete-math-sets, discrete-math-summations]
+    children: [discrete-math-functions, discrete-math-inference-rules, discrete-math-linear-congruences, discrete-math-matrices, discrete-math-modular, discrete-math-proofs, discrete-math-propositional-logic, discrete-math-quantifiers, discrete-math-sequences, discrete-math-sets, discrete-math-summations]
 study-formal-languages-and-automata:
     type: wiki
     title: '(study) FORMAL LANGUAGES AND AUTOMATA'
