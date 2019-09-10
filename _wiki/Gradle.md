@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2018-10-08 22:21:21 +0900
+updated : 2019-09-10 23:05:11 +0900
 tag     : gradle tool
 toc     : true
 public  : true
@@ -17,14 +17,14 @@ latex   : false
 
 * 개발자: [Hans Dockter](https://github.com/hansd), Adam Murdoch, Szczepan Faber, Peter Niederwieser, Luke Daley, Rene Gröschke, Daz DeBoer, Steve Appling
 * 라이선스: Apache License 2.0
-* 개발 언어: Java, Groovy 등[^1]
+* 개발 언어: Java, Groovy 등[^repo]
 
 ## 특징
 
 > 앤트나 메이븐은 이러한 빌드 언어 대신 XML을 사용한다. 하지만 XML은 원래 범용 문서 형식이라 언어 처리 기능은 없다.
 따라서 조건 분기나 반복 기능을 구현하려면 앤트와 메이븐에서 구조를 바꿔서 직접 해당 기능을 만들어야 한다.
 반면 그레이들의 DSL은 그루비로 구축되어 있어서 그루비가 제공하는 언어 기능을 그대로 이용할 수 있다.
-게다가 그루비는 자바 클래스를 직접 호출할 수 있으므로 빌드 스크립트에서 자바 유틸리티도 쉽게 사용할 수 있다.[^2]
+게다가 그루비는 자바 클래스를 직접 호출할 수 있으므로 빌드 스크립트에서 자바 유틸리티도 쉽게 사용할 수 있다.[^desc]
 
 ## 사용 방법/팁 모음
 
@@ -64,6 +64,15 @@ export GRADLE_OPTS=-Xmx1024m
 gradle clean test --tests "package.class.method"
 ```
 
+### spring.profile.active 설정하기
+
+SpringBoot를 사용한다면 다음과 같이 액티브 프로파일을 설정해 한 줄로 실행할 수 있다.[cli-profile]
+
+```
+$ SPRING_PROFILES_ACTIVE=local2 gradle bootrun
+$ SPRING_PROFILES_ACTIVE=local2 ./gradlew bootrun     # gradlew 사용
+```
+
 ## Links
 
 * [gradle.org](https://gradle.org/): 공식 홈페이지
@@ -81,5 +90,6 @@ gradle clean test --tests "package.class.method"
 
 ## Endnote
 
-[^1]: [github.com/gradle/gradle](https://github.com/gradle/gradle)
-[^2]: Gradle 철저 입문 35쪽
+[^repo]: [github.com/gradle/gradle](https://github.com/gradle/gradle)
+[^desc]: Gradle 철저 입문 35쪽
+[cli-profile]: https://github.com/spring-projects/spring-boot/issues/832#issuecomment-133830293
