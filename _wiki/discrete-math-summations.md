@@ -3,7 +3,7 @@ layout  : wiki
 title   : 수열의 합
 summary : Summations
 date    : 2019-01-27 21:09:13 +0900
-updated : 2019-01-27 22:18:50 +0900
+updated : 2019-09-10 23:43:08 +0900
 tag     : math
 toc     : true
 public  : true
@@ -56,10 +56,10 @@ $$
 $$
 \begin{array}{rlll}
 S_n  & = \sum_{j=0}^n ar^j \\
-rS_n & = r \times \sum_{j=0}^n ar^{j} & \text{ 양 변에 r 을 곱한다 } \\
-     & = \sum_{j=0}^n ar^{(j+1)}      & \text{ $j+1$이 성가시므로 $k=j+1$ 이라 하자 } \\
-    & = \sum_{j=0}^n ar^{k} \\
-    & = \sum_{k=1}^{n+1} ar^{k}      & \text{ $j$의 마지막 값은 $n$이므로, $k$ 의 마지막 값은 $n+1$ }\\
+rS_n & = r \times \sum_{j=0}^n ar^{j} \ ^\color{red}{(a)} \\
+     & = \sum_{j=0}^n ar^{(j+1)} \\
+    & = \sum_{j=0}^n ar^{k} \ ^\color{red}{(b)} \\
+    & = \sum_{k=1}^{n+1} ar^{k} \\
     & = \left( \sum_{ \color{red}{k=0}}^{n+1} ar^{k} \right) - ar^0 \\
     & = \left( \sum_{k=0}^{n+1} ar^{k} \right) - a \\
     & = \left( \sum_{k=0}^{\color{red}n} ar^{k} \right) - a + ar^{n+1} \\
@@ -68,9 +68,12 @@ rS_n - S_n
     & =  - a + ar^{n+1} \\
 S_n ( r - 1 )
     & =  - a + ar^{n+1} \\
-S_n & = { - a + ar^{n+1} \over r - 1} & \text{ 단, $ r \ne 1 $ }\\
+S_n & = { - a + ar^{n+1} \over r - 1} \ \text{ (단, $ r \ne 1 $) }\\
 \end{array}
 $$
+
+* (a) 양 변에 $$r$$을 곱한다.
+* (b) $$j+1$$이 성가시므로 $$k=j+1$$ 이라 하자.
 
 ## 이중합
 
