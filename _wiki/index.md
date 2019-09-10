@@ -88,7 +88,6 @@ comment : false
     * [[movie]]
         * [[ALPHAGO]]
         * [[Las-chicas-del-cable]]
-        * [[Walking-Dead]]
 * [[design-pattern]]
     * [[builder-pattern]]
     * [[static-factory-method-pattern]]

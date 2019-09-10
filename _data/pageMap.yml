@@ -1925,7 +1925,7 @@ movie:
     parent: media
     url: /wiki/movie
     updated: '2018-02-02 21:34:13 +0900'
-    children: [ALPHAGO, Las-chicas-del-cable, Walking-Dead]
+    children: [ALPHAGO, Las-chicas-del-cable]
 my-bash-cheatsheet:
     type: wiki
     title: '나의 bash cheatsheet'
@@ -2829,14 +2829,6 @@ von-neumann-extractor:
     parent: algorithm
     url: /wiki/von-neumann-extractor
     updated: '2018-04-08 15:12:05 +0900'
-    children: []
-Walking-Dead:
-    type: wiki
-    title: 'The Walking Dead'
-    summary: '워킹 데드'
-    parent: movie
-    url: /wiki/Walking-Dead
-    updated: '2018-01-29 23:06:09 +0900'
     children: []
 web-browser-extension:
     type: wiki

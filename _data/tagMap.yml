@@ -297,7 +297,6 @@ algirithm:
 netflix:
     - {fileName: ALPHAGO}
     - {fileName: Las-chicas-del-cable}
-    - {fileName: Walking-Dead}
 alphago:
     - {fileName: ALPHAGO}
 바둑:
@@ -657,7 +656,6 @@ sort:
     - {fileName: labs-strava-com-heatmap}
 drama:
     - {fileName: Las-chicas-del-cable}
-    - {fileName: Walking-Dead}
 letter:
     - {fileName: letter-case}
 case:
@@ -782,8 +780,6 @@ Von-Neumann:
     - {fileName: von-neumann-extractor}
 random:
     - {fileName: von-neumann-extractor}
-zombie:
-    - {fileName: Walking-Dead}
 what:
     - {fileName: what}
 why:
