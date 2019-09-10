@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2019-09-10 23:10:15 +0900
+updated : 2019-09-10 23:59:33 +0900
 tag     : gradle tool
 toc     : true
 public  : true
@@ -92,4 +92,4 @@ $ SPRING_PROFILES_ACTIVE=local2 ./gradlew bootrun     # gradlew 사용
 
 [^repo]: [github.com/gradle/gradle](https://github.com/gradle/gradle)
 [^desc]: Gradle 철저 입문 35쪽
-[^cli-profile]: https://github.com/spring-projects/spring-boot/issues/832#issuecomment-133830293
+[^cli-profile]: [spring boot 이슈 #832](https://github.com/spring-projects/spring-boot/issues/832#issuecomment-133830293)

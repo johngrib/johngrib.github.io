@@ -1412,7 +1412,7 @@ Gradle:
     summary: 'Gradle Build Tool'
     parent: tools
     url: /wiki/Gradle
-    updated: '2019-09-10 23:10:15 +0900'
+    updated: '2019-09-10 23:59:33 +0900'
     children: []
 graph:
     type: wiki
