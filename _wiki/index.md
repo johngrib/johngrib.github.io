@@ -119,6 +119,7 @@ comment : false
         * [[java-abstract-class]]
         * [[java-enhancements]]
         * [[java-interface]]
+        * TODO java-switch-expression
         * [[java8]]
         * [[jvm]]
             * [[jvm-memory]]
@@ -241,6 +242,7 @@ comment : false
         * [[my-bash-cheatsheet]]
         * [[openssl]]
         * [[phpbrew]]
+        * [[sdkman]]
         * [[sha256sum]]
         * [[sort]]
         * [[tail]]

@@ -216,6 +216,7 @@ bash:
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
     - {fileName: random-luch}
+    - {fileName: sdkman}
     - {fileName: sha256sum}
     - {fileName: sort}
     - {fileName: tail}
@@ -248,6 +249,7 @@ command:
     - {fileName: lsof}
     - {fileName: openssl}
     - {fileName: phpbrew}
+    - {fileName: sdkman}
     - {fileName: sha256sum}
     - {fileName: sort}
     - {fileName: tail}

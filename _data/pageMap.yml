@@ -629,7 +629,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, sha256sum, sort, tail, top, touch, uptime, yes]
+    children: [ag, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, sdkman, sha256sum, sort, tail, top, touch, uptime, yes]
 commit-go-mod-go-sum:
     type: wiki
     title: 'go.mod와 go.sum 도 커밋해야 할까?'
@@ -2301,6 +2301,14 @@ SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness:
     parent: book
     url: /wiki/SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness
     updated: '2018-02-05 22:29:54 +0900'
+    children: []
+sdkman:
+    type: wiki
+    title: 'sdk 명령어 (sdkman)'
+    summary: '다양한 소프트웨어 개발 도구의 버전을 관리한다'
+    parent: command-line
+    url: /wiki/sdkman
+    updated: '2019-09-11 23:13:40 +0900'
     children: []
 secret-of-consulting:
     type: wiki
