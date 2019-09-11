@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2019-09-11 22:19:38 +0900
+updated : 2019-09-12 00:15:19 +0900
 tag     : java
 toc     : true
 public  : true
@@ -19,7 +19,7 @@ latex   : true
 
 * [Shenandoah: A Low-Pause-Time Garbage Collector (Experimental)](https://openjdk.java.net/jeps/189 )
 * [Microbenchmark Suite](https://openjdk.java.net/jeps/230 )
-* [Switch Expressions (Preview)](https://openjdk.java.net/jeps/325 )
+* [[java-switch-expression]]{Switch Expressions (Preview)}
 * [JVM Constants API](https://openjdk.java.net/jeps/334 )
 * [One AArch64 Port, Not Two](https://openjdk.java.net/jeps/340 )
 * [Default CDS Archives](https://openjdk.java.net/jeps/341 )
