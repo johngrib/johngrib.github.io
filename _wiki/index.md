@@ -119,7 +119,7 @@ comment : false
         * [[java-abstract-class]]
         * [[java-enhancements]]
         * [[java-interface]]
-        * TODO java-switch-expression
+        * [[java-switch-expression]]
         * [[java8]]
         * [[jvm]]
             * [[jvm-memory]]

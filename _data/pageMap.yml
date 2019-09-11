@@ -1653,7 +1653,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-interface, java8, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-interface, java-switch-expression, java8, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1685,6 +1685,14 @@ java-interface:
     parent: Java
     url: /wiki/java-interface
     updated: '2019-08-10 13:48:10 +0900'
+    children: []
+java-switch-expression:
+    type: wiki
+    title: 'Java switch 문'
+    summary: ""
+    parent: Java
+    url: /wiki/java-switch-expression
+    updated: '2019-09-12 00:08:06 +0900'
     children: []
 java8:
     type: wiki
