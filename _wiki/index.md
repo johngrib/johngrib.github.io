@@ -117,6 +117,7 @@ comment : false
     * [[Groovy]]
     * [[Java]]
         * [[java-abstract-class]]
+        * [[java-enhancements]]
         * [[java-interface]]
         * [[java8]]
         * [[jvm]]

@@ -1653,7 +1653,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-interface, java8, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-interface, java8, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1669,6 +1669,14 @@ java-abstract-class:
     parent: Java
     url: /wiki/java-abstract-class
     updated: '2019-08-10 11:56:51 +0900'
+    children: []
+java-enhancements:
+    type: wiki
+    title: 'Java 버전별 변경점'
+    summary: '1996년 1.0 부터 2019년 12 까지'
+    parent: Java
+    url: /wiki/java-enhancements
+    updated: '2019-09-11 22:19:38 +0900'
     children: []
 java-interface:
     type: wiki
