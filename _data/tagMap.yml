@@ -482,6 +482,7 @@ java:
     - {fileName: java_home}
     - {fileName: java-abstract-class}
     - {fileName: java-enhancements}
+    - {fileName: java-gc-tuning}
     - {fileName: java-interface}
     - {fileName: java-jigsaw-quick-start}
     - {fileName: java-switch-expression}
@@ -654,6 +655,8 @@ index:
     - {fileName: index}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
+gc:
+    - {fileName: java-gc-tuning}
 von-neumann:
     - {fileName: John-von-Neumann}
 sort:
