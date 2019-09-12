@@ -3,7 +3,7 @@ layout  : wiki
 title   : JDK 8에서 Perm 영역은 왜 삭제됐을까
 summary : 
 date    : 2019-09-12 14:06:08 +0900
-updated : 2019-09-12 15:55:29 +0900
+updated : 2019-09-12 16:48:22 +0900
 tag     : java
 toc     : true
 public  : true
@@ -140,12 +140,48 @@ OpenJDK 64-Bit Server VM (Zulu 8.40.0.25-CA-macosx) (build 25.222-b10, mixed mod
 
 `-XX:MaxMetaspaceSize` 옵션을 사용하면 이 크기를 줄이는 것도 가능하다.
 
+# JEP 122를 읽어보자
+
+[JEP 122: Remove the Permanent Generation][jep-122]의 몇몇 부분을 발췌해 읽어보자.
+
+## Motivation
+
+>
+This is part of the JRockit and Hotspot convergence effort. JRockit customers do not need to configure the permanent generation (since JRockit does not have a permanent generation) and are accustomed to not configuring the permanent generation.
+
+이 작업은 JRockit과 Hotspot를 통일시키려는 시도의 일환입니다.
+JRockit 가상 머신에서는 permanent generation이 없으므로 JRockit 고객은 permanent generation을 설정하지도 않았고, 할 필요도 없기 때문입니다.
+
+## Description
+
+>
+Move part of the contents of the permanent generation in Hotspot to the Java heap and the remainder to native memory.
+
+Hotspot의 permanent generation 부분을 Java heap으로 옮기고, 나머지는 native memory로 옮기세요.
+
+>
+Hotspot's representation of Java classes (referred to here as class meta-data) is currently stored in a portion of the Java heap referred to as the permanent generation. In addition, interned Strings and class static variables are stored in the permanent generation. The permanent generation is managed by Hotspot and must have enough room for all the class meta-data, interned Strings and class statics used by the Java application. Class metadata and statics are allocated in the permanent generation when a class is loaded and are garbage collected from the permanent generation when the class is unloaded. Interned Strings are also garbage collected when the permanent generation is GC'ed.
+
+현재 Hotspot의 클래스 메타 데이터, interned String, class static 변수들은 Java heap의 permanent generation에 저장됩니다. permanent generation은 Hotspot이 관리하며, 앞에서 말한 것들을 모두 저장하므로 반드시 충분한 공간을 갖고 있어야 합니다. 클래스 메타 데이터와 static 변수들은 클래스가 로드될 때 permanent generation에 할당되고, 클래스가 언로드될 때 gc 처리됩니다. interned String은 permanent generation의 gc가 발생할 때 같이 수집됩니다.
+
+>
+The proposed implementation will allocate class meta-data in native memory and move interned Strings and class statics to the Java heap. Hotspot will explicitly allocate and free the native memory for the class meta-data. Allocation of new class meta-data would be limited by the amount of available native memory rather than fixed by the value of -XX:MaxPermSize, whether the default or specified on the command line.
+
+구현 제안서에 따르면 클래스 메타 데이터는 네이티브 메모리에 할당하고, interned String와 클래스 statics는 Java heap으로 이동합니다. Hotspot은 클래스 메타 데이터에 대한 네이티브 메모리를 명시적으로 할당하고 해제할 것입니다. 새 클래스 메타 데이터의 할당은 네이티브 메모리의 사용 가능한 양에 의해 제한되며, 커맨드 라인을 통해 설정된 `-XX:MaxPermSize` 값으로 고정되지 않습니다.
+
+>
+Allocation of native memory for class meta-data will be done in blocks of a size large enough to fit multiple pieces of class meta-data. Each block will be associated with a class loader and all class meta-data loaded by that class loader will be allocated by Hotspot from the block for that class loader. Additional blocks will be allocated for a class loader as needed. The block sizes will vary depending on the behavior of the application. The sizes will be chosen so as to limit internal and external fragmentation. Freeing the space for the class meta-data would be done when the class loader dies by freeing all the blocks associated with the class loader. Class meta-data will not be moved during the life of the class.
+
+네이티브 메모리에서의 클래스 메타 데이터 할당은, 여러 클래스 메타 데이터가 잘 들어가도록 충분한 크기의 여러 블록을 만들어 작업합니다. 각 블록은 클래스 로더와 연결되며 해당 클래스 로더가 로드한 모든 클래스 메타 데이터는 해당 클래스 로더의 블록에서 Hotspot에 의해 할당됩니다. 필요에 따라 클래스 로더에 추가 블록이 할당되기도 합니다. 블록 크기는 애플리케이션의 동작에 따라 다릅니다. 블록의 사이즈는 내부 및 외부 조각화(fragmentation)를 제한하기 위해 선택됩니다. 클래스 로더가 죽을 때 클래스 로더와 연관된 모든 블록을 해제하여 클래스 메타 데이터에 대한 공간을 확보합니다. 클래스 메타 데이터는 클래스의 수명 동안 이동하지 않습니다.
+
+
+
 # 참고문헌
 
 * 도서
     * JVM Performance Optimizing 및 성능분석 사례 / 류길현, 오명훈, 한승민 저 / 엑셈 / 초판 1쇄 2017년 09월 10일
 * 웹
-    * [JEP 122: Remove the Permanent Generation](https://openjdk.java.net/jeps/122 )
+    * [JEP 122: Remove the Permanent Generation][jep-122]
     * [About G1 Garbage Collector, Permanent Generation and Metaspace](https://blogs.oracle.com/poonam/about-g1-garbage-collector%2c-permanent-generation-and-metaspace )
     * [PermGen Elimination project is promoting](http://mail.openjdk.java.net/pipermail/hotspot-dev/2012-September/006679.html )
     * [java.lang.OutOfMemoryError: PermGen space patterns](http://javaeesupportpatterns.blogspot.com/2011/02/outofmemoryerror-permgen-patterns-part1.html )
@@ -153,3 +189,4 @@ OpenJDK 64-Bit Server VM (Zulu 8.40.0.25-CA-macosx) (build 25.222-b10, mixed mod
 # 주석
 
 [^compare]: JVM Performance Optimizing 및 성능분석 사례, 1) Hotspot JVM의 Heap 구조, 20쪽.
+[jep-122]: https://openjdk.java.net/jeps/122
