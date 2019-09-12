@@ -3,7 +3,7 @@ layout  : wiki
 title   : JDK 8에서 Perm 영역은 왜 삭제됐을까
 summary : 
 date    : 2019-09-12 14:06:08 +0900
-updated : 2019-09-12 15:51:03 +0900
+updated : 2019-09-12 15:55:29 +0900
 tag     : java
 toc     : true
 public  : true
@@ -145,6 +145,7 @@ OpenJDK 64-Bit Server VM (Zulu 8.40.0.25-CA-macosx) (build 25.222-b10, mixed mod
 * 도서
     * JVM Performance Optimizing 및 성능분석 사례 / 류길현, 오명훈, 한승민 저 / 엑셈 / 초판 1쇄 2017년 09월 10일
 * 웹
+    * [JEP 122: Remove the Permanent Generation](https://openjdk.java.net/jeps/122 )
     * [About G1 Garbage Collector, Permanent Generation and Metaspace](https://blogs.oracle.com/poonam/about-g1-garbage-collector%2c-permanent-generation-and-metaspace )
     * [PermGen Elimination project is promoting](http://mail.openjdk.java.net/pipermail/hotspot-dev/2012-September/006679.html )
     * [java.lang.OutOfMemoryError: PermGen space patterns](http://javaeesupportpatterns.blogspot.com/2011/02/outofmemoryerror-permgen-patterns-part1.html )
