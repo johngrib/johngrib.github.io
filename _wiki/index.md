@@ -123,6 +123,7 @@ comment : false
         * [[java-switch-expression]]
         * [[java8]]
         * [[java8-why-permgen-removed]]
+        * [[java10-var]]
         * [[jvm]]
             * [[jvm-memory]]
             * [[jvm-stack]]

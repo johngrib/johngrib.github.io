@@ -1653,7 +1653,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-interface, java-switch-expression, java8, java8-why-permgen-removed, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1686,6 +1686,14 @@ java-interface:
     url: /wiki/java-interface
     updated: '2019-08-10 13:48:10 +0900'
     children: []
+java-jigsaw-quick-start:
+    type: wiki
+    title: '(번역) 프로젝트 Jigsaw - 모듈 시스템 빠른 시작 가이드'
+    summary: 'Project Jigsaw; Module System Quick-Start Guide'
+    parent: Java
+    url: /wiki/java-jigsaw-quick-start
+    updated: '2019-09-12 21:00:10 +0900'
+    children: []
 java-switch-expression:
     type: wiki
     title: 'Java switch 문'
@@ -1693,6 +1701,14 @@ java-switch-expression:
     parent: Java
     url: /wiki/java-switch-expression
     updated: '2019-09-12 00:08:06 +0900'
+    children: []
+java10-var:
+    type: wiki
+    title: 'Java의 var'
+    summary: ""
+    parent: Java
+    url: /wiki/java10-var
+    updated: '2019-09-12 21:21:54 +0900'
     children: []
 java8:
     type: wiki
