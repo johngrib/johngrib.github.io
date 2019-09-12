@@ -3,7 +3,7 @@ layout  : wiki
 title   : JVM 메모리 구조와 GC
 summary : 작성중인 문서
 date    : 2019-08-28 15:52:08 +0900
-updated : 2019-08-30 12:18:55 +0900
+updated : 2019-09-12 22:18:03 +0900
 tag     : java
 toc     : true
 public  : true
@@ -16,6 +16,16 @@ latex   : true
 $$
 \def\ceil#1{\lceil #1 \rceil}
 $$
+
+# 문서를 읽자
+
+이 주제에 대해 공식 문서보다 정확하고 중요한 문서는 없다.
+
+* [JDK 12 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html )
+* [JDK 11 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/11/gctuning/introduction-garbage-collection-tuning.html )
+* [JDK 10 Garbage Collection Tuning Guide](https://docs.oracle.com/javase/10/gctuning/introduction-garbage-collection-tuning.htm )
+* [JDK 9 Garbage Collection Tuning Guide](https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm )
+* [JDK 8 Garbage Collection Tuning Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ )
 
 # 요약
 

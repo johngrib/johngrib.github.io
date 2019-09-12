@@ -1756,7 +1756,7 @@ jvm-memory:
     summary: '작성중인 문서'
     parent: jvm
     url: /wiki/jvm-memory
-    updated: '2019-08-30 12:18:55 +0900'
+    updated: '2019-09-12 22:18:03 +0900'
     children: []
 jvm-stack:
     type: wiki
