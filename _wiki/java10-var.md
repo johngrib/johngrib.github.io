@@ -3,8 +3,8 @@ layout  : wiki
 title   : Java의 var
 summary : 
 date    : 2019-09-12 21:13:19 +0900
-updated : 2019-09-12 21:21:54 +0900
-tag     : 
+updated : 2019-09-12 22:01:56 +0900
+tag     : java
 toc     : true
 public  : true
 parent  : Java

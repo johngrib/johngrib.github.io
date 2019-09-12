@@ -485,6 +485,7 @@ java:
     - {fileName: java-interface}
     - {fileName: java-jigsaw-quick-start}
     - {fileName: java-switch-expression}
+    - {fileName: java10-var}
     - {fileName: java8}
     - {fileName: java8-why-permgen-removed}
     - {fileName: jvm}
