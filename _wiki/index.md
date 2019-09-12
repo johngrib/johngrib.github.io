@@ -121,6 +121,7 @@ comment : false
         * [[java-interface]]
         * [[java-switch-expression]]
         * [[java8]]
+        * [[java8-why-permgen-removed]]
         * [[jvm]]
             * [[jvm-memory]]
             * [[jvm-stack]]

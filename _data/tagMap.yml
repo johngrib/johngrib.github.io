@@ -485,6 +485,7 @@ java:
     - {fileName: java-interface}
     - {fileName: java-switch-expression}
     - {fileName: java8}
+    - {fileName: java8-why-permgen-removed}
     - {fileName: jvm}
     - {fileName: jvm-memory}
     - {fileName: jvm-stack}

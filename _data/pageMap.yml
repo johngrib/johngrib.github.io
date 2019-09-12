@@ -1653,7 +1653,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-interface, java-switch-expression, java8, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-interface, java-switch-expression, java8, java8-why-permgen-removed, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1701,6 +1701,14 @@ java8:
     parent: Java
     url: /wiki/java8
     updated: '2018-07-25 17:09:16 +0900'
+    children: []
+java8-why-permgen-removed:
+    type: wiki
+    title: 'JDK 8에서 Perm 영역은 왜 삭제됐을까'
+    summary: ""
+    parent: Java
+    url: /wiki/java8-why-permgen-removed
+    updated: '2019-09-12 15:51:03 +0900'
     children: []
 John-von-Neumann:
     type: wiki
