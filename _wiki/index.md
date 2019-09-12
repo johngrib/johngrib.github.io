@@ -119,6 +119,7 @@ comment : false
         * [[java-abstract-class]]
         * [[java-enhancements]]
         * [[java-interface]]
+        * [[java-jigsaw-quick-start]]
         * [[java-switch-expression]]
         * [[java8]]
         * [[java8-why-permgen-removed]]
