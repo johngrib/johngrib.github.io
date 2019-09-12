@@ -3,7 +3,7 @@ layout  : wiki
 title   : JDK 8에서 Perm 영역은 왜 삭제됐을까
 summary : 
 date    : 2019-09-12 14:06:08 +0900
-updated : 2019-09-12 16:48:22 +0900
+updated : 2019-09-12 18:45:58 +0900
 tag     : java
 toc     : true
 public  : true
@@ -23,6 +23,7 @@ latex   : false
 * 그 결과 기존과 비교해 큰 메모리 영역을 사용할 수 있게 되었다.
     * Perm 영역 크기로 인한 `java.lang.OutOfMemoryError`를 더 보기 힘들어진다.
 
+JEP 122에서는 JRockit과 Hotspot을 통일시키기 위해 PermGen 영역을 삭제한다고 한다.
 
 # JDK 8: PermGen 제거
 
