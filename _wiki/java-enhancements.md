@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2019-09-12 13:39:54 +0900
+updated : 2019-09-12 19:30:27 +0900
 tag     : java
 toc     : true
 public  : true
@@ -73,7 +73,7 @@ latex   : true
     * Parallel Array Sorting
     * ...
 * HotSpot
-    * Removal of PermGen
+    * [[java8-why-permgen-removed]]{Removal of PermGen}
 * ...
 
 # Java SE 7
