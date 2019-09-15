@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary :
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-15 15:40:03 +0900
+updated : 2019-09-15 16:41:15 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -20,7 +20,7 @@ latex   : true
 
 # Garbage Collector란 무엇인가?
 
-* GC의 정의는 HTG-08 과 HTG-09 ~ HTG-12 가 미묘하게 다른데, 9 부터 generational collection을 사용하지 않는 G1GC가 기본값이 되었기 때문이다.
+* GC의 정의는 HTG-08 과 HTG-09 ~ HTG-12 가 미묘하게 다른데, 9 부터 G1GC가 기본값이 되었기 때문이다.
 
 ## Java 9 ~ 12
 
@@ -88,7 +88,8 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
 * 최대 일시 정지 시간 최소화
 * 애플리케이션 처리량 향상
 
-**최대 일시 정지 시간 최소화 목표**
+
+**최대 일시 정지 시간 최소화 목표(Maximum Pause-Time Goal)**
 
 * 일시 정지 시간은 GC가 애플리케이션을 정지시켜 놓고 사용하지 않는 메모리 공간을 복구하는 기간이다.
 * 이 작업의 목표는 일시 정지들 중 가장 긴 시간에 한계를 두는 것이다.
@@ -108,7 +109,8 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
 * 이 값을 설정하게 되면 GC가 짧아지는 대신 더 자주 발생하게 되고, 그 결과 애플리케이션의 전체 처리량이 줄어들게 된다.
 * 이 값을 설정해도 상황에 따라 일시 정지 시간 목표를 달성하지 못할 수도 있다.
 
-**처리량 향상 목표**
+
+**처리량 향상 목표(Throughput Goal)**
 
 * 처리량은 GC에 소요된 시간과 애플리케이션 처리에 소요된 시간으로 측정한다.
 
@@ -122,7 +124,7 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
 * `-XX:GCTimeRatio=19`로 설정하면, $${ 1 \over 20 }$$ 이므로, 전체 시간의 5%가 GC 시간으로 조절된다.
 * 처리량 목표를 달성하지 못하면 GC가 더 드물게 발생하게 만들기 위해 generation들의 사이즈가 늘어나게 된다.
 
-**점진적 목표 달성**
+**Footprint**
 
 * 처리량/최대 일시 정지 시간 목표를 달성하게 되면, GC는 두 목표 중 하나를 랜덤으로 골라 목표를 달성할 수 없는 수준까지 heap 크기를 줄인다.
 * GC가 사용할 수 있는 최소/최대 heap 사이즈는 다음 옵션으로 설정할 수 있다.(HTG-09 ~ 12)
@@ -236,7 +238,7 @@ HTG-09 부터 Tenured가 Old로 바뀐 것으로 확인할 수 있다.
 * HTG-08: _Default Arrangement of Generations, Except for Parallel Collector and G1_
     * Generation의 기본 배열(병렬 컬렉터와 G1 컬렉터를 제외)
 
-그 이유는 [Default Selection의 변화](#default-selections) 때문인 것으로 보인다. Java 9 부터는 G1이 기본 가비지 컬렉터로 설정되었기 때문이다. 조금 더 뒤에서 살펴보겠지만, G1은 generational collection을 사용하지 않는다.
+그 이유는 [Default Selection의 변화](#default-selections) 때문인 것으로 보인다. Java 9 부터는 G1이 기본 가비지 컬렉터로 설정되었기 때문이다.
 
 ## Survivor는 왜 두 개인가?
 
@@ -292,6 +294,82 @@ Survivor 0              Survivor 1
 다음 Minor GC에서는 Survivor 0이 객체를 복사받는 입장이 되고, Survivor 1이 청소의 대상이 될 것이다. Survivor는 이렇게 서로 교대를 한다.
 
 자세한 내용은 [[java-gc-eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로} 문서를 참고.
+
+# 측정하기
+
+커맨드 라인 옵션 `-verbose:gc`를 사용하면 각 콜렉션에서 heap 및 gc에 대한 정보를 보여준다.
+
+## Java 9 ~ 12
+
+`-Xlog`는 HotSpot JVM의 제너럴한 로깅 옵션이다. 즉 `gc`는 `-Xlog`의 태그이며, `-verbose:gc`는 `-Xlog:gc`의 알리아스다.
+
+자세한 정보를 얻고 싶다면 `-Xlog:gc*`를 시도해 보자.
+
+
+다음은 HTG-09 ~ 12 문서에 수록된 예제이다.
+
+```
+[15,651s][info ][gc] GC(36) Pause Young (G1 Evacuation Pause) 239M->57M(307M) (15,646s, 15,651s) 5,048ms
+[16,162s][info ][gc] GC(37) Pause Young (G1 Evacuation Pause) 238M->57M(307M) (16,146s, 16,162s) 16,565ms
+[16,367s][info ][gc] GC(38) Pause Full (System.gc()) 69M->31M(104M) (16,202s, 16,367s) 164,581ms
+```
+
+이 로그는 다음과 같은 형식을 따른다.
+
+```
+[언제][로그레벨][태그] GC(gc 아이디) GC유형 (GC원인) GC이전용량->GC이후용량(heap사이즈) (GC시작시간, 종료시간) 소요시간
+```
+
+위의 출력 결과를 보면 다음의 사실들을 알 수 있다.
+
+* 첫번째 라인
+    * GC id 번호는 36.
+    * 사용되고 있었던 239M의 메모리를 청소하여, 57M 만큼 살아남았다.
+    * heap 사이즈는 307M.
+    * 소요시간은 5,048ms.
+* 세번째 라인
+    * GC id 번호는 38.
+    * heap 사이즈가 104M로 조절되었다.
+    * `System.gc()` 호출로 인한 GC 작업이다.
+
+다음은 Java 12에서 Spring 애플리케이션을 돌려보면서 얻은 출력 결과의 일부이다.
+
+```
+[0.015s][info][gc] Using G1
+[0.037s][info][gc] Periodic GC disabled
+[0.444s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 25M->6M(258M) 9.461ms
+
+...중략...
+
+[1.395s][info][gc] GC(1) Pause Young (Concurrent Start) (Metadata GC Threshold) 154M->11M(258M) 7.820ms
+[1.395s][info][gc] GC(2) Concurrent Cycle
+[1.406s][info][gc] GC(2) Pause Remark 17M->17M(67M) 4.928ms
+[1.407s][info][gc] GC(2) Pause Cleanup 17M->17M(67M) 0.054ms
+[1.407s][info][gc] GC(2) Concurrent Cycle 12.830ms
+[1.673s][info][gc] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 43M->12M(67M) 9.535ms
+[1.957s][info][gc] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 44M->14M(67M) 2.559ms
+```
+
+
+## Java 8
+
+한편 HTG-08 에서는 출력 형식이 조금 다르다.
+
+```
+[GC 325407K->83000K(776768K), 0.2300771 secs]
+[GC 325816K->83372K(776768K), 0.2454258 secs]
+[Full GC 267628K->83769K(776768K), 1.8479984 secs]
+```
+
+다음은 내가 Java 8에서 Spring 애플리케이션을 돌려보면서 얻은 출력 결과의 일부이다.
+
+```
+[GC (Metadata GC Threshold)  188956K->36195K(494080K), 0.0170272 secs]
+[Full GC (Metadata GC Threshold)  36195K->33146K(560128K), 0.1685522 secs]
+```
+
+* 더 자세한 내용을 보고 싶다면 `-XX:+PrintGCDetails` 옵션을 쓰자.
+* GC 발생 타임 스탬프를 보고 싶다면 `-XX:+PrintGCTimeStamps` 옵션을 쓰자.
 
 # 함께 읽기
 

@@ -1692,7 +1692,7 @@ java-gc-tuning:
     summary: null
     parent: Java
     url: /wiki/java-gc-tuning
-    updated: '2019-09-15 15:40:03 +0900'
+    updated: '2019-09-15 16:41:15 +0900'
     children: []
 java-interface:
     type: wiki
