@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary :
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-15 15:09:12 +0900
+updated : 2019-09-15 15:26:55 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -14,17 +14,18 @@ latex   : true
 {:toc}
 
 * 이 글은 Oracle의 "HotSpot Virtual Machine Garbage Collection Tuning Guide"의 Java 8 버전부터 12 버전까지의 문서를 읽고 정리한 문서입니다.
+* 이 문서에서는 원본 문서의 이름을 "HTG"로 줄여 부르기로 한다. **H**otSpot Virtual Machine Garbage Collection **T**uning **G**uide.
+    * HTG-08, HTG-12는 각각 Java 8 버전의 HTG와 Java 12 버전의 HTG를 말한다.
 
 
 # Garbage Collector란 무엇인가?
 
+* GC의 정의는 HTG-08 과 HTG-09 ~ HTG-12 가 미묘하게 다른데, 9 부터 generational collection을 사용하지 않는 G1GC가 기본값이 되었기 때문이다.
+
 ## Java 9 ~ 12
 
 >
-* [Java 12](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fjava%2Fjavase%2F12%2Fgctuning%2Fintroduction-garbage-collection-tuning.html )
-* [Java 11](https://docs.oracle.com/en/java/javase/11/gctuning/introduction-garbage-collection-tuning.html ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fjava%2Fjavase%2F11%2Fgctuning%2Fintroduction-garbage-collection-tuning.html )
-* [Java 10](https://docs.oracle.com/javase/10/gctuning/introduction-garbage-collection-tuning.htm ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F10%2Fgctuning%2Fintroduction-garbage-collection-tuning.htm )
-* [Java 9](https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F9%2Fgctuning%2Fintroduction-garbage-collection-tuning.htm )
+* [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/introduction-garbage-collection-tuning.html ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/introduction-garbage-collection-tuning.htm ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm )
 
 GC는 애플리케이션의 동적 메모리 할당 요청을 자동으로 관리한다.
 
@@ -37,14 +38,14 @@ GC는 다음 작업을 통해 자동으로 동적 메모리를 관리한다.
 
 Java HotSpot 가비지 수집기는 다음 방법들을 사용해 GC 효율을 향상시키려 한다.
 
-* generational scavenging.
+* generational 청소(scavenging).
 * 멀티 스레드를 사용해 병렬로 작업하거나, 애플리케이션이 돌아갈 때 백그라운드에서 작업한다.
 * 라이브 오브젝트 압축.
 
 ## Java 8
 
 >
-* [Java 8](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/introduction.html#sthref3 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F8%2Fdocs%2Ftechnotes%2Fguides%2Fvm%2Fgctuning%2Fintroduction.html%23sthref3 )
+* [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/introduction.html#sthref3 )
 
 GC는 메모리를 관리하는 도구이다. GC는 다음과 같은 작업을 한다.
 
@@ -57,10 +58,7 @@ GC는 메모리를 관리하는 도구이다. GC는 다음과 같은 작업을 �
 ## Java 9 ~ 12
 
 >
-* [Java 12](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html ), [구글 번역](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html )
-* [Java 11](https://docs.oracle.com/en/java/javase/11/gctuning/ergonomics.html ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fjava%2Fjavase%2F11%2Fgctuning%2Fergonomics.html )
-* [Java 10](https://docs.oracle.com/javase/10/gctuning/ergonomics.htm#JSGCT-GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F10%2Fgctuning%2Fergonomics.htm%23JSGCT-GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 )
-* [Java 9](https://docs.oracle.com/javase/9/gctuning/ergonomics.htm#JSGCT-GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F9%2Fgctuning%2Fergonomics.htm%23JSGCT-GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 )
+* [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/ergonomics.html ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/ergonomics.htm#JSGCT-GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/ergonomics.htm#JSGCT-GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 )
 
 GC, heap 사이즈, 런타임 컴파일러 기본 셋팅은 다음과 같다.
 
@@ -73,7 +71,7 @@ GC, heap 사이즈, 런타임 컴파일러 기본 셋팅은 다음과 같다.
 ## Java 8
 
 >
-* [Java 8](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ergonomics.html#sthref5 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F8%2Fdocs%2Ftechnotes%2Fguides%2Fvm%2Fgctuning%2Fergonomics.html%23sthref5 )
+* [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ergonomics.html#sthref5 )
 
 * **Throughput garbage collector** (The parallel collector를 이렇게도 부른다)
 * 초기 heap 사이즈는 물리 메모리의 $${ 1 \over 64 }$$
@@ -82,14 +80,8 @@ GC, heap 사이즈, 런타임 컴파일러 기본 셋팅은 다음과 같다.
 
 # Behavior-Based Tuning
 
-## Java 8 ~ 12
-
 >
-* [Java 12](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fjava%2Fjavase%2F12%2Fgctuning%2Fergonomics.html%23GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 )
-* [Java 11](https://docs.oracle.com/en/java/javase/11/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fjava%2Fjavase%2F11%2Fgctuning%2Fergonomics.html%23GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 )
-* [Java 10](https://docs.oracle.com/javase/10/gctuning/ergonomics.htm#JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F10%2Fgctuning%2Fergonomics.htm )
-* [Java 9](https://docs.oracle.com/javase/9/gctuning/ergonomics.htm#JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F9%2Fgctuning%2Fergonomics.htm%23JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 )
-* [Java 8](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ergonomics.html#sthref11 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F8%2Fdocs%2Ftechnotes%2Fguides%2Fvm%2Fgctuning%2Fergonomics.html%23sthref11 )
+* [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/ergonomics.htm#JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/ergonomics.htm#JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ergonomics.html#sthref11 )
 
 HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록 설정할 수 있다.
 
@@ -133,7 +125,7 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
 **점진적 목표 달성**
 
 * 처리량/최대 일시 정지 시간 목표를 달성하게 되면, GC는 두 목표 중 하나를 랜덤으로 골라 목표를 달성할 수 없는 수준까지 heap 크기를 줄인다.
-* GC가 사용할 수 있는 최소/최대 heap 사이즈는 다음 옵션으로 설정할 수 있다.(Java 9 ~ 12)
+* GC가 사용할 수 있는 최소/최대 heap 사이즈는 다음 옵션으로 설정할 수 있다.(HTG-09 ~ 12)
 
 ```
 -Xms=<nnn>
@@ -158,16 +150,12 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
 # Generational Garbage Collection
 
 >
-* [Java 12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fjava%2Fjavase%2F12%2Fgctuning%2Fgarbage-collector-implementation.html%23GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D )
-* [Java 11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fjava%2Fjavase%2F11%2Fgctuning%2Fgarbage-collector-implementation.html%23GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D )
-* [Java 10](https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F10%2Fgctuning%2Fgarbage-collector-implementation.htm%23JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D )
-* [Java 9](https://docs.oracle.com/javase/9/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F9%2Fgctuning%2Fgarbage-collector-implementation.htm%23JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D&sandbox=1 )
-* [Java 8](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/generations.html#sthref16 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F8%2Fdocs%2Ftechnotes%2Fguides%2Fvm%2Fgctuning%2Fgenerations.html%23sthref16 )
+* [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/generations.html#sthref16 )
 
 **쓰레기**
 
-* Java 9 ~ 12: 실행중인 프로그램의 어떤 라이브 오브젝트의 레퍼런스에서도 도달할 수 없는 객체가 있다면 그 객체는 쓰레기로 간주되며, 쓰레기의 메모리는 VM이 재사용할 수 있다.
-* Java 8: 실행중인 프로그램의 어떤 포인터도 도달할 수 없는 객체는 쓰레기로 간주된다.
+* HTG-09 ~ 12: 실행중인 프로그램의 어떤 라이브 오브젝트의 레퍼런스에서도 도달할 수 없는 객체가 있다면 그 객체는 쓰레기로 간주되며, 쓰레기의 메모리는 VM이 재사용할 수 있다.
+* HTG-08: 실행중인 프로그램의 어떤 포인터도 도달할 수 없는 객체는 쓰레기로 간주된다.
 
 **이론적으로 가장 단순한 가비지 컬렉터**
 
@@ -207,7 +195,7 @@ generational collection 기법을 쓰는 GC는 다음과 같이 작동한다.
     * 이곳이 가득 차면 major gc가 발생한다.
     * major gc는 객체 수가 많으므로 minor gc보다 더 오래 걸린다.
 
-참고: old generation은 Java 8 문서에서는 tenured generation 이라고 한다.
+참고: HTG-09 ~ HTG-12 는 old generation이라 하고, HTG-08 에서는 tenured generation 이라고 한다.
 
 
 ## generation은 어떤 모양으로 배치되어 있나
@@ -216,7 +204,7 @@ generational collection 기법을 쓰는 GC는 다음과 같이 작동한다.
 
 
 ```ascii-art
-Java 9 ~ 12
+HTG-09 ~ 12
 Default Arrangement of Generations in the Serial Collector
 
                           <-------------- Old -------------->
@@ -228,7 +216,7 @@ S: Survivor
 ```
 
 ```ascii-art
-Java 8
+HTG-08
 Default Arrangement of Generations, Except for Parallel Collector and G1
 
                           <----------- Tenured ------------->
@@ -239,13 +227,13 @@ Default Arrangement of Generations, Except for Parallel Collector and G1
 S: Survivor
 ```
 
-Java 8 이후로 Tenured가 Old로 바뀐 것으로 확인할 수 있다.
+HTG-09 부터 Tenured가 Old로 바뀐 것으로 확인할 수 있다.
 
 뿐만 아니라 이 그림은 제목도 바뀌었다.
 
-* Java 9 ~ 12: _Default Arrangement of Generations in the Serial Collector_
+* HTG-90 ~ 12: _Default Arrangement of Generations in the Serial Collector_
     * 시리얼 컬렉터의 기본 배열
-* Java 8: _Default Arrangement of Generations, Except for Parallel Collector and G1_
+* HTG-08: _Default Arrangement of Generations, Except for Parallel Collector and G1_
     * Generation의 기본 배열(병렬 컬렉터와 G1 컬렉터를 제외)
 
 그 이유는 [Default Selection의 변화](#default-selections) 때문인 것으로 보인다. Java 9 부터는 G1이 기본 가비지 컬렉터로 설정되었기 때문이다. 조금 더 뒤에서 살펴보겠지만, G1은 generational collection을 사용하지 않는다.
