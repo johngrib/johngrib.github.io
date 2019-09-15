@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Java GC 튜닝
-summary :
+summary : 작성중인 문서
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-15 16:51:01 +0900
+updated : 2019-09-15 19:01:19 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -375,6 +375,176 @@ Survivor 0              Survivor 1
 
 * 더 자세한 내용을 보고 싶다면 `-XX:+PrintGCDetails` 옵션을 쓰자.
 * GC 발생 타임 스탬프를 보고 싶다면 `-XX:+PrintGCTimeStamps` 옵션을 쓰자.
+
+# Serial GC에 영향을 주는 요소들
+
+> [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/factors-affecting-garbage-collection-performance.html#GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/factors-affecting-garbage-collection-performance.html#GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/factors-affecting-garbage-collection-performance.htm#JSGCT-GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/factors-affecting-garbage-collection-performance.htm#JSGCT-GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html#sizing_generations )
+
+주의: 이 항목에서는 주로 heap의 증가 및 축소, heap 레이아웃 및 기본값에 대해 Serial 컬렉션을 전제하고 설명한다. Parallel / G1 GC에는 잘 들어맞지 않을 수 있다.
+
+## GC에 가장 큰 영향을 주는 것은 Heap의 total 사이즈
+
+GC 성능에 가장 큰 영향을 미치는 요소는 사용 가능한 총 메모리이다.
+
+generation이 꽉 찰 때 GC가 발생하기 때문에, 처리량(throughput)은 사용 가능한 메모리 양에 반비례한다.
+
+다음 그림은 Committed 와 Virtual 공간을 나타낸 것이다.
+
+```ascii-art
++------+---+---+---------+------------------+-------------------+
+| Eden | S | S | Virtual |        Old       |       Virtual     |
++------+---+---+---------+------------------+-------------------+
+ <- committed ->          <--- committed --->
+ <-------------------- total ---------------------------------->
+```
+
+가상 머신을 초기화하면, 일단 heap의 전체 공간이 예약된다.
+
+* 예약 공간의 크기는 `-Xmx` 옵션으로 지정할 수 있다.
+    * `-Xmx` 로 위 그림의 **total** 영역의 크기를 지정할 수 있다.
+    * `-Xms` 로 위 그림에서 **committed** 영역의 크기를 지정할 수 있다.
+* `-Xms` 옵션의 값이 `-Xmx` 과 차이가 있다면, 즉 여유 공간이 있다면 예약된 모든 공간이 가상 머신에 커밋되지는 않는다.
+    * 위 그림의 Virtual 영역이 바로 커밋되지 않은 여유 공간이다.
+    * heap의 다른 영역들은 필요에 따라 크기가 더 커질 수 있다.
+    * 상황에 따라 heap의 크기를 키우기 위해 에비된 공간이 virtual 영역.
+
+`-XX:NewRatio` 옵션은 young gen과 old gen의 상대적인 크기를 조절한다.
+
+```ascii-art
++------+---+---+---------+------------------+-------------------+
+| Eden | S | S | Virtual |        Old       |       Virtual     |
++------+---+---+---------+------------------+-------------------+
+ <-------- Young -------> <-------------- Old ----------------->
+```
+
+가상 머신은 각 heap 사이즈를 조절해서 설정된 free 메모리의 비율을 유지하려 한다.
+
+64bit Solaris OS의 경우 heap 사이즈와 관련된 기본값은 다음과 같다.
+
+| Option                 | Server JVM Default Value | 단위    |
+|------------------------|--------------------------|---------|
+| `-XX:MinHeapFreeRatio` | 40                       | percent |
+| `-XX:MaxHeapFreeRatio` | 70                       | percent |
+| `-Xms`                 | 6656                     | KB      |
+| `-Xmx`                 | calculated               | KB      |
+
+`-XX:MinHeapFreeRatio`의 값이 **40%**로 되어 있는데,
+이렇게 설정하면 사용 가능한 공간이 40% 보다 줄었을 때 generation의 크기를 키워서 40% 이상을 유지하게 된다.
+
+`-XX:MaxHeapFreeRatio`의 값이 **70%**인 것도 비슷하게 생각하면 된다.
+이렇게 설정하면 사용 가능한 여유 공간이 70%를 초과했을 때, generation의 크기를 줄여서 70% 이하를 유지하게 하는 것이다.
+
+한편 `-Xmx`를 보면 `calculated`라 되어 있는데, heap 사이즈의 디폴트 최대값은 JVM이 알아서 계산한다는 말이다.
+
+Parallel Collector의 heap 사이즈는 좀 더 나중에 다루기로 한다.
+
+서버 애플리케이션을 가동한다면, 다음 지침을 기억하고 따르도록 하자.
+
+* 기본값은 매우 작다. 일시 정지 문제가 없다면, 가능한 큰 크기의 메모리를 가상 머신이 사용할 수 있도록 설정해준다.
+* `-Xmx`와 `-Xms`를 같은 값으로 설정하면 가상 머신이 크기를 계산하고 결정하는 과정이 생략되기 때문에 예측 가능성이 높아진다.
+    * 하지만, 적절하지 않은 값을 주면 좋지 못한 결과가 나올 수 있으므로 주의한다.
+* 메모리 할당은 병렬(parallel)로 가능하기 때문에, 프로세서 수를 늘리는 만큼 메모리도 늘려주도록 한다.
+
+실행 중 소비되는 최대 RAM 크기를 최소화하고 싶다면(Embedded 등에서) Java heap 사이즈를 최소화하는 방법을 사용할 수 있다.
+
+다음은 heap 사이즈를 최소화하여 동적 공간을 절약하는 방법이다.
+
+* heap 사이즈를 최소화한다(`-XX:MaxHeapFreeRatio` 값과 `-XX:MinHeapFreeRatio` 값을 낮춘다).
+* `-XX:MaxHeapFreeRatio`를 `10`으로 설정했더니 `-XX:MinHeapFreeRatio`가 적절히 조절되어 성능 저하 없이 heap 사이즈를 줄였다는 사례가 있다.
+    * 애플리케이션에 따라 다른 결과가 나올 수 있으므로, 여러 값을 설정해보며 테스트할 것.
+
+* `-XX:-ShrinkHeapInSteps`를 지정하면 heap 크기를 `-XX:MaxHeapFreeRatio`를 통해 지정된 값으로 즉각적으로 줄인다.
+    * 이 설정을 쓰면 성능이 저하될 수 있다.
+    * 이 프로세스는 여러 차례의 GC 주기가 필요하다.
+    * 기본적으로 Java 런타임은 Java heap을 단계적으로 목표값을 향해 줄여나가므로 필요성이 있는지 고려할 것.
+
+## 두번째로 큰 영향을 주는 것은 young generation의 heap 비율
+
+전체 heap 사이즈가 고정되어 있다고 치고 생각해보자.
+
+마이너 GC는 young gen이 가득 찰 때마다 발생하기 때문에 young gen이 크면 클수록 마이너 GC가 더 드물게 발생하게 된다.
+
+한편, young gen의 크기가 크다면 old gen은 크기가 작을 것이므로 메이저 GC가 더 자주 발생하게 된다.
+
+```ascii-art
++-----------------------+-------+
+|         Young         |  Old  |
++-----------------------+-------+
+```
+
+* Minor GC 빈도: ↓, Major GC 빈도: ↑
+
+
+```ascii-art
++-------+-----------------------+
+| Young |          Old          |
++-------+-----------------------+
+```
+
+* Minor GC 빈도: ↑, Major GC 빈도: ↓
+
+
+기본적으로 Young gen의 크기는 `-XX:NewRatio`을 통해 비율로 조절할 수 있다.
+
+예를 들어 `-XX:NewRatio=3`으로 설정하면 **young : old** 가 **1 : 3** 으로 조절된다.
+
+```ascii-art
++-------+-------+-------+-------+
+| Young |          Old          |
++-------+-------+-------+-------+
+```
+
+더 디테일하게 설정하고 싶다면 다음 옵션들을 사용하면 된다.
+
+* `-XX:NewSize`: Young gen 크기의 최소값을 설정한다.
+* `-XX:MaxNewSize`: Young gen 크기의 최대값을 설정한다.
+
+Survivor 영역은 `-XX:SurvivorRatio` 옵션으로 설정할 수 있다.
+
+예를 들어 `-XX:SurvivorRatio=6`으로 설정하면 **Eden : Survivor 하나**의 비율을 **6 : 1**으로 조절한다.
+
+```ascii-art
+.+----+----+----+----+----+----+----+----+
+.|            Eden             | S0 | S1 |
+.+----+----+----+----+----+----+----+----+
+```
+
+Survivor 영역이 너무 작으면 큰 객체를 Survivor 영역을 거치지 않고 그냥 old 영역으로 보내버리는 경우도 생긴다.
+
+그리고 Survivor 영역이 너무 커도 별 의미가 없다.
+
+GC가 실행될 때마다 가상 머신은 threshold 값을 선택하는데, 이 threshold 값은 old 영역으로 보낼 객체의 나이(복사된 횟수)라 할 수 있다.
+그리고 이 값은 Survivor 영역에 남는 객체가 절반이 되도록 조절되기 때문이다.
+
+* Java 9 ~ 12: `-Xlog:gc,age`를 사용하면 threshold 값과 new generation 객체들의 나이를 출력할 수 있다.
+* Java 8: `XX:+PrintTenuringDistribution`를 사용해 threshold 값과 new generation 객체들의 나이를 출력할 수 있다.
+
+64bit Solaris OS의 경우 기본값은 다음과 같다.
+
+
+| Option            | Server JVM Default Value |
+|-------------------|--------------------------|
+| -XX:NewRatio      | 2                        |
+| -XX:NewSize       | 1310 MB                  |
+| -XX:MaxNewSize    | not limited              |
+| -XX:SurvivorRatio | 8                        |
+
+* Young gen의 최대 크기는 total heap의 최대 크기와 `XX:NewRatio`의 값을 통해 자동으로 계산된다.
+
+다음은 서버 애플리케이션에 대한 지침이다.
+
+* 가장 먼저 가상 머신에 제공할 수 있는 최대 heap 사이즈를 결정하도록 한다.
+* Young gen 크기를 측정하며 설정해보고 최적의 설정을 찾도록 한다.
+* 최대 heap 크기는 시스템 메모리 양보다 작아야 에러를 예방할 수 있다.
+* total heap 사이즈가 고정값일 때, young gen 크기를 늘리려면 old gen 크기를 줄여야 한다.
+* old gen은 모든 라이브 데이터를 갖고 있으면서도 10 ~ 20%의 여유 공간을 가질 수 있도록 충분히 크게 설정해준다.
+* Young gen에 충분한 양의 메모리를 할당할 것.
+* 할당은 병렬(parallel)로 할 수 있으므로, 프로세서를 추가했다면 Young gen 사이즈도 키워 주도록 한다.
+
+
+# 사용 가능한 GC들
+
+
 
 # 함께 읽기
 

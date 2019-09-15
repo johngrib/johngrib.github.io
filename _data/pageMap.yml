@@ -1689,10 +1689,10 @@ java-gc-eden-to-survivor:
 java-gc-tuning:
     type: wiki
     title: 'Java GC 튜닝'
-    summary: null
+    summary: '작성중인 문서'
     parent: Java
     url: /wiki/java-gc-tuning
-    updated: '2019-09-15 16:51:01 +0900'
+    updated: '2019-09-15 19:01:19 +0900'
     children: []
 java-interface:
     type: wiki
