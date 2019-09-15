@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary :
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-15 16:41:15 +0900
+updated : 2019-09-15 16:45:36 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -301,6 +301,9 @@ Survivor 0              Survivor 1
 
 ## Java 9 ~ 12
 
+>
+* [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html#GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-collector-implementation.html#GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E )
+
 `-Xlog`는 HotSpot JVM의 제너럴한 로깅 옵션이다. 즉 `gc`는 `-Xlog`의 태그이며, `-verbose:gc`는 `-Xlog:gc`의 알리아스다.
 
 자세한 정보를 얻고 싶다면 `-Xlog:gc*`를 시도해 보자.
@@ -352,6 +355,8 @@ Survivor 0              Survivor 1
 
 
 ## Java 8
+
+> [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/generations.html#sthref20 )
 
 한편 HTG-08 에서는 출력 형식이 조금 다르다.
 
