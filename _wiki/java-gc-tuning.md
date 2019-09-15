@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : 작성중인 문서
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-15 19:01:19 +0900
+updated : 2019-09-16 00:59:35 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -542,8 +542,100 @@ GC가 실행될 때마다 가상 머신은 threshold 값을 선택하는데, 이
 * 할당은 병렬(parallel)로 할 수 있으므로, 프로세서를 추가했다면 Young gen 사이즈도 키워 주도록 한다.
 
 
-# 사용 가능한 GC들
+# GC의 종류와 선택
 
+> [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/available-collectors.html#GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/available-collectors.html#GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/available-collectors.htm#JSGCT-GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/available-collectors.htm#JSGCT-GUID-C7B19628-27BA-4945-9004-EC0F08C76003 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/collectors.html#sthref27 )
+
+잘 모르겠다면 다음 지침을 읽고 테스트해 보도록 한다.
+
+**애플리케이션의 일시 정지 시간 요구사항이 까다롭지 않은가?**
+
+* 가상 머신이 알아서 GC를 선택하도록 한다. 하드웨어와 운영체제 환경에 따라 적절한 GC를 선택할 것이다.
+
+**애플리케이션이 100MB 이하의 작은 데이터 셋을 다루는가?**
+
+* `-XX:+UseSerialGC`를 써서 Serial GC를 사용한다.
+
+**애플리케이션이 싱글 프로세서에서 실행되며, 일시 정지 시간이 길어도 괜찮은가?**
+
+* `-XX:+UseSerialGC`를 써서 Serial GC를 사용한다.
+
+**애플리케이션의 최고 성능이 가장 중요하고, 1초 이상의 일시 정지가 있어도 괜찮은가?**
+
+* 가상 머신이 알아서 GC를 선택하도록 한다.
+* 또는 `-XX:+UseParallelGC`를 설정해 Parallel GC를 사용한다.
+
+**응답 시간이 처리량보다 중요하고, GC 일시 정지가 1초 미만이어야 하는가?**
+
+* `-XX:+UseG1GC`를 설정해 G1GC를 사용한다.
+* 또는 `-XX:+UseConcMarkSweepGC`를 설정해 CMS를 사용한다. (CMS는 JDK 8까지만 사용이 가능하다)
+
+**응답 시간이 매우 중요하거나 매우 큰 heap을 사용하는가?**
+
+* `-XX:UseZGC`를 설정해 ZGC를 사용한다. (ZGC는 JDK 11 부터 사용이 가능하다)
+
+(참고: 이 지침은 GC 선택의 출발지점이라 할 수 있다. 열심히 테스트해보면서 찾아야 한다.)
+
+위와 같이 설정했는데도 원하는 성능이 안 나온다면, 다음 방법을 시도해 보도록 한다.
+
+* 목표에 맞게 heap 사이즈, generation 사이즈를 조절해 본다.
+* 그래도 성능이 안 나오면 다른 GC를 써보도록 한다.
+    * 동시성(concurrent) GC는 일시 정지 시간을 줄여준다.
+    * 병렬(parallel) GC는 멀티 프로세서 하드웨어에서 전체 처리량(throughput)을 늘려준다.
+
+## Serial Collector
+
+Serial Collector는 싱글 스레드를 사용하여 GC 작업을 수행한다.
+
+* 장점: 싱글 스레드이므로 스레드와 스레드 사이의 통신 오버헤드가 없다.
+* 단점: 멀티 프로세서 하드웨어를 활용할 수 없다.
+
+싱글 스레드 GC라 할 수 있다.
+멀티 프로세서에서는 비효율적인 GC이지만, 100MB 정도로 작은 규모의 데이터셋을 사용하는 애플리케이션이라면 멀티 프로세서에서도 쓸만하다고 한다. Serial Collector는 VM이 운영체제와 하드웨어 환경에 따라 자동으로 선택하거나, `-XX:+UseSerialGC` 옵션으로 활성화할 수 있다.
+
+## Parallel Collector
+
+Parallel Collector는 throughput collector 라고 부르기도 한다.
+
+* Parallel Collector와 Serial Collector의
+    * 공통점: generational collector
+    * 차이점: Parallel Collector는 멀티 스레드를 쓴다.
+
+Parallel Collector는 Parallel Compaction을 사용해 병렬로 메이저 GC를 수행한다.
+
+* `-XX:+UseParallelGC` 옵션을 쓰면 기본값으로 Parallel Compaction을 사용한다.
+* `-XX:-UseParallelOldGC` 옵션을 쓰면 Parallel Compaction을 끌 수 있다.
+
+Parallel GC는 HTG-10 까지는 "많은 heap 사이즈 및 하드웨어 조합에서 1초 이상의 일시 정지 시간이 나타난다"고 하였으나, HTG-11 부터는 그러한 언급이 사라졌다.
+
+## Mostly Concurrent Collectors
+
+### G1 Garbage Collector
+
+G1GC는 Garbage-First Garbage Collector를 줄여쓴 것이다.
+
+G1은 많은 양의 메모리가 있는 멀티 프로세서 시스템을 위한 GC이다. 높은 처리량(throughput)을 달성하면서도 일시 정지 시간 목표를 높은 확률로 달성해내는 GC이다.
+
+G1은 가상 머신이 하드웨어/운영체제를 참고하여 자동으로 선택하거나, `-XX:+UseG1GC` 옵션으로 활성화된다.
+
+### Concurrent Mark Sweep Collector
+
+CMS Collector라고도 한다. CMS는 일시 정지 시간이 짧은 것을 선호하고 GC 작업과 프로세스 리소스를 공유할 수 있는 애플리케이션을 위한 GC이다.
+
+CMS는 `-XX:+UseConcMarkSweepGC` 옵션으로 활성화할 수 있다.
+
+**CMS는 JDK 9 부터는 사용되지 않는다.**
+
+### Z Garbage Collector
+
+ZGC는 대기 시간이 낮은 확장 가능한(scalable low latency) GC이다.
+ZGC는 모든 종류의 비싼 작업을 동시에(concurrently) 작업하며, 애플리케이션 스레드의 실행을 중지하지 않는다는 특징이 있다.
+
+ZGC는 10ms 미만의 짧은 대기 시간이 필요하거나 테라 바이트 큐모의 매우 큰 heap을 사용하는 애플리케이션을 위한 GC이다.
+
+ZGC는 `XX:+UseZGC` 옵션으로 활성화할 수 있다.
+
+**ZGC는 JDK 11부터 실험적으로 도입되었다.**
 
 
 # 함께 읽기
