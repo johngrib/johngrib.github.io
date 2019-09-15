@@ -118,6 +118,7 @@ comment : false
     * [[Java]]
         * [[java-abstract-class]]
         * [[java-enhancements]]
+        * [[java-gc-eden-to-survivor]]
         * [[java-gc-tuning]]
         * [[java-interface]]
         * [[java-jigsaw-quick-start]]

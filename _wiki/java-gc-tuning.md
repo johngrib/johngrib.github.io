@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Java GC 튜닝
-summary : 
+summary :
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-14 23:32:39 +0900
+updated : 2019-09-15 15:09:12 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+* 이 글은 Oracle의 "HotSpot Virtual Machine Garbage Collection Tuning Guide"의 Java 8 버전부터 12 버전까지의 문서를 읽고 정리한 문서입니다.
 
 
 # Garbage Collector란 무엇인가?
@@ -153,6 +155,111 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
     * 애플리케이션이 정상 상태(steady state)에 도달해도 그렇다.
     * 처리량 목표 달성 과제는 큰 heap을 필요로 하고 최대 일시 정지 시간 목표 달성 과제는 작은 heap을 필요로 해서, 두 목표는 경쟁하게 되어 있다.
 
+# Generational Garbage Collection
+
+>
+* [Java 12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fjava%2Fjavase%2F12%2Fgctuning%2Fgarbage-collector-implementation.html%23GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D )
+* [Java 11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fjava%2Fjavase%2F11%2Fgctuning%2Fgarbage-collector-implementation.html%23GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D )
+* [Java 10](https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F10%2Fgctuning%2Fgarbage-collector-implementation.htm%23JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D )
+* [Java 9](https://docs.oracle.com/javase/9/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F9%2Fgctuning%2Fgarbage-collector-implementation.htm%23JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D&sandbox=1 )
+* [Java 8](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/generations.html#sthref16 ), [구글 번역](https://translate.google.co.kr/translate?hl=ko&sl=en&tl=ko&u=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F8%2Fdocs%2Ftechnotes%2Fguides%2Fvm%2Fgctuning%2Fgenerations.html%23sthref16 )
+
+**쓰레기**
+
+* Java 9 ~ 12: 실행중인 프로그램의 어떤 라이브 오브젝트의 레퍼런스에서도 도달할 수 없는 객체가 있다면 그 객체는 쓰레기로 간주되며, 쓰레기의 메모리는 VM이 재사용할 수 있다.
+* Java 8: 실행중인 프로그램의 어떤 포인터도 도달할 수 없는 객체는 쓰레기로 간주된다.
+
+**이론적으로 가장 단순한 가비지 컬렉터**
+
+가장 단순무식한 GC는 어떤 방식으로 동작할까?
+도달 가능한 모든 객체를 일일이 순회하며 체크하고, 순회가 끝났을 때 체크되지 않은 객체를 쓰레기라 생각하면 된다.
+그런데 이 방식은 라이브 객체의 수가 늘어나면 그에 비례하여 순회하는 시간도 늘어난다.
+따라서 많은 라이브 데이터를 유지하는 대규모 애플리케이션에서는 사용하면 안되는 방식이다.
+
+
+## generational collection
+
+HotSpot VM은 generational collection 기법을 사용하는 여러 GC 알고리즘을 통합하고 있으며, 이런 여러 알고리즘 중에서 상황에 맞는 것을 골라 쓴다.
+
+generational collection은 객체를 세대별로 관리하는 기법이다. 초등학교 - 중학교 - 고등학교처럼 나이를 주요 기준으로 삼아 관리하는 방법이라 할 수 있다. 이 방법을 사용하면 단순무식한 GC처럼 모든 객체를 일일이 확인하는 것이 아니라 세대별로 나누어 GC를 수행하게 되어, 작업량을 많이 줄일 수 있다.
+
+그렇다면 GC 설계자들은 왜 generational collection을 선택했는가? generational collection이 이론적으로 최고인가?
+
+그렇지는 않다.
+
+generational collection은 논리적으로 완벽한 이론을 바탕으로 하고 있는 것은 아니다. 이 방식은 경험과 가설을 근거로 삼는다. GC 설계자들은 객체 대부분이 생겨나자마자 얼마 지나지 않아 쓰레기가 된다는 것을 경험적으로 알고 있었다. 이를 "weak generational hypothesis", 즉 "약한 세대 가설"이라 부른다.
+
+![weak generational hypothesis]( /post-img/java-gc-tuing/generational.png )
+
+* x축: 객체의 수명(할당된 바이트 단위)
+* y축: 해당 수명을 가진 객체의 총 바이트
+
+이 그래프의 이름은 "객체 수명의 일반적 분포(Typical Distribution for Lifetimes of Objects)"이다.[^graph] 그래프를 살펴보면 수명이 짧은 객체의 수가 압도적으로 많은 반면, 수명이 긴 객체의 수가 매우 적다는 것을 알 수 있다. 애플리케이션에 따라 모양이 다르긴 하지만 수많은 애플리케이션이 이러한 형태를 이루고 있다고 한다. 즉 대부분의 객체는 생겨나고 얼마 되지 않아 죽으며(die young) 이러한 특성에 주목하면 효과적인 GC가 가능하다.
+
+generational collection 기법을 쓰는 GC는 다음과 같이 작동한다.
+
+* young generation
+    * 객체 대부분이 생성될 때 이곳으로 들어간다(너무 커서 이 영역에 들어갈 수 없는 객체는 더 윗 세대로 들어간다).
+    * 가득 차면 이 영역에서만 돌아가는 minor gc가 발생한다.
+    * gc의 비용은 살아있는 객체의 수에 비례하므로, young gen의 gc는 효율적이다.
+    * 살아남은 객체들 중 더 오래 쓸 것 같은 것들은 tenured generation으로 옮긴다.
+* old generation
+    * 이곳이 가득 차면 major gc가 발생한다.
+    * major gc는 객체 수가 많으므로 minor gc보다 더 오래 걸린다.
+
+참고: old generation은 Java 8 문서에서는 tenured generation 이라고 한다.
+
+
+## generation은 어떤 모양으로 배치되어 있나
+
+다음 그림은 Serial Collector의 generation 디폴트 배열을 보여준다.
+
+
+```ascii-art
+Java 9 ~ 12
+Default Arrangement of Generations in the Serial Collector
+
+                          <-------------- Old -------------->
++------+---+---+---------+---------------------+-------------+
+| Eden | S | S | Virtual |                     |   Virtual   |
++------+---+---+---------+---------------------+-------------+
+ <------- Young -------->
+S: Survivor
+```
+
+```ascii-art
+Java 8
+Default Arrangement of Generations, Except for Parallel Collector and G1
+
+                          <----------- Tenured ------------->
++------+---+---+---------+---------------------+-------------+
+| Eden | S | S | Virtual |                     |   Virtual   |
++------+---+---+---------+---------------------+-------------+
+ <------- Young -------->
+S: Survivor
+```
+
+Java 8 이후로 Tenured가 Old로 바뀐 것으로 확인할 수 있다.
+
+뿐만 아니라 이 그림은 제목도 바뀌었다.
+
+* Java 9 ~ 12: _Default Arrangement of Generations in the Serial Collector_
+    * 시리얼 컬렉터의 기본 배열
+* Java 8: _Default Arrangement of Generations, Except for Parallel Collector and G1_
+    * Generation의 기본 배열(병렬 컬렉터와 G1 컬렉터를 제외)
+
+그 이유는 [Default Selection의 변화](#default-selections) 때문인 것으로 보인다. Java 9 부터는 G1이 기본 가비지 컬렉터로 설정되었기 때문이다. 조금 더 뒤에서 살펴보겠지만, G1은 generational collection을 사용하지 않는다.
+
+## Survivor는 왜 두 개인가?
+
+young gen은 Eden과 두 개의 Survivor로 이루어져 있다. 여기에서 중요한 것은 Survivor가 두 개라는 것이다. Survivor 영역은 서로 교대하면서 살아남은 객체가 옮겨가는 대상 영역이 되기 때문이다. 따라서 Survivor 둘 중 하나는 반드시 깨끗하게 비워져 있어야 한다.
+
+자세한 내용은 [[java-gc-eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로} 문서를 참고.
+
+# 함께 읽기
+
+* [[java-gc-eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로}
+
 # 참고문헌
 
 * [JDK 12 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html )
@@ -161,3 +268,6 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
 * [JDK 9 Garbage Collection Tuning Guide](https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm )
 * [JDK 8 Garbage Collection Tuning Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ )
 
+# 주석
+
+[^graph]: 정확히 어떤 환경에서 어떻게 측정했는지는 문서에 나와있지 않다.

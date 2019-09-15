@@ -1653,7 +1653,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-gc-tuning, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-gc-eden-to-survivor, java-gc-tuning, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1678,13 +1678,21 @@ java-enhancements:
     url: /wiki/java-enhancements
     updated: '2019-09-12 19:30:27 +0900'
     children: []
+java-gc-eden-to-survivor:
+    type: wiki
+    title: 'Minor GC - Eden에서 Survivor 영역으로'
+    summary: ""
+    parent: Java
+    url: /wiki/java-gc-eden-to-survivor
+    updated: '2019-09-15 15:05:19 +0900'
+    children: []
 java-gc-tuning:
     type: wiki
     title: 'Java GC 튜닝'
-    summary: ""
+    summary: null
     parent: Java
     url: /wiki/java-gc-tuning
-    updated: '2019-09-14 23:32:39 +0900'
+    updated: '2019-09-15 15:09:12 +0900'
     children: []
 java-interface:
     type: wiki
@@ -1764,7 +1772,7 @@ jvm-memory:
     summary: '작성중인 문서'
     parent: jvm
     url: /wiki/jvm-memory
-    updated: '2019-09-12 22:18:03 +0900'
+    updated: '2019-09-15 15:06:24 +0900'
     children: []
 jvm-stack:
     type: wiki
