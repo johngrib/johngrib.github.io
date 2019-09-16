@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : Java HotSpot Parallel Collecor
-summary : 
+title   : Java HotSpot VM Parallel Collecor
+summary : Java8 디폴트 GC
 date    : 2019-09-16 12:18:37 +0900
-updated : 2019-09-16 12:25:11 +0900
+updated : 2019-09-16 12:31:42 +0900
 tag     : java gc
 toc     : true
 public  : true

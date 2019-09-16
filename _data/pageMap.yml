@@ -1688,11 +1688,11 @@ java-gc-eden-to-survivor:
     children: []
 java-gc-parallel-collector:
     type: wiki
-    title: 'Java HotSpot Parallel Collecor'
-    summary: ""
+    title: 'Java HotSpot VM Parallel Collecor'
+    summary: 'Java8 디폴트 GC'
     parent: Java
     url: /wiki/java-gc-parallel-collector
-    updated: '2019-09-16 12:25:11 +0900'
+    updated: '2019-09-16 12:31:42 +0900'
     children: []
 java-gc-tuning:
     type: wiki
