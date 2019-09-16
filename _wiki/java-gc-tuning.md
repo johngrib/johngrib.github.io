@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : 작성중인 문서
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-16 10:23:03 +0900
+updated : 2019-09-16 10:25:05 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -660,7 +660,7 @@ Parallel Collector는 여러 스레드가 마이너 GC 작업을 하기 때문�
 마이너 GC를 수행하는 스레드가 프로모션을 할 때 old gen의 일부 공간을 예약해 사용하는데, 이 공간을 프로모션 버퍼라 한다. 메모리 조각화는 프로모션 버퍼에서 발생한다. 스레드 수를 줄이고 old gen의 크기를 늘려주면 조각화 현상은 줄어들게 된다.
 
 
-***Parallel Collector의 generation 구조**는 다음과 같이 생겼다.
+**Parallel Collector의 generation 구조**는 다음과 같이 생겼다.
 
 ```ascii-art
                              <--------- Young ---------->

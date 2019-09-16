@@ -1692,7 +1692,7 @@ java-gc-tuning:
     summary: '작성중인 문서'
     parent: Java
     url: /wiki/java-gc-tuning
-    updated: '2019-09-16 10:23:03 +0900'
+    updated: '2019-09-16 10:25:05 +0900'
     children: []
 java-interface:
     type: wiki
