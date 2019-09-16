@@ -1653,7 +1653,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-gc-eden-to-survivor, java-gc-tuning, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-tuning, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1686,13 +1686,21 @@ java-gc-eden-to-survivor:
     url: /wiki/java-gc-eden-to-survivor
     updated: '2019-09-15 15:05:19 +0900'
     children: []
+java-gc-parallel-collector:
+    type: wiki
+    title: 'Java HotSpot Parallel Collecor'
+    summary: ""
+    parent: Java
+    url: /wiki/java-gc-parallel-collector
+    updated: '2019-09-16 12:25:11 +0900'
+    children: []
 java-gc-tuning:
     type: wiki
     title: 'Java GC 튜닝'
     summary: '작성중인 문서'
     parent: Java
     url: /wiki/java-gc-tuning
-    updated: '2019-09-16 10:25:05 +0900'
+    updated: '2019-09-16 12:22:11 +0900'
     children: []
 java-interface:
     type: wiki

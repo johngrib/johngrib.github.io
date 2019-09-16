@@ -483,6 +483,7 @@ java:
     - {fileName: java-abstract-class}
     - {fileName: java-enhancements}
     - {fileName: java-gc-eden-to-survivor}
+    - {fileName: java-gc-parallel-collector}
     - {fileName: java-gc-tuning}
     - {fileName: java-interface}
     - {fileName: java-jigsaw-quick-start}
@@ -658,6 +659,7 @@ James-Gosling:
     - {fileName: James-Gosling-super-programmer}
 gc:
     - {fileName: java-gc-eden-to-survivor}
+    - {fileName: java-gc-parallel-collector}
     - {fileName: java-gc-tuning}
 von-neumann:
     - {fileName: John-von-Neumann}

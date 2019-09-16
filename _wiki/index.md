@@ -120,6 +120,7 @@ comment : false
         * [[java-enhancements]]
         * [[java-gc-eden-to-survivor]]
         * [[java-gc-tuning]]
+        * [[java-gc-parallel-collector]]
         * [[java-interface]]
         * [[java-jigsaw-quick-start]]
         * [[java-switch-expression]]
