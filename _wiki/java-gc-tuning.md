@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : 작성중인 문서
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-16 12:56:47 +0900
+updated : 2019-09-16 14:36:53 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -635,6 +635,8 @@ G1은 많은 양의 메모리가 있는 멀티 프로세서 시스템을 위한 
 
 G1은 가상 머신이 하드웨어/운영체제를 참고하여 자동으로 선택하거나, `-XX:+UseG1GC` 옵션으로 활성화된다.
 
+상세한 내용은 [[java-g1gc]]{G1GC} 문서를 참고할 것.
+
 ### Concurrent Mark Sweep Collector
 
 CMS Collector라고도 한다. CMS는 일시 정지 시간이 짧은 것을 선호하고 GC 작업과 프로세스 리소스를 공유할 수 있는 애플리케이션을 위한 GC이다.
@@ -659,6 +661,7 @@ ZGC는 `XX:+UseZGC` 옵션으로 활성화할 수 있다.
 
 * [[java-gc-eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로}
 * [[java-gc-parallel-collector]]{Parallel Collector}
+* [[java-g1gc]]{G1GC}
 
 # 참고문헌
 

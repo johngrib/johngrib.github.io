@@ -1653,7 +1653,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-tuning, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-tuning, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1678,6 +1678,14 @@ java-enhancements:
     url: /wiki/java-enhancements
     updated: '2019-09-12 19:30:27 +0900'
     children: []
+java-g1gc:
+    type: wiki
+    title: 'Java HotSpot VM G1GC'
+    summary: 'Java9 ~ 12 디폴트 GC'
+    parent: Java
+    url: /wiki/java-g1gc
+    updated: '2019-09-16 23:23:12 +0900'
+    children: []
 java-gc-eden-to-survivor:
     type: wiki
     title: 'Minor GC - Eden에서 Survivor 영역으로'
@@ -1700,7 +1708,7 @@ java-gc-tuning:
     summary: '작성중인 문서'
     parent: Java
     url: /wiki/java-gc-tuning
-    updated: '2019-09-16 12:56:47 +0900'
+    updated: '2019-09-16 14:36:53 +0900'
     children: []
 java-interface:
     type: wiki
