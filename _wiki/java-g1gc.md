@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java HotSpot VM G1GC
 summary : Java9 ~ 12 디폴트 GC
 date    : 2019-09-16 14:36:19 +0900
-updated : 2019-09-17 13:20:43 +0900
+updated : 2019-09-17 17:45:25 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -199,6 +199,111 @@ G1은 GC가 끝날 무렵에 대피 실패의 뒷수습이 끝났다고 가정�
 `-XX:G1MixedGCLiveThresholdPercent=85`
 
 * 라이브 객체 점유율이 이 값보다 높은 old gen은 space-reclamation 단계에서 수집되지 않는다.
+
+# 튜닝
+
+여기에 나오는 지침들은 훑어보고 감 잡는 용으로만 쓰고, 실제로 튜닝을 하려면 문서를 직접 읽고 충분히 테스트하도록 하자.
+
+## 일반적인 권장 사항
+
+* 가급적이면 기본 설정으로 사용할 것.
+* 필요하다면 `-Xmx` 옵션으로 최대 heap 사이즈를 넉넉하게 설정할 것.
+* `-Xmn`, `-XX:NewRatio` 옵션으로 young gen의 사이즈를 설정하지 말 것. 이 사이즈 목표가 일시 중지 시간 목표보다 우선하게 되며, 일시 중지 시간 목표는 비활성화된다.
+* GC 튜닝시 처리량과 정지 시간 사이의 상충 관계를 염두에 둘 것.
+    * G1은 90%의 애플리케이션 시간과 10%의 GC 시간을 목표로 한다(Parallel GC의 경우 99%의 애플리케이션 시간과 1%의 GC 시간 목표). 따라서 처리량을 늘리고자 한다면 일시 정지 시간 목표를 어느 정도 느슨하게 해줘야 한다.
+
+## G1 퍼포먼스 향상
+
+가장 중요한 것은 로그. `-Xlog:gc*=debug` 옵션으로 로그를 보도록 하자.
+
+### Full GC
+
+Full GC 로그를 보려면 로그에서 다음을 찾아보자.
+
+* Pause Full(Allocation Failure): old gen의 heap 점유율이 너무 높아서 Full GC가 발생.
+* to-space exhausted: 대비 실패를 의미하는 태그.
+
+The reason that a Full GC occurs is because the application allocates too many objects that can't be reclaimed quickly enough.
+
+Full GC가 발생하는 이유는 애플리케이션이 너무 많은 객체를 할당하는 바람에 회수가 빨리 이루어지지 못하기 때문이다.
+concurrent marking을 끝내지 못하고 허겁지겁 space-reclamation 단계를 시작하기도 한다. 또한 커다란 객체를 많이 할당하는 것도 Full GC 발생 확률을 높인다.
+
+concurrent marking이 정시에 끝난다면 Full GC 발생 확률을 낮출 수 있다.
+
+Full GC 발생 확률을 낮추기 위해 다음 방법들을 시도해 보도록 하자.
+
+* `gc+heap=info`로 로깅을 하면 커다란 객체가 있는 지역의 번호를 볼 수 있다.
+* `-XX:G1HeapRegionSize`로 영역 크기를 늘려주면 커다란 객체 수도 줄어들게 될 것이다.
+    * 커다란 객체 관련 문제는 이것 외에는 딱히 답이 없다.
+* heap 사이즈를 늘려주면 마킹 완료까지의 시간도 같이 늘어난다.
+* `-XX:ConcGCThreads`를 설정해서 동시 마킹 스레드의 수를 늘려준다.
+* G1이 더 미리미리 마킹을 시작하게 한다.
+    * `-XX:G1ReservePercent`를 설정해서 초기 시점의 Adaptive IHOP 계산에 영향을 준다.
+    * `-XX:-G1UseAdaptiveIHOP`, `-XX:InitiatingHeapOccupancyPercent`를 설정해서 Adaptive IHOP 기능을 끈다.
+
+### Latency
+
+`gc+cpu=info`로 로깅을 하면 `User=0.19s Sys=0.00s Real=0.01s` 형식의 시간 로그를 볼 수 있다.
+
+* User: VM Code에서 소비한 시간.
+* Sys: 운영체제에서 소비한 시간.
+* Real: 일시 중지 동안 흘러간 절대 시간.
+
+**Sys 시간이 길다면?**
+
+환경이 원인이다.
+
+* `-Xms`, `-Xmx` 옵션으로 최소/최대 heap 사이즈를 같게 설정하고, `-XX:+AlwaysPreTouch`로 모든 메모리를 pre-touch 하게 한다(pre-touch 작업을 VM이 시작할 때 수행하게 하는듯).
+* Linux에서는 THP(Transparent Huge Pages)기능을 사용할 때 랜덤으로 프로세스가 중단되는 경우가 있다. VM은 많은 메모리를 관리하기 때문에 여기에 당첨될 확률이 높다. 운영체제 메뉴얼을 읽고 THP 기능을 비활성하는 방법을 찾아볼 것.
+* 하드디스크 I/O 때문에 로그 출력이 중단될 수 있다.
+
+**Real 시간이 User와 Sys를 합친 것보다 훨씬 크다면?**
+
+* VM이 CPU 시간을 충분히 얻지 못한 상황일 수 있다.
+
+**레퍼런스 객체 처리 시간이 너무 오래 걸린다면?**
+
+* `-XX:+ParallelRefProcEnabled` 옵션을 사용해 참조 객체 참조 업데이트를 병렬로 수행하도록 시도해 본다.
+
+**Young Only Collection이 너무 오래 걸린다면?**
+
+* young collection은 복사해야 하는 라이브 객체 수에 비례하여 시간이 걸린다.
+    * `-XX:G1NewSizePercent`를 작게 설정해서 young gen의 최소 크기를 줄여준다.
+    * `-XX:G1MaxNewSizePercent`를 작게 설정해서 young gen의 최대 크기를 줄여준다.
+
+**Mixed Collection이 너무 오래 걸린다면?**
+
+* Mixed Collection은 old gen의 공간을 회복하기 위해 사용하며, young/old 영역을 모두 수집한다.
+* `gc+ergo+cset=trace` 옵션으로 로깅을 하면 young/old의 대비 시간이 일시 정지 시간에 주는 영향을 알 수 있다.
+* `-XX:G1MixedGCCountTarget` 를 설정해 대상 영역을 늘려서 더 많은 GC가 작업하게 한다.
+* `-XX:G1MixedGCLiveThresholdPercent` 값을 조절해서 GC 대상을 줄인다.
+* `-XX:G1HeapWastePercent` 값을 늘려주면 G1이 점유하는 메모리가 줄어들게 된다.
+
+**RS 업데이트와 스캔 시간이 길다면?**
+
+RS는 Remember Set를 말한다.
+
+* `-XX:G1HeapRegionSize` 로 heap 사이즈를 조절하면 RS 크기에 영향을 준다.
+* `-XX:G1RSetUpdatingPauseTimePercent`를 줄여주면 G1은 더 많은 RS 작업을 동시에(concurrently) 하려 한다.
+
+### Throughput
+
+**처리량을 늘리고 싶다면?**
+
+* `-XX:MaxGCPauseMillis`로 최대 일시 정지 시간을 늘려준다.
+* `-XX:G1NewSizePercent`로 young gen의 최소 사이즈를 늘려준다.
+* `-XX:G1MaxNewSizePercent`로 young gen의 최대 사이즈를 늘려준다.
+* 동시 작업을 위한 Remeber Set 업데이트에는 CPU 리소스가 많이 필요하므로, 동시 작업량을 줄이면 처리량이 늘어난다.
+    * `-XX:G1RSetUpdatingPauseTimePercent`를 늘려주면 동시 작업이 줄어들고, GC 일시 정지 시간이 늘어난다.
+    * 최악의 경우, 다음 세 옵션을 설정하면 Remember Set 업데이트를 아예 끌 수도 있다. 이렇게 하면 RS 업데이트 작업을 다음 GC 작업으로 미룬다.
+        * `-XX:-G1UseAdaptiveConcRefinement`, `-XX:G1ConcRefinementGreenZone=2G` `-XX:G1ConcRefinementThreads=0` 
+* `-XX:+UseLargePages`를 설정해서 큰 페이지를 사용하면 처리량이 향상된다. (운영체제 메뉴얼을 참고할 것)
+* heap 사이즈 조정 작업을 끄거나 최소화한다. 다음 두 방법을 쓰면 일관된 일시 정지 시간을 얻을 가능성이 올라간다.
+    * `-Xms`, `-Xmx`를 같은 값으로 설정한다.
+    * `-XX:+AlwaysPreTouch`를 설정한다.
+* G1을 포함한 대부분의 GC는 GC 소요 시간이 `-XX:GCTimeRatio` 옵션으로 설정된 비율보다 낮도록 heap 사이즈를 자동으로 조절한다. 이 값을 조절해 보는 것도 방법이다.
+
+
 
 # 함께 읽기
 

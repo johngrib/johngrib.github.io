@@ -1684,7 +1684,7 @@ java-g1gc:
     summary: 'Java9 ~ 12 디폴트 GC'
     parent: Java
     url: /wiki/java-g1gc
-    updated: '2019-09-16 23:23:12 +0900'
+    updated: '2019-09-17 17:45:25 +0900'
     children: []
 java-gc-eden-to-survivor:
     type: wiki
