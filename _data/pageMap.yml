@@ -1653,7 +1653,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-tuning, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-tuning, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1757,6 +1757,14 @@ java8-why-permgen-removed:
     parent: Java
     url: /wiki/java8-why-permgen-removed
     updated: '2019-09-12 18:45:58 +0900'
+    children: []
+jdk13:
+    type: wiki
+    title: 'JDK 13 둘러보기'
+    summary: ""
+    parent: Java
+    url: /wiki/jdk13
+    updated: '2019-09-19 12:16:46 +0900'
     children: []
 John-von-Neumann:
     type: wiki
