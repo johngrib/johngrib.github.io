@@ -3,7 +3,7 @@ layout  : wiki
 title   : JDK 13 둘러보기
 summary : 
 date    : 2019-09-19 10:40:38 +0900
-updated : 2019-09-19 12:16:46 +0900
+updated : 2019-09-19 12:23:31 +0900
 tag     : java
 toc     : true
 public  : true
@@ -174,12 +174,12 @@ public class Main {
 
         String test2 = """
         왼쪽 공백 무시
-        """.replaceAll(" ", ".");;
+        """.replaceAll(" ", ".");
 //      ^ 이 위치가 기준
 
         String test3 = """
         왼쪽 공백 4칸
-    """.replaceAll(" ", ".");;
+    """.replaceAll(" ", ".");
 //  ^ 이 위치가 기준
 
         System.out.println(test);
