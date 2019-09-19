@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2019-09-12 19:30:27 +0900
+updated : 2019-09-19 10:34:52 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,14 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+# Java SE 13
+
+2019-09-17 General Availability
+
+* [JDK 13 What's new](https://www.oracle.com/technetwork/java/javase/13-relnote-issues-5460548.html#NewFeature )
+* [JDK 13 Documentation](https://docs.oracle.com/en/java/javase/13/ )
+* [JDK 13 (openjdk.java.net)](https://openjdk.java.net/projects/jdk/13/ )
 
 # Java SE 12
 
