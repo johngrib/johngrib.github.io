@@ -286,6 +286,14 @@ Amazon-Route-53:
     url: /wiki/Amazon-Route-53
     updated: '2018-09-16 22:06:15 +0900'
     children: []
+availability:
+    type: wiki
+    title: 가용성(Availability)
+    summary: '사용 가능한 정도'
+    parent: what
+    url: /wiki/availability
+    updated: '2019-09-20 10:06:50 +0900'
+    children: []
 average-complexity:
     type: wiki
     title: '평균 계산 복잡도 구하기'
@@ -2925,7 +2933,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port, REST, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
+    children: [agile, availability, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port, REST, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

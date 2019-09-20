@@ -308,6 +308,7 @@ comment : false
     * [[vimwiki]]
 * [[what]]
     * [[agile]]
+    * [[availability]]
     * [[bandwidth]]
     * [[bootstrapping]]
     * [[braille-pattern-chars]]
