@@ -500,6 +500,7 @@ java:
     - {fileName: Object-hashCode}
     - {fileName: Object-toString}
     - {fileName: private-constructor}
+    - {fileName: spring-versions}
     - {fileName: use-java-primitive-type-for-performance}
 email:
     - {fileName: email-validation}

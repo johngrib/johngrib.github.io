@@ -2477,7 +2477,7 @@ spring:
     parent: index
     url: /wiki/spring
     updated: '2019-08-15 16:29:07 +0900'
-    children: [spring-bean-config-configuration, spring-bean-config-xml, spring-ioc]
+    children: [spring-bean-config-configuration, spring-bean-config-xml, spring-ioc, spring-versions]
 spring-bean-config-configuration:
     type: wiki
     title: 'Configuration annotation을 통한 Spring Bean 설정'
@@ -2501,6 +2501,14 @@ spring-ioc:
     parent: spring
     url: /wiki/spring-ioc
     updated: '2019-08-31 16:08:26 +0900'
+    children: []
+spring-versions:
+    type: wiki
+    title: '스프링 버전 체크'
+    summary: ""
+    parent: spring
+    url: /wiki/spring-versions
+    updated: '2019-09-21 11:02:24 +0900'
     children: []
 sql-char-comparison:
     type: wiki
