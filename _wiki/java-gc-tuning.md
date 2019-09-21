@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : 작성중인 문서
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-20 22:47:18 +0900
+updated : 2019-09-21 22:24:04 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -127,6 +127,7 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
 
 **Footprint**
 
+* Footprint: 프로그램이 실행되는 동안 사용하는 기본 메모리의 양을 말한다.
 * 처리량/최대 일시 정지 시간 목표를 달성하게 되면, GC는 두 목표 중 하나를 랜덤으로 골라 목표를 달성할 수 없는 수준까지 heap 크기를 줄인다.
 * GC가 사용할 수 있는 최소/최대 heap 사이즈는 다음 옵션으로 설정할 수 있다.(HTG-09 ~ 12)
 
