@@ -3,7 +3,7 @@ layout  : wiki
 title   : 스프링 버전 체크
 summary : 
 date    : 2019-09-21 09:34:43 +0900
-updated : 2019-09-21 11:02:24 +0900
+updated : 2019-09-21 11:28:35 +0900
 tag     : java
 toc     : true
 public  : true
@@ -32,15 +32,22 @@ latex   : false
 * Spring Boot 2.1.0.M2 에서 Java 11이 지원된다.
 * Spring Boot 2.2에서 Java 12가 공식적으로 지원되게 하는 것이 목표.
 
+## 그 외
+
+* 2015년 11월, [Spring 4 부터 iBatis 지원이 중단][mybatis]됐다.
+    * iBatis를 써야 한다면 MyBatis를 쓰도록 한다.
+
 
 ## References
 
 * [Spring Framework Versions][spring-versions]
 * [Spring Boot 2.0 - Java 8 Baseline and Java 9 Support][sb2.0]
 * [Spring Boot with Java 9 and above][sb-java9]
+* [Spring 4 got you down with no ibatis support - no worries Mybatis has your back][mybatis]
 
 
 [spring-versions]: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions
 [sb2.0]: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Release-Notes#java-8-baseline-and-java-9-support
 [sb-java9]: https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-with-Java-9-and-above
+[mybatis]: https://blog.mybatis.org/2015/11/spring-4-got-you-down-with-no-ibatis.html
 
