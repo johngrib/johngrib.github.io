@@ -91,6 +91,7 @@ comment : false
 * [[design-pattern]]
     * [[builder-pattern]]
     * [[static-factory-method-pattern]]
+    * [[strategy-pattern]]
     * [[template-method-pattern]]
 * [[problem]]
     * [[two-eggs-100-floor]]
