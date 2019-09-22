@@ -3,7 +3,7 @@ layout  : wiki
 title   : 전략 패턴(strategy pattern)
 summary : 동일 계열의 알고리즘을 정의하고 상호교환이 가능하게 한다
 date    : 2019-09-21 16:49:12 +0900
-updated : 2019-09-21 17:28:24 +0900
+updated : 2019-09-22 21:07:18 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -67,10 +67,10 @@ public interface FlyBehavior {
 ```
 
 ```java
-public class FlyWithYings implements FlyBehavior {
+public class FlyWithWings implements FlyBehavior {
     @Override
     public void fly() {
-        System.out.println("Fly with wings!");
+        System.out.println("날개로 날아간다!");
     }
 }
 ```
@@ -79,7 +79,18 @@ public class FlyWithYings implements FlyBehavior {
 public class FlyRocketPowered implements FlyBehavior {
     @Override
     public void fly() {
-        System.out.println("Fly with ROCKET POWER");
+        System.out.println("로켓 추진으로 날아간다!");
+    }
+}
+```
+
+`QuackBehavior`는 다음과 같이 하나만 만들었다.
+
+```java
+public class KoreanQuack implements QuackBehavior {
+    @Override
+    public void quack() {
+        System.out.println("꽥꽥");
     }
 }
 ```
@@ -89,8 +100,8 @@ public class FlyRocketPowered implements FlyBehavior {
 ```java
 public class MallardDuck extends Duck {
     public MallardDuck() {
-        quackBehavior = new Quack();
-        flyBehavior = new FlyWithYings();
+        quackBehavior = new KoreanQuack();
+        flyBehavior = new FlyWithWings();
     }
 }
 ```
@@ -111,10 +122,11 @@ public class MachineDuck extends Duck {
 
 ```java
 Duck myDuck = new MallardDuck();
-myDuck.performFly();    // Fly with wings!
+myDuck.performFly();    // 날개로 날아간다!
+myDuck.performQuack();  // 꽥꽥
 
-myDuck.setFlyBehavior = new FlyRocketPowered();
-myDuck.performFly();    // Fly with ROCKET POWER
+myDuck.setFlyBehavior(new FlyRocketPowered());
+myDuck.performFly();    // 로켓 추진으로 날아간다!
 ```
 
 ## 참고문헌
