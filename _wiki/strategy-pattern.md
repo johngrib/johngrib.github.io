@@ -3,7 +3,7 @@ layout  : wiki
 title   : 전략 패턴(strategy pattern)
 summary : 동일 계열의 알고리즘을 정의하고 상호교환이 가능하게 한다
 date    : 2019-09-21 16:49:12 +0900
-updated : 2019-09-22 21:07:18 +0900
+updated : 2019-09-22 21:23:31 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -128,6 +128,27 @@ myDuck.performQuack();  // 꽥꽥
 myDuck.setFlyBehavior(new FlyRocketPowered());
 myDuck.performFly();    // 로켓 추진으로 날아간다!
 ```
+
+## 람다 표현식을 쓰는 경우
+
+다음과 같이 람다 표현식을 사용하는 것도 가능하다.
+
+```java
+Duck myDuck = new MallardDuck();
+myDuck.performFly();    // 날개로 날아간다!
+myDuck.performQuack();  // 꽥꽥
+
+myDuck.setFlyBehavior(new FlyRocketPowered());
+myDuck.performFly();    // 로켓 추진으로 날아간다!
+
+// lambda
+myDuck.setFlyBehavior(
+    () -> System.out.println("바람을 타고 날아간다!")
+);
+myDuck.performFly();    // 바람을 타고 날아간다!
+```
+
+`FlyBehavior`가 하나의 메소드만 선언하고 있으므로 `void fly()`만 구현해주면 사용할 수 있다.
 
 ## 참고문헌
 
