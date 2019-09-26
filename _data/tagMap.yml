@@ -734,6 +734,9 @@ sf:
     - {fileName: Schrodinger-s-goyang-Hee}
 consulting:
     - {fileName: secret-of-consulting}
+db:
+    - {fileName: sharding}
+    - {fileName: sql-char-comparison}
 교육:
     - {fileName: Shunsho-juwa}
 장인정신:
@@ -756,8 +759,6 @@ spring:
 xml:
     - {fileName: spring-bean-config-configuration}
     - {fileName: spring-bean-config-xml}
-db:
-    - {fileName: sql-char-comparison}
 hacker:
     - {fileName: The-Jargon-File}
 trouble-shooting:
