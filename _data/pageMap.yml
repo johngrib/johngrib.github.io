@@ -784,11 +784,11 @@ d-i-a-05-replication:
     children: []
 database:
     type: wiki
-    title: category
+    title: Database
     summary: ""
     parent: index
     url: /wiki/database
-    updated: '2019-09-26 21:48:01 +0900'
+    updated: '2019-09-26 21:49:29 +0900'
     children: [sharding]
 date:
     type: wiki
