@@ -2016,11 +2016,11 @@ my-bash-cheatsheet:
     children: []
 my-keyboard:
     type: wiki
-    title: '내 키보드 레이아웃'
-    summary: ""
+    title: '나의 키보드 히스토리'
+    summary: '역사를 정리해 보자'
     parent: index
     url: /wiki/my-keyboard
-    updated: '2018-11-22 11:07:09 +0900'
+    updated: '2019-09-26 12:31:08 +0900'
     children: []
 my-study-method:
     type: wiki
