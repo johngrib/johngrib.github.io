@@ -2020,7 +2020,7 @@ my-keyboard:
     summary: '역사를 정리해 보자'
     parent: index
     url: /wiki/my-keyboard
-    updated: '2019-09-26 12:35:35 +0900'
+    updated: '2019-09-26 12:39:33 +0900'
     children: []
 my-study-method:
     type: wiki
