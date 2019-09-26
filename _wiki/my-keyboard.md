@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 키보드 히스토리
 summary : 역사를 정리해 보자
 date    : 2018-11-22 10:57:14 +0900
-updated : 2019-09-26 12:39:33 +0900
+updated : 2019-09-26 12:40:45 +0900
 tag     : keyboard
 toc     : true
 public  : true
@@ -140,6 +140,7 @@ HHKB JP
 
 * 주문제작이라 도착할 때까지 4개월이나 걸렸다!
 * 몇 년 걸린 분도 있다고 들었으니 늦게 주문해서 다행이라 생각한다.
+* 사진은 기본 키캡을 XDA 키캡으로 교환한 상태.
 
 ![uhk](/post-img/my-keyboard/uhk.jpg )
 
