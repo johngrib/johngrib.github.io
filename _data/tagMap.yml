@@ -657,8 +657,6 @@ review:
     - {fileName: Software-Craftsman}
     - {fileName: Take-the-Bully-by-the-Horns}
     - {fileName: TETRIS-EFFECT}
-index:
-    - {fileName: index}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
 gc:
