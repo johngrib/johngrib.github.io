@@ -2028,7 +2028,7 @@ my-keyboard:
     summary: '역사를 정리해 보자'
     parent: index
     url: /wiki/my-keyboard
-    updated: '2019-09-26 22:41:36 +0900'
+    updated: '2019-09-26 23:36:41 +0900'
     children: []
 my-study-method:
     type: wiki
