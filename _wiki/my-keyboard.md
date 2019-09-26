@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 키보드 히스토리
 summary : 역사를 정리해 보자
 date    : 2018-11-22 10:57:14 +0900
-updated : 2019-09-26 12:40:45 +0900
+updated : 2019-09-26 17:05:58 +0900
 tag     : keyboard
 toc     : true
 public  : true
@@ -87,6 +87,8 @@ HHKB JP
 * [[hhkb-jp-tmk]]: HHKB JP 모델의 컨트롤 보드를 커스텀 보드로 교체하고, TMK 펌웨어를 올려 사용하기 시작했다.
 * 사용해보고 너무 마음에 들어 곧바로 같은 모델을 하나 더 주문하였다.
 
+컨트롤 보드 구매는 [[hhkb-jp-tmk]] 문서를 참고.
+
 ## 2017-05-17 HHKB JP 하나 더 구매
 
 ![hhkb-twins](/post-img/my-keyboard/hhkb-twins.jpg )
@@ -113,6 +115,14 @@ HHKB JP
     * 타이핑을 열심히 하고 있는 중에는 헷갈리지 않았는데, 가끔 키 한두개씩 입력할 때에는 헷갈렸다.
 * 헷갈리는 컬럼에 색깔을 주면 좋겠다는 생각이 들어 까만색 키캡을 구매해 끼워보았더니 괜찮았다.
 
+블랙 무각 키캡 구매
+
+* [알리 익스프레스에서 "pbt topre keycaps"](https://www.aliexpress.com/af/pbt-topre-keycaps.html?SearchText=pbt+topre+keycaps )로 검색.
+    * Topre는 리얼포스와 HHKB를 만드는 일본 회사이다.
+    * 그래서 리얼포스와 HHKB의 키캡은 서로 호환된다.
+    * 그리고 Topre의 키캡은 PBT라 비싸다. 그러나 비싼만큼 좋은 촉감을 느낄 수 있다.
+    * 그러나 Topre의 키캡은 Cherry 키캡과 호환되지 않으므로 검색할 때 Topre를 넣어야 한다.
+
 ## 2018-10-31 XD75 기계식 키보드 조립 키트 구매
 
 ![XD75](/post-img/my-keyboard/XD75.jpg )
@@ -125,6 +135,11 @@ HHKB JP
 ## 2018-12-06 XDA 키캡 구매
 
 * 더 편한 키캡을 찾다가 XDA 키캡에 대해 알게 되어 마음에 들어 구매하게 되었다.
+
+XDA 키캡 구매
+
+* [알리 익스프레스에서 "pbt xda keycaps"라고 검색](https://www.aliexpress.com/af/pbt-xda-keycaps.html?SearchText=pbt+xda+keycaps ).
+* ABS 키캡보다 PBT 키캡의 촉감이 훨씬 좋다.
 
 ## 2018-12-14 UHK 구매
 
@@ -161,7 +176,18 @@ HHKB JP
         * 키가 미묘하게 헛돌게 된다.
         * 사진에서는 쉬프트를 체리 호환으로 바꿨지만 며칠 후 크게 후회하며 빌트인으로 바꿔주었다.
 * 작업하는 김에 소음 감소를 위해 고무링 작업도 함께 해 주었다.
+    * 고무링은 눌렸던 키가 본래 높이로 복원되면서 키보드 상판을 때릴 때의 충격을 감소시켜 준다.
     * 소음은 생각보다 별로 감소하지 않았으나, 타건할 때의 촉감이 놀라울 정도로 매우 부드럽게 향상되어 무척 만족했다.
+
+고무링 구매
+
+* [알리 익스프레스에서 "keyboard damping ring"이라고 검색](https://www.aliexpress.com/af/keyboard-damping-ring.html?SearchText=keyboard+damping+ring ).
+* 고무링은 아답터에 끼워 키보드 안쪽으로 들어가므로 색깔은 아무거나 골랐다.
+
+아답터 구매
+
+* [알리 익스프레스에서 "topre switch adapter"라고 검색](https://www.aliexpress.com/af/topre-switch-adapter.html?SearchText=topre+switch+adapter ).
+
 
 ![xda](/post-img/my-keyboard/xda.jpg )
 

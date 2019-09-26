@@ -782,6 +782,14 @@ d-i-a-05-replication:
     url: /wiki/d-i-a-05-replication
     updated: '2018-07-09 23:05:05 +0900'
     children: []
+database:
+    type: wiki
+    title: category
+    summary: ""
+    parent: index
+    url: /wiki/database
+    updated: '2019-09-26 16:00:30 +0900'
+    children: []
 date:
     type: wiki
     title: 'date 명령어'
@@ -2020,7 +2028,7 @@ my-keyboard:
     summary: '역사를 정리해 보자'
     parent: index
     url: /wiki/my-keyboard
-    updated: '2019-09-26 12:40:45 +0900'
+    updated: '2019-09-26 17:05:58 +0900'
     children: []
 my-study-method:
     type: wiki
