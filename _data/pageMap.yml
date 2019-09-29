@@ -2118,6 +2118,14 @@ Object-toString:
     url: /wiki/Object-toString
     updated: '2018-03-11 15:12:10 +0900'
     children: []
+observer-pattern:
+    type: wiki
+    title: '옵저버 패턴(Observer Pattern)'
+    summary: '상태 변화를 감시자에게 통지한다'
+    parent: ""
+    url: /wiki/observer-pattern
+    updated: '2019-09-29 19:18:24 +0900'
+    children: []
 Oliver-s-blood:
     type: wiki
     title: '올리버의 혈액형 문제(Oliver''s blood)'

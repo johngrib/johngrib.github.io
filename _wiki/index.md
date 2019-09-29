@@ -89,6 +89,7 @@ comment : false
         * [[Las-chicas-del-cable]]
 * [[design-pattern]]
     * [[builder-pattern]]
+    * [[observer-pattern]]
     * [[static-factory-method-pattern]]
     * [[strategy-pattern]]
     * [[template-method-pattern]]
