@@ -118,6 +118,7 @@ comment : false
     * [[Java]]
         * [[java-abstract-class]]
         * [[java-enhancements]]
+        * [[java-g1gc]]
         * [[java-gc-eden-to-survivor]]
         * [[java-gc-tuning]]
         * [[java-gc-parallel-collector]]
