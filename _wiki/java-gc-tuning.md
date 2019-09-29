@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : 작성중인 문서
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-29 09:28:47 +0900
+updated : 2019-09-29 14:12:18 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -665,6 +665,22 @@ ZGC 튜닝에서 가장 중요한 것은 `-Xmx`로 설정할 수 있는 최대 �
 일반적으로 ZGC는 메모리가 많으면 많을수록 좋다고 한다.
 
 ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레드의 수이다. `-XX:ConcGCThreads`로 설정할 수 있으며, ZGC는 휴리스틱을 통해 이 값을 자동으로 선택한다. 다만, 이 값이 너무 크면 GC가 애플리케이션의 CPU 시간을 다 빼앗아버리므로 처리량이 떨어진다. 반면 이 값이 너무 작으면 쓰레기 수거보다 쓰레기가 쌓이는 속도가 더 빠를 수 있다.
+
+# 그 외의 고려할 사항들
+
+> [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/other-considerations.html#GUID-28448147-EC4C-4C94-9A54-54152AD21CB8 ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/other-considerations.html#GUID-28448147-EC4C-4C94-9A54-54152AD21CB8 ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/other-considerations.htm#JSGCT-GUID-28448147-EC4C-4C94-9A54-54152AD21CB8 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/other-considerations.htm#JSGCT-GUID-28448147-EC4C-4C94-9A54-54152AD21CB8 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/considerations.html#sthref62 )
+
+
+## Explicit Garbage Collection
+
+* `System.gc()`를 사용한 명시적인 가비지 컬렉터 호출은 가급적이면 사용하지 않도록 한다.
+* `-XX:+DisableExplicitGC`를 설정하면 `System.gc()` 호출을 무시하게 된다.
+
+## Class Metadata
+
+* JDK 8 부터는 Perm gen이 삭제되었고, 클래스 메타 데이터가 네이티브 메모리에 할당된다.
+* 따라서 클래스 메타 데이터에 사용할 수 있는 네이티브 메모리의 양은 이론적으로는 무제한이다.
+* `-XX:MaxMetaspaceSize` 옵션을 사용하면 클래스 메타 데이터에 사용되는 기본 메모리의 양을 최대로 늘릴 수 있다.
 
 
 # 함께 읽기
