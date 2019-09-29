@@ -1709,7 +1709,7 @@ java-gc:
     parent: Java
     url: /wiki/java-gc
     updated: '2019-09-29 09:27:51 +0900'
-    children: [java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-tuning]
+    children: [java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-serial-collector, java-gc-tuning]
 java-gc-eden-to-survivor:
     type: wiki
     title: 'Minor GC - Eden에서 Survivor 영역으로'
@@ -1726,13 +1726,21 @@ java-gc-parallel-collector:
     url: /wiki/java-gc-parallel-collector
     updated: '2019-09-29 09:28:57 +0900'
     children: []
+java-gc-serial-collector:
+    type: wiki
+    title: 'Java HotSpot VM Serial Collector'
+    summary: null
+    parent: java-gc
+    url: /wiki/java-gc-serial-collector
+    updated: '2019-09-29 15:23:35 +0900'
+    children: []
 java-gc-tuning:
     type: wiki
     title: 'Java GC 튜닝'
     summary: '작성중인 문서'
     parent: java-gc
     url: /wiki/java-gc-tuning
-    updated: '2019-09-29 09:28:47 +0900'
+    updated: '2019-09-29 15:25:01 +0900'
     children: []
 java-interface:
     type: wiki

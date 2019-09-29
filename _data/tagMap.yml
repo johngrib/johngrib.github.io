@@ -486,6 +486,7 @@ java:
     - {fileName: java-g1gc}
     - {fileName: java-gc-eden-to-survivor}
     - {fileName: java-gc-parallel-collector}
+    - {fileName: java-gc-serial-collector}
     - {fileName: java-gc-tuning}
     - {fileName: java-interface}
     - {fileName: java-jigsaw-quick-start}
@@ -664,6 +665,7 @@ gc:
     - {fileName: java-gc}
     - {fileName: java-gc-eden-to-survivor}
     - {fileName: java-gc-parallel-collector}
+    - {fileName: java-gc-serial-collector}
     - {fileName: java-gc-tuning}
 von-neumann:
     - {fileName: John-von-Neumann}

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : 작성중인 문서
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-29 14:12:18 +0900
+updated : 2019-09-29 15:25:01 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -595,6 +595,8 @@ Serial Collector는 싱글 스레드를 사용하여 GC 작업을 수행한다.
 싱글 스레드 GC라 할 수 있다.
 멀티 프로세서에서는 비효율적인 GC이지만, 100MB 정도로 작은 규모의 데이터셋을 사용하는 애플리케이션이라면 멀티 프로세서에서도 쓸만하다고 한다. Serial Collector는 VM이 운영체제와 하드웨어 환경에 따라 자동으로 선택하거나, `-XX:+UseSerialGC` 옵션으로 활성화할 수 있다.
 
+함께 읽기: [[java-gc-serial-collector]]
+
 ## Parallel Collector
 
 Parallel Collector는 throughput collector 라고 부르기도 한다.
@@ -686,6 +688,7 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 # 함께 읽기
 
 * [[java-gc-eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로}
+* [[java-gc-serial-collector]]{Serial Collector}
 * [[java-gc-parallel-collector]]{Parallel Collector}
 * [[java-g1gc]]{G1GC}
 

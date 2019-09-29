@@ -136,6 +136,7 @@ comment : false
         * [[java-gc]]
             * [[java-gc-tuning]]
             * [[java-gc-eden-to-survivor]]
+            * [[java-gc-serial-collector]]
             * [[java-gc-parallel-collector]]
             * [[java-g1gc]]
     * [[php]]
