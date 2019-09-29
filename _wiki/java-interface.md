@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Interface
 summary : 자바 인터페이스
 date    : 2019-08-10 12:17:35 +0900
-updated : 2019-08-10 13:48:10 +0900
+updated : 2019-09-29 21:01:13 +0900
 tag     : java
 toc     : true
 public  : true
@@ -75,7 +75,7 @@ interface Right extends Top {}
 interface Bottom extends Left, Right {}
 ```
 
-다이아몬드 상속이 발생한 상황. Bottom은 `Left.name()`과 `Left.name()`중 어떤 것을 상속받을까?
+다이아몬드 상속이 발생한 상황. Bottom은 `Right.name()`과 `Left.name()`중 어떤 것을 상속받을까?
 
 `Left.name()`을 상속받는다. `Left`가 오버라이드를 했기 때문이다.
 
