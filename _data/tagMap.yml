@@ -295,19 +295,6 @@ book:
     - {fileName: The-Jargon-File}
 algirithm:
     - {fileName: Algorithms-to-Live-By}
-netflix:
-    - {fileName: ALPHAGO}
-    - {fileName: Las-chicas-del-cable}
-alphago:
-    - {fileName: ALPHAGO}
-바둑:
-    - {fileName: ALPHAGO}
-google:
-    - {fileName: ALPHAGO}
-    - {fileName: google-search-console-remove-outdated-content}
-    - {fileName: googling}
-AI:
-    - {fileName: ALPHAGO}
 devops:
     - {fileName: Amazon-Route-53}
     - {fileName: AWS-Auto-Scaling}
@@ -617,6 +604,9 @@ gloang:
     - {fileName: golang-waitgroup-add}
 goroutine:
     - {fileName: golang-waitgroup-add}
+google:
+    - {fileName: google-search-console-remove-outdated-content}
+    - {fileName: googling}
 twitter:
     - {fileName: googling}
     - {fileName: labs-strava-com-heatmap}
@@ -674,6 +664,8 @@ sort:
     - {fileName: sort}
 보안:
     - {fileName: labs-strava-com-heatmap}
+netflix:
+    - {fileName: Las-chicas-del-cable}
 drama:
     - {fileName: Las-chicas-del-cable}
 letter:

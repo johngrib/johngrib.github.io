@@ -85,7 +85,6 @@ comment : false
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
         * [[Schrodinger-s-goyang-Hee]]
     * [[movie]]
-        * [[ALPHAGO]]
         * [[Las-chicas-del-cable]]
 * [[design-pattern]]
     * [[builder-pattern]]
