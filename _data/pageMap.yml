@@ -805,7 +805,7 @@ design-pattern:
     parent: index
     url: /wiki/design-pattern
     updated: '2018-02-18 00:20:43 +0900'
-    children: [builder-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
+    children: [builder-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
 Designing-Data-Intensive-Applications:
     type: wiki
     title: '(책) 데이터 중심 애플리케이션 설계'
@@ -2114,9 +2114,9 @@ observer-pattern:
     type: wiki
     title: '옵저버 패턴(Observer Pattern)'
     summary: '상태 변화를 감시자에게 통지한다'
-    parent: ""
+    parent: design-pattern
     url: /wiki/observer-pattern
-    updated: '2019-09-29 19:18:24 +0900'
+    updated: '2019-09-29 19:51:35 +0900'
     children: []
 Oliver-s-blood:
     type: wiki

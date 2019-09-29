@@ -362,6 +362,7 @@ programming:
 design-pattern:
     - {fileName: builder-pattern}
     - {fileName: GoF-Design-Pattern}
+    - {fileName: observer-pattern}
     - {fileName: static-factory-method-pattern}
     - {fileName: strategy-pattern}
     - {fileName: template-method-pattern}

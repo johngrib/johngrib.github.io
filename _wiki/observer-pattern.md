@@ -3,11 +3,11 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-09-29 19:18:24 +0900
-tag     : 
+updated : 2019-09-29 19:51:35 +0900
+tag     : design-pattern
 toc     : true
 public  : true
-parent  : 
+parent  : design-pattern
 latex   : false
 ---
 * TOC
