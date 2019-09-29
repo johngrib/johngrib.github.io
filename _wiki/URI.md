@@ -2,6 +2,7 @@
 layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
+date    : 2017-12-12 22:05:28 +0900
 updated : 2019-08-07 00:23:47 +0900
 tag     : http
 toc     : true
