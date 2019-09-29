@@ -3,11 +3,11 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : 작성중인 문서
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-21 22:24:04 +0900
+updated : 2019-09-29 09:28:47 +0900
 tag     : java gc
 toc     : true
 public  : true
-parent  : Java
+parent  : java-gc
 latex   : true
 ---
 * TOC

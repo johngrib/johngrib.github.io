@@ -1669,7 +1669,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-tuning, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-gc, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1698,33 +1698,41 @@ java-g1gc:
     type: wiki
     title: 'Java HotSpot VM G1GC'
     summary: 'Java9 ~ 12 디폴트 GC'
-    parent: Java
+    parent: java-gc
     url: /wiki/java-g1gc
-    updated: '2019-09-17 17:45:25 +0900'
+    updated: '2019-09-29 09:28:22 +0900'
     children: []
+java-gc:
+    type: wiki
+    title: 'Java Garbage Collection'
+    summary: ""
+    parent: Java
+    url: /wiki/java-gc
+    updated: '2019-09-29 09:27:51 +0900'
+    children: [java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-tuning]
 java-gc-eden-to-survivor:
     type: wiki
     title: 'Minor GC - Eden에서 Survivor 영역으로'
     summary: ""
-    parent: Java
+    parent: java-gc
     url: /wiki/java-gc-eden-to-survivor
-    updated: '2019-09-15 15:05:19 +0900'
+    updated: '2019-09-29 09:28:37 +0900'
     children: []
 java-gc-parallel-collector:
     type: wiki
     title: 'Java HotSpot VM Parallel Collector'
     summary: 'Java8 디폴트 GC'
-    parent: Java
+    parent: java-gc
     url: /wiki/java-gc-parallel-collector
-    updated: '2019-09-16 12:31:42 +0900'
+    updated: '2019-09-29 09:28:57 +0900'
     children: []
 java-gc-tuning:
     type: wiki
     title: 'Java GC 튜닝'
     summary: '작성중인 문서'
-    parent: Java
+    parent: java-gc
     url: /wiki/java-gc-tuning
-    updated: '2019-09-21 22:24:04 +0900'
+    updated: '2019-09-29 09:28:47 +0900'
     children: []
 java-interface:
     type: wiki

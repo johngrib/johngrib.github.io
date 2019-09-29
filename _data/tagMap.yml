@@ -661,6 +661,7 @@ James-Gosling:
     - {fileName: James-Gosling-super-programmer}
 gc:
     - {fileName: java-g1gc}
+    - {fileName: java-gc}
     - {fileName: java-gc-eden-to-survivor}
     - {fileName: java-gc-parallel-collector}
     - {fileName: java-gc-tuning}

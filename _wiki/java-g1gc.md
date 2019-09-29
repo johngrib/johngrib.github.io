@@ -3,11 +3,11 @@ layout  : wiki
 title   : Java HotSpot VM G1GC
 summary : Java9 ~ 12 디폴트 GC
 date    : 2019-09-16 14:36:19 +0900
-updated : 2019-09-17 17:45:25 +0900
+updated : 2019-09-29 09:28:22 +0900
 tag     : java gc
 toc     : true
 public  : true
-parent  : Java
+parent  : java-gc
 latex   : true
 ---
 * TOC
