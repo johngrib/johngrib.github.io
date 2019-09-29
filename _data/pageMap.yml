@@ -1864,11 +1864,11 @@ labs-strava-com-heatmap:
     children: []
 Las-chicas-del-cable:
     type: wiki
-    title: '마드리드 모던걸'
-    summary: 'Las chicas del cable'
-    parent: movie
+    title: '마드리드 모던걸에서 자동 교환기가 채택되지 않은 이유'
+    summary: '교환원이 사라지면 도청을 할 수 없어'
+    parent: legend
     url: /wiki/Las-chicas-del-cable
-    updated: '2018-02-05 10:20:21 +0900'
+    updated: '2019-09-29 20:32:04 +0900'
     children: []
 latency:
     type: wiki
@@ -1885,7 +1885,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus]
+    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable]
 letter-case:
     type: wiki
     title: '대문자를 upper case, 소문자를 lower case라 부르는 이유'
@@ -1989,7 +1989,7 @@ media:
     parent: index
     url: /wiki/media
     updated: '2018-01-13 11:20:36 +0900'
-    children: [book, movie]
+    children: [book]
 memo-2019:
     type: wiki
     title: '2019년 메모'
@@ -2014,14 +2014,6 @@ Monty-Hall-problem:
     url: /wiki/Monty-Hall-problem
     updated: '2018-04-24 20:49:29 +0900'
     children: []
-movie:
-    type: wiki
-    title: '영화, TV 시리즈'
-    summary: null
-    parent: media
-    url: /wiki/movie
-    updated: '2018-02-02 21:34:13 +0900'
-    children: [Las-chicas-del-cable]
 my-bash-cheatsheet:
     type: wiki
     title: '나의 bash cheatsheet'

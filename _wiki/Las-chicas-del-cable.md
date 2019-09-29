@@ -1,21 +1,21 @@
 ---
 layout  : wiki
-title   : 마드리드 모던걸
-summary : Las chicas del cable
+title   : 마드리드 모던걸에서 자동 교환기가 채택되지 않은 이유
+summary : 교환원이 사라지면 도청을 할 수 없어
 date    : 2018-02-05 09:42:32 +0900
-updated : 2018-02-05 10:20:21 +0900
-tag     : netflix drama 
+updated : 2019-09-29 20:32:04 +0900
+tag     : story
 toc     : true
 public  : true
-parent  : movie
+parent  : legend
 latex   : false
 ---
 * TOC
 {:toc}
 
-## 개요 및 감상
+## 마드리드 모던걸?
 
-* 스페인 드라마. 당연히 등장인물들이 스페인어로 대화한다.
+* "Las chicas del cable" 라는 제목의 스페인 드라마. 당연히 등장인물들이 스페인어로 대화한다.
 * 1928년의 스페인 마드리드. 최초의 통신회사가 설립된 무렵이 배경이다.
 * 주인공은 통신회사에서 근무하는 전화 교환원 여성들.
     * 1920년대의 여권 신장, 여성 참정권 운동 등의 모습을 볼 수 있다.
@@ -24,11 +24,9 @@ latex   : false
 * '마드리드 모던걸'이란 제목은 좀 엉뚱한 번역이 아닌가 싶다.
     * 'Las chicas del cable'는 '케이블의 여성들'이란 뜻이다. 즉 '여성 교환원'을 의미하는 제목이다.
 
-### Season 01
+## 자동 교환기가 채택되지 않은 이유
 
-#### S01E03
-
-개발자로서 흥미로운 장면이 있어 기록해 둔다.
+Season 01, Episode 03 에서 개발자로서 흥미로운 장면이 있어 기록해 둔다.
 
 >
 **카를로스(기술 관련 이사)**: 우리 회사는 큰 발전을 이뤘고, 며칠 전엔 대서양 횡단 통화도 최초로 성공했습니다. 이제는 미래로 나아갈 때가 됐습니다. 자동 교환기를 소개합니다.
@@ -63,7 +61,4 @@ latex   : false
 
 * [마드리드 모던걸(netflix)](https://www.netflix.com/kr/title/80100929 )
 * [Las chicas del cable(imdb)](http://www.imdb.com/title/tt5674718/)
-
-
-
 

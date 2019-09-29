@@ -329,6 +329,7 @@ story:
     - {fileName: Grote-Reber-home-made-radio-astronomy}
     - {fileName: James-Gosling-super-programmer}
     - {fileName: John-W-Backus}
+    - {fileName: Las-chicas-del-cable}
     - {fileName: legend}
 Bill-Atkinson:
     - {fileName: Bill-Atkinson-productivity}
@@ -665,10 +666,6 @@ sort:
     - {fileName: sort}
 보안:
     - {fileName: labs-strava-com-heatmap}
-netflix:
-    - {fileName: Las-chicas-del-cable}
-drama:
-    - {fileName: Las-chicas-del-cable}
 letter:
     - {fileName: letter-case}
 case:
@@ -681,8 +678,6 @@ latex:
     - {fileName: mathjax-latex}
 media:
     - {fileName: media}
-movie:
-    - {fileName: movie}
 wiki:
     - {fileName: my-wiki}
     - {fileName: vimwiki}

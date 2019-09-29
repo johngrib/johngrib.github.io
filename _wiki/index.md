@@ -25,6 +25,7 @@ comment : false
         * [[James-Gosling-super-programmer]]
         * [[John-von-Neumann]]
         * [[John-W-Backus]]
+        * [[Las-chicas-del-cable]]
     * [[Software-Engineering-Code-of-Ethics]]
     * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
     * [[You-and-Your-Research]]
@@ -84,8 +85,6 @@ comment : false
         * [[The-Jargon-File]]
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
         * [[Schrodinger-s-goyang-Hee]]
-    * [[movie]]
-        * [[Las-chicas-del-cable]]
 * [[design-pattern]]
     * [[builder-pattern]]
     * [[observer-pattern]]
