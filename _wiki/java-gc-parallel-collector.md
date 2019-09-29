@@ -1,6 +1,6 @@
 ---
 layout  : wiki
-title   : Java HotSpot VM Parallel Collecor
+title   : Java HotSpot VM Parallel Collector
 summary : Java8 디폴트 GC
 date    : 2019-09-16 12:18:37 +0900
 updated : 2019-09-16 12:31:42 +0900

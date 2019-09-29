@@ -1712,7 +1712,7 @@ java-gc-eden-to-survivor:
     children: []
 java-gc-parallel-collector:
     type: wiki
-    title: 'Java HotSpot VM Parallel Collecor'
+    title: 'Java HotSpot VM Parallel Collector'
     summary: 'Java8 디폴트 GC'
     parent: Java
     url: /wiki/java-gc-parallel-collector

@@ -21,7 +21,7 @@ latex   : true
 
 # G1GC
 
-G1GC: Garbage First Garbage Collecor
+G1GC: Garbage First Garbage Collector
 
 * G1은 이름을 보면 짐작할 수 있듯, 쓰레기로 가득찬 heap 영역을 집중적으로 수집한다.
 * G1은 큰 메모리를 가진 멀티 프로세서 시스템에서 사용하기 위해 개발된 GC이다.
