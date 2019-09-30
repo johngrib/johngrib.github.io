@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC
 summary : Inversion of Control
 date    : 2019-08-30 22:39:18 +0900
-updated : 2019-08-31 16:08:26 +0900
+updated : 2019-09-30 11:30:54 +0900
 tag     : spring
 toc     : true
 public  : true
@@ -232,7 +232,7 @@ PicoContainer의 DI를 보았으니, Spring의 DI도 살펴보자.
 DI exists in two major variants: Constructor-based dependency injection and Setter-based dependency injection.
 
 >
-DI는 두 가지 방법이 있습니다. Constructor 기반 DI와 Seter 기반 DI.
+DI는 두 가지 방법이 있습니다. Constructor 기반 DI와 Setter 기반 DI.
 
 다음은 생성자 주입으로만 DI가 가능한 클래스의 예제이다.
 
