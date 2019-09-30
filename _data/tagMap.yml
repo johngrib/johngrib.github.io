@@ -215,7 +215,7 @@ bash:
     - {fileName: lsof}
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
-    - {fileName: random-luch}
+    - {fileName: random-lunch}
     - {fileName: sdkman}
     - {fileName: sha256sum}
     - {fileName: sort}

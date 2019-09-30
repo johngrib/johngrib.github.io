@@ -1589,7 +1589,7 @@ how-to:
     parent: index
     url: /wiki/how-to
     updated: '2018-02-04 15:57:05 +0900'
-    children: [docker, googling, mathjax-latex, my-study-method, random-luch]
+    children: [docker, googling, mathjax-latex, my-study-method, random-lunch]
 http:
     type: wiki
     title: HTTP
@@ -2270,12 +2270,12 @@ python3-simple-file-sharing:
     url: /wiki/python3-simple-file-sharing
     updated: '2018-09-18 23:08:50 +0900'
     children: []
-random-luch:
+random-lunch:
     type: wiki
     title: '간단하게 만드는 랜덤런치 그룹 생성기'
     summary: ""
     parent: how-to
-    url: /wiki/random-luch
+    url: /wiki/random-lunch
     updated: '2019-06-04 21:19:37 +0900'
     children: []
 regex-prime:
