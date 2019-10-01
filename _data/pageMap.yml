@@ -2108,7 +2108,7 @@ observer-pattern:
     summary: '상태 변화를 감시자에게 통지한다'
     parent: design-pattern
     url: /wiki/observer-pattern
-    updated: '2019-09-29 19:51:35 +0900'
+    updated: '2019-10-01 17:14:22 +0900'
     children: []
 Oliver-s-blood:
     type: wiki

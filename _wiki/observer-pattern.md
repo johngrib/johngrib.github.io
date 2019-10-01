@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-09-29 19:51:35 +0900
+updated : 2019-10-01 17:14:22 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -29,17 +29,81 @@ GoF 책에서는 다음과 같이 옵저버 패턴의 의도를 밝힌다.[^gof]
 
 ## 요약
 
-* Subject 구현체가 여러 개의 Observer 구현체를 리스트로 갖는다.
-* Subject가 루프를 돌면서 Observer 구현체에 알림을 주는 방식이다.
+Subject를 보면 어렵지 않게 이해할 수 있다.
+
+```ascii-art
++------------------+
+| Subject          |
++------------------+
+| Attach(Observer) |
+| Detach(Observer) |  +----------------------+
+| Notify() -----------| for o in observers { |
++------------------+  |    o -> Update()     |
+                      | }                    |
+                      +----------------------+
+```
+
+Subject에 여러 Observer를 등록(Attach)해 두고, Notify를 하게 되면 루프를 돌면서 각 Observer를 Update하는 패턴이다.
+
 * Subject와 Observer가 느슨한 결합을 갖는 것이 중요하다.
     * Observer 등록 순서 등에 특정 로직이 의존하지 않도록 한다.
 
-한편 알림(`notify()`)의 호출은 누가 시켜야 할지 헷갈릴 수 있는데, GoF는 다음 두 가지 방법 중에서 선택하라고 한다.[^notify]
+코드는 다음과 같은 모양새를 갖는다.
 
-* Subject 에서 변경이 발생할 때, 변경을 저장하는 메소드가 `notify()`를 호출하는 방법.
-* 사용자(`main`)가 적절한 시기에 `notify()`를 호출하는 방법.
+```java
+interface Observer {
+    public void update(Subject s);
+}
 
-참고로 Observer를 attatch 할 때 관심사를 함께 등록하는 방법도 있다.
+class ObserverImpl implements Observer {
+    private Data data1;
+    private Data data2;
+
+    // update 함수에 주목
+    public void update(Subject s) {
+        this.data1 = s.getData1();
+        this.data2 = s.getData2();
+    }
+}
+```
+
+```java
+interface Subject {
+    public void attach(Observer o);
+    public void detach(Observer o);
+    public void notify();
+}
+
+class SubjectImpl implements Subject {
+    private List<Observer> observers = new ArrayList<>();
+    private Data data1;
+    private Data data2;
+
+    public void attach(Observer o) {
+        observers.add(o);
+    }
+    public void detach(Observer o) {
+        observers.remove(o);
+    }
+    public void notify() {
+        // 모든 옵저버를 순회하며 업데이트를 해준다.
+        for (Observer o : observers) {
+            o.update(this);
+        }
+    }
+    public void setData1(Data d) {
+        this.data1 = d;
+    }
+    ...
+}
+```
+
+한편 `Notify()`의 호출은 누가 시켜야 할지 헷갈릴 수 있는데, GoF는 다음 두 가지 방법 중에서 선택하라고 한다.[^notify]
+
+* Subject 에서 변경이 발생할 때, 변경을 저장하는 메소드가 `Notify()`를 호출하는 방법.
+* 사용자(`main` 등)가 적절한 시기에 `Notify()`를 호출하는 방법.
+
+참고로 Observer를 attach 할 때 관심사를 함께 등록하는 방법도 있다.
 이 방법을 사용해 구현하면 Observer 마다 다른 정보를 전달해 주도록 할 수 있다.
 
 ```cpp
@@ -50,11 +114,11 @@ void Subject::Attach(Observer*, Aspect& interest);
 
 * Observer는 Subject에 생긴 변화에 관심을 갖는다.
 
-Observer 인터페이스는 다음과 같다.
+Java 코드로 표현한 Observer 인터페이스는 다음과 같다.
 
 ```java
 public interface Observer {
-    public void update(Data data);
+    public void update(Subject theChangedSubject);
 }
 ```
 
@@ -68,15 +132,17 @@ Subject 인터페이스는 다음과 같다.
 
 ```java
 public interface Subject {
-    public void attatch(Observer o);
+    public void attach(Observer o);
     public void detach(Observer o);
     public void notify();
 }
 ```
 
-* attatch: Subject에 Observer를 구독자로 등록한다.
+* attach: Subject에 Observer를 구독자로 등록한다.
 * detach: Subject에 등록한 Observer의 구독을 해지한다.
 * notify: Subject에서 모든 Observer에 정보를 전달한다.
+
+## GoF의 디자인 패턴의 옵저버 패턴
 
 ## 헤드 퍼스트 디자인 패턴의 옵저버 패턴
 
