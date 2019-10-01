@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-10-02 08:16:58 +0900
+updated : 2019-10-02 08:32:28 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -27,6 +27,7 @@ GoF 책에서는 다음과 같이 옵저버 패턴의 의도를 밝힌다.[^gof]
 어떤 객체의 상태가 변할 때 그 객체에 의존성을 가진 다른 객체들이
 그 변화를 통지받고 자동으로 갱신될 수 있게 만듭니다.
 
+
 ## 요약
 
 Subject를 보면 어렵지 않게 이해할 수 있다.
@@ -43,7 +44,7 @@ Subject를 보면 어렵지 않게 이해할 수 있다.
                       +----------------------+
 ```
 
-Subject에 여러 Observer를 등록(Attach)해 두고, Notify를 하게 되면 루프를 돌면서 각 Observer를 Update하는 패턴이다.
+Subject에 여러 Observer를 등록(Attach)해 두고, Notify를 하게 되면 루프를 돌면서 각 Observer를 Update하는 패턴이다.[^not-observer]
 
 * Subject와 Observer가 느슨한 결합을 갖는 것이 중요하다.
     * Observer 등록 순서 등에 특정 로직이 의존하지 않도록 한다.
@@ -367,3 +368,4 @@ public class Observable {
 [^head]: Head First Design Patterns. 75쪽.
 [^notify]: GoF의 디자인 패턴(개정판). 387쪽.
 [^finalize]: 조슈아 블로흐는 "이펙티브 자바"의 8 챕터에서 다음과 같이 말한다. "finalizer는 예측할 수 없고, 상황에 따라 위험할 수 있어 일반적으로 불필요하다.", "cleaner는 finalizer보다는 덜 위험하지만, 여전히 예측할 수 없고, 느리고 일반적으로 불필요하다."
+[^not-observer]: 생각해보면 옵저버 패턴이라는 이름이 좀 애매하다는 것을 알 수 있다. 스스로 감시하다가 변화를 알아차리는 것이 아니라, 변화를 통지받고 변화를 알게 되기 때문이다. 그래서 게시-구독 패턴이라는 이름이 이해하는 데에 도움이 될 수 있다.
