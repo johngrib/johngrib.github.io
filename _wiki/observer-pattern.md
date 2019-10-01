@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-10-01 17:14:22 +0900
+updated : 2019-10-02 08:16:58 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -48,7 +48,8 @@ Subject에 여러 Observer를 등록(Attach)해 두고, Notify를 하게 되면 
 * Subject와 Observer가 느슨한 결합을 갖는 것이 중요하다.
     * Observer 등록 순서 등에 특정 로직이 의존하지 않도록 한다.
 
-코드는 다음과 같은 모양새를 갖는다.
+다음은 내가 작성한 코드이다. 옵저버 패턴의 기본 구조를 Java 코드로 표현해 보았다.
+GoF의 코드와는 차이점이 좀 있지만 핵심 아이디어를 이해하기에는 충분하다고 생각한다.
 
 ```java
 interface Observer {
@@ -66,6 +67,11 @@ class ObserverImpl implements Observer {
     }
 }
 ```
+
+* GoF 예제와의 차이점
+    * GoF 예제에서는 Observer의 소멸자가 호출될 때 `detach`가 호출되어, 소멸되는 옵저버가 알아서 `detach` 된다.
+    * Java에서도 소멸자를 사용할 수는 있지만 사용이 권장되지 않으므로[^finalize] 생략했다.
+    * `update`에 주어지는 `Subject`의 레퍼런스 검사를 생략하였다.
 
 ```java
 interface Subject {
@@ -142,7 +148,6 @@ public interface Subject {
 * detach: Subject에 등록한 Observer의 구독을 해지한다.
 * notify: Subject에서 모든 Observer에 정보를 전달한다.
 
-## GoF의 디자인 패턴의 옵저버 패턴
 
 ## 헤드 퍼스트 디자인 패턴의 옵저버 패턴
 
@@ -151,6 +156,9 @@ public interface Subject {
 날씨 정보를 각각의 디스플레이(Observer)가 구독하는 구조로 이루어져 있다.
 
 먼저 Observer와 Subject 인터페이스를 보자.
+
+* `update` 메소드의 인자로 `Subject`가 아니라 각 값을 전달한다는 점이 GoF 예제와 다르다.
+    * 더욱 느슨한 결합을 선호하고, 전달해야 할 값이 몇 개 없다면 이 방법이 좋다고 생각한다.
 
 ```java
 public interface Observer {
@@ -351,9 +359,11 @@ public class Observable {
 
 * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
 * Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
+* 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 
 ## 주석
 
 [^gof]: GoF의 디자인 패턴(개정판). 382쪽.
 [^head]: Head First Design Patterns. 75쪽.
 [^notify]: GoF의 디자인 패턴(개정판). 387쪽.
+[^finalize]: 조슈아 블로흐는 "이펙티브 자바"의 8 챕터에서 다음과 같이 말한다. "finalizer는 예측할 수 없고, 상황에 따라 위험할 수 있어 일반적으로 불필요하다.", "cleaner는 finalizer보다는 덜 위험하지만, 여전히 예측할 수 없고, 느리고 일반적으로 불필요하다."
