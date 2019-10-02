@@ -230,6 +230,14 @@ abbr:
     url: /wiki/abbr
     updated: '2019-08-03 21:39:52 +0900'
     children: []
+ACID:
+    type: wiki
+    title: ACID
+    summary: '트랜잭션의 중요한 네 가지 속성'
+    parent: proverb
+    url: /wiki/ACID
+    updated: '2019-10-03 00:44:57 +0900'
+    children: []
 ag:
     type: wiki
     title: 'ag, the silver searcher'
@@ -2253,7 +2261,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-02-21 22:37:29 +0900'
-    children: [airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Zipf-s-law]
+    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Zipf-s-law]
 Python3:
     type: wiki
     title: Python3

@@ -145,6 +145,7 @@ comment : false
     * [[TOML]]
     * [[YAML]]
 * [[proverb]]{속담, 법칙, 관용어 모음}
+    * [[ACID]]
     * [[airplain-rule]]
     * [[Boy-Scout-Rule]]
     * [[Brooks-s-law]]
