@@ -330,7 +330,7 @@ comment : false
     * [[persona]]
     * [[polite-software]]
     * [[port]]
-    * [[REST]]
+    * [[REST-paper-summary]]
     * [[RFC]]
     * [[rouge-supported-languages]]
     * [[router]]

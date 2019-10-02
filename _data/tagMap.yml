@@ -712,7 +712,7 @@ curl:
 perl:
     - {fileName: regex-prime}
 web:
-    - {fileName: REST}
+    - {fileName: REST-paper-summary}
 rfc:
     - {fileName: RFC}
     - {fileName: why-http-80-https-443}
