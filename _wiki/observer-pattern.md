@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-10-02 22:14:00 +0900
+updated : 2019-10-02 22:49:34 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -54,7 +54,7 @@ Subject에 여러 Observer를 등록(Attach)해 두고, Notify를 하게 되면 
 * Subject와 Observer가 느슨한 결합을 갖는 것이 중요하다.
     * Observer 등록 순서 등에 특정 로직이 의존하지 않도록 한다.
 
-생각해보면 옵저버 패턴이라는 이름이 좀 미묘하다는 것을 알 수 있다. 스스로 감시하다가 변화를 알아차리는 것이 아니라, 변화를 통지받고 변화를 알게 되기 때문이다. 그래서 게시-구독 패턴이라는 이름이 이해하는 데에 도움이 될 수 있다고 생각한다.
+생각해보면 옵저버 패턴이라는 이름이 좀 미묘하다는 것을 알 수 있다. 스스로 감시하다가 변화를 알아차리는 것이 아니라, 변화를 통지받고 변화를 알게 되기 때문이다. 그래서 게시-구독 패턴이라는 별명도 있다.
 
 ### 참여자
 
@@ -146,7 +146,18 @@ class SubjectImpl implements Subject {
 }
 ```
 
-한편 `Notify()`의 호출은 누가 시켜야 할지 헷갈릴 수 있는데, GoF는 다음 두 가지 방법 중에서 선택하라고 한다.[^notify]
+## 구현할 때 고려할 점들
+
+### 옵저버는 상태를 갖지 않아도 된다
+
+* 상태는 Subject의 담당이므로 Subject와 Observer의 일대다 관계가 성립한다.
+    * 예제에서는 Observer가 update를 통해 값을 전달받고 저장하지만, 상태를 굳이 저장할 필요가 없는 경우에는 상태를 저장하지 않아도 된다.
+
+### Notify를 누가 호출해야 할까?
+
+`Notify()` 호출을 누가 시켜야 할지 헷갈릴 수 있다.
+
+GoF는 다음 두 가지 방법 중에서 선택하라고 한다.[^notify]
 
 * Subject 에서 변경이 발생할 때, 변경을 저장하는 메소드가 `Notify()`를 호출하는 방법.
 * 사용자(`main` 등)가 적절한 시기에 `Notify()`를 호출하는 방법.
@@ -157,6 +168,96 @@ class SubjectImpl implements Subject {
 ```cpp
 void Subject::Attach(Observer*, Aspect& interest);
 ```
+
+
+### Update 메소드의 인자
+
+GoF의 예제에 등장하는 Update 메소드는 다음과 같은 시그니처를 갖고 있다.
+
+```java
+void update(Subject theChangedSubject)
+```
+
+즉 Subject를 넘겨주고, 옵저버가 넘겨받은 Subject에서 필요한 값을 얻는 방법이다.
+
+하지만 이것은 반드시 지켜야 하는 약속은 아니며, 상황에 따라 다른 인자를 함께 넘기는 것도 생각해 볼 수 있다.
+
+```java
+void update(Subject theChangedSubject, int changedCount)
+```
+
+단순히 값을 전달하는 정도라면 심플하게 구현하는 것도 방법이다.
+
+```java
+void update(int value1, int value2)
+```
+
+### Observer의 행위가 Subject에 영향을 주는 경우
+
+만약 Observer의 행위가 Subject에 영향을 주는 로직이 있다면, 무한 루프가 발생할 수 있으므로 주의할 필요가 있다.
+
+1. Subject가 notify를 호출한다.
+2. Observer의 update가 호출된다.
+3. Observer::update 실행도중 Subject에 영향을 준다.
+4. Subject가 notify를 호출한다.
+5. Goto 1
+
+"Java 언어로 배우는 디자인 패턴 입문"에서는 이러한 상황을 회피하기 위해 Observer에 플래그 변수를 하나 추가하여 Observer가 현재 update 중인지 아닌지 상태를 기록하는 꼼수를 제안한다.[^update-flag] 아름다운 방법은 아닌 것 같지만 급할 경우에는 고려할 수 있을 것 같다.
+
+다음은 내가 작성한 코드이다.
+
+```java
+boolean isUpdate;
+
+@Override
+public void update(Subject s) {
+    if (!isUpdate) {
+        return;
+    }
+    this.subject = s;
+}
+```
+
+한편, `java.util.Observable`를 읽어 봤더니 비슷한 코드가 존재하고 있었다.
+
+```java
+private boolean changed = false;
+
+public void notifyObservers(Object arg) {
+    /*
+     * a temporary array buffer, used as a snapshot of the state of
+     * current Observers.
+     */
+    Object[] arrLocal;
+
+    synchronized (this) {
+        /* We don't want the Observer doing callbacks into
+         * arbitrary code while holding its own Monitor.
+         * The code where we extract each Observable from
+         * the Vector and store the state of the Observer
+         * needs synchronization, but notifying observers
+         * does not (should not).  The worst result of any
+         * potential race-condition here is that:
+         * 1) a newly-added Observer will miss a
+         *   notification in progress
+         * 2) a recently unregistered Observer will be
+         *   wrongly notified when it doesn't care
+         */
+        if (!changed)   // 이 부분
+            return;
+        arrLocal = obs.toArray();
+        clearChanged();
+    }
+
+    for (int i = arrLocal.length-1; i>=0; i--)
+        ((Observer)arrLocal[i]).update(this, arg);
+}
+
+protected synchronized void setChanged() { changed = true; }
+protected synchronized void clearChanged() { changed = false; }
+public synchronized boolean hasChanged() { return changed; }
+```
+
 
 
 ## 헤드 퍼스트 디자인 패턴의 옵저버 패턴
@@ -422,6 +523,7 @@ This class and the [Observer][observer] interface have been deprecated. The even
 [^notify]: GoF의 디자인 패턴(개정판). 387쪽.
 [^finalize]: 조슈아 블로흐는 "이펙티브 자바"의 8 챕터에서 다음과 같이 말한다. "finalizer는 예측할 수 없고, 상황에 따라 위험할 수 있어 일반적으로 불필요하다.", "cleaner는 finalizer보다는 덜 위험하지만, 여전히 예측할 수 없고, 느리고 일반적으로 불필요하다."
 [^minus-observable]: Head First Design Patterns. 109쪽.
+[^update-flag]: Java 언어로 배우는 디자인 패턴 입문. Chapter 17. 309쪽.
 
 [observable]: https://docs.oracle.com/javase/9/docs/api/java/util/Observable.html
 [observer]: https://docs.oracle.com/javase/9/docs/api/java/util/Observer.html
