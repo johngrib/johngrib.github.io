@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-10-02 08:32:28 +0900
+updated : 2019-10-02 21:48:23 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -27,10 +27,16 @@ GoF 책에서는 다음과 같이 옵저버 패턴의 의도를 밝힌다.[^gof]
 어떤 객체의 상태가 변할 때 그 객체에 의존성을 가진 다른 객체들이
 그 변화를 통지받고 자동으로 갱신될 수 있게 만듭니다.
 
+구조는 다음과 같다.[^structure]
+
+![structure]( /post-img/observer-pattern/structure.jpg )
+
 
 ## 요약
 
-Subject를 보면 어렵지 않게 이해할 수 있다.
+### 구조
+
+구조 다이어그램에서 Subject를 잘 살펴보면 어렵지 않게 이해할 수 있다.
 
 ```ascii-art
 +------------------+
@@ -48,6 +54,40 @@ Subject에 여러 Observer를 등록(Attach)해 두고, Notify를 하게 되면 
 
 * Subject와 Observer가 느슨한 결합을 갖는 것이 중요하다.
     * Observer 등록 순서 등에 특정 로직이 의존하지 않도록 한다.
+
+### 참여자
+
+* Observer는 Subject에 생긴 변화에 관심을 갖는다.
+
+Java 코드로 표현한 Observer 인터페이스는 다음과 같다.
+
+```java
+public interface Observer {
+    public void update(Subject theChangedSubject);
+}
+```
+
+* Subject는 Observer들을 알고 있는 객체이다.
+    * 여러 Observer가 Subject에 붙을 수 있다.
+* ConcreteSubject는 다음과 같은 일을 한다.
+    * ConcreteObserver에게 알려줘야 하는 상태를 저장한다.
+    * 자신의 상태가 달라지면 ConcreteObserver에게 알려준다.
+
+Subject 인터페이스는 다음과 같다.
+
+```java
+public interface Subject {
+    public void attach(Observer o);
+    public void detach(Observer o);
+    public void notify();
+}
+```
+
+* attach: Subject에 Observer를 구독자로 등록한다.
+* detach: Subject에 등록한 Observer의 구독을 해지한다.
+* notify: Subject에서 모든 Observer에 정보를 전달한다.
+
+### 예제
 
 다음은 내가 작성한 코드이다. 옵저버 패턴의 기본 구조를 Java 코드로 표현해 보았다.
 GoF의 코드와는 차이점이 좀 있지만 핵심 아이디어를 이해하기에는 충분하다고 생각한다.
@@ -116,38 +156,6 @@ class SubjectImpl implements Subject {
 ```cpp
 void Subject::Attach(Observer*, Aspect& interest);
 ```
-
-## 참여자
-
-* Observer는 Subject에 생긴 변화에 관심을 갖는다.
-
-Java 코드로 표현한 Observer 인터페이스는 다음과 같다.
-
-```java
-public interface Observer {
-    public void update(Subject theChangedSubject);
-}
-```
-
-* Subject는 Observer들을 알고 있는 객체이다.
-    * 여러 Observer가 Subject에 붙을 수 있다.
-* ConcreteSubject는 다음과 같은 일을 한다.
-    * ConcreteObserver에게 알려줘야 하는 상태를 저장한다.
-    * 자신의 상태가 달라지면 ConcreteObserver에게 알려준다.
-
-Subject 인터페이스는 다음과 같다.
-
-```java
-public interface Subject {
-    public void attach(Observer o);
-    public void detach(Observer o);
-    public void notify();
-}
-```
-
-* attach: Subject에 Observer를 구독자로 등록한다.
-* detach: Subject에 등록한 Observer의 구독을 해지한다.
-* notify: Subject에서 모든 Observer에 정보를 전달한다.
 
 
 ## 헤드 퍼스트 디자인 패턴의 옵저버 패턴
@@ -355,17 +363,58 @@ public class Observable {
 }
 ```
 
+### Java 내장 Observable, Observer는 왜 deprecated 되었을까?
+
+Observer와 Observable은 Java SE 9 버전부터 Deprecated 되었다. 그 이유는 무엇일까?
+
+[Java SE 9 문서의 Observable][observable]을 읽어보자.
+
+>
+**Deprecated.**  
+This class and the [Observer][observer] interface have been deprecated. The event model supported by Observer and Observable is quite limited, the order of notifications delivered by Observable is unspecified, and state changes are not in one-for-one correspondence with notifications. For a richer event model, consider using the [java.beans][java.beans] package. For reliable and ordered messaging among threads, consider using one of the concurrent data structures in the [java.util.concurrent][concurrent] package. For reactive streams style programming, see the [Flow][flow] API.
+
+* Observer와 Observable이 제공하는 이벤트 모델이 제한적이다.
+* Observable의 notify는 순서를 보장할 수 없으며, 상태 변경은 1:1로 일치하지 않는다.
+* 더 풍부한 이벤트 모델은 `java.beans` 패키지가 제공하고 있다.
+* 멀티 스레드에서의 신뢰할 수 있고 순서가 보장된 메시징은 `java.util.concurrent` 패키지의 concurrent 자료 구조들 중 하나를 골라 쓰는 편이 낫다.
+* reactive stream 스타일 프로그래밍은 `Flow` API를 쓰기를 권한다.
+
+한편, Observable의 문제는 헤드 퍼스트 디자인 패턴에서도 지적하고 있다.[^minus-observable]
+
+요약하자면 다음과 같다.
+
+* Observable이 interface가 아니라 class이다.
+    * 인터페이스에 맞춰 프로그래밍한다는 객체지향 디자인 원칙을 위배한다.
+    * 이미 다른 클래스를 상속하는 클래스가 Observable을 상속할 수 없다.
+    * 따라서 재사용성에 제약이 생긴다.
+* 상속 위주로 작업을 하게 된다.
+    * Observable을 사용하려면 서브 클래스를 만들어야 한다.
+    * Observable 내부에 protected 메소드가 있어, Observable의 서브클래스를 인스턴스 변수로 사용하는 방법도 써먹을 수가 없다.
+    * 상속보다 구성을 사용한다는 디자인 원칙을 위배한다.
+* Observable이 java.util에 들어있기 때문에 재구현을 할 수 없다.
 
 ## 참고문헌
 
-* GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
-* Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
-* 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+* 웹
+    * [Class Observable][observable]
+* 도서
+    * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
+    * Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
+    * 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 
 ## 주석
 
 [^gof]: GoF의 디자인 패턴(개정판). 382쪽.
+[^structure]: GoF의 디자인 패턴(개정판). 384쪽.
 [^head]: Head First Design Patterns. 75쪽.
 [^notify]: GoF의 디자인 패턴(개정판). 387쪽.
 [^finalize]: 조슈아 블로흐는 "이펙티브 자바"의 8 챕터에서 다음과 같이 말한다. "finalizer는 예측할 수 없고, 상황에 따라 위험할 수 있어 일반적으로 불필요하다.", "cleaner는 finalizer보다는 덜 위험하지만, 여전히 예측할 수 없고, 느리고 일반적으로 불필요하다."
 [^not-observer]: 생각해보면 옵저버 패턴이라는 이름이 좀 애매하다는 것을 알 수 있다. 스스로 감시하다가 변화를 알아차리는 것이 아니라, 변화를 통지받고 변화를 알게 되기 때문이다. 그래서 게시-구독 패턴이라는 이름이 이해하는 데에 도움이 될 수 있다.
+[^minus-observable]: Head First Design Patterns. 109쪽.
+
+[observable]: https://docs.oracle.com/javase/9/docs/api/java/util/Observable.html
+[observer]: https://docs.oracle.com/javase/9/docs/api/java/util/Observer.html
+[java.beans]: https://docs.oracle.com/javase/9/docs/api/java/beans/package-summary.html
+[concurrent]: https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/package-summary.html
+[flow]: https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.html
+
