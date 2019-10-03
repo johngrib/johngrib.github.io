@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2019-08-31 18:58:46 +0900
+updated : 2019-10-03 23:08:33 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -192,7 +192,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * 몇몇 에디터, bash 터미널에선 코드 자동 완성 단축키로 사용한다.
 * TSV 파일은 'Tab Seperated Values'의 약자이며, Tab을 구분자로 사용한 자료가 담긴 파일을 말한다.
 
-| 읽는 방법      | 탭, taB, horizontal tab         |
+| 읽는 방법      | 탭, tab, horizontal tab         |
 | 약어           | HT                              |
 | 유니코드       | 'CHARACTER TABULATION' (U+0009) |
 | C escape       | \t                              |
