@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-10-02 22:49:34 +0900
+updated : 2019-10-03 11:01:53 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -199,8 +199,7 @@ void update(int value1, int value2)
 1. Subject가 notify를 호출한다.
 2. Observer의 update가 호출된다.
 3. Observer::update 실행도중 Subject에 영향을 준다.
-4. Subject가 notify를 호출한다.
-5. Goto 1
+4. Goto 1
 
 "Java 언어로 배우는 디자인 패턴 입문"에서는 이러한 상황을 회피하기 위해 Observer에 플래그 변수를 하나 추가하여 Observer가 현재 update 중인지 아닌지 상태를 기록하는 꼼수를 제안한다.[^update-flag] 아름다운 방법은 아닌 것 같지만 급할 경우에는 고려할 수 있을 것 같다.
 
