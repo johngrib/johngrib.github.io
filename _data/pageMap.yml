@@ -289,10 +289,10 @@ Amazon-Route-53:
 availability:
     type: wiki
     title: 가용성(Availability)
-    summary: '사용 가능한 정도'
+    summary: '시스템이 다운되지 않고 정상 운영되는 시간의 비율'
     parent: what
     url: /wiki/availability
-    updated: '2019-09-20 10:06:50 +0900'
+    updated: '2019-10-03 22:25:44 +0900'
     children: []
 average-complexity:
     type: wiki

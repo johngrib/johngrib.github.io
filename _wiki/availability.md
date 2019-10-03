@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : 가용성(Availability)
-summary : 사용 가능한 정도
+summary : 시스템이 다운되지 않고 정상 운영되는 시간의 비율
 date    : 2019-09-20 09:10:51 +0900
-updated : 2019-09-20 10:06:50 +0900
+updated : 2019-10-03 22:25:44 +0900
 tag     : 
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-## 위키백과의 정의
+## 정의
 
 한국어 위키백과에서는 가용성을 다음과 같이 정의한다.
 
@@ -33,15 +33,28 @@ $$\text{Availability} = { E[\text{Uptime}] \over E[\text{Uptime}] + E[\text{Down
 | 99.99%  | [52.56 min][4y] | [4.38 min][4m]  | [60.48 sec][4w] | [8.64 sec][4d]  | [0.36 sec][4h]  |
 | 99.999% | [5.256 min][5y] | [26.28 sec][5m] | [6.048 sec][5w] | [0.864 sec][5d] | [0.036 sec][5h] |
 
+## 높은 가용성을 얻으려면
+
+일반적으로 높은 가용성을 얻으려면 다음 사항들에 대해 고려해 두어야 한다.
+
+>
+* 환경 - 물리적 환경인 전원, 통신회선, 항온항습기 등의 장애를 방지한다.
+* 시스템 관리 - 시스템 관리자 및 벤더의 유지보수 오류에 기인하는 장애를 방지한다.
+* 하드웨어 - 어떤 컴포넌트가 장애일 경우에 다른 컴포넌트로 즉시 자동적으로 대체할 수 있도록 이중화하여 설치한다.
+* 소프트웨어 - 소프트웨어의 신뢰성을 향상시키고, 장애 발생시 소프트웨어가 자동적으로 신속하게 복구될 수 있도록 한다.[^high-availability]
+
 ## 참고문헌
 
 * 웹
     * [가용성(wikipedia)](https://ko.wikipedia.org/wiki/가용성 )
 * 도서
     * 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
+    * 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
 
+## 주석
 
-[^nines]: 마이크로서비스 구축과 운영. 2장 생산 준비 기준 갖추기. 59쪽.
+[^high-availability]: 트랜잭션 처리의 원리. 1.6 가용성. 44쪽.
+
 [2y]: https://www.wolframalpha.com/input/?i=%7Bconvert+1+year+to+seconds%7D+*+0.01
 [3y]: https://www.wolframalpha.com/input/?i=%7Bconvert+1+year+to+seconds%7D+*+0.001
 [4y]: https://www.wolframalpha.com/input/?i=%7Bconvert+1+year+to+seconds%7D+*+0.0001
@@ -62,3 +75,4 @@ $$\text{Availability} = { E[\text{Uptime}] \over E[\text{Uptime}] + E[\text{Down
 [3h]: https://www.wolframalpha.com/input/?i=%7Bconvert+1+hour+to+seconds%7D+*+0.001
 [4h]: https://www.wolframalpha.com/input/?i=%7Bconvert+1+hour+to+seconds%7D+*+0.0001
 [5h]: https://www.wolframalpha.com/input/?i=%7Bconvert+1+hour+to+seconds%7D+*+0.00001
+
