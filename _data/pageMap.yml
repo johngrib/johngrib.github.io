@@ -236,7 +236,7 @@ ACID:
     summary: '트랜잭션의 중요한 네 가지 속성'
     parent: proverb
     url: /wiki/ACID
-    updated: '2019-10-03 15:19:27 +0900'
+    updated: '2019-10-03 15:22:35 +0900'
     children: []
 ag:
     type: wiki
