@@ -3,7 +3,7 @@ layout  : wiki
 title   : ACID
 summary : 트랜잭션의 중요한 네 가지 속성
 date    : 2019-10-03 00:33:18 +0900
-updated : 2019-10-03 14:48:44 +0900
+updated : 2019-10-03 14:55:22 +0900
 tag     : db
 toc     : true
 public  : true
@@ -38,7 +38,7 @@ latex   : false
 이를 트랜잭션으로 실행할 때, 그 트랜잭션은 원자성이 있어야 한다.
 즉, 양쪽 업데이트를 모두 실행하거나 어느 쪽도 실행하지 말아야 한다.
 둘 중 하나만 업데이트되는 상황이 있어서는 안 된다.
-[^prin-atomic]
+[^atomicity0]
 
 한편 abort는 원자성의 중요한 특징이다.
 
