@@ -3,7 +3,7 @@ layout  : wiki
 title   : 약어 모음
 summary : 
 date    : 2019-07-14 19:51:37 +0900
-updated : 2019-08-03 21:39:52 +0900
+updated : 2019-10-03 22:03:13 +0900
 tag     : 
 toc     : true
 public  : true
@@ -37,5 +37,7 @@ latex   : false
 * RTT: Round-Trip Time, 왕복 시간
 * SLIP: Serial Line Internet Protocol, 직렬 회선 인터넷 프로토콜
 * TCP: Transmission Control Protocol, 전송 제어 프로토콜
+* TPM: Transaction per minute, 분당 트랜잭션 최대 처리건수
+* TPS: Transaction per second, 초당 트랜잭션 최대 처리건수
 * UDP: User Datagram Protocol, 사용자 데이터그램 프로토콜
 * VPN: Virtual Private Networks, 가상 사설 통신망
