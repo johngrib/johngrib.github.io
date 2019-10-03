@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-10-03 11:01:53 +0900
+updated : 2019-10-03 13:40:34 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -512,7 +512,7 @@ This class and the [Observer][observer] interface have been deprecated. The even
     * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
     * Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
     * 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
-    * Java 언어로 배우는 디자인 패턴 입문 [개정판] / Yuki Hiroshi 저 / 이규흥 역 / 영진닷컴 / 1판 4쇄 2011년 11월 15일
+    * Java 언어로 배우는 디자인 패턴 입문 [개정판] / Yuki Hiroshi 저 / 이규흥 역 / 영진닷컴 / 1판 9쇄 2017년 3월 5일
 
 ## 주석
 
