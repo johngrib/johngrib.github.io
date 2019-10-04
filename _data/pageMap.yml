@@ -1748,7 +1748,7 @@ java-gc-zgc:
     summary: '작성중인 문서'
     parent: ""
     url: /wiki/java-gc-zgc
-    updated: '2019-10-04 12:55:17 +0900'
+    updated: '2019-10-04 13:02:07 +0900'
     children: []
 java-interface:
     type: wiki
