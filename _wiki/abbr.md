@@ -3,7 +3,7 @@ layout  : wiki
 title   : 약어 모음
 summary : 
 date    : 2019-07-14 19:51:37 +0900
-updated : 2019-10-03 22:03:13 +0900
+updated : 2019-10-04 11:04:26 +0900
 tag     : 
 toc     : true
 public  : true
@@ -18,6 +18,7 @@ latex   : false
 * BOOTP: Bootstrap Protocol, 부트스트랩 프로토콜
 * CIDR: Classless Inter-Domain Routing, 클래스 비사용 도메인 간 라우팅
 * DHCP: Dynamic Host Configuration Protocol, 동적 호스트 설정 프로토콜
+* GC: Garbage Collection, 쓰레기 수거.
 * IANA: Internet Assigned Numbers Authority, 인터넷 할당번호 관리기관
 * ICMP: Internet Control Message Protocol, 인터넷 제어 메시지 프로토콜
 * ICMP: Internet Control Message Protocol, 인터넷 제어 메시지 프로토콜
