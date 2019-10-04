@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Java GC 튜닝
-summary : 작성중인 문서
+summary : Oracle의 튜닝 가이드를 읽고 정리해 보자
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-09-29 15:25:01 +0900
+updated : 2019-10-04 12:56:34 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -657,16 +657,7 @@ ZGC는 10ms 미만의 짧은 대기 시간이 필요하거나 테라 바이트 �
 
 **ZGC는 JDK 11부터 실험적으로 도입되었다.**
 
-ZGC는 JDK 11, 12에서 `-XX:+UnlockExperimentalVMOptions` `XX:+UseZGC` 두 옵션을 켜서 활성화할 수 있다.
-
-ZGC 튜닝에서 가장 중요한 것은 `-Xmx`로 설정할 수 있는 최대 힙 크기이다. ZGC는 동시 콜렉터이기 때문에,
-
-1. heap이 애플리케이션의 라이브셋을 수용할 수 있고,
-2. heap에서 GC가 돌아가는 동안 할당을 처리할 수 있을만큼의 충분한 여유 공간이 있어야 한다.
-
-일반적으로 ZGC는 메모리가 많으면 많을수록 좋다고 한다.
-
-ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레드의 수이다. `-XX:ConcGCThreads`로 설정할 수 있으며, ZGC는 휴리스틱을 통해 이 값을 자동으로 선택한다. 다만, 이 값이 너무 크면 GC가 애플리케이션의 CPU 시간을 다 빼앗아버리므로 처리량이 떨어진다. 반면 이 값이 너무 작으면 쓰레기 수거보다 쓰레기가 쌓이는 속도가 더 빠를 수 있다.
+상세한 내용은 [[java-gc-zgc]]{ZGC} 문서를 참고할 것.
 
 # 그 외의 고려할 사항들
 
@@ -691,6 +682,7 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 * [[java-gc-serial-collector]]{Serial Collector}
 * [[java-gc-parallel-collector]]{Parallel Collector}
 * [[java-g1gc]]{G1GC}
+* [[java-gc-zgc]]{ZGC}
 
 # 참고문헌
 

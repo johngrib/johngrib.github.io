@@ -137,6 +137,7 @@ comment : false
             * [[java-gc-eden-to-survivor]]
             * [[java-gc-serial-collector]]
             * [[java-gc-parallel-collector]]
+            * [[java-gc-zgc]]
             * [[java-g1gc]]
     * [[php]]
         * [[composer]]
