@@ -3,7 +3,7 @@ layout  : wiki
 title   : 템플릿 메소드 패턴 (Template Method Pattern)
 summary : 알고리즘의 일부 단계를 서브클래스에서 정의한다
 date    : 2019-08-31 15:27:07 +0900
-updated : 2019-10-05 23:42:20 +0900
+updated : 2019-10-06 08:46:09 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -41,7 +41,7 @@ GoF는 다음과 같이 이 패턴의 의도를 설명한다.[^gof]
 * 재정의할 abstract 메소드는 식별하기 쉽도록 접두사를 붙여주자.
     * 예를 들어 메소드 이름이 `Do`로 시작하도록 한다.
 
-# 코드 예제
+# 헤드 퍼스트 디자인 패턴의 예제
 
 Head First Design Pattern에 나온 예제가 이해하기 쉽다.[^head-example]
 
@@ -180,13 +180,75 @@ public abstract class CaffeineBeverage {
 }
 ```
 
+# 람다를 사용해 서브 클래스 제거하기
+
+다음은 [Java Magazine 2016 Nov/Dec의 Implementing Design Patterns with Lambdas][magazine]에 실린 코드를 약간 수정한 것이다.
+
+1개의 추상 메소드를 사용하는 템플릿 메소드가 있다.
+
+```java
+abstract class OnlineBanking {
+    // template method
+    public void processCustomer(int id) {
+        Customer c = Database.getCustomerWithId(id);
+        makeCustomerHappy(c);
+    }
+    abstract void makeCustomerHappy(Customer c);
+}
+```
+
+이 코드를 사용하려면 서브 클래스를 작성해야 한다.
+
+```java
+class OnlineBankingKorea extends OnlineBanking {
+    @Override
+    void makeCustomerHappy(Customer c) {
+        System.out.println("안녕하세요 " + c.getName());
+    }
+}
+```
+
+다음과 같이 사용할 수 있다.
+
+```java
+new OnlineBankingKorea().processCustomer(1337);
+```
+
+구현해야 할 추상 메소드가 하나 뿐이므로 람다의 사용을 고려해볼 수 있다.
+
+OnlineBanking에서 `abstract` 키워드를 삭제하고, `processCustomer` 메소드가 `Consumer`를 받도록 수정한다.
+
+```java
+class OnlineBanking {
+    public void processCustomer(int id, Consumer<Customer> makeCustomerHappy) {
+        Customer c = Database.getCustomerWithId(id);
+        makeCustomerHappy.accept(c);
+    }
+}
+```
+
+이제 상속 없이 `OnlineBanking` 클래스를 사용할 수 있다.
+
+```java
+new OnlineBanking()
+    .processCustomer(1337,
+        (Customer c) -> System.out.println("안녕하세요" + c.getName())
+);
+
+```
+
 # 참고문헌
 
-* GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
-* Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
+* 도서
+    * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
+    * Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
+* 웹 문서
+    * [Java Magazine 2016 Nov/Dec: Implementing Design Patterns with Lambdas][magazine]
 
 # 주석
 
 [^gof]: GoF의 디자인 패턴(개정판). 419쪽.
 [^head-example]: Head First Design Patterns. 315쪽.
+
+[magazine]: http://www.javamagazine.mozaicreader.com/NovDec2016/LinkedIn#&pageSet=57&page=0
 
