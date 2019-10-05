@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-10-03 13:40:34 +0900
+updated : 2019-10-05 10:32:29 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -259,7 +259,7 @@ public synchronized boolean hasChanged() { return changed; }
 
 
 
-## 헤드 퍼스트 디자인 패턴의 옵저버 패턴
+## 헤드 퍼스트 디자인 패턴의 옵저버 패턴 예제
 
 다음 코드는 헤드 퍼스트 디자인 패턴에서 소개한 옵저버 패턴의 코드를 약간 수정한 것이다.[^head]
 
@@ -286,6 +286,7 @@ public interface Subject {
 
 다음은 Subject의 구현체이다.
 
+* 변경이 발생할 때, Subject에서 알림을 호출한다.
 
 ```java
 import java.util.ArrayList;
@@ -343,6 +344,9 @@ public interface DisplayElement {
 
 그리고 Observer 구현체.
 
+* update 호출시마다 display가 호출되어 화면이 바뀌도록 되어 있다.
+* 생성자 파라미터로 받은 Subject에 자기 자신을 등록하기 때문에 main 메소드에서 Subject에 옵저버를 일일이 등록하지 않는다.
+
 ```java
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
     private int id;
@@ -399,6 +403,105 @@ public static void main(String[] args) {
 장비 ID: 2, 현재 기온: 30.0도, 습도: 64.0%
 장비 ID: 3, 현재 기온: 30.0도, 습도: 64.0%
 ```
+
+## Java Magazine 2016 November/December에 실린 예제
+
+다음은 [Java Magazine 2016 Nov/Dec의 Implementing Design Patterns with Lambdas][magazine]에 실린 코드를 약간 수정한 것이다. 이 예제에서는 옵저버 구현 클래스를 람다로 대체하는 방법을 엿볼 수 있다.
+
+유명인이 트위터에 글을 쓰면 뉴욕타임즈, 가디언, 르몽드가 관심 키워드에 따라 반응하는 방식으로 만들어져 있다.
+
+```java
+interface Observer {
+    void notify(String tweet);
+}
+```
+
+옵저버는 다음과 같이 심플하다.
+
+```java
+class NYTimes implements Observer {
+    public void notify(String tweet) {
+        if (tweet != null && tweet.contains("money")) {
+            System.out.println("Breaking news in NY! " + tweet);
+        }
+    }
+}
+
+class Guardian implements Observer {
+    public void notify(String tweet) {
+        if (tweet != null && tweet.contains("queen")) {
+            System.out.println("Yet more news in London... " + tweet);
+        }
+    }
+}
+
+class LeMonde implements Observer {
+    public void notify(String tweet) {
+        if (tweet != null && tweet.contains("wine")) {
+            System.out.println("Today cheese, wine, and news! " + tweet);
+        }
+    }
+}
+```
+
+```java
+interface Subject {
+    void registerObserver(Observer o);
+    void notifyObservers(String tweet);
+}
+```
+
+```java
+class Feed implements Subject {
+    private final List<Observer> observers = new ArrayList<>();
+    
+    public void registerObserver(Observer o) {
+        this.observers.add(o);
+    }
+    
+    public void notifyObservers(String tweet) {
+        observers.forEach(o -> o.notify(tweet));
+    }
+}
+```
+
+사용은 다음과 같이 할 수 있다.
+
+```java
+Feed f = new Feed();
+f.registerObserver(new NYTimes());
+f.registerObserver(new Guardian());
+f.registerObserver(new LeMonde());
+f.notifyObservers( "The queen said her favourite book is Java 8 in Action!");
+```
+
+그런데 Observer가 한 개의 메소드만 갖고 있는 인터페이스이므로, 람다를 사용하면 클래스를 만들지 않고도 옵저버를 등록할 수 있다.
+
+```java
+f.registerObserver((String tweet) -> {
+    if (tweet != null && tweet.contains("money")) {
+        System.out.println("Breaking news in NY! " + tweet);
+    }
+});
+```
+
+즉, NYTimes 클래스를 삭제하고 실행 코드를 다음과 같이 수정할 수 있다.
+
+```java
+Feed f = new Feed();
+f.registerObserver((String tweet) -> {
+    if (tweet != null && tweet.contains("money")) {
+        System.out.println(
+                "Breaking news in NY! " + tweet
+        );
+    }
+});
+f.registerObserver(new Guardian());
+f.registerObserver(new LeMonde());
+f.notifyObservers( "The queen said her favourite book is Java 8 in Action!");
+f.notifyObservers( "money!");
+```
+
 
 ## Java에 내장된 Observer, Observable 인터페이스
 
@@ -508,6 +611,7 @@ This class and the [Observer][observer] interface have been deprecated. The even
 
 * 웹
     * [Class Observable][observable]
+    * [Java Magazine 2016 Nov/Dec: Implementing Design Patterns with Lambdas][magazine]
 * 도서
     * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
     * Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
@@ -529,4 +633,5 @@ This class and the [Observer][observer] interface have been deprecated. The even
 [java.beans]: https://docs.oracle.com/javase/9/docs/api/java/beans/package-summary.html
 [concurrent]: https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/package-summary.html
 [flow]: https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.html
+[magazine]: http://www.javamagazine.mozaicreader.com/NovDec2016/LinkedIn#&pageSet=58&page=0
 
