@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 템플릿 메소드 패턴(Template Method Pattern)
+title   : 템플릿 메소드 패턴 (Template Method Pattern)
 summary : 알고리즘의 일부 단계를 서브클래스에서 정의한다
 date    : 2019-08-31 15:27:07 +0900
-updated : 2019-08-31 16:29:29 +0900
+updated : 2019-10-05 23:42:20 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -13,11 +13,11 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요 
+# 개요
 
 ## 의도
 
-"GoF의 디자인 패턴"에서는 다음과 같이 이 패턴의 의도를 설명한다.
+GoF는 다음과 같이 이 패턴의 의도를 설명한다.[^gof]
 
 > 객체의 연산에는 알고리즘의 뼈대만을 정의하고 각 단계에서 수행할 구체적 처리는 서브클래스 쪽으로 미룹니다.
 알고리즘의 구조 자체는 그대로 놔둔 채 알고리즘 각 단계 처리를 서브클래스에서 재정의할 수 있게 합니다.
@@ -43,7 +43,7 @@ latex   : false
 
 # 코드 예제
 
-Head First Design Pattern에 나온 예제가 이해하기 쉽다.
+Head First Design Pattern에 나온 예제가 이해하기 쉽다.[^head-example]
 
 다음의 두 클래스가 있다고 하자.
 
@@ -184,3 +184,9 @@ public abstract class CaffeineBeverage {
 
 * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
 * Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
+
+# 주석
+
+[^gof]: GoF의 디자인 패턴(개정판). 419쪽.
+[^head-example]: Head First Design Patterns. 315쪽.
+

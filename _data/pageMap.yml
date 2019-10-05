@@ -2656,11 +2656,11 @@ Take-the-Bully-by-the-Horns:
     children: []
 template-method-pattern:
     type: wiki
-    title: '템플릿 메소드 패턴(Template Method Pattern)'
+    title: '템플릿 메소드 패턴 (Template Method Pattern)'
     summary: '알고리즘의 일부 단계를 서브클래스에서 정의한다'
     parent: design-pattern
     url: /wiki/template-method-pattern
-    updated: '2019-08-31 16:29:29 +0900'
+    updated: '2019-10-05 23:42:20 +0900'
     children: []
 test-double:
     type: wiki
