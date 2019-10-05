@@ -3,7 +3,7 @@ layout  : wiki
 title   : ZGC, The Z Garbage Collector
 summary : 작성중인 문서
 date    : 2019-10-04 11:05:50 +0900
-updated : 2019-10-04 13:02:07 +0900
+updated : 2019-10-04 13:34:07 +0900
 tag     : 
 toc     : true
 public  : true
@@ -94,12 +94,15 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 
 # 참고문헌
 
-* [JEP 333: ZGC: A Scalable Low-Latency Garbage Collector (Experimental)][jep-333]
-* [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 11)][java11]
-* [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 12)][java12]
-* [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 13)][java13]
-* [The Z Garbage Collector An Introduction][ZGC-FOSDEM-2018]
-* [The Design of ZGC][design-of-zgc]
+* 웹 문서
+    * [JEP 333: ZGC: A Scalable Low-Latency Garbage Collector (Experimental)][jep-333]
+    * [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 11)][java11]
+    * [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 12)][java12]
+    * [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 13)][java13]
+    * [The Z Garbage Collector An Introduction][ZGC-FOSDEM-2018]
+    * [The Design of ZGC][design-of-zgc]
+* 동영상
+    * [The Z Garbage Collector (ZGC): Low Latency in JDK 11with Per Liden](https://www.youtube.com/watch?v=7k_XfLGu-Ts )
 
 # 주석
 
