@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-10-05 10:32:29 +0900
+updated : 2019-10-05 10:40:00 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -416,9 +416,10 @@ interface Observer {
 }
 ```
 
-옵저버는 다음과 같이 심플하다.
+옵저버는 다음과 같이 심플하지만 뻔한 보일러 플레이트다. 이 예제의 후반에서는 이런 보일러 플레이트 코드를 람다로 대체하는 것을 보여준다. 즉, 람다를 사용해 NYTimes, Guardian, LeMonde 클래스를 모두 삭제하고도 똑같이 작동하게 할 수 있다.
 
 ```java
+/* 삭제 예정 */
 class NYTimes implements Observer {
     public void notify(String tweet) {
         if (tweet != null && tweet.contains("money")) {
@@ -427,6 +428,7 @@ class NYTimes implements Observer {
     }
 }
 
+/* 삭제 예정 */
 class Guardian implements Observer {
     public void notify(String tweet) {
         if (tweet != null && tweet.contains("queen")) {
@@ -435,6 +437,7 @@ class Guardian implements Observer {
     }
 }
 
+/* 삭제 예정 */
 class LeMonde implements Observer {
     public void notify(String tweet) {
         if (tweet != null && tweet.contains("wine")) {
@@ -489,6 +492,7 @@ f.registerObserver((String tweet) -> {
 
 ```java
 Feed f = new Feed();
+// NYTimes를 대체하는 코드. 이제 NYTimes 클래스는 삭제해도 된다.
 f.registerObserver((String tweet) -> {
     if (tweet != null && tweet.contains("money")) {
         System.out.println(
@@ -501,6 +505,8 @@ f.registerObserver(new LeMonde());
 f.notifyObservers( "The queen said her favourite book is Java 8 in Action!");
 f.notifyObservers( "money!");
 ```
+
+나머지 Guardian과 LeMonde도 똑같은 방법으로 대체하고 클래스를 삭제할 수 있다.
 
 
 ## Java에 내장된 Observer, Observable 인터페이스
