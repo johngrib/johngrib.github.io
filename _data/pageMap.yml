@@ -798,6 +798,14 @@ date:
     url: /wiki/date
     updated: '2018-08-03 06:06:43 +0900'
     children: []
+decorator-pattern:
+    type: wiki
+    title: '데코레이터 패턴(Decorator Pattern)'
+    summary: '객체에 동적으로 새로운 책임을 추가한다'
+    parent: design-pattern
+    url: /wiki/decorator-pattern
+    updated: '2019-10-05 13:05:50 +0900'
+    children: []
 Design-for-Hackers:
     type: wiki
     title: '(책) 해커를 위한 디자인 레슨'
@@ -813,7 +821,7 @@ design-pattern:
     parent: index
     url: /wiki/design-pattern
     updated: '2018-02-18 00:20:43 +0900'
-    children: [builder-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
+    children: [builder-pattern, decorator-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
 Designing-Data-Intensive-Applications:
     type: wiki
     title: '(책) 데이터 중심 애플리케이션 설계'
