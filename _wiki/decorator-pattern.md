@@ -3,7 +3,7 @@ layout  : wiki
 title   : 데코레이터 패턴(Decorator Pattern)
 summary : 객체에 동적으로 새로운 책임을 추가한다
 date    : 2019-10-05 10:42:26 +0900
-updated : 2019-10-05 19:58:03 +0900
+updated : 2019-10-05 20:18:25 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -131,6 +131,8 @@ System.out.println(beverage2);
 
 java.io 패키지에서 데코레이터 패턴을 사용한다.
 
+`InputStream`의 경우를 살펴보자.
+
 * `InputStream` (추상 component 역할)
     * `FileInputStream`
     * `StringBufferInputStream`
@@ -159,6 +161,42 @@ class LowerCaseInputStream extends FilterInputStream {
 }
 ```
 
+한편 "Java 언어로 배우는 디자인 패턴 입문"에서는 Reader를 사용하는 예제를 보여준다.[^io-example]
+
+```java
+// 버퍼링 + 파일에서 읽기
+Reader reader = new BufferedReader(
+    new FileReader("test.txt")
+);
+```
+
+```java
+// 행 번호 관리 + 버퍼링 + 파일에서 읽기
+Reader reader = new LineNumberReader(
+    new BufferedReader(
+        new FileReader("test.txt")
+    )
+);
+```
+
+```java
+// 행 번호 관리 + 파일에서 읽기
+Reader reader = new LineNumberReader(
+    new FileReader("test.txt")
+);
+```
+
+```java
+java.net.Socket socket = new Socket(hostname, portNumber);
+
+// 행 번호 관리 + 버퍼링 + 네트워크에서 읽기
+Reader reader = new LineNumberReader(
+    new BufferedReader(
+        new InputStreamReader(socket.getInputStream())
+    )
+);
+```
+
 ## 참고문헌
 
 * 도서
@@ -171,3 +209,5 @@ class LowerCaseInputStream extends FilterInputStream {
 [^gof]: GoF의 디자인 패턴(개정판). 241쪽.
 [^head]: Head First Design Patterns. 133쪽.
 [^structure]: GoF의 디자인 패턴(개정판). 244쪽.
+[^io-example]: Java 언어로 배우는 디자인 패턴 입문. 224쪽.
+

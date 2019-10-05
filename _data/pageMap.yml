@@ -804,7 +804,7 @@ decorator-pattern:
     summary: '객체에 동적으로 새로운 책임을 추가한다'
     parent: design-pattern
     url: /wiki/decorator-pattern
-    updated: '2019-10-05 19:58:03 +0900'
+    updated: '2019-10-05 20:18:25 +0900'
     children: []
 Design-for-Hackers:
     type: wiki
