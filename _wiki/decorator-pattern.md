@@ -3,7 +3,7 @@ layout  : wiki
 title   : 데코레이터 패턴(Decorator Pattern)
 summary : 객체에 동적으로 새로운 책임을 추가한다
 date    : 2019-10-05 10:42:26 +0900
-updated : 2019-10-05 13:05:50 +0900
+updated : 2019-10-05 19:58:03 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -19,7 +19,7 @@ latex   : false
 
 ## 의도
 
-GoF 책에서는 다음과 같이 옵저버 패턴의 의도를 밝힌다.[^gof]
+GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 
 >
 객체에 동적으로 새로운 책임을 추가할 수 있게 합니다.
