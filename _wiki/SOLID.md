@@ -3,7 +3,7 @@ layout  : wiki
 title   : SOLID 원칙
 summary : 객체지향 5대 원칙
 date    : 2019-09-05 18:06:38 +0900
-updated : 2019-10-06 18:42:02 +0900
+updated : 2019-10-06 22:40:18 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -130,7 +130,30 @@ S 타입의 객체 o1 각각에 대응하는 T 타입 객체 o2가 있고,
 T 타입을 이용해서 정의한 모든 프로그램 P에서 o2의 자리에 o1을 치환하더라도 P의 행위가 변하지 않는다면,
 S는 T의 하위 타입이다.
 
+이 개념을 리스코프 치환 원칙이라 부른다.
+
 논문 요약: [[summary-Data-Abstraction-and-Hierarchy]]
+
+다음은 리스코프 치환 원칙을 준수하는 예제이다.[^lsp-example]
+
+```ascii-art
+┌─────────┐   ┌──────< I >─┐
+│ Billing ├──>│  License   │
+└─────────┘   ├────────────┤
+              │+ calcFee() │
+              └────────────┘
+                   ▵
+           ┌───────┴──────┐
+    ┌──────┴───┐      ┌───┴──────┐
+    │ Personal │      │ Business │
+    │ License  │      │ License  │
+    └──────────┘      ├──────────┤
+                      │- users   │
+                      └──────────┘
+```
+
+* License의 하위 타입인 Personal License와 Business License 둘 다 License를 치환할 수 있다.
+* Billing 애플리케이션의 행위가 License의 서브 타입인 Personal License와 Business License 중 어느 것에도 의존하지 않는다.
 
 ## 인터페이스 분리 원칙(ISP)
 ## 의존관계 역전 원칙(DIP)
@@ -149,3 +172,5 @@ S는 T의 하위 타입이다.
 [^ocp]: 클린 아키텍처. 8장. 74쪽.
 [^ocp-goal]: 클린 아키텍처. 8장. 79쪽.
 [^first-bullet]: 클린 소프트웨어. CHAPTER 8. 139쪽.
+[^lsp-example]: 클린 아키텍처. 9장. 82쪽.
+
