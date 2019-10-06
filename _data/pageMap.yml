@@ -2500,7 +2500,7 @@ SOLID:
     summary: '객체지향 5대 원칙'
     parent: proverb
     url: /wiki/SOLID
-    updated: '2019-10-06 11:43:47 +0900'
+    updated: '2019-10-06 18:42:02 +0900'
     children: []
 sort:
     type: wiki
@@ -2641,10 +2641,10 @@ study-think-bayes:
 summary-Data-Abstraction-and-Hierarchy:
     type: wiki
     title: '(요약) Data Abstraction and Hierarchy by Barbara Liskov 1988'
-    summary: ""
+    summary: '바바라 리스코프의 1988년 논문을 읽고 요약한다'
     parent: index
     url: /wiki/summary-Data-Abstraction-and-Hierarchy
-    updated: '2019-10-06 15:22:29 +0900'
+    updated: '2019-10-06 18:40:03 +0900'
     children: []
 tail:
     type: wiki
