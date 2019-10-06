@@ -2638,6 +2638,14 @@ study-think-bayes:
     url: /wiki/study-think-bayes
     updated: '2018-04-25 22:05:44 +0900'
     children: [cookie-problem, dice-problem, euro-problem, locomotive-problem, MnM-problem, Monty-Hall-problem, Oliver-s-blood]
+summary-Data-Abstraction-and-Hierarchy:
+    type: wiki
+    title: '(요약) Data Abstraction and Hierarchy by Barbara Liskov 1988'
+    summary: ""
+    parent: index
+    url: /wiki/summary-Data-Abstraction-and-Hierarchy
+    updated: '2019-10-06 14:22:08 +0900'
+    children: []
 tail:
     type: wiki
     title: 'tail 명령어'

@@ -358,6 +358,7 @@ comment : false
     * [[spring-versions]]
 * [[database]]
     * [[sharding]]
+* [[summary-Data-Abstraction-and-Hierarchy]]
 
 ---
 
