@@ -88,6 +88,7 @@ comment : false
 * [[design-pattern]]
     * [[builder-pattern]]
     * [[decorator-pattern]]
+    * [[factory-method-pattern]]
     * [[observer-pattern]]
     * [[static-factory-method-pattern]]
     * [[strategy-pattern]]

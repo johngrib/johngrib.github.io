@@ -821,7 +821,7 @@ design-pattern:
     parent: index
     url: /wiki/design-pattern
     updated: '2018-02-18 00:20:43 +0900'
-    children: [builder-pattern, decorator-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
+    children: [builder-pattern, decorator-pattern, factory-method-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
 Designing-Data-Intensive-Applications:
     type: wiki
     title: '(책) 데이터 중심 애플리케이션 설계'
@@ -1173,6 +1173,14 @@ f-l-a-03-02:
     parent: study-formal-languages-and-automata
     url: /wiki/f-l-a-03-02
     updated: '2018-12-30 19:21:30 +0900'
+    children: []
+factory-method-pattern:
+    type: wiki
+    title: '팩토리 메소드 패턴 (Factory Method Pattern)'
+    summary: '객체를 생성하기 위한 인터페이스를 정의하고, 인스턴스 생성은 서브클래스가 결정하게 한다'
+    parent: design-pattern
+    url: /wiki/factory-method-pattern
+    updated: '2019-10-07 00:46:48 +0900'
     children: []
 fc:
     type: wiki
