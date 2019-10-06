@@ -3,7 +3,7 @@ layout  : wiki
 title   : SOLID 원칙
 summary : 객체지향 5대 원칙
 date    : 2019-09-05 18:06:38 +0900
-updated : 2019-10-06 22:40:18 +0900
+updated : 2019-10-06 22:44:38 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -155,6 +155,12 @@ S는 T의 하위 타입이다.
 * License의 하위 타입인 Personal License와 Business License 둘 다 License를 치환할 수 있다.
 * Billing 애플리케이션의 행위가 License의 서브 타입인 Personal License와 Business License 중 어느 것에도 의존하지 않는다.
 
+엉클 밥에 의하면 LSP는 시대의 흐름에 따라 더 넓은 의미로 재평가되었다.
+
+>
+객체 지향이 혁명처럼 등장한 초창기에는 앞서 본 것처럼 LSP는 상속을 사용하도록 가이드하는 방법 정도로 간주되었다.
+하지만 시간이 지나면서 LSP는 인터페이스와 구현체에도 적용되는 더 광범위한 소프트웨어 설계 원칙으로 변모해 왔다.[^lsp-arch]
+
 ## 인터페이스 분리 원칙(ISP)
 ## 의존관계 역전 원칙(DIP)
 
@@ -173,4 +179,5 @@ S는 T의 하위 타입이다.
 [^ocp-goal]: 클린 아키텍처. 8장. 79쪽.
 [^first-bullet]: 클린 소프트웨어. CHAPTER 8. 139쪽.
 [^lsp-example]: 클린 아키텍처. 9장. 82쪽.
+[^lsp-arch]: 클린 아키텍처. 9장 84쪽.
 
