@@ -2500,7 +2500,7 @@ SOLID:
     summary: '객체지향 5대 원칙'
     parent: proverb
     url: /wiki/SOLID
-    updated: '2019-09-05 18:18:30 +0900'
+    updated: '2019-10-06 11:03:05 +0900'
     children: []
 sort:
     type: wiki
