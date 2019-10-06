@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) Data Abstraction and Hierarchy by Barbara Liskov 1988
 summary : 바바라 리스코프의 1988년 논문을 읽고 요약한다
 date    : 2019-10-06 12:00:14 +0900
-updated : 2019-10-06 18:40:03 +0900
+updated : 2019-10-06 22:12:13 +0900
 tag     : summary oop
 toc     : true
 public  : true
@@ -289,12 +289,9 @@ sort = proc [T: type] (a: array[T])
 
 이 헤더는 매개변수 T를 indicated signature를 가진 It 이라는 operation이 있는 타입으로 제한한다.
 
->
-One way of achieving more generality is to simply pass the needed operations as procedure arguments, e.g., sort actually takes two arguments, the array, and the routine used to determine ordering. _* Of course, this solution would not work well in Smalltalk because procedures cannot conveniently be defined as individual entities nor treated as objects._ This method is general, but can be inconvenient.  Methods that avoid the inconvenience in conjunction with the grouping approach exist in Argus One way of achieving more generality is to simply pass the needed operations as procedure arguments, e.g., sort actually takes two arguments, the array, and the routine used to determine ordering. This method is general, but can be inconvenient. Methods that avoid the inconvenience in conjunction with the grouping approach exist in Argus [10] and Ada.
-
 좀 더 일반화할 수 있는 방법은 필요한 연산을 프로시저 인수로 단순하게 전달하는 것이다.
 예를 들어 정렬은 배열과 순서를 결정하는 루틴, 이렇게 두 개의 인자만 받으면 된다. 
-(물론 이 해법은 Smalltalk에서는 잘 작동하지 않는다. Smalltalk에서 프로시저는 개별적으로 정의할 수 없기 때문이다.
+(물론 이 해법은 Smalltalk에서는 잘 작동하지 않는다. Smalltalk에서 프로시저는 개별적으로 정의할 수 없기 때문이다.)
 
 
 ## 5.2. Multiple Implementations
