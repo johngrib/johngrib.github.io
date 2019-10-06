@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) Data Abstraction and Hierarchy by Barbara Liskov 1988
 summary : 
 date    : 2019-10-06 12:00:14 +0900
-updated : 2019-10-06 14:22:08 +0900
+updated : 2019-10-06 15:22:29 +0900
 tag     : summary
 toc     : true
 public  : true
@@ -135,9 +135,30 @@ Smalltalk에서는 데이터 추상화를 위해 클래스를 구현한다.
 
 ## 3.1. Inheritance
 
-TODO: 여기 읽을 차례
+상속이 있는 언어에서 데이터 추상화는 서로 관계 있는 여러 부분으로 구현될 수 있다.
+
+* Smalltalk에서 클래스는 다른 클래스 메커니즘의 서브 클래스로 선언될 수 있다.
+* 서브클래스는 규칙을 적용한 인스턴스 변수와 메소드를 포함하는 클래스를 직접 구현하는 것과 같다.
+
+상속 메커니즘의 문제점: 데이터 추상화를 손상시킬 수 있다.
+
+캡슐화를 위반하는 세 가지 경우.
+
+* 서브 클래스가 수퍼 클래스의 인스턴트 변수에 엑세스.
+* 서브 클래스가 수퍼 클래스의 private 오퍼레이션을 호출.
+* 서브 클래스가 수퍼 클래스의 수퍼 클래스를 직접 참조.
+
+캡슐화 위반과 관련하여
+
+* 캡슐화를 위반하지 않으면 스펙만으로 수퍼클래스의 연산(operations)을 추측할 수 있다.
+* 캡슐화를 위반하면 지역화의 장점을 잃게 된다.
+* 캡슐화를 위반할 때의 편리한 점도 있긴 하지만 바람직하지는 않다.
+
 
 ## 3.2. Implementation Hierarchy
+
+TODO: 여기 읽을 차례
+
 ## 3.3. Type Hierarchy
 # 4. Benefits of Type Hierarchy
 ## 4.1. Incremental Design
