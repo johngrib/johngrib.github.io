@@ -3,7 +3,7 @@ layout  : wiki
 title   : 팩토리 메소드 패턴 (Factory Method Pattern)
 summary : 객체를 생성하기 위한 인터페이스를 정의하고, 인스턴스 생성은 서브클래스가 결정하게 한다
 date    : 2019-10-07 00:16:49 +0900
-updated : 2019-10-07 00:46:48 +0900
+updated : 2019-10-07 17:33:00 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -135,7 +135,7 @@ card3.use();
 
 ## 헤드 퍼스트 디자인 패턴의 예제
 
-다음은 헤드 퍼스트 디자인 패턴의 예제이다.[^head-example]
+다음은 헤드 퍼스트 디자인 패턴의 예제를 약간 변형한 것이다.[^head-example]
 
 * 이 예제에서는 `Pizza`가 `Product` 역할이다.
 
