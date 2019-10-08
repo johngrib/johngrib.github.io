@@ -821,7 +821,7 @@ design-pattern:
     parent: index
     url: /wiki/design-pattern
     updated: '2018-02-18 00:20:43 +0900'
-    children: [builder-pattern, decorator-pattern, factory-method-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
+    children: [builder-pattern, decorator-pattern, factory-method-pattern, null-object-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
 Designing-Data-Intensive-Applications:
     type: wiki
     title: '(책) 데이터 중심 애플리케이션 설계'
@@ -2109,6 +2109,14 @@ No-Silver-Bullet:
     parent: proverb
     url: /wiki/No-Silver-Bullet
     updated: '2018-02-21 22:34:10 +0900'
+    children: []
+null-object-pattern:
+    type: wiki
+    title: '널 오브젝트 패턴 (Null Object Pattern)'
+    summary: '인터페이스는 구현하지만 아무 일도 하지 않는 객체'
+    parent: design-pattern
+    url: /wiki/null-object-pattern
+    updated: '2019-10-08 23:52:20 +0900'
     children: []
 Object-equals:
     type: wiki

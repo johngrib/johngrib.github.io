@@ -369,6 +369,7 @@ design-pattern:
     - {fileName: decorator-pattern}
     - {fileName: factory-method-pattern}
     - {fileName: GoF-Design-Pattern}
+    - {fileName: null-object-pattern}
     - {fileName: observer-pattern}
     - {fileName: static-factory-method-pattern}
     - {fileName: strategy-pattern}

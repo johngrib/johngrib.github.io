@@ -89,6 +89,7 @@ comment : false
     * [[builder-pattern]]
     * [[decorator-pattern]]
     * [[factory-method-pattern]]
+    * [[null-object-pattern]]
     * [[observer-pattern]]
     * [[static-factory-method-pattern]]
     * [[strategy-pattern]]
