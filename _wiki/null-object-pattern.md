@@ -3,7 +3,7 @@ layout  : wiki
 title   : 널 오브젝트 패턴 (Null Object Pattern)
 summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
-updated : 2019-10-09 00:28:37 +0900
+updated : 2019-10-09 08:17:57 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -24,6 +24,27 @@ latex   : false
 엉클 밥은 Null 객체 패턴에 대해 다음과 같이 언급한 바 있다.
 
 > 이 패턴은 종종 null 검사의 필요를 제거하고, 코드를 단순화하는 데 도움이 된다.[^clean]
+
+다음은 내가 작성한 코드이다.
+
+```java
+public interface Notify {
+    void send() ;
+}
+
+public class EmailNotify implements Notify {
+    public void send() {
+        System.out.println("send email");
+    }
+}
+
+// Null 객체
+public class NullNotify implements Notify {
+    public void send() {
+        // 아무 것도 하지 않는다
+    }
+}
+```
 
 # 클린 소프트웨어의 예제
 

@@ -2116,7 +2116,7 @@ null-object-pattern:
     summary: '인터페이스는 구현하지만 아무 일도 하지 않는 객체'
     parent: design-pattern
     url: /wiki/null-object-pattern
-    updated: '2019-10-09 00:28:37 +0900'
+    updated: '2019-10-09 08:17:57 +0900'
     children: []
 Object-equals:
     type: wiki
