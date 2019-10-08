@@ -3,7 +3,7 @@ layout  : wiki
 title   : 널 오브젝트 패턴 (Null Object Pattern)
 summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
-updated : 2019-10-08 23:52:20 +0900
+updated : 2019-10-08 23:53:52 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -71,7 +71,7 @@ public interface Employee {
 * 여기에서 존재하지 않는 직원을 익명 내부 클래스로 만드는 것은 싱글 인스턴스를 보장하는 방법이다.
 * `NullEmployee` 클래스를 명시적으로 만들지 않고도 해결하는 방법이다.
 
-# Bobby Woolf의 논문 요약
+# Bobby Woolf의 논문 번역
 
 * 논문인데도 글이 꽤 재미있고 웃긴다.
 * null 객체를 활용하는 다양한 사례를 소개하고 있어서 읽는 재미가 있을 뿐 아니라 공학적으로도 흥미로운 글이라고 생각한다.
