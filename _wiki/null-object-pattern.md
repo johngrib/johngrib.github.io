@@ -3,7 +3,7 @@ layout  : wiki
 title   : 널 오브젝트 패턴 (Null Object Pattern)
 summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
-updated : 2019-10-08 23:53:52 +0900
+updated : 2019-10-09 00:28:37 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -75,7 +75,7 @@ public interface Employee {
 
 * 논문인데도 글이 꽤 재미있고 웃긴다.
 * null 객체를 활용하는 다양한 사례를 소개하고 있어서 읽는 재미가 있을 뿐 아니라 공학적으로도 흥미로운 글이라고 생각한다.
-    * [Implementation](#Implementation)과 [Known Uses](#known-uses)에서 생각해볼 점들이 많다.
+    * [Implementation](#implementation)과 [Known Uses](#known-uses)에서 생각해볼 점들이 많다.
     * [Simple Code](#simple-code)는 Smalltalk로 작성된 예제를 보여주는데, 내 번역이 엉망이라 이해하기 어려울 수 있다. 잘 이해가 안 간다면 [NullScope](#nullscope)를 먼저 읽는 것이 도움이 될 것이다.
 * 의역이 많은 관계로 내용을 정확히 파악하고 싶다면 원본 논문을 읽어보길 권한다.
 
