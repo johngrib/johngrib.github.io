@@ -3,7 +3,7 @@ layout  : wiki
 title   : 널 오브젝트 패턴 (Null Object Pattern)
 summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
-updated : 2019-10-09 08:17:57 +0900
+updated : 2019-10-09 09:04:31 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -24,6 +24,20 @@ latex   : false
 엉클 밥은 Null 객체 패턴에 대해 다음과 같이 언급한 바 있다.
 
 > 이 패턴은 종종 null 검사의 필요를 제거하고, 코드를 단순화하는 데 도움이 된다.[^clean]
+
+마틴 파울러는 "리팩토링"에서 Null 검사를 줄이는 방법으로 Null 객체의 사용을 소개한 바 있다.
+
+> null 값을 검사하는 코드가 계속 나올 땐 null 값을 널 객체로 만들자.[^fowler0]
+
+"리팩토링"에는 론 제프리스의 널 객체 활용 사례도 함께 등장한다.[^fowler0]
+
+>
+재미있게도 널 객체를 사용할 때 잘못되는 경우는 거의 없다.
+널 객체는 실제 객체와 똑같은 모든 메시지에 응답하므로 시스템은 왠만해서는 정상 작동한다.
+잘못돼서 빠져나오는 부분이 없으므로 문제를 감지하거나 찾기가 힘들어질 때도 있다.
+물론 객체를 검사하기 시작하면 곧바로 널 객체가 잘못된 위치에 있음을 알게 될 것이다.
+
+"문제를 감지하거나 찾기가 힘들어질 때도 있다"는 단점을 꼭 염두해둘 것.
 
 다음은 내가 작성한 코드이다.
 
@@ -535,9 +549,11 @@ Bruce Anderson은 Null 객체 패턴에 대해 글을 쓴 바 있는데, 그 글
     * [The Null Object Pattern by Bobby Woolf 1996][pdf]
 * 도서
     * 클린 소프트웨어 / 로버트 C. 마틴 저 / 이용원, 김정민, 정지호 공역 / 제이펍 / 초판 1쇄 2017년 05월 15일 / 원제 : Agile Software Development, Principles, Patterns, and Practices
+    * 리팩토링 / 마틴 파울러 저 / 김지원 역 / 한빛미디어 / 초판 2쇄 2013년 03월 07일 / 원서 : Refactoring (Addison-Wesley Professional; 1 edition, 1999)
 
 # 주석
 
 [pdf]: https://www.cs.oberlin.edu/~jwalker/refs/woolf.ps
 [^clean]: 클린 소프트웨어. CHAPTER 17. 245쪽.
+[^fowler0]: 리팩토링. Null 검사를 널 객체에 위임. 310쪽.
 
