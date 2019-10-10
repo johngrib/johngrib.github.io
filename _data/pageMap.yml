@@ -1950,6 +1950,14 @@ links-2019:
     url: /wiki/links-2019
     updated: '2019-06-01 11:17:14 +0900'
     children: []
+locking:
+    type: wiki
+    title: 잠금(Locking)
+    summary: ""
+    parent: index
+    url: /wiki/locking
+    updated: '2019-10-10 14:48:09 +0900'
+    children: []
 locomotive-problem:
     type: wiki
     title: '기관차 문제(locomotive problem)'
