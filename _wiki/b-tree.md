@@ -3,7 +3,7 @@ layout  : wiki
 title   : B-Tree
 summary : 보편적인 색인 구조
 date    : 2019-10-11 11:02:35 +0900
-updated : 2019-10-11 18:30:54 +0900
+updated : 2019-10-11 18:35:01 +0900
 tag     : db
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# B-Tree?
+# B-Tree
 
 ## 기원과 컨셉
 

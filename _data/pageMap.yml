@@ -332,7 +332,7 @@ b-tree:
     summary: '보편적인 색인 구조'
     parent: algorithm
     url: /wiki/b-tree
-    updated: '2019-10-11 18:30:54 +0900'
+    updated: '2019-10-11 18:35:01 +0900'
     children: []
 bandwidth:
     type: wiki
