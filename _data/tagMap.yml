@@ -193,6 +193,7 @@ aheui:
     - {fileName: 2017-07-14-aheui-explained}
 db:
     - {fileName: ACID}
+    - {fileName: locking}
     - {fileName: sharding}
     - {fileName: sql-char-comparison}
 bash:
@@ -677,6 +678,8 @@ letter:
     - {fileName: letter-case}
 case:
     - {fileName: letter-case}
+transaction:
+    - {fileName: locking}
 bug:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
 단축키:

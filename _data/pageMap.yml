@@ -1956,7 +1956,7 @@ locking:
     summary: '작성중인 문서'
     parent: index
     url: /wiki/locking
-    updated: '2019-10-10 16:32:13 +0900'
+    updated: '2019-10-11 10:28:33 +0900'
     children: []
 locomotive-problem:
     type: wiki
