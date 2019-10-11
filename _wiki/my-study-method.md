@@ -7,7 +7,7 @@ updated : 2019-01-19 12:03:58 +0900
 tag     : study
 toc     : true
 public  : true
-parent  : how-to
+parent  : my-lifehack
 latex   : false
 ---
 * TOC

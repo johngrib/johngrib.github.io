@@ -36,7 +36,6 @@ comment : false
     * [[docker]]
     * [[googling]]
     * [[mathjax-latex]]
-    * [[my-study-method]]
     * [[random-lunch]]
 * [[links]]
     * [[links-2019]]
@@ -286,7 +285,6 @@ comment : false
             * [[hammerspoon-tutorial-05]]
             * [[hammerspoon-luarocks]]
         * [[Shortcat]]
-    * [[my-keyboard]]
     * [[useful-site]]
         * [[geacron]]
         * [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
@@ -363,6 +361,9 @@ comment : false
     * [[sharding]]
 * [[summary-Data-Abstraction-and-Hierarchy]]
 * [[locking]]
+* [[my-lifehack]]
+    * [[my-study-method]]
+    * [[my-keyboard]]
 
 ---
 
