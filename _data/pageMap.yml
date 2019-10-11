@@ -1953,10 +1953,10 @@ links-2019:
 locking:
     type: wiki
     title: 잠금(Locking)
-    summary: '작성중인 문서'
+    summary: null
     parent: index
     url: /wiki/locking
-    updated: '2019-10-11 10:28:33 +0900'
+    updated: '2019-10-11 10:59:15 +0900'
     children: []
 locomotive-problem:
     type: wiki

@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : 잠금(Locking)
-summary : 작성중인 문서
+summary :
 date    : 2019-10-10 11:48:51 +0900
-updated : 2019-10-11 10:28:33 +0900
+updated : 2019-10-11 10:59:15 +0900
 tag     : transaction db
 toc     : true
 public  : true
