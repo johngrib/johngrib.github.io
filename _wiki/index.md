@@ -13,6 +13,7 @@ comment : false
 * [[timeline]]
 * [[algorithm]]
     * [[average-complexity]]
+    * [[b-tree]]
     * [[big-O-notation]]
     * [[egyptian-multiplication]]
     * [[p-np]]

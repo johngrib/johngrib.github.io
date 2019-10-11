@@ -193,6 +193,7 @@ aheui:
     - {fileName: 2017-07-14-aheui-explained}
 db:
     - {fileName: ACID}
+    - {fileName: b-tree}
     - {fileName: locking}
     - {fileName: sharding}
     - {fileName: sql-char-comparison}
