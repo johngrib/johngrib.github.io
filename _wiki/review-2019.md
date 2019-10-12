@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-09-20 15:55:39 +0900
+updated : 2019-10-12 17:57:53 +0900
 tag     : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 # 책
 
+* 2019-10-12 자바로 배우는 핵심 자료구조와 알고리즘
 * 2019-09-20 마이크로서비스 구축과 운영
 * 2019-09-14 도메인 주도 설계 핵심
 * 2019-09-13 도메인 주도 설계란 무엇인가?(Domain Driven Design Quickly)
