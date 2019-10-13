@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 나머지 연산자 % 주의점
 summary : (a / b) * b + ( a % b ) == a
 date    : 2019-10-13 17:00:49 +0900
-updated : 2019-10-13 22:12:20 +0900
+updated : 2019-10-13 22:16:07 +0900
 tag     : java 번역
 toc     : true
 public  : true
@@ -174,6 +174,7 @@ public static boolean isOdd(int n) {
 
 * % 연산에 대한 Java 스펙 문서는 [Java SE 6][se6]부터 [Java SE 13][se13]까지 변화가 없다.
 * 따라서 [Java SE 13][se13] 문서를 인용하고 번역한다.
+    * 번역은 구글 번역기와 "The Java™ Language Specification Third Edition (한국어판)"을 참고하였다.
 
 > The binary % operator is said to yield the remainder of its operands from an implied division; the left-hand operand is the dividend and the right-hand operand is the divisor. In C and C++, the remainder operator accepts only integral operands, but in the Java programming language, it also accepts floating-point operands. The remainder operation for operands that are integers after binary numeric promotion ([§5.6.2][se13-5-6-2]) produces a result value such that (a/b)*b+(a%b) is equal to a. This identity holds even in the special case that the dividend is the negative integer of largest possible magnitude for its type and the divisor is -1 (the remainder is 0). It follows from this rule that the result of the remainder operation can be negative only if the dividend is negative, and can be positive only if the dividend is positive. Moreover, the magnitude of the result is always less than the magnitude of the divisor. **If the value of the divisor for an integer remainder operator is 0, then an ArithmeticException is thrown.**
 
@@ -306,6 +307,7 @@ class Test2 {
 * 웹 문서
     * [The Java® Language Specification Java SE 13 Edition][se13]
 * 도서
+    * The Java™ Language Specification Third Edition (한국어판) / 허진영, 최선재, 이상민, 이정룡 옮김 / 에이콘출판사 / 2008년 01월 02일 / 원제 : The Java™ Language Specification, Third Edition
     * 유쾌한 자바 퍼즐러 / Joshua Bloch, Gafter 공저 / 송치형, 박준상 공역 / 사이텍미디어 / 2007년 06월 15일 발행
 
 
