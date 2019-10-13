@@ -122,6 +122,7 @@ comment : false
         * [[java-enhancements]]
         * [[java-interface]]
         * [[java-jigsaw-quick-start]]
+        * [[java-remainder-operator]]
         * [[java-switch-expression]]
         * [[java8]]
         * [[java8-why-permgen-removed]]

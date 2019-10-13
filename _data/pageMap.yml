@@ -1693,7 +1693,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-gc, java-interface, java-jigsaw-quick-start, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-gc, java-interface, java-jigsaw-quick-start, java-remainder-operator, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1789,6 +1789,14 @@ java-jigsaw-quick-start:
     parent: Java
     url: /wiki/java-jigsaw-quick-start
     updated: '2019-09-12 21:00:10 +0900'
+    children: []
+java-remainder-operator:
+    type: wiki
+    title: 'Java 나머지 연산자 % 주의점'
+    summary: '(a / b) * b + ( a % b ) == a'
+    parent: Java
+    url: /wiki/java-remainder-operator
+    updated: '2019-10-13 22:12:20 +0900'
     children: []
 java-switch-expression:
     type: wiki

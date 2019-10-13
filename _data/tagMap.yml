@@ -488,6 +488,7 @@ java:
     - {fileName: java-gc-tuning}
     - {fileName: java-interface}
     - {fileName: java-jigsaw-quick-start}
+    - {fileName: java-remainder-operator}
     - {fileName: java-switch-expression}
     - {fileName: java10-var}
     - {fileName: java8}
@@ -578,6 +579,7 @@ til:
     - {fileName: golang-subtests}
     - {fileName: golang-the-laws-of-reflection}
     - {fileName: java-jigsaw-quick-start}
+    - {fileName: java-remainder-operator}
     - {fileName: King-O-The-Cats}
     - {fileName: mathdict}
     - {fileName: Object-equals}
