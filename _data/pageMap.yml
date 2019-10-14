@@ -1621,7 +1621,7 @@ how-to:
     parent: index
     url: /wiki/how-to
     updated: '2018-02-04 15:57:05 +0900'
-    children: [docker, googling, mathjax-latex, random-lunch]
+    children: [docker, googling, mathjax-latex]
 http:
     type: wiki
     title: HTTP
@@ -2101,7 +2101,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [my-bookshelf, my-keyboard, my-study-method]
+    children: [my-bookshelf, my-keyboard, my-study-method, random-lunch]
 my-study-method:
     type: wiki
     title: '나의 공부 방법'
@@ -2354,9 +2354,9 @@ random-lunch:
     type: wiki
     title: '간단하게 만드는 랜덤런치 그룹 생성기'
     summary: ""
-    parent: how-to
+    parent: my-lifehack
     url: /wiki/random-lunch
-    updated: '2019-06-04 21:19:37 +0900'
+    updated: '2019-10-14 10:19:25 +0900'
     children: []
 regex-prime:
     type: wiki

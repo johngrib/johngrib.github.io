@@ -36,7 +36,6 @@ comment : false
     * [[docker]]
     * [[googling]]
     * [[mathjax-latex]]
-    * [[random-lunch]]
 * [[links]]
     * [[links-2019]]
     * [[links-2018]]
@@ -366,6 +365,7 @@ comment : false
     * [[my-bookshelf]]
     * [[my-keyboard]]
     * [[my-study-method]]
+    * [[random-lunch]]
 
 ---
 
