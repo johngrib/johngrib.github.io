@@ -2701,7 +2701,7 @@ summary:
     parent: index
     url: /wiki/summary
     updated: '2019-10-15 17:52:45 +0900'
-    children: [REST-paper-summary, summary-Data-Abstraction-and-Hierarchy]
+    children: [REST-paper-summary, summary-Data-Abstraction-and-Hierarchy, summary-The-Pauseless-GC-Algorithm]
 summary-Data-Abstraction-and-Hierarchy:
     type: wiki
     title: '(요약) Data Abstraction and Hierarchy by Barbara Liskov 1988'
@@ -2709,6 +2709,14 @@ summary-Data-Abstraction-and-Hierarchy:
     parent: summary
     url: /wiki/summary-Data-Abstraction-and-Hierarchy
     updated: '2019-10-15 17:51:34 +0900'
+    children: []
+summary-The-Pauseless-GC-Algorithm:
+    type: wiki
+    title: '(요약) The Pauseless GC Algorithm, 2005'
+    summary: 'Pauseless GC 알고리즘 논문 요약'
+    parent: summary
+    url: /wiki/summary-The-Pauseless-GC-Algorithm
+    updated: '2019-10-15 22:42:35 +0900'
     children: []
 tail:
     type: wiki

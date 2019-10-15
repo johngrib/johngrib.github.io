@@ -503,6 +503,7 @@ java:
     - {fileName: Object-toString}
     - {fileName: private-constructor}
     - {fileName: spring-versions}
+    - {fileName: summary-The-Pauseless-GC-Algorithm}
     - {fileName: use-java-primitive-type-for-performance}
 email:
     - {fileName: email-validation}
@@ -672,6 +673,7 @@ gc:
     - {fileName: java-gc-serial-collector}
     - {fileName: java-gc-tuning}
     - {fileName: java-gc-zgc}
+    - {fileName: summary-The-Pauseless-GC-Algorithm}
 von-neumann:
     - {fileName: John-von-Neumann}
 sort:
