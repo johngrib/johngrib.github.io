@@ -362,7 +362,6 @@ Fred-Brooks:
     - {fileName: No-Silver-Bullet}
 programming:
     - {fileName: builder-pattern}
-    - {fileName: design-pattern}
     - {fileName: Java}
     - {fileName: programming-language}
     - {fileName: static-factory-method-pattern}

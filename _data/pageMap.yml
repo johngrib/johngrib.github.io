@@ -828,7 +828,7 @@ design-pattern:
     summary: null
     parent: index
     url: /wiki/design-pattern
-    updated: '2018-02-18 00:20:43 +0900'
+    updated: '2019-10-15 23:16:05 +0900'
     children: [builder-pattern, decorator-pattern, factory-method-pattern, null-object-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
 Designing-Data-Intensive-Applications:
     type: wiki
