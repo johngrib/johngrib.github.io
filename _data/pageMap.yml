@@ -1733,7 +1733,7 @@ java-gc:
     parent: Java
     url: /wiki/java-gc
     updated: '2019-09-29 09:27:51 +0900'
-    children: [java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-serial-collector, java-gc-tuning]
+    children: [java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-serial-collector, java-gc-tuning, java-gc-zgc]
 java-gc-eden-to-survivor:
     type: wiki
     title: 'Minor GC - Eden에서 Survivor 영역으로'
@@ -1770,9 +1770,9 @@ java-gc-zgc:
     type: wiki
     title: 'ZGC, The Z Garbage Collector'
     summary: '작성중인 문서'
-    parent: ""
+    parent: java-gc
     url: /wiki/java-gc-zgc
-    updated: '2019-10-04 13:34:07 +0900'
+    updated: '2019-10-15 17:31:28 +0900'
     children: []
 java-interface:
     type: wiki

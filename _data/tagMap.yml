@@ -486,6 +486,7 @@ java:
     - {fileName: java-gc-parallel-collector}
     - {fileName: java-gc-serial-collector}
     - {fileName: java-gc-tuning}
+    - {fileName: java-gc-zgc}
     - {fileName: java-interface}
     - {fileName: java-jigsaw-quick-start}
     - {fileName: java-remainder-operator}
@@ -670,6 +671,7 @@ gc:
     - {fileName: java-gc-parallel-collector}
     - {fileName: java-gc-serial-collector}
     - {fileName: java-gc-tuning}
+    - {fileName: java-gc-zgc}
 von-neumann:
     - {fileName: John-von-Neumann}
 sort:

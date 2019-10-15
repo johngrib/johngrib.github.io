@@ -3,11 +3,11 @@ layout  : wiki
 title   : ZGC, The Z Garbage Collector
 summary : 작성중인 문서
 date    : 2019-10-04 11:05:50 +0900
-updated : 2019-10-04 13:34:07 +0900
-tag     : 
+updated : 2019-10-15 17:31:28 +0900
+tag     : java gc
 toc     : true
 public  : true
-parent  : 
+parent  : java-gc
 latex   : false
 ---
 * TOC
@@ -79,7 +79,7 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 
 # 테스트 결과
 
-한편 [HotSpot Garbage Collection Team이 FOSDEM 2018에서 발표한 자료][ZGC-FOSDEM-2018]를 보면 SPECjbb에서 2015년에 수행한 테스트 결과가 실려 있다.
+한편 ZGC project의 리드인 Per Liden이 [FOSDEM 2018에서 발표한 자료][ZGC-FOSDEM-2018]를 보면 SPECjbb에서 2015년에 수행한 테스트 결과가 실려 있다.
 
 ![compare1]( /post-img/java-gc-zgc/zgc-compare1.jpg )
 
@@ -101,8 +101,9 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
     * [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 13)][java13]
     * [The Z Garbage Collector An Introduction][ZGC-FOSDEM-2018]
     * [The Design of ZGC][design-of-zgc]
+    * [CFV: New Project: ZGC][mail-new-project-zgc]
 * 동영상
-    * [The Z Garbage Collector (ZGC): Low Latency in JDK 11with Per Liden](https://www.youtube.com/watch?v=7k_XfLGu-Ts )
+    * [The Z Garbage Collector (ZGC): Low Latency in JDK 11 with Per Liden](https://www.youtube.com/watch?v=7k_XfLGu-Ts )
 
 # 주석
 
@@ -113,6 +114,8 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 [java13]: https://docs.oracle.com/en/java/javase/13/gctuning/z-garbage-collector1.html
 [ZGC-FOSDEM-2018]: http://cr.openjdk.java.net/~pliden/slides/ZGC-FOSDEM-2018.pdf
 [design-of-zgc]: http://cr.openjdk.java.net/~pliden/slides/ZGC-PLMeetup-2019.pdf
+[mail-new-project-jgc]: http://mail.openjdk.java.net/pipermail/announce/2017-October/000237.html
 
 [^jep-333]: [JEP 333: ZGC: A Scalable Low-Latency Garbage Collector (Experimental)][jep-333]
 [^goals]: [The Design of ZGC][design-of-zgc]. 4쪽.
+
