@@ -334,7 +334,6 @@ comment : false
     * [[persona]]
     * [[polite-software]]
     * [[port]]
-    * [[REST-paper-summary]]
     * [[RFC]]
     * [[rouge-supported-languages]]
     * [[router]]
@@ -359,13 +358,15 @@ comment : false
     * [[spring-versions]]
 * [[database]]
     * [[sharding]]
-* [[summary-Data-Abstraction-and-Hierarchy]]
 * [[locking]]
 * [[my-lifehack]]
     * [[my-bookshelf]]
     * [[my-keyboard]]
     * [[my-study-method]]
     * [[random-lunch]]
+* [[summary]]
+    * [[REST-paper-summary]]
+    * [[summary-Data-Abstraction-and-Hierarchy]]
 
 ---
 

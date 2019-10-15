@@ -2378,9 +2378,9 @@ REST-paper-summary:
     type: wiki
     title: '(요약) Architectural Styles and the Design of Network-based Software Architectures by Roy Thomas Fielding, 2000'
     summary: '로이 필딩의 아키텍처 스타일과 네트워크 기반의 소프트웨어 아키텍처 설계 요약'
-    parent: what
+    parent: summary
     url: /wiki/REST-paper-summary
-    updated: '2019-10-12 14:39:40 +0900'
+    updated: '2019-10-15 17:52:02 +0900'
     children: []
 review:
     type: wiki
@@ -2694,13 +2694,21 @@ study-think-bayes:
     url: /wiki/study-think-bayes
     updated: '2018-04-25 22:05:44 +0900'
     children: [cookie-problem, dice-problem, euro-problem, locomotive-problem, MnM-problem, Monty-Hall-problem, Oliver-s-blood]
+summary:
+    type: wiki
+    title: 요약
+    summary: ""
+    parent: index
+    url: /wiki/summary
+    updated: '2019-10-15 17:52:45 +0900'
+    children: [REST-paper-summary, summary-Data-Abstraction-and-Hierarchy]
 summary-Data-Abstraction-and-Hierarchy:
     type: wiki
     title: '(요약) Data Abstraction and Hierarchy by Barbara Liskov 1988'
     summary: '바바라 리스코프의 1988년 논문을 읽고 요약한다'
-    parent: index
+    parent: summary
     url: /wiki/summary-Data-Abstraction-and-Hierarchy
-    updated: '2019-10-06 22:12:13 +0900'
+    updated: '2019-10-15 17:51:34 +0900'
     children: []
 tail:
     type: wiki
@@ -3061,7 +3069,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, availability, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port, REST-paper-summary, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
+    children: [agile, availability, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

@@ -761,8 +761,6 @@ spring:
 xml:
     - {fileName: spring-bean-config-configuration}
     - {fileName: spring-bean-config-xml}
-summary:
-    - {fileName: summary-Data-Abstraction-and-Hierarchy}
 hacker:
     - {fileName: The-Jargon-File}
 trouble-shooting:
