@@ -1586,7 +1586,7 @@ hhkb-jp-tmk:
     type: wiki
     title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
     summary: '해피해킹을 더욱 해피하게'
-    parent: tools
+    parent: my-lifehack
     url: /wiki/hhkb-jp-tmk
     updated: '2018-04-21 11:37:09 +0900'
     children: []
@@ -2093,7 +2093,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [my-bookshelf, my-keyboard, my-study-method, random-lunch]
+    children: [hhkb-jp-tmk, my-bookshelf, my-keyboard, my-study-method, random-lunch]
 my-study-method:
     type: wiki
     title: '나의 공부 방법'
@@ -2805,7 +2805,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [aws, command-line, Excel, git, Gradle, hhkb-jp-tmk, mac-apps, my-timer, useful-site, web-browser-extension]
+    children: [aws, command-line, Excel, git, Gradle, mac-apps, my-timer, useful-site, web-browser-extension]
 top:
     type: wiki
     title: 'top 명령어'
