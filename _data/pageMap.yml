@@ -2700,7 +2700,7 @@ summary-The-Pauseless-GC-Algorithm:
     summary: 'Pauseless GC 알고리즘 논문 요약'
     parent: summary
     url: /wiki/summary-The-Pauseless-GC-Algorithm
-    updated: '2019-10-15 22:42:35 +0900'
+    updated: '2019-10-16 12:05:42 +0900'
     children: []
 tail:
     type: wiki
