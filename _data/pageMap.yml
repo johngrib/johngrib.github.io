@@ -2664,11 +2664,11 @@ study-formal-languages-and-automata:
     children: [f-l-a-00-preface, f-l-a-01-00, f-l-a-01-01, f-l-a-01-02, f-l-a-02-01, f-l-a-02-02, f-l-a-02-03, f-l-a-02-04, f-l-a-03-01, f-l-a-03-02]
 study-note:
     type: wiki
-    title: '공부, 학습 관련 토막글 모음'
+    title: '공부, 마음가짐'
     summary: ""
     parent: study
     url: /wiki/study-note
-    updated: '2019-06-04 21:20:22 +0900'
+    updated: '2019-10-16 15:05:43 +0900'
     children: []
 study-think-bayes:
     type: wiki
