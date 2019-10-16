@@ -405,7 +405,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-no-Kyokasho, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, Schrodinger-s-goyang-Hee, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, Effective-Java, Geek-Atlas, GoF-Design-Pattern, GRAVITY-EXPRESS, grow-together, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, Schrodinger-s-goyang-Hee, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
 book-log-2019:
     type: wiki
     title: '2019년 독서록'
@@ -1621,14 +1621,6 @@ http:
     parent: what
     url: /wiki/http
     updated: '2019-08-13 00:14:04 +0900'
-    children: []
-HTTP-no-Kyokasho:
-    type: wiki
-    title: '(책) 그림으로 배우는 HTTP & 네트워크'
-    summary: 'HTTP no Kyoukasho(HTTP の 敎科書)'
-    parent: book
-    url: /wiki/HTTP-no-Kyokasho
-    updated: '2018-01-26 21:36:43 +0900'
     children: []
 HTTP-THE-DEFINITIVE-GUIDE:
     type: wiki

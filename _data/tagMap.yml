@@ -639,23 +639,11 @@ how-to:
     - {fileName: how-to}
 http:
     - {fileName: http}
-    - {fileName: HTTP-no-Kyokasho}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
     - {fileName: httpbin.org}
     - {fileName: URI}
     - {fileName: vim-rest-console}
     - {fileName: why-http-80-https-443}
-review:
-    - {fileName: HTTP-no-Kyokasho}
-    - {fileName: review}
-    - {fileName: review-2017}
-    - {fileName: review-2018}
-    - {fileName: review-2019}
-    - {fileName: secret-of-consulting}
-    - {fileName: Shunsho-juwa}
-    - {fileName: Software-Craftsman}
-    - {fileName: Take-the-Bully-by-the-Horns}
-    - {fileName: TETRIS-EFFECT}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
 gc:
@@ -723,6 +711,16 @@ perl:
     - {fileName: regex-prime}
 web:
     - {fileName: REST-paper-summary}
+review:
+    - {fileName: review}
+    - {fileName: review-2017}
+    - {fileName: review-2018}
+    - {fileName: review-2019}
+    - {fileName: secret-of-consulting}
+    - {fileName: Shunsho-juwa}
+    - {fileName: Software-Craftsman}
+    - {fileName: Take-the-Bully-by-the-Horns}
+    - {fileName: TETRIS-EFFECT}
 rfc:
     - {fileName: RFC}
     - {fileName: why-http-80-https-443}
