@@ -200,7 +200,7 @@ $$ \frac{365}{73} = 5 $$ 이므로, 5일에 한권 꼴로 책을 읽은 셈이�
 * 2018-01-28 [[reincarnation-sword-master]]{전생검신} 34권. 준비
 * 2018-01-27 HELL-BOY - Vol. 1. 파멸의 씨앗
 * 2018-01-26 웹 엔지니어의 교과서
-* 2018-01-24 [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
+* 2018-01-24 DOM을 깨우치다
 * 2018-01-23 [[HTTP-no-Kyokasho]]{그림으로 배우는 HTTP & 네트워크}
 * 2018-01-20 그림으로 보는 서양검술 메모 - 롱소드 편, 레이피어 편
 * 2018-01-18 [[secret-of-consulting]]

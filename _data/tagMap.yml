@@ -290,7 +290,6 @@ book:
     - {fileName: CONCRETE-MATH}
     - {fileName: Design-for-Hackers}
     - {fileName: DevOps-Troubleshooting}
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
     - {fileName: Effective-Java}
     - {fileName: Geek-Atlas}
     - {fileName: GoF-Design-Pattern}
@@ -466,13 +465,6 @@ diary:
     - {fileName: diary}
 container:
     - {fileName: docker}
-html:
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
-DOM:
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
-o-reilly:
-    - {fileName: DOM-Enlightenment-by-Cody-Lindley}
-    - {fileName: Geek-Atlas}
 java:
     - {fileName: Effective-Java}
     - {fileName: groupId-artifactId}
@@ -560,6 +552,8 @@ map:
     - {fileName: geacron}
     - {fileName: Geek-Atlas}
     - {fileName: labs-strava-com-heatmap}
+o-reilly:
+    - {fileName: Geek-Atlas}
 science:
     - {fileName: Geek-Atlas}
     - {fileName: GRAVITY-EXPRESS}

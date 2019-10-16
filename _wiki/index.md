@@ -64,7 +64,6 @@ comment : false
         * [[CONCRETE-MATH]]
         * [[Designing-Data-Intensive-Applications]]
         * [[DevOps-Troubleshooting]]
-        * [[DOM-Enlightenment-by-Cody-Lindley]]{DOM을 깨우치다}
         * [[Effective-Java]]
         * [[Geek-Atlas]]
         * [[GoF-Design-Pattern]]
