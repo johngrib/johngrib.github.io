@@ -161,6 +161,7 @@ comment : false
     * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
     * [[Naming-Principle]]
     * [[No-Silver-Bullet]]
+    * [[OOP-to-me-Alan-Kay]]
     * [[orange-juice-test]]
     * [[Postel-s-law]]
     * [[Schopenhauer-s-Law-Of-Entropy]]{쇼펜하우어의 엔트로피 법칙}

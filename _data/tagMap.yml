@@ -691,6 +691,10 @@ naming:
     - {fileName: Naming-Principle}
 소수:
     - {fileName: Object-hashCode}
+oop:
+    - {fileName: OOP-to-me-Alan-Kay}
+    - {fileName: SOLID}
+    - {fileName: summary-Data-Abstraction-and-Hierarchy}
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
@@ -744,9 +748,6 @@ IEEE:
     - {fileName: Software-Engineering-Code-of-Ethics}
 ethics:
     - {fileName: Software-Engineering-Code-of-Ethics}
-oop:
-    - {fileName: SOLID}
-    - {fileName: summary-Data-Abstraction-and-Hierarchy}
 spring:
     - {fileName: spring}
     - {fileName: spring-bean-config-configuration}

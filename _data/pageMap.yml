@@ -2198,6 +2198,14 @@ Oliver-s-blood:
     url: /wiki/Oliver-s-blood
     updated: '2018-04-24 20:49:44 +0900'
     children: []
+OOP-to-me-Alan-Kay:
+    type: wiki
+    title: '앨런 케이의 심플한 OOP 정의'
+    summary: ""
+    parent: proverb
+    url: /wiki/OOP-to-me-Alan-Kay
+    updated: '2019-10-17 23:02:44 +0900'
+    children: []
 openssl:
     type: wiki
     title: 'openssl 명령어'
@@ -2333,7 +2341,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2018-02-21 22:37:29 +0900'
-    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Zipf-s-law]
+    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Zipf-s-law]
 Python3:
     type: wiki
     title: Python3
