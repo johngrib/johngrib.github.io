@@ -368,6 +368,7 @@ comment : false
     * [[REST-paper-summary]]
     * [[summary-Data-Abstraction-and-Hierarchy]]
     * [[summary-The-Pauseless-GC-Algorithm]]
+* [[Byzantine-failure]]
 
 
 ---

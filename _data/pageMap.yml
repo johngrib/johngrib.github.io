@@ -470,6 +470,14 @@ builder-pattern:
     url: /wiki/builder-pattern
     updated: '2018-02-18 00:20:50 +0900'
     children: []
+Byzantine-failure:
+    type: wiki
+    title: '비잔틴 오류(Byzantine failure)'
+    summary: ""
+    parent: index
+    url: /wiki/Byzantine-failure
+    updated: '2019-10-17 17:04:34 +0900'
+    children: []
 c-m-01-Recurrent-Problems-01:
     type: wiki
     title: '구체수학 01.재귀적인 문제들.01.하노이의 탑'
