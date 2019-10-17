@@ -191,6 +191,17 @@ game:
     - {fileName: TETRIS-EFFECT}
 aheui:
     - {fileName: 2017-07-14-aheui-explained}
+design-pattern:
+    - {fileName: abstract-factory-pattern}
+    - {fileName: builder-pattern}
+    - {fileName: decorator-pattern}
+    - {fileName: factory-method-pattern}
+    - {fileName: GoF-Design-Pattern}
+    - {fileName: null-object-pattern}
+    - {fileName: observer-pattern}
+    - {fileName: static-factory-method-pattern}
+    - {fileName: strategy-pattern}
+    - {fileName: template-method-pattern}
 db:
     - {fileName: ACID}
     - {fileName: b-tree}
@@ -364,16 +375,6 @@ programming:
     - {fileName: Java}
     - {fileName: programming-language}
     - {fileName: static-factory-method-pattern}
-design-pattern:
-    - {fileName: builder-pattern}
-    - {fileName: decorator-pattern}
-    - {fileName: factory-method-pattern}
-    - {fileName: GoF-Design-Pattern}
-    - {fileName: null-object-pattern}
-    - {fileName: observer-pattern}
-    - {fileName: static-factory-method-pattern}
-    - {fileName: strategy-pattern}
-    - {fileName: template-method-pattern}
 lombok:
     - {fileName: builder-pattern}
 effective-java:

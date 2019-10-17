@@ -84,6 +84,7 @@ comment : false
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
         * [[Schrodinger-s-goyang-Hee]]
 * [[design-pattern]]
+    * [[abstract-factory-pattern]]
     * [[builder-pattern]]
     * [[decorator-pattern]]
     * [[factory-method-pattern]]
