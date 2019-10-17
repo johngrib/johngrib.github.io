@@ -300,7 +300,7 @@ availability:
     summary: '시스템이 다운되지 않고 정상 운영되는 시간의 비율'
     parent: what
     url: /wiki/availability
-    updated: '2019-10-18 07:41:18 +0900'
+    updated: '2019-10-18 07:52:12 +0900'
     children: []
 average-complexity:
     type: wiki
