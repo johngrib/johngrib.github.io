@@ -3,7 +3,7 @@ layout  : wiki
 title   : 가용성(Availability)
 summary : 시스템이 다운되지 않고 정상 운영되는 시간의 비율
 date    : 2019-09-20 09:10:51 +0900
-updated : 2019-10-13 11:52:54 +0900
+updated : 2019-10-18 07:41:18 +0900
 tag     : 
 toc     : true
 public  : true
@@ -15,13 +15,19 @@ latex   : true
 
 ## 정의
 
-한국어 위키백과에서는 가용성을 다음과 같이 정의한다.
+### 시간을 기준으로 한 가용성
+
+[한국어 위키백과][wiki]에서는 가용성을 다음과 같이 정의한다.
 
 >
 **가용성**(可用性, Availability)이란 서버와 네트워크, 프로그램 등의 정보 시스템이 정상적으로 사용 가능한 정도를 말한다. **가동률**과 비슷한 의미이다. 가용성을 수식으로 표현할 경우, 가용성(Availability)이란 정상적인 사용 시간(Uptime)을 전체 사용 시간(Uptime+Downtime)으로 나눈 값을 말한다. 이 값이 높을수록 "가용성이 높다"고 표현한다. 가용성이 높은 것을 고가용성(HA, High Availability)이라고 한다.  
 $$\text{Availability} = { E[\text{Uptime}] \over E[\text{Uptime}] + E[\text{Downtime}] }$$
 
 $$\text{가용성} = { \text{Uptime} \over \text{Uptime} + \text{Downtime} }$$
+
+이 방식에 대해 "사이트 신뢰성 엔지니어링"에서는 조금 더 섬세하게 정의한다.[^sre-define]
+
+$$\text{가용성} = { \text{Uptime} \over \text{Uptime} + \text{(unplanned) Downtime} }$$
 
 다음은 "트랜잭션 처리의 원리"에서 인용한 것이다.
 
@@ -44,6 +50,18 @@ TP 시스템에 필요한 중요한 요구사항은 시스템이 항상 가동�
 [^bernstein-define]
 
 $$\text{가용성} = { \text{평균가동시간} \over \text{평균가동시간} + \text{평균복구시간} }$$
+
+### 요청 성공률을 기초로 한 가용성
+
+"사이트 신뢰성 엔지니어링"에서는 시간 기준의 가용성의 대안으로 요청 성공률에 기초한 가용성을 정의한다.
+
+>
+그러나 구글에서는 시간 기준의 가용성 지표는 그다지 의미가 없다. 그 이유는 우리는 전 세계에 분산된 서비스를 운영하기 때문이다. 구글이 채택하고 있는 장애 분리(fault isolation) 방식 덕분에 우리는 특정 서비스의 트래픽 중 일부를 주어진 시간 동안 세계의 어느 한 지역에 제공하고 있는 셈이다(다시 말하면, 우리는 전체 시간 중 최소 일부는 '정상 동작 중인' 상태다). 그래서 우리는 업타임과 관련된 지표들 대신 **요청 성공률**(request success rate)에 기초한 가용성을 정의한다. [식 3-2]는 특정한 운영 시간 대비 성공률에 기반한 지표들을 계산하는 수식이다.  
+<br>
+$$\text{가용성} = { \text{성공한 요청 수} \over \text{전체 요청 수} }$$  
+<br>
+예를 들어 하루에 250만 개의 요청을 처리하는 시스템의 경우 하루에 발생하는 에러가 250개 이내라면 일일 가용성 목표치 99.99%를 달성할 수 있다.[^sre-define]
+
 
 ## 가용성 테이블
 
@@ -74,11 +92,15 @@ $$\text{가용성} = { \text{평균가동시간} \over \text{평균가동시간}
 * 도서
     * 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
     * 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
+    * 사이트 신뢰성 엔지니어링 / 벳시 베이어, 크리스 존스, 제니퍼 펫오프, 니얼 리처드 머피 저/장현희 역 / 제이펍 / 초판 1쇄 2018년 01월 18일 / 원서 : Site Reliability Engineering: How Google Runs Production Systems
 
 ## 주석
 
 [^high-availability]: 트랜잭션 처리의 원리. 1.6 가용성. 44쪽.
 [^bernstein-define]: 트랜잭션 처리의 원리. 7 시스템 복구. 239쪽. 국내 번역판에는 'mean time to repair(MTTR)'로 나와 있기에 원서를 확인해 보니 'mean time between repair'로 나와 있기에 원서의 표현을 따랐다.
+[^sre-define]: 사이트 신뢰성 엔지니어링. 3 위험 요소 수용하기. 32쪽.
+
+[wiki]: https://en.wikipedia.org/wiki/Availability
 
 [2y]: https://www.wolframalpha.com/input/?i=%7Bconvert+1+year+to+seconds%7D+*+0.01
 [3y]: https://www.wolframalpha.com/input/?i=%7Bconvert+1+year+to+seconds%7D+*+0.001
