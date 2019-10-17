@@ -1928,7 +1928,7 @@ latency:
     children: []
 legend:
     type: wiki
-    title: '레전드 모음'
+    title: '이야기 모음'
     summary: null
     parent: clipping
     url: /wiki/legend
