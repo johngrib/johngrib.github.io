@@ -86,6 +86,7 @@ comment : false
 * [[design-pattern]]
     * [[abstract-factory-pattern]]
     * [[builder-pattern]]
+    * [[command-pattern]]
     * [[decorator-pattern]]
     * [[factory-method-pattern]]
     * [[null-object-pattern]]

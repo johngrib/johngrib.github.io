@@ -662,6 +662,14 @@ command-line:
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
     children: [ag, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, sdkman, sha256sum, sort, tail, top, touch, uptime, yes]
+command-pattern:
+    type: wiki
+    title: '커맨드 패턴 (Command Pattern)'
+    summary: '요구 사항을 객체로 캡슐화한다'
+    parent: ""
+    url: /wiki/command-pattern
+    updated: '2019-10-24 18:04:54 +0900'
+    children: []
 commit-go-mod-go-sum:
     type: wiki
     title: 'go.mod와 go.sum 도 커밋해야 할까?'
