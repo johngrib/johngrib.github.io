@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 추상 팩토리 패턴(Abstract Factory Pattern)
+title   : 추상 팩토리 패턴 (Abstract Factory Pattern)
 summary : 서로 관련성이 있는 다양한 객체를 생성하기 위한 인터페이스를 제공한다
 date    : 2019-10-16 23:44:57 +0900
-updated : 2019-10-17 15:18:12 +0900
+updated : 2019-10-24 12:19:51 +0900
 tag     : design-pattern
 toc     : true
 public  : true
