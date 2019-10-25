@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) Data Abstraction and Hierarchy by Barbara Liskov 1988
 summary : 바바라 리스코프의 1988년 논문을 읽고 요약한다
 date    : 2019-10-06 12:00:14 +0900
-updated : 2019-10-15 17:51:34 +0900
+updated : 2019-10-25 22:16:35 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -105,7 +105,7 @@ latex   : false
 
 * 데이터 추상화는 여러 언어에서 지원된다.
 * 최초의 언어는 Simula 67.
-* CLU, Smalltalk의 경우를 설명한다.
+* CLU[^clu], Smalltalk의 경우를 설명한다.
 
 CLU는 추상 타입(abstract type)을 구현하기 위해 cluster라는 메커니즘을 제공한다.
 
@@ -332,4 +332,5 @@ sort = proc [T: type] (a: array[T])
 * [Data Abstraction and Hierarchy][pdf]
 
 [pdf]: https://pdfs.semanticscholar.org/36be/babeb72287ad9490e1ebab84e7225ad6a9e5.pdf
+[^clu]: CLU는 바바라 리스코프라 만든 프로그래밍 언어이다.
 

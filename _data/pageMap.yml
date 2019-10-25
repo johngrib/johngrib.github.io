@@ -2724,7 +2724,7 @@ summary-Data-Abstraction-and-Hierarchy:
     summary: '바바라 리스코프의 1988년 논문을 읽고 요약한다'
     parent: summary
     url: /wiki/summary-Data-Abstraction-and-Hierarchy
-    updated: '2019-10-15 17:51:34 +0900'
+    updated: '2019-10-25 22:16:35 +0900'
     children: []
 summary-The-Pauseless-GC-Algorithm:
     type: wiki
