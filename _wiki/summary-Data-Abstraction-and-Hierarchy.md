@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) Data Abstraction and Hierarchy by Barbara Liskov 1988
 summary : 바바라 리스코프의 1988년 논문을 읽고 요약한다
 date    : 2019-10-06 12:00:14 +0900
-updated : 2019-10-25 22:16:35 +0900
+updated : 2019-10-25 22:18:16 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -331,6 +331,10 @@ sort = proc [T: type] (a: array[T])
 
 * [Data Abstraction and Hierarchy][pdf]
 
+
+# 주석
+
 [pdf]: https://pdfs.semanticscholar.org/36be/babeb72287ad9490e1ebab84e7225ad6a9e5.pdf
-[^clu]: CLU는 바바라 리스코프라 만든 프로그래밍 언어이다.
+
+[^clu]: CLU는 바바라 리스코프가 만든 프로그래밍 언어이다.
 
