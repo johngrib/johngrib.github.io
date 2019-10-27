@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2019-09-19 10:34:52 +0900
+updated : 2019-10-27 16:32:48 +0900
 tag     : java
 toc     : true
 public  : true
@@ -69,9 +69,7 @@ latex   : true
     * `java.util.stream` 패키지 추가.
         * stream의 원소들에 함수형 스타일의 작업을 지원.
         * stream API는 Collections API에 통합.
-    * HashMap 퍼포먼스 향상
-        * [Performance Improvement for HashMap in Java 8](https://www.nagarro.com/en/blog/post/24/performance-improvement-for-hashmap-in-java-8 )
-        * linked list와 binary tree를 함께 사용하는 방식.
+    * [[java8-performance-improvement-for-hashmap]]{HashMap 퍼포먼스 향상}
 * Date-Time Package
 * IO, NIO
     * `java.lang.String(byte[], *)` 생성자 퍼포먼스 향상.
