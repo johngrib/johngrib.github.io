@@ -125,6 +125,7 @@ comment : false
         * [[java-remainder-operator]]
         * [[java-switch-expression]]
         * [[java8]]
+        * [[java8-performance-improvement-for-hashmap]]
         * [[java8-why-permgen-removed]]
         * [[java10-var]]
         * [[jdk13]]

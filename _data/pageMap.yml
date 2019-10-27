@@ -1701,7 +1701,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-gc, java-interface, java-jigsaw-quick-start, java-remainder-operator, java-switch-expression, java10-var, java8, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-gc, java-interface, java-jigsaw-quick-start, java-remainder-operator, java-switch-expression, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1829,6 +1829,14 @@ java8:
     parent: Java
     url: /wiki/java8
     updated: '2018-07-25 17:09:16 +0900'
+    children: []
+java8-performance-improvement-for-hashmap:
+    type: wiki
+    title: 'Java 8 HashMap 퍼포먼스 향상'
+    summary: '균형 트리를 도입해 O(n) 에서 O(log n)으로 향상됐다'
+    parent: Java
+    url: /wiki/java8-performance-improvement-for-hashmap
+    updated: '2019-10-27 13:32:27 +0900'
     children: []
 java8-why-permgen-removed:
     type: wiki
