@@ -155,6 +155,7 @@ comment : false
     * [[airplain-rule]]
     * [[Boy-Scout-Rule]]
     * [[Brooks-s-law]]
+    * [[CAP-theorem]]
     * [[Conway-s-law]]
     * [[Copernican-Principle]]
     * [[Edsel-edict]]

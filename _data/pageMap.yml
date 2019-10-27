@@ -614,6 +614,14 @@ cal:
     url: /wiki/cal
     updated: '2019-01-07 13:05:08 +0900'
     children: []
+CAP-theorem:
+    type: wiki
+    title: 'CAP 정리'
+    summary: ""
+    parent: proverb
+    url: /wiki/CAP-theorem
+    updated: '2019-10-27 23:02:56 +0900'
+    children: []
 Clean-Code:
     type: wiki
     title: '(책) 클린 코드 - 로버트 C. 마틴'
@@ -2352,12 +2360,12 @@ programming-language:
     children: [awk, bc, Golang, Groovy, Java, php, Python3, TOML, YAML]
 proverb:
     type: wiki
-    title: '속담, 법칙, 관용어 모음'
+    title: '나의 용어 사전'
     summary: null
     parent: index
     url: /wiki/proverb
-    updated: '2018-02-21 22:37:29 +0900'
-    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Zipf-s-law]
+    updated: '2019-10-27 22:42:37 +0900'
+    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Zipf-s-law]
 Python3:
     type: wiki
     title: Python3
