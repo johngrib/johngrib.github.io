@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 8 HashMap 퍼포먼스 향상
 summary : 균형 트리를 도입해 O(n) 에서 O(log n)으로 향상됐다
 date    : 2019-10-27 11:54:24 +0900
-updated : 2019-10-27 13:32:27 +0900
+updated : 2019-10-28 17:32:42 +0900
 tag     : java
 toc     : true
 public  : true
@@ -32,7 +32,7 @@ latex   : true
 두 가지를 이야기하고 있다.
 
 * Stream API 제공
-* 키 충돌이 있는 해시맵의 퍼포먼스 향상
+* 해시맵의 키 충돌 관련 퍼포먼스 향상
 
 이 문서에서는 두 번째 항목인 "Performance Improvement for HashMaps with Key Collisions"에 대해 조사하는 것이 목표이므로, [Collections Framework Enhancements in Java SE 8][new-jdk8-collections] 문서로 따라 들어가 읽어보도록 하자.
 
