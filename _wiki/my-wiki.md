@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2018-12-27 21:41:52 +0900
+updated : 2019-10-30 08:09:16 +0900
 tag     : wiki vimwiki jekyll blog
 toc     : true
 comment : true
@@ -438,6 +438,22 @@ Jekyll은 `_data` 디렉토리에 `json`이나 `yml`파일이 있다면 `site.da
 태그 기능은 앞에서 만든 `generateData.js`로 생성한 데이터 파일을 사용하면 쉽게 구현할 수 있다.
 
 자세한 내용은 [tag.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/tag.html) 참고.
+
+### git hook으로 generateData.js 자동 실행하기
+
+`generateData.js`를 일일이 실행하는 것은 귀찮은 일이다. git hook의 pre-commit을 사용하면 commit 전에 `generateData.js`를 실행하고, 데이터 파일을 add 할 수 있다.
+
+블로그 경로 하위에 있는 `.git/hook/`에 다음과 같은 내용을 가진 `pre-commit` 파일을 추가해 주면 된다.
+
+```sh
+#!/bin/sh
+
+./generateData.js
+git add _data
+```
+
+이렇게 하면 commit 하기 전에 데이터 파일을 생성하고 add 까지 마치게 된다.
+
 
 ## 구현 결과
 
