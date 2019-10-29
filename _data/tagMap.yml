@@ -553,6 +553,7 @@ binary:
     - {fileName: rule-of-succession}
 gc:
     - {fileName: garbage-collection}
+    - {fileName: gc-death-spiral}
     - {fileName: java-g1gc}
     - {fileName: java-gc-eden-to-survivor}
     - {fileName: java-gc-parallel-collector}

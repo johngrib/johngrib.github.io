@@ -369,6 +369,7 @@ comment : false
     * [[summary-The-Pauseless-GC-Algorithm]]
 * [[Byzantine-failure]]
 * [[garbage-collection]]
+    * [[gc-death-spiral]]
     * [[java-gc-tuning]]
     * [[java-gc-eden-to-survivor]]
     * [[java-gc-serial-collector]]

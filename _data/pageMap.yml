@@ -1301,7 +1301,15 @@ garbage-collection:
     parent: index
     url: /wiki/garbage-collection
     updated: '2019-10-29 22:23:21 +0900'
-    children: [java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-serial-collector, java-gc-tuning, java-gc-zgc]
+    children: [gc-death-spiral, java-g1gc, java-gc-eden-to-survivor, java-gc-parallel-collector, java-gc-serial-collector, java-gc-tuning, java-gc-zgc]
+gc-death-spiral:
+    type: wiki
+    title: '죽음의 GC 소용돌이'
+    summary: 'GC death spiral'
+    parent: garbage-collection
+    url: /wiki/gc-death-spiral
+    updated: '2019-10-29 23:12:24 +0900'
+    children: []
 gcd:
     type: wiki
     title: '최대공약수와 최소공배수'
