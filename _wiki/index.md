@@ -85,6 +85,7 @@ comment : false
         * [[Schrodinger-s-goyang-Hee]]
 * [[design-pattern]]
     * [[abstract-factory-pattern]]
+    * [[adapter-pattern]]
     * [[builder-pattern]]
     * [[command-pattern]]
     * [[decorator-pattern]]

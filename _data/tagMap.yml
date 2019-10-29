@@ -193,6 +193,7 @@ aheui:
     - {fileName: 2017-07-14-aheui-explained}
 design-pattern:
     - {fileName: abstract-factory-pattern}
+    - {fileName: adapter-pattern}
     - {fileName: builder-pattern}
     - {fileName: decorator-pattern}
     - {fileName: factory-method-pattern}
