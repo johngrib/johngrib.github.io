@@ -138,13 +138,6 @@ comment : false
         * [[Object-toString]]
         * [[private-constructor]]
         * [[use-java-primitive-type-for-performance]]
-        * [[java-gc]]
-            * [[java-gc-tuning]]
-            * [[java-gc-eden-to-survivor]]
-            * [[java-gc-serial-collector]]
-            * [[java-gc-parallel-collector]]
-            * [[java-gc-zgc]]
-            * [[java-g1gc]]
     * [[php]]
         * [[composer]]
     * [[Python3]]
@@ -375,7 +368,13 @@ comment : false
     * [[summary-Data-Abstraction-and-Hierarchy]]
     * [[summary-The-Pauseless-GC-Algorithm]]
 * [[Byzantine-failure]]
-
+* [[garbage-collection]]
+    * [[java-gc-tuning]]
+    * [[java-gc-eden-to-survivor]]
+    * [[java-gc-serial-collector]]
+    * [[java-gc-parallel-collector]]
+    * [[java-gc-zgc]]
+    * [[java-g1gc]]
 
 ---
 

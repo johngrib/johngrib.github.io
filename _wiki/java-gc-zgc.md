@@ -7,7 +7,7 @@ updated : 2019-10-15 17:31:28 +0900
 tag     : java gc
 toc     : true
 public  : true
-parent  : java-gc
+parent  : garbage-collection
 latex   : false
 ---
 * TOC

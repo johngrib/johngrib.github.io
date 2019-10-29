@@ -551,6 +551,15 @@ binary:
 확률:
     - {fileName: frac1e}
     - {fileName: rule-of-succession}
+gc:
+    - {fileName: garbage-collection}
+    - {fileName: java-g1gc}
+    - {fileName: java-gc-eden-to-survivor}
+    - {fileName: java-gc-parallel-collector}
+    - {fileName: java-gc-serial-collector}
+    - {fileName: java-gc-tuning}
+    - {fileName: java-gc-zgc}
+    - {fileName: summary-The-Pauseless-GC-Algorithm}
 map:
     - {fileName: geacron}
     - {fileName: Geek-Atlas}
@@ -649,15 +658,6 @@ http:
     - {fileName: why-http-80-https-443}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
-gc:
-    - {fileName: java-g1gc}
-    - {fileName: java-gc}
-    - {fileName: java-gc-eden-to-survivor}
-    - {fileName: java-gc-parallel-collector}
-    - {fileName: java-gc-serial-collector}
-    - {fileName: java-gc-tuning}
-    - {fileName: java-gc-zgc}
-    - {fileName: summary-The-Pauseless-GC-Algorithm}
 von-neumann:
     - {fileName: John-von-Neumann}
 sort:
