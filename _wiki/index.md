@@ -363,6 +363,7 @@ comment : false
     * [[sharding]]
 * [[locking]]
 * [[my-lifehack]]
+    * [[cleaning-tile-cycle]]
     * [[hhkb-jp-tmk]]
     * [[my-bookshelf]]
     * [[my-keyboard]]
