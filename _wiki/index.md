@@ -69,7 +69,6 @@ comment : false
         * [[GoF-Design-Pattern]]
         * [[GRAVITY-EXPRESS]]
         * [[grow-together]]
-        * [[HTTP-no-Kyokasho]]
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
         * [[Mythical-Man-Month]]
         * [[PATTERN-ON-THE-STONE]]
