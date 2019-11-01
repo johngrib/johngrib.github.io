@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-10-28 16:42:54 +0900
+updated : 2019-11-01 19:43:26 +0900
 tag     : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 # 책
 
+* 2019-11-01 Head First Design Patterns
 * 2019-10-28 코끼리와 벼룩
 * 2019-10-26 IT에 몸담은 이들을 위한 지적생산기술
 * 2019-10-24 소프트웨어 아키텍트가 알아야 할 97가지

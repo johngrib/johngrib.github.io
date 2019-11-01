@@ -428,7 +428,7 @@ book-log-2019:
     summary: ""
     parent: diary
     url: /wiki/book-log-2019
-    updated: '2019-08-21 15:43:36 +0900'
+    updated: '2019-11-01 19:42:25 +0900'
     children: []
 bootstrapping:
     type: wiki
@@ -2460,7 +2460,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-10-28 16:42:54 +0900'
+    updated: '2019-11-01 19:43:26 +0900'
     children: []
 RFC:
     type: wiki
