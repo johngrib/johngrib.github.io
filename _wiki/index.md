@@ -67,7 +67,6 @@ comment : false
         * [[Effective-Java]]
         * [[Geek-Atlas]]
         * [[GoF-Design-Pattern]]
-        * [[GRAVITY-EXPRESS]]
         * [[grow-together]]
         * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
         * [[Mythical-Man-Month]]

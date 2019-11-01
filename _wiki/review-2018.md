@@ -178,7 +178,7 @@ $$ \frac{365}{73} = 5 $$ 이므로, 5일에 한권 꼴로 책을 읽은 셈이�
 * 2018-04-24 이승훈 교수의 실용 수학
 * 2018-04-23 미적분 다이어리
 * 2018-04-22 [[Schrodinger-s-goyang-Hee]]
-* 2018-04-20 [[GRAVITY-EXPRESS]]{그래비티 익스프레스}
+* 2018-04-20 그래비티 익스프레스
 * 2018-04-19 [[Computer-Science-Distilled]]{한 권으로 그리는 컴퓨터 과학 로드맵}
 * 2018-04-18 [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]{세계를 바꾼 17가지 방정식}
 * 2018-04-12 [[Algorithms-to-Live-By]]
