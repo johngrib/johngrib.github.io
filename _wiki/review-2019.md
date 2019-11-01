@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-11-01 19:43:26 +0900
+updated : 2019-11-01 23:23:01 +0900
 tag     : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 # 책
 
+* 2019-11-01 트랜잭션 처리의 원리
 * 2019-11-01 Head First Design Patterns
 * 2019-10-28 코끼리와 벼룩
 * 2019-10-26 IT에 몸담은 이들을 위한 지적생산기술
