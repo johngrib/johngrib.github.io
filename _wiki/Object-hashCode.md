@@ -3,12 +3,13 @@ layout  : wiki
 title   : java.lang.Object.hashCode 메소드
 summary :
 date    : 2018-03-09 18:54:19 +0900
-updated : 2019-11-02 12:40:38 +0900
+updated : 2019-11-02 13:19:32 +0900
 tag     : java 번역 소수
 toc     : true
 public  : true
 parent  : Java
 latex   : true
+regenerate: true
 ---
 * TOC
 {:toc}
@@ -560,6 +561,86 @@ public static final int PRIME_FOR_HASHCODE = 277;
 그러나 31이 아닌 다른 소수를 사용하고 있어 31이 절대적인 숫자가 아니라는 것은 확인한 느낌이다.
 
 
+## java.lang.Object.hashCode 의 native 코드
+
+Object.java 클래스의 hashCode 메소드는 다음과 같이 선언되어 있었다.
+
+```java
+public native int hashCode();
+```
+
+다음은 [hotspot의 jvm.cpp 파일에서 발췌][jvm-cpp-583]한 것이다. 버전은 JDK10 이지만, JDK8과 차이점은 없다.
+
+```cpp
+JVM_ENTRY(jint, JVM_IHashCode(JNIEnv* env, jobject handle))
+  JVMWrapper("JVM_IHashCode");
+  // as implemented in the classic virtual machine; return 0 if object is NULL
+  return handle == NULL ? 0 : ObjectSynchronizer::FastHashCode (THREAD, JNIHandles::resolve_non_null(handle)) ;
+JVM_END
+```
+
+[`JVM_IHashCode` 는 `ObjectSynchronizer::FastHashCode`][synchronizer-714]를 사용하고 있다. 그리고 이 함수를 잘 읽어보면 새로운 해시 코드 할당은 `get_next_hash` 함수를 사용한다는 것을 알 수 있다.
+
+다음은 `get_next_hash` 함수의 코드이다.
+
+```cpp
+// hashCode() generation :
+//
+// Possibilities:
+// * MD5Digest of {obj,stwRandom}
+// * CRC32 of {obj,stwRandom} or any linear-feedback shift register function.
+// * A DES- or AES-style SBox[] mechanism
+// * One of the Phi-based schemes, such as:
+//   2654435761 = 2^32 * Phi (golden ratio)
+//   HashCodeValue = ((uintptr_t(obj) >> 3) * 2654435761) ^ GVars.stwRandom ;
+// * A variation of Marsaglia's shift-xor RNG scheme.
+// * (obj ^ stwRandom) is appealing, but can result
+//   in undesirable regularity in the hashCode values of adjacent objects
+//   (objects allocated back-to-back, in particular).  This could potentially
+//   result in hashtable collisions and reduced hashtable efficiency.
+//   There are simple ways to "diffuse" the middle address bits over the
+//   generated hashCode values:
+
+static inline intptr_t get_next_hash(Thread * Self, oop obj) {
+  intptr_t value = 0;
+  if (hashCode == 0) {
+    // This form uses global Park-Miller RNG.
+    // On MP system we'll have lots of RW access to a global, so the
+    // mechanism induces lots of coherency traffic.
+    value = os::random();
+  } else if (hashCode == 1) {
+    // This variation has the property of being stable (idempotent)
+    // between STW operations.  This can be useful in some of the 1-0
+    // synchronization schemes.
+    intptr_t addrBits = cast_from_oop<intptr_t>(obj) >> 3;
+    value = addrBits ^ (addrBits >> 5) ^ GVars.stwRandom;
+  } else if (hashCode == 2) {
+    value = 1;            // for sensitivity testing
+  } else if (hashCode == 3) {
+    value = ++GVars.hcSequence;
+  } else if (hashCode == 4) {
+    value = cast_from_oop<intptr_t>(obj);
+  } else {
+    // Marsaglia's xor-shift scheme with thread-specific state
+    // This is probably the best overall implementation -- we'll
+    // likely make this the default in future releases.
+    unsigned t = Self->_hashStateX;
+    t ^= (t << 11);
+    Self->_hashStateX = Self->_hashStateY;
+    Self->_hashStateY = Self->_hashStateZ;
+    Self->_hashStateZ = Self->_hashStateW;
+    unsigned v = Self->_hashStateW;
+    v = (v ^ (v >> 19)) ^ (t ^ (t >> 8));
+    Self->_hashStateW = v;
+    value = v;
+  }
+
+  value &= markOopDesc::hash_mask;
+  if (value == 0) value = 0xBAD;
+  assert(value != markOopDesc::no_hash, "invariant");
+  return value;
+}
+```
 
 
 ## 내 생각: 고유한 숫자를 부여하기
@@ -596,3 +677,7 @@ $$ 2^{9283} + 3^{5420} + 5^{4356} + 7^{6123} + 11^{5729} + 13^{3954} $$
 * Lombok
     * [@EqualsAndHashCode](https://projectlombok.org/features/EqualsAndHashCode)
     * [Issue 625: use (even) better primes for hashcodes](https://github.com/rzwitserloot/lombok/commit/14cc54527663018cdf7343eefffc8c37fbce93bb#diff-01082d42a593f828cc90164b842e96ddR31)
+
+
+[jvm-cpp-583]: http://hg.openjdk.java.net/jdk10/jdk10/hotspot/file/tip/src/share/vm/prims/jvm.cpp
+[synchronizer-714]: http://hg.openjdk.java.net/jdk10/jdk10/hotspot/file/tip/src/share/vm/runtime/synchronizer.cpp
