@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.hashCode 메소드
 summary :
 date    : 2018-03-09 18:54:19 +0900
-updated : 2018-03-10 18:45:35 +0900
+updated : 2019-11-02 12:40:38 +0900
 tag     : java 번역 소수
 toc     : true
 public  : true
@@ -56,7 +56,8 @@ latex   : true
 public native int hashCode();
 ```
 
-## 번역
+번역해 보자.
+
 
 hashCode 메소드는 객체의 해시코드 값을 리턴합니다.
 
@@ -75,6 +76,7 @@ hashCode 메소드의 일반 규약은 다음과 같습니다.
 * @return this 객체의 해시코드 값
 * @see java.lang.Object#equals(java.lang.Object)
 * @see java.lang.System#identityHashCode
+
 
 ## equals와의 관계
 
@@ -142,7 +144,7 @@ public int hashCode() {
 }
 ```
 
-#### 번역
+번역하자면 다음과 같다.
 
 hashCode 메소드는 this 집합(Set)의 해시코드 값을 리턴합니다.
 
@@ -181,7 +183,7 @@ public int hashCode() {
 }
 ```
 
-#### 번역
+번역해 보았다.
 
 이 메소드는 this 리스트의 해시 코드를 리턴합니다.
 
@@ -215,8 +217,6 @@ public int hashCode() {
  */
 int hashCode();
 ```
-
-#### 번역
 
 이 메소드는 this 리스트의 해시 코드 값을 리턴합니다.
 
