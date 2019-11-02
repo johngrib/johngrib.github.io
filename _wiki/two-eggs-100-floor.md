@@ -3,7 +3,7 @@ layout  : wiki
 title   : 100층 건물과 2개의 계란 문제
 summary : 
 date    : 2019-03-13 21:07:50 +0900
-updated : 2019-06-04 21:22:21 +0900
+updated : 2019-11-02 14:00:11 +0900
 tag     : math
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 문제 소개
+## 문제 소개
 
 * 구글, 마이크로소프트 개발자 면접에서 나왔다는 소문이 있는 유명한 문제이다.
 * 그러나 그 소문이 진짜인지는 알 수 없다.
@@ -28,8 +28,6 @@ latex   : true
 * 가령 건물이 있는 곳이 달이거나, 계란이 떨어지는 바닥이 매우 특수한 재질로 되어 있을 수도 있다.
 * 실험을 통해 새롭게 만들어낸 슈퍼 닭의 알을 실험하는 것일 수도 있다.
 
-
-# 풀어보자
 
 ## 이진 탐색을 쓸 수 있을까?
 
@@ -242,8 +240,9 @@ $$
 
 그러므로, 100층 건물을 테스트하려면 최악의 경우 계란을 14 번만 던져보면 된다.
 
-# Links
+## Links
 
-* [The Two Egg Problem](http://datagenetics.com/blog/july22012/index.html)
+* [The Two Egg Problem](http://datagenetics.com/blog/july22012/index.html )
 * [You have 2 eggs. You are on a 100 floor building...](https://www.quora.com/You-have-2-eggs-You-are-on-a-100-floor-building-You-drop-the-egg-from-a-particular-floor-It-breaks-or-survives-If-it-survives-you-can-throw-the-same-egg-from-a-higher-floor-How-many-attempts-do-you-need-to-identify-the-max-floor-at-which-the-egg-doesnt-break-when-thrown-down )
 * [2 Eggs and 100 Floors](https://medium.com/@khopsickle/2-eggs-and-100-floors-a032beb77aaa )
+
