@@ -30,14 +30,6 @@
     url: /blog/2017/03/12/telegram-bot
     updated: '2017-03-12 21:08:16 +0900'
     children: []
-2017-03-27-tmux-ascii-control:
-    type: blog
-    title: 'tmux 키 조합에서 C--가 불가능한 이유.'
-    summary: '"결론: ascii 코드값 때문."'
-    parent: null
-    url: /blog/2017/03/27/tmux-ascii-control
-    updated: '2017-03-27 22:57:52 +0900'
-    children: []
 2017-04-02-jwp-00-prepare:
     type: blog
     title: 'Next JWP Study 00'
@@ -2846,6 +2838,14 @@ timeline:
     url: /wiki/timeline
     updated: '2019-08-13 11:45:46 +0900'
     children: []
+tmux-c-dash:
+    type: wiki
+    title: 'tmux 키 조합에서 C--가 불가능한 이유.'
+    summary: 'ascii 코드값 때문'
+    parent: why
+    url: /wiki/tmux-c-dash
+    updated: '2019-11-03 22:41:45 +0900'
+    children: []
 TOML:
     type: wiki
     title: TOML
@@ -3133,7 +3133,7 @@ why:
     parent: index
     url: /wiki/why
     updated: '2018-02-07 21:29:47 +0900'
-    children: [letter-case, sql-char-comparison, why-http-80-https-443]
+    children: [letter-case, sql-char-comparison, tmux-c-dash, why-http-80-https-443]
 why-http-80-https-443:
     type: wiki
     title: 'http의 기본 포트가 80, https의 기본 포트가 443인 이유는 무엇일까?'

@@ -68,14 +68,6 @@ chatbot:
     - {fileName: 2017-03-12-telegram-bot}
 bot:
     - {fileName: 2017-03-12-telegram-bot}
-TIL:
-    - {fileName: 2017-03-27-tmux-ascii-control}
-    - {fileName: 2017-08-23-0.30000000000000004}
-tmux:
-    - {fileName: 2017-03-27-tmux-ascii-control}
-    - {fileName: vim-tmux-t-ut}
-ascii:
-    - {fileName: 2017-03-27-tmux-ascii-control}
 study:
     - {fileName: 2017-04-02-jwp-00-prepare}
     - {fileName: 2017-04-03-jwp-01}
@@ -191,6 +183,8 @@ game:
     - {fileName: TETRIS-EFFECT}
 aheui:
     - {fileName: 2017-07-14-aheui-explained}
+TIL:
+    - {fileName: 2017-08-23-0.30000000000000004}
 design-pattern:
     - {fileName: abstract-factory-pattern}
     - {fileName: adapter-pattern}
@@ -545,6 +539,7 @@ fish:
     - {fileName: fish-shell}
 terminal:
     - {fileName: fish-shell}
+    - {fileName: tmux-c-dash}
 binary:
     - {fileName: floating-point}
     - {fileName: gray-code}
@@ -764,6 +759,9 @@ trouble-shooting:
     - {fileName: til}
     - {fileName: trouble-shooting-node-7-install}
     - {fileName: vim-conceallevel}
+tmux:
+    - {fileName: tmux-c-dash}
+    - {fileName: vim-tmux-t-ut}
 toml:
     - {fileName: TOML}
 data-format:
