@@ -3,7 +3,7 @@ layout  : wiki
 title   : 최대공약수와 최소공배수
 summary : Greatest Common Divisor, Least Common Multiple
 date    : 2018-10-26 11:33:33 +0900
-updated : 2019-02-21 18:06:38 +0900
+updated : 2019-11-05 03:55:05 +0900
 tag     : math
 toc     : true
 public  : true
@@ -116,6 +116,18 @@ func Gcd(a, b int) int {
         return b
     }
     return Gcd(b, a%b)
+}
+```
+
+* 다음과 같이 작성해도 된다.
+
+```go
+func Gcd(a, b int) int {
+    if b == 0 {
+        return a
+    }
+    r := a % b
+    return Gcd(b, r)
 }
 ```
 
