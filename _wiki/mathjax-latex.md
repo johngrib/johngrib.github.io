@@ -3,7 +3,7 @@ layout  : wiki
 title   : MathJax로 LaTeX 사용하기
 summary :
 date    : 2017-11-28 22:56:29 +0900
-updated : 2017-12-23 18:18:43 +0900
+updated : 2019-11-04 22:13:47 +0900
 tag     : latex
 toc     : true
 public  : true
@@ -13,11 +13,11 @@ latex   : true
 * TOC
 {:toc}
 
-## 0. 개요
+## 개요
 
 자신의 웹 페이지에서 LaTeX를 사용하고 싶다면 MathJax에서 제공하는 자바스크립트 라이브러리를 쓰면 된다.
 
-## 1. 설치 방법
+## 설치 방법
 
 [MathJax.org](https://www.mathjax.org/)의 [Getting Started](https://www.mathjax.org/#gettingstarted) 페이지에서 제공하는 설명대로 다음의 코드를 자신의 웹 페이지에 추가하면 된다.
 
@@ -27,7 +27,7 @@ latex   : true
 
 그러면 해당 웹 페이지에 있는 텍스트 중, `$``$`로 좌우가 감싸인 문자열은 LaTeX 문법으로 인식해, 수식으로 변환해준다.
 
-## 2. 수식 사용 예제
+## 수식 사용 예제
 
 * 간단한 제곱
 ```latex
@@ -81,7 +81,7 @@ $$
 \end{array}
 $$
 
-## 3. 도구
+## 도구
 
 * [detexify.kirelabs.org/classify.html](http://detexify.kirelabs.org/classify.html): 기호를 마우스로 그리면, 필기 인식으로 내가 찾는 기호와 유사한 기호의 목록과 latex 코드를 제안해준다. 매우 편리하다.
 
