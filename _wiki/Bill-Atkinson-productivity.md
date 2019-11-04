@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : 빌 앳킨슨(Bill Atkinson)의 생산성
-summary : 프로그램을 6배 빠르게 하고, 보고서에 -2000 줄을 작성했다고 써서 냈다.
+summary : 프로그램을 6배 빠르게 하고, 보고서에 -2000 줄을 작성했다고 써내다
 date    : 2018-02-08 12:06:18 +0900
-updated : 2018-02-08 12:08:52 +0900
+updated : 2019-11-05 03:14:16 +0900
 tag     : story Bill-Atkinson Steve-Jobs
 toc     : true
 public  : true
@@ -28,7 +28,6 @@ A reporter asked Steve Jobs, “How many man-years did it take to write Quick Dr
 
 스티브 잡스는 빌 앳킨슨의 1년이 평범한 프로그래머 6명의 1년과 맞먹는다고 생각했던 것이다.
 
-[www.computerhistory.org/atchm/macpaint-and-quickdraw-source-code](http://www.computerhistory.org/atchm/macpaint-and-quickdraw-source-code/ )
 
 ## 프로그래머 생산성 측정 방법
 
@@ -44,9 +43,8 @@ When the Lisa team was pushing to finalize their software in 1982, project manag
 
 몇 주 후 부터 관리자들은 문제의 양식을 작성하라는 요구를 포기했고 그는 상황을 흐뭇하게 받아들였다.
 
-[www.computerhistory.org/atchm/macpaint-and-quickdraw-source-code](http://www.computerhistory.org/atchm/macpaint-and-quickdraw-source-code/ )
 
 ## Links
 
-* [www.computerhistory.org/atchm/macpaint-and-quickdraw-source-code](http://www.computerhistory.org/atchm/macpaint-and-quickdraw-source-code/ )
-* [www.computerhistory.org/atchm/macpaint-and-quickdraw-source-code](http://www.computerhistory.org/atchm/macpaint-and-quickdraw-source-code/ )
+* [MacPaint and QuickDraw Source Code](http://www.computerhistory.org/atchm/macpaint-and-quickdraw-source-code/ )
+
