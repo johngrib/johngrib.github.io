@@ -3,7 +3,7 @@ layout  : wiki
 title   : 헐리우드 원칙(Hollywood Principle)
 summary : "Do not call us, we call You."
 date    : 2019-08-31 13:30:16 +0900
-updated : 2019-08-31 16:29:20 +0900
+updated : 2019-11-04 23:54:58 +0900
 tag     : 
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 기원
+## 기원
 
 헐리우드에서 오디션에 실패한 배우들이 듣던 말이라고 한다.
 
@@ -27,9 +27,9 @@ Our heroine could have had any number of good jobs behind a desk, but her passio
 
 [출처](https://www.barrypopik.com/index.php/new_york_city/entry/dont_call_us_well_call_you/ )
 
-# Inversion of Control 과의 관계
+## Inversion of Control 과의 관계
 
-## GoF의 디자인 패턴
+### GoF의 디자인 패턴
 
 헐리우드 원칙은 "GoF의 디자인 패턴"의 [[template-method-pattern]]{템플릿 메서드 패턴} 챕터에서 찾아볼 수 있다. GoF는 **inverted control**이라는 표현을 쓴다.
 
@@ -49,7 +49,7 @@ This refers to how a parent class calls the operations of a subclass and not the
 1960년대 미국에서 면접관들이 쓰기 시작한 말인데,
 나중에 극장에서 배우들의 오디션을 보고 거절할 때 더 많이 써 유명해졌다.
 
-## Michael Mattson의 1996년 논문
+### Michael Mattson의 1996년 논문
 
 한편 Inversion of Control 단어가 처음 등장했다고 하는 Michael Mattson의 1996년 논문 [Object-Oriented Frameworks: A survey of methodological issues][o-o-framework]의 Conclusions (98쪽) 부분을 읽어보면 다음과 같은 문단이 있다.
 
@@ -58,7 +58,7 @@ The major difference between an object-oriented framework and a class library is
 <br/>
 객체지향 프레임워크와 클래스 라이브러리의 큰 차이점은 프레임워크가 애플리케이션 코드를 호출한다는 것입니다. 일반적으로는 애플리케이션 코드가 클래스 라이브러리를 호출합니다. 이러한 제어의 역전(inversion of control)은 때때로 헐리우드 원칙이라고도 합니다. "우리에게 전화(call)하지 마세요. 우리가 당신을 부를(call) 것입니다".
 
-## Head First Design Patterns
+### Head First Design Patterns
 
 헤드 퍼스트 디자인 패턴의 템플릿 메소드 패턴 챕터를 보면 굉장히 친절한 설명이 있다.
 
@@ -72,12 +72,12 @@ The major difference between an object-oriented framework and a class library is
 헐리우드 원칙을 사용하면, 저수준 구성요소에서 시스템에 접속을 할 수는 있지만, 언제 어떤 식으로 그 구성요소들을 사용할지는 고수준 구성요소에서 결정하게 됩니다.
 즉, 고수준 구성요소에서 저수준 구성요소에게 "먼저 연락하지 마세요. 제가 먼저 연락 드리겠습니다"라고 얘기를 하는 것과 같죠.
 
-# 함께 읽기
+## 함께 읽기
 
 * [[spring-ioc]]{Inversion of Control}
 * [[template-method-pattern]]{템플릿 메소드 패턴}
 
-# 참고문헌
+## 참고문헌
 
 * 웹 문서
     * [Phrase Finder](https://www.phrases.org.uk/meanings/dont-call-us.html )
