@@ -940,7 +940,7 @@ discrete-math-linear-congruences:
     summary: 'Linear Congruences'
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-linear-congruences
-    updated: '2019-03-07 21:44:09 +0900'
+    updated: '2019-11-06 08:02:30 +0900'
     children: []
 discrete-math-matrices:
     type: wiki
