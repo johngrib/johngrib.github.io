@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) Data Abstraction and Hierarchy by Barbara Liskov 1988
 summary : 바바라 리스코프의 1988년 논문을 읽고 요약한다
 date    : 2019-10-06 12:00:14 +0900
-updated : 2019-10-25 22:18:16 +0900
+updated : 2019-11-05 22:17:00 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -18,7 +18,7 @@ latex   : false
 * LSP의 기원이 된 논문이라 하니 관심이 생겨 읽어보았는데, 아직까지 널리 쓰이는 개념들이 등장해서 무척 재미있게 읽었다.
     * 제네릭, 함수 전달 등등
 
-# ABSTRACT
+## ABSTRACT
 
 **개요**
 
@@ -26,7 +26,7 @@ latex   : false
 * 상속은 데이터 추상화의 한 구현을 다른 계층과 관계지을 수 있다.
 * 이 논문은 프로그램 개발 측면에서 계층 구조의 유용성을 조사한다. 그리고 데이터 추상화가 더 중요한 아이디어이긴 하지만, 계층 구조는 일부 상황에서 더욱 유용하다는 결론을 내린다.
 
-# 1. Introduction
+## 1. Introduction
 
 * 설계의 중요한 목표: 변화하는 요구 사항을 지원하기 위한 유지보수를 단순화할 수 있는 프로그램 구조를 알아내는 것.
 * 데이터 추상화는 이 목표를 달성하는 좋은 방법.
@@ -42,7 +42,7 @@ latex   : false
 * 5장: 타입 계층을 구현할 때 발생하는 몇 가지 문제들.
 * 6장: 결론
 
-# 2. Data Abstraction
+## 2. Data Abstraction
 
 프로그래밍 추상화의 목적은 동작(behavior)과 구현(implementation)을 분리하는 것이다.
 
@@ -77,7 +77,7 @@ latex   : false
     * Parnas가 주장한 정보 은닉(information hiding)과 관련이 있다.
 
 
-## 2.1. Locality
+### 2.1. Locality
 
 스펙(specification)과 캡슐화(encapsulation)에 의해 지원되는 추상화는 프로그램 내에서의 지역성(locality)을 제공한다.
 
@@ -101,7 +101,7 @@ latex   : false
 * 프로그램이 발전하면서 발생하는 변경을 데이터 추상화 안에 캡슐화하여, 최소화할 수 있다.
 
 
-## 2.2. Linguistic Support for Data Abstraction
+### 2.2. Linguistic Support for Data Abstraction
 
 * 데이터 추상화는 여러 언어에서 지원된다.
 * 최초의 언어는 Simula 67.
@@ -123,7 +123,7 @@ Smalltalk에서는 데이터 추상화를 위해 클래스를 구현한다.
 이후 CLU와 Smalltalk의 간단한 비교.
 
 
-# 3. Inheritance and Hierarchy
+## 3. Inheritance and Hierarchy
 
 이 섹션에서는 상속 및 계층 구조를 지원하는 방법을 다룬다.
 
@@ -132,7 +132,7 @@ Smalltalk에서는 데이터 추상화를 위해 클래스를 구현한다.
     * 구현 계층
     * 타입 계층
 
-## 3.1. Inheritance
+### 3.1. Inheritance
 
 상속이 있는 언어에서 데이터 추상화는 서로 관계 있는 여러 부분으로 구현될 수 있다.
 
@@ -154,14 +154,14 @@ Smalltalk에서는 데이터 추상화를 위해 클래스를 구현한다.
 * 캡슐화를 위반할 때의 편리한 점도 있긴 하지만 바람직하지는 않다.
 
 
-## 3.2. Implementation Hierarchy
+### 3.2. Implementation Hierarchy
 
 상속의 구현
 
 * 기존의 다른 타입과 유사한 데이터 타입을 구현하는 기술.
 * 중복 작업을 수행하는 방법: 추상 타입을 다른 타입의 표현으로 사용하는 것.
 
-## 3.3. Type Hierarchy
+### 3.3. Type Hierarchy
 
 * 타입 계층은 서브 타입과 수퍼 타입으로 이루어진다.
 * 하위 타입은 수퍼 타입의 모든 동작과 추가 기능을 이어받는다.
@@ -196,14 +196,14 @@ S는 T의 하위 타입이다.
 
 상속 메커니즘을 사용해 서브 타입 계층을 구현할 수 잇다.
 
-# 4. Benefits of Type Hierarchy
+## 4. Benefits of Type Hierarchy
 
 데이터 추상화는 강력한 도구.
 
 * 타입 계층은 데이터 추상화에 유용하다.
 * 이 섹션에서는 프로그램 설계 개발에서 서브 타입을 사용하는 방법과, 라이브러리 구성의 사용에 대해 알아본다.
 
-## 4.1. Incremental Design
+### 4.1. Incremental Design
 
 * 데이터 추상화는 설계의 진행에 따라 점진적으로 개발된다.
 * 디자인의 초기 단계에서는 데이터 추상화 작업의 일부와 동작을 일부만 알 수 있다.
@@ -216,7 +216,7 @@ S는 T의 하위 타입이다.
     * 의사 결정 과정을 계층 구조에 나타내어 혼란을 피할 수 있다.
 * 보통 마지막 서브 타입을 개발하며 디자인이 끝나게 된다.
 
-## 4.2. Related Types
+### 4.2. Related Types
 
 서브 타입의 두 번째 용도는 관계형 타입(related types).
 
@@ -230,7 +230,7 @@ S는 T의 하위 타입이다.
 * 개발하다 관계가 만들어지는 경우
     * 이런 경우에는 계층 구조가 올바른 방법이 아닐 수 있다.
 
-## 4.3. Organizing a Type Library
+### 4.3. Organizing a Type Library
 
 계층 구조는 타입 라이브러리를 구성할 때 유용하다.
 
@@ -240,7 +240,7 @@ S는 T의 하위 타입이다.
 * 전체 라이브러리를 단일 루트에서 시작되는 것으로 치고, 익스플로러를 제공하는 방법을 쓰면 라이브러리 검색이 편할 것이다.
 
 
-# 5. Type Hierarchy and Inheritance
+## 5. Type Hierarchy and Inheritance
 
 프로그래밍 언어에서 타입 계층 구조를 지원하는지 아닌지는 필수적인 것은 아니다.
 
@@ -249,7 +249,7 @@ S는 T의 하위 타입이다.
     * 데이터 추상화를 지원하는 모든 언어가 여기에 적합하다.
 * 그러나 관계형 타입(related types)에는 언어가 특수한 지원을 해 줄 필요가 있다.
 
-## 5.1. Polymorphism
+### 5.1. Polymorphism
 
 > A polymorphic procedure or data abstraction is one that works for many different types. For example, consider a procedure that does sorting. In many languages, such a procedure would be implemented to work on an array of integers; later, if we needed to sort an array of strings, another procedure would be needed. This is unfortunate. The idea of sorting is independent of the particular type of element in the array, provided that it is possible to compare the elements to determine which ones are smaller than which other ones. We ought to be able to implement one sort procedure that works for all such types. Such a procedure would be polymorphic.
 
@@ -294,12 +294,12 @@ sort = proc [T: type] (a: array[T])
 (물론 이 해법은 Smalltalk에서는 잘 작동하지 않는다. Smalltalk에서 프로시저는 개별적으로 정의할 수 없기 때문이다.)
 
 
-## 5.2. Multiple Implementations
+### 5.2. Multiple Implementations
 
 * 동일한 타입의 여러 구현을 갖는 것은 종종 유용하다.
 * 동일한 프로그램 내에서 같은 타입이지만 다른 표현의 객체를 사용하는 것이 바람직할 때가 있다.
 
-# 6. Conclusions
+## 6. Conclusions
 
 추상화, 특히 데이터 추상화는 요구 사항이 변경됨에 따라 유지보수가 용이한 프로그램을 개발하는 데에 있어 중요한 기술이다. 데이터 추상화는 미래에 변경될 수 있는 복잡한 대상(자료 구조)을 숨기므로 특히 중요하다고 할 수 있다.
 추상화를 통해 데이터를 사용하는 프로그램에 영향을 주지 않고 데이터의 표현을 지역적으로(locally) 변경할 수 있다.
@@ -327,12 +327,12 @@ sort = proc [T: type] (a: array[T])
 게다가 때때로 상속은 타입 계층 구조를 표현하기 위해 필요하며, 그렇기 때문에 프로그래밍 언어에서 제공하는 유용한 메커니즘이다.
 
 
-# Links
+## Links
 
 * [Data Abstraction and Hierarchy][pdf]
 
 
-# 주석
+## 주석
 
 [pdf]: https://pdfs.semanticscholar.org/36be/babeb72287ad9490e1ebab84e7225ad6a9e5.pdf
 
