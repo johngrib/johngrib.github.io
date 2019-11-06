@@ -377,6 +377,9 @@ regenerate: true
     * [[java-gc-zgc]]
     * [[java-g1gc]]
 
+* [[for-craftsmanship]]
+    * [[precision-of-number]]
+
 ---
 
 # blog

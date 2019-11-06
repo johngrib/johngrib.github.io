@@ -1278,6 +1278,14 @@ floating-point:
     url: /wiki/floating-point
     updated: '2018-10-29 11:40:34 +0900'
     children: []
+for-craftsmanship:
+    type: wiki
+    title: '장인정신을 위하여'
+    summary: ""
+    parent: index
+    url: /wiki/for-craftsmanship
+    updated: '2019-11-06 21:42:38 +0900'
+    children: [precision-of-number]
 frac1e:
     type: wiki
     title: 'n개의 제비뽑기에 n번 도전'
@@ -2325,6 +2333,14 @@ Postel-s-law:
     parent: proverb
     url: /wiki/Postel-s-law
     updated: '2018-01-07 18:20:48 +0900'
+    children: []
+precision-of-number:
+    type: wiki
+    title: '수의 정밀도'
+    summary: '실제로 갖고 있지 않은 정보를 창조하면 안된다'
+    parent: for-craftsmanship
+    url: /wiki/precision-of-number
+    updated: '2019-11-06 21:43:23 +0900'
     children: []
 primitive-roots:
     type: wiki
