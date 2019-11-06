@@ -3,7 +3,7 @@ layout  : wiki
 title   : 단위
 summary : 
 date    : 2019-02-22 06:53:06 +0900
-updated : 2019-02-22 07:55:52 +0900
+updated : 2019-11-06 21:21:12 +0900
 tag     : unit
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 접두어
+## 접두어
 
 | 접두어 | 기호 | $$10^n$$     | 가까운 $$2^n$$ | 읽기     | 읽기(한국어)  |
 |--------|------|--------------|----------------|----------|---------------|
@@ -40,7 +40,7 @@ latex   : true
 | yotta  | Y    | $$10^{24}$$  | $$2^{80}$$     | 요타     | 억조          |
 
 
-# Links
+## Links
 
 * [큰 수의 이름(wikipedia)](https://ko.wikipedia.org/wiki/%ED%81%B0_%EC%88%98%EC%9D%98_%EC%9D%B4%EB%A6%84 )
 
