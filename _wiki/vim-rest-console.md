@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim-rest-console 사용법
 summary : vim을 cURL 클라이언트로 사용하자
 date    : 2018-04-12 21:41:12 +0900
-updated : 2019-11-07 21:44:35 +0900
+updated : 2019-11-07 22:00:01 +0900
 tag     : vim http
 toc     : true
 public  : true
@@ -15,7 +15,10 @@ latex   : false
 
 ## 개요
 
-HTTP 메시지를 보내고 받을 수 있다.
+* HTTP 메시지를 보내고 받을 수 있다.
+* HTTP raw 포맷과 비슷하게 각 요청을 만들 수 있다는 장점이 있다.
+
+포스트맨 같은 API 클라이언트로 사용할 수도 있지만, 텍스트 파일로 관리하기 때문에 git 과의 궁합이 좋다. rest 파일을 잘 작성하면 자체로 개발에 도움이 되는 문서나 API 문서의 역할도 할 수 있다.
 
 ## 설치 방법
 
@@ -63,17 +66,46 @@ PUT /put
 * 커서를 각 항목 위에 놓고 `<C-j>`를 입력하면, 해당 문단에 작성해 둔 메시지로 리퀘스트를 보낸다.
 * 리스폰스를 받으면 오른쪽에 `vs`를 열고 보여준다.
 
-## 트리거 키 변경
+## 설정
+
+### 트리거 키 변경
 
 다음과 같이 변경해주면 된다.
 
-```
+```viml
 let g:vrc_trigger = '<C-k>'
 ```
 
-## 문제 해결
+### curl 옵션 설정
 
-### json 결과 출력에 formatting이 안 되는 문제
+다음과 같이 curl에 기본으로 제공할 옵션을 정의할 수 있다.
+
+```viml
+let g:vrc_curl_opts = {
+            \ '-s': '',
+            \ '-D -': '',
+            \}
+```
+
+### 실제로 실행하는 curl 명령어 함께 보기
+
+다음 옵션을 `1`로 설정해주면 리퀘스트를 보낼 때마다 실제 실행하는 `curl` 명령어와 그 옵션들이 화면에 나타난다.
+
+```viml
+let g:vrc_show_command = 1
+```
+
+curl을 잘 쓰고 싶은 사람에게는 최고의 옵션이다.
+
+### response 결과 포매팅
+
+```viml
+let s:vrc_auto_format_response_patterns = {
+            \   'json': 'jq',
+            \}
+```
+
+### json 결과 출력에 formatting이 안 되는 문제 해결
 
 vim-rest-console은 결과 출력의 포매팅을 위해 다음과 같은 옵션을 디폴트로 제공하고 있다.
 
@@ -86,7 +118,7 @@ let s:vrc_auto_format_response_patterns = {
 
 하지만 막상 실행해 보면 다음과 같이 표기되며, 포매팅이 안 되는 경우가 있다.
 
-```json
+```
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   129  100   129    0     0    146      0 --:--:-- --:--:-- --:--:--   146
@@ -119,4 +151,5 @@ let g:vrc_curl_opts = {
 
 ## Links
 
-* [github.com/vim-rest-console](https://github.com/diepm/vim-rest-console )
+* [vim rest console](https://github.com/diepm/vim-rest-console )
+
