@@ -2141,7 +2141,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [cleaning-tile-cycle, hhkb-jp-tmk, my-bookshelf, my-keyboard, my-study-method, random-lunch]
+    children: [cleaning-tile-cycle, hhkb-jp-tmk, my-bookshelf, my-keyboard, my-study-method, preserve-brain, random-lunch]
 my-study-method:
     type: wiki
     title: '나의 공부 방법'
@@ -2341,6 +2341,14 @@ precision-of-number:
     parent: for-craftsmanship
     url: /wiki/precision-of-number
     updated: '2019-11-06 21:43:23 +0900'
+    children: []
+preserve-brain:
+    type: wiki
+    title: '뇌를 건강하게 유지하는 실천 원칙'
+    summary: ""
+    parent: my-lifehack
+    url: /wiki/preserve-brain
+    updated: '2019-11-07 22:36:51 +0900'
     children: []
 primitive-roots:
     type: wiki
