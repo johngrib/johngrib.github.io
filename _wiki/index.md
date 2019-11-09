@@ -271,6 +271,7 @@ regenerate: true
         * [[git-alias]]
         * [[git-checkout-specific-files]]
     * [[Gradle]]
+    * [[intellij]]
     * [[mac-apps]]
         * [[hammerspoon]]
             * [[hammerspoon-tutorial-00]]

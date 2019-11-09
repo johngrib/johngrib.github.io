@@ -1710,6 +1710,14 @@ index:
     url: /wiki/index
     updated: null
     children: []
+intellij:
+    type: wiki
+    title: 'IntelliJ IDEA'
+    summary: ""
+    parent: tools
+    url: /wiki/intellij
+    updated: '2019-11-09 23:52:58 +0900'
+    children: []
 IP:
     type: wiki
     title: IP
@@ -2885,7 +2893,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [aws, command-line, Excel, git, Gradle, mac-apps, my-timer, useful-site, web-browser-extension]
+    children: [aws, command-line, Excel, git, Gradle, intellij, mac-apps, my-timer, useful-site, web-browser-extension]
 top:
     type: wiki
     title: 'top 명령어'
