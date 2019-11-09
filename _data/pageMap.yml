@@ -316,7 +316,7 @@ awk:
     summary: 'pattern-directed scanning and processing language'
     parent: programming-language
     url: /wiki/awk
-    updated: '2019-06-01 11:11:05 +0900'
+    updated: '2019-11-10 01:21:22 +0900'
     children: []
 aws:
     type: wiki

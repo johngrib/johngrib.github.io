@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2019-06-01 11:11:05 +0900
+updated : 2019-11-10 01:21:22 +0900
 tag     : command
 toc     : true
 public  : true
@@ -14,6 +14,17 @@ latex   : false
 {:toc}
 
 # Examples
+
+```sh
+awk '/search_pattern/ { action; }' file
+```
+
+## 필드 구분자 지정하기
+```sh
+$ awk -F':' '{ print $1 }' /etc/passwd  # 구분자를 : 로 지정
+$ awk -F'/' '{ print $1 }' /etc/passwd  # 구분자를 / 로 지정
+```
+
 ## sum 구하기
 ```sh
 $ awk '{s+=$1} END {print s}' test.txt  # ' 를 "로 쓰지 않도록 주의한다
