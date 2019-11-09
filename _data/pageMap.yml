@@ -2564,7 +2564,7 @@ secretary-problem:
     summary: '37% 법칙'
     parent: math
     url: /wiki/secretary-problem
-    updated: '2018-04-08 20:39:37 +0900'
+    updated: '2019-11-09 16:37:56 +0900'
     children: []
 sha256sum:
     type: wiki
