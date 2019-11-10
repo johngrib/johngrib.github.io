@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 
 date    : 2019-11-09 22:56:16 +0900
-updated : 2019-11-09 23:52:58 +0900
+updated : 2019-11-10 09:15:48 +0900
 tag     : 
 toc     : true
 public  : true
@@ -24,7 +24,7 @@ macOS의 경우 `~/Library/Preferences`에 있다.
 
 예를 들어 IntelliJ IDEA 2019.2의 경우 `~/Library/Preferences/IntelliJIdea2019.2`.
 
-참고: [](https://www.jetbrains.com/help/idea/tuning-the-ide.html#config-directory )
+참고: [Configuration directory](https://www.jetbrains.com/help/idea/tuning-the-ide.html#config-directory )
 
 ## VM 옵션 설정하기
 
