@@ -228,6 +228,7 @@ bash:
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
     - {fileName: random-lunch}
+    - {fileName: ripgrep}
     - {fileName: sdkman}
     - {fileName: sha256sum}
     - {fileName: sort}
@@ -261,6 +262,7 @@ command:
     - {fileName: lsof}
     - {fileName: openssl}
     - {fileName: phpbrew}
+    - {fileName: ripgrep}
     - {fileName: sdkman}
     - {fileName: sha256sum}
     - {fileName: sort}

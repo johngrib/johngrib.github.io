@@ -253,6 +253,7 @@ regenerate: true
         * [[my-bash-cheatsheet]]
         * [[openssl]]
         * [[phpbrew]]
+        * [[ripgrep]]
         * [[sdkman]]
         * [[sha256sum]]
         * [[sort]]

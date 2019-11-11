@@ -677,7 +677,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, sdkman, sha256sum, sort, tail, top, touch, uptime, yes]
+    children: [ag, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, sdkman, sha256sum, sort, tail, top, touch, uptime, yes]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2493,6 +2493,14 @@ RFC:
     parent: what
     url: /wiki/RFC
     updated: '2019-07-09 18:50:02 +0900'
+    children: []
+ripgrep:
+    type: wiki
+    title: 'ripgrep, rg'
+    summary: 'recursively search current directory for lines matching a pattern'
+    parent: command-line
+    url: /wiki/ripgrep
+    updated: '2019-11-11 22:42:25 +0900'
     children: []
 rouge-supported-languages:
     type: wiki
