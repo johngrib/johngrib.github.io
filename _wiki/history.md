@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : bash 명령어 history 다루기
+title   : bash history 다루기
 summary : 사용법 및 잡다한 팁 요약
 date    : 2018-09-01 18:01:04 +0900
-updated : 2018-10-14 10:12:24 +0900
+updated : 2019-11-11 23:23:28 +0900
 tag     : bash command
 toc     : true
 public  : true

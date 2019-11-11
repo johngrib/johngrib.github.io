@@ -1648,11 +1648,11 @@ hhkb-jp-tmk:
     children: []
 history:
     type: wiki
-    title: 'bash 명령어 history 다루기'
+    title: 'bash history 다루기'
     summary: '사용법 및 잡다한 팁 요약'
     parent: command-line
     url: /wiki/history
-    updated: '2018-10-14 10:12:24 +0900'
+    updated: '2019-11-11 23:23:28 +0900'
     children: []
 hollywood-principle:
     type: wiki
