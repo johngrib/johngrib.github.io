@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : ag, the silver searcher
-summary : A code-searching tool similar to ack, but faster.
+title   : ag
+summary : the silver searcher
 date    : 2018-12-27 22:01:47 +0900
-updated : 2019-01-06 22:57:10 +0900
+updated : 2019-11-11 23:24:48 +0900
 tag     : bash command
 toc     : true
 public  : true
