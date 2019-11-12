@@ -297,6 +297,7 @@ regenerate: true
     * [[trouble-shooting-node-7-install]]
     * [[vagrant-docker-get-start]]
 * [[Vim]]
+    * [[config-ideavim]]
     * [[my-wiki]]
     * [[two-views-of-vim]]
     * [[vim-auto-completion]]

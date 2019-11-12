@@ -718,6 +718,14 @@ CONCRETE-MATH:
     url: /wiki/CONCRETE-MATH
     updated: '2018-10-19 08:31:49 +0900'
     children: []
+config-ideavim:
+    type: wiki
+    title: 'IdeaVim 설정하기'
+    summary: '이거라도 쓰는 수 밖에 없다'
+    parent: Vim
+    url: /wiki/config-ideavim
+    updated: '2019-11-12 23:22:09 +0900'
+    children: []
 Continuous-Integration:
     type: wiki
     title: 'Continuous Integration(지속적 통합)'
@@ -3021,7 +3029,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [my-wiki, two-views-of-vim, vim-auto-completion, vim-coc, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
+    children: [config-ideavim, my-wiki, two-views-of-vim, vim-auto-completion, vim-coc, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
 vim-auto-completion:
     type: wiki
     title: 'vim 자동완성 기능 사용하기'
