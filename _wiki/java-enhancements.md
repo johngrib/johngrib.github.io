@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2019-10-27 16:32:48 +0900
+updated : 2019-11-12 23:23:41 +0900
 tag     : java
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# Java SE 13
+## Java SE 13
 
 2019-09-17 General Availability
 
@@ -21,7 +21,7 @@ latex   : true
 * [JDK 13 Documentation](https://docs.oracle.com/en/java/javase/13/ )
 * [JDK 13 (openjdk.java.net)](https://openjdk.java.net/projects/jdk/13/ )
 
-# Java SE 12
+## Java SE 12
 
 [OpenJDK 12](https://openjdk.java.net/projects/jdk/12/ )
 
@@ -34,21 +34,21 @@ latex   : true
 * [Abortable Mixed Collections for G1](https://openjdk.java.net/jeps/344 )
 * [Promptly Return Unused Committed Memory from G1](https://openjdk.java.net/jeps/346 )
 
-## Shenandoah GC
+### Shenandoah GC
 
 * [Shenandoah GC](https://wiki.openjdk.java.net/display/shenandoah/Main )
 
-# Java SE 11
+## Java SE 11
 
 [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/ )
 
-# Java SE 10
+## Java SE 10
 
 [OpenJDK 10](https://openjdk.java.net/projects/jdk/10/ )
 
 * [JEP 286: Local-Variable Type Inference](https://openjdk.java.net/jeps/286 )
 
-# Java SE 9
+## Java SE 9
 
 [2017-09 What's New in Oracle JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm#JSNEW-GUID-5B808B2F-E891-43CD-BF6E-78787E547071 )
 
@@ -57,7 +57,7 @@ latex   : true
 * Project Jigsaw
 * JShell
 
-# Java SE 8
+## Java SE 8
 
 [What's New in JDK 8](https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html )
 
@@ -82,19 +82,19 @@ latex   : true
     * [[java8-why-permgen-removed]]{Removal of PermGen}
 * ...
 
-# Java SE 7
+## Java SE 7
 
 [2011-07-28](https://openjdk.java.net/projects/jdk7/ )
 
 [Java SE 7 Update Release Notes](https://www.oracle.com/technetwork/java/javase/7u-relnotes-515228.html )
 
-# Java SE 6
+## Java SE 6
 
 [2004-09-30 릴리즈](https://web.archive.org/web/20080207083457/http://www.sun.com/smi/Press/sunflash/2004-09/sunflash.20040930.1.xml )
 
 [Highlights of Technology Changes in Java SE 6](https://www.oracle.com/technetwork/java/javase/features-141434.html )
 
-# J2SE 5.0
+## J2SE 5.0
 
 [New Features and Enhancements J2SE 5.0](https://docs.oracle.com/javase/1.5.0/docs/relnotes/features.html )
 
@@ -103,32 +103,32 @@ latex   : true
     * [(PDF) GJ: Extending the Java TM programm](http://homepages.inf.ed.ac.uk/wadler/gj/Documents/gj-tutorial.pdf )
     * [(PDF) Adding Wildcards to the Java Programming Language](http://www.bracha.org/wildcards.pdf )
 
-# J2SE 1.4
+## J2SE 1.4
 
 [2002-02-06 릴리즈](https://web.archive.org/web/20070815095726/http://www.sun.com/smi/Press/sunflash/2002-02/sunflash.20020206.5.xml )
 
-# J2SE 1.3
+## J2SE 1.3
 
 [2000-05-08 릴리즈](https://web.archive.org/web/20070817053430/http://www.sun.com/smi/Press/sunflash/2000-05/sunflash.20000508.3.xml )
 
-# J2SE 1.2
+## J2SE 1.2
 
 [1998-12-08 릴리즈](https://web.archive.org/web/20070816170028/http://www.sun.com/smi/Press/sunflash/1998-12/sunflash.981208.9.xml )
 
-# JDK 1.1
+## JDK 1.1
 
 [1997-02-19 릴리즈](https://web.archive.org/web/20080210044125/http://www.sun.com/smi/Press/sunflash/1997-02/sunflash.970219.0001.xml )
 
-# JDK 1.0
+## JDK 1.0
 
 [1996-01-23 릴리즈](https://web.archive.org/web/20070310235103/http://www.sun.com/smi/Press/sunflash/1996-01/sunflash.960123.10561.xml )
 
-# 참고문헌
+## 참고문헌
 
 * [Java Programming Language Enhancements (JAVA SE 6)][java6-enhance]
 * [Java version history (wikipedia)][wiki]
 
-# 주석
+## 주석
 
 [java6-enhance]: https://docs.oracle.com/javase/6/docs/technotes/guides/language/enhancements.html
 [wiki]: https://en.wikipedia.org/wiki/Java_version_history
