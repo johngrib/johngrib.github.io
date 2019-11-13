@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : say 명령어
-summary : 음성으로 문자열을 읽게 한다
+summary : macOS에서 음성으로 문자열을 읽게 한다
 date    : 2019-11-13 21:57:34 +0900
-updated : 2019-11-13 22:23:11 +0900
+updated : 2019-11-13 22:27:28 +0900
 tag     : command
 toc     : true
 public  : true
