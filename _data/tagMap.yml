@@ -263,6 +263,7 @@ command:
     - {fileName: openssl}
     - {fileName: phpbrew}
     - {fileName: ripgrep}
+    - {fileName: say}
     - {fileName: sdkman}
     - {fileName: sha256sum}
     - {fileName: sort}

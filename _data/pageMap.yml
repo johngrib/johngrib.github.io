@@ -677,7 +677,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, sdkman, sha256sum, sort, tail, top, touch, uptime, yes]
+    children: [ag, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, say, sdkman, sha256sum, sort, tail, top, touch, uptime, yes]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2541,6 +2541,14 @@ rule-of-succession:
     parent: math
     url: /wiki/rule-of-succession
     updated: '2018-04-24 22:03:17 +0900'
+    children: []
+say:
+    type: wiki
+    title: 'say 명령어'
+    summary: '음성으로 문자열을 읽게 한다'
+    parent: command-line
+    url: /wiki/say
+    updated: '2019-11-13 22:23:11 +0900'
     children: []
 Schopenhauer-s-Law-Of-Entropy:
     type: wiki

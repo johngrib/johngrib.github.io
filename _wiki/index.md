@@ -254,6 +254,7 @@ regenerate: true
         * [[openssl]]
         * [[phpbrew]]
         * [[ripgrep]]
+        * [[say]]
         * [[sdkman]]
         * [[sha256sum]]
         * [[sort]]
