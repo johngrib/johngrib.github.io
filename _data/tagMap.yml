@@ -87,6 +87,7 @@ study:
     - {fileName: 2017-05-29-jwp-15}
     - {fileName: 2017-06-01-jwp-16}
     - {fileName: grow-together}
+    - {fileName: my-mac-os-terminal}
     - {fileName: my-study-method}
     - {fileName: study}
 jwp:
@@ -542,6 +543,7 @@ fish:
     - {fileName: fish-shell}
 terminal:
     - {fileName: fish-shell}
+    - {fileName: my-mac-os-terminal}
     - {fileName: tmux-c-dash}
 binary:
     - {fileName: floating-point}

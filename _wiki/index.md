@@ -366,6 +366,7 @@ regenerate: true
     * [[my-bookshelf]]
     * [[my-keyboard]]
     * [[my-study-method]]
+    * [[my-mac-os-terminal]]
     * [[preserve-brain]]
     * [[random-lunch]]
 * [[summary]]
