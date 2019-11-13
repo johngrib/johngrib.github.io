@@ -3,7 +3,7 @@ layout  : wiki
 title   : say 명령어
 summary : macOS에서 음성으로 문자열을 읽게 한다
 date    : 2019-11-13 21:57:34 +0900
-updated : 2019-11-13 22:27:28 +0900
+updated : 2019-11-13 22:36:32 +0900
 tag     : command
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## Examples
+## Examples - macOS
 
 ### 말하기 명령
 ```sh
@@ -52,3 +52,8 @@ $ say -o who.m4a --data-format=alac Hello, World.
 $ say -o who.caf --data-format=LEF32@8000 Hello, World
 $ say -o who.aac '누가 기침소리를 내었는가?' -v Yuna
 ```
+
+## Ubuntu
+
+[Ubuntu에는 espeak 라는 명령이 있다고 한다.](https://superuser.com/questions/93691/mac-os-x-say-command-in-ubuntu )
+
