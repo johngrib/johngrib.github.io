@@ -1068,7 +1068,7 @@ email-validation:
     summary: 'Verify email address format'
     parent: index
     url: /wiki/email-validation
-    updated: '2019-09-05 18:21:40 +0900'
+    updated: '2019-11-13 21:42:06 +0900'
     children: []
 encryption:
     type: wiki

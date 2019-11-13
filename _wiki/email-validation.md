@@ -3,7 +3,7 @@ layout  : wiki
 title   : 이메일 주소 형식 검증하기
 summary : Verify email address format
 date    : 2019-04-11 22:05:44 +0900
-updated : 2019-09-05 18:21:40 +0900
+updated : 2019-11-13 21:42:06 +0900
 tag     : email regex php
 toc     : true
 public  : true
@@ -16,7 +16,7 @@ latex   : false
 * 이메일 주소 검증 코드를 짤 일이 있어 작업한 기록을 남긴다.
 
 
-# 정규식을 얻어와 복붙하자
+## 정규식을 얻어와 복붙하자
 
 정규식을 일일이 작성하기는 귀찮은 노릇이니 [emailregex.com](http://emailregex.com/ )에서 정규식을 얻었다.
 
@@ -59,7 +59,7 @@ public function isValidAddress(string $address): bool
 }
 ```
 
-# 테스트 케이스도 작성하자
+## 테스트 케이스도 작성하자
 
 제대로 돌아가는지 확인하기 위해 kahlan을 써서 테스트 코드도 작성하였다.
 
@@ -130,7 +130,7 @@ describe('isValid', function() {
 });
 ```
 
-# 테스트 케이스가 실패하니 정규식을 고치자
+## 테스트 케이스가 실패하니 정규식을 고치자
 
 그런데 **with valid email addresses**의
 `email@123.123.123.123`, `email@[123.123.123.123]`에서 테스트가 실패한다!
@@ -161,7 +161,7 @@ private const EMAIL_REGEX = '/^'
 
 하지만 이걸로 끝일까?
 
-# IPv4, IPv6 도 검증 가능하도록 고치자
+## IPv4, IPv6 도 검증 가능하도록 고치자
 
 테스트 케이스는 통과하지만 추가한 두 줄을 잘 살펴보면 IP 주소를 제대로 표현하지 못한다는 것을 쉽게 알 수 있다.
 
@@ -260,7 +260,7 @@ context('with invalid email addresses', function(){
 });
 ```
 
-# php의 Filter 사용하기
+## php의 Filter 사용하기
 
 - `FILTER_VALIDATE_EMAIL`을 사용하면 위와 같이 복잡한 정규식을 사용하지 않아도 된다.
     - 이 필터는 [RFC 822](https://www.w3.org/Protocols/rfc822/ )를 따른다고 한다.
@@ -275,7 +275,7 @@ public function isValidAddress(string $address): bool
 
 
 
-# Links
+## Links
 
 * [RFC 4291](https://tools.ietf.org/html/rfc4291 ) - IP Version 6 Addressing Architecture
 * [RFC 5321](https://tools.ietf.org/html/rfc5321 ) - Simple Mail Transfer Protocol(SMTP)
