@@ -3,7 +3,7 @@ layout  : wiki
 title   : 널 오브젝트 패턴 (Null Object Pattern)
 summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
-updated : 2019-10-11 09:38:09 +0900
+updated : 2019-11-14 22:46:56 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 * 1996년 7월 28일 Bobby Woolf의 논문, The Null Object Pattern
 
-# 개요
+## 개요
 
 * Null 객체 패턴은 GoF의 디자인 패턴 목록에는 없는 패턴이다.
 * 하지만 코딩을 하다 보면 자연스럽게 터득해 사용하게 되는 기법이기도 하다.
@@ -45,7 +45,7 @@ public class NullNotify implements Notify {
 }
 ```
 
-# 클린 소프트웨어의 예제
+## 클린 소프트웨어의 예제
 
 클린 소프트웨어에는 null 객체 패턴을 단순하게 적용한 예제가 소개되어 있다.[^clean]
 
@@ -91,15 +91,15 @@ public interface Employee {
 * 여기에서 존재하지 않는 직원을 익명 내부 클래스로 만드는 것은 싱글 인스턴스를 보장하는 방법이다.
 * `NullEmployee` 클래스를 명시적으로 만들지 않고도 해결하는 방법이다.
 
-# 널 객체 패턴에 대한 인용
+## 널 객체 패턴에 대한 인용
 
-## 클린 소프트웨어
+### 클린 소프트웨어
 
 엉클 밥은 Null 객체 패턴에 대해 다음과 같이 언급한 바 있다.
 
 > 이 패턴은 종종 null 검사의 필요를 제거하고, 코드를 단순화하는 데 도움이 된다.[^clean]
 
-## 리팩토링
+### 리팩토링
 
 마틴 파울러는 "리팩토링"에서 Null 검사를 줄이는 방법으로 Null 객체의 사용을 소개한 바 있다.
 
@@ -115,7 +115,7 @@ public interface Employee {
 
 "문제를 감지하거나 찾기가 힘들어질 때도 있다"는 단점을 꼭 염두에 둘 것.
 
-## 테스트 주도 개발
+### 테스트 주도 개발
 
 켄트 벡은 "테스트 주도 개발"에서 다음과 같이 널 객체를 소개한다.
 
@@ -132,7 +132,7 @@ public interface Employee {
 그들은 분명, 생산적인 설계 토론이 어렵긴 하지만 배울 수 있는 기술이라는 것을 알지 못했다.)[^kent-null-object]
 
 
-# Bobby Woolf의 논문 번역
+## Bobby Woolf의 논문 번역
 
 * 논문인데도 글이 꽤 재미있고 웃긴다.
 * null 객체를 활용하는 다양한 사례를 소개하고 있어서 읽는 재미가 있을 뿐 아니라 공학적으로도 흥미로운 글이라고 생각한다.
@@ -140,7 +140,7 @@ public interface Employee {
     * [Simple Code](#simple-code)는 Smalltalk로 작성된 예제를 보여주는데, 내 번역이 엉망이라 이해하기 어려울 수 있다. 잘 이해가 안 간다면 [NullScope](#nullscope)를 먼저 읽는 것이 도움이 될 것이다.
 * 의역이 많은 관계로 내용을 정확히 파악하고 싶다면 원본 논문을 읽어보길 권한다.
 
-## Intent
+### Intent
 
 **의도**
 
@@ -148,13 +148,13 @@ _Provide a surrogate for another object that shares the same interface but does 
 
 같은 인터페이스를 공유하지만 아무 일도 하지 않는, 다른 객체를 대체할 수 있는 객체를 제공하세요. Null 객체는 "아무것도 하지 않는" 일에 대한 구현을 캡슐화하여 세부사항을 협력자에게 숨깁니다.
 
-## Also Known As
+### Also Known As
 
 **다른 이름**
 
 Stub, Active Nothing
 
-## Motivation
+### Motivation
 
 **동기**
 
@@ -226,7 +226,7 @@ NoController는 Null 객체 패턴의 한 예입니다. Null 객체 패턴은 �
 Null 객체 패턴의 핵심은 해당 타입의 모든 객체에 대한 인터페이스를 정의하는 추상 클래스라 할 수 있습니다.
 Null 객체가 이 추상 클래스의 서브 클래스로 구현되기 때문입니다. Null 객체가 추상 클래스의 인터페이스를 따르기 때문에, 이런 타입의 객체가 필요한 모든 곳에서 사용할 수 있게 됩니다.
 
-## Applicability
+### Applicability
 
 **활용성**
 
@@ -244,7 +244,7 @@ Null 객체가 이 추상 클래스의 서브 클래스로 구현되기 때문�
 * 아무 것도 하지 않는 것을 재사용하여, 다양한 클라이언트가 일관성 있게 같은 방식으로 작동하기를 바랄 때.
 * 아무 것도 하지 않는 것을 필요로 하는 모든 행동을 협력자 클래스 내에 캡슐화하고 싶을 때. 만약 해당 클래스의 몇몇 행동이 아무 것도 하지 않는다면, 클래스의 대부분의 행동은 아무 것도 하지 않게 됩니다.
 
-## Structure
+### Structure
 
 **구조**
 
@@ -259,7 +259,7 @@ Client ------> AbstractObject
             request       request  ---> "do nothing"
 ```
 
-## Participants
+### Participants
 
 **참여자**
 
@@ -289,7 +289,7 @@ Client ------> AbstractObject
     * "아무 것도 하지 않음"은 주관적인 기준이며, 클라이언트가 기대하는 행동에 의존한다. 가령 어떤 리퀘스트에 대해 null 결과를 돌려주는 방식으로 수행될 수도 있다.
     * 만약 아무 것도 하지 않을 방법이 여러 가지가 있다면, 하나 이상의 NullObject 클래스가 필요할 수도 있다.
 
-## Colaborations
+### Colaborations
 
 **협업 방법**
 
@@ -299,7 +299,7 @@ Client ------> AbstractObject
 만약 수신자가 RealObject이면 리퀘스트는 실제 행동으로 처리됩니다.
 만약 수신자가 NullObject이면 리퀘스트는 아무 일도 하지 않는 방식으로 처리되거나, null 결과를 돌려받게 됩니다.
 
-## Consequences
+### Consequences
 
 **결과**
 
@@ -324,7 +324,7 @@ nothing.
 * 여러 클라이언트가 null 객체가 아무 것도 하지 않는 것에 대해 동의하지 않는다면 구현이 곤란해질 수 있습니다.
 * null 객체는 항상 아무 일도 하지 않는 객체로 존재해야 합니다. null 객체는 실제 객체로 변환되면 안 됩니다.
 
-## Implementation
+### Implementation
 
 **구현**
 
@@ -350,7 +350,7 @@ There are several issues to consider when implementing the Null Object pattern:
 7. Null 객체는 특수한 상태(State)입니다. 즉 null 객체는 State 패턴의 특수한 경우로도 볼 수 있습니다. 일반적으로 각각의 ConcreteState가 적절한 상태가 아닐 경우에는 아무 일도 하지 않는 메소드를 갖곤 하기 때문입니다. 실제로 주어진 메소드는 대부분의 상태에서 무언가 유용한 일을 하지만, 어떤 특정한 상태에서는 아무 일도 하지 않도록 구현되기도 합니다. 특정 콘크리트 State가 아무 것도 하지 않거나 null을 리턴할 목적으로 대부분의 메소드를 구현하면 아무것도 수행하지 않는 것과 다름 없는 상태가 되고 null 객체가 됩니다. 예를 들어 로그인하지 않은 사용자를 표현하는 상태에서 사용자는 로그인만 할 수 있으므로, null 상태라 할 수 있습니다.
 8. null 객체 클래스는 믹스인이 아닙니다. null 객체는 클라이언트를 위한 협력자 역할을 하는 콘크리트 협력자 클래스입니다. null 동작은 아무 일도 하지 않는 동작이 필요한 객체와 믹스되도록 설계되지 않았습니다. null 객체는 아무런 동작도 하지 않을 수 있는 모든 동작을 협력자에게 위임하는 클래스를 위해 설계되었습니다.
 
-## Simple Code
+### Simple Code
 
 **간단한 예제 코드**
 
@@ -443,17 +443,17 @@ Notice how NullScope factors the special code out of the real NameScope classes 
 
 `NullScope`가 실제 `NameScope` 클래스(`StaticScope`와 `LocalScope`)에서 특별한 코드를 사용해 `NullScope`로 캡슐화하는 방법에 주목합시다. 이렇게 하면 특수한 테스트를 피하고, 일반적인 동작(`NameScope`)과 특수 동작(`NullScope`)과의 차이점을 쉽게 관찰할 수 있게 만들며, 재사용이 쉬워집니다.
 
-## Known Uses
+### Known Uses
 
 **잘 알려진 사용예**
 
-### NoController
+#### NoController
 
 > NoController, the Null Object class in the motivating example, is a class in the Controller hierarchy of VisualWorks Smalltalk. [VW95]
 
 VisualWorks Smalltalk의 Controller 계층에 있는 `NoController`.
 
-### NullDragMode
+#### NullDragMode
 
 > NullDragMode is a class in the DragMode hierarchy in VisualWorks Smalltalk. A DragMode is used to implement placement and dragging of visuals in the window painter. Subclasses represent different ways that dragging that can be done. (The DragMode hierarchy is an example of the Strategy pattern [GHJV95, page 315].) For example, an instance of CornerDragMode represents that one of the visual's resize handles is being dragged, so the visual should stay in the same place but its size should change. Alternatively, a SelectionDragMode means that the entire visual is being dragged, so its size should remain fixed but its position should follow the mouse.  
 A NullDragMode is a counterpart to CornerDragMode that represents an attempt to resize a visual that cannot be resized (such as a text label, whose fixed size is determined by the characters it contains and their font size). The various drag modes implement a method, dragObject:startingAt:inController:, which processes the dragging motion of the mouse. It uses a block to control how the dragging is done. In NullDragMode, this method uses an empty block that does nothing. Thus a NullDragMode responds to the mouse’s drag motions by doing nothing. [VW95]
@@ -463,13 +463,13 @@ A NullDragMode is a counterpart to CornerDragMode that represents an attempt to 
 `NullDragMode` 기능은 비주얼 아이템의 크기를 조절하는 `CornerDragMode`와 상충됩니다.
 `NullDragMode`는 크기 조절이 안 되는 비주얼 아이템(예: 폰트 사이즈와 텍스트의 길이에 따라 크기가 결정되는 텍스트 레이블)을 나타내기 때문입니다. 다양한 드래그 모드들이 마우스의 드래그 동작을 처리하는 `dragObject:startingAt:inController:` 메소드를 구현합니다. 그리고 이 모드들은 모두 마우스를 드래그할 때 나오는 네모를 사용해 작업을 처리합니다. 하지만 `NullDragMode`의 이 메소드만은 아무 일도 하지 않는 비어 있는 네모를 사용하여, `NullDragMode`는 마우스의 드래그 움직임에 대해 아무 일도 하지 않는 것으로 응답하게 됩니다.
 
-### NullInputManager
+#### NullInputManager
 
 > NullInputManager is a class in the InputManager hierarchy is VisualWorks Smalltalk. An InputManager provides a platform-neutral, object interface to platform events that may affect the handling of internationalized (foreign language) input. (Since it wraps the platform resources to give them a standard object interface, this is an example of the Adapter pattern [GHJV95, page 142].) Subclasses such as X11InputManager represent specific platforms. NullInputManager represents platforms which don’t support internationalization. The methods it implements do little if anything whereas their counterparts is X11InputManager do real work. [VW95]
 
 `NullInputManager`는 VisualWorks Smalltalk의 InputManager 계층에 있는 클래스입니다. `InputManager`는 플랫폼 중립적인 객체 인터페이스를 제공하여 국제화(외국어) 입력 처리를 핸들링할 수 있습니다(이 방식은 플랫폼 리소스를 래핑하여 표준적인 객체 인터페이스를 제공하므로, Adapter 패턴의 한 예라 할 수 있습니다). `X11InputManager`와 같은 서브클래스는 특정 플랫폼을 나타내는데, `NullInputManager`는 국제화를 지원하지 않는 플랫폼을 나타냅니다. `X11InputManager`가 구현하는 메소드는 실제로 작동하지만, `NullInputManager`가 구현하는 메소드는 아무것도 하지 않습니다.
 
-### NullScope
+#### NullScope
 
 > NullScope is a class in the NameScope hierarchy is VisualWorks Smalltalk. A NameScope represents the scope of a particular set of variables. What kind of variable it is (global, class level, or method level) defines what kind of NameScope it will use. For example, a StaticScope is assigned to global and class variables and a LocalScope is assigned to instance and temporary variables. Every scope has an outer scope. This is used to access variables whose scope is greater than the current level. It allows the compiler to warn the programmer if he is declaring a variable with the same name as another variable which has already been declared (usually in an outer scope). Thus NameScopes form a tree, with the global scope at the root and branches for class scopes that contain branches for method scopes.
 However, since all scopes have an outer scope, what is the global scope’s outer scope? It is a NullScope, a scope which never contains any variables. When looking for a variable declaration, each scope keeps looking in its outer scope until either it finds the declaration or until it hits a NullScope. NullScope knows to stop the search and answer that the variable apparently has not been declared (within the scope of the code that initiated the search). This could be handled as a special case in StaticScope, that if it is the global scope, then it should expect its outer scope to be nil, but the special case is coded more cleanly in the special class NullScope. This allows NullScope to be reused by clean and copy blocks, ones which are so simple that they have no outer scope. NullScope is implemented as a Singleton because the system never needs more than one instance [GHJV95, page 127]. [VW95]
@@ -483,14 +483,14 @@ However, since all scopes have an outer scope, what is the global scope’s oute
 이를 통해 `NullScope`를 외부 스코프가 없는 매우 간단한 clean과 copy 블록으로 재사용할 수 있습니다.
 `NullScope`의 인스턴스는 시스템이 두 개 이상 필요로 하지 않기 때문에 싱글톤으로 구현됩니다.
 
-### NullLayoutManager
+#### NullLayoutManager
 
 > The LayoutManager hierarchy in the Java AWT toolkit does not have a null object class but could use one such as NullLayout. A Container can be assigned a LayoutManager (an example of the Strategy pattern [GHJV95, page 315]). If a particular Container does not require a LayoutManager, the variable can be set to nil. Unfortunately, this means that Container’s code is cluttered with lots of checks for a nil LayoutManager. Container’s code would be simpler if it used a null object like NullLayoutManager instead of nil. [Gamma96]
 
 Java AWT 툴킷의 `LayoutManager` 계층에는 null 객체 클래스가 없지만, `NullLayout`이라 할 수 있는 것이 있습니다.
 하나의 Container는 `LayoutManager`에 할당할 수 있는데(Strategy 패턴의 예), 특정 Container에 `LayoutManager`가 필요하지 않다면 변수를 nil로 설정할 수 있습니다. 안타깝게도 이것은 Container의 코드가 LayoutManager가 nil인지 아닌지 체크하는 코드들로 복잡해지는 것을 의미합니다. Container 코드는 nil 대신 `NullLayoutManager`와 같은 null 객체를 사용하면 더 단순해질 수 있습니다.
 
-### Null_Mutex
+#### Null_Mutex
 
 > The Null_Mutex class is a mutual exclusion mechanism in the ASX (ADAPTIVE Service eXecutive) framework implemented in C++. The framework provides several mechanisms (e.g., Strategies [GHJV95, page 315]) for concurrency control. The Mutex class defines a non-recursive lock for a thread that will not call itself while the lock is established. The RW_Mutex class defines a lock that allows multiple simultaneous threads for reading but only one thread during a write. The Null_Mutex class defines a lock for a service that is always run in a single thread and does not contend with other threads. Since locking is not really necessary, Null_Mutex doesn’t really lock anything; its acquire and release methods do nothing. This avoids the overhead of acquiring locks when they’re not really needed. [Schmidt94]
 
@@ -502,7 +502,7 @@ Java AWT 툴킷의 `LayoutManager` 계층에는 null 객체 클래스가 없지�
 `Null_Mutex`의 잠금은 필요한 것이 아니기 때문에 `Null_Mutex`는 실제로는 아무것도 잠그지 않습니다.
 잠금과 릴리즈 메소드가 아무것도 하지 않는 것입니다. 이 방법으로 인해 실제로는 쓸모없는 잠금이 획득되는 오버헤드를 피할 수 있게 됩니다.
 
-### Null Lock
+#### Null Lock
 
 > Null Lock is a type of lock mode (e.g., State [GHJV95, page 305]) in VERSANT Object Database Management System. Three of the lock modes VERSANT uses are write lock, read lock, and null lock. Write lock blocks other write locks and read locks on the same object so that no one else can read or change the object while you’re changing it. Read lock blocks write locks but allows other read locks so that other people can read the object while you’re reading it but they can’t change it.
 Null lock does not block other locks and cannot be blocked by other locks. Thus it guarantees you immediate access to the object, even if someone else has already locked it, but it does not guarantee you that the object will be in a consistent state when you access it. Null lock is not really a lock because it doesn’t perform any locking, but it acts like a lock for operations that require some type of lock. [Versant95]
@@ -516,7 +516,7 @@ null 잠금은 다른 잠금을 차단하지 않으며, 다른 잠금에 의해�
 null 잠금은 잠금을 하지 않기 때문에 실제로는 잠금이 아니라 할 수 있습니다.
 그러나 잠금 타입이 필요한 경우에는 마치 잠금처럼 행동합니다.
 
-### NullIterator
+#### NullIterator
 
 > The Iterator pattern documents a special case called NullIterator [GHJV95, pages 67-68 and 262]. Each node in a tree might have an iterator for its children. Composite nodes would return a concrete iterator, but leaf nodes would return an instance of NullIterator. A NullIterator is always done with traversal; when asked isDone, it always returns true. In this way a client can always use an iterator to iterate over the nodes in a structure even when there are no more nodes.
 
@@ -527,7 +527,7 @@ Iterator 패턴에는 `NullIterator`라는 특수한 사례가 있습니다.
 이런 방식으로 클라이언트는 더 이상의 노드가 없는 경우에도 반복자를 사용하여
 트리 구조의 노드를 반복할 수 있습니다.
 
-### Z-Node
+#### Z-Node
 
 > Procedural languages have null data types that are like null objects. Sedgewick’s z-node is a dummy node that is used as the last node in a linked list. When a tree node requires a fixed number of child nodes but does not have enough children, he uses z-nodes as substitutes for the missing children. In a list, the z-node protects the delete procedure from needing a special test for deleting an item from an empty list. In a binary tree, a node without two children would need one or two null links, but the null z-node is used instead. This way a search algorithm can simply skip z-node branches; when it has run out of non- z-node branches, it knows the search did not find the item. In this way, z-nodes are used to avoid special tests the way null objects are. [Sedge88]
 
@@ -535,14 +535,14 @@ Iterator 패턴에는 `NullIterator`라는 특수한 사례가 있습니다.
 z-node가 아닌 브랜치를 모두 탐색했다면, 탐색을 통해 원하는 아이템을 찾지 못했다는 것입니다.
 이런 식으로 z-node는 null 객체와 같은 방법으로 특수한 테스트를 회피하는 데에 사용됩니다.
 
-### NULL Handler
+#### NULL Handler
 
 > The Decoupled Reference pattern shows how to access objects via Handlers so that their true location is hidden from the client. When a client requests an object that is no longer available, rather than let the program crash, the framework returns a NULL Handler. This Handler acts like other Handlers but fulfills requests by raising exceptions or causing error conditions. [Weibel96]
 
 Decoupled Reference 패턴은 클라이언트로부터 실제 위치를 숨기는 핸들러를 통해 객체에 엑세스하는 방법을 보여줍니다.
 클라이언트가 유효하지 않은 객체를 요청하면 프로그램이 크래쉬 상태로 빠지는 것이 아니라, 프레임워크가 null 핸들러를 리턴합니다. 이 핸들러는 다른 핸들러랑 비슷하게 작동하지만 예외나 에러 조건을 발생시키는 방식으로 리퀘스트를 처리합니다.
 
-## Related Patterns
+### Related Patterns
 
 **관련 패턴**
 
@@ -569,7 +569,7 @@ Bruce Anderson은 Null 객체 패턴에 대해 글을 쓴 바 있는데, 그 글
 
 `NullObject`는 CHECKS 패턴 언어의 Exceptional Value 패턴의 특수한 경우입니다. Exceptional Value는 예외적인 상황을 나타내는 데 사용되는 특별한 Wole Value(다른 패턴)입니다. 그것은 모든 메시지를 흡수하거나 Meaningless Behavior(다른 패턴)을 생성합니다. `NullObject`는 그러한 Exceptional Value 중의 하나에 해당됩니다.
 
-# 참고문헌
+## 참고문헌
 
 * 웹 문서
     * [The Null Object Pattern by Bobby Woolf 1996][pdf]
@@ -578,7 +578,7 @@ Bruce Anderson은 Null 객체 패턴에 대해 글을 쓴 바 있는데, 그 글
     * 리팩토링 / 마틴 파울러 저 / 김지원 역 / 한빛미디어 / 초판 2쇄 2013년 03월 07일 / 원서 : Refactoring (Addison-Wesley Professional; 1 edition, 1999)
     * 테스트 주도 개발 / 켄트 벡 저 / 김창준, 강규영 공역 / 인사이트(insight) / 초판 1쇄 2005년 01월 02일 / 원제 : Test-Driven Development By Example
 
-# 주석
+## 주석
 
 [pdf]: https://www.cs.oberlin.edu/~jwalker/refs/woolf.ps
 [^clean]: 클린 소프트웨어. CHAPTER 17. 245쪽.
