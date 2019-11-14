@@ -3,7 +3,7 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2019-06-15 17:24:45 +0900
+updated : 2019-11-14 15:58:20 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -95,4 +95,10 @@ $ curl --http1.0 http://httpbin.org/ip
 ```sh
 $ # 나의 ip 정보를 담은 json 문자열을 받아 파일로 저장한다
 $ curl -o my_ip.json http://httpbin.org/ip
+```
+
+## 재미있는 사용법
+```sh
+$ curl wttr.in      # 날씨를 본다
+$ curl ifconfig.me  # ip주소를 본다
 ```
