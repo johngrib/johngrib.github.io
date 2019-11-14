@@ -1476,7 +1476,7 @@ golang-types:
     summary: 'Golang의 타입'
     parent: Golang
     url: /wiki/golang-types
-    updated: '2018-10-14 21:48:34 +0900'
+    updated: '2019-11-14 23:59:58 +0900'
     children: []
 golang-waitgroup-add:
     type: wiki

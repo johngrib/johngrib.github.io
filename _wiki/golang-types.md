@@ -3,7 +3,7 @@ layout  : wiki
 title   : Go type
 summary : Golang의 타입
 date    : 2018-10-14 17:04:19 +0900
-updated : 2018-10-14 21:48:34 +0900
+updated : 2019-11-14 23:59:58 +0900
 tag     : golang type
 toc     : true
 public  : true
@@ -14,7 +14,7 @@ latex   : false
 {:toc}
 
 
-# 타입 사이즈 알아내기
+## 타입 사이즈 알아내기
 
 * `unsafe.Sizeof`를 사용하면 타입의 byte 크기를 알아낼 수 있다.
     * <https://golang.org/pkg/unsafe/#Sizeof >
@@ -33,7 +33,7 @@ func main() {
 }
 ```
 
-# 타입 목록
+## 타입 목록
 
 * <https://golang.org/ref/spec#Numeric_types >
 
@@ -63,7 +63,7 @@ func main() {
 * `uintptr` 는 다른 언어에서도 그렇듯, 하드웨어 아키텍처에 따라 사이즈가 다를 것이다.
     * 32비트 아키텍처에서 4 byte, 64비트 아키텍처에서 8 byte.
 
-## int의 min, max 값 구하기
+### int의 min, max 값 구하기
 
 * <https://groups.google.com/forum/#!msg/golang-nuts/a9PitPAHSSU/ziQw1-QHw3EJ >
     * 간단한 bit operation을 통해 int의 min, max 값을 구할 수 있다.
@@ -75,7 +75,7 @@ const MaxInt = int64(^uint64(0) >> 1)   // 9223372036854775807
 const MinInt = -MaxInt - 1              // -9223372036854775808
 ```
 
-## CPU 아키텍처 확인
+### CPU 아키텍처 확인
 
 * <https://golang.org/pkg/runtime/internal/sys/#GOARCH >
 * 이건 그냥 운영체제에서 제공하는 시스템 정보를 봐도 된다.
@@ -93,7 +93,7 @@ func main() {
 }
 ```
 
-## string
+### string
 
 * <https://research.swtch.com/godata#Strings >
 
@@ -120,7 +120,7 @@ fmt.Println(unsafe.Sizeof("Hello")) // 16
     * 문자열의 일부를 복사하거나 새로운 메모리 할당을 하지 않기 때문에 효율적이다.
 
 
-# Links
+## Links
 
 * <https://golang.org/ref/spec >
     * <https://golang.org/ref/spec#Types >
