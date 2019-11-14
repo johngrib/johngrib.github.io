@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그레이 코드(Gray code)
 summary : reflected binary Gray code
 date    : 2018-10-15 21:40:31 +0900
-updated : 2019-03-18 22:42:13 +0900
+updated : 2019-11-15 08:00:15 +0900
 tag     : binary algorithm
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 그레이 코드
+## 그레이 코드
 
 * **그레이 부호**라고도 부른다.
 * 그레이 코드의 종류는 다양하지만 이 글에서는 반사된 이진 그레이 코드(reflected binary Gray code)를 다룬다.
@@ -37,7 +37,7 @@ latex   : true
     * 2진법은 자리올림이 일어나며 `011`이 `100` 이 된다.
     * 그레이 코드는 언제나 1개 비트만 바뀌므로 `010`이 `110`이 된다.
 
-# 생성 알고리즘
+## 생성 알고리즘
 
 ```
 (1)  (2)  (3)   (4)
@@ -74,13 +74,13 @@ for i := 0; i < 20; i++ {
 }
 ```
 
-# 변환 공식
+## 변환 공식
 
 4비트 이진수 $$abcd$$ 와 그레이 코드 $$efgh$$ 가 있다고 하자.
 
 변환 공식은 다음과 같다.
 
-## 이진수를 그레이 코드로 변환
+### 이진수를 그레이 코드로 변환
 
 * 첫 번째 비트 : $$ e = a $$
 * 두 번째 비트 : $$ f = a \oplus b $$
@@ -126,7 +126,7 @@ $$
     * $$x \overset{rot}{\gg} y $$ : 순환식 오른쪽 자리이동.
     * $$x \overset{rot}{\ll} y $$ : 순환식 왼쪽 자리이동.
 
-## 그레이 코드를 이진수로 변환
+### 그레이 코드를 이진수로 변환
 
 * 첫 번째 비트 : $$ a = e $$
 * 두 번째 비트 : $$ b = e \oplus f $$
@@ -186,7 +186,7 @@ func toBin(gray int) int {
 }
 ```
 
-# 하노이의 탑
+## 하노이의 탑
 
 그레이 코드는 하노이의 탑 문제의 솔루션이 될 수 있다.
 
@@ -207,12 +207,12 @@ func toBin(gray int) int {
 * 오른쪽에서 두 번째 비트의 변화는 2번 원판의 이동이다.
 * 오른쪽에서 세 번째 비트의 변화는 3번 원판의 이동이다.
 
-# 참고문헌
+## 참고문헌
 
 * 해커의 기쁨. 비트와 바이트 그리고 알고리즘 (2판) / 헨리 워렌 지음 / 류광 옮김 / 제이펍 / 2013년 07월 22일 출간
 * 당신은 구글에서 일할 만큼 똑똑한가? / 윌리엄 파운드스톤 저 / 유지연 역 / 타임비즈 / 2012년 07월
 
-# Links
+## Links
 
 * [The Aggregate Magic Algorithms](http://aggregate.org/MAGIC/#Gray%20Code%20Conversion )
 * [Gray code (wikipedia)](https://en.wikipedia.org/wiki/Gray_code)

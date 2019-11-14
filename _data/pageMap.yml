@@ -1532,7 +1532,7 @@ gray-code:
     summary: 'reflected binary Gray code'
     parent: what
     url: /wiki/gray-code
-    updated: '2019-03-18 22:42:13 +0900'
+    updated: '2019-11-15 08:00:15 +0900'
     children: []
 grep:
     type: wiki
