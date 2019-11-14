@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2019-11-14 08:51:20 +0900
+updated : 2019-11-14 15:42:06 +0900
 tag     : terminal study
 toc     : true
 public  : true
@@ -32,6 +32,27 @@ iTerm의 경우 Preferences - Keys - Hotkey 로 들어가면 설정할 수 있�
 ## prompt를 꾸며본다
 
 `PS1`에 대해 조사하고 자신만의 프롬프트를 꾸며본다. 그러면서 `.bash_profile`, `.bashrc`와 같은 파일들에 대해서도 조사한다.
+
+나는 다음과 같은 프롬프트를 사용하고 있다.
+
+```
+# colors
+GREEN='\e[0;32m\]'
+B_GREEN='\e[1;32m\]'
+MAGENTA='\e[0;35m\]'
+B_MAGENTA='\e[1;35m\]'
+YELLOW='\e[0;33m\]'
+B_YELLOW='\e[1;33m\]'
+RED='\e[0;31m'
+BLUE='\e[0;34m'
+B_BLUE='\e[1;34m'
+CYAN='\e[0;36m\]'
+COLOR_END='\[\033[0m\]'
+
+# PS1="\h:\W \u\$ "  # default promopt
+export PS1="${MAGENTA}\$(date +%Y-%m-%d-%a) ${B_YELLOW}\$(date +%T) ${GREEN}\u ${B_MAGENTA}\h ${B_BLUE}\w ${COLOR_END}\$(/usr/local/bin/githud bash)\n\$ "
+```
+
 
 ## brew 사용법을 익힌다
 
@@ -135,12 +156,13 @@ $ echo -e "가위\n바위\n보" | sort -R | head -1
 줄줄이 딸려오는 다양한 문서들을 즐겁게 따라가며 읽는다.
 
 
-## copy/paste 명령을 익힌다
+## GUI와 함께 어울릴 수 있는 명령어를 익힌다
 
 macOS의 경우 `pbcopy`, `pbpaste`를 사용할 수 있다.
 
 그리고 이 명령을 파이프와 함께 사용하도록 한다.
 
+`open` 명령어도 익혀두면 편리하다.
 
 ## 터미널이 인식하는 키에 대해 이해한다
 
