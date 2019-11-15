@@ -2500,7 +2500,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-11-08 22:34:52 +0900'
+    updated: '2019-11-15 13:24:14 +0900'
     children: []
 RFC:
     type: wiki
@@ -3052,7 +3052,7 @@ vim-auto-completion:
     summary: 'vim을 똑똑하게 사용하자'
     parent: Vim
     url: /wiki/vim-auto-completion
-    updated: '2019-07-02 11:38:06 +0900'
+    updated: '2019-11-15 13:25:34 +0900'
     children: []
 vim-coc:
     type: wiki

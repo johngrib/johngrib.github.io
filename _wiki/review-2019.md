@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2019년 기록
 summary : 연말에 회고로 제목을 바꿀 문서
 date    : 2019-01-01 11:50:19 +0900
-updated : 2019-11-08 22:34:52 +0900
+updated : 2019-11-15 13:24:14 +0900
 tag     : review
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 # 책
 
+* 2019-11-15 마케터의 일
 * 2019-11-08 생각한다면 과학자처럼
 * 2019-11-01 트랜잭션 처리의 원리
 * 2019-11-01 Head First Design Patterns
