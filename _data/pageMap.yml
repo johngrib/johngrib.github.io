@@ -350,6 +350,14 @@ bandwidth:
     url: /wiki/bandwidth
     updated: '2019-07-09 16:35:19 +0900'
     children: []
+bat-cmd:
+    type: wiki
+    title: 'bat 명령어'
+    summary: 'A cat clone with syntax highlighting and Git integration'
+    parent: command-line
+    url: /wiki/bat-cmd
+    updated: '2019-11-16 10:45:33 +0900'
+    children: []
 Bayes-theorem:
     type: wiki
     title: '베이즈 정리(Bayes'' theorem)'
@@ -677,7 +685,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, say, sdkman, sha256sum, sort, tail, top, touch, uptime, yes]
+    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, say, sdkman, sha256sum, sort, tail, top, touch, uptime, yes]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'

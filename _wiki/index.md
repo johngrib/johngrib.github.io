@@ -232,6 +232,7 @@ regenerate: true
         * [[Elastic-Load-Balancing]]
     * [[command-line]]
         * [[ag]]
+        * [[bat-cmd]]
         * [[brew]]
         * [[cal]]
         * [[csplit]]

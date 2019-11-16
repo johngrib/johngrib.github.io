@@ -206,6 +206,7 @@ db:
     - {fileName: sql-char-comparison}
 bash:
     - {fileName: ag}
+    - {fileName: bat-cmd}
     - {fileName: bc}
     - {fileName: brew}
     - {fileName: cal}
@@ -241,6 +242,7 @@ bash:
 command:
     - {fileName: ag}
     - {fileName: awk}
+    - {fileName: bat-cmd}
     - {fileName: brew}
     - {fileName: cal}
     - {fileName: composer}
