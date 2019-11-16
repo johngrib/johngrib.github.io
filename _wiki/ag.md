@@ -3,7 +3,7 @@ layout  : wiki
 title   : ag
 summary : the silver searcher
 date    : 2018-12-27 22:01:47 +0900
-updated : 2019-11-11 23:24:48 +0900
+updated : 2019-11-16 10:41:42 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -60,4 +60,4 @@ $ ag test -A3 -B2
 * `-B2` : 검색 결과와 일치한 라인 위로 2줄을 더 보여준다.
 
 # Links
-* <https://github.com/ggreer/the_silver_searcher >
+* [the silver searcher](https://github.com/ggreer/the_silver_searcher )
