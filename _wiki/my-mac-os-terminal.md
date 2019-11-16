@@ -3,11 +3,11 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2019-11-15 23:13:25 +0900
-tag     : terminal study
+updated : 2019-11-16 22:49:15 +0900
+tag     : terminal study vim
 toc     : true
 public  : true
-parent  : my-lifehack
+parent  : [[my-lifehack]]
 latex   : false
 ---
 * TOC
@@ -183,8 +183,6 @@ macOS의 경우 `pbcopy`, `pbpaste`를 사용할 수 있다.
 
 `grep`, `egrep`, `find`, `ag` 등의 명령을 파이프와 함께 사용해보고 다양한 옵션을 실험해본다.
 
-이에 대해서는 [vim 에디터는 터미널 도구]( ../../wiki/two-views-of-vim/#vim-에디터는-터미널-도구 ) 문서를 읽어보면 도움이 될 수 있다.
-
 ## 변수 설정, if, for의 사용법을 익힌다
 
 변수를 설정하고 if와 for를 사용할 수 있게 되면 할 수 있는 것이 많아진다.
@@ -218,6 +216,8 @@ $ man cowsay    # 자세히 알고 싶은 경우 반드시 읽는다
 ## vim 사용법을 익힌다
 
 vim을 그냥 익히지만 말고, vim 안에서 다양한 다른 터미널 명령어들을 활용하는 방법에 대해 고민하도록 한다.
+
+이에 대해서는 [vim 에디터는 터미널 도구]( ../../wiki/two-views-of-vim/#vim-에디터는-터미널-도구 ) 문서를 읽어보면 도움이 될 수 있다.
 
 ## fzf 사용법을 익힌다
 
