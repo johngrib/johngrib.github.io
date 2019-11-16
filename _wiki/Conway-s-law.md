@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2019-09-19 20:05:27 +0900
+updated : 2019-11-16 23:19:08 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 > Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.[^origin]
 
@@ -21,14 +21,14 @@ latex   : false
 * 콘웨이가 논문을 Havard Business Review에 제출했을 때에는 가설을 입증할 수 없다는 이유로 거절당했다고 한다.[^reject]
     * 그러나 개발자들 사이에서는 상식의 반열에 오른 법칙이다.
 
-# 멜빈 콘웨이(Melvin E. Conway)
+## 멜빈 콘웨이(Melvin E. Conway)
 
 * 멜빈 콘웨이는 컴퓨터 과학자이자, 해커이다.
 * SAVE라 불리는 Burroughs 220을 위한 어셈블러를 작성한 바 있다.
 
-# 인용과 해석
+## 인용과 해석
 
-## 콘웨이의 논문에 소개된 콘웨이의 법칙
+### 콘웨이의 논문에 소개된 콘웨이의 법칙
 
 * 1968년4월, Datamation 지에 실린 콘웨이의 논문 "HOW DO COMMITTEES INVENT?".
 
@@ -59,7 +59,7 @@ The development of such a philosophy promises to unearth basic questions about v
 이러한 철학의 발전은 자원의 가치와 의사소통의 기술에 대한 근본적인 문제들, 즉 우리의 시스템 구축 기술이 확신 위에서 진행되기 위한 과제들을 밝혀내게 될 것이다.
 
 
-## The Jargon File에 수록된 콘웨이의 법칙
+### The Jargon File에 수록된 콘웨이의 법칙
 
 [[The-Jargon-File]]의 [콘웨이의 법칙 항목](http://www.catb.org/jargon/html/C/Conways-Law.html)에는 다음과 같은 말이 있다.
 
@@ -69,7 +69,7 @@ The development of such a philosophy promises to unearth basic questions about v
 
 명쾌한 설명이라 생각한다.
 
-## Tom Cheatham의 추가 해석
+### Tom Cheatham의 추가 해석
 
 > If a group of N persons implements a COBOL compiler, there will be N-1 passes. Someone in the group has to be the manager.
 
@@ -77,7 +77,7 @@ The development of such a philosophy promises to unearth basic questions about v
 
 * 관료제를 중시한 코볼 업계를 돌려 비판한 말이라고 할 수 있겠다.
 
-## 스티브 맥코넬이 설명한 콘웨이의 법칙
+### 스티브 맥코넬이 설명한 콘웨이의 법칙
 
 [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발}에서 스티브 맥코넬은 다음과 같이 설명한다.
 
@@ -87,7 +87,7 @@ The development of such a philosophy promises to unearth basic questions about v
 영웅 개발자를 고용하고, 그들에게 전권을 주며, 기적을 만들어 내기 위해 영웅들을 자유롭게 놔두는 회사는 결국 기발할지는 모르지만 에러도 무지하게 많은 제품을 만들어 낸다.
 비효율적인 프로세스를 실행하는 회사의 제품은 유치하고 둔한 반면, 효과적이고 최적화된 조직은 조화롭고 아주 만족스러운 소프트웨어를 만들어 낸다.[^steve]
 
-## 프레드 브룩스가 설명한 콘웨이의 법칙
+### 프레드 브룩스가 설명한 콘웨이의 법칙
 
 [[Mythical-Man-Month]]의 "10장 기록물 가설"을 읽어보면 프레드 브룩스가 콘웨이의 법칙을 설명한다.
 
@@ -98,7 +98,7 @@ The development of such a philosophy promises to unearth basic questions about v
 이 설계가 제대로일 가능성은 물론 아주 낮다.
 **시스템 설계가 자유롭게 변경될 수 있어야 한다면 조직 역시 변화에 대비하고 있어야 한다.**
 
-## 마이크로소프트의 Windows Vista 사례 연구
+### 마이크로소프트의 Windows Vista 사례 연구
 
 * [The Influence of Organizational Structure On Software Quality: An Empirical Case Study](https://www.microsoft.com/en-us/research/publication/the-influence-of-organizational-structure-on-software-quality-an-empirical-case-study/?from=http%3A%2F%2Fresearch.microsoft.com%2Fpubs%2F70535%2Ftr-2008-11.pdf )
     * [PDF](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2008-11.pdf )
@@ -111,7 +111,7 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 
 또한 본 연구는 조직 지표를 사용하여 구축된 예측 모델을 전통적인 코드 전환, 코드 복잡성, 코드 의존성 및 발표 전 결함 조치와 비교하여 조직 지표가 지금까지 사용한 기존 지표보다 더 나은 오류 발생 예측 변수임을 보여준다.
 
-## 콘웨이의 법칙에 대한 엉클 밥의 코멘트
+### 콘웨이의 법칙에 대한 엉클 밥의 코멘트
 
 밥 아저씨(로버트 C. 마틴)는 클린 아키텍처에서 콘웨이의 법칙을 언급하고 다음과 같이 말한다.[^bob]
 
@@ -121,7 +121,7 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 이러한 아키텍처를 만들려면 잘 격리되어 독립적으로 개발 가능한 컴포넌트 단위로 시스템을 분할할 수 있어야 한다.
 그래야만 이들 컴포넌트를 독립적으로 작업할 수 있는 팀에 할당할 수 있다.
 
-# 역콘웨이의 법칙
+## 역콘웨이의 법칙
 
 **Inverse Conway's Law**
 
@@ -142,7 +142,7 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 역콘웨이의 법칙 때문에 발생하는 관련 문제는 더 있다. 모놀리식 아키텍처를 사용하는 회사에서 거의 발견되지 않는 운영 조직에 대한 운영의 어려움이다. 모놀리스에서는 애플리케이션을 위해 운영 인력의 배치와 비상 대기 업무 지원이 용이하지만 마이크로서비스 아키텍처에서는 잘 해내기가 매우 어렵다. 왜냐하면 마이크로서비스마다 개발 팀과 운영 팀 둘 다 배치해야 하기 때문이다. 결과적으로 마이크로서비스 개발 팀은 운영 업무와 마이크로서비스에 연관된 작업을 담당해야 한다. 비상 대기 업무와 모니터링 업무를 맡을 별도의 운영 조직이 없다. 즉, 개발자는 자신의 서비스에 대해 비상 대기해야 한다.
 
 
-# Links
+## Links
 
 * [CONWAY'S LAW](http://www.melconway.com/Home/Conways_Law.html): Conway 홈페이지에 소개된 Conway's law.
 * [How Do Committees Invent? - Melvin E. Conway](http://www.melconway.com/Home/Committees_Paper.html ): 1968년 Conway's law가 소개된 콘웨이의 페이퍼.
@@ -151,7 +151,7 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 * [Conway's law(wikipedia)](https://en.wikipedia.org/wiki/Conway%27s_law)
 * [Melvin Conway(wikipedia)](https://en.wikipedia.org/wiki/Melvin_Conway)
 
-# 참고문헌
+## 참고문헌
 
 * 해커 영어사전 제3판 / Guy L. Steel Jr. Eric S.RayMond 편저, 한경훈 역 / 기전연구사 / 1판 1쇄 1998년 12월 25일
 * Professional 소프트웨어 개발 / 스티브 맥코넬 저 / 윤준호, 한지윤 공역 / 인사이트(insight) / 초판 4쇄 2006년 10월 13일 / 원제 : Professional Software Development (Addison-Wesley)
@@ -160,7 +160,7 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 * 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
 
 
-# 각주
+## 각주
 
 [^origin]: [CONWAY'S LAW](http://www.melconway.com/Home/Conways_Law.html ): 콘웨이의 홈페이지에서 인용.
 [^reject]: 마이크로서비스 아키텍처 구축 10.1
