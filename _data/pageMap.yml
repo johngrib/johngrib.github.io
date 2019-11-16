@@ -1260,7 +1260,7 @@ find:
     summary: 'walk a file hierarchy'
     parent: command-line
     url: /wiki/find
-    updated: '2019-07-21 18:57:21 +0900'
+    updated: '2019-11-16 10:01:53 +0900'
     children: []
 fine-dust:
     type: wiki
