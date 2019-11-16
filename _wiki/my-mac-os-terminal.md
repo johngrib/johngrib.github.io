@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2019-11-16 22:49:15 +0900
+updated : 2019-11-16 22:54:13 +0900
 tag     : terminal study vim
 toc     : true
 public  : true
@@ -52,6 +52,12 @@ COLOR_END='\[\033[0m\]'
 # PS1="\h:\W \u\$ "  # default promopt
 export PS1="${MAGENTA}\$(date +%Y-%m-%d-%a) ${B_YELLOW}\$(date +%T) ${GREEN}\u ${B_MAGENTA}\h ${B_BLUE}\w ${COLOR_END}\$(/usr/local/bin/githud bash)\n\$ "
 ```
+
+![prompt]( https://user-images.githubusercontent.com/1855714/68994193-93d3d600-08c3-11ea-9525-43d22171a358.png )
+
+* 날짜와 시간: 시계를 덜 보게 된다. 가끔 오래 걸리는 명령을 실행했을 때 언제 끝났는지를 프롬프트만 보고 알 수 있게 된다.
+* working directory: pwd를 계속해서 입력해야 하는 불편함을 해소해 준다. 내가 어디에 있는지 알 수 있어 답답함이 덜하다.
+* git 브랜치 이름과 그 외의 잡다한 정보.
 
 
 ## brew 사용법을 익힌다

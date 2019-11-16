@@ -2172,7 +2172,7 @@ my-mac-os-terminal:
     summary: '편안하고 즐거운 터미널 생활'
     parent: my-lifehack
     url: /wiki/my-mac-os-terminal
-    updated: '2019-11-16 22:49:15 +0900'
+    updated: '2019-11-16 22:54:13 +0900'
     children: []
 my-study-method:
     type: wiki
