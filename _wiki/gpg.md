@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2018-10-10 13:01:11 +0900
+updated : 2019-11-18 00:12:09 +0900
 tag     : bash encryption GNU command
 toc     : true
 public  : true
@@ -13,11 +13,11 @@ latex   : false
 * TOC
 {:toc}
 
-# GPG
+## GPG
 
 GnuPG : GNU Privacy Guard. GPG 라고도 한다.
 
-# 꼭 읽으세요
+## 꼭 읽으세요
 
 * 이 웹 페이지의 글은 개인의 의견을 개진한 것입니다.
     * 만일 이 글을 읽는 여러분께서 암호나 비밀 통신과 관련된 문제에 관한 조언이 필요할 경우, **암호학 전문가** 또는 **변호사**를 찾아 상담받기를 권장합니다.
@@ -49,28 +49,28 @@ GnuPG : GNU Privacy Guard. GPG 라고도 한다.
     * 가족이나 연인에게도 복사해주지 마세요.
 * export한 비밀 키를 모니터로 볼 때, 주위를 살펴 cctv나 비밀 카메라 또는 창문이 없는지 확인하세요.
 
-# help
+## help
 
-# install
+## install
 
-## Ubuntu
+### Ubuntu
 
 ```sh
 $ sudo apt-get install gnupg
 ```
 
-## Mac
+### Mac
 
 ```sh
 $ brew install gnupg
 ```
 
-# 버전 확인
+## 버전 확인
 
 * `--version`
 
 
-# 새로운 키 생성
+## 새로운 키 생성
 
 * `--gen-key`
 * `--full-generate-key` : MacOS에서는 이 옵션을 쓰지 않으면 몇 가지 질문이 생략되고 기본 값으로 설정된다.
@@ -103,7 +103,7 @@ sub   rsa2048 2018-09-10 [E]
 * 주의
     * 스마트 카드를 사용하는 경우, 스마트카드에서 지원하는 암호화 알고리즘을 먼저 조사하는 것이 좋다.
 
-## 키의 구성
+### 키의 구성
 
 * 하나의 키는 관례적으로 두 개의 서브 키로 구성된다.
     * 키(primary key) : 서명할 때 쓴다.
@@ -116,7 +116,7 @@ sub   rsa2048 2018-09-10 [E]
 * 비밀 primary key
 * 비밀 sub key
 
-## 문제 해결: random byte 생성 과정에서 다음으로 넘어가지 못하는 경우
+### 문제 해결: random byte 생성 과정에서 다음으로 넘어가지 못하는 경우
 
 * Linux에서 `--gen-key`로 새로운 키를 생성하는 도중 발생 가능한 문제.
 * random byte 생성 과정에서 터무니 없이 오래 걸리거나, 멈춰 버리는 경우가 있다.
@@ -128,7 +128,7 @@ sub   rsa2048 2018-09-10 [E]
 $ sudo apt-get install -y rng-tools && sudo rngd -r /dev/urandom
 ```
 
-## 해지 인증서(Revocation Certificate) 만들기
+### 해지 인증서(Revocation Certificate) 만들기
 
 * 새로운 키를 생성했다면 키를 분실했거나 의도치 않게 유출되었을 때를 대비해 해지 인증서를 만들어 두어야 한다.
 * 비밀 키와 함께 오프라인 저장장치에 보관하는 것을 권장.
@@ -139,7 +139,7 @@ $ sudo apt-get install -y rng-tools && sudo rngd -r /dev/urandom
 $ gpg --output revoke.asc --gen-revoke 키아이디
 ```
 
-# 키 목록 보기
+## 키 목록 보기
 
 * `--list-keys`, `-k` : 공개 키 목록을 본다. `--list-public-keys` 옵션과 똑같다.
 * `--list-secret-keys`, `-K` : 비밀 키 목록을 본다.
@@ -198,7 +198,7 @@ ssb   rsa2048 2018-03-14 [E]
 * `ssb`: secret sub key.
 
 
-# 공개 키 export
+## 공개 키 export
 
 * 나의 **공개 키**로 암호화한 메시지는 나의 **비밀 키**로 복호화할 수 있다.
 * 따라서 나의 공개 키를 다른 사람에게 주면, 다른 사람은 내 공개 키를 이용해 내게 보낼 메시지를 암호화할 수 있다.
@@ -272,7 +272,7 @@ $ gpg --armor --export testuser > testuser.asc
 testuser의 공개 키로 암호화한 것은 testuser의 비밀 키로만 복호화할 수 있으므로
 testuser가 비밀 키가 유출되지 않도록 잘 관리한다면 충분히 안전하게 메시지를 주고 받을 수 있게 된 것이다.
 
-## 키 서버로 전송하기
+### 키 서버로 전송하기
 
 주의 : 키 서버로 자신의 공개 키를 올리기 전에 다음을 읽고 충분히 고민할 것.
 
@@ -296,7 +296,7 @@ gpg: sending key 21831..... to hkp://pgp.key-server.io
 키 서버에서 내 아이디나 이메일을 검색해 공개 키를 얻어, 메시지를 암호화해 나한테 보내줄 수 있다.
 
 
-## 해지 인증서(Revocation Certificate) 사용하기
+### 해지 인증서(Revocation Certificate) 사용하기
 
 * 키를 분실했거나 의도치 않게 유출되었다면, 해지 인증서를 키 서버에 올려야 한다.
     * 해지 인증서를 올리면 내 비밀 키는 유출되었으므로 신뢰할 수 없다고 세상에 알리는 것과 같다.
@@ -306,7 +306,7 @@ gpg: sending key 21831..... to hkp://pgp.key-server.io
 이후 키 서버로 들어가 키를 검색해 보면 `revoke`되었다는 표시가 뜨는 것을 확인할 수 있다.
 
 
-# 공개 키 import
+## 공개 키 import
 
 testuser의 친구가 testuser의 공개 키를 가져와 자신의 컴퓨터에 등록하는 상황이라 하자.
 
@@ -319,7 +319,7 @@ gpg: Total number processed: 1
 gpg:               imported: 1  (RSA: 1)
 ```
 
-# 비밀 키 import
+## 비밀 키 import
 
 `--import` 옵션을 사용하면 된다.
 
@@ -327,7 +327,7 @@ gpg:               imported: 1  (RSA: 1)
 $ gpg --import 비밀키파일
 ```
 
-# 비밀 키 비밀번호 변경
+## 비밀 키 비밀번호 변경
 
 비밀 키의 비밀번호는 `--edit-key` 옵션으로 변경할 수 있다.
 
@@ -343,7 +343,7 @@ gpg> passwd
 gpg> save
 ```
 
-# 암호화
+## 암호화
 
 * 필수
     * `--encrypt`, `-e`: 암호화.
@@ -395,7 +395,7 @@ $ echo 'hello testuser!' | gpg -o to_testuser.txt -ea --recipient testuser
 testuser가 갖고 있는 비밀 키가 아니면 복호화가 불가능한(적어도 RSA 2048이 깨지기 전까지는) 안전한 메시지이므로 안심하고 보낼 수 있다.
 
 
-# 복호화
+## 복호화
 
 testuser는 친구가 보낸 파일을 받아 복호화하려 한다.
 
@@ -419,7 +419,7 @@ $ cat decrypted.txt
 hello testuser!
 ```
 
-# 유효 기한 관리
+## 유효 기한 관리
 
 * 키 유효 기한은 1년 이하를 권장.
     * 불편하더라도 몇 달 주기로 유효 기한을 연장하거나 새로 생성한 키로 교체하는 것이 좋다.
@@ -458,7 +458,7 @@ ssb  rsa4096/....
 gpg> save
 ```
 
-# 서명
+## 서명
 
 * 비밀 키를 사용해 암호화하는 것을 서명이라 한다.
 * 서명은 공개 키로 복호화할 수 있다.
@@ -473,7 +473,7 @@ gpg> save
 
 공개 키를 가진 사람이라면 누구나 서명을 확인할 수 있으므로 다양한 분야에서 폭넓게 쓰인다.
 
-## 서명 검증하기
+### 서명 검증하기
 
 * `--verify`
 
@@ -485,7 +485,7 @@ gpg: Good signature from "lee <lee@gpgtest.com>"
 Primary key fingerprint: C80B C466
 ```
 
-## 서명하기
+### 서명하기
 
 * `--sign`, `-s`: 비밀 키를 사용해 전자 서명을 할 수 있다.
 
@@ -538,7 +538,7 @@ Primary key fingerprint: 5B79 C4C7 ...
 
 서명한 파일을 수정하고 `--verify`로 검사해보면 문제가 있고 인증이 안된다는 출력을 볼 수 있다.
 
-## 원문을 보존하며 서명하기
+### 원문을 보존하며 서명하기
 
 * `--clear-sign`, `--clearsign`
 
@@ -602,7 +602,7 @@ gpg: BAD signature from "lee <lee@gpgtest.com>"
 
 그러면 `-d`로 복호화해도, `--verify`로 검증해도 `BAD signature`라는 출력이 나온다.
 
-## 원문 파일과 따로 서명하기
+### 원문 파일과 따로 서명하기
 
 * `--detach-sign`, `-b`: 원문과 분리된 서명 파일을 생성한다.
 
@@ -633,7 +633,7 @@ gpg:                using RSA key EE91
 gpg: BAD signature from "lee <lee@gpgtest.com>"
 ```
 
-## 타인의 공개 키에 서명하기
+### 타인의 공개 키에 서명하기
 
 * `--sign-key`: 타인의 공개 키에 나의 서명을 덧붙여 TRUST VALUE를 상향시킬 수 있다.
     * 대면하며 함께 일하는 신원이 분명한 직장 동료나, 친한 친구 등의 공개 키에만 서명하도록 한다.
@@ -680,7 +680,7 @@ uid           [  full  ] myfriend <myfriend@gpgtest.com>
 sub   rsa2048 2018-09-13 [E] [expires: 2019-09-13]
 ```
 
-# 부록: keybase 사용하기
+## 부록: keybase 사용하기
 
 * <https://keybase.io/ >
 
@@ -699,7 +699,7 @@ $ brew tap homebrew/cask
 $ brew cask install keybase
 ```
 
-## 회원가입/로그인
+### 회원가입/로그인
 
 * <https://keybase.io >에서 회원 가입이 가능하다.
 * 커맨드 라인에서도 회원 가입이 가능하다.
@@ -714,7 +714,7 @@ $ keybase signup
 $ keybase login
 ```
 
-## 공개 키 업로드하기
+### 공개 키 업로드하기
 
 다음 명령어를 입력한 다음, 공개 키 목록에서 업로드할 공개 키의 번호를 선택하면 된다.
 
@@ -732,7 +732,7 @@ $ keybase pgp select
 $ curl https://keybase.io/johngrib/key.asc | gpg --import
 ```
 
-## keybase 스마트폰 앱 사용하기
+### keybase 스마트폰 앱 사용하기
 
 * keybase 스마트폰 앱을 쓰면 폰에서도 공개키로 암호화해서 친구나 동료에게 메시지를 보낼 수 있다.
 * 공개 키 암호화 알고리즘이 필요한 대화는 keybase 앱으로 쉽게 할 수 있다.
@@ -753,9 +753,9 @@ $ keybase device add
 
 
 
-# 부록: git commit에 sign하기
+## 부록: git commit에 sign하기
 
-## .gitconfig 설정
+### .gitconfig 설정
 
 * git commit에 자신의 비밀 키로 서명하는 것은 바람직한 습관이다.
 * 오픈 소스 프로젝트나 회사의 특성에 따라 commit 에 sign을 요구하는 경우가 있다.
@@ -786,7 +786,7 @@ $ keybase device add
 
 이렇게 하면 `-S` 옵션을 주지 않아도 자동으로 서명을 한다.
 
-## 문제 해결: Mac에서 signingkey 설정 후 commit이 안 될 경우
+### 문제 해결: Mac에서 signingkey 설정 후 commit이 안 될 경우
 
 다음을 시도해 보도록 하자.
 
@@ -803,7 +803,7 @@ $ killall gpg-agent
 
 이후 재시도해본다.
 
-## .gitconfig 모듈화하기
+### .gitconfig 모듈화하기
 
 * 나는 `.gitconfig` 파일을 github의 [dotfiles](https://github.com/johngrib/dotfiles/blob/master/.gitconfig ) repo에 올려 관리하고 있다.
 * 그렇다면 `signingkey` 값도 함께 공개된 github repo에 올려도 될까?
@@ -846,7 +846,7 @@ $ killall gpg-agent
 
 그리고 github repo로 관리하고 있는 `~/dotfiles/.gitconfig` 파일에서는 `[user]`, `[commit]` 섹션을 삭제해주면 된다.
 
-## github에 공개 키 등록하기
+### github에 공개 키 등록하기
 
 commit에 서명을 하기 시작했다면 github에도 공개키를 등록하여, github이 서명을 알아보도록 설정한다.
 
@@ -857,7 +857,7 @@ commit에 서명을 하기 시작했다면 github에도 공개키를 등록하�
 이후 github에서 서명된 commit 옆에 `Verified`가 나타난다.
 클릭해보면 **This commit was signed with a verified signature.** 라는 문구가 나오며 프로필 사진과 사용자 아이디, GPG key ID도 함께 보여준다.
 
-# Links
+## Links
 
 * [RFC 4880 - OpenPGP Message Format 5.5](https://tools.ietf.org/html/rfc4880#section-5.5 )
 * [gnupg.org](https://www.gnupg.org/index.html )

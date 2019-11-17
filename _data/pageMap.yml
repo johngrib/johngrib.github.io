@@ -1516,7 +1516,7 @@ gpg:
     summary: 'GnuPG, the GNU Privacy Guard'
     parent: command-line
     url: /wiki/gpg
-    updated: '2018-10-10 13:01:11 +0900'
+    updated: '2019-11-18 00:12:09 +0900'
     children: []
 Gradle:
     type: wiki
