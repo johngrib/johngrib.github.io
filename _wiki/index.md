@@ -285,7 +285,6 @@ regenerate: true
             * [[hammerspoon-tutorial-04]]
             * [[hammerspoon-tutorial-05]]
             * [[hammerspoon-luarocks]]
-        * [[Shortcat]]
     * [[useful-site]]
         * [[geacron]]
         * [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}

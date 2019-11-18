@@ -2069,7 +2069,7 @@ mac-apps:
     parent: tools
     url: /wiki/mac-apps
     updated: '2018-03-03 19:45:04 +0900'
-    children: [hammerspoon, Shortcat]
+    children: [hammerspoon]
 mac-keyboard-shortcuts:
     type: wiki
     title: '맥 키보드 단축키'
@@ -2629,14 +2629,6 @@ sharding:
     parent: database
     url: /wiki/sharding
     updated: '2019-09-26 21:47:49 +0900'
-    children: []
-Shortcat:
-    type: wiki
-    title: Shortcat
-    summary: null
-    parent: mac-apps
-    url: /wiki/Shortcat
-    updated: '2018-03-07 21:14:05 +0900'
     children: []
 Shunsho-juwa:
     type: wiki

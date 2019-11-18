@@ -370,7 +370,6 @@ mac:
     - {fileName: brew}
     - {fileName: java_home}
     - {fileName: mac-keyboard-shortcuts}
-    - {fileName: Shortcat}
 Fred-Brooks:
     - {fileName: Brooks-s-law}
     - {fileName: Mythical-Man-Month}
