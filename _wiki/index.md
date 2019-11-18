@@ -262,6 +262,7 @@ regenerate: true
         * [[tail]]
         * [[top]]
         * [[touch]]
+        * [[tr-cmd]]
         * [[uptime]]
         * [[yes]]
     * [[Excel]]
