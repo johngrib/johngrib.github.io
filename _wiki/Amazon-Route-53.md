@@ -3,7 +3,7 @@ layout  : wiki
 title   : Amazon Route 53
 summary : 
 date    : 2018-09-16 09:37:08 +0900
-updated : 2018-09-16 22:06:15 +0900
+updated : 2019-11-18 21:31:29 +0900
 tag     : aws devops
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * <https://console.aws.amazon.com/route53/ >
 
@@ -23,7 +23,7 @@ latex   : false
 * 인터넷 트래픽을 도메인의 리소스로 라우팅
 * 리소스의 상태 확인
 
-# 다양한 라우팅 정책
+## 다양한 라우팅 정책
 
 [Route 53 라우팅 정책](https://docs.aws.amazon.com/ko_kr/Route53/latest/DeveloperGuide/routing-policy.html )
 문서를 읽어 보면 다양한 라우팅 정책을 선택해 활용할 수 있다는 것을 알 수 있다.
@@ -52,11 +52,11 @@ latex   : false
 
 잘 활용하면 돈이 매우 부족한 상황에서도 다양한 용도로 사용할 수 있을 것 같다.
 
-# 사용
+## 사용
 
-## Register Domain
+### Register Domain
 
-### 도메인 만들고 등록하기
+#### 도메인 만들고 등록하기
 
 * <https://console.aws.amazon.com/route53/home#DomainRegistration: >에서 도메인을 만들어 등록할 수 있다.
 * 도메인 주소가 필요하다면 등록해 보자.
@@ -90,7 +90,7 @@ latex   : false
     * AWS에 등록한 신용 카드로 지불이 되었다는 문자가 온다. (`해외승인 미국 Amazon w...`)
 * 등록이 완료된 도메인은 <https://console.aws.amazon.com/route53/home#hosted-zones: >에서 확인할 수 있다.
 
-### 도메인을 자신의 서버와 연결하기
+#### 도메인을 자신의 서버와 연결하기
 
 * <https://console.aws.amazon.com/route53/home#hosted-zones: >에서 등록한 도메인(`mydomain.com`)을 클릭해 들어간다.
 * `Create Record Set`을 클릭해 레코드 추가 화면으로 들어간다.
@@ -103,7 +103,7 @@ latex   : false
 * 웹 브라우저로 접속해보고 직접 확인해보자.
 
 
-# Links
+## Links
 
 * [Amazon Route 53 Documentation](https://aws.amazon.com/documentation/route53/?nc1=h_ls )
     * [한국어](https://aws.amazon.com/ko/documentation/route53/ )

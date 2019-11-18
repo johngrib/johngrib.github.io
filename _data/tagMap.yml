@@ -238,6 +238,7 @@ bash:
     - {fileName: tail}
     - {fileName: top}
     - {fileName: touch}
+    - {fileName: tr-cmd}
     - {fileName: uptime}
     - {fileName: yes}
 command:
@@ -274,6 +275,7 @@ command:
     - {fileName: tail}
     - {fileName: top}
     - {fileName: touch}
+    - {fileName: tr-cmd}
     - {fileName: uptime}
     - {fileName: yes}
 agile:

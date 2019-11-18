@@ -292,7 +292,7 @@ Amazon-Route-53:
     summary: ""
     parent: aws
     url: /wiki/Amazon-Route-53
-    updated: '2018-09-16 22:06:15 +0900'
+    updated: '2019-11-18 21:31:29 +0900'
     children: []
 availability:
     type: wiki
@@ -316,7 +316,7 @@ awk:
     summary: 'pattern-directed scanning and processing language'
     parent: programming-language
     url: /wiki/awk
-    updated: '2019-11-11 23:33:18 +0900'
+    updated: '2019-11-18 14:18:28 +0900'
     children: []
 aws:
     type: wiki
@@ -685,7 +685,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, say, sdkman, sha256sum, sort, tail, top, touch, uptime, yes]
+    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, say, sdkman, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -796,7 +796,7 @@ curl:
     summary: 'transfer a URL'
     parent: command-line
     url: /wiki/curl
-    updated: '2019-11-14 15:58:20 +0900'
+    updated: '2019-11-18 21:34:05 +0900'
     children: []
 cut:
     type: wiki
@@ -2949,6 +2949,14 @@ touch:
     parent: command-line
     url: /wiki/touch
     updated: '2019-01-13 18:22:50 +0900'
+    children: []
+tr-cmd:
+    type: wiki
+    title: 'tr 명령어'
+    summary: 'translate characters'
+    parent: command-line
+    url: /wiki/tr-cmd
+    updated: '2019-11-18 21:34:14 +0900'
     children: []
 transistor:
     type: wiki
