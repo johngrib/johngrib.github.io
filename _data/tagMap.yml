@@ -141,6 +141,7 @@ AWS:
 vim:
     - {fileName: 2017-05-04-input-source}
     - {fileName: 2017-07-09-vim-game-code-break}
+    - {fileName: config-ideavim}
     - {fileName: ctags}
     - {fileName: my-mac-os-terminal}
     - {fileName: two-views-of-vim}
