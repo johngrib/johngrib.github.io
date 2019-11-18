@@ -3,7 +3,7 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2019-11-14 15:58:20 +0900
+updated : 2019-11-18 21:34:05 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -13,24 +13,24 @@ latex   : false
 * TOC
 {:toc}
 
-# Examples
-## 요청 보내기
+## Examples
+### 요청 보내기
 ```sh
 $ curl http://httpbin.org/ip
 ```
 
-## 요청시 자세한 정보 표시
+### 요청시 자세한 정보 표시
 ```sh
 $ curl -v http://httpbin.org/ip
 ```
 
-## POST 요청 보내기
+### POST 요청 보내기
 ```sh
 $ curl -X POST http://httpbin.org/anything
 $ curl -X POST --data "name=John&age=29" http://httpbin.org/anything
 ```
 
-## header 지정
+### header 지정
 ```sh
 $ curl \
 > -H 'Content-Type: text/html; charset=UTF=8' \
@@ -61,7 +61,7 @@ $ curl -A \
 > http://localhost:8080
 ```
 
-## body 지정
+### body 지정
 ```sh
 $ # form 보내기
 $ curl \
@@ -86,18 +86,18 @@ $ curl -d @test.json \
 * `--data-binary`: 바이너리 데이터를 전송할 때 사용한다.
 
 
-## http 버전 지정
+### http 버전 지정
 ```sh
 $ curl --http1.0 http://httpbin.org/ip
 ```
 
-## 다운로드
+### 다운로드
 ```sh
 $ # 나의 ip 정보를 담은 json 문자열을 받아 파일로 저장한다
 $ curl -o my_ip.json http://httpbin.org/ip
 ```
 
-## 재미있는 사용법
+### 재미있는 사용법
 ```sh
 $ curl wttr.in      # 날씨를 본다
 $ curl ifconfig.me  # ip주소를 본다
