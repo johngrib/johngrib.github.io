@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2019-11-11 23:33:18 +0900
+updated : 2019-11-18 14:18:28 +0900
 tag     : command
 toc     : true
 public  : true
@@ -45,6 +45,12 @@ $ awk '!strmap[$0]++' test.txt
 ```sh
 $ # exam 함수에서도 사용한 방법이다
 $ awk 'NR%2==0 {print p","$0;} NR%2 {p=$0;}'
+```
+
+### 대소문자 변환
+```sh
+$ echo 'ASDF' | awk '{print tolower($0)}'
+$ echo 'asdf' | awk '{print toupper($0)}'
 ```
 
 ## Link
