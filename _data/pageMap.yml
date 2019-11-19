@@ -372,7 +372,7 @@ bc:
     summary: 'An arbitrary precision calculator language'
     parent: programming-language
     url: /wiki/bc
-    updated: '2018-10-07 21:29:56 +0900'
+    updated: '2019-11-19 10:06:32 +0900'
     children: []
 big-numbers:
     type: wiki
@@ -685,7 +685,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, say, sdkman, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes]
+    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, say, sdkman, sed, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2613,6 +2613,14 @@ secretary-problem:
     parent: math
     url: /wiki/secretary-problem
     updated: '2019-11-09 16:37:56 +0900'
+    children: []
+sed:
+    type: wiki
+    title: sed
+    summary: 'stream editor'
+    parent: command-line
+    url: /wiki/sed
+    updated: '2019-11-19 22:15:21 +0900'
     children: []
 sha256sum:
     type: wiki

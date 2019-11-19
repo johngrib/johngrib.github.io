@@ -257,6 +257,7 @@ regenerate: true
         * [[ripgrep]]
         * [[say]]
         * [[sdkman]]
+        * [[sed]]
         * [[sha256sum]]
         * [[sort]]
         * [[tail]]

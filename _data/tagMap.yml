@@ -234,6 +234,7 @@ bash:
     - {fileName: random-lunch}
     - {fileName: ripgrep}
     - {fileName: sdkman}
+    - {fileName: sed}
     - {fileName: sha256sum}
     - {fileName: sort}
     - {fileName: tail}
@@ -246,6 +247,7 @@ command:
     - {fileName: ag}
     - {fileName: awk}
     - {fileName: bat-cmd}
+    - {fileName: bc}
     - {fileName: brew}
     - {fileName: cal}
     - {fileName: composer}
@@ -271,6 +273,7 @@ command:
     - {fileName: ripgrep}
     - {fileName: say}
     - {fileName: sdkman}
+    - {fileName: sed}
     - {fileName: sha256sum}
     - {fileName: sort}
     - {fileName: tail}
