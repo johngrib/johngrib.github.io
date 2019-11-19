@@ -3,7 +3,7 @@ layout  : wiki
 title   : 맥 키보드 단축키
 summary : 자주 쓰는 맥 단축키 정리
 date    : 2018-01-28 09:09:54 +0900
-updated : 2019-11-19 23:21:12 +0900
+updated : 2019-11-19 23:42:32 +0900
 tag     : 단축키 mac
 toc     : true
 public  : true
@@ -15,11 +15,17 @@ latex   : false
 
 ## 기호
 
-| command  | ⌘ |
-| shift    | ⇧ |
-| option   | ⌥ |
-| control  | ^ |
-| capslock | ⇪ |
+| 기호 | 키 이름  | HTML Entity | in string | Unicode Character                         |
+|------|----------|-------------|-----------|-------------------------------------------|
+| ⌘    | Command  | `&#x2318;`  | "\u2318"  | [PLACE OF INTEREST SIGN][command]         |
+| ⌥    | Option   | `&#x2325;`  | "\u2325"  | [OPTION KEY][option]                      |
+| ⇧    | Shift    | `&#x21E7;`  | "\u21E7"  | [UPWARDS WHITE ARROW][shift]              |
+| ⌃    | Control  | `&#x2303;`  | "\u2303"  | [UP ARROWHEAD][control]                   |
+| ⎋    | ESC      | `&#x238B;`  | "\u238B"  | [BROKEN CIRCLE WITH NORTHWEST ARROW][esc] |
+| ⇪    | Capslock | `&#x21ea;`  | "\u21ea"  | [UPWARDS WHITE ARROW FROM BAR][capslock]  |
+| ⏎    | Return   | `&#x23ce;`  | "\u23ce"  | [RETURN SYMBOL][return]                   |
+| ⌫    | Delete   | `&#x232b;`  | "\u232b"  | [ERASE TO THE LEFT][delete]               |
+| ⇥    | Tab      | `&#x21E5;`  | "\u21E5"  | [RIGHTWARDS ARROW TO BAR][tab]            |
 
 ## 시스템 기본 단축키
 
@@ -146,4 +152,14 @@ latex   : false
 * [Mac에서 스크린샷을 찍는 방법(support.apple.com)](https://support.apple.com/ko-kr/HT201361 )
 * [맥의 하드웨어 담당하는 PRAM과 SMC의 차이와 초기화(리셋)으로 해결할 수 있는 문제 유형(BACK TO THE MAC)](http://macnews.tistory.com/742 )
 * [OS X 요세미티 사용 중 화면이 뚝뚝 끊기거나 그래픽 성능이 크게 저하되는 문제와 임시 해결책 'WIndowServer 프로세스가 주범'(BACK TO THE MAC)](http://macnews.tistory.com/2706 )
+
+[command]: https://www.fileformat.info/info/unicode/char/2318/index.htm
+[option]: https://www.fileformat.info/info/unicode/char/2325/index.htm
+[shift]: https://www.fileformat.info/info/unicode/char/21e7/index.htm
+[control]: https://www.fileformat.info/info/unicode/char/2303/index.htm
+[esc]: https://www.fileformat.info/info/unicode/char/238b/index.htm
+[capslock]: https://www.fileformat.info/info/unicode/char/21ea/index.htm
+[return]: https://www.fileformat.info/info/unicode/char/23ce/index.htm
+[delete]: https://www.fileformat.info/info/unicode/char/232b/index.htm
+[tab]: https://www.fileformat.info/info/unicode/char/21e5/index.htm
 
