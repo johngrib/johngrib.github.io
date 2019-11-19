@@ -3,7 +3,7 @@ layout  : wiki
 title   : 맥 키보드 단축키
 summary : 자주 쓰는 맥 단축키 정리
 date    : 2018-01-28 09:09:54 +0900
-updated : 2019-11-19 23:42:32 +0900
+updated : 2019-11-19 23:57:24 +0900
 tag     : 단축키 mac
 toc     : true
 public  : true
@@ -26,6 +26,7 @@ latex   : false
 | ⏎    | Return   | `&#x23ce;`  | "\u23ce"  | [RETURN SYMBOL][return]                   |
 | ⌫    | Delete   | `&#x232b;`  | "\u232b"  | [ERASE TO THE LEFT][delete]               |
 | ⇥    | Tab      | `&#x21E5;`  | "\u21E5"  | [RIGHTWARDS ARROW TO BAR][tab]            |
+| ⏻    | Power    | `&#x23fb;`  | "\u23fb"  | [POWER SYMBOL][power]                     |
 
 ## 시스템 기본 단축키
 
@@ -38,8 +39,8 @@ latex   : false
 | `⌘-W`       | window close. 활성화된 앱 윈도우를 종료한다.             | O    |      |
 | `⌘-⌥-W`     | 활성화된 앱의 모든 윈도우를 종료한다.                    | O    |      |
 | `⌘-Q`       | quit. 활성화된 앱을 종료한다.                            | O    |      |
-| `⌥-⌘-esc`   | 앱 강제 종료.                                            | O    |      |
-| `⌘-⇧-⌥-esc` | 전면에 있는 앱 강제 종료.                                | O    |      |
+| `⌥-⌘-⎋`     | 앱 강제 종료.                                            | O    |      |
+| `⌘-⇧-⌥-⎋`   | 전면에 있는 앱 강제 종료.                                | O    |      |
 
 ### 스크린샷
 
@@ -61,8 +62,8 @@ latex   : false
 
 | 단축키        | 설명                                            |
 |---------------|-------------------------------------------------|
-| `^-⌘-power`   | 강제 재부팅                                     |
-| `⇧-^-⌥-power` | smc 초기화 (배터리가 있는 맥북 계열에서만 작동) |
+| `^-⌘-⏻ `   | 강제 재부팅                                     |
+| `⇧-^-⌥-⏻ ` | smc 초기화 (배터리가 있는 맥북 계열에서만 작동) |
 | `⇧-⌘-Q`       | 사용자 계정 로그아웃                            |
 | `⌥-⇧-⌘-Q`     | 강제로 사용자 계정 로그아웃                     |
 
@@ -72,14 +73,14 @@ latex   : false
 
 * Emacs 스타일 단축키가 눈에 띈다.
 
-| 단축키      | 설명                                              | 비슷한 Vim 명령 |
-|-------------|---------------------------------------------------|-----------------|
-| `fn-delete` | Delete. 오른쪽으로 삭제한다.                      | `x`             |
-| `^-D`       | Delete. 오른쪽으로 삭제한다.                      | `x`             |
-| `^-H`       | 왼쪽으로 삭제한다.                                | `X`             |
-| `⌥-delete`  | 커서 왼쪽의 단어를 삭제한다.                      | `db`            |
-| `^-K`       | 현재 커서 위치에서 라인 마지막 글자까지 삭제한다. | `D`             |
-| `⌘-delete`  | 현재 커서 위치에서 라인 처음 글자까지 삭제한다.   | `d0`            |
+| 단축키 | 설명                                              | 비슷한 Vim 명령 |
+|--------|---------------------------------------------------|-----------------|
+| `fn-⌫` | Delete. 오른쪽으로 삭제한다.                      | `x`             |
+| `^-D`  | Delete. 오른쪽으로 삭제한다.                      | `x`             |
+| `^-H`  | 왼쪽으로 삭제한다.                                | `X`             |
+| `⌥-⌫`  | 커서 왼쪽의 단어를 삭제한다.                      | `db`            |
+| `^-K`  | 현재 커서 위치에서 라인 마지막 글자까지 삭제한다. | `D`             |
+| `⌘-⌫`  | 현재 커서 위치에서 라인 처음 글자까지 삭제한다.   | `d0`            |
 
 ### 이동
 
@@ -162,4 +163,4 @@ latex   : false
 [return]: https://www.fileformat.info/info/unicode/char/23ce/index.htm
 [delete]: https://www.fileformat.info/info/unicode/char/232b/index.htm
 [tab]: https://www.fileformat.info/info/unicode/char/21e5/index.htm
-
+[power]: https://www.fileformat.info/info/unicode/char/23fb/index.htm
