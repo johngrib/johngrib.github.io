@@ -3,8 +3,8 @@ layout  : wiki
 title   : bc
 summary : An arbitrary precision calculator language
 date    : 2018-10-07 18:12:19 +0900
-updated : 2018-10-07 21:29:56 +0900
-tag     : bash
+updated : 2019-11-19 10:06:32 +0900
+tag     : bash command
 toc     : true
 public  : true
 parent  : programming-language
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# shell 에서 간단히 사용하기
+## Examples
 
 * 간단한 계산기로 사용할 수 있다.
 
@@ -46,7 +46,7 @@ $ echo '1.8 / 3' | bc
 0
 ```
 
-# mathlib 옵션의 사용
+### mathlib 옵션의 사용
 
 * 나눗셈을 할 때 실수를 리턴받고 싶다면 `-l` 옵션을 붙이면 된다.
     * `-l`, `--mathlib`: Define the standard math library.
@@ -121,7 +121,7 @@ $ bc example.bc -q
 3
 ```
 
-# 기본 함수 목록
+## 기본 함수 목록
 
 * `s(x)` - The sine of x, x is in radians.
 * `c(x)` - The cosine of x, x is in radians.
@@ -130,7 +130,7 @@ $ bc example.bc -q
 * `e(x)` - The exponential function of raising e to the value x.
 * `j(n,x)` - The bessel function of integer order n of x.
 
-# 유용한 함수
+## 유용한 함수
 
 * 정수 변환
 
@@ -154,9 +154,9 @@ define f(x) {
 }
 ```
 
-# 기타
+## 기타
 
-## $$\pi$$ 구하기
+### $$\pi$$ 구하기
 
 ```sh
 $ echo "scale=10; 4*a(1)" | bc -l
@@ -175,7 +175,7 @@ $ echo "scale=100; 4*a(1)" | bc -l
 * 그런데 $$45^\circ$$는 $$\pi \over 4$$ 이므로 `4*a(1)`은 $$\pi$$와 같다.
 
 
-# Links
+## Links
 
 * [bc (gnu.org)](https://www.gnu.org/software/bc/ )
     * [Functions](https://www.gnu.org/software/bc/manual/html_chapter/bc_5.html )
