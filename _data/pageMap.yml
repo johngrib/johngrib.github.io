@@ -252,7 +252,7 @@ ag:
     summary: 'the silver searcher'
     parent: command-line
     url: /wiki/ag
-    updated: '2019-11-16 10:41:42 +0900'
+    updated: '2019-11-20 21:32:43 +0900'
     children: []
 agile:
     type: wiki
@@ -884,8 +884,16 @@ design-pattern:
     summary: null
     parent: index
     url: /wiki/design-pattern
-    updated: '2019-11-20 09:36:22 +0900'
-    children: [abstract-factory-pattern, adapter-pattern, builder-pattern, decorator-pattern, factory-method-pattern, null-object-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
+    updated: '2019-11-20 21:30:40 +0900'
+    children: [abstract-factory-pattern, adapter-pattern, builder-pattern, decorator-pattern, design-pattern-quotes, factory-method-pattern, null-object-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
+design-pattern-quotes:
+    type: wiki
+    title: '디자인 패턴 토막글 모음'
+    summary: ""
+    parent: design-pattern
+    url: /wiki/design-pattern-quotes
+    updated: '2019-11-20 21:32:11 +0900'
+    children: []
 Designing-Data-Intensive-Applications:
     type: wiki
     title: '(책) 데이터 중심 애플리케이션 설계'
@@ -1268,7 +1276,7 @@ find:
     summary: 'walk a file hierarchy'
     parent: command-line
     url: /wiki/find
-    updated: '2019-11-16 10:01:53 +0900'
+    updated: '2019-11-20 21:32:50 +0900'
     children: []
 fine-dust:
     type: wiki

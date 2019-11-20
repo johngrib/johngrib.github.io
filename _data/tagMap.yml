@@ -469,6 +469,10 @@ ctags:
     - {fileName: ctags}
 design:
     - {fileName: Design-for-Hackers}
+pattern:
+    - {fileName: design-pattern-quotes}
+quotes:
+    - {fileName: design-pattern-quotes}
 diary:
     - {fileName: diary}
 container:

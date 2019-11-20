@@ -88,6 +88,7 @@ regenerate: true
     * [[builder-pattern]]
     * [[command-pattern]]
     * [[decorator-pattern]]
+    * [[design-pattern-quotes]]
     * [[factory-method-pattern]]
     * [[null-object-pattern]]
     * [[observer-pattern]]
