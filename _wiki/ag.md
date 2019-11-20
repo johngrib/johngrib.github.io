@@ -3,7 +3,7 @@ layout  : wiki
 title   : ag
 summary : the silver searcher
 date    : 2018-12-27 22:01:47 +0900
-updated : 2019-11-20 21:32:43 +0900
+updated : 2019-11-20 21:42:25 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -13,61 +13,45 @@ latex   : false
 * TOC
 {:toc}
 
-# Installation
+## Installation
 ```sh
-$ brew install ag
+brew install ag
 ```
 
-# Examples
-## 텍스트 찾기
+## Examples
+
 ```sh
-$ ag test
+ # test 텍스트를 가진 파일명과 매치된 내용을 보여준다
+ag test
+
+ # 검색 결과에서 파일명만 목록으로 보여준다
+ag test -l
+
+ # 문자열 test를 가진 모든 파일을 찾아, 파일명과 일치한 숫자 카운트를 보여준다.
+ag test -c
+
+ # -A3 : 검색 결과와 일치한 라인 아래로 3줄을 더 보여준다.
+ # -B2 : 검색 결과와 일치한 라인 위로 2줄을 더 보여준다.
+ag test -A3 -B2
+
+ # 중괄호 없는 if 문을 모두 찾는다
+ag '^\s*if.*[^\{]\s*$'
+
+ # 중괄호 없는 if 문을 가진 java 파일을 찾는다
+find . -name '*.java' | xargs ag '^\s*if.*[^\{]\s*$' -A1
 ```
 
-* 문자열 `test`를 가진 모든 파일의 해당 라인을 찾아 보여준다.
-* 파일명, 라인 넘버도 같이 보여준다.
-
-## 파일명 찾기
+### pager 지정
 ```sh
-$ ag test -l
+ # 검색 결과를 less로 본다.
+ag test --pager='less -XRF'
 ```
 
-* 문자열 `test`를 가진 모든 파일을 찾아, 파일명을 보여준다.
+* `-X` 옵션을 붙이면 초기화 문자를 보내지 않는다(clear 하지 않는다).
+* `-R` 옵션을 붙이면 컬러링된 결과로 볼 수 있다.
+* `-F` 옵션을 붙이면 less가 종료되어도 화면이 clear 되지 않는다.
 
-## 일치한 문자열 카운트
-```sh
-$ ag test -c
-```
 
-* 문자열 `test`를 가진 모든 파일을 찾아, 파일명과 일치한 숫자 카운트를 보여준다.
-
-## pager 지정
-```sh
-$ ag test --pager='less -XRF'
-```
-
-* 이렇게 하면 출력 결과를 `less`로 볼 수 있다.
-    * `-R` 옵션을 붙이면 컬러링된 결과로 볼 수 있다.
-    * `-X` 옵션을 붙이면 초기화 문자를 보내지 않는다(clear 하지 않는다).
-    * `-F` 옵션을 붙이면 less가 종료되어도 화면이 clear 되지 않는다.
-
-## 검색결과 전/후를 함께 보기
-```sh
-$ ag test -A3 -B2
-```
-
-* `-A3` : 검색 결과와 일치한 라인 아래로 3줄을 더 보여준다.
-* `-B2` : 검색 결과와 일치한 라인 위로 2줄을 더 보여준다.
-
-## 응용
-```sh
-$ # 중괄호 없는 if 문을 모두 찾는다
-$ ag '^\s*if.*[^\{]\s*$' -A1
-
-$ # 중괄호 없는 if 문을 가진 java 파일을 찾는다
-$ find . -name '*.java' | xargs ag '^\s*if.*[^\{]\s*$' -A1
-```
-
-# Links
+## Links
 * [the silver searcher](https://github.com/ggreer/the_silver_searcher )
 
