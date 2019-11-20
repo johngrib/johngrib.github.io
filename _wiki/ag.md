@@ -3,7 +3,7 @@ layout  : wiki
 title   : ag
 summary : the silver searcher
 date    : 2018-12-27 22:01:47 +0900
-updated : 2019-11-16 10:41:42 +0900
+updated : 2019-11-20 21:32:43 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -59,5 +59,15 @@ $ ag test -A3 -B2
 * `-A3` : 검색 결과와 일치한 라인 아래로 3줄을 더 보여준다.
 * `-B2` : 검색 결과와 일치한 라인 위로 2줄을 더 보여준다.
 
+## 응용
+```sh
+$ # 중괄호 없는 if 문을 모두 찾는다
+$ ag '^\s*if.*[^\{]\s*$' -A1
+
+$ # 중괄호 없는 if 문을 가진 java 파일을 찾는다
+$ find . -name '*.java' | xargs ag '^\s*if.*[^\{]\s*$' -A1
+```
+
 # Links
 * [the silver searcher](https://github.com/ggreer/the_silver_searcher )
+
