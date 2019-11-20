@@ -3,7 +3,7 @@ layout  : wiki
 title   : find 명령어
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2019-11-16 10:01:53 +0900
+updated : 2019-11-20 21:32:50 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -24,6 +24,9 @@ find . -name '*test*'
 
 # 디스크 전체를 뒤져 파일을 찾는다. 에러는 무시한다.
 find / -name 'lostfile.txt' 2>/dev/null
+
+# 사이즈가 1mb 이상인 파일을 찾는다.
+find . -size +1024
 ```
 
 ### 삭제
@@ -42,4 +45,8 @@ find . -not -type d -exec file '{}' ';' | grep CRLF
 
 # 이름이 *.temp 인 디렉토리, 파일을 찾아 모두 삭제한다.
 find . -name '*.temp' -exec rm -rf {} \;
+
+# 모든 java 파일에서 중괄호가 없는 if 문이 있는 파일 목록을 출력한다
+find . -name "*.java" -exec ag "^\s*if[^{]*$" -l {} \;
 ```
+
