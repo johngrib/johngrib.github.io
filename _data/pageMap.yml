@@ -892,7 +892,7 @@ design-pattern-quotes:
     summary: ""
     parent: design-pattern
     url: /wiki/design-pattern-quotes
-    updated: '2019-11-20 21:32:11 +0900'
+    updated: '2019-11-21 09:25:58 +0900'
     children: []
 Designing-Data-Intensive-Applications:
     type: wiki
@@ -2860,7 +2860,7 @@ template-method-pattern:
     summary: '알고리즘의 일부 단계를 서브클래스에서 정의한다'
     parent: design-pattern
     url: /wiki/template-method-pattern
-    updated: '2019-10-06 08:46:09 +0900'
+    updated: '2019-11-21 09:28:58 +0900'
     children: []
 test-double:
     type: wiki

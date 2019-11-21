@@ -3,7 +3,7 @@ layout  : wiki
 title   : 디자인 패턴 토막글 모음
 summary : 
 date    : 2019-11-20 21:30:04 +0900
-updated : 2019-11-20 21:32:11 +0900
+updated : 2019-11-21 09:25:58 +0900
 tag     : pattern quotes
 toc     : true
 public  : true
@@ -26,8 +26,8 @@ latex   : false
 
 ## 참고문헌
 
-*  소프트웨어 아키텍트가 알아야 할 97가지 / Richard Monson-Haefel 저 / Eva Study 역 / 지앤선(志&嬋) / 2011년 04월 14일 / 원제 : 97 Things Every Software Architect Should Know
-*  실전 코드로 배우는 실용주의 디자인 패턴 / Allen Holub 저 / 송치형 편역 / 지앤선(志&嬋) / 2006년 07월 19일 / 원제 : Holub on Patterns : Learning Design Patterns by Looking at Code 
+* 소프트웨어 아키텍트가 알아야 할 97가지 / Richard Monson-Haefel 저 / Eva Study 역 / 지앤선(志&嬋) / 2011년 04월 14일 / 원제 : 97 Things Every Software Architect Should Know
+* 실전 코드로 배우는 실용주의 디자인 패턴 / Allen Holub 저 / 송치형 편역 / 지앤선(志&嬋) / 2006년 07월 19일 발행 / 원제 : Holub on Patterns : Learning Design Patterns by Looking at Code
 
 ## 주석
 [^chad]: 소프트웨어 아키텍트가 알아야 할 97가지. 110쪽. 패턴 중독, Chad LaVigne.
