@@ -3,7 +3,7 @@ layout  : wiki
 title   : 템플릿 메소드 패턴 (Template Method Pattern)
 summary : 알고리즘의 일부 단계를 서브클래스에서 정의한다
 date    : 2019-08-31 15:27:07 +0900
-updated : 2019-10-06 08:46:09 +0900
+updated : 2019-11-21 09:28:58 +0900
 tag     : design-pattern
 toc     : true
 public  : true
@@ -13,16 +13,16 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
-## 의도
+### 의도
 
 GoF는 다음과 같이 이 패턴의 의도를 설명한다.[^gof]
 
 > 객체의 연산에는 알고리즘의 뼈대만을 정의하고 각 단계에서 수행할 구체적 처리는 서브클래스 쪽으로 미룹니다.
 알고리즘의 구조 자체는 그대로 놔둔 채 알고리즘 각 단계 처리를 서브클래스에서 재정의할 수 있게 합니다.
 
-## 용어
+### 용어
 
 * 템플릿 메소드
     * 필수 처리 절차를 정의한 메소드.
@@ -31,7 +31,7 @@ GoF는 다음과 같이 이 패턴의 의도를 설명한다.[^gof]
     * 필요하다면 서브클래스에서 확장할 수 있는 기본적인 행동을 제공하는 연산(메소드).
     * 기본적으로는 아무 내용도 정의하지 않는다.
 
-## 구현 팁
+### 구현 팁
 
 * 템플릿 메소드가 호출하는 메소드들을 템플릿 메소드만 호출할 수 있게 하는 것을 고려한다.
     * `protected` 접근 제한을 사용하면 된다.
@@ -41,7 +41,7 @@ GoF는 다음과 같이 이 패턴의 의도를 설명한다.[^gof]
 * 재정의할 abstract 메소드는 식별하기 쉽도록 접두사를 붙여주자.
     * 예를 들어 메소드 이름이 `Do`로 시작하도록 한다.
 
-# 헤드 퍼스트 디자인 패턴의 예제
+## 헤드 퍼스트 디자인 패턴의 예제
 
 Head First Design Pattern에 나온 예제가 이해하기 쉽다.[^head-example]
 
@@ -144,7 +144,7 @@ public class Tea extends CaffeineBeverage {
 }
 ```
 
-## hook 메소드
+### hook 메소드
 
 
 * 서브클래스 구현시 융통성을 발휘하기 위한 메소드.
@@ -180,7 +180,7 @@ public abstract class CaffeineBeverage {
 }
 ```
 
-# 람다를 사용해 서브 클래스 제거하기
+## 람다를 사용해 서브 클래스 제거하기
 
 다음은 [Java Magazine 2016 Nov/Dec의 Implementing Design Patterns with Lambdas][magazine]에 실린 코드를 약간 수정한 것이다.
 
@@ -237,18 +237,26 @@ new OnlineBanking()
 
 ```
 
-# 참고문헌
+## 인용
+
+Allen Holub은 "실용주의 디자인 패턴"에서 이 패턴에 대해 다음과 같이 불평했다.
+
+> Template Method 패턴은 가능한 절제해 사용해야 한다. 클래스 자체가 전적으로 파생 클래스의 커스터마이징에 의존하는 일종의 '프레임워크'가 되면 이 역시 매우 부서지기 쉽기 때문이다. 기반 클래스는 매우 깨지기 쉽다. 나는 MFC에서 프로그래밍을 할 때, 마이크로소프트가 새로운 버전을 릴리즈할 때마다 전체 애플리케이션을 재작성해야만 했던 악몽을 떨쳐버릴 수가 없다. 종종 코드는 잘 컴파일되지만, 몇몇 기반 클래스의 메소드가 변경되어 프로그램이 제대로 실행되지 않았던 것이다.[^holub]
+
+## 참고문헌
 
 * 도서
     * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
     * Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
+    * 실전 코드로 배우는 실용주의 디자인 패턴 / Allen Holub 저 / 송치형 편역 / 지앤선(志&嬋) / 2006년 07월 19일 발행 / 원제 : Holub on Patterns : Learning Design Patterns by Looking at Code
 * 웹 문서
     * [Java Magazine 2016 Nov/Dec: Implementing Design Patterns with Lambdas][magazine]
 
-# 주석
+## 주석
 
 [^gof]: GoF의 디자인 패턴(개정판). 419쪽.
 [^head-example]: Head First Design Patterns. 315쪽.
+[^holub]: 실용주의 디자인 패턴. Chapter 2. 93쪽.
 
 [magazine]: http://www.javamagazine.mozaicreader.com/NovDec2016/LinkedIn#&pageSet=57&page=0
 
