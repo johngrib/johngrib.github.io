@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2019-11-16 22:54:13 +0900
+updated : 2019-11-22 23:55:28 +0900
 tag     : terminal study vim
 toc     : true
 public  : true
@@ -241,6 +241,8 @@ fzf에 익숙해지면 fzf를 사용해 이런저런 선택기를 만들어 본�
 fc 명령어를 사용하면 전에 입력한 명령을 vim에서 편집할 수 있다.
 
 편집을 마친 후, 저장하고 종료하면 실행된다. 매우 긴 명령이나 위험한 명령을 사용할 때 요긴하다.
+
+fc 명령어에 익숙해지면 `control-x, control-e`도 사용해 보고, `export EDITOR`에 대해 구글링해 본다.
 
 ## 잡다한 것을 계속해서 만들어 본다
 
