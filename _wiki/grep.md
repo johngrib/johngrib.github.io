@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : grep 명령어
+title   : grep, egrep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2018-09-14 17:06:32 +0900
+updated : 2019-11-21 17:48:46 +0900
 tag     : bash command
 toc     : true
 public  : true
