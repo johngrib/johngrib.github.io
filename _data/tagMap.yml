@@ -546,7 +546,6 @@ cs:
 tools:
     - {fileName: fine-dust}
     - {fileName: labs-strava-com-heatmap}
-    - {fileName: my-timer}
     - {fileName: tools}
     - {fileName: utterances}
 미세먼지:

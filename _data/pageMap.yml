@@ -2190,14 +2190,6 @@ my-study-method:
     url: /wiki/my-study-method
     updated: '2019-01-19 12:03:58 +0900'
     children: []
-my-timer:
-    type: wiki
-    title: 타이머
-    summary: null
-    parent: tools
-    url: /wiki/my-timer
-    updated: '2019-06-04 21:20:33 +0900'
-    children: []
 my-wiki:
     type: wiki
     title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
@@ -2941,7 +2933,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [aws, command-line, Excel, git, Gradle, intellij, mac-apps, my-timer, useful-site, web-browser-extension]
+    children: [aws, command-line, Excel, git, Gradle, intellij, mac-apps, useful-site, web-browser-extension]
 top:
     type: wiki
     title: 'top 명령어'
