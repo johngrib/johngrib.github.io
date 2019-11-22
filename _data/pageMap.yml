@@ -732,7 +732,7 @@ config-ideavim:
     summary: '이거라도 쓰는 수 밖에 없다'
     parent: Vim
     url: /wiki/config-ideavim
-    updated: '2019-11-18 22:09:13 +0900'
+    updated: '2019-11-22 17:13:29 +0900'
     children: []
 Continuous-Integration:
     type: wiki
@@ -796,7 +796,7 @@ curl:
     summary: 'transfer a URL'
     parent: command-line
     url: /wiki/curl
-    updated: '2019-11-18 21:34:05 +0900'
+    updated: '2019-11-22 16:37:31 +0900'
     children: []
 cut:
     type: wiki
@@ -1552,11 +1552,11 @@ gray-code:
     children: []
 grep:
     type: wiki
-    title: 'grep 명령어'
+    title: 'grep, egrep 명령어'
     summary: 'file pattern searcher'
     parent: command-line
     url: /wiki/grep
-    updated: '2018-09-14 17:06:32 +0900'
+    updated: '2019-11-21 17:48:46 +0900'
     children: []
 Groovy:
     type: wiki
@@ -2180,7 +2180,7 @@ my-mac-os-terminal:
     summary: '편안하고 즐거운 터미널 생활'
     parent: my-lifehack
     url: /wiki/my-mac-os-terminal
-    updated: '2019-11-16 22:54:13 +0900'
+    updated: '2019-11-22 23:55:28 +0900'
     children: []
 my-study-method:
     type: wiki
@@ -2628,7 +2628,7 @@ sed:
     summary: 'stream editor'
     parent: command-line
     url: /wiki/sed
-    updated: '2019-11-19 22:15:21 +0900'
+    updated: '2019-11-21 17:43:53 +0900'
     children: []
 sha256sum:
     type: wiki
