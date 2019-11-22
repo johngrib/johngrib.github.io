@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 설정하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2019-11-18 22:09:13 +0900
+updated : 2019-11-22 17:13:29 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -24,6 +24,17 @@ set ideamarks   " global 마크를 IntelliJ의 북마크 기능으로 사용한�
 set surround    " tim pope의 vim-surround 에뮬레이션 기능 사용.
 set commentary  " tim pope의 commentary.vim 에뮬레이션 기능 사용.
 ```
+
+## action 호출 설정
+
+```
+" tabbar와 비슷한 느낌으로 사용할 수 있다
+nnoremap \t :action ActivateStructureToolWindow<CR>
+
+" startify와 비슷한 느낌으로 최근 프로젝트 이동을 할 수 있다
+nnoremap \s :action ManageRecentProjects<CR>
+```
+
 
 
 ## Link
