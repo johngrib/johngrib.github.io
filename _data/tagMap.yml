@@ -286,6 +286,7 @@ agile:
     - {fileName: agile}
     - {fileName: grow-together}
     - {fileName: kanban-scrum}
+    - {fileName: Tompson-s-rule-for-first-time-telescope-makers}
 complexity:
     - {fileName: airplain-rule}
 law:
@@ -363,6 +364,7 @@ money:
     - {fileName: billing-aws}
 rule:
     - {fileName: Boy-Scout-Rule}
+    - {fileName: Tompson-s-rule-for-first-time-telescope-makers}
 Uncle-Bob:
     - {fileName: Boy-Scout-Rule}
     - {fileName: Clean-Code}

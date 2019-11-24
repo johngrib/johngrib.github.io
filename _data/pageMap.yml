@@ -2429,7 +2429,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
-    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Zipf-s-law]
+    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
 Python3:
     type: wiki
     title: Python3
@@ -2925,6 +2925,14 @@ TOML:
     parent: programming-language
     url: /wiki/TOML
     updated: '2018-10-23 11:01:12 +0900'
+    children: []
+Tompson-s-rule-for-first-time-telescope-makers:
+    type: wiki
+    title: '망원경 규칙 (Telescope Rule)'
+    summary: '4인치 반사경을 만든 다음에 6인치 반사경을 만드는 것이, 6인치 반사경 하나 만드는 것보다 더 빠르다'
+    parent: proverb
+    url: /wiki/Tompson-s-rule-for-first-time-telescope-makers
+    updated: '2019-11-24 09:36:53 +0900'
     children: []
 tools:
     type: wiki
