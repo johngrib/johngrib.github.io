@@ -3,7 +3,7 @@ layout  : wiki
 title   : Router(라우터)
 summary : 
 date    : 2019-07-22 23:30:06 +0900
-updated : 2019-07-23 21:51:14 +0900
+updated : 2019-11-26 22:16:23 +0900
 tag     : 
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# Router
+## Router
 
 * TCP/IP 완벽 가이드 36장에서 인용
 
@@ -53,7 +53,7 @@ AS를 사용하면 각 AS가 자신에게 맞는 라우팅 방식을 택할 수 
 전체 인터네트워크의 효율을 높일 수 있다.
 각 AS는 전체 인터네트워크에서 고유한 번호를 가진다.
 
-# Hop
+## Hop
 
 * TCP/IP 완벽 가이드 38장에서 인용
 
@@ -68,6 +68,6 @@ RIP에서는 어떤 네트워크나 호스트에 대해서도 최대 15홉까지
 RIP(Routing Information Protocol, 라우팅 정보 프로토콜)
 
 
-# 참고문헌
+## 참고문헌
 
 * TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
