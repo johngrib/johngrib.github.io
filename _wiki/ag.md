@@ -3,7 +3,7 @@ layout  : wiki
 title   : ag
 summary : the silver searcher
 date    : 2018-12-27 22:01:47 +0900
-updated : 2019-11-20 21:42:25 +0900
+updated : 2019-11-29 14:02:44 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -51,6 +51,39 @@ ag test --pager='less -XRF'
 * `-R` 옵션을 붙이면 컬러링된 결과로 볼 수 있다.
 * `-F` 옵션을 붙이면 less가 종료되어도 화면이 clear 되지 않는다.
 
+### 실제 활용한 명령어들
+
+```sh
+ # 1개 이상의 공백 문자로만 이루어진 경우를 모두 찾아라
+find . -name '*.java' | xargs ag '^\s{1,}$'
+
+ # java 프로젝트 전체에서 중괄호가 생략된 if 문을 찾아라
+find . -name '*.java' | xargs ag '^\s*if.*[^\{]\s*$' -A1
+
+ # 100글자가 넘는 라인이 있는 파일의 수를 집계하라
+find . -name '*.java' | xargs ag '^.{100}.+$' -l | wc -l
+
+ # import, package 문을 제외하고 100 글자가 넘는 코드를 찾아라
+find . -name '*.java' | xargs ag '^(?!(import|package)).{100}'
+
+ # import, package, 주석을 제외하고 100 글자가 넘는 코드를 찾아라
+find . -name '*.java' | xargs ag '^(?!(import|package|\s*\*|\s*\/\/|\/\*)).{100}'
+
+ # 와일드 카드(*)를 사용한 모든 java 파일을 탐색하라
+find . -name '*.java' | egrep -v '[tT]est.java$' | xargs ag '^\s*import.*\*'
+
+ # 중괄호를 생략한 else 문을 찾아라
+find . -name '*.java' | xargs ag '^\s*\b(else)\b|\b(else)\b[^\{]*?$'
+
+ # 앞에 중괄호가 없는 else, catch를 찾아라
+ag '^\s*?(else|catch)'
+
+ # 좌우에 스페이스가 없는 = 를 찾아라. 단, +=, -=, == 는 제외한다.
+find . -name '*.java' | xargs ag '[^\s<!=+-]=|\=[^=\s]'
+
+ # 좌우에 공백이 없는 -> 를 찾아라
+find . -name '*.java' | xargs ag '\-\>(?=\S)|(?<=\S)\-\>'
+```
 
 ## Links
 * [the silver searcher](https://github.com/ggreer/the_silver_searcher )
