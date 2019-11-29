@@ -3,7 +3,7 @@ layout  : wiki
 title   : 애자일(agile)에 대한 토막글 모음
 summary : 
 date    : 2019-04-24 22:55:36 +0900
-updated : 2019-11-29 23:20:10 +0900
+updated : 2019-11-29 23:24:41 +0900
 tag     : agile
 toc     : true
 public  : true
@@ -24,8 +24,18 @@ latex   : false
 
 code-and-fix: 이러한 개발 방식은 계획 수립과 분석, 설계의 상위 과정을 무시하고 오로지 코딩(프로그래밍)만을 강조하는, 빨리 일정을 끝내려는 변형된 무리한 속성 과정이다.
 
+## 밥 아저씨 트위터에서
+
+> Agile is not about going faster.
+Agile is about destroying hope.
+The data produced by a good agile team provides a cold dose of reality to the managers — in time for them to — manage.[^bob-twitter]
+
 
 ## 참고문헌
 
 * 리팩토링 데이터베이스 진화적 데이터베이스 디자인 / 스캇 W. 엠블러, 프라모드 J. 세달라지 공저 / 정원혁, 이재범, 권태돈, 성대중, 현중균 공역 / 위키북스 / 2007년 06월 29일 / 원제 : Refactoring Databases
 
+## 주석
+
+[bob-twitter]: https://twitter.com/unclebobmartin/status/1199000963950022656
+[^bob-twitter]: [Uncle Bob Martin 오전 1:24 · 2019년 11월 26일][bob-twitter]
