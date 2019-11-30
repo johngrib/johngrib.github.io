@@ -3,7 +3,7 @@ layout  : wiki
 title   : 읽고 있는 책의 진행도를 Vim에서 자동으로 계산하자
 summary : awk 만세
 date    : 2019-11-30 21:01:19 +0900
-updated : 2019-11-30 21:51:08 +0900
+updated : 2019-11-30 21:57:13 +0900
 tag     : vim awk
 toc     : true
 public  : true
@@ -100,7 +100,7 @@ augroup END
 
 한편, vim에서는 파일을 편집할 때 tagbar를 통해 화면 오른쪽에 자동으로 목차가 업데이트된다.
 
-![in vim](https://user-images.githubusercontent.com/1855714/69900784-4a06e780-13bb-11ea-987e-54a8556f160e.png )
+![in vim](https://user-images.githubusercontent.com/1855714/69900879-52135700-13bc-11ea-91bf-291a8710354e.png )
 
 이제 목차에서 퍼센티지를 볼 수 있기 때문에 한 눈에 전체 진행도를 볼 수 있게 됐다.
 
