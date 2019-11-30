@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim, 두 가지 관점
 summary : 그리고 나의 vim 사용 습관
 date    : 2019-05-19 22:31:27 +0900
-updated : 2019-06-04 21:20:06 +0900
+updated : 2019-11-30 21:22:04 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -685,6 +685,10 @@ endif
 # VIMRC 2019
 
 * 이 글은 [VIMRC 2019](https://lqez.github.io/vimrc2019/ )에서 사용한 발표 자료입니다([youtube](https://www.youtube.com/watch?v=lNWuf48vgV4 )).
+
+# 함께 읽기
+
+* [[vim-update-book-progress]]{읽고 있는 책의 진행도를 Vim에서 자동으로 계산하자}
 
 # Links
 

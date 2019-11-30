@@ -157,6 +157,7 @@ vim:
     - {fileName: vim-rest-console}
     - {fileName: vim-tagbar-with-markdown}
     - {fileName: vim-tmux-t-ut}
+    - {fileName: vim-update-book-progress}
     - {fileName: vim-with-space-char}
     - {fileName: vim-ycm-python3}
     - {fileName: vimium}
@@ -809,6 +810,8 @@ markdown:
     - {fileName: vim-tagbar-with-markdown}
 fix:
     - {fileName: vim-tmux-t-ut}
+awk:
+    - {fileName: vim-update-book-progress}
 chrome:
     - {fileName: vimium}
 firefox:

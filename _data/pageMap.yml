@@ -2996,7 +2996,7 @@ two-views-of-vim:
     summary: '그리고 나의 vim 사용 습관'
     parent: Vim
     url: /wiki/two-views-of-vim
-    updated: '2019-06-04 21:20:06 +0900'
+    updated: '2019-11-30 21:22:04 +0900'
     children: []
 units:
     type: wiki
@@ -3157,6 +3157,14 @@ vim-tmux-t-ut:
     parent: Vim
     url: /wiki/vim-tmux-t-ut
     updated: '2017-04-03 07:33:49 +0900'
+    children: []
+vim-update-book-progress:
+    type: wiki
+    title: '읽고 있는 책의 진행도를 Vim에서 자동으로 계산하자'
+    summary: 'awk 만세'
+    parent: vim
+    url: /wiki/vim-update-book-progress
+    updated: '2019-11-30 21:27:35 +0900'
     children: []
 vim-with-space-char:
     type: wiki

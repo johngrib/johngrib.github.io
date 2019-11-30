@@ -312,6 +312,7 @@ regenerate: true
     * [[vim-rest-console]]
     * [[vim-tagbar-with-markdown]]
     * [[vim-tmux-t-ut]]
+    * [[vim-update-book-progress]]
     * [[vim-with-space-char]]
     * [[vim-ycm-python3]]
     * [[vimwiki]]
