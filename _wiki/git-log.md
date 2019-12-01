@@ -3,7 +3,7 @@ layout  : wiki
 title   : git log
 summary : 
 date    : 2019-12-01 08:14:22 +0900
-updated : 2019-12-01 09:20:40 +0900
+updated : 2019-12-01 19:20:57 +0900
 tag     : git
 toc     : true
 public  : true
@@ -17,8 +17,11 @@ latex   : false
 
 나는 로그 그래프 확인에 다음 알리아스를 사용해왔다.
 
-```
-l = log --color --graph --pretty=format:'%Cred%h %Creset-%C(yellow)%d %Creset%s %Cgreen(%cr)%C(bold blue)<%an>' --abbrev-commit
+```sh
+l = "log \
+    --color --graph \
+    --abbrev-commit \
+    --pretty=format:'%Cred%h %Creset-%C(yellow)%d %Creset%s %Cgreen(%cr)%C(bold blue)<%an>'"
 ```
 
 `git l`을 입력하면 다음과 같이 출력된다.
@@ -27,10 +30,12 @@ l = log --color --graph --pretty=format:'%Cred%h %Creset-%C(yellow)%d %Creset%s 
 
 그리고 최근에 다음과 같이 바꿔서 사용하기 시작했다.
 
+```sh
+l = "log \
+    --color --graph --decorate \
+    --date=format:'%Y-%m-%d' \
+    --pretty=format:'%C(cyan)%h%C(auto)%d %s %C(magenta)(%ad)%C(bold blue) %an'"
 ```
-l = log --color --graph --decorate --date=format:'%Y-%m-%d' --pretty=format:'%C(cyan)%h%C(auto)%d %s %C(magenta)(%ad)%C(bold blue) %an'
-```
-
 
 ![](https://user-images.githubusercontent.com/1855714/69907643-a26dd180-141b-11ea-9359-9a809f5b621e.png )
 

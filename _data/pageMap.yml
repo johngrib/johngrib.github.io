@@ -1404,7 +1404,7 @@ git-log:
     summary: ""
     parent: git
     url: /wiki/git-log
-    updated: '2019-12-01 09:20:40 +0900'
+    updated: '2019-12-01 19:20:57 +0900'
     children: []
 Go-Blog-translation:
     type: wiki
