@@ -316,7 +316,7 @@ awk:
     summary: 'pattern-directed scanning and processing language'
     parent: programming-language
     url: /wiki/awk
-    updated: '2019-11-18 14:18:28 +0900'
+    updated: '2019-12-01 08:04:20 +0900'
     children: []
 aws:
     type: wiki
@@ -1381,7 +1381,7 @@ git:
     parent: tools
     url: /wiki/git
     updated: '2019-01-29 16:43:48 +0900'
-    children: [git-alias, git-checkout-specific-files]
+    children: [git-alias, git-checkout-specific-files, git-log]
 git-alias:
     type: wiki
     title: '편리한 git alias 설정하기'
@@ -1397,6 +1397,14 @@ git-checkout-specific-files:
     parent: git
     url: /wiki/git-checkout-specific-files
     updated: '2018-12-02 14:32:59 +0900'
+    children: []
+git-log:
+    type: wiki
+    title: 'git log'
+    summary: ""
+    parent: git
+    url: /wiki/git-log
+    updated: '2019-12-01 09:20:40 +0900'
     children: []
 Go-Blog-translation:
     type: wiki
