@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2019-11-18 14:18:28 +0900
+updated : 2019-12-01 08:04:20 +0900
 tag     : command
 toc     : true
 public  : true
@@ -52,6 +52,9 @@ $ awk 'NR%2==0 {print p","$0;} NR%2 {p=$0;}'
 $ echo 'ASDF' | awk '{print tolower($0)}'
 $ echo 'asdf' | awk '{print toupper($0)}'
 ```
+
+## 함께 읽기
+* [[vim-update-book-progress]]
 
 ## Link
 
