@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim, 두 가지 관점
 summary : 그리고 나의 vim 사용 습관
 date    : 2019-05-19 22:31:27 +0900
-updated : 2019-11-30 21:22:04 +0900
+updated : 2019-12-01 19:55:56 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -23,11 +23,11 @@ If all you have is a hammer, everything looks like a nail.
 이 글에서는 vim에 대한 나의 두 가지 관점과 내 vim 사용 습관에 관해 이야기한다.
 
 
-# 관점: 텍스트 처리 언어로서의 vim
+## 관점: 텍스트 처리 언어로서의 vim
 
 * **Vim as textual processing language**.
 
-## vim NORMAL 모드 명령 시스템은 하나의 언어이다
+### vim NORMAL 모드 명령 시스템은 하나의 언어이다
 
 나는 vim의 NORMAL 명령 시스템을 텍스트 처리 언어로 볼 수 있다고 생각한다.
 
@@ -45,7 +45,7 @@ $$
 
 $$\Sigma_v$$는 터미널이 입력으로 받는 모든 문자 집합의 부분집합이며, $$L_v$$는 $$\Sigma_v$$의 원소들로 만든 모든 ordered set의 집합이다(공집합 제외).
 
-## vim의 NORMAL 명령어 시퀀스는 함수이다
+### vim의 NORMAL 명령어 시퀀스는 함수이다
 
 $$L_v$$는 언어로 정의할 수 있을 뿐만 아니라, 실천 가능한 지시가 있는 언어이기도 하다.
 
@@ -78,7 +78,7 @@ Do not look in the (green)box.
 
 
 
-## vim 매크로 생성은 새로운 동사를 창조하는 행위
+### vim 매크로 생성은 새로운 동사를 창조하는 행위
 
 vim의 NORMAL 명령어를 언어 $$L_v$$로 보는 관점에서
 "매크로" 생성은 새로운 동사를 창조하는 행위라 할 수 있다(그 외에도 map, abbreviate, command, function 등등이 있지만, 여기에서는 생략한다).
@@ -171,7 +171,7 @@ func main() {
 당연히 `@n@c`도 또 다른 매크로에 등록하여 더 적은 횟수의 키 스트로크로 사용하는 것도 가능하다.
 
 
-## $$L_v$$의 구현체
+### $$L_v$$의 구현체
 
 $$L_v$$를 vim 에디터 NORMAL 모드의 맥락과 유사한 느낌으로 사용할 수 있도록 고안한 도구를 vim NORMAL 명령 언어의 구현체로 생각할 수 있다.
 
@@ -197,7 +197,7 @@ _표: Twitter와 Facebook, Gmail의 키보드 단축키들_
 
 
 
-## 초심자는 vim을 어떻게 공부하는 것이 좋을까?
+### 초심자는 vim을 어떻게 공부하는 것이 좋을까?
 
 초심자가 vim 에디터를 접할 때 엄청나게 많은 "**단축키**"에 놀라곤 한다.
 
@@ -293,7 +293,7 @@ vim NORMAL 명령어는 기본적으로 다음과 같은 형식을 따른다.
 그리고 이러한 **언어**에 익숙해진다면
 그때부터는 수많은 플랫폼(IDE, 웹 브라우저 등등)에 플러그인 형태로 제공되는 vim 언어 플러그인을 사용할 수 있게 된다.
 
-## vim 언어 입력의 특성
+### vim 언어 입력의 특성
 
 * 키 시퀀스를 입력하는 것으로 프로시저를 생성할 수 있다.
 * 한 글자가 하나의 동사(명령), 명사(대상)를 의미한다.
@@ -344,7 +344,7 @@ If you hit two keys on the typewriter, the one you don't want hits the paper.
 
 이런 특성은 특정 명령어를 미리 정의하지 않아도 문법에 맞춰 사용자가 상상력과 경험을 통해 새로운 명령어 조합을 만들어낼 수 있다는 장점이 있다. 즉, vim 언어의 특성은 오히려 최소한의 암기만으로 수많은 기능을 사용할 수 있게 한다.
 
-## vim 언어 입력의 특성을 응용하기
+### vim 언어 입력의 특성을 응용하기
 
 vim에 새로운 명령을 추가할 때 위에서 살펴본 vim 언어 입력의 특성을 응용하는 것이 바람직하다고 생각한다.
 
@@ -383,7 +383,7 @@ vim에 새로운 명령을 추가할 때 위에서 살펴본 vim 언어 입력�
 
 
 
-# 관점: 플랫폼으로서의 vim
+## 관점: 플랫폼으로서의 vim
 
 {% raw %}
 <blockquote class="twitter-tweet">
@@ -395,7 +395,7 @@ vim에 새로운 명령을 추가할 때 위에서 살펴본 vim 언어 입력�
 * 나는 vim을 코딩하거나 설정 파일을 수정할 때에만 쓰지 않는다.
 * 목적이 다른 여러 종류의 텍스트 편집 플랫폼으로 사용한다.
 
-## 작업 환경을 어떻게 전환하는가?
+### 작업 환경을 어떻게 전환하는가?
 
 다양한 용도로 사용하는 플랫폼이라면 작업 전환이 필수.
 
@@ -442,7 +442,7 @@ Plug 'mhinz/vim-startify'
 Startify는 Most Recently Used Files도 제공하고 있어 편리하다.
 
 
-## vim 에디터는 터미널 도구
+### vim 에디터는 터미널 도구
 
 * vim 외의 다른 도구들을 함께 조화롭게 사용하는 방향을 생각해볼 수 있다.
 * vim 안에서 모든 것을 해결하려 집착할 필요는 없다.
@@ -515,13 +515,13 @@ vim
 평범한 bash 명령어와 같이 STDIN을 받아 처리하는 코드를 작성한다면,
 bash shell에서 pipe redirection과 함께 쓸 수 있는 것은 물론이고 vim 에디터 안에서도 쓸 수 있다.
 
-## 내가 작성한 vimscript 도구의 실행
+### 내가 작성한 vimscript 도구의 실행
 
 $$L_v$$외에 vim에는 vimscript(VimL)라는 이름의 프로그래밍 언어가 내장되어 있다.
 
 이 언어와 함께 제공되는 builtin function을 사용하면 이런저런 유용한 도구를 만들어 사용할 수 있다.
 
-### 읽고 있는 책 progress 관리
+#### 읽고 있는 책 progress 관리
 
 나는 읽고 있는 책들의 진행 상태를 vim으로 관리하고 있다.
 
@@ -556,14 +556,14 @@ augroup END
 ```
 
 
-### 블로그 관리
+#### 블로그 관리
 
 이 주제로는 이미 두 개의 글을 썼으므로 이 글에서는 길게 이야기하지 않는다.
 
 * [[my-wiki]]{Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자}
 * [[vimwiki]]{Vimwiki 사용법}
 
-### 게임
+#### 게임
 
 * vimscript로 게임을 개발하거나 실행하여 플레이할 수도 있다.
 
@@ -572,7 +572,7 @@ augroup END
 <img src="https://user-images.githubusercontent.com/1855714/27774457-7e001646-5fcd-11e7-9e90-c37eafefad9c.gif" alt="animated demonstration" style="max-width:100%;">
 
 
-## 다른 사람이 작성한 vimscript 도구의 실행
+### 다른 사람이 작성한 vimscript 도구의 실행
 
 Apple에 앱 스토어가 있다면 Vim에는 vim.org/scripts 와 Vim Awesome이 있다.
 
@@ -584,12 +584,12 @@ Apple에 앱 스토어가 있다면 Vim에는 vim.org/scripts 와 Vim Awesome이
 프로그래밍 도구는 물론이고, 일정 관리, 게임, 음악 플레이어 등등 다양한 도구가 존재한다.
 
 
-### 내가 매일 사용하는 vim plugin 소개
+#### 내가 매일 사용하는 vim plugin 소개
 
 vimscript로 만든 vim 전용 도구는 vim plugin이라 부른다.
 
 
-#### fzf.vim
+##### fzf.vim
 
 <https://github.com/junegunn/fzf.vim >
 
@@ -603,7 +603,7 @@ vimscript로 만든 vim 전용 도구는 vim plugin이라 부른다.
 
 ![image](https://user-images.githubusercontent.com/1855714/58028441-b1fb8c00-7b55-11e9-86fa-bb376029b623.png)
 
-#### VimWiki
+##### VimWiki
 
 <https://github.com/vimwiki/vimwiki >
 
@@ -611,7 +611,7 @@ vimscript로 만든 vim 전용 도구는 vim plugin이라 부른다.
 * **블로그 관리**, 일기 관리, 할일 관리에 유용.
 * 사용이 편리하기 때문에 글을 매일 쓰게 된다.
 
-#### Ultisnips
+##### Ultisnips
 
 <https://github.com/SirVer/ultisnips >
 
@@ -624,13 +624,13 @@ vimscript로 만든 vim 전용 도구는 vim plugin이라 부른다.
 
 ![image](https://user-images.githubusercontent.com/1855714/58098324-462c2880-7c14-11e9-9c83-d39b00b2e6c3.png)
 
-### 그 외 텍스트 에디팅, 커서 점프
+#### 그 외 텍스트 에디팅, 커서 점프
 
 * [vim-surround](https://github.com/tpope/vim-surround ) - 말이 필요한가? Vim 언어를 멋지게 확장한다.
 * [vim-textobj-user](https://github.com/kana/vim-textobj-user ) - Vim의 텍스트 오브젝트를 확장하는 도구.
 * [vim-easymotion](https://github.com/easymotion/vim-easymotion ) - 커서 이동 힌트가 편리하다.
 
-## 많은 vim 설정을 어떻게 관리하는가?
+### 많은 vim 설정을 어떻게 관리하는가?
 
 나는 `.vimrc`에 아래와 같이 설정한 다음,
 
@@ -672,7 +672,7 @@ endif
 ```
 
 
-## vim 플랫폼에 기여하기
+### vim 플랫폼에 기여하기
 
 크게 두 가지 방법이 있다.
 
@@ -682,15 +682,15 @@ endif
     * 기부자는 투표권을 받게 되며, 약 81가지 항목에 대한 찬/반 여부를 투표할 수 있게 된다.
     * 기부자는 vim.org의 [Hall of Honour](https://www.vim.org/sponsor/hall_of_honour.php )에 이름을 올릴 수 있다.
 
-# VIMRC 2019
+## VIMRC 2019
 
 * 이 글은 [VIMRC 2019](https://lqez.github.io/vimrc2019/ )에서 사용한 발표 자료입니다([youtube](https://www.youtube.com/watch?v=lNWuf48vgV4 )).
 
-# 함께 읽기
+## 함께 읽기
 
 * [[vim-update-book-progress]]{읽고 있는 책의 진행도를 Vim에서 자동으로 계산하자}
 
-# Links
+## Links
 
 
 * [레거시 코드를 파괴하는 Vim 벽돌 깨기](http://woowabros.github.io/tools/2017/07/06/vim-game-code-break.html )
@@ -703,7 +703,7 @@ endif
 * [vim-textobj-user](https://github.com/kana/vim-textobj-user )
 * [vim-easymotion](https://github.com/easymotion/vim-easymotion )
 
-# 이미지 출처
+## 이미지 출처
 
 * [Astronomy Picture of the Day - The Flight Deck of Space Shuttle Endeavour](https://apod.nasa.gov/apod/ap120418.html )
 * [Graphical vi-vim Cheat Sheet and Tutorial](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html )
