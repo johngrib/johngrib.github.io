@@ -3,7 +3,7 @@ layout  : wiki
 title   : 원시근(Primitive Roots)
 summary : 
 date    : 2019-03-03 21:55:44 +0900
-updated : 2019-03-03 22:45:31 +0900
+updated : 2019-12-03 22:52:33 +0900
 tag     : math
 toc     : true
 public  : true
@@ -13,9 +13,9 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의
+## 정의
 
-## 원시근
+### 원시근
 
 **Primitive Roots**
 
@@ -30,7 +30,7 @@ A primitive root modulo a prime $$p$$ is an integer $$r$$ in $$Z_p$$ such that e
 * 만약 $$a$$ 가 $$Z_p$$의 원소이면 (즉, $$ 0 \lt a \le p - 1 $$ 이면)
     * $$ Z_p $$ 에 $$r^e = a$$ 인 유일한 지수 $$e$$가 있다. (즉, $$r^e \bmod p = a$$ 인 $$e$$가 있다.)
 
-### 원시근 예제
+#### 원시근 예제
 
 > 2 와 3 이 원시근 모듈로 11 임을 결정하라.
 
@@ -76,7 +76,7 @@ $$3, 9, 5, 4, 1$$ 이 반복된다.
 
 $$2, 6, 7, 8, 10$$ 이 빠졌으므로 3 은 11 의 원시근이 아니다.
 
-## 이산로그
+### 이산로그
 
 **discrete logarithm**
 
@@ -98,7 +98,7 @@ and we write $$\log_r a = e$$
 
 이산로그 문제의 어려움은 암호학에서 유용하게 쓰인다.
 
-### 이산로그 예제
+#### 이산로그 예제
 
 > 2를 밑으로 하는 3과 5의 모듈로 11의 이산로그를 찾아라.
 
@@ -124,7 +124,7 @@ $$ 2^8 \bmod 11 = 3 $$ 이고, $$ 0 \le 8 \le 10 $$ 이므로 2 를 밑으로 �
 
 $$ \log_2 3 = 8 $$
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 

@@ -2396,7 +2396,7 @@ primitive-roots:
     summary: ""
     parent: math
     url: /wiki/primitive-roots
-    updated: '2019-03-03 22:45:31 +0900'
+    updated: '2019-12-03 22:52:33 +0900'
     children: []
 private-constructor:
     type: wiki
