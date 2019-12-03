@@ -3,7 +3,7 @@ layout  : wiki
 title   : date 명령어
 summary : 날짜나 시간을 출력하거나 설정한다
 date    : 2018-08-03 05:19:22 +0900
-updated : 2018-08-03 06:06:43 +0900
+updated : 2019-12-03 22:50:34 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 사용 예제
+## Examples
 
 현재 날짜 및 시간 확인
 
@@ -36,7 +36,7 @@ $ date +%V
 31
 ```
 
-# 포매팅
+## Format
 
 * 명령어 예제를 실행한 결과의 기준은 `2018년 8월 3일 금요일 05시 49분 37초`.
 

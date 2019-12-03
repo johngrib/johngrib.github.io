@@ -217,7 +217,7 @@ bash:
     - {fileName: ctags}
     - {fileName: curl}
     - {fileName: cut}
-    - {fileName: date}
+    - {fileName: date-cmd}
     - {fileName: df}
     - {fileName: diff}
     - {fileName: docker}
@@ -256,7 +256,7 @@ command:
     - {fileName: ctags}
     - {fileName: curl}
     - {fileName: cut}
-    - {fileName: date}
+    - {fileName: date-cmd}
     - {fileName: df}
     - {fileName: diff}
     - {fileName: docker}

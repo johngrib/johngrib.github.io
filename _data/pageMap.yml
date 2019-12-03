@@ -685,7 +685,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, say, sdkman, sed, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes]
+    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, say, sdkman, sed, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -854,13 +854,13 @@ database:
     url: /wiki/database
     updated: '2019-09-26 21:49:29 +0900'
     children: [sharding]
-date:
+date-cmd:
     type: wiki
     title: 'date 명령어'
     summary: '날짜나 시간을 출력하거나 설정한다'
     parent: command-line
-    url: /wiki/date
-    updated: '2018-08-03 06:06:43 +0900'
+    url: /wiki/date-cmd
+    updated: '2019-12-03 22:50:34 +0900'
     children: []
 decorator-pattern:
     type: wiki

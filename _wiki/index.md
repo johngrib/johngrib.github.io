@@ -240,7 +240,7 @@ regenerate: true
         * [[ctags]]
         * [[curl]]
         * [[cut]]
-        * [[date]]
+        * [[date-cmd]]
         * [[df]]
         * [[diff]]
         * [[du]]
