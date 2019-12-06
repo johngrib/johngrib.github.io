@@ -145,7 +145,7 @@ regenerate: true
         * [[python3-simple-file-sharing]]
     * [[TOML]]
     * [[YAML]]
-* [[proverb]]{속담, 법칙, 관용어 모음}
+* [[proverb]]{나의 용어 사전}
     * [[ACID]]
     * [[airplain-rule]]
     * [[Boy-Scout-Rule]]
