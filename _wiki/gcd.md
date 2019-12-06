@@ -3,7 +3,7 @@ layout  : wiki
 title   : 최대공약수와 최소공배수
 summary : Greatest Common Divisor, Least Common Multiple
 date    : 2018-10-26 11:33:33 +0900
-updated : 2019-11-05 03:55:05 +0900
+updated : 2019-12-07 08:02:22 +0900
 tag     : math
 toc     : true
 public  : true
@@ -13,9 +13,9 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의
+## 정의
 
-## 최대공약수
+### 최대공약수
 
 **GCD: The Greatest Common Divisor**
 >
@@ -30,7 +30,7 @@ The greatest common divisor of $$a$$ and $$b$$ is denoted by $$gcd(a, b)$$.
 
 참고: $$d \vert a$$는 $$a$$가 $$d$$로 나누어 떨어진다는 의미.
 
-## 서로소, 상대소수
+### 서로소, 상대소수
 
 **relatively prime**
 
@@ -40,7 +40,7 @@ The greatest common divisor of $$a$$ and $$b$$ is denoted by $$gcd(a, b)$$.
     * a, b 는 서로소이다.
     * 서로소는 상대소수라고도 한다.
 
-## 최소공배수
+### 최소공배수
 
 **LCM: The Least Common Multiple**
 
@@ -53,12 +53,12 @@ The least common multiple of $$a$$ and $$b$$ is denoted by $$lcm(a, b)$$.
     * a 와 b 로 나누어 떨어지는 가장 작은 양의 정수이다.
 * 최소공배수는 $$ lcm(a, b) $$ 로 표시된다.
 
-# 정리
-## 최소공배수와 최대공약수의 곱
+## 정리
+### 최소공배수와 최대공약수의 곱
 
 $$ a × b = gcd(a, b) × lcm(a,b) $$
 
-## a,b의 최대공약수와 b,r의 최대공약수
+### a,b의 최대공약수와 b,r의 최대공약수
 
 >
 Let $$a = bq + r$$, where $$a, b, q$$, and $$r$$ are integers.
@@ -82,7 +82,7 @@ $$d \vert a$$ 이고, $$ d \vert b $$라고 가정하자.
 
 그러므로 $$ gcd(a,b) = gcd(b,r) $$.
 
-# 유클리드 알고리즘
+## 유클리드 알고리즘
 
 **The Euclidean Algorithm**
 
@@ -90,7 +90,8 @@ $$d \vert a$$ 이고, $$ d \vert b $$라고 가정하자.
     * 互: 서로
     * 除: 나누는
     * 法: 알고리즘
-* go 언어로 작성한 유클리드 알고리즘.
+
+다음은 go 언어로 작성한 유클리드 알고리즘이다.
 
 ```go
 func Gcd(a, b int) int {
@@ -105,7 +106,7 @@ func Gcd(a, b int) int {
 }
 ```
 
-* 다음은 재귀를 사용한 것이다.
+다음은 재귀를 사용한 것이다.
 
 ```go
 func Gcd(a, b int) int {
@@ -119,7 +120,7 @@ func Gcd(a, b int) int {
 }
 ```
 
-* 다음과 같이 작성해도 된다.
+이런 방법도 있다.
 
 ```go
 func Gcd(a, b int) int {
@@ -154,7 +155,7 @@ function wolfram() {
 </script>
 {% endraw %}
 
-# 베주의 정리와 베주의 항등식
+## 베주의 정리와 베주의 항등식
 
 **Bézout's theorem**
 
@@ -232,11 +233,11 @@ $$
     = -1005 × \color{red}{215326} + 346 × \color{red}{625442} \\
 $$
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 
-# Links
+## Links
 
 * <https://en.wikipedia.org/wiki/Greatest_common_divisor >
 * [베주 항등식(wikipedia)](https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%A3%BC_%ED%95%AD%EB%93%B1%EC%8B%9D )
