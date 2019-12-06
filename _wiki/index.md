@@ -28,6 +28,7 @@ regenerate: true
         * [[John-von-Neumann]]
         * [[John-W-Backus]]
         * [[Las-chicas-del-cable]]
+        * [[Wordstar]]
     * [[Software-Engineering-Code-of-Ethics]]
     * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
     * [[You-and-Your-Research]]

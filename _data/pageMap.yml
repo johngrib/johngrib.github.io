@@ -2013,7 +2013,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable]
+    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, Wordstar]
 letter-case:
     type: wiki
     title: '대문자를 upper case, 소문자를 lower case라 부르는 이유'
@@ -3245,6 +3245,14 @@ why-http-80-https-443:
     parent: why
     url: /wiki/why-http-80-https-443
     updated: '2018-09-09 11:20:07 +0900'
+    children: []
+Wordstar:
+    type: wiki
+    title: 워드스타(Wordstar)
+    summary: '최초의 WYSIWYG 워드프로세서'
+    parent: legend
+    url: /wiki/Wordstar
+    updated: '2019-12-06 22:23:34 +0900'
     children: []
 YAML:
     type: wiki
