@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 코페르니쿠스 원리(Copernican Principle)와 방법론(Copernicus Method)
+title   : 코페르니쿠스 원리 (Copernican Principle)
 summary : 아무런 정보가 없을 때 종말을 추정하는 방법
 date    : 2018-04-15 16:38:17 +0900
-updated : 2018-04-15 17:12:58 +0900
+updated : 2019-12-07 08:12:29 +0900
 tag     : 추정 bayes
 toc     : true
 public  : true
@@ -13,12 +13,12 @@ latex   : false
 * TOC
 {:toc}
 
-# Copernican Principle
+## Copernican Principle
 
 * 코페르니쿠스는 지구가 우주의 중심이 아니라고 했다.
     * 지구가 우주의 중심이 아니므로, 인류 또한 특별하지 않다.
 
-# Copernicus Method
+## Copernicus Method
 
 * J. 리처드 고트는 베를린 장벽 앞에서 다음과 같은 생각을 하였다.
     * 내가 베를린 장벽을 본 시점이 특별한 시점이 아닐 것이다.
@@ -34,7 +34,7 @@ latex   : false
 
 이기 때문이다.
 
-## 추정 예
+### 추정 예
 
 * 구글 폐업 시기
     * 구글 창업이 1998년이므로,
@@ -46,7 +46,7 @@ latex   : false
     * 앞으로 5년 후까지는 꼬깔콘을 좋아할 것으로 추정한다.
 
 
-## 평가
+### 평가
 
 현실에서 사용하기엔 정확하지 않아 별로 쓸모가 없다.
 
@@ -60,7 +60,7 @@ latex   : false
     * 60과 134의 비율을 생각해 보면, 정말 아무런 정보가 없고 계산할 시간도 부족한 상황이라면 코페르니쿠스 방법론을 사용하는 것도 하나의 방법이다.
 
 
-## 곱셈 법칙과 상수 인자의 사용
+### 곱셈 법칙과 상수 인자의 사용
 
 코페르니쿠스 방법을 관측된 양에 상수 인자 n을 곱하는 방법으로 생각할 수 있다.
 
@@ -74,7 +74,7 @@ latex   : false
 
 
 
-# Links
+## Links
 
 * [[Bayes-theorem]]
 * [[Algorithms-to-Live-By]]
