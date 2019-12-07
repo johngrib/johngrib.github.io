@@ -860,7 +860,7 @@ date-cmd:
     summary: '날짜나 시간을 출력하거나 설정한다'
     parent: command-line
     url: /wiki/date-cmd
-    updated: '2019-12-03 22:50:34 +0900'
+    updated: '2019-12-07 13:29:45 +0900'
     children: []
 decorator-pattern:
     type: wiki

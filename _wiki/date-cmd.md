@@ -3,7 +3,7 @@ layout  : wiki
 title   : date 명령어
 summary : 날짜나 시간을 출력하거나 설정한다
 date    : 2018-08-03 05:19:22 +0900
-updated : 2019-12-03 22:50:34 +0900
+updated : 2019-12-07 13:29:45 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -14,26 +14,20 @@ latex   : false
 {:toc}
 
 ## Examples
-
-현재 날짜 및 시간 확인
-
-```sh
-$ date
-2018년 8월  3일 금요일 05시 37분 22초 KST
-```
-
-현재 날짜 및 시간 포매팅
+### BSD(macOS)
 
 ```sh
-$ date '+%Y-%m-%d %H:%M:%S %a %Z'
-2018-08-03 05:45:01 금 KST
-```
+ # 현재 날짜, 시간
+date
 
-오늘은 1년 중 몇 번째 주(week)인가?
+ # 현재 날짜, 시간 포매팅
+date '+%Y-%m-%d %H:%M:%S %a %Z'
 
-```sh
-$ date +%V
-31
+ # 오늘은 1년 중 몇 번째 주(week)인가?
+date +%V
+
+ # unix timestamp를 읽기 쉬운 날짜로 변환
+date -r 1572511074
 ```
 
 ## Format
