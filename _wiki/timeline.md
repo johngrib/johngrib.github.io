@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2019-12-07 23:38:01 +0900
+updated : 2019-12-08 12:56:36 +0900
 tag     : 
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 사건
+## 사건
 
 * 2015-05 [HTTP/2](https://tools.ietf.org/html/rfc7540 )
 * 1999-02-26 - 펜티엄III 프로세서 출시
@@ -30,8 +30,9 @@ latex   : false
 * 1969 - IBM의 E.F. Codd 박사가 발표한 논문에서 관계형 모델(Relational Model)이 처음 등장하다.
 * 1969 - Telnet 개발.
 * 1960 - Ted Nelson이 하이퍼텍스트 소프트웨어 모델을 적용한 Xanadu 시스템을 고안하다.
+* 1954-06-07 - 앨런 튜링 사망
 * 1945 - Vannevar Bush가 Memex에 대한 아이디어를 소개하다.
 
-# 주석
+## 주석
 
 [^mosaic]: [wikipedia](https://en.wikipedia.org/wiki/Mosaic_(web_browser)#History )
