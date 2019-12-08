@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2019-12-08 12:56:36 +0900
+updated : 2019-12-08 22:59:59 +0900
 tag     : 
 toc     : true
 public  : true
@@ -23,9 +23,12 @@ latex   : false
 * 1995-11-01 - 펜티엄 프로 프로세서 출시
 * 1993-03-22 - 펜티엄 프로세서 출시
 * 1993-01-23 - 최초의 그래픽 웹 브라우저 Mosaic 릴리즈.[^mosaic]
+* 1993 - MS-DOS 6.0 출시
 * 1991 - [The Original HTTP as defined in 1991](https://www.w3.org/Protocols/HTTP/AsImplemented.html )
+* 1991 - MS-DOS 5.0 출시
 * 1990 - Tim Berners Lee가 TCP/IP 기반의 HTTP 최초 버전을 설계하다.
 * 1988 - Jarkko Oikarinen이 최초의 IRC 클라이언트를 만들다.
+* 1985-11-20 - 마이크로소프트 윈도우 1.0 출시
 * 1974-12 [RFC-675: SPECIFICATION OF INTERNET TRANSMISSION CONTROL PROGRAM](https://tools.ietf.org/html/rfc675 ) - TCP
 * 1969 - IBM의 E.F. Codd 박사가 발표한 논문에서 관계형 모델(Relational Model)이 처음 등장하다.
 * 1969 - Telnet 개발.
