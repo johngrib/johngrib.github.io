@@ -1742,6 +1742,14 @@ index:
     url: /wiki/index
     updated: null
     children: []
+integer:
+    type: wiki
+    title: 'Integer 이것저것'
+    summary: ""
+    parent: index
+    url: /wiki/integer
+    updated: '2019-12-08 18:51:17 +0900'
+    children: []
 intellij:
     type: wiki
     title: 'IntelliJ IDEA'

@@ -392,6 +392,8 @@ regenerate: true
 * [[for-craftsmanship]]
     * [[precision-of-number]]
 
+* [[integer]]
+
 ---
 
 # blog
