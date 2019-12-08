@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2019-11-18 00:12:09 +0900
+updated : 2019-12-08 14:01:46 +0900
 tag     : bash encryption GNU command
 toc     : true
 public  : true
@@ -856,6 +856,22 @@ commit에 서명을 하기 시작했다면 github에도 공개키를 등록하�
 
 이후 github에서 서명된 commit 옆에 `Verified`가 나타난다.
 클릭해보면 **This commit was signed with a verified signature.** 라는 문구가 나오며 프로필 사진과 사용자 아이디, GPG key ID도 함께 보여준다.
+
+### github에 등록한 GPG key가 만료되었을 경우
+
+[GitHub help: Updating an expired GPG key](https://help.github.com/en/github/authenticating-to-github/updating-an-expired-gpg-key )
+
+> If your key is expired, you must update the expiration, export the new key, delete the expired key in your GitHub account, and upload the new key to GitHub. Your previous commits and tags will show as verified, as long as the key meets all other verification requirements.
+
+키가 만료되면 다음 절차를 따른다.
+
+1. 만료된 사항을 업데이트한다.
+2. 새로운 키를 내보낸다.
+3. GitHub 계정에서 만료 된 키를 삭제한다.
+4. 새 키를 GitHub에 업로드한다.
+
+이렇게 하면 이전 커밋 및 태그는 계속 `verified`로 표시된다.
+
 
 ## Links
 

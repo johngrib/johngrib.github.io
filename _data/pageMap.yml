@@ -1532,7 +1532,7 @@ gpg:
     summary: 'GnuPG, the GNU Privacy Guard'
     parent: command-line
     url: /wiki/gpg
-    updated: '2019-11-18 00:12:09 +0900'
+    updated: '2019-12-08 14:01:46 +0900'
     children: []
 Gradle:
     type: wiki
