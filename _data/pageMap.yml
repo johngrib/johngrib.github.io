@@ -3006,6 +3006,14 @@ trouble-shooting-node-7-install:
     url: /wiki/trouble-shooting-node-7-install
     updated: '2018-02-12 15:09:45 +0900'
     children: []
+Turbo-Pascal-the-first-IDE:
+    type: wiki
+    title: '최초의 IDE, 터보 파스칼 (Turbo Pascal)'
+    summary: '최초의 편집기 + 디버거 + 컴파일러'
+    parent: ""
+    url: /wiki/Turbo-Pascal-the-first-IDE
+    updated: '2019-12-09 22:55:29 +0900'
+    children: []
 two-eggs-100-floor:
     type: wiki
     title: '100층 건물과 2개의 계란 문제'
