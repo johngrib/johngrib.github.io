@@ -685,7 +685,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, ripgrep, say, sdkman, sed, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes]
+    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2446,6 +2446,14 @@ proverb:
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
     children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+pwgen-cmd:
+    type: wiki
+    title: 'pwgen 명령어'
+    summary: '패스워드를 생성한다'
+    parent: command-line
+    url: /wiki/pwgen-cmd
+    updated: '2019-12-09 20:58:29 +0900'
+    children: []
 Python3:
     type: wiki
     title: Python3

@@ -256,6 +256,7 @@ regenerate: true
         * [[my-bash-cheatsheet]]
         * [[openssl]]
         * [[phpbrew]]
+        * [[pwgen-cmd]]
         * [[ripgrep]]
         * [[say]]
         * [[sdkman]]

@@ -232,6 +232,7 @@ bash:
     - {fileName: lsof}
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
+    - {fileName: pwgen-cmd}
     - {fileName: random-lunch}
     - {fileName: ripgrep}
     - {fileName: sdkman}
@@ -271,6 +272,7 @@ command:
     - {fileName: lsof}
     - {fileName: openssl}
     - {fileName: phpbrew}
+    - {fileName: pwgen-cmd}
     - {fileName: ripgrep}
     - {fileName: say}
     - {fileName: sdkman}
@@ -397,6 +399,7 @@ encryption:
     - {fileName: gpg}
     - {fileName: Kerckhoffs-s-principle}
     - {fileName: openssl}
+    - {fileName: pwgen-cmd}
     - {fileName: rsa-encryption}
     - {fileName: sha256sum}
 스크랩:
