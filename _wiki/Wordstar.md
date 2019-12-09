@@ -3,7 +3,7 @@ layout  : wiki
 title   : 워드스타(Wordstar)
 summary : 최초의 WYSIWYG 워드프로세서
 date    : 2019-12-06 22:10:45 +0900
-updated : 2019-12-06 22:23:34 +0900
+updated : 2019-12-09 22:56:22 +0900
 tag     : 
 toc     : true
 public  : true
@@ -33,4 +33,4 @@ latex   : false
 
 ## 참고문헌
 
-*  초난감 기업의 조건 / 박재호 역 / 에이콘출판사 / 발행 2007년 11월 20일 / 원제: In Search of Stupidity
+*  초난감 기업의 조건 / 릭 채프먼 지음 / 박재호 역 / 에이콘출판사 / 발행 2007년 11월 20일 / 원제: In Search of Stupidity
