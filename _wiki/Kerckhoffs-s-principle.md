@@ -3,7 +3,7 @@ layout  : wiki
 title   : 커코프의 원칙(Kerckhoffs's principle)
 summary : 암호의 안전성은 알고리즘이 아니라 키의 비밀성에만 의존해야 한다
 date    : 2018-10-10 09:27:05 +0900
-updated : 2018-10-10 09:57:22 +0900
+updated : 2019-12-11 10:41:43 +0900
 tag     : encryption
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 의미
+## 의미
 
 * 암호화 알고리즘이 공개되어도, 키만 잘 지키면 안전할 수 있는 암호 체계를 만들어야 한다.
     * 우리가 어떤 암호화 알고리즘을 사용하고 있는지 공격자가 알고 있어도, 공격이 어려워야 한다.
@@ -24,7 +24,7 @@ latex   : false
     * 비밀이 적으면 적을수록 시스템은 안전하다.
 
 
-# 기원
+## 기원
 
 * 1883년, La Cryptographie Militaire에 실린 커코프(Auguste Kerckhoffs)의 글에서 비롯됐다.
 * 군사용 암호의 설계 원칙에 대한 내용이다.
@@ -54,7 +54,7 @@ Some are no longer relevant given the ability of computers to perform complex en
 몇가지 항목들은 복잡한 암호화를 수행할 수 있는 컴퓨터의 존재로 인해 더이상 의미가 없어졌지만, 2번째 항목은 이제 케르크호프스의 원리로 알려지게 되었으며, 아직까지도 매우 중요한 의미를 가지고 있다.
 
 
-# Links
+## Links
 
 * [Kerckhoffs's principle (wikipedia)][WIKI]
     * [한국어][KOREAN]
