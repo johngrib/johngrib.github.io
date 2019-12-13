@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2019-12-08 14:01:46 +0900
+updated : 2019-12-13 22:52:55 +0900
 tag     : bash encryption GNU command
 toc     : true
 public  : true
@@ -678,6 +678,16 @@ pub   rsa2048 2018-09-13 [SC] [expires: 2019-09-13]
       FF3002
 uid           [  full  ] myfriend <myfriend@gpgtest.com>
 sub   rsa2048 2018-09-13 [E] [expires: 2019-09-13]
+```
+
+## 키 삭제
+
+```sh
+$ # 비밀 키를 삭제한다
+$ gpg --delete-secret-key key_id
+
+$ # 공개 키를 삭제한다
+$ gpg --delete-key key_id
 ```
 
 ## 부록: keybase 사용하기
