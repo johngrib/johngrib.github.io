@@ -270,6 +270,7 @@ regenerate: true
         * [[tr-cmd]]
         * [[uptime]]
         * [[yes]]
+        * [[ykman]]
     * [[Excel]]
         * [[excel-hot-keys]]
         * [[excel-remove-circular-reference]]

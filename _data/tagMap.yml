@@ -245,6 +245,7 @@ bash:
     - {fileName: tr-cmd}
     - {fileName: uptime}
     - {fileName: yes}
+    - {fileName: ykman}
 command:
     - {fileName: ag}
     - {fileName: awk}
@@ -285,6 +286,7 @@ command:
     - {fileName: tr-cmd}
     - {fileName: uptime}
     - {fileName: yes}
+    - {fileName: ykman}
 agile:
     - {fileName: agile}
     - {fileName: grow-together}

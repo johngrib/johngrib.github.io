@@ -685,7 +685,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes]
+    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -3293,6 +3293,14 @@ yes:
     parent: command-line
     url: /wiki/yes
     updated: '2019-01-06 23:13:05 +0900'
+    children: []
+ykman:
+    type: wiki
+    title: 'ykman 명령어'
+    summary: 'yubikey를 관리한다'
+    parent: command-line
+    url: /wiki/ykman
+    updated: '2019-12-15 18:22:57 +0900'
     children: []
 You-and-Your-Research:
     type: wiki
