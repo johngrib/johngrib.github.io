@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2019-12-09 20:38:04 +0900
+updated : 2019-12-15 23:07:33 +0900
 tag     : 
 toc     : true
 public  : true
@@ -24,6 +24,7 @@ latex   : false
 * 1993-03-22 - 펜티엄 프로세서 출시
 * 1993-01-23 - 최초의 그래픽 웹 브라우저 Mosaic 릴리즈.[^mosaic]
 * 1993 - MS-DOS 6.0 출시
+* 1991-09-17 - Linux 0.01 출시
 * 1991 - [The Original HTTP as defined in 1991](https://www.w3.org/Protocols/HTTP/AsImplemented.html )
 * 1991 - MS-DOS 5.0 출시
 * 1990 - Tim Berners Lee가 TCP/IP 기반의 HTTP 최초 버전을 설계하다.
