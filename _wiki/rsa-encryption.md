@@ -3,7 +3,7 @@ layout  : wiki
 title   : RSA 암호(RSA Encryption)
 summary : 
 date    : 2019-03-10 09:24:37 +0900
-updated : 2019-09-05 18:25:20 +0900
+updated : 2019-12-15 19:08:53 +0900
 tag     : encryption
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# Cryptosystem
+## Cryptosystem
 
 RSA 암호시스템에서 각 개인은 공개 키와 개인 키를 갖는다.
 
@@ -34,7 +34,7 @@ RSA 암호시스템에서 각 개인은 공개 키와 개인 키를 갖는다.
 
 이 때 공개키는 $$ (n, e) $$ 이고, 개인 키는 $$(n, d)$$ 가 된다.
 
-# Encryption
+## Encryption
 
 평문 $$M$$을 암호화한다고 하자.
 
@@ -48,7 +48,7 @@ RSA 암호시스템에서 각 개인은 공개 키와 개인 키를 갖는다.
 5. $$C = M^e \bmod n$$ 을 사용하여 각 블록 $$ m_i $$를 암호화된 블록 $$c_i$$로 변환한다.
 6. 암호화된 $$c_1, c_2, ..., c_k$$를 암호문의 수신자에게 보낸다.
 
-## 암호화 예제
+### 암호화 예제
 
 > Encrypt the message STOP using the RSA cryptosystem with key $$(2537, 13)$$.
 Note that $$2537 = 43 \times 59$$, $$p = 43$$ and $$q = 59$$ are primes,
@@ -94,7 +94,7 @@ $$
 
 $$2081$$ $$2182$$
 
-# Decryption
+## Decryption
 
 해독키 $$d$$는 $$e$$ 모듈로 $$(p-1)(q-1)$$의 역이므로, $$ de ≡ 1 \pmod{(p-1)(q-1)} $$ 이다.
 
@@ -145,7 +145,7 @@ $$
 $$ C^d ≡ M \pmod{pq} $$
 
 
-## 복호화 예제
+### 복호화 예제
 
 > We receive the encrypted message 0981 0461. What is the decrypted message if it was encrypted using the RSA cipher from Example 8?
 
@@ -240,7 +240,7 @@ A 가 00 이고, B 가 01 이었으므로, 다음과 같이 원문을 알아낼 
 
 
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 
