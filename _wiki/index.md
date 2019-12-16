@@ -394,6 +394,7 @@ regenerate: true
 
 * [[for-craftsmanship]]
     * [[precision-of-number]]
+    * [[dev-schedule-quotes]]
 
 * [[integer]]
 

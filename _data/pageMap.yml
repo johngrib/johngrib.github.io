@@ -902,6 +902,14 @@ Designing-Data-Intensive-Applications:
     url: /wiki/Designing-Data-Intensive-Applications
     updated: '2018-07-06 23:22:57 +0900'
     children: []
+dev-schedule-quotes:
+    type: wiki
+    title: '일정 관련 인용문 모음'
+    summary: ""
+    parent: for-craftsmanship
+    url: /wiki/dev-schedule-quotes
+    updated: '2019-12-16 08:13:57 +0900'
+    children: []
 DevOps-Troubleshooting:
     type: wiki
     title: '(책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅스 서버 트러블슈팅 기법'
@@ -1309,7 +1317,7 @@ for-craftsmanship:
     parent: index
     url: /wiki/for-craftsmanship
     updated: '2019-11-06 21:42:38 +0900'
-    children: [precision-of-number]
+    children: [dev-schedule-quotes, precision-of-number]
 frac1e:
     type: wiki
     title: 'n개의 제비뽑기에 n번 도전'
