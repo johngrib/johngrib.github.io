@@ -19,6 +19,7 @@ regenerate: true
     * [[egyptian-multiplication]]
     * [[p-np]]
     * [[regex-prime]]
+    * [[tower-of-hanoi]]
     * [[von-neumann-extractor]]
 * [[clipping]]{글 모음 및 요약}
     * [[legend]]

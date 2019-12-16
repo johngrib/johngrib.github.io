@@ -42,6 +42,7 @@ math:
     - {fileName: secretary-problem}
     - {fileName: study-concrete-math}
     - {fileName: study-discrete-mathematics}
+    - {fileName: tower-of-hanoi}
     - {fileName: two-eggs-100-floor}
 jekyll:
     - {fileName: 2017-01-21-create-jekyll-blog}

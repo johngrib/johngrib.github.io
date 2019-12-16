@@ -277,7 +277,7 @@ algorithm:
     parent: index
     url: /wiki/algorithm
     updated: '2019-02-05 22:53:48 +0900'
-    children: [average-complexity, b-tree, big-O-notation, egyptian-multiplication, p-np, regex-prime, von-neumann-extractor]
+    children: [average-complexity, b-tree, big-O-notation, egyptian-multiplication, p-np, regex-prime, tower-of-hanoi, von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
     title: '(책) 알고리즘, 인생을 계산하다'
@@ -492,7 +492,7 @@ c-m-01-Recurrent-Problems-01:
     summary: '01.RECURRENT PROBLEMS'
     parent: study-concrete-math
     url: /wiki/c-m-01-Recurrent-Problems-01
-    updated: '2018-05-18 06:41:05 +0900'
+    updated: '2019-12-16 21:26:07 +0900'
     children: []
 c-m-01-Recurrent-Problems-02:
     type: wiki
@@ -2989,6 +2989,14 @@ touch:
     parent: command-line
     url: /wiki/touch
     updated: '2019-01-13 18:22:50 +0900'
+    children: []
+tower-of-hanoi:
+    type: wiki
+    title: '하노이의 탑 (The Tower of Hanoi)'
+    summary: ""
+    parent: algorithm
+    url: /wiki/tower-of-hanoi
+    updated: '2019-12-16 22:10:48 +0900'
     children: []
 tr-cmd:
     type: wiki
