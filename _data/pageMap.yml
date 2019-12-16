@@ -1276,7 +1276,7 @@ fibonacci:
     summary: 'Fibonacci Sequence'
     parent: math
     url: /wiki/fibonacci
-    updated: '2019-08-19 21:32:47 +0900'
+    updated: '2019-12-16 22:20:50 +0900'
     children: []
 find:
     type: wiki

@@ -3,7 +3,7 @@ layout  : wiki
 title   : 피보나치 수열
 summary : Fibonacci Sequence
 date    : 2019-08-18 22:45:59 +0900
-updated : 2019-08-19 21:32:47 +0900
+updated : 2019-12-16 22:20:50 +0900
 tag     : math
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의
+## 정의
 
 >
 The Fibonacci sequence, $$f_0, f_1, f_2$$, . . . , is defined by the initial conditions $$f_0 = 0, f_1 = 1$$, and the recurrence relation  
@@ -26,7 +26,7 @@ for $$n = 2,3,4,...$$.
 
 피보나치 수열은 앞에 나온 두 개의 항을 더하는 것을 반복하여 얻을 수 있는 수열이다.
 
-# 코딩할 때 주의점
+## 코딩할 때 주의점
 
 * 숫자가 커지는 범위를 생각하면서 자료형을 선택해야 한다.
 * $$f(94)$$ 이상을 구하려면 각 언어별로 제공되거나 구현된 BigNumber 라이브러리를 사용하도록 한다.
@@ -43,9 +43,7 @@ for $$n = 2,3,4,...$$.
 
 위의 표는 개행 문제 때문에 `,`대신 공백을 주어 표현하였다.
 
-# n 번째 피보나치 수 구하기
-
-## 반복법(iteration)
+## 반복법(iteration)으로 풀기
 
 * 초기조건 $$f_0, f_1$$부터 반복적으로 덧셈을 하여 $$f_n$$을 얻어낼 때까지 계산하는 방법.
 * $$O(n)$$의 시간 복잡도를 갖는다.
@@ -82,7 +80,7 @@ func f(n int) int {
 }
 ```
 
-## 재귀
+## 재귀를 사용해 풀기
 
 * 가장 단순한 코드로 표현 가능하지만 $$O(2^n)$$의 시간 복잡도를 갖는다.
 
@@ -115,7 +113,7 @@ Q^n =
 \begin{bmatrix}
 1 & 1 \\
 1 & 0 \\
-\end{bmatrix} ^n
+ \end{bmatrix} ^n
 =
 \begin{bmatrix}
 f_{n+1} & f_n     \\
@@ -249,11 +247,11 @@ TAOCP 2권. 4.6.3. Evaluation of Powers에서는 거듭제곱을 효율 좋게 �
 * [6487075382438781 번째 피보나치 수(wolframalpha)](https://www.wolframalpha.com/input/?i=fibonacci(6487075382438781) ) - 계산 결과로 1355718576299609 자리의 엄청나게 큰 숫자가 나온다.
 * [6487075382438782 번째 피보나치 수(wolframalpha)](https://www.wolframalpha.com/input/?i=fibonacci(6487075382438782) ) - 계산 결과가 안 나온다.
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 
-# Links
+## Links
 
 * [피보나치 수(wikipedia)](https://ko.wikipedia.org/wiki/피보나치_수 )
 * [Fibonacci number(wikipedia)](https://en.wikipedia.org/wiki/Fibonacci_number )
@@ -261,6 +259,6 @@ TAOCP 2권. 4.6.3. Evaluation of Powers에서는 거듭제곱을 효율 좋게 �
 * [Fibonacci Number(mathworld.wolfram.com)](http://mathworld.wolfram.com/FibonacciNumber.html )
 * [Fibonacci Q-Matrix(mathworld.wolfram.com)](http://mathworld.wolfram.com/FibonacciQ-Matrix.html )
 
-# 주석
+## 주석
 
 [^wolfram-test]: 이진 탐색으로 알아냈다.
