@@ -3,7 +3,7 @@ layout  : wiki
 title   : 하노이의 탑 (The Tower of Hanoi)
 summary : 
 date    : 2019-12-16 21:24:41 +0900
-updated : 2019-12-16 22:10:48 +0900
+updated : 2019-12-17 08:07:12 +0900
 tag     : math
 toc     : true
 public  : true
@@ -22,6 +22,38 @@ latex   : true
 
 * 원반을 이동하는 총 횟수를 구하는 문제.
 * 원반을 이동하는 과정을 출력하는 문제.
+
+## 요약
+
+하노이의 탑에 있는 원반 n 개를 다른 한 기둥으로 옮기는 최소한의 이동 횟수 $$T_n$$은 다음과 같다.
+
+$$ T_n = 2^n - 1$$
+
+n 개의 원반을 옮기는 방법은 다음과 같이 생각하면 심플하다.
+
+1. 가장 작은 원반을 $$1$$번, 가장 큰 원반을 $$n$$ 번이라 한다.
+2. 중간 위치로 $$1$$번부터 $$n-1$$번 원반까지 옮긴다.
+3. 목적지 위치로 $$n$$번 원반을 옮긴다.
+4. 중간 위치에서 목적지 위치로 $$1$$번부터 $$n-1$$번 원반을 옮긴다.
+
+이 방법은 재귀를 사용하면 1~4 번 과정을 말로 설명한 것과 유사한 형태의 코드를 작성할 수 있다.
+
+```go
+func hanoi(source, destination, temp string, n int) {
+    if n <= 0 {
+        return
+    }
+    // source -> temp 로 n-1 개를 옮긴다.
+    hanoi(source, temp, destination, n-1)
+    // 원반 하나를 source -> destination 으로 옮긴다.
+    fmt.Printf("%d 원반을 %s 에서 %s 로 옮깁니다.\n", n, source, destination)
+    // temp -> destination 으로 n-1 개를 옮긴다
+    hanoi(temp, destination, source, n-1)
+}
+```
+
+[[gray-code]]{그레이 코드}는 하노이의 탑 솔루션이기도 하다.
+
 
 ## 점화식
 

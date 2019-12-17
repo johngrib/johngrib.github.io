@@ -2996,7 +2996,7 @@ tower-of-hanoi:
     summary: ""
     parent: algorithm
     url: /wiki/tower-of-hanoi
-    updated: '2019-12-16 22:10:48 +0900'
+    updated: '2019-12-17 08:07:12 +0900'
     children: []
 tr-cmd:
     type: wiki
