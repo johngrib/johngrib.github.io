@@ -2540,7 +2540,7 @@ review-2019:
     summary: '연말에 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2019
-    updated: '2019-12-16 07:59:48 +0900'
+    updated: '2019-12-18 19:47:26 +0900'
     children: []
 RFC:
     type: wiki
