@@ -168,6 +168,7 @@ vim:
 hammerspoon:
     - {fileName: 2017-05-04-input-source}
     - {fileName: hammerspoon}
+    - {fileName: hammerspoon-inputsource-aurora}
     - {fileName: hammerspoon-luarocks}
     - {fileName: hammerspoon-tutorial-00}
     - {fileName: hammerspoon-tutorial-01}

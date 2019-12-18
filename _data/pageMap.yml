@@ -1621,7 +1621,15 @@ hammerspoon:
     parent: mac-apps
     url: /wiki/hammerspoon
     updated: '2018-04-21 11:29:38 +0900'
-    children: [hammerspoon-luarocks, hammerspoon-tutorial-00, hammerspoon-tutorial-01, hammerspoon-tutorial-02, hammerspoon-tutorial-03, hammerspoon-tutorial-04, hammerspoon-tutorial-05]
+    children: [hammerspoon-inputsource-aurora, hammerspoon-luarocks, hammerspoon-tutorial-00, hammerspoon-tutorial-01, hammerspoon-tutorial-02, hammerspoon-tutorial-03, hammerspoon-tutorial-04, hammerspoon-tutorial-05]
+hammerspoon-inputsource-aurora:
+    type: wiki
+    title: '해머스푼으로 한/영 전환 오로라를 만들자'
+    summary: '지금 선택된 입력기가 한글인지 영어인지 쉽게 알아보자'
+    parent: hammerspoon
+    url: /wiki/hammerspoon-inputsource-aurora
+    updated: '2019-12-18 22:37:51 +0900'
+    children: []
 hammerspoon-luarocks:
     type: wiki
     title: 'luarocks로 Hammerspoon 패키지 관리하기'
