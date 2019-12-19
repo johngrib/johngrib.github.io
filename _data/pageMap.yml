@@ -1604,7 +1604,7 @@ grow-together:
     summary: '애자일 철학을 삶에 적용해 다른 사람들과 함께 성장하기'
     parent: book
     url: /wiki/grow-together
-    updated: '2019-01-22 22:30:47 +0900'
+    updated: '2019-12-19 23:03:58 +0900'
     children: []
 halting-problem:
     type: wiki
