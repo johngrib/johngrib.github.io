@@ -3,7 +3,7 @@ layout  : wiki
 title   : 보이 스카웃 규칙
 summary : 캠프장은 처음 왔을 때보다 더 깨끗하게 해놓고 떠나라
 date    : 2018-02-04 16:18:51 +0900
-updated : 2019-01-20 20:24:38 +0900
+updated : 2019-12-21 07:55:04 +0900
 tag     : rule Uncle-Bob
 toc     : true
 public  : true
@@ -13,15 +13,15 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 >
 The Boy Scout Rule : "Always leave the campground cleaner than you found it."  
 보이 스카웃 규칙 : 언제나 처음 왔을 때보다 깨끗하게 해놓고 캠프장을 떠날 것.
 
-# 인용
+## 인용
 
-## 97 Things Every Programmer Should Know 에서
+### 97 Things Every Programmer Should Know 에서
 
 * [97 Things Every Programmer Should Know - The Boy Scout Rule (programmer.97things.oreilly.com)](http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule )
 
@@ -69,7 +69,7 @@ The Boy Scout Rule : "Always leave the campground cleaner than you found it."
 by Uncle Bob  
 이 글의 라이선스는 [Creative Commons Attribution 3](https://creativecommons.org/licenses/by/3.0/us/ )을 따릅니다.
 
-## Clean Code 에서
+### Clean Code 에서
 
 * [[Clean-Code]] - 1장 깨끗한 코드. 18쪽.
 
@@ -88,7 +88,7 @@ by Uncle Bob
 한꺼번에 많은 시간과 노력을 투자해 코드를 정리할 필요가 없다.
 변수 이름 하나를 개선하고, 조금 긴 함수 하나를 분할하고, 약간의 중복을 제거하고, 복잡한 if 문 하나를 정리하면 충분하다.
 
-## The Nature of Software Development 에서
+### The Nature of Software Development 에서
 
 * Chapter 19. 리팩토링.
 
@@ -106,11 +106,11 @@ by Uncle Bob
 그것은 절대 최선책이 될 수 없습니다.
 대신, 리팩토링을 잘하고 **야영지 규칙**을 따르세요.
 
-# 참고문헌
+## 참고문헌
 * Clean Code / 로버트 C. 마틴 저/박재호, 이해영 역 / 인사이트(insight) / 2013년 12월 24일
 * The Nature of Software Development 론 제프리스 저 / 이기곤 역 / 한빛미디어 / 2017년 01월 01일
 
-# Links
+## Links
 
 * [[Clean-Code]]
 * [97 Things Every Programmer Should Know - The Boy Scout Rule (programmer.97things.oreilly.com)](http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule )
