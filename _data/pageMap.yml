@@ -350,6 +350,14 @@ bandwidth:
     url: /wiki/bandwidth
     updated: '2019-07-09 16:35:19 +0900'
     children: []
+bash-history:
+    type: wiki
+    title: 'bash history 다루기'
+    summary: '사용법 및 잡다한 팁 요약'
+    parent: command-line
+    url: /wiki/bash-history
+    updated: '2019-12-21 10:26:31 +0900'
+    children: []
 bat-cmd:
     type: wiki
     title: 'bat 명령어'
@@ -685,7 +693,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, find, fish-shell, gpg, grep, history, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes, ykman]
+    children: [ag, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, find, fish-shell, gpg, grep, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -1693,14 +1701,6 @@ hhkb-jp-tmk:
     parent: my-lifehack
     url: /wiki/hhkb-jp-tmk
     updated: '2018-04-21 11:37:09 +0900'
-    children: []
-history:
-    type: wiki
-    title: 'bash history 다루기'
-    summary: '사용법 및 잡다한 팁 요약'
-    parent: command-line
-    url: /wiki/history
-    updated: '2019-12-21 10:26:31 +0900'
     children: []
 hollywood-principle:
     type: wiki

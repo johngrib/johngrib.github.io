@@ -211,6 +211,7 @@ db:
     - {fileName: sql-char-comparison}
 bash:
     - {fileName: ag}
+    - {fileName: bash-history}
     - {fileName: bat-cmd}
     - {fileName: bc}
     - {fileName: brew}
@@ -229,7 +230,6 @@ bash:
     - {fileName: git-alias}
     - {fileName: gpg}
     - {fileName: grep}
-    - {fileName: history}
     - {fileName: java_home}
     - {fileName: lsof}
     - {fileName: my-bash-cheatsheet}
@@ -251,6 +251,7 @@ bash:
 command:
     - {fileName: ag}
     - {fileName: awk}
+    - {fileName: bash-history}
     - {fileName: bat-cmd}
     - {fileName: bc}
     - {fileName: brew}
@@ -270,7 +271,6 @@ command:
     - {fileName: git}
     - {fileName: gpg}
     - {fileName: grep}
-    - {fileName: history}
     - {fileName: java_home}
     - {fileName: lsof}
     - {fileName: openssl}
