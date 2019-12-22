@@ -1,9 +1,9 @@
-----
+---
 layout  : wiki
 title   : python3로 간단하게 파일 전송하기
 summary : 같은 사무실이면 메신저로 보내지 말고 python3 -m http.server
 date    : 2018-09-18 20:45:43 +0900
-updated : 2019-11-26 00:08:58 +0900
+updated : 2019-12-22 21:11:25 +0900
 tag     : python ip curl
 toc     : true
 public  : true
