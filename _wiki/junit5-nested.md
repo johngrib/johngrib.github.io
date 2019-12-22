@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드를 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2019-12-22 11:58:09 +0900
+updated : 2019-12-22 19:53:40 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -287,9 +287,29 @@ describe("Example", function() {
 });
 ```
 
+### Kotlin - Spek
+
+Kotlin에는 [Spek][kotlin-spek]이 있다.
+
+```kotlin
+object CalculatorSpec: Spek({
+    describe("A calculator") {
+        val calculator by memoized { Calculator() }
+
+        describe("addition") {
+            it("returns the sum of its arguments") {
+                assertEquals(3, calculator.add(1, 2))
+            }
+        }
+    }
+})
+```
+
 [betterspecs]: http://www.betterspecs.org/ko/
 [ginkgo]: https://onsi.github.io/ginkgo/
 [kahlan]: https://github.com/kahlan/kahlan
+[kotlin-spek]: https://www.spekframework.org/specification/
+
 [example]: https://github.com/johngrib/example-junit5/
 [example-1]: https://github.com/johngrib/example-junit5/blob/56811e8647e115f11a6bf10c911734ea41a87677/src/main/java/com/johngrib/example/ComplexNumber.java
 [example-eng]: https://github.com/johngrib/example-junit5/blob/56811e8647e115f11a6bf10c911734ea41a87677/src/test/java/com/johngrib/example/ComplexNumberTest.java
