@@ -316,7 +316,6 @@ book:
     - {fileName: Code-Complete-2}
     - {fileName: CONCRETE-MATH}
     - {fileName: Design-for-Hackers}
-    - {fileName: DevOps-Troubleshooting}
     - {fileName: Effective-Java}
     - {fileName: Geek-Atlas}
     - {fileName: GoF-Design-Pattern}
@@ -418,7 +417,6 @@ config:
     - {fileName: coding-font}
 linux:
     - {fileName: command-line}
-    - {fileName: DevOps-Troubleshooting}
 command-line:
     - {fileName: command-line}
 golang:

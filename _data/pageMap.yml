@@ -429,7 +429,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, DevOps-Troubleshooting, Effective-Java, Geek-Atlas, GoF-Design-Pattern, grow-together, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, Schrodinger-s-goyang-Hee, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, Effective-Java, Geek-Atlas, GoF-Design-Pattern, grow-together, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, Schrodinger-s-goyang-Hee, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
 book-log-2019:
     type: wiki
     title: '2019년 독서록'
@@ -917,14 +917,6 @@ dev-schedule-quotes:
     parent: for-craftsmanship
     url: /wiki/dev-schedule-quotes
     updated: '2019-12-16 08:13:57 +0900'
-    children: []
-DevOps-Troubleshooting:
-    type: wiki
-    title: '(책) 데브옵스 - 개발자, QA, 관리자가 함께 보는 리눅스 서버 트러블슈팅 기법'
-    summary: 'DevOps Troubleshooting - Linux Server Best Practices'
-    parent: book
-    url: /wiki/DevOps-Troubleshooting
-    updated: '2018-02-08 22:32:03 +0900'
     children: []
 df:
     type: wiki
@@ -3084,7 +3076,7 @@ uptime:
     summary: '현재 시간, 시스템 부팅 후 경과된 시간, 로그인 사용자, 시스템 부하율을 보여준다.'
     parent: command-line
     url: /wiki/uptime
-    updated: '2018-02-06 22:25:08 +0900'
+    updated: '2019-12-22 22:25:24 +0900'
     children: []
 URI:
     type: wiki
