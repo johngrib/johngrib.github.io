@@ -3,7 +3,7 @@ layout  : wiki
 title   : 해머스푼으로 한/영 전환 오로라를 만들자
 summary : 지금 선택된 입력기가 한글인지 영어인지 쉽게 알아보자
 date    : 2019-12-18 21:25:35 +0900
-updated : 2019-12-18 22:37:51 +0900
+updated : 2019-12-22 22:13:10 +0900
 tag     : hammerspoon
 toc     : true
 public  : true
@@ -54,67 +54,60 @@ $ tree .
     └── vim.lua
 ```
 
-* `inputsource_aurora.lua`
+* [inputsource_aurora.lua]( https://github.com/johngrib/hammerspoon-config/blob/master/modules/inputsource_aurora.lua ) - 내 최신 파일은 이 링크에서 볼 수 있다.
 
 ```lua
 local boxes = {}
 local inputEnglish = "com.apple.keylayout.ABC"
 local box_height = 23
-local box_alpha = 0.5
+local box_alpha = 0.35
+local GREEN = hs.drawing.color.osx_green
 
 -- 입력소스 변경 이벤트에 이벤트 리스너를 달아준다
 hs.keycodes.inputSourceChanged(function()
-    local input_source = hs.keycodes.currentSourceID()
-    show_status_bar(not (input_source == inputEnglish))
+    disable_show()
+    if hs.keycodes.currentSourceID() ~= inputEnglish then
+        enable_show()
+    end
 end)
 
--- 오로라를 보여준다
-function show_aurora(scr)
-    local box = hs.drawing.rectangle(hs.geometry.rect(0,0,0,0))
-    draw_rectangle(box, scr, 0, scr:fullFrame().w, hs.drawing.color.osx_green)
-    table.insert(boxes, box)
-end
-
-function show_status_bar(stat)
-    if stat then
-        enable_show()
-    else
-        disable_show()
-    end
-end
-
 function enable_show()
-    show_status_bar(false)
     reset_boxes()
-    -- 여러 개의 모니터를 사용한다면, 모든 모니터에 다 적용해준다
     hs.fnutils.each(hs.screen.allScreens(), function(scr)
-        show_aurora(scr)
+        local frame = scr:fullFrame()
+
+        local box = newBox()
+        draw_rectangle(box, frame.x, 0, frame.w, box_height, GREEN)
+        table.insert(boxes, box)
+
+        -- 이 부분의 주석을 풀면 화면 아래쪽에도 보여준다
+        -- local box2 = newBox()
+        -- draw_rectangle(box2, frame.x, frame.h - 10, frame.w, box_height, GREEN)
+        -- table.insert(boxes, box2)
     end)
 end
 
 function disable_show()
     hs.fnutils.each(boxes, function(box)
-        if not (box == nil) then
+        if box ~= nil then
             box:delete()
         end
     end)
     reset_boxes()
 end
 
+function newBox()
+    return hs.drawing.rectangle(hs.geometry.rect(0,0,0,0))
+end
+
 function reset_boxes()
     boxes = {}
 end
 
--- 화면에 사각형을 그려준다
-function draw_rectangle(target_draw, screen, offset, width, fill_color)
-  local screeng                  = screen:fullFrame()
-  local screen_frame_height      = screen:frame().y
-  local screen_full_frame_height = screeng.y
-  local height_delta             = screen_frame_height - screen_full_frame_height
-  local height                   = box_height
+function draw_rectangle(target_draw, x, y, width, height, fill_color)
+  target_draw:setSize(hs.geometry.rect(x, y, width, height))
+  target_draw:setTopLeft(hs.geometry.point(x, y))
 
-  target_draw:setSize(hs.geometry.rect(screeng.x + offset, screen_full_frame_height, width, height))
-  target_draw:setTopLeft(hs.geometry.point(screeng.x + offset, screen_full_frame_height))
   target_draw:setFillColor(fill_color)
   target_draw:setFill(true)
   target_draw:setAlpha(box_alpha)
