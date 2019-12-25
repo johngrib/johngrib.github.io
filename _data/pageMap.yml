@@ -2764,7 +2764,7 @@ spring-ioc:
     summary: 'Inversion of Control'
     parent: spring
     url: /wiki/spring-ioc
-    updated: '2019-09-30 11:30:54 +0900'
+    updated: '2019-12-25 23:44:32 +0900'
     children: []
 spring-versions:
     type: wiki

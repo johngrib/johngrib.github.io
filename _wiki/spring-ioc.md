@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC
 summary : Inversion of Control
 date    : 2019-08-30 22:39:18 +0900
-updated : 2019-09-30 11:30:54 +0900
+updated : 2019-12-25 23:44:32 +0900
 tag     : spring
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 기원
+## 기원
 
 IoC에 대해 조사하던 도중, 트위터에서 [@wickedev88](https://twitter.com/wickedev88 )님이 다음 글을 소개해주셔서 읽게 되었다.
 
@@ -28,7 +28,7 @@ IoC에 대해 조사하던 도중, 트위터에서 [@wickedev88](https://twitter
 * 마틴 파울러가 IoC를 Dependency Injection으로 이름을 바꿨다.
     * Mazzocchi는 DI라는 명명은 적절하지 않은 것으로 보는듯.
 
-## Hollywood principle
+### Hollywood principle
 
 한편 Michael Mattson의 논문 Conclusions (98쪽) 부분을 읽어보면 다음과 같은 문단이 있다.
 
@@ -41,7 +41,7 @@ The major difference between an object-oriented framework and a class library is
 * 참고: [[hollywood-principle]]{헐리우드 원칙}
 
 
-## PicoContainer 문서를 통해 보는 IoC의 역사
+### PicoContainer 문서를 통해 보는 IoC의 역사
 
 PicoContainer 프레임워크의 문서 [Inversion of Control History][history]에는 IoC의 역사가 잘 나와 있다.
 
@@ -57,7 +57,7 @@ PicoContainer 프레임워크의 문서 [Inversion of Control History][history]�
 * 1998-06: Brian Foote와 Joseph Yoder. [Big Ball of Mud](http://www.laputan.org/mud/ ).
 * 1998-06: Ralph E. Johnson과 Brian Foote. [Designing Reusable Classes](http://www.laputan.org/drc/drc.html ). "inversion of control" 등장.
 
-# 토비의 스프링 3.1
+## 토비의 스프링 3.1
 
 토비의 스프링 3.1 1권 92쪽에서는 다음과 같이 설명하고 있다.
 
@@ -90,7 +90,7 @@ PicoContainer 프레임워크의 문서 [Inversion of Control History][history]�
 애플리케이션 코드는 프레임워크가 짜놓은 틀에서 수동적으로 동작해야 한다.
 
 
-# docs.spring.io 를 읽어보자
+## docs.spring.io 를 읽어보자
 
 내가 IoC에 대해 조사하기로 마음먹은 이유는 Spring Framework 때문이다.
 
@@ -125,11 +125,11 @@ Bean에 대한 이야기도 나왔다.
 
 Bean의 정의도 매우 심플하다. Spring IoC 컨테이너가 라이프 사이클을 관리하는 객체가 Bean 이다.
 
-# PicoContainer의 IoC Overview
+## PicoContainer의 IoC Overview
 
 PicoContainer의 [Inversion of Control Overview](http://picocontainer.com/inversion-of-control.html ) 문서에 이해를 돕는 쉬운 예제가 있기에 발췌한다.
 
-## IoC 컴포넌트와 냄새 나는 코드의 비교
+### IoC 컴포넌트와 냄새 나는 코드의 비교
 
 다음의 코드는 가장 간단한 IoC 컴포넌트라 할 수 있다.
 
@@ -170,7 +170,7 @@ public class AppleImpl implements Apple {
 }
 ```
 
-## DI를 하는 3가지 방법
+### DI를 하는 3가지 방법
 
 한편 PicoContainer는 DI에 대해 다음과 같은 세 가지 예제를 보여준다.
 
@@ -222,7 +222,7 @@ public class AppleImpl implements Apple, DependencyProvision {
 
 마지막은 Spring의 ApplicationContext에서 직접 Bean을 꺼내는 것과 비슷한 느낌이다.
 
-# Spring의 DI
+## Spring의 DI
 
 PicoContainer의 DI를 보았으니, Spring의 DI도 살펴보자.
 
@@ -285,7 +285,7 @@ ApplicationContext는 관리하는 Bean에 대해 생성자 기반 및 설정자
 * [[spring-bean-config-configuration]]{@Configuration을 통한 Spring Bean 설정}
 * [[spring-bean-config-xml]]{xml을 통한 Spring Bean 설정}
 
-## 생성자 기반 DI와 세터 기반 DI 중 어떤 것을 사용해야 할까?
+### 생성자 기반 DI와 세터 기반 DI 중 어떤 것을 사용해야 할까?
 
 >
 The Spring team generally advocates constructor injection,
@@ -302,12 +302,12 @@ Spring 팀은 생성자 주입 쪽을 선호한다고 한다. 그 이유는 다�
     * 이렇게 하지 않으면 디펜던시를 사용할 때마다 null 체크를 해야 한다.
 * 디펜던시를 재구성하거나 재주입이 필요한 경우엔 유용하다.
 
-# 함께 읽기
+## 함께 읽기
 
 * [[hollywood-principle]]{헐리우드 원칙}
 * [[template-method-pattern]]{템플릿 메소드 패턴}
 
-# 참고문헌
+## 참고문헌
 
 * 웹 문서
     * [On Inversion of Control by Stefano Mazzocchi][on-ioc]
@@ -324,7 +324,7 @@ Spring 팀은 생성자 주입 쪽을 선호한다고 한다. 그 이유는 다�
     * GoF의 디자인 패턴 / Erich Gamma 외 3인 공저 / 김정아 역 / 피어슨에듀케이션코리아(PTG) / 초판 6쇄 2005년 10월 20일
     * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
 
-# 주석
+## 주석
 
 [^translate-hard]: 나에게 꽤 어려운 영어 문장이라 일단 의역했다.
 [^kim]: 김정아 님의 주석은 2005년 번역본에는 없고, 프로텍미디어에서 출판한 2015년 개정판에 있다.
