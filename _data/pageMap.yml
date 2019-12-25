@@ -693,7 +693,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, find, fish-shell, gpg, grep, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, tail, top, touch, tr-cmd, uptime, yes, ykman]
+    children: [ag, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, find, fish-shell, gpg, grep, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, tail, top, touch, tr-cmd, uptime, yes, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2789,6 +2789,14 @@ strategy-pattern:
     parent: design-pattern
     url: /wiki/strategy-pattern
     updated: '2019-09-22 21:23:31 +0900'
+    children: []
+strfile-cmd:
+    type: wiki
+    title: 'strfile 명령어'
+    summary: 'create a random access file for storing strings'
+    parent: command-line
+    url: /wiki/strfile-cmd
+    updated: '2019-12-25 19:00:36 +0900'
     children: []
 study:
     type: wiki

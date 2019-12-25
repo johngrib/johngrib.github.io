@@ -241,6 +241,7 @@ bash:
     - {fileName: sed}
     - {fileName: sha256sum}
     - {fileName: sort}
+    - {fileName: strfile-cmd}
     - {fileName: tail}
     - {fileName: top}
     - {fileName: touch}
@@ -282,6 +283,7 @@ command:
     - {fileName: sed}
     - {fileName: sha256sum}
     - {fileName: sort}
+    - {fileName: strfile-cmd}
     - {fileName: tail}
     - {fileName: top}
     - {fileName: touch}

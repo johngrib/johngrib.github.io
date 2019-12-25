@@ -265,6 +265,7 @@ regenerate: true
         * [[sed]]
         * [[sha256sum]]
         * [[sort]]
+        * [[strfile-cmd]]
         * [[tail]]
         * [[top]]
         * [[touch]]
