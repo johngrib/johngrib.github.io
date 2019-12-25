@@ -251,6 +251,7 @@ regenerate: true
         * [[fc]]
         * [[find]]
         * [[fish-shell]]
+        * [[fortune-cmd]]
         * [[gpg]]
         * [[grep]]
         * [[java_home]]

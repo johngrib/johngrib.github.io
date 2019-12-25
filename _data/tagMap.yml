@@ -227,6 +227,7 @@ bash:
     - {fileName: du}
     - {fileName: fc}
     - {fileName: find}
+    - {fileName: fortune-cmd}
     - {fileName: git-alias}
     - {fileName: gpg}
     - {fileName: grep}
@@ -269,6 +270,7 @@ command:
     - {fileName: du}
     - {fileName: fc}
     - {fileName: find}
+    - {fileName: fortune-cmd}
     - {fileName: git}
     - {fileName: gpg}
     - {fileName: grep}
