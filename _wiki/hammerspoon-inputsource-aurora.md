@@ -3,7 +3,7 @@ layout  : wiki
 title   : 해머스푼으로 한/영 전환 오로라를 만들자
 summary : 지금 선택된 입력기가 한글인지 영어인지 쉽게 알아보자
 date    : 2019-12-18 21:25:35 +0900
-updated : 2019-12-22 22:13:10 +0900
+updated : 2019-12-25 18:53:46 +0900
 tag     : hammerspoon
 toc     : true
 public  : true
@@ -77,12 +77,12 @@ function enable_show()
         local frame = scr:fullFrame()
 
         local box = newBox()
-        draw_rectangle(box, frame.x, 0, frame.w, box_height, GREEN)
+        draw_rectangle(box, frame.x, frame.y, frame.w, box_height, GREEN)
         table.insert(boxes, box)
 
         -- 이 부분의 주석을 풀면 화면 아래쪽에도 보여준다
         -- local box2 = newBox()
-        -- draw_rectangle(box2, frame.x, frame.h - 10, frame.w, box_height, GREEN)
+        -- draw_rectangle(box2, frame.x, frame.y + frame.h - 10, frame.w, box_height, GREEN)
         -- table.insert(boxes, box2)
     end)
 end
