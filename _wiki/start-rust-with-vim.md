@@ -3,7 +3,7 @@ layout  : wiki
 title   : Rust 언어를 위한 Vim 설정
 summary : 
 date    : 2019-12-26 22:41:05 +0900
-updated : 2019-12-26 22:59:04 +0900
+updated : 2019-12-26 23:01:28 +0900
 tag     : rust vim
 toc     : true
 public  : true
@@ -55,7 +55,7 @@ Plug 'rust-lang/rust.vim'
 
 이렇게 하는 것만으로 vim에서 rust와 관련된 자동완성 셋팅이 완료된다.
 
-## coc.nvim 을 위한 rust 포매터 설치
+### coc.nvim 을 위한 rust 포매터 설치
 
 포매터가 필요하다면 coc.nvim이 설치된 vim에서 다음과 같이 coc config 파일을 불러오도록 한다.
 
