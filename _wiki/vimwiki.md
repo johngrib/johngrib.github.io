@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2019-08-05 15:19:26 +0900
+updated : 2019-12-27 08:05:02 +0900
 tag     : vim wiki
 public  : true
 parent  : Vim
@@ -130,7 +130,7 @@ nnoremap <S-F4> :execute "VWB" <Bar> :lopen<CR>
 하나만 사용하고 싶다면 `[]` 배열 안에 하나만 설정하면 된다.
 
 * `path`: 위키 파일을 보관할 루트 디렉토리를 지정한다.
-    * `path`를 github page 경로로 지정하면 설정하기 나름으로 [나만의 웹 위키](/blog/2017/12/06/my-wiki/)로도 활용할 수 있다.
+    * `path`를 github page 경로로 지정하면 설정하기 나름으로 [[my-wiki]]{나만의 웹 위키}로도 활용할 수 있다.
     * 개인적인 로컬 위키로 사용한다면 Dropbox 하위 경로로 지정하는 것도 방법이다.
 * `ext`: 위키 파일 형식을 지정한다.
     * Vimwiki 고유 포맷이 있지만, jekyll과의 연계 및 범용성을 위해 마크다운(`.md`) 형식을 선택했다.
@@ -494,7 +494,7 @@ augroup END
 * [Vim-startify](https://github.com/mhinz/vim-startify )
 
 
-* [Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자] (https://johngrib.github.io/wiki/my-wiki/ )
+* [[my-wiki]]{Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자}
 * [[vim-conceallevel]]{Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자}
 
 
