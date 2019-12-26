@@ -2461,7 +2461,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [awk, bc, Golang, Groovy, Java, php, Python3, TOML, YAML]
+    children: [awk, bc, Golang, Groovy, Java, php, Python3, rust, TOML, YAML]
 proverb:
     type: wiki
     title: '나의 용어 사전'
@@ -2606,6 +2606,14 @@ rule-of-succession:
     url: /wiki/rule-of-succession
     updated: '2018-04-24 22:03:17 +0900'
     children: []
+rust:
+    type: wiki
+    title: Rust
+    summary: ""
+    parent: programming-language
+    url: /wiki/rust
+    updated: '2019-12-26 22:40:46 +0900'
+    children: [start-rust-with-vim]
 say:
     type: wiki
     title: 'say 명령어'
@@ -2781,6 +2789,14 @@ sql-char-comparison:
     parent: why
     url: /wiki/sql-char-comparison
     updated: '2018-04-21 11:15:30 +0900'
+    children: []
+start-rust-with-vim:
+    type: wiki
+    title: 'Rust 언어를 위한 Vim 설정'
+    summary: ""
+    parent: rust
+    url: /wiki/start-rust-with-vim
+    updated: '2019-12-26 22:59:04 +0900'
     children: []
 static-factory-method-pattern:
     type: wiki

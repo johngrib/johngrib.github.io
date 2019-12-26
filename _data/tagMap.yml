@@ -145,6 +145,7 @@ vim:
     - {fileName: config-ideavim}
     - {fileName: ctags}
     - {fileName: my-mac-os-terminal}
+    - {fileName: start-rust-with-vim}
     - {fileName: two-views-of-vim}
     - {fileName: Vim}
     - {fileName: vim-auto-completion}
@@ -632,6 +633,7 @@ language:
     - {fileName: Java}
     - {fileName: programming-language}
     - {fileName: Python3}
+    - {fileName: rust}
 cheatsheet:
     - {fileName: golang-cheatsheet}
 reflect:
@@ -786,6 +788,8 @@ spring:
 xml:
     - {fileName: spring-bean-config-configuration}
     - {fileName: spring-bean-config-xml}
+rust:
+    - {fileName: start-rust-with-vim}
 hacker:
     - {fileName: The-Jargon-File}
 trouble-shooting:

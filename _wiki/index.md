@@ -145,6 +145,8 @@ regenerate: true
         * [[composer]]
     * [[Python3]]
         * [[python3-simple-file-sharing]]
+    * [[rust]]
+        * [[start-rust-with-vim]]
     * [[TOML]]
     * [[YAML]]
 * [[proverb]]{나의 용어 사전}
