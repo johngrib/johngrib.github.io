@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 
 date    : 2019-11-09 22:56:16 +0900
-updated : 2019-11-10 09:15:48 +0900
+updated : 2019-12-27 08:23:32 +0900
 tag     : 
 toc     : true
 public  : true
@@ -67,4 +67,8 @@ macOS의 경우 `~/Library/Preferences`에 있다.
 
 자세한 내용은 [Selecting the JDK version the IDE will run under](https://intellij-support.jetbrains.com/hc/en-us/articles/206544879-Selecting-the-JDK-version-the-IDE-will-run-under )를 읽어보자.
 
+
+## 짜증나는 parameter hint 옵션 해제하기
+
+`Preferences` - `Editor` - `General` - `Appearance`로 들어간 다음, `Show parameter name hints`를 해제하면 된다.
 
