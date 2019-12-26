@@ -494,7 +494,7 @@ augroup END
 * [Vim-startify](https://github.com/mhinz/vim-startify )
 
 
-* [Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자](/blog/2017/12/06/my-wiki/ )
+* [Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자] (https://johngrib.github.io/wiki/my-wiki/ )
 * [[vim-conceallevel]]{Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자}
 
 
