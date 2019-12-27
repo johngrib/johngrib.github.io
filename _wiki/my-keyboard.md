@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 키보드 히스토리
 summary : 역사를 정리해 보자
 date    : 2018-11-22 10:57:14 +0900
-updated : 2019-09-26 23:36:41 +0900
+updated : 2019-12-27 21:13:51 +0900
 tag     : keyboard
 toc     : true
 public  : true
@@ -138,13 +138,13 @@ HHKB JP
 
 스위치 테스트 구매는 [알리 익스프레스에서 "key switch tester"라고 검색](https://www.aliexpress.com/af/key-switch-tester.html?SearchText=key+switch+tester )하면 많이 나온다.
 
-## 2018-12-06 XDA 키캡 구매
+## 2018-12-06 MDA 키캡 구매
 
-* 더 편한 키캡을 찾다가 XDA 키캡에 대해 알게 되어 마음에 들어 구매하게 되었다.
+* 더 편한 키캡을 찾다가 MDA 키캡에 대해 알게 되어 마음에 들어 구매하게 되었다.
 
-XDA 키캡 구매
+MDA 키캡 구매
 
-* [알리 익스프레스에서 "pbt xda keycaps"라고 검색](https://www.aliexpress.com/af/pbt-xda-keycaps.html?SearchText=pbt+xda+keycaps ).
+* [알리 익스프레스에서 "pbt mda keycaps" 또는 "pbt xda keycaps"라고 검색](https://www.aliexpress.com/af/pbt-xda-keycaps.html?SearchText=pbt+xda+keycaps ).
 * ABS 키캡보다 PBT 키캡의 촉감이 훨씬 좋다.
 
 ## 2018-12-14 UHK 구매
@@ -161,7 +161,7 @@ XDA 키캡 구매
 
 * 주문 제작이라 도착할 때까지 4개월이나 걸렸다!
 * 몇 년 걸린 분도 있다고 들었으니 늦게 주문해서 다행이라 생각한다.
-* 사진은 기본 키캡을 XDA 키캡으로 교환한 상태.
+* 사진은 기본 키캡을 MDA 키캡으로 교환한 상태.
 
 ![uhk](/post-img/my-keyboard/uhk.jpg )
 
@@ -171,11 +171,11 @@ XDA 키캡 구매
     * (UHK 팝니다~)
     * 역시 기계식보다 무접점이 좋다.
 
-## 2019-06-02 체리 키캡 호환 어댑터로 교환하고 XDA 키캡 추가
+## 2019-06-02 체리 키캡 호환 어댑터로 교환하고 MDA 키캡 추가
 
 ![uhk](/post-img/my-keyboard/adapter.jpg )
 
-* HHKB JP에 XDA 키캡을 사용하기 위해 체리 키캡 호환 어댑터로 교환하는 작업을 하였다.
+* HHKB JP에 MDA 키캡을 사용하기 위해 체리 키캡 호환 어댑터로 교환하는 작업을 하였다.
     * 사진의 민트색 어댑터가 체리 호환 어댑터이다.
     * 까만색 어댑터가 HHKB 빌트인인 Topre 어댑터.
     * 스페이스, 엔터, 쉬프트는 빌트인 어댑터를 쓰는 것이 좋다.
@@ -195,13 +195,13 @@ XDA 키캡 구매
 * [알리 익스프레스에서 "topre switch adapter"라고 검색](https://www.aliexpress.com/af/topre-switch-adapter.html?SearchText=topre+switch+adapter ).
 
 
-![xda](/post-img/my-keyboard/xda.jpg )
+![mda](/post-img/my-keyboard/xda.jpg )
 
-* XDA 키캡은 키캡 상단이 오목하여, 손가락 끝을 상하좌우로 감싸주는 것 같은 느낌이 든다.
+* MDA 키캡은 키캡 상단이 오목하여, 손가락 끝을 상하좌우로 감싸주는 것 같은 느낌이 든다.
 * 손가락 끝과 닿는 면적이 넓어서 그런지 손가락 끝에 오는 충격량이 잘 분산되는 느낌이 좋았다.
 * 손가락 끝 피부의 피로가 적어서 좋다고 생각한다.
 
-![xda-zoom](/post-img/my-keyboard/xda-zoom.jpg )
+![mda-zoom](/post-img/my-keyboard/xda-zoom.jpg )
 
 
 # 나의 키보드 선택/커스터마이즈 기준
@@ -283,9 +283,9 @@ XDA 키캡 구매
 * 기계로 해결하는 제일 좋은 방식은 그냥 리얼포스나 HHKB 같은 무접점 키보드를 사용하는 것이다.
     * 내 느낌상으로는 리얼포스의 댐핑이 더 좋았던 것 같다.
 * 스프링 압력이 큰 키보드를 사용할 때 새끼손가락으로 키를 누르는 느낌이 상대적으로 어렵게 느껴질 수 있는데, 이런 상황이 싫다면 리얼포스 차등 키보드가 좋다. 새끼손가락이 누르는 키 밑에 약한 스프링이 배치되어 있다.
-* 키캡 쪽에서 단위 면적당 압력을 줄이고 싶다면 손가락과 닿는 표면적이 넓은 XDA 키캡을 사용하는 방법도 있다.
+* 키캡 쪽에서 단위 면적당 압력을 줄이고 싶다면 손가락과 닿는 표면적이 넓은 MDA 키캡을 사용하는 방법도 있다.
 
-결론적으로 나는 XDA 키캡을 끼운 HHKB 키보드 밑에 쿠션을 깔고, 타이핑을 살살 해서 쓴다.
+결론적으로 나는 MDA 키캡을 끼운 HHKB 키보드 밑에 쿠션을 깔고, 타이핑을 살살 해서 쓴다.
 
 ## 소음 때문에 괴로운가?
 
