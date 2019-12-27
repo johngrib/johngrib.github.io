@@ -1900,7 +1900,7 @@ java-switch-expression:
     summary: ""
     parent: Java
     url: /wiki/java-switch-expression
-    updated: '2019-09-12 00:08:06 +0900'
+    updated: '2019-12-27 21:18:25 +0900'
     children: []
 java10-var:
     type: wiki

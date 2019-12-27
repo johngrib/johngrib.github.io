@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java switch 문
 summary : 
 date    : 2019-09-11 22:23:19 +0900
-updated : 2019-09-12 00:08:06 +0900
+updated : 2019-12-27 21:18:25 +0900
 tag     : java
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# JDK 12 preview의 switch 문
+## JDK 12 preview의 switch 문
 
 12 preview 부터는 다음과 같은 편리한 용법이 추가되었다. (나중에 [instanceof의 패턴 매칭 기능](https://openjdk.java.net/jeps/305 )을 넣기 위한 사전 작업이다)
 
@@ -58,7 +58,7 @@ IntelliJ IDE 에서도 Language level을 그냥 12를 고르면 쓸 수 없고, 
 13버전부터는 옵션 없이 사용할 수 있기를 바란다.
 
 
-# 참고문헌
+## 참고문헌
 
 * [JEP 325: Switch Expressions (Preview)][jep-325]
 * [The switch Statement (Java SE 12)][spec-12]
