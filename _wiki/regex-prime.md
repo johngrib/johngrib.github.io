@@ -3,7 +3,7 @@ layout  : wiki
 title   : 소수를 판별하는 정규식
 summary : 1진법을 사용해 소수를 판별하자!
 date    : 2017-09-20 20:56:55 +0900
-updated : 2018-04-21 12:01:21 +0900
+updated : 2019-12-27 13:15:11 +0900
 tag     : perl regex
 toc     : true
 comment : true
@@ -55,7 +55,7 @@ $ perl -lne '(1x$_) !~ /^1?$|^(11+?)\1+$/ && print "$_ is prime"'
 
 ![prime regex]({{ site.url }}/post-img/2017/2017-09-20-prime-regex.jpg)
 
-# Links
+## Links
 
 * [PERL ONE LINERS](https://www.nostarch.com/perloneliners)
 * [소수 판별 정규식 다이어그램](https://regexper.com/?#%5E1%3F%24%7C%5E(11%2B%3F)%5C1%2B%24)
