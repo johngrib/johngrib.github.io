@@ -3,7 +3,7 @@ layout  : wiki
 title   : Rust 언어를 위한 Vim 설정
 summary : 
 date    : 2019-12-26 22:41:05 +0900
-updated : 2019-12-29 08:24:01 +0900
+updated : 2019-12-29 08:46:50 +0900
 tag     : rust vim
 toc     : true
 public  : true
@@ -34,6 +34,8 @@ rustc --version
 ## vim 설정
 
 ### rust.vim 플러그인 설치
+
+vim을 위한 rust 플러그인이 여럿 있는 것 같지만 나는 일단 [rust.vim][rust-vim]을 사용하기로 했다.
 
 vim-plug를 사용한다면 다음과 같이 `.vimrc`에 추가해 준 다음 설치해주면 된다.
 
@@ -120,3 +122,30 @@ fn main() {
 ```sh
 cargo new hello_world
 ```
+
+## Vim에서 실행하기
+
+vim에서 다른 평범한 터미널 명령을 실행하는 방법을 쓰면 된다.
+
+```
+:!cargo run 파일명
+```
+
+현재 편집중인 파일을 실행하고 싶다면 vim의 % 확장을 쓰면 된다.
+
+```
+:!cargo run %
+```
+
+만약 현재 `:pwd`가 프로젝트 루트라면(`Cargo.toml`이 있는 위치라면) 그냥 다음과 같이 실행해도 된다.
+```
+:!cargo run
+```
+
+만약 [rust.vim][rust-vim]을 설치했다면 다음 명령을 쓰면 된다.
+
+```
+:RustRun
+```
+
+[rust-vim]: https://github.com/rust-lang/rust.vim
