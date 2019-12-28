@@ -2804,7 +2804,7 @@ start-rust-with-vim:
     summary: ""
     parent: rust
     url: /wiki/start-rust-with-vim
-    updated: '2019-12-26 23:01:28 +0900'
+    updated: '2019-12-29 08:24:01 +0900'
     children: []
 static-factory-method-pattern:
     type: wiki

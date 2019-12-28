@@ -3,7 +3,7 @@ layout  : wiki
 title   : Rust 언어를 위한 Vim 설정
 summary : 
 date    : 2019-12-26 22:41:05 +0900
-updated : 2019-12-26 23:01:28 +0900
+updated : 2019-12-29 08:24:01 +0900
 tag     : rust vim
 toc     : true
 public  : true
@@ -115,4 +115,8 @@ fn main() {
 }
 ```
 
+만약 디렉토리를 만드는 것이 귀찮다면 `cargo new`를 사용하면 된다.
 
+```sh
+cargo new hello_world
+```
