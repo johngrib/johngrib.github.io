@@ -227,6 +227,7 @@ bash:
     - {fileName: docker}
     - {fileName: du}
     - {fileName: fc}
+    - {fileName: fd-cmd}
     - {fileName: find}
     - {fileName: fortune-cmd}
     - {fileName: git-alias}
@@ -270,6 +271,7 @@ command:
     - {fileName: docker}
     - {fileName: du}
     - {fileName: fc}
+    - {fileName: fd-cmd}
     - {fileName: find}
     - {fileName: fortune-cmd}
     - {fileName: git}

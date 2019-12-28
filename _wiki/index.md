@@ -251,6 +251,7 @@ regenerate: true
         * [[diff]]
         * [[du]]
         * [[fc]]
+        * [[fd-cmd]]
         * [[find]]
         * [[fish-shell]]
         * [[fortune-cmd]]
