@@ -1102,6 +1102,14 @@ encryption:
     url: /wiki/encryption
     updated: '2018-10-10 10:04:16 +0900'
     children: []
+enterprise-application:
+    type: wiki
+    title: '엔터프라이즈 애플리케이션 (Enterprise Application)'
+    summary: '엔터프라이즈 애플리케이션이란 무엇인가?'
+    parent: what
+    url: /wiki/enterprise-application
+    updated: '2019-12-29 22:30:08 +0900'
+    children: []
 ethereum-white-paper:
     type: wiki
     title: '(요약) 이더리움 백서'
@@ -3317,7 +3325,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, availability, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
+    children: [agile, availability, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, enterprise-application, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

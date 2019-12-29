@@ -337,6 +337,7 @@ regenerate: true
     * [[Caesar-cipher]]
     * [[Continuous-Integration]]
     * [[encryption]]
+    * [[enterprise-application]]
     * [[ethereum-white-paper]]
     * [[floating-point]]
     * [[gray-code]]
