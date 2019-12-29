@@ -1108,7 +1108,7 @@ enterprise-application:
     summary: '엔터프라이즈 애플리케이션이란 무엇인가?'
     parent: what
     url: /wiki/enterprise-application
-    updated: '2019-12-29 22:30:08 +0900'
+    updated: '2019-12-29 22:52:57 +0900'
     children: []
 ethereum-white-paper:
     type: wiki
