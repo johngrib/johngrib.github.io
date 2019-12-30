@@ -407,6 +407,7 @@ regenerate: true
 
 * [[integer]]
 * [[junit5-nested]]
+* [[20-percent-project]]
 
 ---
 

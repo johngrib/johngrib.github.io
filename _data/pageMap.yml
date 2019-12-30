@@ -214,6 +214,14 @@
     url: /wiki/17-EQUATIONS-THAT-CHANGED-THE-WORLD
     updated: '2018-04-18 20:44:02 +0900'
     children: []
+20-percent-project:
+    type: wiki
+    title: '20% project'
+    summary: ""
+    parent: index
+    url: /wiki/20-percent-project
+    updated: '2019-12-30 23:50:20 +0900'
+    children: []
 abbr:
     type: wiki
     title: '약어 모음'
