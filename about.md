@@ -18,7 +18,7 @@ comment: false
         <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
 </div>
 
-# About Me
+## About Me
 
 * 유물론자입니다.
 * 무신론자입니다.
@@ -26,7 +26,7 @@ comment: false
 * 수학과 과학을 동경합니다.
 * 소프트웨어 개발자입니다.
 
-# Life
+## Life
 
 * 사랑하는 아내와 행복하게 살고 있습니다.
 * 실내에 있는 것을 좋아합니다.
@@ -39,14 +39,14 @@ comment: false
     * 주말도 예외가 아닙니다.
 * Vim 사용자입니다.
 
-# Motto
+## Motto
 
 > Whenever you fall, pick something up. – Oswald Avery
 
 > 넘어지면 무언가를 주워라. - 오스왈드 에이버리
 
 
-# Public Key
+## Public Key
 
 ```sh
 curl https://keybase.io/johngrib/key.asc | gpg --import
