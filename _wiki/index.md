@@ -238,6 +238,7 @@ regenerate: true
         * [[Elastic-Load-Balancing]]
     * [[command-line]]
         * [[ag]]
+        * [[basename]]
         * [[bash-history]]
         * [[bat-cmd]]
         * [[brew]]

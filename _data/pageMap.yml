@@ -350,6 +350,14 @@ bandwidth:
     url: /wiki/bandwidth
     updated: '2019-07-09 16:35:19 +0900'
     children: []
+basename:
+    type: wiki
+    title: 'basename 명령어'
+    summary: ""
+    parent: command-line
+    url: /wiki/basename
+    updated: '2019-12-30 23:07:23 +0900'
+    children: []
 bash-history:
     type: wiki
     title: 'bash history 다루기'
@@ -693,7 +701,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find, fish-shell, fortune-cmd, gpg, grep, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, tail, top, touch, tr-cmd, uptime, yes, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find, fish-shell, fortune-cmd, gpg, grep, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, tail, top, touch, tr-cmd, uptime, yes, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'

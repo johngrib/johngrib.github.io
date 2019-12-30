@@ -212,6 +212,7 @@ db:
     - {fileName: sql-char-comparison}
 bash:
     - {fileName: ag}
+    - {fileName: basename}
     - {fileName: bash-history}
     - {fileName: bat-cmd}
     - {fileName: bc}
@@ -255,6 +256,7 @@ bash:
 command:
     - {fileName: ag}
     - {fileName: awk}
+    - {fileName: basename}
     - {fileName: bash-history}
     - {fileName: bat-cmd}
     - {fileName: bc}
