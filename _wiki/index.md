@@ -171,6 +171,7 @@ regenerate: true
     * [[Tompson-s-rule-for-first-time-telescope-makers]]
     * [[Zipf-s-law]]
 * [[review]]
+    * [[review-2020]]
     * [[review-2019]]
     * [[review-2018]]
     * [[review-2017]]
