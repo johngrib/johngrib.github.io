@@ -3,7 +3,7 @@ layout  : wiki
 title   : 애자일(agile)에 대한 토막글 모음
 summary : 
 date    : 2019-04-24 22:55:36 +0900
-updated : 2019-11-29 23:24:41 +0900
+updated : 2020-01-02 20:16:01 +0900
 tag     : agile
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 리팩토링 데이터베이스에서
+## From: 리팩토링 데이터베이스
 
 * 1. 진화적 데이터베이스 개발 - 1.2 진화적 데이터 모델링에서 인용
 
@@ -24,18 +24,29 @@ latex   : false
 
 code-and-fix: 이러한 개발 방식은 계획 수립과 분석, 설계의 상위 과정을 무시하고 오로지 코딩(프로그래밍)만을 강조하는, 빨리 일정을 끝내려는 변형된 무리한 속성 과정이다.
 
-## 밥 아저씨 트위터에서
+## From: 밥 아저씨 트위터
 
 > Agile is not about going faster.
 Agile is about destroying hope.
 The data produced by a good agile team provides a cold dose of reality to the managers — in time for them to — manage.[^bob-twitter]
 
+## From: 엔터프라이즈 애플리케이션 아키텍처 패턴
+
+> 한 가지 다행인 것은 영구적인 결정이란 없다는 것이다.
+아키텍처 리팩터링은 힘들고 예기치 못한 비용이 많이 들지만 불가능한 것은 아니다.
+이 경우 여러분에게 해줄 수 있는 가장 좋은 조언은 익스트림 프로그래밍 전체가 마음에 들지는 않더라도 지속적 통합,
+테스트 주도 개발, 리팩터링이라는 세 가지 기술적 기법은 진지하게 고려해보라는 것이다.
+이러한 기법이 만병통치약은 아니지만 마음을 바꿀 필요가 있을 때 해야 할 일을 훨씬 쉽게 만들어준다.
+그리고 여러분이 필자가 만난 그 누구보다 운과 실력이 좋은 사람이 아니라면 이러한 기법이 반드시 필요할 것이다.[^fowler-ent]
 
 ## 참고문헌
 
 * 리팩토링 데이터베이스 진화적 데이터베이스 디자인 / 스캇 W. 엠블러, 프라모드 J. 세달라지 공저 / 정원혁, 이재범, 권태돈, 성대중, 현중균 공역 / 위키북스 / 2007년 06월 29일 / 원제 : Refactoring Databases
+* 엔터프라이즈 애플리케이션 아키텍처 패턴 / 마틴 파울러 저 / 최민석 역 / 위키북스 / 2쇄 2018년 10월 31일 / 원제 : Patterns of Enterprise Application Architecture
 
 ## 주석
 
 [bob-twitter]: https://twitter.com/unclebobmartin/status/1199000963950022656
 [^bob-twitter]: [Uncle Bob Martin 오전 1:24 · 2019년 11월 26일][bob-twitter]
+[^fowler-ent]: 엔터프라이즈 아키텍처 패턴. 8장 종합. 102쪽.
+
