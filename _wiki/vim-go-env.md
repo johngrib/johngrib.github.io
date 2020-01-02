@@ -3,7 +3,7 @@ layout  : wiki
 title   : go를 위한 vim 환경설정
 summary : 사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다
 date    : 2018-09-21 08:29:49 +0900
-updated : 2018-09-28 23:04:19 +0900
+updated : 2020-01-02 21:12:15 +0900
 tag     : vim golang
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# Plugins
+## Plugins
 
 플러그인은 이 정도는 있어야 편하다.
 
@@ -37,7 +37,7 @@ Plug 'AndrewRadev/splitjoin.vim'
     * 링크를 타고 들어가서 gif를 보면 막 써보고 싶어진다.
 
 
-# .vimrc
+## .vimrc
 
 `.vimrc` 설정은 다음과 같이 해 두었다.
 
@@ -79,9 +79,9 @@ Plug 'AndrewRadev/splitjoin.vim'
     autocmd FileType go nnoremap <Tab>c :GoCoverageToggle<CR>
 ```
 
-# vim-go
+## vim-go
 
-## Run/Build/Test
+### Run/Build/Test
 
 * run
     * `:GoRun` - 패키지 전체를 실행한다.
@@ -101,7 +101,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 let g:go_test_timeout = '10s'
 ```
 
-## Quickfix 윈도우 사용하기
+### Quickfix 윈도우 사용하기
 
 * 빌드 도중 경고나 에러가 있으면 Quickfix 윈도우가 자동으로 열려 목록을 볼 수 있다.
 * 파일명, 문제가 된 row/col, 문제 사유, 문제와 관련된 다른 파일 등의 정보를 보여준다.
@@ -119,7 +119,7 @@ test.go|4 col 6| main redeclared in this block previous declaration at ./constan
 * `ctrl-p` 로 이전 경고 코드로 커서 이동.
 * `<LocalLeader>q` 로 Quickfix 윈도우를 토글할 수 있다.
 
-## import
+### import
 
 .vimrc에서 다음과 같이 설정했다면, 기본적인 패키지 임포트는 저장할 때마다 자동으로 입력된다.
 
@@ -138,7 +138,7 @@ let g:go_fmt_command = "goimports"
 * `:GoImportAs str strings` - `import str "strings"` 구문이 추가된다.
 * `:GoDrop strings` - `import strings` 구문이 삭제된다.
 
-## vim-go에서 지원하는 텍스트 오브젝트
+### vim-go에서 지원하는 텍스트 오브젝트
 
 vim-go를 설치하면 다음 텍스트 오브젝트가 추가된다.
 
@@ -146,9 +146,9 @@ vim-go를 설치하면 다음 텍스트 오브젝트가 추가된다.
     * 당연히 `v`, `d`, `y` 등과 조합해서 쓰는 것이 가능.
     * `let g:go_textobj_include_function_doc = 0` - `af` 사용시 함수 상단의 코멘트도 포함하는지를 설정할 수 있다.
 
-## 자동완성
+### 자동완성
 
-### snippet 사용
+#### snippet 사용
 
 200개 이상의 자동 완성 키워드가 있으며, 필요에 의해 직접 추가할 수도 있다.
 
@@ -188,11 +188,11 @@ ${0}
 fmt.Println("${1:s}")
 ```
 
-### interface 구현
+#### interface 구현
 
 * `:GoImpl` - 인터페이스 이름을 입력하면 구현해야 하는 함수들의 뼈대를 만들어 준다.
 
-## 찾기, 보기, 이동
+### 찾기, 보기, 이동
 
 * `[[` - 이전 함수로 커서 이동.
 * `]]` - 다음 함수로 커서 이동.
@@ -217,22 +217,22 @@ fmt.Println("${1:s}")
 * `:GoChannelPeers` - 변수 위에 커서를 놓고 사용한다. 해당 변수가 선언된 곳, 재할당된 곳, 함수로 넘겨진 곳 등을 목록으로 보여준다.
 * `:GoCallers`, `:GoCallees` - 어지간한 IDE들이 모두 제공하는 기능.
 
-## 리팩터링 도구
+### 리팩터링 도구
 
 * `:GoRename` - 변수, 함수명 변경을 도와준다. 훌륭하다.
 * `:GoFreevars` - 비주얼 모드에서 사용. 범위 내의 변수들 중 extract 해도 문제 없을 변수 목록을 만들어 준다.
 
-## Debugger 사용
+### Debugger 사용
 
 * [2018년 3월 27일 vim-go 업데이트](https://github.com/fatih/vim-go/blob/master/CHANGELOG.md#117---march-27-2018 ) 부터 디버거 기능 지원.
     * vim-go의 개발자인 Fatih Arslan님 [트위터](https://twitter.com/fatih/status/978652722835656704 ).
 
-### 설치
+#### 설치
 
 * [devle](https://github.com/derekparker/delve )를 설치한다.
     * 설치 방법은 [delve installaion 문서](https://github.com/derekparker/delve/tree/master/Documentation/installation ) 참고.
 
-### 사용
+#### 사용
 
 다음 명령어들만 알아두면된다. 적당히 매핑해서 쓰면 될듯.
 
@@ -245,15 +245,15 @@ fmt.Println("${1:s}")
 * `:GoDebugStop`
 * `:GoDebugRestart`
 
-## 문제 해결
+### 문제 해결
 
-### delve 업데이트로 인한 debugger 오작동 문제
+#### delve 업데이트로 인한 debugger 오작동 문제
 
 2018년 7월 15일, [delve의 업데이트](https://github.com/derekparker/delve/pull/1230 )로 인해, vim-go의 디버거 기능이 작동하지 않는 문제가 발생했다.
 
 돌려보면 엉뚱한 에러 메시지만 자꾸 나오는데, 아직 머지되지는 않았지만 [문제를 해결한 Pull Request](https://github.com/fatih/vim-go/pull/1992 )가 있어 적용해 보았더니 잘 작동하였다.
 
-### K 커맨드 :GoDoc 매핑 문제
+#### K 커맨드 :GoDoc 매핑 문제
 
 * vim-go는 자동으로 `K`키에 `:GoDoc`을 맵핑시킨다.
 * 그런데 나는 `K`에 다른 기능을 매핑시켜 쓰고 있었으므로, 이 설정이 마음에 들지 않았다.
@@ -266,7 +266,7 @@ fmt.Println("${1:s}")
 let g:go_doc_keywordprg_enabled = 0
 ```
 
-# Links
+## Links
 
 * [vim-go](https://github.com/fatih/vim-go )
     * vim-go 개발자 후원하기: <https://patreon.com/fatih >

@@ -3244,7 +3244,7 @@ vim-go-env:
     summary: '사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다'
     parent: Golang
     url: /wiki/vim-go-env
-    updated: '2018-09-28 23:04:19 +0900'
+    updated: '2020-01-02 21:12:15 +0900'
     children: []
 vim-go-with-ultisnips:
     type: wiki
