@@ -3,7 +3,7 @@ layout  : wiki
 title   : Go dependency manager
 summary : 사람들이 많이 쓰는 걸 쓰자
 date    : 2018-10-21 10:19:44 +0900
-updated : 2019-06-04 21:53:56 +0900
+updated : 2020-01-03 08:42:39 +0900
 tag     : golang
 toc     : true
 public  : true
@@ -13,14 +13,14 @@ latex   : false
 * TOC
 {:toc}
 
-# 주의사항
+## 주의사항
 
 > Go의 공식 디펜던시 관리자인 Go Modules 기능이 Go 1.11 (2018-08-24)부터 추가되면서 다른 디펜던시 매니저를 쓸 이유가 희박해졌다.
 
 * Go의 공식 디펜던시 매니징 기능인 Go Modules 사용법을 찾는다면 [[golang-mod]]{(번역) Go Modules 사용하기}를 읽을 것.
 * 이 문서는 필요에 따라 Go Modules 외의 다른 디펜던시 관리자를 찾아 조사한 것이다.
 
-# Github status comparison
+## Github status comparison
 
 * 다음 목록의 선정 기준은 <https://github.com/golang/go/wiki/PackageManagementTools#go15vendorexperiment >.
 * 각종 수치는 `2018-10-21`을 기준으로 한다.
@@ -60,7 +60,7 @@ latex   : false
     * Rubigo는 README에 다음과 같이 DEPRECATED 되었다고 밝힌다.
         * **Rubigo is a DEPRECATED dependency tool and package manager for Golang, written in Rust.**
 
-## Why dep?
+### Why dep?
 
 일단 공식인 것 같다. 저장소 주소를 보자. <https://github.com/golang/dep >
 
@@ -87,9 +87,9 @@ The rest of this readme is preserved for those that may still need its contents.
 
 이쯤되면 좋든 싫든 dep을 써야할 것 같다.
 
-# dep
+## dep
 
-## installation
+### installation
 
 * Mac
 
@@ -110,7 +110,7 @@ $ curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 $ go get -u github.com/golang/dep/cmd/dep
 ```
 
-## help
+### help
 
 `dep help`를 치면 다음과 같은 도움말이 나온다.
 
@@ -138,11 +138,11 @@ Use "dep help [command]" for more information about a command.
 2018-10-21 일 15:39:53 johngrib atHome ~/Dropbox/johngrib.github.io  ᚴ [master] 4
 ```
 
-## dep 명령어 모음
+### dep 명령어 모음
 
 * <https://golang.github.io/dep/docs/daily-dep.html >
 
-### dep init
+#### dep init
 
 프로젝트를 셋팅하거나, 기존 프로젝트를 마이그레이션 한다.
 
@@ -153,7 +153,7 @@ Use "dep help [command]" for more information about a command.
     * `Gopkg.toml`
     * `vendor/`
 
-### dep ensure
+#### dep ensure
 
 dep의 기본이 되는 명령어. 디스크에 파일을 쓰는 명령어는 이것 뿐이다.
 
@@ -178,11 +178,11 @@ $ # -v 옵션을 주면 진행상황을 출력한다
 $ dep ensure -v
 ```
 
-### dep check
+#### dep check
 
 * 다운받은 디펜던시와 원격 저장소 사이의 해시값 일치/불일치를 검사해 결과를 보여준다.
 
-### dep status
+#### dep status
 
 현재 프로젝트가 의존하고 있는 디펜던시 목록을 출력한다.
 
@@ -195,13 +195,13 @@ github.com/onsi/ginkgo         ^1.6.0         v1.6.0         3774a09   v1.6.0   
 github.com/onsi/gomega         ^1.4.2         v1.4.2         7615b94   v1.4.2   12  
 ```
 
-## Gopkg.lock
+### Gopkg.lock
 
 <https://golang.github.io/dep/docs/Gopkg.lock.html >
 
 * `dep ensure` 또는 `dep init`을 실행했을 때 자동으로 생성되는 파일이다.
 
-## Gopkg.toml
+### Gopkg.toml
 
 * `dep init`을 실행하면 자동으로 생성되는 파일.
 * 이후는 개발자가 직접 편집하며 관리하도록 한다.
@@ -252,7 +252,7 @@ codename = "foo"
   propertyX = "valueX"
 ```
 
-### required 와 ignored
+#### required 와 ignored
 
 `required` 와 `ignored`으로 패키지 그래프 규칙을 지정할 수 있다.
 
@@ -275,7 +275,7 @@ ignored = [
 ]
 ```
 
-### noverify
+#### noverify
 
 * [vendor verification](https://golang.github.io/dep/docs/glossary.html#vendor-verification )을 하지 않을 패키지를 명시한다.
 * dep은 `dep ensure`, `dep check`등의 명령을 수행할 때 다운받은 디펜던시와 원격 저장소 사이의 해시값 일치/불일치를 검사하는데, `noverify`로 지정한 것은 해시값을 검사하지 않는다.
@@ -299,11 +299,11 @@ noverify = ["github.com/something/odd"]
         * `version` 값이 변경된다.
 * `dep check`: 결과를 출력할 때 해시 불일치가 빠지지는 않지만, 종료할 때 exit 1 로 끝나지 않게 된다.
 
-### metadata
+#### metadata
 
 * 사용자가 지정하는 key - value 값.
 
-### prune: 필요없는 경로를 지정한다
+#### prune: 필요없는 경로를 지정한다
 
 prune에 필요없는 경로/파일을 지정하면 `vendor` 트리 구조를 만들때 추가하지 않는다.
 
@@ -320,7 +320,7 @@ prune에 필요없는 경로/파일을 지정하면 `vendor` 트리 구조를 �
   unused-packages = true
 ```
 
-### 의존성 규칙 - constraint와 override
+#### 의존성 규칙 - constraint와 override
 
 <https://golang.github.io/dep/docs/Gopkg.toml.html >
 
@@ -333,7 +333,7 @@ prune에 필요없는 경로/파일을 지정하면 `vendor` 트리 구조를 �
 * `\[[override]]`
     * 조심스럽게 사용하라는 것을 보니 가급적이면 `\[[constraint]]`만 쓰는 것이 좋을듯.
 
-### version 표기에 대하여
+#### version 표기에 대하여
 
 ```
 =   : equal
@@ -363,7 +363,7 @@ version 표기 중 major range `^`는 다음과 같이 사용한다.
 ```
 
 
-### source
+#### source
 
 * name의 프로젝트가 사라졌거나 뭔가 문제가 있을 경우의 Plan B.
 * 프로젝트를 가져올 대체 위치를 지정할 수 있다.
@@ -377,7 +377,7 @@ version 표기 중 major range `^`는 다음과 같이 사용한다.
 ```
 
 
-# Links
+## Links
 
 * [PackageManagementTools](https://github.com/golang/go/wiki/PackageManagementTools )
 * <https://golang.github.io/dep/ >
