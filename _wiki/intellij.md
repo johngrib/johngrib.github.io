@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 
 date    : 2019-11-09 22:56:16 +0900
-updated : 2019-12-27 08:23:32 +0900
+updated : 2020-01-03 13:26:40 +0900
 tag     : 
 toc     : true
 public  : true
@@ -72,3 +72,8 @@ macOS의 경우 `~/Library/Preferences`에 있다.
 
 `Preferences` - `Editor` - `General` - `Appearance`로 들어간 다음, `Show parameter name hints`를 해제하면 된다.
 
+## Lombok을 사용할 경우 Annotation Processing을 켜놓자
+
+`Preferences` - `Build, Execution, Deployment` - `Compiler` - `Annotation Processors` - `Enable annotation processing`을 켜둬야 한다.
+
+이 옵션을 켜두지 않으면 롬복을 제대로 사용할 수 없다.
