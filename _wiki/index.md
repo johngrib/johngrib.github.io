@@ -272,6 +272,7 @@ regenerate: true
         * [[sha256sum]]
         * [[sort]]
         * [[strfile-cmd]]
+        * [[sw_vers-cmd]]
         * [[tail]]
         * [[top]]
         * [[touch]]

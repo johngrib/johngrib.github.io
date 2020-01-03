@@ -247,6 +247,7 @@ bash:
     - {fileName: sha256sum}
     - {fileName: sort}
     - {fileName: strfile-cmd}
+    - {fileName: sw_vers-cmd}
     - {fileName: tail}
     - {fileName: top}
     - {fileName: touch}
@@ -292,6 +293,7 @@ command:
     - {fileName: sha256sum}
     - {fileName: sort}
     - {fileName: strfile-cmd}
+    - {fileName: sw_vers-cmd}
     - {fileName: tail}
     - {fileName: top}
     - {fileName: touch}

@@ -709,7 +709,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find, fish-shell, fortune-cmd, gpg, grep, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, tail, top, touch, tr-cmd, uptime, yes, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find, fish-shell, fortune-cmd, gpg, grep, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, uptime, yes, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2941,6 +2941,14 @@ summary-The-Pauseless-GC-Algorithm:
     parent: summary
     url: /wiki/summary-The-Pauseless-GC-Algorithm
     updated: '2019-10-16 12:05:42 +0900'
+    children: []
+sw_vers-cmd:
+    type: wiki
+    title: 'sw_vers 명령어'
+    summary: 'Mac OS X 의 운영체제 버전 정보를 출력한다'
+    parent: command-line
+    url: /wiki/sw_vers-cmd
+    updated: '2020-01-03 22:24:28 +0900'
     children: []
 tail:
     type: wiki
