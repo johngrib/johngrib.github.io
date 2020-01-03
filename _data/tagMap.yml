@@ -147,6 +147,7 @@ vim:
     - {fileName: my-mac-os-terminal}
     - {fileName: start-rust-with-vim}
     - {fileName: two-views-of-vim}
+    - {fileName: ultisnips}
     - {fileName: Vim}
     - {fileName: vim-auto-completion}
     - {fileName: vim-coc}
@@ -809,6 +810,9 @@ toml:
 data-format:
     - {fileName: TOML}
     - {fileName: YAML}
+completion:
+    - {fileName: ultisnips}
+    - {fileName: vim-auto-completion}
 unit:
     - {fileName: units}
 vagrant:

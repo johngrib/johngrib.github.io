@@ -3126,6 +3126,14 @@ two-views-of-vim:
     url: /wiki/two-views-of-vim
     updated: '2019-12-01 19:55:56 +0900'
     children: []
+ultisnips:
+    type: wiki
+    title: Ultisnips
+    summary: '자신만의 snippet 파일을 만들어 쓰자'
+    parent: Vim
+    url: /wiki/ultisnips
+    updated: '2020-01-03 21:54:38 +0900'
+    children: []
 units:
     type: wiki
     title: 단위
@@ -3197,14 +3205,14 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [config-ideavim, my-wiki, two-views-of-vim, vim-auto-completion, vim-coc, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
+    children: [config-ideavim, my-wiki, two-views-of-vim, ultisnips, vim-auto-completion, vim-coc, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
 vim-auto-completion:
     type: wiki
     title: 'vim 자동완성 기능 사용하기'
     summary: 'vim을 똑똑하게 사용하자'
     parent: Vim
     url: /wiki/vim-auto-completion
-    updated: '2020-01-03 21:30:30 +0900'
+    updated: '2020-01-03 21:42:41 +0900'
     children: []
 vim-coc:
     type: wiki
