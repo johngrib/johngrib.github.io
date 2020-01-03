@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2019-11-15 13:25:34 +0900
+updated : 2020-01-03 21:30:30 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -548,6 +548,19 @@ def formatVariableName(path):
     return re.sub(r'[_\-]', '', module.title())
 snip.rv = formatVariableName(t[1])
 ` from '${1}';$0
+endsnippet
+```
+
+##### 예제: kebab-case를 snake_case로 변환
+
+rust 언어를 공부하다 만들어본 snippet이다. `kebab-case`를 작성하고 `<Tab>`을 입력하면 `snake_case`로 완성해준다.
+
+![kebab-case to snake_case]( /post-img/vim-auto-completion/kebab-case.gif )
+
+```perl
+# kebab-case to snake_case
+snippet "([\S]+(\-[\S]+)+)" "kebab-case to snake_case" r
+`!p snip.rv = re.sub('-','_', match.group(1))`$0
 endsnippet
 ```
 
