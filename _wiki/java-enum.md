@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java enum의 사용
 summary : 
 date    : 2020-01-05 16:23:57 +0900
-updated : 2020-01-05 21:52:17 +0900
+updated : 2020-01-05 22:15:04 +0900
 tag     : 
 toc     : true
 public  : true
@@ -249,6 +249,92 @@ Map<EnumKey, V> m
     = Collections.synchronizedMap(new EnumMap<EnumKey, V>(...));
 ```
 
+### interface를 사용해 확장한다
+
+다음은 이펙티브 자바 3/E 아이템 38의 예제이다.[^effective-232]
+
+`enum`이 `interface`를 구현하게 하는 방법을 쓰고 있다.
+
+```java
+public interface Operation {
+    double apply(double x, double y);
+}
+public enum BasicOperation implements Operation {
+    PLUS("+") {
+        public double apply(double x, double y) { return x+y; }
+    },
+    MINUS("-") {
+        public double apply(double x, double y) { return x-y; }
+    },
+    TIMES("*") {
+        public double apply(double x, double y) { return x*y; }
+    },
+    DIVIDE("/") {
+        public double apply(double x, double y) { return x+y; }
+    };
+    private final String symbol;
+    BasicOperation(String symbol) { this.symbol = symbol; }
+
+    @Override
+    public String toString() { return this.symbol; }
+}
+```
+
+이 방법을 쓰면 다음과 같이 `enum` 타입을 확장할 필요가 있을 때 대응하기 쉽다는 장점이 있다.
+
+```java
+public enum ExtendedOperation implements Operation {
+    EXP("^") {
+        public double apply(double x, double y) { return Math.pow(x, y); }
+    },
+    REMAINDER("%") {
+        public double apply(double x, double y) { return x % y; }
+    };
+    private final String symbol;
+    ExtendedOperation(String symbol) { this.symbol = symbol; }
+
+    @Override
+    public String toString() { return this.symbol; }
+}
+```
+
+다음은 위의 두 가지 `enum`을 처리할 수 있는 `test` 메서드의 예이다.
+
+`test`메서드의 시그니처에 주목하자. `T`는 `enum`이면서 `Operation` 타입이어야 한다.
+
+```java
+public static void main(String[] args) {
+    double x = Double.parseDouble(args[0]);
+    double y = Double.parseDouble(args[1]);
+    test(ExtendedOperation.class, x, y);
+}
+
+private static <T extends Enum<T> & Operation> void test(
+    Class<T> opEnumType, double x, double y) {
+
+    for (Operation op : opEnumType.getEnumConstants()) {
+        System.out.printf("%f %s %f = %f%n", x, op, y, op.apply(x, y));
+    }
+}
+```
+
+다음은 `Collection`을 사용해 같은 처리를 하는 메서드이다.
+
+```java
+public static void main(String[] args) {
+    double x = Double.parseDouble(args[0]);
+    double y = Double.parseDouble(args[1]);
+    test(Arrays.asList(ExtendedOperation.values()), x, y);
+}
+
+private static void test(
+    Collection<? extends Operation> opSet, double x, double y) {
+
+    for (Operation op : opSet) {
+        System.out.printf("%f %s %f = %f%n", x, op, y, op.apply(x, y));
+    }
+}
+```
 
 
 ## 안티 패턴
@@ -277,6 +363,7 @@ Java API 문서에서는 `enum`의 `ordinal` 메서드에 대해 다음과 같�
 [^effective-213]: 이펙티브 자바 3/E. Item 34. 213쪽.
 [^effective-214]: 이펙티브 자바 3/E. Item 34. 214쪽.
 [^effective-219]: 이펙티브 자바 3/E. Item 34. 219쪽.
+[^effective-232]: 이펙티브 자바 3/E. Item 38. 232쪽.
 [^api-ordinal]: [Java 13 API 문서][api-ordinal].
 [^api-enumset]: [Java 13 API 문서][api-enumset].
 [^api-enummap]: [Java 13 API 문서][api-enummap].
