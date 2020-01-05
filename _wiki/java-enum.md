@@ -3,11 +3,11 @@ layout  : wiki
 title   : Java enum의 사용
 summary : 
 date    : 2020-01-05 16:23:57 +0900
-updated : 2020-01-05 22:15:04 +0900
-tag     : 
+updated : 2020-01-05 22:33:57 +0900
+tag     : java
 toc     : true
 public  : true
-parent  : 
+parent  : Java
 latex   : false
 ---
 * TOC
