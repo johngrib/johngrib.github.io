@@ -1854,6 +1854,14 @@ java-enhancements:
     url: /wiki/java-enhancements
     updated: '2019-11-12 23:23:41 +0900'
     children: []
+java-enum:
+    type: wiki
+    title: 'Java enum의 사용'
+    summary: ""
+    parent: ""
+    url: /wiki/java-enum
+    updated: '2020-01-05 17:47:05 +0900'
+    children: []
 java-g1gc:
     type: wiki
     title: 'Java HotSpot VM G1GC'

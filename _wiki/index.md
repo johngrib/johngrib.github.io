@@ -124,6 +124,7 @@ regenerate: true
     * [[Java]]
         * [[java-abstract-class]]
         * [[java-enhancements]]
+        * [[java-enum]]
         * [[java-interface]]
         * [[java-jigsaw-quick-start]]
         * [[java-remainder-operator]]
