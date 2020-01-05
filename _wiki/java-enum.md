@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java enum의 사용
 summary : 
 date    : 2020-01-05 16:23:57 +0900
-updated : 2020-01-05 18:04:17 +0900
+updated : 2020-01-05 18:16:14 +0900
 tag     : 
 toc     : true
 public  : true
@@ -213,6 +213,7 @@ Java API 문서에서는 `Enum`의 `ordinal` 메서드에 대해 다음과 같�
 
 > Most programmers will have no use for this method. It is designed for use by sophisticated enum-based data structures, such as EnumSet and EnumMap.
 [^api-ordinal]
+
 > 대부분의 프로그래머는 이 메서드를 쓸 일이 없다. 이 메서드는 EnumSet과 EnumMap 같이 열거 타입 기반의 범용 자료구조에 쓸 목적으로 설계되었다.
 
 `ordinal` 메서드는 그냥 해당 상수가 몇 번째인지를 리턴할 뿐이고, 쓸모가 없다.
