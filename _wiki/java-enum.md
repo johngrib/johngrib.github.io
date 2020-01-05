@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java enum의 사용
 summary : 
 date    : 2020-01-05 16:23:57 +0900
-updated : 2020-01-05 18:16:14 +0900
+updated : 2020-01-05 19:20:09 +0900
 tag     : 
 toc     : true
 public  : true
@@ -206,10 +206,33 @@ enum Operation {
 }
 ```
 
+### Bit flag나 Set이 필요하면 EnumSet을 사용한다
+
+고전적인 방법인 bit flag, bit mask를 굳이 쓰지 말고 `EnumSet`을 사용하도록 한다. `EnumSet`은 내부적으로 bit flag를 사용하고 있어 빠르며, 더 안전하게 다룰 수 있게 해준다.
+
+Java 13 API 문서를 읽어보자.
+
+> A specialized Set implementation for use with enum types. All of the elements in an enum set must come from a single enum type that is specified, explicitly or implicitly, when the set is created. Enum sets are represented internally as bit vectors. This representation is extremely compact and efficient. The space and time performance of this class should be good enough to allow its use as a high-quality, typesafe alternative to traditional int-based "bit flags." Even bulk operations (such as containsAll and retainAll) should run very quickly if their argument is also an enum set.
+[^api-enumset]
+
+* `EnumSet`은 `enum` 타입에 사용하기 위한 특수한 `Set` 구현이다.
+* `EnumSet`은 내부적으로 bit vector로 표현된다. 따라서 매우 효율적이다.
+* 이 클래스를 구현할 때 공간/시간 퍼포먼스는 비트 플래그의 대안으로 사용할 수 있을 정도로 고수준이어야 한다.
+
+다음과 같이 사용하면 된다.
+
+```java
+EnumSet<Planet> planets = EnumSet.of(Planet.NEPTUNE, Planet.EARTH);
+EnumSet<Planet> all = EnumSet.allOf(Planet.class);
+EnumSet<Planet> none = EnumSet.noneOf(Planet.class);
+EnumSet<Planet> inner = EnumSet.range(Planet.MERCURY, Planet.EARTH);
+```
+
+
 ## 안티 패턴
 ### ordinal 메서드의 사용
 
-Java API 문서에서는 `Enum`의 `ordinal` 메서드에 대해 다음과 같이 말한다.
+Java API 문서에서는 `enum`의 `ordinal` 메서드에 대해 다음과 같이 말한다.
 
 > Most programmers will have no use for this method. It is designed for use by sophisticated enum-based data structures, such as EnumSet and EnumMap.
 [^api-ordinal]
@@ -233,6 +256,7 @@ Java API 문서에서는 `Enum`의 `ordinal` 메서드에 대해 다음과 같�
 [^effective-214]: 이펙티브 자바 3/E. Item 34. 214쪽.
 [^effective-219]: 이펙티브 자바 3/E. Item 34. 219쪽.
 [^api-ordinal]: [Java 13 API 문서][api-ordinal].
+[^api-enumset]: [Java 13 API 문서][api-enumset].
 
 [^se13-8-9-2]: 출처는 [Java SE 13 Spec][se13-8-9-2].
 [se13-8-9-2]: https://docs.oracle.com/javase/specs/jls/se13/html/jls-8.html#jls-8.9.2
@@ -242,3 +266,4 @@ Java API 문서에서는 `Enum`의 `ordinal` 메서드에 대해 다음과 같�
 
 [spec-8-9]: https://docs.oracle.com/javase/specs/jls/se13/html/jls-8.html#jls-8.9
 [api-ordinal]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Enum.html#ordinal()
+[api-enumset]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/EnumSet.html
