@@ -265,6 +265,7 @@ regenerate: true
         * [[openssl]]
         * [[phpbrew]]
         * [[pwgen-cmd]]
+        * [[rig-cmd]]
         * [[ripgrep]]
         * [[say]]
         * [[sdkman]]

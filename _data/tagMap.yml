@@ -241,6 +241,7 @@ bash:
     - {fileName: openssl}
     - {fileName: pwgen-cmd}
     - {fileName: random-lunch}
+    - {fileName: rig-cmd}
     - {fileName: ripgrep}
     - {fileName: sdkman}
     - {fileName: sed}
@@ -286,6 +287,7 @@ command:
     - {fileName: openssl}
     - {fileName: phpbrew}
     - {fileName: pwgen-cmd}
+    - {fileName: rig-cmd}
     - {fileName: ripgrep}
     - {fileName: say}
     - {fileName: sdkman}
