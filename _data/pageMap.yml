@@ -1860,7 +1860,7 @@ java-enum:
     summary: ""
     parent: ""
     url: /wiki/java-enum
-    updated: '2020-01-05 17:47:05 +0900'
+    updated: '2020-01-05 18:04:17 +0900'
     children: []
 java-g1gc:
     type: wiki

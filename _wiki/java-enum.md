@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java enum의 사용
 summary : 
 date    : 2020-01-05 16:23:57 +0900
-updated : 2020-01-05 17:47:05 +0900
+updated : 2020-01-05 18:04:17 +0900
 tag     : 
 toc     : true
 public  : true
@@ -206,6 +206,18 @@ enum Operation {
 }
 ```
 
+## 안티 패턴
+### ordinal 메서드의 사용
+
+Java API 문서에서는 `Enum`의 `ordinal` 메서드에 대해 다음과 같이 말한다.
+
+> Most programmers will have no use for this method. It is designed for use by sophisticated enum-based data structures, such as EnumSet and EnumMap.
+[^api-ordinal]
+> 대부분의 프로그래머는 이 메서드를 쓸 일이 없다. 이 메서드는 EnumSet과 EnumMap 같이 열거 타입 기반의 범용 자료구조에 쓸 목적으로 설계되었다.
+
+`ordinal` 메서드는 그냥 해당 상수가 몇 번째인지를 리턴할 뿐이고, 쓸모가 없다.
+이 값에 의존하는 코드를 작성하는 것도 좋은 선택이 아니다. 쓰지 않는 것이 좋다.
+
 
 ## 참고문헌
 * [The Java® Language Specification Java SE 13 Edition - 8.9. Enum Types][spec-8-9]
@@ -219,6 +231,7 @@ enum Operation {
 [^effective-213]: 이펙티브 자바 3/E. Item 34. 213쪽.
 [^effective-214]: 이펙티브 자바 3/E. Item 34. 214쪽.
 [^effective-219]: 이펙티브 자바 3/E. Item 34. 219쪽.
+[^api-ordinal]: [Java 13 API 문서][api-ordinal].
 
 [^se13-8-9-2]: 출처는 [Java SE 13 Spec][se13-8-9-2].
 [se13-8-9-2]: https://docs.oracle.com/javase/specs/jls/se13/html/jls-8.html#jls-8.9.2
@@ -227,3 +240,4 @@ enum Operation {
 [se13-8-9-3]: https://docs.oracle.com/javase/specs/jls/se13/html/jls-8.html#jls-8.9.3
 
 [spec-8-9]: https://docs.oracle.com/javase/specs/jls/se13/html/jls-8.html#jls-8.9
+[api-ordinal]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Enum.html#ordinal()
