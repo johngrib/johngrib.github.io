@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2019-10-30 08:09:16 +0900
+updated : 2020-01-05 09:24:17 +0900
 tag     : wiki vimwiki jekyll blog
 toc     : true
 comment : true
@@ -186,7 +186,8 @@ Google Analytics를 빼뒀으면 더 빨랐을 것이다.
 
 구글 맞춤 검색 생성 코드를 얻어온 다음, 다음과 같은 파일을 작성하였다.
 
-[search.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/search.html)
+* [search.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/search.html ) - 최초 버전
+* [search.html](https://github.com/johngrib/johngrib.github.io/blob/master/search.html ) - 최신 버전
 ```html
 ---
 layout: searchList
@@ -214,7 +215,8 @@ public: true
 
 추가로 모든 페이지 최상단에 검색어 입력칸을 보여주고 싶었기 때문에 다음과 같이 `searchBox.html`이란 파일도 추가했다.  
 
-[_includes/searchBox.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/searchbox.html)
+* [_includes/searchBox.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/searchbox.html ) - 최초 버전
+* [_includes/searchBox.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/master/_includes/searchbox.html ) - 최신 버전
 ```html
 <div class="search">
     <form role="search" method="get" action="/search/">

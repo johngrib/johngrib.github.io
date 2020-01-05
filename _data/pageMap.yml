@@ -2268,7 +2268,7 @@ my-wiki:
     summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
     parent: Vim
     url: /wiki/my-wiki
-    updated: '2019-10-30 08:09:16 +0900'
+    updated: '2020-01-05 09:24:17 +0900'
     children: []
 Mythical-Man-Month:
     type: wiki
