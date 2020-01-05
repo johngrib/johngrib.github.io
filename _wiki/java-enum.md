@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java enum의 사용
 summary : 
 date    : 2020-01-05 16:23:57 +0900
-updated : 2020-01-05 19:20:09 +0900
+updated : 2020-01-05 21:52:17 +0900
 tag     : 
 toc     : true
 public  : true
@@ -228,6 +228,28 @@ EnumSet<Planet> none = EnumSet.noneOf(Planet.class);
 EnumSet<Planet> inner = EnumSet.range(Planet.MERCURY, Planet.EARTH);
 ```
 
+동기식으로 사용할 필요가 있다면 `Collections.synchronizedSet`을 사용한다.
+
+```java
+Set<MyEnum> s = Collections.synchronizedSet(EnumSet.noneOf(MyEnum.class));
+```
+
+### HashMap 대신 EnumMap을 사용한다
+
+`EnumMap`은 `EnumSet`처럼 `HashMap`보다 안정적이고 효율적이다.[^api-enummap]
+
+```java
+Map<Planet, String> enumMap = new EnumMap<>(Planet.class);
+```
+
+`EnumMap`을 동기식으로 사용할 필요가 있을 경우 `Collections.synchronizedMap`을 사용한다.
+
+```java
+Map<EnumKey, V> m
+    = Collections.synchronizedMap(new EnumMap<EnumKey, V>(...));
+```
+
+
 
 ## 안티 패턴
 ### ordinal 메서드의 사용
@@ -257,6 +279,7 @@ Java API 문서에서는 `enum`의 `ordinal` 메서드에 대해 다음과 같�
 [^effective-219]: 이펙티브 자바 3/E. Item 34. 219쪽.
 [^api-ordinal]: [Java 13 API 문서][api-ordinal].
 [^api-enumset]: [Java 13 API 문서][api-enumset].
+[^api-enummap]: [Java 13 API 문서][api-enummap].
 
 [^se13-8-9-2]: 출처는 [Java SE 13 Spec][se13-8-9-2].
 [se13-8-9-2]: https://docs.oracle.com/javase/specs/jls/se13/html/jls-8.html#jls-8.9.2
@@ -267,3 +290,4 @@ Java API 문서에서는 `enum`의 `ordinal` 메서드에 대해 다음과 같�
 [spec-8-9]: https://docs.oracle.com/javase/specs/jls/se13/html/jls-8.html#jls-8.9
 [api-ordinal]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Enum.html#ordinal()
 [api-enumset]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/EnumSet.html
+[api-enummap]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/EnumMap.html
