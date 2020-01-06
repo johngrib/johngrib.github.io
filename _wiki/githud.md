@@ -3,7 +3,7 @@ layout  : wiki
 title   : gitHUD로 git prompt를 쉽게 표시하자
 summary : 
 date    : 2020-01-06 19:58:34 +0900
-updated : 2020-01-06 20:13:30 +0900
+updated : 2020-01-07 08:50:31 +0900
 tag     : git
 toc     : true
 public  : true
@@ -38,7 +38,7 @@ ${COLOR_END}\
 
 이 프롬프트를 사용하면 다음과 같은 프롬프트가 나타난다.
 
-![]( ../post-img/githud/githud.png )
+![prompt]( /post-img/githud/githud.png )
 
 ## 프롬프트 설명서
 
