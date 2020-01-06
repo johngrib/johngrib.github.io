@@ -9,6 +9,7 @@ regenerate: true
 
 * [[diary]]
     * [[book-log-2019]]
+    * [[book-log-2020]]
     * [[memo-2019]]
 
 * [[timeline]]

@@ -454,6 +454,14 @@ book-log-2019:
     url: /wiki/book-log-2019
     updated: '2019-11-19 22:17:55 +0900'
     children: []
+book-log-2020:
+    type: wiki
+    title: '2019년 독서록'
+    summary: ""
+    parent: diary
+    url: /wiki/book-log-2020
+    updated: '2020-01-06 19:37:09 +0900'
+    children: []
 bootstrapping:
     type: wiki
     title: '부트스트래핑 (bootstrapping)의 어원'
@@ -949,7 +957,7 @@ diary:
     parent: index
     url: /wiki/diary
     updated: '2019-08-13 13:50:57 +0900'
-    children: [book-log-2019, memo-2019]
+    children: [book-log-2019, book-log-2020, memo-2019]
 dice-problem:
     type: wiki
     title: '주사위 문제'
@@ -2604,7 +2612,7 @@ review-2020:
     summary: '연말에 2020년 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2020
-    updated: '2020-01-01 18:49:50 +0900'
+    updated: '2020-01-06 19:35:15 +0900'
     children: []
 RFC:
     type: wiki
