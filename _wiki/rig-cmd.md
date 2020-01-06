@@ -3,7 +3,7 @@ layout  : wiki
 title   : rig 명령어
 summary : 가짜 신원과 주소를 랜덤으로 만들어 준다
 date    : 2020-01-05 13:30:42 +0900
-updated : 2020-01-05 18:43:11 +0900
+updated : 2020-01-06 10:06:43 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -17,6 +17,11 @@ latex   : true
 
 * 프로그램 테스트 용도로 쓰자.
 * 게임 캐릭터 이름, 자작 소설/만화 등의 인물 이름으로 써먹을 수 있다.
+
+## Installation
+```sh
+brew install rig
+```
 
 ## Examples
 ```sh
