@@ -458,6 +458,7 @@ git:
     - {fileName: git-alias}
     - {fileName: git-checkout-specific-files}
     - {fileName: git-log}
+    - {fileName: githud}
 php:
     - {fileName: composer}
     - {fileName: email-validation}

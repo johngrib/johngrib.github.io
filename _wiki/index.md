@@ -293,6 +293,7 @@ regenerate: true
         * [[git-alias]]
         * [[git-checkout-specific-files]]
         * [[git-log]]
+        * [[githud]]
     * [[Gradle]]
     * [[intellij]]
     * [[mac-apps]]

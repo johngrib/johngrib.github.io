@@ -1437,7 +1437,7 @@ git:
     parent: tools
     url: /wiki/git
     updated: '2019-01-29 16:43:48 +0900'
-    children: [git-alias, git-checkout-specific-files, git-log]
+    children: [git-alias, git-checkout-specific-files, git-log, githud]
 git-alias:
     type: wiki
     title: '편리한 git alias 설정하기'
@@ -1461,6 +1461,14 @@ git-log:
     parent: git
     url: /wiki/git-log
     updated: '2019-12-01 19:20:57 +0900'
+    children: []
+githud:
+    type: wiki
+    title: 'gitHUD로 git prompt를 쉽게 표시하자'
+    summary: ""
+    parent: git
+    url: /wiki/githud
+    updated: '2020-01-06 20:13:30 +0900'
     children: []
 Go-Blog-translation:
     type: wiki
