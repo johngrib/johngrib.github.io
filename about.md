@@ -4,6 +4,8 @@ title:
 permalink: /about/
 comment: false
 ---
+* TOC
+{:toc}
 
 <div class="contact">
 {% if site.github_username %}
@@ -38,6 +40,15 @@ comment: false
     * 늦어도 8시에는 일어납니다.
     * 주말도 예외가 아닙니다.
 * Vim 사용자입니다.
+
+## Buy me a coffee
+
+{% raw %}
+<p>
+    <img class="coffee-icon" style="max-width: 11px" src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+    <a href="https://www.buymeacoffee.com/PFVC4Ql" target="_blank">기계인간 John Grib에게 따뜻한 차 한잔을.</a>
+</p>
+{% endraw %}
 
 ## Motto
 
