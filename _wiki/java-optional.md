@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Optional
 summary : 작성중인 문서
 date    : 2020-01-08 22:31:47 +0900
-updated : 2020-01-08 23:51:32 +0900
+updated : 2020-01-08 23:54:35 +0900
 tag     : java
 toc     : true
 public  : true
@@ -134,6 +134,9 @@ public class Person {
 ## Links
 
 * [Java SE 13 Class Optional &lt;T&gt;][java-13-optional]
+* [Java Optional 바르게 쓰기][homoefficio]
+* [26 Reasons Why Using Optional Correctly Is Not Optional][reasons-26]
+* [Optional Anti-Patterns][optional-anti-patterns]
 
 ## 참고문헌
 
