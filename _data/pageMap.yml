@@ -1364,7 +1364,7 @@ fortune-cmd:
     summary: '랜덤으로 격언/속담 등을 보여준다'
     parent: command-line
     url: /wiki/fortune-cmd
-    updated: '2019-12-25 19:16:46 +0900'
+    updated: '2020-01-08 21:52:14 +0900'
     children: []
 frac1e:
     type: wiki
@@ -2900,7 +2900,7 @@ strfile-cmd:
     summary: 'create a random access file for storing strings'
     parent: command-line
     url: /wiki/strfile-cmd
-    updated: '2019-12-25 19:00:36 +0900'
+    updated: '2020-01-08 21:51:47 +0900'
     children: []
 study:
     type: wiki

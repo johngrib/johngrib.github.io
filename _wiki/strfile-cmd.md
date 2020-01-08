@@ -3,7 +3,7 @@ layout  : wiki
 title   : strfile 명령어
 summary : create a random access file for storing strings
 date    : 2019-12-25 18:55:50 +0900
-updated : 2019-12-25 19:00:36 +0900
+updated : 2020-01-08 21:51:47 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -19,3 +19,7 @@ latex   : false
 ```sh
 strfile filename.txt
 ```
+
+## See Also
+
+* [[fortune-cmd]]
