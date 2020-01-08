@@ -518,6 +518,7 @@ java:
     - {fileName: java-gc-zgc}
     - {fileName: java-interface}
     - {fileName: java-jigsaw-quick-start}
+    - {fileName: java-optional}
     - {fileName: java-remainder-operator}
     - {fileName: java-switch-expression}
     - {fileName: java10-var}

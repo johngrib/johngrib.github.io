@@ -129,6 +129,7 @@ regenerate: true
         * [[java-enum]]
         * [[java-interface]]
         * [[java-jigsaw-quick-start]]
+        * [[java-optional]]
         * [[java-remainder-operator]]
         * [[java-switch-expression]]
         * [[java8]]

@@ -1845,7 +1845,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-enum, java-interface, java-jigsaw-quick-start, java-remainder-operator, java-switch-expression, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-enum, java-interface, java-jigsaw-quick-start, java-optional, java-remainder-operator, java-switch-expression, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1941,6 +1941,14 @@ java-jigsaw-quick-start:
     parent: Java
     url: /wiki/java-jigsaw-quick-start
     updated: '2019-09-12 21:00:10 +0900'
+    children: []
+java-optional:
+    type: wiki
+    title: 'Java Optional'
+    summary: '작성중인 문서'
+    parent: Java
+    url: /wiki/java-optional
+    updated: '2020-01-08 23:46:06 +0900'
     children: []
 java-remainder-operator:
     type: wiki
