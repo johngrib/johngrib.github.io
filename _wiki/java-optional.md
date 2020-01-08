@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Optional
 summary : 작성중인 문서
 date    : 2020-01-08 22:31:47 +0900
-updated : 2020-01-08 23:46:06 +0900
+updated : 2020-01-08 23:51:32 +0900
 tag     : java
 toc     : true
 public  : true
@@ -36,7 +36,41 @@ public class FooBar {
 
 ## Java SE 13 API 문서를 읽어보자
 
-Java SE 13 공식 문서의 [Class Optional &lt;T&gt;][java-13-optional] 항목에 있는 API NOTE를 읽어보자.
+다음은 `Optional` 클래스의 주석이다.
+
+```java
+/**
+ * A container object which may or may not contain a non-{@code null} value.
+ * If a value is present, {@code isPresent()} returns {@code true}. If no
+ * value is present, the object is considered <i>empty</i> and
+ * {@code isPresent()} returns {@code false}.
+ *
+ * <p>Additional methods that depend on the presence or absence of a contained
+ * value are provided, such as {@link #orElse(Object) orElse()}
+ * (returns a default value if no value is present) and
+ * {@link #ifPresent(Consumer) ifPresent()} (performs an
+ * action if a value is present).
+ *
+ * <p>This is a <a href="../lang/doc-files/ValueBased.html">value-based</a>
+ * class; use of identity-sensitive operations (including reference equality
+ * ({@code ==}), identity hash code, or synchronization) on instances of
+ * {@code Optional} may have unpredictable results and should be avoided.
+ *
+ * @apiNote
+ * {@code Optional} is primarily intended for use as a method return type where
+ * there is a clear need to represent "no result," and where using {@code null}
+ * is likely to cause errors. A variable whose type is {@code Optional} should
+ * never itself be {@code null}; it should always point to an {@code Optional}
+ * instance.
+ *
+ * @param <T> the type of value
+ * @since 1.8
+ */
+public final class Optional<T> {
+```
+
+읽기가 좀 어려우니 Java SE 13 공식 문서의 [Class Optional &lt;T&gt;][java-13-optional] 항목에 있는 API NOTE를 읽어보자.
+어차피 주석과 같은 내용이다.
 
 > Optional is primarily intended for use as a method return type where there is a clear need to represent "no result," and where using null is likely to cause errors. A variable whose type is Optional should never itself be null; it should always point to an Optional instance.
 
