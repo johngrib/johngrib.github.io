@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Optional
 summary : 작성중인 문서
 date    : 2020-01-08 22:31:47 +0900
-updated : 2020-01-08 23:54:35 +0900
+updated : 2020-01-09 00:06:10 +0900
 tag     : java
 toc     : true
 public  : true
@@ -113,6 +113,20 @@ public class Person {
 
 모던 자바 인 액션의 저자는 "이와 같은 단점에도 불구하고 여전히 `Optional`을 사용해서 도메인 모델을 구성하는 것이 바람직하다고 생각한다"고 한다.
 
+## sonarsource rules를 읽어보자
+
+sonarqube, sonarlint 등의 소스인 sonarsource에서는 Major code smell로 ["Optional" should not be used for parameters][rspec-3553]를 분류한다.
+
+>
+The Java language authors have been quite frank that Optional was intended for use only as a return type, as a way to convey that a method may or may not return a value.
+<br/><br/>
+And for that, it's valuable but using Optional on the input side increases the work you have to do in the method without really increasing the value. With an Optional parameter, you go from having 2 possible inputs: null and not-null, to three: null, non-null-without-value, and non-null-with-value. Add to that the fact that overloading has long been available to convey that some parameters are optional, and there's really no reason to have Optional parameters.
+<br/><br/>
+The rule also checks for Guava's Optional, as it was the inspiration for the JDK Optional. Although it is different in some aspects (serialization, being recommended for use as collection elements), using it as a parameter type causes exactly the same problems as for JDK Optional.
+
+하지만 파라미터로 사용하는 경우에 대해서만 이야기하고, 필드에서 사용하는 것에 대한 이야기는 하지 않는다.
+
+
 ## 다른 글들도 읽어보자
 
 [Java Optional 바르게 쓰기][homoefficio]
@@ -149,3 +163,5 @@ public class Person {
 [homoefficio]: http://homoefficio.github.io/2019/10/03/Java-Optional-%EB%B0%94%EB%A5%B4%EA%B2%8C-%EC%93%B0%EA%B8%B0/
 [reasons-26]: https://dzone.com/articles/using-optional-correctly-is-not-optional
 [optional-anti-patterns]: https://dzone.com/articles/optional-anti-patterns
+[rspec-3553]: https://rules.sonarsource.com/java/RSPEC-3553
+
