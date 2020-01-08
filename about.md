@@ -46,7 +46,7 @@ comment: false
 {% raw %}
 <p>
     <img class="coffee-icon" style="max-width: 11px" src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
-    <a href="https://www.buymeacoffee.com/PFVC4Ql" target="_blank">기계인간 John Grib에게 따뜻한 차 한잔을.</a>
+    <a href="https://www.buymeacoffee.com/JohnGrib" target="_blank">기계인간 John Grib에게 따뜻한 차 한잔을.</a>
 </p>
 {% endraw %}
 
