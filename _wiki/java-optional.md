@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Optional
 summary : 작성중인 문서
 date    : 2020-01-08 22:31:47 +0900
-updated : 2020-01-09 00:06:10 +0900
+updated : 2020-01-09 21:40:07 +0900
 tag     : java
 toc     : true
 public  : true
@@ -94,6 +94,8 @@ Optional was designed to provide a limited mechanism for library method return t
 가급적이면 `return` 구문에서만 사용하라는 것 같다.
 
 ## Modern Java in Action도 읽어보자
+
+팀 동료인 조우현 님이 "모던 자바 인 액션"의 11장을 권하셔서 읽어 보았다.
 
 * 다음은 "Modern Java in Action 11장"을 인용한 것이다.[^modern-377]
 
