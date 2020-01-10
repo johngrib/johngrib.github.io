@@ -1668,7 +1668,7 @@ halting-problem:
     summary: 'The Halting Problem'
     parent: math
     url: /wiki/halting-problem
-    updated: '2019-02-16 21:34:30 +0900'
+    updated: '2020-01-10 20:52:11 +0900'
     children: []
 hammerspoon:
     type: wiki
