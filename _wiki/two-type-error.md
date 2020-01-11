@@ -3,7 +3,7 @@ layout  : wiki
 title   : false positive와 false negative
 summary : 
 date    : 2020-01-11 15:19:59 +0900
-updated : 2020-01-11 18:31:56 +0900
+updated : 2020-01-11 18:38:50 +0900
 tag     : test statistics
 toc     : true
 public  : true
@@ -16,8 +16,6 @@ latex   : true
 ## 개요
 
 통계의 개념.
-
-두 오류 모두 실험/판정에 실패한 경우를 말한다.
 
 * 긍정 오류는 (존재하지 않는) **오류의 존재를 긍정**한 것을 말한다.
     * 귀무 가설(null hypothesis)이 참인데도 귀무 가설을 기각하는 오류.
