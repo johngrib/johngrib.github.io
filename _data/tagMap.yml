@@ -614,6 +614,7 @@ test:
     - {fileName: ginkgo}
     - {fileName: junit5-nested}
     - {fileName: test-double}
+    - {fileName: two-type-error}
 fzf:
     - {fileName: git-alias}
 til:
@@ -818,6 +819,8 @@ toml:
 data-format:
     - {fileName: TOML}
     - {fileName: YAML}
+statistics:
+    - {fileName: two-type-error}
 completion:
     - {fileName: ultisnips}
     - {fileName: vim-auto-completion}
