@@ -3,7 +3,7 @@ layout  : wiki
 title   : 방어적 복사 (defensive copy)
 summary : 검사시점/사용시점 취약점을 방어하자
 date    : 2020-01-12 22:39:36 +0900
-updated : 2020-01-12 23:09:53 +0900
+updated : 2020-01-12 23:11:26 +0900
 tag     : java pattern
 toc     : true
 public  : true
@@ -37,7 +37,7 @@ public final class Period {
 
 * 위의 코드는 TOCTOU(Time Of Check / Time Of Use) 취약점이 있다. 즉 검사시점/사용시점 공격이 가능하다.
 
-## 첫 번째 취약점(TOCTOU 공격 가능)
+## 첫 번째 취약점
 
 위의 클래스는 다음과 같은 취약점이 있다.
 
