@@ -193,11 +193,13 @@ aheui:
     - {fileName: 2017-07-14-aheui-explained}
 TIL:
     - {fileName: 2017-08-23-0.30000000000000004}
-design-pattern:
+pattern:
     - {fileName: abstract-factory-pattern}
     - {fileName: adapter-pattern}
     - {fileName: builder-pattern}
     - {fileName: decorator-pattern}
+    - {fileName: design-pattern}
+    - {fileName: design-pattern-quotes}
     - {fileName: factory-method-pattern}
     - {fileName: GoF-Design-Pattern}
     - {fileName: null-object-pattern}
@@ -494,8 +496,6 @@ ctags:
     - {fileName: ctags}
 design:
     - {fileName: Design-for-Hackers}
-pattern:
-    - {fileName: design-pattern-quotes}
 quotes:
     - {fileName: design-pattern-quotes}
 diary:

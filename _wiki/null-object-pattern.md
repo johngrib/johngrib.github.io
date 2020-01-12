@@ -4,10 +4,10 @@ title   : 널 오브젝트 패턴 (Null Object Pattern)
 summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
 updated : 2019-11-14 22:46:56 +0900
-tag     : design-pattern
+tag     : pattern
 toc     : true
 public  : true
-parent  : design-pattern
+parent  : [[design-pattern]]
 latex   : false
 ---
 * TOC

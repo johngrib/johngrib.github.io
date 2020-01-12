@@ -4,10 +4,10 @@ title   : 정적 팩토리 메서드(static factory method)
 summary : static 메서드로 객체 생성을 캡슐화한다
 date    : 2018-03-03 11:16:36 +0900
 updated : 2018-03-04 13:03:09 +0900
-tag     : programming design-pattern effective-java
+tag     : programming pattern effective-java
 toc     : true
 public  : true
-parent  : design-pattern
+parent  : [[design-pattern]]
 latex   : false
 ---
 * TOC

@@ -4,10 +4,10 @@ title   : 어댑터 패턴 (Adapter Pattern)
 summary : 서로 일치하지 않는 인터페이스를 가진 클래스를 함께 동작시킨다
 date    : 2019-10-29 14:53:41 +0900
 updated : 2019-10-29 15:20:41 +0900
-tag     : design-pattern
+tag     : pattern
 toc     : true
 public  : true
-parent  : design-pattern
+parent  : [[design-pattern]]
 latex   : false
 ---
 * TOC

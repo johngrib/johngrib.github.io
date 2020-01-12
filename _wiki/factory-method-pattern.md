@@ -4,10 +4,10 @@ title   : 팩토리 메소드 패턴 (Factory Method Pattern)
 summary : 객체를 생성하기 위한 인터페이스를 정의하고, 인스턴스 생성은 서브클래스가 결정하게 한다
 date    : 2019-10-07 00:16:49 +0900
 updated : 2019-11-21 09:37:23 +0900
-tag     : design-pattern
+tag     : pattern
 toc     : true
 public  : true
-parent  : design-pattern
+parent  : [[design-pattern]]
 latex   : false
 ---
 * TOC

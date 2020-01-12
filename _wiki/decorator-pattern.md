@@ -4,10 +4,10 @@ title   : 데코레이터 패턴 (Decorator Pattern)
 summary : 객체에 동적으로 새로운 책임을 추가한다
 date    : 2019-10-05 10:42:26 +0900
 updated : 2019-10-05 23:21:44 +0900
-tag     : design-pattern
+tag     : pattern
 toc     : true
 public  : true
-parent  : design-pattern
+parent  : [[design-pattern]]
 latex   : false
 ---
 * TOC

@@ -4,10 +4,10 @@ title   : 전략 패턴(strategy pattern)
 summary : 동일 계열의 알고리즘을 정의하고 상호교환이 가능하게 한다
 date    : 2019-09-21 16:49:12 +0900
 updated : 2019-09-22 21:23:31 +0900
-tag     : design-pattern
+tag     : pattern
 toc     : true
 public  : true
-parent  : design-pattern
+parent  : [[design-pattern]]
 latex   : false
 ---
 * TOC

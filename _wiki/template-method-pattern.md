@@ -4,10 +4,10 @@ title   : 템플릿 메소드 패턴 (Template Method Pattern)
 summary : 알고리즘의 일부 단계를 서브클래스에서 정의한다
 date    : 2019-08-31 15:27:07 +0900
 updated : 2019-11-21 09:28:58 +0900
-tag     : design-pattern
+tag     : pattern
 toc     : true
 public  : true
-parent  : design-pattern
+parent  : [[design-pattern]]
 latex   : false
 ---
 * TOC

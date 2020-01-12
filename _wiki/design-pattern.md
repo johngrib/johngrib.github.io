@@ -4,7 +4,7 @@ title   : 디자인 패턴
 summary :
 date    : 2018-02-12 08:18:46 +0900
 updated : 2019-11-20 21:30:40 +0900
-tag     :
+tag     : pattern
 toc     : true
 public  : true
 parent  : index

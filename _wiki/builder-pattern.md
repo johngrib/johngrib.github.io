@@ -4,10 +4,10 @@ title   : 빌더 패턴(Builder Pattern)
 summary : 객체의 생성 방법과 표현 방법을 분리한다
 date    : 2018-02-12 08:18:46 +0900
 updated : 2018-02-18 00:20:50 +0900
-tag     : programming design-pattern lombok effective-java
+tag     : programming pattern lombok effective-java
 toc     : true
 public  : true
-parent  : design-pattern
+parent  : [[design-pattern]]
 latex   : false
 ---
 * TOC
