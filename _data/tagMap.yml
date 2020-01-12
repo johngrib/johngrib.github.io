@@ -198,6 +198,7 @@ pattern:
     - {fileName: adapter-pattern}
     - {fileName: builder-pattern}
     - {fileName: decorator-pattern}
+    - {fileName: depensive-copy}
     - {fileName: design-pattern}
     - {fileName: design-pattern-quotes}
     - {fileName: factory-method-pattern}
@@ -494,15 +495,8 @@ history:
     - {fileName: TETRIS-EFFECT}
 ctags:
     - {fileName: ctags}
-design:
-    - {fileName: Design-for-Hackers}
-quotes:
-    - {fileName: design-pattern-quotes}
-diary:
-    - {fileName: diary}
-container:
-    - {fileName: docker}
 java:
+    - {fileName: depensive-copy}
     - {fileName: Effective-Java}
     - {fileName: groupId-artifactId}
     - {fileName: Java}
@@ -537,6 +531,14 @@ java:
     - {fileName: spring-versions}
     - {fileName: summary-The-Pauseless-GC-Algorithm}
     - {fileName: use-java-primitive-type-for-performance}
+design:
+    - {fileName: Design-for-Hackers}
+quotes:
+    - {fileName: design-pattern-quotes}
+diary:
+    - {fileName: diary}
+container:
+    - {fileName: docker}
 email:
     - {fileName: email-validation}
 regex:
