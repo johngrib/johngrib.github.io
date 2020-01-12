@@ -1956,7 +1956,7 @@ java-remainder-operator:
     summary: '(a / b) * b + ( a % b ) == a'
     parent: Java
     url: /wiki/java-remainder-operator
-    updated: '2019-10-13 22:16:07 +0900'
+    updated: '2020-01-12 11:24:05 +0900'
     children: []
 java-switch-expression:
     type: wiki

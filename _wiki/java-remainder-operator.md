@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 나머지 연산자 % 주의점
 summary : (a / b) * b + ( a % b ) == a
 date    : 2019-10-13 17:00:49 +0900
-updated : 2019-10-13 22:16:07 +0900
+updated : 2020-01-12 11:24:05 +0900
 tag     : java 번역
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * Java, Javascript의 나머지 연산은 제수(divisor)가 음수인 경우 생각과 다른 값이 나올 수 있다.
     * 합동이므로 틀린 값은 아니지만, 다룰 때 주의할 필요가 있다.
@@ -26,7 +26,7 @@ latex   : true
 * 이 글의 후반에 Java Spec의 % 연산자 부분의 번역을 함께 소개한다.
 
 
-# 5 % -3 의 결과는?
+## 5 % -3 의 결과는?
 
 5를 -3 으로 나누면 나머지는 얼마가 나오는가?
 
@@ -95,7 +95,7 @@ for (int i : List.of(3, 2, 1, 0, -1, -2, -3)) {
 ```
 
 
-# Java의 % 연산자 정의
+## Java의 % 연산자 정의
 
 따라서 Java의 나머지 연산자 % 의 작동에 대해 알아둘 필요가 있다.
 
@@ -170,7 +170,7 @@ public static boolean isOdd(int n) {
 ```
 
 
-# Spec 문서 번역
+## Spec 문서 번역
 
 * % 연산에 대한 Java 스펙 문서는 [Java SE 6][se6]부터 [Java SE 13][se13]까지 변화가 없다.
 * 따라서 [Java SE 13][se13] 문서를 인용하고 번역한다.
@@ -297,12 +297,12 @@ class Test2 {
 (-5.0)%(-3.0) produces -2.0
 ```
 
-# 함께 읽기
+## 함께 읽기
 
 * [[discrete-math-modular]]{모듈러 연산(나머지 연산)}
 
 
-# 참고문헌
+## 참고문헌
 
 * 웹 문서
     * [The Java® Language Specification Java SE 13 Edition][se13]
@@ -311,7 +311,7 @@ class Test2 {
     * 유쾌한 자바 퍼즐러 / Joshua Bloch, Gafter 공저 / 송치형, 박준상 공역 / 사이텍미디어 / 2007년 06월 15일 발행
 
 
-# 주석
+## 주석
 
 [^puzzler]: 유쾌한 자바 퍼즐러. 6쪽.
 
