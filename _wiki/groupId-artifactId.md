@@ -3,7 +3,7 @@ layout  : wiki
 title   : Maven의 groupId 와 artifactId, 그리고 version
 summary : 
 date    : 2018-07-21 08:09:07 +0900
-updated : 2019-11-20 22:29:28 +0900
+updated : 2020-01-12 21:47:07 +0900
 tag     : java
 toc     : true
 public  : true
@@ -59,6 +59,10 @@ eg. 2.0, 2.0.1, 1.3.1
 * 숫자와 점으로 이루어진 일반적인 버전 형태를 사용한다(`1.0`, `1.1`, `1.0.1`, ...).
 * SNAPSHOT(nightly) 빌드 날짜를 버전으로 사용하지 않도록 한다.
 * 써드 파티 아티팩트라면, (좀 이상하게 보일 수 있어도) 그들의 버전 넘버를 이어받아 사용하도록 한다.
+
+## 함께 읽기
+
+* [[semantic-versioning]]{유의적 버전 넘버 관리 (Semantic Versioning)}
 
 ## Links
 

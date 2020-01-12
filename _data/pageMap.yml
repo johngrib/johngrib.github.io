@@ -1652,7 +1652,7 @@ groupId-artifactId:
     summary: ""
     parent: what
     url: /wiki/groupId-artifactId
-    updated: '2019-11-20 22:29:28 +0900'
+    updated: '2020-01-12 21:47:07 +0900'
     children: []
 grow-together:
     type: wiki
@@ -2765,6 +2765,14 @@ sed:
     parent: command-line
     url: /wiki/sed
     updated: '2019-11-29 14:07:45 +0900'
+    children: []
+semantic-versioning:
+    type: wiki
+    title: '유의적 버전 넘버 관리 (Semantic Versioning)'
+    summary: 주버전.부버전.수버전
+    parent: index
+    url: /wiki/semantic-versioning
+    updated: '2020-01-12 21:46:28 +0900'
     children: []
 sha256sum:
     type: wiki
