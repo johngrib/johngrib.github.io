@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 2019년 독서록
+title   : 2020년 독서록
 summary : 
 date    : 2020-01-06 19:35:58 +0900
-updated : 2020-01-06 19:37:09 +0900
+updated : 2020-01-13 22:03:11 +0900
 tag     : book
 toc     : true
 public  : true
