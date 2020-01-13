@@ -902,12 +902,12 @@ decorator-pattern:
     url: /wiki/decorator-pattern
     updated: '2019-10-05 23:21:44 +0900'
     children: []
-depensive-copy:
+defensive-copy.md:
     type: wiki
     title: '방어적 복사 (defensive copy)'
     summary: '검사시점/사용시점 취약점을 방어하자'
     parent: index
-    url: /wiki/depensive-copy
+    url: /wiki/defensive-copy.md
     updated: '2020-01-13 11:33:08 +0900'
     children: []
 Design-for-Hackers:

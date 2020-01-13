@@ -198,7 +198,7 @@ pattern:
     - {fileName: adapter-pattern}
     - {fileName: builder-pattern}
     - {fileName: decorator-pattern}
-    - {fileName: depensive-copy}
+    - {fileName: defensive-copy.md}
     - {fileName: design-pattern}
     - {fileName: design-pattern-quotes}
     - {fileName: factory-method-pattern}
@@ -496,7 +496,7 @@ history:
 ctags:
     - {fileName: ctags}
 java:
-    - {fileName: depensive-copy}
+    - {fileName: defensive-copy.md}
     - {fileName: Effective-Java}
     - {fileName: groupId-artifactId}
     - {fileName: Java}
