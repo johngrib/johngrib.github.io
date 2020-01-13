@@ -908,7 +908,7 @@ depensive-copy:
     summary: '검사시점/사용시점 취약점을 방어하자'
     parent: index
     url: /wiki/depensive-copy
-    updated: '2020-01-12 23:11:26 +0900'
+    updated: '2020-01-13 11:33:08 +0900'
     children: []
 Design-for-Hackers:
     type: wiki

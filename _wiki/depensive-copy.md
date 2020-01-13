@@ -3,7 +3,7 @@ layout  : wiki
 title   : 방어적 복사 (defensive copy)
 summary : 검사시점/사용시점 취약점을 방어하자
 date    : 2020-01-12 22:39:36 +0900
-updated : 2020-01-12 23:11:26 +0900
+updated : 2020-01-13 11:33:08 +0900
 tag     : java pattern
 toc     : true
 public  : true
@@ -64,7 +64,7 @@ end.setYear(78);    // 취약점: p의 내부를 수정할 수 있다.
 public Period(Date start, Date end) {
     this.start = new Date(start.getTime()); // defensive copy
     this.end = new Date(end.getTime());     // defensive copy
-    if (start.compareTo(end) > 0) {
+    if (this.start.compareTo(this.end) > 0) {
         throw new IllegalArgumentException("start가 end보다 늦으면 안된다");
     }
 }
