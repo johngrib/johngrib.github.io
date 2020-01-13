@@ -1406,14 +1406,6 @@ gcd:
     url: /wiki/gcd
     updated: '2019-12-07 08:02:22 +0900'
     children: []
-geacron:
-    type: wiki
-    title: 'GeaCron, 옐로우의 세계'
-    summary: '연도별 세계 지도를 볼 수 있는 사이트'
-    parent: useful-site
-    url: /wiki/geacron
-    updated: '2018-03-10 21:09:27 +0900'
-    children: []
 Geek-Atlas:
     type: wiki
     title: '(책) 긱 아틀라스 - 과학과 기술의 발상지 129곳'
@@ -2206,14 +2198,6 @@ math:
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
     children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, fibonacci, frac1e, gcd, graph, halting-problem, primitive-roots, relations, rule-of-succession, secretary-problem]
-mathdict:
-    type: wiki
-    title: '대한수학회 수학용어 사전'
-    summary: '수학용어 번역시 꼭 참고하자'
-    parent: useful-site
-    url: /wiki/mathdict
-    updated: '2018-04-25 21:06:47 +0900'
-    children: []
 mathjax-latex:
     type: wiki
     title: 'MathJax로 LaTeX 사용하기'
@@ -3256,20 +3240,12 @@ use-java-primitive-type-for-performance:
     children: []
 useful-site:
     type: wiki
-    title: '유용한 웹 서비스 모음'
+    title: '유용한 웹 사이트 모음'
     summary: ""
     parent: tools
     url: /wiki/useful-site
-    updated: '2018-02-20 22:07:53 +0900'
-    children: [fine-dust, geacron, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, mathdict, utterances]
-utterances:
-    type: wiki
-    title: utterances.es
-    summary: 'Github issue 기반의 댓글 생성기'
-    parent: useful-site
-    url: /wiki/utterances
-    updated: '2018-02-20 22:32:19 +0900'
-    children: []
+    updated: '2020-01-13 22:23:34 +0900'
+    children: [fine-dust, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap]
 vagrant-docker-get-start:
     type: wiki
     title: 'Vagrant와 Docker에 CentOS, Ubuntu 설치하기'

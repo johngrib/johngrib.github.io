@@ -34,7 +34,6 @@ math:
     - {fileName: gcd}
     - {fileName: graph}
     - {fileName: math}
-    - {fileName: mathdict}
     - {fileName: p-np}
     - {fileName: primitive-roots}
     - {fileName: relations}
@@ -491,7 +490,6 @@ Think-Bayes:
     - {fileName: Copernican-Principle}
 history:
     - {fileName: Cromwell-s-rule}
-    - {fileName: geacron}
     - {fileName: TETRIS-EFFECT}
 ctags:
     - {fileName: ctags}
@@ -577,7 +575,6 @@ tools:
     - {fileName: fine-dust}
     - {fileName: labs-strava-com-heatmap}
     - {fileName: tools}
-    - {fileName: utterances}
 미세먼지:
     - {fileName: fine-dust}
 fish:
@@ -602,16 +599,15 @@ gc:
     - {fileName: java-gc-tuning}
     - {fileName: java-gc-zgc}
     - {fileName: summary-The-Pauseless-GC-Algorithm}
-map:
-    - {fileName: geacron}
-    - {fileName: Geek-Atlas}
-    - {fileName: labs-strava-com-heatmap}
 o-reilly:
     - {fileName: Geek-Atlas}
 science:
     - {fileName: Geek-Atlas}
     - {fileName: Grote-Reber-home-made-radio-astronomy}
     - {fileName: SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness}
+map:
+    - {fileName: Geek-Atlas}
+    - {fileName: labs-strava-com-heatmap}
 test:
     - {fileName: ginkgo}
     - {fileName: junit5-nested}
@@ -631,7 +627,6 @@ til:
     - {fileName: java-jigsaw-quick-start}
     - {fileName: java-remainder-operator}
     - {fileName: King-O-The-Cats}
-    - {fileName: mathdict}
     - {fileName: Object-equals}
     - {fileName: Object-hashCode}
     - {fileName: Object-toString}
@@ -730,7 +725,6 @@ vimwiki:
     - {fileName: my-wiki}
 blog:
     - {fileName: my-wiki}
-    - {fileName: utterances}
 principle:
     - {fileName: Naming-Principle}
 naming:
@@ -780,7 +774,6 @@ rfc:
     - {fileName: why-http-80-https-443}
 github:
     - {fileName: rouge-supported-languages}
-    - {fileName: utterances}
 sf:
     - {fileName: Schrodinger-s-goyang-Hee}
 consulting:
