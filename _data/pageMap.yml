@@ -3022,6 +3022,14 @@ Take-the-Bully-by-the-Horns:
     url: /wiki/Take-the-Bully-by-the-Horns
     updated: '2018-02-02 22:55:21 +0900'
     children: []
+technical-debt:
+    type: wiki
+    title: '기술 부채 (technical debt)'
+    summary: ""
+    parent: index
+    url: /wiki/technical-debt
+    updated: '2020-01-14 20:33:11 +0900'
+    children: []
 template-method-pattern:
     type: wiki
     title: '템플릿 메소드 패턴 (Template Method Pattern)'
