@@ -346,6 +346,7 @@ algirithm:
 devops:
     - {fileName: Amazon-Route-53}
     - {fileName: AWS-Auto-Scaling}
+    - {fileName: devops}
     - {fileName: Elastic-Load-Balancing}
     - {fileName: vagrant-docker-get-start}
 network:
