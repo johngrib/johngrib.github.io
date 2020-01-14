@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util.stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-01-14 21:50:43 +0900
+updated : 2020-01-14 21:58:18 +0900
 tag     : java
 toc     : true
 public  : false
@@ -55,6 +55,10 @@ int sum = widgets.stream()
   .sum();
 ```
 
+## Stream은 왜 for-each 로 돌릴 수 없는가?
+
+> 사실 Stream 인터페이스는 Iterable 인터페이스가 정의한 추상 메서드를 전부 포함할 뿐만 아니라, Iterable 인터페이스가 정의한 방식대로 동작한다. 그럼에도 for-each 로 스트림을 반복할 수 없는 까닭은 바로 Stream이 Iterable을 확장(extend)하지 않아서다.[^effective-47]
+
 ## 주의할 점
 
 ### 무조건 스트림으로 바꾸면 가독성을 해칠 수 있다
@@ -80,3 +84,5 @@ int sum = widgets.stream()
 
 [^effective-45]: 이펙티브 자바 3/E. 아이템 45.
 [^effective-46-code]: 이펙티브 자바 3/E 아이템 46 의 예제를 약간 변형한 코드이다.
+[^effective-47]: 이펙티브 자바 3/E. 아이템 47.
+
