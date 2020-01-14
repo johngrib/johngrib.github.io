@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util.stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-01-14 21:58:18 +0900
+updated : 2020-01-14 22:28:51 +0900
 tag     : java
 toc     : true
 public  : false
@@ -22,6 +22,41 @@ Classes to support functional-style operations on streams of elements, such as m
 
 > 스트림 파이프라인은 지연 평가(lazy evaluation)된다. 평가는 종단 연산이 호출될 때 이뤄지며, 종단 연산에 쓰이지 않는 데이터 원소는 계산에 쓰이지 않는다. 이러한 지연 평가가 무한 스트림을 다룰 수 있게 해주는 열쇠다. 종단 연산이 없는 스트림 파이프라인은 아무 일도 하지 않는 명령어인 no-op 과 같으니, 종단 연산을 빼먹는 일이 절대 없도록 하자.[^effective-45]
 [^effective-45]
+
+## 병렬화
+
+### 합리적인 이유와 측정 없이 병렬화하지 말 것
+
+> 스트림 안의 원소 수와 원소당 수행되는 코드 줄 수를 곱해보자. 이 값이 최소 수십만은 되어야 성능 향상을 맛볼 수 있다.[^effective-48][^stream-parallel-guidance]
+
+스트림 파이프라인을 충분한 이유와 측정 없이 그냥 병렬화하면 안 된다. 성능이 나빠질 수 있다.
+
+이상한 결과가 나올 수도 있다.
+
+* 데이터 소스가 `Stream.iterate`이거나 중간 연산으로 `limit`를 쓰면 파이프라인 병렬화로는 성능을 개선할 수 없다.[^effective-48]
+
+### 병렬화의 효과가 좋은 스트림 소스
+
+> As a rule, performance gains from parallelism are best on streams over ArrayList, HashMap, HashSet, and ConcurrentHashMap instances; arrays; int ranges; and long ranges.[^effective-48]
+
+병렬화의 효과가 가장 좋은 스트림의 소스는 다음과 같다.
+* `ArrayList` 인스턴스
+* `HashMap` 인스턴스
+* `HashSet` 인스턴스
+* `ConcurrentHashMap` 인스턴스
+* 배열
+* int
+* long
+
+### 병렬화에 가장 적합한 종단 메소드
+
+* `Stream`의 `reduce` 메소드
+* `min`, `max`, `count`, `sum` 같은 메소드
+* `anyMatch`, `allMatch`, `noneMatch`처럼 조건이 맞으면 결과를 리턴하는 메소드.
+
+### 병렬화에 적합하지 않은 메소드
+
+* `Stream`의 `collect`. 컬렉션을 합치는 작업의 부담이 크다.
 
 ## Examples
 
@@ -85,4 +120,7 @@ int sum = widgets.stream()
 [^effective-45]: 이펙티브 자바 3/E. 아이템 45.
 [^effective-46-code]: 이펙티브 자바 3/E 아이템 46 의 예제를 약간 변형한 코드이다.
 [^effective-47]: 이펙티브 자바 3/E. 아이템 47.
+[^effective-48]: 이펙티브 자바 3/E. 아이템 48.
+[^stream-parallel-guidance]: [When to use parallel streams][stream-parallel-guidance]
 
+[stream-parallel-guidance]: http://gee.cs.oswego.edu/dl/html/StreamParallelGuidance.html
