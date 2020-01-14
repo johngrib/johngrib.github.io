@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util.stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-01-14 21:23:10 +0900
+updated : 2020-01-14 21:50:43 +0900
 tag     : java
 toc     : true
 public  : false
@@ -24,6 +24,29 @@ Classes to support functional-style operations on streams of elements, such as m
 [^effective-45]
 
 ## Examples
+
+* 단어의 빈도를 조사해, `Map<String, Long>`에 기록한다.[^effective-46-code]
+
+```java
+Map<String, Long> freq;
+try (Stream<String> words = new Scanner(file).tokens()) {
+    freq = words.collect(
+            Collectors.groupingBy(String::toLowerCase, Collectors.counting())
+    );
+} catch (FileNotFoundException e) {
+```
+
+* `Map<String, Long>` 에서 빈도 높은 단어 top 10 을 골라낸다.[^effective-46-code]
+
+```java
+List<String> topTen = freq.keySet()
+    .stream()
+    .sorted(Comparator.comparing(freq::get).reversed())
+    .limit(10)
+    .collect(Collectors.toList());
+```
+
+* 빨간색 위젯의 총 무게를 구한다.
 
 ```java
 int sum = widgets.stream()
@@ -56,4 +79,4 @@ int sum = widgets.stream()
 ## 주석
 
 [^effective-45]: 이펙티브 자바 3/E. 아이템 45.
-
+[^effective-46-code]: 이펙티브 자바 3/E 아이템 46 의 예제를 약간 변형한 코드이다.
