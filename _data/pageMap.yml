@@ -1853,7 +1853,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-enum, java-interface, java-jigsaw-quick-start, java-optional, java-remainder-operator, java-switch-expression, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-enum, java-interface, java-jigsaw-quick-start, java-optional, java-remainder-operator, java-stream, java-switch-expression, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1965,6 +1965,14 @@ java-remainder-operator:
     parent: Java
     url: /wiki/java-remainder-operator
     updated: '2020-01-12 11:41:32 +0900'
+    children: []
+java-stream:
+    type: wiki
+    title: 'java Stream의 사용'
+    summary: ""
+    parent: Java
+    url: /wiki/java-stream
+    updated: '2020-01-14 22:32:01 +0900'
     children: []
 java-switch-expression:
     type: wiki

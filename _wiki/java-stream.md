@@ -1,12 +1,12 @@
 ---
 layout  : wiki
-title   : java.util.stream의 사용
+title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-01-14 22:28:51 +0900
+updated : 2020-01-14 22:32:01 +0900
 tag     : java
 toc     : true
-public  : false
+public  : true
 parent  : Java
 latex   : false
 ---

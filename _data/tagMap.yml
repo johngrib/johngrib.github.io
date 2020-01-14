@@ -513,6 +513,7 @@ java:
     - {fileName: java-jigsaw-quick-start}
     - {fileName: java-optional}
     - {fileName: java-remainder-operator}
+    - {fileName: java-stream}
     - {fileName: java-switch-expression}
     - {fileName: java10-var}
     - {fileName: java8}
