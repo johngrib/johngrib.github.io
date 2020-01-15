@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kanban, Scrum
 summary : 칸반, 스크럼
 date    : 2019-01-02 22:45:37 +0900
-updated : 2019-01-04 23:09:27 +0900
+updated : 2020-01-15 20:36:18 +0900
 tag     : agile
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# Scrum 스크럼
+## Scrum 스크럼
 
 >
 * Split your organization into small, cross-functional, self-organizing teams.
@@ -47,7 +47,7 @@ But integrating regularly to see the whole.
 * 단, 항상 전체를 조망할 수 있도록 주기적으로 결과를 전체에 통합한다.
 
 
-# Kanban 칸반
+## Kanban 칸반
 
 >
 * Visualize the workflow
@@ -64,7 +64,7 @@ But integrating regularly to see the whole.
 * 업무 하나를 완료하는 데 소요되는 평균 시간(cycle time)을 측정한다.
     * 그리고 그 시간을 줄이고 예측할 수 있도록 하는 것을 목표로 프로세스를 최적화한다.
 
-# Links
+## Links
 
 * [Kanban vs Scrum - How to make the most of both (PDF)](https://www.crisp.se/file-uploads/Kanban-vs-Scrum.pdf )
 * [Kanban and Scrum - Making the Most of Both (Free version Download)](https://www.infoq.com/minibooks/kanban-scrum-minibook )
