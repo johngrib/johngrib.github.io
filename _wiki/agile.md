@@ -3,7 +3,7 @@ layout  : wiki
 title   : 애자일(agile)에 대한 토막글 모음
 summary : 
 date    : 2019-04-24 22:55:36 +0900
-updated : 2020-01-02 20:16:01 +0900
+updated : 2020-01-15 20:18:49 +0900
 tag     : agile
 toc     : true
 public  : true
@@ -39,14 +39,24 @@ The data produced by a good agile team provides a cold dose of reality to the ma
 이러한 기법이 만병통치약은 아니지만 마음을 바꿀 필요가 있을 때 해야 할 일을 훨씬 쉽게 만들어준다.
 그리고 여러분이 필자가 만난 그 누구보다 운과 실력이 좋은 사람이 아니라면 이러한 기법이 반드시 필요할 것이다.[^fowler-ent]
 
+## From: 데브옵스 핸드북
+
+> 애자일 매니페스토(Agile Manifesto)는 2001년 소프트웨어 개발 분야의 선도적인 사상가 17명에 의해 탄생했다. 이들은 폭포수 개발(waterfall development)과 같은 중량 소프트웨어 개발 프로세스나 래셔널 통합 프로세스(Rational Unified Process)와 같은 방법론과는 다른, 가벼운 가치 체계와 원칙을 만들고자 했다.
+<br/><br/>
+애자일의 핵심 원칙은 "동작하는 소프트웨어를 몇 주 또는 몇 개월의 짧은 기간 동안 자주 출시"하는 것으로 대규모의 폭포수 방식의 출시 대신 소규모 배치 및 증가분 출시(incremental release)에 대한 열망을 강조했다. 다른 원칙들은 고신뢰성 관리 모델에서 자발적으로 일하는 소규모 팀의 필요성을 강조했다.
+<br/><br/>
+애자일은 많은 개발 조직의 생산성을 획기적으로 향상시킨 것으로 평가된다.[^devops-handbook-43]
+
 ## 참고문헌
 
 * 리팩토링 데이터베이스 진화적 데이터베이스 디자인 / 스캇 W. 엠블러, 프라모드 J. 세달라지 공저 / 정원혁, 이재범, 권태돈, 성대중, 현중균 공역 / 위키북스 / 2007년 06월 29일 / 원제 : Refactoring Databases
 * 엔터프라이즈 애플리케이션 아키텍처 패턴 / 마틴 파울러 저 / 최민석 역 / 위키북스 / 2쇄 2018년 10월 31일 / 원제 : Patterns of Enterprise Application Architecture
+* 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
 
 ## 주석
 
 [bob-twitter]: https://twitter.com/unclebobmartin/status/1199000963950022656
 [^bob-twitter]: [Uncle Bob Martin 오전 1:24 · 2019년 11월 26일][bob-twitter]
 [^fowler-ent]: 엔터프라이즈 아키텍처 패턴. 8장 종합. 102쪽.
+[^devops-handbook-43]: 데브옵스 핸드북. 43쪽.
 
