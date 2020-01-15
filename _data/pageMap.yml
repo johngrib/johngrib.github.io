@@ -2076,7 +2076,7 @@ kanban-scrum:
     summary: '칸반, 스크럼'
     parent: what
     url: /wiki/kanban-scrum
-    updated: '2020-01-15 20:36:18 +0900'
+    updated: '2020-01-15 20:50:34 +0900'
     children: []
 Kerckhoffs-s-principle:
     type: wiki
