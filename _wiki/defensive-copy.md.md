@@ -3,7 +3,7 @@ layout  : wiki
 title   : 방어적 복사 (defensive copy)
 summary : 검사시점/사용시점 취약점을 방어하자
 date    : 2020-01-12 22:39:36 +0900
-updated : 2020-01-13 11:33:08 +0900
+updated : 2020-01-15 22:19:50 +0900
 tag     : java pattern
 toc     : true
 public  : true
@@ -106,6 +106,17 @@ public Date getEnd() {
 
 이제 모든 필드가 완벽하게 캡슐화되었다.
 
+## 방어 기법: 불변 객체의 사용
+
+defensive copy의 대안으로 함께 고려해볼만한 방법이다.
+
+불변 객체를 만드는 가장 쉬운 방법은 `Collections`의 `unmodifiable...` 시리즈를 사용하는 것이다.
+
+```java
+private static final Integer[] PRIVATE_VALUES = new Integer[]{ 1,2,3 };
+public static final List<Integer> VALUES =
+    Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
+```
 
 ## 참고문헌
 
