@@ -3,7 +3,7 @@ layout  : wiki
 title   : 애자일(agile)에 대한 토막글 모음
 summary : 
 date    : 2019-04-24 22:55:36 +0900
-updated : 2020-01-15 20:24:03 +0900
+updated : 2020-01-15 20:27:24 +0900
 tag     : agile
 toc     : true
 public  : true
@@ -45,6 +45,12 @@ Martin Fowler       Brian Marick
 본 고지와 함께 전문으로서만 가능하다.
 ```
 
+## From: Robert C. Martin 트위터
+
+> Agile is not about going faster.
+Agile is about destroying hope.
+The data produced by a good agile team provides a cold dose of reality to the managers — in time for them to — manage.[^bob-twitter]
+
 ## From: 리팩토링 데이터베이스
 
 * 1. 진화적 데이터베이스 개발 - 1.2 진화적 데이터 모델링에서 인용
@@ -55,12 +61,6 @@ Martin Fowler       Brian Marick
 그리고 이렇게 하는 한 가지 좋은 방법은 코딩하기 전에 먼저 모델링을 하는 것이다.
 
 code-and-fix: 이러한 개발 방식은 계획 수립과 분석, 설계의 상위 과정을 무시하고 오로지 코딩(프로그래밍)만을 강조하는, 빨리 일정을 끝내려는 변형된 무리한 속성 과정이다.
-
-## From: 밥 아저씨 트위터
-
-> Agile is not about going faster.
-Agile is about destroying hope.
-The data produced by a good agile team provides a cold dose of reality to the managers — in time for them to — manage.[^bob-twitter]
 
 ## From: 엔터프라이즈 애플리케이션 아키텍처 패턴
 
