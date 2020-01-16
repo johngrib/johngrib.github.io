@@ -3060,7 +3060,7 @@ technical-debt:
     summary: ""
     parent: software-engineering
     url: /wiki/technical-debt
-    updated: '2020-01-16 21:30:42 +0900'
+    updated: '2020-01-16 21:33:13 +0900'
     children: []
 template-method-pattern:
     type: wiki
