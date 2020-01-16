@@ -7,7 +7,7 @@ updated : 2020-01-15 20:50:34 +0900
 tag     : agile
 toc     : true
 public  : true
-parent  : what
+parent  : [[software-engineering]]
 latex   : false
 ---
 * TOC

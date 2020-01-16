@@ -7,7 +7,7 @@ updated : 2019-07-08 16:07:45 +0900
 tag     : 방법론
 toc     : true
 public  : true
-parent  : what
+parent  : [[software-engineering]]
 latex   : false
 ---
 * TOC

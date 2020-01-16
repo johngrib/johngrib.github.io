@@ -7,7 +7,7 @@ updated : 2018-02-07 06:48:10 +0900
 tag     : ACM IEEE ethics 번역
 toc     : true
 public  : true
-parent  : clipping
+parent  : [[software-engineering]]
 latex   : false
 ---
 * TOC

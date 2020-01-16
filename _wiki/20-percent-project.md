@@ -7,7 +7,7 @@ updated : 2019-12-30 23:50:20 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : index
+parent  : [[software-engineering]]
 latex   : false
 ---
 * TOC

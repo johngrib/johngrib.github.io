@@ -7,7 +7,7 @@ updated : 2020-01-14 20:28:59 +0900
 tag     : devops
 toc     : true
 public  : true
-parent  : index
+parent  : [[software-engineering]]
 latex   : false
 ---
 * TOC

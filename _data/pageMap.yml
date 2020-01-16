@@ -218,7 +218,7 @@
     type: wiki
     title: '20% project'
     summary: ""
-    parent: index
+    parent: software-engineering
     url: /wiki/20-percent-project
     updated: '2019-12-30 23:50:20 +0900'
     children: []
@@ -266,7 +266,7 @@ agile:
     type: wiki
     title: '애자일(agile)에 대한 토막글 모음'
     summary: ""
-    parent: what
+    parent: software-engineering
     url: /wiki/agile
     updated: '2020-01-15 20:27:24 +0900'
     children: []
@@ -685,7 +685,7 @@ clipping:
     parent: index
     url: /wiki/clipping
     updated: '2018-02-07 21:34:09 +0900'
-    children: [King-O-The-Cats, legend, Software-Engineering-Code-of-Ethics, THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING, You-and-Your-Research]
+    children: [King-O-The-Cats, legend, THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING, You-and-Your-Research]
 Code-Complete-2:
     type: wiki
     title: '(책) 코드 컴플리트 - 스티브 맥코넬'
@@ -770,7 +770,7 @@ Continuous-Integration:
     type: wiki
     title: 'Continuous Integration(지속적 통합)'
     summary: ""
-    parent: what
+    parent: software-engineering
     url: /wiki/Continuous-Integration
     updated: '2019-07-06 23:26:37 +0900'
     children: []
@@ -946,7 +946,7 @@ dev-schedule-quotes:
     type: wiki
     title: '일정 관련 인용문 모음'
     summary: ""
-    parent: for-craftsmanship
+    parent: software-engineering
     url: /wiki/dev-schedule-quotes
     updated: '2019-12-16 08:13:57 +0900'
     children: []
@@ -954,7 +954,7 @@ devops:
     type: wiki
     title: '데브옵스 (DevOps)'
     summary: ""
-    parent: index
+    parent: software-engineering
     url: /wiki/devops
     updated: '2020-01-14 20:28:59 +0900'
     children: []
@@ -1373,7 +1373,7 @@ for-craftsmanship:
     parent: index
     url: /wiki/for-craftsmanship
     updated: '2019-11-06 21:42:38 +0900'
-    children: [dev-schedule-quotes, precision-of-number]
+    children: [precision-of-number]
 fortune-cmd:
     type: wiki
     title: 'fortune 명령어'
@@ -2074,7 +2074,7 @@ kanban-scrum:
     type: wiki
     title: 'Kanban, Scrum'
     summary: '칸반, 스크럼'
-    parent: what
+    parent: software-engineering
     url: /wiki/kanban-scrum
     updated: '2020-01-15 20:50:34 +0900'
     children: []
@@ -2450,7 +2450,7 @@ persona:
     type: wiki
     title: 페르소나(persona)
     summary: '페르소나 디자인 방법론'
-    parent: what
+    parent: software-engineering
     url: /wiki/persona
     updated: '2019-07-08 16:07:45 +0900'
     children: []
@@ -2474,7 +2474,7 @@ polite-software:
     type: wiki
     title: '예의 바른 소프트웨어'
     summary: 'Polite Software'
-    parent: what
+    parent: software-engineering
     url: /wiki/polite-software
     updated: '2019-07-08 22:23:43 +0900'
     children: []
@@ -2822,11 +2822,19 @@ Software-Craftsman:
     url: /wiki/Software-Craftsman
     updated: '2018-02-01 22:56:16 +0900'
     children: []
+software-engineering:
+    type: wiki
+    title: '소프트웨어 공학'
+    summary: 'Software Engineering'
+    parent: index
+    url: /wiki/software-engineering
+    updated: '2020-01-16 20:22:50 +0900'
+    children: [20-percent-project, agile, Continuous-Integration, dev-schedule-quotes, devops, kanban-scrum, persona, polite-software, Software-Engineering-Code-of-Ethics, technical-debt, test-double]
 Software-Engineering-Code-of-Ethics:
     type: wiki
     title: '소프트웨어 공학 윤리 강령과 업무 규범'
     summary: 'Software Engineering Code of Ethics'
-    parent: clipping
+    parent: software-engineering
     url: /wiki/Software-Engineering-Code-of-Ethics
     updated: '2018-02-07 06:48:10 +0900'
     children: []
@@ -3042,7 +3050,7 @@ technical-debt:
     type: wiki
     title: '기술 부채 (technical debt)'
     summary: ""
-    parent: index
+    parent: software-engineering
     url: /wiki/technical-debt
     updated: '2020-01-14 20:33:11 +0900'
     children: []
@@ -3058,7 +3066,7 @@ test-double:
     type: wiki
     title: 'Test Double(테스트 더블)'
     summary: null
-    parent: what
+    parent: software-engineering
     url: /wiki/test-double
     updated: '2019-07-13 18:37:21 +0900'
     children: []
@@ -3445,7 +3453,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [agile, availability, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, Continuous-Integration, encryption, enterprise-application, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, kanban-scrum, latency, osi-model, persona, polite-software, port, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, test-double, transistor, units, Unix-philosophy, URI]
+    children: [availability, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, encryption, enterprise-application, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, latency, osi-model, port, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

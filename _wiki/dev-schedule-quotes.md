@@ -7,7 +7,7 @@ updated : 2019-12-16 08:13:57 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[for-craftsmanship]]
+parent  : [[software-engineering]]
 latex   : false
 ---
 * TOC
