@@ -1825,10 +1825,10 @@ integer:
 intellij:
     type: wiki
     title: 'IntelliJ IDEA'
-    summary: ""
+    summary: '문제 해결한 경험을 모아본다'
     parent: tools
     url: /wiki/intellij
-    updated: '2020-01-16 19:54:11 +0900'
+    updated: '2020-01-16 20:01:48 +0900'
     children: []
 IP:
     type: wiki

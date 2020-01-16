@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : IntelliJ IDEA
-summary : 
+summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2020-01-16 19:54:11 +0900
+updated : 2020-01-16 20:01:48 +0900
 tag     : java
 toc     : true
 public  : true
@@ -83,4 +83,8 @@ macOS의 경우 `~/Library/Preferences`에 있다.
 `Preferences` - `Build, Execution, Deployment` - `Build Tools` - `Gradle` - `Build and run`에서 `Run tests using`을 `IntelliJ IDEA`로 설정해 준다. 그리고 (반드시) IntelliJ를 재실행한다.
 
 * [Why isn't @DisplayName working for me in JUnit 5?](https://stackoverflow.com/a/59012529 )
+
+## 함께 읽기
+
+* [[config-ideavim]]{IdeaVim 설정하기}
 
