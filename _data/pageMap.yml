@@ -2837,7 +2837,7 @@ software-engineering:
     parent: index
     url: /wiki/software-engineering
     updated: '2020-01-16 20:22:50 +0900'
-    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban-scrum, persona, polite-software, Software-Engineering-Code-of-Ethics, technical-debt, test-double]
+    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban-scrum, persona, polite-software, Software-Engineering-Code-of-Ethics, technical-debt, test-double, two-pizza-team]
 Software-Engineering-Code-of-Ethics:
     type: wiki
     title: '소프트웨어 공학 윤리 강령과 업무 규범'
@@ -3221,6 +3221,14 @@ two-eggs-100-floor:
     parent: problem
     url: /wiki/two-eggs-100-floor
     updated: '2019-11-02 14:00:11 +0900'
+    children: []
+two-pizza-team:
+    type: wiki
+    title: '피자 두 판 규모의 팀'
+    summary: ""
+    parent: software-engineering
+    url: /wiki/two-pizza-team
+    updated: '2020-01-16 22:03:47 +0900'
     children: []
 two-type-error:
     type: wiki

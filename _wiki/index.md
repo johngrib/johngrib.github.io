@@ -433,6 +433,7 @@ regenerate: true
     * [[Software-Engineering-Code-of-Ethics]]
     * [[technical-debt]]
     * [[test-double]]
+    * [[two-pizza-team]]
 
 * [[big-numbers]]
 * [[Byzantine-failure]]
