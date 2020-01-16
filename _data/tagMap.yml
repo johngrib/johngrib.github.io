@@ -308,7 +308,8 @@ command:
 agile:
     - {fileName: agile}
     - {fileName: grow-together}
-    - {fileName: kanban-scrum}
+    - {fileName: kanban}
+    - {fileName: scrum}
     - {fileName: Tompson-s-rule-for-first-time-telescope-makers}
 complexity:
     - {fileName: airplain-rule}

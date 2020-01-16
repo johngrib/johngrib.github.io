@@ -197,6 +197,6 @@ TCP/IP는 비전공자로서 한번쯤은 읽어야 한다는 생각에 골라 �
 * 2019-01-15 Modern PHP
 * 2019-01-10 읽기 좋은 코드가 좋은 코드다 - 7년 전에 읽은 책을 다시 읽어 보았다.
 * 2019-01-09 통찰, 평범에서 비범으로
-* 2019-01-04 칸반과 스크럼. [[kanban-scrum]]{정리}, [PDF](https://www.infoq.com/minibooks/kanban-scrum-minibook )
+* 2019-01-04 칸반과 스크럼. [[kanban]], [[scrum]], [PDF](https://www.infoq.com/minibooks/kanban-scrum-minibook )
 * 2019-01-01 배시 셸로 완성하는 모의 해킹 기술(Penetration Testing with the Bash Shell)
 

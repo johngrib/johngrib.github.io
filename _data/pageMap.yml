@@ -2078,13 +2078,13 @@ jvm-stack:
     url: /wiki/jvm-stack
     updated: '2019-08-30 12:18:19 +0900'
     children: []
-kanban-scrum:
+kanban:
     type: wiki
-    title: 'Kanban, Scrum'
-    summary: '칸반, 스크럼'
+    title: '칸반 (Kanban)'
+    summary: ""
     parent: software-engineering
-    url: /wiki/kanban-scrum
-    updated: '2020-01-15 20:50:34 +0900'
+    url: /wiki/kanban
+    updated: '2020-01-16 22:08:36 +0900'
     children: []
 Kerckhoffs-s-principle:
     type: wiki
@@ -2758,6 +2758,14 @@ SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness:
     url: /wiki/SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness
     updated: '2018-02-05 22:29:54 +0900'
     children: []
+scrum:
+    type: wiki
+    title: '스크럼 (Scrum)'
+    summary: ""
+    parent: software-engineering
+    url: /wiki/scrum
+    updated: '2020-01-16 22:11:10 +0900'
+    children: []
 sdkman:
     type: wiki
     title: 'sdk 명령어 (sdkman)'
@@ -2837,7 +2845,7 @@ software-engineering:
     parent: index
     url: /wiki/software-engineering
     updated: '2020-01-16 20:22:50 +0900'
-    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban-scrum, persona, polite-software, Software-Engineering-Code-of-Ethics, technical-debt, test-double, two-pizza-team]
+    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-double, two-pizza-team]
 Software-Engineering-Code-of-Ethics:
     type: wiki
     title: '소프트웨어 공학 윤리 강령과 업무 규범'
