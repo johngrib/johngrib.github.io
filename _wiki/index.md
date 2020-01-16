@@ -13,7 +13,9 @@ regenerate: true
     * [[memo-2019]]
     * [[memo-2020]]
 
+* [[abbr]]
 * [[timeline]]
+
 * [[algorithm]]
     * [[average-complexity]]
     * [[b-tree]]
@@ -23,6 +25,7 @@ regenerate: true
     * [[regex-prime]]
     * [[tower-of-hanoi]]
     * [[von-neumann-extractor]]
+
 * [[clipping]]{글 모음 및 요약}
     * [[legend]]
         * [[Bill-Atkinson-productivity]]
@@ -37,15 +40,16 @@ regenerate: true
     * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
     * [[You-and-Your-Research]]
     * [[King-O-The-Cats]]
-* [[coding-font]]{코딩 폰트}
+
 * [[how-to]]
     * [[docker]]
     * [[googling]]
     * [[mathjax-latex]]
+
 * [[links]]
     * [[links-2019]]
     * [[links-2018]]
-* [[mac-keyboard-shortcuts]]
+
 * [[math]]
     * [[Bayes-theorem]]
     * [[Binomial-Theorem]]
@@ -60,6 +64,7 @@ regenerate: true
     * [[relations]]
     * [[rule-of-succession]]
     * [[secretary-problem]]
+
 * [[media]]
     * [[book]]{도서}
         * [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]
@@ -87,6 +92,7 @@ regenerate: true
         * [[The-Jargon-File]]
         * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
         * [[Schrodinger-s-goyang-Hee]]
+
 * [[design-pattern]]
     * [[abstract-factory-pattern]]
     * [[adapter-pattern]]
@@ -100,8 +106,10 @@ regenerate: true
     * [[static-factory-method-pattern]]
     * [[strategy-pattern]]
     * [[template-method-pattern]]
+
 * [[problem]]
     * [[two-eggs-100-floor]]
+
 * [[programming-language]]{프로그래밍 언어}
     * [[awk]]
     * [[bc]]
@@ -153,6 +161,7 @@ regenerate: true
         * [[start-rust-with-vim]]
     * [[TOML]]
     * [[YAML]]
+
 * [[proverb]]{나의 용어 사전}
     * [[ACID]]
     * [[airplain-rule]]
@@ -174,11 +183,13 @@ regenerate: true
     * [[SOLID]]
     * [[Tompson-s-rule-for-first-time-telescope-makers]]
     * [[Zipf-s-law]]
+
 * [[review]]
     * [[review-2020]]
     * [[review-2019]]
     * [[review-2018]]
     * [[review-2017]]
+
 * [[study]]
     * [[study-note]]
     * [[study-concrete-math]]
@@ -234,6 +245,7 @@ regenerate: true
         * [[MnM-problem]]
         * [[Monty-Hall-problem]]
         * [[Oliver-s-blood]]
+
 * [[tools]]
     * [[aws]]
         * [[Amazon-Route-53]]
@@ -315,9 +327,11 @@ regenerate: true
         * [[fine-dust]]
     * [[web-browser-extension]]
         * [[vimium]]
+
 * [[til]]
     * [[trouble-shooting-node-7-install]]
     * [[vagrant-docker-get-start]]
+
 * [[Vim]]
     * [[config-ideavim]]
     * [[my-wiki]]
@@ -335,6 +349,7 @@ regenerate: true
     * [[vim-with-space-char]]
     * [[vim-ycm-python3]]
     * [[vimwiki]]
+
 * [[what]]
     * [[availability]]
     * [[bandwidth]]
@@ -362,22 +377,22 @@ regenerate: true
     * [[units]]
     * [[Unix-philosophy]]
     * [[URI]]
+
 * [[why]]
     * [[letter-case]]
     * [[sql-char-comparison]]
     * [[tmux-c-dash]]
     * [[why-http-80-https-443]]
-* [[email-validation]]
-* [[abbr]]
-* [[big-numbers]]
+
 * [[spring]]
     * [[spring-bean-config-xml]]
     * [[spring-bean-config-configuration]]
     * [[spring-ioc]]
     * [[spring-versions]]
+
 * [[database]]
     * [[sharding]]
-* [[locking]]
+
 * [[my-lifehack]]
     * [[cleaning-tile-cycle]]
     * [[hhkb-jp-tmk]]
@@ -387,11 +402,12 @@ regenerate: true
     * [[my-study-method]]
     * [[preserve-brain]]
     * [[random-lunch]]
+
 * [[summary]]
     * [[REST-paper-summary]]
     * [[summary-Data-Abstraction-and-Hierarchy]]
     * [[summary-The-Pauseless-GC-Algorithm]]
-* [[Byzantine-failure]]
+
 * [[garbage-collection]]
     * [[gc-death-spiral]]
     * [[java-gc-tuning]]
@@ -404,12 +420,6 @@ regenerate: true
 * [[for-craftsmanship]]
     * [[precision-of-number]]
 
-* [[integer]]
-* [[junit5-nested]]
-* [[two-type-error]]
-* [[semantic-versioning]]
-* [[defensive-copy.md]]
-* [[leadership]]
 * [[software-engineering]]
     * [[20-percent-project]]
     * [[agile]]
@@ -423,6 +433,18 @@ regenerate: true
     * [[technical-debt]]
     * [[test-double]]
 
+* [[big-numbers]]
+* [[Byzantine-failure]]
+* [[coding-font]]{코딩 폰트}
+* [[defensive-copy.md]]
+* [[email-validation]]
+* [[integer]]
+* [[junit5-nested]]
+* [[leadership]]
+* [[locking]]
+* [[mac-keyboard-shortcuts]]
+* [[semantic-versioning]]
+* [[two-type-error]]
 
 ---
 
