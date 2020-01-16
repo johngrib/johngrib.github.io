@@ -423,6 +423,7 @@ regenerate: true
 * [[software-engineering]]
     * [[20-percent-project]]
     * [[agile]]
+    * [[andon-cord]]
     * [[Continuous-Integration]]
     * [[dev-schedule-quotes]]
     * [[devops]]

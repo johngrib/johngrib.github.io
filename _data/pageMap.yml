@@ -302,6 +302,14 @@ Amazon-Route-53:
     url: /wiki/Amazon-Route-53
     updated: '2019-11-18 21:31:29 +0900'
     children: []
+andon-cord:
+    type: wiki
+    title: '안돈 코드 (Andon cord)'
+    summary: '문제가 발생하면 누구나 잡아당길 수 있는 코드'
+    parent: software-engineering
+    url: /wiki/andon-cord
+    updated: '2020-01-16 21:19:44 +0900'
+    children: []
 availability:
     type: wiki
     title: 가용성(Availability)
@@ -2829,7 +2837,7 @@ software-engineering:
     parent: index
     url: /wiki/software-engineering
     updated: '2020-01-16 20:22:50 +0900'
-    children: [20-percent-project, agile, Continuous-Integration, dev-schedule-quotes, devops, kanban-scrum, persona, polite-software, Software-Engineering-Code-of-Ethics, technical-debt, test-double]
+    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban-scrum, persona, polite-software, Software-Engineering-Code-of-Ethics, technical-debt, test-double]
 Software-Engineering-Code-of-Ethics:
     type: wiki
     title: '소프트웨어 공학 윤리 강령과 업무 규범'
