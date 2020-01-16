@@ -3,7 +3,7 @@ layout  : category
 title   : 유용한 웹 사이트 모음
 summary : 
 date    : 2018-02-06 07:01:45 +0900
-updated : 2020-01-16 22:26:05 +0900
+updated : 2020-01-16 22:28:06 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,12 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 리트윗한 직후의 트윗을 표시
+
+[리트윗한 직후의 트윗을 표시](https://retweets2.azurewebsites.net/?lang=ko )
+
+트위터 사용자에게 매우 유용한 사이트. 누군가가 리트윗을 한 직후에 쓴 트윗을 모아 보여준다.
 
 ## Y 분 동안 X 프로그래밍 언어를 배우기
 
