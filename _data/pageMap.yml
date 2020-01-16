@@ -3308,7 +3308,7 @@ useful-site:
     summary: ""
     parent: tools
     url: /wiki/useful-site
-    updated: '2020-01-13 22:23:34 +0900'
+    updated: '2020-01-16 22:26:05 +0900'
     children: [fine-dust, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap]
 vagrant-docker-get-start:
     type: wiki
