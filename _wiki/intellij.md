@@ -3,8 +3,8 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 
 date    : 2019-11-09 22:56:16 +0900
-updated : 2020-01-03 13:26:40 +0900
-tag     : 
+updated : 2020-01-16 19:54:11 +0900
+tag     : java
 toc     : true
 public  : true
 parent  : tools
@@ -77,3 +77,10 @@ macOS의 경우 `~/Library/Preferences`에 있다.
 `Preferences` - `Build, Execution, Deployment` - `Compiler` - `Annotation Processors` - `Enable annotation processing`을 켜둬야 한다.
 
 이 옵션을 켜두지 않으면 롬복을 제대로 사용할 수 없다.
+
+## Gradle 환경에서 JUnit5를 사용할 때 @DisplayName 이 안 나온다면
+
+`Preferences` - `Build, Execution, Deployment` - `Build Tools` - `Gradle` - `Build and run`에서 `Run tests using`을 `IntelliJ IDEA`로 설정해 준다. 그리고 (반드시) IntelliJ를 재실행한다.
+
+* [Why isn't @DisplayName working for me in JUnit 5?](https://stackoverflow.com/a/59012529 )
+

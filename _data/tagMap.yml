@@ -498,6 +498,7 @@ java:
     - {fileName: defensive-copy.md}
     - {fileName: Effective-Java}
     - {fileName: groupId-artifactId}
+    - {fileName: intellij}
     - {fileName: Java}
     - {fileName: java_home}
     - {fileName: java-abstract-class}
