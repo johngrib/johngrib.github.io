@@ -2084,7 +2084,7 @@ kanban:
     summary: ""
     parent: software-engineering
     url: /wiki/kanban
-    updated: '2020-01-16 22:08:36 +0900'
+    updated: '2020-01-16 22:15:23 +0900'
     children: []
 Kerckhoffs-s-principle:
     type: wiki
