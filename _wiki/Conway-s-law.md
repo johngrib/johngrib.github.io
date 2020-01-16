@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2019-11-16 23:19:08 +0900
+updated : 2020-01-16 21:48:23 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -58,6 +58,12 @@ The development of such a philosophy promises to unearth basic questions about v
 단순하게 인력을 추가하는 것이 생산성을 증가시킨다는 가정에 근거하지 않는 시스템 설계 관리상의 철학이 필요하다.
 이러한 철학의 발전은 자원의 가치와 의사소통의 기술에 대한 근본적인 문제들, 즉 우리의 시스템 구축 기술이 확신 위에서 진행되기 위한 과제들을 밝혀내게 될 것이다.
 
+### 데브옵스 핸드북에서 말하는 콘웨이의 법칙
+
+> 결국, 팀을 구성하는 방법은 업무 수행 방식에 영향을 미친다. 1968년, 멜빈 콘웨이 박사는 코볼과 ALGOL 컴파일러를 제작하는 연구팀 여덟 명과 함께 유명한 실험을 수행했다. 콘웨이 박사는 다음과 같이 말했다.
+<br/><br/>
+"처음에 난이도와 시간을 추정한 후, 다섯 명이 코볼 작업에 그리고 세 명이 ALGOL 작업에 배정됐다. 그 결과, 코볼 컴파일러는 5단계, ALGOL 컴파일러는 3단계로 실행됐다."
+[^devops-handbook-123]
 
 ### The Jargon File에 수록된 콘웨이의 법칙
 
@@ -158,6 +164,7 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 * 마이크로서비스 아키텍처 구축 / 샘 뉴먼 저 / 정성권 역 / 한빛미디어 / 초판 2쇄 2017년 05월 01일 / 원서 : Building Microservices: Designing Fine-Grained Systems
 * 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
 * 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
+* 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
 
 
 ## 각주
@@ -167,3 +174,4 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 [^steve]: [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발} 184쪽.
 [^bob]: 클린 아키텍처 16장 독립성. 158쪽.
 [^inverse-conway]: 마이크로서비스 구축과 운영 1장 마이크로서비스. 51쪽.
+[^devops-handbook-123]: 데브옵스 핸드북. 123쪽.
