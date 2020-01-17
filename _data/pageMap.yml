@@ -3084,7 +3084,7 @@ test-terms:
     summary: null
     parent: software-engineering
     url: /wiki/test-terms
-    updated: '2020-01-17 22:36:17 +0900'
+    updated: '2020-01-17 22:44:58 +0900'
     children: []
 TETRIS-EFFECT:
     type: wiki
