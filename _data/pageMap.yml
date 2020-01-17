@@ -2764,7 +2764,7 @@ scrum:
     summary: ""
     parent: software-engineering
     url: /wiki/scrum
-    updated: '2020-01-16 22:11:10 +0900'
+    updated: '2020-01-17 22:30:57 +0900'
     children: []
 sdkman:
     type: wiki
