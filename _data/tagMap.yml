@@ -615,7 +615,7 @@ map:
 test:
     - {fileName: ginkgo}
     - {fileName: junit5-nested}
-    - {fileName: test-double}
+    - {fileName: test-terms}
     - {fileName: two-type-error}
 fzf:
     - {fileName: git-alias}

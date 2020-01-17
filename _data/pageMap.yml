@@ -2845,7 +2845,7 @@ software-engineering:
     parent: index
     url: /wiki/software-engineering
     updated: '2020-01-16 20:22:50 +0900'
-    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-double, two-pizza-team]
+    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-terms, two-pizza-team]
 Software-Engineering-Code-of-Ethics:
     type: wiki
     title: '소프트웨어 공학 윤리 강령과 업무 규범'
@@ -3078,13 +3078,13 @@ template-method-pattern:
     url: /wiki/template-method-pattern
     updated: '2019-11-21 09:28:58 +0900'
     children: []
-test-double:
+test-terms:
     type: wiki
-    title: 'Test Double(테스트 더블)'
+    title: 'Test 관련 용어 정리'
     summary: null
     parent: software-engineering
-    url: /wiki/test-double
-    updated: '2020-01-17 22:32:37 +0900'
+    url: /wiki/test-terms
+    updated: '2020-01-17 22:36:17 +0900'
     children: []
 TETRIS-EFFECT:
     type: wiki

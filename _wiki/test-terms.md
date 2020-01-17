@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : Test Double(테스트 더블)
+title   : Test 관련 용어 정리
 summary :
 date    : 2019-07-07 07:46:18 +0900
-updated : 2020-01-17 22:32:37 +0900
+updated : 2020-01-17 22:36:17 +0900
 tag     : test
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 테스트 더블?
+## 테스트 더블
 
 * [xUnit Test Patterns](http://www.acornpub.co.kr/book/xunit )의 저자인 제라드 메스자로스(Gerard Meszaros)가 만든 용어로, [스턴트 더블](https://en.wikipedia.org/wiki/Stunt_double )(영화 촬영에서 말하는 스턴트 대역 배우)에서 아이디어를 얻었다고 한다.
     * [스턴트 더블 이미지](https://www.google.co.kr/search?q=stunt+double&lr=&complete=1&hl=ko&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjnx6Dnu6HjAhUbwIsBHSZSDyIQ_AUIECgB&biw=960&bih=977 )를 검색해보면 마치 쌍둥이 같은 스턴트 더블 배우들의 멋진 사진을 볼 수 있다.
@@ -32,7 +32,7 @@ latex   : false
 
 * 테스트 더블은 테스트 목적을 위해 프로덕션 객체를 다른 무언가로 교체하는 모든 경우를 표현하는 용어이다.
 
-## 테스트 더블의 종류
+### 테스트 더블의 종류
 
 xunits 문서에서 잘 설명하고 있지만 마틴 파울러의 소개가 간단하여 이해하기 쉬웠다.
 
@@ -49,7 +49,7 @@ xunits 문서에서 잘 설명하고 있지만 마틴 파울러의 소개가 간
 * Mock은 호출했을 때 사전에 정의된 명세대로의 결과를 돌려주도록 미리 프로그램되어있다. 예상치 못한 호출이 있을 경우 예외를 던질 수 있으며, 모든 호출이 예상된 것이었는지 확인할 수 있다.
 
 
-## (책) xUnit 테스트 패턴에서의 용어 정리
+### (책) xUnit 테스트 패턴에서의 용어 정리
 
 다음은 "xUnit 테스트 패턴"의 부록 B를 참고해 작성한 것이다.
 
