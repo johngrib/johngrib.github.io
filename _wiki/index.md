@@ -462,8 +462,9 @@ regenerate: true
 * [[test-terms]]
 * [[two-pizza-team]]
 
-## ETC
+## 미분류
 
+* [[abbr]]
 * [[big-numbers]]
 * [[Byzantine-failure]]
 * [[coding-font]]{코딩 폰트}
@@ -475,9 +476,9 @@ regenerate: true
 * [[locking]]
 * [[mac-keyboard-shortcuts]]
 * [[semantic-versioning]]
-* [[two-type-error]]
-* [[abbr]]
+* [[strangler-pattern]]
 * [[timeline]]
+* [[two-type-error]]
 
 ---
 

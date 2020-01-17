@@ -205,6 +205,7 @@ pattern:
     - {fileName: null-object-pattern}
     - {fileName: observer-pattern}
     - {fileName: static-factory-method-pattern}
+    - {fileName: strangler-pattern}
     - {fileName: strategy-pattern}
     - {fileName: template-method-pattern}
 db:
