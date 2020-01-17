@@ -3,7 +3,7 @@ layout  : category
 title   : 유용한 웹 사이트 모음
 summary : 
 date    : 2018-02-06 07:01:45 +0900
-updated : 2020-01-16 22:28:06 +0900
+updated : 2020-01-17 21:53:03 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,12 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 정규식을 기차 레일 다이어그램으로 표현해준다
+
+[REGEXPER]( https://regexper.com/ )
+
+자주 쓰다 보면 정규식을 보았을 때 머리 속에 다이어그램이 떠오르게 된다.
 
 ## 리트윗한 직후의 트윗을 표시
 
