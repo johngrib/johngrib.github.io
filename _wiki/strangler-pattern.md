@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 스트랭글러 패턴 (strangler pattern)
+title   : 교살자 패턴, 스트랭글러 패턴 (strangler pattern)
 summary : 레거시 시스템을 점진적으로 교체하여 레거시 시스템을 단계적으로 페이드아웃한다
 date    : 2020-01-18 07:50:57 +0900
-updated : 2020-01-18 08:54:06 +0900
+updated : 2020-01-18 09:03:27 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -47,9 +47,16 @@ This metaphor struck me as a way of describing a way of doing a rewrite of an im
 
 > 교살자 무화과는 훨씬 더 사악하다. 이 나무의 씨앗은 다른 나무의 가지 속에서 발아해 뿌리를 서서히 땅 쪽으로 내려 보낸다. 일단 끝이 땅에 닿으면, 뿌리를 박는다. 숙주 나무를 빙 돌아서 늘어뜨려진 뿌리는 결국 숙주를 교살할 나무로 성장한다. 거대하고 오래된 교살자 무화과의 울퉁불퉁하고 비틀린 뿌리에 완전히 안긴, 캄보디아 앙코르와트 사원에 있는 유명한 건물을 보고 경이로움을 느꼈다. 나무와 건축물은 서로 단단히 뒤엉켜 각각 서로를 지지하지 않는다면 모두 붕괴될 것이다. 나는 교살자 무화과들이 멕시코에 있는 마야(Maya) 인들의 폐허 중 상당수에 존재하는 데 주목했다.[^goodall]
 
+## From: 데브옵스 핸드북
+
+> 이베이(eBay)에서 아키텍처를 다시 설계하는 경우, 팀은 아키텍처를 다시 작성하는 활동을 수행할 수 있을 정도로 문제점을 충분히 이해하고 있는지 확인하기 위해 작은 규모의 파일럿 프로젝트를 수행했다. 예를 들어, 샤우프의 팀은 2006년 풀 스택 자바로 사이트의 특정 부분을 이전하려고 했을 당시, 사이트의 페이지를 수익별로 정렬해 수익을 극대화할 수 있는 영역을 찾았다. 가장 높은 수익 영역을 선택해도 팀의 활동을 정당화할 정도로 비즈니스 수익이 충분하지 않다면 작업을 중단한다.  
+샤우프의 팀이 이베이에서 사용한 기법은 교살자 애플리케이션 패턴이라 불리는 것으로, 진화적 설계의 교과서적인 내용을 담고 있다. 아키텍처에서 더는 조직의 목표를 지원치 않는 기존 서비스를 "추출하고 교체"하는 대신, API에서 기존 기능에 대한 내용을 제거해 더 이상의 변경을 방지한다. 모든 신규 기능이 바람직한 신규 아키텍처를 사용하는 새로운 서비스로 구현되면, 필요한 경우에만 기존 시스템을 호출한다.  
+교살자 애플리케이션 패턴은 모놀리식 애플리케이션의 일부를 마이그레이션하거나 강력하게 결합한(tightly coupled) 서비스를 느슨하게 결합한(loosely coupled) 서비스로 마이그레이션하는 경우에 유용하다. 우리는 자주, 강하게 결합하고, 너무 많이 상호적으로 연결된, 수년(또는 수십 년) 전에 만들어진 아키텍처에서 강하게 작업하고 있다는 사실을 깨닫는다.[^devops-handbook-230]
+
 ## 참고문헌
 
 * 희망의 씨앗 / 제인 구달,게일 허드슨 저 / 사이언스북스 / 2014년 12월
+* 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
 
 ## Links
 
@@ -60,6 +67,7 @@ This metaphor struck me as a way of describing a way of doing a rewrite of an im
 
 [^fowler-strangler]: 출처는 [fowler-strangler][fowler-strangler].
 [^goodall]: 제인 구달의 희망의 씨앗. 2장. 식물계. 뿌리.
+[^devops-handbook-230]: 데브옵스 핸드북. 13장. 230쪽.
 
 [fowler-strangler]: https://martinfowler.com/bliki/StranglerFigApplication.html
 [ms-strangler]: https://docs.microsoft.com/ko-kr/azure/architecture/patterns/strangler
