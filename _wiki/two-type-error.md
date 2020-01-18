@@ -3,7 +3,7 @@ layout  : wiki
 title   : false positive와 false negative
 summary : 
 date    : 2020-01-11 15:19:59 +0900
-updated : 2020-01-11 18:38:50 +0900
+updated : 2020-01-18 19:16:31 +0900
 tag     : test statistics
 toc     : true
 public  : true
@@ -83,7 +83,9 @@ _이미지 출처는 Quora._ [^pregnant]
 
 긍정 오류가 1종 에러인지 2종 에러인지 기억하는 것은 헷갈리는 일이다.
 
-트위터의 [Victor Pr][twitter-bikutoru]님은 다음과 같이 기발한 방법을 공유했다.
+웹 서비스라면 장애가 없는데도 모니터링 서비스가 장애가 났다고 알려주는 상황이 False positive 라 생각할 수 있다. (양치기의 장난: 늑대가 나타났어요!)
+
+한편 트위터의 [Victor Pr][twitter-bikutoru]님은 다음과 같이 기발한 방법을 공유했다.
 
 {% raw %}
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Type I and type II errors are widely used terms for false positive and false negative. It&#39;s really hard to remember their meanings, so I have drawn an image with an easy to remember mnemonic.<br>Inspired by <a href="https://twitter.com/chrisalbon?ref_src=twsrc%5Etfw">@chrisalbon</a> and his <a href="https://twitter.com/hashtag/machinelearningflashcards?src=hash&amp;ref_src=twsrc%5Etfw">#machinelearningflashcards</a> <a href="https://t.co/oO8av8hWP3">pic.twitter.com/oO8av8hWP3</a></p>&mdash; Victor Pr👨🏻‍💻 (@bikutoru) <a href="https://twitter.com/bikutoru/status/981977290430189569?ref_src=twsrc%5Etfw">April 5, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -91,10 +93,16 @@ _이미지 출처는 Quora._ [^pregnant]
 
 ([혹시 이미지가 안 보인다면]( /post-img/two-type-error/remember.jpeg ))
 
+## 인용
+
+> 중요한 프로덕션 서비스에 문제가 있다면, 오전 2시에 사람들을 깨우는 것이 올바른 조치가 될 수 있다. 그러나 조치가 불가능한 경고나 거짓 양성(false positives)에 대한 경고를 생성한다면, 한밤중에 불필요하게 사람들을 깨우게 된다. 데브옵스 운동의 초기 리더인 존 빈센트(John Vincent)는 다음과 같이 말했다.  
+"지금 우리가 당면한 가장 큰 문제는 경고가 유발하는 피로감이다. 우리는 경고를 더 똑똑하게 처리할 필요가 있다. 그렇지 않으면 모두 미쳐버릴 것이다."[^devops-handbook-271]
+
 ## 참고문헌
 
 * 도서
     * 공학 학교에서 배운 101가지 / 존 쿠프레나스, 매튜 프레더릭 공저 / 김소진 역 / 글램북스 / 초판 1쇄 2015년 03월 20일
+    * 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
 * 웹
     * [Type I and type II errors(wikipedia)][wiki-eng]
     * [거짓 양성과 거짓 음성(wikipedia)][wiki-kor]
@@ -106,6 +114,7 @@ _이미지 출처는 Quora._ [^pregnant]
 [^engineering-47]: 공학 학교에서 배운 101가지. 47.
 [^pregnant]: [What is a type I error?][pregnant]
 [^william_schmarzo]: [Understanding Type I and Type II Errors(DELL Technologies)][william_schmarzo]
+[^devops-handbook-271]: 데브옵스 핸드북. 15장. 271쪽.
 
 [twitter-bikutoru]: https://twitter.com/bikutoru
 [pregnant]: https://www.quora.com/What-is-a-type-I-error
