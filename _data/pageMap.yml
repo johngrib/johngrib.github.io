@@ -1134,6 +1134,14 @@ Elastic-Load-Balancing:
     url: /wiki/Elastic-Load-Balancing
     updated: '2018-09-16 22:06:25 +0900'
     children: []
+email-gardening:
+    type: wiki
+    title: '나의 이메일 관리 방법'
+    summary: 'Gmail 만세'
+    parent: my-lifehack
+    url: /wiki/email-gardening
+    updated: '2020-01-19 13:04:36 +0900'
+    children: []
 email-validation:
     type: wiki
     title: '이메일 주소 형식 검증하기'
@@ -2309,7 +2317,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [cleaning-tile-cycle, hhkb-jp-tmk, my-bookshelf, my-keyboard, my-mac-os-terminal, my-study-method, preserve-brain, random-lunch]
+    children: [cleaning-tile-cycle, email-gardening, hhkb-jp-tmk, my-bookshelf, my-keyboard, my-mac-os-terminal, my-study-method, preserve-brain, random-lunch]
 my-mac-os-terminal:
     type: wiki
     title: 'macOS 초심자를 위한 터미널 공부 가이드'

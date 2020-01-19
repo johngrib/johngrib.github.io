@@ -429,7 +429,9 @@ regenerate: true
 * [[sharding]]
 
 ## [[my-lifehack]]
+
 * [[cleaning-tile-cycle]]
+* [[email-gardening]]
 * [[hhkb-jp-tmk]]
 * [[my-bookshelf]]
 * [[my-keyboard]]

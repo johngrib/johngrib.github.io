@@ -543,6 +543,7 @@ diary:
 container:
     - {fileName: docker}
 email:
+    - {fileName: email-gardening}
     - {fileName: email-validation}
 regex:
     - {fileName: email-validation}
