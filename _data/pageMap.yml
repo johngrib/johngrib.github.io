@@ -3076,7 +3076,7 @@ tail:
     summary: 'display the last part of a file'
     parent: command-line
     url: /wiki/tail
-    updated: '2019-01-06 23:43:13 +0900'
+    updated: '2020-01-19 21:54:13 +0900'
     children: []
 Take-the-Bully-by-the-Horns:
     type: wiki
