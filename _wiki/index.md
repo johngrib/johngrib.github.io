@@ -307,6 +307,7 @@ regenerate: true
 * [[gpg]]
 * [[grep]]
 * [[java_home]]
+* [[less-cmd]]
 * [[lsof]]
 * [[my-bash-cheatsheet]]
 * [[openssl]]

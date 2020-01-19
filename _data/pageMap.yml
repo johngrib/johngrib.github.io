@@ -725,7 +725,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find, fish-shell, fortune-cmd, glow-cmd, gpg, grep, java_home, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, uptime, yes, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find, fish-shell, fortune-cmd, glow-cmd, gpg, grep, java_home, less-cmd, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, uptime, yes, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2158,6 +2158,14 @@ legend:
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
     children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, Wordstar]
+less-cmd:
+    type: wiki
+    title: 'less 명령어'
+    summary: 'less is more'
+    parent: command-line
+    url: /wiki/less-cmd
+    updated: '2020-01-19 22:32:57 +0900'
+    children: []
 letter-case:
     type: wiki
     title: '대문자를 upper case, 소문자를 lower case라 부르는 이유'

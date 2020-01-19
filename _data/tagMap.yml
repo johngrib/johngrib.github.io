@@ -240,6 +240,7 @@ bash:
     - {fileName: gpg}
     - {fileName: grep}
     - {fileName: java_home}
+    - {fileName: less-cmd}
     - {fileName: lsof}
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
@@ -288,6 +289,7 @@ command:
     - {fileName: gpg}
     - {fileName: grep}
     - {fileName: java_home}
+    - {fileName: less-cmd}
     - {fileName: lsof}
     - {fileName: openssl}
     - {fileName: phpbrew}
