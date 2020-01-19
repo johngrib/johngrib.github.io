@@ -283,6 +283,7 @@ regenerate: true
 * [[Elastic-Load-Balancing]]
 
 ### [[command-line]]
+
 * [[ag]]
 * [[basename]]
 * [[bash-history]]
@@ -302,6 +303,7 @@ regenerate: true
 * [[find]]
 * [[fish-shell]]
 * [[fortune-cmd]]
+* [[glow-cmd]]
 * [[gpg]]
 * [[grep]]
 * [[java_home]]

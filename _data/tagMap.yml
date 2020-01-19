@@ -236,6 +236,7 @@ bash:
     - {fileName: find}
     - {fileName: fortune-cmd}
     - {fileName: git-alias}
+    - {fileName: glow-cmd}
     - {fileName: gpg}
     - {fileName: grep}
     - {fileName: java_home}
@@ -283,6 +284,7 @@ command:
     - {fileName: find}
     - {fileName: fortune-cmd}
     - {fileName: git}
+    - {fileName: glow-cmd}
     - {fileName: gpg}
     - {fileName: grep}
     - {fileName: java_home}
