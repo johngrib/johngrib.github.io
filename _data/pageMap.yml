@@ -1140,7 +1140,7 @@ email-gardening:
     summary: 'Gmail 만세'
     parent: my-lifehack
     url: /wiki/email-gardening
-    updated: '2020-01-19 13:04:36 +0900'
+    updated: '2020-01-20 21:07:42 +0900'
     children: []
 email-validation:
     type: wiki
