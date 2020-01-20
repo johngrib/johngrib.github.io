@@ -52,6 +52,7 @@ regenerate: true
 * [[John-von-Neumann]]
 * [[John-W-Backus]]
 * [[Las-chicas-del-cable]]
+* [[netflix-architecture-and-culture]]
 * [[Turbo-Pascal-the-first-IDE]]
 * [[Wordstar]]
 

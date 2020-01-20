@@ -739,6 +739,8 @@ principle:
     - {fileName: Naming-Principle}
 naming:
     - {fileName: Naming-Principle}
+availability:
+    - {fileName: netflix-architecture-and-culture}
 소수:
     - {fileName: Object-hashCode}
 oop:

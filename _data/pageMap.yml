@@ -2157,7 +2157,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, Wordstar]
+    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, Wordstar]
 less-cmd:
     type: wiki
     title: 'less 명령어'
@@ -2373,6 +2373,14 @@ Naming-Principle:
     parent: proverb
     url: /wiki/Naming-Principle
     updated: '2018-11-18 22:31:43 +0900'
+    children: []
+netflix-architecture-and-culture:
+    type: wiki
+    title: 'Netflix의 설계와 문화'
+    summary: ""
+    parent: legend
+    url: /wiki/netflix-architecture-and-culture
+    updated: '2020-01-20 21:50:07 +0900'
     children: []
 No-Silver-Bullet:
     type: wiki
