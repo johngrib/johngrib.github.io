@@ -6,14 +6,6 @@
     url: /blog/2017/01/21/create-jekyll-blog
     updated: '2017-01-21 22:37:25 +0900'
     children: []
-2017-01-22-jekyll-category-tag:
-    type: blog
-    title: 'Jekyll 블로그에 태그 추가하기.'
-    summary: '마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.'
-    parent: null
-    url: /blog/2017/01/22/jekyll-category-tag
-    updated: '2017-01-22 08:52:22 +0900'
-    children: []
 2017-01-30-ideavim-build:
     type: blog
     title: 'IdeaVIM 빌드가 안 되는 문제 해결.'
@@ -2045,6 +2037,14 @@ jdk13:
     parent: Java
     url: /wiki/jdk13
     updated: '2019-09-19 12:23:31 +0900'
+    children: []
+jekyll-category-tag:
+    type: wiki
+    title: 'Jekyll 블로그에 태그 추가하기'
+    summary: '마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.'
+    parent: index
+    url: /wiki/jekyll-category-tag
+    updated: '2017-01-22 08:52:22 +0900'
     children: []
 John-von-Neumann:
     type: wiki

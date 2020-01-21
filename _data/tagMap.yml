@@ -45,7 +45,7 @@ math:
     - {fileName: two-eggs-100-floor}
 jekyll:
     - {fileName: 2017-01-21-create-jekyll-blog}
-    - {fileName: 2017-01-22-jekyll-category-tag}
+    - {fileName: jekyll-category-tag}
     - {fileName: my-wiki}
     - {fileName: rouge-supported-languages}
 ideavim:
@@ -707,6 +707,9 @@ http:
     - {fileName: why-http-80-https-443}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
+blog:
+    - {fileName: jekyll-category-tag}
+    - {fileName: my-wiki}
 von-neumann:
     - {fileName: John-von-Neumann}
 sort:
@@ -732,8 +735,6 @@ wiki:
     - {fileName: my-wiki}
     - {fileName: vimwiki}
 vimwiki:
-    - {fileName: my-wiki}
-blog:
     - {fileName: my-wiki}
 principle:
     - {fileName: Naming-Principle}

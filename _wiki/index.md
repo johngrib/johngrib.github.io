@@ -485,6 +485,7 @@ regenerate: true
 * [[strangler-pattern]]
 * [[timeline]]
 * [[two-type-error]]
+* [[jekyll-category-tag]]
 
 ---
 
