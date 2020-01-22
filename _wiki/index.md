@@ -6,8 +6,6 @@ public  : true
 comment : false
 regenerate: true
 ---
-* TOC
-{:toc}
 
 ## [[diary]]
 
