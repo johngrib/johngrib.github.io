@@ -43,11 +43,6 @@ math:
     - {fileName: study-discrete-mathematics}
     - {fileName: tower-of-hanoi}
     - {fileName: two-eggs-100-floor}
-jekyll:
-    - {fileName: 2017-01-21-create-jekyll-blog}
-    - {fileName: jekyll-category-tag}
-    - {fileName: my-wiki}
-    - {fileName: rouge-supported-languages}
 ideavim:
     - {fileName: 2017-01-30-ideavim-build}
 open-source:
@@ -495,6 +490,11 @@ Think-Bayes:
     - {fileName: Think-Bayes}
 추정:
     - {fileName: Copernican-Principle}
+jekyll:
+    - {fileName: create-jekyll-blog}
+    - {fileName: jekyll-category-tag}
+    - {fileName: my-wiki}
+    - {fileName: rouge-supported-languages}
 history:
     - {fileName: Cromwell-s-rule}
     - {fileName: TETRIS-EFFECT}

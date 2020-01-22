@@ -1,11 +1,3 @@
-2017-01-21-create-jekyll-blog:
-    type: blog
-    title: 'github에 Jekyll 블로그를 만들었다.'
-    summary: '누구나 만드는 github 공짜 블로그.'
-    parent: null
-    url: /blog/2017/01/21/create-jekyll-blog
-    updated: '2017-01-21 22:37:25 +0900'
-    children: []
 2017-01-30-ideavim-build:
     type: blog
     title: 'IdeaVIM 빌드가 안 되는 문제 해결.'
@@ -797,6 +789,14 @@ Copernican-Principle:
     parent: proverb
     url: /wiki/Copernican-Principle
     updated: '2019-12-07 08:12:29 +0900'
+    children: []
+create-jekyll-blog:
+    type: wiki
+    title: 'github에 Jekyll 블로그를 만들었다'
+    summary: '누구나 만드는 github 공짜 블로그'
+    parent: index
+    url: /wiki/create-jekyll-blog
+    updated: '2017-01-21 22:37:25 +0900'
     children: []
 Cromwell-s-rule:
     type: wiki

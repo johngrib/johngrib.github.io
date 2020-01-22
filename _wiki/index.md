@@ -484,6 +484,7 @@ regenerate: true
 * [[timeline]]
 * [[two-type-error]]
 * [[jekyll-category-tag]]
+* [[create-jekyll-blog]]
 
 ---
 
