@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2020-01-16 20:01:48 +0900
+updated : 2020-01-22 21:35:49 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,14 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 같은 패키지 안에 있는 멀쩡한 클래스를 못 찾는 경우
+
+같은 패키지 안에 있는 클래스를 사용했는데 인텔리제이가 빨간 줄을 보여주면서 `cannot access class...`와 같은 경고를 보여주는 경우가 있다.
+
+빌드를 돌려보면 아무런 문제가 없다. 이런 경우엔 인텔리제이 캐시에 잘못된 파일이 저장되어 있을 수 있다.
+
+`File` - `Invalidate Caches / Restart`를 실행해주면 해결된다.
 
 ## IdeaVim 설치
 

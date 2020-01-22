@@ -1844,7 +1844,7 @@ intellij:
     summary: '문제 해결한 경험을 모아본다'
     parent: tools
     url: /wiki/intellij
-    updated: '2020-01-16 20:01:48 +0900'
+    updated: '2020-01-22 21:35:49 +0900'
     children: []
 IP:
     type: wiki
