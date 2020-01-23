@@ -748,7 +748,7 @@ CONCRETE-MATH:
     summary: '로널드 그레이엄과 도널드 커누스, 오렌 파타슈닉의 Stanford 강의 교재'
     parent: book
     url: /wiki/CONCRETE-MATH
-    updated: '2018-10-19 08:31:49 +0900'
+    updated: '2020-01-23 23:58:56 +0900'
     children: []
 config-ideavim:
     type: wiki
