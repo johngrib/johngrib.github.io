@@ -3,7 +3,7 @@ layout  : wiki
 title   : 해머스푼으로 한/영 전환 오로라를 만들자
 summary : 지금 선택된 입력기가 한글인지 영어인지 쉽게 알아보자
 date    : 2019-12-18 21:25:35 +0900
-updated : 2019-12-25 18:53:46 +0900
+updated : 2020-01-25 00:30:38 +0900
 tag     : hammerspoon
 toc     : true
 public  : true
@@ -33,7 +33,7 @@ latex   : false
 
 멋진 아이디어를 제공해 주신 동료 황건구 님께 감사를 드립니다.
 
-## 코드
+## 프로젝트 파일 시스템 구조
 
 다음은 `~/.hammerspoon`의 하위 경로를 `tree` 명령으로 조사한 것이다.
 
@@ -54,10 +54,33 @@ $ tree .
     └── vim.lua
 ```
 
+## 준비물: 영문 입력 소스의 이름을 확인하자
+
+화면 상단 상태 막대에서 해머스푼 아이콘을 클릭한 다음, `Console`을 선택한다.
+
+![]( /post-img/hammerspoon-inputsource-aurora/hammer-menu.png )
+
+콘솔이 나타나면, 영문 입력기로 전환한 다음 콘솔에 다음과 같이 입력한다.
+
+```lua
+hs.keycodes.currentSourceID()
+```
+
+그러면 자신이 사용하고 있는 인풋소스의 이름을 알 수 있다.
+
+내 경우엔 `com.apple.keylayout.ABC`이 나오는데, 내가 `ABC`를 쓰고 있기 때문이다.
+
+![]( /post-img/hammerspoon-inputsource-aurora/keyboard-preferences.png )
+
+만약 `US`를 사용하고 있다면 `com.apple.keylayout.US`가 나올 것이다.
+
+## 코드
+
 * [inputsource_aurora.lua]( https://github.com/johngrib/hammerspoon-config/blob/master/modules/inputsource_aurora.lua ) - 내 최신 파일은 이 링크에서 볼 수 있다.
 
 ```lua
 local boxes = {}
+-- 자신이 사용하고 있는 English 인풋 소스 이름을 넣어준다
 local inputEnglish = "com.apple.keylayout.ABC"
 local box_height = 23
 local box_alpha = 0.35
