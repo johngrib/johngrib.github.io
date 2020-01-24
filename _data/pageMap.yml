@@ -1596,7 +1596,7 @@ golang-waitgroup-add:
     summary: '더하는 숫자가 중요한 게 아니라 0을 맞추는 게 중요'
     parent: Golang
     url: /wiki/golang-waitgroup-add
-    updated: '2018-11-29 11:11:32 +0900'
+    updated: '2020-01-24 23:59:22 +0900'
     children: []
 google-search-console-remove-outdated-content:
     type: wiki

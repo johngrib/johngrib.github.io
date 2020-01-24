@@ -3,7 +3,7 @@ layout  : wiki
 title   : Go WaitGroup에 1외에 다른 값을 Add 하면?
 summary : 더하는 숫자가 중요한 게 아니라 0을 맞추는 게 중요
 date    : 2018-11-29 07:42:53 +0900
-updated : 2018-11-29 11:11:32 +0900
+updated : 2020-01-24 23:59:22 +0900
 tag     : gloang goroutine
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 발단
+## 발단
 
 Golang Korea(Facebook public group)에 [이런 질문이 올라왔다](https://www.facebook.com/groups/golangko/permalink/1093797934131018/ ).
 
@@ -31,7 +31,7 @@ go routine에서 sync.WaitGroup.Add(int n) 의 인자로 꼭 1만 넣어야 하�
 
 이번 기회에 자세히 살펴보면 좋은 공부가 될 것 같다.
 
-# 레퍼런스를 찾아보자
+## 레퍼런스를 찾아보자
 
 일단은 golang.org에서 `WaitGroup.Add`를 찾아보았다.
 
@@ -75,9 +75,9 @@ Note that calls with a positive delta that occur when the counter is zero must h
 
 * 만약 `WaitGroup`을 재활용하려면, 반드시 먼저 호출한 `Wait` 함수의 결과가 리턴된 다음에, `Add` 함수를 호출해 사용하도록 할 것.
 
-# WaitGroup의 코드를 읽어보자
+## WaitGroup의 코드를 읽어보자
 
-## Done
+### Done
 
 <https://golang.org/src/sync/waitgroup.go?s=3400:3427#L88 >
 
@@ -94,7 +94,7 @@ func (wg *WaitGroup) Done() {
 
 상식적으로 생각을 해보면 `Add`한 숫자와 `Done`의 숫자가 맞아 떨어져야 에러 없이 `Wait`가 종료될 거라고 추측할 수 있다.
 
-## Add
+### Add
 
 <https://golang.org/src/sync/waitgroup.go?s=2022:2057#L43 >
 
@@ -149,7 +149,7 @@ func (wg *WaitGroup) Add(delta int) {
 }
 ```
 
-## Wait
+### Wait
 
 <https://golang.org/src/sync/waitgroup.go?s=3497:3524#L93 >
 
@@ -199,9 +199,9 @@ func (wg *WaitGroup) Wait() {
 }
 ```
 
-# 실행해보자
+## 실행해보자
 
-## PASS: 전형적인 경우
+### PASS: 전형적인 경우
 
 * one, two, three를 출력하는 간단한 예제를 작성해 보았다.
 * 가장 전형적인 예제로, `Add(1)` 하나에 고루틴 하나씩 돌아간다.
@@ -263,7 +263,7 @@ func main() {
 
 $$ 1 - 1 + 1 - 1 = 0 $$ 이므로 문제 없이 돌아간다.
 
-## PASS: 한꺼번에 Add 하는 경우
+### PASS: 한꺼번에 Add 하는 경우
 
 * `Add(3)`을 하고 고루틴 셋을 돌려본다.
 * 카운팅만 제대로 되면 문제 없이 출력하며 종료된다.
@@ -315,7 +315,7 @@ func main() {
 }
 ```
 
-## FAIL: Add 숫자가 많은 경우
+### FAIL: Add 숫자가 많은 경우
 
 * 4를 `Add` 하고, 3개의 고루틴을 돌리면 error.
 
@@ -366,7 +366,7 @@ func main() {
 
 $$ 4 - 1 - 1 - 1 = 1$$ 이므로 `0`으로 끝나지 않는 것이 문제.
 
-## FAIL: Add 숫자가 부족한 경우
+### FAIL: Add 숫자가 부족한 경우
 
 * 2를 `Add`하고, 3개의 고루틴을 돌리면 panic.
 
@@ -442,7 +442,7 @@ func main() {
 }
 ```
 
-## PASS: 단위를 2로 바꿔본다면?
+### PASS: 단위를 2로 바꿔본다면?
 
 쓸 일 없는 방법이긴 하지만 이런 방법도 되긴 한다.
 
@@ -476,13 +476,13 @@ one
 two
 ```
 
-# 결론
+## 결론
 
 * 1 말고 다른 양수 값을 넣어도 괜찮다. 컨트롤할 자신이 있다면.
 * 음수를 넣는 것도 가능하긴 하지만 하지 말자.
     * golang 만든 사람들이 괜히 `-1`만 하는 `Done`을 만든 게 아니다.
 
-# Links
+## Links
 
 * <https://www.facebook.com/groups/golangko/permalink/1093797934131018/ >
 * golang.org
