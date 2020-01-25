@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) Go 1.12에서 배포한 것을 디버깅하기
 summary : Debugging what you deploy in Go 1.12
 date    : 2019-06-09 23:13:28 +0900
-updated : 2019-06-10 20:57:11 +0900
+updated : 2020-01-25 21:00:23 +0900
 tag     : golang 번역 the-go-blog
 toc     : true
 public  : true
@@ -17,7 +17,7 @@ latex   : false
 * 의역이 많으며 오역이 있을 수 있습니다.
 * (역: ...) 은 원문에 없는 말을 이해를 돕기 위해 제가 추가한 것입니다.
 
-# Introduction
+## Introduction
 
 **서문**
 
@@ -44,7 +44,7 @@ Go 1.11과 Go 1.12에는 디버깅과 관련된 중요한 진보가 있었습니
 * 구문의 경계(statement boundaries)를 더 정확하게 식별하여, 단계별 이동(stepping)을 줄이고 각 브레이크 포인트가 프로그래머가 예상한 곳에 더 잘 도달할 수 있도록 향상.
 * Delve의 Go 함수 호출에 대한 예비 지원을 추가(고루틴과 가비지 컬렉션이 있기 때문에 C/C++보다 더 교묘하게 작동합니다).
 
-# Debugging optimized code with Delve
+## Debugging optimized code with Delve
 
 **Delve를 사용해 최적화된 코드를 디버깅하기**
 
@@ -66,7 +66,7 @@ Delve는 GoLand, VS Code, Vim의 디버깅 엔진이기도 합니다.
 크래시가 발생한 코어 파일이 있다면, `dlv core your_program your_core` 명령으로 조사하는 것도 가능합니다.
 Delve 1.12 및 최신 버전 릴리즈를 사용하면 최적화된 바이너리에서도 여러 변수를 조사하는 것이 가능합니다.
 
-# Improved value inspection
+## Improved value inspection
 
 **값 검사 기능 향상**
 
@@ -78,7 +78,7 @@ Go 1.11부터는 컴파일러가 DWARF 위치 목록을 내보내기 시작했�
 
 (역: [DWARF](https://en.wikipedia.org/wiki/DWARF )는 표준화된 디버깅 데이터 포맷. )
 
-# Improved stepping
+## Improved stepping
 
 **향상된 단계별 실행**
 
@@ -99,7 +99,7 @@ _Go 1.11 and 1.12 record statement boundary information and do a better job of t
 
 그러나 Go 1.11과 1.12에서는 구문의 경계(statement boundary) 정보를 기록해 두기 때문에, 최적화되었거나 인라이닝된 소스 코드의 라인 넘버를 예전보다 더 잘 추적합니다. 따라서, Go 1.12에서 위의 코드를 디버거로 단계별로 실행하면 모든 라인에서 멈추고 개발자가 기대하는 순서대로 진행됩니다.
 
-# Function calls
+## Function calls
 
 **함수 호출**
 
@@ -116,7 +116,7 @@ Values returned:
     ~r1: 8
 ```
 
-# The path forward
+## The path forward
 
 **앞으로의 발전 방향**
 
@@ -138,7 +138,7 @@ Go 1.12는 더욱 최적화된 바이너리의 빌드를 목표로 하는 더 �
 
 마지막으로, 우리는 단계별 실행(stepping)을 개선하기 위해 노력하고 있습니다. Panic 이 일어나는 경우의 순서라던가 루프 중일 때의 순서 등을 개선하여, 일반적으로 가능한 한 소스 코드의 순서를 따르게 하려 합니다.
 
-# A note on macOS support
+## A note on macOS support
 
 **macOS 지원에 대한 참고 사항**
 
@@ -155,7 +155,7 @@ splitdwarf는 `go get golang.org/x/tools/cmd/splitdwarf` 명령으로 얻을 수
 
 _By David Chase_
 
-# License 관련 사항
+## License 관련 사항
 
 * 이 번역문의 원문은 [Creative Commons Attribution 3.0 라이센스](https://creativecommons.org/licenses/by/3.0/deed.ko )를 따릅니다.
 * 이 번역문의 원문에 첨부된 코드는 [BSD license](https://golang.org/LICENSE )를 따릅니다.
