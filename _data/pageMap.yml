@@ -1356,7 +1356,7 @@ find:
     summary: 'walk a file hierarchy'
     parent: command-line
     url: /wiki/find
-    updated: '2020-01-25 21:36:16 +0900'
+    updated: '2020-01-25 21:36:55 +0900'
     children: []
 fine-dust:
     type: wiki
