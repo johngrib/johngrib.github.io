@@ -3,7 +3,7 @@ layout  : wiki
 title   : find 명령어
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2019-11-20 21:32:50 +0900
+updated : 2020-01-25 21:36:16 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -27,6 +27,9 @@ find / -name 'lostfile.txt' 2>/dev/null
 
 # 사이즈가 1mb 이상인 파일을 찾는다.
 find . -size +1024
+
+# 사이즈가 100 MB 이상인 파일을 모두 찾아 사이즈가 큰 순서대로 정렬한다
+find ~/Documents/ -size +100M -ls | sort -k7nr
 ```
 
 ### 삭제
