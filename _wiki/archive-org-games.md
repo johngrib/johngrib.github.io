@@ -3,7 +3,7 @@ layout  : wiki
 title   : archive.org의 재미있는 옛날 게임들
 summary : 
 date    : 2020-01-25 10:26:51 +0900
-updated : 2020-01-25 13:39:19 +0900
+updated : 2020-01-25 23:19:19 +0900
 tag     : game
 toc     : true
 public  : true
@@ -25,6 +25,7 @@ latex   : false
 [Alone in the dark 1](https://archive.org/details/msdos_Alone_in_the_Dark_1992 )
 
 * 1992년. 인기가 굉장했던 게임이다.
+
 ## Dangerous Dave in the Haunted Mansion
 
 [Dangerous Dave in the Haunted Mansion](https://archive.org/details/msdos_Dangerous_Dave_in_the_Haunted_Mansion_1991 )
