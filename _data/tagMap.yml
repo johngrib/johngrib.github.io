@@ -229,7 +229,7 @@ bash:
     - {fileName: du}
     - {fileName: fc}
     - {fileName: fd-cmd}
-    - {fileName: find}
+    - {fileName: find-cmd}
     - {fileName: fortune-cmd}
     - {fileName: git-alias}
     - {fileName: glow-cmd}
@@ -278,7 +278,7 @@ command:
     - {fileName: du}
     - {fileName: fc}
     - {fileName: fd-cmd}
-    - {fileName: find}
+    - {fileName: find-cmd}
     - {fileName: fortune-cmd}
     - {fileName: git}
     - {fileName: glow-cmd}

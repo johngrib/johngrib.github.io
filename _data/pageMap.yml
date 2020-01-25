@@ -717,7 +717,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find, fish-shell, fortune-cmd, glow-cmd, gpg, grep, java_home, less-cmd, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, java_home, less-cmd, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -1350,13 +1350,13 @@ fibonacci:
     url: /wiki/fibonacci
     updated: '2019-12-16 22:20:50 +0900'
     children: []
-find:
+find-cmd:
     type: wiki
     title: 'find 명령어'
     summary: 'walk a file hierarchy'
     parent: command-line
-    url: /wiki/find
-    updated: '2020-01-25 21:36:55 +0900'
+    url: /wiki/find-cmd
+    updated: '2020-01-25 21:38:02 +0900'
     children: []
 fine-dust:
     type: wiki

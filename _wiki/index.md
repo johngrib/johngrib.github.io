@@ -304,7 +304,7 @@ regenerate: true
 * [[du]]
 * [[fc]]
 * [[fd-cmd]]
-* [[find]]
+* [[find-cmd]]
 * [[fish-shell]]
 * [[fortune-cmd]]
 * [[glow-cmd]]
