@@ -3,7 +3,7 @@ layout  : wiki
 title   : archive.org의 재미있는 옛날 게임들
 summary : 
 date    : 2020-01-25 10:26:51 +0900
-updated : 2020-01-25 23:19:19 +0900
+updated : 2020-01-25 23:28:11 +0900
 tag     : game
 toc     : true
 public  : true
@@ -25,6 +25,13 @@ latex   : false
 [Alone in the dark 1](https://archive.org/details/msdos_Alone_in_the_Dark_1992 )
 
 * 1992년. 인기가 굉장했던 게임이다.
+
+## Prehistorik
+
+[Prehistorik](https://archive.org/details/msdos_Prehistorik_1991 )
+
+* 1991년.
+* 친구들이 "고인돌 1"이라 부르던 게임이다. 꽤 재미있고 오래 즐길 수 있는 게임.
 
 ## Dangerous Dave in the Haunted Mansion
 
