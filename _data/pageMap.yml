@@ -717,7 +717,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, java_home, less-cmd, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, how-to-escape-cli, java_home, less-cmd, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -1798,6 +1798,14 @@ how-to:
     url: /wiki/how-to
     updated: '2018-02-04 15:57:05 +0900'
     children: [docker, googling, mathjax-latex]
+how-to-escape-cli:
+    type: wiki
+    title: 'CLI 프로그램 탈출방법 모음'
+    summary: '터미널에서는 나도 후디니가 될 수 있다!'
+    parent: command-line
+    url: /wiki/how-to-escape-cli
+    updated: '2020-01-25 22:21:33 +0900'
+    children: []
 http:
     type: wiki
     title: HTTP

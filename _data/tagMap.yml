@@ -235,6 +235,7 @@ bash:
     - {fileName: glow-cmd}
     - {fileName: gpg}
     - {fileName: grep}
+    - {fileName: how-to-escape-cli}
     - {fileName: java_home}
     - {fileName: less-cmd}
     - {fileName: lsof}
@@ -284,6 +285,7 @@ command:
     - {fileName: glow-cmd}
     - {fileName: gpg}
     - {fileName: grep}
+    - {fileName: how-to-escape-cli}
     - {fileName: java_home}
     - {fileName: less-cmd}
     - {fileName: lsof}
