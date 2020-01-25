@@ -3580,7 +3580,7 @@ yes:
     summary: '문자열을 반복 출력한다'
     parent: command-line
     url: /wiki/yes
-    updated: '2020-01-25 21:18:07 +0900'
+    updated: '2020-01-25 21:26:15 +0900'
     children: []
 ykman:
     type: wiki
