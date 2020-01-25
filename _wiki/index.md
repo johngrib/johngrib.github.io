@@ -83,7 +83,6 @@ regenerate: true
     * [[Algorithms-to-Live-By]]
     * [[Clean-Code]]
     * [[Code-Complete-2]]
-    * [[Computer-Science-Distilled]]
     * [[CONCRETE-MATH]]
     * [[Designing-Data-Intensive-Applications]]
     * [[DevOps-Troubleshooting]]

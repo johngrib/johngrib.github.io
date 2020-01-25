@@ -445,7 +445,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, Computer-Science-Distilled, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, Effective-Java, Geek-Atlas, GoF-Design-Pattern, grow-together, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, Schrodinger-s-goyang-Hee, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, Effective-Java, Geek-Atlas, GoF-Design-Pattern, grow-together, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, Schrodinger-s-goyang-Hee, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
 book-log-2019:
     type: wiki
     title: '2019년 독서록'
@@ -741,14 +741,6 @@ composer:
     parent: php
     url: /wiki/composer
     updated: '2019-01-13 22:54:23 +0900'
-    children: []
-Computer-Science-Distilled:
-    type: wiki
-    title: '(책) 한 권으로 그리는 컴퓨터 과학 로드맵'
-    summary: ""
-    parent: book
-    url: /wiki/Computer-Science-Distilled
-    updated: '2018-04-19 21:07:04 +0900'
     children: []
 CONCRETE-MATH:
     type: wiki

@@ -471,8 +471,6 @@ php:
     - {fileName: email-validation}
     - {fileName: php}
     - {fileName: phpbrew}
-computer-science:
-    - {fileName: Computer-Science-Distilled}
 proverb:
     - {fileName: Conway-s-law}
     - {fileName: Edsel-edict}
