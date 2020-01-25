@@ -519,6 +519,7 @@ java:
     - {fileName: java-gc-zgc}
     - {fileName: java-interface}
     - {fileName: java-jigsaw-quick-start}
+    - {fileName: java-lambda}
     - {fileName: java-optional}
     - {fileName: java-remainder-operator}
     - {fileName: java-stream}
