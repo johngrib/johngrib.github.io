@@ -182,6 +182,7 @@ DI:
     - {fileName: 2017-05-16-jwp-11}
 game:
     - {fileName: 2017-07-09-vim-game-code-break}
+    - {fileName: archive-org-games}
     - {fileName: TETRIS-EFFECT}
 aheui:
     - {fileName: 2017-07-14-aheui-explained}

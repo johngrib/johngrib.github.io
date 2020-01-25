@@ -294,6 +294,14 @@ andon-cord:
     url: /wiki/andon-cord
     updated: '2020-01-16 21:19:44 +0900'
     children: []
+archive-org-games:
+    type: wiki
+    title: 'archive.org의 재미있는 옛날 게임들'
+    summary: ""
+    parent: index
+    url: /wiki/archive-org-games
+    updated: '2020-01-25 13:39:19 +0900'
+    children: []
 availability:
     type: wiki
     title: 가용성(Availability)
