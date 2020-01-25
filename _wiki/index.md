@@ -331,7 +331,7 @@ regenerate: true
 * [[touch]]
 * [[tr-cmd]]
 * [[uptime]]
-* [[yes]]
+* [[yes-cmd]]
 * [[ykman]]
 
 ### [[Excel]]
