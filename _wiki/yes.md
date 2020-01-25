@@ -3,7 +3,7 @@ layout  : wiki
 title   : yes 명령어
 summary : 문자열을 반복 출력한다
 date    : 2018-09-15 21:45:14 +0900
-updated : 2019-01-06 23:13:05 +0900
+updated : 2020-01-25 21:18:07 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 기능
+## 기능
 
 * 실행해보면 `y`를 무한히 출력한다.
 
@@ -39,7 +39,7 @@ hello world!
 ...
 ```
 
-# 응용
+## 응용
 
 * `y`응답이 필요한 명령어에 자동으로 응답하도록 사용할 수 있다.
 
@@ -66,7 +66,7 @@ $ cat base.txt | wc -l
 $ yes > /dev/null
 ```
 
-# 그리고...
+## 그리고...
 
 * Shining 놀이를 할 수 있다.
 
@@ -88,7 +88,7 @@ $ yes 'I WILL NOT WASTE COMPUTING POWER'
 $ yes "$(seq 231 -1 16)" | while read i; do printf "\x1b[48;5;${i}m\n"; sleep .02; done
 ```
 
-# Links
+## Links
 
 * [Yes(Unix) (wikipedia)](https://en.wikipedia.org/wiki/Yes_(Unix) )
 
