@@ -3,7 +3,7 @@ layout  : wiki
 title   : archive.org의 재미있는 옛날 게임들
 summary : 
 date    : 2020-01-25 10:26:51 +0900
-updated : 2020-01-25 23:28:11 +0900
+updated : 2020-01-25 23:30:30 +0900
 tag     : game
 toc     : true
 public  : true
@@ -12,6 +12,14 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## Prehistorik 2
+
+[Prehistorik 2](https://archive.org/details/msdos_Prehistorik_2_1993 )
+
+* 1993년.
+* 친구들이 "고인돌 2"라 부르던 게임이다. 재미와 감각, 볼륨이 대단했던 게임으로 기억한다.
+* 역동적인 캐릭터와 숨겨진 요소가 많아 계속해서 플레이해도 엄청 재미있었던 게임이다.
 
 ## Titus the fox
 
