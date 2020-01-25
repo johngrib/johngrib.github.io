@@ -3,7 +3,7 @@ layout  : wiki
 title   : yes 명령어
 summary : 문자열을 반복 출력한다
 date    : 2018-09-15 21:45:14 +0900
-updated : 2020-01-25 21:26:15 +0900
+updated : 2020-01-25 21:31:04 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -78,7 +78,7 @@ yes 'All Work and No Play makes Jack a dull boy'
 yes 'I WILL NOT WASTE COMPUTING POWER'
 ```
 
-![I WILL NOT WASTE CHALK](https://vignette.wikia.nocookie.net/simpsons/images/3/3a/Chalkboard_gag_%28Bart_the_Genius%29.png/revision/latest?cb=20130526215231 )
+![I WILL NOT WASTE CHALK]( /post-img/yes-cmd/chalkboard.png )
 
 * 터미널에서 무지개 그라데이션을 볼 수 있다. (화면보호기로 써보자)
 
