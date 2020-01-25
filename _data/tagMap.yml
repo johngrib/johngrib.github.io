@@ -511,6 +511,7 @@ java:
     - {fileName: java-abstract-class}
     - {fileName: java-enhancements}
     - {fileName: java-enum}
+    - {fileName: java-functional-interface}
     - {fileName: java-g1gc}
     - {fileName: java-gc-eden-to-survivor}
     - {fileName: java-gc-parallel-collector}

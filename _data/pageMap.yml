@@ -1877,7 +1877,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-enum, java-interface, java-jigsaw-quick-start, java-lambda, java-optional, java-remainder-operator, java-stream, java-switch-expression, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-enum, java-functional-interface, java-interface, java-jigsaw-quick-start, java-lambda, java-optional, java-remainder-operator, java-stream, java-switch-expression, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -1909,6 +1909,14 @@ java-enum:
     parent: Java
     url: /wiki/java-enum
     updated: '2020-01-05 22:33:57 +0900'
+    children: []
+java-functional-interface:
+    type: wiki
+    title: 'Java 함수형 인터페이스의 사용'
+    summary: ""
+    parent: Java
+    url: /wiki/java-functional-interface
+    updated: '2020-01-25 20:30:00 +0900'
     children: []
 java-g1gc:
     type: wiki

@@ -153,6 +153,7 @@ regenerate: true
 * [[java-abstract-class]]
 * [[java-enhancements]]
 * [[java-enum]]
+* [[java-functional-interface]]
 * [[java-interface]]
 * [[java-jigsaw-quick-start]]
 * [[java-lambda]]
