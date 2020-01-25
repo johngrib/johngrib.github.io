@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 8
 summary : 
 date    : 2018-07-25 16:57:00 +0900
-updated : 2018-07-25 17:09:16 +0900
+updated : 2020-01-25 21:06:30 +0900
 tag     : java
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# Links
+## Links
 
 * [What's New in JDK 8](http://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html )
 * [Known Issues for JDK 8](http://www.oracle.com/technetwork/java/javase/8-known-issues-2157115.html )

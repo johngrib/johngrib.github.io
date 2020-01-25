@@ -2036,7 +2036,7 @@ java8:
     summary: ""
     parent: Java
     url: /wiki/java8
-    updated: '2018-07-25 17:09:16 +0900'
+    updated: '2020-01-25 21:06:30 +0900'
     children: []
 java8-performance-improvement-for-hashmap:
     type: wiki
