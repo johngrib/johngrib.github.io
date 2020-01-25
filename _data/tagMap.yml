@@ -489,7 +489,6 @@ Think-Bayes:
     - {fileName: locomotive-problem}
     - {fileName: MnM-problem}
     - {fileName: Monty-Hall-problem}
-    - {fileName: Oliver-s-blood}
     - {fileName: Think-Bayes}
 추정:
     - {fileName: Copernican-Principle}

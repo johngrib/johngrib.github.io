@@ -3,8 +3,8 @@ layout  : wiki
 title   : 올리버의 혈액형 문제(Oliver's blood)
 summary : 흔한 혈액형으로는 유죄로 몰 수 없지
 date    : 2018-04-22 22:26:19 +0900
-updated : 2018-04-24 20:49:44 +0900
-tag     : Think-Bayes bayes
+updated : 2020-01-25 22:46:33 +0900
+tag     : bayes
 toc     : true
 public  : true
 parent  : study-think-bayes
@@ -13,10 +13,10 @@ latex   : true
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * 이 문서는 [[Think-Bayes]] 책 67~69쪽을 공부한 내용이다.
-* [David J. C. MacKay](https://en.wikipedia.org/wiki/David_J._C._MacKay )의 [Information Theory, Inference, and Learning Algorithms](http://www.inference.org.uk/itprnn/book.pdf )에서 소개된 것이다.
+* [David J. C. MacKay][mackay]의 [Information Theory, Inference, and Learning Algorithms][mackay-book]에서 소개된 것이다.
 
 >
 Two people have left traces of their own blood at the scene of a crime.
@@ -38,9 +38,9 @@ that Oliver was one of the two people present at the crime?
 이 자료들이 Oliver가 범행 현장에 있었던 두 사람 중 한 명이라는 증거가 될 수 있는가?
 
 
-# 풀이
+## 풀이
 
-## 공산을 사용해 풀기
+### 공산을 사용해 풀기
 
 * [[Bayes-theorem]] 문서의 공산을 참고할 것.
 
@@ -113,9 +113,12 @@ $$
 즉, Oliver가 범행 현장에 없었을 확률이 더 높다.
 
 
-# Links
+## Links
 
 * [[Think-Bayes]]
 * [[Bayes-theorem]]
 * [Information Theory, Inference, and Learning Algorithms(PDF)](http://www.inference.org.uk/itprnn/book.pdf )
     * [David J. C. MacKay](https://en.wikipedia.org/wiki/David_J._C._MacKay )
+
+[mackay]: https://en.wikipedia.org/wiki/David_J._C._MacKay
+[mackay-book]: http://www.inference.org.uk/itprnn/book.pdf
