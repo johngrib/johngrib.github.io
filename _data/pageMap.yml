@@ -3389,7 +3389,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [config-ideavim, my-wiki, two-views-of-vim, ultisnips, vim-auto-completion, vim-coc, vim-conceallevel, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
+    children: [config-ideavim, my-wiki, two-views-of-vim, ultisnips, vim-auto-completion, vim-coc, vim-conceallevel, vim-configure-split, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
 vim-auto-completion:
     type: wiki
     title: 'vim 자동완성 기능 사용하기'
@@ -3413,6 +3413,14 @@ vim-conceallevel:
     parent: Vim
     url: /wiki/vim-conceallevel
     updated: '2017-12-20 13:13:32 +0900'
+    children: []
+vim-configure-split:
+    type: wiki
+    title: 'vim 설정 파일을 주제별로 여러 파일로 분리하자'
+    summary: ""
+    parent: Vim
+    url: /wiki/vim-configure-split
+    updated: '2020-01-26 14:29:49 +0900'
     children: []
 vim-f-hangul:
     type: wiki

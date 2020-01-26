@@ -146,6 +146,7 @@ vim:
     - {fileName: vim-auto-completion}
     - {fileName: vim-coc}
     - {fileName: vim-conceallevel}
+    - {fileName: vim-configure-split}
     - {fileName: vim-f-hangul}
     - {fileName: vim-go-auto-import}
     - {fileName: vim-go-env}

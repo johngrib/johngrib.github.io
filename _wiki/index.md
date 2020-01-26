@@ -377,6 +377,7 @@ regenerate: true
 * [[vagrant-docker-get-start]]
 
 ## [[Vim]]
+
 * [[config-ideavim]]
 * [[my-wiki]]
 * [[two-views-of-vim]]
@@ -384,6 +385,7 @@ regenerate: true
 * [[vim-auto-completion]]
 * [[vim-coc]]
 * [[vim-conceallevel]]{conceallevel (Vim)}
+* [[vim-configure-split]]
 * [[vim-f-hangul]]
 * [[vim-persistent-undo]]
 * [[vim-rest-console]]
