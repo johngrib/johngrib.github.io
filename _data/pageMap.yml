@@ -3476,7 +3476,7 @@ vim-tagbar-with-markdown:
     summary: '.vimrc와 .ctags를 약간만 손보면 된다'
     parent: Vim
     url: /wiki/vim-tagbar-with-markdown
-    updated: '2020-01-26 21:59:41 +0900'
+    updated: '2020-01-26 22:32:39 +0900'
     children: []
 vim-tmux-t-ut:
     type: wiki
