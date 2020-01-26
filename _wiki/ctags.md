@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2018-10-03 23:48:53 +0900
+updated : 2020-01-26 22:36:12 +0900
 tag     : bash vim ctags golang command
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# ctags?
+## ctags?
 
 * ctags는 소스코드를 탐색해 함수명, 변수명, 클래스명, 인터페이스명 등을 수집하고 위치를 기록한 인덱싱 파일(`tags`)을 만들어 주는 도구다.
 * 프로젝트 내 변수나 함수가 정의된 곳을 찾아보거나 특정 함수를 호출하는 모든 위치를 조회할 수 있다.
@@ -23,7 +23,7 @@ latex   : false
 
 참고: 이 문서에서 다루는 ctags는 **Universal Ctags** 이다.
 
-# Why I use Universal ctags
+## Why I use Universal ctags
 
 * Exuberant ctags가 ctags를 대체하기 위해 나온 것이므로 original ctags는 고려하지 않는다.
 
@@ -41,9 +41,9 @@ latex   : false
     * gotags는 내 컴퓨터에서 vim-gutentags와 사용할 때마다 제대로 동작하지 않았다. (내 잘못일 수도 있다)
 * 중요: [**Drew Neil**도 Universal ctags를 사용한다](https://github.com/universal-ctags/ctags/issues/446 ).
 
-# Install
+## Install
 
-## Mac
+### Mac
 
 ```sh
 $ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
@@ -51,7 +51,7 @@ $ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 * 참고: `brew install ctags`로 설치하면 Exuberant Ctags가 설치되므로 주의할 것.
 
-# tags 파일 생성하기
+## tags 파일 생성하기
 
 프로젝트 루트 디렉토리에서 다음 명령어를 입력하면 ctags로 tags 파일을 생성할 수 있다.
 
@@ -59,7 +59,7 @@ $ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 $ ctags -R
 ```
 
-# tags 파일 .gitignore 설정
+## tags 파일 .gitignore 설정
 
 `.gitignore` 파일에 다음을 추가하면 된다.
 
@@ -76,9 +76,9 @@ $ echo 'tags' >> ./.git/info/exclude
 ```
 
 
-# vim 에서의 사용
+## vim 에서의 사용
 
-## ctags 사용 vim 명령들
+### ctags 사용 vim 명령들
 
 설정 및 수동 실행
 
@@ -110,7 +110,7 @@ $ echo 'tags' >> ./.git/info/exclude
     * `:tags` - 태그 점프 기록 stack을 볼 수 있다.
     * `:help tag-stack`
 
-## vim-gutentags 플러그인
+### vim-gutentags 플러그인
 
 * `ctags`는 자동으로 돌아가는 종류의 명령이 아니다.
     * 명령을 실행시켜 주지 않으면 `tags` 파일이 갱신되지 않는다.
@@ -128,13 +128,13 @@ autocmd BufWritePost * call system("ctags -R")
     * vim으로 코드를 편집하는 동안 백그라운드에서 자동으로 `tags` 파일을 갱신한다.
     * `git`을 참고하여 변경된 파일만 갱신하므로 효율적이다.
 
-## tagbar 플러그인
+### tagbar 플러그인
 
 * [tagbar](https://github.com/majutsushi/tagbar )
     * 함수명, 변수명 등의 목록을 정리한 윈도우를 열어준다.
     * tagbar 윈도우에서 함수명, 변수명에 커서를 놓고 엔터를 입력하면 해당 위치로 점프한다.
 
-### tagbar에 markdown 요약 보여주기
+#### tagbar에 markdown 요약 보여주기
 
 [tagbar wiki: markdown](https://github.com/majutsushi/tagbar/wiki#markdown )
 
@@ -165,7 +165,7 @@ let g:tagbar_type_markdown = {
 
 
 
-# Links
+## Links
 
 * [Ctags(wikipedia)](https://en.wikipedia.org/wiki/Ctags )
     * [Universal ctags](https://github.com/universal-ctags/ctags )
@@ -183,7 +183,7 @@ let g:tagbar_type_markdown = {
 * [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags )
 * [markdown2ctags](https://github.com/jszakmeister/markdown2ctags )
 
-# See also
+## See also
 
 * [[vim-tagbar-with-markdown]]
 
