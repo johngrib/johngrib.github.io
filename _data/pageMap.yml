@@ -2876,7 +2876,7 @@ sharding:
     summary: ""
     parent: database
     url: /wiki/sharding
-    updated: '2019-09-26 21:47:49 +0900'
+    updated: '2020-01-26 09:05:31 +0900'
     children: []
 Shunsho-juwa:
     type: wiki
