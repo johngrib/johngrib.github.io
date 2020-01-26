@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : vim 설정 파일을 주제별로 여러 파일로 분리하자
-summary : 
+summary : 새해니까 vimrc를 대청소하자
 date    : 2020-01-26 13:46:19 +0900
-updated : 2020-01-26 14:29:49 +0900
+updated : 2020-01-26 14:33:05 +0900
 tag     : vim
 toc     : true
 public  : true
