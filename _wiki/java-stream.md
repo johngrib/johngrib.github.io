@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-01-27 16:39:53 +0900
+updated : 2020-01-27 22:39:55 +0900
 tag     : java
 toc     : true
 public  : true
@@ -115,6 +115,7 @@ int sum = widgets.stream()
 ### collect의 사용
 
 * 다음 예제는 [Class Collectors][java-13-collectors]문서를 참고한 것이다.
+
 ```java
 // List<People>에서 사람들의 이름만 뽑아 리스트로 수집한다
 List<String> list = people.stream()
