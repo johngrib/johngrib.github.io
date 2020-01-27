@@ -3,7 +3,7 @@ layout  : wiki
 title   : go를 위한 vim 환경설정
 summary : 사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다
 date    : 2018-09-21 08:29:49 +0900
-updated : 2020-01-02 21:12:15 +0900
+updated : 2020-01-27 15:41:51 +0900
 tag     : vim golang
 toc     : true
 public  : true
@@ -229,7 +229,7 @@ fmt.Println("${1:s}")
 
 #### 설치
 
-* [devle](https://github.com/derekparker/delve )를 설치한다.
+* [delve](https://github.com/derekparker/delve )를 설치한다.
     * 설치 방법은 [delve installaion 문서](https://github.com/derekparker/delve/tree/master/Documentation/installation ) 참고.
 
 #### 사용
@@ -275,6 +275,6 @@ let g:go_doc_keywordprg_enabled = 0
 ---
 
 * Debugger
-    * [devle](https://github.com/derekparker/delve )
+    * [delve](https://github.com/derekparker/delve )
     * [delve installaion](https://github.com/derekparker/delve/tree/master/Documentation/installation )
 
