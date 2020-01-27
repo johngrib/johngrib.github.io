@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-01-14 22:32:01 +0900
+updated : 2020-01-27 16:39:53 +0900
 tag     : java
 toc     : true
 public  : true
@@ -58,6 +58,28 @@ Classes to support functional-style operations on streams of elements, such as m
 
 * `Stream`의 `collect`. 컬렉션을 합치는 작업의 부담이 크다.
 
+
+## Stream은 왜 for-each 로 돌릴 수 없는가?
+
+> 사실 Stream 인터페이스는 Iterable 인터페이스가 정의한 추상 메서드를 전부 포함할 뿐만 아니라, Iterable 인터페이스가 정의한 방식대로 동작한다. 그럼에도 for-each 로 스트림을 반복할 수 없는 까닭은 바로 Stream이 Iterable을 확장(extend)하지 않아서다.[^effective-47]
+
+## 주의할 점
+
+### 무조건 스트림으로 바꾸면 가독성을 해칠 수 있다
+
+이펙티브 자바 3에서는 다음과 같이 조언한다.
+
+> 스트림을 처음 쓰기 시작하면 모든 반복문을 스트림으로 바꾸고 싶은 유혹이 일겠지만, 서두르지 않는 게 좋다. 스트림으로 바꾸는 게 가능할지라도 코드 가독성과 유지보수 측면에서는 손해를 볼 수 있기 때문이다. 중간 정도 복잡한 작업에도 스트림과 반복문을 적절히 조합하는 게 최선이다. 그러니 **기존 코드는 스트림을 사용하도록 리팩터링하되, 새 코드가 더 나아 보일 때만 반영하자.**[^effective-45]
+
+### stream의 사용이 적절한 경우
+
+>
+* 원소들의 시퀀스를 일관되게 변환한다.
+* 원소들의 시퀀스를 필터링한다.
+* 원소들의 시퀀스를 하나의 연산을 사용해 결합한다(더하기, 연결하기, 최솟값 구하기 등).
+* 원소들의 시퀀스를 컬렉션에 모은다(아마도 공통된 속성을 기준으로 묶어 가며).
+* 원소들의 시퀀스에서 특정 조건을 만족하는 원소를 찾는다.[^effective-45]
+
 ## Examples
 
 * 단어의 빈도를 조사해, `Map<String, Long>`에 기록한다.[^effective-46-code]
@@ -90,26 +112,46 @@ int sum = widgets.stream()
   .sum();
 ```
 
-## Stream은 왜 for-each 로 돌릴 수 없는가?
+### collect의 사용
 
-> 사실 Stream 인터페이스는 Iterable 인터페이스가 정의한 추상 메서드를 전부 포함할 뿐만 아니라, Iterable 인터페이스가 정의한 방식대로 동작한다. 그럼에도 for-each 로 스트림을 반복할 수 없는 까닭은 바로 Stream이 Iterable을 확장(extend)하지 않아서다.[^effective-47]
+* 다음 예제는 [Class Collectors][java-13-collectors]문서를 참고한 것이다.
+```java
+// List<People>에서 사람들의 이름만 뽑아 리스트로 수집한다
+List<String> list = people.stream()
+    .map(Person::getName)
+    .collect(Collectors.toList());
 
-## 주의할 점
+// List<People>에서 이름만 뽑아 TreeSet 으로 수집한다
+Set<String> set = people.stream()
+    .map(Person::getName)
+    .collect(Collectors.toCollection(TreeSet::new));
 
-### 무조건 스트림으로 바꾸면 가독성을 해칠 수 있다
+// 리스트의 원소들을 콤마로 구분된 하나의 String으로 수집한다.
+String joined = things.stream()
+    .map(Object::toString)
+    .collect(Collectors.joining(", "));
 
-이펙티브 자바 3에서는 다음과 같이 조언한다.
+// 모든 직원 급여의 총합을 구한다
+int total = employees.stream()
+    .collect(Collectors.summingInt(Employee::getSalary));
 
-> 스트림을 처음 쓰기 시작하면 모든 반복문을 스트림으로 바꾸고 싶은 유혹이 일겠지만, 서두르지 않는 게 좋다. 스트림으로 바꾸는 게 가능할지라도 코드 가독성과 유지보수 측면에서는 손해를 볼 수 있기 때문이다. 중간 정도 복잡한 작업에도 스트림과 반복문을 적절히 조합하는 게 최선이다. 그러니 **기존 코드는 스트림을 사용하도록 리팩터링하되, 새 코드가 더 나아 보일 때만 반영하자.**[^effective-45]
+// 부서별 직원 목록을 만든다
+Map<Department, List<Employee>> byDept = employees.stream()
+    .collect(Collectors.groupingBy(Employee::getDepartment));
 
-### stream의 사용이 적절한 경우
+// 부서별 급여 합계를 구한다
+Map<Department, Integer> totalByDept = employees.stream()
+    .collect(
+        Collectors.groupingBy(
+            Employee::getDepartment,
+            Collectors.summingInt(Employee::getSalary)
+        )
+    );
 
->
-* 원소들의 시퀀스를 일관되게 변환한다.
-* 원소들의 시퀀스를 필터링한다.
-* 원소들의 시퀀스를 하나의 연산을 사용해 결합한다(더하기, 연결하기, 최솟값 구하기 등).
-* 원소들의 시퀀스를 컬렉션에 모은다(아마도 공통된 속성을 기준으로 묶어 가며).
-* 원소들의 시퀀스에서 특정 조건을 만족하는 원소를 찾는다.[^effective-45]
+// PASS한 학생과 FAIL한 학생 리스트를 따로 수집한다
+Map<Boolean, List<Student>> passingFailing = students.stream()
+    .collect(Collectors.partitioningBy(s -> s.getGrade() >= PASS_THRESHOLD));
+```
 
 ## 참고문헌
 
@@ -124,3 +166,4 @@ int sum = widgets.stream()
 [^stream-parallel-guidance]: [When to use parallel streams][stream-parallel-guidance]
 
 [stream-parallel-guidance]: http://gee.cs.oswego.edu/dl/html/StreamParallelGuidance.html
+[java-13-collectors]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/stream/Collectors.html

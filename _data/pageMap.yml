@@ -2012,7 +2012,7 @@ java-stream:
     summary: ""
     parent: Java
     url: /wiki/java-stream
-    updated: '2020-01-14 22:32:01 +0900'
+    updated: '2020-01-27 16:39:53 +0900'
     children: []
 java-switch-expression:
     type: wiki
