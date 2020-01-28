@@ -3,7 +3,7 @@ layout  : wiki
 title   : Floating Point 부동소수점
 summary :
 date    : 2018-10-28 08:03:23 +0900
-updated : 2018-10-29 11:40:34 +0900
+updated : 2020-01-28 22:40:55 +0900
 tag     : binary
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의
+## 정의
 
 다음은 IEEE 754-2008 7~8쪽에서 인용한 것이다.
 
@@ -38,7 +38,7 @@ Within each format, the following floating-point data shall be represented:
 
 이 외에도 꽤 많은 기호/용어 정의가 있지만 이해에 필요한 최소한의 정보만 인용하였다.
 
-# Binary format
+## Binary format
 
 * IEEE 754-2008 표준 문서를 보면 Binary format과 Decimal format 이 정의되어 있음을 알 수 있다.
     * Binary format은 세 종류.
@@ -70,16 +70,16 @@ Within each format, the following floating-point data shall be represented:
 | S 부호 | E 지수부 | T 가수부       |
 | 1 bit  | w bits   | t = p - 1 bits |
 
-# single, double precision
+## single, double precision
 
 * **float**은 길이가 32비트인 IEEE 단정도(single precision) 형식을 말한다.
     * float이 binary32에 해당한다.
 * **double**은 길이가 64비트인 IEEE 배정도(double precision) 형식을 말한다.
     * double이 binary64에 해당한다.
 
-# 변환 예제
+## 변환 예제
 
-## Example: -118.625를 binary64(double)로 나타내 보자
+### Example: -118.625를 binary64(double)로 나타내 보자
 
 * 참고: -118.625는 [한국어 위키백과 IEEE 754 문서에서 예제](https://ko.wikipedia.org/wiki/IEEE_754#%EA%B5%AC%EC%A1%B0 )로 사용하고 있는 숫자이다.
 
@@ -172,7 +172,7 @@ func printBin64(n float64) {
 1_10000000101_1101101010000000000000000000000000000000000000000000
 ```
 
-## Example: $$\pi$$를 binary64(double)로 나타내보자
+### Example: $$\pi$$를 binary64(double)로 나타내보자
 
 일단 $$\pi \gt 0$$ 이므로, 양수. 부호는 $$0$$이 된다.
 
@@ -212,7 +212,7 @@ printBin64(math.Pi)
 ```
 
 
-## 0.5를 binary64(double)로 나타내보자
+### 0.5를 binary64(double)로 나타내보자
 
 정규화 결과 지수가 음수값이 나오는 경우를 살펴보자.
 
@@ -243,7 +243,7 @@ Go 코드로 확인해 보면 다음과 같이 나온다.
 0_01111111110_0000000000000000000000000000000000000000000000000000
 ```
 
-# subnormal number
+## subnormal number
 
 >
 if $$e=emin$$ and $$0<m<1$$, the floating-point number is subnormal.  
@@ -265,7 +265,7 @@ The range of the encoding’s biased exponent E shall include:
 | float 부정규 최대값  | $$2^{-126}(1-2^{-23}) \approx 1.175 \times 10^{-38}$$   |
 | double 부정규 최대값 | $$2^{-1022}(1-2^{-52}) \approx 2.225 \times 10^{-308}$$ |
 
-## $$+\infty$$
+### $$+\infty$$
 
 * 무한대는 E가 전부 1이고, T가 전부 0이다.
 
@@ -274,14 +274,14 @@ The range of the encoding’s biased exponent E shall include:
 | 64 bit | 0_11111111111_0000000000000000000000000000000000000000000000000000 |
 | hex    | 7FF0 0000 0000 0000                                                |
 
-## $$-\infty$$
+### $$-\infty$$
 
 | 32 bit | 1_11111111_00000000000000000000000                                 |
 | hex    | FF80 0000 0000 0000                                                |
 | 64 bit | 1_11111111111_0000000000000000000000000000000000000000000000000000 |
 | hex    | FFF0 0000 0000 0000                                                |
 
-## NaN
+### NaN
 
 Not A Number.
 
@@ -321,7 +321,7 @@ NaN은 다음과 같이 표현한다.
 | 64 bit | 0_11111111111_0000000000000000000000000000000000000000000000000001 |
 | hex    | 7FF0 0000 0000 0001                                                |
 
-## 0.0 과 1.0
+### 0.0 과 1.0
 
 0.0 과 1.0 은 부정규 숫자는 아니지만 값을 보고 싶어 넣어 보았다.
 
@@ -338,9 +338,9 @@ NaN은 다음과 같이 표현한다.
 | hex    | 3FF0 0000 0000 0000                                                |
 
 
-## 극한값
+### 극한값
 
-### Smallest subnormal(가장 작은 부정규)
+#### Smallest subnormal(가장 작은 부정규)
 
 | 단정도 | 값     | $$2^{-149}$$                                                                  |
 |        | 근사값 | $$1.4012984643248170709237295832899161312802619418765157... \times 10^{-45}$$ |
@@ -349,7 +349,7 @@ NaN은 다음과 같이 표현한다.
 |        | 근사값 | $$4.940656458412465441765687928682213723650598026143247... \times 10^{-324}$$ |
 |        | 64 bit | 0_00000000000_000000000000000000000000000000000000000000000000000**1**        |
 
-### Largest subnormal(가장 큰 부정규)
+#### Largest subnormal(가장 큰 부정규)
 
 | 단정도 | 값     | $$2^{-126} \times (1 - 2^{-23})$$                                             |
 |        | 근사값 | $$1.1754942106924410754870294448492873488270524287458933... \times 10^{-38}$$ |
@@ -358,7 +358,7 @@ NaN은 다음과 같이 표현한다.
 |        | 근사값 | $$2.225073858507200889024586876085859887650423112240959... \times 10^{-308}$$ |
 |        | bit    | 0_00000000000_1111111111111111111111111111111111111111111111111111            |
 
-### Smallest normal(가장 작은 정규)
+#### Smallest normal(가장 작은 정규)
 
 | 단정도 | 값     | $$2^{-126}$$                                                                  |
 |        | 근사값 | $$1.1754943508222875079687365372222456778186655567720875... \times 10^{-38}$$ |
@@ -367,7 +367,7 @@ NaN은 다음과 같이 표현한다.
 |        | 근사값 | $$2.225073858507201383090232717332404064219215980462331 \times 10^{-308}$$    |
 |        | bit    | 0_0000000000**1**_0000000000000000000000000000000000000000000000000000        |
 
-### Largest normal(가장 큰 정규)
+#### Largest normal(가장 큰 정규)
 
 | 단정도 | 값     | $$2^{128} \times (1 - 2^{-24})$$                                               |
 |        | 근사값 | $$3.4028234663852885981170418348451692544 \times 10^{38}$$                     |
@@ -376,7 +376,7 @@ NaN은 다음과 같이 표현한다.
 |        | 근사값 | $$1.7976931348623157081452742373170435679807056752584499... \times 10^{308} $$ |
 |        | bit    | 0_1111111111**0**_1111111111111111111111111111111111111111111111111111         |
 
-### Max integer(최대 정수)
+#### Max integer(최대 정수)
 
 * 정확하게 표현할 수 있는 최대 정수
 
@@ -412,7 +412,7 @@ fmt.Println(foo - bar)  // -2
 * 그러나 1, 2가 커지가 결과가 이상하게 나와버린다.
 * 크기 비교는 올바르게 나왔지만 `foo - bar`가 `-2`가 나왔다. 수학적으로는 `-1`이 나와야 한다.
 
-# Rounding
+## Rounding
 
 >
 4.3 Rounding-direction attributes  
@@ -436,7 +436,7 @@ The **roundTiesToEven** rounding-direction attribute shall be the default roundi
 
 * binary format에서는 **roundTiesToEven**을 쓴다.
 
-## 0.1 + 0.2 = 0.30000000000000004
+### 0.1 + 0.2 = 0.30000000000000004
 
 유명한 케이스인 `0.1 + 0.2 = 0.30000000000000004`를 시뮬레이션 해보자.
 
@@ -516,7 +516,7 @@ The **roundTiesToEven** rounding-direction attribute shall be the default roundi
                                                                ^^^
 ```
 
-# Links
+## Links
 
 * <https://www.google.co.kr/search?q=ieee+754-2008+filetype%3Apdf >
     * [754-2008 - IEEE Standard for Floating-Point Arithmetic](https://ieeexplore.ieee.org/document/4610935 ) - Active - Approved
@@ -531,6 +531,6 @@ The **roundTiesToEven** rounding-direction attribute shall be the default roundi
 * [메아리 저널의 2015년 11월 14일 글](http://j.mearie.org/post/133187760423/inaccuracy-and-inexactness-of-floating-point)
 * [IEEE 부동 소수점 오류의 이해를 위한 자습서(archive.fo)](http://archive.fo/ZGda8 ) - Microsoft Support의 글인데 원문이 삭제되었다.
 
-# 참고문헌
+## 참고문헌
 
 * [해커의 기쁨(제2판): 비트와 바이트 그리고 알고리즘](http://jpub.tistory.com/326 )
