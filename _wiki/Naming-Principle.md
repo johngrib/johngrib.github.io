@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 명명 원칙(The Naming Principle)
-summary : 
+title   : 명명 원칙 (The Naming Principle)
+summary : 프로그래밍 할 때 이름 짓기가 가장 어렵더라
 date    : 2018-11-18 22:04:16 +0900
-updated : 2020-01-29 22:05:59 +0900
+updated : 2020-01-29 22:06:49 +0900
 tag     : proverb principle naming
 toc     : true
 public  : true
