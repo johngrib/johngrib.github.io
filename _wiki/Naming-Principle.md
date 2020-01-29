@@ -3,7 +3,7 @@ layout  : wiki
 title   : 명명 원칙(The Naming Principle)
 summary : 
 date    : 2018-11-18 22:04:16 +0900
-updated : 2018-11-18 22:31:43 +0900
+updated : 2020-01-29 22:05:20 +0900
 tag     : proverb principle naming
 toc     : true
 public  : true
@@ -13,7 +13,9 @@ latex   : false
 * TOC
 {:toc}
 
-알렉산더 A. 스테파노프(STL을 창안한 사람)의 From Mathematics to Generic Programming에 다음과 같은 원칙이 소개되어 있기에 옮겨 본다.
+# 알렉산더 스테파노프의 명명 원칙
+
+알렉산더 A. 스테파노프(STL의 창안자)의 From Mathematics to Generic Programming에 다음과 같은 원칙이 소개되어 있기에 옮겨 본다.
 
 >
 The Naming Principle  
