@@ -3,7 +3,7 @@ layout  : wiki
 title   : 명명 원칙(The Naming Principle)
 summary : 
 date    : 2018-11-18 22:04:16 +0900
-updated : 2020-01-29 22:05:20 +0900
+updated : 2020-01-29 22:05:59 +0900
 tag     : proverb principle naming
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 알렉산더 스테파노프의 명명 원칙
+## 알렉산더 스테파노프의 명명 원칙
 
 알렉산더 A. 스테파노프(STL의 창안자)의 From Mathematics to Generic Programming에 다음과 같은 원칙이 소개되어 있기에 옮겨 본다.
 
@@ -44,7 +44,7 @@ The name vector in STL was taken from the earlier programming languages Scheme a
 * 이와 같이 원칙을 어기는 실수를 하게 되면, 그 결과는 오랫동안 남아 있게 된다.
 
 
-# 출처
+## 출처
 
 * [FROM MATHEMATICS TO GENERIC PROGRAMMING / ALEXANDER A. STEPANOV DANIEL E. ROSE](http://www.fm2gp.com/ )
     * 한국 출판: 알고리즘 산책 수학에서 제네릭 프로그래밍까지. 알렉산더 A. 스테파노프, 다니엘 E. 로즈 저/서환수 역 / 길벗 / 2018년 05월 30일
