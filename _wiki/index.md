@@ -85,7 +85,6 @@ regenerate: true
     * [[Code-Complete-2]]
     * [[CONCRETE-MATH]]
     * [[Designing-Data-Intensive-Applications]]
-    * [[DevOps-Troubleshooting]]
     * [[Effective-Java]]
     * [[Geek-Atlas]]
     * [[GoF-Design-Pattern]]
