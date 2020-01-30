@@ -277,6 +277,10 @@ regenerate: true
 * [[Oliver-s-blood]]
 
 ## [[tools]]
+
+* [[Gradle]]
+* [[intellij]]
+
 ### [[aws]]
 * [[Amazon-Route-53]]
 * [[AWS-Auto-Scaling]]
@@ -345,9 +349,6 @@ regenerate: true
 * [[git-checkout-specific-files]]
 * [[git-log]]
 * [[githud]]
-
-    * [[Gradle]]
-    * [[intellij]]
 
 ### [[mac-apps]]
 * [[hammerspoon]]
