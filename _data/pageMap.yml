@@ -2189,7 +2189,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, Wordstar]
+    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, the-beginning-of-linux, Wordstar]
 less-cmd:
     type: wiki
     title: 'less 명령어'
@@ -3165,6 +3165,14 @@ TETRIS-EFFECT:
     parent: book
     url: /wiki/TETRIS-EFFECT
     updated: '2018-03-20 23:21:57 +0900'
+    children: []
+the-beginning-of-linux:
+    type: wiki
+    title: '리누스 토발즈, 리눅스를 개발하다'
+    summary: ""
+    parent: legend
+    url: /wiki/the-beginning-of-linux
+    updated: '2020-01-30 23:29:08 +0900'
     children: []
 The-Jargon-File:
     type: wiki

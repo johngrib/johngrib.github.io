@@ -385,6 +385,7 @@ story:
     - {fileName: John-W-Backus}
     - {fileName: Las-chicas-del-cable}
     - {fileName: legend}
+    - {fileName: the-beginning-of-linux}
 Bill-Atkinson:
     - {fileName: Bill-Atkinson-productivity}
 Steve-Jobs:
@@ -440,6 +441,7 @@ config:
     - {fileName: coding-font}
 linux:
     - {fileName: command-line}
+    - {fileName: the-beginning-of-linux}
 command-line:
     - {fileName: command-line}
 golang:
