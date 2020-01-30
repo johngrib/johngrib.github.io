@@ -1598,6 +1598,14 @@ golang-waitgroup-add:
     url: /wiki/golang-waitgroup-add
     updated: '2020-01-24 23:59:22 +0900'
     children: []
+google-home:
+    type: wiki
+    title: '구글 홈 (Google Home)'
+    summary: '집안의 문명 레벨이 1 상승했습니다'
+    parent: tools
+    url: /wiki/google-home
+    updated: '2020-01-30 21:42:51 +0900'
+    children: []
 google-search-console-remove-outdated-content:
     type: wiki
     title: 'Google Search Console - Remove outdated content'
@@ -3229,7 +3237,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [aws, command-line, Excel, git, Gradle, intellij, mac-apps, useful-site, web-browser-extension]
+    children: [aws, command-line, Excel, git, google-home, Gradle, intellij, mac-apps, useful-site, web-browser-extension]
 top:
     type: wiki
     title: 'top 명령어'

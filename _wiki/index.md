@@ -278,6 +278,7 @@ regenerate: true
 
 ## [[tools]]
 
+* [[google-home]]
 * [[Gradle]]
 * [[intellij]]
 

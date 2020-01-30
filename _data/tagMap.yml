@@ -677,6 +677,7 @@ gloang:
 goroutine:
     - {fileName: golang-waitgroup-add}
 google:
+    - {fileName: google-home}
     - {fileName: google-search-console-remove-outdated-content}
     - {fileName: googling}
 twitter:
