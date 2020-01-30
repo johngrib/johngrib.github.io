@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구글 홈 (Google Home)
 summary : 집안의 문명 레벨이 1 상승했습니다
 date    : 2020-01-30 21:13:03 +0900
-updated : 2020-01-30 21:49:22 +0900
+updated : 2020-01-30 22:15:56 +0900
 tag     : google
 toc     : true
 public  : true
@@ -108,4 +108,10 @@ TV 전원을 크롬캐스트로 끄려면 다음 설정이 필요하다.
 "**헤이 구글, 253 곱하기 78이 몇이지?**"
 
 "정답은 만 구천 칠백 삼십사 입니다." 라고 대답한다.
+
+## Links
+
+* [구글 홈을 더욱 잘 활용할 수 있는 방법을 소개합니다. - 구글 한국 블로그][google-blog-2018-10]
+
+[google-blog-2018-10]: https://korea.googleblog.com/2018/10/googlehome.html
 
