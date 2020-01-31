@@ -3,7 +3,7 @@ layout  : wiki
 title   : SUMIFS 함수 사용법
 summary : 조건에 맞는 값의 sum 값을 구한다
 date    : 2018-04-26 17:52:29 +0900
-updated : 2018-09-17 11:13:38 +0900
+updated : 2020-01-31 23:26:29 +0900
 tag     : excel
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * `SUM`함수와 비슷하나, 조건을 걸 수 있다.
 
@@ -31,7 +31,7 @@ SUMIFS(sum_range, criteria_range1, criteria1, [criteria_range2, criteria2], ...)
 * ...
 * 조건 n (조건의 수에 제한이 없다)
 
-# 응용
+## 응용
 
 다음과 같은 엑셀 파일이 있다고 하자.
 
@@ -69,7 +69,7 @@ AND C >= unix_timestamp('2018-04-26 02:15:00')
 ```
 
 
-# Links
+## Links
 
 * [SUMIFS 함수(support.office.com)](https://support.office.com/ko-kr/article/sumifs-%ED%95%A8%EC%88%98-c9e748f5-7ea7-455d-9406-611cebce642b )
 
