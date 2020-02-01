@@ -392,6 +392,7 @@ Steve-Jobs:
     - {fileName: Bill-Atkinson-productivity}
 money:
     - {fileName: billing-aws}
+    - {fileName: our-fund-balancing}
 rule:
     - {fileName: Boy-Scout-Rule}
     - {fileName: Tompson-s-rule-for-first-time-telescope-makers}
@@ -757,6 +758,8 @@ oop:
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
+experiment:
+    - {fileName: our-fund-balancing}
 방법론:
     - {fileName: persona}
 health:

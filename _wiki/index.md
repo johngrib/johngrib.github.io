@@ -450,6 +450,7 @@ regenerate: true
 * [[my-keyboard]]
 * [[my-mac-os-terminal]]
 * [[my-study-method]]
+* [[our-fund-balancing]]
 * [[preserve-brain]]
 * [[random-lunch]]
 
