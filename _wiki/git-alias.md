@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2020-02-01 22:06:27 +0900
+updated : 2020-02-01 22:09:14 +0900
 tag     : fzf git bash
 toc     : true
 public  : true
@@ -352,7 +352,7 @@ branch-clean = "!# Search and delete merged branches.;\n\
 ```
 
 이 알리아스는 바로 윗절의 **merged branch clean** 도구를 개선한 것이다.
-똑같이 작동하지만 더 강력하다. 주의해서 사용해야 한다.
+겉보기엔 똑같이 작동하지만 `.git`의 파일을 삭제하므로 주의해서 사용해야 한다.
 
 ## fzf preview를 사용해 미리보기 기능 추가하기
 
