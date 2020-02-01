@@ -1460,7 +1460,7 @@ git-alias:
     summary: '나만의 git alias를 만들어 보자'
     parent: git
     url: /wiki/git-alias
-    updated: '2019-08-31 18:54:03 +0900'
+    updated: '2020-02-01 22:06:27 +0900'
     children: []
 git-checkout-specific-files:
     type: wiki

@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2019-08-31 18:54:03 +0900
+updated : 2020-02-01 22:06:27 +0900
 tag     : fzf git bash
 toc     : true
 public  : true
@@ -326,6 +326,33 @@ git branch -d $(git branch --merged | grep -v '^\*\|\<master$')
 ```
 git l | egrep \"Merge.*$branch\" -C 2; \
 ```
+
+### 강력한 branch 삭제 도구 만들기
+
+사실 git의 브랜치는 `.git/refs/` 에 들어 있는 파일 이름일 뿐이다.
+
+좀 위험하지만 강력하게 삭제하는 작업을 편하게 하고 싶어 다음과 같이 작업하였다.
+
+```perl
+branch-clean = "!# Search and delete merged branches.;\n\
+    curr_hash=`git show -s | head -1 | cut -d ' ' -f2`; \
+    for branch in `find .git/refs/heads -type f | egrep -v '/(master|develop)$'` ; do \
+        hash=`cat $branch`; \
+        if [ $hash = $curr_hash ]; then \
+            continue; \
+        fi; \
+        git ll | egrep $hash -C 1; \
+        read -p \"Delete $branch? [y|n] \" -r; \
+        REPLY=${REPLY:-"n"}; \
+        if [ $REPLY = \"y\" ]; then \
+            rm $branch; \
+            echo \"\\033[32m$branch \\033[0mhas been\\033[31m deleted\\033[0m.\n\"; \
+        fi; \
+    done"
+```
+
+이 알리아스는 바로 윗절의 **merged branch clean** 도구를 개선한 것이다.
+똑같이 작동하지만 더 강력하다. 주의해서 사용해야 한다.
 
 ## fzf preview를 사용해 미리보기 기능 추가하기
 
