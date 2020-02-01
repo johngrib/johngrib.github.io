@@ -37,5 +37,5 @@ fd test ./sample
 ```
 
 ## Links
-[fd 공식홈페이지](https://github.com/sharkdp/fd/)
-[사용예-zetawiki](https://zetawiki.com/wiki/Fd-find)
+1. [fd 공식홈페이지](https://github.com/sharkdp/fd/)
+1. [사용예-zetawiki](https://zetawiki.com/wiki/Fd-find)
