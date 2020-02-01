@@ -1,4 +1,4 @@
-ㄴ ---
+---
 layout  : wiki
 title   : fd 명령어
 summary : 이름으로 파일을 찾아준다
@@ -13,12 +13,10 @@ latex   : false
 * TOC
 {:toc}
 
-## fd-find
-* 공식홈페이지 https://github.com/sharkdp/fd/blob/master/README.md
-* 사용예(한글페이지) https://zetawiki.com/wiki/Fd-find
+## fd
 1. Rust 로 작성된 xNIX find 유틸리티
-1. 멀티스레드로 검색하므로 find보다 더 빠른 검색 결과
-1. find 명령 옵션 및 사용 방법에 차이점에 있어 완전한 대체는 되지 않으나 훨씬 빠르게 결과 얻을 수 있다.
+1. 멀티스레드로 검색하므로 find보다 더 빠른 검색 결과(공식 홈페이지 Benchmark 항목 참조).
+1. find 명령 옵션 및 사용 방법에 차이점에 있어 완전한 대체는 되지 않으나(80% 정도라고) 훨씬 빠르게 결과 얻을 수 있다.
 
 ## Examples
 ```sh
@@ -37,3 +35,7 @@ fd test ./sample
  # 2019년 하반기에 변경된 일반 파일 찾기
  fd -t f --change-newer-than '2019-07-01 00:00:00' --changed-before '2019-12-31 11:59:59'
 ```
+
+## Links
+[fd 공식홈페이지](https://github.com/sharkdp/fd/)
+[사용예-zetawiki](https://zetawiki.com/wiki/Fd-find)
