@@ -16,7 +16,7 @@ latex   : false
 ## fd
 * Rust 로 작성된 find 명령의 대안
 * [벤치마크 결과](https://github.com/sharkdp/fd#benchmark )를 보면 `find`보다 빠르다.
-* find 명령 옵션 및 사용 방법에 차이점에 있어 완전한 대체는 되지 않으나(80% 정도라고) 훨씬 빠르게 결과 얻을 수 있다.
+* `find`를 완전히 대체하지는 못한다. [유즈 케이스의 80% 정도 커버 가능](https://github.com/sharkdp/fd#fd ). 
 
 ## Examples
 ```sh
