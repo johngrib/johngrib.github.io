@@ -3,7 +3,7 @@ layout  : wiki
 title   : fd 명령어
 summary : 이름으로 파일을 찾아준다
 date    : 2019-12-28 17:03:29 +0900
-updated : 2019-12-28 17:07:02 +0900
+updated : 2020-02-02 16:10:58 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -38,3 +38,4 @@ fd test ./sample
 
 ## Links
 * [sharkdp/fd](https://github.com/sharkdp/fd/)
+
