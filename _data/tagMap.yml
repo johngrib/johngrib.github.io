@@ -378,6 +378,7 @@ bayes:
     - {fileName: study-think-bayes}
     - {fileName: Think-Bayes}
 story:
+    - {fileName: begining-of-apache-webserver}
     - {fileName: Bill-Atkinson-productivity}
     - {fileName: gerald-weinberg-language-king}
     - {fileName: Grote-Reber-home-made-radio-astronomy}

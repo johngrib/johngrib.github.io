@@ -398,6 +398,14 @@ bc:
     url: /wiki/bc
     updated: '2019-11-19 10:06:32 +0900'
     children: []
+begining-of-apache-webserver:
+    type: wiki
+    title: '아파치 웹 서버의 시작'
+    summary: ""
+    parent: legend
+    url: /wiki/begining-of-apache-webserver
+    updated: '2020-02-05 21:55:22 +0900'
+    children: []
 big-numbers:
     type: wiki
     title: '좀 큰 숫자들'
@@ -2189,7 +2197,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, the-beginning-of-linux, Wordstar]
+    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, the-beginning-of-linux, Wordstar]
 less-cmd:
     type: wiki
     title: 'less 명령어'
