@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2019-06-01 23:07:09 +0900
+updated : 2020-02-05 22:54:41 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# Dockerfile instructions
+## Dockerfile instructions
 
 * `FROM`: 도커 이미지의 베이스가 될 이미지. 이미지는 Docker Hub에서 받아온다.
     * `FROM imageName:tag` 형식.
@@ -31,27 +31,27 @@ latex   : false
     * `RUN`은 컨테이너를 빌드할 때 실행, `CMD`는 컨테이너를 시작할 때 실행.
 
 
-# Examples
-## Install
+## Examples
+### Install
 ```sh
 $ # on Mac
 $ brew cask install docker
 $ open /Applications/Docker.app
 ```
 
-## help
+### help
 ```sh
 $ docker image --help
 $ docker container --help
 ```
 
-## search
+### search
 ```sh
 $ docker search nginx
 $ docker search nginx --limit 10
 ```
 
-## image
+### image
 ```sh
 $ # 이미지 빌드
 $ docker image build -t IMAGE     Dockerfile경로
@@ -71,7 +71,7 @@ $ docker image rm IMAGE:TAG
 $ docker image prune        # 실행중이 아닌 모든 컨테이너 삭제
 ```
 
-## container
+### container
 ```sh
 $ # 컨테이너 목록 보기
 $ docker container ls
@@ -121,9 +121,9 @@ $ docker container stats
 ```
 
 
-# Tutorial
+## Tutorial
 
-## helloworld 출력해 보기
+### helloworld 출력해 보기
 
 `helloworld`라는 이름의 간단한 셸 스크립트를 작성한다.
 
@@ -187,7 +187,7 @@ REPOSITORY              TAG                 IMAGE ID            CREATED         
 helloworld              latest              a9a80e4487ea        6 minutes ago       5.53MB
 ```
 
-## 간단한 go 웹 서버 띄워보기
+### 간단한 go 웹 서버 띄워보기
 
 다음과 같은 `main.go`파일을 작성하자.
 
@@ -275,7 +275,7 @@ $ docker container stop f6cb8fe1673a
 $ docker run -d -t -p 8080:3000 hello
 ```
 
-# docker-compose
+## docker-compose
 
 * docker-compose를 사용하면
     * docker 명령에 옵션을 주렁주렁 붙이는 일을 `yml`로 편하게 할 수 있다.
@@ -308,7 +308,7 @@ $ docker-compose down
 ```
 
 
-# Links
+## Links
 
 * <https://docs.docker.com/engine/reference/commandline/cli/ >
 * <https://docs.docker.com/compose/reference/up/ >

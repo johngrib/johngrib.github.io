@@ -1092,7 +1092,7 @@ docker:
     summary: ""
     parent: how-to
     url: /wiki/docker
-    updated: '2019-06-01 23:07:09 +0900'
+    updated: '2020-02-05 22:54:41 +0900'
     children: []
 du:
     type: wiki
