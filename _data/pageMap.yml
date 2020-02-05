@@ -2549,7 +2549,15 @@ php:
     parent: programming-language
     url: /wiki/php
     updated: '2019-01-13 22:34:44 +0900'
-    children: [composer]
+    children: [composer, php-story]
+php-story:
+    type: wiki
+    title: 'php 이야기'
+    summary: ""
+    parent: php
+    url: /wiki/php-story
+    updated: '2020-02-05 22:02:57 +0900'
+    children: []
 phpbrew:
     type: wiki
     title: phpbrew
