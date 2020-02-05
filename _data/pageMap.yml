@@ -2238,6 +2238,14 @@ links-2019:
     url: /wiki/links-2019
     updated: '2019-06-01 11:17:14 +0900'
     children: []
+linus-s-law:
+    type: wiki
+    title: '리누스의 법칙 (Linus''s law)'
+    summary: '보는 눈이 충분하면 모든 버그를 찾을 수 있다'
+    parent: proverb
+    url: /wiki/linus-s-law
+    updated: '2020-02-05 22:17:28 +0900'
+    children: []
 locking:
     type: wiki
     title: 잠금(Locking)
@@ -2653,7 +2661,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
-    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
 pwgen-cmd:
     type: wiki
     title: 'pwgen 명령어'

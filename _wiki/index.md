@@ -198,6 +198,7 @@ regenerate: true
 * [[start-rust-with-vim]]
 
 ## [[proverb]]{나의 용어 사전}
+
 * [[ACID]]
 * [[airplain-rule]]
 * [[Boy-Scout-Rule]]
@@ -208,6 +209,7 @@ regenerate: true
 * [[Edsel-edict]]
 * [[hollywood-principle]]
 * [[Kerckhoffs-s-principle]]
+* [[linus-s-law]]
 * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
 * [[Naming-Principle]]
 * [[No-Silver-Bullet]]
