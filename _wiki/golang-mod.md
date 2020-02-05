@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) Go Modules 사용하기
 summary : Using Go Modules
 date    : 2019-06-02 23:23:24 +0900
-updated : 2019-06-06 18:47:44 +0900
+updated : 2020-02-05 22:51:47 +0900
 tag     : golang 번역 the-go-blog
 toc     : true
 public  : true
@@ -17,7 +17,7 @@ latex   : false
 * 의역이 많으며 오역이 있을 수 있습니다.
 * (역: ...) 은 원문에 없는 말을 이해를 돕기 위해 제가 추가한 것입니다.
 
-# Introduction
+## Introduction
 
 **서문**
 
@@ -60,7 +60,7 @@ Go 1.13부터는 모듈 모드가 디폴트 설정이 될 예정입니다.
 * 디펜던시를 새로운 메이저 버전으로 업그레이드
 * 사용하지 않는 디펜던시 제거
 
-# Creating a new module
+## Creating a new module
 
 **새로운 모듈 만들기**
 
@@ -163,7 +163,7 @@ with import path example.com/hello/world._
 예를 들어, `world`라는 이름의 하위 디렉터리를 만들었다면 `world`로 들어가서 `go mod init` 명령을 실행할 할 필요가 없는 것입니다(하고 싶지도 않습니다).
 각 패키지는 자동으로 `example.com/hello` 모듈의 부분으로 인식되므로, 결과적으로 `world`의 import path는 `example.com/hello/world`가 됩니다.
 
-# Adding a dependency
+## Adding a dependency
 
 **디펜던시 추가하기**
 
@@ -294,7 +294,7 @@ go 커맨드는 `go.sum` 파일을 참고하여 처음 다운로드받은 모듈
 즉, `go.mod`와 `go.sum` 모두 버전 관리 도구에 체크되어야 합니다.
 
 
-# Upgrading dependencies
+## Upgrading dependencies
 
 **디펜던시 업그레이드하기**
 
@@ -413,7 +413,7 @@ _Note the explicit @v1.3.1 in the go get argument. In general each argument pass
 일반적으로 `go get` 명령어 인자에 버전을 명시할 수 있습니다.
 기본값은 `@latest`이며 이 값은 최신 버전을 뜻합니다.
 
-# Adding a dependency on a new major version
+## Adding a dependency on a new major version
 
 **새로운 메이저 버전을 가진 디펜던시 추가하기**
 
@@ -524,7 +524,7 @@ go 커맨드는 빌드에 있어 특정 모듈 경로별로 최대 하나씩의 
 점진적인 마이그레이션이 가능한 것은 특히 대규모의 코드 베이스를 가진 프로그램에 있어 매우 중요합니다.
 
 
-# Upgrading a dependency to a new major version
+## Upgrading a dependency to a new major version
 
 **디펜던시를 새로운 메이저 버전으로 업그레이드하기**
 
@@ -601,7 +601,7 @@ PASS
 ok      example.com/hello       0.014s
 ```
 
-# Removing unused dependencies
+## Removing unused dependencies
 
 **사용하지 않는 디펜던시 제거하기**
 
@@ -667,7 +667,7 @@ ok      example.com/hello    0.020s
 $
 ```
 
-# Conclusion
+## Conclusion
 
 **결론**
 
@@ -707,14 +707,14 @@ Go 모듈은 Go의 디펜던시 관리의 미래입니다.
 
 _By Tyler Bui-Palsulich and Eno Compton_
 
-# License 관련 사항
+## License 관련 사항
 
 * 이 번역문의 원문은 [Creative Commons Attribution 3.0 라이센스](https://creativecommons.org/licenses/by/3.0/deed.ko )를 따릅니다.
 * 이 번역문의 원문에 첨부된 코드는 [BSD license](https://golang.org/LICENSE )를 따릅니다.
 * 이 번역문의 원문 주소는 <https://blog.golang.org/using-go-modules > 입니다.
 * 번역하는 과정에서 상당한 의역과 임의의 내용 추가가 있었습니다.
 
-# Links
+## Links
 
 * [Using Go Modules](https://blog.golang.org/using-go-modules )
 * [Go & Versioning](https://research.swtch.com/vgo )

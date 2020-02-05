@@ -1556,7 +1556,7 @@ golang-mod:
     summary: 'Using Go Modules'
     parent: Go-Blog-translation
     url: /wiki/golang-mod
-    updated: '2019-06-06 18:47:44 +0900'
+    updated: '2020-02-05 22:51:47 +0900'
     children: []
 golang-reflect:
     type: wiki
