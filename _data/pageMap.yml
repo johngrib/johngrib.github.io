@@ -2510,6 +2510,14 @@ orange-juice-test:
     url: /wiki/orange-juice-test
     updated: '2018-01-30 23:16:57 +0900'
     children: []
+oregon-swing:
+    type: wiki
+    title: '그네의 비유'
+    summary: '고객이 정말로 원했던 것은 나무에 타이어를 매단 것'
+    parent: proverb
+    url: /wiki/oregon-swing
+    updated: '2020-02-05 22:49:31 +0900'
+    children: []
 osi-model:
     type: wiki
     title: 'OSI 7 계층 모형'
@@ -2661,7 +2669,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
-    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
 pwgen-cmd:
     type: wiki
     title: 'pwgen 명령어'

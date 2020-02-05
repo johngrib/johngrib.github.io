@@ -215,6 +215,7 @@ regenerate: true
 * [[No-Silver-Bullet]]
 * [[OOP-to-me-Alan-Kay]]
 * [[orange-juice-test]]
+* [[oregon-swing]]
 * [[Postel-s-law]]
 * [[Schopenhauer-s-Law-Of-Entropy]]{쇼펜하우어의 엔트로피 법칙}
 * [[SOLID]]
