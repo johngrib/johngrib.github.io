@@ -3,7 +3,7 @@ layout  : wiki
 title   : 널 오브젝트 패턴 (Null Object Pattern)
 summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
-updated : 2019-11-14 22:46:56 +0900
+updated : 2020-02-06 23:57:32 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -45,7 +45,8 @@ public class NullNotify implements Notify {
 }
 ```
 
-## 클린 소프트웨어의 예제
+## 예제
+### 클린 소프트웨어의 예제
 
 클린 소프트웨어에는 null 객체 패턴을 단순하게 적용한 예제가 소개되어 있다.[^clean]
 
@@ -90,6 +91,20 @@ public interface Employee {
 
 * 여기에서 존재하지 않는 직원을 익명 내부 클래스로 만드는 것은 싱글 인스턴스를 보장하는 방법이다.
 * `NullEmployee` 클래스를 명시적으로 만들지 않고도 해결하는 방법이다.
+
+### 이펙티브 자바의 예제
+
+이펙티브 자바 3/E의 아이템 54는 `null` 대신, 빈 컬렉션이나 배열을 리턴할 것을 권장한다.[^effective-325]
+
+```java
+// 길이가 0 인 배열은 불변이다.
+private static final Cheese[] EMPTY_CHEESE_ARRAY = new Cheese[0];
+
+// cheesesInStock 이 비어 있으면 EMPTY_CHEESE_ARRAY 를 리턴한다.
+public Cheese[] getCheeses() {
+    return cheesesInStock.toArray(EMPTY_CHEESE_ARRAY);
+}
+```
 
 ## 널 객체 패턴에 대한 인용
 
@@ -577,6 +592,7 @@ Bruce Anderson은 Null 객체 패턴에 대해 글을 쓴 바 있는데, 그 글
     * 클린 소프트웨어 / 로버트 C. 마틴 저 / 이용원, 김정민, 정지호 공역 / 제이펍 / 초판 1쇄 2017년 05월 15일 / 원제 : Agile Software Development, Principles, Patterns, and Practices
     * 리팩토링 / 마틴 파울러 저 / 김지원 역 / 한빛미디어 / 초판 2쇄 2013년 03월 07일 / 원서 : Refactoring (Addison-Wesley Professional; 1 edition, 1999)
     * 테스트 주도 개발 / 켄트 벡 저 / 김창준, 강규영 공역 / 인사이트(insight) / 초판 1쇄 2005년 01월 02일 / 원제 : Test-Driven Development By Example
+    * 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 
 ## 주석
 
@@ -584,3 +600,5 @@ Bruce Anderson은 Null 객체 패턴에 대해 글을 쓴 바 있는데, 그 글
 [^clean]: 클린 소프트웨어. CHAPTER 17. 245쪽.
 [^fowler0]: 리팩토링. Null 검사를 널 객체에 위임. 310쪽.
 [^kent-null-object]: 테스트 주도 개발. 30장. 274쪽.
+[^effective-325]: 이펙티브 자바. 아이템 54. 325쪽.
+
