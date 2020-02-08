@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2020-02-01 22:09:14 +0900
+updated : 2020-02-09 08:23:03 +0900
 tag     : fzf git bash
 toc     : true
 public  : true
@@ -13,14 +13,14 @@ latex   : false
 * TOC
 {:toc}
 
-# git alias?
+## git alias?
 
 * git을 매일 사용한다면 자연스럽게 git의 온갖 명령어와 옵션에 익숙해지게 된다.
 * 하지만 익숙해지는 것과 별개로, 여전히 입력하기 귀찮은 길고 복잡한 명령들이 있다.
 * alias를 사용하면 귀찮은 명령들을 쉽고 재미있게 축약하여 사용할 수 있다.
 
 
-# 일반적으로 널리 쓰이는 git alias
+## 일반적으로 널리 쓰이는 git alias
 
 다음은 보통 널리 쓰이는 git alias를 설정한 .gitconfig 파일의 `[alias]` 섹션이다.
 
@@ -50,7 +50,7 @@ l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s 
 ```
 
 
-# git alias에서 셸 명령어 사용하기
+## git alias에서 셸 명령어 사용하기
 
 바로 위에서 사용한 git alias는 편리하고 심플하다.
 
@@ -75,7 +75,7 @@ Hello World
 이것으로 다양한 기능을 `git` 명령어에 덕지덕지 갖다 붙일 수 있다.
 
 
-## 현재 브랜치 이름 출력하기
+### 현재 브랜치 이름 출력하기
 
 이 alias는 branch 목록에서 `*`, 즉 현재 브랜치 이름을 가져온다.
 
@@ -91,7 +91,7 @@ Hello World
     * `*`로 시작하는 행을 찾는다.
     * 2번째 단어를 출력한다.
 
-## 현재 브랜치를 백업하는 브랜치 만들기
+### 현재 브랜치를 백업하는 브랜치 만들기
 
 이번에는 현재 브랜치를 백업하는 브랜치를 만드는 alias를 만들어 보자.
 
@@ -105,7 +105,7 @@ Hello World
 
 만약 현재 브랜치가 `master`라면, `backup-master` 브랜치가 만들어진다.
 
-## 머지된 브랜치 청소하기
+### 머지된 브랜치 청소하기
 
 다음 alias를 사용하면 이미 머지를 마쳤지만 귀찮아서 지우지 않고 있었던 브랜치들을 한꺼번에 삭제할 수 있다.
 
@@ -124,11 +124,11 @@ Hello World
 * 서브셸에서 얻은 브랜치 목록을 `git branch -d`로 삭제한다.
 
 
-## fzf로 선택 ui 추가하기
+### fzf로 선택 ui 추가하기
 
 [fzf](https://github.com/junegunn/fzf )를 사용하면 선택 ui를 추가할 수 있어 더 편리한 alias를 만들 수 있다.
 
-### 브랜치 선택기
+#### 브랜치 선택기
 
 다음 alias를 사용하면 브랜치 목록을 보고 검색어/위-아래 화살표 키를 사용해 브랜치를 선택, checkout 할 수 있다.
 
@@ -155,7 +155,7 @@ Hello World
     * `awk`로 사용자가 선택한 라인에서 branch 이름만 가져온다.
 * 서브셸에서 얻은 브랜치 이름으로 `git checkout` 한다.
 
-### add 선택기
+#### add 선택기
 
 `git add`를 할 때 스테이징할 파일과 아닌 파일이 마구 섞여 있다면 손가락이 바빠진다.
 
@@ -174,13 +174,13 @@ Hello World
 
 ![git-a](https://user-images.githubusercontent.com/1855714/49334580-91c62800-f61c-11e8-88d0-be5636161d8a.gif )
 
-## 일회용 함수 선언으로 복잡한 셸 스크립트 실행하기
+### 일회용 함수 선언으로 복잡한 셸 스크립트 실행하기
 
 git alias 안에서 복잡한 셸 명령어나 스크립트를 실행하는 데에는 한계가 있다.
 
 하지만 함수를 선언해 쓰는 꼼수를 사용하면 이런저런 재미있고 유용한 alias를 만들 수 있다.
 
-### sync 도우미 만들기
+#### sync 도우미 만들기
 
 다음 alias는 `$1`을 인식하므로, 사용자가 입력한 옵션을 사용할 수 있다.
 
@@ -205,7 +205,7 @@ $ git reset --hard upstream/현재브랜치이름
 
 물론 `upstream`외에도 다른 remote를 지정해 사용할 수 있다.
 
-### branch 도우미 만들기
+#### branch 도우미 만들기
 
 다음은 내가 즐겨 쓰고 있는 alias이다.
 
@@ -263,7 +263,7 @@ git bb m, merged : List merged branches excluding the current and master branche
 
 각 옵션 앞에 `-`, `--`를 붙일까 말까 고민했지만 그냥 이 정도가 편한 것 같아서 더 건드리지는 않았다.
 
-### merged branch clean 도우미 만들기
+#### merged branch clean 도우미 만들기
 
 위의 `git bb clean`은 다음 명령을 실행한다.
 
@@ -327,7 +327,7 @@ git branch -d $(git branch --merged | grep -v '^\*\|\<master$')
 git l | egrep \"Merge.*$branch\" -C 2; \
 ```
 
-### 강력한 branch 삭제 도구 만들기
+#### 강력한 branch 삭제 도구 만들기
 
 사실 git의 브랜치는 `.git/refs/` 에 들어 있는 파일 이름일 뿐이다.
 
@@ -354,11 +354,11 @@ branch-clean = "!# Search and delete merged branches.;\n\
 이 알리아스는 바로 윗절의 **merged branch clean** 도구를 개선한 것이다.
 겉보기엔 똑같이 작동하지만 `.git`의 파일을 삭제하므로 주의해서 사용해야 한다.
 
-## fzf preview를 사용해 미리보기 기능 추가하기
+### fzf preview를 사용해 미리보기 기능 추가하기
 
 fzf의 preview 옵션을 사용하면 뭔가 일일이 확인하고 선택하는 과정을 단축할 수 있다.
 
-### 브랜치 선택기에 로그 그래프 미리보기 기능 추가하기
+#### 브랜치 선택기에 로그 그래프 미리보기 기능 추가하기
 
 ch를 다음과 같이 수정해보자.
 
@@ -377,7 +377,7 @@ ch를 다음과 같이 수정해보자.
 
 ![gitch](https://user-images.githubusercontent.com/1855714/49552798-6901a380-f938-11e8-9c62-8b9228492f55.gif)
 
-### add 파일 선택기에 미리보기 기능 추가하기
+#### add 파일 선택기에 미리보기 기능 추가하기
 
 이번엔 a를 다음과 같이 수정하자.
 
@@ -395,7 +395,7 @@ ch를 다음과 같이 수정해보자.
 
 ![gita_](https://user-images.githubusercontent.com/1855714/49553461-2392a580-f93b-11e8-9117-ea0d32c24ee0.gif)
 
-#### 파일 이름 옆에 변경 라인 숫자 보여주기
+##### 파일 이름 옆에 변경 라인 숫자 보여주기
 
 이 글을 작성하고 며칠이 지났다.
 
@@ -427,7 +427,7 @@ diff-info = "! # get diff info;\n\
 
 ![image](https://user-images.githubusercontent.com/1855714/49681236-6db58b80-fae1-11e8-8b39-11a24531cfbb.png)
 
-# 헷갈릴 때 사용하는 alias 추가하기
+## 헷갈릴 때 사용하는 alias 추가하기
 
 이제 꽤 많은 alias가 추가되었다.
 
@@ -475,7 +475,7 @@ alias.sync=!f() { git fetch $1 && git reset --hard $1/$(git b0); }; f
 
 ![image](https://user-images.githubusercontent.com/1855714/49335205-8d097000-f62c-11e8-9ba1-97ab3d49d792.png)
 
-## alias 설명서를 보기 좋게 다듬어 보자
+### alias 설명서를 보기 좋게 다듬어 보자
 
 * `column` 명령어를 사용하면 터미널에 출력되는 문자열을 표와 같이 정렬할 수 있다.
 
@@ -498,14 +498,14 @@ alias = "!# Prints all aliases.;\n\
 
 ![image](https://user-images.githubusercontent.com/1855714/49694946-5efcd080-fbd6-11e8-9aed-2c678882c010.png)
 
-# 나의 git config
+## 나의 git config
 
 다음 링크에서 나의 최신 .gitconifg 파일을 볼 수 있다.
 
 * [.gitconfig](https://github.com/johngrib/dotfiles/blob/master/.gitconfig )
 
 
-# Links
+## Links
 
 * [2.7 Git Basics - Git Aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases )
 * [Git alias with parameters](https://jondavidjohn.com/git-aliases-parameters/ )
