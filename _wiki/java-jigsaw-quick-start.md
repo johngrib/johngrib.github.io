@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) 프로젝트 Jigsaw - 모듈 시스템 빠른 시작 가이드
 summary : Project Jigsaw; Module System Quick-Start Guide
 date    : 2019-09-12 19:31:50 +0900
-updated : 2019-09-12 21:00:10 +0900
+updated : 2020-02-08 23:56:48 +0900
 tag     : java 번역
 toc     : true
 public  : true
@@ -26,7 +26,7 @@ _The file paths in the examples use forward slashes, and the path separators are
 예제의 파일 경로 구분자는 슬래쉬(/)를 사용하며, 경로 구분자는 콜론(:)입니다.
 마이크로소프트 윈도우즈를 사용하는 개발자들은 백 슬래쉬(\)와 세미 콜론(;)을 구분자로 사용하세요.
 
-# Greetings
+## Greetings
 
 _This first example is a module named com.greetings that simply prints "Greetings!". The module consists of two source files: the module declaration (module-info.java) and the main class._
 
@@ -76,7 +76,7 @@ _--module-path is the module path, its value is one or more directories that con
 `--module-path`는 모듈 경로를 지정하며, 값은 모듈을 포함하고 있는 하나 이상의 디렉토리입니다.
 `-m` 옵션은 main 모듈을 지정하며, `/` 뒤의 값은 모듈에 있는 main class의 클래스명입니다.
 
-# Greetings world
+## Greetings world
 
 _This second example updates the module declaration to declare a dependency on module org.astro. Module org.astro exports the API package org.astro._
 
@@ -145,7 +145,7 @@ $ java --module-path mods -m com.greetings/com.greetings.Main
 Greetings world!
 ```
 
-# Multi-module compilation
+## Multi-module compilation
 
 _In the previous example then module com.greetings and module org.astro were compiled separately. It is also possible to compile multiple modules with one javac command:_
 
@@ -164,7 +164,7 @@ mods/org.astro/module-info.class
 mods/org.astro/org/astro/World.class
 ```
 
-# Packaging
+## Packaging
 
 _In the examples so far then the contents of the compiled modules are exploded on the file system. For transportation and deployment purposes then it is usually more convenient to package a module as a modular JAR. A modular JAR is a regular JAR file that has a module-info.class in its top-level directory. The following example creates org.astro@1.0.jar and com.greetings.jar in directory mlib._
 
@@ -212,7 +212,7 @@ exports org.astro
 requires java.base mandated
 ```
 
-# Missing requires or missing exports
+## Missing requires or missing exports
 
 _Now let's see what happens with the previous example when we mistakenly omit the requires from the com.greetings module declaration:_
 
@@ -265,7 +265,7 @@ src/com.greetings/com/greetings/Main.java:2: error: package org.astro is not vis
 1 error
 ```
 
-# Services
+## Services
 
 _Services allow for loose coupling between service consumers modules and service providers modules._
 
@@ -427,7 +427,7 @@ _The output confirms that the service provider has been located and that it was 
 
 출력을 보면 서비스 제공자가 `NetworkSocket`의 팩토리로 사용되었음을 확인할 수 있습니다.
 
-# The linker
+## The linker
 
 _jlink is the linker tool and can be used to link a set of modules, along with their transitive dependences, to create a custom modular run-time image (see JEP 220)._
 
@@ -465,7 +465,7 @@ MS 윈도우즈에서는 `:`를 `;`로 바꿔서 해보세요.
 `jlink` 도구는 생성된 이미지를 커스터마이즈하기 위한 여러 고급 옵션들을 제공합니다.
 자세한 내용은 `jlink --help`를 참고하세요.
 
-# --patch-module
+## --patch-module
 
 _Developers that checkout java.util.concurrent classes from Doug Lea's CVS will be used to compiling the source files and deploying those classes with -Xbootclasspath/p._
 
@@ -488,19 +488,19 @@ javac --patch-module java.base=src -d mypatches/java.base \
 java --patch-module java.base=mypatches/java.base ...
 ```
 
-# More information
+## More information
 
 * [The State of the Module System](https://openjdk.java.net/projects/jigsaw/spec/sotms/ )
 * [JEP 261: Module System](https://openjdk.java.net/jeps/261 )
 * [Project Jigsaw](https://openjdk.java.net/projects/jigsaw/ )
 
-# License 관련 사항
+## License 관련 사항
 
 * 이 번역문의 원문은 [GPLv2](https://openjdk.java.net/legal/gplv2+ce.html )를 따릅니다.
 * 이 번역문의 원문 주소는 [이곳][tutorial] 입니다.
 * 번역하는 과정에서 상당한 의역과 임의의 내용 추가가 있었습니다.
 
-# Links
+## Links
 
 * [Project Jigsaw: Module System Quick-Start Guide][tutorial]
 
