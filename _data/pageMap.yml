@@ -2382,6 +2382,14 @@ my-bookshelf:
     url: /wiki/my-bookshelf
     updated: '2019-10-12 13:53:28 +0900'
     children: []
+my-desk-environment:
+    type: wiki
+    title: '목과 허리 건강을 위한 컴퓨터 외의 물리적 장비 구매 노하우와 경험'
+    summary: '경험은 소중하다. 잊지 말고 기록해 두자.'
+    parent: my-lifehack
+    url: /wiki/my-desk-environment
+    updated: '2020-02-09 21:10:53 +0900'
+    children: []
 my-keyboard:
     type: wiki
     title: '나의 키보드 히스토리'
@@ -2397,7 +2405,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [cleaning-tile-cycle, email-gardening, hhkb-jp-tmk, my-bookshelf, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, preserve-brain, random-lunch]
+    children: [cleaning-tile-cycle, email-gardening, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, preserve-brain, random-lunch]
 my-mac-os-terminal:
     type: wiki
     title: 'macOS 초심자를 위한 터미널 공부 가이드'

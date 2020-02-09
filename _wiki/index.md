@@ -452,6 +452,7 @@ regenerate: true
 * [[email-gardening]]
 * [[hhkb-jp-tmk]]
 * [[my-bookshelf]]
+* [[my-desk-environment]]
 * [[my-keyboard]]
 * [[my-mac-os-terminal]]
 * [[my-study-method]]
