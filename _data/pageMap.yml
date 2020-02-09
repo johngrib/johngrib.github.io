@@ -453,7 +453,7 @@ blog:
     parent: index
     url: /wiki/blog
     updated: '2020-02-09 12:45:42 +0900'
-    children: [create-jekyll-blog, jekyll-category-tag, my-wiki]
+    children: [create-jekyll-blog, generate-favicon, jekyll-category-tag, my-wiki]
 book:
     type: wiki
     title: 도서
@@ -1445,6 +1445,14 @@ Geek-Atlas:
     parent: book
     url: /wiki/Geek-Atlas
     updated: '2018-02-13 21:38:46 +0900'
+    children: []
+generate-favicon:
+    type: wiki
+    title: '파비콘 추가하는 방법'
+    summary: '그냥 favicon-generator를 쓰면 된다'
+    parent: blog
+    url: /wiki/generate-favicon
+    updated: '2020-02-09 12:59:33 +0900'
     children: []
 gerald-weinberg-language-king:
     type: wiki
