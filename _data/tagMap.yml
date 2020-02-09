@@ -256,6 +256,7 @@ bash:
     - {fileName: top}
     - {fileName: touch}
     - {fileName: tr-cmd}
+    - {fileName: tree-cmd}
     - {fileName: uptime}
     - {fileName: yes-cmd}
     - {fileName: ykman}
@@ -306,6 +307,7 @@ command:
     - {fileName: top}
     - {fileName: touch}
     - {fileName: tr-cmd}
+    - {fileName: tree-cmd}
     - {fileName: uptime}
     - {fileName: yes-cmd}
     - {fileName: ykman}

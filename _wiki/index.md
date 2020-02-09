@@ -341,6 +341,7 @@ regenerate: true
 * [[top]]
 * [[touch]]
 * [[tr-cmd]]
+* [[tree-cmd]]
 * [[uptime]]
 * [[yes-cmd]]
 * [[ykman]]
