@@ -3,12 +3,12 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2020-01-05 12:31:35 +0900
+updated : 2020-02-09 12:44:31 +0900
 tag     : wiki vimwiki jekyll blog
 toc     : true
 comment : true
 public  : true
-parent  : Vim
+parent  : [[blog]]
 ---
 * TOC
 {:toc}

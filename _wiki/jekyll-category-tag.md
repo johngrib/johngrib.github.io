@@ -3,11 +3,11 @@ layout  : wiki
 title   : Jekyll 블로그에 태그 추가하기
 summary : 마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.
 date    : 2017-01-22 08:52:22 +0900
-updated : 2017-01-22 08:52:22 +0900
+updated : 2020-02-09 12:43:39 +0900
 tag     : jekyll blog
 toc     : true
 public  : true
-parent  : index
+parent  : [[blog]]
 latex   : false
 ---
 * TOC

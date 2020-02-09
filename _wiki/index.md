@@ -387,7 +387,6 @@ regenerate: true
 ## [[Vim]]
 
 * [[config-ideavim]]
-* [[my-wiki]]
 * [[two-views-of-vim]]
 * [[ultisnips]]
 * [[vim-auto-completion]]
@@ -484,6 +483,12 @@ regenerate: true
 * [[test-terms]]
 * [[two-pizza-team]]
 
+## [[blog]]
+
+* [[create-jekyll-blog]]
+* [[jekyll-category-tag]]
+* [[my-wiki]]
+
 ## 미분류
 
 * [[abbr]]
@@ -501,12 +506,10 @@ regenerate: true
 * [[strangler-pattern]]
 * [[timeline]]
 * [[two-type-error]]
-* [[jekyll-category-tag]]
-* [[create-jekyll-blog]]
 
 ---
 
-## blog
+## blog posts
 <div>
     <ul>
 {% for post in site.posts %}

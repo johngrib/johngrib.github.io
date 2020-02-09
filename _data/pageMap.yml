@@ -446,6 +446,14 @@ Binomial-Theorem:
     url: /wiki/Binomial-Theorem
     updated: '2019-06-04 21:18:43 +0900'
     children: []
+blog:
+    type: wiki
+    title: 블로그
+    summary: ""
+    parent: index
+    url: /wiki/blog
+    updated: '2020-02-09 12:45:42 +0900'
+    children: [create-jekyll-blog, jekyll-category-tag, my-wiki]
 book:
     type: wiki
     title: 도서
@@ -802,9 +810,9 @@ create-jekyll-blog:
     type: wiki
     title: 'github에 Jekyll 블로그를 만들었다'
     summary: '누구나 만드는 github 공짜 블로그'
-    parent: index
+    parent: blog
     url: /wiki/create-jekyll-blog
-    updated: '2017-01-21 22:37:25 +0900'
+    updated: '2020-02-09 12:43:43 +0900'
     children: []
 Cromwell-s-rule:
     type: wiki
@@ -2082,9 +2090,9 @@ jekyll-category-tag:
     type: wiki
     title: 'Jekyll 블로그에 태그 추가하기'
     summary: '마음에 드는 플러그인이 없어서 조잡하게나마 직접 만들었다.'
-    parent: index
+    parent: blog
     url: /wiki/jekyll-category-tag
-    updated: '2017-01-22 08:52:22 +0900'
+    updated: '2020-02-09 12:43:39 +0900'
     children: []
 John-von-Neumann:
     type: wiki
@@ -2402,9 +2410,9 @@ my-wiki:
     type: wiki
     title: 'Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자'
     summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
-    parent: Vim
+    parent: blog
     url: /wiki/my-wiki
-    updated: '2020-01-05 12:31:35 +0900'
+    updated: '2020-02-09 12:44:31 +0900'
     children: []
 Mythical-Man-Month:
     type: wiki
@@ -3445,7 +3453,7 @@ Vim:
     parent: index
     url: /wiki/Vim
     updated: '2017-12-20 13:13:21 +0900'
-    children: [config-ideavim, my-wiki, two-views-of-vim, ultisnips, vim-auto-completion, vim-coc, vim-conceallevel, vim-configure-split, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
+    children: [config-ideavim, two-views-of-vim, ultisnips, vim-auto-completion, vim-coc, vim-conceallevel, vim-configure-split, vim-f-hangul, vim-persistent-undo, vim-rest-console, vim-tagbar-with-markdown, vim-tmux-t-ut, vim-with-space-char, vim-ycm-python3, vimwiki]
 vim-auto-completion:
     type: wiki
     title: 'vim 자동완성 기능 사용하기'
