@@ -3,7 +3,7 @@ layout  : wiki
 title   : 목과 허리 건강을 위한 컴퓨터 외의 물리적 장비 구매 노하우와 경험
 summary : 경험은 소중하다. 잊지 말고 기록해 두자.
 date    : 2020-02-09 11:43:39 +0900
-updated : 2020-02-09 21:25:15 +0900
+updated : 2020-02-09 21:29:31 +0900
 tag     : 
 toc     : true
 public  : true
@@ -98,7 +98,7 @@ latex   : false
 
 [제조사 소개 홈페이지(한국)]( https://kr.humanscale.com/products/seating/freedom-headrest-executive-chair/custom )
 
-| ![freedom 앞]( /post-img/my-desk-environment/freedom-front.png ) | ![freedom 뒤]( /post-img/my-desk-environment/freedom-front.png ) |
+| ![freedom 앞]( /post-img/my-desk-environment/freedom-front.png ) | ![freedom 뒤]( /post-img/my-desk-environment/freedom-back.png ) |
 
 [티앤제이 인터네셔널 매장][tnjshop]에 가면 앉아볼 수 있다.
 
