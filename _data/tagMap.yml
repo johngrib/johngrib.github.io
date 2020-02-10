@@ -717,6 +717,9 @@ http:
     - {fileName: why-http-80-https-443}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
+random:
+    - {fileName: java-random}
+    - {fileName: von-neumann-extractor}
 blog:
     - {fileName: jekyll-category-tag}
     - {fileName: my-wiki}
@@ -873,8 +876,6 @@ chrome:
 firefox:
     - {fileName: vimium}
 Von-Neumann:
-    - {fileName: von-neumann-extractor}
-random:
     - {fileName: von-neumann-extractor}
 what:
     - {fileName: what}

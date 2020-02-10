@@ -158,6 +158,7 @@ regenerate: true
 * [[java-jigsaw-quick-start]]
 * [[java-lambda]]
 * [[java-optional]]
+* [[java-random]]
 * [[java-remainder-operator]]
 * [[java-switch-expression]]
 * [[java10-var]]
