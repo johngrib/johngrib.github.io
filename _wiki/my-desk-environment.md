@@ -3,7 +3,7 @@ layout  : wiki
 title   : 목과 허리 건강을 위한 컴퓨터 외의 물리적 장비 구매 노하우와 경험
 summary : 경험은 소중하다. 잊지 말고 기록해 두자.
 date    : 2020-02-09 11:43:39 +0900
-updated : 2020-02-10 21:28:57 +0900
+updated : 2020-02-10 22:13:48 +0900
 tag     : 
 toc     : true
 public  : true
@@ -223,6 +223,8 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 ### 엔산마운트 모니터 거치대
 
 2019년 12월 31일에 구매.
+
+![엔산 마운트 거치대]( /post-img/my-desk-environment/nsan-mount.jpg )
 
 트위터의 [김지현](https://twitter.com/simnalamburt )님이 추천해주셔서 구매한 모니터 거치대.
 
