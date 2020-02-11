@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드를 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2020-02-11 23:06:56 +0900
+updated : 2020-02-11 23:21:54 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -47,143 +47,35 @@ JUnit5의 `@Nested`를 사용하면 계층 구조의 테스트 코드를 작성�
 
 ![]( /post-img/junit5-nested/dci-eng.png )
 
-한국어로 바꿔서도 해 보았다.
-
-![]( /post-img/junit5-nested/dci-kor.png )
-
 계층 구조이기 때문에 특정 범위를 폴드하는 것도 가능하다.
 
 위의 테스트를 가동하는 데에 사용한 소스코드는 [내 저장소][example]에서 볼 수 있다.
 
 * [ComplexNumber.java][example-1] - 복소수 클래스
 * [ComplexNumberTest.java][example-eng] - 테스트 코드(영어)
-* [ComplexNumberKoTest][example-kor] - 테스트 코드(한국어)
 
-한편 html 보고서를 출력하면 다음과 같이 나온다.
+참고: `Describe`와 `Context`는 생략해도 무방하다. 다른 언어의 BDD 프레임워크는 보통 `Describe`와 `Context`가 함수 이름이기 때문에 굳이 설명으로 작성하지 않는다.
 
-![]( /post-img/junit5-nested/result.png )
-
-### 예제 코드: ComplexNumberTest
-
-
-```java
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-
-@DisplayName("Describe: ComplexNumber class")
-class ComplexNumberTest {
-
-    @Nested
-    @DisplayName("Describe: of method")
-    class DescribeAdd {
-
-        @Nested
-        @DisplayName("Context: with a real number")
-        class Context_with_naturals {
-            private final double givenNatual = 3d;
-            private ComplexNumber given = ComplexNumber.of(givenNatual);
-
-            @Test
-            @DisplayName("It returns a complex number with 0i.")
-            void it_has_0_imagine_value() {
-                assertThat(given.getImagine(), is((0d)));
-            }
-        }
-    }
-
-    @Nested
-    @DisplayName("Describe: sum method")
-    class DescribeSum {
-        @Nested
-        @DisplayName("Context: with two complex numbers with real and i parts")
-        class Context_with_naturals {
-            private ComplexNumber a, b;
-
-            @BeforeEach
-            void prePareNumbers() {
-                a = ComplexNumber.of(1d, 2d);
-                b = ComplexNumber.of(32d, 175d);
-            }
-
-            ComplexNumber subject() {
-                return ComplexNumber.sum(a, b);
-            }
-
-            @Test
-            @DisplayName("It returns a complex number with the sum of the two real values.")
-            void it_returns_complex_has_each_real_sum() {
-                final double expect = a.getReal() + b.getReal();
-                final double result = subject().getReal();
-                assertThat(result, is(expect));
-            }
-
-            @Test
-            @DisplayName("It returns a complex number with the sum of the two i values")
-            void it_returns_complex_has_each_imagine_sum() {
-                final double expect = a.getImagine() + b.getImagine();
-                final double result = subject().getImagine();
-                assertThat(result, is(expect));
-            }
-        }
-    }
-
-    @Nested
-    @DisplayName("Describe: toString")
-    class GivenToString {
-        @Nested
-        @DisplayName("Context: with only real value")
-        class Context_with_naturals {
-            private final double givenNatual = 3d;
-            private final String expectPattern = "^3(?:\\.0+)?$";
-            private ComplexNumber given = ComplexNumber.of(givenNatual);
-
-            @Test
-            @DisplayName("It returns a string that represents only real value")
-            void it_has_0_imagine_value() {
-                assertTrue(given.toString().matches(expectPattern));
-            }
-        }
-
-        @Nested
-        @DisplayName("Context: with a real value and an imagine value")
-        class Context_with_imagine {
-            private final double givenNatual = 3d;
-            private final double givenImagine = 7d;
-            private ComplexNumber given = ComplexNumber.of(givenNatual, givenImagine);
-            private String expectPattern = "^3(?:\\.0+)?\\+7(?:\\.0+)?i$";
-
-            @Test
-            @DisplayName("It returns a string in the form of real and i addition.")
-            void it_has_0_imagine_value() {
-                System.out.println(given);
-                assertTrue(given.toString().matches(expectPattern));
-            }
-        }
-
-    }
-}
-```
 
 ### 한국어로 테스트 설명을 작성하기
 
 앞에서 소개한 테스트 코드는 `Describe`, `Context`, `It` 과 같은 단어가 불필요하게 추가되어 있는 느낌이 강했다.
 
-다음은 가독성을 높이기 위해 해당 단어들을 제거한 후 테스트를 돌린 결과이다.
+한국어로 작성한다면 다음과 같은 간단한 기준을 따르면 될 것 같다.
+
+* `Describe`는 테스트 대상을 명사로 작성한다.
+* `Context`는 `~인 경우`, `~할 때`, `만약 ~ 하다면` 과 같이 상황 또는 조건을 기술한다.
+* `It`은 위에서 명사로 작성한 테스트 대상의 행동을 작성한다.
+    * 테스트 대상의 행동은 `~이다`, `~한다`, `~를 갖는다`가 적절한다.
+    * `~된다` 같은 수동형 표현은 좋지 않다.
 
 ![새롭게 작성한 테스트 문구]( /post-img/junit5-nested/test-kor.png )
 
-**BDD**가 테스트 대상의 행동을 묘사하는 방식이라는 것을 염두에 두고 작성하면 된다.
+즉, **BDD**가 테스트 대상의 행동을 묘사하는 방식이라는 것을 염두에 두고 작성하면 된다.
 
-즉, 다음과 같이 이어서 읽었을 때 비문이 아닌 하나의 좋은 문장이 되도록 작성하는 것이 중요하다.
+구체적으로는 다음과 같이 이어서 읽었을 때 비문이 아닌 하나의 좋은 문장이 되도록 작성하는 것이 중요하다.
 
-> "ComplexNumber 클래스의 toString 메소드는, 실수값과 허수값이 있다면, 실수부 + 허수부i 형식으로 표현한 문자열을 리턴한다"
+> "ComplexNumber 클래스의 toString 메소드**는** 실수값과 허수값이 있다면, 실수부 + 허수부i 형식으로 표현한 문자열을 리턴한다"
 
 보통 저지르기 쉬운 실수는 다음과 같은 것이다.
 
@@ -198,13 +90,15 @@ class ComplexNumberTest {
 
 이와 같이 작성하면, 다음과 같은 이상한 문장이 된다.
 
-> "ComplexNumber 클래스의 toString 메소드는, 만약 실수값만 읽고 허수값이 없다면, 실수부만 표현한 문자열이 된다"
+> "ComplexNumber 클래스의 toString 메소드**는** 만약 실수값만 읽고 허수값이 없다면, 실수부만 표현한 문자열이 된다"
 
 "toString 메소드는... 문자열이 된다" 이므로 올바른 문장이 아니다.
 
 이와 같이 하나의 완전한 문장이 되는지 체크하며 작성하는 습관을 기를 필요가 있다.
 
 다음은 코드 전문이다.
+
+* [ComplexNumberKoTest.java][example-kor]
 
 ```java
 package com.johngrib.example;
@@ -310,6 +204,10 @@ class ComplexNumberKoTest {
   }
 }
 ```
+
+한편 html 보고서를 출력하면 다음과 같이 나온다.
+
+![]( /post-img/junit5-nested/result.png )
 
 
 ## 타 언어 테스트 프레임워크의 D-C-I 패턴
@@ -453,4 +351,4 @@ object CalculatorSpec: Spek({
 [example]: https://github.com/johngrib/example-junit5/
 [example-1]: https://github.com/johngrib/example-junit5/blob/56811e8647e115f11a6bf10c911734ea41a87677/src/main/java/com/johngrib/example/ComplexNumber.java
 [example-eng]: https://github.com/johngrib/example-junit5/blob/56811e8647e115f11a6bf10c911734ea41a87677/src/test/java/com/johngrib/example/ComplexNumberTest.java
-[example-kor]: https://github.com/johngrib/example-junit5/blob/56811e8647e115f11a6bf10c911734ea41a87677/src/test/java/com/johngrib/example/ComplexNumberKoTest.java
+[example-kor]: https://github.com/johngrib/example-junit5/blob/bc256b273952a1fd1a355b9343e2ab51f77fac96/src/test/java/com/johngrib/example/ComplexNumberKoTest.java
