@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2020-02-09 12:44:31 +0900
+updated : 2020-02-12 08:43:35 +0900
 tag     : wiki vimwiki jekyll blog
 toc     : true
 comment : true
@@ -188,6 +188,7 @@ Google Analytics를 빼뒀으면 더 빨랐을 것이다.
 
 * [search.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/search.html ) - 최초 버전
 * [search.html](https://github.com/johngrib/johngrib.github.io/blob/master/search.html ) - 최신 버전
+
 ```html
 ---
 layout: searchList
@@ -217,6 +218,7 @@ public: true
 
 * [_includes/searchBox.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/searchbox.html ) - 최초 버전
 * [_includes/searchBox.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/master/_includes/searchbox.html ) - 최신 버전
+
 ```html
 <div class="search">
     <form role="search" method="get" action="/search/">
@@ -340,6 +342,7 @@ autocmd BufWritePre *.md call LastModified()
 그리고 다음과 같은 방법을 쓰면 최근 변경된 문서 목록을 역순으로 출력할 수 있다.
 
 [index.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/index.html#L37)
+
 ```liquid
 {% raw %}
 <div>
