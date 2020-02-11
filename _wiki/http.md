@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2020-02-11 23:30:34 +0900
+updated : 2020-02-11 23:37:36 +0900
 tag     : http
 toc     : true
 public  : true
@@ -358,6 +358,15 @@ Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF
 #### 415: Unsupported Media Type
 #### 416: Requested range not satisfiable
 #### 417: Expectation Failed
+#### 422: Unprocessable Entity
+
+[RFC 4918 - 11.2 422 Unprocessable Entity]( https://tools.ietf.org/html/rfc4918#section-11.2 )
+
+> The 422 (Unprocessable Entity) status code means the server understands the content type of the request entity (hence a 415(Unsupported Media Type) status code is inappropriate), and the syntax of the request entity is correct (thus a 400 (Bad Request) status code is inappropriate) but was unable to process the contained instructions.  For example, this error condition may occur if an XML request body contains well-formed (i.e., syntactically correct), but semantically erroneous, XML instructions.
+
+* 서버는 리퀘스트 엔티티의 컨텐츠 타입을 이해한다. 그리고 리퀘스트 엔티티의 신택스도 올바르다. 그러나 첨부된 명령(instructions)을 처리할 수 없다.
+* 즉, 형식은 올바르지만 의미상 처리할 수 없는 요청에 대해 이 오류 조건이 발생할 수 있다.
+
 #### 500 Internal Server Error
 
 [RFC 7231 - 6.6.1 500 Internal Server Error](https://tools.ietf.org/html/rfc7231#section-6.6.1 )
