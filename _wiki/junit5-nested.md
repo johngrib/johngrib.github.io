@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드를 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2019-12-22 19:53:40 +0900
+updated : 2020-02-11 23:06:56 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -168,6 +168,146 @@ class ComplexNumberTest {
         }
 
     }
+}
+```
+
+### 한국어로 테스트 설명을 작성하기
+
+앞에서 소개한 테스트 코드는 `Describe`, `Context`, `It` 과 같은 단어가 불필요하게 추가되어 있는 느낌이 강했다.
+
+다음은 가독성을 높이기 위해 해당 단어들을 제거한 후 테스트를 돌린 결과이다.
+
+![새롭게 작성한 테스트 문구]( /post-img/junit5-nested/test-kor.png )
+
+**BDD**가 테스트 대상의 행동을 묘사하는 방식이라는 것을 염두에 두고 작성하면 된다.
+
+즉, 다음과 같이 이어서 읽었을 때 비문이 아닌 하나의 좋은 문장이 되도록 작성하는 것이 중요하다.
+
+> "ComplexNumber 클래스의 toString 메소드는, 실수값과 허수값이 있다면, 실수부 + 허수부i 형식으로 표현한 문자열을 리턴한다"
+
+보통 저지르기 쉬운 실수는 다음과 같은 것이다.
+
+```java
+@DisplayName("toString 메소드")
+// 생략
+@DisplayName("만약 실수값만 있고 허수값이 없다면")
+// 생략
+@DisplayName("실수부만 표현한 문자열이 된다")
+// 생략
+```
+
+이와 같이 작성하면, 다음과 같은 이상한 문장이 된다.
+
+> "ComplexNumber 클래스의 toString 메소드는, 만약 실수값만 읽고 허수값이 없다면, 실수부만 표현한 문자열이 된다"
+
+"toString 메소드는... 문자열이 된다" 이므로 올바른 문장이 아니다.
+
+이와 같이 하나의 완전한 문장이 되는지 체크하며 작성하는 습관을 기를 필요가 있다.
+
+다음은 코드 전문이다.
+
+```java
+package com.johngrib.example;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@DisplayName("ComplexNumber 클래스")
+class ComplexNumberKoTest {
+
+  @Nested
+  @DisplayName("of 메소드")
+  class DescribeAdd {
+
+    @Nested
+    @DisplayName("만약 실수값만 있고 허수값이 없다면")
+    class Context_with_naturals {
+      private final double givenNatual = 3d;
+      private ComplexNumber given = ComplexNumber.of(givenNatual);
+
+      @Test
+      @DisplayName("i 값이 0 인 복소수를 리턴한다")
+      void it_has_0_imagine_value() {
+        assertThat(given.getImagine(), is((0d)));
+      }
+    }
+  }
+
+  @Nested
+  @DisplayName("Sum 메소드")
+  class DescribeSum {
+    @Nested
+    @DisplayName("만약 실수부와 허수부가 있는 두 복소수가 주어진다면")
+    class Context_with_naturals {
+      private ComplexNumber a, b;
+
+      @BeforeEach
+      void prePareNumbers() {
+        a = ComplexNumber.of(1d, 2d);
+        b = ComplexNumber.of(32d, 175d);
+      }
+
+      ComplexNumber subject() {
+        return ComplexNumber.sum(a, b);
+      }
+
+      @Test
+      @DisplayName("두 실수 값의 합을 실수값으로 갖는 복소수를 리턴한다")
+      void it_returns_complex_has_each_real_sum() {
+        final double expect = a.getReal() + b.getReal();
+        final double result = subject().getReal();
+        assertThat(result, is(expect));
+      }
+
+      @Test
+      @DisplayName("두 허수 값의 합을 허수값으로 갖는 복소수를 리턴한다")
+      void it_returns_complex_has_each_imagine_sum() {
+        final double expect = a.getImagine() + b.getImagine();
+        final double result = subject().getImagine();
+        assertThat(result, is(expect));
+      }
+    }
+  }
+
+  @Nested
+  @DisplayName("toString 메소드")
+  class GivenToString {
+    @Nested
+    @DisplayName("만약 실수값만 있고 허수값이 없다면")
+    class Context_with_naturals {
+      private final double givenNatual = 3d;
+      private final String expectPattern = "^3(?:\\.0+)?$";
+      private ComplexNumber given = ComplexNumber.of(givenNatual);
+
+      @Test
+      @DisplayName("실수부만 표현한 문자열을 리턴한다")
+      void it_has_0_imagine_value() {
+        assertTrue(given.toString().matches(expectPattern));
+      }
+    }
+
+    @Nested
+    @DisplayName("실수값과 허수값이 있다면")
+    class Context_with_imagine {
+      private final double givenNatual = 3d;
+      private final double givenImagine = 7d;
+      private ComplexNumber given = ComplexNumber.of(givenNatual, givenImagine);
+      private String expectPattern = "^3(?:\\.0+)?\\+7(?:\\.0+)?i$";
+
+      @Test
+      @DisplayName("실수부 + 허수부i 형식으로 표현한 문자열을 리턴한다")
+      void it_has_0_imagine_value() {
+        System.out.println(given);
+        assertTrue(given.toString().matches(expectPattern));
+      }
+    }
+  }
 }
 ```
 
