@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드를 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2020-02-11 23:21:54 +0900
+updated : 2020-02-12 22:34:44 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -156,6 +156,7 @@ class ComplexNumberKoTest {
       void it_returns_complex_has_each_real_sum() {
         final double expect = a.getReal() + b.getReal();
         final double result = subject().getReal();
+
         assertThat(result, is(expect));
       }
 
@@ -164,6 +165,7 @@ class ComplexNumberKoTest {
       void it_returns_complex_has_each_imagine_sum() {
         final double expect = a.getImagine() + b.getImagine();
         final double result = subject().getImagine();
+
         assertThat(result, is(expect));
       }
     }
@@ -197,7 +199,6 @@ class ComplexNumberKoTest {
       @Test
       @DisplayName("실수부 + 허수부i 형식으로 표현한 문자열을 리턴한다")
       void it_has_0_imagine_value() {
-        System.out.println(given);
         assertTrue(given.toString().matches(expectPattern));
       }
     }
@@ -209,6 +210,41 @@ class ComplexNumberKoTest {
 
 ![]( /post-img/junit5-nested/result.png )
 
+### subject 메소드의 사용
+
+위의 예제를 잘 살펴봤다면 `subject` 메소드를 발견했을 것이다.
+
+```java
+ComplexNumber subject() {
+  return ComplexNumber.sum(a, b);
+}
+
+@Test
+@DisplayName("두 실수 값의 합을 실수값으로 갖는 복소수를 리턴한다")
+void it_returns_complex_has_each_real_sum() {
+  final double expect = a.getReal() + b.getReal();
+  final double result = subject().getReal();
+
+  assertThat(result, is(expect));
+}
+
+@Test
+@DisplayName("두 허수 값의 합을 허수값으로 갖는 복소수를 리턴한다")
+void it_returns_complex_has_each_imagine_sum() {
+  final double expect = a.getImagine() + b.getImagine();
+  final double result = subject().getImagine();
+
+  assertThat(result, is(expect));
+}
+```
+
+`subject` 메소드는 테스트 대상을 실행하는 코드를 캡슐화하는 역할을 한다.
+
+이를 통해 테스트 대상이 되는 코드의 시그니처가 변경되었을 때 여러 개의 테스트가 줄줄이 깨져나가는 상황을 쉽게 고칠 수 있다.
+
+만약 위의 예에서 `subject` 메소드를 사용하지 않고 `it_returns_complex_has_each_real_sum` 메소드와 `it_returns_complex_has_each_imagine_sum` 메소드에 그냥 `ComplexNumber.sum(a,b)`가 있었다면, `ComplexNumber.sum` 메소드의 인자 타입이나 갯수가 변경될 경우 두 테스트 코드를 수정해야 했을 것이다. 그러나 `subject` 메소드가 있다면 `subject` 하나만 고치면 된다.
+
+`subject`는 특히 테스트 코드가 많이 딸린 복잡한 코드의 테스트에서 빛을 발한다.
 
 ## 타 언어 테스트 프레임워크의 D-C-I 패턴
 
