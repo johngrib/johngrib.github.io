@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드를 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2020-02-12 22:43:43 +0900
+updated : 2020-02-12 22:57:36 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -118,17 +118,31 @@ class ComplexNumberKoTest {
   @Nested
   @DisplayName("of 메소드")
   class DescribeAdd {
+    private final double givenReal = 3d;
+    private final double givenImagine = 3d;
 
     @Nested
-    @DisplayName("만약 실수값만 있고 허수값이 없다면")
-    class Context_with_naturals {
-      private final double givenNatual = 3d;
-      private ComplexNumber given = ComplexNumber.of(givenNatual);
-
+    @DisplayName("만약 실수값만 주어지고 허수값은 없다면")
+    class Context_with_natural_only {
       @Test
       @DisplayName("i 값이 0 인 복소수를 리턴한다")
       void it_has_0_imagine_value() {
-        assertThat(given.getImagine(), is((0d)));
+        final ComplexNumber given = ComplexNumber.of(givenReal);
+
+        assertThat(given.getImagine(), is(0d));
+        assertThat(given.getReal(), is(givenReal));
+      }
+    }
+    @Nested
+    @DisplayName("만약 실수값과 허수값이 주어진다면")
+    class Context_with_imagine_only {
+      @Test
+      @DisplayName("주어진 실수값과 허수값을 갖는 복소수를 리턴한다")
+      void it_has_0_imagine_value() {
+        final ComplexNumber given = ComplexNumber.of(givenReal, givenImagine);
+
+        assertThat(given.getReal(), is(givenReal));
+        assertThat(given.getImagine(), is(givenImagine));
       }
     }
   }
@@ -138,7 +152,7 @@ class ComplexNumberKoTest {
   class DescribeSum {
     @Nested
     @DisplayName("만약 실수부와 허수부가 있는 두 복소수가 주어진다면")
-    class Context_with_naturals {
+    class Context_with_two_complex {
       private ComplexNumber a, b;
 
       @BeforeEach
