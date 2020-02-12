@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드를 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2020-02-12 22:34:44 +0900
+updated : 2020-02-12 22:43:43 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -245,6 +245,8 @@ void it_returns_complex_has_each_imagine_sum() {
 만약 위의 예에서 `subject` 메소드를 사용하지 않고 `it_returns_complex_has_each_real_sum` 메소드와 `it_returns_complex_has_each_imagine_sum` 메소드에 그냥 `ComplexNumber.sum(a,b)`가 있었다면, `ComplexNumber.sum` 메소드의 인자 타입이나 갯수가 변경될 경우 두 테스트 코드를 수정해야 했을 것이다. 그러나 `subject` 메소드가 있다면 `subject` 하나만 고치면 된다.
 
 `subject`는 특히 테스트 코드가 많이 딸린 복잡한 코드의 테스트에서 빛을 발한다.
+
+또한, `subject` 를 잘 정의하면 복잡한 `Context`가 많을 경우 핵심 부분만 뽑아낸 `Context`를 상속하여 해당 `Context`의 조건을 오버라이드하는 방식으로 사용할 수도 있다.
 
 ## 타 언어 테스트 프레임워크의 D-C-I 패턴
 
