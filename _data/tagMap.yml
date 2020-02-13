@@ -143,6 +143,7 @@ vim:
     - {fileName: two-views-of-vim}
     - {fileName: ultisnips}
     - {fileName: Vim}
+    - {fileName: vim-asciidoc-setting}
     - {fileName: vim-auto-completion}
     - {fileName: vim-coc}
     - {fileName: vim-conceallevel}
@@ -859,6 +860,8 @@ ubuntu:
     - {fileName: vagrant-docker-get-start}
 vm:
     - {fileName: vagrant-docker-get-start}
+asciidoc:
+    - {fileName: vim-asciidoc-setting}
 plugin:
     - {fileName: vim-f-hangul}
 ultisnips:

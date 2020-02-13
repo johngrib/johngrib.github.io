@@ -391,6 +391,7 @@ regenerate: true
 * [[config-ideavim]]
 * [[two-views-of-vim]]
 * [[ultisnips]]
+* [[vim-asciidoc-setting]]
 * [[vim-auto-completion]]
 * [[vim-coc]]
 * [[vim-conceallevel]]{conceallevel (Vim)}
