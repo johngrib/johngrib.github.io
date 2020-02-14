@@ -1516,7 +1516,7 @@ global-variables-and-marriage-architecture:
     summary: '연결에 제약을 가한 네트워크로 가족 갈등을 예방한다'
     parent: my-lifehack
     url: /wiki/global-variables-and-marriage-architecture
-    updated: '2020-02-14 23:29:42 +0900'
+    updated: '2020-02-14 23:31:23 +0900'
     children: []
 glow-cmd:
     type: wiki
