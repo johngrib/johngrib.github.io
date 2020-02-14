@@ -462,6 +462,7 @@ regenerate: true
 * [[our-fund-balancing]]
 * [[preserve-brain]]
 * [[random-lunch]]
+* [[global-variables-and-marriage-architecture]]
 
 ## [[summary]]
 * [[REST-paper-summary]]

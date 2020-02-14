@@ -359,6 +359,7 @@ devops:
     - {fileName: vagrant-docker-get-start}
 network:
     - {fileName: bandwidth}
+    - {fileName: global-variables-and-marriage-architecture}
     - {fileName: IP}
     - {fileName: latency}
     - {fileName: osi-model}
@@ -638,6 +639,10 @@ fzf:
 til:
     - {fileName: git-checkout-specific-files}
     - {fileName: til}
+love:
+    - {fileName: global-variables-and-marriage-architecture}
+problem:
+    - {fileName: global-variables-and-marriage-architecture}
 번역:
     - {fileName: Go-Blog-translation}
     - {fileName: golang-debugging-what-you-deploy}
