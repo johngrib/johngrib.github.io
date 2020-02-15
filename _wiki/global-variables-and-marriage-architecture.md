@@ -3,7 +3,7 @@ layout  : wiki
 title   : 결혼 생활과 public node로만 이루어진 network 문제
 summary : 연결에 제약을 가한 네트워크로 가족 갈등을 예방한다
 date    : 2020-02-14 21:17:30 +0900
-updated : 2020-02-14 23:31:23 +0900
+updated : 2020-02-15 11:05:04 +0900
 tag     : love problem network
 toc     : true
 public  : true
@@ -119,4 +119,8 @@ John 과 Loui 의 실제 가족 구성원을 생각해보면, 만약 두 사람�
 * 가족들이 이 관계를 이해하지는 못해도 인정하게 되었다.
     * 그리고 다른 다양한 상황에서도 우리 부부에 대해 유사한 규칙을 적용하게 되었다.
 * 평화롭다. John 을 더 사랑하게 되었다.
+
+## 함께 읽기
+
+* [[our-fund-balancing]]{사람에겐 얼마만큼의 통장 잔고가 필요한가?}
 

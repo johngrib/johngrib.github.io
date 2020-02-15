@@ -3,7 +3,7 @@ layout  : wiki
 title   : 사람에겐 얼마만큼의 통장 잔고가 필요한가?
 summary : 우리 부부의 자금 밸런싱 전략
 date    : 2020-02-01 22:21:37 +0900
-updated : 2020-02-02 00:47:46 +0900
+updated : 2020-02-15 11:04:01 +0900
 tag     : money experiment
 toc     : true
 public  : true
@@ -389,4 +389,8 @@ Limit:200  Limit:200  Limit:300
 | 매우 나쁨 | 두 사람의 잔고가 바닥을 드러냈다.       |
 
 항상 한 단계라도 더 나은 평가 수준으로 올릴 수 있도록 노력한다.
+
+## 함께 읽기
+
+* [[global-variables-and-marriage-architecture]]{결혼 생활과 public node로만 이루어진 network 문제}
 
