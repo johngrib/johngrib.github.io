@@ -2804,7 +2804,7 @@ review-2020:
     summary: '연말에 2020년 회고로 제목을 바꿀 문서'
     parent: review
     url: /wiki/review-2020
-    updated: '2020-02-15 21:37:04 +0900'
+    updated: '2020-02-17 08:23:44 +0900'
     children: []
 RFC:
     type: wiki
