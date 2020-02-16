@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) Architectural Styles and the Design of Network-based Software Architectures by Roy Thomas Fielding, 2000
 summary : 로이 필딩의 아키텍처 스타일과 네트워크 기반의 소프트웨어 아키텍처 설계 요약
 date    : 2019-07-24 19:59:55 +0900
-updated : 2019-10-15 17:52:02 +0900
+updated : 2020-02-17 08:07:39 +0900
 tag     : web
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 이 개요는 논문을 읽고 나서 내 편의대로 요약한 것이므로, 정확한 내용은 원문을 참고할 것.
 
@@ -80,13 +80,13 @@ latex   : false
     * 서버는 클라이언트가 보낸 정보를 보고 클라이언트에 맞는 형태로 리소스에 근거한 표현을 돌려준다.
     * 클라이언트는 메타데이터를 보고 데이터를 어떻게 해석할지를 알게 된다.
 
-# 논문 요약
+## 논문 요약
 
 **Architectural Styles and the Design of Network-based Software Architectures**
 
 * 로이 필딩의 논문을 요약해본다.
 
-## DEDICATION
+### DEDICATION
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/dedication.htm )
 **헌정**
@@ -94,7 +94,7 @@ latex   : false
 * 저자(로이 필딩)가 가족들과 팀 버너스 리에 대한 고마움을 이야기한다.
 * 두 편의 시(poet)를 인용한다.
 
-## ACKNOWLEDGMENTS
+### ACKNOWLEDGMENTS
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/acknowledgments.htm )
 **감사의 말**
@@ -103,14 +103,14 @@ latex   : false
 * 웹 아키텍처 스타일과 관련된 여러 단체의 공동 작업을 행한 많은 이들에게 감사를 표한다.
 * 미국 정부와 국방부가 로이 필딩의 논문 연구를 후원해 주었음을 명시.
 
-## CURRICULUM VITAE
+### CURRICULUM VITAE
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_cv_2000.htm)
 **저자 약력**
 
 * 저자의 학력과 발표, 저술, 전문가로서의 활동 등을 나열한다.
 
-## ABSTRACT OF THE DISSERTATION
+### ABSTRACT OF THE DISSERTATION
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/abstract.htm )
 **개요**
@@ -141,7 +141,7 @@ latex   : false
     * REST 외의 다른 아키텍처 제약조건과 비교한다.
 6. HTTP 및 URI 설계에 REST를 적용하고 웹 클라이언트/서버 소프트웨어를 배포하며 깨닫게 된 것을 이야기한다.
 
-## INTRODUCTION
+### INTRODUCTION
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/introduction.htm)
 **도입**
@@ -172,7 +172,7 @@ latex   : false
 * 새로운 아키텍처 스타일인 REST 소개.
 * 현대적인 월드 와이드 웹을 위한 아키텍처 설계 관점에서 REST 스타일 응용 및 평가.
 
-## CHAPTER 1. Software Architecture
+### CHAPTER 1. Software Architecture
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/software_arch.htm)
 **소프트웨어 아키텍처**
@@ -192,7 +192,7 @@ latex   : false
 * **아키텍처 스타일은 요소(elements)와 요소와의 관계를 제약하는 조건들의 집합이다.**
 
 
-## CHAPTER 2. Network-based Application Architectures
+### CHAPTER 2. Network-based Application Architectures
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/net_app_arch.htm )
 **네트워크 기반의 애플리케이션 아키텍처**
@@ -252,7 +252,7 @@ latex   : false
 * **신뢰성(Reliability)**
     * 장애 발생시 장애 범위 최소화 등.
 
-## CHAPTER 3. Network-based Architectural Styles
+### CHAPTER 3. Network-based Architectural Styles
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/net_arch_styles.htm )
 **네트워크 기반 아키텍처 스타일**
@@ -287,7 +287,7 @@ latex   : false
     * Distributed Objects
     * Brokered Distributed Objects
 
-## CHAPTER 4. Designing the Web Architecture: Problems and Insights
+### CHAPTER 4. Designing the Web Architecture: Problems and Insights
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/web_arch_domain.htm )
 **웹 아키텍처 설계: 문제점과 통찰**
@@ -366,7 +366,7 @@ IETF의 활동을 통해 다음과 같은 과제를 얻을 수 있다.
     * 충돌이 심각하다면? 설계를 바꾸거나, 웹과 별도로 실행되도록 권고할 수 있다.
 4. 새로운 스타일로 업데이트된 아키텍처가 다양한 인프라/미들웨어 소프트웨어로 세상에 배포되어 퍼져나간다.
 
-## CHAPTER 5. Representational State Transfer (REST)
+### CHAPTER 5. Representational State Transfer (REST)
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm )
 **REST 아키텍처 스타일**
@@ -382,7 +382,7 @@ IETF의 활동을 통해 다음과 같은 과제를 얻을 수 있다.
     * REST의 아키텍처 요소를 정의한다.
     * 프로토 타입 아키텍처의 샘플 프로세스, 커넥터 및 데이터 뷰를 검사한다.
 
-### 5.1 Deriving REST
+#### 5.1 Deriving REST
 
 **REST의 파생**
 
@@ -427,7 +427,7 @@ IETF의 활동을 통해 다음과 같은 과제를 얻을 수 있다.
     * 시스템 확장성이 향상.
     * 단점: 가시성 감소.
 
-### 5.2 REST Architectural Elements
+#### 5.2 REST Architectural Elements
 
 **REST 아키텍처 요소** 
 
@@ -436,7 +436,7 @@ IETF의 활동을 통해 다음과 같은 과제를 얻을 수 있다.
     * 그를 위해 콤포넌트 구현 및 프로토콜 구문의 세부사항을 무시한다.
 * REST는 웹 아키텍처의 기초를 정의하는 콤포넌트, 커넥터 및 데이터에 대한 근본적인 제약조건을 포함한다.
 
-#### 5.2.1 Data Elements
+##### 5.2.1 Data Elements
 
 **데이터 요소**
 
@@ -469,7 +469,7 @@ REST는 **메타 데이터로 데이터 유형을 공유하는 방법에 초점*
 | resource metadata       | 자원의 메타데이터 | source link, alternates, vary    |
 | control data            | 컨트롤 데이터     | if-modified-since, cache-control |
 
-##### 5.2.1.1 Resources and Resource Identifiers
+###### 5.2.1.1 Resources and Resource Identifiers
 
 **자원과 자원 식별자**
 
@@ -481,7 +481,7 @@ REST에서 정보의 핵심 추상화는 자원(resource)이다.
     * 요청의 특성을 기반으로 콘텐츠 협상을 수행 할 수 있도록 표현에 대한 참조의 지연 바인딩을 허용한다.
     * 개념의 단수 표현이 아니라 집합에 대한 표현이므로 표현이 바뀌어도 링크를 바꾸지 않아도 된다.
 
-##### 5.2.1.2 Representations
+###### 5.2.1.2 Representations
 
 **표현**
 
@@ -514,7 +514,7 @@ REST 콤포넌트는 자원(resource)의 현재 상태나 의도된 상태를 �
 * 메시지의 제어 데이터와 미디어 유형에 따라 수신자가 처리.
 * 하나의 메시지에 여러 표현이 포함될 수 있다.
 
-#### 5.2.2 Connectors
+##### 5.2.2 Connectors
 
 **커넥터**
 
@@ -550,7 +550,7 @@ REST의 모든 상호 작용은 무상태(stateless) 기반이다.
 * 해석자(resolver) 커넥터는 자원 식별자를 네트워크 주소 정보로 변환한다.
 * 터널(tunnel)은 통신을 중계한다.
 
-#### 5.2.3 Components
+##### 5.2.3 Components
 
 * 역할에 따라 분류한 콤포넌트.
 
@@ -578,7 +578,7 @@ REST의 모든 상호 작용은 무상태(stateless) 기반이다.
         * 데이터 변환, 성능 향상, 보안에 대해 다른 서비스의 인터페이스 캡슐화를 제공하는 매개체.
         * 프록시와 게이트웨이의 차이점: 프록시를 사용할 시점은 클라이언트가 결정.
 
-### 5.3 REST Architectural Views
+#### 5.3 REST Architectural Views
 
 **REST 아키텍처 관점**
 
@@ -589,7 +589,7 @@ REST의 모든 상호 작용은 무상태(stateless) 기반이다.
 
 비슷한 내용이 이어지므로 생략한다.
 
-## CHAPTER 6. Experience and Evaluation
+### CHAPTER 6. Experience and Evaluation
 
 **경험과 평가**
 
@@ -643,7 +643,7 @@ REST가 HTTP 표준에 준 영향
     * 콘텐츠 협상
 * 성능
  
-## CONCLUSIONS
+### CONCLUSIONS
 
 [원문](https://www.ics.uci.edu/~fielding/pubs/dissertation/conclusions.htm )
 **결론**
@@ -653,16 +653,16 @@ REST가 HTTP 표준에 준 영향
 
 
 
-# 참고문헌
+## 참고문헌
 
 * RESTful Web API / 레오나르드 리처드슨, 마이크 애먼슨, 샘 루비 공저 / 박세현, 박진형 공역 / 인사이트(insight) / 2017년 04월 17일
 * Architectural Styles and the Design of Network-based Software Architectures by Roy Thomas Fielding 2000
     * [링크](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
     * [PDF](https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf)
 
-# Links
+## Links
 
 * [Content negotiation](https://developer.mozilla.org/ko/docs/Web/HTTP/Content_negotiation )
 
-# 미주
+## 미주
 
