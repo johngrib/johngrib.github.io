@@ -20,6 +20,13 @@ comment: false
         <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
 </div>
 
+## Motto
+
+> Whenever you fall, pick something up. – Oswald Avery
+
+> 넘어지면 무언가를 주워라. - 오스왈드 에이버리
+
+
 ## About Me
 
 * 유물론자입니다.
@@ -40,21 +47,6 @@ comment: false
     * 늦어도 8시에는 일어납니다.
     * 주말도 예외가 아닙니다.
 * Vim 사용자입니다.
-
-## Buy me a coffee
-
-{% raw %}
-<p>
-    <img class="coffee-icon" style="max-width: 11px" src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
-    <a href="https://www.buymeacoffee.com/JohnGrib" target="_blank">기계인간 John Grib에게 따뜻한 차 한잔을.</a>
-</p>
-{% endraw %}
-
-## Motto
-
-> Whenever you fall, pick something up. – Oswald Avery
-
-> 넘어지면 무언가를 주워라. - 오스왈드 에이버리
 
 ## 기고
 
@@ -130,4 +122,13 @@ Eg==
 =0LmY
 -----END PGP PUBLIC KEY BLOCK-----
 ```
+
+## Buy me a coffee
+
+{% raw %}
+<p>
+    <img class="coffee-icon" style="max-width: 11px" src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
+    <a href="https://www.buymeacoffee.com/JohnGrib" target="_blank">기계인간 John Grib에게 따뜻한 차 한잔을.</a>
+</p>
+{% endraw %}
 
