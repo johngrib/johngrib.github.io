@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 키보드 히스토리
 summary : 역사를 정리해 보자
 date    : 2018-11-22 10:57:14 +0900
-updated : 2019-12-27 21:13:51 +0900
+updated : 2020-02-17 23:17:00 +0900
 tag     : keyboard
 toc     : true
 public  : true
@@ -13,12 +13,12 @@ latex   : false
 * TOC
 {:toc}
 
-# History
-## 1994 ~
+## History
+### 1994 ~
 
 * 컴퓨터를 사면 딸려오는 키보드를 사용했다.
 
-## 2001 ~ 2014
+### 2001 ~ 2014
 
 삼성 SEM-DT35
 
@@ -29,7 +29,7 @@ latex   : false
 * 타이핑할 때 힘이 많이 들어가긴 하지만 타이핑이 재미있다는 느낌을 자주 받았다.
 * 나중에 꽤 괜찮은 키보드로 평가받는다는 이야기를 듣고 그럴 만 하다고 생각했다.
 
-## 2014-11-05: Realforce87 구매
+### 2014-11-05: Realforce87 구매
 
 ![realforce87-white](/post-img/my-keyboard/realforce87white.jpg )
 
@@ -50,7 +50,7 @@ Topre Realforce87 저소음 차등 영문 화이트
 * VIM 사용 편의를 위한 Esc-Backtick 스왑.
 
 
-## 2015-01-04: Ducky Mini 구매
+### 2015-01-04: Ducky Mini 구매
 
 ![ducky-mini](/post-img/my-keyboard/ducky-mini.jpg )
 
@@ -62,7 +62,7 @@ Ducky Mini 다크 그레이 적축
 * 그러나 적축은 무접점만큼의 부드러운 느낌을 주지 못하여 몇 달 쓰지 못하고 리얼포스로 돌아가게 됐다.
 * 번쩍번쩍한 LED가 달린 키보드가 내 취향이 아니라는 것을 깨닫게 되었다.
 
-## 2015-05-26 Realforce87 하나 더 구매
+### 2015-05-26 Realforce87 하나 더 구매
 
 ![realforce87-white](/post-img/my-keyboard/realforce87-blue.jpg )
 
@@ -74,7 +74,7 @@ Realforce87 10주년 모델 저소음 차등 영문
 * 사진으로 볼 때는 색깔이 좀 이상하게 보였는데, 실제로 보니 고급스러운 느낌이 들어 좋았다.
 
 
-## 2017-05-11 HHKB JP 구매
+### 2017-05-11 HHKB JP 구매
 
 ![hhkb-jp](/post-img/my-keyboard/hhkb-jp.jpg )
 
@@ -90,7 +90,7 @@ HHKB JP
 
 컨트롤 보드 구매는 [[hhkb-jp-tmk]] 문서를 참고.
 
-## 2017-05-17 HHKB JP 하나 더 구매
+### 2017-05-17 HHKB JP 하나 더 구매
 
 ![hhkb-twins](/post-img/my-keyboard/hhkb-twins.jpg )
 
@@ -100,7 +100,7 @@ HHKB JP
     * 스프링 케이블은 쿠팡이나 옥션 등의 인터넷 쇼핑몰에서 "usb 미니 5핀 스프링 케이블"로 검색하면 쉽게 찾을 수 있다.
 
 
-## 2017-05-23 HHKB JP 무각 키캡 사용 시작
+### 2017-05-23 HHKB JP 무각 키캡 사용 시작
 
 ![none-keycaps](/post-img/my-keyboard/nonekeycap.jpg )
 
@@ -108,7 +108,7 @@ HHKB JP
 * TMK를 통해 레이아웃을 자주 바꾸다보니, 키캡 프린팅 레이블과 실제 키가 달라지는 일이 빈번하게 되어 고민하게 되었다.
     * 무각을 사용하면 이 문제를 우회할 수 있다는 생각에 무각을 쓰기로 결정했다.
 
-## 2017-07-26 블랙 무각 키캡 추가
+### 2017-07-26 블랙 무각 키캡 추가
 
 ![black-keycaps](/post-img/my-keyboard/black-keycap.jpg )
 
@@ -125,7 +125,7 @@ HHKB JP
     * 그러나 Topre의 키캡은 Cherry 키캡과 호환되지 않는다. 그냥 키캡을 검색하면 마이너인 Topre 키캡은 잘 안 나오고 Cherry 키캡이 주로 나오므로 검색어에 Topre를 넣어야 한다.
         * Cherry/Topre 키캡은 키보드에 끼우는 부분을 보면 구분할 수 있다. 끼우는 부분이 `+` 모양이면 Cherry 호환 키캡이고, `-` 모양이면 Topre 호환 키캡이다.
 
-## 2018-10-31 XD75 기계식 키보드 조립 키트 구매
+### 2018-10-31 XD75 기계식 키보드 조립 키트 구매
 
 ![XD75](/post-img/my-keyboard/XD75.jpg )
 
@@ -138,7 +138,7 @@ HHKB JP
 
 스위치 테스트 구매는 [알리 익스프레스에서 "key switch tester"라고 검색](https://www.aliexpress.com/af/key-switch-tester.html?SearchText=key+switch+tester )하면 많이 나온다.
 
-## 2018-12-06 MDA 키캡 구매
+### 2018-12-06 MDA 키캡 구매
 
 * 더 편한 키캡을 찾다가 MDA 키캡에 대해 알게 되어 마음에 들어 구매하게 되었다.
 
@@ -147,17 +147,17 @@ MDA 키캡 구매
 * [알리 익스프레스에서 "pbt mda keycaps" 또는 "pbt xda keycaps"라고 검색](https://www.aliexpress.com/af/pbt-xda-keycaps.html?SearchText=pbt+xda+keycaps ).
 * ABS 키캡보다 PBT 키캡의 촉감이 훨씬 좋다.
 
-## 2018-12-14 UHK 구매
+### 2018-12-14 UHK 구매
 
 * [Ultimate Hacking Keyboard](https://ultimatehackingkeyboard.com )를 구매했다.
 * 옵션은 갈축.
 * 쓰고 있던 개조 HHKB JP도 좋았지만 팔을 양옆으로 벌리고 타이핑해보고 싶었다.
 
-## 2018-02-14 Realforce87 화이트 판매
+### 2018-02-14 Realforce87 화이트 판매
 
 * 페이스북 지인에게 Realforce87 화이트 차등 저소음을 판매했다.
 
-## 2019-04-03 UHK 도착
+### 2019-04-03 UHK 도착
 
 * 주문 제작이라 도착할 때까지 4개월이나 걸렸다!
 * 몇 년 걸린 분도 있다고 들었으니 늦게 주문해서 다행이라 생각한다.
@@ -171,7 +171,7 @@ MDA 키캡 구매
     * (UHK 팝니다~)
     * 역시 기계식보다 무접점이 좋다.
 
-## 2019-06-02 체리 키캡 호환 어댑터로 교환하고 MDA 키캡 추가
+### 2019-06-02 체리 키캡 호환 어댑터로 교환하고 MDA 키캡 추가
 
 ![uhk](/post-img/my-keyboard/adapter.jpg )
 
@@ -204,13 +204,13 @@ MDA 키캡 구매
 ![mda-zoom](/post-img/my-keyboard/xda-zoom.jpg )
 
 
-# 나의 키보드 선택/커스터마이즈 기준
+## 나의 키보드 선택/커스터마이즈 기준
 
 나름 여러 키보드를 사용해보며 마련한 나만의 기준이 있다.
 
 기준은 일반적으로 괴로움과 관련된 것들이다.
 
-## 손가락이 아픈가?
+### 손가락이 아픈가?
 
 타이핑하면서 손가락이 아프다면 자신의 타이핑 습관을 잘 관찰해 원인을 찾아야 한다.
 
@@ -234,7 +234,7 @@ MDA 키캡 구매
     * LCtrl: 이 위치에 Ctrl 키를 배치하면 Ctrl 키를 입력할 때 새끼손가락이 덜 이동하게 된다. Tab 키 위치도 괜찮다.
     * F13: 이 키는 내가 여러 매크로를 매핑해둔 것인데, 기본적으로 한 번 누르면 ESC로 작동한다. 손가락으로 누르지는 않고 손날로 누른다. VIM을 쓸 때 유용하다.
 
-## 어깨가 아픈가?
+### 어깨가 아픈가?
 
 내 경우에는 다음 이유로 어깨가 아팠다.
 
@@ -264,7 +264,7 @@ MDA 키캡 구매
 
 결과적으로 내 어깨는 매우 건강해졌다.
 
-## 손가락 끝 피부가 아픈가?
+### 손가락 끝 피부가 아픈가?
 
 손가락 끝 피부가 아프다면 다음을 생각해볼 수 있다.
 
@@ -287,7 +287,7 @@ MDA 키캡 구매
 
 결론적으로 나는 MDA 키캡을 끼운 HHKB 키보드 밑에 쿠션을 깔고, 타이핑을 살살 해서 쓴다.
 
-## 소음 때문에 괴로운가?
+### 소음 때문에 괴로운가?
 
 * 청축같은 클릭 감이 있는 기계식 키보드를 쓰고 있다면, 리니어 방식의 기계식 키보드나 정전식 무접점 키보드로 갈아탄다.
 * 정전식 무접점을 쓰는데도 시끄럽다면, 리얼포스 저소음 차등을 쓰자.
@@ -300,6 +300,6 @@ MDA 키캡 구매
     * 한 개만 끼워줘도 키보드가 올라올 때 상판과 닿는 순간 완충이 되어 소리가 매우 부드럽게 된다.
 * BOSE나 SONY의 노이즈 캔슬링 헤드셋을 사서 쓰는 방법도 있다. 실제로 써보면 매우 쾌적하다.
 
-# Links
+## Links
 
 * [[hhkb-jp-tmk]]
