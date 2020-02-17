@@ -56,6 +56,17 @@ comment: false
 
 > 넘어지면 무언가를 주워라. - 오스왈드 에이버리
 
+## 기고
+
+* 2020-02-10 [기술 블로그를 다시 디자인하며]( https://helloworld.kurly.com/blog/redesign-tech-blog/ ) - 컬리 기술 블로그
+* 2018-02-26 [MySQL에서 'a' = 'a '가 true로 평가된다?]( https://woowabros.github.io/study/2018/02/26/mysql-char-comparison.html ) - 우아한형제들 기술 블로그
+* 2017-07-06 [레거시 코드를 파괴하는 Vim 벽돌 깨기]( https://woowabros.github.io/tools/2017/07/06/vim-game-code-break.html ) - 우아한형제들 기술 블로그
+* 2016-06-18 [IntelliJ 의 VIM 플러그인 마개조하기]( https://woowabros.github.io/tools/2016/06/18/ideavim-customize-00.html ) - 우아한형제들 기술 블로그
+
+## 인터뷰, 강연
+
+* 2020-01-29 [2020릴레이인터뷰 첫 번째 주자, 마켓컬리 소프트웨어 엔지니어 "이종립"]( https://monthly-jiandson.tistory.com/49 )
+* 2017-11-16 [OKKY 미니세미나 "비전공 학원출신 SI개발자, 유명스타트업 들어간.ssul" 참석 후기]( https://jojoldu.tistory.com/247 )
 
 ## Public Key
 
