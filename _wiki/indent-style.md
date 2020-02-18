@@ -15,7 +15,7 @@ latex   : false
 
 중괄호 인덴테이션 방식에도 이름이 있을 거라는 생각은 했었지만 실제로 찾아본 건 오늘이 처음이다.
 
-# K&R style
+## K&R style
 
 K 는 Kernighan을 말하고, R은 Ritche를 뜻한다.
 
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-# Allman style
+## Allman style
 
 ```c
 while (x == y)
@@ -59,7 +59,7 @@ while (x == y)
 }
 ```
 
-# Links
+## Links
 
 * [Indent_style](https://en.wikipedia.org/wiki/Indent_style)을 참고하였다.
 

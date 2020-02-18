@@ -13,9 +13,9 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의
+## 정의
 
-## 집합(sets)
+### 집합(sets)
 
 >
 A set is an unordered collection of objects, called elements or members of the set.
@@ -25,7 +25,7 @@ The notation $$a \notin A$$ denotes that a is not an element of the set A.
 
 * 집합은 순서 없는 객체들의 컬렉션이다.
 
-## 집합의 같음
+### 집합의 같음
 
 >
 Two sets are equal if and only if they have the same elements.
@@ -36,7 +36,7 @@ We write $$A=B$$ if A and B are equal sets.
 * 두 집합이 같은 원소를 갖고 있다면 두 집합은 같다.
 * $$ A \subseteq B $$ 이고, $$ B \subseteq A $$ 이면 $$ A=B $$.
 
-## 부분집합(subset), 진 부분집합(proper subset)
+### 부분집합(subset), 진 부분집합(proper subset)
 
 >
 The set A is a subset of B if and only if every element of A is also an element of B.
@@ -46,7 +46,7 @@ We use the notation $$A ⊆ B$$ to indicate that A is a subset of the set B.
 * $$ A \subset B $$ : 진 부분집합(proper subset)
     * $$ A \subseteq B $$ 이고, $$ A \ne B $$ 이면 A는 B의 진 부분집합.
 
-## 멱집합(poser set)
+### 멱집합(poser set)
 
 >
 Given a set S, the power set of S is the set of all subsets of the set S.
@@ -55,7 +55,7 @@ The power set of S is denoted by $$P(S)$$.
 * 집합 S의 멱집합(power set)은 집합 S의 모든 부분집합의 집합을 말한다.
 * $$ P(S) $$로 표기한다.
 
-## 데카르트 곱(cartesian products)
+### 데카르트 곱(cartesian products)
 
 >
 Let A and B be sets.
@@ -67,9 +67,9 @@ Hence, $$A × B = \{(a, b) \vert a ∈ A ∧ b ∈ B \}$$
 * $$ A_1 × A_2 × ... × A_n = \{(a_1, a_2, ..., a_n) \vert a_i ∈ A_i \ for \ i = 1, 2, ..., n \} $$ &nbsp;
 * $$ A × B $$의 부분집합 $$ R $$을 집합 A 로부터 집합 B로의 관계(relation)라고 한다.
 
-## 연산
+### 연산
 
-### 합집합(union)
+#### 합집합(union)
 
 > Let A and B be sets.
 The union of the sets A and B, denoted by $$A ∪ B$$,
@@ -80,7 +80,7 @@ is the set that contains those elements that are either in A or in B, or in both
 
 $$ A_1 ∪ A_2 ∪ ... ∪ A_n = \bigcup_{i=1}^n A_i $$
 
-### 교집합(intersection)
+#### 교집합(intersection)
 
 > Let A and B be sets.
 The intersection of the sets A and B, denoted by $$A ∩ B$$,
@@ -91,27 +91,27 @@ is the set containing those elements in both A and B.
 
 $$ A_1 ∩ A_2 ∩ ... ∩ A_n = \bigcap_{i=1}^n A_i $$
 
-#### 서로 소(disjoint)
+##### 서로 소(disjoint)
 
 > Two sets are called disjoint if their intersection is the empty set.
 
 * 두 집합의 교집합이 공집합인 경우를 서로 소라 한다.
 
-### 차집합(difference)
+#### 차집합(difference)
 
 > Let A and B be sets. The difference of A and B, denoted by $$A − B$$, is the set containing those elements that are in A but not in B. The difference of A and B is also called the complement of B with respect to A.
 
 * A에 대한 B의 여집합(complement of B with respect to A) 이라고도 부른다.
 * $$ A-B = \{ x \vert x ∈ A ∧ x ∉ B \} $$
 
-### 여집합(complement)
+#### 여집합(complement)
 
 > Let U be the universal set. The complement of the set A, denoted by $$ \bar{A} $$, is the complement of A with respect to U . Therefore, the complement of the set A is $$U − A$$.
 
 * 여집합은 $$ U - A $$이고, $$ \bar{A} $$로 표기한다.
 * $$ \bar{A} = \{ x ∈ U \vert x ∉ A \} $$
 
-# 집합의 항등
+## 집합의 항등
 
 | $$A ∩ U = A$$ <br> $$A ∪ \emptyset = A $$                      | 항등법칙         | Identity laws       |
 | $$A ∪ U = U$$ <br> $$A ∩ \emptyset = \emptyset $$              | 지배법칙         | Domination laws     |
@@ -124,7 +124,7 @@ $$ A_1 ∩ A_2 ∩ ... ∩ A_n = \bigcap_{i=1}^n A_i $$
 | $$A ∪ (A ∩ B) = A$$ <br> $$A ∩ (A ∪ B) = A $$                  | 흡수법칙         | Absorption laws     |
 | $$A ∪ \bar{A} = U$$ <br> $$A ∩ \bar{A} = ∅ $$                  | 보수법칙         | Complement laws     |
 
-# datatype 과 집합
+## datatype 과 집합
 
 >
 컴퓨터과학에서 이야기하는 "데이터형"이라고 하는 개념은 집합의 개념 위에 정의된다는 것에 주목하라.
@@ -132,7 +132,7 @@ $$ A_1 ∩ A_2 ∩ ... ∩ A_n = \bigcap_{i=1}^n A_i $$
 예를 들어 boolean 이란 집합 $$ \{ 0, 1 \} $$과, 그 원소인 0과 1을 피연산자로 하여 연산을 수행하는
 **AND, OR, NOT**과 같은 연산자들을 함께 지칭하는 것이다.
 
-# 집합의 크기
+## 집합의 크기
 
 **Cardinality of Sets**
 
@@ -167,7 +167,7 @@ If there is a one-to-one function from A to B, the cardinality of A is less than
 * $$ \abs{A} \le \abs{B} $$이고, $$ \abs{A} \ne \abs{B} $$이면
     * A의 크기는 B보다 작다. $$ \abs{A} < \abs{B} $$.
 
-## 셀 수 있는 집합
+### 셀 수 있는 집합
 
 **Countable Sets**
 
@@ -193,7 +193,7 @@ We write $$\abs{S} = \aleph_0$$ and say that S has cardinality "**aleph null**".
 
 * 집합 A와 집합 B와 셀 수 있는 집합이면, $$A ∪ B$$도 셀 수 있는 집합이다.
 
-### 슈뢰더-베른슈타인 정리
+#### 슈뢰더-베른슈타인 정리
 
 **Schröder–Bernstein theorem**
 
@@ -214,7 +214,7 @@ then there is a one-to-one correspondence between A and B.
         * $$ g(x) = \frac{x}{2} $$ 는 $$(0,1]$$의 모든 원소를 $$(0, \frac{1}{2}]$$로 대응시키는 단사 함수다.
     * 따라서 $$ \abs{ (0,1) } = \abs{ (0,1] } $$ 는 참이다.
 
-### 모든 정수의 집합은 셀 수 있는가?
+#### 모든 정수의 집합은 셀 수 있는가?
 
 * 모든 정수는 다음과 같이 나열할 수 있을 것이다. 인덱스를 매기기 애매하다.
 
@@ -231,7 +231,7 @@ $$ 0, 1, -1, 2, -2, 3, -3, ... $$
 
 따라서 모든 정수의 집합은 셀 수 있다.
 
-### 모든 양의 유리수의 집합은 셀 수 있는가?
+#### 모든 양의 유리수의 집합은 셀 수 있는가?
 
 다음과 같이 배열하면 순서대로 셀 수 있다.
 
@@ -255,11 +255,11 @@ $$
 
 따라서 양의 유리수의 집합은 셀 수 있다.
 
-## 셀 수 없는 집합
+### 셀 수 없는 집합
 
 **An Uncountable Set**
 
-### 칸토어의 대각선 논법
+#### 칸토어의 대각선 논법
 
 **Cantor diagonalization argument**: 실수는 비가산 집합이다.
 
@@ -335,7 +335,7 @@ $$x$$ 는 다음과 같을 것이다.
 
 4와 5로만 구성된 수이지만, $$r_1$$ ~ $$r_5$$ 중 어느 숫자와도 같을 수 없다. 적어도 한 자리는 다른 숫자가 되기 때문이다.
 
-## 계산 가능, 계산 불가
+### 계산 가능, 계산 불가
 
 **coumputable, uncomputable**
 
@@ -350,7 +350,7 @@ If a function is not computable we say it is **uncomputable**.
     * 어떤 프로그래밍 언어로 어떤 컴퓨터 프로그램을 짰을 때, 그 프로그램이 어떤 함수의 값을 계산해 낼 수 없다면, 그 함수는 **계산불가능**하다고 한다.
 
 
-# 용어 정리
+## 용어 정리
 
 | English                    | 한국어           | Example, 설명                                      |
 |----------------------------|------------------|----------------------------------------------------|
@@ -370,7 +370,7 @@ If a function is not computable we say it is **uncomputable**.
 | countable                  | 셀 수 있다(가산) |                                                    |
 | aleph                      | 알레프           | $$ \aleph $$                                       |
 
-## 조건 제시법의 예
+### 조건 제시법의 예
 
 | $$N =\{0,1,2,3,...\} $$                           | 자연수의 집합    | the set of natural numbers       |
 | $$Z =\{...,-2,-1,0,1,2,...\} $$                   | 정수의 집합      | the set of integers              |
@@ -380,7 +380,7 @@ If a function is not computable we say it is **uncomputable**.
 | $$ R^+ $$                                         | 양의 실수의 집합 | the set of positive real numbers |
 | $$ C $$                                           | 복소수의 집합    | the set of complex numbers       |
 
-## 구간(interval) 표기법
+### 구간(interval) 표기법
 
 $$
 \begin{align}
@@ -395,11 +395,11 @@ $$
 * **(a, b)** : 열린 구간(open interval)
 
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 
-# Links
+## Links
 
 * [대각선 논법(위키백과)](https://ko.wikipedia.org/wiki/%EB%8C%80%EA%B0%81%EC%84%A0_%EB%85%BC%EB%B2%95 )
 

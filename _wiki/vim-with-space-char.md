@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# set list
+## set list
 
 * `:set list` 명령을 사용하면 화면에 공백으로만 보이는 다양한 문자들을 **다른 문자**로 대체해 보여주게 된다.
     * `:set list!` 으로 on/off를 토글할 수 있다.
@@ -38,7 +38,7 @@ latex   : false
 좀 더 읽기 쉬운 대체 문자열로 설정해 보자.
 
 
-## listchars
+### listchars
 
 * `:set list` 설정시 공백 대체 문자를 확인할 수 있다.
 * `:set listchars?`를 입력해보면 현재 listchars 설정을 확인할 수 있다.
@@ -62,7 +62,7 @@ latex   : false
     * 가급적이면 conceal은 건드리지 않는 쪽이 좋다.
 * nbsp : non breakable space characcter. 모르는 사람이 없는 문자.
 
-## 설정 예제
+### 설정 예제
 
 나는 .vimrc에 다음과 같이 설정해서 사용하고 있다.
 
@@ -100,7 +100,7 @@ set list listchars=tab:·\ ,trail:·,extends:>,precedes:<
 * 왼쪽 인덴팅에 탭이 사용되었는지, 스페이스가 사용되었는지 확인할 수 있다.
 * 오른쪽 마지막에 필요 없는 공백 문자가 들어갔는지 확인할 수 있다.
 
-## 색깔 지정
+### 색깔 지정
 
 listchars에 색깔을 지정할 수 있다.
 
@@ -113,7 +113,7 @@ highlight SpecialKey guifg=#ff0000
 
 편안하게 코딩할 수 있도록, 글자 색과 다르며 다소 연한 색을 쓰는 것이 좋다.
 
-# smarttab, tabstop, softtabstop, expandtab, shiftwidth
+## smarttab, tabstop, softtabstop, expandtab, shiftwidth
 
 * smarttab
     * shiftwidth, tabstop, softtabstop을 참조하여, 탭과 백 스페이스 키의 동작을 보조해준다.
@@ -150,13 +150,13 @@ autocmd FileType go setlocal nolist
 autocmd FileType go setlocal tabstop=4 shiftwidth=4 noexpandtab smarttab
 ```
 
-# retab
+## retab
 
 * `:retab`을 입력하면 파일 내의 탭을 `tabstop` 만큼의 스페이스로 바꿔준다.
 * `:retab 4`를 입력하면 탭을 `4` 스페이스로 바꿔준다.
 * visual 모드로 범위를 선택하고 사용하는 쪽이 바람직하다.
 
-# backspace
+## backspace
 
 * 백 스페이스가 지울 수 있는 것과 없는 것을 설정한다.
 * 약자는 `bs`.

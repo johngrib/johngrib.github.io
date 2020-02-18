@@ -13,11 +13,11 @@ latex   : true
 * TOC
 {:toc}
 
-# 조건문
+## 조건문
 
 **Conditional Statement**
 
-## 좋은 조건문의 영어 표현들
+### 좋은 조건문의 영어 표현들
 
 이건 외워두자.
 
@@ -37,7 +37,7 @@ latex   : true
 | q unless $$ \lnot $$p             | $$ \lnot $$p 가 아니면 q 이다       |
 
 
-## 역, 이, 대우
+### 역, 이, 대우
 
 **converse, inverse, contrapositive**
 
@@ -46,7 +46,7 @@ latex   : true
     * 이(inverse) : $$ ¬p → ¬q $$
     * 대우(contrapositive) : $$ ¬q → ¬p $$
 
-## 상호 조건문
+### 상호 조건문
 
 **biconditional**
 
@@ -73,7 +73,7 @@ $$ p ↔ q $$
 | if p then q, and conversely         | 만약 p 이면 q 이다. 그 반대도 성립한다. |
 | p iff q                             | p **if** and only **if** q 의 줄임말    |
 
-# 논리 연산자 우선순위
+## 논리 연산자 우선순위
 
 | 연산자                | 우선순위 |
 |-----------------------|----------|
@@ -83,11 +83,11 @@ $$ p ↔ q $$
 | $$ \rightarrow $$     | 4        |
 | $$ \leftrightarrow $$ | 5        |
 
-# 논리적 동치
+## 논리적 동치
 
 **Logical Equivalences**
 
-## 드 모르간의 법칙 De Morgan's Laws
+### 드 모르간의 법칙 De Morgan's Laws
 
 * $$ ¬(p \land q) \equiv ¬p \lor ¬q $$.
 * $$ ¬(p \lor q) \equiv ¬p \land ¬q $$.
@@ -104,7 +104,7 @@ $$ ¬( ∨_{j=1}^n p_j) \equiv ∧_{j=1}^n ¬p_j $$
 
 $$ ¬( ∧_{j=1}^n p_j) \equiv ∨_{j=1}^n ¬p_j $$
 
-## 논리적 동치식 모음
+### 논리적 동치식 모음
 
 * 동일법칙 Identity laws
     * $$ p \land T \equiv p $$.
@@ -151,7 +151,7 @@ $$ ¬( ∧_{j=1}^n p_j) \equiv ∨_{j=1}^n ¬p_j $$
     * $$p ↔ q ≡ (p ∧ q) ∨ (¬p ∧ ¬q)$$.
     * $$¬(p ↔ q) ≡ p ↔ ¬q$$.
 
-## $$ p \rightarrow q \equiv \lnot p \lor q $$.
+### $$ p \rightarrow q \equiv \lnot p \lor q $$.
 
 이건 학생일 때 논리학 전공수업에서 배운 것인데 알아두면 편리하다.
 
@@ -194,7 +194,7 @@ $$6$$이 $$4$$의 배수이면, $$6$$은 $$2$$의 배수이다.
 * p가 거짓이고 q는 참인데, $$ p \rightarrow q $$는 참이다.
     * 이것으로 세 번째 경우를 이해할 수 있다.
 
-# 논리 회로
+## 논리 회로
 
 **Logic Circuits**
 

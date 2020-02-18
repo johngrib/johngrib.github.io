@@ -13,9 +13,9 @@ latex   : false
 * TOC
 {:toc}
 
-# 연산자
+## 연산자
 
-## Arithmetic operators
+### Arithmetic operators
 
 <https://golang.org/ref/spec#Arithmetic_operators >
 
@@ -36,7 +36,7 @@ latex   : false
 ```
 
 
-## Operator precedence
+### Operator precedence
 
 <https://golang.org/ref/spec#Operator_precedence >
 
@@ -56,7 +56,7 @@ Precedence    Operator
 
 
 
-# getter와 setter
+## getter와 setter
 
 [Effective Go - Getters](https://golang.org/doc/effective_go.html?#Getters )
 
@@ -69,9 +69,9 @@ Precedence    Operator
 * setter
     * setter는 `SetFoo()`와 같이 만들면 된다.
 
-# interface
+## interface
 
-## naming
+### naming
 
 [Effective Go - Interface names](https://golang.org/doc/effective_go.html?#interface-names )
 
@@ -79,7 +79,7 @@ Precedence    Operator
     * `Read` 메소드가 하나 있다면 인터페이스 이름은 `Reader`.
 
 
-## golang에서의 toString은?
+### golang에서의 toString은?
 
 `fmt` 패키지의 `print.go`를 열어보면 `Stringer` 인터페이스가 있다.
 
@@ -115,7 +115,7 @@ func main() {
 ```
 
 
-# Links
+## Links
 
 * [Effective Go](https://golang.org/doc/effective_go.html )
 

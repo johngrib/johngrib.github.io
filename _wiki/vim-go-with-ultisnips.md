@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 발단
+## 발단
 
 [Ultisnips](https://github.com/SirVer/ultisnips )는 최강의 Vim 플러그인 중 하나이지만,
 이상하게 다른 플러그인과 충돌하는 경우가 많은데...
@@ -26,7 +26,7 @@ latex   : false
 E734: Wrong variable type for +=
 ```
 
-# 문제 발생 지점
+## 문제 발생 지점
 
 문제 발생 지점은 vim-go의 `s:GoUltisnips` 함수였다.
 
@@ -88,7 +88,7 @@ let g:UltiSnipsSnippetDirectories = []
 이거 하나면 위의 삽질이 다 필요없다.
 
 
-# Links
+## Links
 
 * [Ultisnips](https://github.com/SirVer/ultisnips )
 * [vim-go](https://github.com/fatih/vim-go )

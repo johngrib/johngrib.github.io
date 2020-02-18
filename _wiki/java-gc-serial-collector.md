@@ -14,17 +14,17 @@ latex   : false
 {:toc}
 
 
-# Serial Collector
+## Serial Collector
 
 멀티 프로세서에서는 비효율적인 GC이지만, 100MB 정도로 작은 규모의 데이터셋을 사용하는 애플리케이션이라면 멀티 프로세서에서도 쓸만하다. Serial Collector는 VM이 운영체제와 하드웨어 환경에 따라 자동으로 선택하거나, `-XX:+UseSerialGC` 옵션으로 활성화할 수 있다.
 
-# Native 코드를 읽어보자
+## Native 코드를 읽어보자
 
 * OpenJDK의 JVM C++ 코드를 읽으면서 내가 알고 있는 사실들을 확인해 보자.
 * 코드 출처는 [@ 55739:7e2238451585 jdk-13+24](https://hg.openjdk.java.net/zgc/zgc/file/7e2238451585/src/ )
 * 읽다보면 의외의 깨달음을 얻게 될지도 모른다.
 
-## eden과 survivor의 max size 계산
+### eden과 survivor의 max size 계산
 
 * [DefNewGeneration::DefNewGeneration]( https://hg.openjdk.java.net/zgc/zgc/file/7e2238451585/src/hotspot/share/gc/serial/defNewGeneration.cpp#l169 )
 
@@ -62,7 +62,7 @@ _to_counters = new CSpaceCounters("s1", 2, _max_survivor_size, _to_space,
 * survivor 두 개(s0, s1)는 같은 max 크기를 가진다.
 * eden 사이즈는 할당된 young 영역의 공간에서 두 개의 survivor size를 뺀 값으로 계산된다.
 
-## 두 Survivor의 스왑
+### 두 Survivor의 스왑
 
 [void DefNewGeneration::swap_spaces](https://hg.openjdk.java.net/zgc/zgc/file/7e2238451585/src/hotspot/share/gc/serial/defNewGeneration.cpp#l291 )
 
@@ -86,7 +86,7 @@ void DefNewGeneration::swap_spaces() {
 }
 ```
 
-## Aging
+### Aging
 
 [oop DefNewGeneration::copy_to_survivor_space](https://hg.openjdk.java.net/zgc/zgc/file/7e2238451585/src/hotspot/share/gc/serial/defNewGeneration.cpp#l739 )
 
@@ -133,7 +133,7 @@ oop DefNewGeneration::copy_to_survivor_space(oop old) {
 }
 ```
 
-# License
+## License
 
 * 이 글에 포함된 OpenJDK 코드는 "[The GNU General Public License (GPL)][GPL]" 라이선스를 따릅니다.
 * 이 글에 포함된 OpenJDK 코드에 대해 들여쓰기, 줄바꿈 등을 수정하였으며 한국어가 포함된 주석은 제가 작성한 것입니다.

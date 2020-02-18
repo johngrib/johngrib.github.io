@@ -17,7 +17,7 @@ $$
 \def\ceil#1{\lceil #1 \rceil}
 $$
 
-# 문서를 읽자
+## 문서를 읽자
 
 이 주제에 대해 공식 문서보다 정확하고 중요한 문서는 없다.
 
@@ -27,11 +27,11 @@ $$
 * [JDK 9 Garbage Collection Tuning Guide](https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm )
 * [JDK 8 Garbage Collection Tuning Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ )
 
-# 요약
+## 요약
 
 요약이 밑에 있으면 읽기 불편하길래 위로 올렸다.
 
-## Generation 구조 요약
+### Generation 구조 요약
 
 요약하자면 다음과 같다.
 
@@ -48,9 +48,9 @@ $$
     * 이곳이 가득 차면 major gc가 발생한다.
     * major gc는 minor gc보다 더 오래 걸린다.
 
-## GC 종류 요약
+### GC 종류 요약
 
-### Serial Collector
+#### Serial Collector
 
 * 싱글 스레드로 모든 종류의 가비지 컬렉션을 수행한다.
 * 싱글 프로세서 시스템에 가장 적합.
@@ -60,7 +60,7 @@ $$
 * Young Generation Collection 알고리즘: Serial
 * Old Generation Collection 알고리즘: Serial Mark-Sweep-Compact
 
-### Parallel Collector
+#### Parallel Collector
 
 * 마이너 컬렉션을 병렬로 수행한다.
     * GC의 오버헤드를 현저하게 줄일 수 있다.
@@ -78,13 +78,13 @@ $$
 * Old Generation Collection 알고리즘: **Serial** Mark-Sweep-Compact
 
 
-### Concurrent Collectors
+#### Concurrent Collectors
 
 * 전체 처리량보다 응답 시간이 더 중요한 경우에 사용할 것.
     * 프로세서가 GC와 처리 역할을 나누어 일하기 때문에 일시 정지가 짧아진다.
     * 프로세서의 수를 늘릴수록 효과를 볼 수 있지만 한계가 있음.
 
-#### Concurrent Mark Sweep(CMS) Collector
+##### Concurrent Mark Sweep(CMS) Collector
 
 * 가비지 컬렉션 일시 정지가 짧은 것을 선호하는 애플리케이션을 위한 컬렉터. 
 * 이 방식은 프로세서 리소스를 가비지 컬렉션과 공유한다.
@@ -118,7 +118,7 @@ $$
         * 따라서, Sweep을 하다 보면 단편화가 발생한다.
         * Free List를 사용해 단편화를 최소화한다.
 
-#### Garbage-First Garbage Collector
+##### Garbage-First Garbage Collector
 
 * G1GC 라고도 부른다.
 * 서버 스타일 컬렉터.
@@ -141,7 +141,7 @@ G1GC만 Generational GC가 아니라는 점에 주의.
     * 프로모션이 일어나는 리전의 집합이 Old Generation 이다.
 
 
-## GC 선택 가이드라인 요약
+### GC 선택 가이드라인 요약
 
 **일시 정지 시간 요구 사항이 까다롭지 않다면?**
 
@@ -183,7 +183,7 @@ G1GC만 Generational GC가 아니라는 점에 주의.
 
 요약은 여기서 끝.
 
-# Garbage?
+## Garbage?
 
 가비지란 무엇을 말하는 것인가?
 
@@ -195,7 +195,7 @@ An object is considered garbage when it can no longer be reached from any pointe
 _실행중인 프로그램의 어느 포인터도 접근할 수 없는 객체는 쓰레기(garbage)로 간주됩니다._
 
 
-# JVM의 메모리는 Generation 구조를 갖는다
+## JVM의 메모리는 Generation 구조를 갖는다
 
 JVM의 메모리는 다음과 같은 형태의 Generation 구조를 갖는다. 그 이유는 무엇일까?
 
@@ -233,8 +233,8 @@ To optimize for this scenario, memory is managed in generations (memory pools ho
 
 _이 시나리오를 최적화하기 위해, 메모리는 여러 generation 으로 관리됩니다. 각 세대가 꽉 채워질 때 가비지 컬렉션이 발생하는 것입니다. 대부분의 객체는 young generation에서 할당되고 또 그곳에서 죽게 됩니다. young generation이 가득 차면 young generation만을 대상으로 하는 마이너 컬렉션이 발생합니다. 이 때 다른 세대의 가비지는 처리되지 않습니다. 마이너 컬렉션은 '약한 세대 가설'을 전제로 최적화된 것입니다. 컬렉션의 비용은 수집되는 살아있는 객체의 수에 비례하므로, 죽은 객체들로만 가득찬 young generation은 매우 빠르게 수집되기 때문입니다. 일반적으로, young generation에서 살아남은 객체들 중 일부는 각각의 마이너 컬렉션 동안 tenured generation으로 옮겨집니다. 결과적으로 tenured generation은 채워지게 되고, 컬렉션의 대상이 되어, 힙 전체를 수집하는 메이저 컬렉션이 발생하게 됩니다. 메이저 컬렉션은 마이너 컬렉션보다 더 오래 걸리는 편인데, 더 많은 객체가 관련되어 있기 때문입니다._
 
-## 구조 그림 모아보기
-### Java SE 8 JVM Tuning Guide의 구조 그림
+### 구조 그림 모아보기
+#### Java SE 8 JVM Tuning Guide의 구조 그림
 
 다음은 오라클의 Java SE 8 JVM GC 튜닝 가이드[^tuning-guide8]에 수록된 Generation들의 나열을 참고해 그린 것이다.
 (Parallel Collector와 G1은 제외된 그림이다)
@@ -249,7 +249,7 @@ _이 시나리오를 최적화하기 위해, 메모리는 여러 generation 으�
 참고) S: Survivor
 ```
 
-### Java SE 9 ~ 12 JVM Tuning Guide의 구조 그림
+#### Java SE 9 ~ 12 JVM Tuning Guide의 구조 그림
 
 다음은 오라클의 Java SE 9 JVM GC 튜닝 가이드[^tuning-guide9]에 수록된 Generation들의 나열을 참고해 그린 것이다.
 (Parallel Collector와 G1은 제외된 그림이다)
@@ -264,7 +264,7 @@ _이 시나리오를 최적화하기 위해, 메모리는 여러 generation 으�
 
 참고로 Java SE 9, 10, 11, 12 버전별 튜닝 가이드에 모두 똑같이 실려 있다.
 
-### JVM Performance Optimizing 및 성능분석 사례의 구조 그림
+#### JVM Performance Optimizing 및 성능분석 사례의 구조 그림
 
 다음은 "JVM Performance Optimizing 및 성능분석 사례"(이하 성능분석 책)에 수록된 그림[1-3]을 참고해 그린 것이다.[^book2-Heap]
 
@@ -317,7 +317,7 @@ Java 8 Hotspot JVM 구조
 <-------------- GC 대상 범위 ---------------->
 ```
 
-# GC의 종류
+## GC의 종류
 
 Java SE 8에서는 다음과 같이 3 가지의 컬렉터를 소개하고 있다.[^collectors8]
 
@@ -342,7 +342,7 @@ The mostly concurrent collector performs most of its work concurrently (for exam
 _대부분의 동시(concurrent) 컬렉터는 가비지 컬렉션으로 인한 일시 정지 현상을 짧게 하기 위해 동시에(concurrently) 작업을 수행합니다. 일시 정지 현상을 최소화하기 위해 사용되는 테크닉이 애플리케이션 퍼포먼스를 감소시킬 수 있기 때문에, 동시 컬렉터는 응답 시간이 전체 처리량보다 더 중요한 중대형 규모의 데이터셋을 다루는 애플리케이션을 위해 설계되었습니다. Java HotSpot VM에서는 주로 두 개의 동시 컬렉터 중 하나를 선택할 수 있습니다. 이에 대해서는 [The Mostly Concurrent Collectors][concurrent8] 문서를 참고하세요. `-XX:+UseConcMarkSweepGC` 옵션을 켜면 CMS 컬렉터를 활성화할 수 있고, `-XX:+UseG1GC` 옵션을 켜면 G1 컬렉터를 활성화할 수 있습니다._
 
 
-## GC 선택 가이드라인
+### GC 선택 가이드라인
 
 그리고 이 문서 하단에는 컬렉터 선택에 대한 가이드가 있다.[^collectors8]
 
@@ -379,7 +379,7 @@ If the recommended collector does not achieve the desired performance, first att
 _권장한 컬렉터가 필요한 성능을 달성하지 못한다면, 먼저 heap과 generation 사이즈를 조절하세요. 그래도 성능이 부족하다면, 다른 종류의 컬렉터 사용을 시도해 보세요. 컨커런트 컬렉터를 사용해 일시 정지 시간을 줄이고, 패러렐 컬렉터를 사용해 멀티 프로세서 하드웨어의 전체 처리량을 늘려보세요._
 
 
-## Concurrent 컬렉터
+### Concurrent 컬렉터
 
 [The Mostly Concurrent Collectors][concurrent8] 문서도 읽어보자.
 
@@ -393,7 +393,7 @@ Garbage-First Garbage Collector: This server-style collector is for multiprocess
 
 _G1 Garbage Collector: 이 서버 스타일 컬렉터는 큰 메모리를 가진 멀티 프로세서 머신을 위한 것입니다. 높은 확률로 일시 정지 시간에 대한 목표와 높은 처리량을 달성할 것입니다._
 
-## 동시성(Concurrency)의 오버헤드
+### 동시성(Concurrency)의 오버헤드
 
 그 밑에는 다음과 같은 동시성의 오버헤드에 대한 지침이 있다.
 
@@ -412,13 +412,13 @@ Because at least one processor is used for garbage collection during the concurr
 
 _동시 처리 단계 중에는 하나 이상의 프로세서가 가비지 컬렉션에 사용되기 때문에, 동시 컬렉터는 싱글 코어 머신에서는 아무런 장점이 없습니다. 하지만 1~2 프로세서만 있는 시스템에서는 일시 정지 시간을 줄일 수 있는 별도의 CMS 모드를 사용할 수 있습니다. 자세한 내용은 [Concurrent Mark Sweep(CMS) Collector](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/cms.html#concurrent_mark_sweep_cms_collector ) 문서의 [Incremental Mode](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/cms.html#CJAGIIEJ ) 항목을 참고하세요. 다만 이 기능은 Java SE 8에서 deprecated 되었으며, 이후 메이저 릴리즈에서는 제거될 것입니다._
 
-# Minor GC
+## Minor GC
 
-## Eden 에서 Survivor 영역으로
+### Eden 에서 Survivor 영역으로
 
 * [[java-gc-eden-to-survivor]]
 
-# 참고문헌
+## 참고문헌
 
 * 웹 문서
     * [Java Platform, Standard Edition HotSpot Virtual Machine Garbage Collection Tuning Guide (Java SE 8)][tuning-guide8]
@@ -431,7 +431,7 @@ _동시 처리 단계 중에는 하나 이상의 프로세서가 가비지 컬�
     * JVM Performance Optimizing 및 성능분석 사례 / 류길현, 오명훈, 한승민 저 / 엑셈 / 초판 1쇄 2017년 09월 10일
     * 자바 성능 튜닝 / 스캇 오크스 저 / 최가인 역 / 비제이퍼블릭(BJ퍼블릭) / 초판 1쇄 2016년 03월 29일 / 원서: Java Performance: The Definitive Guide
 
-# 주석
+## 주석
 
 [^tuning-guide8]: [Java SE 8 JVM GC Tuning Guide][tuning-guide8]
 [^tuning-guide9]: [Java SE 9 JVM GC Tuning Guide][tuning-guide9]

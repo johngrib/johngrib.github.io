@@ -13,7 +13,7 @@ parent  : hammerspoon
 * TOC
 {:toc}
 
-# Hammerspoon?
+## Hammerspoon?
 
 * [Hammerspoon](http://www.hammerspoon.org/)은 맥에서 돌아가는 매크로 툴이다.
 * Windows의 [Autohotkey](https://autohotkey.com/)와 비슷한 느낌으로 사용할 수 있다.
@@ -32,7 +32,7 @@ parent  : hammerspoon
 * 터미널 명령어를 실행한다.
 * 그 외 자세한 내용은 [Getting Started with Hammerspoon](http://www.hammerspoon.org/go/)을 참고.
 
-# 발단: 설정 파일이 점점 비대해져 간다
+## 발단: 설정 파일이 점점 비대해져 간다
 
 나는 Hammerspoon 설정 파일을 다음과 같은 구조로 관리했다.
 
@@ -60,17 +60,17 @@ inputSourceChange.lua | 한영전환 관련 기능
 mouse.lua             | 키보드로 마우스를 제어
 vim.lua               | 어디에서건 vim 비슷한 키맵을 사용
 
-## 고민
+### 고민
 * 처음엔 init.lua 파일 하나였지만 1년 만에 7개로 파일이 불어났다. 앞으로 더 늘어나겠지.
 * 분리 가능한 여러 모듈이 하나의 레파지토리에 들어가 있어 커밋 로그 관리가 짜증 난다.
 * 모듈마다 Github repo를 각각 따고, init.lua에 repo 주소만 넣으면 편리하지 않을까?
 
-## 대안: 패키지 관리자를 만들자?
+### 대안: 패키지 관리자를 만들자?
 * vim 플러그인 관리자들처럼 github 주소를 넣어두면 알아서 다운로드 하고 링크도 시켜주는 걸 만들어 볼까?
 * 만들 필요 있나? 내가 lua 뉴비라 모르는 거지, 패키지 관리자 같은 건 당연히 세계인들이 사용하는 게 있을 거다.
 * 찾아보니 [luarocks](https://luarocks.org/)라는 것이 있다. 이걸 쓰자.
 
-# luarocks를 사용해 보자
+## luarocks를 사용해 보자
 
 목표는 다음과 같다.
 * 내가 만든 모듈을 init.lua와 확실하게 분리한다.
@@ -78,7 +78,7 @@ vim.lua               | 어디에서건 vim 비슷한 키맵을 사용
 * 해당 모듈에 대해, 내 설정 파일에는 `require` 문 한 줄만 남긴다.
 * Hammerspoon을 재실행하여, 해당 모듈의 기능이 제대로 실행되면 성공.
 
-## 실행: 내가 만든 모듈을 분리하자
+### 실행: 내가 만든 모듈을 분리하자
 
 일단 테스트로 분리할 모듈은 간단한 게 좋을 것 같아서 caffein.lua를 선택했다.
 
@@ -124,7 +124,7 @@ return obj
 
 그리고 [Github repo](https://github.com/johngrib/hammerspoon_caffein/tree/0.1.0)에 업로드했다.
 
-## 실행: 분리한 모듈을 luarocks 저장소에 업로드하자
+### 실행: 분리한 모듈을 luarocks 저장소에 업로드하자
 
 업로드 조건은 다음과 같다.
 
@@ -174,7 +174,7 @@ build = {
 $ luarocks upload johngrib.hammerspoon.caffein-0.1.rockspec --api-key=복사해둔api키
 ```
 
-### 업로드 중 JSON 라이브러리 문제 해결
+#### 업로드 중 JSON 라이브러리 문제 해결
 
 위의 명령어를 실행하는 도중 다음과 같은 에러가 발생했다.
 ```sh
@@ -210,7 +210,7 @@ Sending /Users/johngrib/git/hammerspoon_caffein/johngrib.hammerspoon.caffein-0.1
 Done: http://luarocks.org/modules/johngrib/johngrib.hammerspoon.caffein
 ```
 
-## 설정 파일에 `require` 문 한 줄만 남기자
+### 설정 파일에 `require` 문 한 줄만 남기자
 
 이제 업로드된 모듈을 다시 다운로드 한 다음, 설정 파일에서 모듈을 `require` 해주기만 하면 된다.
 
@@ -233,7 +233,7 @@ require('johngrib.hammerspoon.caffein'):init({'shift'}, 'f15')
 * 기존 파일이었던 ./modules/caffein.lua를 삭제해도 잘 된다.
 * 다른 모듈들도 이렇게 분리해야겠다.
 
-# Links
+## Links
 
 * [Hammerspoon](http://www.hammerspoon.org/)
 * [Autohotkey](https://autohotkey.com/)

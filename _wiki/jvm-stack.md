@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# stack과 frame?
+## stack과 frame?
 
 * JVM 스레드가 생겨날 때, 해당 스레드를 위한 스택(stack)도 같이 만들어진다.[^2-5-2]
     * 그 스택엔 무엇이 들어가는가? 프레임(frame)이 들어간다.
@@ -34,7 +34,7 @@ Thread1   Thread2   Thread3
 * 스레드가 쓸 수 있는 스택의 사이즈를 넘기게 되면 `StackOverflowError`가 발생한다.
 * 스택 사이즈를 동적으로 확장할 수도 있는데 확장할 메모리가 부족하거나, 새로운 스레드를 만들 때 필요한 새로운 스택에 할당할 메모리가 부족하면 `OutOfMemoryError`가 발생한다.
 
-# frame
+## frame
 
 그리고 프레임은 다음의 3가지로 구성되어 있다.
 
@@ -42,7 +42,7 @@ Thread1   Thread2   Thread3
 * Operand Stack
 * Constant Pool Reference
 
-## Local Variables
+### Local Variables
 
 로컬 변수 배열은 메소드의 지역 변수들을 갖는다.
 
@@ -77,7 +77,7 @@ class Test {
     * 그래서 `int`나, `double`이 `Integer`, `Double`보다 조금 더 빠르다.
 * `double`, `long`은 두 칸씩 차지한다.
 
-## Operand Stack
+### Operand Stack
 
 오퍼랜드 스택은 메소드 내 계산을 위한 작업 공간이다. 어셈블리어나 아희, 브레인퍽 같은 언어를 다뤄봤다면 어렵지 않게 이해할 수 있다.
 
@@ -139,7 +139,7 @@ class main.Main {
 | 6: iadd     | 읽은 두 값을 더한다.                                | `a+b`        |
 | 7: ireturn  | 더한 값을 리턴한다.                                 | `return a+b` |
 
-## Constant Pool Reference
+### Constant Pool Reference
 
 프레임은 런타임 상수 풀의 참조를 갖는다.[^2-6-3]
 
@@ -213,12 +213,12 @@ The index is an unsigned byte that must be a valid index into the run-time const
 
 
 
-# 참고문헌
+## 참고문헌
 
 * [The Java Virtual Machine Specification, Java SE 8 Edition][jvm8]
 * Java Performance Fundamental / 김한도 저 / 엑셈 / 초판 1쇄 2009년 09월 23일
 
-# 주석
+## 주석
 
 [^2-5-2]: Each Java Virtual Machine thread has a private Java Virtual Machine stack, created at the same time as the thread. A Java Virtual Machine stack stores frames. [출처][2.5.2]
 [^2-6-3]: Each frame contains a reference to the run-time constant pool for the type of the current method to support dynamic linking of the method code. [출처][2.6.3]

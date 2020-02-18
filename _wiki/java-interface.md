@@ -16,9 +16,9 @@ latex   : false
 * 읽기 전에
     * 이 문서는 Java SE 12 버전을 기준으로 한다.
 
-# 주의할 점
+## 주의할 점
 
-## 다중 상속시 모호한 변수 참조
+### 다중 상속시 모호한 변수 참조
 
 다음 예제를 보자.[^java12-fields]
 
@@ -59,7 +59,7 @@ interface LotsOfColors extends RainbowColors, PrintColors {
 }
 ```
 
-## 다이아몬드 상속시 메소드 상속 우선순위
+### 다이아몬드 상속시 메소드 상속 우선순위
 
 다음 예제를 보자.[^java12-inherit-overriding]
 
@@ -79,7 +79,7 @@ interface Bottom extends Left, Right {}
 
 `Left.name()`을 상속받는다. `Left`가 오버라이드를 했기 때문이다.
 
-# 주석
+## 주석
 
 [^java12-fields]: 코드 출처 - [9.3. Field (Constant) Declarations](https://docs.oracle.com/javase/specs/jls/se12/html/jls-9.html#jls-9.3 )
 [^java12-inherit-overriding]: 코드 출처 - [9.4.1. Inheritance and Overriding](https://docs.oracle.com/javase/specs/jls/se12/html/jls-9.html#jls-9.4.1 )

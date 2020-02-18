@@ -19,7 +19,7 @@ latex   : false
 
 > [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/parallel-collector1.html#GUID-5A7866BE-59DF-44AD-B51A-274DE3F2BF59 ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/parallel-collector1.html#GUID-DCDD6E46-0406-41D1-AB49-FB96A50EB9CE ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/parallel-collector1.htm#JSGCT-GUID-DCDD6E46-0406-41D1-AB49-FB96A50EB9CE ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/parallel-collector1.htm#JSGCT-GUID-DCDD6E46-0406-41D1-AB49-FB96A50EB9CE ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/parallel.html#parallel_collector )
 
-# Parallel Collector?
+## Parallel Collector?
 
 Parallel Collector는 throughput collector 라고 부르기도 한다.
 
@@ -36,13 +36,13 @@ Parallel Collector는 `-XX:ParallelGCThreads=<N>`으로 스레드 수를 설정�
 * $$N \lt 8$$: $$N$$ 개의 GC 스레드를 사용한다.
 * $$N \gt 8$$: $$N$$개의 하드웨어 스레드가 있는 머신에서 일정 비율 만큼의 GC 스레드를 사용한다. $$N$$이 커지면 이 비율은 $${5 \over 8}$$로 수렴한다.
 
-# 조각화 문제
+## 조각화 문제
 
 Parallel Collector는 여러 스레드가 마이너 GC 작업을 하기 때문에 메모리 조각화가 발생할 수 있다.
 마이너 GC를 수행하는 스레드가 프로모션을 할 때 old gen의 일부 공간을 예약해 사용하는데, 이 공간을 프로모션 버퍼라 한다. 메모리 조각화는 프로모션 버퍼에서 발생한다. 스레드 수를 줄이고 old gen의 크기를 늘려주면 조각화 현상은 줄어들게 된다.
 
 
-# Parallel Collector의 generation 구조
+## Parallel Collector의 generation 구조
 
 Parallel Collector의 generation 구조는 다음과 같이 생겼다.
 
@@ -56,18 +56,18 @@ Parallel Collector의 generation 구조는 다음과 같이 생겼다.
                                          Sp: Space
 ```
 
-# Parallel GC 사용과 튜닝
+## Parallel GC 사용과 튜닝
 
 * `-XX:+UseParallelGC`를 설정하면 Parallel GC를 사용할 수 있다.
     * 또는 하드웨어와 운영체제 환경을 고려해 가상 머신이 알아서 Parallel GC를 셋팅해 사용한다.
 
-## GC 일시 정지 시간의 최대값 설정
+### GC 일시 정지 시간의 최대값 설정
 
 * `-XX:MaxGCPauseMillis=<N>`으로 설정할 수 있다.
     * 이 옵션을 설정하면 가상 머신은 `N`ms 이하의 일시 정지 시간을 맞추기 위해 heap 사이즈와 여러 옵션들을 자동으로 조절한다.
     * "일시 정지 시간"을 짧게 만드는 튜닝을 하면 "전체 처리량"이 줄어든다는 상식을 잊지 말자.
 
-## 처리량(throughput) 향상
+### 처리량(throughput) 향상
 
 처리량은 다음과 같이 계산한다.
 
@@ -78,12 +78,12 @@ $${ GC시간 \over GC시간 + \text{애플리케이션 처리 시간 }}$$
     * 예를 들어, $$N = 19$$ 이면 $${ 1 \over 1 + 19 }$$ 이므로, 전체 시간의 5% 가 GC에 사용된다.
     * 기본값은 99. 즉, 1% 의 시간이 GC에 사용된다.
 
-## Footprint
+### Footprint
 
 * footprint 최대 heap 사이즈는 `-Xmx` 옵션으로 설정할 수 있다.
 * GC는 다른 목표를 달성하는 한도에서 heap 사이즈를 최소화하려한다.
 
-## Parallel GC의 목표 우선순위
+### Parallel GC의 목표 우선순위
 
 1. 최대 일시 정지 시간 최소화
 2. 처리량 최대화
@@ -119,7 +119,7 @@ old gen의 경우 다음과 같이 증가율을 설정할 수 있다.
 
 한편, GC가 최초 시작시 generation 크기를 증가시키기로 결정했다면 증가율에 보정값이 붙을 수 있다. 이런 보정값은 시작할 때의 성능을 향상시키는 것이 목적이기 때문에 GC가 여러 차례 수행되면서 알아서 사라지게 된다. 같은 이유로 감소율에 대한 보정값은 없다.
 
-## Parallel GC의 heap 사이즈
+### Parallel GC의 heap 사이즈
 
 * 기본적으로는 시스템 메모리 양을 바탕으로 계산된 값을 쓴다.
 * 최대 heap 사이즈의 디폴트 값은 물리적 메모리의 $${1 \over 4}$$.
@@ -154,11 +154,11 @@ GC에 전체 시간의 98% 이상이 소모되고, heap의 2% 이하가 GC로 �
 
 `-XX:-UseGCOverheadLimit` 옵션을 설정하면 이 기능을 끌 수 있다.
 
-# 함께 읽기
+## 함께 읽기
 
 * [[java-gc-tuning]]{Java GC 튜닝}
 
-# 참고문헌
+## 참고문헌
 
 * [JDK 12 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html )
 * [JDK 11 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/11/gctuning/introduction-garbage-collection-tuning.html )

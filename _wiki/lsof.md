@@ -13,8 +13,8 @@ latex   : false
 * TOC
 {:toc}
 
-# Examples
-## 특정 포트에서 실행중인 pid 알아내기
+## Examples
+### 특정 포트에서 실행중인 pid 알아내기
 
 ```sh
 $ lsof -i tcp:8080  # 8080 포트를 사용하고 있는 프로세스 검색

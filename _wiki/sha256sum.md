@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 간단 사용법
+## 간단 사용법
 
 'test'라는 문자열의 SHA256을 다음과 같이 쉽게 구할 수 있다.
 
@@ -50,7 +50,7 @@ $ echo '1234' | sha512sum | cut -c1-64
 7985558370f0de86a864e0050afdf45d7029b8798bcd72cddbf781329f99380e
 ```
 
-# gsha256sum
+## gsha256sum
 
 맥이라면 컴퓨터에 `sha256sum` 명령어가 없고, 대신 `gsha256sum`이 있을 수도 있다.
 
@@ -61,9 +61,9 @@ $ sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 $ sudo ln -s /usr/local/bin/gsha512sum /usr/local/bin/sha512sum
 ```
 
-# 대안
+## 대안
 
-## openssl
+### openssl
 
 `openssl`을 써도 똑같은 값을 구할 수 있다.
 
@@ -71,7 +71,7 @@ $ sudo ln -s /usr/local/bin/gsha512sum /usr/local/bin/sha512sum
 $ echo 'test' | openssl sha256
 ```
 
-## function
+### function
 
 다음과 같은 function을 정의해 사용하는 것도 방법이다.
 
@@ -86,7 +86,7 @@ $ sha256sum sample.txt
 a883dafc480d466ee04e0d6da986bd78eb1fdd2178d04693723da3a8f95d42f4
 ```
 
-# Links
+## Links
 
 * [SHA-2(wikipedia)](https://en.wikipedia.org/wiki/SHA-2 )
 

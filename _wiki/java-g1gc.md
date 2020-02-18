@@ -19,7 +19,7 @@ latex   : true
 
 > [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-first-garbage-collector.html#GUID-ED3AB6D3-FD9B-4447-9EDF-983ED2F7A573 ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-first-garbage-collector.html#GUID-ED3AB6D3-FD9B-4447-9EDF-983ED2F7A573 ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/garbage-first-garbage-collector.htm#JSGCT-GUID-ED3AB6D3-FD9B-4447-9EDF-983ED2F7A573 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/garbage-first-garbage-collector.htm#JSGCT-GUID-ED3AB6D3-FD9B-4447-9EDF-983ED2F7A573 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/g1_gc.html )
 
-# G1GC
+## G1GC
 
 G1GC: Garbage First Garbage Collector
 
@@ -36,7 +36,7 @@ G1GC: Garbage First Garbage Collector
 * 시간이 흐르면서 객체 할당 비율과 프로모션 비율이 크게 달라진다.
 * GC가 너무 오래 걸린다(0.5 ~ 1초).
 
-# 다른 GC와의 비교
+## 다른 GC와의 비교
 
 * Parallel GC
     * Parallel GC는 old gen의 공간에서만 재확보(reclaim)와 조각 모음(compaction)을 한다.
@@ -45,12 +45,12 @@ G1GC: Garbage First Garbage Collector
     * G1도 CMS처럼 old gen 영역을 동시에(concurrently) 작업한다.
     * CMS는 old gen의 조각 모음을 하지 않으므로 Full GC 시간이 길어지는 문제가 있다.
 
-# 활성화하기
+## 활성화하기
 
 * G1GC는 디폴트이므로 보통은 따로 옵션을 써서 활성화할 필요가 없다.
 * `-XX:+UseG1GC` 옵션을 쓰면 수동으로 활성화할 수 있다.
 
-# 작동 방식
+## 작동 방식
 
 G1GC의 힙 레이아웃은 다른 generational collector와 좀 다르다.
 
@@ -72,7 +72,7 @@ G1GC의 힙 레이아웃은 다른 generational collector와 좀 다르다.
 
 G1GC는 일시 정지 시간을 줄이기 위해 병렬로 GC 작업을 한다. 각각의 스레드가 자신만의 영역을 잡고 작업하는 방식.
 
-# GC Cycle
+## GC Cycle
 
 G1은 두 페이즈를 번갈아 가며 GC 작업을 한다.
 
@@ -91,7 +91,7 @@ G1은 두 페이즈를 번갈아 가며 GC 작업을 한다.
 
 만약 애플리케이션 메모리가 부족한 경우 G1GC는 다른 GC들처럼 Full GC를 수행한다.
 
-# IHOP 값에 대하여
+## IHOP 값에 대하여
 
 IHOP: Initiating Heap Occupancy Percent
 
@@ -104,12 +104,12 @@ IHOP: Initiating Heap Occupancy Percent
         * Adaptive 기능을 끄면 통계를 게산하지 않으므로 `-XX:InitiatingHeapOccupancyPercent`로 지정한 IHOP 값을 계속 쓰게 된다.
     * Adaptive IHOP는 `-XX:G1HeapReservePercent`로 설정된 값 만큼의 버퍼를 제외하고 시작 heap 점유율을 설정한다.
 
-# G1GC의 마킹
+## G1GC의 마킹
 
 * G1GC는 SATB(Snapshot-At-The-Beginning) 알고리즘을 써서 마킹 작업을 한다.
 * SATB는 일시 정지가 일어난 시점 직후의 라이브 객체에만 마킹을 한다. 따라서 마킹하는 도중에 죽은 객체도 라이브 객체로 간주하는 보수적인 특징이 있다. 비효율적일 것 같지만 Remark 단계의 응답 시간(latency)이 다른 GC에 비해 더 빠른 경향이 있다.
 
-# Evacuation Failure
+## Evacuation Failure
 
 애플리케이션이 너무 많은 양의 메모리를 쓰고 있어서, 객체를 대피시킬 때 복사할만한 공간이 충분하지 않으면 대피 실패(Evacuation Failure)가 발생한다. 
 
@@ -119,7 +119,7 @@ IHOP: Initiating Heap Occupancy Percent
 
 G1은 GC가 끝날 무렵에 대피 실패의 뒷수습이 끝났다고 가정한다. 이 뒷수습이 끝나야 애플리케이션을 계속 실행할 수 있는 충분한 공간이 있는 셈이기 때문이다. 이 가정이 유지되지 않으면, 즉 애플리케이션을 계속 실행하기에 공간이 부족하다면 Full GC가 예약된다.
 
-# Humongous Object
+## Humongous Object
 
 * 위의 체스판 모양의 heap 구조에서 파란색 H로 표시된 객체가 커다란 객체(Humongous Object) 이다.
 * 한 영역의 절반 이상의 크기를 가진 객체를 말한다.
@@ -150,7 +150,7 @@ G1은 GC가 끝날 무렵에 대피 실패의 뒷수습이 끝났다고 가정�
 
 
 
-# 옵션 및 기본값
+## 옵션 및 기본값
 
 `-XX:MaxGCPauseMillis=200`
 
@@ -200,11 +200,11 @@ G1은 GC가 끝날 무렵에 대피 실패의 뒷수습이 끝났다고 가정�
 
 * 라이브 객체 점유율이 이 값보다 높은 old gen은 space-reclamation 단계에서 수집되지 않는다.
 
-# 튜닝
+## 튜닝
 
 여기에 나오는 지침들은 훑어보고 감 잡는 용으로만 쓰고, 실제로 튜닝을 하려면 문서를 직접 읽고 충분히 테스트하도록 하자.
 
-## 일반적인 권장 사항
+### 일반적인 권장 사항
 
 * 가급적이면 기본 설정으로 사용할 것.
 * 필요하다면 `-Xmx` 옵션으로 최대 heap 사이즈를 넉넉하게 설정할 것.
@@ -212,11 +212,11 @@ G1은 GC가 끝날 무렵에 대피 실패의 뒷수습이 끝났다고 가정�
 * GC 튜닝시 처리량과 정지 시간 사이의 상충 관계를 염두에 둘 것.
     * G1은 90%의 애플리케이션 시간과 10%의 GC 시간을 목표로 한다(Parallel GC의 경우 99%의 애플리케이션 시간과 1%의 GC 시간 목표). 따라서 처리량을 늘리고자 한다면 일시 정지 시간 목표를 어느 정도 느슨하게 해줘야 한다.
 
-## G1 퍼포먼스 향상
+### G1 퍼포먼스 향상
 
 가장 중요한 것은 로그. `-Xlog:gc*=debug` 옵션으로 로그를 보도록 하자.
 
-### Full GC
+#### Full GC
 
 Full GC 로그를 보려면 로그에서 다음을 찾아보자.
 
@@ -241,7 +241,7 @@ Full GC 발생 확률을 낮추기 위해 다음 방법들을 시도해 보도�
     * `-XX:G1ReservePercent`를 설정해서 초기 시점의 Adaptive IHOP 계산에 영향을 준다.
     * `-XX:-G1UseAdaptiveIHOP`, `-XX:InitiatingHeapOccupancyPercent`를 설정해서 Adaptive IHOP 기능을 끈다.
 
-### Latency
+#### Latency
 
 `gc+cpu=info`로 로깅을 하면 `User=0.19s Sys=0.00s Real=0.01s` 형식의 시간 로그를 볼 수 있다.
 
@@ -286,7 +286,7 @@ RS는 Remember Set를 말한다.
 * `-XX:G1HeapRegionSize` 로 heap 사이즈를 조절하면 RS 크기에 영향을 준다.
 * `-XX:G1RSetUpdatingPauseTimePercent`를 줄여주면 G1은 더 많은 RS 작업을 동시에(concurrently) 하려 한다.
 
-### Throughput
+#### Throughput
 
 **처리량을 늘리고 싶다면?**
 
@@ -305,11 +305,11 @@ RS는 Remember Set를 말한다.
 
 
 
-# 함께 읽기
+## 함께 읽기
 
 * [[java-gc-tuning]]{Java GC 튜닝}
 
-# 참고문헌
+## 참고문헌
 
 * [JDK 12 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html )
 * [JDK 11 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/11/gctuning/introduction-garbage-collection-tuning.html )

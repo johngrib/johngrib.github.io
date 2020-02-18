@@ -13,11 +13,11 @@ latex   : false
 * TOC
 {:toc}
 
-# 환경
+## 환경
 
 * MacOS
 
-# Virtual Box 설치
+## Virtual Box 설치
 
 * Vagrant나 Docker를 사용하려면 Virtual Box를 일단 설치해야 한다.
     * 다른 선택지도 있지만 여기선 복잡하게 생각하기 싫다.
@@ -25,7 +25,7 @@ latex   : false
 
 <https://www.virtualbox.org/wiki/Downloads >
 
-# vagrant 설치
+## vagrant 설치
 
 Vagrant 홈페이지에 들어가 다운받아 설치한다.
 
@@ -36,7 +36,7 @@ $ # home 경로부터 만들고 시작하자
 $ mkdir vagrant-home
 ```
 
-## CentOS 설치
+### CentOS 설치
 
 * 새로운 환경을 설치할 때에는 vagrant cloud를 참고하자.
     * <https://app.vagrantup.com/centos/boxes/7 >
@@ -62,7 +62,7 @@ $ vagrant halt
 * `config.vm.box` 파일을 열어 보면 `config.vm.box = "centos/7"` 이라는 설정이 추가된 것을 볼 수 있다.
     * `vagrant init` 명령어가 `config.vm.box`에 이 설정을 추가해주는 것으로 보인다.
 
-## Ubuntu 설치
+### Ubuntu 설치
 
 * Ubuntu도 CentOS와 똑같은 방법으로 설치할 수 있다.
 
@@ -83,13 +83,13 @@ $ # 종료는 halt
 $ vagrant halt
 ```
 
-# Docker 설치
+## Docker 설치
 
 * docker, docker-toolbox를 먼저 설치하자.
     * <https://www.docker.com/get-started >
     * <https://docs.docker.com/toolbox/toolbox_install_mac/ >
 
-## Ubuntu 설치
+### Ubuntu 설치
 
 ```sh
 $ # search 로 docker hub에서 이미지를 검색할 수 있다
@@ -105,7 +105,7 @@ $ # 바로 종료시키지 않고 bash 셸을 보고 싶다면
 $ docker run -it ubuntu:16.04 /bin/bash
 ```
 
-## CentOS 설치
+### CentOS 설치
 
 ```sh
 $ # ubuntu와 똑같이 하면 된다
@@ -114,7 +114,7 @@ $ docker run centos
 $ docker run -it centos /bin/bash
 ```
 
-# Links
+## Links
 
 * <https://www.virtualbox.org/wiki/Downloads >
 * <https://www.vagrantup.com/downloads.html >

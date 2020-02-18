@@ -13,7 +13,7 @@ parent  : hammerspoon
 * TOC
 {:toc}
 
-# `chooser`를 사용해 봅시다
+## `chooser`를 사용해 봅시다
 
 `chooser`의 특징은 다음과 같습니다.
 
@@ -53,7 +53,7 @@ end)
 
 ![chooser]({{ site.url }}/post-img/2017/2017-08-07-hammerspoon-chooser.jpg)
 
-# 클립보드 히스토리를 만들어 봅시다
+## 클립보드 히스토리를 만들어 봅시다
 
 `chooser`를 사용해서 무엇을 하는 것이 좋을까요?
 
@@ -66,7 +66,7 @@ end)
 
 다 그럭저럭 쓸만해 보이지만 평소 필요했던 도구인 클립보드 히스토리 선택기를 만들어 보도록 합시다.
 
-## 기획
+### 기획
 
 일단 아래와 같이 간단하게 기획을 해 보았습니다.
 
@@ -90,7 +90,7 @@ end)
     * 복사한 값은 특정 영역에 파일로 보관하지 않는다.
     * 사용자가 히스토리를 전체 삭제할 수 있는 기능을 제공해야 한다.
 
-## 구현
+### 구현
 
 아래와 같이 구현해 보았습니다.
 
@@ -98,7 +98,7 @@ end)
 
 
 
-### `/init.lua`
+#### `/init.lua`
 
 ```lua
 do  -- clipboard history
@@ -112,7 +112,7 @@ do  -- clipboard history
 end
 ```
 
-### `/modules/clipboard.lua`
+#### `/modules/clipboard.lua`
 ```lua
 local pasteboard = require("hs.pasteboard")
 local history = {}
@@ -199,7 +199,7 @@ return obj
 
 위 구현 내용은 [Github 저장소](https://github.com/johngrib/hammerspoon_clipboard/tree/0.1.0)에도 올려 두었습니다.
 
-# Links
+## Links
 
 * 참고한 다른 Hammerspoon 프로젝트
     * [https://github.com/victorso/.hammerspoon/blob/master/tools/clipboard.lua](https://github.com/victorso/.hammerspoon/blob/master/tools/clipboard.lua)

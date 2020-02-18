@@ -13,11 +13,11 @@ latex   : false
 * TOC
 {:toc}
 
-# Ginkgo
+## Ginkgo
 
 "깅코"라고 읽으면 된다.
 
-# 설치
+## 설치
 
 `ginkgo` 설치
 
@@ -31,12 +31,12 @@ matcher 라이브러리 `gomega` 설치.
 $ go get github.com/onsi/gomega
 ```
 
-# 실행
+## 실행
 
 * `ginkgo -r` : 하위 디렉토리의 테스트 코드를 모두 탐색하며 테스트를 수행한다.
 * `ginkgo watch -r` : 실행을 종료하지 않고, 변경 사항이 생길 때마다 테스트를 수행한다.
 
-# vim에서 사용하기
+## vim에서 사용하기
 
 [[vim-go-env]]{vim-go}를 사용하고 있다면 `:help vim-go`에서 다음과 같은 질문/답변을 찾아볼 수 있다.
 
@@ -48,7 +48,7 @@ You must set this environment variable in your '.vimrc':
     let $GINKGO_EDITOR_INTEGRATION = "true"
 ```
 
-# ginkgo 테스트 코드 예제
+## ginkgo 테스트 코드 예제
 
 테스트를 돌려보기 위해 두 파일을 작성해 보았다.
 
@@ -109,7 +109,7 @@ var _ = Describe("Test functions",
 ![coverage](https://user-images.githubusercontent.com/1855714/46329021-dc8be980-c645-11e8-8442-e45a70e7e9b0.png )
 
 
-# Links
+## Links
 
 * <https://github.com/onsi/ginkgo >
 * [Getting Started with BDD in Go Using Ginkgo](https://semaphoreci.com/community/tutorials/getting-started-with-bdd-in-go-using-ginkgo )

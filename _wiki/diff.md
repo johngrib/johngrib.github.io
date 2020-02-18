@@ -13,13 +13,13 @@ latex   : false
 * TOC
 {:toc}
 
-# Examples
-## 두 파일의 차이점 비교하기
+## Examples
+### 두 파일의 차이점 비교하기
 ```sh
 $ diff FILE_A FILE_B
 ```
 
-## 대소문자 무시
+### 대소문자 무시
 ```sh
 $ diff FILE_A FILE_B -i
 ```

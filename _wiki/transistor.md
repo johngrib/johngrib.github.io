@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# pnp/npn 트랜지스터
+## pnp/npn 트랜지스터
 
 ![transistors](/post-img/transistor/tran1.gif)
 
@@ -37,23 +37,23 @@ latex   : false
 
 ![npn](/post-img/transistor/patent-npn.png)
 
-## 다이오드도 함께 보자
+### 다이오드도 함께 보자
 
 p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지스터를 이해할 때 도움이 된다.
 
 ![npn](/post-img/transistor/pn-diode.png)
 
-## 점접촉 트랜지스터와의 비교
+### 점접촉 트랜지스터와의 비교
 
 다음은 윌리엄 쇼클리의 [Electrons And Holes In Semiconductors](https://archive.org/details/ElectronsAndHolesInSemiconductors/page/n51 ) 35 쪽의 일부를 캡처한 사진이다.
 
 ![symbol](/post-img/transistor/1950.png)
 
-# npn 트랜지스터로 논리 게이트 만들기
+## npn 트랜지스터로 논리 게이트 만들기
 
 - 논리 게이트는 트랜지스터를 스위치로 사용한다.
 
-## and, nand
+### and, nand
 
 | and                                   | nand                                   |
 | ![and](/post-img/transistor/and4.gif) | ![and](/post-img/transistor/nand4.gif) |
@@ -66,14 +66,14 @@ p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지
     * out 이 and 게이트보다 위쪽에 있다는 점에 주목.
     * 두 base 입력이 모두 high 이면 out 으로 high 출력이 나가지 않는다.
 
-## or, nor
+### or, nor
 
 | or                                  | nor                                   | nor(다른 방식)                        |
 | ![or](/post-img/transistor/or4.gif) | ![nor](/post-img/transistor/nor5.gif) | ![nor](/post-img/transistor/nor4.gif) |
 
 
 
-# 역사
+## 역사
 
 - 1939-12-29: [윌리엄 쇼클리, 아이디어를 메모하다.](https://www.computerhistory.org/tdih/december/29/ )
 - 1947-12-23: 벨 연구소의 쇼클리, 바딘, 브래튼. 점 접촉 트랜지스터(Point Contact Transistor) 완성.
@@ -87,7 +87,7 @@ p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지
         - 1956년 외에도 1972년에 초전도 현상 해명으로 노벨 물리학상을 또 받았다.
     - 월터 하우저 브래튼(Walter Houser Brattain)
 
-## 1954년 11월
+### 1954년 11월
 
 * 시무어 크레이가 공군의 IBCM 제어용 컴퓨터 설계에 트랜지스터를 도입하였으나 채택은 되지 않았다.
 
@@ -123,7 +123,7 @@ ICBM 설계에 적용할 더 나은 기술을 선택하기 위해서였다.
 
 
 
-# Links
+## Links
 
 - [Circuit element utilizing semiconductive material](https://patents.google.com/patent/US2569347A/en ) - 윌리엄 쇼클리의 접합 트랜지스터 특허 문서
 - [1948: Conception of the Junction Transistor (computerhistory.org)](https://www.computerhistory.org/siliconengine/conception-of-the-junction-transistor/ )
@@ -132,12 +132,12 @@ ICBM 설계에 적용할 더 나은 기술을 선택하기 위해서였다.
 - [Naming The Transistor](https://www.pbs.org/transistor/album1/pierce/naming.html )
 - [Electrons And Holes In Semiconductors by William Shockley(1950)](https://archive.org/details/ElectronsAndHolesInSemiconductors/page/n51 )
 
-# Image References
+## Image References
 
 - <http://hyperphysics.phy-astr.gsu.edu/hbase/Solids/trans.html >
 - <https://en.wikipedia.org/wiki/P%E2%80%93n_diode > : 다이오드 이미지
 
-# 참고문헌
+## 참고문헌
 
 * 슈퍼컴퓨터를 사랑한 슈퍼맨 / 찰스 J. 머리 저 / 이재범 역 / 지식함지 / 2015년 08월 11일 / 원제 : The Supermen: The Story of Seymour Cray and the Technical Wizards Behind the Supercomputer
 * 트랜지스터의 개념 주워담기 1 / 이용훈 저 / Ohm사(오므사) / 2016년 05월 16일

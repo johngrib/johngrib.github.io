@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# Github Jekyll의 코드 하이라이팅
+## Github Jekyll의 코드 하이라이팅
 
 * 다음과 같이 마크다운 파일을 작성하면 Jekyll이 해당 언어의 신택스로 하이라이팅을 해준다.
 
@@ -34,7 +34,7 @@ latex   : false
 * <https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers >
 
 
-# 언어 목록
+## 언어 목록
 
 Jekyll에서 Rouge를 사용하고 있다면 코드 블록에서 언어를 지정할 때 아래의 목록을 참고하면 된다.
 
@@ -160,6 +160,6 @@ Jekyll에서 Rouge를 사용하고 있다면 코드 블록에서 언어를 지�
 * xml
 * yaml, yml
 
-# Links
+## Links
 
 * <https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers >

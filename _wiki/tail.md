@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# Examples
+## Examples
 ```sh
  # 마지막 10 줄을 출력한다
 tail test.txt

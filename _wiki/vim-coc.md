@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# coc.nvim 설치
+## coc.nvim 설치
 
 coc.nvim이 좋다는 소문이 돌길래 나도 사용해보기로 했다.
 
@@ -23,7 +23,7 @@ coc.nvim이 좋다는 소문이 돌길래 나도 사용해보기로 했다.
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 ```
 
-# Language Server 설치
+## Language Server 설치
 
 coc의 랭귀지 서버 설치는 쉽다.
 
@@ -37,7 +37,7 @@ coc의 랭귀지 서버 설치는 쉽다.
 
 vimrc에서 정의하는 방식이면 더 좋았겠지만 이런 방법도 나쁘지 않은 것 같다.
 
-# Ultisnips 와의 연동
+## Ultisnips 와의 연동
 
 나는 나만의 snippet이 많은 편이라 Ultisnips와의 연동은 중요하다.
 
@@ -55,7 +55,7 @@ vimrc에서 정의하는 방식이면 더 좋았겠지만 이런 방법도 나�
 
 공들여 여기저기 설정해놓은 ultisnips 미리보기가 안 되는 건 아쉽지만 랭귀지 서버 기능이 youcompleteme보다 괜찮은 느낌이라 한동안 사용해보기로 했다.
 
-# Links
+## Links
 
 * <https://github.com/neoclide/coc.nvim >
 * <https://github.com/neoclide/coc.nvim/wiki/Language-servers >

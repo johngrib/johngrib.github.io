@@ -14,7 +14,7 @@ latex   : false
 {:toc}
 
 
-# 준비물
+## 준비물
 
 * [vim-go](https://github.com/fatih/vim-go )가 설치되어 있어야 한다.
 * golang.org/x/tools/cmd/ 명령 도구 설치(`goimports`가 함께 설치된다).
@@ -22,7 +22,7 @@ latex   : false
 $ go get golang.org/x/tools/cmd/...
 ```
 
-# 설정
+## 설정
 
 `.vimrc`에 다음 라인을 추가해주면 된다.
 
@@ -30,7 +30,7 @@ $ go get golang.org/x/tools/cmd/...
 let g:go_fmt_command = "goimports"
 ```
 
-# 사용
+## 사용
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
 ```
 
 
-# Links
+## Links
 
 * <https://github.com/fatih/vim-go >
 * <https://github.com/fatih/vim-go-tutorial/blob/master/vimrc#L109 >

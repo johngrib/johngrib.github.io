@@ -13,9 +13,9 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의
+## 정의
 
-## 함수의 개념
+### 함수의 개념
 
 **function**
 
@@ -29,7 +29,7 @@ We write $$f(a) = b$$ if b is the unique element of B assigned by the function $
 * A 에서 B 로의 함수 $$f$$ 를 $$ f : A → B $$ 로 표기한다.
 * function 을 사상(mappings), 변환(transformations)라 부르기도 한다.
 
-## 정의역, 공역, 치역, 상, 원상, 사상
+### 정의역, 공역, 치역, 상, 원상, 사상
 
 **domain, codomain, range, image, preimage, map**
 
@@ -51,7 +51,7 @@ Also, if f is a function from A to B, we say that f maps A to B.
     * 공역이 같다.
     * 정의역의 원소와 공역의 원소 사이에 같은 사상을 갖는다.
 
-## 함수의 합과 곱
+### 함수의 합과 곱
 
 >
 Let f1 and f2 be functions from A to R.
@@ -66,7 +66,7 @@ $$
 * $$ f_1, f_2$$가 A 로부터 **R**(실수) 로의 함수라면
     * $$ f_1 + f_2$$과 $$ f_1 f_2 $$ 도 A 로부터 **R** 로의 함수이다.
 
-## 정의역의 부분집합의 상
+### 정의역의 부분집합의 상
 
 >
 Let f be a function from A to B and let S be a subset of A.
@@ -114,7 +114,7 @@ $$ f(S) = \{ \color{red}{t} \vert ∃ s ∈ S( \color{red}{t = f(s)} ) \}  $$.
     * 그렇다면 S의 상은 $$ f(S) = \{ f(2), f(3) \} = \{ 4, 6 \} $$ 이다.
     * S의 상은 B의 부분집합이다. 위의 정의는 이것을 말한다.
 
-## 단사 함수
+### 단사 함수
 
 **one-to-one, injective**
 
@@ -132,7 +132,7 @@ A function is said to be injective if it is one-to-one.
 * $$ f(x) = x^2 $$ 은 단사 함수인가?
     * $$ f(1) = 1 $$ 이고, $$ f(-1) = 1 $$ 이므로 단사 함수가 아니다.
 
-## 증가 함수, 단조 증가 함수, 감소 함수, 단조 감수 함수
+### 증가 함수, 단조 증가 함수, 감소 함수, 단조 감수 함수
 
 **increasing function, strictly increasing function, decreasing function, strictly decreasing function**
 
@@ -149,7 +149,7 @@ and strictly decreasing if $$f(x) > f(y)$$, whenever $$x < y$$ and $$x$$ and $$y
 | 감소 함수      | $$ a_1 < a_2 $$ 이면 $$ f(a_1) \color{red}\ge f(a_2) $$ 인 함수.            |
 | 단조 감소 함수 | $$ a_1 < a_2 $$ 이면 $$ f(a_1) \color{red}\gt f(a_2) $$ 인 함수.            |
 
-## 전사 함수
+### 전사 함수
 
 **onto, surjection**
 
@@ -160,7 +160,7 @@ A function f is called surjective if it is onto.
 
 * 공역과 치역이 같은 함수.
 
-## 전단사 함수
+### 전단사 함수
 
 **one-to-one correspondence, 일대일대응**
 
@@ -170,7 +170,7 @@ The function f is a one-to-one correspondence, or a bijection, if it is both one
 * 단사 함수이면서 전사 함수인 함수를 전단사 함수라고 한다.
     * 일대일 대응이라고도 한다.
 
-## 역함수
+### 역함수
 
 **inverse function**
 
@@ -181,7 +181,7 @@ Let $$f$$ be a one-to-one correspondence from the set A to the set B. The invers
 * 전단사 함수는 역함수를 만들 수 있으므로 가역 함수(invertible function)이다.
 * 전단사 함수가 아닌 함수는 역함수를 만들 수 없으므로 비가역 함수(not invertible function)이다.
 
-## 합성함수
+### 합성함수
 
 **composition of functions**
 
@@ -193,7 +193,7 @@ $$(f ◦ g)(a) = f (g(a))$$
 * 함수 f와 g의 합성함수는 $$ f \circ g $$ 로 표기한다.
 * $$ (f ◦ g)(a) = f (g(a)) $$.
 
-## 함수의 그래프
+### 함수의 그래프
 
 >
 Let $$f$$ be a function from the set A to the set B.
@@ -201,7 +201,7 @@ The graph of the function $$f$$ is the set of ordered pairs $$\{(a,b) \vert a �
 
 * 함수 $$ f $$의 그래프는 $$\{(a,b) \vert a ∈ A \ and \ f(a) = b \}$$인 순서쌍의 집합이다.
 
-## 바닥 함수와 천장 함수
+### 바닥 함수와 천장 함수
 
 **floor function, ceiling function**
 
@@ -226,7 +226,7 @@ The value of the ceiling function at x is denoted by $$⌈x⌉$$.
 | $$ ⌊x+n⌋ = ⌊x⌋ + n $$              |
 | $$ ⌈x+n⌉ = ⌈x⌉ + n $$              |
 
-## 부분 함수
+### 부분 함수
 
 **partial functions**
 
@@ -243,7 +243,7 @@ When the domain of definition of $$ f $$ equals A, we say that $$ f $$ is a tota
 * 부분 함수는 다른 함수와 동일하게 표기하며, 부분함수인지는 문맥을 보고 파악해야 한다.
 * 부분함수의 정의역이 원래의 정의역과 같을 때, 그 함수를 전체 함수(total function)라 한다.
 
-# 용어 정리
+## 용어 정리
 
 | English                            | 한국어         | 예/설명                                              |
 |------------------------------------|----------------|------------------------------------------------------|
@@ -276,7 +276,7 @@ When the domain of definition of $$ f $$ equals A, we say that $$ f $$ is a tota
 | partial function                   | 부분 함수      | 전체 함수의 정의역의 부분집합을 정의역으로 삼는 함수 |
 | domain of definition               | 정의된 정의역  | 부분 함수의 정의역                                   |
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 

@@ -13,13 +13,13 @@ latex   : true
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * 두 확률 변수의 사전 확률과 사후 확률 사이의 관계를 나타내는 정리.
 
 $$ p(A \mid B) = \frac{p(B \mid A) \space p(A)}{p(B)} \propto \mathcal{L}(A \mid B) \space p(A) $$
 
-## 식에 대한 설명
+### 식에 대한 설명
 
 * 결합 확률: A와 B가 모두 참일 확률
 
@@ -37,11 +37,11 @@ $$ p(B) \space p(A \mid B) = p(A) \space p(B \mid A) $$
 
 $$ p(A \mid B) = {p(A) \space p(B \mid A) \over p(B)} $$
 
-## 가능도(우도)
+### 가능도(우도)
 
 $$ \mathcal{L}(A \mid B) = p(B \mid A) $$ 이며, A가 주어졌을 때 B의 가능도(우도)라 부른다.
 
-# 베이즈 이론의 통시적 해석
+## 베이즈 이론의 통시적 해석
 
 * 통시적(diachronic) 해석 : 데이터 D의 관점에서 봤을 때 가설 H의 확률을 수정해준다.
 * 시간에 따라 새로운 데이터를 접하게 되면서 가설에 대한 확률이 달라진다는 것.
@@ -59,9 +59,9 @@ $$ p(A \mid B) = {p(A) \space p(B \mid A) \over p(B)} $$
 
 $$ \text{사후 확률} = {\text{사전 확률} \times \text{우도} \over \text{한정 상수}}$$
 
-# 베이즈 이론의 공산 형태
+## 베이즈 이론의 공산 형태
 
-## 공산(odds)
+### 공산(odds)
 
 * 0~1 사이의 숫자가 아니라 비율로 확률을 표현하는 방법
 * 승산(The odds in favor): 사건이 일어나지 않을 때의 확률과 일어났을 때의 확률의 비율
@@ -109,7 +109,7 @@ $$
 
 
 
-# Links, 참고문헌
+## Links, 참고문헌
 
 * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
 

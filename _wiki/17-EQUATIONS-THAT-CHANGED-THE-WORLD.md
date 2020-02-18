@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 감상
+## 감상
 
 각 방정식의 유래나 의미는 물론이고, 현실 세계에서의 활용에 대해서도 풍부하고 재미있게 설명해 준다.
 
@@ -24,50 +24,50 @@ latex   : true
 
 
 
-# 이 책에 등장한 방정식들
+## 이 책에 등장한 방정식들
 
-## 피타고라스 정리
+### 피타고라스 정리
 
 $$ a^2 + b^2 = c^2 $$
 
-## 로그
+### 로그
 
 $$ \log xy = \log x + \log y $$
 
-## 미적분
+### 미적분
 
 $$ \frac{df}{dt} = \lim_{h \to 0} \frac{ f(t + h) - f(t) }{h} $$
 
-## 뉴턴의 중력 법칙
+### 뉴턴의 중력 법칙
 
 $$ F = G { m_1 m_2 \over d^2 } $$
 
-## -1의 제곱근
+### -1의 제곱근
 
 $$ i^2 = -1 $$
 
-## 오일러의 다면체 공식
+### 오일러의 다면체 공식
 
 $$ F - E + V = 2$$
 
-## 정규 분포
+### 정규 분포
 
 $$ \Phi(x) = { 1 \over \sqrt{2\pi\sigma} } e^{ - \frac{ (x - \mu)^2 }{2 \sigma^2} }$$
 
-## 파동 방정식
+### 파동 방정식
 
 $$ { \partial^2 u \over \partial t^2 } = c^2 { \partial^2 u \over \partial x^2 }$$
 
-## 푸리에 변환
+### 푸리에 변환
 
 $$ \hat{f}(\xi) = \int_{ - \infty}^{ \infty } f(x) e^{ -2 \pi i x \xi} dx $$
 
 
-## 나비에-스토크스 방정식
+### 나비에-스토크스 방정식
 
 $$ \rho \left( \frac{\partial \textbf{v}}{\partial t} + \textbf{v} \cdot \nabla \textbf{v} \right) = - \nabla p + \nabla \cdot \textbf{T} + \textbf{f}$$
 
-## 맥스웰 방정식
+### 맥스웰 방정식
 
 $$
 \begin{array}{cc}
@@ -76,33 +76,33 @@ $$
 \end{array}
 $$
 
-## 열역학 제2법칙
+### 열역학 제2법칙
 
 $$ dS \ge 0 $$
 
-## 상대성 이론
+### 상대성 이론
 
 $$ E = mc^2 $$
 
-## 슈뢰딩거 방정식
+### 슈뢰딩거 방정식
 
 $$
 i \hbar \frac{\partial}{\partial t} \Psi = \hat{H} \Psi
 $$
 
-## 정보 이론
+### 정보 이론
 
 $$ H = - \sum_x p(x) \log p(x) $$
 
-## 카오스 이론
+### 카오스 이론
 
 $$ x_{t + 1} = kx_t (1 - x_t) $$
 
-## 블랙-숄스 방정식
+### 블랙-숄스 방정식
 
 $$ \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{ \partial S^2 } + rS \frac{\partial V}{\partial S} + \frac{ \partial V }{ \partial t } -rV = 0$$
 
-# Links
+## Links
 
 * [Seventeen Equations that Changed the World(amazon)](https://www.amazon.com/Seventeen-Equations-that-Changed-World-ebook/dp/B006UU2TBW )
 * [세계를 바꾼 17가지 방정식(사이언스 북스)](http://sciencebooks.minumsa.com/book/852/ )

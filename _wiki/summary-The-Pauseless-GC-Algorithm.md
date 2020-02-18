@@ -16,9 +16,9 @@ latex   : false
 * [Teh Pauseless GC Algorithm by Cliff Click, Gil Tene, Michael Wolf. 2005][pdf], [다른 링크][pdf2]
 * "역: ~"은 나의 의견이다.
 
-# 요약
+## 요약
 
-## ABSTRACT
+### ABSTRACT
 
 **개요**
 
@@ -43,13 +43,13 @@ Pauseless GC 알고리즘은 다음을 위해 설계됐다.
 * 어떤 페이즈도 뮤테이터에 일거리를 과도하게 주거나, 작업을 빨리 완료시키기 위한 경합을 벌이지 않는다.
 * 뮤테이터 오버 헤드를 제한하는 "자가 치유(self-healing)" 기능이 있다.
 
-## Keywords
+### Keywords
 
 **핵심 키워드**
 
 Read barriers, memory management, garbage collection, concurrent GC, Java, custom hardware
 
-## 1. INTRODUCTION
+### 1. INTRODUCTION
 
 **도입**
 
@@ -66,7 +66,7 @@ Read barriers, memory management, garbage collection, concurrent GC, Java, custo
 Azul Systems 에서는 이를 테스트하기 위해 읽기 장벽 명령이 있는 커스텀 CPU가 있는 커스텀 하드웨어 시스템을 구축했고,
 Pauseless GC가 간단하고 효율적이며 Stop-The-World 단계가 없음을 검증한다.
 
-## 2. RELATED WORK
+### 2. RELATED WORK
 
 **관련된 연구 작업들**
 
@@ -89,16 +89,16 @@ Pauseless의 특징
 * Pauseless 수집기는 쓰기 장벽이 필요하지 않습니다.
 
 
-## 3. HARDWARE SUPPORT
-### 3.1 Background
+### 3. HARDWARE SUPPORT
+#### 3.1 Background
 
 Azul Systems가 구축한 GC 연구용 커스텀 하드웨어 이야기.
 
-### 3.2 OS-level Support
+#### 3.2 OS-level Support
 
-### 3.3 Hardware Read Barrier
+#### 3.3 Hardware Read Barrier
 
-## 4. THE PAUSELESS GC ALGORITHM
+### 4. THE PAUSELESS GC ALGORITHM
 
 Pauseless GC 알고리즘의 세 가지 주요 단계
 
@@ -121,7 +121,7 @@ Pauseless 알고리즘은 Stop-The-World 가 없다.
 * 물론 이론상으로만 없고, 기존 JVM 작업을 쉽게 하기 위해 구현에는 Stop-The-World가 들어갈 수 있다.
 
 
-### 4.1 Mark Phase
+#### 4.1 Mark Phase
 
 * 모든 라이브 오브젝트를 표시하고 태그를 지정하여 죽은 오브젝트와 구별할 수 있게 한다.
 * 읽기 장벽으로 기능이 보강된 병렬 및 동시 증분 업데이트 (SATB 아님) 마킹 알고리즘을 쓴다.
@@ -135,7 +135,7 @@ Pauseless 알고리즘은 Stop-The-World 가 없다.
     * 도달 가능한 객체를 표시하고, 이 때 NMT 비트도 함께 셋팅한다.
     * 객체 내부에 있는 모든 참조를 재귀적으로 표시한다.
 
-### 4.2 Relocate Phase
+#### 4.2 Relocate Phase
 
 * 객체를 재배치하고 페이지를 회수하는 단계.
 * 죽은 객체가 가득한 페이지에서 살아있는 객체를 다른 페이지로 옮긴다.
@@ -167,7 +167,7 @@ Figure 1: The Complete GC Cycle
 * Relocate 단계는 단독으로 실행될 때도 있고, 다음 Mark 단계와 같이 실행될 때도 있다.
 
 
-### 4.3 Remap Phase
+#### 4.3 Remap Phase
 
 * Remap 단계에서 GC 스레드는 힙의 모든 참조에 대해 읽기 장벽을 실행하며, 객체 그래프를 가로지른다(traverse).
 * 보호된 페이지를 참조하는 레퍼런스가 있다면 새로운 주소로 포워딩해준다.
@@ -177,7 +177,7 @@ Figure 1: The Complete GC Cycle
 * Remap 단계는 Relocate 단계의 뒷부분과 동시에 시작된다. (Figure 1을 보자)
 * Relocation 단계에서 생겨나는 부실한 포인터들은 Remap 단계가 끝나야만 사라진다.
 
-## 5. MARK PHASE
+### 5. MARK PHASE
 
 * Mark 단계는 마킹 작업목록과 같은 내부 데이터 구조를 초기화하고, 이 단계의 마크 비트(mark-bits)를 지우면서 시작한다.
 
@@ -206,7 +206,7 @@ Mark 단계는 모든 전역 참조를 표시하고 각 스레드의 루트 세�
 동시 뮤테이터에 의해 만들어진 새로운 객체는 GC 사이클에서 재배치 되지 않는 페이지에 할당된다.
 
 
-### 5.1 The NMT Bit
+#### 5.1 The NMT Bit
 
 증분 업데이트 마커(incremental update marker)를 만들 때의 어려운 점
 
@@ -246,33 +246,33 @@ Mark 단계는 모든 전역 참조를 표시하고 각 스레드의 루트 세�
 이 기법이 없다면 마커 스레드가 뮤테이터의 작업 세트에서 NMT 비트를 뒤집을 수 있을 때까지 모든 뮤테이터가 계속 NMT 트랩을 사용하게 된다. 그러나 이 방법으로 인해 각 뮤테이터는 실행될 때 자신의 워킹 셋을 뒤집기만 하면 된다.
 
 
-### 5.2 The NMT Bit and The Initial Stack-Scan
+#### 5.2 The NMT Bit and The Initial Stack-Scan
 
-### 6.1 Read-Barrier Trap Handling
+#### 6.1 Read-Barrier Trap Handling
 
-### 6.2 Other Relocate Phase Actions
+#### 6.2 Other Relocate Phase Actions
 
-### 6.3 The Remap Phase
+#### 6.3 The Remap Phase
 
-## 7. REALITY CHECK
+### 7. REALITY CHECK
 
-### 7.1 At the Mark Phase Start
+#### 7.1 At the Mark Phase Start
 
-### 7.2 At the Mark Phase End
+#### 7.2 At the Mark Phase End
 
-### 7.3 At the Relocation Phase Start
+#### 7.3 At the Relocation Phase Start
 
-### 7.4 Relocate doesn't run during Mark/Remap
+#### 7.4 Relocate doesn't run during Mark/Remap
 
-## 8. EXPERIMENTS
+### 8. EXPERIMENTS
 
-### 8.1 Methodology
+#### 8.1 Methodology
 
-### 8.2 Transaction Times
+#### 8.2 Transaction Times
 
-### 8.3 Reported Pause Times
+#### 8.3 Reported Pause Times
 
-## 9. Conclusions
+### 9. Conclusions
 
 * Pauseless GC 알고리즘은 대규모 다중 프로세서 시스템을 위해 설계된 완전 병렬 및 동시 알고리즘이다.
     * Stop-The-World 일시 중지가 없고, 모든 뮤테이터 스레드가 한꺼번에 중지되는 지점이 없다.

@@ -13,7 +13,7 @@ parent  : hammerspoon
 * TOC
 {:toc}
 
-# 콘솔을 열어 봅시다
+## 콘솔을 열어 봅시다
 
 ![hammerspoon icon]({{ site.url }}/post-img/2017/2017-07-31-hammerspoon-icon.png)
 
@@ -22,7 +22,7 @@ parent  : hammerspoon
 
 이제부터는 사용자에게 메시지를 전달하려는 목적이 아니라면 `hs.alert.show` 함수의 사용은 지양하고 콘솔을 사용하도록 하겠습니다.
 
-# 입력 소스를 확인해 봅시다
+## 입력 소스를 확인해 봅시다
 
 한영 전환 키를 만들기 위해선 일단 입력 소스를 확인할 수 있어야 합니다.
 
@@ -47,7 +47,7 @@ end)
 
 출력 결과를 살펴보면 각각 영문 입력 소스와 한국어(두벌식) 입력 소스의 아이디라는 것을 알 수 있습니다.
 
-# 한영 전환 키를 만들어 봅시다
+## 한영 전환 키를 만들어 봅시다
 
 로직은 다음과 같이 단순합니다.
 
@@ -97,7 +97,7 @@ end
 아무래도 개발자 입장에서는 직접 기능을 변경할 수 있다는 점에서 Hammerspoon이 좀 더 편리하군요.
 
 
-# `f13` 키를 영문 전환 기능이 있는 `escape` 키로 만들어 봅시다
+## `f13` 키를 영문 전환 기능이 있는 `escape` 키로 만들어 봅시다
 
 그렇다면 이번엔 Vim 사용자들에게 유용한 기능을 만들어 봅시다.
 
@@ -131,7 +131,7 @@ hs.hotkey.bind({}, 'f13', on_caps_mode, off_caps_mode)
 
 위와 같이 하면 Vim에서 `escape`를 누르기 전에 영문으로 전환하는 귀찮은 일을 하지 않아도 됩니다.
 
-## 한글 마지막 글자가 사라지는 문제
+### 한글 마지막 글자가 사라지는 문제
 
 하지만 그것은 희망 사항일 뿐이고, 실제로 터미널/터미널 Vim에서 한국어로 타이핑하다 `F13`을 입력해봐도
 생각만큼 매끄럽게 작동하지 않는 것을 알 수 있습니다.
@@ -161,14 +161,14 @@ hs.eventtap.keyStroke({}, 'escape')
 위와 같이 하면 맥 기본 한글 입력기, 구름 입력기, 터미널, 터미널 Vim, MacVim, 평범한 워드 프로세서
 가리지 않고 기대한 대로 작동합니다.
 
-## 덧붙임
+### 덧붙임
 
 그럼에도 불구하고 저는 구름 입력기를 사용하고 있습니다.
 구름 입력기가 없으면 한글 입력 상태일 때 Vimium이 작동하지 않기 때문입니다.
 이 문제도 Hammerspoon으로 해결할 수는 있겠지만 번거롭기도 하고,
 Hammerspoon 설정이 너무 복잡해지는 건 바라지 않기 때문이기도 합니다.
 
-# Links
+## Links
 
 * [API 문서](http://www.hammerspoon.org/docs/index.html)
     * [hs.keycodes.currentSourceID](http://www.hammerspoon.org/docs/hs.keycodes.html#currentSourceID)

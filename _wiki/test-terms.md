@@ -3,7 +3,7 @@ layout  : wiki
 title   : Test 관련 용어 정리
 summary :
 date    : 2019-07-07 07:46:18 +0900
-updated : 2020-01-17 22:52:19 +0900
+updated : 2020-02-18 21:24:28 +0900
 tag     : test
 toc     : true
 public  : true
@@ -161,7 +161,7 @@ xunits 문서에서 잘 설명하고 있지만 마틴 파울러의 소개가 간
 * [Test Double(xUnit Patterns.com)](http://xunitpatterns.com/Test%20Double.html )
 * [Test Double(MARTINFOWLER.com)](https://www.martinfowler.com/bliki/TestDouble.html )
 
-# 참고문헌
+## 참고문헌
 
 * xUnit 테스트 패턴 / 제라드 메스자로스 저 / 박일 역 / 에이콘출판사 / 2011년 11월 10일 / 원제 : xUnit Test Patterns: Refactoring Test Code
 

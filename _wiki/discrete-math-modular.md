@@ -13,9 +13,9 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의
+## 정의
 
-## 나눗셈 알고리즘
+### 나눗셈 알고리즘
 
 **THE DIVISION ALGORITHM**
 
@@ -27,7 +27,7 @@ with $$0 ≤ r < d$$, such that $$a = dq + r$$.
     * $$ 0 \le r \lt d $$ 이고, $$ a = dq + r $$ 을 만족하는 $$ q $$와 $$ r $$ 이 유일하게 존재한다.
     * $$ r $$이 나머지. 즉 나머지는 0 보다 크다.
 
-## div 와 mod
+### div 와 mod
 
 >
 In the equality given in the division algorithm,
@@ -54,7 +54,7 @@ $$
     * 나머지 $$ r $$은 $$ 0 \le r \lt 2 $$ 여야 한다.
     * $$ -7 \bmod 2 = 1 $$.
 
-## 모듈로 합동
+### 모듈로 합동
 
 **congruent modulo**
 
@@ -71,7 +71,7 @@ If $$a$$ and $$b$$ are not congruent modulo $$m$$, we write $$ a \not ≡ b \ (\
 * 모듈로 $$m$$ 합동의 표기. $$ a ≡ b \ (\bmod m) $$.
 * 모듈로 $$m$$ 합동이 아님의 표기. $$ a \not ≡ b \ (\bmod m) $$.
 
-### 모듈로 합동의 필요충분조건
+#### 모듈로 합동의 필요충분조건
 
 >
 Let $$a$$ and $$b$$ be integers, and let $$m$$ be $$a$$ positive integer.
@@ -89,7 +89,7 @@ if and only if there is an integer $$k$$ such that $$a = b + km$$.
     * $$ a = b + km $$ 을 만족하는 $$ k $$ 의 존재이다.
     * $$ a - b = km $$ 이란 뜻이므로, 당연한 말이다.
 
-### 모듈로 m 합동 클래스
+#### 모듈로 m 합동 클래스
 
 >
 The set of all integers congruent to an integer $$a$$ modulo $$m$$
@@ -100,7 +100,7 @@ is called the congruence class of $$a$$ modulo $$m$$.
 * 예를 들어 $$ \{ ...-19, -9, 1, 11, 21, 31, ... \} $$ 은 1과 모듈로 10 합동 클래스다.
     * (10으로 나누면 나머지가 1 나오는 모든 정수의 집합).
 
-## 모듈로 연산
+### 모듈로 연산
 
 >
 Let $$m$$ be a positive integer.  
@@ -120,7 +120,7 @@ Then $$(a + b) \bmod m = ((a \bmod m) + (b \bmod m)) \bmod m$$
 and  
 $$a \times b \bmod m = ((a \bmod m) \times (b \bmod m)) \bmod m.$$
 
-## 산술 모듈로 m
+### 산술 모듈로 m
 
 **Arithmetic Modulo m**
 
@@ -150,9 +150,9 @@ $$a \times b \bmod m = ((a \bmod m) \times (b \bmod m)) \bmod m.$$
 
 두 연산을 모두 갖는 $$ Z_m $$ 은 교환 고리(commutative ring) 이라 불린다.
 
-# 알고리즘
+## 알고리즘
 
-## 기본적인 몫과 나머지 구하기
+### 기본적인 몫과 나머지 구하기
 
 * 다음 함수는 몫과 나머지를 계산하는 기본적인 알고리즘을 js로 구현한 것이다.
     * 이 알고리즘은 $$ O(q \log a) $$ 의 비트 동작을 사용한다.
@@ -188,7 +188,7 @@ div(17, 3)  // { div: 5, mod: 2 }
 div(-17, 3) // { div: -6, mod: 1 }
 ```
 
-## 거듭제곱 수의 나머지 구하기
+### 거듭제곱 수의 나머지 구하기
 
 $$ b^n \bmod m $$ 의 나머지를 구할 때 $$ b^n $$ 이 꽤 큰 수라면 계산하기 곤란할 수 있다.
 
@@ -226,7 +226,7 @@ $$ 7^{30} \bmod 661 $$ 은 $$ 7^{10} \bmod 661, 7^{10} \bmod 661$$ 을 구하면
 
 이를 반복하면 아무리 거듭제곱의 수가 많아도 오버플로하지 않도록 관리하면서 계산하는 것이 가능해진다.
 
-### 이진법을 사용해 거듭제곱 수의 나머지 구하기
+#### 이진법을 사용해 거듭제곱 수의 나머지 구하기
 
 다음 알고리즘은 바로 위에서 문제를 분할해 푸는 방법을 응용한 것이다.
 
@@ -273,7 +273,7 @@ $$ 645 = 1010000100_2 $$ 이므로 `n = [0,0,1,0,0,0,0,1,0,1]` 이 된다.
 
 $$ 3^{644} \bmod 645 = 36 $$
 
-### 재귀 알고리즘으로 거듭제곱 수의 나머지 구하기
+#### 재귀 알고리즘으로 거듭제곱 수의 나머지 구하기
 
 $$
 \def\ceil#1{\lceil #1 \rceil}
@@ -317,7 +317,7 @@ function square(n) {
 }
 ```
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 

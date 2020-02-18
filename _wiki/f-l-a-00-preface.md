@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# THEORY OF COMPUTATION(계산 이론)을 공부하는 목적
+## THEORY OF COMPUTATION(계산 이론)을 공부하는 목적
 
 1. to familiarize students with the foundations and principles of computer science,
     * **컴퓨터 과학의 기초와 원리에 익숙해지도록 한다.**

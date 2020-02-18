@@ -18,11 +18,11 @@ latex   : true
     * HTG-08, HTG-12는 각각 Java 8 버전의 HTG와 Java 12 버전의 HTG를 말한다.
 
 
-# Garbage Collector란 무엇인가?
+## Garbage Collector란 무엇인가?
 
 * GC의 정의는 HTG-08 과 HTG-09 ~ HTG-12 가 미묘하게 다른데, 9 부터 G1GC가 기본값이 되었기 때문이다.
 
-## Java 9 ~ 12
+### Java 9 ~ 12
 
 >
 * [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/introduction-garbage-collection-tuning.html ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/introduction-garbage-collection-tuning.htm ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm )
@@ -42,7 +42,7 @@ Java HotSpot 가비지 수집기는 다음 방법들을 사용해 GC 효율을 �
 * 멀티 스레드를 사용해 병렬로 작업하거나, 애플리케이션이 돌아갈 때 백그라운드에서 작업한다.
 * 라이브 오브젝트 압축.
 
-## Java 8
+### Java 8
 
 >
 * [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/introduction.html#sthref3 )
@@ -53,9 +53,9 @@ GC는 메모리를 관리하는 도구이다. GC는 다음과 같은 작업을 �
 * 동시(병렬) 마킹 단계(marking phase)를 통해 old generation에서 살아있는 객체를 찾는다. HotSpot VM은 토탈 Java heap 사용량이 기본 임계 값을 초과하게 되면 marking phase를 발동한다. 이에 대해서는 CMS(Concurrent Mark Sweep) Collector와 Garbage-First GC 문서를 참고할 것.
 * 병렬 복사(copying) 작업을 통해 라이브 객체를 압축하여 사용 가능한 메모리를 복구한다. 이에 대해서는 Parallel Collector와 Garbage-First GC 문서를 참고할 것.
 
-# Default Selections
+## Default Selections
 
-## Java 9 ~ 12
+### Java 9 ~ 12
 
 >
 * [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/ergonomics.html ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/ergonomics.htm#JSGCT-GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/ergonomics.htm#JSGCT-GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 )
@@ -68,7 +68,7 @@ GC, heap 사이즈, 런타임 컴파일러 기본 셋팅은 다음과 같다.
 * 최대 heap 사이즈는 물리 메모리의 $${1 \over 4}$$
 * C1, C2를 같이 사용하는 계층화된 컴파일러(Tiered comiler)
 
-## Java 8
+### Java 8
 
 >
 * [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ergonomics.html#sthref5 )
@@ -78,7 +78,7 @@ GC, heap 사이즈, 런타임 컴파일러 기본 셋팅은 다음과 같다.
 * 최대 heap 사이즈는 물리 메모리의 $${1 \over 4}$$
 * 서버 런타임 컴파일러
 
-# Behavior-Based Tuning
+## Behavior-Based Tuning
 
 >
 * [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/ergonomics.htm#JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/ergonomics.htm#JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ergonomics.html#sthref11 )
@@ -151,7 +151,7 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
     * 애플리케이션이 정상 상태(steady state)에 도달해도 그렇다.
     * 처리량 목표 달성 과제는 큰 heap을 필요로 하고 최대 일시 정지 시간 목표 달성 과제는 작은 heap을 필요로 해서, 두 목표는 경쟁하게 되어 있다.
 
-# Generational Garbage Collection
+## Generational Garbage Collection
 
 >
 * [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/generations.html#sthref16 )
@@ -169,7 +169,7 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
 따라서 많은 라이브 데이터를 유지하는 대규모 애플리케이션에서는 사용하면 안되는 방식이다.
 
 
-## generational collection
+### generational collection
 
 HotSpot VM은 generational collection 기법을 사용하는 여러 GC 알고리즘을 통합하고 있으며, 이런 여러 알고리즘 중에서 상황에 맞는 것을 골라 쓴다.
 
@@ -202,7 +202,7 @@ generational collection 기법을 쓰는 GC는 다음과 같이 작동한다.
 참고: HTG-09 ~ HTG-12 는 old generation이라 하고, HTG-08 에서는 tenured generation 이라고 한다.
 
 
-## generation은 어떤 모양으로 배치되어 있나
+### generation은 어떤 모양으로 배치되어 있나
 
 다음 그림은 Serial Collector의 generation 디폴트 배열을 보여준다.
 
@@ -242,7 +242,7 @@ HTG-09 부터 Tenured가 Old로 바뀐 것으로 확인할 수 있다.
 
 그 이유는 [Default Selection의 변화](#default-selections) 때문인 것으로 보인다. Java 9 부터는 G1이 기본 가비지 컬렉터로 설정되었기 때문이다.
 
-## Survivor는 왜 두 개인가?
+### Survivor는 왜 두 개인가?
 
 young gen은 Eden과 두 개의 Survivor로 이루어져 있다. 여기에서 중요한 것은 Survivor가 두 개라는 것이다. Survivor 영역은 서로 교대하면서 살아남은 객체가 옮겨가는 대상 영역이 된다. 따라서 Survivor 둘 중 하나는 반드시 깨끗하게 비워져 있어야 한다.
 
@@ -297,11 +297,11 @@ Survivor 0              Survivor 1
 
 자세한 내용은 [[java-gc-eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로} 문서를 참고.
 
-# 측정하기
+## 측정하기
 
 커맨드 라인 옵션 `-verbose:gc`를 사용하면 각 콜렉션에서 heap 및 gc에 대한 정보를 보여준다.
 
-## Java 9 ~ 12
+### Java 9 ~ 12
 
 >
 * [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html#GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-collector-implementation.html#GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E )
@@ -356,7 +356,7 @@ Survivor 0              Survivor 1
 ```
 
 
-## Java 8
+### Java 8
 
 > [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/generations.html#sthref20 )
 
@@ -378,13 +378,13 @@ Survivor 0              Survivor 1
 * 더 자세한 내용을 보고 싶다면 `-XX:+PrintGCDetails` 옵션을 쓰자.
 * GC 발생 타임 스탬프를 보고 싶다면 `-XX:+PrintGCTimeStamps` 옵션을 쓰자.
 
-# Serial GC에 영향을 주는 요소들
+## Serial GC에 영향을 주는 요소들
 
 > [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/factors-affecting-garbage-collection-performance.html#GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/factors-affecting-garbage-collection-performance.html#GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/factors-affecting-garbage-collection-performance.htm#JSGCT-GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/factors-affecting-garbage-collection-performance.htm#JSGCT-GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html#sizing_generations )
 
 주의: 이 항목에서는 주로 heap의 증가 및 축소, heap 레이아웃 및 기본값에 대해 Serial 컬렉션을 전제하고 설명한다. Parallel / G1 GC에는 잘 들어맞지 않을 수 있다.
 
-## GC에 가장 큰 영향을 주는 것은 Heap의 total 사이즈
+### GC에 가장 큰 영향을 주는 것은 Heap의 total 사이즈
 
 GC 성능에 가장 큰 영향을 미치는 요소는 사용 가능한 총 메모리이다.
 
@@ -460,7 +460,7 @@ Parallel Collector의 heap 사이즈는 좀 더 나중에 다루기로 한다.
     * 이 프로세스는 여러 차례의 GC 주기가 필요하다.
     * 기본적으로 Java 런타임은 Java heap을 단계적으로 목표값을 향해 줄여나가므로 필요성이 있는지 고려할 것.
 
-## 두번째로 큰 영향을 주는 것은 young generation의 heap 비율
+### 두번째로 큰 영향을 주는 것은 young generation의 heap 비율
 
 전체 heap 사이즈가 고정되어 있다고 치고 생각해보자.
 
@@ -544,7 +544,7 @@ GC가 실행될 때마다 가상 머신은 threshold 값을 선택하는데, 이
 * 할당은 병렬(parallel)로 할 수 있으므로, 프로세서를 추가했다면 Young gen 사이즈도 키워 주도록 한다.
 
 
-# GC의 종류와 선택
+## GC의 종류와 선택
 
 > [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/available-collectors.html#GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/available-collectors.html#GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/available-collectors.htm#JSGCT-GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/available-collectors.htm#JSGCT-GUID-C7B19628-27BA-4945-9004-EC0F08C76003 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/collectors.html#sthref27 )
 
@@ -585,7 +585,7 @@ GC가 실행될 때마다 가상 머신은 threshold 값을 선택하는데, 이
     * 동시성(concurrent) GC는 일시 정지 시간을 줄여준다.
     * 병렬(parallel) GC는 멀티 프로세서 하드웨어에서 전체 처리량(throughput)을 늘려준다.
 
-## Serial Collector
+### Serial Collector
 
 Serial Collector는 싱글 스레드를 사용하여 GC 작업을 수행한다.
 
@@ -597,7 +597,7 @@ Serial Collector는 싱글 스레드를 사용하여 GC 작업을 수행한다.
 
 함께 읽기: [[java-gc-serial-collector]]
 
-## Parallel Collector
+### Parallel Collector
 
 Parallel Collector는 throughput collector 라고 부르기도 한다.
 
@@ -614,7 +614,7 @@ Parallel GC는 HTG-10 까지는 "많은 heap 사이즈 및 하드웨어 조합�
 
 상세한 내용은 [[java-gc-parallel-collector]]{Parallel Collector} 문서를 참고할 것.
 
-## Mostly Concurrent Collectors
+### Mostly Concurrent Collectors
 
 동시성 GC를 사용할 때 알아둬야 할 점들.
 
@@ -630,7 +630,7 @@ Parallel GC는 HTG-10 까지는 "많은 heap 사이즈 및 하드웨어 조합�
 * 동시성 GC는 싱글 프로세서 시스템에서는 아무런 이득이 없다.
 
 
-### G1 Garbage Collector
+#### G1 Garbage Collector
 
 G1GC는 Garbage-First Garbage Collector를 줄여쓴 것이다.
 
@@ -640,7 +640,7 @@ G1은 가상 머신이 하드웨어/운영체제를 참고하여 자동으로 �
 
 상세한 내용은 [[java-g1gc]]{G1GC} 문서를 참고할 것.
 
-### Concurrent Mark Sweep Collector
+#### Concurrent Mark Sweep Collector
 
 CMS Collector라고도 한다. CMS는 일시 정지 시간이 짧은 것을 선호하고 GC 작업과 프로세스 리소스를 공유할 수 있는 애플리케이션을 위한 GC이다.
 
@@ -648,7 +648,7 @@ CMS는 `-XX:+UseConcMarkSweepGC` 옵션으로 활성화할 수 있다.
 
 **CMS는 JDK 9 부터는 사용되지 않는다.**
 
-### Z Garbage Collector
+#### Z Garbage Collector
 
 ZGC는 대기 시간이 낮은 확장 가능한(scalable low latency) GC이다.
 ZGC는 모든 종류의 비싼 작업을 동시에(concurrently) 작업하며, 애플리케이션 스레드의 실행을 중지하지 않는다는 특징이 있다.
@@ -659,24 +659,24 @@ ZGC는 10ms 미만의 짧은 대기 시간이 필요하거나 테라 바이트 �
 
 상세한 내용은 [[java-gc-zgc]]{ZGC} 문서를 참고할 것.
 
-# 그 외의 고려할 사항들
+## 그 외의 고려할 사항들
 
 > [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/other-considerations.html#GUID-28448147-EC4C-4C94-9A54-54152AD21CB8 ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/other-considerations.html#GUID-28448147-EC4C-4C94-9A54-54152AD21CB8 ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/other-considerations.htm#JSGCT-GUID-28448147-EC4C-4C94-9A54-54152AD21CB8 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/other-considerations.htm#JSGCT-GUID-28448147-EC4C-4C94-9A54-54152AD21CB8 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/considerations.html#sthref62 )
 
 
-## Explicit Garbage Collection
+### Explicit Garbage Collection
 
 * `System.gc()`를 사용한 명시적인 가비지 컬렉터 호출은 가급적이면 사용하지 않도록 한다.
 * `-XX:+DisableExplicitGC`를 설정하면 `System.gc()` 호출을 무시하게 된다.
 
-## Class Metadata
+### Class Metadata
 
 * JDK 8 부터는 Perm gen이 삭제되었고, 클래스 메타 데이터가 네이티브 메모리에 할당된다.
 * 따라서 클래스 메타 데이터에 사용할 수 있는 네이티브 메모리의 양은 이론적으로는 무제한이다.
 * `-XX:MaxMetaspaceSize` 옵션을 사용하면 클래스 메타 데이터에 사용되는 기본 메모리의 양을 최대로 늘릴 수 있다.
 
 
-# 함께 읽기
+## 함께 읽기
 
 * [[java-gc-eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로}
 * [[java-gc-serial-collector]]{Serial Collector}
@@ -684,7 +684,7 @@ ZGC는 10ms 미만의 짧은 대기 시간이 필요하거나 테라 바이트 �
 * [[java-g1gc]]{G1GC}
 * [[java-gc-zgc]]{ZGC}
 
-# 참고문헌
+## 참고문헌
 
 * [JDK 12 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html )
 * [JDK 11 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/11/gctuning/introduction-garbage-collection-tuning.html )
@@ -692,6 +692,6 @@ ZGC는 10ms 미만의 짧은 대기 시간이 필요하거나 테라 바이트 �
 * [JDK 9 Garbage Collection Tuning Guide](https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm )
 * [JDK 8 Garbage Collection Tuning Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ )
 
-# 주석
+## 주석
 
 [^graph]: 정확히 어떤 환경에서 어떻게 측정했는지는 문서에 나와있지 않다.

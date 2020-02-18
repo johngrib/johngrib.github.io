@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의, 용어 정리
+## 정의, 용어 정리
 
 > A graph $$G = (V,E)$$ consists of V, a nonempty set of vertices (or nodes) and E, a set of edges.
 Each edge has either one or two vertices associated with it, called its endpoints. An edge is said to connect its endpoints.
@@ -283,9 +283,9 @@ where the edge set F contains an edge in E if and only if both endpoints of this
 * 그래프 합집합
     * 두 그래프의 합집합은 두 그래프의 정점들의 집합의 합집합과 두 그래프의 간선들의 합집합을 갖는 단순 그래프이다.
 
-# 그래프 표현 방법
+## 그래프 표현 방법
 
-## 인접 리스트(Adjacency Lists)
+### 인접 리스트(Adjacency Lists)
 
 * 각 정점별로 인접한 정점을 나열하는 방법이다.
 
@@ -318,7 +318,7 @@ where the edge set F contains an edge in E if and only if both endpoints of this
 
 * 방향성 그래프의 경우, 시작 정점별로 종료 정점들을 나열한다.
 
-## 인접 행렬(Adjacency Matrices)
+### 인접 행렬(Adjacency Matrices)
 
 $$
 a_{ij} =
@@ -364,7 +364,7 @@ $$
 \end{bmatrix}
 $$
 
-## 결합행렬(Incidence Matrices)
+### 결합행렬(Incidence Matrices)
 
 정점과 간선의 연결을 표시하는 방법이다.
 
@@ -416,7 +416,7 @@ $$
 \end{matrix}
 $$
 
-# 동형 그래프(Isomorphism of Graphs)
+## 동형 그래프(Isomorphism of Graphs)
 
 >
 The simple graphs $$G_1 = (V_1, E_1)$$ and $$G_2 = (V_2, E_2)$$ are isomorphic if there exists a one-to-one and onto function $$f$$ from $$V_1$$ to $$V_2$$ with the property that a and b are adjacent in $$G_1$$ if and only if $$f(a)$$ and $$f(b)$$ are adjacent in $$G_2$$, for all a and b in $$V_1$$. Such a function $$f$$ is called an isomorphism$$^*$$. Two simple graphs that are not isomorphic are called nonisomorphic.
@@ -428,7 +428,7 @@ The simple graphs $$G_1 = (V_1, E_1)$$ and $$G_2 = (V_2, E_2)$$ are isomorphic i
 * isomorphism: iso(equal, 같다), morphe(form, 형태).
 
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등 저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 

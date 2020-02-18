@@ -21,7 +21,7 @@ latex   : false
 
 아, 트위터랑 페이스북 별통에서도 가져와야겠다.
 
-# Bash, Terminal, Vim
+## Bash, Terminal, Vim
 
 * 2018-04-02 [Understanding Linux filesystems: ext4 and beyond](https://opensource.com/article/18/4/ext4-filesystem ), [리눅스 파일 시스템 이해하기 : ext4](https://tech.osci.kr/linux/2018/07/31/linux-filesystem/ )
 * 2008-06-28 [Working With History in Bash](https://macromates.com/blog/2008/working-with-history-in-bash/ )
@@ -43,7 +43,7 @@ latex   : false
 * [The Bash Hackers Wiki](http://wiki.bash-hackers.org/start )
 * [고급 Bash 스크립팅 가이드](https://wiki.kldp.org/HOWTO/html/Adv-Bash-Scr-HOWTO/index.html )
 
-# Web, Architecture
+## Web, Architecture
 
 * 2008-09-03 [History of the browser user-agent string](https://webaim.org/blog/user-agent-string-history/ ), [웹브라우저 user-agent string 의 역사](http://millky.com/@origoni/post/566)
 * 2008-12-11 [Command-Query Separation(CQS) 원리](http://m.egloos.zum.com/aeternum/v/1125381 )
@@ -60,7 +60,7 @@ latex   : false
 * [REST API Tutorial: HTTP Status Codes](https://restfulapi.net/http-status-codes/ )
 * [YES YOUR SITE NEEDS HTTPS.](https://doesmysiteneedhttps.com/ )
 
-# Programming
+## Programming
 
 * 2012-01-08 [Time Lapse of Crowd Control in Tokyo Japan for Comic Market.](https://youtu.be/ermNqkUUiJw?t=18 ) - 코미케 군중 제어. 다중 큐를 사용한 아름다운 동영상.
 * 2012-08-30 [(Objective-C) nil 제대로 알자](https://soulpark.wordpress.com/2012/08/30/objective_c_understanding-nil/ )
@@ -86,13 +86,13 @@ latex   : false
 * [ridi/style-guide](https://github.com/ridi/style-guide ) - 리디북스 개발팀 코드 스타일 가이드
 * [trekhleb/javascript-algorithms](https://github.com/trekhleb/javascript-algorithms )
 
-# Database
+## Database
 
 * 2012-04-20 [MySQL에서 커버링 인덱스로 쿼리 성능을 높여보자!!](http://gywn.net/2012/04/mysql-covering-index/ )
 * [NetSPI SQL Injection Wiki](https://sqlwiki.netspi.com/ )
 * [USE THE INDEX, LUKE!](https://use-the-index-luke.com/sql/clustering/index-only-scan-covering-index )
 
-# Tools
+## Tools
 
 * 2016-08-29 [Making Interactive Node.js Console Apps That Listen for Keypress Events](http://thisdavej.com/making-interactive-node-js-console-apps-that-listen-for-keypress-events/ )
 * 2017-12-26 [개발자가 처음 Docker 접할때 오는 멘붕 몇가지](https://www.popit.kr/%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EC%B2%98%EC%9D%8C-docker-%EC%A0%91%ED%95%A0%EB%95%8C-%EC%98%A4%EB%8A%94-%EB%A9%98%EB%B6%95-%EB%AA%87%EA%B0%80%EC%A7%80/ )
@@ -114,7 +114,7 @@ latex   : false
 * [stefanbuck/awesome-browser-extensions-for-github](https://github.com/stefanbuck/awesome-browser-extensions-for-github )
 * [Ultimate Hacking Keyboard](https://ultimatehackingkeyboard.com/ )
 
-# Dev etc.
+## Dev etc.
 
 * 2012-12-08 [The 4 H’s of Writing Error Messages](https://www.uxmas.com/2012/the-4-hs-of-writing-error-messages ), [번역](http://story.pxd.co.kr/1128 )
 * 2016-01-13 [기술 조직이 사업에 걸림돌이 될 때, 정렬 함정(Alignment Trap)](http://blog.fupfin.com/?p=127 )
@@ -137,7 +137,7 @@ latex   : false
 * 2018-12-26 [‘Doomba’ turns your Roomba’s cleaning maps into Doom levels](https://www.theverge.com/circuitbreaker/2018/12/26/18156600/doomba-roomba-cleaning-maps-doom-levels-rich-whitehouse ), [DOOMBA](http://www.richwhitehouse.com/index.php?postid=72 )
 * [Integerous/goQuality-dev-contents](https://github.com/Integerous/goQuality-dev-contents ) - 고퀄리티 개발 컨텐츠 모음
 
-# Machine Learning
+## Machine Learning
 
 * 2017-08-31 [(카카오AI리포트) 머신러닝 적용의 실제: 하용호 카카오 Machine Intelligence 파트장](https://brunch.co.kr/@kakao-it/104/ )
 * 2017-09-10 [자습해도 모르겠던 딥러닝, 머리속에 인스톨 시켜드립니다. 하용호](https://www.slideshare.net/yongho/ss-79607172 )
@@ -146,7 +146,7 @@ latex   : false
 * 2018-12-05 [AI-Assisted Code Completion Suggestions Come to C++ via IntelliCode](https://blogs.msdn.microsoft.com/vcblog/2018/12/05/cppintellicode/ )
 
 
-# Study, Life
+## Study, Life
 
 * 2012-12-03 [개발자의 역량 측정 메트릭](http://m.blog.daum.net/_blog/_m/articleView.do?blogid=0ISrw&articleno=7864712 )
 * 2013-01-05 [옥스포드 대학 뉴 컬리지에 얽힌 이야기...](http://gibssong.blogspot.com/2013/01/blog-post_5.html?m=1 )
@@ -184,7 +184,7 @@ latex   : false
 * [Teach Yourself Computer Science](https://teachyourselfcs.com/ )
 * [수동적 공격성에 대처하는 방법](https://ko.wikihow.com/%EC%88%98%EB%8F%99%EC%A0%81-%EA%B3%B5%EA%B2%A9%EC%84%B1%EC%97%90-%EB%8C%80%EC%B2%98%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95?amp=1# )
 
-# Science, Math
+## Science, Math
 
 * 2009-10-04 [Domino Chain Reaction](https://youtu.be/5JCm5FY-dEY )
 * 2013-04-29 [테일러 급수의 이해와 활용 (Taylor series)](http://darkpgmr.tistory.com/59 )
@@ -195,14 +195,14 @@ latex   : false
 * 2018-01-15 [사다리 게임, 절대 걸리지 않는 법](http://docs.likejazz.com/ghost-leg-probabilities/ )
 * 2018-10-13 [This is how a mechanical binary counter works](https://twitter.com/ThingsWork/status/1051219022988173312 )
 
-# BlockChain
+## BlockChain
 
 * 2018-01-21 [골빈해커님의 g-coin 분석 1부](https://tykimos.github.io/2018/01/21/g_coin_analysis_part1/ ), [2부](https://tykimos.github.io/2018/01/21/g_coin_analysis_part2/ )
 * 2018-06-10 [탈중앙화된 화폐 교환: Atomic swap](https://medium.com/@xpdlf1004/%ED%83%88%EC%A4%91%EC%95%99%ED%99%94%EB%90%9C-%ED%99%94%ED%8F%90-%EA%B5%90%ED%99%98-atomic-swap-75a0f27d7d11 )
 * 2018-07-20 [블록체인 보고서 총망라: 2015~2018년에 발행된 56개의 국내외 보고서 by 카카오 정책산업연구](https://brunch.co.kr/@kakao-it/265 )
 * [ethereum/wiki/White Paper](https://github.com/ethereum/wiki/wiki/%5BKorean%5D-White-Paper )
 
-# Etc
+## Etc
 
 * 2014-10-25 [한국 IT 역사 5화: 88 서울 올림픽 전산시스템 자이온스 (1부)](http://www.thisisgame.com/webzine/nboard/213/?n=56467 ), [2부](http://www.thisisgame.com/webzine/series/nboard/213/?series=110&n=56759 ), [3부](http://www.thisisgame.com/webzine/series/nboard/213/?series=110&n=57130 )
 * 2015-03-31 [Bandai Namco Opens Rights to Pac-Man, '80s Game Properties](https://www.animenewsnetwork.com/news/2015-03-31/bandai-namco-opens-rights-to-pac-man-80s-game-properties/.86558 )
@@ -216,7 +216,7 @@ latex   : false
 * [Seymour Papert(컴퓨터 과학자 시모어 페퍼트)](https://en.wikipedia.org/wiki/Seymour_Papert )
 * [World Wide Web](http://info.cern.ch/hypertext/WWW/TheProject.html ) - 팀 버너스 리가 만든 세계 최초의 홈페이지.
 
-# Fun
+## Fun
 
 * 2014-03-19 [서울 시내 유명 짜장면집 BEST 130](https://blog.naver.com/cmykhc/20207174388 )
 * 2018-04-06 [(임진왜란 만화)명량해전 그 시작과 끝](http://m.ruliweb.com/family/212/board/1010/read/30594904?search_type=member_srl&search_key=234586 )
@@ -230,7 +230,7 @@ latex   : false
 * [초여명 RPG 가이드](https://www.dropbox.com/s/7kyopd3cypsa296/%EC%B4%88%EC%97%AC%EB%AA%85%20RPG%20%EA%B0%80%EC%9D%B4%EB%93%9C.pdf?dl=0 )
 * [한국국토정보공사 3천여 명의 측량사들이 전국을 누비며 찾아낸 우리지역 진짜 숨은 맛집](https://www.google.com/maps/d/u/0/viewer?mid=19uLxtFsE0qARKu7Zy3BLFso0-2M&h&ll=36.563968299513505%2C127.85745900000006&z=7 )
 
-# Cute
+## Cute
 
 * 2016-11-04 [아기 코알라](https://twitter.com/Kaikaiwang0818/status/794437793694916608 )
 * 2018-03-10 [아기 염소](https://twitter.com/AMAZlNGNATURE/status/972300025530339328 )

@@ -13,12 +13,12 @@ latex   : false
 * TOC
 {:toc}
 
-# 문제
+## 문제
 iTerm2 tmux에서 Vim이나 MacVim을 사용하면 스크린샷과 같이 터미널의 배경색이 Vim의 배경색을 침범한다.
 
 ![My helpful screenshot]({{ site.url }}/post-img/2017/2017-04-03-vim-tmux-t-ut.png)
 
-## 미봉책: NeoVim
+### 미봉책: NeoVim
 
 [NeoVim](https://github.com/neovim/neovim)을 사용하면 배경색 문제를 해결할 수 있다.
 
@@ -34,7 +34,7 @@ iTerm2 tmux에서 Vim이나 MacVim을 사용하면 스크린샷과 같이 터미
     * 당장 생각나진 않지만 NeoVim과 Vim 사이의 몇 가지 아쉬운 기능들이 있다.
     * rainbow.vim이 제대로 작동하지 않는다.
 
-## 해결책: `set t_ut=`
+### 해결책: `set t_ut=`
 
 [stackOverFlow](http://stackoverflow.com/a/15095377)에 답이 있었다.
 
@@ -53,7 +53,7 @@ set t_ut=
 t_ut    clearing uses the current background color    t_ut 't_ut'
 ```
 
-# Links
+## Links
 
 * [Fixing Vim's Background Color Erase for 256-color tmux and GNU screen](https://sunaku.github.io/vim-256color-bce.html)
 * [stackOverFlow: vim in tmux background color changes when paging](http://stackoverflow.com/a/15095377)

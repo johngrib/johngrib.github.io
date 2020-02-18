@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# TCP/UDP와 포트 번호
+## TCP/UDP와 포트 번호
 
 * TCP/IP 호스트는 여러 개의 프로세스를 동시에 운영한다.
 * 그리고 각각의 프로세스는 데이터그램을 보내고 받는다.
@@ -93,7 +93,7 @@ latex   : true
 * 4계층 메시지(TCP/UDP) 헤더에 "**출발지 포트**"와 "**목적지 포트**"가 있다.
 * 포트 번호는 데이터그램을 목적지 장비의 적절한 프로세스로 전달하기 위한 일종의 서브 주소이다.
 
-# 포트 번호의 범위
+## 포트 번호의 범위
 
 위의 TCP/UDP 데이터그램 포맷을 보면 포트 번호의 크기가 16비트라는 것을 알 수 있다.
 
@@ -101,7 +101,7 @@ latex   : true
 
 $$2^{16} = 65,536$$이기 때문이다.
 
-# 특수 목적의 포트 번호
+## 특수 목적의 포트 번호
 
 | 범위 이름                      | 범위          | 설명                                                                                                                                 |
 |--------------------------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------|
@@ -114,11 +114,11 @@ $$2^{16} = 65,536$$이기 때문이다.
 * [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml ) - xhtml
 * [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt ) - txt
 
-# 참고문헌
+## 참고문헌
 
 * TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
 
-# 주석
+## 주석
 
 [^udp-datagram]: https://tools.ietf.org/html/rfc768 RFC 768. 1쪽
 [^tcp-datagram]: https://tools.ietf.org/html/rfc793 RFC 793. 3.1. Header Format. 15쪽

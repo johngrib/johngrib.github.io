@@ -20,7 +20,7 @@ latex   : true
     * 블록체인, 비트코인, 이더리움에 대해 자세히 알고 싶다면 이 노트가 아니라 해당 기술의 백서 또는 전문서를 조회하세요.
 
 
-# 차세대 스마트 컨트랙트와 탈중앙화된 어플리케이션 플랫폼
+## 차세대 스마트 컨트랙트와 탈중앙화된 어플리케이션 플랫폼
 
 * 비트코인의 중요한 측면: 분산합의 수단으로서의 블록체인 기술.
 * 블록체인의 활용
@@ -32,9 +32,9 @@ latex   : true
 * 이더리움은 튜링 완전한 프로그래밍 언어가 심어진 블록체인이다.
     * 상태 변환 기능이 포함된 계약을 작성할 수 있음.
 
-# 비트코인과 기존 개념들 소개
+## 비트코인과 기존 개념들 소개
 
-## 역사
+### 역사
 
 * 1980~90년대: 익명 e-cash 프로토콜.
     * 중앙집권 중개인에 의존하여 별로 주목받지 못함.
@@ -46,7 +46,7 @@ latex   : true
 * 2009: 사토시 나카모토의 탈중앙화된 화폐
     * 공개키 암호화 방식의 소유권 관리 + **작업 증명** 합의 알고리즘
 
-### 작업 증명(proof of work)
+#### 작업 증명(proof of work)
 
 작업 증명은 두 가지 문제를 동시에 해결하기 때문에 혁신적이다.
 
@@ -57,7 +57,7 @@ latex   : true
     * 각 노드의 결정권의 크기를 노드의 계산 능력에 직접 비례시키는 방식.
         * sybil attacks 방어 메커니즘 제공.
 
-### 지분 증명(proof of stake)
+#### 지분 증명(proof of stake)
 
 * 작업 증명 이후 새로 등장한 합의 알고리즘.
 * 각 노드의 계산능력이 아니라 화폐의 보유량에 따라 각 노드의 결정권을 계산한다.
@@ -65,7 +65,7 @@ latex   : true
 
 
 
-## 상태변환 시스템으로서의 비트코인
+### 상태변환 시스템으로서의 비트코인
 
 * 암호화 화폐의 장부는 일종의 상태변환 시스템이다.
     * 상태변환 함수: `APPLY(S, TX) -> S' or ERROR`
@@ -83,7 +83,7 @@ TX = "Alice가 Bob에게 $70 송금"
 _S = APPLY(S, TX)   // ERROR
 ```
 
-### 비트코인 상태와 트랜잭션
+#### 비트코인 상태와 트랜잭션
 
 * 상태 S
     * 생성됐지만 아직 사용하지 않은 모든 코인의 집합.
@@ -98,7 +98,7 @@ _S = APPLY(S, TX)   // ERROR
     * 출력
         * 상태에 추가될 새로운 UTXO 정보.
 
-### 상태변환 함수
+#### 상태변환 함수
 
 `APPLY(S,TX) -> S'`
 
@@ -118,14 +118,14 @@ _S = APPLY(S, TX)   // ERROR
     1. Bob 소유의 **11.7 BTC**가 표시된 UTXO
     2. Alice 소유의 **0.3 BTC**가 표시된 UTXO
 
-## 채굴
+### 채굴
 
-### 상태
+#### 상태
 
 * 최초의 상태(genesis state)부터 모든 트랜잭션을 순서대로 적용해서 얻어낼 수 있다.
     * 순서가 바뀌거나 중간에 다른 상태가 있으면 최종 상태는 완전히 다른 값이 되어버린다.
 
-### 블록
+#### 블록
 
 * 노드는 트랜잭션을 모아 **Block**(트랜잭션 패키지)을 생성한다.
 * 네트워크는 10분마다 하나의 블록을 생성하도록 계획되어 있다.
@@ -137,7 +137,7 @@ _S = APPLY(S, TX)   // ERROR
         * 모든 트랜잭션 정보로 생성한 Merkle tree 의 루트 hash.
     * 이전 블록 이후 발생한 모든 트랜잭션 목록
 
-#### 블록 유효성을 확인하는 알고리즘
+##### 블록 유효성을 확인하는 알고리즘
 
 1. 블록이 참조하는 부모 블록이 유효한지 확인한다.
 2. timestamp 값이 부모 블록의 timestamp 값보다 크고, 2시간 이내인지 확인한다.
@@ -149,7 +149,7 @@ _S = APPLY(S, TX)   // ERROR
     * 그 과정에서 에러가 나면 false 를 리턴하며 종료한다.
 6. `S[n]`을 이 블록의 마지막 상태로 등록하고 true 를 리턴한다.
 
-### 작업증명
+#### 작업증명
 
 **작업증명의 조건**
 
@@ -172,7 +172,7 @@ _S = APPLY(S, TX)   // ERROR
 * 위의 두 가지가 BTC가 새로 발행되는 **유일한 방법**이다.
 * 즉, genesis state 에는 코인이 없었다.
 
-#### 51% attack
+##### 51% attack
 
 * 공격자는 이중지불을 합리화하기 위해서 fork 를 시도할 수 있다.
     * 그러나 작업증명에 시간이 걸리기 때문에 공격자의 체인의 길이는 다른 체인에 비해 짧을 수 밖에 없다.
@@ -183,7 +183,7 @@ _S = APPLY(S, TX)   // ERROR
     * 네트워크의 다른 노드들의 계산능력 조합보다 더 큰 계산 능력을 가져야 한다.
 
 
-## 머클트리
+### 머클트리
 
 * 비트코인에서 블록이 저장되는 자료구조는 binary tree의 일종인 Merkle tree 이다.
 * Merkle tree에서 노드의 hash 값은 두 자식 노드의 hash 값으로 만든다.
@@ -192,14 +192,14 @@ _S = APPLY(S, TX)   // ERROR
         * 해당 블록의 작업증명이 유효하지 않게 된다.
         * 완전히 다른 블록으로 인식되게 된다.
 
-### full node, light node
+#### full node, light node
 
 * **완전 노드(full node)**: 각 블록의 모든 정보를 저장하고 처리하는 노드
     * 1달에 약 1GB씩 늘어나므로 용량이 엄청나다.
 * **가벼운 노드(light node)**: 블록 헤더만 다운받아 갖고 있는 노드.
     * 블록헤더만으로 작업증명을 검증하므로 스마트폰처럼 용량이 작은 장비에서도 운용할 수 있다.
 
-## 블록체인 기술을 이용한 다른 응용 사례
+### 블록체인 기술을 이용한 다른 응용 사례
 
 * 네임코인
     * 탈중앙화된 명칭 등록 데이터베이스
@@ -215,7 +215,7 @@ _S = APPLY(S, TX)   // ERROR
 1. 독립적인 네트워크를 세운다.
 2. 비트코인 시스템과 연동되는 프로토콜을 세운다.
 
-## 스크립팅
+### 스크립팅
 
 비트코인에 구현된 스크립트 언어에는 한계가 있다.
 
@@ -251,12 +251,12 @@ _S = APPLY(S, TX)   // ERROR
 * 블록체인의 보안을 사용하는 어플리케이션을 만들 수 있는 프레임워크
 
 
-# 이더리움
+## 이더리움
 
 * 이더리움의 목적: 분산 어플리케이션 **제작**을 위한 대체 프로토콜
     * 튜링 완전한 언어를 내장시켜 이 목적을 이루고자 한다.
 
-## 철학
+### 철학
 
 철학은 [[Korean] White Paper](https://github.com/ethereum/wiki/wiki/%5BKorean%5D-White-Paper#%EC%9D%B4%EB%8D%94%EB%A6%AC%EC%9B%80 )에는 없어서(2019년 1월 26일 기준), [White Paper](https://github.com/ethereum/wiki/wiki/White-Paper#philosophy )를 참고하여 요약하였다.
 
@@ -281,7 +281,7 @@ _S = APPLY(S, TX)   // ERROR
         * (물론 이러면 수수료가 영원히 나갈 것이다)
 
 
-## 이더리움 어카운트
+### 이더리움 어카운트
 
 * 상태(state)
     * [어카운트(account) object들로 구성되어 있다.](https://github.com/ethereum/go-ethereum/blob/5d921fa3a0cea9d87e7fd391c0ddd3115d00d0c4/core/state/state_object.go#L66 )
@@ -312,7 +312,7 @@ type Account struct {
     * 이더리움의 암호-연료(crypto-fuel).
     * 트랜잭션 수수료를 지불하는데 사용.
 
-### EOA, CA
+#### EOA, CA
 
 |           | EOA                                                | CA                                        |
 |-----------|----------------------------------------------------|-------------------------------------------|
@@ -326,7 +326,7 @@ type Account struct {
     * 다른 메시지를 보낸다.
     * 컨트랙트들을 차례로 생성한다.
 
-### 이더리움에서 컨트랙트란?
+#### 이더리움에서 컨트랙트란?
 
 >
 Note that "contracts" in Ethereum should not be seen as something that should be "fulfilled" or "complied with"; rather, they are more like "autonomous agents" that live inside of the Ethereum execution environment, always executing a specific piece of code when "poked" by a message or transaction, and having direct control over their own ether balance and their own key/value store to keep track of persistent variables.
@@ -341,7 +341,7 @@ Note that "contracts" in Ethereum should not be seen as something that should be
     * 자신의 이더 잔고와 key/value 저장소를 직접 통제한다.
 
 
-## 메시지와 트랜잭션
+### 메시지와 트랜잭션
 
 * transaction: 외부 소유 어카운트(EOA)가 보낼 메시지를 가지고 있는 서명된 데이터 패키지.
 * transaction은 다음을 포함한다.
@@ -384,7 +384,7 @@ type txdata struct {
 }
 ```
 
-## 메시지
+### 메시지
 
 * contract는 다른 contract에게 메시지를 전달할 수 있다.
 * message는 serialized 되지 않는 virtual object이며 이더리움 실행 환경에서만 존재한다.
@@ -424,7 +424,7 @@ type Message struct {
 | 2    | C 가 내부 실행으로 300 gas 사용하고 B 에게 반환                         | 100 gas  |
 | 3    | (이제 B 는 100 gas 를 더 사용할 수 있다.)                               | 100 gas  |
 
-## 이더리움 상태 변환 함수
+### 이더리움 상태 변환 함수
 
 ![state transition](https://web.archive.org/web/20190125161855im_/https://raw.githubusercontent.com/ethereumbuilders/GitBook/master/en/vitalik-diagrams/ethertransition.png )
 
@@ -458,7 +458,7 @@ type Message struct {
     * 최종적으로 남아 있는 모든 gas 의 수수료는 발신자에게 돌아간다.
     * 소모된 gas 에 지불한 수수료를 채굴자에게 보낸다.
 
-### 이해를 돕기 위한 예제
+#### 이해를 돕기 위한 예제
 
 다음과 같은 컨트랙트 코드가 있다고 하자.
 
@@ -514,7 +514,7 @@ if !self.storage[calldataload(0)]:
 * 실행 방식은 `CALL`과 비슷하지만, 실행 결과는 새로 생성된 컨트랙트의 코드를 결정한다는 차이가 있다.
 
 
-## 코드 실행
+### 코드 실행
 
 * EVM: Ethereum Virtual Machine
 * EVM code
@@ -554,7 +554,7 @@ if !self.storage[calldataload(0)]:
     * 등등...
 
 
-## 블록체인과 채굴
+### 블록체인과 채굴
 
 ![block_chain](https://web.archive.org/web/20190125161855im_/https://raw.githubusercontent.com/ethereumbuilders/GitBook/master/en/vitalik-diagrams/apply_block_diagram.png )
 
@@ -597,7 +597,7 @@ if !self.storage[calldataload(0)]:
 * 트랜잭션이 블록 B에 포함된다면,
     * 현재 또는 미래에 블록 B를 다운로드하고 검증하는 모든 노드가 그 트랜잭션에 의해 발생할 코드를 실행하게 된다.
 
-# 어플리케이션
+## 어플리케이션
 
 이더리움으로 3 종류의 어플리케이션을 만들 수 있다.
 
@@ -609,7 +609,7 @@ if !self.storage[calldataload(0)]:
 3. 금융과 관련이 없는 어플리케이션
     * 온라인 투표, 분권형 거버넌스...
 
-## 토큰 시스템
+### 토큰 시스템
 
 이더리움에서 토큰 시스템은 쉽게 구현할 수 있다.
 
@@ -640,7 +640,7 @@ def send(to, value):
     * 컨트랙트 집행시 수수료로 받는 내부화폐를 이더 거래소에서 환전하여 이더 잔고로 충전할 수 있다.
 * (비트코인에 기반한 메타화폐는 이런 특징이 없다)
 
-## 파생상품과 가치안정통화
+### 파생상품과 가치안정통화
 
 * 파생상품
     * "스마트 컨트랙트"의 가장 일반적인 어플리케이션.
@@ -676,7 +676,7 @@ def send(to, value):
         * 파생상품을 통한 보증 역시 완전히 탈중앙화된 방법론은 아님.
 
 
-## 신원조회/평판 시스템
+### 신원조회/평판 시스템
 
 * 네임코인
     * 최초의 알트코인(비트코인 이후 등장한 가상화폐들을 말한다)
@@ -694,7 +694,7 @@ def register(name, value):
 * 누구나 소량의 ether를 사용해 명의를 등록할 수 있고, 한 번 등록하면 영구히 보존된다.
 
 
-## 분산형 파일 저장소
+### 분산형 파일 저장소
 
 이더리움을 토대로 한 일종의 "Dropbox" 시스템.
 
@@ -716,7 +716,7 @@ def register(name, value):
 * 소액결제 채널 프로토콜로 값을 지불하고 파일을 복원한다.
 
 
-## 탈중앙화된 자율조직
+### 탈중앙화된 자율조직
 
 * 탈중앙화된 자율조직(Decentralized Autonomous Organizations; DAO)
     * 일정 비율 이상(예: 67% 약 2/3)의 구성원이 동의하여 조직(자금) 운용 권한/코드 변경 권한을 갖는다.
@@ -744,18 +744,18 @@ DAO 코딩 개요
     * 자산 관리 기능, 지분을 매매할 수 있는 오퍼를 낼 수 있는 능력, 다른 오퍼들을 수락할 수 있는 능력 등이 필요.
 
 
-## 추가적인 어플리케이션들
-# 그 밖의 이슈들
-## 수정된 GHOST 도입
-## 수수료
-## 연산과 튜링완전성
-## 통화 그리고 발행
-## 채굴 중앙집중화
-## 확장성
-# 결론
+### 추가적인 어플리케이션들
+## 그 밖의 이슈들
+### 수정된 GHOST 도입
+### 수수료
+### 연산과 튜링완전성
+### 통화 그리고 발행
+### 채굴 중앙집중화
+### 확장성
+## 결론
 
 
-# Links
+## Links
 
 * [Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper )
     * [Ethereum White Paper(web.archive.org)](https://web.archive.org/web/20190125161855/https://github.com/ethereum/wiki/wiki/White-Paper ) - 2019-01-25

@@ -13,14 +13,14 @@ latex   : true
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * 이 문서는 [[Designing-Data-Intensive-Applications]]책의 4장을 공부하며 메모한 것입니다.
 * 이 문서는 메모일 뿐이니 자세한 내용은 교재를 참고해야 합니다.
 
-# 데이터 부호화 형식(Formats for Encoding Data)
+## 데이터 부호화 형식(Formats for Encoding Data)
 
-## 언어별 형식
+### 언어별 형식
 
 * Java : java.io.Serializable
 * Ruby : Marshal
@@ -36,7 +36,7 @@ latex   : true
 
 언어에 내장된 부호화를 사용하는 것은 일반적으로 좋지 않은 편.
 
-## JSON과 XML, 이진 변형
+### JSON과 XML, 이진 변형
 
 JSON, XML, CSV의 문제점들
 
@@ -52,7 +52,7 @@ JSON, XML, CSV의 문제점들
 * CSV의 특정 값에 쉼표나 개행 문자가 포함되었고, 파서가 이스케이핑 문자를 모르는 경우.
 
 
-## 스리프트와 프로토콜 버퍼(Thrift and Protocol Buffers)
+### 스리프트와 프로토콜 버퍼(Thrift and Protocol Buffers)
 
 이진 인코딩 라이브러리
 
@@ -60,11 +60,11 @@ JSON, XML, CSV의 문제점들
 * 구글에서 개발한 [protocol buffers](https://developers.google.com/protocol-buffers/ )
 
 
-## 아브로(Avro)
+### 아브로(Avro)
 
 * [Apache Avro](https://avro.apache.org/ )
 
-## 스키마의 장점
+### 스키마의 장점
 
 * protocol buffers, Thrift, Avro는 스키마를 사용해 이진 인코딩 형식을 기술한다.
 * 이 스키마 언어는 XML/JSON 스키마보다 심플하며 더 자세한 유효성 검사 규칙을 지원한다.
@@ -76,7 +76,7 @@ JSON, XML, CSV의 문제점들
 * 스키마 DB를 유지하여, 상위/하위 호환성을 확인할 수 있다.
 * 정적 타입 프로그래머 언어 사용시에 유용.
 
-# 데이터플로 모드(Modes of Dataflow)
+## 데이터플로 모드(Modes of Dataflow)
 
 * 데이터플로는 매우 추상적인 개념.
 * 하나의 프로세스에서 다른 프로세스로 데이터를 전달하는 방법은 매우 많다.
@@ -87,11 +87,11 @@ JSON, XML, CSV의 문제점들
 * 서비스 호출을 통해서
 * 비동기적 메시지 전달을 통해서
 
-## 데이터베이스를 통한 데이터플로
+### 데이터베이스를 통한 데이터플로
 
 생략
 
-## 서비스를 통한 데이터플로: REST와 RPC
+### 서비스를 통한 데이터플로: REST와 RPC
 
 클라이언트와 서버
 
@@ -99,7 +99,7 @@ JSON, XML, CSV의 문제점들
     * 서버가 공개한 API를 **서비스**라 부른다.
 * 클라이언트 : API로 요청을 만들어 서버에 연결할 수 있다.
 
-### SOA
+#### SOA
 
 >
 서버 자체가 다른 서비스의 클라이언트일 수 있다
@@ -119,7 +119,7 @@ SOA, MSA의 핵심 설계 목표
 다시 말해 예전 버전과 새로운 버전의 서버와 클라이언트가 동시에 실행되기를 기대한다.
 따라서 서버와 클라이언트가 사용하는 데이터 부호화는 서비스 API의 버전 간 호환이 가능해야 한다.
 
-### 웹 서비스
+#### 웹 서비스
 
 * 웹 서비스에는 대중적인 두 가지 방법인 REST와 SOAP가 있다.
 * 이 둘은 철학적인 측면에서 거의 정반대의 입장.
@@ -145,7 +145,7 @@ SOAP
     * SOAP는 특정 기술이고, SOA는 시스템을 구축하는 방법론이다.
 
 
-## 메시지 전달 데이터플로
+### 메시지 전달 데이터플로
 
 RPC(Remote Procedure Call)와 DB간 비동기 메시지 시스템(asynchronous message passing system).
 
@@ -170,7 +170,7 @@ RPC(Remote Procedure Call)와 DB간 비동기 메시지 시스템(asynchronous m
 이런 통신 패턴이 **비동기**다.
 송신 프로세스는 메시지가 전달될 때까지 기다리지 않고 단순히 메시지를 보낸 다음 잊는다.
 
-### 메시지 브로커(Message brokers)
+#### 메시지 브로커(Message brokers)
 
 상용으로 TIBCO, IBM WebSphere, webMethods 등이 있음.
 
@@ -181,7 +181,7 @@ RPC(Remote Procedure Call)와 DB간 비동기 메시지 시스템(asynchronous m
 * 동일한 토픽에 여러 생산자와 소비자가 있을 수 있다.
 * topic은 단방향 데이터플로만 제공한다.
 
-### 분산 액터 프레임워크(Distributed actor frameworks)
+#### 분산 액터 프레임워크(Distributed actor frameworks)
 
 * actor model
     * 단일 프로세스 안에서 동시성을 위한 프로그래밍 모델.
@@ -202,6 +202,6 @@ RPC(Remote Procedure Call)와 DB간 비동기 메시지 시스템(asynchronous m
 * Orleans
 * erlang
 
-# Links
+## Links
 
 * [[Designing-Data-Intensive-Applications]]

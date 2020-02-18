@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# Eden 에서 Survivor 영역으로
+## Eden 에서 Survivor 영역으로
 
 현재 절판된 책 Java Performance Fundamental에는 Minor GC 과정에 대한 상세한 설명이 있다.
 
@@ -79,7 +79,7 @@ Survivor 0              Survivor 1
 * Eden과 Survivor 0 을 깨끗하게 비워버린다.
 * JVM의 Suspend 상태가 해제된다.
 
-## Survivor 에서 Old 영역으로 Promotion
+### Survivor 에서 Old 영역으로 Promotion
 
 ```ascii-art
 Eden
@@ -143,11 +143,11 @@ Old
 
 * Eden과 Survivor 1 이 깨끗하게 비워진다.
 
-# 참고문헌
+## 참고문헌
 
 * Java Performance Fundamental / 김한도 저 / 엑셈 / 초판 1쇄 2009년 09월 23일
 
-# 주석
+## 주석
 
 [^technotes8]: [(Java SE 8) Java Platform, Standard Edition Tools Reference][technotes8]
 [technotes8]: https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html

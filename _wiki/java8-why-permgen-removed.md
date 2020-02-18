@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 요약
+## 요약
 
 * JDK 8부터 Permanent Heap 영역이 제거되었다.
     * 대신 Metaspace 영역이 추가되었다.
@@ -25,14 +25,14 @@ latex   : false
 
 JEP 122에서는 JRockit과 Hotspot을 통일시키기 위해 PermGen 영역을 삭제한다고 한다.
 
-# JDK 8: PermGen 제거
+## JDK 8: PermGen 제거
 
 [What's New in JDK 8](https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html )문서를 보면 HotSpot 항목에서 다음 문장을 찾을 수 있다.
 
 >
 Removal of PermGen.
 
-## 7과 8의 비교
+### 7과 8의 비교
 
 "JVM Performance Optimizing 및 성능분석 사례"에서는 7과 8의 HotSpot JVM 구조를 비교하고 있다.[^compare]
 
@@ -87,7 +87,7 @@ Perm 영역은 보통 Class의 Meta 정보나 Method의 Meta 정보, Static 변�
 | 메모리 튜닝              | Heap, Perm 영역 튜닝                  | Heap 튜닝, Native 영역은 OS가 동적 조정         |
 | 메모리 옵션              | `-XX:PermSize` <br> `-XX:MaxPermSize` | `-XX:MetaspaceSize` <br> `-XX:MaxMetaspaceSize` |
 
-## 왜 Perm이 제거됐고 Metaspace 영역이 추가된 것인가?
+### 왜 Perm이 제거됐고 Metaspace 영역이 추가된 것인가?
 
 >
 최근 Java 8에서 JVM 메모리 구조적인 개선 사항으로 Perm 영역이 Metaspace 영역으로 전환되고 기존 Perm 영역은 사라지게 되었다.
@@ -141,11 +141,11 @@ OpenJDK 64-Bit Server VM (Zulu 8.40.0.25-CA-macosx) (build 25.222-b10, mixed mod
 
 `-XX:MaxMetaspaceSize` 옵션을 사용하면 이 크기를 줄이는 것도 가능하다.
 
-# JEP 122를 읽어보자
+## JEP 122를 읽어보자
 
 [JEP 122: Remove the Permanent Generation][jep-122]의 몇몇 부분을 발췌해 읽어보자.
 
-## Motivation
+### Motivation
 
 >
 This is part of the JRockit and Hotspot convergence effort. JRockit customers do not need to configure the permanent generation (since JRockit does not have a permanent generation) and are accustomed to not configuring the permanent generation.
@@ -153,7 +153,7 @@ This is part of the JRockit and Hotspot convergence effort. JRockit customers do
 이 작업은 JRockit과 Hotspot를 통일시키려는 시도의 일환입니다.
 JRockit 가상 머신에서는 permanent generation이 없으므로 JRockit 고객은 permanent generation을 설정하지도 않았고, 할 필요도 없기 때문입니다.
 
-## Description
+### Description
 
 >
 Move part of the contents of the permanent generation in Hotspot to the Java heap and the remainder to native memory.
@@ -177,7 +177,7 @@ Allocation of native memory for class meta-data will be done in blocks of a size
 
 
 
-# 참고문헌
+## 참고문헌
 
 * 도서
     * JVM Performance Optimizing 및 성능분석 사례 / 류길현, 오명훈, 한승민 저 / 엑셈 / 초판 1쇄 2017년 09월 10일
@@ -187,7 +187,7 @@ Allocation of native memory for class meta-data will be done in blocks of a size
     * [PermGen Elimination project is promoting](http://mail.openjdk.java.net/pipermail/hotspot-dev/2012-September/006679.html )
     * [java.lang.OutOfMemoryError: PermGen space patterns](http://javaeesupportpatterns.blogspot.com/2011/02/outofmemoryerror-permgen-patterns-part1.html )
 
-# 주석
+## 주석
 
 [^compare]: JVM Performance Optimizing 및 성능분석 사례, 1) Hotspot JVM의 Heap 구조, 20쪽.
 [jep-122]: https://openjdk.java.net/jeps/122

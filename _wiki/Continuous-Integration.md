@@ -13,11 +13,11 @@ latex   : false
 * TOC
 {:toc}
 
-# 마틴 파울러의 Continuous Integration 요약
+## 마틴 파울러의 Continuous Integration 요약
 
 * [Martin Fowler의 Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html )
 
-## CI
+### CI
 
 >
 Continuous Integration is a software development practice where members of a team integrate their work frequently,
@@ -44,12 +44,12 @@ usually each person integrates at least daily - leading to multiple integrations
 
 별것 아닌 것 같아도, 큰 차이가 생긴다.
 
-## 어원
+### 어원
 
 * Continuous Integration이라는 단어는 eXtreme Programming에서 온 것이다.
     * XP의 12가지 원칙 중에 CI가 있다.
 
-## Building a Feature with Continuous Integration
+### Building a Feature with Continuous Integration
 
 몇 시간 안에 작업을 마칠 수 있는 작은 기능을 개발한다 치자.
 
@@ -65,7 +65,7 @@ usually each person integrates at least daily - leading to multiple integrations
 8. 성공했다면 일이 끝나게 된다.
 
 
-# AWS의 "지속적 통합이란 무엇입니까?" 요약
+## AWS의 "지속적 통합이란 무엇입니까?" 요약
 
 * [지속적 통합이란 무엇입니까?](https://aws.amazon.com/ko/devops/continuous-integration/ )
 
@@ -80,7 +80,7 @@ usually each person integrates at least daily - leading to multiple integrations
     * 새로운 소프트웨어 업데이트 검증 시간 최소화.
     * 배포 소요 시간 최소화.
 
-# (책)마이크로서비스 아키텍처 구축
+## (책)마이크로서비스 아키텍처 구축
 
 챕터 6, 153쪽.
 
@@ -102,11 +102,11 @@ Jez Humble의 3가지 질문.
 
 
 
-# Links
+## Links
 
 * [Continuous Integration(Martin Fowler)](https://martinfowler.com/articles/continuousIntegration.html )
 * [지속적 통합이란 무엇입니까? (aws)](https://aws.amazon.com/ko/devops/continuous-integration/ )
 
-# 참고문헌
+## 참고문헌
 
 * 마이크로서비스 아키텍처 구축 / 샘 뉴먼 저 / 정성권 역 / 한빛미디어 / 초판 2쇄 2017년 05월 01일 / 원서 : Building Microservices: Designing Fine-Grained Systems

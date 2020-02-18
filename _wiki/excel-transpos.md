@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 엑셀에 다음과 같은 내용이 있다고 하자.
 
@@ -34,7 +34,7 @@ latex   : false
 * `transpos`함수 사용
 * VBA 사용
 
-# 붙여넣기
+## 붙여넣기
 
 ![image](https://user-images.githubusercontent.com/1855714/45604838-364fb980-ba73-11e8-97b5-638355611998.png )
 
@@ -45,7 +45,7 @@ latex   : false
 * 그냥 붙여넣지 않고 위의 이미지와 같이 `홈`-`붙여넣기`-`행/열 바꿈`을 선택하면 완료.
     * 영문판에서는 `행/열 바꿈`이 `Transpose`.
 
-# transpos 함수
+## transpos 함수
 
 * **붙여넣을 범위**를 마우스로 드래그하거나 키보드로 지정한다.
 * 위쪽 수식 입력칸에 `=transpos(범위)`를 적는다.
@@ -56,7 +56,7 @@ latex   : false
 
 
 
-# VBA 프로시저 만들어 사용하기
+## VBA 프로시저 만들어 사용하기
 
 VBA 코딩으로 해결하고 싶다면 다음과 같이 하면 된다.
 
@@ -93,7 +93,7 @@ End Sub
 * 끝.
 
 
-# Links
+## Links
 
 * [excel.application.inputbox](https://docs.microsoft.com/en-us/office/vba/api/excel.application.inputbox )
 * [excel.range.pastespecial](https://docs.microsoft.com/en-us/office/vba/api/excel.range.pastespecial )

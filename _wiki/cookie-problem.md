@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * 쿠키 두 그릇이 있다.
 * 첫 번째 그릇: 40 개의 쿠키가 담겨 있다.
@@ -27,9 +27,9 @@ latex   : true
 문제 : 어떤 그릇인지 보지 않고 한 그릇에서 임의로 쿠키를 집었는데 바닐라 쿠키였다.
 그렇다면 이 때 이 바닐라 쿠키가 그릇1에서 나왔을 가능성은?
 
-# 풀이
+## 풀이
 
-## 손으로 풀기
+### 손으로 풀기
 
 바닐라 쿠키가 나온 상태에서 그릇 1의 가능성을 따지는 것이므로 다음의 식을 풀면 된다.
 
@@ -100,7 +100,7 @@ $$
 
 따라서, 답은 $$3 \over 5$$ 이다.
 
-## Think-Bayes 책에서 제공하는 라이브러리를 사용해 풀기
+### Think-Bayes 책에서 제공하는 라이브러리를 사용해 풀기
 
 * [cookie.py](https://github.com/AllenDowney/ThinkBayes/blob/master/code/cookie.py )
 
@@ -135,7 +135,7 @@ $ python cookie.py
 
 
 
-## 직접 코딩해 풀기
+### 직접 코딩해 풀기
 
 
 [[Think-Bayes]] 저자가 제공하는 라이브러리를 사용하는 것은 편리한 일이지만,
@@ -186,7 +186,7 @@ console.log(normalize(pmf));
 
 
 
-## 공산을 사용해 풀기
+### 공산을 사용해 풀기
 
 * [[Bayes-theorem]] 문서의 공산을 참고할 것.
 
@@ -234,7 +234,7 @@ $$
 
 따라서 그릇1에서 바닐라 쿠키가 나왔을 확률은 $$\frac{6}{6 + 4} = 0.6$$ 이다.
 
-# Links
+## Links
 
 * [[Think-Bayes]]
     * [cookie.py](https://github.com/AllenDowney/ThinkBayes/blob/master/code/cookie.py )

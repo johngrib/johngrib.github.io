@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의
+## 정의
 
 >
 A matrix is a rectangular array of numbers.
@@ -59,7 +59,7 @@ A convenient shorthand notation for expressing the matrix A is to write $$A = [a
     * A의 $$(i,j)$$ 번째 **원소(element)**는 원소 $$a_{ij}$$ 이다.
     * 행렬 A를 $$ A = [a_{ij}] $$ 로 짧게 표현하기도 한다.
 
-## 행렬의 합
+### 행렬의 합
 
 >
 Let $$A = [a_{ij}]$$ and $$B = [b_{ij}]$$ be $$m \times n$$ matrices.
@@ -70,7 +70,7 @@ In other words, $$A+B=[a_{ij} + b_{ij}]$$.
 * $$ A + B = [ a_[ij] + b_{ij} ] $$.
 * 크기가 다른(모양이 다른) 두 행렬의 합은 구할 수 없다.
 
-## 행렬의 곱
+### 행렬의 곱
 
 >
 Let A be an $$m \times k$$ matrix and B be a $$k \times n$$ matrix.
@@ -81,7 +81,7 @@ $$c_{ij} =a_{i1} \times b_{1j} + a_{i2} \times b_{2j} + ··· + a_{ik} \times b
 * 행렬의 곱은 교환법칙이 성립하지 않는다(Matrix multiplication is not commutative).
     * $$ A \times B \ne B \times A $$이므로 주의할 것.
 
-## 항등 행렬
+### 항등 행렬
 
 **identity matrix of order n**: n차 항등 행렬
 
@@ -103,7 +103,7 @@ $$
 
 * 항등 행렬은 $$ i = j $$ 인 원소가 `1`, $$ i \ne j $$인 원소가 `0`인 행렬이다.
 
-## 전치 행렬
+### 전치 행렬
 
 **transpose**
 
@@ -123,7 +123,7 @@ for $$i = 1,2, ... ,n$$ and $$j = 1,2,...,m$$.
 * 행렬 A의 전치 행렬 $$A^t$$ 는 A의 행과 열을 바꾼 행렬이다.
 * $$\begin{bmatrix} \red 1 & \red 2 & \red 3 \\ 4 & 5 & 6 \end{bmatrix}$$의 전치행렬은 $$\begin{bmatrix} \red 1 & 4 \\ \red 2 & 5 \\ \red 3 & 6 \end{bmatrix}$$.
 
-## 대칭행렬
+### 대칭행렬
 
 **symmetric**
 
@@ -136,14 +136,14 @@ for all $$i$$ and $$j$$ with $$1 ≤ i ≤ n$$ and $$1 ≤ j ≤ n$$.
 * $$\begin{bmatrix} \red 1 & 1 & 0 \\ 1 & \red 0 & 1 \\ 0 & 1 & \red 0 \\ \end{bmatrix}$$는 대칭행렬이다.
     * 왼쪽 위에서 오른쪽 아래로의 대각선 기준으로 대칭이라 생각하면 알아보기 쉽다.
 
-## 0-1 행렬
+### 0-1 행렬
 
 **zero-one matrices**
 
 * 원소가 0과 1만 있는 행렬.
     * [(0,1)의 두 수로 이루어진 체(Field) 위에서의 행렬처럼 생각하는 것이 조금 더 자연스럽다.](https://github.com/johngrib/johngrib.github.io/issues/47#issue-406243600 )
 
-### 0-1 행렬의 결합과 만남
+#### 0-1 행렬의 결합과 만남
 
 **join, meet**
 
@@ -198,7 +198,7 @@ $$
 \end{bmatrix}
 $$
 
-### 0-1 행렬의 부울곱
+#### 0-1 행렬의 부울곱
 
 **Boolean product**
 
@@ -245,7 +245,7 @@ $$
 \end{align}
 $$
 
-#### 부울곱의 거듭제곱
+##### 부울곱의 거듭제곱
 
 **Boolean power**
 
@@ -261,7 +261,7 @@ $$A^{[r]} = \underbrace{ A \odot A \odot A \odot ... \odot A }_{r 개} $$
     * $$ I_n $$은 항등 행렬.
 
 
-# 용어 정리
+## 용어 정리
 
 | English                    | 한국어           | 예/설명                                                      |
 |----------------------------|------------------|--------------------------------------------------------------|
@@ -282,7 +282,7 @@ $$A^{[r]} = \underbrace{ A \odot A \odot A \odot ... \odot A }_{r 개} $$
 | $$r$$th Boolean power of A | A의 r번째 부울곱 | $$ A^{[r]}$$                                                 |
 
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 

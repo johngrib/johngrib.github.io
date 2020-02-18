@@ -13,7 +13,7 @@ parent  : hammerspoon
 * TOC
 {:toc}
 
-# 웹뷰를 사용해 봅시다
+## 웹뷰를 사용해 봅시다
 
 웹뷰를 사용하면 자신만의 도움말이나 메뉴판을 html로 쉽게 만들 수 있습니다.
 
@@ -51,7 +51,7 @@ end)
 
 한 번 더 `option`+`h`를 입력하면 창은 사라집니다.
 
-## 웹뷰의 활용
+### 웹뷰의 활용
 
 * cheatsheet 파일을 html로 작성한 다음 단축키로 지정해 두면 편리합니다.
 * `:url` 함수에 로컬 html 파일이 아니라 웹 주소 url을 입력하면 빠르게 열어볼 수 있습니다.
@@ -59,7 +59,7 @@ end)
     * 예) `view:url('http://www.google.com')`
 * Javascript도 돌아갑니다.
 
-# url로 Hammerspoon 함수 호출
+## url로 Hammerspoon 함수 호출
 
 한편 `urlevent`라는 기능을 사용하면 url로 Hammerspoon 함수를 호출할 수 있습니다.
 
@@ -79,7 +79,7 @@ $ open -g hammerspoon://someAlert
 
 이 기능을 사용하면 Hammerspoon의 거의 모든 기능을 터미널과 웹 브라우저에서 호출할 수 있게 됩니다.
 
-## `urlevent`를 사용해 메뉴판에서 Hammerspoon 기능을 호출해 봅시다
+### `urlevent`를 사용해 메뉴판에서 Hammerspoon 기능을 호출해 봅시다
 
 `urlevent` 기능을 활용하면 좀 더 쓸모있는 메뉴판을 만들 수 있을 것 같네요.
 
@@ -144,13 +144,13 @@ hs.urlevent.bind("sendIMessage", function(eventName, params)
 end)
 ```
 
-## `urlevent`의 활용
+### `urlevent`의 활용
 
 다양한 활용이 가능하겠으나 이것 하나로 충분히 차고 넘치지 않을까 싶습니다.
 
 * 셸 스크립트로는 곤란한 gui 작업을 Hammerspoon으로 정의하고 터미널에서 호출.
 
-# Links
+## Links
 
 * [API 문서](http://www.hammerspoon.org/docs/index.html)
     * [hs.webview](http://www.hammerspoon.org/docs/hs.webview.html)

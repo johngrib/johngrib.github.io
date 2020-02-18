@@ -13,11 +13,11 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의
+## 정의
 
 $$ \require{cancel} $$
 
-## 이진관계
+### 이진관계
 
 * binary relation
 
@@ -32,7 +32,7 @@ A binary relation from A to B is a subset of A $$\times$$ B.
 * 이진관계는 두 집합의 원소들 사이의 관계를 표현한다.
     * n 개 집합의 원소들 사이의 관계는 n항 관계(n-ary relations)라 한다.
 
-## 하나의 집합에 대한 관계
+### 하나의 집합에 대한 관계
 
 * Relations on a Set
 
@@ -41,7 +41,7 @@ A binary relation from A to B is a subset of A $$\times$$ B.
 * "집합 A에 대한 관계"는 A에서 A로의 관계를 말한다.
 * 집합 A에 대한 관계는 $$A \times A$$의 부분집합이다.
 
-## 반사 관계
+### 반사 관계
 
 * reflexive relation
 
@@ -151,7 +151,7 @@ $$
 {% endraw %}
 
 
-## 대칭, 반대칭 관계
+### 대칭, 반대칭 관계
 
 * symmetric, antisymmetric
 
@@ -187,7 +187,7 @@ if $$(a, b) ∈ R$$ and $$(b, a) ∈ R$$, then $$a = b$$ is called antisymmetric
 </svg>
 {% endraw %}
 
-### 주의1. 관계에 있어 대칭과 반대칭은 반대 의미가 아니다
+#### 주의1. 관계에 있어 대칭과 반대칭은 반대 의미가 아니다
 
 $$R=\{(1,1),(2,2),(3,3),(4,4)\}$$ 같은 경우는 대칭이면서 반대칭이다.
 
@@ -200,12 +200,12 @@ R = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-### 주의2. 반대칭(antisymmetric)과 비대칭(asymmetric)은 다르다
+#### 주의2. 반대칭(antisymmetric)과 비대칭(asymmetric)은 다르다
 
 * 대칭의 반대는 반대칭이 아니라 비대칭이다.
 * 비대칭은 $$ ∀a, b ∈ a R b \Rightarrow ¬ (b R a) $$.
 
-### 대칭과 반대칭 예제
+#### 대칭과 반대칭 예제
 
 다음 관계들에서 대칭과 반대칭 관계를 찾아보자.
 
@@ -294,7 +294,7 @@ R_1 =
 \end{bmatrix}
 $$
 
-## 전이적 관계
+### 전이적 관계
 
 * transitive
 * 추이적 관계라고도 한다.
@@ -409,7 +409,7 @@ $$
 * $$R_3$$의 경우 $$(4,1), (1,2)$$는 있는데 $$(4,2)$$가 없다.
     * 따라서 $$R_3$$는 전이적 관계가 아니다.
 
-## 관계 결합
+### 관계 결합
 
 * combining relations
 
@@ -434,7 +434,7 @@ $$R^1 =R$$ and $$R^{n+1} =R^n \circ R$$.
 
 * 집합 A에 대한 관계 R 이 전이적이라면, 자연수 n에 대하여 $$R^n ⊆ R$$ 이다.
 
-# 관계의 폐쇄(closure)
+## 관계의 폐쇄(closure)
 
 > A path from a to b in the directed graph G
 is a sequence of edges $$(x_0,x_1), (x_1,x_2), (x_2,x_3),...,(x_{n−1},x_n)$$ in G,
@@ -577,7 +577,7 @@ M_{R^∗} =
 $$
 
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등 저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 

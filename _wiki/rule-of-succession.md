@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * 라플라스 법칙(Laplace's Law)이라고도 부른다.
 
@@ -32,7 +32,7 @@ $$ P(X_{n+1} = 1 \mid X_1 + ... + X_n = s) = \frac{s + 1}{n + 2} $$
 증명의 수학적 디테일은 [wikipedia의 Mathematical details](https://en.wikipedia.org/wiki/Rule_of_succession#Mathematical_details )를 참고할 것.
 
 
-## 응용
+### 응용
 
 사전 정보 없이 어떤 복권을 다섯 장 사 보았는데 당첨이 세 장 나왔다.
 
@@ -43,14 +43,14 @@ $$ P(X_{n+1} = 1 \mid X_1 + ... + X_n = s) = \frac{s + 1}{n + 2} $$
 * 이와 같이 누구나 쉽게 당첨되는 복권인지 당첨자가 극소수에 지나지 않는 복권인지를 **모른다면** 후속 규칙을 사용할 수 있다.
 * $$\frac{3 + 1}{5 + 2} = \frac{4}{7}$$ 로 당첨 확률을 추정할 수 있다.
 
-## 후속 규칙의 합리성
+### 후속 규칙의 합리성
 
 * 누군가 복권을 두 장 사서 두 장 다 당첨이 되었다.
 * 후속 규칙을 알고 있다면, 이런 상황에서 "두 번 해봤는데 두 번 다 당첨됐잖아... $$\frac{2}{2}$$ 인 셈이니까 세 번째도 당첨되겠지?"라고 생각하는 일을 예방할 수 있다.
 * 후속 규칙을 토대로 생각한다면, $$\frac{1 + 2}{2 + 2} = \frac{3}{4}$$이니까 뭔가 당첨 확률이 높긴 하지만 항상 당첨될 리는 없다고 생각하게 된다.
 
 
-# Links
+## Links
 
 * <https://en.wikipedia.org/wiki/Rule_of_succession >
 * [라플라스 succession rule-베이지안 통계(techntalk.tistory.com)](http://techntalk.tistory.com/entry/%EB%9D%BC%ED%94%8C%EB%9D%BC%EC%8A%A4-succession-rule-%EB%B2%A0%EC%9D%B4%EC%A7%80%EC%95%88-%ED%86%B5%EA%B3%84-Bayesian-Statistics%EC%9D%98-%EC%A2%8B%EC%9D%80-%EC%98%88 )

@@ -13,9 +13,9 @@ latex   : true
 * TOC
 {:toc}
 
-# 정의
+## 정의
 
-## 수열
+### 수열
 
 **Sequences**
 
@@ -29,7 +29,7 @@ We call $$a_n$$ a term of the sequence.
 * 정수 $$n$$의 상(image)을 나타내기 위해서 $$a_n$$을 사용한다.
 * $$a_n$$을 수열의 항(term)이라고 한다$$a_n$$을 수열의 항(term)이라고 한다.
 
-## 등비수열
+### 등비수열
 
 **geometric progression**
 
@@ -40,7 +40,7 @@ where the initial term $$a$$ and the common ratio $$r$$ are real numbers.
 
 * 등비수열은 지수 함수 $$ f(x) = ar^x $$의 이산적 모습이다.
 
-## 등차수열
+### 등차수열
 
 **arithmetic progression**
 
@@ -51,7 +51,7 @@ where the initial term $$a$$ and the common difference $$d$$ are real numbers.
 
 * 등차수열은 선형 함수 $$ f(x) = dx + a $$의 이산적 모습이다.
 
-## 점화관계
+### 점화관계
 
 **Recurrence Relations**
 
@@ -70,7 +70,7 @@ A sequence is called a solution of a recurrence relation if its terms satisfy th
     * "초기 조건이 수반된 점화관계를 풀었다"
     * "수열의 해를 얻었다"
 
-### 반복법
+#### 반복법
 
 **iteration**
 
@@ -102,7 +102,7 @@ $$
 * 반대로 $$ a_n $$ 부터 반복하는 것을 후향 대입(backward substitution)이라 한다.
 
 
-# 용어 정리
+## 용어 정리
 
 | English                       | 한국어             | 예/설명                           |
 |-------------------------------|--------------------|-----------------------------------|
@@ -120,7 +120,7 @@ $$
 | forward substitution          | 전향 대입          |                                   |
 | backward substitution         | 후향 대입          |                                   |
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 

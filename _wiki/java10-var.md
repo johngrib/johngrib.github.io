@@ -17,7 +17,7 @@ latex   : false
 Java 10부터 var 키워드를 통해 변수를 선언할 수 있게 됐다.
 
 
-# Examples
+## Examples
 
 * 올바른 사용과 잘못된 사용
 
@@ -44,7 +44,7 @@ var f = () -> "hello";    // Illegal: lambda not in an assignment context
 var g = null;             // Illegal: null type
 ```
 
-# 참고문헌
+## 참고문헌
 
 * [Java 10 spec][local-var]
 

@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 전칭 한정기호 $$ \forall $$
+## 전칭 한정기호 $$ \forall $$
 
 **universal quantifier**
 
@@ -38,7 +38,7 @@ $$ \forall $$는 다음과 같이 읽는다.
 
 주의 : 정의역을 명확히 하는 것이 중요.
 
-## 예제
+### 예제
 
 * $$ \forall x \lt 0 \ ( x^2 \gt 0 ) $$ &nbsp;
     * $$ x \lt 0 $$ 인 모든 x 에 대하여 $$ x^2 \gt 0 $$ 이다.
@@ -48,7 +48,7 @@ $$ \forall $$는 다음과 같이 읽는다.
     * 0 이 아닌 모든 x 에 대하여, $$ x^3 \ne 0 $$ 이다.
     * $$ \forall x ( x \ne 0 → y^3 \ne 0 ) $$ 과 동치.
 
-# 존재 기호 $$ \exists $$
+## 존재 기호 $$ \exists $$
 
 **existential quantifier**
 
@@ -67,13 +67,13 @@ $$ \exists $$는 다음과 같이 읽는다.
 * for at least one
 * there is
 
-## 예제
+### 예제
 
 * $$ \exists x \gt 0 \ ( x^2 = 1 ) $$ &nbsp;
     * $$ x^2 = 1 $$을 만족하는 0 보다 큰 x 가 적어도 하나 존재한다.
     * $$ \exists z \ (z \gt 0 \land z^2 = 2) $$ 와 동치.
 
-## 유일 한정기호 $$ \exists !, \exists_1 $$
+### 유일 한정기호 $$ \exists !, \exists_1 $$
 
 **uniqueness quantifier**
 
@@ -88,11 +88,11 @@ $$ \exists $$는 다음과 같이 읽는다.
 * there is exactly one
 * there is one and only one
 
-# 연산자 우선순위
+## 연산자 우선순위
 
 * $$ \forall, \exists $$ 는 명제 논리의 **모든** 논리 연산자보다 높은 우선순위를 갖는다.
 
-# 한정 기호에 대한 드 모르간의 법칙
+## 한정 기호에 대한 드 모르간의 법칙
 
 $$
 \begin{align}
@@ -104,7 +104,7 @@ $$
 $$
 
 
-# 한정기호 중첩
+## 한정기호 중첩
 
 **Nested Quantifiers**
 
@@ -143,7 +143,7 @@ $$∃x∃y P(x,y)$$ 또는 $$∃y∃x P(x,y)$$
 * 어떤 실수 z가 있는데, 모든 실수 x 와 모든 실수 y 에 대해 $$ x + y = z $$가 참인 결과가 나온다.
 
 
-## 예제
+### 예제
 
 $$ ∀x ∃y ( x + y = 0 ) $$ &nbsp;
 

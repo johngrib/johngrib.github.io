@@ -13,7 +13,7 @@ parent  : hammerspoon
 * TOC
 {:toc}
 
-# 윈도우 힌트 기능을 사용해 봅시다
+## 윈도우 힌트 기능을 사용해 봅시다
 
 [[hammerspoon-tutorial-00]]{이전 글}의 마지막에서는 단축키에 앱 활성화 기능을 붙여 보았습니다.  
 
@@ -40,7 +40,7 @@ hs.hotkey.bind({'shift'}, 'F1', hs.hints.windowHints)
 
 아직 실행되지 않은 앱은 힌트에 나타나지 않으므로 `launchOrFocus`를 완전히 대체하지는 못합니다. 그러나 많은 수의 앱을 실행시켜 둔 상태에서 `cmd`+`tab`의 사용이 불편할 때에는 꽤 도움이 될 수 있습니다.
 
-## 힌트 문자 변경
+### 힌트 문자 변경
 
 추가로, 힌트에 사용되는 키 입력이 마음에 들지 않는다면 아래와 같은 방법으로 변경할 수 있습니다.
 
@@ -51,7 +51,7 @@ hs.hotkey.bind({'shift'}, 'F1', hs.hints.windowHints)
 
 위와 같이 하면 `1`, `2`, `3`, `4`, `Q`, `W`, `E`, `R`이 힌트 키로 나오게 됩니다. 즉 힌트 키를 왼손으로만 입력하는 것이 가능해집니다. `shift`+`F1`을 입력한 다음 `h`나 `i` 등을 입력하는 것보다 더 빠르고 쉽게 사용할 수 있겠죠.
 
-# 윈도우를 이동시켜 봅시다
+## 윈도우를 이동시켜 봅시다
 
 Hammerspoon을 잘 사용하려면 API 문서를 찾아 읽고 제공된 함수들을 잘 조합해야 합니다. 일반적인 프로그래밍 작업과 별다를 바 없어요. 위에서 사용해 본 힌트 기능처럼 UI까지 잘 구현된 경우는 예외적인 케이스라 할 수 있습니다.
 
@@ -94,7 +94,7 @@ hs.hotkey.bind({'option', 'shift'}, 'right', move_win_to_right)
 
 ![left]({{ site.url }}/post-img/2017/2017-08-01-hammerspoon-left.jpg)
 
-## 윈도우를 다양한 방향으로 이동시켜 봅시다
+### 윈도우를 다양한 방향으로 이동시켜 봅시다
 
 좌우로 움직이게 하는 건 꽤 괜찮은 기능이지만, 썩 만족스러운 것은 아닙니다. 왼쪽 위, 오른쪽 아래로 움직인다든가 하는 기능이 들어가면 모니터를 조금 더 효율적으로 사용할 수 있을 것 같습니다.
 
@@ -142,7 +142,7 @@ hs.hotkey.bind(mod, '9', move_win(right, top, half_width, half_height))
 
 ![left]({{ site.url }}/post-img/2017/2017-08-01-hammerspoon-window.gif)
 
-# Links
+## Links
 
 * [[hammerspoon-tutorial-00]]
 * [API 문서](http://www.hammerspoon.org/docs/index.html)

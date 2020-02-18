@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 사용 예
+## 사용 예
 
 다음과 같은 파일이 있다고 하자.
 
@@ -53,7 +53,7 @@ $ csplit test.txt $(cat test.txt | grep -n -e '333' | cut -d ':' -f 1)
 ```
 
 
-# Links
+## Links
 
 * [csplit 명령 (ibm.com)](https://www.ibm.com/support/knowledgecenter/ko/ssw_aix_72/com.ibm.aix.cmds1/csplit.htm )
 

@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 감상
+## 감상
 
 다익스트라는 다음과 같은 문장을 남긴 바 있다.
 
@@ -28,7 +28,7 @@ Computer science is no more about computers than astronomy is about telescopes.
 
 * 개발자 뿐만 아니라 수학/컴퓨터에 흥미를 가진 학생, 직장인... 누구에게나 추천하고 싶은 좋은 책이다.
 
-# 인용
+## 인용
 
 482~483쪽. 결론 - 계산 친절 중에서.
 
@@ -52,13 +52,13 @@ Computer science is no more about computers than astronomy is about telescopes.
 **이런 행동들은 우리가 합리적일 수 없을 때 하는 양보가 아니다.**
 합리적이 된다는 것이 바로 그런 의미다.
 
-# 함께 읽기
+## 함께 읽기
 
 * [[secretary-problem]]
 * [[Bayes-theorem]]
 
 
-# Links
+## Links
 
 * [Algorithms to Live By: The Computer Science of Human Decisions ](https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365 )
 * [알고리즘, 인생을 계산하다(교보문고)](https://kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788935212057&orderClick=4ab )

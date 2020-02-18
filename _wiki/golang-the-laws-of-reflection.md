@@ -17,7 +17,7 @@ latex   : false
 * 의역이 많으며 오역이 있을 수 있습니다.
 * (역: ...) 은 원문에 없는 말을 이해를 돕기 위해 제가 추가한 것입니다.
 
-# Introduction
+## Introduction
 
 **서문**
 
@@ -35,7 +35,7 @@ but this article is about Go, so for the rest of this article the word "reflecti
 여러 언어의 리플렉션 모델은 각기 다르기 마련입니다만(리플렉션을 지원하지 않는 언어도 있습니다),
 이 글은 Go 언어에 대한 것이므로 이 글에서 언급하는 "리플렉션(reflection)"은 "Go 언어에서의 리플렉션"을 의미합니다.
 
-# Types and interfaces
+## Types and interfaces
 
 **타입과 인터페이스**
 
@@ -130,7 +130,7 @@ Go 언어의 인터페이스가 동적으로 타입이 지정된다고 말하는
 우리는 이런 사실을 명확히 알아둘 필요가 있습니다.
 왜냐하면 리플렉션은 인터페이스와 밀접한 관련을 갖고 있기 때문입니다.
 
-# The representation of an interface
+## The representation of an interface
 
 **인터페이스의 표현**
 
@@ -214,7 +214,7 @@ _Now we're ready to reflect._
 
 이제 리플렉트 이야기로 들어갑시다.
 
-# The first law of reflection
+## The first law of reflection
 
 **리플렉션의 첫 번째 규칙**
 
@@ -359,7 +359,7 @@ _the Kind of v is still reflect.Int, even though the static type of x is MyInt, 
 `x`의 정적 타입이 `int`가 아니라 `MyInt` 인데도, `v`의 `Kind`는 변함없이 `reflect.Int`입니다.
 다시 말해, `Kind`는 `int`와 `MyInt`를 구별할 수 없습니다. 그것은 `Type`이 할 수 있는 일입니다.
 
-# The second law of reflection
+## The second law of reflection
 
 **리플렉션의 두 번째 규칙**
 
@@ -439,7 +439,7 @@ _Reiterating: Reflection goes from interface values to reflection objects and ba
 
 다시 강조하자면, 리플렉션은 인터페이스 값에서 출발하여 리플렉션 객체로 다시 돌아갑니다.
 
-# The third law of reflection
+## The third law of reflection
 
 **리플렉션의 세 번째 규칙**
 
@@ -618,7 +618,7 @@ _Reflection can be hard to understand but it's doing exactly what the language d
 
 리플렉션은 이해하기 어려울 수 있습니다. 리플렉션의 `Type`과 `Value`가 실제로 일어나는 동작을 은폐하고는 있지만, 리플렉션은 언어의 목적을 정확히 수행하는 기능입니다. 리플렉션 `Value`가 나타내는 값을 수정하고자 할 때 그 값의 주소가 필요하다는 것을 꼭 기억해 두세요.
 
-# Struct
+## Struct
 
 **구조체**
 
@@ -692,7 +692,7 @@ _If we modified the program so that s was created from t, not &t, the calls to S
 `t`의 필드들이 설정 가능하지 않기 때문에 `SetInt`와 `SetString` 함수 호출은 실패할 것입니다.
 
 
-# Conclusion
+## Conclusion
 
 **결론**
 
@@ -721,7 +721,7 @@ Go 언어의 이러한 리플렉션 규칙들을 이해한다면 훨씬 사용�
 
 _By Rob Pike_
 
-# License 관련 사항
+## License 관련 사항
 
 * 이 번역문의 원문은 [Creative Commons Attribution 3.0 라이센스](https://creativecommons.org/licenses/by/3.0/deed.ko )를 따릅니다.
 * 이 번역문의 원문에 첨부된 코드는 [BSD license](https://golang.org/LICENSE )를 따릅니다.

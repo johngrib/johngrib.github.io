@@ -13,13 +13,13 @@ latex   : false
 * TOC
 {:toc}
 
-# syntax
+## syntax
 
 ```sh
 grep [option] pattern [file]
 ```
 
-# 사용 예
+## 사용 예
 
 * 파일에서 내용 찾기
 

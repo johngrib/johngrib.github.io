@@ -13,9 +13,9 @@ latex   : false
 * TOC
 {:toc}
 
-# Examples
+## Examples
 
-## 방법1: xml로 모든 Bean을 설정
+### 방법1: xml로 모든 Bean을 설정
 
 ```text
 src
@@ -126,7 +126,7 @@ demoService
 demoRepository
 ```
 
-## 방법2: xml에서 component scan 사용
+### 방법2: xml에서 component scan 사용
 
 ```text
 src
@@ -244,7 +244,7 @@ org.springframework.context.event.internalEventListenerProcessor
 org.springframework.context.event.internalEventListenerFactory
 ```
 
-# 참고: pom.xml
+## 참고: pom.xml
 
 IntelliJ의 spring boot 플러그인이 자동으로 만들어 준 pom.xml을 사용했다.
 
@@ -314,7 +314,7 @@ IntelliJ의 spring boot 플러그인이 자동으로 만들어 준 pom.xml을 �
 </project>
 ```
 
-# Links
+## Links
 
 * [40. XML Schema-based configuration](https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html )
 

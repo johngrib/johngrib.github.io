@@ -13,13 +13,13 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * <https://aws.amazon.com/autoscaling/ >
 
 조건에 따라 EC2 인스턴스가 늘어나고 줄어든다.
 
-# 실습
+## 실습
 
 * [Amazon EC2 Auto Scaling 시작하기](https://docs.aws.amazon.com/ko_kr/autoscaling/ec2/userguide/GettingStartedTutorial.html ) 자습서가 매우 잘 정리되어 있다. 이것만 보면 될듯.
 
@@ -35,7 +35,7 @@ latex   : false
 
 
 
-# Links
+## Links
 
 * [AWS Auto Scaling](https://aws.amazon.com/autoscaling/ )
 * [Amazon EC2 Auto Scaling 시작하기](https://docs.aws.amazon.com/ko_kr/autoscaling/ec2/userguide/GettingStartedTutorial.html )

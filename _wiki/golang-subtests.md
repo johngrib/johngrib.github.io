@@ -17,7 +17,7 @@ latex   : false
 * 의역이 많으며 오역이 있을 수 있습니다.
 * (역: ...) 은 원문에 없는 말을 이해를 돕기 위해 제가 추가한 것입니다.
 
-# Introduction
+## Introduction
 
 **서문**
 
@@ -29,7 +29,7 @@ Go 1.7 에서는 `testing` 패키지에 `T`와 `B` 타입의 `Run` 메소드를 
 커맨드 라인에서 실행하는 테스트나 병렬(parallelism) 작업을 더 세밀하게 제어할 수 있습니다.
 그뿐만 아니라 단순하고 유지 보수하기 좋은 코드를 만드는 데에도 도움이 됩니다.
 
-# Table-driven tests basics
+## Table-driven tests basics
 
 **테이블 기반 테스트의 기본**
 
@@ -68,7 +68,7 @@ _This approach, commonly referred to as table-driven tests, reduces the amount o
 이 방식은 각각의 테스트를 따로따로 작성하는 방식에 비해,
 반복되는 코드의 양이 줄어들고 테스트 케이스를 추가하기도 간단해집니다.
 
-# Table-driven benchmarks
+## Table-driven benchmarks
 
 **테이블 기반 벤치마크**
 
@@ -143,7 +143,7 @@ _The new code has more lines of code, but is more maintainable, more readable, a
 그리고 테스트 코드 작성에 일반적으로 사용되곤 하는 테이블 기반 접근법과 함께 사용할 수 있습니다.
 게다가, 공통되는 설정 코드는 각 벤치마크 실행마다 공유되며 타이머를 재설정할 필요도 없습니다.
 
-# Table-driven tests using subtests
+## Table-driven tests using subtests
 
 **테이블 기반 테스트에서 서브 테스트 사용하기**
 
@@ -218,7 +218,7 @@ _There are several other benefits to using subtests or sub-benchmarks, as clarif
 
 다음 섹션에서는 서브 테스트나 서브 벤치마크를 사용하면 얻을 수 있는 이점들을 알아봅니다.
 
-# Running specific tests or benchmarks
+## Running specific tests or benchmarks
 
 **특정 테스트나 벤치마크를 실행하기**
 
@@ -301,7 +301,7 @@ _A unique sequence number is appended to test names that are not unique. So one 
 
 (역: `go test -run=`으로 실행하면 됩니다. `go test -run`은 `missing arg`가 나와서 안 되더군요.)
 
-# Setup and Tear-down
+## Setup and Tear-down
 
 **설정 및 종료**
 
@@ -328,7 +328,7 @@ _The setup and tear-down code will run if any of the enclosed subtests are run a
 딸린 서브 테스트가 실행되면 설정 및 종료 코드가 최대 한 번씩 실행됩니다.
 이것은 서브 테스트 중 하나가 `Skip`, `Fail`, `Fatal` 함수를 호출하더라도 적용됩니다.
 
-# Control of Parallelism
+## Control of Parallelism
 
 **병렬 제어**
 
@@ -354,7 +354,7 @@ _This behavior is identical for tests created by Run and top-level tests. In fac
 이러한 동작은 `Run` 메소드에 의해 실행되는 테스트나 최상위 테스트나 동일합니다.
 사실은, 최상위 테스트도 알고 보면 숨겨진 마스터 테스트의 서브 테스트로 구현되기 때문입니다.
 
-# Run a group of tests in parallel
+## Run a group of tests in parallel
 
 **테스트 그룹을 병렬로 실행하기**
 
@@ -387,7 +387,7 @@ _Note that we need to capture the range variable to ensure that tc gets bound to
 
 `tc`가 올바른 인스턴스를 갖고 있도록 `range` 변수를 캡처한 것에 주목하세요.
 
-# Cleaning up after a group of parallel tests
+## Cleaning up after a group of parallel tests
 
 **그룹 병렬 테스트를 마친 후 뒷정리하기**
 
@@ -413,7 +413,7 @@ _The behavior of waiting on a group of parallel tests is identical to that of th
 
 그룹 병렬 테스트를 기다리는 동작은 앞의 예제와 동일합니다.
 
-# Conclusion
+## Conclusion
 
 **결론**
 
@@ -436,7 +436,7 @@ Go 1.7에 추가된 서브 테스트와 서브 벤치마크를 사용하면 자�
 
 _By Marcel van Lohuizen_
 
-# License 관련 사항
+## License 관련 사항
 
 * 이 번역문의 원문은 [Creative Commons Attribution 3.0 라이센스](https://creativecommons.org/licenses/by/3.0/deed.ko )를 따릅니다.
 * 이 번역문의 원문에 첨부된 코드는 [BSD license](https://golang.org/LICENSE )를 따릅니다.

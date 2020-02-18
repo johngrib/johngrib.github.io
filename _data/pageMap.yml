@@ -2436,7 +2436,7 @@ my-study-method:
     summary: null
     parent: my-lifehack
     url: /wiki/my-study-method
-    updated: '2019-01-19 12:03:58 +0900'
+    updated: '2020-02-18 21:25:22 +0900'
     children: []
 my-wiki:
     type: wiki
@@ -3236,7 +3236,7 @@ test-terms:
     summary: null
     parent: software-engineering
     url: /wiki/test-terms
-    updated: '2020-01-17 22:52:19 +0900'
+    updated: '2020-02-18 21:24:28 +0900'
     children: []
 TETRIS-EFFECT:
     type: wiki
