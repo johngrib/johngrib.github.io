@@ -64,19 +64,20 @@ regenerate: true
 
 
 ## [[math]]
-    * [[Bayes-theorem]]
-    * [[Binomial-Theorem]]
-    * [[Cromwell-s-rule]]
-    * [[Fermat-s-little-theorem]]
-    * [[fibonacci]]
-    * [[frac1e]]{n개의 제비뽑기에 n번 도전}
-    * [[gcd]]
-    * [[graph]]
-    * [[halting-problem]]
-    * [[primitive-roots]]
-    * [[relations]]
-    * [[rule-of-succession]]
-    * [[secretary-problem]]
+
+* [[Bayes-theorem]]
+* [[Binomial-Theorem]]
+* [[Cromwell-s-rule]]
+* [[Fermat-s-little-theorem]]
+* [[fibonacci]]
+* [[frac1e]]{n개의 제비뽑기에 n번 도전}
+* [[gcd]]
+* [[graph]]
+* [[halting-problem]]
+* [[primitive-roots]]
+* [[relations]]
+* [[rule-of-succession]]
+* [[secretary-problem]]
 
 ## [[media]]
 
