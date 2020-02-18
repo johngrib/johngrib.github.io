@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2019-09-10 23:59:33 +0900
+updated : 2020-02-18 21:14:40 +0900
 tag     : gradle tool
 toc     : true
 public  : true
@@ -54,7 +54,7 @@ Total time: 0.979 secs
 ### JVM heap 사이즈 설정
 
 ```bash
-# Gradle 실행시 JVM 최대 힙 사이즈를 1GB로 설정한다.
+ # Gradle 실행시 JVM 최대 힙 사이즈를 1GB로 설정한다.
 export GRADLE_OPTS=-Xmx1024m
 ```
 
