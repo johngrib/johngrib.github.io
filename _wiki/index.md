@@ -362,6 +362,7 @@ regenerate: true
 * [[githud]]
 
 ### [[mac-apps]]
+
 * [[hammerspoon]]
     * [[hammerspoon-inputsource-aurora]]
     * [[hammerspoon-luarocks]]
