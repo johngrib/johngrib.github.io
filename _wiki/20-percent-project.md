@@ -3,7 +3,7 @@ layout  : wiki
 title   : 20% project
 summary : 
 date    : 2019-12-30 23:15:30 +0900
-updated : 2020-01-16 21:31:37 +0900
+updated : 2020-02-19 09:09:34 +0900
 tag     : 
 toc     : true
 public  : true
@@ -79,3 +79,4 @@ latex   : false
 
 [fedex-day]: http://www.ideachampions.com/weblogs/archives/2011/12/atlassian_is_a.shtml
 [atlassian-experiment]: https://www.atlassian.com/blog/archives/20_time_experiment
+[^handbook-117]: 데브옵스 핸드북 117쪽.
