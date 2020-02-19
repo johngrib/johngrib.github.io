@@ -1806,6 +1806,14 @@ hammerspoon-tutorial-05:
     url: /wiki/hammerspoon-tutorial-05
     updated: '2018-04-21 11:44:18 +0900'
     children: []
+healthy-life:
+    type: wiki
+    title: '건강한 생활을 위한 나의 원칙들'
+    summary: ""
+    parent: my-lifehack
+    url: /wiki/healthy-life
+    updated: '2020-02-19 23:02:17 +0900'
+    children: []
 hhkb-jp-tmk:
     type: wiki
     title: 'HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.'
@@ -2421,7 +2429,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [cleaning-tile-cycle, email-gardening, global-variables-and-marriage-architecture, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, preserve-brain, random-lunch]
+    children: [cleaning-tile-cycle, email-gardening, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
 my-mac-os-terminal:
     type: wiki
     title: 'macOS 초심자를 위한 터미널 공부 가이드'
@@ -2653,14 +2661,6 @@ precision-of-number:
     parent: for-craftsmanship
     url: /wiki/precision-of-number
     updated: '2019-11-06 21:43:23 +0900'
-    children: []
-preserve-brain:
-    type: wiki
-    title: '뇌를 건강하게 유지하는 실천 원칙'
-    summary: ""
-    parent: my-lifehack
-    url: /wiki/preserve-brain
-    updated: '2019-11-17 23:01:33 +0900'
     children: []
 primitive-roots:
     type: wiki

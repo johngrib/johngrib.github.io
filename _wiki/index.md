@@ -462,7 +462,7 @@ regenerate: true
 * [[my-mac-os-terminal]]
 * [[my-study-method]]
 * [[our-fund-balancing]]
-* [[preserve-brain]]
+* [[healthy-life]]
 * [[random-lunch]]
 * [[global-variables-and-marriage-architecture]]
 

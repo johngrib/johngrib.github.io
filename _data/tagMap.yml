@@ -709,6 +709,8 @@ groovy:
     - {fileName: Groovy}
 lua:
     - {fileName: hammerspoon-luarocks}
+health:
+    - {fileName: healthy-life}
 keyboard:
     - {fileName: hhkb-jp-tmk}
     - {fileName: my-keyboard}
@@ -774,8 +776,6 @@ experiment:
     - {fileName: our-fund-balancing}
 방법론:
     - {fileName: persona}
-health:
-    - {fileName: preserve-brain}
 tip:
     - {fileName: private-constructor}
     - {fileName: use-java-primitive-type-for-performance}
