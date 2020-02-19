@@ -2,8 +2,8 @@
 layout  : wiki
 title   : 건강한 생활을 위한 나의 원칙들
 summary : 
-date    : 2019-11-07 22:11:09 +0900
-updated : 2020-02-19 23:02:17 +0900
+date    : 2020-02-19 23:22:02 +0900
+updated : 2020-02-19 23:22:05 +0900
 tag     : health
 toc     : true
 public  : true
