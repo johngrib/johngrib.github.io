@@ -3,7 +3,7 @@ layout  : wiki
 title   : 목과 허리 건강을 위한 컴퓨터 외의 물리적 장비 구매 노하우와 경험
 summary : 경험은 소중하다. 잊지 말고 기록해 두자.
 date    : 2020-02-09 11:43:39 +0900
-updated : 2020-02-10 22:16:20 +0900
+updated : 2020-02-20 08:49:13 +0900
 tag     : 
 toc     : true
 public  : true
@@ -227,6 +227,8 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 ![엔산 마운트 거치대]( /post-img/my-desk-environment/nsan-mount.jpg )
 
 트위터의 [김지현](https://twitter.com/simnalamburt )님이 추천해주셔서 구매한 모니터 거치대.
+
+[모니터를 설치한 김지현님의 트윗]( https://twitter.com/simnalamburt/status/1210294316343513089 )
 
 나는 지난 3년간 "에이스 미디어 모니터 거치대 01B1C"를 사용해왔지만 높이에 불만이 있었는데, 이 거치대로 바꾸고 몹시 만족하고 있다.
 
