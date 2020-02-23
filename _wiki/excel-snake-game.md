@@ -3,7 +3,7 @@ layout  : wiki
 title   : 엑셀로 만든 snake 게임
 summary : 언젠간 DOOM을 엑셀에서 돌리고 싶다
 date    : 2020-02-23 21:57:16 +0900
-updated : 2020-02-23 23:27:32 +0900
+updated : 2020-02-23 23:28:57 +0900
 tag     : game
 toc     : true
 public  : true
@@ -39,6 +39,8 @@ vim에서 돌아가는 [vim-game-code-break]( https://github.com/johngrib/vim-ga
 다운받은 파일을 실행하고, 매크로를 사용하겠다고 선택한다.
 
 화면에 있는 `start` 버튼을 누르고 시작 레벨을 선택하면 게임이 시작된다.
+
+조종은 방향키로 한다.
 
 * 뱀이 과일을 하나 먹을 때마다 레벨이 1씩 올라가고, 뱀이 조금씩 더 빨라진다.
 * 게임이 너무 느린 것 같으면 시작 레벨을 좀 높여서 시작하는 것이 좋다.
