@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : JUnit5로 계층 구조의 테스트 코드를 작성하기
+title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2020-02-18 23:25:39 +0900
+updated : 2020-02-23 14:15:27 +0900
 tag     : java test
 toc     : true
 public  : true
