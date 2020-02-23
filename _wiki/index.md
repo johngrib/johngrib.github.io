@@ -349,8 +349,10 @@ regenerate: true
 * [[ykman]]
 
 ### [[Excel]]
+
 * [[excel-hot-keys]]
 * [[excel-remove-circular-reference]]
+* [[excel-snake-game]]
 * [[excel-sumifs]]
 * [[excel-transpos]]
 * [[excel-vba-setting]]
