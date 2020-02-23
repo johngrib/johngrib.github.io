@@ -1220,7 +1220,7 @@ excel-snake-game:
     summary: '언젠간 DOOM을 엑셀에서 돌리고 싶다'
     parent: Excel
     url: /wiki/excel-snake-game
-    updated: '2020-02-23 23:19:11 +0900'
+    updated: '2020-02-23 23:27:32 +0900'
     children: []
 excel-sumifs:
     type: wiki
