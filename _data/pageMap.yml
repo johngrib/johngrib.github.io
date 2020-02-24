@@ -1378,9 +1378,9 @@ fine-dust:
     type: wiki
     title: '미세먼지 정보 모음'
     summary: '미세먼지 대응에 대한 나의 노하우를 기록한다'
-    parent: useful-site
+    parent: my-lifehack
     url: /wiki/fine-dust
-    updated: '2020-02-24 22:41:39 +0900'
+    updated: '2020-02-24 22:54:49 +0900'
     children: []
 fish-shell:
     type: wiki
@@ -2437,7 +2437,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [cleaning-tile-cycle, email-gardening, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
+    children: [cleaning-tile-cycle, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
 my-mac-os-terminal:
     type: wiki
     title: 'macOS 초심자를 위한 터미널 공부 가이드'
@@ -3485,7 +3485,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2020-02-15 12:12:26 +0900'
-    children: [fine-dust, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap]
+    children: [google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap]
 vagrant-docker-get-start:
     type: wiki
     title: 'Vagrant와 Docker에 CentOS, Ubuntu 설치하기'

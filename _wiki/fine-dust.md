@@ -3,11 +3,11 @@ layout  : wiki
 title   : 미세먼지 정보 모음
 summary : 미세먼지 대응에 대한 나의 노하우를 기록한다
 date    : 2018-03-24 11:07:17 +0900
-updated : 2020-02-24 22:41:39 +0900
+updated : 2020-02-24 22:54:49 +0900
 tag     : tools 미세먼지
 toc     : true
 public  : true
-parent  : useful-site
+parent  : [[my-lifehack]]
 latex   : true
 ---
 * TOC
