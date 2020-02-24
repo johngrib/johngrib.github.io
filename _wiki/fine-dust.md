@@ -3,7 +3,7 @@ layout  : wiki
 title   : 미세먼지 정보 모음
 summary : 미세먼지 대응에 대한 나의 노하우를 기록한다
 date    : 2018-03-24 11:07:17 +0900
-updated : 2020-02-24 22:29:28 +0900
+updated : 2020-02-24 22:34:50 +0900
 tag     : tools 미세먼지
 toc     : true
 public  : true
@@ -295,6 +295,8 @@ Chlorobenzene
 * 다른 기능은 없고 PM 2.5 만 보여준다.
 * [알리 익스프레스](https://ko.aliexpress.com/wholesale?catId=0&initiative_id=SB_20180323182956&SearchText=%EC%83%A4%EC%98%A4%EB%AF%B8+pm2.5)에서 쉽게 구매할 수 있다.
     * 단, 무료 배송을 선택하면 약 3~4주의 배송 기간을 기다려야 한다.
+
+요즘 나오는 공기청정기들은 대부분 측정 결과를 보여주는 화면이 달려있어, 이제는 이 측정기를 살 이유가 거의 없는 것 같다.
 
 장점
 
