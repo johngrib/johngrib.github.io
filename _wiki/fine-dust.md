@@ -3,7 +3,7 @@ layout  : wiki
 title   : 미세먼지 정보 모음
 summary : 미세먼지 대응에 대한 나의 노하우를 기록한다
 date    : 2018-03-24 11:07:17 +0900
-updated : 2020-02-24 20:54:12 +0900
+updated : 2020-02-24 22:07:11 +0900
 tag     : tools 미세먼지
 toc     : true
 public  : true
@@ -40,11 +40,13 @@ latex   : true
 **사실 : 옛날이 더 심했다.**
 예전엔 미세먼지가 심각해도 단순 황사라고 생각하며 대수롭지 않게 여겼던 것.
 
-다음 표를 보면 PM10의 경우 변동폭을 감안해도 감소 추세임을 알 수 있다.
+다음 표를 보면 감소 추세임을 알 수 있다.
 
-![pm10 statistics](/post-img/2018/pm10data.png)
+| ![PM 2.5 의 도시별 추세]( /post-img/fine-dust/pm2.5-korea.png ) | ![PM 10 의 도시별 추세]( /post-img/fine-dust/pm10-korea.png ) |
 
-출처 : [e-나라지표 : 주요 도시 대기오염도](http://www.index.go.kr/potal/main/EachDtlPageDetail.do?idx_cd=2789#nv20_chart)
+* 단, 대전의 경우 PM10은 그다지 개선되지 않았다.
+
+출처 : [e-나라지표 : 주요 도시 대기오염도](http://www.index.go.kr/potal/main/EachDtlPageDetail.do?idx_cd=2789#nv20_chart )
 
 ### WHO 권장 기준
 
@@ -70,7 +72,7 @@ latex   : true
 또한, NIOSH의 필터 등급은 다음과 같다.
 
 | 클래스 | 효율(%) | 오염 물질 유형                                  |
-|--------|---------|-------------------------------------------------|
+|--------|:-------:|-------------------------------------------------|
 | N100   | 99.97   | 고체 및 수성 미립자(비 오일 에어로졸: 미세먼지) |
 | N99    | 99      | ..                                              |
 | N95    | 95      | ..                                              |
@@ -112,18 +114,18 @@ latex   : true
 [nullschool EarthWindMap](https://earth.nullschool.net/#current/particulates/surface/level/overlay=pm2.5/orthographic=-231.08,37.26,1646 )
 
 * **주의: nullschool의 EarthWindMap은 신빙성이 없고 화면이 과장되었다는 이야기가 있다. 맹신하지 않아야 한다.**
-* 미세먼지의 움직임, 바람의 방향, 해류의 흐름, 오로라(space 옵션) 등을 지구본에서 실시간으로 볼 수 있다.
-* **화면이 굉장히 아름답다.** 남는 태블릿 pc가 있다면 전자액자로 띄워 놓는 것도 좋을 것 같다.
+    * **화면이 굉장히 아름답다.** 남는 태블릿 pc가 있다면 전자액자로 띄워 놓는 것도 좋을 것 같다.
+* 미세먼지의 움직임, 바람의 방향, 해류의 흐름, 오로라(Space 옵션) 등을 볼 수 있다.
 
 ### 스마트폰 애플리케이션
 
-수많은 앱이 있지만 다음의 두 앱을 사용하고 있다.
+수많은 앱이 있지만 나는 다음의 두 앱을 사용하고 있다.
 
 * 미세미세
     * WHO 기준이 기본 설정이다.
     * UI가 알기 쉽고 사용하기도 편리하다.
     * 아래로 스크롤하면 일별/시간별 예보도 함께 볼 수 있다.
-    * 다운로드 링크 : [App Store](https://itunes.apple.com/kr/app/%EB%AF%B8%EC%84%B8%EB%AF%B8%EC%84%B8-%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80-%EC%B4%88%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80/id1091911730?mt=8), [Google Play](https://play.google.com/store/apps/details?id=cheehoon.ha.particulateforecaster&hl=ko)
+    * 다운로드 링크 : [App Store](https://itunes.apple.com/kr/app/%EB%AF%B8%EC%84%B8%EB%AF%B8%EC%84%B8-%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80-%EC%B4%88%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80/id1091911730?mt=8 ), [Google Play](https://play.google.com/store/apps/details?id=cheehoon.ha.particulateforecaster&hl=ko )
 
 * 창문닫아요
     * 환경부 기준과 WHO 기준을 선택해 볼 수 있다.
@@ -132,17 +134,11 @@ latex   : true
     * 다운로드 링크 : [App Store](https://itunes.apple.com/kr/app/%EC%B0%BD%EB%AC%B8%EB%8B%AB%EC%95%84%EC%9A%94/id1036031815?mt=8), [Google Play](https://play.google.com/store/apps/details?id=com.dkworks.simple_air&hl=ko)
 
 
-### 봇
-
-* 미세즈눅 : [@x_nuk](https://twitter.com/x_nuk) 님이 만든 미세먼지 알림봇.
-    * 트위터에 `미세즈눅 서울`, `미세즈눅 수원`과 같이 글을 쓰면 봇이 해당 지역에 대한 미세먼지 정보를 멘션으로 달아준다.
-    * **트잉여에게 유용.**
-
 ## 측정기
 
 집에 민감한 측정기가 있으면 매우 유용하다.
 
-나는 어웨어와 샤오미 PM2.5 측정기를 사용하고 있다.
+나는 어웨어, 어웨어 민트와 샤오미 PM2.5 측정기, 그리고 샤오미에어 2S(공기청정기 내장)를 사용하고 있다.
 
 다음은 내가 지난 1.5 년간 미세먼지 측정기와 공기청정기를 함께 사용하면서 얻게 된 노하우이다.
 
@@ -161,40 +157,135 @@ latex   : true
     * 바깥 미세먼지 농도가 높으면 평소보다 공기청정기를 강하게 돌리는 등의 조치를 하게 된다.
     * 불을 적게 쓰는 요리를 선택하게 된다.
 
+### 측정기를 활용하기 위한 실내공기질 유지기준
 
-### AWAIR
+일반적으로 이산화탄소 **1000 ppm** 이 환기의 기준이 된다.
 
-[AWAIR](https://getawair.com/pages/ko-how-it-works) - 어웨어
+다음은 실내공기질 관리법 시행규칙의 일부를 캡처한 것이다.
 
-* 가격은 약 20만원 정도.
-* 트위터 계정[@getawair](https://twitter.com/getawair)도 운영중.
+![]( /post-img/fine-dust/air-polution-law.png )
 
-장점
+[출처는 실내공기질 관리법 시행규칙[별표 2] 개정 2018.10.18.]( http://www.law.go.kr/LSW/flDownload.do?flSeq=53710335&flNm=%5B%EB%B3%84%ED%91%9C+2%5D+%EC%8B%A4%EB%82%B4%EA%B3%B5%EA%B8%B0%EC%A7%88+%EC%9C%A0%EC%A7%80%EA%B8%B0%EC%A4%80%28%EC%A0%9C3%EC%A1%B0+%EA%B4%80%EB%A0%A8%29%0A ) [백업 PDF]( /post-img/fine-dust/law3backup.pdf )
 
-* 미세먼지 외에, 온도, 습도, 이산화탄소 농도, 화학물질 농도 등을 함께 표시해준다.
 
-* 공기 상태를 어플로 확인 가능.
-    * 어웨어를 여러 개 갖고 있어도 어플 하나로 모든 장비의 수치를 확인 가능하다.
-    * 거실, 현관, 아이 방과 같이 여러 방을 앱으로 관리 가능하다는 점이 좋다.
+### AWAIR 1, 2, MINT
 
-* 이산화탄소 센서가 예민하다.
-    * 어웨어 앞에서 두 사람이 이야기를 하면 이산화탄소 농도가 조금씩 올라가는 것을 볼 수 있다.
-    * 먼지 외에 이산화탄소도 환기의 목표로 삼게 된다.
+[AWAIR](https://getawair.com/ ) - 어웨어
 
-* 화학물질 센서를 통해 많은 것을 깨닫게 된다.
-    * 처음 어웨어를 사면 화학물질 수치가 최소값으로 나오는데 며칠 지나면서부터 정확한 측정값이 나오기 시작한다.
-    * 측정값이 생각보다 높아서 이를 개선하기 위해 집안을 다시 돌아보게 된다는 장점이 있다.
-    * 집 안의 쓰레기통을 뚜껑이 달린 것으로 바꾸기만 해도 수치가 꽤 내려간다.
-    * 재활용 쓰레기 등을 모아두기만 해도 화학물질 수치가 꽤 올라간다. (쓰레기를 버리고 돌아오면 수치가 내려가고 있음)
-    * 집 안에 스티로폼이 있으면 스티로폼을 치워보자. 수치가 내려간다.
-    * 빨래를 집 안에 널어두는 것보다 집 밖이나 베란다에 너는 쪽이 바람직하다는 것을 알게 된다.
+실내 공기질에 관심이 많다면 어웨어가 도움이 될 수 있다.
 
-* 어플을 설치하지 않아도 장비 앞면의 그래프와 점수로 상태를 확인할 수 있다.
+트위터 계정[@getawair](https://twitter.com/getawair )도 운영중.
 
-단점
+다음 정보를 확인할 수 있다.
+* 미세먼지(PM 2.5)
+* 온도
+* 습도
+* 이산화탄소
+* 화학물질
 
-* 수치가 분 단위로 바뀐다. 초 단위로 바뀌지 않는 것이 아쉽다.
-* 어플을 설치하지 않으면 각 항목의 정확한 수치를 알 수 없다.
+어웨어 민트는 어웨어의 절반 정도 가격이며, 사이즈도 작다.
+
+* 이산화탄소 측정 기능이 빠져 있으며(그래서 더 싸다) 나머지는 AWAIR 2와 비슷하거나 같은 것 같다.
+* 나는 집 거실에 AWAIR 2를 두고, 나머지 방마다 AWAIR MINT를 하나씩 두고 사용하고 있다.
+    * 이산화탄소는 실내 공기질의 중요한 척도이므로 AWAIR 2가 하나는 있어야 한다고 생각했다.
+
+실내 공기 상태를 앱에서 확인 가능.
+
+* 어웨어를 여러 개 갖고 있어도 앱 하나로 모든 장비의 수치를 확인 가능하다.
+* 거실, 현관, 아이 방과 같이 여러 방을 앱으로 관리 가능하다는 점이 좋다.
+
+이산화탄소 센서가 예민하다.
+
+* 어웨어 앞에서 두 사람이 이야기를 하면 이산화탄소 농도가 조금씩 올라가는 것을 볼 수 있다.
+* 이산화탄소나 화학물질 수치를 보고 환기의 시기를 판단할 수 있다.
+    * 법령 기준으로 1000 ppm 이므로 1000 이 되기 전에 환기해주자.
+
+화학물질 센서를 통해 많은 것을 깨닫게 된다.
+
+* 처음 어웨어를 사면 화학물질 수치가 최소값으로 나오는데 며칠 지나면서부터 정확한 측정값이 나오기 시작한다.
+* 측정값이 생각보다 높아서 이를 개선하기 위해 집안을 다시 돌아보게 된다는 장점이 있다.
+* 집 안의 쓰레기통을 뚜껑이 달린 것으로 바꾸기만 해도 수치가 꽤 내려간다.
+* 재활용 쓰레기 등을 모아두기만 해도 화학물질 수치가 꽤 올라간다. (쓰레기를 버리고 돌아오면 수치가 내려가고 있음)
+* 집 안에 스티로폼이 있으면 스티로폼을 치워보자. 수치가 내려간다.
+* 빨래를 집 안에 널어두는 것보다 집 밖이나 베란다에 너는 쪽이 바람직하다는 것을 알게 된다.
+
+참고로 어웨어에 화학물질에 대해 자세히 알려달라고 이메일을 보냈더니(2020년 2월 15일) 다음과 같은 답장이 돌아왔다(2020년 2월 17일).
+
+![어웨어에서 보내준 답장]( /post-img/fine-dust/awair-email.png )
+
+그리고 메일에는 어웨어의 화학물질이 측정하는 화학물질의 목록이 담긴 첨부 파일이 들어 있었다.
+
+목록은 다음과 같다.
+
+```text
+Acetone
+Acetic Acid
+Toluene
+m- & p-Xylenes
+n-Undecane
+n-Dodecane
+Nonanal
+n-Decane
+o-Xylene
+d-Limonene
+Benzene
+1,1,1-Trichloroethane
+Hexanal
+Ethanol
+Ethanal
+Isoprene
+Methanol
+Isopropanol
+Ethylbenzene
+1,2,4-Trimethylbenzene
+Tetrachloroethene
+Phenol
+Ethyl acetate
+2-Butanone
+Styrene
+TXIB
+4-Ethyltoluene
+2-Butoxyethanol
+2-Ethyl-1-hexanol
+Nonane
+Octane
+Butyl acetate
+n-Hexane
+Pentanal
+1,3,5-Trimethylbenzene a-Pinene
+Texanol 1&3
+4-Methyl-2-pentanone
+Napthalene
+1-Butanol
+1,4-Dichlorobenzene
+3-Methyl pentane
+Trichloroethene
+Methylene chloride
+Trichlorofluoromethane
+t-Butyl methyl ether
+Trichloro-trifluoroethane
+Chloroform
+Carbon tetrachloride
+4-Phenylcyclohexene
+Carbon disulfide
+Chlorobenzene
+1,2,4-Trichlorobenzene
+1,2-Dichlorobenzene
+```
+
+
+#### 어웨어 사용 경험
+
+미세먼지가 심한 날인줄 모르고 환기를 하다가 어웨어 민트가 다음과 같은 화면을 보여 창문을 얼른 닫은 적이 있다.
+
+![미세먼지가 심한 날에 창문을 열고 있을 때]( /post-img/fine-dust/awair-mint-window-open.png ){:style="max-height:300px"}
+
+드물지만 100 점이 나오는 날도 있다.
+
+![100점이 나온 모습]( /post-img/fine-dust/awair-100.jpg )
+
+
+
 
 ### 샤오미 PM 2.5 측정기
 
