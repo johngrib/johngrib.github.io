@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2020-01-22 21:35:49 +0900
+updated : 2020-02-24 15:55:13 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,14 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## Java 코드에서 import 문이 자동으로 정렬되는 것이 싫다면
+
+다음의 체크박스를 해제한다.
+
+`Preferences` - `Editor` - `General` - `Auto Import` - `Java` - `Optimize imports on the fly`
+
+만약 자동으로 정렬시키는 것이 필요하다면 체크박스를 선택해주면 된다.
 
 ## 같은 패키지 안에 있는 멀쩡한 클래스를 못 찾는 경우
 
