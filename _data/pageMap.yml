@@ -1380,7 +1380,7 @@ fine-dust:
     summary: '미세먼지 대응에 대한 나의 노하우를 기록한다'
     parent: useful-site
     url: /wiki/fine-dust
-    updated: '2020-02-24 22:12:13 +0900'
+    updated: '2020-02-24 22:14:30 +0900'
     children: []
 fish-shell:
     type: wiki
