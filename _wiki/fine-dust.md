@@ -3,7 +3,7 @@ layout  : wiki
 title   : 미세먼지 정보 모음
 summary : 미세먼지 대응에 대한 나의 노하우를 기록한다
 date    : 2018-03-24 11:07:17 +0900
-updated : 2018-04-02 21:13:51 +0900
+updated : 2020-02-24 20:54:12 +0900
 tag     : tools 미세먼지
 toc     : true
 public  : true
@@ -85,39 +85,52 @@ latex   : true
 * 따라서 PM2.5를 걱정하고 있다면 `N`, `R`, `P` 중 아무거나 선택하면 된다.
 
 
-## 오늘의 미세먼지 농도를 직접 알아보기
+## 미세먼지 농도를 알아보는 채널
 
 ### 웹사이트
 
-* [EarthWindMap](https://earth.nullschool.net/#current/particulates/surface/level/overlay=pm2.5/orthographic=-231.08,37.26,1646 )
-    * 미세먼지의 움직임, 바람의 방향, 해류의 흐름, 오로라(space 옵션) 등을 지구본에서 실시간으로 볼 수 있다.
-    * **화면이 굉장히 아름답다.** 남는 태블릿 pc가 있다면 전자액자로 띄워 놓는 것도 좋을 것 같다.
+[에어코리아]( http://www.airkorea.or.kr/web/dustForecast?pMENU_NO=113 )
 
-* [AQICN](http://aqicn.org/nearest/kr)
-    * 미세먼지 세계지도를 볼 수 있다.
-    * 한/중/일을 비교하기 편리하다.
-    * 북유럽, 북미, 오스트레일리아의 공기가 거의 언제나 좋다는 것도 알 수 있다.
-    * 단, PM 2.5 값에 대해 자체적인 수치를 표시하고 있으므로, 숫자보다는 **주위 다른 지역과의 비교**를 위해 보는 것이 좋다.
+* 한국환경공단에서 운영하는 전국 실시간 대기오염도.
+* 오늘과 내일의 예보와 원인 분석을 제공한다.
+* 매일 4차례 업데이트한다.
+    * 5시, 11시, 17시, 23시.
 
-* [tenki.jp/particulate_matter](http://www.tenki.jp/particulate_matter/)
-    * 일본 기상협회 미세먼지 예측 시스템.
-    * 들어가서 동영상 재생 버튼을 눌러 보면, 한/중/일 지도 위에 **기준 시간부터 48 시간 이후까지의 대기중 미세먼지 농도 변화를 색깔로 보여 준다**.
-    * 내일이 괜찮을지 궁금할 때 들어가서 보면 좋다.
+[AQICN](http://aqicn.org/nearest/kr)
+
+* 미세먼지 세계지도를 볼 수 있다.
+* 한/중/일을 비교하기 편리하다.
+* 북유럽, 북미, 오스트레일리아의 공기가 거의 언제나 좋다는 것도 알 수 있다.
+* 단, PM 2.5 값에 대해 자체적인 수치를 표시하고 있으므로, 숫자보다는 **주위 다른 지역과의 비교**를 위해 보는 것이 좋다.
+
+[tenki.jp/particulate_matter](http://www.tenki.jp/particulate_matter/)
+
+* 일본 기상협회 미세먼지 예측 시스템.
+* 들어가서 동영상 재생 버튼을 눌러 보면, 한/중/일 지도 위에 **기준 시간부터 48 시간 이후까지의 대기중 미세먼지 농도 변화를 색깔로 보여 준다**.
+* 내일이 괜찮을지 궁금할 때 들어가서 보면 좋다.
+
+[nullschool EarthWindMap](https://earth.nullschool.net/#current/particulates/surface/level/overlay=pm2.5/orthographic=-231.08,37.26,1646 )
+
+* **주의: nullschool의 EarthWindMap은 신빙성이 없고 화면이 과장되었다는 이야기가 있다. 맹신하지 않아야 한다.**
+* 미세먼지의 움직임, 바람의 방향, 해류의 흐름, 오로라(space 옵션) 등을 지구본에서 실시간으로 볼 수 있다.
+* **화면이 굉장히 아름답다.** 남는 태블릿 pc가 있다면 전자액자로 띄워 놓는 것도 좋을 것 같다.
 
 ### 스마트폰 애플리케이션
 
 수많은 앱이 있지만 다음의 두 앱을 사용하고 있다.
+
+* 미세미세
+    * WHO 기준이 기본 설정이다.
+    * UI가 알기 쉽고 사용하기도 편리하다.
+    * 아래로 스크롤하면 일별/시간별 예보도 함께 볼 수 있다.
+    * 다운로드 링크 : [App Store](https://itunes.apple.com/kr/app/%EB%AF%B8%EC%84%B8%EB%AF%B8%EC%84%B8-%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80-%EC%B4%88%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80/id1091911730?mt=8), [Google Play](https://play.google.com/store/apps/details?id=cheehoon.ha.particulateforecaster&hl=ko)
 
 * 창문닫아요
     * 환경부 기준과 WHO 기준을 선택해 볼 수 있다.
     * WHO 기준이 더 엄격하므로, WHO로 설정해서 사용하자.
     * "전세계" 버튼을 클릭하면 [AQICN](http://aqicn.org/nearest/kr) 지도를 보여준다는 점이 좋다.
     * 다운로드 링크 : [App Store](https://itunes.apple.com/kr/app/%EC%B0%BD%EB%AC%B8%EB%8B%AB%EC%95%84%EC%9A%94/id1036031815?mt=8), [Google Play](https://play.google.com/store/apps/details?id=com.dkworks.simple_air&hl=ko)
-* 미세미세
-    * WHO 기준이 기본 설정이다.
-    * UI가 알기 쉽고 사용하기도 편리하다.
-    * 아래로 스크롤하면 일별/시간별 예보도 함께 볼 수 있다.
-    * 다운로드 링크 : [App Store](https://itunes.apple.com/kr/app/%EB%AF%B8%EC%84%B8%EB%AF%B8%EC%84%B8-%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80-%EC%B4%88%EB%AF%B8%EC%84%B8%EB%A8%BC%EC%A7%80/id1091911730?mt=8), [Google Play](https://play.google.com/store/apps/details?id=cheehoon.ha.particulateforecaster&hl=ko)
+
 
 ### 봇
 
@@ -162,7 +175,7 @@ latex   : true
 
 * 공기 상태를 어플로 확인 가능.
     * 어웨어를 여러 개 갖고 있어도 어플 하나로 모든 장비의 수치를 확인 가능하다.
-    * 거실, 현관, 아이 방...과 같이 여러 방을 어플로 관리 가능하다는 점이 좋다.
+    * 거실, 현관, 아이 방과 같이 여러 방을 앱으로 관리 가능하다는 점이 좋다.
 
 * 이산화탄소 센서가 예민하다.
     * 어웨어 앞에서 두 사람이 이야기를 하면 이산화탄소 농도가 조금씩 올라가는 것을 볼 수 있다.
@@ -174,23 +187,13 @@ latex   : true
     * 집 안의 쓰레기통을 뚜껑이 달린 것으로 바꾸기만 해도 수치가 꽤 내려간다.
     * 재활용 쓰레기 등을 모아두기만 해도 화학물질 수치가 꽤 올라간다. (쓰레기를 버리고 돌아오면 수치가 내려가고 있음)
     * 집 안에 스티로폼이 있으면 스티로폼을 치워보자. 수치가 내려간다.
-    * 빨래를 집 안에 너는 것보다 집 밖이나 베란다에 너는 쪽이 바람직하다는 것을 알게 된다.
+    * 빨래를 집 안에 널어두는 것보다 집 밖이나 베란다에 너는 쪽이 바람직하다는 것을 알게 된다.
 
 * 어플을 설치하지 않아도 장비 앞면의 그래프와 점수로 상태를 확인할 수 있다.
 
 단점
 
-* 수치가 분 단위로 바뀐다.
-
-* 미세먼지 센서가 PM2.5가 아니라 PM10 용인 것 같다.
-    * PM2.5 측정기와 함께 쓰면서 알게 된 것이다.
-
-* 1년 이상 쓰면 미세먼지 수치 최소값이 점점 올라간다.
-    * 센서에 먼지가 끼기 때문이다.
-    * 서비스 센터가 없어 AS를 받을 수 없다.
-    * 분해하지 않고 먼지 청소 스프레이로 직접 청소하는 것을 권장하지만 권장 방법으로는 큰 효과가 없다.
-    * 어쩔 수 없이 분해해서 청소해야 하는데 아직 안 해봤다. 조만간 해 볼 생각.
-
+* 수치가 분 단위로 바뀐다. 초 단위로 바뀌지 않는 것이 아쉽다.
 * 어플을 설치하지 않으면 각 항목의 정확한 수치를 알 수 없다.
 
 ### 샤오미 PM 2.5 측정기
