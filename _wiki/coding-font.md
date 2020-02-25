@@ -3,7 +3,7 @@ layout  : wiki
 title   : 코딩 폰트
 summary : 내가 선호하는 코딩 폰트를 기록한다
 date    : 2017-12-01 06:02:30 +0900
-updated : 2020-02-25 22:58:34 +0900
+updated : 2020-02-25 23:07:21 +0900
 tag     : font config
 toc     : true
 public  : true
@@ -90,7 +90,7 @@ $ find nerd-fonts/patched-fonts/Meslo -name '*.ttf' | wc -l
 |---------------|-----------------------|---------------------------------------------------------------|
 | 행간 높이     | L, M, S               | 폰트의 높이                                                   |
 | 스타일        | Regular, Bold, Italic | 기본 스타일                                                   |
-| 점이 있는 0   | DZ                    | 숫자 0 한복판에 점이 찍혀 있음                                |
+| 점이 있는 0   | Dotted Zero(DZ)       | 숫자 0 한복판에 점이 찍혀 있음                                |
 | Nerd Font     | Nerd Font(NF)         | 터미널에서 재미있는 표현을 하기 위한 특수문자가 포함되어 있음 |
 | 모노스페이스  | Mono                  | 고정폭 폰트                                                   |
 | 윈도우즈 호환 | Windows Compatible    | 윈도우즈 OS에서도 사용할 수 있다.                             |

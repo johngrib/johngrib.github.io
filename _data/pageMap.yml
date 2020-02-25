@@ -724,7 +724,7 @@ coding-font:
     summary: '내가 선호하는 코딩 폰트를 기록한다'
     parent: index
     url: /wiki/coding-font
-    updated: '2020-02-25 22:58:34 +0900'
+    updated: '2020-02-25 23:07:21 +0900'
     children: []
 command-line:
     type: wiki
