@@ -2452,7 +2452,7 @@ my-study-method:
     summary: null
     parent: my-lifehack
     url: /wiki/my-study-method
-    updated: '2020-02-18 21:25:22 +0900'
+    updated: '2020-02-25 20:37:40 +0900'
     children: []
 my-wiki:
     type: wiki

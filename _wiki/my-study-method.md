@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 공부 방법
 summary :
 date    : 2019-01-18 23:12:07 +0900
-updated : 2020-02-18 21:25:22 +0900
+updated : 2020-02-25 20:37:40 +0900
 tag     : study
 toc     : true
 public  : true
@@ -101,7 +101,7 @@ var := value
 
 이 snippet 은 다음과 같이 만들었다. 탭 키를 누를 때마다 $1, $2, $3 으로 이동한다.
 
-```snippet
+```
  # 변수 선언
 snippet v "var := value"
 ${1:var} := ${2:value}
@@ -117,7 +117,7 @@ $var = value;
 
 snippet 은 다음과 같다.
 
-```snippet
+```
  # 변수 선언
 snippet v "$var = value;"
 $${1:var} := ${2:value};
