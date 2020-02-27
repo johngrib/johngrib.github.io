@@ -722,9 +722,9 @@ coding-font:
     type: wiki
     title: '코딩 폰트'
     summary: '내가 선호하는 코딩 폰트를 기록한다'
-    parent: index
+    parent: my-lifehack
     url: /wiki/coding-font
-    updated: '2020-02-25 23:07:21 +0900'
+    updated: '2020-02-27 18:28:34 +0900'
     children: []
 command-line:
     type: wiki
@@ -2437,7 +2437,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [cleaning-tile-cycle, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
+    children: [cleaning-tile-cycle, coding-font, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
 my-mac-os-terminal:
     type: wiki
     title: 'macOS 초심자를 위한 터미널 공부 가이드'

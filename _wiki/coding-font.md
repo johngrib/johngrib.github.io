@@ -3,11 +3,11 @@ layout  : wiki
 title   : 코딩 폰트
 summary : 내가 선호하는 코딩 폰트를 기록한다
 date    : 2017-12-01 06:02:30 +0900
-updated : 2020-02-25 23:07:21 +0900
+updated : 2020-02-27 18:28:34 +0900
 tag     : font config
 toc     : true
 public  : true
-parent  : index
+parent  : [[my-lifehack]]
 latex   : false
 ---
 * TOC
