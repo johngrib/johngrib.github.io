@@ -220,7 +220,7 @@ bash:
     - {fileName: bat-cmd}
     - {fileName: bc}
     - {fileName: brew}
-    - {fileName: cal}
+    - {fileName: cal-cmd}
     - {fileName: csplit}
     - {fileName: ctags}
     - {fileName: curl}
@@ -270,7 +270,7 @@ command:
     - {fileName: bat-cmd}
     - {fileName: bc}
     - {fileName: brew}
-    - {fileName: cal}
+    - {fileName: cal-cmd}
     - {fileName: composer}
     - {fileName: csplit}
     - {fileName: ctags}

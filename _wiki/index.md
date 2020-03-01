@@ -305,7 +305,7 @@ regenerate: true
 * [[bash-history]]
 * [[bat-cmd]]
 * [[brew]]
-* [[cal]]
+* [[cal-cmd]]
 * [[csplit]]
 * [[ctags]]
 * [[curl]]
