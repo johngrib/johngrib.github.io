@@ -3,7 +3,7 @@ layout  : wiki
 title   : fd 명령어
 summary : 이름으로 파일을 찾아준다
 date    : 2019-12-28 17:03:29 +0900
-updated : 2020-02-02 16:10:58 +0900
+updated : 2020-03-03 23:19:35 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -30,10 +30,10 @@ fd -e txt
 fd test ./sample
 
  # 파일(regular file) 중 *.py, *.pl 파일만 찾는다
- fd -t f '\.(py|pl)$'
- 
- # 2019년 하반기에 변경된 파일 찾기
- fd -t f --change-newer-than '2019-07-01 00:00:00' --changed-before '2019-12-31 11:59:59'
+fd -t f '\.(py|pl)$'
+
+ # 2019년 하반기에 변경된 파일을 찾는다
+fd -t f --change-newer-than '2019-07-01 00:00:00' --changed-before '2019-12-31 11:59:59'
 ```
 
 ## Links
