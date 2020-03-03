@@ -2542,6 +2542,14 @@ Oliver-s-blood:
     url: /wiki/Oliver-s-blood
     updated: '2020-01-25 22:46:33 +0900'
     children: []
+oop-quotes:
+    type: wiki
+    title: '객체지향 인용문 모음'
+    summary: '객체지향 단어 사전'
+    parent: index
+    url: /wiki/oop-quotes
+    updated: '2020-03-03 22:43:47 +0900'
+    children: []
 OOP-to-me-Alan-Kay:
     type: wiki
     title: '앨런 케이의 심플한 OOP 정의'
