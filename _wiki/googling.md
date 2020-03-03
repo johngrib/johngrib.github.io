@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구글링하는 방법
 summary : 구글 및 여러 검색 서비스 사용법
 date    : 2017-12-23 18:23:50 +0900
-updated : 2018-12-09 21:57:55 +0900
+updated : 2020-03-03 20:08:53 +0900
 tag     : google twitter facebook
 toc     : true
 public  : true
@@ -46,6 +46,12 @@ latex   : false
 검색: [site:twitter.com library keeper](https://www.google.co.kr/search?q=site%3Atwitter.com+library+keeper&oq=site%3Atwitter.com+library+keeper )
 
 * twitter.com에서 `library keeper`를 검색한 결과가 나온다.
+
+만약 특정 사이트를 제외하려면 `-`를 붙이면 된다.
+
+검색: [johngrib -site:johngrib.github.io]( https://www.google.com/search?q=johngrib+-site%3Ajohngrib.github.io )
+
+* `johngrib.github.io` 사이트를 제외하고 `johngrib`을 검색한 결과가 나온다.
 
 ## Twitter
 
