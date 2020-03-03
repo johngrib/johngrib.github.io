@@ -512,11 +512,12 @@ regenerate: true
 * [[leadership]]
 * [[locking]]
 * [[mac-keyboard-shortcuts]]
+* [[oop-quotes]]
+* [[responsibility-driven-design]]
 * [[semantic-versioning]]
 * [[strangler-pattern]]
 * [[timeline]]
 * [[two-type-error]]
-* [[oop-quotes]]
 
 ---
 

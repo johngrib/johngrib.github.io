@@ -2774,6 +2774,14 @@ relations:
     url: /wiki/relations
     updated: '2019-06-04 21:21:56 +0900'
     children: []
+responsibility-driven-design:
+    type: wiki
+    title: '책임 주도 설계'
+    summary: 'Responsibility-Driven Design, RDD'
+    parent: index
+    url: /wiki/responsibility-driven-design
+    updated: '2020-03-03 22:57:07 +0900'
+    children: []
 REST-paper-summary:
     type: wiki
     title: '(요약) Architectural Styles and the Design of Network-based Software Architectures by Roy Thomas Fielding, 2000'
