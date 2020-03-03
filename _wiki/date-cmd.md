@@ -3,7 +3,7 @@ layout  : wiki
 title   : date 명령어
 summary : 날짜나 시간을 출력하거나 설정한다
 date    : 2018-08-03 05:19:22 +0900
-updated : 2019-12-07 13:29:45 +0900
+updated : 2020-03-03 23:05:51 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -20,11 +20,20 @@ latex   : false
  # 현재 날짜, 시간
 date
 
+ # UTC 현재 날짜, 시간
+date -u
+
  # 현재 날짜, 시간 포매팅
 date '+%Y-%m-%d %H:%M:%S %a %Z'
 
+ # UTC 현재 날짜, 시간 포매팅
+date -u '+%Y-%m-%d %H:%M:%S %a %Z'
+
  # 오늘은 1년 중 몇 번째 주(week)인가?
 date +%V
+
+ # 현재의 unix timestamp를 출력
+date +%s
 
  # unix timestamp를 읽기 쉬운 날짜로 변환
 date -r 1572511074
