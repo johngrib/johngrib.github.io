@@ -3,7 +3,7 @@ layout  : wiki
 title   : JDK 13 둘러보기
 summary : 
 date    : 2019-09-19 10:40:38 +0900
-updated : 2019-09-19 12:23:31 +0900
+updated : 2020-03-04 21:19:06 +0900
 tag     : java
 toc     : true
 public  : true
@@ -200,7 +200,7 @@ public class Main {
 ```
 
 
-# 참고문헌
+## 참고문헌
 
 * [JDK 13][open-jdk-13]
 
