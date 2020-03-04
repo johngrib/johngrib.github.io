@@ -3,7 +3,7 @@ layout  : wiki
 title   : n개의 제비뽑기에 n번 도전
 summary : 1/e
 date    : 2017-12-03 09:44:20 +0900
-updated : 2020-03-04 22:18:07 +0900
+updated : 2020-03-04 22:53:23 +0900
 tag     : math 확률
 toc     : true
 public  : true
@@ -21,7 +21,47 @@ latex   : true
 
 쭉 읽어보면 대부분의 사람들이 계산해보면 $$e^{-1}$$ 가 나온다고 답변을 달아놨다.
 
-[WolframAlpah에 검색](https://www.wolframalpha.com/input/?i=lim+n-%3Einf+((n-1)%2Fn)%5En)해보니 역시 $$e^{-1}$$ 가 나온다.
+사실 이건 조금만 생각해봐도 알 수 있는데, $$e$$의 정의가 다음과 같기 때문이다.
+
+$$
+\begin{align}
+e & = \lim_{ n \to \infty } \left( 1 + \frac{1}{n} \right)^n \\
+  & = \lim_{ n \to \infty } \left( \frac{n+1}{n} \right)^n \\
+\end{align}
+$$
+
+분모 분자를 뒤집어 주면 이런 모양이 된다.
+
+$$
+\frac{1}{e} = \lim_{ n \to \infty } \left( \frac{n}{n+1} \right)^n
+$$
+
+이제 $$ m = n + 1 $$ 이라 하고 다음과 같이 치환해 보자.
+
+$$
+\frac{1}{e} = \lim_{ m \to \infty } \left( \frac{m-1}{m} \right)^{m-1}
+$$
+
+더 따져볼 것도 없을 것 같지만, 기계적인 과정도 살펴보자면 다음과 같이 할 수 있을 것이다.
+
+$$
+\begin{align}
+\frac{1}{e} & = \lim_{ m \to \infty } \left( \frac{m-1}{m} \right)^{m-1} \\
+            & = \lim_{ m \to \infty } \left( \frac{m-1}{m} \right)^{m} \times \frac{m}{m-1} \\
+            & = \lim_{ m \to \infty } \left( \frac{m-1}{m} \right)^{m} \times \frac{m \over m}{ {m \over m }-{1 \over m}} \\
+            & = \lim_{ m \to \infty } \left( \frac{m-1}{m} \right)^{m} \times 1 \\
+\end{align}
+$$
+
+이제 질문의 식을 다시 살펴보면 $$ \frac{1}{e} $$ 이라는 것을 어렵지 않게 알 수 있다.
+
+$$
+\begin{align}
+\lim_{n\to\infty} \left( 1-\frac{1}{n} \right)^n & = \lim_{n\to\infty} \left( \frac{n-1}{n} \right)^n \\
+\end{align}
+$$
+
+[WolframAlpah에 검색][n_inf]해보면 역시 $$e^{-1}$$ 가 나온다.
 
 그리고 $$e^{-1}$$의 값은 대략 `0.367879` 이다.
 
