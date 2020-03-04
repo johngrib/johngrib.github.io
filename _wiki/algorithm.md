@@ -3,7 +3,7 @@ layout  : category
 title   : 알고리즘
 summary :
 date    : 2018-03-31 18:01:38 +0900
-updated : 2019-02-05 22:53:48 +0900
+updated : 2020-03-04 20:46:42 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 알고리즘의 특성
+## 알고리즘의 특성
 
 >
 * Input. An algorithm has input values from a specified set.
@@ -33,8 +33,8 @@ ified set. The output values are the solution to the problem.
 * 효율성. 알고리즘의 각 단계를 반드시 유한한 시간 내에 수행하는 것이 가능해야 한다.
 * 일반성. 프로시저는 단지 특정한 집합의 입력값에 대해서만 아니라 요구되는 형태의 모든 문제에 적용할 수 있어야 한다.
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 
-# Documents
+## Documents
