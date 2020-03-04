@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 8 HashMap 퍼포먼스 향상
 summary : 균형 트리를 도입해 O(n) 에서 O(log n)으로 향상됐다
 date    : 2019-10-27 11:54:24 +0900
-updated : 2019-10-28 17:32:42 +0900
+updated : 2020-03-04 21:29:58 +0900
 tag     : java
 toc     : true
 public  : true
@@ -108,7 +108,7 @@ int hash32() {
 그러나 Java 8 버전의 String 클래스에는 `hash32`가 존재하지 않았다.
 
 >
-***Description*  
+**Description**  
 The principal idea is that once the number of items in a hash bucket grows beyond a certain threshold, that bucket will switch from using a linked list of entries to a balanced tree. In the case of high hash collisions, this will improve worst-case performance from O(n) to O(log n).  
 This technique has already been implemented in the latest version of the java.util.concurrent.ConcurrentHashMap class, which is also slated for inclusion in JDK 8 as part of JEP 155. Portions of that code will be re-used to implement the same idea in the HashMap and LinkedHashMap classes. Only the implementations will be changed; no interfaces or specifications will be modified. Some user-visible behaviors, such as iteration order, will change within the bounds of their current specifications.  
 We will not implement this technique in the legacy Hashtable class. That class has been part of the platform since Java 1.0, and some legacy code that uses it is known to depend upon iteration order. Hashtable will be reverted to its state prior to the introduction of the alternative string-hashing implementation, and will maintain its historical iteration order.  
