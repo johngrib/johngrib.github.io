@@ -2428,7 +2428,7 @@ my-keyboard:
     summary: '역사를 정리해 보자'
     parent: my-lifehack
     url: /wiki/my-keyboard
-    updated: '2020-02-17 23:20:38 +0900'
+    updated: '2020-03-04 23:24:56 +0900'
     children: []
 my-lifehack:
     type: wiki
