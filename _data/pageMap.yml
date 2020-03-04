@@ -572,7 +572,7 @@ c-m-02-Sums-01:
     summary: 02.SUMS.01.NOTATION
     parent: study-concrete-math
     url: /wiki/c-m-02-Sums-01
-    updated: '2018-05-18 13:32:39 +0900'
+    updated: '2020-03-04 21:08:02 +0900'
     children: []
 c-m-02-Sums-02:
     type: wiki
@@ -2349,7 +2349,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, fibonacci, frac1e, gcd, graph, halting-problem, primitive-roots, relations, rule-of-succession, secretary-problem]
+    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, fibonacci, frac1e, gcd, graph, halting-problem, primitive-roots, relations, rule-of-succession, secretary-problem, sigma-notation]
 mathjax-latex:
     type: wiki
     title: 'MathJax로 LaTeX 사용하기'
@@ -2997,6 +2997,14 @@ Shunsho-juwa:
     parent: book
     url: /wiki/Shunsho-juwa
     updated: '2018-03-14 09:03:34 +0900'
+    children: []
+sigma-notation:
+    type: wiki
+    title: '시그마 표기법'
+    summary: '∑ 기호의 의미와 사용'
+    parent: math
+    url: /wiki/sigma-notation
+    updated: '2020-03-04 21:06:48 +0900'
     children: []
 Software-Craftsman:
     type: wiki

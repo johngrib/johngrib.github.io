@@ -39,6 +39,7 @@ math:
     - {fileName: relations}
     - {fileName: rule-of-succession}
     - {fileName: secretary-problem}
+    - {fileName: sigma-notation}
     - {fileName: study-concrete-math}
     - {fileName: study-discrete-mathematics}
     - {fileName: tower-of-hanoi}

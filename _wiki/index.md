@@ -78,6 +78,7 @@ regenerate: true
 * [[relations]]
 * [[rule-of-succession]]
 * [[secretary-problem]]
+* [[sigma-notation]]{시그마 표기법}
 
 ## [[media]]
 
