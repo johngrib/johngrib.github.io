@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 키보드 히스토리
 summary : 역사를 정리해 보자
 date    : 2018-11-22 10:57:14 +0900
-updated : 2020-03-04 23:24:56 +0900
+updated : 2020-03-05 22:14:24 +0900
 tag     : keyboard
 toc     : true
 public  : true
@@ -314,7 +314,8 @@ MDA 키캡 구매
 
 UHK의 문제점에 대해 기록해 본다.
 
-* UHK 가 아니어도 split keyboard는 여기저기에서 많이 팔고 있다.
+* UHK 가 아니어도 splitted keyboard는 여기저기에서 많이 팔고 있다.
+    * Koolertron SMKD 62 같은 키보드. 사용해보지는 않았지만 좋아 보인다.
 * 정전식 무접점이 아니라 기계식 키 스위치를 사용한다.
 * 구매하고 1년이 지나도 모듈 생산이 완료되지 않았다. 얼마나 더 기다려야 할지도 알 수 없다.
 * 키보드의 물리 버튼 입력 없이 UHK Agent 로 키 레이아웃을 변경할 수 있다.
