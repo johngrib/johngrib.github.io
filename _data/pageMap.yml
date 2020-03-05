@@ -1933,7 +1933,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-enum, java-functional-interface, java-interface, java-jigsaw-quick-start, java-lambda, java-optional, java-random, java-remainder-operator, java-stream, java-switch-expression, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-enum, java-functional-interface, java-interface, java-jigsaw-quick-start, java-lambda, java-optional, java-random, java-remainder-operator, java-stream, java-switch-expression, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, ternary-operator-and-null-pointer-exception, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -3261,6 +3261,14 @@ template-method-pattern:
     parent: design-pattern
     url: /wiki/template-method-pattern
     updated: '2019-11-21 09:28:58 +0900'
+    children: []
+ternary-operator-and-null-pointer-exception:
+    type: wiki
+    title: 'Java의 삼항 연산자와 Null Pointer Exception'
+    summary: '언박싱하다 NPE가 터지는 것이 원인'
+    parent: Java
+    url: /wiki/ternary-operator-and-null-pointer-exception
+    updated: '2020-03-05 23:56:36 +0900'
     children: []
 test-terms:
     type: wiki

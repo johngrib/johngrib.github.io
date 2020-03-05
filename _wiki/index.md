@@ -172,6 +172,7 @@ regenerate: true
 * [[Object-hashCode]]
 * [[Object-toString]]
 * [[private-constructor]]
+* [[ternary-operator-and-null-pointer-exception]]
 * [[use-java-primitive-type-for-performance]]
 
 #### [[jvm]]
