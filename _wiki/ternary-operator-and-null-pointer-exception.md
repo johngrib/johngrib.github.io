@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 삼항 연산자와 Null Pointer Exception
 summary : 언박싱하다 NPE가 터지는 것이 원인
 date    : 2020-03-05 22:50:36 +0900
-updated : 2020-03-07 17:37:26 +0900
+updated : 2020-03-07 19:55:41 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,8 +12,6 @@ latex   : false
 ---
 * TOC
 {:toc}
-
-**Go 언어에 삼항 연산자가 없는 이유를 생각해 볼 좋은 기회**
 
 ## 발단: 삼항 연산자 사용중 NPE 발생
 
@@ -192,8 +190,6 @@ Integer getNumberWithoutNPE() {
   return number1;
 }
 ```
-
-Java 이야기 중이긴 하지만... Go 언어는 조건 연산자가 없고 그냥 `if`로 다 해결해야 하는데 아주 탁월한 선택이라 생각한다.
 
 ### 조건 연산자의 타입을 맞춰준다
 
