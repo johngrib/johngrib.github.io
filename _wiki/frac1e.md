@@ -3,7 +3,7 @@ layout  : wiki
 title   : n개의 제비뽑기에 n번 도전
 summary : 1/e
 date    : 2017-12-03 09:44:20 +0900
-updated : 2020-03-04 22:59:49 +0900
+updated : 2020-03-08 18:41:34 +0900
 tag     : math 확률
 toc     : true
 public  : true
@@ -128,6 +128,10 @@ $$
 * [n = 1000 인 경우][n_1000]
 * [n = 5000 인 경우][n_5000]
 * [n = 5008 인 경우][n_5008] 부터는 Wolfram Alpha 에서 `Wolfram|Alpha doesn't understand your query` 라는 메시지만 나오고 결과가 나오지 않는다.
+
+## 함께 읽기
+
+* [[secretary-problem]]{비서 문제}
 
 [n_1]: https://www.wolframalpha.com/input/?i=n%3D1%3B+%28%28n-1%29%2Fn%29%5En
 [n_2]: https://www.wolframalpha.com/input/?i=n%3D2%3B+%28%28n-1%29%2Fn%29%5En

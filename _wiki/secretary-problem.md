@@ -3,7 +3,7 @@ layout  : wiki
 title   : 비서 문제(Secretary problem)
 summary : 37% 법칙
 date    : 2018-03-31 18:03:21 +0900
-updated : 2019-11-09 16:37:56 +0900
+updated : 2020-03-08 18:42:04 +0900
 tag     : math
 toc     : true
 public  : true
@@ -367,6 +367,9 @@ $$ \frac{1}{e} = 0.3678794411714...$$
 
 같은 방식으로, 자취방을 보러 다닐 때나 쇼핑몰에서 적당한 장갑을 찾을 때 등에도 응용할 수 잇다.
 
+## 함께 읽기
+
+* [[frac1e]]{n개의 제비뽑기에 n번 도전}
 
 
 ## Links
