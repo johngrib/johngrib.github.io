@@ -3,8 +3,8 @@ layout  : wiki
 title   : Java의 삼항 연산자와 Null Pointer Exception
 summary : 언박싱하다 NPE가 터지는 것이 원인
 date    : 2020-03-05 22:50:36 +0900
-updated : 2020-03-08 14:48:02 +0900
-tag     : 
+updated : 2020-03-08 18:40:21 +0900
+tag     : java
 toc     : true
 public  : true
 parent  : [[Java]]
@@ -341,6 +341,9 @@ double > float > long > int
     * 한 눈에 `byte | int`라는 것을 알아볼 수 있다.
     * 즉, `byte`로 표현 가능한 값이면 `byte`, 그렇지 않다면 `int`가 된다는 뜻이다.
 
+## 함께 읽기
+
+* [[use-java-primitive-type-for-performance]]{Java Autoboxing 자동 변환 주의점}
 
 
 [java-7-15-25]: https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.25

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Autoboxing 자동 변환 주의점
 summary : Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다
 date    : 2018-03-04 13:47:40 +0900
-updated : 2018-03-05 16:22:11 +0900
+updated : 2020-03-08 18:39:46 +0900
 tag     : java tip performance
 toc     : true
 public  : true
@@ -125,6 +125,10 @@ Integer는 int를 완벽히 대체할 수 없습니다. 오토박싱과 언박�
 
 * 오토박싱으로 인한 속도 지연이 문제가 되는 상황이라면 primitive 타입으로 바꾸는 것을 검토해 볼 것.
 * 가급적이면 primitive 타입을 쓰자.
+
+## 함께 읽기
+
+* [[ternary-operator-and-null-pointer-exception]]{Java의 삼항 연산자와 Null Pointer Exception}
 
 ## Links
 

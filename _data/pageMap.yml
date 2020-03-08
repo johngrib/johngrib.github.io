@@ -3268,7 +3268,7 @@ ternary-operator-and-null-pointer-exception:
     summary: '언박싱하다 NPE가 터지는 것이 원인'
     parent: Java
     url: /wiki/ternary-operator-and-null-pointer-exception
-    updated: '2020-03-08 14:48:02 +0900'
+    updated: '2020-03-08 18:40:21 +0900'
     children: []
 test-terms:
     type: wiki
@@ -3508,7 +3508,7 @@ use-java-primitive-type-for-performance:
     summary: 'Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다'
     parent: Java
     url: /wiki/use-java-primitive-type-for-performance
-    updated: '2018-03-05 16:22:11 +0900'
+    updated: '2020-03-08 18:39:46 +0900'
     children: []
 useful-site:
     type: wiki

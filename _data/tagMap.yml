@@ -550,6 +550,7 @@ java:
     - {fileName: private-constructor}
     - {fileName: spring-versions}
     - {fileName: summary-The-Pauseless-GC-Algorithm}
+    - {fileName: ternary-operator-and-null-pointer-exception}
     - {fileName: use-java-primitive-type-for-performance}
 design:
     - {fileName: Design-for-Hackers}
