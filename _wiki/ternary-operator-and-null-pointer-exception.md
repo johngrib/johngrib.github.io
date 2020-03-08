@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 삼항 연산자와 Null Pointer Exception
 summary : 언박싱하다 NPE가 터지는 것이 원인
 date    : 2020-03-05 22:50:36 +0900
-updated : 2020-03-07 19:55:41 +0900
+updated : 2020-03-08 14:48:02 +0900
 tag     : 
 toc     : true
 public  : true
@@ -27,7 +27,7 @@ latex   : false
 Integer occursNullPointerException() {
   boolean check = false;
   Integer number1 = null;
-  Integer number2 = check ? 0 : number1;    // NPE
+  Integer number2 = check ? 0 : number1; // NPE
   return number2;
 }
 ```
