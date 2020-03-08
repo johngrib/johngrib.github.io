@@ -733,7 +733,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, csplit, ctags, curl, cut, date-cmd, df, diff, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, how-to-escape-cli, java_home, less-cmd, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, csplit, ctags, curl, cut, date-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, how-to-escape-cli, java_home, less-cmd, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -1093,6 +1093,14 @@ discrete-math-summations:
     parent: study-discrete-mathematics
     url: /wiki/discrete-math-summations
     updated: '2019-09-10 23:43:08 +0900'
+    children: []
+ditto-cmd:
+    type: wiki
+    title: 'ditto 명령어'
+    summary: 'BSD의 디렉토리 병합 복사, 압축/압축해제 명령'
+    parent: command-line
+    url: /wiki/ditto-cmd
+    updated: '2020-03-08 19:24:08 +0900'
     children: []
 docker:
     type: wiki

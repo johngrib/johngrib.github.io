@@ -315,6 +315,7 @@ regenerate: true
 * [[date-cmd]]
 * [[df]]
 * [[diff]]
+* [[ditto-cmd]]
 * [[du]]
 * [[fc]]
 * [[fd-cmd]]

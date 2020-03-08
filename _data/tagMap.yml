@@ -229,6 +229,7 @@ bash:
     - {fileName: date-cmd}
     - {fileName: df}
     - {fileName: diff}
+    - {fileName: ditto-cmd}
     - {fileName: docker}
     - {fileName: du}
     - {fileName: fc}
@@ -280,6 +281,7 @@ command:
     - {fileName: date-cmd}
     - {fileName: df}
     - {fileName: diff}
+    - {fileName: ditto-cmd}
     - {fileName: docker}
     - {fileName: du}
     - {fileName: fc}
