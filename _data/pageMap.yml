@@ -3029,7 +3029,7 @@ software-engineering:
     parent: index
     url: /wiki/software-engineering
     updated: '2020-01-16 20:22:50 +0900'
-    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-terms, two-pizza-team]
+    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-terms, two-pizza-team, working-together]
 Software-Engineering-Code-of-Ethics:
     type: wiki
     title: '소프트웨어 공학 윤리 강령과 업무 규범'
@@ -3733,6 +3733,14 @@ Wordstar:
     parent: legend
     url: /wiki/Wordstar
     updated: '2019-12-09 22:56:22 +0900'
+    children: []
+working-together:
+    type: wiki
+    title: '협업을 잘 하기 위한 연습'
+    summary: '협업도 열심히 배우고 익혀야 하는 스킬이다'
+    parent: software-engineering
+    url: /wiki/working-together
+    updated: '2020-03-09 22:15:02 +0900'
     children: []
 YAML:
     type: wiki

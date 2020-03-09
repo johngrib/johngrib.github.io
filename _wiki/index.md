@@ -480,6 +480,7 @@ regenerate: true
 * [[precision-of-number]]
 
 ## [[software-engineering]]
+
 * [[20-percent-project]]
 * [[agile]]
 * [[andon-cord]]
@@ -487,13 +488,14 @@ regenerate: true
 * [[dev-schedule-quotes]]
 * [[devops]]
 * [[kanban]]
-* [[scrum]]
 * [[persona]]
 * [[polite-software]]
+* [[scrum]]
 * [[Software-Engineering-Code-of-Ethics]]
 * [[technical-debt]]
 * [[test-terms]]
 * [[two-pizza-team]]
+* [[working-together]]
 
 ## [[blog]]
 
