@@ -2445,7 +2445,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [cleaning-tile-cycle, coding-font, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
+    children: [cleaning-tile-cycle, coding-font, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch, working-together]
 my-mac-os-terminal:
     type: wiki
     title: 'macOS 초심자를 위한 터미널 공부 가이드'
@@ -3029,7 +3029,7 @@ software-engineering:
     parent: index
     url: /wiki/software-engineering
     updated: '2020-01-16 20:22:50 +0900'
-    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-terms, two-pizza-team, working-together]
+    children: [20-percent-project, agile, andon-cord, Continuous-Integration, dev-schedule-quotes, devops, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-terms, two-pizza-team]
 Software-Engineering-Code-of-Ethics:
     type: wiki
     title: '소프트웨어 공학 윤리 강령과 업무 규범'
@@ -3738,9 +3738,9 @@ working-together:
     type: wiki
     title: '협업을 잘 하기 위한 연습'
     summary: '협업도 열심히 배우고 익혀야 하는 스킬이다'
-    parent: software-engineering
+    parent: my-lifehack
     url: /wiki/working-together
-    updated: '2020-03-09 22:15:02 +0900'
+    updated: '2020-03-10 07:56:21 +0900'
     children: []
 YAML:
     type: wiki
