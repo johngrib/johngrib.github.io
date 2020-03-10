@@ -327,6 +327,7 @@ regenerate: true
 * [[grep]]
 * [[how-to-escape-cli]]
 * [[java_home]]
+* [[jq-cmd]]
 * [[less-cmd]]
 * [[lsof]]
 * [[my-bash-cheatsheet]]

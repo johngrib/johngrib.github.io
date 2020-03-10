@@ -733,7 +733,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, csplit, ctags, curl, cut, date-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, how-to-escape-cli, java_home, less-cmd, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, csplit, ctags, curl, cut, date-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lsof, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -908,7 +908,7 @@ date-cmd:
     summary: '날짜나 시간을 출력하거나 설정한다'
     parent: command-line
     url: /wiki/date-cmd
-    updated: '2020-03-03 23:05:51 +0900'
+    updated: '2020-03-10 23:04:37 +0900'
     children: []
 decorator-pattern:
     type: wiki
@@ -2157,6 +2157,14 @@ John-W-Backus:
     parent: legend
     url: /wiki/John-W-Backus
     updated: '2019-03-01 17:01:12 +0900'
+    children: []
+jq-cmd:
+    type: wiki
+    title: 'jq 명령어'
+    summary: ""
+    parent: command-line
+    url: /wiki/jq-cmd
+    updated: '2020-03-10 23:06:24 +0900'
     children: []
 junit5-nested:
     type: wiki

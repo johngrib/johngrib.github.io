@@ -242,6 +242,7 @@ bash:
     - {fileName: grep}
     - {fileName: how-to-escape-cli}
     - {fileName: java_home}
+    - {fileName: jq-cmd}
     - {fileName: less-cmd}
     - {fileName: lsof}
     - {fileName: my-bash-cheatsheet}
@@ -294,6 +295,7 @@ command:
     - {fileName: grep}
     - {fileName: how-to-escape-cli}
     - {fileName: java_home}
+    - {fileName: jq-cmd}
     - {fileName: less-cmd}
     - {fileName: lsof}
     - {fileName: openssl}
