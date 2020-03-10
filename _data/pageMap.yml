@@ -2453,7 +2453,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [cleaning-tile-cycle, coding-font, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch, working-together]
+    children: [cleaning-tile-cycle, coding-font, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
 my-mac-os-terminal:
     type: wiki
     title: 'macOS 초심자를 위한 터미널 공부 가이드'
@@ -3746,9 +3746,9 @@ working-together:
     type: wiki
     title: '함께 일하기'
     summary: '협업도 열심히 배우고 익혀야 하는 스킬이다'
-    parent: my-lifehack
+    parent: index
     url: /wiki/working-together
-    updated: '2020-03-10 21:07:39 +0900'
+    updated: '2020-03-11 08:11:03 +0900'
     children: []
 YAML:
     type: wiki

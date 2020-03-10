@@ -496,7 +496,6 @@ regenerate: true
 * [[technical-debt]]
 * [[test-terms]]
 * [[two-pizza-team]]
-* [[working-together]]
 
 ## [[blog]]
 
@@ -524,6 +523,7 @@ regenerate: true
 * [[strangler-pattern]]
 * [[timeline]]
 * [[two-type-error]]
+* [[working-together]]
 
 ---
 
