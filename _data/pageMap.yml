@@ -1406,14 +1406,6 @@ floating-point:
     url: /wiki/floating-point
     updated: '2020-01-28 22:40:55 +0900'
     children: []
-for-craftsmanship:
-    type: wiki
-    title: '장인정신을 위하여'
-    summary: ""
-    parent: index
-    url: /wiki/for-craftsmanship
-    updated: '2019-11-06 21:42:38 +0900'
-    children: [precision-of-number]
 fortune-cmd:
     type: wiki
     title: 'fortune 명령어'
@@ -2365,7 +2357,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, fibonacci, frac1e, gcd, graph, halting-problem, primitive-roots, relations, rule-of-succession, secretary-problem, sigma-notation]
+    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, fibonacci, frac1e, gcd, graph, halting-problem, precision-of-number, primitive-roots, relations, rule-of-succession, secretary-problem, sigma-notation]
 mathjax-latex:
     type: wiki
     title: 'MathJax로 LaTeX 사용하기'
@@ -2690,9 +2682,9 @@ precision-of-number:
     type: wiki
     title: '수의 정밀도'
     summary: '실제로 갖고 있지 않은 정보를 창조하면 안된다'
-    parent: for-craftsmanship
+    parent: math
     url: /wiki/precision-of-number
-    updated: '2019-11-06 21:43:23 +0900'
+    updated: '2020-03-11 23:08:17 +0900'
     children: []
 primitive-roots:
     type: wiki

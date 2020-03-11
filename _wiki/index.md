@@ -74,6 +74,7 @@ regenerate: true
 * [[gcd]]
 * [[graph]]
 * [[halting-problem]]
+* [[precision-of-number]]
 * [[primitive-roots]]
 * [[relations]]
 * [[rule-of-succession]]
@@ -478,7 +479,6 @@ regenerate: true
 * [[summary-The-Pauseless-GC-Algorithm]]
 
 ## [[for-craftsmanship]]
-* [[precision-of-number]]
 
 ## [[software-engineering]]
 

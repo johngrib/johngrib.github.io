@@ -3,11 +3,11 @@ layout  : wiki
 title   : 수의 정밀도
 summary : 실제로 갖고 있지 않은 정보를 창조하면 안된다
 date    : 2019-11-06 21:23:53 +0900
-updated : 2019-11-06 21:43:23 +0900
+updated : 2020-03-11 23:08:17 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : for-craftsmanship
+parent  : [[math]]
 latex   : true
 ---
 * TOC
