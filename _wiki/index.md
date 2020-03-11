@@ -478,8 +478,6 @@ regenerate: true
 * [[summary-Data-Abstraction-and-Hierarchy]]
 * [[summary-The-Pauseless-GC-Algorithm]]
 
-## [[for-craftsmanship]]
-
 ## [[software-engineering]]
 
 * [[20-percent-project]]
