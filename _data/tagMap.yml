@@ -552,6 +552,7 @@ java:
     - {fileName: Object-hashCode}
     - {fileName: Object-toString}
     - {fileName: private-constructor}
+    - {fileName: restdoc-item-generator}
     - {fileName: spring-versions}
     - {fileName: summary-The-Pauseless-GC-Algorithm}
     - {fileName: ternary-operator-and-null-pointer-exception}

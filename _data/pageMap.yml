@@ -2798,6 +2798,14 @@ REST-paper-summary:
     url: /wiki/REST-paper-summary
     updated: '2020-02-17 08:07:39 +0900'
     children: []
+restdoc-item-generator:
+    type: wiki
+    title: '짜증나는 Restdoc 템플릿을 조금 더 편하게 작성하자'
+    summary: ""
+    parent: index
+    url: /wiki/restdoc-item-generator
+    updated: '2020-03-14 00:11:06 +0900'
+    children: []
 review:
     type: wiki
     title: '회고 모음'

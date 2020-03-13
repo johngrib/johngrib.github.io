@@ -517,6 +517,7 @@ regenerate: true
 * [[mac-keyboard-shortcuts]]
 * [[oop-quotes]]
 * [[responsibility-driven-design]]
+* [[restdoc-item-generator]]
 * [[semantic-versioning]]
 * [[strangler-pattern]]
 * [[timeline]]
