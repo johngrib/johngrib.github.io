@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2020-03-14 15:08:26 +0900
+updated : 2020-03-14 15:52:14 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+* 참고: 이 글의 모든 코드는 [Github repository][example-snapshot]에 올려 두었다.
 
 ## Describe - Context - It 패턴
 
@@ -114,7 +116,7 @@ Java에서는 다른 언어와 달리 메소드 내부에 메소드를 곧바로
 
 계층 구조이기 때문에 특정 범위를 폴드하는 것도 가능하다.
 
-위의 테스트를 가동하는 데에 사용한 소스코드는 [내 저장소][example]에서 볼 수 있다.
+위의 테스트를 가동하는 데에 사용한 소스코드는 [내 저장소][example-snapshot]에서 볼 수 있다.
 
 * [ComplexNumber.java][example-1] - 복소수 클래스
 * [ComplexNumberTest.java][example-eng] - 테스트 코드(영어)
@@ -169,8 +171,6 @@ Java에서는 다른 언어와 달리 메소드 내부에 메소드를 곧바로
 이와 같이 하나의 완전한 문장이 되는지 체크하며 작성하는 습관을 기를 필요가 있다.
 
 다음은 코드 전문이다.
-
-* [ComplexNumberKoTest.java][example-kor]
 
 ```java
 package com.johngrib.example;
@@ -348,6 +348,8 @@ void it_returns_a_valid_complex() {
 
 다음은 상속을 사용해 중복을 제거한 테스트 코드의 예제이다.
 
+* [ComplexNumberKoTest.java][example-kor]
+
 ```java
 // 공통되는 부분만 뽑아낸 abstract class
 abstract class ContextTwoComplex {
@@ -414,6 +416,269 @@ class Describe_sum {
 }
 ```
 
+### JPA 와 함께 사용하기
+
+#### 단순한 형태의 테스트
+
+다음과 같은 `JpaRepository`를 추가했다고 하자.
+
+* [MemberRepository][jparepo]
+
+```java
+public interface MemberRepository extends JpaRepository<Member, Long> {
+}
+```
+
+자동으로 주어지는 `save` 메소드는 다음과 같이 테스트할 수 있다.
+
+* [MemberRepositoryTest][jpatest]
+
+```java
+@ExtendWith(SpringExtension.class)
+@DataJpaTest
+@DisplayName("MemberRepository")
+class MemberRepositoryTest {
+
+  @Autowired
+  private MemberRepository repository;
+  final String givenName = "홍길동";
+
+  @Nested
+  @DisplayName("save 메소드")
+  class Describe_save {
+
+    @BeforeEach
+    void prepare() {
+      repository.deleteAll();
+    }
+
+    @Nested
+    @DisplayName("멤버 객체가 주어지면")
+    class Context_with_a_member {
+      final Member givenMember = new Member(givenName);
+
+      @Test
+      @DisplayName("주어진 객체를 저장하고, 저장된 객체를 리턴한다")
+      void it_saves_obj_and_returns_a_saved_obj() {
+        Assertions.assertNull(givenMember.getId(),
+          "저장되지 않은 객체는 아이디가 null 이다");
+
+        final Member saved = repository.save(givenMember);
+
+        Assertions.assertNotNull(saved.getId(),
+          "저장된 객체는 아이디가 추가되어 있다");
+        Assertions.assertEquals(saved.getName(), givenName);
+      }
+    }
+  }
+}
+```
+
+테스트 결과는 다음과 같다.
+
+![]( /post-img/junit5-nested/save-method.png )
+
+
+#### Invalid Data Access Api Usage Exception 예외가 발생하는 테스트
+
+그런데 다음과 같은 메소드가 추가되었다고 하자.
+
+* [MemberRepository][jparepo]
+
+```java
+public interface MemberRepository extends JpaRepository<Member, Long> {
+
+  /**
+   * 방문 카운터를 증가시킨다.
+   *
+   * @return 업데이트된 레코드의 수
+   */
+  @Query("update Member m "
+          + "set m.visited = m.visited + :plus "
+          + "where m.id = :id ")
+  @Modifying(clearAutomatically = true, flushAutomatically = true)
+  int increaseCount(@Param("id") Long id, @Param("plus") int plus);
+}
+```
+
+이 메소드를 다음과 같이 테스트하면...
+
+* [MemberRepositoryTest][jpatest]
+
+```java
+@Nested
+@DisplayName("increase 메소드 - JPA 어노테이션이 없어 실패하는 테스트")
+class Describe_increase {
+  @Nested
+  @DisplayName("저장된 멤버 객체의 아이디와 증가할 숫자가 주어지면")
+  class Context_with_a_member {
+    final int givenNumber = 3;
+    Member givenMember;
+    long givenId() {
+      return givenMember.getId();
+    }
+
+    @BeforeEach
+    void preapre() {
+      givenMember = repository.save(new Member(givenName, 0));
+    }
+
+    @Test
+    @DisplayName("방문 카운트를 증가시키고, 업데이트된 레코드 수를 리턴한다")
+    void it_increases_count_and_returns_count_of_updated_records() {
+      Assertions.assertEquals(givenMember.getVisited(), 0,
+              "실행 전의 카운트는 0 이다");
+
+      final int updatedRecords = repository.increaseCount(givenId(), givenNumber);
+
+      Assertions.assertEquals(updatedRecords, 1,
+              "한 건이 업데이트되었다");
+      Assertions.assertEquals(
+              givenNumber,
+              repository.findById(givenId()).get().getVisited(),
+              "주어진 증가 숫자만큼 방문 카운트가 증가한다"
+      );
+    }
+  }
+}
+```
+
+다음과 같은 에러 메시지가 출력되며 테스트가 실패한다.
+
+>
+org.springframework.dao.InvalidDataAccessApiUsageException: No EntityManager with actual transaction available for current thread - cannot reliably process 'flush' call;
+nested exception is javax.persistence.TransactionRequiredException: No EntityManager with actual transaction available for current thread - cannot reliably process 'flush' call
+
+![]( /post-img/junit5-nested/increase-fail.png )
+
+
+이유는 뻔한데 `@Nested` 때문이다.
+
+##### 해결 방법: Context에 @DataJpaTest 를 달아준다
+
+가장 쉬운 해결 방법은 `Context` 클래스에 `@DataJpaTest`를 달아 주는 것이다.
+
+`/* ! 필수 ! */` 라고 주석을 적어둔 곳에 주목하자.
+
+* [MemberRepositoryPassTest.java][resolve-anno]
+
+```java
+@Nested
+@DisplayName("increase 메소드 - DataJpaTest 어노테이션을 사용하는 테스트")
+class Describe_increase {
+  @Nested
+  @DataJpaTest  /* ! 필수 ! */
+  @DisplayName("저장된 멤버 객체의 아이디와 증가할 숫자가 주어지면")
+  class Context_with_a_member {
+    final int givenNumber = 3;
+    Member givenMember;
+    long givenId() {
+      return givenMember.getId();
+    }
+
+    /* ! 필수 ! */
+    @Autowired
+    private MemberRepository repository;
+
+    @BeforeEach
+    void preapre() {
+      givenMember = repository.save(new Member(givenName, 0));
+    }
+
+    @Test
+    @DisplayName("방문 카운트를 증가시키고, 업데이트된 레코드 수를 리턴한다")
+    void it_increases_count_and_returns_count_of_updated_records() {
+      Assertions.assertEquals(givenMember.getVisited(), 0,
+              "실행 전의 카운트는 0 이다");
+
+      final int updatedRecords = repository.increaseCount(givenId(), givenNumber);
+
+      Assertions.assertEquals(updatedRecords, 1,
+              "한 건이 업데이트되었다");
+      Assertions.assertEquals(
+              givenNumber,
+              repository.findById(givenId()).get().getVisited(),
+              "주어진 증가 숫자만큼 방문 카운트가 증가한다"
+      );
+    }
+  }
+}
+```
+
+![]( /post-img/junit5-nested/resolve-annotation.png )
+
+
+이 방법은 잘 작동한다. 그러나 `Context` 마다 모두 `@DataJpaTest`를 붙여주는 건 괜찮은데, 일일이 `@Autowired private MemberRepository repository`를 넣어주는 것이 너무 귀찮다.
+
+##### 해결 방법: @DataJpaTest 가 붙은 클래스를 상속한다
+
+다음과 같이 약간 싱글톤 패턴 비슷한 모양이 나오는 클래스를 먼저 만든다.
+
+* [MemberRepositoryPassWithExtendsTest.java][resolve-inherit]
+
+```java
+MemberRepository repository;
+
+@DataJpaTest
+class JpaTest {
+  @Autowired MemberRepository memberRepository;
+
+  public MemberRepository getMemberRepository() {
+    if (repository == null) {
+      repository = memberRepository;
+    }
+    return repository;
+  }
+}
+```
+
+그리고 다음과 같이 `Context`가 위의 클래스를 상속하게 해주면 된다.
+
+`repository` 변수 대신 `getMemberRepository` 메소드만 사용해주면 된다.
+
+* [MemberRepositoryPassWithExtendsTest.java][resolve-inherit]
+
+```java
+@Nested
+@DisplayName("increase 메소드 - DataJpaTest 어노테이션을 상속으로 해결한 테스트")
+class Describe_increase {
+  @Nested
+  @DisplayName("저장된 멤버 객체의 아이디와 증가할 숫자가 주어지면 - 여기에서 JpaTest를 상속한다")
+  class Context_with_a_member extends JpaTest { /* ! 필수 ! */
+    final int givenNumber = 3;
+    Member givenMember;
+    long givenId() {
+      return givenMember.getId();
+    }
+
+    @BeforeEach
+    void prepare() {
+      givenMember = getMemberRepository().save(new Member(givenName, 0));
+    }
+
+    @Test
+    @DisplayName("방문 카운트를 증가시키고, 업데이트된 레코드 수를 리턴한다")
+    void it_increases_count_and_returns_count_of_updated_records() {
+      Assertions.assertEquals(givenMember.getVisited(), 0,
+              "실행 전의 카운트는 0 이다");
+
+      final int updatedRecords = getMemberRepository().increaseCount(givenId(), givenNumber);
+
+      Assertions.assertEquals(updatedRecords, 1,
+              "한 건이 업데이트되었다");
+      Assertions.assertEquals(
+              givenNumber,
+              getMemberRepository().findById(givenId()).get().getVisited(),
+              "주어진 증가 숫자만큼 방문 카운트가 증가한다"
+      );
+    }
+  }
+}
+```
+
+![]( /post-img/junit5-nested/resolve-inherit.png )
+
+이 방법이 그나마 편해서 사용하고 있다. 그러나 더 좋은 방법이 있기를 바란다.
 
 ## 타 언어 테스트 프레임워크의 D-C-I 패턴
 
@@ -554,6 +819,12 @@ object CalculatorSpec: Spek({
 [kotlin-spek]: https://www.spekframework.org/specification/
 
 [example]: https://github.com/johngrib/example-junit5/
+[example-snapshot]: https://github.com/johngrib/example-junit5/tree/a5b4aeb4f7711dc84e3e531dc6f09815f392a949
 [example-1]: https://github.com/johngrib/example-junit5/blob/81a12afe2c9405afb5faa43da7eb46d7aad188a7/src/main/java/com/johngrib/example/math/ComplexNumber.java
 [example-eng]: https://github.com/johngrib/example-junit5/blob/81a12afe2c9405afb5faa43da7eb46d7aad188a7/src/test/java/com/johngrib/example/math/ComplexNumberTest.java
 [example-kor]: https://github.com/johngrib/example-junit5/blob/81a12afe2c9405afb5faa43da7eb46d7aad188a7/src/test/java/com/johngrib/example/math/ComplexNumberKoTest.java
+[jparepo]: https://github.com/johngrib/example-junit5/commit/a5b4aeb4f7711dc84e3e531dc6f09815f392a949#diff-7b8fd71b884d0277e6c1436787cc5e75
+[jpatest]: https://github.com/johngrib/example-junit5/commit/a5b4aeb4f7711dc84e3e531dc6f09815f392a949#diff-31c578db0d1719a05d6477038214d1c7
+[resolve-anno]: https://github.com/johngrib/example-junit5/commit/a5b4aeb4f7711dc84e3e531dc6f09815f392a949#diff-dd8b588364151772ee73a9d72dcf0419
+[resolve-inherit]: https://github.com/johngrib/example-junit5/commit/a5b4aeb4f7711dc84e3e531dc6f09815f392a949#diff-d448362a92356e56b2ea1d6f86f9ea30
+
