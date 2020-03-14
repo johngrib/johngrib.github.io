@@ -3,7 +3,7 @@ layout  : wiki
 title   : Unix philosophy
 summary : 유닉스 철학
 date    : 2018-07-15 07:34:20 +0900
-updated : 2018-07-15 10:18:57 +0900
+updated : 2020-03-14 18:03:32 +0900
 tag     : 
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 기원
+## 기원
 
 * [위키백과에 의하면](https://en.wikipedia.org/wiki/Unix_philosophy )
 유닉스 철학은 Ken Tompson에 의해 고안되었다.
@@ -24,7 +24,7 @@ latex   : false
 
 ![THE BELL SYSTEM TECHNICAL JOURNAL](https://user-images.githubusercontent.com/1855714/42728954-3538fff4-8803-11e8-88ad-aa2f297773f5.png )
 
-# 유닉스 철학
+## 유닉스 철학
 
 다음은 Doublas McIlroy가 쓴 Foreword의 "Style" 부분이다(1902쪽).
 
@@ -43,7 +43,7 @@ A number of maxims have gained currency among the builders and users of the UNIX
 3. 소프트웨어를 설계하고 만들 때, 가까운 시간 안에 실행해 돌려볼 수 있도록 작업할 것. 몇 주 내에 첫 결과물이 나올 수 있도록 하는 것이 이상적이다. 만드는 것이 운영체제라 하더라도 똑같다. 어설픈 부분이 있으면 주저하지 말고 다시 만들 것.
 4. 프로그래밍 작업을 줄이고자 할 때에는, 어설픈 수작업보다 도구를 사용하는 쪽을 선호할 것. 설령 도구를 빌드하기 위해 한참 돌아가야 하고 사용 후 바로 버린다 하더라도 도구를 써서 일을 끝낼 것.
 
-## Peter H. Salus의 요약
+### Peter H. Salus의 요약
 
 Eric Raymond는 The Art of Unix Programming에서
 [Peter H. Salus](https://en.wikipedia.org/wiki/Peter_H._Salus )가 [요약한 유닉스 철학을 다음과 같이 소개](http://www.catb.org/~esr/writings/taoup/html/ch01s06.html )하였다.
@@ -60,7 +60,7 @@ This is the Unix philosophy: Write programs that do one thing and do it well. Wr
 * 프로그램이 텍스트 스트림을 처리하도록 만들어라.
     * 텍스트 스트림은 범용 인터페이스이기 때문이다.
 
-## Rob Pike의 6가지 규칙
+### Rob Pike의 6가지 규칙
 
 한편 Eric Raymond는 Rob Pike의 여섯 가지 규칙도 언급한다.
 
@@ -110,7 +110,7 @@ Rule 6.  There is no Rule 6.
 * 규칙 5. 데이터가 최고다. 올바른 자료 구조를 선택하고 잘 조직하면, 알고리즘은 자연히 따라올 것이다. 프로그래밍의 핵심은 알고리즘이 아니라 자료구조다.
 * 규칙 6. 규칙 6은 없다.
 
-# Links
+## Links
 
 * [Unix philosophy(wikipedia)](https://en.wikipedia.org/wiki/Unix_philosophy )
 * [The Art of Unix Programming(Eric Raymond)](http://www.catb.org/~esr/writings/taoup/html/index.html )
