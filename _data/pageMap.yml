@@ -2164,7 +2164,7 @@ junit5-nested:
     summary: '5의 @Nested 어노테이션을 쓰면 된다'
     parent: index
     url: /wiki/junit5-nested
-    updated: '2020-03-14 14:44:59 +0900'
+    updated: '2020-03-14 15:08:26 +0900'
     children: []
 jvm:
     type: wiki

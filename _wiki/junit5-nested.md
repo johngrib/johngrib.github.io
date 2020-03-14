@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2020-03-14 14:44:59 +0900
+updated : 2020-03-14 15:08:26 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -53,20 +53,60 @@ latex   : false
 | `Context`  | 테스트할 메소드에 입력할 파라미터를 설명한다.      |
 | `It`       | 테스트 대상 메소드가 무엇을 리턴하는지 설명한다.   |
 
+## 계층 구조를 갖는 테스트 코드의 겉모습
+
+보통 다른 언어의 `D-C-I` 패턴을 지원하는 BDD 테스트 프레임워크에서는 다음과 같은 형태의 테스트 코드를 작성하게 된다.
+
+```go
+Describe("Sum", func() {
+  Context("With 300 and 200", func() {
+    It("returns 500", func() {
+      Expect(Sum(300, 200)).To(Equal(500))
+    })
+  })
+
+  Context("With -300 and 200", func() {
+    It("returns -100", func() {
+      Expect(Sum(-300, 200)).To(Equal(-100))
+    })
+  })
+})
+```
+
+이와 같은 형태를 갖는 테스트 코드의 장점을 다시 강조하자면 다음 두 가지이다.
+
+* 테스트 결과가 계층 구조로 출력된다는 것이다.
+* `Describe`, `Context`, `It`함수를 테스트 프레임워크에서 지원해준다.
+    * 테스트 대상과 테스트 조건, 결과가 스코프로 확실히 구분된다.
+
+그런데 내가 Java로 코딩을 하며 많이 목격하기도 했고, 직접 작성했던 많은 BDD 테스트 방식은 보통 다음과 같은 것이었다.
+
+```java
+// given
+int a = 300;
+int b = 200;
+
+// when
+int result = sum(a, b);
+
+// then
+assertEquals(result, 500);
+```
+
+이런 종류의 테스트는 잘 작동하지만, 그냥 주석을 사용하기 때문에 강제성을 띄지 못해 아쉬운 면이 없지 않아 있다.
+
+이 글에서는 Java 에서 `D-C-I` 패턴을 사용해 위와 같은 형태의 테스트 코드를 계층형으로 작성하는 방법을 소개한다.
+
 
 ## JUnit5의 @Nested를 사용 go 계층 구조 테스트 코드를 작성하자
 
-반드시 계층 구조가 아니어도 `D-C-I` 패턴의 테스트 코드를 작성하는 것은 가능하다.
+Java에서는 다른 언어와 달리 메소드 내부에 메소드를 곧바로 만들 수가 없다.
 
-그러나 테스트 코드가 계층 구조를 이루면 테스트 결과를 보기 좋다는 장점이 있다.
+다만 이너 클래스를 사용하면 시각적으로 계층적을 보이는 테스트 코드를 작성하는 것은 가능했다.
 
-또한, 테스트 결과를 보면서 누락된 테스트를 찾기 쉬운 것도 장점이다.
+그러나 JUnit4는 이너 클래스로 작성한 테스트 코드를 직접 지원하지 않아 테스트 결과를 계층형으로 출력해주지 않는다는 문제가 있었다.
 
-경험상 이 방식으로 테스트 코드를 작성하면 빠진 테스트를 찾아 메우는 작업이 굉장히 재밌어서 계속 테스트 코드를 작성하고 정비하게 된다.
-
-Java에서는 다른 언어와 달리 메소드 내부에 메소드를 곧바로 만들 수가 없고,
-JUnit4가 이너 클래스로 작성한 테스트 코드를 특별히 처리하지 않아서 애매한 느낌이었는데
-JUnit5의 `@Nested`를 사용하면 계층 구조의 테스트 코드를 작성할 수 있다는 것을 알게 되었다.
+그러다 JUnit5의 `@Nested`를 사용하면 계층 구조의 테스트 코드를 작성할 수 있다는 것을 알게 되었다.
 
 다음은 가볍게 작성한 클래스 하나를 테스트하는 코드를 IntelliJ에서 돌려본 결과를 캡처한 것이다.
 
@@ -79,8 +119,9 @@ JUnit5의 `@Nested`를 사용하면 계층 구조의 테스트 코드를 작성�
 * [ComplexNumber.java][example-1] - 복소수 클래스
 * [ComplexNumberTest.java][example-eng] - 테스트 코드(영어)
 
-참고: `Describe`와 `Context`는 생략해도 무방하다. 다른 언어의 BDD 프레임워크는 보통 `Describe`와 `Context`가 함수 이름이기 때문에 굳이 설명으로 작성하지 않는다.
-
+| 참고                                                                                                                                                       |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Describe`와 `Context`는 생략해도 무방하다. 다른 언어의 BDD 프레임워크는 보통 `Describe`와 `Context`가 함수 이름이기 때문에 굳이 설명으로 작성하지 않는다. |
 
 ### 한국어로 테스트 설명을 작성하기
 
@@ -513,6 +554,6 @@ object CalculatorSpec: Spek({
 [kotlin-spek]: https://www.spekframework.org/specification/
 
 [example]: https://github.com/johngrib/example-junit5/
-[example-1]: https://github.com/johngrib/example-junit5/blob/56811e8647e115f11a6bf10c911734ea41a87677/src/main/java/com/johngrib/example/ComplexNumber.java
-[example-eng]: https://github.com/johngrib/example-junit5/blob/56811e8647e115f11a6bf10c911734ea41a87677/src/test/java/com/johngrib/example/ComplexNumberTest.java
-[example-kor]: https://github.com/johngrib/example-junit5/blob/bc256b273952a1fd1a355b9343e2ab51f77fac96/src/test/java/com/johngrib/example/ComplexNumberKoTest.java
+[example-1]: https://github.com/johngrib/example-junit5/blob/81a12afe2c9405afb5faa43da7eb46d7aad188a7/src/main/java/com/johngrib/example/math/ComplexNumber.java
+[example-eng]: https://github.com/johngrib/example-junit5/blob/81a12afe2c9405afb5faa43da7eb46d7aad188a7/src/test/java/com/johngrib/example/math/ComplexNumberTest.java
+[example-kor]: https://github.com/johngrib/example-junit5/blob/81a12afe2c9405afb5faa43da7eb46d7aad188a7/src/test/java/com/johngrib/example/math/ComplexNumberKoTest.java
