@@ -3,7 +3,7 @@ layout  : wiki
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2019-07-09 18:50:02 +0900
+updated : 2020-03-14 18:37:48 +0900
 tag     : rfc
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * RFC는 IETF가 관리하고 있는 규약 문서.
     * IETF: 인터넷의 상호 접속성을 향상시키는 것을 목적으로 만들어진 단체.
@@ -23,7 +23,7 @@ latex   : false
 * 일단 발행된 RFC는 수정/삭제되지 않는다.
     * 업데이트는 새로운 RFC 문서가 발행되고, 해당 문서를 언급하고 링크하는 방식으로 이루어진다.
 
-# RFC의 카테고리
+## RFC의 카테고리
 
 RFC 문서의 상단을 보면 메타 정보가 있다. 다음은 [RFC-1796][RFC-1796]의 상단을 인용한 것이다.
 
@@ -57,7 +57,7 @@ Category: Informational                                        J. Postel
 * **Historic**
     * 최신 사양으로 대체되었거나 그 외의 다른 이유로 사용되지 않는 사양.
 
-# 인용
+## 인용
 
 
 "TCP/IP 완벽 가이드"에서는 다음과 같이 소개한다.
@@ -94,11 +94,11 @@ RFC에는 다양한 종류가 있고, 개개의 RFC는 'RFC 1945'처럼 RFC+숫�
 RFC에 문제가 있을 때는 새로운 버전의 RFC로 갱신되기도 하고,
 완전히 새로운 버전이 완성되면 폐기(obsolete)되는 일도 있습니다.
 
-# 관련 있는 문서 모음
+## 관련 있는 문서 모음
 
 [rfcgraph](http://www.lysator.liu.se/~creideiki/rfcgraph/ )
 
-## HTTP
+### HTTP
 
 ![rfc-graph](/post-img/rfc/rfc_graph.jpg)
 
@@ -127,8 +127,8 @@ RFC에 문제가 있을 때는 새로운 버전의 RFC로 갱신되기도 하고
 * 2015-05 [RFC 7540](https://tools.ietf.org/html/rfc7540 ): HTTP/2
 
 
-# 몇몇 RFC 소개
-## RFC 822
+## 몇몇 RFC 소개
+### RFC 822
 
 * 1982-08-13 [STANDARD FOR THE FORMAT OF ARPA INTERNET TEXT MESSAGES](https://tools.ietf.org/html/rfc822 )
     * 아르파 인터넷 텍스트 메시지 형식 표준
@@ -145,48 +145,48 @@ By 1977, the Arpanet employed several informal standards for the text messages (
 1977 년 Arpanet은 호스트 컴퓨터간에 전송된 텍스트 메시지(**메일**)에 대해 여러 가지 비공식 표준을 사용했습니다. 이러한 관습을 문서화하고 임박한 기능을 제공하는 것이 필요하다고 느꼈습니다. 
 
 
-## RFC 2045
+### RFC 2045
 
 * Multipurpose Internet Mail Extensions(MIME) Part One: Format of Internet Message Bodies
 * MIME 메시지 구조
 * [https://www.ietf.org/rfc/rfc2045.txt](https://www.ietf.org/rfc/rfc2045.txt)
 
-## RFC 2046
+### RFC 2046
 
 * Multipurpose Internet Mail Extensions(MIME) Part Two: Media Types
 * MIME 타입
 * [https://www.ietf.org/rfc/rfc2046.txt](https://www.ietf.org/rfc/rfc2046.txt)
 
-## RFC 2047
+### RFC 2047
 
 * MIME(Multipurpose Internet Mail Extensions) Part Three: Message Header Extensions for Non-ASCII Text
 * Non ASCII 문자를 헤더에 포함시키는 방법
 * [https://www.ietf.org/rfc/rfc2047.txt](https://www.ietf.org/rfc/rfc2047.txt)
 
-## RFC 2048
+### RFC 2048
 
 * Multipurpose Internet Mail Extensions(MIME) Part Four: Registration Procedures
 * 새로운 MIME을 등록하는 방법
 * [https://www.ietf.org/rfc/rfc2048.txt](https://www.ietf.org/rfc/rfc2048.txt)
 
-## RFC 2049
+### RFC 2049
 
 * Multipurpose Internet Mail Extensions(MIME) Part Five: Conformance Criteria and Examples
 * MIME: 표준에 적합한지 참고할 수 있는 규칙과 예제
 * [https://www.ietf.org/rfc/rfc2049.txt](https://www.ietf.org/rfc/rfc2049.txt)
 
-## RFC 2141
+### RFC 2141
 
 * URN Syntax
 * [https://www.ietf.org/rfc/rfc2141.txt](https://www.ietf.org/rfc/rfc2141.txt)
 
-## RFC 3092
+### RFC 3092
 
 * Etymology of "Foo"
 * "Foo"의 어원
 * [https://www.ietf.org/rfc/rfc3092.txt](https://www.ietf.org/rfc/rfc3092.txt)
 
-## RFC 4122
+### RFC 4122
 
 * A Universally Unique IDentifier (UUID) URN Namespace
 * UUID, GUID를 정의하고 생성 알고리즘을 기술한다.
@@ -194,17 +194,17 @@ By 1977, the Arpanet employed several informal standards for the text messages (
     * GUID : Globally Unique IDentifier
 * <https://tools.ietf.org/html/rfc4122 >
 
-## RFC 4291
+### RFC 4291
 
 * IP Version 6 Addressing Architecture
 * <https://tools.ietf.org/html/rfc4291 >
 
-## RFC 5321
+### RFC 5321
 
 * Simple Mail Transfer Protocol(SMTP)
 * <https://tools.ietf.org/html/rfc5321 >
 
-## RFC 5424
+### RFC 5424
 
 * The Syslog Protocol
 * <https://tools.ietf.org/html/rfc5424 >
@@ -243,7 +243,7 @@ interface LoggerInterface
 }
 ```
 
-## RFC 6570
+### RFC 6570
 
 * URI Template
 * <https://tools.ietf.org/html/rfc6570 >
@@ -257,7 +257,7 @@ http://example.com/search{?q,lang}
 ```
 
 
-# 참고문헌
+## 참고문헌
 
 * 리얼월드 HTTP 시부카와 요시키 저/김성훈 역 / 한빛미디어 / 2019년 04월 19일
 * TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
