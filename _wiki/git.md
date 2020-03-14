@@ -3,7 +3,7 @@ layout  : category
 title   : git
 summary : 
 date    : 2018-12-02 10:11:09 +0900
-updated : 2019-01-29 16:43:48 +0900
+updated : 2020-03-14 22:13:15 +0900
 tag     : git command
 toc     : true
 public  : true
@@ -85,6 +85,14 @@ $ git filter-branch --commit-filter '
     else
             git commit-tree "$@";
     fi' HEAD    # 모든 커밋의 이메일 주소를 수정한다
+```
+
+## 최초 커밋을 업데이트하기
+
+* [stackoverflow]( https://stackoverflow.com/a/6637891 )
+
+```sh
+git update-ref -d HEAD
 ```
 
 ## 참고문헌
