@@ -3,7 +3,7 @@ layout  : wiki
 title   : 짜증나는 Restdoc 템플릿을 조금 더 편하게 작성하자
 summary : 
 date    : 2020-03-13 23:35:38 +0900
-updated : 2020-03-14 00:11:06 +0900
+updated : 2020-03-14 09:16:34 +0900
 tag     : java
 toc     : true
 public  : true
@@ -19,10 +19,11 @@ latex   : false
 
 그런데 request, response 용 json 스키마를 만드는 게 너무 귀찮았다.
 
-예를 들어 다음과 같은 request json 과, response json 이 있다고 하자.
+예를 들어 다음과 같은 `request json`과, `response json`이 있다고 하자.
 
-* request
-```json
+* request json
+
+```js
 {
   "member": {
     "id": 3092,
@@ -34,7 +35,8 @@ latex   : false
 }
 ```
 
-* response
+* response json
+
 ```json
 {
     "success": true
