@@ -50,6 +50,7 @@ comment: false
 
 ## 기고
 
+* 2020-03-09 [새로 입사한 개발자가 프로젝트에 기여하는 방법 한 가지]( https://helloworld.kurly.com/blog/fix-style-with-command/ ) - 컬리 기술 블로그
 * 2020-02-10 [기술 블로그를 다시 디자인하며]( https://helloworld.kurly.com/blog/redesign-tech-blog/ ) - 컬리 기술 블로그
 * 2018-02-26 [MySQL에서 'a' = 'a '가 true로 평가된다?]( https://woowabros.github.io/study/2018/02/26/mysql-char-comparison.html ) - 우아한형제들 기술 블로그
 * 2017-07-06 [레거시 코드를 파괴하는 Vim 벽돌 깨기]( https://woowabros.github.io/tools/2017/07/06/vim-game-code-break.html ) - 우아한형제들 기술 블로그
