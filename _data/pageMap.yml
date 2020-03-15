@@ -412,7 +412,7 @@ better-meeting:
     summary: ""
     parent: better-work
     url: /wiki/better-meeting
-    updated: '2020-03-15 12:51:01 +0900'
+    updated: '2020-03-15 12:52:02 +0900'
     children: []
 better-work:
     type: wiki
