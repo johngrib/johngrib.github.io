@@ -502,6 +502,11 @@ regenerate: true
 * [[my-wiki]]
 * [[generate-favicon]]
 
+## [[better-work]]
+
+* [[leadership]]
+* [[working-together]]
+
 ## 미분류
 
 * [[abbr]]
@@ -512,7 +517,6 @@ regenerate: true
 * [[email-validation]]
 * [[integer]]
 * [[junit5-nested]]
-* [[leadership]]
 * [[locking]]
 * [[mac-keyboard-shortcuts]]
 * [[oop-quotes]]
@@ -522,7 +526,6 @@ regenerate: true
 * [[strangler-pattern]]
 * [[timeline]]
 * [[two-type-error]]
-* [[working-together]]
 
 ---
 

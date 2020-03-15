@@ -3,11 +3,11 @@ layout  : wiki
 title   : 함께 일하기
 summary : 협업도 열심히 배우고 익혀야 하는 스킬이다
 date    : 2020-03-09 20:45:18 +0900
-updated : 2020-03-11 08:11:03 +0900
+updated : 2020-03-15 12:33:37 +0900
 tag     : work
 toc     : true
 public  : true
-parent  : index
+parent  : [[better-work]]
 latex   : false
 ---
 * TOC

@@ -3,11 +3,11 @@ layout  : wiki
 title   : 리더쉽
 summary : 
 date    : 2020-01-15 22:33:17 +0900
-updated : 2020-01-15 22:40:07 +0900
+updated : 2020-03-15 12:39:17 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : index
+parent  : [[better-work]]
 latex   : false
 ---
 * TOC

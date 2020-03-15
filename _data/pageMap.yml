@@ -406,6 +406,14 @@ begining-of-apache-webserver:
     url: /wiki/begining-of-apache-webserver
     updated: '2020-02-05 21:55:22 +0900'
     children: []
+better-work:
+    type: wiki
+    title: '일을 더 잘 하기 위해서'
+    summary: ""
+    parent: index
+    url: /wiki/better-work
+    updated: '2020-03-15 12:32:42 +0900'
+    children: [leadership, working-together]
 big-numbers:
     type: wiki
     title: '좀 큰 숫자들'
@@ -2242,9 +2250,9 @@ leadership:
     type: wiki
     title: 리더쉽
     summary: ""
-    parent: index
+    parent: better-work
     url: /wiki/leadership
-    updated: '2020-01-15 22:40:07 +0900'
+    updated: '2020-03-15 12:39:17 +0900'
     children: []
 legend:
     type: wiki
@@ -3746,9 +3754,9 @@ working-together:
     type: wiki
     title: '함께 일하기'
     summary: '협업도 열심히 배우고 익혀야 하는 스킬이다'
-    parent: index
+    parent: better-work
     url: /wiki/working-together
-    updated: '2020-03-11 08:11:03 +0900'
+    updated: '2020-03-15 12:33:37 +0900'
     children: []
 YAML:
     type: wiki
