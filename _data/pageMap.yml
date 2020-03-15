@@ -406,6 +406,14 @@ begining-of-apache-webserver:
     url: /wiki/begining-of-apache-webserver
     updated: '2020-02-05 21:55:22 +0900'
     children: []
+better-meeting:
+    type: wiki
+    title: 회의
+    summary: ""
+    parent: better-work
+    url: /wiki/better-meeting
+    updated: '2020-03-15 12:51:01 +0900'
+    children: []
 better-work:
     type: wiki
     title: '일을 더 잘 하기 위해서'
@@ -413,7 +421,7 @@ better-work:
     parent: index
     url: /wiki/better-work
     updated: '2020-03-15 12:32:42 +0900'
-    children: [leadership, working-together]
+    children: [better-meeting, leadership, working-together]
 big-numbers:
     type: wiki
     title: '좀 큰 숫자들'
