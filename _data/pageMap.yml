@@ -2510,6 +2510,14 @@ netflix-architecture-and-culture:
     url: /wiki/netflix-architecture-and-culture
     updated: '2020-01-20 21:50:07 +0900'
     children: []
+no-problem-syndrome:
+    type: wiki
+    title: '문제 없어요 증후군 (No-Problem Syndrome)'
+    summary: '자신이 모든 문제의 답을 알고 있다고 믿는 증후군'
+    parent: proverb
+    url: /wiki/no-problem-syndrome
+    updated: '2020-03-17 21:58:53 +0900'
+    children: []
 No-Silver-Bullet:
     type: wiki
     title: '은총알은 없다(No Silver Bullet)'
@@ -2749,7 +2757,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
-    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
 pwgen-cmd:
     type: wiki
     title: 'pwgen 명령어'
