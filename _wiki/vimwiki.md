@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2020-03-17 15:27:02 +0900
+updated : 2020-03-17 15:29:36 +0900
 tag     : vim wiki
 public  : true
 parent  : Vim
@@ -510,5 +510,5 @@ augroup END
 
 ## 주석
 
-[^vimwiki-global-ext]: https://vimwiki.github.io/vimwikiwiki/Tips%20and%20Snips.html#Vimwiki%20considers%20every%20markdown-file%20as%20a%20wiki%20file
+[^vimwiki-global-ext]: 출처는 [vimwiki.github.io]( https://vimwiki.github.io/vimwikiwiki/Tips%20and%20Snips.html#Vimwiki%20considers%20every%20markdown-file%20as%20a%20wiki%20file )
 
