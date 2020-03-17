@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2020-01-16 21:48:23 +0900
+updated : 2020-03-17 22:22:06 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -115,7 +115,7 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 
 > Our study also compares the prediction models built using organizational metrics against traditional code churn, code complexity, code coverage, code dependencies and pre-release defect measures to show that organizational metrics are better predictors of failure-proneness than the traditional metrics used so far.
 
-또한 본 연구는 조직 지표를 사용하여 구축된 예측 모델을 전통적인 코드 전환, 코드 복잡성, 코드 의존성 및 발표 전 결함 조치와 비교하여 조직 지표가 지금까지 사용한 기존 지표보다 더 나은 오류 발생 예측 변수임을 보여준다.
+> 또한 본 연구는 조직 지표를 사용하여 구축된 예측 모델을 전통적인 코드 전환, 코드 복잡성, 코드 의존성 및 발표 전 결함 조치와 비교하여 조직 지표가 지금까지 사용한 기존 지표보다 더 나은 오류 발생 예측 변수임을 보여준다.
 
 ### 콘웨이의 법칙에 대한 엉클 밥의 코멘트
 
