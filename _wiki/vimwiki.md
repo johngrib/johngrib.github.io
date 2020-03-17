@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2019-12-27 08:05:02 +0900
+updated : 2020-03-17 15:27:02 +0900
 tag     : vim wiki
 public  : true
 parent  : Vim
@@ -169,7 +169,18 @@ nnoremap <S-F4> :execute "VWB" <Bar> :lopen<CR>
     * `\wt`를 입력하면 마크다운 테이블을 만들어준다.
     * 마크다운 테이블 기본 서식을 만들어 준다. 굉장히 편리한 기능이다.
 
+### 문제 해결: vimwiki 설정이 markdown 설정을 침투하지 않게 하기
 
+[@honggaruy]( https://github.com/honggaruy )님이 [댓글로 알려주신 내용]( https://github.com/johngrib/johngrib.github.io/issues/13#issuecomment-599888899 ).
+
+- `g:vimwiki_list` 경로에 있지 않은 `*.md` 파일을 모두 vimwiki 형식으로 인식하는 문제.
+- markdown 파일용 custom vim 설정(ftplugin, ultisnip 등등)이 모두 작동하지 않는 문제.
+
+만약 위와 같은 문제가 발생한다면 다음 설정으로 해결할 수 있다.[^vimwiki-global-ext]
+
+```viml
+let g:vimwiki_global_ext = 0
+```
 
 ## 필수 기능 소개
 
@@ -497,4 +508,7 @@ augroup END
 * [[my-wiki]]{Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자}
 * [[vim-conceallevel]]{Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자}
 
+## 주석
+
+[^vimwiki-global-ext]: https://vimwiki.github.io/vimwikiwiki/Tips%20and%20Snips.html#Vimwiki%20considers%20every%20markdown-file%20as%20a%20wiki%20file
 
