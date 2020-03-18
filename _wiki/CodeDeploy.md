@@ -3,7 +3,7 @@ layout  : wiki
 title   : AWS CodeDeploy
 summary : AWS 배포 서비스
 date    : 2019-09-04 21:30:27 +0900
-updated : 2019-09-09 16:48:16 +0900
+updated : 2020-03-18 23:01:09 +0900
 tag     : aws
 toc     : true
 public  : true
@@ -16,7 +16,7 @@ latex   : false
 >
 AWS CodeDeploy는 개발자가 인스턴스에 대한 애플리케이션 배포를 자동화하고 필요에 따라 애플리케이션을 업데이트할 수 있는 배포 서비스입니다.
 
-# 서비스 시작과 정지
+## 서비스 시작과 정지
 
 ```sh
 $ sudo service codedeploy-agent start
@@ -26,9 +26,9 @@ $ sudo service codedeploy-agent start
 $ sudo service codedeploy-agent stop
 ```
 
-# 문제 해결
+## 문제 해결
 
-## codedeploy-agent 재시작
+### codedeploy-agent 재시작
 
 * codedeploy-agent의 재시작이 필요하다면 다음과 같이 한다.
 
@@ -36,7 +36,7 @@ $ sudo service codedeploy-agent stop
 $ sudo service codedeploy-agent restart
 ```
 
-## 로그 보기
+### 로그 보기
 
 * 잘 안되면 무조건 로그부터 확인하자.
 
@@ -44,9 +44,9 @@ $ sudo service codedeploy-agent restart
 tail -F /var/log/aws/codedeploy-agent/codedeploy-agent.log
 ```
 
-## 사례 모음
+### 사례 모음
 
-### S3 버킷의 파일명을 잘못 지정된 경우
+#### S3 버킷의 파일명을 잘못 지정된 경우
 
 배포 환경은 다음과 같았다.
 
@@ -76,7 +76,7 @@ ier:"...")
 
 .travis.yml의 `key` 설정을 바꾸는 것으로 해결하였다.
 
-### CodeDeploy agent가 appspec.yml을 찾지 못하는 경우
+#### CodeDeploy agent가 appspec.yml을 찾지 못하는 경우
 
 삽질하다 codedeploy agent의 작업 디렉토리를 날려버리자 그 이후부터 다음과 같은 에러 메시지가 나오기 시작했다.
 
@@ -102,6 +102,6 @@ a-398d-4440-b7dd-6ad66fa4332a/d-N9VOXSHIB/deployment-archive/appspec.yml\\\".
 
 따라서 경로를 만들어 주고, `appspec.yml` 파일을 복사해서 넣어줬더니 운 좋게도 문제가 해결되었다.
 
-# Links
+## Links
 
 * [AWS CodeDeploy 설명서](https://docs.aws.amazon.com/ko_kr/codedeploy/index.html )
