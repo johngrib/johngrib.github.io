@@ -2784,11 +2784,11 @@ python3-simple-file-sharing:
     children: []
 random-lunch:
     type: wiki
-    title: '간단하게 만드는 랜덤런치 그룹 생성기'
-    summary: ""
+    title: '랜덤 런치'
+    summary: '협업 증진과 네트워킹을 위해 랜덤 그룹과 식사를 하는 제도'
     parent: my-lifehack
     url: /wiki/random-lunch
-    updated: '2019-11-08 08:40:21 +0900'
+    updated: '2020-03-19 21:17:26 +0900'
     children: []
 regex-prime:
     type: wiki
