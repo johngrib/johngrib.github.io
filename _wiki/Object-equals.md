@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.equals 메소드
 summary :
 date    : 2018-03-07 21:40:19 +0900
-updated : 2018-03-08 23:00:25 +0900
+updated : 2020-03-21 08:49:00 +0900
 tag     : java 번역
 toc     : true
 public  : true
@@ -225,7 +225,7 @@ equals 메소드는 this 리스트와 지정한 객체의 동치 관계를 비�
 
 ## equals를 잘못 구현한 사례 - java.sql.Timestamp
 
-[[Effective-Java]] 규칙 8 중에서 발췌.
+다음은 이펙티브 자바(2판) 규칙 8에서 발췌한 것이다.
 
 > 자바의 기본 라이브러리 가운데는 객체 생성 가능 클래스를 계승하여 값 컴포넌트를 추가한 클래스도 있다.
 일례로 java.sql.Timestamp는 java.util.Date를 계승하여 nanoseconds 필드를 추가한 것이다.
@@ -233,7 +233,7 @@ Timestamp 클래스의 equals 메소드는 대칭성을 위반하므로
 **Timestamp 객체와 Date 객체를 같은 컬렉션에 보관하거나 섞어 쓰면 문제가 생길 수 있다**.
 그래서 Timestamp 클래스의 주석에는 Date 객체와 Timestamp 객체를 함께 쓰지 말라는 경고가 있다.
 경고대로 하면 문제가 생기지는 않겠지만, 실수로 섞어 쓰는 것까지 방지할 수는 없으므로 디버깅하기 어려운 문제가 생길 수도 있다.
-Timestamp가 이렇게 구현된 것은 실수이며, 절대로 따라하면 안 된다.
+Timestamp가 이렇게 구현된 것은 실수이며, 절대로 따라하면 안 된다.[^joshua2-55]
 
 궁금해서 테스트 코드를 돌려 보았더니, 정말로 대칭 관계를 위반하고 있었다.
 
@@ -304,11 +304,17 @@ public boolean equals(java.lang.Object ts) {
 
 ## Links
 
-* [Object(docs.oracle.com/javase/8)](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)
+* [Object(docs.oracle.com/javase/8)]( https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html )
 
-* [동치 관계(Equivalence relation)](https://ko.wikipedia.org/wiki/%EB%8F%99%EC%B9%98%EA%B4%80%EA%B3%84)
-* [반사 관계(Reflexive relation)](https://ko.wikipedia.org/wiki/%EB%B0%98%EC%82%AC%EA%B4%80%EA%B3%84)
-* [대칭 관계(Symmetric relation)](https://ko.wikipedia.org/wiki/%EB%8C%80%EC%B9%AD%EA%B4%80%EA%B3%84)
-* [추이적 관계(Transitive relation)](https://ko.wikipedia.org/wiki/%EC%B6%94%EC%9D%B4%EC%A0%81_%EA%B4%80%EA%B3%84)
+* [동치 관계(Equivalence relation)]( https://ko.wikipedia.org/wiki/%EB%8F%99%EC%B9%98%EA%B4%80%EA%B3%84 )
+* [반사 관계(Reflexive relation)]( https://ko.wikipedia.org/wiki/%EB%B0%98%EC%82%AC%EA%B4%80%EA%B3%84 )
+* [대칭 관계(Symmetric relation)]( https://ko.wikipedia.org/wiki/%EB%8C%80%EC%B9%AD%EA%B4%80%EA%B3%84 )
+* [추이적 관계(Transitive relation)]( https://ko.wikipedia.org/wiki/%EC%B6%94%EC%9D%B4%EC%A0%81_%EA%B4%80%EA%B3%84 )
 
-* [[Effective-Java]]
+## 참고문헌
+
+- 이펙티브 자바 (2판) / 조슈아 블로크 저 / 이병준 역 / 인사이트(insight) / 초판 2쇄 2015년 07월 21일
+
+## 주석
+
+[^joshua2-55]: 이펙티브 자바 2판. 규칙 8. 55쪽.

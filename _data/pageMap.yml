@@ -2540,7 +2540,7 @@ Object-equals:
     summary: null
     parent: Java
     url: /wiki/Object-equals
-    updated: '2018-03-08 23:00:25 +0900'
+    updated: '2020-03-21 08:49:00 +0900'
     children: []
 Object-hashCode:
     type: wiki
