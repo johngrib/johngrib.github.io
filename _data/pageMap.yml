@@ -2556,7 +2556,7 @@ Object-toString:
     summary: null
     parent: Java
     url: /wiki/Object-toString
-    updated: '2018-03-11 15:12:10 +0900'
+    updated: '2020-03-20 23:33:17 +0900'
     children: []
 observer-pattern:
     type: wiki

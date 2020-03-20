@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.toString 메소드
 summary :
 date    : 2018-03-10 23:04:50 +0900
-updated : 2018-03-11 15:12:10 +0900
+updated : 2020-03-20 23:33:17 +0900
 tag     : java 번역
 toc     : true
 public  : true
@@ -13,9 +13,11 @@ latex   : false
 * TOC
 {:toc}
 
-버전: Java 1.8
+버전: Java 1.8, Java 13
 
 ## 원문
+
+다음 주석과 코드는 Java 1.8 의 Object 클래스에서 가져온 것이며, Java 13 의 Object 클래스를 확인해 보니 변경된 점이 없었다.
 
 ```java
 /**
@@ -64,9 +66,11 @@ getClass().getName() + '@' + Integer.toHexString(hashCode())
 
 ## Effective Java - toString 메소드 재정의에 대한 조언들
 
-[[Effective-Java]]에서는 다음과 같은 규칙을 제안하고 있다.
+Effective Java에서는 다음과 같은 규칙을 제안하고 있다.
 
-> 규칙 10. toString은 항상 재정의하라
+>
+- 규칙 10. toString은 항상 재정의하라 (2판)
+- 아이템 12. toString을 항상 재정의하라 (3판)
 
 그 외에도 세 가지의 실천적인 조언을 찾아볼 수 있었다.
 
@@ -132,5 +136,9 @@ public class ToStringExample {
 
 ## Links
 
-* [[Effective-Java]]
-* [@ToString](https://projectlombok.org/features/ToString) - Lombok
+* [@ToString]( https://projectlombok.org/features/ToString ) - Lombok
+
+## 참고문헌
+
+- 이펙티브 자바 (2판) / 조슈아 블로크 저 / 이병준 역 / 인사이트(insight) / 초판 2쇄 2015년 07월 21일
+- 이펙티브 자바 (3판) / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
