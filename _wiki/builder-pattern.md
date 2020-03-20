@@ -3,8 +3,8 @@ layout  : wiki
 title   : 빌더 패턴(Builder Pattern)
 summary : 객체의 생성 방법과 표현 방법을 분리한다
 date    : 2018-02-12 08:18:46 +0900
-updated : 2018-02-18 00:20:50 +0900
-tag     : programming pattern lombok effective-java
+updated : 2020-03-21 08:39:51 +0900
+tag     : pattern
 toc     : true
 public  : true
 parent  : [[design-pattern]]
@@ -31,7 +31,7 @@ Member customer = Member.build()
 그리고 다음의 두 책을 통해 좀 더 자세히 알게 되었다.
 
 * [[GoF-Design-Pattern]] : 소프트웨어 디자인 패턴의 원조라 할 수 있는 책.
-* [[Effective-Java]] : 제임스 고슬링이 추천사를 쓴 자바 코딩 스타일 책.
+* 이펙티브 자바(Effective Java) : 조슈아 블로흐가 직접 쓴 자바 코딩 스타일 책.
 
 그런데 두 책에서 다루고 있는 빌더 패턴의 설명이 좀 다르다.
 
@@ -46,7 +46,9 @@ Member customer = Member.build()
 
 ## Effective Java의 빌더 패턴
 
-> 규칙 2. 생성자 인자가 많을 때는 Builder 패턴 적용을 고려하라
+>
+- 규칙 2. 생성자 인자가 많을 때는 Builder 패턴 적용을 고려하라 (2판)
+- 아이템 2. 생성자에 매개변수가 많다면 빌더를 고려하라 (3판)
 
 이펙티브 자바에서 말하는 빌더 패턴은 객체 생성을 깔끔하고 유연하게 하기 위한 기법이다.
 
@@ -428,10 +430,14 @@ Product juice = director.build();
 ## Links
 
 * [[GoF-Design-Pattern]]
-* [Design Patterns(wikipedia)](https://en.wikipedia.org/wiki/Design_Patterns)
-* [Builder Pattern(wikipedia)](https://en.wikipedia.org/wiki/Builder_pattern)
-* [[Effective-Java]]
-* [Item 2: Consider a builder when faced with many constructor parameters](http://www.informit.com/articles/article.aspx?p=1216151&seqNum=2)
+* [Design Patterns(wikipedia)]( https://en.wikipedia.org/wiki/Design_Patterns )
+* [Builder Pattern(wikipedia)]( https://en.wikipedia.org/wiki/Builder_pattern )
+* [Item 2: Consider a builder when faced with many constructor parameters]( http://www.informit.com/articles/article.aspx?p=1216151&seqNum=2 )
 
-* [Project Lombok @Builder](https://projectlombok.org/features/Builder)
+* [Project Lombok @Builder]( https://projectlombok.org/features/Builder )
+
+## 참고문헌
+
+- 이펙티브 자바 (2판) / 조슈아 블로크 저 / 이병준 역 / 인사이트(insight) / 초판 2쇄 2015년 07월 21일
+- 이펙티브 자바 (3판) / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 

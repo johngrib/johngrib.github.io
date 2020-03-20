@@ -540,7 +540,7 @@ builder-pattern:
     summary: '객체의 생성 방법과 표현 방법을 분리한다'
     parent: design-pattern
     url: /wiki/builder-pattern
-    updated: '2018-02-18 00:20:50 +0900'
+    updated: '2020-03-21 08:39:51 +0900'
     children: []
 Byzantine-failure:
     type: wiki

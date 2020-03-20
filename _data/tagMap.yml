@@ -421,17 +421,6 @@ Fred-Brooks:
     - {fileName: Brooks-s-law}
     - {fileName: Mythical-Man-Month}
     - {fileName: No-Silver-Bullet}
-programming:
-    - {fileName: builder-pattern}
-    - {fileName: Java}
-    - {fileName: programming-language}
-    - {fileName: static-factory-method-pattern}
-lombok:
-    - {fileName: builder-pattern}
-effective-java:
-    - {fileName: builder-pattern}
-    - {fileName: Effective-Java}
-    - {fileName: static-factory-method-pattern}
 encryption:
     - {fileName: Caesar-cipher}
     - {fileName: encryption}
@@ -565,6 +554,9 @@ diary:
     - {fileName: diary}
 container:
     - {fileName: docker}
+effective-java:
+    - {fileName: Effective-Java}
+    - {fileName: static-factory-method-pattern}
 email:
     - {fileName: email-gardening}
     - {fileName: email-validation}
@@ -733,6 +725,10 @@ http:
     - {fileName: why-http-80-https-443}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
+programming:
+    - {fileName: Java}
+    - {fileName: programming-language}
+    - {fileName: static-factory-method-pattern}
 random:
     - {fileName: java-random}
     - {fileName: von-neumann-extractor}
