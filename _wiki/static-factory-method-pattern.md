@@ -3,8 +3,8 @@ layout  : wiki
 title   : 정적 팩토리 메서드(static factory method)
 summary : static 메서드로 객체 생성을 캡슐화한다
 date    : 2018-03-03 11:16:36 +0900
-updated : 2018-03-04 13:03:09 +0900
-tag     : programming pattern effective-java
+updated : 2020-03-21 16:13:54 +0900
+tag     : programming pattern
 toc     : true
 public  : true
 parent  : [[design-pattern]]
@@ -42,7 +42,7 @@ BigInteger answer = BigInteger.valueOf(42L); // BigInteger 42를 리턴한다
 
 ## Effective Java
 
-[[Effective-Java]]는 "규칙 1"에서 이 기법을 소개하고 있다.
+이펙티브 자바 2판은 "규칙 1"에서 이 기법을 소개하고 있다.
 
 > 규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해 보라.
 
@@ -250,5 +250,9 @@ Map<String, List<String>> list = new HashMap<>();
 
 ## Links
 
-* [[Effective-Java]]
 * [[GoF-Design-Pattern]]
+
+## 참고문헌
+
+- 이펙티브 자바 (2판) / 조슈아 블로크 저 / 이병준 역 / 인사이트(insight) / 초판 2쇄 2015년 07월 21일
+

@@ -556,7 +556,6 @@ container:
     - {fileName: docker}
 effective-java:
     - {fileName: Effective-Java}
-    - {fileName: static-factory-method-pattern}
 email:
     - {fileName: email-gardening}
     - {fileName: email-validation}
