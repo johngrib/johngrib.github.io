@@ -90,7 +90,6 @@ regenerate: true
     * [[Code-Complete-2]]
     * [[CONCRETE-MATH]]
     * [[Designing-Data-Intensive-Applications]]
-    * [[Effective-Java]]
     * [[Geek-Atlas]]
     * [[GoF-Design-Pattern]]
     * [[grow-together]]

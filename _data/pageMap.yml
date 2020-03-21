@@ -477,7 +477,7 @@ book:
     parent: media
     url: /wiki/book
     updated: '2018-02-07 21:47:12 +0900'
-    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, Effective-Java, Geek-Atlas, GoF-Design-Pattern, grow-together, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, Schrodinger-s-goyang-Hee, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
+    children: [17-EQUATIONS-THAT-CHANGED-THE-WORLD, Algorithms-to-Live-By, Clean-Code, Code-Complete-2, CONCRETE-MATH, Design-for-Hackers, Designing-Data-Intensive-Applications, Geek-Atlas, GoF-Design-Pattern, grow-together, HTTP-THE-DEFINITIVE-GUIDE, Mythical-Man-Month, PATTERN-ON-THE-STONE, PROFESSIONAL-SOFTWARE-DEVELOPMENT, Schrodinger-s-goyang-Hee, SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness, secret-of-consulting, Shunsho-juwa, Software-Craftsman, Take-the-Bully-by-the-Horns, TETRIS-EFFECT, The-Jargon-File, Think-Bayes]
 book-log-2019:
     type: wiki
     title: '2019년 독서록'
@@ -1141,14 +1141,6 @@ Edsel-edict:
     parent: proverb
     url: /wiki/Edsel-edict
     updated: '2018-01-18 22:01:04 +0900'
-    children: []
-Effective-Java:
-    type: wiki
-    title: '(책) 이펙티브 자바 2판'
-    summary: 'Effective Java 2/E by Joshua Bloch'
-    parent: book
-    url: /wiki/Effective-Java
-    updated: '2018-03-11 14:10:23 +0900'
     children: []
 egyptian-multiplication:
     type: wiki

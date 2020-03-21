@@ -347,7 +347,6 @@ book:
     - {fileName: Code-Complete-2}
     - {fileName: CONCRETE-MATH}
     - {fileName: Design-for-Hackers}
-    - {fileName: Effective-Java}
     - {fileName: Geek-Atlas}
     - {fileName: GoF-Design-Pattern}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
@@ -506,7 +505,6 @@ ctags:
     - {fileName: ctags}
 java:
     - {fileName: defensive-copy.md}
-    - {fileName: Effective-Java}
     - {fileName: groupId-artifactId}
     - {fileName: intellij}
     - {fileName: Java}
@@ -554,8 +552,6 @@ diary:
     - {fileName: diary}
 container:
     - {fileName: docker}
-effective-java:
-    - {fileName: Effective-Java}
 email:
     - {fileName: email-gardening}
     - {fileName: email-validation}
