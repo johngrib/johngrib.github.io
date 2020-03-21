@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object .hashCode 메소드
 summary :
 date    : 2018-03-09 18:54:19 +0900
-updated : 2020-03-21 14:25:18 +0900
+updated : 2020-03-21 15:40:07 +0900
 tag     : java 번역 소수
 toc     : true
 public  : true
@@ -377,7 +377,9 @@ List 클래스 author인 Joshua Bloch가 쓴 책인 이펙티브 자바 2판을 
 
 인터넷을 뒤지다 다음 글을 찾을 수 있었다.
 
-[Why MULT 31 (hash function for string)?](https://bytes.com/topic/c/answers/537762-why-mult-31-hash-function-string)
+[Why MULT 31 (hash function for string)?][why-mult-31]
+
+[why-mult-31]: https://bytes.com/topic/c/answers/537762-why-mult-31-hash-function-string
 
 답변들 중 Eric Sosman의 답변이 설득력이 있어 다음과 같이 발췌하였다.
 
@@ -607,7 +609,9 @@ public class EqualsAndHashCodeExample {
 
 이 예제를 보면 Lombok의 hashCode 메소드는 `31`이 아니라 `59`를 사용하고 있다.
 
-궁금해서 찾아보니 HandlerUtil 클래스 [primeForHashcode 메소드](https://github.com/rzwitserloot/lombok/blob/760a4ec0d35f80bb7aa7089753643ba4c298d62b/src/core/lombok/core/handlers/HandlerUtil.java#L61)에 상수로 작성되어 있다.
+궁금해서 찾아보니 HandlerUtil 클래스 [primeForHashcode 메소드][lombok-primeForHashcode]에 상수로 작성되어 있다.
+
+[lombok-primeForHashcode]: https://github.com/rzwitserloot/lombok/blob/760a4ec0d35f80bb7aa7089753643ba4c298d62b/src/core/lombok/core/handlers/HandlerUtil.java#L61
 
 ```java
 public static int primeForHashcode() {
@@ -615,24 +619,26 @@ public static int primeForHashcode() {
 }
 ```
 
-그리고 HandleEqualsAndHashCode 클래스 [createHashCode 메소드](https://github.com/rzwitserloot/lombok/blob/045638ec1f79f68747f135061d2e026faa719642/src/core/lombok/javac/handlers/HandleEqualsAndHashCode.java#L262)
-에서 이를 사용하고 있는 것을 보면, hashCode 메소드 생성에 `59`를 사용하고 있는 것이 맞는 것 같다.
+[lombok-createHashCode]: https://github.com/rzwitserloot/lombok/blob/045638ec1f79f68747f135061d2e026faa719642/src/core/lombok/javac/handlers/HandleEqualsAndHashCode.java#L262
 
-좀 더 뒤져보니 [관련 commit](https://github.com/rzwitserloot/lombok/commit/14cc54527663018cdf7343eefffc8c37fbce93bb#diff-01082d42a593f828cc90164b842e96ddR31)도 찾을 수 있었다.
+그리고 HandleEqualsAndHashCode 클래스 [createHashCode 메소드][lombok-createHashCode]에서 이를 사용하고 있는 것을 보면,
+hashCode 메소드 생성에 `59`를 사용하고 있는 것이 맞는 것 같다.
+
+좀 더 뒤져보니 [관련 commit]( https://github.com/rzwitserloot/lombok/commit/14cc54527663018cdf7343eefffc8c37fbce93bb#diff-01082d42a593f828cc90164b842e96ddR31 )도 찾을 수 있었다.
 
 `59`가 사용된 것은 `v.1.16.20`부터이며
-[diff를 보면](https://github.com/rzwitserloot/lombok/commit/14cc54527663018cdf7343eefffc8c37fbce93bb#diff-01082d42a593f828cc90164b842e96ddL30) 본래 `59`가 아니라 `277`을 사용하고 있었다는 것도 알 수 있다.
+[diff를 보면]( https://github.com/rzwitserloot/lombok/commit/14cc54527663018cdf7343eefffc8c37fbce93bb#diff-01082d42a593f828cc90164b842e96ddL30 ) 본래 `59`가 아니라 `277`을 사용하고 있었다는 것도 알 수 있다.
 
 ```java
 public static final int PRIME_FOR_HASHCODE = 277;
 ```
 
-[changelog를 보면](https://github.com/rzwitserloot/lombok/commit/14cc54527663018cdf7343eefffc8c37fbce93bb#diff-ac92d0caf5382ec198bbb28bd2ed7e33R6)
+[changelog를 보면]( https://github.com/rzwitserloot/lombok/commit/14cc54527663018cdf7343eefffc8c37fbce93bb#diff-ac92d0caf5382ec198bbb28bd2ed7e33R6 )
 해시 코드 생성에 `277`을 쓰고 있었지만 `127`보다 작은 소수를 쓰기로 결정한 것으로 보인다.
 
 ```markdown
 ### v1.12.5 "Edgy Guinea Pig"
-* DETAIL: {Delombok} Inside enum bodies the delombok formatter didn't respect the emptyLines directive [Issue #529](https://code.google.com/p/projectlombok/issues/detail?id=629).
+* DETAIL: {Delombok} Inside enum bodies the delombok formatter didn't respect the emptyLines directive [Issue #529]( https://code.google.com/p/projectlombok/issues/detail?id=629 ).
 * DETAIL: Use smaller primes (<127) for generating hashcodes [Issue #625](https://code.google.com/p/projectlombok/issues/detail?id=625)
 ```
 
@@ -755,7 +761,6 @@ $$ 2^{9283} + 3^{5420} + 5^{4356} + 7^{6123} + 11^{5729} + 13^{3954} $$
 * Lombok
     * [@EqualsAndHashCode](https://projectlombok.org/features/EqualsAndHashCode)
     * [Issue 625: use (even) better primes for hashcodes](https://github.com/rzwitserloot/lombok/commit/14cc54527663018cdf7343eefffc8c37fbce93bb#diff-01082d42a593f828cc90164b842e96ddR31)
-
 
 [jvm-cpp-583]: http://hg.openjdk.java.net/jdk10/jdk10/hotspot/file/tip/src/share/vm/prims/jvm.cpp
 [synchronizer-714]: http://hg.openjdk.java.net/jdk10/jdk10/hotspot/file/tip/src/share/vm/runtime/synchronizer.cpp
