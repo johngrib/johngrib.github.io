@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hammerspoon 튜토리얼 01 - 윈도우 힌트와 이동
 summary : 윈도우즈에는 있으나 맥에는 없는 그것
 date    : 2017-08-01 22:47:08 +0900
-updated : 2018-04-21 11:31:44 +0900
+updated : 2020-03-21 16:53:41 +0900
 tag     : hammerspoon
 toc     : true
 comment : true
@@ -106,36 +106,26 @@ local function move_win(xx, yy, ww, hh)
         local win = hs.window.focusedWindow()
         local f = win:frame()
         local max = win:screen():frame()
-        f.x = max.x + (max.w/2) * xx
-        f.y = max.y + (max.h/2) * yy
-        f.w = max.w / ww
-        f.h = max.h / hh
+        f.x = max.w * xx
+        f.y = max.h * yy
+        f.w = max.w * ww
+        f.h = max.h * hh
         win:setFrame(f)
     end
 end
 
-local left = 0
-local right = 1
-
-local top = 0
-local mid = 1
-
-local half_width = 2
-local full_width = 1
-local half_height = 2
-local full_height = 1
-
 local mod = {'option', 'shift'}
-hs.hotkey.bind(mod, '1', move_win(left, mid, half_width, half_height))
-hs.hotkey.bind(mod, '2', move_win(left, mid, full_width, half_height))
-hs.hotkey.bind(mod, '3', move_win(right, mid, half_width, half_height))
-hs.hotkey.bind(mod, '4', move_win(left, top, half_width, full_height))
-hs.hotkey.bind(mod, '5', move_win(left, top, full_width, full_height))
-hs.hotkey.bind(mod, '6', move_win(right, top, half_width, full_height))
-hs.hotkey.bind(mod, '7', move_win(left, top, half_width, half_height))
-hs.hotkey.bind(mod, '8', move_win(left, top, full_width, half_height))
-hs.hotkey.bind(mod, '9', move_win(right, top, half_width, half_height))
+hs.hotkey.bind(mod, '1', move_win(0, 1/2, 1/2, 1/2))
+hs.hotkey.bind(mod, '2', move_win(0, 1/2, 1, 1/2))
+hs.hotkey.bind(mod, '3', move_win(1/2, 1/2, 1/2, 1/2))
+hs.hotkey.bind(mod, '4', move_win(0, 0, 1/2, 1))
+hs.hotkey.bind(mod, '5', move_win(0, 0, 1, 1))
+hs.hotkey.bind(mod, '6', move_win(1/2, 0, 1/2, 1))
+hs.hotkey.bind(mod, '7', move_win(0, 0, 1/2, 1/2))
+hs.hotkey.bind(mod, '8', move_win(0, 0, 1, 1/2))
+hs.hotkey.bind(mod, '9', move_win(1/2, 0, 1/2, 1/2))
 ```
+
 > 대충 짠 코드이니, 그대로 사용하기보다는 자신의 취향에 맞게 코드를 다듬어 보시길 권합니다.
 
 이렇게 하면 `option`+`shift`+`숫자`의 조합으로 윈도우를 좌/우/대각선 방향으로 모두 움직일 수 있고, 전체화면으로 사이즈를 조정하는 것도 가능합니다.
@@ -159,3 +149,4 @@ hs.hotkey.bind(mod, '9', move_win(right, top, half_width, half_height))
     * [slate](https://github.com/jigish/slate)
     * [Spectacle](https://www.spectacleapp.com/)
     * [ezgif.com](https://ezgif.com/): 동영상을 gif 파일로 변환할 때 사용하였습니다.
+
