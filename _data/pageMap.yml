@@ -2252,7 +2252,7 @@ law-of-demeter:
     summary: '부끄럼타는 코드를 작성하라'
     parent: proverb
     url: /wiki/law-of-demeter
-    updated: '2020-03-22 13:17:08 +0900'
+    updated: '2020-03-22 13:30:32 +0900'
     children: []
 leadership:
     type: wiki
