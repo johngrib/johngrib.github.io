@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 디미터 법칙 (Teh Law of Demeter)
+title   : 디미터 법칙 (The Law of Demeter)
 summary : 객체는 그것이 내부적으로 보유하고 있거나 메시지를 통해 확보한 정보만 가지고 의사 결정을 내려야 한다
 date    : 2020-03-22 12:13:49 +0900
-updated : 2020-03-22 13:53:18 +0900
+updated : 2020-03-22 14:01:15 +0900
 tag     : law oop
 toc     : true
 public  : true
