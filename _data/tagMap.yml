@@ -330,6 +330,7 @@ law:
     - {fileName: airplain-rule}
     - {fileName: Brooks-s-law}
     - {fileName: Conway-s-law}
+    - {fileName: law-of-demeter}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
     - {fileName: Postel-s-law}
     - {fileName: Zipf-s-law}
@@ -737,6 +738,11 @@ sort:
     - {fileName: sort}
 보안:
     - {fileName: labs-strava-com-heatmap}
+oop:
+    - {fileName: law-of-demeter}
+    - {fileName: OOP-to-me-Alan-Kay}
+    - {fileName: SOLID}
+    - {fileName: summary-Data-Abstraction-and-Hierarchy}
 letter:
     - {fileName: letter-case}
 case:
@@ -764,10 +770,6 @@ availability:
     - {fileName: netflix-architecture-and-culture}
 소수:
     - {fileName: Object-hashCode}
-oop:
-    - {fileName: OOP-to-me-Alan-Kay}
-    - {fileName: SOLID}
-    - {fileName: summary-Data-Abstraction-and-Hierarchy}
 soft-skill:
     - {fileName: orange-juice-test}
     - {fileName: Take-the-Bully-by-the-Horns}
