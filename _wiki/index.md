@@ -388,9 +388,6 @@ regenerate: true
 * [[httpbin.org]]
 * [[labs-strava-com-heatmap]]
 
-### [[web-browser-extension]]
-* [[vimium]]
-
 ## [[til]]
 * [[trouble-shooting-node-7-install]]
 * [[vagrant-docker-get-start]]
@@ -466,6 +463,7 @@ regenerate: true
 * [[global-variables-and-marriage-architecture]]
 * [[healthy-life]]
 * [[hhkb-jp-tmk]]
+* [[how-i-use-chrome]]
 * [[my-bookshelf]]
 * [[my-desk-environment]]
 * [[my-keyboard]]
@@ -473,6 +471,7 @@ regenerate: true
 * [[my-study-method]]
 * [[our-fund-balancing]]
 * [[random-lunch]]
+
 
 ## [[summary]]
 * [[REST-paper-summary]]
@@ -528,6 +527,7 @@ regenerate: true
 * [[strangler-pattern]]
 * [[timeline]]
 * [[two-type-error]]
+* [[vimium]]
 
 ---
 
