@@ -3,11 +3,11 @@ layout  : wiki
 title   : Vimium - The hacker's browser
 summary : 웹 브라우저에서 Vim 키맵을 사용할 수 있다
 date    : 2018-03-04 00:40:04 +0900
-updated : 2018-03-04 01:15:09 +0900
+updated : 2020-03-22 20:33:01 +0900
 tag     : chrome firefox vim
 toc     : true
 public  : true
-parent  : web-browser-extension
+parent  : index
 latex   : false
 ---
 * TOC

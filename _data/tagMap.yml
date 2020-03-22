@@ -710,6 +710,9 @@ health:
 keyboard:
     - {fileName: hhkb-jp-tmk}
     - {fileName: my-keyboard}
+chrome:
+    - {fileName: how-i-use-chrome}
+    - {fileName: vimium}
 how-to:
     - {fileName: how-to}
 http:
@@ -880,8 +883,6 @@ fix:
     - {fileName: vim-tmux-t-ut}
 awk:
     - {fileName: vim-update-book-progress}
-chrome:
-    - {fileName: vimium}
 firefox:
     - {fileName: vimium}
 Von-Neumann:
