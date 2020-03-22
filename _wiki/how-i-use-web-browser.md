@@ -1,9 +1,9 @@
 ---
 layout  : category
-title   : 내가 크롬 웹 브라우저를 사용하는 방법
+title   : 내가 웹 브라우저를 사용하는 방법
 summary : 적절한 익스텐션을 사용한다
 date    : 2018-03-04 00:38:22 +0900
-updated : 2020-03-22 21:44:45 +0900
+updated : 2020-03-22 21:59:44 +0900
 tag     : chrome
 toc     : true
 public  : true
@@ -14,6 +14,10 @@ latex   : false
 {:toc}
 
 ## Vimium
+
+- [Vimium (chrome)]( https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb )
+- [Vimium-ff (firefox)]( https://addons.mozilla.org/ko/firefox/addon/vimium-ff/ )
+    - Firefox용 Vimium은 단축키 설정을 변경할 수 없고, 한 가지 기본 단축키만 제공한다.
 
 Vimium은 Vim 과 유사한 키 바인딩으로 다양한 웹 브라우저 조작 기능을 제공한다.
 
@@ -85,6 +89,10 @@ map <space> Vomnibar.activateTabSelection
 `https://github.com/` 로 이동한다는 뜻이다.
 
 ## Tab Wrangler
+
+- [Tab Wrangler(chrome)]( https://chrome.google.com/webstore/detail/tab-wrangler/egnjhciaieeiiohknchakcodbpgjnchh?hl=ko )
+- [Tab Wrangler(firefox)]( https://addons.mozilla.org/ko/firefox/addon/tabwrangler/ )
+
 ### 탭을 자동으로 종료하고 검색하기
 
 Tab Wrangler를 사용하면 일정 시간 이상 들어가지 않은 탭을 자동으로 닫아주고, 자체 히스토리에 기록한다.

@@ -711,7 +711,7 @@ keyboard:
     - {fileName: hhkb-jp-tmk}
     - {fileName: my-keyboard}
 chrome:
-    - {fileName: how-i-use-chrome}
+    - {fileName: how-i-use-web-browser}
     - {fileName: vimium}
 how-to:
     - {fileName: how-to}

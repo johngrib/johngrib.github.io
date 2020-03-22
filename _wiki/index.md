@@ -463,7 +463,7 @@ regenerate: true
 * [[global-variables-and-marriage-architecture]]
 * [[healthy-life]]
 * [[hhkb-jp-tmk]]
-* [[how-i-use-chrome]]
+* [[how-i-use-web-browser]]
 * [[my-bookshelf]]
 * [[my-desk-environment]]
 * [[my-keyboard]]
