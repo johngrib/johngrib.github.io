@@ -415,6 +415,7 @@ special-chars:
     - {fileName: special-chars}
 mac:
     - {fileName: brew}
+    - {fileName: iterm}
     - {fileName: java_home}
     - {fileName: mac-keyboard-shortcuts}
 Fred-Brooks:

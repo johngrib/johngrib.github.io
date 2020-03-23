@@ -294,6 +294,7 @@ regenerate: true
 * [[google-home]]
 * [[Gradle]]
 * [[intellij]]
+* [[iterm]]
 
 ### [[aws]]
 * [[Amazon-Route-53]]
