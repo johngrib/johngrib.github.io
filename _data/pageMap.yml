@@ -1134,6 +1134,14 @@ du:
     url: /wiki/du
     updated: '2018-02-08 23:11:05 +0900'
     children: []
+dumang-dk6-keyboard:
+    type: wiki
+    title: 'Dumang DK6 Mini NKRO 키보드'
+    summary: '자석으로 키를 붙였다 떼었다 할 수 있는 키보드'
+    parent: tools
+    url: /wiki/dumang-dk6-keyboard
+    updated: '2020-03-24 23:38:23 +0900'
+    children: []
 Edsel-edict:
     type: wiki
     title: '에젤 강령(Edsel edict)'
@@ -3421,7 +3429,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [aws, command-line, Excel, git, google-home, Gradle, intellij, iterm, mac-apps, useful-site]
+    children: [aws, command-line, dumang-dk6-keyboard, Excel, git, google-home, Gradle, intellij, iterm, mac-apps, useful-site]
 top:
     type: wiki
     title: 'top 명령어'

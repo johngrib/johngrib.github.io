@@ -291,6 +291,7 @@ regenerate: true
 
 ## [[tools]]
 
+* [[dumang-dk6-keyboard]]
 * [[google-home]]
 * [[Gradle]]
 * [[intellij]]

@@ -554,6 +554,10 @@ diary:
     - {fileName: diary}
 container:
     - {fileName: docker}
+keyboard:
+    - {fileName: dumang-dk6-keyboard}
+    - {fileName: hhkb-jp-tmk}
+    - {fileName: my-keyboard}
 email:
     - {fileName: email-gardening}
     - {fileName: email-validation}
@@ -708,9 +712,6 @@ lua:
     - {fileName: hammerspoon-luarocks}
 health:
     - {fileName: healthy-life}
-keyboard:
-    - {fileName: hhkb-jp-tmk}
-    - {fileName: my-keyboard}
 chrome:
     - {fileName: how-i-use-web-browser}
     - {fileName: vimium}
