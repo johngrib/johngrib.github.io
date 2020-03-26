@@ -1860,7 +1860,7 @@ how-i-use-web-browser:
     summary: '적절한 익스텐션을 사용한다'
     parent: my-lifehack
     url: /wiki/how-i-use-web-browser
-    updated: '2020-03-22 21:59:44 +0900'
+    updated: '2020-03-26 20:41:14 +0900'
     children: []
 how-to:
     type: wiki
@@ -3732,7 +3732,7 @@ vimium:
     summary: '웹 브라우저에서 Vim 키맵을 사용할 수 있다'
     parent: index
     url: /wiki/vimium
-    updated: '2020-03-22 20:33:01 +0900'
+    updated: '2020-03-26 20:41:50 +0900'
     children: []
 vimwiki:
     type: wiki

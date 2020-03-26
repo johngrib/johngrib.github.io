@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimium - The hacker's browser
 summary : 웹 브라우저에서 Vim 키맵을 사용할 수 있다
 date    : 2018-03-04 00:40:04 +0900
-updated : 2020-03-22 20:33:01 +0900
+updated : 2020-03-26 20:41:50 +0900
 tag     : chrome firefox vim
 toc     : true
 public  : true
@@ -79,3 +79,8 @@ latex   : false
 * <https://github.com/philc/vimium>
 * [Vimium(Chrome web store)](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
 * [Vimium(Firefox add-on)](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/)
+
+## 함께 읽기
+
+- [[how-i-use-web-browser]]{내가 웹 브라우저를 사용하는 방법}
+
