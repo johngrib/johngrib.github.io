@@ -508,6 +508,7 @@ regenerate: true
 
 * [[better-meeting]]
 * [[leadership]]
+* [[purpose-of-business]]
 * [[working-together]]
 
 ## 미분류

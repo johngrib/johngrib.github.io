@@ -421,7 +421,7 @@ better-work:
     parent: index
     url: /wiki/better-work
     updated: '2020-03-15 12:32:42 +0900'
-    children: [better-meeting, leadership, working-together]
+    children: [better-meeting, leadership, purpose-of-business, working-together]
 big-numbers:
     type: wiki
     title: '좀 큰 숫자들'
@@ -2782,6 +2782,14 @@ proverb:
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
     children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+purpose-of-business:
+    type: wiki
+    title: '비즈니스의 목적'
+    summary: ""
+    parent: better-work
+    url: /wiki/purpose-of-business
+    updated: '2020-03-26 23:14:33 +0900'
+    children: []
 pwgen-cmd:
     type: wiki
     title: 'pwgen 명령어'

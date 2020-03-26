@@ -787,6 +787,8 @@ tip:
     - {fileName: use-java-primitive-type-for-performance}
 culture:
     - {fileName: proverb}
+business:
+    - {fileName: purpose-of-business}
 python:
     - {fileName: python3-simple-file-sharing}
     - {fileName: vim-ycm-python3}
