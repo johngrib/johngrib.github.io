@@ -366,10 +366,11 @@ regenerate: true
 * [[excel-vba-setting]]
 
 ### [[git]]
+
 * [[git-alias]]
 * [[git-checkout-specific-files]]
 * [[git-log]]
-* [[githud]]
+* [[git-prompt]]
 
 ### [[mac-apps]]
 
