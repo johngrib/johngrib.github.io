@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 설정하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2019-11-22 17:13:29 +0900
+updated : 2020-03-28 23:36:57 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -27,7 +27,7 @@ set commentary  " tim pope의 commentary.vim 에뮬레이션 기능 사용.
 
 ## action 호출 설정
 
-```
+```viml
 " tabbar와 비슷한 느낌으로 사용할 수 있다
 nnoremap \t :action ActivateStructureToolWindow<CR>
 

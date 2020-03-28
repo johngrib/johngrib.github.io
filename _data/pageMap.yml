@@ -788,7 +788,7 @@ config-ideavim:
     summary: '이거라도 쓰는 수 밖에 없다'
     parent: Vim
     url: /wiki/config-ideavim
-    updated: '2019-11-22 17:13:29 +0900'
+    updated: '2020-03-28 23:36:57 +0900'
     children: []
 Continuous-Integration:
     type: wiki
