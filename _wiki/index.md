@@ -402,6 +402,7 @@ regenerate: true
 * [[ultisnips]]
 * [[vim-asciidoc-setting]]
 * [[vim-auto-completion]]
+* [[vim-clang]]
 * [[vim-coc]]
 * [[vim-conceallevel]]{conceallevel (Vim)}
 * [[vim-configure-split]]
