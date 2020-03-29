@@ -726,6 +726,17 @@ http:
     - {fileName: URI}
     - {fileName: vim-rest-console}
     - {fileName: why-http-80-https-443}
+spring:
+    - {fileName: inversion-of-control}
+    - {fileName: spring}
+    - {fileName: spring-bean-config-configuration}
+    - {fileName: spring-bean-config-xml}
+oop:
+    - {fileName: inversion-of-control}
+    - {fileName: law-of-demeter}
+    - {fileName: OOP-to-me-Alan-Kay}
+    - {fileName: SOLID}
+    - {fileName: summary-Data-Abstraction-and-Hierarchy}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
 programming:
@@ -745,11 +756,6 @@ sort:
     - {fileName: sort}
 보안:
     - {fileName: labs-strava-com-heatmap}
-oop:
-    - {fileName: law-of-demeter}
-    - {fileName: OOP-to-me-Alan-Kay}
-    - {fileName: SOLID}
-    - {fileName: summary-Data-Abstraction-and-Hierarchy}
 letter:
     - {fileName: letter-case}
 case:
@@ -836,11 +842,6 @@ IEEE:
     - {fileName: Software-Engineering-Code-of-Ethics}
 ethics:
     - {fileName: Software-Engineering-Code-of-Ethics}
-spring:
-    - {fileName: spring}
-    - {fileName: spring-bean-config-configuration}
-    - {fileName: spring-bean-config-xml}
-    - {fileName: spring-ioc}
 xml:
     - {fileName: spring-bean-config-configuration}
     - {fileName: spring-bean-config-xml}

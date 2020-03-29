@@ -1934,6 +1934,14 @@ intellij:
     url: /wiki/intellij
     updated: '2020-02-24 15:55:13 +0900'
     children: []
+inversion-of-control:
+    type: wiki
+    title: 'IoC, Inversion of Control'
+    summary: 'Inversion of Control, Dependency Injection'
+    parent: programming
+    url: /wiki/inversion-of-control
+    updated: '2020-03-30 08:31:54 +0900'
+    children: []
 IP:
     type: wiki
     title: IP
@@ -2774,6 +2782,14 @@ PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     url: /wiki/PROFESSIONAL-SOFTWARE-DEVELOPMENT
     updated: '2018-02-06 23:05:06 +0900'
     children: []
+programming:
+    type: wiki
+    title: 프로그래밍
+    summary: ""
+    parent: index
+    url: /wiki/programming
+    updated: '2020-03-30 08:31:34 +0900'
+    children: [inversion-of-control]
 programming-language:
     type: wiki
     title: '프로그래밍 언어'
@@ -3141,7 +3157,7 @@ spring:
     parent: index
     url: /wiki/spring
     updated: '2019-08-15 16:29:07 +0900'
-    children: [spring-bean-config-configuration, spring-bean-config-xml, spring-ioc, spring-versions]
+    children: [spring-bean-config-configuration, spring-bean-config-xml, spring-versions]
 spring-bean-config-configuration:
     type: wiki
     title: 'Configuration annotation을 통한 Spring Bean 설정'
@@ -3157,14 +3173,6 @@ spring-bean-config-xml:
     parent: spring
     url: /wiki/spring-bean-config-xml
     updated: '2019-08-15 22:11:42 +0900'
-    children: []
-spring-ioc:
-    type: wiki
-    title: IoC
-    summary: 'Inversion of Control'
-    parent: spring
-    url: /wiki/spring-ioc
-    updated: '2019-12-25 23:44:32 +0900'
     children: []
 spring-versions:
     type: wiki
