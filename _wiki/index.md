@@ -124,6 +124,10 @@ regenerate: true
 ## [[problem]]
 * [[two-eggs-100-floor]]
 
+## [[programming]]
+
+* [[inversion-of-control]]
+
 ## [[programming-language]]{프로그래밍 언어}
 
 * [[awk]]
@@ -452,9 +456,9 @@ regenerate: true
 * [[why-http-80-https-443]]
 
 ## [[spring]]
+
 * [[spring-bean-config-xml]]
 * [[spring-bean-config-configuration]]
-* [[spring-ioc]]
 * [[spring-versions]]
 
 ## [[database]]

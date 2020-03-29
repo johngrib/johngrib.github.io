@@ -1,13 +1,13 @@
 ---
 layout  : wiki
-title   : IoC
-summary : Inversion of Control
+title   : IoC, Inversion of Control
+summary : Inversion of Control, Dependency Injection
 date    : 2019-08-30 22:39:18 +0900
-updated : 2019-12-25 23:44:32 +0900
-tag     : spring
+updated : 2020-03-30 08:31:54 +0900
+tag     : spring oop
 toc     : true
 public  : true
-parent  : spring
+parent  : [[programming]]
 latex   : false
 ---
 * TOC

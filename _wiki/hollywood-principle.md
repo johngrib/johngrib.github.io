@@ -74,7 +74,7 @@ The major difference between an object-oriented framework and a class library is
 
 ## 함께 읽기
 
-* [[spring-ioc]]{Inversion of Control}
+* [[inversion-of-control]]{Inversion of Control}
 * [[template-method-pattern]]{템플릿 메소드 패턴}
 
 ## 참고문헌

@@ -79,7 +79,7 @@ TCP/IP는 비전공자로서 한번쯤은 읽어야 한다는 생각에 골라 �
 * [[my-mac-os-terminal]]{macOS 초심자를 위한 터미널 공부 가이드} - 컬리 입사 직후 팀 내에서 발표하기 위해 쓴 글이다.
 * [[two-views-of-vim]]{Vim, 두 가지 관점} - VIMRC 2019에서 발표한 글이다. Vim에 대한 내 평소 생각들을 전달하기 위해 썼다.
 * [[java-gc-tuning]]{Java GC 튜닝} - Java를 다시 공부하면서 Oracle의 GC 튜닝 가이드를 읽으며 정리한 글이다.
-* [[spring-ioc]]{IoC} - Inversion of Control에 대해 조사한 글이다.
+* [[inversion-of-control]]{IoC} - Inversion of Control에 대해 조사한 글이다.
 * [[hammerspoon-inputsource-aurora]]{해머스푼으로 한/영 전환 오로라를 만들자} - 올해 막바지의 가장 즐거운 코드 작업이었다.
 * [[rsa-encryption]]{RSA 암호} - RSA 암호의 원리를 공부했다.
 * [[vim-update-book-progress]]{읽고 있는 책의 진행도를 Vim에서 자동으로 계산하자} - 내 일상의 노하우를 공유하기 위해 쓴 글이다.
