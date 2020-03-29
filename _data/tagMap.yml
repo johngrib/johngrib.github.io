@@ -245,6 +245,7 @@ bash:
     - {fileName: jq-cmd}
     - {fileName: less-cmd}
     - {fileName: lsof}
+    - {fileName: make-cmd}
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
     - {fileName: pwgen-cmd}
@@ -298,6 +299,7 @@ command:
     - {fileName: jq-cmd}
     - {fileName: less-cmd}
     - {fileName: lsof}
+    - {fileName: make-cmd}
     - {fileName: openssl}
     - {fileName: phpbrew}
     - {fileName: pwgen-cmd}
@@ -758,6 +760,8 @@ bug:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
 단축키:
     - {fileName: mac-keyboard-shortcuts}
+c:
+    - {fileName: make-cmd}
 latex:
     - {fileName: mathjax-latex}
 media:

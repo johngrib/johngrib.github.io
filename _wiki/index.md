@@ -334,6 +334,7 @@ regenerate: true
 * [[jq-cmd]]
 * [[less-cmd]]
 * [[lsof]]
+* [[make-cmd]]
 * [[my-bash-cheatsheet]]
 * [[openssl]]
 * [[phpbrew]]
