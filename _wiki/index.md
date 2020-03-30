@@ -214,6 +214,7 @@ regenerate: true
 * [[CAP-theorem]]
 * [[Conway-s-law]]
 * [[Copernican-Principle]]
+* [[dry-principle]]
 * [[Edsel-edict]]
 * [[hollywood-principle]]
 * [[Kerckhoffs-s-principle]]
