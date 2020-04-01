@@ -1545,10 +1545,10 @@ git-prompt:
 git-tutorial:
     type: wiki
     title: 'git 교육 자료'
-    summary: '회사 동료들을 위해 만든 학습 자료'
+    summary: '내일 발표인데 오늘 밤에 만든, 회사 동료들을 위해 만든 학습 자료'
     parent: git
     url: /wiki/git-tutorial
-    updated: '2020-04-01 23:38:56 +0900'
+    updated: '2020-04-01 23:53:29 +0900'
     children: []
 global-variables-and-marriage-architecture:
     type: wiki

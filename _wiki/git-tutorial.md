@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : git 교육 자료
-summary : 회사 동료들을 위해 만든 학습 자료
+summary : 내일 발표인데 오늘 밤에 만든, 회사 동료들을 위해 만든 학습 자료
 date    : 2020-04-01 22:24:07 +0900
-updated : 2020-04-01 23:38:56 +0900
+updated : 2020-04-01 23:53:29 +0900
 tag     : git
 toc     : true
 public  : true
