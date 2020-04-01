@@ -473,6 +473,7 @@ git:
     - {fileName: git-checkout-specific-files}
     - {fileName: git-log}
     - {fileName: git-prompt}
+    - {fileName: git-tutorial}
 php:
     - {fileName: composer}
     - {fileName: email-validation}

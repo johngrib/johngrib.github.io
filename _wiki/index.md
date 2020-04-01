@@ -377,6 +377,7 @@ regenerate: true
 * [[git-checkout-specific-files]]
 * [[git-log]]
 * [[git-prompt]]
+* [[git-tutorial]]
 
 ### [[mac-apps]]
 

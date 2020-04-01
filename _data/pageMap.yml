@@ -1509,7 +1509,7 @@ git:
     parent: tools
     url: /wiki/git
     updated: '2020-03-14 22:13:15 +0900'
-    children: [git-alias, git-checkout-specific-files, git-log, git-prompt]
+    children: [git-alias, git-checkout-specific-files, git-log, git-prompt, git-tutorial]
 git-alias:
     type: wiki
     title: '편리한 git alias 설정하기'
@@ -1541,6 +1541,14 @@ git-prompt:
     parent: git
     url: /wiki/git-prompt
     updated: '2020-03-27 23:26:44 +0900'
+    children: []
+git-tutorial:
+    type: wiki
+    title: 'git 교육 자료'
+    summary: '회사 동료들을 위해 만든 학습 자료'
+    parent: git
+    url: /wiki/git-tutorial
+    updated: '2020-04-01 23:38:56 +0900'
     children: []
 global-variables-and-marriage-architecture:
     type: wiki
