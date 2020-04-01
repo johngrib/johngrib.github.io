@@ -3,7 +3,7 @@ layout  : wiki
 title   : iTerm2
 summary : 문제 해결 및 설정 경험을 모아본다
 date    : 2020-03-23 11:35:51 +0900
-updated : 2020-03-23 11:49:12 +0900
+updated : 2020-04-01 09:27:50 +0900
 tag     : mac
 toc     : true
 public  : true
@@ -50,4 +50,11 @@ brew cask install iterm2
 
 `Preferences` - `Profiles` - `General` - `Working Directory`에서 `Reuse previous session's directory`를 체크한다.
 
+
+### 새로운 탭을 열 때, 현재 탭의 바로 오른쪽에 열어주게 하기
+
+- `Preferences` - `Advanced` - `Tabs` 에서 `Tabs: New tabs are added at the end, not next to current tab`을 `No` 로 변경한다.
+- `Preferences` - `Advanced` 에서 `new tabs`로 검색해도 찾을 수 있다.
+
+이 옵션이 `Yes`이면 새로운 탭을 열 때마다 가장 오른쪽에 생겨난다. 탭을 많이 열고 사용하는 나는 이 옵션을 반드시 `No`로 설정한다.
 
