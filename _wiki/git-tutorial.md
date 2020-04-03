@@ -3,7 +3,7 @@ layout  : wiki
 title   : git 교육 자료
 summary : 내일 발표인데 오늘 밤에 만든, 회사 동료들을 위해 만든 학습 자료
 date    : 2020-04-01 22:24:07 +0900
-updated : 2020-04-02 10:35:06 +0900
+updated : 2020-04-03 13:22:29 +0900
 tag     : git
 toc     : true
 public  : true
@@ -36,6 +36,7 @@ git init
 - git의 `commit` 하나하나는
     - `tree` 하나의 포인터를 갖는다.
     - 다른 `commit` 하나의 포인터를 갖는다. 이 `commit`을 부모 커밋이라 한다.
+        - 머지 커밋은 부모 커밋이 2 개.
 - `tree`는 해시 트리.
 - `commit` 은 부모 커밋만 알고, 자식 커밋은 모른다.
     - 이 사실로 인해 `commit`들의 관계는 수학적으로 방향성 비순환 그래프(Directed Acyclic Graph)가 된다.
