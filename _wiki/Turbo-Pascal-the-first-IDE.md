@@ -3,11 +3,11 @@ layout  : wiki
 title   : 최초의 IDE, 터보 파스칼 (Turbo Pascal)
 summary : 최초의 편집기 + 디버거 + 컴파일러
 date    : 2019-12-09 22:50:16 +0900
-updated : 2019-12-09 22:55:29 +0900
+updated : 2020-04-04 18:44:00 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[]]
+parent  : [[legend]]
 latex   : false
 ---
 * TOC

@@ -754,9 +754,9 @@ command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
     summary: '요구 사항을 객체로 캡슐화한다'
-    parent: ""
+    parent: design-pattern
     url: /wiki/command-pattern
-    updated: '2019-10-24 18:04:54 +0900'
+    updated: '2020-04-04 18:44:12 +0900'
     children: []
 commit-go-mod-go-sum:
     type: wiki
@@ -957,7 +957,7 @@ design-pattern:
     parent: index
     url: /wiki/design-pattern
     updated: '2019-11-20 21:30:40 +0900'
-    children: [abstract-factory-pattern, adapter-pattern, builder-pattern, decorator-pattern, design-pattern-quotes, factory-method-pattern, null-object-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
+    children: [abstract-factory-pattern, adapter-pattern, builder-pattern, command-pattern, decorator-pattern, design-pattern-quotes, factory-method-pattern, null-object-pattern, observer-pattern, static-factory-method-pattern, strategy-pattern, template-method-pattern]
 design-pattern-quotes:
     type: wiki
     title: '디자인 패턴 토막글 모음'
@@ -2317,7 +2317,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, the-beginning-of-linux, Wordstar]
+    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, the-beginning-of-linux, Turbo-Pascal-the-first-IDE, Wordstar]
 less-cmd:
     type: wiki
     title: 'less 명령어'
@@ -3530,9 +3530,9 @@ Turbo-Pascal-the-first-IDE:
     type: wiki
     title: '최초의 IDE, 터보 파스칼 (Turbo Pascal)'
     summary: '최초의 편집기 + 디버거 + 컴파일러'
-    parent: ""
+    parent: legend
     url: /wiki/Turbo-Pascal-the-first-IDE
-    updated: '2019-12-09 22:55:29 +0900'
+    updated: '2020-04-04 18:44:00 +0900'
     children: []
 two-eggs-100-floor:
     type: wiki

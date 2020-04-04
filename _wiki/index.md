@@ -108,6 +108,7 @@ regenerate: true
     * [[Schrodinger-s-goyang-Hee]]
 
 ## [[design-pattern]]
+
 * [[abstract-factory-pattern]]
 * [[adapter-pattern]]
 * [[builder-pattern]]
@@ -540,6 +541,7 @@ regenerate: true
 * [[timeline]]
 * [[two-type-error]]
 * [[vimium]]
+* [[mac-tex]]
 
 ---
 
