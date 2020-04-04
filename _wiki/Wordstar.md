@@ -7,7 +7,7 @@ updated : 2019-12-09 22:56:22 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : legend
+parent  : [[legend]]
 latex   : false
 ---
 * TOC

@@ -6,7 +6,7 @@ date    : 2018-03-27 21:16:39 +0900
 updated : 2020-03-17 15:29:36 +0900
 tag     : vim wiki
 public  : true
-parent  : Vim
+parent  : [[Vim]]
 latex   : false
 ---
 * TOC

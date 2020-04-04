@@ -7,7 +7,7 @@ updated : 2019-12-15 19:08:53 +0900
 tag     : encryption
 toc     : true
 public  : true
-parent  : what
+parent  : [[what]]
 latex   : true
 ---
 * TOC

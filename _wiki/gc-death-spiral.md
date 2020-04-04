@@ -7,7 +7,7 @@ updated : 2019-10-29 23:12:24 +0900
 tag     : gc
 toc     : true
 public  : true
-parent  : garbage-collection
+parent  : [[garbage-collection]]
 latex   : false
 ---
 * TOC

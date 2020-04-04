@@ -7,7 +7,7 @@ updated : 2019-12-07 08:12:29 +0900
 tag     : 추정 bayes
 toc     : true
 public  : true
-parent  : proverb
+parent  : [[proverb]]
 latex   : false
 ---
 * TOC

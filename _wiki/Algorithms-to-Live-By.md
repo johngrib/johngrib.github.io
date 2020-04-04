@@ -7,7 +7,7 @@ updated : 2018-04-12 12:30:46 +0900
 tag     : book algirithm
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

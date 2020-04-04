@@ -7,7 +7,7 @@ updated : 2019-12-22 21:11:25 +0900
 tag     : python ip curl
 toc     : true
 public  : true
-parent  : Python3
+parent  : [[Python3]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2019-05-27 14:08:24 +0900
 tag     : algorithm
 toc     : true
 public  : true
-parent  : algorithm
+parent  : [[algorithm]]
 latex   : true
 ---
 * TOC

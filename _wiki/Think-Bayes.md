@@ -7,7 +7,7 @@ updated : 2020-03-01 19:07:09 +0900
 tag     : Think-Bayes bayes
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

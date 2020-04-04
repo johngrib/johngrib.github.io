@@ -8,7 +8,7 @@ tag     : review
 toc     : true
 comment : true
 public  : true
-parent  : review
+parent  : [[review]]
 ---
 * TOC
 {:toc}

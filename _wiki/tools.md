@@ -7,7 +7,7 @@ updated : 2018-02-06 07:05:19 +0900
 tag     : tools
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

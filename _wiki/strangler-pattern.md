@@ -7,7 +7,7 @@ updated : 2020-01-18 09:03:27 +0900
 tag     : pattern
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

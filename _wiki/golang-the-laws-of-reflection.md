@@ -7,7 +7,7 @@ updated : 2019-06-06 18:47:59 +0900
 tag     : golang 번역 the-go-blog reflection
 toc     : true
 public  : true
-parent  : Go-Blog-translation
+parent  : [[Go-Blog-translation]]
 latex   : false
 ---
 * TOC

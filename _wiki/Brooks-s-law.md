@@ -7,7 +7,7 @@ updated : 2018-02-21 20:59:54 +0900
 tag     : law Fred-Brooks
 toc     : true
 public  : true
-parent  : proverb
+parent  : [[proverb]]
 latex   : true
 ---
 * TOC

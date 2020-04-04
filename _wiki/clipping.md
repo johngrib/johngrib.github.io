@@ -7,7 +7,7 @@ updated : 2018-02-07 21:34:09 +0900
 tag     : 스크랩 tldr
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

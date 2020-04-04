@@ -7,7 +7,7 @@ updated : 2020-03-08 18:39:46 +0900
 tag     : java tip performance
 toc     : true
 public  : true
-parent  : Java
+parent  : [[Java]]
 latex   : false
 ---
 * TOC

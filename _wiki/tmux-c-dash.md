@@ -7,7 +7,7 @@ updated : 2019-11-03 22:41:45 +0900
 tag     : tmux terminal
 toc     : true
 public  : true
-parent  : why
+parent  : [[why]]
 latex   : false
 ---
 * TOC

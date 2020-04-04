@@ -7,7 +7,7 @@ updated : 2019-06-04 21:22:08 +0900
 tag     : math
 toc     : true
 public  : true
-parent  : math
+parent  : [[math]]
 latex   : true
 ---
 * TOC

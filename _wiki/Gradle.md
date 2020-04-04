@@ -7,7 +7,7 @@ updated : 2020-02-18 21:14:40 +0900
 tag     : gradle tool
 toc     : true
 public  : true
-parent  : tools
+parent  : [[tools]]
 latex   : false
 ---
 * TOC

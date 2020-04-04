@@ -7,7 +7,7 @@ updated : 2019-12-15 19:16:18 +0900
 tag     : 공부
 toc     : true
 public  : true
-parent  : clipping
+parent  : [[clipping]]
 latex   : false
 ---
 * TOC

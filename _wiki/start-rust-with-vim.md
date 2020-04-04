@@ -7,7 +7,7 @@ updated : 2019-12-29 08:46:50 +0900
 tag     : rust vim
 toc     : true
 public  : true
-parent  : rust
+parent  : [[rust]]
 latex   : false
 ---
 * TOC

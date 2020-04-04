@@ -7,7 +7,7 @@ updated : 2020-03-15 12:32:42 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

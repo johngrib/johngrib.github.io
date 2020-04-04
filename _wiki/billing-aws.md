@@ -7,7 +7,7 @@ updated : 2019-11-15 07:59:24 +0900
 tag     : aws money
 toc     : true
 public  : true
-parent  : aws
+parent  : [[aws]]
 latex   : false
 ---
 * TOC

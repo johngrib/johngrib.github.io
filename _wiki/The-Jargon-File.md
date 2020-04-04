@@ -6,7 +6,7 @@ updated : 2017-12-10 00:55:18 +0900
 tag     : book hacker
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

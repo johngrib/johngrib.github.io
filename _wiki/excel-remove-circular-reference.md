@@ -7,7 +7,7 @@ updated : 2018-09-19 11:49:01 +0900
 tag     : excel
 toc     : true
 public  : true
-parent  : Excel
+parent  : [[Excel]]
 latex   : false
 ---
 * TOC

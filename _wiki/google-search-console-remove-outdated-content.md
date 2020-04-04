@@ -7,7 +7,7 @@ updated : 2018-02-07 21:31:00 +0900
 tag     : google
 toc     : true
 public  : true
-parent  : useful-site
+parent  : [[useful-site]]
 latex   : true
 ---
 * TOC

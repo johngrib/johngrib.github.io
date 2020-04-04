@@ -7,7 +7,7 @@ updated : 2019-11-05 22:17:00 +0900
 tag     : oop
 toc     : true
 public  : true
-parent  : summary
+parent  : [[summary]]
 latex   : false
 ---
 * TOC

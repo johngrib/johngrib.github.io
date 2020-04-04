@@ -7,7 +7,7 @@ updated : 2020-03-04 22:23:07 +0900
 tag     : golang git
 toc     : true
 public  : true
-parent  : Golang
+parent  : [[Golang]]
 latex   : false
 ---
 * TOC

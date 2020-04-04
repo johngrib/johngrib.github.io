@@ -7,7 +7,7 @@ updated : 2020-01-26 22:36:12 +0900
 tag     : bash vim ctags golang command
 toc     : true
 public  : true
-parent  : command-line
+parent  : [[command-line]]
 latex   : false
 ---
 * TOC

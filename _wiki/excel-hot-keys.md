@@ -7,7 +7,7 @@ updated : 2018-11-01 09:45:21 +0900
 tag     : excel hotkey
 toc     : true
 public  : true
-parent  : Excel
+parent  : [[Excel]]
 latex   : false
 ---
 * TOC

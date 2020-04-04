@@ -7,7 +7,7 @@ updated : 2018-04-22 21:28:11 +0900
 tag     : http
 toc     : true
 public  : true
-parent  : useful-site
+parent  : [[useful-site]]
 latex   : false
 ---
 * TOC

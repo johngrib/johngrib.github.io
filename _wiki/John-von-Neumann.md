@@ -7,7 +7,7 @@ updated : 2018-04-03 22:57:19 +0900
 tag     : von-neumann sort
 toc     : true
 public  : true
-parent  : legend
+parent  : [[legend]]
 latex   : false
 ---
 * TOC

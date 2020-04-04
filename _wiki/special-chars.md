@@ -7,7 +7,7 @@ updated : 2019-10-03 23:08:33 +0900
 tag     : special-chars
 toc     : true
 public  : true
-parent  : what
+parent  : [[what]]
 latex   : true
 ---
 * TOC

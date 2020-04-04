@@ -7,7 +7,7 @@ updated : 2018-03-14 09:03:34 +0900
 tag     : review 교육
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

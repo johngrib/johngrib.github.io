@@ -7,7 +7,7 @@ updated : 2019-06-06 16:38:10 +0900
 tag     : golang reflect
 toc     : true
 public  : true
-parent  : Golang
+parent  : [[Golang]]
 latex   : false
 ---
 * TOC

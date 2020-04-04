@@ -7,7 +7,7 @@ updated : 2018-02-08 12:16:58 +0900
 tag     : story
 toc     : true
 public  : true
-parent  : clipping
+parent  : [[clipping]]
 latex   : false
 ---
 * TOC

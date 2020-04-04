@@ -7,7 +7,7 @@ updated : 2018-04-25 22:05:44 +0900
 tag     : bayes
 toc     : true
 public  : true
-parent  : study
+parent  : [[study]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2018-02-13 21:00:13 +0900
 tag     : trouble-shooting til
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

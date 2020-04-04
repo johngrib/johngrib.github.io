@@ -7,7 +7,7 @@ updated : 2020-01-10 22:12:14 +0900
 tag     : math
 toc     : true
 public  : true
-parent  : study-concrete-math
+parent  : [[study-concrete-math]]
 latex   : true
 ---
 * TOC

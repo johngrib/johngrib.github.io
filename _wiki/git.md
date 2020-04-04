@@ -7,7 +7,7 @@ updated : 2020-03-14 22:13:15 +0900
 tag     : git command
 toc     : true
 public  : true
-parent  : tools
+parent  : [[tools]]
 latex   : false
 ---
 * TOC

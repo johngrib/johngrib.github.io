@@ -7,7 +7,7 @@ updated : 2020-01-27 15:41:51 +0900
 tag     : vim golang
 toc     : true
 public  : true
-parent  : Golang
+parent  : [[Golang]]
 latex   : false
 ---
 * TOC

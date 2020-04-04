@@ -7,7 +7,7 @@ updated : 2020-02-09 08:23:03 +0900
 tag     : fzf git bash
 toc     : true
 public  : true
-parent  : git
+parent  : [[git]]
 latex   : false
 ---
 * TOC

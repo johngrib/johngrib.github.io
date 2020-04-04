@@ -7,7 +7,7 @@ updated : 2018-03-20 23:21:57 +0900
 tag     : review game history
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

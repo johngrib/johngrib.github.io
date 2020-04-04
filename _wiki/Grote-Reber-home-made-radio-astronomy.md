@@ -7,7 +7,7 @@ updated : 2018-02-08 13:19:30 +0900
 tag     : story science
 toc     : true
 public  : true
-parent  : legend
+parent  : [[legend]]
 latex   : false
 ---
 * TOC

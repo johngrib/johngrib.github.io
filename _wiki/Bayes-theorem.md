@@ -7,7 +7,7 @@ updated : 2018-04-22 18:56:03 +0900
 tag     : bayes
 toc     : true
 public  : true
-parent  : math
+parent  : [[math]]
 latex   : true
 ---
 * TOC

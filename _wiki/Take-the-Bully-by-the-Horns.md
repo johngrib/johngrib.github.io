@@ -7,7 +7,7 @@ updated : 2018-02-02 22:55:21 +0900
 tag     : review soft-skill
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

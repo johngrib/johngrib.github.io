@@ -7,7 +7,7 @@ updated : 2020-02-17 08:07:39 +0900
 tag     : web
 toc     : true
 public  : true
-parent  : summary
+parent  : [[summary]]
 latex   : false
 ---
 * TOC

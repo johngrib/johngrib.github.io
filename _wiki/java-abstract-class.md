@@ -7,7 +7,7 @@ updated : 2019-11-14 22:24:15 +0900
 tag     : java
 toc     : true
 public  : true
-parent  : Java
+parent  : [[Java]]
 latex   : false
 ---
 * TOC

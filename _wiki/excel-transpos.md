@@ -7,7 +7,7 @@ updated : 2018-09-17 13:49:55 +0900
 tag     : excel vba
 toc     : true
 public  : true
-parent  : Excel
+parent  : [[Excel]]
 latex   : false
 ---
 * TOC

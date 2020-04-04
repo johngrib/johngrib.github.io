@@ -7,7 +7,7 @@ updated : 2020-01-26 09:05:31 +0900
 tag     : db
 toc     : true
 public  : true
-parent  : database
+parent  : [[database]]
 latex   : false
 ---
 * TOC

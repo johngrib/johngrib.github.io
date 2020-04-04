@@ -7,7 +7,7 @@ updated : 2018-02-08 12:04:33 +0900
 tag     : story Gerald-Weinberg
 toc     : true
 public  : true
-parent  : legend
+parent  : [[legend]]
 latex   : false
 ---
 * TOC

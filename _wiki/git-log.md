@@ -7,7 +7,7 @@ updated : 2019-12-01 19:20:57 +0900
 tag     : git
 toc     : true
 public  : true
-parent  : git
+parent  : [[git]]
 latex   : false
 ---
 * TOC

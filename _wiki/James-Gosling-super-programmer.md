@@ -7,7 +7,7 @@ updated : 2020-01-28 23:06:30 +0900
 tag     : story James-Gosling
 toc     : true
 public  : true
-parent  : legend
+parent  : [[legend]]
 latex   : false
 ---
 * TOC

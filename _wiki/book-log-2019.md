@@ -7,7 +7,7 @@ updated : 2019-11-19 22:17:55 +0900
 tag     : book
 toc     : true
 public  : true
-parent  : diary
+parent  : [[diary]]
 latex   : false
 ---
 * TOC

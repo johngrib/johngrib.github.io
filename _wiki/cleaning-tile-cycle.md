@@ -7,7 +7,7 @@ updated : 2019-10-29 12:05:22 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : my-lifehack
+parent  : [[my-lifehack]]
 latex   : true
 ---
 * TOC

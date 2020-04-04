@@ -7,7 +7,7 @@ updated : 2019-12-19 23:03:58 +0900
 tag     : agile study
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

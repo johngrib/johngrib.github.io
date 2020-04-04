@@ -7,7 +7,7 @@ updated : 2018-02-01 22:56:16 +0900
 tag     : review 장인정신 괴담
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

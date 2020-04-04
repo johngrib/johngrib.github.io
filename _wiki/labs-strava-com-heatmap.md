@@ -7,7 +7,7 @@ updated : 2018-02-07 21:30:38 +0900
 tag     : tools map 보안 twitter
 toc     : true
 public  : true
-parent  : useful-site
+parent  : [[useful-site]]
 latex   : false
 ---
 * TOC

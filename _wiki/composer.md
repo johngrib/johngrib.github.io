@@ -7,7 +7,7 @@ updated : 2019-01-13 22:54:23 +0900
 tag     : php command
 toc     : true
 public  : true
-parent  : php
+parent  : [[php]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2019-09-21 11:28:35 +0900
 tag     : java
 toc     : true
 public  : true
-parent  : spring
+parent  : [[spring]]
 latex   : false
 ---
 * TOC

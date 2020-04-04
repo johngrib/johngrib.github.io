@@ -7,7 +7,7 @@ updated : 2020-01-29 22:06:49 +0900
 tag     : proverb principle naming
 toc     : true
 public  : true
-parent  : proverb
+parent  : [[proverb]]
 latex   : false
 ---
 * TOC

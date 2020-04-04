@@ -7,7 +7,7 @@ updated : 2020-01-25 23:38:35 +0900
 tag     : game
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

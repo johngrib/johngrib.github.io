@@ -7,7 +7,7 @@ updated : 2018-04-08 15:12:05 +0900
 tag     : Von-Neumann random
 toc     : true
 public  : true
-parent  : algorithm
+parent  : [[algorithm]]
 latex   : true
 ---
 * TOC

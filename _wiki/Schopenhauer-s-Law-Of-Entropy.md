@@ -7,7 +7,7 @@ updated : 2019-11-01 21:33:32 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : proverb
+parent  : [[proverb]]
 latex   : false
 ---
 * TOC

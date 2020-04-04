@@ -7,7 +7,7 @@ updated : 2019-12-29 23:00:41 +0900
 tag     : network performance
 toc     : true
 public  : true
-parent  : what
+parent  : [[what]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2020-03-28 18:23:00 +0900
 tag     : review
 toc     : true
 public  : true
-parent  : review
+parent  : [[review]]
 latex   : false
 ---
 * TOC

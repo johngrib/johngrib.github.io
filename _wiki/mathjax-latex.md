@@ -7,7 +7,7 @@ updated : 2019-11-04 22:13:47 +0900
 tag     : latex
 toc     : true
 public  : true
-parent  : how-to
+parent  : [[how-to]]
 latex   : true
 ---
 * TOC

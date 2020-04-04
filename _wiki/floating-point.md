@@ -7,7 +7,7 @@ updated : 2020-01-28 22:40:55 +0900
 tag     : binary
 toc     : true
 public  : true
-parent  : what
+parent  : [[what]]
 latex   : true
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2018-03-01 17:42:18 +0900
 tag     : book design
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

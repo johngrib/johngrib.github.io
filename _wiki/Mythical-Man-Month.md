@@ -7,7 +7,7 @@ updated : 2018-02-21 22:38:43 +0900
 tag     : book Fred-Brooks
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

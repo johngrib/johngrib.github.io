@@ -7,7 +7,7 @@ updated : 2020-02-08 23:56:48 +0900
 tag     : java 번역
 toc     : true
 public  : true
-parent  : Java
+parent  : [[Java]]
 latex   : false
 ---
 * TOC

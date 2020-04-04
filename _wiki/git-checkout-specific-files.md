@@ -7,7 +7,7 @@ updated : 2018-12-02 14:32:59 +0900
 tag     : til git
 toc     : true
 public  : true
-parent  : git
+parent  : [[git]]
 latex   : false
 ---
 * TOC

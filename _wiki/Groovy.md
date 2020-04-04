@@ -7,7 +7,7 @@ updated : 2017-12-03 15:01:36 +0900
 tag     : language jvm-lang groovy
 toc     : true
 public  : true
-parent  : programming-language
+parent  : [[programming-language]]
 latex   : false
 ---
 * TOC

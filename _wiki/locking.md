@@ -7,7 +7,7 @@ updated : 2019-10-11 10:59:15 +0900
 tag     : transaction db
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : true
 ---
 * TOC

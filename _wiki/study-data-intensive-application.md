@@ -7,7 +7,7 @@ updated : 2018-07-06 23:08:47 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : study
+parent  : [[study]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2020-03-18 23:01:09 +0900
 tag     : aws
 toc     : true
 public  : true
-parent  : aws
+parent  : [[aws]]
 latex   : false
 ---
 * TOC

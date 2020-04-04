@@ -8,7 +8,7 @@ tag     : hammerspoon lua
 toc     : true
 comment : true
 public  : true
-parent  : hammerspoon
+parent  : [[hammerspoon]]
 ---
 * TOC
 {:toc}

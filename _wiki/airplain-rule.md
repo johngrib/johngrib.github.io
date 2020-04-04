@@ -7,7 +7,7 @@ updated : 2017-12-25 13:07:43 +0900
 tag     : complexity law
 toc     : true
 public  : true
-parent  : proverb
+parent  : [[proverb]]
 latex   : false
 ---
 * TOC

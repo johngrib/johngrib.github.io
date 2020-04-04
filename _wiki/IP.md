@@ -7,7 +7,7 @@ updated : 2019-07-22 23:18:51 +0900
 tag     : network
 toc     : true
 public  : true
-parent  : what
+parent  : [[what]]
 latex   : true
 ---
 * TOC

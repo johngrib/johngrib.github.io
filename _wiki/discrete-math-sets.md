@@ -7,7 +7,7 @@ updated : 2019-02-02 14:50:16 +0900
 tag     : math
 toc     : true
 public  : true
-parent  : study-discrete-mathematics
+parent  : [[study-discrete-mathematics]]
 latex   : true
 ---
 * TOC

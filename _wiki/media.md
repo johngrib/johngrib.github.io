@@ -7,7 +7,7 @@ updated : 2018-01-13 11:20:36 +0900
 tag     : media
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

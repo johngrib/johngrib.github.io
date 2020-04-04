@@ -7,7 +7,7 @@ updated : 2018-02-12 10:15:29 +0900
 tag     : linux command-line
 toc     : true
 public  : true
-parent  : tools
+parent  : [[tools]]
 latex   : false
 ---
 * TOC

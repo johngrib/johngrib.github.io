@@ -7,7 +7,7 @@ updated : 2019-10-16 12:05:42 +0900
 tag     : java gc
 toc     : true
 public  : true
-parent  : summary
+parent  : [[summary]]
 latex   : false
 ---
 * TOC

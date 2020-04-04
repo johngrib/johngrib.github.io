@@ -7,7 +7,7 @@ updated : 2018-09-16 09:35:54 +0900
 tag     : aws
 toc     : true
 public  : true
-parent  : tools
+parent  : [[tools]]
 latex   : false
 ---
 * TOC

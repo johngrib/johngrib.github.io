@@ -7,7 +7,7 @@ updated : 2018-01-30 23:16:57 +0900
 tag     : proverb soft-skill Gerald-Weinberg
 toc     : true
 public  : true
-parent  : proverb
+parent  : [[proverb]]
 latex   : false
 ---
 * TOC

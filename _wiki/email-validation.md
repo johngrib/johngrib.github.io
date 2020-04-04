@@ -7,7 +7,7 @@ updated : 2019-11-13 21:45:37 +0900
 tag     : email regex php
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

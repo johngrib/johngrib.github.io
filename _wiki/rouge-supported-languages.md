@@ -7,7 +7,7 @@ updated : 2018-09-17 23:51:26 +0900
 tag     : github jekyll
 toc     : true
 public  : true
-parent  : what
+parent  : [[what]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2018-02-13 21:38:46 +0900
 tag     : book o-reilly science map
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2018-10-19 22:21:31 +0900
 tag     : golang cheatsheet
 toc     : true
 public  : true
-parent  : Golang
+parent  : [[Golang]]
 latex   : false
 ---
 * TOC

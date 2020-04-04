@@ -7,7 +7,7 @@ updated : 2018-02-04 16:25:41 +0900
 tag     : book Uncle-Bob
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

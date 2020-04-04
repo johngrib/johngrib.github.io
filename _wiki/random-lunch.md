@@ -7,7 +7,7 @@ updated : 2020-03-20 09:41:21 +0900
 tag     : bash
 toc     : true
 public  : true
-parent  : my-lifehack
+parent  : [[my-lifehack]]
 latex   : true
 ---
 * TOC

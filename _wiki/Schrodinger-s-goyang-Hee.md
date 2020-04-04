@@ -7,7 +7,7 @@ updated : 2018-04-22 17:16:53 +0900
 tag     : sf
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

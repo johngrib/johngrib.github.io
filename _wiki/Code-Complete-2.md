@@ -7,7 +7,7 @@ updated : 2018-01-26 21:35:22 +0900
 tag     : book jolt-award
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2018-04-08 19:48:46 +0900
 tag     : yaml data-format
 toc     : true
 public  : true
-parent  : programming-language
+parent  : [[programming-language]]
 latex   : false
 ---
 * TOC

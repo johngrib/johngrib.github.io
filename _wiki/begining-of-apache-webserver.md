@@ -7,7 +7,7 @@ updated : 2020-02-05 21:55:22 +0900
 tag     : story
 toc     : true
 public  : true
-parent  : legend
+parent  : [[legend]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2020-01-25 00:30:38 +0900
 tag     : hammerspoon
 toc     : true
 public  : true
-parent  : hammerspoon
+parent  : [[hammerspoon]]
 latex   : false
 ---
 * TOC

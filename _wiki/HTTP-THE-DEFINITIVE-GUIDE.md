@@ -7,7 +7,7 @@ updated : 2018-02-05 22:51:00 +0900
 tag     : book http
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

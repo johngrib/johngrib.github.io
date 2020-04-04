@@ -8,7 +8,7 @@ tag     : perl regex
 toc     : true
 comment : true
 public  : true
-parent  : algorithm
+parent  : [[algorithm]]
 ---
 * TOC
 {:toc}

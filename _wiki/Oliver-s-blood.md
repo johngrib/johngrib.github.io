@@ -7,7 +7,7 @@ updated : 2020-01-25 22:46:33 +0900
 tag     : bayes
 toc     : true
 public  : true
-parent  : study-think-bayes
+parent  : [[study-think-bayes]]
 latex   : true
 ---
 * TOC

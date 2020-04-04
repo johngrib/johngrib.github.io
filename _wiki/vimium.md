@@ -7,7 +7,7 @@ updated : 2020-03-26 20:41:50 +0900
 tag     : chrome firefox vim
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

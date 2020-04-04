@@ -7,7 +7,7 @@ updated : 2018-07-29 00:13:44 +0900
 tag     : 번역
 toc     : true
 public  : true
-parent  : clipping
+parent  : [[clipping]]
 latex   : false
 ---
 * TOC

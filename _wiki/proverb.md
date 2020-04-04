@@ -7,7 +7,7 @@ updated : 2019-10-27 22:42:37 +0900
 tag     : proverb culture
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

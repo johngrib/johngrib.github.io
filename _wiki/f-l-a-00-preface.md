@@ -7,7 +7,7 @@ updated : 2018-11-12 08:59:52 +0900
 tag     : cs
 toc     : true
 public  : true
-parent  : study-formal-languages-and-automata
+parent  : [[study-formal-languages-and-automata]]
 latex   : true
 ---
 * TOC

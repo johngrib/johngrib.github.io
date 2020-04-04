@@ -7,7 +7,7 @@ updated : 2018-04-24 22:03:17 +0900
 tag     : math 확률 bayes
 toc     : true
 public  : true
-parent  : math
+parent  : [[math]]
 latex   : true
 ---
 * TOC

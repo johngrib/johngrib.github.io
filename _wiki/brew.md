@@ -7,7 +7,7 @@ updated : 2020-02-22 23:43:03 +0900
 tag     : bash mac command
 toc     : true
 public  : true
-parent  : command-line
+parent  : [[command-line]]
 latex   : false
 ---
 * TOC

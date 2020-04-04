@@ -7,7 +7,7 @@ updated : 2017-04-03 07:33:49 +0900
 tag     : vim tmux fix
 toc     : true
 public  : true
-parent  : Vim
+parent  : [[Vim]]
 latex   : false
 ---
 * TOC

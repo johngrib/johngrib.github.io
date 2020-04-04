@@ -7,7 +7,7 @@ updated : 2018-10-15 10:15:05 +0900
 tag     : golang padding alignment
 toc     : true
 public  : true
-parent  : Golang
+parent  : [[Golang]]
 latex   : false
 ---
 * TOC

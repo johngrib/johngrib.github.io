@@ -7,7 +7,7 @@ updated : 2018-04-15 18:35:07 +0900
 tag     : law stat
 toc     : true
 public  : true
-parent  : proverb
+parent  : [[proverb]]
 latex   : false
 ---
 * TOC

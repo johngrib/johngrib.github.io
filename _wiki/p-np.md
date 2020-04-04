@@ -7,7 +7,7 @@ updated : 2019-06-12 10:05:45 +0900
 tag     : math cs
 toc     : true
 public  : true
-parent  : algorithm
+parent  : [[algorithm]]
 latex   : true
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2019-11-05 03:14:16 +0900
 tag     : story Bill-Atkinson Steve-Jobs
 toc     : true
 public  : true
-parent  : legend
+parent  : [[legend]]
 latex   : false
 ---
 * TOC

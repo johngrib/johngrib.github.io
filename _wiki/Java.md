@@ -7,7 +7,7 @@ updated : 2018-03-05 16:14:12 +0900
 tag     : programming language java
 toc     : true
 public  : true
-parent  : programming-language
+parent  : [[programming-language]]
 latex   : false
 ---
 * TOC

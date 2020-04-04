@@ -7,7 +7,7 @@ updated : 2018-09-16 22:05:58 +0900
 tag     : vagrant docker centos ubuntu vm devops
 toc     : true
 public  : true
-parent  : til
+parent  : [[til]]
 latex   : false
 ---
 * TOC

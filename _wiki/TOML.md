@@ -7,7 +7,7 @@ updated : 2018-10-23 11:01:12 +0900
 tag     : toml data-format
 toc     : true
 public  : true
-parent  : programming-language
+parent  : [[programming-language]]
 latex   : false
 ---
 * TOC

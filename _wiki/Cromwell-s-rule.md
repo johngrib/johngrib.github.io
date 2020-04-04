@@ -7,7 +7,7 @@ updated : 2018-04-08 20:39:13 +0900
 tag     : math history
 toc     : true
 public  : true
-parent  : math
+parent  : [[math]]
 latex   : false
 ---
 * TOC

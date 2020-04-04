@@ -7,7 +7,7 @@ updated : 2019-11-24 09:36:53 +0900
 tag     : rule agile
 toc     : true
 public  : true
-parent  : proverb
+parent  : [[proverb]]
 latex   : false
 ---
 * TOC

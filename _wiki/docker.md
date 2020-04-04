@@ -7,7 +7,7 @@ updated : 2020-02-05 22:54:41 +0900
 tag     : bash command container
 toc     : true
 public  : true
-parent  : how-to
+parent  : [[how-to]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2019-11-19 23:57:24 +0900
 tag     : 단축키 mac
 toc     : true
 public  : true
-parent  : index
+parent  : [[index]]
 latex   : false
 ---
 * TOC

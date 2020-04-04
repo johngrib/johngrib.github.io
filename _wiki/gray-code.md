@@ -7,7 +7,7 @@ updated : 2019-11-15 08:00:15 +0900
 tag     : binary algorithm
 toc     : true
 public  : true
-parent  : what
+parent  : [[what]]
 latex   : true
 ---
 * TOC

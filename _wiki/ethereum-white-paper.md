@@ -7,7 +7,7 @@ updated : 2019-02-11 15:54:54 +0900
 tag     : blockchain
 toc     : true
 public  : true
-parent  : what
+parent  : [[what]]
 latex   : true
 ---
 * TOC

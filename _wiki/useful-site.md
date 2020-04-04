@@ -7,7 +7,7 @@ updated : 2020-02-15 12:12:26 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : tools
+parent  : [[tools]]
 latex   : false
 ---
 * TOC

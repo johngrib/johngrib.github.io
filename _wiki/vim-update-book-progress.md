@@ -7,7 +7,7 @@ updated : 2019-11-30 21:57:13 +0900
 tag     : vim awk
 toc     : true
 public  : true
-parent  : vim
+parent  : [[vim]]
 latex   : false
 ---
 * TOC

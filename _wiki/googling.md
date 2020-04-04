@@ -7,7 +7,7 @@ updated : 2020-03-03 20:08:53 +0900
 tag     : google twitter facebook
 toc     : true
 public  : true
-parent  : how-to
+parent  : [[how-to]]
 latex   : false
 ---
 * TOC

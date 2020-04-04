@@ -7,7 +7,7 @@ updated : 2018-09-09 11:20:07 +0900
 tag     : http rfc
 toc     : true
 public  : true
-parent  : why
+parent  : [[why]]
 latex   : false
 ---
 * TOC

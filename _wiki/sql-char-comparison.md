@@ -7,7 +7,7 @@ updated : 2018-04-21 11:15:30 +0900
 tag     : db
 toc     : true
 public  : true
-parent  : why
+parent  : [[why]]
 latex   : false
 ---
 * TOC

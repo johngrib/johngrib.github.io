@@ -7,7 +7,7 @@ updated : 2018-01-30 22:42:26 +0900
 tag     : review consulting Gerald-Weinberg
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2018-07-07 05:12:42 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : study-data-intensive-application
+parent  : [[study-data-intensive-application]]
 latex   : false
 ---
 * TOC

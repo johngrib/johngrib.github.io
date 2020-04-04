@@ -7,7 +7,7 @@ updated : 2020-01-23 23:58:56 +0900
 tag     : book
 toc     : true
 public  : true
-parent  : book
+parent  : [[book]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2018-02-07 22:46:36 +0900
 tag     : letter case
 toc     : true
 public  : true
-parent  : why
+parent  : [[why]]
 latex   : false
 ---
 * TOC

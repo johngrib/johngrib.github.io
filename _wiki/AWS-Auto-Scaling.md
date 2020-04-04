@@ -7,7 +7,7 @@ updated : 2018-09-16 22:06:33 +0900
 tag     : aws devops
 toc     : true
 public  : true
-parent  : aws
+parent  : [[aws]]
 latex   : false
 ---
 * TOC
