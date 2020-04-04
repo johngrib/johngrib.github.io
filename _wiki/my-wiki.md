@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2020-02-12 08:43:35 +0900
+updated : 2020-04-04 18:36:25 +0900
 tag     : wiki vimwiki jekyll blog
 toc     : true
 comment : true
@@ -542,6 +542,61 @@ git add _data
 ### 파일을 삭제한다
 
 `:vimwikidel` 이라 쓰고 탭 키를 누르면 `:VimwikiDeleteLink` 커맨드가 자동완성된다. 엔터를 누르고 `y`를 눌러 동의하면 현재 편집중인 문서 파일을 삭제하고, 위키 경로 전체에서 해당 파일 링크를 모두 해제해준다.
+
+## 문제 해결
+### :VimwikiRenameLink 가 parent 에는 작동하지 않는 문제
+
+[honggaruy]( https://github.com/honggaruy )님이 [다음과 같은 질문을 남겨 주셨다]( https://github.com/johngrib/johngrib.github.io/issues/31#issuecomment-608995471 ).
+
+> 사용중에 질문이 생겼습니다. 위에서 파일 이름을 변경한다는 부분에서 :VimwikiRenameLink를 layout이 Category 인 문서에서 실행시에 링크 걸린것들은 모두 바뀌는 것 같은데 각 문서페이지의 메타데이터에서 parent 요소까지는 안 바뀌는것 같더군요. 그래서 :VimwikiRenameLink 수행시 상위항목 표시가 모두 깨집니다. 혹시 해결책이 있으신가 해서 문의드립니다.
+
+`:VimwikiRenameLink` 가 통하지 않는 이유는 다음과 같이 작성되었기 때문이다.
+
+```markdown
+parent : index
+```
+
+`:VimwikiRenameLink` 가 작동하도록 하려면 다음과 같이 `\[[`와 `]]`를 씌워주면 된다.
+
+```markdown
+parent : [[index]]
+```
+
+그런데 모든 문서에 대해 일일이 작업하는 것은 귀찮다. `sed`를 사용하면 깔끔하게 해결할 수 있다.
+
+```sh
+find . -name '*.md' \
+  | xargs sed -E -i '' 's,(^parent *: *)([^\[]*)$,\1[[\2]],'
+```
+
+`ag`를 써서 다음과 같이 작업해도 같은 결과가 나올 것이다.
+
+```sh
+ag 'parent\s*:\s*[^\[\]]*$' -l \
+  | grep '\.md$' \
+  | xargs sed -E -i '' 's,(^parent *: *)([^\[]*)$,\1[[\2]],'
+```
+
+아무튼 이 작업을 하고 나면 다음과 같이 검증할 수 있을 것이다.
+
+![]( /post-img/my-wiki/parent-wrap.png )
+
+```sh
+ # 몇 개의 파일이 변경되었는지 확인한다
+git status --short | awk '{print $1}' | sort | uniq -c
+```
+
+- 스크린샷을 보면 377 개의 파일이 변경되었음을 알 수 있다.
+
+```sh
+ # 파일별로 몇 줄이 추가되고 몇 줄이 삭제되었는지 확인한다
+git diff --numstat | awk '{print $1, $2}' | sort | uniq -c
+```
+
+- 스크린샷을 보면 377 개의 파일이 각각 1 줄이 추가되고, 1줄이 삭제되었음을 알 수 있다.
+
+이 작업을 마치면 `:VimwikiRenameLink`가 `parent`에도 잘 작동하게 된다.
+
 
 ## Links
 
