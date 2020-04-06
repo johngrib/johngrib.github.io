@@ -376,6 +376,7 @@ regenerate: true
 
 * [[git-alias]]
 * [[git-checkout-specific-files]]
+* [[git-index]]
 * [[git-log]]
 * [[git-prompt]]
 * [[git-tutorial]]
