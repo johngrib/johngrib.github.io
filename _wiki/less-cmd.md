@@ -3,7 +3,7 @@ layout  : wiki
 title   : less 명령어
 summary : less is more
 date    : 2020-01-19 22:06:24 +0900
-updated : 2020-01-19 22:32:57 +0900
+updated : 2020-04-06 22:06:29 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -48,4 +48,12 @@ less -X test.txt
 | `25p`                 | 25% 지점으로 이동              |
 | `h`                   | 도움말을 본다                  |
 | `q`                   | less 종료                      |
+
+## 라인 넘버 보이게 하기
+
+`.bashrc`에 다음과 같이 `export`를 사용해 두면 `less`를 실행할 때 라인 넘버가 보이게 된다.
+
+```sh
+export LESS='-N'
+```
 
