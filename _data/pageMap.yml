@@ -421,7 +421,7 @@ better-work:
     parent: index
     url: /wiki/better-work
     updated: '2020-03-15 12:32:42 +0900'
-    children: [better-meeting, leadership, purpose-of-business, working-together]
+    children: [better-meeting, expert, leadership, purpose-of-business, working-together]
 big-numbers:
     type: wiki
     title: '좀 큰 숫자들'
@@ -1277,6 +1277,14 @@ excel-vba-setting:
     parent: Excel
     url: /wiki/excel-vba-setting
     updated: '2018-09-17 12:50:46 +0900'
+    children: []
+expert:
+    type: wiki
+    title: 전문가
+    summary: ""
+    parent: better-work
+    url: /wiki/expert
+    updated: '2020-04-07 23:21:19 +0900'
     children: []
 f-l-a-00-preface:
     type: wiki
