@@ -531,10 +531,12 @@ regenerate: true
 * [[coding-font]]{코딩 폰트}
 * [[defensive-copy.md]]
 * [[email-validation]]
+* [[gnu-project]]
 * [[integer]]
 * [[junit5-nested]]
 * [[locking]]
 * [[mac-keyboard-shortcuts]]
+* [[mac-tex]]
 * [[oop-quotes]]
 * [[responsibility-driven-design]]
 * [[restdoc-item-generator]]
@@ -543,7 +545,6 @@ regenerate: true
 * [[timeline]]
 * [[two-type-error]]
 * [[vimium]]
-* [[mac-tex]]
 
 ---
 
