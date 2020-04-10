@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.01.표기법
 summary : 02.SUMS.01.NOTATION
 date    : 2018-05-02 22:02:21 +0900
-updated : 2020-03-04 21:08:02 +0900
+updated : 2020-04-10 23:51:40 +0900
 tag     : math
 toc     : true
 public  : true
@@ -13,15 +13,15 @@ latex   : true
 * TOC
 {:toc}
 
-# 표기법
+## 표기법
 
-## 표준적인 표기법
+### 표준적인 표기법
 
-### 시그마 표기
+#### 시그마 표기
 
 [[sigma-notation]]
 
-## 전통과 벗어난 표기법
+### 전통과 벗어난 표기법
 
 * 케네스 E. 아이버슨(Kenneth E. Iverson)이 프로그래밍 언어 APL에서 착안.
     * 명제가 참이면 1, 거짓이면 0.
@@ -47,6 +47,6 @@ bool(1 == 2) + bool(2 == 2) # 0 + 1 이므로 결과는 1
 ```
 
 
-## Links
+### Links
 
 * [[CONCRETE-MATH]]
