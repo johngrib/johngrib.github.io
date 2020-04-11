@@ -517,6 +517,7 @@ regenerate: true
 
 ## [[better-work]]
 
+* [[better-checklist]]
 * [[better-meeting]]
 * [[expert]]
 * [[leadership]]
