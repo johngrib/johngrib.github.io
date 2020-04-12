@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 02.합.03.합의 조작
 summary : 02.SUMS.03.MANIPULATION OF SUMS
 date    : 2018-05-09 22:00:21 +0900
-updated : 2018-05-19 10:34:12 +0900
+updated : 2020-04-12 22:07:42 +0900
 tag     : math
 toc     : true
 public  : true
@@ -15,11 +15,11 @@ latex   : true
 
 이 문서는 [[CONCRETE-MATH]] **2장.합 - 2.합의 조작**을 공부한 노트입니다.
 
-# 법칙들
+## 법칙들
 
 * `K`가 임의의 유한 정수 집합이라 하자.
 
-## 분배법칙(distributive law)
+### 분배법칙(distributive law)
 
 $$
 \sum_{k \in K} c a_k = c \sum_{k \in K} a_k
@@ -31,7 +31,7 @@ $$
 ca_1 + ca_2 + ... + ca_n = c ( a_1 + a_2 + ... + a_n )
 $$
 
-## 결합법칙(associative law)
+### 결합법칙(associative law)
 
 $$
 \sum_{k \in K} (a_k + b_k) = \sum_{k \in K} a_k + \sum_{k \in K} b_k
@@ -44,14 +44,14 @@ $$
 = (a_1 + a_2 + ... + a_n) + (b_1 + b_2 + ... + b_n)
 $$
 
-## 교환법칙(commutative law)
+### 교환법칙(commutative law)
 
 $$
 \sum_{k \in K} a_k = \sum_{p(k) \in K} a_{p(k)}
 $$
 
 
-# 법칙의 응용: 등차수열의 일반합
+## 법칙의 응용: 등차수열의 일반합
 
 $$
 \begin{align}
@@ -74,7 +74,7 @@ S   & = \frac{1}{2}(2a + bn)(n + 1) \\
 $$
 
 
-## 합의 추가적인 성질들
+### 합의 추가적인 성질들
 
 서로 다른 색인 집합을 결합할 때의 규칙.
 
@@ -85,7 +85,7 @@ $$
 \tag{2.20}\label{2.20}
 $$
 
-### 예
+#### 예
 
 `K = [1,2,3]` 이고 `K' = [3,4,5]` 라면 다음과 같이 된다는 말이다.
 
@@ -95,7 +95,7 @@ $$
 + (a_1 + a_2 + a_3 + a_4 + a_5)
 $$
 
-### 응용
+#### 응용
 
 서로 소인 두 색인 집합을 합친다.
 
@@ -115,7 +115,7 @@ $$
 \sum_{0 \le k \le n} a_k = \color{red}{a_0} + \sum_{\color{red}1 \le k \le n} a_k, \quad for \; n \ge 0.
 $$
 
-# 섭동법(perturbation method)
+## 섭동법(perturbation method)
 
 $$
 \begin{align}
@@ -131,7 +131,7 @@ S_n + a_{n+1}
 \tag{2.24}\label{2.24}
 $$
 
-## 예1: 등비수열의 합 공식 유도
+### 예1: 등비수열의 합 공식 유도
 
 $$
 \begin{align}
@@ -148,7 +148,7 @@ S_n & = { a (1 - x^{n+1}) \over 1 - x}, \quad for \; x \ne 1. \\
 \end{align}
 $$
 
-## 예2: 조금 더 복잡한 형태의 합에 섭동 기법 적용
+### 예2: 조금 더 복잡한 형태의 합에 섭동 기법 적용
 
 $$
 \begin{align}
@@ -174,7 +174,7 @@ S_n & = (n - 1)2^{n+1} + 2 \\
 \end{align}
 $$
 
-## 예3: 예2의 일반화(2대신 x 사용)
+### 예3: 예2의 일반화(2대신 x 사용)
 
 $$
 \require{cancel}
@@ -202,7 +202,7 @@ S_n & = { nx^{n+2} - (n+1)x^{n+1} + x \over (1-x)^2}, \quad for \; x \ne 1. \\
 \end{align}
 $$
 
-## 닫힌 형식을 미분해보면
+### 닫힌 형식을 미분해보면
 
 다음과 같이 합의 식을 닫힌 형식으로 풀어낸 것을 미분해 보자.
 
@@ -223,6 +223,6 @@ $$
 $$
 
 
-# Links
+## Links
 
 * [[CONCRETE-MATH]]
