@@ -3,7 +3,7 @@ layout  : wiki
 title   : 좀 큰 숫자들
 summary : 
 date    : 2019-07-19 14:42:52 +0900
-updated : 2020-02-27 23:21:13 +0900
+updated : 2020-04-12 12:45:09 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,15 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+## 지구의 원자 수
+
+약 $$1.33 \times 10^{50}$$ 개.[^jlab] [^boyslife]
+
+```
+133,000,000,000,000,000,000,000,000,000,
+000,000,000,000,000,000,000
+```
 
 ## IPv4와 IPv6의 주소 공간
 
@@ -68,3 +77,9 @@ IPv6의 주소 공간을 세계 인구로 나눠 보면 약 $$ 44,086,004,028,60
 ## Link
 
 * <https://www.worldometers.info/ >
+
+## 주석
+
+[^jlab]: [How many atoms are there in the world?](https://education.jlab.org/qa/mathatom_05.html )
+[^boyslife]: [How Many Atoms Are There In The World?]( https://headsup.boyslife.org/many-atoms-world/ )
+
