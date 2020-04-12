@@ -2668,7 +2668,7 @@ oop-quotes:
     summary: '객체지향 단어 사전'
     parent: index
     url: /wiki/oop-quotes
-    updated: '2020-03-03 22:43:47 +0900'
+    updated: '2020-04-12 12:15:16 +0900'
     children: []
 OOP-to-me-Alan-Kay:
     type: wiki
