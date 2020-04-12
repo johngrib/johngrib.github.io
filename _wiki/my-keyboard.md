@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 키보드 히스토리
 summary : 역사를 정리해 보자
 date    : 2018-11-22 10:57:14 +0900
-updated : 2020-03-05 22:14:24 +0900
+updated : 2020-04-12 17:48:59 +0900
 tag     : keyboard
 toc     : true
 public  : true
@@ -330,6 +330,9 @@ UHK의 문제점에 대해 기록해 본다.
 
 나는 다른 사람에게 UHK 구매를 추천하지 않는다.
 
+## 함께 읽기
+
+- [[hhkb-jp-tmk]]{HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.}
 
 ## Links
 
