@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 03.정수 함수.01.바닥과 천장
 summary : 03.Integer Functions.01.FLOORS AND CEILINGS
 date    : 2018-06-01 21:31:43 +0900
-updated : 2018-06-03 14:10:47 +0900
+updated : 2020-04-13 23:06:35 +0900
 tag     : math
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : true
 
 이 문서는 [[CONCRETE-MATH]] **3장.정수 함수 - 1.바닥과 천장**을 공부한 노트입니다.
 
-# 바닥(floor) 함수와 천장(celing) 함수
+## 바닥(floor) 함수와 천장(celing) 함수
 
 $$
 \def\ceil#1{\lceil #1 \rceil}
@@ -42,7 +42,7 @@ Kenneth E. Iverson introduced this notation, as well as the names "floor" and "c
 
 (수학은 물론이고) 수많은 프로그래밍 언어에서 내림/올림의 용법으로 `floor`/`ceil`을 사용하는데 그 어원이 케네스 아이버슨이었구나!
 
-## 바닥 함수
+### 바닥 함수
 
 흔히 사용하는 `floor`이다.
 
@@ -72,7 +72,7 @@ print(math.floor(math.pi))  # 3
 print(math.floor(-math.pi)) # -4
 ```
 
-## 천장 함수
+### 천장 함수
 
 흔히 사용하는 `ceil`이다.
 
@@ -102,9 +102,9 @@ print(math.ceil(math.pi))   # 4
 print(math.ceil(-math.pi))  # -3
 ```
 
-## 규칙들
+### 규칙들
 
-### x 가 정수인 경우
+#### x 가 정수인 경우
 
 $$
 \floor x = x \iff \text{x is an integer} \iff \ceil x = x
@@ -153,7 +153,7 @@ float_is_integer(PyObject *v)
 }
 ```
 
-### 천장 - 바닥
+#### 천장 - 바닥
 
 $$
 \ceil x - \floor x = [ \text{x is not an integer} ]
@@ -171,7 +171,7 @@ math.ceil(math.pi) - math.floor(math.pi)    # 1
 math.ceil(3) - math.floor(3)                # 0
 ```
 
-### 기본적인 부등식
+#### 기본적인 부등식
 
 $$
 x - 1 \lt \floor x \\
@@ -184,7 +184,7 @@ $$
     * 그러나 외울 필요는 없다.
     * 조금만 생각해보면 바로 떠올릴 수 있는 것들이다.
 
-### 천장과 바닥의 관계는 대칭
+#### 천장과 바닥의 관계는 대칭
 
 $$
 \floor{-x} = - \ceil{x} \\
@@ -199,7 +199,7 @@ math.floor(-math.pi) == - math.ceil(math.pi) # True
 math.ceil(-math.pi) == - math.floor(math.pi) # True
 ```
 
-### x가 정수인 경우 유용한 네 가지 규칙
+#### x가 정수인 경우 유용한 네 가지 규칙
 
 * x 가 정수인 경우 다음의 네 규칙이 성립한다.
 * `floor`, `ceil`에 익숙한 프로그래머라면 누구나 알고 있는 내용이다.
@@ -214,7 +214,7 @@ $$
 \end{array}
 $$
 
-### 정수 항을 집어넣거나 뺄 수 있다
+#### 정수 항을 집어넣거나 뺄 수 있다
 
 * `n`이 정수라면, 다음이 가능하다.
 
@@ -229,7 +229,7 @@ import math
 math.floor(math.pi + 2) == math.floor(math.pi) + 2  # True
 ```
 
-### 바닥/천장 부등식
+#### 바닥/천장 부등식
 
 * `n`이 정수이고, `x`가 실수라면 다음이 성립한다.
 
@@ -243,7 +243,7 @@ n \le x \iff & n        & \le & \floor x & (d) \\
 $$
 
 
-## 분수부와 정수부
+### 분수부와 정수부
 
 실수 $$x$$를 분수부(fractional part)와 정수부(integer part)로 나눌 수 있다.
 
@@ -269,7 +269,7 @@ $$
 
 
 
-# Links
+## Links
 
 * [[CONCRETE-MATH]]
 
