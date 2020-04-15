@@ -1988,7 +1988,7 @@ inversion-of-control:
     summary: 'Inversion of Control, Dependency Injection'
     parent: programming
     url: /wiki/inversion-of-control
-    updated: '2020-03-30 08:31:54 +0900'
+    updated: '2020-04-15 21:17:39 +0900'
     children: []
 IP:
     type: wiki

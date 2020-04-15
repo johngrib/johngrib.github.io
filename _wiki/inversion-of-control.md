@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC, Inversion of Control
 summary : Inversion of Control, Dependency Injection
 date    : 2019-08-30 22:39:18 +0900
-updated : 2020-03-30 08:31:54 +0900
+updated : 2020-04-15 21:17:39 +0900
 tag     : spring oop
 toc     : true
 public  : true
@@ -127,7 +127,7 @@ Bean의 정의도 매우 심플하다. Spring IoC 컨테이너가 라이프 사�
 
 ## PicoContainer의 IoC Overview
 
-PicoContainer의 [Inversion of Control Overview](http://picocontainer.com/inversion-of-control.html ) 문서에 이해를 돕는 쉬운 예제가 있기에 발췌한다.
+PicoContainer의 [Inversion of Control Overview](http://picocontainer.com/inversion-of-control.html ) 문서에 이해를 돕는 쉬운 예제가 있기에 적당히 의역해 발췌한다.
 
 ### IoC 컴포넌트와 냄새 나는 코드의 비교
 
@@ -146,7 +146,8 @@ public class AppleImpl implements Apple {
 }
 ```
 
-다음은 IoC 리팩토링이 필요한 냄새가 나는 코드이다. `new OrangeImpl()`에 주목.
+다음은 IoC 리팩토링이 필요한 냄새가 나는 코드이다.[^pico-smell]
+`new OrangeImpl()`에 주목.
 `OrangeImpl`에 커플링이 생겼고, 재사용할 수 없는 코드가 되어버렸다.
 위의 간단한 IoC 컴포넌트와 비교해 보자.
 
@@ -328,6 +329,7 @@ Spring 팀은 생성자 주입 쪽을 선호한다고 한다. 그 이유는 다�
 
 [^translate-hard]: 나에게 꽤 어려운 영어 문장이라 일단 의역했다.
 [^kim]: 김정아 님의 주석은 2005년 번역본에는 없고, 프로텍미디어에서 출판한 2015년 개정판에 있다.
+[^pico-smell]: "Here are some common smells that should lead you to refactor to IoC :"
 
 [on-ioc]: https://web.archive.org/web/20040413042810/http://www.betaversion.org/~stefano/linotype/news/38/
 [o-o-framework]: https://www.semanticscholar.org/paper/Object-Oriented-Frameworks-%3A-A-Survey-of-Issues-Mattsson/1d13fcb7b9b2bef5e2be3728d3168588a0e55c47
