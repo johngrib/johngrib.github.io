@@ -3,7 +3,7 @@ layout  : wiki
 title   : 지프의 법칙(Zipf's law)
 summary : 단어의 빈도는 단어 빈도 랭킹에 반비례한다
 date    : 2018-04-15 17:47:44 +0900
-updated : 2018-04-15 18:35:07 +0900
+updated : 2020-04-16 23:48:58 +0900
 tag     : law stat
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * 수학적 통계를 바탕으로 밝혀진 경험적 법칙.
 * 물리 및 사회 과학 분야에서 연구된 많은 종류의 정보들이 지프 분포에 가까운 경향을 보인다.
@@ -45,7 +45,7 @@ latex   : false
 * [기업체의 규모 순위와 규모의 크기 관계 또한 지프 분포에 가깝다는 연구](http://science.sciencemag.org/content/293/5536/1818/tab-pdf )도 있다.
 
 
-# Links
+## Links
 
 * [Zipf's law(wikipedia)](https://en.wikipedia.org/wiki/Zipf%27s_law ) [한국어](https://ko.wikipedia.org/wiki/%EC%A7%80%ED%94%84%EC%9D%98_%EB%B2%95%EC%B9%99 )
 * [Zipf's law(wolfram.com)](https://www.wolfram.com/language/11/text-and-language-processing/zipfs-law.en.html?footer=lang) [한국어](https://www.wolfram.com/language/11/text-and-language-processing/zipfs-law.ko.html?footer=lang )
