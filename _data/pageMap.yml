@@ -2356,7 +2356,7 @@ less-cmd:
     summary: 'less is more'
     parent: command-line
     url: /wiki/less-cmd
-    updated: '2020-04-06 22:06:29 +0900'
+    updated: '2020-04-18 13:47:07 +0900'
     children: []
 letter-case:
     type: wiki

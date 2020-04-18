@@ -3,7 +3,7 @@ layout  : wiki
 title   : less 명령어
 summary : less is more
 date    : 2020-01-19 22:06:24 +0900
-updated : 2020-04-06 22:06:29 +0900
+updated : 2020-04-18 13:47:07 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -48,6 +48,16 @@ less -X test.txt
 | `25p`                 | 25% 지점으로 이동              |
 | `h`                   | 도움말을 본다                  |
 | `q`                   | less 종료                      |
+
+### Mark 사용
+
+vim 과 똑같은 방법으로 mark 를 지정해 사용할 수 있다.
+
+```
+m<letter>  Mark the current position with <letter>.
+'<letter>  Go to a previously marked position.
+''         Go to the previous position.
+```
 
 ## 라인 넘버 보이게 하기
 
