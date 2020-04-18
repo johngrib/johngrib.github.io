@@ -757,7 +757,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, csplit, ctags, curl, cut, date-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lsof, make-cmd, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, csplit, ctags, curl, cut, date-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lsof, make-cmd, mv-cmd, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2509,6 +2509,14 @@ Monty-Hall-problem:
     parent: study-think-bayes
     url: /wiki/Monty-Hall-problem
     updated: '2018-04-24 20:49:29 +0900'
+    children: []
+mv-cmd:
+    type: wiki
+    title: 'mv 명령어'
+    summary: 'move files'
+    parent: command-line
+    url: /wiki/mv-cmd
+    updated: '2020-04-18 23:14:24 +0900'
     children: []
 my-bash-cheatsheet:
     type: wiki

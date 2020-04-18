@@ -246,6 +246,7 @@ bash:
     - {fileName: less-cmd}
     - {fileName: lsof}
     - {fileName: make-cmd}
+    - {fileName: mv-cmd}
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
     - {fileName: pwgen-cmd}
@@ -300,6 +301,7 @@ command:
     - {fileName: less-cmd}
     - {fileName: lsof}
     - {fileName: make-cmd}
+    - {fileName: mv-cmd}
     - {fileName: openssl}
     - {fileName: phpbrew}
     - {fileName: pwgen-cmd}

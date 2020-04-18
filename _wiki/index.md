@@ -341,6 +341,7 @@ regenerate: true
 * [[less-cmd]]
 * [[lsof]]
 * [[make-cmd]]
+* [[mv-cmd]]
 * [[my-bash-cheatsheet]]
 * [[openssl]]
 * [[phpbrew]]
