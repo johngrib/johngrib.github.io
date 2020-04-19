@@ -3,7 +3,7 @@ layout  : wiki
 title   : 실험하며 공부하는 GIT
 summary : 아직 작성중인 글입니다
 date    : 2020-04-19 22:27:20 +0900
-updated : 2020-04-20 08:07:57 +0900
+updated : 2020-04-20 08:09:46 +0900
 tag     : 
 toc     : true
 public  : false
@@ -54,7 +54,7 @@ cd git-study
 git init
 ```
 
-## 최초 생성된 프로젝트의 .git 디렉토리
+## 생성된 .git 디렉토리를 살펴보자
 
 `git init`을 실행했다면 `.git` 디렉토리가 생성된다.
 
