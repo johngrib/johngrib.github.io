@@ -3,7 +3,7 @@ layout  : wiki
 title   : 실험하며 공부하는 GIT
 summary : 아직 작성중인 글입니다
 date    : 2020-04-19 22:27:20 +0900
-updated : 2020-04-20 00:25:31 +0900
+updated : 2020-04-20 08:04:38 +0900
 tag     : 
 toc     : true
 public  : false
@@ -18,15 +18,15 @@ latex   : false
 ## 학습 준비
 ### alias
 
-터미널에서 다음 명령을 실행해 `l` 알리아스를 추가하도록 하자.
+터미널에서 다음 명령을 실행해 `l` 알리아스를 추가하도록 하자. 잘 모르겠다면 복사해서 터미널에 붙여넣고 엔터를 입력하면 된다.
 
 ```sh
-git config --global alias.lg \
-    "log \
-    --color --graph --decorate \
-    --date=format:'%Y-%m-%d' \
-    --abbrev-commit \
-    --pretty=format:'%C(red)%h%C(auto)%d %s %C(green)(%cr)%C(bold blue) %an'"
+git config --global alias.l \
+ "log \
+ --color --graph --decorate \
+ --date=format:'%Y-%m-%d' \
+ --abbrev-commit \
+ --pretty=format:'%C(red)%h%C(auto)%d %s %C(green)(%cr)%C(bold blue) %an'"
 ```
 
 이 알리아스를 수시로 사용할 것이므로, 반드시 추가해주도록 한다.
