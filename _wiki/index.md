@@ -380,6 +380,7 @@ regenerate: true
 * [[git-index]]
 * [[git-log]]
 * [[git-prompt]]
+* [[git-study-with-action]]
 * [[git-tutorial]]
 
 ### [[mac-apps]]
