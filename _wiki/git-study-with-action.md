@@ -3,7 +3,7 @@ layout  : wiki
 title   : 실험하며 공부하는 GIT
 summary : 아직 작성중인 글입니다
 date    : 2020-04-19 22:27:20 +0900
-updated : 2020-04-20 08:09:46 +0900
+updated : 2020-04-20 23:47:15 +0900
 tag     : 
 toc     : true
 public  : false
@@ -342,5 +342,58 @@ Date:   Mon Apr 20 00:19:55 2020 +0900
 
 commit 해시값 `8bfd73cf22f502c6977ce5ffb315301533f33391`가 `8bfd73c`로 축약되어 출력되는 것을 볼 수 있다.
 
+이제 이 commit 에 어떤 정보가 담겼는지 확인해 보자.  `git cat-file -p` 명령을 사용하면 된다.
+
+```sh
+$ git cat-file -p 8bfd73c
+tree c8f8b7e0ad11143d1e3a7724def5b2744b9b9668
+author John Grib <johngrib82@gmail.com> 1587309595 +0900
+committer John Grib <johngrib82@gmail.com> 1587309595 +0900
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ iQIzBAABCAAdFiEEeF5LeMXGx4vEae6QIYMbVLyA2ZAFAl6cbCUACgkQIYMbVLyA
+ 2ZBaKg//fxqzLubH7PJi9FlMy1FL5aH0VxoJbdweC3qONIcyGtT3GMIjbcwGsnYE
+ gorVADDe9FdzJnVvq25j0Rsd4aqhwEKB3KVyC2eGlDWHGPm0OGhXffjAF6i6zbjB
+ sWdmprJOYDOkZkl5PqMb8pAmystVZ9y8QpAneZWpoZMgLXSY6v7QYiVEv0izSgim
+ g4uWTE7hGy0uVFmQwpAliH6Vv3UgTdDpCZBHOEIdEDmVfWIF4BmxCTxZ5IkLJmTA
+ 7PRI7NRP6wNlFn45Hv/RgHgChRTd586UGrHopP9QoFIwbqa/f7dELTX7AIciJmvl
+ D21EdKjYAk80knrwYX9nuwF+ZKTPxB0t88kL9p0kWvNybhLRBp/cYnCMqx7e7mfg
+ iPzmY3p7idFBI7Hc+Zgfd1PLHxQloyWh/+gxQpMiT0/fuXQlaIeWdtWm5D8QgEcd
+ NFjMls+UsTY8c+k6mBmR8XT3/SrwUnsfSiAfr/YpqrTaieqXU5bxjtbSzNHIdyH7
+ 5mfdBRxDXdJQbrm+8bQUYXuEwOVoZdanoxbiKPjtrh/Um/YhSDdcZOBRZhPY9K7L
+ HTgXVhfF8reNC2xFoH+VGChD7+1GXxrynyDnJQuz/TQc3XKyBrV0XvI208/eQuZw
+ b7yDqoZzciw4CBRE7P/7vwRiuao/kaCJg82xUUbhJiQ1JsbDlcc=
+ =a78L
+ -----END PGP SIGNATURE-----
+
+Initial commit
+```
+
+commit 의 내용을 보면 순서대로 다음의 정보들이 나열되어 있음을 알 수 있다.
+
+- tree
+- author
+- committer
+- gpg signature
+    - 내가 커밋에 서명을 하기 때문에 커밋에 포함되어 있다.
+    - 만약 이 글을 읽는 여러분이 커밋에 서명을 하고 있지 않다면 이 부분이 없을 것이다.
+- commit message
+
+여기에서 `tree`에 주목해 보자.
+
+`tree`는 무엇을 의미하는 것일까?
+
+`tree`의 의미가 궁금하다면 옆에 있는 해시 값 `c8f8b7e0ad11143d1e3a7724def5b2744b9b9668`을 보도록 하자.
+
+git은 기본적으로 key-value 스토리지이고, 해시 값을 key 로 사용하고 있으므로 무언가 해시 값이 보이면 값에 대해 `cat-file`로 읽어보면 의미를 파악하기 쉽다.
+
+```sh
+$ git cat-file -p c8f8b7e0ad11143d1e3a7724def5b2744b9b9668
+100644 blob e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9	a.txt
+100644 blob e0b3f1b09bd1819ed1f7ce2e75fc7400809f5350	b.txt
+100644 blob e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9	c-a.txt
+```
+
+`tree c8f8b7e0...`의 내용은 3개의 해시값과 3개의 파일이라는 것을 확인할 수 있다.
 
 
