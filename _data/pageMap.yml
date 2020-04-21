@@ -1180,7 +1180,7 @@ Elastic-Load-Balancing:
     summary: 'AWS 로드 밸런서'
     parent: aws
     url: /wiki/Elastic-Load-Balancing
-    updated: '2018-09-16 22:06:25 +0900'
+    updated: '2020-04-21 22:26:51 +0900'
     children: []
 email-gardening:
     type: wiki

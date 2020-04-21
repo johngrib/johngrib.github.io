@@ -3,7 +3,7 @@ layout  : wiki
 title   : AWS ELB - Elastic Load Balancing
 summary : AWS 로드 밸런서
 date    : 2018-09-16 18:23:02 +0900
-updated : 2018-09-16 22:06:25 +0900
+updated : 2020-04-21 22:26:51 +0900
 tag     : aws devops
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * <https://aws.amazon.com/elasticloadbalancing/ >
 
@@ -23,7 +23,7 @@ latex   : false
 * Network Load Balancer
 * Classic Load Balancer
 
-# Classic Load Balancer
+## Classic Load Balancer
 
 연습삼아 클래식 로드 밸런서를 심플하게 만들어 보자.
 
@@ -34,7 +34,7 @@ latex   : false
 
 이제 단계별 설정을 해 주면 된다.
 
-## Step 1: Define Load Balancer
+### Step 1: Define Load Balancer
 
 로드 밸런서 정의
 
@@ -44,14 +44,14 @@ latex   : false
 * Load Balancer Protocol : 80을 열어둔다.
 * 나머지도 모두 기본값을 선택한다.
 
-## Step 2: Step 2: Assign Security Groups
+### Step 2: Step 2: Assign Security Groups
 
 보안 그룹 할당
 
 * 새 보안 그룹을 만들거나, 기존의 보안 그룹을 선택한다.
 * 프로토콜은 Step 1 에 맞춰 80을 열어둔다.
 
-## Step 4: Step 4: Configure Health Check
+### Step 4: Step 4: Configure Health Check
 
 상태 검사(Health Check) 구성
 
@@ -76,14 +76,14 @@ Advanced Details
 * Healthy threshold : 10 (default)
     * 상태 검사가 10번 성공하면 해당 인스턴스를 정상 상태로 판별한다.
 
-## Step 5: Add EC2 Instances
+### Step 5: Add EC2 Instances
 
 EC2 인스턴스 추가
 
 * 로드 밸런서에 추가할 EC2 인스턴스를 선택해주면 된다.
 
 
-## 생성
+### 생성
 
 * 여기까지 설정하고 다른 옵션은 무시하고 일단 Create 해본다.
 * 이후 `LOAD BALANCING` - `Load Balancers`로 가보면 방금 만든 로드 밸런서가 추가된 것을 볼 수 있다.
@@ -92,7 +92,7 @@ EC2 인스턴스 추가
     * 상태 검사 핑이 주기적으로 오는 것을 확인할 수 있다.
     * 웹 브라우저로 로드 밸런서의 DNS로 여러 차례 접속해보면 두 인스턴스에 번갈아가며 접속 로그가 올라가는 것을 볼 수 있을 것이다.
 
-## Sticky Session 설정
+### Sticky Session 설정
 
 한국어로는 **고정 세션 설정**이라고 한다.
 
@@ -110,7 +110,7 @@ AWS ELB의 고정 세션 설정을 하는 방법은 두 가지가 있다.
     * 인스턴스에서 실행되는 애플리케이션이 애플리케이션 쿠키를 삽입하는 방식.
     * 물론 애플리케이션에서 삽입하는 쿠키의 이름을 로드 밸런서에 알려줘야 한다.
 
-### Duration-Based Session Stickiness
+#### Duration-Based Session Stickiness
 
 기간 기반 세션 고정
 
@@ -122,7 +122,7 @@ AWS ELB의 고정 세션 설정을 하는 방법은 두 가지가 있다.
 * `Expiration Period`에 쿠키 만료 기간(초)을 설정한다.
     * 기간을 지정하지 않으면 브라우저 세션 기간 동안 고정 세션이 지속된다.
 
-### Application-Controlled Session Stickiness
+#### Application-Controlled Session Stickiness
 
 어플리케이션 제어 세션 고정
 
@@ -134,7 +134,7 @@ AWS ELB의 고정 세션 설정을 하는 방법은 두 가지가 있다.
 * `Cookie Name`에 애플리케이션 쿠키의 이름을 입력.
 
 
-# Links
+## Links
 
 * [Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/ )
 * [ELB FAQs](https://aws.amazon.com/ko/elasticloadbalancing/faqs/ )
