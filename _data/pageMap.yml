@@ -1404,7 +1404,7 @@ Fermat-s-little-theorem:
     summary: 'Fermat''s little theorem'
     parent: math
     url: /wiki/Fermat-s-little-theorem
-    updated: '2019-03-03 17:42:20 +0900'
+    updated: '2020-04-21 22:27:45 +0900'
     children: []
 fibonacci:
     type: wiki

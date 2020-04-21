@@ -3,7 +3,7 @@ layout  : wiki
 title   : 페르마의 소정리
 summary : Fermat's little theorem
 date    : 2019-03-02 21:17:20 +0900
-updated : 2019-03-03 17:42:20 +0900
+updated : 2020-04-21 22:27:45 +0900
 tag     : math
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 정리
+## 정리
 
 >
 If $$p$$ is prime and $$a$$ is an integer not divisible by $$p$$, then  
@@ -26,7 +26,7 @@ $$a^p ≡ a (\bmod p)$$
 * 그리고, 모든 $$ a $$ 에 대하여
     * $$a^p ≡ a (\bmod p)$$ 이다.
 
-## 계산 예제
+### 계산 예제
 
 > $$ 7^{222} \bmod 11 $$ 을 계산하라.
 
@@ -53,7 +53,7 @@ $$
 \end{align}
 $$
 
-# 유사소수
+## 유사소수
 
 **pseudoprime**
 
@@ -75,7 +75,7 @@ then $$n$$ is called a _pseudoprime_ to the base $$b$$.
 * $$ n $$ 이 양의 정수인 합성수이고, $$ b^{n-1} ≡ 1 (\bmod n) $$ 이면
     * $$n$$을 $$ b $$를 밑수로 하는 **유사소수**라 부른다.
 
-### 유사소수 예제
+#### 유사소수 예제
 
 > $$b = 2$$일 때, 341 은 유사소수인가?
 
@@ -116,7 +116,7 @@ $$
 341 은 2를 밑수로 하는 유사소수이다.
 
 
-## 카마이클 수
+### 카마이클 수
 
 **Carmichael number**
 
@@ -128,7 +128,7 @@ for all positive integers $$b$$ with $$\gcd(b, n) = 1$$ is called a Carmichael n
 * $$ \gcd(b, n) = 1 $$ 인 모든 양의 정수 $$b$$ 에 대하여,
     * $$ b^{n-1} ≡ 1 (\bmod n) $$을 만족하는 합성수인 정수 $$n$$을 카마이클 수라 부른다.
 
-### 카마이클 수 예제
+#### 카마이클 수 예제
 
 > 561 은 카마이클 수인가?
 
@@ -176,6 +176,6 @@ $$
 
 
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
