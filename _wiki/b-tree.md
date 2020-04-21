@@ -3,7 +3,7 @@ layout  : wiki
 title   : B-Tree
 summary : 보편적인 색인 구조
 date    : 2019-10-11 11:02:35 +0900
-updated : 2020-04-21 22:15:10 +0900
+updated : 2020-04-21 22:22:23 +0900
 tag     : db
 toc     : true
 public  : true
@@ -48,7 +48,7 @@ B 트리는 SS테이블과 같이 키로 정렬된 키-값 쌍을 유지하기 �
 디스크가 고정 크기 블록으로 배열되기 때문에 이런 설계는 근본적으로 하드웨어와 조금 더 밀접한 관련이 있다.
 [^kleppmann-origin]
 
-다음 이미지는 1970년 Bayer와 McCreight의 논문 "ORGANIZATION AND MAINTENANCE OF LARGE ORDERED INDICES"에서 캡처한 것이다.
+다음 이미지는 1970년 Bayer와 McCreight의 논문 "ORGANIZATION AND MAINTENANCE OF LARGE ORDERED INDICES"에서 캡처한 것이다.[^original-graph]
 
 ![figure2]( /post-img/b-tree/figure2.png )
 
@@ -312,6 +312,7 @@ $$ { \text{페이지 크기} \over \text{키 크기} } = { 8 \times 1024 \over 8
 [^kleppmann-origin]: 데이터 중심 애플리케이션 설계. 03장. 82쪽.
 [^kleppmann-insertion]: 데이터 중심 애플리케이션 설계. 03장. 84쪽.
 [^taocp-origin]: TAOCP 6.2.4. 552쪽.
+[^original-graph]: [ORGANIZATION AND MAINTENANCE OF LARGE ORDERED INDICES by R. Bayer and E. McCreight 1970][original-pdf]. 115쪽(PDF 파일 9쪽).
 
 [original-pdf]: https://infolab.usc.edu/csci585/Spring2010/den_ar/indexing.pdf
 
