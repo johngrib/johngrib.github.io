@@ -3,7 +3,7 @@ layout  : wiki
 title   : 목과 허리 건강을 위한 컴퓨터 외의 물리적 장비 구매 노하우와 경험
 summary : 경험은 소중하다. 잊지 말고 기록해 두자.
 date    : 2020-02-09 11:43:39 +0900
-updated : 2020-03-11 08:13:01 +0900
+updated : 2020-04-21 20:39:13 +0900
 tag     : 
 toc     : true
 public  : true
@@ -106,7 +106,7 @@ latex   : false
 
 | ![freedom 앞]( /post-img/my-desk-environment/freedom-front.png ) | ![freedom 뒤]( /post-img/my-desk-environment/freedom-back.png ) |
 
-[티앤제이 인터네셔널 매장][tnjshop]에 가면 앉아볼 수 있다.
+[티앤제이 인터네셔널 매장][tnjshop1]에 가면 앉아볼 수 있다.
 
 Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 많아 오래 고민한 끝에 2020년 1월에 샵에 가서 앉아보고 구매한 의자.
 구매할 때 비교 대상은 Herman Miller Aeron 이었다. 허먼 밀러도 좋은 의자였지만 허먼 밀러는 목에 별다른 메리트가 없었다.
@@ -351,4 +351,5 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 [officechairsusa]: https://www.officechairsusa.com/hag-capisco-quickship-puls-partially-upholstered-saddle-chair/#sthash.MyyWOCT6.dpbs
 [T509H]: http://fursysmall.com/product/0823t509h-%EC%8B%9C%EB%94%94%EC%A6%88%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC-t50%EC%9A%A9-%ED%97%A4%EB%93%9C%EB%A0%88%EC%8A%A4%ED%8A%B8ch4300%EA%B3%B5%EC%9A%A9/8258/
 [tnjshop]: http://www.tnjshop.com/mall/m_view.php?ps_db=notice&ps_boid=12&ps_mode=
+[tnjshop1]: http://tnjshop.jna114.gethompy.com/mall/index.php
 [hag-capisco-with-head]: https://store.flokk.com/global/en-gb/products/hag-capisco?model=8107-STD&code=02D6MR
