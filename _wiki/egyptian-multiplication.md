@@ -3,7 +3,7 @@ layout  : wiki
 title   : 고대 이집트 곱셈법
 summary : EGYPTIAN MULTIPLICATION
 date    : 2018-11-14 23:24:36 +0900
-updated : 2019-11-25 08:07:57 +0900
+updated : 2020-04-21 22:48:48 +0900
 tag     : 
 toc     : true
 public  : true
@@ -316,7 +316,7 @@ The great calculator al-Kāshī stated Algorithm A in A.D. 1427 [Istoriko-Mat. I
 
 * 알고리즘 A는 1427년에 위대한 수학자 al-Kāshī가 기록한 바 있다.
 * 이 방법은 적어도 B.C. 2000년부터 이집트 수학자들이 사용한 방법과 비슷하다.
-    * A3를 $$ Y \leftarrow Y + Z $$로 바꾸고, A5를 $$ Z \leftarrow Z + Z $$로 바꾸고, A1에서 $$ Y larrow_left 0 $$으로 하면, $$ Y = nx $$가 결과로 나오게 된다.
+    * A3를 $$ Y \leftarrow Y + Z $$로 바꾸고, A5를 $$ Z \leftarrow Z + Z $$로 바꾸고, A1에서 $$ Y \leftarrow 0 $$으로 하면, $$ Y = nx $$가 결과로 나오게 된다.
 * 이 알고리즘은 "러시아 농부의 곱셈 방법"이라고도 불리곤 한다.
     * 19세기에 서양 사람들이 러시아에 갔을 때 러시아에서 이 방법이 많이 사용되고 있었기 때문이다.
 
