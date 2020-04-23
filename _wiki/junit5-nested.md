@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2020-03-14 15:52:14 +0900
+updated : 2020-04-23 23:00:14 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -679,6 +679,21 @@ class Describe_increase {
 ![]( /post-img/junit5-nested/resolve-inherit.png )
 
 이 방법이 그나마 편해서 사용하고 있다. 그러나 더 좋은 방법이 있기를 바란다.
+
+##### 해결 방법: @ExtendWith 를 쓰고 상속한다
+
+그냥 `@ExtendWith(SpringExtension.class)`를 쓰고 객체를 상속하면 바로 위에서 사용한 보일러 플레이트 코드는 전부 필요가 없다.
+
+```java
+@ExtendWith(SpringExtension.class)
+@DataJpaTest
+@Getter
+class JpaTest {
+  @Autowired MemberRepository memberRepository;
+}
+```
+
+요즘의 나는 이 방법을 주로 사용하고 있다.
 
 ## 타 언어 테스트 프레임워크의 D-C-I 패턴
 
