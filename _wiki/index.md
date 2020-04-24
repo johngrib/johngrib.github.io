@@ -545,6 +545,7 @@ regenerate: true
 * [[restdoc-item-generator]]
 * [[semantic-versioning]]
 * [[strangler-pattern]]
+* [[three-dots-in-menu]]
 * [[timeline]]
 * [[two-type-error]]
 * [[vimium]]
