@@ -3,7 +3,7 @@ layout  : wiki
 title   : 메뉴의 ... (점 3개)
 summary : 명령어가 수행되기 전에 추가적인 정보가 필요한 항목을 표현한다
 date    : 2020-04-24 21:58:40 +0900
-updated : 2020-04-24 22:14:42 +0900
+updated : 2020-04-26 14:20:02 +0900
 tag     : 
 toc     : true
 public  : true
@@ -48,7 +48,6 @@ latex   : false
 ## 참고문헌
 
 - 레이몬드 첸의 윈도우 개발 282 스토리 / 레이몬드 첸 저 / 손광수 역 / ITC / 초판 1쇄 2007년 09월 10일 / 원제 : The Old New Thing: Practical Development Throughout the Evolution of Windows
-첫번째 구매리뷰를 남겨주세요.
 
 ## 주석
 
