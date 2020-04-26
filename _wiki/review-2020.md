@@ -3,15 +3,81 @@ layout  : wiki
 title   : 2020년 기록
 summary : 연말에 2020년 회고로 제목을 바꿀 문서
 date    : 2020-01-01 18:32:51 +0900
-updated : 2020-04-22 21:45:52 +0900
+updated : 2020-04-26 23:38:13 +0900
 tag     : review
 toc     : true
-public  : true
+public  : false
 parent  : [[review]]
 latex   : false
 ---
 * TOC
 {:toc}
+
+## 2020년의 목표
+
+2월 8일에 결심한 올해의 목표.
+
+1. 다른 사람을 수동공격하지 말자.
+2. 말하기 전에 필요한 말인지 생각하자.
+3. 2를 잘하기 위해 천천히 말하자.
+4. 주위 사람에게 맨스플레인하지 않는다.
+    - 필요 이상의 설명은 나를 똑똑하게 보이게 하지 않는다.
+    - 냄새가 없는데도 주위에 악취를 풍기는 것과 비슷하다.
+
+## 회사 기술 블로그를 관리하다
+
+![]( /post-img/review-2020/tech-blog.jpg )
+
+- [컬리 기술 블로그](https://helloworld.kurly.com/ )
+- [기술 블로그를 다시 디자인하며]( https://helloworld.kurly.com/blog/redesign-tech-blog/ )
+
+내가 입사했을 때의 컬리 기술 블로그는 오랫동안 두 개의 게시글만 올라가 있는 상태였다.
+기술 블로그 개선이 필요하다고 생각했고, 자원해서 기술 블로그를 리뉴얼하고 사람들에게 기고문을 부탁해서 하나씩 글을 올려 나갔다.
+
+그러다보니 사람들이 나를 편집장으로 부르고 있었다.
+
+기술 블로그 덕분에 평범하게 회사 생활을 했으면 만나지 못했을 여러 사람들을 만나 다양한 이야기를 나누며 친해질 수 있었다.
+
+3월 23일에는 [황리건님의 방송](https://www.facebook.com/reaganhwang/videos/10158188097189919/ )에도 마켓컬리 기술 블로그 관계자로 참여했다.
+
+{% raw %}
+<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freaganhwang%2Fvideos%2F10158188097189919%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+{% endraw %}
+
+영상의 오른쪽 위 적색 티셔츠 입은 사람이 나.
+
+## 탭볼을 열심히 하다
+
+봄이 되자 작년에 구매해놓고 안 하고 있었던 탭볼을 다시 시작했다.
+
+2주 정도 연습하자 자신감이 생겼고 3월 31일에 아래와 같은 영상을 트위터에 올렸더니 반응이 좋았다.
+
+하루만에 700 리트윗이 넘어갔고, 트위터 타임라인 너머로 탭볼을 구매하는 트친들도 늘었다. 나처럼 영상을 올리는 분들도 있었고, 요령을 물어보는 분들도 계셨다.
+
+{% raw %}
+<blockquote class="twitter-tweet"><p lang="ko" dir="ltr">요즘 탭볼에 재미들려서 촬영을 해 보았다. 점심 시간마다 회사 옥상에서 혼자서 신나게 논다. 하루에 10~20 분씩 숨 차도록 하는데도 재밌어서 시간가는 줄 모르겠다. 활동량이 부족한 직업을 가진 지인들에게 추천하고 싶다. <a href="https://t.co/BXkVvpIWJ2">pic.twitter.com/BXkVvpIWJ2</a></p>&mdash; 기계인간 John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1244974283874390017?ref_src=twsrc%5Etfw">March 31, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
+[유튜브]( https://www.youtube.com/embed/hSBpml6lJ5s )에도 올려뒀다.
+
+## 월간 지앤선 인터뷰를 받다
+
+[[2020릴레이인터뷰] 첫 번째 주자, 마켓컬리 소프트웨어 엔지니어 "이종립"]( https://monthly-jiandson.tistory.com/49 )
+
+## 결혼 생활과 관련된 글을 쓰다
+
+- [[our-fund-balancing]]
+- [[global-variables-and-marriage-architecture]]
+
+## 구글 홈을 사용하기 시작하다
+
+이제는 없어선 안 될 필수 도구가 되었다.
+
+- [[google-home]]
+
+## 듀오링고를 열심히 하다
+
+
 
 ## 2020년에 읽은 책 목록
 
