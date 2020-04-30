@@ -3,7 +3,7 @@ layout  : wiki
 title   : iTerm2
 summary : 문제 해결 및 설정 경험을 모아본다
 date    : 2020-03-23 11:35:51 +0900
-updated : 2020-04-01 09:27:50 +0900
+updated : 2020-04-30 09:52:14 +0900
 tag     : mac
 toc     : true
 public  : true
@@ -19,6 +19,15 @@ brew cask install iterm2
 ```
 
 ## 내가 좋아하는 설정들
+### 단축키로 iterm을 부르기
+
+`Preferences` - `Keys` - `HotKey` - `Show/hide all windows with a system-wide hotkey` 에서 설정할 수 있다.
+
+나는 보통 `option` - `space` 로 지정해 쓴다.
+
+언제라도 `option` - `space`를 입력하면 iterm 이 나타나므로, 명령어를 입력하기 쉬워진다.
+
+
 ### 폰트 설정
 
 `Preferences` - `Profiles` - `Text` - `Font`에서 지정하면 된다.
