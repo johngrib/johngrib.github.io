@@ -515,7 +515,7 @@ regenerate: true
 * [[create-jekyll-blog]]
 * [[jekyll-category-tag]]
 * [[my-wiki]]
-* [[generate-favicon]]
+* [[favicon]]
 
 ## [[better-work]]
 

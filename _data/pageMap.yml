@@ -477,7 +477,7 @@ blog:
     parent: index
     url: /wiki/blog
     updated: '2020-02-09 12:45:42 +0900'
-    children: [create-jekyll-blog, generate-favicon, jekyll-category-tag, my-wiki]
+    children: [create-jekyll-blog, favicon, jekyll-category-tag, my-wiki]
 book:
     type: wiki
     title: 도서
@@ -1382,6 +1382,14 @@ factory-method-pattern:
     url: /wiki/factory-method-pattern
     updated: '2019-11-21 09:37:23 +0900'
     children: []
+favicon:
+    type: wiki
+    title: 파비콘
+    summary: '웹 브라우저 탭에 나오는 개인화된 아이콘'
+    parent: blog
+    url: /wiki/favicon
+    updated: '2020-04-30 10:09:17 +0900'
+    children: []
 fc:
     type: wiki
     title: 'fc 명령어'
@@ -1493,14 +1501,6 @@ Geek-Atlas:
     parent: book
     url: /wiki/Geek-Atlas
     updated: '2018-02-13 21:38:46 +0900'
-    children: []
-generate-favicon:
-    type: wiki
-    title: '파비콘 추가하는 방법'
-    summary: '그냥 favicon-generator를 쓰면 된다'
-    parent: blog
-    url: /wiki/generate-favicon
-    updated: '2020-02-09 12:59:33 +0900'
     children: []
 gerald-weinberg-language-king:
     type: wiki
