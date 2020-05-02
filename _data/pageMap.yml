@@ -532,7 +532,7 @@ brew:
     summary: 'macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 brew.'
     parent: command-line
     url: /wiki/brew
-    updated: '2020-02-22 23:43:03 +0900'
+    updated: '2020-05-02 12:26:16 +0900'
     children: []
 Brooks-s-law:
     type: wiki
