@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 단위
+title   : 숫자를 세는 방법
 summary : 
 date    : 2019-02-22 06:53:06 +0900
-updated : 2020-05-01 23:31:42 +0900
+updated : 2020-05-02 13:13:58 +0900
 tag     : unit
 toc     : true
 public  : true
@@ -61,6 +61,26 @@ latex   : true
 > 2의 거듭제곱에 대한 IEC 표준 명칭들이 있다. 1 키비바이트(KiB, kibibyte)는 1,024 바이트이고, 1 메비바이트(MiB, mebibyte)는 1,024 KiB 이며, 1 기비바이트(GiB, gibibyte)는 1,024 MiB 이다. 이 용어들을 실제로 사용하는 사람을 찾는 행운이 오길 바란다.
 >
 > 이들은 적어도 애매모호한 용량을 더 이상 사용하지는 않는다.[^raymond-67]
+
+## Deprecated
+### 오래된 한국어에서 동물의 나이를 세기
+
+- [하룻강아지 - 국립국어원, 조항범(趙恒範) / 충북대학교]( https://www.korean.go.kr/nkview/nknews/199911/16_3.htm )
+    - [archive.org]( https://web.archive.org/web/20181018091322/https://www.korean.go.kr/nkview/nknews/199911/16_3.htm )
+
+| 나이 | 세는 말                                                                                                                                  |
+|------|------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | [하릅]( https://ko.dict.naver.com/small_detail.nhn?docid=41298500 ), [한습]( https://ko.dict.naver.com/small_detail.nhn?docid=41541900 ) |
+| 2    | [이듭]( https://ko.dict.naver.com/small_detail.nhn?docid=30396000 ), [두습]( https://ko.dict.naver.com/small_detail.nhn?docid=10590600 ) |
+| 3    | [사릅]( https://ko.dict.naver.com/small_detail.nhn?docid=19154300 ), [세습]( https://ko.dict.naver.com/small_detail.nhn?docid=21588800 ) |
+| 4    | [나릅]( https://ko.dict.naver.com/small_detail.nhn?docid=6611600 )                                                                       |
+| 5    | [다습]( https://ko.dict.naver.com/small_detail.nhn?docid=8431700 )                                                                       |
+| 6    | [여습]( https://ko.dict.naver.com/small_detail.nhn?docid=26646000 )                                                                      |
+| 7    | [이롭]( https://ko.dict.naver.com/small_detail.nhn?docid=30418600 )                                                                      |
+| 8    | [여듭]( https://ko.dict.naver.com/small_detail.nhn?docid=26592100 )                                                                      |
+| 9    | [구릅]( https://ko.dict.naver.com/small_detail.nhn?docid=4154600 ), [아습]( https://ko.dict.naver.com/small_detail.nhn?docid=24781900 )  |
+| 10   | [열릅]( https://ko.dict.naver.com/small_detail.nhn?docid=27068500 ), [담불]( https://ko.dict.naver.com/small_detail.nhn?docid=8849300 )  |
+
 
 ## Links
 
