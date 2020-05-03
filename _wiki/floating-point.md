@@ -3,7 +3,7 @@ layout  : wiki
 title   : Floating Point 부동소수점
 summary :
 date    : 2018-10-28 08:03:23 +0900
-updated : 2020-01-28 22:40:55 +0900
+updated : 2020-05-03 23:34:38 +0900
 tag     : binary
 toc     : true
 public  : true
@@ -24,10 +24,11 @@ The set of finite floating-point numbers representable within a particular forma
 - $$emax$$ = the maximum exponent $$e$$
 - $$emin$$ = the minimum exponent $$e$$
     * $$emin$$ shall be $$1 − emax$$ for all formats.
-The values of these parameters for each basic format are given in Table 3.2, in which each format is identified by its radix and the number of bits in its encoding. Constraints on these parameters for extended and extendable precision formats are given in 3.7.
-
 >
-Within each format, the following floating-point data shall be represented:  
+The values of these parameters for each basic format are given in Table 3.2, in which each format is identified by its radix and the number of bits in its encoding. Constraints on these parameters for extended and extendable precision formats are given in 3.7.
+>
+Within each format, the following floating-point data shall be represented:
+>
 - Signed zero and non-zero floating-point numbers of the form $$(−1)^s \times b^e \times m$$, where
     - $$s$$ is 0 or 1.
     - $$e$$ is any integer $$emin \le e \le emax..$$
