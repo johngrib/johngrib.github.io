@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) 생각하는 기계
 summary : 
 date    : 2018-04-30 22:46:10 +0900
-updated : 2018-05-26 22:15:42 +0900
+updated : 2020-05-04 23:41:25 +0900
 tag     : 
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * 원제는 "The Pattern On The Stone: The Simple Ideas That Make Computers Work (Science Masters)"
 * 대니얼 힐리스의 굉장함에 놀라면서 읽게 되는 책이다.
@@ -24,9 +24,9 @@ latex   : false
 
 ![tinker toy](http://archive.computerhistory.org/resources/access/physical-object/2015/11/X39.81.03.jpg )
 
-# 인용
+## 인용
 
-## 튜링 기계에 대하여
+### 튜링 기계에 대하여
 
 4장. 튜링 기계는 과연 보편적일까? 중에서
 
@@ -41,7 +41,7 @@ latex   : false
 게다가 튜링은 유한 상태 기계가 그 사람을 대신할 수 있음도 증명했다.
 
 
-## 암달의 법칙(Gene Amdahl's law)
+### 암달의 법칙(Gene Amdahl's law)
 
 7장. 컴퓨터의 속도: 병렬 컴퓨터 중에서
 
@@ -60,7 +60,7 @@ latex   : false
 이 주장대로라면 1,000 개의 프로세서가 연결된 병렬 컴퓨터는 너무나 비효율적인 것이다.
 왜냐하면 이 컴퓨터의 속도는 단 1개의 프로세서로 구성된 컴퓨터보다 고작 10배밖에 안 빠르기 때문이다.
 
-## 암달의 법칙의 결점
+### 암달의 법칙의 결점
 
 7 컴퓨터의 속도: 병렬 컴퓨터 중에서
 
@@ -85,10 +85,7 @@ latex   : false
     * 예: 이미지 처리 작업에서 각 프로세서별로 이미지의 각기 다른 부분을 처리하도록 시킨다.
 * 이렇게 하면 프로세서 개수의 증가와 속도의 증가가 거의 비례하게 된다.
 
-
-
-
-# Links
+## Links
 
 * [생각하는 기계(교보문고)](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788983719546&orderClick=LAG&Kc= )
 * [W. Daniel Hillis(wikipedia)](https://en.wikipedia.org/wiki/Danny_Hillis )
