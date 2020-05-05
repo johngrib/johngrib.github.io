@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-05 17:10:51 +0900
+updated : 2020-05-05 17:14:52 +0900
 tag     : java
 toc     : true
 public  : true
@@ -167,7 +167,7 @@ List<String> uniq = words.stream()
 // 결과는 ["C", "a", "t", "D", "o", "g"]
 ```
 
-##3 boxed() 를 사용해 언박싱 스트림을 박싱 스트림으로 만들기
+### boxed() 를 사용해 언박싱 스트림을 박싱 스트림으로 만들기
 
 ```java
 IntStream intStream = Stream.of(new Person("Tom", 10), new Person("John", 8))
