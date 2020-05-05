@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-05 15:53:44 +0900
+updated : 2020-05-05 16:52:57 +0900
 tag     : java
 toc     : true
 public  : true
@@ -151,6 +151,20 @@ Map<Department, Integer> totalByDept = employees.stream()
 // PASS한 학생과 FAIL한 학생 리스트를 따로 수집한다
 Map<Boolean, List<Student>> passingFailing = students.stream()
     .collect(Collectors.partitioningBy(s -> s.getGrade() >= PASS_THRESHOLD));
+```
+
+### flatMap의 사용
+
+```java
+List<String> words = List.of("Cat", "Dog");
+
+List<String> uniq = words.stream()
+    .map(word -> word.split(""))
+    .flatMap(Arrays::stream)
+    .distinct()
+    .collect(Collectors.toList());
+
+// 결과는 ["C", "a", "t", "D", "o", "g"]
 ```
 
 ## 참고문헌
