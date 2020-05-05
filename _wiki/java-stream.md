@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-05 15:50:44 +0900
+updated : 2020-05-05 15:53:44 +0900
 tag     : java
 toc     : true
 public  : true
@@ -44,8 +44,8 @@ Classes to support functional-style operations on streams of elements, such as m
 * `HashSet` 인스턴스
 * `ConcurrentHashMap` 인스턴스
 * 배열
-* int
-* long
+* `int`
+* `long`
 
 ### 병렬화에 가장 적합한 종단 메소드
 
@@ -60,7 +60,7 @@ Classes to support functional-style operations on streams of elements, such as m
 
 ## Stream은 왜 for-each 로 돌릴 수 없는가?
 
-> 사실 Stream 인터페이스는 Iterable 인터페이스가 정의한 추상 메서드를 전부 포함할 뿐만 아니라, Iterable 인터페이스가 정의한 방식대로 동작한다. 그럼에도 for-each 로 스트림을 반복할 수 없는 까닭은 바로 Stream이 Iterable을 확장(extend)하지 않아서다.[^effective-47]
+> 사실 `Stream` 인터페이스는 `Iterable` 인터페이스가 정의한 추상 메서드를 전부 포함할 뿐만 아니라, `Iterable` 인터페이스가 정의한 방식대로 동작한다. 그럼에도 for-each 로 스트림을 반복할 수 없는 까닭은 바로 `Stream`이 `Iterable`을 확장(extend)하지 않아서다.[^effective-47]
 
 ## 주의할 점
 
