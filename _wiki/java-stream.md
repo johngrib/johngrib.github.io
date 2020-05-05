@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-01-27 22:39:55 +0900
+updated : 2020-05-05 15:50:44 +0900
 tag     : java
 toc     : true
 public  : true
@@ -21,7 +21,6 @@ Classes to support functional-style operations on streams of elements, such as m
 ## lazy evaluation
 
 > 스트림 파이프라인은 지연 평가(lazy evaluation)된다. 평가는 종단 연산이 호출될 때 이뤄지며, 종단 연산에 쓰이지 않는 데이터 원소는 계산에 쓰이지 않는다. 이러한 지연 평가가 무한 스트림을 다룰 수 있게 해주는 열쇠다. 종단 연산이 없는 스트림 파이프라인은 아무 일도 하지 않는 명령어인 no-op 과 같으니, 종단 연산을 빼먹는 일이 절대 없도록 하자.[^effective-45]
-[^effective-45]
 
 ## 병렬화
 
