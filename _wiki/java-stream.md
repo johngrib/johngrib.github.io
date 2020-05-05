@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-05 16:52:57 +0900
+updated : 2020-05-05 17:04:24 +0900
 tag     : java
 toc     : true
 public  : true
@@ -166,6 +166,16 @@ List<String> uniq = words.stream()
 
 // 결과는 ["C", "a", "t", "D", "o", "g"]
 ```
+
+##3 boxed() 를 사용해 언박싱 스트림을 박싱 스트림으로 만들기
+
+```java
+IntStream intStream = List.of(new Person("Tom", 10), new Person("John", 8))
+    .stream()
+    .mapToInt(Person::getAge);
+Stream<Integer> boxedStream = intStream.boxed();
+```
+
 
 ## 참고문헌
 
