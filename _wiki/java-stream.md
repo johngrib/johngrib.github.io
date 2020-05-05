@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-05 17:06:49 +0900
+updated : 2020-05-05 17:10:51 +0900
 tag     : java
 toc     : true
 public  : true
@@ -178,7 +178,8 @@ Stream<Integer> boxedStream = intStream.boxed();
 
 ## 참고문헌
 
-* 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+- 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+- 모던 자바 인 액션 / 라울-게이브리얼 우르마, 마리오 푸스코, 앨런 마이크로프트 저/우정은 역 / 한빛미디어 / 2019년 08월 01일 / 원제 : Modern Java in Action
 
 ## 주석
 
