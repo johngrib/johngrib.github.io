@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-05 17:14:52 +0900
+updated : 2020-05-05 17:19:08 +0900
 tag     : java
 toc     : true
 public  : true
@@ -173,6 +173,28 @@ List<String> uniq = words.stream()
 IntStream intStream = Stream.of(new Person("Tom", 10), new Person("John", 8))
     .mapToInt(Person::getAge);
 Stream<Integer> boxedStream = intStream.boxed();
+```
+
+### Stream.iterate 의 사용
+
+- 수열 출력
+
+```java
+Stream.iterate(0, n -> n + 1)
+    .limit(10)
+    .forEach(n -> System.out.printf("%d ", n));
+
+// 0 1 2 3 4 5 6 7 8 9
+```
+
+- Stream.iterate 를 활용한 피보나치 수열
+
+```java
+Stream.iterate(new int[]{0, 1}, n -> new int[]{ n[1], n[0] + n[1]})
+    .limit(20)
+    .forEach(n -> System.out.printf("%d ", n[1]));
+
+// 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765
 ```
 
 
