@@ -540,6 +540,7 @@ regenerate: true
 * [[locking]]
 * [[mac-keyboard-shortcuts]]
 * [[mac-tex]]
+* [[migrate-to-new-macbook]]
 * [[oop-quotes]]
 * [[responsibility-driven-design]]
 * [[restdoc-item-generator]]
