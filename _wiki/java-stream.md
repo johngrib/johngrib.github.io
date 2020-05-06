@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-06 23:13:41 +0900
+updated : 2020-05-06 23:16:02 +0900
 tag     : java
 toc     : true
 public  : true
@@ -230,7 +230,7 @@ List<Integer> numbers = Stream.of(11, 16, 30, -8, 7, 4, 100, -10)
 // (11, 16, 30 은 n > 10 에 해당되어 모두 버려졌다)
 ```
 
-## 합, 최소값, 최대값을 구하는 다양한 방법들
+### 합, 최소값, 최대값을 구하는 다양한 방법들
 
 ```java
 Optional<Integer> sum = Stream.of(11, 16, 30, -8, 7, 4, 100, -10)
@@ -250,6 +250,20 @@ OptionalInt mas = IntStream.of(11, 16, 30, -8, 7, 4, 100, -10)
 // 100
 ```
 
+### range의 사용
+
+```java
+IntStream.range(1, 3).forEach(System.out::println);
+// 1
+// 2
+```
+
+```java
+IntStream.rangeClosed(1, 3).forEach(System.out::println);
+// 1
+// 2
+// 3
+```
 
 ## 참고문헌
 
