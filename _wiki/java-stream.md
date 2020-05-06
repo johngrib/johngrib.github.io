@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-05 17:19:08 +0900
+updated : 2020-05-06 22:41:52 +0900
 tag     : java
 toc     : true
 public  : true
@@ -197,6 +197,38 @@ Stream.iterate(new int[]{0, 1}, n -> new int[]{ n[1], n[0] + n[1]})
 // 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765
 ```
 
+### filer, takeWhile, dropWhile 사용
+
+- `filter`는 `Stream`의 모든 항목을 루프하며 조건에 맞는 아이템을 수집한다.
+
+```java
+List<Integer> numbers = Stream.of(11, 16, 30, -8, 7, 4, 100)
+    .filter(n -> n > 10)
+    .collect(Collectors.toList());
+
+// 11, 16, 30, 100
+```
+
+- `takeWhile`은 순서대로 아이템을 수집하다가 `Predicate`가 처음으로 `false`가 나오면 멈춘다(short circuit).
+
+```java
+List<Integer> numbers = Stream.of(11, 16, 30, -8, 7, 4, 100)
+    .takeWhile(n -> n > 10)
+    .collect(Collectors.toList());
+
+// 11, 16, 30
+```
+
+- `dropWhile`은 `Predicate`가 처음으로 `false`를 리턴한 이후로 모두 수집한다. 그 이전은 모두 버린다.
+
+```java
+List<Integer> numbers = Stream.of(11, 16, 30, -8, 7, 4, 100, -10)
+    .dropWhile(n -> n > 10)
+    .collect(Collectors.toList());
+
+// -8, 7, 4, 100, -10
+// (11, 16, 30 은 n > 10 에 해당되어 모두 버려졌다)
+```
 
 ## 참고문헌
 
