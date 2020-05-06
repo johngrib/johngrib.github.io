@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-06 22:41:52 +0900
+updated : 2020-05-06 23:13:41 +0900
 tag     : java
 toc     : true
 public  : true
@@ -229,6 +229,27 @@ List<Integer> numbers = Stream.of(11, 16, 30, -8, 7, 4, 100, -10)
 // -8, 7, 4, 100, -10
 // (11, 16, 30 은 n > 10 에 해당되어 모두 버려졌다)
 ```
+
+## 합, 최소값, 최대값을 구하는 다양한 방법들
+
+```java
+Optional<Integer> sum = Stream.of(11, 16, 30, -8, 7, 4, 100, -10)
+    .reduce(Integer::sum);
+// 150
+```
+
+```java
+Optional<Integer> min = Stream.of(11, 16, 30, -8, 7, 4, 100, -10)
+    .reduce(Integer::min);
+// -10
+```
+
+```java
+OptionalInt mas = IntStream.of(11, 16, 30, -8, 7, 4, 100, -10)
+    .max();
+// 100
+```
+
 
 ## 참고문헌
 
