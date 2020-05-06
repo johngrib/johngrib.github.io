@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-06 23:16:02 +0900
+updated : 2020-05-06 23:17:59 +0900
 tag     : java
 toc     : true
 public  : true
@@ -264,6 +264,11 @@ IntStream.rangeClosed(1, 3).forEach(System.out::println);
 // 2
 // 3
 ```
+
+```java
+IntStream.rangeClosed(1, 4).sum();  // 10
+```
+
 
 ## 참고문헌
 
