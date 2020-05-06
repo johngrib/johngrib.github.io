@@ -318,6 +318,7 @@ regenerate: true
 * [[bat-cmd]]
 * [[brew]]
 * [[cal-cmd]]
+* [[chsh-cmd]]
 * [[csplit]]
 * [[ctags]]
 * [[curl]]
