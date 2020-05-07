@@ -1716,7 +1716,7 @@ google-home:
     summary: '집안의 문명 레벨이 1 상승했습니다'
     parent: tools
     url: /wiki/google-home
-    updated: '2020-03-26 21:06:37 +0900'
+    updated: '2020-05-07 21:37:56 +0900'
     children: []
 google-search-console-remove-outdated-content:
     type: wiki
