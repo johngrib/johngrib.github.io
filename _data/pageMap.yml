@@ -702,6 +702,14 @@ CAP-theorem:
     url: /wiki/CAP-theorem
     updated: '2019-11-03 00:12:22 +0900'
     children: []
+chsh-cmd:
+    type: wiki
+    title: 'chsh 명령어'
+    summary: 'change your login shell'
+    parent: command-line
+    url: /wiki/chsh-cmd
+    updated: '2020-05-07 08:23:19 +0900'
+    children: []
 Clean-Code:
     type: wiki
     title: '(책) 클린 코드 - 로버트 C. 마틴'
@@ -757,7 +765,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, csplit, ctags, curl, cut, date-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lsof, make-cmd, mv-cmd, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lsof, make-cmd, mv-cmd, my-bash-cheatsheet, openssl, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2548,7 +2556,7 @@ my-keyboard:
     summary: '역사를 정리해 보자'
     parent: my-lifehack
     url: /wiki/my-keyboard
-    updated: '2020-04-12 17:48:59 +0900'
+    updated: '2020-05-07 13:32:50 +0900'
     children: []
 my-lifehack:
     type: wiki

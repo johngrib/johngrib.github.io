@@ -3,7 +3,7 @@ layout  : wiki
 title   : 새 맥북으로 이사가기
 summary : 
 date    : 2020-05-06 15:39:42 +0900
-updated : 2020-05-07 10:44:00 +0900
+updated : 2020-05-07 16:01:52 +0900
 tag     : mac
 toc     : true
 public  : false
@@ -162,4 +162,12 @@ Host github.com
 ```
 ssh -T git@github.com
 ```
+
+### vim 설정
+
+- [vim-plug]( https://github.com/junegunn/vim-plug )를 설치한다.
+
+### JetBrains Toolbox 다운로드
+
+JetBrains Toolbox를 다운받은 다음, 라이선스를 갖고 있는 IDE를 설치한다.
 

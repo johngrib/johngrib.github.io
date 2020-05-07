@@ -222,6 +222,7 @@ bash:
     - {fileName: bc}
     - {fileName: brew}
     - {fileName: cal-cmd}
+    - {fileName: chsh-cmd}
     - {fileName: csplit}
     - {fileName: ctags}
     - {fileName: curl}
@@ -276,6 +277,7 @@ command:
     - {fileName: bc}
     - {fileName: brew}
     - {fileName: cal-cmd}
+    - {fileName: chsh-cmd}
     - {fileName: composer}
     - {fileName: csplit}
     - {fileName: ctags}
@@ -435,6 +437,8 @@ encryption:
     - {fileName: pwgen-cmd}
     - {fileName: rsa-encryption}
     - {fileName: sha256sum}
+zsh:
+    - {fileName: chsh-cmd}
 스크랩:
     - {fileName: clipping}
 tldr:
