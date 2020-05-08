@@ -3,7 +3,7 @@ layout  : wiki
 title   : 새 맥북으로 이사가기
 summary : 
 date    : 2020-05-06 15:39:42 +0900
-updated : 2020-05-07 16:01:52 +0900
+updated : 2020-05-08 09:21:13 +0900
 tag     : mac
 toc     : true
 public  : false
@@ -170,4 +170,11 @@ ssh -T git@github.com
 ### JetBrains Toolbox 다운로드
 
 JetBrains Toolbox를 다운받은 다음, 라이선스를 갖고 있는 IDE를 설치한다.
+
+### 키보드 설정
+
+`시스템 환경설정` - `키보드` - `키보드`
+
+- `Fn키 누르기`를 `F1, F2 등의 키 보기`로 설정한다.
+- `외장 키보드에서 F1, F2 등의 키를 표준 기능 키로 사용`에 체크한다.
 
