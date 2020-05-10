@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-10 15:25:35 +0900
+updated : 2020-05-10 19:02:57 +0900
 tag     : java
 toc     : true
 public  : true
@@ -283,6 +283,18 @@ Stream<Person> people = Stream.of(
   new Person("John", 45),
   new Person("Jane", 56),
   new Person("Tom", 32));
+```
+
+#### 문자열 join
+
+```java
+people.map(Person::getName)
+  .collect(Collectors.joining());
+// JohnJaneTom
+
+people.map(Person::getName)
+  .collect(Collectors.joining(", "));
+// John, Jane, Tom
 ```
 
 #### 최대값 찾기
