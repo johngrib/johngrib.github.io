@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-10 19:02:57 +0900
+updated : 2020-05-10 20:19:51 +0900
 tag     : java
 toc     : true
 public  : true
@@ -279,10 +279,23 @@ Collectors는 크게 두 가지 용도로 사용한다.
 다음과 같은 `Stream`이 있다고 하자.
 
 ```java
+@Getter
+class Person {
+  int age; String name; Hobby hobby;
+
+  public Person(String name, int age, Hobby hobby) {
+    this.age = age;
+    this.name = name;
+    this.hobby = hobby;
+  }
+}
+
+enum Hobby { Swimming, Reading, Writing }
+
 Stream<Person> people = Stream.of(
-  new Person("John", 45),
-  new Person("Jane", 56),
-  new Person("Tom", 32));
+  new Person("John", 45, Hobby.Swimming),
+  new Person("Jane", 56, Hobby.Reading),
+  new Person("Tom", 32, Hobby.Reading));
 ```
 
 #### 문자열 join
@@ -359,6 +372,55 @@ statistics.getMin();      // 32
 statistics.getSum();      // 133
 ```
 
+#### 그룹화
+
+##### groupingBy
+
+`groupingBy`의 시그니처는 다음과 같다.
+
+```java
+public static <T, K> Collector<T, ?, Map<K, List<T>>>
+groupingBy(Function<? super T, ? extends K> classifier)
+```
+
+다음과 같이 사용할 수 있다.
+
+```java
+Map<Hobby, List<Person>> splitByHobby = people.collect(
+  Collectors.groupingBy(Person::getHobby));
+
+// Swimming: [John]
+// Reading: [Jane, Tom]
+```
+
+```java
+Map<Boolean, List<Person>> splitByAge50 = people.collect(
+  Collectors.groupingBy(p -> p.getAge() > 50));
+
+// true: [Jane]
+// false: [John, Tom]
+```
+
+##### partitioningBy
+
+`partitioningBy`의 시그니처는 다음과 같다.
+
+```java
+public static <T> Collector<T, ?, Map<Boolean, List<T>>>
+partitioningBy(Predicate<? super T> predicate)
+```
+
+`groupingBy`는 `Function`을 인자로 받았지만, `partitioningBy`는 `Predicate`를 받는다는 차이점이 있다.
+
+`partitioningBy`가 리턴하는 `Map`의 key는 언제나 `Boolean`이다.
+
+다음과 같이 사용할 수 있다.
+
+```java
+Map<Boolean, List<Person>> splitByHobby = people.collect(
+  Collectors.partitioningBy(
+    p -> p.getHobby() == Hobby.Swimming));
+```
 
 
 ## 참고문헌
