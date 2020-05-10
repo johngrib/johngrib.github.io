@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-10 20:19:51 +0900
+updated : 2020-05-10 23:25:10 +0900
 tag     : java
 toc     : true
 public  : true
@@ -57,6 +57,24 @@ Classes to support functional-style operations on streams of elements, such as m
 
 * `Stream`의 `collect`. 컬렉션을 합치는 작업의 부담이 크다.
 
+### 스트림 병렬화에 대한 조언
+
+다음은 모던 자바 인 액션을 참고해 정리한 것이다.[^raoul-253]
+
+>
+- 확신이 서지 않으면 직접 측정하라. 병렬 스트림이 순차 스트림보다 빠르지 않은 경우도 많다.
+- 박싱을 주의하라. 박싱은 성능을 크게 저하시킨다. 가급적 기본형 특화 스트림인 `IntStream`, `LongStream`, `DoubleStream` 등을 고려하라.
+- 병렬 스트림에서 성능이 떨어지는 연산이 있다.
+    - `limit`, `findFirst` 처럼 요소의 순서에 의존하는 연산은 비싸다.
+    - `findAny`는 요소의 순서와 관계없이 연산하므로 `findFirst`보다 성능이 좋다.
+    - 순서가 상관없다면 비정렬된 스트림(`unordered`를 호출해보자)에 `limit`를 호출해볼 것.
+- 스트림에서 수행하는 전체 파이프라인 연산 비용을 고려하여, 병렬 스트림으로 성능을 개선할 수 있는지 생각해볼 것.
+- 소량의 데이터를 다룰 때에는 병렬 스트림이 도움되지 않는다.
+- 스트림을 구성하는 자료구조가 쉽게 분할할 수 있는가?
+    - `ArrayList`가 `LinkedList`보다 효율적으로 분할할 수 있다.
+    - Range 팩토리 메서드로 만든 기본형 스트림도 쉽게 분해할 수 있다.
+- 필터 연산이 있으면 스트림의 길이를 예측할 수 없으므로 효과적으로 병렬처리할 수 있을지 알 수 없다.
+- 최종 연산의 병합 과정 비용이 비싸다면 병렬 스트림에서 얻은 성능상의 이익이 상쇄될 수 있다.
 
 ## Stream은 왜 for-each 로 돌릴 수 없는가?
 
@@ -435,6 +453,8 @@ Map<Boolean, List<Person>> splitByHobby = people.collect(
 [^effective-47]: 이펙티브 자바 3/E. 아이템 47.
 [^effective-48]: 이펙티브 자바 3/E. 아이템 48.
 [^stream-parallel-guidance]: [When to use parallel streams][stream-parallel-guidance]
+[^raoul-253]: 모던 자바 인 액션. 7장. 253쪽.
 
 [stream-parallel-guidance]: http://gee.cs.oswego.edu/dl/html/StreamParallelGuidance.html
 [java-13-collectors]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/stream/Collectors.html
+
