@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-06 23:17:59 +0900
+updated : 2020-05-10 15:25:35 +0900
 tag     : java
 toc     : true
 public  : true
@@ -268,6 +268,85 @@ IntStream.rangeClosed(1, 3).forEach(System.out::println);
 ```java
 IntStream.rangeClosed(1, 4).sum();  // 10
 ```
+
+### Collectors의 사용
+
+Collectors는 크게 두 가지 용도로 사용한다.
+
+- 스트림을 하나의 결과로 요약한다.
+- 스트림 아이템을 여러 그룹으로 분할한다.
+
+다음과 같은 `Stream`이 있다고 하자.
+
+```java
+Stream<Person> people = Stream.of(
+  new Person("John", 45),
+  new Person("Jane", 56),
+  new Person("Tom", 32));
+```
+
+#### 최대값 찾기
+
+다음과 같이 `age`값이 최대인 사람을 찾을 수 있다.
+
+```java
+Optional<Person> oldestPerson = people.collect(
+  Collectors.maxBy(Comparator.comparingInt(Person::getAge)));
+```
+
+`Collectors`를 사용하지 않는다면 다음과 같이 하면 된다.
+
+```java
+Optional<Person> oldestPerson = people.max(
+  Comparator.comparingInt(Person::getAge));
+```
+
+#### 최소값 찾기
+
+```java
+Optional<Person> oldestPerson = people.collect(
+  Collectors.minBy(Comparator.comparingInt(Person::getAge)));
+```
+
+```java
+Optional<Person> oldestPerson = people.min(
+  Comparator.comparingInt(Person::getAge));
+```
+
+#### 합계 구하기
+
+```java
+int total = people.collect(Collectors.summingInt(Person::getAge));
+```
+
+```java
+int total = people.mapToInt(Person::getAge).sum();
+```
+
+#### 평균 구하기
+
+```java
+double average = people.collect(
+  Collectors.averagingDouble(Person::getAge));
+```
+
+#### SummaryStatistics 으로 다양한 통계 보고서 보기
+
+- `IntSummaryStatistics`
+- `LongSummaryStatistics`
+- `DoubleSummaryStatistics`
+
+```java
+IntSummaryStatistics statistics = people.collect(
+        Collectors.summarizingInt(Person::getAge));
+
+statistics.getAverage();  // 44.333333333333336
+statistics.getCount();    // 3
+statistics.getMax();      // 56
+statistics.getMin();      // 32
+statistics.getSum();      // 133
+```
+
 
 
 ## 참고문헌
