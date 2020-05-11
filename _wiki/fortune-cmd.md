@@ -3,7 +3,7 @@ layout  : wiki
 title   : fortune 명령어
 summary : 랜덤으로 격언/속담 등을 보여준다
 date    : 2019-12-25 19:03:11 +0900
-updated : 2020-05-11 22:43:28 +0900
+updated : 2020-05-11 22:46:07 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -96,7 +96,7 @@ git add *.dat
 
 인용하고 싶은 문장이 많은 좋은 책은 따로 파일로 만들어 두면 구별하기 편하다.
 
-파일 내용은 위에서 언급한 fortune 포맷을 지켜서 쓰면 된다.
+파일 내용은 위에서 언급한 `fortune` 포맷을 지켜서 쓰면 된다.
 
 다음은 내 fortune 파일 중 하나인 `general-quotes.fortune`의 앞 부분이다.
 
@@ -115,7 +115,7 @@ git add *.dat
 ...
 ```
 
-이렇게 여러 파일을 만들어 둔 다음, `.bashrc` 마지막에 다음과 같이 추가하면 터미널을 열 때마다 랜덤으로 격언이 하나씩 출력된다.
+이렇게 여러 파일을 만들어 둔 다음, `.bashrc` 마지막에 다음과 같이 `fortune`명령어와 함께 `.fortune` 파일을 모아둔 디렉토리 경로를 추가하면 터미널을 열 때마다 랜덤으로 격언이 하나씩 출력된다.
 
 ```sh
 fortune ~/my-fortune
