@@ -3,7 +3,7 @@ layout  : wiki
 title   : fortune 명령어
 summary : 랜덤으로 격언/속담 등을 보여준다
 date    : 2019-12-25 19:03:11 +0900
-updated : 2020-01-08 21:52:14 +0900
+updated : 2020-05-11 22:43:28 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -87,6 +87,40 @@ for file in `git diff --cached --name-only | egrep '\.fortune$'` ; do
 done
 git add *.dat
 ```
+
+## 응용: .bashrc에 넣어 터미널을 열 때마다 격언을 보여주자
+
+나는 책을 읽다가 마음에 드는 문장이 나오거나 하면 그 때마다 `fortune` 파일을 만들어 둔다.
+
+![]( /post-img/fortune-cmd/my-fortune-dir.jpg )
+
+인용하고 싶은 문장이 많은 좋은 책은 따로 파일로 만들어 두면 구별하기 편하다.
+
+파일 내용은 위에서 언급한 fortune 포맷을 지켜서 쓰면 된다.
+
+다음은 내 fortune 파일 중 하나인 `general-quotes.fortune`의 앞 부분이다.
+
+```
+전쟁에 대해서 공부하는 것과
+전사의 삶을 사는 것은 다른 일이다.
+    - 기원전 5세기 용병, 아르카디아(Arcadia)의 텔라몬(Telamon)
+%
+나는 운을 믿는다. 그리고 더 열심히 일할수록 더 많은 운이 따르곤 했다.
+    - Thomas Jefferson
+%
+시간은 인생의 동전이다. 다른 동전은 없다. 그리고 당신만이 그 동전을 어디에 쓸지
+정할 수 있다. 다른 이들이 당신 대신 이 동전을 쓰지 않도록 조심하라.
+    - Carl Sandburg
+%
+...
+```
+
+이렇게 여러 파일을 만들어 둔 다음, `.bashrc` 마지막에 다음과 같이 추가하면 터미널을 열 때마다 랜덤으로 격언이 하나씩 출력된다.
+
+```sh
+fortune ~/my-fortune
+```
+
 
 ## See Also
 

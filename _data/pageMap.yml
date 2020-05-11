@@ -1468,7 +1468,7 @@ fortune-cmd:
     summary: '랜덤으로 격언/속담 등을 보여준다'
     parent: command-line
     url: /wiki/fortune-cmd
-    updated: '2020-01-08 21:52:14 +0900'
+    updated: '2020-05-11 22:43:28 +0900'
     children: []
 frac1e:
     type: wiki
