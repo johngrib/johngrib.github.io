@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2020-04-30 18:52:21 +0900
+updated : 2020-05-12 15:59:00 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,12 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 공백 문자를 에디터에 표시하기
+
+vim의 `:set list`에 해당하는 설정.
+
+`Preferences` - `Editor` - `General` - `Appearance` - `Show whitespaces`에 체크한다.
 
 ## 비주얼 가이드라인 설정하기
 
