@@ -3,7 +3,7 @@ layout  : wiki
 title   : iTerm2
 summary : 문제 해결 및 설정 경험을 모아본다
 date    : 2020-03-23 11:35:51 +0900
-updated : 2020-04-30 09:52:14 +0900
+updated : 2020-05-12 22:00:11 +0900
 tag     : mac
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+> 참고: 나는 iTerm을 어쩌다 가끔 보조 용도로 쓴다. 나는 주로 macOS의 기본 터미널을 사용한다.
 
 ## 설치
 ```sh
