@@ -3,7 +3,7 @@ layout  : wiki
 title   : 몬티 홀 문제(Monty Hall problem)
 summary : 
 date    : 2018-04-11 12:20:40 +0900
-updated : 2018-04-24 20:49:29 +0900
+updated : 2020-05-13 23:09:06 +0900
 tag     : Think-Bayes bayes
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * Monty Hall(1921 - 2017)은 Let's Make a Deal 이란 게임 쇼의 사회자였다.
 * 몬티 홀 문제는 이 게임 쇼의 게임 중 하나에서 유래되었다.
@@ -34,9 +34,9 @@ latex   : true
 >
 참가자가 선택을 고수하는 것과, 바꾸는 것 둘 중 어느쪽이 더 유리한가?
 
-# 풀이
+## 풀이
 
-## 손으로 계산해서 풀기
+### 손으로 계산해서 풀기
 
 다음과 같은 상황을 가정하자.
 
@@ -107,7 +107,7 @@ $$
 한편 $$p(H_c)p(D \mid H_c)$$가 $$p(H_a) \space p(D \mid H_a)$$의 두 배이므로, 선택을 바꾸는 쪽이 두 배 더 유리하다는 것도 알 수 있다.
 
 
-## 직접 코딩해 풀기
+### 직접 코딩해 풀기
 
 다음은 [[Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
 
@@ -180,12 +180,10 @@ $ node monty.js
 
 선택을 C로 바꾸는 쪽이 두 배 유리하다는 것을 알 수 있다.
 
-
-
-
-# Links
+## Links
 
 * [[Think-Bayes]]
 * [Monty Hall problem(wikiepdia)](https://en.wikipedia.org/wiki/Monty_Hall_problem ) - [한국어](https://ko.wikipedia.org/wiki/%EB%AA%AC%ED%8B%B0_%ED%99%80_%EB%AC%B8%EC%A0%9C )
     * [Monty Hall(wikipedia)](https://en.wikipedia.org/wiki/Monty_Hall )
 * [몬티 홀 문제(나무위키)](https://namu.wiki/w/%EB%AA%AC%ED%8B%B0%20%ED%99%80%20%EB%AC%B8%EC%A0%9C )
+
