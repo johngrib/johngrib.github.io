@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2020-05-12 15:59:00 +0900
+updated : 2020-05-13 11:41:00 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,16 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## unused symbol 색깔 변경하기
+
+intelliJ 에서는 기본적으로 선언하고 사용하지 않은 변수 등을 약간 어두운 색으로 보여준다.
+
+그러나 나는 사용하지 않은 변수를 더 알아보기 쉽게 설정하는 것을 선호한다.
+
+`Preferences` - `Editor` - `Color Scheme` - `General` - `Errors and Warnings` - `Unused symbol`에 배경색을 빨간색으로 지정해 준다.
+
+![]( /post-img/intellij/unused.jpg )
 
 ## 공백 문자를 에디터에 표시하기
 
