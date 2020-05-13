@@ -3,7 +3,7 @@ layout  : wiki
 title   : 파비콘
 summary : 웹 브라우저 탭에 나오는 개인화된 아이콘
 date    : 2020-02-09 12:48:09 +0900
-updated : 2020-04-30 10:09:17 +0900
+updated : 2020-05-13 23:08:16 +0900
 tag     : 
 toc     : true
 public  : true
@@ -106,7 +106,7 @@ $ tree .
 
 - [파비콘 (wikipedia)][wikipedia]
 - [favicon-generator][generator]
-- [How to Add a Favicon to your Site (w3.org)][ https://www.w3.org/2005/10/howto-favicon ]
+- [How to Add a Favicon to your Site (w3.org)]( https://www.w3.org/2005/10/howto-favicon )
 
 [wikipedia]: https://ko.wikipedia.org/wiki/파비콘
 [generator]: https://www.favicon-generator.org/
