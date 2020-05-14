@@ -3,7 +3,7 @@ layout  : wiki
 title   : 크롬웰의 법칙(Cromwell's rule)
 summary : 논리적으로 참 거짓이 명확하지 않은 사건에 대하여 0, 1의 확률을 주면 안 된다는 법칙
 date    : 2018-04-08 15:13:06 +0900
-updated : 2018-04-08 20:39:13 +0900
+updated : 2020-05-14 22:58:48 +0900
 tag     : math history
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * 통계학자 데니스 린들리(1923.07.25 - 2013.12.14)가 올리버 크롬웰(Oliver Cromwell, 1599.04.25 - 1658.09.03)의 이름을 따 붙인 이름.
 * [위키백과](https://en.wikipedia.org/wiki/Cromwell%27s_rule )에서는 크롬웰의 법칙에 대해 다음과 같이 소개하고 있다.
@@ -32,7 +32,7 @@ except when applied to statements that are logically true or false, such as 2+2 
 * 이 규칙의 예외는 논리적으로 참과 거짓이 명확한 경우에 한한다.
     * 가령, `2 + 2` 가 `4` 또는 `5`와 같을 확률
 
-# 유래
+## 유래
 
 위키백과를 조금 더 읽어보면 다음과 같은 유래를 읽을 수 있다.
 
@@ -60,7 +60,7 @@ including a phrase that has become well known and frequently quoted:
 실수일 가능성이 없는 경우에만, 사건의 확률로 `1` 또는 `0`을 부여할 수 있다.
 
 
-# Links
+## Links
 
 * [Cromwell's rule(wikipedia)](https://en.wikipedia.org/wiki/Cromwell%27s_rule )
     * [Dennis Lindley](https://en.wikipedia.org/wiki/Dennis_Lindley )
