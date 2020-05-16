@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim-rest-console 사용법
 summary : vim을 cURL 클라이언트로 사용하자
 date    : 2018-04-12 21:41:12 +0900
-updated : 2019-11-07 22:00:01 +0900
+updated : 2020-05-16 16:46:25 +0900
 tag     : vim http
 toc     : true
 public  : true
@@ -147,6 +147,22 @@ let g:vrc_curl_opts = {
         "Via": "2 nghttpx"
     }
 }
+```
+
+## 내가 사용하고 있는 설정
+
+```viml
+" http 응답 헤더를 함께 보여준다
+let g:vrc_include_response_header = 1
+" 기본 응답 타입은 json 이다
+let g:vrc_response_default_content_type = 'application/json'
+" 같은 결과를 얻을 수 있는 curl 명령어를 보여준다
+let g:vrc_show_command = 1
+
+" curl 명령 실행 결과 나오는 메타데이터는 생략한다
+let g:vrc_curl_opts = { '-s': '' }
+" 디버그 모드는 끈다
+let g:vrc_debug = 0
 ```
 
 ## Links
