@@ -46,6 +46,7 @@ regenerate: true
 
 * [[begining-of-apache-webserver]]
 * [[Bill-Atkinson-productivity]]
+* [[Bill-Joy-and-10000-hours-rule]]
 * [[gerald-weinberg-language-king]]
 * [[James-Gosling-super-programmer]]
 * [[John-von-Neumann]]

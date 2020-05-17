@@ -454,6 +454,14 @@ Bill-Atkinson-productivity:
     url: /wiki/Bill-Atkinson-productivity
     updated: '2019-11-05 03:14:16 +0900'
     children: []
+Bill-Joy-and-10000-hours-rule:
+    type: wiki
+    title: '빌 조이(Bill Joy)와 10,000 시간의 법칙'
+    summary: ""
+    parent: legend
+    url: /wiki/Bill-Joy-and-10000-hours-rule
+    updated: '2020-05-17 20:50:47 +0900'
+    children: []
 billing-aws:
     type: wiki
     title: 'AWS 요금'
@@ -2357,7 +2365,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, the-beginning-of-linux, Turbo-Pascal-the-first-IDE, Wordstar]
+    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, the-beginning-of-linux, Turbo-Pascal-the-first-IDE, Wordstar]
 less-cmd:
     type: wiki
     title: 'less 명령어'
