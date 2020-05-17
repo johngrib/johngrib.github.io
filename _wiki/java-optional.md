@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Optional
 summary : 작성중인 문서
 date    : 2020-01-08 22:31:47 +0900
-updated : 2020-01-09 21:40:07 +0900
+updated : 2020-05-17 21:36:54 +0900
 tag     : java
 toc     : true
 public  : true
@@ -76,7 +76,7 @@ public final class Optional<T> {
 
 읽기 쉽도록 간단하게 번역해보았다.
 
-> Optional은 주로 "결과 없음(no result)"을 나타낼 필요가 있고 null을 사용하면 오류가 발생할 수 있는 메소의드 리턴 타입으로 사용하기 위한 것입니다. 타입이 Optional 인 변수는 절대로 null이 아니어야 하며, 항상 Optional 인스턴스를 가리켜야(point) 합니다.
+> Optional은 주로 "결과 없음(no result)"을 나타낼 필요가 있고 null을 사용하면 오류가 발생할 수 있는 메소드의 **리턴 타입으로 사용하기 위한 것**입니다. 타입이 Optional 인 변수는 절대로 null이 아니어야 하며, 항상 Optional 인스턴스를 가리켜야(point) 합니다.
 
 ## IntelliJ IDEA의 경고를 읽어보자
 
