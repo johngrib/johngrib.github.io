@@ -2806,6 +2806,14 @@ Postel-s-law:
     url: /wiki/Postel-s-law
     updated: '2018-01-07 18:20:48 +0900'
     children: []
+power-distance-index:
+    type: wiki
+    title: '권력 격차 지수 (Power Distance Index, PDI)'
+    summary: '조직이나 단체에서 권력이 작은 구성원이 권력의 불평등한 분배를 수용하고 기대하는 정도'
+    parent: proverb
+    url: /wiki/power-distance-index
+    updated: '2020-05-17 19:39:25 +0900'
+    children: []
 precision-of-number:
     type: wiki
     title: '수의 정밀도'
@@ -2869,7 +2877,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
-    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
 purpose-of-business:
     type: wiki
     title: '비즈니스의 목적'
