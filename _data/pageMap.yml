@@ -2180,7 +2180,7 @@ java-stream:
     summary: ""
     parent: Java
     url: /wiki/java-stream
-    updated: '2020-05-10 23:25:10 +0900'
+    updated: '2020-05-17 21:23:03 +0900'
     children: []
 java-switch-expression:
     type: wiki

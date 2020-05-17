@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-10 23:25:10 +0900
+updated : 2020-05-17 21:23:03 +0900
 tag     : java
 toc     : true
 public  : true
@@ -440,6 +440,48 @@ Map<Boolean, List<Person>> splitByHobby = people.collect(
     p -> p.getHobby() == Hobby.Swimming));
 ```
 
+### peek을 디버깅 목적으로 사용하기
+
+`java.util.stream.Stream` 인터페이스의 `peek` 메소드 주석을 읽어보면 디버깅 목적으로 활용할 수 있음을 알 수있다.
+
+```java
+    /**
+...
+     * @apiNote This method exists mainly to support debugging, where you want
+     * to see the elements as they flow past a certain point in a pipeline:
+     * <pre>{@code
+     *     Stream.of("one", "two", "three", "four")
+     *         .filter(e -> e.length() > 3)
+     *         .peek(e -> System.out.println("Filtered value: " + e))
+     *         .map(String::toUpperCase)
+     *         .peek(e -> System.out.println("Mapped value: " + e))
+     *         .collect(Collectors.toList());
+     * }</pre>
+```
+
+즉, 다음과 같은 코드가 있다면,
+
+```java
+Stream.of("one", "two", "three", "four")
+    .filter(e -> e.length() > 3)
+    .map(String::toUpperCase)
+    .collect(Collectors.toList());
+```
+
+다음과 같이 스트림의 각 요소를 소비하지 않으면서 실행할 수 있다.
+
+```java
+Stream.of("one", "two", "three", "four")
+    .filter(e -> e.length() > 3)
+    .peek(e -> System.out.println("Filtered value: " + e))
+    .map(String::toUpperCase)
+    .peek(e -> System.out.println("Mapped value: " + e))
+    .collect(Collectors.toList());
+```
+
+람다와 스트림을 조합한 코드는 디버깅이 어렵기 때문에, 복잡한 코드를 디버깅 할 때에는 `peek`의 사용을 고려하는 것도 좋은 방법이다.
+
+`forEach`는 스트림을 소비하기 때문에 `peek`처럼 쓸 수 없다.
 
 ## 참고문헌
 
