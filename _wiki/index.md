@@ -169,6 +169,7 @@ regenerate: true
 * [[java-random]]
 * [[java-remainder-operator]]
 * [[java-switch-expression]]
+* [[java-TemporalAdjusters]]
 * [[java10-var]]
 * [[java8-performance-improvement-for-hashmap]]
 * [[java8-why-permgen-removed]]
