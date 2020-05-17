@@ -3,7 +3,7 @@ layout  : wiki
 title   : 권력 격차 지수 (Power Distance Index, PDI)
 summary : 조직이나 단체에서 권력이 작은 구성원이 권력의 불평등한 분배를 수용하고 기대하는 정도
 date    : 2020-05-17 18:59:44 +0900
-updated : 2020-05-17 19:39:25 +0900
+updated : 2020-05-17 19:45:43 +0900
 tag     : 
 toc     : true
 public  : true
@@ -62,6 +62,79 @@ PDI가 높은 나라는 PDI가 낮은 나라에 비해 위계질서를 원하며
 아니면 기장이 그 지역을 여러 차례 비행했다는 것을 알았기 때문에 인정받지 못하는 말을 더 이상 하고 싶지 않았을지도 모른다.
 부기장은 자신의 견해를 더 강력하게 표출했어야 했다."
 [^malcolm-241]
+
+## PDI 목록
+
+다음 테이블의 출처는 [CLEARLY CULTURAL]( https://clearlycultural.com/geert-hofstede-cultural-dimensions/power-distance-index/ ) 이다.
+
+| Country              | PDI |
+| -----------------    | --- |
+| Malaysia             | 104 |
+| Guatemala            | 95  |
+| Panama               | 95  |
+| Philippines          | 94  |
+| Mexico               | 81  |
+| Venezuela            | 81  |
+| China                | 80  |
+| Egypt                | 80  |
+| Iraq                 | 80  |
+| Kuwait               | 80  |
+| Lebanon              | 80  |
+| Libya                | 80  |
+| Saudi Arabia         | 80  |
+| United Arab Emirates | 80  |
+| Ecuador              | 78  |
+| Indonesia            | 78  |
+| Ghana                | 77  |
+| India                | 77  |
+| Nigeria              | 77  |
+| Sierra Leone         | 77  |
+| Singapore            | 74  |
+| Brazil               | 69  |
+| France               | 68  |
+| Hong Kong            | 68  |
+| Poland               | 68  |
+| Colombia             | 67  |
+| El Salvador          | 66  |
+| Turkey               | 66  |
+| Belgium              | 65  |
+| Ethiopia             | 64  |
+| Kenya                | 64  |
+| Peru                 | 64  |
+| Tanzania             | 64  |
+| Thailand             | 64  |
+| Zambia               | 64  |
+| Chile                | 63  |
+| Portugal             | 63  |
+| Uruguay              | 61  |
+| Greece               | 60  |
+| South Korea          | 60  |
+| Iran                 | 58  |
+| Taiwan               | 58  |
+| Czech Republic       | 57  |
+| Spain                | 57  |
+| Pakistan             | 55  |
+| Japan                | 54  |
+| Italy                | 50  |
+| Argentina            | 49  |
+| South Africa         | 49  |
+| Hungary              | 46  |
+| Jamaica              | 45  |
+| United States        | 40  |
+| Netherlands          | 38  |
+| Australia            | 36  |
+| Costa Rica           | 35  |
+| Germany              | 35  |
+| United Kingdom       | 35  |
+| Switzerland          | 34  |
+| Finland              | 33  |
+| Norway               | 31  |
+| Sweden               | 31  |
+| Ireland              | 28  |
+| New Zealand          | 22  |
+| Denmark              | 18  |
+| Israel               | 13  |
+| Austria              | 11  |
 
 
 ## 참고문헌
