@@ -2934,6 +2934,14 @@ random-lunch:
     url: /wiki/random-lunch
     updated: '2020-03-20 09:41:21 +0900'
     children: []
+regex:
+    type: wiki
+    title: '정규 표현식'
+    summary: '작성중인 문서'
+    parent: index
+    url: /wiki/regex
+    updated: '2020-05-18 23:33:27 +0900'
+    children: []
 regex-prime:
     type: wiki
     title: '소수를 판별하는 정규식'
