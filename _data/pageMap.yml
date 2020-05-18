@@ -2132,7 +2132,7 @@ java-interface:
     summary: '자바 인터페이스'
     parent: Java
     url: /wiki/java-interface
-    updated: '2019-09-29 21:01:13 +0900'
+    updated: '2020-05-18 22:11:29 +0900'
     children: []
 java-jigsaw-quick-start:
     type: wiki
