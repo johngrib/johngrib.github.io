@@ -3,7 +3,7 @@ layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
 date    : 2017-12-12 22:05:28 +0900
-updated : 2019-08-07 00:23:47 +0900
+updated : 2020-05-19 23:41:29 +0900
 tag     : http
 toc     : true
 public  : true
@@ -13,13 +13,13 @@ latex   : false
 * TOC
 {:toc}
 
-# 개요
+## 개요
 
 * URI : **U**niform **R**esource **I**dentifier
     * URL : **U**niform **R**esource **L**ocator
     * URN : **U**niform **R**esource **N**ame
 
-# RFC 3986
+## RFC 3986
 
 * [RFC3986](https://www.ietf.org/rfc/rfc3986.txt ) -  Uniform Resource Identifier (URI): Generic Syntax
     * 1.1.3.  URI, URL, and URN
@@ -36,7 +36,7 @@ and persistent even when the resource ceases to exist or becomes
 unavailable, and to any other URI with the properties of a name.
 
 
-# URI
+## URI
 
 * URI: 유일 자원 식별자
 * 인터넷 상의 정보 리소스를 고유하게 식별할 수 있다.
@@ -58,7 +58,7 @@ The following are two example URIs and their component parts:
 
 위가 URL이고, 아래가 URN이다.
 
-## URL
+### URL
 
 * 유일 자원 위치
 * 누구나 흔하게 접하는 그 URL이 맞다.
@@ -77,7 +77,7 @@ URL 포맷은 크게 세 부분으로 이루어져 있다.
 * 호스트: `johngrib.github.io`
 * 리소스: `/wiki/URI/index.html`
 
-### fragment
+#### fragment
 
 프래그먼트는 다음 예제와 같이 URL 마지막에 `#`과 함께 붙는다.
 
@@ -89,15 +89,15 @@ http://johngrib.github.io/wiki/URI.md#fragment
 
 프래그먼트 처리는 브라우저가 서버로부터 리소스를 다운받은 다음에 이루어진다.
 
-## URN
+### URN
 
 * 유일 자원 '이름'
 * 리소스의 위치에 영향을 받지 않는 고유한 이름이다.
 * 위치 독립적이기 때문에 리소스가 다른 곳으로 옮겨져도 작동해야 한다.
 
-# 참고
+## 참고
 
-## URI 파싱 정규식
+### URI 파싱 정규식
 
 다음은 RFC 3986의 "Appendix B.  Parsing a URI Reference with a Regular Expression"에
 수록된 URI 파싱 정규식이다. (숫자는 캡처 그룹 넘버.)
@@ -127,13 +127,13 @@ http://johngrib.github.io/wiki/URI.md#fragment
 
 URI의 창시자가 직접 만든 정규식이니 유용하게 사용하자.
 
-## 상대 URL을 절대 URL로 파싱하는 알고리즘
+### 상대 URL을 절대 URL로 파싱하는 알고리즘
 
 RFC 3986의 5.2.  Relative Resolution(29~33 쪽)에 나와 있다.
 
-# 추가
+## 추가
 
-## URL 길이 제한
+### URL 길이 제한
 
 [RFC 7231 - 6.5.12 414 URI Too Long](https://tools.ietf.org/html/rfc7231#section-6.5.12 )
 
@@ -159,7 +159,7 @@ URI가 너무 길때 반환되는 414 스테이터스 코드가 RFC 7231에서 �
 
 [ie2083]: https://support.microsoft.com/en-us/help/208427/maximum-url-length-is-2-083-characters-in-internet-explorer 
 
-## (책) RESTful Web API 인용: URI와 URL의 차이에 대하여
+### (책) RESTful Web API 인용: URI와 URL의 차이에 대하여
 
 * 4장 하이퍼미디어, 59쪽
 
@@ -181,12 +181,12 @@ ftp: URI를 보면 FTP 클라이언트를 켜고 특정 FTP 명령을 수행해�
 
 즉, 이 책의 관점에서는 어떤 URI가 리소스의 표현(representation)을 가져올 수 있다면 그것은 URL 이다.
 
-# Links
+## Links
 
 * [RFC 3986](https://www.ietf.org/rfc/rfc3986.txt ) - Uniform Resource Identifier (URI): Generic Syntax
 * [RFC 3986(rfc-editor)](https://www.rfc-editor.org/info/rfc3986 )
 
-# 참고문헌
+## 참고문헌
 
 * HTTP 완벽 가이드 / 데이빗 고울리, 브라이언 토티, 마조리 세이어, 세일루 레디, 안슈 아가왈 공저 / 이응준, 정상일 공역 / 인사이트(insight) / 2014년 12월 15일
 * RESTful Web API / 레오나르드 리처드슨, 마이크 애먼슨, 샘 루비 공저 / 박세현, 박진형 공역 / 인사이트(insight) / 2017년 04월 17일
