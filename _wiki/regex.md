@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정규 표현식
 summary : 작성중인 문서
 date    : 2020-05-18 22:45:12 +0900
-updated : 2020-05-19 23:39:24 +0900
+updated : 2020-05-19 23:42:34 +0900
 tag     : 
 toc     : true
 public  : false
@@ -130,6 +130,10 @@ var regex = /\B(?=(\d{3})+(?!\d))/g
 `^(?!regex$j).*$`
 
 ## 참고 예제
+### URI
+
+- [[URI]]
+
 ### 한글
 
 $$[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]$$
