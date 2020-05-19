@@ -350,6 +350,7 @@ regenerate: true
 * [[openssl]]
 * [[phpbrew]]
 * [[pwgen-cmd]]
+* [[rans-cmd]]
 * [[rig-cmd]]
 * [[ripgrep]]
 * [[say]]
