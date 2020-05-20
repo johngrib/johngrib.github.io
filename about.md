@@ -24,7 +24,7 @@ latex: true
 ## Motto
 
 > Whenever you fall, pick something up. – Oswald Avery
-
+>
 > 넘어지면 무언가를 주워라. - 오스왈드 에이버리
 
 
