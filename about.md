@@ -3,6 +3,7 @@ layout: page
 title:
 permalink: /about/
 comment: false
+latex: true
 ---
 * TOC
 {:toc}
@@ -60,6 +61,22 @@ comment: false
 
 * 2020-01-29 [2020릴레이인터뷰 첫 번째 주자, 마켓컬리 소프트웨어 엔지니어 "이종립"]( https://monthly-jiandson.tistory.com/49 )
 * 2017-11-16 [OKKY 미니세미나 "비전공 학원출신 SI개발자, 유명스타트업 들어간.ssul" 참석 후기]( https://jojoldu.tistory.com/247 )
+
+## Experience
+
+- (주)컬리 - _2019-11-04 ~ 현재_
+    - Java 백엔드 웹 개발
+
+- (주)아티프렌즈 - _2018-08-22 ~ 2019-06-26_
+    - Go 블록체인 엔진 개발
+    - PHP 백엔드 웹 애플리케이션 개발
+
+- (주)우아한형제들 - _2016-04-04 ~ 2018-08-21_
+    - Java 백엔드 웹 개발
+    - PHP 프론트엔드 웹 개발
+
+- (주)휘스코앤드비즈파크 - _2012-10-08 ~ 2016-03-07_
+    - Java 웹 개발
 
 ## Public Key
 
