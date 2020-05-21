@@ -424,6 +424,7 @@ mac:
     - {fileName: iterm}
     - {fileName: java_home}
     - {fileName: mac-keyboard-shortcuts}
+    - {fileName: migrate-to-new-macbook}
 Fred-Brooks:
     - {fileName: Brooks-s-law}
     - {fileName: Mythical-Man-Month}

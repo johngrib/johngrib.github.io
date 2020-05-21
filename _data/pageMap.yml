@@ -2518,6 +2518,14 @@ memo-2020:
     url: /wiki/memo-2020
     updated: '2020-05-17 13:58:39 +0900'
     children: []
+migrate-to-new-macbook:
+    type: wiki
+    title: '새 맥북으로 이사가기, 설정하기'
+    summary: '16인치 맥북 셋팅하면서 작성하는 문서'
+    parent: index
+    url: /wiki/migrate-to-new-macbook
+    updated: '2020-05-21 23:00:01 +0900'
+    children: []
 MnM-problem:
     type: wiki
     title: 'M&M 문제'
