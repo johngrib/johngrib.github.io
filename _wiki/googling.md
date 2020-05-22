@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구글링하는 방법
 summary : 구글 및 여러 검색 서비스 사용법
 date    : 2017-12-23 18:23:50 +0900
-updated : 2020-03-03 20:08:53 +0900
+updated : 2020-05-22 14:09:16 +0900
 tag     : google twitter facebook
 toc     : true
 public  : true
@@ -190,6 +190,10 @@ https://www.facebook.com/search/str/사람이름/users-named/str/회사이름/em
 ```
 https://www.facebook.com/search/str/{ 사람 이름 }/users-named/str/{ MIN 나이 }/{ MAX 나이 }/users-age-2/intersect
 ```
+
+## Gmail
+
+- [Gmail에서 사용할 수 있는 검색 연산자](https://support.google.com/mail/answer/7190?hl=ko )
 
 ## Links
 
