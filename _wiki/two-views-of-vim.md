@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim, 두 가지 관점
 summary : 그리고 나의 vim 사용 습관
 date    : 2019-05-19 22:31:27 +0900
-updated : 2019-12-01 19:55:56 +0900
+updated : 2020-05-23 08:30:28 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -73,10 +73,7 @@ Do not look in the (green)box.
 * 공역: vim 에디터에 표현 가능한 모든 문자열의 집합.
 * 치역: vim NORMAL 명령어로 만들어낼 수 있는 모든 문자열의 집합.
 
-| ![surjective function](https://user-images.githubusercontent.com/1855714/58082306-ab225700-7bf1-11e9-93cb-67b8f56350df.png ) |
-
-
-
+![surjective function][surjective]
 
 ### vim 매크로 생성은 새로운 동사를 창조하는 행위
 
@@ -184,14 +181,13 @@ NORMAL 명령만큼은 vim 에디터와 똑같이 작동하는 것을 목표로 
 
 그 외에도 웹서핑도 하고 이런저런 도구들을 사용하다 보면 여기저기에서 $$L_v$$ 사용자들의 흔적을 볼 수 있다.
 
-| ![twitter](https://user-images.githubusercontent.com/1855714/58219111-af12be00-7d44-11e9-9f77-66213de909f8.png) | ![facebook](https://user-images.githubusercontent.com/1855714/58219253-25afbb80-7d45-11e9-9385-509cbbc7ed00.png) | ![gmail](https://user-images.githubusercontent.com/1855714/58220906-a5408900-7d4b-11e9-84e7-359c55ad800f.png) |
+| ![twitter][twitter] | ![facebook][facebook] | ![gmail][gmail] |
 
 <style> img[alt="twitter"] { max-height: 300px; display: block; } </style>
 <style> img[alt="facebook"] { max-height: 300px; display: block; } </style>
 <style> img[alt="gmail"] { max-height: 300px; display: block; } </style>
 
 _표: Twitter와 Facebook, Gmail의 키보드 단축키들_
-
 
 새로 접하게 된 애플리케이션을 사용하다 무심코 `j`, `k`를 눌렀을 때 스크롤이 움직이면 굉장히 반갑다.
 
@@ -203,10 +199,9 @@ _표: Twitter와 Facebook, Gmail의 키보드 단축키들_
 
 vim을 언어로 접근하는 것이 아니라 제어 버튼이 빼곡한 조종 장치로 보기 때문이다.
 
-| ![image](https://user-images.githubusercontent.com/1855714/58084360-aa8bbf80-7bf5-11e9-82fa-b9388f5361ed.png) | ![image](https://user-images.githubusercontent.com/1855714/58084159-554fae00-7bf5-11e9-9b9f-78387f06216b.png) |
+| ![image][endeavour] | ![image][vim-cheatsheet] |
 
 _그림: Space Shuttle Endeavour 호의 조종석과 흔히 찾아볼 수 있는 vim cheatsheet._
-
 
 vim을 텍스트 조작 언어로 인식한다면 초심자가 "외워야 하는" 대상은 생각보다 많지 않을 수 있다.
 
@@ -304,24 +299,24 @@ vim의 NORMAL 명령어는 몇 가지 예외를 제외하면 손가락 하나만
 
 이러한 특성은 계산기/전화기/스타크래프트의 키보드 UI와 닮아있는데, 게임 도중 아이콘을 선택할 때 방향키를 입력하여 커서를 이동시킨 후 클릭하는 방식이었다면 스타크래프트는 훨씬 불편한 게임이 되었을 것이다.
 
-| ![calculator](https://user-images.githubusercontent.com/1855714/58091330-491f1d00-7c04-11e9-82e3-658661f89b7e.png) | ![starcraft](https://user-images.githubusercontent.com/1855714/58091581-ea0dd800-7c04-11e9-84ca-b7934e156bc7.png) |
+| ![calculator][calculator] | ![starcraft][starcraft] |
 
 <style> img[alt="calculator"] { max-height: 200px; display: block; } </style>
 <style> img[alt="starcraft"] { max-height: 200px; display: block; } </style>
 
 다음은 IntelliJ의 DEFAULT KEYMAP 일부를 캡처한 것이다. IntelliJ는 훌륭한 IDE지만 이 키맵은 `shift`, `control` 같은 modifier 키의 의존도가 높다. 거의 매번 동시에 두 개 이상의 손가락에 힘을 줘야 한다. 특히 `control` 키는 현대 키보드의 위치상 새끼손가락에 부담을 많이 주기 때문에 Emacs Pinky의 위험이 있다. 게다가 동시에 여러 키를 누르는 것은 때로는 꽤 헷갈리는 일이다.
 
-![intellij](https://user-images.githubusercontent.com/1855714/58091746-61dc0280-7c05-11e9-97cc-5d66a03de51d.png)
+![intellij][intellij]
+
 <style> img[alt="intellij"] { max-height: 400px; display: block; } </style>
 
 잠시 오래된 현자의 말씀을 감상하자.
 
 > DEVRIES' DILEMA  
-If you hit two keys on the typewriter, the one you don't want hits the paper.  
-<br>
-드브리스의 딜레마  
-동시에 타자기의 키를 두 개 누르면, 원하지 않았던 글자가 종이에 찍힌다.
-
+> If you hit two keys on the typewriter, the one you don't want hits the paper.  
+>
+> 드브리스의 딜레마  
+> 동시에 타자기의 키를 두 개 누르면, 원하지 않았던 글자가 종이에 찍힌다.
 
 물론 vim도 `control` 키를 사용하는 명령이 있긴 하지만 비중이 크지는 않으며, 원한다면 얼마든지 `control`키의 사용을 피할 방법이 있다.
 
@@ -362,7 +357,7 @@ vim에 새로운 명령을 추가할 때 위에서 살펴본 vim 언어 입력�
 
 한편, 나는 이 방식을 IntelliJ에서도 사용하고 있다.
 
-![intellij-f1](https://user-images.githubusercontent.com/1855714/58094860-8daeb680-7c0c-11e9-8cfe-61ee688920b4.png)
+![intellij-f1][intellij-f1]
 
 <style> img[alt="intellij-f1"] { max-height: 300px; display: block; } </style>
 
@@ -569,7 +564,7 @@ augroup END
 
 <https://github.com/johngrib/vim-game-code-break >
 
-<img src="https://user-images.githubusercontent.com/1855714/27774457-7e001646-5fcd-11e7-9e90-c37eafefad9c.gif" alt="animated demonstration" style="max-width:100%;">
+![vim-game][vim-game]
 
 
 ### 다른 사람이 작성한 vimscript 도구의 실행
@@ -601,7 +596,7 @@ vimscript로 만든 vim 전용 도구는 vim plugin이라 부른다.
 
 스크린샷: 파일 탐색을 실행한 모습. 파일 내용 미리 보기도 가능하다.
 
-![image](https://user-images.githubusercontent.com/1855714/58028441-b1fb8c00-7b55-11e9-86fa-bb376029b623.png)
+![image][fzf]
 
 ##### VimWiki
 
@@ -622,7 +617,7 @@ vimscript로 만든 vim 전용 도구는 vim plugin이라 부른다.
     * 뭔가 생각이 안 날 땐 snippet 파일을 보면 대강 생각이 난다.
     * 도구를 만들며 학습하는 것은 재미있어서 빠져들게 된다.
 
-![image](https://user-images.githubusercontent.com/1855714/58098324-462c2880-7c14-11e9-9c83-d39b00b2e6c3.png)
+![image][ultisnips]
 
 #### 그 외 텍스트 에디팅, 커서 점프
 
@@ -712,4 +707,19 @@ endif
 * [vim-game-code-break](https://github.com/johngrib/vim-game-code-break )
 * [Vim-Mundo](https://simnalamburt.github.io/vim-mundo/ )
 * [How to tweet](https://help.twitter.com/ko/using-twitter/how-to-tweet )
+
+
+[calculator]: https://user-images.githubusercontent.com/1855714/58091330-491f1d00-7c04-11e9-82e3-658661f89b7e.png
+[starcraft]: https://user-images.githubusercontent.com/1855714/58091581-ea0dd800-7c04-11e9-84ca-b7934e156bc7.png
+[surjective]: https://user-images.githubusercontent.com/1855714/58082306-ab225700-7bf1-11e9-93cb-67b8f56350df.png
+[intellij]: https://user-images.githubusercontent.com/1855714/58091746-61dc0280-7c05-11e9-97cc-5d66a03de51d.png
+[twitter]: https://user-images.githubusercontent.com/1855714/58219111-af12be00-7d44-11e9-9f77-66213de909f8.png
+[facebook]: https://user-images.githubusercontent.com/1855714/58219253-25afbb80-7d45-11e9-9385-509cbbc7ed00.png
+[gmail]: https://user-images.githubusercontent.com/1855714/58220906-a5408900-7d4b-11e9-84e7-359c55ad800f.png
+[endeavour]: https://user-images.githubusercontent.com/1855714/58084360-aa8bbf80-7bf5-11e9-82fa-b9388f5361ed.png
+[vim-cheatsheet]: https://user-images.githubusercontent.com/1855714/58084159-554fae00-7bf5-11e9-9b9f-78387f06216b.png
+[intellij-f1]: https://user-images.githubusercontent.com/1855714/58094860-8daeb680-7c0c-11e9-8cfe-61ee688920b4.png
+[vim-game]: https://user-images.githubusercontent.com/1855714/27774457-7e001646-5fcd-11e7-9e90-c37eafefad9c.gif
+[fzf]: https://user-images.githubusercontent.com/1855714/58028441-b1fb8c00-7b55-11e9-86fa-bb376029b623.png
+[ultisnips]: https://user-images.githubusercontent.com/1855714/58098324-462c2880-7c14-11e9-9c83-d39b00b2e6c3.png
 
