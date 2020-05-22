@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2020-03-17 15:29:36 +0900
+updated : 2020-05-22 23:51:52 +0900
 tag     : vim wiki
 public  : true
 parent  : [[Vim]]
@@ -210,7 +210,7 @@ Vimwiki는 크게 다음 몇 가지 기능만 기억하면 충분히 유용하�
     * 원하는 파일을 고른 다음 `Enter`를 치면 해당 파일이 열린다.
         * `<NL>`이나 `<CR>`에 `map`이 걸려 있으면 검색 결과에서 파일이 안 열리므로 주의.
 
-![vimwiki-search](/wiki-img/vim/vimwiki-search.jpg)
+![]( /post-img/vimwiki/vimwiki-search.jpg )
 
 * 이미지의 마지막 줄을 읽어보면 `:VWS` 명령은 `:vimgrep` 명령어를 사용한 것임을 알 수 있다.
     * 그러나 `:VWS`는 마크다운 파일에서만 검색하므로 조금 더 빠르게 검색 결과를 얻을 수 있다.

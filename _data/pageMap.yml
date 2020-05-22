@@ -3876,7 +3876,7 @@ vimwiki:
     summary: '로컬에서 Vim으로 관리하는 나만의 위키'
     parent: Vim
     url: /wiki/vimwiki
-    updated: '2020-03-17 15:29:36 +0900'
+    updated: '2020-05-22 23:51:52 +0900'
     children: []
 von-neumann-extractor:
     type: wiki
