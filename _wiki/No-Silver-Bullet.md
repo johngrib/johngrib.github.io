@@ -3,7 +3,7 @@ layout  : wiki
 title   : 은총알은 없다(No Silver Bullet)
 summary : 생산성, 신뢰성, 단순성을 10배 이상 향상시킬 발전은 나타나지 않을 것이다
 date    : 2018-02-21 21:13:04 +0900
-updated : 2018-02-21 22:34:10 +0900
+updated : 2020-05-22 23:57:44 +0900
 tag     : proverb Fred-Brooks
 toc     : true
 public  : true
@@ -158,10 +158,7 @@ latex   : false
     * 설계는 물론이고 리더쉽도 함께 키워야 한다.
 * 설계자들이 서로 소통하며 자극을 줄 수 있는 기회를 제공해야 한다.
 
-
-
-![Computer지에 실린 No Silver Bullet 표지](/wiki-img/papers/no-silver-bullet.jpg)
-
+![Computer지에 실린 No Silver Bullet 표지]( /post-img/No-Silver-Bullet/no-silver-bullet.jpg )
 
 ## Links
 
