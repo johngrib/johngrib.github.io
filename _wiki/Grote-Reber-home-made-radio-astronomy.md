@@ -3,7 +3,7 @@ layout  : wiki
 title   : 집에서 전파망원경을 만든 그로트 레버(Grote Reber)
 summary : 10년간 세계 유일의 전파천문학자
 date    : 2018-02-08 12:06:18 +0900
-updated : 2018-02-08 13:19:30 +0900
+updated : 2020-05-22 23:54:52 +0900
 tag     : story science
 toc     : true
 public  : true
@@ -46,7 +46,7 @@ For nearly a decade he was the world's only radio astronomer.
 
 [Manchester 대학 천체물리학과 홈페이지](http://www.jb.man.ac.uk/news/2004/reber/)에 그의 사진이 있었다.
 
-![Grote Reber](/wiki-img/people/Grote-Reber.jpg)
+![]( /post-img/Grote-Reber-home-made-radio-astronomy/Grote-Reber.jpg )
 
 ## Links
 
