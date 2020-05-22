@@ -3,7 +3,7 @@ layout  : wiki
 title   : 대문자를 upper case, 소문자를 lower case라 부르는 이유
 summary : 인쇄 식자공들이 소문자 활자를 아래쪽 상자에 담고, 대문자 활자를 위쪽 상자에 담았기 때문
 date    : 2018-02-07 21:41:02 +0900
-updated : 2018-02-07 22:46:36 +0900
+updated : 2020-05-22 23:48:52 +0900
 tag     : letter case
 toc     : true
 public  : true
@@ -56,9 +56,9 @@ The case of capital letters was always kept above that of the smaller ones - hen
 
 이 책에는 이해하기 쉬운 삽화도 실려 있다.
 
-![case0](/wiki-img/letter-case/letter-case-00.jpg)
+![]( /post-img/letter-case/letter-case-00.jpg )
 
-![case1](/wiki-img/letter-case/letter-case-01.jpg)
+![]( /post-img/letter-case/letter-case-01.jpg )
 
 ### letterpressdaughter.blospot.kr
 
