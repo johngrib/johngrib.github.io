@@ -2572,7 +2572,7 @@ my-desk-environment:
     summary: '경험은 소중하다. 잊지 말고 기록해 두자.'
     parent: my-lifehack
     url: /wiki/my-desk-environment
-    updated: '2020-04-21 20:39:13 +0900'
+    updated: '2020-05-22 21:54:44 +0900'
     children: []
 my-keyboard:
     type: wiki

@@ -3,7 +3,7 @@ layout  : wiki
 title   : 목과 허리 건강을 위한 컴퓨터 외의 물리적 장비 구매 노하우와 경험
 summary : 경험은 소중하다. 잊지 말고 기록해 두자.
 date    : 2020-02-09 11:43:39 +0900
-updated : 2020-04-21 20:39:13 +0900
+updated : 2020-05-22 21:54:44 +0900
 tag     : 
 toc     : true
 public  : true
@@ -226,6 +226,8 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 ![엔산 마운트 거치대]( /post-img/my-desk-environment/nsan-mount.jpg )
 
+**엔산마운트 NS-43**
+
 트위터의 [김지현](https://twitter.com/simnalamburt )님이 추천해주셔서 구매한 모니터 거치대.
 
 다음은 김지현님의 트윗이다.
@@ -245,6 +247,7 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 | 팔이 없는 거치대                                           | 남은 관절 2 개를 끼우면 이렇게 된다                      |
 | ![]( /post-img/my-desk-environment/nsan-mount-simple.png ) | ![]( /post-img/my-desk-environment/nsan-mount-join.png ) |
+| 엔산마운트 NS-11                                           | 엔산마운트 NS-13                                         |
 
 ## 독서대
 ### YIYO 독서대
@@ -278,7 +281,9 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 ### 액토 4차원 슈퍼 독서대
 
-2020년 2월 23일부터 사용. 가격은 2만 3천원 정도.
+- 2020년 2월 23일부터 사용.
+
+가격은 2만 3천원 정도.
 
 이름만 보면 무슨 합체 로봇 장난감 같다.
 
@@ -291,6 +296,24 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 | ![]( /post-img/my-desk-environment/4d-super-bookstand1.jpg ) | ![]( /post-img/my-desk-environment/4d-super-bookstand2.jpg ) |
 
 위의 사진은 이펙티브 자바 3판을 올려놓고 찍은 것이다.
+
+### 엔산마운트 NB-02 를 독서대로 활용
+
+엔산마운트 NS-13 과 엔산마운트 NB-02, 그리고 평범한 나무 독서대를 조합하면 다음과 같은 높이 조절 독서대를 만들 수 있다.
+
+![image](https://user-images.githubusercontent.com/1855714/82669064-b204ff00-9c75-11ea-953d-14565fcdd1b0.JPG)
+
+원래 모니터를 지지하기 위한 장비이므로 굉장히 튼튼하며, 액토 4차원 슈퍼 독서대처럼 한쪽으로 기울어지지도 않는다.
+
+엔산마운트 NB-02는 원래 노트북 거치대로, 각도를 조절할 수 있으며 상판에 올려놓는 대상을 고정하는 걸쇠가 있다.
+
+![image](https://user-images.githubusercontent.com/1855714/82669204-fe503f00-9c75-11ea-8146-3542d95c8642.png)
+
+NB-02 를 모니터 브라켓에 연결할 때에는 다음과 같이 모니터 브라켓을 위아래를 거꾸로 해서 연결하는 것이 좋다.
+
+![IMG_4995](https://user-images.githubusercontent.com/1855714/82669475-79195a00-9c76-11ea-9475-634864b3bf93.JPG)
+
+책이 앞쪽으로 올라가니 자연히 앞쪽에 하중이 실리게 되는데 위와 같이 하면 무게중심이 상대적으로 뒤쪽으로 이동해 안정적으로 고정된다.
 
 ## 그 외 악세서리
 
