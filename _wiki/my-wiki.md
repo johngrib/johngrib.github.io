@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2020-04-04 18:36:25 +0900
+updated : 2020-05-23 16:56:40 +0900
 tag     : wiki vimwiki jekyll blog
 toc     : true
 comment : true
@@ -542,6 +542,31 @@ git add _data
 ### 파일을 삭제한다
 
 `:vimwikidel` 이라 쓰고 탭 키를 누르면 `:VimwikiDeleteLink` 커맨드가 자동완성된다. 엔터를 누르고 `y`를 눌러 동의하면 현재 편집중인 문서 파일을 삭제하고, 위키 경로 전체에서 해당 파일 링크를 모두 해제해준다.
+
+### 이미지를 추가한다
+
+github의 issue 를 하나 열고 이미지를 붙여넣으면 다음과 같이 마크다운 형식의 이미지 링크 문자열이 생성된다.
+
+![issue 화면]( /resource/1855714/82725036-3ce90680-9d15-11ea-939d-545c63dceec5.png )
+
+이 문자열을 작성하고 있는 마크다운 파일에 붙여넣고 저장하면 문서에 이미지를 쉽게 추가할 수 있다.
+
+github issue 에 이미지를 무한히 추가할 수 있다는 특징을 사용한 치팅이라 할 수 있다.
+
+그런데 만약 github 규정이 바뀌게 된다면 이미지를 모두 잃을 수 있으므로, 문서를 나는 commit 할 때 pre-commit 훅으로 자동으로 다운로드하는 셸 스크립트를 만들어 사용하고 있다.
+
+즉, 사용 흐름은 다음과 같다.
+
+1. 내가 할 일
+    1. 문서를 작성하던 도중, 이미지를 첨부할 일이 생겼다.
+    2. github issue에 이미지를 붙여넣어, 이미지 링크를 생성한다.
+    3. 문서를 마저 작성하고 저장한 다음, commit 한다.
+2. pre-commit 훅이 하는 일
+    1. pre-commit 훅이 새로 추가한 문서에 포함된 githubusercontent 링크를 탐지하여 파일을 로컬에 다운로드한다.
+    4. 문서에 포함된 링크가 로컬에 다운로드한 파일을 바라보도록 변경된다.
+    5. 변경된 파일이 다시 add 된 다음 commit 된다.
+
+자세한 내용은 [save-images.sh]( https://github.com/johngrib/johngrib.github.io/blob/ebfec3d308cd3cd8441952da5511feee457eb780/tool/save-images.sh )를 참고.
 
 ## 문제 해결
 ### :VimwikiRenameLink 가 parent 에는 작동하지 않는 문제
