@@ -2004,7 +2004,7 @@ inversion-of-control:
     summary: 'Inversion of Control, Dependency Injection'
     parent: programming
     url: /wiki/inversion-of-control
-    updated: '2020-05-24 14:34:04 +0900'
+    updated: '2020-05-24 14:36:23 +0900'
     children: []
 IP:
     type: wiki

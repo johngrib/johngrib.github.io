@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC, Inversion of Control
 summary : Inversion of Control, Dependency Injection
 date    : 2019-08-30 22:39:18 +0900
-updated : 2020-05-24 14:34:04 +0900
+updated : 2020-05-24 14:36:23 +0900
 tag     : spring oop
 toc     : true
 public  : true
@@ -45,7 +45,7 @@ The major difference between an object-oriented framework and a class library is
 
 PicoContainer 프레임워크의 문서 [Inversion of Control History][history]에는 IoC의 역사가 잘 나와 있다.
 
-![ioc-timeline](/post-img/spring-ioc/ioc-timeline.png)
+![ioc-timeline]( /post-img/inversion-of-control/ioc-timeline.png )
 
 이 글에서 언급하는 선행 기술을 옮겨보자면 다음과 같다.
 
