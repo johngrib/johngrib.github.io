@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2020-05-24 11:50:24 +0900
+updated : 2020-05-24 12:12:52 +0900
 tag     : wiki vimwiki jekyll blog
 toc     : true
 comment : true
@@ -566,7 +566,7 @@ github issue 에 이미지를 무한히 추가할 수 있다는 특징을 사용
     4. 문서에 포함된 링크가 로컬에 다운로드한 파일을 바라보도록 변경된다.
     5. 변경된 파일이 다시 add 된 다음 commit 된다.
 
-자세한 내용은 [save-images.sh]( https://github.com/johngrib/johngrib.github.io/blob/ebfec3d308cd3cd8441952da5511feee457eb780/tool/save-images.sh )를 참고.
+자세한 내용은 [save-images.sh]( https://github.com/johngrib/johngrib.github.io/blob/master/tool/save-images.sh )를 참고.
 
 ## 문제 해결
 ### :VimwikiRenameLink 가 parent 에는 작동하지 않는 문제
