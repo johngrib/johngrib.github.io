@@ -26,7 +26,7 @@ l = "log \
 
 `git l`을 입력하면 다음과 같이 출력된다.
 
-![](https://user-images.githubusercontent.com/1855714/69907636-866a3000-141b-11ea-8b50-732c038279a3.png )
+![]( /post-img/git-log/69907636-866a3000-141b-11ea-8b50-732c038279a3.png )
 
 그리고 최근에 다음과 같이 바꿔서 사용하기 시작했다.
 
@@ -37,6 +37,7 @@ l = "log \
     --pretty=format:'%C(cyan)%h%C(auto)%d %s %C(magenta)(%ad)%C(bold blue) %an'"
 ```
 
-![](https://user-images.githubusercontent.com/1855714/69907643-a26dd180-141b-11ea-9359-9a809f5b621e.png )
+![]( /post-img/git-log/69907643-a26dd180-141b-11ea-9359-9a809f5b621e.png )
+
 
 

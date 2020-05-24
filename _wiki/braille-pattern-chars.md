@@ -71,3 +71,4 @@ latex   : true
 * [https://unicode-table.com/en/blocks/braille-patterns ](https://unicode-table.com/en/blocks/braille-patterns/ )
 * [https://github.com/asciimoo/drawille ](https://github.com/asciimoo/drawille )
 * [https://github.com/bartmalanczuk/vim-trex-runner ](https://github.com/bartmalanczuk/vim-trex-runner )
+

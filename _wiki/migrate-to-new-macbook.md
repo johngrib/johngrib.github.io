@@ -220,7 +220,7 @@ finder를 실행한 다음, 상단 메뉴 `보기`를 선택한다.
 
 그러면 다음 이미지와 같이 파인더 아래쪽에 경로와 용량 등의 정보가 나온다.
 
-![image](https://user-images.githubusercontent.com/1855714/82563757-971d8680-9bb2-11ea-90c8-73ef23b27f8f.png)
+![image]( /post-img/migrate-to-new-macbook/82563757-971d8680-9bb2-11ea-90c8-73ef23b27f8f.png )
 
 경로 막대의 경로는 더블 클릭하면 해당 위치로 한번에 이동할 수 있다.
 
@@ -267,4 +267,5 @@ finder를 실행한 다음, `환경설정` - `고급` - `폴더 우선 정렬`�
 ### iCloud 설정
 
 `시스템 환경설정` - `Apple ID` - `iCloud Drive`에서 `데스크탑 및 문서 폴더`를 체크 해제한다.
+
 

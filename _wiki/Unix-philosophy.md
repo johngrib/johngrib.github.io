@@ -22,7 +22,7 @@ latex   : false
     * 57호의 표제는 "UNIX TIME-SHARING SYSTEM".
     * Douglas McIlroy가 Foreword(서문, 머리말)을 썼는데, 이 서문의 "Style" 부분에 유닉스 철학의 개념들이 등장한다.
 
-![THE BELL SYSTEM TECHNICAL JOURNAL](https://user-images.githubusercontent.com/1855714/42728954-3538fff4-8803-11e8-88ad-aa2f297773f5.png )
+![THE BELL SYSTEM TECHNICAL JOURNAL]( /post-img/Unix-philosophy/42728954-3538fff4-8803-11e8-88ad-aa2f297773f5.png )
 
 ## 유닉스 철학
 
@@ -120,4 +120,5 @@ Rule 6.  There is no Rule 6.
     * [Ken Tompson](https://en.wikipedia.org/wiki/Ken_Thompson )
     * [Douglas McIlroy](https://en.wikipedia.org/wiki/Douglas_McIlroy )
     * [Peter H. Salus](https://en.wikipedia.org/wiki/Peter_H._Salus )
+
 

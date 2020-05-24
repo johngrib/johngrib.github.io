@@ -423,3 +423,4 @@ version 표기 중 major range `^`는 다음과 같이 사용한다.
 [_gopm_L]: https://github.com/gpmgo/gopm/blob/master/LICENSE
 [_gb]: https://github.com/constabulary/gb
 [_gb_L]: https://github.com/constabulary/gb/blob/master/LICENSE
+

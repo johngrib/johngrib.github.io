@@ -521,7 +521,7 @@ $$
 \end{align}
 $$
 
-![integral](https://user-images.githubusercontent.com/1855714/40342951-6e092800-5dc8-11e8-940f-4dd19a822c64.png )
+![integral]( /post-img/c-m-02-Sums-05/40342951-6e092800-5dc8-11e8-940f-4dd19a822c64.png )
 
 * $$ f(x) = x^2 $$ &nbsp;
 * 위의 그래프에서 곡선 아래쪽 면적의 넓이는 다음과 같다.
@@ -668,3 +668,4 @@ $$
 ## Links
 
 * [[CONCRETE-MATH]]
+

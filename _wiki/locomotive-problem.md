@@ -233,7 +233,7 @@ main();
 $ node train.js | pbcopy
 ```
 
-![train-graph](https://user-images.githubusercontent.com/1855714/38775199-8f1b2274-40b7-11e8-9038-4df7be310dd4.jpg )
+![train-graph]( /post-img/locomotive-problem/38775199-8f1b2274-40b7-11e8-9038-4df7be310dd4.jpg )
 
 
 ### 기대값을 구해보자
@@ -531,3 +531,4 @@ function wolfram() {
 }
 </script>
 {% endraw %}
+

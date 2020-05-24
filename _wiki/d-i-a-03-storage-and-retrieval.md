@@ -144,8 +144,8 @@ B 트리
 
 B 트리는 이미지로 보면 한 눈에 이해간다.
 
-* 검색 ![검색](https://user-images.githubusercontent.com/1855714/42415583-a3fec150-828e-11e8-83df-54b6d96b34b3.png)
-* 쓰기 ![쓰기](https://user-images.githubusercontent.com/1855714/42415591-d77d9f74-828e-11e8-8c7a-af619011fb44.png)
+* 검색 ![검색]( /post-img/d-i-a-03-storage-and-retrieval/42415583-a3fec150-828e-11e8-83df-54b6d96b34b3.png )
+* 쓰기 ![쓰기]( /post-img/d-i-a-03-storage-and-retrieval/42415591-d77d9f74-828e-11e8-8c7a-af619011fb44.png )
 
 B 트리에 존재하는 키 값 갱신
 
@@ -222,3 +222,4 @@ B 트리에 새로운 키를 추가하기
 ## Links
 
 * [[Designing-Data-Intensive-Applications]]
+

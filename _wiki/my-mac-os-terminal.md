@@ -53,7 +53,7 @@ COLOR_END='\[\033[0m\]'
 export PS1="${MAGENTA}\$(date +%Y-%m-%d-%a) ${B_YELLOW}\$(date +%T) ${GREEN}\u ${B_MAGENTA}\h ${B_BLUE}\w ${COLOR_END}\$(/usr/local/bin/githud bash)\n\$ "
 ```
 
-![prompt]( https://user-images.githubusercontent.com/1855714/68994193-93d3d600-08c3-11ea-9525-43d22171a358.png )
+![prompt]( /post-img/my-mac-os-terminal/68994193-93d3d600-08c3-11ea-9525-43d22171a358.png )
 
 * 날짜와 시간: 시계를 덜 보게 된다. 가끔 오래 걸리는 명령을 실행했을 때 언제 끝났는지를 프롬프트만 보고 알 수 있게 된다.
 * working directory: pwd를 계속해서 입력해야 하는 불편함을 해소해 준다. 내가 어디에 있는지 알 수 있어 답답함이 덜하다.
@@ -121,7 +121,7 @@ function exam {
 
 터미널에서 `exam`을 입력하면 다음과 같이 나타나고, 검색을 할 수 있게 된다.
 
-![exam](https://user-images.githubusercontent.com/1855714/68771205-e1a1d180-066a-11ea-93ec-f81f08b10d3c.png )
+![exam]( /post-img/my-mac-os-terminal/68771205-e1a1d180-066a-11ea-93ec-f81f08b10d3c.png )
 
 이 스크린샷은 [[cut]] 명령을 검색한 것이다.
 
@@ -260,11 +260,12 @@ fc 명령어에 익숙해지면 `control-x, control-e`도 사용해 보고, `exp
 
 * [contribute](https://github.com/johngrib/dotfiles/blob/master/bin/contribute )
 
-![contribute](https://user-images.githubusercontent.com/1855714/68949124-b949dc80-07fc-11ea-962b-c3bbef16dbf5.png )
+![contribute]( /post-img/my-mac-os-terminal/68949124-b949dc80-07fc-11ea-962b-c3bbef16dbf5.png )
 
 이 셸 스크립트는 엉망이지만 그럭저럭 돌아갔고, 이후 github이 메인화면을 개편하면서 이상하게 돌아가게 되었는데 오늘 고쳤더니 예전처럼 잘 돌아간다.
 
 그리고 셸 스크립트를 다루는 실력이 아주 약간은 증진되었다고 느꼈다.
 
 나는 이 셸 스크립트와 다른 잡다한 셸 스크립트들을 계속 고치면서 사용할 것이다. 그리고 이 외에 다른 재미있는 것들도 계속 만들어갈 생각이다.
+
 

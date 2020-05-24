@@ -101,12 +101,12 @@ var _ = Describe("Test functions",
 
 * `go test` 또는 `ginkgo -r`을 실행해보면 테스트를 수행한다.
 
-![image](https://user-images.githubusercontent.com/1855714/46329142-908d7480-c646-11e8-8bcd-41b6e09f2d0c.png )
+![image]( /post-img/ginkgo/46329142-908d7480-c646-11e8-8bcd-41b6e09f2d0c.png )
 
 * vim-go의 `:GoTest`로도 잘 돌아간다.
 * vim-go의 `:GoCoverageToggle`를 통해 coverage를 검사해 보면 `two` 함수를 테스트하는 케이스가 없으므로 `two` 함수에 빨간색을 칠해준다.
 
-![coverage](https://user-images.githubusercontent.com/1855714/46329021-dc8be980-c645-11e8-8442-e45a70e7e9b0.png )
+![coverage]( /post-img/ginkgo/46329021-dc8be980-c645-11e8-8442-e45a70e7e9b0.png )
 
 
 ## Links
@@ -114,4 +114,5 @@ var _ = Describe("Test functions",
 * <https://github.com/onsi/ginkgo >
 * [Getting Started with BDD in Go Using Ginkgo](https://semaphoreci.com/community/tutorials/getting-started-with-bdd-in-go-using-ginkgo )
 * [[vim-go-env]]
+
 

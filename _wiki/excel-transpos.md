@@ -36,7 +36,7 @@ latex   : false
 
 ## 붙여넣기
 
-![image](https://user-images.githubusercontent.com/1855714/45604838-364fb980-ba73-11e8-97b5-638355611998.png )
+![image]( /post-img/excel-transpos/45604838-364fb980-ba73-11e8-97b5-638355611998.png )
 
 * 영역을 지정한다.
 * `ctrl+c`로 복사한다.
@@ -98,4 +98,5 @@ End Sub
 * [excel.application.inputbox](https://docs.microsoft.com/en-us/office/vba/api/excel.application.inputbox )
 * [excel.range.pastespecial](https://docs.microsoft.com/en-us/office/vba/api/excel.range.pastespecial )
     * [excel.xlpastetype](https://docs.microsoft.com/en-us/office/vba/api/excel.xlpastetype )
+
 
