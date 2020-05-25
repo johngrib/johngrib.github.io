@@ -3,7 +3,7 @@ layout  : wiki
 title   : 산술 표현식 계산을 위한 2중 스택 알고리즘
 summary : Dijkstra's Two-Stack Algorithm for Expression Evaluation
 date    : 2020-05-24 23:04:24 +0900
-updated : 2020-05-25 22:45:09 +0900
+updated : 2020-05-25 22:50:23 +0900
 tag     : algorithm dijkstra
 toc     : true
 public  : true
@@ -29,6 +29,8 @@ latex   : false
     - 꺼내어진 연산자와 피연산자의 계산 결괏값을 구하여 피연산자 스택에 넣는다.
 - 마지막 닫힌 괄호를 만나면 피연산자 스택에 한 개의 숫자만 남는다.
     - 이 숫자가 전체 표현식의 계산 결과 값이다.
+
+## 주의사항
 
 이 알고리즘은 괄호 안에 한 개의 연산자가 있는 경우만 처리할 수 있어 실제로 사용하기엔 무리가 있다.
 
