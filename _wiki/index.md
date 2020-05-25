@@ -150,7 +150,6 @@ regenerate: true
 * [[ginkgo]]
 * [[golang-cheatsheet]]
 * [[golang-dependency-manager]]
-* [[golang-new-project]]
 * [[golang-reflect]]
 * [[golang-struct-padding]]
 * [[golang-types]]

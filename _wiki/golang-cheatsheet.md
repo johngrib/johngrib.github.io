@@ -3,7 +3,7 @@ layout  : wiki
 title   : Go cheatsheet
 summary : golang을 배우면서 까먹기 쉬운 것들을 적어두자
 date    : 2018-10-01 10:30:40 +0900
-updated : 2018-10-19 22:21:31 +0900
+updated : 2020-05-25 22:12:32 +0900
 tag     : golang cheatsheet
 toc     : true
 public  : true
@@ -12,6 +12,28 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 새 프로젝트를 시작하기
+
+디렉토리를 만들고 git 초기화를 한다.
+
+```sh
+mkdir hello
+cd hello
+git init
+```
+
+모듈 초기화를 한다.
+
+```sh
+go mod hello
+```
+
+에디터로 편집을 시작한다.
+
+```sh
+vim main.go
+```
 
 ## 연산자
 
@@ -50,10 +72,6 @@ Precedence    Operator
     2             &&
     1             ||
 ```
-
-
-
-
 
 
 ## getter와 setter
