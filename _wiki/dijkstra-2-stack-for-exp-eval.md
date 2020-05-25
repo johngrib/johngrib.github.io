@@ -3,7 +3,7 @@ layout  : wiki
 title   : 산술 표현식 계산을 위한 2중 스택 알고리즘
 summary : Dijkstra's Two-Stack Algorithm for Expression Evaluation
 date    : 2020-05-24 23:04:24 +0900
-updated : 2020-05-25 22:07:56 +0900
+updated : 2020-05-25 22:45:09 +0900
 tag     : algorithm dijkstra
 toc     : true
 public  : true
@@ -30,11 +30,14 @@ latex   : false
 - 마지막 닫힌 괄호를 만나면 피연산자 스택에 한 개의 숫자만 남는다.
     - 이 숫자가 전체 표현식의 계산 결과 값이다.
 
+이 알고리즘은 괄호 안에 한 개의 연산자가 있는 경우만 처리할 수 있어 실제로 사용하기엔 무리가 있다.
+
 ## 코드
 
 다음 코드는 Java 14로 작성되었다.
 
-- [github](https://github.com/johngrib/algorithm-study/commit/fcacfa5a36f0dd02bb0cd4628a526b5db3578d90 )
+- [github](https://github.com/johngrib/algorithm-study/commit/1265f2037b82b23898cf9bf041340d6f9274d875 )
+    - 링크에 있는 테스트 코드를 읽어보자.
 
 ```java
 public static double calc(final String expression) {
@@ -64,22 +67,6 @@ public static double calc(final String expression) {
     }
   }
   return values.pop();
-}
-```
-
-테스트 케이스는 다음과 같이 두 개를 작성해 보았다.
-
-```java
-@Test
-void test() {
-  double result = DoubleStack.calc("( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )");
-  assertEquals(result, (1 + (2 + 3) * (4 * 5)));
-}
-
-@Test
-void test2() {
-  double result = DoubleStack.calc("( ( 1 + sqrt ( 5.0 ) ) / 2.0 )");
-  assertEquals(result, ((1 + Math.sqrt(5.0D)) / 2.0D));
 }
 ```
 
