@@ -344,6 +344,7 @@ algorithm:
     - {fileName: algorithm}
     - {fileName: average-complexity}
     - {fileName: big-O-notation}
+    - {fileName: dijkstra-2-stack-for-exp-eval}
     - {fileName: gray-code}
 book:
     - {fileName: Algorithms-to-Live-By}
@@ -563,6 +564,8 @@ quotes:
     - {fileName: design-pattern-quotes}
 diary:
     - {fileName: diary}
+dijkstra:
+    - {fileName: dijkstra-2-stack-for-exp-eval}
 container:
     - {fileName: docker}
 keyboard:

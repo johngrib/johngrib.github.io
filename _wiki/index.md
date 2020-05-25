@@ -29,6 +29,7 @@ regenerate: true
 * [[average-complexity]]
 * [[b-tree]]
 * [[big-O-notation]]
+* [[dijkstra-2-stack-for-exp-eval]]
 * [[egyptian-multiplication]]
 * [[p-np]]
 * [[regex-prime]]
@@ -144,10 +145,12 @@ regenerate: true
     * [[golang-mod]]
     * [[golang-subtests]]{(번역) 서브 테스트와 서브 벤치마크 사용하기}
     * [[golang-the-laws-of-reflection]]
+
 * [[commit-go-mod-go-sum]]
 * [[ginkgo]]
 * [[golang-cheatsheet]]
 * [[golang-dependency-manager]]
+* [[golang-new-project]]
 * [[golang-reflect]]
 * [[golang-struct-padding]]
 * [[golang-types]]

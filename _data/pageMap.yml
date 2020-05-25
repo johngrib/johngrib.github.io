@@ -269,7 +269,7 @@ algorithm:
     parent: index
     url: /wiki/algorithm
     updated: '2020-03-04 20:46:42 +0900'
-    children: [average-complexity, b-tree, big-O-notation, egyptian-multiplication, p-np, regex-prime, tower-of-hanoi, von-neumann-extractor]
+    children: [average-complexity, b-tree, big-O-notation, dijkstra-2-stack-for-exp-eval, egyptian-multiplication, p-np, regex-prime, tower-of-hanoi, von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
     title: '(책) 알고리즘, 인생을 계산하다'
@@ -1045,6 +1045,14 @@ diff:
     parent: command-line
     url: /wiki/diff
     updated: '2019-01-11 11:30:51 +0900'
+    children: []
+dijkstra-2-stack-for-exp-eval:
+    type: wiki
+    title: '산술 표현식 계산을 위한 2중 스택 알고리즘'
+    summary: 'Dijkstra''s Two-Stack Algorithm for Expression Evaluation'
+    parent: algorithm
+    url: /wiki/dijkstra-2-stack-for-exp-eval
+    updated: '2020-05-25 22:07:56 +0900'
     children: []
 discrete-math-functions:
     type: wiki
