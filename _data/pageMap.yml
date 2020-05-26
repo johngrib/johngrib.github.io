@@ -3252,7 +3252,7 @@ special-chars:
     summary: '특수문자 검색하다 빡쳐서 작성한 문서'
     parent: what
     url: /wiki/special-chars
-    updated: '2019-10-03 23:08:33 +0900'
+    updated: '2020-05-26 22:32:58 +0900'
     children: []
 spring:
     type: wiki

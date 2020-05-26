@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2019-10-03 23:08:33 +0900
+updated : 2020-05-26 22:32:58 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -273,6 +273,13 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 | 0D0A            | 0A                 | 0D          |
 
 * [The Great Newline Schism](https://blog.codinghorror.com/the-great-newline-schism/ ) - [stackoverflow.com](https://stackoverflow.com/ )을 만든 제프 앳우드가 자신의 블로그 codinghorror에 쓴 글.
+
+다음 목록의 RFC들은 CRLF를 행 종결자로 사용하고 있다.
+
+- [RFC 821 - SIMPLE MAIL TRANSFER PROTOCOL(SMTP)]( https://www.rfc-editor.org/rfc/rfc821.html )
+- [RFC 1939 - Post Office Protocol - Version 3(POP3)]( https://www.rfc-editor.org/rfc/rfc1939.html )
+- [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1]( https://www.rfc-editor.org/rfc/rfc2616.html )
+
 
 ## Form Feed
 
