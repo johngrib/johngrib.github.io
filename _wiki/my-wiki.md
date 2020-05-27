@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2020-05-24 12:12:52 +0900
+updated : 2020-05-27 23:41:39 +0900
 tag     : wiki vimwiki jekyll blog
 toc     : true
 comment : true
@@ -547,7 +547,7 @@ git add _data
 
 github의 issue 를 하나 열고 이미지를 붙여넣으면 다음과 같이 마크다운 형식의 이미지 링크 문자열이 생성된다.
 
-![issue 화면]( ../post-img/my-wiki/82725036-3ce90680-9d15-11ea-939d-545c63dceec5.png )
+![issue 화면]( /post-img/my-wiki/82725036-3ce90680-9d15-11ea-939d-545c63dceec5.png )
 
 이 문자열을 작성하고 있는 마크다운 파일에 붙여넣고 저장하면 문서에 이미지를 쉽게 추가할 수 있다.
 

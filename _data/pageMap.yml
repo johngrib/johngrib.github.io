@@ -2620,7 +2620,7 @@ my-wiki:
     summary: '마음에 드는 무료 위키가 없어서 만들어보았다'
     parent: blog
     url: /wiki/my-wiki
-    updated: '2020-05-24 12:12:52 +0900'
+    updated: '2020-05-27 23:41:39 +0900'
     children: []
 Mythical-Man-Month:
     type: wiki
