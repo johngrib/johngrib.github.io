@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.toString 메소드
 summary :
 date    : 2018-03-10 23:04:50 +0900
-updated : 2020-03-20 23:33:17 +0900
+updated : 2020-05-27 14:03:25 +0900
 tag     : java 번역
 toc     : true
 public  : true
@@ -122,7 +122,6 @@ public class ToStringExample {
         ", width=" + this.width +
         ", height=" + this.height +
         ")";
-}
 }
 
 @Override public String toString() {
