@@ -76,6 +76,7 @@ regenerate: true
 * [[gcd]]
 * [[graph]]
 * [[halting-problem]]
+* [[log]]
 * [[precision-of-number]]
 * [[primitive-roots]]
 * [[relations]]

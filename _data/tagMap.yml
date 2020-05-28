@@ -33,6 +33,7 @@ math:
     - {fileName: frac1e}
     - {fileName: gcd}
     - {fileName: graph}
+    - {fileName: log}
     - {fileName: math}
     - {fileName: p-np}
     - {fileName: primitive-roots}

@@ -2446,6 +2446,14 @@ locomotive-problem:
     url: /wiki/locomotive-problem
     updated: '2019-12-10 15:16:17 +0900'
     children: []
+log:
+    type: wiki
+    title: '로그 cheatsheet'
+    summary: ""
+    parent: math
+    url: /wiki/log
+    updated: '2020-05-28 23:00:56 +0900'
+    children: []
 lsof:
     type: wiki
     title: 'lsof 명령어'
@@ -2493,7 +2501,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, fibonacci, frac1e, gcd, graph, halting-problem, precision-of-number, primitive-roots, relations, rule-of-succession, secretary-problem, sigma-notation]
+    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, fibonacci, frac1e, gcd, graph, halting-problem, log, precision-of-number, primitive-roots, relations, rule-of-succession, secretary-problem, sigma-notation]
 mathjax-latex:
     type: wiki
     title: 'MathJax로 LaTeX 사용하기'
