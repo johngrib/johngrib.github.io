@@ -3,7 +3,7 @@ layout  : wiki
 title   : 20% project
 summary : 
 date    : 2019-12-30 23:15:30 +0900
-updated : 2020-02-19 09:09:34 +0900
+updated : 2020-05-29 22:52:35 +0900
 tag     : 
 toc     : true
 public  : true
@@ -34,6 +34,10 @@ latex   : false
 
 * 포스트잇
 * 그 외 수많은 제품들
+
+윌리엄 맥나이트의 이야기는 다음 글을 참고.
+
+- [3M A MINING COMPANY BUILT ON A MISTAKE STUCK IT OUT UNTIL A YOUNG MAN CAME ALONG WITH IDEAS ABOUT HOW TO TAPE THOSE BLUNDERS TOGETHER AS INNOVATIONS--LEADING TO DECADES OF GROWTH. (FORTUNE Small Business) By Paul Lukas Reporting by Maggie Overfelt]( https://money.cnn.com/magazines/fsb/fsb_archive/2003/04/01/341016/ )
 
 ### Google
 
