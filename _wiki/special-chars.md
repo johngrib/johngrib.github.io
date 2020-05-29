@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2020-05-26 22:32:58 +0900
+updated : 2020-05-30 08:17:07 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -1021,7 +1021,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * 정규표현식에서 or의 의미로 사용한다.
 * 다수의 프로그래밍 언어에서 비트 or 연산자로 사용한다.
 * 다수의 프로그래밍 언어에서 `||`는 or 연산자이다.
-* Vim에서는 스크린상의 column을 세는 데 사용한다. 일반적으로 쓸 일은 없고 좀 특수한 Vim 플러그인을 개발할 때 사용할 일이 있다.
+* Vim에서는 스크린상의 column을 세는 데 사용한다. 일반적으로 쓸 일은 없고 [좀 특수한 Vim 플러그인]( https://github.com/johngrib/vim-game-code-break )을 개발할 때 사용할 일이 있었다.
 
 | 읽는 방법   | 파이프, 바, bar, pipe, vertical bar, or bar |
 | 유니코드    | 'VERTICAL LINE' (U+007C)                    |
