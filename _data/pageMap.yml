@@ -269,7 +269,7 @@ algorithm:
     parent: index
     url: /wiki/algorithm
     updated: '2020-03-04 20:46:42 +0900'
-    children: [average-complexity, b-tree, big-O-notation, dijkstra-2-stack-for-exp-eval, egyptian-multiplication, p-np, regex-prime, tower-of-hanoi, von-neumann-extractor]
+    children: [average-complexity, b-tree, big-O-notation, dijkstra-2-stack-for-exp-eval, egyptian-multiplication, p-np, regex-prime, tilde-approximations, tower-of-hanoi, von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
     title: '(책) 알고리즘, 인생을 계산하다'
@@ -444,7 +444,7 @@ big-O-notation:
     summary: '알고리즘의 효율성을 나타내는 표기법이다'
     parent: algorithm
     url: /wiki/big-O-notation
-    updated: '2020-05-31 19:53:48 +0900'
+    updated: '2020-05-31 20:01:08 +0900'
     children: []
 Bill-Atkinson-productivity:
     type: wiki
@@ -3534,6 +3534,14 @@ til:
     url: /wiki/til
     updated: '2018-02-13 21:00:13 +0900'
     children: [trouble-shooting-node-7-install, vagrant-docker-get-start]
+tilde-approximations:
+    type: wiki
+    title: '틸다 근사 (Tilde approximations)'
+    summary: '틸다 표기법'
+    parent: algorithm
+    url: /wiki/tilde-approximations
+    updated: '2020-05-31 20:08:26 +0900'
+    children: []
 timeline:
     type: wiki
     title: Timeline

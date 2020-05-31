@@ -33,6 +33,7 @@ regenerate: true
 * [[egyptian-multiplication]]
 * [[p-np]]
 * [[regex-prime]]
+* [[tilde-approximations]]
 * [[tower-of-hanoi]]
 * [[von-neumann-extractor]]
 

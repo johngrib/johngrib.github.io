@@ -347,6 +347,7 @@ algorithm:
     - {fileName: big-O-notation}
     - {fileName: dijkstra-2-stack-for-exp-eval}
     - {fileName: gray-code}
+    - {fileName: tilde-approximations}
 book:
     - {fileName: Algorithms-to-Live-By}
     - {fileName: book}

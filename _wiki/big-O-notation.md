@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2020-05-31 19:53:48 +0900
+updated : 2020-05-31 20:01:08 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -383,7 +383,8 @@ function test(listA, listB) {
 
 ## 함께 읽기
 
-* [[average-complexity]]
+- [[average-complexity]]{평균 계산 복잡도 구하기}
+- [[tilde-approximations]]{틸다 표기법}
 
 ## Links 및 참고문헌
 
