@@ -165,6 +165,7 @@ regenerate: true
 * [[java-abstract-class]]
 * [[java-enhancements]]
 * [[java-enum]]
+* [[java-exception-handling]]
 * [[java-functional-interface]]
 * [[java-interface]]
 * [[java-jigsaw-quick-start]]
