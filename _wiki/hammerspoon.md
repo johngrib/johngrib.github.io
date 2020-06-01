@@ -7,7 +7,7 @@ updated : 2020-02-18 20:58:09 +0900
 tag     : hammerspoon
 toc     : true
 public  : true
-parent  : [[mac-apps]]
+parent  : [[macos]]
 latex   : false
 comment : false
 ---

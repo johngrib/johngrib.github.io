@@ -393,7 +393,14 @@ regenerate: true
 * [[git-study-with-action]]
 * [[git-tutorial]]
 
-### [[mac-apps]]
+### [[useful-site]]
+
+* [[archive-org-games]]
+* [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
+* [[httpbin.org]]
+* [[labs-strava-com-heatmap]]
+
+## [[macos]]
 
 * [[hammerspoon]]
     * [[hammerspoon-inputsource-aurora]]
@@ -404,13 +411,8 @@ regenerate: true
     * [[hammerspoon-tutorial-03]]
     * [[hammerspoon-tutorial-04]]
     * [[hammerspoon-tutorial-05]]
-
-### [[useful-site]]
-
-* [[archive-org-games]]
-* [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
-* [[httpbin.org]]
-* [[labs-strava-com-heatmap]]
+* [[mac-keyboard-shortcuts]]
+* [[migrate-to-new-macbook]]
 
 ## [[til]]
 * [[trouble-shooting-node-7-install]]
@@ -548,9 +550,7 @@ regenerate: true
 * [[integer]]
 * [[junit5-nested]]
 * [[locking]]
-* [[mac-keyboard-shortcuts]]
 * [[mac-tex]]
-* [[migrate-to-new-macbook]]
 * [[oop-quotes]]
 * [[responsibility-driven-design]]
 * [[restdoc-item-generator]]

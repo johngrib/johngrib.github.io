@@ -1834,7 +1834,7 @@ hammerspoon:
     type: wiki
     title: Hammerspoon
     summary: 'macOS용 자동화 도구'
-    parent: mac-apps
+    parent: macos
     url: /wiki/hammerspoon
     updated: '2020-02-18 20:58:09 +0900'
     children: [hammerspoon-inputsource-aurora, hammerspoon-luarocks, hammerspoon-tutorial-00, hammerspoon-tutorial-01, hammerspoon-tutorial-02, hammerspoon-tutorial-03, hammerspoon-tutorial-04, hammerspoon-tutorial-05]
@@ -2478,14 +2478,6 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     url: /wiki/Lubarsky-s-Law-of-Cybernetic-Entomology
     updated: '2017-12-09 22:39:56 +0900'
     children: []
-mac-apps:
-    type: wiki
-    title: '유용한 Mac 애플리케이션 모음'
-    summary: ""
-    parent: tools
-    url: /wiki/mac-apps
-    updated: '2018-03-03 19:45:04 +0900'
-    children: [hammerspoon]
 mac-keyboard-shortcuts:
     type: wiki
     title: '맥 키보드 단축키'
@@ -2494,6 +2486,14 @@ mac-keyboard-shortcuts:
     url: /wiki/mac-keyboard-shortcuts
     updated: '2019-11-19 23:57:24 +0900'
     children: []
+macos:
+    type: wiki
+    title: macOS
+    summary: 'macOS 사용 노하우 모음'
+    parent: index
+    url: /wiki/macos
+    updated: '2020-06-01 21:46:37 +0900'
+    children: [hammerspoon]
 make-cmd:
     type: wiki
     title: 'make 명령어'
@@ -3589,7 +3589,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [aws, command-line, dumang-dk6-keyboard, Excel, git, google-home, Gradle, intellij, iterm, mac-apps, useful-site]
+    children: [aws, command-line, dumang-dk6-keyboard, Excel, git, google-home, Gradle, intellij, iterm, useful-site]
 top:
     type: wiki
     title: 'top 명령어'

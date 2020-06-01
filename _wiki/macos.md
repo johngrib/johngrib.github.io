@@ -1,13 +1,13 @@
 ---
 layout  : category
-title   : 유용한 Mac 애플리케이션 모음
-summary : 
+title   : macOS
+summary : macOS 사용 노하우 모음
 date    : 2018-03-03 19:44:56 +0900
-updated : 2018-03-03 19:45:04 +0900
+updated : 2020-06-01 21:46:37 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[tools]]
+parent  : [[index]]
 latex   : false
 ---
 * TOC
