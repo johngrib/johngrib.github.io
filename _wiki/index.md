@@ -412,6 +412,7 @@ regenerate: true
     * [[hammerspoon-tutorial-04]]
     * [[hammerspoon-tutorial-05]]
 * [[mac-keyboard-shortcuts]]
+* [[mac-screenshot-png-to-jpg]]
 * [[migrate-to-new-macbook]]
 
 ## [[til]]

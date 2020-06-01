@@ -2486,6 +2486,14 @@ mac-keyboard-shortcuts:
     url: /wiki/mac-keyboard-shortcuts
     updated: '2019-11-19 23:57:24 +0900'
     children: []
+mac-screenshot-png-to-jpg:
+    type: wiki
+    title: 'macOS의 기본 스크린샷 저장 포맷을 png에서 jpg로 바꾸는 방법'
+    summary: ""
+    parent: macos
+    url: /wiki/mac-screenshot-png-to-jpg
+    updated: '2020-06-01 21:54:35 +0900'
+    children: []
 macos:
     type: wiki
     title: macOS
@@ -2493,7 +2501,7 @@ macos:
     parent: index
     url: /wiki/macos
     updated: '2020-06-01 21:46:37 +0900'
-    children: [hammerspoon]
+    children: [hammerspoon, mac-screenshot-png-to-jpg]
 make-cmd:
     type: wiki
     title: 'make 명령어'
