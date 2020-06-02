@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2019-11-22 23:55:28 +0900
+updated : 2020-06-02 23:56:12 +0900
 tag     : terminal study vim
 toc     : true
 public  : true
@@ -50,8 +50,37 @@ CYAN='\e[0;36m\]'
 COLOR_END='\[\033[0m\]'
 
 # PS1="\h:\W \u\$ "  # default promopt
-export PS1="${MAGENTA}\$(date +%Y-%m-%d-%a) ${B_YELLOW}\$(date +%T) ${GREEN}\u ${B_MAGENTA}\h ${B_BLUE}\w ${COLOR_END}\$(/usr/local/bin/githud bash)\n\$ "
+function gbr {
+    git status --short 2> /dev/null 1> /dev/null
+    if [ "$?" -ne "0" ]; then
+        return 1
+    else
+        branch="`git branch | grep '^\*' | cut -c 3-`"
+        branch_str="\033[1;031m$branch\033[0m"
+
+        stat=`git s \
+            | awk '{print $1}' \
+            | sort | uniq -c \
+            | tr '\n' ' ' \
+            | sed -E 's/([0-9]+) /\1/g; s/  */ /g; s/ *$//'`
+
+        stash_size=`git stash list | wc -l | sed 's/ //g'`
+        stash_icon=" \e[0;92m≡\033[0m"
+        printf "[$branch_str]$stat$stash_icon$stash_size"
+        return 0
+    fi
+}
+
+export PS1="${MAGENTA}\$(date +%Y-%m-%d-%a) \
+${B_YELLOW}\$(date +%T) \
+${GREEN}\u \
+${B_MAGENTA}\h \
+${B_BLUE}\w \
+${COLOR_END}\
+\$(gbr)\n\$ "
 ```
+
+`gbr` 함수는 `git branch`와 `git status --short` 결과를 간단하게 보여준다.
 
 ![prompt]( /post-img/my-mac-os-terminal/68994193-93d3d600-08c3-11ea-9525-43d22171a358.png )
 
@@ -70,6 +99,8 @@ macOS용 패키지 관리자인 [Homebrew](https://brew.sh/index_ko ) 사용법�
 
 짬이 나면 `brew cask`에 대해서도 알아본다.
 
+`Brefile`과 `bundle` 명령어를 사용할 수 있다면 스크립트를 사용해 여러 프로그램을 하나의 명령으로 설치할 수도 있다.
+
 ## 명령어 사용법을 검색하는 방법을 익힌다
 
 ### man을 읽는다
@@ -86,37 +117,43 @@ man echo
 
 이렇게 하면 터미널 명령에 익숙해지는 것은 시간 문제이다.
 
-내가 사용하고 있는 명령 검색용 명령은 직접 작성한 `exam`이라는 이름의 함수로, 내용은 다음과 같다.
+내가 사용하고 있는 명령 검색용 명령은 직접 작성한 `exam`이라는 이름의 스크립트로, 내용은 다음과 같다.
 
 개선할 점이 많이 있긴 하지만 그럭저럭 잘 작동한다.
 
 ```sh
-function exam {
-    wiki=`stat -f "%N" ~/johngrib.github.io/_wiki`
+#!/usr/bin/env bash
 
-    if [ "$wiki" = "" ]; then
-        echo "invalid wiki location."
-        return 0
-    fi
+wiki=`stat -f "%N" ~/johngrib.github.io/_wiki`
 
-    name=`egrep 'tag\s*:.*command( |$)' $wiki/* -l 2> /dev/null \
-        | xargs egrep 'summary|title' \
-        | awk -F':' 'NR%2==1 { name=$1; title=$3 } NR%2==0 { print name, ":", title, ":", $3 }' \
-        | sed "s,"$wiki"/,," \
-        | column -ts':' \
-        | sort \
-        | fzf --preview "pygmentize $wiki/{1}" \
-        | cut -d' ' -f1 \
-    `
-
-    if [ "$name" = "" ]; then
-        return 0
-    fi
-
-    bat $wiki/$name
-
+if [ "$wiki" = "" ]; then
+    echo "invalid wiki location."
     return 0
-}
+fi
+
+name=`egrep 'tag\s*:.*command( |$)' $wiki/* -l 2> /dev/null \
+    | xargs egrep 'summary|title' \
+    | awk -F':' 'NR%2==1 { name=$1; title=$3 } NR%2==0 { print name, ":", title, ":", $3 }' \
+    | sed "s,"$wiki"/,," \
+    | column -ts':' \
+    | sort \
+    | fzf --preview "showPreview $wiki/{1}" --query="$1" \
+    | cut -d' ' -f1 \
+`
+
+if [ "$name" = "" ]; then
+    exit
+fi
+
+showPreview $wiki/$name | less -R -X
+```
+
+아래쪽에 있는 `showPreview`의 내용은 다음과 같다.
+
+```sh
+#!/usr/bin/env bash
+
+tail -n +16 $1 | glow - -s dark
 ```
 
 터미널에서 `exam`을 입력하면 다음과 같이 나타나고, 검색을 할 수 있게 된다.
@@ -177,7 +214,7 @@ macOS의 경우 `pbcopy`, `pbpaste`를 사용할 수 있다.
 
 그리고 이 명령을 파이프와 함께 사용하도록 한다.
 
-`open` 명령어도 익혀두면 편리하다.
+`open` 명령어, `m-cli`도 익혀두면 편리하다.
 
 ## 터미널이 인식하는 키에 대해 이해한다
 
@@ -202,13 +239,13 @@ macOS의 경우 `pbcopy`, `pbpaste`를 사용할 수 있다.
 내 경우에는 `.bashrc`에 다음 명령을 넣어둬서, 터미널을 열 때마다 `/usr/local/bin`에 있는 파일 중 하나를 랜덤으로 추천받게 했다.
 
 ```sh
-ls /usr/local/bin | sort -R | head -1 | xargs printf "Did you know about %s ?\n"
+ls /usr/local/bin | sort -R | head -1 | xargs printf "Do you know about %s ?\n"
 ```
 
 이렇게 하면 터미널을 열 때마다 다음과 같은 질문이 출력된다.
 
 ```
-Did you know about cowsay ?
+Do you know about cowsay ?
 ```
 
 만약 `cowsay`가 무슨 명령인지 모른다면 곧바로 다음과 같이 사용 방법을 조사한다.
