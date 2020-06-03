@@ -176,6 +176,7 @@ hammerspoon:
     - {fileName: hammerspoon-tutorial-03}
     - {fileName: hammerspoon-tutorial-04}
     - {fileName: hammerspoon-tutorial-05}
+    - {fileName: my-keyboard-use}
 karabiner:
     - {fileName: 2017-05-04-input-source}
 input-source:
@@ -790,6 +791,8 @@ latex:
     - {fileName: mathjax-latex}
 media:
     - {fileName: media}
+hhkb:
+    - {fileName: my-keyboard-use}
 wiki:
     - {fileName: my-wiki}
     - {fileName: vimwiki}

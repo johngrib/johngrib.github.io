@@ -1,10 +1,10 @@
 ---
 layout  : wiki
-title   : 나의 키보드 사용
-summary : 
+title   : 내가 개조한 해피해킹JP를 사용하는 방법
+summary : HHKB-JP + Hammerspoon으로 행복한 컴퓨터 생활
 date    : 2020-06-03 23:01:19 +0900
-updated : 2020-06-04 00:22:32 +0900
-tag     : keyboard
+updated : 2020-06-04 00:24:36 +0900
+tag     : keyboard hhkb hammerspoon
 toc     : true
 public  : true
 parent  : [[my-lifehack]]
