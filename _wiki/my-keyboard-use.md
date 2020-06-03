@@ -3,7 +3,7 @@ layout  : wiki
 title   : 내가 개조한 해피해킹JP를 사용하는 방법
 summary : HHKB-JP + Hammerspoon으로 행복한 컴퓨터 생활
 date    : 2020-06-03 23:01:19 +0900
-updated : 2020-06-04 00:24:36 +0900
+updated : 2020-06-04 00:32:09 +0900
 tag     : keyboard hhkb hammerspoon
 toc     : true
 public  : true
@@ -24,7 +24,7 @@ latex   : false
 
 나는 이 키를 왼손 손날로 누른다.
 
-| ![]( /post-img/my-keyboard-use/f13-push.jpg ) | ![]( /post-img/my-keyboard-use/f13.JPG ) |
+| ![]( /post-img/my-keyboard-use/f13-push.JPG ) | ![]( /post-img/my-keyboard-use/f13.jpg ) |
 
 `F13`을 누르면 다음과 같은 일이 일어난다.
 

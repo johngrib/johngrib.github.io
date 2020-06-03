@@ -2620,7 +2620,7 @@ my-keyboard-use:
     summary: 'HHKB-JP + Hammerspoon으로 행복한 컴퓨터 생활'
     parent: my-lifehack
     url: /wiki/my-keyboard-use
-    updated: '2020-06-04 00:24:36 +0900'
+    updated: '2020-06-04 00:32:09 +0900'
     children: []
 my-lifehack:
     type: wiki
