@@ -575,6 +575,7 @@ keyboard:
     - {fileName: dumang-dk6-keyboard}
     - {fileName: hhkb-jp-tmk}
     - {fileName: my-keyboard}
+    - {fileName: my-keyboard-use}
 email:
     - {fileName: email-gardening}
     - {fileName: email-validation}

@@ -2614,6 +2614,14 @@ my-keyboard:
     url: /wiki/my-keyboard
     updated: '2020-05-07 13:32:50 +0900'
     children: []
+my-keyboard-use:
+    type: wiki
+    title: '나의 키보드 사용'
+    summary: ""
+    parent: my-lifehack
+    url: /wiki/my-keyboard-use
+    updated: '2020-06-03 23:20:30 +0900'
+    children: []
 my-lifehack:
     type: wiki
     title: 'My Lifehack'
@@ -2621,7 +2629,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [cleaning-tile-cycle, coding-font, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, how-i-use-web-browser, my-bookshelf, my-desk-environment, my-keyboard, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
+    children: [cleaning-tile-cycle, coding-font, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, how-i-use-web-browser, my-bookshelf, my-desk-environment, my-keyboard, my-keyboard-use, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
 my-mac-os-terminal:
     type: wiki
     title: 'macOS 초심자를 위한 터미널 공부 가이드'

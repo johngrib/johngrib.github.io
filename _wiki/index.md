@@ -495,6 +495,7 @@ regenerate: true
 * [[my-bookshelf]]
 * [[my-desk-environment]]
 * [[my-keyboard]]
+* [[my-keyboard-use]]
 * [[my-mac-os-terminal]]
 * [[my-study-method]]
 * [[our-fund-balancing]]
