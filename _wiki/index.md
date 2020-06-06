@@ -225,6 +225,7 @@ regenerate: true
 * [[dry-principle]]
 * [[Edsel-edict]]
 * [[hollywood-principle]]
+* [[kees-koster-good-programming-language]]
 * [[Kerckhoffs-s-principle]]
 * [[law-of-demeter]]
 * [[linus-s-law]]

@@ -493,6 +493,7 @@ php:
 proverb:
     - {fileName: Conway-s-law}
     - {fileName: Edsel-edict}
+    - {fileName: kees-koster-good-programming-language}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
     - {fileName: Naming-Principle}
     - {fileName: No-Silver-Bullet}

@@ -2326,6 +2326,14 @@ kanban:
     url: /wiki/kanban
     updated: '2020-01-16 22:15:23 +0900'
     children: []
+kees-koster-good-programming-language:
+    type: wiki
+    title: 'Kees Koster의 좋은 프로그래밍 언어와 나쁜 프로그래밍 언어'
+    summary: ""
+    parent: proverb
+    url: /wiki/kees-koster-good-programming-language
+    updated: '2020-06-06 17:27:46 +0900'
+    children: []
 Kerckhoffs-s-principle:
     type: wiki
     title: '커코프의 원칙(Kerckhoffs''s principle)'
@@ -2941,7 +2949,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
-    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hollywood-principle, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+    children: [ACID, airplain-rule, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hollywood-principle, kees-koster-good-programming-language, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
 purpose-of-business:
     type: wiki
     title: '비즈니스의 목적'
