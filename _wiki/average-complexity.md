@@ -3,7 +3,7 @@ layout  : wiki
 title   : 평균 계산 복잡도 구하기
 summary : Average Case Computational Complexity
 date    : 2019-04-07 23:29:38 +0900
-updated : 2019-05-27 14:08:24 +0900
+updated : 2020-06-06 18:02:04 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -13,11 +13,11 @@ latex   : true
 * TOC
 {:toc}
 
-# 준비물
+## 준비물
 
 * 평균 계산 복잡도를 산출하려면 확률 변수와 기대값에 대해 알아야 한다.
 
-## 확률 변수
+### 확률 변수
 
 **Random Variables**
 
@@ -30,7 +30,7 @@ That is, a random variable assigns a real number to each possible outcome.
 
 이름은 확률 변수지만 **함수**라는 점에 주의하자.
 
-## 확률 변수의 예제
+### 확률 변수의 예제
 
 $$X$$가 동전을 두 번 던진 결과 $$t$$에서 앞면의 수를 할당하는 확률 변수(함수)라 하자.
 
@@ -44,7 +44,7 @@ X(TT) & = 0 \\
 \end{align}
 $$
 
-## 기대값
+### 기대값
 
 **Expected Values**
 
@@ -62,7 +62,7 @@ the difference between the value of $$X$$ and the mean of $$X$$.
 * 편차는 $$X(s) - E(X)$$ 이다.
     * 즉, $$X$$의 값과 $$X$$의 평균과의 차이이다.
 
-# 평균 계산 복잡도
+## 평균 계산 복잡도
 
 다음과 같이 정의하자.
 
@@ -74,7 +74,7 @@ the difference between the value of $$X$$ and the mean of $$X$$.
 
 $$ E(X) = \sum_{j=1}^n p(a_j) X(a_j) $$
 
-## 예제: 선형 탐색 알고리즘
+### 예제: 선형 탐색 알고리즘
 
 다음과 같이 선형 탐색 알고리즘을 심플하게 구현한 함수가 있다.
 
@@ -126,7 +126,7 @@ $$
     * $$p = q = {1 \over 2}$$ 이므로 평균 계산 복잡도는 $$ {3n +3 \over 2} $$이 된다.
 
 
-## 예제: 삽입 정렬 알고리즘
+### 예제: 삽입 정렬 알고리즘
 
 다음과 같이 삽입 정렬 알고리즘을 심플하게 구현한 함수가 있다. (코드 출처는 [한국어 위키백과](https://ko.wikipedia.org/wiki/삽입_정렬 ))
 
@@ -272,11 +272,11 @@ $$
 즉, 삽입 정렬 알고리즘에서 사용하는 비교 연산의 평균 개수는 $$ \frac{n^2 + 3n - 4}{4} $$ 이므로
 $$ \Theta(n^2)$$ 이다.
 
-# 함께 읽기
+## 함께 읽기
 
 * [[big-O-notation]]
 
-# 참고문헌
+## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 
