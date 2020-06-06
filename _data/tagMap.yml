@@ -348,6 +348,7 @@ algorithm:
     - {fileName: big-O-notation}
     - {fileName: dijkstra-2-stack-for-exp-eval}
     - {fileName: gray-code}
+    - {fileName: selection-sort}
     - {fileName: tilde-approximations}
 book:
     - {fileName: Algorithms-to-Live-By}
@@ -771,6 +772,7 @@ von-neumann:
     - {fileName: John-von-Neumann}
 sort:
     - {fileName: John-von-Neumann}
+    - {fileName: selection-sort}
     - {fileName: sort}
 보안:
     - {fileName: labs-strava-com-heatmap}
