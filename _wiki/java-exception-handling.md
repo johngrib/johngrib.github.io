@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2020-06-08 23:28:38 +0900
+updated : 2020-06-08 23:31:45 +0900
 tag     : java
 toc     : true
 public  : true
@@ -187,7 +187,7 @@ API가 발생하는 기술적인 로우레벨을 상황에 적합한 의미를 �
 
 ## java.lang 의 Throwable 상속 트리
 
-다음은 `Throwable`의 타입 계층 구조 중 `java.lang` 패키지에 소속된 것들만 나열한 것이다.
+다음은 Java 11의 `Throwable`의 타입 계층 구조 중 `java.lang` 패키지에 소속된 것들만 나열한 것이다.
 
 - `*`: 별 표시가 있는 클래스가 unchecked exception 이다.
     - `RuntimeException`과 `Error` 타입이 unchecked exception이다.
