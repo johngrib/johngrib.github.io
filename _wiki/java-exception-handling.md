@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2020-06-06 17:21:08 +0900
+updated : 2020-06-08 23:28:38 +0900
 tag     : java
 toc     : true
 public  : true
@@ -184,6 +184,84 @@ API가 발생하는 기술적인 로우레벨을 상황에 적합한 의미를 �
 >
 > 어차피 복구가 불가능한 예외라면 가능한 한 빨리 런타임 예외로 포장해 던지게 해서 다른 계층의 메소드를 작성할 때 불필요한 `throws` 선언이 들어가지 않도록 해줘야 한다.
 [^toby-1-288]
+
+## java.lang 의 Throwable 상속 트리
+
+다음은 `Throwable`의 타입 계층 구조 중 `java.lang` 패키지에 소속된 것들만 나열한 것이다.
+
+- `*`: 별 표시가 있는 클래스가 unchecked exception 이다.
+    - `RuntimeException`과 `Error` 타입이 unchecked exception이다.
+
+```
+Throwable (java.lang)
+    Error (java.lang) *
+        AnnotationFormatError (java.lang.annotation) *
+        AssertionError (java.lang) *
+        VirtualMachineError (java.lang) *
+            StackOverflowError (java.lang) *
+            UnknownError (java.lang) *
+            InternalError (java.lang) *
+            OutOfMemoryError (java.lang) *
+        LinkageError (java.lang) *
+            ClassCircularityError (java.lang) *
+            IncompatibleClassChangeError (java.lang) *
+                NoSuchFieldError (java.lang) *
+                InstantiationError (java.lang) *
+                IllegalAccessError (java.lang) *
+                NoSuchMethodError (java.lang) *
+                AbstractMethodError (java.lang) *
+            BootstrapMethodError (java.lang) *
+            ClassFormatError (java.lang) *
+                GenericSignatureFormatError (java.lang.reflect) *
+                UnsupportedClassVersionError (java.lang) *
+            UnsatisfiedLinkError (java.lang) *
+            NoClassDefFoundError (java.lang) *
+            ExceptionInInitializerError (java.lang) *
+            VerifyError (java.lang) *
+        ThreadDeath (java.lang) *
+    Exception (java.lang)
+        CloneNotSupportedException (java.lang)
+        StringConcatException (java.lang.invoke)
+        ReflectiveOperationException (java.lang)
+            IllegalAccessException (java.lang)
+            NoSuchFieldException (java.lang)
+            NoSuchMethodException (java.lang)
+            InstantiationException (java.lang)
+            ClassNotFoundException (java.lang)
+            InvocationTargetException (java.lang.reflect)
+        LambdaConversionException (java.lang.invoke)
+        IllegalClassFormatException (java.lang.instrument)
+        UnmodifiableClassException (java.lang.instrument)
+        RuntimeException (java.lang) *
+            IndexOutOfBoundsException (java.lang) *
+            ArithmeticException (java.lang) *
+            LayerInstantiationException (java.lang) *
+            ClassCastException (java.lang) *
+            UnmodifiableModuleException (java.lang.instrument) *
+            BytecodeGenerationException in InvokerBytecodeGenerator (java.lang.invoke) *
+            SecurityException (java.lang) *
+            InaccessibleObjectException (java.lang.reflect) *
+            AnnotationTypeMismatchException (java.lang.annotation) *
+            ArrayStoreException (java.lang) *
+            EnumConstantNotPresentException (java.lang) *
+            WrongMethodTypeException (java.lang.invoke) *
+            IncompleteAnnotationException (java.lang.annotation) *
+            MalformedParametersException (java.lang.reflect) *
+            UndeclaredThrowableException (java.lang.reflect) *
+            InvalidModuleDescriptorException (java.lang.module) *
+            TypeNotPresentException (java.lang) *
+            IllegalMonitorStateException (java.lang) *
+            NegativeArraySizeException (java.lang) *
+            UnsupportedOperationException (java.lang) *
+            ResolutionException (java.lang.module) *
+            IllegalStateException (java.lang) *
+            NullPointerException (java.lang) *
+            IllegalCallerException (java.lang) *
+            FindException (java.lang.module) *
+            MalformedParameterizedTypeException (java.lang.reflect) *
+            IllegalArgumentException (java.lang) *
+        InterruptedException (java.lang)
+```
 
 ## 참고문헌
 
