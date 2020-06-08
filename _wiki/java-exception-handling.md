@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2020-06-08 23:31:45 +0900
+updated : 2020-06-08 23:42:16 +0900
 tag     : java
 toc     : true
 public  : true
@@ -262,6 +262,37 @@ Throwable (java.lang)
             IllegalArgumentException (java.lang) *
         InterruptedException (java.lang)
 ```
+
+### Throwable 클래스
+
+### Error 클래스
+
+### Exception 클래스
+
+
+#### RuntimeException 클래스
+
+```java
+/**
+ * {@code RuntimeException} is the superclass of those
+ * exceptions that can be thrown during the normal operation of the
+ * Java Virtual Machine.
+ *
+ * <p>{@code RuntimeException} and its subclasses are <em>unchecked
+ * exceptions</em>.  Unchecked exceptions do <em>not</em> need to be
+ * declared in a method or constructor's {@code throws} clause if they
+ * can be thrown by the execution of the method or constructor and
+ * propagate outside the method or constructor boundary.
+ *
+ * @author  Frank Yellin
+ * @jls 11.2 Compile-Time Checking of Exceptions
+ * @since   1.0
+ */
+public class RuntimeException extends Exception {
+```
+
+- `RuntimeException`은 Java Virtual Machine의 정상적인 작동 중에 발생할 수 있는 예외의 수퍼 클래스이다.
+- `RuntimeException`과 그 서브 클래스는 unchecked exceptions 이다.
 
 ## 참고문헌
 
