@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2020-04-23 23:00:14 +0900
+updated : 2020-06-09 08:33:18 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -100,7 +100,7 @@ assertEquals(result, 500);
 이 글에서는 Java 에서 `D-C-I` 패턴을 사용해 위와 같은 형태의 테스트 코드를 계층형으로 작성하는 방법을 소개한다.
 
 
-## JUnit5의 @Nested를 사용 go 계층 구조 테스트 코드를 작성하자
+## JUnit5의 @Nested를 사용해 계층 구조 테스트 코드를 작성하자
 
 Java에서는 다른 언어와 달리 메소드 내부에 메소드를 곧바로 만들 수가 없다.
 
