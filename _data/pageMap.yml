@@ -2614,6 +2614,14 @@ my-desk-environment:
     url: /wiki/my-desk-environment
     updated: '2020-05-22 21:54:44 +0900'
     children: []
+my-favorite-books:
+    type: wiki
+    title: '나의 성장을 도와준 고마운 책들'
+    summary: '아마도 평생 작성 중일 문서'
+    parent: my-lifehack
+    url: /wiki/my-favorite-books
+    updated: '2020-06-13 22:23:46 +0900'
+    children: []
 my-keyboard:
     type: wiki
     title: '나의 키보드 히스토리'
@@ -2637,7 +2645,7 @@ my-lifehack:
     parent: index
     url: /wiki/my-lifehack
     updated: '2019-10-11 23:34:05 +0900'
-    children: [cleaning-tile-cycle, coding-font, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, how-i-use-web-browser, my-bookshelf, my-desk-environment, my-keyboard, my-keyboard-use, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
+    children: [cleaning-tile-cycle, coding-font, email-gardening, fine-dust, global-variables-and-marriage-architecture, healthy-life, hhkb-jp-tmk, how-i-use-web-browser, my-bookshelf, my-desk-environment, my-favorite-books, my-keyboard, my-keyboard-use, my-mac-os-terminal, my-study-method, our-fund-balancing, random-lunch]
 my-mac-os-terminal:
     type: wiki
     title: 'macOS 초심자를 위한 터미널 공부 가이드'
