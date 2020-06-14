@@ -355,6 +355,7 @@ book:
     - {fileName: book}
     - {fileName: book-log-2019}
     - {fileName: book-log-2020}
+    - {fileName: book-memo}
     - {fileName: Clean-Code}
     - {fileName: Code-Complete-2}
     - {fileName: CONCRETE-MATH}
@@ -416,6 +417,8 @@ Steve-Jobs:
 money:
     - {fileName: billing-aws}
     - {fileName: our-fund-balancing}
+time:
+    - {fileName: book-lyubishev}
 rule:
     - {fileName: Boy-Scout-Rule}
     - {fileName: Tompson-s-rule-for-first-time-telescope-makers}

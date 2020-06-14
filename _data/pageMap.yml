@@ -510,6 +510,22 @@ book-log-2020:
     url: /wiki/book-log-2020
     updated: '2020-05-21 22:04:28 +0900'
     children: []
+book-lyubishev:
+    type: wiki
+    title: '(책) 류비셰프'
+    summary: '시간을 정복한 남자 류비셰프'
+    parent: book-memo
+    url: /wiki/book-lyubishev
+    updated: '2020-06-14 15:13:27 +0900'
+    children: []
+book-memo:
+    type: wiki
+    title: '독서 기록'
+    summary: ""
+    parent: index
+    url: /wiki/book-memo
+    updated: '2020-06-14 11:31:12 +0900'
+    children: [book-lyubishev]
 bootstrapping:
     type: wiki
     title: '부트스트래핑 (bootstrapping)의 어원'

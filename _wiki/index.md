@@ -543,6 +543,10 @@ regenerate: true
 * [[purpose-of-business]]
 * [[working-together]]
 
+## [[book-memo]]
+
+- [[book-lyubishev]]
+
 ## 미분류
 
 * [[abbr]]
