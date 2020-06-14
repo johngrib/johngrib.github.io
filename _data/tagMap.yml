@@ -589,6 +589,7 @@ email:
     - {fileName: email-validation}
 regex:
     - {fileName: email-validation}
+    - {fileName: regex}
     - {fileName: regex-prime}
 blockchain:
     - {fileName: ethereum-white-paper}

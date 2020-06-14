@@ -3030,6 +3030,14 @@ rans-cmd:
     url: /wiki/rans-cmd
     updated: '2020-05-19 22:02:31 +0900'
     children: []
+regex:
+    type: wiki
+    title: '정규 표현식'
+    summary: '작성중인 문서'
+    parent: index
+    url: /wiki/regex
+    updated: '2020-06-14 23:35:27 +0900'
+    children: []
 regex-prime:
     type: wiki
     title: '소수를 판별하는 정규식'

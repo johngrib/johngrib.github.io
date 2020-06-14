@@ -3,10 +3,10 @@ layout  : wiki
 title   : 정규 표현식
 summary : 작성중인 문서
 date    : 2020-05-18 22:45:12 +0900
-updated : 2020-05-19 23:43:17 +0900
+updated : 2020-06-14 23:35:27 +0900
 tag     : regex
 toc     : true
-public  : false
+public  : true
 parent  : [[index]]
 latex   : true
 ---
@@ -61,7 +61,7 @@ Backreferences
 
 - lookahead, positive lookahead 라고 부른다.
 
-$$ (?= \text{regex} ) $$
+$$ (?= \text{pattern} ) $$
 
 전방 탐색은 주어진 패턴보다 뒤에(왼쪽에) 있는 문자의 일치를 판별한다.
 
@@ -79,7 +79,7 @@ $$ (?= \text{regex} ) $$
 
 ## 부정 전방 탐색
 
-$$ (?! \text{regex}) $$
+$$ (?! \text{pattern}) $$
 
 - negative lookahead 라고 부른다.
 
@@ -125,9 +125,10 @@ var regex = /\B(?=(\d{3})+(?!\d))/g
 
 ### 완전 일치의 반대
 
-다음 패턴의 부정 전방 탐색을 사용하면 완전 일치의 반대 패턴이 된다. 필요에 따라 `regex` 부분만 바꿔주면 된다.
+다음 패턴의 부정 전방 탐색을 사용하면 완전 일치의 반대 패턴이 된다. 필요에 따라 `pattern` 부분만 바꿔주면 된다.
 
-`^(?!regex$j).*$`
+`^(?!pattern$j).*$`
+
 
 ## 참고 예제
 ### URI
