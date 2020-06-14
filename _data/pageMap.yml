@@ -2012,7 +2012,7 @@ insertion-sort:
     summary: '최선 O(N), 평균 O(N^2), 최악 O(N^2)'
     parent: algorithm
     url: /wiki/insertion-sort
-    updated: '2020-06-14 21:02:41 +0900'
+    updated: '2020-06-14 21:10:21 +0900'
     children: []
 integer:
     type: wiki
