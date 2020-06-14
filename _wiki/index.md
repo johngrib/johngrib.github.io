@@ -31,6 +31,7 @@ regenerate: true
 * [[big-O-notation]]
 * [[dijkstra-2-stack-for-exp-eval]]
 * [[egyptian-multiplication]]
+* [[insertion-sort]]
 * [[p-np]]
 * [[regex-prime]]
 * [[selection-sort]]

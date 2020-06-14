@@ -348,6 +348,7 @@ algorithm:
     - {fileName: big-O-notation}
     - {fileName: dijkstra-2-stack-for-exp-eval}
     - {fileName: gray-code}
+    - {fileName: insertion-sort}
     - {fileName: selection-sort}
     - {fileName: tilde-approximations}
 book:
@@ -749,6 +750,11 @@ http:
     - {fileName: URI}
     - {fileName: vim-rest-console}
     - {fileName: why-http-80-https-443}
+sort:
+    - {fileName: insertion-sort}
+    - {fileName: John-von-Neumann}
+    - {fileName: selection-sort}
+    - {fileName: sort}
 spring:
     - {fileName: inversion-of-control}
     - {fileName: spring}
@@ -774,10 +780,6 @@ blog:
     - {fileName: my-wiki}
 von-neumann:
     - {fileName: John-von-Neumann}
-sort:
-    - {fileName: John-von-Neumann}
-    - {fileName: selection-sort}
-    - {fileName: sort}
 보안:
     - {fileName: labs-strava-com-heatmap}
 letter:
