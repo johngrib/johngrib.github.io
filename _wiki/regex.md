@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정규 표현식
 summary : 작성중인 문서
 date    : 2020-05-18 22:45:12 +0900
-updated : 2020-06-14 23:35:27 +0900
+updated : 2020-06-14 23:45:24 +0900
 tag     : regex
 toc     : true
 public  : true
@@ -129,6 +129,31 @@ var regex = /\B(?=(\d{3})+(?!\d))/g
 
 `^(?!pattern$j).*$`
 
+## 후방 탐색
+
+$$ (?<= pattern) $$
+
+후방 탐색은 주어진 패턴보다 앞에(오른쪽에) 있는 패턴의 일치를 판별한다.
+
+- `(?<=3)abc`
+    - $$ 123 \color{red}{abc} $$ &nbsp;
+        - `echo 123abc | ag '(?<=3)abc'`
+    - $$ 1abc3 \color{red}{abc} 5abc $$ &nbsp;
+        - `echo 1abc3abc5abc | ag '(?<=3)abc'`
+
+
+## 부정 후방 탐색
+
+$$ (?<! pattern) $$
+
+
+- `(?<!2)abc`
+    - $$ 1 \color{red}{abc} 2abc 3 \color{red}{abc} $$ &nbsp;
+        - `echo 1abc2abc3abc | ag '(?<!2)abc'`
+
+참고 사항
+
+- Javascript는 부정 후방 탐색은 지원하지 않는다.
 
 ## 참고 예제
 ### URI
