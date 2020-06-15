@@ -3,7 +3,7 @@ layout  : wiki
 title   : 삽입 정렬 (Insertion Sort)
 summary : 최선 O(N), 평균 O(N^2), 최악 O(N^2)
 date    : 2020-06-14 17:32:52 +0900
-updated : 2020-06-14 21:10:21 +0900
+updated : 2020-06-15 22:37:58 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -120,6 +120,9 @@ function insert(a, pos, value) {
 }
 ```
 
+## 함께 읽기
+
+- 셸 정렬( [[shell-sort]] )
 
 ## 참고문헌
 

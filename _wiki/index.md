@@ -35,6 +35,7 @@ regenerate: true
 * [[p-np]]
 * [[regex-prime]]
 * [[selection-sort]]
+* [[shell-sort]]
 * [[tilde-approximations]]
 * [[tower-of-hanoi]]
 * [[von-neumann-extractor]]
