@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정규 표현식
 summary : 작성중인 문서
 date    : 2020-05-18 22:45:12 +0900
-updated : 2020-06-16 23:14:21 +0900
+updated : 2020-06-16 23:33:15 +0900
 tag     : regex
 toc     : true
 public  : true
@@ -39,6 +39,48 @@ latex   : true
 | `\S`                | `\s` 의 여집합. 공백문제를 제외한 문자. `[^\t\n\f\r]`과 같다.              |
 | `\b`                | 단어의 경계를 나타내는 문자. (A word boundary)                             |
 | `\B`                | 단어 내에서 문자의 경계가 아닌 문자. (Not a word boundary (inside a word)) |
+
+## 앵커(anchor)
+
+| `^`  | 행 시작 지점       |
+| `$`  | 행 끝나는 지점     |
+| `\A` | 문자열 시작 지점   |
+| `\Z` | 문자열 끝나는 지점 |
+| `\b` | 단어의 경계 지점   |
+| `\B` | `\b`가 아닌 지점   |
+
+다음과 같은 내용을 가진 `hello.c` 라는 파일이 있다고 하자.
+
+```c
+#include <stdio.h>
+main()
+{
+    printf("hello, world\n");
+}
+```
+
+`\A`로 검색해보면 1번 라인이 출력된다. 즉, `\A`는 파일의(문자열의) 시작 지점에 매치되는 앵커이다.
+
+```sh
+$ ag '\A' hello.c
+1:#include <stdio.h>
+```
+
+`\Z`는 파일의(문자열의) 끝 지점에 매치되는 앵커이다.
+
+```sh
+$ ag '\Z' hello.c
+5:}
+```
+
+`\b`는 단어의 경계 지점에 매치된다.
+
+![]( /post-img/regex/b.jpg )
+
+반대로 `\B`는 단어의 경계가 아닌 곳에 매치된다.
+
+![]( /post-img/regex/Bl.jpg )
+
 
 ## 수량자
 
