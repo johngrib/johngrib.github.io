@@ -58,6 +58,7 @@ regenerate: true
 * [[John-W-Backus]]
 * [[Las-chicas-del-cable]]
 * [[netflix-architecture-and-culture]]
+* [[pentium-fdiv-bug]]
 * [[the-beginning-of-linux]]
 * [[Turbo-Pascal-the-first-IDE]]
 * [[Wordstar]]

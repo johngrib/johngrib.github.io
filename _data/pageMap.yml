@@ -2429,7 +2429,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, the-beginning-of-linux, Turbo-Pascal-the-first-IDE, Wordstar]
+    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, pentium-fdiv-bug, the-beginning-of-linux, Turbo-Pascal-the-first-IDE, Wordstar]
 less-cmd:
     type: wiki
     title: 'less 명령어'
@@ -2861,6 +2861,14 @@ PATTERN-ON-THE-STONE:
     parent: book
     url: /wiki/PATTERN-ON-THE-STONE
     updated: '2020-05-04 23:41:25 +0900'
+    children: []
+pentium-fdiv-bug:
+    type: wiki
+    title: '펜티엄 FPU FDIV 버그'
+    summary: '이 버그로 인텔이 입은 손해가 약 50억 달러였다고'
+    parent: legend
+    url: /wiki/pentium-fdiv-bug
+    updated: '2020-06-18 00:38:38 +0900'
     children: []
 persona:
     type: wiki
