@@ -297,6 +297,7 @@ command:
     - {fileName: fortune-cmd}
     - {fileName: git}
     - {fileName: glow-cmd}
+    - {fileName: google-java-format}
     - {fileName: gpg}
     - {fileName: grep}
     - {fileName: how-to-escape-cli}
@@ -528,6 +529,7 @@ ctags:
     - {fileName: ctags}
 java:
     - {fileName: defensive-copy.md}
+    - {fileName: google-java-format}
     - {fileName: groupId-artifactId}
     - {fileName: intellij}
     - {fileName: Java}

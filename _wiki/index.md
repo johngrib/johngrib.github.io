@@ -346,6 +346,7 @@ regenerate: true
 * [[fish-shell]]
 * [[fortune-cmd]]
 * [[glow-cmd]]
+* [[google-java-format]]
 * [[gpg]]
 * [[grep]]
 * [[how-to-escape-cli]]
