@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빌더 패턴(Builder Pattern)
 summary : 객체의 생성 방법과 표현 방법을 분리한다
 date    : 2018-02-12 08:18:46 +0900
-updated : 2020-03-21 08:39:51 +0900
+updated : 2020-06-18 22:06:38 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -238,7 +238,7 @@ NutritionFacts cocaCola = new NutritionFacts
 
 이런 스타일의 빌더 패턴이라면 롬복의 `@Builder` 애노테이션으로 쉽게 사용할 수 있다.
 
-다음과 같이 `@Builder` 애노테이션을 붙여주면 이펙티브 자바 스타일과 비슷한 빌더 패턴 코드가 빌드된다.
+다음과 같이 클래스 또는 생성자에 `@Builder` 애노테이션을 붙여주면 이펙티브 자바 스타일과 비슷한 빌더 패턴 코드가 빌드된다.
 
 ```java
 @Builder
