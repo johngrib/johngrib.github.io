@@ -3,7 +3,7 @@ layout  : wiki
 title   : 암달의 법칙 (Amdahl's law)
 summary : 
 date    : 2020-06-19 23:31:46 +0900
-updated : 2020-06-21 00:45:33 +0900
+updated : 2020-06-21 00:53:34 +0900
 tag     : 
 toc     : true
 public  : false
@@ -28,7 +28,6 @@ S_{\text{latency}}(s) = { 1 \over (1-p) + \frac{p}{s} }
 $$
 
 
-https://demonstrations.wolfram.com/AmdahlsLaw/
 
 
 ## 참고문헌
@@ -37,5 +36,5 @@ https://demonstrations.wolfram.com/AmdahlsLaw/
     - [백업 PDF]( /post-img/amdahl-s-law/Amdahl-1967.pdf )
 - [Validity of the single processor approach to achieving large scale computing capabilitie - Gene M. Amdahl (PDF)]( https://www-inst.eecs.berkeley.edu//~n252/paper/Amdahl.pdf ) - Guihai Chen이 옮겨 적은 버전. (This paper is retyped as the present form by Guihai Chen He wishes you would enjoy reading this historic)
     - [백업 PDF]( /post-img/amdahl-s-law/Amdahl.pdf )
-
+- [Amdahl's Law (WOLFRAM Demonstrations Project)](https://demonstrations.wolfram.com/AmdahlsLaw/ )
 
