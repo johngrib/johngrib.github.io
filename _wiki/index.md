@@ -221,6 +221,7 @@ regenerate: true
 
 * [[ACID]]
 * [[airplain-rule]]
+* [[amdahl-s-law]]{암달의 법칙}
 * [[Boy-Scout-Rule]]
 * [[Brooks-s-law]]
 * [[CAP-theorem]]
