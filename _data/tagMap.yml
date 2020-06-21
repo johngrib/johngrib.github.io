@@ -337,6 +337,7 @@ complexity:
     - {fileName: airplain-rule}
 law:
     - {fileName: airplain-rule}
+    - {fileName: amdahl-s-law}
     - {fileName: Brooks-s-law}
     - {fileName: Conway-s-law}
     - {fileName: law-of-demeter}
@@ -378,6 +379,22 @@ devops:
     - {fileName: devops}
     - {fileName: Elastic-Load-Balancing}
     - {fileName: vagrant-docker-get-start}
+performance:
+    - {fileName: amdahl-s-law}
+    - {fileName: bandwidth}
+    - {fileName: latency}
+    - {fileName: use-java-primitive-type-for-performance}
+proverb:
+    - {fileName: amdahl-s-law}
+    - {fileName: Conway-s-law}
+    - {fileName: Edsel-edict}
+    - {fileName: kees-koster-good-programming-language}
+    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
+    - {fileName: Naming-Principle}
+    - {fileName: No-Silver-Bullet}
+    - {fileName: orange-juice-test}
+    - {fileName: Postel-s-law}
+    - {fileName: proverb}
 network:
     - {fileName: bandwidth}
     - {fileName: global-variables-and-marriage-architecture}
@@ -385,10 +402,6 @@ network:
     - {fileName: latency}
     - {fileName: osi-model}
     - {fileName: port}
-performance:
-    - {fileName: bandwidth}
-    - {fileName: latency}
-    - {fileName: use-java-primitive-type-for-performance}
 bayes:
     - {fileName: Bayes-theorem}
     - {fileName: cookie-problem}
@@ -497,16 +510,6 @@ php:
     - {fileName: email-validation}
     - {fileName: php}
     - {fileName: phpbrew}
-proverb:
-    - {fileName: Conway-s-law}
-    - {fileName: Edsel-edict}
-    - {fileName: kees-koster-good-programming-language}
-    - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
-    - {fileName: Naming-Principle}
-    - {fileName: No-Silver-Bullet}
-    - {fileName: orange-juice-test}
-    - {fileName: Postel-s-law}
-    - {fileName: proverb}
 Think-Bayes:
     - {fileName: cookie-problem}
     - {fileName: dice-problem}
