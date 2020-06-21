@@ -24,7 +24,7 @@ latex   : false
 ### To do 리스트관리
 
 * 나는 vimwiki 를 쓴다.
-* loal wiki 에 todo.md 파일을 만든다.
+* local wiki 에 todo.md 파일을 만든다.
     * 읽고 있는 책의 모든 챕터를 체크 리스트 형태로 만든다.
     * 챕터를 읽을 때마다 완료 표시를 한다.
     * 체크해가는 재미가 있어 책을 매일 읽게 된다.
