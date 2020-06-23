@@ -756,6 +756,8 @@ http:
     - {fileName: URI}
     - {fileName: vim-rest-console}
     - {fileName: why-http-80-https-443}
+turing:
+    - {fileName: imitation-game}
 sort:
     - {fileName: insertion-sort}
     - {fileName: John-von-Neumann}

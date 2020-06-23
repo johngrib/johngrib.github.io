@@ -230,6 +230,7 @@ regenerate: true
 * [[dry-principle]]
 * [[Edsel-edict]]
 * [[hollywood-principle]]
+* [[imitation-game]]
 * [[kees-koster-good-programming-language]]
 * [[Kerckhoffs-s-principle]]
 * [[law-of-demeter]]
