@@ -3276,7 +3276,7 @@ sed:
     summary: 'stream editor'
     parent: command-line
     url: /wiki/sed
-    updated: '2020-06-24 20:46:48 +0900'
+    updated: '2020-06-24 23:37:29 +0900'
     children: []
 selection-sort:
     type: wiki

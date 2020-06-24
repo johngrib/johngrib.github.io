@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2020-06-24 20:46:48 +0900
+updated : 2020-06-24 23:37:29 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -46,7 +46,7 @@ ag 'if\(' -l | xargs sed -i.orig 's/if\(/if /'
 find . -name '*.java' | xargs ag '\t' -l | xargs sed -E -i.orig "s/[[:cntrl:]]/  /g"
 ```
 
-- 공백 문자 삽입
+- 개행 문자 삽입
 
 ```sh
  # 모든 package 단어 위에 공백 1줄을 추가한다
