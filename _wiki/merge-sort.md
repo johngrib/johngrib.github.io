@@ -3,7 +3,7 @@ layout  : wiki
 title   : 병합 정렬 (Merge Sort)
 summary : 
 date    : 2020-06-27 17:03:29 +0900
-updated : 2020-06-27 23:14:25 +0900
+updated : 2020-06-27 23:17:53 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -90,6 +90,12 @@ void merge(int[] a, int lo, int mid, int hi) {
 
 ## 하향식(top down) 병합 정렬
 
+다음은 세지윅의 알고리즘에 수록된 하향식 머지 정렬의 이미지를 발췌한 것이다.
+
+각 단계별로 '정렬된 서브 배열' 2개를 만들고 병합하는 과정을 반복하는 것을 볼 수 있다.
+
+![]( /post-img/merge-sort/top-down-merge-sort.jpg )
+
 ### 구현
 
 ```java
@@ -122,12 +128,6 @@ void topDownMergeSort(int[] a, int lo, int hi) {
   merge(a, lo, mid, hi);            // 결과 병합
 }
 ```
-
-다음은 세지윅의 알고리즘에 수록된 하향식 머지 정렬의 이미지를 발췌한 것이다.
-
-각 단계별로 '정렬된 서브 배열' 2개를 만들고 병합하는 과정을 반복하는 것을 볼 수 있다.
-
-![]( /post-img/merge-sort/merge-sort-steps.jpg )
 
 ### 하향식 병합 정렬의 비교 연산 횟수
 
