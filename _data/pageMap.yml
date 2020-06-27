@@ -2612,7 +2612,7 @@ merge-sort:
     summary: ""
     parent: algorithm
     url: /wiki/merge-sort
-    updated: '2020-06-27 23:17:53 +0900'
+    updated: '2020-06-27 23:34:21 +0900'
     children: []
 migrate-to-new-macbook:
     type: wiki

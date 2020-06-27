@@ -3,7 +3,7 @@ layout  : wiki
 title   : 병합 정렬 (Merge Sort)
 summary : 
 date    : 2020-06-27 17:03:29 +0900
-updated : 2020-06-27 23:17:53 +0900
+updated : 2020-06-27 23:34:21 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -267,10 +267,171 @@ $$\frac{1}{2} N \lg N \le C(N) \le N \lg N$$
 - 두 서브 배열이 서로 겹치지 않을 때(비교할 필요가 없을 때) 정렬을 생략하면 성능을 향상시킬 수 있다.
     - `a[mid]` $$\le$$ `a[mid+1]` 인지 확인하면 된다.
 
+## 상향식 (bottom up) 병합 정렬
+
+상향식 병합 정렬은 작은 서브 배열을 여러 개 정렬해 놓고, 점점 서브 배열의 수를 반씩 줄여 나가는 방법이다.
+
+![]( /post-img/merge-sort/bottom-up-merge-sort.jpg )
+
+상향식 병합 정렬과 하향식 병합 정렬은 작업 순서만 다를 뿐, 복잡도는 차이가 거의 없다.
+
+### 구현
+
+```java
+/**
+ * 주어진 a 배열을 정렬한다.
+ */
+void bottomUpMergeSort(int[] a) {
+  int N = a.length;
+  aux = new int[N];
+  for (int size = 1; size < N; size = size + size) {
+    // size: 서브 배열의 크기
+    for (int lo = 0; lo < N - size; lo += size + size) {
+      // lo: 서브 배열의 인덱스
+      merge(a, lo, lo + size - 1, Math.min(lo + size + size - 1, N - 1));
+    }
+  }
+}
+```
+
+## 예제 코드 전문
+
+다음은 위의 예제 코드 전문이다.
+
+```java
+/**
+ * 병합 정렬.
+ */
+public class MergeSort {
+  private int[] aux;
+
+  /**
+   * 주어진 a 배열을 정렬한다.
+   */
+  void topDownMergeSort(int[] a) {
+    aux = new int[a.length];
+    topDownMergeSort(a, 0, a.length - 1);
+  }
+
+  /**
+   * 주어진 a 배열의 a[lo..hi] 구간을 정렬한다.
+   *
+   * @param a  배열
+   * @param lo 정렬 대상 시작 인덱스
+   * @param hi 정렬 대상 마지막 인덱스
+   */
+  void topDownMergeSort(int[] a, int lo, int hi) {
+    if (hi <= lo) {
+      return;
+    }
+    int mid = lo + (hi - lo) / 2;
+    topDownMergeSort(a, lo, mid);     // 왼쪽 절반 정렬
+    topDownMergeSort(a, mid + 1, hi); // 오른쪽 절반 정렬
+    merge(a, lo, mid, hi);            // 결과 병합
+  }
+
+  /**
+   * 주어진 a 배열을 정렬한다.
+   */
+  void bottomUpMergeSort(int[] a) {
+    int N = a.length;
+    aux = new int[N];
+    for (int size = 1; size < N; size = size + size) {
+      // size: 서브 배열의 크기
+      for (int lo = 0; lo < N - size; lo += size + size) {
+        // lo: 서브 배열의 인덱스
+        merge(a, lo, lo + size - 1, Math.min(lo + size + size - 1, N - 1));
+      }
+    }
+  }
+
+  /**
+   * 주어진 a 배열의 sub 배열 a[lo..mid]와 sub 배열 a[mid+1..hi]를 병합합니다.
+   *
+   * @param a   배열
+   * @param lo  첫번째 sub 배열 시작 인덱스
+   * @param mid 첫번째 sub 배열 마지막 인덱스
+   * @param hi  두번째 sub 배열 마지막 인덱스
+   */
+  void merge(int[] a, int lo, int mid, int hi) {
+    //  a[lo..hi]를 aux[lo..hi]에 복제
+    for (int k = lo; k <= hi; k++) {
+      aux[k] = a[k];
+    }
+
+    int i = lo;       // sub 배열 1 인덱스
+    int j = mid + 1;  // sub 배열 2 인덱스
+
+    // 다시 a[lo..hi]로 병합
+    for (int k = lo; k <= hi; k++) {
+      if (i > mid) {
+        // sub 배열 1 인덱스가 마지막까지 갔다면 sub 배열 2의 값을 선택해 넣는다
+        a[k] = aux[j++];
+      } else if (j > hi) {
+        // sub 배열 2 인덱스가 마지막까지 갔다면 sub 배열 1의 값을 선택해 넣는다
+        a[k] = aux[i++];
+      } else if (aux[j] < aux[i]) {
+        // 두 sub 배열 헤드 중 작은 값을 선택해 넣는다
+        a[k] = aux[j++];
+      } else {
+        // 두 sub 배열 헤드 중 작은 값을 선택해 넣는다
+        a[k] = aux[i++];
+      }
+    }
+  }
+}
+```
+
+### 테스트 코드
+
+```java
+@DisplayName("MergeSort")
+class MergeSortTest {
+  @Nested
+  @DisplayName("topDownMergeSort 메소드는")
+  class Describe_topDownMergeSort {
+    @Nested
+    @DisplayName("정렬되지 않은 배열이 주어지면")
+    class Context_with_unsorted_array {
+      final int[] givenArray = new int[] {4, 2, 9, 187, 3, 5, 98};
+
+      @Test
+      @DisplayName("주어진 배열을 정렬한다")
+      void it_sorts_array() {
+        new MergeSort().topDownMergeSort(givenArray);
+
+        for (int i = 1; i < givenArray.length; i++) {
+          assertTrue(givenArray[i - 1] < givenArray[i]);
+        }
+      }
+    }
+  }
+
+  @Nested
+  @DisplayName("bottomUpMergeSort 메소드는")
+  class Describe_bottomUpMergeSort {
+    @Nested
+    @DisplayName("정렬되지 않은 배열이 주어지면")
+    class Context_with_unsorted_array {
+      final int[] givenArray = new int[] {4, 2, 9, 187, 3, 5, 98};
+
+      @Test
+      @DisplayName("주어진 배열을 정렬한다")
+      void it_sorts_array() {
+        new MergeSort().bottomUpMergeSort(givenArray);
+
+        for (int i = 1; i < givenArray.length; i++) {
+          assertTrue(givenArray[i - 1] < givenArray[i]);
+        }
+      }
+    }
+  }
+}
+```
+
 ## 참고문헌
 
 - The art of computer programming 3 정렬과 검색(개정2판) / 도널드 커누스 저 / 한빛미디어 / 초판 2쇄 2013년 02월 10일
-- 사전처럼 바로 찾아 쓰는 알고리즘 / 조지 T. 하인만, 게리 폴리케, 스탠리 셀코 공저 / 전경원 역 / 한빛미디어 / 초판 2쇄 2011년 10월 20일
 - 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판발행 2018년 12월 26일
 
 ## 주석
