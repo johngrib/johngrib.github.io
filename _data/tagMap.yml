@@ -351,6 +351,7 @@ algorithm:
     - {fileName: dijkstra-2-stack-for-exp-eval}
     - {fileName: gray-code}
     - {fileName: insertion-sort}
+    - {fileName: merge-sort}
     - {fileName: selection-sort}
     - {fileName: tilde-approximations}
 book:
@@ -761,6 +762,7 @@ turing:
 sort:
     - {fileName: insertion-sort}
     - {fileName: John-von-Neumann}
+    - {fileName: merge-sort}
     - {fileName: selection-sort}
     - {fileName: sort}
 spring:
