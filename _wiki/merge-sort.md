@@ -3,7 +3,7 @@ layout  : wiki
 title   : 병합 정렬 (Merge Sort)
 summary : 
 date    : 2020-06-27 17:03:29 +0900
-updated : 2020-06-27 23:34:21 +0900
+updated : 2020-06-28 08:25:58 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -157,14 +157,14 @@ $$
 
 이 구조를 참고해 식으로 옮겨보자.
 
-- 비교 횟수의 상한선
+- 비교 횟수의 상한
 
 $$
 C(N) \le C( \ceil{ N / 2 } ) + C( \floor{ N / 2 } ) + N
 \tag{1}\label{1}
 $$
 
-- 비교 횟수의 하한선
+- 비교 횟수의 하한
 
 $$
 C(N) \ge C( \ceil{ N / 2 } ) + C( \floor{ N / 2 } ) + \floor{ N / 2 }
