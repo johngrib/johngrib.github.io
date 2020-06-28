@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2020-06-28 13:35:39 +0900
+updated : 2020-06-28 15:23:00 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -49,6 +49,21 @@ latex   : true
 
 - 알고리즘을 분석할 때 상한(O), 하한(Ω), 평균 수행 시간(Θ)을 구한다.
 - O와 Ω가 같을 때에는 Θ을 쓴다.
+
+> 함수의 증가를 설명하기 위하여 big-O가 광범위하게 사용되나 한계가 있다.
+특히, f(x)가 O(g(x))일 때, 충분히 큰 x에 대하여 g(x)에 의해 f(x)의 상한이 주어진다.
+big-O는 충분히 큰 x에 대하여 f(x)의 크기에 대한 하한이 주어지지는 않는다.
+이 하한을 제공하기 위하여 **big-Omega 표기**를 사용한다.
+참조함수 g(x)에 관하여 함수 f(x)의 크기에 대한 상한과 하한을 동시에 나타내기 위하여 **big-Theta 표기**가 사용된다.
+big-Omega와 big-Theta 표기는 1970년대에 Donald Knuth에 의해 소개되었다.
+이 표기를 도입한 동기는 함수의 크기에 대한 상한과 하한이 모두 필요한 경우에 big-O를 잘못 사용하기 때문이었다.
+[^rosen-242]
+
+&nbsp;
+
+> big-O와 big-Omega 표기 사이에는 밀접한 관련성이 있다.
+특히, $$f(x)$$가 $$\Omega(g(x))$$인 것은 $$g(x)$$가 $$O(f(x))$$가 되기 위한 필요충분조건이다.
+[^rosen-243]
 
 ## big-O
 
@@ -181,14 +196,14 @@ Big-Omega 표기는 최악 조건 성능 하한을 의미하고 Big-Theta 표기
 [^sedgewick-206]
 
 
-## $$\Omega$$
-### From: Rosen의 이산수학
+## big-Omega, Ω
 
 > Definition  
 Let $$f$$ and $$g$$ be functions from the set of integers or the set of real numbers to the set of real numbers.
 We say that $$f(x)$$ is $$\Omega(g(x))$$ if there are positive constants $$C$$ and $$k$$ such that  
 $$ \vert f(x) \vert \gt C \vert g(x) \vert $$  
 whenever $$x \gt k$$. [This is read as "$$f(x)$$ is big-Omega of $$g(x)$$."]
+[^rosen-3-2]
 
 함수 $$f$$와 함수 $$g$$가 정수(or 실수)의 집합으로부터 실수의 집합으로의 함수라 하자.
 
@@ -430,4 +445,6 @@ function test(listA, listB) {
 [^narasimha-15]: 다양한 예제로 학습하는 데이터 구조와 알고리즘 for Java. 1장. 15쪽.
 
 [^rosen-233]: Rosen의 이산수학. 3.2장. 233쪽.
+[^rosen-242]: Rosen의 이산수학. 3.2장. 242쪽.
+[^rosen-243]: Rosen의 이산수학. 3.2장. 243쪽.
 [^rosen-3-2]: Rosen의 이산수학. 3.2장.
