@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2020-06-28 18:29:53 +0900
+updated : 2020-06-28 18:55:08 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -340,9 +340,7 @@ $$\text{ $f(x)$는 $\Theta(g(x))$ 이다.}$$
 | $$O(5 \times 2^n + 1000 \times n^{100})$$ | $$O(2^n)$$   |
 | $$O(n + m)$$                              | $$O(n + m)$$ |
 
-### 헷갈리는 예제
-
-#### 안쪽 루프가 1씩 줄어드는 이중 루프
+### 이중 루프
 
 ```javascript
 function test(list) {
@@ -354,7 +352,9 @@ function test(list) {
 }
 ```
 
-위의 코드는 `list`를 이중으로 돌리고 있으므로 $$O(n^2)$$ 이다.
+`list`의 길이를 `n`이라 하면, `list`를 이중으로 돌리고 있으므로 $$O(n^2)$$ 이다.
+
+### 안쪽 루프가 1씩 줄어드는 이중 루프
 
 아래의 코드는 `j`가 `i+1`로 시작하므로 루프가 진행될수록 안쪽 루프의 횟수가 줄어든다.
 
@@ -382,7 +382,7 @@ $$
 \end{align}
 $$
 
-#### 두 개의 다른 리스트를 루프하는 이중 루프
+### 두 개의 다른 리스트를 루프하는 이중 루프
 
 ```javascript
 function test(listA, listB) {
@@ -395,6 +395,8 @@ function test(listA, listB) {
     }
 }
 ```
+
+`listA`의 길이를 `a`, `listB`의 길이를 `b`라 하자.
 
 * 답은 $$O(a \cdot b)$$.
     * 느낌상 $$O(n^2)$$일 것 같지만, 아니다.
@@ -416,9 +418,9 @@ function test(listA, listB) {
 ```
 
 * 답은 $$O(a \cdot b \cdot 99999) = O(a \cdot b)$$.
-    * 당연히 `99999`는 무시한다.
+    * `99999`는 상수이므로 무시한다.
 
-#### 문자열 배열 정렬 문제
+### 문자열 배열 정렬 문제
 
 이 문제의 출처는 **코딩 인터뷰 완전 분석**이다.
 
