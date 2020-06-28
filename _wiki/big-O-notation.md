@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2020-06-28 13:05:51 +0900
+updated : 2020-06-28 13:16:50 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -12,6 +12,18 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+## 기원
+
+> **big-O 표기의 역사**
+>
+> big-O 표기는 한 세기 이상 수학에서 사용되어 왔다.
+3.3절에서 보겠지만 컴퓨터과학에서는 알고리즘 분석에 광범위하게 사용된다.
+독일의 수학자 Paul Bachmann이 1892년 처음으로 big-O 표기를 정수론에 관한 책에서 사용하였다.
+그의 저술에서 두루 이 표기를 사용한 수학자 Edmund Landau의 이름을 따서 때로는 big-O 기호를 Landau symbol이라 부르기도 한다.
+컴퓨터과학에서 big-O 표기는 Donald Knuth에 의해 널리 사용되기 시작했는데,
+나중에 이 절에서 소개할 big-Ω와 big-Θ도 그에 의해 소개되었다.
+[^rosen-233]
 
 ## $$O, \Theta, \Omega$$
 
@@ -34,7 +46,6 @@ latex   : true
 이 장의 나머지 부분에서는 상한($$O$$)에 집중할 텐데 왜냐하면 알고리즘의 하한($$\Omega$$)을 아는 것은 실용적으로 중요하지 않으며
 상한($$O$$)과 하한($$\Omega$$)이 같을 경우에는 세타 표기법을 사용하기 때문이다.
 [^narasimha-15]
-
 
 ## $$O$$
 
@@ -415,3 +426,5 @@ function test(listA, listB) {
 [^sedgewick-187]: 알고리즘 [개정4판]. 1.4장 187쪽.
 [^sedgewick-206]: 알고리즘 [개정4판]. 1.4장 206쪽.
 [^narasimha-15]: 다양한 예제로 학습하는 데이터 구조와 알고리즘 for Java. 1장. 15쪽.
+
+[^rosen-233]: Rosen의 이산수학. 3.2장. 233쪽.
