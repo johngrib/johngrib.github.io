@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2020-06-28 15:23:00 +0900
+updated : 2020-06-28 18:06:54 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -219,13 +219,13 @@ $$\text{ $f(x)$ 는 $\Omega(g(x))$ 이다. }$$
 
 (big-O 가 $$ \vert f(x) \vert \color{blue}\le C \vert g(x) \vert $$ 였음을 기억하자. 부등호 방향이 반대이다.)
 
-## $$\Theta$$
-### From: Rosen의 이산수학
+## big-Theta, Θ
 
 > Definition  
 Let $$f$$ and $$g$$ be functions from the set of integers or the set of real numbers to the set of real numbers.
 We say that $$f(x)$$ is $$\Theta(g(x))$$ if $$f(x)$$ is $$O(g(x))$$ and $$f(x)$$ is $$\Omega(g(x))$$.
 When $$f(x)$$ is $$\Theta(g(x))$$ we say that f is big-Theta of $$g(x)$$, that $$f(x)$$ is of order $$g(x)$$, and that $$f(x)$$ and $$g(x)$$ are of the same order.
+[^rosen-3-2]
 
 함수 $$f$$와 함수 $$g$$가 정수(or 실수)의 집합으로부터 실수의 집합으로의 함수라 하자.
 
