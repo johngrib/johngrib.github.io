@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2020-06-28 19:03:48 +0900
+updated : 2020-06-28 20:29:44 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -460,8 +460,8 @@ function test(listA, listB) {
 ## 함께 읽기
 
 - [[average-complexity]]{평균 계산 복잡도 구하기}
+- [[master-theorem]]{마스터 정리}
 - [[tilde-approximations]]{틸다 표기법}
-* [Master theorem (wikipedia)]( https://en.m.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms) )
 
 
 ## 참고문헌

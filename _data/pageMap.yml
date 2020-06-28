@@ -269,7 +269,7 @@ algorithm:
     parent: index
     url: /wiki/algorithm
     updated: '2020-03-04 20:46:42 +0900'
-    children: [average-complexity, b-tree, big-O-notation, dijkstra-2-stack-for-exp-eval, egyptian-multiplication, insertion-sort, merge-sort, p-np, regex-prime, selection-sort, shell-sort, tilde-approximations, tower-of-hanoi, von-neumann-extractor]
+    children: [average-complexity, b-tree, big-O-notation, dijkstra-2-stack-for-exp-eval, egyptian-multiplication, insertion-sort, master-theorem, merge-sort, p-np, regex-prime, selection-sort, shell-sort, tilde-approximations, tower-of-hanoi, von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
     title: '(책) 알고리즘, 인생을 계산하다'
@@ -452,7 +452,7 @@ big-O-notation:
     summary: '알고리즘의 효율성을 나타내는 표기법이다'
     parent: algorithm
     url: /wiki/big-O-notation
-    updated: '2020-06-28 19:03:48 +0900'
+    updated: '2020-06-28 20:29:44 +0900'
     children: []
 Bill-Atkinson-productivity:
     type: wiki
@@ -2565,6 +2565,14 @@ make-cmd:
     parent: command-line
     url: /wiki/make-cmd
     updated: '2020-03-29 23:29:58 +0900'
+    children: []
+master-theorem:
+    type: wiki
+    title: '마스터 정리 (Master Theorem)'
+    summary: ""
+    parent: algorithm
+    url: /wiki/master-theorem
+    updated: '2020-06-28 20:29:21 +0900'
     children: []
 math:
     type: wiki

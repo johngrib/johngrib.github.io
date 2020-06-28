@@ -32,6 +32,7 @@ regenerate: true
 * [[dijkstra-2-stack-for-exp-eval]]
 * [[egyptian-multiplication]]
 * [[insertion-sort]]
+* [[master-theorem]]
 * [[merge-sort]]
 * [[p-np]]
 * [[regex-prime]]
