@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2020-06-28 18:10:36 +0900
+updated : 2020-06-28 18:18:39 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -218,6 +218,16 @@ $$\text{ $f(x)$ 는 $\Omega(g(x))$ 이다. }$$
 이 때, $$ f(x) $$ 는 $$ g(x) $$의 "**big-Omega**" 라고 읽는다.
 
 (big-O 가 $$ \vert f(x) \vert \color{blue}\le C \vert g(x) \vert $$ 였음을 기억하자. 부등호 방향이 반대이다.)
+
+### 예제
+
+> 함수 $$f(x) = 8x^3 + 5x^2 + 7$$ 은 $$\Omega (g(x))$$ 이다.  
+여기서, $$g(x)$$는 함수 $$g(x) = x^3$$ 이다.  
+모든 양의 실수 x에 대하여 $$f(x) = 8x^3 + 5x^2 + 7 \ge 8x^3$$ 이므로 이것은 이해하기 쉽다.
+>
+> $$g(x) = x^3$$이 $$O(8x^3 + 5x^2 +7)$$임과 동등하다.  
+이것은 부등호를 반대 방향으로 돌림으로써 얻어진다.
+[^rosen-3-2]
 
 ## big-Theta, Θ
 
