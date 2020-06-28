@@ -452,7 +452,7 @@ big-O-notation:
     summary: '알고리즘의 효율성을 나타내는 표기법이다'
     parent: algorithm
     url: /wiki/big-O-notation
-    updated: '2020-06-28 13:26:25 +0900'
+    updated: '2020-06-28 13:35:39 +0900'
     children: []
 Bill-Atkinson-productivity:
     type: wiki
