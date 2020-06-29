@@ -363,6 +363,7 @@ regenerate: true
 * [[mv-cmd]]
 * [[my-bash-cheatsheet]]
 * [[openssl]]
+* [[perl-one-liner]]
 * [[phpbrew]]
 * [[pwgen-cmd]]
 * [[rans-cmd]]

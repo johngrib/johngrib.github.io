@@ -252,6 +252,7 @@ bash:
     - {fileName: mv-cmd}
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
+    - {fileName: perl-one-liner}
     - {fileName: pwgen-cmd}
     - {fileName: random-lunch}
     - {fileName: rig-cmd}
@@ -308,6 +309,7 @@ command:
     - {fileName: make-cmd}
     - {fileName: mv-cmd}
     - {fileName: openssl}
+    - {fileName: perl-one-liner}
     - {fileName: phpbrew}
     - {fileName: pwgen-cmd}
     - {fileName: rig-cmd}
