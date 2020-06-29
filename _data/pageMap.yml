@@ -3084,7 +3084,7 @@ regex:
     summary: '작성중인 문서'
     parent: index
     url: /wiki/regex
-    updated: '2020-06-16 23:33:15 +0900'
+    updated: '2020-06-29 23:26:32 +0900'
     children: []
 regex-prime:
     type: wiki
