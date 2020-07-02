@@ -778,6 +778,7 @@ oop:
     - {fileName: OOP-to-me-Alan-Kay}
     - {fileName: SOLID}
     - {fileName: summary-Data-Abstraction-and-Hierarchy}
+    - {fileName: uml}
 James-Gosling:
     - {fileName: James-Gosling-super-programmer}
 programming:

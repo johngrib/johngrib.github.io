@@ -570,6 +570,7 @@ regenerate: true
 * [[locking]]
 * [[mac-tex]]
 * [[oop-quotes]]
+* [[regex]]
 * [[responsibility-driven-design]]
 * [[restdoc-item-generator]]
 * [[semantic-versioning]]
@@ -577,8 +578,8 @@ regenerate: true
 * [[three-dots-in-menu]]
 * [[timeline]]
 * [[two-type-error]]
+* [[uml]]
 * [[vimium]]
-* [[regex]]
 
 ---
 
