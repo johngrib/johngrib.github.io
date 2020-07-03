@@ -1948,7 +1948,7 @@ hhkb-jp-tmk:
     summary: '해피해킹을 더욱 해피하게'
     parent: my-lifehack
     url: /wiki/hhkb-jp-tmk
-    updated: '2020-04-12 17:48:21 +0900'
+    updated: '2020-07-03 23:48:31 +0900'
     children: []
 hollywood-principle:
     type: wiki

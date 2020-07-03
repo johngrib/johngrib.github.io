@@ -3,7 +3,7 @@ layout  : wiki
 title   : HHKB jp 컨트롤 보드를 tmk로 교체해 보았다.
 summary : 해피해킹을 더욱 해피하게
 date    : 2017-05-14 15:50:31 +0900
-updated : 2020-04-12 17:48:21 +0900
+updated : 2020-07-03 23:48:31 +0900
 tag     : keyboard
 toc     : true
 comment : true
@@ -118,9 +118,15 @@ ISO 배열이라는 문제점이 있긴 하지만 어차피 다 바꿀 수 있�
 잘 기억은 안 나지만 한 시간 조금 넘게 걸렸던 것 같다.
 
 ```sh
-$ brew tap osx-cross/avr
-$ brew install avr-libc
-$ brew install dfu-programmer
+brew tap osx-cross/avr
+brew install avr-libc
+brew install dfu-programmer
+```
+
+만약 `avr-libc` 설치가 안된다면 `avr-gcc`를 대신 설치한다.
+
+```sh
+brew install avr-gcc
 ```
 
 그리고 다음과 같은 방법으로 키 배열을 변경할 수 있다.
