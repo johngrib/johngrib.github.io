@@ -3,7 +3,7 @@ layout  : wiki
 title   : UML
 summary : Unified Modeling Language
 date    : 2020-07-02 23:23:45 +0900
-updated : 2020-07-04 22:07:50 +0900
+updated : 2020-07-04 22:13:45 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -30,6 +30,9 @@ static class TreeMapNode {
   private TreeMapNode[] nodes  = new TreeMapNode[2];
   private Comparable itsKey;
   private Object itsValue;
+
+  public void add(Comparable key, Object value) { /* ... */  }
+  public Object find(Comparable key) { /* ... */  }
 }
 ```
 
