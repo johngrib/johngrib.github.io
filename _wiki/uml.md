@@ -3,7 +3,7 @@ layout  : wiki
 title   : UML
 summary : Unified Modeling Language
 date    : 2020-07-02 23:23:45 +0900
-updated : 2020-07-02 23:32:22 +0900
+updated : 2020-07-04 22:07:50 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -12,6 +12,31 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## Examples
+
+다음은 "UML, 실전에서는 이것만 쓴다!"에 나오는 코드와 UML을 참고하여 일부 수정한 것이다.[^bob-c1]
+
+```java
+public class TreeMap implements Map {
+  public void add(Comparable key, Object value) { /* ... */  }
+  public Object get(Comparable key) { /* ... */ }
+  private void walk() { /* ... */ }
+
+  private TreeMapNode topNode;
+}
+
+static class TreeMapNode {
+  private TreeMapNode[] nodes  = new TreeMapNode[2];
+  private Comparable itsKey;
+  private Object itsValue;
+}
+```
+
+![]( /post-img/uml/uml-01.svg )
+
+- `+`: `public` 메소드
+- `-`: `private` 메소드
 
 ## UML에 대한 조언 모음
 
@@ -34,5 +59,6 @@ latex   : false
 
 ## 주석
 
+[^bob-c1]: UML, 실전에서는 이것만 쓴다. 1장.
 [^bob-c2]: UML, 실전에서는 이것만 쓴다. 2장.
 
