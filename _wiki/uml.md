@@ -3,7 +3,7 @@ layout  : wiki
 title   : UML
 summary : Unified Modeling Language
 date    : 2020-07-02 23:23:45 +0900
-updated : 2020-07-04 22:33:35 +0900
+updated : 2020-07-04 22:38:25 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+> 대부분의 경우, UML을 너무 적게 사용하는 편이 너무 많이 사용하는 것보다 낫다.[^bob-c3]
 
 ## Examples
 
