@@ -1028,7 +1028,7 @@ dev-schedule-quotes:
     summary: ""
     parent: software-engineering
     url: /wiki/dev-schedule-quotes
-    updated: '2019-12-16 08:13:57 +0900'
+    updated: '2020-07-05 12:19:36 +0900'
     children: []
 devops:
     type: wiki
