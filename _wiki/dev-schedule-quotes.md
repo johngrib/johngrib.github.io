@@ -3,7 +3,7 @@ layout  : wiki
 title   : 일정 관련 인용문 모음
 summary : 
 date    : 2019-12-16 08:05:47 +0900
-updated : 2020-07-05 12:19:36 +0900
+updated : 2020-07-05 12:21:59 +0900
 tag     : 
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 인용: 초난감 기업의 조건
+## 코드를 새로 짜기보다 기존 코드를 활용하자
 
 - 조엘 스폴스키 인터뷰 중에서
 
