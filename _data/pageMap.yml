@@ -2908,7 +2908,7 @@ perl-one-liner:
     summary: ""
     parent: command-line
     url: /wiki/perl-one-liner
-    updated: '2020-06-29 23:36:34 +0900'
+    updated: '2020-07-08 22:48:39 +0900'
     children: []
 persona:
     type: wiki
