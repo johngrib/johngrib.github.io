@@ -3,7 +3,7 @@ layout  : wiki
 title   : Perl 한 줄 사용
 summary : 
 date    : 2020-06-29 23:33:40 +0900
-updated : 2020-07-08 22:48:39 +0900
+updated : 2020-07-08 23:07:32 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -43,13 +43,13 @@ find . -name '*.java' \
 
 ```sh
 find . -name '*.java' \
-  | xargs perl -i -pe 'BEGIN{undef $/;} s,/\s*\*.*License.*?\*/\s*(package),$1,smg'
+  | xargs perl -i -pe 'BEGIN{undef $/;} s,/\*.*License.*?\*/\s*(package),$1,smg'
 ```
 
 다음과 같이 해도 된다.
 
 ```sh
 find . -name '*.java' \
-  | xargs perl -i -pe 'BEGIN{undef $/;} s,/\s*\*.*License.*?\*/\s*(?=package),,smg'
+  | xargs perl -i -pe 'BEGIN{undef $/;} s,/\*.*License.*?\*/\s*(?=package),,smg'
 ```
 
