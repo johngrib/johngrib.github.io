@@ -515,8 +515,10 @@ regenerate: true
 
 
 ## [[summary]]
+
 * [[REST-paper-summary]]
 * [[summary-Data-Abstraction-and-Hierarchy]]
+* [[summary-the-mind-behind-linux]]
 * [[summary-The-Pauseless-GC-Algorithm]]
 
 ## [[software-engineering]]
