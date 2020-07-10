@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) The mind behind Linux | Linus Torvalds
 summary : 나는 엔지니어입니다
 date    : 2020-07-09 21:41:30 +0900
-updated : 2020-07-10 22:24:11 +0900
+updated : 2020-07-10 22:25:39 +0900
 tag     : 
 toc     : true
 public  : true
@@ -68,7 +68,7 @@ latex   : false
 
 CVS
 
-- CVS가 너무 싫어해서 CVS를 쓰기 싫어했다.
+- CVS가 너무 싫어서 CVS를 쓰기 싫었다.
 - 그래서 급진적이고 흥미있는 작업을 해서 git을 만들었다.
 
 git
