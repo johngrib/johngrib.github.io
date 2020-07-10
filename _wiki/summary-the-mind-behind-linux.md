@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) The mind behind Linux | Linus Torvalds
 summary : 나는 엔지니어입니다
 date    : 2020-07-09 21:41:30 +0900
-updated : 2020-07-09 22:45:54 +0900
+updated : 2020-07-10 22:24:11 +0900
 tag     : 
 toc     : true
 public  : true
@@ -22,7 +22,7 @@ latex   : false
 
 ## 리누스 토발즈가 일하는 방식
 
-일할 대 외부 자극을 받지 않기를 원한다.
+일할 때 외부 자극을 받지 않기를 원한다.
 - 벽지: 요양원 벽지 같은 차분한 색.
 - 컴퓨터: 완벽하게 소음이 없어야 한다.
     - 강력하고 빠른 컴퓨터보다 조용한 컴퓨터가 좋다.
