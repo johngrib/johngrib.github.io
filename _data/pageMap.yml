@@ -2833,10 +2833,10 @@ oop-quotes:
 OOP-to-me-Alan-Kay:
     type: wiki
     title: '앨런 케이의 심플한 OOP 정의'
-    summary: ""
+    summary: null
     parent: proverb
     url: /wiki/OOP-to-me-Alan-Kay
-    updated: '2019-10-17 23:02:44 +0900'
+    updated: '2020-07-10 21:31:29 +0900'
     children: []
 openssl:
     type: wiki
