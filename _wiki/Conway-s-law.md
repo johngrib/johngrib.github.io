@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2020-03-19 20:16:05 +0900
+updated : 2020-07-11 20:43:29 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -34,9 +34,9 @@ latex   : false
 
 결론 부분만 인용하고 간단하게 번역해 보았다.
 
-> Conclusion  
-<br/>
-The basic thesis of this article is that organizations which design systems (in the broad sense used here) are constrained to produce designs which are copies of the communication structures of these organizations. We have seen that this fact has important implications for the management of system design. Primarily, we have found a criterion for the structuring of design organizations: a design effort should be organized according to the need for communication.  
+> Conclusion
+>
+> The basic thesis of this article is that organizations which design systems (in the broad sense used here) are constrained to produce designs which are copies of the communication structures of these organizations. We have seen that this fact has important implications for the management of system design. Primarily, we have found a criterion for the structuring of design organizations: a design effort should be organized according to the need for communication.  
 This criterion creates problems because the need to communicate at any time depends on the system concept in effect at that time.
 Because the design which occurs first is almost never the best possible, the prevailing system concept may need to change.
 Therefore, flexibility of organization is important to effective design.  
@@ -61,8 +61,8 @@ The development of such a philosophy promises to unearth basic questions about v
 ### 데브옵스 핸드북에서 말하는 콘웨이의 법칙
 
 > 결국, 팀을 구성하는 방법은 업무 수행 방식에 영향을 미친다. 1968년, 멜빈 콘웨이 박사는 코볼과 ALGOL 컴파일러를 제작하는 연구팀 여덟 명과 함께 유명한 실험을 수행했다. 콘웨이 박사는 다음과 같이 말했다.
-<br/><br/>
-"처음에 난이도와 시간을 추정한 후, 다섯 명이 코볼 작업에 그리고 세 명이 ALGOL 작업에 배정됐다. 그 결과, 코볼 컴파일러는 5단계, ALGOL 컴파일러는 3단계로 실행됐다."
+>
+> "처음에 난이도와 시간을 추정한 후, 다섯 명이 코볼 작업에 그리고 세 명이 ALGOL 작업에 배정됐다. 그 결과, 코볼 컴파일러는 5단계, ALGOL 컴파일러는 3단계로 실행됐다."
 [^devops-handbook-123]
 
 ### The Jargon File에 수록된 콘웨이의 법칙
@@ -145,17 +145,17 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 
 >
 역콘웨이의 법칙이라 불리는 콘웨이 법칙의 역('회사 제품의 아키텍처가 회사의 조직 구조를 결정한다')도 유효한데 이는 특히 마이크로서비스 생태계에 의의가 있다. 콘웨이의 법칙이 처음 소개된 지 40년이 지난 지금, 콘웨이의 법칙과 역콘웨이의 법칙 둘 다 여전히 유효하다. 마이크로소프트 사의 조직 구조를 시스템 아키텍처처럼 스케치하면 마이크로소프트 사의 제품 아키텍처와 매우 비슷하다. 구글, 아마존 등 다른 대형 기술 회사도 마찬가지다. 마이크로서비스 아키텍처를 도입한 회사도 이러한 규칙을 예외 없이 적용할 수 있다.
-<br><br>
-마이크로서비스 아키텍처는 독립적으로 격리된 작은 마이크로서비스로 구성된다.
+>
+> 마이크로서비스 아키텍처는 독립적으로 격리된 작은 마이크로서비스로 구성된다.
 역콘웨이의 법칙에서 마이크로서비스 아키텍처를 사용한 회사는 조직 구조를 매우 작고 격리된 독립적인 팀으로 구성할 것을 요구한다. 이로부터 발생하는 팀 구조는 필연적으로 사일로 현상과 스프롤 현상을 야기한다. 마이크로서비스 생태계가 좀 더 정교하고 복잡해지고 동시적이고 효율적일 때마다 문제는 악화된다.
-<br><br>
-역콘웨이의 법칙은 어떤 점에서는 개발자도 마이크로서비스와 같을 것이라는 것을 의미한다. 개발자는 한 가지 업무를 하며 그 한 가지 업무를 매우 잘 수행할 것이다. 개발자는 특정 분야의 지식과 경험, 책임 면에서 마이크로서비스 생태계의 나머지 부분과 격리된다. 총체적으로 보면 마이크로서비스 생태계의 모든 개발자는 업무에서 경험하는 마이크로서비스 생태계의 모든 것을 안다. 반면, 개개의 개발자는 매우 전문화됐기 때문에 담당하고 있는 마이크로서비스 생태계의 업무에 대해서만 안다.
-<br><br>
-이로부터 야기되는 조직적인 문제는 피할 수 없다. 팀이 격리되고 단절된 채로 마이크로서비스를 개발해야 하더라도 마이크로서비스는 서로 고립되지 않으며 이왕 제품이 전체적으로 작동하려면 마이크로서비스 간 소통이 원활해야 한다. 따라서 팀은 격리되고 독립적으로 기능하면서도 서로 긴밀히 협력해야 한다. 팀의 목적과 핵심 결과 지표를 성문화한 대부분의 팀 목표와 계획이 해당 팀이 담당하는 마이크로서비스에만 특정한다는 점을 고려해보면 마이크로서비스 간의 원활한 소통은 다소 힘들 수 있다.
-<br><br>
-(중략)
-<br><br>
-역콘웨이의 법칙 때문에 발생하는 관련 문제는 더 있다. 모놀리식 아키텍처를 사용하는 회사에서 거의 발견되지 않는 운영 조직에 대한 운영의 어려움이다. 모놀리스에서는 애플리케이션을 위해 운영 인력의 배치와 비상 대기 업무 지원이 용이하지만 마이크로서비스 아키텍처에서는 잘 해내기가 매우 어렵다. 왜냐하면 마이크로서비스마다 개발 팀과 운영 팀 둘 다 배치해야 하기 때문이다. 결과적으로 마이크로서비스 개발 팀은 운영 업무와 마이크로서비스에 연관된 작업을 담당해야 한다. 비상 대기 업무와 모니터링 업무를 맡을 별도의 운영 조직이 없다. 즉, 개발자는 자신의 서비스에 대해 비상 대기해야 한다.
+>
+> 역콘웨이의 법칙은 어떤 점에서는 개발자도 마이크로서비스와 같을 것이라는 것을 의미한다. 개발자는 한 가지 업무를 하며 그 한 가지 업무를 매우 잘 수행할 것이다. 개발자는 특정 분야의 지식과 경험, 책임 면에서 마이크로서비스 생태계의 나머지 부분과 격리된다. 총체적으로 보면 마이크로서비스 생태계의 모든 개발자는 업무에서 경험하는 마이크로서비스 생태계의 모든 것을 안다. 반면, 개개의 개발자는 매우 전문화됐기 때문에 담당하고 있는 마이크로서비스 생태계의 업무에 대해서만 안다.
+>
+> 이로부터 야기되는 조직적인 문제는 피할 수 없다. 팀이 격리되고 단절된 채로 마이크로서비스를 개발해야 하더라도 마이크로서비스는 서로 고립되지 않으며 이왕 제품이 전체적으로 작동하려면 마이크로서비스 간 소통이 원활해야 한다. 따라서 팀은 격리되고 독립적으로 기능하면서도 서로 긴밀히 협력해야 한다. 팀의 목적과 핵심 결과 지표를 성문화한 대부분의 팀 목표와 계획이 해당 팀이 담당하는 마이크로서비스에만 특정한다는 점을 고려해보면 마이크로서비스 간의 원활한 소통은 다소 힘들 수 있다.
+>
+> (중략)
+>
+> 역콘웨이의 법칙 때문에 발생하는 관련 문제는 더 있다. 모놀리식 아키텍처를 사용하는 회사에서 거의 발견되지 않는 운영 조직에 대한 운영의 어려움이다. 모놀리스에서는 애플리케이션을 위해 운영 인력의 배치와 비상 대기 업무 지원이 용이하지만 마이크로서비스 아키텍처에서는 잘 해내기가 매우 어렵다. 왜냐하면 마이크로서비스마다 개발 팀과 운영 팀 둘 다 배치해야 하기 때문이다. 결과적으로 마이크로서비스 개발 팀은 운영 업무와 마이크로서비스에 연관된 작업을 담당해야 한다. 비상 대기 업무와 모니터링 업무를 맡을 별도의 운영 조직이 없다. 즉, 개발자는 자신의 서비스에 대해 비상 대기해야 한다.
 
 
 ## Links
