@@ -526,6 +526,7 @@ regenerate: true
 * [[20-percent-project]]
 * [[agile]]
 * [[andon-cord]]
+* [[continuous-delivery]]
 * [[Continuous-Integration]]
 * [[dev-schedule-quotes]]
 * [[devops]]
