@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2020-07-11 20:43:29 +0900
+updated : 2020-07-11 20:49:45 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -139,6 +139,20 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 
 ## 역콘웨이의 법칙
 
+### 크리스 리처드슨
+
+크리스 리처드슨(Chris Richardson)은 마이크로서비스 패턴(Microservices Patterns)에 다음과 같은 노트를 삽입했다.[^richardson-63]
+
+> 역 콘웨이 전략(reverse Conway maneuver)
+>
+> (중략)
+>
+> 즉, 애플리케이션 아키텍처는 그것을 개발하는 조직의 구조를 그대로 반영한다는 뜻입니다.
+따라서 이 법칙을 역으로 이용해서 조직의 구조가 마이크로서비스 아키텍처에 고스란히 반영되도록 설계해야 합니다.
+이렇게 하면 개발 팀과 서비스를 느슨하게 결합시킬 수 있습니다.
+
+### 수잔 파울러
+
 **Inverse Conway's Law**
 
 수잔 파울러(Susan Fowler)는 마이크로서비스 구축과 운영(Production-Ready Microservices)에서 마이크로서비스 관점에서 역콘웨이의 법칙에 대해 이야기한다.[^inverse-conway]
@@ -175,6 +189,7 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 * 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
 * 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
 * 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+* 마이크로서비스 패턴 / 크리스 리처드슨 저/이일웅 역 / 길벗 / 초판발행 2020년 01월 30일
 
 
 ## 각주
@@ -186,4 +201,5 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 [^inverse-conway]: 마이크로서비스 구축과 운영 1장 마이크로서비스. 51쪽.
 [^devops-handbook-123]: 데브옵스 핸드북. 123쪽.
 [^newman-264]: 마이크로서비스 아키텍처 구축. 10장. 264쪽.
+[^richardson-63]: 마이크로서비스 패턴. 1.7장.
 
