@@ -840,11 +840,11 @@ config-ideavim:
     children: []
 continuous-delivery:
     type: wiki
-    title: '지속적 전달 (Continuous Delivery)'
+    title: 'Continuous Delivery (지속적 전달)'
     summary: ""
     parent: software-engineering
     url: /wiki/continuous-delivery
-    updated: '2020-07-11 21:00:35 +0900'
+    updated: '2020-07-11 21:01:26 +0900'
     children: []
 Continuous-Integration:
     type: wiki

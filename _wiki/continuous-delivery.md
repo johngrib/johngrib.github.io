@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 지속적 전달 (Continuous Delivery)
+title   : Continuous Delivery (지속적 전달)
 summary : 
 date    : 2020-07-11 20:52:44 +0900
-updated : 2020-07-11 21:00:35 +0900
+updated : 2020-07-11 21:01:26 +0900
 tag     : 
 toc     : true
 public  : true
