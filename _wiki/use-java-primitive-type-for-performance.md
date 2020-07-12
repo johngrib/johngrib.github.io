@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Autoboxing 자동 변환 주의점
 summary : Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다
 date    : 2018-03-04 13:47:40 +0900
-updated : 2020-03-08 18:39:46 +0900
+updated : 2020-07-12 19:49:07 +0900
 tag     : java tip performance
 toc     : true
 public  : true
@@ -62,7 +62,7 @@ public class LongObjectConstructionTest {
 | objectLongTest          | 6,905 ms      | 7,007 ms    | 6,918 ms    |
 | primitiveTest           | 704 ms        | 710 ms      | 708 ms      |
 
-* Long에 long을 더할 떄 새로운 Long 객체가 생성되기 때문에 속도 차이가 발생한다.
+* Long에 long을 더할 때 새로운 Long 객체가 생성되기 때문에 속도 차이가 발생한다.
 * Integer와 int도 마찬가지.
 
 ## 레퍼런스 문서도 찾아보자
