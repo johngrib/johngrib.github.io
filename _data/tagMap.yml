@@ -873,6 +873,8 @@ review:
 rfc:
     - {fileName: RFC}
     - {fileName: why-http-80-https-443}
+rest:
+    - {fileName: richardson-maturity-model}
 github:
     - {fileName: rouge-supported-languages}
 sf:

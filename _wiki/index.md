@@ -246,6 +246,7 @@ regenerate: true
 * [[oregon-swing]]
 * [[Postel-s-law]]
 * [[power-distance-index]]
+* [[richardson-maturity-model]]
 * [[Schopenhauer-s-Law-Of-Entropy]]{쇼펜하우어의 엔트로피 법칙}
 * [[SOLID]]
 * [[Tompson-s-rule-for-first-time-telescope-makers]]

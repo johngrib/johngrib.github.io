@@ -3053,7 +3053,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
-    children: [ACID, airplain-rule, amdahl-s-law, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hollywood-principle, imitation-game, kees-koster-good-programming-language, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+    children: [ACID, airplain-rule, amdahl-s-law, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hollywood-principle, imitation-game, kees-koster-good-programming-language, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, richardson-maturity-model, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
 purpose-of-business:
     type: wiki
     title: '비즈니스의 목적'
@@ -3189,6 +3189,14 @@ RFC:
     parent: what
     url: /wiki/RFC
     updated: '2020-03-14 18:37:48 +0900'
+    children: []
+richardson-maturity-model:
+    type: wiki
+    title: '리처드슨의 REST 성숙도 모델 (Richardson Maturity Model)'
+    summary: 'REST 성숙도를 4단계로 표현한다'
+    parent: proverb
+    url: /wiki/richardson-maturity-model
+    updated: '2020-07-12 20:31:49 +0900'
     children: []
 rig-cmd:
     type: wiki
