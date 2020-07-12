@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Autoboxing 자동 변환 주의점
 summary : Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다
 date    : 2018-03-04 13:47:40 +0900
-updated : 2020-07-12 19:49:07 +0900
+updated : 2020-07-12 19:51:01 +0900
 tag     : java tip performance
 toc     : true
 public  : true
@@ -22,35 +22,35 @@ import org.junit.Test;
 
 public class LongObjectConstructionTest {
 
-    @Test
-    public void objectLongIntegerTest() {
+  @Test
+  public void objectLongIntegerTest() {
 
-        // 결과값에 Long, 루프 카운터에 Integer 사용
-        Long result = 0L;
-        for (Integer i = 0; i < Integer.MAX_VALUE; i++) {
-            result += i * 2;
-        }
+    // 결과값에 Long, 루프 카운터에 Integer 사용
+    Long result = 0L;
+    for (Integer i = 0; i < Integer.MAX_VALUE; i++) {
+      result += i * 2;
     }
+  }
 
-    @Test
-    public void objectLongTest() {
+  @Test
+  public void objectLongTest() {
 
-        // 결과값에 Long 사용, 루프 카운터에 primitive int 사용
-        Long result = 0L;
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            result += i * 2;
-        }
+    // 결과값에 Long 사용, 루프 카운터에 primitive int 사용
+    Long result = 0L;
+    for (int i = 0; i < Integer.MAX_VALUE; i++) {
+      result += i * 2;
     }
+  }
 
-    @Test
-    public void primitiveTest() {
+  @Test
+  public void primitiveTest() {
 
-        // 둘 다 primitive long, int 사용
-        long result = 0L;
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            result += i * 2;
-        }
+    // 둘 다 primitive long, int 사용
+    long result = 0L;
+    for (int i = 0; i < Integer.MAX_VALUE; i++) {
+      result += i * 2;
     }
+  }
 }
 ```
 
@@ -69,26 +69,28 @@ public class LongObjectConstructionTest {
 
 Java Documentation에서 [Autoboxing](https://docs.oracle.com/javase/8/docs/technotes/guides/language/autoboxing.html )을 찾아보니 다음과 같은 예제 코드가 있었다.
 
+(임의로 4 space를 2 space로 치환했다.)
+
 ```java
 // List adapter for primitive int array
 public static List<Integer> asList(final int[] a) {
-    return new AbstractList<Integer>() {
+  return new AbstractList<Integer>() {
 
-        public Integer get(int i) {
-            return a[i];
-        }
+    public Integer get(int i) {
+      return a[i];
+    }
 
-        // Throws NullPointerException if val == null
-        public Integer set(int i, Integer val) {
-            Integer oldVal = a[i];  // Boxing 발생
-            a[i] = val;             // UnBoxing 발생
-            return oldVal;
-        }
+    // Throws NullPointerException if val == null
+    public Integer set(int i, Integer val) {
+      Integer oldVal = a[i];  // Boxing 발생
+      a[i] = val;             // UnBoxing 발생
+      return oldVal;
+    }
 
-        public int size() {
-            return a.length;
-        }
-    };
+    public int size() {
+      return a.length;
+    }
+  };
 }
 ```
 
