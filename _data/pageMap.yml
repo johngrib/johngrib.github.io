@@ -2436,7 +2436,7 @@ latency:
     summary: '요청이 처리되길 기다리는 시간'
     parent: what
     url: /wiki/latency
-    updated: '2019-12-29 23:00:41 +0900'
+    updated: '2020-07-12 23:52:53 +0900'
     children: []
 law-of-demeter:
     type: wiki
