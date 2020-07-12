@@ -3557,7 +3557,7 @@ summary:
     parent: index
     url: /wiki/summary
     updated: '2019-10-15 17:52:45 +0900'
-    children: [REST-paper-summary, summary-Data-Abstraction-and-Hierarchy, summary-the-mind-behind-linux, summary-The-Pauseless-GC-Algorithm]
+    children: [REST-paper-summary, summary-Data-Abstraction-and-Hierarchy, summary-inside-the-mind-of-a-master-procrastinator-tim-urban, summary-the-mind-behind-linux, summary-The-Pauseless-GC-Algorithm]
 summary-Data-Abstraction-and-Hierarchy:
     type: wiki
     title: '(요약) Data Abstraction and Hierarchy by Barbara Liskov 1988'
@@ -3565,6 +3565,14 @@ summary-Data-Abstraction-and-Hierarchy:
     parent: summary
     url: /wiki/summary-Data-Abstraction-and-Hierarchy
     updated: '2019-11-05 22:17:00 +0900'
+    children: []
+summary-inside-the-mind-of-a-master-procrastinator-tim-urban:
+    type: wiki
+    title: '(요약) 할 일을 미루는 사람의 심리'
+    summary: ""
+    parent: summary
+    url: /wiki/summary-inside-the-mind-of-a-master-procrastinator-tim-urban
+    updated: '2020-07-12 14:10:23 +0900'
     children: []
 summary-the-mind-behind-linux:
     type: wiki

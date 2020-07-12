@@ -518,6 +518,7 @@ regenerate: true
 
 * [[REST-paper-summary]]
 * [[summary-Data-Abstraction-and-Hierarchy]]
+* [[summary-inside-the-mind-of-a-master-procrastinator-tim-urban]]
 * [[summary-the-mind-behind-linux]]
 * [[summary-The-Pauseless-GC-Algorithm]]
 
