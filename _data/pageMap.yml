@@ -982,6 +982,14 @@ date-cmd:
     url: /wiki/date-cmd
     updated: '2020-03-10 23:04:37 +0900'
     children: []
+ddd-quotes:
+    type: wiki
+    title: 'DDD 관련 인용문 모음'
+    summary: ""
+    parent: software-engineering
+    url: /wiki/ddd-quotes
+    updated: '2020-07-12 17:38:37 +0900'
+    children: []
 decorator-pattern:
     type: wiki
     title: '데코레이터 패턴 (Decorator Pattern)'
@@ -3381,7 +3389,7 @@ software-engineering:
     parent: index
     url: /wiki/software-engineering
     updated: '2020-01-16 20:22:50 +0900'
-    children: [20-percent-project, agile, andon-cord, continuous-delivery, Continuous-Integration, dev-schedule-quotes, devops, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-terms, two-pizza-team]
+    children: [20-percent-project, agile, andon-cord, continuous-delivery, Continuous-Integration, ddd-quotes, dev-schedule-quotes, devops, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-terms, two-pizza-team]
 Software-Engineering-Code-of-Ethics:
     type: wiki
     title: '소프트웨어 공학 윤리 강령과 업무 규범'

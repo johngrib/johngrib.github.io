@@ -529,6 +529,7 @@ regenerate: true
 * [[andon-cord]]
 * [[continuous-delivery]]
 * [[Continuous-Integration]]
+* [[ddd-quotes]]
 * [[dev-schedule-quotes]]
 * [[devops]]
 * [[kanban]]
