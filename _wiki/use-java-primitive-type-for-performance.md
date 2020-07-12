@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Autoboxing 자동 변환 주의점
 summary : Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다
 date    : 2018-03-04 13:47:40 +0900
-updated : 2020-07-12 19:52:20 +0900
+updated : 2020-07-12 19:53:10 +0900
 tag     : java tip performance
 toc     : true
 public  : true
@@ -96,12 +96,11 @@ public static List<Integer> asList(final int[] a) {
 
 그리고 다음과 같은 설명이 있었다.
 
->
-The performance of the resulting list is likely to be poor,
+> The performance of the resulting list is likely to be poor,
 as it boxes or unboxes on every get or set operation.
 It is plenty fast enough for occasional use, but it would be folly to use it in a performance critical inner loop.
-<br/><br/>
-So when should you use autoboxing and unboxing?
+>
+> So when should you use autoboxing and unboxing?
 Use them only when there is an "impedance mismatch" between reference types and primitives,
 for example, when you have to put numerical values into a collection.
 It is not appropriate to use autoboxing and unboxing for scientific computing, or other performance-sensitive numerical code.
@@ -110,12 +109,11 @@ but they do not eliminate it.
 
 간단하게 번역해 요약해보자면 다음과 같은 내용이다.
 
->
-위 코드의 퍼포먼스는 썩 좋지 않은 편입니다.
+> 위 코드의 퍼포먼스는 썩 좋지 않은 편입니다.
 모든 `get` / `set` 작업에서 박싱과 언박싱이 일어나고 있기 때문이죠.
 가끔 중요하지 않은 부분에 쓰기에는 충분한 속도이겠지만, 퍼포먼스가 중요한 루프에서 이런 방식을 쓰는 건 멍청한 일입니다.
-<br/><br/>
-그렇다면 도대체 언제 오토박싱과 언박싱을 사용해야 할까요?
+>
+> 그렇다면 도대체 언제 오토박싱과 언박싱을 사용해야 할까요?
 레퍼런스 타입과 기본 타입 사이의 "임피던스 불일치"가 있는 경우에만 사용하세요(기본 타입을 쓸 수 없는 경우에만 쓰세요).
 예를 들어 `Map`이나 `Set` 같은 Java Collection에는 기본 타입을 못 넣으니까 이런 경우에는 레퍼런스 타입을 쓰면 됩니다.
 하지만 과학 계산이나, 성능에 민감한 계산 코드에 오토박싱/언박싱을 사용하는 건 적절하지 않습니다.
