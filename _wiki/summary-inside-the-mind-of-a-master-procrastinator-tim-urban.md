@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) 할 일을 미루는 사람의 심리
 summary : 마감이 없는 일을 미루지 않도록 주의하라
 date    : 2020-07-12 12:52:37 +0900
-updated : 2020-07-12 14:18:24 +0900
+updated : 2020-07-12 18:55:07 +0900
 tag     : 
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/arj7oStGLkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe max-width="100%" height="auto" src="https://www.youtube.com/embed/arj7oStGLkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - TED2016
 - Tim Urban

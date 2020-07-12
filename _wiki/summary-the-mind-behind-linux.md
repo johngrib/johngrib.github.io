@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) The mind behind Linux | Linus Torvalds
 summary : 나는 엔지니어입니다
 date    : 2020-07-09 21:41:30 +0900
-updated : 2020-07-10 22:28:16 +0900
+updated : 2020-07-12 18:56:13 +0900
 tag     : 
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/o8NPllzkFhE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe max-width="100%" height="auto" src="https://www.youtube.com/embed/o8NPllzkFhE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - 2016-05-04
 - TED
