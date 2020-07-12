@@ -3196,7 +3196,7 @@ richardson-maturity-model:
     summary: 'REST 성숙도를 4단계로 표현한다'
     parent: proverb
     url: /wiki/richardson-maturity-model
-    updated: '2020-07-12 20:31:49 +0900'
+    updated: '2020-07-12 20:38:13 +0900'
     children: []
 rig-cmd:
     type: wiki

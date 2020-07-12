@@ -3,7 +3,7 @@ layout  : wiki
 title   : 리처드슨의 REST 성숙도 모델 (Richardson Maturity Model)
 summary : REST 성숙도를 4단계로 표현한다
 date    : 2020-07-12 20:24:29 +0900
-updated : 2020-07-12 20:31:49 +0900
+updated : 2020-07-12 20:38:13 +0900
 tag     : rest
 toc     : true
 public  : true
@@ -23,9 +23,10 @@ latex   : false
 > - 레벨 3: 서비스를 HATEOAS(Hypertext As The Engine Of Application State, 애플리케이션 상태 엔진으로서의 하이퍼미디어) 원칙에 기반하여 설계합니다. HATEOAS는 GET 요청으로 반환된 리소스 표현형에 그 리소스에 대한 액션의 링크도 함께 태워 보내자는 생각입니다. 가령 클라이언트는 GET 요청으로 주문 데이터를 조회하고 이때 반환된 표현형 내부 링크를 이용해서 해당 주문을 취소할 수도 있습니다. HATEOAS를 사용하면 하드 코딩한 URL을 클라이언트 코드에 욱여넣지 않아도 됩니다.[^ric-114]
 
 
-## Links
+## 함께 읽기
 
 - [Richardson Maturity Model (Martin Fowler)][fowler-model]
+- [[REST-paper-summary]]{(요약) Architectural Styles and the Design of Network-based Software Architectures by Roy Thomas Fielding, 2000} - 로이 필딩의 REST 논문 요약
 
 ## 참고문헌
 
