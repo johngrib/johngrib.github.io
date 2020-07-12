@@ -3908,7 +3908,7 @@ use-java-primitive-type-for-performance:
     summary: 'Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다'
     parent: Java
     url: /wiki/use-java-primitive-type-for-performance
-    updated: '2020-07-12 19:51:01 +0900'
+    updated: '2020-07-12 19:52:20 +0900'
     children: []
 useful-site:
     type: wiki

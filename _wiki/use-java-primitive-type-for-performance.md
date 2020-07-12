@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Autoboxing 자동 변환 주의점
 summary : Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다
 date    : 2018-03-04 13:47:40 +0900
-updated : 2020-07-12 19:51:01 +0900
+updated : 2020-07-12 19:52:20 +0900
 tag     : java tip performance
 toc     : true
 public  : true
@@ -62,8 +62,8 @@ public class LongObjectConstructionTest {
 | objectLongTest          | 6,905 ms      | 7,007 ms    | 6,918 ms    |
 | primitiveTest           | 704 ms        | 710 ms      | 708 ms      |
 
-* Long에 long을 더할 때 새로운 Long 객체가 생성되기 때문에 속도 차이가 발생한다.
-* Integer와 int도 마찬가지.
+* `Long`에 `long`을 더할 때 새로운 `Long` 객체가 생성되기 때문에 속도 차이가 발생한다.
+* `Integer`와 `int`도 마찬가지.
 
 ## 레퍼런스 문서도 찾아보자
 
@@ -112,14 +112,14 @@ but they do not eliminate it.
 
 >
 위 코드의 퍼포먼스는 썩 좋지 않은 편입니다.
-모든 get / set 작업에서 박싱과 언박싱이 일어나고 있기 때문이죠.
+모든 `get` / `set` 작업에서 박싱과 언박싱이 일어나고 있기 때문이죠.
 가끔 중요하지 않은 부분에 쓰기에는 충분한 속도이겠지만, 퍼포먼스가 중요한 루프에서 이런 방식을 쓰는 건 멍청한 일입니다.
 <br/><br/>
 그렇다면 도대체 언제 오토박싱과 언박싱을 사용해야 할까요?
 레퍼런스 타입과 기본 타입 사이의 "임피던스 불일치"가 있는 경우에만 사용하세요(기본 타입을 쓸 수 없는 경우에만 쓰세요).
-예를 들어 Map이나 Set 같은 Java Collection에는 기본 타입을 못 넣으니까 이런 경우에는 레퍼런스 타입을 쓰면 됩니다.
+예를 들어 `Map`이나 `Set` 같은 Java Collection에는 기본 타입을 못 넣으니까 이런 경우에는 레퍼런스 타입을 쓰면 됩니다.
 하지만 과학 계산이나, 성능에 민감한 계산 코드에 오토박싱/언박싱을 사용하는 건 적절하지 않습니다.
-Integer는 int를 완벽히 대체할 수 없습니다. 오토박싱과 언박싱은 기본 타입과 레퍼런스 타입 사이의 구분을 흐릿하게 만들어주지만,
+`Integer`는 `int`를 완벽히 대체할 수 없습니다. 오토박싱과 언박싱은 기본 타입과 레퍼런스 타입 사이의 구분을 흐릿하게 만들어주지만,
 그 차이를 완벽히 없애는 것은 아닙니다.
 
 
