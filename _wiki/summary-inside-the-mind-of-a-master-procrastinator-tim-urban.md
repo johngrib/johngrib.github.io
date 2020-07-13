@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) 할 일을 미루는 사람의 심리
 summary : 마감이 없는 일을 미루지 않도록 주의하라
 date    : 2020-07-12 12:52:37 +0900
-updated : 2020-07-12 18:55:07 +0900
+updated : 2020-07-13 21:50:33 +0900
 tag     : 
 toc     : true
 public  : true
@@ -129,4 +129,8 @@ latex   : false
 2. 그러면 최악의 일주일은 `0`이 되고, 최고의 일주일은 `7`이 된다.
 3. 매주 일요일 밤에 숫자에 맞는 색을 칠한다. `0`은 회색, `7`은 녹색.
     - github contribution 그래프처럼 색칠하면 된다.
+
+이 달력의 샘플은 다음 링크에 공개해두었다. 사본으로 만들어 쓰면 된다.
+
+[SAMPLE LIFE CALENDAR]( https://docs.google.com/spreadsheets/d/1gnuLwh4HhK-zZTyBSVvL-zZxEh6Fs47h1238RIYN3fQ )
 
