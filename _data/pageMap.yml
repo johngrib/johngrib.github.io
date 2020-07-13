@@ -3596,7 +3596,7 @@ summary-ldh-get-partnership:
     summary: '파트너쉽에 대해 생각해 볼 수 있는 영상'
     parent: summary
     url: /wiki/summary-ldh-get-partnership
-    updated: '2020-07-13 22:29:21 +0900'
+    updated: '2020-07-13 22:35:10 +0900'
     children: []
 summary-the-mind-behind-linux:
     type: wiki

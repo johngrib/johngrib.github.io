@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) 이동훈님 세바시 강연
 summary : 파트너쉽에 대해 생각해 볼 수 있는 영상
 date    : 2020-07-13 22:00:32 +0900
-updated : 2020-07-13 22:29:21 +0900
+updated : 2020-07-13 22:35:10 +0900
 tag     : 
 toc     : true
 public  : true
@@ -17,6 +17,8 @@ latex   : false
 <iframe max-width="100%" height="auto" src="https://www.youtube.com/embed/E2oxSXafOf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 감상
+
+"적은 돈으로 재산을 모으는 가장 좋은 방법"이라는 제목이길래 주식 장기 투자 같은 걸 권유하는 영상이겠지? 하다가 실수로 클릭했는데 내용이 아주 좋았다. 사람들과 신뢰 관계를 만들고, 파트너쉽을 구축하고, 함께 학습하는 공동체를 만드는 것에 대한 이야기였다.
 
 - 항상 혼자 돈 모으는 것만 생각하고 있었는데, 동업이 굉장히 좋은 방법이 될 수 있다는 것을 알게 됐다.
 - 꼭 사업이 아니라 하더라도, 평생 신뢰할 수 있는 사람들과 유익한 관계를 쌓아가는 방법에 대한 팁으로도 좋은 강연이라 생각한다.
