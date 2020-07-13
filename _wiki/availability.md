@@ -3,7 +3,7 @@ layout  : wiki
 title   : 가용성(Availability)
 summary : 시스템이 다운되지 않고 정상 운영되는 시간의 비율
 date    : 2019-09-20 09:10:51 +0900
-updated : 2019-10-18 11:13:30 +0900
+updated : 2020-07-13 23:23:54 +0900
 tag     : 
 toc     : true
 public  : true
@@ -111,6 +111,17 @@ $$\text{가용성} = { \text{성공한 요청 수} \over \text{전체 요청 수
 | 99.99%  | [52.56 min][4y] | [4.38 min][4m]  | [60.48 sec][4w] | [8.64 sec][4d]  | [0.36 sec][4h]  |
 | 99.999% | [5.256 min][5y] | [26.28 sec][5m] | [6.048 sec][5w] | [0.864 sec][5d] | [0.036 sec][5h] |
 
+## 시스템 작업의 가용성
+
+![]( /post-img/availability/three-services.jpg )
+
+> 세 서비스 모두 HTTP를 사용하기 때문에 주문 생성 요청이 정상 처리되려면 세 서비스 모두 가동 중이어야 합니다.
+어느 한 서비스라도 내려가면 주문 생성은 불가능합니다.
+수학적으로 표현하면 시스템 작업의 가용성은 그 작업이 호출한 서비스의 가용성을 모두 곱한 값과 같습니다.
+가령 주문 서비스와 이 서비스가 호출한 두 서비스의 가용성이 $$99.5%$$라면,
+전체 가용성은 $$99.5^3% = 98.5%$$로 더 낮습니다.
+더 많은 서비스가 요청 처리에 개입할수록 가용성은 더 낮아지겠죠.[^ric-3-4]
+
 ## 참고문헌
 
 * 웹
@@ -119,6 +130,7 @@ $$\text{가용성} = { \text{성공한 요청 수} \over \text{전체 요청 수
     * 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
     * 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
     * 사이트 신뢰성 엔지니어링 / 벳시 베이어, 크리스 존스, 제니퍼 펫오프, 니얼 리처드 머피 저/장현희 역 / 제이펍 / 초판 1쇄 2018년 01월 18일 / 원서 : Site Reliability Engineering: How Google Runs Production Systems
+    * [RIC] 마이크로서비스 패턴 / 크리스 리처드슨 저/이일웅 역 / 길벗 / 초판발행 2020년 01월 30일
 
 ## 주석
 
@@ -127,6 +139,7 @@ $$\text{가용성} = { \text{성공한 요청 수} \over \text{전체 요청 수
 [^sre-define]: 사이트 신뢰성 엔지니어링. 3 위험 요소 수용하기. 32쪽.
 [^sre-target-level]: 사이트 신뢰성 엔지니어링. 3 위험 요소 수용하기. 35쪽.
 [^sre-error-budget]: 사이트 신뢰성 엔지니어링. 1 소개. 10쪽.
+[^ric-3-4]: [RIC] 3.4장.
 
 [wiki]: https://en.wikipedia.org/wiki/Availability
 
