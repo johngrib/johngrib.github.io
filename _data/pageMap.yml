@@ -3573,7 +3573,7 @@ summary:
     parent: index
     url: /wiki/summary
     updated: '2019-10-15 17:52:45 +0900'
-    children: [REST-paper-summary, summary-Data-Abstraction-and-Hierarchy, summary-inside-the-mind-of-a-master-procrastinator-tim-urban, summary-the-mind-behind-linux, summary-The-Pauseless-GC-Algorithm]
+    children: [REST-paper-summary, summary-Data-Abstraction-and-Hierarchy, summary-inside-the-mind-of-a-master-procrastinator-tim-urban, summary-ldh-get-partnership, summary-the-mind-behind-linux, summary-The-Pauseless-GC-Algorithm]
 summary-Data-Abstraction-and-Hierarchy:
     type: wiki
     title: '(요약) Data Abstraction and Hierarchy by Barbara Liskov 1988'
@@ -3589,6 +3589,14 @@ summary-inside-the-mind-of-a-master-procrastinator-tim-urban:
     parent: summary
     url: /wiki/summary-inside-the-mind-of-a-master-procrastinator-tim-urban
     updated: '2020-07-13 21:50:33 +0900'
+    children: []
+summary-ldh-get-partnership:
+    type: wiki
+    title: '(요약) 이동훈님 세바시 강연'
+    summary: '파트너쉽에 대해 생각해 볼 수 있는 영상'
+    parent: summary
+    url: /wiki/summary-ldh-get-partnership
+    updated: '2020-07-13 22:29:21 +0900'
     children: []
 summary-the-mind-behind-linux:
     type: wiki
