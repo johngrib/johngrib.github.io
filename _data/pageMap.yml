@@ -324,7 +324,7 @@ average-complexity:
     summary: 'Average Case Computational Complexity'
     parent: algorithm
     url: /wiki/average-complexity
-    updated: '2020-06-06 18:02:04 +0900'
+    updated: '2020-07-14 23:46:05 +0900'
     children: []
 awk:
     type: wiki
@@ -2052,7 +2052,7 @@ insertion-sort:
     summary: '최선 O(N), 평균 O(N^2), 최악 O(N^2)'
     parent: algorithm
     url: /wiki/insertion-sort
-    updated: '2020-06-15 22:37:58 +0900'
+    updated: '2020-07-14 23:45:37 +0900'
     children: []
 integer:
     type: wiki
