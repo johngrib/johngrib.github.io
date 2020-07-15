@@ -580,6 +580,7 @@ regenerate: true
 * [[regex]]
 * [[responsibility-driven-design]]
 * [[restdoc-item-generator]]
+* [[saga]]
 * [[semantic-versioning]]
 * [[strangler-pattern]]
 * [[three-dots-in-menu]]
