@@ -3500,7 +3500,7 @@ strangler-pattern:
     summary: '레거시 시스템을 점진적으로 교체하여 레거시 시스템을 단계적으로 페이드아웃한다'
     parent: index
     url: /wiki/strangler-pattern
-    updated: '2020-01-18 09:03:27 +0900'
+    updated: '2020-07-16 23:07:57 +0900'
     children: []
 strategy-pattern:
     type: wiki
