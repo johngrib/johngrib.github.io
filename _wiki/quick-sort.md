@@ -3,7 +3,7 @@ layout  : wiki
 title   : 퀵 정렬 (Quick Sort)
 summary : 빠른정렬
 date    : 2020-07-19 14:19:21 +0900
-updated : 2020-07-19 15:31:17 +0900
+updated : 2020-07-19 17:13:26 +0900
 tag     : sort
 toc     : true
 public  : true
@@ -12,6 +12,23 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+## 개요
+
+1959년 영국의 컴퓨터 과학자 [Sir Antony Hoare](https://web.archive.org/web/20150403184558/http://www.computerhistory.org/fellowawards/hall/bios/Antony%2CHoare/ )가 고안한 정렬 알고리즘.
+
+- TAOCP
+
+> 빠른정렬을 다른 방식들과 결합한다면 빠른 평균 실행 시간뿐만 아니라 최악의 경우에서의 $$O(N \log N)$$ 규모의 정렬 시간을 절대적으로 보장할 수 있다.
+[^KNU-5-2-2]
+
+- CLRS
+
+> 퀵 정렬은 원소 수가 n개인 입력 배열을 최악의 경우 $$\Theta(n^2)$$에 정렬하는 알고리즘이다.
+퀵 정렬은 최악의 경우에는 수행시간이 느리지만 평균 수행시간이 $$\Theta(n \lg n)$$으로 매우 효율적이고
+$$\Theta(n \lg n)$$ 표현에 숨겨진 상수 인자도 매우 작다.
+또한 내부 정렬이라는 장점도 있고 가상 메모리 환경에서도 잘 동작해 일반적으로 실제 문제에서 가장 유용한 정렬 방법이다.
+[^CLRS-7]
 
 ## From: TAOCP
 
@@ -146,12 +163,14 @@ TAOCP에는 다음과 같은 분할 교환 정렬도 함께 소개된다.
 
 ## 참고문헌
 
+- [CLRS] Introduction to Algorithms 3판 / 토머스 코멘, 찰스 레이서손, 로날드 리베스트, 클리포드 스타인 공저 / 문병로, 심규석, 이충세 공역 / 한빛아카데미 / 2014년 06월 30일
 - [KNU] The art of computer programming 3 정렬과 검색(개정2판) / 도널드 커누스 저 / 한빛미디어 / 초판 2쇄 2013년 02월 10일
 - [SED] 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판발행 2018년 12월 26일
 
 ## 주석
 
+[^CLRS-7]: [CLRS] 7장.
 [^KNU-5-2-2]: [KNU] 5.2.2장.
 [^SED-2-292]: [SED] 2장. 292쪽.
-[^hoare]: 퀵 정렬을 고안한 컴퓨터 과학자.
 
+[^hoare]: 퀵 정렬을 고안한 컴퓨터 과학자.
