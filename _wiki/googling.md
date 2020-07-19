@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구글링하는 방법
 summary : 구글 및 여러 검색 서비스 사용법
 date    : 2017-12-23 18:23:50 +0900
-updated : 2020-05-22 14:09:16 +0900
+updated : 2020-07-19 18:29:23 +0900
 tag     : google twitter facebook
 toc     : true
 public  : true
@@ -52,6 +52,14 @@ latex   : false
 검색: [johngrib -site:johngrib.github.io]( https://www.google.com/search?q=johngrib+-site%3Ajohngrib.github.io )
 
 * `johngrib.github.io` 사이트를 제외하고 `johngrib`을 검색한 결과가 나온다.
+
+## Gmail
+
+```
+has:attachment larger:2MB
+```
+
+- 첨부 파일 용량이 2MB 이상인 이메일을 찾아준다.
 
 ## Twitter
 
