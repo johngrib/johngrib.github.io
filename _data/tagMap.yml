@@ -765,6 +765,7 @@ sort:
     - {fileName: insertion-sort}
     - {fileName: John-von-Neumann}
     - {fileName: merge-sort}
+    - {fileName: quick-sort}
     - {fileName: selection-sort}
     - {fileName: sort}
 spring:

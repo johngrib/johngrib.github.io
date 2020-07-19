@@ -269,7 +269,7 @@ algorithm:
     parent: index
     url: /wiki/algorithm
     updated: '2020-03-04 20:46:42 +0900'
-    children: [average-complexity, b-tree, big-O-notation, dijkstra-2-stack-for-exp-eval, egyptian-multiplication, insertion-sort, master-theorem, merge-sort, p-np, regex-prime, selection-sort, shell-sort, tilde-approximations, tower-of-hanoi, von-neumann-extractor]
+    children: [average-complexity, b-tree, big-O-notation, dijkstra-2-stack-for-exp-eval, egyptian-multiplication, insertion-sort, master-theorem, merge-sort, p-np, quick-sort, regex-prime, selection-sort, shell-sort, tilde-approximations, tower-of-hanoi, von-neumann-extractor]
 Algorithms-to-Live-By:
     type: wiki
     title: '(책) 알고리즘, 인생을 계산하다'
@@ -3085,6 +3085,14 @@ python3-simple-file-sharing:
     parent: Python3
     url: /wiki/python3-simple-file-sharing
     updated: '2019-12-22 21:11:25 +0900'
+    children: []
+quick-sort:
+    type: wiki
+    title: '퀵 정렬 (Quick Sort)'
+    summary: 빠른정렬
+    parent: algorithm
+    url: /wiki/quick-sort
+    updated: '2020-07-19 15:31:17 +0900'
     children: []
 random-lunch:
     type: wiki

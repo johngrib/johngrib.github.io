@@ -35,6 +35,7 @@ regenerate: true
 * [[master-theorem]]
 * [[merge-sort]]
 * [[p-np]]
+* [[quick-sort]]
 * [[regex-prime]]
 * [[selection-sort]]
 * [[shell-sort]]
