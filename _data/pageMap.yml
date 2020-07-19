@@ -3092,7 +3092,7 @@ quick-sort:
     summary: 빠른정렬
     parent: algorithm
     url: /wiki/quick-sort
-    updated: '2020-07-19 20:45:32 +0900'
+    updated: '2020-07-19 21:12:15 +0900'
     children: []
 random-lunch:
     type: wiki

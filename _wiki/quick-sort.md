@@ -3,7 +3,7 @@ layout  : wiki
 title   : 퀵 정렬 (Quick Sort)
 summary : 빠른정렬
 date    : 2020-07-19 14:19:21 +0900
-updated : 2020-07-19 20:45:32 +0900
+updated : 2020-07-19 21:12:15 +0900
 tag     : sort
 toc     : true
 public  : true
@@ -200,7 +200,7 @@ T(n) & = T(n-1) + \Theta(n) \\
 \end{align}
 $$
 
-### 분할: 최선의 경우
+### 최선의 경우 $$\Theta(n \lg n)$$
 
 $$
 \def\ceil#1{\lceil #1 \rceil}
@@ -210,12 +210,57 @@ $$
 
 > 가장 고른 분할은 PARTITION이 생성하는 부분 문제 두 개의 크기가 각각 $$ \floor{ n/2 } $$과 $$ \ceil{ n/2 } - 1$$이 되어 양쪽 모두 크기가 $$n/2$$이하인 경우다.
 이 경우 퀵 정렬이 아주 빠르게 동작한다.
+상한과 하한 함수, -1 과 같은 상수항을 무시한다면 수행시간에 대한 재귀 관계식은 다음이 된다.
+>
+> $$ T(n) = 2T( n / 2 ) + \Theta(n) $$
+>
+> 마스터 정리(정리 4.1)의 두 번째 경우에 따라 이 식의 해는 $$T(n) = \Theta(n \lg n)$$ 이다.
+따라서 재귀 호출을 할 때마다 항상 분할이 균등하게 이루어진다면 알고리즘도 (점근적으로) 빠르게 동작한다.
 [^CLRS-7-2]
 
+#### 마스터 정리 적용
 
+위의 인용문에서 사용한 마스터 정리는 다음과 같다.
+
+>
+$$
+T(n) =
+\begin{cases}
+\Theta(1)            & \text{ if } n = 1 \\
+2T(n/2) + \Theta(n)  & \text{ if } n \gt 1 \\
+\end{cases}
+$$
+>
+> 이 점화식의 해는 $$T(n) = \Theta(n \lg n)$$ 이다.
+[^CLRS-4]
+
+그냥 외운 답을 말하고 끝난 것 같아 싱겁다.
+
+큰 차이는 없지만 [[master-theorem]]에 정리된 일반형 마스터 정리 $$ T(n) = aT( { n \over b } ) + \Theta( n^k \log^p n ) $$도 사용해 보자.
+
+$$ T(n) = 2T( n / 2 ) + \Theta(n) $$ 이므로, `a`, `b`... 등의 값은 다음과 같다.
+
+- $$a = 2$$, $$b = 2$$, $$k = 1$$, $$p =  0$$.
+- $$b^k = 2^1 = 2$$.
+    - 그러므로 $$a = b^k$$ 이고, $$ p \gt -1 $$ 이다. 마스터 정리 2-a를 사용할 수 있다.
+
+마스터 정리 2-a는 다음과 같다.
+
+$$ T(n) = \Theta(n^{ \log_b^a } \log^{p+1} n) $$
+
+각 값을 대입해 보면 다음과 같이 된다.
+
+$$
+\begin{align}
+T(n) & = \Theta(n^{ \log_b^a } \log^{p+1} n)  \\
+     & = \Theta(n^{ \log_2^2 } \log^1 n)  \\
+     & = \Theta(n \log n)  \\
+\end{align}
+$$
 
 ## 함께 읽기
 
+- [[master-theorem]]
 - [[merge-sort]]
 - [[shell-sort]]
 
@@ -227,6 +272,7 @@ $$
 
 ## 주석
 
+[^CLRS-4]: [CLRS] 4장.
 [^CLRS-7]: [CLRS] 7장.
 [^CLRS-7-2]: [CLRS] 7.2장.
 [^KNU-5-2-2]: [KNU] 5.2.2장.
