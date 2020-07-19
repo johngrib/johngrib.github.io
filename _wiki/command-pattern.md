@@ -3,7 +3,7 @@ layout  : wiki
 title   : 커맨드 패턴 (Command Pattern)
 summary : 요구 사항을 객체로 캡슐화한다
 date    : 2019-10-24 16:32:27 +0900
-updated : 2020-04-04 18:44:12 +0900
+updated : 2020-07-19 13:38:55 +0900
 tag     : 
 toc     : true
 public  : true
@@ -26,9 +26,9 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 >
 Encapsulate a request as an object,
 thereby letting you parameterize clients with different requests,
-queue or log requests, and support undoable operations.  
-<br>
-요청 자체를 캡슐화하는 것입니다.
+queue or log requests, and support undoable operations.
+>
+> 요청 자체를 캡슐화하는 것입니다.
 이를 통해 요청이 서로 다른 사용자를 매개변수로 만들고,
 요청을 대기시키거나 로깅하며, 되돌릴 수 있는 연산을 지원합니다.
 

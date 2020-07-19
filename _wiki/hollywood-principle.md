@@ -3,7 +3,7 @@ layout  : wiki
 title   : 헐리우드 원칙(Hollywood Principle)
 summary : "Do not call us, we call You."
 date    : 2019-08-31 13:30:16 +0900
-updated : 2019-11-04 23:54:58 +0900
+updated : 2020-07-19 13:41:46 +0900
 tag     : 
 toc     : true
 public  : true
@@ -54,9 +54,9 @@ This refers to how a parent class calls the operations of a subclass and not the
 한편 Inversion of Control 단어가 처음 등장했다고 하는 Michael Mattson의 1996년 논문 [Object-Oriented Frameworks: A survey of methodological issues][o-o-framework]의 Conclusions (98쪽) 부분을 읽어보면 다음과 같은 문단이 있다.
 
 >
-The major difference between an object-oriented framework and a class library is that the framework calls the application code. Normally the application code calls the class library. This inversion of control is sometimes named the Hollywood principle, "Do not call us, we call You".  
-<br/>
-객체지향 프레임워크와 클래스 라이브러리의 큰 차이점은 프레임워크가 애플리케이션 코드를 호출한다는 것입니다. 일반적으로는 애플리케이션 코드가 클래스 라이브러리를 호출합니다. 이러한 제어의 역전(inversion of control)은 때때로 헐리우드 원칙이라고도 합니다. "우리에게 전화(call)하지 마세요. 우리가 당신을 부를(call) 것입니다".
+The major difference between an object-oriented framework and a class library is that the framework calls the application code. Normally the application code calls the class library. This inversion of control is sometimes named the Hollywood principle, "Do not call us, we call You".
+>
+> 객체지향 프레임워크와 클래스 라이브러리의 큰 차이점은 프레임워크가 애플리케이션 코드를 호출한다는 것입니다. 일반적으로는 애플리케이션 코드가 클래스 라이브러리를 호출합니다. 이러한 제어의 역전(inversion of control)은 때때로 헐리우드 원칙이라고도 합니다. "우리에게 전화(call)하지 마세요. 우리가 당신을 부를(call) 것입니다".
 
 ### Head First Design Patterns
 
@@ -67,9 +67,9 @@ The major difference between an object-oriented framework and a class library is
 어떤 고수준 구성요소가 저수준 구성요소에 의존하고, 그 저수준 구성요소는 다시 고수준 구성요소에 의존하고,
 그 고수준 구성요소는 다시 또 다른 구성요소에 의존하고,
 그 다른 구성요소는 또 저수준 구성요소에 의존하는 것과 같은 식으로 의존성이 복잡하게 꼬여있는 것을 의존성 부패라고 부릅니다.
-이렇게 의존성이 부패되면 시스템이 어떤 식으로 디자인된 것인지 거의 아무도 알아볼 수 없게 되죠.  
-<br/>
-헐리우드 원칙을 사용하면, 저수준 구성요소에서 시스템에 접속을 할 수는 있지만, 언제 어떤 식으로 그 구성요소들을 사용할지는 고수준 구성요소에서 결정하게 됩니다.
+이렇게 의존성이 부패되면 시스템이 어떤 식으로 디자인된 것인지 거의 아무도 알아볼 수 없게 되죠.
+>
+> 헐리우드 원칙을 사용하면, 저수준 구성요소에서 시스템에 접속을 할 수는 있지만, 언제 어떤 식으로 그 구성요소들을 사용할지는 고수준 구성요소에서 결정하게 됩니다.
 즉, 고수준 구성요소에서 저수준 구성요소에게 "먼저 연락하지 마세요. 제가 먼저 연락 드리겠습니다"라고 얘기를 하는 것과 같죠.
 
 ## 함께 읽기

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim, 두 가지 관점
 summary : 그리고 나의 vim 사용 습관
 date    : 2019-05-19 22:31:27 +0900
-updated : 2020-05-23 08:30:28 +0900
+updated : 2020-07-19 13:32:18 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -14,9 +14,9 @@ latex   : true
 {:toc}
 
 > BERNARD BARUCH'S OBSERVATION  
-If all you have is a hammer, everything looks like a nail.  
-<br>
-버나드 바루흐의 고찰  
+If all you have is a hammer, everything looks like a nail.
+>
+> 버나드 바루흐의 고찰  
 망치를 든 사람에게는 모든 것이 못으로 보인다.
 
 

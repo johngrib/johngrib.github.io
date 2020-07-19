@@ -3,7 +3,7 @@ layout  : wiki
 title   : MySQL에서 'a' = 'a '가 true로 평가된다?
 summary : DB알못의 어떤 리서치
 date    : 2018-02-26 21:09:03 +0900
-updated : 2018-04-21 11:15:30 +0900
+updated : 2020-07-19 13:44:52 +0900
 tag     : db
 toc     : true
 public  : true
@@ -353,8 +353,6 @@ insert into guest (vc1,    vc2,      c1,     c2)
 | 테스트 1.2 | select length(&#39;test&#39;), length(&#39;test&nbsp;&nbsp;&#39;) from guest; | 4, 6           | 4, 6       |
 | 테스트 1.3 | select length(vc1), length(vc2) from guest;                                   | 4, 6           | 4, 6       |
 
-<br/>
-
 테스트 1.1의 결과를 보면 MySQL과 PostgreSQL의 결과가 다릅니다.
 
 * MySQL에서 `'test  '`로 입력한 c2의 길이가 40으로 나오는 것을 보면
@@ -405,7 +403,6 @@ VARCHAR와 CHAR를 비교해보면 의미 있는 결과를 얻을 수 있을 것
 | 테스트 3.1 | select count(*) from guest where vc1 = &#39;test&#39;             | 1     | 1          |
 | 테스트 3.2 | select count(*) from guest where vc1 = &#39;test&nbsp;&nbsp;&#39; | 1     | **0**      |
 
-<br/>
 테스트 3.2를 보면
 
 * MySQL은 VARCHAR와 CHAR를 비교할 때에도 PAD를 추가해 비교하고 있는 것으로 보입니다.
