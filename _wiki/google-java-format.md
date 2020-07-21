@@ -3,7 +3,7 @@ layout  : wiki
 title   : google-java-format 사용법
 summary : google에서 만든 Java 소스코드 포매터
 date    : 2020-06-17 20:29:36 +0900
-updated : 2020-06-17 20:43:43 +0900
+updated : 2020-07-21 22:10:51 +0900
 tag     : java command
 toc     : true
 public  : true
@@ -15,11 +15,11 @@ latex   : false
 
 ## 다운로드
 
-<https://github.com/google/google-java-format/releases > 에서 다운로드 받으면 된다.
+<https://github.com/google/google-java-format/releases >에서 다운로드 받으면 된다.
 
 ## Examples
 
-- 아래의 예제는 google-java-format 1.8 버전을 기준으로 한다.
+- 아래의 예제는 google java format 1.8 버전을 기준으로 한다.
 
 ```sh
  # 도움말과 모든 옵션을 본다.

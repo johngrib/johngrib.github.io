@@ -1780,7 +1780,7 @@ google-java-format:
     summary: 'google에서 만든 Java 소스코드 포매터'
     parent: command-line
     url: /wiki/google-java-format
-    updated: '2020-06-17 20:43:43 +0900'
+    updated: '2020-07-21 22:10:51 +0900'
     children: []
 google-search-console-remove-outdated-content:
     type: wiki
