@@ -3,7 +3,7 @@ layout  : wiki
 title   : 명명 원칙 (The Naming Principle)
 summary : 프로그래밍 할 때 이름 짓기가 가장 어렵더라
 date    : 2018-11-18 22:04:16 +0900
-updated : 2020-01-29 22:06:49 +0900
+updated : 2020-07-23 23:26:19 +0900
 tag     : proverb principle naming
 toc     : true
 public  : true
@@ -17,15 +17,13 @@ latex   : false
 
 알렉산더 A. 스테파노프(STL의 창안자)의 From Mathematics to Generic Programming에 다음과 같은 원칙이 소개되어 있기에 옮겨 본다.
 
+> The Naming Principle
 >
-The Naming Principle  
-<br/>
-If we are coming up with a name for something, or overloading an existing name, we should follow these three guidelines:
-
+> If we are coming up with a name for something, or overloading an existing name, we should follow these three guidelines:
 >
-1. If there is an established term, use it.
-2. Do not use an established term inconsistently with its accepted meaning. In particular, overload an operator or function name only when you will be preserving its existing semantics.
-3. If there are conflicting usages, the much more established one wins.
+> 1. If there is an established term, use it.
+> 2. Do not use an established term inconsistently with its accepted meaning. In particular, overload an operator or function name only when you will be preserving its existing semantics.
+> 3. If there are conflicting usages, the much more established one wins.
 
 새로운 이름을 짓거나 기존의 이름을 오버로드하는 경우, 다음의 가이드라인을 따르도록 한다.
 
