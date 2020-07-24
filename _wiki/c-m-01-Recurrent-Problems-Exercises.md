@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 01.재귀적인 문제들.연습문제
 summary : 01.RECURRENT PROBLEMS.Exercises
 date    : 2018-06-01 21:28:05 +0900
-updated : 2018-06-02 09:44:05 +0900
+updated : 2020-07-24 23:41:54 +0900
 tag     : math
 toc     : true
 public  : true
@@ -15,13 +15,13 @@ latex   : true
 
 * 이 문서는 [[CONCRETE-MATH]]책의 1장 연습 문제 중 몇몇을 공부하며 메모한 것입니다.
 
-# Warmups
+## Warmups
 
-# Homework exercises
+## Homework exercises
 
-## 1.8
+### 1.8
 
-### 문제
+#### 문제
 
 > 다음 점화식의 해를 구하라.
 >
@@ -35,7 +35,7 @@ $$
 >
 모든 $$n \ge 0$$에 대해 $$Q_n \ne 0$$이라고 가정하라.
 
-### 풀이
+#### 풀이
 
 위의 점화식은 python 이라면 다음과 같을 것이다.
 
@@ -181,7 +181,7 @@ Q_n & = [n\mod 5 = 0]\times \alpha \\
 \end{align}
 $$
 
-### 참고사항
+#### 참고사항
 
 * 아이버슨의 관례 표기법
     * `[ ]` 안에 들어간 식이 참인 경우 `1`을 리턴하고, 그 외의 경우 `0`을 리턴한다.
@@ -190,9 +190,9 @@ $$
 
 
 
-# Exam problems
+## Exam problems
 
-# Bonus problems
+## Bonus problems
 
 # Links
 
