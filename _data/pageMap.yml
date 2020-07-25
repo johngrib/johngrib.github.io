@@ -750,6 +750,14 @@ chsh-cmd:
     url: /wiki/chsh-cmd
     updated: '2020-05-07 08:23:19 +0900'
     children: []
+claude-elwood-shannon:
+    type: wiki
+    title: '클로드 섀넌 (Claude Elwood Shannon)'
+    summary: '작성중인 문서'
+    parent: legend
+    url: /wiki/claude-elwood-shannon
+    updated: '2020-07-25 21:03:20 +0900'
+    children: []
 Clean-Code:
     type: wiki
     title: '(책) 클린 코드 - 로버트 C. 마틴'
@@ -2469,7 +2477,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, pentium-fdiv-bug, the-beginning-of-linux, Turbo-Pascal-the-first-IDE, Wordstar]
+    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, claude-elwood-shannon, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, pentium-fdiv-bug, the-beginning-of-linux, Turbo-Pascal-the-first-IDE, Wordstar]
 less-cmd:
     type: wiki
     title: 'less 명령어'

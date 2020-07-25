@@ -299,6 +299,9 @@
     name: law
     size: 8
 -
+    name: legend
+    size: 1
+-
     name: letter
     size: 1
 -
@@ -608,6 +611,9 @@
     name: 번역
     size: 13
 -
+    name: 벨-연구소
+    size: 1
+-
     name: 보안
     size: 1
 -
@@ -623,7 +629,13 @@
     name: 스크랩
     size: 1
 -
+    name: 인물
+    size: 1
+-
     name: 장인정신
+    size: 1
+-
+    name: 정보이론
     size: 1
 -
     name: 추정

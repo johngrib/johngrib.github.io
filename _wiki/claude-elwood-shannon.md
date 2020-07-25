@@ -1,0 +1,66 @@
+---
+layout  : wiki
+title   : 클로드 섀넌 (Claude Elwood Shannon)
+summary : 작성중인 문서
+date    : 2020-07-25 19:47:22 +0900
+updated : 2020-07-25 21:03:20 +0900
+tag     : legend 인물 정보이론 벨-연구소
+toc     : true
+public  : true
+parent  : [[legend]]
+latex   : false
+---
+* TOC
+{:toc}
+
+## 연보
+
+- `1916-04-30` 미시간 게일로드에서 사업가 아버지와 언어 교사인 어머니의 아들로 태어나다.
+- `1930-04-17` 보이스카우트 2급 수기신호 콘테스트에서 1등을 하다. "섀넌은 인간 전신기였다."[^SON-1]
+- `1932` 미시건 대학 입학.
+- `1936` 전기공학, 수학 학사학위.
+- `1937` 21세. 석사학위 논문 "A Symbolic Analysis of Relay and Switching Circuits" 발표.
+- `1939` Alfred Noble Prize 수상.[^noble-prize]
+- `1939 여름` 바네바 부시의 제시로 유전학 연구 시작.
+- `1940` 수학 박사학위 논문 "An Algebra for Genetics" 발표.
+- `1940-01-10` Norma Levor와 결혼(약 1년 후 이혼).
+- `1940 여름` 여름 동안 벨 연구소 초빙을 받다.
+- `1940 가을` 프린스턴 고등연구소(IAS)로 가다. 이 때 그곳엔 폰 노이만, 헤르만 바일, 아인슈타인, 리처드 파인만 등이 있었다.
+- `1948` 논문 "A Mathematical Theory of Communication" 발표.
+- ...
+- `2001-02-24` 세상을 떠나다.
+
+## A Symbolic Analysis of Relay and Switching Circuits
+
+21세에 쓴 석사학위 논문. 계전기와 스위치 회로의 기호학적 분석.
+
+> 1937년 가을 완성된 섀넌의 MIT 석사학위 논문 '계전기와 스위치 회로의 기호학적 분석(A Symbolic Analysis of Relay and Switching Circuits)'은 워싱턴 D.C.의 청중 앞에서 발표되었고,
+다음 해에 절찬리에 출판되어 경력에 큰 보탬이 되었다.
+논문 형식은 무미건조하기 짝이 없는 과학적 산문체였지만, 파급력은 상상을 초월했다.
+[^SON-4]
+
+- 이 논문은 20세기에서 가장 중요하고 가장 유명하고 가장 위대한 석사학위 논문 중 하나라는 별명이 있다.
+- 다음 링크에서 읽어볼 수 있다.
+    - [A symbolic analysis of relay and switching circuits (MIT Libraries)]( https://dspace.mit.edu/handle/1721.1/11173 )
+
+## An Algebra for Genetics
+
+수학 박사학위 논문. 이론유전학을 위한 대수학.
+
+- [An algebra for theoretical genetics (MIT Libraries)]( https://dspace.mit.edu/handle/1721.1/11174 )
+
+유전학 연구로 수학 박사가 됐다.
+
+
+
+
+## 참고문헌
+
+- [SON]: 저글러, 땜장이, 놀이꾼, 디지털 세상을 설계하다 / 지미 소니, 로브 굿맨 저/양병찬 역 / 곰출판 / 1판 1쇄 2020년 02월 20일 / 원제: A Mind at Play
+
+## 주석
+
+[^SON-1]: [SON] 1장.
+[^SON-4]: [SON] 4장.
+[^noble-prize]: 노블 상. 미국공학회가 30세 미만의 학자가 쓴 최우수 논문에 수여한다.
+

@@ -467,6 +467,14 @@ encryption:
     - {fileName: sha256sum}
 zsh:
     - {fileName: chsh-cmd}
+legend:
+    - {fileName: claude-elwood-shannon}
+인물:
+    - {fileName: claude-elwood-shannon}
+정보이론:
+    - {fileName: claude-elwood-shannon}
+벨-연구소:
+    - {fileName: claude-elwood-shannon}
 스크랩:
     - {fileName: clipping}
 tldr:
