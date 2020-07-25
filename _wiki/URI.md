@@ -3,7 +3,7 @@ layout  : wiki
 title   : URI
 summary : Uniform Resource Identifier
 date    : 2017-12-12 22:05:28 +0900
-updated : 2020-05-19 23:41:29 +0900
+updated : 2020-07-25 19:46:01 +0900
 tag     : http
 toc     : true
 public  : true
@@ -158,6 +158,18 @@ URI가 너무 길때 반환되는 414 스테이터스 코드가 RFC 7231에서 �
 | Opera             | ?     | 190,000 |                                                                       |
 
 [ie2083]: https://support.microsoft.com/en-us/help/208427/maximum-url-length-is-2-083-characters-in-internet-explorer 
+
+### Tim Berners-Lee는 //가 별로 필요하지 않다고 말했다
+
+- [Sir Tim Berners-Lee admits forward slashes on World Wide Web 'were a mistake']( https://web.archive.org/web/20190829130107/https://www.telegraph.co.uk/technology/news/6321463/Sir-Tim-Berners-Lee-admits-forward-slashes-on-World-Wide-Web-were-a-mistake.html )
+
+위의 기사 제목은 자극적이지만 버너스 리 경이 굳이 슬래시 두 개를 사용할 필요가 없었다고 생각한 것은 맞는 것 같다.
+
+버너스 리 경은 다음과 같이 말했다고 한다.
+
+> "Really, if you think about it, it doesn't need the //. I could have designed it not to have the //,"
+
+물론 이제는 널리 쓰이고 있기 때문에 바꾸기는 매우 어려울 것이다.
 
 ### (책) RESTful Web API 인용: URI와 URL의 차이에 대하여
 

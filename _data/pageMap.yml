@@ -3940,7 +3940,7 @@ URI:
     summary: 'Uniform Resource Identifier'
     parent: what
     url: /wiki/URI
-    updated: '2020-05-19 23:41:29 +0900'
+    updated: '2020-07-25 19:46:01 +0900'
     children: []
 use-java-primitive-type-for-performance:
     type: wiki
