@@ -567,6 +567,7 @@ regenerate: true
 ## 미분류
 
 * [[abbr]]
+* [[bell-labs]]
 * [[big-numbers]]
 * [[Byzantine-failure]]
 * [[coding-font]]{코딩 폰트}
