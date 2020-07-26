@@ -2700,7 +2700,7 @@ my-bookshelf:
     summary: '규칙을 통해 노력을 최소화하는 물리 레이어 컬렉션 운영 방법'
     parent: my-lifehack
     url: /wiki/my-bookshelf
-    updated: '2019-10-12 13:53:28 +0900'
+    updated: '2020-07-26 17:03:50 +0900'
     children: []
 my-desk-environment:
     type: wiki
