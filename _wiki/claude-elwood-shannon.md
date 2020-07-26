@@ -3,7 +3,7 @@ layout  : wiki
 title   : 클로드 섀넌 (Claude Elwood Shannon)
 summary : 작성중인 문서
 date    : 2020-07-25 19:47:22 +0900
-updated : 2020-07-26 20:27:21 +0900
+updated : 2020-07-26 21:09:17 +0900
 tag     : legend 인물 정보이론 벨-연구소
 toc     : true
 public  : true
@@ -74,6 +74,20 @@ latex   : false
 [^SON-12]
 
 이후 두 사람은 1950년에 다시 한 번 만나게 되지만, 이후 1954년에 앨런 튜링이 사망하여 더 만나지 못하게 된다.
+
+## Theseus
+
+1950년대에 섀넌은 벨 연구소에서 미로를 탈출하는 쥐 모양의 기계를 만들기도 했다. 이 쥐의 이름이 Theseus. 그리스 신화의 영웅 테세우스에서 따온 이름이다.
+
+벨 연구소에서는 섀넌이 테세우스를 설명하는 7분 가량의 단편 영화를 찍기도 했다.
+
+- [AT&T Tech Channel]( https://techchannel.att.com/play-video.cfm/2010/3/16/In-Their-Own-Words-Claude-Shannon-Demonstrates-Machine-Learning )
+- [YouTube]( https://youtu.be/vPKkXibQXGA )
+
+<iframe max-width="100%" height="auto" src="https://techchannel.att.com/embed/index?mediaID=10385&w=560&h=315" frameborder="0" allowfullscreen ></iframe>
+
+이 영상에 나오는 검은 양복을 입은 수학자가 섀넌 본인이다.
+
 
 
 ## 참고문헌
