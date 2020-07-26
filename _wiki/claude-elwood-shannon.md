@@ -3,7 +3,7 @@ layout  : wiki
 title   : 클로드 섀넌 (Claude Elwood Shannon)
 summary : 작성중인 문서
 date    : 2020-07-25 19:47:22 +0900
-updated : 2020-07-25 21:45:05 +0900
+updated : 2020-07-26 20:27:21 +0900
 tag     : legend 인물 정보이론 벨-연구소
 toc     : true
 public  : true
@@ -28,6 +28,7 @@ latex   : false
 - `1940 가을` 프린스턴 고등연구소(IAS)로 가다. 이 때 그곳엔 폰 노이만, 헤르만 바일, 아인슈타인, 리처드 파인만 등이 있었다.
 - `1942` 앨런 튜링, 미국 정부의 '군사 암호화 프로젝트 시찰 여행' 건으로 미국으로 건너오다.
 - `1948` 논문 "A Mathematical Theory of Communication" 발표.
+- `1949-03-22` 베티 무어(Elizabeth Moore)와 결혼.
 - ...
 - `2001-02-24` 세상을 떠나다.
 
