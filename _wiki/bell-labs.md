@@ -3,7 +3,7 @@ layout  : wiki
 title   : 벨 연구소
 summary : 
 date    : 2020-07-25 11:03:27 +0900
-updated : 2020-07-29 22:31:13 +0900
+updated : 2020-07-29 23:37:04 +0900
 tag     : unix 알렉산더-그레이엄-벨 벨-연구소
 toc     : true
 public  : true
@@ -14,6 +14,8 @@ latex   : false
 {:toc}
 
 ## 연보
+
+TODO: 연보를 조사해 작성하라
 
 - `1947` 트랜지스터 발명 - 존 바딘(John Bardeen), 월터 브래튼(Walter Brattain), 윌리엄 쇼클리(William Shockley).
 - `1956` 노벨 물리학상 - 트랜지스터 발명으로 존 바딘, 월터 브래튼, 윌리엄 쇼클리 수상.
