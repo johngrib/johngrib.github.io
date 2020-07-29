@@ -3,7 +3,7 @@ layout  : wiki
 title   : 벨 연구소
 summary : 
 date    : 2020-07-25 11:03:27 +0900
-updated : 2020-07-29 22:16:05 +0900
+updated : 2020-07-29 22:30:03 +0900
 tag     : unix 알렉산더-그레이엄-벨 벨-연구소
 toc     : true
 public  : true
@@ -12,6 +12,10 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 연보
+
+- `1947` 트랜지스터 발명 - 존 바딘(John Bardeen), 월터 브래튼(Walter Brattain), 윌리엄 쇼클리(William Shockley).
 
 ## From: 유닉스의 탄생
 
