@@ -3,11 +3,11 @@ layout  : wiki
 title   : 클로드 섀넌 (Claude Elwood Shannon)
 summary : 작성중인 문서
 date    : 2020-07-25 19:47:22 +0900
-updated : 2020-07-27 23:13:28 +0900
+updated : 2020-07-29 22:19:17 +0900
 tag     : legend 인물 정보이론 벨-연구소
 toc     : true
 public  : true
-parent  : [[legend]]
+parent  : [[people]]
 latex   : false
 ---
 * TOC

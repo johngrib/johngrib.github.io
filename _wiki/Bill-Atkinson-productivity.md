@@ -3,11 +3,11 @@ layout  : wiki
 title   : 빌 앳킨슨(Bill Atkinson)의 생산성
 summary : 프로그램을 6배 빠르게 하고, 보고서에 -2000 줄을 작성했다고 써내다
 date    : 2018-02-08 12:06:18 +0900
-updated : 2019-11-05 03:14:16 +0900
+updated : 2020-07-29 22:21:31 +0900
 tag     : story Bill-Atkinson Steve-Jobs
 toc     : true
 public  : true
-parent  : [[legend]]
+parent  : [[people]]
 latex   : false
 ---
 * TOC

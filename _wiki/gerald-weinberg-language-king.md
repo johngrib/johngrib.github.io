@@ -3,11 +3,11 @@ layout  : wiki
 title   : 프로그래밍 언어를 하나도 만들지 않은 제랄드 와인버그
 summary :
 date    : 2018-02-08 12:00:14 +0900
-updated : 2018-02-08 12:04:33 +0900
+updated : 2020-07-29 22:22:43 +0900
 tag     : story Gerald-Weinberg
 toc     : true
 public  : true
-parent  : [[legend]]
+parent  : [[people]]
 latex   : false
 ---
 * TOC

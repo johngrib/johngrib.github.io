@@ -3,11 +3,11 @@ layout  : wiki
 title   : 리누스 토발즈, 리눅스를 개발하다
 summary : 
 date    : 2020-01-30 23:11:20 +0900
-updated : 2020-02-17 21:43:06 +0900
+updated : 2020-07-29 22:23:05 +0900
 tag     : linux story
 toc     : true
 public  : true
-parent  : [[legend]]
+parent  : [[people]]
 latex   : false
 ---
 * TOC

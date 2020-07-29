@@ -466,17 +466,17 @@ Bill-Atkinson-productivity:
     type: wiki
     title: '빌 앳킨슨(Bill Atkinson)의 생산성'
     summary: '프로그램을 6배 빠르게 하고, 보고서에 -2000 줄을 작성했다고 써내다'
-    parent: legend
+    parent: people
     url: /wiki/Bill-Atkinson-productivity
-    updated: '2019-11-05 03:14:16 +0900'
+    updated: '2020-07-29 22:21:31 +0900'
     children: []
 Bill-Joy-and-10000-hours-rule:
     type: wiki
     title: '빌 조이(Bill Joy)와 10,000 시간의 법칙'
     summary: ""
-    parent: legend
+    parent: people
     url: /wiki/Bill-Joy-and-10000-hours-rule
-    updated: '2020-05-17 20:50:47 +0900'
+    updated: '2020-07-29 22:21:42 +0900'
     children: []
 billing-aws:
     type: wiki
@@ -1586,9 +1586,9 @@ gerald-weinberg-language-king:
     type: wiki
     title: '프로그래밍 언어를 하나도 만들지 않은 제랄드 와인버그'
     summary: null
-    parent: legend
+    parent: people
     url: /wiki/gerald-weinberg-language-king
-    updated: '2018-02-08 12:04:33 +0900'
+    updated: '2020-07-29 22:22:43 +0900'
     children: []
 ginkgo:
     type: wiki
@@ -2114,9 +2114,9 @@ James-Gosling-super-programmer:
     type: wiki
     title: '무협지 주인공 제임스 고슬링(James Gosling)'
     summary: '중학생 때 전산학과에 침입해 독학으로 프로그래밍을 터득'
-    parent: legend
+    parent: people
     url: /wiki/James-Gosling-super-programmer
-    updated: '2020-01-28 23:06:30 +0900'
+    updated: '2020-07-29 22:21:54 +0900'
     children: []
 Java:
     type: wiki
@@ -2346,17 +2346,17 @@ John-von-Neumann:
     type: wiki
     title: '존 폰 노이만 (John von Neumann)'
     summary: '천재는 오직 폰 노이만 뿐이다(von Neumann was the only genius)'
-    parent: legend
+    parent: people
     url: /wiki/John-von-Neumann
-    updated: '2020-07-26 20:50:58 +0900'
+    updated: '2020-07-29 22:22:49 +0900'
     children: []
 John-W-Backus:
     type: wiki
     title: '존 베커스, 문제 해결사 팀을 만들다'
     summary: '포트란의 탄생'
-    parent: legend
+    parent: people
     url: /wiki/John-W-Backus
-    updated: '2019-03-01 17:01:12 +0900'
+    updated: '2020-07-29 22:22:56 +0900'
     children: []
 jq-cmd:
     type: wiki
@@ -2477,7 +2477,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, pentium-fdiv-bug, the-beginning-of-linux, Turbo-Pascal-the-first-IDE, Wordstar]
+    children: [begining-of-apache-webserver, Grote-Reber-home-made-radio-astronomy, Las-chicas-del-cable, netflix-architecture-and-culture, pentium-fdiv-bug, Turbo-Pascal-the-first-IDE, Wordstar]
 less-cmd:
     type: wiki
     title: 'less 명령어'
@@ -2941,7 +2941,7 @@ people:
     parent: index
     url: /wiki/people
     updated: '2020-07-29 22:19:05 +0900'
-    children: [claude-elwood-shannon]
+    children: [Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, claude-elwood-shannon, gerald-weinberg-language-king, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, the-beginning-of-linux]
 perl-one-liner:
     type: wiki
     title: 'Perl 한 줄 사용'
@@ -3722,9 +3722,9 @@ the-beginning-of-linux:
     type: wiki
     title: '리누스 토발즈, 리눅스를 개발하다'
     summary: ""
-    parent: legend
+    parent: people
     url: /wiki/the-beginning-of-linux
-    updated: '2020-02-17 21:43:06 +0900'
+    updated: '2020-07-29 22:23:05 +0900'
     children: []
 The-Jargon-File:
     type: wiki

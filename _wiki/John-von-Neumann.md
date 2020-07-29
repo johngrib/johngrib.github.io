@@ -3,11 +3,11 @@ layout  : wiki
 title   : 존 폰 노이만 (John von Neumann)
 summary : 천재는 오직 폰 노이만 뿐이다(von Neumann was the only genius)
 date    : 2018-04-03 22:22:28 +0900
-updated : 2020-07-26 20:50:58 +0900
+updated : 2020-07-29 22:22:49 +0900
 tag     : von-neumann sort 인물
 toc     : true
 public  : true
-parent  : [[legend]]
+parent  : [[people]]
 latex   : false
 ---
 * TOC

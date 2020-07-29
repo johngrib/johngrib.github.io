@@ -53,19 +53,23 @@ regenerate: true
 ### [[legend]]
 
 * [[begining-of-apache-webserver]]
+* [[Las-chicas-del-cable]]
+* [[netflix-architecture-and-culture]]
+* [[pentium-fdiv-bug]]
+* [[Turbo-Pascal-the-first-IDE]]
+* [[Wordstar]]
+
+### [[people]]
+
 * [[Bill-Atkinson-productivity]]
 * [[Bill-Joy-and-10000-hours-rule]]
+* [[brian-w-kernighan]]
 * [[claude-elwood-shannon]]
 * [[gerald-weinberg-language-king]]
 * [[James-Gosling-super-programmer]]
 * [[John-von-Neumann]]
 * [[John-W-Backus]]
-* [[Las-chicas-del-cable]]
-* [[netflix-architecture-and-culture]]
-* [[pentium-fdiv-bug]]
 * [[the-beginning-of-linux]]
-* [[Turbo-Pascal-the-first-IDE]]
-* [[Wordstar]]
 
 ## [[how-to]]
 
