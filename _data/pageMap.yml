@@ -754,9 +754,9 @@ claude-elwood-shannon:
     type: wiki
     title: '클로드 섀넌 (Claude Elwood Shannon)'
     summary: '작성중인 문서'
-    parent: legend
+    parent: people
     url: /wiki/claude-elwood-shannon
-    updated: '2020-07-27 23:13:28 +0900'
+    updated: '2020-07-29 22:19:17 +0900'
     children: []
 Clean-Code:
     type: wiki
@@ -2477,7 +2477,7 @@ legend:
     parent: clipping
     url: /wiki/legend
     updated: '2018-02-08 12:16:58 +0900'
-    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, claude-elwood-shannon, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, pentium-fdiv-bug, the-beginning-of-linux, Turbo-Pascal-the-first-IDE, Wordstar]
+    children: [begining-of-apache-webserver, Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, gerald-weinberg-language-king, Grote-Reber-home-made-radio-astronomy, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, Las-chicas-del-cable, netflix-architecture-and-culture, pentium-fdiv-bug, the-beginning-of-linux, Turbo-Pascal-the-first-IDE, Wordstar]
 less-cmd:
     type: wiki
     title: 'less 명령어'
@@ -2934,6 +2934,14 @@ pentium-fdiv-bug:
     url: /wiki/pentium-fdiv-bug
     updated: '2020-06-18 00:38:38 +0900'
     children: []
+people:
+    type: wiki
+    title: '나의 인명사전'
+    summary: ""
+    parent: index
+    url: /wiki/people
+    updated: '2020-07-29 22:19:05 +0900'
+    children: [claude-elwood-shannon]
 perl-one-liner:
     type: wiki
     title: 'Perl 한 줄 사용'
