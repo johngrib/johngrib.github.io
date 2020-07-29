@@ -539,6 +539,9 @@
     name: unit
     size: 1
 -
+    name: unix
+    size: 1
+-
     name: vagrant
     size: 1
 -
@@ -612,7 +615,7 @@
     size: 13
 -
     name: 벨-연구소
-    size: 1
+    size: 2
 -
     name: 보안
     size: 1
@@ -627,6 +630,9 @@
     size: 1
 -
     name: 스크랩
+    size: 1
+-
+    name: 알렉산더-그레이엄-벨
     size: 1
 -
     name: 인물
