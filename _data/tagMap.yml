@@ -762,6 +762,12 @@ tool:
     - {fileName: Gradle}
 grep:
     - {fileName: grep}
+ken-tompson:
+    - {fileName: grep}
+alfred-aho:
+    - {fileName: grep}
+brian-kernighan:
+    - {fileName: grep}
 jvm-lang:
     - {fileName: Groovy}
 groovy:

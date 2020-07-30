@@ -8,6 +8,9 @@
     name: aheui
     size: 1
 -
+    name: alfred-aho
+    size: 1
+-
     name: algirithm
     size: 1
 -
@@ -54,6 +57,9 @@
     size: 17
 -
     name: bot
+    size: 1
+-
+    name: brian-kernighan
     size: 1
 -
     name: bug
@@ -288,6 +294,9 @@
     size: 17
 -
     name: karabiner
+    size: 1
+-
+    name: ken-tompson
     size: 1
 -
     name: keyboard
