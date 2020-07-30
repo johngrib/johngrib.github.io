@@ -24,7 +24,7 @@
     size: 1
 -
     name: awk
-    size: 1
+    size: 2
 -
     name: aws
     size: 7

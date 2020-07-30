@@ -402,6 +402,9 @@ proverb:
     - {fileName: awk}
 브라이언-커니핸:
     - {fileName: awk}
+awk:
+    - {fileName: awk}
+    - {fileName: vim-update-book-progress}
 network:
     - {fileName: bandwidth}
     - {fileName: global-variables-and-marriage-architecture}
@@ -960,8 +963,6 @@ markdown:
     - {fileName: vim-tagbar-with-markdown}
 fix:
     - {fileName: vim-tmux-t-ut}
-awk:
-    - {fileName: vim-update-book-progress}
 firefox:
     - {fileName: vimium}
 Von-Neumann:
