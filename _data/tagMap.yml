@@ -398,6 +398,10 @@ proverb:
     - {fileName: orange-juice-test}
     - {fileName: Postel-s-law}
     - {fileName: proverb}
+언어:
+    - {fileName: awk}
+브라이언-커니핸:
+    - {fileName: awk}
 network:
     - {fileName: bandwidth}
     - {fileName: global-variables-and-marriage-architecture}

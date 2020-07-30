@@ -620,6 +620,9 @@
     name: 보안
     size: 1
 -
+    name: 브라이언-커니핸
+    size: 1
+-
     name: 삽질
     size: 1
 -
@@ -633,6 +636,9 @@
     size: 1
 -
     name: 알렉산더-그레이엄-벨
+    size: 1
+-
+    name: 언어
     size: 1
 -
     name: 인물
