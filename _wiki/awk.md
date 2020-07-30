@@ -3,8 +3,8 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2020-07-30 20:53:32 +0900
-tag     : command 언어 브라이언-커니핸
+updated : 2020-07-30 22:30:18 +0900
+tag     : command 언어 브라이언-커니핸 awk
 toc     : true
 public  : true
 parent  : [[programming-language]]
