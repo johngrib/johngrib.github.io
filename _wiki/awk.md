@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2020-07-30 20:32:09 +0900
+updated : 2020-07-30 20:36:55 +0900
 tag     : command
 toc     : true
 public  : true
@@ -81,6 +81,12 @@ awk 'NR%2==0 {print p","$0;} NR%2 {p=$0;}' test.txt
 3,4
 ```
 
+### 파일의 모든 단어 수 세기
+
+```sh
+ # 파일을 읽고 각 단어가 나타나는 횟수를 세고, 전체 단어와 각각의 횟수를 출력한다
+awk '{ for (i=1; i <= NF; i++) wd[$i]++ } END { for (w in wd) print w, wd[w] }' test.txt
+```
 
 ## 함께 읽기
 * [[vim-update-book-progress]]
