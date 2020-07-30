@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2019-12-01 08:04:20 +0900
+updated : 2020-07-30 20:27:00 +0900
 tag     : command
 toc     : true
 public  : true
@@ -17,6 +17,11 @@ latex   : false
 
 ```sh
 awk '/search_pattern/ { action; }' file
+```
+
+### 80자보다 긴 모든 행을 출력하기
+```sh
+awk 'length > 80' test.txt
 ```
 
 ### 필드 구분자 지정하기
