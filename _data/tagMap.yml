@@ -400,8 +400,9 @@ proverb:
     - {fileName: proverb}
 언어:
     - {fileName: awk}
-브라이언-커니핸:
+brian-kernighan:
     - {fileName: awk}
+    - {fileName: grep}
 awk:
     - {fileName: awk}
     - {fileName: vim-update-book-progress}
@@ -766,8 +767,6 @@ grep:
 ken-tompson:
     - {fileName: grep}
 alfred-aho:
-    - {fileName: grep}
-brian-kernighan:
     - {fileName: grep}
 jvm-lang:
     - {fileName: Groovy}

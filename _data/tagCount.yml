@@ -60,7 +60,7 @@
     size: 1
 -
     name: brian-kernighan
-    size: 1
+    size: 2
 -
     name: bug
     size: 2
@@ -633,9 +633,6 @@
     size: 2
 -
     name: 보안
-    size: 1
--
-    name: 브라이언-커니핸
     size: 1
 -
     name: 삽질
