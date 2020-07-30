@@ -3,8 +3,8 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2020-06-24 23:37:29 +0900
-tag     : bash command
+updated : 2020-07-30 23:18:11 +0900
+tag     : bash command grep ed
 toc     : true
 public  : true
 parent  : [[command-line]]
@@ -12,6 +12,21 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+리 맥마흔(Lee E. McMahon)이 개발한 스트림 에디터.
+
+## 역사
+
+> 리 맥마흔은 [[grep]]의 성공에 자극을 받았고,
+파일에서 읽어 들인 텍스트에 대해 간단한 바꾸기 작업을 하는 유사 프로그램인 `gres`를 작성했다. `s`는 `ed` 편집기에서 바꾸기 명령어다.
+리는 곧 프로그램을 더 일반화된 버전으로 대체했는데, 'Sed'(세드)라는 스트림 편집기다.
+Sed는 텍스트가 입력 스트림으로 들어와서 출력 스트림으로 나가기 전까지 일련의 편집 명령어를 적용했다.
+[[grep]]과 `gres`는 둘 다 Sed의 특별한 경우에 해당했다.
+Sed가 사용하는 명령어는 표준 `ed` 텍스트 편집기에 있는 편집 명령어와 동일하다.
+Sed는 요즘도 셸 스크립트에서 흔히 사용되는데, 데이터 스트림을 일정한 방식으로 변형할 때 사용된다.
+문자를 교체하거나, 공백을 추가하거나, 원하지 않는 공백을 제거하거나, 불필요한 뭔가를 지우는 등의 용도로 쓰인다.
+[^KER-5]
+
 
 ## Examples
 
@@ -115,4 +130,12 @@ ag '\{\}$' -l | xargs sed -E -i '' 's/^( *)(p.+){}/\1\2{\
  # brew를 이용해 macOS에 설치할 수 있고, 이후 gsed로 사용하면 된다
 brew install gnu-sed
 ```
+
+## 참고문헌
+
+- [KER] 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
+
+## 주석
+
+[^KER-5]: [KER] 5장.
 

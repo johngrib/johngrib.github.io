@@ -762,6 +762,7 @@ tool:
     - {fileName: Gradle}
 grep:
     - {fileName: grep}
+    - {fileName: sed}
 ken-tompson:
     - {fileName: grep}
 alfred-aho:
@@ -911,6 +912,8 @@ sf:
     - {fileName: Schrodinger-s-goyang-Hee}
 consulting:
     - {fileName: secret-of-consulting}
+ed:
+    - {fileName: sed}
 교육:
     - {fileName: Shunsho-juwa}
 장인정신:

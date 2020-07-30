@@ -143,6 +143,9 @@
     name: docker
     size: 1
 -
+    name: ed
+    size: 1
+-
     name: emacs
     size: 1
 -
@@ -222,7 +225,7 @@
     size: 1
 -
     name: grep
-    size: 1
+    size: 2
 -
     name: groovy
     size: 1
