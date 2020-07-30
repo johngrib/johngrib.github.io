@@ -332,7 +332,7 @@ awk:
     summary: 'pattern-directed scanning and processing language'
     parent: programming-language
     url: /wiki/awk
-    updated: '2020-07-30 22:30:18 +0900'
+    updated: '2020-07-30 22:55:18 +0900'
     children: []
 aws:
     type: wiki
