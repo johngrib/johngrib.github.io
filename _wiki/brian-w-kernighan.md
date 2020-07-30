@@ -3,8 +3,8 @@ layout  : wiki
 title   : 브라이언 W. 커니핸 (Brian W. Kernighan)
 summary : 
 date    : 2020-07-29 22:19:22 +0900
-updated : 2020-07-30 23:02:29 +0900
-tag     : 인물 awk c 벨-연구소
+updated : 2020-07-30 23:20:23 +0900
+tag     : 인물 awk c bell-labs brian-kernighan
 toc     : true
 public  : false
 parent  : [[people]]
@@ -19,6 +19,7 @@ latex   : false
 - `1966` MIT 여름 인턴.
 - `1967` 벨 연구소 인턴.
 - `1969` 벨 연구소 정규직.
+- `1977` [[awk]] 언어 개발.
 - `1978` 데니스 리치와 함께 쓴 "THE C PROGRAMMING LANGUAGE" 출간.
 - `2000` 벨 연구소 퇴직.
 
