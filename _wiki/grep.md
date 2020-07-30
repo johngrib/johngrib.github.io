@@ -3,7 +3,7 @@ layout  : wiki
 title   : grep, egrep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2019-11-21 17:48:46 +0900
+updated : 2020-07-30 22:38:28 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -19,7 +19,7 @@ latex   : false
 grep [option] pattern [file]
 ```
 
-## 사용 예
+## Examples
 
 * 파일에서 내용 찾기
 
