@@ -3,8 +3,8 @@ layout  : wiki
 title   : grep, egrep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2020-07-30 22:38:28 +0900
-tag     : bash command
+updated : 2020-07-30 22:39:04 +0900
+tag     : bash command grep
 toc     : true
 public  : true
 parent  : [[command-line]]

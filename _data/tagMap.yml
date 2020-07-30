@@ -760,6 +760,8 @@ gradle:
     - {fileName: Gradle}
 tool:
     - {fileName: Gradle}
+grep:
+    - {fileName: grep}
 jvm-lang:
     - {fileName: Groovy}
 groovy:

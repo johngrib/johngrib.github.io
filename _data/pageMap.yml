@@ -1852,7 +1852,7 @@ grep:
     summary: 'file pattern searcher'
     parent: command-line
     url: /wiki/grep
-    updated: '2020-07-30 22:38:28 +0900'
+    updated: '2020-07-30 22:39:04 +0900'
     children: []
 Groovy:
     type: wiki
