@@ -756,8 +756,9 @@ twitter:
     - {fileName: labs-strava-com-heatmap}
 facebook:
     - {fileName: googling}
-GNU:
+gnu:
     - {fileName: gpg}
+    - {fileName: James-Gosling-super-programmer}
 gradle:
     - {fileName: Gradle}
 tool:
@@ -811,8 +812,6 @@ oop:
     - {fileName: summary-Data-Abstraction-and-Hierarchy}
     - {fileName: uml}
 james-gosling:
-    - {fileName: James-Gosling-super-programmer}
-gnu:
     - {fileName: James-Gosling-super-programmer}
 programming:
     - {fileName: Java}
