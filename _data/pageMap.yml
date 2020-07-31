@@ -404,7 +404,7 @@ bc:
     summary: 'An arbitrary precision calculator language'
     parent: programming-language
     url: /wiki/bc
-    updated: '2019-11-19 10:06:32 +0900'
+    updated: '2020-07-31 23:27:52 +0900'
     children: []
 begining-of-apache-webserver:
     type: wiki

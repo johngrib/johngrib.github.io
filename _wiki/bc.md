@@ -3,7 +3,7 @@ layout  : wiki
 title   : bc
 summary : An arbitrary precision calculator language
 date    : 2018-10-07 18:12:19 +0900
-updated : 2019-11-19 10:06:32 +0900
+updated : 2020-07-31 23:27:52 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -12,6 +12,14 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+## 역사
+
+- 로린다 체리(Lorinda Cherry)
+
+> 또 다른 예는 `bc`로, 로버트 모리스가 처음 개발한 무한 정밀도 계산기인 `dc`를 위해 로린다 체리가 개발한 전처리기다.
+로린다는 `dc`에 전통적인 중위 산술 표기법을 제공하기 위해 `bc`를 작성했는데, `dc`의 후위 표기법은 아무래도 초보자들에게는 수월하지 않았기 때문이다.
+[^KER-5-195]
 
 ## Examples
 
@@ -183,4 +191,12 @@ $ echo "scale=100; 4*a(1)" | bc -l
 * [GNU bc (phodd.net)](http://phodd.net/gnu-bc/ )
 * [Bc(programming language) (wikipedia)](https://en.wikipedia.org/wiki/Bc_(programming_language)#References)
 * [bash, bc modulo does not work with -l flag (stackoverflow.com)](https://stackoverflow.com/questions/27470210/bash-bc-modulo-does-not-work-with-l-flag )
+
+## 참고문헌
+
+- [KER] 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
+
+## 주석
+
+[^KER-5-195]: [KER] 5장. 195쪽.
 
