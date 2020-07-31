@@ -115,6 +115,7 @@ aws:
     - {fileName: Elastic-Load-Balancing}
 emacs:
     - {fileName: 2017-04-03-emacs-start}
+    - {fileName: James-Gosling-super-programmer}
 evil:
     - {fileName: 2017-04-03-emacs-start}
 소트웍스-앤솔러지:
@@ -481,6 +482,7 @@ legend:
     - {fileName: claude-elwood-shannon}
 인물:
     - {fileName: claude-elwood-shannon}
+    - {fileName: James-Gosling-super-programmer}
     - {fileName: John-von-Neumann}
 정보이론:
     - {fileName: claude-elwood-shannon}
@@ -806,7 +808,9 @@ oop:
     - {fileName: SOLID}
     - {fileName: summary-Data-Abstraction-and-Hierarchy}
     - {fileName: uml}
-James-Gosling:
+james-gosling:
+    - {fileName: James-Gosling-super-programmer}
+gnu:
     - {fileName: James-Gosling-super-programmer}
 programming:
     - {fileName: Java}

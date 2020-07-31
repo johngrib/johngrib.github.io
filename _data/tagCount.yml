@@ -147,7 +147,7 @@
     size: 1
 -
     name: emacs
-    size: 1
+    size: 2
 -
     name: email
     size: 2
@@ -215,6 +215,9 @@
     name: GNU
     size: 1
 -
+    name: gnu
+    size: 1
+-
     name: golang
     size: 17
 -
@@ -278,7 +281,7 @@
     name: ip
     size: 1
 -
-    name: James-Gosling
+    name: james-gosling
     size: 1
 -
     name: java
@@ -651,7 +654,7 @@
     size: 1
 -
     name: 인물
-    size: 2
+    size: 3
 -
     name: 장인정신
     size: 1
