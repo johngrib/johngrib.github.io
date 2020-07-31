@@ -401,6 +401,8 @@ proverb:
     - {fileName: orange-juice-test}
     - {fileName: Postel-s-law}
     - {fileName: proverb}
+ms-dos:
+    - {fileName: archive-org-games}
 언어:
     - {fileName: awk}
 brian-kernighan:

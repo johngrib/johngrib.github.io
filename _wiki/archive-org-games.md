@@ -3,8 +3,8 @@ layout  : wiki
 title   : archive.org의 재미있는 옛날 게임들
 summary : 
 date    : 2020-01-25 10:26:51 +0900
-updated : 2020-01-25 23:38:35 +0900
-tag     : game
+updated : 2020-07-31 18:11:42 +0900
+tag     : game ms-dos
 toc     : true
 public  : true
 parent  : [[index]]
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+[Software Library: MS-DOS Games]( https://archive.org/details/softwarelibrary_msdos_games?tab=collection )
 
 ## Prehistorik 2
 
