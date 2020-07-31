@@ -213,7 +213,7 @@
     size: 1
 -
     name: gnu
-    size: 2
+    size: 3
 -
     name: golang
     size: 17
@@ -445,6 +445,9 @@
 -
     name: rfc
     size: 2
+-
+    name: richard-stallman
+    size: 1
 -
     name: rule
     size: 2

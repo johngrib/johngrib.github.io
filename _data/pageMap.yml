@@ -1668,7 +1668,7 @@ gnu-project:
     summary: ""
     parent: index
     url: /wiki/gnu-project
-    updated: '2020-07-17 23:24:54 +0900'
+    updated: '2020-07-31 23:57:45 +0900'
     children: []
 Go-Blog-translation:
     type: wiki

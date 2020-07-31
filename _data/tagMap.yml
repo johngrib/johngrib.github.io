@@ -702,6 +702,12 @@ love:
     - {fileName: global-variables-and-marriage-architecture}
 problem:
     - {fileName: global-variables-and-marriage-architecture}
+gnu:
+    - {fileName: gnu-project}
+    - {fileName: gpg}
+    - {fileName: James-Gosling-super-programmer}
+richard-stallman:
+    - {fileName: gnu-project}
 번역:
     - {fileName: Go-Blog-translation}
     - {fileName: golang-debugging-what-you-deploy}
@@ -756,9 +762,6 @@ twitter:
     - {fileName: labs-strava-com-heatmap}
 facebook:
     - {fileName: googling}
-gnu:
-    - {fileName: gpg}
-    - {fileName: James-Gosling-super-programmer}
 gradle:
     - {fileName: Gradle}
 tool:

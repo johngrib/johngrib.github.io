@@ -3,8 +3,8 @@ layout  : wiki
 title   : GNU 프로젝트
 summary : 
 date    : 2020-04-08 21:44:07 +0900
-updated : 2020-07-17 23:24:54 +0900
-tag     : 
+updated : 2020-07-31 23:57:45 +0900
+tag     : gnu richard-stallman
 toc     : true
 public  : true
 parent  : [[index]]
