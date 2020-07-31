@@ -182,6 +182,9 @@
     name: float
     size: 1
 -
+    name: floating-point
+    size: 1
+-
     name: font
     size: 1
 -
