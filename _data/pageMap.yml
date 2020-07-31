@@ -414,14 +414,6 @@ begining-of-apache-webserver:
     url: /wiki/begining-of-apache-webserver
     updated: '2020-07-19 13:34:12 +0900'
     children: []
-bell-labs:
-    type: wiki
-    title: '벨 연구소'
-    summary: ""
-    parent: index
-    url: /wiki/bell-labs
-    updated: '2020-07-29 23:37:04 +0900'
-    children: []
 better-checklist:
     type: wiki
     title: '더 나은 체크리스트'

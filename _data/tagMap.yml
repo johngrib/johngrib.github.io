@@ -436,13 +436,6 @@ story:
     - {fileName: Las-chicas-del-cable}
     - {fileName: legend}
     - {fileName: the-beginning-of-linux}
-unix:
-    - {fileName: bell-labs}
-알렉산더-그레이엄-벨:
-    - {fileName: bell-labs}
-벨-연구소:
-    - {fileName: bell-labs}
-    - {fileName: claude-elwood-shannon}
 Bill-Atkinson:
     - {fileName: Bill-Atkinson-productivity}
 Steve-Jobs:
@@ -488,6 +481,8 @@ legend:
     - {fileName: claude-elwood-shannon}
     - {fileName: John-von-Neumann}
 정보이론:
+    - {fileName: claude-elwood-shannon}
+벨-연구소:
     - {fileName: claude-elwood-shannon}
 스크랩:
     - {fileName: clipping}
