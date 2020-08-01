@@ -3,7 +3,7 @@ layout  : wiki
 title   : 벨 연구소
 summary : 
 date    : 2020-07-25 11:03:27 +0900
-updated : 2020-07-31 23:20:46 +0900
+updated : 2020-08-02 01:24:59 +0900
 tag     : unix 알렉산더-그레이엄-벨 bell-labs
 toc     : true
 public  : false
@@ -24,6 +24,8 @@ latex   : false
 TODO: 연보를 조사해 작성하라
 
 - `1947` 트랜지스터 발명 - 존 바딘(John Bardeen), 월터 브래튼(Walter Brattain), 윌리엄 쇼클리(William Shockley).
+- `1947-12-23` 쇼클리, 바딘, 브래튼. 점 접촉 트랜지스터(Point Contact Transistor) 완성.
+- `1948-01-23` 쇼클리. 접합 트랜지스터(Junction Transistor) 발명.
 - `1956` 노벨 물리학상 - 트랜지스터 발명으로 존 바딘, 월터 브래튼, 윌리엄 쇼클리 수상.
 
 ## From: 유닉스의 탄생
