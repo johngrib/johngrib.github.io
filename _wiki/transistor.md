@@ -3,7 +3,7 @@ layout  : wiki
 title   : 트랜지스터
 summary : 전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자
 date    : 2019-03-17 18:08:43 +0900
-updated : 2020-08-02 01:16:11 +0900
+updated : 2020-08-02 01:18:49 +0900
 tag     : transistor bell-labs
 toc     : true
 public  : true
@@ -79,6 +79,7 @@ p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지
 - 1947-12-23: 벨 연구소의 쇼클리, 바딘, 브래튼. 점 접촉 트랜지스터(Point Contact Transistor) 완성.
     - [John R. Pierce, 트랜지스터라는 이름을 제안하다](https://www.pbs.org/transistor/album1/pierce/naming.html )
 - 1948-01-23: 쇼클리. 접합 트랜지스터(Junction Transistor) 발명.
+- 1948-05: 벨 전화 연구소 공식 기밀 기술로 지정되다.
 - 1956-12-10: [반도체 연구와 트랜지스터 효과의 발견으로 1956년 노벨 물리학상 수상](https://www.nobelprize.org/prizes/physics/1956/summary/)
     - 윌리엄 브래드퍼드 쇼클리(William Bradford Shockley)
         - 실리콘 밸리의 탄생에 큰 영향을 준 인물.
