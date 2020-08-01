@@ -3,7 +3,7 @@ layout  : wiki
 title   : bc
 summary : An arbitrary precision calculator language
 date    : 2018-10-07 18:12:19 +0900
-updated : 2020-07-31 23:27:52 +0900
+updated : 2020-08-01 15:34:21 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -17,8 +17,8 @@ latex   : true
 
 - 로린다 체리(Lorinda Cherry)
 
-> 또 다른 예는 `bc`로, 로버트 모리스가 처음 개발한 무한 정밀도 계산기인 `dc`를 위해 로린다 체리가 개발한 전처리기다.
-로린다는 `dc`에 전통적인 중위 산술 표기법을 제공하기 위해 `bc`를 작성했는데, `dc`의 후위 표기법은 아무래도 초보자들에게는 수월하지 않았기 때문이다.
+> 또 다른 예는 `bc`로, 로버트 모리스가 처음 개발한 무한 정밀도 계산기인 [[dc-cmd]]{dc}를 위해 로린다 체리가 개발한 전처리기다.
+로린다는 [[dc-cmd]]{dc}에 전통적인 중위 산술 표기법을 제공하기 위해 `bc`를 작성했는데, [[dc-cmd]]{dc}의 후위 표기법은 아무래도 초보자들에게는 수월하지 않았기 때문이다.
 [^KER-5-195]
 
 ## Examples
@@ -182,6 +182,9 @@ $ echo "scale=100; 4*a(1)" | bc -l
 * $$ arctan 1$$ 은 `1`을 리턴하는 $$\tan$$ 값이므로, $$45^\circ$$ 를 의미한다.
 * 그런데 $$45^\circ$$는 $$\pi \over 4$$ 이므로 `4*a(1)`은 $$\pi$$와 같다.
 
+## 함께 읽기
+
+- [[dc-cmd]]{dc}
 
 ## Links
 

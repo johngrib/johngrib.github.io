@@ -233,6 +233,7 @@ bash:
     - {fileName: curl}
     - {fileName: cut}
     - {fileName: date-cmd}
+    - {fileName: dc-cmd}
     - {fileName: df}
     - {fileName: diff}
     - {fileName: ditto-cmd}
@@ -290,6 +291,7 @@ command:
     - {fileName: curl}
     - {fileName: cut}
     - {fileName: date-cmd}
+    - {fileName: dc-cmd}
     - {fileName: df}
     - {fileName: diff}
     - {fileName: ditto-cmd}
@@ -556,6 +558,8 @@ history:
     - {fileName: TETRIS-EFFECT}
 ctags:
     - {fileName: ctags}
+calculator:
+    - {fileName: dc-cmd}
 java:
     - {fileName: defensive-copy.md}
     - {fileName: google-java-format}

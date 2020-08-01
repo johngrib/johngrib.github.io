@@ -404,7 +404,7 @@ bc:
     summary: 'An arbitrary precision calculator language'
     parent: programming-language
     url: /wiki/bc
-    updated: '2020-07-31 23:27:52 +0900'
+    updated: '2020-08-01 15:34:21 +0900'
     children: []
 begining-of-apache-webserver:
     type: wiki
@@ -805,7 +805,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, google-java-format, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lsof, make-cmd, mv-cmd, my-bash-cheatsheet, openssl, perl-one-liner, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, dc-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, google-java-format, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lsof, make-cmd, mv-cmd, my-bash-cheatsheet, openssl, perl-one-liner, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -989,6 +989,14 @@ date-cmd:
     parent: command-line
     url: /wiki/date-cmd
     updated: '2020-03-10 23:04:37 +0900'
+    children: []
+dc-cmd:
+    type: wiki
+    title: 'dc 명령어'
+    summary: 'an arbitrary percision calculator'
+    parent: command-line
+    url: /wiki/dc-cmd
+    updated: '2020-08-01 15:44:04 +0900'
     children: []
 ddd-quotes:
     type: wiki

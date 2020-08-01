@@ -348,6 +348,7 @@ regenerate: true
 * [[curl]]
 * [[cut]]
 * [[date-cmd]]
+* [[dc-cmd]]
 * [[df]]
 * [[diff]]
 * [[ditto-cmd]]
