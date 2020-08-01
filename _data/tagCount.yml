@@ -41,6 +41,9 @@
     name: bayes
     size: 12
 -
+    name: bell-labs
+    size: 1
+-
     name: Bill-Atkinson
     size: 1
 -
@@ -540,6 +543,9 @@
     size: 3
 -
     name: transaction
+    size: 1
+-
+    name: transistor
     size: 1
 -
     name: trouble-shooting

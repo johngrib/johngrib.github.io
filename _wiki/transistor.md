@@ -3,8 +3,8 @@ layout  : wiki
 title   : 트랜지스터
 summary : 전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자
 date    : 2019-03-17 18:08:43 +0900
-updated : 2020-06-04 14:27:55 +0900
-tag     : 
+updated : 2020-08-02 01:04:10 +0900
+tag     : transistor bell-labs
 toc     : true
 public  : true
 parent  : [[what]]
@@ -87,6 +87,24 @@ p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지
         - 1956년 외에도 1972년에 초전도 현상 해명으로 노벨 물리학상을 또 받았다.
     - 월터 하우저 브래튼(Walter Houser Brattain)
 
+### 1948년 초 - 트랜지스터의 이름을 정하다
+
+벨 연구소 직원 및 임원, 고체 물리 연구팀 31명에게 투표 용지가 부여됐으며, 위원회가 선택지를 하나만 제공할 수 없었다는 설명이 있었다고 한다.
+
+> "On the subject of a generic name to be applied to this class of devices, the committee is unable to make [a] unanimous recommendation."
+
+투표 용지에 적혀 있었던 트랜지스터의 이름 후보는 다음과 같았다고 한다.
+
+>
+- __Semiconductor Triode
+- __Surface States Triode
+- __Crystal Triode
+- __Solid Triode
+- __Iotatron
+- __Transistor
+- ____(Other Suggestion)[^GER-6]
+
+
 ### 1954년 11월
 
 * 시무어 크레이가 공군의 ICBM 제어용 컴퓨터 설계에 트랜지스터를 도입하였으나 채택은 되지 않았다.
@@ -141,4 +159,9 @@ ICBM 설계에 적용할 더 나은 기술을 선택하기 위해서였다.
 
 * 슈퍼컴퓨터를 사랑한 슈퍼맨 / 찰스 J. 머리 저 / 이재범 역 / 지식함지 / 2015년 08월 11일 / 원제 : The Supermen: The Story of Seymour Cray and the Technical Wizards Behind the Supercomputer
 * 트랜지스터의 개념 주워담기 1 / 이용훈 저 / Ohm사(오므사) / 2016년 05월 16일
+- [GER] 벨 연구소 이야기 / 존 거트너 저/정향 역 / 살림Biz / 2012년 05월 22일 / 원제 : The Idea Factory
+
+## 주석
+
+[^GER-6]: [GER] 6장.
 
