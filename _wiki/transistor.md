@@ -3,7 +3,7 @@ layout  : wiki
 title   : 트랜지스터
 summary : 전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자
 date    : 2019-03-17 18:08:43 +0900
-updated : 2020-08-02 01:04:10 +0900
+updated : 2020-08-02 01:08:06 +0900
 tag     : transistor bell-labs
 toc     : true
 public  : true
@@ -134,12 +134,7 @@ ICBM 설계에 적용할 더 나은 기술을 선택하기 위해서였다.
 
 >
 필라델피아에서는 J. 프레스퍼 에커트와 그의 동료들이 같은 결정을 내려야 하는 상황에 있었고 그들은 자기 스위치 기술을 선택했다.
-409-3이라고 알려진 그들의 설계가 결국 공군의 컴퓨터에 채택되었다.
-
-* 슈퍼컴퓨터를 사랑한 슈퍼맨 3장에서 인용.
-
-
-
+409-3이라고 알려진 그들의 설계가 결국 공군의 컴퓨터에 채택되었다.[^MUR-3]
 
 ## Links
 
@@ -157,11 +152,12 @@ ICBM 설계에 적용할 더 나은 기술을 선택하기 위해서였다.
 
 ## 참고문헌
 
-* 슈퍼컴퓨터를 사랑한 슈퍼맨 / 찰스 J. 머리 저 / 이재범 역 / 지식함지 / 2015년 08월 11일 / 원제 : The Supermen: The Story of Seymour Cray and the Technical Wizards Behind the Supercomputer
-* 트랜지스터의 개념 주워담기 1 / 이용훈 저 / Ohm사(오므사) / 2016년 05월 16일
 - [GER] 벨 연구소 이야기 / 존 거트너 저/정향 역 / 살림Biz / 2012년 05월 22일 / 원제 : The Idea Factory
+- [LEE] 트랜지스터의 개념 주워담기 1 / 이용훈 저 / Ohm사(오므사) / 2016년 05월 16일
+- [MUR] 슈퍼컴퓨터를 사랑한 슈퍼맨 / 찰스 J. 머리 저 / 이재범 역 / 지식함지 / 2015년 08월 11일 / 원제 : The Supermen: The Story of Seymour Cray and the Technical Wizards Behind the Supercomputer
 
 ## 주석
 
+[^MUR-3]: [MUR] 3장.
 [^GER-6]: [GER] 6장.
 
