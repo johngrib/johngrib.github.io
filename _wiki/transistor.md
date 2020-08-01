@@ -3,7 +3,7 @@ layout  : wiki
 title   : 트랜지스터
 summary : 전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용하는 반도체 소자
 date    : 2019-03-17 18:08:43 +0900
-updated : 2020-08-02 01:08:56 +0900
+updated : 2020-08-02 01:16:11 +0900
 tag     : transistor bell-labs
 toc     : true
 public  : true
@@ -92,6 +92,7 @@ p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지
 벨 연구소 직원 및 임원, 고체 물리 연구팀 31명에게 투표 용지가 부여됐으며, 위원회가 선택지를 하나만 제공할 수 없었다는 설명이 있었다고 한다.
 
 > "On the subject of a generic name to be applied to this class of devices, the committee is unable to make [a] unanimous recommendation."
+[^GER-6]
 
 투표 용지에 적혀 있었던 트랜지스터의 이름 후보는 다음과 같았다고 한다.
 
@@ -104,6 +105,16 @@ p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지
 - __Transistor
 - ____(Other Suggestion)[^GER-6]
 
+다음은 트랜지스터라는 이름의 적절성에 대한 존 거트너의 설명이다.
+
+>
+벨 연구소의 엔지니어들은 단어 끝에 '-이스터(-istor)'를 붙이길 좋아했다.
+배리스터(varistor: 반도체 저항 소자)나 서미스터(thermistor: 온도에 따라 전기저항치가 달라지는 반도체 회로 소자)라는 이름의 소형 장치들은
+이미 통신시스템의 전기회로망에 있어 필수불가결한 요소로 사용되고 있었다.
+메모에는 '트랜지스터'라는 이름은 '상호 전도도(trans-conductance: 진공관의 증폭률을 양극 저항의 값으로 나눈 것)' 또는 '전송하다(transfer)'라는 단어와
+'배리스터(varistor: 반도체 저항 소자)'라는 단어를 합친 것이라는 설명이 달려 있었다.
+다른 이름들 역시 연구소 핵심 간부들이 좋아할 만한 것이었다.
+[^GER-6]
 
 ### 1954년 11월
 
