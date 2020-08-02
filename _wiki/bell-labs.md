@@ -3,7 +3,7 @@ layout  : wiki
 title   : 벨 연구소
 summary : 
 date    : 2020-07-25 11:03:27 +0900
-updated : 2020-08-02 01:24:59 +0900
+updated : 2020-08-02 16:33:07 +0900
 tag     : unix 알렉산더-그레이엄-벨 bell-labs
 toc     : true
 public  : false
@@ -27,6 +27,7 @@ TODO: 연보를 조사해 작성하라
 - `1947-12-23` 쇼클리, 바딘, 브래튼. 점 접촉 트랜지스터(Point Contact Transistor) 완성.
 - `1948-01-23` 쇼클리. 접합 트랜지스터(Junction Transistor) 발명.
 - `1956` 노벨 물리학상 - 트랜지스터 발명으로 존 바딘, 월터 브래튼, 윌리엄 쇼클리 수상.
+- `1962-07-10` 최초의 능동통신 위성 [텔스타(Telstar)]( https://www.nasa.gov/topics/technology/features/telstar.html ) 발사.
 
 ## From: 유닉스의 탄생
 
