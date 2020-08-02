@@ -2654,6 +2654,14 @@ merge-sort:
     url: /wiki/merge-sort
     updated: '2020-06-28 23:06:31 +0900'
     children: []
+metcalfe-s-law:
+    type: wiki
+    title: '멧칼프의 법칙 (Metcalfe''s law)'
+    summary: ""
+    parent: proverb
+    url: /wiki/metcalfe-s-law
+    updated: '2020-08-02 16:56:08 +0900'
+    children: []
 migrate-to-new-macbook:
     type: wiki
     title: '새 맥북으로 이사가기, 설정하기'
@@ -3077,7 +3085,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
-    children: [ACID, airplain-rule, amdahl-s-law, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hollywood-principle, imitation-game, kees-koster-good-programming-language, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, richardson-maturity-model, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+    children: [ACID, airplain-rule, amdahl-s-law, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hollywood-principle, imitation-game, kees-koster-good-programming-language, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, metcalfe-s-law, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, richardson-maturity-model, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
 purpose-of-business:
     type: wiki
     title: '비즈니스의 목적'

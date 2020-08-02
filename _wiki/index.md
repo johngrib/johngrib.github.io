@@ -244,6 +244,7 @@ regenerate: true
 * [[law-of-demeter]]
 * [[linus-s-law]]
 * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
+* [[metcalfe-s-law]]
 * [[Naming-Principle]]
 * [[no-problem-syndrome]]
 * [[No-Silver-Bullet]]
