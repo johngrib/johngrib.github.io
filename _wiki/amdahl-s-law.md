@@ -3,7 +3,7 @@ layout  : wiki
 title   : 암달의 법칙 (Amdahl's law)
 summary : S = 1 / ((1-f) + f/s)
 date    : 2020-06-19 23:31:46 +0900
-updated : 2020-06-21 11:36:04 +0900
+updated : 2020-08-03 08:08:35 +0900
 tag     : performance proverb law
 toc     : true
 public  : true
@@ -67,7 +67,7 @@ $$ S_\text{latency} = { 1 \over (1-f) + \frac{f}{s} }$$
 
 | 항목                    | 수행 시간 |
 |-------------------------|-----------|
-| `execute` 함수          | 60분      |
+| `execute` 함수          | 6분      |
 | `execute`외의 모든 부분 | 4분       |
 | 전체 프로그램           | 10분      |
 

@@ -292,7 +292,7 @@ amdahl-s-law:
     summary: 'S = 1 / ((1-f) + f/s)'
     parent: proverb
     url: /wiki/amdahl-s-law
-    updated: '2020-06-21 11:36:04 +0900'
+    updated: '2020-08-03 08:08:35 +0900'
     children: []
 andon-cord:
     type: wiki
