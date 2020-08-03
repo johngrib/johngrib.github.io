@@ -3,7 +3,7 @@ layout  : wiki
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2020-03-14 18:37:48 +0900
+updated : 2020-08-03 23:09:30 +0900
 tag     : rfc
 toc     : true
 public  : true
@@ -22,6 +22,11 @@ latex   : false
 * Draft Standard(초안 표준)도 안정된 기술로 인정받곤 하므로 RFC를 참고하여 구현하는 회사들이 있다.
 * 일단 발행된 RFC는 수정/삭제되지 않는다.
     * 업데이트는 새로운 RFC 문서가 발행되고, 해당 문서를 언급하고 링크하는 방식으로 이루어진다.
+
+## 어디에서 읽나?
+
+- [tools.ietf.org]( https://tools.ietf.org/html/ )
+- [rfcreader]( https://www.rfcreader.com/ )
 
 ## RFC의 카테고리
 

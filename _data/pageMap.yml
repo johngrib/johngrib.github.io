@@ -3228,7 +3228,7 @@ RFC:
     summary: '일련번호가 매겨진 인터넷 표준 문서'
     parent: what
     url: /wiki/RFC
-    updated: '2020-03-14 18:37:48 +0900'
+    updated: '2020-08-03 23:09:30 +0900'
     children: []
 richardson-maturity-model:
     type: wiki
