@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2020-05-13 11:41:00 +0900
+updated : 2020-08-05 22:35:53 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,10 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 파일 탭 닫기 버튼(x) 왼쪽으로 옮기기
+
+`Preferences` - `Editor` - `General` - `Editor Tabs`에서 `Close button position`을 `Right`에서 `Left`로 바꿔준다.
 
 ## unused symbol 색깔 변경하기
 
