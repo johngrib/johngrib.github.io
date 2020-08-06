@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2020-08-05 22:35:53 +0900
+updated : 2020-08-07 08:36:50 +0900
 tag     : java
 toc     : true
 public  : true
@@ -13,9 +13,23 @@ latex   : false
 * TOC
 {:toc}
 
+## 파일 마지막에 자동으로 1개의 개행 문자 추가하기
+
+`Preferences` - `Editor` - `General` - `Save Files`에서 `Ensure an empty line at the end of a file on save`를 체크한다.
+
+파일 마지막에 1개의 개행 문자를 추가하는 것은 POSIX의 Line 정의를 따르기 위한 것이다.
+
+POSIX에서는 **Line**을 "개행 문자로 끝나는 0개 이상의 개행 문자가 아닌 문자들의 시퀀스"으로 정의하고 있다.
+
+- [The Open Group Base Specifications Issue 7, 2018 edition]( https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206 )
+
+이를 따르지 않으면 github에서도 경고를 보여준다(PR을 올려보면 바로 알 수 있다).
+
+
 ## 파일 탭 닫기 버튼(x) 왼쪽으로 옮기기
 
 `Preferences` - `Editor` - `General` - `Editor Tabs`에서 `Close button position`을 `Right`에서 `Left`로 바꿔준다.
+
 
 ## unused symbol 색깔 변경하기
 
