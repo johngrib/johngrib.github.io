@@ -70,6 +70,7 @@ regenerate: true
 * [[John-von-Neumann]]
 * [[John-W-Backus]]
 * [[the-beginning-of-linux]]
+* [[Donald-Ervin-Knuth]]
 
 ## [[how-to]]
 

@@ -1214,6 +1214,14 @@ docker:
     url: /wiki/docker
     updated: '2020-02-05 22:54:41 +0900'
     children: []
+Donald-Ervin-Knuth:
+    type: wiki
+    title: '도널드 커누스 (Donald Ervin Knuth)'
+    summary: ""
+    parent: people
+    url: /wiki/Donald-Ervin-Knuth
+    updated: '2020-08-09 11:25:52 +0900'
+    children: []
 dry-principle:
     type: wiki
     title: 'DRY 원칙'
@@ -2941,7 +2949,7 @@ people:
     parent: index
     url: /wiki/people
     updated: '2020-07-29 22:19:05 +0900'
-    children: [Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, claude-elwood-shannon, gerald-weinberg-language-king, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, the-beginning-of-linux]
+    children: [Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, claude-elwood-shannon, Donald-Ervin-Knuth, gerald-weinberg-language-king, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, the-beginning-of-linux]
 perl-one-liner:
     type: wiki
     title: 'Perl 한 줄 사용'
