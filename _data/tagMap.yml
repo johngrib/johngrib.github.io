@@ -443,6 +443,10 @@ story:
     - {fileName: Las-chicas-del-cable}
     - {fileName: legend}
     - {fileName: the-beginning-of-linux}
+slack:
+    - {fileName: beginning-of-slack}
+hbr:
+    - {fileName: beginning-of-slack}
 Bill-Atkinson:
     - {fileName: Bill-Atkinson-productivity}
 Steve-Jobs:

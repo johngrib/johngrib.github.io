@@ -245,6 +245,9 @@
     name: hammerspoon
     size: 11
 -
+    name: hbr
+    size: 1
+-
     name: health
     size: 1
 -
@@ -465,6 +468,9 @@
     size: 3
 -
     name: sf
+    size: 1
+-
+    name: slack
     size: 1
 -
     name: soft-skill

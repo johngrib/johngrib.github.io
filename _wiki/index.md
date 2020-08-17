@@ -53,6 +53,7 @@ regenerate: true
 ### [[legend]]
 
 * [[begining-of-apache-webserver]]
+* [[beginning-of-slack]]
 * [[Las-chicas-del-cable]]
 * [[netflix-architecture-and-culture]]
 * [[pentium-fdiv-bug]]
