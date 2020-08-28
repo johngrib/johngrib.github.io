@@ -239,6 +239,7 @@ regenerate: true
 * [[Copernican-Principle]]
 * [[dry-principle]]
 * [[Edsel-edict]]
+* [[hofstadter-s-law]]
 * [[hollywood-principle]]
 * [[imitation-game]]
 * [[kees-koster-good-programming-language]]
