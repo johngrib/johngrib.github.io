@@ -36,7 +36,7 @@
     size: 1
 -
     name: bash
-    size: 55
+    size: 56
 -
     name: bayes
     size: 12
@@ -93,7 +93,7 @@
     size: 2
 -
     name: command
-    size: 58
+    size: 59
 -
     name: command-line
     size: 1

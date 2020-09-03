@@ -359,6 +359,7 @@ regenerate: true
 * [[du]]
 * [[fc]]
 * [[fd-cmd]]
+* [[file-cmd]]
 * [[find-cmd]]
 * [[fish-shell]]
 * [[fortune-cmd]]

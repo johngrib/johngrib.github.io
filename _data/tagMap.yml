@@ -241,6 +241,7 @@ bash:
     - {fileName: du}
     - {fileName: fc}
     - {fileName: fd-cmd}
+    - {fileName: file-cmd}
     - {fileName: find-cmd}
     - {fileName: fortune-cmd}
     - {fileName: git-alias}
@@ -299,6 +300,7 @@ command:
     - {fileName: du}
     - {fileName: fc}
     - {fileName: fd-cmd}
+    - {fileName: file-cmd}
     - {fileName: find-cmd}
     - {fileName: fortune-cmd}
     - {fileName: git}
