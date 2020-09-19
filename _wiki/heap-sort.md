@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-19 14:41:02 +0900
+updated : 2020-09-19 14:58:18 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -97,8 +97,47 @@ private void swim(int k) {
 }
 ```
 
-
 ### sink
+
+다음과 같이 힙 정렬 상태를 불완전하게 하는 노드 `17`이 있다고 하자.
+
+![]( /post-img/heap-sort/sink-01.svg )
+
+sink 방식을 사용하면 `17`이 가라앉으면서(자식 노드와 자리를 바꾸면서) 힙 정렬된 상태로 복구한다.
+
+![]( /post-img/heap-sort/sink-02.svg )
+
+![]( /post-img/heap-sort/sink-03.svg )
+
+```java
+/**
+ * k 노드의 위치를 sink 방식으로 복구한다.
+ *
+ * @param k 정렬 상태를 위반하는 노드의 배열 인덱스
+ */
+private void sink(int k) {
+  int N = array.length;
+  while ( 2 * k <= N ) {
+    // 최하단 노드까지 도달하지 않았다면
+    int j = 2 * k;
+    if (j < N && array[j] < array[j+1]) {
+      // 두 자식 노드 중 더 큰 값을 가진 노드를 선택한다
+      j++;
+    }
+    if (array[k] >= array[j]) {
+      // 선택한 자식 노드가 sink 노드의 값보다 작으면 작업을 끝낸다
+      break;
+    }
+    // 그렇지 않다면 선택한 자식 노드와 sink 노드의 위치를 바꾼다
+    int temp = array[k];
+    array[k] = array[j];
+    array[j] = temp;
+
+    k = j;
+  }
+}
+```
+
 
 ## 참고문헌
 
