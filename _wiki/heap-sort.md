@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-19 19:20:46 +0900
+updated : 2020-09-19 23:22:10 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -172,6 +172,35 @@ private void sink(int k) {
 ![]( /post-img/heap-sort/insert-04.svg )
 
 `(16)`과 `(20)`을 바꿨다. `(20)`위에는 `(22)`가 있으므로 swim이 끝난다.
+
+## 루트 노드의 삭제
+
+- 힙의 루트 노드를 제거한다.
+- 힙의 마지막 노드를 루트 노드로 옮긴다.
+- 힙 사이즈를 `-1`한다.
+- 루트 노드를 sinc 시킨다.
+
+루트 노드를 왜 삭제하는가?
+
+- 힙의 루트 노드는 힙에 들어있는 모든 값들 중 가장 큰 값을 갖고 있다.
+    - 힙에서 루트 노드를 계속해서 빼내면, 우선순위 큐로 사용할 수 있다.
+
+다음과 같이 정렬된 힙에서 루트 노드 `(22)`를 제거한다고 하자.
+
+![]( /post-img/heap-sort/remove-01.svg )
+
+루트 노드를 제거한 다음, 배열의 마지막에 있는 노드 `(8)`를 루트 위치로 옮긴다.
+
+![]( /post-img/heap-sort/remove-02.svg )
+
+이제 `(8)`에 sinc 연산을 적용한다. `(20)`과 `(19)` 중 더 큰 노드와 `(8)`의 자리를 바꾼다.
+
+![]( /post-img/heap-sort/remove-03.svg )
+
+`(16)`과 `(8)`이 자리를 바꾸고 sink 연산은 종료된다.
+
+![]( /post-img/heap-sort/remove-04.svg )
+
 
 
 ## 참고문헌
