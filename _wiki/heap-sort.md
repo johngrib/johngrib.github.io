@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-19 13:56:27 +0900
+updated : 2020-09-19 13:59:40 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -19,9 +19,7 @@ $$
 \def\frfr#1{\{ #1 \}}
 $$
 
-## 힙 (Heap)
-
-### 힙 정렬된 상태 (heap ordered)
+## 힙 정렬된 이진 트리
 
 > Definition. A binary tree is heap-ordered if the key in each node is larger than or equal to the keys in that node’s two children (if any).
 >
@@ -39,7 +37,9 @@ $$
 - 19, 21
 - 14, 19
 
-### 이진 힙 (binary heap)
+## 이진 힙 (binary heap)
+
+일반적으로 이진 힙을 그냥 힙이라고 부른다.
 
 > Definition. A binary heap is a collection of keys arranged in a complete heap-or- dered binary tree, represented in level order in an array (not using the first entry).
 >
