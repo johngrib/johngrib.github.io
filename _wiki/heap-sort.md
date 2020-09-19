@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-19 13:47:39 +0900
+updated : 2020-09-19 13:56:27 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -25,7 +25,7 @@ $$
 
 > Definition. A binary tree is heap-ordered if the key in each node is larger than or equal to the keys in that node’s two children (if any).
 >
-> 정의. 이진 트리에서 각 노드의 두 자식 노드(만약 있다면)의 키 값이 부모 노드의 키 값보다 작으면 그 이진 트리는 힙-정렬되었다고 한다.[^sedgewick-313]
+> 정의. 이진 트리에서 각 노드의 두 자식 노드(만약 있다면)의 키 값이 부모 노드의 키 값보다 작으면 그 이진 트리는 힙-정렬되었다고 한다.[^sedgewick-2-4]
 
 즉, 힙-정렬 되었을 때 가장 큰 값은 루트 노드에 있다.
 
@@ -43,7 +43,7 @@ $$
 
 > Definition. A binary heap is a collection of keys arranged in a complete heap-or- dered binary tree, represented in level order in an array (not using the first entry).
 >
-> 정의. 이진 힙은 힙-정렬된 완전 이진 트리의 노드들이 그 트리 레벨 순서대로 배열에 나열된 것이다(단 배열의 첫 번째 항목은 이용하지 않는다).
+> 정의. 이진 힙은 힙-정렬된 완전 이진 트리의 노드들이 그 트리 레벨 순서대로 배열에 나열된 것이다(단 배열의 첫 번째 항목은 이용하지 않는다).[^sedgewick-2-4]
 
 ![]( /post-img/heap-sort/sorted-heap.svg )
 
@@ -68,4 +68,4 @@ $$
 
 ## 주석
 
-[^sedgewick-313]: 알고리즘 [개정4판]. 2.4장. 313쪽.
+[^sedgewick-2-4]: 알고리즘 [개정4판]. 2.4장.
