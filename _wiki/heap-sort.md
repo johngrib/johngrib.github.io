@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : 힙 정렬 (Heap Sort)
-summary : 
+summary : 그리고 우선순위 큐 (Priority Queue)
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-19 23:22:10 +0900
+updated : 2020-09-19 23:28:03 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -143,7 +143,7 @@ private void sink(int k) {
 }
 ```
 
-## 새로운 노드 삽입
+### 새로운 노드 삽입
 
 - 힙을 저장하고 있는 배열의 끝 부분에(마지막 노드 바로 다음 인덱스) 새로운 값을 추가하고, 힙 사이즈에 `+1`한다.
 - 새로 추가된 노드를 swim 시킨다.
@@ -173,7 +173,7 @@ private void sink(int k) {
 
 `(16)`과 `(20)`을 바꿨다. `(20)`위에는 `(22)`가 있으므로 swim이 끝난다.
 
-## 루트 노드의 삭제
+### 루트 노드의 삭제
 
 - 힙의 루트 노드를 제거한다.
 - 힙의 마지막 노드를 루트 노드로 옮긴다.
