@@ -359,6 +359,7 @@ algorithm:
     - {fileName: big-O-notation}
     - {fileName: dijkstra-2-stack-for-exp-eval}
     - {fileName: gray-code}
+    - {fileName: heap-sort}
     - {fileName: insertion-sort}
     - {fileName: merge-sort}
     - {fileName: selection-sort}
@@ -790,6 +791,14 @@ lua:
     - {fileName: hammerspoon-luarocks}
 health:
     - {fileName: healthy-life}
+sort:
+    - {fileName: heap-sort}
+    - {fileName: insertion-sort}
+    - {fileName: John-von-Neumann}
+    - {fileName: merge-sort}
+    - {fileName: quick-sort}
+    - {fileName: selection-sort}
+    - {fileName: sort}
 chrome:
     - {fileName: how-i-use-web-browser}
     - {fileName: vimium}
@@ -804,13 +813,6 @@ http:
     - {fileName: why-http-80-https-443}
 turing:
     - {fileName: imitation-game}
-sort:
-    - {fileName: insertion-sort}
-    - {fileName: John-von-Neumann}
-    - {fileName: merge-sort}
-    - {fileName: quick-sort}
-    - {fileName: selection-sort}
-    - {fileName: sort}
 spring:
     - {fileName: inversion-of-control}
     - {fileName: spring}

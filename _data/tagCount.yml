@@ -15,7 +15,7 @@
     size: 1
 -
     name: algorithm
-    size: 9
+    size: 10
 -
     name: alignment
     size: 1
@@ -477,7 +477,7 @@
     size: 2
 -
     name: sort
-    size: 6
+    size: 7
 -
     name: special-chars
     size: 2
