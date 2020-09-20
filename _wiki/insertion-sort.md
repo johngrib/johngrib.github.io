@@ -3,7 +3,7 @@ layout  : wiki
 title   : 삽입 정렬 (Insertion Sort)
 summary : 최선 O(N), 평균 O(N^2), 최악 O(N^2)
 date    : 2020-06-14 17:32:52 +0900
-updated : 2020-09-20 15:39:03 +0900
+updated : 2020-09-20 15:50:20 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -127,7 +127,7 @@ function insert(a, pos, value) {
 
 ## 참고문헌
 
-- The art of computer programming 3 정렬과 검색(개정2판) / 도널드 커누스 저 / 한빛미디어 / 초판 2쇄 2013년 02월 10일
+- The Art of Computer Programming 3 정렬과 검색(개정2판) / 도널드 커누스 저 / 한빛미디어 / 초판 2쇄 2013년 02월 10일
 - 사전처럼 바로 찾아 쓰는 알고리즘 / 조지 T. 하인만, 게리 폴리케, 스탠리 셀코 공저 / 전경원 역 / 한빛미디어 / 초판 2쇄 2011년 10월 20일 / 원제: Algorithms In A Nutshell
 - 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판발행 2018년 12월 26일
 

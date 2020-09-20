@@ -356,7 +356,7 @@ b-tree:
     summary: '보편적인 색인 구조'
     parent: algorithm
     url: /wiki/b-tree
-    updated: '2020-04-21 22:22:23 +0900'
+    updated: '2020-09-20 15:50:02 +0900'
     children: []
 bandwidth:
     type: wiki
@@ -1996,7 +1996,7 @@ heap-sort:
     summary: '그리고 우선순위 큐 (Priority Queue)'
     parent: algorithm
     url: /wiki/heap-sort
-    updated: '2020-09-20 15:40:36 +0900'
+    updated: '2020-09-20 15:55:55 +0900'
     children: []
 hhkb-jp-tmk:
     type: wiki
@@ -2100,7 +2100,7 @@ insertion-sort:
     summary: '최선 O(N), 평균 O(N^2), 최악 O(N^2)'
     parent: algorithm
     url: /wiki/insertion-sort
-    updated: '2020-09-20 15:39:03 +0900'
+    updated: '2020-09-20 15:50:20 +0900'
     children: []
 integer:
     type: wiki
