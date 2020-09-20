@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 그리고 우선순위 큐 (Priority Queue)
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-20 15:40:36 +0900
+updated : 2020-09-20 15:55:55 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -20,6 +20,19 @@ $$
 $$
 
 ## 소개
+
+도널드 커누스는 힙 정렬에 대해 다음과 같이 말한다.
+
+> 한편, [[quick-sort]]{빠른정렬}은 오직 평균 경우에서만 효율적이며, 해당 최악의 경우는 $$N^2$$의 규모이다.
+힙 정렬은 최악의 경우가 평균 경우에 비해 아주 떨어지지는 않는다는 흥미로운 성질을 가지고 있다.
+프로그램 H에서는 항상
+>
+> $$ A \ge 1.5 N$$ , $$ B \ge N \floor{ \lg N } $$ , $$ C \ge N \floor{ \lg N } $$
+>
+> 가 성립하며, 따라서 입력 자료의 분포와는 무관하게 $$ 18N \floor{ \lg N } + 38 N $$ 단위 이상의 시간을 소비하는 경우는 없다.
+지금까지 나온 정렬 방법들 중 정렬 시간이 $$ N \log N $$의 규모임을 보장하는 것은 힙 정렬뿐이다.
+5.2.4 절에서 설명하는 병합 정렬도 이러한 성질을 더 가지고 있지만, 메모리 공간을 더 많이 소비한다.
+[^TAOCP-5-2-3]
 
 로버트 세지윅은 힙 정렬에 대해 다음과 같이 언급한다.
 
@@ -612,17 +625,18 @@ private static <T> void siftDownComparable(int k, T x, Object[] es, int n) {
 }
 ```
 
-
 ## 참고문헌
 
 - [ROB] 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판발행 2018년 12월 26일
 - [GEO] 사전처럼 바로 찾아 쓰는 알고리즘 / 조지 T. 하인만, 게리 폴리케, 스탠리 셀코 공저 / 전경원 역 / 한빛미디어 / 초판 2쇄 2011년 10월 20일 / 원제: Algorithms In A Nutshell
+- [TAOCP] The Art of Computer Programming 3 정렬과 검색(개정2판) [양장] / 도널드 커누스 저 / 한빛미디어 / 초판 2쇄 2013년 02월 10일
 
 ## 주석
 
 [^sedgewick-2-4]: [ROB]. 2.4장.
 [^sedgewick-326]: 이 부분은 [ROB]에서는 "두 번째는 힙을 삭제하면서 정렬을 취합한다"라고 번역되어 있으나, 원서에서는 "and the second destroys the heap for the sortdown"라고 되어 있다. 그리고 정렬 취합 단계는 부분 힙이나 힙의 루트 노드를 삭제하는 것이 아니라 힙의 정렬 구조를 불완전하게 만든 다음 정렬되도록 하는 작업이기 때문에 이 글에서는 "파괴"라는 단어로 옮겼다.
 [^GEO-115]: [GEO]. 4장. 힙 정렬.
+[^TAOCP-5-2-3]: [TAOCP] 5.2.3장.
 
 [heap-java]: https://algs4.cs.princeton.edu/24pq/Heap.java.html
 
