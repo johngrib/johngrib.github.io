@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 그리고 우선순위 큐 (Priority Queue)
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-20 09:43:10 +0900
+updated : 2020-09-20 13:14:44 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -34,6 +34,8 @@ $$
 왜냐하면 아주 많은 수의 데이터 삽입 작업 또는 최대(또는 최소) 항목 삭제 작업이 서로 섞여 있는 경우에도
 로그 시간 성능을 보증해 주기 때문이다.
 [^sedgewick-2-4]
+
+로버트 세지윅은 힙 정렬이 전통적이면서 우아한 정렬 알고리즘(classic elegant sorting algorithm known as heapsort)이라 평하기도 했다.
 
 ## 힙 정렬된 이진 트리
 
@@ -258,12 +260,93 @@ private void sink(int k) {
     - $$ \log_d N $$.
 - 자식 노드의 수가 늘어나므로 자식들 중에서 가장 큰 노드를 찾는 속도는 느려진다.
 
+## 힙 정렬
+
+힙 정렬은 두 단계로 구성된다.
+
+- 힙 구성(heap construction)
+    - 정렬 대상 배열을 heap으로 해석해 배열 아이템을 재배치한다.
+- 정렬 취합(sortdown)
+    - 최하단 노드부터 하나씩 root로 올려 올바른 위치로 sink 시킨다.
+
+코드를 읽어보면 우아한 논리가 눈에 들어온다.
+
+다음은 [로버트 세지윅의 예제 코드][heap-java]를 일부 수정하고 주석을 붙인 것이다.
+
+```java
+/** 주어진 배열을 정렬한다. */
+public static void sort(Comparable[] array) {
+  final int n = array.length;
+
+  for (int k = n / 2; k >= 1; k--) {
+  // 힙을 구성한다(힙의 최하단 레벨은 sink 할 수 없으니 제외).
+    sink(array, k, n);
+  }
+
+  int k = n;
+  while (k > 1) {
+  // 정렬 취합. 최하단부터 노드를 하나씩 root로 올려놓고 sink 시킨다.
+    exchange(array, 1, k--);
+    sink(array, 1, k);
+  }
+}
+
+/**
+ * k 인덱스 노드를 인덱스 n 지점까지 sink 시킨다.
+ *
+ * @param array 힙 노드가 보관되어 있는 배열
+ * @param k     sink 대상 노드 인덱스
+ * @param n     sink 대상이 되는 부분 힙의 경계 인덱스
+ */
+private static void sink(Comparable[] array, int k, int n) {
+  while (2 * k <= n) {
+    int j = 2 * k;
+    if (j < n && less(array, j, j + 1)) {
+      j++;
+    }
+    if (!less(array, k, j)) {
+      break;
+    }
+    exchange(array, k, j);
+    k = j;
+  }
+}
+
+private static boolean less(Comparable[] array, int i, int j) {
+  return array[i - 1].compareTo(array[j - 1]) < 0;
+}
+
+private static void exchange(Comparable[] array, int i, int j) {
+  Comparable swap = array[i - 1];
+  array[i - 1] = array[j - 1];
+  array[j - 1] = swap;
+}
+```
+
+이 코드(알고리즘 2.7)에 대해 로버트 세지윅은 다음과 같이 말한다.
+
+> 알고리즘 2.7은 이러한 아이디어를 바탕으로 한 온전한 구현으로, 1964년 힙-정렬을 발명한 윌리엄스(J.W. Williams)와
+힙-정렬을 개선한 플로이드(R.W. Floyd)의 전통적인 방식을 따르고 있다.
+비록 이 코드의 루프가 각각 서로 다른 작업을 하는 듯이 보이지만(첫 번째는 힙을 구성하고 두 번째는 힙을 파괴[^sedgewick-326]하면서 정렬을 취합한다)
+두 루프 모두 `sink()` 메서드를 기반으로 하고 있다.
+
+힙 구성, 정렬 취합과 관련된 다음 두 명제는 증명된 것이다. 증명은 어렵지 않으므로 생략한다.
+
+> 명제 R. `sink()` 작업에 기반한 힙 구성은 N개의 항목에 대해 수행할 때 `2N`보다 적은 수의 비교 연산과 `N`보다 적은 수의 교환 연산을 사용한다.
+>
+> 명제 S. 힙-정렬은 `N`개 항목을 정렬하는데 $$ 2N \lg N + 2N $$보다 적은 비교 연산(그리고 그 절반만큼의 교환 연산)을 수행한다.
+[^sedgewick-2-4]
+
+
 
 ## 참고문헌
 
-- 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판발행 2018년 12월 26일
+- [ROB] 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판발행 2018년 12월 26일
 
 ## 주석
 
-[^sedgewick-2-4]: 알고리즘 [개정4판]. 2.4장.
+[^sedgewick-2-4]: [ROB]. 2.4장.
+[^sedgewick-326]: 이 부분은 [ROB]에서는 "두 번째는 힙을 삭제하면서 정렬을 위합한다"라고 번역되어 있으나, 원서에서는 "and the second destroys the heap for the sortdown"라고 되어 있다. 그리고 정렬 취합 단계는 부분 힙이나 힙의 루트 노드를 삭제하는 것이 아니라 힙의 정렬 구조를 불완전하게 만든 다음 정렬되도록 하는 작업이기 때문에 이 글에서는 "파괴"라는 단어로 옮겼다.
+
+[heap-java]: https://algs4.cs.princeton.edu/24pq/Heap.java.html
 
