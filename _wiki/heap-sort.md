@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 그리고 우선순위 큐 (Priority Queue)
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-20 15:07:14 +0900
+updated : 2020-09-20 15:27:22 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -36,6 +36,12 @@ $$
 [^sedgewick-2-4]
 
 로버트 세지윅은 힙 정렬이 전통적이면서 우아한 정렬 알고리즘(classic elegant sorting algorithm known as heapsort)이라 평하기도 했다.
+
+## heap의 어원
+
+![]( /post-img/heap-sort/sand-heap.jpg ){:style="max-width: 350px;"}
+
+모래나 곡식이 원뿔형으로 쌓여 있는 모양을 heap 이라 한다.
 
 ## 힙 정렬된 이진 트리
 
