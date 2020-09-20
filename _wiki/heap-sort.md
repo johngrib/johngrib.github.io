@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 그리고 우선순위 큐 (Priority Queue)
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-20 09:26:13 +0900
+updated : 2020-09-20 09:29:49 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -214,6 +214,16 @@ private void sink(int k) {
 `(16)`과 `(8)`이 자리를 바꾸고 sink 연산은 종료된다.
 
 ![]( /post-img/heap-sort/remove-04.svg )
+
+### 배열 사이즈 자동 조정
+
+소박하긴 하지만, 이 방법을 쓰면 힙이 사용하는 배열 사이즈가 부족할 일은 없다.
+
+- `insert`가 발생할 때마다 배열 사이즈를 두 배로 늘려준다.
+- `deleteMax`가 발생할 때마다 배열 사이즈를 반으로 줄인다.
+
+이 외에도 다양한 방법이 있다.
+
 
 ## 다중 힙 (Multiway Heap)
 
