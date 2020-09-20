@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 그리고 우선순위 큐 (Priority Queue)
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-20 13:14:44 +0900
+updated : 2020-09-20 13:20:02 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -346,7 +346,7 @@ private static void exchange(Comparable[] array, int i, int j) {
 ## 주석
 
 [^sedgewick-2-4]: [ROB]. 2.4장.
-[^sedgewick-326]: 이 부분은 [ROB]에서는 "두 번째는 힙을 삭제하면서 정렬을 위합한다"라고 번역되어 있으나, 원서에서는 "and the second destroys the heap for the sortdown"라고 되어 있다. 그리고 정렬 취합 단계는 부분 힙이나 힙의 루트 노드를 삭제하는 것이 아니라 힙의 정렬 구조를 불완전하게 만든 다음 정렬되도록 하는 작업이기 때문에 이 글에서는 "파괴"라는 단어로 옮겼다.
+[^sedgewick-326]: 이 부분은 [ROB]에서는 "두 번째는 힙을 삭제하면서 정렬을 취합한다"라고 번역되어 있으나, 원서에서는 "and the second destroys the heap for the sortdown"라고 되어 있다. 그리고 정렬 취합 단계는 부분 힙이나 힙의 루트 노드를 삭제하는 것이 아니라 힙의 정렬 구조를 불완전하게 만든 다음 정렬되도록 하는 작업이기 때문에 이 글에서는 "파괴"라는 단어로 옮겼다.
 
 [heap-java]: https://algs4.cs.princeton.edu/24pq/Heap.java.html
 
