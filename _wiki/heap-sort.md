@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 그리고 우선순위 큐 (Priority Queue)
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-20 14:41:20 +0900
+updated : 2020-09-20 15:07:14 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -437,6 +437,156 @@ public class PriorityQueue<E> extends AbstractQueue<E>
 - 이 구현체는 스레드 안전하지 않다.
 - 이 구현체의 enqueuing과 dequeuing 기능을 구현한 메소드들의 시간 복잡도는 $$O( \log n )$$ 이다.
 
+### add, offer 메소드
+
+새로운 값을 추가하는 `offer`, `add` 메소드 코드를 읽어보자. 한국어 주석은 내가 추가한 것이다.
+
+```java
+/**
+ * Inserts the specified element into this priority queue.
+ *
+ * @return {@code true} (as specified by {@link Queue#offer})
+ * @throws ClassCastException if the specified element cannot be
+ *         compared with elements currently in this priority queue
+ *         according to the priority queue's ordering
+ * @throws NullPointerException if the specified element is null
+ */
+public boolean offer(E e) {
+    if (e == null)
+        throw new NullPointerException();
+    modCount++;
+    int i = size;
+    if (i >= queue.length) {
+        // 용량을 초과할 것 같으면 용량을 늘려준다
+        grow(i + 1);
+    }
+    // 새로운 노드를 바닥에 추가하고, swim 시켜서 올려보낸다
+    siftUp(i, e);
+
+    // 사이즈를 갱신하고 끝낸다
+    size = i + 1;
+    return true;
+}
+
+/**
+ * 생략: offer와 똑같다.
+ */
+public boolean add(E e) {
+    return offer(e);
+}
+```
+
+#### shiftUp 메소드 (swim 역할)
+
+이번엔 swim 역할을 하는 `shiftUp` 메소드를 읽어보자. 이번에도 한국어 주석은 내가 작성한 것이다.
+
+`PriorityQueue`는 값이 작을수록 상위 노드로 올라가게 되므로, 부모가 swim 연산 노드보다 작은 값을 가지면 swim이 종료된다.
+
+```java
+private void siftUp(int k, E x) {
+    if (comparator != null)
+        siftUpUsingComparator(k, x, queue, comparator);
+    else
+        siftUpComparable(k, x, queue);
+}
+
+private static <T> void siftUpComparable(int k, T x, Object[] es) {
+    Comparable<? super T> key = (Comparable<? super T>) x;
+    while (k > 0) {
+        // 부모 노드
+        int parent = (k - 1) >>> 1;
+        Object e = es[parent];
+        // 부모 노드보다 값이 크다면 swim을 멈춘다.
+        if (key.compareTo((T) e) >= 0)
+            break;
+        // 그렇지 않다면 부모 노드와 자리를 바꾼다.
+        es[k] = e;
+        k = parent;
+    }
+    es[k] = key;
+}
+```
+
+### poll 메소드
+
+`poll` 메소드는 다음 예제와 같이 최상단 노드, 즉 `head`의 값을 dequeuing 한다.
+
+```java
+PriorityQueue<Comparable> queue = new PriorityQueue<>();
+queue.addAll(List.of(5, 6, 12, 1, 95, 7, 53));
+
+for (int i = 0; i < 7; i++) {
+  System.out.print(queue.poll() + ", ");
+}
+```
+
+출력 결과는 다음과 같다.
+
+```
+1, 5, 6, 7, 12, 53, 95,
+```
+
+`poll` 메소드의 코드는 다음과 같다.
+
+```java
+public E poll() {
+    final Object[] es;
+    final E result;
+
+    if ((result = (E) ((es = queue)[0])) != null) {
+        modCount++;
+        final int n;
+
+        // 마지막 노드 x를 선택한다.
+        final E x = (E) es[(n = --size)];
+        // 마지막 노드가 있었던 곳에 null 을 입력한다.
+        es[n] = null;
+        if (n > 0) {
+            // 노드 x 를 최상단부터 sink 시킨다
+            final Comparator<? super E> cmp;
+            if ((cmp = comparator) == null)
+                siftDownComparable(0, x, es, n);
+            else
+                siftDownUsingComparator(0, x, es, n, cmp);
+        }
+    }
+    return result;
+}
+```
+
+#### shiftDown 메소드 (sink 역할)
+
+```java
+private void siftDown(int k, E x) {
+    if (comparator != null)
+        siftDownUsingComparator(k, x, queue, size, comparator);
+    else
+        siftDownComparable(k, x, queue, size);
+}
+
+private static <T> void siftDownComparable(int k, T x, Object[] es, int n) {
+    // assert n > 0;
+    Comparable<? super T> key = (Comparable<? super T>)x;
+    int half = n >>> 1;           // loop while a non-leaf
+    while (k < half) {
+        // 왼쪽과 오른쪽 두 자식 노드들 중 더 작은 노드를 선택한다.
+        int child = (k << 1) + 1; // assume left child is least
+        Object c = es[child];
+        int right = child + 1;
+        if (right < n &&
+            ((Comparable<? super T>) c).compareTo((T) es[right]) > 0)
+            c = es[child = right];
+        // 자식 노드 선택이 끝났다면 자식과 값을 비교한다.
+        // 자식 노드보다 값이 작다면 sink를 멈춘다.
+        if (key.compareTo((T) c) <= 0)
+            break;
+        // 그렇지 않다면 자식 노드와 자리를 바꾼다.
+        es[k] = c;
+        k = child;
+    }
+    es[k] = key;
+}
+```
 
 
 ## 참고문헌
