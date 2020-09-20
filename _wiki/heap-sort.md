@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 그리고 우선순위 큐 (Priority Queue)
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-20 15:27:22 +0900
+updated : 2020-09-20 15:40:36 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -18,6 +18,8 @@ $$
 \def\floor#1{\lfloor #1 \rfloor}
 \def\frfr#1{\{ #1 \}}
 $$
+
+## 소개
 
 로버트 세지윅은 힙 정렬에 대해 다음과 같이 언급한다.
 
@@ -36,6 +38,18 @@ $$
 [^sedgewick-2-4]
 
 로버트 세지윅은 힙 정렬이 전통적이면서 우아한 정렬 알고리즘(classic elegant sorting algorithm known as heapsort)이라 평하기도 했다.
+
+
+Algorithms In A Nutshell에서는 힙 정렬을 스포츠 경기 토너먼트에 비유했다.
+
+> 스포츠에서 토너먼트는 $$n$$개의 팀 가운데에서 '최고'의 팀을 뽑는 방식이지만,
+최종 승자가 다른 $$n-1$$개의 팀과 모두 대결하라고 강요하지는 않는다.
+미국에서 가장 인기 있는 농구 경기 중 하나인 NCAA 선수권 토너먼트는 본래 64개 대학팀이 선수권 우승을 향해 경쟁한다.
+최종 우승팀은 결승전에 오르기까지 5개 팀과 경기를 하므로 모두 6번을 이겨야 한다.
+$$ 6 = \log (64) $$인 것은 우연이 아니다.
+힙 정렬(Heap Sort)은 이러한 동작을 집합 원소의 정렬에 이용한다.
+[^GEO-115]
+
 
 ## heap의 어원
 
@@ -267,6 +281,10 @@ private void sink(int k) {
 - 자식 노드의 수가 늘어나므로 자식들 중에서 가장 큰 노드를 찾는 속도는 느려진다.
 
 ## 힙 정렬
+
+| 최고            | 평균            | 최저            |
+|-----------------|-----------------|-----------------|
+| $$O(n \log n)$$ | $$O(n \log n)$$ | $$O(n \log n)$$ |
 
 힙 정렬은 두 단계로 구성된다.
 
@@ -598,11 +616,13 @@ private static <T> void siftDownComparable(int k, T x, Object[] es, int n) {
 ## 참고문헌
 
 - [ROB] 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판발행 2018년 12월 26일
+- [GEO] 사전처럼 바로 찾아 쓰는 알고리즘 / 조지 T. 하인만, 게리 폴리케, 스탠리 셀코 공저 / 전경원 역 / 한빛미디어 / 초판 2쇄 2011년 10월 20일 / 원제: Algorithms In A Nutshell
 
 ## 주석
 
 [^sedgewick-2-4]: [ROB]. 2.4장.
 [^sedgewick-326]: 이 부분은 [ROB]에서는 "두 번째는 힙을 삭제하면서 정렬을 취합한다"라고 번역되어 있으나, 원서에서는 "and the second destroys the heap for the sortdown"라고 되어 있다. 그리고 정렬 취합 단계는 부분 힙이나 힙의 루트 노드를 삭제하는 것이 아니라 힙의 정렬 구조를 불완전하게 만든 다음 정렬되도록 하는 작업이기 때문에 이 글에서는 "파괴"라는 단어로 옮겼다.
+[^GEO-115]: [GEO]. 4장. 힙 정렬.
 
 [heap-java]: https://algs4.cs.princeton.edu/24pq/Heap.java.html
 
