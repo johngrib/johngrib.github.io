@@ -1996,7 +1996,7 @@ heap-sort:
     summary: '그리고 우선순위 큐 (Priority Queue)'
     parent: algorithm
     url: /wiki/heap-sort
-    updated: '2020-09-20 09:09:32 +0900'
+    updated: '2020-09-20 09:26:13 +0900'
     children: []
 hhkb-jp-tmk:
     type: wiki

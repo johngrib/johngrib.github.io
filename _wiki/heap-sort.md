@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 그리고 우선순위 큐 (Priority Queue)
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-20 09:09:32 +0900
+updated : 2020-09-20 09:26:13 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -215,6 +215,22 @@ private void sink(int k) {
 
 ![]( /post-img/heap-sort/remove-04.svg )
 
+## 다중 힙 (Multiway Heap)
+
+상황에 따라 힙 정렬된 3중 트리(heap-ordered ternary tree)를 고려할 수 있다.
+
+- 인덱스 `k`에 있는 노드의 자식 노드 배열 인덱스는 $$3k-1, 3k, 3k+1$$.
+- 인덱스 `k`에 있는 노드의 부모 노드 인덱스는 $$ \floor{ (k+1) / 3 } $$.
+
+이와 비슷한 방법으로 3개 이상의 자식 노드를 갖는 다중 트리로 응용할 수 있다.
+
+### 다중 힙의 퍼포먼스 트레이드 오프
+
+다중 힙을 고려할 때에는 다음 두 가지의 트레이드 오프를 염두에 두어야 한다.
+
+- 노드 하나가 갖는 자식 노드의 수 $$d$$ 가 늘어나면 트리의 높이도 낮아진다.
+    - $$ \log_d N $$.
+- 자식 노드의 수가 늘어나므로 자식들 중에서 가장 큰 노드를 찾는 속도는 느려진다.
 
 
 ## 참고문헌
