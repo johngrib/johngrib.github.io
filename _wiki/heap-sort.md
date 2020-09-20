@@ -3,7 +3,7 @@ layout  : wiki
 title   : 힙 정렬 (Heap Sort)
 summary : 그리고 우선순위 큐 (Priority Queue)
 date    : 2020-09-16 23:15:57 +0900
-updated : 2020-09-20 13:20:02 +0900
+updated : 2020-09-20 14:41:20 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -336,6 +336,106 @@ private static void exchange(Comparable[] array, int i, int j) {
 >
 > 명제 S. 힙-정렬은 `N`개 항목을 정렬하는데 $$ 2N \lg N + 2N $$보다 적은 비교 연산(그리고 그 절반만큼의 교환 연산)을 수행한다.
 [^sedgewick-2-4]
+
+## Java의 PriorityQueue
+
+Java는 1.5 버전부터 `java.util` 패키지에 `PriorityQueue` 클래스를 제공하고 있다. (`PriorityQueue` 주석을 읽어보면 Josh Bloch와 Doug Lea가 작성자이다.)
+
+`PriorityQueue`는 위에서 언급한 힙 정렬과 같이 가장 작은 값을 루트 노드로 위치시키는 방법으로 순서를 유지한다.
+
+다음은 Java 11 버전 `PriorityQueue` 클래스의 `queue` 멤버에 대한 주석이다. 클래스 주석보다 짧으면서 본질을 잘 알려준다.
+
+```java
+/**
+ * Priority queue represented as a balanced binary heap: the two
+ * children of queue[n] are queue[2*n+1] and queue[2*(n+1)].  The
+ * priority queue is ordered by comparator, or by the elements'
+ * natural ordering, if comparator is null: For each node n in the
+ * heap and each descendant d of n, n <= d.  The element with the
+ * lowest value is in queue[0], assuming the queue is nonempty.
+ */
+transient Object[] queue; // non-private to simplify nested class access
+```
+
+다음 번역은 내가 한 것이다.
+
+> 균형 이진 트리로 표현된 우선순위 큐(Priority queue).
+`queue[n]`노드의 두 자식 노드는 `queue[2*n+1]`과 `queue[2*(n+1)]` 입니다.
+우선순위 큐는 `comparator`에 의해 정렬되며 `comparator`가 `null`인 경우에는 원소의 자체적인 순서(`Comparable` 구현한 것을 말함)에 따라 정렬됩니다.
+힙에 포함된 모든 노드 `n` 과 그 자식 노드 `d` 에 대해 `n <= d` 가 성립합니다.
+`queue`가 비어 있지 않다면, 가장 작은 값은 `queue[0]`에 있습니다.
+
+읽어보는 김에 클래스 주석도 함께 읽어보자.
+
+```java
+/**
+ * An unbounded priority {@linkplain Queue queue} based on a priority heap.
+ * The elements of the priority queue are ordered according to their
+ * {@linkplain Comparable natural ordering}, or by a {@link Comparator}
+ * provided at queue construction time, depending on which constructor is
+ * used.  A priority queue does not permit {@code null} elements.
+ * A priority queue relying on natural ordering also does not permit
+ * insertion of non-comparable objects (doing so may result in
+ * {@code ClassCastException}).
+ *
+ * <p>The <em>head</em> of this queue is the <em>least</em> element
+ * with respect to the specified ordering.  If multiple elements are
+ * tied for least value, the head is one of those elements -- ties are
+ * broken arbitrarily.  The queue retrieval operations {@code poll},
+ * {@code remove}, {@code peek}, and {@code element} access the
+ * element at the head of the queue.
+ *
+ * <p>A priority queue is unbounded, but has an internal
+ * <i>capacity</i> governing the size of an array used to store the
+ * elements on the queue.  It is always at least as large as the queue
+ * size.  As elements are added to a priority queue, its capacity
+ * grows automatically.  The details of the growth policy are not
+ * specified.
+ *
+ * <p>This class and its iterator implement all of the
+ * <em>optional</em> methods of the {@link Collection} and {@link
+ * Iterator} interfaces.  The Iterator provided in method {@link
+ * #iterator()} and the Spliterator provided in method {@link #spliterator()}
+ * are <em>not</em> guaranteed to traverse the elements of
+ * the priority queue in any particular order. If you need ordered
+ * traversal, consider using {@code Arrays.sort(pq.toArray())}.
+ *
+ * <p><strong>Note that this implementation is not synchronized.</strong>
+ * Multiple threads should not access a {@code PriorityQueue}
+ * instance concurrently if any of the threads modifies the queue.
+ * Instead, use the thread-safe {@link
+ * java.util.concurrent.PriorityBlockingQueue} class.
+ *
+ * <p>Implementation note: this implementation provides
+ * O(log(n)) time for the enqueuing and dequeuing methods
+ * ({@code offer}, {@code poll}, {@code remove()} and {@code add});
+ * linear time for the {@code remove(Object)} and {@code contains(Object)}
+ * methods; and constant time for the retrieval methods
+ * ({@code peek}, {@code element}, and {@code size}).
+ *
+ * <p>This class is a member of the
+ * <a href="{@docRoot}/java.base/java/util/package-summary.html#CollectionsFramework">
+ * Java Collections Framework</a>.
+ *
+ * @since 1.5
+ * @author Josh Bloch, Doug Lea
+ * @param <E> the type of elements held in this queue
+ */
+@SuppressWarnings("unchecked")
+public class PriorityQueue<E> extends AbstractQueue<E>
+    implements java.io.Serializable {
+```
+
+분량이 상당하니 핵심이 되는 몇몇 부분만 발췌해 요약해 보자.
+
+- 우선순위 힙 방식을 구현한, 크기 제한이 없는 우선순위 큐.
+- 원소들은 `Comparable` 순서나, 생성자에 제공된 `comparator`에 의해 정렬된다.
+- `null` 원소를 허용하지 않는다.
+- `head` 노드는 지정된 정렬방식으로 얻은 가장 작은 값을 갖습니다.
+- 크기 제한이 없다고 했지만 내부적으로 원소를 배열로 보관하고 있으므로, 용량(capacity)이 있다.
+    - 원소가 추가되면 용량이 자동으로 증가하게 구현되어 있다.
+- 이 구현체는 스레드 안전하지 않다.
+- 이 구현체의 enqueuing과 dequeuing 기능을 구현한 메소드들의 시간 복잡도는 $$O( \log n )$$ 이다.
 
 
 
