@@ -3,7 +3,7 @@ layout  : wiki
 title   : 퀵 정렬 (Quick Sort)
 summary : 빠른정렬
 date    : 2020-07-19 14:19:21 +0900
-updated : 2020-09-21 23:38:39 +0900
+updated : 2020-09-21 23:46:39 +0900
 tag     : sort
 toc     : true
 public  : true
@@ -527,6 +527,43 @@ public class QuickSort3Way {
     array[j] = temp;
   }
 }
+```
+
+## Java의 DualPivotQuicksort 클래스
+
+Java의 `Arrays.sort()` 코드를 읽어보면 경우에 따라 세 가지 정렬 중 하나를 골라 사용한다는 것을 알 수 있다.
+
+- `LegacyMergeSort`: 병합 정렬
+    - `-Djava.util.Arrays.useLegacyMergeSort=true`를 설정한 상태에서, `Object[]`를 정렬하려 하면 사용한다.
+- `ComparableTimSort`: Tim 정렬
+    - `Object[]`를 정렬하려 하면 사용한다.
+- `DualPivotQuicksort`: 2중 pivot 퀵 정렬
+
+그 중 `DualPivotQuicksort`의 클래스 주석을 읽어보면, 거장들의 이름이 보인다.
+이 클래스는 상당히 세심하게 튜닝된 퀵 정렬 코드를 제공한다. 잘 읽어보면 경우에 따라 힙 정렬, 삽입 정렬로의 컷 오프도 하고 있음을 알 수 있다.
+
+```java
+/**
+ * This class implements powerful and fully optimized versions, both
+ * sequential and parallel, of the Dual-Pivot Quicksort algorithm by
+ * Vladimir Yaroslavskiy, Jon Bentley and Josh Bloch. This algorithm
+ * offers O(n log(n)) performance on all data sets, and is typically
+ * faster than traditional (one-pivot) Quicksort implementations.
+ *
+ * There are also additional algorithms, invoked from the Dual-Pivot
+ * Quicksort, such as mixed insertion sort, merging of runs and heap
+ * sort, counting sort and parallel merge sort.
+ *
+ * @author Vladimir Yaroslavskiy
+ * @author Jon Bentley
+ * @author Josh Bloch
+ * @author Doug Lea
+ *
+ * @version 2018.08.18
+ *
+ * @since 1.7 * 14
+ */
+final class DualPivotQuicksort {
 ```
 
 
