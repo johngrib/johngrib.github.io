@@ -3,7 +3,7 @@ layout  : wiki
 title   : 샤딩(Sharding)과 파티셔닝
 summary : 
 date    : 2019-09-26 16:00:47 +0900
-updated : 2020-01-26 09:05:31 +0900
+updated : 2020-09-21 13:16:51 +0900
 tag     : db
 toc     : true
 public  : true
@@ -158,6 +158,11 @@ HBase에서는 **리전(region)**, 빅테이블에서는 **태블릿(tablet)**, 
     * 노드 대수가 변함이 없다면, 파티션 하나하나의 크기는 데이터 증가에 따라 점점 커진다.
 * 새 노드가 클러스터에 추가되면?
     * 고정된 개수의 파티션을 랜덤하게 선택해 반으로 쪼갠 다음, 쪼갠 절반을 새 노드에 할당한다.
+
+## 함께 읽기
+
+- [효과적으로 파티션 키를 설계해 사용하는 모범 사례(docs.aws.amazon.com)]( https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/bp-partition-key-design.html )
+    - DynamoDB에 대한 설명이며 읽어볼만 하다.
 
 ## 참고문헌
 

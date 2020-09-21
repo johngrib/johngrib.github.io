@@ -3436,7 +3436,7 @@ sharding:
     summary: ""
     parent: database
     url: /wiki/sharding
-    updated: '2020-01-26 09:05:31 +0900'
+    updated: '2020-09-21 13:16:51 +0900'
     children: []
 shell-sort:
     type: wiki
