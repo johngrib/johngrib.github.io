@@ -3,7 +3,7 @@ layout  : wiki
 title   : make 명령어
 summary : GNU make utility to maintain groups of programs
 date    : 2020-03-29 23:15:11 +0900
-updated : 2020-07-30 23:10:42 +0900
+updated : 2020-09-27 22:07:25 +0900
 tag     : bash command c
 toc     : true
 public  : true
@@ -47,7 +47,7 @@ test2:
 
 ```sh
 make test1  # test 1? 이 출력된다
-make test2  12000 이 출력된다
+make test2  # 12000 이 출력된다
 ```
 
 ### C 언어 컴파일
