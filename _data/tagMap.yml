@@ -252,6 +252,7 @@ bash:
     - {fileName: java_home}
     - {fileName: jq-cmd}
     - {fileName: less-cmd}
+    - {fileName: lldb-cmd}
     - {fileName: lsof}
     - {fileName: make-cmd}
     - {fileName: mv-cmd}
@@ -312,6 +313,7 @@ command:
     - {fileName: java_home}
     - {fileName: jq-cmd}
     - {fileName: less-cmd}
+    - {fileName: lldb-cmd}
     - {fileName: lsof}
     - {fileName: make-cmd}
     - {fileName: mv-cmd}
@@ -845,6 +847,9 @@ letter:
     - {fileName: letter-case}
 case:
     - {fileName: letter-case}
+c:
+    - {fileName: lldb-cmd}
+    - {fileName: make-cmd}
 transaction:
     - {fileName: locking}
 bug:
@@ -854,8 +859,6 @@ bug:
     - {fileName: mac-keyboard-shortcuts}
 macos:
     - {fileName: mac-screenshot-png-to-jpg}
-c:
-    - {fileName: make-cmd}
 latex:
     - {fileName: mathjax-latex}
 media:

@@ -813,7 +813,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, dc-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, file-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, google-java-format, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lsof, make-cmd, mv-cmd, my-bash-cheatsheet, openssl, perl-one-liner, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, dc-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, file-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, google-java-format, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lldb-cmd, lsof, make-cmd, mv-cmd, my-bash-cheatsheet, openssl, perl-one-liner, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2557,6 +2557,14 @@ linus-s-law:
     parent: proverb
     url: /wiki/linus-s-law
     updated: '2020-02-05 22:17:28 +0900'
+    children: []
+lldb-cmd:
+    type: wiki
+    title: 'lldb 명령어'
+    summary: 'command line interface to the LLDB debugger library'
+    parent: command-line
+    url: /wiki/lldb-cmd
+    updated: '2020-09-28 16:08:52 +0900'
     children: []
 locking:
     type: wiki

@@ -372,6 +372,7 @@ regenerate: true
 * [[java_home]]
 * [[jq-cmd]]
 * [[less-cmd]]
+* [[lldb-cmd]]
 * [[lsof]]
 * [[make-cmd]]
 * [[mv-cmd]]
