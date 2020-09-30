@@ -255,6 +255,7 @@ bash:
     - {fileName: lldb-cmd}
     - {fileName: lsof}
     - {fileName: make-cmd}
+    - {fileName: man-cmd}
     - {fileName: mv-cmd}
     - {fileName: my-bash-cheatsheet}
     - {fileName: openssl}
@@ -316,6 +317,7 @@ command:
     - {fileName: lldb-cmd}
     - {fileName: lsof}
     - {fileName: make-cmd}
+    - {fileName: man-cmd}
     - {fileName: mv-cmd}
     - {fileName: openssl}
     - {fileName: perl-one-liner}
@@ -850,6 +852,7 @@ case:
 c:
     - {fileName: lldb-cmd}
     - {fileName: make-cmd}
+    - {fileName: man-cmd}
 transaction:
     - {fileName: locking}
 bug:

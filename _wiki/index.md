@@ -375,6 +375,7 @@ regenerate: true
 * [[lldb-cmd]]
 * [[lsof]]
 * [[make-cmd]]
+* [[man-cmd]]
 * [[mv-cmd]]
 * [[my-bash-cheatsheet]]
 * [[openssl]]

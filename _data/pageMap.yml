@@ -813,7 +813,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, dc-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, file-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, google-java-format, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lldb-cmd, lsof, make-cmd, mv-cmd, my-bash-cheatsheet, openssl, perl-one-liner, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, dc-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, file-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, google-java-format, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lldb-cmd, lsof, make-cmd, man-cmd, mv-cmd, my-bash-cheatsheet, openssl, perl-one-liner, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2637,6 +2637,14 @@ make-cmd:
     parent: command-line
     url: /wiki/make-cmd
     updated: '2020-09-27 22:07:25 +0900'
+    children: []
+man-cmd:
+    type: wiki
+    title: 'man 명령어'
+    summary: '유닉스 메뉴얼 페이지를 찾아보는 명령'
+    parent: command-line
+    url: /wiki/man-cmd
+    updated: '2020-09-30 10:25:48 +0900'
     children: []
 master-theorem:
     type: wiki
