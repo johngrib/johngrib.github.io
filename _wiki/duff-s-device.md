@@ -3,7 +3,7 @@ layout  : wiki
 title   : 더프의 장치 (Duff's device)
 summary : 1983년에 고안된 C 언어 루프 풀기 기법
 date    : 2020-10-01 23:08:10 +0900
-updated : 2020-10-02 15:52:35 +0900
+updated : 2020-10-02 15:57:36 +0900
 tag     : algorithm c black-magic 1983
 toc     : true
 public  : true
@@ -320,7 +320,7 @@ memcpy (void *dest, const void *src, size_t len)
 
 [^example-6-6-15]: "The C++ Programming Language (3rd Edition)" 6.6 Exercises. 15번 문제.
 
-[^tom-email-88]: 벨 연구소에 아카이빙된 [톰 더프의 이메일][tom-email-88]을 읽어보면 
+[^tom-email-88]: 아카이빙된 [톰 더프의 이메일][tom-email-88].
 [^zed-23]: [ZED] 23장.
 
 [tom-email-88]: http://doc.cat-v.org/bell_labs/duffs_device
