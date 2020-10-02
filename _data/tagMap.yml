@@ -1,3 +1,5 @@
+'1983':
+    - {fileName: duff-s-device}
 math:
     - {fileName: 17-EQUATIONS-THAT-CHANGED-THE-WORLD}
     - {fileName: Binomial-Theorem}
@@ -362,6 +364,7 @@ algorithm:
     - {fileName: average-complexity}
     - {fileName: big-O-notation}
     - {fileName: dijkstra-2-stack-for-exp-eval}
+    - {fileName: duff-s-device}
     - {fileName: gray-code}
     - {fileName: heap-sort}
     - {fileName: insertion-sort}
@@ -624,6 +627,13 @@ dijkstra:
     - {fileName: dijkstra-2-stack-for-exp-eval}
 container:
     - {fileName: docker}
+c:
+    - {fileName: duff-s-device}
+    - {fileName: lldb-cmd}
+    - {fileName: make-cmd}
+    - {fileName: man-cmd}
+black-magic:
+    - {fileName: duff-s-device}
 keyboard:
     - {fileName: dumang-dk6-keyboard}
     - {fileName: hhkb-jp-tmk}
@@ -849,10 +859,6 @@ letter:
     - {fileName: letter-case}
 case:
     - {fileName: letter-case}
-c:
-    - {fileName: lldb-cmd}
-    - {fileName: make-cmd}
-    - {fileName: man-cmd}
 transaction:
     - {fileName: locking}
 bug:

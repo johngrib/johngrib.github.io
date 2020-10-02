@@ -30,6 +30,7 @@ regenerate: true
 * [[b-tree]]
 * [[big-O-notation]]
 * [[dijkstra-2-stack-for-exp-eval]]
+* [[duff-s-device]]
 * [[egyptian-multiplication]]
 * [[heap-sort]]
 * [[insertion-sort]]

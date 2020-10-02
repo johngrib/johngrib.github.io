@@ -1,4 +1,7 @@
 -
+    name: '1983'
+    size: 1
+-
     name: ACM
     size: 1
 -
@@ -15,7 +18,7 @@
     size: 1
 -
     name: algorithm
-    size: 10
+    size: 11
 -
     name: alignment
     size: 1
@@ -50,6 +53,9 @@
     name: binary
     size: 2
 -
+    name: black-magic
+    size: 1
+-
     name: blockchain
     size: 1
 -
@@ -72,7 +78,7 @@
     size: 1
 -
     name: c
-    size: 3
+    size: 4
 -
     name: calculator
     size: 1
