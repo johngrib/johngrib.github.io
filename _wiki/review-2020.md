@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2020년 기록
 summary : 연말에 2020년 회고로 제목을 바꿀 문서
 date    : 2020-01-01 18:32:51 +0900
-updated : 2020-09-27 00:02:52 +0900
+updated : 2020-10-04 22:18:53 +0900
 tag     : review
 toc     : true
 public  : false
@@ -77,7 +77,9 @@ latex   : false
 
 ## 듀오링고를 열심히 하다
 
+## 수강한 강의
 
+- 2020-10-04 [김영한 - 스프링 핵심 원리 - 기본편]( https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8 )
 
 ## 2020년에 읽은 책 목록
 
