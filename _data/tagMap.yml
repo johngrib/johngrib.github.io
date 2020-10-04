@@ -370,6 +370,7 @@ algorithm:
     - {fileName: insertion-sort}
     - {fileName: merge-sort}
     - {fileName: selection-sort}
+    - {fileName: sort-stability}
     - {fileName: tilde-approximations}
 book:
     - {fileName: Algorithms-to-Live-By}
@@ -813,6 +814,7 @@ sort:
     - {fileName: quick-sort}
     - {fileName: selection-sort}
     - {fileName: sort}
+    - {fileName: sort-stability}
 chrome:
     - {fileName: how-i-use-web-browser}
     - {fileName: vimium}

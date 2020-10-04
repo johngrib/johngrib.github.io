@@ -41,6 +41,7 @@ regenerate: true
 * [[regex-prime]]
 * [[selection-sort]]
 * [[shell-sort]]
+* [[sort-stability]]
 * [[tilde-approximations]]
 * [[tower-of-hanoi]]
 * [[von-neumann-extractor]]
