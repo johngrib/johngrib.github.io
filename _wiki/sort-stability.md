@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정렬 안정성 (Stability)
 summary : 
 date    : 2020-10-04 22:39:45 +0900
-updated : 2020-10-04 23:05:54 +0900
+updated : 2020-10-04 23:15:30 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
@@ -15,10 +15,27 @@ latex   : true
 
 ## 의미
 
+### From: 로버트 세지윅 알고리즘 4판
+
 > A sorting method is _stable_ if it preserves the relative order of equal keys in the array.
 >
 > 정렬 후에도 같은 키들의 상대적인 순서가 정렬 이전과 동일하게 유지되는 정렬 방법을 안정 정렬이라고 부른다.
 [^SED-2-5]
+
+### From: TAOCP 3권
+
+> 정렬의 목표는 키들을 비감소 순서
+>
+> $$ K_{p(1)} \le K_{p(2)} \le ... \le K_{p(N)} $$
+>
+> 로 재배치하는, 색인 $$ \{ 1,2, ..., N \}$$의 한 순열 $$p(1) p(2) ... p(N)$$을 결정하는 것이다.
+같은 키를 가진 레코드들이 정렬 후에도 원래의 상대 순서를 유지하는 경우 그러한 정렬을 안정적(stable)이라고 부른다.
+다른 말로 하면, 안정적 정렬은 다음과 같은 성질을 가진다.
+>
+> $$ K_{p(i)} = K_{p(j)} $$ 이고 $$ i \lt j $$ 이면 항상 $$p(i) \lt p(j)$$.
+[^TAOCP-3-23]
+
+
 
 ## 안정 정렬의 예
 
@@ -68,8 +85,10 @@ latex   : true
 ## 참고문헌
 
 - [SED] 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판발행 2018년 12월 26일
+- [KNU] The Art of Computer Programming 3 정렬과 검색(개정2판) / 도널드 커누스 저 / 한빛미디어 / 초판 2쇄 2013년 02월 10일
 
 ## 주석
 
 [^SED-2-5]: [SED] 2.5장
+[^TAOCP-3-23]: [KNU] 3권. 23쪽.
 
