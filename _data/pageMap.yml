@@ -3529,10 +3529,10 @@ sort:
 sort-stability:
     type: wiki
     title: '정렬 안정성 (Stability)'
-    summary: ""
+    summary: '정렬 후에도 같은 키들의 상대적인 순서가 정렬 이전과 같게 유지되는 정렬 방법'
     parent: algorithm
     url: /wiki/sort-stability
-    updated: '2020-10-04 23:15:30 +0900'
+    updated: '2020-10-04 23:24:20 +0900'
     children: []
 special-chars:
     type: wiki
