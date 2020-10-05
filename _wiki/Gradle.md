@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2020-10-05 14:14:53 +0900
+updated : 2020-10-05 17:26:32 +0900
 tag     : gradle tool
 toc     : true
 public  : true
@@ -27,6 +27,45 @@ latex   : false
 게다가 그루비는 자바 클래스를 직접 호출할 수 있으므로 빌드 스크립트에서 자바 유틸리티도 쉽게 사용할 수 있다.[^desc]
 
 ## 사용 방법/팁 모음
+
+## 의존 라이브러리 단축 표기법
+
+다음과 같이 `dependencies`가 정의되어 있다고 하자. 잘 보면 세미콜론(`:`)이 구분자로 사용되고 있는데, 이는 단축 표기법을 사용해 생략한 것이다.
+
+```groovy
+dependencies {
+  compile 'org.slf4j:slf4j-api:1.7.5'
+}
+```
+
+단축 표기법을 사용하기 싫다면 다음과 같이 하면 된다.
+
+```groovy
+dependencies {
+  compile group:'org.slf4j', name:'slf4j-api', version: '1.7.5'
+}
+```
+
+## 자주 보는 dependency 설정들
+### java 플러그인에서 정의된 설정들
+
+[Dependency configurations]( https://docs.gradle.org/current/userguide/java_plugin.html#tab:configurations )
+
+- `implementation`: extends `compile`. `compile`은 deprecated 되었으므로, `compile` 대신 사용하면 된다.
+- `annotationProcessor`: Annotation processors used during compilation.
+- `compileOnly`: Compile time only dependencies, not used at runtime.
+
+**Deprecated**
+
+- `compile`: 컴파일 타임 의존관계. 3 버전부터 deprecated.
+    - `implementation`으로 대체되었다.
+- `testCompile`: extends `compile`.
+    - `testImplementation`으로 대체되었다.
+- `runtime`: extends `compile`.
+    - `runtimeOnly`로 대체되었다.
+- `testRuntime`: extends `runtime`, `testCompile`.
+    - `testRuntimeOnly`로 대체되었다.
+
 
 ### task 이름 축약
 
