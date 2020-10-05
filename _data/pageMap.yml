@@ -1852,7 +1852,7 @@ Gradle:
     summary: 'Gradle Build Tool'
     parent: tools
     url: /wiki/Gradle
-    updated: '2020-02-18 21:14:40 +0900'
+    updated: '2020-10-05 14:14:53 +0900'
     children: []
 graph:
     type: wiki

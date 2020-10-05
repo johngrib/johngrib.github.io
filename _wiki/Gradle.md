@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2020-02-18 21:14:40 +0900
+updated : 2020-10-05 14:14:53 +0900
 tag     : gradle tool
 toc     : true
 public  : true
@@ -27,6 +27,19 @@ latex   : false
 게다가 그루비는 자바 클래스를 직접 호출할 수 있으므로 빌드 스크립트에서 자바 유틸리티도 쉽게 사용할 수 있다.[^desc]
 
 ## 사용 방법/팁 모음
+
+### task 이름 축약
+
+태스크명이 카멜 케이스로 되어 있다면 첫 글자와 각 대문자만 입력하는 방식으로 축약 명령을 쓸 수 있다.
+
+```sh
+$ gradle bootRun
+$ gradle bR         # gradle bootRun 과 같다
+$ gradle br         # 실패! 이건 축약으로 인식이 안 된다
+
+$ gradle generateGitProperties
+$ gradle gGP        # gradle generateGitProperties 와 같다
+```
 
 ### Hello, World!
 
