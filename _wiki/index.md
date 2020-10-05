@@ -29,6 +29,7 @@ regenerate: true
 * [[average-complexity]]
 * [[b-tree]]
 * [[big-O-notation]]
+* [[counting-sort]]
 * [[dijkstra-2-stack-for-exp-eval]]
 * [[duff-s-device]]
 * [[egyptian-multiplication]]

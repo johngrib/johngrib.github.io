@@ -363,6 +363,7 @@ algorithm:
     - {fileName: algorithm}
     - {fileName: average-complexity}
     - {fileName: big-O-notation}
+    - {fileName: counting-sort}
     - {fileName: dijkstra-2-stack-for-exp-eval}
     - {fileName: duff-s-device}
     - {fileName: gray-code}
@@ -562,6 +563,16 @@ Think-Bayes:
     - {fileName: Think-Bayes}
 추정:
     - {fileName: Copernican-Principle}
+sort:
+    - {fileName: counting-sort}
+    - {fileName: heap-sort}
+    - {fileName: insertion-sort}
+    - {fileName: John-von-Neumann}
+    - {fileName: merge-sort}
+    - {fileName: quick-sort}
+    - {fileName: selection-sort}
+    - {fileName: sort}
+    - {fileName: sort-stability}
 jekyll:
     - {fileName: create-jekyll-blog}
     - {fileName: jekyll-category-tag}
@@ -806,15 +817,6 @@ lua:
     - {fileName: hammerspoon-luarocks}
 health:
     - {fileName: healthy-life}
-sort:
-    - {fileName: heap-sort}
-    - {fileName: insertion-sort}
-    - {fileName: John-von-Neumann}
-    - {fileName: merge-sort}
-    - {fileName: quick-sort}
-    - {fileName: selection-sort}
-    - {fileName: sort}
-    - {fileName: sort-stability}
 chrome:
     - {fileName: how-i-use-web-browser}
     - {fileName: vimium}
