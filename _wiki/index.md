@@ -422,6 +422,7 @@ regenerate: true
 * [[git-prompt]]
 * [[git-study-with-action]]
 * [[git-tutorial]]
+* [[git-chagne-hundreds-commit-messages]]
 
 ### [[useful-site]]
 
