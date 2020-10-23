@@ -3,7 +3,7 @@ layout  : wiki
 title   : 지연시간(Latency)
 summary : 요청이 처리되길 기다리는 시간
 date    : 2019-06-28 16:30:28 +0900
-updated : 2020-07-12 23:52:53 +0900
+updated : 2020-10-23 21:47:08 +0900
 tag     : network performance
 toc     : true
 public  : true
@@ -132,15 +132,39 @@ TCP 연결 지연시간은 초기화(TCP 핸드세이크)에 걸리는 시간만
 애플리케이션 개발자가 대기 시간을 줄이기 위해 할 수 있는 일은 아무것도 없다.
 지연 시간은 원격 호출을 최소화해야 하는 이유이기도 하다.
 
+### (책) HTTP/2 IN ACTION
+
+* 2.1.1장 HTTP/1.1의 근본적인 성능 문제
+
+> 현재 인터넷의 최대 문제 중 하나는 대역폭보다는 대기시간이다.
+대기시간은 단일 메시지를 서버에 전송하는 데 걸리는 시간을 측정하는 반면, 대역폭은 사용자가 이 메시지에서 다운로드할 수 있는 양을 측정한다.
+새로운 기술은 언제나 대역폭을 증가시키지만(웹 사이트 크기 증가를 다루는 데 도움이 됨), 대기시간은 개선되지 않는다(요청의 수가 증가되지 못하게 막음).
+대기시간은 물리학에 의해 제약된다(광속).
+광섬유 케이블을 통해 전송되는 데이터는 이미 거의 광속에 가깝게 이동한다.
+기술이 얼마나 개선되든지 얻을 이익은 거의 없다.
+>
+> 구글의 마이크 벨쉬(Mike Belshe)는 대역폭 증가에 대한 수익 체감점(point of diminishing returns)에 이르렀음을 보이는 몇 가지 실험[^belshe]을 했다.
+이제 고화질 텔레비전을 스트리밍할 수 있지만 웹 서핑은 같은 비율로 빨라지지 않았으며,
+웹 사이트는 종종 빠른 인터넷 연결에서조차 로드하는 데 몇 초가 걸린다.
+인터넷은 HTTP/1.1의 근본적인 성능 문제에 대한 해결책 없이는 확장되던 속도 그대로 계속 확장될 수 없다.
+작은 HTTP 메시지를 보내고 받는 데에도 너무 많은 시간이 낭비된다.
+
 ## 참고문헌
 
+* HTTP/2 in Action / 배리 폴라드 저/임혜연 역 / 에이콘출판사 / 2020년 08월 31일 / 원서 : HTTP/2 in Action
+* TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
 * 데이터 중심 애플리케이션 설계 / 마틴 클레프만 저/정재부,김영준,이도경 역 / 위키북스 / 2018년 04월
 * 러닝 HTTP/2 / 스티븐 루딘, 하비에르 가르사 저/강재준 역 / 한빛미디어 / 2018년 01월 22일
 * 시스템 성능 분석과 최적화 / 브렌든 그레그 저 / 오현석, 서형국 공역 / 위키북스 / 2015년 12월 15일
-* TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
 * 엔터프라이즈 애플리케이션 아키텍처 패턴 / 마틴 파울러 저 / 최민석 역 / 위키북스 / 2쇄 2018년 10월 31일 / 원제 : Patterns of Enterprise Application Architecture
 
 ## See Also
 
 * [[bandwidth]]{대역폭(Bandwidth)}
+
+## 주석
+
+[belshe]: https://docs.google.com/a/chromium.org/viewer?a=v&pid=sites&srcid=Y2hyb21pdW0ub3JnfGRldnxneDoxMzcyOWI1N2I4YzI3NzE2
+
+[^belshe]: [More Bandwidth Doesn’t Matter (much)][belshe]
 
