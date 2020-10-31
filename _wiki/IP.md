@@ -3,7 +3,7 @@ layout  : wiki
 title   : IP
 summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
-updated : 2020-10-31 12:57:55 +0900
+updated : 2020-10-31 13:09:24 +0900
 tag     : network
 toc     : true
 public  : true
@@ -636,14 +636,29 @@ IPv6의 단편화 과정은 IPv4와 거의 같으며, 확장 헤더를 처리하
 
 ## 의문점들
 
-### 왜 IPv1은 없고 IPv4가 IP의 첫 버전인가?
+### 왜 IPv1은 없고 IPv4가 IP의 첫 버전인가? 그리고 왜 IPv5는 없나?
 
 * TCP 4 버전에서 TCP와 IP가 분리되었기 때문.
-
-### 왜 IPv5는 없고 IPv6가 IPv4의 다음 버전인가?
-
 * [RFC 1190](https://tools.ietf.org/html/rfc1190 ): Experimental Internet Stream Protocol, Version 2 (ST-II)
     * 인터넷 스트림 프로토콜 버전 2가 IPv5이다.
+
+> **IPv5에 대체 무슨 일이 일어났는가?**
+>
+> 인터넷 프로토콜 버전 4(IPv4)가 버전 6(IPv6)으로 대체됐다면 버전 5에는 무슨 일이 있었는가?
+그리고 왜 IPv1부터 IPv3은 전혀 들어보지 못했을까?
+>
+> IP 패킷의 첫 4개 비트는 버전을 나타낸다. 따라서 버전은 이론상 15개로 제한된다.
+널리 사용되는 IPv4 이전에 0부터 3까지 4개의 실험적 버전이 있었다.
+그러나 버전 4까지 이 버전 중 어떤 것도 공식적으로 표준화되지 않았다.
+그 이후 버전 5는 나중에 VoIP(Voice over IP)가 된 것과 유사한
+실시간 음성 및 영상 스트리밍용으로 만들어진 인터넷 스트림 프로토콜(Internet Stream Protocol) 용도로 지정됐다.
+그러나 버전 5가 특히 버전 4와 동일한 주소 제한 문제를 겪었기 때문에 한 번도 널리 쓰이지 못했다.
+그리고 버전 6가 나왔을 때 버전 5에 대한 개선 노력은 멈췄고 버전 6가 IPv4의 후속 버전으로 남았다.
+버전 6가 이미 할당됐다는 잘못된 가정하에 그 버전이 처음에는 버전 7로 불리는 것 같았다.
+버전 7, 8, 9 또한 할당됐지만 비슷한 이유로 더 이상 사용되지 않는다.
+IPv6의 후속 버전이 또 생긴다면 IPv10이나 그 다음이 될 것이다.
+그 후속 버전은 틀림없이 이 보충 자료를 시작한 질문과 비슷한 질문을 이끌어낼 것이다.[^POL-1-1-2]
+
 
 ### 3계층 미만에서 작동하는 장비들도 IP를 사용하는가?
 
@@ -663,10 +678,16 @@ IP에게 있어 브리지와 스위치는 본질적으로 없는 것, 즉 장비
 
 ## 참고문헌
 
-* TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
+- TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
+- [POL] HTTP/2 in Action / 배리 폴라드 저/임혜연 역 / 에이콘출판사 / 발행 2020년 08월 31일 / 원서 : HTTP/2 in Action
 
 ## Links
 
 * <https://en.wikipedia.org/wiki/Dot-decimal_notation >
 * [TCP/IP 주소 지정 및 서브넷 구성 기본 사항의 이해(support.microsoft.com)](https://support.microsoft.com/ko-kr/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics )
 * [Oracle Solaris 관리: IP 서비스(docs.oracle.com)](https://docs.oracle.com/cd/E38901_01/html/E38894/ipplan-5.html#exlvx )
+
+## 주석
+
+[^POL-1-1-2]: [POL] 1.1.2 장.
+
