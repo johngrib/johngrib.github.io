@@ -261,6 +261,7 @@ regenerate: true
 * [[Postel-s-law]]
 * [[power-distance-index]]
 * [[richardson-maturity-model]]
+* [[rule-of-3-and-10]]{3과 10의 규칙}
 * [[Schopenhauer-s-Law-Of-Entropy]]{쇼펜하우어의 엔트로피 법칙}
 * [[SOLID]]
 * [[Tompson-s-rule-for-first-time-telescope-makers]]

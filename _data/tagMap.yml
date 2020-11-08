@@ -470,6 +470,7 @@ time:
     - {fileName: book-lyubishev}
 rule:
     - {fileName: Boy-Scout-Rule}
+    - {fileName: rule-of-3-and-10}
     - {fileName: Tompson-s-rule-for-first-time-telescope-makers}
 Uncle-Bob:
     - {fileName: Boy-Scout-Rule}

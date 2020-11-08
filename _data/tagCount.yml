@@ -465,7 +465,7 @@
     size: 1
 -
     name: rule
-    size: 2
+    size: 3
 -
     name: rust
     size: 1
