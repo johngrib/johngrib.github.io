@@ -3,7 +3,7 @@ layout  : wiki
 title   : 2020년 기록
 summary : 연말에 2020년 회고로 제목을 바꿀 문서
 date    : 2020-01-01 18:32:51 +0900
-updated : 2020-11-10 12:45:55 +0900
+updated : 2020-11-10 20:17:40 +0900
 tag     : review
 toc     : true
 public  : false
@@ -136,6 +136,7 @@ latex   : false
 
 ## 수강한 강의
 
+- 2020-11-08 [김영한 - 실전! 스프링 부트와 JPA 활용2 - API 개발과 성능 최적화]( https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-API%EA%B0%9C%EB%B0%9C-%EC%84%B1%EB%8A%A5%EC%B5%9C%EC%A0%81%ED%99%94 )
 - 2020-10-18 [김영한 - 실전! 스프링 부트와 JPA 활용1 - 웹 애플리케이션 개발]( https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-JPA-%ED%99%9C%EC%9A%A9-1# )
 - 2020-10-04 [김영한 - 스프링 핵심 원리 - 기본편]( https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8 )
 
