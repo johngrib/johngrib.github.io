@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2020-11-22 14:49:42 +0900
+updated : 2020-11-22 17:16:02 +0900
 tag     : 
 toc     : true
 public  : true
@@ -31,6 +31,7 @@ latex   : false
 * 1988 - Jarkko Oikarinen이 최초의 IRC 클라이언트를 만들다.
 * 1985-11-20 - 마이크로소프트 윈도우 1.0 출시
 * 1983-11 - 최초의 IDE, 터보 파스칼 출시
+* 1980 - 도시바의 후지오 마스오카 박사, 플래시 메모리 개발.
 * 1974-12 [RFC-675: SPECIFICATION OF INTERNET TRANSMISSION CONTROL PROGRAM](https://tools.ietf.org/html/rfc675 ) - TCP
 * 1969 - IBM의 E.F. Codd 박사가 발표한 논문에서 관계형 모델(Relational Model)이 처음 등장하다.
 * 1969 - Telnet 개발.
