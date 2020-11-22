@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2020-11-15 23:15:23 +0900
+updated : 2020-11-22 14:49:42 +0900
 tag     : 
 toc     : true
 public  : true
@@ -35,6 +35,7 @@ latex   : false
 * 1969 - IBM의 E.F. Codd 박사가 발표한 논문에서 관계형 모델(Relational Model)이 처음 등장하다.
 * 1969 - Telnet 개발.
 * 1960 - Ted Nelson이 하이퍼텍스트 소프트웨어 모델을 적용한 Xanadu 시스템을 고안하다.
+* 1956 - IBM, 하드디스크(HDD) 생산.
 * 1954-06-07 - 앨런 튜링 사망
 * 1952 - 폰 노이만 방식의 컴퓨터 EDVAC 개발
 * 1947 - 트랜지스터 발명
