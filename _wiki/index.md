@@ -508,8 +508,9 @@ regenerate: true
 
 ## [[spring]]
 
-* [[spring-bean-config-xml]]
+* [[spring-annotation-value]]
 * [[spring-bean-config-configuration]]
+* [[spring-bean-config-xml]]
 * [[spring-versions]]
 
 ## [[database]]

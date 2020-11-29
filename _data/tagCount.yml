@@ -23,6 +23,9 @@
     name: alignment
     size: 1
 -
+    name: annotation
+    size: 1
+-
     name: asciidoc
     size: 1
 -
@@ -297,7 +300,7 @@
     size: 1
 -
     name: java
-    size: 43
+    size: 44
 -
     name: jekyll
     size: 4
@@ -489,7 +492,7 @@
     size: 2
 -
     name: spring
-    size: 4
+    size: 5
 -
     name: stat
     size: 1

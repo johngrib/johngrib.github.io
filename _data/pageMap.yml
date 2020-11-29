@@ -3573,7 +3573,15 @@ spring:
     parent: index
     url: /wiki/spring
     updated: '2019-08-15 16:29:07 +0900'
-    children: [spring-bean-config-configuration, spring-bean-config-xml, spring-versions]
+    children: [spring-annotation-value, spring-bean-config-configuration, spring-bean-config-xml, spring-versions]
+spring-annotation-value:
+    type: wiki
+    title: 'Spring @Value 애노테이션'
+    summary: '환경 변수값을 주입할 수 있다'
+    parent: spring
+    url: /wiki/spring-annotation-value
+    updated: '2020-11-29 22:24:00 +0900'
+    children: []
 spring-bean-config-configuration:
     type: wiki
     title: 'Configuration annotation을 통한 Spring Bean 설정'
