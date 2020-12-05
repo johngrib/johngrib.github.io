@@ -3470,6 +3470,14 @@ semantic-versioning:
     url: /wiki/semantic-versioning
     updated: '2020-01-12 21:46:28 +0900'
     children: []
+semiconductor-dict:
+    type: wiki
+    title: '반도체 산업 용어 정리'
+    summary: '산업도 이해하고 싶다'
+    parent: index
+    url: /wiki/semiconductor-dict
+    updated: '2020-12-05 14:37:40 +0900'
+    children: []
 sha256sum:
     type: wiki
     title: 'sha256sum 명령어'

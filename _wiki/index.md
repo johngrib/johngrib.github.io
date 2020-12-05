@@ -604,6 +604,7 @@ regenerate: true
 * [[restdoc-item-generator]]
 * [[saga]]
 * [[semantic-versioning]]
+* [[semiconductor-dict]]
 * [[strangler-pattern]]
 * [[three-dots-in-menu]]
 * [[timeline]]
