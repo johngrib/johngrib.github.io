@@ -635,6 +635,9 @@
     name: 개발자
     size: 1
 -
+    name: 경제
+    size: 1
+-
     name: 공부
     size: 1
 -
@@ -690,6 +693,9 @@
     size: 1
 -
     name: 추정
+    size: 1
+-
+    name: 통계
     size: 1
 -
     name: 프로그래밍-심리학

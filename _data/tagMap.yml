@@ -653,6 +653,10 @@ keyboard:
     - {fileName: hhkb-jp-tmk}
     - {fileName: my-keyboard}
     - {fileName: my-keyboard-use}
+통계:
+    - {fileName: ecos-bok-or-kr}
+경제:
+    - {fileName: ecos-bok-or-kr}
 email:
     - {fileName: email-gardening}
     - {fileName: email-validation}

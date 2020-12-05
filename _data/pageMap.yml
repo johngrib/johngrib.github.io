@@ -1270,6 +1270,14 @@ dumang-dk6-keyboard:
     url: /wiki/dumang-dk6-keyboard
     updated: '2020-03-24 23:38:23 +0900'
     children: []
+ecos-bok-or-kr:
+    type: wiki
+    title: 'ECOS 한국은행 경제통계 시스템'
+    summary: ""
+    parent: useful-site
+    url: /wiki/ecos-bok-or-kr
+    updated: '2020-12-05 18:15:28 +0900'
+    children: []
 Edsel-edict:
     type: wiki
     title: '에젤 강령(Edsel edict)'
@@ -4085,7 +4093,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2020-02-15 12:12:26 +0900'
-    children: [google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap]
+    children: [ecos-bok-or-kr, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap]
 vagrant-docker-get-start:
     type: wiki
     title: 'Vagrant와 Docker에 CentOS, Ubuntu 설치하기'
