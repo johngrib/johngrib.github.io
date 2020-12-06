@@ -3,10 +3,10 @@ layout  : wiki
 title   : 반도체 뉴스 정리 2020 4Q
 summary :
 date    : 2020-12-06 11:51:11 +0900
-updated : 2020-12-06 12:51:57 +0900
+updated : 2020-12-06 12:54:14 +0900
 tag     : 반도체 뉴스
 toc     : true
-public  : false
+public  : true
 parent  : [[index]]
 latex   : false
 comment : false
@@ -177,3 +177,6 @@ comment : false
 - 갤럭시폴드3는 삼성전자가 UDC를 적용하는 최초의 폰이 될 것으로 예상.
 ### [Qualcomm Snapdragon 885는 삼성 5나노, 895는 TSMC 4나노 공정 파운드리 적용]( https://www.gizchina.com/2020/11/19/snapdragon-885-will-use-samsung-5nm-snapdragon-895-will-turn-to-tsmc-4nm/ )
 
+## 뉴스 큐레이팅 출처
+
+- "반도체 - meritz Overnight Tech", 메리츠증권 김선우, 주민우 Analyst
