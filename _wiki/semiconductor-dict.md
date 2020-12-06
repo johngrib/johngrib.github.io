@@ -3,8 +3,8 @@ layout  : wiki
 title   : 반도체 산업 용어 정리
 summary : 산업도 이해하고 싶다
 date    : 2020-12-05 14:24:43 +0900
-updated : 2020-12-05 14:45:50 +0900
-tag     : 
+updated : 2020-12-06 11:35:51 +0900
+tag     : 반도체 용어
 toc     : true
 public  : true
 parent  : [[index]]

@@ -3484,7 +3484,7 @@ semiconductor-dict:
     summary: '산업도 이해하고 싶다'
     parent: index
     url: /wiki/semiconductor-dict
-    updated: '2020-12-05 14:45:50 +0900'
+    updated: '2020-12-06 11:35:51 +0900'
     children: []
 sha256sum:
     type: wiki

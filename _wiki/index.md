@@ -585,6 +585,10 @@ regenerate: true
 
 - [[book-lyubishev]]
 
+## 반도체
+
+* [[semiconductor-dict]]
+
 ## 미분류
 
 * [[abbr]]
@@ -605,7 +609,6 @@ regenerate: true
 * [[restdoc-item-generator]]
 * [[saga]]
 * [[semantic-versioning]]
-* [[semiconductor-dict]]
 * [[strangler-pattern]]
 * [[three-dots-in-menu]]
 * [[timeline]]

@@ -952,6 +952,10 @@ consulting:
     - {fileName: secret-of-consulting}
 ed:
     - {fileName: sed}
+반도체:
+    - {fileName: semiconductor-dict}
+용어:
+    - {fileName: semiconductor-dict}
 교육:
     - {fileName: Shunsho-juwa}
 장인정신:

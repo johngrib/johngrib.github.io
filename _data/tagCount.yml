@@ -656,6 +656,9 @@
     name: 미세먼지
     size: 1
 -
+    name: 반도체
+    size: 1
+-
     name: 방법론
     size: 1
 -
@@ -681,6 +684,9 @@
     size: 1
 -
     name: 언어
+    size: 1
+-
+    name: 용어
     size: 1
 -
     name: 인물
