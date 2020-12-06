@@ -3476,7 +3476,7 @@ semantic-versioning:
     summary: 주버전.부버전.수버전
     parent: index
     url: /wiki/semantic-versioning
-    updated: '2020-01-12 21:46:28 +0900'
+    updated: '2020-12-06 23:53:38 +0900'
     children: []
 semiconductor-dict:
     type: wiki
