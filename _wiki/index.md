@@ -589,6 +589,10 @@ regenerate: true
 
 * [[semiconductor-dict]]
 
+### 반도체 뉴스
+
+* [[semiconductor-news-2020-4q]]
+
 ## 미분류
 
 * [[abbr]]
