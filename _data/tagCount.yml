@@ -492,7 +492,7 @@
     size: 2
 -
     name: spring
-    size: 5
+    size: 6
 -
     name: stat
     size: 1
