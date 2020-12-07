@@ -3,7 +3,7 @@ layout  : wiki
 title   : 반도체 뉴스 정리 2020 11~12
 summary :
 date    : 2020-12-06 11:51:11 +0900
-updated : 2020-12-07 12:35:51 +0900
+updated : 2020-12-08 00:52:43 +0900
 tag     : 반도체 뉴스
 toc     : true
 public  : true
@@ -70,6 +70,14 @@ comment : false
 ### [TSMC, 3나노 공정 기술 2023년 애플을 시작으로 적용 계획]( https://www.digitimes.com/news/a20201202PD200.html )
 ### [NVDA, 암페어 기반 '지포스 RTX 3060 Ti' 출시]( http://www.thelec.kr/news/articleView.html?idxno=9213 )
 ### [독일, 5G에 화웨이 배제 안 해.. 브라질도 허용 요구]( https://m.etnews.com/20201202000234 )
+### [출시 예정 – Amazon EC2 G4ad 인스턴스, 그래픽 워크로드용 AMD GPU를 탑재]( https://aws.amazon.com/ko/blogs/korea/new-amazon-ec2-g4ad-instances-featuring-amd-gpus-for-graphics-workloads/ )
+- AWS에 새로운 EC2 인스턴스 'G4ad'를 준비중
+    - AMD의 최신 Radeon Pro V520 GPU 및 2세대 EPYC 프로세서를 사용
+    - AMD GPU를 탑재한 최초의 EC2 인스턴스
+- 2019년에 출시됐던 G4dn 인스턴스는 NVIDIA T4 GPU가 탑재되어 있었음
+    - 기존 EC2에서 가장 가성비 좋은 GPU 기반 인스턴스였음
+    - G4dn 대비 G4ad 인스턴스는 게임 스트리밍, 그래픽 집약적 워크로드에 대해 가격 대비 성능이 최대 45% 더 향상되었음
+    - G4dn 은 기계학습 훈련/추론을 위해 좋은 선택이지만, NVIDIA 라이브러리 종속성이 없는 고객이라면 더 나은 가격과 성능을 지닌 G4ad를 사용해 볼 것을 권장
 
 ## 2020-12-02
 ### [Qualcomm의 Snapdragon 888, 내년 안드로이드 하이엔드 제품에 적용될 예정]( https://www.cnbc.com/2020/12/01/qualcomm-announces-snapdragon-888-chip-for-premium-android-phones.html?__source=iosappshare%7Ccom.apple.UIKit.activity.CopyToPasteboard )
