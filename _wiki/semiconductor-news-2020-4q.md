@@ -3,7 +3,7 @@ layout  : wiki
 title   : 반도체 뉴스 정리 2020 11~12
 summary :
 date    : 2020-12-06 11:51:11 +0900
-updated : 2020-12-09 14:13:15 +0900
+updated : 2020-12-09 22:28:40 +0900
 tag     : 반도체 뉴스
 toc     : true
 public  : true
@@ -13,6 +13,41 @@ comment : false
 ---
 - TOC
 {:toc}
+
+## 2020-12-09
+
+### [Yageo, 11월 매출 $266.1M (+6.5% MoM, +117.9% YoY) 기록]( https://www.yageo.com/en/Investor/Index/monthly_sales )
+- Yageo: 야교. 대만의 전자 부품 제조 회사.
+- 2020년 1월 기준 세계에서 3번째로 큰 수동 부품 제조업체.
+- 수동 부품: 저항, 캐패시터, 인덕터
+
+### [미국 정부, Intel과 NVIDIA에 중국 위구르 민족 감시 카메라 기술 수출 여부 확인]( https://www.reuters.com/article/us-usa-china-uighurs/u-s-lawmakers-ask-intel-nvidia-about-sale-of-tech-to-china-used-against-uighurs-idUSKBN28I2V8 )
+- 미국의 Marco Rubio(공화당 상원의원), Jim McGovern(민주당 의원)이 인텔과 엔비디아 CEO에 편지를 보냄
+    - 중국이 신장 위구르 민족 감시를 위해 사용하는 컴퓨터 칩 판매 정보 요청
+    - Rubio: 인권을 감독하는 상원 외교 소위원회 위원장
+    - McGovern: 중국 의회 행정위원회 의장
+- 엔비디아는 노 코멘트
+- 인텔: 제품이 인권 침해에 사용되는 것을 용납하지 않음. 인권 문제가 밝혀지면 거래 중단하거나 제한할 것.
+
+### [Marvell, 오픈소스 5G 네트워킹 장비 용 칩 출시]( https://www.reuters.com/article/marvell-5g/marvell-introduces-chips-for-open-source-5g-networking-gear-idUSKBN28I1Y5 )
+- Marvell: 마벨 테크놀로지 그룹. 미국의 스토리지, 통신 SOC 칩 설계 회사.
+- 과거: Nokia, Ericsson, Huawei 같은 제조업체의 모바일 네트워크 장비가 대부분 독점적이었음.
+    - 맞춤형 칩과 소프트웨어로 구성되어 있었음.
+- 미국 정부의 화웨이 제재로 모든 공급 업체에 호환되는 표준 5G 네트워킹 기술 채택 가속화.
+
+### [삼성전자 "GAA 공정 기술 개발 중…곧 제품화될 것"]( https://m.etnews.com/20201208000237 )
+- 삼성전자가 GAA 구조 3 나노미터 반도체를 세계 최초 상용화에 나선다.
+- GAA: 게이트올어라운드
+    - GAA는 삼성전자가 준비중인 차세대 트랜지스터 제조 기술
+    - 3나노 미만 초미세 반도체 구현 기술
+    - 현재 반도체 공정에 사용되는 핀펫 구조에서 한 단계 진화한 기술
+    - GAA 공정에 뛰어든 파운드리는 삼성전자와 TSMC 뿐
+- "현재 시장에서 가능한 기술일까 의문을 갖고 있는 GAA도 오랜 기간에 걸쳐 개발을 진행해 곧 관련 제품이 구현될 것"
+- 삼성전자는 2022년 GAA 공정으로 3나노 반도체 양산할 계획
+    - GAA 공정은 삼성전자가 시스템 반도체 1위를 달성하는 데 중요한 기술
+    - 2030년까지 파운드리를 비롯한 시스템 반도체에 133조원을 투자해 파운드리는 물론 팹리스에서도 1위를 목표
+
+### [Tesla, $5B (5.4조원) 유상증자 결정]( https://www.bloomberg.com/news/articles/2020-12-08/tesla-raising-up-to-5-billion-in-third-capital-raise-this-year )
 
 ## 2020-12-08
 
@@ -363,7 +398,7 @@ comment : false
 ### [5G 네트워크 보급 본격화에 Microsoft, Amazon, Goolge통신사 클라우드 컴퓨팅 인프라 시장 경쟁]( https://on.wsj.com/3eTw4BU )
 ### [TSMC, 5나노와 7나노 칩으로 4Q20 매출 가이던스 상회 전망]( https://bit.ly/38zF5Pa )
 
-## 뉴스 큐레이팅 출처
+## 주요 뉴스 큐레이팅 출처
 
 - "반도체 - meritz Overnight Tech", 메리츠증권 김선우, 주민우 Analyst
 
