@@ -3,7 +3,7 @@ layout  : wiki
 title   : 반도체 뉴스 정리 2020 11~12
 summary :
 date    : 2020-12-06 11:51:11 +0900
-updated : 2020-12-09 22:28:40 +0900
+updated : 2020-12-11 21:37:23 +0900
 tag     : 반도체 뉴스
 toc     : true
 public  : true
@@ -13,6 +13,10 @@ comment : false
 ---
 - TOC
 {:toc}
+
+## 2020-12-10
+### [ASE, 11월 매출 NT$50.7B (+5.7% MoM, +31.7% YoY) 기록]( http://ir.aseglobal.com/html/ir_revenues.php )
+### [STMicro, 미중 무역전쟁과 화웨이 제재가 성장 지연...120억달러 매출액 목표 2023년으로 연기]( https://www.reuters.com/article/us-stmicroelectronics-investors/stmicro-says-us-china-trade-war-slows-its-growth-idUSKBN28J0X9 )
 
 ## 2020-12-09
 
@@ -122,6 +126,15 @@ comment : false
     - GPU 시장
         - 몇 년 후 team read가 NVIDIA의 독점적인 지위에 위협이 될 수 있음
     - 콘솔과 GPU 사업만으로도 AMD는 TSMC의 최대 클라이언트가 될 수 있다
+
+### [SK하이닉스, 마이크론 이어 176단 낸드플래시 개발… 반도체 적층 경쟁 가열]( https://m.biz.chosun.com/svc/article.html?contid=2020120701317&utm_source=undefined&utm_medium=unknown&utm_campaign=biz )
+- SK하이닉스 176단 512GB TCL 4D 낸드플래시 개발 완료.
+    - 본격적인 양산은 내년 중반
+- 반도체 적층은 128단까지 삼성자와 SK하이닉스가 앞서 있었음.
+    - 지난달 중순 미국의 마이크론이 176단 낸드플래시 양산 발표.
+    - 단수가 높을수록 같은 면적으로 고용량을 구현할 수 있음
+    - 같은 웨이퍼 면적에서 더 많은 칩을 만들어 낼 수 있음
+- 옴디아(시장조사업체): 4318억GB 낸드플래시 세계 시장이 2024년에는 1조3662억GB로 확대돼 연평균 33.4% 성장할 것
 
 
 ## 2020-12-04
