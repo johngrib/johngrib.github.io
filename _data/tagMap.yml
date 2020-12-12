@@ -218,6 +218,7 @@ pattern:
 db:
     - {fileName: ACID}
     - {fileName: b-tree}
+    - {fileName: db-processlist}
     - {fileName: locking}
     - {fileName: sharding}
     - {fileName: sql-char-comparison}

@@ -516,6 +516,8 @@ regenerate: true
 * [[spring-versions]]
 
 ## [[database]]
+
+* [[db-processlist]]
 * [[sharding]]
 
 ## [[my-lifehack]]

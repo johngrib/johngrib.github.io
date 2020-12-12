@@ -997,7 +997,7 @@ database:
     parent: index
     url: /wiki/database
     updated: '2019-09-26 21:49:29 +0900'
-    children: [sharding]
+    children: [db-processlist, sharding]
 date-cmd:
     type: wiki
     title: 'date 명령어'
@@ -1005,6 +1005,14 @@ date-cmd:
     parent: command-line
     url: /wiki/date-cmd
     updated: '2020-03-10 23:04:37 +0900'
+    children: []
+db-processlist:
+    type: wiki
+    title: 'Database show processlist'
+    summary: '현재 실행중인 작업을 보여준다'
+    parent: database
+    url: /wiki/db-processlist
+    updated: '2020-12-12 13:25:31 +0900'
     children: []
 dc-cmd:
     type: wiki
