@@ -3,7 +3,7 @@ layout  : wiki
 title   : Database show processlist
 summary : 현재 실행중인 작업을 보여준다
 date    : 2020-12-11 23:05:14 +0900
-updated : 2020-12-12 13:25:31 +0900
+updated : 2020-12-12 13:27:57 +0900
 tag     : db
 toc     : true
 public  : true
@@ -44,7 +44,7 @@ SELECT * FROM information_schema.processlist
 WHERE command != 'Sleep';
 ```
 
-#### Command
+#### 각 필드의 의미
 `Id`: Connection Identifier. 연결 아이디.
 - `SELECT CONNECTION_ID()`와 같다.
 
