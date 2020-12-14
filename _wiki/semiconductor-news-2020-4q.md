@@ -3,7 +3,7 @@ layout  : wiki
 title   : 반도체 뉴스 정리 2020 11~12
 summary :
 date    : 2020-12-06 11:51:11 +0900
-updated : 2020-12-11 21:37:23 +0900
+updated : 2020-12-14 21:58:39 +0900
 tag     : 반도체 뉴스
 toc     : true
 public  : true
@@ -13,6 +13,36 @@ comment : false
 ---
 - TOC
 {:toc}
+
+## 2020-12-14
+
+### [12월 10일 대만 지진, 인근 파운더리와 DRAM 생산 공장에 큰 영향 없어]( http://www.trendforce.com/presscenter/news/20201211-10596.html )
+
+### [인도, 삼성디스플레이 노이다 공장 재정지원 승인]( http://www.thelec.kr/news/articleView.html?idxno=9479 )
+- 인도 북부 우타르 프라데시 주정부, 삼성디스플레이 노이다 공장에 7200억원 규모 재정 지원 승인
+- 인도를 제조 허브로 만들겠다는 나렌드라 모디 인도 총리 정책과 관련
+- 삼성디스플레이는 인도 노이다에 중소형 유기발광다이오드(OLED) 모듈 공장을 건설하고 있음.
+    - 삼성디스플레이는 2018년 완공한 노이다 스마트폰 공장(삼성전자) 부품 공급을 위해 이곳에 공장을 조성중.
+- 삼성전자는 지난 3분기 인도 스마트폰 시장에서 중국 샤오미로부터 2년여 만에 1위를 되찾았다.
+- 인도는 중국에 이은 세계 두번째 스마트폰 시장.
+- 최근 인도-중국 국경분쟁으로 삼성전자가 반사이익을 입을 것이란 전망.
+
+### [NVIDIA GeForce RTX 30 GPU, 삼성전자 8나노 공정 파운드리 낮은 수율로 공급 부족]( https://www.digitimes.com/news/a20201211PD200.html )
+
+### [Apple, Qualcomm 모뎀 사용 중단 조짐]( https://www.gizchina.com/2020/12/12/apple-will-get-rid-of-qualcomm-modems-just-like-intel-processors/ )
+
+- 애플이 Intel 프로세서와 마찬가지로 Qualcomm 모뎀을 사용하지 않을듯.
+- 자체 칩으로 전환하려는 애플의 전략이 예상보다 더 광범위한듯.
+    - 인텔 프로세서 제거
+    - AMD의 3D 가속기 대신 자체 GPU 준비(확실치 않음)
+- Qualcomm 주가가 하락했음
+- Qualcomm은 Snapdragon X55 를 애플에 공급하면서 상당한 수익을 올리고 있었지만 앞으로는 이 수익이 사라질듯
+
+### [삼성전자, 마이크로 LED TV 전격 공개]( https://bit.ly/3gt8756 )
+- 마이크로 LED TV 110형의 출고가는 1억 7천만원으로, 12월 중 예약 판매를 진행하고 내년 1분기에 본격 출시 예정.
+
+### [Specialty DRAM 가격 2021년까지 지속 상승 전망]( https://www.digitimes.com/news/a20201211PD201.html )
+
 
 ## 2020-12-10
 ### [ASE, 11월 매출 NT$50.7B (+5.7% MoM, +31.7% YoY) 기록]( http://ir.aseglobal.com/html/ir_revenues.php )
