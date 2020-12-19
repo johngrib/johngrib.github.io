@@ -3,7 +3,7 @@ layout  : wiki
 title   : 반도체 뉴스 정리 2020 11~12
 summary :
 date    : 2020-12-06 11:51:11 +0900
-updated : 2020-12-18 21:30:13 +0900
+updated : 2020-12-19 14:30:13 +0900
 tag     : 반도체 뉴스
 toc     : true
 public  : true
@@ -15,6 +15,13 @@ comment : false
 {:toc}
 
 ## 2020-12-18
+
+### [Microsoft, 자사 클라우드 서버와 Surface PC에 사용할 ARM 기반 프로세서 설계]( https://www.bloomberg.com/news/articles/2020-12-18/microsoft-is-designing-its-own-chips-for-servers-surface-pcs )
+- Intel 의존도를 낮추기 위한 시도.
+- 이 뉴스로 인텔 6.3% 하락(올해 21% 하락), AMD도 1% 하락.
+- Frank Shaw(MS 대변인): "실리콘은 테크놀로지의 기반이다. 우리는 생산/설계/도구 같은 자체 역량에 지속적으로 투자하고 있다. 다양한 반도체 업체와 파트너쉽을 강화하고 있다."
+- MS는 최근 몇 년간 Intel, AMD, Nvidia, Qualcomm의 프로세서 엔지니어를 채용해왔다.
+- 인텔은 최근 AMD가 잘 나가고 있는데도 불구하고 아직 시장의 90%를 점유하고 있음.
 
 ### [Huawei, 프랑스에 모바일 네트워킹 장비 공장 신설 (Reuters)]( https://reut.rs/3nHPIEB )
 - 중국 화웨이는 5G 장비를 사용하는 기업에 대한 프랑스의 억제에도 불구하고 프랑스 동부에 휴대폰 네트워크 장비 공장을 짓는 데 2억 유로(약 2692억원)를 투자하겠다고 밝혔다.
