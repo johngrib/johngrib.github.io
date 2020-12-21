@@ -863,6 +863,7 @@ random:
     - {fileName: von-neumann-extractor}
 people:
     - {fileName: jeff-bezos}
+    - {fileName: ronald-wayne}
 amazon:
     - {fileName: jeff-bezos}
 start-up:

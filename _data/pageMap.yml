@@ -3053,7 +3053,7 @@ people:
     parent: index
     url: /wiki/people
     updated: '2020-07-29 22:19:05 +0900'
-    children: [Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, claude-elwood-shannon, Donald-Ervin-Knuth, gerald-weinberg-language-king, James-Gosling-super-programmer, jeff-bezos, John-von-Neumann, John-W-Backus, the-beginning-of-linux]
+    children: [Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, claude-elwood-shannon, Donald-Ervin-Knuth, gerald-weinberg-language-king, James-Gosling-super-programmer, jeff-bezos, John-von-Neumann, John-W-Backus, ronald-wayne, the-beginning-of-linux]
 perl-one-liner:
     type: wiki
     title: 'Perl 한 줄 사용'
@@ -3357,6 +3357,14 @@ ripgrep:
     parent: command-line
     url: /wiki/ripgrep
     updated: '2019-11-11 22:42:25 +0900'
+    children: []
+ronald-wayne:
+    type: wiki
+    title: '애플 지분 10%를 800달러에 팔아버린 로널드 웨인'
+    summary: '2020년 기준 애플 10%는 252조 원'
+    parent: people
+    url: /wiki/ronald-wayne
+    updated: '2020-12-21 23:11:01 +0900'
     children: []
 rouge-supported-languages:
     type: wiki

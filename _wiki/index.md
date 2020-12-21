@@ -76,6 +76,7 @@ regenerate: true
 * [[jeff-bezos]]
 * [[John-von-Neumann]]
 * [[John-W-Backus]]
+* [[ronald-wayne]]
 * [[the-beginning-of-linux]]
 
 ## [[how-to]]
