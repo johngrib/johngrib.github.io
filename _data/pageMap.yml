@@ -2414,6 +2414,14 @@ jdk13:
     url: /wiki/jdk13
     updated: '2020-03-04 21:19:06 +0900'
     children: []
+jeff-bezos:
+    type: wiki
+    title: '제프 베조스(Jeff Bezos)'
+    summary: ""
+    parent: people
+    url: /wiki/jeff-bezos
+    updated: '2020-12-21 21:58:01 +0900'
+    children: []
 jekyll-category-tag:
     type: wiki
     title: 'Jekyll 블로그에 태그 추가하기'
@@ -3045,7 +3053,7 @@ people:
     parent: index
     url: /wiki/people
     updated: '2020-07-29 22:19:05 +0900'
-    children: [Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, claude-elwood-shannon, Donald-Ervin-Knuth, gerald-weinberg-language-king, James-Gosling-super-programmer, John-von-Neumann, John-W-Backus, the-beginning-of-linux]
+    children: [Bill-Atkinson-productivity, Bill-Joy-and-10000-hours-rule, claude-elwood-shannon, Donald-Ervin-Knuth, gerald-weinberg-language-king, James-Gosling-super-programmer, jeff-bezos, John-von-Neumann, John-W-Backus, the-beginning-of-linux]
 perl-one-liner:
     type: wiki
     title: 'Perl 한 줄 사용'

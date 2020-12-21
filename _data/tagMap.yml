@@ -861,6 +861,12 @@ programming:
 random:
     - {fileName: java-random}
     - {fileName: von-neumann-extractor}
+people:
+    - {fileName: jeff-bezos}
+amazon:
+    - {fileName: jeff-bezos}
+start-up:
+    - {fileName: jeff-bezos}
 blog:
     - {fileName: jekyll-category-tag}
     - {fileName: my-wiki}

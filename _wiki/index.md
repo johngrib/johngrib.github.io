@@ -70,12 +70,13 @@ regenerate: true
 * [[Bill-Joy-and-10000-hours-rule]]
 * [[brian-w-kernighan]]
 * [[claude-elwood-shannon]]
+* [[Donald-Ervin-Knuth]]
 * [[gerald-weinberg-language-king]]
 * [[James-Gosling-super-programmer]]
+* [[jeff-bezos]]
 * [[John-von-Neumann]]
 * [[John-W-Backus]]
 * [[the-beginning-of-linux]]
-* [[Donald-Ervin-Knuth]]
 
 ## [[how-to]]
 

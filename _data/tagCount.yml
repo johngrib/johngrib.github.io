@@ -23,6 +23,9 @@
     name: alignment
     size: 1
 -
+    name: amazon
+    size: 1
+-
     name: annotation
     size: 1
 -
@@ -413,6 +416,9 @@
     name: pentium
     size: 1
 -
+    name: people
+    size: 1
+-
     name: performance
     size: 4
 -
@@ -493,6 +499,9 @@
 -
     name: spring
     size: 6
+-
+    name: start-up
+    size: 1
 -
     name: stat
     size: 1
