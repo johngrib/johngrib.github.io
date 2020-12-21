@@ -3,7 +3,7 @@ layout  : wiki
 title   : 애플 지분 10%를 800달러에 팔아버린 로널드 웨인
 summary : 2020년 기준 애플 10%는 252조 원
 date    : 2020-12-21 22:17:42 +0900
-updated : 2020-12-21 23:11:01 +0900
+updated : 2020-12-21 23:13:45 +0900
 tag     : people
 toc     : true
 public  : true
@@ -60,6 +60,7 @@ OFR $800. NOW IT'S WORTH $58,065,210,000
 
 ## Links
 
+- [Apple Market Cap 2006-2020 / AAPL(macrotrends.net)]( https://www.macrotrends.net/stocks/charts/AAPL/apple/market-cap )
 - [This Masked Duo Are Doing Amazing Things With London Underground Notice Boards][harry-rosehill]
 - [50 Of The Best Messages On The London Underground Notice Boards Written By 2 Masked Guys][bored-panda]
 
