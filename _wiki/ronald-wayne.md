@@ -3,7 +3,7 @@ layout  : wiki
 title   : 애플 지분 10%를 800달러에 팔아버린 로널드 웨인
 summary : 2020년 기준 애플 10%는 252조 원
 date    : 2020-12-21 22:17:42 +0900
-updated : 2020-12-21 23:22:16 +0900
+updated : 2020-12-21 23:24:30 +0900
 tag     : people
 toc     : true
 public  : true
@@ -20,7 +20,7 @@ latex   : false
 > QUOTE OF THE DAY
 >
 > IF ANYONE IS HAVING A BAD DAY, REMEMBER THAT TODAY IN 1976 RONALD WAYNE SOLD HIS 10% STAKE IN APPLE
-OFR $800. NOW IT'S WORTH $58,065,210,000
+FOR $800. NOW IT'S WORTH $58,065,210,000
 >
 > 만약 오늘 하루 기분이 별로였다면, 1976년 로널드 웨인이 애플 지분 10%를 800달러에 팔았다는 사실을 떠올려보세요.
 오늘날 애플 10%의 가치는 58,065,210,000 달러입니다.
