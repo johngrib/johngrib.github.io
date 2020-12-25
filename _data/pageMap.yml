@@ -2180,7 +2180,7 @@ IP:
     summary: 'Internet Protocol'
     parent: what
     url: /wiki/IP
-    updated: '2020-12-25 22:49:00 +0900'
+    updated: '2020-12-25 22:52:34 +0900'
     children: []
 iterm:
     type: wiki
@@ -2661,6 +2661,14 @@ Lubarsky-s-Law-of-Cybernetic-Entomology:
     parent: proverb
     url: /wiki/Lubarsky-s-Law-of-Cybernetic-Entomology
     updated: '2020-06-12 23:42:28 +0900'
+    children: []
+mac-address:
+    type: wiki
+    title: 'MAC address'
+    summary: ""
+    parent: index
+    url: /wiki/mac-address
+    updated: '2020-12-25 23:10:25 +0900'
     children: []
 mac-keyboard-shortcuts:
     type: wiki

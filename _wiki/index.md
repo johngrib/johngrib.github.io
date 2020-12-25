@@ -625,6 +625,7 @@ regenerate: true
 * [[two-type-error]]
 * [[uml]]
 * [[vimium]]
+* [[mac-address]]
 
 ---
 

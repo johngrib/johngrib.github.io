@@ -431,6 +431,7 @@ network:
     - {fileName: global-variables-and-marriage-architecture}
     - {fileName: IP}
     - {fileName: latency}
+    - {fileName: mac-address}
     - {fileName: osi-model}
     - {fileName: port}
 bayes:
@@ -692,6 +693,7 @@ cs:
     - {fileName: f-l-a-03-01}
     - {fileName: f-l-a-03-02}
     - {fileName: halting-problem}
+    - {fileName: mac-address}
     - {fileName: p-np}
     - {fileName: study-formal-languages-and-automata}
 tools:
