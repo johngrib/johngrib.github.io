@@ -3,7 +3,7 @@ layout  : wiki
 title   : IP
 summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
-updated : 2020-10-31 13:09:24 +0900
+updated : 2020-12-25 22:49:00 +0900
 tag     : network
 toc     : true
 public  : true
@@ -72,10 +72,10 @@ IP의 개발과정에서 획기적인 사건은 1981년 9월에 [RFC 791](https:
 이를 8 자리씩 쪼개고 각자 십진수로 변환하면 다음과 같다.
 
 $$
-\underbrace{ 1010 \ 1100 }_{172} \
-\underbrace{ 1101 \ 1001 }_{217} \
-\underbrace{ 0001 \ 1111 }_{31} \
-\underbrace{ 1010 \ 1110 }_{174} \
+\underbrace{ 1010 \ 1100 }_{172} \\
+\underbrace{ 1101 \ 1001 }_{217} \\
+\underbrace{ 0001 \ 1111 }_{31} \\
+\underbrace{ 1010 \ 1110 }_{174} \\
 $$
 
 이제 각 십진수 사이에 `.`을 넣고 하나로 합치면 `172.217.31.174`가 된다.
