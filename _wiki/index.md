@@ -332,6 +332,7 @@ regenerate: true
 
 ## [[tools]]
 
+* [[dbeaver]]
 * [[dumang-dk6-keyboard]]
 * [[google-home]]
 * [[Gradle]]

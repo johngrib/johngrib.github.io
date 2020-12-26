@@ -1014,6 +1014,14 @@ db-processlist:
     url: /wiki/db-processlist
     updated: '2020-12-12 13:27:57 +0900'
     children: []
+dbeaver:
+    type: wiki
+    title: DBeaver
+    summary: ""
+    parent: tools
+    url: /wiki/dbeaver
+    updated: '2020-12-26 23:31:46 +0900'
+    children: []
 dc-cmd:
     type: wiki
     title: 'dc 명령어'
@@ -3989,7 +3997,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [aws, command-line, dumang-dk6-keyboard, Excel, git, google-home, Gradle, intellij, iterm, useful-site]
+    children: [aws, command-line, dbeaver, dumang-dk6-keyboard, Excel, git, google-home, Gradle, intellij, iterm, useful-site]
 top:
     type: wiki
     title: 'top 명령어'
