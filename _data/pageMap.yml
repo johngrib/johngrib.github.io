@@ -4070,6 +4070,14 @@ Turbo-Pascal-the-first-IDE:
     url: /wiki/Turbo-Pascal-the-first-IDE
     updated: '2020-04-04 18:44:00 +0900'
     children: []
+twitter-tools:
+    type: wiki
+    title: '트위터 관리 도구'
+    summary: ""
+    parent: useful-site
+    url: /wiki/twitter-tools
+    updated: '2020-12-27 21:22:52 +0900'
+    children: []
 two-eggs-100-floor:
     type: wiki
     title: '100층 건물과 2개의 계란 문제'
@@ -4165,7 +4173,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2020-02-15 12:12:26 +0900'
-    children: [downdetector, ecos-bok-or-kr, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap]
+    children: [downdetector, ecos-bok-or-kr, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, twitter-tools]
 vagrant-docker-get-start:
     type: wiki
     title: 'Vagrant와 Docker에 CentOS, Ubuntu 설치하기'

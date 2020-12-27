@@ -806,6 +806,7 @@ google:
 twitter:
     - {fileName: googling}
     - {fileName: labs-strava-com-heatmap}
+    - {fileName: twitter-tools}
 facebook:
     - {fileName: googling}
 gradle:
