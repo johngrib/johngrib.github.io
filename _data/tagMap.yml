@@ -915,6 +915,8 @@ soft-skill:
     - {fileName: Take-the-Bully-by-the-Horns}
 experiment:
     - {fileName: our-fund-balancing}
+finance:
+    - {fileName: pension}
 intel:
     - {fileName: pentium-fdiv-bug}
 pentium:

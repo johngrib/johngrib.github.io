@@ -188,6 +188,9 @@
     name: facebook
     size: 1
 -
+    name: finance
+    size: 1
+-
     name: firefox
     size: 1
 -

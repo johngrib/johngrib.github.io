@@ -3054,6 +3054,14 @@ PATTERN-ON-THE-STONE:
     url: /wiki/PATTERN-ON-THE-STONE
     updated: '2020-05-04 23:41:25 +0900'
     children: []
+pension:
+    type: wiki
+    title: 연금
+    summary: '하나도 모르겠다 정리해 보자'
+    parent: index
+    url: /wiki/pension
+    updated: '2020-12-27 13:30:38 +0900'
+    children: []
 pentium-fdiv-bug:
     type: wiki
     title: '펜티엄 FPU FDIV 버그'
