@@ -3,7 +3,7 @@ layout  : wiki
 title   : 연금
 summary : 하나도 모르겠다 정리해 보자
 date    : 2020-12-27 09:57:32 +0900
-updated : 2020-12-27 13:37:23 +0900
+updated : 2020-12-27 13:39:51 +0900
 tag     : finance
 toc     : true
 public  : true
@@ -56,9 +56,10 @@ DB/DC는 내가 고를 수 없고, 내가 다니고 있는 회사가 둘 중 어
 
 - [데이비드 바크의 자동 부자 습관 4장에 나오는 비교 표]( /post-img/pension/103163913-9e42fc00-4847-11eb-8c65-0571b9d888b0.png )
 - [하나은행 퇴직연금 - 퇴직연금 제도간 비교]( https://pension.kebhana.com/rpc/hhom/kr/rpc08220700.do ) [(이미지)]( /post-img/pension/103163958-3e008a00-4848-11eb-953f-d2e0fa203098.png )
-- [신한생명 퇴직연금 제도별 비교]( https://www.shinhanlife.co.kr/pbc/a/PBCA204.jsp )
+- [신한생명 퇴직연금 제도별 비교]( https://www.shinhanlife.co.kr/pbc/a/PBCA204.jsp ) [(이미지)]( /post-img/pension/103163974-89b33380-4848-11eb-9144-3609ba42e5aa.png )
+- [IBK 연금보험 - 퇴직연금제도 종류]( https://www.ibki.co.kr/process/HP_RTANTY_SYS_KND_STD5 ) [(이미지)]
 
-![image]( /post-img/pension/103163974-89b33380-4848-11eb-9144-3609ba42e5aa.png )
+![image]( /post-img/pension/103163995-e6165300-4848-11eb-91d7-1aa1fb2c9663.png )
 
 
 ### DB형: 확정급여형, 회사 책임형
