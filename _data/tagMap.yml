@@ -682,6 +682,9 @@ hotkey:
 vba:
     - {fileName: excel-transpos}
     - {fileName: excel-vba-setting}
+finance:
+    - {fileName: exchange-rate}
+    - {fileName: pension}
 cs:
     - {fileName: f-l-a-00-preface}
     - {fileName: f-l-a-01-00}
@@ -916,8 +919,6 @@ soft-skill:
     - {fileName: Take-the-Bully-by-the-Horns}
 experiment:
     - {fileName: our-fund-balancing}
-finance:
-    - {fileName: pension}
 intel:
     - {fileName: pentium-fdiv-bug}
 pentium:

@@ -603,6 +603,7 @@ regenerate: true
 
 ### finance
 
+* [[exchange-rate]]
 * [[pension]]
 
 ## 미분류

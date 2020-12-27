@@ -189,7 +189,7 @@
     size: 1
 -
     name: finance
-    size: 1
+    size: 2
 -
     name: firefox
     size: 1
