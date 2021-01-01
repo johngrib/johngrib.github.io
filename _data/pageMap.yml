@@ -248,11 +248,11 @@ ag:
     children: []
 agile:
     type: wiki
-    title: '애자일(agile)에 대한 토막글 모음'
+    title: '애자일(agile) 이것저것'
     summary: ""
     parent: software-engineering
     url: /wiki/agile
-    updated: '2020-08-11 23:35:03 +0900'
+    updated: '2021-01-02 07:00:46 +0900'
     children: []
 airplain-rule:
     type: wiki
@@ -3284,7 +3284,7 @@ recent-news:
     summary: ""
     parent: index
     url: /wiki/recent-news
-    updated: '2021-01-02 06:32:59 +0900'
+    updated: '2021-01-02 08:43:36 +0900'
     children: []
 regex:
     type: wiki
