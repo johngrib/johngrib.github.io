@@ -597,8 +597,9 @@ regenerate: true
 
 * [[semiconductor-dict]]
 
-### 반도체 뉴스
+## 뉴스 정리
 
+* [[recent-news]]
 * [[semiconductor-news-2020-4q]]
 
 ### finance
