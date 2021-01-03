@@ -3,7 +3,7 @@ layout  : wiki
 title   : 제프 베조스(Jeff Bezos)
 summary : 
 date    : 2020-12-21 21:43:01 +0900
-updated : 2021-01-03 15:45:58 +0900
+updated : 2021-01-03 15:49:14 +0900
 tag     : people amazon start-up
 toc     : true
 public  : true
@@ -38,7 +38,7 @@ latex   : false
 
 >  그러나 결정을 내리기는 쉽지 않았다.
 나중에 베조스는 당시의 고민 과정을 상당히 기술적인 용어로 설명했다.
-그는 삶의 갈림길에서 다음 일을 결정할 때 사용할 '후회 최소화 프레임워크 Regret minimization framework'를 고안했다고 한다.
+그는 삶의 갈림길에서 다음 일을 결정할 때 사용할 '후회 최소화 프레임워크 Regret minimization framework'를 고안했다고 한다.
 >
 > "여러 가지 일로 바쁠 때는 작은 것 때문에 큰 것을 잃을 수 있습니다.
  80세가 되어 인생을 뒤돌아볼 때 1994년도 1년 중 하필 왜 보너스 받는 시기를 앞두고 그 순간에 사직서를 냈을까 하고 후회하지는 않을 겁니다.
