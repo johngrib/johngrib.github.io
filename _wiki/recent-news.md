@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-01-04 22:59:13 +0900
+updated : 2021-01-06 00:32:31 +0900
 tag     : 뉴스
 toc     : true
 public  : true
@@ -12,6 +12,32 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-01-05
+
+### [TSMC, 2021년 Capex $20B (21.7조원) 전망 (Digitimes)]( https://bit.ly/2Lie2yj )
+
+### [인텔·AMD, 새해벽두부터 차세대 프로세서 경쟁 예고 (ZD Net)]( https://bit.ly/2XbudQE )
+- 다음 주 개막하는 CES 2021 에서 기조연설과 컨퍼런스로 신제품과 로드맵 공개할 예정
+- AMD
+    - 리사 수 CEO 기조연설
+    - 라이젠 프로세서 신제품 공개 예정
+- 인텔
+    - 기조연설에서 11세대 코어 프로세서(타이거레이크H)와 데스크톱용 11세대 코어 프로세서(로켓레이크) 신제품 정보 공개 예정
+- "인텔은 2019년 이후 매년 CES를 통해 그 해 출시할 코어 프로세서 신제품 공개를, 5월 말에서 6월 초 개최되는 컴퓨텍스를 통해 해당 프로세서 정식 출시를 진행해 왔다. 올해 역시 하반기에 출시할 새 코어 프로세서, 앨더레이크에 대한 정보를 공개할 가능성이 크다."
+
+### [Qualcomm, 스냅드래곤 4시리즈 5G 모바일 플랫폼 공개 (GizChina)]( https://bit.ly/38ZrsaP )
+- Qualcomm Snapdragon 480 5G 모바일 플랫폼 출시 발표.
+    - 5G를 지원하는 최초의 Snapdragon 4 시리즈 모바일 플랫폼
+    - 뛰어난 모바일 성능, 업로드/다운로드 속도, 더 빠른 배터리 충전 속도 등의 장점
+    - 탑재된 최초의 상용 단말기 2021년 초에 출시될 예정
+
+### [Intel, 11세대 Rocket Lake-S 3월 말 공개 (Tom's Hardware)]( https://bit.ly/3oewoiv )
+
+### [SMIC, mature-node 프로세서 장비 수입 미국으로부터 허가 (Digitimes)]( https://bit.ly/2LhOKR4 )
+
+### [Intel, 스크린 폴더블 노트북 2021년 하반기 공개 (Digitimes)]( https://bit.ly/2KSlIHW )
+
 
 ## 2021-01-04
 
