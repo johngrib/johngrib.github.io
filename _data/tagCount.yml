@@ -141,7 +141,7 @@
     size: 2
 -
     name: db
-    size: 7
+    size: 8
 -
     name: design
     size: 1

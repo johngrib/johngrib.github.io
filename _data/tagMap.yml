@@ -220,6 +220,7 @@ db:
     - {fileName: b-tree}
     - {fileName: db-processlist}
     - {fileName: dbeaver}
+    - {fileName: h2database}
     - {fileName: locking}
     - {fileName: sharding}
     - {fileName: sql-char-comparison}

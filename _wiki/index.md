@@ -336,6 +336,7 @@ regenerate: true
 * [[dumang-dk6-keyboard]]
 * [[google-home]]
 * [[Gradle]]
+* [[h2database]]
 * [[intellij]]
 * [[iterm]]
 

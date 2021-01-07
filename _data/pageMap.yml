@@ -1966,6 +1966,14 @@ grow-together:
     url: /wiki/grow-together
     updated: '2019-12-19 23:03:58 +0900'
     children: []
+h2database:
+    type: wiki
+    title: h2database
+    summary: 'H2, the Java SQL database'
+    parent: tools
+    url: /wiki/h2database
+    updated: '2021-01-07 23:46:16 +0900'
+    children: []
 halting-problem:
     type: wiki
     title: '정지 문제'
@@ -4021,7 +4029,7 @@ tools:
     parent: index
     url: /wiki/tools
     updated: '2018-02-06 07:05:19 +0900'
-    children: [aws, command-line, dbeaver, dumang-dk6-keyboard, Excel, git, google-home, Gradle, intellij, iterm, useful-site]
+    children: [aws, command-line, dbeaver, dumang-dk6-keyboard, Excel, git, google-home, Gradle, h2database, intellij, iterm, useful-site]
 top:
     type: wiki
     title: 'top 명령어'
