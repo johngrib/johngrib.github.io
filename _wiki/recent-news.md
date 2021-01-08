@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-01-07 21:58:32 +0900
+updated : 2021-01-08 13:31:56 +0900
 tag     : 뉴스
 toc     : true
 public  : true
@@ -12,6 +12,31 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-01-08
+
+### [비트코인 오르자 자취 감춘 GPU…엔비디아·AMD 공급 확대 '난항' (디지털 데일리)]( https://bit.ly/3hUm50k )
+- 전 세계적으로 GPU 공급량이 부족한 상태
+    - IT 기기 수요 증가, 암호화폐 가격 폭등 영향
+    - 암호화폐 채굴 업계에서 GPU를 쓸어가고 있다고 함
+    - 삼성전자, TSMC 생산라인은 풀가동 상태
+- GPU 양대 산맥인 NVDA, AMD 가 적극적으로 나서고 있지만 해소는 어려울 전망
+    - NVDA 지포스 RTX30 시리즈와 AMD 라데온 RX6000 시리즈가 수요를 감당 못하고 있음
+- NVDA는 삼성전자에 GPU 추가 주문을 넣은 상태지만 여전히 시장 수요를 따라가기는 버거움.
+- AMD는 상황이 심각하다.
+    - TSMC의 첨단공장 라인은 애플이 1순위이고, AMD 물량의 80% 정도가 콘솔 프로세서. 나머지 20%로 CPU, GPU를 생산해야 하는 상황. TSMC는 삼성전자보다 거래처가 많아서 추가 주문도 어려움.
+- GPU 가격은 오름세이며, 한동안 계속될 전망
+
+### 그 외
+[Huawei, 스웨덴 5G 네트워크 구축 참여 배제에 PTS에 항의 (Reuters)]( https://reut.rs/38nN3uf )
+
+[갤럭시S21, 90만원대 파격 가격으로 승부수...국내 출고가 99만9000원 확정(전자신문)]( https://bit.ly/38qdCiF )
+
+[전공정 비용 증가가 2021년 전방산업 수요 둔화 전망 (Digitimes)]( https://bit.ly/38oiZi5 )
+
+[미국의 SMIC 제재, 퓨어 플레이 파운드리의 공정 장비 확보 제한 (Digitimes)]( https://bit.ly/3ot13su )
+
+[삼성전자, 1월 12일 새 Exynos 공개 (GizChina)]( https://bit.ly/3hRYzRE )
 
 ## 2021-01-07
 ### [영국 경쟁당국, 엔비디아의 ARM 인수 조사]( https://news.einfomax.co.kr/news/articleView.html?idxno=4126010 )
