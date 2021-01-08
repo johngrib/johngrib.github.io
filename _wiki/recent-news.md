@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-01-08 13:31:56 +0900
+updated : 2021-01-08 16:09:19 +0900
 tag     : 뉴스
 toc     : true
 public  : true
@@ -14,6 +14,7 @@ latex   : false
 {:toc}
 
 ## 2021-01-08
+### [삼성전자, 2020년 4분기 잠정실적 발표]( https://news.samsung.com/kr/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-2020%EB%85%84-4%EB%B6%84%EA%B8%B0-%EC%9E%A0%EC%A0%95%EC%8B%A4%EC%A0%81-%EB%B0%9C%ED%91%9C )
 
 ### [비트코인 오르자 자취 감춘 GPU…엔비디아·AMD 공급 확대 '난항' (디지털 데일리)]( https://bit.ly/3hUm50k )
 - 전 세계적으로 GPU 공급량이 부족한 상태
