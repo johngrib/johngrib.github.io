@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 2020년 기록
-summary : 연말에 2020년 회고로 제목을 바꿀 문서
+title   : 2020년 회고
+summary : 힘든 한 해였다
 date    : 2020-01-01 18:32:51 +0900
-updated : 2020-12-27 22:20:51 +0900
+updated : 2021-01-08 17:38:25 +0900
 tag     : review
 toc     : true
 public  : false
