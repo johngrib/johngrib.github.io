@@ -3685,7 +3685,15 @@ spring:
     parent: index
     url: /wiki/spring
     updated: '2019-08-15 16:29:07 +0900'
-    children: [spring-annotation-exceptionhandler, spring-annotation-value, spring-bean-config-configuration, spring-bean-config-xml, spring-versions]
+    children: [spring-annotation-bean, spring-annotation-exceptionhandler, spring-annotation-value, spring-bean-config-configuration, spring-bean-config-xml, spring-versions]
+spring-annotation-bean:
+    type: wiki
+    title: 'Spring @Bean 애노테이션'
+    summary: ""
+    parent: spring
+    url: /wiki/spring-annotation-bean
+    updated: '2021-01-10 00:09:35 +0900'
+    children: []
 spring-annotation-exceptionhandler:
     type: wiki
     title: 'Spring @ExceptionHandler 애노테이션'

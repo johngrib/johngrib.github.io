@@ -849,6 +849,7 @@ turing:
 spring:
     - {fileName: inversion-of-control}
     - {fileName: spring}
+    - {fileName: spring-annotation-bean}
     - {fileName: spring-annotation-exceptionhandler}
     - {fileName: spring-annotation-value}
     - {fileName: spring-bean-config-configuration}

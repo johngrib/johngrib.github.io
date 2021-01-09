@@ -516,6 +516,7 @@ regenerate: true
 
 ## [[spring]]
 
+* [[spring-annotation-bean]]
 * [[spring-annotation-exceptionhandler]]
 * [[spring-annotation-value]]
 * [[spring-bean-config-configuration]]
