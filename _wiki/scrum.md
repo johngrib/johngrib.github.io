@@ -3,7 +3,7 @@ layout  : wiki
 title   : 스크럼 (Scrum)
 summary : 
 date    : 2019-01-02 22:45:37 +0900
-updated : 2020-01-17 22:30:57 +0900
+updated : 2021-01-10 21:45:02 +0900
 tag     : agile
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## Scrum?
+## From: Kanban and Scrum - Making the Most of Both
 
 >
 * Split your organization into small, cross-functional, self-organizing teams.
