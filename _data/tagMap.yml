@@ -641,6 +641,7 @@ quotes:
     - {fileName: design-pattern-quotes}
 diary:
     - {fileName: diary}
+    - {fileName: memo-2020}
 dijkstra:
     - {fileName: dijkstra-2-stack-for-exp-eval}
 container:
