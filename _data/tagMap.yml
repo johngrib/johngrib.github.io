@@ -853,6 +853,7 @@ spring:
     - {fileName: spring}
     - {fileName: spring-annotation-bean}
     - {fileName: spring-annotation-exceptionhandler}
+    - {fileName: spring-annotation-profile}
     - {fileName: spring-annotation-value}
     - {fileName: spring-bean-config-configuration}
     - {fileName: spring-bean-config-xml}
