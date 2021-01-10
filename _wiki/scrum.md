@@ -3,7 +3,7 @@ layout  : wiki
 title   : 스크럼 (Scrum)
 summary : 
 date    : 2019-01-02 22:45:37 +0900
-updated : 2021-01-10 22:18:55 +0900
+updated : 2021-01-10 23:32:21 +0900
 tag     : agile
 toc     : true
 public  : true
@@ -18,7 +18,7 @@ latex   : false
 
 - [The Agile bullet][agile-bullet]
 
-에릭 브레히너의 마이크로소프트 사내 칼럼으로, 2006년 3월 1일이 작성된 글이다.
+에릭 브레히너의 마이크로소프트 사내 칼럼으로, 2006년 3월 1일 작성된 글이다.
 
 ### 스크럼은 약어인가?
 

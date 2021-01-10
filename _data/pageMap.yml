@@ -3540,7 +3540,7 @@ scrum:
     summary: ""
     parent: software-engineering
     url: /wiki/scrum
-    updated: '2021-01-10 22:18:55 +0900'
+    updated: '2021-01-10 23:32:21 +0900'
     children: []
 sdkman:
     type: wiki
