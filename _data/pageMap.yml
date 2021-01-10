@@ -445,7 +445,7 @@ better-work:
     parent: index
     url: /wiki/better-work
     updated: '2020-03-15 12:32:42 +0900'
-    children: [better-checklist, better-meeting, expert, leadership, purpose-of-business, working-together]
+    children: [better-checklist, better-meeting, expert, good-developer, leadership, purpose-of-business, working-together]
 big-numbers:
     type: wiki
     title: '좀 큰 숫자들'
@@ -1861,6 +1861,14 @@ golang-waitgroup-add:
     parent: Golang
     url: /wiki/golang-waitgroup-add
     updated: '2020-01-24 23:59:22 +0900'
+    children: []
+good-developer:
+    type: wiki
+    title: '뛰어난 개발자'
+    summary: ""
+    parent: better-work
+    url: /wiki/good-developer
+    updated: '2021-01-10 23:31:18 +0900'
     children: []
 google-home:
     type: wiki

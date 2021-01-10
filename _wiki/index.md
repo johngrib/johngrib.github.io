@@ -590,6 +590,7 @@ regenerate: true
 * [[better-checklist]]
 * [[better-meeting]]
 * [[expert]]
+* [[good-developer]]
 * [[leadership]]
 * [[purpose-of-business]]
 * [[working-together]]
