@@ -3,7 +3,7 @@ layout  : wiki
 title   : 스크럼 (Scrum)
 summary : 
 date    : 2019-01-02 22:45:37 +0900
-updated : 2021-01-10 21:45:02 +0900
+updated : 2021-01-10 21:49:25 +0900
 tag     : agile
 toc     : true
 public  : true
@@ -50,10 +50,23 @@ But integrating regularly to see the whole.
 
 > 대부분의 최신 소프트웨어 개발 방법론은 빅뱅 방식(예를 들어, 폭포수 모델) 대신, 짧고 반복적인 개발 주기를 규정하고 있다. 일반적으로, 배포 주기가 길어질수록 결과가 나빠진다. 예를 들어 스크럼 방법론에서 스프린트(sprint)는 시간이 표시된 개발 완료 주기(일반적으로, 1개월이나 그 이하)로, 여기에서 "완료(Done)"란 "작동하고, 잠재적으로 출시 가능한 코드"가 있는 경우로 정의된다.[^devops-handbook-168]
 
+## From: HARD CODE
+
+>
+**미신 #7: 스크럼은 약어다**
+>
+스크럼은 가장 널리 알려지고 가장 많이 적용되는 애자일 기법의 하나지만 약어는 아니다.
+스크럼은 럭비 용어로, 팀이 공을 되찾으려고 팔짱 끼고 전진하는 모습을 가리킨다.
+스크럼팀이 매일 여는 간단 회의(Standup meeting)도 스크럼이라고 부른다.
+마이크로소프트에서는 스크럼과 유사한 기법을 10여년 전부터, 그러니까 용어가 생기기 훨씬 전부터 사용해 왔다.
+스크럼은 가장 단순한 애자일 기법 중 하나며, 많은 마이크로소프트 팀이 이미 사용하는 방식과 가장 유사하다.
+[^hardcode-2]
+
 ## 참고문헌
 
-* [Kanban vs Scrum - How to make the most of both (PDF)](https://www.crisp.se/file-uploads/Kanban-vs-Scrum.pdf )
-* 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+- [Kanban vs Scrum - How to make the most of both (PDF)](https://www.crisp.se/file-uploads/Kanban-vs-Scrum.pdf )
+- HARD CODE / 박재호 역 / 에이콘출판사 / 발행 2009년 06월 30일 / 원제 : I. M. Wright's Hard Code
+- 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
 
 ## Links
 
@@ -65,4 +78,5 @@ But integrating regularly to see the whole.
 ## 주석
 
 [^devops-handbook-168]: 데브옵스 핸드북. 168쪽.
+[^hardcode-2]: HARD CODE. 2장.
 
