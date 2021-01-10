@@ -153,7 +153,7 @@
     size: 1
 -
     name: diary
-    size: 2
+    size: 3
 -
     name: dijkstra
     size: 1

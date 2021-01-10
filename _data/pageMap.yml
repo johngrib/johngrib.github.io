@@ -1117,7 +1117,7 @@ diary:
     parent: index
     url: /wiki/diary
     updated: '2019-08-13 13:50:57 +0900'
-    children: [book-log-2019, book-log-2020, memo-2019, memo-2020]
+    children: [book-log-2019, book-log-2020, memo-2019, memo-2020, memo-2021]
 dice-problem:
     type: wiki
     title: '주사위 문제'
@@ -2781,6 +2781,14 @@ memo-2020:
     parent: diary
     url: /wiki/memo-2020
     updated: '2021-01-10 13:29:30 +0900'
+    children: []
+memo-2021:
+    type: wiki
+    title: '2021년 메모'
+    summary: ""
+    parent: diary
+    url: /wiki/memo-2021
+    updated: '2021-01-10 13:33:17 +0900'
     children: []
 merge-sort:
     type: wiki

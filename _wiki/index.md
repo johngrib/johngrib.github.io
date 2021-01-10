@@ -13,6 +13,7 @@ regenerate: true
 * [[book-log-2020]]
 * [[memo-2019]]
 * [[memo-2020]]
+* [[memo-2021]]
 
 * [[links]]
     * [[links-2019]]

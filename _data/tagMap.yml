@@ -642,6 +642,7 @@ quotes:
 diary:
     - {fileName: diary}
     - {fileName: memo-2020}
+    - {fileName: memo-2021}
 dijkstra:
     - {fileName: dijkstra-2-stack-for-exp-eval}
 container:
