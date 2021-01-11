@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-01-08 16:09:19 +0900
+updated : 2021-01-11 23:35:14 +0900
 tag     : 뉴스
 toc     : true
 public  : true
@@ -12,6 +12,24 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-01-11
+
+### [TSMC, 12월 매출 NT$117.4B (-6.0% MoM, +13.6% YoY) 기록 (TSMC)]( https://bit.ly/3n7MQ3r )
+
+### [대만 UMC 파운드리 공장, 전력 공급 중단 (전자신문)]( https://bit.ly/35sn1o2 )
+- 1월 9일, 파운드리 4위인 UMC의 대만 현지 공장 전력 공급이 일시적으로 중단됐다.
+- 업계: 일시적인 정전사태가 통상 1~2개월의 생산 중단으로 이어질 가능성이 있다.
+- 대만 UMC는 자동차 분야를 포함한 다양한 산업에 폭넓게 연관되어 있는 칩메이커.
+    - 특히 이번 신주 공장의 전력 공급 중단으로 글로벌 자동차 파운드리 생산에 영향을 미칠 것으로 우려.
+
+### ["인텔, TSMC·삼성전자와 위탁생산 논의중" (ZD Net)]( https://bit.ly/3i4KLU3 )
+### [현대차가 만든 '애플카' 이르면 2024년에 나온다 (전자신문)]( https://bit.ly/3i8cRhq )
+### [중국 반도체 굴기 실패 평가... 2025년 자급률 19.4% 예상 (The Elec)]( https://bit.ly/2LAzrDc )
+
+### 그 외
+- [TSMC 장비 및 소재 공급사, 2021년 강세 전망 (Digitimes)]( https://bit.ly/2K0cF74 )
+- [LG전자 요청에... LGD, 국내 LCD TV 패널 생산 최소 1년 연장 (The Elec)]( https://bit.ly/2K0XMBu )
 
 ## 2021-01-08
 ### [삼성전자, 2020년 4분기 잠정실적 발표]( https://news.samsung.com/kr/%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-2020%EB%85%84-4%EB%B6%84%EA%B8%B0-%EC%9E%A0%EC%A0%95%EC%8B%A4%EC%A0%81-%EB%B0%9C%ED%91%9C )
