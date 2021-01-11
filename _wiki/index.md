@@ -588,6 +588,7 @@ regenerate: true
 ## [[better-work]]
 
 * [[better-checklist]]
+* [[better-interview]]
 * [[better-meeting]]
 * [[expert]]
 * [[good-developer]]

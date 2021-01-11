@@ -430,6 +430,14 @@ better-checklist:
     url: /wiki/better-checklist
     updated: '2020-04-11 11:22:48 +0900'
     children: []
+better-interview:
+    type: wiki
+    title: '면접관으로서 읽어볼만한 것들'
+    summary: '성공적인 면접의 90%는 준비'
+    parent: better-work
+    url: /wiki/better-interview
+    updated: '2021-01-11 23:57:46 +0900'
+    children: []
 better-meeting:
     type: wiki
     title: 회의
@@ -445,7 +453,7 @@ better-work:
     parent: index
     url: /wiki/better-work
     updated: '2020-03-15 12:32:42 +0900'
-    children: [better-checklist, better-meeting, expert, good-developer, leadership, purpose-of-business, working-together]
+    children: [better-checklist, better-interview, better-meeting, expert, good-developer, leadership, purpose-of-business, working-together]
 big-numbers:
     type: wiki
     title: '좀 큰 숫자들'
