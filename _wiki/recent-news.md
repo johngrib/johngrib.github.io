@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-01-11 23:35:14 +0900
+updated : 2021-01-12 22:47:11 +0900
 tag     : 뉴스
 toc     : true
 public  : true
@@ -12,6 +12,18 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-01-12
+
+### [Nvidia, RTX 3000 시리즈 1월 12일 CES에서 공개 (The Verge)]( https://bit.ly/3q8zHbq )
+### [Qualcomm, 2세대 울트라소닉 지문 인식 센서 공개 (The Verge)]( https://bit.ly/3sffrH0 )
+### [LG디스플레이, 벤츠 S클래스 이어 '전기차'도 뚫었다 (한국경제)]( https://bit.ly/38xXkUM )
+- 올해 말 출시될 벤츠 대형 럭셔리 전기차 'EQS'에 현존 차량용 디스플레이 중 가장 큰 'MBUX 하이퍼스크린' 탑재.
+
+### 그 외
+- [대만 팹리스 IC 설계 업체, 3Q21 파운드리 지원 유치 노력 (Digitimes)]( https://bit.ly/3qcquyU )
+- [상소문처럼 펼쳐지는 LG '롤러블폰' 공개…찬사 쏟아졌다 (한국경제)]( https://bit.ly/3nDChEy )
+- [CES 첫 날 달군 삼성…"삼성이 만드는 보다 나은 일상" (한국경제TV)]( https://bit.ly/3shqRK7 )
 
 ## 2021-01-11
 
