@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-01-13 22:43:03 +0900
+updated : 2021-01-15 22:38:10 +0900
 tag     : 뉴스
 toc     : true
 public  : true
@@ -12,6 +12,39 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-01-15
+
+### [中, 애플 공급망 속속 진입…OLED·카메라 등 韓 추격 본격화 (전자신문)]( https://bit.ly/3nIANZN )
+- 중국 부품 업체들이 애플 공급망에 속속 진입하고 있다.
+- 아이폰용 OLED는 그동안 삼성디스플레이와 LG디스플레이가 공급을 도맡아 온 부품.
+- 한국이 주도하던 고부가가치 디스플레이 및 부품 시장에서 중국의 추격이 본격화된 것으로 분석된다.
+
+### [CPU 기술유출 우려, 인텔 삼성 대신 TSMC 손 잡을 듯 (서울경제)]( https://bit.ly/39BAMBZ )
+- 7nm 이하 미세 공정 도입에 어려움을 겪던 인텔.
+- 7nm 이하 반도체를 만들 수 있는 곳은 삼성전자와 TSMC 뿐.
+- 외신 및 업계에 따르면 인텔의 위탁 생산 물량은 TSMC가 가져갈 가능성이 높다.
+- 트렌드포스(시장조사 기관): 인텔이 CPU 생산을 TSMC에 맡길 계획.
+    - TSMC는 인텔의 차세대 코어 i3 CPU를 5nm 공정으로 생산하고 내년에는 3nm 공정을 적용할 예정.
+    - 인텔이 TSMC에 아웃소싱하는 CPU는 전체의 15~20% 정도일 것으로 예상.
+- 지난 12일 로이터 통신: 인텔이 GPU 'DG2' 생산을 TSMC에 맡길 것이라 보도.
+    - 7nm 공정으로 생산되는 DG2는 올해 말이나 내년 초 출시될 예정
+- 업계: 인텔이 기술 유출을 우려해 삼성전자 대신 TSMC에 위탁 생산을 맡길 가능성이 크다고 예상.
+    - TSMC가 생산 라인을 풀 가동하고 있어, TSMC와 삼성전자에 물량을 나눠서 맡길 가능성도 없지는 않음.
+
+### 그 외
+- [갤럭시S21, 새로워진 디자인에 모바일 혁신 담았다 (연합뉴스)]( https://bit.ly/35Hj8vp )
+- [삼성전자, 빠르면 1Q21부터 NAND 판가 추가 인하 가능 (Digitimes)]( https://bit.ly/38L1NDI )
+- [LCD 패널 원자재 공급 부족, NEG 및 UMC 정전으로 심화 (Digitimes)]( https://bit.ly/2LPYMsK )
+
+## 2021-01-14
+
+### [Intel, 기존 CEO Bob Swan 사퇴 결심 후 VMWare CEO 였던 Pat Gelsinger 신규 CEO로 부임 (Anand Tech)]( https://bit.ly/2LKQti3 )
+### [Intel, 10nm Ice Lake Xeon 서버 프로세서 증산으로 대만 서버 제조업체 2021년 낙관적 전망 (Digitimes)]( https://bit.ly/2LO7p7j )
+### [Qualcomm, $1.4B (1.5조원)에 서버 CPU 업체 NUVIA 인수 (Venture Beat)]( https://bit.ly/3nFlEZd )
+### [Intel, 10나노 슈퍼핀 공정 차세대 '엘더레이크' 공개 (The Elec)]( https://bit.ly/2LmrDFq )
+### 그 외
+- [삼성전자, 갤럭시 S21 시리즈 소개 페이지 유출 (The Verge)]( https://bit.ly/35DSzHt )
 
 ## 2021-01-13
 
