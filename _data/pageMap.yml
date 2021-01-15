@@ -2822,6 +2822,14 @@ metcalfe-s-law:
     url: /wiki/metcalfe-s-law
     updated: '2020-08-02 16:56:08 +0900'
     children: []
+microsoft-hwp-word-converter:
+    type: wiki
+    title: '마이크로소프트의 HWP to MS WORD 컨버터'
+    summary: ""
+    parent: useful-site
+    url: /wiki/microsoft-hwp-word-converter
+    updated: '2021-01-15 21:53:16 +0900'
+    children: []
 migrate-to-new-macbook:
     type: wiki
     title: '새 맥북으로 이사가기, 설정하기'
@@ -4253,7 +4261,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2020-02-15 12:12:26 +0900'
-    children: [downdetector, ecos-bok-or-kr, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, twitter-tools]
+    children: [downdetector, ecos-bok-or-kr, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, microsoft-hwp-word-converter, twitter-tools]
 vagrant-docker-get-start:
     type: wiki
     title: 'Vagrant와 Docker에 CentOS, Ubuntu 설치하기'

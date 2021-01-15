@@ -905,6 +905,10 @@ latex:
     - {fileName: mathjax-latex}
 media:
     - {fileName: media}
+hwp:
+    - {fileName: microsoft-hwp-word-converter}
+ms-office:
+    - {fileName: microsoft-hwp-word-converter}
 hhkb:
     - {fileName: my-keyboard-use}
 wiki:
