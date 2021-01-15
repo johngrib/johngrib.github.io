@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring @Profile 애노테이션
 summary : 
 date    : 2021-01-10 17:19:33 +0900
-updated : 2021-01-10 19:00:15 +0900
+updated : 2021-01-15 22:53:52 +0900
 tag     : spring
 toc     : true
 public  : true
@@ -28,7 +28,7 @@ The `@Profile` annotation may be used in any of the following ways:
 >
 - as a type-level annotation on any class directly or indirectly annotated with `@Component`, including `@Configuration` classes
 - as a meta-annotation, for the purpose of composing custom stereotype annotations
-- as a method-level annotation on any `@Bean` method
+- as a method-level annotation on any [[spring-annotation-bean]]{@Bean} method
 
 하나 이상의 지정된 profile이 활성화되어 있다면 해당 profile의 설정을 등록할 수 있다.
 
@@ -44,9 +44,9 @@ The `@Profile` annotation may be used in any of the following ways:
 - 모든 [[spring-annotation-bean]]{@Bean 메소드 애노테이션}.
 
 >
-If a `@Configuration` class is marked with `@Profile`, all of the `@Bean` methods and `@Import` annotations associated with that class will be bypassed unless one or more of the specified profiles are active. A profile string may contain a simple profile name (for example "p1") or a profile expression. A profile expression allows for more complicated profile logic to be expressed, for example "p1 & p2". See `Profiles.of(String...)` for more details about supported formats.
+If a `@Configuration` class is marked with `@Profile`, all of the [[spring-annotation-bean]]{@Bean} methods and `@Import` annotations associated with that class will be bypassed unless one or more of the specified profiles are active. A profile string may contain a simple profile name (for example "p1") or a profile expression. A profile expression allows for more complicated profile logic to be expressed, for example "p1 & p2". See `Profiles.of(String...)` for more details about supported formats.
 
-- `@Configuration` 클래스에 `@Profile` 애노테이션이 붙어있고, 지정된 프로파일이 활성화된 상태라면, `@Bean`이 붙은 모든 메소드와 `@Import` 애노테이션은 해당 클래스와 함께 작동한다.
+- `@Configuration` 클래스에 `@Profile` 애노테이션이 붙어있고, 지정된 프로파일이 활성화된 상태라면, [[spring-annotation-bean]]{@Bean}이 붙은 모든 메소드와 `@Import` 애노테이션은 해당 클래스와 함께 작동한다.
 
 profile 문자열은 다음 방법으로 지정할 수 있다.
 - 프로파일 이름을 의미하는 문자열
@@ -70,9 +70,9 @@ If the @Profile annotation is omitted, registration will occur regardless of whi
     - 모든 프로파일에서 컴포넌트가 등록된다.
 
 >
-NOTE: With `@Profile` on `@Bean` methods, a special scenario may apply: In the case of overloaded `@Bean` methods of the same Java method name (analogous to constructor overloading), an `@Profile` condition needs to be consistently declared on all overloaded methods. If the conditions are inconsistent, only the condition on the first declaration among the overloaded methods will matter. `@Profile` can therefore not be used to select an overloaded method with a particular argument signature over another; resolution between all factory methods for the same bean follows Spring's constructor resolution algorithm at creation time. Use distinct Java method names pointing to the same bean name if you'd like to define alternative beans with different profile conditions; see ProfileDatabaseConfig in `@Configuration`'s javadoc.
+NOTE: With `@Profile` on [[spring-annotation-bean]]{@Bean} methods, a special scenario may apply: In the case of overloaded [[spring-annotation-bean]]{@Bean} methods of the same Java method name (analogous to constructor overloading), an `@Profile` condition needs to be consistently declared on all overloaded methods. If the conditions are inconsistent, only the condition on the first declaration among the overloaded methods will matter. `@Profile` can therefore not be used to select an overloaded method with a particular argument signature over another; resolution between all factory methods for the same bean follows Spring's constructor resolution algorithm at creation time. Use distinct Java method names pointing to the same bean name if you'd like to define alternative beans with different profile conditions; see ProfileDatabaseConfig in `@Configuration`'s javadoc.
 
-`@Profile`을 `@Bean` 메소드에 사용할 때, `@Bean`이 달린 메소드가 오버로딩된 경우.
+`@Profile`을 [[spring-annotation-bean]]{@Bean} 메소드에 사용할 때, [[spring-annotation-bean]]{@Bean}이 달린 메소드가 오버로딩된 경우.
 - 모든 오버로딩 메소드에 `@Profile`을 붙이도록 하자.
 - 만약 오버로딩 메소드들에 붙은 `@Profile` 조건이 모순된다면, 오버로딩된 메소드들 중 첫번째 메소드에 선언된 조건이 사용된다.
 

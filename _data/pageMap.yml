@@ -3748,7 +3748,7 @@ spring-annotation-profile:
     summary: ""
     parent: spring
     url: /wiki/spring-annotation-profile
-    updated: '2021-01-10 19:00:15 +0900'
+    updated: '2021-01-15 22:53:52 +0900'
     children: []
 spring-annotation-value:
     type: wiki
