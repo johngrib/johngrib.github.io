@@ -317,6 +317,7 @@ command:
     - {fileName: gpg}
     - {fileName: grep}
     - {fileName: how-to-escape-cli}
+    - {fileName: httpie-cmd}
     - {fileName: java_home}
     - {fileName: jq-cmd}
     - {fileName: less-cmd}
@@ -844,6 +845,7 @@ http:
     - {fileName: http}
     - {fileName: HTTP-THE-DEFINITIVE-GUIDE}
     - {fileName: httpbin.org}
+    - {fileName: httpie-cmd}
     - {fileName: URI}
     - {fileName: vim-rest-console}
     - {fileName: why-http-80-https-443}

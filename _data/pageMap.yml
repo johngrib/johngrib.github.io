@@ -821,7 +821,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, dc-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, file-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, google-java-format, gpg, grep, how-to-escape-cli, java_home, jq-cmd, less-cmd, lldb-cmd, lsof, make-cmd, man-cmd, mv-cmd, my-bash-cheatsheet, openssl, perl-one-liner, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, dc-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, file-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, google-java-format, gpg, grep, how-to-escape-cli, httpie-cmd, java_home, jq-cmd, less-cmd, lldb-cmd, lsof, make-cmd, man-cmd, mv-cmd, my-bash-cheatsheet, openssl, perl-one-liner, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2157,6 +2157,14 @@ httpbin.org:
     parent: useful-site
     url: /wiki/httpbin.org
     updated: '2018-04-22 21:28:11 +0900'
+    children: []
+httpie-cmd:
+    type: wiki
+    title: 'http 명령어 (HTTPie)'
+    summary: '아직 curl이 더 익숙하긴 하지만...'
+    parent: command-line
+    url: /wiki/httpie-cmd
+    updated: '2021-01-17 13:24:20 +0900'
     children: []
 imitation-game:
     type: wiki
