@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2020-08-07 08:36:50 +0900
+updated : 2021-01-18 23:31:52 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,17 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 짜증나는 Reader mode 해제하기
+
+intelliJ 2020.3 버전부터 다음과 같이 JavaDoc을 읽기 좋게 렌더링해서 보여주는 기능이 디폴트로 추가됐다.
+
+![image]( /post-img/intellij/104927651-08813380-59e5-11eb-9b20-f48200d45c7c.png )
+
+나에게는 짜증나는 기능일 뿐이다.
+
+`Preferences` - `Editor` - `Reader Mode` 에서 `Enable Reader mode` 체크박스를 해제하자.
+
 
 ## 파일 마지막에 자동으로 1개의 개행 문자 추가하기
 
