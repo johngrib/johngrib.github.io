@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-01-18 23:38:13 +0900
+updated : 2021-01-19 00:11:31 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,14 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 컴파일할 때 Could not target platform 에러가 발생하면
+
+Gradle을 사용하고 있다면 Gradle JVM이 잘못 설정되어서 그럴 수 있다.
+
+`Preferences` - `Build, Execution, Deployment` - `Build Tools` - `Gradle` 로 들어가서 가장 아래에 있는 `Gradle JVM` 에서 Java 버전을 지정해 준다.
+
+한참 삽질했는데 알고보니 프로젝트는 Java 15 버전인데 Gradle JVM이 Java 13 이어서 발생한 문제였다.
 
 ## 짜증나는 Reader mode 해제하기
 

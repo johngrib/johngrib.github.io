@@ -2212,7 +2212,7 @@ intellij:
     summary: '문제 해결한 경험을 모아본다'
     parent: tools
     url: /wiki/intellij
-    updated: '2021-01-18 23:38:13 +0900'
+    updated: '2021-01-19 00:11:31 +0900'
     children: []
 inversion-of-control:
     type: wiki
