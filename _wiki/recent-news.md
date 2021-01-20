@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-01-19 23:58:18 +0900
+updated : 2021-01-20 19:52:12 +0900
 tag     : 뉴스
 toc     : true
 public  : true
@@ -12,6 +12,28 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-01-20
+
+### [GM의 Cruise, Microsoft와 자율주행 차량 개발 협력 (Reuters)]( https://reut.rs/2XRN7fM )
+
+### [Netflix 4Q20 실적 발표]( https://bit.ly/2LMlL8s )
+- 매출 $6.64B (vs 컨센서스 $6.63B)
+- EPS $1.19 (vs 컨센서스 $1.39)
+- 글로벌 구독자 850만 명 (vs 컨센서스 647만 명)
+- 자사주 매입을 고려하고 있으며 2021년 현금흐름 BEP 전망.
+- 시간 외 주가 +12.7% 상승
+
+### [BOE, 두 번째 10.5세대 LCD 공장 상반기 풀가동 (The Elec)]( https://bit.ly/3itEZLW )
+- 중국 BOE가 후베이성 우한에 있는 두 번째 10.5세대 액정표시장치(LCD) 생산라인을 상반기에 완전 가동할 예정.
+- BOE는 지난 15일 200억위안(약 3조4000억원) 규모 자금을 조달할 계획이라고 밝혔다.
+- LCD 시장에서 경쟁사가 줄어들어 중국 업체의 계절 수요 변동성이 완화할 것이란 전망도 나온다.
+- 미국 노스이스트 증권(Northeast Securities) 관계자는 "LCD 산업이 현재 BOE와 TCL의 과점체제에 진입했다"며 "앞으로 중국 패널 업체의 디스플레이 산업 내 발언권이 커지고 계절성은 약화할 것"이라고 예상했다.
+
+### [전장 반도체, 수요 대비 공급이 25-40%까지 부족한 상황 (Digitimes)]( https://bit.ly/38YEiaz )
+
+### 그 외
+- [고급 ABF 기판, HPC와 서버 칩 공급 부족 (Digitimes)]( https://bit.ly/3nZpdcW )
 
 ## 2021-01-19
 
