@@ -896,6 +896,8 @@ case:
     - {fileName: letter-case}
 transaction:
     - {fileName: locking}
+log-everything:
+    - {fileName: log-2021}
 bug:
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
     - {fileName: pentium-fdiv-bug}

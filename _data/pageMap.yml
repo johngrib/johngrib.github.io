@@ -2694,6 +2694,14 @@ log:
     url: /wiki/log
     updated: '2020-09-19 13:52:44 +0900'
     children: []
+log-2021:
+    type: wiki
+    title: '2021년 아무거나 기록'
+    summary: ""
+    parent: index
+    url: /wiki/log-2021
+    updated: '2021-01-24 20:30:20 +0900'
+    children: []
 lsof:
     type: wiki
     title: 'lsof 명령어'

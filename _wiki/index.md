@@ -26,6 +26,9 @@ regenerate: true
     * [[review-2018]]
     * [[review-2017]]
 
+* log-everything (아무거나 기록)
+    * [[log-2021]]
+
 ## [[algorithm]]
 
 * [[average-complexity]]
