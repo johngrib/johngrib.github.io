@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-01-22 22:03:10 +0900
+updated : 2021-01-25 23:10:44 +0900
 tag     : 뉴스
 toc     : true
 public  : true
@@ -13,6 +13,24 @@ latex   : false
 * TOC
 {:toc}
 
+## 2021-01-25
+
+### [삼성전자, 미국 텍사스 반도체 공장에 $10B (약 11조원) 투자 준비 중 (Bloomberg)]( https://bloom.bg/39WJJ9e )
+### [삼성전자, 미국 반도체 공장에 $17B (약 18.8조원) 투자 준비 중 (WSJ)]( https://on.wsj.com/2NzN6eD )
+### [독일 재무장관, 대만 정부에 자동차 반도체 공급 부족현상 위해 TSMC와 논의 부탁 (Reuters)]( https://reut.rs/2Y6SKqH )
+### [Nvidia와 Qualcomm, TSMC와 차세대 공정 캐파 계약 체결 (Digitimes)]( https://bit.ly/3iGK97u )
+### [미디어텍, 신형 5G AP 공개...TSMC 6나노 기술 적용 (The Elec)]( https://bit.ly/3iHRhAH )
+- 미디어텍의 신형 5G AP 가 TSMC 6nm 공정기술로 생산된다.
+    - 이 칩은 중국시장에서 퀄컴 스냅드래곤 시리즈와 경쟁할 예정.
+    - 스냅드래곤888은 현재 삼성 파운드리 5nm 공정기술로 생산중.
+- 성능 면에선 5nm 공정으로 개발된 퀄컴 칩이 우수할 것.
+    - 중국에서는 자국 기업 스마트폰 판매량이 높아, 시장점유율은 미디어텍 칩이 앞설 것으로 예상.
+- 지난해 3분기 스마트폰 AP 시장점유율
+    - 1위 미디어텍(31%), 2위 퀄컴(29%), 3위 삼성(12%), 4위 하이실리콘(12%)
+
+### 그 외
+- [Honor, Huawei로부터 매각 후 첫 스마트폰 V40 출시 (CNBC)]( https://cnb.cx/2Mh5454 )
+- [갤럭시S21, 전작 뛰어 넘었다…흥행 청신호 (파이낸셜 뉴스)]( https://bit.ly/367X1OY )
 
 ## 2021-01-22
 
