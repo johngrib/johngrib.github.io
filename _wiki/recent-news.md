@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-01-25 23:10:44 +0900
+updated : 2021-01-26 23:17:42 +0900
 tag     : 뉴스
 toc     : true
 public  : true
@@ -12,6 +12,17 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-01-26
+
+### [중국 반도체 산업 업체들, 바이든 정부에 수출 허가 재검토 요청 (Reuters)]( https://reut.rs/3pk6BWq )
+### [대만 정부, TSMC 차량 반도체 공급 문제를 최우선 과제로 문제 해결 노력 중이라 밝혀 (Reuters)]( https://reut.rs/3iN0FD1 )
+### [삼성 미니 LED TV, '프리미엄 쩐의 전략' 나왔다 (전자신문)]( https://bit.ly/39lODxv )
+### [삼성디스플레이, 폴더블 디스플레이 첫 외판…하반기 中 스마트폰 업체 공급 (전자신문)]( https://bit.ly/2YbVuCW )
+### [재택문화 확산으로 노트북 수요 2H21까지 강세 지속 (Digitimes)]( https://bit.ly/3iNfkhx )
+
+### 그 외
+- [삼성 갤럭시S21, 출하량 3000만대 밑돌 수도 (The Elec)]( https://bit.ly/3a4HiS0 )
 
 ## 2021-01-25
 
