@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-01-19 00:11:31 +0900
+updated : 2021-01-28 14:42:34 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,17 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 핀치 줌으로 사이즈를 키운 화면을 본래대로 되돌리고 싶다면 reset font size
+
+맥에서 트랙패드를 사용하고 있다면 핀치 줌(아이패드나 아이폰처럼 두 손가락을 벌려서 줌)으로 화면을 확대할 수 있다.
+
+이렇게 확대된 화면을 본래 상태로 되돌리려면 똑같이 핀치 줌으로 손가락을 모아서 줌 아웃을 하면 되는데,
+이걸 인텔리제이 기능을 사용해 하고 싶다면 `reset font size` 기능을 사용하면 된다.
+
+`command + shift + a` 에서 `reset font size` 액션을 검색한 다음 엔터를 치면 된다.
+
+단축키를 지정하고 싶다면 `Preferences` - `Keymap`에서 검색해 자신이 원하는 단축키로 지정하면 된다.
 
 ## 컴파일할 때 Could not target platform 에러가 발생하면
 
