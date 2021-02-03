@@ -955,9 +955,6 @@ ip:
     - {fileName: python3-simple-file-sharing}
 curl:
     - {fileName: python3-simple-file-sharing}
-뉴스:
-    - {fileName: recent-news}
-    - {fileName: semiconductor-news-2020-4q}
 perl:
     - {fileName: regex-prime}
 web:
@@ -992,6 +989,8 @@ ed:
     - {fileName: semiconductor-news-2020-4q}
 용어:
     - {fileName: semiconductor-dict}
+뉴스:
+    - {fileName: semiconductor-news-2020-4q}
 교육:
     - {fileName: Shunsho-juwa}
 장인정신:

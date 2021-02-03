@@ -3334,14 +3334,6 @@ rans-cmd:
     url: /wiki/rans-cmd
     updated: '2020-05-19 22:02:31 +0900'
     children: []
-recent-news:
-    type: wiki
-    title: '뉴스 정리'
-    summary: ""
-    parent: index
-    url: /wiki/recent-news
-    updated: '2021-02-02 23:53:38 +0900'
-    children: []
 regex:
     type: wiki
     title: '정규 표현식'

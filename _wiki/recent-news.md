@@ -3,15 +3,33 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-02-02 23:53:38 +0900
+updated : 2021-02-03 23:32:36 +0900
 tag     : 뉴스
 toc     : true
-public  : true
+public  : false
 parent  : [[index]]
 latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-02-03
+
+### [Alphabet 실적 발표]( https://bit.ly/39DlnCm )
+- Alphabet 4Q20 매출 $56.90B (vs 컨센서스 $53.13B) EPS $22.30(vs 컨센서스 $15.90).
+- 4분기 Search와 Youtube의 증가가 매출 견인.
+- 시간외 주가 +6% 거래 중
+
+### [Amazon 실적 발표]( https://bit.ly/3rkLFPV )
+- Amazon 4Q20 매출 $125.56B (vs 컨센서스 $119.75B) EPS $14.09(vs 컨센서스 $7.43).
+- 연휴와 코로나 쇼핑으로 인한 매출 증가로 역대 최대 매출 달성.
+- 1Q21 가이던스 매출 $100-106B 제시. 시간외 주가 +0.3% 거래 중.
+
+### [Jeff Bezos, Amazon CEO직에서 물러날 예정. AWS CEO인 Andy Jassy가 차기 CEO로 부임 (WSJ)]( https://on.wsj.com/3oHolds )
+
+### 그 외
+- [글로벌 서버 출하량, 1Q21 1.8%의 제한적 하락 기록. 연간으로는 5% 출하 증가 예상 (Digitimes)]( https://bit.ly/2NRnvhg )
+- [4Q20 글로벌 스마트폰 판매량 6% 하락했지만 애플과 삼성은 성장 (pocketnow)]( https://bit.ly/3jcgMdF )
 
 ## 2021-02-02
 
