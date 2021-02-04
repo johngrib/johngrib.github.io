@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-02-03 23:32:36 +0900
+updated : 2021-02-04 20:33:13 +0900
 tag     : 뉴스
 toc     : true
 public  : false
@@ -12,6 +12,26 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-02-04
+
+### [Qualcomm 실적 발표]( https://bit.ly/3pPFWB9 )
+
+- Qualcomm, 1Q21 매출 $8.24B (vs 컨센서스 $8.25B) EPS $2.17 (vs 컨센서스 $2.09).
+- 5G 스마트폰 수요 증가와 자동차, IoT 용 RF 전방산업 성장이 매출 성장 견인.
+- 2Q21 가이던스 매출 $7.8-8.6B 제시.
+- 시간외 주가 -7.6% 거래 중
+
+### [삼성전자, 내년 'QD디스플레이 TV' 세계 첫 출시 (전자신문)]( https://bit.ly/3jdktQ2 )
+### [SK하이닉스, P램에 4D 낸드 기술 적용 '데이터센터 공략' (The Elec)]( https://bit.ly/3tk7NvD )
+### [1Q21 대만 라지 사이즈 패널 출하량 7.3% 감소 전망 (Digitiems)]( https://bit.ly/3oPSMOl )
+
+### 그 외
+- [Nanya 실적 발표]( https://bit.ly/3pNfdoX )
+    - Nanya, 1월 매출 NT$5.5B (+9.0% MoM, +22.9% YoY) 기록 (Nanya)
+    - 기업 개요
+        - 대만 포모사 계열의 DRAM 업체.
+        - 일본 오키(Oki)와 기술 제휴로 2002년에 설립.
 
 ## 2021-02-03
 
