@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-01-30 21:21:19 +0900
+updated : 2021-02-05 09:04:58 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,21 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## typo 경고가 뜨지 않게 하기
+
+한글 주석을 쓰면 다음과 같은 오타 경고가 나오곤 한다.
+
+![image]( /post-img/intellij/106970569-86d52800-6790-11eb-83dd-2c619e0b8a11.png )
+
+맞춤법 검사기에 돌려보면 아무런 이상이 없다고 하는 문장에서도 나타나니 굳이 참고할 필요가 없을 수 있다.
+
+- `Preferences` - `Editor` - `Inspections` - `Proofreading` - `Typo`를 체크 해제해주면 된다.
+
+주의: 이렇게 하면 영문 오타에서도 경고가 뜨지 않게 된다는 점도 고려하자.
+
+- 최근 사용 이력
+    - 2021-02-05
 
 ## 같은 패키지 안에 있는 멀쩡한 클래스를 못 찾는 경우
 
