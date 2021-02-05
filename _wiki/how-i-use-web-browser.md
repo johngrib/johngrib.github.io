@@ -121,5 +121,5 @@ Tab Wrangler를 사용하면 일정 시간 이상 들어가지 않은 탭을 자
 
 ## 함께 읽기
 
-- [[vimium]]
+- [[web-browser-vim]]
 

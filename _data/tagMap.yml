@@ -165,8 +165,8 @@ vim:
     - {fileName: vim-update-book-progress}
     - {fileName: vim-with-space-char}
     - {fileName: vim-ycm-python3}
-    - {fileName: vimium}
     - {fileName: vimwiki}
+    - {fileName: web-browser-vim}
 구름입력기:
     - {fileName: 2017-05-04-input-source}
 hammerspoon:
@@ -838,7 +838,7 @@ health:
     - {fileName: healthy-life}
 chrome:
     - {fileName: how-i-use-web-browser}
-    - {fileName: vimium}
+    - {fileName: web-browser-vim}
 how-to:
     - {fileName: how-to}
 http:
@@ -1057,10 +1057,10 @@ markdown:
     - {fileName: vim-tagbar-with-markdown}
 fix:
     - {fileName: vim-tmux-t-ut}
-firefox:
-    - {fileName: vimium}
 Von-Neumann:
     - {fileName: von-neumann-extractor}
+firefox:
+    - {fileName: web-browser-vim}
 what:
     - {fileName: what}
 why:

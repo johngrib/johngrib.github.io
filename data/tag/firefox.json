@@ -1,1 +1,1 @@
-{"fileName":"firefox","collection":{"vimium":{"type":"wiki","title":"Vimium - The hacker's browser","summary":"웹 브라우저에서 Vim 키맵을 사용할 수 있다","parent":"index","url":"/wiki/vimium","updated":"2020-03-26 20:41:50 +0900","children":[]}}}
+{"fileName":"firefox","collection":{"web-browser-vim":{"type":"wiki","title":"Vim의 방식으로 웹 브라우저를 조작하기","summary":"Vimium, Tridactyl","parent":"index","url":"/wiki/web-browser-vim","updated":"2021-02-05 23:30:09 +0900","children":[]}}}

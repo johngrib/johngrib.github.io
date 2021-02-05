@@ -644,7 +644,7 @@ regenerate: true
 * [[timeline]]
 * [[two-type-error]]
 * [[uml]]
-* [[vimium]]
+* [[web-browser-vim]]
 * [[mac-address]]
 
 ---

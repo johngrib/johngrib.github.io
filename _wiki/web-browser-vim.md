@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : Vimium - The hacker's browser
-summary : 웹 브라우저에서 Vim 키맵을 사용할 수 있다
+title   : Vim의 방식으로 웹 브라우저를 조작하기
+summary : Vimium, Tridactyl
 date    : 2018-03-04 00:40:04 +0900
-updated : 2020-03-26 20:41:50 +0900
+updated : 2021-02-05 23:30:09 +0900
 tag     : chrome firefox vim
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 개요
+## Vimium
 
 * Google Chrome, Firefox 에서 Vim 키맵을 사용할 수 있는 브라우저 확장 프로그램.
 * Vimium에 익숙해지면 마우스 없이 키보드만으로 웹 브라우저 사용이 가능하다.
@@ -22,14 +22,14 @@ latex   : false
 <iframe width="560" height="315" src="https://www.youtube.com/embed/t67Sn0RGK54" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 {% endraw %}
 
-## 설치 방법
+### 설치 방법
 
 다음 링크를 통해 설치하면 된다.
 
 * [Vimium(Chrome web store)](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
 * [Vimium(Firefox add-on)](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/)
 
-## 사용 방법
+### 사용 방법
 
 * `f` - Vimium의 핵심 기능.
     * Vim 사용자가 아닌 사람도 **`f`만 알면 Vimium을 편리하게 사용할 수 있다**.
@@ -68,17 +68,25 @@ latex   : false
 | `X`  | 닫은 탭 복구                                                             |
 
 
-## 주의
+### 주의
 
 트위터 웹 사이트나 Gmail 처럼 자체 단축키가 있는 웹 페이지에서는 Vimium의 키맵이 우선 적용될 수 있다.
 
 웹 사이트에서 본래 제공하는 단축키를 사용하려면 `i`를 입력하여 Insert 모드를 켜면 된다.
 
+## Tridactyl
+
+- Firefox에서만 사용할 수 있는 add on.
+
 ## Links
 
-* <https://github.com/philc/vimium>
-* [Vimium(Chrome web store)](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
-* [Vimium(Firefox add-on)](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/)
+- Vimium
+    - <https://github.com/philc/vimium >
+    - [Vimium(Chrome web store)](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
+    - [Vimium(Firefox add-on)](https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/)
+- Tridactyl
+    - <https://github.com/tridactyl/tridactyl >
+    - [Firefox add on]( https://addons.mozilla.org/ko/firefox/addon/tridactyl-vim/ )
 
 ## 함께 읽기
 
