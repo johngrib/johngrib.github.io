@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim의 방식으로 웹 브라우저를 조작하기
 summary : Vimium, Tridactyl
 date    : 2018-03-04 00:40:04 +0900
-updated : 2021-02-05 23:30:09 +0900
+updated : 2021-02-06 20:16:36 +0900
 tag     : chrome firefox vim
 toc     : true
 public  : true
@@ -78,6 +78,33 @@ latex   : false
 
 - Firefox에서만 사용할 수 있는 add on.
 
+### 기본적인 사용 방법
+
+| 입력             | 기능                                                                             |
+|------------------|----------------------------------------------------------------------------------|
+| `hjkl`           | 스크롤                                                                           |
+| `b`              | 탭 목록. vim의 `:buffers`와 비슷한 느낌. `tab`으로 선택할 수 있다.               |
+| `t`, `o`, `w`    | 새 탭(`t`), 현재 탭(`o`), 새 창(`w`)에서 링크 열기. 히스토리와 북마크 검색 가능. |
+| `T`, `O`, `W`    | 새 탭(`t`), 현재 탭(`o`), 새 창(`w`)에 현재 보고 있는 웹 페이지 열기.            |
+| `H`, `L`         | 히스토리 이전, 다음 페이지로 이동.                                               |
+| `yy`             | 현재 url을 클립보드로 복사.                                                      |
+| `zi`, `zo`, `zz` | 줌 인, 줌 아웃, 줌 복원.                                                         |
+| `f`, `F`         | 클릭 가능한 링크 마킹. 선택하면 (링크) 클릭. `F`는 새 탭에서 열어준다.           |
+| `;y`             | `f`와 비슷하게 사용 가능. 선택하면 링크를 클립보드로 복사한다.                   |
+| `;k`             | `f`와 비슷하게 사용 가능. 선택한 엘리먼트를 화면에서 숨긴다. 광고 치울 때 좋다.  |
+| `;k`             | `f`와 비슷하게 사용 가능. 선택한 엘리먼트를 화면에서 숨긴다. 광고 치울 때 좋다.  |
+
+### .tridactylrc 파일의 사용
+
+[Exemplar .tridactylrc files][tridactylrc] 문서를 참고하도록 한다.
+
+1. `:nativeinstall`을 파이어폭스에서 입력하고 시키는대로 따라 한다.
+2. `~/.tridactylrc` 파일을 작성하고, `:source` 또는 `:restart` 한다. vim과 비슷하네!
+
+`.tridactylrc` 파일의 [vim 신택스 컬러링 플러그인]( https://github.com/tridactyl/vim-tridactyl )도 있으므로 설치해 주었다.
+
+나의 [.tridactylrc]( https://github.com/johngrib/dotfiles/blob/master/.tridactylrc ).
+
 ## Links
 
 - Vimium
@@ -87,8 +114,11 @@ latex   : false
 - Tridactyl
     - <https://github.com/tridactyl/tridactyl >
     - [Firefox add on]( https://addons.mozilla.org/ko/firefox/addon/tridactyl-vim/ )
+    - [Exemplar .tridactylrc files][tridactylrc]
 
 ## 함께 읽기
 
 - [[how-i-use-web-browser]]{내가 웹 브라우저를 사용하는 방법}
 
+
+[tridactylrc]: https://github.com/tridactyl/tridactyl/wiki/Exemplar-.tridactylrc-files
