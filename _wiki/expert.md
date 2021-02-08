@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 전문가
+title   : 전문가 정신
 summary : 
 date    : 2020-04-07 23:14:56 +0900
-updated : 2020-04-07 23:21:19 +0900
+updated : 2021-02-08 21:01:11 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 마이클 모부신이 말하는 전문가
 
 - 전문가가 되려면 체계적인 훈련이 필요하다
 

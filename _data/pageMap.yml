@@ -1448,11 +1448,11 @@ exchange-rate:
     children: []
 expert:
     type: wiki
-    title: 전문가
+    title: '전문가 정신'
     summary: ""
     parent: better-work
     url: /wiki/expert
-    updated: '2020-04-07 23:21:19 +0900'
+    updated: '2021-02-08 21:01:11 +0900'
     children: []
 f-l-a-00-preface:
     type: wiki
