@@ -453,7 +453,7 @@ better-work:
     parent: index
     url: /wiki/better-work
     updated: '2020-03-15 12:32:42 +0900'
-    children: [better-checklist, better-interview, better-meeting, expert, good-developer, leadership, purpose-of-business, working-together]
+    children: [better-checklist, better-interview, better-meeting, good-developer, leadership, professionalism, purpose-of-business, working-together]
 big-numbers:
     type: wiki
     title: '좀 큰 숫자들'
@@ -1445,14 +1445,6 @@ exchange-rate:
     parent: index
     url: /wiki/exchange-rate
     updated: '2020-12-27 22:56:10 +0900'
-    children: []
-expert:
-    type: wiki
-    title: '전문가 정신'
-    summary: ""
-    parent: better-work
-    url: /wiki/expert
-    updated: '2021-02-08 21:01:11 +0900'
     children: []
 f-l-a-00-preface:
     type: wiki
@@ -3253,6 +3245,14 @@ PROFESSIONAL-SOFTWARE-DEVELOPMENT:
     parent: book
     url: /wiki/PROFESSIONAL-SOFTWARE-DEVELOPMENT
     updated: '2018-02-06 23:05:06 +0900'
+    children: []
+professionalism:
+    type: wiki
+    title: '전문가 정신'
+    summary: ""
+    parent: better-work
+    url: /wiki/professionalism
+    updated: '2021-02-08 21:01:11 +0900'
     children: []
 programming:
     type: wiki

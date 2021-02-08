@@ -595,9 +595,9 @@ regenerate: true
 * [[better-checklist]]
 * [[better-interview]]
 * [[better-meeting]]
-* [[expert]]
 * [[good-developer]]
 * [[leadership]]
+* [[professionalism]]
 * [[purpose-of-business]]
 * [[working-together]]
 
