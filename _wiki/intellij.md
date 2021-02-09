@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-02-05 09:04:58 +0900
+updated : 2021-02-09 13:27:20 +0900
 tag     : java
 toc     : true
 public  : true
@@ -89,6 +89,8 @@ POSIX에서는 **Line**을 "개행 문자로 끝나는 0개 이상의 개행 문
 탭 닫기 버튼이 오른쪽에 있으면 여러 탭을 마우스로 클릭해서 연속으로 닫을 때 굉장히 짜증난다.
 
 탭 닫기 버튼이 왼쪽에 있으면 모든 탭의 탭 닫기 버튼의 위치가 똑같다. 그래서 여러 탭을 클릭클릭해서 닫을 때 편하다.
+
+![image]( /post-img/intellij/107315651-7b5c6680-6ada-11eb-9820-fec90bdeb3fa.png )
 
 ## unused symbol 색깔 변경하기
 
