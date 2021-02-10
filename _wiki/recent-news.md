@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-02-09 22:56:11 +0900
+updated : 2021-02-10 23:47:24 +0900
 tag     : 뉴스
 toc     : true
 public  : false
@@ -12,6 +12,22 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-02-10
+
+### [TSMC 2021 Monthly Revenue]( https://bit.ly/2LB8ijP )
+- TSMC, 1월 매출 NT$126.8B (+8.00% MOM, +22.20% YOY) 기록
+
+### [Qualcomm, 차세대 56 모뎀 x65 공개 (Reuters)]( https://reut.rs/3p50nsH )
+
+### [대만 파운드리 업제들, 2021년 수요 급증에 대응하기 위한 캐파 증설 움직임 (Digitimes)]( https://bit.ly/3jGwH48 )
+
+### [SK하이닉스 "EUV 공정 난제, 새로운 대안으로 해결해 나갈 것"(전자신문)]( https://bit.ly/3q6MOdD )
+
+### [일본, 2000억원 투자... TSMC, 미국 일본 손잡고 삼성 따돌린다(디지털 데일리)]( https://bit.ly/3p4rSmd )
+
+### 그 외
+- [도쿄 올림픽 또 취소되나... TV 업계 '예의주시'(ZD Net)]( https://bit.ly/2N8WkhQ )
 
 ## 2021-02-09
 
