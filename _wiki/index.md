@@ -192,6 +192,7 @@ regenerate: true
 * [[java-enum]]
 * [[java-exception-handling]]
 * [[java-functional-interface]]
+* [[java-inner-class-may-be-static]]
 * [[java-interface]]
 * [[java-jigsaw-quick-start]]
 * [[java-lambda]]

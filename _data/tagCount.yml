@@ -309,7 +309,7 @@
     size: 1
 -
     name: java
-    size: 44
+    size: 45
 -
     name: jekyll
     size: 4
@@ -381,6 +381,9 @@
     size: 46
 -
     name: media
+    size: 1
+-
+    name: memory-leak
     size: 1
 -
     name: mockito

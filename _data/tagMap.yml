@@ -610,6 +610,7 @@ java:
     - {fileName: java-gc-serial-collector}
     - {fileName: java-gc-tuning}
     - {fileName: java-gc-zgc}
+    - {fileName: java-inner-class-may-be-static}
     - {fileName: java-interface}
     - {fileName: java-jigsaw-quick-start}
     - {fileName: java-lambda}
@@ -873,6 +874,8 @@ programming:
     - {fileName: Java}
     - {fileName: programming-language}
     - {fileName: static-factory-method-pattern}
+memory-leak:
+    - {fileName: java-inner-class-may-be-static}
 random:
     - {fileName: java-random}
     - {fileName: von-neumann-extractor}
