@@ -861,6 +861,8 @@ spring:
     - {fileName: spring-annotation-value}
     - {fileName: spring-bean-config-configuration}
     - {fileName: spring-bean-config-xml}
+    - {fileName: spring-documents}
+    - {fileName: spring-documents-overview}
 oop:
     - {fileName: inversion-of-control}
     - {fileName: law-of-demeter}

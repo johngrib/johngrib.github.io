@@ -513,7 +513,7 @@
     size: 2
 -
     name: spring
-    size: 8
+    size: 10
 -
     name: start-up
     size: 1

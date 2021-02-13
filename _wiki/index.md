@@ -531,6 +531,10 @@ regenerate: true
 * [[spring-bean-config-xml]]
 * [[spring-versions]]
 
+### [[spring-documents]]
+
+* [[spring-documents-overview]]
+
 ## [[database]]
 
 * [[db-processlist]]
