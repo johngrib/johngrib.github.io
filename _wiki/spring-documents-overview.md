@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) Spring Framework Overview
 summary : 스프링 철학이 이 문서에 설명되어 있다
 date    : 2021-02-13 16:09:37 +0900
-updated : 2021-02-13 20:42:34 +0900
+updated : 2021-02-13 22:34:57 +0900
 tag     : spring
 toc     : true
 public  : true
@@ -17,7 +17,7 @@ latex   : false
 
 이 문서는 [doc.spring.io]( https://docs.spring.io/ )에 있는 Spring Framework Overview를 읽으며 작성한 것이다.
 
-Spring에 대한 기본적인 소개가 담겨 있으며, 문서가 길어서(?) 읽기가 귀찮다면 [3. Design Philosophy]( /wiki/spring-documents-overview/#3-design-philosophy )만 읽어보는 것으로도 충분하다고 생각한다.
+Spring에 대한 기본적인 소개가 담겨 있으며, 문서가 길어서(?) 읽기가 귀찮다면 [3. Design Philosophy]( #3-design-philosophy )만 읽어보는 것으로도 충분하다고 생각한다.
 
 ## Spring Framework Overview
 
