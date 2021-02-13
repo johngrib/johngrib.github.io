@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) Spring Framework Overview
 summary : 스프링 철학이 이 문서에 설명되어 있다
 date    : 2021-02-13 16:09:37 +0900
-updated : 2021-02-13 20:29:47 +0900
+updated : 2021-02-13 20:42:34 +0900
 tag     : spring
 toc     : true
 public  : true
@@ -13,9 +13,16 @@ latex   : false
 * TOC
 {:toc}
 
+## 읽기 전에
+
+이 문서는 [doc.spring.io]( https://docs.spring.io/ )에 있는 Spring Framework Overview를 읽으며 작성한 것이다.
+
+Spring에 대한 기본적인 소개가 담겨 있으며, 문서가 길어서(?) 읽기가 귀찮다면 [3. Design Philosophy]( /wiki/spring-documents-overview/#3-design-philosophy )만 읽어보는 것으로도 충분하다고 생각한다.
+
+## Spring Framework Overview
+
 - 원문: [Spring Framework Overview]( https://docs.spring.io/spring-framework/docs/current/reference/html/overview.html )
 - 버전: Spring 5.3.3
-
 
 >
 Spring makes it easy to create Java enterprise applications. It provides everything you need to embrace the Java language in an enterprise environment, with support for Groovy and Kotlin as alternative languages on the JVM, and with the flexibility to create many kinds of architectures depending on an application’s needs. As of Spring Framework 5.1, Spring requires JDK 8+ (Java SE 8+) and provides out-of-the-box support for JDK 11 LTS. Java SE 8 update 60 is suggested as the minimum patch release for Java 8, but it is generally recommended to use a recent patch release.
