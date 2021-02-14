@@ -29,6 +29,9 @@
     name: annotation
     size: 1
 -
+    name: architecture
+    size: 1
+-
     name: asciidoc
     size: 1
 -
@@ -606,7 +609,7 @@
     size: 1
 -
     name: Uncle-Bob
-    size: 2
+    size: 3
 -
     name: unit
     size: 1

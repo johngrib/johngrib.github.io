@@ -52,6 +52,10 @@ regenerate: true
 * [[tower-of-hanoi]]
 * [[von-neumann-extractor]]
 
+## [[architecture]]
+
+* [[keeping-options-open]]
+
 ## [[clipping]]{글 모음 및 요약}
 
 * [[Software-Engineering-Code-of-Ethics]]

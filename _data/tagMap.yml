@@ -481,6 +481,7 @@ rule:
 Uncle-Bob:
     - {fileName: Boy-Scout-Rule}
     - {fileName: Clean-Code}
+    - {fileName: keeping-options-open}
 special-chars:
     - {fileName: braille-pattern-chars}
     - {fileName: special-chars}
@@ -893,6 +894,8 @@ blog:
     - {fileName: my-wiki}
 von-neumann:
     - {fileName: John-von-Neumann}
+architecture:
+    - {fileName: keeping-options-open}
 보안:
     - {fileName: labs-strava-com-heatmap}
 letter:
