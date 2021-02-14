@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Java의 내부 클래스는 static으로 선언하자
-summary : 
+summary : 메모리를 더 먹고, 느리고, 바깥 클래스가 GC 대상에서 빠질 수 있다
 date    : 2021-02-11 19:01:50 +0900
-updated : 2021-02-11 19:49:34 +0900
+updated : 2021-02-14 13:18:58 +0900
 tag     : java memory-leak
 toc     : true
 public  : true
