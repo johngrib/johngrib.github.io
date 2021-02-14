@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-02-14 17:32:22 +0900
+updated : 2021-02-14 22:59:30 +0900
 tag     : java
 toc     : true
 public  : true
@@ -15,11 +15,16 @@ latex   : true
 
 ## JDK 15
 
-[Consolidated JDK 15 Release Notes]( https://www.oracle.com/java/technologies/javase/15all-relnotes.html )
+2020-09-15 [Consolidated JDK 15 Release Notes]( https://www.oracle.com/java/technologies/javase/15all-relnotes.html )
 
 ## JDK 14
 
-[Release Notes for JDK 14 and JDK 14 Update Releases]( https://www.oracle.com/java/technologies/javase/14all-relnotes.html )
+2020-03-17 [Release Notes for JDK 14 and JDK 14 Update Releases]( https://www.oracle.com/java/technologies/javase/14all-relnotes.html )
+
+- LTS 버전이 아니지만 변화 많음
+    - 스위치/instanceof 개선
+    - Record 초안 발표
+        - [JEP 359 Records (Preview)]( https://openjdk.java.net/jeps/359 )
 
 ## JDK 13
 
@@ -31,15 +36,23 @@ latex   : true
 * [JDK 13 Documentation](https://docs.oracle.com/en/java/javase/13/ )
 * [JDK 13 (openjdk.java.net)](https://openjdk.java.net/projects/jdk/13/ )
 
+- 멀티 라인 문자열을 위한 텍스트 블록 초안 발표
+    - [JEP 355: Text Blocks (Preview)]( https://openjdk.java.net/jeps/355 )
+
 ## JDK 12
 
-[Release Notes for JDK 12 and JDK 12 Update Releases]( https://www.oracle.com/java/technologies/javase/12all-relnotes.html )
+2019-03-19 [Release Notes for JDK 12 and JDK 12 Update Releases]( https://www.oracle.com/java/technologies/javase/12all-relnotes.html )
 
 [OpenJDK 12](https://openjdk.java.net/projects/jdk/12/ )
 
+- 언어적/기능적 변경 크지 않음.
+- 스위치 표현 개선을 위한 초안 발표.
+    - [[java-switch-expression]]{Switch Expressions (Preview)}
+
+그 외
+
 * [Shenandoah: A Low-Pause-Time Garbage Collector (Experimental)](https://openjdk.java.net/jeps/189 )
 * [Microbenchmark Suite](https://openjdk.java.net/jeps/230 )
-* [[java-switch-expression]]{Switch Expressions (Preview)}
 * [JVM Constants API](https://openjdk.java.net/jeps/334 )
 * [One AArch64 Port, Not Two](https://openjdk.java.net/jeps/340 )
 * [Default CDS Archives](https://openjdk.java.net/jeps/341 )
@@ -52,43 +65,46 @@ latex   : true
 
 ## JDK 11
 
-[2018-09-25 Consolidated JDK 11 Release Notes]( https://www.oracle.com/java/technologies/javase/11all-relnotes.html )
+2018-09-25 [Consolidated JDK 11 Release Notes]( https://www.oracle.com/java/technologies/javase/11all-relnotes.html )
 
 [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/ )
 
 - 발표 주기 변경 후 최초의 LTS 버전
+- 클라이언트 기능 강화
 
 ## JDK 10
 
-[2018-03-20 JDK 10 Release Notes]( https://www.oracle.com/java/technologies/javase/10-relnote-issues.html )
+2018-03-20 [JDK 10 Release Notes]( https://www.oracle.com/java/technologies/javase/10-relnote-issues.html )
 
 [OpenJDK 10](https://openjdk.java.net/projects/jdk/10/ )
 
+- JDK 9 안정화 버전
 - 로컬 변수 추론 기능
     - [JEP 286: Local-Variable Type Inference](https://openjdk.java.net/jeps/286 )
 - 가비지 컬렉터 개선
     - [JDK-8172890 : JEP 307: Parallel Full GC for G1]( https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8172890 )
 
-## 자바 버전 6개월 주기 업그레이드 결정
-
-[Update and FAQ on the Java SE Release Cadence]( https://blogs.oracle.com/java-platform-group/update-and-faq-on-the-java-se-release-cadence )
 
 ## JDK 9
 
-[2017-09 What's New in Oracle JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm#JSNEW-GUID-5B808B2F-E891-43CD-BF6E-78787E547071 )
+2017-09-21 [What's New in Oracle JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm#JSNEW-GUID-5B808B2F-E891-43CD-BF6E-78787E547071 )
 
 [OpenJDK 9](https://openjdk.java.net/projects/jdk9/ )
 
-* Project Jigsaw
-* JShell
+- 라이선스 체계
+- 발표 주기 변경(6개월 주기 업그레이드)
+    - [Update and FAQ on the Java SE Release Cadence]( https://blogs.oracle.com/java-platform-group/update-and-faq-on-the-java-se-release-cadence )
+- 모듈화(Project Jigsaw)
+- JShell
 
 ## JDK 8
 
-[What's New in JDK 8](https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html )
+2014-03-18 [What's New in JDK 8](https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html )
 
-* Java Programming Language
+- 언어적 변경
     * [Lambda Expressions](https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.27 ).
     * [default methods](https://docs.oracle.com/javase/specs/jls/se8/html/jls-13.html#d5e19889 ).
+    * [Functional Interfaces]( https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.8 )
     * ...
 * Collections
     * `java.util.stream` 패키지 추가.
@@ -113,16 +129,22 @@ latex   : true
 
 [Java SE 7 Update Release Notes](https://www.oracle.com/technetwork/java/javase/7u-relnotes-515228.html )
 
+- 언어적/기능적 변경은 크지 않음
+- JVM 기반 스크립트 언어 지원
+
 ## JDK 6
 
 [2004-09-30 릴리즈](https://web.archive.org/web/20080207083457/http://www.sun.com/smi/Press/sunflash/2004-09/sunflash.20040930.1.xml )
 
 [Highlights of Technology Changes in Java SE 6](https://www.oracle.com/technetwork/java/javase/features-141434.html )
 
+- JDK 5 안정화 기능 보강 버전
+
 ## JDK 5
 
 [New Features and Enhancements J2SE 5.0](https://docs.oracle.com/javase/1.5.0/docs/relnotes/features.html )
 
+- 버전 체계 변경
 - 언어 기능
     - Generics 추가
         - [(PDF) Making the future safe for the past: Adding Genericity to the Java(TM) Programming Language](http://homepages.inf.ed.ac.uk/wadler/gj/Documents/gj-oopsla.pdf )
@@ -146,6 +168,7 @@ latex   : true
 [2002-02-06 릴리즈](https://web.archive.org/web/20070815095726/http://www.sun.com/smi/Press/sunflash/2002-02/sunflash.20020206.5.xml )
 
 - 성능 향상
+- 정규식 등 기능 포함
 
 ## JDK 1.3
 
@@ -161,7 +184,8 @@ latex   : true
 [1998-12-08 릴리즈](https://web.archive.org/web/20070816170028/http://www.sun.com/smi/Press/sunflash/1998-12/sunflash.981208.9.xml )
 
 - Java™ 2 Brand Unveiled
-- 새로운 통합 아키텍처 Collection Framework!
+    - 버전 정책 변경: Java 2 SE(Standard Edition) 용어 사용
+- 새로운 통합 아키텍처 Collection Framework
 - 퍼포먼스 향상
     - 로드된 클래스에 대한 메모리 압축
     - 더 빠른 메모리 할당 및 개선된 GC
@@ -175,10 +199,12 @@ latex   : true
 
 [1997-02-19 릴리즈](https://web.archive.org/web/20080210044125/http://www.sun.com/smi/Press/sunflash/1997-02/sunflash.970219.0001.xml )
 
+- 컴파일러 개선
+- 개선된 AWT(GUI)
+- 내부 클래스
 - JavaBeans
 - DB 연결을 위한 JDBC
 - Unicode 2.0 표준을 기반으로 한 글로벌 언어 지원
-- 개선된 AWT(GUI)
 
 ## JDK 1.0
 
@@ -186,9 +212,12 @@ latex   : true
 
 ## 참고문헌
 
-- [All JDK Release][all-enhance]
-- [Java Programming Language Enhancements (JAVA SE 6)][java6-enhance]
-- [Java version history (wikipedia)][wiki]
+- 웹 문서
+    - [All JDK Release][all-enhance]
+    - [Java Programming Language Enhancements (JAVA SE 6)][java6-enhance]
+    - [Java version history (wikipedia)][wiki]
+- 도서
+    - Practical 모던 자바 / 장윤기 저 / 인사이트(insight) / 초판 1쇄 2020년 09월 21일
 
 ## 주석
 
