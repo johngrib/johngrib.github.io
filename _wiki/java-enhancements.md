@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-02-15 23:35:17 +0900
+updated : 2021-02-15 23:36:52 +0900
 tag     : java
 toc     : true
 public  : true
@@ -79,7 +79,7 @@ latex   : true
 [OpenJDK 10](https://openjdk.java.net/projects/jdk/10/ )
 
 - JDK 9 안정화 버전
-- 로컬 변수 추론 기능
+- 로컬 변수 추론 기능 `var`
     - [JEP 286: Local-Variable Type Inference](https://openjdk.java.net/jeps/286 )
 - 가비지 컬렉터 개선
     - [JDK-8172890 : JEP 307: Parallel Full GC for G1]( https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8172890 )
