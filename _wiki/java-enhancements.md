@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-02-15 23:34:33 +0900
+updated : 2021-02-15 23:35:17 +0900
 tag     : java
 toc     : true
 public  : true
@@ -114,8 +114,9 @@ latex   : true
 
 - 언어적 변경
     * [Lambda Expressions](https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.27 ).
-    * [default methods](https://docs.oracle.com/javase/specs/jls/se8/html/jls-13.html#d5e19889 ).
     * [Functional Interfaces]( https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.8 )
+    * 인터페이스 개선
+        * [default methods](https://docs.oracle.com/javase/specs/jls/se8/html/jls-13.html#d5e19889 ).
     * ...
 * Collections
     * `java.util.stream` 패키지 추가.
