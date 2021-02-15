@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-02-10 23:47:24 +0900
+updated : 2021-02-15 23:52:18 +0900
 tag     : 뉴스
 toc     : true
 public  : false
@@ -12,6 +12,19 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-02-15
+
+### [FTC, Nvidia의 Arm 인수 심화 검토 (FT)]( https://on.ft.com/3b1g4vY )
+### [르네사스, 일본 지진으로 Ibaraki 공장 가동 중단 (Bloomberg)]( https://bloom.bg/3phzH7Z )
+### [구글, 마이크로소프트, 퀄컴, Nvidia의 Arm 인수 반대 (Bloomberg)]( https://bloom.bg/3u0obRY )
+- Google, Microsoft Corp, Qualcomm 중 적어도 한 곳 이상이 400 억 달러 규모의 거래에 대해 우려하고 있음.
+- 빅 테크 기업이 강하게 반대하면 승인을 받기 어렵거나 프로세스가 지연되거나 양보를 강요할 수 있다.
+
+### [美 바이든 정부, 반도체 공급부족 '해결사' 나섰다 (머니투데이)]( https://bit.ly/3tYWlpl )
+### [삼성전자, 퀄컴 5G 모뎁 칩 수주 (조선일보)]( https://bit.ly/37bzoFy )
+### [SK, LG와 조기 합의할까?… 바이든 ‘거부권’ 여부도 관심 (국민일보)]( https://bit.ly/3u0CplW )
+### [삼성전자, 네오 QLED TV에 AMD 프리싱크 프리미엄 프로 도입 (The Elec)]( https://bit.ly/3pkLouI )
 
 ## 2021-02-10
 
