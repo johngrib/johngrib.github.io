@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-02-15 23:36:52 +0900
+updated : 2021-02-15 23:39:22 +0900
 tag     : java
 toc     : true
 public  : true
@@ -70,7 +70,11 @@ latex   : true
 [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/ )
 
 - 발표 주기 변경 후 최초의 LTS 버전
-- 클라이언트 기능 강화
+- HTTP 클라이언트 API를 정식으로 추가
+- 컬렉션 인터페이스에 `toArray` 메소드 추가
+- `var` 키워드 지원 확대 - 람다 표현식에서도 `var` 사용 가능
+- `String` 클래스 기능 추가
+    - `isBlank`, `lines`, `strip`, `stripLeading`, `stripTrailing`
 
 ## JDK 10
 
