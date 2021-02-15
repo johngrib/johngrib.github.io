@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-02-15 23:39:22 +0900
+updated : 2021-02-15 23:41:14 +0900
 tag     : java
 toc     : true
 public  : true
@@ -36,8 +36,11 @@ latex   : true
 * [JDK 13 Documentation](https://docs.oracle.com/en/java/javase/13/ )
 * [JDK 13 (openjdk.java.net)](https://openjdk.java.net/projects/jdk/13/ )
 
-- 멀티 라인 문자열을 위한 텍스트 블록 초안 발표
+- 멀티 라인 문자열을 위한 텍스트 블록 초안 발표 `"""`
     - [JEP 355: Text Blocks (Preview)]( https://openjdk.java.net/jeps/355 )
+- 스위치 표현 개선 - 자바 12에 소개된 스위치 표현에 기능 추가
+    - `break` 대신 `yield` 키워드 사용
+    - 하나의 `case`에 여러 개의 구문 사용 가능
 
 ## JDK 12
 
