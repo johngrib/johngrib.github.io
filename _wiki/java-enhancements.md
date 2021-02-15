@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-02-14 22:59:30 +0900
+updated : 2021-02-15 23:23:26 +0900
 tag     : java
 toc     : true
 public  : true
@@ -139,6 +139,7 @@ latex   : true
 [Highlights of Technology Changes in Java SE 6](https://www.oracle.com/technetwork/java/javase/features-141434.html )
 
 - JDK 5 안정화 기능 보강 버전
+- G1GC - 6 버전의 중간부터 추가된 기능. 자바 7 부터 기본 GC가 되었다.
 
 ## JDK 5
 
