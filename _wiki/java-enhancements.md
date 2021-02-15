@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-02-15 23:23:26 +0900
+updated : 2021-02-15 23:27:32 +0900
 tag     : java
 toc     : true
 public  : true
@@ -129,7 +129,15 @@ latex   : true
 
 [Java SE 7 Update Release Notes](https://www.oracle.com/technetwork/java/javase/7u-relnotes-515228.html )
 
-- 언어적/기능적 변경은 크지 않음
+- File NIO 2.0
+    - 파일 처리를 위한 새로운 기능.
+    - `java.io.File` 클래스와 개념이 다름.
+- 포크/조인 프레임워크
+    - 자바 5에서 처음 등장한 컨터런트 API에 포크/조인 기능이 추가되었다.
+- 다이아몬드 연산자 `<>`
+    - 제네릭 선언 방법 개선
+- try-with-resource
+- 하나의 catch 내에 여러 개의 Exception을 처리할 수 있도록 개선
 - JVM 기반 스크립트 언어 지원
 
 ## JDK 6
