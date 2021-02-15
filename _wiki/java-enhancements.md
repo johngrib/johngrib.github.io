@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-02-15 23:29:22 +0900
+updated : 2021-02-15 23:34:33 +0900
 tag     : java
 toc     : true
 public  : true
@@ -95,7 +95,18 @@ latex   : true
 - 발표 주기 변경(6개월 주기 업그레이드)
     - [Update and FAQ on the Java SE Release Cadence]( https://blogs.oracle.com/java-platform-group/update-and-faq-on-the-java-se-release-cadence )
 - 모듈화(Project Jigsaw)
-- JShell
+- JShell(REPL)
+- 통합 JVM 로깅
+    - 자바를 실행할 때 `-Xlog` 파라미터 옵션을 적용하면 된다.
+- HTML5 JavaDoc
+    - `javadoc` 명령에 `-html5` 옵션을 적용하면 HTML5로 JavaDoc이 빌드된다.
+- try-with-resource 개선
+- private 메소드도 interface 내에 생성할 수 있게 됨.
+- 다이아몬드 연산자 `<>` 개선 - 익명 클래스에서도 `<>`를 쓸 수 있게 됐다.
+- 프로세스 API - 프로세스 정보에 접근할 수 있는 새로운 API.
+    - 모든 프로세스, 현재 프로세스, 자식 프로세스, 종료 프로세스 등의 정보를 조회하고 관리할 수 있게 됐다.
+- `CompletableFuture` 개선 - 타임아웃과 지연 기능 추가
+- Reactive stream API
 
 ## JDK 8
 
