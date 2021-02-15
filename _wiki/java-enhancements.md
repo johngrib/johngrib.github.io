@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2019년 12 까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-02-15 23:27:32 +0900
+updated : 2021-02-15 23:29:22 +0900
 tag     : java
 toc     : true
 public  : true
@@ -112,6 +112,8 @@ latex   : true
         * stream API는 Collections API에 통합.
     * [[java8-performance-improvement-for-hashmap]]{HashMap 퍼포먼스 향상}
 * Date-Time Package
+* `Optional`
+* `CompletableFuture` - `Future` 인터페이스에서 제공하는 기능을 개선
 * IO, NIO
     * `java.lang.String(byte[], *)` 생성자 퍼포먼스 향상.
     * `java.lang.String.getBytes()` 메소드 퍼포먼스 향상.

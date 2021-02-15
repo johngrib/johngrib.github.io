@@ -2276,7 +2276,7 @@ java-enhancements:
     summary: '1996년 1.0 부터 2019년 12 까지'
     parent: Java
     url: /wiki/java-enhancements
-    updated: '2021-02-15 23:27:32 +0900'
+    updated: '2021-02-15 23:29:22 +0900'
     children: []
 java-enum:
     type: wiki
