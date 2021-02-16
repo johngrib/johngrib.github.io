@@ -1029,9 +1029,8 @@ tmux:
     - {fileName: vim-tmux-t-ut}
 toml:
     - {fileName: TOML}
-data-format:
+filetype:
     - {fileName: TOML}
-    - {fileName: YAML}
 transistor:
     - {fileName: transistor}
 bell-labs:
@@ -1076,6 +1075,8 @@ why:
 work:
     - {fileName: working-together}
 yaml:
+    - {fileName: YAML}
+data-format:
     - {fileName: YAML}
 공부:
     - {fileName: You-and-Your-Research}

@@ -3,8 +3,8 @@ layout  : wiki
 title   : TOML
 summary : Tom's Obvious, Minimal Language
 date    : 2018-10-23 10:06:00 +0900
-updated : 2018-10-23 11:01:12 +0900
-tag     : toml data-format
+updated : 2021-02-16 23:11:50 +0900
+tag     : toml filetype
 toc     : true
 public  : true
 parent  : [[programming-language]]
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-# Comparison with json
+## Comparison with json
 
 * 다음은 <https://github.com/toml-lang/toml#example >의 내용을 복사해 온 것이다.
 
@@ -91,7 +91,7 @@ hosts = [
 두 형식을 비교해보면 기본적인 사용법은 파악할 수 있다.
 
 
-# 기억해 둘 점들
+## 기억해 둘 점들
 
 * 가급적이면 key를 쓸 때에는 따옴표를 적어주자.
     * 따옴표가 없다면 key에 사용할 수 있는 문자는 `A-Za-z0-9_-`로 한정된다.
@@ -199,9 +199,9 @@ y = 2
 type.name = "pug"
 ```
 
-# Links
+## Links
 
-* [toml(github.com)](https://github.com/toml-lang/toml )
-* <https://learnxinyminutes.com/docs/toml/ >
-* [Online TOML to JSON converter](https://toml-to-json.matiaskorhonen.fi/ )
+- [toml(github.com)](https://github.com/toml-lang/toml )
+- <https://learnxinyminutes.com/docs/toml/ >
+- [Online TOML to JSON converter](https://toml-to-json.matiaskorhonen.fi/ )
 

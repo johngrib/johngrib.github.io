@@ -141,7 +141,7 @@
     size: 1
 -
     name: data-format
-    size: 2
+    size: 1
 -
     name: db
     size: 8
@@ -189,6 +189,9 @@
     size: 1
 -
     name: facebook
+    size: 1
+-
+    name: filetype
     size: 1
 -
     name: finance
