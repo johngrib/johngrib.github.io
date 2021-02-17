@@ -1013,7 +1013,7 @@ database:
     parent: index
     url: /wiki/database
     updated: '2019-09-26 21:49:29 +0900'
-    children: [db-processlist, sharding]
+    children: [db-index, db-processlist, sharding]
 date-cmd:
     type: wiki
     title: 'date 명령어'
@@ -1021,6 +1021,14 @@ date-cmd:
     parent: command-line
     url: /wiki/date-cmd
     updated: '2020-03-10 23:04:37 +0900'
+    children: []
+db-index:
+    type: wiki
+    title: 'Database index'
+    summary: '인덱스 이것저것'
+    parent: database
+    url: /wiki/db-index
+    updated: '2021-02-17 22:33:47 +0900'
     children: []
 db-processlist:
     type: wiki

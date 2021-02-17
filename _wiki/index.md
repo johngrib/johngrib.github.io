@@ -541,6 +541,7 @@ regenerate: true
 
 ## [[database]]
 
+* [[db-index]]
 * [[db-processlist]]
 * [[sharding]]
 

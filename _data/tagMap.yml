@@ -219,6 +219,7 @@ pattern:
 db:
     - {fileName: ACID}
     - {fileName: b-tree}
+    - {fileName: db-index}
     - {fileName: db-processlist}
     - {fileName: dbeaver}
     - {fileName: h2database}
@@ -591,6 +592,8 @@ history:
     - {fileName: TETRIS-EFFECT}
 ctags:
     - {fileName: ctags}
+index:
+    - {fileName: db-index}
 calculator:
     - {fileName: dc-cmd}
 java:
