@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-02-17 12:38:04 +0900
+updated : 2021-02-18 23:28:15 +0900
 tag     : 뉴스
 toc     : true
 public  : false
@@ -12,6 +12,16 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-02-18
+
+### [TSMC, 일본에 3DIC 연구개발 자회사 설립 계획 발표 (Digitimes)]( https://bit.ly/3qrfvC6 )
+### [텍사스 한파로 삼성과 NXP 반도체 공장 가동 중단 (WSJ)]( https://on.wsj.com/3uarrur )
+### [ADI CEO, 자동차 반도체 공급부족 현상은 공급 체인 문제 아냐 (Bloomberg)]( https://bloom.bg/3bjrXNS )
+### [대만 IC 설계 업체, 고객 재고 축적 관찰 (Digitimes)]( https://bit.ly/3u8hAoL )
+### [삼성·LG 등 LCD TV 업체들 적자보고 제품 팔 수도 (The Elec)]( https://bit.ly/3qwmk5w )
+### [삼성전자, 세계 최초 인공지능 결합 메모리 'HBM-PIM' 개발…"에코 시스템 구축 시동" (전자신문)]( https://bit.ly/3beBpSO )
+### [韓 반도체 허브 국가 되나…日 호리바, 한국 생산 품목 확대 (디지털 데일리)]( https://bit.ly/3s3sTNf )
 
 ## 2021-02-17
 
