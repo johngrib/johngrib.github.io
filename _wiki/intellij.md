@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-02-09 13:27:20 +0900
+updated : 2021-02-19 11:27:56 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,23 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 짜증나는 Reader mode 해제하기
+
+intelliJ 2020.3 버전부터 다음과 같이 JavaDoc을 읽기 좋게 렌더링해서 보여주는 기능이 디폴트로 추가됐다.
+
+![image]( /post-img/intellij/104927651-08813380-59e5-11eb-9b20-f48200d45c7c.png )
+
+나에게는 짜증나는 기능일 뿐이다.
+
+`Preferences` - `Editor` - `Reader Mode` 에서 `Enable Reader mode` 체크박스를 해제하자.
+
+`control - option - q` 단축키로 리더 모드를 해제할 수도 있다.
+
+참고: [IntelliJ IDEA Reader mode]( https://www.jetbrains.com/help/idea/reader-mode.html )
+
+- 최근 사용 이력
+    - 2021-02-19
 
 ## typo 경고가 뜨지 않게 하기
 
@@ -57,17 +74,6 @@ Gradle을 사용하고 있다면 Gradle JVM이 잘못 설정되어서 그럴 수
 `Preferences` - `Build, Execution, Deployment` - `Build Tools` - `Gradle` 로 들어가서 가장 아래에 있는 `Gradle JVM` 에서 Java 버전을 지정해 준다.
 
 한참 삽질했는데 알고보니 프로젝트는 Java 15 버전인데 Gradle JVM이 Java 13 이어서 발생한 문제였다.
-
-## 짜증나는 Reader mode 해제하기
-
-intelliJ 2020.3 버전부터 다음과 같이 JavaDoc을 읽기 좋게 렌더링해서 보여주는 기능이 디폴트로 추가됐다.
-
-![image]( /post-img/intellij/104927651-08813380-59e5-11eb-9b20-f48200d45c7c.png )
-
-나에게는 짜증나는 기능일 뿐이다.
-
-`Preferences` - `Editor` - `Reader Mode` 에서 `Enable Reader mode` 체크박스를 해제하자.
-
 
 ## 파일 마지막에 자동으로 1개의 개행 문자 추가하기
 
