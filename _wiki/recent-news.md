@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-02-18 23:28:15 +0900
+updated : 2021-02-19 12:46:19 +0900
 tag     : 뉴스
 toc     : true
 public  : false
@@ -12,6 +12,14 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-02-19
+
+### [바이든 대통령, 반도체, 고용량 배터리, 희토류 관련 미국 공급망 검토 지시 (CNBC)]( https://cnb.cx/3axuW6n )
+### [Apple, 6G 기술 개발 위한 엔지니어들 고용 (Bloomberg)]( https://bloom.bg/3s5KrIv )
+### [Nvidia, 이더리움 채굴용 반도체 CMP 3월 출시 (CNBC)]( https://cnb.cx/2ZAdZlb )
+### [TSMC, 유럽에 선단 웨이퍼 팹 신설 가능성 관측 (Digitimes)]( https://bit.ly/3jYlxb2 )
+### [서버 출하 1Q21 강세 지속 전망 (Digitimes)]( https://bit.ly/3kdFf2N )
 
 ## 2021-02-18
 
