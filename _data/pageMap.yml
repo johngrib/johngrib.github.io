@@ -2780,7 +2780,7 @@ make-cmd:
     summary: 'GNU make utility to maintain groups of programs'
     parent: command-line
     url: /wiki/make-cmd
-    updated: '2021-02-20 16:39:00 +0900'
+    updated: '2021-02-20 16:43:14 +0900'
     children: []
 man-cmd:
     type: wiki

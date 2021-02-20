@@ -3,7 +3,7 @@ layout  : wiki
 title   : make 명령어
 summary : GNU make utility to maintain groups of programs
 date    : 2020-03-29 23:15:11 +0900
-updated : 2021-02-20 16:39:00 +0900
+updated : 2021-02-20 16:43:14 +0900
 tag     : bash command c
 toc     : true
 public  : true
@@ -32,6 +32,8 @@ Make가 처음으로 구현된 것은 1976년이었다.
 
 
 ## Examples
+- 주의: `Makefile`은 인덴트에 탭 문자를 사용한다.
+
 ### 기본
 
 ```make
