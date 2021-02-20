@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 함수형 인터페이스의 사용
 summary : 
 date    : 2020-01-25 16:21:36 +0900
-updated : 2021-02-20 23:51:15 +0900
+updated : 2021-02-21 00:26:36 +0900
 tag     : java
 toc     : true
 public  : true
@@ -126,6 +126,88 @@ System.out.println(solution.get());
 ```java
 Consumer<String> hi = (str) -> System.out.println("hello" + str);
 hi.accept("John");
+```
+
+#### Consumer 소스 코드
+
+다음은 `Consumer`의 소스 코드이다(Java 15).
+
+```java
+/**
+ * Represents an operation that accepts a single input argument and returns no
+ * result. Unlike most other functional interfaces, {@code Consumer} is expected
+ * to operate via side-effects.
+ *
+ * <p>This is a <a href="package-summary.html">functional interface</a>
+ * whose functional method is {@link #accept(Object)}.
+ *
+ * @param <T> the type of the input to the operation
+ *
+ * @since 1.8
+ */
+@FunctionalInterface
+public interface Consumer<T> {
+
+    /**
+     * Performs this operation on the given argument.
+     *
+     * @param t the input argument
+     */
+    void accept(T t);
+
+    /**
+     * Returns a composed {@code Consumer} that performs, in sequence, this
+     * operation followed by the {@code after} operation. If performing either
+     * operation throws an exception, it is relayed to the caller of the
+     * composed operation.  If performing this operation throws an exception,
+     * the {@code after} operation will not be performed.
+     *
+     * @param after the operation to perform after this operation
+     * @return a composed {@code Consumer} that performs in sequence this
+     * operation followed by the {@code after} operation
+     * @throws NullPointerException if {@code after} is null
+     */
+    default Consumer<T> andThen(Consumer<? super T> after) {
+        Objects.requireNonNull(after);
+        return (T t) -> { accept(t); after.accept(t); };
+    }
+}
+```
+
+- `interface Consumer<T>`
+    - 한 개의 입력 인수를 받아들이고 결과를 리턴하지 않는 작업을 표현한다.
+    - 대부분의 다른 함수형 인터페이스와 달리 `Consumer`는 사이드 이펙트를 통한 기능 수행을 염두에 둔다.
+    - 함수형 메소드가 `accept(Object)`인 함수형 인터페이스.
+- `void accept(T t)`
+    - 주어진 인자를 받아 작업을 실행한다.
+- `Consumer<T> andThen(Consumer<? super T> after)`
+    - 이 작업과, `after` 작업을 순서대로 실행하도록 조합된 `Consumer`를 리턴한다.
+    - 작업 수행 도중 예외가 던져지면,
+        - 예외는 caller에게 전달된다.
+        - `after` 작업은 실행되지 않는다.
+
+#### andThen 메소드 사용 예제
+
+```java
+@Test
+void andThenTest() {
+  Consumer<String> toLowerPrint = (str) -> System.out.println(str.toLowerCase());
+  Consumer<String> toUpperPrint = (str) -> System.out.println(str.toUpperCase());
+  Consumer<String> addDotsPrint = (str) -> System.out.println(str + "...");
+
+  toLowerPrint              // 1. 가장 먼저 실행
+    .andThen(addDotsPrint)  // 2. 두번째로 실행
+    .andThen(toUpperPrint)  // 3. 마지막으로 실행
+    .accept("Hello World"); // 입력
+}
+```
+
+실행 결과는 다음과 같다.
+
+```
+hello world
+Hello World...
+HELLO WORLD
 ```
 
 ## 참고문헌
