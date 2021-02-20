@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Abstract Class
 summary : 자바 추상 클래스
 date    : 2019-08-09 23:25:24 +0900
-updated : 2019-11-14 22:24:15 +0900
+updated : 2021-02-20 10:19:41 +0900
 tag     : java
 toc     : true
 public  : true
@@ -101,12 +101,13 @@ It is a compile-time error for the class body of an enum constant to declare an 
 >
 It is a compile-time error if an enum declaration has the modifier abstract or final.
 
-### JavaSE 9, 10, 11, 12
+### JavaSE 9 ~ 13
 
 * 변화 없음
 
 ## 참고문헌 및 Links
 
+* [The Java® Language Specification Java SE 13 Edition](https://docs.oracle.com/javase/specs/jls/se13/html/index.html ) (2019-08-21)
 * [The Java® Language Specification Java SE 12 Edition](https://docs.oracle.com/javase/specs/jls/se12/html/index.html ) (2019-02-08)
 * [The Java® Language Specification Java SE 11 Edition](https://docs.oracle.com/javase/specs/jls/se11/html/index.html ) (2018-08-21)
 * [The Java® Language Specification Java SE 10 Edition](https://docs.oracle.com/javase/specs/jls/se10/html/index.html ) (2018-02-20)
@@ -121,3 +122,4 @@ It is a compile-time error if an enum declaration has the modifier abstract or f
 [^java8-abstract-class]: [Java SE 8 abstract Classes](https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.1.1.1 )
 [^java7-abstract-class]: [Java SE 7 abstract Classes](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.1.1.1 )
 [^java8-enum-types]: [Java SE 8 Enum Types](https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.9 )
+
