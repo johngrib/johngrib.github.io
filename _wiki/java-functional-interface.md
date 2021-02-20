@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 함수형 인터페이스의 사용
 summary : 
 date    : 2020-01-25 16:21:36 +0900
-updated : 2020-01-25 20:30:00 +0900
+updated : 2021-02-20 19:09:14 +0900
 tag     : java
 toc     : true
 public  : true
@@ -17,14 +17,14 @@ latex   : false
 
 * 다음 표는 이펙티브 자바를 참고해 내용을 추가한 것이다.[^effective-44-264]
 
-| 인터페이스          | 함수 시그니처         | 예                    | Args Type | Return Type |
-|---------------------|-----------------------|-----------------------|-----------|-------------|
-| `UnaryOperator<T>`  | `T apply(T t)`        | `String::toLowerCase` | `T`       | `T`         |
-| `BinaryOperator<T>` | `T apply(T t1, T t2)` | `BigInteger::add`     | `T`, `T`  | `T`         |
-| `Predicate<T>`      | `boolean test(T t)`   | `Collection::isEmpty` | `T`       | `boolean`   |
-| `Function<T,R>`     | `R apply(T t)`        | `Arrays::asList`      | `T`       | `R`         |
-| `Supplier<T>`       | `T get()`             | `Instant::now`        |           | `T`         |
-| `Consumer<T>`       | `void accept(T t)`    | `System.out::println` | `T`       | `void`      |
+| 인터페이스          | 함수 시그니처         | 예                    | Args Type | Return Type | 설명                                            |
+|---------------------|-----------------------|-----------------------|-----------|-------------|-------------------------------------------------|
+| `UnaryOperator<T>`  | `T apply(T t)`        | `String::toLowerCase` | `T`       | `T`         |                                                 |
+| `BinaryOperator<T>` | `T apply(T t1, T t2)` | `BigInteger::add`     | `T`, `T`  | `T`         |                                                 |
+| `Predicate<T>`      | `boolean test(T t)`   | `Collection::isEmpty` | `T`       | `boolean`   | 값을 전달받아 true/false를 리턴한다             |
+| `Function<T,R>`     | `R apply(T t)`        | `Arrays::asList`      | `T`       | `R`         | 값을 다른 값으로 변환해 리턴한다                |
+| `Supplier<T>`       | `T get()`             | `Instant::now`        |           | `T`         | 입력값 없이 리턴값만 있다                       |
+| `Consumer<T>`       | `void accept(T t)`    | `System.out::println` | `T`       | `void`      | 값을 받아서 처리만 하고 결과 리턴은 하지 않는다 |
 
 ### UnaryOperator
 
