@@ -3,7 +3,7 @@ layout  : wiki
 title   : make 명령어
 summary : GNU make utility to maintain groups of programs
 date    : 2020-03-29 23:15:11 +0900
-updated : 2020-09-27 22:07:25 +0900
+updated : 2021-02-20 16:39:00 +0900
 tag     : bash command c
 toc     : true
 public  : true
@@ -32,6 +32,23 @@ Make가 처음으로 구현된 것은 1976년이었다.
 
 
 ## Examples
+### 기본
+
+```make
+h1:
+	echo "hello world"
+h2:
+	echo "bye world"
+```
+
+`Makefile`을 위와 같이 작성하고 `make` 명령을 실행해보자.
+
+```sh
+make     # hello world 출력
+make h1  # hello world 출력
+make h2  # bye world 출력
+```
+
 ### 배치 명령 실행
 ```make
 TESM=12000
