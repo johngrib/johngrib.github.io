@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 함수형 인터페이스의 사용
 summary : 
 date    : 2020-01-25 16:21:36 +0900
-updated : 2021-02-20 19:09:14 +0900
+updated : 2021-02-20 23:51:15 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,51 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## @interface FunctionalInterface
+
+다음은 Java 15 API 문서의 [@interface FunctionalInterface][se15-func-interf] 인터페이스 주석을 인용한 것이다.
+
+>
+An informative annotation type used to indicate that an interface type declaration is intended to be a functional interface as defined by the Java Language Specification. Conceptually, a functional interface has exactly one abstract method. Since default methods have an implementation, they are not abstract. If an interface declares an abstract method overriding one of the public methods of java.lang.Object, that also does not count toward the interface's abstract method count since any implementation of the interface will have an implementation from java.lang.Object or elsewhere.
+Note that instances of functional interfaces can be created with lambda expressions, method references, or constructor references.
+>
+If a type is annotated with this annotation type, compilers are required to generate an error message unless:
+>
+- The type is an interface type and not an annotation type, enum, or class.
+- The annotated type satisfies the requirements of a functional interface.
+>
+However, the compiler will treat any interface meeting the definition of a functional interface as a functional interface regardless of whether or not a FunctionalInterface annotation is present on the interface declaration.
+>
+-- [Annotation Type FunctionalInterface (Java SE 15)][se15-func-interf]
+
+- Java 언어 스펙에 정의된 함수형 인터페이스라는 것을 표시하기 위한 정보성 애노테이션 타입이다.
+- 함수형 인터페이스의 컨셉에 의해, 각각의 함수형 인터페이스는 한 개의 추상 메소드를 갖는다.
+    - `default` 메소드는 구현이 있으므로 함수형 인터페이스의 추상 메소드로 따지지 않는다.
+    - `java.lang.Object`의 공통 메소드를 대체하는 추상 메소드를 선언해도, 함수형 인터페이스의 추상 메소드로 따지지 않는다.
+- 함수형 인터페이스의 인스턴스는 람다 표현식, 메소드 레퍼런스, 생성자 레퍼런스를 사용해서 만들 수 있다.
+- `@FunctionalInterface`로 선언된 타입이라면, 다음의 경우를 만족하지 않으면 컴파일러가 에러 메시지를 생성합니다.
+    - `interface`이어야 한다. 그리고 `annotation`, `enum`, `class`이면 안된다.
+    - 함수형 인터페이스의 조건을 만족해야 한다.
+- 그러나 컴파일러는 `@FunctionalInterface`가 인터페이스 선언에 있건 없건 간에, 함수형 인터페이스의 정의를 충족하는 모든 인터페이스를 함수형 인터페이스로 취급한다.
+
+### FunctionalInterface의 의의
+
+그런데 `@FunctionalInterface`가 있건 없건 컴파일러가 상관하지 않는다면 이 애노테이션은 왜 있는 것일까?
+
+>
+앞에서 설명했지만 함수형 인터페이스는 오직 하나의 추상 메서드를 갖는다는 전제 조건을 만족하면 별도의 어노테이션을 붙이지 않아도 함수형 인터페이스로 취급할 수 있다.
+그래서 자바 8 이전 버전에서 만든 인터페이스도 람다 표현식으로 활용할 수 있다.
+하지만 이렇게 어노테이션을 붙이면 좀 더 명확하게 함수형 인터페이스임을 알 수 있고,
+또한 실수로 함수형 인터페이스에 메서드를 추가했을 때 컴파일 에러를 일으켜서 문제를 사전에 예방할 수 있다.
+>
+그러므로 자바에서 제공하는 기본 함수형 인터페이스 외에 새로 함수형 인터페이스를 추가할 때는 명시적으로 `FunctionalInterface` 어노테이션을 적용하는 것이 좋다.
+>
+-- Practical 모던 자바. 4장 람다와 함수형 인터페이스.
+
+- 과거 버전 호환
+- 함수형 인터페이스라는 사실을 명시
+- 함수형 인터페이스에 적합하지 않은 메서드를 추가하는 일 방지
 
 ## 대표적인 함수형 인터페이스 6 가지
 
@@ -85,9 +130,14 @@ hi.accept("John");
 
 ## 참고문헌
 
-* 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+- 웹 문서
+    - [Annotation Type FunctionalInterface (Java SE 15)][se15-func-interf]
+- 도서
+    - Practical 모던 자바 / 장윤기 저 / 인사이트(insight) / 초판 1쇄 2020년 09월 21일
+    - 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 
 ## 주석
 
 [^effective-44-264]: 이펙티브 자바. Item44. 264쪽.
 
+[se15-func-interf]: https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/FunctionalInterface.html

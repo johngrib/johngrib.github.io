@@ -2308,7 +2308,7 @@ java-functional-interface:
     summary: ""
     parent: Java
     url: /wiki/java-functional-interface
-    updated: '2021-02-20 19:09:14 +0900'
+    updated: '2021-02-20 23:51:15 +0900'
     children: []
 java-g1gc:
     type: wiki
