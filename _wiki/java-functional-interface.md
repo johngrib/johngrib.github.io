@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 함수형 인터페이스의 사용
 summary : 
 date    : 2020-01-25 16:21:36 +0900
-updated : 2021-02-21 00:45:37 +0900
+updated : 2021-02-21 11:11:44 +0900
 tag     : java
 toc     : true
 public  : true
@@ -110,7 +110,7 @@ Function<Integer,String> toStr = (i)-> Integer.toString(i);
 System.out.println(toStr.apply(42).length());
 ```
 
-#### Function 소스 코드
+#### interface
 
 ```java
 /**
@@ -126,7 +126,15 @@ System.out.println(toStr.apply(42).length());
  */
 @FunctionalInterface
 public interface Function<T, R> {
+```
 
+- `interface Function<T, R>`
+    - 한 개의 입력 인수를 받아 한 개의 결과를 리턴하는 함수를 표현한다.
+    - 함수형 메소드가 `apply(Object)`인 함수형 인터페이스.
+
+#### apply
+
+```java
     /**
      * Applies this function to the given argument.
      *
@@ -134,7 +142,13 @@ public interface Function<T, R> {
      * @return the function result
      */
     R apply(T t);
+```
 
+- `R apply(T t)`
+    - 함수를 주어진 인자에 적용한다.
+
+#### compose
+```java
     /**
      * Returns a composed function that first applies the {@code before}
      * function to its input, and then applies this function to the result.
@@ -154,7 +168,14 @@ public interface Function<T, R> {
         Objects.requireNonNull(before);
         return (V v) -> apply(before.apply(v));
     }
+```
 
+- `default <V> Function<V, R> compose(Function<? super V, ? extends T> before)`
+    - `before` 함수를 입력에 먼저 적용한 다음, 그 결과에 이 함수를 적용하도록 조합된 함수를 리턴한다.
+    - 두 함수 중 하나에서 예외가 던져지면 예외는 caller에게 전달된다.
+
+#### andThen
+```java
     /**
      * Returns a composed function that first applies this function to
      * its input, and then applies the {@code after} function to the result.
@@ -174,7 +195,13 @@ public interface Function<T, R> {
         Objects.requireNonNull(after);
         return (T t) -> after.apply(apply(t));
     }
+```
 
+- `default <V> Function<T, V> andThen(Function<? super R, ? extends V> after)`
+    - 이 함수를 먼저 입력에 적용하고, 이후 `after` 함수를 결과에 적용하도록 조합된 함수를 리턴한다.
+    - 두 함수 중 하나에서 예외가 던져지면 예외는 caller에게 전달된다.
+
+```java
     /**
      * Returns a function that always returns its input argument.
      *
@@ -187,17 +214,6 @@ public interface Function<T, R> {
 }
 ```
 
-- `interface Function<T, R>`
-    - 한 개의 입력 인수를 받아 한 개의 결과를 리턴하는 함수를 표현한다.
-    - 함수형 메소드가 `apply(Object)`인 함수형 인터페이스.
-- `R apply(T t)`
-    - 함수를 주어진 인자에 적용한다.
-- `default <V> Function<V, R> compose(Function<? super V, ? extends T> before)`
-    - `before` 함수를 입력에 먼저 적용한 다음, 그 결과에 이 함수를 적용하도록 조합된 함수를 리턴한다.
-    - 두 함수 중 하나에서 예외가 던져지면 예외는 caller에게 전달된다.
-- `default <V> Function<T, V> andThen(Function<? super R, ? extends V> after)`
-    - 이 함수를 먼저 입력에 적용하고, 이후 `after` 함수를 결과에 적용하도록 조합된 함수를 리턴한다.
-    - 두 함수 중 하나에서 예외가 던져지면 예외는 caller에게 전달된다.
 - `static <T> Function<T, T> identity()`
     - 입력받은 인자를 무조건 그대로 리턴한다.
 
@@ -219,7 +235,7 @@ Consumer<String> hi = (str) -> System.out.println("hello" + str);
 hi.accept("John");
 ```
 
-#### Consumer 소스 코드
+#### interface
 
 다음은 `Consumer`의 소스 코드이다(Java 15).
 
@@ -238,14 +254,29 @@ hi.accept("John");
  */
 @FunctionalInterface
 public interface Consumer<T> {
+```
 
+- `interface Consumer<T>`
+    - 한 개의 입력 인수를 받아들이고 결과를 리턴하지 않는 작업을 표현한다.
+    - 대부분의 다른 함수형 인터페이스와 달리 `Consumer`는 사이드 이펙트를 통한 기능 수행을 염두에 둔다.
+    - 함수형 메소드가 `accept(Object)`인 함수형 인터페이스.
+
+#### accept
+
+```java
     /**
      * Performs this operation on the given argument.
      *
      * @param t the input argument
      */
     void accept(T t);
+```
 
+- `void accept(T t)`
+    - 주어진 인자를 받아 작업을 실행한다.
+
+#### andThen
+```java
     /**
      * Returns a composed {@code Consumer} that performs, in sequence, this
      * operation followed by the {@code after} operation. If performing either
@@ -265,19 +296,13 @@ public interface Consumer<T> {
 }
 ```
 
-- `interface Consumer<T>`
-    - 한 개의 입력 인수를 받아들이고 결과를 리턴하지 않는 작업을 표현한다.
-    - 대부분의 다른 함수형 인터페이스와 달리 `Consumer`는 사이드 이펙트를 통한 기능 수행을 염두에 둔다.
-    - 함수형 메소드가 `accept(Object)`인 함수형 인터페이스.
-- `void accept(T t)`
-    - 주어진 인자를 받아 작업을 실행한다.
 - `Consumer<T> andThen(Consumer<? super T> after)`
     - 이 작업과, `after` 작업을 순서대로 실행하도록 조합된 `Consumer`를 리턴한다.
     - 작업 수행 도중 예외가 던져지면,
         - 예외는 caller에게 전달된다.
         - `after` 작업은 실행되지 않는다.
 
-#### andThen 메소드 사용 예제
+##### 사용 예제
 
 ```java
 @Test
