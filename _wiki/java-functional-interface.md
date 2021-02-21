@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 함수형 인터페이스의 사용
 summary : 
 date    : 2020-01-25 16:21:36 +0900
-updated : 2021-02-21 12:24:09 +0900
+updated : 2021-02-21 17:16:28 +0900
 tag     : java
 toc     : true
 public  : true
@@ -256,6 +256,17 @@ public interface Predicate<T> {
 - 주어진 predicate와 부정 관계인 predicate를 리턴한다.
     - 메소드 본문을 읽어보면 `target.negate()`를 호출한 결과를 리턴하고 있다.
 
+#### 추가 인터페이스
+
+- 주의: 아래의 인터페이스들은 `Predicate`를 `extends` 하지 않는다.
+
+| interface         | 함수형 메서드 시그니처       |
+|-------------------|------------------------------|
+| `BiPredicate`     | `boolean test(T t, U u)`     |
+| `DoublePredicate` | `boolean test(double value)` |
+| `IntPredicate`    | `boolean test(int value)`    |
+| `LongPredicate`   | `boolean test(long value)`   |
+
 ### Function
 
 * `Function` 인터페이스는 인수와 리턴 타입이 다른 함수를 의미한다.
@@ -372,6 +383,29 @@ public interface Function<T, R> {
 - `static <T> Function<T, T> identity()`
     - 입력받은 인자를 무조건 그대로 리턴한다.
 
+#### 추가 인터페이스
+
+- 주의: 아래의 인터페이스들은 `Function`을 `extends` 하지 않는다.
+
+| interface              | 함수형 메서드 시그니처             |
+|------------------------|------------------------------------|
+| `BiFunction`           | `R apply(T t, U u)`                |
+| `DoubleFunction`       | `R apply(double value)`            |
+| `DoubleToIntFunction`  | `int applyAsInt(double value)`     |
+| `DoubleToLongFunction` | `long applyAsLong(double value)`   |
+| `IntFunction`          | `R apply(int value)`               |
+| `IntToDoubleFunction`  | `double applyAsDouble(int value)`  |
+| `IntToLongFunction`    | `long applyAsLong(int value)`      |
+| `LongFunction`         | `R apply(long value)`              |
+| `LongToDoubleFunction` | `double applyAsDouble(long value)` |
+| `ToDoubleBiFunction`   | `double applyAsDouble(T t, U u)`   |
+| `ToDoubleFunction`     | `double applyAsDouble(T value)`    |
+| `ToIntBiFunction`      | `int applyAsInt(T t, U u)`         |
+| `ToIntFunction`        | `int applyAsInt(T value)`          |
+| `ToLongBiFunction`     | `long applyAsLong(T t, U u)`       |
+| `ToLongFunction`       | `long applyAsLong(T value)`        |
+
+
 ### Supplier
 
 * `Supplier`는 인수 없이 값을 리턴하는 함수를 의미한다.
@@ -417,6 +451,18 @@ public interface Supplier<T> {
 ```
 
 - 결과를 리턴한다.
+
+#### 추가 인터페이스
+
+- 주의: 아래의 인터페이스들은 `Supplier`를 `extends` 하지 않는다.
+
+| interface         | 함수형 메서드 시그니처   |
+|-------------------|--------------------------|
+| `BooleanSupplier` | `boolean getAsBoolean()` |
+| `DoubleSupplier`  | `double getAsDouble()`   |
+| `IntSupplier`     | `int getAsInt()`         |
+| `LongSupplier`    | `long getAsLong()`       |
+
 
 ### Consumer
 
@@ -517,6 +563,31 @@ hello world
 Hello World...
 HELLO WORLD
 ```
+
+#### 추가 인터페이스
+
+- 주의: 아래의 인터페이스들은 `Consumer`를 `extends` 하지 않는다.
+
+| interface           | 함수형 메서드 시그니처           |
+|---------------------|----------------------------------|
+| `BiConsumer`        | `void accept(T t, U u)`          |
+| `DoubleConsumer`    | `void accept(double value)`      |
+| `IntConsumer`       | `void accept(int value)`         |
+| `LongConsumer`      | `void accept(int long)`          |
+| `ObjDoubleConsumer` | `void accept(T t, double value)` |
+| `ObjIntConsumer`    | `void accept(T t, int value)`    |
+| `ObjLongConsumer`   | `void accept(T t, long value)`   |
+
+## 주의 사항
+
+함수형 인터페이스에서도 오토 박싱, 언박싱이 발생한다.
+
+- 리턴 타입이 객체형인 경우에 대해 특히 주의할 것.
+    - `Function.apply`, `Supplier.get`은 객체를 리턴하므로 박싱에 대해 생각하고 사용하자.
+    - 박싱 오버헤드를 관리할 필요가 있다면 추가 인터페이스 사용을 고려하자.
+- 리턴 타입이 primitive 타입인 경우는 괜찮다.
+    - `Predicate.test`는 `boolean`을 리턴하므로 신경쓰지 않아도 된다.
+    - `Consumer.accept`는 `void`를 리턴하므로 신경쓰지 않아도 된다.
 
 ## 참고문헌
 
