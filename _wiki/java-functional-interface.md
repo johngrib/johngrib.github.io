@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 함수형 인터페이스의 사용
 summary : 
 date    : 2020-01-25 16:21:36 +0900
-updated : 2021-02-21 17:49:38 +0900
+updated : 2021-02-21 17:52:16 +0900
 tag     : java
 toc     : true
 public  : true
@@ -71,7 +71,7 @@ However, the compiler will treat any interface meeting the definition of a funct
 | `Supplier<T>`       | `T get()`             | `Instant::now`        |           | `T`         | 입력값 없이 리턴값만 있다                       |
 | `Consumer<T>`       | `void accept(T t)`    | `System.out::println` | `T`       | `void`      | 값을 받아서 처리만 하고 결과 리턴은 하지 않는다 |
 
-### Predicate
+## Predicate
 
 * `Predicate`는 인수 하나를 받아 `boolean` 타입의 값을 리턴하는 함수를 의미한다.
 
@@ -80,7 +80,7 @@ Predicate<Integer> checker  = (number)-> number > 100;
 System.out.println(checker.test(42));
 ```
 
-#### interface
+### interface
 
 ```java
 /**
@@ -100,7 +100,7 @@ public interface Predicate<T> {
     - 하나의 인자를 받아 평가한 `boolean` 결과를 리턴한다.
     - 함수형 메소드가 `test(Object)`인 함수형 인터페이스.
 
-#### test
+### test
 ```java
     /**
      * Evaluates this predicate on the given argument.
@@ -114,7 +114,7 @@ public interface Predicate<T> {
 - `boolean test(T t)`
     - 하나의 인자를 받아 predicate와 맞을 경우 `true`, 그렇지 않다면 `false`를 리턴한다.
 
-#### and
+### and
 
 ```java
     /**
@@ -143,7 +143,7 @@ public interface Predicate<T> {
     - 먼저 평가한 predicate가 `false`이면 나머지 predicate는 평가하지 않는다.
 - 두 함수 중 하나에서 예외가 던져지면 예외는 caller에게 전달된다.
 
-#### negate
+### negate
 
 ```java
     /**
@@ -159,7 +159,7 @@ public interface Predicate<T> {
 ```
 - predicate의 논리적 부정을 표현하는 predicate를 리턴한다.
 
-#### or
+### or
 
 ```java
     /**
@@ -188,7 +188,7 @@ public interface Predicate<T> {
     - 먼저 평가한 predicate가 `true`이면 나머지 predicate는 평가하지 않는다.
 - 두 함수 중 하나에서 예외가 던져지면 예외는 caller에게 전달된다.
 
-#### isEqual
+### isEqual
 ```java
     /**
      * Returns a predicate that tests if two arguments are equal according
@@ -208,7 +208,7 @@ public interface Predicate<T> {
 ```
 - 두 인자를 받아 두 인자가 `equal`한지 테스트하는 predicate를 리턴한다.
 
-#### not
+### not
 ```java
     /**
      * Returns a predicate that is the negation of the supplied predicate.
@@ -235,7 +235,7 @@ public interface Predicate<T> {
 - 주어진 predicate와 부정 관계인 predicate를 리턴한다.
     - 메소드 본문을 읽어보면 `target.negate()`를 호출한 결과를 리턴하고 있다.
 
-#### 추가 인터페이스
+### 추가 인터페이스
 
 - 주의: 아래의 인터페이스들은 `Predicate`를 `extends` 하지 않는다.
 
@@ -246,7 +246,7 @@ public interface Predicate<T> {
 | `IntPredicate`    | `boolean test(int value)`    |
 | `LongPredicate`   | `boolean test(long value)`   |
 
-### Function
+## Function
 
 * `Function` 인터페이스는 인수와 리턴 타입이 다른 함수를 의미한다.
 
@@ -255,7 +255,7 @@ Function<Integer,String> toStr = (i)-> Integer.toString(i);
 System.out.println(toStr.apply(42).length());
 ```
 
-#### interface
+### interface
 
 ```java
 /**
@@ -277,7 +277,7 @@ public interface Function<T, R> {
     - 한 개의 입력 인수를 받아 한 개의 결과를 리턴하는 함수를 표현한다.
     - 함수형 메소드가 `apply(Object)`인 함수형 인터페이스.
 
-#### apply
+### apply
 
 ```java
     /**
@@ -292,7 +292,7 @@ public interface Function<T, R> {
 - `R apply(T t)`
     - 함수를 주어진 인자에 적용한다.
 
-#### compose
+### compose
 ```java
     /**
      * Returns a composed function that first applies the {@code before}
@@ -319,7 +319,7 @@ public interface Function<T, R> {
     - `before` 함수를 입력에 먼저 적용한 다음, 그 결과에 이 함수를 적용하도록 조합된 함수를 리턴한다.
     - 두 함수 중 하나에서 예외가 던져지면 예외는 caller에게 전달된다.
 
-#### andThen
+### andThen
 ```java
     /**
      * Returns a composed function that first applies this function to
@@ -362,7 +362,7 @@ public interface Function<T, R> {
 - `static <T> Function<T, T> identity()`
     - 입력받은 인자를 무조건 그대로 리턴한다.
 
-#### 추가 인터페이스
+### 추가 인터페이스
 
 - 주의: 아래의 인터페이스들은 `Function`을 `extends` 하지 않는다.
 
@@ -384,7 +384,7 @@ public interface Function<T, R> {
 | `ToLongBiFunction`     | `long applyAsLong(T t, U u)`       |
 | `ToLongFunction`       | `long applyAsLong(T value)`        |
 
-#### Operator 인터페이스
+### Operator 인터페이스
 
 | interface              | 인터페이스 시그니처 or 함수형 메서드 시그니처     | 상속                |
 |------------------------|---------------------------------------------------|---------------------|
@@ -397,7 +397,7 @@ public interface Function<T, R> {
 | `LongBinaryOperator`   | `long applyAsLong(long left, long right)`         |                     |
 | `LongUnaryOperator`    | `long applyAsLong(long operand)`                  |                     |
 
-##### UnaryOperator
+#### UnaryOperator
 
 * `UnaryOperator`는 인수 1개를 받아, 인수와 같은 타입의 값을 리턴하는 함수를 의미한다.
     * 입력 인수와 반환값의 타입이 같다.
@@ -407,7 +407,7 @@ UnaryOperator<String> toLower = (s)-> s.toLowerCase();
 System.out.println(toLower.apply("Hello World"));
 ```
 
-###### interface
+##### interface
 
 ```java
 /**
@@ -431,7 +431,7 @@ public interface UnaryOperator<T> extends Function<T, T> {
 - `Function`을 상속해 하나의 타입으로만 돌아가도록 한 것이다.
 - `Function<T,T>`를 상속했으므로 `T apply(T t)`가 이 인터페이스의 함수형 메서드이다.
 
-###### identity
+##### identity
 
 ```java
     /**
@@ -448,7 +448,7 @@ public interface UnaryOperator<T> extends Function<T, T> {
 
 - 입력받은 값을 그대로 리턴하기만 하는 unary operator를 리턴한다.
 
-##### BinaryOperator
+#### BinaryOperator
 
 * `BinaryOperator`는 인수 2 개를 받아, 인수와 같은 타입의 값을 리턴하는 함수를 의미한다.
     * 입력 인수와 반환값의 타입이 같다.
@@ -459,7 +459,7 @@ BinaryOperator<Integer> add = (a, b) -> a + b;
 System.out.println(add.apply(1, 2));
 ```
 
-###### interface
+##### interface
 
 ```java
 /**
@@ -484,7 +484,7 @@ public interface BinaryOperator<T> extends BiFunction<T,T,T> {
 - `BiFunction`을 상속해 하나의 타입으로만 돌아가도록 한 것이다.
 - `BiFunction<T,U,R>`를 상속했으므로 `T apply(T t, T u)`가 이 인터페이스의 함수형 메서드이다.
 
-###### minBy
+##### minBy
 
 ```java
     /**
@@ -504,7 +504,7 @@ public interface BinaryOperator<T> extends BiFunction<T,T,T> {
 ```
 - 주어진 `Comparator`를 사용해 두 값을 비교하고 더 작은 값을 리턴하는 `BinaryOperator`를 리턴한다.
 
-###### maxBy
+##### maxBy
 
 ```java
     /**
@@ -526,7 +526,7 @@ public interface BinaryOperator<T> extends BiFunction<T,T,T> {
 - 주어진 `Comparator`를 사용해 두 값을 비교하고 더 큰 값을 리턴하는 `BinaryOperator`를 리턴한다.
 
 
-### Supplier
+## Supplier
 
 * `Supplier`는 인수 없이 값을 리턴하는 함수를 의미한다.
 
@@ -535,7 +535,7 @@ Supplier<Integer> solution  = () -> 42;
 System.out.println(solution.get());
 ```
 
-#### interface
+### interface
 
 ```java
 /**
@@ -558,7 +558,7 @@ public interface Supplier<T> {
 - 결과 제공자(supplier)를 표현한다.
     - 함수형 메소드가 `get()`인 함수형 인터페이스.
 
-#### get
+### get
 
 ```java
     /**
@@ -572,7 +572,7 @@ public interface Supplier<T> {
 
 - 결과를 리턴한다.
 
-#### 추가 인터페이스
+### 추가 인터페이스
 
 - 주의: 아래의 인터페이스들은 `Supplier`를 `extends` 하지 않는다.
 
@@ -584,7 +584,7 @@ public interface Supplier<T> {
 | `LongSupplier`    | `long getAsLong()`       |
 
 
-### Consumer
+## Consumer
 
 * `Consumer`는 하나의 인수를 받고 리턴값이 없는(`void`) 함수를 의미한다.
 
@@ -593,7 +593,7 @@ Consumer<String> hi = (str) -> System.out.println("hello" + str);
 hi.accept("John");
 ```
 
-#### interface
+### interface
 
 다음은 `Consumer`의 소스 코드이다(Java 15).
 
@@ -619,7 +619,7 @@ public interface Consumer<T> {
     - 대부분의 다른 함수형 인터페이스와 달리 `Consumer`는 사이드 이펙트를 통한 기능 수행을 염두에 둔다.
     - 함수형 메소드가 `accept(Object)`인 함수형 인터페이스.
 
-#### accept
+### accept
 
 ```java
     /**
@@ -633,7 +633,7 @@ public interface Consumer<T> {
 - `void accept(T t)`
     - 주어진 인자를 받아 작업을 실행한다.
 
-#### andThen
+### andThen
 ```java
     /**
      * Returns a composed {@code Consumer} that performs, in sequence, this
@@ -660,7 +660,7 @@ public interface Consumer<T> {
         - 예외는 caller에게 전달된다.
         - `after` 작업은 실행되지 않는다.
 
-##### 사용 예제
+#### 사용 예제
 
 ```java
 @Test
@@ -684,7 +684,7 @@ Hello World...
 HELLO WORLD
 ```
 
-#### 추가 인터페이스
+### 추가 인터페이스
 
 - 주의: 아래의 인터페이스들은 `Consumer`를 `extends` 하지 않는다.
 
