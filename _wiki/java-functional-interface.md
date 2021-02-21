@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 함수형 인터페이스의 사용
 summary : 
 date    : 2020-01-25 16:21:36 +0900
-updated : 2021-02-21 11:11:44 +0900
+updated : 2021-02-21 11:39:38 +0900
 tag     : java
 toc     : true
 public  : true
@@ -100,6 +100,161 @@ System.out.println(add.apply(1, 2));
 Predicate<Integer> checker  = (number)-> number > 100;
 System.out.println(checker.test(42));
 ```
+
+#### interface
+
+```java
+/**
+ * Represents a predicate (boolean-valued function) of one argument.
+ *
+ * <p>This is a <a href="package-summary.html">functional interface</a>
+ * whose functional method is {@link #test(Object)}.
+ *
+ * @param <T> the type of the input to the predicate
+ *
+ * @since 1.8
+ */
+@FunctionalInterface
+public interface Predicate<T> {
+```
+- `interface Predicate<T>`
+    - 하나의 인자를 받아 평가한 `boolean` 결과를 리턴한다.
+    - 함수형 메소드가 `test(Object)`인 함수형 인터페이스.
+
+#### test
+```java
+    /**
+     * Evaluates this predicate on the given argument.
+     *
+     * @param t the input argument
+     * @return {@code true} if the input argument matches the predicate,
+     * otherwise {@code false}
+     */
+    boolean test(T t);
+```
+- `boolean test(T t)`
+    - 하나의 인자를 받아 predicate와 맞을 경우 `true`, 그렇지 않다면 `false`를 리턴한다.
+
+#### and
+
+```java
+    /**
+     * Returns a composed predicate that represents a short-circuiting logical
+     * AND of this predicate and another.  When evaluating the composed
+     * predicate, if this predicate is {@code false}, then the {@code other}
+     * predicate is not evaluated.
+     *
+     * <p>Any exceptions thrown during evaluation of either predicate are relayed
+     * to the caller; if evaluation of this predicate throws an exception, the
+     * {@code other} predicate will not be evaluated.
+     *
+     * @param other a predicate that will be logically-ANDed with this
+     *              predicate
+     * @return a composed predicate that represents the short-circuiting logical
+     * AND of this predicate and the {@code other} predicate
+     * @throws NullPointerException if other is null
+     */
+    default Predicate<T> and(Predicate<? super T> other) {
+        Objects.requireNonNull(other);
+        return (t) -> test(t) && other.test(t);
+    }
+```
+- 이 predicate 함수와 다른 predicate 함수를 AND 관계로 조합한 predicate 함수를 리턴한다.
+- 논리적 AND는 숏 서킷 방식으로 작동한다.
+    - 먼저 평가한 predicate가 `false`이면 나머지 predicate는 평가하지 않는다.
+- 두 함수 중 하나에서 예외가 던져지면 예외는 caller에게 전달된다.
+
+#### negate
+
+```java
+    /**
+     * Returns a predicate that represents the logical negation of this
+     * predicate.
+     *
+     * @return a predicate that represents the logical negation of this
+     * predicate
+     */
+    default Predicate<T> negate() {
+        return (t) -> !test(t);
+    }
+```
+- predicate의 논리적 부정을 표현하는 predicate를 리턴한다.
+
+#### or
+
+```java
+    /**
+     * Returns a composed predicate that represents a short-circuiting logical
+     * OR of this predicate and another.  When evaluating the composed
+     * predicate, if this predicate is {@code true}, then the {@code other}
+     * predicate is not evaluated.
+     *
+     * <p>Any exceptions thrown during evaluation of either predicate are relayed
+     * to the caller; if evaluation of this predicate throws an exception, the
+     * {@code other} predicate will not be evaluated.
+     *
+     * @param other a predicate that will be logically-ORed with this
+     *              predicate
+     * @return a composed predicate that represents the short-circuiting logical
+     * OR of this predicate and the {@code other} predicate
+     * @throws NullPointerException if other is null
+     */
+    default Predicate<T> or(Predicate<? super T> other) {
+        Objects.requireNonNull(other);
+        return (t) -> test(t) || other.test(t);
+    }
+```
+- 이 predicate 함수와 다른 predicate 함수를 OR 관계로 조합한 predicate 함수를 리턴한다.
+- 논리적 OR은 숏 서킷 방식으로 작동한다.
+    - 먼저 평가한 predicate가 `true`이면 나머지 predicate는 평가하지 않는다.
+- 두 함수 중 하나에서 예외가 던져지면 예외는 caller에게 전달된다.
+
+#### isEqual
+```java
+    /**
+     * Returns a predicate that tests if two arguments are equal according
+     * to {@link Objects#equals(Object, Object)}.
+     *
+     * @param <T> the type of arguments to the predicate
+     * @param targetRef the object reference with which to compare for equality,
+     *               which may be {@code null}
+     * @return a predicate that tests if two arguments are equal according
+     * to {@link Objects#equals(Object, Object)}
+     */
+    static <T> Predicate<T> isEqual(Object targetRef) {
+        return (null == targetRef)
+                ? Objects::isNull
+                : object -> targetRef.equals(object);
+    }
+```
+- 두 인자를 받아 두 인자가 `equal`한지 테스트하는 predicate를 리턴한다.
+
+#### not
+```java
+    /**
+     * Returns a predicate that is the negation of the supplied predicate.
+     * This is accomplished by returning result of the calling
+     * {@code target.negate()}.
+     *
+     * @param <T>     the type of arguments to the specified predicate
+     * @param target  predicate to negate
+     *
+     * @return a predicate that negates the results of the supplied
+     *         predicate
+     *
+     * @throws NullPointerException if target is null
+     *
+     * @since 11
+     */
+    @SuppressWarnings("unchecked")
+    static <T> Predicate<T> not(Predicate<? super T> target) {
+        Objects.requireNonNull(target);
+        return (Predicate<T>)target.negate();
+    }
+}
+```
+- 주어진 predicate와 부정 관계인 predicate를 리턴한다.
+    - 메소드 본문을 읽어보면 `target.negate()`를 호출한 결과를 리턴하고 있다.
 
 ### Function
 
