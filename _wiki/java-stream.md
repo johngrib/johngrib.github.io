@@ -3,7 +3,7 @@ layout  : wiki
 title   : java Stream의 사용
 summary : 
 date    : 2019-09-24 09:37:07 +0900
-updated : 2020-05-17 21:23:03 +0900
+updated : 2021-02-21 19:02:19 +0900
 tag     : java
 toc     : true
 public  : true
@@ -96,6 +96,64 @@ Classes to support functional-style operations on streams of elements, such as m
 * 원소들의 시퀀스를 하나의 연산을 사용해 결합한다(더하기, 연결하기, 최솟값 구하기 등).
 * 원소들의 시퀀스를 컬렉션에 모은다(아마도 공통된 속성을 기준으로 묶어 가며).
 * 원소들의 시퀀스에서 특정 조건을 만족하는 원소를 찾는다.[^effective-45]
+
+### distinct를 잘못 사용하지 않도록 주의하자
+
+```java
+/**
+ * Returns a stream consisting of the distinct elements (according to
+ * {@link Object#equals(Object)}) of this stream.
+ *
+ * <p>For ordered streams, the selection of distinct elements is stable
+ * (for duplicated elements, the element appearing first in the encounter
+ * order is preserved.)  For unordered streams, no stability guarantees
+ * are made.
+ *
+ * <p>This is a <a href="package-summary.html#StreamOps">stateful
+ * intermediate operation</a>.
+ *
+ * @apiNote
+ * Preserving stability for {@code distinct()} in parallel pipelines is
+ * relatively expensive (requires that the operation act as a full barrier,
+ * with substantial buffering overhead), and stability is often not needed.
+ * Using an unordered stream source (such as {@link #generate(Supplier)})
+ * or removing the ordering constraint with {@link #unordered()} may result
+ * in significantly more efficient execution for {@code distinct()} in parallel
+ * pipelines, if the semantics of your situation permit.  If consistency
+ * with encounter order is required, and you are experiencing poor performance
+ * or memory utilization with {@code distinct()} in parallel pipelines,
+ * switching to sequential execution with {@link #sequential()} may improve
+ * performance.
+ *
+ * @return the new stream
+ */
+Stream<T> distinct();
+```
+
+위의 주석을 읽으면 다음과 같은 사실을 알 수 있다.
+
+- `distinct`는 `equals` 메소드를 사용해 비교한다.
+    - 꼭 `equals` 메소드를 구현하자.
+- 정렬된 스트림에 대해, `distinct` 작업은 안정적(stable)인 연산이다.
+    - 즉, 정렬 순서가 바뀌지 않는다.
+    - 중복된 원소에 대해 첫 번째 원소를 선택한다.
+- 정렬되지 않은 스트림이라면 안정적 연산을 보장하지 않는다.
+- 병렬 처리를 할 때 `distinct` 메서드를 쓰면 성능이 저하될 수 있다.
+    - 병렬 파이프 라인에서 `distinct` 작업의 안정성을 유지하는 것은 비용이 많이 든다.
+    - 정말 안정성이 필요한지 검토해 볼 것.
+    - 순서 제약이 없는 스트림 소스를 사용하거나 `unordered()`를 쓰면 `distinct`가 더 효율적으로 작동할 수 있다.
+    - 병렬 파이프 라인에서 `distinct`의 성능이 좋지 않다면 `sequential()`을 써서 순차 실행으로 바꿔보면 개선될 수 있다.
+
+>
+**distinct 메서드는 성능을 저하시킬 수 있다**  
+병렬 처리를 목적으로 스트림을 생성하면 `distinct` 메서드는 성능이 떨어진다.
+데이터 중복을 제거하기 위해 여러 스레드에 분산해 놓은 데이터를 동기화해서 비교해야 하기 때문이다.
+따라서 중복 제거를 위해 `distinct` 메서드를 쓰고 싶다면 병렬 스트림보다는 순차 스트림을 이용하는 것이 더 빠르다.
+>
+특히 `distinct`와 같이 전체 데이터를 비교해야 하는 메서드는 내부적으로 버퍼를 많이 사용하기 때문에 메모리 효율이나 CPU 사용률에 영향을 줄 수 있다.
+[^practical-5-5]
+
+
 
 ## Examples
 
@@ -485,8 +543,9 @@ Stream.of("one", "two", "three", "four")
 
 ## 참고문헌
 
-- 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+- [JANG] Practical 모던 자바 / 장윤기 저 / 인사이트(insight) / 초판 1쇄 2020년 09월 21일
 - 모던 자바 인 액션 / 라울-게이브리얼 우르마, 마리오 푸스코, 앨런 마이크로프트 저/우정은 역 / 한빛미디어 / 2019년 08월 01일 / 원제 : Modern Java in Action
+- 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 
 ## 주석
 
@@ -496,6 +555,7 @@ Stream.of("one", "two", "three", "four")
 [^effective-48]: 이펙티브 자바 3/E. 아이템 48.
 [^stream-parallel-guidance]: [When to use parallel streams][stream-parallel-guidance]
 [^raoul-253]: 모던 자바 인 액션. 7장. 253쪽.
+[^practical-5-5]: [JANG] 5.5.주요 스트림 연산 상세.
 
 [stream-parallel-guidance]: http://gee.cs.oswego.edu/dl/html/StreamParallelGuidance.html
 [java-13-collectors]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/stream/Collectors.html
