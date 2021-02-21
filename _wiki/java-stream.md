@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Stream의 사용
 summary : java.util.stream.Stream
 date    : 2019-09-24 09:37:07 +0900
-updated : 2021-02-21 19:03:25 +0900
+updated : 2021-02-21 19:12:15 +0900
 tag     : java
 toc     : true
 public  : true
@@ -97,7 +97,7 @@ Classes to support functional-style operations on streams of elements, such as m
 * 원소들의 시퀀스를 컬렉션에 모은다(아마도 공통된 속성을 기준으로 묶어 가며).
 * 원소들의 시퀀스에서 특정 조건을 만족하는 원소를 찾는다.[^effective-45]
 
-### distinct를 잘못 사용하지 않도록 주의하자
+### distinct를 주의 깊게 사용하자
 
 ```java
 /**
@@ -153,7 +153,18 @@ Stream<T> distinct();
 특히 `distinct`와 같이 전체 데이터를 비교해야 하는 메서드는 내부적으로 버퍼를 많이 사용하기 때문에 메모리 효율이나 CPU 사용률에 영향을 줄 수 있다.
 [^practical-5-5]
 
+#### equals를 오버라이드할 수 없다면 filter를 쓰자
 
+다음은 "Practical 모던 자바 5.5장"에서 예제로 등장한 코드로, `equals`/`hashCode` 메서드를 오버라이드할 수 없는 경우의 대안이다.[^practical-5-5]
+
+이 메서드를 `filter(  )`에 넣어 사용하면 `distinct` 처럼 활용할 수 있다. 물론 `filter`에 제공할 비교 함수(`key`)는 상황에 맞게 작성해 주어야 한다.
+
+```java
+public static <T> Predicate<T> distinctByKey(Function<? super T, ?> key) {
+  Map<Object, Boolean> seen = new ConcurrentHashMap<>();
+  return t -> seen.putIfAbsent(key.apply(t), Boolean.TRUE) == null;
+}
+```
 
 ## Examples
 
