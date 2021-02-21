@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 함수형 인터페이스의 사용
 summary : 
 date    : 2020-01-25 16:21:36 +0900
-updated : 2021-02-21 11:39:38 +0900
+updated : 2021-02-21 12:24:09 +0900
 tag     : java
 toc     : true
 public  : true
@@ -377,9 +377,46 @@ public interface Function<T, R> {
 * `Supplier`는 인수 없이 값을 리턴하는 함수를 의미한다.
 
 ```java
-Supplier<Integer> solution  = ()-> 42;
+Supplier<Integer> solution  = () -> 42;
 System.out.println(solution.get());
 ```
+
+#### interface
+
+```java
+/**
+ * Represents a supplier of results.
+ *
+ * <p>There is no requirement that a new or distinct result be returned each
+ * time the supplier is invoked.
+ *
+ * <p>This is a <a href="package-summary.html">functional interface</a>
+ * whose functional method is {@link #get()}.
+ *
+ * @param <T> the type of results supplied by this supplier
+ *
+ * @since 1.8
+ */
+@FunctionalInterface
+public interface Supplier<T> {
+```
+
+- 결과 제공자(supplier)를 표현한다.
+    - 함수형 메소드가 `get()`인 함수형 인터페이스.
+
+#### get
+
+```java
+    /**
+     * Gets a result.
+     *
+     * @return a result
+     */
+    T get();
+}
+```
+
+- 결과를 리턴한다.
 
 ### Consumer
 
