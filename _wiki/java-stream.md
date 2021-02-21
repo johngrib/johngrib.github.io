@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : java Stream의 사용
-summary : 
+title   : Java Stream의 사용
+summary : java.util.stream.Stream
 date    : 2019-09-24 09:37:07 +0900
-updated : 2021-02-21 19:02:19 +0900
+updated : 2021-02-21 19:03:25 +0900
 tag     : java
 toc     : true
 public  : true

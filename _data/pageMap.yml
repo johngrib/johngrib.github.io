@@ -2416,11 +2416,11 @@ java-remainder-operator:
     children: []
 java-stream:
     type: wiki
-    title: 'java Stream의 사용'
-    summary: ""
+    title: 'Java Stream의 사용'
+    summary: java.util.stream.Stream
     parent: Java
     url: /wiki/java-stream
-    updated: '2021-02-21 19:02:19 +0900'
+    updated: '2021-02-21 19:03:25 +0900'
     children: []
 java-switch-expression:
     type: wiki
