@@ -862,6 +862,14 @@ CONCRETE-MATH:
     url: /wiki/CONCRETE-MATH
     updated: '2020-01-23 23:58:56 +0900'
     children: []
+concurrency-and-parallel:
+    type: wiki
+    title: 'Concurrency 와 Parallel'
+    summary: '병행과 병렬'
+    parent: what
+    url: /wiki/concurrency-and-parallel
+    updated: '2021-02-21 23:33:15 +0900'
+    children: []
 config-ideavim:
     type: wiki
     title: 'IdeaVim 설정하기'
@@ -4501,7 +4509,7 @@ what:
     parent: index
     url: /wiki/what
     updated: '2018-04-04 09:04:07 +0900'
-    children: [availability, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, encryption, enterprise-application, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, latency, osi-model, port, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
+    children: [availability, bandwidth, bootstrapping, braille-pattern-chars, Caesar-cipher, concurrency-and-parallel, encryption, enterprise-application, ethereum-white-paper, floating-point, gray-code, groupId-artifactId, http, indent-style, IP, latency, osi-model, port, RFC, rouge-supported-languages, router, rsa-encryption, special-chars, transistor, units, Unix-philosophy, URI]
 why:
     type: wiki
     title: why

@@ -492,11 +492,13 @@ regenerate: true
 * [[vimwiki]]
 
 ## [[what]]
+
 * [[availability]]
 * [[bandwidth]]
 * [[bootstrapping]]
 * [[braille-pattern-chars]]
 * [[Caesar-cipher]]
+* [[concurrency-and-parallel]]
 * [[encryption]]
 * [[enterprise-application]]
 * [[ethereum-white-paper]]
