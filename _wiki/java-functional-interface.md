@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 함수형 인터페이스의 사용
 summary : 
 date    : 2020-01-25 16:21:36 +0900
-updated : 2021-02-21 17:16:28 +0900
+updated : 2021-02-21 17:49:38 +0900
 tag     : java
 toc     : true
 public  : true
@@ -58,39 +58,18 @@ However, the compiler will treat any interface meeting the definition of a funct
 - 함수형 인터페이스라는 사실을 명시
 - 함수형 인터페이스에 적합하지 않은 메서드를 추가하는 일 방지
 
-## 대표적인 함수형 인터페이스 6 가지
+## 대표적인 함수형 인터페이스
 
 * 다음 표는 이펙티브 자바를 참고해 내용을 추가한 것이다.[^effective-44-264]
 
 | 인터페이스          | 함수 시그니처         | 예                    | Args Type | Return Type | 설명                                            |
 |---------------------|-----------------------|-----------------------|-----------|-------------|-------------------------------------------------|
-| `UnaryOperator<T>`  | `T apply(T t)`        | `String::toLowerCase` | `T`       | `T`         |                                                 |
-| `BinaryOperator<T>` | `T apply(T t1, T t2)` | `BigInteger::add`     | `T`, `T`  | `T`         |                                                 |
+| `UnaryOperator<T>`  | `T apply(T t)`        | `String::toLowerCase` | `T`       | `T`         | 입력과 리턴 타입이 동일. `Function`.            |
+| `BinaryOperator<T>` | `T apply(T t1, T t2)` | `BigInteger::add`     | `T`, `T`  | `T`         | 입력(2개)과 리턴 타입이 동일. `Function`.       |
 | `Predicate<T>`      | `boolean test(T t)`   | `Collection::isEmpty` | `T`       | `boolean`   | 값을 전달받아 true/false를 리턴한다             |
 | `Function<T,R>`     | `R apply(T t)`        | `Arrays::asList`      | `T`       | `R`         | 값을 다른 값으로 변환해 리턴한다                |
 | `Supplier<T>`       | `T get()`             | `Instant::now`        |           | `T`         | 입력값 없이 리턴값만 있다                       |
 | `Consumer<T>`       | `void accept(T t)`    | `System.out::println` | `T`       | `void`      | 값을 받아서 처리만 하고 결과 리턴은 하지 않는다 |
-
-### UnaryOperator
-
-* `UnaryOperator`는 인수 1개를 받아, 인수와 같은 타입의 값을 리턴하는 함수를 의미한다.
-    * 입력 인수와 반환값의 타입이 같다.
-
-```java
-UnaryOperator<String> toLower = (s)-> s.toLowerCase();
-System.out.println(toLower.apply("Hello World"));
-```
-
-### BinaryOperator
-
-* `BinaryOperator`는 인수 2 개를 받아, 인수와 같은 타입의 값을 리턴하는 함수를 의미한다.
-    * 입력 인수와 반환값의 타입이 같다.
-    * 두 인수는 타입이 같아야 한다.
-
-```java
-BinaryOperator<Integer> add = (a, b) -> a + b;
-System.out.println(add.apply(1, 2));
-```
 
 ### Predicate
 
@@ -404,6 +383,147 @@ public interface Function<T, R> {
 | `ToIntFunction`        | `int applyAsInt(T value)`          |
 | `ToLongBiFunction`     | `long applyAsLong(T t, U u)`       |
 | `ToLongFunction`       | `long applyAsLong(T value)`        |
+
+#### Operator 인터페이스
+
+| interface              | 인터페이스 시그니처 or 함수형 메서드 시그니처     | 상속                |
+|------------------------|---------------------------------------------------|---------------------|
+| `UnaryOperator`        | `T apply(T t)`                                    | `Function<T,T>`     |
+| `BinaryOperator`       | `T apply(T t, U u)`                               | `BiFunction<T,T,T>` |
+| `DoubleBinaryOperator` | `double applyAsDouble(double left, double right)` |                     |
+| `DoubleUnaryOperator`  | `double applyAsDouble(double operand)`            |                     |
+| `IntBinaryOperator`    | `int applyAsInt(int left, int right)`             |                     |
+| `IntUnaryOperator`     | `int applyAsInt(int operand)`                     |                     |
+| `LongBinaryOperator`   | `long applyAsLong(long left, long right)`         |                     |
+| `LongUnaryOperator`    | `long applyAsLong(long operand)`                  |                     |
+
+##### UnaryOperator
+
+* `UnaryOperator`는 인수 1개를 받아, 인수와 같은 타입의 값을 리턴하는 함수를 의미한다.
+    * 입력 인수와 반환값의 타입이 같다.
+
+```java
+UnaryOperator<String> toLower = (s)-> s.toLowerCase();
+System.out.println(toLower.apply("Hello World"));
+```
+
+###### interface
+
+```java
+/**
+ * Represents an operation on a single operand that produces a result of the
+ * same type as its operand.  This is a specialization of {@code Function} for
+ * the case where the operand and result are of the same type.
+ *
+ * <p>This is a <a href="package-summary.html">functional interface</a>
+ * whose functional method is {@link #apply(Object)}.
+ *
+ * @param <T> the type of the operand and result of the operator
+ *
+ * @see Function
+ * @since 1.8
+ */
+@FunctionalInterface
+public interface UnaryOperator<T> extends Function<T, T> {
+```
+
+- 입력값과 같은 타입의 출력값을 리턴하는 함수를 표현한다.
+- `Function`을 상속해 하나의 타입으로만 돌아가도록 한 것이다.
+- `Function<T,T>`를 상속했으므로 `T apply(T t)`가 이 인터페이스의 함수형 메서드이다.
+
+###### identity
+
+```java
+    /**
+     * Returns a unary operator that always returns its input argument.
+     *
+     * @param <T> the type of the input and output of the operator
+     * @return a unary operator that always returns its input argument
+     */
+    static <T> UnaryOperator<T> identity() {
+        return t -> t;
+    }
+}
+```
+
+- 입력받은 값을 그대로 리턴하기만 하는 unary operator를 리턴한다.
+
+##### BinaryOperator
+
+* `BinaryOperator`는 인수 2 개를 받아, 인수와 같은 타입의 값을 리턴하는 함수를 의미한다.
+    * 입력 인수와 반환값의 타입이 같다.
+    * 두 인수는 타입이 같아야 한다.
+
+```java
+BinaryOperator<Integer> add = (a, b) -> a + b;
+System.out.println(add.apply(1, 2));
+```
+
+###### interface
+
+```java
+/**
+ * Represents an operation upon two operands of the same type, producing a result
+ * of the same type as the operands.  This is a specialization of
+ * {@link BiFunction} for the case where the operands and the result are all of
+ * the same type.
+ *
+ * <p>This is a <a href="package-summary.html">functional interface</a>
+ * whose functional method is {@link #apply(Object, Object)}.
+ *
+ * @param <T> the type of the operands and result of the operator
+ *
+ * @see BiFunction
+ * @see UnaryOperator
+ * @since 1.8
+ */
+@FunctionalInterface
+public interface BinaryOperator<T> extends BiFunction<T,T,T> {
+```
+- 입력값 2개와 같은 타입의 출력값을 리턴하는 함수를 표현한다. (값 3개의 타입이 모두 같다.)
+- `BiFunction`을 상속해 하나의 타입으로만 돌아가도록 한 것이다.
+- `BiFunction<T,U,R>`를 상속했으므로 `T apply(T t, T u)`가 이 인터페이스의 함수형 메서드이다.
+
+###### minBy
+
+```java
+    /**
+     * Returns a {@link BinaryOperator} which returns the lesser of two elements
+     * according to the specified {@code Comparator}.
+     *
+     * @param <T> the type of the input arguments of the comparator
+     * @param comparator a {@code Comparator} for comparing the two values
+     * @return a {@code BinaryOperator} which returns the lesser of its operands,
+     *         according to the supplied {@code Comparator}
+     * @throws NullPointerException if the argument is null
+     */
+    public static <T> BinaryOperator<T> minBy(Comparator<? super T> comparator) {
+        Objects.requireNonNull(comparator);
+        return (a, b) -> comparator.compare(a, b) <= 0 ? a : b;
+    }
+```
+- 주어진 `Comparator`를 사용해 두 값을 비교하고 더 작은 값을 리턴하는 `BinaryOperator`를 리턴한다.
+
+###### maxBy
+
+```java
+    /**
+     * Returns a {@link BinaryOperator} which returns the greater of two elements
+     * according to the specified {@code Comparator}.
+     *
+     * @param <T> the type of the input arguments of the comparator
+     * @param comparator a {@code Comparator} for comparing the two values
+     * @return a {@code BinaryOperator} which returns the greater of its operands,
+     *         according to the supplied {@code Comparator}
+     * @throws NullPointerException if the argument is null
+     */
+    public static <T> BinaryOperator<T> maxBy(Comparator<? super T> comparator) {
+        Objects.requireNonNull(comparator);
+        return (a, b) -> comparator.compare(a, b) >= 0 ? a : b;
+    }
+}
+```
+- 주어진 `Comparator`를 사용해 두 값을 비교하고 더 큰 값을 리턴하는 `BinaryOperator`를 리턴한다.
 
 
 ### Supplier
