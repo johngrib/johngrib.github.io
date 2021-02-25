@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-02-23 12:35:57 +0900
+updated : 2021-02-25 23:08:19 +0900
 tag     : 뉴스
 toc     : true
 public  : false
@@ -12,6 +12,34 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-02-25
+
+### [Nvidia 실적발표]( https://bit.ly/2ZPwiD7 )
+- Nvidia FY4Q21 매출 $5.00B (vs 컨센서스 $4.82B) EPS $3.10 (vs 컨센서스 $2.81).
+- 코로나가 게이밍과 데이터 센터 수요 증가를 견인.
+- Professional Visualizatio의 모바일 워크 스테이션은 재택근무 환경의 수혜를 받고 데스크탑 워크 스테이션 수요는 회복 중.
+- 전장 반도체 부문은 코로나 영향에서 벗어남.
+- 1Q22 가이던스 매출액 $5.19-5.41B 제시.
+- 시간 외 주가 +3.3% 거래
+
+### [조 바이든, 글로벌 반도체 공급부족 현상 위해 행정 명령 서명 (Reuters)]( https://cnb.cx/3qVERbx )
+### [Qualcomm, 스냅드레곤 생산은 삼성 5nm 공정을 사용하지만, 2022부터 TSMC 4nm로 전환 전망 (Digitimes)]( https://bit.ly/3dIEf5b )
+### [SK하이닉스, 4.7조 규모 EUV 시스템 장기 계약...차세대 공정 준비 (전자신문)]( https://bit.ly/2O0pdwN )
+### [AMD, Radeon RX 6000 GPU 시리즈 3월 공개 (The Verge)]( https://bit.ly/3dIbtSk )
+### [파운드리 업체들 1Q21 매출 +20% YoY 이상 성장 전망 (Trend Force)]( https://bit.ly/2ZKjIVX )
+
+## 2021-02-24
+
+### [IDM 기업들 2022년 부터 외주량 증가 전망 (Digitimes)]( https://bit.ly/2ZIVVWj )
+### [자동차 DRAM 수요 차후 3년간 30% CAGR 이상 증가 전망 (Trend Force)]( https://bit.ly/3koKMna )
+### [주요 PC 업체들, 2분기 노트북용 부품 수급 비상 (ZD Net)]( https://bit.ly/3keRTyt )
+### [삼성SDI, 배터리 생산량 늘린다…헝가리에 9400억원 투자 (디지털 데일리)]( https://bit.ly/3aODkP4 )
+- 삼성SDI가 유럽 생산기지 증설에 나선다. 전기차 시장 확대 대응 차원이다.
+
+### 그 외
+- [애플, 3월부터 아이패드용 미니LED 패널 생산 시작 (GSMArena)]( https://bit.ly/2Nw5bdK )
+- [삼성디스플레이, 오포·샤오미·구글 폴더블 패널 개발 (The Elec)]( https://bit.ly/3qPe5Sf )
 
 ## 2021-02-23
 
