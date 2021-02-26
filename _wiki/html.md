@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTML
 summary : 
 date    : 2021-02-26 22:32:35 +0900
-updated : 2021-02-26 22:57:42 +0900
+updated : 2021-02-26 23:09:11 +0900
 tag     : language
 toc     : true
 public  : true
@@ -58,6 +58,36 @@ W3C와는 별도로 후속 HTML 모델을 논의하여 상당한 성과를 만�
 - W3C ( <https://www.w3.org > ): 웹의 장기적인 성장을 보장하기 위한 공개 표준을 개발하는 국제적인 커뮤니티
 - WHATWG ( <https://whatwg.org > ): 웹을 통해 애플리케이션을 작성하고 전개할 수 있는 새로운 기술 개발을 위해 만든 공개 커뮤니티
 
+## DOCTYPE
+
+- `<!DOCTYPE>`은 HTML 파일의 최상단에 선언한다.
+- 브라우저가 올바르게 웹페이지를 표시할 수 있도록 HTML 버전과 종류를 선언하는 용도.
+
+### HTML5
+
+```
+<!DOCTYPE html>
+```
+
+### HTML 4.01
+
+```
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+```
+
+```
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+```
+
+```
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+```
+
+### XHTML 1.0
+
+```
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml-transitional.dtd">
+```
 
 ## 참고문헌
 
