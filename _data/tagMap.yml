@@ -790,6 +790,7 @@ the-go-blog:
 language:
     - {fileName: Golang}
     - {fileName: Groovy}
+    - {fileName: html}
     - {fileName: Java}
     - {fileName: programming-language}
     - {fileName: Python3}

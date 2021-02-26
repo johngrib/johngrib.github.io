@@ -167,6 +167,7 @@ regenerate: true
 * [[awk]]
 * [[bc]]
 * [[Groovy]]
+* [[html]]
 * [[TOML]]
 * [[YAML]]
 

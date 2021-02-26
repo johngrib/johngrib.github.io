@@ -2150,6 +2150,14 @@ how-to-escape-cli:
     url: /wiki/how-to-escape-cli
     updated: '2020-01-25 22:21:33 +0900'
     children: []
+html:
+    type: wiki
+    title: HTML
+    summary: ""
+    parent: programming-language
+    url: /wiki/html
+    updated: '2021-02-26 22:44:45 +0900'
+    children: []
 http:
     type: wiki
     title: HTTP
@@ -3309,7 +3317,7 @@ programming-language:
     parent: index
     url: /wiki/programming-language
     updated: '2017-12-03 15:01:36 +0900'
-    children: [awk, bc, Golang, Groovy, Java, php, Python3, rust, TOML, YAML]
+    children: [awk, bc, Golang, Groovy, html, Java, php, Python3, rust, TOML, YAML]
 proverb:
     type: wiki
     title: '나의 용어 사전'
