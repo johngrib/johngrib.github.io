@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTML
 summary : 
 date    : 2021-02-26 22:32:35 +0900
-updated : 2021-02-26 22:52:28 +0900
+updated : 2021-02-26 22:57:42 +0900
 tag     : language
 toc     : true
 public  : true
@@ -35,6 +35,23 @@ W3C와는 별도로 후속 HTML 모델을 논의하여 상당한 성과를 만�
 여기에 자극을 받아 W3C도 2007년부터 참여하여 HTML5를 제정하고 2008년에 초안을 공개하였다.
 드디어 2014년 10월에 HTML5 가 HTML 의 차세대 웹 표준으로 W3C에서 채택되어 웹 애플리케이션 개발 플랫폼으로서 활발히 사용되고 있다.
 [^LEE-1]
+
+## W3C 권고안의 추진 단계
+
+- **노트(Note)**
+    - 기술 문서로 제안하기 위해 제시된 문서
+    - 표준화하기 위한 구조나 사항을 기록하여 정리한 문서
+- **초안(WD, Working Draft)
+    - 아직 완전하지 않은 WG(Working Group)의 아이디어를 정리한 문서
+    - FPWD(First Publication Working Draft): 첫번째 초안
+    - LC(Last Call Working Draft): 마지막 초안
+- **후보 권고안(CR, Candidate Recommendation)**
+    - 심사를 거친 작업 최종안
+- **제안 권고안(PR, Proposed Recommendation)**
+    - 최종적인 권고안이 될 수 있는 전 단계
+- **권고안(Recommendation)**
+    - W3C에 참여하는 회원들에게 동의를 얻은 표준안
+    - 최종적으로 표준화 규격을 정의한 문서
 
 ## 참고: 조직
 
