@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTML
 summary : 
 date    : 2021-02-26 22:32:35 +0900
-updated : 2021-02-26 23:09:11 +0900
+updated : 2021-02-27 12:37:23 +0900
 tag     : language
 toc     : true
 public  : true
@@ -88,6 +88,43 @@ W3C와는 별도로 후속 HTML 모델을 논의하여 상당한 성과를 만�
 ```
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml-transitional.dtd">
 ```
+
+## 기억해둘만한 태그
+### 문서 편집시 내가 자주 사용하는 물리적 표현 태그
+
+- `<b>`: (비교글자) <b>텍스트를 진하게 표현한다</b>
+- `<i>`: (비교글자) <i>텍스트를 이탤릭체로 표현한다</i>
+- `<s>`: (비교글자) <s>취소선을 표현한다</s>
+- `<u>`: (비교글자) <u>밑줄을 표현한다</u>
+- `<sup>`: (비교글자) <sup>윗첨자를 표현한다</sup>
+- `<sub>`: (비교글자) <sub>아랫첨자를 표현한다</sub>
+- `<small>`: (비교글자) <small>텍스트를 작게 표현한다</small>
+
+### 논리적 표현 태그
+
+- `<strong>`: (비교글자) <strong>중요한 내용</strong>
+- `<kbd>`: (비교글자) <kbd>키보드로 입력한 내용을 표현한다. 약간 진한 글자로 나온다.</kbd>
+- `<em>`: (비교글자) <em>강조하는 내용</em>
+- `<var>`: (비교글자) <var>변수</var>
+- `<dfn>`: (비교글자) <dfn>용어 정의</dfn>
+- `<cite>`: (비교글자) <cite>책, 논문 등 인용 매체의 제목</cite>
+- `<code>`: (비교글자) <code>print("Hello World!") # 소스코드</code>
+- `<q>`: (비교글자) <q>짧은 인용구. 자동으로 쌍따옴표가 양쪽에 붙는다.</q>
+
+### 리스트 태그
+
+- Unordered List: 순서 없는 목록
+    - `<ul>`, `<li>`로 표현
+- Ordered List: 순서 있는 목록
+    - `<ol>`, `<li>`로 표현
+    - `<ol type="1" start="2" reversed>`
+        - `type`으로 순서 표시를 지정할 수 있음. `1`, `a`, `A`, `i`, `I`를 넣어 사용해보자.
+        - `start`로 시작 값을 지정할 수 있음.
+        - `reversed`로 숫자를 역순으로 지정할 수 있음.
+    - `<li value="3">`
+        - `value`를 사용해 특정 list item만 번호를 따로 지정할 수 있다.
+- Description List: key / value 형식의 목록
+    - `<dl>`, `<dt>`, `<dd>`로 표현.
 
 ## 참고문헌
 
