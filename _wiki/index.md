@@ -389,6 +389,7 @@ regenerate: true
 * [[grep]]
 * [[how-to-escape-cli]]
 * [[httpie-cmd]]
+* [[ioreg-cmd]]
 * [[java_home]]
 * [[jq-cmd]]
 * [[less-cmd]]

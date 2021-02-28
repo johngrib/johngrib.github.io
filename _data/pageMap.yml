@@ -829,7 +829,7 @@ command-line:
     parent: tools
     url: /wiki/command-line
     updated: '2018-02-12 10:15:29 +0900'
-    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, dc-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, file-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, google-java-format, gpg, grep, how-to-escape-cli, httpie-cmd, java_home, jq-cmd, less-cmd, lldb-cmd, lsof, make-cmd, man-cmd, mv-cmd, my-bash-cheatsheet, openssl, perl-one-liner, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
+    children: [ag, basename, bash-history, bat-cmd, brew, cal-cmd, chsh-cmd, csplit, ctags, curl, cut, date-cmd, dc-cmd, df, diff, ditto-cmd, du, fc, fd-cmd, file-cmd, find-cmd, fish-shell, fortune-cmd, glow-cmd, google-java-format, gpg, grep, how-to-escape-cli, httpie-cmd, ioreg-cmd, java_home, jq-cmd, less-cmd, lldb-cmd, lsof, make-cmd, man-cmd, mv-cmd, my-bash-cheatsheet, openssl, perl-one-liner, phpbrew, pwgen-cmd, rig-cmd, ripgrep, say, sdkman, sed, sha256sum, sort, strfile-cmd, sw_vers-cmd, tail, top, touch, tr-cmd, tree-cmd, uptime, yes-cmd, ykman]
 command-pattern:
     type: wiki
     title: '커맨드 패턴 (Command Pattern)'
@@ -2245,6 +2245,14 @@ inversion-of-control:
     parent: programming
     url: /wiki/inversion-of-control
     updated: '2020-05-24 14:36:23 +0900'
+    children: []
+ioreg-cmd:
+    type: wiki
+    title: 'ioreg 명령어'
+    summary: 'show I/O Kit registry (BSD)'
+    parent: command-line
+    url: /wiki/ioreg-cmd
+    updated: '2021-02-28 11:19:29 +0900'
     children: []
 IP:
     type: wiki

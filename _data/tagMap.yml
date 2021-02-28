@@ -319,6 +319,7 @@ command:
     - {fileName: grep}
     - {fileName: how-to-escape-cli}
     - {fileName: httpie-cmd}
+    - {fileName: ioreg-cmd}
     - {fileName: java_home}
     - {fileName: jq-cmd}
     - {fileName: less-cmd}
@@ -488,6 +489,7 @@ special-chars:
     - {fileName: special-chars}
 mac:
     - {fileName: brew}
+    - {fileName: ioreg-cmd}
     - {fileName: iterm}
     - {fileName: java_home}
     - {fileName: mac-keyboard-shortcuts}
@@ -875,6 +877,8 @@ oop:
     - {fileName: SOLID}
     - {fileName: summary-Data-Abstraction-and-Hierarchy}
     - {fileName: uml}
+bsd:
+    - {fileName: ioreg-cmd}
 james-gosling:
     - {fileName: James-Gosling-super-programmer}
 programming:

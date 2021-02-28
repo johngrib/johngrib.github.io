@@ -80,6 +80,9 @@
     name: brian-kernighan
     size: 2
 -
+    name: bsd
+    size: 1
+-
     name: bug
     size: 2
 -
@@ -108,7 +111,7 @@
     size: 2
 -
     name: command
-    size: 62
+    size: 63
 -
     name: command-line
     size: 1
@@ -372,7 +375,7 @@
     size: 1
 -
     name: mac
-    size: 5
+    size: 6
 -
     name: macos
     size: 1
