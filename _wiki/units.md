@@ -3,7 +3,7 @@ layout  : wiki
 title   : 단위, 숫자를 세는 방법
 summary : 
 date    : 2019-02-22 06:53:06 +0900
-updated : 2021-02-28 12:25:52 +0900
+updated : 2021-02-28 12:27:27 +0900
 tag     : unit
 toc     : true
 public  : true
@@ -67,6 +67,7 @@ latex   : true
 | petabyte  | PB        | 1024 TB   |
 | exabyte   | EB        | 1024 PB   |
 | zettabyte | ZB        | 1024 EB   |
+| yottabyte | YB        | 1024 ZB   |
 
 ### 바이트 크기에 대한 2의 거듭제곱 IEC 표준 명칭
 
