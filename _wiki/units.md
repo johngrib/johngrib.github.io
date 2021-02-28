@@ -3,7 +3,7 @@ layout  : wiki
 title   : 단위, 숫자를 세는 방법
 summary : 
 date    : 2019-02-22 06:53:06 +0900
-updated : 2020-05-17 23:21:56 +0900
+updated : 2021-02-28 12:25:52 +0900
 tag     : unit
 toc     : true
 public  : true
@@ -54,7 +54,21 @@ latex   : true
 | zetta  | Z    | $$10^{21}$$  | $$2^{70}$$     | 제타     | 십만조        |
 | yotta  | Y    | $$10^{24}$$  | $$2^{80}$$     | 요타     | 억조          |
 
-## 바이트 크기에 대한 2의 거듭제곱 IEC 표준 명칭
+## 데이터 단위
+
+| 명칭      | 축약 표기 | 사이즈    |
+|-----------|-----------|-----------|
+| bit       |           | 1         |
+| byte      |           | 8 bit     |
+| kilobyte  | KB        | 1024 byte |
+| megabyte  | MB        | 1024 KB   |
+| gigabyte  | GB        | 1024 MB   |
+| terabyte  | TB        | 1024 GB   |
+| petabyte  | PB        | 1024 TB   |
+| exabyte   | EB        | 1024 PB   |
+| zettabyte | ZB        | 1024 EB   |
+
+### 바이트 크기에 대한 2의 거듭제곱 IEC 표준 명칭
 
 - IEC: International Electrotechnical Commission. 국제전기기술위원회.
 
