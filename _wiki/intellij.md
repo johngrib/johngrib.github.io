@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-02-19 11:27:56 +0900
+updated : 2021-03-02 22:07:49 +0900
 tag     : java
 toc     : true
 public  : true
@@ -77,7 +77,9 @@ Gradle을 사용하고 있다면 Gradle JVM이 잘못 설정되어서 그럴 수
 
 ## 파일 마지막에 자동으로 1개의 개행 문자 추가하기
 
-`Preferences` - `Editor` - `General` - `Save Files`에서 `Ensure an empty line at the end of a file on save`를 체크한다.
+`Preferences` - `Editor` - `General` - `On Save`에서 `Ensure every saved file ends with a line break`를 체크한다.
+
+2020.3 이전 버전이라면 `Preferences` - `Editor` - `General` - `Save Files`에서 `Ensure an empty line at the end of a file on save`를 체크한다.
 
 파일 마지막에 1개의 개행 문자를 추가하는 것은 POSIX의 Line 정의를 따르기 위한 것이다.
 
