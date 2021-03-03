@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-03-02 22:20:49 +0900
+updated : 2021-03-03 23:46:41 +0900
 tag     : 뉴스
 toc     : true
 public  : false
@@ -12,6 +12,15 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-03-03
+
+### [텍사스 반도체 공장들, 정전 이후 회복 속도 더뎌 (Reuters)]( https://reut.rs/2MDYFRO )
+### [반도체 공급 부족 현상으로 장비업체들 최대 수혜 (Bloomberg)]( https://bloom.bg/2OhbGBr )
+### [TSMC, 애리조나에 $36.2B 규모 5nm 팹 총 6개 신설 계획 (GizChina)]( https://bit.ly/2NTcM6k )
+### [Intel, 특허권 침해 소송 패소로 $2.18B 손해배상 (Bloomberg)]( https://bloom.bg/2PuYBVF )
+### [중국 SMIC, 글로벌 반도체 공급부족 현상에 수혜 (CNBC)]( https://cnb.cx/2NYUb8Z )
+### [삼성전자, 에프에스티와 'EUV 맞손'…430억원 투자 (디지털 데일리)]( https://bit.ly/3sMiCFl )
 
 ## 2021-03-02
 
