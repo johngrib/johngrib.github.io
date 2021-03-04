@@ -3,7 +3,7 @@ layout  : wiki
 title   : DRY 원칙
 summary : Don't Repeat Yourself
 date    : 2020-03-30 21:39:43 +0900
-updated : 2020-07-08 08:19:43 +0900
+updated : 2021-03-04 21:39:25 +0900
 tag     : 
 toc     : true
 public  : true
@@ -113,4 +113,5 @@ OO 역시 모듈을 정리하고 중복을 제거하는 전략이다.
 [^andy-386]: [Andy] 44. 결국은 모두 글쓰기. 386쪽.
 [^clean-code-60]: [Martin] 3장. 60쪽.
 [^clean-code-373]: [Martin] 17장. 373쪽.
+[^clean-code-372]: [Martin] 17장. 372쪽.
 

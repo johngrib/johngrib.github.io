@@ -1300,7 +1300,7 @@ dry-principle:
     summary: 'Don''t Repeat Yourself'
     parent: proverb
     url: /wiki/dry-principle
-    updated: '2020-07-08 08:19:43 +0900'
+    updated: '2021-03-04 21:39:25 +0900'
     children: []
 du:
     type: wiki
