@@ -620,6 +620,7 @@ java:
     - {fileName: java-interface}
     - {fileName: java-jigsaw-quick-start}
     - {fileName: java-lambda}
+    - {fileName: java-modifier-order-with-jls-suggestion}
     - {fileName: java-optional}
     - {fileName: java-remainder-operator}
     - {fileName: java-stream}
@@ -887,6 +888,8 @@ programming:
     - {fileName: static-factory-method-pattern}
 memory-leak:
     - {fileName: java-inner-class-may-be-static}
+jls:
+    - {fileName: java-modifier-order-with-jls-suggestion}
 random:
     - {fileName: java-random}
     - {fileName: von-neumann-extractor}

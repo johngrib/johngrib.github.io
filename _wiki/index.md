@@ -201,6 +201,7 @@ regenerate: true
 * [[java-interface]]
 * [[java-jigsaw-quick-start]]
 * [[java-lambda]]
+* [[java-modifier-order-with-jls-suggestion]]
 * [[java-optional]]
 * [[java-random]]
 * [[java-remainder-operator]]
