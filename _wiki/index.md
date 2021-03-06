@@ -641,12 +641,14 @@ regenerate: true
 * [[big-numbers]]
 * [[Byzantine-failure]]
 * [[coding-font]]{코딩 폰트}
+* [[color-model]]
 * [[defensive-copy.md]]
 * [[email-validation]]
 * [[gnu-project]]
 * [[integer]]
 * [[junit5-nested]]
 * [[locking]]
+* [[mac-address]]
 * [[mac-tex]]
 * [[oop-quotes]]
 * [[regex]]
@@ -660,7 +662,6 @@ regenerate: true
 * [[two-type-error]]
 * [[uml]]
 * [[web-browser-vim]]
-* [[mac-address]]
 
 ---
 
