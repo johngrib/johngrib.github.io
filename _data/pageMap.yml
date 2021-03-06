@@ -2420,7 +2420,7 @@ java-modifier-order-with-jls-suggestion:
     summary: '8.1.1, 8.3.1, 8.4.3 을 읽자'
     parent: Java
     url: /wiki/java-modifier-order-with-jls-suggestion
-    updated: '2021-03-05 21:18:32 +0900'
+    updated: '2021-03-06 12:10:22 +0900'
     children: []
 java-optional:
     type: wiki

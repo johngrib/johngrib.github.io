@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 키워드 정렬 순서
 summary : 8.1.1, 8.3.1, 8.4.3 을 읽자
 date    : 2021-03-05 20:34:20 +0900
-updated : 2021-03-05 21:18:32 +0900
+updated : 2021-03-06 12:10:22 +0900
 tag     : java jls
 toc     : true
 public  : true
@@ -49,7 +49,7 @@ final synchronized protected void hello() {
 
 ## JLS를 찾아보자
 
-JLS는 "Java Language Specification"을 의미한다. 여기에서 봐야 하는 곳은 8.1.1, 8.3.1 절이다.
+JLS는 "Java Language Specification"을 의미한다. 여기에서 봐야 하는 곳은 8.1.1, 8.3.1, 8.4.3 절이다.
 
 >
 [**8.1.1. Class Modifiers**][jls-8-1-1]
