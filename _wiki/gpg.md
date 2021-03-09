@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2020-07-31 18:13:46 +0900
+updated : 2021-03-09 22:19:21 +0900
 tag     : bash encryption gnu command
 toc     : true
 public  : true
@@ -796,23 +796,6 @@ $ keybase device add
 
 이렇게 하면 `-S` 옵션을 주지 않아도 자동으로 서명을 한다.
 
-### 문제 해결: Mac에서 signingkey 설정 후 commit이 안 될 경우
-
-다음을 시도해 보도록 하자.
-
-* `gnupg`를 업데이트 한다.
-* pinentry-mac 을 설치한다.
-* gpg-agent를 kill.
-
-```sh
-$ brew upgrade gnupg
-$ brew install pinentry-mac
-$ echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
-$ killall gpg-agent
-```
-
-이후 재시도해본다.
-
 ### .gitconfig 모듈화하기
 
 * 나는 `.gitconfig` 파일을 github의 [dotfiles](https://github.com/johngrib/dotfiles/blob/master/.gitconfig ) repo에 올려 관리하고 있다.
@@ -882,6 +865,23 @@ commit에 서명을 하기 시작했다면 github에도 공개키를 등록하�
 
 이렇게 하면 이전 커밋 및 태그는 계속 `verified`로 표시된다.
 
+## 문제 해결
+### Mac에서 signingkey 설정 후 commit이 안 될 경우
+
+다음을 시도해 보도록 하자.
+
+* `gnupg`를 업데이트 한다.
+* pinentry-mac 을 설치한다.
+* gpg-agent를 kill.
+
+```sh
+$ brew upgrade gnupg
+$ brew install pinentry-mac
+$ echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+$ killall gpg-agent
+```
+
+이후 재시도해본다.
 
 ## Links
 
