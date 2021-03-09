@@ -1940,7 +1940,7 @@ gpg:
     summary: 'GnuPG, the GNU Privacy Guard'
     parent: command-line
     url: /wiki/gpg
-    updated: '2020-07-31 18:13:46 +0900'
+    updated: '2021-03-09 22:19:21 +0900'
     children: []
 Gradle:
     type: wiki

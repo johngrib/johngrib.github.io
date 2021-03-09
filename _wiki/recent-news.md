@@ -3,7 +3,7 @@ layout  : wiki
 title   : 뉴스 정리
 summary : 
 date    : 2021-01-02 06:27:44 +0900
-updated : 2021-03-04 23:03:43 +0900
+updated : 2021-03-08 22:42:51 +0900
 tag     : 뉴스
 toc     : true
 public  : false
@@ -12,6 +12,15 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 2021-03-08
+
+### [중국 정부, 미국 따라잡기 위해 반도체, AI, 5G 산업 집중 투자, 5년간 R&D 지출 연간 7% 늘릴 계획 (Bloomberg)]( https://bloom.bg/2MV6Ol9 )
+### [삼성, 5G 스마트폰 '합작개발생산(JDM)' 방식 첫 적용 (전자신문)]( https://bit.ly/3bmWrjd )
+### [SK하이닉스 파운드리 '쑥쑥'…작년 매출 7030억원, 전년비 6.3%↑ (디지털 데일리)]( https://bit.ly/3sYR5Re )
+### [6인치 팹 캐파 3Q21까지 주문량 꽉 찬 상태 (Digitimes)]( https://bit.ly/3qreA3E )
+### [2021년 글로벌 PC 시장 출하량 +8.4% YoY 전망 (GizChina)]( https://bit.ly/3kQZzaq )
+### ['네덜란드서 반도체 장비 수입?'…中 기업에 깜빡 속았다 (한국경제)]( https://bit.ly/3qoX5Bf )
 
 ## 2021-03-04
 
