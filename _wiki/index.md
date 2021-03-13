@@ -113,6 +113,7 @@ regenerate: true
 * [[rule-of-succession]]
 * [[secretary-problem]]
 * [[sigma-notation]]{시그마 표기법}
+* [[two-n-base-converting]]
 
 ## [[media]]
 

@@ -2845,7 +2845,7 @@ math:
     parent: index
     url: /wiki/math
     updated: '2018-04-08 20:38:32 +0900'
-    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, fibonacci, frac1e, gcd, graph, halting-problem, log, precision-of-number, primitive-roots, relations, rule-of-succession, secretary-problem, sigma-notation]
+    children: [Bayes-theorem, Binomial-Theorem, Cromwell-s-rule, Fermat-s-little-theorem, fibonacci, frac1e, gcd, graph, halting-problem, log, precision-of-number, primitive-roots, relations, rule-of-succession, secretary-problem, sigma-notation, two-n-base-converting]
 mathjax-latex:
     type: wiki
     title: 'MathJax로 LaTeX 사용하기'
@@ -4269,6 +4269,14 @@ two-eggs-100-floor:
     parent: problem
     url: /wiki/two-eggs-100-floor
     updated: '2019-11-02 14:00:11 +0900'
+    children: []
+two-n-base-converting:
+    type: wiki
+    title: '2^n 진수 숫자의 상호 변환'
+    summary: ""
+    parent: math
+    url: /wiki/two-n-base-converting
+    updated: '2021-03-13 20:43:09 +0900'
     children: []
 two-pizza-team:
     type: wiki
