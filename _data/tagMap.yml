@@ -18,6 +18,7 @@ math:
     - {fileName: c-m-03-Integer-Functions-01}
     - {fileName: c-m-03-Integer-Functions-02}
     - {fileName: c-m-05-Binomial-Coefficients-04}
+    - {fileName: complement-number}
     - {fileName: Cromwell-s-rule}
     - {fileName: discrete-math-functions}
     - {fileName: discrete-math-inference-rules}
@@ -559,6 +560,10 @@ git:
     - {fileName: git-checkout-specific-files}
     - {fileName: git-log}
     - {fileName: git-prompt}
+binary:
+    - {fileName: complement-number}
+    - {fileName: floating-point}
+    - {fileName: gray-code}
 php:
     - {fileName: composer}
     - {fileName: email-validation}
@@ -725,9 +730,6 @@ terminal:
     - {fileName: fish-shell}
     - {fileName: my-mac-os-terminal}
     - {fileName: tmux-c-dash}
-binary:
-    - {fileName: floating-point}
-    - {fileName: gray-code}
 확률:
     - {fileName: frac1e}
     - {fileName: rule-of-succession}

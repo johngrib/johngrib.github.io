@@ -99,6 +99,7 @@ regenerate: true
 
 * [[Bayes-theorem]]
 * [[Binomial-Theorem]]
+* [[complement-number]]
 * [[Cromwell-s-rule]]
 * [[Fermat-s-little-theorem]]
 * [[fibonacci]]

@@ -60,7 +60,7 @@
     size: 1
 -
     name: binary
-    size: 2
+    size: 3
 -
     name: black-magic
     size: 1
@@ -393,7 +393,7 @@
     size: 1
 -
     name: math
-    size: 46
+    size: 47
 -
     name: media
     size: 1
