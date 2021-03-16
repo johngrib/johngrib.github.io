@@ -3,7 +3,7 @@ layout  : wiki
 title   : 짜증나는 Restdoc 템플릿을 조금 더 편하게 작성하자
 summary : 
 date    : 2020-03-13 23:35:38 +0900
-updated : 2020-03-14 09:16:34 +0900
+updated : 2021-03-16 22:25:37 +0900
 tag     : java
 toc     : true
 public  : true
@@ -231,3 +231,30 @@ resultActions
     ));
 ```
 
+`Item` 클래스를 static import하면 다음과 같이 쓸 수도 있다.
+
+```java
+Item requestItems = of("member", OBJECT, "회원",
+  of("id", NUMBER, "회원번호"),
+  of("name", STRING, "이름"),
+  of("favorite", OBJECT, "좋아하는 것들",
+    of("movie", OBJECT, "영화",
+      of("name", STRING, "영화 이름"),
+      of("star", NUMBER, "영화 별점"))));
+
+Item responseItems = Item.of("success", BOOLEAN, "성공");
+
+resultActions
+  .andExpect(status().isMultiStatus())
+  .andDo(
+    document("member/profile",
+      requestFields(
+        beneathPath("data").withSubsectionId("data"),
+        requestItems.build()
+      ),
+      responseFields(
+        beneathPath("data").withSubsectionId("data"),
+        responseItems.build()
+      )
+    ));
+```
