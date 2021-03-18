@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2020-10-05 17:26:32 +0900
+updated : 2021-03-18 22:24:17 +0900
 tag     : gradle tool
 toc     : true
 public  : true
@@ -28,7 +28,13 @@ latex   : false
 
 ## 사용 방법/팁 모음
 
-## 의존 라이브러리 단축 표기법
+### 호환되는 언어 버전을 알고 싶다면
+
+다음 문서를 보면 된다.
+
+<https://docs.gradle.org/current/userguide/compatibility.html >
+
+### 의존 라이브러리 단축 표기법
 
 다음과 같이 `dependencies`가 정의되어 있다고 하자. 잘 보면 세미콜론(`:`)이 구분자로 사용되고 있는데, 이는 단축 표기법을 사용해 생략한 것이다.
 
