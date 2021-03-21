@@ -3,7 +3,7 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2020-06-03 09:44:01 +0900
+updated : 2021-03-21 10:29:03 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -12,6 +12,24 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 역사
+
+- 1996-11-11 - Rafael Sagula에 의해 개발된 httpget
+    - httpget 0.1 버전은 C 언어로 작성된 300줄 미만의 프로그램이었음
+    - Daniel Stenberg가 발견하고 기여하기 시작
+    - 비슷한 시기(1996-11)에 wget의 최초 릴리즈(1.4.0)도 있었음
+
+> curl's official birthday was March 20, 1998. That was the day the first ever tarball was made available that could build a tool named curl. I put it together and I called it curl 4.0 since I kept the version numbering from the previous names I had used for the tool. Or rather, I bumped it up from 3.12 which was the last version I used under the previous name: urlget.
+>
+-- [CURL IS 23 YEARS OLD TODAY]( https://daniel.haxx.se/blog/2021/03/20/curl-is-23-years-old-today/ )
+>
+curl의 공식 생일은 1998년 3월 20일 이었습니다. curl이라는 도구를 빌드할 수 있는 최초의 tarball을 만든 날이었습니다. 먼저 사용하던 도구에서 버전 번호를 이어받아서 curl 4.0 이라고 불렀습니다. 좀 더 정확하게 말하자면 이전 이름인 urlget의 마지막 버전인 3.12에서 올렸다고 할 수 있습니다.
+>
+-- [curl 23주년을 기념하는 Daniel Stenberg의 포스트 (2021-03-20)]( https://daniel.haxx.se/blog/2021/03/20/curl-is-23-years-old-today/ )
+
+- 1998년 봄에 이름을 curl로 변경
+- 1998년 3월 20일, curl 4.0 배포
 
 ## Examples
 ```sh
@@ -106,3 +124,12 @@ curl v2.wttr.in/Seoul
 
 curl ifconfig.me  # ip주소를 본다
 ```
+
+## 참고문헌
+
+- [curl / Docs / Project / History of curl][curl-history]
+- [curl 23주년을 기념하는 Daniel Stenberg의 포스트 (2021-03-20)]( https://daniel.haxx.se/blog/2021/03/20/curl-is-23-years-old-today/ )
+
+[curl-history]: https://curl.se/docs/history.html
+[curl-23]: https://daniel.haxx.se/blog/2021/03/20/curl-is-23-years-old-today/
+
