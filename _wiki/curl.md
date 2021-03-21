@@ -3,7 +3,7 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2021-03-21 10:29:03 +0900
+updated : 2021-03-21 10:35:19 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -19,6 +19,10 @@ latex   : false
     - httpget 0.1 버전은 C 언어로 작성된 300줄 미만의 프로그램이었음
     - Daniel Stenberg가 발견하고 기여하기 시작
     - 비슷한 시기(1996-11)에 wget의 최초 릴리즈(1.4.0)도 있었음
+
+{% raw %}
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">This day 23 years ago, I uploaded the first ever curl release. Happy birthday to all of us who use and appreciate curl. I love you all.<a href="https://t.co/sbw4Yps3s6">https://t.co/sbw4Yps3s6</a> <a href="https://t.co/4VXtdiuP5b">pic.twitter.com/4VXtdiuP5b</a></p>&mdash; Daniel Stenberg (@bagder) <a href="https://twitter.com/bagder/status/1373047807876153349?ref_src=twsrc%5Etfw">March 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
 
 > curl's official birthday was March 20, 1998. That was the day the first ever tarball was made available that could build a tool named curl. I put it together and I called it curl 4.0 since I kept the version numbering from the previous names I had used for the tool. Or rather, I bumped it up from 3.12 which was the last version I used under the previous name: urlget.
 >
