@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정적 팩토리 메서드(static factory method)
 summary : static 메서드로 객체 생성을 캡슐화한다
 date    : 2018-03-03 11:16:36 +0900
-updated : 2021-03-27 11:08:24 +0900
+updated : 2021-03-27 11:35:35 +0900
 tag     : programming pattern
 toc     : true
 public  : true
@@ -245,6 +245,43 @@ Map<String, List<String>> list = HashMap.newInstance();
 
 ```java
 Map<String, List<String>> list = new HashMap<>();
+```
+
+## Lombok RequiredArgsConstructor.staticName의 사용
+
+Lombok의 `RequiredArgsConstructor`를 사용하면 정적 팩토리 메소드를 쉽게 만들 수 있다.
+
+```java
+import lombok.RequiredArgsConstructor;
+
+//                                      ↓ 정적 팩토리 메소드 이름
+@RequiredArgsConstructor(staticName = "of")
+public class BlogUser {
+  private final Long id;
+  private final String name;
+}
+```
+
+위와 같이 `staticName`을 선언하면 롬복이 `of`라는 이름을 가진 정적 팩토리 메소드를 만들어준다.
+
+즉, 다음과 같이 사용할 수 있다.
+
+```java
+BlogUser user = BlogUser.of(1L, "JohnGrib");
+```
+
+다음은 `RequiredArgsConstructor.java`의 `staticName` JavaDoc이다. [Lombok 1.18.18 버전]( https://github.com/rzwitserloot/lombok/blob/v1.18.18/src/core/lombok/RequiredArgsConstructor.java )
+
+```java
+/**
+ * If set, the generated constructor will be private, and an additional static 'constructor'
+ * is generated with the same argument list that wraps the real constructor.
+ * 
+ * Such a static 'constructor' is primarily useful as it infers type arguments.
+ * 
+ * @return Name of static 'constructor' method to generate (blank = generate a normal constructor).
+ */
+String staticName() default "";
 ```
 
 
