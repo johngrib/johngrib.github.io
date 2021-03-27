@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정적 팩토리 메서드(static factory method)
 summary : static 메서드로 객체 생성을 캡슐화한다
 date    : 2018-03-03 11:16:36 +0900
-updated : 2020-03-21 16:13:54 +0900
+updated : 2021-03-27 11:08:24 +0900
 tag     : programming pattern
 toc     : true
 public  : true
@@ -19,7 +19,7 @@ latex   : false
 
 객체 생성을 캡슐화하는 기법이다.
 
-좀 더 구체적으로는 객체를 생성하는 메소드를 만들고, static으로 선언하는 기법이다.
+좀 더 구체적으로는 객체를 생성하는 메소드를 만들고, `static`으로 선언하는 기법이다.
 
 자바로 코딩할 때 흔하게 볼 수 있는 `valueOf` 메서드가 정적 팩토리 메서드의 한 예라 할 수 있다.
 
