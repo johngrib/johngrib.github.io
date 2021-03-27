@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빅 오 표기법(Big O notation)
 summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
-updated : 2020-06-28 20:29:44 +0900
+updated : 2021-03-28 00:13:17 +0900
 tag     : algorithm
 toc     : true
 public  : true
@@ -328,6 +328,64 @@ $$\text{ $f(x)$는 $\Theta(g(x))$ 이다.}$$
 - 대표적인 사례
     - 모든 부분집합 검사( $$2^n$$ )
 
+## 기본 점화식과 폐쇄형
+
+$$
+\def\formularaa{
+    T(n) =
+    \begin{cases}
+        \Theta(1), & n = 1 \\
+        T(n-1) + \Theta(1), & n \ge 2 \\
+    \end{cases}
+}
+\def\formularbb{
+    T(n) =
+    \begin{cases}
+        \Theta(1), & n = 1 \\
+        T(n-1) + \Theta(n), & n \ge 2 \\
+    \end{cases}
+}
+\def\formularcc{
+    T(n) =
+    \begin{cases}
+        \Theta(1), & n = 1 \\
+        T(\frac{n}{2}) + \Theta(1), & n \ge 2 \\
+    \end{cases}
+}
+\def\formulardd{
+    T(n) =
+    \begin{cases}
+        \Theta(1), & n = 1 \\
+        T(\frac{n}{2}) + \Theta(n), & n \ge 2 \\
+    \end{cases}
+}
+\def\formularee{
+    T(n) =
+    \begin{cases}
+        \Theta(1), & n = 1 \\
+        2 T(\frac{n}{2}) + \Theta(1), & n \ge 2 \\
+    \end{cases}
+}
+\def\formularff{
+    T(n) =
+    \begin{cases}
+        \Theta(1), & n = 1 \\
+        2T(\frac{n}{2}) + \Theta(n), & n \ge 2 \\
+    \end{cases}
+}
+$$
+
+다음 표는 [LEE] 1.6장을 인용한 것이다.
+
+| 점화식          | 폐쇄형                        | 비고                                                          |
+|-----------------|-------------------------------|---------------------------------------------------------------|
+| $$\formularaa$$ | $$ T(n) = \Theta(n) $$        |                                                               |
+| $$\formularbb$$ | $$ T(n) = \Theta(n^2) $$      | [[quick-sort]]의 최악의 수행 시간                             |
+| $$\formularcc$$ | $$ T(n) = \Theta(\log n) $$   | 이진 탐색의 수행 시간                                         |
+| $$\formulardd$$ | $$ T(n) = \Theta(n) $$        |                                                               |
+| $$\formularee$$ | $$ T(n) = \Theta(n) $$        |                                                               |
+| $$\formularff$$ | $$ T(n) = \Theta(n \log n) $$ | [[merge-sort]]의 수행 시간, [[quick-sort]]의 최선의 수행 시간 |
+
 ## 예제로 이해하자
 
 ### 쉬운 예제
@@ -466,13 +524,14 @@ function test(listA, listB) {
 
 ## 참고문헌
 
-- Introduction to Algorithms 3판 / 토머스 코멘, 찰스 레이서손, 로날드 리베스트, 클리포드 스타인 공저 / 문병로, 심규석, 이충세 공역 / 한빛아카데미 / 2014년 06월 30일
-- Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
-- The art of computer programming 1 기초 알고리즘(개정3판) / 도널드 커누스 저 / 한빛미디어 / 2006년 09월 18일
-- 다양한 예제로 학습하는 데이터 구조와 알고리즘 for Java / 나라심하 카루만치 저 / 전계도, 전형일 공역 / 인사이트(insight) / 2014년 02월 22일
-- 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판 2018년 12월 26일
-- 컴퓨터과학이 여는 세계 / 이광근 저 / 인사이트(insight) / 2017년 02월 28일
-- 코딩인터뷰 완전분석 187가지 프로그래밍 문제와 해법 [개정판] / 게일 라크만 맥도웰 저 / 이창현 역 / 인사이트(insight) / 2017년 08월 14일
+- [CLRS] Introduction to Algorithms 3판 / 토머스 코멘, 찰스 레이서손, 로날드 리베스트, 클리포드 스타인 공저 / 문병로, 심규석, 이충세 공역 / 한빛아카데미 / 2014년 06월 30일
+- [ROSEN] Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
+- [TAOCP] The art of computer programming 1 기초 알고리즘(개정3판) / 도널드 커누스 저 / 한빛미디어 / 2006년 09월 18일
+- [NAR] 다양한 예제로 학습하는 데이터 구조와 알고리즘 for Java / 나라심하 카루만치 저 / 전계도, 전형일 공역 / 인사이트(insight) / 2014년 02월 22일
+- [SED] 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판 2018년 12월 26일
+- [COM] 컴퓨터과학이 여는 세계 / 이광근 저 / 인사이트(insight) / 2017년 02월 28일
+- [COD] 코딩인터뷰 완전분석 187가지 프로그래밍 문제와 해법 [개정판] / 게일 라크만 맥도웰 저 / 이창현 역 / 인사이트(insight) / 2017년 08월 14일
+- [LEE] 알고리즘 / 이관용, 김진욱 공저 / 한국방송통신대학교출판문화원 / 2018년 01월 25일
 
 - [Big_O_notation(wikipedia)](https://en.wikipedia.org/wiki/Big_O_notation )
 
