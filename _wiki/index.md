@@ -209,6 +209,7 @@ regenerate: true
 * [[java-remainder-operator]]
 * [[java-switch-expression]]
 * [[java-TemporalAdjusters]]
+* [[java-util-arraylist]]
 * [[java10-var]]
 * [[java8-performance-improvement-for-hashmap]]
 * [[java8-why-permgen-removed]]

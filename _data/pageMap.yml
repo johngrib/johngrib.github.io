@@ -2301,7 +2301,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-enum, java-exception-handling, java-functional-interface, java-inner-class-may-be-static, java-interface, java-jigsaw-quick-start, java-lambda, java-modifier-order-with-jls-suggestion, java-optional, java-random, java-remainder-operator, java-stream, java-switch-expression, java-TemporalAdjusters, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, ternary-operator-and-null-pointer-exception, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-enum, java-exception-handling, java-functional-interface, java-inner-class-may-be-static, java-interface, java-jigsaw-quick-start, java-lambda, java-modifier-order-with-jls-suggestion, java-optional, java-random, java-remainder-operator, java-stream, java-switch-expression, java-TemporalAdjusters, java-util-arraylist, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, ternary-operator-and-null-pointer-exception, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -2485,6 +2485,14 @@ java-TemporalAdjusters:
     parent: Java
     url: /wiki/java-TemporalAdjusters
     updated: '2020-05-17 22:33:37 +0900'
+    children: []
+java-util-arraylist:
+    type: wiki
+    title: java.util.ArrayList
+    summary: '이걸 모르면 곤란하지'
+    parent: Java
+    url: /wiki/java-util-arraylist
+    updated: '2021-04-03 20:13:54 +0900'
     children: []
 java10-var:
     type: wiki

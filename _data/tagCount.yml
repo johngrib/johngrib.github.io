@@ -18,7 +18,7 @@
     size: 1
 -
     name: algorithm
-    size: 13
+    size: 14
 -
     name: alignment
     size: 1
@@ -321,7 +321,7 @@
     size: 1
 -
     name: java
-    size: 46
+    size: 47
 -
     name: jekyll
     size: 4

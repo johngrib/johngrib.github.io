@@ -377,6 +377,7 @@ algorithm:
     - {fileName: gray-code}
     - {fileName: heap-sort}
     - {fileName: insertion-sort}
+    - {fileName: java-util-arraylist}
     - {fileName: merge-sort}
     - {fileName: selection-sort}
     - {fileName: sort-stability}
@@ -631,6 +632,7 @@ java:
     - {fileName: java-stream}
     - {fileName: java-switch-expression}
     - {fileName: java-TemporalAdjusters}
+    - {fileName: java-util-arraylist}
     - {fileName: java10-var}
     - {fileName: java8}
     - {fileName: java8-performance-improvement-for-hashmap}
