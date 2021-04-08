@@ -3,7 +3,7 @@ layout  : wiki
 title   : ag
 summary : the silver searcher
 date    : 2018-12-27 22:01:47 +0900
-updated : 2019-11-29 14:02:44 +0900
+updated : 2021-04-08 10:00:26 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -51,6 +51,30 @@ ag test --pager='less -XRF'
 * `-R` 옵션을 붙이면 컬러링된 결과로 볼 수 있다.
 * `-F` 옵션을 붙이면 less가 종료되어도 화면이 clear 되지 않는다.
 
+### 파일 타입 옵션
+
+>
+It  is  possible  to  restrict  the  types  of  files  searched.  For  example,  passing  `--html`  will  search only files with the extensions htm, html, shtml or xhtml. For a list of supported types, run ag `--list-file-types`.
+
+사전에 정의된 파일 타입 옵션을 사용해 필터링을 걸 수 있다.[^tip-sangdol-1] 다음과 같이 사용하면 모든 파일 타입 옵션을 볼 수 있다.
+
+```sh
+$ ag --list-file-types
+
+$ # 일일이 찾아보기 귀찮다면 grep을 사용하자
+$ ag --list-file-types | grep java
+  --java
+      .java  .properties
+```
+
+이런 파일 타입 옵션을 사용하면 `find`나 정규식 사용을 생략하고 쉽게 특정 타입으로 검색 범위를 좁힐 수 있다.
+
+```sh
+ag --java 'str'
+ag --html div
+ag --yaml spring
+```
+
 ### 실제 활용한 명령어들
 
 ```sh
@@ -87,4 +111,8 @@ find . -name '*.java' | xargs ag '\-\>(?=\S)|(?<=\S)\-\>'
 
 ## Links
 * [the silver searcher](https://github.com/ggreer/the_silver_searcher )
+
+## 주석
+[^tip-sangdol-1]: [Sangdol 님의 조언을 통해 알게 되었다.][tip-sangdol-1]
+[tip-sangdol-1]: https://github.com/johngrib/johngrib.github.io/issues/153#issuecomment-815157978
 
