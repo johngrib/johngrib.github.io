@@ -624,6 +624,7 @@ java:
     - {fileName: java-gc-zgc}
     - {fileName: java-inner-class-may-be-static}
     - {fileName: java-interface}
+    - {fileName: java-javadoc}
     - {fileName: java-jigsaw-quick-start}
     - {fileName: java-lambda}
     - {fileName: java-modifier-order-with-jls-suggestion}
@@ -892,6 +893,8 @@ programming:
     - {fileName: static-factory-method-pattern}
 memory-leak:
     - {fileName: java-inner-class-may-be-static}
+javadoc:
+    - {fileName: java-javadoc}
 jls:
     - {fileName: java-modifier-order-with-jls-suggestion}
 random:

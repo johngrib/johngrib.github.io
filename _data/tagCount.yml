@@ -321,7 +321,10 @@
     size: 1
 -
     name: java
-    size: 47
+    size: 48
+-
+    name: javadoc
+    size: 1
 -
     name: jekyll
     size: 4

@@ -201,6 +201,7 @@ regenerate: true
 * [[java-functional-interface]]
 * [[java-inner-class-may-be-static]]
 * [[java-interface]]
+* [[java-javadoc]]
 * [[java-jigsaw-quick-start]]
 * [[java-lambda]]
 * [[java-modifier-order-with-jls-suggestion]]
