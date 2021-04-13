@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2020-06-08 23:42:16 +0900
+updated : 2021-04-13 23:35:24 +0900
 tag     : java
 toc     : true
 public  : true
@@ -65,11 +65,26 @@ Java Language Specification 11의 11.1.1. 절에 잘 나와 있다.
 > The unchecked exception classes are the run-time exception classes and the error classes.
 >
 > The checked exception classes are all exception classes other than the unchecked exception classes. That is, the checked exception classes are Throwable and all its subclasses other than RuntimeException and its subclasses and Error and its subclasses.
+>
+-- [11.1.1. The Kinds of Exceptions (Java SE 11 Language Specification)]( https://docs.oracle.com/javase/specs/jls/se7/html/jls-11.html#jls-11.1.1 )
 
 
 - unchecked exception은 run-time exception 클래스와 error 클래스를 말한다.
     - 그 외의 다른 모든 예외 클래스는 checked exception이다.
 
+>
+여러분도 알다시피 자바는 두 가지 종류의 예외를 지원한다.
+>
+- 확인된 예외: 회복해야 하는 대상의 예외다. 자바에서는 메서드가 던질 수 있는 확인된 예외 목록을 선언해야 한다. 아니면 해당 예외를 `try`/`catch`로 처리해야 한다.
+- 미확인 예외: 프로그램을 실행하면서 언제든 발생할 수 있는 종류의 예외다. 확인된 예외와 달리 메서드 시그니처에 명시적으로 오류를 선언하지 않으면 호출자도 이를 꼭 처리할 필요가 없다.
+>
+자바 예외 클래스는 계층적으로 잘 조직되어 있다. [그림 3-1]은 자바의 예외 계층도 모습이다.
+`Error`와 `RuntimeException` 클래스는 미확인 예외이며 `Throwable`의 서브 클래스다. 보통 이런 오류는 잡지 않는다.
+`Exception` 클래스는 일반적으로 프로그램에서 잡아 회복해야 하는 오류를 가리킨다.
+>
+![image]( /post-img/java-exception-handling/114567437-360d0e80-9cae-11eb-8683-b198b11bfd5d.png )
+>
+-- 실전 자바 소프트웨어 개발. 3장.
 
 ## From: 이펙티브 자바
 
@@ -184,6 +199,25 @@ API가 발생하는 기술적인 로우레벨을 상황에 적합한 의미를 �
 >
 > 어차피 복구가 불가능한 예외라면 가능한 한 빨리 런타임 예외로 포장해 던지게 해서 다른 계층의 메소드를 작성할 때 불필요한 `throws` 선언이 들어가지 않도록 해줘야 한다.
 [^toby-1-288]
+
+
+## From: 실전 자바 소프트웨어 개발
+
+>
+고전적인 C 프로그래밍에서는 수많은 `if` 조건을 추가해 암호 같은 오류 코드를 반환했다.
+하지만 그 방법에는 여러 단점이 존재한다.
+먼저 전역으로 공유된 가변 상태에 의존해 최근에 발생한 오류를 검색해야 한다. 이 때문에 코드 부분이 따로 분리되어 이해하기가 어려워진다.
+결과적으로 코드를 유지보수하기 어렵다.
+또한 어떤 값이 실제 값인지 아니면 오류를 가리키는 값인지 구분하기가 어렵다.
+강력한 형식 시스템이 있었다면 이 문제를 해결하는 데 조금이나마 도움이 되었을 것이다.
+마지막으로 제어 흐름이 비즈니스 로직과 섞이면서 코드를 유지보수하거나 프로그램의 일부를 따로 테스트하기도 어려워진다.
+>
+자바는 이런 문제를 해결하도록 예외를 일급 언어 기능으로 추가하고 다음과 같은 장점을 제공한다.
+- 문서화: 메서드 시그니처 자체에 예외를 지원한다.
+- 형식 안전성: 개발자가 예외 흐름을 처리하고 있는지를 형식 시스템이 파악한다.
+- 관심사 분리: 비즈니스 로직과 예외 회복(recovery)이 각각 `try`/`catch` 블록으로 구분된다.
+>
+다만 예외 기능으로 복잡성이 증가한다는 단점이 생긴다.
 
 ## java.lang 의 Throwable 상속 트리
 
@@ -300,6 +334,7 @@ public class RuntimeException extends Exception {
 - Thinking in Java [3판] / Bruce Eckel 저 / 이용원 외 공역 / 대웅미디어 / 초판 1쇄 2003년 07월 26일
 - 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 - 토비의 스프링 3.1 vol 1 / 이일민 저 / 에이콘출판사 / 초판 4쇄 2013년 06월 10일
+- 실전 자바 소프트웨어 개발 / 라울-게이브리얼 우르마, 리처드 워버턴 저/우정은 역 / 한빛미디어 / 초판 1쇄 2020년 06월 20일 / 원제 : Real-World Software Development
 
 ## 주석
 
