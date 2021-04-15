@@ -3,7 +3,7 @@ layout  : wiki
 title   : 널 오브젝트 패턴 (Null Object Pattern)
 summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
-updated : 2020-02-06 23:57:32 +0900
+updated : 2021-04-15 23:50:39 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -108,13 +108,13 @@ public Cheese[] getCheeses() {
 
 ## 널 객체 패턴에 대한 인용
 
-### 클린 소프트웨어
+### From: 클린 소프트웨어
 
 엉클 밥은 Null 객체 패턴에 대해 다음과 같이 언급한 바 있다.
 
 > 이 패턴은 종종 null 검사의 필요를 제거하고, 코드를 단순화하는 데 도움이 된다.[^clean]
 
-### 리팩토링
+### From: 리팩토링
 
 마틴 파울러는 "리팩토링"에서 Null 검사를 줄이는 방법으로 Null 객체의 사용을 소개한 바 있다.
 
@@ -130,7 +130,7 @@ public Cheese[] getCheeses() {
 
 "문제를 감지하거나 찾기가 힘들어질 때도 있다"는 단점을 꼭 염두에 둘 것.
 
-### 테스트 주도 개발
+### From: 테스트 주도 개발
 
 켄트 벡은 "테스트 주도 개발"에서 다음과 같이 널 객체를 소개한다.
 
@@ -146,6 +146,15 @@ public Cheese[] getCheeses() {
 (우리는 또한 조직적이지 못하고 허술해 보인다고 청중에게 극도로 나쁜 점수를 받았다.
 그들은 분명, 생산적인 설계 토론이 어렵긴 하지만 배울 수 있는 기술이라는 것을 알지 못했다.)[^kent-null-object]
 
+### From: 실전 자바 소프트웨어 개발
+
+>
+자바에서는 종종 **null 객체 패턴**(object pattern)**을 사용한다.
+객체가 존재하지 않을 때 null 레퍼런스를 반환하는 대신에 필요한 인터페이스를 구현하는 객체(바디는 비어 있음)를 반환하는 기법이다.
+의도하지 않은 `NullPointerException`과 긴 `null` 확인 코드를 피할 수 있다는 점이 null 객체 패턴의 강점이다.
+빈 객체는 아무것도 수행하지 않으므로 동작을 예측하기 쉽다.
+하지만 이 패턴을 사용하면 데이터에 문제가 있어도 빈 객체를 이용해 실제 문제를 무시할 수 있어 나중에 문제를 해결하기가 더 어려워질 수 있다.
+[^urma-null-object]
 
 ## Bobby Woolf의 논문 번역
 
@@ -589,10 +598,11 @@ Bruce Anderson은 Null 객체 패턴에 대해 글을 쓴 바 있는데, 그 글
 * 웹 문서
     * [The Null Object Pattern by Bobby Woolf 1996][pdf]
 * 도서
-    * 클린 소프트웨어 / 로버트 C. 마틴 저 / 이용원, 김정민, 정지호 공역 / 제이펍 / 초판 1쇄 2017년 05월 15일 / 원제 : Agile Software Development, Principles, Patterns, and Practices
-    * 리팩토링 / 마틴 파울러 저 / 김지원 역 / 한빛미디어 / 초판 2쇄 2013년 03월 07일 / 원서 : Refactoring (Addison-Wesley Professional; 1 edition, 1999)
-    * 테스트 주도 개발 / 켄트 벡 저 / 김창준, 강규영 공역 / 인사이트(insight) / 초판 1쇄 2005년 01월 02일 / 원제 : Test-Driven Development By Example
-    * 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+    - 리팩토링 / 마틴 파울러 저 / 김지원 역 / 한빛미디어 / 초판 2쇄 2013년 03월 07일 / 원서 : Refactoring (Addison-Wesley Professional; 1 edition, 1999)
+    - 실전 자바 소프트웨어 개발 / 라울-게이브리얼 우르마, 리처드 워버턴 저/우정은 역 / 한빛미디어 / 초판 1쇄 2020년 06월 20일 / 원제 : Real-World Software Development
+    - 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+    - 클린 소프트웨어 / 로버트 C. 마틴 저 / 이용원, 김정민, 정지호 공역 / 제이펍 / 초판 1쇄 2017년 05월 15일 / 원제 : Agile Software Development, Principles, Patterns, and Practices
+    - 테스트 주도 개발 / 켄트 벡 저 / 김창준, 강규영 공역 / 인사이트(insight) / 초판 1쇄 2005년 01월 02일 / 원제 : Test-Driven Development By Example
 
 ## 주석
 
@@ -601,4 +611,5 @@ Bruce Anderson은 Null 객체 패턴에 대해 글을 쓴 바 있는데, 그 글
 [^fowler0]: 리팩토링. Null 검사를 널 객체에 위임. 310쪽.
 [^kent-null-object]: 테스트 주도 개발. 30장. 274쪽.
 [^effective-325]: 이펙티브 자바. 아이템 54. 325쪽.
+[^urma-null-object]: 실전 자바 소프트웨어 개발 / 3.8.4 장.
 
