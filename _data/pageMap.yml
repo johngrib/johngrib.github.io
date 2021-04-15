@@ -3524,7 +3524,7 @@ review-2021:
     summary: '연말에 2021년 회고로 이름을 바꿀 문서'
     parent: review
     url: /wiki/review-2021
-    updated: '2021-04-08 23:24:34 +0900'
+    updated: '2021-04-15 23:43:35 +0900'
     children: []
 RFC:
     type: wiki
