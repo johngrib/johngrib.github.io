@@ -3,10 +3,10 @@ layout  : wiki
 title   : 2021년 기록
 summary : 연말에 2021년 회고로 이름을 바꿀 문서
 date    : 2021-01-08 17:39:02 +0900
-updated : 2021-04-15 23:43:35 +0900
+updated : 2021-04-15 23:57:49 +0900
 tag     : review
 toc     : true
-public  : true
+public  : false
 parent  : [[review]]
 latex   : false
 ---
