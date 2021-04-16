@@ -351,7 +351,7 @@ regenerate: true
 * [[dbeaver]]
 * [[dumang-dk6-keyboard]]
 * [[google-home]]
-* [[Gradle]]
+* [[gradle]]
 * [[h2database]]
 * [[intellij]]
 * [[iterm]]

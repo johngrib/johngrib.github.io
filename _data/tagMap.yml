@@ -832,9 +832,9 @@ twitter:
 facebook:
     - {fileName: googling}
 gradle:
-    - {fileName: Gradle}
+    - {fileName: gradle}
 tool:
-    - {fileName: Gradle}
+    - {fileName: gradle}
 grep:
     - {fileName: grep}
     - {fileName: sed}

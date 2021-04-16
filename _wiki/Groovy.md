@@ -3,7 +3,7 @@ layout  : wiki
 title   : Groovy
 summary : A multi-faceted language for the Java platform
 date    : 2017-12-03 15:01:36 +0900
-updated : 2017-12-03 15:01:36 +0900
+updated : 2021-04-16 17:26:37 +0900
 tag     : language jvm-lang groovy
 toc     : true
 public  : true
@@ -29,7 +29,7 @@ latex   : false
 * 람다 함수의 기본 변수로 `it`을 사용
 * 0.1 + 0.2 가 0.3 으로 나온다[^1].
 * 기타
-    * [[Gradle]] 빌드 스크립트가 groovy를 쓴다.
+    * [[gradle]] 빌드 스크립트가 groovy를 쓴다.
 
 ## install
 
