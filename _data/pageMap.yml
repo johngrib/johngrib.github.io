@@ -1956,7 +1956,7 @@ gradle:
     summary: 'Gradle Build Tool'
     parent: tools
     url: /wiki/gradle
-    updated: '2021-03-18 22:24:17 +0900'
+    updated: '2021-04-16 17:38:58 +0900'
     children: []
 graph:
     type: wiki

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2021-03-18 22:24:17 +0900
+updated : 2021-04-16 17:38:58 +0900
 tag     : gradle tool
 toc     : true
 public  : true
@@ -50,6 +50,22 @@ dependencies {
 dependencies {
   compile group:'org.slf4j', name:'slf4j-api', version: '1.7.5'
 }
+```
+
+## 명령
+
+```sh
+ # 이전에 빌드한 파일을 삭제한다
+gradle clean
+
+ # 빌드한다
+gradle build
+
+ # 테스트를 실행한다
+gradle test
+
+ # build.gradle 파일에서 mainClassName으로 지정한 메인 클래스를 실행한다
+gradle run
 ```
 
 ## 자주 보는 dependency 설정들
@@ -140,14 +156,12 @@ $ SPRING_PROFILES_ACTIVE=local2 ./gradlew bootrun     # gradlew 사용
 
 ## 참고문헌
 
-* Gradle 철저 입문
-    * Takuma Watabiki, Nobuhiro Sue, Masatoshi Hayashi, Masanobu Imai 지음 (2014, Japan, SHOEISHA)
-    * 김완섭 옮김 (2015 초판, Repulic of Korea, Gilbut(도서출판 길벗))
-    * [교보문고](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9791186978122)
-    * [알라딘](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=71792832)
+- Gradle 그레이들 철저 입문 / 와타비키 타쿠마, 스에 노부히로, 하야시 마사토시, 이마이 마사노부 공저 / 김완섭 역 / 길벗 / 2015년 12월 28일
+- 실전 자바 소프트웨어 개발 / 라울-게이브리얼 우르마, 리처드 워버턴 저/우정은 역 / 한빛미디어 / 초판 1쇄 2020년 06월 20일 / 원제 : Real-World Software Development
 
 ## Endnote
 
 [^repo]: [github.com/gradle/gradle](https://github.com/gradle/gradle)
 [^desc]: Gradle 철저 입문 35쪽
 [^cli-profile]: [spring boot 이슈 #832](https://github.com/spring-projects/spring-boot/issues/832#issuecomment-133830293)
+
