@@ -204,6 +204,7 @@ regenerate: true
 * [[java-javadoc]]
 * [[java-jigsaw-quick-start]]
 * [[java-lambda]]
+* [[java-mockito]]
 * [[java-modifier-order-with-jls-suggestion]]
 * [[java-optional]]
 * [[java-random]]

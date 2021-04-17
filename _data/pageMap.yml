@@ -2301,7 +2301,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-enum, java-exception-handling, java-functional-interface, java-inner-class-may-be-static, java-interface, java-javadoc, java-jigsaw-quick-start, java-lambda, java-modifier-order-with-jls-suggestion, java-optional, java-random, java-remainder-operator, java-stream, java-switch-expression, java-TemporalAdjusters, java-util-arraylist, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, ternary-operator-and-null-pointer-exception, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-enhancements, java-enum, java-exception-handling, java-functional-interface, java-inner-class-may-be-static, java-interface, java-javadoc, java-jigsaw-quick-start, java-lambda, java-mockito, java-modifier-order-with-jls-suggestion, java-optional, java-random, java-remainder-operator, java-stream, java-switch-expression, java-TemporalAdjusters, java-util-arraylist, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, ternary-operator-and-null-pointer-exception, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -2437,6 +2437,14 @@ java-lambda:
     parent: Java
     url: /wiki/java-lambda
     updated: '2020-01-25 15:54:28 +0900'
+    children: []
+java-mockito:
+    type: wiki
+    title: 'mockito를 테스트에 사용하기'
+    summary: ""
+    parent: Java
+    url: /wiki/java-mockito
+    updated: '2021-04-18 00:20:37 +0900'
     children: []
 java-modifier-order-with-jls-suggestion:
     type: wiki

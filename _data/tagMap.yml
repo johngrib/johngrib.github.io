@@ -629,6 +629,7 @@ java:
     - {fileName: java-javadoc}
     - {fileName: java-jigsaw-quick-start}
     - {fileName: java-lambda}
+    - {fileName: java-mockito}
     - {fileName: java-modifier-order-with-jls-suggestion}
     - {fileName: java-optional}
     - {fileName: java-remainder-operator}
@@ -759,6 +760,7 @@ map:
     - {fileName: labs-strava-com-heatmap}
 test:
     - {fileName: ginkgo}
+    - {fileName: java-mockito}
     - {fileName: junit5-nested}
     - {fileName: test-terms}
     - {fileName: two-type-error}
