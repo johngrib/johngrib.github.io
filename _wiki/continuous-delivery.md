@@ -3,7 +3,7 @@ layout  : wiki
 title   : Continuous Delivery (지속적 전달)
 summary : 
 date    : 2020-07-11 20:52:44 +0900
-updated : 2020-07-11 21:01:26 +0900
+updated : 2021-04-17 18:27:25 +0900
 tag     : 
 toc     : true
 public  : true
@@ -27,7 +27,7 @@ latex   : false
 
 ## 함께 읽기
 
-- [[Continuous-Integration]]
+- [[continuous-integration]]
 - [CONTINUOUS DELIVERY][cdcom]
 
 ## 주석
@@ -36,4 +36,5 @@ latex   : false
 [^continuousdelivery]: [CONTINUOUS DELIVERY][cdcom]
 
 
-[cdcom]: https://continuousdelivery.com/ 
+[cdcom]: https://continuousdelivery.com/
+

@@ -589,7 +589,7 @@ regenerate: true
 * [[agile]]
 * [[andon-cord]]
 * [[continuous-delivery]]
-* [[Continuous-Integration]]
+* [[continuous-integration]]
 * [[ddd-quotes]]
 * [[dev-schedule-quotes]]
 * [[devops]]
