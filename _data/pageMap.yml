@@ -908,7 +908,7 @@ continuous-integration:
     summary: ""
     parent: software-engineering
     url: /wiki/continuous-integration
-    updated: '2021-04-17 18:32:02 +0900'
+    updated: '2021-04-17 18:35:17 +0900'
     children: []
 Conway-s-law:
     type: wiki

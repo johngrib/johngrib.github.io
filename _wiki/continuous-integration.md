@@ -3,7 +3,7 @@ layout  : wiki
 title   : Continuous Integration(지속적 통합)
 summary : 
 date    : 2018-07-06 10:46:27 +0900
-updated : 2021-04-17 18:32:02 +0900
+updated : 2021-04-17 18:35:17 +0900
 tag     : martin-fowler
 toc     : true
 public  : true
@@ -65,7 +65,7 @@ usually each person integrates at least daily - leading to multiple integrations
 8. 성공했다면 일이 끝나게 된다.
 
 
-## AWS의 "지속적 통합이란 무엇입니까?" 요약
+## From: AWS의 "지속적 통합이란 무엇입니까?"
 
 * [지속적 통합이란 무엇입니까?](https://aws.amazon.com/ko/devops/continuous-integration/ )
 
@@ -80,9 +80,8 @@ usually each person integrates at least daily - leading to multiple integrations
     * 새로운 소프트웨어 업데이트 검증 시간 최소화.
     * 배포 소요 시간 최소화.
 
-## (책)마이크로서비스 아키텍처 구축
+## From: 마이크로서비스 아키텍처 구축
 
-챕터 6, 153쪽.
 
 > CI를 통한 핵심 목표는 모든 사람이 서로 동기를 맞추는 것이며,
 그것은 새롭게 체크인된 코드가 기존 코드와 적절히 통합됨을 보장함으로써 달성할 수 있다.
@@ -91,6 +90,8 @@ CI 과정의 일부로 우리는 테스트를 위해 실행할 서비스를 배�
 이상적으로 각각 한 번씩만 이 산출물을 빌드하고 그 버전의 코드에 대한 배포로 사용하기 원한다.
 이것은 같은 작업을 반복하지 않기 위한 것이며, 이를 통해 배포된 산출물이 테스트에 사용된 것과 동일한 것임을 확신할 수 있다.
 이들 산출물의 재사용을 위해 우리는 CI 도구나 별도 시스템에서 제공되는 저장소와 같은 곳에 산출물을 저장한다.
+>
+-- 마이크로서비스 아키텍처 구축[^sam-6]
 
 Jez Humble의 3가지 질문.
 
@@ -109,4 +110,8 @@ Jez Humble의 3가지 질문.
 
 ## 참고문헌
 
-* 마이크로서비스 아키텍처 구축 / 샘 뉴먼 저 / 정성권 역 / 한빛미디어 / 초판 2쇄 2017년 05월 01일 / 원서 : Building Microservices: Designing Fine-Grained Systems
+* [SAM] 마이크로서비스 아키텍처 구축 / 샘 뉴먼 저 / 정성권 역 / 한빛미디어 / 초판 2쇄 2017년 05월 01일 / 원서 : Building Microservices: Designing Fine-Grained Systems
+
+## 주석
+[^sam-6]: [SAM] 챕터 6, 153쪽
+
