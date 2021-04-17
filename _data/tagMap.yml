@@ -570,6 +570,8 @@ php:
     - {fileName: email-validation}
     - {fileName: php}
     - {fileName: phpbrew}
+martin-fowler:
+    - {fileName: continuous-integration}
 Think-Bayes:
     - {fileName: cookie-problem}
     - {fileName: dice-problem}

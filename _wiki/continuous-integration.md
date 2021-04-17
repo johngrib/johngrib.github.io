@@ -3,8 +3,8 @@ layout  : wiki
 title   : Continuous Integration(지속적 통합)
 summary : 
 date    : 2018-07-06 10:46:27 +0900
-updated : 2019-07-06 23:26:37 +0900
-tag     : 
+updated : 2021-04-17 18:32:02 +0900
+tag     : martin-fowler
 toc     : true
 public  : true
 parent  : [[software-engineering]]
@@ -13,9 +13,9 @@ latex   : false
 * TOC
 {:toc}
 
-## 마틴 파울러의 Continuous Integration 요약
+## From: 마틴 파울러의 Continuous Integration
 
-* [Martin Fowler의 Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html )
+* [Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html )
 
 ### CI
 
