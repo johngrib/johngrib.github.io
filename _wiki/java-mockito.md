@@ -3,7 +3,7 @@ layout  : wiki
 title   : mockito를 테스트에 사용하기
 summary : 
 date    : 2021-04-17 23:00:42 +0900
-updated : 2021-04-18 12:27:56 +0900
+updated : 2021-04-18 12:31:29 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -66,7 +66,7 @@ class Bird {
     this.name = name;
   }
 
-  public String getName(String name) {
+  public String getName() {
     return this.name;
   }
 
