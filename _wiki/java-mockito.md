@@ -3,7 +3,7 @@ layout  : wiki
 title   : mockito를 테스트에 사용하기
 summary : 
 date    : 2021-04-17 23:00:42 +0900
-updated : 2021-04-18 08:39:10 +0900
+updated : 2021-04-18 12:27:56 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -27,6 +27,12 @@ latex   : false
 아래의 예제에 사용된 `import`는 모두 다음과 같다.
 
 ```java
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.atMost;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -34,10 +40,13 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.Mockito.when;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InOrder;
 ```
 
@@ -55,6 +64,14 @@ class Bird {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getName(String name) {
+    return this.name;
+  }
+
+  public String talk(String sentence) {
+    return String.format("%s %s", this.name, sentence);
   }
 }
 ```
@@ -186,4 +203,63 @@ private final Bird bird = mock(Bird.class);
   }
 }
 ```
+
+### when을 사용한 method stubbing
+
+#### thenReturn, doReturn
+```java
+private final Bird mockingBird = mock(Bird.class);
+
+@DisplayName("thenReturn으로 리턴값을 지정할 수 있다")
+@Test void test1() {
+  mockingBird.setName("Kachi");
+  when(mockingBird.getName()).thenReturn("dummy name");
+
+  Assertions.assertEquals("dummy name", mockingBird.getName());
+}
+
+@DisplayName("thenReturn으로 리턴값을 순차적으로 지정할 수 있다")
+@Test void test2() {
+  mockingBird.setName("Kachi");
+  when(mockingBird.getName())
+      .thenReturn("dummy name")
+      .thenReturn("false name")
+      .thenThrow(new RuntimeException("3번 부르면 예외를 던집니다."));
+
+  Assertions.assertEquals("dummy name", mockingBird.getName());
+  Assertions.assertEquals("false name", mockingBird.getName());
+  Assertions.assertThrows(RuntimeException.class, () -> mockingBird.getName());
+}
+
+@DisplayName("doReturn으로 리턴값을 지정할 수 있다")
+@Test void test3() {
+  mockingBird.setName("Kachi");
+  doReturn("false name").when(mockingBird).getName(); // 이렇게도 가능하다
+
+  Assertions.assertEquals("false name", mockingBird.getName());
+}
+```
+
+#### thenThrow, doThrow
+
+```java
+@DisplayName("thenThrow로 예외를 던지게 할 수 있다")
+@Test void test4() {
+  when(mockingBird.talk(anyString())).thenThrow(RuntimeException.class);
+
+  Assertions.assertThrows(RuntimeException.class, () -> mockingBird.talk("hello"));
+}
+
+@DisplayName("doThrow로 예외를 던지게 할 수 있다")
+@Test void test5() {
+  // void를 리턴하는 메소드는 doThrow로 테스트할 수 있다.
+  doThrow(RuntimeException.class).when(mockingBird).setName(anyString());
+
+  Assertions.assertThrows(RuntimeException.class, () -> mockingBird.setName("Kachi"));
+}
+```
+
+## 참고문헌
+
+- [Mockito JavaDoc]( https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html )
 

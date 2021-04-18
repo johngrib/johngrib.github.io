@@ -2444,7 +2444,7 @@ java-mockito:
     summary: ""
     parent: Java
     url: /wiki/java-mockito
-    updated: '2021-04-18 08:39:10 +0900'
+    updated: '2021-04-18 12:27:56 +0900'
     children: []
 java-modifier-order-with-jls-suggestion:
     type: wiki
