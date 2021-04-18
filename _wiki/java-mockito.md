@@ -3,7 +3,7 @@ layout  : wiki
 title   : mockito를 테스트에 사용하기
 summary : 
 date    : 2021-04-17 23:00:42 +0900
-updated : 2021-04-18 00:20:37 +0900
+updated : 2021-04-18 08:39:10 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -59,7 +59,8 @@ class Bird {
 }
 ```
 
-### verify
+### verify 검증
+#### verify
 
 ```java
 private final Bird bird = mock(Bird.class);
@@ -111,7 +112,7 @@ private final Bird bird = mock(Bird.class);
 }
 ```
 
-### verifyNoMoreInteractions
+#### verifyNoMoreInteractions
 
 ```java
 private final Bird bird = mock(Bird.class);
@@ -129,7 +130,7 @@ private final Bird bird = mock(Bird.class);
 }
 ```
 
-### verifyNoInteractions
+#### verifyNoInteractions
 
 참고: `verifyZeroInteractions`는 3.0.1 부터 deprecated 되었으므로, `verifyNoInteractions`를 사용하도록 한다.
 
@@ -147,7 +148,7 @@ private final Bird bird = mock(Bird.class);
 }
 ```
 
-### inOrder
+#### inOrder
 
 ```java
 @DisplayName("inOrder는")
@@ -168,7 +169,7 @@ private final Bird bird = mock(Bird.class);
 }
 ```
 
-### ArgumentCaptor의 사용
+#### ArgumentCaptor의 사용
 
 ```java
 @DisplayName("ArgumentCaptor는")
