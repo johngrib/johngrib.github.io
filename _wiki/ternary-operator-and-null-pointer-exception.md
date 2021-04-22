@@ -3,8 +3,8 @@ layout  : wiki
 title   : Java의 삼항 연산자와 Null Pointer Exception
 summary : 언박싱하다 NPE가 터지는 것이 원인
 date    : 2020-03-05 22:50:36 +0900
-updated : 2020-03-08 18:40:21 +0900
-tag     : java
+updated : 2021-04-22 09:40:40 +0900
+tag     : java auto-boxing npe
 toc     : true
 public  : true
 parent  : [[Java]]

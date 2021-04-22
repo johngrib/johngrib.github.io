@@ -973,7 +973,6 @@ float:
     - {fileName: persona}
 tip:
     - {fileName: private-constructor}
-    - {fileName: use-java-primitive-type-for-performance}
 culture:
     - {fileName: proverb}
 business:
@@ -1039,6 +1038,11 @@ xml:
     - {fileName: spring-bean-config-xml}
 rust:
     - {fileName: start-rust-with-vim}
+auto-boxing:
+    - {fileName: ternary-operator-and-null-pointer-exception}
+    - {fileName: use-java-primitive-type-for-performance}
+npe:
+    - {fileName: ternary-operator-and-null-pointer-exception}
 hacker:
     - {fileName: The-Jargon-File}
 trouble-shooting:
