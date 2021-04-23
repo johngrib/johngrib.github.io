@@ -1,3 +1,19 @@
+17-EQUATIONS-THAT-CHANGED-THE-WORLD:
+    type: wiki
+    title: '(책) 세계를 바꾼 17가지 방정식'
+    summary: '쉽고 재미있는, 훌륭한 교양 수학책'
+    parent: book
+    url: /wiki/17-EQUATIONS-THAT-CHANGED-THE-WORLD
+    updated: '2018-04-18 20:44:02 +0900'
+    children: []
+20-percent-project:
+    type: wiki
+    title: '20% project'
+    summary: ""
+    parent: software-engineering
+    url: /wiki/20-percent-project
+    updated: '2020-07-19 13:35:23 +0900'
+    children: []
 2017-01-30-ideavim-build:
     type: blog
     title: 'IdeaVIM 빌드가 안 되는 문제 해결.'
@@ -189,22 +205,6 @@
     parent: null
     url: /blog/2017/08/23/0.30000000000000004
     updated: '2017-08-23 18:15:32 +0900'
-    children: []
-17-EQUATIONS-THAT-CHANGED-THE-WORLD:
-    type: wiki
-    title: '(책) 세계를 바꾼 17가지 방정식'
-    summary: '쉽고 재미있는, 훌륭한 교양 수학책'
-    parent: book
-    url: /wiki/17-EQUATIONS-THAT-CHANGED-THE-WORLD
-    updated: '2018-04-18 20:44:02 +0900'
-    children: []
-20-percent-project:
-    type: wiki
-    title: '20% project'
-    summary: ""
-    parent: software-engineering
-    url: /wiki/20-percent-project
-    updated: '2020-07-19 13:35:23 +0900'
     children: []
 abbr:
     type: wiki
