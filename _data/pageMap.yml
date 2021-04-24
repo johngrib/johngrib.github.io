@@ -2340,7 +2340,7 @@ java-exception-handling:
     summary: null
     parent: Java
     url: /wiki/java-exception-handling
-    updated: '2021-04-24 18:06:09 +0900'
+    updated: '2021-04-24 18:15:55 +0900'
     children: []
 java-functional-interface:
     type: wiki

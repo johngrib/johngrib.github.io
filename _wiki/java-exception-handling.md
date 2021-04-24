@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2021-04-24 18:06:09 +0900
+updated : 2021-04-24 18:15:55 +0900
 tag     : java
 toc     : true
 public  : true
@@ -71,6 +71,13 @@ Java Language Specification 11의 11.1.1. 절에 잘 나와 있다.
 
 - unchecked exception은 run-time exception 클래스와 error 클래스를 말한다.
     - 그 외의 다른 모든 예외 클래스는 checked exception이다.
+
+>
+컴파일시에 확인되고 강제되는 예외들을 **검사 예외(checked exception)**라고 한다.
+>
+-- Thinking in Java(3판) 9장 397쪽
+
+&nbsp;
 
 >
 여러분도 알다시피 자바는 두 가지 종류의 예외를 지원한다.
