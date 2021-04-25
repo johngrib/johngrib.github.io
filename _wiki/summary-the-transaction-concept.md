@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) The Transaction Concept - Virtues and Limitations by Jim Gray, June 1981
 summary : 짐 그레이의 트랜잭션 컨셉 요약
 date    : 2021-04-25 14:44:36 +0900
-updated : 2021-04-25 23:31:27 +0900
+updated : 2021-04-25 23:52:41 +0900
 tag     : jim-gray transaction
 toc     : true
 public  : false
@@ -292,6 +292,21 @@ latex   : false
 - 그러나 대부분의 디스크 기반 시스템은 성능상의 이유로 덮어쓰는 업데이트(update in place)라는 유혹에 시달리게 되었다.
 
 ### TIME-DOMAIN ADDRESSING: One solution
+
+8페이지.
+
+Update-in-place strikes many systems designers as a cardinal sin: it violates traditional accounting practices that have been observed for hundreds of years. There have been several proposals for systems in which objects are never altered: rather an object is considered to have a time history and object addresses become <name,time> rather than simply name. In such a system, an object is not “updated”; it is “evolved” to have some additional information. Evolving an object consists of creating a new value and appending it as the current (as of this time) value of the object. The old value continues to exist and may be addressed by specifying any time within the time interval that value was current. Such systems are called “time-domain addressing” or “version-oriented systems”. Some call them immutable object systems, but I think that is a misnomer since objects do change values with time. 
+
+덮어쓰기 방식의 업데이트는 많은 시스템 설계자들에게 수백년간 지켜져온 회계 관행을 위반하는 크나큰 잘못으로 여겨진다.
+
+- 객체가 변경되지 않는 시스템에 대해서는 다양한 제안 사항이 있다.
+    - 각 객체는 시간 기록을 갖고 있고, 객체의 주소는 단순한 이름이 아니라 `<name, time>`과 같이 된다.
+    - 이러한 시스템에서 객체는 "업데이트"되지 않으며, 추가 정보를 얻기 위해 "진화(evolved)"된다.
+    - 객체 진화는 새 값을 생성하고, 현재 값(시간)을 추가하는 작업으로 구성된다.
+    - 이전 값은 사라지지 않고 계속 존재하며, 특정 시간을 지정하는 방식으로 주소를 지정해 찾아낼 수 있다.
+- 이러한 시스템을 "시간 도메인 주소 지정(time-domain addressing)" 또는 "버전 지향 시스템(version-oriented systems)"이라 부른다.
+    - 어떤 사람들은 이를 불변 객체 시스템(immutable object systems)이라 부르기도 하는데, 나(짐 그레이)는 객체는 시간이 지남에 따라 값이 변화하기 때문에 잘못된 이름이라 생각한다.
+
 ### LOGGIN AND LOCKING: Another solution
 ### LIMITATIONS OF KNOWN TECHNIQUES
 ### NESTED TRANSACTIONS
