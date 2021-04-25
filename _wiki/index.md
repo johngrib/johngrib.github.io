@@ -583,6 +583,7 @@ regenerate: true
 * [[summary-ldh-get-partnership]]
 * [[summary-the-mind-behind-linux]]
 * [[summary-The-Pauseless-GC-Algorithm]]
+* [[summary-the-transaction-concept]]
 
 ## [[software-engineering]]
 
