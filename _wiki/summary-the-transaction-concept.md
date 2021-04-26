@@ -3,12 +3,12 @@ layout  : wiki
 title   : (요약) The Transaction Concept - Virtues and Limitations by Jim Gray, June 1981
 summary : 짐 그레이의 트랜잭션 컨셉 요약
 date    : 2021-04-25 14:44:36 +0900
-updated : 2021-04-25 23:52:41 +0900
+updated : 2021-04-26 23:41:05 +0900
 tag     : jim-gray transaction
 toc     : true
 public  : false
 parent  : [[summary]]
-latex   : false
+latex   : true
 ---
 * TOC
 {:toc}
@@ -295,8 +295,6 @@ latex   : false
 
 8페이지.
 
-Update-in-place strikes many systems designers as a cardinal sin: it violates traditional accounting practices that have been observed for hundreds of years. There have been several proposals for systems in which objects are never altered: rather an object is considered to have a time history and object addresses become <name,time> rather than simply name. In such a system, an object is not “updated”; it is “evolved” to have some additional information. Evolving an object consists of creating a new value and appending it as the current (as of this time) value of the object. The old value continues to exist and may be addressed by specifying any time within the time interval that value was current. Such systems are called “time-domain addressing” or “version-oriented systems”. Some call them immutable object systems, but I think that is a misnomer since objects do change values with time. 
-
 덮어쓰기 방식의 업데이트는 많은 시스템 설계자들에게 수백년간 지켜져온 회계 관행을 위반하는 크나큰 잘못으로 여겨진다.
 
 - 객체가 변경되지 않는 시스템에 대해서는 다양한 제안 사항이 있다.
@@ -306,6 +304,77 @@ Update-in-place strikes many systems designers as a cardinal sin: it violates tr
     - 이전 값은 사라지지 않고 계속 존재하며, 특정 시간을 지정하는 방식으로 주소를 지정해 찾아낼 수 있다.
 - 이러한 시스템을 "시간 도메인 주소 지정(time-domain addressing)" 또는 "버전 지향 시스템(version-oriented systems)"이라 부른다.
     - 어떤 사람들은 이를 불변 객체 시스템(immutable object systems)이라 부르기도 하는데, 나(짐 그레이)는 객체는 시간이 지남에 따라 값이 변화하기 때문에 잘못된 이름이라 생각한다.
+
+
+Davies와 Bjork는 time domain addressing의 구현으로 각 엔티티가 값의 시간 시퀀스를 갖는 "일반 원장(general ledger)" 방식을 제안했다.
+
+- 이 방식은 단순히 값을 보관하고 있을 뿐만 아니라 의존성이 있는 연결구조(chain of dependencies)를 유지한다.
+    - 이렇게 하면 오류가 발견되면 보상 트랜잭션이 실행될 수 있고, 오류 데이터에 의존하는 각각의 트랜잭션에 새 값을 전파할 수 있다.
+    - 그러나 이러한 시스템의 내부 부기와 예상된 성능 저하는 실망스러웠음.
+    - Newcastle 대학의 Graham Wood는 이 방식을 사용하면 의존성 정보가 기하 급수적으로 증가한다는 것을 보였다.
+
+
+Dave Reed는 time-domain addressing 방식에 기반한 트랜잭션 시스템에 대한 가장 완벽한 제안을 했다.
+
+- Reed의 제안에서 엔티티 `E`는 일정 기간 동안 유효한 값 `Vi`의 집합을 갖고 있다.
+- 예를 들어 엔티티 `E`와 그 값의 히스토리는 다음과 같이 표현할 수 있다.
+
+$$
+E: < V0, [T0, T1) >, <V1, [T1, T2)>, <V2, [T2,*)>
+$$
+
+`E`의 의미는 다음과 같다.
+- 시간 `T0` 부터 `T1`까지 `E`는 `V0` 값을 갖는다.
+- 시간 `T1` 부터 `T2`까지 `E`는 `V1` 값을 갖는다.
+- 시간 `T2` 부터 `E`는 `V2` 값을 가지며, 이것이 현재 값이다.
+
+각 트랜잭션에는 고유한 실행시간이 할당되고, 모든 읽기/쓰기는 해당 시간과 관련하여 해석된다.
+- 엔티티 `E`를 읽을 때 시간이 `T3`라면 그 트랜잭션은 해당하는 시간의 엔티티의 값을 얻게 될 것이다.
+- 위의 예에서 `T3 > T2`이면, `V2` 값은 `[T2, T3)` 기간 동안 유효하게 된다.
+- 시간 `T3`일 때 값 `V3`를 엔티티 `E`에 쓰는 트랜잭션은 새로운 시간 간격(time interval)을 시작하는 것이다.
+
+$$
+E: <V0, [T0, T1)>, <V1, [T1, T2)>,<V2, [T2, T3)>,<V3, [T3,*)>
+$$
+
+만약 $$ T2 \ge T3 $$ 이면, 이 트랜잭션은 취소된다. 과거 히스토리를 덮어쓰는 것이 되기 때문이다.
+
+
+The writes of the transaction all depend upon a commit record. At transaction commit, the system validates (makes valid) all of the updates of the transaction. At transaction abort the system invalidates all of the updates. This is done by setting the state of the commit record to commit or abort and then broadcasting the transaction outcome. 
+
+트랜잭션 쓰기는 커밋 레코드에 따라 달라진다.
+
+- 트랜잭션을 커밋하게 되면, 시스템은 트랜잭션의 모든 업데이트의 유효성을 검사한다.
+- 트랜잭션을 중단하게 되면, 시스템은 업데이트를 무효화한다.
+- 커밋 또는 중단 둘 중 하나의 결과가 나오면 트랜잭션 결과를 브로드캐스팅한다.
+
+이것이 바로 Reed의 제안을 간단히 설명한 것이다.
+- 전체 설명에는 중첩 트랜잭션(nested transaction)을 포함해 다른 여러 기능들이 들어 있다.
+- Reed는 글로벌한 시계 구현의 어려움을 회피하기 위해 "실제 시간"이 아니라 "의사 시간"을 사용한다.
+
+![image]( /post-img/summary-the-transaction-concept/116098727-42e62500-a6e6-11eb-9107-97abd4752cbc.png )
+
+그림 2. 객체 E의 여러 버전들을 표현한 그림. 세 개의 커밋된 버전(committed version)과 하나의 요청된 버전(proposed version)이 그림에 나타나 있다. `V3` 버전이 커밋되거나 중단되면 커밋 레코드와 객체 헤더가 업데이트된다.
+
+Reed는 이 방법이 동시성 제어 문제와 안전성 문제 모두에 대한 통합 솔루션이라는 것을 확인한다.
+- 그리고 이 시스템은 애플리케이션으로 하여금 time-domain addressing의 모든 기능을 사용할 수 있게 해준다.
+- "작년 말에 회계 장부가 어떻게 구성되어 있었습니까?" 같은 질문을 쉽게 할 수 있게 된다.
+
+time-domain addressing에는 다음과 같은 단점들도 있다.
+
+>
+1. Reads are writes: reads advance the clock on an object and therefore update its header. This may increase L/O activity.
+2. Waits are aborts: In most cases a locking system will cause conflicts to result in one process waiting for another. In time-domain systems, conflicts abort the writer. This may preclude long-running “batch” transactions which do many updates.
+3. Timestamps force a single granularity: reading a million records updates a million timestamps. A simple lock hierarchy allows sequential (whole file) and direct (single record) locking against the same data (at the same time).
+4. Real operations and pseudo-time: If one reads or writes a real device, it is read at some real time or written at some real time (consider the rods of a nuclear reactor, or an automated teller machine which consumes and dispenses money). It is unclear how real time correlates with pseudo-time and how writes to real devices are modeled as versions.
+
+1. 읽기를 할 때 쓰기가 발생한다: 읽는 행위가 객체의 시계를 앞당기므로 객체의 헤더가 업데이트된다. 이렇게 하면 L/O 활동이 증가할 수 있다.
+2. 대기를 통한 중단: 대부분의 경우 잠금 시스템을 사용하면 충돌이 발생하게 되고, 하나의 프로세스가 다른 프로세스를 기다리게 된다. 시간 도메인 시스템에서 충돌이 발생하면 기록기를 중단시키게 된다. 이로 인해 많은 업데이트를 수행하는 오랜 시간 동안 돌아가는 "배치" 트랜잭션을 금지해야 할 수도 있다.
+3. 타임스탬프는 단일 세분화를 강제한다: 백만 개의 레코드를 읽으면 백만 개의 타임스탬프가 업데이트된다. 단순 잠금 계층은 동일한 데이터에 대해 순차적(전체 파일) 또는 직접(단일 레코드) 잠금을 동시에 허용한다.
+4. 실제 작업과 의사 시간: 실제 장치를 사용해 읽거나 쓰게 되면 실시간으로 읽고 기록하게 된다(원자로, 현금 자동 입출금기). 실시간과 의사 시간의 상관 관계 및 실제 장치에 대한 쓰기가 버전으로 모델링되는 방법은 명백하지 않다.
+
+위의 목록에서 볼 수 있듯이, time-domain addressing 시스템 구현에 대한 모든 세부 사항이 해결된 것은 아니다.
+이 개념은 유효하며, 마지막 문제를 제외한 모든 문제는 성능 문제이기 때문에 이런 시스템을 구축하려는 사람들이 해결하게 될 수도 있다. MIT와 Dave Reed와 동료들은 그런 시스템을 구축하려 노력하고 있다.
 
 ### LOGGIN AND LOCKING: Another solution
 ### LIMITATIONS OF KNOWN TECHNIQUES
