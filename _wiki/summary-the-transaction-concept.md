@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) The Transaction Concept - Virtues and Limitations by Jim Gray, June 1981
 summary : 짐 그레이의 트랜잭션 컨셉 요약
 date    : 2021-04-25 14:44:36 +0900
-updated : 2021-04-26 23:41:05 +0900
+updated : 2021-04-27 22:47:13 +0900
 tag     : jim-gray transaction
 toc     : true
 public  : false
@@ -339,9 +339,6 @@ $$
 
 만약 $$ T2 \ge T3 $$ 이면, 이 트랜잭션은 취소된다. 과거 히스토리를 덮어쓰는 것이 되기 때문이다.
 
-
-The writes of the transaction all depend upon a commit record. At transaction commit, the system validates (makes valid) all of the updates of the transaction. At transaction abort the system invalidates all of the updates. This is done by setting the state of the commit record to commit or abort and then broadcasting the transaction outcome. 
-
 트랜잭션 쓰기는 커밋 레코드에 따라 달라진다.
 
 - 트랜잭션을 커밋하게 되면, 시스템은 트랜잭션의 모든 업데이트의 유효성을 검사한다.
@@ -376,7 +373,70 @@ time-domain addressing에는 다음과 같은 단점들도 있다.
 위의 목록에서 볼 수 있듯이, time-domain addressing 시스템 구현에 대한 모든 세부 사항이 해결된 것은 아니다.
 이 개념은 유효하며, 마지막 문제를 제외한 모든 문제는 성능 문제이기 때문에 이런 시스템을 구축하려는 사람들이 해결하게 될 수도 있다. MIT와 Dave Reed와 동료들은 그런 시스템을 구축하려 노력하고 있다.
 
-### LOGGIN AND LOCKING: Another solution
+### LOGGING AND LOCKING: Another solution
+
+**또 다른 방법: 로깅과 잠금**
+
+Logging and locking are an alternative implementation of the transaction concept. The legendary Greeks, Ariadne and Theseus, invented logging. Ariadne gave Theseus a magic ball of string which he unraveled as he searched the Labyrinth for the Minotaur. Having slain the Minotaur, Theseus followed the string back to the entrance rather then remaining lost in the Labyrinth. This string was his log allowing him to undo the process of entering the Labyrinth. But the Minotaur was not a protected object so its death was not undone by Theseus' exit. 
+
+로깅과 잠금은 트랜잭션 개념의 대안적인 구현이다.
+
+- 로깅(logging)은 그리스 신화에 나오는 아리아드네와 테세우스가 발명한 것이다.
+- 아리아드네는 미궁에서 미노타우로스를 찾기 위해 미궁을 탐색하려던 테세우스에게 마법의 실뭉치 공을 주었다.
+- 미노타우로스를 죽인 테세우스는 미궁 안에서 길을 잃은 상태가 되었지만, 실을 따라 입구로 돌아갈 수 있었다.
+- 즉, 실은 테세우스가 미궁에 들어간 과정을 취소할 수 있게끔 한 기록(log)이었던 것이다.
+    - 물론 미노타우로스는 프로텍티드 객체(protected object)가 아니었기 때문에 죽음이 취소되지는 않았다.
+
+Hansel and Gretel copied Theseus’ trick as they wandered into the woods in search of berries. They left behind a trail of crumbs that would allow them to retrace their steps by following the trail backwards, and would allow their parents to find them by following the trail forwards. This was the first undo and redo log. Unfortunately, a bird ate the crumbs and caused the first log failure. 
+
+헨젤과 그레텔은 딸기를 찾아 숲 속을 헤매게 되었을 때 테세우스의 방법을 모방했다.
+- 헨젤과 그레텔은 빵 조각을 바닥에 흘렸으므로, 그 흔적을 따라 되돌아갈 수 있었다.
+    - 따라서 헨젤과 그레텔의 부모가 흔적을 따라 가면서 그들을 찾아낼 수 있게 했다.
+- 이 방법은 최초의 실행 취소(undo)와 재실행(redo) 로그였던 것이다.
+- 안타깝게도 그들이 흘린 빵조각은 새들이 먹었고, 최초의 로그 실패(log failure) 사례가 되었다.
+
+![image]( /post-img/summary-the-transaction-concept/116246821-442a5700-a7a5-11eb-9729-4972dc63efce.png )
+
+그림 3. DO-UNDO-REDO 프로토콜.
+- 각각의 protected 작업을 실행하면 로그 레코드가 생성되며, 이 로그를 사용해 작업을 취소하거나 다시 실행할 수 있게 된다.
+- 보호되지 않은 작업은 로그 레코드를 생성하지 않아도 된다.
+- 실행취소할 수 없는 작업(real action)은 이와 관계있지만 조금 다른 프로토콜을 사용한다(다음 그림을 볼 것).
+
+
+로깅의 기본적인 아이디어는, 모든 실행 취소 가능한 작업이 작업을 수행할 뿐만 아니라 작업을 실행취소할 수 있게끔 하는 실, 빵 조각, 또는 실행 취소 로그 레코드를 남겨야 한다는 것이다.
+
+- 마찬가지로 모든 재실행 가능한 작업은 작업을 수행할 뿐만 아니라 작업을 재실행할 수 있게 해주는 재실행 로그 레코드도 생성해야 한다.
+- 헨젤과 그레텔의 경험을 토대로, 이러한 로그 기록은 새들이 날아와 먹을 수 없는 튼튼한 재료로 만들어야 한다.
+- 컴퓨터 측면에서 이러한 레코드는 안정적인 저장소에 보관되어야 한다.
+    - 일반적으로는 각각 독립적인 장애 모드(independent failure modes)를 가진 여러 개의 비 휘발성 장치(non-volatile devices)에 레코드를 보관하는 방식으로 구현한다.
+    - 때때로, 각 객체의 안정적인 사본을 기록해야 할 필요도 있다. 이를 통해 현재 상태가 이전 상태에서 재구성될 수 있도록 한다.
+
+The log records for database operations are very simple.  They have the form: NAME OF TRANSACTION: PREVIOUS LOG RECORD OF THIS TRANSACTION: NEXT LOG RECORD OF THIS TRANSACATION: TIME: TYPE OF OPERATION: OBJECT OF OPERATION: OLD VALUE: NEW VALUE: 
+
+DB 작업을 위한 로그 레코드는 매우 단순한다. 다음과 같은 형태를 갖는다.
+
+```
+NAME OF TRANSACTION:
+PREVIOUS LOG RECORD OF THIS TRANSACTION:
+NEXT LOG RECORD OF THIS TRANSACATION:
+TIME:
+TYPE OF OPERATION:
+OBJECT OF OPERATION:
+OLD VALUE:
+NEW VALUE: 
+```
+
+old 값과 new 값은 객체의 완전한 복사본일 수 있지만, 일반적으로는 객체의 변경된 부분만 인코딩한다.
+예를 들어, 파일 레코드의 필드 업데이트는 일반적으로 전체 파일이나 전체 레코드의 이전 값/새 값을 전부 로깅하지 않고, 그 대신 이전 및 새 필드 값과 함께 파일, 레코드 및 필드의 이름만 기록한다.
+
+트랜잭션의 로그 레코드는 함께 스레드된다. 그러므로 하나의 트랜잭션을 실행 취소하면, 각각의 실행 취소도 해당 트랜잭션의 로그가 된다. 이 기법은 프로그램에 의해 실행된 트랜잭션 중단과 교착 상태 또는 하드웨어 오류와 같은 시스템 문제와 같은 불완전한(커밋되지 않은) 트랜잭션 후처리에 모두 사용할 수 있다.
+
+객체의 현재 상태가 손상되는 일이 발생하면, redo 로그를 사용해 이전 상태에 대해 최근 커밋된 모든 작업을 재실행하는 방법으로 스테이블 저장소의 이전 상태에서 현자 상태를 재구성할 수 있다. 
+
+Some actions need not generate log records. Actions on unprotected objects (e.g. writing on a scratch file), and actions which do not change the object state (e.g. reads of the object) need not generate log records.
+
+일부 작업은 로그 레코드를 생성할 필요가 없기도 하다. 예를 들어 보호되지 않는 객체에 대한 작업(스크래치 파일에 쓰기 등)이나 객체 상태를 변경하지 않는 작업(객체 읽기)과 같은 경우는 로그 레코드를 생성할 필요가 없다.
+
 ### LIMITATIONS OF KNOWN TECHNIQUES
 ### NESTED TRANSACTIONS
 ### LONG-LIVED TRANSACTIONS
