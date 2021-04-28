@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Stream의 사용
 summary : java.util.stream.Stream
 date    : 2019-09-24 09:37:07 +0900
-updated : 2021-02-21 19:12:15 +0900
+updated : 2021-04-28 22:01:15 +0900
 tag     : java
 toc     : true
 public  : true
@@ -252,6 +252,14 @@ List<String> uniq = words.stream()
     .collect(Collectors.toList());
 
 // 결과는 ["C", "a", "t", "D", "o", "g"]
+```
+
+```java
+List<Integer> flat = Stream.of(10, 20, 30)
+    .flatMap(x -> Stream.of(x, x + 1, x + 2))
+    .collect(Collectors.toList());
+
+// 결과는 [10, 11, 12, 20, 21, 22, 30, 31, 32]
 ```
 
 ### boxed() 를 사용해 언박싱 스트림을 박싱 스트림으로 만들기

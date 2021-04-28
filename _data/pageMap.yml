@@ -2484,7 +2484,7 @@ java-stream:
     summary: java.util.stream.Stream
     parent: Java
     url: /wiki/java-stream
-    updated: '2021-02-21 19:12:15 +0900'
+    updated: '2021-04-28 22:01:15 +0900'
     children: []
 java-switch-expression:
     type: wiki
