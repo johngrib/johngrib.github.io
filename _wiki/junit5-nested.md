@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2020-06-09 08:33:18 +0900
+updated : 2021-04-28 22:42:41 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -694,6 +694,50 @@ class JpaTest {
 ```
 
 요즘의 나는 이 방법을 주로 사용하고 있다.
+
+### @DisplayNameGeneration 사용
+
+JUnit 5.4부터 추가된 `@DisplayNameGeneration`을 사용하면 테스트 클래스 이름을 통해 `@DisplayName` 값을 자동 생성할 수 있다.
+
+다음은 `@DisplayNameGeneration`에 `DisplayNameGenerator.ReplaceUnderscores.class`를 입력해 사용한 예제이다.
+
+```java
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@SuppressWarnings({"InnerClassMayBeStatic", "NonAsciiCharacters"})
+@DisplayName("ComplexNumber 클래스")
+class ComplexNumberKoTest {
+
+  @Nested
+  @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+  class of_메소드는 {
+    private final double givenReal = 3d;
+    private final double givenImagine = 3d;
+
+    @Nested
+    @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+    class 만약_실수값만_주어지고_허수값은_없다면 {
+      @Test
+      @DisplayName("i 값이 0 인 복소수를 리턴한다")
+      void i_값이_0_인_복소수를_리턴한다 () {
+        final ComplexNumber result = ComplexNumber.of(givenReal);
+
+        Assertions.assertEquals(result.getImagine(), 0d, "리턴된 복소수는 허수 값으로 0 을 갖는다");
+        Assertions.assertEquals(result.getReal(), givenReal, "리턴된 복소수는 실수 값으로 주어진 실수 값을 갖는다");
+      }
+    }
+  }
+}
+```
+
+이렇게 테스트를 작성하면 테스트 클래스 이름에서 `_` 를 제거한 문장을 테스트 설명문으로 만들어 준다. 실행 결과는 앞과 같다.
 
 ## 타 언어 테스트 프레임워크의 D-C-I 패턴
 
