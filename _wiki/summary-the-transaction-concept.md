@@ -3,7 +3,7 @@ layout  : wiki
 title   : (요약) The Transaction Concept - Virtues and Limitations by Jim Gray, June 1981
 summary : 짐 그레이의 트랜잭션 컨셉 요약
 date    : 2021-04-25 14:44:36 +0900
-updated : 2021-04-27 22:47:13 +0900
+updated : 2021-04-28 23:26:03 +0900
 tag     : jim-gray transaction
 toc     : true
 public  : false
@@ -436,6 +436,11 @@ old 값과 new 값은 객체의 완전한 복사본일 수 있지만, 일반적�
 Some actions need not generate log records. Actions on unprotected objects (e.g. writing on a scratch file), and actions which do not change the object state (e.g. reads of the object) need not generate log records.
 
 일부 작업은 로그 레코드를 생성할 필요가 없기도 하다. 예를 들어 보호되지 않는 객체에 대한 작업(스크래치 파일에 쓰기 등)이나 객체 상태를 변경하지 않는 작업(객체 읽기)과 같은 경우는 로그 레코드를 생성할 필요가 없다.
+
+![image]( /post-img/summary-the-transaction-concept/116418494-275e5400-a877-11eb-9d28-5fba54dde236.png )
+
+그림 4.  실제 작업(실행 취소할 수 없는 작업)은 커밋할 때까지 연기해야 한다. 로깅으로 이 방식을 구현하려면 지연 작업의 redo 로그를 적용하는 것을 커밋 완료 작업에 포함시킨다.
+
 
 ### LIMITATIONS OF KNOWN TECHNIQUES
 ### NESTED TRANSACTIONS
