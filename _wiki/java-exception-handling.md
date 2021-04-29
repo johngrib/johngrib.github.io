@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2021-04-24 18:26:07 +0900
+updated : 2021-04-29 23:13:12 +0900
 tag     : java
 toc     : true
 public  : true
@@ -95,7 +95,17 @@ Java Language Specification 11의 11.1.1. 절에 잘 나와 있다.
 >
 -- Thinking in Java(3판) 9장 397쪽
 
-&nbsp;
+- checked exception은 `throws` 절에 명시해주거나 `try`/`catch`로 잡아줘야 한다.
+
+>
+확인된 예외(checked exception)란 메서드 안에서 처리하지 않으면 반드시 메서드의 `throws` 절에 추가해야 하는 예외를 말한다.
+`throws` 절에는 `Throwable` 인터페이스를 구현하는 클래스라면 어떤 것이든 나열할 수 있지만,
+확인된 예외임에도 처리하지 않은 (`RuntimeException`이나 `Error` 클래스를 상속하지 않는) 예외는 반드시 나열해야 한다.
+이는 자바의 자체적인 언어 기능이지만, JVM은 이를 강제하지 않으며 JVM 언어에 대한 요구 사항도 아니다.
+>
+-- 자바 개발자를 위한 97가지 제안. 85장. 케블린 헤니(Kevlin Henny)
+
+다음 글도 읽어보자.
 
 >
 여러분도 알다시피 자바는 두 가지 종류의 예외를 지원한다.
@@ -412,9 +422,10 @@ public class RuntimeException extends Exception {
 
 - [Java Language Specification 11]( https://docs.oracle.com/javase/specs/jls/se11/html/jls-11.html )
 - Thinking in Java [3판] / Bruce Eckel 저 / 이용원 외 공역 / 대웅미디어 / 초판 1쇄 2003년 07월 26일
-- 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
-- 토비의 스프링 3.1 vol 1 / 이일민 저 / 에이콘출판사 / 초판 4쇄 2013년 06월 10일
 - 실전 자바 소프트웨어 개발 / 라울-게이브리얼 우르마, 리처드 워버턴 저/우정은 역 / 한빛미디어 / 초판 1쇄 2020년 06월 20일 / 원제 : Real-World Software Development
+- 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+- 자바 개발자를 위한 97가지 제안 / 케블린 헤니, 트리샤 지 저/장현희 역 / 제이펍 / 2020년 12월 24일 / 원서 : 97 Things Every Java Programmer Should Know
+- 토비의 스프링 3.1 vol 1 / 이일민 저 / 에이콘출판사 / 초판 4쇄 2013년 06월 10일
 
 ## 주석
 
