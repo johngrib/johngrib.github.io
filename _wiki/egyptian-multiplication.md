@@ -3,7 +3,7 @@ layout  : wiki
 title   : 고대 이집트 곱셈법
 summary : EGYPTIAN MULTIPLICATION
 date    : 2018-11-14 23:24:36 +0900
-updated : 2020-04-21 22:48:48 +0900
+updated : 2021-04-29 10:46:13 +0900
 tag     : 
 toc     : true
 public  : true
@@ -337,6 +337,6 @@ $$ \lfloor \log_2 n \rfloor + \nu(n) $$
 
 * 알고리즘 산책 수학에서 제네릭 프로그래밍까지 / 알렉산더 A. 스테파노프, 다니엘 E. 로즈 저/서환수 역 / 길벗 / 2018년 05월 30일
     * 2장 첫번째 알고리즘
-* The art of computer programming 2 준수치적 알고리즘(개정3판) 도널드 커누스 저 / 한빛미디어 / 2007년 09월 13일 / 원제 : THE ART OF COMPUTER PROGRAMMING VOL.2 3/E
+* The art of computer programming 2 준수치적 알고리즘(개정3판) / 도널드 커누스 저 / 한빛미디어 / 2007년 09월 13일 / 원제 : THE ART OF COMPUTER PROGRAMMING VOL.2 3/E
     * 4.6.3.
 

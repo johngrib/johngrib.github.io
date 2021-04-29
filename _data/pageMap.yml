@@ -1364,7 +1364,7 @@ egyptian-multiplication:
     summary: 'EGYPTIAN MULTIPLICATION'
     parent: algorithm
     url: /wiki/egyptian-multiplication
-    updated: '2020-04-21 22:48:48 +0900'
+    updated: '2021-04-29 10:46:13 +0900'
     children: []
 Elastic-Load-Balancing:
     type: wiki
