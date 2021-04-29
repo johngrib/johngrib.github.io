@@ -2460,7 +2460,7 @@ java-optional:
     summary: '작성중인 문서'
     parent: Java
     url: /wiki/java-optional
-    updated: '2020-05-17 21:36:54 +0900'
+    updated: '2021-04-29 23:36:21 +0900'
     children: []
 java-random:
     type: wiki

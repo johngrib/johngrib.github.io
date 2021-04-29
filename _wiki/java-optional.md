@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Optional
 summary : 작성중인 문서
 date    : 2020-01-08 22:31:47 +0900
-updated : 2020-05-17 21:36:54 +0900
+updated : 2021-04-29 23:36:21 +0900
 tag     : java
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 발단
+## Optional을 클래스 멤버로 사용하는 것이 좋은 선택인가?
 
 작업을 하다가 다음과 같은 형식의 클래스를 하나 보게 되었다.
 
@@ -34,7 +34,7 @@ public class FooBar {
 
 좋지 못한 느낌이 든다. 이게 과연 바람직한 코드인지 궁금해졌다.
 
-## Java SE 13 API 문서를 읽어보자
+### Java SE 13 API 문서를 읽어보자
 
 다음은 `Optional` 클래스의 주석이다.
 
@@ -78,7 +78,7 @@ public final class Optional<T> {
 
 > Optional은 주로 "결과 없음(no result)"을 나타낼 필요가 있고 null을 사용하면 오류가 발생할 수 있는 메소드의 **리턴 타입으로 사용하기 위한 것**입니다. 타입이 Optional 인 변수는 절대로 null이 아니어야 하며, 항상 Optional 인스턴스를 가리켜야(point) 합니다.
 
-## IntelliJ IDEA의 경고를 읽어보자
+### IntelliJ IDEA의 경고를 읽어보자
 
 IntelliJ에 문제의 코드를 입력해 보면 `private Optional`이 있는 모든 필드에 경고를 띄운다. 그리고 그내용은 다음과 같다.
 
@@ -93,7 +93,7 @@ Optional was designed to provide a limited mechanism for library method return t
 
 가급적이면 `return` 구문에서만 사용하라는 것 같다.
 
-## Modern Java in Action도 읽어보자
+### Modern Java in Action도 읽어보자
 
 팀 동료인 조우현 님이 "모던 자바 인 액션"의 11장을 권하셔서 읽어 보았다.
 
@@ -115,7 +115,7 @@ public class Person {
 
 모던 자바 인 액션의 저자는 "이와 같은 단점에도 불구하고 여전히 `Optional`을 사용해서 도메인 모델을 구성하는 것이 바람직하다고 생각한다"고 한다.
 
-## sonarsource rules를 읽어보자
+### sonarsource rules를 읽어보자
 
 sonarqube, sonarlint 등의 소스인 sonarsource에서는 Major code smell로 ["Optional" should not be used for parameters][rspec-3553]를 분류한다.
 
@@ -129,7 +129,7 @@ The rule also checks for Guava's Optional, as it was the inspiration for the JDK
 하지만 파라미터로 사용하는 경우에 대해서만 이야기하고, 필드에서 사용하는 것에 대한 이야기는 하지 않는다.
 
 
-## 다른 글들도 읽어보자
+### 다른 글들도 읽어보자
 
 [Java Optional 바르게 쓰기][homoefficio]
 
@@ -147,6 +147,23 @@ The rule also checks for Guava's Optional, as it was the inspiration for the JDK
 * `Optional` 사용시 피해야 할 패턴에 대해 설명한다.
 * 첫 번째 케이스가 `Optional`을 필드 값으로 사용하는 경우.
 
+## Optional.of 메소드에 대한 비판
+
+>
+API를 작게 유지하는 것도 쉽게 사용하게 하는 또 다른 방법이다.
+API가 작게 유지하면 배워야 할 개념과 유지보수 비용이 줄어든다.
+다시 말하지만 표준 자바 API에서도 이 간 단한 원리를 준수하지 않는 예를 쉽게 찾을 수 있다.
+`Optional`은 매개변수로 전달된 객 체를 `Optional` 객체로 래핑해서 리턴하는 정적 팩토리(static factory) 메서드 `of(object)`를 제공한다.
+생성자 대신 팩토리 메서드를 사용하는 것은 유연성을 크게 향상할 좋은 방법이다.
+팩토리 메서드로 서브클래스를 리턴하거나 매개변수가 잘못된 경우 `null`을 리턴하기도 한다.
+그런데 안타깝게도 `Optional.of` 메서드는 매개변수로 `null`을 전달하면 `NullPointerException`을 발생한다.
+`NullPointerException`의 발생을 최대한 방지하도록 디자인된 클래스로는 꽤 예상을 빗나가는 동작이다.
+예상을 크게 빗나가는 경우를 최소화해야 하는 원리(API를 디자인할 때 고려해야 할 또 다른 원리다)를 준수하지 않을 뿐만 아니라 매개변수에 `null`을 전달했을 때 빈 `Optional` 객체를 리턴하는 `ofNullable` 메서드라는 또 다른 메서드가 필요한 상황을 만들어버린 것이다.
+`of` 메서드 동작은 일관성이 없으며 제대로 구현했더라면 `ofNullable` 메서드는 굳이 필요하지 않았을 것이다.
+>
+-- 자바 개발자를 위한 97가지 제안. 55장. 마리오 푸스코(Mario Fusco)
+
+
 ## Links
 
 * [Java SE 13 Class Optional &lt;T&gt;][java-13-optional]
@@ -156,7 +173,8 @@ The rule also checks for Guava's Optional, as it was the inspiration for the JDK
 
 ## 참고문헌
 
-* 모던 자바 인 액션 / 라울-게이브리얼 우르마, 마리오 푸스코, 앨런 마이크로프트 저/우정은 역 / 한빛미디어 / 초판 1쇄 2019년 08월 01일 / 원제: Modern Java in Action
+- 모던 자바 인 액션 / 라울-게이브리얼 우르마, 마리오 푸스코, 앨런 마이크로프트 저/우정은 역 / 한빛미디어 / 초판 1쇄 2019년 08월 01일 / 원제: Modern Java in Action
+- 자바 개발자를 위한 97가지 제안 / 케블린 헤니, 트리샤 지 저/장현희 역 / 제이펍 / 2020년 12월 24일 / 원서 : 97 Things Every Java Programmer Should Know
 
 ## 주석
 
