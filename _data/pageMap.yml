@@ -2238,6 +2238,14 @@ index:
     url: /wiki/index
     updated: null
     children: []
+information-hiding:
+    type: wiki
+    title: '정보 은닉 (Information Hiding)'
+    summary: ""
+    parent: proverb
+    url: /wiki/information-hiding
+    updated: '2021-04-30 23:56:00 +0900'
+    children: []
 insertion-sort:
     type: wiki
     title: '삽입 정렬 (Insertion Sort)'
@@ -3389,7 +3397,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
-    children: [ACID, airplain-rule, amdahl-s-law, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, constantine-s-law, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hofstadter-s-law, hollywood-principle, imitation-game, kees-koster-good-programming-language, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, metcalfe-s-law, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, richardson-maturity-model, rule-of-3-and-10, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+    children: [ACID, airplain-rule, amdahl-s-law, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, constantine-s-law, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hofstadter-s-law, hollywood-principle, imitation-game, information-hiding, kees-koster-good-programming-language, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, metcalfe-s-law, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, richardson-maturity-model, rule-of-3-and-10, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
 purpose-of-business:
     type: wiki
     title: '비즈니스의 목적'

@@ -266,6 +266,7 @@ regenerate: true
 * [[hofstadter-s-law]]
 * [[hollywood-principle]]
 * [[imitation-game]]
+* [[information-hiding]]
 * [[kees-koster-good-programming-language]]
 * [[Kerckhoffs-s-principle]]
 * [[law-of-demeter]]

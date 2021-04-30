@@ -419,6 +419,7 @@ proverb:
     - {fileName: constantine-s-law}
     - {fileName: Conway-s-law}
     - {fileName: Edsel-edict}
+    - {fileName: information-hiding}
     - {fileName: kees-koster-good-programming-language}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
     - {fileName: Naming-Principle}
@@ -873,6 +874,14 @@ http:
     - {fileName: why-http-80-https-443}
 turing:
     - {fileName: imitation-game}
+oop:
+    - {fileName: information-hiding}
+    - {fileName: inversion-of-control}
+    - {fileName: law-of-demeter}
+    - {fileName: OOP-to-me-Alan-Kay}
+    - {fileName: SOLID}
+    - {fileName: summary-Data-Abstraction-and-Hierarchy}
+    - {fileName: uml}
 spring:
     - {fileName: inversion-of-control}
     - {fileName: spring}
@@ -884,13 +893,6 @@ spring:
     - {fileName: spring-bean-config-xml}
     - {fileName: spring-documents}
     - {fileName: spring-documents-overview}
-oop:
-    - {fileName: inversion-of-control}
-    - {fileName: law-of-demeter}
-    - {fileName: OOP-to-me-Alan-Kay}
-    - {fileName: SOLID}
-    - {fileName: summary-Data-Abstraction-and-Hierarchy}
-    - {fileName: uml}
 bsd:
     - {fileName: ioreg-cmd}
 james-gosling:
