@@ -134,6 +134,9 @@
     name: container
     size: 1
 -
+    name: conway-s-law
+    size: 1
+-
     name: cs
     size: 14
 -
@@ -363,7 +366,7 @@
     size: 1
 -
     name: law
-    size: 8
+    size: 9
 -
     name: legend
     size: 1
@@ -483,7 +486,7 @@
     size: 3
 -
     name: proverb
-    size: 10
+    size: 11
 -
     name: python
     size: 2

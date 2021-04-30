@@ -362,6 +362,7 @@ law:
     - {fileName: airplain-rule}
     - {fileName: amdahl-s-law}
     - {fileName: Brooks-s-law}
+    - {fileName: constantine-s-law}
     - {fileName: Conway-s-law}
     - {fileName: law-of-demeter}
     - {fileName: Lubarsky-s-Law-of-Cybernetic-Entomology}
@@ -415,6 +416,7 @@ performance:
     - {fileName: use-java-primitive-type-for-performance}
 proverb:
     - {fileName: amdahl-s-law}
+    - {fileName: constantine-s-law}
     - {fileName: Conway-s-law}
     - {fileName: Edsel-edict}
     - {fileName: kees-koster-good-programming-language}
@@ -570,6 +572,8 @@ php:
     - {fileName: email-validation}
     - {fileName: php}
     - {fileName: phpbrew}
+conway-s-law:
+    - {fileName: constantine-s-law}
 martin-fowler:
     - {fileName: continuous-integration}
 Think-Bayes:

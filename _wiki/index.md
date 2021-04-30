@@ -258,6 +258,7 @@ regenerate: true
 * [[Boy-Scout-Rule]]
 * [[Brooks-s-law]]
 * [[CAP-theorem]]
+* [[constantine-s-law]]{콘스탄틴의 법칙}
 * [[Conway-s-law]]
 * [[Copernican-Principle]]
 * [[dry-principle]]

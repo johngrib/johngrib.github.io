@@ -894,6 +894,14 @@ config-ideavim:
     url: /wiki/config-ideavim
     updated: '2020-03-28 23:50:00 +0900'
     children: []
+constantine-s-law:
+    type: wiki
+    title: '콘스탄틴의 법칙(Constantine''s law)'
+    summary: '구조는 응집력이 높고 결합도가 낮을 때 안정적이다'
+    parent: proverb
+    url: /wiki/constantine-s-law
+    updated: '2021-04-30 22:05:40 +0900'
+    children: []
 continuous-delivery:
     type: wiki
     title: 'Continuous Delivery (지속적 전달)'
@@ -3381,7 +3389,7 @@ proverb:
     parent: index
     url: /wiki/proverb
     updated: '2019-10-27 22:42:37 +0900'
-    children: [ACID, airplain-rule, amdahl-s-law, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hofstadter-s-law, hollywood-principle, imitation-game, kees-koster-good-programming-language, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, metcalfe-s-law, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, richardson-maturity-model, rule-of-3-and-10, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
+    children: [ACID, airplain-rule, amdahl-s-law, Boy-Scout-Rule, Brooks-s-law, CAP-theorem, constantine-s-law, Conway-s-law, Copernican-Principle, dry-principle, Edsel-edict, hofstadter-s-law, hollywood-principle, imitation-game, kees-koster-good-programming-language, Kerckhoffs-s-principle, law-of-demeter, linus-s-law, Lubarsky-s-Law-of-Cybernetic-Entomology, metcalfe-s-law, Naming-Principle, no-problem-syndrome, No-Silver-Bullet, OOP-to-me-Alan-Kay, orange-juice-test, oregon-swing, Postel-s-law, power-distance-index, richardson-maturity-model, rule-of-3-and-10, Schopenhauer-s-Law-Of-Entropy, SOLID, Tompson-s-rule-for-first-time-telescope-makers, Zipf-s-law]
 purpose-of-business:
     type: wiki
     title: '비즈니스의 목적'
