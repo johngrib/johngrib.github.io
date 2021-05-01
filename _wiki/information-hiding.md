@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정보 은닉 (Information Hiding)
 summary : 
 date    : 2021-04-30 23:50:07 +0900
-updated : 2021-04-30 23:56:00 +0900
+updated : 2021-05-01 21:00:32 +0900
 tag     : proverb oop
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## From: 마이크로서비스 도입, 이렇게 한다
+## From: 마이크로서비스 도입 이렇게 한다
 
 >
 결합도에 대한 논의와 관련해 여러 차례 반복해서 나오는 개념은 정보 은닉(Information Hiding)이라는 기법이다.
@@ -34,7 +34,7 @@ latex   : false
 >
 정보 은닉에 대한 역사를 깊숙이 파보고 싶다면, 파나스가 저술한 논문 "정보 은닉의 비밀스러운 역사 기록"을 추천한다.
 >
--- 마이크로서비스 도입, 이렇게 한다. 1장.
+-- 마이크로서비스 도입 이렇게 한다. 1장.
 
 ## 함께 읽기
 
@@ -44,5 +44,5 @@ latex   : false
 
 ## 참고문헌
 
-- 마이크로서비스 도입, 이렇게 한다 / 샘 뉴먼 저/박재호 역 / 책만 / 2021년 01월 20일 / 원서 : Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith
+- 마이크로서비스 도입 이렇게 한다 / 샘 뉴먼 저/박재호 역 / 책만 / 2021년 01월 20일 / 원서 : Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith
 

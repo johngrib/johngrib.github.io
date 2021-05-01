@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘스탄틴의 법칙(Constantine's law)
 summary : 구조는 응집력이 높고 결합도가 낮을 때 안정적이다
 date    : 2021-04-30 21:59:21 +0900
-updated : 2021-04-30 22:05:40 +0900
+updated : 2021-05-01 21:00:05 +0900
 tag     : proverb law conway-s-law
 toc     : true
 public  : true
@@ -33,7 +33,7 @@ A structure is stable if cohesion is strong and coupling is low.
 같은 해인 1968년과 그 이듬해인 1969년, 북대서양조약기구(NATO)가 후원하는 유명한 컨퍼런스가 열렸으며,
 여기서 (마가렛 H. 해밀턴이 이전에 만든 용어인) '소프트웨어 공학'이라는 개념이 두각을 드러냈다.
 >
--- 마이크로서비스 도입, 이렇게 한다. 1장.
+-- 마이크로서비스 도입 이렇게 한다. 1장.
 
 ## 함께 읽기
 
@@ -41,5 +41,5 @@ A structure is stable if cohesion is strong and coupling is low.
 
 ## 참고문헌
 
-- 마이크로서비스 도입, 이렇게 한다 / 샘 뉴먼 저/박재호 역 / 책만 / 2021년 01월 20일 / 원서 : Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith
+- 마이크로서비스 도입 이렇게 한다 / 샘 뉴먼 저/박재호 역 / 책만 / 2021년 01월 20일 / 원서 : Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith
 

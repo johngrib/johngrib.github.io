@@ -900,7 +900,7 @@ constantine-s-law:
     summary: '구조는 응집력이 높고 결합도가 낮을 때 안정적이다'
     parent: proverb
     url: /wiki/constantine-s-law
-    updated: '2021-04-30 22:05:40 +0900'
+    updated: '2021-05-01 21:00:05 +0900'
     children: []
 continuous-delivery:
     type: wiki
@@ -924,7 +924,7 @@ Conway-s-law:
     summary: '소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.'
     parent: proverb
     url: /wiki/Conway-s-law
-    updated: '2021-04-30 21:24:35 +0900'
+    updated: '2021-05-01 21:00:22 +0900'
     children: []
 cookie-problem:
     type: wiki
@@ -2244,7 +2244,7 @@ information-hiding:
     summary: ""
     parent: proverb
     url: /wiki/information-hiding
-    updated: '2021-04-30 23:56:00 +0900'
+    updated: '2021-05-01 21:00:32 +0900'
     children: []
 insertion-sort:
     type: wiki
