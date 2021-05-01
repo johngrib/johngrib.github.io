@@ -3,7 +3,7 @@ layout  : wiki
 title   : 교살자 패턴, 스트랭글러 패턴 (strangler pattern)
 summary : 레거시 시스템을 점진적으로 교체하여 레거시 시스템을 단계적으로 페이드아웃한다
 date    : 2020-01-18 07:50:57 +0900
-updated : 2021-05-01 20:54:57 +0900
+updated : 2021-05-01 20:59:06 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -58,10 +58,27 @@ This metaphor struck me as a way of describing a way of doing a rewrite of an im
 >
 -- 데브옵스 핸드북 / 13장 230쪽
 
+## From: 마이크로서비스 도입 이렇게 한다
+
+>
+시스템을 재작성할 때 자주 사용하는 기법을 [교살자 무화과(Strangler Fig) 애플리케이션](https:// martinfowler.com/bliki/StranglerFigApplication.html )이라고 한다.
+숙주 나무의 위쪽 가지에 씨앗을 뿌리는 무화과 나무를 보고 영감을 얻은 마틴 파울러가 처음으로 이 패턴을 떠올렸다.
+숙주 나무에 씨를 뿌린 무화과는 뿌리를 내리기 위해 땅으로 뻗으며 점차 숙주 나무를 감싸게 된다.
+기존 나무는 처음에는 새로운 무화과 나무의 지지대가 되다가 마지막 단계에 이르면 썩어서 죽어버리고, 그 자리에는 이제 스스로 생존이 가능해진 무화과 나무만 남게 된다.
+>
+소프트웨어 맥락에서 보면, 초기에 기존 시스템이 새로운 시스템을 지원하고, 새로운 시스템이 기존 시스템을 감싸는 형태로 병행된다.
+기존 시스템과 새로운 시스템이 공존할 수 있으므로, 새로운 시스템은 성장할 시간을 얻고, 잠재적으로 기존 시스템을 완전히 대체할 수 있게 된다.
+잠시 후 설명하겠지만, 이 패턴의 주요 장점은 새로운 시스템으로의 점진적인 마이그레이션을 허용한다는 우리의 목표를 뒷받침한다는 것이다.
+또한 지금까지 배포된 새로운 시스템을 계속 활용하면서 마이그레이션을 일시 중지하거나 심지어 중단할 능력도 우리에게 제공한다.
+>
+-- 마이크로서비스 도입 이렇게 한다 / 3장
+
+
 ## 참고문헌
 
-- 희망의 씨앗 / 제인 구달,게일 허드슨 저 / 사이언스북스 / 2014년 12월
 - 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+- 마이크로서비스 도입 이렇게 한다 / 샘 뉴먼 저/박재호 역 / 책만 / 2021년 01월 20일 / 원서 : Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith
+- 희망의 씨앗 / 제인 구달,게일 허드슨 저 / 사이언스북스 / 2014년 12월
 
 ## Links
 
