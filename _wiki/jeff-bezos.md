@@ -3,7 +3,7 @@ layout  : wiki
 title   : 제프 베조스(Jeff Bezos)
 summary : 
 date    : 2020-12-21 21:43:01 +0900
-updated : 2021-01-17 23:27:34 +0900
+updated : 2021-05-01 20:34:51 +0900
 tag     : people amazon start-up
 toc     : true
 public  : true
@@ -47,22 +47,20 @@ latex   : false
 나중에 나이가 들어 중요하게 생각할 일은 그런 것들이 아니지요.
 동시에, 인터넷이 세상을 바꿀 혁명적 사건임을 알면서도 여기에 뛰어들지 않는다면 정말 후회하게 될 것이라 믿었습니다.
 이러한 각도에서 생각해보니...... 결정을 내리기가 매우 쉬워졌어요."
-[^BRAD-1]
+>
+-- 아마존, 세상의 모든 것을 팝니다 / 챕터 1
 
 
 ## Links
 
 - [Photo of Jeff Bezos in 1999. Think about this the next time you think you can't do something great. (reddit.com)]( https://www.reddit.com/r/pics/comments/7p9n1j/photo_of_jeff_bezos_in_1999_think_about_this_the/ )
 
-[reddit-2018-01-10]: https://www.reddit.com/r/pics/comments/7p9n1j/photo_of_jeff_bezos_in_1999_think_about_this_the/
-[bezos-in-office]: /post-img/jeff-bezos/102778450-f015fd00-43d5-11eb-9356-6be763ba95a2.jpg
-[google-bezos-1999]: https://www.google.com/search?q=jeff+bezos+in+1999
 
 ## 참고문헌
 
-- [BRAD] 아마존, 세상의 모든 것을 팝니다 / 브래드 스톤 저 / 야나 마키에이라 역 / 21세기북스 / 2014년 03월 24일 / 원서 : The Everything Store
+- 아마존, 세상의 모든 것을 팝니다 / 브래드 스톤 저 / 야나 마키에이라 역 / 21세기북스 / 2014년 03월 24일 / 원서 : The Everything Store
 
-## 주석
 
-[^BRAD-1]: [BRAD] 챕터 1.
-
+[reddit-2018-01-10]: https://www.reddit.com/r/pics/comments/7p9n1j/photo_of_jeff_bezos_in_1999_think_about_this_the/
+[bezos-in-office]: /post-img/jeff-bezos/102778450-f015fd00-43d5-11eb-9356-6be763ba95a2.jpg
+[google-bezos-1999]: https://www.google.com/search?q=jeff+bezos+in+1999
