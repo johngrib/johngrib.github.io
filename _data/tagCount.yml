@@ -218,9 +218,6 @@
     name: float
     size: 1
 -
-    name: floating-point
-    size: 1
--
     name: font
     size: 1
 -
@@ -583,9 +580,6 @@
 -
     name: Think-Bayes
     size: 7
--
-    name: TIL
-    size: 1
 -
     name: til
     size: 2

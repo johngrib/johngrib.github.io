@@ -197,10 +197,6 @@ game:
     - {fileName: TETRIS-EFFECT}
 aheui:
     - {fileName: 2017-07-14-aheui-explained}
-TIL:
-    - {fileName: 2017-08-23-0.30000000000000004}
-floating-point:
-    - {fileName: 2017-08-23-0.30000000000000004}
 pattern:
     - {fileName: abstract-factory-pattern}
     - {fileName: adapter-pattern}

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Floating Point 부동소수점
 summary :
 date    : 2018-10-28 08:03:23 +0900
-updated : 2020-05-03 23:34:38 +0900
+updated : 2021-05-02 22:06:24 +0900
 tag     : binary
 toc     : true
 public  : true
@@ -517,6 +517,48 @@ The **roundTiesToEven** rounding-direction attribute shall be the default roundi
                                                                ^^^
 ```
 
+## 0.1 + 0.2 == 0.30000000000000004 문제
+
+python에서 `0.1`과 `0.2`를 더해보면 산수 상식과는 좀 다른 값이 나온다.
+
+```sh
+$ python
+Python 2.7.10
+>>> 0.1 + 0.2
+0.30000000000000004
+>>> 0.1 + 0.2 == 0.3
+False
+```
+
+물론 python만의 문제는 아니다.
+
+```sh
+$ node
+> 0.1 + 0.2
+0.30000000000000004
+> 0.1 + 0.2 === 0.3
+false
+```
+
+원인은 당연히 부동소수점 문제. 사용할 때 조심해야 한다.
+
+다만, [Perl6](https://perl6.org/ )처럼 이를 깔끔하게 해결한 것처럼 보이는 언어도 있다.
+
+```sh
+$ perl6
+> 0.1 + 0.2
+0.3
+> 0.1 + 0.2 == 0.3
+True
+```
+
+[https://0.30000000000000004.com](https://0.30000000000000004.com )에 가보면 프로그래밍 언어별로 `0.1 + 0.2` 연산을 수행했을 때의 결과가 잘 정리되어 있으니 참고하자.
+
+그리고 몇몇 언어들의 경우 어떤 방식으로 이 문제들을 처리하고 있는지에 대한 설명도 짤막하게 달려 있다.
+
+가령 Groovy는 소수점 리터럴 표현의 경우 `java.math.BigDecimal`로 처리를 하고 있으며,
+Perl6의 경우 실수 객체가 분자/분모 정보를 갖고 있다.
+
 ## Links
 
 * <https://www.google.co.kr/search?q=ieee+754-2008+filetype%3Apdf >
@@ -535,3 +577,4 @@ The **roundTiesToEven** rounding-direction attribute shall be the default roundi
 ## 참고문헌
 
 * [해커의 기쁨(제2판): 비트와 바이트 그리고 알고리즘](http://jpub.tistory.com/326 )
+

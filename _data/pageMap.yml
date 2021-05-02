@@ -198,14 +198,6 @@
     url: /blog/2017/07/14/aheui-explained
     updated: '2017-07-14 23:00:17 +0900'
     children: []
-2017-08-23-0.30000000000000004:
-    type: blog
-    title: '0.1 + 0.2 == 0.30000000000000004'
-    summary: '자나깨나 부동소수점 조심'
-    parent: null
-    url: /blog/2017/08/23/0.30000000000000004
-    updated: '2017-08-23 18:15:32 +0900'
-    children: []
 abbr:
     type: wiki
     title: '약어 모음'
@@ -1660,7 +1652,7 @@ floating-point:
     summary: null
     parent: what
     url: /wiki/floating-point
-    updated: '2020-05-03 23:34:38 +0900'
+    updated: '2021-05-02 22:06:24 +0900'
     children: []
 fortune-cmd:
     type: wiki
