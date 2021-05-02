@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC, Inversion of Control
 summary : Inversion of Control, Dependency Injection
 date    : 2019-08-30 22:39:18 +0900
-updated : 2020-05-24 14:36:23 +0900
+updated : 2021-05-02 23:25:28 +0900
 tag     : spring oop
 toc     : true
 public  : true
@@ -293,6 +293,8 @@ ApplicationContext는 관리하는 Bean에 대해 생성자 기반 및 설정자
 
 >
 The Spring team generally advocates constructor injection,
+>
+-- [Constructor-based or setter-based DI?]( https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-setter-injection )
 
 Spring 팀은 생성자 주입 쪽을 선호한다고 한다. 그 이유는 다음과 같다.
 

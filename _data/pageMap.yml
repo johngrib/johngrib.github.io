@@ -2268,7 +2268,7 @@ inversion-of-control:
     summary: 'Inversion of Control, Dependency Injection'
     parent: programming
     url: /wiki/inversion-of-control
-    updated: '2020-05-24 14:36:23 +0900'
+    updated: '2021-05-02 23:25:28 +0900'
     children: []
 ioreg-cmd:
     type: wiki
