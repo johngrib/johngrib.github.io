@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-03-02 22:07:49 +0900
+updated : 2021-05-07 21:33:00 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,12 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## import * 방지하기
+
+`import`한 클래스들이 `import *`로 자동으로 변경되는 것이 싫다면 다음과 같이 설정하면 된다.
+
+`Preferences` - `Editor` - `Code Style` - `Java` - `Imports` - `General` 에서 `Use single class import`를 체크해준다.
 
 ## 짜증나는 Reader mode 해제하기
 
