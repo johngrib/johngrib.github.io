@@ -2260,7 +2260,7 @@ intellij:
     summary: '문제 해결한 경험을 모아본다'
     parent: tools
     url: /wiki/intellij
-    updated: '2021-05-07 21:33:00 +0900'
+    updated: '2021-05-11 21:29:19 +0900'
     children: []
 inversion-of-control:
     type: wiki
