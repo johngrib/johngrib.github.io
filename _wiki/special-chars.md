@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2020-05-30 08:17:07 +0900
+updated : 2021-05-16 12:24:54 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -21,7 +21,39 @@ latex   : true
 * 이 문서는 검색과 커뮤니케이션을 위한 것이므로 가능한 한 외래어와 한국어 표현을 함께 표시한다.
 * 프로그래밍 언어와 관련된 설명이 필요한 경우, 내가 사용해본 적이 있는 언어인 C, Java, Scala, Perl, JavaScript, PHP 위주로 작성한다.
 
-* 이 문서는 [RFC 20의 Standard Code 표](https://tools.ietf.org/html/rfc20#section-2 )의 문자들 중 몇몇 특수문자를 다룬다.
+## 용어 설명
+
+* C escape : C 언어 이스케이핑.
+
+* Caret notation : `^`와 알파벳 대문자, 몇몇 특수문자를 사용하는 표기법.
+
+    * control 키의 조합 표기법으로도 쓰인다.
+        * 가령 `^C` 라면 control 키와 `c` 키를 동시에 누르는 것을 의미한다.
+        * `^H`나 `^J`, `^I` 등등은 터미널에서도 그대로 쓸 수 있다. 순서대로 백스페이스, 엔터, 탭으로 작동한다.
+
+    * `^C`를 그냥 `컨트롤 씨`라고 읽어도 무방하다. `^`를 강조해 읽고 싶다면 `카렛 씨`로 읽으면 된다.
+
+
+### 눈에 보이지 않는 문자와 Vim notation
+
+* Vim notation : Vim의 key notation을 말한다. `:help keycodes`로 볼 수 있다.
+* 눈에 보이지 않는 문자 : Null이나, Backspace 등의 문자는 MS워드와 같은 대중적인 편집기 상에서는 눈으로 확인할 수 없다.
+
+### 참고: Vim에서는 눈에 보이지 않는 문자를 보이게 하는 방법이 있다
+
+* INSERT 모드에서 `^V`를 입력한 다음, 눈에 보이지 않는 문자를 입력하면 Caret notation으로 나타난다.
+
+    * 예: `^V` 입력 후 `Esc`키를 누르면 `^[`가 표시된다.
+    * 예: `^V` 입력 후 `Enter`키를 누르면 `^M`이 표시된다.
+
+* 전부는 아님. Vim notation으로 나타나는 문자도 있다.
+
+    * 예: `^V` 입력 후 `Backspace`키를 누르면 `<BS>`로 나타난다.
+    * 예: `^V` 입력 후 `^H`키를 누르면 `^H`로 나타난다.
+
+## RFC 20 Standard Code
+
+* [RFC 20의 Standard Code 표](https://tools.ietf.org/html/rfc20#section-2 )의 문자들.
 
 ```
 |----------------------------------------------------------------------|
@@ -66,37 +98,7 @@ latex   : true
 +----------------------+-----------------------------------------------+
 ```
 
-## 용어 설명
-
-* C escape : C 언어 이스케이핑.
-
-* Caret notation : `^`와 알파벳 대문자, 몇몇 특수문자를 사용하는 표기법.
-
-    * control 키의 조합 표기법으로도 쓰인다.
-        * 가령 `^C` 라면 control 키와 `c` 키를 동시에 누르는 것을 의미한다.
-        * `^H`나 `^J`, `^I` 등등은 터미널에서도 그대로 쓸 수 있다. 순서대로 백스페이스, 엔터, 탭으로 작동한다.
-
-    * `^C`를 그냥 `컨트롤 씨`라고 읽어도 무방하다. `^`를 강조해 읽고 싶다면 `카렛 씨`로 읽으면 된다.
-
-
-### 눈에 보이지 않는 문자와 Vim notation
-
-* Vim notation : Vim의 key notation을 말한다. `:help keycodes`로 볼 수 있다.
-* 눈에 보이지 않는 문자 : Null이나, Backspace 등의 문자는 MS워드와 같은 대중적인 편집기 상에서는 눈으로 확인할 수 없다.
-
-### 참고: Vim에서는 눈에 보이지 않는 문자를 보이게 하는 방법이 있다
-
-* INSERT 모드에서 `^V`를 입력한 다음, 눈에 보이지 않는 문자를 입력하면 Caret notation으로 나타난다.
-
-    * 예: `^V` 입력 후 `Esc`키를 누르면 `^[`가 표시된다.
-    * 예: `^V` 입력 후 `Enter`키를 누르면 `^M`이 표시된다.
-
-* 전부는 아님. Vim notation으로 나타나는 문자도 있다.
-
-    * 예: `^V` 입력 후 `Backspace`키를 누르면 `<BS>`로 나타난다.
-    * 예: `^V` 입력 후 `^H`키를 누르면 `^H`로 나타난다.
-
-## Null
+### Null
 
 * 눈에 보이지 않는 문자.
 * 여러 프로그래밍 언어에서 값이나 레퍼런스 등이 없음을 표시하는 용도로 Null을 사용한다.
@@ -119,7 +121,7 @@ latex   : true
 * [fileformat.info/info/unicode/char/00](http://www.fileformat.info/info/unicode/char/00 )
 * [Null character(wikipedia)](https://en.wikipedia.org/wiki/Null_character )
 
-### C 언어 문자열
+#### C 언어 문자열
 
 C 언어에서 `\0`은 문자열의 마지막을 표시하는 용도로도 사용한다.
 
@@ -140,7 +142,7 @@ char name[10] = "foo bar";
 ---------------------------------------
 ```
 
-## End of Text
+### End of Text
 
 * 눈에 보이지 않는 문자.
 * `^C`로 입력 가능하다. 터미널에서는 현재 실행중인 작업을 중지하는 데 사용한다.
@@ -162,7 +164,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * INSERT 모드에서 백그라운드로 돌아가는 플러그인 사용시 주의.
 
 
-## Backspace
+### Backspace
 
 * 눈에 보이지 않는 문자.
 * 왼쪽 화살표키 처럼 생긴, 왼쪽 글자를 지우는 키
@@ -181,7 +183,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [fileformat.info/info/unicode/char/08](http://www.fileformat.info/info/unicode/char/08 )
 * [Backspace(wikipedia)](https://en.wikipedia.org/wiki/Backspace )
 
-## Tab
+### Tab
 
 * 보통 캡스락 키 위에 있는 키.
 * 타자기에서 표를 작성/정렬을 편하게 하기 위해 발명됐다. 입력할 때마다 캐리지가 다음 탭 스탑으로 이동하는 방식.
@@ -205,7 +207,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [fileformat.info/info/unicode/char/09](http://www.fileformat.info/info/unicode/char/09 )
 * [Tab_key(wikipedia)](https://en.wikipedia.org/wiki/Tab_key#Tab_characters )
 
-### Tab vs Space
+#### Tab vs Space
 
 인덴팅(들여쓰기)에 탭과 스페이스 중 어느 것을 쓰는지는 Vi vs Emacs와 더불어 holy war로 일컬어지곤 한다.
 
@@ -216,7 +218,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [탭 vs 스페이스(google)](https://www.google.co.kr/search?q=탭+vs+스페이스 )
 * [Github Top Starred repositories를 분석해서 탭과 스페이스 사용률을 정리한 곳](https://ukupat.github.io/tabs-or-spaces/)
 
-## Line Feed
+### Line Feed
 
 * 다음 줄을 말한다.
 * 터미널에선 `^J`로 엔터 키 처럼 쓸 수도 있다. 이걸 쓰다 보면 엔터 키가 멀게 느껴진다.
@@ -236,7 +238,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [Newline(wikipedia)](https://en.wikipedia.org/wiki/Newline )
 * [새줄 문자(wikipedia)](https://ko.wikipedia.org/wiki/%EC%83%88%EC%A4%84_%EB%AC%B8%EC%9E%90 )
 
-## Carriage Return
+### Carriage Return
 
 * 옛날 키보드엔 `Enter`가 없고 `Return` 키가 있는 모델이 흔했는데, 그 `Return`이란 단어가 여기에서 온 것이다.
 * 엔터 키에 새겨진 &#x21b5; 기호가 CR을 뜻한다.
@@ -256,7 +258,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [fileformat.info/info/unicode/char/0D](http://www.fileformat.info/info/unicode/char/0D )
 * [Carriage return(wikipedia)](https://en.wikipedia.org/wiki/Carriage_return )
 
-### CR, LF
+#### CR, LF
 
 * LF는 옛날 타자기에서 종이를 한 줄 위로 올리는 것을 뜻했다.
 * CR은 옛날 타자기에서 타자기 헤드를 가장 왼쪽으로 옮겨, 헤드가 첫 번째 컬럼에 위치하도록 하는 것을 뜻했다.
@@ -281,7 +283,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 - [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1]( https://www.rfc-editor.org/rfc/rfc2616.html )
 
 
-## Form Feed
+### Form Feed
 
 * '용지먹임'이라고도 한다. (프린터에 새로운 종이를 집어넣고) 출력 위치를 가장 왼쪽 가장 위쪽으로 옮기는 것.
 * `^L`은 터미널에서 사용하면 화면을 깨끗하게 비우는 `clear` 명령처럼 작동한다. MS-DOS 라면 `cls`.
@@ -301,7 +303,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [Page break(wikipedia)](https://en.wikipedia.org/wiki/Page_break#Form_feed )
 
 
-## Escape
+### Escape
 
 * 눈에 보이지 않는 문자.
 * 터미널에선 키보드 왼쪽 위에 있는 `Esc` 키로 입력할 수 있다.
@@ -324,7 +326,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [fileformat.info/info/unicode/char/1B](http://www.fileformat.info/info/unicode/char/1B )
 * [Escape character(wikipedia)](https://en.wikipedia.org/wiki/Escape_character#ASCII_escape_character )
 
-## Delete
+### Delete
 
 * 문자를 삭제한다.
 * MS-Windows에서는 `Control` + `Alt` + `Delete` 키 조합으로 작업관리자를 호출할 수 있다.
@@ -339,7 +341,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [fileformat.info/info/unicode/char/7F](http://www.fileformat.info/info/unicode/char/7F )
 * [Delete_character(wikipedia)](https://en.wikipedia.org/wiki/Delete_character )
 
-## `!` Exclamation mark
+### `!` Exclamation mark
 
 * 다수의 프로그래밍 언어에서 논리 부정을 의미한다. 따라서 `not` 으로 읽기도 한다. 가령, `!=` 는 `not equal`로 읽는다.
 * `bang`이라고 읽는 경우가 종종 있다. 가령 `#!`은 [구글에서 hash bang으로 검색](https://www.google.co.kr/search?q=hash+bang)해 찾을 수 있다.
@@ -357,7 +359,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [fileformat.info/info/unicode/char/21](http://www.fileformat.info/info/unicode/char/21 )
 * [Exclamation mark(wikipedia)](https://en.wikipedia.org/wiki/Exclamation_mark )
 
-## `"` Quotation mark
+### `"` Quotation mark
 
 * 한국어 정식 명칭은 '큰따옴표'.
 * 정식 명칭은 아니지만 '쌍따옴표'라고도 한다.
@@ -376,7 +378,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [Quotation mark(wikipedia)](https://en.wikipedia.org/wiki/Quotation_mark )
 * [큰따옴표(국립국어원)](http://korean.go.kr/front/page/pageView.do?page_id=P000199&mn_id=30 )
 
-## `#` Number sign
+### `#` Number sign
 
 * 넘버 사인. 가령 `#42`는 42번, 42번째 등을 의미한다.
 * 한국에서 '샵', '우물정' 이라 부르면 못 알아듣는 사람은 거의 없을 것이다.
@@ -401,7 +403,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [Unicode Han Character 'well, mine shaft, pit' (U+4E95)(fileformat.info)](http://www.fileformat.info/info/unicode/char/4e95/index.htm ) - 한자: 우물 정
 * [Hashtag(wikipedia)](https://en.wikipedia.org/wiki/Hashtag#cite_ref-17 )
 
-### `#`을 사용한 문자열 보간(interpolation)
+#### `#`을 사용한 문자열 보간(interpolation)
 
 Ruby와 CoffeeScript 언어의 보간(interpolation)은 `$`가 아니라 `#`을 쓴다.
 
@@ -411,14 +413,14 @@ Ruby와 CoffeeScript 언어의 보간(interpolation)은 `$`가 아니라 `#`을 
 
 * [www.rubyist.net/~slagell/ruby/strings.html](http://www.rubyist.net/~slagell/ruby/strings.html )
 
-### C 언어 프리프로세서 명령어의 prefix
+#### C 언어 프리프로세서 명령어의 prefix
 
 C 언어의 전처리기 명령어가 `#`으로 시작한다.
 
 * `#define`, `#include`, `#if`, `#elif`, `#else`, `#endif`, `#ifdef`, `#ifndef`
 
 
-## `$` Dollar sign
+### `$` Dollar sign
 
 * 달러 사인. 주로 화폐의 단위로 사용한다.
 * Perl에선 Scala 변수명의 prefix로 사용한다.
@@ -436,7 +438,7 @@ C 언어의 전처리기 명령어가 `#`으로 시작한다.
 * [fileformat.info/info/unicode/char/23](http://www.fileformat.info/info/unicode/char/23 )
 * [Dollar_sign(wikipedia)](https://en.wikipedia.org/wiki/Dollar_sign )
 
-### `$`를 사용한 문자열 보간(interpolation)
+#### `$`를 사용한 문자열 보간(interpolation)
 
 문자열에 포함된 변수명을 평가해 replace하는 기능. 대표적인 언어로 Perl이 있다.
 
@@ -450,7 +452,7 @@ JavaScript의 경우, 쌍따옴표가 아니라 ``` `` ```을 쓴다.
 
 * [String_interpolation(wikipedia)](https://en.wikipedia.org/wiki/String_interpolation )
 
-### PHP의 해괴한 가변 변수
+#### PHP의 해괴한 가변 변수
 
 * PHP에는 변수 prefix인 `$`를 연달아 사용해서 가변 변수를 사용할 수 있다.
 * PHP 해석기가 어떤 방식으로 작동하는지 미루어 추측할 수 있는 <del>버그...</del> 기능이다.
@@ -474,7 +476,7 @@ $$$$$$$a;   // "World"
 
 * [PHP 가변 변수](https://secure.php.net/manual/kr/language.variables.variable.php)
 
-## `%` Percent sign
+### `%` Percent sign
 
 * 퍼센트 기호. 백분율 기호라고도 한다.
     * percent는 나눗셈을 의미하는 'per'와 100을 의미하는 'cent'를 합친 말이다. 즉 `나누기 100`을 말한다.
@@ -493,7 +495,7 @@ $$$$$$$a;   // "World"
 * [Percent_sign(wikipedia)](https://en.wikipedia.org/wiki/Percent_sign )
 * [pro centum(구글 번역)](https://translate.google.co.kr/?hl=ko#la/en/pro%20centum )
 
-### 다양한 프로그래밍 언어에서의 사용
+#### 다양한 프로그래밍 언어에서의 사용
 
 * 여러 프로그래밍 언어에서 나머지를 계산하는 연산자로 사용한다. 이런 경우는 모드(mod)로 읽곤 한다.
 * `%`를 최초로 나머지 연산자로 사용한 프로그래밍 언어는 B인 것으로 보인다.
@@ -512,7 +514,7 @@ $$$$$$$a;   // "World"
     * 예를 들어 '가'는 `EAB080` 이므로, `%EA%B0%80`이 된다('가'는 한글이라 3byte).
     * Vim에서는 특정 문자의 UTF-8 hex 값을 확인하기 쉽다. 문자 위에 커서를 놓고 `g8`을 입력하면 된다.
 
-## `&` Ampersand
+### `&` Ampersand
 
 * 라틴어 'et'의 필기체 모양을 딴 기호. 라틴어 'et'의 뜻은 'and'.
 * C에서 address, C++와 PHP에서 reference로 사용한다.
@@ -533,7 +535,7 @@ $$$$$$$a;   // "World"
 * [fileformat.info/info/unicode/char/26](http://www.fileformat.info/info/unicode/char/26 )
 * [Ampersand(wikipedia)](https://en.wikipedia.org/wiki/Ampersand )
 
-## `'` Apostrophe
+### `'` Apostrophe
 
 * 인용 부호. 어퍼스트로피.
 * 키보드의 세미콜론`;` 옆에 있는 키를 누르면 입력된다.
@@ -552,7 +554,7 @@ $$$$$$$a;   // "World"
 * [fileformat.info/info/unicode/char/27](http://www.fileformat.info/info/unicode/char/27 )
 * [Apostrophe(wikipedia)](https://en.wikipedia.org/wiki/Apostrophe )
 
-## `(` `)` Parenthesis
+### `(` `)` Parenthesis
 
 * 괄호.
 * 여러 프로그래밍 언어에서 함수 호출 연산자로 사용된다.
@@ -573,7 +575,7 @@ $$$$$$$a;   // "World"
 * [fileformat.info/info/unicode/char/29](http://www.fileformat.info/info/unicode/char/29 )
 * [Bracket(wikipedia)](https://en.wikipedia.org/wiki/Bracket#Parentheses )
 
-## `*` Asterisk
+### `*` Asterisk
 
 * 별. 기원은 별을 의미하는 상형 문자.
 * C 언어의 포인터 변수를 선언할 때 사용한다.
@@ -595,7 +597,7 @@ $$$$$$$a;   // "World"
 * [fileformat.info/info/unicode/char/2A](http://www.fileformat.info/info/unicode/char/2A )
 * [Asterisk(wikipedia)](https://en.wikipedia.org/wiki/Asterisk )
 
-## `+` Plus sign
+### `+` Plus sign
 
 * 더하기 기호.
 * 여러 프로그래밍 언어에서 덧셈의 의미로 사용한다.
@@ -613,7 +615,7 @@ $$$$$$$a;   // "World"
 * [fileformat.info/info/unicode/char/2B](http://www.fileformat.info/info/unicode/char/2B )
 * [Plus sign(wikipedia)](https://en.wikipedia.org/wiki/Plus_sign )
 
-## `,` Comma
+### `,` Comma
 
 * 쉼표.
 * 일반적으로 배열이나 리스트의 여러 원소를 구분할 때 사용한다.
@@ -630,7 +632,7 @@ $$$$$$$a;   // "World"
 * [fileformat.info/info/unicode/char/2C](http://www.fileformat.info/info/unicode/char/2C )
 * [Comma(wikipedia)](https://en.wikipedia.org/wiki/Comma )
 
-## `-` Hyphen minus
+### `-` Hyphen minus
 
 * 마이너스 기호. 음수를 표현할 때에도 사용된다.
 * Vim에서 입력하면 커서가 위로 한 줄 올라간다.
@@ -650,7 +652,7 @@ $$$$$$$a;   // "World"
 * [Hyphen-minus(wikipedia)](https://en.wikipedia.org/wiki/- )
 * [Plus and minus signs(wikipedia)](https://en.wikipedia.org/wiki/Plus_and_minus_signs)
 
-## `.` Full stop
+### `.` Full stop
 
 * 마침표.
 * 정규 표현식에서는 모든 문자를 의미한다.
@@ -673,7 +675,7 @@ $$$$$$$a;   // "World"
 * [fileformat.info/info/unicode/char/2E](http://www.fileformat.info/info/unicode/char/2E )
 * [Full stop(wikipedia)](https://en.wikipedia.org/wiki/Full_stop)
 
-## `/` Solidus
+### `/` Solidus
 
 * 슬래시, 나눗셈 기호.
 * Unix 계열에서는 파일 경로 구분자로 사용한다. 윈도우즈에서는 `\`을 사용한다.
@@ -696,7 +698,7 @@ $$$$$$$a;   // "World"
 * [Slash(wikipedia)](https://en.wikipedia.org/wiki/Slash_(punctuation) )
 * [sed manual](https://www.gnu.org/software/sed/manual/sed.html)
 
-## `:` Colon
+### `:` Colon
 
 * 콜론.
 * 여러 프로그래밍 언어에서 삼항연산자(`?:`)로 사용한다.
@@ -717,7 +719,7 @@ $$$$$$$a;   // "World"
 * [Colon(wikipedia)](https://en.wikipedia.org/wiki/Colon_(punctuation) )
 * [?:(wikipedia)](https://en.wikipedia.org/wiki/%3F:)
 
-### Kotlin, Scala의 타입 생략
+#### Kotlin, Scala의 타입 생략
 
 * Scala, Kotlin 언어에서는 C 계열 언어들과는 달리 타입명을 변수명 뒤에 쓰는데, 이 때 구분자로 `:`을 쓴다.
 * 타입을 뒤에 쓰는 이유는 변수 선언시에 타입을 생략하고 싶으면 `:`부터 `=` 전까지를 생략할 수 있기 때문이다.
@@ -733,7 +735,7 @@ val hello : String = "hello, world"
 // 이 코드는 스칼라에서도 돌아가고 코틀린에서도 돌아간다!
 val hello = "hello, world"
 ```
-## `;` Semicolon
+### `;` Semicolon
 
 * 세미콜론.
 * 수많은 프로그래밍 언어에서 코드 라인의 끝을 인터프리터나 컴파일러에게 알려주기 위해 사용한다.
@@ -750,7 +752,7 @@ val hello = "hello, world"
 * [fileformat.info/info/unicode/char/3B](http://www.fileformat.info/info/unicode/char/3B )
 * [Semicolon(wikipedia)](https://en.wikipedia.org/wiki/Semicolon )
 
-## `<` `>` Less than sign, greater than sign
+### `<` `>` Less than sign, greater than sign
 
 * 부등호. 꺽쇠라고 부르기도 한다.
 * [홑화살괄호](http://korean.go.kr/front/page/pageView.do?page_id=P000205&mn_id=30)와는 다른 문자다.
@@ -774,7 +776,7 @@ val hello = "hello, world"
 * [Less-than sign(wikipedia)](https://en.wikipedia.org/wiki/Less-than_sign )
 * [Greater-than_sign(wikipedia)](https://en.wikipedia.org/wiki/Greater-than_sign )
 
-## `=` Equals sign
+### `=` Equals sign
 
 * 이퀄스, 등호, 같다.
 * 1557년 무렵에 만들어진 기호이다.
@@ -792,7 +794,7 @@ val hello = "hello, world"
 * [fileformat.info/info/unicode/char/3D](http://www.fileformat.info/info/unicode/char/3D )
 * [Equals_sign(wikipedia)](https://en.wikipedia.org/wiki/Equals_sign )
 
-### 등호의 기원
+#### 등호의 기원
 
 이언 스튜어트의 [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]{세계를 바꾼 17가지 방정식} 머리말에서 발췌.
 
@@ -810,7 +812,7 @@ val hello = "hello, world"
 등호는 450년이라는 오랜 세월 동안 사용되었다.
 
 
-### Perl 언어의 `=`가 포함된 연산자
+#### Perl 언어의 `=`가 포함된 연산자
 
 Perl에는 `=`가 포함된 다양한 연산자가 있다.  
 다른 언어에도 많지만, Perl은 다른 언어에 없는 연산자가 몇 개 더 있다.
@@ -824,7 +826,7 @@ Perl에는 `=`가 포함된 다양한 연산자가 있다.
 * `<=>` - 크기 비교 연산자. 이 연산자는 `-1`, `0`, `1` 중 하나를 리턴한다. `3 <=> 4`의 결과는 `-1`.
 * `=~` - 정규식 패턴과 매치되는지를 비교한다. `if ($text =~ /^test$/) { }`와 같이 사용.
 
-## `?` Question mark
+### `?` Question mark
 
 * 물음표.
 * 에스파냐어(스페인어)에서는 위아래를 뒤집은 물음표를 문장 앞에 붙여, 의문문이 시작된다는 것을 읽는 사람에게 알린다.
@@ -850,7 +852,7 @@ Perl에는 `=`가 포함된 다양한 연산자가 있다.
 * [Question_mark(wikipedia)](https://en.wikipedia.org/wiki/Question_mark )
 * [Elvis_operator(wikipedia)](https://en.wikipedia.org/wiki/Elvis_operator)
 
-## `@` Commercial at
+### `@` Commercial at
 
 * 앳, 골뱅이.
 * 이메일 주소에 사용한다.
@@ -871,7 +873,7 @@ Perl에는 `=`가 포함된 다양한 연산자가 있다.
 * [fileformat.info/info/unicode/char/40](http://www.fileformat.info/info/unicode/char/40 )
 * [At_sign(wikipedia)](https://en.wikipedia.org/wiki/At_sign )
 
-## `[` `]` Square bracket
+### `[` `]` Square bracket
 
 * 대괄호.
 * 다수의 프로그래밍 언어에서 배열 인덱스를 표현할 때 사용한다.
@@ -888,7 +890,7 @@ Perl에는 `=`가 포함된 다양한 연산자가 있다.
 * [fileformat.info/info/unicode/char/5D](http://www.fileformat.info/info/unicode/char/5D )
 * [Box brackets or square brackets(wikipedia)](https://en.wikipedia.org/wiki/Bracket#Box_brackets_or_square_brackets_.5B_.5D )
 
-### C 언어 배열
+#### C 언어 배열
 
 배열 인덱스로 대괄호를 사용하는 언어로 가장 유명한 것은 C일 것이다.
 
@@ -909,7 +911,7 @@ int a[10];
 Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * 그러나 `*(a-1)`을 의미하는 것은 아니고, 마지막 인덱스를 사용하기 편하도록 배열 문법에 설탕을 뿌린 것이다.
 
-### 구간(interval) 표기법
+#### 구간(interval) 표기법
 
 숫자의 목록이나 범위를 표현할 때 구간 표기법을 사용하면, 길이나 마지막 인덱스 등을 편리하게 표현할 수 있다.
 
@@ -918,7 +920,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * `(0, 10]` $$1 \lt x \le 10$$ 이다. 정수의 목록이라면 1부터 10까지의 목록이다. 10개의 원소가 있다. 0은 포함되지 않는다.
 * `(0, 10)` $$1 \lt x \lt 10$$ 이다. 정수의 목록이라면 1부터 9까지의 목록이다. 원소는 9개이며, 0과 10은 포함되지 않는다.
 
-## `\` Reverse solidus
+### `\` Reverse solidus
 
 * 역슬래시.
 * 다수의 프로그래밍 언어에서 문자열 이스케이핑에 사용한다.
@@ -938,7 +940,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * [Backslash(wikipedia)](https://en.wikipedia.org/wiki/Backslash )
 
 
-## `^` Circumflex accent
+### `^` Circumflex accent
 
 * 카렛. 캐럿.
 * 한국어 위키백과에는 "곡절 부호"라고 하는데, 이렇게 읽는 사람을 본 적이 없다.
@@ -961,7 +963,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * [fileformat.info/info/unicode/char/5E](http://www.fileformat.info/info/unicode/char/5E )
 * [Circumflex(wikipedia)](https://en.wikipedia.org/wiki/Circumflex )
 
-## `_` Low line
+### `_` Low line
 
 * 언더바, 언더스코어.
 * [snake_case 스타일로 띄어쓰기를 표기](https://en.wikipedia.org/wiki/Snake_case)할 때 사용한다.
@@ -979,7 +981,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * [fileformat.info/info/unicode/char/5F](http://www.fileformat.info/info/unicode/char/5F )
 * [Underscore(wikipedia)](https://en.wikipedia.org/wiki/Underscore )
 
-## ``` ` ``` Grave accent
+### ``` ` ``` Grave accent
 
 * 억음 부호.
 * 키보드 오른쪽의 외따옴표 `'`와는 다른 글자이다. ``` ` ```는 키보드 제일 왼쪽, Tab키 위에 있다.
@@ -996,7 +998,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * [fileformat.info/info/unicode/char/60](http://www.fileformat.info/info/unicode/char/60 )
 * [Grave_accent(wikipedia)](https://en.wikipedia.org/wiki/Grave_accent )
 
-## `{` `}` Curly bracket
+### `{` `}` Curly bracket
 
 * 중괄호.
 * 다수의 프로그래밍 언어에서 코드 블록을 지정하는 데에 사용한다.
@@ -1016,7 +1018,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * [Curly brackets or braces(wikipedia)](https://en.wikipedia.org/wiki/Bracket#Curly_brackets_or_braces_.7B_.7D )
 
 
-## `|` Vertical line
+### `|` Vertical line
 
 * 정규표현식에서 or의 의미로 사용한다.
 * 다수의 프로그래밍 언어에서 비트 or 연산자로 사용한다.
@@ -1033,7 +1035,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * [Vertical_bar(wikipedia)](https://en.wikipedia.org/wiki/Vertical_bar )
 
 
-## `~` Tilde
+### `~` Tilde
 
 * 다수의 프로그래밍 언어에서 비트 not 연산자로 사용한다.
 * Unix에서 Home 디렉토리를 의미한다.
@@ -1054,6 +1056,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * [fileformat.info/info/unicode/char/7E](http://www.fileformat.info/info/unicode/char/7E )
 * [Tilde(wikipedia)](https://en.wikipedia.org/wiki/Tilde )
 * [Using wildcard characters in searches (support.office.com)](https://support.office.com/en-us/article/using-wildcard-characters-in-searches-ef94362e-9999-4350-ad74-4d2371110adb )
+
 
 ## Links
 
