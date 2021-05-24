@@ -163,6 +163,7 @@ regenerate: true
 ## [[programming]]
 
 * [[inversion-of-control]]
+* [[n-version-programming]]
 
 ## [[programming-language]]{프로그래밍 언어}
 
