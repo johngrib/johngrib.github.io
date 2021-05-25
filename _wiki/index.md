@@ -196,6 +196,7 @@ regenerate: true
 ### [[Java]]
 
 * [[java-abstract-class]]
+* [[java-abstract-method]]
 * [[java-enhancements]]
 * [[java-enum]]
 * [[java-exception-handling]]

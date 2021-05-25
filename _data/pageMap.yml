@@ -2309,7 +2309,7 @@ Java:
     parent: programming-language
     url: /wiki/Java
     updated: '2018-03-05 16:14:12 +0900'
-    children: [java-abstract-class, java-enhancements, java-enum, java-exception-handling, java-functional-interface, java-inner-class-may-be-static, java-interface, java-javadoc, java-jigsaw-quick-start, java-lambda, java-mockito, java-modifier-order-with-jls-suggestion, java-optional, java-random, java-remainder-operator, java-stream, java-switch-expression, java-TemporalAdjusters, java-util-arraylist, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, ternary-operator-and-null-pointer-exception, use-java-primitive-type-for-performance]
+    children: [java-abstract-class, java-abstract-method, java-enhancements, java-enum, java-exception-handling, java-functional-interface, java-inner-class-may-be-static, java-interface, java-javadoc, java-jigsaw-quick-start, java-lambda, java-mockito, java-modifier-order-with-jls-suggestion, java-optional, java-random, java-remainder-operator, java-stream, java-switch-expression, java-TemporalAdjusters, java-util-arraylist, java10-var, java8, java8-performance-improvement-for-hashmap, java8-why-permgen-removed, jdk13, jvm, Object-equals, Object-hashCode, Object-toString, private-constructor, ternary-operator-and-null-pointer-exception, use-java-primitive-type-for-performance]
 java_home:
     type: wiki
     title: 'java_home 명령어'
@@ -2325,6 +2325,14 @@ java-abstract-class:
     parent: Java
     url: /wiki/java-abstract-class
     updated: '2021-02-20 10:19:41 +0900'
+    children: []
+java-abstract-method:
+    type: wiki
+    title: 'Java Abstract Methods'
+    summary: '자바 추상 메소드'
+    parent: Java
+    url: /wiki/java-abstract-method
+    updated: '2021-05-25 23:44:21 +0900'
     children: []
 java-enhancements:
     type: wiki

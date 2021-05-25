@@ -615,6 +615,7 @@ java:
     - {fileName: Java}
     - {fileName: java_home}
     - {fileName: java-abstract-class}
+    - {fileName: java-abstract-method}
     - {fileName: java-enhancements}
     - {fileName: java-enum}
     - {fileName: java-exception-handling}
