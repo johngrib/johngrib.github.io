@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC, Inversion of Control
 summary : Inversion of Control, Dependency Injection
 date    : 2019-08-30 22:39:18 +0900
-updated : 2021-05-02 23:25:28 +0900
+updated : 2021-05-26 23:32:35 +0900
 tag     : spring oop
 toc     : true
 public  : true
@@ -292,9 +292,22 @@ ApplicationContext는 관리하는 Bean에 대해 생성자 기반 및 설정자
 ### 생성자 기반 DI와 세터 기반 DI 중 어떤 것을 사용해야 할까?
 
 >
-The Spring team generally advocates constructor injection,
+**Constructor-based or setter-based DI?**
+>
+Since you can mix constructor-based and setter-based DI, it is a good rule of thumb to use constructors for mandatory dependencies and setter methods or configuration methods for optional dependencies. Note that use of the [@Required][at-required] annotation on a setter method can be used to make the property be a required dependency; however, constructor injection with programmatic validation of arguments is preferable.
+>
+The Spring team generally advocates constructor injection, as it lets you implement application components as immutable objects and ensures that required dependencies are not null. Furthermore, constructor-injected components are always returned to the client (calling) code in a fully initialized state. As a side note, a large number of constructor arguments is a bad code smell, implying that the class likely has too many responsibilities and should be refactored to better address proper separation of concerns.
+>
+Setter injection should primarily only be used for optional dependencies that can be assigned reasonable default values within the class. Otherwise, not-null checks must be performed everywhere the code uses the dependency. One benefit of setter injection is that setter methods make objects of that class amenable to reconfiguration or re-injection later. Management through [JMX MBeans][jmx-mbeans] is therefore a compelling use case for setter injection.
+>
+Use the DI style that makes the most sense for a particular class. Sometimes, when dealing with third-party classes for which you do not have the source, the choice is made for you. For example, if a third-party class does not expose any setter methods, then constructor injection may be the only available form of DI.
 >
 -- [Constructor-based or setter-based DI?]( https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-setter-injection )
+
+여기에서 두 번째 문단을 주목하자.
+
+>
+The Spring team generally advocates constructor injection,
 
 Spring 팀은 생성자 주입 쪽을 선호한다고 한다. 그 이유는 다음과 같다.
 
@@ -382,3 +395,6 @@ DI는 오브젝트 레퍼런스를 외부로부터 제공(주입)받고 이를 �
 [doc-beanfactory]: https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/beans/factory/BeanFactory.html
 [doc-beanf]: https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#beans-beanfactory
 [doc-application-context]: https://docs.spring.io/spring-framework/docs/5.1.9.RELEASE/javadoc-api/org/springframework/context/ApplicationContext.html
+[at-required]: https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-required-annotation
+[jmx-mbeans]: https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html#jmx
+
