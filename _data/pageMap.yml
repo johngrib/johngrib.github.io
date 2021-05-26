@@ -2332,7 +2332,7 @@ java-abstract-method:
     summary: '자바 추상 메소드'
     parent: Java
     url: /wiki/java-abstract-method
-    updated: '2021-05-25 23:44:21 +0900'
+    updated: '2021-05-26 19:53:38 +0900'
     children: []
 java-enhancements:
     type: wiki
