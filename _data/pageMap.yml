@@ -2324,7 +2324,7 @@ java-abstract-class:
     summary: '자바 추상 클래스'
     parent: Java
     url: /wiki/java-abstract-class
-    updated: '2021-02-20 10:19:41 +0900'
+    updated: '2021-05-28 15:59:17 +0900'
     children: []
 java-abstract-method:
     type: wiki
