@@ -1,1 +1,1 @@
-{"fileName":"tip","collection":{"private-constructor":{"type":"wiki","title":"Java에서 객체가 생성되는 것을 막는 방법","summary":"private 생성자를 선언한다","parent":"Java","url":"/wiki/private-constructor","updated":"2018-03-05 16:17:51 +0900","children":[]}}}
+{"fileName":"tip","collection":{"private-constructor":{"type":"wiki","title":"private 생성자 사용","summary":"특정 생성자 호출을 방지한다","parent":"Java","url":"/wiki/private-constructor","updated":"2021-05-28 13:59:40 +0900","children":[]}}}
