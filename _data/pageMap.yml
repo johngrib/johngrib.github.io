@@ -4037,7 +4037,7 @@ summary:
     parent: index
     url: /wiki/summary
     updated: '2019-10-15 17:52:45 +0900'
-    children: [REST-paper-summary, summary-Data-Abstraction-and-Hierarchy, summary-inside-the-mind-of-a-master-procrastinator-tim-urban, summary-ldh-get-partnership, summary-the-mind-behind-linux, summary-The-Pauseless-GC-Algorithm]
+    children: [REST-paper-summary, summary-Data-Abstraction-and-Hierarchy, summary-inside-the-mind-of-a-master-procrastinator-tim-urban, summary-ldh-get-partnership, summary-the-mind-behind-linux, summary-The-Pauseless-GC-Algorithm, summary-the-transaction-concept]
 summary-Data-Abstraction-and-Hierarchy:
     type: wiki
     title: '(요약) Data Abstraction and Hierarchy by Barbara Liskov 1988'
@@ -4077,6 +4077,14 @@ summary-The-Pauseless-GC-Algorithm:
     parent: summary
     url: /wiki/summary-The-Pauseless-GC-Algorithm
     updated: '2019-10-16 12:05:42 +0900'
+    children: []
+summary-the-transaction-concept:
+    type: wiki
+    title: '(요약) The Transaction Concept - Virtues and Limitations by Jim Gray, June 1981'
+    summary: '짐 그레이의 트랜잭션 컨셉 요약'
+    parent: summary
+    url: /wiki/summary-the-transaction-concept
+    updated: '2021-05-30 23:53:12 +0900'
     children: []
 sw_vers-cmd:
     type: wiki

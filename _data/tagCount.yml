@@ -335,6 +335,9 @@
     name: jetBrains
     size: 1
 -
+    name: jim-gray
+    size: 1
+-
     name: jls
     size: 1
 -
@@ -606,7 +609,7 @@
     size: 3
 -
     name: transaction
-    size: 1
+    size: 2
 -
     name: transistor
     size: 1
