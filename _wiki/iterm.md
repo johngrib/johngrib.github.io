@@ -3,7 +3,7 @@ layout  : wiki
 title   : iTerm2
 summary : 문제 해결 및 설정 경험을 모아본다
 date    : 2020-03-23 11:35:51 +0900
-updated : 2020-05-12 22:00:11 +0900
+updated : 2021-06-01 08:44:04 +0900
 tag     : mac
 toc     : true
 public  : true
@@ -20,7 +20,26 @@ latex   : false
 brew cask install iterm2
 ```
 
-## 내가 좋아하는 설정들
+## 내가 선호하는 설정들
+
+### 한글 텍스트 자소 분리 방지하기
+
+한글이 포함된 이름을 가진 파일이 다음과 같이 자소가 분리되어 보이는 경우가 있다.
+
+![image]( /post-img/iterm/120248953-26747400-c2b4-11eb-9968-7d361204278c.png )
+
+이는 유니코드 정규화 기준이 적절하지 않게 선택되었기 때문일 수 있다.
+
+`Preferences` - `Profiles` - `Text` - `Unicode`에서 `Unicode normalization form`을 `NFC`나 `HFS+`로 설정하면 된다.
+
+그러면 다음과 같이 한글이 조합된 형태로 돌아온다.
+
+![image]( /post-img/iterm/120249035-76ebd180-c2b4-11eb-9c09-8e2976f466e4.png )
+
+- 함께 읽기
+    - [HFS 플러스(위키백과)]( https://ko.wikipedia.org/wiki/HFS_플러스 ) 
+    - [유니코드 등가성]( https://ko.wikipedia.org/wiki/유니코드_등가성 )
+
 ### 단축키로 iterm을 부르기
 
 `Preferences` - `Keys` - `HotKey` - `Show/hide all windows with a system-wide hotkey` 에서 설정할 수 있다.
