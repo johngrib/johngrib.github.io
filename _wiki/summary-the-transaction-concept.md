@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) The Transaction Concept - Virtues and Limitations by Jim Gray, June 1981
 summary : 짐 그레이의 트랜잭션 컨셉 요약
 date    : 2021-04-25 14:44:36 +0900
-updated : 2021-05-30 23:55:40 +0900
+updated : 2021-06-01 00:10:13 +0900
 tag     : jim-gray transaction
 toc     : true
 public  : true
@@ -751,12 +751,264 @@ Dave Reed는 모든 잠금 및 로깅 트릭이 시간 도메인 주소 지정�
 이 주장이 사실이라면, 두 방식 모두 트랜잭션 개념의 실행 가능한 구현이다.
 
 ### LIMITATIONS OF KNOWN TECHNIQUES
+
+**알려진 기법들의 한계점들**
+
+>
+The transaction concept was adopted to ease the programming of certain applications. Indeed, the transaction concept is very effective in areas such as airline reservations, electronic funds transfer or car rental. But each of these applications has simple transactions of short duration. I see the following difficulties with current transaction models:
+1. Transactions cannot be nested inside transactions.
+2. Transactions are assumed to last minutes rather than weeks.
+3. Transactions are not unified with programming language. 
+
+트랜잭션 개념은 특정 애플리케이션의 프로그래밍을 쉽게 하기 위해서 채택된 것이다.
+
+실제로 트랜잭션 개념은 항공편 예약, 전자적 자금 이체, 또는 자동차 렌탈과 같은 영역에서 매우 효과적이다.
+이러한 애플리케이션들은 모두 짧은 시간 단위의 간단한 트랜잭션을 갖는다.
+
+트랜잭션 모델에는 다음과 같은 어려운 점들이 있다.
+
+1. 트랜잭션은 트랜잭션 내부에 중첩될 수 없다.
+2. 트랜잭션은 몇 주(weeks) 단위가 아니라 몇 분 단위로 간주된다.
+3. 트랜잭션은 프로그래밍 언어와 통합되지 않는다.
+
+
 ### NESTED TRANSACTIONS
+
+**중첩된 트랜잭션**
+
+>
+Consider implementing a travel agent system.  A transaction in such a system consists of:
+1. Customer calls the travel agent giving destination and travel dates.
+2. Agent negotiates with airlines for flights.
+3. Agent negotiates with car rental companies for cars.
+4. Agent negotiates with hotels for rooms.
+5. Agent receives tickets and reservations.
+6. Agent gives customer tickets and gets credit card number.
+7. Agent bills credit card.
+8. Customer uses tickets.
+>
+Not infrequently, the customer cancels the trip and the agent must undo the transaction.
+
+여행사 시스템을 구현한다고 생각해 보자. 이 시스템의 트랜잭션은 다음 사항들로 구성될 것이다.
+1. 고객이 여행사 에이전트에 전화해서 여행 목적지와 여행 날짜를 이야기한다.
+2. 에이전트는 항공편에 대해 항공사와 협상한다.
+3. 에이전트는 렌터카에 대해 자동차 렌탈 회사와 협상한다.
+4. 에이전트는 객실에 대해 호텔 직원과 협협상한다.
+5. 에이전트가 각 티켓과 각 예약을 수령한다.
+6. 에이전트는 고객에게 신용 카드 번호를 받고, 고객에게 티켓들을 넘겨준다.
+7. 에이전트는 신용 카드로 청구한다.
+8. 고객은 티켓을 사용한다.
+
+만약 고객이 여행을 취소하면 상담원도 거래(transaction)를 취소해야 한다.
+
+>
+The transaction concept as described thus far crumbles under this example. Each interaction with other organizations is a transaction with that organization. It is an atomic, consistent, durable transformation. The agent cannot unilaterally abort an interaction after it completes, rather the agent must run a compensating transaction to reverse the previous transaction (e.g., cancel reservation). The customer thinks of this whole scenario as a single transaction. The agent views the fine structure of the scenario, treating each step as an action. The airlines and hotels see only individual actions but view them as transactions. This example makes it clear that actions may be transactions at the next lower level of abstraction. 
+
+지금까지 설명해왔던 트랜잭션 개념은 이 예제에서 무너진다.
+다른 조직과의 각각의 상호작용(interaction)은 해당 조직과의 트랜잭션이라 할 수 있다.
+이는 원자적이고(atomic), 일관성이 있고(consistent), 지속적인(durable) 변환이다.
+
+에이전트는 어떤 상호작용이 완료된 후에는 해당 상호작용을 일방적으로 중단할 수 없다.
+어쩔 수 없이 에이전트는 보상 트랜잭션을 실행하는 방식으로 이전 트랜잭션을 되돌려야 한다(예: 예약 취소).
+
+한편, 고객은 이 전체 시나리오를 하나의 거래로만 생각하고 있다.
+
+에이전트는 시나리오의 세부 사항을 알고 있으며, 각각의 단계를 해야 할 행동으로 취급한다.
+
+항공사와 호텔의 경우는 개별적인 액션만 알고 있지만, 그 액션을 트랜잭션으로 생각한다.
+
+이 여행사 예제는 어떤 작업들은 낮은 수준의 추상화 레벨에서 트랜잭션이 될 수 있다는 점을 보여준다.
+
+>
+An approach to this problem that seems to offer some help is to view a transaction as a collection of:
+- Actions on unprotected objects.
+- Protected actions which may be undone or redone.
+- Real actions which may be deferred but not undone.
+- Nested transactions which may be undone by invoking compensating transaction.
+
+트랜잭션을 다음 항목들의 집합으로 보는 것은 이 문제에 대해 도움이 될만한 접근 방식이라 할 수 있다.
+- Unprotected 객체에 대한 작업.
+- 실행 취소하거나 재시도 가능한 Protected 작업.
+- 연기할 수 있지만 취소할 수는 없는 Real 작업.
+- 보상 트랜잭션을 호출하는 방식으로 작업을 되돌릴 수 있는 중첩 트랜잭션.
+
+>
+Nested transactions differ from protected actions because their effects are visible to the outside world prior to the commit of the parent transaction. 
+
+중첩된 트랜잭션은 protected 작업과는 다른 것인데, 부모 트랜잭션이 커밋되기 전에 그 효과가 외부세계에 표시되기 때문이다.
+
+>
+When a nested transaction is run, it returns as a side effect the name and parameters of the compensating transaction for the nested transaction. This information is kept in a log of the parent transaction and is invoked if the parent is undone. This log needs to be user-visible (part of the database) so that the user and application can know what has been done and what needs to be done or undone. In most applications, a transaction already has a compensating transaction so generating the compensating transaction (either coding it or invoking it) is not a major programming burden. If all else fails, the compensating transaction might just send a human the message “Help, I can’t handle this”. 
+
+중첩된 트랜잭션이 실행되면, 중첩된 트랜잭션에 대한 보상 트랜잭션의 이름과 매개 변수가 사이드 이펙트를 통해 반환된다.
+이 정보는 상위 트랜잭션의 로그에 보관되며, 상위 트랜잭션이 실행 취소될 때 호출된다.
+이 로그는 데이터베이스의 일부로서 사용자가 볼 수 있어야 하며, 이를 통해 사용자와 애플리케이션은 어떤 작업이 완료되었고 어떤 작업이 완료/취소되어야 하는지를 알 수 있어야 한다.
+
+대부분의 애플리케이션에서의 트랜잭션은 이미 보상 트랜잭션 기능이 같이 있을 것이므로 보상 트랜잭션을 생성(코딩하거나 호출하거나)하는 것은 그리 대단한 프로그래밍적인 부담은 아니다.
+
+만약 모든 방법이 실패하게 되었을 때 담당자에게 "도와주세요. 이거 어떻게 처리해야 할지 모르겠어요."라는 메시지를 보내는 것도 보상 트랜잭션이라 할 수 있다.
+
+>
+This may not seem very satisfying, but it is better than the entirely manual process that is in common use today. At least in this proposal, the recovery system keeps track of what the transaction has done and what must be done to undo it.
+
+이건 그닥 만족스러운 방법은 아니지만, 오늘날 일반적으로 사용되는 완전한 수동 프로세스보다는 낫다.
+적어도 이 제안에서 복구 시스템은 트랜잭션이 수행한 작업과, 이 작업을 실행 취소하기 위해 수행해야 하는 작업을 추적하며 보관하고 있기 때문이다.
+
+>
+At present, application programmers implement such applications using a technique called a “scratchpad” (in IMS) and a “transaction work area” in CICS. The application programmer keeps the transaction state (his own log) as a record in the database. Each time the transaction becomes active, it reads its scratchpad. This re-establishes the transaction state. The transaction either advances and inserts the new scratchpad in the database or aborts and uses the scratchpad as a log of things to undo. In this instance, the application programmer is implementing nested transactions. It is a general facility that should be included in the host transaction management system.
+
+오늘날의 애플리케이션 프로그래머들은 "scratchpad"(in IMS)와 "transaction work area"라고 부르는 기술들을 사용해서 이러한 애플리케이션을 구현한다.
+
+일단, 애플리케이션 프로그래머는 트랜잭션 상태(자신의 로그)를 데이터베이스에 기록으로 남긴다.
+그리고 트랜잭션이 활성화될 때마다 스크래치 패드를 읽는데, 이렇게 하면 트랜잭션 상태가 다시 설정된다.
+트랜잭션은 데이터베이스에 새 스크래치 패드를 진행/삽입/중단하는데, 스크래치 패드를 실행 취소할 작업의 로그로 사용하기 때문이다.
+이 방식을 통해 애플리케이션 프로그래머는 중첩 트랜잭션을 구현할 수 있는데, 이는 호스트 트랜잭션 관리 시스템에 포함되어야 하는 일반적인 기능이다.
+
+>
+Some argue that nested transactions are not transactions.
+They do have some of the transaction properties:
+- Consistent transformation of the state.
+- Either all actions commit or are undone by compensation.
+- Once committed, cannot be undone. 
+>
+They use the BEGIN, COMMIT and ABORT verbs. But they do not have the property of atomicity. Others can see the uncommitted updates of nested transactions. These updates may subsequently be undone by compensation. 
+
+트랜잭션의 다음 속성들을 이유로 중첩 트랜잭션이 트랜잭션이 아니라는 의견도 있다.
+- 상태의 일관성 있는 변형.
+- 모든 액션은 커밋되거나 보상을 통해 취소된다.
+- 일단 커밋되면 취소할 수 없다.
+
+중첩 트랜잭션들은 `BEGIN`, `COMMIT`, `ABORT`라는 동사를 사용하지만, 원자성을 갖고 있지 않은 것이다.
+그리고 누군가가 중첩 트랜잭션의 커밋되지 않은 업데이트를 보는 것도 가능하다.
+물론 이런 업데이트는 보상 트랜잭션을 통해 취소될 수 있다.
+
 ### LONG-LIVED TRANSACTIONS
+
+**장기간 지속되는 트랜잭션**
+
+>
+A second problem with the travel agent example is that transactions are suddenly long-lived. At present, the largest airlines and banks have about 10,000 terminals and about 100 active transactions at any instant. These transactions live for a second or two and are gone forever. Now suppose that transactions with lifetimes of a few days or weeks appear. This is not uncommon in applications such as travel, insurance, government, and electronic mail. There will be thousands of concurrent transactions. At least in database applications, the frequency of deadlock goes up with the square of the multiprogramming level and the fourth power of the transaction size [Gray3]. You might think this is a good argument against locking and for time-domain addressing, but time-domain addressing has the same problem. 
+
+여행사 예제의 두 번째 문제는 트랜잭션이 갑자기 오래 걸리게 될 수도 있다는 것이다.
+
+현재 가장 큰 규모의 항공사나 은행들은 약 10,000 개의 터미널과 약 100 개의 활성화된 트랜잭션을 순간순간 처리하고 있다.
+이러한 트랜잭션들은 해봐야 1~2초 정도 지속될 뿐이다.
+
+그런데 라이프타임이 며칠이나 몇 주나 되는 트랜잭션이 나타났다고 생각해 보자.
+이런 트랜잭션은 수천개의 동시 트랜잭션이 발생할 수 있는 여행, 보험, 정부기관, 전자 우편과 같은 애플리케이션에서는 드문 일이 아니다.
+
+데이터베이스 애플리케이션에서 데드락의 빈도는 멀티 프로그래밍 수준의 제곱과 트랜잭션 크기의 4제곱에 비례하여 증가한다.
+
+이것이 잠금 방식을 반대하고 시간 도메인 주소 지정을 지지할만한 좋은 주장이라고 생각할 수 있겠지만, 시간 도메인 주소 지정에도 동일한 문제가 있다.
+
+>
+Again, the solution I see to this problem is to accept a lower degree of consistency [Gray2] so that only “active” transactions (ones currently in the process of making changes to the database) hold locks. “Sleeping” transactions (travel arrangements not currently making any updates) will not hold any locks. This will mean that the updates of uncommitted transactions are visible to other transactions. This in turn means that the UNDO and REDO operations of one transaction will have to commute with the DO operations of others. (i.e. if transaction T1 updates entity E and then T2 updates entity E and then T1 aborts, the update of T2 should not be undone). If some object is only manipulated with additions and subtractions, and if the log records the delta rather than the old and new value, then UNDO and REDO, may be made to commute with DO. IMS Fast Path uses the fact that plus and minus commute to reduce lock contention. No one knows how far this trick can be generalized. 
+
+다시 말하지만, 나는 이 문제에 대한 해결책은 "Active" 트랜잭션(현재 데이터베이스를 변경하고 있는 트랜잭션)만 잠금을 유지하도록 낮은 수준의 일관성을 허용하는 것이라 생각한다.
+
+그리고 "Sleeping" 트랜잭션(현재 업데이트가 없는 여행 준비)은 잠금을 유지하지 않는다.
+
+이는 커밋되지 않은 트랜잭션의 업데이트가 다른 트랜잭션에 드러나게 된다는 것을 의미한다.
+
+이것은 한 트랜잭션의 `UNDO` 및 `REDO` 작업이 다른 트랜잭션의 DO 작업과 교환될 수 있어야 한다는 것을 의미한다.
+
+(가령 트랜잭션 T1 이 엔티티 E를 업데이트를 마친 다음, T2가 엔티티 E를 업데이트했다고 하자. 그리고 이 때 T1이 취소된다면, T2의 업데이트는 취소할 수 없어야 한다.)
+
+만약 일부 객체가 덧셈과 뺄셈으로만 변경되고,
+로그가 이전 값과 새로운 값이 아니라 델타 값을 기록하고 있다면,
+`UNDO`와 `REDO`가 `DO`와 교환되도록 만들 수 있다.
+
+IMS Fast Path는 덧셈 및 뺄셈 교환을 통해 잠금 경합을 줄이는데, 이 트릭이 얼마나 일반화될 수 있는지는 아무도 모른다.
+
+>
+A minor problem with long-running transactions is that current systems tend to abort them at system restart. When only 100 transactions are active and people are waiting at terminals to resubmit them, this is conceivable (but not nice). When 10,000 transactions are lost at system restart, then the old approach of discarding them all at restart is inconceivable. Active transactions may be salvaged across system restarts by using transaction save points: a transaction declares a save point and the transaction (program and data) is reset to its most recent save point in the event of a system restart. 
+
+장기 실행 트랜잭션의 사소한 문제 하나는 시스템이 재시작될 때 트랜잭션을 중단하는 경향이 있다는 것이다.
+
+만약 100개의 트랜잭션이 활성화되어 있는데, 사람들이 그 트랜잭션들을 다시 등록하기 위해 터미널 앞에서 줄을 서서 기다리고 있는 상황도 생각해볼 수는 있다(그러나 좋은 상황은 아니군요).
+
+시스템을 재시작할 때 10,000 개의 트랜잭션이 손실된다고 생각해 보면, 재시작할 때 트랜잭션을 모두 버리는 예전 방법은 고려할 수 없다.
+
+활성 트랜잭션은 트랜잭션 세이브 포인트를 사용하여 시스템 재시작시 복구할 수 있다. 트랜잭션은 세이브 포인트를 선언하고, 시스템이 재시작되면 트랜잭션(프로그램과 데이터)은 가장 최근의 세이브 포인트로 재설정되는 것이다.
+
+
+
 ### INTEGRATION WITH PROGRAMMING LANGUAGES
+
+**프로그래밍 언어와의 통합**
+
+>
+How should the transaction concept be reflected in programming languages? The proposal I favor is providing the verbs BEGIN, SAVE, COMMIT and ABORT. Whenever a new object type and its operations are defined, the protected operations on that type must generate undo and redo log records as well as acquiring locks if the object is shared. The type manager must provide UNDO and REDO procedures which will accept the log records and reconstruct the old and new version of object. If the operation is real, then the operation must be deferred and the log manager must invoke the type manager to actually do the operation at commit time. If the operation is a nested transaction, the operation must put the name of the compensating transaction and the input to the compensating transaction in the undo log. In addition, the type manager must participate in system checkpoint and restart or have some other approach to handling system failures and media failures. 
+
+트랜잭션 개념은 프로그래밍 언어에 어떻게 반영되어야 할까?
+내가 제안하고 싶은 방법은 `BEGIN`, `SAVE`, `COMMIT`, `ABORT`라는 동사들을 지원하는 것이다.
+
+새로운 객체 유형과 그 객체에 대한 작업이 정의될 때마다, 그 객체에 대한 protected 작업은 undo와 redo 로그 레코드를 생성하고, 객체가 공유된 상태라면 잠금을 획득해야 한다.
+
+타입 관리자는 로그 레코드를 허용하고 이전 버전과 새 버전의 객체를 재구성할 수 있는 `UNDO`, `REDO` 프로시저를 반드시 제공해야 한다.
+
+만약 작업이 real 이라면 작업을 연기해야 하고, 로그 관리자는 커밋 시간에만 실제 작업을 수행하기 위해 타입 관리자를 호출해야 한다.
+
+만약 중첩된 트랜잭션인 경우, 작업은 보상 트랜잭션의 이름과 보상 트랜잭션에 주어지는 입력을 undo 로그에 넣어야 한다.
+
+또한, 타입 관리자는 시스템 체크포인트와 재시작에 참여해야 한다. 그렇지 않으면 시스템 오류나 미디어 오류를 처리하는 다른 기법을 갖고 있어야 한다.
+
+>
+I’m not sure that this idea will work in the general case and whether the concept of transaction does actually generalize to non-EDP areas of programming. The performance of logging may be prohibitive. However, the transaction concept has been very convenient in the database area and may be applicable to some parts of programming beyond conventional transaction processing. Brian Randell and his group at Newcastle have a proposal in this area [Randell]. The artificial intelligence languages such as Interlisp support backtracking and an UNDO-REDO facility. Barbara Liskov has been exploring the idea of adding transactions to the language Clu and may well discover a new approach.
+
+이 아이디어가 일반적인 경우에 효과가 있을지, 그리고 트랜잭션 개념이 실제로 non-EDP 프로그래밍 영역으로 일반화되는지는 확실하지 않다. 로깅에 필요한 성능이 엄청날 수 있기 때문이다.
+
+그러나 트랜잭션 개념은 데이터베이스 영역에서 매우 편리하여, 평범한 기존의 트랜잭션 처리를 넘어서는 기능이 필요한 프로그래밍의 일부 영역에 적용될 수 있다.
+
+Brian Randell과 그의 그룹은 이 분야에 대해 제안을 한 바 있다.
+
+그리고 Interlisp와 같은 인공지능 언어는 백트랙킹과 UNDO-REDO 기능을 지원한다.
+
+Barbara Liskov는 Clu 언어에 트랜잭션을 추가하는 아이디어를 연구하고 있으며, 이 연구에서 새로운 접근방식을 발견할 수 있다.
+
+
 ### SUMMARY
+
+>
+Transactions are not a new idea; they go back thousands of years. The idea of a transformation being consistent, atomic and durable is simple and convenient. Many implementation techniques are known and we have practical experience with most of them. However, our concept of transaction and the implementation techniques we have are inadequate to the task of many applications. They cannot handle nested transactions, long-lived transactions and they may not fit well into conventional programming systems. 
+
+트랜잭션은 새로운 종류의 아이디어가 아니며, 그 역사는 수천년 전으로 거슬러 올라갈 수 있다.
+
+변경에 대한 일관성, 원자성, 지속성이라는 아이디어는 간단하고 편리하다.
+
+이에 대해 수많은 구현 기술이 알려져 있으며, 우리들은 이 기법들을 실제로 다룬 경험도 갖고 있다.
+
+그러나 우리의 트랜잭션 개념과 그 구현 기법들은 중첩된 트랜잭션과, 수명이 긴 트랜잭션을 처리할 수 없으며, 기존 프로그래밍 시스템에 적합하지 않을 수 있어 많은 애플리케이션 개발 작업에 적용하기에는 부적절하다.
+
+>
+We may be seeing the Peter Principle in operation here: “Every good idea is generalized to its level of inapplicability”. But I believe that the problems I have outlined here (long-lived and nested transactions) must be solved. 
+
+"모든 좋은 아이디어는 적용 불가능한 수준에 도달할 때까지 일반화된다"는 피터의 원칙이 여기에서도 작동하는 것을 볼 수 있다.
+그러나 여기에서 설명한 문제(수명이 긴 트랜잭션과 중첩 트랜잭션)는 반드시 해결해야 한다고 나는 생각한다.
+
+>
+I am optimistic that the transaction concept provides a convenient abstraction for structuring applications. People implementing such applications are confronted with these problems and have adopted expedient solutions. One contribution of this paper is to abstract these problems and to sketch generalizations of techniques in common use which address the problems. I expect that these general techniques will allow both long-lived and nested transactions. 
+
+나는 트랜잭션이라는 개념이 애플리케이션 구조화를 위해 편리한 추상화를 제공한다고 생각한다.
+이런 애플리케이션을 구현하는 사람들은 이미 이런 문제들을 직면해왔고, 적절한 해결책들을 적용해왔다.
+이 페이퍼는 그러한 문제를 추상화하고 문제를 해결하는 일반적인 사용 기술의 일반화를 스케치하는 것이라 할 수 있다.
+나는 이런 일반적인 기술들이 장기 트랜잭션과 중첩 트랜잭션을 모두 허용할 것으로 기대한다.
+
+
 ### ACKNOWLEDGEMENTS
+
+**감사 인사**
+
+>
+This paper owes an obvious debt to the referenced authors. In addition, the treatment of nested and long-lived transactions grows from discussions with Andrea Borr, Bob Good, Jerry Held, Pete Homan, Bruce Lindsay, Ron Obermarck and Franco Putzolu. Wendy Bartlett, Andrea Borr, Dave Gifford and Paul McJones made several contributions to the presentation.
+
+이 논문은 본문에 인용한 저자분들에게 명백한 빚을 지고 있습니다.
+또한, 중첩 트랜잭션과 장기 트랜잭션 처리에 대한 내용은 Andrea Borr, Bob Good, Jerry Held, Pete Homan, Bruce Lindsay, Ron Obermarck, Franco Putzolu 와의 토론에서 발전했습니다.
+Wendy Bartlett, Andrea Borr, Dave Gifford, Paul McJones는 발표에 많은 기여를 해 주셨습니다.
+
 ### REFERENCES
+
+생략.
 
 ## 참고문헌
 
