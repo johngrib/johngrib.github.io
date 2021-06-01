@@ -614,6 +614,9 @@
     name: transistor
     size: 1
 -
+    name: translation
+    size: 1
+-
     name: trouble-shooting
     size: 3
 -

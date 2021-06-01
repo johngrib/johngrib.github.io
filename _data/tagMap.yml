@@ -1044,6 +1044,8 @@ rust:
     - {fileName: start-rust-with-vim}
 jim-gray:
     - {fileName: summary-the-transaction-concept}
+translation:
+    - {fileName: summary-the-transaction-concept}
 auto-boxing:
     - {fileName: ternary-operator-and-null-pointer-exception}
     - {fileName: use-java-primitive-type-for-performance}
