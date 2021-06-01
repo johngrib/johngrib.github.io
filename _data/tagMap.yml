@@ -794,6 +794,7 @@ richard-stallman:
     - {fileName: Object-hashCode}
     - {fileName: Object-toString}
     - {fileName: Software-Engineering-Code-of-Ethics}
+    - {fileName: summary-the-transaction-concept}
     - {fileName: THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING}
 the-go-blog:
     - {fileName: Go-Blog-translation}
@@ -1043,8 +1044,6 @@ xml:
 rust:
     - {fileName: start-rust-with-vim}
 jim-gray:
-    - {fileName: summary-the-transaction-concept}
-translation:
     - {fileName: summary-the-transaction-concept}
 auto-boxing:
     - {fileName: ternary-operator-and-null-pointer-exception}

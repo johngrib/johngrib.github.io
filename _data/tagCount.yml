@@ -614,9 +614,6 @@
     name: transistor
     size: 1
 -
-    name: translation
-    size: 1
--
     name: trouble-shooting
     size: 3
 -
@@ -720,7 +717,7 @@
     size: 1
 -
     name: 번역
-    size: 13
+    size: 14
 -
     name: 벨-연구소
     size: 1
