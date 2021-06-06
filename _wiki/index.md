@@ -552,6 +552,7 @@ regenerate: true
 ### [[spring-documents]]
 
 * [[spring-documents-overview]]
+* [[spring-documents-core]]
 
 ## [[database]]
 

@@ -2268,7 +2268,7 @@ inversion-of-control:
     summary: 'Inversion of Control, Dependency Injection'
     parent: programming
     url: /wiki/inversion-of-control
-    updated: '2021-05-26 23:32:35 +0900'
+    updated: '2021-06-06 16:48:20 +0900'
     children: []
 ioreg-cmd:
     type: wiki
@@ -3909,7 +3909,15 @@ spring-documents:
     parent: Spring
     url: /wiki/spring-documents
     updated: '2021-02-13 16:09:03 +0900'
-    children: [spring-documents-overview]
+    children: [spring-documents-core, spring-documents-overview]
+spring-documents-core:
+    type: wiki
+    title: '(요약) Spring Core Technologies'
+    summary: 'Version 5.3.7'
+    parent: spring-documents
+    url: /wiki/spring-documents-core
+    updated: '2021-06-06 23:45:10 +0900'
+    children: []
 spring-documents-overview:
     type: wiki
     title: '(요약) Spring Framework Overview'
