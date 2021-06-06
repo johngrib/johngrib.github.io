@@ -3912,11 +3912,11 @@ spring-documents:
     children: [spring-documents-core, spring-documents-overview]
 spring-documents-core:
     type: wiki
-    title: '(요약) Spring Core Technologies'
+    title: '작성중 - (요약) Spring Core Technologies'
     summary: 'Version 5.3.7'
     parent: spring-documents
     url: /wiki/spring-documents-core
-    updated: '2021-06-06 23:45:10 +0900'
+    updated: '2021-06-06 23:45:58 +0900'
     children: []
 spring-documents-overview:
     type: wiki

@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : (요약) Spring Core Technologies
+title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-06 23:45:10 +0900
+updated : 2021-06-06 23:45:58 +0900
 tag     : java spring
 toc     : true
 public  : true
