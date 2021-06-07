@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-06 23:55:21 +0900
+updated : 2021-06-07 23:07:17 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -153,6 +153,106 @@ The following diagram shows a high-level view of how Spring works. Your applicat
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-metadata )
 
+>
+As the preceding diagram shows, the Spring IoC container consumes a form of configuration metadata. This configuration metadata represents how you, as an application developer, tell the Spring container to instantiate, configure, and assemble the objects in your application.
+>
+Configuration metadata is traditionally supplied in a simple and intuitive XML format, which is what most of this chapter uses to convey key concepts and features of the Spring IoC container.
+
+configuration 메타 데이터
+
+- 앞의 다이어그램에서 볼 수 있듯이 Spring IoC 컨테이너는 configuration 메타 데이터의 한 형태를 사용합니다.
+- configuration 메타 데이터는 애플리케이션 개발자(여러분)가 스프링 컨테이너로 하여금 객체를 인스턴스화하고, 설정하고, 조립하도록 지시하는 방법을 표현합니다.
+- configuration 메타 데이터는 전통적으로 간단하고 직관적인 XML 형식으로 제공되어 왔습니다.
+    - 이 XML은 이 챕터의 대부분에서 스프링 IoC 컨테이너의 주요 개념과 기능을 전달하는 예제로 등장합니다.
+
+>
+(i) XML-based metadata is not the only allowed form of configuration metadata. The Spring IoC container itself is totally decoupled from the format in which this configuration metadata is actually written. These days, many developers choose [Java-based configuration]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java ) for their Spring applications.
+
+- (i) 참고
+    - configuration 메타 데이터는 XML로만 작성할 수 있는 것은 아닙니다.
+    - Spring IoC 컨테이너는 이 configuration 메타 데이터 형식과는 완전히 분리되어 있습니다.
+    - 요즘은 많은 개발자들이 Spring 애플리케이션을 만들기 위해 XML이 아니라 Java 코드 기반의 configuration을 씁니다.
+
+>
+For information about using other forms of metadata with the Spring container, see:
+>
+- [Annotation-based configuration]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-annotation-config ): Spring 2.5 introduced support for annotation-based configuration metadata.
+- [Java-based configuration]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java ): Starting with Spring 3.0, many features provided by the Spring JavaConfig project became part of the core Spring Framework. Thus, you can define beans external to your application classes by using Java rather than XML files. To use these new features, see the [@Configuration]( https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html ), [@Bean]( https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Bean.html ), [@Import]( https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Import.html ), and [@DependsOn]( https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/DependsOn.html ) annotations.
+
+Spring 컨테이너에서 다른 형식의 메타 데이터를 사용하는 방법에 대한 내용은 다음을 참고하세요.
+
+- 애노테이션 기반의 configuration: Spring 2.5 부터는 애노테이션 기반의 configuration 메타데이터를 지원합니다.
+- Java 코드 기반의 configuration: Spring 3.0 부터는 Spring JavaConfig 프로젝트에서 제공하는 많은 기능이 Spring Framework에 추가되었습니다.
+    - 따라서 XML 파일이 아니라 Java 코드를 사용해 애플리케이션 클래스 외부에서 Bean을 정의할 수 있습니다.
+    - 이런 새로운 기능들 사용하려면 `@Configuration`, `@Bean`, `@Import`, `@DependsOn` 애노테이션을 참고하세요.
+
+>
+Spring configuration consists of at least one and typically more than one bean definition that the container must manage. XML-based configuration metadata configures these beans as <bean/> elements inside a top-level <beans/> element. Java configuration typically uses @Bean-annotated methods within a @Configuration class.
+
+Spring configuration은 컨테이너가 관리할 하나 이상의 bean 정의로 이루어집니다.
+- XML 기반의 configuration 메타 데이터에서는,
+    - 이런 Bean들을 최상위 `<beans/>` 엘리먼트 내에서 `<bean/>` 엘리먼트로 구성합니다.
+- Java 기반의 configuration 에서는,
+    - 일반적으로 `@Configuration` 클래스 내에서 `@Bean` 애노테이션을 붙인 메소드를 사용합니다.
+
+>
+These bean definitions correspond to the actual objects that make up your application. Typically, you define service layer objects, data access objects (DAOs), presentation objects such as Struts `Action` instances, infrastructure objects such as Hibernate `SessionFactories`, JMS `Queues`, and so forth. Typically, one does not configure fine-grained domain objects in the container, because it is usually the responsibility of DAOs and business logic to create and load domain objects. However, you can use Spring’s integration with AspectJ to configure objects that have been created outside the control of an IoC container. See [Using AspectJ to dependency-inject domain objects with Spring]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#aop-atconfigurable ).
+
+이러한 빈 정의는 여러분의 애플리케이션을 구성하는 실제 객체들에 해당됩니다.
+
+- 일반적으로는 다음과 같은 객체들을 정의하기도 합니다.
+    - service 계층 객체
+    - 데이터 액세스 객체(DAO)
+    - Struts의 `Action` 인스턴스와 같은 프리젠테이션 객체
+    - Hibernate의 `SessionFactories`
+    - JMS `Queues` 등등과 같은 인프라 객체
+
+- 일반적으로 컨테이너에서는 세분화된(fine-grained) 도메인 객체를 구성하지 않습니다.
+    - 일반적으로 도메인 개체를 만들고 로드하는 것은 DAO 및 비즈니스 로직의 책임이기 때문입니다.
+    - 그러나 Spring의 AspectJ 통합을 사용하면 IoC 컨테이너의 컨트롤 바깥에서 생성된 객체를 구성할 수 있습니다.
+        - 자세한 내용은 [AspectJ를 사용하여 Spring에서 도메인 객체를 종속성 주입하기]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#aop-atconfigurable )를 참고하세요.
+
+>
+The following example shows the basic structure of XML-based configuration metadata:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="..." class="...">  <!-- (1) -->  <!-- (2) -->
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <bean id="..." class="...">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
+```
+
+>
+1. The `id` attribute is a string that identifies the individual bean definition.
+2. The `class` attribute defines the type of the bean and uses the fully qualified classname.
+>
+The value of the `id` attribute refers to collaborating objects. The XML for referring to collaborating objects is not shown in this example. See [Dependencies]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-dependencies ) for more information.
+
+다음 예는 XML 기반의 configuration 메타데이터의 기본적인 구조를 보여 줍니다.
+
+1. `id`는 bean 정의를 식별하는 문자열입니다.
+2. `class`는 bean의 타입을 정의하며, 경로를 최대한 풀어쓴 클래스 이름을 사용합니다.
+
+`id` 값은 협업 객체를 나타냅니다.
+위의 예제에서는 협업 객체 참조를 표시하기 위한 XML 코드는 보이지 않습니다.
+자세한 내용은 [의존관계]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-dependencies ) 문서를 참조하십시오.
+
+#### 1.2.2. Instantiating a Container
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-instantiation )
 
 ## 함께 읽기
 
