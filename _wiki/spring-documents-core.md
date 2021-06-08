@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-07 23:07:17 +0900
+updated : 2021-06-08 23:36:54 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -253,6 +253,88 @@ The value of the `id` attribute refers to collaborating objects. The XML for ref
 #### 1.2.2. Instantiating a Container
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-instantiation )
+
+>
+The location path or paths supplied to an `ApplicationContext` constructor are resource strings that let the container load configuration metadata from a variety of external resources, such as the local file system, the Java `CLASSPATH`, and so on.
+
+다음 코드를 보면 `ApplicationContext` 생성자에 경로 문자열을 넣고 있습니다.
+이 경로 문자열은 컨테이너가 로컬 파일시스템이나, Java `CLASSPATH`와 같은 다양한 외부 리소스를 통해 configuration 메타 데이터를 로드할 수 있도록 하기 위한 것입니다.
+
+```java
+ApplicationContext context = new ClassPathXmlApplicationContext("services.xml", "daos.xml");
+```
+
+>
+(i) After you learn about Spring’s IoC container, you may want to know more about Spring’s `Resource` abstraction (as described in [Resources]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources )), which provides a convenient mechanism for reading an InputStream from locations defined in a URI syntax. In particular, `Resource` paths are used to construct applications contexts, as described in [Application Contexts and Resource Paths]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-app-ctx ).
+
+- (i) 참고
+    - 여러분이 Spring의 IoC 컨테이너에 대해 학습한 후에는 추상화된 `Resource`에 대해 학습하고 싶을 것입니다.
+    - `Resource`는 스프링의 리소스 추상화이며 URI 형식의 경로가 주어지면 InputStream으로 변환해 읽을 수 있게 해 주는 편리한 기능을 제공합니다.
+    - 특히, `Resource` 경로는 "Application Contexts and Resource Paths" 문서에 설명된 바와 같이 application context를 생성하는 데에 사용됩니다.
+
+>
+The following example shows the service layer objects (services.xml) configuration file:
+
+다음 예는 서비스 레이어 객체 `(services.xml)` configuration 파일을 보여줍니다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- services -->
+
+    <bean id="petStore" class="org.springframework.samples.jpetstore.services.PetStoreServiceImpl">
+        <property name="accountDao" ref="accountDao"/>
+        <property name="itemDao" ref="itemDao"/>
+        <!-- additional collaborators and configuration for this bean go here -->
+    </bean>
+
+    <!-- more bean definitions for services go here -->
+
+</beans>
+```
+
+>
+The following example shows the data access objects daos.xml file:
+
+다음 예는 데이터 액세스 객체에 대한 `daos.xml` 파일을 보여줍니다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="accountDao"
+        class="org.springframework.samples.jpetstore.dao.jpa.JpaAccountDao">
+        <!-- additional collaborators and configuration for this bean go here -->
+    </bean>
+
+    <bean id="itemDao" class="org.springframework.samples.jpetstore.dao.jpa.JpaItemDao">
+        <!-- additional collaborators and configuration for this bean go here -->
+    </bean>
+
+    <!-- more bean definitions for data access objects go here -->
+
+</beans>
+```
+
+>
+In the preceding example, the service layer consists of the `PetStoreServiceImpl` class and two data access objects of the types `JpaAccountDao` and `JpaItemDao` (based on the JPA Object-Relational Mapping standard). The `property name` element refers to the name of the JavaBean property, and the `ref` element refers to the name of another bean definition. This linkage between `id` and `ref` elements expresses the dependency between collaborating objects. For details of configuring an object’s dependencies, see [Dependencies]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-dependencies ).
+
+위의 예에서 서비스 계층은 `PetStoreServiceImpl` 클래스와 `JpaAccountDao` 및 `JpaItemDao` 타입의 두 DAO로 구성됩니다(JPA ORM 표준 기반).
+- `property name` 엘리먼트는 JavaBean 속성의 이름을 참조하고,
+- `ref` 엘리먼트는 다른 bean 정의의 이름을 참조합니다.
+- `id`와 `ref` 엘리먼트의 이러한 연결은 협업하는 객체들 간의 의존관계를 표현합니다.
+- 객체들 간의 의존관계 configuration에 대한 자세한 내용은 Dependencies 문서를 참고하세요.
+
+##### Composing XML-based Configuration Metadata
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-xml-import )
 
 ## 함께 읽기
 
