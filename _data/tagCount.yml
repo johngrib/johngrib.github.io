@@ -746,6 +746,9 @@
     name: 인물
     size: 3
 -
+    name: 장애
+    size: 1
+-
     name: 장인정신
     size: 1
 -

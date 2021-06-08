@@ -670,6 +670,8 @@ dijkstra:
     - {fileName: dijkstra-2-stack-for-exp-eval}
 container:
     - {fileName: docker}
+장애:
+    - {fileName: downdetector}
 c:
     - {fileName: duff-s-device}
     - {fileName: lldb-cmd}
