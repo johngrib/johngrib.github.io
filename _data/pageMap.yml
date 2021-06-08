@@ -1304,11 +1304,11 @@ Donald-Ervin-Knuth:
     children: []
 downdetector:
     type: wiki
-    title: downdetector.com
-    summary: '세계 유명 인터넷 서비스들의 장애를 집계하는 사이트'
-    parent: useful-site
+    title: '장애 기록'
+    summary: '손에 잡히는 대로...'
+    parent: software-engineering
     url: /wiki/downdetector
-    updated: '2020-12-14 21:33:16 +0900'
+    updated: '2021-06-08 22:11:48 +0900'
     children: []
 dry-principle:
     type: wiki
@@ -3805,7 +3805,7 @@ software-engineering:
     parent: index
     url: /wiki/software-engineering
     updated: '2020-01-16 20:22:50 +0900'
-    children: [20-percent-project, agile, andon-cord, continuous-delivery, continuous-integration, ddd-quotes, dev-schedule-quotes, devops, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-terms, two-pizza-team]
+    children: [20-percent-project, agile, andon-cord, continuous-delivery, continuous-integration, ddd-quotes, dev-schedule-quotes, devops, downdetector, kanban, persona, polite-software, scrum, Software-Engineering-Code-of-Ethics, technical-debt, test-terms, two-pizza-team]
 Software-Engineering-Code-of-Ethics:
     type: wiki
     title: '소프트웨어 공학 윤리 강령과 업무 규범'
@@ -4421,7 +4421,7 @@ useful-site:
     parent: tools
     url: /wiki/useful-site
     updated: '2020-02-15 12:12:26 +0900'
-    children: [downdetector, ecos-bok-or-kr, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, microsoft-hwp-word-converter, twitter-tools]
+    children: [ecos-bok-or-kr, google-search-console-remove-outdated-content, httpbin.org, labs-strava-com-heatmap, microsoft-hwp-word-converter, twitter-tools]
 vagrant-docker-get-start:
     type: wiki
     title: 'Vagrant와 Docker에 CentOS, Ubuntu 설치하기'
