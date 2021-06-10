@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-08 23:36:54 +0900
+updated : 2021-06-10 23:26:04 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -334,7 +334,111 @@ In the preceding example, the service layer consists of the `PetStoreServiceImpl
 
 ##### Composing XML-based Configuration Metadata
 
-[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-xml-import )
+**XML 기반의 configuration 메타데이터 작성하기** [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-xml-import )
+
+>
+It can be useful to have bean definitions span multiple XML files. Often, each individual XML configuration file represents a logical layer or module in your architecture.
+>
+You can use the application context constructor to load bean definitions from all these XML fragments. This constructor takes multiple `Resource` locations, as was shown in the [previous section]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-instantiation ). Alternatively, use one or more occurrences of the `<import/>` element to load bean definitions from another file or files. The following example shows how to do so:
+
+여러 개의 XML 파일을 사용해 bean을 정의하면 꽤 유용할 수 있습니다.
+각각의 XML 설정 파일을 여러분의 아키텍처의 논리적인 레이어나 모듈에 맞게 작성할 수도 있습니다.
+
+- 애플리케이션 컨텍스트 생성자를 사용하면 이런 여러 개의 XML 파일들을 읽어 Bean 정의를 로드할 수 있습니다.
+    - 이 생성자는 위의 섹션에서 설명한 바와 같이 여러 개의 리소스 위치를 사용합니다.
+- 아니면 다른 방법으로, `<import/>` 엘리먼트를 사용해 다른 파일에서 Bean 정의를 로드할 수도 있습니다.
+
+다음 예를 통해 살펴봅시다.
+
+```xml
+<beans>
+    <import resource="services.xml"/>
+    <import resource="resources/messageSource.xml"/>
+    <import resource="/resources/themeSource.xml"/>
+
+    <bean id="bean1" class="..."/>
+    <bean id="bean2" class="..."/>
+</beans>
+```
+
+>
+In the preceding example, external bean definitions are loaded from three files: `services.xml`, `messageSource.xml`, and `themeSource.xml`. All location paths are relative to the definition file doing the importing, so `services.xml` must be in the same directory or classpath location as the file doing the importing, while `messageSource.xml` and `themeSource.xml` must be in a `resources` location below the location of the importing file. As you can see, a leading slash is ignored. However, given that these paths are relative, it is better form not to use the slash at all. The contents of the files being imported, including the top level `<beans/>` element, must be valid XML bean definitions, according to the Spring Schema.
+
+위의 예제에서 외부 Bean 정의는 `services.xml`, `messageSource.xml` `themeSource.xml` 이렇게 3개의 파일에서 로드됩니다.
+
+- 모든 경로는 import 파일을 가져오는 파일에 대한 상대 경로를 사용합니다.
+    - 따라서 `services.xml`는 가져 오기를 수행하는 xml 파일과 같은 디렉토리나 클래스 경로에 있어야 합니다.
+    - `messageSource.xml`, `themeSource.xml`은 위의 xml 파일 경로의 `resource`에 있어야합니다.
+- `resources`와 `/resources`를 통해 알 수 있듯, 앞에 있는 슬래시(`/`)는 무시합니다.
+    - 그런데 상대 경로를 사용하고 있으므로 가급적이면 슬래시를 사용하지 않는 것이 더 좋습니다.
+- 한편 xml 파일의 최상위 `<beans/>` 엘리먼트에서 import하고 있는 파일의 내용은 반드시 Spring Schema 정의를 따르는 XML 빈 정의를 갖고 있어야 합니다.
+
+>
+(i) It is possible, but not recommended, to reference files in parent directories using a relative "../" path. Doing so creates a dependency on a file that is outside the current application. In particular, this reference is not recommended for `classpath:` URLs (for example, `classpath:../services.xml`), where the runtime resolution process chooses the “nearest” classpath root and then looks into its parent directory. Classpath configuration changes may lead to the choice of a different, incorrect directory.
+>
+You can always use fully qualified resource locations instead of relative paths: for example, `file:C:/config/services.xml` or `classpath:/config/services.xml`. However, be aware that you are coupling your application’s configuration to specific absolute locations. It is generally preferable to keep an indirection for such absolute locations — for example, through "${…}" placeholders that are resolved against JVM system properties at runtime.
+
+- (i) 참고
+    - 상대 경로인 "../"를 사용해서 상위 디렉토리의 파일을 참조하는 것은 가능하긴 하지만 권장하지 않습니다.
+    - 이런 식으로 경로를 사용하하면 현재 애플리케이션 바깥에 있는 파일에 대한 의존성이 생깁니다.
+    - 특히, 이 참조는 `classpath:` URL(예: `classpath: ../ services.xml`)형식에 권장되지 않습니다.
+        - 런타임 확인 프로세스는 먼저 "가장 가까운" 클래스패스 루트를 선택하고, 상위 디렉토리를 찾기 때문입니다.
+        - 이런 클래스패스 configuration 변경 때문에 의도하지 않은 잘못된 디렉토리가 선택될 수 있습니다.
+    - 상대 경로를 사용하는 대신 정규화된 경로를 사용할 수 있습니다.
+        - 예: `file:C:/config/services.xml`, `classpath:/config/services.xml`
+    - 그러나 애플리케이션의 configuration과 특정한 절대 경로 사이에 커플링이 생기지 않도록 주의하세요.
+        - 일반적으로는 이런 절대 경로는 직접적으로 사용하지 않고 간접적으로 사용하는 것이 좋습니다.
+            - 예를 들어 "$ {…}"를 써서 런타임에 JVM 시스템 속성에 값을 집어넣는 방법이라던가..
+
+>
+The namespace itself provides the import directive feature. Further configuration features beyond plain bean definitions are available in a selection of XML namespaces provided by Spring — for example, the context and util namespaces.
+
+네임스페이스는 자체적으로 import 기능을 제공합니다.
+- 단순한 bean 정의를 넘어서는 추가적인 설정은 Spring에서 제공하는 XML 네임스페이스에서 사용할 수 있습니다.
+- 예: context, util namespaces.
+
+##### The Groovy Bean Definition DSL
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#groovy-bean-definition-dsl )
+
+>
+As a further example for externalized configuration metadata, bean definitions can also be expressed in Spring’s Groovy Bean Definition DSL, as known from the Grails framework. Typically, such configuration live in a ".groovy" file with the structure shown in the following example:
+
+외부에 정의된 configuration 메타데이터에 대한 또다른 예제를 살펴 봅시다.
+
+- bean 정의는 Grails 프레임워크라는 이름으로 알려진 Spring의 Groovy Bean Definition DSL로도 표현이 가능합니다.
+- 다음은 일반적으로 이러한 configuration 구조를 ".groovy" 파일로 작성한 예입니다.
+
+```groovy
+beans {
+    dataSource(BasicDataSource) {
+        driverClassName = "org.hsqldb.jdbcDriver"
+        url = "jdbc:hsqldb:mem:grailsDB"
+        username = "sa"
+        password = ""
+        settings = [mynew:"setting"]
+    }
+    sessionFactory(SessionFactory) {
+        dataSource = dataSource
+    }
+    myService(MyService) {
+        nestedBean = { AnotherBean bean ->
+            dataSource = dataSource
+        }
+    }
+}
+```
+
+>
+This configuration style is largely equivalent to XML bean definitions and even supports Spring’s XML configuration namespaces. It also allows for importing XML bean definition files through an `importBeans` directive.
+
+- 이러한 configuration 스타일은 XML 파일의 bean 정의와 거의 동일하며,
+    - Spring의 XML 설정 네임스페이스도 지원합니다.
+- 또한 `importBeans` 지시문을 사용해 XML bean 정의 파일을 가져올 수도 있습니다.
+
+#### 1.2.3. Using the Container
+
+**1.2.3. 컨테이너 사용하기** [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-client )
 
 ## 함께 읽기
 
