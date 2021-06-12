@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-12 14:24:18 +0900
+updated : 2021-06-12 17:36:22 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -509,6 +509,77 @@ You can then use `getBean` to retrieve instances of your beans. The `Application
     - 즉 Spring API에 전혀 의존하지 않아야 합니다.
     - 예를 들어 Spring의 웹 프레임워크 통합은,
         - controller 및 JSF 관리 bean 같은 웹 프레임워크를 구성하는 component에 대한 dependency 주입을 제공하며, 여러분은 이를 이용해 메타 데이터(예: autowiring 애노테이션)를 통해 특정 bean에 대한 의존관계를 선언할 수 있습니다.
+
+### 1.3. Bean Overview
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition )
+
+>
+A Spring IoC container manages one or more beans. These beans are created with the configuration metadata that you supply to the container (for example, in the form of XML `<bean/>` definitions).
+>
+Within the container itself, these bean definitions are represented as `BeanDefinition` objects, which contain (among other information) the following metadata:
+>
+- A package-qualified class name: typically, the actual implementation class of the bean being defined.
+- Bean behavioral configuration elements, which state how the bean should behave in the container (scope, lifecycle callbacks, and so forth).
+- References to other beans that are needed for the bean to do its work. These references are also called collaborators or dependencies.
+- Other configuration settings to set in the newly created object — for example, the size limit of the pool or the number of connections to use in a bean that manages a connection pool.
+>
+This metadata translates to a set of properties that make up each bean definition. The following table describes these properties:
+
+- Spring IoC 컨테이너는 bean을 관리합니다.
+    - bean들은 컨테이너에 제공한 configuration 메타데이터(예: `<bean/>` 정의가 있는 형식의 XML 파일)를 통해 생성됩니다.
+
+bean 정의는 컨테이너 내에서 다음과 같은 메타데이터를 포함하는 `BeanDefinition` 객체로 표현됩니다.
+
+
+- package-qualified class name: 일반적으로 정의된 Bean을 실제로 구현한 클래스.
+- 컨테이너 내에서 Bean의 작동 방식을 나타내는 Bean 동작 configuration(scope, 라이프 사이클 콜백 등).
+- Bean이 작업을 수행하는 데 필요한 다른 Bean에 대한 레퍼런스.
+    - 이러한 참조를 공동 작업자(collaborators) 또는 의존관계(dependencies)라고도 합니다.
+- 새로 생성된 객체에 설정할 그 외의 설정
+    — 예: pool 사이즈 리미트, 또는 커넥션 풀을 관리하는 Bean에서 사용할 커넥션 수.
+
+메타 데이터는 bean 각각의 정의를 구성하는 속성 집합으로 변환됩니다. 다음 표는 이러한 속성을 설명합니다.
+
+>
+**Table 1. The bean definition**
+| Property                 | Explained in...                                                                                                                                    |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Class                    | [Instantiating Beans]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-class )                           |
+| Name                     | [Naming Beans]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-beanname )                                       |
+| Scope                    | [Bean Scopes]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes )                                  |
+| Constructor arguments    | [Dependency Injection]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-collaborators )                  |
+| Properties               | [Dependency Injection]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-collaborators )                  |
+| Autowiring mode          | [Autowiring Collaborators]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-autowire )                   |
+| Lazy initialization mode | [Lazy-initialized Beans]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lazy-init )                    |
+| Initialization method    | [Initialization Callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-initializingbean ) |
+| Destruction method       | [Destruction Callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-disposablebean )      |
+
+>
+In addition to bean definitions that contain information on how to create a specific bean, the `ApplicationContext` implementations also permit the registration of existing objects that are created outside the container (by users). This is done by accessing the ApplicationContext’s BeanFactory through the `getBeanFactory()` method, which returns the BeanFactory `DefaultListableBeanFactory` implementation. `DefaultListableBeanFactory` supports this registration through the `registerSingleton(..)` and `registerBeanDefinition(..)` methods. However, typical applications work solely with beans defined through regular bean definition metadata.
+
+bean을 생성하는 방법에 대한 정보를 포함하고 있는 bean 정의 외에도, `ApplicationContext` 구현체들은 사용자들이 컨테이너 바깥에서 만들어둔 객체의 등록도 허용합니다.
+
+- 이런 등록 작업은 `ApplicationContext`의 `BeanFactory`에 접근하여 수행할 수 있습니다.
+    - 구체적으로는 `getBeanFactory()`를 호출하면 `DefaultListableBeanFactory`를 리턴받습니다.
+        - `DefaultListableBeanFactory`의 `registerSingleton(..)`과 `registerBeanDefinition(..)` 메소드를 사용하면 (컨테이너 외부에서 생성한 bean을) 등록할 수 있습니다.
+- 그러나 일반적인 애플리케이션은 이러한 방법을 사용하지 않고 표준적인 방법으로 정의된 메타데이터로 만들어진 bean들만 써서 작동합니다.
+
+
+>
+(i) Bean metadata and manually supplied singleton instances need to be registered as early as possible, in order for the container to properly reason about them during autowiring and other introspection steps. While overriding existing metadata and existing singleton instances is supported to some degree, the registration of new beans at runtime (concurrently with live access to the factory) is not officially supported and may lead to concurrent access exceptions, inconsistent state in the bean container, or both.
+
+- (i) 참고
+    - bean 메타데이터와 수동으로 제공되는 싱글톤 인스턴스는 가능한 한 빨리 등록해줘야 합니다.
+        - 그렇지 않으면 컨테이너가 그런 bean들을 자동으로 연결(autowiring)하지 못할 수 있고, 그 외의 내부 단계에서도 올바르게 작동하지 못할 수 있습니다.
+- 기존 메타데이터 및 기존 싱글톤 인스턴스를 재정의하는 것은 어느 정도 지원되지만...
+    - 런타임에 새 bean을 등록(팩토리에 대한 라이브 액세스와 동시에)하는 것은 공식적으로 지원되지 않습니다.
+        - 동시성 액세스 예외가 발생할 수 있습니다.
+        - bean 컨테이너의 일관성에 문제가 생길 수도 있습니다.
+
+#### 1.3.1. Naming Beans
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-beanname )
 
 ## 함께 읽기
 
