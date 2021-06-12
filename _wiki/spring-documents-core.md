@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-12 17:36:22 +0900
+updated : 2021-06-12 19:13:04 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -580,6 +580,103 @@ bean을 생성하는 방법에 대한 정보를 포함하고 있는 bean 정의 
 #### 1.3.1. Naming Beans
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-beanname )
+
+>
+Every bean has one or more identifiers. These identifiers must be unique within the container that hosts the bean. A bean usually has only one identifier. However, if it requires more than one, the extra ones can be considered aliases.
+>
+In XML-based configuration metadata, you use the `id` attribute, the `name` attribute, or both to specify the bean identifiers. The `id` attribute lets you specify exactly one id. Conventionally, these names are alphanumeric ('myBean', 'someService', etc.), but they can contain special characters as well. If you want to introduce other aliases for the bean, you can also specify them in the `name` attribute, separated by a comma (`,`), semicolon (`;`), or white space. As a historical note, in versions prior to Spring 3.1, the `id` attribute was defined as an `xsd:ID` type, which constrained possible characters. As of 3.1, it is defined as an `xsd:string` type. Note that bean `id` uniqueness is still enforced by the container, though no longer by XML parsers.
+
+모든 bean은 하나 이상의 식별자를 갖습니다.
+- 이러한 식별자는 bean을 호스팅하는 컨테이너 내에서 유니크 해야 합니다.
+- 일반적으로 bean 하나는 하나의 식별자만 갖습니다.
+- 그러나 식별자가 두 개 이상 필요하다면, 추가 식별자를 알리아스로 간주할 수 있습니다.
+
+XML 기반의 configuration 메타데이터에서 여러분은 `id` 속성이나 `name` 속성 또는 둘 다를 사용하여 bean 식별자를 지정하게 됩니다.
+
+- `id` 속성을 사용하면 정확히 하나의 ID를 지정할 수 있습니다.
+- 일반적으로 이러한 이름은 알파벳과 숫자로 이루어지지만('myBean', 'someService' 등), 특수 문자를 사용할 수도 있습니다.
+- bean에 대한 다른 알리아스를 사용하려면 쉼표(`,`), 세미콜론(`;`) 또는 공백을 구분자로 사용해 `name` 속성에 지정할 수도 있습니다.
+- Spring 3.1 이전 버전에서는,
+    - `id` 속성은 사용 가능한 문자를 제한하는 `xsd:ID` 타입으로 정의되었습니다.
+- Spring 3.1 이후부터는,
+    - `id` 속성은 `xsd:string` 유형으로 정의됩니다.
+    - bean `id`가 유니크해야 한다는 제약 사항은 XML 파서가 아니라, 컨테이너에 의해 적용됩니다.
+
+>
+You are not required to supply a `name` or an `id` for a bean. If you do not supply a `name` or `id` explicitly, the container generates a unique name for that bean. However, if you want to refer to that bean by name, through the use of the `ref` element or a Service Locator style lookup, you must provide a name. Motivations for not supplying a name are related to using [inner beans]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-inner-beans ) and [autowiring collaborators]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-autowire ).
+
+여러분이 bean의 `name`이나 `id`를 꼭 지정하지 않아도 됩니다.
+- `name`이나 `id`를 명시적으로 제공하지 않으면 컨테이너가 해당 bean에 대한 유니크한 `name`을 자동으로 생성합니다.
+- 그러나 여러분이 `ref` element나 Service Locator 스타일 검색을 통해 이름으로 해당 bean을 참조하려한다면 name을 작성해야 합니다.
+- 이름을 제공하지 않는 이유는 [inner beans]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-inner-beans ), [autowiring collaborators]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-autowire )와 관련이 있습니다.
+
+>
+**Bean Naming Conventions**
+>
+The convention is to use the standard Java convention for instance field names when naming beans. That is, bean names start with a lowercase letter and are camel-cased from there. Examples of such names include accountManager, accountService, userDao, loginController, and so forth.
+>
+Naming beans consistently makes your configuration easier to read and understand. Also, if you use Spring AOP, it helps a lot when applying advice to a set of beans related by name.
+
+Bean 네이밍 컨벤션
+- 인스턴스 필드 이름에 대한 스탠다드 Java 컨벤션을 bean 이름을 지정할 때에도 똑같이 적용합니다.
+    - 즉, bean의 이름은 소문자로 시작하고, camelCase 를 사용합니다.
+    - 예: `accountManager`, `accountService`, `userDao`, `loginController` 등
+
+- Bean 네이밍 컨벤션은 configuration의 가독성을 확보하여 이해하기 쉽게 해줍니다.
+- 또한, Spring AOP를 사용하면 특정 이름과 관련된 bean 집합에 advice를 적용할 때 많은 도움이됩니다.
+
+>
+(i) With component scanning in the classpath, Spring generates bean names for unnamed components, following the rules described earlier: essentially, taking the simple class name and turning its initial character to lower-case. However, in the (unusual) special case when there is more than one character and both the first and second characters are upper case, the original casing gets preserved. These are the same rules as defined by `java.beans.Introspector.decapitalize` (which Spring uses here).
+
+- (i) 참고
+    - Spring은 classpath 에서의 컴포넌트 스캔을 통해, 이름이 지정되지 않은 컴포넌트에게도 위에서 설명한 규칙에 따라 bean 이름을 만들어 줍니다.
+        - 기본적으로는 클래스 이름을 가져와서, 첫 글자를 소문자로 바꾼 이름을 만듭니다.
+    - 그런데 클래스 이름이 두 개의 대문자로 시작하는 것 같은 특별한 경우에는, 원래의 클래스 이름을 그대로 사용하게 됩니다.
+        - 이 규칙은 [java.beans.Introspector.decapitalize]( https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/beans/Introspector.html#decapitalize(java.lang.String) )의 작동 방식과 같습니다(스프링이 이걸 사용합니다).
+
+##### Aliasing a Bean outside the Bean Definition
+
+**Bean Definition 외부에서 Bean 알리아싱하기** [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-beanname-alias )
+
+>
+In a bean definition itself, you can supply more than one name for the bean, by using a combination of up to one name specified by the `id` attribute and any number of other names in the `name` attribute. These names can be equivalent aliases to the same bean and are useful for some situations, such as letting each component in an application refer to a common dependency by using a bean name that is specific to that component itself.
+
+Bean 정의 자체에서, 하나의 Bean에 대해 이름을 하나 이상 제공할 수 있습니다.
+- `id` 속성에 지정된 이름 하나와, `name` 속성에 있는 다른 이름의 조합을 사용하면 됩니다.
+    - 이러한 이름은 하나의 동일한 bean에 대해 동등하게 취급되는 알리아스가 될 수 있으며
+    - 애플리케이션의 각 컴포넌트가 자신에게 고유한 bean 이름을 사용해서 공통 의존관계를 참조하도록 하는 것 같은 상황에서 유용할 수 있습니다.
+
+>
+Specifying all aliases where the bean is actually defined is not always adequate, however. It is sometimes desirable to introduce an alias for a bean that is defined elsewhere. This is commonly the case in large systems where configuration is split amongst each subsystem, with each subsystem having its own set of object definitions. In XML-based configuration metadata, you can use the `<alias/>` element to accomplish this. The following example shows how to do so:
+
+그러나 bean에 모든 알리아스를 명시해 사용하는 것이 언제나 적절한 것은 아닙니다.
+- 자신이 아닌 다른 곳에서 정의된 bean 알리아스를 사용하는 것이 바람직할 때도 있습니다.
+    - 일반적으로는 configuration이 각각의 하위 시스템에 나뉘에 적용되고, 각 하위 시스템에서는 자신만의 객체 정의 집합이 있는 대규모 시스템의 경우가 이에 해당됩니다.
+- XML 기반의 configuration 메타데이터에서는 `<alias/>` 엘리먼트를 사용하여 이렇게 할 수 있습니다.
+    - 다음 예는 이 방법을 보여줍니다.
+
+```xml
+<alias name="myApp-dataSource" alias="subsystemA-dataSource"/>
+<alias name="myApp-dataSource" alias="subsystemB-dataSource"/>
+```
+
+>
+Now each component and the main application can refer to the dataSource through a name that is unique and guaranteed not to clash with any other definition (effectively creating a namespace), yet they refer to the same bean.
+
+- 이제 각 컴포넌트와 메인 애플리케이션은 유니크한 이름을 통해 데이터 소스를 참조할 수 있습니다.
+    - 그리고 그 이름은 다른 정의와 충돌하지도 않으며(실제로는 네임스페이스를 생성합니다), 같은 bean을 참조할 수도 있습니다.
+
+>
+**Java-configuration**
+>
+If you use Javaconfiguration, the @Bean annotation can be used to provide aliases. See [Using the @Bean Annotation]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-bean-annotation ) for details.
+
+만약 여러분이 Javaconfiguration을 사용한다면, `@Bean` 애노테이션을 써서 알리아스를 지정할 수 있습니다.
+자세한 내용은 `@Bean` 애노테이션 사용을 참조하십시오.
+
+#### 1.3.2. Instantiating Beans
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-class )
 
 ## 함께 읽기
 
