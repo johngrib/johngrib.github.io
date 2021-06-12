@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-10 23:26:04 +0900
+updated : 2021-06-12 14:24:18 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -439,6 +439,76 @@ This configuration style is largely equivalent to XML bean definitions and even 
 #### 1.2.3. Using the Container
 
 **1.2.3. 컨테이너 사용하기** [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-client )
+
+>
+The `ApplicationContext` is the interface for an advanced factory capable of maintaining a registry of different beans and their dependencies. By using the method `T getBean(String name, Class<T> requiredType)`, you can retrieve instances of your beans.
+>
+The `ApplicationContext` lets you read bean definitions and access them, as the following example shows:
+
+`interface ApplicationContext`는 다른 bean과 그 의존관계들의 레지스트리를 유지할 수 있는 고급 팩토리(advanced factory)를 위한 인터페이스입니다.
+`T getBean (String name, Class <T> requiredType)` 메소드를 호출하면 Bean 인스턴스를 리턴받을 수 있습니다.
+
+`ApplicationContext`를 사용하면 다음 예제와 같이 bean 정의를 읽고 액세스할 수 있습니다.
+
+```java
+// create and configure beans
+ApplicationContext context = new ClassPathXmlApplicationContext("services.xml", "daos.xml");
+
+// retrieve configured instance
+PetStoreService service = context.getBean("petStore", PetStoreService.class);
+
+// use configured instance
+List<String> userList = service.getUsernameList();
+```
+
+>
+With Groovy configuration, bootstrapping looks very similar. It has a different context implementation class which is Groovy-aware (but also understands XML bean definitions). The following example shows Groovy configuration:
+
+Groovy configuration을 사용한 부트스트랩도 이와 매우 비슷합니다.
+Groovy를 인식하는 컨텍스트 구현 클래스도 있습니다(XML bean 정의도 호환).
+다음 예는 Groovy configuration을 보여줍니다.
+
+```java
+ApplicationContext context = new GenericGroovyApplicationContext("services.groovy", "daos.groovy");
+```
+
+>
+The most flexible variant is GenericApplicationContext in combination with reader delegates — for example, with XmlBeanDefinitionReader for XML files, as the following example shows:
+
+가장 유연한 방법은 `GenericApplicationContext`를 읽기 대리자(예: XML 파일용 `XmlBeanDefinitionReader`)와 함께 쓰는 것입니다.
+
+```java
+GenericApplicationContext context = new GenericApplicationContext();
+new XmlBeanDefinitionReader(context).loadBeanDefinitions("services.xml", "daos.xml");
+context.refresh();
+```
+
+>
+You can also use the GroovyBeanDefinitionReader for Groovy files, as the following example shows:
+
+다음 예제와 같이 Groovy 파일용 `GroovyBeanDefinitionReader`를 사용할 수도 있습니다.
+
+```java
+GenericApplicationContext context = new GenericApplicationContext();
+new GroovyBeanDefinitionReader(context).loadBeanDefinitions("services.groovy", "daos.groovy");
+context.refresh();
+```
+
+>
+You can mix and match such reader delegates on the same `ApplicationContext`, reading bean definitions from diverse configuration sources.
+
+이러한 읽기 대리자를 `ApplicationContext`와 조합하여, 다양한 configuration 소스에서 bean 정의를 읽을 수 있습니다.
+
+>
+You can then use `getBean` to retrieve instances of your beans. The `ApplicationContext` interface has a few other methods for retrieving beans, but, ideally, your application code should never use them. Indeed, your application code should have no calls to the `getBean()` method at all and thus have no dependency on Spring APIs at all. For example, Spring’s integration with web frameworks provides dependency injection for various web framework components such as controllers and JSF-managed beans, letting you declare a dependency on a specific bean through metadata (such as an autowiring annotation).
+
+그런 다음에는 `getBean`을 사용하여 Bean 인스턴스를 가져올 수 있습니다.
+그런데 `ApplicationContext` 인터페이스에는 Bean을 가져오는 메소드가 몇 가지 있긴 하있지만, 이상적으로는 애플리케이션 코드에서 이런 메소드를 사용하지 않아야합니다.
+
+- 실제로 여러분의 애플리케이션 코드에는 `getBean()` 메소드 호출이 전혀 없어야 합니다.
+    - 즉 Spring API에 전혀 의존하지 않아야 합니다.
+    - 예를 들어 Spring의 웹 프레임워크 통합은,
+        - controller 및 JSF 관리 bean 같은 웹 프레임워크를 구성하는 component에 대한 dependency 주입을 제공하며, 여러분은 이를 이용해 메타 데이터(예: autowiring 애노테이션)를 통해 특정 bean에 대한 의존관계를 선언할 수 있습니다.
 
 ## 함께 읽기
 
