@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-13 19:17:50 +0900
+updated : 2021-06-13 20:36:08 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -930,6 +930,220 @@ A typical enterprise application does not consist of a single object (or bean in
 - 심지어 최종 사용자의 눈에 한 덩어리로 만들어져 잘 돌아가는 것처럼 보이는 단순한 종류의 애플리케이션도, 실제로는 함께 작동하는 몇 개의 객체로 구성되어 돌아가고 있습니다.
 - 이번 섹션에서는 독립적인 여러 bean을 정의하는 것부터, 여러 객체가 협력해 개발 목표를 달성하는 애플리케이션으로 전환하는 방법까지를 설명합니다.
 
+#### 1.4.1. Dependency Injection
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-collaborators )
+
+>
+Dependency injection (DI) is a process whereby objects define their dependencies (that is, the other objects with which they work) only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method. The container then injects those dependencies when it creates the bean. This process is fundamentally the inverse (hence the name, Inversion of Control) of the bean itself controlling the instantiation or location of its dependencies on its own by using direct construction of classes or the Service Locator pattern.
+
+의존관계 주입(DI)은 다음의 방법들만을 사용해 객체가 자신의 의존관계(함께 일하는 다른 객체들)를 정의하는 프로세스입니다.
+- 생성자 인자
+- 팩토리 메소드 인자
+- 객체 인스턴스가 생성되고 나서, 또는 팩토리 메소드에서 리턴되고 나서 설정된 프로퍼티
+
+그러고 나서, 컨테이너는 bean을 생성할 때 이러한 의존관계를 주입합니다.
+- 이러한 프로세스는 Bean의 입장에서는 근본적으로 뒤집힌 것입니다(그래서 Inversion of Control이라는 이름이 되었습니다).
+- bean 스스로 인스턴스화를 컨트롤하기도 하고, 클래스의 생성자를 직접 사용하거나 Service Locator 패턴 같은 방법을 사용하여 의존관계의 위치를 제어하기 때문입니다.
+
+>
+Code is cleaner with the DI principle, and decoupling is more effective when objects are provided with their dependencies. The object does not look up its dependencies and does not know the location or class of the dependencies. As a result, your classes become easier to test, particularly when the dependencies are on interfaces or abstract base classes, which allow for stub or mock implementations to be used in unit tests.
+
+DI 원칙으로 인해 코드는 더 깨끗해지며, 객체가 자신의 의존관계를 제공하기 때문에 효과적으로 디커플링이 달성됩니다.
+- 객체는 자신의 의존관계를 탐색하지도 않고, 의존관계에 있는 대상들의 위치나 클래스가 무엇인지도 알지 못합니다.
+- 결과적으로 여러분의 클래스들은 더 테스트하기 쉬워집니다.
+    - 특히 의존관계가 인터페이스나 추상화된 클래스에 기반을 둔 경우에는, stub이나 mock 구현을 단위 테스트에서 사용할 수 있습니다.
+
+>
+DI exists in two major variants: [Constructor-based dependency injection]() and [Setter-based dependency injection]().
+
+DI는 주로 두 가지 방법이 있습니다. Constructor 기반의 DI와 Setter 기반의 DI.
+
+##### Constructor-based Dependency Injection
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-constructor-injection )
+
+>
+Constructor-based DI is accomplished by the container invoking a constructor with a number of arguments, each representing a dependency. Calling a `static` factory method with specific arguments to construct the bean is nearly equivalent, and this discussion treats arguments to a constructor and to a `static` factory method similarly. The following example shows a class that can only be dependency-injected with constructor injection:
+
+생성자 기반 DI는 컨테이너가 각각의 의존관계를 나타내는 여러 인자를 사용해 생성자를 호출하는 방식으로 수행됩니다.
+
+- bean을 생성하기 위해 특정 인자를 사용해 `static` 팩토리 메소드를 호출하는 것과 거의 같은 방법입니다.
+- 이 경우에는 생성자에 집어넣는 인자나 정적 팩토리 메소드에 집어넣는 인자나 비슷하게 처리합니다.
+- 다음 예제는 생성자 주입을 통해서만 의존관계 주입이 가능한 클래스를 보여줍니다.
+
+```java
+public class SimpleMovieLister {
+
+    // the SimpleMovieLister has a dependency on a MovieFinder
+    private final MovieFinder movieFinder;
+
+    // a constructor so that the Spring container can inject a MovieFinder
+    public SimpleMovieLister(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // business logic that actually uses the injected MovieFinder is omitted...
+}
+```
+
+>
+Notice that there is nothing special about this class. It is a POJO that has no dependencies on container specific interfaces, base classes, or annotations.
+
+이 클래스는 특별한 점이 없습니다.
+- 단순한 POJO 입니다.
+- 컨테이너 인터페이스 스펙, 베이스 클래스, 애노테이션 등에 대한 의존이 없습니다.
+
+###### Constructor Argument Resolution
+
+>
+Constructor argument resolution matching occurs by using the argument’s type. If no potential ambiguity exists in the constructor arguments of a bean definition, the order in which the constructor arguments are defined in a bean definition is the order in which those arguments are supplied to the appropriate constructor when the bean is being instantiated. Consider the following class:
+
+생성자 인자 결정은 인자의 타입을 사용합니다.
+- 만약 bean 정의에 있어 생성자 인자에 잠재적 모호성이 없다면, bean 정의에서의 생성자 인자들의 순서는 bean이 인스턴스화 될 때 해당 인자가 생성자에 제공되는 순서와 같습니다.
+- 다음 클래스 예제를 읽어봅시다.
+
+```java
+package x.y;
+
+public class ThingOne {
+
+    public ThingOne(ThingTwo thingTwo, ThingThree thingThree) {
+        // ...
+    }
+}
+```
+
+>
+Assuming that the `ThingTwo` and `ThingThree` classes are not related by inheritance, no potential ambiguity exists. Thus, the following configuration works fine, and you do not need to specify the constructor argument indexes or types explicitly in the `<constructor-arg/>` element.
+
+`ThingTwo`와 `ThingThree` 클래스가 상속이 없다고 가정하면, 잠재적 모호성도 없습니다.
+- 따라서, 다음 XML 설정은 잘 작동합니다.
+    - 여러분은 `<constructor-arg/>` 엘리먼트에 생성자 인자의 인덱스나 타입 등을 명시할 필요가 없습니다.
+
+```xml
+<beans>
+    <bean id="beanOne" class="x.y.ThingOne">
+        <constructor-arg ref="beanTwo"/>
+        <constructor-arg ref="beanThree"/>
+    </bean>
+
+    <bean id="beanTwo" class="x.y.ThingTwo"/>
+
+    <bean id="beanThree" class="x.y.ThingThree"/>
+</beans>
+```
+
+>
+When another bean is referenced, the type is known, and matching can occur (as was the case with the preceding example). When a simple type is used, such as `<value>true</value>`, Spring cannot determine the type of the value, and so cannot match by type without help. Consider the following class:
+
+위의 예제의 경우를 보면 생성자 인자로 다른 bean이 참조될 때에는 타입이 알려져 있으므로, 인자 매칭이 가능합니다.
+
+- 그러나 만약 `<value>true</value>`와 같이 단순한 타입이 사용된다면,
+    - Spring은 값의 타입을 판별하지 못하여, 도움 없이는 매칭을 하지 못합니다.
+- 다음 예제 클래스를 읽어 봅시다.
+
+```java
+package examples;
+
+public class ExampleBean {
+
+    // Number of years to calculate the Ultimate Answer
+    private final int years;
+
+    // The Answer to Life, the Universe, and Everything
+    private final String ultimateAnswer;
+
+    public ExampleBean(int years, String ultimateAnswer) {
+        this.years = years;
+        this.ultimateAnswer = ultimateAnswer;
+    }
+}
+```
+
+**Constructor argument type maching**
+
+>
+In the preceding scenario, the container can use type matching with simple types if you explicitly specify the type of the constructor argument by using the `type` attribute, as the following example shows:
+
+위의 시나리오에서는 다음 예제와 같이 여러분이 `type` 속성을 사용해 생성자 인자의 타입을 명시해주면 컨테이너가 간단한 타입들의 타입 매칭을 할 수 있습니다.
+
+```xml
+<bean id="exampleBean" class="examples.ExampleBean">
+    <constructor-arg type="int" value="7500000"/>
+    <constructor-arg type="java.lang.String" value="42"/>
+</bean>
+```
+
+**Constructor argument index**
+
+>
+You can use the `index` attribute to specify explicitly the index of constructor arguments, as the following example shows:
+
+`index` 속성을 사용해서 생성자 인자의 인덱스를 명시해줄 수도 있습니다.
+
+```xml
+<bean id="exampleBean" class="examples.ExampleBean">
+    <constructor-arg index="0" value="7500000"/>
+    <constructor-arg index="1" value="42"/>
+</bean>
+```
+
+>
+In addition to resolving the ambiguity of multiple simple values, specifying an index resolves ambiguity where a constructor has two arguments of the same type.
+
+여러 개의 단순한 타입 값이 있는 경우의 모호성을 해결하기 위한 목적 외에도,
+인덱스를 명시하면 같은 타입의 인자가 두 개 있는 경우의 모호성을 해결하는 데에 사용할 수 있습니다.
+
+> (i) The index is 0-based.
+
+
+- (i) 참고: 인덱스는 0 부터 시작합니다.
+
+**Constructor argument name**
+
+>
+You can also use the constructor parameter name for value disambiguation, as the following example shows:
+
+값을 명확히 지정하기 위해 생성자 파라미터의 이름을 사용하는 방법도 있습니다.
+
+```xml
+<bean id="exampleBean" class="examples.ExampleBean">
+    <constructor-arg name="years" value="7500000"/>
+    <constructor-arg name="ultimateAnswer" value="42"/>
+</bean>
+```
+
+>
+Keep in mind that, to make this work out of the box, your code must be compiled with the debug flag enabled so that Spring can look up the parameter name from the constructor. If you cannot or do not want to compile your code with the debug flag, you can use the [@ConstructorProperties]( https://download.oracle.com/javase/8/docs/api/java/beans/ConstructorProperties.html ) JDK annotation to explicitly name your constructor arguments. The sample class would then have to look as follows:
+
+이런 작업이 가능하려면, debug flag 활성화 옵션을 켜고 코드를 컴파일해야 합니다.
+- 그래야 Spring이 생성자 파라미터의 이름을 찾을 수 있습니다.
+- 만약 debug flag 옵션을 켤 수 없는 상황이라면, JDK 애노테이션인 `@ConstructorProperties`을 써서 생성자 인자의 이름을 명시적으로 지정할 수 있습니다.
+    - 예제는 다음과 같습니다.
+
+```java
+package examples;
+
+public class ExampleBean {
+
+    // Fields omitted
+
+    @ConstructorProperties({"years", "ultimateAnswer"})
+    public ExampleBean(int years, String ultimateAnswer) {
+        this.years = years;
+        this.ultimateAnswer = ultimateAnswer;
+    }
+}
+```
+
+##### Setter-based Dependency Injection
+
+##### Dependency Resolution Process
+
+##### Examples of Dependency Injection
+
+#### 1.4.2. Dependencies and Configuration in Detail
 
 ## 함께 읽기
 
