@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-13 14:02:42 +0900
+updated : 2021-06-13 19:17:50 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -918,6 +918,18 @@ The recommended way to find out about the actual runtime type of a particular be
 - bean 이름으로 `BeanFactory.getType` 메소드를 호출하는 것입니다.
 - 이 방법은 위에서 말한 모든 경우를 고려하여 객체의 타입을 리턴해 줍니다.
     - 리턴된 값은 `BeanFactory.getBean` 메소드가 리턴해주는 것과 같은 bean입니다.
+
+### 1.4. Dependencies
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-dependencies )
+
+>
+A typical enterprise application does not consist of a single object (or bean in the Spring parlance). Even the simplest application has a few objects that work together to present what the end-user sees as a coherent application. This next section explains how you go from defining a number of bean definitions that stand alone to a fully realized application where objects collaborate to achieve a goal.
+
+일반적인 엔터프라이즈 애플리케이션은 단일 객체(또는 Spring 용어로 bean)로 이루어지지 않습니다.
+- 심지어 최종 사용자의 눈에 한 덩어리로 만들어져 잘 돌아가는 것처럼 보이는 단순한 종류의 애플리케이션도, 실제로는 함께 작동하는 몇 개의 객체로 구성되어 돌아가고 있습니다.
+- 이번 섹션에서는 독립적인 여러 bean을 정의하는 것부터, 여러 객체가 협력해 개발 목표를 달성하는 애플리케이션으로 전환하는 방법까지를 설명합니다.
+
 
 ## 함께 읽기
 
