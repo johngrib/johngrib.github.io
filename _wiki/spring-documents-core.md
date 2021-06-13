@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-13 23:19:35 +0900
+updated : 2021-06-13 23:28:26 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -1453,6 +1453,40 @@ Arguments to the `static` factory method are supplied by `<constructor-arg/>` el
     - 따라서 인스턴스 팩토리 메소드에 대한 예제는 생략합니다.
 
 #### 1.4.2. Dependencies and Configuration in Detail
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-properties-detailed )
+
+##### Straight Values (Primitives, Strings, and so on)
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-value-element )
+
+##### References to Other Beans (Collaborators)
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-ref-element )
+
+##### Inner Beans
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-inner-beans )
+
+##### Collections
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-collection-elements )
+
+##### Null and Empty String Values
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-null-element )
+
+##### XML Shortcut with the p-namespace
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-p-namespace )
+
+##### XML Shortcut with the c-namespace
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-c-namespace )
+
+##### Compound Property Names
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-compound-property-names )
 
 ## 함께 읽기
 
