@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-13 23:05:36 +0900
+updated : 2021-06-13 23:19:35 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -1297,6 +1297,160 @@ If no circular dependencies exist, when one or more collaborating beans are bein
 - 즉, (pre-instantiated singleton이 아닌)bean이 인스턴스화될 때, 해당 bean의 의존관계가 세팅되며, 라이프사이클 메소드(`configured init method` 또는 `InitializingBean callback method` 같은 것들)가 호출됩니다.
 
 ##### Examples of Dependency Injection
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-some-examples )
+
+>
+The following example uses XML-based configuration metadata for setter-based DI. A small part of a Spring XML configuration file specifies some bean definitions as follows:
+
+다음 예제들은 XML 기반의 configuration 메타데이터를 사용하며, setter 기반의 DI를 씁니다.
+
+```xml
+<bean id="exampleBean" class="examples.ExampleBean">
+    <!-- setter injection using the nested ref element -->
+    <property name="beanOne">
+        <ref bean="anotherExampleBean"/>
+    </property>
+
+    <!-- setter injection using the neater ref attribute -->
+    <property name="beanTwo" ref="yetAnotherBean"/>
+    <property name="integerProperty" value="1"/>
+</bean>
+
+<bean id="anotherExampleBean" class="examples.AnotherBean"/>
+<bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
+```
+
+>
+The following example shows the corresponding `ExampleBean` class:
+
+다음 예제는 위의 XML에 대응하는 `ExampleBean` 클래스를 보여줍니다.
+
+```java
+public class ExampleBean {
+
+    private AnotherBean beanOne;
+
+    private YetAnotherBean beanTwo;
+
+    private int i;
+
+    public void setBeanOne(AnotherBean beanOne) {
+        this.beanOne = beanOne;
+    }
+
+    public void setBeanTwo(YetAnotherBean beanTwo) {
+        this.beanTwo = beanTwo;
+    }
+
+    public void setIntegerProperty(int i) {
+        this.i = i;
+    }
+}
+```
+
+>
+In the preceding example, setters are declared to match against the properties specified in the XML file. The following example uses constructor-based DI:
+
+위의 예제를 보면 XML에 설정된 값들에 대응하는 setter 메소드들이 선언되었음을 알 수 있습니다.
+
+다음 예제는 생성자 기반의 DI를 보여줍니다.
+
+```xml
+<bean id="exampleBean" class="examples.ExampleBean">
+    <!-- constructor injection using the nested ref element -->
+    <constructor-arg>
+        <ref bean="anotherExampleBean"/>
+    </constructor-arg>
+
+    <!-- constructor injection using the neater ref attribute -->
+    <constructor-arg ref="yetAnotherBean"/>
+
+    <constructor-arg type="int" value="1"/>
+</bean>
+
+<bean id="anotherExampleBean" class="examples.AnotherBean"/>
+<bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
+```
+
+>
+The following example shows the corresponding `ExampleBean` class:
+
+다음 예제는 위의 XML에 대응하는 `ExampleBean` 클래스를 보여줍니다.
+
+```java
+public class ExampleBean {
+
+    private AnotherBean beanOne;
+
+    private YetAnotherBean beanTwo;
+
+    private int i;
+
+    public ExampleBean(
+        AnotherBean anotherBean, YetAnotherBean yetAnotherBean, int i) {
+        this.beanOne = anotherBean;
+        this.beanTwo = yetAnotherBean;
+        this.i = i;
+    }
+}
+```
+
+>
+The constructor arguments specified in the bean definition are used as arguments to the constructor of the `ExampleBean`.
+>
+Now consider a variant of this example, where, instead of using a constructor, Spring is told to call a static factory method to return an instance of the object:
+
+XML에 정의된 bean의 생성자 인자는 `ExampleBean`의 생성자 인자로 사용됩니다.
+
+이제 이 예제를 생성자 방식이 아니라 정적 팩토리 메소드 방식으로 변형한 예제를 봅시다.
+
+```xml
+<bean id="exampleBean" class="examples.ExampleBean" factory-method="createInstance">
+    <constructor-arg ref="anotherExampleBean"/>
+    <constructor-arg ref="yetAnotherBean"/>
+    <constructor-arg value="1"/>
+</bean>
+
+<bean id="anotherExampleBean" class="examples.AnotherBean"/>
+<bean id="yetAnotherBean" class="examples.YetAnotherBean"/>
+```
+
+>
+The following example shows the corresponding `ExampleBean` class:
+
+다음 예제는 위의 XML에 대응하는 `ExampleBean` 클래스를 보여줍니다.
+
+```java
+public class ExampleBean {
+
+    // a private constructor
+    private ExampleBean(...) {
+        ...
+    }
+
+    // a static factory method; the arguments to this method can be
+    // considered the dependencies of the bean that is returned,
+    // regardless of how those arguments are actually used.
+    public static ExampleBean createInstance (
+        AnotherBean anotherBean, YetAnotherBean yetAnotherBean, int i) {
+
+        ExampleBean eb = new ExampleBean (...);
+        // some other operations...
+        return eb;
+    }
+}
+```
+
+>
+Arguments to the `static` factory method are supplied by `<constructor-arg/>` elements, exactly the same as if a constructor had actually been used. The type of the class being returned by the factory method does not have to be of the same type as the class that contains the `static` factory method (although, in this example, it is). An instance (non-static) factory method can be used in an essentially identical fashion (aside from the use of the `factory-bean` attribute instead of the `class` attribute), so we do not discuss those details here.
+
+정적 팩토리 메소드의 인자는 생성자 방식과 똑같이 `<constructor-arg/>` 엘리먼트에 정의된 것을 사용합니다.
+- 팩토리 메소드가 리턴하는 클래스의 타입은 정적 팩토리 메소드가 들어있는 클래스의 타입과 똑같지 않아도 됩니다.
+    - (이 예제에서는 정적 팩토리 메소드가 리턴하는 타입과, 정적 팩토리 메소드가 정의된 클래스의 타입이 같습니다.)
+- 인스턴스 (static이 아닌)팩토리 메소드도 기본적으로는 같은 방법으로 사용할 수 있습니다.
+    - `class` 속성 대신 `factory-bean`을 쓴다는 점만 다릅니다.
+    - 따라서 인스턴스 팩토리 메소드에 대한 예제는 생략합니다.
 
 #### 1.4.2. Dependencies and Configuration in Detail
 
