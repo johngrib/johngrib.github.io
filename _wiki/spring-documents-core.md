@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-13 21:13:17 +0900
+updated : 2021-06-13 23:05:36 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -1213,6 +1213,88 @@ setter 주입은 주로 클래스 내에서 적절한 기본값을 할당할 수
     - 예를 들어 서드 파티 클래스가 setter 메소드를 전혀 노출하지 않는다면, 생성자 주입이 유일한 DI 방법일 수 있습니다.
 
 ##### Dependency Resolution Process
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-dependency-resolution )
+
+>
+The container performs bean dependency resolution as follows:
+>
+- The `ApplicationContext` is created and initialized with configuration metadata that describes all the beans. Configuration metadata can be specified by XML, Java code, or annotations.
+- For each bean, its dependencies are expressed in the form of properties, constructor arguments, or arguments to the static-factory method (if you use that instead of a normal constructor). These dependencies are provided to the bean, when the bean is actually created.
+- Each property or constructor argument is an actual definition of the value to set, or a reference to another bean in the container.
+- Each property or constructor argument that is a value is converted from its specified format to the actual type of that property or constructor argument. By default, Spring can convert a value supplied in string format to all built-in types, such as `int`, `long`, `String`, `boolean`, and so forth.
+
+컨테이너는 다음과 같이 bean 의존관계 작업을 수행합니다.
+
+- `ApplicationContext`는 configuration 메타데이터를 통해 생성되고 구성됩니다.
+    - configuration 메타데이터는 모든 bean을 설명하며 XML, Java 코드, 애노테이션으로 작성할 수 있습니다.
+- 각각의 bean에 대한 의존관계는 다음과 같은 형태로 표현됩니다.
+    - 클래스 속성, 생성자 인자, 정적 팩토리 메소드 인자
+    - 이런 의존관계들은 bean이 생성될 때 bean에 제공됩니다.
+- 각각의 속성이나 생성자 인자는 설정에서 정의된 값이거나, 컨테이너에서 관리하고 있는 다른 bean의 참조값입니다.
+- 레퍼런스가 아니라 값 타입인 클래스 속성이나 생성자 인자의 경우, 값은 사전에 정의된 포맷으로 변환됩니다.
+    - Spring은 `String` 형식으로 제공된 값을 `int`, `long`, `String,` `boolean` 등등과 같은 빌트인 타입으로 변환할 수 있습니다.
+
+>
+The Spring container validates the configuration of each bean as the container is created. However, the bean properties themselves are not set until the bean is actually created. Beans that are singleton-scoped and set to be pre-instantiated (the default) are created when the container is created. Scopes are defined in [Bean Scopes]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes ). Otherwise, the bean is created only when it is requested. Creation of a bean potentially causes a graph of beans to be created, as the bean’s dependencies and its dependencies' dependencies (and so on) are created and assigned. Note that resolution mismatches among those dependencies may show up late — that is, on first creation of the affected bean.
+
+Spring 컨테이너가 생성될 때, 각 bean의 구성을 검증하게 됩니다.
+- 그러나 bean 속성 자체는 bean이 실제로 생성되기 전까지는 설정되지 않습니다.
+- singleton-scope 로 설정되고, pre-instantiated 로 설정된(이 두 설정이 bean의 기본 설정입니다) bean들은 컨테이너가 생성될 때 생성됩니다.
+    - scope에 대한 설명은 [Bean Scopes]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes ) 문서를 참고하세요.
+- 그 외의 경우, bean은 bean이 요청된 경우에만 생성됩니다.
+- bean의 생성은 다양한 다른 bean의 생성을 필요로 할 수 있으며, 생성해야 할 bean 들은 그래프 구조를 이루게 됩니다.
+    - 의존관계의 의존관계, 의존관계의 의존관계의 의존관계 등이 생성되고 할당될 수 있기 때문입니다.
+- 이러한 의존관계들 사이의 미스 매치는 뒤늦게 드러날 수도 있습니다(영향을 받는 bean의 최초 생성시).
+
+>
+**Circular dependencies**
+>
+If you use predominantly constructor injection, it is possible to create an unresolvable circular dependency scenario.
+>
+For example: Class A requires an instance of class B through constructor injection, and class B requires an instance of class A through constructor injection. If you configure beans for classes A and B to be injected into each other, the Spring IoC container detects this circular reference at runtime, and throws a `BeanCurrentlyInCreationException`.
+>
+One possible solution is to edit the source code of some classes to be configured by setters rather than constructors. Alternatively, avoid constructor injection and use setter injection only. In other words, although it is not recommended, you can configure circular dependencies with setter injection.
+>
+Unlike the typical case (with no circular dependencies), a circular dependency between bean A and bean B forces one of the beans to be injected into the other prior to being fully initialized itself (a classic chicken-and-egg scenario).
+
+**순환 의존관계**
+
+- 만약 여러분이 주로 생성자 주입을 사용한다면, 해결 불가능한 순환 의존관계 시나리오를 만날 수도 있습니다.
+    - 예
+        - 클래스 A는 생성자를 통해 클래스 B의 인스턴스를 주입받습니다.
+        - 클래스 B는 생성자를 통해 클래스 A의 인스턴스를 주입받습니다.
+    - 이와 같이 클래스 A, B가 서로를 주입하도록 bean을 구성한다면?
+        - Spring IoC 컨테이너는 런타임에 이런 순환참조를 감지하고, `BeanCurrentlyInCreationException` 예외를 던집니다.
+- 이런 경우에 대한 한 가지 해결책은 생성자 주입이 아니라 setter 주입을 사용하도록 문제가 발생한 클래스의 코드를 수정하는 것입니다.
+    - 또는 생성자 주입을 아예 안 쓰고 setter 주입만 사용할 수도 있습니다.
+    - 즉, setter 주입이 권장되는 방식은 아니지만, setter 주입을 쓰면 예외 없이 순환 의존관계를 설정하는 것이 가능합니다.
+- 순환 의존관계가 없는 일반적인 경우와 달리, bean A와 bean B 사이의 순환 의존관계는 완전한 초기화가 끝나기 전에 bean 중 하나가 다른 bean에 주입되도록 강제해야 해결 가능합니다.
+    - 계란이 먼저인지 닭이 먼저인지의 문제와 같습니다.
+
+
+>
+You can generally trust Spring to do the right thing. It detects configuration problems, such as references to non-existent beans and circular dependencies, at container load-time. Spring sets properties and resolves dependencies as late as possible, when the bean is actually created. This means that a Spring container that has loaded correctly can later generate an exception when you request an object if there is a problem creating that object or one of its dependencies — for example, the bean throws an exception as a result of a missing or invalid property. This potentially delayed visibility of some configuration issues is why `ApplicationContext` implementations by default pre-instantiate singleton beans. At the cost of some upfront time and memory to create these beans before they are actually needed, you discover configuration issues when the `ApplicationContext` is created, not later. You can still override this default behavior so that singleton beans initialize lazily, rather than being eagerly pre-instantiated.
+
+여러분은 대부분의 경우에 Spring이 알아서 잘 할 거라고 신뢰할 수 있습니다.
+- Spring은 컨테이너를 로드할 때 다음과 같은 구성 문제들을 찾아냅니다.
+    - 존재하지 않는 Bean 참조 문제
+    - 순환 의존관계
+- Spring은 Bean을 실제로 생성할 때 가능한 한 늦게 속성을 설정하고 의존관계를 연결합니다.
+- 이는 Spring 컨테이너가 올바르게 로드되었다면 문제 있는 객체를 요청했을 때 컨테이너가 예외를 발생시킬 것이라는 의미입니다.
+    - 생성할 수 없는 객체나 의존관계를 생성하는 데에 문제가 있는 객체
+    - 예를 들어, 속성이 누락되었거나 검증에 실패했다면 bean은 예외를 던집니다.
+- `ApplicationContext`의 구현체가 bean의 기본값으로 pre-instantiate singleton을 사용하는 이유가 바로 이것 때문입니다.
+    - 이렇게 구성 문제를 뒤늦게 보여주는 방식 때문.
+- bean이 실제로 필요하기 전에 이렇게 bean을 미리 만들어 두는 데에 업프론트 타임과 메모리를 사용하는 방식으로, 여러분은 configuration 문제를 뒤늦게 알게 되는 것이 아니라 `ApplicationContext`가 생성될 때 발견할 수 있게 됩니다.
+- 물론 이런 기본 동작을 오버라이드해서 singleton bean이 pre-instantiate 되지 않고 나중에 초기화되도록 바꿀 수도 있습니다.
+
+>
+If no circular dependencies exist, when one or more collaborating beans are being injected into a dependent bean, each collaborating bean is totally configured prior to being injected into the dependent bean. This means that, if bean A has a dependency on bean B, the Spring IoC container completely configures bean B prior to invoking the setter method on bean A. In other words, the bean is instantiated (if it is not a pre-instantiated singleton), its dependencies are set, and the relevant lifecycle methods (such as a [configured init method]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-initializingbean ) or the [InitializingBean callback method]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-initializingbean )) are invoked.
+
+만약 순환 의존관계가 없다면 서로 협업하는 bean 들은 다른 bean에 주입되기 전에 이미 완전히 구성을 마친 상태가 됩니다.
+- 가령, bean B에 의존하고 있는 bean A가 있다면, Spring IoC 컨테이너는 먼저 bean B를 완전히 만들어 놓고, bean A의 setter 메소드를 호출한다는 뜻입니다.
+- 즉, (pre-instantiated singleton이 아닌)bean이 인스턴스화될 때, 해당 bean의 의존관계가 세팅되며, 라이프사이클 메소드(`configured init method` 또는 `InitializingBean callback method` 같은 것들)가 호출됩니다.
 
 ##### Examples of Dependency Injection
 
