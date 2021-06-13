@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-13 20:36:08 +0900
+updated : 2021-06-13 21:13:17 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -1138,6 +1138,79 @@ public class ExampleBean {
 ```
 
 ##### Setter-based Dependency Injection
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-setter-injection )
+
+>
+Setter-based DI is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or a no-argument `static` factory method to instantiate your bean.
+>
+The following example shows a class that can only be dependency-injected by using pure setter injection. This class is conventional Java. It is a POJO that has no dependencies on container specific interfaces, base classes, or annotations.
+
+setter 기반의 DI는 다음과 같이 수행됩니다.
+- 컨테이너가 기본 생성자를 호출하거나 `static` 팩토리 메소드를 호출해 bean을 초기화합니다.
+- 컨테이너가 생성된 bean의 setter 메소드를 호출합니다.
+
+다음 예제는 순수한 setter 주입만을 통해서만 의존관계 주입이 가능한 클래스를 보여줍니다.
+- 예제의 클래스는 평범한 Java 코드입니다.
+- 예제의 클래스는 컨테이너 스펙 인터페이스나, 베이스 클래스, 애노테이션 등에 의존하지 않는 POJO 입니다.
+
+```java
+public class SimpleMovieLister {
+
+    // the SimpleMovieLister has a dependency on the MovieFinder
+    private MovieFinder movieFinder;
+
+    // a setter method so that the Spring container can inject a MovieFinder
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // business logic that actually uses the injected MovieFinder is omitted...
+}
+```
+
+>
+The `ApplicationContext` supports constructor-based and setter-based DI for the beans it manages. It also supports setter-based DI after some dependencies have already been injected through the constructor approach. You configure the dependencies in the form of a `BeanDefinition`, which you use in conjunction with `PropertyEditor` instances to convert properties from one format to another. However, most Spring users do not work with these classes directly (that is, programmatically) but rather with XML `bean` definitions, annotated components (that is, classes annotated with `@Component`, `@Controller`, and so forth), or `@Bean` methods in Java-based `@Configuration` classes. These sources are then converted internally into instances of `BeanDefinition` and used to load an entire Spring IoC container instance.
+
+`ApplicationContext`는 관리 대상 Bean에 대해 생성자 기반 및 setter 기반 DI를 지원합니다.
+- 또한 생성자 방식을 통해 일부 의존관계가 이미 주입된 후의 setter 기반 DI도 지원합니다.
+- 속성을 한 포맷에서 다른 포맷으로 변환하기 위해 `PropertyEditor` 인스턴스와 `BeanDefinition` 형식의 조합으로 의존관계를 구성할 수도 있습니다.
+- 그러나 대부분의 Spring 사용자는 이러한 클래스를 직접(프로그래밍) 사용하지는 않고 다음과 같은 방법들을 사용합니다.
+    - XML `bean` 정의.
+    - 애노테이션 컴포넌트(즉, `@Component`, `@Controller`등과 같이 애노테이션이 붙은 클래스).
+    - Java 기반의 `@Configuration` 클래스 내에 작성한 `@Bean` 메소드.
+    - 이러한 소스들은 내부적으로 `BeanDefinition` 인스턴스로 변환되며, 전체 Spring IoC 컨테이너 인스턴스를 로드하는데 사용됩니다.
+
+**Constructor-based or setter-based ID?**
+
+>
+Since you can mix constructor-based and setter-based DI, it is a good rule of thumb to use constructors for mandatory dependencies and setter methods or configuration methods for optional dependencies. Note that use of the [@Required]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-required-annotation ) annotation on a setter method can be used to make the property be a required dependency; however, constructor injection with programmatic validation of arguments is preferable.
+>
+The Spring team generally advocates constructor injection, as it lets you implement application components as immutable objects and ensures that required dependencies are not `null`. Furthermore, constructor-injected components are always returned to the client (calling) code in a fully initialized state. As a side note, a large number of constructor arguments is a bad code smell, implying that the class likely has too many responsibilities and should be refactored to better address proper separation of concerns.
+>
+Setter injection should primarily only be used for optional dependencies that can be assigned reasonable default values within the class. Otherwise, not-null checks must be performed everywhere the code uses the dependency. One benefit of setter injection is that setter methods make objects of that class amenable to reconfiguration or re-injection later. Management through [JMX MBeans]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/integration.html#jmx ) is therefore a compelling use case for setter injection.
+>
+Use the DI style that makes the most sense for a particular class. Sometimes, when dealing with third-party classes for which you do not have the source, the choice is made for you. For example, if a third-party class does not expose any setter methods, then constructor injection may be the only available form of DI.
+
+생성자 기반 DI와 setter 기반의 DI를 조합해서 사용할 수 있습니다.
+따라서, 필수적인 의존관계에는 생성자 방식을 사용하고, 옵셔널한 의존관계에는 setter 메소드 방식을 사용하는 것은 좋은 규칙이라 할 수 있습니다.
+- setter 메소드에 `@Required` 애노테이션을 사용하면 해당 속성을 필수값으로 지정할 수 있습니다.
+- 그러나 프로그래밍 방식의 validation을 통한 생성자 주입 방식이 더 바람직합니다.
+
+스프링 팀은 생성자 주입 방식을 옹호합니다.
+- 생성자 주입 방식은 애플리케이션을 구성하는 객체들을 불변 객체로 만들 수 있고, 필수 의존관계들이 `null`이 되지 않도록 해줍니다.
+- 또한, 생성자 주입 방식으로 생성된 컴포넌트는 초기화가 완전히 끝난 상태로 클라이언트 코드로 리턴됩니다.
+- 첨부하자면 생성자 인자가 너무 많으면 코드에서 나쁜 냄새가 납니다.
+    - 이런 경우에는 클래스에 너무 많은 책임이 부여되었을 가능성이 높으므로, 관심사를 적절히 분리하기 위해 리팩토링을 해야 할 수 있습니다.
+
+setter 주입은 주로 클래스 내에서 적절한 기본값을 할당할 수 있는 옵셔널한 의존관계에만 사용해야 합니다.
+- 기본값을 주지 않으면 주입된 의존관계를 사용하는 모든 곳에서 `null` 체크를 해줘야 합니다.
+- setter 주입의 한 가지 장점은 필요한 경우에 setter 메서드를 통해 나중에 해당 클래스를 재구성하거나, 주입을 다시 할 수도 있다는 것입니다.
+    - JMX MBeans는 setter 주입 방식의 바람직한 사용 사레라 할 수 있습니다.
+
+클래스 특성에 적합한 DI 스타일을 사용하세요.
+- 어떨 때에는 소스코드를 볼 수 없는 서드 파티 클래스를 다뤄야 할 수도 있습니다.
+    - 예를 들어 서드 파티 클래스가 setter 메소드를 전혀 노출하지 않는다면, 생성자 주입이 유일한 DI 방법일 수 있습니다.
 
 ##### Dependency Resolution Process
 
