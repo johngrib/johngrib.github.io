@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-14 12:39:18 +0900
+updated : 2021-06-14 12:56:32 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -1466,6 +1466,80 @@ As mentioned in the [previous section]( https://docs.spring.io/spring-framework/
 ##### Straight Values (Primitives, Strings, and so on)
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-value-element )
+
+>
+The `value` attribute of the `<property/>` element specifies a property or constructor argument as a human-readable string representation. Spring’s [conversion service]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#core-convert-ConversionService-API ) is used to convert these values from a `String` to the actual type of the property or argument. The following example shows various values being set:
+
+`<property/>` 엘리먼트의 `value` 속성은 단순한 값이나 생성자 인자 같은 것들을 사람이 읽기 좋은 형태의 문자열을 사용합니다.
+Spring의 conversion service는 이런 `String` 타입의 값들을 속성값이나 인자 값에 필요한 실제 타입으로 변환해 줍니다.
+다음 예제를 참고해 봅시다.
+
+```xml
+<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <!-- results in a setDriverClassName(String) call -->
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/mydb"/>
+    <property name="username" value="root"/>
+    <property name="password" value="misterkaoli"/>
+</bean>
+```
+
+>
+The following example uses the [p-namespace]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-p-namespace ) for even more succinct XML configuration:
+
+다음 예제는 XML 파일을 간결하게 구성하기 위해 p-namespace를 사용합니다.
+
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+        destroy-method="close"
+        p:driverClassName="com.mysql.jdbc.Driver"
+        p:url="jdbc:mysql://localhost:3306/mydb"
+        p:username="root"
+        p:password="misterkaoli"/>
+
+</beans>
+```
+
+>
+The preceding XML is more succinct. However, typos are discovered at runtime rather than design time, unless you use an IDE (such as [IntelliJ IDEA]( https://www.jetbrains.com/idea/ ) or the [Spring Tools for Eclipse]( https://spring.io/tools )) that supports automatic property completion when you create bean definitions. Such IDE assistance is highly recommended.
+>
+You can also configure a `java.util.Properties` instance, as follows:
+
+앞의 XML은 좀 더 간결합니다.
+bean 정의를 만들 때 자동 완성을 지원하는 IDE (IntelliJ IDEA 또는 Spring Tools for Eclipse)를 쓴다면 값을 타이핑할 떄 오타를 발견할 수 있으므로, IDE 사용을 적극 권장합니다.
+
+다음과 같이 `java.util.Properties` 인스턴스를 구성하는 방법도 있습니다.
+
+```xml
+<bean id="mappings"
+    class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+
+    <!-- typed as a java.util.Properties -->
+    <property name="properties">
+        <value>
+            jdbc.driver.className=com.mysql.jdbc.Driver
+            jdbc.url=jdbc:mysql://localhost:3306/mydb
+        </value>
+    </property>
+</bean>
+```
+
+>
+The Spring container converts the text inside the `<value/>` element into a `java.util.Properties` instance by using the JavaBeans `PropertyEditor` mechanism. This is a nice shortcut, and is one of a few places where the Spring team do favor the use of the nested `<value/>` element over the `value` attribute style.
+
+Spring 컨테이너는 JavaBeans `PropertyEditor` 메커니즘을 사용하여 `<value/>` 내부의 텍스트를 `java.util.Properties` 인스턴스로 변환합니다.
+이 방법은 멋진 지름길이며 Spring 팀이 `value` 속성 스타일보다 중첩된 `<value/>` 요소를 사용하는 것을 선호하는 몇 안되는 곳 중 하나입니다.
+
+
+###### The idref element
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-idref-element )
 
 ##### References to Other Beans (Collaborators)
 
