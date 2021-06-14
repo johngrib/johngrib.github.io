@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-14 12:56:32 +0900
+updated : 2021-06-14 13:01:31 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -1540,6 +1540,38 @@ Spring 컨테이너는 JavaBeans `PropertyEditor` 메커니즘을 사용하여 `
 ###### The idref element
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-idref-element )
+
+>
+The `idref` element is simply an error-proof way to pass the `id` (a string value - not a reference) of another bean in the container to a `<constructor-arg/>` or `<property/>` element. The following example shows how to use it:
+
+`idref` 엘리먼트는 컨테이너에 있는 다른 빈의 `id`(문자열 값이며, 참조가 아님)를 `<constructor-arg/>` 또는 `<property/>` 엘리먼트에 전달하는 오류 방지 방법입니다.
+다음 예제는 사용 방법을 보여줍니다.
+
+```xml
+<bean id="theTargetBean" class="..."/>
+
+<bean id="theClientBean" class="...">
+    <property name="targetName">
+        <idref bean="theTargetBean"/>
+    </property>
+</bean>
+```
+
+>
+The preceding bean definition snippet is exactly equivalent (at runtime) to the following snippet:
+
+앞의 bean 정의 스니펫은 다음 스니펫과 정확히 똑같이 평가됩니다.(런타임 기준)
+
+```xml
+<bean id="theTargetBean" class="..." />
+
+<bean id="client" class="...">
+    <property name="targetName" value="theTargetBean"/>
+</bean>
+```
+
+(작업중)
+
 
 ##### References to Other Beans (Collaborators)
 
