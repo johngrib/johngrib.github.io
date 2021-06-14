@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-14 22:30:43 +0900
+updated : 2021-06-14 22:47:09 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -1621,6 +1621,11 @@ A common place (at least in versions earlier than Spring 2.0) where the `<idref/
 ##### Compound Property Names
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-compound-property-names )
+
+
+#### 1.4.3. Using depends-on
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-dependson )
 
 ## 함께 읽기
 
