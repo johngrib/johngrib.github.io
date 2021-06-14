@@ -654,6 +654,7 @@ java:
     - {fileName: private-constructor}
     - {fileName: restdoc-item-generator}
     - {fileName: spring-annotation-value}
+    - {fileName: spring-documents-core-1-2-container-overview}
     - {fileName: spring-versions}
     - {fileName: summary-The-Pauseless-GC-Algorithm}
     - {fileName: ternary-operator-and-null-pointer-exception}
@@ -892,6 +893,7 @@ spring:
     - {fileName: spring-bean-config-configuration}
     - {fileName: spring-bean-config-xml}
     - {fileName: spring-documents}
+    - {fileName: spring-documents-core-1-2-container-overview}
     - {fileName: spring-documents-overview}
 bsd:
     - {fileName: ioreg-cmd}

@@ -3909,7 +3909,15 @@ spring-documents:
     parent: Spring
     url: /wiki/spring-documents
     updated: '2021-02-13 16:09:03 +0900'
-    children: [spring-documents-overview]
+    children: [spring-documents-core-1-2-container-overview, spring-documents-overview]
+spring-documents-core-1-2-container-overview:
+    type: wiki
+    title: 'Spring Core Technologies - 1.2. Container Overview'
+    summary: ""
+    parent: spring-documents
+    url: /wiki/spring-documents-core-1-2-container-overview
+    updated: '2021-06-14 23:29:43 +0900'
+    children: []
 spring-documents-overview:
     type: wiki
     title: '(요약) Spring Framework Overview'
