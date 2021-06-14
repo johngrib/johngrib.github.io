@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-13 23:28:26 +0900
+updated : 2021-06-14 12:39:18 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -1455,6 +1455,13 @@ Arguments to the `static` factory method are supplied by `<constructor-arg/>` el
 #### 1.4.2. Dependencies and Configuration in Detail
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-properties-detailed )
+
+>
+As mentioned in the [previous section]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-collaborators ), you can define bean properties and constructor arguments as references to other managed beans (collaborators) or as values defined inline. Spring’s XML-based configuration metadata supports sub-element types within its `<property/>` and `<constructor-arg/>` elements for this purpose.
+
+앞 섹션에서 언급한 바와 같이, bean 속성과 생성자 인자를 설정할 때, 컨테이너가 관리하는 다른 bean(협업 객체)의 레퍼런스나 설정에 정의된 값을 사용할 수 있습니다.
+
+이런 설정을 할 수 있도록 Spring의 XML 기반 configuration 메타데이터는 `<property/>`와 `<constructor-arg/>` 엘리먼트에서 하위 엘리먼트를 사용할 수 있도록 지원합니다.
 
 ##### Straight Values (Primitives, Strings, and so on)
 
