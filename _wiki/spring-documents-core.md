@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-14 13:01:31 +0900
+updated : 2021-06-14 22:30:43 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -1570,8 +1570,29 @@ The preceding bean definition snippet is exactly equivalent (at runtime) to the 
 </bean>
 ```
 
-(작업중)
+>
+The first form is preferable to the second, because using the `idref` tag lets the container validate at deployment time that the referenced, named bean actually exists. In the second variation, no validation is performed on the value that is passed to the `targetName` property of the `client` bean. Typos are only discovered (with most likely fatal results) when the `client` bean is actually instantiated. If the `client` bean is a [prototype]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes ) bean, this typo and the resulting exception may only be discovered long after the container is deployed.
 
+첫 번째 방법이 두 번째 방법보다 선호됩니다.
+- `idref` 태그를 사용하면 배포시에 컨테이너가 각 bean들(이름을 붙이고, 참조한 bean들)이 실제로 존재하는지 확인할 수 있기 때문입니다.
+- 두 번째 방법에서는 id가 `client`인 Bean의 `targetName` 값에 대한 유효성 검증이 수행되지 않습니다.
+- 값을 잘못 작성했거나 오타가 있다면
+    - `client` bean이 실제로 인스턴스화 될 때만 발견됩니다(꽤나 치명적일 것입니다).
+    - 만약 `client` bean이 prototype bean이라면 오타나 예외는 컨테이너가 배포되고 나서 한참 지난 후에 발견될 수도 있습니다.
+
+>
+(i) The `local` attribute on the `idref` element is no longer supported in the 4.0 beans XSD, since it does not provide value over a regular `bean` reference any more. Change your existing `idref local` references to `idref bean` when upgrading to the 4.0 schema.
+
+- (i) 참고
+    - `idref` 엘리먼트의 `local` 속성은 더 이상 4.0 beans XSD 에서 지원되지 않습니다.
+    - 일반적인 Bean 참조값을 제공하지 않기 때문입니다.
+    - 만약 4.0 스키마로 업그레이드하려 한다면 기존의 `idref local` 참조를 `idref Bean`으로 변경하세요.
+
+>
+A common place (at least in versions earlier than Spring 2.0) where the `<idref/>` element brings value is in the configuration of [AOP interceptors]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#aop-pfb-1 ) in a `ProxyFactoryBean` bean definition. Using `<idref/>` elements when you specify the interceptor names prevents you from misspelling an interceptor ID.
+
+(적어도 Spring 2.0 이전 버전에서) `<idref/>` 엘리먼트가 값을 가져 오는 일반적인 장소는 `ProxyFactoryBean` bean 정의 내에 있는 AOP 인터셉터의 configuration에 있습니다.
+- 인터셉터 이름을 지정할 때 `<idref/>` 엘리먼트를 사용하면 인터셉터 ID를 잘못 입력하는 실수를 방지할 수 있습니다.
 
 ##### References to Other Beans (Collaborators)
 
