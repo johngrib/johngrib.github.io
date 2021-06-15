@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.4. Dependencies
 summary : 
 date    : 2021-06-15 22:47:35 +0900
-updated : 2021-06-15 22:50:57 +0900
+updated : 2021-06-15 23:57:28 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -724,3 +724,60 @@ A common place (at least in versions earlier than Spring 2.0) where the `<idref/
 ### 1.4.3. Using depends-on
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-dependson )
+
+>
+If a bean is a dependency of another bean, that usually means that one bean is set as a property of another. Typically you accomplish this with the [`<ref/>` element]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-ref-element ) in XML-based configuration metadata. However, sometimes dependencies between beans are less direct. An example is when a static initializer in a class needs to be triggered, such as for database driver registration. The `depends-on` attribute can explicitly force one or more beans to be initialized before the bean using this element is initialized. The following example uses the `depends-on` attribute to express a dependency on a single bean:
+
+Bean이 다른 Bean의 의존관계이면 한 Bean이 다른 Bean의 프로퍼티로 설정됨을 의미합니다.
+- 일반적으로 XML 기반 configuration 메타데이터의 `<ref/>` 엘리먼트를 사용하여 이 작업을 수행합니다.
+
+그러나 때로는 bean 간의 의존이 덜 직접적입니다.
+- 예를 들어 데이터베이스 드라이버 등록과 같이 클래스의 정적 이니셜라이저를 트리거해야하는 경우입니다.
+- `depend-on` 속성은 Bean이 초기화되기 전에 하나 이상의 Bean을 명시적으로 강제로 초기화하도록 설정할 수 있습니다.
+    - 다음 예제는 `depend-on` 속성을 사용하여 다른 Bean에 대한 종속성을 표현합니다.
+
+```xml
+<bean id="beanOne" class="ExampleBean" depends-on="manager"/>
+<bean id="manager" class="ManagerBean" />
+```
+
+>
+To express a dependency on multiple beans, supply a list of bean names as the value of the `depends-on` attribute (commas, whitespace, and semicolons are valid delimiters):
+
+`depend-on`에 bean 이름을 여러 개 줄 수도 있습니다. (`,`, `;`, 공백을 구분자로 쓸 수 있다.)
+
+```xml
+<bean id="beanOne" class="ExampleBean" depends-on="manager,accountDao">
+    <property name="manager" ref="manager" />
+</bean>
+
+<bean id="manager" class="ManagerBean" />
+<bean id="accountDao" class="x.y.jdbc.JdbcAccountDao" />
+```
+
+>
+(i) The `depends-on` attribute can specify both an initialization-time dependency and, in the case of [singleton]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-singleton ) beans only, a corresponding destruction-time dependency. Dependent beans that define a `depends-on` relationship with a given bean are destroyed first, prior to the given bean itself being destroyed. Thus, `depends-on` can also control shutdown order.
+
+`depend-on`은 초기화 시간 의존관계를 지정할 수 있는데...
+- 싱글톤 Bean인 경우에는 파괴자 시간 종속성도 지정할 수 있습니다.
+    - 주어진 bean에 의존하는 bean은 주어진 bean이 파괴되기 전에 먼저 파괴됩니다.
+    - 따라서 `depend-on`은 종료 순서도 제어할 수 있습니다.
+
+### 1.4.4. Lazy-initialized Beans
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lazy-init )
+
+
+## 함께 읽기
+
+- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
+- 이전 문서 - [[spring-documents-core-1-3-bean-overview]]{1.3. Bean Overview}
+- 다음 문서 - 
+- [Interface BeanDefinition (Spring 5.3.7)]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/config/BeanDefinition.html )
+
+## 참고문헌
+
+- [Core Technologies (docs.spring.io)][5-3-7-core] - 5.3.7 버전
+
+[5-3-7-core]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html
+
