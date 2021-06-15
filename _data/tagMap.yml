@@ -656,6 +656,7 @@ java:
     - {fileName: spring-annotation-value}
     - {fileName: spring-documents-core-1-1-introduction}
     - {fileName: spring-documents-core-1-2-container-overview}
+    - {fileName: spring-documents-core-1-3-bean-overview}
     - {fileName: spring-versions}
     - {fileName: summary-The-Pauseless-GC-Algorithm}
     - {fileName: ternary-operator-and-null-pointer-exception}
@@ -896,6 +897,7 @@ spring:
     - {fileName: spring-documents}
     - {fileName: spring-documents-core-1-1-introduction}
     - {fileName: spring-documents-core-1-2-container-overview}
+    - {fileName: spring-documents-core-1-3-bean-overview}
     - {fileName: spring-documents-overview}
 bsd:
     - {fileName: ioreg-cmd}

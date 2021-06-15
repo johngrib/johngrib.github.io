@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.1. Introduction to the Spring IoC Container and Beans
 summary : 
 date    : 2021-06-15 21:36:28 +0900
-updated : 2021-06-15 21:43:51 +0900
+updated : 2021-06-15 21:52:17 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -13,7 +13,8 @@ latex   : false
 * TOC
 {:toc}
 
-[[spring-documents-core]]{목록으로 돌아가기}
+- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
+- 다음 문서 - [[spring-documents-core-1-2-container-overview]]{1.2. Container Overview }
 
 ## 1.1. Introduction to the Spring IoC Container and Beans
 
@@ -77,8 +78,9 @@ In Spring, the objects that form the backbone of your application and that are m
 
 ## 함께 읽기
 
-- [[inversion-of-control]]
+- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
 - 다음 문서 - [[spring-documents-core-1-2-container-overview]]{1.2. Container Overview }
+- [[inversion-of-control]]
 
 ## 참고문헌
 

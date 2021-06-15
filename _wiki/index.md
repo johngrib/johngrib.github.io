@@ -555,6 +555,7 @@ regenerate: true
 * [[spring-documents-core]]
     * [[spring-documents-core-1-1-introduction]]
     * [[spring-documents-core-1-2-container-overview]]
+    * [[spring-documents-core-1-3-bean-overview]]
 
 ## [[database]]
 
