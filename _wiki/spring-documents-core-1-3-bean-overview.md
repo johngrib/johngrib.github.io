@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.3. Bean Overview
 summary : 
 date    : 2021-06-15 21:47:48 +0900
-updated : 2021-06-15 22:39:24 +0900
+updated : 2021-06-15 22:49:17 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -14,8 +14,8 @@ latex   : false
 {:toc}
 
 - 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-2-container-overview]]{1.2. Container Overview }
-- 다음 문서 - 
+- 이전 문서 - [[spring-documents-core-1-2-container-overview]]{1.2. Container Overview}
+- 다음 문서 - [[spring-documents-core-1-4-dependencies]]{1.4. Dependencies}
 
 ## 1.3. Bean Overview
 
@@ -432,7 +432,7 @@ The recommended way to find out about the actual runtime type of a particular be
 
 - 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
 - 이전 문서 - [[spring-documents-core-1-2-container-overview]]{1.2. Container Overview }
-- 다음 문서 - 
+- 다음 문서 - [[spring-documents-core-1-4-dependencies]]{1.4. Dependencies}
 - [Interface BeanDefinition (Spring 5.3.7)]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/config/BeanDefinition.html )
 
 ## 참고문헌
