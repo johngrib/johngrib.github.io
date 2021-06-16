@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.4. Dependencies
 summary : 
 date    : 2021-06-15 22:47:35 +0900
-updated : 2021-06-15 23:57:28 +0900
+updated : 2021-06-17 00:18:30 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -767,6 +767,54 @@ To express a dependency on multiple beans, supply a list of bean names as the va
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lazy-init )
 
+>
+By default, `ApplicationContext` implementations eagerly create and configure all [singleton]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-singleton ) beans as part of the initialization process. Generally, this pre-instantiation is desirable, because errors in the configuration or surrounding environment are discovered immediately, as opposed to hours or even days later. When this behavior is not desirable, you can prevent pre-instantiation of a singleton bean by marking the bean definition as being lazy-initialized. A lazy-initialized bean tells the IoC container to create a bean instance when it is first requested, rather than at startup.
+
+기본적으로 `ApplicationContext` 구현체는 초기화 프로세스의 일부로 모든 싱글톤 Bean을 조급하게(eagerly) 생성하고 구성합니다.
+
+일반적으로는 이렇게 미리 인스턴스를 만들어 두는 것이 바람직합니다.
+- 이렇게 미리 인스턴스를 만들면 configuration 오류나 환경 설정 오류가 즉시 발견되기 때문.
+- 만약 이런 식의 동작이 필요하지 않다면 bean 정의에 지연 초기화(lazy-initialized)를 설정할 수 있습니다.
+    - lazy-initialized bean은 애플리케이션이 가동될 때가 아니라 bean이 처음으로 요청될 때 IoC 컨테이너에서 만들어집니다.
+
+>
+In XML, this behavior is controlled by the `lazy-init` attribute on the `<bean/>` element, as the following example shows:
+
+XML에서는 다음과 같이 `<bean/>` 엘리먼트의 `lazy-init` 속성으로 설정할 수 있습니다.
+
+```xml
+<bean id="lazy" class="com.something.ExpensiveToCreateBean" lazy-init="true"/>
+<bean name="not.lazy" class="com.something.AnotherBean"/>
+```
+
+>
+When the preceding configuration is consumed by an `ApplicationContext`, the `lazy` bean is not eagerly pre-instantiated when the `ApplicationContext` starts, whereas the `not.lazy` bean is eagerly pre-instantiated.
+
+- `lazy` bean은 `ApplicationContext`가 시작되는 시점에 인스턴스화되지 않습니다.
+- 그러나 `not.lazy` bean은 조급하게 인스턴스화됩니다.
+
+>
+However, when a lazy-initialized bean is a dependency of a singleton bean that is not lazy-initialized, the `ApplicationContext` creates the lazy-initialized bean at startup, because it must satisfy the singleton’s dependencies. The lazy-initialized bean is injected into a singleton bean elsewhere that is not lazy-initialized.
+
+- 그러나 아무리 lazy-initialized bean이라 하더라도 lazy-initialized가 아닌 singleton bean의 의존관계라면
+    - `ApplicationContext`는 시작되는 시점에 lazy-initialized bean을 생성합니다.
+    - 이는 해당 bean의 의존관계를 충족시켜서 생성해야 하기 때문입니다.
+    - 따라서 lazy-initialized bean은 lazy-initialized가 아닌 singleton bean에 주입되는 것입니다.
+
+>
+You can also control lazy-initialization at the container level by using the `default-lazy-init` attribute on the `<beans/>` element, as the following example shows:
+
+다음 예제와 같이 `<beans/>` 엘리먼트의 `default-lazy-init` 속성을 사용하여 컨테이너 수준에서 지연 초기화를 제어할 수도 있습니다.
+
+```xml
+<beans default-lazy-init="true">
+    <!-- no beans will be pre-instantiated... -->
+</beans>
+```
+
+### 1.4.5. Autowiring Collaborators
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-autowire )
 
 ## 함께 읽기
 
