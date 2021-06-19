@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.5. Bean Scopes
 summary : 
 date    : 2021-06-17 23:39:09 +0900
-updated : 2021-06-19 18:41:12 +0900
+updated : 2021-06-19 18:56:56 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -168,6 +168,22 @@ In some respects, the Spring container’s role in regard to a prototype-scoped 
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-sing-prot-interaction )
 
+>
+When you use singleton-scoped beans with dependencies on prototype beans, be aware that dependencies are resolved at instantiation time. Thus, if you dependency-inject a prototype-scoped bean into a singleton-scoped bean, a new prototype bean is instantiated and then dependency-injected into the singleton bean. The prototype instance is the sole instance that is ever supplied to the singleton-scoped bean.
+>
+However, suppose you want the singleton-scoped bean to acquire a new instance of the prototype-scoped bean repeatedly at runtime. You cannot dependency-inject a prototype-scoped bean into your singleton bean, because that injection occurs only once, when the Spring container instantiates the singleton bean and resolves and injects its dependencies. If you need a new instance of a prototype bean at runtime more than once, see [Method Injection]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-method-injection )
+
+싱글톤 스코프 bean이 프로토타입 스코프 bean에 대해 의존하는 관계가 있을 때, 의존관계가 초기화 시간에 연결된다는 점에 주의하세요.
+- 프로토타입 스코프 bean을 싱글톤 스코프 bean에 주입하게 되면, 먼저 프로토타입 bean이 새로 생성되어 인스턴스화된 다음 싱글톤 bean에 주입되게 됩니다.
+- 그리고 주입된 프로토타입 인스턴스는 해당 싱글톤 bean에 주입되기만 하고 다른 곳에 또 제공되지 않습니다.
+
+그런데, 싱글톤 스코프 bean이 런타임에 반복적으로 프로토타입 bean의 새 인스턴스를 필요로 하는 상황을 가정해 봅시다.
+- Spring 컨테이너가 싱글톤 bean을 인스턴스화하고 의존관계를 연결할 때 주입이 딱 한번만 발생하기 때문에, 프로토타입 스코프 bean을 싱글톤 bean에 또 주입할 수가 없습니다.
+- 런타임에 프로토타입 bean의 새 인스턴스가 여러번 필요하다면 [Method Injection]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-method-injection ) 문서를 참고하세요.
+
+### 1.5.4. Request, Session, Application, and WebSocket Scopes
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other )
 
 ## 함께 읽기
 
