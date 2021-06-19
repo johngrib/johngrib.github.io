@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.5. Bean Scopes
 summary : 
 date    : 2021-06-17 23:39:09 +0900
-updated : 2021-06-19 23:12:11 +0900
+updated : 2021-06-19 23:15:11 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 - 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
 - 이전 문서 - [[spring-documents-core-1-4-dependencies]]{1.4. Dependencies}
-- 다음 문서 - 
+- 다음 문서 - [[spring-documents-core-1-6-customizing-the-nature-of-a-bean]]{1.6. Customizing the Nature of a Bean}
 
 ## 1.5. Bean Scopes
 
@@ -473,7 +473,7 @@ With a custom `Scope` implementation, you are not limited to programmatic regist
 
 - 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
 - 이전 문서 - [[spring-documents-core-1-4-dependencies]]{1.4. Dependencies}
-- 다음 문서 - 
+- 다음 문서 - [[spring-documents-core-1-6-customizing-the-nature-of-a-bean]]{1.6. Customizing the Nature of a Bean}
 
 [l-singleton]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-singleton
 [l-prototype]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-prototype

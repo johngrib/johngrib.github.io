@@ -3909,7 +3909,7 @@ spring-documents:
     parent: Spring
     url: /wiki/spring-documents
     updated: '2021-02-13 16:09:03 +0900'
-    children: [spring-documents-core-1-1-introduction, spring-documents-core-1-2-container-overview, spring-documents-core-1-3-bean-overview, spring-documents-core-1-4-dependencies, spring-documents-core-1-5-bean-scopes, spring-documents-overview]
+    children: [spring-documents-core-1-1-introduction, spring-documents-core-1-2-container-overview, spring-documents-core-1-3-bean-overview, spring-documents-core-1-4-dependencies, spring-documents-core-1-5-bean-scopes, spring-documents-core-1-6-customizing-the-nature-of-a-bean, spring-documents-overview]
 spring-documents-core-1-1-introduction:
     type: wiki
     title: 'Spring Core Technologies - 1.1. Introduction to the Spring IoC Container and Beans'
@@ -3948,7 +3948,15 @@ spring-documents-core-1-5-bean-scopes:
     summary: ""
     parent: spring-documents
     url: /wiki/spring-documents-core-1-5-bean-scopes
-    updated: '2021-06-19 23:12:11 +0900'
+    updated: '2021-06-19 23:15:11 +0900'
+    children: []
+spring-documents-core-1-6-customizing-the-nature-of-a-bean:
+    type: wiki
+    title: 'Spring Core Technologies - 1.6. Customizing the Nature of a Bean'
+    summary: ""
+    parent: spring-documents
+    url: /wiki/spring-documents-core-1-6-customizing-the-nature-of-a-bean
+    updated: '2021-06-19 23:16:06 +0900'
     children: []
 spring-documents-overview:
     type: wiki
