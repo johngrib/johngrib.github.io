@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.5. Bean Scopes
 summary : 
 date    : 2021-06-17 23:39:09 +0900
-updated : 2021-06-19 18:56:56 +0900
+updated : 2021-06-19 23:12:11 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -185,6 +185,290 @@ However, suppose you want the singleton-scoped bean to acquire a new instance of
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other )
 
+>
+The `request`, `session`, `application`, and `websocket` scopes are available only if you use a web-aware Spring `ApplicationContext` implementation (such as `XmlWebApplicationContext`). If you use these scopes with regular Spring IoC containers, such as the `ClassPathXmlApplicationContext`, an `IllegalStateException` that complains about an unknown bean scope is thrown.
+
+`request`, `session`, `application`, `websocket` 스코프는 web-aware Spring `ApplicationContext` 구현(예: `XmlWebApplicationContext`)을 쓸 때에만 사용할 수 있습니다.
+
+`ClassPathXmlApplicationContext`과 같은 일반적인 Spring IoC 컨테이너에서 이런 스코프를 사용하려 하면 알 수 없는 bean 스코프를 의미하는 `IllegalStateException` 예외가 던져집니다.
+
+#### Initial Web Configuration
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other-web-configuration )
+
+#### Request scope
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-request )
+
+>
+Consider the following XML configuration for a bean definition:
+
+다음과 같은 XML bean 정의를 살펴봅시다.
+
+>
+```xml
+<bean id="loginAction" class="com.something.LoginAction" scope="request"/>
+```
+
+>
+The Spring container creates a new instance of the `LoginAction` bean by using the `loginAction` bean definition for each and every HTTP request. That is, the `loginAction` bean is scoped at the HTTP request level. You can change the internal state of the instance that is created as much as you want, because other instances created from the same `loginAction` bean definition do not see these changes in state. They are particular to an individual request. When the request completes processing, the bean that is scoped to the request is discarded.
+>
+When using annotation-driven components or Java configuration, the `@RequestScope` annotation can be used to assign a component to the `request` scope. The following example shows how to do so:
+
+Spring 컨테이너는 모든 HTTP 요청이 들어올 때마다 `LoginAction`의 새로운 인스턴스를 만듭니다.
+- 즉, `loginAction` bean은 HTTP request 레벨에서 스코프가 정해진 것입니다.
+- 똑같은 `loginAction` bean 정의를 통해 생성된 다른 인스턴스들은 서로의 변경사항을 알지 못하기 때문에, 이렇게 생성된 인스턴스는 내부 상태를 원하는 만큼 변경할 수 있습니다.
+    - 각각의 인스턴스들이 리퀘스트마다 다르기 때문입니다.
+    - 리퀘스트의 처리가 완료되면 리퀘스트 스코프의 bean도 파괴됩니다.
+
+애노테이션 기반의 컴포넌트나 Java configuration을 사용한다면, `@RequestScope` 애노테이션을 써서 `request` 스코프를 적용할 수 있습니다.
+
+```java
+@RequestScope
+@Component
+public class LoginAction {
+    // ...
+}
+```
+
+#### Session scope
+
+>
+Consider the following XML configuration for a bean definition:
+
+다음과 같은 XML bean 정의를 살펴봅시다.
+
+```xml
+<bean id="userPreferences" class="com.something.UserPreferences" scope="session"/>
+```
+
+>
+The Spring container creates a new instance of the `UserPreferences` bean by using the `userPreferences` bean definition for the lifetime of a single HTTP `Session`. In other words, the `userPreferences` bean is effectively scoped at the HTTP `Session` level. As with request-scoped beans, you can change the internal state of the instance that is created as much as you want, knowing that other HTTP `Session` instances that are also using instances created from the same `userPreferences` bean definition do not see these changes in state, because they are particular to an individual HTTP `Session`. When the HTTP `Session` is eventually discarded, the bean that is scoped to that particular HTTP `Session` is also discarded.
+>
+When using annotation-driven components or Java configuration, you can use the `@SessionScope` annotation to assign a component to the `session` scope.
+
+Spring 컨테이너는 HTTP `Session`의 생명주기에 맞춰 `UserPreferences` bean의 새로운 인스턴스를 만듭니다.
+- 즉, `userPreferences` bean은 HTTP `Session` 레벨에 맞춰 최적화된 스코프를 사용합니다.
+- request 스코프 bean과 똑같이, 생성된 인스턴스의 상태를 원하는 만큼 변경할 수 있습니다.
+- HTTP `Session`다르다면 `userPreferences` 인스턴스끼리는 서로 알지 못하기 때문입니다.
+- HTTP `Session`이 종료되면, 해당 스코프 범위의 bean도 함께 파괴됩니다.
+
+애노테이션 기반의 컴포넌트나 Java configuration을 사용한다면, `@SessionScope` 애노테이션을 사용해 `session` 스코프를 작용할 수 있습니다.
+
+```java
+@SessionScope
+@Component
+public class UserPreferences {
+    // ...
+}
+```
+
+#### Application Scope
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-application )
+
+>
+Consider the following XML configuration for a bean definition:
+
+다음과 같은 XML bean 정의를 살펴봅시다.
+
+```xml
+<bean id="appPreferences" class="com.something.AppPreferences" scope="application"/>
+```
+
+>
+The Spring container creates a new instance of the `AppPreferences` bean by using the `appPreferences` bean definition once for the entire web application. That is, the `appPreferences` bean is scoped at the `ServletContext` level and stored as a regular `ServletContext` attribute. This is somewhat similar to a Spring singleton bean but differs in two important ways: It is a singleton per `ServletContext`, not per Spring 'ApplicationContext' (for which there may be several in any given web application), and it is actually exposed and therefore visible as a `ServletContext` attribute.
+>
+When using annotation-driven components or Java configuration, you can use the `@ApplicationScope` annotation to assign a component to the `application` scope. The following example shows how to do so:
+
+Spring 컨테이너는 전체 web 애플리케이션에 대해 `appPreferences` bean의 인스턴스를 한 번만 생성합니다.
+- 즉, `appPreferences` bean은 `ServletContext` 레벨에 스코프되며, `ServletContext` 속성으로 저장됩니다.
+- 이는 Spring의 싱글톤 bean과 비슷하지만, 두 가지 중요한 차이점이 있습니다.
+    - `ServletContext`에 대해서만 싱글톤입니다. 그러므로 `ServletContext` 속성으로 표시됩니다.
+    - `ApplicationContext`(주어진 웹 애플리케이션에 여러 개가 있을 수 있음)에 대한 싱글톤이 아닙니다.
+
+애노테이션 기반의 컴포넌트나 Java configuration을 사용한다면, `@ApplicationScope` 애노테이션을 사용해 `application` 스코프를 적용할 수 있습니다.
+
+```java
+@ApplicationScope
+@Component
+public class AppPreferences {
+    // ...
+}
+```
+
+#### Scoped Beans as Dependencies
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other-injection )
+
+
+##### Chosing the Type of Proxy to Create
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other-injection-proxies )
+
+### 1.5.5. Custom Scopes
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-custom )
+
+>
+The bean scoping mechanism is extensible. You can define your own scopes or even redefine existing scopes, although the latter is considered bad practice and you cannot override the built-in singleton and prototype scopes.
+
+bean 스코프 메커니즘은 확장이 가능합니다.
+- 여러분만의 스코프를 정의하거나, 기존의 스코프를 재정의하는 것도 가능합니다.
+    - 물론 기존의 스코프를 재정의하는 것은 bad practice 입니다.
+    - 싱글톤, 프로토타입 스코프의 재정의는 불가능합니다.
+
+#### Creating a Custom Scope
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-custom-creating )
+
+>
+To integrate your custom scopes into the Spring container, you need to implement the `org.springframework.beans.factory.config.Scope` interface, which is described in this section. For an idea of how to implement your own scopes, see the `Scope` implementations that are supplied with the Spring Framework itself and the [Scope]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/config/Scope.html ) javadoc, which explains the methods you need to implement in more detail.
+>
+The `Scope` interface has four methods to get objects from the scope, remove them from the scope, and let them be destroyed.
+>
+The session scope implementation, for example, returns the session-scoped bean (if it does not exist, the method returns a new instance of the bean, after having bound it to the session for future reference). The following method returns the object from the underlying scope:
+
+커스텀 스코프를 Spring 컨테이너에 통합하려면 `org.springframework.beans.factory.config.Scope` 인터페이스를 구현해야 합니다.
+- 커스텀 스코프를 구현하는 방법에 대한 아이디어는 Spring 프레임워크 자체와 함께 제공되는 `Scope` 구현체와, 구현해야 할 메서드를 설명해 놓은 [Scope]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/config/Scope.html ) javadoc을 참고하세요.
+
+`Scope` 인터페이스에는 4개의 메소드가 정의되어 있다.
+- 이 메소드들은 스코프에서 객체를 가져오고, 객체를 스코프에서 제거하고, 객체를 소멸시키는 역할을 한다.
+
+예를 들어 session 스코프의 구현은 session 스코프 bean을 리턴합니다.
+- (만약 해당 bean이 존재하지 않는다면, 메소드는 나중에 참조할 수 있도록 세션에 바인딩한 후, bean의 새로운 인스턴스를 리턴합니다.)
+
+다음 메소드는 기본 스코프에서 객체를 리턴합니다.
+
+```java
+Object get(String name, ObjectFactory<?> objectFactory)
+```
+
+>
+The session scope implementation, for example, removes the session-scoped bean from the underlying session. The object should be returned, but you can return `null` if the object with the specified name is not found. The following method removes the object from the underlying scope:
+
+예를 들어 session 스코프 구현은, 기본 세션에서 session 스코프 bean을 제거합니다.
+- 객체를 리턴해야 하는 상황에서 bean의 이름을 찾을 수 없다면 `null`을 리턴합니다.
+- 다음 메소드는 기본 스코프에서 객체를 제거합니다.
+
+```java
+Object remove(String name)
+```
+
+>
+The following method registers a callback that the scope should invoke when it is destroyed or when the specified object in the scope is destroyed:
+
+다음 메소드는 스코프 자체가 소멸되거나, 스코프 내의 객체가 소멸될 때 호출되어야 하는 콜백을 등록합니다.
+
+```java
+void registerDestructionCallback(String name, Runnable destructionCallback)
+```
+
+>
+See the javadoc or a Spring scope implementation for more information on destruction callbacks.
+
+소멸 콜백에 대한 더 자세한 정보는 [javadoc]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/config/Scope.html#registerDestructionCallback ) 이나 Spring의 스코프 구현을 참고하세요.
+
+>
+The following method obtains the conversation identifier for the underlying scope:
+
+다음 메소드는 기본 스코프에 대한 대화 식별자를 가져옵니다.
+
+```java
+String getConversationId()
+```
+
+>
+This identifier is different for each scope. For a session scoped implementation, this identifier can be the session identifier.
+
+이 식별자는 스코프마다 다릅니다. session 스코프 구현의 경우, 이 식별자는 session 식별자가 될 수 있습니다.
+
+
+
+#### Using a Custom Scope
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-custom-using )
+
+>
+After you write and test one or more custom `Scope` implementations, you need to make the Spring container aware of your new scopes. The following method is the central method to register a new `Scope` with the Spring container:
+
+하나 이상의 커스텀 `Scope` 구현을 작성하고 테스트한 이후에는, Spring 컨테이너가 새로운 커스텀 스코프를 인식하도록 해줘야 합니다.
+
+```java
+void registerScope(String scopeName, Scope scope);
+```
+
+>
+This method is declared on the `ConfigurableBeanFactory` interface, which is available through the `BeanFactory` property on most of the concrete `ApplicationContext` implementations that ship with Spring.
+
+이 메소드는 `ConfigurableBeanFactory` 인터페이스에 선언되어 있으며, Spring과 함께 제공되는 대부분의 구체적인 `ApplicationContext` 구현에서 `BeanFactory` 속성을 통해 사용할 수 있습니다.
+
+>
+The first argument to the `registerScope(..)` method is the unique name associated with a scope. Examples of such names in the Spring container itself are `singleton` and `prototype`. The second argument to the `registerScope(..)` method is an actual instance of the custom `Scope` implementation that you wish to register and use.
+
+- `registerScope(..)` 메서드의 첫 번째 인수는 스코프와 관련된 유니크한 이름입니다.
+    - Spring 컨테이너 자체에서 이러한 이름의 예는 `singleton`과 `prototype`입니다.
+- `registerScope(..)` 메서드의 두 번째 인수는 등록해서 사용하려는 커스텀 Scope 구현의 실제 인스턴스입니다.
+
+>
+Suppose that you write your custom `Scope` implementation, and then register it as shown in the next example.
+
+커스텀 스코프 구현을 작성한 다음, 다음의 예제와 같이 등록한다고 합시다.
+
+```java
+Scope threadScope = new SimpleThreadScope();
+beanFactory.registerScope("thread", threadScope);
+```
+
+>
+You can then create bean definitions that adhere to the scoping rules of your custom `Scope`, as follows:
+
+그러고 나서, 다음과 같이 커스텀 `Scope`의 범위 지정 규칙을 준수하는 bean 정의를 작성할 수 있습니다.
+
+```xml
+<bean id="..." class="..." scope="thread">
+```
+
+>
+With a custom `Scope` implementation, you are not limited to programmatic registration of the scope. You can also do the `Scope` registration declaratively, by using the `CustomScopeConfigurer` class, as the following example shows:
+
+커스텀 스코프 구현은 프로그래밍 방식으로 얼마든지 등록할 수 있습니다.
+그런 한편으로는 다음 예제와 같이 `CustomScopeConfigurer` 클래스를 사용해 선언적으로 `Scope`를 등록하는 방법도 있습니다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+        <property name="scopes">
+            <map>
+                <entry key="thread">
+                    <bean class="org.springframework.context.support.SimpleThreadScope"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="thing2" class="x.y.Thing2" scope="thread">
+        <property name="name" value="Rick"/>
+        <aop:scoped-proxy/>
+    </bean>
+
+    <bean id="thing1" class="x.y.Thing1">
+        <property name="thing2" ref="thing2"/>
+    </bean>
+
+</beans>
+```
+
+
+
 ## 함께 읽기
 
 - 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
@@ -197,3 +481,4 @@ However, suppose you want the singleton-scoped bean to acquire a new instance of
 [l-session]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-session
 [l-application]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-application
 [l-websocket]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/web.html#websocket-stomp-websocket-scope
+
