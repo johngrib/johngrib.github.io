@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.5. Bean Scopes
 summary : 
 date    : 2021-06-17 23:39:09 +0900
-updated : 2021-06-19 17:42:44 +0900
+updated : 2021-06-19 18:41:12 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -115,6 +115,59 @@ Spring의 싱글톤 bean의 개념은 GoF의 디자인 패턴 책에 나오는 �
 <!-- the following is equivalent, though redundant (singleton scope is the default) -->
 <bean id="accountService" class="com.something.DefaultAccountService" scope="singleton"/>
 ```
+
+### 1.5.2. The Prototype Scope
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-prototype )
+
+>
+The non-singleton prototype scope of bean deployment results in the creation of a new bean instance every time a request for that specific bean is made. That is, the bean is injected into another bean or you request it through a `getBean()` method call on the container. As a rule, you should use the prototype scope for all stateful beans and the singleton scope for stateless beans.
+>
+The following diagram illustrates the Spring prototype scope:
+
+프로토타입 스코프는 싱글톤이 아니며, 모든 요청마다 새로운 bean을 생성해 리턴합니다.
+- 즉, 해당 bean이 다른 bean에 주입되거나, 컨테이너에서 `getBean()` 메소드를 호출할 때 bean이 생성됩니다.
+- stateful bean을 사용할 때에는 프로토타입 스코프를, stateless bean을 사용할 때에는 싱글톤 스코프를 사용하도록 합니다.
+- 다음 다이어그램은 Spring 프로토타입 스코프를 설명합니다.
+
+![image]( /post-img/spring-documents-core-1-5-bean-scopes/122637802-8f207500-d12b-11eb-8516-4bd925282041.png )
+
+- 이미지
+    - 새로운 bean은... 협업 객체가 프로토타입을 참조할 때마다 생성됩니다.
+
+>
+(A data access object (DAO) is not typically configured as a prototype, because a typical DAO does not hold any conversational state. It was easier for us to reuse the core of the singleton diagram.)
+>
+The following example defines a bean as a prototype in XML:
+
+일반적으로 DAO는 프로토타입으로 구성되지 않습니다.
+- 보통 DAO는 상태를 저장하지 않기 때문입니다.
+- 다음 예제는 XML에서 프로토타입 bean을 정의하는 것을 보여줍니다.
+
+```xml
+<bean id="accountService" class="com.something.DefaultAccountService" scope="prototype"/>
+```
+
+>
+In contrast to the other scopes, Spring does not manage the complete lifecycle of a prototype bean. The container instantiates, configures, and otherwise assembles a prototype object and hands it to the client, with no further record of that prototype instance. Thus, although initialization lifecycle callback methods are called on all objects regardless of scope, in the case of prototypes, configured destruction lifecycle callbacks are not called. The client code must clean up prototype-scoped objects and release expensive resources that the prototype beans hold. To get the Spring container to release resources held by prototype-scoped beans, try using a custom [bean post-processor]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-extension-bpp ), which holds a reference to beans that need to be cleaned up.
+>
+In some respects, the Spring container’s role in regard to a prototype-scoped bean is a replacement for the Java new operator. All lifecycle management past that point must be handled by the client. (For details on the lifecycle of a bean in the Spring container, see [Lifecycle Callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle ).)
+
+다른 스코프와는 달리, Spring은 프로토타입 bean의 라이프사이클 전체를 관리하지 않습니다.
+- 컨테이너는 프로토타입 객체를 초기화하고, 구성하고, 조립하고 클라이언트에 전달하기만 합니다.
+    - 컨테이너는 프로토타입 인스턴스를 저장해두지 않습니다.
+- 초기화 생명주기 콜백 메소드는 스코프와는 관계 없이 모든 객체에서 호출되는데, 프로토타입의 경우에는 소멸 생명주기 콜백(destruction lifecycle callback)이 호출되지 않습니다.
+- 클라이언트 코드는 프로토타입 스코프 객체를 반드시 청소하고, 프로토타입 bean이 갖고 있는 비싼 리소스를 해제하도록 해야 합니다.
+- Sping 컨테이너가 프로토타입 스코프 bean이 갖고 있는 자원을 해제하게 하고 싶다면, 커스텀 [bean post-processor]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-extension-bpp )를 사용해 보세요.
+
+어떤 면에서는, 프로토타입 스코프 bean에 대해서 Spring 컨테이너는 Java의 new 연산자를 대신하고 있을 뿐이기도 합니다.
+- 따라서 프로토타입 bean의 생성 이후 생명주기 관리는 클라이언트가 알아서 해야 합니다.
+- Spring 컨테이너의 bean 생명주기에 대한 자세한 내용은 [Lifecycle Callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle ) 문서를 참고하세요.
+
+### 1.5.3. Singleton Beans with Prototype-bean Dependencies
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-sing-prot-interaction )
+
 
 ## 함께 읽기
 
