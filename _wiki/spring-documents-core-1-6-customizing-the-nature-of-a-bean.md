@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.6. Customizing the Nature of a Bean
 summary : 
 date    : 2021-06-19 23:13:51 +0900
-updated : 2021-06-21 00:02:30 +0900
+updated : 2021-06-21 21:44:24 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -76,6 +76,72 @@ The lifecycle callback interfaces are described in this section.
 #### Initialization Callbacks
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-initializingbean )
+
+>
+The `org.springframework.beans.factory.InitializingBean` interface lets a bean perform initialization work after the container has set all necessary properties on the bean. The `InitializingBean` interface specifies a single method:
+
+`org.springframework.beans.factory.InitializingBean` 인터페이스를 사용하면 컨테이너가 bean에 필요한 모든 속성을 설정한 이후에, bean의 초기화 작업을 할 수 있습니다.
+`InitializingBean` 인터페이스는 딱 하나의 메소드를 갖고 있습니다.
+
+```java
+void afterPropertiesSet() throws Exception;
+```
+
+>
+We recommend that you do not use the `InitializingBean` interface, because it unnecessarily couples the code to Spring. Alternatively, we suggest using the [@PostConstruct]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-postconstruct-and-predestroy-annotations ) annotation or specifying a POJO initialization method. In the case of XML-based configuration metadata, you can use the `init-method` attribute to specify the name of the method that has a void no-argument signature. With Java configuration, you can use the `initMethod` attribute of `@Bean`. See [Receiving Lifecycle Callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-lifecycle-callbacks ). Consider the following example:
+
+`InitializingBean` 인터페이스 사용은 추천하지 않습니다.
+- 코드와 Spring 사이에 불필요한 커플링이 발생하기 때문입니다.
+- 대안으로 `@PostConstruct` 애노테이션이나 POJO 방식의 초기화 메소드를 사용하는 것을 추천합니다.
+- XML로 설정하는 경우 `init-method` 속성을 사용해 메소드의 이름을 지정할 수 있습니다.
+    - 해당 메소드읫 시그니처는 리턴타입이 void 이고, 입력 인자가 없어야 합니다.
+    - 아래의 예제를 참고하세요.
+- Java 코드 기반의 설정에서는 `@Bean`의 `initMethod`를 사용할 수 있습니다.
+    - [Receiving Lifecycle Callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-lifecycle-callbacks ) 문서를 참고하세요.
+
+```xml
+<bean id="exampleInitBean" class="examples.ExampleBean" init-method="init"/>
+```
+
+```java
+public class ExampleBean {
+
+    public void init() {
+        // do some initialization work
+    }
+}
+```
+
+>
+The preceding example has almost exactly the same effect as the following example (which consists of two listings):
+
+위의 예는 아래의 예와 거의 똑같은 효과를 갖습니다.
+
+```xml
+<bean id="exampleInitBean" class="examples.AnotherExampleBean"/>
+```
+
+```java
+public class AnotherExampleBean implements InitializingBean {
+
+    @Override
+    public void afterPropertiesSet() {
+        // do some initialization work
+    }
+}
+```
+
+>
+However, the first of the two preceding examples does not couple the code to Spring.
+
+그러나 처음의 예제는 두 번째 예제와는 달리 Spring과 커플링이 발생하지 않습니다.
+- 두번째 예제는 `InitializingBean` 인터페이스를 구현했기 때문.
+
+#### Destruction Callbacks
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-disposablebean )
+
+
 
 ## 함께 읽기
 
