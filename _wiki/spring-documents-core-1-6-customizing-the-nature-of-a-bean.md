@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.6. Customizing the Nature of a Bean
 summary : 
 date    : 2021-06-19 23:13:51 +0900
-updated : 2021-06-21 21:44:24 +0900
+updated : 2021-06-22 22:37:15 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -141,7 +141,79 @@ However, the first of the two preceding examples does not couple the code to Spr
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-disposablebean )
 
+>
+Implementing the `org.springframework.beans.factory.DisposableBean` interface lets a bean get a callback when the container that contains it is destroyed. The `DisposableBean` interface specifies a single method:
 
+`org.springframework.beans.factory.DisposableBean` 인터페이스를 구현하면 컨테이너가 파괴될 때 bean이 콜백을 받아 실행하게 됩니다.
+
+`DisposableBean` 인터페이스에는 메소드가 하나 정의되어 있습니다.
+
+```java
+void destroy() throws Exception;
+```
+
+>
+We recommend that you do not use the `DisposableBean` callback interface, because it unnecessarily couples the code to Spring. Alternatively, we suggest using the [@PreDestroy]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-postconstruct-and-predestroy-annotations ) annotation or specifying a generic method that is supported by bean definitions. With XML-based configuration metadata, you can use the `destroy-method` attribute on the `<bean/>`. With Java configuration, you can use the `destroyMethod` attribute of `@Bean`. See [Receiving Lifecycle Callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-lifecycle-callbacks ). Consider the following definition:
+
+그러나 `DisposableBean` 콜백 인터페이스의 사용을 추천하지는 않습니다.
+- 이 인터페이스를 사용하면 Spring과 코드 사이에 불필요한 커플링이 생깁니다.
+- 대안으로, `@PreDestroy` 애노테이션을 사용하거나, bean 정의에 소멸에 사용할 메소드를 지정하는 것이 좋습니다.
+- XML 설정 기반에서는 `<bean/>`에서 `destroy-method` 속성을 사용하는 것도 고려할 수 있습니다.
+- Java 설정 기반에서는 `@Bean`의 `destroyMethod` 속성을 이용할 수 있습니다.
+- 자세한 내용은 [Receiving Lifecycle Callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-lifecycle-callbacks ) 문서를 참고하세요.
+
+
+```xml
+<bean id="exampleInitBean" class="examples.ExampleBean" destroy-method="cleanup"/>
+```
+
+```java
+public class ExampleBean {
+
+    public void cleanup() {
+        // do some destruction work (like releasing pooled connections)
+    }
+}
+```
+
+>
+The preceding definition has almost exactly the same effect as the following definition:
+
+위의 예제는 다음 설정과 거의 똑같은 효과를 갖습니다.
+
+```xml
+<bean id="exampleInitBean" class="examples.AnotherExampleBean"/>
+```
+
+```java
+public class AnotherExampleBean implements DisposableBean {
+
+    @Override
+    public void destroy() {
+        // do some destruction work (like releasing pooled connections)
+    }
+}
+```
+
+>
+However, the first of the two preceding definitions does not couple the code to Spring.
+
+그러나, 두 예제 중 앞의 예제는 Spring과의 커플링이 없는 코드입니다.
+
+>
+(i) You can assign the `destroy-method` attribute of a `<bean>` element a special `(inferred)` value, which instructs Spring to automatically detect a public `close` or `shutdown` method on the specific bean class. (Any class that implements `java.lang.AutoCloseable` or `java.io.Closeable` would therefore match.) You can also set this special `(inferred)` value on the `default-destroy-method` attribute of a `<beans>` element to apply this behavior to an entire set of beans (see [Default Initialization and Destroy Methods]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-default-init-destroy-methods )). Note that this is the default behavior with Java configuration.
+
+- (i) 참고
+    - `<bean>`엘리먼트의 `destroy-method` 속성에 특수한 `(inferred)` 값을 지정할 수 있습니다.
+        - 이 설정은 Spring이 특정 bean 클래스에서 public `close` 또는 public `shutdown` 메소드를 자동으로 감지하도록 명령합니다.
+            - (그러므로 `java.lang.AutoCloseable`, `java.io.Closeable`을 구현하는 모든 클래스가 이에 해당됩니다.)
+    - 또한, 이 특수한 `(inferred)` 값을 `<beans>` 엘리먼트의 `default-destroy-method`에 설정하여, 이 동작을 전체 bean의 동작으로 적용하는 것도 가능합니다.
+        - (자세한 내용은 [Default Initialization and Destroy Methods]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-default-init-destroy-methods ) 문서를 참고하세요.)
+    - 참고로 `(inferred)`는 Java 기반 설정에서는 디폴트입니다.
+
+#### Default Initialization and Destroy Methods
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-default-init-destroy-methods )
 
 ## 함께 읽기
 
