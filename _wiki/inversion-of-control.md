@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC, Inversion of Control
 summary : Inversion of Control, Dependency Injection
 date    : 2019-08-30 22:39:18 +0900
-updated : 2021-06-06 16:48:20 +0900
+updated : 2021-06-22 13:10:55 +0900
 tag     : spring oop
 toc     : true
 public  : true
@@ -59,8 +59,6 @@ PicoContainer 프레임워크의 문서 [Inversion of Control History][history]�
 
 ## 토비의 스프링 3.1
 
-토비의 스프링 3.1 1권 92쪽에서는 다음과 같이 설명하고 있다.
-
 > 제어의 역전이라는 건, 간단히 프로그램의 제어 흐름 구조가 뒤바뀌는 것이라고 설명할 수 있다.  
 일반적으로 프로그램의 흐름은 main() 메소드와 같이 프로그램이 시작되는 지점에서 다음에 사용할 오브젝트를 결정하고,
 결정한 오브젝트를 생성하고, 만들어진 오브젝트에 있는 메소드를 호출하고,
@@ -91,7 +89,8 @@ PicoContainer 프레임워크의 문서 [Inversion of Control History][history]�
 최근에는 툴킷, 엔진, 라이브러리 등도 유행을 따라서 무작정 프레임워크라고 부르기도 하는데 이는 잘못된 것이다.
 프레임워크에는 분명한 제어의 역전 개념이 적용되어 있어야 한다.
 애플리케이션 코드는 프레임워크가 짜놓은 틀에서 수동적으로 동작해야 한다.
-
+>
+-- 토비의 스프링 3.1 1권. 92쪽.
 
 ## docs.spring.io 를 읽어보자
 
