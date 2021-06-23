@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2020-07-30 23:18:11 +0900
+updated : 2021-06-23 23:18:30 +0900
 tag     : bash command grep ed
 toc     : true
 public  : true
@@ -25,7 +25,8 @@ Sed는 텍스트가 입력 스트림으로 들어와서 출력 스트림으로 �
 Sed가 사용하는 명령어는 표준 `ed` 텍스트 편집기에 있는 편집 명령어와 동일하다.
 Sed는 요즘도 셸 스크립트에서 흔히 사용되는데, 데이터 스트림을 일정한 방식으로 변형할 때 사용된다.
 문자를 교체하거나, 공백을 추가하거나, 원하지 않는 공백을 제거하거나, 불필요한 뭔가를 지우는 등의 용도로 쓰인다.
-[^KER-5]
+>
+-- 유닉스의 탄생 5장
 
 
 ## Examples
@@ -133,9 +134,5 @@ brew install gnu-sed
 
 ## 참고문헌
 
-- [KER] 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
-
-## 주석
-
-[^KER-5]: [KER] 5장.
+- 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
 
