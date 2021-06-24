@@ -2337,10 +2337,10 @@ java-abstract-method:
 java-enhancements:
     type: wiki
     title: 'Java 버전별 변경점'
-    summary: '1996년 1.0 부터 2019년 12 까지'
+    summary: '1996년 1.0 부터 2020년 9월까지'
     parent: Java
     url: /wiki/java-enhancements
-    updated: '2021-02-15 23:41:14 +0900'
+    updated: '2021-06-24 15:22:19 +0900'
     children: []
 java-enum:
     type: wiki

@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Java 버전별 변경점
-summary : 1996년 1.0 부터 2019년 12 까지
+summary : 1996년 1.0 부터 2020년 9월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-02-15 23:41:14 +0900
+updated : 2021-06-24 15:22:19 +0900
 tag     : java
 toc     : true
 public  : true
