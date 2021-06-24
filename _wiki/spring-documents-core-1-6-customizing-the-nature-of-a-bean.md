@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.6. Customizing the Nature of a Bean
 summary : 
 date    : 2021-06-19 23:13:51 +0900
-updated : 2021-06-23 23:06:35 +0900
+updated : 2021-06-24 18:07:23 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -291,6 +291,35 @@ Spring 컨테이너는 bean에 모든 의존관계를 제공한 이후, 사전�
 #### Combining Lifecycle Mechanisms
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-combined-effects )
+
+>
+As of Spring 2.5, you have three options for controlling bean lifecycle behavior:
+>
+- The [InitializingBean]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-initializingbean ) and [DisposableBean]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-disposablebean ) callback interfaces
+- Custom `init()` and `destroy()` methods
+- The [@PostConstruct and @PreDestroy annotations]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-postconstruct-and-predestroy-annotations ). You can combine these mechanisms to control a given bean.
+>
+>
+(i)
+If multiple lifecycle mechanisms are configured for a bean and each mechanism is configured with a different method name, then each configured method is run in the order listed after this note. However, if the same method name is configured — for example, `init()` for an initialization method — for more than one of these lifecycle mechanisms, that method is run once, as explained in the [preceding section]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-default-init-destroy-methods ).
+
+>
+Multiple lifecycle mechanisms configured for the same bean, with different initialization methods, are called as follows:
+
+1. Methods annotated with `@PostConstruct`
+2. `afterPropertiesSet()` as defined by the `InitializingBean` callback interface
+3. A custom configured `init()` method
+
+Destroy methods are called in the same order:
+
+1. Methods annotated with `@PreDestroy`
+2. `destroy()` as defined by the `DisposableBean` callback interface
+3. A custom configured `destroy()` method
+
+#### Startup and Shutdown Callbacks
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-processor )
+
 
 ## 함께 읽기
 
