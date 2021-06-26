@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.6. Customizing the Nature of a Bean
 summary : 
 date    : 2021-06-19 23:13:51 +0900
-updated : 2021-06-26 16:00:09 +0900
+updated : 2021-06-27 00:17:15 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -512,6 +512,72 @@ public final class Boot {
 ### 1.6.2. ApplicationContextAware and BeanNameAware
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-aware )
+
+>
+When an `ApplicationContext` creates an object instance that implements the `org.springframework.context.ApplicationContextAware` interface, the instance is provided with a reference to that `ApplicationContext`. The following listing shows the definition of the `ApplicationContextAware` interface:
+
+`ApplicationContext`가 `org.springframework.context.ApplicationContextAware`를 구현하는 객체의 인스턴스를 생성할 때, 해당 인스턴스는 `ApplicationContext`에 대한 참조와 함께 제공됩니다.
+
+다음은 `ApplicationContextAware` 인터페이스를 보여줍니다.
+
+```java
+public interface ApplicationContextAware {
+
+    void setApplicationContext(ApplicationContext applicationContext) throws BeansException;
+}
+```
+
+>
+Thus, beans can programmatically manipulate the `ApplicationContext` that created them, through the `ApplicationContext` interface or by casting the reference to a known subclass of this interface (such as `ConfigurableApplicationContext`, which exposes additional functionality). One use would be the programmatic retrieval of other beans. Sometimes this capability is useful. However, in general, you should avoid it, because it couples the code to Spring and does not follow the Inversion of Control style, where collaborators are provided to beans as properties. Other methods of the `ApplicationContext` provide access to file resources, publishing application events, and accessing a `MessageSource`. These additional features are described in [Additional Capabilities of the ApplicationContext]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-introduction ).
+
+따라서, bean은 자신을 생성한 `ApplicationContext` 인터페이스를 프로그래밍 방법으로 조작할 수 있습니다.
+- (`ApplicationContext` 인터페이스나 `ApplicationContext`의 하위 클래스(예: `ConfigurableApplicationContext`)를 캐스팅하는 방법으로 얻을 수 있음)
+- 이 기능은 프로그래밍 방법으로 다른 bean들을 가져올 일이 있을 때 쓸 수 있는데, 유용하게 사용할 수 있습니다.
+
+그러나 일반적으로 이 방법을 쓰는 것은 좋지 않습니다.
+- 코드와 Spring 사이에 커플링이 생기며, IoC 스타일(협력 객체를 bean의 프로퍼티로 제공하는 방식)을 따르지 않게 되기 때문입니다.
+
+`ApplicationContext`의 다른 메소드들은 다음과 같은 기능들을 제공합니다.
+- 파일 리소스에 대한 엑세스
+- 애플리케이션 이벤트 발행
+- `MessageSource`에 대한 엑세스
+
+이러한 추가적인 기능들에 대해서는 [Additional Capabilities of the ApplicationContext]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-introduction ) 문서를 참고하세요.
+
+>
+Autowiring is another alternative to obtain a reference to the `ApplicationContext`. The _traditional_ `constructor` and `byType` autowiring modes (as described in [Autowiring Collaborators]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-autowire )) can provide a dependency of type `ApplicationContext` for a constructor argument or a setter method parameter, respectively.
+For more flexibility, including the ability to autowire fields and multiple parameter methods, use the annotation-based autowiring features. If you do, the `ApplicationContext` is autowired into a field, constructor argument, or method parameter that expects the ApplicationContext type if the field, constructor, or method in question carries the `@Autowired` annotation. For more information, see [Using @Autowired]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-autowired-annotation ).
+
+Autowiring은 `ApplicationContext`의 참조를 얻는 또 다른 방법입니다.
+- 전통적인 `constructor`와 `byTytpe`을 사용한 autowiring 모드들은([Autowiring Collaborators]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-autowire ) 문서에 설명된 바와 같이) 각각 생성자 인자나 setter 메소드 파라미터를 써서 `ApplicationContext` 타입의 의존관계를 제공할 수 있습니다.
+
+더 유연한 방식을 사용하고 싶다면, 애노테이션 기반의 자동 연결 기능을 사용하세요.
+해당 필드, 생성자, 메소드가 `@Autowired` 애노테이션을 달고 있게 된다면, `ApplicationContext`가 `ApplicationContext` 타입을 예상하는 필드, 생성자 인자, 메소드 파라미터 등으로 자동 연결됩니다.
+
+자세한 내용은 [Using @Autowired]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-autowired-annotation ) 문서를 참고하세요.
+
+>
+When an `ApplicationContext` creates a class that implements the `org.springframework.beans.factory.BeanNameAware` interface, the class is provided with a reference to the name defined in its associated object definition. The following listing shows the definition of the BeanNameAware interface:
+
+`ApplicationContext`가 `org.springframework.beans.factory.BeanNameAware` 인터페이스를 구현하는 클래스를 생성할 때, 클래스는 연관된 객체 정의에 명시된 이름에 대한 참조와 함께 제공됩니다.
+
+다음은 `BeanNameAware` 인터페이스를 보여줍니다.
+
+```java
+public interface BeanNameAware {
+
+    void setBeanName(String name) throws BeansException;
+}
+```
+
+>
+The callback is invoked after population of normal bean properties but before an initialization callback such as `InitializingBean`, `afterPropertiesSet`, or a custom init-method.
+
+이 콜백은 일반적인 bean 속성을 입력한 이후 호출되지만, `InitializingBean`, `afterPropertiesSet` 또는 커스텀 init-method 와 같은 초기화 콜백보다는 먼저 호출됩니다.
+
+### 1.6.3. Other Aware Interfaces
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#aware-list )
 
 ## 함께 읽기
 
