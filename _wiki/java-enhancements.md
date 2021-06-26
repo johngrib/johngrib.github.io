@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2020년 9월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-06-24 15:22:19 +0900
+updated : 2021-06-26 23:32:52 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,12 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+## JDK 16
+
+2021-04-20 [Consolidated JDK 16 Release Notes]( https://www.oracle.com/java/technologies/javase/16-all-relnotes.html )
+
+[JDK 16 Release Notes]( https://www.oracle.com/java/technologies/javase/16-relnotes.html )
 
 ## JDK 15
 
