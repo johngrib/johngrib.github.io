@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.6. Customizing the Nature of a Bean
 summary : 
 date    : 2021-06-19 23:13:51 +0900
-updated : 2021-06-26 15:49:06 +0900
+updated : 2021-06-26 16:00:09 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -471,6 +471,47 @@ As mentioned earlier, the `LifecycleProcessor` interface defines callback method
 #### Shutting Down the Spring IoC Container Gracefully in Non-Web Applications
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-shutdown )
+
+> (i)
+This section applies only to non-web applications. Spring’s web-based `ApplicationContext` implementations already have code in place to gracefully shut down the Spring IoC container when the relevant web application is shut down.
+
+- (i) 참고
+    - 이 섹션은 웹이 아닌 애플리케이션에서만 적용됩니다.
+    - Spring의 웹 기반 `ApplicationContext` 구현에는 관련 웹 애플리케이션이 종료될 때 Spring IoC 컨테이너를 정상적으로 종료하는 코드가 이미 있습니다.
+
+>
+If you use Spring’s IoC container in a non-web application environment (for example, in a rich client desktop environment), register a shutdown hook with the JVM. Doing so ensures a graceful shutdown and calls the relevant destroy methods on your singleton beans so that all resources are released. You must still configure and implement these destroy callbacks correctly.
+>
+To register a shutdown hook, call the `registerShutdownHook()` method that is declared on the `ConfigurableApplicationContext` interface, as the following example shows:
+
+웹 아닌 애플리케이션 환경(예: 데스크톱 환경에서 돌아가는 리치 클라이언트)에서 Spring의 IoC 컨테이너를 사용하는 경우, JVM에 종료 hook을 등록합니다.
+- 이렇게 하면 정상적인 종료를 보장하고 모든 리소스가 해제되도록 하기 위해 싱글톤 bean에서 소멸 메소드를 호출합니다.
+- 이런 소멸 콜백을 바람직하게 구성하고 구현해야 합니다.
+
+셧다운 hook을 등록하려면 `ConfigurableApplicationContext` 인터페이스의 `registerShutdownHook()` 메소드를 호출합니다.
+
+```java
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public final class Boot {
+
+    public static void main(final String[] args) throws Exception {
+        ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
+
+        // add a shutdown hook for the above context...
+        ctx.registerShutdownHook();
+
+        // app runs here...
+
+        // main method exits, hook is called prior to the app shutting down...
+    }
+}
+```
+
+### 1.6.2. ApplicationContextAware and BeanNameAware
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-aware )
 
 ## 함께 읽기
 
