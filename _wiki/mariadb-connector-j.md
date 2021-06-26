@@ -3,7 +3,7 @@ layout  : wiki
 title   : MariaDB Connector/J
 summary : 
 date    : 2021-06-26 17:43:22 +0900
-updated : 2021-06-26 21:05:31 +0900
+updated : 2021-06-26 21:12:28 +0900
 tag     : mysql
 toc     : true
 public  : true
@@ -126,7 +126,7 @@ This mode has been available since MariaDB Connector/J 1.2.0
 
 AWS에서 Aurora를 쓰고 있다면 `aurora` 옵션은 꼭 알아둬야 한다.
 
-이걸 설정하지 않아 failover가 작동하지 않아 장애가 발생해 고생한 적이 있다. 뼈아픈 기억.
+이걸 설정하지 않아 failover 성능 테스트 때 failover가 작동하지 않아 고생한 적이 있다.
 
 다음 예와 같이 `jdbc:mariadb:aurora` 처럼 작성하면 된다.
 

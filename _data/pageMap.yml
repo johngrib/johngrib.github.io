@@ -2884,7 +2884,7 @@ mariadb-connector-j:
     summary: ""
     parent: database
     url: /wiki/mariadb-connector-j
-    updated: '2021-06-26 21:05:31 +0900'
+    updated: '2021-06-26 21:12:28 +0900'
     children: []
 master-theorem:
     type: wiki
