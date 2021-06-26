@@ -561,6 +561,7 @@ regenerate: true
 
 * [[db-index]]
 * [[db-processlist]]
+* [[mariadb-connector-j]]
 * [[sharding]]
 
 ## [[my-lifehack]]

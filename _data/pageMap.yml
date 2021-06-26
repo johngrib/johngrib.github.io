@@ -1037,7 +1037,7 @@ database:
     parent: index
     url: /wiki/database
     updated: '2019-09-26 21:49:29 +0900'
-    children: [db-index, db-processlist, sharding]
+    children: [db-index, db-processlist, mariadb-connector-j, sharding]
 date-cmd:
     type: wiki
     title: 'date 명령어'
@@ -2877,6 +2877,14 @@ man-cmd:
     parent: command-line
     url: /wiki/man-cmd
     updated: '2020-09-30 10:25:48 +0900'
+    children: []
+mariadb-connector-j:
+    type: wiki
+    title: 'MariaDB Connector/J'
+    summary: ""
+    parent: database
+    url: /wiki/mariadb-connector-j
+    updated: '2021-06-26 21:05:31 +0900'
     children: []
 master-theorem:
     type: wiki

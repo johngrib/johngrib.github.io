@@ -428,6 +428,9 @@
     name: ms-office
     size: 1
 -
+    name: mysql
+    size: 1
+-
     name: naming
     size: 1
 -

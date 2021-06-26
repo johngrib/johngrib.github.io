@@ -954,6 +954,8 @@ bug:
     - {fileName: mac-keyboard-shortcuts}
 macos:
     - {fileName: mac-screenshot-png-to-jpg}
+mysql:
+    - {fileName: mariadb-connector-j}
 latex:
     - {fileName: mathjax-latex}
 media:
