@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.6. Customizing the Nature of a Bean
 summary : 
 date    : 2021-06-19 23:13:51 +0900
-updated : 2021-06-24 18:07:23 +0900
+updated : 2021-06-26 12:24:33 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -298,23 +298,47 @@ As of Spring 2.5, you have three options for controlling bean lifecycle behavior
 - The [InitializingBean]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-initializingbean ) and [DisposableBean]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-disposablebean ) callback interfaces
 - Custom `init()` and `destroy()` methods
 - The [@PostConstruct and @PreDestroy annotations]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-postconstruct-and-predestroy-annotations ). You can combine these mechanisms to control a given bean.
->
+
+Spring 2.5 버전부터는 bean 생명주기 동작을 제어하기 위한 세 가지 옵션이 있습니다.
+
+- `InitializingBean` 과 `DisposableBean` 콜백 인터페이스
+- 커스텀 메소드 `init()`, `destroy()`
+- `@PostConstruct`, `@PreDestroy` 애노테이션.
+
+이러한 메커니즘을 조합해서 bean을 제어할 수 있습니다.
+
 >
 (i)
 If multiple lifecycle mechanisms are configured for a bean and each mechanism is configured with a different method name, then each configured method is run in the order listed after this note. However, if the same method name is configured — for example, `init()` for an initialization method — for more than one of these lifecycle mechanisms, that method is run once, as explained in the [preceding section]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-default-init-destroy-methods ).
 
+- (i) 참고
+    - 만약 하나의 bean에 여러 개의 생명주기 메커니즘이 설정되었고, 각기 다른 메소드 이름으로 구성되었다면, 각 메소드는 이 노트 다음에 나열된 순서대로 실행됩니다.
+    - 그러나 동일한 메소드 이름(예: 초기화 메소드의 경우 `init()`)이 생명주기 메커니즘 중 하나 이상에 중복으로 구성된 경우라면, 해당 메소드는 앞의 섹션에서 설명한대로 한 번만 실행됩니다.
+
 >
 Multiple lifecycle mechanisms configured for the same bean, with different initialization methods, are called as follows:
-
+>
 1. Methods annotated with `@PostConstruct`
 2. `afterPropertiesSet()` as defined by the `InitializingBean` callback interface
 3. A custom configured `init()` method
-
+>
 Destroy methods are called in the same order:
-
+>
 1. Methods annotated with `@PreDestroy`
 2. `destroy()` as defined by the `DisposableBean` callback interface
 3. A custom configured `destroy()` method
+
+각각 다른 초기화 메소드를 사용하는 여러 생명주기 메커니즘이 하나의 bean에 적용되면, 다음 순서대로 호출됩니다.
+
+1. `@PostConstruct` 애노테이션을 붙인 메소드.
+2. `InitializingBean` 콜백 인터페이스에서 정의된 `afterPropertiesSet()` 메소드.
+3. 커스텀 `init()` 메소드
+
+소멸 메소드는 다음 순서대로 호출됩니다.
+
+1. `@PreDestroy` 애노테이션을 붙인 메소드.
+2. `DisposableBean` 콜백 인터페이스에서 정의된 `destroy()` 메소드.
+3. 커스텀 `destroy()` 메소드.
 
 #### Startup and Shutdown Callbacks
 
