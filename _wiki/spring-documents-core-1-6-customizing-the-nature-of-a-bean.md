@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.6. Customizing the Nature of a Bean
 summary : 
 date    : 2021-06-19 23:13:51 +0900
-updated : 2021-06-26 12:24:33 +0900
+updated : 2021-06-26 15:49:06 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -344,6 +344,133 @@ Destroy methods are called in the same order:
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-processor )
 
+>
+The `Lifecycle` interface defines the essential methods for any object that has its own lifecycle requirements (such as starting and stopping some background process):
+
+`Lifecycle` 인터페이스는 자체 생명주기 요구사항(백그라운드 프로세스를 시작하거나 중지한다거나)이 있는 모든 객체에 대한 필수 메소드를 정의합니다.
+
+```java
+public interface Lifecycle {
+
+    void start();
+
+    void stop();
+
+    boolean isRunning();
+}
+```
+
+>
+Any Spring-managed object may implement the `Lifecycle` interface. Then, when the `ApplicationContext` itself receives start and stop signals (for example, for a stop/restart scenario at runtime), it cascades those calls to all `Lifecycle` implementations defined within that context. It does this by delegating to a `LifecycleProcessor`, shown in the following listing:
+
+Spring이 관리하는 모든 객체는 `Lifecycle` 인터페이스를 구현할 수 있습니다.
+- `ApplicationContext`가 시작이나 중지 신호를 받게 되면(예: 런타임의 stop/restart 시나리오), 해당 컨텍스트에 정의된 모든 `Lifecycle` 인터페이스 구현체에 해당 호출을 cascade하게 전달합니다.
+- 그러한 작업은 다음과 같이 `LifecycleProcessor`에 위임시켜 수행합니다.
+
+```java
+public interface LifecycleProcessor extends Lifecycle {
+
+    void onRefresh();
+
+    void onClose();
+}
+```
+
+>
+Notice that the `LifecycleProcessor` is itself an extension of the `Lifecycle` interface. It also adds two other methods for reacting to the context being refreshed and closed.
+
+`LifecycleProcessor`는
+- `Lifecycle` 인터페이스를 상속받아 확장한 것입니다.
+- 그리고 refresh 나 close 상태가 된 컨텍스트에 반응하는 두 가지 방법을 추가합니다.
+
+> (i)
+Note that the regular `org.springframework.context.Lifecycle` interface is a plain contract for explicit start and stop notifications and does not imply auto-startup at context refresh time. For fine-grained control over auto-startup of a specific bean (including startup phases), consider implementing `org.springframework.context.SmartLifecycle` instead.
+>
+Also, please note that stop notifications are not guaranteed to come before destruction. On regular shutdown, all `Lifecycle` beans first receive a stop notification before the general destruction callbacks are being propagated. However, on hot refresh during a context’s lifetime or on stopped refresh attempts, only destroy methods are called.
+
+- (i) 참고
+    - `org.springframework.context.Lifecycle` 인터페이스는 start/stop 알림을 위해 만들어진 단순한 계약을 표현할 뿐이며, 컨텍스트 refresh time에 auto-startup하는 것을 의미하지는 않습니다(startup phase 포함).
+    - 특정한 bean의 자동 시작에 대한 세밀한 제어가 필요하다면 `Lifecycle` 대신 `org.springframework.context.SmartLifecycle` 인터페이스 구현을 고려해 보세요.
+    - 또한, 소멸 전에 stop 알림이 오도록 보장되지 않습니다.
+    - 일반적인 셧다운에서는, 모든 `Lifecycle` bean들은 일반 소멸 콜백이 전달되기 전에 먼저 stop 알림을 수신합니다.
+        - 그러나 컨텍스트의 수명 동안, hot refresh나 stopped refresh가 시도된다면 destroy 메소드만 호출됩니다.
+
+>
+The order of startup and shutdown invocations can be important. If a “depends-on” relationship exists between any two objects, the dependent side starts after its dependency, and it stops before its dependency. However, at times, the direct dependencies are unknown. You may only know that objects of a certain type should start prior to objects of another type. In those cases, the `SmartLifecycle` interface defines another option, namely the `getPhase()` method as defined on its super-interface, `Phased`. The following listing shows the definition of the `Phased` interface:
+
+startup 과 shutdown의 호출 순서가 중요한 경우가 있을 수 있습니다.
+- 두 객체 사이에 "depends-on" 관계가 존재한다면 의존하는 쪽에서는 해당 의존관계가 연결된 이후에 시작되고, 의존관계가 연결되기 이전에 중지됩니다.
+- 그러나 어떨 때에는 직접적인 의존관계를 알 수 없고, 특정 타입의 객체가 다른 타입의 객체보다 먼저 시작해야 한다는 사실만 알 수 있는 경우가 있습니다.
+    - 이런 경우 `SmartLifecycle` 인터페이스는 슈퍼 인터페이스 `Phased`에 정의된 `getPhase()` 메소드와 같은 옵션들을 정의합니다.
+    - 다음 목록은 `Phased` 인터페이스를 보여줍니다.
+
+```java
+public interface Phased {
+
+    int getPhase();
+}
+```
+
+>
+The following listing shows the definition of the `SmartLifecycle` interface:
+
+다음은 `SmartLifecycle` 인터페이스를 보여줍니다.
+
+```java
+public interface SmartLifecycle extends Lifecycle, Phased {
+
+    boolean isAutoStartup();
+
+    void stop(Runnable callback);
+}
+```
+
+>
+When starting, the objects with the lowest phase start first. When stopping, the reverse order is followed. Therefore, an object that implements `SmartLifecycle` and whose `getPhase()` method returns `Integer.MIN_VALUE` would be among the first to start and the last to stop. At the other end of the spectrum, a phase value of `Integer.MAX_VALUE` would indicate that the object should be started last and stopped first (likely because it depends on other processes to be running). When considering the phase value, it is also important to know that the default phase for any “normal” `Lifecycle` object that does not implement `SmartLifecycle` is `0`. Therefore, any negative phase value indicates that an object should start before those standard components (and stop after them). The reverse is true for any positive phase value.
+
+시작할 때, 가장 낮은 phase의 객체가 먼저 시작됩니다. 그리고 정지할 때에는 시작과 역순으로 작동합니다.
+- 그러므로 `SmartLifecycle` 인터페이스를 구현하고, `getPhase()` 메소드가 `Integer.MIN_VALUE`를 리턴하는 객체가 있다면...
+    - 이 객체는 처음 시작하는 객체입니다.
+    - 그리고 마지막으로 중지할 객체입니다.
+- 반대 방향도 생각해 봅시다.
+    - `Integer.MAX_VALUE` 값은 객체가 마지막에 시작되고 먼저 중지되어야 함을 나타냅니다(실행 중인 다른 프로세스에 따라 달라질 수 있음).
+- phase 값을 생각할 때에는 `SmartLifecycle` 인터페이스를 구현하지 않는 "일반적인" `Lifecycle` 객체의 기본값이 `0`이라는 것도 염두에 두도록 합니다.
+- 따라서,
+    - 음수 값은 객체가 해당 표준 컴포넌트보다 먼저 시작되고 중지된다는 것을 나타냅니다.
+    - 양수 값은 이와 반대로 적용됩니다.
+
+>
+The stop method defined by `SmartLifecycle` accepts a callback. Any implementation must invoke that callback’s `run()` method after that implementation’s shutdown process is complete. That enables asynchronous shutdown where necessary, since the default implementation of the `LifecycleProcessor` interface, `DefaultLifecycleProcessor`, waits up to its timeout value for the group of objects within each phase to invoke that callback. The default per-phase timeout is 30 seconds. You can override the default lifecycle processor instance by defining a bean named `lifecycleProcessor` within the context. If you want only to modify the timeout, defining the following would suffice:
+
+`SmartLifecycle`에 정의된 `stop` 메소드는 콜백을 받습니다.
+- `SmartLifecycle`의 모든 구현체는 해당 구현체의 종료 프로세스가 완료된 후에 해당 콜백의 `run()` 메소드를 호출해야 합니다.
+    - 이렇게 하면 필요한 경우 비동기 셧다운이 가능해집니다.
+        - `LifecycleProcessor` 인터페이스의 기본 구현체인 `DefaultLifecycleProcessor`가 해당 콜백을 호출하기 위해 각 단계 내의 객체 그룹이 타임아웃 값까지 대기하기 때문입니다.
+        - phase 별 타임아웃의 기본값은 30초입니다.
+    - 컨텍스트 내에서 이름이 `lifecycleProcessor`인 bean을 정의하여 기본 라이프 사이클 프로세서 인스턴스를 대체할 수 있습니다.
+        - 타임아웃 값만 수정하려 한다면 다음과 같이 하면 됩니다.
+
+```xml
+<bean id="lifecycleProcessor" class="org.springframework.context.support.DefaultLifecycleProcessor">
+    <!-- timeout value in milliseconds -->
+    <property name="timeoutPerShutdownPhase" value="10000"/>
+</bean>
+```
+
+>
+As mentioned earlier, the `LifecycleProcessor` interface defines callback methods for the refreshing and closing of the context as well. The latter drives the shutdown process as if `stop()` had been called explicitly, but it happens when the context is closing. The 'refresh' callback, on the other hand, enables another feature of `SmartLifecycle` beans. When the context is refreshed (after all objects have been instantiated and initialized), that callback is invoked. At that point, the default lifecycle processor checks the boolean value returned by each `SmartLifecycle` object’s `isAutoStartup()` method. If `true`, that object is started at that point rather than waiting for an explicit invocation of the context’s or its own `start()` method (unlike the context refresh, the context start does not happen automatically for a standard context implementation). The `phase` value and any “depends-on” relationships determine the startup order as described earlier.
+
+위에서 언급한 바와 같이 `LifecycleProcessor` 인터페이스는 컨텍스트 refresh와 closing을 위한 콜백 메소드도 정의하고 있습니다.
+- closing 콜백은 `stop()`이 명시적으로 호출된 것처럼 종료 프로세스를 구동하지만, 이는 컨텍스트가 closing 될때 발생합니다.
+- refresh 콜백은 `SmartLifecycle` bean의 또 다른 기능을 활성화합니다.
+    - 컨텍스트가 refresh 되면(모든 객체가 인스턴스화되고 초기화가 된 이후) 해당 골백이 호출됩니다.
+        - 이 시점에서 기본 생명주기 프로세서는 각 `SmartLifecycle` 객체의 `isAutoStartup()` 메소드가 리턴하는 boolean 값을 확인합니다.
+        - 값이 `true`이면, 해당 객체는 컨텍스트 또는 자체 `start()` 메소드의 명시적 호출을 기다리지 않고 시작됩니다(컨텍스트 refresh와 달리 표준 컨텍스트 구현에 대해 컨텍스트 시작이 자동으로 발생하지 않음).
+- `phase` 값과 "depends-on" 관계가 있는 경우엔 위에서 설명한 바와 같이 시작 순서를 결정합니다.
+
+#### Shutting Down the Spring IoC Container Gracefully in Non-Web Applications
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-shutdown )
 
 ## 함께 읽기
 
