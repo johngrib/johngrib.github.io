@@ -1076,7 +1076,7 @@ dc-cmd:
     summary: 'an arbitrary percision calculator'
     parent: command-line
     url: /wiki/dc-cmd
-    updated: '2020-08-01 15:44:04 +0900'
+    updated: '2021-06-27 19:01:46 +0900'
     children: []
 ddd-quotes:
     type: wiki
