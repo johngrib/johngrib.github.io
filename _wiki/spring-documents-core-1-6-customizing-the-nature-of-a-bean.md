@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.6. Customizing the Nature of a Bean
 summary : 
 date    : 2021-06-19 23:13:51 +0900
-updated : 2021-06-27 00:17:15 +0900
+updated : 2021-06-27 13:56:49 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -578,6 +578,49 @@ The callback is invoked after population of normal bean properties but before an
 ### 1.6.3. Other Aware Interfaces
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#aware-list )
+
+>
+Besides `ApplicationContextAware` and `BeanNameAware` (discussed [earlier]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-aware )), Spring offers a wide range of `Aware` callback interfaces that let beans indicate to the container that they require a certain infrastructure dependency. As a general rule, the name indicates the dependency type. The following table summarizes the most important `Aware` interfaces:
+
+`ApplicationContextAware`와 `BeanNameAware` 외에도 Spring은 bean이 특정 인프라와의 의존관계가 필요하다는 것을 컨테이너에 알려줄 수 있는 용도의 광범위한 `Aware` 콜백 인터페이스를 제공합니다.
+
+일반적으로 name 은 의존관계 타입을 의미합니다. 다음 표에는 가장 중요한 `Aware` 인터페이스들을 보여줍니다.
+
+>
+**Table 4. Aware Interfaces**
+>
+| Name                             | Injected Dependency                                                                                     | Explained in...                                                |
+|----------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
+| `ApplicationContextAware`        | Declaring `ApplicationContext`.                                                                         | [ApplicationContextAware and BeanNameAware][aw-1]              |
+| `ApplicationEventPublisherAware` | Event publisher of the enclosing `ApplicationContext`.                                                  | [Additional Capabilities of the ApplicationContext][aw-2]      |
+| `BeanClassLoaderAware`           | Class loader used to load the bean classes.                                                             | [Instantiating Beans][aw-3]                                    |
+| `BeanFactoryAware`               | Declaring `BeanFactory`.                                                                                | [ApplicationContextAware and BeanNameAware][aw-4]              |
+| `BeanNameAware`                  | Name of the declaring bean.                                                                             | [ApplicationContextAware and BeanNameAware][aw-5]              |
+| `LoadTimeWeaverAware`            | Defined weaver for processing class definition at load time.                                            | [Load-time Weaving with AspectJ in the Spring Framework][aw-6] |
+| `MessageSourceAware`             | Configured strategy for resolving messages (with support for parametrization and internationalization). | [Additional Capabilities of the ApplicationContext][aw-7]      |
+| `NotificationPublisherAware`     | Spring JMX notification publisher.                                                                      | [Notifications][aw-8]                                          |
+| `ResourceLoaderAware`            | Configured loader for low-level access to resources.                                                    | [Resources][aw-9]                                              |
+| `ServletConfigAware`             | Current `ServletConfig` the container runs in. Valid only in a web-aware Spring `ApplicationContext`.   | [Spring MVC][aw-10]                                            |
+| `ServletContextAware`            | Current `ServletContext` the container runs in. Valid only in a web-aware Spring `ApplicationContext`.  | [Spring MVC][aw-11]                                            |
+
+[aw-1]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-aware
+[aw-2]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-introduction
+[aw-3]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-class
+[aw-4]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-aware
+[aw-5]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-aware
+[aw-6]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#aop-aj-ltw
+[aw-7]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-introduction
+[aw-8]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/integration.html#jmx-notifications
+[aw-9]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources
+[aw-10]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/web.html#mvc
+[aw-11]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/web.html#mvc
+
+>
+Note again that using these interfaces ties your code to the Spring API and does not follow the Inversion of Control style. As a result, we recommend them for infrastructure beans that require programmatic access to the container.
+
+이러한 인터페이스들을 사용하면 코드가 Spring API에 단단히 묶이게 되고, IoC 스타일을 따르지 않게 됩니다.
+
+결론적으로 컨테이너에 프로그래밍 방식으로 엑세스해야 하는 인프라 bean 방법을 권장합니다.
 
 ## 함께 읽기
 
