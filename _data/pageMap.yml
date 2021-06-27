@@ -3972,7 +3972,7 @@ spring-documents-core-1-7-bean-definition-inheritance:
     summary: ""
     parent: spring-documents
     url: /wiki/spring-documents-core-1-7-bean-definition-inheritance
-    updated: '2021-06-27 14:01:35 +0900'
+    updated: '2021-06-27 14:33:42 +0900'
     children: []
 spring-documents-overview:
     type: wiki
