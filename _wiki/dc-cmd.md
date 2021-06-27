@@ -3,7 +3,7 @@ layout  : wiki
 title   : dc 명령어
 summary : an arbitrary percision calculator
 date    : 2020-08-01 15:32:11 +0900
-updated : 2021-06-27 20:42:17 +0900
+updated : 2021-06-27 20:58:27 +0900
 tag     : bash command calculator
 toc     : true
 public  : true
@@ -238,6 +238,17 @@ f
 - `Q`
     - 스택에서 pop하여, 종료할 매크로 실행 레벨로 사용한다.
     - 즉, `[3]`이 있을 때 `Q`하면 3개의 레벨 매크로를 종료한다. 단 dc를 종료하지는 않는다.
+
+## 상태 조사 명령
+
+- `Z`
+    - 스택에서 값을 pop한 다음 숫자라면 자릿수, string이라면 문자의 수를 스택에 push한다.
+    - 예: `[123456789]`일 때 `Z` 하면 `[9]`가 된다.
+- `X`
+    - 스택에서 값을 pop한 다음, 소수점 이하 숫자가 몇 개인지를 스택에 push한다.
+    - 예: `[12.5678]`일 때 `X` 하면 `[4]`가 된다.
+- `z`
+    - 현재 스택의 depth를 스택에 push한다.
 
 ## Examples
 
