@@ -1,7 +1,7 @@
 ---
 layout  : wiki
 title   : dc 명령어
-summary : an arbitrary percision calculator
+summary : an arbitrary precision calculator
 date    : 2020-08-01 15:32:11 +0900
 updated : 2021-06-27 19:30:07 +0900
 tag     : bash command calculator
