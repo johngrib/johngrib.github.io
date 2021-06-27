@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-27 13:58:41 +0900
+updated : 2021-06-27 14:47:33 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -66,6 +66,10 @@ This chapter covers Spring’s Inversion of Control (IoC) container.
 ### 1.7. Bean Definition Inheritance
 
 - [[spring-documents-core-1-7-bean-definition-inheritance]]
+
+### 1.8. Container Extension Points
+
+- [[spring-documents-core-1-8-container-extension-points]]
 
 ## 함께 읽기
 
