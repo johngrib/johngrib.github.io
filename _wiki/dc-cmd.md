@@ -3,7 +3,7 @@ layout  : wiki
 title   : dc 명령어
 summary : an arbitrary percision calculator
 date    : 2020-08-01 15:32:11 +0900
-updated : 2021-06-27 20:58:27 +0900
+updated : 2021-06-27 21:02:43 +0900
 tag     : bash command calculator
 toc     : true
 public  : true
@@ -249,6 +249,17 @@ f
     - 예: `[12.5678]`일 때 `X` 하면 `[4]`가 된다.
 - `z`
     - 현재 스택의 depth를 스택에 push한다.
+
+## 기타 명령
+
+- `!`
+    - `!`뒤의 문자열을 시스템 명령으로 실행한다.
+- `#`
+    - `#` 뒤의 문자열을 주석으로 인식한다.
+- `:r`
+    - 스택에서 2개의 값을 pop해서 배열 `r`에 저장한다. 스택 최상단의 값은 배열 인덱스, 최상단 아래에 있었던 값은 저장할 값이 된다.
+- `;r`
+    - 스택 최상단의 값을 pop하고, 배열 `r`의 인덱스로 사용한다. 선택된 값은 스택에 push된다.
 
 ## Examples
 
