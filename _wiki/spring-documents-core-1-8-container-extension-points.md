@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.8. Container Extension Points
 summary : 
 date    : 2021-06-27 14:47:34 +0900
-updated : 2021-06-29 23:48:40 +0900
+updated : 2021-06-30 00:09:36 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -469,6 +469,43 @@ Spring 2.5부터 도입된 `context` namespace를 사용하면, 다음 예제와
 ### 1.8.3. Customizing Instantiation Logic with a FactoryBean
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-extension-factorybean )
+
+>
+You can implement the `org.springframework.beans.factory.FactoryBean` interface for objects that are themselves factories.
+
+여러분이 직접 `org.springframework.beans.factory.FactoryBean` 인터페이스를 구현해 팩토리 자체인 객체를 만들 수도 있습니다.
+
+>
+The `FactoryBean` interface is a point of pluggability into the Spring IoC container’s instantiation logic. If you have complex initialization code that is better expressed in Java as opposed to a (potentially) verbose amount of XML, you can create your own FactoryBean, write the complex initialization inside that class, and then plug your custom `FactoryBean` into the container.
+
+`FactoryBean` 인터페이스는 Spring IoC 컨테이너의 인스턴스화 로직에 플러그를 꽂을 수 있는 지점입니다.
+만약 여러분이 복잡한 초기화 코드를 갖고 있는데 XML로 표현하면 내용이 장황하게 되고 Java로 표현하는 것이 더 나은 경우라면, 고유한 `FactoryBean`을 만들고 그 클래스 안에 복잡한 초기화 코드를 작성한 다음, 이렇게 만든 커스텀 `FactoryBean`을 컨테이너에 연결할(plug) 수 있습니다.
+
+>
+The `FactoryBean<T>` interface provides three methods:
+>
+- `T getObject()`: Returns an instance of the object this factory creates. The instance can possibly be shared, depending on whether this factory returns singletons or prototypes.
+- `boolean isSingleton()`: Returns `true` if this `FactoryBean` returns singletons or `false` otherwise. The default implementation of this method returns `true`.
+- `Class<?> getObjectType()`: Returns the object type returned by the `getObject()` method or `null` if the type is not known in advance.
+
+`FactoryBean<T>` 인터페이스는 3 개의 메소드를 제공합니다.
+
+- `T getObject()`: 이 팩토리가 생성하는 객체의 인스턴스를 리턴합니다. 리턴된 인스턴스는 이 팩토리가 singleton 또는 prototype을 리턴하는지에 따라 공유 가능여부가 달라집니다.
+- `boolean isSingleton()`: 이 `FactoryBean`이 singleton들을 리턴한다면 이 메소드는 `true`를 리턴합니다. 이 메소드의 `default` 구현은 `true`를 리턴합니다.
+- `Class<?> getObjectType()`: `getObject()`메소드가 리턴하는 객체의 타입을 리턴합니다. 만약 알려지지 않은 타입이라면 이 메소드는 `null`을 리턴합니다.
+
+>
+The `FactoryBean` concept and interface are used in a number of places within the Spring Framework. More than 50 implementations of the `FactoryBean` interface ship with Spring itself.
+>
+When you need to ask a container for an actual `FactoryBean` instance itself instead of the bean it produces, prefix the bean’s `id` with the ampersand symbol (`&`) when calling the `getBean()` method of the `ApplicationContext`. So, for a given `FactoryBean` with an `id` of `myBean`, invoking `getBean("myBean")` on the container returns the product of the `FactoryBean`, whereas invoking `getBean("&myBean")` returns the `FactoryBean` instance itself.
+
+`FactoryBean` 컨셉과 인터페이스는 Spring 프레임워크의 다양한 곳에서 사용되고 있습니다.
+Spring은 50개 이상의 `FactoryBean` 인터페이스 구현을 함께 제공하고 있습니다.
+
+만약 `FactoryBean`이 생성하는 bean 이 아니라 `FactoryBean` 인스턴스 자체를 요청할 일이 있다면 bean의 id 앞에 `&` 기호를 붙여서 `ApplicationContext`의 `getBean()` 메소드로 호출하세요.
+
+예를 들어, `id`가 `myBean`인 `FactoryBean`이 있을 때 `getBean("myBean")`을 호출하면 컨테이너는 `FactoryBean`이 생산한 객체를 리턴할 것입니다.
+하지만 `getBean("&myBean")`과 같이 호출하면 `FactoryBean` 자신의 인스턴스를 리턴합니다.
 
 
 ## 함께 읽기
