@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.8. Container Extension Points
 summary : 
 date    : 2021-06-27 14:47:34 +0900
-updated : 2021-06-30 00:09:36 +0900
+updated : 2021-06-30 00:17:38 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -14,8 +14,8 @@ latex   : false
 {:toc}
 
 - 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-5-bean-scopes]]{1.5. Bean Scopes}
-- 다음 문서 - {1.9. Annotation-based Container Configuration}
+- 이전 문서 - [[spring-documents-core-1-7-bean-definition-inheritance]]{1.7. Bean Definition Inheritance}
+- 다음 문서 - [[spring-documents-core-1-9-annotation-based-container-config]]{1.9. Annotation-based Container Configuration}
 
 ## 1.8. Container Extension Points
 
@@ -511,6 +511,6 @@ Spring은 50개 이상의 `FactoryBean` 인터페이스 구현을 함께 제공�
 ## 함께 읽기
 
 - 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-5-bean-scopes]]{1.5. Bean Scopes}
-- 다음 문서 - {1.9. Annotation-based Container Configuration}
+- 이전 문서 - [[spring-documents-core-1-7-bean-definition-inheritance]]{1.7. Bean Definition Inheritance}
+- 다음 문서 - [[spring-documents-core-1-9-annotation-based-container-config]]{1.9. Annotation-based Container Configuration}
 

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-06-30 00:13:44 +0900
+updated : 2021-06-30 00:17:08 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -14,7 +14,7 @@ latex   : false
 {:toc}
 
 - 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-5-bean-scopes]]{1.8. Container Extension Points}
+- 이전 문서 - [[spring-documents-core-1-8-container-extension-points]]{1.8. Container Extension Points}
 - 다음 문서 - {1.10. Classpath Scanning and Managed Components}
 
 ## 1.9. Annotation-based Container Configuration
@@ -24,6 +24,6 @@ latex   : false
 ## 함께 읽기
 
 - 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-5-bean-scopes]]{1.8. Container Extension Points}
+- 이전 문서 - [[spring-documents-core-1-8-container-extension-points]]{1.8. Container Extension Points}
 - 다음 문서 - {1.10. Classpath Scanning and Managed Components}
 

@@ -3972,7 +3972,7 @@ spring-documents-core-1-7-bean-definition-inheritance:
     summary: ""
     parent: spring-documents
     url: /wiki/spring-documents-core-1-7-bean-definition-inheritance
-    updated: '2021-06-27 14:49:33 +0900'
+    updated: '2021-06-30 00:16:03 +0900'
     children: []
 spring-documents-core-1-8-container-extension-points:
     type: wiki
@@ -3980,7 +3980,7 @@ spring-documents-core-1-8-container-extension-points:
     summary: ""
     parent: spring-documents
     url: /wiki/spring-documents-core-1-8-container-extension-points
-    updated: '2021-06-30 00:09:36 +0900'
+    updated: '2021-06-30 00:17:38 +0900'
     children: []
 spring-documents-core-1-9-annotation-based-container-config:
     type: wiki
@@ -3988,7 +3988,7 @@ spring-documents-core-1-9-annotation-based-container-config:
     summary: ""
     parent: spring-documents
     url: /wiki/spring-documents-core-1-9-annotation-based-container-config
-    updated: '2021-06-30 00:13:44 +0900'
+    updated: '2021-06-30 00:17:08 +0900'
     children: []
 spring-documents-overview:
     type: wiki
