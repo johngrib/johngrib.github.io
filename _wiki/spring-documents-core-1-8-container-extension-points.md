@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.8. Container Extension Points
 summary : 
 date    : 2021-06-27 14:47:34 +0900
-updated : 2021-06-29 21:49:49 +0900
+updated : 2021-06-29 23:48:40 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -399,6 +399,77 @@ If the class cannot be resolved at runtime to a valid class, resolution of the b
 #### Example: The PropertyOverrideConfigurer
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-overrideconfigurer )
+
+>
+The `PropertyOverrideConfigurer`, another bean factory post-processor, resembles the `PropertySourcesPlaceholderConfigurer`, but unlike the latter, the original definitions can have default values or no values at all for bean properties. If an overriding `Properties` file does not have an entry for a certain bean property, the default context definition is used.
+>
+Note that the bean definition is not aware of being overridden, so it is not immediately obvious from the XML definition file that the override configurer is being used. In case of multiple `PropertyOverrideConfigurer` instances that define different values for the same bean property, the last one wins, due to the overriding mechanism.
+>
+Properties file configuration lines take the following format:
+
+또 다른 bean 팩토리 post-processor로 `PropertyOverrideConfigurer`가 있습니다. `PropertySourcesPlaceholderConfigurer`와 비슷해 보이지만, `PropertyOverrideConfigurer`는 그와 달리 original definition은 기본값을 가질 수 있으며, 모든 bean property에 대해 아무 값도 갖지 않을 수도 있습니다.
+
+만약 `Properties` 파일에 특정 bean 프로퍼티에 대한 항목이 없다면 기본 컨텍스트 정의가 대신 사용됩니다.
+
+bean definition은 오버라이딩을 스스로 인식하지 못합니다.
+따라서 XML 정의 파일에서 override configurer가 사용중인지는 바로 알 수 없습니다.
+같은 bean 프로퍼티에 대해 여러 개의 다른 값들을 정의하는 `PropertyOverrideConfigurer`를 여러 인스턴스로 사용하는 경우에는 overriding 메커니즘 때문에 마지막 설정값이 사용되게 됩니다.
+
+프로퍼티 파일 설정은 다음과 같은 포맷을 사용합니다.
+
+```
+beanName.property=value
+```
+
+>
+The following listing shows an example of the format:
+
+다음 목록은 같은 포맷을 사용하는 예제입니다.
+
+```
+dataSource.driverClassName=com.mysql.jdbc.Driver
+dataSource.url=jdbc:mysql:mydb
+```
+
+>
+This example file can be used with a container definition that contains a bean called `dataSource` that has `driver` and `url` properties.
+>
+Compound property names are also supported, as long as every component of the path except the final property being overridden is already non-null (presumably initialized by the constructors). In the following example, the `sammy` property of the `bob` property of the `fred` property of the `tom` bean is set to the scalar value 123:
+
+이 예제 파일은 `dataSource`라고 불리우게 될 bean을 포함하는 컨테이너 definition과 함께 사용할 수 있습니다.
+`dataSource`는 `driver`와 `url` 프로퍼티를 갖게 되겠죠.
+
+복합 프로퍼티 이름도 사용 가능합니다.
+오버라이딩되는 final 프로퍼티를 제외한 경로에 있는 모든 컴포넌트가 non null이 아닌 경우(생성자에 의해 초기화된 경우라던가..)에 사용할 수 있습니다.
+
+다음 예제에서 `tom` bean의 `fred` 프로퍼티에 있는 `bob` 프로퍼티의 `sammy` 프로퍼티는 스칼라 값 `123`으로 설정됩니다.
+
+```
+tom.fred.bob.sammy=123
+```
+
+> (i)
+Specified override values are always literal values. They are not translated into bean references. This convention also applies when the original value in the XML bean definition specifies a bean reference.
+{:style="background-color: #ecf1e8;"}
+
+- (i) 참고
+    - 명시된 오버라이드 값은 항상 리터럴 값입니다.
+    - 이런 값들은 bean 참조로 번역되어 적용되지 않습니다.
+    - 이 규칙은 XML bean definition의 원래 값이 bean 참조를 명시하는 경우에도 적용됩니다.
+
+>
+With the `context` namespace introduced in Spring 2.5, it is possible to configure property overriding with a dedicated configuration element, as the following example shows:
+
+Spring 2.5부터 도입된 `context` namespace를 사용하면, 다음 예제와 같이 전용 configuration element를 사용해 프로퍼티 오버라이딩을 할 수 있습니다.
+
+```xml
+<context:property-override location="classpath:override.properties"/>
+```
+
+### 1.8.3. Customizing Instantiation Logic with a FactoryBean
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-extension-factorybean )
+
 
 ## 함께 읽기
 
