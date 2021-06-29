@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.8. Container Extension Points
 summary : 
 date    : 2021-06-27 14:47:34 +0900
-updated : 2021-06-29 12:48:33 +0900
+updated : 2021-06-29 21:49:49 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -302,6 +302,103 @@ As with `BeanPostProcessor`s, you typically do not want to configure `BeanFactor
 #### Example: The Class Name Substitution PropertySourcesPlaceholderConfigurer
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-placeholderconfigurer )
+
+>
+You can use the `PropertySourcesPlaceholderConfigurer` to externalize property values from a bean definition in a separate file by using the standard Java `Properties` format. Doing so enables the person deploying an application to customize environment-specific properties, such as database URLs and passwords, without the complexity or risk of modifying the main XML definition file or files for the container.
+>
+Consider the following XML-based configuration metadata fragment, where a `DataSource` with placeholder values is defined:
+
+`PropertySourcesPlaceholderConfigurer`를 사용해서 스탠다드 Java `Properties` 포맷을 사용해 별도의 파일에 있는 bean definition 특성 값을 구체화할 수 있습니다.
+이렇게하면 애플리케이션을 배포하는 사람이 XML 정의 파일이나 컨테이너에 소속된 파일을 굳이 고쳐야 하는 위험 없이 환경별 속성(데이터베이스 URL/패스워드 등)을 커스터마이즈할 수 있습니다.
+
+placeholder가 있는 다음의 XML 기반 configuration metadata 파일의 일부를 봅시다.
+
+```xml
+<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+    <property name="locations" value="classpath:com/something/jdbc.properties"/>
+</bean>
+
+<bean id="dataSource" destroy-method="close"
+        class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="${jdbc.driverClassName}"/>
+    <property name="url" value="${jdbc.url}"/>
+    <property name="username" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+</bean>
+```
+
+>
+The example shows properties configured from an external `Properties` file. At runtime, a `PropertySourcesPlaceholderConfigurer` is applied to the metadata that replaces some properties of the DataSource. The values to replace are specified as placeholders of the form `${property-name}`, which follows the Ant and log4j and JSP EL style.
+>
+The actual values come from another file in the standard Java `Properties` format:
+
+위의 예제는 외부의 `Properties` 파일 프로퍼티를 설정하는 방법을 보여줍니다.
+`PropertySourcesPlaceholderConfigurer`는 런타임에 데이터소스의 속성들을 가져와서 메타데이터에 적용합니다.
+가져와서 집어넣을 값들은 `${property-name}`과 같은 포맷의 placeholder로 명시됩니다. 이 포맷은 Ant, log4j, JSP EL 스타일을 따르는 것입니다.
+
+실제 값들은 스탠다드 Java `Properties` 포맷의 다른 파일에서 가져오게 됩니다.
+
+```
+jdbc.driverClassName=org.hsqldb.jdbcDriver
+jdbc.url=jdbc:hsqldb:hsql://production:9002
+jdbc.username=sa
+jdbc.password=root
+```
+
+>
+Therefore, the `${jdbc.username}` string is replaced at runtime with the value, 'sa', and the same applies for other placeholder values that match keys in the properties file. The `PropertySourcesPlaceholderConfigurer` checks for placeholders in most properties and attributes of a bean definition. Furthermore, you can customize the placeholder prefix and suffix.
+>
+With the `context` namespace introduced in Spring 2.5, you can configure property placeholders with a dedicated configuration element. You can provide one or more locations as a comma-separated list in the `location` attribute, as the following example shows:
+
+그러므로, `${jdbc.username}` 문자열은 런타임에 `sa`로 대체되며, properties 파일에 들어있는 키와 일치하는 다른 placeholder 값들에도 똑같은 방식이 적용됩니다.
+
+`PropertySourcesPlaceholderConfigurer`는 bean definition의 attribute나 properties에서 placeholder를 체크합니다.
+게다가, placeholder의 prefix와 suffix를 커스터마이즈하는 것도 가능합니다.
+
+Spring 2.5부터 도입된 `context` namespace를 사용하면, 전용 configuration element로 property placeholder를 설정할 수 있습니다.
+다음 예제와 같이 `location` attribute에서 콤마로 구분된 리스트 형식으로 하나 이상의 위치를 제공할 수 있습니다.
+
+
+```xml
+<context:property-placeholder location="classpath:com/something/jdbc.properties"/>
+```
+
+>
+The `PropertySourcesPlaceholderConfigurer` not only looks for properties in the `Properties` file you specify. By default, if it cannot find a property in the specified properties files, it checks against Spring `Environment` properties and regular Java `System` properties.
+
+`PropertySourcesPlaceholderConfigurer`는 명시한 `Properties` 파일에서 속성을 탐색하기만 하지 않습니다.
+만약 지정한 파일에서 속성값을 찾지 못하면 Spring 환경이나 일반 Java `System` 속성을 확인해서 값을 가져옵니다.
+
+> (i)
+You can use the `PropertySourcesPlaceholderConfigurer` to substitute class names, which is sometimes useful when you have to pick a particular implementation class at runtime. The following example shows how to do so:
+{:style="background-color: #e9f1f6;"}
+
+```xml
+<bean class="org.springframework.beans.factory.config.PropertySourcesPlaceholderConfigurer">
+    <property name="locations">
+        <value>classpath:com/something/strategy.properties</value>
+    </property>
+    <property name="properties">
+        <value>custom.strategy.class=com.something.DefaultStrategy</value>
+    </property>
+</bean>
+
+<bean id="serviceStrategy" class="${custom.strategy.class}"/>
+```
+
+>
+If the class cannot be resolved at runtime to a valid class, resolution of the bean fails when it is about to be created, which is during the `preInstantiateSingletons()` phase of an `ApplicationContext` for a non-lazy-init bean.
+{:style="background-color: #e9f1f6;"}
+
+- (i) 참고
+    - `PropertySourcesPlaceholderConfigurer`를 사용해서 클래스 이름을 대체하는 것도 가능합니다.
+    - 이 방법은 런타임에 특정 구현 클래스를 선택해야 하는 상황에서 유용할 수 있습니다.
+    - 만약 런타임에 유효한 클래스를 확인할 수 없다면, bean이 생성되는 시점에 bean 확인이 실패하게 됩니다.
+        - 이것은 non-lazy-init bean에 대해서 `ApplicationContext`가 `preInstantiateSingletons()` 단계를 진행할 때 발생합니다.
+
+#### Example: The PropertyOverrideConfigurer
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-overrideconfigurer )
 
 ## 함께 읽기
 
