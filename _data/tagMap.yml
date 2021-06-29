@@ -662,6 +662,7 @@ java:
     - {fileName: spring-documents-core-1-6-customizing-the-nature-of-a-bean}
     - {fileName: spring-documents-core-1-7-bean-definition-inheritance}
     - {fileName: spring-documents-core-1-8-container-extension-points}
+    - {fileName: spring-documents-core-1-9-annotation-based-container-config}
     - {fileName: spring-versions}
     - {fileName: summary-The-Pauseless-GC-Algorithm}
     - {fileName: ternary-operator-and-null-pointer-exception}
@@ -908,6 +909,7 @@ spring:
     - {fileName: spring-documents-core-1-6-customizing-the-nature-of-a-bean}
     - {fileName: spring-documents-core-1-7-bean-definition-inheritance}
     - {fileName: spring-documents-core-1-8-container-extension-points}
+    - {fileName: spring-documents-core-1-9-annotation-based-container-config}
     - {fileName: spring-documents-overview}
 bsd:
     - {fileName: ioreg-cmd}
