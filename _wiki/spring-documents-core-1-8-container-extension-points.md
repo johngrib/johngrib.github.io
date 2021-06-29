@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.8. Container Extension Points
 summary : 
 date    : 2021-06-27 14:47:34 +0900
-updated : 2021-06-28 23:55:16 +0900
+updated : 2021-06-29 12:48:33 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -242,6 +242,66 @@ Using callback interfaces or annotations in conjunction with a custom `BeanPostP
 ### 1.8.2. Customizing Configuration Metadata with a BeanFactoryPostProcessor
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-extension-factory-postprocessors )
+
+>
+The next extension point that we look at is the `org.springframework.beans.factory.config.BeanFactoryPostProcessor`. The semantics of this interface are similar to those of the `BeanPostProcessor`, with one major difference: `BeanFactoryPostProcessor` operates on the bean configuration metadata. That is, the Spring IoC container lets a `BeanFactoryPostProcessor` read the configuration metadata and potentially change it before the container instantiates any beans other than `BeanFactoryPostProcessor` instances.
+>
+You can configure multiple `BeanFactoryPostProcessor` instances, and you can control the order in which these `BeanFactoryPostProcessor` instances run by setting the `order` property. However, you can only set this property if the `BeanFactoryPostProcessor` implements the `Ordered` interface. If you write your own `BeanFactoryPostProcessor`, you should consider implementing the `Ordered` interface, too. See the javadoc of the [BeanFactoryPostProcessor]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/config/BeanFactoryPostProcessor.html ) and [Ordered]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/core/Ordered.html ) interfaces for more details.
+
+우리가 살펴볼 다음의 확장 포인트는 `org.springframework.beans.factory.config.BeanFactoryPostProcessor`입니다.
+
+이 인터페이스의 의미는 `BeanPostProcessor`와 비슷하지만 중요한 차이점이 하나 있습니다.
+- `BeanFactoryPostProcessor`는 bean configuration 메타데이터에서 작동합니다.
+- 즉, Spring IoC 컨테이너는 `BeanFactoryPostProcessor`가 configuration 메타데이터를 읽게 하고, 컨테이너가 `BeanFactoryPostProcessor` 인스턴스가 아닌 다른 bean을 인스턴스화하기 전에 잠재적으로 변경할 수 있도록 해줍니다.
+
+여러분은 여러 개의 `BeanFactoryPostProcessor` 인스턴스를 configure할 수 있으며, `order` property를 setting해서 `BeanFactoryPostProcessor` 인스턴스가 실행되는 순서도 컨트롤할 수 있습니다.
+
+그러나 `order` property는 `BeanFactoryPostProcessor`가 `Ordered` 인터페이스를 구현하는 경우에만 설정할 수 있습니다.
+만약 여러분이 자신만의 `BeanFactoryPostProcessor`를 작성하는 경우라면, `Ordered` 인터페이스 구현을 꼭 고려해야 합니다.
+
+이에 대한 자세한 내용은 [BeanFactoryPostProcessor]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/config/BeanFactoryPostProcessor.html ) 과 [Ordered]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/core/Ordered.html )의 javadoc을 참고하세요.
+
+> (i)
+If you want to change the actual bean instances (that is, the objects that are created from the configuration metadata), then you instead need to use a `BeanPostProcessor` (described earlier in [Customizing Beans by Using a BeanPostProcessor]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-extension-bpp )). While it is technically possible to work with bean instances within a `BeanFactoryPostProcessor` (for example, by using `BeanFactory.getBean()`), doing so causes premature bean instantiation, violating the standard container lifecycle. This may cause negative side effects, such as bypassing bean post processing.
+>
+Also, `BeanFactoryPostProcessor` instances are scoped per-container. This is only relevant if you use container hierarchies. If you define a `BeanFactoryPostProcessor` in one container, it is applied only to the bean definitions in that container. Bean definitions in one container are not post-processed by `BeanFactoryPostProcessor` instances in another container, even if both containers are part of the same hierarchy.
+{:style="background-color: #ecf1e8;"}
+
+- (i) 참고
+    - 실제 bean 인스턴스(configuration metadata를 통해 생성된 객체)를 변경하려면, 대신 `BeanPostProcessor`를 사용해야 합니다. (`BeanPostProcessor`에 대해서는 위에서 설명한 바 있음)
+        - 기술적으로는 `BeanFactoryPostProcessor` 내에서 bean 인스턴스로 작업하는 것이 가능하긴 하지만(예: `BeanFactory.getBean()`을 사용한다던가),
+            - 이렇게 하면 조기 bean 인스턴스화가 발생하여 표준 컨테이너 생명주기 사이클을 위반하게 됩니다.
+            - 이로 인해 bean post processing을 우회하게 되는 나쁜 부작용이 발생할 수 있습니다.
+    - 또한, `BeanFactoryPostProcessor` 인스턴스는 컨테이너별로 스코프가 지정됩니다.
+        - 따라서 컨테이너 계층을 사용하는 경우에만 해당이 됩니다.
+        - 만약 하나의 컨테이너에 `BeanFactoryPostProcessor`를 정의하면 하나의 컨테이너에서 취급하는 bean 정의에만 적용됩니다.
+            - 하나의 컨테이너의 bean definition들은 두 컨테이너가 같은 계층에 있는 경우에도 다른 컨테이너의 `BeanFactoryPostProcessor` 인스턴스에 의해 post processing되지 않습니다.
+
+>
+A bean factory post-processor is automatically run when it is declared inside an `ApplicationContext`, in order to apply changes to the configuration metadata that define the container. Spring includes a number of predefined bean factory post-processors, such as `PropertyOverrideConfigurer` and `PropertySourcesPlaceholderConfigurer`. You can also use a custom `BeanFactoryPostProcessor` — for example, to register custom property editors.
+>
+An `ApplicationContext` automatically detects any beans that are deployed into it that implement the `BeanFactoryPostProcessor` interface. It uses these beans as bean factory post-processors, at the appropriate time. You can deploy these post-processor beans as you would any other bean.
+
+bean factory post-processor는 `ApplicationContext` 내에 선언될 때 자동으로 실행됩니다. 이는 컨테이너를 정의하는 configuration metadata에 변경 사항을 적용하기 위해서입니다.
+Spring은 `PropertyOverrideConfigurer`와 `PropertySourcesPlaceholderConfigurer`와 같은 미리 정의된 여러 개의 bean factory post-processor들을 포함하고 있습니다.
+예를 들어, 커스텀 속성 편집기를 등록하기 위해 커스텀 `BeanFactoryPostProcessor`를 사용할 수도 있습니다.
+
+`ApplicationContext`는 `BeanFactoryPostProcessor` 인터페이스 구현체를 자동으로 감지합니다.
+`ApplicationContext`는 적당한 시기에 이런 bean을 bean factory post-processor로 사용합니다.
+여러분은 이러한 post-processor를 다른 bean과 똑같은 방법으로 배포할 수 있습니다.
+
+> (i)
+As with `BeanPostProcessor`s, you typically do not want to configure `BeanFactoryPostProcessors` for lazy initialization. If no other bean references a `Bean(Factory)PostProcessor`, that post-processor will not get instantiated at all. Thus, marking it for lazy initialization will be ignored, and the `Bean(Factory)PostProcessor` will be instantiated eagerly even if you set the `default-lazy-init` attribute to `true` on the declaration of your `<beans />` element.
+{:style="background-color: #ecf1e8;"}
+
+- (i) 참고
+    - `BeanPostProcessor`와 마찬가지로, 여러분은 `BeanFactoryPostProcessor`를 lazy하게 초기화되도록 설정하고 싶지 않을 것입니다.
+    - 다른 bean이 `Bean(Factory)PostProcessor`를 참조하지 않으면 해당 post-processor는 인스턴스화되지 않습니다.
+    - 그러므로 lazy 초기화하겠다고 표시하는 것은 무시되며, `Bean(Factory)PostProcessor`는 `<beans />` element 선언에서 `default-lazy-init` attribute를 `true`로 설정하더라도 즉각(eagerly) 인스턴스화됩니다.
+
+#### Example: The Class Name Substitution PropertySourcesPlaceholderConfigurer
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-placeholderconfigurer )
 
 ## 함께 읽기
 
