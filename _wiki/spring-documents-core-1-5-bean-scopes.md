@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.5. Bean Scopes
 summary : 
 date    : 2021-06-17 23:39:09 +0900
-updated : 2021-06-19 23:15:11 +0900
+updated : 2021-07-01 22:51:35 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -205,7 +205,6 @@ Consider the following XML configuration for a bean definition:
 
 다음과 같은 XML bean 정의를 살펴봅시다.
 
->
 ```xml
 <bean id="loginAction" class="com.something.LoginAction" scope="request"/>
 ```
