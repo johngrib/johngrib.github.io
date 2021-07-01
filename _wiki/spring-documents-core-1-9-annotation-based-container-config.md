@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-07-01 22:46:39 +0900
+updated : 2021-07-02 00:46:41 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -122,6 +122,52 @@ The `<context:annotation-config/>` element implicitly registers the following po
 ### 1.9.1. @Required
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-required-annotation )
+
+>
+The `@Required` annotation applies to bean property setter methods, as in the following example:
+
+`@Required` 애노테이션은 다음 예제와 같이 bean의 setter 메소드에 적용할 수 있습니다.
+
+```java
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Required
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // ...
+}
+```
+
+>
+This annotation indicates that the affected bean property must be populated at configuration time, through an explicit property value in a bean definition or through autowiring. The container throws an exception if the affected bean property has not been populated. This allows for eager and explicit failure, avoiding `NullPointerException` instances or the like later on. We still recommend that you put assertions into the bean class itself (for example, into an init method). Doing so enforces those required references and values even when you use the class outside of a container.
+
+이 애노테이션은 영향을 받는 bean 프로퍼티가 configuration time에 bean definition에 명시된 값이나 autowiring을 통해서 입력되어야 한다는 것을 보여줍니다.
+이런 bean 프로퍼티가 값이 입력되지 않으면 컨테이너는 예외를 던집니다.
+이러한 동작을 통해 명시적이고 빠른 실패를 허용하게 되어 나중에 발생 가능한 `NullPointerException`을 예방할 수 있습니다.
+가급적이면 bean 클래스 자체에 assertion을 넣는 것(예: init 메소드에라던가)을 추천합니다.
+이렇게 하면 컨테이너 외부에서 클래스를 사용할 때에도 required 참조와 값이 적용됩니다.
+
+>
+The [RequiredAnnotationBeanPostProcessor]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/annotation/RequiredAnnotationBeanPostProcessor.html ) must be registered as a bean to enable support for the `@Required` annotation.
+{:style="background-color: #e9f1f6;"}
+
+`@Required` 애노테이션을 사용하려면 `RequiredAnnotationBeanPostProcessor`를 bean으로 등록해야 합니다.
+
+>
+The `@Required` annotation and `RequiredAnnotationBeanPostProcessor` are formally deprecated as of Spring Framework 5.1, in favor of using constructor injection for required settings (or a custom implementation of `InitializingBean.afterPropertiesSet()` or a custom `@PostConstruct` method along with bean property setter methods).
+{:style="background-color: #ecf1e8;"}
+
+`@Required` 애노테이션과 `RequiredAnnotationBeanPostProcessor`는 Spring 프레임워크 5.1 부터는 공식적으로  deprecated 되었습니다.
+required settings에 대해서는 생성자 주입(또는 `InitializingBean.afterPropertiesSet()`의 커스텀 구현이나, bean의 setter 메소드와 함께 사용하는 커스텀 `@PostConstruct` 메소드 )을 사용합니다.
+
+### 1.9.2. Using @Autowired
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-autowired-annotation )
+
 
 
 ## 함께 읽기
