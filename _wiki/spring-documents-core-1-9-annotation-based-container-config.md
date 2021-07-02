@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-07-02 22:55:04 +0900
+updated : 2021-07-03 00:20:48 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -466,10 +466,13 @@ You can also use `@Autowired` for interfaces that are well-known resolvable depe
 다음 에제는 `ApplicationContext`를 autowire합니다.
 
 ```java
-class MovieRecommender {
+public class MovieRecommender {
 
     @Autowired
-    lateinit var context: ApplicationContext
+    private ApplicationContext context;
+
+    public MovieRecommender() {
+    }
 
     // ...
 }
@@ -487,6 +490,82 @@ The `@Autowired`, `@Inject`, `@Value`, and `@Resource` annotations are handled b
 ### 1.9.3. Fine-tuning Annotation-based Autowiring with @Primary
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-autowired-annotation-primary )
+
+>
+Because autowiring by type may lead to multiple candidates, it is often necessary to have more control over the selection process. One way to accomplish this is with Spring’s `@Primary` annotation. `@Primary` indicates that a particular bean should be given preference when multiple beans are candidates to be autowired to a single-valued dependency. If exactly one primary bean exists among the candidates, it becomes the autowired value.
+>
+Consider the following configuration that defines `firstMovieCatalog` as the primary `MovieCatalog`:
+
+타입 기준의 autowiring은 여러 개의 후보가 발생할 수 있기 때문에, 선택 프로세스에 좀 더 관여해야 하는 경우가 있습니다.
+한 가지 방법은 Spring의 `@Primary` 애노테이션을 쓰는 것입니다.
+`@Primary`는 하나의 단일 값 dependency에 여러 개의 bean이 autowiring 후보가 되는 상황에서 지정한 bean에 우선권을 부여한다는 것을 뜻합니다.
+여러 후보들 사이에서 한 개의 primary bean이 존재한다면 해당 bean을 autowiring 값으로 삼습니다.
+
+다음은 여러 개의 `MovieCatalog`의 후보 중 `firstMovieCatalog`를 primary로 지정하는 configuration을 예제입니다.
+
+```java
+@Configuration
+public class MovieConfiguration {
+
+    @Bean
+    @Primary
+    public MovieCatalog firstMovieCatalog() { ... }
+
+    @Bean
+    public MovieCatalog secondMovieCatalog() { ... }
+
+    // ...
+}
+```
+
+>
+With the preceding configuration, the following `MovieRecommender` is autowired with the `firstMovieCatalog`:
+
+위의 configuration을 사용하면, 아래 예제의 `MovieRecommender`는 `firstMovieCatalog`로 autowiring 됩니다.
+
+```java
+public class MovieRecommender {
+
+    @Autowired
+    private MovieCatalog movieCatalog;
+
+    // ...
+}
+```
+
+>
+The corresponding bean definitions follow:
+
+해당 bean definition은 다음과 같습니다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean class="example.SimpleMovieCatalog" primary="true">
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean id="movieRecommender" class="example.MovieRecommender"/>
+
+</beans>
+```
+
+### 1.9.4. Fine-tuning Annotation-based Autowiring with Qualifiers
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-autowired-annotation-qualifiers )
 
 ## 함께 읽기
 
