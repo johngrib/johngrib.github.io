@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-07-03 15:42:26 +0900
+updated : 2021-07-03 16:54:52 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -1058,6 +1058,100 @@ When multiple beans qualify as autowire candidates, the determination of a “pr
 ### 1.9.7. Injection with @Resource
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-resource-annotation )
+
+>
+Spring also supports injection by using the JSR-250 `@Resource` annotation (`javax.annotation.Resource`) on fields or bean property setter methods. This is a common pattern in Java EE: for example, in JSF-managed beans and JAX-WS endpoints. Spring supports this pattern for Spring-managed objects as well.
+>
+`@Resource` takes a name attribute. By default, Spring interprets that value as the bean name to be injected. In other words, it follows by-name semantics, as demonstrated in the following example:
+
+Spring은 JSR-250의 `@Resource` 애노테이션(`javax.annotation.Resource`)을 사용한 주입을 지원합니다. 이 애노테이션은  필드나 bean의 setter 메소드에 사용할 수 있습니다.
+이 방법은 Java EE의 공통 패턴이기도 합니다. 예를 들자면 JSF 관리 bean 및 JAX-WS 엔드 포인트가 그에 해당됩니다.
+Spring은 Spring 관리 객체에 대해서도 이 패턴을 사용할 수 있도록 지원해 줍니다.
+
+`@Resource`는 name 속성을 사용합니다. 기본적으로 Spring은 name을 해당 값을 주입할 bean 이름으로 해석합니다.
+즉, 다음 예제와 같이 name을 사용합니다.
+
+```java
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Resource(name="myMovieFinder") // (1)
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+}
+```
+
+>
+(1) This line injects a `@Resource.`
+
+(1)에서 `@Resource` 주입이 일어납니다.
+
+>
+If no name is explicitly specified, the default name is derived from the field name or setter method. In case of a field, it takes the field name. In case of a setter method, it takes the bean property name. The following example is going to have the bean named `movieFinder` injected into its setter method:
+
+만약 이름이 명시되지 않았다면, 기본 이름으로 필드 이름이나 setter 메소드 이름을 사용하게 됩니다.
+필드라면 필드 이름을 사용합니다.
+setter 메소드라면, bean 프로퍼티 name을 사용합니다.
+다음 예제에서는 `movieFinder`라는 이름의 bean을 setter 메소드에 주입합니다.
+
+```java
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Resource
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+}
+```
+
+> (i)
+The name provided with the annotation is resolved as a bean name by the `ApplicationContext` of which the `CommonAnnotationBeanPostProcessor` is aware. The names can be resolved through JNDI if you configure Spring’s [SimpleJndiBeanFactory]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/jndi/support/SimpleJndiBeanFactory.html ) explicitly. However, we recommend that you rely on the default behavior and use Spring’s JNDI lookup capabilities to preserve the level of indirection.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 애노테이션과 함께 제공된 name은 `CommonAnnotationBeanPostProcessor`가 알고 있는 `ApplicationContext`에 의해 bean name으로 인식됩니다.
+    - Spring의 `SimpleJndiBeanFactory`를 명시적으로 configure하면, JNDI를 통해 name을 확인할 수 있습니다.
+    - 그러나 우리는 여러분에게 기본 동작을 사용할 것과, Spring의 JNDI 탐색 기능을 사용해서 간접 레벨을 유지하는 것을 권장합니다.
+
+>
+In the exclusive case of `@Resource` usage with no explicit name specified, and similar to `@Autowired`, `@Resource` finds a primary type match instead of a specific named bean and resolves well known resolvable dependencies: the `BeanFactory`, `ApplicationContext`, `ResourceLoader`, `ApplicationEventPublisher`, and `MessageSource` interfaces.
+
+명시적으로 name을 지정하지 않고 `@Resource`를 쓰는 경우는 `@Resource`를 `@Autowired`처름 쓰는 경우라 할 수 있습니다.
+이런 경우 `@Resource`는 명시된 bean name이나 잘 알려진 dependencies(`BeanFactory`, `ApplicationContext`, `ResourceLoader`, `ApplicationEventPublisher`, `MessageSource` 인터페이스)가 아니라 primary 타입 매치를 찾으려 합니다.
+
+>
+Thus, in the following example, the `customerPreferenceDao` field first looks for a bean named "customerPreferenceDao" and then falls back to a primary type match for the type `CustomerPreferenceDao`:
+
+그래서 다음 예제에서 `customerPreferenceDao` 필드는 먼저 "customerPreferenceDao"라는 이름의 bean을 찾으려 합니다. 그리고 fallback이 필요한 경우엔 `CustomerPreferenceDao` 타입에 대해 primary 매치를 합니다.
+
+```java
+public class MovieRecommender {
+
+    @Resource
+    private CustomerPreferenceDao customerPreferenceDao;
+
+    @Resource
+    private ApplicationContext context; // (1)
+
+    public MovieRecommender() {
+    }
+
+    // ...
+}
+```
+
+>
+(1) The `context` field is injected based on the known resolvable dependency type: `ApplicationContext`.
+
+(1) `context` 필드는 이미 알려져 있는 dependency인 `ApplicationContext`가 삽입됩니다.
+
+### 1.9.8. Using @Value
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-value-annotations )
 
 ## 함께 읽기
 
