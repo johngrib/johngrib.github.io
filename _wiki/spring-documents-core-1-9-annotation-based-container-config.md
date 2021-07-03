@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-07-03 00:20:48 +0900
+updated : 2021-07-03 13:03:06 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -566,6 +566,408 @@ The corresponding bean definitions follow:
 ### 1.9.4. Fine-tuning Annotation-based Autowiring with Qualifiers
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-autowired-annotation-qualifiers )
+
+>
+`@Primary` is an effective way to use autowiring by type with several instances when one primary candidate can be determined. When you need more control over the selection process, you can use Spring’s `@Qualifier` annotation. You can associate qualifier values with specific arguments, narrowing the set of type matches so that a specific bean is chosen for each argument. In the simplest case, this can be a plain descriptive value, as shown in the following example:
+
+`@Primary`는 여러 인스턴스에 타입별 autowiring을 하려 할 때 하나의 우선순위 후보를 결정하게 하는 효과적인 방법입니다.
+선택 프로세스를 좀 더 세밀하게 제어하고 싶다면, Spring의 `@Qualifier` 애노테이션도 사용할 수 있습니다.
+qualifier 값을 특정 인자와 연관시키면 타입 매치 후보 집합을 좁혀서 각 인자에 대해 특정 bean이 선택되도록 할 수 있습니다.
+다음 예제는 가장 간단한 경우를 보여줍니다.
+
+```java
+public class MovieRecommender {
+
+    @Autowired
+    @Qualifier("main")
+    private MovieCatalog movieCatalog;
+
+    // ...
+}
+```
+
+>
+You can also specify the `@Qualifier` annotation on individual constructor arguments or method parameters, as shown in the following example:
+
+다음 예제와 같이 생성자 인자나 메소드 파라미터에 `@Qualifier` 애노테이션을 붙이는 것도 가능합니다.
+
+```java
+public class MovieRecommender {
+
+    private MovieCatalog movieCatalog;
+
+    private CustomerPreferenceDao customerPreferenceDao;
+
+    @Autowired
+    public void prepare(@Qualifier("main") MovieCatalog movieCatalog,
+            CustomerPreferenceDao customerPreferenceDao) {
+        this.movieCatalog = movieCatalog;
+        this.customerPreferenceDao = customerPreferenceDao;
+    }
+
+    // ...
+}
+```
+
+>
+The following example shows corresponding bean definitions.
+
+다음 예제는 위 예제에 등장한 bean의 definition을 보여줍니다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier value="main"/> <!-- (1) -->
+
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier value="action"/> <!-- (1) -->
+
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean id="movieRecommender" class="example.MovieRecommender"/>
+
+</beans>
+```
+
+>
+- (1) The bean with the `main` qualifier value is wired with the constructor argument that is qualified with the same value.
+- (2) The bean with the `action` qualifier value is wired with the constructor argument that is qualified with the same value.
+
+- (1) `main` qualifier로 지정된 bean은 같은 qualifier 값이 있는 생성자 인자와 wire 됩니다.
+- (2) `action` qualifier로 지정된 bean은 같은 qualifier 값이 있는 생성자 인자와 wire 됩니다.
+
+>
+For a fallback match, the bean name is considered a default qualifier value. Thus, you can define the bean with an `id` of `main` instead of the nested qualifier element, leading to the same matching result. However, although you can use this convention to refer to specific beans by name, `@Autowired` is fundamentally about type-driven injection with optional semantic qualifiers. This means that qualifier values, even with the bean name fallback, always have narrowing semantics within the set of type matches. They do not semantically express a reference to a unique bean `id`. Good qualifier values are `main` or `EMEA` or `persistent`, expressing characteristics of a specific component that are independent from the bean `id`, which may be auto-generated in case of an anonymous bean definition such as the one in the preceding example.
+
+fallback 매치가 필요한 상황이 되면, bean 이름이 디폴트 qualifier 값으로 간주됩니다.
+따라서 중첩된 qualifier 엘리먼트 대신에 `main`의 `id`로 bean을 정의하는 방법으로 동일한 매칭 결과를 얻을 수도 있습니다.
+그런데 이름으로 특정 bean을 참조하는 이 규칙을 이용할 수는 있지만, `@Autowired`는 기본적으로 타입 기반의 주입으로 작동하는 것이며 semantic qualifier는 선택적인 것입니다.
+즉, fallback을 위해 bean 이름을 써야 하는 상황이라 하더라도 qualifier 값들은 언제나 타입 매치 집합의 후보를 좁히는 의미를 갖습니다.
+`@Autowired`와 `@Qualifier`는 유니크한 bean `id`에 대한 참조를 의미하는 표현이 아닙니다.
+좋은 qualifier 값은 `main`, `EMEA`, `persistent` 처럼 특정 컴포넌트 요소의 특성을 표현하며, bean `id`와 독립적입니다. (앞의 예제와 같은 익명 bean 정의의 경우 `id`는 자동으로 생성될 수 있습니다.)
+
+>
+Qualifiers also apply to typed collections, as discussed earlier — for example, to `Set<MovieCatalog>`. In this case, all matching beans, according to the declared qualifiers, are injected as a collection. This implies that qualifiers do not have to be unique. Rather, they constitute filtering criteria. For example, you can define multiple `MovieCatalog` beans with the same qualifier value “action”, all of which are injected into a `Set<MovieCatalog>` annotated with `@Qualifier("action")`.
+
+qualifier들은 또한 typed collection에도 적용됩니다. (위의 예제에서 보았던 `Set<MovieCatalog>`가 해당됩니다)
+이 케이스에서는 선언된 qualifier에 일치하는 모든 bean들이 collection으로 전부 주입되게 됩니다.
+이는 qualifier가 유니크하지 않아도 된다는 것을 보여줍니다.
+오히려 qualifier는 필터링 기준을 구성하는 것이라 할 수 있습니다.
+예를 들어, 여러 개의 `MovieCatalog` bean을 정의할 때 "action"이라는 똑같은 qualifier를 주는 것도 가능합니다.
+이렇게 정의한 bean들은 모두 `@Qualifier("action")` 애노테이션이 붙은 `Set<MovieCatalog>`에 주입됩니다.
+
+>
+Letting qualifier values select against target bean names, within the type-matching candidates, does not require a `@Qualifier` annotation at the injection point. If there is no other resolution indicator (such as a qualifier or a primary marker), for a non-unique dependency situation, Spring matches the injection point name (that is, the field name or parameter name) against the target bean names and choose the same-named candidate, if any.
+{:style="background-color: #e9f1f6;"}
+
+- 타입 매칭 후보들 중에서 하나가 선택되게 할 때 bean의 이름을 기준으로 삼지 않는다면, 주입 지점에 `@Qualifier` 애노테이션을 굳이 쓰지 않아도 됩니다.
+- 만약 non-unique dependency가 있는 상황에서 (primary 표시나 qualifier 같은) 선택 기준이 없다면, Spring은 주입 지점의 이름(필드 이름이나 파라미터 이름)을 target bean 이름과 비교해서 같은 이름을 가진 후보를 선택합니다. (물론 그런 이름이 있는 경우에)
+
+>
+That said, if you intend to express annotation-driven injection by name, do not primarily use `@Autowired`, even if it is capable of selecting by bean name among type-matching candidates. Instead, use the JSR-250 `@Resource` annotation, which is semantically defined to identify a specific target component by its unique name, with the declared type being irrelevant for the matching process. `@Autowired` has rather different semantics: After selecting candidate beans by type, the specified `String` qualifier value is considered within those type-selected candidates only (for example, matching an `account` qualifier against beans marked with the same qualifier label).
+
+만약 이름을 기준으로 애노테이션을 통한 주입을 표현하려 한다면 `@Autowired` 위주로 작업을 하지 않는 것이 좋습니다.
+타입 매칭 후보들 중에서 이름으로 선택하는 것이 가능할 때에도 마찬가지입니다.
+그 대안으로 JSR-250의 `@Resource` 애노테이션을 사용하세요. 이 애노테이션은 대상 컴포넌트의 유니크한 이름을 식별하는 의미를 위해 정의된 것이며, 선언된 타입은 매칭 프로세스와 관계가 없습니다.
+`@Autowired`의 의미는 이와는 꽤 다릅니다.
+`@Autowired`는 타입을 기준으로 후보 bean들을 선택한 다음에, 지정된 `String` qualifier 값을 고려하기 때문입니다.
+
+>
+For beans that are themselves defined as a collection, `Map`, or array type, `@Resource` is a fine solution, referring to the specific collection or array bean by unique name. That said, as of 4.3, collection, you can match `Map`, and array types through Spring’s `@Autowired` type matching algorithm as well, as long as the element type information is preserved in `@Bean` return type signatures or collection inheritance hierarchies. In this case, you can use qualifier values to select among same-typed collections, as outlined in the previous paragraph.
+
+collection, `Map`, 배열 타입으로 정의된 bean의 경우 `@Resource`는 좋은 솔루션입니다. `@Resource`는 유니크한 이름을 기준으로 특정 콜렉션이나 배열 bean을 참조하기 때문입니다.
+
+Spring 4.3 부터는 Spring의 `@Autowired` 타입 매칭 알고리즘을 통해서도 `Map`과 배열 타입을 매칭하는 것이 가능합니다.
+(`@Bean` 리턴 타입 시그니처나 collection 상속 계층에 엘리먼트 타입 정보가 보존되어 있는 경우) 
+이러한 경우에는 위 문단에서 설명한 바와 같이 qualifier를 사용하여 같은 타입의 collection 중에서 선택할 수 있습니다.
+
+>
+As of 4.3, `@Autowired` also considers self references for injection (that is, references back to the bean that is currently injected). Note that self injection is a fallback. Regular dependencies on other components always have precedence. In that sense, self references do not participate in regular candidate selection and are therefore in particular never primary. On the contrary, they always end up as lowest precedence. In practice, you should use self references as a last resort only (for example, for calling other methods on the same instance through the bean’s transactional proxy). Consider factoring out the affected methods to a separate delegate bean in such a scenario. Alternatively, you can use `@Resource`, which may obtain a proxy back to the current bean by its unique name.
+
+4.3 부터 `@Autowired`는 주입에 대한 self reference(즉 현재 주입된 bean에 대한 참조)도 고려합니다.
+self injection은 fallback이라는 점을 기억해두세요.
+다른 컴포넌트에 대한 일반적인 의존관계는 항상 우선합니다.
+그런 의미에서 self reference는 일반적인 선택 후보에 참여하지 않으므로 절대 primary가 아닙니다.
+반대로, self reference는 항상 낮은 우선순위로 끝나게 됩니다.
+실제로 여러분이 self reference를 사용할 때에는 최후의 수단(예: bean 트랜잭션 프록시를 통해 같은 인스턴스의 다른 메소드를 호출하는 경우)으로만 사용해야 합니다.
+이러한 시나리오의 영향을 받을 수 있는 메소드를 별도의 위임 bean으로 분리하는 것을 고려해 보세요.
+또는 `@Resource`를 사용해 유니크한 이름 기준으로 현재 bean으로 다시 프록시를 얻을 수도 있습니다.
+
+> (i)
+Trying to inject the results from `@Bean` methods on the same configuration class is effectively a self-reference scenario as well. Either lazily resolve such references in the method signature where it is actually needed (as opposed to an autowired field in the configuration class) or declare the affected `@Bean` methods as `static`, decoupling them from the containing configuration class instance and its lifecycle. Otherwise, such beans are only considered in the fallback phase, with matching beans on other configuration classes selected as primary candidates instead (if available).
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 같은 configuration 클래스에 `@Bean` 메소드의 결과를 주입하려는 시도가 있다면, 그것은 self-reference 시나리오에 해당됩니다.
+    - 실제로는 필요한 메소드 시그니처에서 이러한 참조를 lazy하게 해결하거나(configuration 클래스의 autowired 필드와 반대로) 영향을 받는 `@Bean` 메소드를 `static`으로 선언하는 방법으로, 포함된 configuration 클래스 인스턴스와 해당 생명주기에서 디커플링합니다.
+    - 이렇게 하지 않으면 이런 bean은 fallback 단계에서만 고려되며, 그 대신 다른 configuration 클래스의 매칭된 bean이 primary 후보로 선택됩니다(그 bean이 사용 가능한 경우).
+
+>
+`@Autowired` applies to fields, constructors, and multi-argument methods, allowing for narrowing through qualifier annotations at the parameter level. In contrast, `@Resource` is supported only for fields and bean property setter methods with a single argument. As a consequence, you should stick with qualifiers if your injection target is a constructor or a multi-argument method.
+>
+You can create your own custom qualifier annotations. To do so, define an annotation and provide the `@Qualifier` annotation within your definition, as the following example shows:
+
+`@Autowired`는 필드, 생성자, 여러 인자를 갖는 메소드에 적용되므로 파라미터 레벨에서 qualifier 애노테이션을 사용해 범위를 좁힐 수 있습니다.
+그와 반대로, `@Resource`는 필드와 인자 1개만을 갖는 setter 메소드만 지원합니다.
+결과적으로, 여러분은 주입 대상이 생성자이거나 여러 인자를 갖는 메소드라면 qualifier를 사용해야 합니다.
+
+여러분은 여러분만의 커스텀 qualifier 애노테이션을 만들 수도 있습니다.
+다음 예제와 같이 애노테이션을 정의하고, `@Qualifier` 애노테이션을 달아주면 됩니다.
+
+```java
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+@Qualifier
+public @interface Genre {
+
+    String value();
+}
+```
+
+>
+Then you can provide the custom qualifier on autowired fields and parameters, as the following example shows:
+
+그런 다음, 다음 예제와 같이 autowired된 필드와 파라미터에 커스텀 qualifier를 붙일 수 있습니다.
+
+```java
+public class MovieRecommender {
+
+    @Autowired
+    @Genre("Action")
+    private MovieCatalog actionCatalog;
+
+    private MovieCatalog comedyCatalog;
+
+    @Autowired
+    public void setComedyCatalog(@Genre("Comedy") MovieCatalog comedyCatalog) {
+        this.comedyCatalog = comedyCatalog;
+    }
+
+    // ...
+}
+```
+
+>
+Next, you can provide the information for the candidate bean definitions. You can add `<qualifier/>` tags as sub-elements of the `<bean/>` tag and then specify the `type` and `value` to match your custom qualifier annotations. The type is matched against the fully-qualified class name of the annotation. Alternately, as a convenience if no risk of conflicting names exists, you can use the short class name. The following example demonstrates both approaches:
+
+그 다음, 후보 bean 정의에 대한 정보를 제공할 수 있습니다.
+
+`<bean/>` 태그의 하위에 `<qualifier/>` 태그를 추가한 다음, 커스텀 qualifier 애노테이션과 일치하도록 `type`과 `value`를 지정할 수 있습니다.
+`type`은 애노테이션의 클래스 이름입니다.
+만약 이름이 충돌할 위험이 없다면 편의를 위해 짧은 클래스 이름을 사용하는 것도 가능합니다.
+다음 예제는 이 두 가지 방법을 모두 보여줍니다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier type="Genre" value="Action"/>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier type="example.Genre" value="Comedy"/>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean id="movieRecommender" class="example.MovieRecommender"/>
+
+</beans>
+```
+
+>
+In [Classpath Scanning and Managed Components]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-classpath-scanning ), you can see an annotation-based alternative to providing the qualifier metadata in XML. Specifically, see [Providing Qualifier Metadata with Annotations]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-qualifiers ).
+>
+In some cases, using an annotation without a value may suffice. This can be useful when the annotation serves a more generic purpose and can be applied across several different types of dependencies. For example, you may provide an offline catalog that can be searched when no Internet connection is available. First, define the simple annotation, as the following example shows:
+
+[Classpath Scanning and Managed Components]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-classpath-scanning ) 문서를 읽어 보시면 XML로 qualifier 메타데이터를 정의하지 않고 애노테이션 기반으로 작업할 수 있는 방법을 볼 수 있습니다. 특히, [Providing Qualifier Metadata with Annotations]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-qualifiers ) 문서도 함께 읽어 보세요.
+
+어떤 경우에는 값이 없이 애노테이션을 쓰는 것만으로도 충분할 수 있습니다.
+이는 애노테이션이 좀 더 일반적인 목적으로 사용되고, 여러가지 다른 타입의 의존관계에 적용되어야 하는 상황일 때 유용할 수 있습니다.
+예를 들어 인터넷에 연결할 수 없을 때 검색 가능한 오프라인 카탈로그를 제공한다거나 할 때 쓸 수 있겠죠.
+먼저 다음 예제와 같이 간단한 애노테이션을 정의해 봅시다.
+
+```java
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+@Qualifier
+public @interface Offline {
+
+}
+```
+
+>
+Then add the annotation to the field or property to be autowired, as shown in the following example:
+
+그리고 다음 예제와 같이 autowire할 필드에 애노테이션을 붙여 봅시다.
+
+```java
+public class MovieRecommender {
+
+    @Autowired
+    @Offline /* (1) */
+    private MovieCatalog offlineCatalog;
+
+    // ...
+}
+```
+
+>
+(1) This line adds the `@Offline` annotation.
+
+(1) 에서 `@Offline` 애노테이션을 붙였습니다.
+
+>
+Now the bean definition only needs a qualifier `type`, as shown in the following example:
+
+이제 bean definition은 qualifier `type`만 있으면 됩니다. 다음 예제를 봅시다.
+
+```xml
+<bean class="example.SimpleMovieCatalog">
+    <qualifier type="Offline"/> <!-- (1) -->
+    <!-- inject any dependencies required by this bean -->
+</bean>
+```
+
+>
+(1) This element specifies the qualifier.
+
+(1) 에서 qualifier를 지정했습니다.
+
+>
+You can also define custom qualifier annotations that accept named attributes in addition to or instead of the simple `value` attribute. If multiple attribute values are then specified on a field or parameter to be autowired, a bean definition must match all such attribute values to be considered an autowire candidate. As an example, consider the following annotation definition:
+
+단순한 `value` attribute 대신, named attribute를 허용하는 커스텀 qualifier 애노테이션을 정의할 수 있습니다.
+만약 여러 개의 속성 값이 autowire 되어야 하는 필드나 파라미터에 명시되었다면, bean definition은 autowire 후보로 뽑히기 위해 이러한 모든 속성값과 일치해야 합니다.
+다음 애노테이션 정의 예제를 봅시다.
+
+```java
+@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Retention(RetentionPolicy.RUNTIME)
+@Qualifier
+public @interface MovieQualifier {
+
+    String genre();
+
+    Format format();
+}
+```
+
+>
+In this case `Format` is an enum, defined as follows:
+
+위의 `Format`은 아래와 같이 정의된 `enum`입니다.
+
+```java
+public enum Format {
+    VHS, DVD, BLURAY
+}
+```
+
+>
+The fields to be autowired are annotated with the custom qualifier and include values for both attributes: `genre` and `format`, as the following example shows:
+
+autowire될 필드에는 커스텀 qualifier로 애노테이션이 추가되어, 다음 예제와 같이 `genre`와 `format` 속성값이 모두 포함되게 되었습니다.
+
+```java
+public class MovieRecommender {
+
+    @Autowired
+    @MovieQualifier(format=Format.VHS, genre="Action")
+    private MovieCatalog actionVhsCatalog;
+
+    @Autowired
+    @MovieQualifier(format=Format.VHS, genre="Comedy")
+    private MovieCatalog comedyVhsCatalog;
+
+    @Autowired
+    @MovieQualifier(format=Format.DVD, genre="Action")
+    private MovieCatalog actionDvdCatalog;
+
+    @Autowired
+    @MovieQualifier(format=Format.BLURAY, genre="Comedy")
+    private MovieCatalog comedyBluRayCatalog;
+
+    // ...
+}
+```
+
+>
+Finally, the bean definitions should contain matching qualifier values. This example also demonstrates that you can use bean meta attributes instead of the `<qualifier/>` elements. If available, the `<qualifier/>` element and its attributes take precedence, but the autowiring mechanism falls back on the values provided within the `<meta/>` tags if no such qualifier is present, as in the last two bean definitions in the following example:
+
+마지막으로, bean definition은 일치하는 qualifier 값을 포함하고 있어야 합니다.
+이 예제는 `<qualifier/>` 엘리먼트 대신 bean meta attribute를 사용할 수 있다는 것을 보여줍니다.
+만약 사용이 가능하다면 `<qualifier/>` element와 그 attribute들은 우선권을 갖지만, 아래 예제의 마지막 두 개의 bean definition과 같이 해당하는 qualifier가 없는 경우에는 autowiring 메커니즘은 `<meta/>` 태그 내에 제공된 값으로 대체합니다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier type="MovieQualifier">
+            <attribute key="format" value="VHS"/>
+            <attribute key="genre" value="Action"/>
+        </qualifier>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <qualifier type="MovieQualifier">
+            <attribute key="format" value="VHS"/>
+            <attribute key="genre" value="Comedy"/>
+        </qualifier>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <meta key="format" value="DVD"/>
+        <meta key="genre" value="Action"/>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+    <bean class="example.SimpleMovieCatalog">
+        <meta key="format" value="BLURAY"/>
+        <meta key="genre" value="Comedy"/>
+        <!-- inject any dependencies required by this bean -->
+    </bean>
+
+</beans>
+```
+
+### 1.9.5. Using Generics as Autowiring Qualifiers
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-generics-as-qualifiers )
 
 ## 함께 읽기
 
