@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-07-03 13:03:06 +0900
+updated : 2021-07-03 15:29:40 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -968,6 +968,58 @@ Finally, the bean definitions should contain matching qualifier values. This exa
 ### 1.9.5. Using Generics as Autowiring Qualifiers
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-generics-as-qualifiers )
+
+>
+In addition to the `@Qualifier` annotation, you can use Java generic types as an implicit form of qualification. For example, suppose you have the following configuration:
+
+`@Qualifier` 애노테이션 외에도 Java의 제네릭 타입을 암시적 qualification 형식으로 사용할 수 있습니다.
+예를 들어 다음과 같은 configuration이 있다고 합시다.
+
+```java
+@Configuration
+public class MyConfiguration {
+
+    @Bean
+    public StringStore stringStore() {
+        return new StringStore();
+    }
+
+    @Bean
+    public IntegerStore integerStore() {
+        return new IntegerStore();
+    }
+}
+```
+
+>
+Assuming that the preceding beans implement a generic interface, (that is, `Store<String>` and `Store<Integer>`), you can `@Autowire` the `Store` interface and the generic is used as a qualifier, as the following example shows:
+
+위의 bean이 제네릭 인터페이스(`Store<String>`과 `Store<Integer>`)를 구현한다고 가정합시다. 그러면 `Store` 인터페이스에 `@Autowire`를 붙여서 제네릭을 qualifier로 사용할 수 있습니다.
+
+```java
+@Autowired
+private Store<String> s1; // <String> qualifier, injects the stringStore bean
+
+@Autowired
+private Store<Integer> s2; // <Integer> qualifier, injects the integerStore bean
+```
+
+>
+Generic qualifiers also apply when autowiring lists, `Map` instances and arrays. The following example autowires a generic `List`:
+
+제네릭 qualifier는 리스트나 `Map` 인스턴스, 배열을 autowiring할 때에도 적용됩니다. 다음 예제는 제네릭 `List`를 autowiring합니다.
+
+```java
+// Inject all Store beans as long as they have an <Integer> generic
+// Store<String> beans will not appear in this list
+@Autowired
+private List<Store<Integer>> s;
+```
+
+### 1.9.6. Using CustomAutowireConfigurer
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-custom-autowire-configurer )
+
 
 ## 함께 읽기
 
