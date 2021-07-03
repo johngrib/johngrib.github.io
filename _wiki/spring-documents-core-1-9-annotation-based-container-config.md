@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-07-03 15:29:40 +0900
+updated : 2021-07-03 15:42:26 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -1020,6 +1020,44 @@ private List<Store<Integer>> s;
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-custom-autowire-configurer )
 
+[CustomAutowireConfigurer]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/annotation/CustomAutowireConfigurer.html ) is a `BeanFactoryPostProcessor` that lets you register your own custom qualifier annotation types, even if they are not annotated with Spring’s `@Qualifier` annotation. The following example shows how to use `CustomAutowireConfigurer`:
+
+`CustomAutowireConfigurer`는 `BeanFactoryPostProcessor`이며, 여러분의 커스텀 qualifier 애노테이션 타입을 등록할 수 있게 해줍니다.
+이 방법으로 만든 애노테이션은 Spring의 `@Qualifier` 애노테이션을 갖고 있지 않아도 됩니다.
+다음 예제는 `CustomAutowireConfigurer`를 어떻게 사용하는지를 보여줍니다.
+
+```xml
+<bean id="customAutowireConfigurer"
+        class="org.springframework.beans.factory.annotation.CustomAutowireConfigurer">
+    <property name="customQualifierTypes">
+        <set>
+            <value>example.CustomQualifier</value>
+        </set>
+    </property>
+</bean>
+```
+
+>
+The `AutowireCandidateResolver` determines autowire candidates by:
+>
+- The `autowire-candidate` value of each bean definition
+- Any `default-autowire-candidates` patterns available on the `<beans/>` element
+- The presence of `@Qualifier` annotations and any custom annotations registered with the `CustomAutowireConfigurer`
+
+`AutowireCandidateResolver`는 다음과 같이 autowire 후보를 결정합니다.
+
+- 각 bean definition의 `autowire-candidate` 값.
+- `<beans/>` element에 있는 모든 사용 가능한 `default-autowire-candidates` 패턴.
+- `@Qualifier` 애노테이션이나 `CustomAutowireConfigurer`에 등록된 커스텀 애노테이션의 존재.
+
+>
+When multiple beans qualify as autowire candidates, the determination of a “primary” is as follows: If exactly one bean definition among the candidates has a `primary` attribute set to `true`, it is selected.
+
+여러 bean이 autowire 후보 자격을 갖고 있을 경우, "primary"는 다음과 같이 결정됩니다: 후보 중 정확히 하나의 bean definition에 `primary` attribute가 `true`인 경우.
+
+### 1.9.7. Injection with @Resource
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-resource-annotation )
 
 ## 함께 읽기
 
