@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.10. Classpath Scanning and Managed Components
 summary : 
 date    : 2021-07-04 15:30:15 +0900
-updated : 2021-07-04 16:36:22 +0900
+updated : 2021-07-04 16:51:01 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -71,6 +71,95 @@ Spring은 `@Component`, `@Service`, `@Controller`와 같은 추가적인 스테�
 ### 1.10.2. Using Meta-annotations and Composed Annotations
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-meta-annotations )
+
+>
+Many of the annotations provided by Spring can be used as meta-annotations in your own code. A meta-annotation is an annotation that can be applied to another annotation. For example, the `@Service` annotation mentioned earlier is meta-annotated with `@Component`, as the following example shows:
+
+Spring이 제공하는 애노테이션들 중 많은 수가 여러분의 코드에서 meta-annotation으로 사용될 수 있습니다.
+meta-annotation은 다른 애노테이션에 적용할 수 있는 애노테이션을 말합니다.
+예를 들어 앞에서 이야기했던 `@Service` 애노테이션의 경우 `@Component`가 meta-annotation으로 붙어 있습니다. 다음 코드를 봅시다.
+
+```java
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Component // (1)
+public @interface Service {
+
+    // ...
+}
+```
+
+>
+(1) The `Component` causes `@Service` to be treated in the same way as `@Component`.
+
+`@Component`는 `@Service`가 `@Component`와 같은 방식으로 처리되도록 해줍니다.
+
+>
+You can also combine meta-annotations to create “composed annotations”. For example, the `@RestController` annotation from Spring MVC is composed of `@Controller` and `@ResponseBody`.
+
+meta-annotation을 조합해서 "composed annotation"을 만들 수도 있습니다.
+예를 들어, Spring MVC의 `@RestController`는 `@Controller`와 `@ResponseBody`가 조합된 애노테이션입니다.
+
+>
+In addition, composed annotations can optionally redeclare attributes from meta-annotations to allow customization. This can be particularly useful when you want to only expose a subset of the meta-annotation’s attributes. For example, Spring’s `@SessionScope` annotation hardcodes the scope name to `session` but still allows customization of the `proxyMode`. The following listing shows the definition of the `SessionScope` annotation:
+
+또한, composed annotation은 커스터마이즈를 허용하기 위해 meta-annotation의 attribute를 재선언하는 옵션을 고려할 수 있습니다.
+이 방법은 meta-annotation의 attribute 중 일부만 노출하려는 경우에 유용하게 쓰일 수 있습니다.
+예를 들어 Spring의 `@SessionScope` 애노테이션은 스코프의 이름을 `session`이라고 하드코딩하면서도, `proxyMode`의 커스터마이즈를 허용합니다.
+다음 목록은 `SessionScope` 애노테이션의 정의를 보여줍니다.
+
+```java
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Scope(WebApplicationContext.SCOPE_SESSION)
+public @interface SessionScope {
+
+    /**
+     * Alias for {@link Scope#proxyMode}.
+     * <p>Defaults to {@link ScopedProxyMode#TARGET_CLASS}.
+     */
+    @AliasFor(annotation = Scope.class)
+    ScopedProxyMode proxyMode() default ScopedProxyMode.TARGET_CLASS;
+
+}
+```
+
+>
+You can then use `@SessionScope` without declaring the `proxyMode` as follows:
+
+그러므로 다음과 같이 `proxyMode`를 선언하지 않고도 `@SessionScope`를 사용할 수 있습니다.
+
+```java
+@Service
+@SessionScope
+public class SessionScopedService {
+    // ...
+}
+```
+
+>
+You can also override the value for the `proxyMode`, as the following example shows:
+
+다음 예제와 같이 `proxyMode` 값을 오버라이드하는 것도 가능합니다.
+
+```java
+@Service
+@SessionScope(proxyMode = ScopedProxyMode.INTERFACES)
+public class SessionScopedUserService implements UserService {
+    // ...
+}
+```
+
+>
+For further details, see the [Spring Annotation Programming Model]( https://github.com/spring-projects/spring-framework/wiki/Spring-Annotation-Programming-Model ) wiki page.
+
+더 자세한 내용은 [Spring Annotation Programming Model]( https://github.com/spring-projects/spring-framework/wiki/Spring-Annotation-Programming-Model ) 문서를 참고하세요.
+
+### 1.10.3. Automatically Detecting Classes and Registering Bean Definitions
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-autodetection )
 
 ## 함께 읽기
 
