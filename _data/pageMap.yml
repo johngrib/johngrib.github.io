@@ -3932,7 +3932,7 @@ spring-documents-core-1-10-classpath-scanning-and-managed-components:
     summary: ""
     parent: spring-documents
     url: /wiki/spring-documents-core-1-10-classpath-scanning-and-managed-components
-    updated: '2021-07-04 15:45:21 +0900'
+    updated: '2021-07-04 16:36:22 +0900'
     children: []
 spring-documents-core-1-2-container-overview:
     type: wiki
