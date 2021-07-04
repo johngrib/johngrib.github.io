@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-07-04 13:34:29 +0900
+updated : 2021-07-04 15:28:24 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -1312,6 +1312,45 @@ public class MovieRecommender {
 ### 1.9.9. Using @PostConstruct and @PreDestroy
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-postconstruct-and-predestroy-annotations )
+
+The `CommonAnnotationBeanPostProcessor` not only recognizes the `@Resource` annotation but also the JSR-250 lifecycle annotations: `javax.annotation.PostConstruct` and `javax.annotation.PreDestroy`. Introduced in Spring 2.5, the support for these annotations offers an alternative to the lifecycle callback mechanism described in [initialization callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-initializingbean ) and [destruction callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-disposablebean ). Provided that the `CommonAnnotationBeanPostProcessor` is registered within the Spring `ApplicationContext`, a method carrying one of these annotations is invoked at the same point in the lifecycle as the corresponding Spring lifecycle interface method or explicitly declared callback method. In the following example, the cache is pre-populated upon initialization and cleared upon destruction:
+
+`CommonAnnotationBeanPostProcessor`는 `@Resource` 애노테이션만 인식하지 않습니다.
+`javax.annotation.PostConstruct` 나 `javax.annotation.PreDestroy`와 같은 JSR-250 생명주기 애노테이션들도 인식합니다.
+
+Spring 2.5부터 도입된 이런 애노테이션들은 [initialization callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-initializingbean )과 [destruction callbacks]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-disposablebean )과 같은 생명주기 콜백 메커니즘의 대안으로 제공된 것입니다.
+
+`CommonAnnotationBeanPostProcessor`가 Spring의 `ApplicationContext`에 등록되면, 이런 애노테이션(`@PostConstruct`, `@PreDestroy`)이 붙은 메소드는 그에 해당하는 Spring 생명주기 인터페이스 메소드나 명시적으로 선언된 콜백 메소드와 생명주기의 똑같은 지점에서 호출됩니다.
+
+
+```java
+public class CachingMovieLister {
+
+    @PostConstruct
+    public void populateMovieCache() {
+        // populates the movie cache upon initialization...
+    }
+
+    @PreDestroy
+    public void clearMovieCache() {
+        // clears the movie cache upon destruction...
+    }
+}
+```
+
+>
+For details about the effects of combining various lifecycle mechanisms, see [Combining Lifecycle Mechanisms]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-combined-effects ).
+
+생명주기 메커니즘을 다양하게 조합하는 것에 대해서는 [Combining Lifecycle Mechanisms]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-combined-effects )문서를 참고하세요.
+
+> (i)
+Like `@Resource`, the `@PostConstruct` and `@PreDestroy` annotation types were a part of the standard Java libraries from JDK 6 to 8. However, the entire `javax.annotation` package got separated from the core Java modules in JDK 9 and eventually removed in JDK 11. If needed, the `javax.annotation-api` artifact needs to be obtained via Maven Central now, simply to be added to the application’s classpath like any other library.
+
+- (i)
+    - `@Resource`와 마찬가지로 `@PostConstruct`, `@PreDestroy` 애노테이션 타입은 JDK 6부터 JDK 8까지 스탠다드 Java 라이브러리의 일부였습니다.
+    - 하지만 `java.annotation` 패키지는 JDK 9의 핵심 Java 모듈에서 분리되었고, 결국 JDK 11에서는 제거되었습니다.
+    - 필요한 경우 `javax.annotation-api` 아티팩트는 다른 라이브러리와 마찬가지로 애플리케이션의 classpath에 추가하기 위해 Maven Central에서 가져와야 합니다.
+
 
 ## 함께 읽기
 
