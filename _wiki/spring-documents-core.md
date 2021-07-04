@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-06-30 00:11:02 +0900
+updated : 2021-07-04 15:32:20 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -74,6 +74,11 @@ This chapter covers Spring’s Inversion of Control (IoC) container.
 ### 1.9. Annotation-based Container Configuration
 
 - [[spring-documents-core-1-9-annotation-based-container-config]]
+
+### 1.10. Classpath Scanning and Managed Components
+
+- [[spring-documents-core-1-10-classpath-scanning-and-managed-components]]
+
 
 ## 함께 읽기
 

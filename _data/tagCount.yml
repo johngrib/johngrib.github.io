@@ -324,7 +324,7 @@
     size: 1
 -
     name: java
-    size: 59
+    size: 60
 -
     name: javadoc
     size: 1
@@ -546,7 +546,7 @@
     size: 2
 -
     name: spring
-    size: 19
+    size: 20
 -
     name: start-up
     size: 1

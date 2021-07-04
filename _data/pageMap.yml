@@ -3917,7 +3917,7 @@ spring-documents:
     parent: Spring
     url: /wiki/spring-documents
     updated: '2021-02-13 16:09:03 +0900'
-    children: [spring-documents-core-1-1-introduction, spring-documents-core-1-2-container-overview, spring-documents-core-1-3-bean-overview, spring-documents-core-1-4-dependencies, spring-documents-core-1-5-bean-scopes, spring-documents-core-1-6-customizing-the-nature-of-a-bean, spring-documents-core-1-7-bean-definition-inheritance, spring-documents-core-1-8-container-extension-points, spring-documents-core-1-9-annotation-based-container-config, spring-documents-overview]
+    children: [spring-documents-core-1-1-introduction, spring-documents-core-1-10-classpath-scanning-and-managed-components, spring-documents-core-1-2-container-overview, spring-documents-core-1-3-bean-overview, spring-documents-core-1-4-dependencies, spring-documents-core-1-5-bean-scopes, spring-documents-core-1-6-customizing-the-nature-of-a-bean, spring-documents-core-1-7-bean-definition-inheritance, spring-documents-core-1-8-container-extension-points, spring-documents-core-1-9-annotation-based-container-config, spring-documents-overview]
 spring-documents-core-1-1-introduction:
     type: wiki
     title: 'Spring Core Technologies - 1.1. Introduction to the Spring IoC Container and Beans'
@@ -3925,6 +3925,14 @@ spring-documents-core-1-1-introduction:
     parent: spring-documents
     url: /wiki/spring-documents-core-1-1-introduction
     updated: '2021-06-15 21:52:17 +0900'
+    children: []
+spring-documents-core-1-10-classpath-scanning-and-managed-components:
+    type: wiki
+    title: 'Spring Core Technologies - 1.10. Classpath Scanning and Managed Components'
+    summary: ""
+    parent: spring-documents
+    url: /wiki/spring-documents-core-1-10-classpath-scanning-and-managed-components
+    updated: '2021-07-04 15:45:21 +0900'
     children: []
 spring-documents-core-1-2-container-overview:
     type: wiki
@@ -3988,7 +3996,7 @@ spring-documents-core-1-9-annotation-based-container-config:
     summary: ""
     parent: spring-documents
     url: /wiki/spring-documents-core-1-9-annotation-based-container-config
-    updated: '2021-07-04 15:28:24 +0900'
+    updated: '2021-07-04 15:46:09 +0900'
     children: []
 spring-documents-overview:
     type: wiki
