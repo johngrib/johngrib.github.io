@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-07-03 16:54:52 +0900
+updated : 2021-07-04 13:34:29 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -1152,6 +1152,166 @@ public class MovieRecommender {
 ### 1.9.8. Using @Value
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-value-annotations )
+
+>
+`@Value` is typically used to inject externalized properties:
+
+`@Value`는 보통 외부에서 지정한 속성값을 주입할 때 씁니다.
+
+```java
+@Component
+public class MovieRecommender {
+
+    private final String catalog;
+
+    public MovieRecommender(@Value("${catalog.name}") String catalog) {
+        this.catalog = catalog;
+    }
+}
+```
+
+>
+With the following configuration:
+
+configuration은 다음과 같고,
+
+```java
+@Configuration
+@PropertySource("classpath:application.properties")
+public class AppConfig { }
+```
+
+>
+And the following `application.properties` file:
+
+`application.properties` 파일은 다음과 같습니다.
+
+```
+catalog.name=MovieCatalog
+```
+
+>
+In that case, the `catalog` parameter and field will be equal to the `MovieCatalog` value.
+
+이렇게 설명한 경우, `String catalog` 파라미터와 필드 값은 `"MovieCatalog"`가 됩니다.
+
+>
+A default lenient embedded value resolver is provided by Spring. It will try to resolve the property value and if it cannot be resolved, the property name (for example `${catalog.name}`) will be injected as the value. If you want to maintain strict control over nonexistent values, you should declare a `PropertySourcesPlaceholderConfigurer` bean, as the following example shows:
+
+default lenient embedded value resolver는 Spring이 제공합니다.
+value resolver는 프로퍼티 값을 확인해서 가져오려고 시도하는데, 실패하게 되면 프로퍼티 이름(`${catalog.name}`)이 값으로 입력되게 됩니다.
+만약 값이 없는 상황을 strict하게 관리하고 싶다면, `PropertySourcesPlaceholderConfigurer` bean을 선언해서 써야 합니다. 다음 예제를 봅시다.
+
+
+```java
+@Configuration
+public class AppConfig {
+
+     @Bean
+     public static PropertySourcesPlaceholderConfigurer propertyPlaceholderConfigurer() {
+           return new PropertySourcesPlaceholderConfigurer();
+     }
+}
+```
+
+> (i)
+When configuring a `PropertySourcesPlaceholderConfigurer` using JavaConfig, the `@Bean` method must be static.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - JavaConfig를 사용해서 `PropertySourcesPlaceholderConfigurer`를 설정하려면 `@Bean` 메소드는 `static`으로 선언해야 합니다.
+
+>
+Using the above configuration ensures Spring initialization failure if any `${}` placeholder could not be resolved. It is also possible to use methods like `setPlaceholderPrefix`, `setPlaceholderSuffix`, or `setValueSeparator` to customize placeholders.
+
+위의 예제처럼 configuration했는데 `${}`과 같은 placeholder를 사용할 수 없다면 Spring은 초기화될 때 실패하게 됩니다.
+그리고 `setPlaceholderPrefix`, `setPlaceholderSuffix`, `setValueSeparator`와 같은 메소드를 사용해서 placeholder를 커스터마이즈하는 것도 가능합니다.
+
+> (i)
+Spring Boot configures by default a `PropertySourcesPlaceholderConfigurer` bean that will get properties from `application.properties` and `application.yml` files.
+
+- (i)
+    - Spring Boot는 따로 설정을 하지 않아도 기본적으로 `PropertySourcesPlaceholderConfigurer` bean 설정이 되어 있어서, `application.properties`와 `application.yml` 파일의 프로퍼티를 알아서 가져옵니다.
+
+>
+Built-in converter support provided by Spring allows simple type conversion (to `Integer` or `int` for example) to be automatically handled. Multiple comma-separated values can be automatically converted to String array without extra effort.
+>
+It is possible to provide a default value as following:
+
+Spring에서 제공하는 built-in 컨버터를 사용해 간단한 타입 컨버젼(`Integer`나 `int` 같은 것들)을 자동으로 처리할 수 있습니다.
+콤마로 구분된 값들도 알아서 String 배열로 변환됩니다.
+
+다음과 같이 `:` 뒤에 기본값을 제공할 수도 있습니다.
+
+```java
+@Component
+public class MovieRecommender {
+
+    private final String catalog;
+
+    public MovieRecommender(@Value("${catalog.name:defaultCatalog}") String catalog) {
+        this.catalog = catalog;
+    }
+}
+```
+
+>
+A Spring `BeanPostProcessor` uses a `ConversionService` behind the scene to handle the process for converting the String value in `@Value` to the target type. If you want to provide conversion support for your own custom type, you can provide your own `ConversionService` bean instance as the following example shows:
+
+Spring의 `BeanPostProcessor`는 `@Value`의 String 값을 대상 타입으로 변환하는 프로세스를 처리하기 위해 `ConversionService`를 백그라운드에서 가동합니다.
+만약 여러분이 커스텀 타입 컨버젼을 제공하려 한다면, 다음 예제와 같이 여러분의 `ConversionService` bean 인스턴스를 쓸 수도 있습니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public ConversionService conversionService() {
+        DefaultFormattingConversionService conversionService = new DefaultFormattingConversionService();
+        conversionService.addConverter(new MyCustomConverter());
+        return conversionService;
+    }
+}
+```
+
+>
+When `@Value` contains a [SpEL expression]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#expressions ) the value will be dynamically computed at runtime as the following example shows:
+
+만약 다음 예제와 같이 `@Value`에 SpEL 표현식을 쓴다면 런타임에 동적으로 처리됩니다.
+
+```java
+@Component
+public class MovieRecommender {
+
+    private final String catalog;
+
+    public MovieRecommender(@Value("#{systemProperties['user.catalog'] + 'Catalog' }") String catalog) {
+        this.catalog = catalog;
+    }
+}
+```
+
+>
+SpEL also enables the use of more complex data structures:
+
+SpEl을 쓰면 더 복잡한 데이터 구조를 사용하는 것도 가능합니다.
+
+```java
+@Component
+public class MovieRecommender {
+
+    private final Map<String, Integer> countOfMoviesPerCatalog;
+
+    public MovieRecommender(
+            @Value("#{{'Thriller': 100, 'Comedy': 300}}") Map<String, Integer> countOfMoviesPerCatalog) {
+        this.countOfMoviesPerCatalog = countOfMoviesPerCatalog;
+    }
+}
+```
+
+### 1.9.9. Using @PostConstruct and @PreDestroy
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-postconstruct-and-predestroy-annotations )
 
 ## 함께 읽기
 
