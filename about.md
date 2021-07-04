@@ -41,7 +41,6 @@ latex: true
 * 사랑하는 아내와 행복하게 살고 있습니다.
 * 실내에 있는 것을 좋아합니다.
 * 술과 담배를 매우 싫어합니다.
-* 커피를 마시지 않습니다.
 * 근처에 컴퓨터가 있어야 마음이 놓입니다.
 * 항상 규칙적으로 생활하려 노력합니다.
     * 잠은 매일 23시 ~ 24시에 잡니다.
@@ -142,12 +141,4 @@ Eg==
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
-## Buy me a coffee
-
-{% raw %}
-<p>
-    <img class="coffee-icon" style="max-width: 11px" src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee">
-    <a href="https://www.buymeacoffee.com/JohnGrib" target="_blank">기계인간 John Grib에게 따뜻한 차 한잔을.</a>
-</p>
-{% endraw %}
 
