@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.10. Classpath Scanning and Managed Components
 summary : 
 date    : 2021-07-04 15:30:15 +0900
-updated : 2021-07-04 16:51:01 +0900
+updated : 2021-07-05 23:24:04 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -160,6 +160,110 @@ For further details, see the [Spring Annotation Programming Model]( https://gith
 ### 1.10.3. Automatically Detecting Classes and Registering Bean Definitions
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-autodetection )
+
+>
+Spring can automatically detect stereotyped classes and register corresponding `BeanDefinition` instances with the `ApplicationContext`. For example, the following two classes are eligible for such autodetection:
+
+Spring은 스테레오 타입 클래스를 자동으로 감지하고, 그에 해당하는 `BeanDefinition` 인스턴스를 `ApplicationContext`에 등록할 수 있습니다.
+
+예를 들어 다음 두 클래스는 이런 자동 감지의 대상이 됩니다.
+
+```java
+@Service
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    public SimpleMovieLister(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+}
+```
+
+```java
+@Repository
+public class JpaMovieFinder implements MovieFinder {
+    // implementation elided for clarity
+}
+```
+
+>
+To autodetect these classes and register the corresponding beans, you need to add `@ComponentScan` to your `@Configuration` class, where the `basePackages` attribute is a common parent package for the two classes. (Alternatively, you can specify a comma- or semicolon- or space-separated list that includes the parent package of each class.)
+
+이런 클래스들을 자동감지하고, 해당하는 bean들을 등록하려면, `@ComponentScan` 애노테이션을 `@Configuration` 클래스에 붙여야 합니다.
+이 때, `basePackages` 속성은 (위 예제에 나오는)두 클래스의 공통 상위 패키지입니다. (또는 각 클래스의 상위 패키지를 포함하는 목록을 지정할 수도 있습니다. 목록 구분자는 콤마, 세미콜론, 공백 중에 선택할 수 있습니다.)
+
+```java
+@Configuration
+@ComponentScan(basePackages = "org.example")
+public class AppConfig  {
+    // ...
+}
+```
+
+> (i)
+For brevity, the preceding example could have used the `value` attribute of the annotation (that is, `@ComponentScan("org.example")`).
+
+- (i)
+    - 위의 예제는 `value` 속성을 사용해서 더 간결하게 표현하는 방법도 있습니다.
+    - `@ComponentScan("org.example")` 이렇게요.
+
+>
+The following alternative uses XML:
+
+애노테이션 대신 XML을 쓰려면 다음과 같이 합니다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="org.example"/>
+
+</beans>
+```
+
+>
+The use of `<context:component-scan>` implicitly enables the functionality of `<context:annotation-config>`. There is usually no need to include the `<context:annotation-config>` element when using `<context:component-scan>`.
+{:style="background-color: #e9f1f6;"}
+
+`<context:component-scan>`를 쓰면 `<context:annotation-config>`가 암시적으로 활성화됩니다.
+일반적으로 `<context:component-scan>`을 쓸 때에는 `<context:annotation-config>`을 포함시킬 필요가 없습니다.
+
+> (i)
+The scanning of classpath packages requires the presence of corresponding directory entries in the classpath. When you build JARs with Ant, make sure that you do not activate the files-only switch of the JAR task. Also, classpath directories may not be exposed based on security policies in some environments — for example, standalone apps on JDK 1.7.0_45 and higher (which requires 'Trusted-Library' setup in your manifests — see <https://stackoverflow.com/questions/19394570/java-jre-7u45-breaks-classloader-getresources >).
+>
+On JDK 9’s module path (Jigsaw), Spring’s classpath scanning generally works as expected. However, make sure that your component classes are exported in your `module-info` descriptors. If you expect Spring to invoke non-public members of your classes, make sure that they are 'opened' (that is, that they use an `opens` declaration instead of an `exports` declaration in your `module-info` descriptor).
+
+- (i)
+    - classpath package를 스캔하려면 classpath에 해당하는 디렉토리가 있어야 합니다. Ant로 JAR를 빌드할 때, JAR 태스크의 files-only 스위치를 활성화하지 않도록 주의하세요.
+    - 또한, classpath 디렉토리는 일부 환경에서 보안 정책에 따라 노출되지 않을 수도 있습니다.
+        - 예: JDK 1.7.0_45 이상 버전으로 돌아가는 독립 실행 앱(manifests에 'Trusted-Library' 설정이 필요)
+    - JDK 9의 module path(Jigsaw)에서 Spring의 classpath 스캔은 잘 작동합니다.
+        - 그러나 컴포넌트 클래스가 `module-info` 디스크립터에 잘 export 되었는지 확인해야 합니다.
+        - Spring이 여러분의 클래스의 public하지 않은 멤버를 호출할 것 같으면 해당 멤버가 'opened'인지도 확인해야 합니다. (즉, `module-info` 디스크립터에서 `exports` 선언 대신 `opens`를 쓰고 있는지 확인하세요)
+
+>
+Furthermore, the `AutowiredAnnotationBeanPostProcessor` and `CommonAnnotationBeanPostProcessor` are both implicitly included when you use the component-scan element. That means that the two components are autodetected and wired together — all without any bean configuration metadata provided in XML.
+
+또한, `AutowiredAnnotationBeanPostProcessor`와 `CommonAnnotationBeanPostProcessor`는 component-scan element를 사용할 때 모두 암묵적으로 포함됩니다.
+
+즉, XML로 제공되는 bean configuration metadata가 없이도 두 컴포넌트가 자동으로 감지되고 함께 wired 됩니다.
+
+> (i)
+You can disable the registration of `AutowiredAnnotationBeanPostProcessor` and `CommonAnnotationBeanPostProcessor` by including the `annotation-config` attribute with a value of `false`.
+{:style="background-color: #ecf1e8;"}
+
+`annotation-config` 속성 값을 `false`로 설정하면 `AutowiredAnnotationBeanPostProcessor`와 `CommonAnnotationBeanPostProcessor`의 등록을 disable할 수 있습니다.
+
+### 1.10.4. Using Filters to Customize Scanning
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-filters )
 
 ## 함께 읽기
 
