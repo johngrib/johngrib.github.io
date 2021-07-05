@@ -3,7 +3,7 @@ layout  : wiki
 title   : composer
 summary : Dependency Manager for PHP
 date    : 2019-01-13 22:21:50 +0900
-updated : 2019-01-13 22:54:23 +0900
+updated : 2021-07-05 21:57:22 +0900
 tag     : php command
 toc     : true
 public  : true
@@ -54,3 +54,4 @@ $ composer depends vendor/package --tree    # 트리 구조로 본다
 * <https://getcomposer.org/ >
 * <https://packagist.org/ >
 * [Command-line interface / Commands](https://getcomposer.org/doc/03-cli.md )
+
