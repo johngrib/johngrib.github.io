@@ -243,7 +243,7 @@ regenerate: true
 
 ### [[php]]
 
-* [[composer]]
+* [[/php/composer]]
 * [[php-story]]
 
 ### [[Python3]]

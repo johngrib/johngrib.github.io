@@ -859,7 +859,7 @@ composer:
     title: composer
     summary: 'Dependency Manager for PHP'
     parent: php
-    url: /wiki/composer
+    url: /wiki/php/composer
     updated: '2019-01-13 22:54:23 +0900'
     children: []
 CONCRETE-MATH:
