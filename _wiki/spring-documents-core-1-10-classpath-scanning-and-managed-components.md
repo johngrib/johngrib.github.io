@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.10. Classpath Scanning and Managed Components
 summary : 
 date    : 2021-07-04 15:30:15 +0900
-updated : 2021-07-05 23:24:04 +0900
+updated : 2021-07-06 13:02:38 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -264,6 +264,56 @@ You can disable the registration of `AutowiredAnnotationBeanPostProcessor` and `
 ### 1.10.4. Using Filters to Customize Scanning
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-filters )
+
+>
+By default, classes annotated with `@Component`, `@Repository`, `@Service`, `@Controller`, `@Configuration`, or a custom annotation that itself is annotated with `@Component` are the only detected candidate components. However, you can modify and extend this behavior by applying custom filters. Add them as `includeFilters` or `excludeFilters` attributes of the `@ComponentScan` annotation (or as `<context:include-filter />` or `<context:exclude-filter />` child elements of the `<context:component-scan>` element in XML configuration). Each filter element requires the `type` and `expression` attributes. The following table describes the filtering options:
+
+>
+**Table 5. Filter Types
+>
+| Filter Type          | Example Expression           | Description                                                                                |
+|----------------------|------------------------------|--------------------------------------------------------------------------------------------|
+| annotation (default) | `org.example.SomeAnnotation` | An annotation to be present or meta-present at the type level in target components.        |
+| assignable           | `org.example.SomeClass`      | A class (or interface) that the target components are assignable to (extend or implement). |
+| aspectj              | `org.example..*Service+`     | An AspectJ type expression to be matched by the target components.                         |
+| regex                | `org\.example\.Default.*`    | A regex expression to be matched by the target components' class names.                    |
+| custom               | `org.example.MyTypeFilter`   | A custom implementation of the `org.springframework.core.type.TypeFilter` interface.       |
+
+>
+The following example shows the configuration ignoring all `@Repository` annotations and using “stub” repositories instead:
+
+```java
+@Configuration
+@ComponentScan(basePackages = "org.example",
+        includeFilters = @Filter(type = FilterType.REGEX, pattern = ".*Stub.*Repository"),
+        excludeFilters = @Filter(Repository.class))
+public class AppConfig {
+    ...
+}
+```
+
+>
+The following listing shows the equivalent XML:
+
+```xml
+<beans>
+    <context:component-scan base-package="org.example">
+        <context:include-filter type="regex"
+                expression=".*Stub.*Repository"/>
+        <context:exclude-filter type="annotation"
+                expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>
+</beans>
+```
+
+> (i)
+You can also disable the default filters by setting `useDefaultFilters=false` on the annotation or by providing `use-default-filters="false"` as an attribute of the `<component-scan/>` element. This effectively disables automatic detection of classes annotated or meta-annotated with `@Component`, `@Repository`, `@Service`, `@Controller`, `@RestController`, or `@Configuration.
+{:style="background-color: #ecf1e8;"}
+
+### 1.10.5. Defining Bean Metadata within Components
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factorybeans-annotations )
+
 
 ## 함께 읽기
 
