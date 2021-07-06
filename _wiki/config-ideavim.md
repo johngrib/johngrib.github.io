@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 설정하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2020-03-28 23:50:00 +0900
+updated : 2021-07-06 22:04:22 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -87,13 +87,12 @@ nmap <Leader>a <Plug>(easymotion-jumptoanywhere)
 ## Link
 
 * [JetBrains/ideavim][repo]
-* [List of Supported Set Commands][commands]
+* [List of Supported Set Commands][set-commands]
 * [나의 .ideavimrc][my]
 
 ## 주석
 
 [repo]: https://github.com/JetBrains/ideavim
-[commands]: https://github.com/JetBrains/ideavim/blob/master/doc/set-commands.md
-
 [my]: https://github.com/johngrib/dotfiles/blob/master/.ideavimrc
-[set-commands]: https://github.com/JetBrains/ideavim/blob/master/doc/set-commands.md
+[set-commands]: https://github.com/JetBrains/ideavim/wiki/%22set%22-commands
+
