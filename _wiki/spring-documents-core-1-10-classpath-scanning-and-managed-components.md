@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.10. Classpath Scanning and Managed Components
 summary : 
 date    : 2021-07-04 15:30:15 +0900
-updated : 2021-07-07 02:12:28 +0900
+updated : 2021-07-07 05:30:47 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -338,6 +338,161 @@ You can also disable the default filters by setting `useDefaultFilters=false` on
 ### 1.10.5. Defining Bean Metadata within Components
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factorybeans-annotations )
+
+>
+Spring components can also contribute bean definition metadata to the container. You can do this with the same `@Bean` annotation used to define bean metadata within `@Configuration` annotated classes. The following example shows how to do so:
+
+Spring 컴포넌트는 bean definition 메타 데이터를 컨테이너에 제공할 수도 있습니다.
+`@Configuration` 애노테이션을 붙인 클래스에서 bean 메타 데이터를 정의하는데 사용되는 `@Bean` 애노테이션을 쓰면 됩니다.
+다음 예는 이 방법을 보여줍니다.
+
+```java
+@Component
+public class FactoryMethodComponent {
+
+    @Bean
+    @Qualifier("public")
+    public TestBean publicInstance() {
+        return new TestBean("publicInstance");
+    }
+
+    public void doWork() {
+        // Component method implementation omitted
+    }
+}
+```
+
+>
+The preceding class is a Spring component that has application-specific code in its `doWork()` method. However, it also contributes a bean definition that has a factory method referring to the method `publicInstance()`. The `@Bean` annotation identifies the factory method and other bean definition properties, such as a qualifier value through the `@Qualifier` annotation. Other method-level annotations that can be specified are `@Scope`, `@Lazy`, and custom qualifier annotations.
+
+위의 클래스는 Spring 컴포넌트이며, `doWork()` 메소드에는 애플리케이션 코드가 있습니다.
+그런데 잘 살펴보면 `publicInstance()` 메소드를 참조하는 팩토리 메소드가 있는 bean 정의도 제공하고 있습니다.
+`@Bean` 어노테이션은 팩토리 메소드와, `@Qualifier`로 지정해준 qualifier 값과 같은 bean definition 프로퍼티들을 식별합니다.
+그 외에 명시할 수 있는 메소드 레벨 애노테이션은 `@Scope`, `@Lzay`, 그리고 커스텀 qualifier 애노테이션들입니다.
+
+>
+In addition to its role for component initialization, you can also place the `@Lazy` annotation on injection points marked with `@Autowired` or `@Inject`. In this context, it leads to the injection of a lazy-resolution proxy.
+{:style="background-color: #e9f1f6;"}
+
+`@Lazy`를 컴포넌트 초기화에 대한 역할 외에도 다른 용도로 쓸 수 있습니다.
+`@Autowired` 또는 `@Inject`로 표시된 주입 지점에 `@Lazy` 애노테이션을 붙이면, `@Lazy`가 lazy-resolution proxy 주입을 리드합니다.
+
+>
+Autowired fields and methods are supported, as previously discussed, with additional support for autowiring of `@Bean` methods. The following example shows how to do so:
+
+위에서 설명한 바와 같이, Autowired 필드와 메서드는 `@Bean` 메서드의 autowiring 지원을 받을 수 있습니다.
+다음 예를 봅시다.
+
+```java
+@Component
+public class FactoryMethodComponent {
+
+    private static int i;
+
+    @Bean
+    @Qualifier("public")
+    public TestBean publicInstance() {
+        return new TestBean("publicInstance");
+    }
+
+    // use of a custom qualifier and autowiring of method parameters
+    @Bean
+    protected TestBean protectedInstance(
+            @Qualifier("public") TestBean spouse,
+            @Value("#{privateInstance.age}") String country) {
+        TestBean tb = new TestBean("protectedInstance", 1);
+        tb.setSpouse(spouse);
+        tb.setCountry(country);
+        return tb;
+    }
+
+    @Bean
+    private TestBean privateInstance() {
+        return new TestBean("privateInstance", i++);
+    }
+
+    @Bean
+    @RequestScope
+    public TestBean requestScopedInstance() {
+        return new TestBean("requestScopedInstance", 3);
+    }
+}
+```
+
+>
+The example autowires the `String` method parameter `country` to the value of the `age` property on another bean named `privateInstance`. A Spring Expression Language element defines the value of the property through the notation `#{ <expression> }`. For `@Value` annotations, an expression resolver is preconfigured to look for bean names when resolving expression text.
+
+위의 예제는 `String country` 메소드 파라미터의 값으로 `privateInstance` bean의 `age` 값을 autowire 하고 있습니다.
+Spring Expression Language 엘리먼트는 `#{ <expression> }` 표기법으로 값을 지정해 줄 수 있습니다.
+`@Value` 애노테이션의 경우는 미리 expression 해석기(resolver)를 미리 구성해 놓았기 때문에 expression 텍스트를 해석할 때 알아서 bean 이름을 찾습니다.
+
+>
+As of Spring Framework 4.3, you may also declare a factory method parameter of type `InjectionPoint` (or its more specific subclass: `DependencyDescriptor`) to access the requesting injection point that triggers the creation of the current bean. Note that this applies only to the actual creation of bean instances, not to the injection of existing instances. As a consequence, this feature makes most sense for beans of prototype scope.
+For other scopes, the factory method only ever sees the injection point that triggered the creation of a new bean instance in the given scope (for example, the dependency that triggered the creation of a lazy singleton bean).
+You can use the provided injection point metadata with semantic care in such scenarios. The following example shows how to use `InjectionPoint`:
+
+Spring Framework 4.3부터는 현재 생성하려는 bean의 생성을 트리거하는 요청 주입 지점에 액세스하기 위해 `InjectionPoint`(또는 서브 클래스인 `DependencyDescriptor`) 타입을 파라미터로 받는 팩토리 메서드를 선언 할 수도 있습니다.
+이것은 이미 만들어져 존재하고 있는 인스턴스의 주입에는 적용되지 않으며, 실제 bean 인스턴스 생성에만 적용됩니다.
+결과적으로, 이 기능은 prototype scope를 가진 bean에 가장 적합하다고 할 수 있습니다.
+
+다른 스코프의 경우 팩토리 메소드는 주어진 scope 내에서 새로운 bean의 인스턴스 생성을 트리거한 주입 지점만 볼 수 있습니다(예 : lazy singleton bean의 생성을 트리거한 dependency).
+
+이런 종류의 시나리오에서 여러분은 주입 지점 metadata를 사용할 수도 있습니다.
+다음 예제는 `InjectionPoint`를 사용하는 방법을 보여줍니다.
+
+```java
+@Component
+public class FactoryMethodComponent {
+
+    @Bean @Scope("prototype")
+    public TestBean prototypeInstance(InjectionPoint injectionPoint) {
+        return new TestBean("prototypeInstance for " + injectionPoint.getMember());
+    }
+}
+```
+
+>
+The `@Bean` methods in a regular Spring component are processed differently than their counterparts inside a Spring `@Configuration` class. The difference is that `@Component` classes are not enhanced with CGLIB to intercept the invocation of methods and fields. CGLIB proxying is the means by which invoking methods or fields within `@Bean` methods in `@Configuration` classes creates bean metadata references to collaborating objects. Such methods are not invoked with normal Java semantics but rather go through the container in order to provide the usual lifecycle management and proxying of Spring beans, even when referring to other beans through programmatic calls to `@Bean` methods.
+In contrast, invoking a method or field in a `@Bean` method within a plain `@Component` class has standard Java semantics, with no special CGLIB processing or other constraints applying.
+
+일반적인 Spring 컴포넌트의 `@Bean` 메소드는 Spring의 `@Configuration` 클래스에 있는 `@Bean` 메소드와는 다르게 처리됩니다.
+차이점은 메소드나 필드 호출을 가로채기 위해 `@Component` 클래스에 CGLIB가 사용되지 않는다는 점입니다.
+`@Configuration` 클래스에서는 `@Bean` 메소드에서 다른 메소드나 필드를 호출해서 협업 객체에 대한 bean 메타 데이터 참조를 생성할 때 CGLIB 프록싱을 씁니다.
+이런 메소드는 일반적인 Java 구문으로 호출되지 않고 컨테이너를 통해서만 호출되는데, 그 이유는 일반적인 생명주기 관리 기능을 제공하면서 Spring bean의 프록싱도 제공하기 위해서입니다.
+이런 동작은 `@Bean` 메소드에서 프로그래밍 방식으로 다른 bean을 참조할 때에도 사용됩니다.
+
+이와 대조적으로, 순수한 `@Component` 클래스 내에 있는 `@Bean` 메소드에서 메소드나 필드를 호출하는 것은 특별한 CGLIB 처리나 그 외의 제약 조건이 적용되지 않는 표준 Java 의미 체계를 갖습니다.
+
+> (i)
+You may declare `@Bean` methods as `static`, allowing for them to be called without creating their containing configuration class as an instance. This makes particular sense when defining post-processor beans (for example, of type `BeanFactoryPostProcessor` or `BeanPostProcessor`), since such beans get initialized early in the container lifecycle and should avoid triggering other parts of the configuration at that point.
+>
+Calls to static `@Bean` methods never get intercepted by the container, not even within `@Configuration` classes (as described earlier in this section), due to technical limitations: CGLIB subclassing can override only non-static methods. As a consequence, a direct call to another `@Bean` method has standard Java semantics, resulting in an independent instance being returned straight from the factory method itself.
+>
+The Java language visibility of `@Bean` methods does not have an immediate impact on the resulting bean definition in Spring’s container. You can freely declare your factory methods as you see fit in non-`@Configuration` classes and also for static methods anywhere. However, regular `@Bean` methods in `@Configuration` classes need to be overridable — that is, they must not be declared as `private` or `final`.
+>
+`@Bean` methods are also discovered on base classes of a given component or configuration class, as well as on Java 8 default methods declared in interfaces implemented by the component or configuration class. This allows for a lot of flexibility in composing complex configuration arrangements, with even multiple inheritance being possible through Java 8 default methods as of Spring 4.2.
+>
+Finally, a single class may hold multiple `@Bean` methods for the same bean, as an arrangement of multiple factory methods to use depending on available dependencies at runtime. This is the same algorithm as for choosing the “greediest” constructor or factory method in other configuration scenarios: The variant with the largest number of satisfiable dependencies is picked at construction time, analogous to how the container selects between multiple `@Autowired` constructors.
+
+- (i)
+    - `@Bean` 메소드를 `static`으로 선언하는 방법을 쓰면 configuration 클래스를 인스턴스화하지 않아도, `@Bean` 메소드를 호출할 수 있게 됩니다.
+        - 이렇게 하면 post-processor bean(예: `BeanFactoryPostProcessor` 또는 `BeanPostProcessor`)을 정의할 때 특히 의미가 있습니다.
+        - 이런 bean들은 컨테이너 생명주기의 이른 시점에 초기화되고, 해당 시점에서 configuration의 다른 부분을 트리거하지 않아야 하기 때문입니다.
+    - static `@Bean` 메소드의 호출은 컨테이너가 절대로 가로챌 수 없습니다. 심지어 `@Configuration` 클래스도 예외는 아닌데, 이는 기술적인 한계가 존재하기 때문입니다.
+        - 왜냐하면 CGLIB 서브클래싱은 non-static 메소드만을 오버라이드할 수 있기 때문입니다.
+        - 결과적으로, 다른 `@Bean` 메소드에 대한 direct call은 표준적인 Java 의미를 갖게 되므로 팩토리 메소드 자체가 직접 독립 인스턴스를 리턴합니다.
+    - `@Bean` 메소드에서 볼 수 있는 Java 코드는 Spring 컨테이너의 최종적인 bean definition에 즉각적인 영향을 미치지는 않습니다.
+        - 여러분이 static 메소드가 적합하다고 판단하는 곳이 있다면, `@Configuration`가 아닌 클래스라면 아무 곳에서나 팩토리 메소드를 자유롭게 선언할 수 있습니다.
+        - 그러나 `@Configuration` 클래스의 일반적인 `@Bean` 메소드는 오버라이드가 가능해야 합니다. 즉, `private`이거나 `final`이면 안됩니다.
+    - `@Bean` 메소드는 주어진 컴포넌트나 configuration 클래스의 base 클래스 뿐만 아니라 컴포넌트 또는 configuration 클래스에 의해 구현된 인터페이스에 선언된 default 메소드에 붙여도 감지가 가능합니다.
+        - 이로 인해 복잡한 configuration을 만들 때에도 상당한 유연성을 발휘할 수 있게 됩니다. 특히 Spring 4.2부터 Java 8의 default 메소드를 통해 가능해진 다중 상속으로 복잡한 configuration 배열을 구성할 때 그러합니다.
+    - 마지막으로, 어떤 하나의 클래스는 같은 bean에 대한 여러 개의 `@Bean` 메소드를 갖고 있을 수 있습니다. 이는 여러 개의 팩토리 메소드들로 이루어집니다.
+        - 이것은 가장 "탐욕스러운" 생성자 또는 팩토리 방법을 선택하는 것과 근본적으로 같은 알고리즘입니다.
+        - 컨테이너가 여러 개의 `@Autowired` 생성자들 중에서 선택하는 방법론과 유사하게, 만족할 수 있는 dependency가 가장 많은 것이 생성시에 선택됩니다.
+
+### 1.10.6. Naming Autodetected Components
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-name-generator )
 
 
 ## 함께 읽기
