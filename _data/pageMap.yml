@@ -3293,15 +3293,7 @@ php:
     parent: programming-language
     url: /wiki/php
     updated: '2019-01-13 22:34:44 +0900'
-    children: [composer, php-story]
-php-story:
-    type: wiki
-    title: 'php 이야기'
-    summary: ""
-    parent: php
-    url: /wiki/php-story
-    updated: '2020-07-14 23:32:28 +0900'
-    children: []
+    children: [composer, story]
 phpbrew:
     type: wiki
     title: phpbrew
@@ -4037,6 +4029,14 @@ static-factory-method-pattern:
     parent: design-pattern
     url: /wiki/static-factory-method-pattern
     updated: '2021-03-27 11:35:35 +0900'
+    children: []
+story:
+    type: wiki
+    title: 'php 이야기'
+    summary: ""
+    parent: php
+    url: /wiki/php/story
+    updated: '2020-07-14 23:32:28 +0900'
     children: []
 strangler-pattern:
     type: wiki

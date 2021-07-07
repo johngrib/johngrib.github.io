@@ -244,7 +244,7 @@ regenerate: true
 ### [[php]]
 
 * [[/php/composer]]
-* [[php-story]]
+* [[/php/story]]
 
 ### [[Python3]]
 * [[python3-simple-file-sharing]]
