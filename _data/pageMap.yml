@@ -1,3 +1,35 @@
+'2017':
+    type: wiki
+    title: '2017년 회고'
+    summary: '인생 최고의 1년이었다'
+    parent: review
+    url: /wiki/review/2017
+    updated: '2018-04-21 11:52:48 +0900'
+    children: []
+'2018':
+    type: wiki
+    title: '2018년 회고'
+    summary: null
+    parent: review
+    url: /wiki/review/2018
+    updated: '2019-03-02 21:41:02 +0900'
+    children: []
+'2019':
+    type: wiki
+    title: '2019년 회고'
+    summary: '지난 1년을 돌아보자'
+    parent: review
+    url: /wiki/review/2019
+    updated: '2019-12-28 22:52:37 +0900'
+    children: []
+'2020':
+    type: wiki
+    title: '2020년 회고'
+    summary: '힘든 한 해였다'
+    parent: review
+    url: /wiki/review/2020
+    updated: '2021-01-10 16:10:21 +0900'
+    children: []
 17-EQUATIONS-THAT-CHANGED-THE-WORLD:
     type: wiki
     title: '(책) 세계를 바꾼 17가지 방정식'
@@ -3517,39 +3549,7 @@ review:
     parent: index
     url: /wiki/review
     updated: '2019-01-01 11:47:11 +0900'
-    children: [review-2017, review-2018, review-2019, review-2020]
-review-2017:
-    type: wiki
-    title: '2017년 회고'
-    summary: '인생 최고의 1년이었다'
-    parent: review
-    url: /wiki/review-2017
-    updated: '2018-04-21 11:52:48 +0900'
-    children: []
-review-2018:
-    type: wiki
-    title: '2018년 회고'
-    summary: null
-    parent: review
-    url: /wiki/review-2018
-    updated: '2019-03-02 21:41:02 +0900'
-    children: []
-review-2019:
-    type: wiki
-    title: '2019년 회고'
-    summary: '지난 1년을 돌아보자'
-    parent: review
-    url: /wiki/review-2019
-    updated: '2019-12-28 22:52:37 +0900'
-    children: []
-review-2020:
-    type: wiki
-    title: '2020년 회고'
-    summary: '힘든 한 해였다'
-    parent: review
-    url: /wiki/review-2020
-    updated: '2021-01-10 16:10:21 +0900'
-    children: []
+    children: ['2017', '2018', '2019', '2020']
 RFC:
     type: wiki
     title: 'RFC(Requests For Comments)'

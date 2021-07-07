@@ -48,6 +48,17 @@ math:
     - {fileName: study-discrete-mathematics}
     - {fileName: tower-of-hanoi}
     - {fileName: two-eggs-100-floor}
+review:
+    - {fileName: '2017'}
+    - {fileName: '2018'}
+    - {fileName: '2019'}
+    - {fileName: '2020'}
+    - {fileName: review}
+    - {fileName: secret-of-consulting}
+    - {fileName: Shunsho-juwa}
+    - {fileName: Software-Craftsman}
+    - {fileName: Take-the-Bully-by-the-Horns}
+    - {fileName: TETRIS-EFFECT}
 ideavim:
     - {fileName: 2017-01-30-ideavim-build}
 open-source:
@@ -1017,17 +1028,6 @@ perl:
     - {fileName: regex-prime}
 web:
     - {fileName: REST-paper-summary}
-review:
-    - {fileName: review}
-    - {fileName: review-2017}
-    - {fileName: review-2018}
-    - {fileName: review-2019}
-    - {fileName: review-2020}
-    - {fileName: secret-of-consulting}
-    - {fileName: Shunsho-juwa}
-    - {fileName: Software-Craftsman}
-    - {fileName: Take-the-Bully-by-the-Horns}
-    - {fileName: TETRIS-EFFECT}
 rfc:
     - {fileName: RFC}
     - {fileName: why-http-80-https-443}

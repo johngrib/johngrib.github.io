@@ -20,11 +20,11 @@ regenerate: true
     * [[links-2018]]
 
 * [[review]]{후기}
-    * [[review-2021]]
-    * [[review-2020]]
-    * [[review-2019]]
-    * [[review-2018]]
-    * [[review-2017]]
+    * [[/review/2021]]
+    * [[/review/2020]]
+    * [[/review/2019]]
+    * [[/review/2018]]
+    * [[/review/2017]]
 
 * log-everything (아무거나 기록)
     * [[log-2021]]
