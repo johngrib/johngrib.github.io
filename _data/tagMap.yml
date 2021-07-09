@@ -208,6 +208,10 @@ game:
     - {fileName: TETRIS-EFFECT}
 aheui:
     - {fileName: 2017-07-14-aheui-explained}
+diary:
+    - {fileName: '2020'}
+    - {fileName: '2021'}
+    - {fileName: diary}
 pattern:
     - {fileName: abstract-factory-pattern}
     - {fileName: adapter-pattern}
@@ -683,10 +687,6 @@ design:
     - {fileName: Design-for-Hackers}
 quotes:
     - {fileName: design-pattern-quotes}
-diary:
-    - {fileName: diary}
-    - {fileName: memo-2020}
-    - {fileName: memo-2021}
 dijkstra:
     - {fileName: dijkstra-2-stack-for-exp-eval}
 container:
