@@ -1043,11 +1043,8 @@ ed:
     - {fileName: sed}
 반도체:
     - {fileName: semiconductor-dict}
-    - {fileName: semiconductor-news-2020-4q}
 용어:
     - {fileName: semiconductor-dict}
-뉴스:
-    - {fileName: semiconductor-news-2020-4q}
 교육:
     - {fileName: Shunsho-juwa}
 장인정신:

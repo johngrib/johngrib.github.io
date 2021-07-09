@@ -704,9 +704,6 @@
     name: 구름입력기
     size: 1
 -
-    name: 뉴스
-    size: 1
--
     name: 단축키
     size: 1
 -
@@ -714,7 +711,7 @@
     size: 1
 -
     name: 반도체
-    size: 2
+    size: 1
 -
     name: 방법론
     size: 1
