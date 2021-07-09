@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.10. Classpath Scanning and Managed Components
 summary : 
 date    : 2021-07-04 15:30:15 +0900
-updated : 2021-07-09 21:04:50 +0900
+updated : 2021-07-09 21:27:35 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -641,6 +641,51 @@ public class AppConfig {
 ### 1.10.8. Providing Qualifier Metadata with Annotations
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-qualifiers )
+
+>
+The `@Qualifier` annotation is discussed in [Fine-tuning Annotation-based Autowiring with Qualifiers]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-autowired-annotation-qualifiers ). The examples in that section demonstrate the use of the `@Qualifier` annotation and custom qualifier annotations to provide fine-grained control when you resolve autowire candidates. Because those examples were based on XML bean definitions, the qualifier metadata was provided on the candidate bean definitions by using the `qualifier` or `meta` child elements of the `bean` element in the XML. When relying upon classpath scanning for auto-detection of components, you can provide the qualifier metadata with type-level annotations on the candidate class. The following three examples demonstrate this technique:
+
+`@Qualifier` 애노테이션은 [Fine-tuning Annotation-based Autowiring with Qualifiers]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-autowired-annotation-qualifiers ) 문서에서 설명한 바 있습니다.
+그 문서에서 등장한 예제는 `@Qualifier` 애노테이션과 커스텀 qualifier 애노테이션을 사용해서 autowire 후보를 결정할 때 세밀하게 컨트롤하는 방법을 보여주는 것이었습니다.
+
+그러한 예제들은 XML bean definition 기반이었기 때문에 XML에 있는 bean 엘리먼트의 `qualifier`나 `meta` 엘리먼트를 사용해서 후보가 되는 bean 정의에 qualifier 메타데이터를 제공하고 있습니다.
+컴포넌트에 대한 자동 감지를 위한 classpath 스캐닝에 의존할 때, 후보 클래스에 타입 레벨 애노테이션을 붙여 qualifier 메타데이터를 제공하는 방법이 있습니다.
+다음 주석은 그 방법을 보여줍니다.
+
+```java
+@Component
+@Qualifier("Action")
+public class ActionMovieCatalog implements MovieCatalog {
+    // ...
+}
+```
+
+```java
+@Component
+@Genre("Action")
+public class ActionMovieCatalog implements MovieCatalog {
+    // ...
+}
+```
+
+```java
+@Component
+@Offline
+public class CachingMovieCatalog implements MovieCatalog {
+    // ...
+}
+```
+
+> (i)
+As with most annotation-based alternatives, keep in mind that the annotation metadata is bound to the class definition itself, while the use of XML allows for multiple beans of the same type to provide variations in their qualifier metadata, because that metadata is provided per-instance rather than per-class.
+
+- (i)
+    - XML의 대안으로 쓸 수 있는 대부분의 애노테이션 설정과 마찬가지로, 애노테이션 메타데이터는 클래스 정의 자체에 바인딩됩니다. 그런데 XML을 사용하면 같은 타입의 여러 bean을 qualifier 메타데이터에 제공할 수도 있습니다.
+    - 메타데이터가 클래스가 아닌 인스턴스별로 제공되기 때문입니다.
+
+### 1.10.9. Generating an Index of Candidate Components
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-index )
 
 
 ## 함께 읽기
