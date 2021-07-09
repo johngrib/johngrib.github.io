@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.10. Classpath Scanning and Managed Components
 summary : 
 date    : 2021-07-04 15:30:15 +0900
-updated : 2021-07-07 23:04:48 +0900
+updated : 2021-07-09 21:04:50 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -559,6 +559,88 @@ As a general rule, consider specifying the name with the annotation whenever oth
 ### 1.10.7. Providing a Scope for Autodetected Components
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-scope-resolver )
+
+>
+As with Spring-managed components in general, the default and most common scope for autodetected components is `singleton`. However, sometimes you need a different scope that can be specified by the `@Scope` annotation. You can provide the name of the scope within the annotation, as the following example shows:
+
+Spring이 관리하는 일반적인 컴포넌트와 같이, 자동 감지 컴포넌트는 대부분 `singleton`입니다.
+그러나 때로는 `@Scope` 애노테이션으로 스코프를 지정할 필요가 있습니다.
+다음 예제와 같이 스코프를 지정할 수 있습니다.
+
+```java
+@Scope("prototype")
+@Repository
+public class MovieFinderImpl implements MovieFinder {
+    // ...
+}
+```
+
+> (i)
+`@Scope` annotations are only introspected on the concrete bean class (for annotated components) or the factory method (for `@Bean` methods). In contrast to XML bean definitions, there is no notion of bean definition inheritance, and inheritance hierarchies at the class level are irrelevant for metadata purposes.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - `@Scope` 애노테이션은 콘크리트 bean 클래스(이면서 애노테이션이 붙은 컴포넌트) 또는 팩토리 메소드(`@Bean`이 붙은 메소드)에서만 적용됩니다.
+    - XML bean 정의와 달리 bean definition을 상속받는다는 개념이 없으며, 클래스 레벨의 상속 계층은 메타데이터들 사이에서는 관련이 없습니다.
+
+>
+For details on web-specific scopes such as “request” or “session” in a Spring context, see [Request, Session, Application, and WebSocket Scopes]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other ). As with the pre-built annotations for those scopes, you may also compose your own scoping annotations by using Spring’s meta-annotation approach: for example, a custom annotation meta-annotated with `@Scope("prototype")`, possibly also declaring a custom scoped-proxy mode.
+
+Spring 컨텍스트에서 "request", "session" 과 같은 web-specific 스코프에 대한 자세한 내용은 [Request, Session, Application, and WebSocket Scopes]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other ) 문서를 참고하세요.
+
+이러한 스코프에 대해 pre-built annotatione들과 마찬가지로, Spring의 meta-annotation 방법을 사용해 여러분의 스코프 애노테이션을 만들 수도 있습니다.
+예를 들어, `@Scope("prototype")` meta-annotation이 붙은 커스텀 애노테이션으로 custom scoped-proxy mode를 선언할 수도 있습니다.
+
+> (i)
+To provide a custom strategy for scope resolution rather than relying on the annotation-based approach, you can implement the [ScopeMetadataResolver]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/context/annotation/ScopeMetadataResolver.html ) interface. Be sure to include a default no-arg constructor. Then you can provide the fully qualified class name when configuring the scanner, as the following example of both an annotation and a bean definition shows:
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 애노테이션 방법을 쓰지 않고 커스텀 스코프를 제공하려면, `ScopeMetadataResolver` 인터페이스를 구현하는 방법도 있습니다.
+        - 인자가 없는 기본 생성자가 있어야 합니다.
+        - 그런 다음, 다음 예제와 같이 스캐너를 configuring할 때 qualified class name을 제공해주면 됩니다.
+
+```java
+@Configuration
+@ComponentScan(basePackages = "org.example", scopeResolver = MyScopeResolver.class)
+public class AppConfig {
+    // ...
+}
+```
+
+```xml
+<beans>
+    <context:component-scan base-package="org.example" scope-resolver="org.example.MyScopeResolver"/>
+</beans>
+```
+
+>
+When using certain non-singleton scopes, it may be necessary to generate proxies for the scoped objects. The reasoning is described in [Scoped Beans as Dependencies]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other-injection ). For this purpose, a scoped-proxy attribute is available on the component-scan element. The three possible values are: `no`, `interfaces`, and `targetClass`. For example, the following configuration results in standard JDK dynamic proxies:
+
+싱글톤이 아닌 스코프를 사용할 때 scoped objects에 대한 프록시를 생성해야 할 수도 있습니다.
+그 이유는 [Scoped Beans as Dependencies]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other-injection ) 문서에 나와 있습니다.
+그러한 이유로 component-scan 엘리먼트에서 scoped-proxy 속성을 사용할 수 있습니다.
+이 값으로 설정 가능한 것은 세 가지로 `no`, `interfaces`, `targetClass` 입니다.
+예를 들어 다음 configuration은 스탠다드 JDK dynamic proxy를 생성합니다.
+
+
+```java
+@Configuration
+@ComponentScan(basePackages = "org.example", scopedProxy = ScopedProxyMode.INTERFACES)
+public class AppConfig {
+    // ...
+}
+```
+
+```xml
+<beans>
+    <context:component-scan base-package="org.example" scoped-proxy="interfaces"/>
+</beans>
+```
+
+### 1.10.8. Providing Qualifier Metadata with Annotations
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-qualifiers )
 
 
 ## 함께 읽기
