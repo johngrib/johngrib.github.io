@@ -3,11 +3,11 @@ layout  : wiki
 title   : Spring Core Technologies - 1.1. Introduction to the Spring IoC Container and Beans
 summary : 
 date    : 2021-06-15 21:36:28 +0900
-updated : 2021-06-15 21:52:17 +0900
+updated : 2021-07-10 14:15:26 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[spring-documents]]
+parent  : [[/spring/document]]
 latex   : false
 ---
 * TOC

@@ -692,6 +692,28 @@ dijkstra:
     - {fileName: dijkstra-2-stack-for-exp-eval}
 container:
     - {fileName: docker}
+spring:
+    - {fileName: document}
+    - {fileName: inversion-of-control}
+    - {fileName: spring}
+    - {fileName: spring-annotation-bean}
+    - {fileName: spring-annotation-exceptionhandler}
+    - {fileName: spring-annotation-profile}
+    - {fileName: spring-annotation-value}
+    - {fileName: spring-bean-config-configuration}
+    - {fileName: spring-bean-config-xml}
+    - {fileName: spring-documents-core-1-1-introduction}
+    - {fileName: spring-documents-core-1-10-classpath-scanning-and-managed-components}
+    - {fileName: spring-documents-core-1-11-using-jsr-330-standard-annotations}
+    - {fileName: spring-documents-core-1-2-container-overview}
+    - {fileName: spring-documents-core-1-3-bean-overview}
+    - {fileName: spring-documents-core-1-4-dependencies}
+    - {fileName: spring-documents-core-1-5-bean-scopes}
+    - {fileName: spring-documents-core-1-6-customizing-the-nature-of-a-bean}
+    - {fileName: spring-documents-core-1-7-bean-definition-inheritance}
+    - {fileName: spring-documents-core-1-8-container-extension-points}
+    - {fileName: spring-documents-core-1-9-annotation-based-container-config}
+    - {fileName: spring-documents-overview}
 장애:
     - {fileName: downdetector}
 c:
@@ -904,28 +926,6 @@ oop:
     - {fileName: SOLID}
     - {fileName: summary-Data-Abstraction-and-Hierarchy}
     - {fileName: uml}
-spring:
-    - {fileName: inversion-of-control}
-    - {fileName: spring}
-    - {fileName: spring-annotation-bean}
-    - {fileName: spring-annotation-exceptionhandler}
-    - {fileName: spring-annotation-profile}
-    - {fileName: spring-annotation-value}
-    - {fileName: spring-bean-config-configuration}
-    - {fileName: spring-bean-config-xml}
-    - {fileName: spring-documents}
-    - {fileName: spring-documents-core-1-1-introduction}
-    - {fileName: spring-documents-core-1-10-classpath-scanning-and-managed-components}
-    - {fileName: spring-documents-core-1-11-using-jsr-330-standard-annotations}
-    - {fileName: spring-documents-core-1-2-container-overview}
-    - {fileName: spring-documents-core-1-3-bean-overview}
-    - {fileName: spring-documents-core-1-4-dependencies}
-    - {fileName: spring-documents-core-1-5-bean-scopes}
-    - {fileName: spring-documents-core-1-6-customizing-the-nature-of-a-bean}
-    - {fileName: spring-documents-core-1-7-bean-definition-inheritance}
-    - {fileName: spring-documents-core-1-8-container-extension-points}
-    - {fileName: spring-documents-core-1-9-annotation-based-container-config}
-    - {fileName: spring-documents-overview}
 bsd:
     - {fileName: ioreg-cmd}
 james-gosling:

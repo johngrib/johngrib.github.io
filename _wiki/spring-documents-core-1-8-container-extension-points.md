@@ -3,11 +3,11 @@ layout  : wiki
 title   : Spring Core Technologies - 1.8. Container Extension Points
 summary : 
 date    : 2021-06-27 14:47:34 +0900
-updated : 2021-06-30 00:17:38 +0900
+updated : 2021-07-10 14:15:05 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[spring-documents]]
+parent  : [[/spring/document]]
 latex   : false
 ---
 * TOC

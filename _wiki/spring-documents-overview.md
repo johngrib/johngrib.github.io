@@ -3,11 +3,11 @@ layout  : wiki
 title   : (요약) Spring Framework Overview
 summary : 스프링 철학이 이 문서에 설명되어 있다
 date    : 2021-02-13 16:09:37 +0900
-updated : 2021-02-13 22:34:57 +0900
+updated : 2021-07-10 13:14:45 +0900
 tag     : spring
 toc     : true
 public  : true
-parent  : [[spring-documents]]
+parent  : [[/spring/document]]
 latex   : false
 ---
 * TOC

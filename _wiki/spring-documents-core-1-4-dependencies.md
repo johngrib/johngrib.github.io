@@ -3,11 +3,11 @@ layout  : wiki
 title   : Spring Core Technologies - 1.4. Dependencies
 summary : 
 date    : 2021-06-15 22:47:35 +0900
-updated : 2021-06-17 23:40:15 +0900
+updated : 2021-07-10 14:15:50 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[spring-documents]]
+parent  : [[/spring/document]]
 latex   : false
 ---
 * TOC

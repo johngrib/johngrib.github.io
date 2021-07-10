@@ -3,11 +3,11 @@ layout  : wiki
 title   : Spring Core Technologies - 1.7. Bean Definition Inheritance
 summary : 
 date    : 2021-06-27 13:58:51 +0900
-updated : 2021-06-30 00:16:03 +0900
+updated : 2021-07-10 14:13:17 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[spring-documents]]
+parent  : [[/spring/document]]
 latex   : false
 ---
 * TOC

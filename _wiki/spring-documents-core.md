@@ -3,11 +3,11 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-07-10 12:00:23 +0900
+updated : 2021-07-10 14:13:49 +0900
 tag     : java spring
 toc     : true
 public  : false
-parent  : [[spring-documents]]
+parent  : [[/spring/document]]
 latex   : false
 ---
 * TOC

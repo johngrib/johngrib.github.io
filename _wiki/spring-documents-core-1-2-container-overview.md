@@ -3,11 +3,11 @@ layout  : wiki
 title   : Spring Core Technologies - 1.2. Container Overview
 summary : 
 date    : 2021-06-14 22:52:27 +0900
-updated : 2021-06-15 21:52:26 +0900
+updated : 2021-07-10 14:15:15 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[spring-documents]]
+parent  : [[/spring/document]]
 latex   : false
 ---
 * TOC
