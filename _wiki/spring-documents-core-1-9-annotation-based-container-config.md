@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-07-04 15:46:09 +0900
+updated : 2021-07-10 13:02:26 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -1296,6 +1296,7 @@ SpEL also enables the use of more complex data structures:
 
 SpEl을 쓰면 더 복잡한 데이터 구조를 사용하는 것도 가능합니다.
 
+{% raw %}
 ```java
 @Component
 public class MovieRecommender {
@@ -1308,6 +1309,7 @@ public class MovieRecommender {
     }
 }
 ```
+{% endraw %}
 
 ### 1.9.9. Using @PostConstruct and @PreDestroy
 
