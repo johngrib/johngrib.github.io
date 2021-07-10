@@ -3,19 +3,19 @@ layout  : wiki
 title   : Spring Core Technologies - 1.10. Classpath Scanning and Managed Components
 summary : 
 date    : 2021-07-04 15:30:15 +0900
-updated : 2021-07-10 14:14:09 +0900
+updated : 2021-07-10 21:04:26 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[/spring/document]]
+parent  : [[/spring/document/core]]
 latex   : false
 ---
 * TOC
 {:toc}
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-9-annotation-based-container-config]]{1.9. Annotation-based Container Configuration}
-- 다음 문서 - [[spring-documents-core-1-11-using-jsr-330-standard-annotations]]{1.11. Using JSR 330 Standard Annotations}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-09-annotation-based-container-config]]{1.9. Annotation-based Container Configuration}
+- 다음 문서 - [[/spring/document/core/01-11-using-jsr-330-standard-annotations]]{1.11. Using JSR 330 Standard Annotations}
 
 ## 1.10. Classpath Scanning and Managed Components
 
@@ -765,7 +765,8 @@ The index is enabled automatically when a `META-INF/spring.components` file is f
 
 ## 함께 읽기
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-9-annotation-based-container-config]]{1.9. Annotation-based Container Configuration}
-- 다음 문서 - [[spring-documents-core-1-11-using-jsr-330-standard-annotations]]{1.11. Using JSR 330 Standard Annotations}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-09-annotation-based-container-config]]{1.9. Annotation-based Container Configuration}
+- 다음 문서 - [[/spring/document/core/01-11-using-jsr-330-standard-annotations]]{1.11. Using JSR 330 Standard Annotations}
+
 

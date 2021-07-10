@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC, Inversion of Control
 summary : Inversion of Control, Dependency Injection
 date    : 2019-08-30 22:39:18 +0900
-updated : 2021-06-22 13:10:55 +0900
+updated : 2021-07-10 20:33:47 +0900
 tag     : spring oop
 toc     : true
 public  : true
@@ -355,7 +355,7 @@ DI는 오브젝트 레퍼런스를 외부로부터 제공(주입)받고 이를 �
 ## 함께 읽기
 
 * [[hollywood-principle]]{헐리우드 원칙}
-* [[spring-documents-core]]
+* [[/spring/document/core]]
 * [[template-method-pattern]]{템플릿 메소드 패턴}
 
 ## 참고문헌

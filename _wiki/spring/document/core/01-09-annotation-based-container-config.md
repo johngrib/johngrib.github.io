@@ -3,19 +3,19 @@ layout  : wiki
 title   : Spring Core Technologies - 1.9. Annotation-based Container Configuration
 summary : 
 date    : 2021-06-30 00:11:03 +0900
-updated : 2021-07-10 14:14:27 +0900
+updated : 2021-07-10 20:51:14 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[/spring/document]]
+parent  : [[/spring/document/core]]
 latex   : false
 ---
 * TOC
 {:toc}
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-8-container-extension-points]]{1.8. Container Extension Points}
-- 다음 문서 - [[spring-documents-core-1-10-classpath-scanning-and-managed-components]]{1.10. Classpath Scanning and Managed Components}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-08-container-extension-points]]{1.8. Container Extension Points}
+- 다음 문서 - [[/spring/document/core/01-10-classpath-scanning-and-managed-components]]{1.10. Classpath Scanning and Managed Components}
 
 ## 1.9. Annotation-based Container Configuration
 
@@ -1356,7 +1356,7 @@ Like `@Resource`, the `@PostConstruct` and `@PreDestroy` annotation types were a
 
 ## 함께 읽기
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-8-container-extension-points]]{1.8. Container Extension Points}
-- 다음 문서 - [[spring-documents-core-1-10-classpath-scanning-and-managed-components]]{1.10. Classpath Scanning and Managed Components}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-08-container-extension-points]]{1.8. Container Extension Points}
+- 다음 문서 - [[/spring/document/core/01-10-classpath-scanning-and-managed-components]]{1.10. Classpath Scanning and Managed Components}
 

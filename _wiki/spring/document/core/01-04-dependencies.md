@@ -3,19 +3,19 @@ layout  : wiki
 title   : Spring Core Technologies - 1.4. Dependencies
 summary : 
 date    : 2021-06-15 22:47:35 +0900
-updated : 2021-07-10 14:15:50 +0900
+updated : 2021-07-10 20:46:49 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[/spring/document]]
+parent  : [[/spring/document/core]]
 latex   : false
 ---
 * TOC
 {:toc}
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-3-bean-overview]]{1.3. Bean Overview}
-- 다음 문서 - [[spring-documents-core-1-5-bean-scopes]]{1.5. Bean Scopes}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-03-bean-overview]]{1.3. Bean Overview}
+- 다음 문서 - [[/spring/document/core/01-05-bean-scopes]]{1.5. Bean Scopes}
 
 ## 1.4. Dependencies
 
@@ -818,9 +818,9 @@ You can also control lazy-initialization at the container level by using the `de
 
 ## 함께 읽기
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-3-bean-overview]]{1.3. Bean Overview}
-- 다음 문서 - [[spring-documents-core-1-5-bean-scopes]]{1.5. Bean Scopes}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-03-bean-overview]]{1.3. Bean Overview}
+- 다음 문서 - [[/spring/document/core/01-05-bean-scopes]]{1.5. Bean Scopes}
 - [Interface BeanDefinition (Spring 5.3.7)]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/config/BeanDefinition.html )
 
 ## 참고문헌

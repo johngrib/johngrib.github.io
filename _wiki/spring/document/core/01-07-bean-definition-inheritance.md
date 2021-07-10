@@ -3,19 +3,19 @@ layout  : wiki
 title   : Spring Core Technologies - 1.7. Bean Definition Inheritance
 summary : 
 date    : 2021-06-27 13:58:51 +0900
-updated : 2021-07-10 14:13:17 +0900
+updated : 2021-07-10 20:50:47 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[/spring/document]]
+parent  : [[/spring/document/core]]
 latex   : false
 ---
 * TOC
 {:toc}
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-6-customizing-the-nature-of-a-bean]]{1.6. Customizing the Nature of a Bean}
-- 다음 문서 - [[spring-documents-core-1-8-container-extension-points]]{1.8. Container Extension Points}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-06-customizing-the-nature-of-a-bean]]{1.6. Customizing the Nature of a Bean}
+- 다음 문서 - [[/spring/document/core/01-08-container-extension-points]]{1.8. Container Extension Points}
 
 ## 1.7. Bean Definition Inheritance
 
@@ -130,7 +130,7 @@ The parent bean cannot be instantiated on its own because it is incomplete, and 
 
 ## 함께 읽기
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-6-customizing-the-nature-of-a-bean]]{1.6. Customizing the Nature of a Bean}
-- 다음 문서 - [[spring-documents-core-1-8-container-extension-points]]{1.8. Container Extension Points}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-06-customizing-the-nature-of-a-bean]]{1.6. Customizing the Nature of a Bean}
+- 다음 문서 - [[/spring/document/core/01-08-container-extension-points]]{1.8. Container Extension Points}
 

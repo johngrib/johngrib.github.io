@@ -3,19 +3,19 @@ layout  : wiki
 title   : Spring Core Technologies - 1.2. Container Overview
 summary : 
 date    : 2021-06-14 22:52:27 +0900
-updated : 2021-07-10 14:15:15 +0900
+updated : 2021-07-10 20:42:56 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[/spring/document]]
+parent  : [[/spring/document/core]]
 latex   : false
 ---
 * TOC
 {:toc}
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-1-introduction]]{1.1. Introduction to the Spring IoC Container and Beans}
-- 다음 문서 - [[spring-documents-core-1-3-bean-overview]]{1.3. Bean Overview}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-01-introduction]]{1.1. Introduction to the Spring IoC Container and Beans}
+- 다음 문서 - [[/spring/document/core/01-03-bean-overview]]{1.3. Bean Overview}
 
 ## 1.2. Container Overview
 
@@ -424,9 +424,9 @@ You can then use `getBean` to retrieve instances of your beans. The `Application
 
 ## 함께 읽기
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-1-introduction]]{1.1. Introduction to the Spring IoC Container and Beans}
-- 다음 문서 - [[spring-documents-core-1-3-bean-overview]]{1.3. Bean Overview}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-01-introduction]]{1.1. Introduction to the Spring IoC Container and Beans}
+- 다음 문서 - [[/spring/document/core/01-03-bean-overview]]{1.3. Bean Overview}
 - [[inversion-of-control]]
 
 ## 참고문헌

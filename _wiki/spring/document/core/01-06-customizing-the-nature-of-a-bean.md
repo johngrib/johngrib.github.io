@@ -3,19 +3,19 @@ layout  : wiki
 title   : Spring Core Technologies - 1.6. Customizing the Nature of a Bean
 summary : 
 date    : 2021-06-19 23:13:51 +0900
-updated : 2021-07-10 14:14:52 +0900
+updated : 2021-07-10 20:50:24 +0900
 tag     : java spring
 toc     : true
 public  : true
-parent  : [[/spring/document]]
+parent  : [[/spring/document/core]]
 latex   : false
 ---
 * TOC
 {:toc}
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-5-bean-scopes]]{1.5. Bean Scopes}
-- 다음 문서 - [[spring-documents-core-1-7-bean-definition-inheritance]]{1.7. Bean Definition Inheritance}
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-05-bean-scopes]]{1.5. Bean Scopes}
+- 다음 문서 - [[/spring/document/core/01-07-bean-definition-inheritance]]{1.7. Bean Definition Inheritance}
 
 ## 1.6. Customizing the Nature of a Bean
 
@@ -624,8 +624,7 @@ Note again that using these interfaces ties your code to the Spring API and does
 
 ## 함께 읽기
 
-- 목록으로 - [[spring-documents-core]]{Spring Core Technologies}
-- 이전 문서 - [[spring-documents-core-1-5-bean-scopes]]{1.5. Bean Scopes}
-- 다음 문서 - [[spring-documents-core-1-7-bean-definition-inheritance]]{1.7. Bean Definition Inheritance}
-
+- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
+- 이전 문서 - [[/spring/document/core/01-05-bean-scopes]]{1.5. Bean Scopes}
+- 다음 문서 - [[/spring/document/core/01-07-bean-definition-inheritance]]{1.7. Bean Definition Inheritance}
 

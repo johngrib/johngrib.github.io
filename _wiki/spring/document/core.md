@@ -1,12 +1,12 @@
 ---
-layout  : wiki
+layout  : category
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-07-10 14:13:49 +0900
+updated : 2021-07-10 20:57:19 +0900
 tag     : java spring
 toc     : true
-public  : false
+public  : true
 parent  : [[/spring/document]]
 latex   : false
 ---
@@ -30,65 +30,17 @@ Coverage of Spring’s integration with AspectJ (currently the richest — i
     - 이 AOP 프레임워크는 개념적으로 이해하기 쉽고 Java 엔터프라이즈 프로그래밍에서 AOP에 대해 필요로 하는 스윗 스팟의 80% 가량을 해결합니다.
 - 이 문서에서는 스프링의 AspectJ 통합(기능 측면에서 현재 가장 풍부하고 성숙한 AOP 구현)에 대한 내용도 제공합니다.
 
-## 1. The IoC Container
-
-**1. IoC 컨테이너** [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans )
-
->
-This chapter covers Spring’s Inversion of Control (IoC) container.
-
-이 챕터는 스프링의 IoC 컨테이너를 다룹니다.
-
-### 1.1. Introduction to the Spring IoC Container and Beans
-
-- [[spring-documents-core-1-1-introduction]]
-
-### 1.2. Container Overview
-
-- [[spring-documents-core-1-2-container-overview]]
-
-### 1.3. Bean Overview
-
-- [[spring-documents-core-1-3-bean-overview]]
-
-### 1.4. Dependencies
-
-- [[spring-documents-core-1-4-dependencies]]
-
-### 1.5. Bean Scopes
-
-- [[spring-documents-core-1-5-bean-scopes]]
-
-### 1.6. Customizing the Nature of a Bean
-
-- [[spring-documents-core-1-6-customizing-the-nature-of-a-bean]]
-
-### 1.7. Bean Definition Inheritance
-
-- [[spring-documents-core-1-7-bean-definition-inheritance]]
-
-### 1.8. Container Extension Points
-
-- [[spring-documents-core-1-8-container-extension-points]]
-
-### 1.9. Annotation-based Container Configuration
-
-- [[spring-documents-core-1-9-annotation-based-container-config]]
-
-### 1.10. Classpath Scanning and Managed Components
-
-- [[spring-documents-core-1-10-classpath-scanning-and-managed-components]]
-
-### 1.11. Using JSR 330 Standard Annotations
-
-- [[spring-documents-core-1-11-using-jsr-330-standard-annotations]]
 
 ## 함께 읽기
 
-- [[inversion-of-control]]
+- [[/inversion-of-control]]
 
 ## 참고문헌
 
 - [Core Technologies (docs.spring.io)][5-3-7-core] - 5.3.7 버전
 
 [5-3-7-core]: https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html
+
+## 문서 목록
+
+
