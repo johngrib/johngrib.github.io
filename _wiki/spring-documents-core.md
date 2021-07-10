@@ -3,7 +3,7 @@ layout  : wiki
 title   : 작성중 - (요약) Spring Core Technologies
 summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
-updated : 2021-07-04 15:32:20 +0900
+updated : 2021-07-10 12:00:23 +0900
 tag     : java spring
 toc     : true
 public  : false
@@ -79,6 +79,9 @@ This chapter covers Spring’s Inversion of Control (IoC) container.
 
 - [[spring-documents-core-1-10-classpath-scanning-and-managed-components]]
 
+### 1.11. Using JSR 330 Standard Annotations
+
+- [[spring-documents-core-1-11-using-jsr-330-standard-annotations]]
 
 ## 함께 읽기
 

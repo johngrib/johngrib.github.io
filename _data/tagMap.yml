@@ -671,6 +671,7 @@ java:
     - {fileName: spring-annotation-value}
     - {fileName: spring-documents-core-1-1-introduction}
     - {fileName: spring-documents-core-1-10-classpath-scanning-and-managed-components}
+    - {fileName: spring-documents-core-1-11-using-jsr-330-standard-annotations}
     - {fileName: spring-documents-core-1-2-container-overview}
     - {fileName: spring-documents-core-1-3-bean-overview}
     - {fileName: spring-documents-core-1-4-dependencies}
@@ -915,6 +916,7 @@ spring:
     - {fileName: spring-documents}
     - {fileName: spring-documents-core-1-1-introduction}
     - {fileName: spring-documents-core-1-10-classpath-scanning-and-managed-components}
+    - {fileName: spring-documents-core-1-11-using-jsr-330-standard-annotations}
     - {fileName: spring-documents-core-1-2-container-overview}
     - {fileName: spring-documents-core-1-3-bean-overview}
     - {fileName: spring-documents-core-1-4-dependencies}
