@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.10. Classpath Scanning and Managed Components
 summary : 
 date    : 2021-07-04 15:30:15 +0900
-updated : 2021-07-09 21:27:35 +0900
+updated : 2021-07-10 11:29:43 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -686,6 +686,81 @@ As with most annotation-based alternatives, keep in mind that the annotation met
 ### 1.10.9. Generating an Index of Candidate Components
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-scanning-index )
+
+>
+While classpath scanning is very fast, it is possible to improve the startup performance of large applications by creating a static list of candidates at compilation time. In this mode, all modules that are targets of component scanning must use this mechanism.
+
+classpath 스캔은 매우 빠르지만, 대규모 애플리케이션이라면 컴파일 타임에 스캔 후보에 대한 static 리스트(인덱스)를 만들어서 스타트업 퍼포먼스를 더 향상시킬 수 있습니다.
+이 모드를 쓰면 컴포넌트 스캔의 대상이 되는 모든 모듈은 이 메커니즘을 사용해야 합니다.
+
+> (i)
+Your existing `@ComponentScan` or `<context:component-scan/>` directives must remain unchanged to request the context to scan candidates in certain packages. When the `ApplicationContext` detects such an index, it automatically uses it rather than scanning the classpath.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 특정 패키지의 후보를 스캔하기 위해 컨텍스트를 요청하려면 `@ComponentScan` 또는 `<context:component-scan/>` 구문을 수정하지 말고 써야 합니다.
+    - `ApplicationContext`는 이런 인덱스를 감지하면 알아서 인덱스를 사용하고, classpath를 스캔하지 않습니다.
+
+>
+To generate the index, add an additional dependency to each module that contains components that are targets for component scan directives. The following example shows how to do so with Maven:
+
+인덱스를 생성하려면, 컴포넌트 스캔 구문의 대상인 컴포넌트를 포함하는 각 모듈에 dependency를 추가해 주세요.
+
+다음은 Maven 설정 예제입니다.
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context-indexer</artifactId>
+        <version>5.3.7</version>
+        <optional>true</optional>
+    </dependency>
+</dependencies>
+```
+
+>
+With Gradle 4.5 and earlier, the dependency should be declared in the `compileOnly` configuration, as shown in the following example:
+
+Gradle 4.5 이전 버전에서는 다음 예제와 같이 `compileOnly`로 dependency를 선언해줘야 합니다.
+
+```groovy
+dependencies {
+    compileOnly "org.springframework:spring-context-indexer:5.3.7"
+}
+```
+
+>
+With Gradle 4.6 and later, the dependency should be declared in the `annotationProcessor` configuration, as shown in the following example:
+
+Gradle 4.6 이후부터는 다음 예제와 같이 `annotationProcessor`에 dependency를 선언해 줍니다.
+
+```groovy
+dependencies {
+    annotationProcessor "org.springframework:spring-context-indexer:{spring-version}"
+}
+```
+
+>
+The `spring-context-indexer` artifact generates a `META-INF/spring.components` file that is included in the jar file.
+
+`spring-context-indexer` artifact는 jar 파일에 포함되는 `META-INF/spring.components` 파일을 생성합니다.
+
+
+> (i)
+When working with this mode in your IDE, the `spring-context-indexer` must be registered as an annotation processor to make sure the index is up-to-date when candidate components are updated.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - IDE에서 이 모드로 작업할 때 인덱스에 반영된 후보 컴포넌트가 업데이트가 최신 상태인지 확인하려면 `spring-context-indexer`를 annotation processor로 등록해야 합니다.
+
+>
+The index is enabled automatically when a `META-INF/spring.components` file is found on the classpath. If an index is partially available for some libraries (or use cases) but could not be built for the whole application, you can fall back to a regular classpath arrangement (as though no index were present at all) by setting `spring.index.ignore` to `true`, either as a JVM system property or via the [SpringProperties]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/appendix.html#appendix-spring-properties ) mechanism.
+{:style="background-color: #e9f1f6;"}
+
+- `META-INF/spring.components`파일이 classpath에 있으면 인덱스가 자동으로 활성화됩니다.
+- 만약 인덱스가 일부 러이브러리(또는 유즈 케이스)에서 부분적으로 사용하는 것은 가능한데 전체 애플리케이션에 대해 빌드할 수 없다면, `spring.index.ignore`를 설정해서 (인덱스가 아예 없는 것처럼) regular classpath arrangement로 fall back할 수 있습니다.
+    - JVM system property 나 `SpringProperties` 메커니즘을 사용해 `true`로 설정하면 됩니다.
 
 
 ## 함께 읽기
