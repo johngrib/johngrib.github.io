@@ -687,7 +687,7 @@ regenerate: true
 <div>
     <ul>
 {% for post in site.posts %}
-    {% if post.public != false %}
+    {% if post.public == true %}
         <li>
             <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
                 {{ post.title }}
