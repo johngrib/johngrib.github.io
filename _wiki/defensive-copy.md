@@ -3,12 +3,13 @@ layout  : wiki
 title   : 방어적 복사 (defensive copy)
 summary : 검사시점/사용시점 취약점을 방어하자
 date    : 2020-01-12 22:39:36 +0900
-updated : 2020-01-15 22:19:50 +0900
+updated : 2021-07-12 00:07:03 +0900
 tag     : java pattern
 toc     : true
 public  : true
 parent  : [[index]]
 latex   : false
+issue-number : 89
 ---
 * TOC
 {:toc}

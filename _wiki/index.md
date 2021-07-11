@@ -661,7 +661,7 @@ regenerate: true
 * [[Byzantine-failure]]
 * [[coding-font]]{코딩 폰트}
 * [[color-model]]
-* [[defensive-copy.md]]
+* [[defensive-copy]]
 * [[email-validation]]
 * [[gnu-project]]
 * [[integer]]

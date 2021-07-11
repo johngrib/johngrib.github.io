@@ -202,7 +202,7 @@ pattern:
     - {fileName: adapter-pattern}
     - {fileName: builder-pattern}
     - {fileName: decorator-pattern}
-    - {fileName: defensive-copy.md}
+    - {fileName: defensive-copy}
     - {fileName: design-pattern}
     - {fileName: design-pattern-quotes}
     - {fileName: factory-method-pattern}
@@ -603,7 +603,7 @@ index:
 calculator:
     - {fileName: dc-cmd}
 java:
-    - {fileName: defensive-copy.md}
+    - {fileName: defensive-copy}
     - {fileName: google-java-format}
     - {fileName: groupId-artifactId}
     - {fileName: intellij}

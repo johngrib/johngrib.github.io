@@ -8,6 +8,7 @@ tag     : love problem network
 toc     : true
 public  : true
 parent  : [[my-lifehack]]
+issue-number : 159
 latex   : true
 ---
 * TOC
