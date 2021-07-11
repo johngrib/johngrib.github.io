@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.11. Using JSR 330 Standard Annotations
 summary : 
 date    : 2021-07-10 12:00:30 +0900
-updated : 2021-07-11 12:48:07 +0900
+updated : 2021-07-11 13:48:13 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 - 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
 - 이전 문서 - [[/spring/document/core/01-10-classpath-scanning-and-managed-components]]{1.10. Classpath Scanning and Managed Components}
-- 다음 문서 - {1.12. Java-based Container Configuration}
+- 다음 문서 - [[/spring/document/core/01-12-java-based-container-config]]{1.12. Java-based Container Configuration}
 
 ## 1.11. Using JSR 330 Standard Annotations
 
@@ -264,5 +264,5 @@ Table 6. Spring component model elements versus JSR-330 variants
 
 - 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
 - 이전 문서 - [[/spring/document/core/01-10-classpath-scanning-and-managed-components]]{1.10. Classpath Scanning and Managed Components}
-- 다음 문서 - {1.12. Java-based Container Configuration}
+- 다음 문서 - [[/spring/document/core/01-12-java-based-container-config]]{1.12. Java-based Container Configuration}
 

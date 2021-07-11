@@ -662,6 +662,7 @@ java:
     - {fileName: spring/document/core/01-09-annotation-based-container-config}
     - {fileName: spring/document/core/01-10-classpath-scanning-and-managed-components}
     - {fileName: spring/document/core/01-11-using-jsr-330-standard-annotations}
+    - {fileName: spring/document/core/01-12-java-based-container-config}
     - {fileName: summary-The-Pauseless-GC-Algorithm}
     - {fileName: ternary-operator-and-null-pointer-exception}
     - {fileName: use-java-primitive-type-for-performance}
@@ -917,6 +918,7 @@ spring:
     - {fileName: spring/document/core/01-09-annotation-based-container-config}
     - {fileName: spring/document/core/01-10-classpath-scanning-and-managed-components}
     - {fileName: spring/document/core/01-11-using-jsr-330-standard-annotations}
+    - {fileName: spring/document/core/01-12-java-based-container-config}
 bsd:
     - {fileName: ioreg-cmd}
 james-gosling:

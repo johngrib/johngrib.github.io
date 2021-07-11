@@ -564,6 +564,7 @@ regenerate: true
     * [[/spring/document/core/01-09-annotation-based-container-config]]
     * [[/spring/document/core/01-10-classpath-scanning-and-managed-components]]
     * [[/spring/document/core/01-11-using-jsr-330-standard-annotations]]
+    * [[/spring/document/core/01-12-java-based-container-config]]
 
 ## [[database]]
 
