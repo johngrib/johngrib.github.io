@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.11. Using JSR 330 Standard Annotations
 summary : 
 date    : 2021-07-10 12:00:30 +0900
-updated : 2021-07-11 11:44:48 +0900
+updated : 2021-07-11 12:18:00 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -28,6 +28,7 @@ Spring 3.0부터 Spring은 JSR-330 스탠다드 애노테이션(Dependency Injec
 
 > (i)
 If you use Maven, the `javax.inject` artifact is available in the standard Maven repository (<https://repo1.maven.org/maven2/javax/inject/javax.inject/1/ >). You can add the following dependency to your file pom.xml:
+{:style="background-color: #ecf1e8;"}
 
 Maven을 사용한다면 `javax.inject` 아티팩트를 스탠다드 Maven 저장소(<https://repo1.maven.org/maven2/javax/inject/javax.inject/1/ >)에서 찾아볼 수 있습니다.
 pom.xml 파일에는 다음과 같이 추가하면 됩니다.
@@ -147,6 +148,78 @@ public class SimpleMovieLister {
 ### 1.11.2. @Named and @ManagedBean: Standard Equivalents to the @Component Annotation
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-named )
+
+>
+Instead of `@Component`, you can use `@javax.inject.Named` or `javax.annotation.ManagedBean`, as the following example shows:
+
+`@Component` 대신으로는 `@javax.inject.Named`나 `javax.annotation.ManagedBean`를 사용할 수 있습니다.
+
+```java
+import javax.inject.Inject;
+import javax.inject.Named;
+
+@Named("movieListener")  // @ManagedBean("movieListener") could be used as well
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Inject
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // ...
+}
+```
+
+>
+It is very common to use `@Component` without specifying a name for the component. `@Named` can be used in a similar fashion, as the following example shows:
+
+`@Component`를 쓸 때 컴포넌트의 이름을 지정하지 않는 것은 흔한 일이죠.
+`@Named`도 그와 비슷한 방법으로 사용할 수 있습니다.
+
+```java
+import javax.inject.Inject;
+import javax.inject.Named;
+
+@Named
+public class SimpleMovieLister {
+
+    private MovieFinder movieFinder;
+
+    @Inject
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+
+    // ...
+}
+```
+
+>
+When you use `@Named` or `@ManagedBean`, you can use component scanning in the exact same way as when you use Spring annotations, as the following example shows:
+
+`@Named` 또는 `@ManagedBean`을 사용한다면, 다음 예제와 같이 Spring의 애노테이션을 쓸 때와 똑같은 방식으로 컴포넌트 스캔을 할 수 있습니다.
+
+```java
+@Configuration
+@ComponentScan(basePackages = "org.example")
+public class AppConfig  {
+    // ...
+}
+```
+
+> (i)
+In contrast to `@Component`, the JSR-330 `@Named` and the JSR-250 `ManagedBean` annotations are not composable. You should use Spring’s stereotype model for building custom component annotations.
+{:style="background-color: #ecf1e8;"}
+
+`@Component`와 다르게, JSR-300의 `@Named`와 JSR-250의 `ManagedBean` 애노테이션들은 구성할 수 없습니다(not composable).
+커스텀 컴포넌트 애노테이션을 빌드하려면 Spring의 스테레오 타입 모델을 사용해야 합니다.
+
+### 1.11.3. Limitations of JSR-330 Standard Annotations
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-standard-annotations-limitations )
+
 
 ## 함께 읽기
 
