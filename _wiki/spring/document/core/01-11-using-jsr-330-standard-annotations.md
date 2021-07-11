@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.11. Using JSR 330 Standard Annotations
 summary : 
 date    : 2021-07-10 12:00:30 +0900
-updated : 2021-07-11 12:18:00 +0900
+updated : 2021-07-11 12:48:07 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -219,6 +219,45 @@ In contrast to `@Component`, the JSR-330 `@Named` and the JSR-250 `ManagedBean` 
 ### 1.11.3. Limitations of JSR-330 Standard Annotations
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-standard-annotations-limitations )
+
+>
+When you work with standard annotations, you should know that some significant features are not available, as the following table shows:
+
+스탠다드 애노테이션을 사용해 작업을 할 때에는 다음 표와 같이 몇몇 중요한 기능은 사용할 수 없다는 점을 기억해 두어야 합니다.
+
+>
+Table 6. Spring component model elements versus JSR-330 variants
+
+
+| Spring              | javax.inject.*        | javax.inject restrictions / comments                                                                                                                                                                                                                                                                                                                                                                                                    |
+|---------------------|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| @Autowired          | @Inject               | @Inject has no 'required' attribute. Can be used with Java 8’s Optional instead.                                                                                                                                                                                                                                                                                                                                                        |
+| @Component          | @Named / @ManagedBean | JSR-330 does not provide a composable model, only a way to identify named components.                                                                                                                                                                                                                                                                                                                                                   |
+| @Scope("singleton") | @Singleton            | The JSR-330 default scope is like Spring’s prototype. However, in order to keep it consistent with Spring’s general defaults, a JSR-330 bean declared in the Spring container is a singleton by default. In order to use a scope other than singleton, you should use Spring’s @Scope annotation. javax.inject also provides a @Scope annotation. Nevertheless, this one is only intended to be used for creating your own annotations. |
+| @Qualifier          | @Qualifier / @Named   | javax.inject.Qualifier is just a meta-annotation for building custom qualifiers. Concrete String qualifiers (like Spring’s @Qualifier with a value) can be associated through javax.inject.Named.                                                                                                                                                                                                                                       |
+| @Value              | -                     | no equivalent                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| @Required           | -                     | no equivalent                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| @Lazy               | -                     | no equivalent                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ObjectFactory       | Provider              | javax.inject.Provider is a direct alternative to Spring’s ObjectFactory, only with a shorter get() method name. It can also be used in combination with Spring’s @Autowired or with non-annotated constructors and setter methods.                                                                                                                                                                                                      |
+ - `@Autowired`와 `@Inject`
+     - `@Inject`에는 required(필수) 속성이 없는 대신, Java 8의 `Optional`과 함께 사용 가능합니다.
+ - `@Component`와 `@Named` / `@ManagedBean`
+     - JSR-330은 composable model을 제공하지 않으며, 명명된 컴포넌트를 식별하는 방법만 제공합니다.
+ - `@Scope("singleton")`과 `@Singleton`
+     - JSR-330의 디폴트 스코프는 Spring의 `prototype`과 같습니다.
+     - 그러나 Spring 기본값과 일관성을 유지하기 위해 Spring 컨테이너에 선언된 JSR-330 bean의 기본값은 싱글톤입니다.
+     - 싱글톤이 아닌 다른 스코프를 사용하려면 Spring의 `@Scope` 애노테이션을 사용해야 합니다.
+     - `javax.inject`는 `@Scope` 애노테이션도 제공하지만, 커스텀 애노테이션을 만들 때에만 사용 가능합니다.
+ - `@Qualifier`와 `@Qualifier` / `@Named`
+     - `javax.inject.Qualifier`는 커스텀 qualifier를 빌드하기 위한 메타 애노테이션일 뿐입니다.
+     - (`value`를 지정할 수 있는 Spring의 `@Qualifier` 같은) 구체적인 `String` qualifier는 `javax.inject.Named`를 사용해야 연결할 수 있습니다.
+ - `@Value`
+     - Spring에는 있지만 `javax.inject`에는 없음.
+ - `@Required`
+     - Spring에는 있지만 `javax.inject`에는 없음.
+ - `ObjectFactory`와 `Provider`
+     - `javax.inject.Provider`는 `get()` 메소드를 갖고 있다는 점만 다를 뿐 Spring의 `ObjectFactory`를 대신해서 쓸 수 있습니다.
+     - Spring의 `@Autowired`, 애노테이션이 없는 생성자, setter 메소드와 함께 사용할 수도 있습니다.
 
 
 ## 함께 읽기
