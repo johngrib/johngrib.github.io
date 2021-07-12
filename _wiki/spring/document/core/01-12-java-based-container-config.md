@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 15:44:21 +0900
+updated : 2021-07-12 15:55:06 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -139,6 +139,43 @@ When `@Component` and JSR-330 classes are provided, they are registered as bean 
 #### Simple Construction
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-instantiating-container-constructor )
+
+>
+In much the same way that Spring XML files are used as input when instantiating a `ClassPathXmlApplicationContext`, you can use `@Configuration` classes as input when instantiating an `AnnotationConfigApplicationContext`. This allows for completely XML-free usage of the Spring container, as the following example shows:
+
+`ClassPathXmlApplicationContext`를 인스턴스화할 때 Spring XML 파일을 입력받는 것처럼, `AnnotationConfigApplicationContext`를 인스턴스화할 때에는 `@Configuration` 클래스를 입력으로 사용하게 됩니다.
+이를 통해 다음 예제와 같이 XML 없이 Spring 컨테이너를 사용할 수 있게 됩니다.
+
+```java
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+    MyService myService = ctx.getBean(MyService.class);
+    myService.doStuff();
+}
+```
+
+>
+As mentioned earlier, `AnnotationConfigApplicationContext` is not limited to working only with `@Configuration` classes. Any `@Component` or JSR-330 annotated class may be supplied as input to the constructor, as the following example shows:
+
+위에서 언급한 바와 같이, `AnnotationConfigApplicationContext`는 `@Configuration`만 사용하게끔 제한되어 있지는 않습니다.
+다음 예제와 같이 `@Component` 또는 JSR-330 애노테이션 클래스를 `AnnotationConfigApplicationContext`의 생성자에 입력할 수 있습니다.
+
+```java
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(MyServiceImpl.class, Dependency1.class, Dependency2.class);
+    MyService myService = ctx.getBean(MyService.class);
+    myService.doStuff();
+}
+```
+
+>
+The preceding example assumes that `MyServiceImpl`, `Dependency1`, and `Dependency2` use Spring dependency injection annotations such as `@Autowired`.
+
+위의 예제에서는 `MyServiceImpl`, `Dependency1`, `Dependency2`가 `@Autowired`와 같은 Spring dependency injection 애노테이션을 사용한다고 전제한 것입니다.
+
+#### Building the Container Programmatically by Using `register(Class<?>…)`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-instantiating-container-register )
 
 
 ## 함께 읽기
