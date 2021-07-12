@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 16:03:55 +0900
+updated : 2021-07-12 16:33:36 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -199,6 +199,62 @@ public static void main(String[] args) {
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-instantiating-container-scan )
 
+>
+To enable component scanning, you can annotate your `@Configuration` class as follows:
+
+컴포넌트 스캔을 활성화하려면, `@Configuration` 클래스에 다음과 같이 애노테이션을 달아줄 수 있습니다.
+
+```java
+@Configuration
+@ComponentScan(basePackages = "com.acme")  // (1)
+public class AppConfig  {
+    ...
+}
+```
+
+>
+(1) This annotation enables component scanning.
+
+(1) 이 애노테이션이 컴포넌트 스캔을 가능하게 합니다.
+
+>
+Experienced Spring users may be familiar with the XML declaration equivalent from Spring’s context: namespace, shown in the following example:
+{:style="background-color: #e9f1f6;"}
+
+- 경험이 풍부한 Spring 사용자는 다음과 같은 XML 선언에 익숙할 수 있습니다.
+
+```xml
+<beans>
+    <context:component-scan base-package="com.acme"/>
+</beans>
+```
+
+>
+In the preceding example, the `com.acme` package is scanned to look for any `@Component`-annotated classes, and those classes are registered as Spring bean definitions within the container. `AnnotationConfigApplicationContext` exposes the `scan(String…)` method to allow for the same component-scanning functionality, as the following example shows:
+
+위의 예제에서 `com.acme` 패키지는 `@Component` 애노테이션이 달린 클래스를 찾기 위해 스캔되며, 해당 클래스는 컨테이너에 Spring bean definition으로 등록됩니다.
+`AnnotationConfigApplicationContext`에는 이와 똑같은 컴포넌트 스캔 기능을 사용할 수 있도록 `scan(String...)` 메소드가 제공됩니다.
+
+```java
+public static void main(String[] args) {
+    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+    ctx.scan("com.acme");
+    ctx.refresh();
+    MyService myService = ctx.getBean(MyService.class);
+}
+```
+
+> (i)
+Remember that `@Configuration` classes are [meta-annotated]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-meta-annotations ) with `@Component`, so they are candidates for component-scanning. In the preceding example, assuming that `AppConfig` is declared within the `com.acme` package (or any package underneath), it is picked up during the call to `scan()`. Upon `refresh()`, all its `@Bean` methods are processed and registered as bean definitions within the container.
+
+- (i)
+    - `@Configuration` 클래스에는 메타 애노테이션으로 `@Component`가 붙어 있습니다. 즉, `@Configuration`도 컴포넌트 스캔의 대상이라는 것을 기억해 두세요.
+        - 위의 예제에서 `AppConfig`가 `com.acme` 패키지(또는 그 하위 패키지) 내부에서 선언되었다고 가정하면, `scan()` 호출 중에 `AppConfig`도 선택이 됩니다.
+    - `refresh()`가 호출될 때에는 모든 `@Bean` 메소드가 처리되고, 컨테이너 내에 bean definition으로 등록됩니다.
+
+#### Support for Web Applications with `AnnotationConfigWebApplicationContext`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-instantiating-container-web )
 
 
 ## 함께 읽기
