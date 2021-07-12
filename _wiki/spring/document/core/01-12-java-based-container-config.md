@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 21:53:14 +0900
+updated : 2021-07-12 23:26:43 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -642,6 +642,32 @@ public class AppConfig {
 #### Bean Aliasing
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-bean-aliasing )
+
+>
+As discussed in [Naming Beans]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-beanname ), it is sometimes desirable to give a single bean multiple names, otherwise known as bean aliasing. The `name` attribute of the `@Bean` annotation accepts a String array for this purpose. The following example shows how to set a number of aliases for a bean:
+
+[Naming Beans]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-beanname )에서 살펴본 바와 같이, 때때로 하나의 bean에 여러 개의 이름을 붙여주는 것이 바람직하기도 합니다.
+이 기능은 bean aliasing이라 부릅니다.
+`@Bean` 애노테이션의 `name` 속성은 이런 경우를 위해 String 배열을 받기도 합니다.
+다음 예제는 하나의 bean에 여러 알리아스를 지정하는 방법을 보여줍니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean({"dataSource", "subsystemA-dataSource", "subsystemB-dataSource"})
+    public DataSource dataSource() {
+        // instantiate, configure and return DataSource bean...
+    }
+}
+```
+
+#### Bean Description
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-bean-description )
+
+
+
 
 ## 함께 읽기
 
