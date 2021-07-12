@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 23:30:34 +0900
+updated : 2021-07-12 23:38:15 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -689,10 +689,21 @@ public class AppConfig {
 }
 ```
 
-### 1.12.4. Using the @Configuration annotation
+### 1.12.4. Using the `@Configuration` annotation
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-configuration-annotation )
 
+>
+`@Configuration` is a class-level annotation indicating that an object is a source of bean definitions. `@Configuration` classes declare beans through `@Bean` annotated methods. Calls to `@Bean` methods on `@Configuration` classes can also be used to define inter-bean dependencies. See [Basic Concepts: @Bean and @Configuration]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-basic-concepts ) for a general introduction.
+
+`@Configuration`은 해당 객체가 bean definition 소스라는 것을 보여주기 위해 붙여주는 클래스 레벨 애노테이션입니다.
+`@Configuration` 클래스는 `@Bean` 애노테이션을 붙인 메소드를 통해 bean을 선언합니다.
+`@Configuration` 클래스에서 `@Bean` 메소드를 호출하여 bean과 bean 사이의 dependencies를 정의할 수 있습니다.
+이에 대해서는 [Basic Concepts: @Bean and @Configuration]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-basic-concepts ) 문서를 참고하세요.
+
+#### Injecting Inter-bean Dependencies
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-injecting-dependencies )
 
 
 ## 함께 읽기
