@@ -1,16 +1,5 @@
 '1983':
     - {fileName: duff-s-device}
-ideavim:
-    - {fileName: ./_posts/2017/2017-01-30-ideavim-build.md}
-    - {fileName: ideavim}
-open-source:
-    - {fileName: ./_posts/2017/2017-01-30-ideavim-build.md}
-jetBrains:
-    - {fileName: ./_posts/2017/2017-01-30-ideavim-build.md}
-intelliJ:
-    - {fileName: ./_posts/2017/2017-01-30-ideavim-build.md}
-삽질:
-    - {fileName: ./_posts/2017/2017-01-30-ideavim-build.md}
 node-js:
     - {fileName: ./_posts/2017/2017-03-12-telegram-bot.md}
 telegram:
@@ -886,6 +875,8 @@ http:
     - {fileName: URI}
     - {fileName: vim-rest-console}
     - {fileName: why-http-80-https-443}
+ideavim:
+    - {fileName: ideavim}
 intellij:
     - {fileName: ideavim}
 turing:

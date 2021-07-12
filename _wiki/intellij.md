@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-05-11 21:29:19 +0900
+updated : 2021-07-12 18:22:45 +0900
 tag     : java
 toc     : true
 public  : true
@@ -219,5 +219,5 @@ macOS의 경우 `~/Library/Preferences`에 있다.
 
 ## 함께 읽기
 
-* [[config-ideavim]]{IdeaVim 설정하기}
+* [[ideavim]]{IdeaVim}
 

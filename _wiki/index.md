@@ -484,7 +484,7 @@ regenerate: true
 
 ## [[Vim]]
 
-* [[config-ideavim]]
+* [[ideavim]]
 * [[two-views-of-vim]]
 * [[ultisnips]]
 * [[vim-asciidoc-setting]]

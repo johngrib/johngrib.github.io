@@ -300,7 +300,7 @@
     size: 1
 -
     name: ideavim
-    size: 2
+    size: 1
 -
     name: IEEE
     size: 1
@@ -312,9 +312,6 @@
     size: 1
 -
     name: intel
-    size: 1
--
-    name: intelliJ
     size: 1
 -
     name: intellij
@@ -334,9 +331,6 @@
 -
     name: jekyll
     size: 4
--
-    name: jetBrains
-    size: 1
 -
     name: jim-gray
     size: 1
@@ -454,9 +448,6 @@
 -
     name: oop
     size: 7
--
-    name: open-source
-    size: 1
 -
     name: padding
     size: 1
@@ -726,9 +717,6 @@
     size: 1
 -
     name: 보안
-    size: 1
--
-    name: 삽질
     size: 1
 -
     name: 소수
