@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 23:26:43 +0900
+updated : 2021-07-12 23:30:34 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -666,6 +666,32 @@ public class AppConfig {
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-bean-description )
 
+>
+Sometimes, it is helpful to provide a more detailed textual description of a bean. This can be particularly useful when beans are exposed (perhaps through JMX) for monitoring purposes.
+
+때로는 bean에 자세한 텍스트 설명을 남겨두는 것이 도움이 되기도 합니다.
+이렇게 하면 모니터링 목적으로 bean이 노출되었을 때(아마도 JMX를 통해서) 유용할 수 있습니다.
+
+>
+To add a description to a `@Bean`, you can use the [@Description]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/context/annotation/Description.html ) annotation, as the following example shows:
+
+`@Bean`에 설명을 남기려면 `@Description` 애노테이션을 사용하면 됩니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    @Description("Provides a basic example of a bean")
+    public Thing thing() {
+        return new Thing();
+    }
+}
+```
+
+### 1.12.4. Using the @Configuration annotation
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-configuration-annotation )
 
 
 
