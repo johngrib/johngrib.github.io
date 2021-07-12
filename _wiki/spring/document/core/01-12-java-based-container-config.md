@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 17:34:56 +0900
+updated : 2021-07-12 21:25:25 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -436,6 +436,119 @@ The resolution mechanism is pretty much identical to constructor-based dependenc
 #### Receiving Lifecycle Callbacks
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-lifecycle-callbacks )
+
+>
+Any classes defined with the `@Bean` annotation support the regular lifecycle callbacks and can use the `@PostConstruct` and `@PreDestroy` annotations from JSR-250. See [JSR-250 annotations]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-postconstruct-and-predestroy-annotations ) for further details.
+
+`@Bean` 애노테이션을 통해 정의된 모든 클래스는 일반적인 생명주기 콜백을 지원하고, JSR-250의 `@PostConstruct`와 `@PreDestroy` 애노테이션을 사용할 수 있습니다.
+자세한 내용은 [JSR-250 annotations]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-postconstruct-and-predestroy-annotations ) 문서를 참고하세요.
+
+>
+The regular Spring [lifecycle]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-nature ) callbacks are fully supported as well. If a bean implements `InitializingBean`, `DisposableBean`, or `Lifecycle`, their respective methods are called by the container.
+
+일반적인 Spring의 [생명주기]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-nature ) 콜백도 완벽하게 지원됩니다.
+만약 bean 이 `InitializingBean`, `DisposableBean`, `Lifecycle`의 구현체라면 생명주기와 관련된 메소드는 컨테이너에서 호출합니다.
+
+>
+The standard set of `*Aware` interfaces (such as [BeanFactoryAware]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-beanfactory ), [BeanNameAware]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-aware ), [MessageSourceAware]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-messagesource ), [ApplicationContextAware]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-aware ), and so on) are also fully supported.
+
+`*Aware` 인터페이스의 표준 세트([BeanFactoryAware]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-beanfactory ), [BeanNameAware]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-aware ), [MessageSourceAware]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-messagesource ), [ApplicationContextAware]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-aware ) 등등)도 완전히 지원됩니다.
+
+>
+The `@Bean` annotation supports specifying arbitrary initialization and destruction callback methods, much like Spring XML’s `init-method` and `destroy-method` attributes on the `bean` element, as the following example shows:
+
+`@Bean` 애노테이션은 Spring XML의 `bean` 엘리먼트 속성인 `init-method`, 그리고 `destroy-method`와 마찬가지로 초기화 및 파괴 용도의 콜백 메소드를 지정할 수 있습니다.
+
+```java
+public class BeanOne {
+
+    public void init() {
+        // initialization logic
+    }
+}
+
+public class BeanTwo {
+
+    public void cleanup() {
+        // destruction logic
+    }
+}
+
+@Configuration
+public class AppConfig {
+
+    @Bean(initMethod = "init")
+    public BeanOne beanOne() {
+        return new BeanOne();
+    }
+
+    @Bean(destroyMethod = "cleanup")
+    public BeanTwo beanTwo() {
+        return new BeanTwo();
+    }
+}
+```
+
+> (i)
+By default, beans defined with Java configuration that have a public `close` or `shutdown` method are automatically enlisted with a destruction callback. If you have a public `close` or `shutdown` method and you do not wish for it to be called when the container shuts down, you can add `@Bean(destroyMethod="")` to your bean definition to disable the default `(inferred)` mode.
+>
+You may want to do that by default for a resource that you acquire with JNDI, as its lifecycle is managed outside the application. In particular, make sure to always do it for a `DataSource`, as it is known to be problematic on Java EE application servers.
+>
+The following example shows how to prevent an automatic destruction callback for a `DataSource`:
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 기본적으로 `close`이나 `shutdown`이라는 이름을 가진 public 메소드를 갖고 있는 Java configuration으로 정의된 bean은 자동으로 destruction 콜백에 참여하게 됩니다.
+        - 만약 public `close`이나 `shutdown` 메소드가 있지만, 컨테이너가 종료(shuts down)될 때 호출하기를 원하지 않는다면 `@Bean(destroyMethod="")`와 같이 추가해서 기본 `(inferred)` 모드를 disable할 수 있습니다.
+    - JNDI를 통해 얻은 리소스의 생명주기가 애플리케이션 외부에서 관리되기 때문에, 이런 설정을 기본값으로 설정하고 싶다면 그렇게 할 수 있습니다.
+        - 특히 Java EE 애플리케이션 서버에서 `DataSource`에 대해 문제가 있는 것으로 알려져 있으므로 항상 설정해 주도록 합니다.
+    - 다음 예제는 `DataSource`에 대해 자동으로 destruction 콜백을 호출하는 것을 막는 방법을 보여줍니다.
+
+```java
+@Bean(destroyMethod="")
+public DataSource dataSource() throws NamingException {
+    return (DataSource) jndiTemplate.lookup("MyDS");
+}
+```
+
+>
+Also, with `@Bean` methods, you typically use programmatic JNDI lookups, either by using Spring’s `JndiTemplate` or `JndiLocatorDelegate` helpers or straight JNDI `InitialContext` usage but not the `JndiObjectFactoryBean` variant (which would force you to declare the return type as the `FactoryBean` type instead of the actual target type, making it harder to use for cross-reference calls in other `@Bean` methods that intend to refer to the provided resource here).
+{:style="background-color: #ecf1e8;"}
+
+- (i) (이어서)
+    - 또한 `@Bean` 메소드를 사용할 때에는 일반적으로 프로그래밍 방식의 JNDI 룩업을 사용하게 됩니다.
+        - Spring의 `JndiTemplate` 또는 `JndiLocatorDelegate` helpers를 사용하거나 `JndiObjectFactoryBean`의 변형체를 사용하지 않고 JNDI `InitialContext`를 사용하여 프로그래밍 방식의 JNDI 조회를 사용합니다.
+    - 이는 리턴 타입을 실제 대상의 타입 대신 `FactoryBean` 타입으로 선언하도록 하여, 여기에 제공된 리소스를 참조하려는 다른 `@Bean` 메소드에서 상호 참조 호출(cross-reference calls)에 사용하기 어렵게 만듭니다.
+
+>
+In the case of `BeanOne` from the example above the preceding note, it would be equally valid to call the `init()` method directly during construction, as the following example shows:
+
+위의 예제에서 `BeanOne`의 경우 다음 예제와 같이 생성 중에 `init()` 메소드를 호출하는 것도 똑같이 유효한 방법입니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public BeanOne beanOne() {
+        BeanOne beanOne = new BeanOne();
+        beanOne.init();
+        return beanOne;
+    }
+
+    // ...
+}
+```
+
+>
+When you work directly in Java, you can do anything you like with your objects and do not always need to rely on the container lifecycle.
+{:style="background-color: #e9f1f6;"}
+
+- Java로 직접 작업할 때, 여러분의 객체만으로 여러분이 원하는 모든 작업을 수행할 수 있습니다. 항상 컨테이너의 생명주기에 의존하지 않아도 됩니다.
+
+#### Specifying Bean Scope
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-specifying-bean-scope )
 
 ## 함께 읽기
 
