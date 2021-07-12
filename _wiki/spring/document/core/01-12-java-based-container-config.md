@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 12:08:18 +0900
+updated : 2021-07-12 15:44:21 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -120,6 +120,25 @@ The `@Bean` and `@Configuration` annotations are discussed in depth in the follo
 ### 1.12.2. Instantiating the Spring Container by Using `AnnotationConfigApplicationContext`
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-instantiating-container )
+
+>
+The following sections document Spring’s `AnnotationConfigApplicationContext`, introduced in Spring 3.0. This versatile `ApplicationContext` implementation is capable of accepting not only `@Configuration` classes as input but also plain `@Component` classes and classes annotated with JSR-330 metadata.
+>
+When `@Configuration` classes are provided as input, the `@Configuration` class itself is registered as a bean definition and all declared `@Bean` methods within the class are also registered as bean definitions.
+>
+When `@Component` and JSR-330 classes are provided, they are registered as bean definitions, and it is assumed that DI metadata such as `@Autowired` or `@Inject` are used within those classes where necessary.
+
+다음 섹션부터는 Spring 3.0에 도입된 Spring `AnnotationConfigApplicationContext`를 다룹니다.
+`AnnotationConfigApplicationContext`는 `ApplicationContext`의 구현체이며, `@Configuration` 클래스 뿐만 아니라 일반적인 `@Component` 클래스와 JSR-330 메타데이터 애노테이션이 붙은 클래스도 입력받을 수 있습니다.
+
+`@Configuration` 클래스가 입력으로 제공되면 `@Configuration` 클래스 자체가 bean definition으로 등록되고, 해당 클래스 내에 선언된 모든 `@Bean` 메소드도 bean definition으로 등록됩니다.
+
+`@Component`와 JSR-330 클래스들이 제공되면, 얘네들도 bean definition으로 등록되고, 필요에 따라 해당 클래스 내에 있는 `@Autowired`와 `@Inject` 등의 DI 메타데이터를 사용하게 됩니다.
+
+
+#### Simple Construction
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-instantiating-container-constructor )
 
 
 ## 함께 읽기
