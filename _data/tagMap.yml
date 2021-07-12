@@ -2,7 +2,7 @@
     - {fileName: duff-s-device}
 ideavim:
     - {fileName: ./_posts/2017/2017-01-30-ideavim-build.md}
-    - {fileName: config-ideavim}
+    - {fileName: ideavim}
 open-source:
     - {fileName: ./_posts/2017/2017-01-30-ideavim-build.md}
 jetBrains:
@@ -96,8 +96,8 @@ AWS:
 vim:
     - {fileName: ./_posts/2017/2017-05-04-input-source.md}
     - {fileName: ./_posts/2017/2017-07-09-vim-game-code-break.md}
-    - {fileName: config-ideavim}
     - {fileName: ctags}
+    - {fileName: ideavim}
     - {fileName: my-mac-os-terminal}
     - {fileName: start-rust-with-vim}
     - {fileName: two-views-of-vim}
@@ -565,8 +565,6 @@ binary:
     - {fileName: complement-number}
     - {fileName: floating-point}
     - {fileName: gray-code}
-intellij:
-    - {fileName: config-ideavim}
 conway-s-law:
     - {fileName: constantine-s-law}
 martin-fowler:
@@ -888,6 +886,8 @@ http:
     - {fileName: URI}
     - {fileName: vim-rest-console}
     - {fileName: why-http-80-https-443}
+intellij:
+    - {fileName: ideavim}
 turing:
     - {fileName: imitation-game}
 oop:
