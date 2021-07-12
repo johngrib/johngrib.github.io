@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 17:25:39 +0900
+updated : 2021-07-12 17:34:56 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -409,6 +409,33 @@ If you consistently refer to your types by a declared service interface, your `@
 #### Bean Dependencies
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-dependencies )
+
+>
+A `@Bean`-annotated method can have an arbitrary number of parameters that describe the dependencies required to build that bean. For instance, if our `TransferService` requires an `AccountRepository`, we can materialize that dependency with a method parameter, as the following example shows:
+
+`@Bean` 애노테이션이 붙은 메소드는 해당 bean을 빌드하는 데에 필요한 dependencies를 명시하기 위한 파라미터를 여러 개 가질 수 있습니다.
+예를 들어 `TransferService`가 `AccountRepository`를 필요로 한다면, 다음 예제와 같이 메소드 파라미터를 사용해 dependency를 구체화할 수 있습니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public TransferService transferService(AccountRepository accountRepository) {
+        return new TransferServiceImpl(accountRepository);
+    }
+}
+```
+
+>
+The resolution mechanism is pretty much identical to constructor-based dependency injection. See [the relevant section]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-constructor-injection ) for more details.
+
+결정 메커니즘은 생성자 기반 dependency injection과 거의 같습니다.
+자세한 내용은 관련 섹션을 참고하세요.
+
+#### Receiving Lifecycle Callbacks
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-lifecycle-callbacks )
 
 ## 함께 읽기
 
