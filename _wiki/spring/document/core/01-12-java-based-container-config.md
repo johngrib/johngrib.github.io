@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 21:48:32 +0900
+updated : 2021-07-12 21:53:14 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -621,6 +621,27 @@ public Service userService() {
 #### Customizing Bean Naming
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-customizing-bean-naming )
+
+>
+By default, configuration classes use a `@Bean` method’s name as the name of the resulting bean. This functionality can be overridden, however, with the `name` attribute, as the following example shows:
+
+기본적으로 configuration 클래스는 `@Bean` 메소드의 이름을 bean의 이름으로 사용합니다.
+그러나 다음 예제와 같이 `name` 속성을 사용하면 이 기능을 오버라이드할 수 있습니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean(name = "myThing")
+    public Thing thing() {
+        return new Thing();
+    }
+}
+```
+
+#### Bean Aliasing
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-bean-aliasing )
 
 ## 함께 읽기
 
