@@ -213,7 +213,7 @@ regenerate: true
 * [[java-remainder-operator]]
 * [[java-TemporalAdjusters]]
 * [[java-util-arraylist]]
-* [[java/12-switch]]
+* [[/java/switch]]
 * [[java10-var]]
 * [[java8-performance-improvement-for-hashmap]]
 * [[java8-why-permgen-removed]]
