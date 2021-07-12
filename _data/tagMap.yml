@@ -2,6 +2,7 @@
     - {fileName: duff-s-device}
 ideavim:
     - {fileName: ./_posts/2017/2017-01-30-ideavim-build.md}
+    - {fileName: config-ideavim}
 open-source:
     - {fileName: ./_posts/2017/2017-01-30-ideavim-build.md}
 jetBrains:
@@ -564,6 +565,8 @@ binary:
     - {fileName: complement-number}
     - {fileName: floating-point}
     - {fileName: gray-code}
+intellij:
+    - {fileName: config-ideavim}
 conway-s-law:
     - {fileName: constantine-s-law}
 martin-fowler:

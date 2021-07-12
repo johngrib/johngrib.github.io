@@ -300,7 +300,7 @@
     size: 1
 -
     name: ideavim
-    size: 1
+    size: 2
 -
     name: IEEE
     size: 1
@@ -315,6 +315,9 @@
     size: 1
 -
     name: intelliJ
+    size: 1
+-
+    name: intellij
     size: 1
 -
     name: ip

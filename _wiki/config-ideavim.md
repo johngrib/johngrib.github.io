@@ -3,8 +3,8 @@ layout  : wiki
 title   : IdeaVim 설정하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2021-07-07 01:54:08 +0900
-tag     : vim
+updated : 2021-07-12 18:19:47 +0900
+tag     : vim ideavim intellij
 toc     : true
 public  : true
 parent  : [[Vim]]
