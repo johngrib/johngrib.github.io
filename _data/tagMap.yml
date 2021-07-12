@@ -621,9 +621,9 @@ java:
     - {fileName: java-optional}
     - {fileName: java-remainder-operator}
     - {fileName: java-stream}
-    - {fileName: java-switch-expression}
     - {fileName: java-TemporalAdjusters}
     - {fileName: java-util-arraylist}
+    - {fileName: java/switch}
     - {fileName: java10-var}
     - {fileName: java8}
     - {fileName: java8-performance-improvement-for-hashmap}
