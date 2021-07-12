@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 16:48:00 +0900
+updated : 2021-07-12 17:25:39 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -335,6 +335,80 @@ You can use the `@Bean` annotation in a `@Configuration`-annotated or in a `@Com
 #### Declaring a Bean
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-declaring-a-bean )
+
+>
+To declare a bean, you can annotate a method with the `@Bean` annotation. You use this method to register a bean definition within an `ApplicationContext` of the type specified as the method’s return value. By default, the bean name is the same as the method name. The following example shows a `@Bean` method declaration:
+
+bean을 선언하기 위해 `@Bean` 애노테이션을 메소드에 붙일 수 있습니다.
+이 메소드의 리턴값으로 지정된 타입이 `ApplicationContext`에 bean definition으로 등록됩니다.
+기본적으로 bean 이름은 메소드 이름과 동일합니다.
+다음 예제는 `@Bean` 메소드 선언을 보여줍니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public TransferServiceImpl transferService() {
+        return new TransferServiceImpl();
+    }
+}
+```
+
+>
+The preceding configuration is exactly equivalent to the following Spring XML:
+
+위의 configuration은 다음의 Spring XML과 완전히 똑같습니다.
+
+```xml
+<beans>
+    <bean id="transferService" class="com.acme.TransferServiceImpl"/>
+</beans>
+```
+
+>
+Both declarations make a bean named `transferService` available in the `ApplicationContext`, bound to an object instance of type `TransferServiceImpl`, as the following text image shows:
+
+두 선언 모두 `ApplicationContext`에서 사용할 수 있는 `transferService`라는 이름의 bean을 만듭니다. 이 bean의 객체 인스턴스 타입은 다음과 같이 `TransferServiceImpl`입니다.
+
+```
+transferService -> com.acme.TransferServiceImpl
+```
+
+>
+You can also declare your `@Bean` method with an interface (or base class) return type, as the following example shows:
+
+다음 예제와 같이 인터페이스(또는 base class) 리턴 타입을 사용해 `@Bean` 메소드를 선언할 수도 있습니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public TransferService transferService() {
+        return new TransferServiceImpl();
+    }
+}
+```
+
+>
+However, this limits the visibility for advance type prediction to the specified interface type (`TransferService`). Then, with the full type (`TransferServiceImpl`) known to the container only once, the affected singleton bean has been instantiated. Non-lazy singleton beans get instantiated according to their declaration order, so you may see different type matching results depending on when another component tries to match by a non-declared type (such as `@Autowired TransferServiceImpl`, which resolves only once the `transferService` bean has been instantiated).
+
+그러나 이 방법은 고급 타입 추론의 범위를 지정된 인터페이스 타입(`TransferService`)으로 제한합니다.
+그러고나서, 컨테이너에 한 번만 알려진 full 타입(`TransferServiceImpl`)의 영향을 받은 싱글톤 bean이 인스턴스화됩니다.
+non-lazy 싱글톤 bean은 선언 순서에 따라 인스턴스화되므로, 다른 컴포넌트가 선언되지 않은 타입(`@Autowired TransferServiceImpl`처럼 `transferService` bean이 인스턴스화되면 resolve되는 것들)과 매칭되려고 하는 시기에 따라 다른 타입 매칭 결과를 볼 수도 있습니다.
+
+>
+If you consistently refer to your types by a declared service interface, your `@Bean` return types may safely join that design decision. However, for components that implement several interfaces or for components potentially referred to by their implementation type, it is safer to declare the most specific return type possible (at least as specific as required by the injection points that refer to your bean).
+{:style="background-color: #e9f1f6;"}
+
+- 선언된 서비스 인터페이스에서 일관성있게 타입을 참조하는 경우, `@Bean`의 리턴 타입이 설계 결정에 안전하게 사용될 수 있습니다.
+- 그러나 여러 개의 인터페이스를 구현하는 컴포넌트나 구현 타입에 잠재적으로 참조되는 컴포넌트의 경우, 가능한 한 가장 구체적인 리턴 타입을 선언하는 것이 더 안전합니다.
+    - (적어도 bean을 참조하는 주입 지점에서 요구하는 정도로 구체적일 필요가 있습니다.)
+
+#### Bean Dependencies
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-dependencies )
 
 ## 함께 읽기
 
