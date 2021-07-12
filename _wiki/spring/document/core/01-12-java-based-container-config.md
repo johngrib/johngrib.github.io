@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 21:25:25 +0900
+updated : 2021-07-12 21:48:32 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -549,6 +549,78 @@ When you work directly in Java, you can do anything you like with your objects a
 #### Specifying Bean Scope
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-specifying-bean-scope )
+
+>
+Spring includes the `@Scope` annotation so that you can specify the scope of a bean.
+
+Spring은 `@Scope` 애노테이션을 포함하고 있어, bean의 스코프를 지정할 수 있습니다.
+
+##### Using the `@Scope` Annotation
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-available-scopes )
+
+>
+You can specify that your beans defined with the `@Bean` annotation should have a specific scope. You can use any of the standard scopes specified in the [Bean Scopes]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes ) section.
+
+`@Bean` 애노테이션으로 정의된 bean이 특정 스코프를 갖도록 지정할 수 있습니다.
+[Bean Scopes]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes ) 섹션에서 명시한 표준 스코프를 사용하면 됩니다.
+
+>
+The default scope is `singleton`, but you can override this with the `@Scope` annotation, as the following example shows:
+
+기본 스코프는 `singleton` 입니다. 그러나 다음 예제와 같이 `@Scope` 애노테이션을 사용해 이를 오버라이드할 수 있습니다.
+
+```java
+@Configuration
+public class MyConfiguration {
+
+    @Bean
+    @Scope("prototype")
+    public Encryptor encryptor() {
+        // ...
+    }
+}
+```
+
+##### `@Scope` and `scoped-proxy`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-scoped-proxy )
+
+>
+Spring offers a convenient way of working with scoped dependencies through [scoped proxies]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other-injection ). The easiest way to create such a proxy when using the XML configuration is the `<aop:scoped-proxy/>` element. Configuring your beans in Java with a `@Scope` annotation offers equivalent support with the `proxyMode` attribute. The default is `ScopedProxyMode.DEFAULT`, which typically indicates that no scoped proxy should be created unless a different default has been configured at the component-scan instruction level. You can specify `ScopedProxyMode.TARGET_CLASS`, `ScopedProxyMode.INTERFACES` or `ScopedProxyMode.NO`.
+
+Spring은 스코프가 지정된 프록시를 통해 scoped dependency로 작업하는 편리한 방법을 제공합니다.
+XML configuration을 사용한다면 이런 프록시를 만드는 가장 쉬운 방법은 `<aop:scoped-proxy/>` 엘리먼트를 쓰는 것입니다.
+`@Scope` 애노테이션을 써서 Java bean을 구성하면, XML 에서 `proxyMode` 속성을 사용한 것과 똑같이 지원됩니다.
+
+기본값은 `ScopedProxyMode.DEFAULT`이며, 이 기본값은 일반적으로 컴포넌트 스캔 레벨에서 다른 기본값이 configured되지 않은 경우에는 스코프 프록시를 생성하지 않아야 한다는 것을 보여줍니다.
+지정할 수 있는 값은 `ScopedProxyMode.TARGET_CLASS`, `ScopedProxyMode.INTERFACES` or `ScopedProxyMode.NO` 입니다.
+
+>
+If you port the scoped proxy example from the XML reference documentation (see [scoped proxies]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other-injection )) to our `@Bean` using Java, it resembles the following:
+
+XML 레퍼런스 문서([scoped proxies]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-scopes-other-injection )를 읽어보세요)에 나오는 스코프 프록시 에제를 `@Bean`을 사용한 Java 코드로 보여준다면 다음과 같을 것입니다.
+
+```java
+// an HTTP Session-scoped bean exposed as a proxy
+@Bean
+@SessionScope
+public UserPreferences userPreferences() {
+    return new UserPreferences();
+}
+
+@Bean
+public Service userService() {
+    UserService service = new SimpleUserService();
+    // a reference to the proxied userPreferences bean
+    service.setUserPreferences(userPreferences());
+    return service;
+}
+```
+
+#### Customizing Bean Naming
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-customizing-bean-naming )
 
 ## 함께 읽기
 
