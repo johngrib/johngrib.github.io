@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 15:55:06 +0900
+updated : 2021-07-12 16:03:55 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -176,6 +176,29 @@ The preceding example assumes that `MyServiceImpl`, `Dependency1`, and `Dependen
 #### Building the Container Programmatically by Using `register(Class<?>…)`
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-instantiating-container-register )
+
+>
+You can instantiate an `AnnotationConfigApplicationContext` by using a no-arg constructor and then configure it by using the `register()` method. This approach is particularly useful when programmatically building an `AnnotationConfigApplicationContext`. The following example shows how to do so:
+
+인자 없는 생성자를 사용하여 `AnnotationConfigApplicationContext`를 인스턴스화한 다음에 `register()` 메소드를 사용해 configure하는 것도 가능합니다.
+이런 접근 방법은 `AnnotationConfigApplicationContext`를 프로그래밍 방식으로 빌드할 때 유용합니다.
+다음 예제를 봅시다.
+
+```java
+public static void main(String[] args) {
+    AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+    ctx.register(AppConfig.class, OtherConfig.class);
+    ctx.register(AdditionalConfig.class);
+    ctx.refresh();
+    MyService myService = ctx.getBean(MyService.class);
+    myService.doStuff();
+}
+```
+
+#### Enabling Component Scanning with `scan(String…)`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-instantiating-container-scan )
+
 
 
 ## 함께 읽기
