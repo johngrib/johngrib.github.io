@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 16:42:05 +0900
+updated : 2021-07-12 16:48:00 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -316,9 +316,25 @@ Spring `ContextLoaderListener` servlet listener, Spring MVC `DispatcherServlet` 
 </web-app>
 ```
 
-### 1.12.3. Using the @Bean Annotation
+### 1.12.3. Using the `@Bean` Annotation
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-bean-annotation )
+
+>
+`@Bean` is a method-level annotation and a direct analog of the XML `<bean/>` element. The annotation supports some of the attributes offered by `<bean/>`, such as: * [init-method]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-initializingbean ) * [destroy-method]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-lifecycle-disposablebean ) * [autowiring]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-autowire ) * `name`.
+>
+You can use the `@Bean` annotation in a `@Configuration`-annotated or in a `@Component`-annotated class.
+
+`@Bean`은 메소드 레벨 애노테이션이며, XML의 `<bean/>` 엘리먼트의 직접적으로 대응됩니다.
+이 애노테이션은 `<bean/>`이 제공하는 다음과 같은 이름을 가진 속성을 지원합니다.
+
+- init-method, destroy-method, autowiring
+
+`@Bean` 애노테이션은 `@Configuration`이나 `@Component` 애노테이션이 붙은 클래스에서 사용할 수 있습니다.
+
+#### Declaring a Bean
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-declaring-a-bean )
 
 ## 함께 읽기
 
