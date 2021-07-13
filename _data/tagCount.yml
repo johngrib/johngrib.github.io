@@ -45,10 +45,7 @@
     size: 2
 -
     name: aws
-    size: 7
--
-    name: AWS
-    size: 1
+    size: 8
 -
     name: bash
     size: 58
@@ -395,11 +392,8 @@
     name: markdown
     size: 1
 -
-    name: Martin-Fowler
-    size: 1
--
     name: martin-fowler
-    size: 1
+    size: 2
 -
     name: math
     size: 47
@@ -443,11 +437,8 @@
     name: o-reilly
     size: 1
 -
-    name: OOP
-    size: 1
--
     name: oop
-    size: 7
+    size: 8
 -
     name: padding
     size: 1
@@ -651,10 +642,7 @@
     size: 1
 -
     name: von-neumann
-    size: 1
--
-    name: Von-Neumann
-    size: 1
+    size: 2
 -
     name: web
     size: 1

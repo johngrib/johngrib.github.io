@@ -3,7 +3,7 @@ layout  : wiki
 title   : Continuous Integration(지속적 통합)
 summary : 
 date    : 2018-07-06 10:46:27 +0900
-updated : 2021-04-17 18:35:17 +0900
+updated : 2021-07-13 21:28:56 +0900
 tag     : martin-fowler
 toc     : true
 public  : true

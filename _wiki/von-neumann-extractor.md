@@ -3,8 +3,8 @@ layout  : wiki
 title   : 폰 노이만식 난수 생성법(Basic von Neumann extractor)
 summary : 0과 1이 발생할 확률이 다른 경우 사용하자
 date    : 2018-02-04 15:28:29 +0900
-updated : 2018-04-08 15:12:05 +0900
-tag     : Von-Neumann random
+updated : 2021-07-13 21:28:10 +0900
+tag     : von-neumann random
 toc     : true
 public  : true
 parent  : [[algorithm]]
