@@ -168,15 +168,8 @@ function saveMetaDataFiles(pageMap) {
 }
 
 /**
- * 태그 하나가 갖는 자식 문서의 수를 ./_data/tagCount.yml 파일로 저장한다.
- * 만약 ACM 태그가 달린 문서가 1개 있고, agile 태그가 달린 문서가 5개 있다면 tagCount.yml 파일은 다음과 같은 내용을 갖게 된다.
--
-    name: ACM
-    size: 1
--
-    name: agile
-    size: 5
-    */
+ * 태그 하나가 갖는 자식 문서의 수를 파일로 저장한다.
+ */
 function saveTagCount(tagMap) {
     const list = [];
     for (const tag in tagMap) {
@@ -187,11 +180,11 @@ function saveTagCount(tagMap) {
     }
     const sortedList = list.sort((lexicalOrderingBy('name')));
 
-    fs.writeFile("./_data/tagCount.yml", YAML.stringify(sortedList), function(err) {
+    fs.writeFile("./data/tag_count.json", JSON.stringify(sortedList, null, 1), function(err) {
         if (err) {
             return console.log(err);
         }
-        console.log("tagCount saved.");
+        console.log("tag_count.json saved.");
     });
 }
 
