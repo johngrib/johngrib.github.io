@@ -34,7 +34,6 @@ dataList.forEach(function collectTagMap(data) {
 for (const tag in tagMap) {
     tagMap[tag].sort(lexicalOrderingBy('fileName'));
 }
-saveTagMap(tagMap);
 
 dataList.sort(lexicalOrderingBy('fileName'))
     .forEach((page) => {
@@ -68,15 +67,6 @@ saveMetaDataFiles(pageMap);
 function lexicalOrderingBy(property) {
     return (a, b) => a[property].toLowerCase()
         .localeCompare(b[property].toLowerCase())
-}
-
-function saveTagMap(tagMap) {
-    fs.writeFile("./_data/tagMap.yml", YAML.stringify(tagMap), err => {
-        if (err) {
-            return console.log(err);
-        }
-        console.log("tagMap saved.");
-    });
 }
 
 /**
