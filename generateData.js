@@ -118,7 +118,15 @@ function saveTagFiles(tagMap, pageMap) {
         }
     })
 
+    const completedTags = {};
+
     for (const tag in tagMap) {
+        if (completedTags[tag.toLowerCase()]) {
+            console.log("중복 태그가 있습니다.", tag);
+            break;
+        }
+        completedTags[tag.toLowerCase()] = true;
+
         const collection = [];
         const tagDatas = tagMap[tag];
 
