@@ -24,10 +24,8 @@ public: true
                 for (let i = 0; i < tags.length; i++) {
                     const tag = tags[i];
                     template += `
-                    <li>
-                        <a href="#${tag.name}" onclick="showTag('${tag.name}')">
-                            ${tag.name}<sup>${tag.size}</sup>
-                        </a>
+                    <li class="tag-item">
+                        <a href="#${tag.name}" onclick="showTag('${tag.name}')">${tag.name}<sup>${tag.size}</sup></a>
                     </li>`
                 }
                 document.getElementById('tag-list').innerHTML = template;
