@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-12 23:38:15 +0900
+updated : 2021-07-13 20:39:03 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -705,6 +705,43 @@ public class AppConfig {
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-injecting-dependencies )
 
+>
+When beans have dependencies on one another, expressing that dependency is as simple as having one bean method call another, as the following example shows:
+
+bean들이 서로 서로 dependency를 갖고 있다는 것은 다음과 같이 bean 메소드가 다른 bean 메소드를 호출하는 코드로 간단하게 표현할 수 있습니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public BeanOne beanOne() {
+        return new BeanOne(beanTwo());
+    }
+
+    @Bean
+    public BeanTwo beanTwo() {
+        return new BeanTwo();
+    }
+}
+```
+
+>
+In the preceding example, `beanOne` receives a reference to `beanTwo` through constructor injection.
+
+위의 예제에서 `beanOne`은 생성자 주입을 통해 `beanTwo`에 대한 참조를 넘겨받습니다.
+
+> (i)
+This method of declaring inter-bean dependencies works only when the `@Bean` method is declared within a `@Configuration` class. You cannot declare inter-bean dependencies by using plain `@Component` classes.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - bean과 bean 사이의 dependencies를 선언하는 이런 메소드는 `@Configuration` 클래스 내에 `@Bean` 메소드가 선언된 경우에만 동작합니다.
+    - 평범한 `@Component` 클래스로는 bean 과 bean 사이의 dependencies를 선언할 수 없습니다.
+
+#### Lookup Method Injection
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-method-injection )
 
 ## 함께 읽기
 
