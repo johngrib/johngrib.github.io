@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-14 00:32:08 +0900
+updated : 2021-07-14 01:06:46 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -795,7 +795,80 @@ public CommandManager commandManager() {
 
 #### Further Information About How Java-based Configuration Works Internally
 
-[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-further-information-java-config )
+**Java 기반의 configuration이 내부적으로 어떻게 동작하는지에 대한 추가 정보** [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-further-information-java-config )
+
+>
+Consider the following example, which shows a `@Bean` annotated method being called twice:
+
+다음 예제는 `@Bean` 애노테이션을 붙인 메소드가 두 번 호출되는 상황을 보여줍니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public ClientService clientService1() {
+        ClientServiceImpl clientService = new ClientServiceImpl();
+        clientService.setClientDao(clientDao());
+        return clientService;
+    }
+
+    @Bean
+    public ClientService clientService2() {
+        ClientServiceImpl clientService = new ClientServiceImpl();
+        clientService.setClientDao(clientDao());
+        return clientService;
+    }
+
+    @Bean
+    public ClientDao clientDao() {
+        return new ClientDaoImpl();
+    }
+}
+```
+
+>
+`clientDao()` has been called once in `clientService1()` and once in `clientService2()`. Since this method creates a new instance of `ClientDaoImpl` and returns it, you would normally expect to have two instances (one for each service). That definitely would be problematic: In Spring, instantiated beans have a `singleton` scope by default. This is where the magic comes in: All `@Configuration` classes are subclassed at startup-time with `CGLIB`. In the subclass, the child method checks the container first for any cached (scoped) beans before it calls the parent method and creates a new instance.
+
+`clientDao()`는 `clientService1()`에서 한 번 호출되고 `clientService2()` 에서도 한 번 호출됩니다.
+이 메소드는 `ClientDaoImpl`의 new instance를 생성해 리턴하므로, 일반적으로는 위의 코드에서 이 메소드는 `clientService1`과 `clientService2` 각각을 위해 두 개의 인스턴스를 만들었을 것으로 생각할 수 있습니다.
+
+이건 확실히 좀 이상해 보입니다. 왜냐하면 Spring에서 인스턴스화된 bean은 기본적으로 `singleton` 스코프를 갖게 되기 때문입니다.
+
+그러나 여기에서 마법이 일어납니다. 모든 `@Configuration` 클래스는 startup-time 에 CGLIB를 이용해 서브 클래스화 되는 것입니다.
+그리고 그 서브 클래스에서 자식 메소드는 부모 메소드를 호출하고, 새로운 인스턴스를 만들기 전에 먼저 캐시된(스코프가 지정된) bean이 컨테이너에 등록되었는지를 확인합니다.
+
+> (i)
+The behavior could be different according to the scope of your bean. We are talking about singletons here.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 이런 동작은 bean의 스코프에 따라 달라질 수 있습니다. 여기에서는 싱글톤에 대해서만 이야기하고 있습니다.
+
+> (i)
+As of Spring 3.2, it is no longer necessary to add CGLIB to your classpath because CGLIB classes have been repackaged under `org.springframework.cglib` and included directly within the spring-core JAR.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - Spring 3.2 부터는 CGLIB 클래스가 `org.springframework.cglib`의 하위에 다시 패키징되고 spring-core JAR에 직접 포함됩니다. 따라서 classpath에 CGLIB를 추가하지 않아도 됩니다.
+
+>
+There are a few restrictions due to the fact that CGLIB dynamically adds features at startup-time. In particular, configuration classes must not be final. However, as of 4.3, any constructors are allowed on configuration classes, including the use of `@Autowired` or a single non-default constructor declaration for default injection.
+>
+If you prefer to avoid any CGLIB-imposed limitations, consider declaring your `@Bean` methods on non-`@Configuration` classes (for example, on plain `@Component` classes instead). Cross-method calls between `@Bean` methods are not then intercepted, so you have to exclusively rely on dependency injection at the constructor or method level there.
+{:style="background-color: #e9f1f6;"}
+
+- CGLIB가 startup-time에 몇몇 기능들을 동적으로 추가한다는 사실 때문에 몇 가지 제약 사항이 있을 수 있습니다.
+    - configuration 클래스가 `final`이면 안 됩니다.
+- 하지만 다음은 허용됩니다.
+    - Spring 4.3 부터는 configuration 클래스에 모든 종류의 생성자가 허용되기 때문에, default injection을 위해 `@Autowired` 방식과 기본 생성자가 아닌 단일 생성자(single non-default constructor)를 사용할 수도 있습니다.
+- 만약 CGLIB 때문에 발생하는 제약을 피하고 싶다면 `@Configuration`이 아닌 클래스에서 `@Bean` 메소드를 선언하는 것도 고려해 보세요.
+    - 예를 들어 `@Component` 클래스라던가...
+    - 이렇게 하면 `@Bean` 메소드들 사이의 교차적인 호출을 인터셉트하지 않으므로, 생성자나 메소드 레벨에서의 dependency injection만 사용해야 합니다.
+
+### 1.12.5. Composing Java-based Configurations
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-composing-configuration-classes )
 
 ## 함께 읽기
 
