@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-13 20:39:03 +0900
+updated : 2021-07-14 00:32:08 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -742,6 +742,60 @@ This method of declaring inter-bean dependencies works only when the `@Bean` met
 #### Lookup Method Injection
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-method-injection )
+
+>
+As noted earlier, [lookup method injection]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-method-injection ) is an advanced feature that you should use rarely. It is useful in cases where a singleton-scoped bean has a dependency on a prototype-scoped bean. Using Java for this type of configuration provides a natural means for implementing this pattern. The following example shows how to use lookup method injection:
+
+앞에서 언급한 바와 같이 [lookup method injection]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-factory-method-injection )은 거의 사용되지 않는 고급 기능입니다.
+이 기능은 싱글톤 스코프의 bean이 프로토타입 스코프의 bean에 의존하는 경우에 유용합니다.
+Java로 작업을 하면 이런 종류의 configuration이 필요할 때 자연스럽게 작업할 수 있습니다.
+다음 예제는 lookup method injection을 사용하는 방법을 보여줍니다.
+
+```java
+public abstract class CommandManager {
+    public Object process(Object commandState) {
+        // grab a new instance of the appropriate Command interface
+        Command command = createCommand();
+        // set the state on the (hopefully brand new) Command instance
+        command.setState(commandState);
+        return command.execute();
+    }
+
+    // okay... but where is the implementation of this method?
+    protected abstract Command createCommand();
+}
+```
+
+>
+By using Java configuration, you can create a subclass of `CommandManager` where the abstract `createCommand()` method is overridden in such a way that it looks up a new (prototype) command object. The following example shows how to do so:
+
+Java configuration을 사용하면 추상 메소드인 `createCommand()`를 오버라이드한 메소드를 갖는 `CommandManager`의 서브클래스를 만들 수 있습니다.
+다음 예제를 봅시다.
+
+```java
+@Bean
+@Scope("prototype")
+public AsyncCommand asyncCommand() {
+    AsyncCommand command = new AsyncCommand();
+    // inject dependencies here as required
+    return command;
+}
+
+@Bean
+public CommandManager commandManager() {
+    // return new anonymous implementation of CommandManager with createCommand()
+    // overridden to return a new prototype Command object
+    return new CommandManager() {
+        protected Command createCommand() {
+            return asyncCommand();
+        }
+    }
+}
+```
+
+#### Further Information About How Java-based Configuration Works Internally
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-further-information-java-config )
 
 ## 함께 읽기
 
