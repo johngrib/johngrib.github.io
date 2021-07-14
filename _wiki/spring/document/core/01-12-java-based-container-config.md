@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-14 01:06:46 +0900
+updated : 2021-07-14 23:01:34 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -869,6 +869,16 @@ If you prefer to avoid any CGLIB-imposed limitations, consider declaring your `@
 ### 1.12.5. Composing Java-based Configurations
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-composing-configuration-classes )
+
+>
+Spring’s Java-based configuration feature lets you compose annotations, which can reduce the complexity of your configuration.
+
+Spring의 Java 기반 configuration 기능을 사용하면, 여러분만의 애노테이션을 만들 수 있으므로 configuration의 복잡도를 줄일 수 있습니다.
+
+#### Using the `@Import` Annotation
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-using-import )
+
 
 ## 함께 읽기
 
