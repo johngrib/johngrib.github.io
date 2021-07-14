@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-14 23:01:34 +0900
+updated : 2021-07-15 00:21:04 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -879,6 +879,297 @@ Spring의 Java 기반 configuration 기능을 사용하면, 여러분만의 애�
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-using-import )
 
+>
+Much as the `<import/>` element is used within Spring XML files to aid in modularizing configurations, the `@Import` annotation allows for loading `@Bean` definitions from another configuration class, as the following example shows:
+
+Spring XML 파일에서 configuration을 모듈화하는데 `<import/>` 엘리먼트를 사용하는 것처럼, `@Import` 애노테이션을 사용하면 다른 configuration 클래스에서 `@Bean` definition을 로딩할 수 있습니다.
+
+```java
+@Configuration
+public class ConfigA {
+
+    @Bean
+    public A a() {
+        return new A();
+    }
+}
+
+@Configuration
+@Import(ConfigA.class)
+public class ConfigB {
+
+    @Bean
+    public B b() {
+        return new B();
+    }
+}
+```
+
+>
+Now, rather than needing to specify both `ConfigA.class` and `ConfigB.class` when instantiating the context, only `ConfigB` needs to be supplied explicitly, as the following example shows:
+
+이제 컨텍스트를 인스턴스화할 때 `ConfigA.class`와 `ConfigB.class`를 모두 지정할 필요 없이, 다음 예제와 같이 `ConfigB`만 명시적으로 제공하면 됩니다.
+
+```java
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(ConfigB.class);
+
+    // now both beans A and B will be available...
+    A a = ctx.getBean(A.class);
+    B b = ctx.getBean(B.class);
+}
+```
+
+>
+This approach simplifies container instantiation, as only one class needs to be dealt with, rather than requiring you to remember a potentially large number of `@Configuration` classes during construction.
+
+이 방법은 애플리케이션을 생성하는 동안 많은 수의 `@Configuration` 클래스를 기억할 필요 없이 한 개의 클래스만 처리하면 되므로 컨테이너 인스턴스를 단순화합니다.
+
+>
+As of Spring Framework 4.2, `@Import` also supports references to regular component classes, analogous to the `AnnotationConfigApplicationContext.register` method. This is particularly useful if you want to avoid component scanning, by using a few configuration classes as entry points to explicitly define all your components.
+{:style="background-color: #e9f1f6;"}
+
+- Spring 프레임워크 4.2 부터 `@Import`는 `AnnotationConfigApplicationContext.register` 메소드처럼, 일반적인 컴포넌트 클래스에 대한 참조도 지원합니다.
+- 이 방법은 컴포넌트 스캐닝을 고의로 피할 일이 있을 떄 유용합니다.
+
+##### Injecting Dependencies on Imported @Bean Definitions
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-injecting-imported-beans )
+
+>
+The preceding example works but is simplistic. In most practical scenarios, beans have dependencies on one another across configuration classes. When using XML, this is not an issue, because no compiler is involved, and you can declare `ref="someBean"` and trust Spring to work it out during container initialization. When using `@Configuration` classes, the Java compiler places constraints on the configuration model, in that references to other beans must be valid Java syntax.
+
+앞의 예는 작동하긴 하지만 단순하다는 문제가 있습니다.
+실제로는 대부분의 경우에 bean은 여러 configuration 클래스와 의존 관계를 갖게 됩니다.
+XML을 사용할 때에는 컴파일러가 XML에 관여하지 않기도 하고, `ref="someBean"`을 선언하면 컨테이너가 초기화할 때 Spring이 알아서 잘 처리하기 때문에 그런 의존 관계는 문제가 되지 않습니다.
+하지만 `@Configuration` 클래스를 사용할 때에는 Java 컴파일러 때문에 다른 bean에 대한 참조가 valid한 Java 신택스여야 한다는 점에서 configuration 모델에 제약이 생길 수 밖에 없습니다.
+
+>
+Fortunately, solving this problem is simple. As [we already discussed]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-dependencies ), a `@Bean` method can have an arbitrary number of parameters that describe the bean dependencies. Consider the following more real-world scenario with several `@Configuration` classes, each depending on beans declared in the others:
+
+다행히, 이런 문제를 해결하는 방법은 간단합니다.
+앞에서 이야기한 바에 따르면 `@Bean` 메소드는 bean 의존관계를 표현하는 여러 개의 파라미터를 가질 수 있었죠.
+다음 예제를 봅시다. 각각 다른 클래스에서 선언된 bean에 의존하는 여러 개의 `@Configuration` 클래스가 있는 실제 가능한 시나리오입니다.
+
+```java
+@Configuration
+public class ServiceConfig {
+
+    @Bean
+    public TransferService transferService(AccountRepository accountRepository) {
+        return new TransferServiceImpl(accountRepository);
+    }
+}
+
+@Configuration
+public class RepositoryConfig {
+
+    @Bean
+    public AccountRepository accountRepository(DataSource dataSource) {
+        return new JdbcAccountRepository(dataSource);
+    }
+}
+
+@Configuration
+@Import({ServiceConfig.class, RepositoryConfig.class})
+public class SystemTestConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        // return new DataSource
+    }
+}
+
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(SystemTestConfig.class);
+    // everything wires up across configuration classes...
+    TransferService transferService = ctx.getBean(TransferService.class);
+    transferService.transfer(100.00, "A123", "C456");
+}
+```
+
+>
+There is another way to achieve the same result. Remember that `@Configuration` classes are ultimately only another bean in the container: This means that they can take advantage of `@Autowired` and `@Value` injection and other features the same as any other bean.
+
+이와 동일한 결과를 얻는 다른 방법도 있습니다.
+`@Configuration` 클래스도 결국엔 컨테이너에 들어가는 또다른 bean일 뿐이라는 것을 떠올려 봅시다.
+즉, `@Autowired`와 `@Value` 주입 및 다른 bean과 동일한 다양한 기능들을 사용할 수 있다는 것입니다.
+
+> (!)
+Make sure that the dependencies you inject that way are of the simplest kind only. `@Configuration` classes are processed quite early during the initialization of the context, and forcing a dependency to be injected this way may lead to unexpected early initialization. Whenever possible, resort to parameter-based injection, as in the preceding example.
+>
+Also, be particularly careful with `BeanPostProcessor` and `BeanFactoryPostProcessor` definitions through `@Bean`. Those should usually be declared as `static @Bean` methods, not triggering the instantiation of their containing configuration class. Otherwise, `@Autowired` and `@Value` may not work on the configuration class itself, since it is possible to create it as a bean instance earlier than [AutowiredAnnotationBeanPostProcessor]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.html ).
+{:style="background-color: #fff9e4;"}
+
+- (!)
+    - 위와 같은 방법으로 주입하는 dependencies가 가장 단순한 종류의 dependencies인지 확인하도록 하세요.
+        - `Configuration` 클래스는 컨텍스트 초기화 중에 상당히 일ㄹ찍 처리되기 때문에, 이런 방식으로 dependency를 강제로 주입하면 예상하지 못한 조기 초기화가 발생할 수 있습니다.
+        - 가능하면 앞의 예제처럼 파라미터 기반의 주입에 의존하도록 합시다.
+    - 또한 `@Bean`을 통한 `BeanPostProcessor`와 `BeanFactoryPostProcessor`의 definition에 특별히 주의하도록 합시다.
+        - 이것들은 일반적으로 포함하는 configuration 클래스의 인스턴스화를 트리거하지 않고 `static @Bean` 메소드로 선언되어야 합니다.
+        - 이렇게 하지 않으면 `AutowiredAnnotationBeanPostProcessor`보다 먼저 bean 인스턴스로 생성될 수 있기 때문에 `@Autowired`와 `@Value`가 configuration 클래스 자체에서 작동하지 않을 수도 있습니다.
+
+>
+The following example shows how one bean can be autowired to another bean:
+
+다음 예제는 하나의 bean이 다른 bean에 어떻게 autowired 될 수 있는지 보여줍니다.
+
+```java
+@Configuration
+public class ServiceConfig {
+
+    @Autowired
+    private AccountRepository accountRepository;
+
+    @Bean
+    public TransferService transferService() {
+        return new TransferServiceImpl(accountRepository);
+    }
+}
+
+@Configuration
+public class RepositoryConfig {
+
+    private final DataSource dataSource;
+
+    public RepositoryConfig(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    @Bean
+    public AccountRepository accountRepository() {
+        return new JdbcAccountRepository(dataSource);
+    }
+}
+
+@Configuration
+@Import({ServiceConfig.class, RepositoryConfig.class})
+public class SystemTestConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        // return new DataSource
+    }
+}
+
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(SystemTestConfig.class);
+    // everything wires up across configuration classes...
+    TransferService transferService = ctx.getBean(TransferService.class);
+    transferService.transfer(100.00, "A123", "C456");
+}
+```
+
+>
+Constructor injection in `@Configuration` classes is only supported as of Spring Framework 4.3. Note also that there is no need to specify `@Autowired` if the target bean defines only one constructor.
+{:style="background-color: #e9f1f6;"}
+
+`@Configuration` 클래스의 생성자 주입은 Spring 프레임워크 4.3 부터 지원됩니다.
+타깃 bean에 딱 한 개의 생성자만 정의된 경우라면 `@Autowired` 애노테이션을 붙일 필요가 없다는 점도 참고해 둡시다.
+
+###### Fully-qualifying imported beans for ease of navigation
+
+>
+In the preceding scenario, using `@Autowired` works well and provides the desired modularity, but determining exactly where the autowired bean definitions are declared is still somewhat ambiguous. For example, as a developer looking at `ServiceConfig`, how do you know exactly where the `@Autowired AccountRepository` bean is declared? It is not explicit in the code, and this may be just fine. Remember that the [Spring Tools for Eclipse]( https://spring.io/tools ) provides tooling that can render graphs showing how everything is wired, which may be all you need. Also, your Java IDE can easily find all declarations and uses of the `AccountRepository` type and quickly show you the location of `@Bean` methods that return that type.
+
+위의 시나리오를 통해 `@Autowired`가 잘 작동하고 필요한 모듈화를 잘 제공한다는 것은 알 수 있었지만,
+autowired bean definition이 선언된 정확한 위치를 결정하는 것은 아직 모호하게 느껴집니다.
+예를 들어, `ServiceConfig`를 읽고 있는 개발자가 있을 때, 이 개발자가 어떻게 `@Autowired AccountRepository` bean이 선언된 위치를 정확히 알 수 있을까요?
+이것은 코드에 명시된 정보는 아니지만, 큰 문제는 아닙니다.
+STS는 모든 것들이 서로 어떻게 연결되어 있는지 보여주는 그래프 도구를 제공하며, 여러분에게는 이것만으로도 충분할 수 있습니다.
+또한, Java IDE는 `AccountRepository` 타입의 모든 선언과 사용처를 쉽게 찾아주고, 해당 타입을 리턴하는 `@Bean` 메소드의 위치도 빠르게 찾아 보여줄 수 있을 겁니다.
+
+>
+In cases where this ambiguity is not acceptable and you wish to have direct navigation from within your IDE from one `@Configuration` class to another, consider autowiring the configuration classes themselves. The following example shows how to do so:
+
+이러한 애매모호함이 싫고, IDE 내에서 `@Configuration` 클래스들 사이를 직접 탐색하려 한다면, configuration 클래스들 자체를 autowiring하는 것을 고려해볼 수 있습니다.
+다음 예제는 그 방법을 보여줍니다.
+
+```java
+@Configuration
+public class ServiceConfig {
+
+    @Autowired
+    private RepositoryConfig repositoryConfig;
+
+    @Bean
+    public TransferService transferService() {
+        // navigate 'through' the config class to the @Bean method!
+        return new TransferServiceImpl(repositoryConfig.accountRepository());
+    }
+}
+```
+
+>
+In the preceding situation, where `AccountRepository` is defined is completely explicit. However, `ServiceConfig` is now tightly coupled to `RepositoryConfig`. That is the tradeoff. This tight coupling can be somewhat mitigated by using interface-based or abstract class-based `@Configuration` classes. Consider the following example:
+
+위와 같은 상황에서 `AccountRepository`가 정의된 위치는 완전히 명시적입니다.
+하지만 이제 `ServiceConfig`는 `RepositoryConfig`와 강하게 커플링이 생겨버렸습니다. 이것이 바로 이 방법의 트레이드 오프입니다.
+이런 강한 결합은 인터페이스 기반 또는 추상 클래스 기반의 `@Configuration` 클래스를 사용해서 어느 정도 완화할 수 있기는 합니다.
+다음 예를 봅시다.
+
+```java
+@Configuration
+public class ServiceConfig {
+
+    @Autowired
+    private RepositoryConfig repositoryConfig;
+
+    @Bean
+    public TransferService transferService() {
+        return new TransferServiceImpl(repositoryConfig.accountRepository());
+    }
+}
+
+@Configuration
+public interface RepositoryConfig {
+
+    @Bean
+    AccountRepository accountRepository();
+}
+
+@Configuration
+public class DefaultRepositoryConfig implements RepositoryConfig {
+
+    @Bean
+    public AccountRepository accountRepository() {
+        return new JdbcAccountRepository(...);
+    }
+}
+
+@Configuration
+@Import({ServiceConfig.class, DefaultRepositoryConfig.class})  // import the concrete config!
+public class SystemTestConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        // return DataSource
+    }
+
+}
+
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(SystemTestConfig.class);
+    TransferService transferService = ctx.getBean(TransferService.class);
+    transferService.transfer(100.00, "A123", "C456");
+}
+```
+
+>
+Now `ServiceConfig` is loosely coupled with respect to the concrete `DefaultRepositoryConfig`, and built-in IDE tooling is still useful: You can easily get a type hierarchy of `RepositoryConfig` implementations. In this way, navigating `@Configuration` classes and their dependencies becomes no different than the usual process of navigating interface-based code.
+
+이제 `ServiceConfig`는 구체적인 `DefaultRepositoryConfig`와는 느슨하게 결합되게 되었습니다. 게다가 편리한 IDE 빌트인 도구도 사용할 수 있으니까 `RepositoryConfig` 구현 계층 구조를 쉽게 확인할 수 있습니다.
+이런 방식으로 `@Configuration` 클래스와 그와 관련된 dependencies를 탐색하는 것은 인터페이스 기반의 코드를 탐색하는 일반적인 과정과 그리 다르지 않습니다.
+
+>
+If you want to influence the startup creation order of certain beans, consider declaring some of them as `@Lazy` (for creation on first access instead of on startup) or as `@DependsOn` certain other beans (making sure that specific other beans are created before the current bean, beyond what the latter’s direct dependencies imply).
+{:style="background-color: #e9f1f6;"}
+
+- 특정한 bean의 시작 생성 순서를 제어하고 싶다면, 그런 bean을 `@Lazy`로 선언하거나(이렇게 하면 시작할 때 생성되지 않고, 처음으로 객체에 엑세스할 때 생성이 됩니다), 다른 특정 bean을 `@DependsOn`로 지정하는 방법이 있습니다(이렇게 하면 `@DependsOn`으로 설정한 다른 bean이 먼저 생성됩니다)
+
+#### Conditionally Include @Configuration Classes or @Bean Methods
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-conditional )
 
 ## 함께 읽기
 
