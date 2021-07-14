@@ -40,15 +40,50 @@
     <meta name="msapplication-TileImage" content="/resource/icon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-{% if site.google_analytics.ua %}
+{% if site.google_analytics.ua and site.google_analytics.encrypted_ua %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics.ua }}"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        // https://gist.github.com/chrisveness/43bcda93af9f646d083fad678071b90a
+        async function aesGcmDecrypt(ciphertext, password) {
+            const pwUtf8 = new TextEncoder().encode(password);
+            const pwHash = await crypto.subtle.digest('SHA-256', pwUtf8);
+            const iv = ciphertext.slice(0,24).match(/.{2}/g).map(byte => parseInt(byte, 16));
+            const alg = { name: 'AES-GCM', iv: new Uint8Array(iv) };
+            const key = await crypto.subtle.importKey('raw', pwHash, alg, false, ['decrypt']);
+            const ctStr = atob(ciphertext.slice(24));
+            const ctUint8 = new Uint8Array(ctStr.match(/[\s\S]/g).map(ch => ch.charCodeAt(0)));
+            const plainBuffer = await crypto.subtle.decrypt(alg, key, ctUint8);
+            const plaintext = new TextDecoder().decode(plainBuffer);
+            return plaintext;
+        }
+        async function aesGcmEncrypt(plaintext, password) {
+            const pwUtf8 = new TextEncoder().encode(password);
+            const pwHash = await crypto.subtle.digest('SHA-256', pwUtf8);
+            const iv = crypto.getRandomValues(new Uint8Array(12));
+            const alg = { name: 'AES-GCM', iv: iv };
+            const key = await crypto.subtle.importKey('raw', pwHash, alg, false, ['encrypt']);
+            const ptUint8 = new TextEncoder().encode(plaintext);
+            const ctBuffer = await crypto.subtle.encrypt(alg, key, ptUint8);
+            const ctArray = Array.from(new Uint8Array(ctBuffer));
+            const ctStr = ctArray.map(byte => String.fromCharCode(byte)).join('');
+            const ctBase64 = btoa(ctStr);
+            const ivHex = Array.from(iv).map(b => ('00' + b.toString(16)).slice(-2)).join('');
+            return ivHex+ctBase64;
+        }
 
-        gtag('config', '{{ site.google_analytics.ua }}');
+        aesGcmDecrypt('{{ site.google_analytics.encrypted_ua }}', '{{ site.url }}')
+            .then(function(ua) {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', ua);
+                console.log('The gtag config has been finished.')
+            })
+            .catch(function(error) {
+                console.log(error);
+                console.log('The gtag id is invalid.')
+            });
     </script>
 {% endif %}
 {% if site.google_adsense.client and page.adsense == true %}

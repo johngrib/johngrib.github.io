@@ -48,6 +48,7 @@ utterances:
 
 google_analytics:
   ua: G-RK3M0SSQ6G
+  encrypted_ua: a340944fd5217854388641995TPB9dYcVujRQ/O5sZRMxpoE+elmvBntTYgEIg==
 
 google_adsense:
   client: ca-pub-3675948545737694
