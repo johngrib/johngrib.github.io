@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-07-14 20:19:30 +0900
+updated : 2021-07-15 22:11:58 +0900
 regenerate: true
 ---
 
@@ -566,6 +566,7 @@ regenerate: true
     * [[/spring/document/core/01-10-classpath-scanning-and-managed-components]]
     * [[/spring/document/core/01-11-using-jsr-330-standard-annotations]]
     * [[/spring/document/core/01-12-java-based-container-config]]
+    * [[/spring/document/core/01-13-env-abstraction]]
 
 ## [[database]]
 

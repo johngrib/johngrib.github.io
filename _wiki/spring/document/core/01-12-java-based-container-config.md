@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-15 22:09:27 +0900
+updated : 2021-07-15 22:13:47 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 - 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
 - 이전 문서 - [[/spring/document/core/01-11-using-jsr-330-standard-annotations]]{1.11. Using JSR 330 Standard Annotations}
-- 다음 문서 - {1.13. Environment Abstraction}
+- 다음 문서 - [[/spring/document/core/01-13-env-abstraction]]{1.13. Environment Abstraction}
 
 ## 1.12. Java-based Container Configuration
 
@@ -1394,5 +1394,5 @@ public static void main(String[] args) {
 
 - 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
 - 이전 문서 - [[/spring/document/core/01-11-using-jsr-330-standard-annotations]]{1.11. Using JSR 330 Standard Annotations}
-- 다음 문서 - {1.13. Environment Abstraction}
+- 다음 문서 - [[/spring/document/core/01-13-env-abstraction]]{1.13. Environment Abstraction}
 
