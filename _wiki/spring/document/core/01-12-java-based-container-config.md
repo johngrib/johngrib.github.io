@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-15 20:51:57 +0900
+updated : 2021-07-15 22:09:27 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -1216,6 +1216,178 @@ See the [@Conditional]( https://docs.spring.io/spring-framework/docs/5.3.7/javad
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-combining )
 
+Spring’s @Configuration class support does not aim to be a 100% complete replacement for Spring XML. Some facilities, such as Spring XML namespaces, remain an ideal way to configure the container. In cases where XML is convenient or necessary, you have a choice: either instantiate the container in an “XML-centric” way by using, for example, ClassPathXmlApplicationContext, or instantiate it in a “Java-centric” way by using AnnotationConfigApplicationContext and the @ImportResource annotation to import XML as needed.
+
+##### XML-centric Use of `@Configuration` Classes
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-combining-xml-centric )
+
+>
+It may be preferable to bootstrap the Spring container from XML and include `@Configuration` classes in an ad-hoc fashion. For example, in a large existing codebase that uses Spring XML, it is easier to create `@Configuration` classes on an as-needed basis and include them from the existing XML files. Later in this section, we cover the options for using `@Configuration` classes in this kind of “XML-centric” situation.
+
+XML에서 Spring 컨테이너를 부트스트랩하고, `@Configuration` 클래스를 포함시키는 일이 바람직할 수도 있습니다.
+예를 들어 Spring XML을 사용하는 대규모의 코드베이스에서는 `@Configuration` 클래스를 먼저 만들고, 필요에 따라 이미 존재하는 XML 파일을 include하는 것이 더 쉽습니다.
+이 섹션의 뒷부분에서는 이런 종류의 "XML-위주"의 상황에서 `@Configuration` 클래스를 사용하는 옵션을 다룹니다.
+
+###### Declaring `@Configuration` classes as plain Spring `<bean/>` elements
+
+>
+Remember that `@Configuration` classes are ultimately bean definitions in the container. In this series examples, we create a `@Configuration` class named `AppConfig` and include it within `system-test-config.xml` as a `<bean/>` definition. Because `<context:annotation-config/>` is switched on, the container recognizes the `@Configuration` annotation and processes the `@Bean` methods declared in `AppConfig` properly.
+>
+The following example shows an ordinary configuration class in Java:
+
+`@Configuration` 클래스는 결국엔 컨테이너에 들어갈 bean definition들이라는 것을 잊지 마세요.
+다음의 예제들은 `AppConfig`라는 `@Configuration` 클래스를 만들고, `system-test-config.xml` 파일에 `<bean/>` definition으로 include 합니다.
+왜냐하면 `<context:annotation-config/>`가 on 으로 켜져 있기 때문에, 컨테이너는 `@Configuration` 애노테이션을 인식하고, `AppConfig`에 선언된 `@Bean` 메소드를 제대로 처리합니다.
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Autowired
+    private DataSource dataSource;
+
+    @Bean
+    public AccountRepository accountRepository() {
+        return new JdbcAccountRepository(dataSource);
+    }
+
+    @Bean
+    public TransferService transferService() {
+        return new TransferService(accountRepository());
+    }
+}
+```
+
+>
+The following example shows part of a sample `system-test-config.xml` file:
+
+```xml
+<beans>
+    <!-- enable processing of annotations such as @Autowired and @Configuration -->
+    <context:annotation-config/>
+    <context:property-placeholder location="classpath:/com/acme/jdbc.properties"/>
+
+    <bean class="com.acme.AppConfig"/>
+
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+</beans>
+```
+
+>
+The following example shows a possible `jdbc.properties` file:
+
+```
+jdbc.url=jdbc:hsqldb:hsql://localhost/xdb
+jdbc.username=sa
+jdbc.password=
+```
+
+```java
+public static void main(String[] args) {
+    ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:/com/acme/system-test-config.xml");
+    TransferService transferService = ctx.getBean(TransferService.class);
+    // ...
+}
+```
+
+> (i)
+In `system-test-config.xml` file, the `AppConfig` `<bean/>` does not declare an `id` element. While it would be acceptable to do so, it is unnecessary, given that no other bean ever refers to it, and it is unlikely to be explicitly fetched from the container by name. Similarly, the `DataSource` bean is only ever autowired by type, so an explicit bean `id` is not strictly required.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - `system-test-config.xml` 파일에서, `AppConfig` `<bean/>`은 `id` 엘리먼트를 선언하지 않았습니다.
+    - `id`를 선언할 수도 있었지만, 다른 bean이 그 `id`를 참조하지도 않고, 컨테이너에서 이름으로 가져갈 가능성도 없기 때문에 선언이 필요하지 않습니다.
+    - 그와 마찬가지로 `DataSource` bean도 명시적인 bean `id`가 필요하지 않은데, 타입에 의해 autowired 되기 때문입니다.
+
+
+###### Using `<context:component-scan/>` to pick up `@Configuration` classes
+
+>
+Because `@Configuration` is meta-annotated with `@Component`, `@Configuration`-annotated classes are automatically candidates for component scanning. Using the same scenario as describe in the previous example, we can redefine `system-test-config.xml` to take advantage of component-scanning. Note that, in this case, we need not explicitly declare `<context:annotation-config/>`, because `<context:component-scan/>` enables the same functionality.
+>
+The following example shows the modified `system-test-config.xml` file:
+
+`@Configuration`에는 메타 애노테이션으로 `@Component`가 붙어있기 때문에, `@configuration` 애노테이션이 붙은 클래스들은 자동으로 컴포넌트 스캔의 후보가 됩니다.
+앞의 예제에서 설명한 것과 똑같은 시나리오로 컴포넌트 스캔이 작동하도록 `system-test-config.xml`을 재정의할 수 있습니다.
+
+이런 경우에는 `<context:component-scan/>`이 같은 기능을 enable하므로 `<context:annotation-config/>`를 명시적으로 선언하지 않아도 됩니다.
+다음 예제는 수정된 `system-test-config.xml` 파일을 보여줍니다.
+
+```xml
+<beans>
+    <!-- picks up and registers AppConfig as a bean definition -->
+    <context:component-scan base-package="com.acme"/>
+    <context:property-placeholder location="classpath:/com/acme/jdbc.properties"/>
+
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+</beans>
+```
+
+##### `@Configuration` Class-centric Use of XML with `@ImportResource`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-combining-java-centric )
+
+>
+In applications where `@Configuration` classes are the primary mechanism for configuring the container, it is still likely necessary to use at least some XML. In these scenarios, you can use `@ImportResource` and define only as much XML as you need. Doing so achieves a “Java-centric” approach to configuring the container and keeps XML to a bare minimum. The following example (which includes a configuration class, an XML file that defines a bean, a properties file, and the `main` class) shows how to use the `@ImportResource` annotation to achieve “Java-centric” configuration that uses XML as needed:
+
+`@Configuration` 클래스가 컨테이너 confire를 위한 primary 메커니즘인 애플리케이션에서는, 어느 정도의 최소한의 XML을 사용할 수 밖에 없습니다.
+이런 시나리오에서는 `@ImportResource`를 사용해서 필요한 만큼의 XML만을 정의하는 방법을 쓸 수 있습니다.
+
+이렇게 하면 "Java-중심"의 방법으로 컨테이너를 configure할 수 있으며, XML은 최소한으로 관리할 수 있습니다.
+
+다음 예제(configuration 클래스와 bean을 정의하는 XML, properties 파일, `main` 클래스가 포함된 예제)는 `@ImportResource` 애노테이션을 사용해 "Java-중심" configuration을 달성하는 방법을 보여줍니다.
+
+```java
+@Configuration
+@ImportResource("classpath:/com/acme/properties-config.xml")
+public class AppConfig {
+
+    @Value("${jdbc.url}")
+    private String url;
+
+    @Value("${jdbc.username}")
+    private String username;
+
+    @Value("${jdbc.password}")
+    private String password;
+
+    @Bean
+    public DataSource dataSource() {
+        return new DriverManagerDataSource(url, username, password);
+    }
+}
+```
+
+```xml
+properties-config.xml
+<beans>
+    <context:property-placeholder location="classpath:/com/acme/jdbc.properties"/>
+</beans>
+```
+
+```
+jdbc.properties
+jdbc.url=jdbc:hsqldb:hsql://localhost/xdb
+jdbc.username=sa
+jdbc.password=
+```
+
+```java
+public static void main(String[] args) {
+    ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+    TransferService transferService = ctx.getBean(TransferService.class);
+    // ...
+}
+```
 
 
 ## 함께 읽기
