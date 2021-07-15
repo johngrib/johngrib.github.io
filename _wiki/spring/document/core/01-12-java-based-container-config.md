@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-15 00:21:04 +0900
+updated : 2021-07-15 20:51:57 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -1167,9 +1167,56 @@ If you want to influence the startup creation order of certain beans, consider d
 
 - 특정한 bean의 시작 생성 순서를 제어하고 싶다면, 그런 bean을 `@Lazy`로 선언하거나(이렇게 하면 시작할 때 생성되지 않고, 처음으로 객체에 엑세스할 때 생성이 됩니다), 다른 특정 bean을 `@DependsOn`로 지정하는 방법이 있습니다(이렇게 하면 `@DependsOn`으로 설정한 다른 bean이 먼저 생성됩니다)
 
-#### Conditionally Include @Configuration Classes or @Bean Methods
+#### Conditionally Include `@Configuration` Classes or `@Bean` Methods
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-conditional )
+
+>
+It is often useful to conditionally enable or disable a complete `@Configuration` class or even individual `@Bean` methods, based on some arbitrary system state. One common example of this is to use the `@Profile` annotation to activate beans only when a specific profile has been enabled in the Spring `Environment` (see [Bean Definition Profiles]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles ) for details).
+
+시스템 상태에 따라 전체적인 `@Configuration` 클래스나 개별 `@Bean` 메소드를 조건부로 enable 하거나 disable하는 유용한 방법도 있습니다.
+
+예를 들어 `@Profile` 애노테이션을 써서 특정 프로파일이 Spring 환경에서 활성화된 경우에만 bean을 enable할 수 있습니다. (자세한 내용은 [Bean Definition Profiles]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles )를 참고하세요)
+
+>
+The `@Profile` annotation is actually implemented by using a much more flexible annotation called [@Conditional]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/context/annotation/Conditional.html ). The `@Conditional` annotation indicates specific `org.springframework.context.annotation.Condition` implementations that should be consulted before a `@Bean` is registered.
+
+`@Profile` 애노테이션은 실제로는 `@Conditional`이라는 훨씬 더 유연한 애노테이션을 사용하여 구현됩니다.
+`@Conditional` 애노테이션은 `@Bean`이 등록되기 전에 참조해야 하는 `org.springframework.context.annotation.Condition`의 구현을 나타냅니다.
+
+>
+Implementations of the `Condition` interface provide a `matches(…)` method that returns `true` or `false`. For example, the following listing shows the actual `Condition` implementation used for `@Profile`:
+
+`Condition` 인터페이스의 구현은 `match(...)` 메소드를 제공하며, 이 메소드는 `true`, 나 `false`를 리턴합니다.
+예를 들어 다음 목록은 `@Profile`에 사용된 실제 `Condition`의 구현을 보여줍니다.
+
+```java
+@Override
+public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
+    // Read the @Profile annotation attributes
+    MultiValueMap<String, Object> attrs = metadata.getAllAnnotationAttributes(Profile.class.getName());
+    if (attrs != null) {
+        for (Object value : attrs.get("value")) {
+            if (context.getEnvironment().acceptsProfiles(((String[]) value))) {
+                return true;
+            }
+        }
+        return false;
+    }
+    return true;
+}
+```
+
+>
+See the [@Conditional]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/context/annotation/Conditional.html ) javadoc for more detail.
+
+더 자세한 내용은 `@Conditional`의 javadoc을 참고하세요.
+
+#### Combining Java and XML Configuration
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-java-combining )
+
+
 
 ## 함께 읽기
 
