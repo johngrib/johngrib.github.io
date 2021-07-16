@@ -57,7 +57,7 @@
  },
  {
   "name": "awk",
-  "size": 2
+  "size": 3
  },
  {
   "name": "aws",
@@ -73,7 +73,7 @@
  },
  {
   "name": "bell-labs",
-  "size": 1
+  "size": 3
  },
  {
   "name": "Bill-Atkinson",
@@ -105,7 +105,7 @@
  },
  {
   "name": "brian-kernighan",
-  "size": 2
+  "size": 3
  },
  {
   "name": "bsd",
@@ -121,7 +121,7 @@
  },
  {
   "name": "c",
-  "size": 4
+  "size": 5
  },
  {
   "name": "calculator",
@@ -313,7 +313,7 @@
  },
  {
   "name": "git",
-  "size": 6
+  "size": 7
  },
  {
   "name": "github",
@@ -836,6 +836,10 @@
   "size": 1
  },
  {
+  "name": "unix",
+  "size": 1
+ },
+ {
   "name": "vagrant",
   "size": 1
  },
@@ -956,6 +960,10 @@
   "size": 1
  },
  {
+  "name": "알렉산더-그레이엄-벨",
+  "size": 1
+ },
+ {
   "name": "언어",
   "size": 1
  },
@@ -965,7 +973,7 @@
  },
  {
   "name": "인물",
-  "size": 3
+  "size": 4
  },
  {
   "name": "장애",

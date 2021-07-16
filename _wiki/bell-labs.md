@@ -6,7 +6,7 @@ date    : 2020-07-25 11:03:27 +0900
 updated : 2020-08-02 16:33:07 +0900
 tag     : unix 알렉산더-그레이엄-벨 bell-labs
 toc     : true
-public  : false
+public  : true
 parent  : [[index]]
 latex   : false
 ---

@@ -6,7 +6,7 @@ date    : 2020-04-19 22:27:20 +0900
 updated : 2020-04-20 23:47:15 +0900
 tag     : 
 toc     : true
-public  : false
+public  : true
 parent  : [[git]]
 latex   : false
 ---

@@ -6,7 +6,7 @@ date    : 2020-07-29 22:19:22 +0900
 updated : 2021-04-18 14:06:47 +0900
 tag     : 인물 awk c bell-labs brian-kernighan
 toc     : true
-public  : false
+public  : true
 parent  : [[people]]
 latex   : false
 ---
