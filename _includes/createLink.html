@@ -75,20 +75,20 @@
             const target = item.getAttribute('data-name');
 
             fetch(`/data/metadata/${target}.json`)
-            .then(response => response.json())
-            .then(function(data) {
-                    if (data == null) {
+                .then(response => response.json())
+                .then(function(data) {
+                        if (data == null) {
+                            return;
+                        }
+
+                        item.innerText = data.title;
+
                         return;
-                    }
-
-                    item.innerText = data.title;
-
-                    return;
-                })
-            .catch(function(error) {
-                console.log(`'${target}' is a closed document.`);
-                item.remove();
-            });
+                    })
+                .catch(function(error) {
+                    console.log(`'${target}' is a closed document.`);
+                    item.remove();
+                });
         }
     })();
 </script>
