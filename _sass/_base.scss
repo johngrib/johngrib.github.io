@@ -146,3 +146,16 @@ h6 {
 .post-content h6 {
     &:before { content:"⠟"; }
 }
+
+.post-content .external-link {
+    &:after {
+        content: url("/resource/icon/external-link.svg");
+    }
+}
+
+.broken-link {
+    &:before {
+        content: url("/resource/icon/external-link.svg");
+        color: red;
+    }
+}
