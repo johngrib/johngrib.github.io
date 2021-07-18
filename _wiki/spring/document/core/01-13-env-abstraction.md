@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.13. Environment Abstraction
 summary : 
 date    : 2021-07-15 22:11:59 +0900
-updated : 2021-07-16 20:45:30 +0900
+updated : 2021-07-18 22:35:15 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -44,6 +44,67 @@ properties와 관련된 `Environment` 객체의 역할은 properties 소스를 c
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles )
 
+>
+Bean definition profiles provide a mechanism in the core container that allows for registration of different beans in different environments. The word, “environment,” can mean different things to different users, and this feature can help with many use cases, including:
+>
+- Working against an in-memory datasource in development versus looking up that same datasource from JNDI when in QA or production.
+- Registering monitoring infrastructure only when deploying an application into a performance environment.
+- Registering customized implementations of beans for customer A versus customer B deployments.
+
+bean definition 프로파일은 core 컨테이너 내에서 다른 환경의 각기 다른 bean들을 등록할 수 있게 해주는 메커니즘을 제공합니다.
+"환경(environment)"이라는 단어는 사용자에 따라 다양한 의미를 가질 수 있지만, 이 기능은 다음 몇 가지 경우를 포함한 다양한 상황에 도움이 될 수 있습니다.
+
+- 개발중일 때 in-memory datasource로 작업하는 것과, QA 또는 production일 때 JNDI 에서 같은 datasource를 찾는 것.
+- performance environment로 애플리케이션을 배포할 때에만 모니터링 인프라를 등록하기.
+- 고객 A, 고객 B에 대해 각기 다른 커스텀 구현 bean을 등록하기
+
+>
+Consider the first use case in a practical application that requires a `DataSource`. In a test environment, the configuration might resemble the following:
+
+`DataSource`가 필요한 실제 애플리케이션 예제를 봅시다. 테스트 환경에서는 다음과 같이 configuration할 수 있습니다.
+
+```java
+@Bean
+public DataSource dataSource() {
+    return new EmbeddedDatabaseBuilder()
+        .setType(EmbeddedDatabaseType.HSQL)
+        .addScript("my-schema.sql")
+        .addScript("my-test-data.sql")
+        .build();
+}
+```
+
+>
+Now consider how this application can be deployed into a QA or production environment, assuming that the datasource for the application is registered with the production application server’s JNDI directory. Our `dataSource` bean now looks like the following listing:
+
+이제 datasource가 프로덕션 애플리케이션 서버의 JNDI 디렉토리에 등록되어 있다고 치고, 이 애플리케이션을 QA나 프로덕션 환경에 배포한다고 해봅시다.
+
+여기에 필요한 `datasource` bean은 다음과 같습니다.
+
+```java
+@Bean(destroyMethod="")
+public DataSource dataSource() throws Exception {
+    Context ctx = new InitialContext();
+    return (DataSource) ctx.lookup("java:comp/env/jdbc/datasource");
+}
+```
+
+>
+The problem is how to switch between using these two variations based on the current environment. Over time, Spring users have devised a number of ways to get this done, usually relying on a combination of system environment variables and XML `<import/>` statements containing `${placeholder}` tokens that resolve to the correct configuration file path depending on the value of an environment variable. Bean definition profiles is a core container feature that provides a solution to this problem.
+>
+If we generalize the use case shown in the preceding example of environment-specific bean definitions, we end up with the need to register certain bean definitions in certain contexts but not in others. You could say that you want to register a certain profile of bean definitions in situation A and a different profile in situation B. We start by updating our configuration to reflect this need.
+
+문제는 현재 환경에 따라 이 두 가지를 어떻게 전환해가며 쓸 수 있는가입니다.
+시간이 흐르면서 Spring 사용자들은 시스템 환경 변수 값과 XML `<import/>`에서 `${placeholder}`를 쓰는 등의 방법을 조합해서 이 문제를 해결하는 여러 가지 방법을 만들어냈습니다.
+bean definition profile은 이 문제에 대한 해결책을 제공하는 컨테이너의 핵심 기능입니다.
+
+위 예제들은 결국 특정 컨텍스트에 따라 특정 bean definition을 등록하고 말고를 정할 수 있다는 것입니다.
+상황 A에서 bean definition의 특정 프로필을 등록하고, 상황 B에서 다른 프로필을 동록하고 싶은 것이 여러분의 요구였을 텐데요, 우리는 이러한 요구사항을 반영하도록 configuration을 업데이트하는 것으로 시작합니다.
+
+
+#### Using @Profile
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles-java )
 
 ## 함께 읽기
 
