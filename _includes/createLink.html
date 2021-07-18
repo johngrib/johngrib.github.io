@@ -109,4 +109,18 @@
 
         }
     })();
+
+    ;(function footnoteToolTip() {
+        // 주석에 툴팁을 붙인다
+        const noteList = document.querySelectorAll('.footnote');
+
+        for (let i = 0; i < noteList.length; i++) {
+            const note = noteList[i];
+            const id = note.getAttribute('href')
+                .replace(/^#/, "");
+            const text = document.getElementById(id).innerText
+                .replace(/ ↩.*$/, "");
+            note.setAttribute('title', text);
+        }
+    })();
 </script>
