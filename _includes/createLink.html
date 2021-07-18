@@ -58,7 +58,10 @@
         }
 
     })();
-    ;(function() {
+
+    const isRandom = /#random$/.test(window.location.href);
+
+    ;isRandom || (function() {
         const list = document.querySelectorAll('.no-labeled-link');
 
         for (var i = 0; i < list.length; i++) {
@@ -91,7 +94,7 @@
                 });
         }
     })();
-    ;(function() {
+    ;isRandom || (function() {
         const links = document.links;
 
         for (let i = 0; i < links.length; i++) {
