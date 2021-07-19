@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.11. Using JSR 330 Standard Annotations
 summary : 
 date    : 2021-07-10 12:00:30 +0900
-updated : 2021-07-19 20:18:05 +0900
+updated : 2021-07-19 20:33:49 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -21,6 +21,7 @@ latex   : false
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-standard-annotations )
 
+>
 Starting with Spring 3.0, Spring offers support for JSR-330 standard annotations (Dependency Injection). Those annotations are scanned in the same way as the Spring annotations. To use them, you need to have the relevant jars in your classpath.
 
 Spring 3.0부터 Spring은 JSR-330 스탠다드 애노테이션(Dependency Injection)을 지원합니다.
