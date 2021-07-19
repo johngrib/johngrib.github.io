@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.11. Using JSR 330 Standard Annotations
 summary : 
 date    : 2021-07-10 12:00:30 +0900
-updated : 2021-07-11 13:48:13 +0900
+updated : 2021-07-19 20:18:05 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -239,6 +239,7 @@ Table 6. Spring component model elements versus JSR-330 variants
 | @Required           | -                     | no equivalent                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | @Lazy               | -                     | no equivalent                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ObjectFactory       | Provider              | javax.inject.Provider is a direct alternative to Spring’s ObjectFactory, only with a shorter get() method name. It can also be used in combination with Spring’s @Autowired or with non-annotated constructors and setter methods.                                                                                                                                                                                                      |
+
  - `@Autowired`와 `@Inject`
      - `@Inject`에는 required(필수) 속성이 없는 대신, Java 8의 `Optional`과 함께 사용 가능합니다.
  - `@Component`와 `@Named` / `@ManagedBean`
