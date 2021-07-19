@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2020-06-02 23:56:12 +0900
+updated : 2021-07-19 19:34:23 +0900
 tag     : terminal study vim
 toc     : true
 public  : true
@@ -260,7 +260,7 @@ $ man cowsay    # 자세히 알고 싶은 경우 반드시 읽는다
 
 vim을 그냥 익히지만 말고, vim 안에서 다양한 다른 터미널 명령어들을 활용하는 방법에 대해 고민하도록 한다.
 
-이에 대해서는 [vim 에디터는 터미널 도구]( ../../wiki/two-views-of-vim/#vim-에디터는-터미널-도구 ) 문서를 읽어보면 도움이 될 수 있다.
+이에 대해서는 [[two-views-of-vim#vim-에디터는-터미널-도구]] 문서를 읽어보면 도움이 될 수 있다.
 
 ## fzf 사용법을 익힌다
 
