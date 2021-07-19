@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-07-15 22:11:58 +0900
+updated : 2021-07-19 22:06:08 +0900
 regenerate: true
 ---
 
@@ -630,6 +630,8 @@ regenerate: true
 * [[jekyll-category-tag]]
 * [[my-wiki]]
 * [[favicon]]
+
+### [[/blog/this]]
 
 ## [[better-work]]
 
