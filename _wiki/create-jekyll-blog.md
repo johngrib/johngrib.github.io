@@ -9,6 +9,7 @@ toc     : true
 public  : true
 parent  : [[blog]]
 latex   : false
+issue-number : 134
 ---
 * TOC
 {:toc}
