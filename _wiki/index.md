@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-07-19 22:06:08 +0900
+updated : 2021-07-19 22:16:32 +0900
 regenerate: true
 ---
 
@@ -632,6 +632,8 @@ regenerate: true
 * [[favicon]]
 
 ### [[/blog/this]]
+
+* [[/blog/this/table-generate]]
 
 ## [[better-work]]
 
