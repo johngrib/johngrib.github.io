@@ -75,7 +75,8 @@
             if (item == undefined) {
                 return;
             }
-            const target = item.getAttribute('data-name');
+            const target = item.getAttribute('data-name')
+                .replace(/#.*$/, '');
 
             fetch(`/data/metadata/${target}.json`)
                 .then(response => response.json())
