@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-07-19 22:16:32 +0900
+updated : 2021-07-20 21:49:11 +0900
 regenerate: true
 ---
 
@@ -633,6 +633,7 @@ regenerate: true
 
 ### [[/blog/this]]
 
+* [[/blog/this/random-link]]
 * [[/blog/this/table-generate]]
 
 ## [[better-work]]
