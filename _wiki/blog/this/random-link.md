@@ -3,7 +3,7 @@ layout  : wiki
 title   : 랜덤 링크
 summary : 
 date    : 2021-07-20 21:49:15 +0900
-updated : 2021-07-20 22:07:44 +0900
+updated : 2021-07-20 22:18:12 +0900
 tag     : 
 toc     : true
 public  : true
@@ -49,6 +49,7 @@ latex   : false
 
 ### wiki index
 
+{% raw %}
 ```html
 ---
 layout: default
@@ -88,4 +89,5 @@ layout: default
     }
 </script>
 ```
+{% endraw %}
 
