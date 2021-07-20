@@ -59,7 +59,7 @@
 
     })();
 
-    const isRandom = /#random$/.test(window.location.href);
+    const isRandom = /[/]wiki[/]index[/]?#random$/.test(window.location.href);
 
     ;isRandom || (function() {
         const list = document.querySelectorAll('.no-labeled-link');
