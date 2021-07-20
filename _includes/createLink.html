@@ -78,20 +78,23 @@
             const target = item.getAttribute('data-name')
                 .replace(/#.*$/, '');
 
+            let status = undefined;
             fetch(`/data/metadata/${target}.json`)
-                .then(response => response.json())
+                .then(response => {
+                    status = response.status;
+                    return response.json()
+                })
                 .then(function(data) {
                         if (data == null) {
                             return;
                         }
-
                         item.innerText = data.title;
-
                         return;
                     })
                 .catch(function(error) {
-                    console.log(`'${target}' is a closed document.`);
-                    item.remove();
+                    item.classList.add('broken-link');
+                    item.innerHTML += `<sub class="link-${status}"></sub>`
+                    console.log(target, status);
                 });
         }
     })();

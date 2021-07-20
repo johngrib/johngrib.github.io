@@ -153,9 +153,38 @@ h6 {
     }
 }
 
-.broken-link {
-    &:before {
-        content: url("/resource/icon/external-link.svg");
+.error-link {
+    &:after {
+        font-style: italic;
         color: red;
     }
 }
+
+.link-404 {
+    @extend .error-link;
+    &:after {
+        content: "[404 Not Found]"
+    }
+}
+
+.link-400 {
+    @extend .error-link;
+    &:after {
+        content: "[400 Bad Request]"
+    }
+}
+
+.link-408 {
+    @extend .error-link;
+    &:after {
+        content: "[408 Request Timeout]"
+    }
+}
+
+.link-500 {
+    @extend .error-link;
+    &:after {
+        content: "[500 Internal Server Error]"
+    }
+}
+
