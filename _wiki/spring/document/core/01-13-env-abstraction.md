@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.13. Environment Abstraction
 summary : 
 date    : 2021-07-15 22:11:59 +0900
-updated : 2021-07-18 22:35:15 +0900
+updated : 2021-07-21 23:04:29 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -105,6 +105,154 @@ bean definition profile은 이 문제에 대한 해결책을 제공하는 컨테
 #### Using @Profile
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles-java )
+
+>
+The [`@Profile`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/context/annotation/Profile.html ) annotation lets you indicate that a component is eligible for registration when one or more specified profiles are active.
+Using our preceding example, we can rewrite the `dataSource` configuration as follows:
+
+`@Profile` 애노테이션을 사용하면 지정된 프로파일이 활성화될 때 어떤 컴포넌트를 등록해야 할지를 표시할 수 있습니다.
+
+```java
+@Configuration
+@Profile("development")
+public class StandaloneDataConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        return new EmbeddedDatabaseBuilder()
+            .setType(EmbeddedDatabaseType.HSQL)
+            .addScript("classpath:com/bank/config/sql/schema.sql")
+            .addScript("classpath:com/bank/config/sql/test-data.sql")
+            .build();
+    }
+}
+```
+
+```java
+@Configuration
+@Profile("production")
+public class JndiDataConfig {
+
+    @Bean(destroyMethod="")
+    public DataSource dataSource() throws Exception {
+        Context ctx = new InitialContext();
+        return (DataSource) ctx.lookup("java:comp/env/jdbc/datasource");
+    }
+}
+```
+
+> (i)
+As mentioned earlier, with `@Bean` methods, you typically choose to use programmatic JNDI lookups, by using either Spring’s `JndiTemplate`/`JndiLocatorDelegate` helpers or the straight JNDI `InitialContext` usage shown earlier but not the `JndiObjectFactoryBean` variant, which would force you to declare the return type as the `FactoryBean` type.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 앞에서 언급한 바와 같이 `@Bean` 메소드를 사용하면 일반적으로 프로그래밍 방식의 JNDI 탐색을 사용하게 됩니다.
+        - 이렇게 하면 `JndiTemplate`/`JndiLocatorDelegate` 헬퍼나 `JndiObjectFactoryBean` 변형이 아닌 직접적인 JNDI `InitialContext`를 사용하게 됩니다.
+    - 이를 위해 리턴 타입을 `FactoryBean` 타입으로 선언해야 합니다.
+
+>
+The profile string may contain a simple profile name (for example, `production`) or a profile expression. A profile expression allows for more complicated profile logic to be expressed (for example, `production & us-east`). The following operators are supported in profile expressions:
+
+프로파일 문자열로는 간단한 프로파일 이름(예: `production`)이나 프로파일 표현식을 사용할 수 있습니다.
+복잡한 프로파일 로직이 있다면 프로파일 표현식을 사용해 표현할 수도 있습니다(예: `production & us-east`).
+프로파일 표현식에서 지원되는 연산자는 다음과 같습니다.
+
+>
+- `!`: A logical “not” of the profile
+- `&`: A logical “and” of the profiles
+- `|`: A logical “or” of the profiles
+
+
+- `!`: not 조건
+- `&`: and 조건
+- `|`: or 조건
+
+> (i)
+You cannot mix the `&` and `|` operators without using parentheses. For example, `production & us-east | eu-central` is not a valid expression. It must be expressed as `production & (us-east | eu-central)`.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 괄호 없이 `&`와 `|` 연산자를 같이 쓸 수 없습니다.
+    - 예를 들어 `production & us-east | eu-central`는 올바른 표현식이 아닙니다.
+    - `production & (us-east | eu-central)` 이렇게 표현해야 합니다.
+
+>
+You can use `@Profile` as a [meta-annotation]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-meta-annotations ) for the purpose of creating a custom composed annotation. The following example defines a custom `@Production` annotation that you can use as a drop-in replacement for `@Profile("production")`:
+
+`@Profile`을 메타 애노테이션으로 사용하여 커스텀 애노테이션을 만들 수도 있습니다.
+다음은 `@Profile("production")`을 대체할 수 있는 `@Production` 애노테이션을 만드는 예제입니다.
+
+```java
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Profile("production")
+public @interface Production {
+}
+```
+
+>
+If a `@Configuration` class is marked with `@Profile`, all of the `@Bean` methods and `@Import` annotations associated with that class are bypassed unless one or more of the specified profiles are active. If a `@Component` or `@Configuration` class is marked with `@Profile({"p1", "p2"})`, that class is not registered or processed unless profiles 'p1' or 'p2' have been activated. If a given profile is prefixed with the NOT operator (`!`), the annotated element is registered only if the profile is not active. For example, given `@Profile({"p1", "!p2"})`, registration will occur if profile 'p1' is active or if profile 'p2' is not active.
+{:style="background-color: #e9f1f6;"}
+
+- 만약 `@Configuration` 클래스에 `@Profile` 애노테이션을 붙이게 되었을 때 해당 프로파일이 활성화되지 않는다면, 해당 클래스와 관련된 모든 `@Bean` 메소드와 `@Import`가 무시됩니다.
+- 만약 `@Component`나 `@Configuration` 클래스에 `@Profile({"p1", "p2"})`와 같이 표시되었다면, 해당 클래스는 'p1' 또는 'p2' 프로파일이 활성화되지 않는다면 등록되지 않습니다.
+- 만약 주어진 프로파일에 NOT 연산자(`!`)가 prefix로 붙어 있다면 해당 프로파일이 활성화되지 않은 경우에만 애노테이션이 붙은 항목이 등록되게 됩니다.
+    - 예를 들어 `@Profile({"p1", "!p2"})`와 같이 되어 있다면, 프로파일 'p1'이 활성화되거나 'p2'가 활성화되지 않아야 해당 클래스에 대한 등록이 일어나게 됩니다.
+
+>
+`@Profile` can also be declared at the method level to include only one particular bean of a configuration class (for example, for alternative variants of a particular bean), as the following example shows:
+
+`@Profile`은 다음 예제와 같이 configuration 클래스의 특정 bean을 단 하나만 포함하도록 메소드 수준에서 선언할 수도 있습니다(예: 특정 bean의 대체제).
+
+```java
+@Configuration
+public class AppConfig {
+
+    @Bean("dataSource")
+    @Profile("development") // (1)
+    public DataSource standaloneDataSource() {
+        return new EmbeddedDatabaseBuilder()
+            .setType(EmbeddedDatabaseType.HSQL)
+            .addScript("classpath:com/bank/config/sql/schema.sql")
+            .addScript("classpath:com/bank/config/sql/test-data.sql")
+            .build();
+    }
+
+    @Bean("dataSource")
+    @Profile("production") // (2)
+    public DataSource jndiDataSource() throws Exception {
+        Context ctx = new InitialContext();
+        return (DataSource) ctx.lookup("java:comp/env/jdbc/datasource");
+    }
+}
+```
+
+>
+- (1) The `standaloneDataSource` method is available only in the `development` profile.
+- (2) The `jndiDataSource` method is available only in the `production` profile.
+
+- (1) `standaloneDataSource` 메소드는 `development` 프로파일에서만 적용됩니다.
+- (2) `jndiDataSource` 메소드는 `production` 프로파일에서만 적용됩니다.
+
+> (i)
+With `@Profile` on `@Bean` methods, a special scenario may apply: In the case of overloaded `@Bean` methods of the same Java method name (analogous to constructor overloading), a `@Profile` condition needs to be consistently declared on all overloaded methods. If the conditions are inconsistent, only the condition on the first declaration among the overloaded methods matters. Therefore, `@Profile` can not be used to select an overloaded method with a particular argument signature over another. Resolution between all factory methods for the same bean follows Spring’s constructor resolution algorithm at creation time.
+>
+If you want to define alternative beans with different profile conditions, use distinct Java method names that point to the same bean name by using the `@Bean` name attribute, as shown in the preceding example.
+If the argument signatures are all the same (for example, all of the variants have no-arg factory methods), this is the only way to represent such an arrangement in a valid Java class in the first place (since there can only be one method of a particular name and argument signature).
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - `@Bean` 메소드에 `@Profile`을 사용하면 다음과 같은 특수한 시나리오가 적용될 수 있습니다.
+        - (생성자 오버로딩처럼)똑같은 Java 메소드 이름을 가진 오버로드된 `@Bean` 메소드의 경우, `@Profile` 조건은 오버로드된 모든 메소드에 대해 일관성있게 선언되어야 합니다.
+        - 만약 조건이 일치하지 않으면 오버로드된 메소드들 중에서 첫 번째 선언된 조건이 우선시됩니다.
+        - 즉, `@Profile`은 특정한 시그니처를 가진 오버로드된 메소드를 선택하는 데에는 사용할 수 없습니다.
+        - 같은 bean에 대한 여러 팩토리 메소드 중 하나를 선택하는 방법은 creation time의 Spring 생성자 결정 알고리즘을 따릅니다.
+    - 프로파일 조건이 다른 대체제 bean을 정의하려면 위의 예와 같이 `@Bean`의 이름 속성을 사용해서 같은 bean 이름을 지시하는 고유한 java 메소드 이름을 사용하세요.
+        - 만약 인자 서명이 모두 동일하다면(예: 모든 변형에 인자 없는 팩토리 메소드가 있는 경우), Java 클래스에서 첫 번째로 선언된 것을 사용하는 수 밖에 없습니다.
+
+#### XML Bean Definition Profiles
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles-xml )
 
 ## 함께 읽기
 
