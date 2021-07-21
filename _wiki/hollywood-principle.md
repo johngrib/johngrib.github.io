@@ -3,7 +3,7 @@ layout  : wiki
 title   : 헐리우드 원칙(Hollywood Principle)
 summary : "Do not call us, we call You."
 date    : 2019-08-31 13:30:16 +0900
-updated : 2020-07-19 13:41:46 +0900
+updated : 2021-07-21 20:50:21 +0900
 tag     : 
 toc     : true
 public  : true
@@ -87,7 +87,7 @@ The major difference between an object-oriented framework and a class library is
     * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
     * Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
 
-# 주석
+## 주석
 
 [^kim]: 김정아 님의 주석은 2005년 번역본에는 없고, 프로텍미디어에서 출판한 2015년 개정판에 있다.
 
