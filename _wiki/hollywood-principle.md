@@ -3,7 +3,7 @@ layout  : wiki
 title   : 헐리우드 원칙(Hollywood Principle)
 summary : "Do not call us, we call You."
 date    : 2019-08-31 13:30:16 +0900
-updated : 2021-07-21 20:50:21 +0900
+updated : 2021-07-21 20:52:49 +0900
 tag     : 
 toc     : true
 public  : true
@@ -24,8 +24,8 @@ latex   : false
 17 March 1944, Lowell (MA) Sun, Dorothy Kilgallen column, pg. 23, cols. 3-4:  
 Fables from the Forties:  
 Our heroine could have had any number of good jobs behind a desk, but her passion was singing. She’d have sung for nothing if any one had let her, but even at those rates the opportunities were few and far between. Audition after audition left her with nothing but “Sorry” and “Not the type” and “Don’t call us, we’ll call you” and a heart that was close to breaking.
-
-[출처](https://www.barrypopik.com/index.php/new_york_city/entry/dont_call_us_well_call_you/ )
+>
+-- [출처](https://www.barrypopik.com/index.php/new_york_city/entry/dont_call_us_well_call_you/ )
 
 ## Inversion of Control 과의 관계
 
