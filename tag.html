@@ -62,7 +62,7 @@ public: true
         let listItems = '';
         for (let i = 0; i < data.length; i++) {
             const idText = getDocumentElementId(tagName, data[i]);
-            listItems += `<li id="${idText}"></li>`;
+            listItems += `<li id="${idText}" class="post-item"></li>`;
         }
         const template = `
             <h3>${tagName}</h3>
