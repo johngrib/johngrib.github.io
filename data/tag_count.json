@@ -824,6 +824,10 @@
   "size": 1
  },
  {
+  "name": "ui",
+  "size": 1
+ },
+ {
   "name": "ultisnips",
   "size": 1
  },

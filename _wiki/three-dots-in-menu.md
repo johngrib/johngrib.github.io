@@ -3,8 +3,8 @@ layout  : wiki
 title   : 메뉴의 ... (점 3개)
 summary : 명령어가 수행되기 전에 추가적인 정보가 필요한 항목을 표현한다
 date    : 2020-04-24 21:58:40 +0900
-updated : 2020-04-26 14:20:02 +0900
-tag     : 
+updated : 2021-07-21 23:10:14 +0900
+tag     : ui
 toc     : true
 public  : true
 parent  : index
@@ -20,7 +20,8 @@ latex   : false
 명령어가 수행되기 전에 추가적인 정보를 필요로 할 경우, 생략부호를 사용한다.
 정보(About)나 속성(Properties)처럼 대화상자가 명령어 자체인 경우도 있는데, 이들이 비록 대화상자를 표시하기는 하지만 이 대화상자는 결과이다.
 반면에, 인쇄(Print)라는 명령어는 결과에 앞서서 추가적인 정보를 수집하는 대화 상자를 표시한다.
-[^raymond-12]
+>
+-- 윈도우 개발 282 스토리. 1장. 12쪽.
 
 ## 확인해보면
 
@@ -49,6 +50,4 @@ latex   : false
 
 - 레이몬드 첸의 윈도우 개발 282 스토리 / 레이몬드 첸 저 / 손광수 역 / ITC / 초판 1쇄 2007년 09월 10일 / 원제 : The Old New Thing: Practical Development Throughout the Evolution of Windows
 
-## 주석
 
-[^raymond-12]: 윈도우 개발 282 스토리. 1장. 12쪽.
