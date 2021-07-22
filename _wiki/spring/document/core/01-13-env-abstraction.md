@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.13. Environment Abstraction
 summary : 
 date    : 2021-07-15 22:11:59 +0900
-updated : 2021-07-21 23:04:29 +0900
+updated : 2021-07-22 22:40:06 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -253,6 +253,104 @@ If the argument signatures are all the same (for example, all of the variants ha
 #### XML Bean Definition Profiles
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles-xml )
+
+>
+The XML counterpart is the `profile` attribute of the `<beans>` element. Our preceding sample configuration can be rewritten in two XML files, as follows:
+
+XML 설정에서는 `<beans>`의 `profile` attribute가 이에 해당합니다.
+위의 샘플 configuration은 다음과 같이 두 개의 XML 파일로 똑같이 설정할 수 있습니다.
+
+```xml
+<beans profile="development"
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xsi:schemaLocation="...">
+
+    <jdbc:embedded-database id="dataSource">
+        <jdbc:script location="classpath:com/bank/config/sql/schema.sql"/>
+        <jdbc:script location="classpath:com/bank/config/sql/test-data.sql"/>
+    </jdbc:embedded-database>
+</beans>
+```
+
+```xml
+<beans profile="production"
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xsi:schemaLocation="...">
+
+    <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/datasource"/>
+</beans>
+```
+
+>
+It is also possible to avoid that split and nest `<beans/>` elements within the same file, as the following example shows:
+
+다음 예제와 같이 똑같은 파일 내에서 여러 개의 `<beans/>` 엘리먼트를 중첩(nested)시켜 만들 수도 있습니다.
+
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xsi:schemaLocation="...">
+
+    <!-- other bean definitions -->
+
+    <beans profile="development">
+        <jdbc:embedded-database id="dataSource">
+            <jdbc:script location="classpath:com/bank/config/sql/schema.sql"/>
+            <jdbc:script location="classpath:com/bank/config/sql/test-data.sql"/>
+        </jdbc:embedded-database>
+    </beans>
+
+    <beans profile="production">
+        <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/datasource"/>
+    </beans>
+</beans>
+```
+
+>
+The `spring-bean.xsd` has been constrained to allow such elements only as the last ones in the file. This should help provide flexibility without incurring clutter in the XML files.
+
+`spring-bean.xsd`는 파일의 마지막 element만 허용하는 제한이 있습니다.
+이렇게 하면 XML 파일을 복잡하게 만들지 않고 유연하게 설정하는 데에 도움이 됩니다.
+
+> (i)
+The XML counterpart does not support the profile expressions described earlier. It is possible, however, to negate a profile by using the `!` operator. It is also possible to apply a logical “and” by nesting the profiles, as the following example shows:
+>
+>
+> ```xml
+> <beans xmlns="http://www.springframework.org/schema/beans"
+>     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>     xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+>     xmlns:jee="http://www.springframework.org/schema/jee"
+>     xsi:schemaLocation="...">
+> 
+>     <!-- other bean definitions -->
+> 
+>     <beans profile="production">
+>         <beans profile="us-east">
+>             <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/datasource"/>
+>         </beans>
+>     </beans>
+> </beans>
+> ```
+> In the preceding example, the `dataSource` bean is exposed if both the `production` and `us-east` profiles are active.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - XML의 프로파일 기능은 위에서 설명한 프로파일 표현식을 지원하지 않습니다.
+        - 하지만 `!` 연산자를 사용해 프로파일을 비활성화할 수는 있습니다.
+        - 그리고 다음 예제와 같이 프로파일을 중첩시켜서 "and" 조건을 적용하는 방법도 있습니다.
+    - (예제)
+    - 이 예제에서 `production`과 `us-east` 프로파일이 모두 활성화된 경우 `dataSource` bean이 노출되게 됩니다.
+
+#### Activating a Profile
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles-enable )
 
 ## 함께 읽기
 
