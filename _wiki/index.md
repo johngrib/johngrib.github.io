@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-07-20 21:49:11 +0900
+updated : 2021-07-22 23:42:24 +0900
 regenerate: true
 ---
 
@@ -552,7 +552,7 @@ regenerate: true
 
 ### [[/spring/document]]
 
-* [[spring-documents-overview]]
+* [[/spring/document/overview]]
 * [[/spring/document/core]]
     * [[/spring/document/core/01-01-introduction]]
     * [[/spring/document/core/01-02-container-overview]]
