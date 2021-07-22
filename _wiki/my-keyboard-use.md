@@ -3,7 +3,7 @@ layout  : wiki
 title   : 내가 개조한 해피해킹JP를 사용하는 방법
 summary : HHKB-JP + Hammerspoon으로 행복한 컴퓨터 생활
 date    : 2020-06-03 23:01:19 +0900
-updated : 2020-06-04 00:32:09 +0900
+updated : 2021-07-22 22:49:48 +0900
 tag     : keyboard hhkb hammerspoon
 toc     : true
 public  : true
@@ -100,3 +100,19 @@ latex   : false
 - `9`: 현재 실행중인 윈도우를 화면의 1/4 사이즈로 조절하고 오른쪽 위로 이동.
 - `-`: 현재 실행중인 윈도우를 왼쪽 모니터로 보낸다.
 - `+`: 현재 실행중인 윈도우를 오른쪽 모니터로 보낸다.
+
+## 히스토리
+
+[unimap.hex 커밋 히스토리]( https://github.com/johngrib/dotfiles/commits/master/tmk/unimap.hex )
+
+### 2017-05-13
+
+[b103a64876d206fbdd23929d7d4a5e67233e4503]( https://github.com/johngrib/dotfiles/commit/b103a64876d206fbdd23929d7d4a5e67233e4503#diff-806f489a90b9a4cd8a3492a453936ab85db20cafc090cf04e7498ba96f37e1e1 )
+
+![image]( /post-img/my-keyboard-use/126649688-cc0e2050-d62a-4742-9b08-6411f10eb300.png )
+
+![image]( /post-img/my-keyboard-use/126649783-8e1d5807-8ccb-49fe-9c36-7dfc20917476.png )
+
+![image]( /post-img/my-keyboard-use/126649874-75dc9e96-cddd-4b1e-99eb-a538e7c20f22.png )
+
+
