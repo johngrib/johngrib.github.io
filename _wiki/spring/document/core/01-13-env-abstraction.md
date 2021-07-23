@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.13. Environment Abstraction
 summary : 
 date    : 2021-07-15 22:11:59 +0900
-updated : 2021-07-22 22:40:06 +0900
+updated : 2021-07-23 23:26:01 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -351,6 +351,56 @@ The XML counterpart does not support the profile expressions described earlier. 
 #### Activating a Profile
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles-enable )
+
+>
+Now that we have updated our configuration, we still need to instruct Spring which profile is active. If we started our sample application right now, we would see a `NoSuchBeanDefinitionException` thrown, because the container could not find the Spring bean named `dataSource`.
+
+이제 configuration을 업데이트했으므로, 어떤 프로파일을 활성화하는지 Spring에 알려줘야 합니다.
+만약 지금 샘플 애플리케이션을 시작한다면 Spring이 `dataSource`라는 이름의 bean을 찾을 수 없으므로 `NoSuchBeanDefinitionException` 예외가 던져질 것입니다.
+
+>
+Activating a profile can be done in several ways, but the most straightforward is to do it programmatically against the `Environment` API which is available through an `ApplicationContext`. The following example shows how to do so:
+
+프로파일을 활성화하는 방법은 여러 가지가 있는데, 가장 간단한 방법은 `ApplicationContext`를 통해 `Environment` API를 사용하는 프로그래밍을 하는 것입니다.
+다음이 그 예제입니다.
+
+```java
+AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+ctx.getEnvironment().setActiveProfiles("development");
+ctx.register(SomeConfig.class, StandaloneDataConfig.class, JndiDataConfig.class);
+ctx.refresh();
+```
+
+>
+In addition, you can also declaratively activate profiles through the `spring.profiles.active` property, which may be specified through system environment variables, JVM system properties, servlet context parameters in `web.xml`, or even as an entry in JNDI (see [`PropertySource` Abstraction]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-property-source-abstraction )). In integration tests, active profiles can be declared by using the `@ActiveProfiles` annotation in the `spring-test` module (see [context configuration with environment profiles]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/testing.html#testcontext-ctx-management-env-profiles )).
+
+덧붙이자면, `spring.profiles.active` 속성을 통해 프로파일을 활성화할 수도 있습니다. 이 속성은 시스템 환경 변수, JVM system properties, `web.xml`의 servlet context parameters, JNDI(Property Source Abstraction 참고) 엔트리로 지정할 수 있습니다.
+
+통합 테스트에서 active profiles는 `spring-test` 모듈의 `@ActiveProfiles` 애노테이션을 사용해 선언할 수 있습니다(context configuration with environment profiles 참고).
+
+>
+Note that profiles are not an “either-or” proposition. You can activate multiple profiles at once. Programmatically, you can provide multiple profile names to the `setActiveProfiles()` method, which accepts `String…` varargs. The following example activates multiple profiles:
+
+profile은 반드시 한 번에 하나만 설정하는 것이 아닙니다. 한 번에 여러 개의 profile을 activate 할 수 있습니다.
+여러 개의 profile을 `setActiveProfiles()` 메소드(`String...`을 입력으로 받음)를 통해 설정하는 것도 가능합니다.
+다음 예제는 여러 개의 profile을 activate하는 것을 보여줍니다.
+
+```java
+ctx.getEnvironment().setActiveProfiles("profile1", "profile2");
+```
+
+>
+Declaratively, `spring.profiles.active` may accept a comma-separated list of profile names, as the following example shows:
+
+다음 예제와 같이 `spring.profiles.active`를 선언하는 방법도 있습니다. 콤마로 구분한 profile 이름을 적어주면 됩니다.
+
+```
+    -Dspring.profiles.active="profile1,profile2"
+```
+
+#### Default Profile
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles-default )
 
 ## 함께 읽기
 
