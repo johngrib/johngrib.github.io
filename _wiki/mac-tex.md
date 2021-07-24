@@ -3,7 +3,7 @@ layout  : wiki
 title   : MacTeX를 설치해 보자
 summary : 
 date    : 2019-05-25 09:42:51 +0900
-updated : 2020-04-04 18:43:21 +0900
+updated : 2021-07-24 14:55:02 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,8 +12,6 @@ latex   : false
 ---
 * TOC
 {:toc}
-
-# 
 
 MacTeX는 다음 경로에서 다운로드받을 수 있다.
 
@@ -48,6 +46,6 @@ $ sudo tlmgr install nanumttf hcr-lvt
 ```
 
 
-# 참고
+## 참고
 
 * [설치하기MacOSX/Mac TeX](http://wiki.ktug.org/wiki/wiki.php/%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0MacOSX/MacTeX )
