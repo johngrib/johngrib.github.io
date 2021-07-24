@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-07-24 19:42:30 +0900
+updated : 2021-07-24 21:29:52 +0900
 regenerate: true
 ---
 
@@ -658,7 +658,7 @@ regenerate: true
 
 * [[semiconductor-dict]]
 
-### finance
+## finance
 
 * [[exchange-rate]]
 * [[pension]]
