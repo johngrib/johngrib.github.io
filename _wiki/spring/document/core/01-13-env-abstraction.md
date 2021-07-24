@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.13. Environment Abstraction
 summary : 
 date    : 2021-07-15 22:11:59 +0900
-updated : 2021-07-24 19:10:49 +0900
+updated : 2021-07-24 19:31:36 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -520,10 +520,81 @@ In the preceding code, `MyPropertySource` has been added with highest precedence
 만약 `MyPropertySource`에 `my-property` 프로퍼티가 포함되어 있다면 `my-property` 속성을 찾으려 할 때 해당 값이 다른 `PropertySource`에 있는 값보다 우선적으로 감지되어 리턴되게 됩니다.
 `MutablePropertySources` API는 property sources를 상세하게 조작할 수 있는 다양한 메소드를 제공합니다.
 
-### 1.13.3. Using @PropertySource
+### 1.13.3. Using `@PropertySource`
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-using-propertysource )
 
+>
+The [`@PropertySource`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/context/annotation/PropertySource.html ) annotation provides a convenient and declarative mechanism for adding a `PropertySource` to Spring’s `Environment`.
+>
+Given a file called `app.properties` that contains the key-value pair `testbean.name=myTestBean`, the following `@Configuration` class uses `@PropertySource` in such a way that a call to `testBean.getName()` returns `myTestBean`:
+
+`@PropertySource` 애노테이션은 Spring의 `Environment`에 `PropertySource`를 선언적으로 편리하게 추가하는 메커니즘을 제공합니다.
+
+`app.properties`라는 파일이 주어졌다고 했을 때, 이 파일에 `testbean.name=myTestBean`라는 key-value가 포함되어 있다고 합시다.
+다음의 `@Configuration` 클래스에서는 이 파일의 값을 가져오기 위해 `@PropertySource`를 사용하고 있습니다.
+따라서 `testBean.getName()`를 호출하면 `myTestBean`이 리턴됩니다.
+
+```java
+@Configuration
+@PropertySource("classpath:/com/myco/app.properties")
+public class AppConfig {
+
+    @Autowired
+    Environment env;
+
+    @Bean
+    public TestBean testBean() {
+        TestBean testBean = new TestBean();
+        testBean.setName(env.getProperty("testbean.name"));
+        return testBean;
+    }
+}
+```
+
+>
+Any `${…}` placeholders present in a `@PropertySource` resource location are resolved against the set of property sources already registered against the environment, as the following example shows:
+
+`@PropertySource` 리소스의 위치에 있는 모든 `${...}` placeholder는 이미 환경에 등록되어 있는 property sources 집합에서 값을 찾습니다.
+
+```java
+@Configuration
+@PropertySource("classpath:/com/${my.placeholder:default/path}/app.properties")
+public class AppConfig {
+
+    @Autowired
+    Environment env;
+
+    @Bean
+    public TestBean testBean() {
+        TestBean testBean = new TestBean();
+        testBean.setName(env.getProperty("testbean.name"));
+        return testBean;
+    }
+}
+```
+
+>
+Assuming that `my.placeholder` is present in one of the property sources already registered (for example, system properties or environment variables), the placeholder is resolved to the corresponding value. If not, then `default/path` is used as a default. If no default is specified and a property cannot be resolved, an `IllegalArgumentException` is thrown.
+
+`my.placeholder`가 이미 등록 완료된 property source 중에 있다고 전제하면(예를 들어 시스템 프로퍼티나, 환경 변수), placeholder는 해당 값을 찾아 확인을 마칩니다.
+하지만 등록이 되어 있지 않다면 `default/path`가 기본값으로 사용됩니다.
+만약 기본값이 지정되어 있지 않고 property를 찾을 수 없다면 `IllegalArgumentException` 예외가 던져집니다.
+
+> (i)
+The `@PropertySource` annotation is repeatable, according to Java 8 conventions. However, all such `@PropertySource` annotations need to be declared at the same level, either directly on the configuration class or as meta-annotations within the same custom annotation. Mixing direct annotations and meta-annotations is not recommended, since direct annotations effectively override meta-annotations.
+1.13.4. Placeholder Resolution in Statements
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - Java 8 컨벤션에 따라 `@PropertySource` 애노테이션은 반복적으로 사용할 수 있습니다.
+    - 그러나 이러한 모든 `@PropertySource` 애노테이션들은 configuration 클래스에서 직접 사용하거나, 또는 같은 커스텀 애노테이션 내에 붙인 메타 애노테이션으로 같은 레벨로 선언되어야 합니다.
+    - 이 애노테이션을 직접 붙이는 방법과 메타 애노테이션을 쓰는 방법이 뒤섞이는 것은 권장하지 않습니다.
+        - 직접 쓰는 방법이 메타 애노테이션을 오버라이드하기 때문입니다.
+
+### 1.13.4. Placeholder Resolution in Statements
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-placeholder-resolution-in-statements )
 
 
 ## 함께 읽기
