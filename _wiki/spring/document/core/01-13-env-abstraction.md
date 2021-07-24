@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.13. Environment Abstraction
 summary : 
 date    : 2021-07-15 22:11:59 +0900
-updated : 2021-07-23 23:26:01 +0900
+updated : 2021-07-24 15:45:46 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -401,6 +401,42 @@ Declaratively, `spring.profiles.active` may accept a comma-separated list of pro
 #### Default Profile
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-definition-profiles-default )
+
+>
+The default profile represents the profile that is enabled by default. Consider the following example:
+
+`default` profile은 기본으로 활성화된 profile을 의미합니다. 다음 예제를 봅시다.
+
+```java
+@Configuration
+@Profile("default")
+public class DefaultDataConfig {
+
+    @Bean
+    public DataSource dataSource() {
+        return new EmbeddedDatabaseBuilder()
+            .setType(EmbeddedDatabaseType.HSQL)
+            .addScript("classpath:com/bank/config/sql/schema.sql")
+            .build();
+    }
+}
+```
+
+>
+If no profile is active, the `dataSource` is created. You can see this as a way to provide a default definition for one or more beans. If any profile is enabled, the default profile does not apply.
+>
+You can change the name of the default profile by using `setDefaultProfiles()` on the `Environment` or, declaratively, by using the `spring.profiles.default` property.
+
+만약 활성화된 profile이 아무것도 없다면, `dataSource`가 생성됩니다.
+이 방법은 하나 이상의 bean에 대해 default definition을 제공하는 방법으로 생각할 수 있습니다.
+만약 어떤 것이건 profile이 하나라도 활성화되어 있다면 default profile은 적용되지 않습니다.
+
+`Environment`에서 `setDefaultProfiles()` 메소드를 사용하면 default profile을 변경할 수 있습니다.
+또는 `spring.profiles.default` 속성에 값을 선언해도 default profile을 변경할 수 있습니다.
+
+### 1.13.2. `PropertySource` Abstraction
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-property-source-abstraction )
 
 ## 함께 읽기
 
