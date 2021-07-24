@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.13. Environment Abstraction
 summary : 
 date    : 2021-07-15 22:11:59 +0900
-updated : 2021-07-24 19:31:36 +0900
+updated : 2021-07-24 19:41:11 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -595,6 +595,26 @@ The `@PropertySource` annotation is repeatable, according to Java 8 conventions.
 ### 1.13.4. Placeholder Resolution in Statements
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-placeholder-resolution-in-statements )
+
+>
+Historically, the value of placeholders in elements could be resolved only against JVM system properties or environment variables. This is no longer the case. Because the `Environment` abstraction is integrated throughout the container, it is easy to route resolution of placeholders through it. This means that you may configure the resolution process in any way you like. You can change the precedence of searching through system properties and environment variables or remove them entirely. You can also add your own property sources to the mix, as appropriate.
+
+역사적으로 element에 지정된 placeholder 값은 JVM system properties 또는 환경 변수만 사용이 가능했지만, 이제는 바뀌었습니다.
+왜냐하면 `Environment` 추상화가 컨테이너 전체에 통합되어서, placeholder를 찾는 것도 쉽게 라우팅할 수 있기 때문입니다.
+즉, 여러분이 원하는 방법으로 resolution 프로세스를 구성할 수 있는 것입니다.
+system properties와 environment variables를 통한 검색 우선순위를 변경하거나 제거하는 것도 가능합니다.
+필요하다면 여러분이 직접 정의한 property source를 이런 조합에 추가할 수도 있습니다.
+
+>
+Concretely, the following statement works regardless of where the `customer` property is defined, as long as it is available in the `Environment`:
+
+구체적으로 살펴보자면, 아래의 예제는  `Environment`를 사용할 수만 있다면 `customer` property가 어디에 정의되었는지에 관계 없이 작동합니다.
+
+```xml
+<beans>
+    <import resource="com/bank/service/${customer}-config.xml"/>
+</beans>
+```
 
 
 ## 함께 읽기
