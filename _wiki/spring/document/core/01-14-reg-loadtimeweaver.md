@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.14. Registering a LoadTimeWeaver
 summary : 
 date    : 2021-07-24 19:42:31 +0900
-updated : 2021-07-24 21:54:44 +0900
+updated : 2021-07-24 22:02:28 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 - 목록으로 - [[/spring/document/core]]
 - 이전 문서 - [[/spring/document/core/01-13-env-abstraction]]
-- 다음 문서 - {1.15. Using JSR 330 Standard Annotations}
+- 다음 문서 - [[/spring/document/core/01-15-additional-capabilities-ac]]
 
 ## 1.14. Registering a LoadTimeWeaver
 
@@ -64,5 +64,5 @@ JPA 클래스 변환에는 로드 타임 위빙이 필요하기 때문에, 특�
 
 - 목록으로 - [[/spring/document/core]]
 - 이전 문서 - [[/spring/document/core/01-13-env-abstraction]]
-- 다음 문서 - {1.15. Using JSR 330 Standard Annotations}
+- 다음 문서 - [[/spring/document/core/01-15-additional-capabilities-ac]]
 
