@@ -429,7 +429,7 @@
  },
  {
   "name": "java",
-  "size": 64
+  "size": 65
  },
  {
   "name": "javadoc",
@@ -709,7 +709,7 @@
  },
  {
   "name": "spring",
-  "size": 24
+  "size": 25
  },
  {
   "name": "start-up",

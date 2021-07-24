@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.13. Environment Abstraction
 summary : 
 date    : 2021-07-15 22:11:59 +0900
-updated : 2021-07-24 19:41:11 +0900
+updated : 2021-07-24 19:45:36 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -13,9 +13,9 @@ latex   : false
 * TOC
 {:toc}
 
-- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
-- 이전 문서 - [[/spring/document/core/01-12-java-based-container-config]]{1.12. Java-based Container Configuration}
-- 다음 문서 - {1.14. Registering a LoadTimeWeaver}
+- 목록으로 - [[/spring/document/core]]
+- 이전 문서 - [[/spring/document/core/01-12-java-based-container-config]]
+- 다음 문서 - [[/spring/document/core/01-14-reg-loadtimeweaver]]
 
 ## 1.13. Environment Abstraction
 
@@ -619,7 +619,7 @@ Concretely, the following statement works regardless of where the `customer` pro
 
 ## 함께 읽기
 
-- 목록으로 - [[/spring/document/core]]{Spring Core Technologies}
-- 이전 문서 - [[/spring/document/core/01-12-java-based-container-config]]{1.12. Java-based Container Configuration}
-- 다음 문서 - {1.14. Registering a LoadTimeWeaver}
+- 목록으로 - [[/spring/document/core]]
+- 이전 문서 - [[/spring/document/core/01-12-java-based-container-config]]
+- 다음 문서 - [[/spring/document/core/01-14-reg-loadtimeweaver]]
 

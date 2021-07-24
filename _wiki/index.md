@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-07-23 19:44:44 +0900
+updated : 2021-07-24 19:42:30 +0900
 regenerate: true
 ---
 
@@ -567,6 +567,7 @@ regenerate: true
     * [[/spring/document/core/01-11-using-jsr-330-standard-annotations]]
     * [[/spring/document/core/01-12-java-based-container-config]]
     * [[/spring/document/core/01-13-env-abstraction]]
+    * [[/spring/document/core/01-14-reg-loadtimeweaver]]
 
 ## [[database]]
 
