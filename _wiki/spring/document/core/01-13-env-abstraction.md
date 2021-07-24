@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.13. Environment Abstraction
 summary : 
 date    : 2021-07-15 22:11:59 +0900
-updated : 2021-07-24 15:45:46 +0900
+updated : 2021-07-24 19:10:49 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -437,6 +437,94 @@ You can change the name of the default profile by using `setDefaultProfiles()` o
 ### 1.13.2. `PropertySource` Abstraction
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-property-source-abstraction )
+
+>
+Spring’s `Environment` abstraction provides search operations over a configurable hierarchy of property sources. Consider the following listing:
+
+Spring의 `Environment` 추상화는 설정할 수 있는 계층 구조의 속성값 소스에 대한 검색 기능을 제공합니다.
+
+```java
+ApplicationContext ctx = new GenericApplicationContext();
+Environment env = ctx.getEnvironment();
+boolean containsMyProperty = env.containsProperty("my-property");
+System.out.println("Does my environment contain the 'my-property' property? " + containsMyProperty);
+```
+
+>
+In the preceding snippet, we see a high-level way of asking Spring whether the `my-property` property is defined for the current environment. To answer this question, the `Environment` object performs a search over a set of [`PropertySource`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/core/env/PropertySource.html ) objects. A `PropertySource` is a simple abstraction over any source of key-value pairs, and Spring’s [`StandardEnvironment`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/core/env/StandardEnvironment.html ) is configured with two PropertySource objects — one representing the set of JVM system properties (`System.getProperties()`) and one representing the set of system environment variables (`System.getenv()`).
+
+위의 코드는 현재 환경에 `my-property` 속성값이 정의되어 있는지를 Spring에 물어보는 고수준 방법이라 할 수 있습니다.
+이 질문에 대답하기 위해 `Environment` 객체는 `PropertySource` 객체 집합에 대해 검색 작업을 하게 됩니다.
+`PropertySource`는 키와 값이 쌍을 이루는 모든 종류의 소스를 간단히 추상화한 것이며, Spring의 `StandardEnvironment`는 두 개의 `PropertySource` 객체로 이루어져 있습니다.
+둘 중 하나는 JVM system properties(`System.getProperties()`)를 나타내고, 다른 하나는 system environment variables(`System.getenv()`) 입니다.
+
+> (i)
+These default property sources are present for `StandardEnvironment`, for use in standalone applications. [`StandardServletEnvironment`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/web/context/support/StandardServletEnvironment.html ) is populated with additional default property sources including servlet config and servlet context parameters. It can optionally enable a [`JndiPropertySource`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/jndi/JndiPropertySource.html ). See the javadoc for details.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 이런 default property 소스들은 standalone 애플리케이션에서 사용할 수 있도록 `StandardEnvironment`로 제공됩니다.
+    - `StandardServletEnvironment`는 여기에 servlet config와 servlet context parameters를 포함하고 있는 default property 소스를 추가한 것입니다. 그리고 선택적으로 `JndiPropertySource`를 활성화하는 것도 가능합니다. 자세한 내용은 `StandardServletEnvironment`의 javadoc을 참고하세요.
+
+>
+Concretely, when you use the `StandardEnvironment`, the call to `env.containsProperty("my-property")` returns true if a `my-property` system property or `my-property` environment variable is present at runtime.
+
+구체적으로 설명하자면, `StandardEnvironment`를 사용하고 있을 때 `env.containsProperty("my-property")`를 호출하면 다음 경우에 대해 true를 리턴합니다.
+
+- `my-property`가 시스템 property인 경우
+- `my-property`가 현재 런타임의 환경 변수인 경우
+
+
+>
+The search performed is hierarchical. By default, system properties have precedence over environment variables. So, if the `my-property` property happens to be set in both places during a call to `env.getProperty("my-property")`, the system property value “wins” and is returned. Note that property values are not merged but rather completely overridden by a preceding entry.
+>
+For a common `StandardServletEnvironment`, the full hierarchy is as follows, with the highest-precedence entries at the top:
+>
+1. ServletConfig parameters (if applicable — for example, in case of a `DispatcherServlet` context)
+2. ServletContext parameters (web.xml context-param entries)
+3. JNDI environment variables (`java:comp/env/` entries)
+4. JVM system properties (`-D` command-line arguments)
+5. JVM system environment (operating system environment variables)
+{:style="background-color: #e9f1f6;"}
+
+- 검색 작업은 계층구조에 맞춰 진행됩니다.
+- 기본적으로, 시스템 프로퍼티는 환경 변수보다 더 높은 우선순위를 갖습니다.
+- 따라서 `env.getProperty("my-property")`를 호출했을 때 `my-property`가 두 군데에 모두 설정되어 있다면, 더 높은 우선순위를 가진 system property가 리턴됩니다.
+- property 값이 합쳐지는 일은 발생하지 않으며, 더 우선하는 항목에 의해 오버라이드 된다는 점이 중요합니다.
+- 일반적인 `StandardServletEnvironment`의 계층 구조 전체를 우선순위 순으로 나열하자면 다음과 같습니다.
+    1. ServletConfig parameters (해당되는 예: `DispatcherServlet` context)
+    2. ServletContext parameters (web.xml context-param entries)
+    3. JNDI environment variables (`java:comp/env/` entries)
+    4. JVM system properties (`-D` 커맨드 라인 arguments)
+    5. JVM system environment (운영체제 environment variables)
+
+>
+Most importantly, the entire mechanism is configurable. Perhaps you have a custom source of properties that you want to integrate into this search. To do so, implement and instantiate your own `PropertySource` and add it to the set of `PropertySources` for the current `Environment`. The following example shows how to do so:
+
+이러한 전체 메커니즘을 config할 수 있다는 점이 가장 중요합니다.
+이런 검색 작업에 특정한 커스텀 소스를 추가하려는 사용자 요구가 있을 수 있기 때문입니다.
+그렇게 하려면 커스텀 소스로서 `PropertySource`를 구현하고 인스턴스화한 다음, 현재 환경의 `PropertySource` set에 추가하면 됩니다.
+다음 예제를 봅시다.
+
+
+```java
+ConfigurableApplicationContext ctx = new GenericApplicationContext();
+MutablePropertySources sources = ctx.getEnvironment().getPropertySources();
+sources.addFirst(new MyPropertySource());
+```
+
+>
+In the preceding code, `MyPropertySource` has been added with highest precedence in the search. If it contains a `my-property` property, the property is detected and returned, in favor of any `my-property` property in any other `PropertySource`. The [`MutablePropertySources`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/core/env/MutablePropertySources.html ) API exposes a number of methods that allow for precise manipulation of the set of property sources.
+
+위의 코드에서 `MyPropertySource`는 검색 작업에 가장 높은 우선순위로 추가되었습니다.
+만약 `MyPropertySource`에 `my-property` 프로퍼티가 포함되어 있다면 `my-property` 속성을 찾으려 할 때 해당 값이 다른 `PropertySource`에 있는 값보다 우선적으로 감지되어 리턴되게 됩니다.
+`MutablePropertySources` API는 property sources를 상세하게 조작할 수 있는 다양한 메소드를 제공합니다.
+
+### 1.13.3. Using @PropertySource
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#beans-using-propertysource )
+
+
 
 ## 함께 읽기
 
