@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 HHKB-JP 개조 키보드
 summary : HHKB-JP + Hammerspoon으로 행복한 컴퓨터 생활
 date    : 2020-06-03 23:01:19 +0900
-updated : 2021-07-24 21:15:06 +0900
+updated : 2021-07-25 21:59:51 +0900
 tag     : keyboard hhkb hammerspoon
 toc     : true
 public  : true
@@ -104,6 +104,15 @@ latex   : false
 ## 히스토리
 
 [unimap.hex 커밋 히스토리]( https://github.com/johngrib/dotfiles/commits/master/tmk/unimap.hex )
+
+### 2017-05-15
+
+[f3da7d3290a619d707cedae63d889655711cf764]( https://github.com/johngrib/dotfiles/commit/f3da7d3290a619d707cedae63d889655711cf764#diff-806f489a90b9a4cd8a3492a453936ab85db20cafc090cf04e7498ba96f37e1e1 )
+
+![image]( /resource/wiki/my-keyboard-use/126896851-d104c950-b5d3-4df7-b28f-8bd3aafcfe6f.png )
+
+![image]( /resource/wiki/my-keyboard-use/126899889-acec5a99-c9b9-4353-a6d6-d785360ee4c5.png )
+
 
 ### 2017-05-13
 
