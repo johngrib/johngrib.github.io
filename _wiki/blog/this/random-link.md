@@ -3,7 +3,7 @@ layout  : wiki
 title   : 랜덤 링크
 summary : 
 date    : 2021-07-20 21:49:15 +0900
-updated : 2021-07-20 22:18:12 +0900
+updated : 2021-07-25 13:29:03 +0900
 tag     : 
 toc     : true
 public  : true
@@ -30,6 +30,99 @@ latex   : false
 블로그에 붙인 랜덤 버튼을 자주 누르면 과거에 작성한 글의 결함이나 부족한 점을 발견하고 수정하게 된다.
 
 ## 구현
+
+### 2021-07-25
+
+2021년 7월 25일 업데이트 이전의 랜덤 문서 구현은 다음과 같았다.
+
+1. url fragment에 `#random`을 붙여서 `wiki/index`로 이동한다.
+2. `wiki/index`에서는 url에 `#random`이 붙어 있다면 `wiki/index`의 모든 링크 중 하나를 랜덤하게 선택해 이동한다.
+
+이 방식의 단점은 다음과 같았다.
+
+- 랜덤 이동을 할 때마다 인덱스 페이지로 이동한 다음, 다시 랜덤 문서로 이동해야 하므로 비효율적이었다.
+
+업데이트 이후로는 다음과 같이 작동한다.
+
+1. 전체 문서 url 리스트 파일을 가져온다.
+2. 리스트에서 랜덤하게 url 하나를 골라 이동한다.
+
+
+#### 전체 문서 url 리스트 파일
+
+[/data/total-document-url-list.json]( https://github.com/johngrib/johngrib.github.io/commit/ba9c77887561e01594f4c393ab7fa3881774407f#diff-3640675555321254a293087b299927355212e40fd9e1bdaa5a4dc5797461a4d4 )
+
+`total-document-url-list.json`은 공개된 모든 문서의 url을 리스트 형식으로 갖고 있는 파일이다.
+
+랜덤 버튼을 클릭하면 이 파일을 읽고, 그 중 한 문서를 랜덤을 선택해 이동한다.
+
+이 json 파일은 [generateData.js]( https://github.com/johngrib/johngrib.github.io/commit/8e3d024b3c727adefd041a68a7a7486f102efde8 )에서 생성하므로, jekyll의 파일 생성 기능에 의존하지 않는다.
+
+#### 화면 상단의 랜덤 버튼
+
+{% raw %}
+```html
+<header class="header">
+    <div>
+        <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </div>
+    <div>
+        <a class="site-title-right" href="/about/">me</a>
+    </div>
+    <div>
+        <!-- 랜덤 버튼을 클릭하면 goToRandomDocument 함수를 호출한다 -->
+        <a id="random-button" class="site-title-right" href="" onClick="goToRandomDocument()">random</a>
+    </div>
+    <div>
+        <a class="site-title-right" href="/wiki/index/">wiki</a>
+    </div>
+</header>
+<script>
+// 전체 문서 목록을 읽어온 다음, 랜덤으로 하나를 선택해 이동한다
+function goToRandomDocument() {
+    fetch(`/data/total-document-url-list.json`)
+        .then(response => response.json())
+        .then(function(data) {
+            const num = getRandomInt(0, data.length);
+            window.location.href = data[num];
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+}
+
+// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random#두_값_사이의_정수_난수_생성하기
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
+}
+
+// ctrl + r 로 랜덤 문서로 이동한다.
+;(function(){
+    var isCtrl = false;
+
+    document.onkeyup=function(e){
+        if (e.which == 17) {
+            isCtrl = false;
+        }
+    }
+
+    document.onkeydown=function(e){
+        if(e.which == 17) {
+            isCtrl = true;
+        }
+        if(e.which == 82 && isCtrl == true) {
+            goToRandomDocument();
+        }
+    }
+})();
+</script>
+```
+{% endraw %}
+
+
+### 2021-07-25 이전
 
 [_layouts/wikiindex.html]( https://github.com/johngrib/johngrib.github.io/blob/master/_layouts/wikiindex.html )
 
