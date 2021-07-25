@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-07-24 21:59:09 +0900
+updated : 2021-07-25 16:35:42 +0900
 regenerate: true
 ---
 
@@ -636,6 +636,7 @@ regenerate: true
 ### [[/blog/this]]
 
 * [[/blog/this/404-fallback]]
+* [[/blog/this/img-migration-to-resource]]
 * [[/blog/this/random-link]]
 * [[/blog/this/table-generate]]
 * [[/blog/this/todo]]
