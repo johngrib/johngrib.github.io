@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-25 11:57:52 +0900
+updated : 2021-07-25 23:49:11 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -263,6 +263,236 @@ See the [`ReloadableResourceBundleMessageSource`]( https://docs.spring.io/spring
 ### 1.15.2. Standard and Custom Events
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events )
+
+>
+Event handling in the `ApplicationContext` is provided through the `ApplicationEvent` class and the `ApplicationListener` interface.
+If a bean that implements the `ApplicationListener` interface is deployed into the context, every time an `ApplicationEvent` gets published to the `ApplicationContext`, that bean is notified.
+Essentially, this is the standard Observer design pattern.
+
+`ApplicationContext`의 이벤트 핸들링은 `ApplicationEvent` 클래스와 `ApplicationListener` 인터페이스를 통해 제공됩니다.
+`ApplicationListener` 인터페이스를 구현하는 bean이 컨텍스트에 배포되면 `ApplicationEvent`가 `ApplicationContext`에 발행될 때마다 해당 bean에 알림이 보내집니다.
+기본적으로 이 방식은 일반적인 [[/observer-pattern]] 입니다.
+
+>
+As of Spring 4.2, the event infrastructure has been significantly improved and offers an [annotation-based model]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-annotation ) as well as the ability to publish any arbitrary event (that is, an object that does not necessarily extend from `ApplicationEvent`).
+When such an object is published, we wrap it in an event for you.
+{:style="background-color: #e9f1f6;"}
+
+- Spring 4.2 버전부터 이벤트 인프라가 대폭 개선되었으며, 애노테이션 기반의 모델과 임의의 이벤트(`ApplicationEvent`에서 확장할 필요가 없는 객체)를 발행하는 기능을 제공합니다.
+- 이런 종류의 객체가 발행되면, 우리는(Spring은) 이를 이벤트로 래핑합니다.
+
+>
+The following table describes the standard events that Spring provides:
+
+> Table 7. Built-in Events
+> <div id="table1"></div>
+
+- th
+    - Event
+    - Explanation
+- td
+    - `ContextRefreshedEvent`
+    - Published when the `ApplicationContext` is initialized or refreshed (for example, by using the `refresh()` method on the `ConfigurableApplicationContext` interface). Here, “initialized” means that all beans are loaded, post-processor beans are detected and activated, singletons are pre-instantiated, and the `ApplicationContext` object is ready for use. As long as the context has not been closed, a refresh can be triggered multiple times, provided that the chosen `ApplicationContext` actually supports such “hot” refreshes. For example, `XmlWebApplicationContext` supports hot refreshes, but `GenericApplicationContext` does not.
+- td
+    - `ContextStartedEvent`
+    - Published when the `ApplicationContext` is started by using the `start()` method on the `ConfigurableApplicationContext` interface. Here, “started” means that all `Lifecycle` beans receive an explicit start signal. Typically, this signal is used to restart beans after an explicit stop, but it may also be used to start components that have not been configured for autostart (for example, components that have not already started on initialization).
+- td
+    - `ContextStoppedEvent`
+    - Published when the `ApplicationContext` is stopped by using the `stop()` method on the `ConfigurableApplicationContext` interface. Here, “stopped” means that all `Lifecycle` beans receive an explicit stop signal. A stopped context may be restarted through a `start()` call.
+- td
+    - `ContextClosedEvent`
+    - Published when the `ApplicationContext` is being closed by using the `close()` method on the `ConfigurableApplicationContext` interface or via a JVM shutdown hook. Here, "closed" means that all singleton beans will be destroyed. Once the context is closed, it reaches its end of life and cannot be refreshed or restarted.
+- td
+    - `RequestHandledEvent`
+    - A web-specific event telling all beans that an HTTP request has been serviced. This event is published after the request is complete. This event is only applicable to web applications that use Spring’s `DispatcherServlet`.
+- td
+    - `ServletRequestHandledEvent`
+    - A subclass of `RequestHandledEvent` that adds Servlet-specific context information.
+{:class="table-generate" data-target-id="table1"}
+
+다음의 표는 Spring에서 제공하는 표준 이벤트들을 설명합니다.
+
+<div id="table2"></div>
+
+- th
+    - 이벤트
+    - 설명
+- td
+    - `ContextRefreshedEvent`
+    - `ApplicationContext`가 "초기화"되거나 refresh되면 발행되는 이벤트 입니다. (예: `ConfigurableApplicationContext`인터페이스의 `refresh()`메소드를 사용하는 경우)
+        - 여기에서 "초기화"는 모든 bean의 로딩이 완료되고, post-processor bean들이 모두 감지되고 활성화도 되었고, 싱글톤들이 pre-instantiated 되어서, `ApplicationContext` 객체를 사용할 준비가 되었을 때를 의미합니다.
+        - 컨텍스트가 닫히지 않은 한, 선택된 `ApplicationContext`가 실제로 "hot" refresh를 지원한다면, 새로 고침이 여러번 트리거 될 수 있습니다.
+            - 예를 들어 `XmlWebApplicationContext`는 hot refresh를 지원하지만, `GenericApplicationContext`는 지원하지 않습니다.
+- td
+    - `ContextStartedEvent`
+    - `ConfigurableApplicationContext` 인터페이스의 `start()` 메소드를 사용해서 `ApplicationContext`가 "시작"될 때 발행되는 이벤트입니다.
+        - 여기에서 "시작"은 모든 `Lifecycle` bean이 명시적인 시작 신호를 받는 것을 의미합니다.
+        - 일반적으로 이 신호는 명시적인 stop 후 bean을 restart하는데 사용되지만, autostart로 configure되지 않은 컴포넌트(예: 초기화 시 아직 시작되지 않은 컴포넌트)를 시작할 때에도 사용될 수 있습니다.
+- td
+    - `ContextStoppedEvent`
+    - `ConfigurableApplicationContext` 인터페이스의 `stop()` 메소드를 써서 `ApplicationContext`가 "정지"될 때 발행되는 이벤트입니다.
+        - 여기에서 "정지"는 모든 `Lifecycle` bean이 명시적인 정지 신호를 받는 것을 의미합니다.
+        - 정지된 컨텍스트는 `start()`를 호출해서 restart할 수 있습니다.
+- td
+    - `ContextClosedEvent`
+    - `ConfigurableApplicationContext` 인터페이스의 `close()` 메소드를 사용하거나, JVM shutdown hook을 통해 `ApplicationContext`가 "close"될 때 발행되는 이벤트입니다.
+        - 여기에서 "close"는 모든 싱글톤 bean이 destroy 되는 것을 의미합니다.
+        - context가 일단 close 되면 생명주기의 끝에 도달하게 되어 refresh나 restart가 불가능해집니다.
+- td
+    - `RequestHandledEvent`
+    - HTTP request가 서비스되었음을 모든 been에 알려주는 web 특화 이벤트입니다.
+        - 이 이벤트는 request가 완료되었을 때 발행됩니다.
+        - 이 이벤트는 Spring의 `DispatcherServlet`을 사용하는 웹 애플리케이션에서만 사용 가능합니다.
+- td
+    - `ServletRequestHandledEvent`
+    - Servlet 관련 컨텍스트 정보를 추가하는 `RequestHandledEvent`의 서브 클래스입니다.
+{:class="table-generate" data-target-id="table2"}
+
+>
+You can also create and publish your own custom events. The following example shows a simple class that extends Spring’s `ApplicationEvent` base class:
+
+커스텀 이벤트를 생성하고 발행하는 것도 가능합니다.
+다음 예제는 Spring의 `ApplicationEvent` 클래스를 extends 하는 간단한 예제 클래스를 보여줍니다.
+
+```java
+public class BlockedListEvent extends ApplicationEvent {
+
+    private final String address;
+    private final String content;
+
+    public BlockedListEvent(Object source, String address, String content) {
+        super(source);
+        this.address = address;
+        this.content = content;
+    }
+
+    // accessor and other methods...
+}
+```
+
+>
+To publish a custom `ApplicationEvent`, call the `publishEvent()` method on an `ApplicationEventPublisher`.
+Typically, this is done by creating a class that implements `ApplicationEventPublisherAware` and registering it as a Spring bean. The following example shows such a class:
+
+커스텀 `ApplicationEvent`를 발행하려면 `ApplicationEventPublisher`의 `publishEvent()` 메소드를 호출하세요.
+이 작업은 일반적으로 `ApplicationEventPublisherAware`의 구현 클래스를 생성하고 bean으로 등록하는 식으로 이루어집니다.
+다음 예제는 이런 클래스를 보여줍니다.
+
+```java
+public class EmailService implements ApplicationEventPublisherAware {
+
+    private List<String> blockedList;
+    private ApplicationEventPublisher publisher;
+
+    public void setBlockedList(List<String> blockedList) {
+        this.blockedList = blockedList;
+    }
+
+    public void setApplicationEventPublisher(ApplicationEventPublisher publisher) {
+        this.publisher = publisher;
+    }
+
+    public void sendEmail(String address, String content) {
+        if (blockedList.contains(address)) {
+            publisher.publishEvent(new BlockedListEvent(this, address, content));
+            return;
+        }
+        // send email...
+    }
+}
+```
+
+>
+At configuration time, the Spring container detects that `EmailService` implements `ApplicationEventPublisherAware` and automatically calls `setApplicationEventPublisher()`.
+In reality, the parameter passed in is the Spring container itself. You are interacting with the application context through its `ApplicationEventPublisher` interface.
+
+configuration time에, `EmailService`가 `ApplicationEventPublisherAware`를 구현하고 자동으로 `setApplicationEventPublisher()`를 호출하는 것을 Spring 컨테이너는 자동으로 감지합니다.
+이 때, 이 메소드를 통해 전달된 파라미터는 Spring 컨테이너 자체입니다.
+여러분은 `ApplicationEventPublisher` 인터페이스를 통해 애플리케이션 컨텍스트와 상호작용하고 있는 것입니다.
+
+>
+To receive the custom `ApplicationEvent`, you can create a class that implements `ApplicationListener` and register it as a Spring bean. The following example shows such a class:
+
+커스텀 `ApplicationEvent`를 수신하려면, `ApplicationListener`를 구현하는 클래스를 생성하고 Spring bean으로 등록하면 됩니다.
+다음 예제에서는 이러한 클래스를 보여줍니다.
+
+```java
+public class BlockedListNotifier implements ApplicationListener<BlockedListEvent> {
+
+    private String notificationAddress;
+
+    public void setNotificationAddress(String notificationAddress) {
+        this.notificationAddress = notificationAddress;
+    }
+
+    public void onApplicationEvent(BlockedListEvent event) {
+        // notify appropriate parties via notificationAddress...
+    }
+}
+```
+
+>
+Notice that `ApplicationListener` is generically parameterized with the type of your custom event (`BlockedListEvent` in the preceding example).
+This means that the `onApplicationEvent()` method can remain type-safe, avoiding any need for downcasting.
+You can register as many event listeners as you wish, but note that, by default, event listeners receive events synchronously.
+This means that the `publishEvent()` method blocks until all listeners have finished processing the event.
+One advantage of this synchronous and single-threaded approach is that, when a listener receives an event, it operates inside the transaction context of the publisher if a transaction context is available.
+If another strategy for event publication becomes necessary, see the javadoc for Spring’s [`ApplicationEventMulticaster`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/context/event/ApplicationEventMulticaster.html ) interface and [`SimpleApplicationEventMulticaster`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/context/event/SimpleApplicationEventMulticaster.html ) implementation for configuration options.
+
+`ApplicationListener`는 일반적으로 커스텀 이벤트의 타입으로 parameterized 되곤 합니다(위의 예제의 `BlockedListEvent`).
+즉, `onApplicationEvent()` 메소드는 type-safe 하므로 downcasting이 필요하지 않습니다.
+
+이벤트 리스너의 수는 원하는 만큼 얼마든지 등록할 수 있습니다. 다만, 이벤트 리스너는 기본적으로 이벤트를 동기식(synchronously)으로 수신합니다.
+이는 모든 리스너가 이벤트 처리를 완료할 때까지는 `publishEvent()` 메소드가 block된다는 의미입니다.
+
+이런 동기식의 단일 스레드 접근 방식의 한 가지 장점은, 리스너가 이벤트를 수신할 때 트랜잭션 컨텍스트를 사용할 수 있는 경우라면 이벤트 발행자의 트랜잭션 컨텍스트 내에서 작동하게 된다는 것입니다.
+
+만약 이벤트 발행을 위한 다른 전략이 필요하다면, Spring `ApplicationEventMulticaster` 인터페이스의 javadoc과 configuration option에 대한 `SimpleApplicationEventMulticaster`의 구현을 참고하세요.
+
+>
+The following example shows the bean definitions used to register and configure each of the classes above:
+
+다음 예제는 위의 각 클래스를 등록하고 configure하는데 사용되는 bean definition을 보여줍니다.
+
+```xml
+<bean id="emailService" class="example.EmailService">
+    <property name="blockedList">
+        <list>
+            <value>known.spammer@example.org</value>
+            <value>known.hacker@example.org</value>
+            <value>john.doe@example.org</value>
+        </list>
+    </property>
+</bean>
+
+<bean id="blockedListNotifier" class="example.BlockedListNotifier">
+    <property name="notificationAddress" value="blockedlist@example.org"/>
+</bean>
+```
+
+>
+Putting it all together, when the `sendEmail()` method of the `emailService` bean is called, if there are any email messages that should be blocked, a custom event of type `BlockedListEvent` is published. The `blockedListNotifier` bean is registered as an `ApplicationListener` and receives the `BlockedListEvent`, at which point it can notify appropriate parties.
+
+지금까지의 내용을 종합해보면, `emailService` bean의 `sendEmail()` 메소드가 호출될 때, 만약 차단해야 하는 이메일 메시지가 있다면 `BlockedListEvent`가 발행됩니다.
+`ApplicationListener`로 등록된 `blockedListNotifier` been은 `BlockedListEvent`를 수신해서 이를 적절한 처리자에게 알려줄 수 있습니다.
+
+> (i)
+Spring’s eventing mechanism is designed for simple communication between Spring beans within the same application context. However, for more sophisticated enterprise integration needs, the separately maintained [Spring Integration]( https://projects.spring.io/spring-integration/ ) project provides complete support for building lightweight, [pattern-oriented]( https://www.enterpriseintegrationpatterns.com/ ), event-driven architectures that build upon the well-known Spring programming model.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - Spring의 이벤트 처리 메커니즘은 동일한 애플리케이션 컨텍스트 내에서 Spring bean과 bean 사이의 간단한 커뮤니케이션을 위해 디자인되었습니다.
+    - 한편, 그보다 더 정교한 엔터프라이즈 통합 요구 사항을 만족시키기 위해 별도로 관리되고 있는 Spring Integration 프로젝트는 잘 알려져 있는 Spring 프로그래밍 모델을 기반으로 하는 가볍고 패턴 지향적인 이벤트 중심 아키텍처를 구축하기 위한 완벽한 지원을 제공합니다.
+
+#### Annotation-based Event Listeners
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-annotation )
+
+
+
+
+
+
 
 ## 함께 읽기
 
