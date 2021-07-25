@@ -301,7 +301,7 @@
  },
  {
   "name": "game",
-  "size": 4
+  "size": 3
  },
  {
   "name": "gc",
@@ -857,7 +857,7 @@
  },
  {
   "name": "vim",
-  "size": 27
+  "size": 26
  },
  {
   "name": "vimwiki",
