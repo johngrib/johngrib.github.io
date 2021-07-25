@@ -19,7 +19,7 @@ latex   : false
 
 목표는 "한글" 입력 모드로 전환을 하면 화면 위쪽에 표시를 해 주는 것이다. 예전에 만들어 두었던 함수가 있어 작업은 어렵지 않았고 약 20분 내에 코딩을 끝냈다.
 
-![]( /post-img/hammerspoon-inputsource-aurora/input-aurora.gif )
+![]( /resource/wiki/hammerspoon-inputsource-aurora/input-aurora.gif )
 
 위의 gif는 황건구님이 완성된 코드를 돌려보며 기뻐하며 찍은 것이다.
 
@@ -58,7 +58,7 @@ $ tree .
 
 화면 상단 상태 막대에서 해머스푼 아이콘을 클릭한 다음, `Console`을 선택한다.
 
-![]( /post-img/hammerspoon-inputsource-aurora/hammer-menu.png )
+![]( /resource/wiki/hammerspoon-inputsource-aurora/hammer-menu.png )
 
 콘솔이 나타나면, 영문 입력기로 전환한 다음 콘솔에 다음과 같이 입력한다.
 
@@ -70,7 +70,7 @@ hs.keycodes.currentSourceID()
 
 내 경우엔 `com.apple.keylayout.ABC`이 나오는데, 내가 `ABC`를 쓰고 있기 때문이다.
 
-![]( /post-img/hammerspoon-inputsource-aurora/keyboard-preferences.png )
+![]( /resource/wiki/hammerspoon-inputsource-aurora/keyboard-preferences.png )
 
 만약 `US`를 사용하고 있다면 `com.apple.keylayout.US`가 나올 것이다.
 

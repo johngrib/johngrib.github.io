@@ -94,17 +94,17 @@ endsnippet
 
 * 코딩을 하다가 `for`라고 쓰면 ycm이나 coc를 통해 자동 완성 후보가 나타난다.
 
-![for]( /post-img/ultisnips/for.png )
+![for]( /resource/wiki/ultisnips/for.png )
 
 * `<C-n>`, `<C-p>`로 위아래로 움직여 선택을 할 수 있다.
 * `<snip>`이라 되어 있는 것은 UltiSnips가 자동 완성을 보조해준다는 뜻이다.
 * `fori`를 선택한 다음 `<Tab>`을 입력하면, 다음과 같이 자동완성된다.
 
-![for completed]( /post-img/ultisnips/for-completed.png )
+![for completed]( /resource/wiki/ultisnips/for-completed.png )
 
 커서가 자동으로 `prop`로 옮겨져 있는데, 여기에서 `item`이라 써보면...
 
-![for-item]( /post-img/ultisnips/for-item.png )
+![for-item]( /resource/wiki/ultisnips/for-item.png )
 
 아래쪽에 있는 `prop`도 같이 `item`으로 실시간으로 수정된다.
 
@@ -120,11 +120,11 @@ endsnippet
 
 이 상태에서 `<Tab>`을 한 번 눌러보면 `${2}`위치로 커서가 점프한다.
 
-![for-jump]( /post-img/ultisnips/for-jump.png )
+![for-jump]( /resource/wiki/ultisnips/for-jump.png )
 
 `list`라고 쓰면 아래와 같이 바뀐다.
 
-![for-list]( /post-img/ultisnips/for-list.png )
+![for-list]( /resource/wiki/ultisnips/for-list.png )
 
 `<Tab>`과 `<S-Tab>`으로 `${1}`과 `${2}`를 왔다갔다 할 수 있다.
 
@@ -224,7 +224,7 @@ endsnippet
 
 `<`을 입력하고 탭 키를 누르면 된다.
 
-![tag]( /post-img/ultisnips/lt.gif )
+![tag]( /resource/wiki/ultisnips/lt.gif )
 
 ### javascript import
 
@@ -257,7 +257,7 @@ endsnippet
 
 rust 언어를 공부하다 만들어본 snippet이다. `kebab-case`를 작성하고 `<Tab>`을 입력하면 `snake_case`로 완성해준다.
 
-![kebab-case to snake_case]( /post-img/ultisnips/kebab-case.gif )
+![kebab-case to snake_case]( /resource/wiki/ultisnips/kebab-case.gif )
 
 ```perl
 # kebab-case to snake_case

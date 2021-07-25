@@ -29,7 +29,7 @@ latex   : false
 
 다음은 MacOS의 터미널이다.
 
-![]( /post-img/three-dots-in-menu/terminal.png )
+![]( /resource/wiki/three-dots-in-menu/terminal.png )
 
 `셸` 탭을 살펴보면 `...`이 있는 메뉴가 6개 있음을 알 수 있다.
 

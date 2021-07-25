@@ -18,7 +18,7 @@ latex   : false
 * 아래의 스크린샷과 같이 `D1`셀에 `=SUM(A1:D1)`과 같이 자기 자신을 참조하는 순환 참조가 발생했다고 하자.
 * `수식`-`오류 검사`-`순환 참조`로 어느 셀에 순환 참조가 걸렸는지 확인할 수 있다.
 
-![image]( /post-img/excel-remove-circular-reference/45728039-32ea3880-bc01-11e8-824e-a353c826002c.png )
+![image]( /resource/wiki/excel-remove-circular-reference/45728039-32ea3880-bc01-11e8-824e-a353c826002c.png )
 
 
 ## Links

@@ -53,7 +53,7 @@ $ perl -lne '(1x$_) !~ /^1?$|^(11+?)\1+$/ && print "$_ is prime"'
 /^1?$|^(11+?)\1+$/
 ```
 
-![prime regex]({{ site.url }}/post-img/2017/2017-09-20-prime-regex.jpg)
+![prime regex]({{ site.url }}/resource/wiki/regex-prime/2017-09-20-prime-regex.jpg)
 
 ## Links
 

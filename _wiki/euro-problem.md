@@ -140,7 +140,7 @@ $ node euro.js | pbcopy
 
 엑셀에 붙여넣은 다음 차트를 그리면 다음과 같은 결과가 나온다.
 
-![result]( /post-img/euro-problem/39066356-be9cec42-450f-11e8-9c61-9920ddff0138.jpg )
+![result]( /resource/wiki/euro-problem/39066356-be9cec42-450f-11e8-9c61-9920ddff0138.jpg )
 
 ### 사후 확률 요약
 

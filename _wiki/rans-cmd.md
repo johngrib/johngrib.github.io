@@ -51,7 +51,7 @@ rans '^a+b$' --dfa | dot -Tpdf -o result.pdf
 
 결과는 다음과 같다.
 
-![image]( /post-img/rans-cmd/82329213-eb423280-9a1b-11ea-935e-928cad14a748.png )
+![image]( /resource/wiki/rans-cmd/82329213-eb423280-9a1b-11ea-935e-928cad14a748.png )
 
 
 ## Links

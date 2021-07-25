@@ -50,7 +50,7 @@ B 트리는 SS테이블과 같이 키로 정렬된 키-값 쌍을 유지하기 �
 
 다음 이미지는 1970년 Bayer와 McCreight의 논문 "ORGANIZATION AND MAINTENANCE OF LARGE ORDERED INDICES"에서 캡처한 것이다.[^original-graph]
 
-![figure2]( /post-img/b-tree/figure2.png )
+![figure2]( /resource/wiki/b-tree/figure2.png )
 
 ### 2-3 탐색 트리
 
@@ -109,7 +109,7 @@ B-Tree는 파라미터 M 값을 사용한다.
 
 >
 $$j$$ 개의 키들과 $$j+1$$ 개의 포인터들을 가진 한 노드를 다음과 같이 표현할 수 있다.  
-![node]( /post-img/b-tree/taocp01.png )(1)  
+![node]( /resource/wiki/b-tree/taocp01.png )(1)  
 여기서 $$K_1 < K_2 < ... < K_j$$ 이며 $$P_i$$는 키들이 $$K_i$$에서 $$K_{i+1}$$ 사이인 하위 트리를 가리키는 포인터이다.
 이런 구조에서 B트리의 검색은 상당히 간단하다: 노드 (1)을 내부 메모리로 가져온 후,
 키 $$K_1, K_2, ..., K_j$$ 중에서 주어진 인수를 찾는다.
@@ -125,7 +125,7 @@ $$j$$ 개의 키들과 $$j+1$$ 개의 포인터들을 가진 한 노드를 다�
 
 다음은 오더 6 B-트리를 이해하기 쉽게 표현한 이미지다.
 
-![anatomy of a B-tree set]( /post-img/b-tree/anatomy.png )
+![anatomy of a B-tree set]( /resource/wiki/b-tree/anatomy.png )
 
 * 오더 6 B-트리이므로, 루트 노드를 제외한 모든 노드가 가진 아이템의 수가 3 ~ 5 개라는 것을 알 수 있다.
 * 2-node: 키가 2개 있는 노드.
@@ -166,7 +166,7 @@ n개의 키를 가진 B 트리는 깊이가 항상 $$O(\log n)$$이다.
 
 #### 삽입 예제
 
-![Inserting a new key into a B-tree set]( /post-img/b-tree/insertion.png )
+![Inserting a new key into a B-tree set]( /resource/wiki/b-tree/insertion.png )
 
 위의 예는 "알고리즘"에서 가져온 것이며 B-트리에 A를 추가하는 내용이다.[^sedgewick-add]
 
@@ -240,7 +240,7 @@ B+ 트리 인덱스에는 또 다른 재미있는 특징이 있다. 그것은 �
 
 다음은 B+ Tree의 예를 표현한 것으로, "트랜잭션 처리의 원리"에서 인용한 것이다.[^bernstein-b-tree-example]
 
-![b+ tree]( /post-img/b-tree/bplus-example.png )
+![b+ tree]( /resource/wiki/b-tree/bplus-example.png )
 
 이 예에서 키 값 299를 찾으려 한다고 하자.
 

@@ -33,7 +33,7 @@ latex   : false
 
 다음은 2020년 12월 14일 당시의 downdetector 스크린샷이다.
 
-![2020-12-14 구글 장애]( /post-img/downdetector/102081567-cc8e0800-3e53-11eb-96b6-9fcdb064cddc.png )
+![2020-12-14 구글 장애]( /resource/wiki/downdetector/102081567-cc8e0800-3e53-11eb-96b6-9fcdb064cddc.png )
 
 
 ## Links

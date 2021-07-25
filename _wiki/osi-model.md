@@ -73,7 +73,7 @@ latex   : true
 
 다음 이미지의 프로토콜과 인터페이스 위치를 잘 살펴보자.
 
-![layers](/post-img/osi-model/layers.jpg )  
+![layers](/resource/wiki/osi-model/layers.jpg )  
 이미지 출처: TCP/IP 완벽 가이드 5장. 그림 5-4.
 
 * 가령 7계층 프로토콜을 사용하여 A 장비의 7계층에서 B장비의 7계층으로 메시지를 보낸다고 하자.
@@ -115,7 +115,7 @@ $$
 
 다음 이미지는 PDU가 N-1 계층의 SDU 가 되는 것과, N-1 계층의 PDU로 캡슐화되는 것을 보여준다.
 
-![pdu-capsulation](/post-img/osi-model/pdu-capsulation.jpg )  
+![pdu-capsulation](/resource/wiki/osi-model/pdu-capsulation.jpg )  
 이미지 출처: TCP/IP 완벽 가이드 5장. 그림 5-6.
 
 * 계층을 타고 내려갈수록 각 계층 프로토콜의 헤더가 붙게 된다.
@@ -194,7 +194,7 @@ $$
 
 * TCP/IP 프로토콜 슈트(suite)가 OSI 모델보다 먼저 개발됐기 때문.
 
-![tcpip](/post-img/osi-model/tcpip.jpg )  
+![tcpip](/resource/wiki/osi-model/tcpip.jpg )  
 이미지 출처: TCP/IP 완벽 가이드 8장. 그림 8-3.
 
 ## Links

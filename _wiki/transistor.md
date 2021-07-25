@@ -15,7 +15,7 @@ latex   : false
 
 ## pnp/npn 트랜지스터
 
-![transistors](/post-img/transistor/tran1.gif)
+![transistors](/resource/wiki/transistor/tran1.gif)
 
 트랜지스터에는 3개의 다리가 있으며 각자 다음과 같은 이름을 갖고 있다.
 
@@ -23,7 +23,7 @@ latex   : false
 - Emitter
 - Collector
 
-![amplifier](/post-img/transistor/tran2.gif)
+![amplifier](/resource/wiki/transistor/tran2.gif)
 
 - 트랜지스터의 두 가지 기능
     - 증폭: base가 일종의 수도꼭지 역할을 하여, Collector에서 Emitter로 흐르는 전류를 증폭시킨다.
@@ -35,19 +35,19 @@ latex   : false
 
 - 다음은 [윌리엄 쇼클리의 특허 문서](https://patents.google.com/patent/US2569347A/en )에서 캡처한 것이다.
 
-![npn](/post-img/transistor/patent-npn.png)
+![npn](/resource/wiki/transistor/patent-npn.png)
 
 ### 다이오드도 함께 보자
 
 p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지스터를 이해할 때 도움이 된다.
 
-![npn](/post-img/transistor/pn-diode.png)
+![npn](/resource/wiki/transistor/pn-diode.png)
 
 ### 점접촉 트랜지스터와의 비교
 
 다음은 윌리엄 쇼클리의 [Electrons And Holes In Semiconductors](https://archive.org/details/ElectronsAndHolesInSemiconductors/page/n51 ) 35 쪽의 일부를 캡처한 사진이다.
 
-![symbol](/post-img/transistor/1950.png)
+![symbol](/resource/wiki/transistor/1950.png)
 
 ## npn 트랜지스터로 논리 게이트 만들기
 
@@ -56,7 +56,7 @@ p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지
 ### and, nand
 
 | and                                   | nand                                   |
-| ![and](/post-img/transistor/and4.gif) | ![and](/post-img/transistor/nand4.gif) |
+| ![and](/resource/wiki/transistor/and4.gif) | ![and](/resource/wiki/transistor/nand4.gif) |
 
 * and 게이트
     * 트랜지스터 둘을 직렬로 연결한다.
@@ -69,7 +69,7 @@ p-n 접합(p-n junction)으로 만든 다이오드의 구조를 보면 트랜지
 ### or, nor
 
 | or                                  | nor                                   | nor(다른 방식)                        |
-| ![or](/post-img/transistor/or4.gif) | ![nor](/post-img/transistor/nor5.gif) | ![nor](/post-img/transistor/nor4.gif) |
+| ![or](/resource/wiki/transistor/or4.gif) | ![nor](/resource/wiki/transistor/nor5.gif) | ![nor](/resource/wiki/transistor/nor4.gif) |
 
 
 

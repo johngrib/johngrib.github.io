@@ -26,7 +26,7 @@ GoF는 다음과 같이 팩토리 메소드 패턴의 의도를 밝힌다.[^gof]
 
 구조는 다음과 같다.
 
-![structure]( /post-img/factory-method-pattern/structure.gif )
+![structure]( /resource/wiki/factory-method-pattern/structure.gif )
 
 ## 요약
 

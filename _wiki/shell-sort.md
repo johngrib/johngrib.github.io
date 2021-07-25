@@ -43,7 +43,7 @@ $$
 
 다음 이미지는 TAOCP 3권에 실려 있는 예제이다.[^taocp-3-113]
 
-![]( /post-img/shell-sort/8-4-2-1.jpg )
+![]( /resource/wiki/shell-sort/8-4-2-1.jpg )
 
 이 예제는 보조 증분 수열로 $$8, 4, 2, 1$$을 사용하고 있다.
 

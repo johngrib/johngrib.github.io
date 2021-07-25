@@ -29,7 +29,7 @@ GoF 책에서는 다음과 같이 옵저버 패턴의 의도를 밝힌다.[^gof]
 
 구조는 다음과 같다.[^structure]
 
-![structure]( /post-img/observer-pattern/structure.jpg )
+![structure]( /resource/wiki/observer-pattern/structure.jpg )
 
 ## 요약
 

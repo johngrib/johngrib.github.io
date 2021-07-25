@@ -16,7 +16,7 @@ latex   : false
 ## HTML의 역사
 
 >
-![image]( /post-img/html/109306749-f667a000-7882-11eb-88fe-0da4aa1c03b2.png )
+![image]( /resource/wiki/html/109306749-f667a000-7882-11eb-88fe-0da4aa1c03b2.png )
 >
 HTML은 1991년 웹의 창시자인 유럽입자물리연구소(CERN)의 팀 버너스-리(Tim Berners-Lee)가 인터넷상의 정보를 표현하는 언어로 개발하였다.
 1993년 미국 일리노이 대학의 연구원인 마크 앤드리슨(Marc Andreessen)과 에릭 비나(Eric Bina)가 만든 모자익(Mosaic)이라는 웹브라우저에 의해 보편화되기 시작하였다.

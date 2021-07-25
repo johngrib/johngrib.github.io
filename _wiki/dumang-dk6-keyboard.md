@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-![]( /post-img/dumang-dk6-keyboard/Dk6-nkro-swapable-rgb-cherry-mx-kaih-box.jpg )
+![]( /resource/wiki/dumang-dk6-keyboard/Dk6-nkro-swapable-rgb-cherry-mx-kaih-box.jpg )
 
 ## 구매
 

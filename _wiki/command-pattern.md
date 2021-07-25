@@ -51,7 +51,7 @@ queue or log requests, and support undoable operations.
 
 구조는 다음과 같다.[^structure]
 
-![structure]( /post-img/command-pattern/structure.gif )
+![structure]( /resource/wiki/command-pattern/structure.gif )
 
 ## 요약
 

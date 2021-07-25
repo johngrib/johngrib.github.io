@@ -380,7 +380,7 @@ ISP의 고객 중 일부는 최종 사용 기관이지만 일부는 (더 작은)
 
 ### IP 데이터그램 캡슐화
 
-![capsulation](/post-img/IP/ip_datagram_capsulation.jpg)
+![capsulation](/resource/wiki/IP/ip_datagram_capsulation.jpg)
 
 IP를 사용해 메시지를 보내려면 상위 계층 데이터를 IP 데이터그램으로 캡슐화하는 과정이 필요하다.
 
@@ -608,7 +608,7 @@ IP 데이터그램의 사이즈가 데이터 링크 계층 프레임 포맷 페�
 
 다음은 TCP/IP 완벽 가이드 22장의 그림을 인용한 것이다.
 
-![frag](/post-img/IP/frag.jpg)
+![frag](/resource/wiki/IP/frag.jpg)
 
 ### IPv6 단편화(Fragmentation)
 
@@ -632,7 +632,7 @@ IPv6의 단편화 과정은 IPv4와 거의 같으며, 확장 헤더를 처리하
 
 다음 이미지는 MTU가 230 바이트일 때, 320바이트의 데이터그램을 단편화하는 과정을 나타낸 것이다.
 
-![ipv6 frag](/post-img/IP/ipv6frag.jpg)
+![ipv6 frag](/resource/wiki/IP/ipv6frag.jpg)
 
 ## 의문점들
 

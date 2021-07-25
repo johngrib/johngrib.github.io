@@ -19,7 +19,7 @@ latex   : false
 
 추측과 논박(1,2권), 열린 사회와 그 적들(1,2권)은 내 전공서이다(내 전공은 서양철학이다).
 
-![칼 포퍼의 책들]( /post-img/my-favorite-books/karl-popper.jpg )
+![칼 포퍼의 책들]( /resource/wiki/my-favorite-books/karl-popper.jpg )
 
 칼 포퍼의 반증주의는 내 인생의 길잡이가 된 중요한 방법론이다.
 
@@ -39,7 +39,7 @@ latex   : false
 
 ## 상자 밖에 있는 사람
 
-![상자 밖에 있는 사람]( /post-img/my-favorite-books/box.jpg )
+![상자 밖에 있는 사람]( /resource/wiki/my-favorite-books/box.jpg )
 
 이 책은 단순하지만 중요한 사실을 알려준다.
 다른 사람의 마음을 헤아려 보는 역지사지를 머리로만 아는 것이 아니라 실제로 염두에 두고 행동하는 것이 얼마나 중요한지를 깨달을 수 있었다.
@@ -57,7 +57,7 @@ latex   : false
 
 ## 드라이브
 
-![드라이브]( /post-img/my-favorite-books/drive.jpg )
+![드라이브]( /resource/wiki/my-favorite-books/drive.jpg )
 
 잘 하고 싶은 것이 있는데 잘 안된다면 읽어볼만한 좋은 책.
 
@@ -70,7 +70,7 @@ latex   : false
 
 ## 머피의 법칙 지혜의 패러독스
 
-![머피의 법칙]( /post-img/my-favorite-books/murphy.jpg )
+![머피의 법칙]( /resource/wiki/my-favorite-books/murphy.jpg )
 
 내가 중학생일 때 구매한 책인데, 삼십대 후반이 된 지금까지 항상 책상 옆에 놓고 종종 펼쳐본다.
 
@@ -90,7 +90,7 @@ latex   : false
 
 ## 해커스
 
-![해커스]( /post-img/my-favorite-books/hackers.jpg )
+![해커스]( /resource/wiki/my-favorite-books/hackers.jpg )
 
 개발 2년차였던 2013년에 읽었다.
 
@@ -103,7 +103,7 @@ latex   : false
 
 ## 프로그래머로 사는 법
 
-![]( /post-img/my-favorite-books/making-big.JPG )
+![]( /resource/wiki/my-favorite-books/making-big.JPG )
 
 존 벤틀리, 제임스 고슬링, 스티브 워즈니악, 피터 노빅, 비야네 스트롭스트룹, 리처드 스톨만, 그래디 부치, 리누스 토발즈 같은 엄청난 사람들의 인터뷰가 수록된 책.
 
@@ -114,7 +114,7 @@ latex   : false
 
 ## Goal (만화판)
 
-![Goal]( /post-img/my-favorite-books/goal.JPG )
+![Goal]( /resource/wiki/my-favorite-books/goal.JPG )
 
 굉장히 두꺼운 경영서의 고전을 만화책으로 요약한 책.
 
@@ -127,7 +127,7 @@ latex   : false
 
 ## Practical VIM
 
-![]( /post-img/my-favorite-books/practical-vim.JPG )
+![]( /resource/wiki/my-favorite-books/practical-vim.JPG )
 
 Vimcasts의 Drew Neil이 쓴 최고의 Vim 입문서. Vim을 엄청나게 잘 쓰는 사람의 실용적인 조언이 가득하다.
 
@@ -139,7 +139,7 @@ Vimcasts의 Drew Neil이 쓴 최고의 Vim 입문서. Vim을 엄청나게 잘 �
 
 ## 리눅스 커맨드라인 완벽 입문서
 
-![]( /post-img/my-favorite-books/linux-commandline.JPG )
+![]( /resource/wiki/my-favorite-books/linux-commandline.JPG )
 
 2016년에 읽었다. 리눅스 터미널 초보 탈출을 도와준 고마운 책이다.
 
@@ -148,7 +148,7 @@ Vimcasts의 Drew Neil이 쓴 최고의 Vim 입문서. Vim을 엄청나게 잘 �
 
 ## HTTP 완벽 가이드
 
-![]( /post-img/my-favorite-books/http.JPG )
+![]( /resource/wiki/my-favorite-books/http.JPG )
 
 웹 개발자라면 반드시 읽어야 할 책이라 생각한다.
 
@@ -163,7 +163,7 @@ Vimcasts의 Drew Neil이 쓴 최고의 Vim 입문서. Vim을 엄청나게 잘 �
 
 ## Head first Design Pattern
 
-![]( /post-img/my-favorite-books/head-first-design-pattern.JPG )
+![]( /resource/wiki/my-favorite-books/head-first-design-pattern.JPG )
 
 GoF의 디자인 패턴은 초보자에게는 매우 어려운 책이다.
 
@@ -178,7 +178,7 @@ GoF 책을 공부하다 좌절했다면 이 책과 함께 다시 읽어보길 �
 
 ## Code Complete 2
 
-![]( /post-img/my-favorite-books/code-complete.JPG )
+![]( /resource/wiki/my-favorite-books/code-complete.JPG )
 
 개발 1년차일 때 읽었다.
 
@@ -194,7 +194,7 @@ GoF 책을 공부하다 좌절했다면 이 책과 함께 다시 읽어보길 �
 
 ## 이펙티브 자바
 
-![]( /post-img/my-favorite-books/effective-java.JPG )
+![]( /resource/wiki/my-favorite-books/effective-java.JPG )
 
 자바 언어 사용자라면 반드시 읽어야 하는 책이라고 생각한다.
 
@@ -221,7 +221,7 @@ public interface Map<K, V> {
 
 ## Pro Git
 
-![]( /post-img/my-favorite-books/pro-git.JPG )
+![]( /resource/wiki/my-favorite-books/pro-git.JPG )
 
 Git 책은 이 한권으로 충분하다고 생각한다.
 
@@ -245,7 +245,7 @@ Git 책은 이 한권으로 충분하다고 생각한다.
 
 ## 프로그래밍 수련법
 
-![]( /post-img/my-favorite-books/practice-of-programming.JPG )
+![]( /resource/wiki/my-favorite-books/practice-of-programming.JPG )
 
 브라이언 커니핸과 롭 파이크의 책.
 
@@ -256,7 +256,7 @@ Git 책은 이 한권으로 충분하다고 생각한다.
 
 ## 코끼리와 벼룩
 
-![]( /post-img/my-favorite-books/elephant-and-flea.JPG )
+![]( /resource/wiki/my-favorite-books/elephant-and-flea.JPG )
 
 조직을 벗어난 개인으로서 어떻게 해야 할지를 궁리하는 내용을 담고 있는데, 미래에 대한 통찰력이 대단하다.
 
@@ -277,7 +277,7 @@ Git 책은 이 한권으로 충분하다고 생각한다.
 
 ## 테스트 주도 개발
 
-![]( /post-img/my-favorite-books/tdd.JPG )
+![]( /resource/wiki/my-favorite-books/tdd.JPG )
 
 나를 개발자의 길로 이끌어준 고마운 친구가 추천해줘서 개발 2년차에 읽은 책.
 
@@ -290,7 +290,7 @@ SI 탈출에 직접적인 도움을 준 굉장히 고마운 책이다.
 
 ## 테크니컬 리더
 
-![]( /post-img/my-favorite-books/technical-leader.JPG )
+![]( /resource/wiki/my-favorite-books/technical-leader.JPG )
 
 제랄드 와인버그의 책은 다 좋다. 아직 번역되지 않은 책이 많을텐데 더 많이 나왔으면 좋겠다.
 
@@ -303,7 +303,7 @@ SI 탈출에 직접적인 도움을 준 굉장히 고마운 책이다.
 
 ## 컨설팅의 비밀
 
-![]( /post-img/my-favorite-books/secrets-of-consulting.JPG )
+![]( /resource/wiki/my-favorite-books/secrets-of-consulting.JPG )
 
 제목만 읽으면 개발과 관련 없을 것 같은데 저자가 제랄드 와인버그다.
 
@@ -314,7 +314,7 @@ SI 탈출에 직접적인 도움을 준 굉장히 고마운 책이다.
 
 ## 괴델, 에셔, 바흐
 
-![]( /post-img/my-favorite-books/g-e-b.JPG )
+![]( /resource/wiki/my-favorite-books/g-e-b.JPG )
 
 철학과 2학년이었던 2003년에 읽었다.
 
@@ -328,7 +328,7 @@ SI 탈출에 직접적인 도움을 준 굉장히 고마운 책이다.
 
 DNA의 자기복제와 단백질 구조 이야기가 나오는 챕터를 읽을 때 아미노산의 나열이 일종의 어셈블리 코드라는 사실을 깨닫고 충격을 받았던 기억이 아직도 생생하다.
 
-![]( /post-img/my-favorite-books/g-e-b-2.JPG )
+![]( /resource/wiki/my-favorite-books/g-e-b-2.JPG )
 
 
 2017년에 개역판이 나왔고 절판이 될까봐 얼른 사뒀으나 아직 개역판을 읽지 못하고 있다.
@@ -336,7 +336,7 @@ DNA의 자기복제와 단백질 구조 이야기가 나오는 챕터를 읽을 
 
 ## 로젠의 이산수학 7판
 
-![]( /post-img/my-favorite-books/discrete-math.JPG )
+![]( /resource/wiki/my-favorite-books/discrete-math.JPG )
 
 2019년에 열심히 공부해서 1회독을 일단 완료한 책.
 
@@ -350,7 +350,7 @@ DNA의 자기복제와 단백질 구조 이야기가 나오는 챕터를 읽을 
 
 ## TCP/IP 완벽 가이드
 
-![]( /post-img/my-favorite-books/tcp-ip.JPG )
+![]( /resource/wiki/my-favorite-books/tcp-ip.JPG )
 
 2019년에 로젠의 이산수학을 다 읽고 나서 읽었다.
 
@@ -363,7 +363,7 @@ DNA의 자기복제와 단백질 구조 이야기가 나오는 챕터를 읽을 
 
 ## 데이터 중심 애플리케이션 설계
 
-![]( /post-img/my-favorite-books/designing-data-intensive-applications.JPG )
+![]( /resource/wiki/my-favorite-books/designing-data-intensive-applications.JPG )
 
 2018년에 읽었다.
 
@@ -376,7 +376,7 @@ DNA의 자기복제와 단백질 구조 이야기가 나오는 챕터를 읽을 
 
 ## 미래를 만든 Geeks
 
-![]( /post-img/my-favorite-books/revolution-in-the-valley.JPG )
+![]( /resource/wiki/my-favorite-books/revolution-in-the-valley.JPG )
 
 2019년 12월 24일에 읽었다.
 
@@ -390,7 +390,7 @@ DNA의 자기복제와 단백질 구조 이야기가 나오는 챕터를 읽을 
 
 ## 초난감 기업의 조건
 
-![]( /post-img/my-favorite-books/in-search-of-stupidity.JPG )
+![]( /resource/wiki/my-favorite-books/in-search-of-stupidity.JPG )
 
 "초우량 기업의 조건"이라는 책의 제목을 비꼰 제목을 갖고 있다.
 
@@ -403,7 +403,7 @@ DNA의 자기복제와 단백질 구조 이야기가 나오는 챕터를 읽을 
 
 ## 프로그래머의 길, 멘토에게 묻다
 
-![]( /post-img/my-favorite-books/apprenticeship-patterns.JPG )
+![]( /resource/wiki/my-favorite-books/apprenticeship-patterns.JPG )
 
 이 책의 원제는 "Apprenticeship Patterns"이다.
 
@@ -414,7 +414,7 @@ DNA의 자기복제와 단백질 구조 이야기가 나오는 챕터를 읽을 
 
 ## 클린 아키텍처
 
-![]( /post-img/my-favorite-books/clean-architecture.JPG )
+![]( /resource/wiki/my-favorite-books/clean-architecture.JPG )
 
 밥 아저씨의 책.
 
@@ -443,7 +443,7 @@ DNA의 자기복제와 단백질 구조 이야기가 나오는 챕터를 읽을 
 
 ## 함수형 자바스크립트 / 마이클 포거스
 
-![]( /post-img/my-favorite-books/functional-javascript.JPG )
+![]( /resource/wiki/my-favorite-books/functional-javascript.JPG )
 
 2015년에 읽은 책.
 

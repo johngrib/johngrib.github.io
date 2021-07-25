@@ -78,7 +78,7 @@ resultActions
 jq -c 'path(..)|[.[]|tostring]|join(".")' request.json
 ```
 
-![]( /post-img/restdoc-item-generator/jq.png )
+![]( /resource/wiki/restdoc-item-generator/jq.png )
 
 이제 이 결과를 복붙해서 쓰면 된다.
 

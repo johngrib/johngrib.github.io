@@ -51,7 +51,7 @@ end)
 
 리로드한 다음, `option`+`l`을 입력하면 아래와 같은 선택기가 나옵니다.
 
-![chooser]({{ site.url }}/post-img/2017/2017-08-07-hammerspoon-chooser.jpg)
+![chooser]({{ site.url }}/resource/wiki/hammerspoon-tutorial-05/2017-08-07-hammerspoon-chooser.jpg)
 
 ## 클립보드 히스토리를 만들어 봅시다
 

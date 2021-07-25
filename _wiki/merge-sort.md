@@ -94,7 +94,7 @@ void merge(int[] a, int lo, int mid, int hi) {
 
 각 단계별로 '정렬된 서브 배열' 2개를 만들고 병합하는 과정을 반복하는 것을 볼 수 있다.
 
-![]( /post-img/merge-sort/top-down-merge-sort.jpg )
+![]( /resource/wiki/merge-sort/top-down-merge-sort.jpg )
 
 ```java
 private int[] aux;
@@ -131,7 +131,7 @@ void topDownMergeSort(int[] a, int lo, int hi) {
 
 상향식 병합 정렬은 작은 서브 배열을 여러 개 정렬해 놓고, 점점 서브 배열의 수를 반씩 줄여 나가는 방법이다.
 
-![]( /post-img/merge-sort/bottom-up-merge-sort.jpg )
+![]( /resource/wiki/merge-sort/bottom-up-merge-sort.jpg )
 
 상향식 병합 정렬과 하향식 병합 정렬은 작업 순서만 다를 뿐, 복잡도는 차이가 거의 없다.
 

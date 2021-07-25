@@ -23,7 +23,7 @@ latex   : false
 - Java Language
     - Java Language Specification을 보면 항상 그의 이름이 James Gosling 다음에 나온다.
 
-![]( /post-img/Bill-Joy-and-10000-hours-rule/java-lang.jpg )
+![]( /resource/wiki/Bill-Joy-and-10000-hours-rule/java-lang.jpg )
 
 ## 빌 조이가 만난 행운들
 

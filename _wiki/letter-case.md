@@ -56,9 +56,9 @@ The case of capital letters was always kept above that of the smaller ones - hen
 
 이 책에는 이해하기 쉬운 삽화도 실려 있다.
 
-![]( /post-img/letter-case/letter-case-00.jpg )
+![]( /resource/wiki/letter-case/letter-case-00.jpg )
 
-![]( /post-img/letter-case/letter-case-01.jpg )
+![]( /resource/wiki/letter-case/letter-case-01.jpg )
 
 ### letterpressdaughter.blospot.kr
 

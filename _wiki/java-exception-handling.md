@@ -117,7 +117,7 @@ Java Language Specification 11의 11.1.1. 절에 잘 나와 있다.
 `Error`와 `RuntimeException` 클래스는 미확인 예외이며 `Throwable`의 서브 클래스다. 보통 이런 오류는 잡지 않는다.
 `Exception` 클래스는 일반적으로 프로그램에서 잡아 회복해야 하는 오류를 가리킨다.
 >
-![image]( /post-img/java-exception-handling/114567437-360d0e80-9cae-11eb-8683-b198b11bfd5d.png )
+![image]( /resource/wiki/java-exception-handling/114567437-360d0e80-9cae-11eb-8683-b198b11bfd5d.png )
 >
 -- 실전 자바 소프트웨어 개발. 3장.
 

@@ -27,7 +27,7 @@ latex   : false
 
 다음은 **Meslo LG M DZ Regular Nerd Font Complete Mono 14 pt.** 로 설정한 터미널 Vim 에서 간단한 코드를 열고 스크린샷을 찍은 것이다.
 
-![vim에서 코드를 편집하는 모습]( /post-img/coding-font/meslo-vim-example.png )
+![vim에서 코드를 편집하는 모습]( /resource/wiki/coding-font/meslo-vim-example.png )
 
 
 ### Line Gap
@@ -147,6 +147,6 @@ $ find nerd-fonts/patched-fonts/Meslo -name '*.ttf' | wc -l
 [meslo-font]: https://github.com/andreberg/Meslo-Font
 [nerd-fonts]: https://github.com/ryanoasis/nerd-fonts
 [nerd-meslo]: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Meslo
-[lgl]: /post-img/coding-font/lgl.png
-[lgm]: /post-img/coding-font/lgm.png
-[lgs]: /post-img/coding-font/lgs.png
+[lgl]: /resource/wiki/coding-font/lgl.png
+[lgm]: /resource/wiki/coding-font/lgm.png
+[lgs]: /resource/wiki/coding-font/lgs.png

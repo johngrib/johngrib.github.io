@@ -51,7 +51,7 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 
 구조는 다음과 같다.[^structure]
 
-![structure]( /post-img/decorator-pattern/structure.jpg )
+![structure]( /resource/wiki/decorator-pattern/structure.jpg )
 
 ## 언제 사용하는가?
 

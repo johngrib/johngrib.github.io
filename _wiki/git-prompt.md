@@ -30,11 +30,11 @@ latex   : false
 
 `gbr` 함수를 실행하면 다음과 같이 출력된다.
 
-![gbr 함수를 실행한 모습]( /post-img/git-prompt/gbr.png )
+![gbr 함수를 실행한 모습]( /resource/wiki/git-prompt/gbr.png )
 
 프롬프트를 설정하면 터미널에서는 다음과 같이 보이게 된다.
 
-![나의 프롬프트를 캡처한 사진]( /post-img/git-prompt/my-prompt.png )
+![나의 프롬프트를 캡처한 사진]( /resource/wiki/git-prompt/my-prompt.png )
 
 - `[master]` - 현재 브랜치가 `master`.
 - `2??` - untracked file이 2개.
@@ -123,7 +123,7 @@ ${COLOR_END}\
 
 이 프롬프트를 사용하면 다음과 같은 프롬프트가 나타난다.
 
-![prompt]( /post-img/git-prompt/githud.png )
+![prompt]( /resource/wiki/git-prompt/githud.png )
 
 ### 프롬프트 설명서
 

@@ -17,14 +17,14 @@ latex   : false
 
 나는 주로 다음과 같이 2개의 레이아웃을 사용한다. 내가 사용하는 키보드는 개조한 HHKB-JP.
 
-![]( /post-img/my-keyboard-use/layer0.jpg )
-![]( /post-img/my-keyboard-use/layer1.jpg )
+![]( /resource/wiki/my-keyboard-use/layer0.jpg )
+![]( /resource/wiki/my-keyboard-use/layer1.jpg )
 
 ## F13의 사용
 
 나는 이 키를 왼손 손날로 누른다.
 
-| ![]( /post-img/my-keyboard-use/f13-push.JPG ) | ![]( /post-img/my-keyboard-use/f13.jpg ) |
+| ![]( /resource/wiki/my-keyboard-use/f13-push.JPG ) | ![]( /resource/wiki/my-keyboard-use/f13.jpg ) |
 
 `F13`을 누르면 다음과 같은 일이 일어난다.
 
@@ -36,7 +36,7 @@ latex   : false
 
 ## L1(FN)의 사용
 
-| ![]( /post-img/my-keyboard-use/fn-hjkl.JPG ) | ![]( /post-img/my-keyboard-use/fn-hjkl-layer.jpg ) |
+| ![]( /resource/wiki/my-keyboard-use/fn-hjkl.JPG ) | ![]( /resource/wiki/my-keyboard-use/fn-hjkl-layer.jpg ) |
 
 - `L1`을 누른 상태에서
     - `h`, `j`, `k`, `l`을 방향키로 사용할 수 있다.
@@ -48,7 +48,7 @@ latex   : false
 
 ## 짧은 스페이스의 활용
 
-| ![]( /post-img/my-keyboard-use/copy-paste.JPG ) | ![]( /post-img/my-keyboard-use/short-space-layout.jpg ) |
+| ![]( /resource/wiki/my-keyboard-use/copy-paste.JPG ) | ![]( /resource/wiki/my-keyboard-use/short-space-layout.jpg ) |
 
 **부담없는 복사 - 붙여넣기**
 
@@ -63,7 +63,7 @@ latex   : false
 
 나는 이 키를 오른손 손날로 누른다.
 
-| ![]( /post-img/my-keyboard-use/inputsource.JPG ) | ![]( /post-img/my-keyboard-use/f16.jpg ) |
+| ![]( /resource/wiki/my-keyboard-use/inputsource.JPG ) | ![]( /resource/wiki/my-keyboard-use/f16.jpg ) |
 
 이 키는 hammerspoon을 사용해 두 가지 기능을 붙여 쓰고 있다.
 
@@ -77,7 +77,7 @@ latex   : false
 
 이 키도 오른손 손날로 누른다.
 
-![]( /post-img/my-keyboard-use/f17.jpg )
+![]( /resource/wiki/my-keyboard-use/f17.jpg )
 
 이 키는 hammerspoon을 사용해 두 가지 기능을 붙여 쓰고 있다.
 
@@ -109,10 +109,10 @@ latex   : false
 
 [b103a64876d206fbdd23929d7d4a5e67233e4503]( https://github.com/johngrib/dotfiles/commit/b103a64876d206fbdd23929d7d4a5e67233e4503#diff-806f489a90b9a4cd8a3492a453936ab85db20cafc090cf04e7498ba96f37e1e1 )
 
-![image]( /post-img/my-keyboard-use/126649688-cc0e2050-d62a-4742-9b08-6411f10eb300.png )
+![image]( /resource/wiki/my-keyboard-use/126649688-cc0e2050-d62a-4742-9b08-6411f10eb300.png )
 
-![image]( /post-img/my-keyboard-use/126649783-8e1d5807-8ccb-49fe-9c36-7dfc20917476.png )
+![image]( /resource/wiki/my-keyboard-use/126649783-8e1d5807-8ccb-49fe-9c36-7dfc20917476.png )
 
-![image]( /post-img/my-keyboard-use/126649874-75dc9e96-cddd-4b1e-99eb-a538e7c20f22.png )
+![image]( /resource/wiki/my-keyboard-use/126649874-75dc9e96-cddd-4b1e-99eb-a538e7c20f22.png )
 
 

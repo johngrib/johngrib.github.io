@@ -25,7 +25,7 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 
 구조는 다음과 같다.[^structure]
 
-![structure]( /post-img/abstract-factory-pattern/structure.gif )
+![structure]( /resource/wiki/abstract-factory-pattern/structure.gif )
 
 * AbstractFactory: 개념적 제품에 대한 객체를 생성하는 연산으로 인터페이스를 정의한다.
 * ConcreteFactory: 구체적인 제품에 대한 객체를 생성하는 연산을 구현한다.

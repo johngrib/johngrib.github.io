@@ -70,7 +70,7 @@ TAOCP에는 다음과 같은 분할 교환 정렬도 함께 소개된다.
 
 다음은 이 작업을 수행한 예제이다.
 
-![]( /post-img/quick-sort/split.jpg )
+![]( /resource/wiki/quick-sort/split.jpg )
 
 이 예제만 봐서는 이해가 잘 가지 않는다. 그래서 한 줄 한 줄 설명을 적어 보았다.
 

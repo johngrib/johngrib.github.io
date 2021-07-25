@@ -27,7 +27,7 @@ issue-number : 158
 
 intelliJ 2020.3 버전부터 다음과 같이 JavaDoc을 읽기 좋게 렌더링해서 보여주는 기능이 디폴트로 추가됐다.
 
-![image]( /post-img/intellij/104927651-08813380-59e5-11eb-9b20-f48200d45c7c.png )
+![image]( /resource/wiki/intellij/104927651-08813380-59e5-11eb-9b20-f48200d45c7c.png )
 
 나에게는 짜증나는 기능일 뿐이다.
 
@@ -44,7 +44,7 @@ intelliJ 2020.3 버전부터 다음과 같이 JavaDoc을 읽기 좋게 렌더링
 
 한글 주석을 쓰면 다음과 같은 오타 경고가 나오곤 한다.
 
-![image]( /post-img/intellij/106970569-86d52800-6790-11eb-83dd-2c619e0b8a11.png )
+![image]( /resource/wiki/intellij/106970569-86d52800-6790-11eb-83dd-2c619e0b8a11.png )
 
 맞춤법 검사기에 돌려보면 아무런 이상이 없다고 하는 문장에서도 나타나니 굳이 참고할 필요가 없을 수 있다.
 
@@ -108,7 +108,7 @@ POSIX에서는 **Line**을 "개행 문자로 끝나는 0개 이상의 개행 문
 
 탭 닫기 버튼이 왼쪽에 있으면 모든 탭의 탭 닫기 버튼의 위치가 똑같다. 그래서 여러 탭을 클릭클릭해서 닫을 때 편하다.
 
-![image]( /post-img/intellij/107315651-7b5c6680-6ada-11eb-9820-fec90bdeb3fa.png )
+![image]( /resource/wiki/intellij/107315651-7b5c6680-6ada-11eb-9820-fec90bdeb3fa.png )
 
 ## unused symbol 색깔 변경하기
 
@@ -118,7 +118,7 @@ intelliJ 에서는 기본적으로 선언하고 사용하지 않은 변수 등�
 
 `Preferences` - `Editor` - `Color Scheme` - `General` - `Errors and Warnings` - `Unused symbol`에 배경색을 빨간색으로 지정해 준다.
 
-![]( /post-img/intellij/unused.jpg )
+![]( /resource/wiki/intellij/unused.jpg )
 
 ## 공백 문자를 에디터에 표시하기
 
@@ -132,7 +132,7 @@ vim 의 `textwidth`, `colorcolumn`에 해당하는 기능이다.
 
 visual guideline을 설정하면 에디터 오른쪽에 가이드 라인이 표시된다.
 
-![]( /post-img/intellij/visual-guideline.jpg )
+![]( /resource/wiki/intellij/visual-guideline.jpg )
 
 `Preferences` - `Editor` - `Code Style` - `General` 에서 `Hard wrap`과 `Visual guides` 값을 바꿔주면 된다.
 

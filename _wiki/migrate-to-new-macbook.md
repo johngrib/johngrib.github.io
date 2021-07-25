@@ -220,7 +220,7 @@ finder를 실행한 다음, 상단 메뉴 `보기`를 선택한다.
 
 그러면 다음 이미지와 같이 파인더 아래쪽에 경로와 용량 등의 정보가 나온다.
 
-![image]( /post-img/migrate-to-new-macbook/82563757-971d8680-9bb2-11ea-90c8-73ef23b27f8f.png )
+![image]( /resource/wiki/migrate-to-new-macbook/82563757-971d8680-9bb2-11ea-90c8-73ef23b27f8f.png )
 
 경로 막대의 경로는 더블 클릭하면 해당 위치로 한번에 이동할 수 있다.
 
