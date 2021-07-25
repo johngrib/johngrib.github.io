@@ -3,11 +3,11 @@ layout  : wiki
 title   : rans 명령어
 summary : More advanced usage of regular expressions
 date    : 2020-05-19 21:52:22 +0900
-updated : 2020-05-19 22:02:31 +0900
+updated : 2021-07-25 17:14:17 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : 
+parent  : [[command-line]]
 latex   : false
 ---
 * TOC
