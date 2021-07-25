@@ -8,63 +8,67 @@ const pageMap = {};
 const PRINT = true;
 const NO_PRINT = false;
 
-getFiles('./_wiki', 'wiki', list);
-getFiles('./_posts', 'blog', list);
+main();
 
-const dataList = list.map(file => collectData(file))
-    .filter((row) => row != null)
-    .filter((row) => row.public != 'false')
-    .sort(lexicalOrderingBy('fileName'))
+function main() {
+    getFiles('./_wiki', 'wiki', list);
+    getFiles('./_posts', 'blog', list);
+
+    const dataList = list.map(file => collectData(file))
+        .filter((row) => row != null)
+        .filter((row) => row.public != 'false')
+        .sort(lexicalOrderingBy('fileName'))
 
 
-dataList.forEach(function collectTagMap(data) {
-    if (!data.tag) {
-        return;
-    }
-
-    data.tag.forEach(tag => {
-        if (!tagMap[tag]) {
-            tagMap[tag] = [];
+    dataList.forEach(function collectTagMap(data) {
+        if (!data.tag) {
+            return;
         }
-        tagMap[tag].push({
-            fileName: data.fileName,
-            // updated: data.updated || data.date,
+
+        data.tag.forEach(tag => {
+            if (!tagMap[tag]) {
+                tagMap[tag] = [];
+            }
+            tagMap[tag].push({
+                fileName: data.fileName,
+                // updated: data.updated || data.date,
+            });
         });
     });
-});
 
-for (const tag in tagMap) {
-    tagMap[tag].sort(lexicalOrderingBy('fileName'));
-}
+    for (const tag in tagMap) {
+        tagMap[tag].sort(lexicalOrderingBy('fileName'));
+    }
 
-dataList.sort(lexicalOrderingBy('fileName'))
-    .forEach((page) => {
-        pageMap[page.fileName] =
-            {
-                type: page.type,
-                title: page.title,
-                summary: page.summary,
-                parent: page.parent,
-                url: page.url,
-                updated: page.updated || page.date,
-                children: [],
-            };
+    dataList.sort(lexicalOrderingBy('fileName'))
+        .forEach((page) => {
+            pageMap[page.fileName] =
+                {
+                    type: page.type,
+                    title: page.title,
+                    summary: page.summary,
+                    parent: page.parent,
+                    url: page.url,
+                    updated: page.updated || page.date,
+                    children: [],
+                };
+        });
+
+    dataList.forEach(page => {
+        if (page.parent && page.parent != 'index') {
+
+            const parent = pageMap[page.parent];
+
+            if (parent && parent.children) {
+                parent.children.push(page.fileName);
+            }
+        }
     });
 
-dataList.forEach(page => {
-    if (page.parent && page.parent != 'index') {
-
-        const parent = pageMap[page.parent];
-
-        if (parent && parent.children) {
-            parent.children.push(page.fileName);
-        }
-    }
-});
-
-saveTagFiles(tagMap, pageMap);
-saveTagCount(tagMap);
-saveMetaDataFiles(pageMap);
+    saveTagFiles(tagMap, pageMap);
+    saveTagCount(tagMap);
+    saveMetaDataFiles(pageMap);
+}
 
 function lexicalOrderingBy(property) {
     return (a, b) => a[property].toLowerCase()
