@@ -5,6 +5,8 @@ const fs = require('fs');
 const list = [];
 const tagMap = {};
 const pageMap = {};
+const PRINT = true;
+const NO_PRINT = false;
 
 getFiles('./_wiki', 'wiki', list);
 getFiles('./_posts', 'blog', list);
@@ -131,11 +133,7 @@ function saveTagFiles(tagMap, pageMap) {
             collection.push(documentId);
         }
 
-        fs.writeFile(`./data/tag/${tag}.json`, JSON.stringify(collection), err => {
-            if (err) {
-                return console.log(err);
-            }
-        });
+        saveToFile(`./data/tag/${tag}.json`, JSON.stringify(collection), NO_PRINT);
     }
 }
 
@@ -159,11 +157,7 @@ function saveMetaDataFiles(pageMap) {
             }
         })
 
-        fs.writeFile(`./data/metadata/${fileName}.json`, JSON.stringify(data), err => {
-            if (err) {
-                return console.log(err);
-            }
-        })
+        saveToFile(`./data/metadata/${fileName}.json`, JSON.stringify(data), NO_PRINT);
     }
 }
 
@@ -180,11 +174,24 @@ function saveTagCount(tagMap) {
     }
     const sortedList = list.sort((lexicalOrderingBy('name')));
 
-    fs.writeFile("./data/tag_count.json", JSON.stringify(sortedList, null, 1), function(err) {
+    saveToFile("./data/tag_count.json", JSON.stringify(sortedList, null, 1), PRINT);
+}
+
+/**
+ * 주어진 문자열을 파일로 저장합니다.
+ *
+ * @param fileLocation 파일 이름을 포함한 저장할 경로
+ * @param dataString 파일의 내용이 될 문자열
+ * @param isPrintWhenSuccess 파일이 저장되었을 때 표준 출력으로 메시지를 띄우려 한다면 true
+ */
+function saveToFile(fileLocation, dataString, isPrintWhenSuccess) {
+    fs.writeFile(fileLocation, dataString, function(err) {
         if (err) {
             return console.log(err);
         }
-        console.log("tag_count.json saved.");
+        if (isPrintWhenSuccess) {
+            console.log(`The file "${fileLocation}" has been saved.`);
+        }
     });
 }
 
