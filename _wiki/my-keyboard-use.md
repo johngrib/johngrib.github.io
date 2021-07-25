@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 HHKB-JP 개조 키보드
 summary : HHKB-JP + Hammerspoon으로 행복한 컴퓨터 생활
 date    : 2020-06-03 23:01:19 +0900
-updated : 2021-07-25 21:59:51 +0900
+updated : 2021-07-25 22:11:23 +0900
 tag     : keyboard hhkb hammerspoon
 toc     : true
 public  : true
@@ -105,23 +105,26 @@ latex   : false
 
 [unimap.hex 커밋 히스토리]( https://github.com/johngrib/dotfiles/commits/master/tmk/unimap.hex )
 
-### 2017-05-15
-
-[f3da7d3290a619d707cedae63d889655711cf764]( https://github.com/johngrib/dotfiles/commit/f3da7d3290a619d707cedae63d889655711cf764#diff-806f489a90b9a4cd8a3492a453936ab85db20cafc090cf04e7498ba96f37e1e1 )
-
-![image]( /resource/wiki/my-keyboard-use/126896851-d104c950-b5d3-4df7-b28f-8bd3aafcfe6f.png )
-
-![image]( /resource/wiki/my-keyboard-use/126899889-acec5a99-c9b9-4353-a6d6-d785360ee4c5.png )
-
 
 ### 2017-05-13
 
 [b103a64876d206fbdd23929d7d4a5e67233e4503]( https://github.com/johngrib/dotfiles/commit/b103a64876d206fbdd23929d7d4a5e67233e4503#diff-806f489a90b9a4cd8a3492a453936ab85db20cafc090cf04e7498ba96f37e1e1 )
 
+최초 설정.
+
 ![image]( /resource/wiki/my-keyboard-use/126649688-cc0e2050-d62a-4742-9b08-6411f10eb300.png )
+
+- `F13`의 위치는 이때부터 고정되어 있다. `F13`을 hammerspoon으로 한영전환 ESC로 사용하기 위해서였던 것.
+- `ESC`의 위치는 제일 아랫줄의 `F13`키 옆. 한영전환 기능이 없는 `ESC`도 어디엔가 놔둬야 한다고 생각했었다.
+- `L1`을 양쪽으로 설정하였다.
+- `RShift`가 스페이스 키 오른쪽에 있다. 엄지손가락으로 쉬프트 키를 누르는 것은 너무나 편안했으므로 이후로도 계속 사용한다.
 
 ![image]( /resource/wiki/my-keyboard-use/126649783-8e1d5807-8ccb-49fe-9c36-7dfc20917476.png )
 
+Layer 1의 배치는 엄지로 `L1`을 누르면서 대체로 Vim과 비슷한 사용을 염두에 둔 것들이었다.
+
 ![image]( /resource/wiki/my-keyboard-use/126649874-75dc9e96-cddd-4b1e-99eb-a538e7c20f22.png )
+
+Layer 2는 마우스를 조작하기 위한 배치. 그러나 TMK에 내장된 마우스 조작은 그다지 편리하지 않았다.
 
 
