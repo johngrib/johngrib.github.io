@@ -68,6 +68,7 @@ function main() {
     saveTagFiles(tagMap, pageMap);
     saveTagCount(tagMap);
     saveMetaDataFiles(pageMap);
+    saveDocumentUrlList(pageMap);
 }
 
 function lexicalOrderingBy(property) {
@@ -163,6 +164,18 @@ function saveMetaDataFiles(pageMap) {
 
         saveToFile(`./data/metadata/${fileName}.json`, JSON.stringify(data), NO_PRINT);
     }
+}
+
+/**
+ * 모든 문서 파일의 목록 json 파일을 생성합니다.
+ */
+function saveDocumentUrlList(pageMap) {
+    const urlList = [];
+    for (const page in pageMap) {
+        const data = pageMap[page];
+        urlList.push(data.url);
+    }
+    saveToFile("./data/total-document-url-list.json", JSON.stringify(urlList, null, 1), PRINT);
 }
 
 /**
