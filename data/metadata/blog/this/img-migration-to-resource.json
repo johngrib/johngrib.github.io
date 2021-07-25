@@ -1,1 +1,9 @@
-{"type":"wiki","title":"이미지 경로를 한꺼번에 마이그레이션하기","summary":"post-img에서 resource 로 한꺼번에 옮기자","parent":"blog/this","url":"/wiki/blog/this/img-migration-to-resource","updated":"2021-07-25 16:56:09 +0900","children":[]}
+{
+ "type": "wiki",
+ "title": "이미지 경로를 한꺼번에 마이그레이션하기",
+ "summary": "post-img에서 resource 로 한꺼번에 옮기자",
+ "parent": "blog/this",
+ "url": "/wiki/blog/this/img-migration-to-resource",
+ "updated": "2021-07-25 16:56:09 +0900",
+ "children": []
+}

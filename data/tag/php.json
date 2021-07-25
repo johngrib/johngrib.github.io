@@ -1,1 +1,6 @@
-["email-validation","php","php/composer","phpbrew"]
+[
+ "email-validation",
+ "php",
+ "php/composer",
+ "phpbrew"
+]

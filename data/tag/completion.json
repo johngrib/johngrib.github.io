@@ -1,1 +1,4 @@
-["ultisnips","vim-auto-completion"]
+[
+ "ultisnips",
+ "vim-auto-completion"
+]

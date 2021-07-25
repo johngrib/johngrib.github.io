@@ -1,1 +1,11 @@
-{"type":"wiki","title":"아키텍처","summary":"","parent":"index","url":"/wiki/architecture","updated":"2021-07-24 14:55:23 +0900","children":["keeping-options-open"]}
+{
+ "type": "wiki",
+ "title": "아키텍처",
+ "summary": "",
+ "parent": "index",
+ "url": "/wiki/architecture",
+ "updated": "2021-07-24 14:55:23 +0900",
+ "children": [
+  "keeping-options-open"
+ ]
+}

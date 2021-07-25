@@ -1,1 +1,12 @@
-{"type":"wiki","title":"Links","summary":"다시 읽고 싶은 기사 링크 모음","parent":"index","url":"/wiki/links","updated":"2021-07-24 14:55:45 +0900","children":["links-2018","links-2019"]}
+{
+ "type": "wiki",
+ "title": "Links",
+ "summary": "다시 읽고 싶은 기사 링크 모음",
+ "parent": "index",
+ "url": "/wiki/links",
+ "updated": "2021-07-24 14:55:45 +0900",
+ "children": [
+  "links-2018",
+  "links-2019"
+ ]
+}

@@ -1,1 +1,5 @@
-["email-validation","regex","regex-prime"]
+[
+ "email-validation",
+ "regex",
+ "regex-prime"
+]

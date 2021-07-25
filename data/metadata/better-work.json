@@ -1,1 +1,18 @@
-{"type":"wiki","title":"일을 더 잘 하기 위해서","summary":"","parent":"index","url":"/wiki/better-work","updated":"2021-07-24 14:55:18 +0900","children":["better-checklist","better-interview","better-meeting","good-developer","leadership","professionalism","purpose-of-business","working-together"]}
+{
+ "type": "wiki",
+ "title": "일을 더 잘 하기 위해서",
+ "summary": "",
+ "parent": "index",
+ "url": "/wiki/better-work",
+ "updated": "2021-07-24 14:55:18 +0900",
+ "children": [
+  "better-checklist",
+  "better-interview",
+  "better-meeting",
+  "good-developer",
+  "leadership",
+  "professionalism",
+  "purpose-of-business",
+  "working-together"
+ ]
+}

@@ -1,1 +1,9 @@
-{"type":"wiki","title":"주소가 변경된 문서로 redirect 해주는 기능","summary":"","parent":"blog/this","url":"/wiki/blog/this/404-fallback","updated":"2021-07-23 00:03:13 +0900","children":[]}
+{
+ "type": "wiki",
+ "title": "주소가 변경된 문서로 redirect 해주는 기능",
+ "summary": "",
+ "parent": "blog/this",
+ "url": "/wiki/blog/this/404-fallback",
+ "updated": "2021-07-23 00:03:13 +0900",
+ "children": []
+}

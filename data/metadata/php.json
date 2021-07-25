@@ -1,1 +1,12 @@
-{"type":"wiki","title":"php","summary":"","parent":"programming-language","url":"/wiki/php","updated":"2021-07-24 14:55:36 +0900","children":["php/composer","php/story"]}
+{
+ "type": "wiki",
+ "title": "php",
+ "summary": "",
+ "parent": "programming-language",
+ "url": "/wiki/php",
+ "updated": "2021-07-24 14:55:36 +0900",
+ "children": [
+  "php/composer",
+  "php/story"
+ ]
+}

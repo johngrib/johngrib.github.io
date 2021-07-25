@@ -1,1 +1,8 @@
-["brew","ioreg-cmd","iterm","java_home","mac-keyboard-shortcuts","migrate-to-new-macbook"]
+[
+ "brew",
+ "ioreg-cmd",
+ "iterm",
+ "java_home",
+ "mac-keyboard-shortcuts",
+ "migrate-to-new-macbook"
+]
