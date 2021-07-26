@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-26 22:01:00 +0900
+updated : 2021-07-26 22:26:19 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -688,6 +688,56 @@ public void processBlockedListEvent(BlockedListEvent event) {
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-generics )
 
+>
+You can also use generics to further define the structure of your event.
+Consider using an `EntityCreatedEvent<T>` where `T` is the type of the actual entity that got created.
+For example, you can create the following listener definition to receive only `EntityCreatedEvent` for a `Person`:
+
+제네릭을 사용해 추가적인 이벤트 구조를 정의하는 것도 가능합니다.
+`EntityCreatedEvent<T>`를 사용한다고 생각해 봅시다. 이때 `T`는 생성된 실제 엔티티의 타입입니다.
+예를 들어, 다음과 같이 리스너를 정의하면 `Person`에 대한 `EntityCreatedEvent` 이벤트만 받을 수도 있습니다.
+
+```java
+@EventListener
+public void onPersonCreated(EntityCreatedEvent<Person> event) {
+    // ...
+}
+```
+
+>
+Due to type erasure, this works only if the event that is fired resolves the generic parameters on which the event listener filters (that is, something like `class PersonCreatedEvent extends EntityCreatedEvent<Person> { … }`).
+
+이 작업은 이벤트가 발생했을 때 이벤트 리스너 필터의 제네릭 파라미터가 일치하는 경우(예: `class PersonCreatedEvent extends EntityCreatedEvent<Person> { … }`)에만 작동합니다.
+
+>
+In certain circumstances, this may become quite tedious if all events follow the same structure (as should be the case for the event in the preceding example). In such a case, you can implement `ResolvableTypeProvider` to guide the framework beyond what the runtime environment provides. The following event shows how to do so:
+
+만약 모든 이벤트가 똑같은 구조로(위의 예제와 같이) 이벤트를 처리한다면 상당히 장황한 코드가 될 수도 있습니다.
+이런 경우에는 `ResolvableTypeProvider`를 구현하는 방법을 생각할 수 있습니다.
+
+```java
+public class EntityCreatedEvent<T> extends ApplicationEvent implements ResolvableTypeProvider {
+
+    public EntityCreatedEvent(T entity) {
+        super(entity);
+    }
+
+    @Override
+    public ResolvableType getResolvableType() {
+        return ResolvableType.forClassWithGenerics(getClass(), ResolvableType.forInstance(getSource()));
+    }
+}
+```
+
+>
+This works not only for `ApplicationEvent` but any arbitrary object that you send as an event.
+{:style="background-color: #e9f1f6;"}
+
+- 이 방법은 `ApplicationEvent` 뿐만 아니라 이벤트로 전송하는 객체에 대해서도 작동합니다.
+
+### 1.15.3. Convenient Access to Low-level Resources
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-resources )
 
 
 ## 함께 읽기
