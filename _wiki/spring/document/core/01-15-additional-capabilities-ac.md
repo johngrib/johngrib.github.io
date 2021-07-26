@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-26 21:56:57 +0900
+updated : 2021-07-26 22:01:00 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -671,6 +671,22 @@ Be aware of the following limitations when using asynchronous events:
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-order )
 
+>
+If you need one listener to be invoked before another one, you can add the `@Order` annotation to the method declaration, as the following example shows:
+
+만약 어떤 리스너를 다른 리스너보다 먼저 호출할 필요가 있다면, 다음 예제와 같이 `@Order` 애노테이션을 메소드에 붙여주면 됩니다.
+
+```java
+@EventListener
+@Order(42)
+public void processBlockedListEvent(BlockedListEvent event) {
+    // notify appropriate parties via notificationAddress...
+}
+```
+
+#### Generic Events
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-generics )
 
 
 
