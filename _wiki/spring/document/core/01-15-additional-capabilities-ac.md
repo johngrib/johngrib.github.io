@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-26 21:46:49 +0900
+updated : 2021-07-26 21:56:57 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -639,7 +639,37 @@ The `handleBlockedListEvent()` method publishes a new `ListUpdateEvent` for ever
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-async )
 
+>
+If you want a particular listener to process events asynchronously, you can reuse the [regular `@Async` support]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/integration.html#scheduling-annotation-support-async ).
+The following example shows how to do so:
 
+만약 리스너가 이벤트를 비동기로 처리하게 하고 싶다면, `@Async` 지원을 사용할 수 있습니다.
+다음 예제에서 그 방법을 보여줍니다.
+
+```java
+@EventListener
+@Async
+public void processBlockedListEvent(BlockedListEvent event) {
+    // BlockedListEvent is processed in a separate thread
+}
+```
+
+>
+Be aware of the following limitations when using asynchronous events:
+>
+- If an asynchronous event listener throws an `Exception`, it is not propagated to the caller. See `AsyncUncaughtExceptionHandler` for more details.
+- Asynchronous event listener methods cannot publish a subsequent event by returning a value. If you need to publish another event as the result of the processing, inject an [`ApplicationEventPublisher`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/aop/interceptor/AsyncUncaughtExceptionHandler.html ) to publish the event manually.
+
+비동기 이벤트를 사용할 때에는 다음을 주의해야 합니다.
+
+- 만약 비동기 이벤트 리스너가 `Exception`을 던지게 되면, 호출자에게 예외가 전달되지 않습니다.
+    - 자세한 내용은 `AsyncUncaughtExceptionHandler`를 참고하세요.
+- 비동기 이벤트 리스너 메소드는 값을 리턴하는 방식을 통해 서브 이벤트를 발행할 수 없습니다.
+    - 만약 처리 결과로 다른 이벤트를 발행하고 싶다면, `ApplicationEventPublisher`를 주입해서 이벤트를 수동으로 발행하세요.
+
+#### Ordering Listeners
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-order )
 
 
 
