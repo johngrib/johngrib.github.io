@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-25 23:49:11 +0900
+updated : 2021-07-26 21:46:49 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -488,6 +488,156 @@ Spring’s eventing mechanism is designed for simple communication between Sprin
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-annotation )
 
+>
+You can register an event listener on any method of a managed bean by using the `@EventListener` annotation. The `BlockedListNotifier` can be rewritten as follows:
+
+관리되고 있는 bean이라면 어느 메소드이건 `@EventListener` 애노테이션을 붙여서 이벤트 리스너를 등록할 수 있습니다.
+`BlockedListNotifier`는 다음과 같이 작성할 수 있습니다.
+
+```java
+public class BlockedListNotifier {
+
+    private String notificationAddress;
+
+    public void setNotificationAddress(String notificationAddress) {
+        this.notificationAddress = notificationAddress;
+    }
+
+    @EventListener
+    public void processBlockedListEvent(BlockedListEvent event) {
+        // notify appropriate parties via notificationAddress...
+    }
+}
+```
+
+>
+The method signature once again declares the event type to which it listens, but, this time, with a flexible name and without implementing a specific listener interface.
+The event type can also be narrowed through generics as long as the actual event type resolves your generic parameter in its implementation hierarchy.
+
+메소드 시그니처는 수신하는 이벤트 타입으로 다시 한번 선언하기 마련이지만, 이번에는 특정한 리스너 인터페이스를 구현하지 않고 유연한 이름을 사용합니다.
+실제 이벤트 타입이 구현 계층에서 제네릭 파라미터를 resolve한다면 이벤트 타입은 제네릭을 통해 범위를 좁힐 수도 있습니다.
+
+>
+If your method should listen to several events or if you want to define it with no parameter at all, the event types can also be specified on the annotation itself. The following example shows how to do so:
+
+만약 여러 이벤트를 수신하게 하고 싶거나 파라미터 없이 정의하려 한다면, 이벤트 타입을 애노테이션에 지정하는 방법도 있습니다.
+다음 예는 그 방법을 보여줍니다.
+
+```java
+@EventListener({ContextStartedEvent.class, ContextRefreshedEvent.class})
+public void handleContextStart() {
+    // ...
+}
+```
+
+>
+It is also possible to add additional runtime filtering by using the `condition` attribute of the annotation that defines a [`SpEL` expression]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#expressions ), which should match to actually invoke the method for a particular event.
+
+특정 이벤트에 대한 메소드를 실제로 호출하기 위해 `SpEL` 표현식을 정의하는 애노테이션의 `condition` 속성을 사용해 runtime filtering을 추가하는 것도 가능합니다.
+
+>
+The following example shows how our notifier can be rewritten to be invoked only if the content attribute of the event is equal to `my-event`:
+
+다음 예제는 이벤트의 content 속성이 `my-event`와 동일한 경우에만 호출되도록 notifier를 다시 작성하는 방법을 보여줍니다.
+
+```java
+@EventListener(condition = "#blEvent.content == 'my-event'")
+public void processBlockedListEvent(BlockedListEvent blEvent) {
+    // notify appropriate parties via notificationAddress...
+}
+```
+
+>
+Each `SpEL` expression evaluates against a dedicated context.
+The following table lists the items made available to the context so that you can use them for conditional event processing:
+
+각 `SpEL` 표현식의 평가는 전용 컨텍스트에 대해 이루어집니다.
+다음 표는 조건부 이벤트 처리에 사용할 수 있도록 컨텍스트에서 사용할 수 있는 항목을 나열합니다.
+
+> Table 8. Event SpEL available metadata
+> <div id="table8"></div>
+
+- th
+    - Name
+    - Location
+    - Description
+    - Example
+- td
+    - Event
+    - root object
+    - The actual `ApplicationEvent`.
+    - `#root.event` or `event`
+- td
+    - Arguments array
+    - root object
+    - The arguments (as an object array) used to invoke the method.
+    - `#root.args` or `args`; `args[0]` to access the first argument, etc.
+- td
+    - Argument name
+    - evaluation context
+    - The name of any of the method arguments. If, for some reason, the names are not available (for example, because there is no debug information in the compiled byte code), individual arguments are also available using the `#a<#arg>` syntax where `<#arg>` stands for the argument index (starting from 0).
+    - `#blEvent` or `#a0` (you can also use `#p0` or `#p<#arg>` parameter notation as an alias)
+{:class="table-generate" data-target-id="table8"}
+
+
+<div id="table8-ko"></div>
+
+- th
+    - 이름
+    - 위치
+    - 설명
+    - 예제
+- td
+    - Event
+    - root object
+    - 실제 `ApplicationEvent`.
+    - `#root.event` 또는 `event`.
+- td
+    - Arguments array
+    - root object
+    - 메소드를 호출하는 데 사용되는 인자들(객체 배열).
+    - `#root.args` 또는 `args`. 첫번째 인자는 `args[0]`와 같이 접근.
+- td
+    - Argument name
+    - evaluation context
+    - 메소드 인자의 이름. 만약 이름을 사용할 수 없는 경우라면(예: 컴파일된 바이트 코드만 갖고 있는 경우) 개발 인자는 `#a<#arg>` 신택스를 써서 사용할 수도 있습니다. 이때 `<#arg>`는 인자 인덱스이며 인덱스는 0부터 시작합니다.
+    - `#blEvent` 또는 `#a0` (`#p0` 또는 `#p<#arg>` 파라미터 표기법을 알리아스로 사용할 수도 있습니다.)
+{:class="table-generate" data-target-id="table8-ko"}
+
+>
+Note that `#root.event` gives you access to the underlying event, even if your method signature actually refers to an arbitrary object that was published.
+
+메소드 시그니처가 실제로 발행된 어떤 객체를 참조하더라도 `#root.event`를 사용하면 베이스가 되는 기본 이벤트에 엑세스할 수 있습니다.
+
+>
+If you need to publish an event as the result of processing another event, you can change the method signature to return the event that should be published, as the following example shows:
+
+만약 다른 이벤트를 처리한 결과를 다시 이벤트로 발행해야 한다면, 다음 에제와 같이 발행해야 하는 이벤트를 리턴하도록 메소드 시그니처를 수정할 수 있습니다.
+
+```java
+@EventListener
+public ListUpdateEvent handleBlockedListEvent(BlockedListEvent event) {
+    // notify appropriate parties via notificationAddress and
+    // then publish a ListUpdateEvent...
+}
+```
+
+> (i)
+This feature is not supported for [asynchronous listeners]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-async ).
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 이 기능은 비동기 리스너를 지원하지 않습니다.
+
+>
+The `handleBlockedListEvent()` method publishes a new `ListUpdateEvent` for every `BlockedListEvent` that it handles. If you need to publish several events, you can return a `Collection` or an array of events instead.
+
+`handleBlockedListEvent()` 메소드는 핸들링하는 모든 `BlockedListEvent`에 대해 새로운 `ListUpdateEvent`를 발행합니다.
+여러 이벤트를 발행해야 하는 경우라면 `Collection`이나 이벤트 배열을 리턴하는 방법도 사용할 수 있습니다.
+
+#### Asynchronous Listeners
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-async )
 
 
 
