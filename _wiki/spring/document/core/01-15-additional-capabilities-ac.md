@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-27 20:18:23 +0900
+updated : 2021-07-27 23:57:04 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -781,6 +781,101 @@ You can also use location paths (resource strings) with special prefixes to forc
 ### 1.15.4. Application Startup Tracking
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-startup )
+
+>
+The `ApplicationContext` manages the lifecycle of Spring applications and provides a rich programming model around components.
+As a result, complex applications can have equally complex component graphs and startup phases.
+
+`ApplicationContext`는 Spring 애플리케이션의 라이프사이클을 관리하고 컴포넌트와 관련된 풍부한 프로그래밍 모델을 제공합니다.
+따라서 애플리케이션의 구조가 복잡하다면 컴포넌트 그래프도 복잡하고 시작 단계도 복잡해지게 됩니다.
+
+>
+Tracking the application startup steps with specific metrics can help understand where time is being spent during the startup phase, but it can also be used as a way to better understand the context lifecycle as a whole.
+
+애플리케이션의 시작 단계를 측정해 보면 시작 단계의 어느 지점에서 오래 걸리는지를 이해하는 데에 도움이 될 텐데,
+이런 방법을 사용하면 컨텍스트의 라이프사이클 전체를 더 잘 이해하는데에 도움이 될 것입니다.
+
+>
+The `AbstractApplicationContext` (and its subclasses) is instrumented with an `ApplicationStartup`, which collects `StartupStep` data about various startup phases:
+>
+- application context lifecycle (base packages scanning, config classes management)
+- beans lifecycle (instantiation, smart initialization, post processing)
+- application events processing
+
+`AbstractApplicationContext`(그리고 그 서브클래스들)의 측정은 다양한 시작 단계에 대한 `StartupStep` 데이터를 수집하는 `ApplicationStartup`을 사용하게 됩니다.
+다양한 시작 단계는 다음과 같습니다.
+
+- 애플리케이션 컨텍스트 라이프사이클(base 패키지 스캐닝, config 클래스 관리)
+- bean 라이프사이클(인스턴스화, 스마트 초기화, post processing)
+- 애플리케이션 이벤트 프로세싱
+
+>
+Here is an example of instrumentation in the `AnnotationConfigApplicationContext`:
+
+다음은 `AnnotationConfigApplicationContext`에 대한 측정 예제입니다.
+
+```java
+// create a startup step and start recording
+StartupStep scanPackages = this.getApplicationStartup().start("spring.context.base-packages.scan");
+// add tagging information to the current step
+scanPackages.tag("packages", () -> Arrays.toString(basePackages));
+// perform the actual phase we're instrumenting
+this.scanner.scan(basePackages);
+// end the current step
+scanPackages.end();
+```
+
+>
+The application context is already instrumented with multiple steps.
+Once recorded, these startup steps can be collected, displayed and analyzed with specific tools.
+For a complete list of existing startup steps, you can check out the [dedicated appendix section]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#application-startup-steps ).
+
+애플리케이션 컨텍스트는 이미 여러 단계에 걸쳐 측정됩니다.
+일단 기록이 되면, 특정한 도구를 사용해 이런 시작 단계들에 대해 정보를 수집하고, 표시하고, 분석할 수 있습니다.
+시작 단계의 전체 목록은 [dedicated appendix section]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#application-startup-steps )에서 확인할 수 있습니다.
+
+>
+The default `ApplicationStartup` implementation is a no-op variant, for minimal overhead.
+This means no metrics will be collected during application startup by default.
+Spring Framework ships with an implementation for tracking startup steps with Java Flight Recorder: `FlightRecorderApplicationStartup`.
+To use this variant, you must configure an instance of it to the `ApplicationContext` as soon as it’s been created.
+
+`ApplicationStartup`의 기본 구현은 오버헤드를 최소화하기 위한 최소 구현이라 할 수 있습니다.
+즉, 기본 구현으로는 애플리케이션 시작 단계에서 메트릭이 수집되지 않는다는 의미입니다.
+Spring 프레임워크는 시작 단계를 추적하기 위한 구현으로 Java Flight Recorder `FlightRecorderApplicationStartup`를 제공합니다.
+이 구현체를 사용하려면 생성되는 즉시 해당 인스턴스를 `ApplicationContext`에 configure해야 합니다.
+
+>
+Developers can also use the `ApplicationStartup` infrastructure if they’re providing their own `AbstractApplicationContext` subclass, or if they wish to collect more precise data.
+
+만약 직접 구현한 `AbstractApplicationContext`의 서브클래스를 사용하거나, 더 정확한 데이터를 수집하려 한다면 `ApplicationStartup` 인프라를 사용할 수도 있습니다.
+
+> (!)
+`ApplicationStartup` is meant to be only used during application startup and for the core container;
+this is by no means a replacement for Java profilers or metrics libraries like [Micrometer]( https://micrometer.io/ ).
+{:style="background-color: #fff9e4;"}
+
+- (!)
+    - `ApplicationStartup`은 애플리케이션이 시작할 때, 그리고 core 컨테이너에만 사용됩니다.
+    - `ApplicationStartup`만으로는 Java 프로파일러나 Micrometer 같은 메트릭 라이브러리를 대체할 수 없습니다.
+
+>
+To start collecting custom `StartupStep`, components can either get the `ApplicationStartup` instance from the application context directly, make their component implement `ApplicationStartupAware`, or ask for the `ApplicationStartup` type on any injection point.
+
+커스텀 `StartupStep`을 수집하려면 컴포넌트가 애플리케이션 컨텍스트에서 직접 `ApplicationStartup` 인스턴스를 가져오거나, 컴포넌트가 `ApplicationStartupAware`를 구현하게 하거나, 주입 지점에서 `ApplicationStartup` 타입을 요청하는 방법이 있습니다.
+
+> (i)
+Developers should not use the `"spring.*"` namespace when creating custom startup steps. This namespace is reserved for internal Spring usage and is subject to change.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - 개발자는 커스텀 시작 단계를 생성할 때 `"spring.*"` 네임스페이스를 사용하면 안됩니다.
+    - 이 네임스페이스는 Spring 전용으로 예약되어 있습니다.
+
+
+### 1.15.5. Convenient ApplicationContext Instantiation for Web Applications
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-create )
 
 
 ## 함께 읽기
