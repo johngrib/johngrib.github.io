@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-26 22:26:19 +0900
+updated : 2021-07-27 20:18:23 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -738,6 +738,49 @@ This works not only for `ApplicationEvent` but any arbitrary object that you sen
 ### 1.15.3. Convenient Access to Low-level Resources
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-resources )
+
+>
+For optimal usage and understanding of application contexts, you should familiarize yourself with Spring’s `Resource` abstraction, as described in [Resources]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources ).
+
+애플리케이션 컨텍스트를 잘 이해하고 잘 사용하려면, [Resources]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources ) 문서에 나와있는 것과 같이 Spring의 리소스 추상화를 익숙하게 다룰 수 있어야 합니다.
+
+>
+An application context is a `ResourceLoader`, which can be used to load `Resource` objects.
+A `Resource` is essentially a more feature rich version of the JDK `java.net.URL` class.
+In fact, the implementations of the `Resource` wrap an instance of `java.net.URL`, where appropriate.
+A `Resource` can obtain low-level resources from almost any location in a transparent fashion, including from the classpath, a filesystem location, anywhere describable with a standard URL, and some other variations.
+If the resource location string is a simple path without any special prefixes, where those resources come from is specific and appropriate to the actual application context type.
+
+애플리케이션 컨텍스트는 `Resource` 객체를 로드하는 용도로 사용할 수 있는 `ResourceLoader` 이기도 합니다.
+`Resource`는 본질적으로는 JDK의 `java.net.URL` 클래스에 기능을 풍부하게 추가한 버전이라 할 수 있습니다.
+사실, `Resource`의 구현체들은 `java.net.URL`를 적절하게 래핑한 것들입니다.
+`Resource`는 거의 모든 위치(classpath, 파일 시스템, URL로 표현 가능한 모든 곳, 그 외 기타 등등)에 있는 저수준 리소스를 투명한 방식으로 가져올 수 있습니다.
+만약 리소스 경로 string이 특별한 prefix가 없는 단순한 경로라면, 해당 리소스의 위치는 실제 애플리케이션의 컨텍스트 타입에 적합한 경로가 됩니다.
+
+>
+You can configure a bean deployed into the application context to implement the special callback interface, `ResourceLoaderAware`, to be automatically called back at initialization time with the application context itself passed in as the `ResourceLoader`.
+You can also expose properties of type `Resource`, to be used to access static resources.
+They are injected into it like any other properties.
+You can specify those `Resource` properties as simple `String` paths and rely on automatic conversion from those text strings to actual `Resource` objects when the bean is deployed.
+
+특별한 콜백 인터페이스인 `ResourceLoaderAware`를 구현하도록 애플리케이션 컨텍스트에 등록된 bean을 configure할 수 있습니다.
+이 인터페이스는 `ResourceLoader`로서 전달된 애플리케이션 컨텍스트 자체와 함께 초기화 시간에 자동으로 콜백됩니다.
+정적 리소스에 엑세스하는 데 사용할 `Resource` 타입의 속성을 노출하는 것도 가능한데, 이런 속성들도 다른 속성과 마찬가지로 주입이 됩니다.
+이런 `Resource` 속성들을 단순한 `String` 경로로 지정할 수 있습니다. 그러면 bean이 배포될 때 해당 텍스트 string이 실제 `Resource` 객체로 자동 변환됩니다.
+
+>
+The location path or paths supplied to an `ApplicationContext` constructor are actually resource strings and, in simple form, are treated appropriately according to the specific context implementation.
+For example `ClassPathXmlApplicationContext` treats a simple location path as a classpath location.
+You can also use location paths (resource strings) with special prefixes to force loading of definitions from the classpath or a URL, regardless of the actual context type.
+
+`ApplicationContext`는 간단한 포맷을 가진 실제 리소스 string을 생성자로 넘겨 받으며, 이러한 값들은 컨텍스트 구현에 따라 적절하게 처리됩니다.
+예를 들어 `ClassPathXmlApplicationContext`는 단순한 위치 경로를 classpath 경로로 취급합니다.
+컨텍스트 타입을 무시하고 classpath나 URL에서 어떤 definition을 강제로 로드할 목적으로 특수한 prefix가 있는 위치 경로(리소스 문자열)를 사용하는 것도 가능합니다.
+
+
+### 1.15.4. Application Startup Tracking
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-startup )
 
 
 ## 함께 읽기
