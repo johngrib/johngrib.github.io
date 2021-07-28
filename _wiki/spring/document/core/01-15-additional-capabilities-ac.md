@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-28 13:35:48 +0900
+updated : 2021-07-28 20:27:45 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -915,6 +915,8 @@ Ant 스타일의 경로 패턴도 지원합니다.
 ### 1.15.6. Deploying a Spring `ApplicationContext` as a Java EE RAR File
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-deploy-rar )
+
+**요즘 RAR 압축 포맷을 누가 사용한단 말인가...?!**
 
 ## 함께 읽기
 
