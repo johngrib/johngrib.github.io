@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-27 23:57:04 +0900
+updated : 2021-07-28 13:35:48 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -877,6 +877,44 @@ Developers should not use the `"spring.*"` namespace when creating custom startu
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-create )
 
+>
+You can create `ApplicationContext` instances declaratively by using, for example, a `ContextLoader`.
+Of course, you can also create `ApplicationContext` instances programmatically by using one of the `ApplicationContext` implementations.
+
+`ApplicationContext` 인스턴스를 선언적으로 만들 수도 있습니다(예를 들어 `ContextLoader`를 사용한다던가).
+물론 프로그래밍 방식으로 `ApplicationContext` 구현체 중 하나를 사용해 `ApplicationContext` 인스턴스를 만드는 것도 가능합니다.
+
+>
+You can register an `ApplicationContext` by using the `ContextLoaderListener`, as the following example shows:
+
+다음 예제와 같이 `ContextLoaderListener`를 사용해서 `ApplicationContext`를 등록할 수도 있습니다.
+
+```xml
+<context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/daoContext.xml /WEB-INF/applicationContext.xml</param-value>
+</context-param>
+
+<listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+```
+
+>
+The listener inspects the `contextConfigLocation` parameter.
+If the parameter does not exist, the listener uses `/WEB-INF/applicationContext.xml` as a default.
+When the parameter does exist, the listener separates the `String` by using predefined delimiters (comma, semicolon, and whitespace) and uses the values as locations where application contexts are searched.
+Ant-style path patterns are supported as well.
+Examples are `/WEB-INF/*Context.xml` (for all files with names that end with Context.xml and that reside in the `WEB-INF` directory) and `/WEB-INF/**/*Context.xml` (for all such files in any subdirectory of `WEB-INF`).
+
+리스너는 `contextConfigLocation` 파라미터를 검사해서, 만약 파라미터가 존재하지 않는다면 리스너는 `/WEB-INF/applicationContext.xml`를 기본값으로 사용합니다.
+만약 파라미터가 존재한다면 리스너는 사전에 정의된 구분자(콤마, 세미콜론, 공백)를 사용해 문자열을 구분하고, 그 값들을 애플리케이션 컨텍스트를 검색하는 위치로 사용합니다.
+Ant 스타일의 경로 패턴도 지원합니다.
+예를 들어 `/WEB-INF/*Context.xml`는 `/WEB/INF` 디렉토리에 있는 `Context.xml`로 끝나는 모든 파일입니다. 그리고 `/WEB-INF/**/*Context.xml`는 `WEB-INF`의 모든 서브 디렉토리에서 `Context.xml`로 끝나는 모든 파일입니다.
+
+### 1.15.6. Deploying a Spring `ApplicationContext` as a Java EE RAR File
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-deploy-rar )
 
 ## 함께 읽기
 
