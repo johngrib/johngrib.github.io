@@ -7,6 +7,7 @@
  "updated": "2021-07-20 16:44:17 +0900",
  "children": [
   "blog/this/404-fallback",
+  "blog/this/dynamic-insert",
   "blog/this/img-migration-to-resource",
   "blog/this/random-link",
   "blog/this/table-generate",
