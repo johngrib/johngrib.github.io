@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-07-25 16:35:42 +0900
+updated : 2021-07-28 13:58:12 +0900
 regenerate: true
 ---
 
@@ -629,17 +629,15 @@ regenerate: true
 ## [[blog]]
 
 * [[create-jekyll-blog]]
+* [[favicon]]
 * [[jekyll-category-tag]]
 * [[my-wiki]]
-* [[favicon]]
-
-### [[/blog/this]]
-
-* [[/blog/this/404-fallback]]
-* [[/blog/this/img-migration-to-resource]]
-* [[/blog/this/random-link]]
-* [[/blog/this/table-generate]]
-* [[/blog/this/todo]]
+* [[/blog/this]]
+    * [[/blog/this/404-fallback]]
+    * [[/blog/this/img-migration-to-resource]]
+    * [[/blog/this/random-link]]
+    * [[/blog/this/table-generate]]
+    * [[/blog/this/todo]]
 
 ## [[better-work]]
 
