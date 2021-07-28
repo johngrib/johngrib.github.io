@@ -3,7 +3,7 @@ layout  : wiki
 title   : sort 명령어
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
-updated : 2018-08-31 09:59:37 +0900
+updated : 2021-07-28 16:17:58 +0900
 tag     : bash sort command
 toc     : true
 public  : true
@@ -148,3 +148,43 @@ generateData.js:1
 test.md:0
 ```
 
+### prefix 공백 무시
+
+>
+`-b`, `--ignore-leading-blanks`
+>
+Ignore leading blank characters when comparing lines.
+
+
+
+다음과 같은 텍스트가 있을 때 `-b` 옵션을 사용하면 prefix 공백을 무시하고 정렬할 수 있다. Vim에서 `:'<,'>!sort -b` 와 같이 사용하기에도 좋다.
+
+```text
+    * [[/blog/this/random-link]]
+    * [[/blog/this/table-generate]]
+* [[/blog/this ]]
+* [[my-wiki ]]
+    * [[my-wiki/123]]
+    * [[/blog/this/img-migration-to-resource]]
+* [[favicon]]
+* [[create-jekyll-blog]]
+    * [[/blog/this/404-fallback]]
+* [[jekyll-category-tag]]
+    * [[/blog/this/todo]]
+```
+
+결과는 다음과 같다.
+
+```text
+* [[/blog/this ]]
+    * [[/blog/this/404-fallback]]
+    * [[/blog/this/img-migration-to-resource]]
+    * [[/blog/this/random-link]]
+    * [[/blog/this/table-generate]]
+    * [[/blog/this/todo]]
+* [[create-jekyll-blog]]
+* [[favicon]]
+* [[jekyll-category-tag]]
+* [[my-wiki ]]
+    * [[my-wiki/123]]
+```
