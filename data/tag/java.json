@@ -62,6 +62,7 @@
  "spring/document/core/01-13-env-abstraction",
  "spring/document/core/01-14-reg-loadtimeweaver",
  "spring/document/core/01-15-additional-capabilities-ac",
+ "spring/document/core/01-16-bean-factory",
  "summary-The-Pauseless-GC-Algorithm",
  "ternary-operator-and-null-pointer-exception",
  "use-java-primitive-type-for-performance"

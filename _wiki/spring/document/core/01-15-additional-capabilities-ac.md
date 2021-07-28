@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-28 20:27:45 +0900
+updated : 2021-07-28 20:36:36 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 - 목록으로 - [[/spring/document/core]]
 - 이전 문서 - [[/spring/document/core/01-14-reg-loadtimeweaver]]
-- 다음 문서 - 1.16. The BeanFactory
+- 다음 문서 - [[/spring/document/core/01-16-bean-factory]]
 
 ## 1.15. Additional Capabilities of the ApplicationContext
 
@@ -922,5 +922,5 @@ Ant 스타일의 경로 패턴도 지원합니다.
 
 - 목록으로 - [[/spring/document/core]]
 - 이전 문서 - [[/spring/document/core/01-14-reg-loadtimeweaver]]
-- 다음 문서 - 1.16. The BeanFactory
+- 다음 문서 - [[/spring/document/core/01-16-bean-factory]]
 

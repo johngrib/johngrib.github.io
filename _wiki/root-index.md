@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-07-28 13:58:12 +0900
+updated : 2021-07-28 20:30:10 +0900
 regenerate: true
 ---
 
@@ -569,6 +569,7 @@ regenerate: true
     * [[/spring/document/core/01-13-env-abstraction]]
     * [[/spring/document/core/01-14-reg-loadtimeweaver]]
     * [[/spring/document/core/01-15-additional-capabilities-ac]]
+    * [[/spring/document/core/01-16-bean-factory]]
 
 ## [[database]]
 
