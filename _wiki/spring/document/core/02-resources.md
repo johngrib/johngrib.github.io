@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-07-29 14:37:01 +0900
+updated : 2021-07-30 23:51:50 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -50,4 +50,118 @@ this is generally quite complicated, and the `URL` interface still lacks some de
 ### 2.2. The Resource Interface
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-introduction )
+
+>
+Spring’s `Resource` interface located in the `org.springframework.core.io.` package is meant to be a more capable interface for abstracting access to low-level resources.
+The following listing provides an overview of the `Resource` interface.
+See the [`Resource`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/core/io/Resource.html ) javadoc for further details.
+
+Spring의 `Resource` 인터페이스는 `org.springframework.core.io.`패키지에 있습니다. 이 패키지는 저수준 리소스에 대한 엑세스를 추상화하기 위한 유용한 인터페이스들을 담고 있습니다.
+다음 목록은 `Resource` 인터페이스를 보여줍니다.
+자세한 내용은 `Resource`의 javadoc을 참고하세요.
+
+```java
+public interface Resource extends InputStreamSource {
+
+    boolean exists();
+
+    boolean isReadable();
+
+    boolean isOpen();
+
+    boolean isFile();
+
+    URL getURL() throws IOException;
+
+    URI getURI() throws IOException;
+
+    File getFile() throws IOException;
+
+    ReadableByteChannel readableChannel() throws IOException;
+
+    long contentLength() throws IOException;
+
+    long lastModified() throws IOException;
+
+    Resource createRelative(String relativePath) throws IOException;
+
+    String getFilename();
+
+    String getDescription();
+}
+```
+
+>
+As the definition of the `Resource` interface shows, it extends the `InputStreamSource` interface.
+The following listing shows the definition of the `InputStreamSource` interface:
+
+`Resource` 인터페이스의 정의를 보면 `InputStreamSource` 인터페이스를 상속하고 있다는 것을 알 수 있습니다.
+다음은 `InputStreamSource` 인터페이스의 정의입니다.
+
+```java
+public interface InputStreamSource {
+
+    InputStream getInputStream() throws IOException;
+}
+```
+
+>
+Some of the most important methods from the `Resource` interface are:
+>
+- `getInputStream()`: Locates and opens the resource, returning an `InputStream` for reading from the resource. It is expected that each invocation returns a fresh `InputStream`. It is the responsibility of the caller to close the stream.
+- `exists()`: Returns a `boolean` indicating whether this resource actually exists in physical form.
+- `isOpen()`: Returns a `boolean` indicating whether this resource represents a handle with an open stream. If `true`, the `InputStream` cannot be read multiple times and must be read once only and then closed to avoid resource leaks. Returns `false` for all usual resource implementations, with the exception of `InputStreamResource`.
+- `getDescription()`: Returns a description for this resource, to be used for error output when working with the resource. This is often the fully qualified file name or the actual URL of the resource.
+
+`Resource` 인터페이스의 중요한 메소드들은 다음과 같습니다.
+
+- `getInputStream()`: 리소스를 open하고, 리소스를 읽기 위한 `InputStream`을 리턴합니다.
+    - 이 메소드를 리턴할 때마다 새로운 `InputStream`이 리턴되게 됩니다.
+    - stream을 닫는 것은 메소드 호출자의 책임입니다.
+- `exists()`: 리소스가 실제로 존재하는지를 나타내는 `boolean` 값을 리턴합니다.
+- `isOpen()`: 리소스가 open된 stream에 의해 처리중인지를 나타내는 `boolean` 값을 리턴합니다.
+    - 리턴값이 `true`이면 `InputStream`은 여러번 읽을 수 없으며, 한 번만 읽고 나서 반드시 close 해줘야 리소스 누수를 방지할 수 있습니다.
+    - `InputStreamResource`를 제외한 모든 일반적인 리소스 구현에 대해서는 `false`를 리턴합니다.
+- `getDescription()`: 리소스에 대한 설명을 리턴합니다.
+    - 이 설명은 리소스로 작업할 때 error output으로 사용됩니다.
+    - 이 값은 보통 파일 이름이거나 리소스의 실제 URL입니다.
+
+>
+Other methods let you obtain an actual `URL` or `File` object representing the resource (if the underlying implementation is compatible and supports that functionality).
+
+이 외의 다른 메소드들은 호출하면 리소스를 나타내는 실제 `URL`이나 `File` 객체를 얻게 해줍니다.
+
+>
+Some implementations of the `Resource` interface also implement the extended [`WritableResource`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/core/io/WritableResource.html ) interface for a resource that supports writing to it.
+
+`Resource` 인터페이스의 몇몇 구현체들은 쓰기를 지원하는 리소스에 대해 `WritableResource` 인터페이스를 확장하기도 합니다.
+
+>
+Spring itself uses the `Resource` abstraction extensively, as an argument type in many method signatures when a resource is needed.
+Other methods in some Spring APIs (such as the constructors to various `ApplicationContext` implementations) take a `String` which in unadorned or simple form is used to create a `Resource` appropriate to that context implementation or, via special prefixes on the `String` path, let the caller specify that a specific `Resource` implementation must be created and used.
+
+Spring 자체는 리소스가 필요할 때 다양한 메소드 시그니처를 사용해 인자의 타입으로 `Resource`의 추상화를 지웒합니다.
+Spring API의 몇몇 다른 메소드(예: 다양한 `ApplicationContext` 구현체들의 생성자)는 평범하거나 간단한 `String`을 받습니다.
+이러한 `String`은 `Resource`를 생성하는 데 사용되는 것이며, 해당 컨텍스트 구현체에 적합한 리소스를 만드는 데에 사용되거나, 경로의 특수한 prefix를 통해 호출자가 특정한 `Resource` 구현체를 만들어야 한다는 것을 명시해 줍니다.
+
+>
+While the `Resource` interface is used a lot with Spring and by Spring, it is actually very convenient to use as a general utility class by itself in your own code, for access to resources, even when your code does not know or care about any other parts of Spring.
+While this couples your code to Spring, it really only couples it to this small set of utility classes, which serves as a more capable replacement for `URL` and can be considered equivalent to any other library you would use for this purpose.
+
+`Resource` 인터페이스는 Spring 내부에서도 많이 사용되는 편입니다. 이 인터페이스는 Spring의 다른 부분을 잘 몰라도 사용할 수 있으므로, 여러분이 코딩을 통해 자원에 엑세스하려 할 때 평범한 유틸리티 클래스로 사용해도 매우 편리할 것입니다.
+`Resource` 인터페이스를 사용하면 여러분의 코드와 Spring 사이에 커플링이 생기게 되지만, 작은 규모의 유틸리티 클래스들과의 커플링인 정도이므로 심각한 것은 아닙니다.
+그리고 그 유틸리티 클래스들은 `URL`을 효과적으로 대체할 수 있는 것들이며, 비슷한 목적의 다른 라이브러리들과 큰 차이가 없을 것입니다.
+
+
+> (i)
+The `Resource` abstraction does not replace functionality. It wraps it where possible. For example, a `UrlResource` wraps a URL and uses the wrapped `URL` to do its work.
+{:style="background-color: #ecf1e8;"}
+
+- (i)
+    - `Resource` 추상화는 기능을 덮어쓰지 않고, 가능한 한 래핑합니다.
+    - 예를 들어 `UrlResource`는 URL을 래핑한 `URL`을 사용해 작업을 수행합니다.
+
+### 2.3. Built-in Resource Implementations
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations )
 
