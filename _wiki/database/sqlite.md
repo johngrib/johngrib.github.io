@@ -3,7 +3,7 @@ layout  : wiki
 title   : SQLite
 summary : 
 date    : 2021-07-31 12:41:48 +0900
-updated : 2021-07-31 12:51:58 +0900
+updated : 2021-07-31 13:28:51 +0900
 tag     : db
 toc     : true
 public  : true
@@ -18,8 +18,21 @@ latex   : false
 ### 새로운 데이터 베이스 생성
 
 ```sh
-# test.db 를 새로 생성한다
 sqlite3 test.db
+
+sqlite> .quit
+```
+
+### 도움말 보기
+
+```sh
+sqlite> .help
+```
+
+### describe 테이블
+
+```sh
+sqlite> .schema table_name
 ```
 
 ## 함께 읽기
