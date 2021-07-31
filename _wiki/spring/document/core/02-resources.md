@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-08-01 00:31:18 +0900
+updated : 2021-08-01 00:44:50 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -187,4 +187,32 @@ Spring에서 사용 가능한 `Resource` 구현체의 전체 목록은 `Resource
 #### 2.3.1. `UrlResource`
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-urlresource )
+
+>
+`UrlResource` wraps a `java.net.URL` and can be used to access any object that is normally accessible with a URL, such as files, an HTTPS target, an FTP target, and others.
+All URLs have a standardized `String` representation, such that appropriate standardized prefixes are used to indicate one URL type from another.
+This includes `file:` for accessing filesystem paths, `https:` for accessing resources through the HTTPS protocol, `ftp:` for accessing resources through FTP, and others.
+
+`UrlResource`는 `java.net.URL`을 래핑합니다. 따라서 파일이나, HTTPS, FTP와 같이 일반적으로 URL로 접근할 수 있는 모든 객체에 엑세스할 때 사용할 수 있습니다.
+모든 URL에는 표준화된 `String` 형식이 있으므로 표준화된 prefix를 알맞게 사용하여 하나의 URL 타입을 다른 URL 타입으로 표시할 수 있습니다.
+여기에는 `file:`처럼 파일시스템 경로에 엑세스하기 위한 prefix도 포함되며, HTTPS 프로토콜을 통해 리소스에 엑세스하는 목적의 `https:`, FTP를 통해 리소스에 엑세스하려는 목적의 `ftp:`도 포함됩니다.
+
+>
+A `UrlResource` is created by Java code by explicitly using the `UrlResource` constructor but is often created implicitly when you call an API method that takes a `String` argument meant to represent a path.
+For the latter case, a JavaBeans `PropertyEditor` ultimately decides which type of `Resource` to create.
+If the path string contains a well-known (to property editor, that is) prefix (such as `classpath:`), it creates an appropriate specialized `Resource` for that prefix.
+However, if it does not recognize the prefix, it assumes the string is a standard URL string and creates a `UrlResource`.
+
+`UrlResource`는 Java 코드에서 명시적으로 `UrlResource` 생성자를 사용하여 생성할 수 있습니다.
+그러나 경로를 나타내는 `String` 인자를 사용하는 API 메소드를 호출할 때 암시적으로 생성되는 경우가 더 많습니다.
+
+후자의 경우 생성할 `Resource`의 타입을 JavaBeans `PropertyEditor`가 최종적으로 결정합니다.
+만약 경로 문자열이 `PropertyEditor`가 알고 있는 prefix(`classpath:` 같은 것들)로 시작한다면 그에 적합한 `Resource`를 생성하게 됩니다.
+
+그러나 판별할 수 없는 prefix가 주어진 경우라면 해당 문자열을 표준 URL로 전제하고 `UrlResource`를 생성하게 됩니다.
+
+
+#### 2.3.2. `ClassPathResource`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-classpathresource )
 
