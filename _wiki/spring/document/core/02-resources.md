@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-07-30 23:51:50 +0900
+updated : 2021-08-01 00:31:18 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -161,7 +161,30 @@ The `Resource` abstraction does not replace functionality. It wraps it where pos
     - `Resource` 추상화는 기능을 덮어쓰지 않고, 가능한 한 래핑합니다.
     - 예를 들어 `UrlResource`는 URL을 래핑한 `URL`을 사용해 작업을 수행합니다.
 
-### 2.3. Built-in Resource Implementations
+### 2.3. Built-in `Resource` Implementations
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations )
+
+>
+Spring includes several built-in `Resource` implementations:
+
+Spring에는 `Resource` 구현체가 몇 가지 포함되어 있습니다.
+
+>
+- [`UrlResource`]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-urlresource )
+- [`ClassPathResource`]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-classpathresource )
+- [`FileSystemResource`]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-filesystemresource )
+- [`PathResource`]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-pathresource )
+- [`ServletContextResource`]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-servletcontextresource )
+- [`InputStreamResource`]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-inputstreamresource )
+- [`ByteArrayResource`]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-bytearrayresource )
+
+>
+For a complete list of `Resource` implementations available in Spring, consult the "All Known Implementing Classes" section of the [`Resource`]( https://docs.spring.io/spring-framework/docs/5.3.7/javadoc-api/org/springframework/core/io/Resource.html ) javadoc.
+
+Spring에서 사용 가능한 `Resource` 구현체의 전체 목록은 `Resource` javadoc의 "All Known Implementing Classes" 섹션을 참고하세요.
+
+#### 2.3.1. `UrlResource`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-urlresource )
 
