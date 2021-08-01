@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-08-01 19:14:19 +0900
+updated : 2021-08-01 19:52:25 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -259,4 +259,17 @@ For pure `java.nio.path.Path` based support use a `PathResource` instead.
 #### 2.3.4. `PathResource`
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-pathresource )
+
+>
+This is a `Resource` implementation for `java.nio.file.Path` handles, performing all operations and transformations via the `Path` API.
+It supports resolution as a `File` and as a `URL` and also implements the extended `WritableResource` interface.
+`PathResource` is effectively a pure `java.nio.path.Path` based alternative to `FileSystemResource` with different `createRelative` behavior.
+
+`java.nio.file.Path`를 처리하는 `Resource` 구현체이며, `Path` API를 사용해 변환 작업을 처리합니다.
+확장된(extended) `WritableResource` 인터페이스를 구현하고 있으며, `File`과 `URL`의 resolution을 지원합니다.
+`PathResource`는 순수하게 `java.nio.path.Path` 기반이기 때문에, `createRelative` 동작을 가진 `FileSystemResource`에 대한 대안책이기도 합니다.
+
+#### 2.3.5. `ServletContextResource`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-servletcontextresource )
 
