@@ -3,7 +3,7 @@ layout  : wiki
 title   : 약어 모음
 summary : 
 date    : 2019-07-14 19:51:37 +0900
-updated : 2019-10-16 21:45:10 +0900
+updated : 2021-08-01 10:51:11 +0900
 tag     : 
 toc     : true
 public  : true
@@ -30,6 +30,7 @@ latex   : false
 * IPv4: IP version 4, Internet Protocol version 4, IP 버전 4
 * IPv6: IP version 6, Internet Protocol version 6, IP 버전 6
 * ISP: Internet SErvice Provider, 인터넷 서비스 제공자
+* KPI: Key Performance Indicato, 핵심 성과 지표
 * MTU: Maximum Transmission Unit, Maximum Transfer Unit. 네트워크의 최대 전송 단위.
 * NFS: Network File System, 네트워크 파일 시스템
 * PPP: Point-to-Point Protocol, 점대점 프로토콜
