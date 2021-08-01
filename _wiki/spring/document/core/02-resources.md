@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-08-01 00:44:50 +0900
+updated : 2021-08-01 16:25:31 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -215,4 +215,31 @@ However, if it does not recognize the prefix, it assumes the string is a standar
 #### 2.3.2. `ClassPathResource`
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-classpathresource )
+
+>
+This class represents a resource that should be obtained from the classpath.
+It uses either the thread context class loader, a given class loader, or a given class for loading resources.
+
+이 클래스는 classpath에서 가져와야 하는 리소스를 나타냅니다.
+thread context 클래스 로더, 지정된 클래스 로더, 또는 리소스를 로드하기 위해 따로 지정한 클래스를 사용합니다.
+
+>
+This `Resource` implementation supports resolution as a `java.io.File` if the class path resource resides in the file system but not for classpath resources that reside in a jar and have not been expanded (by the servlet engine or whatever the environment is) to the filesystem.
+To address this, the various `Resource` implementations always support resolution as a `java.net.URL`.
+
+`ClassPathResource`는 `Resource` 구현체입니다.
+`ClassPathResource`는 클래스 패스 리소스가 파일 시스템에 있다면 `java.io.File`을 사용하지만, jar(servlet 엔진을 쓴다던가, 아무튼 jar를 쓸 수 밖에 없는 경우)에 들어있고 파일 시스템 상의 경로로 판별할 수 없는 classpath 리소스는 지원하지 않습니다.
+이런 문제를 해결하기 위해, 다양한 `Resource` 구현체들은 항상 `java.net.URL`을 써서 판별합니다.
+
+>
+A `ClassPathResource` is created by Java code by explicitly using the `ClassPathResource` constructor but is often created implicitly when you call an API method that takes a `String` argument meant to represent a path.
+For the latter case, a JavaBeans `PropertyEditor` recognizes the special prefix, `classpath:`, on the string path and creates a `ClassPathResource` in that case.
+
+`ClassPathResource`는 Java 코드인 `ClassPathResource` 생성자를 통해 명시적으로 생성됩니다.
+그러나 종종 경로를 의미하는 `String` 인자를 사용하는 API를 호출할 때 암묵적으로 `ClassPathResource`가 생성되기도 합니다.
+이렇게 암묵적으로 생성하는 경우는 JavaBeans `PropertyEditor`가 String path에 들어있는 `classpath:`라는 prefix를 인식하고 `ClassPathResource`를 생성하는 것입니다.
+
+#### 2.3.3. `FileSystemResource`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-filesystemresource )
 
