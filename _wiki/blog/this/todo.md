@@ -3,7 +3,7 @@ layout  : wiki
 title   : 할 일 모음
 summary : 이 웹사이트를 관리하기 위한 할 일 모음
 date    : 2021-07-23 19:44:46 +0900
-updated : 2021-07-31 12:53:01 +0900
+updated : 2021-08-01 10:55:57 +0900
 tag     : todo
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 ##
 
+- [ ] 링크 텍스트가 `#` 로 시작하면 `tags/#`로 연결하고, 아이콘도 보여주기
 - [ ] `\[[fileName|description]]` 포맷 적용하기
 - [ ] 왼쪽/오른쪽 섹션 사이즈 적절히 조절하기
 - [ ] 왼쪽 섹션에 카테고리 목록 보여주기
