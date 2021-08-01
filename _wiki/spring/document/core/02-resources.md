@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-08-01 16:25:31 +0900
+updated : 2021-08-01 19:14:19 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -242,4 +242,21 @@ For the latter case, a JavaBeans `PropertyEditor` recognizes the special prefix,
 #### 2.3.3. `FileSystemResource`
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-filesystemresource )
+
+>
+This is a `Resource` implementation for `java.io.File` handles.
+It also supports `java.nio.file.Path` handles, applying Spring’s standard String-based path transformations but performing all operations via the `java.nio.file.Files` API.
+For pure `java.nio.path.Path` based support use a `PathResource` instead.
+`FileSystemResource` supports resolution as a `File` and as a `URL`.
+
+`java.io.File`를 처리하는 `Resource` 구현체입니다.
+`java.io.File` 뿐 아니라 `java.nio.file.Path` 처리도 지원하여, Spring 표준 String 기반 path 변환을 적용합니다.
+그리고 `java.nio.file.Files` API를 통한 모든 작업도 수행할 수 있습니다.
+
+다만, 순수한 `java.nio.path.Path` 기반의 지원이 필요하다면 `FileSystemResource` 대신 `PathResource`를 사용하는 것이 바람직합니다.
+`FileSystemResource`는 `File`과 `URL`을 통해 리소스를 확정합니다.
+
+#### 2.3.4. `PathResource`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-pathresource )
 
