@@ -60,10 +60,7 @@
 
 })();
 
-// XXX: 이제 랜덤 기능은 index를 경유하지 않는다
-const isRandom = /[/]wiki[/]index[/]?#random$/.test(window.location.href);
-
-;isRandom || (function() {
+;(function() {
     // 파일 이름이 링크 텍스트로 드러난 것을 문서의 타이틀로 교체해준다.
     const list = document.querySelectorAll('.no-labeled-link');
 
@@ -101,7 +98,8 @@ const isRandom = /[/]wiki[/]index[/]?#random$/.test(window.location.href);
             });
     }
 })();
-;isRandom || (function() {
+
+;(function() {
     // 외부 링크에 표시를 달아준다.
     const links = document.links;
 
