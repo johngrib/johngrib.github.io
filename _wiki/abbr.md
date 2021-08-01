@@ -3,7 +3,7 @@ layout  : wiki
 title   : 약어 모음
 summary : 
 date    : 2019-07-14 19:51:37 +0900
-updated : 2021-08-01 10:51:11 +0900
+updated : 2021-08-01 10:52:33 +0900
 tag     : 
 toc     : true
 public  : true
@@ -35,6 +35,7 @@ latex   : false
 * NFS: Network File System, 네트워크 파일 시스템
 * PPP: Point-to-Point Protocol, 점대점 프로토콜
 * RARP: Reverse Address Resolution Protocol, 역순 주소 결정 프로토콜
+* REPL: Read-Eval-Print-Loop, 사용자가 입력한 프로그램을 읽고 평가(계산)해서 결과를 출력하는 일을 반복하는 구조.
 * RIP: Routing Information Protocol, 라우팅 정보 프로토콜
 * ROI: Return on Investment, 투자 대비 수익률
 * RTT: Round-Trip Time, 왕복 시간
