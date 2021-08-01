@@ -153,6 +153,10 @@ h6 {
     }
 }
 
+.post-content .tagged-link {
+    &:before { content:"#"; }
+}
+
 .error-link {
     &:after {
         font-style: italic;
