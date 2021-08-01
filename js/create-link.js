@@ -1,4 +1,5 @@
 ;(function() {
+    // 화면 상단의 해시태그에 링크를 걸어준다.
     var tags = document.querySelectorAll('.post-tag');
     if(tags == null || tags.length < 1) {
         return;
@@ -21,6 +22,7 @@
     return;
 })();
 ;(function() {
+    // 본문 전체의 vimwiki 링크를 html 링크로 변환한다.
     var post = document.querySelector('article.post-content');
 
     if(post == null) {
@@ -58,9 +60,11 @@
 
 })();
 
+// XXX: 이제 랜덤 기능은 index를 경유하지 않는다
 const isRandom = /[/]wiki[/]index[/]?#random$/.test(window.location.href);
 
 ;isRandom || (function() {
+    // 파일 이름이 링크 텍스트로 드러난 것을 문서의 타이틀로 교체해준다.
     const list = document.querySelectorAll('.no-labeled-link');
 
     for (var i = 0; i < list.length; i++) {
@@ -98,6 +102,7 @@ const isRandom = /[/]wiki[/]index[/]?#random$/.test(window.location.href);
     }
 })();
 ;isRandom || (function() {
+    // 외부 링크에 표시를 달아준다.
     const links = document.links;
 
     for (let i = 0; i < links.length; i++) {
