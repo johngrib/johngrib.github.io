@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.16. The BeanFactory
 summary : 
 date    : 2021-07-28 20:30:12 +0900
-updated : 2021-07-28 23:13:55 +0900
+updated : 2021-08-01 16:13:13 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 - 목록으로 - [[/spring/document/core]]
 - 이전 문서 - [[/spring/document/core/01-15-additional-capabilities-ac]]
-- 다음 문서 - 2. Resources
+- 다음 문서 - [[/spring/document/core/02-resources]]
 
 ## 1.16. The `BeanFactory`
 
@@ -155,5 +155,5 @@ An `AnnotationConfigApplicationContext` has all common annotation post-processor
 
 - 목록으로 - [[/spring/document/core]]
 - 이전 문서 - [[/spring/document/core/01-15-additional-capabilities-ac]]
-- 다음 문서 - 2. Resources
+- 다음 문서 - [[/spring/document/core/02-resources]]
 
