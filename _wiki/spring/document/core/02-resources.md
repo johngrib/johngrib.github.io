@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-08-01 19:52:25 +0900
+updated : 2021-08-01 23:43:38 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -272,4 +272,21 @@ It supports resolution as a `File` and as a `URL` and also implements the extend
 #### 2.3.5. `ServletContextResource`
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-servletcontextresource )
+
+>
+This is a `Resource` implementation for `ServletContext` resources that interprets relative paths within the relevant web application’s root directory.
+
+`ServletContext` 리소스에 대한 `Resource` 구현체입니다. 웹 애플리케이션의 루트 디렉토리 기준의 상대 경로를 처리합니다.
+
+>
+It always supports stream access and URL access but allows `java.io.File` access only when the web application archive is expanded and the resource is physically on the filesystem.
+Whether or not it is expanded and on the filesystem or accessed directly from the JAR or somewhere else like a database (which is conceivable) is actually dependent on the Servlet container.
+
+이 구현체는 항상 stream access와 URL access를 지원합니다.
+다만 `java.io.File`의 access는 웹 애플리케이션의 아카이브가 확장되어 리소스가 물리적으로 파일 시스템에 있는 경우에만 허용됩니다.
+자원이 파일 시스템에 있는지 또는 JAR 이나 데이터베이스와 같은 다른 곳에서 직접 엑세스되는지는 Servlet 컨테이너에 따라 달라질 수 있습니다.
+
+#### 2.3.6. `InputStreamResource`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-inputstreamresource )
 
