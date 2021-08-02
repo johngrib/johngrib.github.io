@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-08-02 23:34:49 +0900
+updated : 2021-08-02 23:39:14 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -310,4 +310,18 @@ Do not use it if you need to keep the resource descriptor somewhere or if you ne
 #### 2.3.7. `ByteArrayResource`
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-bytearrayresource )
+
+>
+This is a `Resource` implementation for a given byte array. It creates a `ByteArrayInputStream` for the given byte array.
+
+이것은 주어진 byte array에 대한 `Resource` 구현체입니다. 주어진 byte array에 대해 `ByteArrayInputStream`을 생성합니다.
+
+>
+It is useful for loading content from any given byte array without having to resort to a single-use `InputStreamResource`.
+
+일회용 `InputStreamResource`에 의존하지 않고도 주어진 byte array 에서 콘텐츠를 로드하는 데 유용합니다.
+
+### 2.4. The `ResourceLoader` Interface
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-resourceloader )
 
