@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-08-01 23:43:38 +0900
+updated : 2021-08-02 23:34:49 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -289,4 +289,25 @@ Whether or not it is expanded and on the filesystem or accessed directly from th
 #### 2.3.6. `InputStreamResource`
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-inputstreamresource )
+
+>
+An `InputStreamResource` is a `Resource` implementation for a given `InputStream`.
+It should be used only if no specific `Resource` implementation is applicable.
+In particular, prefer `ByteArrayResource` or any of the file-based `Resource` implementations where possible.
+
+`InputStreamResource`는 `InputStream`에 대한 `Resource` 인터페이스의 구현체이며, 특정 `Resource` 구현을 적용할 수 없는 경우에만 사용해야 합니다.
+가능하다면 `ByteArrayResource`나 파일 기반의 리소스 구현을 사용하세요.
+
+>
+In contrast to other `Resource` implementations, this is a descriptor for an already-opened resource.
+Therefore, it returns `true` from `isOpen()`.
+Do not use it if you need to keep the resource descriptor somewhere or if you need to read a stream multiple times.
+
+다른 `Resource` 구현체들과 달리, `InputStreamResource`는 이미 열려 있는 리소스에 대한 descriptor 입니다.
+따라서 `isOpen()` 메소드를 호출하면 `true`를 리턴합니다.
+리소스 descriptor를 어딘가에 보관해 두어야 하거나, 스트림을 여러 차례 읽어야 하는 경우에는 `InputStreamResource`를 사용하지 마세요.
+
+#### 2.3.7. `ByteArrayResource`
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-implementations-bytearrayresource )
 
