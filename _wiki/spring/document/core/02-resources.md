@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-08-04 22:08:00 +0900
+updated : 2021-08-04 22:11:18 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -12,6 +12,10 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+- 목록으로 - [[/spring/document/core]]
+- 이전 문서 - [[/spring/document/core/01-16-bean-factory]]
+- 다음 문서 - 3. Validation, Data Binding, and Type Conversion
 
 ## 2. Resources
 
@@ -469,4 +473,18 @@ The same is true for the `ApplicationContext` instance itself which also impleme
 ### 2.6. The `ResourceLoaderAware` Interface
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-resourceloaderaware )
+
+### 2.7. Resources as Dependencies
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-as-dependencies )
+
+### 2.8. Application Contexts and Resource Paths
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-app-ctx )
+
+## 함께 읽기
+
+- 목록으로 - [[/spring/document/core]]
+- 이전 문서 - [[/spring/document/core/01-16-bean-factory]]
+- 다음 문서 - 3. Validation, Data Binding, and Type Conversion
 
