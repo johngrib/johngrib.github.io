@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 2. Resources
 summary : 
 date    : 2021-07-29 09:43:27 +0900
-updated : 2021-08-03 22:15:57 +0900
+updated : 2021-08-04 22:08:00 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -419,4 +419,54 @@ Table 10. Resource strings
 ### 2.5. The `ResourcePatternResolver` Interface
 
 [원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-resourcepatternresolver )
+
+>
+The `ResourcePatternResolver` interface is an extension to the `ResourceLoader` interface which defines a strategy for resolving a location pattern (for example, an Ant-style path pattern) into `Resource` objects.
+
+`ResourcePatternResolver` 인터페이스는 `ResourceLoader` 인터페이스를 확장한 것이며, location pattern(Ant 스타일의 path pattern)을 읽고 `Resource` 객체로 해석하려는 목적을 갖고 있습니다.
+
+```java
+public interface ResourcePatternResolver extends ResourceLoader {
+
+    String CLASSPATH_ALL_URL_PREFIX = "classpath*:";
+
+    Resource[] getResources(String locationPattern) throws IOException;
+}
+```
+
+>
+As can be seen above, this interface also defines a special `classpath*:` resource prefix for all matching resources from the class path.
+Note that the resource location is expected to be a path without placeholders in this case — for example, `classpath*:/config/beans.xml`.
+JAR files or different directories in the class path can contain multiple files with the same path and the same name.
+See [Wildcards in Application Context Constructor Resource Paths]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-app-ctx-wildcards-in-resource-paths ) and its subsections for further details on wildcard support with the `classpath*:` resource prefix.
+
+위의 예제에서 알 수 있듯이, 이 인터페이스는 class path에서 일치하는 모든 리소스를 의미하는 `classpath*:` prefix를 정의합니다.
+이 경우 리소스의 경로에는 placeholder가 없어야 합니다(예: `classpath*:/config/beans.xml`).
+JAR 파일이나 class path의 다른 디렉토리들도 이 표기법으로 지정이 가능합니다.
+`classpath*:` 리소스 prefix를 사용한 와일드카드 지원에 대한 자세한 내용은 [Wildcards in Application Context Constructor Resource Paths]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-app-ctx-wildcards-in-resource-paths ) 문서를 참고하세요.
+
+>
+A passed-in `ResourceLoader` (for example, one supplied via [`ResourceLoaderAware`]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-resourceloaderaware ) semantics) can be checked whether it implements this extended interface too.
+
+전달된 `ResourceLoader`(예: `ResourceLoaderAware`를 통해 제공된)도 이런 확장 인터페이스를 구현하는지를 확인할 수 있습니다.
+
+>
+`PathMatchingResourcePatternResolver` is a standalone implementation that is usable outside an `ApplicationContext` and is also used by `ResourceArrayPropertyEditor` for populating `Resource[]` bean properties.
+`PathMatchingResourcePatternResolver` is able to resolve a specified resource location path into one or more matching `Resource` objects.
+The source path may be a simple path which has a one-to-one mapping to a target `Resource`, or alternatively may contain the special `classpath*:` prefix and/or internal Ant-style regular expressions (matched using Spring’s `org.springframework.util.AntPathMatcher` utility).
+Both of the latter are effectively wildcards.
+
+`PathMatchingResourcePatternResolver`는 `ApplicationContext` 외부에서 사용할 수 있는 standalone 구현체이며, `Resource[]` bean 프로퍼티를 채워넣기 위해 `ResourceArrayPropertyEditor`에서도 사용됩니다.
+`PathMatchingResourcePatternResolver`는 지정된 리소스 경로를 일치하는 하나 이상의 `Resource` 객체들로 확정할 수 있습니다.
+source path는 대상 `Resource`에 대한 일대일 매핑이 있는 간단한 경로를 쓰거나, 또는 `classpath*:` prefix, 또는 Ant 스타일의 정규식(Spring의 `org.springframework.util.AntPathMatcher` utility를 사용)를 사용할 수 있습니다.
+마지막 두 가지는 사실상 와일드카드라 할 수 있습니다.
+
+> (i)
+The default `ResourceLoader` in any standard `ApplicationContext` is in fact an instance of `PathMatchingResourcePatternResolver` which implements the `ResourcePatternResolver` interface.
+The same is true for the `ApplicationContext` instance itself which also implements the `ResourcePatternResolver` interface and delegates to the default `PathMatchingResourcePatternResolver`.
+
+
+### 2.6. The `ResourceLoaderAware` Interface
+
+[원문]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#resources-resourceloaderaware )
 
