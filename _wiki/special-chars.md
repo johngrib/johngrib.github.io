@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2021-05-16 12:34:25 +0900
+updated : 2021-08-07 00:04:40 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -104,6 +104,7 @@ latex   : true
 * 여러 프로그래밍 언어에서 값이나 레퍼런스 등이 없음을 표시하는 용도로 Null을 사용한다.
 * 허다하게 보는 에러의 상당부분이 Null pointer와 관련된 것들이다.
 * Null pointer의 개념은 컴퓨터 과학자 [Tony Hoare(토니 호어)](https://en.wikipedia.org/wiki/Tony_Hoare )가 1965년에 창안했다.
+    * 1965년 논문. [Entia non sunt multiplicanda praeter necessitatem - William of Occam. C.A.R. Hoare]( https://archive.computerhistory.org/resources/text/algol/ACM_Algol_bulletin/1061032/p39-hoare.pdf )
     * 1959년에 [Quick sort 알고리즘](https://academic.oup.com/comjnl/article/5/1/10/395338 )을 고안한 사람이다.
     * 1980년 [Turing award](https://amturing.acm.org/award_winners/hoare_4622167.cfm ) 수상자.
     * 2009년에는 [Null pointer의 개념이 10억 달러 이상의 피해를 끼친 실수였다고 후회했다(동영상)](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare ).
