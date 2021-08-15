@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-07-12 18:22:45 +0900
+updated : 2021-08-15 11:48:18 +0900
 tag     : java
 toc     : true
 public  : true
@@ -13,6 +13,19 @@ issue-number : 158
 ---
 * TOC
 {:toc}
+
+## 파일 탭 닫기 버튼(x) 왼쪽으로 옮기기
+
+`Preferences` - `Editor` - `General` - `Editor Tabs`에서 `Close button position`을 `Right`에서 `Left`로 바꿔준다.
+
+탭 닫기 버튼이 오른쪽에 있으면 여러 탭을 마우스로 클릭해서 연속으로 닫을 때 굉장히 짜증난다.
+
+탭 닫기 버튼이 왼쪽에 있으면 모든 탭의 탭 닫기 버튼의 위치가 똑같다. 그래서 여러 탭을 클릭클릭해서 닫을 때 편하다.
+
+![image]( /resource/wiki/intellij/107315651-7b5c6680-6ada-11eb-9820-fec90bdeb3fa.png )
+
+- 최근 사용 이력
+    - 2021-08-15
 
 ## import * 방지하기
 
@@ -99,16 +112,6 @@ POSIX에서는 **Line**을 "개행 문자로 끝나는 0개 이상의 개행 문
 
 이를 따르지 않으면 github에서도 경고를 보여준다(PR을 올려보면 바로 알 수 있다).
 
-
-## 파일 탭 닫기 버튼(x) 왼쪽으로 옮기기
-
-`Preferences` - `Editor` - `General` - `Editor Tabs`에서 `Close button position`을 `Right`에서 `Left`로 바꿔준다.
-
-탭 닫기 버튼이 오른쪽에 있으면 여러 탭을 마우스로 클릭해서 연속으로 닫을 때 굉장히 짜증난다.
-
-탭 닫기 버튼이 왼쪽에 있으면 모든 탭의 탭 닫기 버튼의 위치가 똑같다. 그래서 여러 탭을 클릭클릭해서 닫을 때 편하다.
-
-![image]( /resource/wiki/intellij/107315651-7b5c6680-6ada-11eb-9820-fec90bdeb3fa.png )
 
 ## unused symbol 색깔 변경하기
 
