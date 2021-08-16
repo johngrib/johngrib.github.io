@@ -3,7 +3,7 @@ layout  : wiki
 title   : 가용성(Availability)
 summary : 시스템이 다운되지 않고 정상 운영되는 시간의 비율
 date    : 2019-09-20 09:10:51 +0900
-updated : 2021-08-16 18:07:48 +0900
+updated : 2021-08-16 20:36:00 +0900
 tag     : 
 toc     : true
 public  : true
@@ -58,6 +58,30 @@ TP 시스템에 필요한 중요한 요구사항은 시스템이 항상 가동�
 -- 트랜잭션 처리의 원리. 7 시스템 복구. 239쪽.[^bernstein-define]
 
 $$\text{가용성} = { \text{평균가동시간} \over \text{평균가동시간} + \text{평균복구시간} }$$
+
+#### From: 가상 면접 사례로 배우는 대규모 시스템 설계 기초
+
+>
+고가용성(high availability)은 시스템이 오랜 시간 동안 지속적으로 중단 없이 운영될 수 있는 능력을 지칭하는 용어다.
+고가용성을 표현하는 값은 퍼센트(percent)로 표현하는데, 100%는 시스템이 단 한 번도 중단된 적이 없었음을 의미한다.
+대부분의 서비스는 99%에서 100% 사이의 값을 갖는다.
+>
+SLA(Service Level Agreement)는 서비스 사업자(service provider)가 보편적으로 사용하는 용어로, 서비스 사업자와 고객 사이에 맺어진 합의를 의미한다.
+이 합의에는 서비스 사업자가 제공하는 서비스의 가용시간(uptime)이 공식적으로 기술되어 있다.
+아마존, 구글, 그리고 마이크로소프트 같은 사업자는 99% 이상의 SLA를 제공한다.
+가용시간은 관습적으로 숫자 9를 사용해 표시한다.
+9가 많으면 많을수록 좋다고 보면 된다.
+>
+-- 가상 면접 사례로 배우는 대규모 시스템 설계 기초. 2장 개략적인 규모 추정. 36쪽.
+
+책에서 소개하고 있는 각 서비스 사업자들의 SLA 링크는 다음과 같다.
+
+- [Amazon Compute Service Level Agreement]( https://aws.amazon.com/ko/compute/sla/ )
+    - [한국어(PDF)]( https://d1.awsstatic.com/legal/AmazonComputeServiceLevelAgreement/Amazon%20Compute%20Service%20Level%20Agreement_Korean_2020-07-22.pdf )
+- [Compute Engine 서비스수준계약(SLA)]( https://cloud.google.com/compute/sla )
+- [SLA summary for Azure services]( https://azure.microsoft.com/en-us/support/legal/sla/summary/ )
+    - [한국어]( https://azure.microsoft.com/ko-kr/support/legal/sla/summary/ )
+
 
 ### 요청 성공률을 기초로 한 가용성
 
@@ -135,10 +159,11 @@ $$\text{가용성} = { \text{성공한 요청 수} \over \text{전체 요청 수
 * 웹
     * [가용성(wikipedia)](https://ko.wikipedia.org/wiki/가용성 )
 * 도서
-    * 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
-    * 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
-    * 사이트 신뢰성 엔지니어링 / 벳시 베이어, 크리스 존스, 제니퍼 펫오프, 니얼 리처드 머피 저/장현희 역 / 제이펍 / 초판 1쇄 2018년 01월 18일 / 원서 : Site Reliability Engineering: How Google Runs Production Systems
     * [RIC] 마이크로서비스 패턴 / 크리스 리처드슨 저/이일웅 역 / 길벗 / 초판발행 2020년 01월 30일
+    * 가상 면접 사례로 배우는 대규모 시스템 설계 기초 / 알렉스 쉬 저/이병준 역 / 인사이트(insight) / 2021년 07월 28일 / 원서 : System Design Interview
+    * 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
+    * 사이트 신뢰성 엔지니어링 / 벳시 베이어, 크리스 존스, 제니퍼 펫오프, 니얼 리처드 머피 저/장현희 역 / 제이펍 / 초판 1쇄 2018년 01월 18일 / 원서 : Site Reliability Engineering: How Google Runs Production Systems
+    * 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
 
 ## 주석
 
