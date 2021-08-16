@@ -3,7 +3,7 @@ layout  : wiki
 title   : 가용성(Availability)
 summary : 시스템이 다운되지 않고 정상 운영되는 시간의 비율
 date    : 2019-09-20 09:10:51 +0900
-updated : 2020-07-13 23:23:54 +0900
+updated : 2021-08-16 17:56:52 +0900
 tag     : 
 toc     : true
 public  : true
@@ -17,7 +17,7 @@ latex   : true
 
 ### 시간을 기준으로 한 가용성
 
-[한국어 위키백과][wiki]에서는 가용성을 다음과 같이 정의한다.
+[위키백과][wiki]에서는 가용성을 다음과 같이 정의한다.[^wiki-date]
 
 >
 **가용성**(可用性, Availability)이란 서버와 네트워크, 프로그램 등의 정보 시스템이 정상적으로 사용 가능한 정도를 말한다. **가동률**과 비슷한 의미이다. 가용성을 수식으로 표현할 경우, 가용성(Availability)이란 정상적인 사용 시간(Uptime)을 전체 사용 시간(Uptime+Downtime)으로 나눈 값을 말한다. 이 값이 높을수록 "가용성이 높다"고 표현한다. 가용성이 높은 것을 고가용성(HA, High Availability)이라고 한다.  
@@ -140,6 +140,7 @@ $$\text{가용성} = { \text{성공한 요청 수} \over \text{전체 요청 수
 [^sre-target-level]: 사이트 신뢰성 엔지니어링. 3 위험 요소 수용하기. 35쪽.
 [^sre-error-budget]: 사이트 신뢰성 엔지니어링. 1 소개. 10쪽.
 [^ric-3-4]: [RIC] 3.4장.
+[^wiki-date]: 2019년 9월 20일 기준. 위키백과는 내용이 변경될 수 있으므로 날짜를 기록해둔다.
 
 [wiki]: https://en.wikipedia.org/wiki/Availability
 
