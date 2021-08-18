@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2021-04-16 17:38:58 +0900
+updated : 2021-08-18 17:03:02 +0900
 tag     : gradle tool
 toc     : true
 public  : true
@@ -146,6 +146,49 @@ SpringBoot를 사용한다면 다음과 같이 액티브 프로파일을 설정�
 $ SPRING_PROFILES_ACTIVE=local2 gradle bootrun
 $ SPRING_PROFILES_ACTIVE=local2 ./gradlew bootrun     # gradlew 사용
 ```
+
+## 문제 해결 경험
+
+### Gradle 6.1.1 - org.codehaus.groovy.runtime.InvokerHelper
+
+Gradle 6.1.1 버전을 사용할 때 빌드를 돌려 보았더니 다음과 같은 에러가 발생했다.
+
+```
+$ ./gradlew build
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not initialize class org.codehaus.groovy.runtime.InvokerHelper
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 510ms
+```
+
+이때 사용하고 있었던 `/gradle/wrapper/gradle-wrapper.properties`는 다음과 같다.
+
+```
+# Gradle 6.1.1 버전을 사용하고 있음
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.1.1-all.zip
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStorePath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+```
+
+문제의 원인은 버전 Gradle 6.1.1 버전이 Java 16버전을 지원하지 않기 때문에 발생한 문제였다.
+
+해결책은 둘 중 하나일 것이다.
+
+- Java 16 버전을 지원하는 Gradle 버전을 사용한다.
+- Gradle 6.1.1 이 지원하는 Java 버전을 사용한다.
+
+Java 버전을 11 버전으로 낮춰주었더니 빌드가 잘 되었다.
+
 
 ## Links
 
