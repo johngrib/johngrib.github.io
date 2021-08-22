@@ -3,7 +3,7 @@ layout  : wiki
 title   : JavaDoc
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2021-08-22 16:48:46 +0900
+updated : 2021-08-22 16:49:08 +0900
 tag     : java javadoc
 toc     : true
 public  : true
@@ -24,4 +24,5 @@ gradlew javadoc
 ## 참고문헌
 
 - [Java SE 11 Javadoc Guide (docs.oracle.com)]( https://docs.oracle.com/en/java/javase/11/javadoc/javadoc.html )
+- [Documentation Comment Specification for the Standard Doclet (docs.oracle.com)]( https://docs.oracle.com/en/java/javase/11/docs/specs/doc-comment-spec.html )
 
