@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : CAP 정리
-summary : 
+summary :
 date    : 2019-10-27 22:43:59 +0900
-updated : 2021-08-22 14:41:11 +0900
+updated : 2021-08-22 15:35:52 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,47 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 요약
+
+CAP 정리는 **분산 컴퓨터 시스템**에서 다음의 세 가지 조건을 모두 만족하는 것이 불가능하다는 것을 증명한 정리이다.
+
+- Consistency: 일관성
+- Availability: [[availability]]{가용성}
+- Partition Tolerance: 파티션 내성
+
+세 조건을 모두 만족하는 것이 불가능하므로, 만들 수 있는 것은 셋 중 하나를 어느 정도 희생한 시스템이다.
+
+- CP 시스템: [[availability]]{가용성}을 희생한다.
+- AP 시스템: 데이터 일관성을 희생한다.
+- CA 시스템: 파티션 내성을 희생한다.
+    - P는 포기할 수 없는 조건이다. 진짜 리얼 월드에서 네트워크 장애는 회피할 수 없다.
+    - CA 시스템은 고려하지 않는다.
+
+>
+CAP는 네트워크 분단이 생겼을 때 일관성과 가용성 중 하나를 선택하라는 의미로 보는 게 좋다.
+>
+-- 데이터 중심 애플리케이션 설계. 9 일관성과 합의. 335쪽.
+
+실제 업무를 할 때에는 CAP 정리를 너무 강하게 의식하지 않도록 한다.
+분산 컴퓨터 시스템에서는 안 되는 것이 적어도 한 가지 있다는 정도로 생각해 두어도 작은 개발 과제를 수행하는 데에는 충분한 정도의 지식이다.
+
+만약 높은 일관성과 높은 가용성을 필요로 하는 분산 시스템 작업을 하게 된다면
+먼저 어느 정도의 가용성과 일관성이 필요한지에 대해 주의깊게 정의내리는 것이 필요하다고 생각한다.
+
+특히 높은 가용성을 획득하는 것이 매우 어려운 일이기 때문에, 충분한 가용성이 어느 정도인지를 파악하는 것이 중요하다.
+
+## 역사
+
+>
+2000년에 분산 컴퓨터에 관한 대담 중에 Eric A Brewer 교수가 처음으로 언급했으므로, CAP 정리를 "Brewer’s Theorem"이라고도 합니다. 2년 후에, MIT의 Seth Gilbert 및 Nancy Lynch 교수는 “Brewer’s Conjecture”에 대한 증명을 공개했습니다.
+>
+-- [CAP 정리(ibm.com)]( https://www.ibm.com/kr-ko/cloud/learn/cap-theorem )
+
+- Dr. Eric A. Brewer - Towards Robust Distributed Systems
+    - [PDF]( https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf ), [백업 PDF]( /resource/wiki/CAP-theorem/PODC-keynote.pdf )
+- Nancy Lynch and Seth Gilbert - Brewer’s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services
+    - [PDF]( https://web.archive.org/web/20080908063921/http://lpd.epfl.ch/sgilbert/pubs/BrewersConjecture-SigAct.pdf ), [백업]( /resource/wiki/CAP-theorem/BrewersConjecture-SigAct.pdf )
 
 ## 인용
 ### From: 사이트 신뢰성 엔지니어링
@@ -122,10 +163,17 @@ CAP 정리는 그림 6-1에서와 같이 이들 가운데 어떤 두 가지를 �
 
 ## 참고문헌
 
-- 가상 면접 사례로 배우는 대규모 시스템 설계 기초 / 알렉스 쉬 저/이병준 역 / 인사이트(insight) / 2021년 07월 28일 / 원서 : System Design Interview
-- 데이터 중심 애플리케이션 설계 / 마틴 클레프만 저/정재부, 김영준, 이도경 역 / 위키북스 / 초판발행 2018년 04월 12일
-- 사이트 신뢰성 엔지니어링 / 벳시 베이어, 크리스 존스, 제니퍼 펫오프, 니얼 리처드 머피 저/장현희 역 / 제이펍 / 초판 1쇄 2018년 01월 18일 / 원서 : Site Reliability Engineering: How Google Runs Production Systems
-- 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
+- 도서
+    - 가상 면접 사례로 배우는 대규모 시스템 설계 기초 / 알렉스 쉬 저/이병준 역 / 인사이트(insight) / 2021년 07월 28일 / 원서 : System Design Interview
+    - 데이터 중심 애플리케이션 설계 / 마틴 클레프만 저/정재부, 김영준, 이도경 역 / 위키북스 / 초판발행 2018년 04월 12일
+    - 사이트 신뢰성 엔지니어링 / 벳시 베이어, 크리스 존스, 제니퍼 펫오프, 니얼 리처드 머피 저/장현희 역 / 제이펍 / 초판 1쇄 2018년 01월 18일 / 원서 : Site Reliability Engineering: How Google Runs Production Systems
+    - 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
+- 웹 문서
+    - [CAP 정리(ibm.com)]( https://www.ibm.com/kr-ko/cloud/learn/cap-theorem )
+
+## 함께 읽기
+
+- [[availability]]
 
 ## 주석
 
