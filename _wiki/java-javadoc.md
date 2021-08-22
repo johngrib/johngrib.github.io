@@ -3,7 +3,7 @@ layout  : wiki
 title   : Javadoc 작성하기
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2021-08-22 23:33:35 +0900
+updated : 2021-08-23 00:06:09 +0900
 tag     : java javadoc
 toc     : true
 public  : true
@@ -13,6 +13,100 @@ latex   : false
 * TOC
 {:toc}
 
+## 나의 취향에 따른 Javadoc 작성 원칙
+
+Javadoc은 문서화를 위한 주석이기 때문에 경시되는 경우도 많다.
+
+나는 다음과 같은 경험이 있어 Javadoc 작성을 선호한다.
+
+- 회사에서 여러 프로젝트(5개 정도)를 짧은 기간 동안 살펴볼 때 Javadoc을 작성하였더니 파악하는 데에 상당한 도움이 되었던 적이 있다.
+    - 목표는 특정 메소드의 대략적인 역할을 3초 안에 파악하는 것이다.
+- 특히 레거시 코드를 살펴볼 때 (내가 작성했던) 적절한 Javadoc이 있어 혼란을 많이 줄일 수 있었다.
+- 코딩하는 사람의 입장이아니라 Javadoc을 읽는 사람의 입장에서 주석을 작성해보니 각 코드의 역할이나 책임 경계에 대해 생각해보는 시간을 많이 갖게 되었다. 그 결과 더 나은 설계를 얻게 된 경우가 종종 있었다.
+
+나는 다음과 같이 Javadoc 주석을 작성한다.
+
+- 가독성이 가장 중요하다.
+    - 나는 영어를 잘 하지 못하므로 Javadoc은 한국어로 작성한다.
+- 특정 메소드나 클래스의 "책임"을 3초 안에 파악할 수 있도록 짧고 간결하게 적는다.
+- 메소드 Javadoc에 대해
+    - 메소드가 무엇을 입력받아서 무엇을 리턴하는지를 반드시 설명한다.
+    - 뭐가 리턴되는지만 알아도 레거시 코드 파악에 큰 도움이 된다. (Golang에서 배운 것)
+    - 메소드가 어떤 경우에 어떤 예외를 던지는지를 케이스별로 설명한다.
+    - 구현에 대해서는 설명하지 않는다. 구현이 바뀌면 주석도 바뀌게 된다. (구현과 주석이 커플링이 생기지 않도록 한다.)
+- 클래스 Javadoc이라면, 이 클래스의 책임 또는 목표가 무엇인지를 설명한다.
+- 주석은 메소드 시그니처와 클래스 시그니처 위에만 Javadoc 포맷으로 작성하고, 그 외의 주석은 가능한 한 작성하지 않는다.
+
+추가로 나는 Javadoc의 원래 기능인 정적 사이트 빌드에는 별로 관심이 없다.
+
+
+### main description은 리턴값 위주로 설명한다
+
+나는 다음과 같이 main description이 리턴값을 설명하게 하는 것을 좋아한다.
+
+```java
+// 좋음
+/**
+ * 문자열이 문자들의 시퀀스 s를 포함한다면 true를 리턴하고, 그렇지 않다면 false를 리턴합니다.
+ */
+public boolean contains(CharSequence s) {
+```
+
+다음과 같은 main description은 불명확한 느낌이 들어 별로 좋아하지 않는다.
+
+```java
+// 싫음
+/**
+ * 문자열이 문자들의 시퀀스 s를 포함하는지 확인합니다.
+ */
+public boolean contains(CharSequence s) {
+```
+
+마찬가지 이유로 나는 다음과 같이 작성하는 것은 별로 선호하지 않는다.
+
+```java
+// 싫음
+/**
+ * 정규식 regex에 매치되는 서브스트링을 모두 replacement로 교체합니다.
+ */
+public String replaceAll(String regex, String replacement) {
+    return Pattern.compile(regex).matcher(this).replaceAll(replacement);
+}
+```
+
+다음과 같은 main description이 내 취향에 더 맞는다.
+
+```java
+// 좋음
+/**
+ * 정규식 regex에 매치되는 서브스트링을 모두 replacement로 교체한 문자열을 생성해 리턴합니다.
+ */
+public String replaceAll(String regex, String replacement) {
+    return Pattern.compile(regex).matcher(this).replaceAll(replacement);
+}
+```
+
+### 구현에 의존하지 않는다
+
+구현 코드에 의존하는 Javadoc은 코드와 커플링이 생겨 좋지 않다고 생각한다. 객체지향 원칙은 주석에도 통한다.
+
+```java
+// 싫음
+/**
+ * 문자열의 앞부터 루프를 돌면서 문자열이 문자들의 시퀀스 s를 포함하는지 확인합니다.
+ */
+public boolean contains(CharSequence s) {
+```
+
+메소드의 책임과 역할만 짧게 설명하는 것을 좋아한다.
+
+```java
+// 좋음
+/**
+ * 문자열이 문자들의 시퀀스 s를 포함하는지 확인합니다.
+ */
+public boolean contains(CharSequence s) {
+```
 
 ## 상속 규칙
 
