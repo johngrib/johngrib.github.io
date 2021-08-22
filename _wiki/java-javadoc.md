@@ -3,7 +3,7 @@ layout  : wiki
 title   : Javadoc 작성하기
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2021-08-23 00:06:09 +0900
+updated : 2021-08-23 00:12:43 +0900
 tag     : java javadoc
 toc     : true
 public  : true
@@ -287,7 +287,7 @@ public interface List<E> extends Collection<E> {
 
 나는 한국어로 작성할 때 다음과 같이 작성하는 것을 선호한다.
 
-- summary는 다음과 같이 마침표가 있는 문장형으로 작성한다.
+- main description은 다음과 같이 마침표가 있는 문장형으로 작성한다.
     - `서버가 대기중이라면 true, 대기중이 아니라면 false를 리턴합니다.`
     - `비어 있는 문자열이면 true를 리턴합니다.`
     - `적합한 문자열인 경우에만 true를 리턴합니다.`
@@ -334,7 +334,7 @@ public boolean contains(CharSequence s) {
 }
 ```
 
-##### summary와 @return의 중복에 대해
+##### main description과 @return의 중복에 대해
 
 ```java
 // String.java
@@ -351,12 +351,12 @@ public boolean isEmpty() {
 }
 ```
 
-스탠다드 라이브러리의 Javadoc을 읽다보면 위와 같이 summary와 `@return`이 중복된 내용을 갖고 있는 것을 볼 수 있다.
+스탠다드 라이브러리의 Javadoc을 읽다보면 위와 같이 main description과 `@return`이 중복된 내용을 갖고 있는 것을 볼 수 있다.
 
-하지만 두 문장이 완전히 똑같지는 않으며, summary와 `@return`의 역할이 다르다는 점을 고려하고 읽어야 한다.
-summary는 메소드의 역할에 대해 설명하며, `@return`은 리턴값에 대해 설명하기 때문에 둘의 목적은 다르다.
+하지만 두 문장이 완전히 똑같지는 않으며, description과 `@return`의 역할이 다르다는 점을 고려하고 읽어야 한다.
+description은 메소드의 역할에 대해 설명하며, `@return`은 리턴값에 대해 설명하기 때문에 둘의 목적은 다르다.
 
-한편으로는 빌드된 Javadoc 정적 사이트에서 summary와 `@return` 태그가 멀리 떨어져 있기 때문이기도 하다.
+한편으로는 빌드된 Javadoc 정적 사이트에서 description과 `@return` 태그가 멀리 떨어져 있기 때문이기도 하다.
 
 나는 회사 내에서만 통용되는 코드에서는 이런 경우에 한해 종종 다음 예제와 같이 `@return` 태그를 생략하기도 한다.
 
