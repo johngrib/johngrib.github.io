@@ -3,7 +3,7 @@ layout  : wiki
 title   : Javadoc 작성하기
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2021-08-23 00:12:43 +0900
+updated : 2021-08-23 20:44:17 +0900
 tag     : java javadoc
 toc     : true
 public  : true
@@ -55,7 +55,7 @@ public boolean contains(CharSequence s) {
 다음과 같은 main description은 불명확한 느낌이 들어 별로 좋아하지 않는다.
 
 ```java
-// 싫음
+// 싫음: 리턴값이 무엇인지를 설명하지 않는다.
 /**
  * 문자열이 문자들의 시퀀스 s를 포함하는지 확인합니다.
  */
