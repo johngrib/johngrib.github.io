@@ -3,7 +3,7 @@ layout  : wiki
 title   : 안돈 코드 (Andon cord)
 summary : 문제가 발생하면 누구나 잡아당길 수 있는 코드
 date    : 2020-01-16 21:01:15 +0900
-updated : 2020-01-16 21:19:44 +0900
+updated : 2021-08-24 23:29:34 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,9 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+![image]( /resource/wiki/andon-cord/130634802-d8148526-8662-492d-9b9a-f5b7d4ddd858.png )
+[^image-ref]
 
 ## From: 데브옵스 핸드북
 
@@ -55,5 +58,6 @@ latex   : false
 
 ## 주석
 
+[^image-ref]: 이미지 출처는 <https://www.learningpersonalized.com/empowering-others-to-pull-the-andon-cord/ >
 [^handbook-73]: 데브옵스 핸드북. 73쪽.
 
