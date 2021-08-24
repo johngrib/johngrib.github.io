@@ -3,7 +3,7 @@ layout  : wiki
 title   : Javadoc 작성하기
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2021-08-23 20:44:17 +0900
+updated : 2021-08-24 22:26:00 +0900
 tag     : java javadoc
 toc     : true
 public  : true
@@ -40,19 +40,21 @@ Javadoc은 문서화를 위한 주석이기 때문에 경시되는 경우도 많
 추가로 나는 Javadoc의 원래 기능인 정적 사이트 빌드에는 별로 관심이 없다.
 
 
-### main description은 리턴값 위주로 설명한다
+### main description의 경우
 
-나는 다음과 같이 main description이 리턴값을 설명하게 하는 것을 좋아한다.
+#### 리턴값 위주로 설명한다
+
+나는 다음과 같이 리턴값을 설명하는 형식의 main description을 좋아한다.
 
 ```java
-// 좋음
+// 좋음: 무엇을 리턴하는지 명확히 표현한다.
 /**
  * 문자열이 문자들의 시퀀스 s를 포함한다면 true를 리턴하고, 그렇지 않다면 false를 리턴합니다.
  */
 public boolean contains(CharSequence s) {
 ```
 
-다음과 같은 main description은 불명확한 느낌이 들어 별로 좋아하지 않는다.
+다음과 같이 리턴값을 구체적으로 언급하지 않는 형식은 불명확한 느낌이 든다. 별로 좋아하지 않는다.
 
 ```java
 // 싫음: 리턴값이 무엇인지를 설명하지 않는다.
@@ -62,7 +64,7 @@ public boolean contains(CharSequence s) {
 public boolean contains(CharSequence s) {
 ```
 
-마찬가지 이유로 나는 다음과 같이 작성하는 것은 별로 선호하지 않는다.
+같은 이유로 다음과 같은 형식도 선호하지 않는다.
 
 ```java
 // 싫음
