@@ -3,7 +3,7 @@ layout  : wiki
 title   : Javadoc 작성하기
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2021-08-24 22:26:00 +0900
+updated : 2021-08-24 22:36:53 +0900
 tag     : java javadoc
 toc     : true
 public  : true
@@ -87,6 +87,55 @@ public String replaceAll(String regex, String replacement) {
     return Pattern.compile(regex).matcher(this).replaceAll(replacement);
 }
 ```
+
+#### 예외 클래스라면 어떤 경우에 던지는지 설명한다
+
+만약 예외 클래스라면 나는 다음과 같이 표현하는 것을 좋아한다.
+
+```java
+// 좋음: Task를 못 찾으면 이 예외를 throw 하면 된다고 알려준다.
+/**
+ * 할 일을 찾지 못했을 때 던집니다.
+ */
+public class TaskNotFoundException extends RuntimeException {
+```
+
+한편 예외에 대해 "발생한다"는 표현을 쓰는 것은 좋아하지 않는다.
+
+```java
+// 싫음
+/**
+ * 할 일을 찾지 못했을 때 발생하는 예외입니다.
+ */
+public class TaskNotFoundException extends RuntimeException {
+```
+
+내가 `던집니다`라는 표현을 선호하는 것은 스탠다드 Java 라이브러리의 영향을 받은 것이다.
+
+유명한 스탠다드 예외들의 javadoc을 읽어보자. 예외에 대해 `Thrown`이라는 표현을 사용하고 있다.
+
+```java
+/**
+ * Thrown when an application attempts to use {@code null} in a
+ * case where an object is required. These include:
+ * ...생략
+ */
+public class NullPointerException extends RuntimeException {
+```
+
+```java
+/**
+ * Thrown to indicate that a method has been passed an illegal or
+ * inappropriate argument.
+ *
+ * @author  unascribed
+ * @since   1.0
+ */
+public
+class IllegalArgumentException extends RuntimeException {
+```
+
+
 
 ### 구현에 의존하지 않는다
 
