@@ -3,7 +3,7 @@ layout  : wiki
 title   : Javadoc 작성하기
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2021-08-26 21:57:47 +0900
+updated : 2021-08-26 22:32:02 +0900
 tag     : java javadoc
 toc     : true
 public  : true
@@ -160,8 +160,6 @@ class IllegalArgumentException extends RuntimeException {
 public boolean contains(CharSequence s) {
 ```
 
-메소드의 책임과 역할만 짧게 설명하는 것을 좋아한다.
-
 ```java
 // 좋음: 구현이 바뀌어도 사실을 말하는 주석.
 /**
@@ -169,6 +167,8 @@ public boolean contains(CharSequence s) {
  */
 public boolean contains(CharSequence s) {
 ```
+
+메소드의 책임과 역할만 짧게 설명하는 것을 좋아한다.
 
 ```java
 // 싫음: 2씩 증가시키도록 변경하면 주석도 바꿔줘야 한다.
