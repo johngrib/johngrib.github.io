@@ -3,7 +3,7 @@ layout  : wiki
 title   : Javadoc 작성하기
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2021-08-26 20:56:49 +0900
+updated : 2021-08-26 21:03:07 +0900
 tag     : java javadoc
 toc     : true
 public  : true
@@ -51,21 +51,17 @@ Javadoc은 문서화를 위한 주석이기 때문에 경시되는 경우가 많
 추가로 나는 Javadoc의 원래 기능인 정적 사이트 빌드에는 별로 관심이 없다.
 
 
-### main description의 경우
+### main description
 
-#### 리턴값 위주로 설명한다
+#### 리턴값을 반드시 설명한다
 
-나는 다음과 같이 리턴값을 설명하는 형식의 main description을 좋아한다.
+나는 리턴값을 설명하는 형식의 main description을 좋아한다.
 
-```java
-// 좋음: 무엇을 리턴하는지 명확히 표현한다.
-/**
- * 문자열이 문자들의 시퀀스 s를 포함한다면 true를 리턴하고, 그렇지 않다면 false를 리턴합니다.
- */
-public boolean contains(CharSequence s) {
-```
+처음 보는 메소드가 아무리 복잡하더라도
+무엇을 받아서 무엇을 리턴하는지만 알려준다면, 그 메소드를 사용해야 하는 사람의 시간을 굉장히 절약해줄 수 있다.
 
-다음과 같이 리턴값을 구체적으로 언급하지 않는 형식은 불명확한 느낌이 든다. 별로 좋아하지 않는다.
+
+리턴값을 구체적으로 언급하지 않는 형식은 불명확한 느낌이 든다.
 
 ```java
 // 싫음: 리턴값이 무엇인지를 설명하지 않는다.
@@ -75,10 +71,16 @@ public boolean contains(CharSequence s) {
 public boolean contains(CharSequence s) {
 ```
 
-같은 이유로 다음과 같은 형식도 선호하지 않는다.
+```java
+// 좋음: 무엇을 리턴하는지 명확히 표현한다.
+/**
+ * 문자열이 문자들의 시퀀스 s를 포함한다면 true를 리턴하고, 그렇지 않다면 false를 리턴합니다.
+ */
+public boolean contains(CharSequence s) {
+```
 
 ```java
-// 싫음
+// 싫음: 교체만 하고 끝나는가?
 /**
  * 정규식 regex에 매치되는 서브스트링을 모두 replacement로 교체합니다.
  */
@@ -87,10 +89,8 @@ public String replaceAll(String regex, String replacement) {
 }
 ```
 
-다음과 같은 main description이 내 취향에 더 맞는다.
-
 ```java
-// 좋음
+// 좋음: 교체한 값을 리턴해주는구나!
 /**
  * 정규식 regex에 매치되는 서브스트링을 모두 replacement로 교체한 문자열을 생성해 리턴합니다.
  */
