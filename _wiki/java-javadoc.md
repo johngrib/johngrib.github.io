@@ -3,7 +3,7 @@ layout  : wiki
 title   : Javadoc 작성하기
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2021-08-26 21:03:07 +0900
+updated : 2021-08-26 21:57:47 +0900
 tag     : java javadoc
 toc     : true
 public  : true
@@ -153,7 +153,7 @@ class IllegalArgumentException extends RuntimeException {
 구현 코드에 의존하는 Javadoc은 코드와 커플링이 생겨 좋지 않다고 생각한다. 객체지향 원칙은 주석에도 통한다.
 
 ```java
-// 싫음
+// 싫음: 지금은 루프를 돌지만, 다른 방식으로 구현이 바뀌면 주석은 거짓이 된다.
 /**
  * 문자열의 앞부터 루프를 돌면서 문자열이 문자들의 시퀀스 s를 포함하는지 확인합니다.
  */
@@ -163,11 +163,31 @@ public boolean contains(CharSequence s) {
 메소드의 책임과 역할만 짧게 설명하는 것을 좋아한다.
 
 ```java
-// 좋음
+// 좋음: 구현이 바뀌어도 사실을 말하는 주석.
 /**
  * 문자열이 문자들의 시퀀스 s를 포함하는지 확인합니다.
  */
 public boolean contains(CharSequence s) {
+```
+
+```java
+// 싫음: 2씩 증가시키도록 변경하면 주석도 바꿔줘야 한다.
+/**
+ * 카운트를 1씩 증가시킵니다.
+ */
+public void synchronized increaseCount() {
+    this.count += 1L;
+}
+```
+
+```java
+// 좋음
+/**
+ * 카운트를 증가시킵니다.
+ */
+public void synchronized increaseCount() {
+    this.count += 1L;
+}
 ```
 
 ## 상속 규칙
