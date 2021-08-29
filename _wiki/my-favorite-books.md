@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 성장을 도와준 고마운 책들
 summary : 아마도 평생 작성 중일 문서
 date    : 2020-06-13 18:32:06 +0900
-updated : 2020-06-14 07:05:41 +0900
+updated : 2021-08-29 19:03:30 +0900
 tag     : book
 toc     : true
 public  : true
@@ -112,11 +112,11 @@ latex   : false
 개발 2년차였던 2013년에 읽은 책으로, 모든 조언이 좋았지만 특히 시간 관리와 관련된 조언들이 그 무렵의 나에게 특효였다.
 
 
-## Goal (만화판)
+## The Goal (만화판)
 
-![Goal]( /resource/wiki/my-favorite-books/goal.JPG )
+![The Goal]( /resource/wiki/my-favorite-books/goal.JPG )
 
-굉장히 두꺼운 경영서의 고전을 만화책으로 요약한 책.
+굉장히 두꺼운 경영서의 고전을 만화로 쉽게 요약한 책.
 
 개발자가 이 책을 손에 잡으면 리얼월드의 공장, 물류창고를 "리팩토링"하고 "최적화"하는 이야기가 뇌로 흘러 들어오는 신기한 경험을 할 수 있다.
 
