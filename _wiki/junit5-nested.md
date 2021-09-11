@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2021-04-28 22:42:41 +0900
+updated : 2021-09-11 15:10:25 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -806,7 +806,7 @@ var _ = Describe("Book", func() {
 })
 ```
 
-### PHP - Kahan
+### PHP - Kahlan
 
 Php 언어에서는 Kahlan으로 `Describe - Context - It` 패턴의 테스트 코드를 작성할 수 있다.
 
