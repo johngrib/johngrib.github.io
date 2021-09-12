@@ -9,6 +9,7 @@
   "adapter-pattern",
   "builder-pattern",
   "command-pattern",
+  "controller-pattern",
   "decorator-pattern",
   "design-pattern-quotes",
   "factory-method-pattern",
