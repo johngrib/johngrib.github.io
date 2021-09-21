@@ -12,11 +12,11 @@
   "controller-pattern",
   "decorator-pattern",
   "design-pattern-quotes",
+  "design-pattern/template-method-pattern",
   "factory-method-pattern",
   "null-object-pattern",
   "observer-pattern",
   "static-factory-method-pattern",
-  "strategy-pattern",
-  "template-method-pattern"
+  "strategy-pattern"
  ]
 }

@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-09-12 10:16:12 +0900
+updated : 2021-09-21 22:35:02 +0900
 regenerate: true
 ---
 
@@ -157,7 +157,7 @@ regenerate: true
 * [[observer-pattern]]
 * [[static-factory-method-pattern]]
 * [[strategy-pattern]]
-* [[template-method-pattern]]
+* [[/design-pattern/template-method-pattern]]
 
 ## [[problem]]
 * [[two-eggs-100-floor]]

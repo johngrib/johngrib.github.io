@@ -6,12 +6,12 @@
  "defensive-copy",
  "design-pattern",
  "design-pattern-quotes",
+ "design-pattern/template-method-pattern",
  "factory-method-pattern",
  "GoF-Design-Pattern",
  "null-object-pattern",
  "observer-pattern",
  "static-factory-method-pattern",
  "strangler-pattern",
- "strategy-pattern",
- "template-method-pattern"
+ "strategy-pattern"
 ]
