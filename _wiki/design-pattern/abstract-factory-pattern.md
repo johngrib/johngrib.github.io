@@ -3,7 +3,7 @@ layout  : wiki
 title   : 추상 팩토리 패턴 (Abstract Factory Pattern)
 summary : 서로 관련성이 있는 다양한 객체를 생성하기 위한 인터페이스를 제공한다
 date    : 2019-10-16 23:44:57 +0900
-updated : 2021-09-21 23:51:23 +0900
+updated : 2021-09-22 00:30:33 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -49,7 +49,7 @@ GoF 책에서는 다음과 같은 활용을 권한다.[^gof-use]
 이때, 실제로 어떤 제품이 생산되는지는 전혀 알 필요도 없습니다.
 따라서 클라이언트와 팩토리에서 생산되는 제품을 분리시킬 수 있습니다.
 
-"실전 코드로 배우는 실용주의 디자인 패턴"에서는 다음과 같이 설명한다.[^holub0]
+"실전 코드로 배우는 실용주의 디자인 패턴"에서는 다음과 같이 설명한다.[^holub-444]
 
 > Abstract Factory 는 실제 객체가 정확히 무엇인지 알지 못해도
 객체를 생성하고 조작할 수 있도록 해준다(예제는 Iterator를 이용하는데,
@@ -158,7 +158,7 @@ public static void main(String[] args) {
     * `Factory` 인터페이스에 `make()`나 `create()` 메소드만 남겨두고, 모든 재료를 매개변수로 받는 방법.
         * 이렇게 하면 [[builder-pattern]]과 비슷한 모양이 된다. 다만, 빌더 패턴의 경우 Director가 있다는 점이 다르다.
 
-## 헤드 퍼스트 디자인 패턴의 예제
+## From: 헤드 퍼스트 디자인 패턴
 
 헤드 퍼스트 디자인 패턴에서는 피자 가게를 모델링한 예제를 제공한다.[^head]
 
@@ -206,42 +206,19 @@ public class NYPizzaStore extends PizzaStore {
 }
 ```
 
-## 어디에서 사용하고 있나?
+## From: 실전 코드로 배우는 실용주의 디자인 패턴
 
-가장 흔하게 볼 수 있는 예는 `Collection`의 `iterator`이다.[^holub0]
+가장 흔하게 볼 수 있는 예는 `Collection`의 `iterator`이다.
 
-```ascii-art
-┌──────────────────────────┐         ┌────────────────────────┐
-│ Collection <<interface>> │         │ Iterator <<interface>> │
-╞══════════════════════════╡         ╞════════════════════════╡
-│ +iterator(): Iterator    │         │ +hasNext(): boolean    │
-└──────────────────────────┘         │ +next():    Object     │
- ∧     ∧                             │ +remove():  void       │
- │     │                             └────────────────────────┘
- │  ┌──┴────────────────────┐          ∧                     ∧
- │  │ LinkedList            │          │                     │
- │  ╞═══════════════════════╡creates ┌─┴──────────────────┐  │
- │  │ +iterator(): Iterator -------->│ LinkedListIterator │  │
- │  └───────────────────────┘        ╞════════════════════╡  │
- │                                   │ +hasNext(): boolean│  │
- │                                   │ +next():    Object │  │
- │                                   │ +remove():  void   │  │
- │                                   └────────────────────┘  │
- │  ┌───────────────────────┐                                │
- └──│ Tree                  │                                │
-    ╞═══════════════════════╡creates ┌───────────────────────┴───┐
-    │ +iterator(): Iterator -------->│ TreeIterator <<anonymous>>│
-    └───────────────────────┘        ╞═══════════════════════════╡
-                                     │ +hasNext(): boolean       │
-                                     │ +next():    Object        │
-                                     │ +remove():  void          │
-                                     └───────────────────────────┘
-```
+![]( ./iterator.svg )
 
-* Collection: AbstractFactory
-* Iterator: AbstractProduct
-    * LinkedListIterator: ConcreteProduct
-    * TreeIterator: ConcreteProduct
+>
+- `Abstract Factory`: Concrete Factory의 인터페이스.
+- `Concrete Factory`: 특정 종류의 객체를 생성하기 위해 Abstract Factory 인터페이스를 구현한다.
+- `Abstract Product`: Abstract Factory가 생성하는 객체가 구현하고 있는 인터페이스.
+- `Concrete Product`: 팩토리가 실제로 생성하는 객체.
+- `Client`: 생성된 객체를 인터페이스만을 이용해서 사용한다.
+[^holub-444]
 
 다음과 같은 형태도 자주 볼 수 있다.[^holub1]
 
@@ -269,7 +246,7 @@ InputStream in = c.getInput();
 [^gof]: GoF의 디자인 패턴(개정판). 132쪽.
 [^structure]: GoF의 디자인 패턴(개정판). 134쪽.
 [^head]: Head First Design Patterns. 190쪽.
-[^holub0]: 실전 코드로 배우는 실용주의 디자인 패턴. 444쪽.
+[^holub-444]: 실전 코드로 배우는 실용주의 디자인 패턴. 444쪽.
 [^holub1]: 실전 코드로 배우는 실용주의 디자인 패턴. 445쪽.
 [^head-define]: Head First Design Patterns. 194쪽.
 [^gof-use]: GoF의 디자인 패턴(개정판). 134쪽.
