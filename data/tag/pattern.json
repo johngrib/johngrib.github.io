@@ -1,11 +1,11 @@
 [
- "abstract-factory-pattern",
  "adapter-pattern",
  "builder-pattern",
  "decorator-pattern",
  "defensive-copy",
  "design-pattern",
  "design-pattern-quotes",
+ "design-pattern/abstract-factory-pattern",
  "design-pattern/template-method-pattern",
  "factory-method-pattern",
  "GoF-Design-Pattern",
