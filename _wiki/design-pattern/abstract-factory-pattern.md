@@ -3,7 +3,7 @@ layout  : wiki
 title   : 추상 팩토리 패턴 (Abstract Factory Pattern)
 summary : 서로 관련성이 있는 다양한 객체를 생성하기 위한 인터페이스를 제공한다
 date    : 2019-10-16 23:44:57 +0900
-updated : 2021-09-22 00:30:33 +0900
+updated : 2021-09-22 01:20:14 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -32,6 +32,38 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 * AbstractProduct: 개념적 제품 객체에 대한 인터페이스를 정의한다.
 * ConcreteProduct: 구체적으로 팩토리가 생성할 객체를 정의하고, AbstractProduct가 정의하는 인터페이스를 구현한다.
 * Client: AbstractFactory와 AbstractProduct 클래스에 선언된 인터페이스를 사용한다.
+
+## 사례: Java `Collection`의 `iterator()`
+
+이 패턴에 대해 알아보기 전에 먼저 `Collection`의 `iterator`를 살펴보자.
+
+추상 팩토리 패턴이 적용된 가장 유명한 Java 코드가 `Collection` 인터페이스의 `Iterator<E> iterator()`이기 때문이다.
+
+![]( ./iterator.svg )
+
+그림 속의 `Abstract Factory`(회색 글씨)를 눈여겨보자. `Collection.iterator()`가 바로 추상 팩토리이다.
+
+>
+- `Abstract Factory`: Concrete Factory의 인터페이스.
+- `Concrete Factory`: 특정 종류의 객체를 생성하기 위해 Abstract Factory 인터페이스를 구현한다.
+- `Abstract Product`: Abstract Factory가 생성하는 객체가 구현하고 있는 인터페이스.
+- `Concrete Product`: 팩토리가 실제로 생성하는 객체.
+- `Client`: 생성된 객체를 인터페이스만을 이용해서 사용한다.
+[^holub-444]
+
+## 사례: URL
+
+```java
+URL home = new URL(address);
+URLConnection c = home.getConnection();
+InputStream in = c.getInput();
+```
+
+> `URL`은 `URLConnection`을 생성하는 Concrete Factory 이고, `URLConnection`은 `InputStream`을 생성하는 Abstract Factory이다.
+그러므로 `URLConnection`은 문맥에 따라 Abstract Product 이기도 하고, Abstract Factory 이기도 하다.
+`URLConnection`과 `InputStream`은 사용상 인터페이스이지 선언상 인터페이스가 아니다.
+[^holub-445]
+
 
 ## 활용
 
@@ -206,34 +238,6 @@ public class NYPizzaStore extends PizzaStore {
 }
 ```
 
-## From: 실전 코드로 배우는 실용주의 디자인 패턴
-
-가장 흔하게 볼 수 있는 예는 `Collection`의 `iterator`이다.
-
-![]( ./iterator.svg )
-
->
-- `Abstract Factory`: Concrete Factory의 인터페이스.
-- `Concrete Factory`: 특정 종류의 객체를 생성하기 위해 Abstract Factory 인터페이스를 구현한다.
-- `Abstract Product`: Abstract Factory가 생성하는 객체가 구현하고 있는 인터페이스.
-- `Concrete Product`: 팩토리가 실제로 생성하는 객체.
-- `Client`: 생성된 객체를 인터페이스만을 이용해서 사용한다.
-[^holub-444]
-
-다음과 같은 형태도 자주 볼 수 있다.[^holub1]
-
-```java
-URL home = new URL(address);
-URLConnection c = home.getConnection();
-InputStream in = c.getInput();
-```
-
-* URL: ConcreteFactory
-* URLConnection: AbstractProduct 이기도 하고, AbstractFactory 이기도 하다.
-    * URL을 통해 생산된 AbstractProduct.
-    * InputStream을 만들어내는 AbstractFactory.
-
-
 ## 참고문헌
 
 * 도서
@@ -247,6 +251,6 @@ InputStream in = c.getInput();
 [^structure]: GoF의 디자인 패턴(개정판). 134쪽.
 [^head]: Head First Design Patterns. 190쪽.
 [^holub-444]: 실전 코드로 배우는 실용주의 디자인 패턴. 444쪽.
-[^holub1]: 실전 코드로 배우는 실용주의 디자인 패턴. 445쪽.
+[^holub-445]: 실전 코드로 배우는 실용주의 디자인 패턴. 445쪽.
 [^head-define]: Head First Design Patterns. 194쪽.
 [^gof-use]: GoF의 디자인 패턴(개정판). 134쪽.
