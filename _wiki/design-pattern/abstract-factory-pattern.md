@@ -3,7 +3,7 @@ layout  : wiki
 title   : 추상 팩토리 패턴 (Abstract Factory Pattern)
 summary : 서로 관련성이 있는 다양한 객체를 생성하기 위한 인터페이스를 제공한다
 date    : 2019-10-16 23:44:57 +0900
-updated : 2021-09-22 01:20:14 +0900
+updated : 2021-09-22 15:55:13 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -188,7 +188,7 @@ public static void main(String[] args) {
 * 새로운 재료가 추가되면 `Factory` 인터페이스에 새로운 추상 메소드를 추가할 필요가 생길 수 있다.
     * `Factory` 인터페이스에 추상 메소드 변경이 필요할 때 Java의 `default` 메소드 사용을 고려할 수 있다.
     * `Factory` 인터페이스에 `make()`나 `create()` 메소드만 남겨두고, 모든 재료를 매개변수로 받는 방법.
-        * 이렇게 하면 [[builder-pattern]]과 비슷한 모양이 된다. 다만, 빌더 패턴의 경우 Director가 있다는 점이 다르다.
+        * 이렇게 하면 [[/design-pattern/builder-pattern]]과 비슷한 모양이 된다. 다만, 빌더 패턴의 경우 Director가 있다는 점이 다르다.
 
 ## From: 헤드 퍼스트 디자인 패턴
 
