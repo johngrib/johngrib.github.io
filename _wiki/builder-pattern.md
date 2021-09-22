@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빌더 패턴(Builder Pattern)
 summary : 객체의 생성 방법과 표현 방법을 분리한다
 date    : 2018-02-12 08:18:46 +0900
-updated : 2021-09-22 15:27:17 +0900
+updated : 2021-09-22 15:33:40 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -390,9 +390,11 @@ builder 는 부품을 만들고, director 는 builder가 만든 부품을 조합
 | 주택을 만드는 Director   | 평범한 주택                   | 레고로 만든 주택              |
 | 학교를 만드는 Director   | 평범한 학교                   | 레고로 만든 학교              |
 
+### 사례: 미로 게임을 만드는 예제
+
 이해를 돕기 위해 GoF에서는 미로를 만드는 코드를 예제로 삼는다.
 
-### Builder 인터페이스
+- `Builder` 인터페이스
 
 ```c++
 /* Builder 인터페이스 */
@@ -407,7 +409,7 @@ class MazeBuilder {
 }
 ```
 
-### Builder 구현체
+- `Builder` 구현체
 
 * 빌더 구현체는 방과 문, 미로를 만든다.
 * 방과 문을 몇 개를 만들고 어떤 순서로 조합하는지를 아는 것은 디렉터의 일이다.
@@ -443,7 +445,7 @@ class CountingMazeBuilder : public MazeBuilder {
 }
 ```
 
-### Director
+- `Director`
 
 * 디렉터는 빌더에게 방을 몇 개 만들고, 문을 몇 개 만들 것을 지시하여 미로를 완성한다.
 * 빌더는 시키는대로 방과 문만 잘 만들면 된다.
@@ -469,8 +471,6 @@ Maze* MazeGame::CreateComplexMaze(MazeBuilder& builder) {
 }
 ```
 
-### 사용법
-
 사용은 다음과 같이 한다.
 
 ```c++
@@ -481,25 +481,7 @@ game.CreateMaze(builder);
 maze = builder.GetMaze();
 ```
 
-다음은 내가 이해하기 위해 이 관계를 요리로 표현해 본 것이다.
-
-```java
-// 케이크를 build 한다
-Builder builder = new CakeBuilder("초콜릿", "딸기");
-Director director = new Director(builder);
-Product cake = director.build();
-
-// 주스를 build 한다
-Builder builder = new JuiceBuilder("당근").ice(true);
-Director director = new Director(builder);
-Product juice = director.build();
-```
-
-- `Director`는 어떤 `Builder`가 주어지는지는 알지 못한다. `Builder`의 인터페이스를 사용해 `Product`를 생산하기만 할 뿐이다.
-    - `Director`에 `new CakeBuilder("초콜릿", "딸기");`가 주어지면 초콜릿을 베이스로 삼고 딸기를 위에 올린 케이크 `Product`를 생산한다.
-    - `Director`에 `new JuiceBuilder("당근").ice(true);`가 주어지면 당근을 베이스로 삼고 얼음을 위에 올린 주스 `Product`를 생산한다.
-
-## 사례: Text와 Html을 빌드하는 예제
+### 사례: Text와 Html을 빌드하는 예제
 
 다음은 "Java 언어로 배우는 디자인 패턴 입문"의 예제[^yuki-122]를 참고해 내가 좀 다른 방식으로 작성한 예제이다.
 

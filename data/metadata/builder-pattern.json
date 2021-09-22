@@ -4,6 +4,6 @@
  "summary": "객체의 생성 방법과 표현 방법을 분리한다",
  "parent": "design-pattern",
  "url": "/wiki/builder-pattern",
- "updated": "2021-09-22 15:27:17 +0900",
+ "updated": "2021-09-22 15:33:40 +0900",
  "children": []
 }
