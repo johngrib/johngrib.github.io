@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빌더 패턴(Builder Pattern)
 summary : 객체의 생성 방법과 표현 방법을 분리한다
 date    : 2018-02-12 08:18:46 +0900
-updated : 2021-09-22 13:20:33 +0900
+updated : 2021-09-22 13:54:29 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -252,6 +252,26 @@ public class NutritionFacts {
 }
 ```
 
+또는 다음과 같이 생성자에 `@Builder`를 붙여줄 수도 있다.
+
+```java
+public class NutritionFacts {
+    private final int servingSize;
+    private final int servings;
+    private final int calories;
+    private final int fat;
+    private final int sodium;
+    private final int carbohydrate;
+
+    @Builder
+    public NutritionFacts(int servingSize, int servings, int calories, int fat, int sodium, int carbohydrate) {
+        this.servingSize = servingSize;
+        this.servings = servings;
+        // ...
+    }
+}
+```
+
 사용은 다음과 같이 할 수 있다.
 
 ```java
@@ -270,6 +290,48 @@ NutritionFacts facts = NutritionFacts.builder()
     .build();
 ```
 
+##### 주의할 점: 클래스 선언부에 @Builder를 사용하지 말 것
+
+`@Builder`를 클래스에 달아주면 `@AllArgsConstructor`도 같이 달아주는 것과 같기 때문에 바람직하지 않다.
+
+가급적 직접 만든 생성자에 달아주는 것이 낫다. 나는 회사에서 코딩할 때에는 절대로 `@Builder`를 클래스에 달아주지 않는다.
+
+>
+Finally, applying `@Builder` to a class is as if you added `@AllArgsConstructor(access = AccessLevel.PACKAGE)` to the class and applied the `@Builder` annotation to this all-args-constructor.
+This only works if you haven't written any explicit constructors yourself.
+If you do have an explicit constructor, put the `@Builder` annotation on the constructor instead of on the class.
+Note that if you put both `@Value` and `@Builder` on a class, the package-private constructor that `@Builder` wants to generate 'wins' and suppresses the constructor that `@Value` wants to make.
+[^lombok-builder]
+
+##### 주의할 점: lombok의 @Builder는 GoF의 빌더 패턴과 같지 않음
+
+lombok의 `@Builder`는 GoF의 빌더 패턴과 같지 않다는 점에 주의해야 한다. (예를 들어 lombok의 `@Builder`는 `Director`를 제공하지 않는다.)
+
+수많은 프로젝트에서 `@Builder`는 Java 언어에서 지원하지 않는 기능인 named parameter의 대체제로 쓰이는 정도 이상의 역할을 하지 않는다.
+
+| Java   | <span id="example-java-builder"/>       |
+| Python | <span id="example-python-named-param"/> |
+
+```java
+NutritionFacts facts = NutritionFacts.builder()
+    .calories(230)
+    .fat(10)
+    .build();
+```
+{:class="dynamic-insert" data-target-selector="#example-java-builder"}
+
+
+```python
+window.addNewControl(title = "Title",
+                     xPosition = 20,
+                     yPosition = 50,
+                     width = 100,
+                     height = 50,
+                     drawingNow = True)
+```
+{:class="dynamic-insert" data-target-selector="#example-python-named-param"}
+
+만약 Java에서 named parameter가 지원되었다면 lombok의 `@Builder`는 지금보다 훨씬 적게 사용되었을지도 모른다.
 
 ### 객체 생성을 유연하게
 
@@ -440,4 +502,8 @@ Product juice = director.build();
 
 - 이펙티브 자바 (2판) / 조슈아 블로크 저 / 이병준 역 / 인사이트(insight) / 초판 2쇄 2015년 07월 21일
 - 이펙티브 자바 (3판) / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+
+## 주석
+
+[^lombok-builder]: 출처는 <https://projectlombok.org/features/Builder >.
 
