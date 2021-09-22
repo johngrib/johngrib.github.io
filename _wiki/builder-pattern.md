@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빌더 패턴(Builder Pattern)
 summary : 객체의 생성 방법과 표현 방법을 분리한다
 date    : 2018-02-12 08:18:46 +0900
-updated : 2020-06-18 22:06:38 +0900
+updated : 2021-09-22 13:20:33 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -17,7 +17,7 @@ latex   : false
 
 빌더 패턴(Builder Pattern)은 객체를 생성할 때 흔하게 사용하는 패턴이다.
 
-자바로 코딩할 때 다음과 같은 스타일로 객체를 생성하는 코드가 있다면, 빌더 패턴을 사용했다고 할 수 있다.
+자바로 코딩할 때 다음과 같은 스타일로 객체를 생성하는 코드가 있다면, 빌더 패턴을 사용했다고 추측할 수 있다.
 
 ```java
 Member customer = Member.build()
