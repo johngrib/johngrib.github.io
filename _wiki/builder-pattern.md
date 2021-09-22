@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빌더 패턴(Builder Pattern)
 summary : 객체의 생성 방법과 표현 방법을 분리한다
 date    : 2018-02-12 08:18:46 +0900
-updated : 2021-09-22 14:30:36 +0900
+updated : 2021-09-22 15:17:03 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -492,6 +492,177 @@ Product juice = director.build();
     - `Director`에 `new CakeBuilder("초콜릿", "딸기");`가 주어지면 초콜릿을 베이스로 삼고 딸기를 위에 올린 케이크 `Product`를 생산한다.
     - `Director`에 `new JuiceBuilder("당근").ice(true);`가 주어지면 당근을 베이스로 삼고 얼음을 위에 올린 주스 `Product`를 생산한다.
 
+## 사례: Text와 Html을 빌드하는 예제
+
+다음은 "Java 언어로 배우는 디자인 패턴 입문"의 예제[^yuki-122]를 참고해 내가 좀 다른 방식으로 작성한 예제이다.
+
+- `Builder`는 `Director`가 사용할 재료를 제공한다.
+
+```java
+public interface Builder {
+  void makeTitle(String title);
+  void makeString(String str);
+  void makeItems(String[] items);
+  void close();
+  String getResult();
+}
+```
+
+- `Director`는 비즈니스 로직을 제공한다.
+    - `ToDoListDirector`는 할일 목록 작성을 감독한다.
+
+```java
+public class ToDoListDirector {
+  private Builder builder;
+
+  public ToDoListDirector(Builder builder) {
+    this.builder = builder;
+  }
+
+  public void construct() {
+    builder.makeTitle("TODO List");
+    builder.makeString("아침에 할 일");
+    builder.makeItems(new String[]{"조깅", "세탁기 돌리기"});
+    builder.makeString("저녁에 할 일");
+    builder.makeItems(new String[] {"청소하기", "공부하기", "다음날 출근 준비"});
+    builder.close();
+  }
+}
+```
+
+- `TextBuilder`는 텍스트 형식의 문서를 빌드한다.
+
+```java
+public class TextBuilder implements Builder {
+  private StringBuffer buffer = new StringBuffer();
+
+  @Override
+  public void makeTitle(String title) {
+    buffer.append("===================\n")
+        .append("[" + title + "]\n");
+  }
+
+  @Override
+  public void makeString(String str) {
+    buffer.append("- " + str + "\n");
+  }
+
+  @Override
+  public void makeItems(String[] items) {
+    for (String item : items) {
+      buffer.append("  - " + item + "\n");
+    }
+  }
+
+  @Override
+  public void close() {
+    buffer.append("===================\n");
+  }
+
+  @Override
+  public String getResult() {
+    return buffer.toString();
+  }
+}
+```
+
+- `HtmlBuilder`는 HTML 형식의 문서를 빌드한다.
+
+```java
+public class HtmlBuilder implements Builder {
+  private String html = "";
+
+  @Override
+  public void makeTitle(String title) {
+    html += "<html><head><title>" + title + "</title></head>\n"
+        + "<body>\n"
+        + "<h1>" + title + "</h1>\n";
+  }
+
+  @Override
+  public void makeString(String str) {
+    html += "<p>" + str + "</p>\n";
+  }
+
+  @Override
+  public void makeItems(String[] items) {
+    html += "<ul>\n";
+    for (String item : items) {
+      html += "<li>" + item + "</li>\n";
+    }
+    html += "</ul>\n";
+  }
+
+  @Override
+  public void close() {
+    html += "</body></html>";
+  }
+
+  @Override
+  public String getResult() {
+    return html;
+  }
+}
+```
+
+`Director`가 `TextBuilder`를 사용하게 해보자.
+
+```java
+Builder builder = new TextBuilder();
+ToDoListDirector director = new ToDoListDirector(builder);
+director.construct();
+
+System.out.println(builder.getResult());
+```
+
+출력 결과는 다음과 같다.
+
+```text
+===================
+[TODO List]
+- 아침에 할 일
+  - 조깅
+  - 세탁기 돌리기
+- 저녁에 할 일
+  - 청소하기
+  - 공부하기
+  - 다음날 출근 준비
+===================
+```
+
+이번엔 `Director`가 `HtmlBuilder`를 사용하게 해보자.
+
+```java
+Builder builder = new HtmlBuilder();
+ToDoListDirector director = new ToDoListDirector(builder);
+director.construct();
+
+System.out.println(builder.getResult());
+```
+
+출력 결과는 다음과 같다.
+
+{% raw %}
+```text
+<html><head><title>TODO List</title></head>
+<body>
+<h1>TODO List</h1>
+<p>아침에 할 일</p>
+<ul>
+<li>조깅</li>
+<li>세탁기 돌리기</li>
+</ul>
+<p>저녁에 할 일</p>
+<ul>
+<li>청소하기</li>
+<li>공부하기</li>
+<li>다음날 출근 준비</li>
+</ul>
+</body></html>
+```
+{% endraw %}
+
+
 ## Links
 
 * [[GoF-Design-Pattern]]
@@ -503,10 +674,11 @@ Product juice = director.build();
 
 ## 참고문헌
 
+- Java 언어로 배우는 디자인 패턴 입문 [개정판] / Yuki Hiroshi 저 / 이규흥 역 / 영진닷컴 / 1판 9쇄 2017년 3월 5일
 - 이펙티브 자바 (2판) / 조슈아 블로크 저 / 이병준 역 / 인사이트(insight) / 초판 2쇄 2015년 07월 21일
 - 이펙티브 자바 (3판) / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 
 ## 주석
 
 [^lombok-builder]: 출처는 <https://projectlombok.org/features/Builder >.
-
+[^yuki-122]: Java 언어로 배우는 디자인 패턴 입문 [개정판]. 챕터 7. 122쪽.
