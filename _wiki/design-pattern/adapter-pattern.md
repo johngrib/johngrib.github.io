@@ -3,7 +3,7 @@ layout  : wiki
 title   : 어댑터 패턴 (Adapter Pattern)
 summary : 서로 일치하지 않는 인터페이스를 가진 클래스를 함께 동작시킨다
 date    : 2019-10-29 14:53:41 +0900
-updated : 2019-10-29 15:20:41 +0900
+updated : 2021-09-22 09:53:29 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -108,3 +108,4 @@ class TurkeyAdapter implements Duck {
 [^gof]: GoF의 디자인 패턴(개정판). 196쪽.
 [^head-example]: Head First Design Patterns. 276쪽.
 [^head-define]: Head First Design Patterns. 281쪽.
+
