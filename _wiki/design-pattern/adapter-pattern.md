@@ -3,7 +3,7 @@ layout  : wiki
 title   : 어댑터 패턴 (Adapter Pattern)
 summary : 서로 일치하지 않는 인터페이스를 가진 클래스를 함께 동작시킨다
 date    : 2019-10-29 14:53:41 +0900
-updated : 2021-09-22 11:45:10 +0900
+updated : 2021-09-22 12:00:19 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -163,6 +163,86 @@ class TurkeyAdapter implements Duck {
 
 ![]( ./adapter-duck.svg )
 
+## 상속을 사용하는 기법
+
+어댑터 패턴은 합성을 사용하는 기법과 상속을 사용하는 기법이 있다.
+
+이 문서에서 지금까지 설명한 방법은 모두 `Adaptee`를 `Adapter` 내부에 포함시켜 사용하고 있다. 즉 합성을 사용한 방법이었다.
+
+여기에서는 상속을 사용하는 방법을 다룬다. 그러나 대부분의 경우 상속이 바람직하지 않은 해결책일 수 있음을 염두에 두어야 한다.
+
+같은 주제를 두고 두 가지 솔루션을 함께 살펴보자.
+
+다음 예제는 `ObjectInputStream`이 `Iterator` 인터페이스를 지원하도록 만든 `WrappedObjectIterator`라는 어댑터를 보여준다.[^holub-457]
+
+
+```java
+// Adapter. 합성을 사용.
+class WrappedObjectIterator implements Iterator {
+  private boolean atEndOfFile = false;
+  private final ObjectInputStream in;   // Adaptee를 갖고 있다(합성, contain).
+
+  public  WrappedObjectIterator(ObjectInputStream in) {
+    this.in = in;
+  }
+
+  @Override
+  public boolean hasNext() {
+    return atEndOfFile == false;
+  }
+
+  @Override
+  public Object next() {
+    // Adaptee의 readObject()를 Iterator.next()로 감싼다.
+    try {
+      return in.readObject();
+    } catch (Exception e) {
+      atEndOfFile = true;
+      return null;
+    }
+  }
+
+  @Override
+  public void remove() {
+    throw new UnsupportedOperationException();
+  }
+}
+```
+
+다음은 상속을 사용하는 방법이다.
+
+```java
+// Adapter. 상속을 사용.
+class ObjectIterator extends ObjectInputStream implements Iterator {
+  private boolean atEndOfFile = false;
+
+  public ObjectIterator(InputStream src) throws IOException {
+    super(src);
+  }
+
+  @Override
+  public boolean hasNext() {
+    return atEndOfFile == false;
+  }
+
+  @Override
+  public Object next() {
+    try {
+      return readObject();  // super의 readObject()를 호출한다.
+    } catch (Exception e) {
+      atEndOfFile = true;
+      return null;
+    }
+  }
+
+  @Override
+  public void remove() {
+    throw new UnsupportedOperationException();
+  }
+}
+
+```
+
 ## 참고문헌
 
 - GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
@@ -175,4 +255,5 @@ class TurkeyAdapter implements Duck {
 [^head-example]: Head First Design Patterns. 276쪽.
 [^head-281]: Head First Design Patterns. 281쪽.
 [^holub-456]: 실전 코드로 배우는 실용주의 디자인 패턴. 456쪽.
+[^holub-457]: 실전 코드로 배우는 실용주의 디자인 패턴. 457쪽의 예제에 내가 작성한 주석을 추가하였다.
 
