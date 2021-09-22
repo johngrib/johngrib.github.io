@@ -3,7 +3,7 @@ layout  : wiki
 title   : 어댑터 패턴 (Adapter Pattern)
 summary : 서로 일치하지 않는 인터페이스를 가진 클래스를 함께 동작시킨다
 date    : 2019-10-29 14:53:41 +0900
-updated : 2021-09-22 09:53:29 +0900
+updated : 2021-09-22 11:25:24 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -25,10 +25,65 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 > 클래스의 인터페이스를 사용자가 기대하는 인터페이스 형태로 적응(변환) 시킵니다.
 서로 일치하지 않는 인터페이스를 갖는 클래스들을 함께 동작시킵니다.
 
-헤드 퍼스트 디자인 패턴에서는 다음과 같이 정의한다.[^head-define]
+헤드 퍼스트 디자인 패턴에서는 다음과 같이 정의한다.[^head-281]
 
 > 한 클래스의 인터페이스를 클라이언트에서 사용하고자 하는 다른 인터페이스로 변환합니다.
 어댑터를 이용하면 인터페이스 호환성 문제 때문에 같이 쓸 수 없는 클래스들을 연결해서 쓸 수 있습니다.
+
+## 요약
+
+특정 인터페이스를 지원하지 않는 대상 객체를 인터페이스를 지원하는 Adapter에 집어넣어서 사용하는 방법이라 할 수 있다.
+
+다음은 헤드 퍼스트 디자인 패턴의 다이어그램을 참고해 그린 것이다.[^head-281]
+
+![]( ./adapter-head-first-281.svg )
+
+다이어그램에 나타나 있는 상황을 설명하자면 다음과 같다.
+
+- Client는 <span style="color: blue">Target</span> 인터페이스를 구현한 <span style="color: purple">Adaptee</span>가 필요하다.
+- <span style="color: purple">Adaptee</span>는 <span style="color: blue">Target</span>인터페이스를 구현하지 않고 있다.
+    - <span style="color: purple">Adaptee</span>는 이미 개발이 완료되어 사용중이다.
+    - <span style="color: purple">Adaptee</span>를 변경하는 것이 적절하지 않은 상황이다.
+
+따라서 다음과 같이 어댑터 패턴을 고려할 수 있다. 코드는 내가 작성했다.
+
+```java
+// Adaptee 는 이미 개발이 완료됐고, 수정하기 곤란한 상황이다.
+class Adaptee {
+  Response specificRequest() {
+    return new Response();
+  }
+}
+
+// 클라이언트가 사용하려는 인터페이스.
+interface Target {
+  Response request();
+}
+
+// Adapter는 Adaptee를 감싸고 있으며, Target 인터페이스를 구현한다.
+class Adapter implements Target {
+  private final Adaptee adaptee;
+
+  public Adapter(Adaptee adaptee) {
+    this.adaptee = adaptee;
+  }
+
+  @Override
+  public Response request() {
+    return this.adaptee.specificRequest();
+  }
+}
+```
+
+- <span style="color: red">Adapter</span> 클래스를 만들고, <span style="color: purple">Adaptee</span>를 내부에 갖고 있게 한다.
+    - <span style="color: red">Adapter</span>는 <span style="color: blue">Target</span>을 구현한다.
+    - <span style="color: red">Adapter</span>의 `request()`는 <span style="color: purple">Adaptee</span>의 `specificRequest()`를 감싸고 있다.
+
+이제 `Adaptee`를 다음과 같이 `Adapter`에 집어넣어서 `Target` 인터페이스로 사용할 수 있다.
+
+```java
+Target target = new Adapter(adaptee)
+```
 
 ## 예제: 헤드 퍼스트 디자인 패턴
 
@@ -107,5 +162,5 @@ class TurkeyAdapter implements Duck {
 
 [^gof]: GoF의 디자인 패턴(개정판). 196쪽.
 [^head-example]: Head First Design Patterns. 276쪽.
-[^head-define]: Head First Design Patterns. 281쪽.
+[^head-281]: Head First Design Patterns. 281쪽.
 
