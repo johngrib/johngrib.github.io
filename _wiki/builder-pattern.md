@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빌더 패턴(Builder Pattern)
 summary : 객체의 생성 방법과 표현 방법을 분리한다
 date    : 2018-02-12 08:18:46 +0900
-updated : 2021-09-22 13:54:29 +0900
+updated : 2021-09-22 14:30:36 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -488,6 +488,9 @@ Director director = new Director(builder);
 Product juice = director.build();
 ```
 
+- `Director`는 어떤 `Builder`가 주어지는지는 알지 못한다. `Builder`의 인터페이스를 사용해 `Product`를 생산하기만 할 뿐이다.
+    - `Director`에 `new CakeBuilder("초콜릿", "딸기");`가 주어지면 초콜릿을 베이스로 삼고 딸기를 위에 올린 케이크 `Product`를 생산한다.
+    - `Director`에 `new JuiceBuilder("당근").ice(true);`가 주어지면 당근을 베이스로 삼고 얼음을 위에 올린 주스 `Product`를 생산한다.
 
 ## Links
 
