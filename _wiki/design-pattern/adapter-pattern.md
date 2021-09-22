@@ -3,7 +3,7 @@ layout  : wiki
 title   : 어댑터 패턴 (Adapter Pattern)
 summary : 서로 일치하지 않는 인터페이스를 가진 클래스를 함께 동작시킨다
 date    : 2019-10-29 14:53:41 +0900
-updated : 2021-09-22 11:25:24 +0900
+updated : 2021-09-22 11:33:14 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -151,6 +151,10 @@ class TurkeyAdapter implements Duck {
   }
 }
 ```
+
+이 어댑터를 다이어그램으로 표현하자면 다음과 같다. 어댑터 `TurkeyAdapter`를 통해 `Turkey`를 `Duck`처럼 사용할 수 있게 된 것이다.
+
+![]( ./adapter-duck.svg )
 
 ## 참고문헌
 
