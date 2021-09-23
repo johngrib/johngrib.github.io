@@ -3,7 +3,7 @@ layout  : wiki
 title   : CSS
 summary : Cascading Style Sheets
 date    : 2021-09-23 15:58:21 +0900
-updated : 2021-09-23 17:46:03 +0900
+updated : 2021-09-23 17:47:44 +0900
 tag     : 
 toc     : true
 public  : true
@@ -479,4 +479,8 @@ div.bar {
 
 TODO
 
+
+## 참고문헌
+
+- [CSS Selector Reference (w3schools.com)]( https://www.w3schools.com/cssref/css_selectors.asp )
 
