@@ -3,7 +3,7 @@ layout  : wiki
 title   : CSS
 summary : Cascading Style Sheets
 date    : 2021-09-23 15:58:21 +0900
-updated : 2021-09-23 17:47:44 +0900
+updated : 2021-09-23 17:58:36 +0900
 tag     : 
 toc     : true
 public  : true
@@ -479,8 +479,43 @@ div.bar {
 
 TODO
 
+## From: 한 권으로 읽는 컴퓨터 구조와 프로그래밍
+
+>
+CSS는 나중에 나온 아이디어다.
+HTML을 개발할 때는 아무도 이를 생각하지 못했다.
+그 결과 꽤 이상한 요소가 있다.
+HTML 안에는 미리 정의된 의미가 있는 다양한 엘리먼트가 있다.
+예를 들어 `<b>` 엘리먼트는 텍스트를 굵은 글꼴<sup>bold</sup>로 만들고, `<i>` 엘리먼트는 텍스트를 기울인 글꼴<sup>italics</sup>로 만든다.
+하지만 리스트 9-5의 CSS를 쓰면 의미(화면에 표시되는 방식)를 반대로 바꿀 수 있다.
+>
+> _리스트 9-5 CSS를 사용해 `<i>`와 `<b>` 의미 뒤바꾸기_
+>
+> ```css
+> b {
+>     font-style: italic;
+>     font-weight: normal;
+> }
+> i {
+>     font-style: normal;
+>     font-weight: bold;
+> }
+> ```
+>
+CSS는 여러 HTML 원소들 사이의 구분을 각 원소의 의도 및 목적과 관계없이 없애버렸다.
+HTML 엘리먼트들이 정해진 디폴트<sup>default</sup> 스타일이 있다고 생각하는 독자도 있겠지만,
+CSS를 통해 이런 스타일이 바뀌고 나면 원소 이름은 원래 목적과 아무 관계가 없게 된다.
+>
+CSS는 원래 애트리뷰트를 엘리먼트와 연관시키는 더 유연한 메커니즘을 제공하기 위해 고안됐다.
+이를 통해, 원래 HTML에는 없던 애트리뷰트가 엘리먼트에 추가됐다.
+이로 인해 HTML과 CSS에서 일부 애트리뷰트를 동시에 설정할 수 있고, 나머지는 CSS에서만 설정할 수 있다.
+프로그래머 사회에서는 예전 방식의 애트리뷰트 설정을 아예 더 이상 사용하지 말아야 한다는 입장이 꽤 강하지만,
+이런 주장은 기존 코드를 유지보수하는 문제를 고려하지 않은 주장이다.
+>
+-- 한 권으로 읽는 컴퓨터 구조와 프로그래밍. 9장. 357쪽.
 
 ## 참고문헌
 
 - [CSS Selector Reference (w3schools.com)]( https://www.w3schools.com/cssref/css_selectors.asp )
+- 한 권으로 읽는 컴퓨터 구조와 프로그래밍 / 조너선 스타인하트 저/오현석 역 / 책만 / 2021년 04월 08일 초판 1쇄 / 원서 : The Secret Life of Programs: Understand Computers -- Craft Better Code
 
