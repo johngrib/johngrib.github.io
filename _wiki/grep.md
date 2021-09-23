@@ -3,7 +3,7 @@ layout  : wiki
 title   : grep, egrep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2020-07-30 22:54:49 +0900
+updated : 2021-09-23 11:54:36 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 toc     : true
 public  : true
@@ -110,9 +110,9 @@ bar
 
 ## 참고문헌
 
-- [KER] 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
+- 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
 
 ## 주석
 
-[^KER-4]: [KER] 4장.
+[^KER-4]: 유닉스의 탄생. 4장.
 
