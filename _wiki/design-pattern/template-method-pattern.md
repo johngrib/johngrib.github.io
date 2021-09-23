@@ -3,7 +3,7 @@ layout  : wiki
 title   : 템플릿 메소드 패턴 (Template Method Pattern)
 summary : 알고리즘의 일부 단계를 서브클래스에서 정의한다
 date    : 2019-08-31 15:27:07 +0900
-updated : 2021-09-21 22:34:03 +0900
+updated : 2021-09-23 22:11:59 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -21,6 +21,16 @@ GoF는 다음과 같이 이 패턴의 의도를 설명한다.[^gof]
 
 > 객체의 연산에는 알고리즘의 뼈대만을 정의하고 각 단계에서 수행할 구체적 처리는 서브클래스 쪽으로 미룹니다.
 알고리즘의 구조 자체는 그대로 놔둔 채 알고리즘 각 단계 처리를 서브클래스에서 재정의할 수 있게 합니다.
+
+실용주의 디자인 패턴에서는 이 패턴이 상속 기반의 프레임워크에서 사용된다고 설명한다.
+
+>
+Template Method는 보통 상속 기반의 프레임워크에서 사용된다.
+프레임워크는 작업의 90% 정도를 기반 클래스를 통해 제공하며,
+애플리케이션에 용도에 맞게 맞춤화할 필요가 있는 부분은 추상 메소드로 남겨놓는다.
+이 말은 곧 기반 클래스가 추상 템플릿 메소드를 호출한다는 의미이다.
+사용자는 클래스를 상속하고 추상 메소드를 필요에 맞게 구현함으로써 프레임워크를 사용하게 된다.
+[^holub-490]
 
 ### 용어
 
@@ -264,6 +274,7 @@ Template Method 패턴은 다형성을 조금 응용했을 뿐 **패턴**이란 
 [^head-example]: Head First Design Patterns. 315쪽.
 [^holub-93]: 실용주의 디자인 패턴. Chapter 2. 93쪽.
 [^holub-94]: 실용주의 디자인 패턴. Chapter 2. 94쪽.
+[^holub-490]: 실용주의 디자인 패턴. Appendix. 490쪽.
 
 [magazine]: http://www.javamagazine.mozaicreader.com/NovDec2016/LinkedIn#&pageSet=57&page=0
 
