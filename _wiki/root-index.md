@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-09-23 15:57:28 +0900
+updated : 2021-09-23 15:58:14 +0900
 regenerate: true
 ---
 
@@ -175,6 +175,7 @@ regenerate: true
 * [[html]]
 * [[TOML]]
 * [[YAML]]
+* [[/language/css]]
 
 ### [[Golang]]
 * [[Go-Blog-translation]]
