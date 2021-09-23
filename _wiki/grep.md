@@ -3,7 +3,7 @@ layout  : wiki
 title   : grep, egrep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2021-09-23 11:54:36 +0900
+updated : 2021-09-23 11:59:27 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 toc     : true
 public  : true
@@ -23,6 +23,18 @@ latex   : false
 이 명령어는 `re`부분의 정규 표현식 패턴과 일치하는 모든 행을 출력한다.
 이 내용은 옥스퍼드 영어 사전의 grep 표제어에도 정확히 나와 있다(옥스퍼드 영어 사전은 grep의 가치를 인정하고 정식 영어 단어로 등록했다).
 [^KER-4]
+
+### 정규식과 grep
+
+>
+해법은 언어를 지정하기 위한 언어를 정의하는 것이다.
+미국 수학자 스티븐 콜 클레이니<sup>Stephen Cole Kleene</sup>(1909~1994)는 1956년 이미 이런 접근 방법에 대한 수학적 기초를 놓았다.
+켄 톰슨은 1968년 텍스트 편집기의 일부분으로 이런 기능을 최초로 소프트웨어로 변환했고,
+그 후 유닉스 grep 유틸리티 명령을 만들었다(grep은 '정규식을 전역으로 찾아서 출력하라'라는 뜻의 영어 'globally search a regular expression and print'의 약자다).
+이 명령으로 인해 정규식 regular expression 이라는 말이 널리 알려졌고, 이제는 정규식을 거의 대부분의 프로그래밍 언어에서 사용한다.
+정규식 자체도 언어이기 때문에, 현재는 서로 호환이 되지 않는 몇 가지 정규식 언어가 존재한다.
+정규식은 패턴 매칭<sup>pattern matching</sup>에서 중추적 역할을 한다.
+[^joh-328]
 
 ### egrep
 
@@ -111,8 +123,10 @@ bar
 ## 참고문헌
 
 - 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
+- 한 권으로 읽는 컴퓨터 구조와 프로그래밍 / 조너선 스타인하트 저/오현석 역 / 책만 / 2021년 04월 08일 초판 1쇄 / 원서 : The Secret Life of Programs: Understand Computers -- Craft Better Code
 
 ## 주석
 
 [^KER-4]: 유닉스의 탄생. 4장.
+[^joh-328]: 한 권으로 읽는 컴퓨터 구조와 프로그래밍. 8장. 328쪽.
 
