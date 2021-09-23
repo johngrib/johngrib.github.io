@@ -7,7 +7,7 @@ updated : 2021-07-24 14:55:36 +0900
 tag     : php
 toc     : true
 public  : true
-parent  : [[programming-language]]
+parent  : [[language]]
 latex   : false
 ---
 * TOC

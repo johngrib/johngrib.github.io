@@ -7,7 +7,7 @@ updated : 2018-09-18 20:37:27 +0900
 tag     : language
 toc     : true
 public  : true
-parent  : [[programming-language]]
+parent  : [[language]]
 latex   : false
 ---
 * TOC

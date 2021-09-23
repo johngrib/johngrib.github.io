@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "awk",
  "summary": "pattern-directed scanning and processing language",
- "parent": "programming-language",
+ "parent": "language",
  "url": "/wiki/awk",
  "updated": "2020-07-30 23:19:56 +0900",
  "children": []

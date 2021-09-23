@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-09-23 13:55:43 +0900
+updated : 2021-09-23 15:57:28 +0900
 regenerate: true
 ---
 
@@ -167,7 +167,7 @@ regenerate: true
 * [[inversion-of-control]]
 * [[n-version-programming]]
 
-## [[programming-language]]{프로그래밍 언어}
+## [[language]]
 
 * [[awk]]
 * [[bc]]

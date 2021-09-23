@@ -1,0 +1,20 @@
+{
+ "type": "wiki",
+ "title": "언어",
+ "parent": "index",
+ "url": "/wiki/language",
+ "updated": "2021-09-23 15:53:35 +0900",
+ "children": [
+  "awk",
+  "bc",
+  "Golang",
+  "Groovy",
+  "html",
+  "Java",
+  "php",
+  "Python3",
+  "rust",
+  "TOML",
+  "YAML"
+ ]
+}

@@ -7,7 +7,7 @@ updated : 2020-07-30 23:19:56 +0900
 tag     : command 언어 brian-kernighan awk
 toc     : true
 public  : true
-parent  : [[programming-language]]
+parent  : [[language]]
 latex   : false
 ---
 * TOC

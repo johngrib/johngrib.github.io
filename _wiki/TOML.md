@@ -7,7 +7,7 @@ updated : 2021-02-16 23:11:50 +0900
 tag     : toml filetype
 toc     : true
 public  : true
-parent  : [[programming-language]]
+parent  : [[language]]
 latex   : false
 ---
 * TOC

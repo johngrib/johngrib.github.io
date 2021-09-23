@@ -7,7 +7,7 @@ updated : 2018-09-18 17:21:01 +0900
 tag     : language golang
 toc     : true
 public  : true
-parent  : [[programming-language]]
+parent  : [[language]]
 latex   : false
 ---
 * TOC

@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "Go",
  "summary": "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.",
- "parent": "programming-language",
+ "parent": "language",
  "url": "/wiki/Golang",
  "updated": "2018-09-18 17:21:01 +0900",
  "children": [
