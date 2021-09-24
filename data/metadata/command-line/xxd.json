@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "xxd 명령어",
+ "summary": "make a hexdump or do the reverse",
+ "parent": "command-line",
+ "url": "/wiki/command-line/xxd",
+ "updated": "2021-09-24 21:52:56 +0900",
+ "children": []
+}

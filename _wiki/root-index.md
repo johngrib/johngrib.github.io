@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-09-23 21:47:51 +0900
+updated : 2021-09-24 21:54:09 +0900
 regenerate: true
 ---
 
@@ -373,6 +373,7 @@ regenerate: true
 
 ### [[command-line]]
 
+* [[/command-line/xxd]]
 * [[ag]]
 * [[basename]]
 * [[bash-history]]
