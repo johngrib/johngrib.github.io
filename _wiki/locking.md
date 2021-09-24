@@ -3,7 +3,7 @@ layout  : wiki
 title   : 잠금(Locking)
 summary :
 date    : 2019-10-10 11:48:51 +0900
-updated : 2021-09-24 14:04:58 +0900
+updated : 2021-09-24 14:06:08 +0900
 tag     : transaction db
 toc     : true
 public  : true
@@ -187,7 +187,7 @@ Unlock(transaction-id)
 
 따라서 복구에 대한 대책을 충분히 마련해야 한다.
 
-### From: 한 권으로 읽는 컴퓨터 구조와 프로그래밍
+### 인용: 교착 상태의 원인과 방지 방법
 
 다음은 "한 권으로 읽는 컴퓨터 구조와 프로그래밍"에 삽입된, 책의 번역자인 오현석님이 작성한 글이다.
 
