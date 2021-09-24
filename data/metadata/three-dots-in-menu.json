@@ -1,9 +1,9 @@
 {
  "type": "wiki",
- "title": "메뉴의 ... (점 3개)",
- "summary": "명령어가 수행되기 전에 추가적인 정보가 필요한 항목을 표현한다",
+ "title": "메뉴의 ... (말줄임표, ellipses, 점 3개)",
+ "summary": "명령수행 전에 추가적인 정보가 필요한 항목을 표현한다",
  "parent": "index",
  "url": "/wiki/three-dots-in-menu",
- "updated": "2021-07-21 23:10:14 +0900",
+ "updated": "2021-09-25 08:35:36 +0900",
  "children": []
 }
