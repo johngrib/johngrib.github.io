@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-09-24 21:54:09 +0900
+updated : 2021-09-24 21:58:47 +0900
 regenerate: true
 ---
 
@@ -34,6 +34,7 @@ regenerate: true
 
 * [[average-complexity]]
 * [[b-tree]]
+* [[base64]]
 * [[big-O-notation]]
 * [[counting-sort]]
 * [[dijkstra-2-stack-for-exp-eval]]

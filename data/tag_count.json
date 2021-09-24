@@ -240,6 +240,10 @@
   "size": 2
  },
  {
+  "name": "encoding",
+  "size": 1
+ },
+ {
   "name": "encryption",
   "size": 8
  },

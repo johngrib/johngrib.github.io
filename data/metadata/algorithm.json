@@ -7,6 +7,7 @@
  "children": [
   "average-complexity",
   "b-tree",
+  "base64",
   "big-O-notation",
   "counting-sort",
   "dijkstra-2-stack-for-exp-eval",
