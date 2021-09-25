@@ -3,7 +3,7 @@ layout  : wiki
 title   : 메뉴의 ... (말줄임표, ellipses, 점 3개)
 summary : 명령수행 전에 추가적인 정보가 필요한 항목을 표현한다
 date    : 2020-04-24 21:58:40 +0900
-updated : 2021-09-25 09:10:04 +0900
+updated : 2021-09-25 09:22:52 +0900
 tag     : ui
 toc     : true
 public  : true
@@ -13,13 +13,22 @@ latex   : false
 * TOC
 {:toc}
 
-## ...
-
-`...`는 다음과 같이 쓴다.
+## `…` 기호
 
 - 말줄임표
-- ellipsis (Apple의 Human Interface Guidelines 문서에서 이 표현을 사용한다.[^apple-1])
-- ellipses (Microsoft의 Design Basics 문서에서는 ellipsis와 ellipses 를 함께 사용한다.[^msft-1])
+    - ellipsis (Apple의 Human Interface Guidelines 문서에서 이 표현을 사용한다.[^apple-1])
+    - ellipses (Microsoft의 Design Basics 문서에서는 ellipsis와 ellipses 를 함께 사용한다.[^msft-1])
+- UI 메뉴 등에서 사용자의 추가 입력이 필요한 경우를 표시할 때에도 쓴다.
+
+| 읽는 방법   | ellipsis, ellipses, horizontal ellipsis, 말줄임표 |
+| 유니코드    | 'HORIZONTAL ELLIPSIS' (U+2026)                    |
+| HTML entity | `&#8230;`, `&#x2026;`                             |
+| UTF-8 (HEX) | `0xE2 0x80 0xA6 (e280a6)`                         |
+
+* [[three-dots-in-menu]]
+* [fileformat.info/info/unicode/char/2026]( https://www.fileformat.info/info/unicode/char/2026/index.htm )
+* [Ellipsis (wikipedia)]( https://en.wikipedia.org/wiki/Ellipsis )
+
 
 ## 메뉴의 ... 에 대하여
 
@@ -103,6 +112,9 @@ If simply viewing the window is a common action, don't use an ellipsis.[^msft-1]
 메뉴를 선택할 때 사용자의 추가 입력이 필요할 때마다 말줄임표를 사용하세요.
 말줄임표 문자(…)는 대화 상자나 별도의 윈도우가 열리고 사용자에게 추가 정보나 선택을 묻는 메시지가 표시된다는 것을 의미합니다.
 
+## 함께 읽기
+
+- [[special-chars]]
 
 ## 참고문헌
 

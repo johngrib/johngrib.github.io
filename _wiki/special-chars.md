@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2021-08-07 00:04:40 +0900
+updated : 2021-09-25 09:21:28 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -1073,6 +1073,20 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 
 * [fileformat.info/info/unicode/char/203b]( https://www.fileformat.info/info/unicode/char/203b/index.htm )
 * [Reference mark(wikipedia)]( https://en.wikipedia.org/wiki/Reference_mark )
+
+### `…` Horizontal ellipsis
+
+- 말줄임표.
+- UI 메뉴 등에서 사용자의 추가 입력이 필요한 경우를 표시할 때에도 쓴다.
+
+| 읽는 방법   | ellipsis, ellipses, horizontal ellipsis, 말줄임표 |
+| 유니코드    | 'HORIZONTAL ELLIPSIS' (U+2026)                    |
+| HTML entity | `&#8230;`, `&#x2026;`                             |
+| UTF-8 (HEX) | `0xE2 0x80 0xA6 (e280a6)`                         |
+
+* [[three-dots-in-menu]]
+* [fileformat.info/info/unicode/char/2026]( https://www.fileformat.info/info/unicode/char/2026/index.htm )
+* [Ellipsis (wikipedia)]( https://en.wikipedia.org/wiki/Ellipsis )
 
 ## Links
 
