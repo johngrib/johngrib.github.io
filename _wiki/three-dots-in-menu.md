@@ -3,7 +3,7 @@ layout  : wiki
 title   : 메뉴의 ... (말줄임표, ellipses, 점 3개)
 summary : 명령수행 전에 추가적인 정보가 필요한 항목을 표현한다
 date    : 2020-04-24 21:58:40 +0900
-updated : 2021-09-25 09:22:52 +0900
+updated : 2021-09-25 09:40:50 +0900
 tag     : ui
 toc     : true
 public  : true
@@ -42,7 +42,7 @@ latex   : false
 >
 -- 윈도우 개발 282 스토리. 1장. 12쪽.
 
-## 확인해보면
+### 확인해보면
 
 윈도우 뿐만이 아니라 MacOS 에서도 같은 원칙이 통용된다.
 
@@ -63,7 +63,7 @@ latex   : false
 
 파일을 선택하거나, 옵션을 고르는 등의 활동을 하면 그 다음에 할 일을 수행하는 방식이다.
 
-## From: Microsoft - Menus (Design basics)
+### From: Microsoft - Menus (Design basics)
 
 다음은 [Microsoft의 공식 문서][msft-1]를 인용한 것이다. 번역은 내가 했다.
 
@@ -103,7 +103,7 @@ If simply viewing the window is a common action, don't use an ellipsis.[^msft-1]
 만약 단순하게 추가 윈도우를 보여주는 것이 일반적인 동작이라면 말줄임표를 사용하지 마세요.
 
 
-## From: Apple - Human Interface Guidelines
+### From: Apple - Human Interface Guidelines
 
 >
 **Use an ellipsis whenever choosing a menu item requires additional input from the user.** The ellipsis character (…) means a dialog or separate window will open and prompt the user for additional information or to make a choice.
