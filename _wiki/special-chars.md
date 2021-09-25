@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2021-09-25 09:25:02 +0900
+updated : 2021-09-25 17:43:53 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -424,7 +424,7 @@ C 언어의 전처리기 명령어가 `#`으로 시작한다.
 ### `$` Dollar sign
 
 * 달러 사인. 주로 화폐의 단위로 사용한다.
-* Perl에선 Scala 변수명의 prefix로 사용한다.
+* Perl에선 scalar 변수명의 prefix로 사용한다.
 * Bash Shell, PHP 등에서는 변수명의 prefix로 사용한다.
 * BASIC에선 문자열 변수명의 suffix로 사용한다.
 * 정규표현식에선 end of string anchor로 사용한다. 즉, 문자열이 끝나는 지점.
