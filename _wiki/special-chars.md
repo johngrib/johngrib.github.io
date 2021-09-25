@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2021-09-25 09:21:28 +0900
+updated : 2021-09-25 09:25:02 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -1060,20 +1060,6 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 
 ## 그 외
 
-### `※` Reference mark
-
-* 주석을 작성하기 전에 이 기호를 사용한다.
-* '당구장 표시'라고 부르곤 한다.
-* MacOS의 문자 검색(`command + control + space`)에서 `reference mark`로 검색하면 바로 나온다.
-
-| 읽는 방법   | reference mark, 참고표, 당구장 표시 |
-| 유니코드    | 'REFERENCE MARK' (U+203B)           |
-| HTML entity | `&#8251;`, `&#x203b;`               |
-| UTF-8 (HEX) | `0xE2 0x80 0xBB (e280bb)`           |
-
-* [fileformat.info/info/unicode/char/203b]( https://www.fileformat.info/info/unicode/char/203b/index.htm )
-* [Reference mark(wikipedia)]( https://en.wikipedia.org/wiki/Reference_mark )
-
 ### `…` Horizontal ellipsis
 
 - 말줄임표.
@@ -1087,6 +1073,21 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * [[three-dots-in-menu]]
 * [fileformat.info/info/unicode/char/2026]( https://www.fileformat.info/info/unicode/char/2026/index.htm )
 * [Ellipsis (wikipedia)]( https://en.wikipedia.org/wiki/Ellipsis )
+
+
+### `※` Reference mark
+
+* 주석을 작성하기 전에 이 기호를 사용한다.
+* '당구장 표시'라고 부르곤 한다.
+* MacOS의 문자 검색(`command + control + space`)에서 `reference mark`로 검색하면 바로 나온다.
+
+| 읽는 방법   | reference mark, 참고표, 당구장 표시 |
+| 유니코드    | 'REFERENCE MARK' (U+203B)           |
+| HTML entity | `&#8251;`, `&#x203b;`               |
+| UTF-8 (HEX) | `0xE2 0x80 0xBB (e280bb)`           |
+
+* [fileformat.info/info/unicode/char/203b]( https://www.fileformat.info/info/unicode/char/203b/index.htm )
+* [Reference mark(wikipedia)]( https://en.wikipedia.org/wiki/Reference_mark )
 
 ## Links
 
