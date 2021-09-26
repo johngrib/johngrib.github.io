@@ -3,7 +3,7 @@ layout  : wiki
 title   : SOLID 원칙
 summary : 객체지향 5대 원칙
 date    : 2019-09-05 18:06:38 +0900
-updated : 2021-09-21 22:38:41 +0900
+updated : 2021-09-26 23:57:23 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -179,6 +179,26 @@ S는 T의 하위 타입이다.
 
 요약하자면, "추상화에 의존하라"는 원칙이다.
 
+"파이썬으로 살펴보는 아키텍처 패턴"에서는 위에서 언급한 상위 모듈(high level module)과 하위 모듈(low level module)에 대해 구체적으로 설명한다.
+
+>
+**고수준 모듈**<sup>high-level module</sup>은 여러분의 조직에서 정말 중요하게 여기는 코드다.
+제약 회사에 근무한다면 고수준 모듈은 환자와 임상시험을 관리한다.
+은행에서 근무한다면 고수준 모듈은 거래나 외환을 관리한다.
+고수준 모듈은 실세게의 개념을 처리하는 함수, 클래스, 패키지를 말한다.
+>
+반대로 **저수준 모듈**<sup>low-level module</sup>은 여러분의 조직에서 신경 쓰지 않는 코드다.
+HR 부서가 파일 시스템이나 네트워크 소켓에 관심을 갖을 가능성이 낮다.
+여러분이 SMTP, HTTP, AMQP 등을 재무팀과 의논하는 경우도 드물 것이다.
+기술적이지 않은 관련자들에게 이런 저수준 개념은 흥미로운 대상이 아니거나 중요하지 않다.
+이런 관련자들은 고수준의 개념이 정상으로 작동되는지만 신경 쓴다.
+급여 시스템이 정시에 정상적 실행되면 사업 부서는 급여 시스템이 크론 잡<sup>cron job</sup>인지, 쿠버네티스<sup>Kubernetes</sup>에서 실행되는 일시적인 함수인지에 대해 신경 쓰지 않는다.
+>
+**의존성**은 꼭 **임포트**나 **호출**만을 뜻하지 않는다.
+대신 한 모듈이 다른 모듈을 **필요**로 하거나, **안다**는 좀더 일반적인 생각이 의존성이다.
+[^python-30]
+
+
 클린 아키텍처에서는 안정된 추상화를 위한 실천법을 제안한다.
 
 >
@@ -201,8 +221,9 @@ S는 T의 하위 타입이다.
 
 ## 참고문헌
 
-* 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
-* 클린 소프트웨어 / 로버트 C. 마틴 저 / 이용원, 김정민, 정지호 공역 / 제이펍 / 초판 1쇄 2017년 05월 15일 / 원제 : Agile Software Development, Principles, Patterns, and Practices
+- 클린 소프트웨어 / 로버트 C. 마틴 저 / 이용원, 김정민, 정지호 공역 / 제이펍 / 초판 1쇄 2017년 05월 15일 / 원제 : Agile Software Development, Principles, Patterns, and Practices
+- 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
+- 파이썬으로 살펴보는 아키텍처 패턴 / 해리 퍼시벌, 밥 그레고리 저/오현석 역 / 한빛미디어 / 2021년 06월 03일 / 원서 : Architecture Patterns with Python
 
 ## 주석
 
@@ -218,6 +239,7 @@ S는 T의 하위 타입이다.
 [^isp]: [한국어 위키백과][isp-wiki]에서 인용. 위키백과에서는 엉클 밥의 애자일 소프트웨어 개발에서 인용한 것으로 보인다.
 [^dip]: 클린 소프트웨어. CHAPTER 11. 166쪽.
 [^dip-list]: 클린 아키텍처. 11장 93쪽.
+[^python-30]: 파이썬으로 살펴보는 아키텍처 패턴. 0장. 30쪽.
 
 
 [isp-wiki]: https://ko.wikipedia.org/wiki/인터페이스_분리_원칙
