@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2021-10-02 18:54:24 +0900
+updated : 2021-10-02 19:05:33 +0900
 tag     : java
 toc     : true
 public  : true
@@ -15,9 +15,9 @@ latex   : false
 
 ## 예외
 
-[Java Language Specification 11 - 11.1.1. The Kinds of Exceptions]( https://docs.oracle.com/javase/specs/jls/se11/html/jls-11.html#jls-11.1.1 )
-
 > The classes Exception and Error are direct subclasses of Throwable:
+>
+-- [Java SE 11 Language Specification][jls11-11-1-1]
 
 `Exception` 과 `Error` 클래스는 `Throwable`의 직접적인(direct) 서브 클래스이다.
 
@@ -61,6 +61,8 @@ latex   : false
 > The class RuntimeException is a direct subclass of Exception. RuntimeException is the superclass of all the exceptions which may be thrown for many reasons during expression evaluation, but from which recovery may still be possible.
 >
 > RuntimeException and all its subclasses are, collectively, the run-time exception classes.
+>
+-- [Java SE 11 Language Specification][jls11-11-1-1]
 
 `Exception` 클래스는 일반적인 프로그램에서 복구하려 하는 모든 예외의 슈퍼클래스이다.
 
@@ -74,11 +76,11 @@ latex   : false
 
 ### Error: 복구가 불가능한 예외
 
-[java.lang.Error]( https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html )
-
 > Error is the superclass of all the exceptions from which ordinary programs are not ordinarily expected to recover.
 >
 > Error and all its subclasses are, collectively, the error classes.
+>
+-- [java.lang.Error (javadoc)][java-lang-error]
 
 `Error`는 일반적인 프로그램에서 복구를 기대할 수 없는 예외들의 슈퍼클래스다.
 
@@ -97,7 +99,7 @@ latex   : false
 >
 > The checked exception classes are all exception classes other than the unchecked exception classes. That is, the checked exception classes are Throwable and all its subclasses other than RuntimeException and its subclasses and Error and its subclasses.
 >
--- [11.1.1. The Kinds of Exceptions (Java SE 11 Language Specification)]( https://docs.oracle.com/javase/specs/jls/se7/html/jls-11.html#jls-11.1.1 )
+-- [Java SE 11 Language Specification][jls11-11-1-1]
 
 
 - unchecked exception은 run-time exception 클래스와 error 클래스를 말한다.
@@ -447,4 +449,7 @@ public class RuntimeException extends Exception {
 [^toby-1-285]: 토비의 스프링 3.1 vol 1. 4.1.3장. 285쪽.
 [^toby-1-288]: 토비의 스프링 3.1 vol 1. 4.1.3장. 288쪽.
 [^yuki-261]: 자바로 배우는 리팩토링 입문. 10장. 261쪽을 참고해 그렸음.
+[^jls11-11-1-1]: [Java Language Specification 11 - 11.1.1][jls11-11-1-1]
 
+[jls11-11-1-1]: https://docs.oracle.com/javase/specs/jls/se11/html/jls-11.html#jls-11.1.1
+[java-lang-error]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html
