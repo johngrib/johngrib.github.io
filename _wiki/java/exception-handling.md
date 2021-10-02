@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2021-10-02 18:10:45 +0900
+updated : 2021-10-02 18:54:24 +0900
 tag     : java
 toc     : true
 public  : true
@@ -27,7 +27,7 @@ latex   : false
 
 >
 자바 클래스 `Throwable`은 예외로 던질 수 있는 모든 것을 설명한다.
-`Throwable` 객체에는 두 가지 타입이 있다(`Throwale` 객체를 상속받는 타입이 두 가지라는 뜻이다).
+`Throwable` 객체에는 두 가지 타입이 있다(`Throwable` 객체를 상속받는 타입이 두 가지라는 뜻이다).
 `Error`는 특별한 경우를 제외하고 예외를 잡는 것에 대해 걱정할 필요가 없는 컴파일시의 시스템 에러다.
 `Exception`은 모든 표준 자바 라이브러리 클래스 메소드와 개발자의 메소드에서 실행시에 던질 수 있는 기본 타입이다.
 그러므로, 자바 프로그래머가 관심 있는 타입은 대체로 `Exception` 이다.
@@ -44,6 +44,15 @@ latex   : false
 -- Thinking in Java(3판) 9장 409쪽
 
 ## 예외의 종류
+
+다음은 `Throwable`의 상속 트리이다.[^yuki-261]
+
+![Throwable 클래스와 Throwable을 상속한 객체들의 관계도 그림]( ./throwable-tree.svg )
+
+- `Exception`: 복구가 가능한 예외
+- `Error`: 복구가 불가능한 예외
+- checked exception은 `java.lang.Exception`을 상속해 만든다.
+- unchecked exception은 `java.lang.RuntimeException`을 상속해 만든다.
 
 ### Exception: 복구가 가능한 예외
 
@@ -429,6 +438,7 @@ public class RuntimeException extends Exception {
 - 실전 자바 소프트웨어 개발 / 라울-게이브리얼 우르마, 리처드 워버턴 저/우정은 역 / 한빛미디어 / 초판 1쇄 2020년 06월 20일 / 원제 : Real-World Software Development
 - 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 - 자바 개발자를 위한 97가지 제안 / 케블린 헤니, 트리샤 지 저/장현희 역 / 제이펍 / 2020년 12월 24일 / 원서 : 97 Things Every Java Programmer Should Know
+- 자바로 배우는 리팩토링 입문 / 유키 히로시 저/서수환 역 / 길벗 / 초판 발행 2017년 10월 31일
 - 토비의 스프링 3.1 vol 1 / 이일민 저 / 에이콘출판사 / 초판 4쇄 2013년 06월 10일
 
 ## 주석
@@ -436,4 +446,5 @@ public class RuntimeException extends Exception {
 [^toby-1-281]: 토비의 스프링 3.1 vol 1. 4.1.1장. 281쪽.
 [^toby-1-285]: 토비의 스프링 3.1 vol 1. 4.1.3장. 285쪽.
 [^toby-1-288]: 토비의 스프링 3.1 vol 1. 4.1.3장. 288쪽.
+[^yuki-261]: 자바로 배우는 리팩토링 입문. 10장. 261쪽을 참고해 그렸음.
 
