@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2021-10-02 22:48:58 +0900
+updated : 2021-10-02 23:01:21 +0900
 tag     : java
 toc     : true
 public  : true
@@ -49,10 +49,15 @@ latex   : false
 
 ![Throwable 클래스와 Throwable을 상속한 객체들의 관계도 그림]( ./throwable-tree.svg )
 
-- `Exception`: 복구가 가능한 예외
 - `Error`: 복구가 불가능한 예외
-- checked exception은 `java.lang.Exception`을 상속해 만든다.
-- unchecked exception은 `java.lang.RuntimeException`을 상속해 만든다.
+    - 예) `VirtualMachineError`, `LinkageError` 등
+- `Exception`: 복구가 가능한 예외
+    - Checked Exception
+        - `java.lang.Exception`을 상속해 만든다.
+        - `try`/`catch`로 잡아주지 않거나 메소드 시그니처에 `throws`를 명시하지 않으면 컴파일할 때 에러가 발생한다.
+    - Unchecked Exception
+        - `java.lang.RuntimeException`을 상속해 만든다.
+        - `try`/`catch`를 쓰지 않거나 메소드 시그니처에 `throws`를 명시해주지 않아도 되지만, 그만큼 신중하게 사용하도록 한다.
 
 ### Exception: 복구가 가능한 예외
 
