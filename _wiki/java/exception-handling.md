@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2021-10-02 19:05:33 +0900
+updated : 2021-10-02 19:16:54 +0900
 tag     : java
 toc     : true
 public  : true
@@ -93,7 +93,9 @@ latex   : false
 - [java.lang.ThreadDeath]( https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ThreadDeath.html )
 - [java.lang.VirtualMachineError]( https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/VirtualMachineError.html )
 
-### checked 와 unchecked exception
+### unchecked exception 과 checked exception
+
+#### unchecked exception
 
 > The unchecked exception classes are the run-time exception classes and the error classes.
 >
@@ -101,9 +103,12 @@ latex   : false
 >
 -- [Java SE 11 Language Specification][jls11-11-1-1]
 
-
 - unchecked exception은 run-time exception 클래스와 error 클래스를 말한다.
     - 그 외의 다른 모든 예외 클래스는 checked exception이다.
+
+#### checked exception
+
+- checked exception은 `java.lang.Exception`의 하위 클래스로 선언한다.
 
 >
 컴파일시에 확인되고 강제되는 예외들을 **검사 예외(checked exception)**라고 한다.
@@ -111,6 +116,8 @@ latex   : false
 -- Thinking in Java(3판) 9장 397쪽
 
 - checked exception은 `throws` 절에 명시해주거나 `try`/`catch`로 잡아줘야 한다.
+    - 이렇게 하지 않으면 컴파일 에러가 발생한다.
+    - 그렇기 때문에 "확인된 예외", "검사 에외" 등으로 부르는 것이다.
 
 >
 확인된 예외(checked exception)란 메서드 안에서 처리하지 않으면 반드시 메서드의 `throws` 절에 추가해야 하는 예외를 말한다.
