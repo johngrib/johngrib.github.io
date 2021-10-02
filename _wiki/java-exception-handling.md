@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2021-10-02 17:52:00 +0900
+updated : 2021-10-02 18:07:09 +0900
 tag     : java
 toc     : true
 public  : true
@@ -13,15 +13,17 @@ latex   : false
 * TOC
 {:toc}
 
-## 예외의 종류
+## 예외
 
-Java Language Specification 11의 11.1.1. 절에 잘 나와 있다.
-
-[11.1.1. The Kinds of Exceptions]( https://docs.oracle.com/javase/specs/jls/se11/html/jls-11.html#jls-11.1.1 )
+[Java Language Specification 11 - 11.1.1. The Kinds of Exceptions]( https://docs.oracle.com/javase/specs/jls/se11/html/jls-11.html#jls-11.1.1 )
 
 > The classes Exception and Error are direct subclasses of Throwable:
 
-- `Exception` 과 `Error` 클래스는 `Throwable`의 직접적인(direct) 서브 클래스이다.
+`Exception` 과 `Error` 클래스는 `Throwable`의 직접적인(direct) 서브 클래스이다.
+
+- `Throwable`
+    - `Error` (`extends Throwable`)
+    - `Exception` (`extends Throwable`)
 
 >
 자바 클래스 `Throwable`은 예외로 던질 수 있는 모든 것을 설명한다.
@@ -40,6 +42,8 @@ Java Language Specification 11의 11.1.1. 절에 잘 나와 있다.
 예를 들어 모든 I/O 예외들은 `java.io.IOException`을 상속받는다.
 >
 -- Thinking in Java(3판) 9장 409쪽
+
+## 예외의 종류
 
 ### Exception: 복구가 가능한 예외
 
