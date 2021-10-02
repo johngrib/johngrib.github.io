@@ -3,12 +3,13 @@ layout  : wiki
 title   : 병합 정렬 (Merge Sort)
 summary : 
 date    : 2020-06-27 17:03:29 +0900
-updated : 2020-09-21 20:18:14 +0900
+updated : 2021-10-03 00:46:40 +0900
 tag     : algorithm sort
 toc     : true
 public  : true
 parent  : [[algorithm]]
 latex   : true
+issue-number : 136
 ---
 * TOC
 {:toc}
