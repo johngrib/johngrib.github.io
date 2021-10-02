@@ -3,11 +3,11 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2021-10-02 18:07:09 +0900
+updated : 2021-10-02 18:10:45 +0900
 tag     : java
 toc     : true
 public  : true
-parent  : [[Java]]
+parent  : [[/Java]]
 latex   : false
 ---
 * TOC

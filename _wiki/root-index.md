@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-09-24 21:58:47 +0900
+updated : 2021-10-02 18:11:23 +0900
 regenerate: true
 ---
 
@@ -199,11 +199,12 @@ regenerate: true
 
 ### [[Java]]
 
+* [[/java/exception-handling]]
+* [[/java/switch]]
 * [[java-abstract-class]]
 * [[java-abstract-method]]
 * [[java-enhancements]]
 * [[java-enum]]
-* [[java-exception-handling]]
 * [[java-functional-interface]]
 * [[java-inner-class-may-be-static]]
 * [[java-interface]]
@@ -217,7 +218,6 @@ regenerate: true
 * [[java-remainder-operator]]
 * [[java-TemporalAdjusters]]
 * [[java-util-arraylist]]
-* [[/java/switch]]
 * [[java10-var]]
 * [[java8-performance-improvement-for-hashmap]]
 * [[java8-why-permgen-removed]]
