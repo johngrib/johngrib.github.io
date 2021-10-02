@@ -7,7 +7,7 @@ updated : 2021-04-22 09:39:22 +0900
 tag     : java performance auto-boxing
 toc     : true
 public  : true
-parent  : [[Java]]
+parent  : [[java]]
 latex   : false
 ---
 * TOC

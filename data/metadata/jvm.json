@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "JVM",
  "summary": "Java Virtual Machine",
- "parent": "Java",
+ "parent": "java",
  "url": "/wiki/jvm",
  "updated": "2021-07-24 14:55:39 +0900",
  "children": [

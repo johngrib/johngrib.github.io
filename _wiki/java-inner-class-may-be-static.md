@@ -7,7 +7,7 @@ updated : 2021-02-14 13:18:58 +0900
 tag     : java memory-leak
 toc     : true
 public  : true
-parent  : [[Java]]
+parent  : [[java]]
 latex   : false
 ---
 * TOC

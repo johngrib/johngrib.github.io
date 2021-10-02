@@ -7,7 +7,7 @@ updated : 2021-04-22 09:40:40 +0900
 tag     : java auto-boxing npe
 toc     : true
 public  : true
-parent  : [[Java]]
+parent  : [[java]]
 latex   : false
 ---
 * TOC

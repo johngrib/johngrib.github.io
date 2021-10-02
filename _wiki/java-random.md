@@ -7,7 +7,7 @@ updated : 2020-02-10 23:08:06 +0900
 tag     : random
 toc     : true
 public  : true
-parent  : [[Java]]
+parent  : [[java]]
 latex   : false
 ---
 * TOC

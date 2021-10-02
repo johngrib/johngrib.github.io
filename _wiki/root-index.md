@@ -197,7 +197,7 @@ regenerate: true
 * [[vim-go-env]]
 * [[vim-go-with-ultisnips]]
 
-### [[Java]]
+### [[java]]
 
 * [[/java/exception-handling]]
 * [[/java/switch]]

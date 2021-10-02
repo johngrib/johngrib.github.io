@@ -7,7 +7,7 @@ updated : 2021-08-26 22:32:02 +0900
 tag     : java javadoc
 toc     : true
 public  : true
-parent  : [[Java]]
+parent  : [[java]]
 latex   : false
 issue-number : 169
 ---
