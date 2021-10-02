@@ -3,7 +3,7 @@ layout  : wiki
 title   : 실험하며 공부하는 GIT
 summary : 아직 작성중인 글입니다
 date    : 2020-04-19 22:27:20 +0900
-updated : 2020-04-20 23:47:15 +0900
+updated : 2021-10-02 10:55:26 +0900
 tag     : 
 toc     : true
 public  : true
@@ -174,7 +174,7 @@ $ git ls-files -s
 
 스페이스로 구분된 4개의 정보가 출력됐다. 이 정보들의 의미는 다음과 같다.
 
-- `100644` - bits. 객체의 크기를 말한다.
+- `100644` - bits. 8진수로 표시된 숫자로 파일의 타입과 권한.[^jusung-1]
 - `e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9` - obejct name. 객체의 이름.
 - `0` - stage number.
 - `a.txt` - 파일의 이름.
@@ -396,4 +396,7 @@ $ git cat-file -p c8f8b7e0ad11143d1e3a7724def5b2744b9b9668
 
 `tree c8f8b7e0...`의 내용은 3개의 해시값과 3개의 파일이라는 것을 확인할 수 있다.
 
+## 주석
+
+[^jusung-1]: [Jusung]( https://github.com/Jusung )님의 이슈 [#170](https://github.com/johngrib/johngrib.github.io/issues/170 )를 통해 잘못 작성된 내용 교정.
 
