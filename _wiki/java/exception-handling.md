@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 예외 처리
 summary :
 date    : 2020-05-31 21:45:47 +0900
-updated : 2021-10-02 19:16:54 +0900
+updated : 2021-10-02 22:48:58 +0900
 tag     : java
 toc     : true
 public  : true
@@ -139,7 +139,7 @@ latex   : false
 `Error`와 `RuntimeException` 클래스는 미확인 예외이며 `Throwable`의 서브 클래스다. 보통 이런 오류는 잡지 않는다.
 `Exception` 클래스는 일반적으로 프로그램에서 잡아 회복해야 하는 오류를 가리킨다.
 >
-![image]( /resource/wiki/java-exception-handling/114567437-360d0e80-9cae-11eb-8683-b198b11bfd5d.png )
+![그림 3-1. 자바의 예외 계층도]( ./throwable-relation.svg ) [^real-world-image-3-1]
 >
 -- 실전 자바 소프트웨어 개발. 3장.
 
@@ -457,6 +457,7 @@ public class RuntimeException extends Exception {
 [^toby-1-288]: 토비의 스프링 3.1 vol 1. 4.1.3장. 288쪽.
 [^yuki-261]: 자바로 배우는 리팩토링 입문. 10장. 261쪽을 참고해 그렸음.
 [^jls11-11-1-1]: [Java Language Specification 11 - 11.1.1][jls11-11-1-1]
+[^real-world-image-3-1]: 실전 자바 소프트웨어 개발 3장. 그림 3-1을 보고 따라 그린 그림이다.
 
 [jls11-11-1-1]: https://docs.oracle.com/javase/specs/jls/se11/html/jls-11.html#jls-11.1.1
 [java-lang-error]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html
