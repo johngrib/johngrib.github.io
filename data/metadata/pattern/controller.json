@@ -3,7 +3,7 @@
  "title": "컨트롤러 패턴 (Controller Pattern)",
  "summary": "UI 계층으로부터 가장 먼저 메시지를 받는 객체는 누구인가?",
  "parent": "pattern",
- "url": "/wiki/controller-pattern",
+ "url": "/wiki/pattern/controller",
  "updated": "2021-09-12 11:08:33 +0900",
  "children": []
 }

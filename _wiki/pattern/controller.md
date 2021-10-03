@@ -7,7 +7,7 @@ updated : 2021-09-12 11:08:33 +0900
 tag     : GRASP
 toc     : true
 public  : true
-parent  : [[pattern]]
+parent  : [[/pattern]]
 latex   : false
 ---
 * TOC
