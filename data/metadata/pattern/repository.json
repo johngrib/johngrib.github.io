@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "저장소 패턴 (Repository Pattern)",
+ "summary": "영속적 저장소를 추상화한다.",
+ "parent": "pattern",
+ "url": "/wiki/pattern/repository",
+ "updated": "2021-10-03 23:49:30 +0900",
+ "children": []
+}

@@ -16,6 +16,7 @@
   "pattern/null-object",
   "pattern/observer",
   "pattern/quotes",
+  "pattern/repository",
   "pattern/static-factory-method",
   "pattern/strangler",
   "pattern/strategy",
