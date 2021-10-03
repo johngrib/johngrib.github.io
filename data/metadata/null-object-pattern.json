@@ -4,6 +4,6 @@
  "summary": "인터페이스는 구현하지만 아무 일도 하지 않는 객체",
  "parent": "pattern",
  "url": "/wiki/null-object-pattern",
- "updated": "2021-04-15 23:50:39 +0900",
+ "updated": "2021-10-03 19:25:30 +0900",
  "children": []
 }

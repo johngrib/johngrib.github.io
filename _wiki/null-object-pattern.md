@@ -3,7 +3,7 @@ layout  : wiki
 title   : 널 오브젝트 패턴 (Null Object Pattern)
 summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
-updated : 2021-04-15 23:50:39 +0900
+updated : 2021-10-03 19:25:30 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -149,7 +149,7 @@ public Cheese[] getCheeses() {
 ### From: 실전 자바 소프트웨어 개발
 
 >
-자바에서는 종종 **null 객체 패턴**(object pattern)**을 사용한다.
+자바에서는 종종 **null 객체 패턴(object pattern)**을 사용한다.
 객체가 존재하지 않을 때 null 레퍼런스를 반환하는 대신에 필요한 인터페이스를 구현하는 객체(바디는 비어 있음)를 반환하는 기법이다.
 의도하지 않은 `NullPointerException`과 긴 `null` 확인 코드를 피할 수 있다는 점이 null 객체 패턴의 강점이다.
 빈 객체는 아무것도 수행하지 않으므로 동작을 예측하기 쉽다.
