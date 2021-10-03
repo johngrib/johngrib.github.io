@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.15. Additional Capabilities of the ApplicationContext
 summary : 
 date    : 2021-07-24 21:59:18 +0900
-updated : 2021-07-28 20:36:36 +0900
+updated : 2021-10-03 21:47:25 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -271,7 +271,7 @@ Essentially, this is the standard Observer design pattern.
 
 `ApplicationContext`의 이벤트 핸들링은 `ApplicationEvent` 클래스와 `ApplicationListener` 인터페이스를 통해 제공됩니다.
 `ApplicationListener` 인터페이스를 구현하는 bean이 컨텍스트에 배포되면 `ApplicationEvent`가 `ApplicationContext`에 발행될 때마다 해당 bean에 알림이 보내집니다.
-기본적으로 이 방식은 일반적인 [[/observer-pattern]] 입니다.
+기본적으로 이 방식은 일반적인 [[/pattern/observer]] 입니다.
 
 >
 As of Spring 4.2, the event infrastructure has been significantly improved and offers an [annotation-based model]( https://docs.spring.io/spring-framework/docs/5.3.7/reference/html/core.html#context-functionality-events-annotation ) as well as the ability to publish any arbitrary event (that is, an object that does not necessarily extend from `ApplicationEvent`).

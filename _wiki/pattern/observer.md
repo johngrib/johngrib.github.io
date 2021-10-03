@@ -3,12 +3,13 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2019-10-05 10:40:00 +0900
+updated : 2021-10-03 21:48:48 +0900
 tag     : pattern
 toc     : true
 public  : true
-parent  : [[pattern]]
+parent  : [[/pattern]]
 latex   : false
+issue-number: 145
 ---
 * TOC
 {:toc}
@@ -29,7 +30,7 @@ GoF 책에서는 다음과 같이 옵저버 패턴의 의도를 밝힌다.[^gof]
 
 구조는 다음과 같다.[^structure]
 
-![structure]( /resource/wiki/observer-pattern/structure.jpg )
+![structure]( ./structure.jpg )
 
 ## 요약
 
