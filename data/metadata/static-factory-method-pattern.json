@@ -4,6 +4,6 @@
  "summary": "static 메서드로 객체 생성을 캡슐화한다",
  "parent": "pattern",
  "url": "/wiki/static-factory-method-pattern",
- "updated": "2021-03-27 11:35:35 +0900",
+ "updated": "2021-10-03 18:53:18 +0900",
  "children": []
 }

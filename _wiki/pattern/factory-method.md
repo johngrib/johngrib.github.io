@@ -3,12 +3,13 @@ layout  : wiki
 title   : 팩토리 메소드 패턴 (Factory Method Pattern)
 summary : 객체를 생성하기 위한 인터페이스를 정의하고, 인스턴스 생성은 서브클래스가 결정하게 한다
 date    : 2019-10-07 00:16:49 +0900
-updated : 2021-10-03 18:50:32 +0900
+updated : 2021-10-03 18:54:21 +0900
 tag     : pattern
 toc     : true
 public  : true
 parent  : [[pattern]]
 latex   : false
+issue-number: 173
 ---
 * TOC
 {:toc}
