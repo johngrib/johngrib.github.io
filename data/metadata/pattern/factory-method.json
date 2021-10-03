@@ -4,6 +4,6 @@
  "summary": "객체를 생성하기 위한 인터페이스를 정의하고, 인스턴스 생성은 서브클래스가 결정하게 한다",
  "parent": "pattern",
  "url": "/wiki/pattern/factory-method",
- "updated": "2021-10-03 18:54:21 +0900",
+ "updated": "2021-10-03 19:05:08 +0900",
  "children": []
 }

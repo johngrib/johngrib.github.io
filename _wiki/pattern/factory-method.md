@@ -3,7 +3,7 @@ layout  : wiki
 title   : 팩토리 메소드 패턴 (Factory Method Pattern)
 summary : 객체를 생성하기 위한 인터페이스를 정의하고, 인스턴스 생성은 서브클래스가 결정하게 한다
 date    : 2019-10-07 00:16:49 +0900
-updated : 2021-10-03 18:54:21 +0900
+updated : 2021-10-03 19:05:08 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -27,7 +27,7 @@ GoF는 다음과 같이 팩토리 메소드 패턴의 의도를 밝힌다.[^gof]
 
 구조는 다음과 같다.
 
-![structure]( ./structure.gif )
+![팩토리 메소드 패턴의 구조를 표현한 다이어그램]( ./factory-method.svg )
 
 ## 요약
 
