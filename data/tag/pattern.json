@@ -10,8 +10,8 @@
  "pattern/abstract-factory",
  "pattern/adapter",
  "pattern/builder",
+ "pattern/strangler",
  "pattern/strategy",
  "pattern/template-method",
- "static-factory-method-pattern",
- "strangler-pattern"
+ "static-factory-method-pattern"
 ]

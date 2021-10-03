@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-03 10:06:56 +0900
+updated : 2021-10-03 10:32:56 +0900
 regenerate: true
 ---
 
@@ -149,6 +149,7 @@ regenerate: true
 * [[/pattern/abstract-factory]]
 * [[/pattern/adapter]]
 * [[/pattern/builder]]
+* [[/pattern/strangler]]
 * [[/pattern/strategy]]
 * [[/pattern/template-method]]
 * [[command-pattern]]
@@ -694,7 +695,6 @@ regenerate: true
 * [[restdoc-item-generator]]
 * [[saga]]
 * [[semantic-versioning]]
-* [[strangler-pattern]]
 * [[three-dots-in-menu]]
 * [[timeline]]
 * [[two-type-error]]

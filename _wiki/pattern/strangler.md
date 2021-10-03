@@ -3,11 +3,11 @@ layout  : wiki
 title   : 교살자 패턴, 스트랭글러 패턴 (strangler pattern)
 summary : 레거시 시스템을 점진적으로 교체하여 레거시 시스템을 단계적으로 페이드아웃한다
 date    : 2020-01-18 07:50:57 +0900
-updated : 2021-05-01 20:59:06 +0900
+updated : 2021-10-03 10:35:55 +0900
 tag     : pattern
 toc     : true
 public  : true
-parent  : [[index]]
+parent  : [[/pattern]]
 latex   : false
 ---
 * TOC

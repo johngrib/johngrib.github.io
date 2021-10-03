@@ -1,9 +1,9 @@
 ---
 layout  : category
-title   : 디자인 패턴
-summary :
+title   : 패턴
+summary : 디자인 패턴, 아키텍처 패턴 등
 date    : 2018-02-12 08:18:46 +0900
-updated : 2021-10-03 10:27:06 +0900
+updated : 2021-10-03 10:35:26 +0900
 tag     : pattern
 toc     : true
 public  : true
