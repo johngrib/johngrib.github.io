@@ -3,7 +3,7 @@ layout  : wiki
 title   : 커맨드 패턴 (Command Pattern)
 summary : 요구 사항을 객체로 캡슐화한다
 date    : 2019-10-24 16:32:27 +0900
-updated : 2020-07-19 13:38:55 +0900
+updated : 2021-10-03 10:43:11 +0900
 tag     : 
 toc     : true
 public  : true
@@ -51,7 +51,7 @@ queue or log requests, and support undoable operations.
 
 구조는 다음과 같다.[^structure]
 
-![structure]( /resource/wiki/command-pattern/structure.gif )
+![커맨드 패턴의 구조를 표현한 그림]( ./structure.gif )
 
 ## 요약
 
