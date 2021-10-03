@@ -49,7 +49,7 @@ PicoContainer 프레임워크의 문서 [Inversion of Control History][history]�
 
 이 글에서 언급하는 선행 기술을 옮겨보자면 다음과 같다.
 
-* 1994: GoF가 [[/design-pattern/template-method-pattern]]에서 inverted control과 헐리우드 원칙을 이야기함.
+* 1994: GoF가 [[/pattern/template-method]]에서 inverted control과 헐리우드 원칙을 이야기함.
 * 1994-08-14: Robert C. Martin, 즉 밥 아저씨. [OO Design Quality Metrics: An Analysis of Dependencies?][oo-design].
 * 1995-06: 밥 아저씨. Principle of Depenency Inversion. [The Principles of OOD](http://groups.google.com/group/comp.lang.c++/msg/30f7c7701209faba?dmode=source )
 * 1996-05: 밥 아저씨. The Dependency Inversion Principle.
@@ -356,7 +356,7 @@ DI는 오브젝트 레퍼런스를 외부로부터 제공(주입)받고 이를 �
 
 * [[hollywood-principle]]{헐리우드 원칙}
 * [[/spring/document/core]]
-* [[/design-pattern/template-method-pattern]]
+* [[/pattern/template-method]]
 
 ## 참고문헌
 

@@ -7,7 +7,7 @@ updated : 2021-03-27 11:35:35 +0900
 tag     : programming pattern
 toc     : true
 public  : true
-parent  : [[design-pattern]]
+parent  : [[pattern]]
 latex   : false
 ---
 * TOC

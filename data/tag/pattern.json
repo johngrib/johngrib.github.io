@@ -1,17 +1,17 @@
 [
  "decorator-pattern",
  "defensive-copy",
- "design-pattern",
  "design-pattern-quotes",
- "design-pattern/abstract-factory-pattern",
- "design-pattern/adapter-pattern",
- "design-pattern/builder-pattern",
- "design-pattern/strategy-pattern",
- "design-pattern/template-method-pattern",
  "factory-method-pattern",
  "GoF-Design-Pattern",
  "null-object-pattern",
  "observer-pattern",
+ "pattern",
+ "pattern/abstract-factory",
+ "pattern/adapter",
+ "pattern/builder",
+ "pattern/strategy",
+ "pattern/template-method",
  "static-factory-method-pattern",
  "strangler-pattern"
 ]

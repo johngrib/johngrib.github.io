@@ -7,7 +7,7 @@ updated : 2019-11-21 09:25:58 +0900
 tag     : pattern quotes
 toc     : true
 public  : true
-parent  : [[design-pattern]]
+parent  : [[pattern]]
 latex   : false
 ---
 * TOC

@@ -86,7 +86,7 @@ DRY 원칙이란 이것이다.
 이런 중복은 다형성(polymorphism)으로 대체해야 한다.
 >
 > 더더욱 미묘한 유형은 알고리즘이 유사하나 코드가 서로 다른 중복이다.
-중복은 중복이므로 [[/design-pattern/template-method-pattern]]{TEMPLATE METHOD 패턴}이나 [[/design-pattern/strategy-pattern]]{STRATEGY 패턴}으로 중복을 제거한다.
+중복은 중복이므로 [[/pattern/template-method]]{TEMPLATE METHOD 패턴}이나 [[/pattern/strategy]]{STRATEGY 패턴}으로 중복을 제거한다.
 >
 > 사실 최근 15년 동안 나온 디자인 패턴은 대다수가 중복을 제거하는 잘 알려진 방법에 불과하다.
 BCNF(Boyce-Codd Normal Form) 역시 데이터베이스 스키마에서 중복을 제거하는 전략이다.
@@ -98,8 +98,8 @@ OO 역시 모듈을 정리하고 중복을 제거하는 전략이다.
 ## 함께 읽기
 
 - [[Boy-Scout-Rule]]
-- [[/design-pattern/strategy-pattern]]
-- [[/design-pattern/template-method-pattern]]
+- [[/pattern/strategy]]
+- [[/pattern/template-method]]
 
 ## 참고문헌
 

@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-02 18:11:23 +0900
+updated : 2021-10-03 10:06:56 +0900
 regenerate: true
 ---
 
@@ -144,13 +144,13 @@ regenerate: true
     * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
     * [[Schrodinger-s-goyang-Hee]]
 
-## [[design-pattern]]
+## [[pattern]]
 
-* [[/design-pattern/abstract-factory-pattern]]
-* [[/design-pattern/adapter-pattern]]
-* [[/design-pattern/builder-pattern]]
-* [[/design-pattern/strategy-pattern]]
-* [[/design-pattern/template-method-pattern]]
+* [[/pattern/abstract-factory]]
+* [[/pattern/adapter]]
+* [[/pattern/builder]]
+* [[/pattern/strategy]]
+* [[/pattern/template-method]]
 * [[command-pattern]]
 * [[controller-pattern]]
 * [[decorator-pattern]]

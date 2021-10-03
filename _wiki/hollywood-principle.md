@@ -31,7 +31,7 @@ Our heroine could have had any number of good jobs behind a desk, but her passio
 
 ### GoF의 디자인 패턴
 
-헐리우드 원칙은 "GoF의 디자인 패턴"의 [[/design-pattern/template-method-pattern]] 챕터에서 찾아볼 수 있다. GoF는 **inverted control**이라는 표현을 쓴다.
+헐리우드 원칙은 "GoF의 디자인 패턴"의 [[/pattern/template-method]] 챕터에서 찾아볼 수 있다. GoF는 **inverted control**이라는 표현을 쓴다.
 
 > Template methods lead to an inverted control structure that's sometimes referred to as "the Hollywood principle,"
 that is, "Don't call us, we'll call you".
@@ -75,7 +75,7 @@ The major difference between an object-oriented framework and a class library is
 ## 함께 읽기
 
 * [[inversion-of-control]]{Inversion of Control}
-* [[/design-pattern/template-method-pattern]]
+* [[/pattern/template-method]]
 
 ## 참고문헌
 

@@ -2,21 +2,21 @@
  "type": "wiki",
  "title": "디자인 패턴",
  "parent": "index",
- "url": "/wiki/design-pattern",
- "updated": "2019-11-20 21:30:40 +0900",
+ "url": "/wiki/pattern",
+ "updated": "2021-10-03 09:58:19 +0900",
  "children": [
   "command-pattern",
   "controller-pattern",
   "decorator-pattern",
   "design-pattern-quotes",
-  "design-pattern/abstract-factory-pattern",
-  "design-pattern/adapter-pattern",
-  "design-pattern/builder-pattern",
-  "design-pattern/strategy-pattern",
-  "design-pattern/template-method-pattern",
   "factory-method-pattern",
   "null-object-pattern",
   "observer-pattern",
+  "pattern/abstract-factory",
+  "pattern/adapter",
+  "pattern/builder",
+  "pattern/strategy",
+  "pattern/template-method",
   "static-factory-method-pattern"
  ]
 }

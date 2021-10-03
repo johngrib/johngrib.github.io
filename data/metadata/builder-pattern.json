@@ -1,9 +1,0 @@
-{
- "type": "wiki",
- "title": "빌더 패턴(Builder Pattern)",
- "summary": "객체의 생성 방법과 표현 방법을 분리한다",
- "parent": "design-pattern",
- "url": "/wiki/builder-pattern",
- "updated": "2021-09-22 15:50:33 +0900",
- "children": []
-}

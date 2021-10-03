@@ -7,7 +7,7 @@ updated : 2020-07-19 13:38:55 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[design-pattern]]
+parent  : [[pattern]]
 latex   : false
 ---
 * TOC

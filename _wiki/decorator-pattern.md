@@ -7,7 +7,7 @@ updated : 2021-09-23 22:14:13 +0900
 tag     : pattern
 toc     : true
 public  : true
-parent  : [[design-pattern]]
+parent  : [[pattern]]
 latex   : false
 ---
 * TOC
@@ -71,9 +71,9 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 * 코드를 수정하지 않고도 준비된 Decorator을 조합해 기능을 추가할 수 있도록 생각해서 구현한다.
 * 비슷한 성질의 작은 클래스가 많이 만들어질 수 있다는 단점을 고려한다.
 * 구현하려는 내용이 객체의 겉을 변경하려는 것인지, 속을 변경하려는 것인지 생각해 보자.
-    * 속을 변경하려는 것이라면 [[/design-pattern/strategy-pattern]]을 선택하는 것이 더 적절할 수 있다.
+    * 속을 변경하려는 것이라면 [[/pattern/strategy]]을 선택하는 것이 더 적절할 수 있다.
 * 데코레이터 패턴으로 구현한 다음, 사용이 까다롭게 느껴지거나 자주 쓰는 조합이 있다면 다음 패턴을 사용해 제공하는 것을 고려해 보자.
-    * [[/design-pattern/builder-pattern]]
+    * [[/pattern/builder]]
     * factory-pattern
     * [[static-factory-method-pattern]]
 * Decorator가 다른 Decorator에 대해 알아야 할 필요가 있다면, 데코레이터 패턴의 사용 의도와 어긋나는 작업일 수 있다.
