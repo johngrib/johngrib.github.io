@@ -6,7 +6,6 @@
  "url": "/wiki/pattern",
  "updated": "2021-10-03 10:35:26 +0900",
  "children": [
-  "factory-method-pattern",
   "null-object-pattern",
   "observer-pattern",
   "pattern/abstract-factory",
@@ -15,6 +14,7 @@
   "pattern/command",
   "pattern/controller",
   "pattern/decorator",
+  "pattern/factory-method",
   "pattern/quotes",
   "pattern/strangler",
   "pattern/strategy",
