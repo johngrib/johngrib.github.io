@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-03 18:49:06 +0900
+updated : 2021-10-03 19:28:05 +0900
 regenerate: true
 ---
 
@@ -152,12 +152,12 @@ regenerate: true
 * [[/pattern/command]]
 * [[/pattern/controller]]
 * [[/pattern/decorator]]
+* [[/pattern/factory-method]]
+* [[/pattern/null-object]]
 * [[/pattern/quotes]]
 * [[/pattern/strangler]]
 * [[/pattern/strategy]]
 * [[/pattern/template-method]]
-* [[/pattern/factory-method]]
-* [[null-object-pattern]]
 * [[observer-pattern]]
 * [[static-factory-method-pattern]]
 
