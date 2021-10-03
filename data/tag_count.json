@@ -40,6 +40,10 @@
   "size": 1
  },
  {
+  "name": "anti-pattern",
+  "size": 1
+ },
+ {
   "name": "architecture",
   "size": 1
  },
@@ -601,7 +605,7 @@
  },
  {
   "name": "pattern",
-  "size": 15
+  "size": 14
  },
  {
   "name": "pentium",
@@ -646,10 +650,6 @@
  {
   "name": "python",
   "size": 2
- },
- {
-  "name": "quotes",
-  "size": 1
  },
  {
   "name": "random",
