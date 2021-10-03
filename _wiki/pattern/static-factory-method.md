@@ -3,11 +3,11 @@ layout  : wiki
 title   : 정적 팩토리 메서드(static factory method)
 summary : static 메서드로 객체 생성을 캡슐화한다
 date    : 2018-03-03 11:16:36 +0900
-updated : 2021-10-03 18:53:18 +0900
+updated : 2021-10-03 22:59:47 +0900
 tag     : programming pattern
 toc     : true
 public  : true
-parent  : [[pattern]]
+parent  : [[/pattern]]
 latex   : false
 issue-number: 129
 ---

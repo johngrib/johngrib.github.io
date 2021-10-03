@@ -16,9 +16,9 @@
   "pattern/null-object",
   "pattern/observer",
   "pattern/quotes",
+  "pattern/static-factory-method",
   "pattern/strangler",
   "pattern/strategy",
-  "pattern/template-method",
-  "static-factory-method-pattern"
+  "pattern/template-method"
  ]
 }

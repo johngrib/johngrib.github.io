@@ -3,7 +3,7 @@ layout  : wiki
 title   : 데코레이터 패턴 (Decorator Pattern)
 summary : 객체에 동적으로 새로운 책임을 추가한다
 date    : 2019-10-05 10:42:26 +0900
-updated : 2021-10-03 13:07:43 +0900
+updated : 2021-10-03 22:59:36 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -75,7 +75,7 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 * 데코레이터 패턴으로 구현한 다음, 사용이 까다롭게 느껴지거나 자주 쓰는 조합이 있다면 다음 패턴을 사용해 제공하는 것을 고려해 보자.
     * [[/pattern/builder]]
     * factory-pattern
-    * [[static-factory-method-pattern]]
+    * [[/pattern/static-factory-method]]
 * Decorator가 다른 Decorator에 대해 알아야 할 필요가 있다면, 데코레이터 패턴의 사용 의도와 어긋나는 작업일 수 있다.
 * 재귀적으로 기능을 갖게 하는 방법 외에도, Decorator를 추가할 때마다 얻은 아이템을 List로 관리하는 방법도 있다.
 
