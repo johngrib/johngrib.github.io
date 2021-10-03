@@ -1,5 +1,4 @@
 [
- "decorator-pattern",
  "defensive-copy",
  "factory-method-pattern",
  "GoF-Design-Pattern",
@@ -9,6 +8,7 @@
  "pattern/abstract-factory",
  "pattern/adapter",
  "pattern/builder",
+ "pattern/decorator",
  "pattern/strangler",
  "pattern/strategy",
  "pattern/template-method",
