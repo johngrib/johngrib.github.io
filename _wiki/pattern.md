@@ -3,12 +3,13 @@ layout  : category
 title   : 디자인 패턴
 summary :
 date    : 2018-02-12 08:18:46 +0900
-updated : 2021-10-03 09:58:19 +0900
+updated : 2021-10-03 10:27:06 +0900
 tag     : pattern
 toc     : true
 public  : true
 parent  : [[index]]
 latex   : false
+issue-number: 59
 ---
 * TOC
 {:toc}
