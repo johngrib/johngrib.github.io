@@ -3,7 +3,7 @@ layout  : wiki
 title   : 데코레이터 패턴 (Decorator Pattern)
 summary : 객체에 동적으로 새로운 책임을 추가한다
 date    : 2019-10-05 10:42:26 +0900
-updated : 2021-10-03 12:45:58 +0900
+updated : 2021-10-03 13:07:43 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -51,7 +51,7 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 
 구조는 다음과 같다.[^structure]
 
-![structure]( ./structure.jpg )
+![데코레이터 패턴의 구조 다이어그램]( ./decorator.svg )
 
 ## 언제 사용하는가?
 
