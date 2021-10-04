@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-04 11:42:45 +0900
+updated : 2021-10-04 13:08:21 +0900
 regenerate: true
 ---
 
@@ -77,16 +77,16 @@ regenerate: true
 
 ### [[people]]
 
+* [[/people/gerald-weinberg]]
 * [[Bill-Atkinson-productivity]]
 * [[Bill-Joy-and-10000-hours-rule]]
+* [[Donald-Ervin-Knuth]]
+* [[James-Gosling-super-programmer]]
+* [[John-W-Backus]]
+* [[John-von-Neumann]]
 * [[brian-w-kernighan]]
 * [[claude-elwood-shannon]]
-* [[Donald-Ervin-Knuth]]
-* [[gerald-weinberg-language-king]]
-* [[James-Gosling-super-programmer]]
 * [[jeff-bezos]]
-* [[John-von-Neumann]]
-* [[John-W-Backus]]
 * [[ronald-wayne]]
 * [[the-beginning-of-linux]]
 

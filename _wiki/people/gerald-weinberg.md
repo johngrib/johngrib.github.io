@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 프로그래밍 언어를 하나도 만들지 않은 제랄드 와인버그
+title   : 제랄드 와인버그 (Gerald Weinberg)
 summary :
 date    : 2018-02-08 12:00:14 +0900
-updated : 2020-07-29 22:22:43 +0900
+updated : 2021-10-04 13:11:24 +0900
 tag     : story Gerald-Weinberg
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+- Gerald Marvin Weinberg (1933-10-27 ~ 2018-08-07)
 
 ## "프로그래밍 언어 설계에 필요한 원칙" 중에서
 
