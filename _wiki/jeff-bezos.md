@@ -3,7 +3,7 @@ layout  : wiki
 title   : 제프 베조스(Jeff Bezos)
 summary : 
 date    : 2020-12-21 21:43:01 +0900
-updated : 2021-05-01 20:34:51 +0900
+updated : 2021-10-04 11:12:57 +0900
 tag     : people amazon start-up
 toc     : true
 public  : true
@@ -25,7 +25,6 @@ latex   : false
 
 저 사무실의 더 많은 사진을 보고 싶다면 [구글 검색][google-bezos-1999] 결과를 보자.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fgDaH5KmqUY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 아마존 창업과 후회 최소화 프레임워크
 
