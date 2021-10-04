@@ -3,7 +3,7 @@ layout  : wiki
 title   : 에드셀 강령(Edsel edict)
 summary : 새것을 도입할 때에는 한 번에 하나씩 하자
 date    : 2018-01-18 21:06:12 +0900
-updated : 2021-10-04 13:26:23 +0900
+updated : 2021-10-04 13:54:10 +0900
 tag     : Gerald-Weinberg proverb
 toc     : true
 public  : true
@@ -15,7 +15,9 @@ latex   : false
 
 ## 개요
 
->If you must have something new, take one, not two.  
+>
+If you must have something new, take one, not two.
+>
 뭔가 새것을 가져야 한다면 두 개가 아니라 한 개만 택하라.
 
 * 새로운 시도에 대해 보수적인 관점으로 접근해야 실패를 방지할 수 있다는 의미이다.
@@ -42,7 +44,7 @@ latex   : false
 
 ## 출처
 
-* 제랄드 와인버그의 "[[secret-of-consulting]]{컨설팅의 비밀}" 챕터9. 안전한 변화 제조법.
+* [[/people/gerald-weinberg]]의 "[[secret-of-consulting]]{컨설팅의 비밀}" 챕터9. 안전한 변화 제조법.
     * 원제는 "The Secrets of Consulting by Gerald M. Weinberg"
 
 ## Links

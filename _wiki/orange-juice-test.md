@@ -3,7 +3,7 @@ layout  : wiki
 title   : 오렌지 주스 테스트
 summary : 항상 대안을 제시하라
 date    : 2018-01-30 23:08:02 +0900
-updated : 2020-04-05 22:07:39 +0900
+updated : 2021-10-04 14:06:33 +0900
 tag     : proverb soft-skill Gerald-Weinberg
 toc     : true
 public  : true
@@ -23,7 +23,7 @@ latex   : false
 
 * 컨설팅의 비밀 64쪽
 
-제랄드 와인버그가 어느 소프트웨어 회사에 고용되었는데, 합격한 이유가 바로 오렌지 주스 테스트를 통과했기 때문이었다.
+[[/people/gerald-weinberg]]가 어느 소프트웨어 회사에 고용되었는데, 합격한 이유가 바로 오렌지 주스 테스트를 통과했기 때문이었다.
 
 오렌지 주스 테스트의 과제는 다음과 같다.
 
@@ -66,5 +66,5 @@ latex   : false
 ## 참고문헌
 
 - 소프트웨어 장인 / 산드로 만쿠소 저/권오인 역 / 길벗 / 초판 3쇄 2016년 09월 30일
-- 컨설팅의 비밀 / 제럴드 M. 와인버그 저 / 인사이트(insight) / 초판 1쇄 2004년 07월 01일 / 원제 : The Secrets of Consulting (1986)
+- 컨설팅의 비밀 / [[/people/gerald-weinberg]]{제럴드 M. 와인버그} 저 / 인사이트(insight) / 초판 1쇄 2004년 07월 01일 / 원제 : The Secrets of Consulting (1986)
 

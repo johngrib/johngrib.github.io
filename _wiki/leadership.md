@@ -3,7 +3,7 @@ layout  : wiki
 title   : 리더쉽
 summary : 
 date    : 2020-01-15 22:33:17 +0900
-updated : 2020-06-07 23:43:44 +0900
+updated : 2021-10-04 14:07:52 +0900
 tag     : 
 toc     : true
 public  : true
@@ -170,7 +170,7 @@ $$ 0.8 \times 0.8 \times 0.8 \times 0.8 = 0.4096 $$
 
 - 개발 7년차, 매니저 1일차 / 카미유 푸르니에 저/권원상, 한민주 역 / 한빛미디어 / 초판 1쇄 2020년 02월 04일
 - 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
-- 테크니컬 리더 / 제럴드 M. 와인버그 저 / 인사이트(insight) / 초판 1쇄 2013년 01월 25일
+- 테크니컬 리더 / [[/people/gerald-weinberg]]{제럴드 M. 와인버그} 저 / 인사이트(insight) / 초판 1쇄 2013년 01월 25일
 - 하버드 비즈니스 리뷰 2019년 11월호
     - [The Leader as Coach]( https://hbr.org/2019/11/the-leader-as-coach )
 - 하버드 비즈니스 리뷰 2020년 05월호

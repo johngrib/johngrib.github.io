@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 성장을 도와준 고마운 책들
 summary : 아마도 평생 작성 중일 문서
 date    : 2020-06-13 18:32:06 +0900
-updated : 2021-09-11 15:41:21 +0900
+updated : 2021-10-04 13:57:44 +0900
 tag     : book
 toc     : true
 public  : true
@@ -292,7 +292,7 @@ SI 탈출에 직접적인 도움을 준 굉장히 고마운 책이다.
 
 ![]( /resource/wiki/my-favorite-books/technical-leader.JPG )
 
-제랄드 와인버그의 책은 다 좋다. 아직 번역되지 않은 책이 많을텐데 더 많이 나왔으면 좋겠다.
+[[/people/gerald-weinberg]]의 책은 다 좋다. 아직 번역되지 않은 책이 많을텐데 더 많이 나왔으면 좋겠다.
 
 절대로 쉽게 휙휙 읽을 수 있는 책이 아니다.
 
@@ -305,7 +305,7 @@ SI 탈출에 직접적인 도움을 준 굉장히 고마운 책이다.
 
 ![]( /resource/wiki/my-favorite-books/secrets-of-consulting.JPG )
 
-제목만 읽으면 개발과 관련 없을 것 같은데 저자가 제랄드 와인버그다.
+제목만 읽으면 개발과 관련 없을 것 같은데 저자가 [[/people/gerald-weinberg]]다.
 
 이 책을 읽으면서 개발자는 한편으로는 컨설턴트이기도 하다는 사실을 깨달을 수 있었다.
 
