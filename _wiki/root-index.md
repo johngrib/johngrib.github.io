@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-03 23:05:32 +0900
+updated : 2021-10-04 11:42:45 +0900
 regenerate: true
 ---
 
@@ -202,7 +202,11 @@ regenerate: true
 ### [[java]]
 
 * [[/java/exception-handling]]
+* [[/java/object-equals]]
 * [[/java/switch]]
+* [[Object-hashCode]]
+* [[Object-toString]]
+* [[java-TemporalAdjusters]]
 * [[java-abstract-class]]
 * [[java-abstract-method]]
 * [[java-enhancements]]
@@ -218,16 +222,12 @@ regenerate: true
 * [[java-optional]]
 * [[java-random]]
 * [[java-remainder-operator]]
-* [[java-TemporalAdjusters]]
 * [[java-util-arraylist]]
 * [[java10-var]]
 * [[java8-performance-improvement-for-hashmap]]
 * [[java8-why-permgen-removed]]
 * [[java8]]
 * [[jdk13]]
-* [[Object-equals]]
-* [[Object-hashCode]]
-* [[Object-toString]]
 * [[private-constructor]]
 * [[ternary-operator-and-null-pointer-exception]]
 * [[use-java-primitive-type-for-performance]]
