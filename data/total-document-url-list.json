@@ -414,6 +414,7 @@
  "/wiki/pattern/adapter",
  "/wiki/pattern/builder",
  "/wiki/pattern/command",
+ "/wiki/pattern/composite",
  "/wiki/pattern/controller",
  "/wiki/pattern/decorator",
  "/wiki/pattern/factory-method",

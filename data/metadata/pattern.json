@@ -10,6 +10,7 @@
   "pattern/adapter",
   "pattern/builder",
   "pattern/command",
+  "pattern/composite",
   "pattern/controller",
   "pattern/decorator",
   "pattern/factory-method",

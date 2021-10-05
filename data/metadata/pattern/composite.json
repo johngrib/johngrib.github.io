@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "컴포짓 패턴 (Composite Pattern)",
+ "summary": "개별 객체와 복합 객체를 모두 동일하게 다룰 수 있도록 한다.",
+ "parent": "pattern",
+ "url": "/wiki/pattern/composite",
+ "updated": "2021-10-05 20:26:28 +0900",
+ "children": []
+}
