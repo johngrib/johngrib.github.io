@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-04 13:08:21 +0900
+updated : 2021-10-05 15:57:58 +0900
 regenerate: true
 ---
 
@@ -203,6 +203,7 @@ regenerate: true
 
 * [[/java/exception-handling]]
 * [[/java/object-equals]]
+* [[/java/stream]]
 * [[/java/switch]]
 * [[Object-hashCode]]
 * [[Object-toString]]
