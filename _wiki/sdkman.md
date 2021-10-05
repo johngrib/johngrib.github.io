@@ -3,7 +3,7 @@ layout  : wiki
 title   : sdk 명령어 (sdkman)
 summary : 다양한 소프트웨어 개발 도구의 버전을 관리한다
 date    : 2019-09-11 22:44:15 +0900
-updated : 2019-12-30 22:20:27 +0900
+updated : 2021-10-05 14:33:32 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -43,6 +43,25 @@ $ sdk list scala
 $ sdk install java                  # latest stable 버전의 Java 설치
 $ sdk install java 11.0.4.hs-adpt   # list 확인 후 identifier를 선택할 것
 $ sdk install scala 2.12.1          # Scala 2.12.1 설치
+```
+
+참고로 이렇게 설치하면 `~/.sdk/candidates`에 다운로드된다.
+
+```
+$ tree ./.sdkman/candidates/ -L 2
+./.sdkman/candidates/
+├── gradle
+│   ├── 6.1.1
+│   ├── 6.8
+│   └── current -> 6.1.1
+└── java
+    ├── 11.0.11.hs-adpt
+    ├── 11.0.7.hs-adpt
+    ├── 15.0.2.hs-adpt
+    ├── 16.0.1.hs-adpt
+    └── current -> 11.0.11.hs-adpt
+
+10 directories, 0 files
 ```
 
 ### 개발 도구 삭제
