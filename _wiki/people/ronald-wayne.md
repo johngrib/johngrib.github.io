@@ -3,7 +3,7 @@ layout  : wiki
 title   : 애플 지분 10%를 800달러에 팔아버린 로널드 웨인
 summary : 2020년 기준 애플 10%는 252조 원
 date    : 2020-12-21 22:17:42 +0900
-updated : 2020-12-23 10:03:13 +0900
+updated : 2021-10-06 21:02:09 +0900
 tag     : people
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 ## London Underground Notice Board
 
-![quote-of-the-day][white-board]
+![로널드 웨인 이야기가 적혀 있는 화이트 보드]( ./102780991-44bb7700-43da-11eb-9fd8-be8e6dd5c24d.png  )
 
 > QUOTE OF THE DAY
 >
@@ -61,13 +61,13 @@ FOR $800. NOW IT'S WORTH $58,065,210,000
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;@jevz04: If you think you&#39;re having a bad day: On this day in 1976, Apple co-founder Ronald Wayne sold his 10% stake in Apple for $800&quot;</p>&mdash; PANDA_PANDIT (@dazzars) <a href="https://twitter.com/dazzars/status/191078862124363776?ref_src=twsrc%5Etfw">April 14, 2012</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-![트위터 캡처 이미지]( /resource/wiki/ronald-wayne/102785090-bdbdcd00-43e0-11eb-924f-15f93cb85d34.png )
+![트위터 검색 결과를 캡처한 이미지]( ./102785090-bdbdcd00-43e0-11eb-924f-15f93cb85d34.png )
 
 이 트윗에는 애플 10%가 얼마인지 설명하는 말은 없는데, 그 다음부터 등장하기 시작한다.
 
 아무튼 2012년 4월 16일에 애플 주식 10% 가 580억 달러라고 말하고 있으므로, 2012년 4월 중 애플 시가총액이 5,800억 달러였는지 살펴보자.
 
-![애플 시가 총액 변화 그래프][market-capitalization-apple-2012]
+![애플 시가 총액 변화 그래프]( ./102785264-08d7e000-43e1-11eb-9546-4b1ff95bc530.png )
 
 그래프를 확대해가며 잘 살펴보면 2012년 4월 2일 무렵 애플 시가 총액이 559B ~ 593B 였다는 사실을 알 수 있다.
 
@@ -81,8 +81,6 @@ FOR $800. NOW IT'S WORTH $58,065,210,000
 
 [harry-rosehill]: https://londonist.com/london/transport/the-ultimate-tube-service-information-announcement-boards
 [bored-panda]: https://www.boredpanda.com/all-on-the-board-messages-underground-london/
-[white-board]: /resource/wiki/ronald-wayne/102780991-44bb7700-43da-11eb-9fd8-be8e6dd5c24d.png 
 [google-result]: https://www.google.co.kr/search?hl=ko&biw=1920&bih=920&tbs=sbi%3AAMhZZitctvFbA990OMegaLWAyaONeQiEIIVZhkAW6uSk_1rfaexitDRYp9_1iqdXgdZ3EAojSkkW4gEudtEDSLwwlPPoObOe03bgp5SOiRuXorrqwQupuntcBgopdpK_15kMl0S8h0qItrPJ7iMWiSOB9Xfcz7hrbXrhBZZTzhBS7nlMdduUyZJ4f3UTvgEd_1UnKb7wDfjOP7NXkvrDwMTqmMWlo8rhar8pfRhjv7kinKmK3cqzzKRlD4X74imZodpO4FgtrcHJas-iaoZkgU3jRuDycGFzE7Ls5-g0qq0y8Ax6WVJMR9WZT7kj6wEgmegiAFm4KImIdsk_1%2Ccdr%3A1%2Ccd_min%3A6%2F1%2F2014%2Ccd_max%3A12%2F31%2F2015&sxsrf=ALeKk00GrC_QfrxDxJ8SEgnxuyWcHlmPxA%3A1608556563607&ei=E6DgX4jZJMPZhwPut5yACQ&q=london+underground+notice+board+ronald+wayne&oq=london+underground+notice+board+ronald+wayne&gs_lcp=CgZwc3ktYWIQAzoGCCMQJxATOgQIABAeOgUIIRCgAToECCEQFVCgClj3HGCKI2gAcAB4AIABvAKIAfoYkgEHMC44LjMuM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjIrsyUlN_tAhXD7GEKHe4bB5AQ4dUDCA0&uact=5
-[market-capitalization-apple-2012]: /resource/wiki/ronald-wayne/102785264-08d7e000-43e1-11eb-9546-4b1ff95bc530.png 
 [twitter-result]: https://twitter.com/search?q=If%20you%20think%20you%27re%20having%20a%20bad%20day%20ronald%20wayne&src=typed_query&f=live
 

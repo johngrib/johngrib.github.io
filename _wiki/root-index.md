@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-05 17:08:23 +0900
+updated : 2021-10-06 20:58:40 +0900
 regenerate: true
 ---
 
@@ -78,6 +78,7 @@ regenerate: true
 ### [[people]]
 
 * [[/people/gerald-weinberg]]
+* [[/people/ronald-wayne]]
 * [[Bill-Atkinson-productivity]]
 * [[Bill-Joy-and-10000-hours-rule]]
 * [[Donald-Ervin-Knuth]]
@@ -87,7 +88,6 @@ regenerate: true
 * [[brian-w-kernighan]]
 * [[claude-elwood-shannon]]
 * [[jeff-bezos]]
-* [[ronald-wayne]]
 * [[the-beginning-of-linux]]
 
 ## [[how-to]]
