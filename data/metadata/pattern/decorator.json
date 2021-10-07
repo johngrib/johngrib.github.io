@@ -4,6 +4,6 @@
  "summary": "객체에 동적으로 새로운 책임을 추가한다",
  "parent": "pattern",
  "url": "/wiki/pattern/decorator",
- "updated": "2021-10-03 22:59:36 +0900",
+ "updated": "2021-10-07 22:23:45 +0900",
  "children": []
 }
