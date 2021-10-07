@@ -3,12 +3,13 @@ layout  : wiki
 title   : 실험하며 공부하는 GIT
 summary : 아직 작성중인 글입니다
 date    : 2020-04-19 22:27:20 +0900
-updated : 2021-10-02 10:55:26 +0900
+updated : 2021-10-07 21:37:43 +0900
 tag     : 
 toc     : true
 public  : true
 parent  : [[git]]
 latex   : false
+issue-number: 120
 ---
 * TOC
 {:toc}
