@@ -1,3 +1,4 @@
 [
+ "pattern/composite",
  "pattern/state"
 ]

@@ -3,8 +3,8 @@ layout  : wiki
 title   : 컴포짓 패턴 (Composite Pattern)
 summary : 개별 객체와 복합 객체를 모두 동일하게 다룰 수 있도록 한다.
 date    : 2021-10-05 17:08:26 +0900
-updated : 2021-10-10 00:23:20 +0900
-tag     : 
+updated : 2021-10-10 00:45:49 +0900
+tag     : GoF-design-pattern
 toc     : true
 public  : true
 parent  : [[/pattern]]
