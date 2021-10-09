@@ -3,7 +3,7 @@ layout  : wiki
 title   : 커맨드 패턴 (Command Pattern)
 summary : 요구 사항을 객체로 캡슐화한다
 date    : 2019-10-24 16:32:27 +0900
-updated : 2021-10-10 01:01:39 +0900
+updated : 2021-10-10 01:14:51 +0900
 tag     : GoF-design-pattern refactoring
 toc     : true
 public  : true
@@ -88,7 +88,7 @@ Command 패턴을 구현하려면, 일단 각 요청을 처리하는 로직을 `
 
 구조는 다음과 같다.[^structure]
 
-![커맨드 패턴의 구조를 표현한 그림]( ./structure.gif )
+![커맨드 패턴의 구조를 표현한 그림]( ./command.svg )
 
 이 패턴의 핵심은 Command 인터페이스다.
 
