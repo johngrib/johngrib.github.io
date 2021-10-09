@@ -3,8 +3,8 @@ layout  : wiki
 title   : 커맨드 패턴 (Command Pattern)
 summary : 요구 사항을 객체로 캡슐화한다
 date    : 2019-10-24 16:32:27 +0900
-updated : 2021-10-03 10:43:11 +0900
-tag     : 
+updated : 2021-10-10 00:51:57 +0900
+tag     : GoF-design-pattern
 toc     : true
 public  : true
 parent  : [[pattern]]
@@ -21,6 +21,8 @@ latex   : false
 
 ## 의도
 
+### From: GoF의 디자인 패턴
+
 GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 
 >
@@ -32,7 +34,9 @@ queue or log requests, and support undoable operations.
 이를 통해 요청이 서로 다른 사용자를 매개변수로 만들고,
 요청을 대기시키거나 로깅하며, 되돌릴 수 있는 연산을 지원합니다.
 
-번역이 좀 어려운데, "헤드 퍼스트 디자인 패턴"에서는 똑같은 말을 좀 더 이해하기 쉽게 번역해 두었다.[^head-define]
+### From: 헤드 퍼스트 디자인 패턴
+
+GoF 책의 번역이 좀 어려운데, "헤드 퍼스트 디자인 패턴"에서는 똑같은 말을 좀 더 이해하기 쉽게 번역해 두었다.[^head-define]
 
 >
 커맨드 패턴 - 요구 사항을 객체로 캡슐화할 수 있으며,
@@ -49,11 +53,11 @@ queue or log requests, and support undoable operations.
 그 리시버에서 실제로 어떤 일을 하는지 알 수 없습니다.
 그냥 execute() 메소드를 호출하면 요구 사항이 처리된다는 것만 알 수 있을 뿐이죠.
 
+## 구조
+
 구조는 다음과 같다.[^structure]
 
 ![커맨드 패턴의 구조를 표현한 그림]( ./structure.gif )
-
-## 요약
 
 이 패턴의 핵심은 Command 인터페이스다.
 

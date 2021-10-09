@@ -1,4 +1,5 @@
 [
+ "pattern/command",
  "pattern/composite",
  "pattern/state"
 ]
