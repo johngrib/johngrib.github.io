@@ -18,6 +18,7 @@
   "pattern/observer",
   "pattern/quotes",
   "pattern/repository",
+  "pattern/state",
   "pattern/static-factory-method",
   "pattern/strangler",
   "pattern/strategy",

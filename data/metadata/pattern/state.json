@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "스테이트 패턴 (State Pattern)",
+ "summary": "객체의 내부 상태에 따라 행동을 변경할 수 있다.",
+ "parent": "pattern",
+ "url": "/wiki/pattern/state",
+ "updated": "2021-10-09 18:10:08 +0900",
+ "children": []
+}

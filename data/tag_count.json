@@ -340,6 +340,10 @@
   "size": 3
  },
  {
+  "name": "GoF-design-pattern",
+  "size": 1
+ },
+ {
   "name": "golang",
   "size": 17
  },
@@ -658,6 +662,10 @@
  {
   "name": "random",
   "size": 2
+ },
+ {
+  "name": "refactoring",
+  "size": 1
  },
  {
   "name": "reflect",
