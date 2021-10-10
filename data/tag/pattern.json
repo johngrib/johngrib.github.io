@@ -11,6 +11,5 @@
  "pattern/observer",
  "pattern/static-factory-method",
  "pattern/strangler",
- "pattern/strategy",
- "pattern/template-method"
+ "pattern/strategy"
 ]

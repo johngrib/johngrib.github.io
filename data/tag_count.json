@@ -341,7 +341,7 @@
  },
  {
   "name": "GoF-design-pattern",
-  "size": 3
+  "size": 4
  },
  {
   "name": "golang",
@@ -613,7 +613,7 @@
  },
  {
   "name": "pattern",
-  "size": 14
+  "size": 13
  },
  {
   "name": "pentium",
@@ -665,7 +665,7 @@
  },
  {
   "name": "refactoring",
-  "size": 2
+  "size": 3
  },
  {
   "name": "reflect",
