@@ -8,7 +8,6 @@
  "pattern/decorator",
  "pattern/factory-method",
  "pattern/null-object",
- "pattern/observer",
  "pattern/static-factory-method",
  "pattern/strangler",
  "pattern/strategy"

@@ -4,6 +4,6 @@
  "summary": "상태 변화를 감시자에게 통지한다",
  "parent": "pattern",
  "url": "/wiki/pattern/observer",
- "updated": "2021-10-10 10:21:32 +0900",
+ "updated": "2021-10-10 10:24:41 +0900",
  "children": []
 }

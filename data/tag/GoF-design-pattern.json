@@ -1,6 +1,7 @@
 [
  "pattern/command",
  "pattern/composite",
+ "pattern/observer",
  "pattern/state",
  "pattern/template-method"
 ]

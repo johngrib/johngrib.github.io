@@ -3,8 +3,8 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2021-10-10 10:21:32 +0900
-tag     : pattern
+updated : 2021-10-10 10:24:41 +0900
+tag     : GoF-design-pattern
 toc     : true
 public  : true
 parent  : [[/pattern]]
