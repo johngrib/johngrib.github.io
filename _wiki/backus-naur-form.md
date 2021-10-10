@@ -3,7 +3,7 @@ layout  : wiki
 title   : 배커스-나우르 표기법 (Backus-Naur form)
 summary : 
 date    : 2021-09-23 13:55:43 +0900
-updated : 2021-10-10 18:21:38 +0900
+updated : 2021-10-10 18:26:29 +0900
 tag     : 
 toc     : true
 public  : true
@@ -86,7 +86,7 @@ repetition ::= expression '*'
 literal ::= 'a' | 'b' | 'c' | ... { 'a' | 'b' | 'c' | ... }*
 ```
 
-### 사례: Alexander Stepanov의 C++ 서브셋 정의
+### 사례: C++ 서브셋 정의
 
 여기에서 소개하는 C++ 서브셋 정의는 Alexander Stepanov의 Elements of Programming에 부록으로 수록된 것으로, Bjarne Stroustrup이 작성한 것이다.[^alex-233]
 [^alex-intro]
