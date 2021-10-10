@@ -3,7 +3,7 @@ layout  : wiki
 title   : 배커스-나우르 표기법 (Backus-Naur form)
 summary : 
 date    : 2021-09-23 13:55:43 +0900
-updated : 2021-10-10 18:07:39 +0900
+updated : 2021-10-10 18:21:38 +0900
 tag     : 
 toc     : true
 public  : true
@@ -88,7 +88,8 @@ literal ::= 'a' | 'b' | 'c' | ... { 'a' | 'b' | 'c' | ... }*
 
 ### 사례: Alexander Stepanov의 C++ 서브셋 정의
 
-여기에서 소개하는 C++ 서브셋 정의는 Alexander Stepanov가 Elements of Programming의 부록으로 수록한 것이다.[^alex-233]
+여기에서 소개하는 C++ 서브셋 정의는 Alexander Stepanov의 Elements of Programming에 부록으로 수록된 것으로, Bjarne Stroustrup이 작성한 것이다.[^alex-233]
+[^alex-intro]
 그런데 국내에 번역 출간된 [Elements of Programming 프로그래밍의 이해]가 절판되었다고 하니 부록 전체를 인용한다.[^out-of-print-2018]
 몇몇 표현은 내가 수정하였다.
 
@@ -346,3 +347,4 @@ template name이 우선 이용된 경우 템플릿 인자로 대체되는 템플
 [^epsilon]: `ϵ`는 `\epsilon` 이다.
 [^out-of-print-2018]: 알라딘 인터넷 서점에 의하면 [2018년 10월 22일에 절판이 확인되었다]( https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=22416971 ).
 [^alex-239-compound]: 번역서에서는 "혼합"이라 번역되어 있었으나, "compound"로 옮겼다.
+[^alex-intro]: 프로그래밍의 이해. 서문. xii쪽.
