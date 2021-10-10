@@ -3,7 +3,7 @@ layout  : wiki
 title   : 배커스-나우르 표기법 (Backus-Naur form)
 summary : 
 date    : 2021-09-23 13:55:43 +0900
-updated : 2021-09-23 14:09:47 +0900
+updated : 2021-10-10 16:04:51 +0900
 tag     : 
 toc     : true
 public  : true
@@ -41,7 +41,8 @@ BNF는 언어를 정의하는 형식적인 방법이다. 여기서 BNF를 자세
 >
 -- 한 권으로 읽는 컴퓨터 구조와 프로그래밍. 8장. 326쪽.
 
-## 사례: RFC 2141 - URN Syntax
+## 사례
+### RFC 2141 - URN Syntax
 
 짧은 문서인 [RFC 2141]( https://www.ietf.org/rfc/rfc2141.txt )를 읽어보면 BNF를 사용해 URN의 신택스를 표기하고 있다.
 
@@ -68,9 +69,21 @@ BNF는 언어를 정의하는 형식적인 방법이다. 여기서 BNF를 자세
                   "8" | "9"
 ```
 
+### From: GoF의 디자인패턴
+
+[GoF의 디자인 패턴] 인터프리터 챕터에서, 다음 예제가 정규 표현식을 정의하는 문법이라고 가정하며 설명한다.
+
+```bnf
+expression ::= literal | alternation | sequence | repetition | '(' expression ')'
+alternation ::= expression '|' expression
+sequence ::= expression '&' expression
+repetition ::= expression '*'
+literal ::= 'a' | 'b' | 'c' | ... { 'a' | 'b' | 'c' | ... }*
+```
 
 
 ## 참고문헌
 
+- GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
 - 한 권으로 읽는 컴퓨터 구조와 프로그래밍 / 조너선 스타인하트 저/오현석 역 / 책만 / 2021년 04월 08일 초판 1쇄 / 원서 : The Secret Life of Programs: Understand Computers -- Craft Better Code
 
