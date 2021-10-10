@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2021-10-03 22:26:15 +0900
+updated : 2021-10-10 10:21:32 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -78,64 +78,6 @@ public interface Subject {
 * attach: Subject에 Observer를 구독자로 등록한다.
 * detach: Subject에 등록한 Observer의 구독을 해지한다.
 * notify: Subject에서 모든 Observer에 정보를 전달한다.
-
-### 예제
-
-다음은 내가 작성한 코드이다. 옵저버 패턴의 기본 구조를 Java 코드로 표현해 보았다.
-GoF의 코드와는 차이점이 좀 있지만 핵심 아이디어를 이해하기에는 충분하다고 생각한다.
-
-```java
-interface Observer {
-    public void update(Subject s);
-}
-
-class ObserverImpl implements Observer {
-    private Data data1;
-    private Data data2;
-
-    // update 함수에 주목
-    public void update(Subject s) {
-        this.data1 = s.getData1();
-        this.data2 = s.getData2();
-    }
-}
-```
-
-* GoF 예제와의 차이점
-    * GoF 예제에서는 Observer의 소멸자가 호출될 때 `detach`가 호출되어, 소멸되는 옵저버가 알아서 `detach` 된다.
-    * Java에서도 소멸자를 사용할 수는 있지만 사용이 권장되지 않으므로[^finalize] 생략했다.
-    * `update`에 주어지는 `Subject`의 레퍼런스 검사를 생략하였다.
-
-```java
-interface Subject {
-    public void attach(Observer o);
-    public void detach(Observer o);
-    public void notify();
-}
-
-class SubjectImpl implements Subject {
-    private List<Observer> observers = new ArrayList<>();
-    private Data data1;
-    private Data data2;
-
-    public void attach(Observer o) {
-        observers.add(o);
-    }
-    public void detach(Observer o) {
-        observers.remove(o);
-    }
-    public void notify() {
-        // 모든 옵저버를 순회하며 업데이트를 해준다.
-        for (Observer o : observers) {
-            o.update(this);
-        }
-    }
-    public void setData1(Data d) {
-        this.data1 = d;
-    }
-    ...
-}
-```
 
 ## 구현할 때 고려할 점들
 
@@ -248,9 +190,87 @@ protected synchronized void clearChanged() { changed = false; }
 public synchronized boolean hasChanged() { return changed; }
 ```
 
+### Observer 패턴의 문제점
 
+>
+Observer 패턴을 구현할 때 많은 프로그래머들이 자주 빠지는 함정은 항상 책의 클래스 다이어그램과 동일한 구조로 구현하려 한다는 것이다.
+>
+Observer 패턴을 구현할 때 흔히 생기는 문제점이 두 가지 있다. 그것은 통보 체인과 메모리 누수다.
+통보 체인이란, 한 관찰자가 통보를 받았을 때 자신이 다시 그 주체가 되어 또 다른 관찰자에게 통보를 하고,
+그 관찰자는 또 다른 관찰자에게 통보하는 식으로 연속적인 통보가 발생하는 것을 말한다.
+이런 식의 통보 체인이 불가피한 상황에서 Observer 패턴을 적용하면, 설계가 복잡해지고 디버깅도 어려워진다.
+이럴 때는 Mediator 패턴을 도입하면 도움이 된다.
+메모리 누수는 관찰자 객체가 제때에 쓰레기 수집<sup>garbage collection</sup> 되지 않는 현상으로,
+통보 주체가 관찰자 객체의 참조를 갖고 있기 때문에 발생한다.
+통보 주체가 이것을 제때 삭제해준다면, 메모리 누수를 피할 수 있다.
+>
+Observer는 자주 사용되는 패턴이다.
+구현하기도 어렵지 않기 때문에, 실제로 필요하지 않을 때에도 이 패턴을 적용하고 싶은 유혹에 빠지기도 한다.
+그 유혹을 견뎌내기 바란다.
+처음에 통보 기능을 하드 코딩으로 구현했더라도, 나중에 일반화가 필요할 때 언제라도 리팩터링을 통해 Observer 패턴을 구현할 수 있기 때문이다.
+[^joshua-321]
 
-## 헤드 퍼스트 디자인 패턴의 옵저버 패턴 예제
+## 예제
+
+### 내가 작성한 예제
+
+다음은 내가 작성한 코드이다. 옵저버 패턴의 기본 구조를 Java 코드로 표현해 보았다.
+GoF의 코드와는 차이점이 좀 있지만 핵심 아이디어를 이해하기에는 충분하다고 생각한다.
+
+```java
+interface Observer {
+    public void update(Subject s);
+}
+
+class ObserverImpl implements Observer {
+    private Data data1;
+    private Data data2;
+
+    // update 함수에 주목
+    public void update(Subject s) {
+        this.data1 = s.getData1();
+        this.data2 = s.getData2();
+    }
+}
+```
+
+* GoF 예제와의 차이점
+    * GoF 예제에서는 Observer의 소멸자가 호출될 때 `detach`가 호출되어, 소멸되는 옵저버가 알아서 `detach` 된다.
+    * Java에서도 소멸자를 사용할 수는 있지만 사용이 권장되지 않으므로[^finalize] 생략했다.
+    * `update`에 주어지는 `Subject`의 레퍼런스 검사를 생략하였다.
+
+```java
+interface Subject {
+    public void attach(Observer o);
+    public void detach(Observer o);
+    public void notify();
+}
+
+class SubjectImpl implements Subject {
+    private List<Observer> observers = new ArrayList<>();
+    private Data data1;
+    private Data data2;
+
+    public void attach(Observer o) {
+        observers.add(o);
+    }
+    public void detach(Observer o) {
+        observers.remove(o);
+    }
+    public void notify() {
+        // 모든 옵저버를 순회하며 업데이트를 해준다.
+        for (Observer o : observers) {
+            o.update(this);
+        }
+    }
+    public void setData1(Data d) {
+        this.data1 = d;
+    }
+    ...
+}
+```
+
+### 헤드 퍼스트 디자인 패턴의 예제
 
 다음 코드는 헤드 퍼스트 디자인 패턴에서 소개한 옵저버 패턴의 코드를 약간 수정한 것이다.[^head]
 
@@ -395,7 +415,7 @@ public static void main(String[] args) {
 장비 ID: 3, 현재 기온: 30.0도, 습도: 64.0%
 ```
 
-## Java Magazine 2016 November/December에 실린 예제
+### Java Magazine 2016 November/December에 실린 예제
 
 다음은 [Java Magazine 2016 Nov/Dec의 Implementing Design Patterns with Lambdas][magazine]에 실린 코드를 약간 수정한 것이다. 이 예제에서는 옵저버 구현 클래스를 람다로 대체하는 방법을 엿볼 수 있다.
 
@@ -500,7 +520,7 @@ f.notifyObservers( "money!");
 나머지 Guardian과 LeMonde도 똑같은 방법으로 대체하고 클래스를 삭제할 수 있다.
 
 
-## Java에 내장된 Observer, Observable 인터페이스
+### Java에 내장된 Observer, Observable 인터페이스
 
 java.util 에는 Observer 인터페이스와 Observable 클래스가 들어있다.
 
@@ -564,7 +584,7 @@ public class Observable {
 }
 ```
 
-### Java 내장 Observable, Observer는 왜 deprecated 되었을까?
+#### Java 내장 Observable, Observer는 왜 deprecated 되었을까?
 
 Observer와 Observable은 Java SE 9 버전부터 Deprecated 되었다. 그 이유는 무엇일까?
 
@@ -612,8 +632,9 @@ This class and the [Observer][observer] interface have been deprecated. The even
 * 도서
     * GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
     * Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
-    * 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
     * Java 언어로 배우는 디자인 패턴 입문 [개정판] / Yuki Hiroshi 저 / 이규흥 역 / 영진닷컴 / 1판 9쇄 2017년 3월 5일
+    * 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+    * 패턴을 활용한 리팩터링 / 조슈아 케리에브스키 저 / 윤성준, 조상민 공역 / 인사이트(insight) / 신판 1쇄 발행 2011년 02월 09일 / 원제 : REFACTORING TO PATTERNS
 
 ## 주석
 
@@ -624,6 +645,7 @@ This class and the [Observer][observer] interface have been deprecated. The even
 [^finalize]: 조슈아 블로흐는 "이펙티브 자바"의 8 챕터에서 다음과 같이 말한다. "finalizer는 예측할 수 없고, 상황에 따라 위험할 수 있어 일반적으로 불필요하다.", "cleaner는 finalizer보다는 덜 위험하지만, 여전히 예측할 수 없고, 느리고 일반적으로 불필요하다."
 [^minus-observable]: Head First Design Patterns. 109쪽.
 [^update-flag]: Java 언어로 배우는 디자인 패턴 입문. Chapter 17. 309쪽.
+[^joshua-321]: 패턴을 활용한 리팩터링. 8장. 321쪽.
 
 [observable]: https://docs.oracle.com/javase/9/docs/api/java/util/Observable.html
 [observer]: https://docs.oracle.com/javase/9/docs/api/java/util/Observer.html
