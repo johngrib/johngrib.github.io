@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "인터프리터 패턴 (Interpreter Pattern)",
+ "summary": "언어를 위한 인터프리터를 구현한다.",
+ "parent": "pattern",
+ "url": "/wiki/pattern/interpreter",
+ "updated": "2021-10-11 00:08:56 +0900",
+ "children": []
+}

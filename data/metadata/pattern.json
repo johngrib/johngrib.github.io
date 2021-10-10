@@ -14,6 +14,7 @@
   "pattern/controller",
   "pattern/decorator",
   "pattern/factory-method",
+  "pattern/interpreter",
   "pattern/null-object",
   "pattern/observer",
   "pattern/quotes",

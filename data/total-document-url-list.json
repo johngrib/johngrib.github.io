@@ -418,6 +418,7 @@
  "/wiki/pattern/controller",
  "/wiki/pattern/decorator",
  "/wiki/pattern/factory-method",
+ "/wiki/pattern/interpreter",
  "/wiki/pattern/null-object",
  "/wiki/pattern/observer",
  "/wiki/pattern/quotes",
