@@ -3,7 +3,7 @@ layout  : wiki
 title   : 어댑터 패턴 (Adapter Pattern)
 summary : 서로 일치하지 않는 인터페이스를 가진 클래스를 함께 동작시킨다
 date    : 2019-10-29 14:53:41 +0900
-updated : 2021-10-10 10:28:44 +0900
+updated : 2021-10-10 14:13:55 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -98,7 +98,8 @@ class Adapter implements Target {
 Target target = new Adapter(adaptee)
 ```
 
-## 예제: 헤드 퍼스트 디자인 패턴
+## 예제
+### From: 헤드 퍼스트 디자인 패턴
 
 다음은 헤드 퍼스트 디자인 패턴의 예제이다.[^head-example]
 
@@ -168,6 +169,52 @@ class TurkeyAdapter implements Duck {
 이 어댑터를 다이어그램으로 표현하자면 다음과 같다. 어댑터 `TurkeyAdapter`를 통해 `Turkey`를 `Duck`처럼 사용할 수 있게 된 것이다.
 
 ![]( ./adapter-duck.svg )
+
+### Java의 Collections.enumeration
+
+>
+Java의 첫 버전(JDK 1.0)에는 `Enumeration`이라는 인터페이스가 있어서 `Vector`나 `Hashtable`과 같은 컬렉션을 순회하는 데 사용되었다.
+그런데 Java가 점점 더 발전하면서 JDK에 더 나은 컬렉션 클래스들이 추가되었고 `Iterator` 인터페이스가 그 역할을 대신하게 되었다.
+그러나 `Enumeration` 인터페이스를 사용해 작성된 코드와도 상호 동작이 가능해야 하므로,
+JDK에는 다음과 같이 Java의 익명 내부 클래스 기능을 이용해 `Iterator`를 어댑팅하는 생성 메서드를 제공한다.
+[^joshua-359]
+
+다음은 Java 11의 `Collections::enumeration` 이다.
+책에서 제공된 코드는 제네릭이 도입되기 이전의 형태를 띄고 있으므로, Java 11의 코드를 인용하였다.
+
+```java
+/**
+ * Returns an enumeration over the specified collection.  This provides
+ * interoperability with legacy APIs that require an enumeration
+ * as input.
+ *
+ * <p>The iterator returned from a call to {@link Enumeration#asIterator()}
+ * does not support removal of elements from the specified collection.  This
+ * is necessary to avoid unintentionally increasing the capabilities of the
+ * returned enumeration.
+ *
+ * @param  <T> the class of the objects in the collection
+ * @param c the collection for which an enumeration is to be returned.
+ * @return an enumeration over the specified collection.
+ * @see Enumeration
+ */
+public static <T> Enumeration<T> enumeration(final Collection<T> c) {
+    return new Enumeration<T>() {
+        private final Iterator<T> i = c.iterator();
+
+        public boolean hasMoreElements() {
+            return i.hasNext();
+        }
+
+        public T nextElement() {
+            return i.next();
+        }
+    };
+}
+```
+
+- javadoc을 읽어보면 enumeration 입력이 필요한 경우의 legacy API를 언급하고 있다.
+- 메소드 바디를 읽어보면 `Enumeration`의 동작인 `hasMoreElements`와 `nextElement`를 제공하지만 해당 메소드들의 내부는 `Iterator`의 메소드들로 어댑팅 되어 있음을 확인할 수 있다.
 
 ## 상속을 사용하는 기법
 
@@ -264,4 +311,4 @@ class ObjectIterator extends ObjectInputStream implements Iterator {
 [^holub-456]: 실전 코드로 배우는 실용주의 디자인 패턴. 456쪽.
 [^holub-457]: 실전 코드로 배우는 실용주의 디자인 패턴. 457쪽의 예제에 내가 작성한 주석을 추가하였다.
 [^joshua-334]: 패턴을 활용한 리팩터링. 8장. 334쪽.
-
+[^joshua-359]: 패턴을 활용한 리팩터링. 8장. 359쪽.
