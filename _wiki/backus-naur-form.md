@@ -3,7 +3,7 @@ layout  : wiki
 title   : 배커스-나우르 표기법 (Backus-Naur form)
 summary : 
 date    : 2021-09-23 13:55:43 +0900
-updated : 2021-10-10 16:04:51 +0900
+updated : 2021-10-10 16:10:09 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+- BNF notation 이라고도 부른다.
 
 ## From: 한 권으로 읽는 컴퓨터 구조와 프로그래밍
 
