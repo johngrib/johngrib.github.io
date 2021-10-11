@@ -1,8 +1,11 @@
 [
+ "pattern/abstract-factory",
  "pattern/command",
  "pattern/composite",
+ "pattern/decorator",
  "pattern/interpreter",
  "pattern/observer",
  "pattern/state",
+ "pattern/strategy",
  "pattern/template-method"
 ]

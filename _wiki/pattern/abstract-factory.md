@@ -3,8 +3,8 @@ layout  : wiki
 title   : 추상 팩토리 패턴 (Abstract Factory Pattern)
 summary : 서로 관련성이 있는 다양한 객체를 생성하기 위한 인터페이스를 제공한다
 date    : 2019-10-16 23:44:57 +0900
-updated : 2021-09-22 15:55:13 +0900
-tag     : pattern
+updated : 2021-10-11 13:56:12 +0900
+tag     : GoF-design-pattern
 toc     : true
 public  : true
 parent  : [[/pattern]]

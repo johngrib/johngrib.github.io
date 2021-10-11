@@ -2,13 +2,10 @@
  "defensive-copy",
  "GoF-Design-Pattern",
  "pattern",
- "pattern/abstract-factory",
  "pattern/adapter",
  "pattern/builder",
- "pattern/decorator",
  "pattern/factory-method",
  "pattern/null-object",
  "pattern/static-factory-method",
- "pattern/strangler",
- "pattern/strategy"
+ "pattern/strangler"
 ]
