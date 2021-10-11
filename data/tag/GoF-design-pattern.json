@@ -7,5 +7,6 @@
  "pattern/observer",
  "pattern/state",
  "pattern/strategy",
- "pattern/template-method"
+ "pattern/template-method",
+ "pattern/visitor"
 ]

@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-11 15:20:52 +0900
+updated : 2021-10-11 16:04:17 +0900
 regenerate: true
 ---
 
@@ -164,6 +164,7 @@ regenerate: true
 * [[/pattern/strangler]]
 * [[/pattern/strategy]]
 * [[/pattern/template-method]]
+* [[/pattern/visitor]]
 
 ## [[problem]]
 * [[two-eggs-100-floor]]
