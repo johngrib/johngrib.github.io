@@ -3,7 +3,7 @@ layout  : wiki
 title   : 인터프리터 패턴 (Interpreter Pattern)
 summary : 언어를 위한 인터프리터를 구현한다.
 date    : 2021-10-10 18:35:08 +0900
-updated : 2021-10-11 00:08:56 +0900
+updated : 2021-10-11 09:47:59 +0900
 tag     : GoF-design-pattern
 toc     : true
 public  : true
@@ -110,6 +110,24 @@ public class ANDLogic implements Logic {
   @Override
   public boolean evaluate() {
     return left.evaluate() && right.evaluate();
+  }
+}
+```
+
+- `ORLogic`은 OR 연산을 정의한다.
+
+```java
+public class ORLogic implements Logic {
+  Logic left, right;
+
+  public ORLogic(Logic left, Logic right) {
+    this.left = left;
+    this.right = right;
+  }
+
+  @Override
+  public boolean evaluate() {
+    return left.evaluate() || right.evaluate();
   }
 }
 ```
