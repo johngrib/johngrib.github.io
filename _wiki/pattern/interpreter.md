@@ -3,7 +3,7 @@ layout  : wiki
 title   : 인터프리터 패턴 (Interpreter Pattern)
 summary : 언어를 위한 인터프리터를 구현한다.
 date    : 2021-10-10 18:35:08 +0900
-updated : 2021-10-11 09:47:59 +0900
+updated : 2021-10-11 11:39:07 +0900
 tag     : GoF-design-pattern
 toc     : true
 public  : true
@@ -69,7 +69,8 @@ GoF의 디자인 패턴에서는 정규 표현식을 위한 인터프리터를 �
 다음은 [실용주의 디자인 패턴]의 예제를 참고해 일부 수정한 것으로,
 boolean 표현식을 평가할 수 있는 간단한 언어를 인터프리터 패턴을 사용해 구현한 것이다.
 
-- `Logic`은 변수명과 값을 보관하는 `Values`를 제공하고, `evaluate` 메소드를 정의한다.
+- `Logic`은 `AbstractExpression`의 역할을 한다.
+- `Values`는 변수명과 값을 보관하는 `Context` 역할을 한다. 즉 전역 정보를 관리한다.
 
 ```java
 public interface Logic {
@@ -96,7 +97,7 @@ public interface Logic {
 }
 ```
 
-- `ANDLogic`은 AND 연산을 정의한다.
+- `ANDLogic`은 `NonterminalExpression`이며, AND 연산을 정의한다.
 
 ```java
 public class ANDLogic implements Logic {
@@ -114,7 +115,7 @@ public class ANDLogic implements Logic {
 }
 ```
 
-- `ORLogic`은 OR 연산을 정의한다.
+- `ORLogic`은 `NonterminalExpression`이며, OR 연산을 정의한다.
 
 ```java
 public class ORLogic implements Logic {
@@ -132,7 +133,7 @@ public class ORLogic implements Logic {
 }
 ```
 
-- `NOTLogic`은 NOT 연산을 정의한다.
+- `NOTLogic`은 `NonterminalExpression`이며, NOT 연산을 정의한다.
 
 ```java
 public class NOTLogic implements Logic {
@@ -149,7 +150,7 @@ public class NOTLogic implements Logic {
 }
 ```
 
-- `Variable`은 이름과 값을 갖는 변수를 정의한다.
+- `Variable`은 `TerminalExpression`이며, 이름과 값을 갖는 변수를 정의한다.
 
 ```java
 public class Variable implements Logic {
