@@ -7,7 +7,7 @@ updated : 2021-02-28 11:19:29 +0900
 tag     : command bsd mac
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : false
 ---
 * TOC

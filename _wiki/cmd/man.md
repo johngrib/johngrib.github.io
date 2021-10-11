@@ -3,11 +3,11 @@ layout  : wiki
 title   : man 명령어
 summary : 유닉스 메뉴얼 페이지를 찾아보는 명령
 date    : 2020-09-30 09:38:35 +0900
-updated : 2020-09-30 10:25:48 +0900
+updated : 2021-10-11 15:21:15 +0900
 tag     : bash command c
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

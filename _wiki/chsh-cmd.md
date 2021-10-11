@@ -7,7 +7,7 @@ updated : 2020-05-07 08:23:19 +0900
 tag     : bash zsh command
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : false
 ---
 * TOC

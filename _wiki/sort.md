@@ -7,7 +7,7 @@ updated : 2021-10-03 00:48:09 +0900
 tag     : bash sort command
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : false
 issue-number : 171
 ---

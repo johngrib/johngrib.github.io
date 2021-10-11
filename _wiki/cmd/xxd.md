@@ -3,11 +3,11 @@ layout  : wiki
 title   : xxd 명령어
 summary : make a hexdump or do the reverse
 date    : 2021-09-24 21:39:48 +0900
-updated : 2021-09-24 21:52:56 +0900
+updated : 2021-10-11 15:20:32 +0900
 tag     : bash command
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

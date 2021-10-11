@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "diff",
  "summary": "compare files line by line",
- "parent": "command-line",
+ "parent": "cmd",
  "url": "/wiki/diff",
  "updated": "2021-07-21 23:15:32 +0900",
  "children": []

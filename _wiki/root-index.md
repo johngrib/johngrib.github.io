@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-10 18:35:07 +0900
+updated : 2021-10-11 15:20:52 +0900
 regenerate: true
 ---
 
@@ -378,9 +378,10 @@ regenerate: true
 * [[CodeDeploy]]
 * [[Elastic-Load-Balancing]]
 
-### [[command-line]]
+### [[cmd]]
 
-* [[/command-line/xxd]]
+* [[/cmd/xxd]]
+* [[/cmd/man]]
 * [[ag]]
 * [[basename]]
 * [[bash-history]]
@@ -417,7 +418,6 @@ regenerate: true
 * [[lldb-cmd]]
 * [[lsof]]
 * [[make-cmd]]
-* [[man-cmd]]
 * [[mv-cmd]]
 * [[my-bash-cheatsheet]]
 * [[openssl]]

@@ -7,7 +7,7 @@ updated : 2021-09-23 11:59:27 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : false
 ---
 * TOC

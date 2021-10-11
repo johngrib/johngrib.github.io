@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "openssl 명령어",
  "summary": "cryptography toolkit",
- "parent": "command-line",
+ "parent": "cmd",
  "url": "/wiki/openssl",
  "updated": "2019-01-19 12:58:50 +0900",
  "children": []

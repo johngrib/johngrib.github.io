@@ -7,7 +7,7 @@ updated : 2020-07-21 22:10:51 +0900
 tag     : java command
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2019-12-15 18:22:57 +0900
 tag     : command bash
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : false
 ---
 * TOC

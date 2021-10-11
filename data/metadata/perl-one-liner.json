@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "Perl 한 줄 사용",
  "summary": "",
- "parent": "command-line",
+ "parent": "cmd",
  "url": "/wiki/perl-one-liner",
  "updated": "2020-07-18 21:14:38 +0900",
  "children": []

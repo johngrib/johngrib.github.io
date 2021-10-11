@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "less 명령어",
  "summary": "less is more",
- "parent": "command-line",
+ "parent": "cmd",
  "url": "/wiki/less-cmd",
  "updated": "2020-04-18 13:47:07 +0900",
  "children": []

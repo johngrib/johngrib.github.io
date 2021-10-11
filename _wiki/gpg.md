@@ -7,7 +7,7 @@ updated : 2021-03-09 22:19:21 +0900
 tag     : bash encryption gnu command
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : false
 ---
 * TOC

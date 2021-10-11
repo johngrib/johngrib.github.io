@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "rans 명령어",
  "summary": "More advanced usage of regular expressions",
- "parent": "command-line",
+ "parent": "cmd",
  "url": "/wiki/rans-cmd",
  "updated": "2021-07-25 17:14:17 +0900",
  "children": []

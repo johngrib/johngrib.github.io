@@ -7,7 +7,7 @@ updated : 2021-06-27 21:02:43 +0900
 tag     : bash command calculator
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : true
 ---
 * TOC

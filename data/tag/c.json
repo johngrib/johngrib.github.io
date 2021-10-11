@@ -1,7 +1,7 @@
 [
  "brian-w-kernighan",
+ "cmd/man",
  "duff-s-device",
  "lldb-cmd",
- "make-cmd",
- "man-cmd"
+ "make-cmd"
 ]

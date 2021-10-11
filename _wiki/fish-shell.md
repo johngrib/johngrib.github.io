@@ -7,7 +7,7 @@ updated : 2018-03-12 23:07:23 +0900
 tag     : fish terminal
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : false
 ---
 * TOC

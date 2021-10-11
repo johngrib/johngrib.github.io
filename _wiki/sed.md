@@ -7,7 +7,7 @@ updated : 2021-06-23 23:18:30 +0900
 tag     : bash command grep ed
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : false
 ---
 * TOC

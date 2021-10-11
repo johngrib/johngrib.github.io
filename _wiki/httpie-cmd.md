@@ -7,7 +7,7 @@ updated : 2021-01-17 13:24:20 +0900
 tag     : command http
 toc     : true
 public  : true
-parent  : [[command-line]]
+parent  : [[cmd]]
 latex   : false
 ---
 * TOC
