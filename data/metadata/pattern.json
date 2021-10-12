@@ -15,6 +15,7 @@
   "pattern/decorator",
   "pattern/factory-method",
   "pattern/interpreter",
+  "pattern/layered-architecture",
   "pattern/null-object",
   "pattern/observer",
   "pattern/quotes",

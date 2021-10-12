@@ -45,7 +45,7 @@
  },
  {
   "name": "architecture",
-  "size": 1
+  "size": 2
  },
  {
   "name": "asciidoc",
@@ -209,7 +209,7 @@
  },
  {
   "name": "ddd",
-  "size": 1
+  "size": 2
  },
  {
   "name": "design",

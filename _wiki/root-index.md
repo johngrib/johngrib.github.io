@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-11 16:04:17 +0900
+updated : 2021-10-12 21:27:39 +0900
 regenerate: true
 ---
 
@@ -155,6 +155,7 @@ regenerate: true
 * [[/pattern/decorator]]
 * [[/pattern/factory-method]]
 * [[/pattern/interpreter]]
+* [[/pattern/layered-architecture]]
 * [[/pattern/null-object]]
 * [[/pattern/observer]]
 * [[/pattern/quotes]]
