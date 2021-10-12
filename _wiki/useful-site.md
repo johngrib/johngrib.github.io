@@ -3,7 +3,7 @@ layout  : category
 title   : 유용한 웹 사이트 모음
 summary : 
 date    : 2018-02-06 07:01:45 +0900
-updated : 2020-02-15 12:12:26 +0900
+updated : 2021-10-12 21:18:43 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,12 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## whichjdk.com
+
+<http://whichjdk.com/ >
+
+JDK 벤더별로 비교를 해 주고, 추천까지 해준다.
 
 ## 수동적 공격성에 대처하는 방법
 
