@@ -3,7 +3,7 @@ layout  : wiki
 title   : 널 오브젝트 패턴 (Null Object Pattern)
 summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
-updated : 2021-10-11 14:19:32 +0900
+updated : 2021-10-14 19:46:44 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -105,6 +105,98 @@ public Cheese[] getCheeses() {
     return cheesesInStock.toArray(EMPTY_CHEESE_ARRAY);
 }
 ```
+
+### Spring Framework의 Pageable
+
+Spring 프레임워크의 `Pageable`의 `unpaged`가 널 객체 패턴을 사용한다.
+
+```java
+package org.springframework.data.domain;
+
+import java.util.Optional;
+
+import org.springframework.util.Assert;
+
+/**
+ * Abstract interface for pagination information.
+ *
+ * @author Oliver Gierke
+ */
+public interface Pageable {
+
+  /**
+   * Returns a {@link Pageable} instance representing no pagination setup.
+   *
+   * @return
+   */
+  static Pageable unpaged() {
+    return Unpaged.INSTANCE;    // <= 여기
+  }
+
+  // 이하 생략
+```
+
+`unpaged()`가 리턴하는 `Unpaged.INSTANCE`의 코드는 아래와 같다.[^unpaged-comment]
+
+코드를 읽어보면 다음을 파악할 수 있다.
+
+- 최대한 아무 일도 하지 않는 방향으로 `Pageable` 인터페이스가 구현되어 있다.
+- 호출하면 곤란한 메소드의 경우 `UnsupportedOperationException`을 던진다.
+
+```java
+package org.springframework.data.domain;
+
+enum Unpaged implements Pageable {
+
+  INSTANCE;
+
+  @Override
+  public boolean isPaged() {
+    return false;
+  }
+
+  @Override
+  public Pageable previousOrFirst() {
+    return this;
+  }
+
+  @Override
+  public Pageable next() {
+    return this;
+  }
+
+  @Override
+  public boolean hasPrevious() {
+    return false;
+  }
+
+  @Override
+  public Sort getSort() {
+    return Sort.unsorted();
+  }
+
+  @Override
+  public int getPageSize() {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public int getPageNumber() {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public long getOffset() {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Pageable first() {
+    return this;
+  }
+}
+```
+
 
 ## 널 객체 패턴에 대한 인용
 
@@ -660,4 +752,4 @@ Bruce Anderson은 Null 객체 패턴에 대해 글을 쓴 바 있는데, 그 글
 [^urma-null-object]: 실전 자바 소프트웨어 개발 / 3.8.4 장.
 [^fowler-312]: 리팩토링. Null 검사를 널 객체에 위임. 312쪽.
 [^joshua-403]: 패턴을 활용한 리팩터링. 9장. 403쪽.
-
+[^unpaged-comment]: JavaDoc 주석은 제외하였다.
