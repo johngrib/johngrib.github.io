@@ -13,6 +13,7 @@
   "pattern/composite",
   "pattern/controller",
   "pattern/decorator",
+  "pattern/entity",
   "pattern/factory-method",
   "pattern/interpreter",
   "pattern/layered-architecture",

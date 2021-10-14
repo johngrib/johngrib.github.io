@@ -1,4 +1,5 @@
 [
+ "pattern/entity",
  "pattern/layered-architecture",
  "pattern/repository"
 ]
