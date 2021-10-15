@@ -3,7 +3,7 @@ layout  : wiki
 title   : 엔티티 (Entity)
 summary : 
 date    : 2021-10-14 23:17:27 +0900
-updated : 2021-10-14 23:35:05 +0900
+updated : 2021-10-15 21:14:39 +0900
 tag     : ddd
 toc     : true
 public  : true
@@ -69,6 +69,49 @@ ENTITY는 생명주기 내내 이어지는 연속성과 애플리케이션 사�
 식별성은 원래 세상에 존재하는 것이 아니며, 필요에 의해 보충된 의미다.
 사실 현실세계의 같은 사물이라도 도메인 모델에서 ENTITY로 표현되거나 표현되지 않을 수 있다.
 [^ddd-94]
+
+## javax.persistence.Entity
+
+다음은 javax의 `@Entity` 애노테이션의 소스코드이다.
+
+```java
+package javax.persistence;
+
+import java.lang.annotation.Target;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Documented;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+/**
+ * Specifies that the class is an entity. This annotation is applied to the
+ * entity class.
+ *
+ * @since 1.0
+ */
+@Documented
+@Target(TYPE)
+@Retention(RUNTIME)
+public @interface Entity {
+
+  /**
+   * (Optional) The entity name. Defaults to the unqualified
+   * name of the entity class. This name is used to refer to the
+   * entity in queries. The name must not be a reserved literal
+   * in the Jakarta Persistence query language.
+   */
+  String name() default "";
+}
+```
+
+클래스 javadoc을 읽어보자.
+
+>
+Specifies that the class is an entity. This annotation is applied to the entity class.
+
+- 해당 클래스가 entity 라고 명시합니다. 이 애노테이션은 entity class 에 적용됩니다.
+
+
 
 ## 참고문헌
 
