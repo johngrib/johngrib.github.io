@@ -26,6 +26,7 @@
   "pattern/strangler",
   "pattern/strategy",
   "pattern/template-method",
+  "pattern/value-object",
   "pattern/visitor"
  ]
 }

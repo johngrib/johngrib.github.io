@@ -1,5 +1,6 @@
 [
  "pattern/entity",
  "pattern/layered-architecture",
- "pattern/repository"
+ "pattern/repository",
+ "pattern/value-object"
 ]
