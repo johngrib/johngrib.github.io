@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Optional
 summary : 작성중인 문서
 date    : 2020-01-08 22:31:47 +0900
-updated : 2021-04-29 23:36:21 +0900
+updated : 2021-10-16 16:38:50 +0900
 tag     : java
 toc     : true
 public  : true
@@ -153,7 +153,7 @@ The rule also checks for Guava's Optional, as it was the inspiration for the JDK
 API를 작게 유지하는 것도 쉽게 사용하게 하는 또 다른 방법이다.
 API가 작게 유지하면 배워야 할 개념과 유지보수 비용이 줄어든다.
 다시 말하지만 표준 자바 API에서도 이 간 단한 원리를 준수하지 않는 예를 쉽게 찾을 수 있다.
-`Optional`은 매개변수로 전달된 객 체를 `Optional` 객체로 래핑해서 리턴하는 정적 팩토리(static factory) 메서드 `of(object)`를 제공한다.
+`Optional`은 매개변수로 전달된 객 체를 `Optional` 객체로 래핑해서 리턴하는 [[/pattern/static-factory-method]]{정적 팩토리(static factory) 메서드} `of(object)`를 제공한다.
 생성자 대신 팩토리 메서드를 사용하는 것은 유연성을 크게 향상할 좋은 방법이다.
 팩토리 메서드로 서브클래스를 리턴하거나 매개변수가 잘못된 경우 `null`을 리턴하기도 한다.
 그런데 안타깝게도 `Optional.of` 메서드는 매개변수로 `null`을 전달하면 `NullPointerException`을 발생한다.
@@ -163,18 +163,21 @@ API가 작게 유지하면 배워야 할 개념과 유지보수 비용이 줄어
 >
 -- 자바 개발자를 위한 97가지 제안. 55장. 마리오 푸스코(Mario Fusco)
 
+## 함께 읽기
 
-## Links
-
-* [Java SE 13 Class Optional &lt;T&gt;][java-13-optional]
-* [Java Optional 바르게 쓰기][homoefficio]
-* [26 Reasons Why Using Optional Correctly Is Not Optional][reasons-26]
-* [Optional Anti-Patterns][optional-anti-patterns]
+- [[/pattern/static-factory-method]]
+- [[/pattern/factory]]
 
 ## 참고문헌
 
-- 모던 자바 인 액션 / 라울-게이브리얼 우르마, 마리오 푸스코, 앨런 마이크로프트 저/우정은 역 / 한빛미디어 / 초판 1쇄 2019년 08월 01일 / 원제: Modern Java in Action
-- 자바 개발자를 위한 97가지 제안 / 케블린 헤니, 트리샤 지 저/장현희 역 / 제이펍 / 2020년 12월 24일 / 원서 : 97 Things Every Java Programmer Should Know
+- 도서
+    - 모던 자바 인 액션 / 라울-게이브리얼 우르마, 마리오 푸스코, 앨런 마이크로프트 저/우정은 역 / 한빛미디어 / 초판 1쇄 2019년 08월 01일 / 원제: Modern Java in Action
+    - 자바 개발자를 위한 97가지 제안 / 케블린 헤니, 트리샤 지 저/장현희 역 / 제이펍 / 2020년 12월 24일 / 원서 : 97 Things Every Java Programmer Should Know
+- 웹 문서
+    - [Java SE 13 Class Optional &lt;T&gt;][java-13-optional]
+    - [Java Optional 바르게 쓰기][homoefficio]
+    - [26 Reasons Why Using Optional Correctly Is Not Optional][reasons-26]
+    - [Optional Anti-Patterns][optional-anti-patterns]
 
 ## 주석
 

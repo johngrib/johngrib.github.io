@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정적 팩토리 메서드(static factory method)
 summary : static 메서드로 객체 생성을 캡슐화한다
 date    : 2018-03-03 11:16:36 +0900
-updated : 2021-10-16 16:35:57 +0900
+updated : 2021-10-16 19:55:04 +0900
 tag     : programming pattern
 toc     : true
 public  : true
@@ -47,7 +47,7 @@ BigInteger answer = BigInteger.valueOf(42L); // BigInteger 42를 리턴한다
 
 > 규칙 1. 생성자 대신 정적 팩터리 메서드를 사용할 수 없는지 생각해 보라.
 
-* 단, [[GoF-Design-Pattern]] 책에 나오는 **팩토리 메서드 패턴과는 다른 패턴이다. 이름만 비슷하다.**
+* 단, [[GoF-Design-Pattern]] 책에 나오는 [[/pattern/factory-method]]{팩토리 메서드 패턴}과는 다른 패턴이다. 이름만 비슷하다.
 * Effective Java 저자 조슈아 블로흐도 [[GoF-Design-Pattern]] 책에 나온 어떤 패턴과도 맞아 떨어지지 않는다며 주의하라고 한다.
 
 Effective Java에서는 다음과 같은 장단점을 설명한다.

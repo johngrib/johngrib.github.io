@@ -3,7 +3,7 @@ layout  : wiki
 title   : IoC, Inversion of Control
 summary : Inversion of Control, Dependency Injection
 date    : 2019-08-30 22:39:18 +0900
-updated : 2021-09-21 22:38:27 +0900
+updated : 2021-10-16 19:54:05 +0900
 tag     : spring oop
 toc     : true
 public  : true
@@ -112,7 +112,7 @@ This chapter covers the Spring Framework implementation of the Inversion of Cont
 
 이 문서에서는 IoC를 매우 심플하게 정의하고 있다.
 
-**객체가 자신과 함께 작동하는 객체를 생성자, 팩토리 메소드의 인자, 프로퍼티로만 받는 프로세스가 IoC다.**
+**객체가 자신과 함께 작동하는 객체를 생성자, [[/pattern/factory-method]]{팩토리 메소드}의 인자, 프로퍼티로만 받는 프로세스가 IoC다.**
 
 >
 In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. Otherwise, a bean is simply one of many objects in your application. Beans, and the dependencies among them, are reflected in the configuration metadata used by a container.
@@ -257,7 +257,7 @@ public class SimpleMovieLister {
 >
 Setter-based DI is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or a no-argument static factory method to instantiate your bean.  
 <br/>
-Setter 기반 DI는 인자가 없는 생성자나 인자가 없는 스태틱 팩토리 메서드를 호출하여 Bean을 인스턴스화한 다음,
+Setter 기반 DI는 인자가 없는 생성자나 인자가 없는 [[/pattern/static-factory-method]]{스태틱 팩토리 메서드}를 호출하여 Bean을 인스턴스화한 다음,
 컨테이너가 Bean의 setter 메소드를 호출하는 방식으로 이루어진다.
 
 ```java

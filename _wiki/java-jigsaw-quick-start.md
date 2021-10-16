@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) 프로젝트 Jigsaw - 모듈 시스템 빠른 시작 가이드
 summary : Project Jigsaw; Module System Quick-Start Guide
 date    : 2019-09-12 19:31:50 +0900
-updated : 2020-02-08 23:56:48 +0900
+updated : 2021-10-16 19:59:06 +0900
 tag     : java 번역
 toc     : true
 public  : true
@@ -425,7 +425,7 @@ class org.fastsocket.FastNetworkSocket
 
 _The output confirms that the service provider has been located and that it was used as the factory for the NetworkSocket._
 
-출력을 보면 서비스 제공자가 `NetworkSocket`의 팩토리로 사용되었음을 확인할 수 있습니다.
+출력을 보면 서비스 제공자가 `NetworkSocket`의 [[/pattern/factory]]{팩토리}로 사용되었음을 확인할 수 있습니다.
 
 ## The linker
 
