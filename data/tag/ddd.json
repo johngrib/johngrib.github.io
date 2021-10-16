@@ -2,5 +2,6 @@
  "pattern/entity",
  "pattern/layered-architecture",
  "pattern/repository",
+ "pattern/service",
  "pattern/value-object"
 ]
