@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 전략 패턴(strategy pattern)
+title   : 전략 패턴 (Strategy Pattern)
 summary : 동일 계열의 알고리즘을 정의하고 상호교환이 가능하게 한다
 date    : 2019-09-21 16:49:12 +0900
-updated : 2021-10-11 13:55:57 +0900
+updated : 2021-10-16 23:39:54 +0900
 tag     : GoF-design-pattern
 toc     : true
 public  : true
