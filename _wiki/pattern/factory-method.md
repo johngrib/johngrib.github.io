@@ -3,7 +3,7 @@ layout  : wiki
 title   : 팩토리 메소드 패턴 (Factory Method Pattern)
 summary : 객체를 생성하기 위한 인터페이스를 정의하고, 인스턴스 생성은 서브클래스가 결정하게 한다
 date    : 2019-10-07 00:16:49 +0900
-updated : 2021-10-03 19:05:08 +0900
+updated : 2021-10-16 16:35:12 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -206,6 +206,12 @@ Pizza pizza1 = chicagoStore.orderPizza("pepperoni");
 Allen Holub은 "실용주의 디자인 패턴"에서 이 패턴에 대해 다음과 같이 언급했다.
 
 > Factory Method 패턴은 기반 클래스에 알려지지 않은 구체 클래스를 생성하는 [[/pattern/template-method]]{Template Method}라 할 수 있다. Factory Method의 반환 타입은 생성되어 반환되는 객체가 구현하고 있는 인터페이스이다. Factory Method는 또한 기반 클래스 코드에 구체 클래스의 이름을 감추는 방법이기도 하다(Factory Method는 부적절한 이름이다. 사람들은 객체를 생성하는 모든 메소드를 자연스레 팩토리 메소드라 부르는 경향이 있는데, 이러한 생성 메소드가 모두 Factory Method 패턴을 사용하는 것은 아니다).[^holub]
+
+## 함께 읽기
+
+- [[/pattern/abstract-factory]]
+- [[/pattern/factory]]
+- [[/pattern/static-factory-method]]
 
 ## 참고문헌
 

@@ -3,7 +3,7 @@ layout  : wiki
 title   : 빌더 패턴(Builder Pattern)
 summary : 객체의 생성 방법과 표현 방법을 분리한다
 date    : 2018-02-12 08:18:46 +0900
-updated : 2021-10-03 10:25:39 +0900
+updated : 2021-10-16 16:34:07 +0900
 tag     : pattern
 toc     : true
 public  : true
@@ -696,21 +696,23 @@ Builder는 객체의 표현을 '비즈니스' 로직과 멋지게 분리해 주�
 - 어떤 UI 요소는 같은 인터페이스로 처리하기 어려울 수도 있다(예를 들어 HTML vs 스윙).
 [^holub-446]
 
-## Links
+## 함께 읽기
 
-* [[GoF-Design-Pattern]]
-* [Design Patterns(wikipedia)]( https://en.wikipedia.org/wiki/Design_Patterns )
-* [Builder Pattern(wikipedia)]( https://en.wikipedia.org/wiki/Builder_pattern )
-* [Item 2: Consider a builder when faced with many constructor parameters]( http://www.informit.com/articles/article.aspx?p=1216151&seqNum=2 )
-
-* [Project Lombok @Builder]( https://projectlombok.org/features/Builder )
+- [[GoF-Design-Pattern]]
+- [[/pattern/factory]]
 
 ## 참고문헌
 
-- Java 언어로 배우는 디자인 패턴 입문 [개정판] / Yuki Hiroshi 저 / 이규흥 역 / 영진닷컴 / 1판 9쇄 2017년 3월 5일
-- 실전 코드로 배우는 실용주의 디자인 패턴 / Allen Holub 저 / 송치형 편역 / 지앤선(志&嬋) / 2006년 07월 19일 발행 / 원제 : Holub on Patterns : Learning Design Patterns by Looking at Code
-- 이펙티브 자바 (2판) / 조슈아 블로크 저 / 이병준 역 / 인사이트(insight) / 초판 2쇄 2015년 07월 21일
-- 이펙티브 자바 (3판) / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+- 도서
+    - Java 언어로 배우는 디자인 패턴 입문 [개정판] / Yuki Hiroshi 저 / 이규흥 역 / 영진닷컴 / 1판 9쇄 2017년 3월 5일
+    - 실전 코드로 배우는 실용주의 디자인 패턴 / Allen Holub 저 / 송치형 편역 / 지앤선(志&嬋) / 2006년 07월 19일 발행 / 원제 : Holub on Patterns : Learning Design Patterns by Looking at Code
+    - 이펙티브 자바 (2판) / 조슈아 블로크 저 / 이병준 역 / 인사이트(insight) / 초판 2쇄 2015년 07월 21일
+    - 이펙티브 자바 (3판) / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+- 웹 문서
+    - [Builder Pattern(wikipedia)]( https://en.wikipedia.org/wiki/Builder_pattern )
+    - [Design Patterns(wikipedia)]( https://en.wikipedia.org/wiki/Design_Patterns )
+    - [Item 2: Consider a builder when faced with many constructor parameters]( http://www.informit.com/articles/article.aspx?p=1216151&seqNum=2 )
+    - [Project Lombok @Builder]( https://projectlombok.org/features/Builder )
 
 ## 주석
 

@@ -14,6 +14,7 @@
   "pattern/controller",
   "pattern/decorator",
   "pattern/entity",
+  "pattern/factory",
   "pattern/factory-method",
   "pattern/interpreter",
   "pattern/layered-architecture",

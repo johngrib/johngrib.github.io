@@ -1,5 +1,6 @@
 [
  "pattern/entity",
+ "pattern/factory",
  "pattern/layered-architecture",
  "pattern/repository",
  "pattern/service",
