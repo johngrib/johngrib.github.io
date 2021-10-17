@@ -3,7 +3,7 @@ layout  : wiki
 title   : 디자인 패턴 인용문 모음
 summary : 
 date    : 2019-11-20 21:30:04 +0900
-updated : 2021-10-04 13:00:23 +0900
+updated : 2021-10-17 23:38:07 +0900
 tag     : anti-pattern
 toc     : true
 public  : true
@@ -77,11 +77,20 @@ Closure 패턴은 불필요했다.
 >
 -- 실전 코드로 배우는 실용주의 디자인 패턴. 22쪽.
 
+### 이디엄
+
+>
+이디엄(idiom)은 특정 프로그래밍 언어에만 국한된 하위 레벨 패턴(low-level pattern)이다.
+이디엄은 주어진 언어의 기능을 사용해서 컴포넌트들 혹은 컴포넌트들 간 관계의 특정 측면을 구현하는 방법을 서술한다.
+>
+-- 패턴 지향 소프트웨어 아키텍처 패턴 시스템 Volume 1. 1장. 15쪽.
+
 ## 참고문헌
 
 - 소프트웨어 아키텍트가 알아야 할 97가지 / Richard Monson-Haefel 저 / Eva Study 역 / 지앤선(志&嬋) / 2011년 04월 14일 / 원제 : 97 Things Every Software Architect Should Know
 - 실전 코드로 배우는 실용주의 디자인 패턴 / Allen Holub 저 / 송치형 편역 / 지앤선(志&嬋) / 2006년 07월 19일 발행 / 원제 : Holub on Patterns : Learning Design Patterns by Looking at Code
 - 패턴을 활용한 리팩터링 / 조슈아 케리에브스키 저 / 윤성준, 조상민 공역 / 인사이트(insight) / 신판 1쇄 발행 2011년 02월 09일 / 원제 : REFACTORING TO PATTERNS
+- 패턴 지향 소프트웨어 아키텍처 패턴 시스템 Volume 1 / Frank Buschmann 외 / 김지선 역 / 지앤선(志&嬋) / 발행 2008년 01월 18일
 
 ## 주석
 
