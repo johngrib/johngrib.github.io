@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim persistent_undo 기능 사용하기
 summary : Vim을 재실행해도 undo를 쓸 수 있다
 date    : 2018-09-18 16:05:10 +0900
-updated : 2018-09-18 16:15:36 +0900
+updated : 2021-10-17 18:42:33 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -47,6 +47,10 @@ endif
 ```
 
 * `vimDir`, `undodir`은 자신이 선호하는 경로로 설정하자.
+
+## 함께 읽기
+
+- [[/cmd/grep]]
 
 ## Links
 

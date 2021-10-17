@@ -3,7 +3,7 @@ layout  : wiki
 title   : fortune 명령어
 summary : 랜덤으로 격언/속담 등을 보여준다
 date    : 2019-12-25 19:03:11 +0900
-updated : 2020-05-11 22:46:07 +0900
+updated : 2021-10-17 18:47:07 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -122,6 +122,8 @@ fortune ~/my-fortune
 ```
 
 
-## See Also
+## 함께 읽기
 
-* [[strfile-cmd]]
+- [[/cmd/grep]]
+- [[strfile-cmd]]
+

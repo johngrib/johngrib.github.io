@@ -3,7 +3,7 @@ layout  : wiki
 title   : csplit 명령어
 summary : 주어진 조건에 따라 파일을 분할한다
 date    : 2018-09-28 08:07:39 +0900
-updated : 2018-09-28 08:16:20 +0900
+updated : 2021-10-17 18:45:43 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -52,6 +52,9 @@ $ cat xx01
 $ csplit test.txt $(cat test.txt | grep -n -e '333' | cut -d ':' -f 1)
 ```
 
+## 함께 읽기
+
+- [[/cmd/grep]]
 
 ## Links
 

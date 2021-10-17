@@ -3,7 +3,7 @@ layout  : wiki
 title   : sort 명령어
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
-updated : 2021-10-03 00:48:09 +0900
+updated : 2021-10-17 18:44:26 +0900
 tag     : bash sort command
 toc     : true
 public  : true
@@ -189,3 +189,8 @@ Ignore leading blank characters when comparing lines.
 * [[my-wiki ]]
     * [[my-wiki/123]]
 ```
+
+## 함께 읽기
+
+- [[/cmd/grep]]
+

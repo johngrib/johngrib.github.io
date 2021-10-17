@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-16 16:11:01 +0900
+updated : 2021-10-17 18:38:00 +0900
 regenerate: true
 ---
 
@@ -386,8 +386,9 @@ regenerate: true
 
 ### [[cmd]]
 
-* [[/cmd/xxd]]
+* [[/cmd/grep]]
 * [[/cmd/man]]
+* [[/cmd/xxd]]
 * [[ag]]
 * [[basename]]
 * [[bash-history]]
@@ -414,7 +415,6 @@ regenerate: true
 * [[glow-cmd]]
 * [[google-java-format]]
 * [[gpg]]
-* [[grep]]
 * [[how-to-escape-cli]]
 * [[httpie-cmd]]
 * [[ioreg-cmd]]

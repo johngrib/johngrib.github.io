@@ -3,7 +3,7 @@ layout  : wiki
 title   : find 명령어
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2020-01-25 21:38:02 +0900
+updated : 2021-10-17 18:41:32 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -52,4 +52,8 @@ find . -name '*.temp' -exec rm -rf {} \;
  # 모든 java 파일에서 중괄호가 없는 if 문이 있는 파일 목록을 출력한다
 find . -name "*.java" -exec ag "^\s*if[^{]*$" -l {} \;
 ```
+
+## 함께 읽기
+
+- [[/cmd/grep]]
 

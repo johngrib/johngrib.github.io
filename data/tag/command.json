@@ -8,6 +8,7 @@
  "brew",
  "cal-cmd",
  "chsh-cmd",
+ "cmd/grep",
  "cmd/man",
  "cmd/xxd",
  "csplit",

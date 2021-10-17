@@ -1,4 +1,4 @@
 [
- "grep",
+ "cmd/grep",
  "sed"
 ]

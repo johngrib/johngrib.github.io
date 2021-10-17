@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2021-07-19 19:34:23 +0900
+updated : 2021-10-17 18:48:07 +0900
 tag     : terminal study vim
 toc     : true
 public  : true
@@ -224,7 +224,7 @@ macOS의 경우 `pbcopy`, `pbpaste`를 사용할 수 있다.
 
 ## 검색 명령에 익숙해진다
 
-`grep`, `egrep`, `find`, `ag` 등의 명령을 파이프와 함께 사용해보고 다양한 옵션을 실험해본다.
+[[/cmd/grep]]{grep}, `egrep`, `find`, `ag` 등의 명령을 파이프와 함께 사용해보고 다양한 옵션을 실험해본다.
 
 ## 변수 설정, if, for의 사용법을 익힌다
 
@@ -305,4 +305,8 @@ fc 명령어에 익숙해지면 `control-x, control-e`도 사용해 보고, `exp
 
 나는 이 셸 스크립트와 다른 잡다한 셸 스크립트들을 계속 고치면서 사용할 것이다. 그리고 이 외에 다른 재미있는 것들도 계속 만들어갈 생각이다.
 
+
+## 함께 읽기
+
+- [[/cmd/grep]]
 

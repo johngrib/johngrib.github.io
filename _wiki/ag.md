@@ -3,7 +3,7 @@ layout  : wiki
 title   : ag
 summary : the silver searcher
 date    : 2018-12-27 22:01:47 +0900
-updated : 2021-04-08 10:00:26 +0900
+updated : 2021-10-17 18:45:58 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -108,6 +108,10 @@ find . -name '*.java' | xargs ag '[^\s<!=+-]=|\=[^=\s]'
  # 좌우에 공백이 없는 -> 를 찾아라
 find . -name '*.java' | xargs ag '\-\>(?=\S)|(?<=\S)\-\>'
 ```
+
+## 함께 읽기
+
+- [[/cmd/grep]]
 
 ## Links
 * [the silver searcher](https://github.com/ggreer/the_silver_searcher )
