@@ -3,7 +3,7 @@ layout  : wiki
 title   : 계층형 아키텍처 (Layered Architecture)
 summary : 
 date    : 2021-10-12 21:27:41 +0900
-updated : 2021-10-12 21:56:44 +0900
+updated : 2021-10-18 23:40:27 +0900
 tag     : ddd architecture
 toc     : true
 public  : true
@@ -12,6 +12,62 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 메모
+
+- 시스템의 규모가 작을 때에는 이 패턴의 도입을 신중히 결정할 것.
+- 동작이 변경되면 레이어별로 수정 작업이 필요할 수 있어, 작은 규모의 시스템에서는 불필요한 작업이 증가할 수 있다.
+- 이 패턴은 적절한 레이어의 수를 산출하는 것부터가 문제.
+    - 레이어의 수가 너무 작다면 이 패턴의 장점을 살리기 어렵다.
+    - 레이어의 수가 너무 많다면 복잡도와 시스템 오버헤드가 증가하고, 중복 작업이 늘어날 수도 있다.
+- 경험상 레이어를 없애는 쪽의 리팩토링이 효과가 좋은 경우가 많았다.
+
+## From: 패턴 지향 소프트웨어 아키텍처 1
+
+>
+**정황(context)**
+>
+시스템의 규모가 커서 분해(decomposition)할 필요가 있다.
+[^posa-34]
+
+### 사례: OSI 7계층 모델
+
+>
+레이어 형태로 이루어진 아키텍처 중 가장 잘 알려진 예제는 아마도 네트워크 프로토콜(networking protocol)일 것이다.
+네트워크 프로토콜은 컴퓨터 프로그램들이 머신들 간의 경계를 넘나들며 통신하는 방법에 대한 규칙들로 이루어져 있다.
+포맷(format), 내용(content), 그리고 모든 메시지의 의미(meaning) 등이 미리 명확하게 정의되어 있으며,
+모든 시나리오 역시 대체로 주어진 시퀀스 차트에 따라 상세히 정의되어 있다.
+이런 네트워크 프로토콜의 경우, 비트 전송(bit transmission)에서부터 상위 레벨 애플리케이션 로직(high-level application logic)에 이르기까지,
+다양한 추상 레벨에 해당하는 규약(agreement)을 엄밀히 준수한다.
+그 덕분에 설계자는 몇 개의 서브프로토콜을 선택하고 그것들을 레이어들로 정돈해 설계할 수 있다.
+ISO(international standardization organization)에서는 다음과 같은 아키텍처 모델을 'OSI 7계층 모델(open systems interconnection 7-layer model)' [Pan921]로 정의하고 있다.
+>
+(후략)
+[^posa-33]
+
+### 사례: 가상 머신
+
+>
+가상 머신(VM, virtual machine) - 하위 레벨(low-level)의 다양한 운영체제나 하드웨어로부터 상위 레벨을 격리시키는 가상 머신이 하위 레벨 역할을 한다고 볼 수 있다.
+예를 들어 자바 가상 머신(JVM, Java virtual machine)은 바이너리 코드 포맷을 정의하고 있다.
+자바 프로그래밍 언어로 작성된 코드는 바이트코드(bytecode)라는 플랫폼에 중립적인 바이너리 코드(platform-neutral binary code)로 변환되며 이것을 해석(interpretation)하기 위해 JVM 으로 전달된다.
+JVM 자체는 특정 플랫폼에 종속되어 있다.
+다시 말해 JVM 은 서로 다른 운영체제와 프로세서에 적합하도록 각기 따로 구현되어 있다.
+두 단계로 변환 처리하는 방식을 채택함으로써 플랫폼에 중립적인 소스 코드가 가능했고, 바이너리 코드를 도입함으로써 플랫폼 독립성을 유지하는 대신 사람이 해독할 수 없다.
+[^posa-49]
+
+### 사례: 윈도우 NT
+
+>
+윈도우 NT - 이 운영체제(operating system)는 Microkernel 패턴(183)을 적용해 구조화되어 있다.
+NT 실행(executive) 컴포넌트는 Microkernel 패턴의 마이크로커널 컴포넌트에 해당한다.
+NT 실행 컴포넌트는 '변형' 절에서 설명한 완화된 레이어 시스템'에 해당한다. NT 실행 컴포넌트는 다음과 같은 레이어로 구성된다.
+>
+- 시스템 서비스 - 서브시스템과 NT 실행 컴포넌트 간의 인터페이스 레이어
+- 리소스관리(resource management) 레이어 - 이 레이어는 객체 관리자(object manager), 보안 참조 모니터(security reference monitor), 프로세스 관리자(process manager), I/O 관리자(I/O manager), 가상 메모리 관리자(virtual memory manager), 로컬 프로시저 호출(local procedure call) 등의 모듈로 구성된다.
+- 커널 - 이 레이어는 인터럽트 핸들링(interrupt handling), 예외 핸들링(exception handling), 멀티프로세서 동기화(multiprocessor synchronization), 스레드 스케줄링(thread scheduling), 스레드 디스패치(thread dispatching) 등의 기본 기능을 관할한다.
+- HAL(hardware abstraction layer) - 이 레이어는 각기 다른 프로세서 계열에 있는 머신들 간에 하드웨어의 차이를 숨긴다.
+- 하드웨어 - 커널과 I/O 관리자가 효율이라는 이유로 기반 하드웨어에 액세스하기 때문에 윈도우 NT 에서는 Layers 패턴의 원칙을 완화하여 적용한다.
 
 ## From: 도메인 주도 설계
 
@@ -72,8 +128,11 @@ latex   : false
 ## 참고문헌
 
 - 도메인 주도 설계 / 에릭 에반스 저 / 이대엽 역 / 위키북스 / 2011년 07월 21일 / 원제 : Domain-Driven Design
+- 패턴 지향 소프트웨어 아키텍처 Volume 1 / Frank Buschmann 외 / 김지선 역 / 지앤선(志&嬋) / 발행 2008년 01월 18일
 
 ## 주석
 
 [^evans-71]: 도메인 주도 설계. 4장. 71쪽.
-
+[^posa-33]: 패턴 지향 소프트웨어 아키텍처 Volume 1. 2장. 33쪽.
+[^posa-34]: 패턴 지향 소프트웨어 아키텍처 Volume 1. 2장. 34쪽.
+[^posa-49]: 패턴 지향 소프트웨어 아키텍처 Volume 1. 2장. 49쪽.
