@@ -3,8 +3,8 @@ layout  : wiki
 title   : 고대 이집트 곱셈법
 summary : EGYPTIAN MULTIPLICATION
 date    : 2018-11-14 23:24:36 +0900
-updated : 2021-04-29 10:46:13 +0900
-tag     : 
+updated : 2021-10-21 00:08:09 +0900
+tag     : math
 toc     : true
 public  : true
 parent  : [[algorithm]]
