@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2021-05-01 21:00:22 +0900
+updated : 2021-10-21 00:03:55 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -212,14 +212,14 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 
 ## 참고문헌
 
-* Professional 소프트웨어 개발 / 스티브 맥코넬 저 / 윤준호, 한지윤 공역 / 인사이트(insight) / 초판 4쇄 2006년 10월 13일 / 원제 : Professional Software Development (Addison-Wesley)
-* 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
-* 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
-* 마이크로서비스 도입 이렇게 한다 / 샘 뉴먼 저/박재호 역 / 책만 / 2021년 01월 20일 / 원서 : Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith
-* 마이크로서비스 아키텍처 구축 / 샘 뉴먼 저 / 정성권 역 / 한빛미디어 / 초판 2쇄 2017년 05월 01일 / 원서 : Building Microservices: Designing Fine-Grained Systems
-* 마이크로서비스 패턴 / 크리스 리처드슨 저/이일웅 역 / 길벗 / 초판발행 2020년 01월 30일
-* 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
-* 해커 영어사전 제3판 / Guy L. Steel Jr. Eric S.RayMond 편저, 한경훈 역 / 기전연구사 / 1판 1쇄 1998년 12월 25일
+- Professional 소프트웨어 개발 / 스티브 맥코넬 저 / 윤준호, 한지윤 공역 / 인사이트(insight) / 초판 4쇄 2006년 10월 13일 / 원제 : Professional Software Development (Addison-Wesley)
+- 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+- 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
+- 마이크로서비스 도입 이렇게 한다 / 샘 뉴먼 저/박재호 역 / 책만 / 2021년 01월 20일 / 원서 : Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith
+- 마이크로서비스 아키텍처 구축 / 샘 뉴먼 저 / 정성권 역 / 한빛미디어 / 초판 2쇄 2017년 05월 01일 / 원서 : Building Microservices: Designing Fine-Grained Systems
+- 마이크로서비스 패턴 / 크리스 리처드슨 저/이일웅 역 / 길벗 / 초판발행 2020년 01월 30일
+- 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
+- 해커 영어사전 제3판 / Guy L. Steel Jr. Eric S.RayMond 편저, 한경훈 역 / 기전연구사 / 1판 1쇄 1998년 12월 25일 / 원제 : The New Hacker's Dictionary(3rd)
 
 
 ## 각주
