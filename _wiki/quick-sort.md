@@ -3,7 +3,7 @@ layout  : wiki
 title   : 퀵 정렬 (Quick Sort)
 summary : 빠른정렬
 date    : 2020-07-19 14:19:21 +0900
-updated : 2020-11-17 21:19:42 +0900
+updated : 2021-10-21 00:06:29 +0900
 tag     : sort
 toc     : true
 public  : true
@@ -584,6 +584,10 @@ final class DualPivotQuicksort {
 - [CLRS] Introduction to Algorithms 3판 / 토머스 코멘, 찰스 레이서손, 로날드 리베스트, 클리포드 스타인 공저 / 문병로, 심규석, 이충세 공역 / 한빛아카데미 / 2014년 06월 30일
 - [KNU] The art of computer programming 3 정렬과 검색(개정2판) / 도널드 커누스 저 / 한빛미디어 / 초판 2쇄 2013년 02월 10일
 - [SED] 알고리즘 [개정4판] / 로버트 세지윅, 케빈 웨인 저/권오인 역 / 길벗 / 초판발행 2018년 12월 26일
+
+## TODO
+
+- Beautiful Code에 수록된 존 벤틀리의 퀵 소트와 관련된 글을 읽고 필요하다면 인용하거나 정리해 추가할 것.
 
 ## 주석
 
