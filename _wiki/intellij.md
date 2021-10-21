@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-08-15 11:48:18 +0900
+updated : 2021-10-22 00:13:55 +0900
 tag     : java
 toc     : true
 public  : true
@@ -164,12 +164,24 @@ macOS의 경우 `~/Library/Preferences`에 있다.
 
 ## VM 옵션 설정하기
 
-**Help - Edit Custom VM Options**
+`Help` - `Edit Custom VM Options`
 
 나는 주로 다음 값을 설정해준다.
 
 * `Xmx`
 * `-XX:+UseG1GC`
+
+<span/>
+
+- 최근 사용 이력
+    - 2021-10-22
+
+### Maximum Heap Size 설정하기
+
+`상단 메뉴` - `Help` - `Change memory settings`에서 설정할 수 있다.
+
+디폴트 값은 `2048 MiB`. 이 방법으로 수정한 다음 `Help` - `Edit Custom VM Options`에서 확인해 보면 `Xmx` 값이 바뀌어 있음을 확인할 수 있다.
+즉 이 옵션은 몰라도 그만이다.
 
 ## 메모리 상태 막대 보기
 
