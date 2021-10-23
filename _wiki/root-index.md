@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-17 18:38:00 +0900
+updated : 2021-10-23 18:56:15 +0900
 regenerate: true
 ---
 
@@ -29,6 +29,8 @@ regenerate: true
 
 * log-everything (아무거나 기록)
     * [[log-2021]]
+
+## [[article]]
 
 ## [[algorithm]]
 
