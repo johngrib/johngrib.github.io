@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-23 18:56:15 +0900
+updated : 2021-10-24 14:32:11 +0900
 regenerate: true
 ---
 
@@ -31,6 +31,8 @@ regenerate: true
     * [[log-2021]]
 
 ## [[article]]
+
+- [[hierarchical-controller-package-structure]]
 
 ## [[algorithm]]
 
