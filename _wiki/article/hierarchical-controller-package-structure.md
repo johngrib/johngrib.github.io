@@ -3,7 +3,7 @@ layout  : wiki
 title   : (기록) 한 개의 메소드만 갖는 계층형 컨트롤러/서비스 패키지 스타일
 summary : 찾기 쉬워야 한다
 date    : 2021-10-24 14:32:16 +0900
-updated : 2021-10-24 17:19:55 +0900
+updated : 2021-10-25 23:41:09 +0900
 tag     : 
 toc     : true
 public  : true
@@ -267,16 +267,34 @@ class CommentDeleter {
 
 ## 추가 대화
 
-이 아이디어를 트위터에 공유했더니 다음과 같은 질문을 받아, 다음과 같이 답변해 드렸다.
+이 아이디어를 트위터에 공유했더니 다음과 같은 반응을 볼 수 있었다.
+
+### @dveamer 님
 
 {% raw %}
-<blockquote class="twitter-tweet"><p lang="ko" dir="ltr">감사합니다. <br><br>1 적당히(..) 짓습니다. 다만 이 프로젝트에서는 이런 경로 엔트리가 말단에만 있어서 아직은 문제가 없었어요.<br>2 대체로 공통경로 부모에 해당하는 곳에 두게 되더라고요.<br>3. 이건 저희도 경험이 도 필요할 것 같아요. 지금은 그냥 public으로 바꾸고 냅다 옮기고 있어요.</p>&mdash; John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1448126351920095241?ref_src=twsrc%5Etfw">October 13, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="ko" dir="ltr">말씀 주신대로 장점만 있는 멋진 아이디어 인 것 같습니다!<br><br>질문이 있습니다.<br>1. path variable 을 갖는 URI의 패키지는 어떻게 정의하시나요? <br>2. 여러 컨트롤러에서 사용하는 리퀘스트, 리스폰스 DTO의 패키지 위치와 접근제한은 어떻게 되나요?<br>3. v2 만드실때 private DTO는 어떻게 하시나요?</p>&mdash; Dveamer (@dveamer) <a href="https://twitter.com/dveamer/status/1448106424962195459?ref_src=twsrc%5Etfw">October 13, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endraw %}
+
+{% raw %}
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="ko" dir="ltr">감사합니다. <br><br>1 적당히(..) 짓습니다. 다만 이 프로젝트에서는 이런 경로 엔트리가 말단에만 있어서 아직은 문제가 없었어요.<br>2 대체로 공통경로 부모에 해당하는 곳에 두게 되더라고요.<br>3. 이건 저희도 경험이 도 필요할 것 같아요. 지금은 그냥 public으로 바꾸고 냅다 옮기고 있어요.</p>&mdash; John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1448126351920095241?ref_src=twsrc%5Etfw">October 13, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
+### @ahastudio 님
 
 한편 메소드를 하나 갖는 서비스에 대해서는 아샬님이 코멘트를 주셨다.
 
 {% raw %}
 <blockquote class="twitter-tweet"><p lang="ko" dir="ltr">클린 아키텍처에서 그렇게 해요. 기존 사례가 필요하면 그쪽을 참고해 보세요.</p>&mdash; 아샬 (Ashal aka JOKER) (@ahastudio) <a href="https://twitter.com/ahastudio/status/1449156959442067463?ref_src=twsrc%5Etfw">October 15, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
+### @nameEO 님
+
+{% raw %}
+<blockquote class="twitter-tweet"><p lang="ko" dir="ltr">이런 것도 괜찮은 듯... 솔직히 REST API 구조로 CRUD만 컨트롤러에 넣어도 나중에 이것저것 추가하다보면 어떤 API를 담당하는 함수를 찾아 스크롤을 한참 하게 된다... <a href="https://t.co/vdCvFhQ52u">https://t.co/vdCvFhQ52u</a></p>&mdash; 이름뭐하지 (@nameEO) <a href="https://twitter.com/nameEO/status/1452628548682850315?ref_src=twsrc%5Etfw">October 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endraw %}
+
+{% raw %}
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="ko" dir="ltr">특히 public 함수 하나만 노출시키고 private 함수를 정의해서 가독성을 높이는 부분이 맘에 든다. 기존 컨트롤러 방식은 저짓하면 수많은 함수가 섞여서 최대한 함수 1개에 몰아적는게 나을 정도인데. 저런 구조면 함수가 아무리 많아도 어떤 동작을 구현하기 위한 것인지 바로 파악이 될 듯.</p>&mdash; 이름뭐하지 (@nameEO) <a href="https://twitter.com/nameEO/status/1452629337736318979?ref_src=twsrc%5Etfw">October 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endraw %}
 
 ## 참고문헌
@@ -287,3 +305,4 @@ class CommentDeleter {
 [^c-s-r-blame]: Controller - Service - Repository 세가지 컴포넌트 자체는 문제의 원인이 아니다.
 [^ddd-107]: 도메인 주도 설계. 5장. 107쪽
 [^controller-split]: 처음 컨셉은 이랬지만 지금은 이것도 분리했다.
+
