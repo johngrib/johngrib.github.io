@@ -1,0 +1,11 @@
+{
+ "type": "wiki",
+ "title": "아희",
+ "summary": "",
+ "parent": "language",
+ "url": "/wiki/language/aheui",
+ "updated": "2021-10-26 23:35:39 +0900",
+ "children": [
+  "aheui/hello-world"
+ ]
+}

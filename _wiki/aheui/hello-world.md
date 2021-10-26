@@ -1,17 +1,19 @@
 ---
-layout  : post
-title   : 아희 'Hello, World!'에 코멘트를 달아 보았다.
+layout  : wiki
+title   : 아희 'Hello, World!'에 코멘트를 달아 보았다
 summary : 아희 재밌네
 date    : 2017-07-14 23:00:17 +0900
+updated : 2021-10-26 23:38:12 +0900
 tag     : aheui
 toc     : true
-comment : true
 public  : true
+parent  : [[/language/aheui]]
+latex   : false
 ---
 * TOC
 {:toc}
 
-## 아희 "Hello, World!"에 코멘트를 달아 보았다.
+## Hello, World!
 
 다음은 [아희 사이트](https://github.com/aheui/aheui.github.io/blob/master/_posts/2006-10-27-specification.ko.markdown#예제)에서 복사해 온 "Hello, World!"소스 코드이다.
 
@@ -101,6 +103,6 @@ ind | code | meaning | stack                   | comment
 
 ## Links
 
-* [아희 specification](https://github.com/aheui/aheui.github.io/blob/master/_posts/2006-10-27-specification.ko.markdown)
-* [아희 사이트: Hello, World! 예제](https://github.com/aheui/aheui.github.io/blob/master/_posts/2006-10-27-specification.ko.markdown#예제)
+- [아희 specification](https://github.com/aheui/aheui.github.io/blob/master/_posts/2006-10-27-specification.ko.markdown)
+- [아희 사이트: Hello, World! 예제](https://github.com/aheui/aheui.github.io/blob/master/_posts/2006-10-27-specification.ko.markdown#예제)
 

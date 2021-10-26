@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-10-24 14:32:11 +0900
+updated : 2021-10-26 23:36:39 +0900
 regenerate: true
 ---
 
@@ -185,13 +185,18 @@ regenerate: true
 
 ## [[language]]
 
-* [[awk]]
-* [[bc]]
+* [[/language/aheui]]
+* [[/language/css]]
 * [[Groovy]]
-* [[html]]
 * [[TOML]]
 * [[YAML]]
-* [[/language/css]]
+* [[awk]]
+* [[bc]]
+* [[html]]
+
+### 아희
+
+- [[/aheui/hello-world]]
 
 ### [[Golang]]
 * [[Go-Blog-translation]]
