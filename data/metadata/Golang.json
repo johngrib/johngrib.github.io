@@ -4,7 +4,7 @@
  "summary": "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.",
  "parent": "language",
  "url": "/wiki/Golang",
- "updated": "2018-09-18 17:21:01 +0900",
+ "updated": "2021-10-26 22:13:38 +0900",
  "children": [
   "commit-go-mod-go-sum",
   "ginkgo",
