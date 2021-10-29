@@ -1,11 +1,28 @@
 /* based on Monokai Theme from https://github.com/richleland/pygments-css/blob/master/monokai.css */
 code {
     font-family: Consolas, "Courier New", Courier;
+    color: inherit;
+    background-color: #ebedf0;
+    padding: 1px 3px;
+    border-radius: 3px;
     a {
         color: inherit;
         text-decoration: none;
     }
 }
+pre {
+    font-family:  $coding-font;
+    overflow-x: auto;
+    padding: 10px 10px;
+    color: #fafafa;
+    background-color: #223;
+}
+pre code {
+    color: #fafafa;
+    background-color: #223;
+    padding: 0;
+}
+
 div.highlight {
     font-size: 0.9em;
     line-height: 1.3;
