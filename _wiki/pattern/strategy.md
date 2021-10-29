@@ -3,7 +3,7 @@ layout  : wiki
 title   : 전략 패턴 (Strategy Pattern)
 summary : 동일 계열의 알고리즘을 정의하고 상호교환이 가능하게 한다
 date    : 2019-09-21 16:49:12 +0900
-updated : 2021-10-16 23:39:54 +0900
+updated : 2021-10-29 10:53:48 +0900
 tag     : GoF-design-pattern
 toc     : true
 public  : true
@@ -162,8 +162,8 @@ Arrays.sort(numbers, Collections.reverseOrder());
 
 ## 참고문헌
 
-* GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
-* Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
+- GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
+- Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
 
 ## 주석
 
