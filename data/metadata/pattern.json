@@ -20,7 +20,7 @@
   "pattern/layered-architecture",
   "pattern/null-object",
   "pattern/observer",
-  "pattern/pipe",
+  "pattern/pipeline",
   "pattern/quotes",
   "pattern/repository",
   "pattern/service",

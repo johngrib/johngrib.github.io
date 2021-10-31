@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 파이프와 필터 (Pipes and Filters)
+title   : 파이프라인 (Pipeline)
 summary : 데이터 스트림을 처리하는 시스템 구조를 제공한다
 date    : 2021-10-31 11:38:24 +0900
-updated : 2021-10-31 14:08:43 +0900
+updated : 2021-10-31 14:36:38 +0900
 tag     : posa architecture
 toc     : true
 public  : true
