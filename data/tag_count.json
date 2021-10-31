@@ -45,7 +45,7 @@
  },
  {
   "name": "architecture",
-  "size": 2
+  "size": 3
  },
  {
   "name": "asciidoc",
@@ -637,6 +637,10 @@
  },
  {
   "name": "plugin",
+  "size": 1
+ },
+ {
+  "name": "posa",
   "size": 1
  },
  {
