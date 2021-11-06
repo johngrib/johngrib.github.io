@@ -5,6 +5,7 @@
  "pattern/decorator",
  "pattern/interpreter",
  "pattern/observer",
+ "pattern/proxy",
  "pattern/state",
  "pattern/strategy",
  "pattern/template-method",
