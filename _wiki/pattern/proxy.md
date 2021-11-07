@@ -3,7 +3,7 @@ layout  : wiki
 title   : 프록시 패턴 (Proxy Pattern)
 summary : 
 date    : 2021-11-06 21:55:46 +0900
-updated : 2021-11-06 23:35:56 +0900
+updated : 2021-11-07 10:48:28 +0900
 tag     : GoF-design-pattern
 toc     : true
 public  : true
@@ -19,6 +19,13 @@ GoF 책에서는 다음과 같이 옵저버 패턴의 의도를 밝힌다.
 
 >
 다른 객체에 대한 접근을 제어하기 위한 대리자 또는 자리채움자 역할을 하는 객체를 둡니다.[^gof]
+
+구조는 다음과 같다.
+
+![]( ./proxy.svg )
+
+`Subject` 구현체(`Proxy`)로 `Request()` 함수를 호출할 때 `RealSubject`를 참조하고 있는 `Proxy`가 `RealSubject`를 대리하는 구조.
+
 
 ## 프록시 패턴의 다양한 변형들
 
