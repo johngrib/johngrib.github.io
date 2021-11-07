@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2020년 9월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2021-06-26 23:32:52 +0900
+updated : 2021-11-07 22:36:46 +0900
 tag     : java
 toc     : true
 public  : true
@@ -12,6 +12,16 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+## JDK 17
+
+- 2021-09-15 [JDK 17 발표 및 새로운 변화]( https://blogs.oracle.com/javakr/post/jdk-17 )
+    - 새로운 LTS인 Java 17이 발표되었다.
+    - 지난 LTS 버전인 11 이후에 3년만에 발표된 LTS 릴리스이고, LTS 릴리스로써 최소 8년 동안 성능, 안정성 및 보안 업데이트가 예정되어 있는 중요한 릴리스.
+    - 다음 LTS 버전은 JDK 21 으로 예상하며, 2023년에 발표될 것이다.
+    - JDK 17부터 기존에 Oracle JDK에 적용이 되었던 Oracle Technology Network (OTN) 라이선스 대신에 Oracle No-Fee Terms and Conditions (NFTC) 라이선스가 적용.
+        - 여러 사용 용도 및 배포에 있어 제약 조건이 있던 OTN 라이선스와는 달리, 상업 및 프로덕션 용도를 포함하여 모든 사용자들에게 무료로 사용 및 배포를 허용.
+
 
 ## JDK 16
 
