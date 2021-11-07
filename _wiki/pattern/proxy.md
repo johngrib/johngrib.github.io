@@ -3,7 +3,7 @@ layout  : wiki
 title   : 프록시 패턴 (Proxy Pattern)
 summary : 
 date    : 2021-11-06 21:55:46 +0900
-updated : 2021-11-07 10:48:28 +0900
+updated : 2021-11-07 13:52:39 +0900
 tag     : GoF-design-pattern
 toc     : true
 public  : true
@@ -95,6 +95,139 @@ Virtual Proxy 변형 - 컴포넌트를 처리하고 로드하는 데 비용이 �
 가상 프록시는 복사 수정 전략을 구현하는 데에도 유용하다. 객체의 복사 본을 요청받으면 프록시는 단순히 원본 객체에 대한 레퍼런스만을 갖는다그리고 복사본에 대한 수정 요 청이 들어오면 이때 비로소 프록시가 원본 객체를 실 제로 복사하게 된다
 [^holub-468]
 
+#### Virtual Proxy의 예제
+
+다음은 Java 언어로 배우는 디자인 패턴 입문의 예제를 토대로 작성한 것이다.[^yuki-378]
+
+- `Printable` 인터페이스는 `Subject` 역할이다.
+
+```java
+public interface Printable {
+  void setPrinterName(String name);
+  String getPrinterName();
+  void print(String string);
+}
+```
+
+- `Printer` 클래스는 `RealSubject` 역할이다.
+    - `Printer` 클래스는 초기화할 때 5초나 소요되는 뭔가 무거운 작업을 하는데(생성자를 확인할 것), 이 작업은 `heavyJob` 메소드로 표현되어 있다.
+    - `Printer`는 초기화가 무거우므로 처음부터 초기화하기 부담스러운 클래스이다.
+
+```java
+public class Printer implements Printable {
+  private String name;
+
+  public Printer() {
+    heavyJob("Printer의 인스턴스를 생성 중");
+  }
+
+  public Printer(String name) {
+    this.name = name;
+    heavyJob("Printer의 인스턴스 (" + name + ")을 생성 중");
+  }
+
+  @Override
+  public void setPrinterName(String name) {
+    this.name = name;
+  }
+
+  @Override
+  public String getPrinterName() {
+    return name;
+  }
+
+  @Override
+  public void print(String string) {
+    System.out.println("=== " + name + " ===");
+    System.out.println(string);
+  }
+
+  private void heavyJob(String msg) {
+    System.out.println(msg);
+    for (int i = 0; i < 5; i++) {
+      try {
+        Thread.sleep(1000);
+      } catch (InterruptedException e) {
+      }
+      System.out.println(".");
+    }
+    System.out.println("완료.");
+  }
+}
+```
+
+- `PrinterProxy`는 `Proxy` 역할이다.
+    - `Printer` 멤버를 갖고는 있지만 `Printer`를 처음부터 초기화하지 않는다는 점에 주목.
+    - `print` 메소드를 호출할 때 `Printer`를 초기화한다.
+
+```java
+public class PrinterProxy implements Printable {
+  private String name;
+  private Printer real; // 본인
+
+  public PrinterProxy() {
+  }
+
+  public PrinterProxy(String name) {
+    this.name = name;
+  }
+
+  @Override
+  public synchronized void setPrinterName(String name) {
+    if (real != null) {
+      real.setPrinterName(name);  // 본인에게도 설정한다
+    }
+    this.name = name;
+  }
+
+  @Override
+  public String getPrinterName() {
+    return name;
+  }
+
+  @Override
+  public void print(String string) {
+    realize();  // 본인을 lazy하게 초기화한다
+    real.print(string);
+  }
+
+  private synchronized void realize() {
+    if (real == null) {
+      real = new Printer(name);
+    }
+  }
+}
+```
+
+- 예제 테스트 코드와 실행 결과
+
+```java
+class PrinterProxyTest {
+  @Test
+  void test() {
+    Printable p = new PrinterProxy("Alice");
+    System.out.println("이름은 현재 " + p.getPrinterName() + " 입니다.");
+    p.setPrinterName("Bob");
+    System.out.println("이름은 현재 " + p.getPrinterName() + " 입니다.");
+    p.print("Hello, world.");
+  }
+}
+
+/*
+이름은 현재 Alice 입니다.
+이름은 현재 Bob 입니다.
+Printer의 인스턴스 (Bob)을 생성 중
+.
+.
+.
+.
+.
+완료.
+=== Bob ===
+Hello, world.
+*/
+```
+
 ### Firewall Proxy
 
 >
@@ -134,6 +267,7 @@ Decorator 패턴과 Proxy 패턴 간의 주요한 차이점은 그 의도에 있
 ## 참고문헌
 
 - GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
+- Java 언어로 배우는 디자인 패턴 입문 [개정판] / Yuki Hiroshi 저 / 이규흥 역 / 영진닷컴 / 1판 9쇄 2017년 3월 5일
 - 실전 코드로 배우는 실용주의 디자인 패턴 / Allen Holub 저 / 송치형 편역 / 사이텍미디어 / 발행 2006년 07월 19일 / 원제 : Holub on Patterns : Learning Design Patterns by Looking at Code
 - 패턴 지향 소프트웨어 아키텍처 Volume 1 / Frank Buschmann 외 / 김지선 역 / 지앤선(志&嬋) / 발행 2008년 01월 18일
 
@@ -144,4 +278,5 @@ Decorator 패턴과 Proxy 패턴 간의 주요한 차이점은 그 의도에 있
 [^posa-281]: 패턴 지향 소프트웨어 아키텍처 Volume 1. 281쪽.
 [^posa-282]: 패턴 지향 소프트웨어 아키텍처 Volume 1. 282쪽.
 [^posa-288]: 패턴 지향 소프트웨어 아키텍처 Volume 1. 288쪽.
+[^yuki-378]: Java 언어로 배우는 디자인 패턴 입문. 21장. 378쪽.
 
