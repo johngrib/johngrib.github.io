@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : 프록시 패턴 (Proxy Pattern)
-summary : 
+summary : 컴포넌트 자체가 아니라 컴포넌트의 대리자와 통신하도록 해준다
 date    : 2021-11-06 21:55:46 +0900
-updated : 2021-11-07 15:32:59 +0900
+updated : 2021-11-07 15:34:16 +0900
 tag     : GoF-design-pattern
 toc     : true
 public  : true
