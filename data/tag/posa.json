@@ -1,3 +1,4 @@
 [
- "pattern/pipeline"
+ "pattern/pipeline",
+ "pattern/proxy"
 ]
