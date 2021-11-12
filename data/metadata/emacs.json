@@ -1,0 +1,11 @@
+{
+ "type": "wiki",
+ "title": "emacs",
+ "summary": "",
+ "parent": "root-index",
+ "url": "/wiki/emacs",
+ "updated": "2021-11-12 20:57:49 +0900",
+ "children": [
+  "emacs/cheatsheet"
+ ]
+}

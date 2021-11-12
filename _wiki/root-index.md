@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-11-06 21:55:45 +0900
+updated : 2021-11-12 20:58:35 +0900
 regenerate: true
 ---
 
@@ -530,6 +530,10 @@ regenerate: true
 * [[vim-with-space-char]]
 * [[vim-ycm-python3]]
 * [[vimwiki]]
+
+## [[emacs]]
+
+* [[/emacs/cheatsheet]]
 
 ## [[what]]
 
