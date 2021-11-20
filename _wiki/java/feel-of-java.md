@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-20 23:40:15 +0900
+updated : 2021-11-21 00:16:19 +0900
 tag     : 
 toc     : true
 public  : true
@@ -146,6 +146,40 @@ And if the client doesn’t understand the component’s data type, it would be 
 그리고 만약 클라이언트가 컴포넌트의 데이터 타입을 인식하지 못한다면, 컴포넌트의 구현을 얻기 위해 인터넷을 가로질러 서버를 불러서 "저기 서버 선생님, 이 타입에 대한 구현체를 갖고 계신가요?"라고 물어볼 수 있습니다.
 
 ### Thin clients
+
+>
+You can think of this as the client learning something.
+It now understands a new data type that it didn’t understand before, and it obtained that knowledge from some remote repository.
+You can start building systems that are much more lean, that feel as though there’s this core that understands the basic business of the application.
+
+이 방식을 클라이언트가 무언가를 배우는 것으로도 생각할 수 있습니다.
+클라이언트는 이전에는 알지 못했던 새로운 데이터 타입을 이해하고 있으며, 이를 일부 원격 저장소에서 얻은 것입니다.
+이제 여러분은 애플리케이션의 기본적인 비즈니스를 이해하는 코어가 있는 것처럼 훨씬 더 lean 한 시스템 구축을 시작할 수 있습니다.
+
+>
+A Web browser is a good example.
+It’s a simple loop—a set of interfaces to networking standards, document format standards, image format standards, and so on.
+And other components can plug into this browser until you have this huge brick of code around which you wrap a big steel band.
+That’s your application, and it does everything. But what’s lost in this pile of support code is the essence of a Web browser.
+
+웹 브라우저가 좋은 예시입니다.
+웹 브라우저는 네트워킹 표준, 문서 형식 표준, 이미지 형식 표준 등의 인터페이스를 갖고 있는 단순한 루프입니다.
+그리고 다른 컴포넌트를 이 브라우저에 연결하는 것도 가능하며, 이 큰 코드 블럭을 둘러싼 다른 다른 컴포넌트들도 있습니다.
+이것이 바로 여러분의 애플리케이션이며 모든 작업을 수행하게 됩니다.
+그러나 이 과정에서 웹 브라우저의 본질을 잃었다고 할 수 있습니다.
+
+>
+Similarly, the support code itself tends to lose its boundaries because people start getting sloppy.
+They start saying, “Well gee, there’s this global variable over there that HTML was using, but I could use that creatively with my HTTP driver.”
+It always bites you in the end, even though short term it feels good.
+With Java, we tended to do things that promoted up-front pain and long-term health, one of those funny religious principles.
+
+이와 비슷하게 지원 코드 자체도 사람들이 엉성해지면서 그 경계를 잃는 경향이 있습니다.
+그들은 "HTML이 저쪽에서 사용하고 있었던 전역 변수가 있긴 해요, 하지만 나는 HTTP 드라이버를 써서 그 전역변수를 창의적으로 사용할 수 있습니다"
+하지만 이렇게 하면 당장은 기분이 좋겠지만, 결국엔 자신의 발등을 찍게 됩니다.
+Java와 함께 하면서, 우리는 재미있는 종교적 원칙 중 하나인 up-front pain과 long-term health를 지원하는 방식으로 일을 해왔습니다.
+
+### Architecture neutral
 
 ## 참고문헌
 
