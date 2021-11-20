@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-20 23:16:46 +0900
+updated : 2021-11-20 23:40:15 +0900
 tag     : 
 toc     : true
 public  : true
@@ -118,6 +118,34 @@ C 언어가 나왔을 때 `2 + 2`를 계산하는 방법이 너무 다양해서 
 이런 작업들이 손쉽게 이루어지기에 네트워크는 여러분이 래프팅을 할 수 있는 계산의 바다처럼 작동하게 됩니다.
 
 ### Distributed objects on the Web
+
+>
+In this particular environment, one of the key design requirements was to create quanta of behavior that could be shipped from place to place.
+Oddly enough, classes provide a nice encapsulation boundary for defining what one of these quantum particles is.
+
+이러한 환경에서 비롯된 핵심 설계 요구사항은, 이곳저곳으로 이동할 수 있는 행위의 퀀텀을 만드는 것이었습니다.
+클래스는 훌륭한 캡슐화 경제를 제공하여, 이러한 퀀텀 파티클을 정의하게 해줍니다.
+
+>
+We also wanted to keep these quanta of behavior separate from data, which at the time was a real departure.
+General Magic was doing a very similar thing, except it was putting the code and the data together.
+In some cases this has a real advantage, but what if you’re shipping around JPEG images? You end up in an untenable situation if every JPEG image has to have its own JPEG decompressor: You load a page with 20 images and end up with 20 JPEG decompressors at 100 Kbytes each.
+
+우리는 또한 이러한 행위들을 데이터와 분리하고 싶었는데,
+[General Magic]( https://en.wikipedia.org/wiki/General_Magic )은 코드와 데이터를 함께 몰아놓는다는 것을 제외하고는 이와 매우 유사했습니다.
+이렇게 몰아놓으면 경우에 따라 장점이 있기는 합니다.
+그러나 만약 JPEG 이미지를 여러개 전송한다고 생각해 봅시다.
+모든 JPEG 이미지가 각각의 JPEG 디코더를 가지고 있다면 어떻게 될까요?
+20개의 이미지가 포함된 페이지를 로드하고 나면 각각 100 Kbyte 용량을 가진 20개의 JPEG 디코더가 생성됩니다.
+
+>
+So we worked hard to make sure that data and implementation were separate, but that the data could have tags that say, “I’m a bag of bytes that’s understood by this type.”
+And if the client doesn’t understand the component’s data type, it would be able to turn around and say, “Gee Mr. Server, do you have the implementation for this particular type?” and reach out across the Internet, grab the implementation, and do some checking to make sure that it won’t turn the disk drive into a puddle of ash.
+
+따라서 우리는 데이터와 구현을 최대한 분리하려 노력했지만, 데이터는 "저는 이 타입으로 해석될 수 있는 byte 덩어리입니다" 라는 태그를 가지고 있어야 했습니다.
+그리고 만약 클라이언트가 컴포넌트의 데이터 타입을 인식하지 못한다면, 컴포넌트의 구현을 얻기 위해 인터넷을 가로질러 서버를 불러서 "저기 서버 선생님, 이 타입에 대한 구현체를 갖고 계신가요?"라고 물어볼 수 있습니다.
+
+### Thin clients
 
 ## 참고문헌
 
