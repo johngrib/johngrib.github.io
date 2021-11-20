@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-20 22:42:34 +0900
+updated : 2021-11-20 23:16:46 +0900
 tag     : 
 toc     : true
 public  : true
@@ -26,7 +26,7 @@ Java feels very familiar to many different programmers because we preferred trie
 
 Java는 블루칼라 언어입니다.
 박사 논문을 위한 자료가 아니라 직업에 필요한 언어입니다.
-우리는 시행착오와 테스트를 거친 검증된 것들을 선호하기 때문에, 우리의 Java는 여러 프로그래머들에게 매우 친숙하게 느껴질 것입니다.
+우리는 시행착오를 거친 것들을 선호하기 때문에, Java는 여러 프로그래머들에게 매우 친숙하게 느껴집니다.
 
 >
 Java evolved out of a Sun research project started six years ago to look into distributed control of consumer electronics devices.
@@ -82,6 +82,42 @@ C++라는 틀(C++ 언어가 아니라 사람들이 C++ 컴파일러를 빌드하
 
 ### BLUE COLLAR LANGUAGE
 
+>
+Java is a blue collar language.
+It’s not PhD thesis material but a language for a job.
+Java feels very familiar to many different programmers because I had a very strong tendency to prefer things that had been used a lot over things that just sounded like a good idea.
+And so Java ended up as this fusion of four different kinds of programming.
+
+Java는 블루칼라 언어입니다.
+박사 논문을 위한 자료가 아니라 직업에 필요한 언어입니다.
+Java는 좋은 아이디어로 여겨지는 이론보다 많은 사람들에게 사용된 것을 선호하는 경향이 강하기 때문에 여러 프로그래머들에게 매우 친숙하게 느껴집니다.
+Java는 4가지 종류의 다른 프로그래밍 형태가 융합된 것입니다.
+
+>
+1. It has an object-oriented flavor that derives from a number of languages—Simula, C/C++, Objective C, Cedar/Mesa, Modula, and Smalltalk.
+2. Another one of my favorite areas is numeric programming.
+One of the things that’s different about Java is that we say what 2 + 2 means.
+When C came out there were so many different ways of computing 2 + 2 that you couldn’t lay down any kind of rule.
+But today, the IEEE 754 standard for floating-point arithmetic has won, and the world owes William Kahan and the other folks who worked on it a real debt, because it removes much of the complexity and clutter in numerical programming.
+3. Java also has a systems programming flavor inherited from C that has proven useful over the years.
+4. But the one way in which Java is unique is its distributed nature—it feels like there aren’t boundaries between machines.
+People can have pieces of behavior squirt back and forth across the network, picked up here, landed over there.
+And they just don’t care. The network, by and large, starts to behave like a sea of computation on which you can go rafting.
+
+<span/>
+
+1. Java는 Simula, C/C++, Objective C, Cedar/Mesa, Modula, Smalltalk 같은 여러 언어에서 파생된 객체지향적 특징이 있습니다.
+2. 내가 좋아하는 또다른 특징 하나는 숫자 프로그래밍입니다.
+Java의 다른 점은, `2 + 2`가 무엇을 의미하는지 말해준다는 것입니다.
+C 언어가 나왔을 때 `2 + 2`를 계산하는 방법이 너무 다양해서 어떤 규칙도 확정해서 적용할 수가 없었습니다.
+하지만 오늘날엔 부동소수점 연산을 위한 IEEE 754 표준이 채택되었으므로
+숫자 프로그래밍의 복잡성과 혼란함이 상당히 제거되어 William Kahan과 그 연구진들에게 빚을 지고 있다고 할 수 있습니다.
+3. Java는 수 년동안 유용성이 입증된 C 언어로부터 물려받은 시스템 프로그래밍 형태를 갖추고 있습니다.
+4. 한편 Java는 분산 특성이라는 고유성을 갖고 있습니다. 즉, 여러 머신들 사이에 경계가 없는 것처럼 느껴진다는 것입니다.
+사람들은 네트워크를 가로질러 다양한 활동을 할 수 있습니다. 이곳에서 자료를 얻고, 저곳에서 착륙하고 그럴 수 있죠.
+이런 작업들이 손쉽게 이루어지기에 네트워크는 여러분이 래프팅을 할 수 있는 계산의 바다처럼 작동하게 됩니다.
+
+### Distributed objects on the Web
 
 ## 참고문헌
 
