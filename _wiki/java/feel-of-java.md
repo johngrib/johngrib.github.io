@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 12:34:32 +0900
+updated : 2021-11-21 13:12:01 +0900
 tag     : 
 toc     : true
 public  : true
@@ -221,6 +221,35 @@ I put a lot of effort into making it very easy to interpret and verify bytecode 
 그리고 기계어 코드 생성이 간단한지 확인하기 위해 인터프리터와 기계어 생성기를 사용했습니다.
 
 ### Compile-time checking
+
+>
+The Java compiler does a lot of compile-time checking that people aren’t used to, and some have complained about the compiler’s attitude, that it essentially has no warnings.
+For example, “used-before-set” is a fatal compilation error rather than just a warning.
+These may feel like restrictions, but it’s rare that the compiler gives an error message without a very good reason.
+In all cases, we would try something and see how many bugs came out of the woodwork. 
+
+Java 컴파일러는 컴파일 타임에 그동안 사람들이 크게 신경쓰지 않았던 종류의 다양한 검사를 하는데,
+그래서 몇몇 사람들은 경고가 없는(no warnings) 컴파일러의 행동에 대해 불평했습니다.
+예를 들어 "used-before-set"의 경우 치명적인 컴파일 에러가 되며, 단순 경고만 보여주고 지나가지 않았기 때문입니다.
+이런 것들이 제약으로 느껴질 수 있겠지만, 컴파일러가 에러 메시지를 표시하는 것은 대부분 나름의 이유가 있기 때문입니다.
+모든 경우에 대해, 우리는 다양한 시도를 했을 때 우리의 작업물에서 얼마나 많은 버그가 기어나오는지를 확인할 수 있었죠.
+
+>
+One of the interesting cases was name hiding.
+It’s pretty traditional in languages to allow nested scopes to have names that are the same as names in the outer scope, and that’s certainly the way it was in Java early on.
+But people had nasty experiences where they forgot they named a variable i in an outer scope, then declared an i in an inner scope thinking they were referring to the outer scope, and it would get caught by the inner scope.
+So we disallowed name hiding, and it was amazing how many errors were eliminated.
+Granted, it is sometimes an aggravation, but statistically speaking, people get burned a lot by doing that, and we’re trying to avoid people getting burned.
+
+흥미로운 사례들 중 하나를 꼽자면 이름 숨기기였습니다.
+중첩된 스코프에서 바깥쪽 스코프에 있는 이름과 같은 이름을 가질 수 있도록 허용하는 것은 전통적인 프로그래밍 언어 방식이며, 초기 Java에서도 그러했습니다.
+그러나 사람들은 이와 관련된 불쾌한 경험을 겪곤 했습니다. 바깥쪽 스코프에서 변수 `i`를 선언한 것을 잊고 안쪽 스코프에서 다시 `i`를 선언하면서 바깥쪽 `i`를 참조한다고 생각했던 것입니다. 물론 그렇게 하면 안쪽 스코프에 걸리게 되어 있죠.
+그래서 우리는 이름 숨기기를 허용하지 않았습니다. 그러자 놀랍게도 대단히 많은 에러가 사라졌습니다.
+물론 이런 제약이 좋지 않은 것일 수도 있겠지만, 어떤 활동 때문에 통계적으로 많은 사람들이 화상을 입곤 한다면 우리는 사람들이 화상을 입지 않도록 노력할 것입니다.
+
+
+
+### Garbage collection
 
 ## 참고문헌
 
