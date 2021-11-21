@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 13:28:26 +0900
+updated : 2021-11-21 13:42:32 +0900
 tag     : 
 toc     : true
 public  : true
@@ -268,6 +268,31 @@ With Java, you never need to worry about pointers off into hyperspace, pointers 
 Java를 사용하면 배열의 끝을 넘어서는 포인터를 걱정하지 않아도 됩니다.
 
 ### Pointer restrictions
+
+>
+This also relates to restrictions on pointers and pointer arithmetic, which can lead to interface integrity problems.
+We in the engineering world have become accustomed to taking back doors into an object’s private space to solve problems in the short term.
+In C, there’s a standard cliché I’ve used frequently—`((int *) p) [n]`—where you take some pointer, cast it to a pointer or to an integer, subscript it, and are then able to get anything as anything.
+The world is your oyster.
+
+이 문제는 인터페이스 무결성 문제들과 관련된 포인터 및 포인터 연산에 대한 제한과 관련이 있습니다.
+엔지니어링 업계에서 일하고 있는 우리는 문제를 빠르게 해결하기 위해 각 객체의 private 영역으로 백도어를 가져오는 방식으로 일을 처리하곤 했습니다.
+가령, C 언어에서 나는 `((int *) p) [n]`같은 흔한 코드를 자주 사용했습니다.
+포인터를 가져다가 포인터나 integer로 캐스팅하고 첨자를 붙이면 어떤 값이든 마음대로 가져올 수 있죠.
+세상 모든 것이 내 마음대로인 것입니다.
+
+>
+But long term, this practice always bites you.
+It creates a tremendous versioning problem, and systems become incredibly fragile.
+Having one little private variable can make the whole system fall apart.
+If you look at what often happens in commercial systems, you’ll find they end up not using object-oriented programming because of these back doors.
+They end up doing it in a way that hides all the stuff, so that it’s much more obscure.
+
+하지만 장기적인 관점에서 보면 이런 습관은 발등을 찍게 됩니다.
+이런 방식은 버전 문제가 발생할 수 있으며 시스템 또한 엄청나게 취약해집니다.
+심각하게는 private 변수 하나로 전체 시스템이 붕괴할 수도 있는 것입니다.
+상용 시스템에서 이런 문제는 자주 일어나는 편이며, 이런 백도어를 방지하기 위해 객체지향 프로그래밍이 선택되지 않기도 합니다.
+결국 모든 것을 숨기는 방향으로 작업이 진행되며 결과적으로 모든 것이 모호해지는 결과를 낳게 됩니다.
 
 
 ## 참고문헌
