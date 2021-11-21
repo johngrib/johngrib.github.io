@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 11:37:07 +0900
+updated : 2021-11-21 12:34:32 +0900
 tag     : 
 toc     : true
 public  : true
@@ -196,6 +196,31 @@ C 언어의 경우 매우 이식성이 뛰어나지만, `int`의 의미 같은 �
 그래서 우리는 일관적인 느낌과 결정적인 의미를 전달할 수 있도록 했습니다. `2 + 2`가 무엇을 의미하는지, 어떤 평가 우선순위를 갖고 있는지 알 수 있도록이요.
 
 ### JAVA VIRTUAL MACHINE
+
+>
+At the same time, I made the mistake of going to school too long and actually getting a PhD, so I couldn’t avoid doing a little bit of theoretical stuff.
+And besides, when you have people like Bill Joy (Sun cofounder and VP for Research) and Guy Steele (Sun Microsystems Distinguished Engineer) peering over your shoulder and wagging their fingers at you, things become a lot cleaner than the initial hacks one is tempted to commit in the spirit of expediency.
+And the theoretical work that went into Java really did add a lot of cohesiveness and cleanliness to it.
+Most of those things are under the covers in the way the virtual machine works.
+Things like the verifier, which is this minidataflow program prover that determines whether or not programs follow the game rules.
+But by and large, this kind of innovation was relatively rare in Java.
+
+한편, 나는 학교를 너무 오래 다니다 보니 진짜로 박사학위를 받는 실수를 저지른 사람이어서 그만 이론적인 작업을 조금 해버리고 말았습니다.
+게다가 Bill Joy(Sun의 공동창업자 겸 연구부문 부사장)라던가 Guy Steele(Sun Microsystems의 뛰어난 기술자)같은 사람들이 어깨 너머로 훈수를 두고 있다고 생각해 보세요. 훨씬 더 상쾌한 마음으로 해킹을 하게 됩니다.
+그래서 Java에 적용한 이론적인 작업들은 상당히 응집력이 있고 깨끗한 편입니다.
+그리고 이런 것들 대부분은 가상 머신이 작동하는 방식에 내부적으로 숨겨져 있습니다.
+가령 verifier 같은 미니 데이터 플로우 프로그램은 프로그램이 게임 규칙에 따라 제대로 작동하는지를 확인합니다.
+하지만 대체로 이런 종류의 혁신적인 작업들은 Java에서는 비교적 드문 편이었습니다.
+
+>
+We use a very old technique where the compiler generates some bytecoded instructions for this abstract virtual machine that’s based largely on work from Smalltalk and Pascal-P machines.
+I put a lot of effort into making it very easy to interpret and verify bytecode before it was compiled into machine code, using both an interpreter and a machine code generator to make sure that generating machine code was pretty straightforward.
+
+우리는 컴파일러가 추상적 가상 머신을 위한 바이트 코드 명령을 생성하는 방식의 오래된 기술을 사용합니다. Smalltalk와 Pascal-P 머신의 작업들에서 사용되던 것이죠.
+나는 바이트코드가 기계어로 컴파일되기 전에 바이트코드를 쉽게 해석하고 검증할 수 있도록 많은 노력을 했습니다.
+그리고 기계어 코드 생성이 간단한지 확인하기 위해 인터프리터와 기계어 생성기를 사용했습니다.
+
+### Compile-time checking
 
 ## 참고문헌
 
