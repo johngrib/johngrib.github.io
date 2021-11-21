@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 14:55:25 +0900
+updated : 2021-11-21 17:38:21 +0900
 tag     : 
 toc     : true
 public  : true
@@ -321,6 +321,45 @@ Although exception handling makes Java feel somewhat clumsy because it forces yo
 하지만 그로 인해 Java로 개발한 애플리케이션들은 실제로 더 견고할 것이고, 더 신뢰할 수 있을 것입니다.
 
 ### OBJECT-ORIENTED EXTENSIBILITY
+
+>
+One of the things about Java that I pushed on pretty hard was allowing for future change.
+Much of that comes from Java’s Lisp-like late binding, where methods are looked up on the fly at the very end.
+But there’s a lot of optimization that gets done to rewrite the instructions so that method calls are fast and the various code generators turn them into the obvious threeinstruction sequence.
+
+Java에 대해 내가 열심히 밀어붙인 것 하나는 미래의 변화를 허용하는 것이었습니다.
+그리고 그것과 관련된 많은 부분이 Lisp과 같은 방식의 Java의 late binding에 적용되었습니다.
+이러한 late binding으로 인해 메소드들은 실제로 실행되기 직전에 탐색됩니다.
+여기에는 상당한 양의 최적화가 적용되어서, 메소드 호출은 빠르게 작동하며 코드 생성기가 이를 명시적인 3개의 명령어 시퀀스로 변환합니다.
+
+>
+Thus, you can add methods almost fearlessly and can add and remove private variables with total impunity.
+You have to make sure of a few things—for example, that you don’t remove methods that aren’t being used, or if you want to remove or change them, you at least leave another method in there whose type signature is the same.
+As long as you practice this relatively simple discipline, you can change classes pretty readily without having to worry about how this breaks all of your subclasses and the applications based on them.
+
+따라서 여러분은 메소드를 추가로 정의하거나, private 변수를 추가하고 제거할 때 걱정하지 않아도 됩니다.
+물론 사용하지 않는 메소드를 제거하지 않거나, 제거/변경하는 등의 작업을 할 때 적어도 타입 시그니처가 같은 메소드를 남겨둬야 한다는 것은 인지하고 있어야 합니다.
+이런 간단한 원칙들을 연습한다면, 모든 서브 클래스와 그런 것들을 토대로 굴러가는 애플리케이션들이 망가질 것을 걱정하지 않고 클래스를 쉽게 변경할 수 있을 것입니다.
+
+>
+What I found most interesting in watching people use Java was that they used it in a way similar to rapid prototyping languages.
+They just whacked something together.
+I was initially surprised by that, because Java is a very strongly typed system, and dynamic typing is often considered one of the real requirements of a rapid prototyping environment.
+But after watching people for a while and doing it myself and thinking “Why does this feel this way to me,” I decided that probably the most important thing was that in a typical rapid prototyping language like Smalltalk, you find out about it fast when something goes wrong.
+There aren’t these mysterious memory smashes.
+Java does a pretty good job of avoiding situations where mysterious alpha particles come in from hyperspace and blow up your system, where you spend four days to discover that you had a for-loop clearing an array that went one element too far, and where that fact isn’t discovered until thousands of instructions later when some other memory block is being accessed.
+
+내가 사람들이 Java를 사용하는 것을 관찰해 오면서 느낀 흥미로운 점 한 가지는,
+사람들이 빠른 프로토타입 언어와 비슷한 방식으로 Java를 사용했다는 것입니다.
+사람들은 바로바로 무언가를 때려넣었습니다.
+동적 타이핑은 신속한 프로토타이핑 환경의 요구 사항으로 요구되는 것이었던 반면,
+Java는 매우 강력한 타입 시스템이었으므로 나는 처음에는 꽤 놀랍게 느꼈습니다.
+한동안 사람들을 관찰하고 나서 나는 "이 방법이 왜 놀라운 느낌이 드는 걸까?"같은 생각을 했습니다.
+나는 아마 Smalltalk 같은 빠른 프로토타이핑 언어에서는 뭔가 잘못됐을 때 빨리 발견할 수 있는 것이 중요하다는 생각을 하게 됐습니다.
+Java는 원인을 알 수 없는 미스테리한 메모리 충돌이 없습니다.
+Java는 초공간에서 알 수 없는 알파 입자가 들어와 시스템을 날려버리는 상황을 아주 잘 방지합니다.
+배열을 지우는 for 루프를 돌렸지만 원소 하나가 너무 멀리 떨어져 있었다는 사실을 발견할 때까지 나흘이나 걸린다던가 하는 상황 말이죠.
+사실 이런 경우는 수천개의 명령이 실행되어 다른 메모리 블록에 엑세스하기 전까지는 발견하지 못합니다.
 
 
 
