@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 13:12:01 +0900
+updated : 2021-11-21 13:28:26 +0900
 tag     : 
 toc     : true
 public  : true
@@ -247,9 +247,28 @@ Granted, it is sometimes an aggravation, but statistically speaking, people get 
 그래서 우리는 이름 숨기기를 허용하지 않았습니다. 그러자 놀랍게도 대단히 많은 에러가 사라졌습니다.
 물론 이런 제약이 좋지 않은 것일 수도 있겠지만, 어떤 활동 때문에 통계적으로 많은 사람들이 화상을 입곤 한다면 우리는 사람들이 화상을 입지 않도록 노력할 것입니다.
 
-
-
 ### Garbage collection
+
+>
+Another thing that’s essential for reliability, oddly enough, is garbage collection.
+Garbage collection has a long and honorable history, starting out in the Lisp community, but it acquired a bad reputation because it tended to take more time than was necessary.
+Garbage collection gained the reputation of being used by lazy programmers who didn’t want to call malloc and free.
+But in actual fact, there are a lot of other ways to justify it.
+And to my mind, one of the ways that works well when you’re talking to some hard-nosed engineer is that it helps make systems more reliable.
+You don’t have memory leaks or dangling pointers, and you cut your software maintenance budget in half by not having to chase them.
+With Java, you never need to worry about pointers off into hyperspace, pointers to one element beyond the end of your array.
+
+이상하게 들릴 수 있겠지만, 신뢰성을 확보하기 위해 필수적인 것은 쓰레기 수집입니다.
+가비지 컬렉션은 Lisp 커뮤니티에서 시작된 오래되고 훌륭한 역사를 갖고 있습니다.
+다만 시간이 너무 오래 걸린다는 문제가 있어 좋지 못한 평가를 받고 있었죠.
+그러나 가비지 컬렉터의 사용을 정당화하는 방법은 많이 있습니다.
+내 생각에, 냉철한 엔지니어와 대화할 때 그들을 설득하는 방법 중 하나는 시스템을 더 신뢰할 수 있게 만드는 데 도움이 된다고 말하는 것입니다.
+메모리 누수나 댕글링 포인터가 사라지게 되어 추적하지 않아도 된다고 생각해 보세요.
+소프트웨어 유지보수 예산도 절반으로 줄일 수 있을 겁니다.
+Java를 사용하면 배열의 끝을 넘어서는 포인터를 걱정하지 않아도 됩니다.
+
+### Pointer restrictions
+
 
 ## 참고문헌
 
