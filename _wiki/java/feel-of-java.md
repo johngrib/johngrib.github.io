@@ -3,8 +3,8 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 19:07:26 +0900
-tag     : 
+updated : 2021-11-21 19:12:16 +0900
+tag     : james-gosling
 toc     : true
 public  : true
 parent  : [[/java]]
@@ -27,6 +27,8 @@ Java feels very familiar to many different programmers because we preferred trie
 Java는 블루칼라 언어입니다.
 박사 논문을 위한 도구가 아니라 직업에 필요한 언어입니다.
 우리는 시행착오를 거쳐 검증된 것을 선호합니다. 그래서 우리가 만든 Java는 여러 프로그래머들에게 매우 친숙하게 느껴질 것입니다.
+
+### 머리말
 
 >
 Java evolved out of a Sun research project started six years ago to look into distributed control of consumer electronics devices.
@@ -504,6 +506,27 @@ Java 자체는 다른 언어들과 마찬가지로 꽤 단순한 프로그래밍
 아마 지금이 우리가 가장 열심히 일하고 있는 지점일 것입니다.
 
 ### 마무리
+
+>
+So, how does Java feel? Java feels playful and flexible.
+You can build things with it that are themselves flexible.
+Java feels deterministic.
+You feel like it’s going to do what you ask it to do.
+It feels fairly nonthreatening in that you can just try something and you’ll quickly get an error message if it’s crazy.
+It feels pretty rich.
+We tried hard to have a fairly large class library straight out of the box.
+By and large, it feels like you can just sit down and write code.
+
+자, Java의 느낌이 어떻습니까? Java는 재미있고 유연한 느낌이 있습니다.
+여러분은 Java를 사용해 유연한 것들을 만들 수 있습니다.
+Java는 결정적인 느낌도 갖습니다.
+여러분이 생각한대로 작동할 것 같은 느낌도 있을 것입니다.
+그저 뭔가를 시도할 수 있으므로 무섭지도 않습니다.
+뭔가 잘못되면 빠르게 에러 메시지를 받을 수도 있습니다.
+Java는 풍부한 느낌도 듭니다.
+우리는 뚜껑을 열자마자 상당히 큰 클래스 라이브러리가 튀어나오도록 하기 위해 열심히 노력했습니다.
+여러분은 그냥 자리에 앉아서 코딩만 하시면 됩니다.
+
 
 ## 참고문헌
 
