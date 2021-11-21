@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 14:11:31 +0900
+updated : 2021-11-21 14:18:22 +0900
 tag     : 
 toc     : true
 public  : true
@@ -25,8 +25,8 @@ It’s not PhD thesis material but a language for a job.
 Java feels very familiar to many different programmers because we preferred tried-and-tested things.
 
 Java는 블루칼라 언어입니다.
-박사 논문을 위한 자료가 아니라 직업에 필요한 언어입니다.
-우리는 시행착오를 거친 것들을 선호하기 때문에, Java는 여러 프로그래머들에게 매우 친숙하게 느껴집니다.
+박사 논문을 위한 도구가 아니라 직업에 필요한 언어입니다.
+우리는 시행착오를 거쳐 검증된 것을 선호합니다. 그래서 우리가 만든 Java는 여러 프로그래머들에게 매우 친숙하게 느껴질 것입니다.
 
 >
 Java evolved out of a Sun research project started six years ago to look into distributed control of consumer electronics devices.
