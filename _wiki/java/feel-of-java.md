@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 18:34:44 +0900
+updated : 2021-11-21 19:07:26 +0900
 tag     : 
 toc     : true
 public  : true
@@ -450,7 +450,60 @@ And it ends up being completely portable.
 
 ### PERFORMANCE
 
+>
+We were working on a prototype just-in-time compiler from the very beginning, as I felt strongly that Java had to feel fast.
+I wanted something comparable to C in performance.
+This feeling came from watching what people did with previous scripting languages I had written, where they always pushed them way beyond what I expected.
 
+우리는 처음부터 just-in-time 컴파일러를 만들고 있었는데, Java가 빠르게 작동해야 한다고 강력하게 생각하고 있었기 때문입니다.
+나는 성능 측면에서는 Java가 C에 맞먹을 수 있기를 바랐습니다.
+이런 생각은 내가 예전에 만들었던 스크립트 언어들을 사람들이 어떻게 사용하는지를 보았기 때문입니다.
+사람들은 항상 내가 생각했던 것 이상의 성능을 바라고 있었습니다.
+
+>
+Much of Java’s semantics and that of the virtual machine were driven by a couple of canonical examples.
+Namely, I wanted to get `a = b + c` to be one instruction, and `p.m` of something to be about three instructions.
+It currently tends to be four or five, which is still a pretty small number.
+That goal pretty much dictated that the system be statically typed.
+Many languages infer a fair amount of this type information or they’ll compile it, assume a type, and then do checks, but that adds a huge amount of complexity.
+Strong typing simplifies the translation process tremendously and picks up a lot of programming errors as well.
+
+Java와 가상 머신의 시맨틱 대부분은 몇 가지 표준적인 예제에 의해 도출된 것입니다.
+나는 `a = b + c`가 하나의 명령이 되길 원했고, `p.m`의 경우 3개의 명령이 되길 바랐습니다.
+지금은 4~5개 정도 되는데, 이것도 꽤 작은 수이긴 합니다.
+아무튼 이 목표로 인해 시스템은 정적 타입을 제공하는 방향을 갖게 됐습니다.
+많은 언어들이 상당한 양의 타입 정보에 대해 추론하거나, 컴파일하고 타입을 추론하고, 타입을 체크하는데, 이는 상당히 복잡도가 높은 일입니다.
+강력한 타이핑을 사용하면 이러한 번역 프로세스를 상당히 단순화하며, 많은 프로그래밍 에러도 잡아낼 수 있습니다.
+
+>
+Java 1.0 was tuned far more for portability than for performance, but I think it still performed reasonably well.
+Today, there are a number of JIT compilers on the market that are not quite up there with C but are getting awfully close.
+It’s pretty interesting to have a language that has a scripting feel without the usual scripting language performance.
+Furthermore, rewriting the interpreter in assembly would give us at least a factor of three speedup, and actual machine code generators would give us a factor of 10 or 20.
+There is now enough demand for Java to justify all that platform-dependent work, if only because it makes other people’s jobs easier.
+
+Java 1.0은 성능보다 이식성을 위해 조정된 버전이었지만, 그럼에도 그 정도면 합리적인 성능이었다고 생각합니다.
+오늘날 업계에서는 C 언어 만큼은 아니지만 그에 거의 근접한 JIT 컴파일러가 많이 있습니다.
+스크립트 언어 느낌이 나면서 그와 동시에 스크립트 언어를 넘어선 성능의 언어를 사용하는 것은 흥미로운 일입니다.
+또한, 어셈블리어를 사용해 인터프리터를 재작성하면 속도가 적어도 3배 빨라지고, 실제 기계어 생성기는 10~20배 정도 빨라질 것입니다.
+이제 Java는 플랫폼 의존적인 모든 작업을 정당화할 수 있으며 사람들의 일자리를 더 쉽게 만들어 주게 되었습니다. 따라서 충분한 수요를 갖게 되었습니다.
+
+>
+Another important thing about Java is its rich class library.
+Java itself, as a language, is pretty simple, as are most languages.
+The real action is in the libraries, and we tried hard to have a fairly large class library straight out of the box.
+That was pretty easy for us because we wrote buckets of code for these prototype consumer electronics applications.
+This gives the environment a very rich feeling, although it’s clear we have a long way to go.
+This is probably where we’re working the hardest right now.
+
+Java의 또다른 중요한 점은 풍부한 클래스 라이브러리입니다.
+Java 자체는 다른 언어들과 마찬가지로 꽤 단순한 프로그래밍 언어입니다.
+실제 작업은 라이브러리에 있습니다. 우리는 Java가 상당한 규모의 클래스 라이브러리를 갖게 하기 위해 열심히 노력했습니다.
+이런 작업은 꽤 쉬운 편이었는데, 우리가 프로토타입 가전제품 애플리케이션용 코드 버킷들을 작성해 둔 적이 있었기 때문입니다.
+아직 갈 길이 멀기는 하지만, 이런 작업들로 인해 꽤 풍부한 느낌이 드는 환경을 만들 수 있었습니다.
+아마 지금이 우리가 가장 열심히 일하고 있는 지점일 것입니다.
+
+### 마무리
 
 ## 참고문헌
 
