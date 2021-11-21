@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 00:16:19 +0900
+updated : 2021-11-21 11:37:07 +0900
 tag     : 
 toc     : true
 public  : true
@@ -180,6 +180,22 @@ With Java, we tended to do things that promoted up-front pain and long-term heal
 Java와 함께 하면서, 우리는 재미있는 종교적 원칙 중 하나인 up-front pain과 long-term health를 지원하는 방식으로 일을 해왔습니다.
 
 ### Architecture neutral
+
+>
+Much of Java was driven by the Internet, and there’s a series of deductive steps that follow from that starting point.
+The Internet has a diverse population, some companies’ aspirations to the contrary.
+If you need to avoid doing different versions for different platforms, then you need some way of distributing software that is architecturally neutral.
+C, by and large, has been very portable, apart from a few gotchas like what does int mean.
+So we pushed for a uniform feeling and a deterministic semantics, so that you know what 2 + 2 means and what kind of evaluation order you have.
+
+Java의 많은 부분이 인터넷에서 주도되었습니다.
+그리고 그러한 시작점부터 이어져 내려오는 연역적 단계들이 있습니다.
+인터넷에는 다양한 사람들의 욕구가 있는데, 몇몇 기업들이 하고자 하는 바는 이와 반대되기도 합니다.
+만약 여러분이 각각의 플랫폼마다 각기 다른 버전을 적용하는 것을 피하고자 한다면, 구조적으로 중립적인 소프트웨어 배포 방법이 필요합니다.
+C 언어의 경우 매우 이식성이 뛰어나지만, `int`의 의미 같은 몇 가지 이상한 문제들이 있습니다.
+그래서 우리는 일관적인 느낌과 결정적인 의미를 전달할 수 있도록 했습니다. `2 + 2`가 무엇을 의미하는지, 어떤 평가 우선순위를 갖고 있는지 알 수 있도록이요.
+
+### JAVA VIRTUAL MACHINE
 
 ## 참고문헌
 
