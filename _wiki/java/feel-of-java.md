@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 17:38:21 +0900
+updated : 2021-11-21 18:34:44 +0900
 tag     : 
 toc     : true
 public  : true
@@ -360,6 +360,95 @@ Java는 원인을 알 수 없는 미스테리한 메모리 충돌이 없습니�
 Java는 초공간에서 알 수 없는 알파 입자가 들어와 시스템을 날려버리는 상황을 아주 잘 방지합니다.
 배열을 지우는 for 루프를 돌렸지만 원소 하나가 너무 멀리 떨어져 있었다는 사실을 발견할 때까지 나흘이나 걸린다던가 하는 상황 말이죠.
 사실 이런 경우는 수천개의 명령이 실행되어 다른 메모리 블록에 엑세스하기 전까지는 발견하지 못합니다.
+
+### Dynamic linking
+
+>
+Another important aspect of Java is that it’s dynamic.
+Dynamic linking—where classes come in and have their links snapped very late—lets you adapt to change.
+Change not only in the versioning problem from one generation of software to the next, but also in the sense of being able to load handlers for new data types.
+It lets the system defer a lot of decisions—principally object layout—to the runtime.
+
+Java의 또다른 중요한 측면은 동적으로 작동한다는 것입니다.
+Dynamic linking(클래스를 추가하면, 늦게 링크되는 방식)은 여러분이 변화에 적응할 수 있도록 도와줍니다.
+변화는 단순히 버전 문제 이상을 의미합니다. 새로운 데이터 타입에 대한 처리기를 로드할 수 있다는 의미도 갖고 있습니다.
+이 방법을 통해 시스템은 많은 결정(주로 객체 레이아웃)을 런타임에 지연 적용할 수 있습니다.
+
+>
+We had a longstanding debate, particularly with people from the Objective C crowd, about factories versus constructors.
+A factory is a static method on a type—that is, you would say `type.new` rather than `new Type`.
+I was not totally persuaded by the factory argument because there was always the problem of who, in the end, creates the object.
+So Java stayed with the C++ way of saying `new Type`.
+
+우리는 특히 Objective C 쪽의 사람들과 팩토리와 생성자에 대해 오랫동안 논쟁을 벌어기도 했습니다.
+팩토리는 특정 타입에 대한 정적 메소드입니다. `new Type` 보다 `type.new`를 사용하는 방식이죠.
+이 방식은 최종적으로는 누군가가 객체를 생성해야 한다는 문제가 있었으므로 나는 팩토리 방식에 수긍하지 못했습니다.
+그래서 Java는 `new Type` 처럼 표현하는 C++의 방식을 고수하게 되었습니다.
+
+>
+But factories are used as a style in places where you don’t know exactly what you want or if you need a new object.
+If you want a font, for example, you don’t necessarily want to create it and might prefer to look it up.
+Java’s dynamic behavior is often fed by this style of using static factory methods to allocate objects rather than call the constructor directly.
+
+하지만, 팩토리는 우리가 어떤 것을 생성해야 할 지 정확히 알지 못하는 상황을 해결하기 위한 스타일이기도 합니다.
+예를 들어 폰트를 생성해야 한다면 폰트를 직접 만들지 않고 이미 만들어져 있는 것을 찾아보는 것이 좋겠죠.
+Java의 동적인 작동 방식은 종종 생성자를 직접 호출하는 것이 아니라 정적 팩토리 메소드를 사용하여 객체를 할당하는, 이런 스타일을 통해 제공되기도 합니다.
+
+>
+One way this is used is in this short cliché of doing new on a string name, where you start by calling a static method on a class called `forName`, which takes the string as a parameter and gives you a class object that happens to have that name.
+Where this becomes interesting is when the string parameter to `forName` is something that you compute by concatenating strings together.
+You use a method on a class object called `makeInstance`, which calls the default constructor:
+>
+> ```java
+> Class c = Class.forName("foo."+x);
+> Thing b = (Thing) c.makeInstance();
+> ```
+
+문자열로 주어진 클래스 이름에 대해 `new`를 실행해주는 짧고 흔한 방식이 바로 이 기법을 사용하는 방법 중 하나라 할 수 있습니다.
+이 방법은 클래스의 `forName`이라 부르는 정적 메소드를 호출하며, 문자열을 파라미터로 받아 해당 이름을 가진 클래스 객체를 돌려주게 됩니다.
+여기에서 흥미로운 점은 `forName`에 제공한 문자열 파라미터가 여러 문자열을 연결해 만들 수 있다는 것입니다.
+그리고 그렇게 얻은 클래스 객체의 `makeInstance` 메소드를 호출하면 기본 생성자가 호출되게 됩니다.
+
+>
+These two things together interact with these objects in Java called class loaders, which are responsible for taking a class name and finding an actual class implementation for it.
+This is the central cliché for achieving this quanta of behavior where we take the MIME type, for instance, do a little bit of string mushing to turn the MIME type into a class name, and say `Class.forName`, which causes all sorts of HTTP searches to happen.
+And then magically you’ve got a handler for that type that’s been installed dynamically.
+
+이 방법을 사용하면 이 객체들은 클래스 로더라고 부르는 것과 상호작용을 하게 됩니다.
+클래스 로더는 클래스 이름에 해당하는 실제 클래스 구현을 찾는 것을 담당합니다.
+
+이것은 MIME 타입을 얻기 위해 MIME 타입을 클래스 이름으로 변환하기 위한 것과 흡사한 핵심적인 클리셰입니다.
+예를 들어, MIME 타입을 클래스 이름으로 바꾸기 위해서 문자열을 좀 조작하고, `Class.forName`이라 불러서 HTTP 검색이 발생하게 하는 거죠.
+그러면 여러분은 마치 마법같이 동적으로 설치된 해당 타입에 대한 핸들러를 갖게 되는 것입니다.
+
+>
+Another stylized way we use this is for adapters.
+Adapters are interfaces that are designed for achieving portability.
+Say you have an interface to some networking abstraction or file system, and you want to provide both a consistent superclass with a consistent interface and an appropriate subclass that is dependent upon the actual operating system you’re using.
+Adapter objects are often looked up by using a factory rather than a normal constructor.
+We then use the previous cliché fed by a property inquiry like `system.getProperty` of `os.name`, as shown in Figure 1, which returns a string like Solaris or Win32.
+If you’re trying to find an implementation of this abstract class Spam and you have a SpamSolaris, a SpamWin32, and a SpamMac class, you can go through this sequence to obtain the appropriate “spamming” class for your machine.
+And it ends up being completely portable.
+>
+> ```java
+> System.getProperty("os.name")
+> abstract class Spam {...}
+> class SpamSolaris extends Spam {...}
+> class SpamWin32 extends Spam {...}
+> Class c = Class.forName("Spam" + System.getProperty("os.name"));
+> ```
+
+이와 관련된 다른 기법은 어댑터에 대한 것입니다.
+어댑터는 이식성을 위해 설계된 인터페이스라 할 수 있습니다.
+네트워킹 추상화나 파일 시스템을 표현하는 인터페이스가 하나 있다고 가정해 봅시다.
+그리고 이 둘을 모두 지원하는 실제 운영 체제에 종속되는 적당한 하위 클래스를 제공하기 바란다고 생각해 봅시다.
+어댑터 객체는 주로 생성자가 아닌 팩토리를 사용하여 찾습니다.
+그런 다음, 코드 1과 같이 `os.name`의 `system.getProperty`와 같은 속성 조회 클리셰를 사용합니다.
+이렇게 하면 `Solaris`나 `Win32` 같은 문자열을 리턴하게 되죠.
+만약 여러분이 `abstract class Spam`의 구현체를 찾으려 할 때 `SpamSolaris`, `SpamWin32`, `SpamMac` 같은 클래스가 있다면, 이 방법으로 운영 체제에 맞는 적당한 하위 클래스를 찾을 수 있습니다.
+이를 통해 이식성이 확보됩니다.
+
+### PERFORMANCE
 
 
 
