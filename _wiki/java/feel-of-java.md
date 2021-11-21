@@ -3,7 +3,7 @@ layout  : wiki
 title   : (번역) The Feel of Java
 summary : 
 date    : 2021-11-20 21:19:49 +0900
-updated : 2021-11-21 13:42:32 +0900
+updated : 2021-11-21 14:11:31 +0900
 tag     : 
 toc     : true
 public  : true
@@ -293,6 +293,30 @@ They end up doing it in a way that hides all the stuff, so that it’s much more
 심각하게는 private 변수 하나로 전체 시스템이 붕괴할 수도 있는 것입니다.
 상용 시스템에서 이런 문제는 자주 일어나는 편이며, 이런 백도어를 방지하기 위해 객체지향 프로그래밍이 선택되지 않기도 합니다.
 결국 모든 것을 숨기는 방향으로 작업이 진행되며 결과적으로 모든 것이 모호해지는 결과를 낳게 됩니다.
+
+### Exception handling
+
+>
+The exception model that we picked up pretty much straight out of Modula 3 has been, I think, a real success.
+Initially, I was somewhat anxious about it, because the whole notion of having a rigorous proof that an exception will get tossed can be something of a burden.
+But in the end, that is a good burden to have.
+When you aren’t testing for exceptions, the code is going to break at some time in any real environment where surprising things always happen.
+Ariane 5 provides a vivid lesson on how important exception handling is.
+
+우리가 선택한 Modula 3의 예외 모델은 실제로 성공적이었다고 생각합니다.
+처음에는 예외가 던져질 것이라는 증거가 있다는 개념이 부담스럽지 않을까 생각했습니다.
+하지만 그건 좋은 의미의 부담스러움이었습니다.
+만약 예외를 테스트하지 않는다면 실제 환경에서 예상하지 못한 상황이 되었을 때 코드는 깨지게 될 것입니다.
+예외 처리가 얼마나 중요한지에 대에서는 [Ariane 5]( https://ko.wikipedia.org/wiki/%EC%95%84%EB%A6%AC%EC%95%88_5 )로부터 교훈을 얻은 바 있습니다.
+
+>
+Although exception handling makes Java feel somewhat clumsy because it forces you to think about something you’d rather ignore, your applications are ultimately much more solid and reliable.
+
+무시하고 싶은 것을 억지로 생각하게 만드는 Java의 예외 처리 방식 때문에 Java가 좀 서투른 언어처럼 느껴질 수 있습니다.
+하지만 그로 인해 Java로 개발한 애플리케이션들은 실제로 더 견고할 것이고, 더 신뢰할 수 있을 것입니다.
+
+### OBJECT-ORIENTED EXTENSIBILITY
+
 
 
 ## 참고문헌
