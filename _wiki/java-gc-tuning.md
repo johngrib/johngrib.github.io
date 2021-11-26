@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : Oracle의 튜닝 가이드를 읽고 정리해 보자
 date    : 2019-09-12 22:35:34 +0900
-updated : 2021-11-26 22:27:20 +0900
+updated : 2021-11-26 23:08:53 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -320,17 +320,22 @@ Survivor 0              Survivor 1
 
 커맨드 라인 옵션 `-verbose:gc`를 사용하면 각 콜렉션에서 heap 및 gc에 대한 정보를 보여준다.
 
-### Java 9 ~ 12
+### Java 9 ~ 12, 17
 
 >
-* [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html#GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-collector-implementation.html#GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E )
+*
+[HTG-17](https://docs.oracle.com/en/java/javase/17/gctuning/garbage-collector-implementation.html#GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ),
+[HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html#GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ),
+[HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-collector-implementation.html#GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ),
+[HTG-10](https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E ),
+[HTG-09](https://docs.oracle.com/javase/9/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-A24775AB-16A3-4B86-9963-76E5AC398A3E )
 
 `-Xlog`는 HotSpot JVM의 제너럴한 로깅 옵션이다. 즉 `gc`는 `-Xlog`의 태그이며, `-verbose:gc`는 `-Xlog:gc`의 알리아스다.
 
 자세한 정보를 얻고 싶다면 `-Xlog:gc*`를 시도해 보자.
 
 
-다음은 HTG-09 ~ 12 문서에 수록된 예제이다.
+다음은 HTG-09 ~ 12, 17 문서에 수록된 예제이다.
 
 ```
 [15,651s][info ][gc] GC(36) Pause Young (G1 Evacuation Pause) 239M->57M(307M) (15,646s, 15,651s) 5,048ms
@@ -399,7 +404,13 @@ Survivor 0              Survivor 1
 
 ## Serial GC에 영향을 주는 요소들
 
-> [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/factors-affecting-garbage-collection-performance.html#GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/factors-affecting-garbage-collection-performance.html#GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/factors-affecting-garbage-collection-performance.htm#JSGCT-GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/factors-affecting-garbage-collection-performance.htm#JSGCT-GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html#sizing_generations )
+>
+[HTG-17](https://docs.oracle.com/en/java/javase/17/gctuning/factors-affecting-garbage-collection-performance.html#GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ),
+[HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/factors-affecting-garbage-collection-performance.html#GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ),
+[HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/factors-affecting-garbage-collection-performance.html#GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ),
+[HTG-10](https://docs.oracle.com/javase/10/gctuning/factors-affecting-garbage-collection-performance.htm#JSGCT-GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ),
+[HTG-09](https://docs.oracle.com/javase/9/gctuning/factors-affecting-garbage-collection-performance.htm#JSGCT-GUID-5508674B-F32D-4B02-9002-D0D8C7CDDC75 ),
+[HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html#sizing_generations )
 
 주의: 이 항목에서는 주로 heap의 증가 및 축소, heap 레이아웃 및 기본값에 대해 Serial 컬렉션을 전제하고 설명한다. Parallel / G1 GC에는 잘 들어맞지 않을 수 있다.
 
@@ -537,7 +548,7 @@ Survivor 영역이 너무 작으면 큰 객체를 Survivor 영역을 거치지 �
 GC가 실행될 때마다 가상 머신은 threshold 값을 선택하는데, 이 threshold 값은 old 영역으로 보낼 객체의 나이(복사된 횟수)라 할 수 있다.
 그리고 이 값은 Survivor 영역에 남는 객체가 절반이 되도록 조절되기 때문이다.
 
-* Java 9 ~ 12: `-Xlog:gc,age`를 사용하면 threshold 값과 new generation 객체들의 나이를 출력할 수 있다.
+* Java 9 ~ 12, 17: `-Xlog:gc,age`를 사용하면 threshold 값과 new generation 객체들의 나이를 출력할 수 있다.
 * Java 8: `XX:+PrintTenuringDistribution`를 사용해 threshold 값과 new generation 객체들의 나이를 출력할 수 있다.
 
 64bit Solaris OS의 경우 기본값은 다음과 같다.
