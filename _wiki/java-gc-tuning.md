@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : Oracle의 튜닝 가이드를 읽고 정리해 보자
 date    : 2019-09-12 22:35:34 +0900
-updated : 2021-11-26 23:08:53 +0900
+updated : 2021-11-26 23:17:44 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -576,7 +576,9 @@ GC가 실행될 때마다 가상 머신은 threshold 값을 선택하는데, 이
 
 ## GC의 종류와 선택
 
-> [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/available-collectors.html#GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/available-collectors.html#GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/available-collectors.htm#JSGCT-GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/available-collectors.htm#JSGCT-GUID-C7B19628-27BA-4945-9004-EC0F08C76003 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/collectors.html#sthref27 )
+>
+[HTG-17](https://docs.oracle.com/en/java/javase/12/gctuning/available-collectors.html#GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/available-collectors.html#GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/available-collectors.htm#JSGCT-GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/available-collectors.htm#JSGCT-GUID-C7B19628-27BA-4945-9004-EC0F08C76003 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/collectors.html#sthref27 )
+[HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/available-collectors.html#GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/available-collectors.html#GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/available-collectors.htm#JSGCT-GUID-F215A508-9E58-40B4-90A5-74E29BF3BD3C ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/available-collectors.htm#JSGCT-GUID-C7B19628-27BA-4945-9004-EC0F08C76003 ), [HTC-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/collectors.html#sthref27 )
 
 잘 모르겠다면 다음 지침을 읽고 테스트해 보도록 한다.
 
@@ -602,7 +604,8 @@ GC가 실행될 때마다 가상 머신은 threshold 값을 선택하는데, 이
 * `-XX:+UseG1GC`를 설정해 G1GC를 사용한다.
 * 또는 `-XX:+UseConcMarkSweepGC`를 설정해 CMS를 사용한다. (CMS는 JDK 8까지만 사용이 가능하다)
 
-**응답 시간이 매우 중요하거나 매우 큰 heap을 사용하는가?**
+**응답 시간이 매우 중요한가?** (HTG-17) /
+**응답 시간이 매우 중요하거나 매우 큰 heap을 사용하는가?** (HTG-12)
 
 * `-XX:UseZGC`를 설정해 ZGC를 사용한다. (ZGC는 JDK 11 부터 사용이 가능하다)
 
