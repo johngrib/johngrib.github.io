@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : Oracle의 튜닝 가이드를 읽고 정리해 보자
 date    : 2019-09-12 22:35:34 +0900
-updated : 2021-11-26 22:21:53 +0900
+updated : 2021-11-26 22:27:20 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -227,7 +227,7 @@ generational collection 기법을 쓰는 GC는 다음과 같이 작동한다.
 
 
 ```ascii-art
-HTG-09 ~ 12
+HTG-09 ~ 12, 17
 Default Arrangement of Generations in the Serial Collector
 
                           <-------------- Old -------------->
@@ -254,7 +254,7 @@ HTG-09 부터 Tenured가 Old로 바뀐 것으로 확인할 수 있다.
 
 뿐만 아니라 이 그림은 제목도 바뀌었다.
 
-* HTG-90 ~ 12: _Default Arrangement of Generations in the Serial Collector_
+* HTG-09 ~ 12, 17: _Default Arrangement of Generations in the Serial Collector_
     * 시리얼 컬렉터의 기본 배열
 * HTG-08: _Default Arrangement of Generations, Except for Parallel Collector and G1_
     * Generation의 기본 배열(병렬 컬렉터와 G1 컬렉터를 제외)
