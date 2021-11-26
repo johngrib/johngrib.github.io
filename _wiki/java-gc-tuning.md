@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : Oracle의 튜닝 가이드를 읽고 정리해 보자
 date    : 2019-09-12 22:35:34 +0900
-updated : 2019-10-04 12:56:34 +0900
+updated : 2021-11-26 20:48:37 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -13,19 +13,24 @@ latex   : true
 * TOC
 {:toc}
 
-* 이 글은 Oracle의 "HotSpot Virtual Machine Garbage Collection Tuning Guide"의 Java 8 버전부터 12 버전까지의 문서를 읽고 정리한 문서이다.
+* 이 글은 Oracle의 "HotSpot Virtual Machine Garbage Collection Tuning Guide"를 읽고 정리한 것이다.
+* Java 8, 9, 10, 11, 12, 17 버전이 대상. (13 ~ 16은 귀찮아서 읽지 않았음)
 * 이 문서에서는 원본 문서의 이름을 "HTG"로 줄여 부르기로 한다. **H**otSpot Virtual Machine Garbage Collection **T**uning **G**uide.
-    * HTG-08, HTG-12는 각각 Java 8 버전의 HTG와 Java 12 버전의 HTG를 말한다.
+    * 예를 들어 HTG-08, HTG-12는 각각 Java 8 버전의 HTG와 Java 12 버전의 HTG를 말한다.
 
 
 ## Garbage Collector란 무엇인가?
 
 * GC의 정의는 HTG-08 과 HTG-09 ~ HTG-12 가 미묘하게 다른데, 9 부터 G1GC가 기본값이 되었기 때문이다.
 
-### Java 9 ~ 12
+### Java 9 ~ 12, 17
 
 >
-* [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/introduction-garbage-collection-tuning.html ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/introduction-garbage-collection-tuning.htm ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm )
+* [HTG-17](https://docs.oracle.com/en/java/javase/17/gctuning/introduction-garbage-collection-tuning.html )
+[HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html ),
+[HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/introduction-garbage-collection-tuning.html ),
+[HTG-10](https://docs.oracle.com/javase/10/gctuning/introduction-garbage-collection-tuning.htm ),
+[HTG-09](https://docs.oracle.com/javase/9/gctuning/introduction-garbage-collection-tuning.htm )
 
 GC는 애플리케이션의 동적 메모리 할당 요청을 자동으로 관리한다.
 
