@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : Oracle의 튜닝 가이드를 읽고 정리해 보자
 date    : 2019-09-12 22:35:34 +0900
-updated : 2021-11-26 21:48:50 +0900
+updated : 2021-11-26 22:21:53 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -168,11 +168,16 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
 ## Generational Garbage Collection
 
 >
-* [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ), [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/generations.html#sthref16 )
+* [HTG-17](https://docs.oracle.com/en/java/javase/17/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ),
+[HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ),
+[HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-collector-implementation.html#GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ),
+[HTG-10](https://docs.oracle.com/javase/10/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ),
+[HTG-09](https://docs.oracle.com/javase/9/gctuning/garbage-collector-implementation.htm#JSGCT-GUID-71D796B3-CBAB-4D80-B5C3-2620E45F6E5D ),
+[HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/generations.html#sthref16 )
 
 **쓰레기**
 
-* HTG-09 ~ 12: 실행중인 프로그램의 어떤 라이브 오브젝트의 레퍼런스에서도 도달할 수 없는 객체가 있다면 그 객체는 쓰레기로 간주되며, 쓰레기의 메모리는 VM이 재사용할 수 있다.
+* HTG-09 ~ 12, 17: 실행중인 프로그램의 어떤 라이브 오브젝트의 레퍼런스에서도 도달할 수 없는 객체가 있다면 그 객체는 쓰레기로 간주되며, 쓰레기의 메모리는 VM이 재사용할 수 있다.
 * HTG-08: 실행중인 프로그램의 어떤 포인터도 도달할 수 없는 객체는 쓰레기로 간주된다.
 
 **이론적으로 가장 단순한 가비지 컬렉터**
@@ -185,7 +190,7 @@ HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록
 
 ### generational collection
 
-HotSpot VM은 generational collection 기법을 사용하는 여러 GC 알고리즘을 통합하고 있으며, 이런 여러 알고리즘 중에서 상황에 맞는 것을 골라 쓴다.
+HotSpot VM은 generational collection 기법을 사용하는 여러 GC 알고리즘을 통합하고 있으며, 이런 여러 알고리즘 중에서 상황에 맞는 것을 골라 쓴다. (HTG-17: ZGC는 예외. ZGC는 generational collection 기법을 사용하지 않는다)
 
 generational collection은 객체를 세대별로 관리하는 기법이다. 초등학교 - 중학교 - 고등학교처럼 나이를 주요 기준으로 삼아 관리하는 방법이라 할 수 있다. 이 방법을 사용하면 단순무식한 GC처럼 모든 객체를 일일이 확인하는 것이 아니라 세대별로 나누어 GC를 수행하게 되어, 작업량을 많이 줄일 수 있다.
 
