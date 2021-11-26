@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : Oracle의 튜닝 가이드를 읽고 정리해 보자
 date    : 2019-09-12 22:35:34 +0900
-updated : 2021-11-26 20:51:21 +0900
+updated : 2021-11-26 21:48:50 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -60,10 +60,14 @@ GC는 메모리를 관리하는 도구이다. GC는 다음과 같은 작업을 �
 
 ## Default Selections
 
-### Java 9 ~ 12
+### Java 9 ~ 12, 17
 
 >
-* [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/ergonomics.html ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/ergonomics.htm#JSGCT-GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/ergonomics.htm#JSGCT-GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 )
+* [HTG-17](https://docs.oracle.com/en/java/javase/17/gctuning/ergonomics.html#GUID-DA88B6A6-AF89-4423-95A6-BBCBD9FAE781 ),
+[HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html ),
+[HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/ergonomics.html ),
+[HTG-10](https://docs.oracle.com/javase/10/gctuning/ergonomics.htm ),
+[HTG-09](https://docs.oracle.com/javase/9/gctuning/ergonomics.htm )
 
 GC, heap 사이즈, 런타임 컴파일러 기본 셋팅은 다음과 같다.
 
@@ -86,7 +90,12 @@ GC, heap 사이즈, 런타임 컴파일러 기본 셋팅은 다음과 같다.
 ## Behavior-Based Tuning
 
 >
-* [HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-10](https://docs.oracle.com/javase/10/gctuning/ergonomics.htm#JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-09](https://docs.oracle.com/javase/9/gctuning/ergonomics.htm#JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ), [HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ergonomics.html#sthref11 )
+* [HTG-17](https://docs.oracle.com/en/java/javase/17/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ),
+[HTG-12](https://docs.oracle.com/en/java/javase/12/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ),
+[HTG-11](https://docs.oracle.com/en/java/javase/11/gctuning/ergonomics.html#GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ),
+[HTG-10](https://docs.oracle.com/javase/10/gctuning/ergonomics.htm#JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ),
+[HTG-09](https://docs.oracle.com/javase/9/gctuning/ergonomics.htm#JSGCT-GUID-3D0BB91E-9BFF-4EBB-B523-14493A860E73 ),
+[HTG-08](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/ergonomics.html#sthref11 )
 
 HotSpot VM GC는 두 가지 목표 중 하나를 우선적으로 달성하도록 설정할 수 있다.
 
