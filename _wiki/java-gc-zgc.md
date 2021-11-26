@@ -3,11 +3,11 @@ layout  : wiki
 title   : ZGC, The Z Garbage Collector
 summary : 작성중인 문서
 date    : 2019-10-04 11:05:50 +0900
-updated : 2019-10-15 17:31:28 +0900
+updated : 2021-11-26 20:52:15 +0900
 tag     : java gc
 toc     : true
 public  : true
-parent  : [[garbage-collection]]
+parent  : [[/java/gc]]
 latex   : false
 ---
 * TOC

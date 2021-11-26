@@ -1,5 +1,4 @@
 [
- "garbage-collection",
  "gc-death-spiral",
  "java-g1gc",
  "java-gc-eden-to-survivor",
@@ -7,5 +6,6 @@
  "java-gc-serial-collector",
  "java-gc-tuning",
  "java-gc-zgc",
+ "java/gc",
  "summary-The-Pauseless-GC-Algorithm"
 ]

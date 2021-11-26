@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-11-20 21:21:43 +0900
+updated : 2021-11-26 20:51:29 +0900
 regenerate: true
 ---
 
@@ -259,7 +259,7 @@ regenerate: true
 * [[jvm-memory]]
 * [[jvm-stack]]
 
-### [[garbage-collection]]
+### [[/java/gc]]
 * [[gc-death-spiral]]
 * [[java-gc-tuning]]
 * [[java-gc-eden-to-survivor]]

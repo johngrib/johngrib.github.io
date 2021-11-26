@@ -3,11 +3,11 @@ layout  : wiki
 title   : Java HotSpot VM Parallel Collector
 summary : Java8 디폴트 GC
 date    : 2019-09-16 12:18:37 +0900
-updated : 2021-10-17 18:47:33 +0900
+updated : 2021-11-26 20:52:08 +0900
 tag     : java gc
 toc     : true
 public  : true
-parent  : [[garbage-collection]]
+parent  : [[/java/gc]]
 latex   : true
 ---
 * TOC

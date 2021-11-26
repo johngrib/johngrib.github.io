@@ -3,11 +3,11 @@ layout  : wiki
 title   : Minor GC - Eden에서 Survivor 영역으로
 summary : 
 date    : 2019-09-15 15:01:28 +0900
-updated : 2019-09-29 09:28:37 +0900
+updated : 2021-11-26 20:51:55 +0900
 tag     : java gc
 toc     : true
 public  : true
-parent  : [[garbage-collection]]
+parent  : [[/java/gc]]
 latex   : false
 ---
 * TOC

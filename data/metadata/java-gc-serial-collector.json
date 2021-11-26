@@ -1,8 +1,8 @@
 {
  "type": "wiki",
  "title": "Java HotSpot VM Serial Collector",
- "parent": "garbage-collection",
+ "parent": "java/gc",
  "url": "/wiki/java-gc-serial-collector",
- "updated": "2019-09-29 15:23:35 +0900",
+ "updated": "2021-11-26 20:52:01 +0900",
  "children": []
 }

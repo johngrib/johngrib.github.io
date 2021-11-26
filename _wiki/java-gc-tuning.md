@@ -3,11 +3,11 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : Oracle의 튜닝 가이드를 읽고 정리해 보자
 date    : 2019-09-12 22:35:34 +0900
-updated : 2021-11-26 20:48:37 +0900
+updated : 2021-11-26 20:51:21 +0900
 tag     : java gc
 toc     : true
 public  : true
-parent  : [[garbage-collection]]
+parent  : [[/java/gc]]
 latex   : true
 ---
 * TOC

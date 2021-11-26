@@ -3,11 +3,11 @@ layout  : wiki
 title   : Java HotSpot VM Serial Collector
 summary :
 date    : 2019-09-29 09:31:31 +0900
-updated : 2019-09-29 15:23:35 +0900
+updated : 2021-11-26 20:52:01 +0900
 tag     : java gc
 toc     : true
 public  : true
-parent  : [[garbage-collection]]
+parent  : [[/java/gc]]
 latex   : false
 ---
 * TOC

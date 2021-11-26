@@ -3,11 +3,11 @@ layout  : wiki
 title   : 죽음의 GC 소용돌이
 summary : GC death spiral
 date    : 2019-10-29 23:02:40 +0900
-updated : 2019-10-29 23:12:24 +0900
+updated : 2021-11-26 20:51:11 +0900
 tag     : gc
 toc     : true
 public  : true
-parent  : [[garbage-collection]]
+parent  : [[/java/gc]]
 latex   : false
 ---
 * TOC
