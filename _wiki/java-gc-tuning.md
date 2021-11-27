@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : Oracle의 튜닝 가이드를 읽고 정리해 보자
 date    : 2019-09-12 22:35:34 +0900
-updated : 2021-11-26 23:17:44 +0900
+updated : 2021-11-27 11:00:33 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -719,6 +719,7 @@ ZGC는 10ms 미만의 짧은 대기 시간이 필요하거나 테라 바이트 �
 
 ## 참고문헌
 
+* [JDK 17 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/17/gctuning/introduction-garbage-collection-tuning.html )
 * [JDK 12 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/12/gctuning/introduction-garbage-collection-tuning.html )
 * [JDK 11 Garbage Collection Tuning Guide](https://docs.oracle.com/en/java/javase/11/gctuning/introduction-garbage-collection-tuning.html )
 * [JDK 10 Garbage Collection Tuning Guide](https://docs.oracle.com/javase/10/gctuning/introduction-garbage-collection-tuning.htm )
