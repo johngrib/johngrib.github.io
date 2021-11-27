@@ -3,7 +3,7 @@ layout  : wiki
 title   : ZGC, The Z Garbage Collector
 summary : 작성중인 문서
 date    : 2019-10-04 11:05:50 +0900
-updated : 2021-11-26 20:52:15 +0900
+updated : 2021-11-27 13:13:03 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -77,7 +77,7 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 
 
 
-# 테스트 결과
+## 테스트 결과
 
 한편 ZGC project의 리드인 Per Liden이 [FOSDEM 2018에서 발표한 자료][ZGC-FOSDEM-2018]를 보면 SPECjbb에서 2015년에 수행한 테스트 결과가 실려 있다.
 
@@ -90,15 +90,88 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 * 일시 정지 시간도 압도적으로 짧았다.
 
 
+## HotSpot Virtual Machine Garbage Collection Tuning Guide (Java 17) The Z Garbage Collector 번역
+
+>
+The Z Garbage Collector (ZGC) is a scalable low latency garbage collector.
+ZGC performs all expensive work concurrently, without stopping the execution of application threads for more than a few milliseconds.
+It is suitable for applications which require low latency.
+Pause times are independent of heap size that is being used.
+ZGC supports heap sizes from 8MB to 16TB.
+>
+The Z Garbage Collector is enabled with the command-line option `-XX:+UseZGC`.
+
+- ZGC는 확장 가능한 low latency GC 입니다.
+- ZGC는 모든 비싼 작업들을 concurrently하게 수행하는데, 그러면서도 애플리케이션 스레드들이 약간의 millisecond 이상 멈추지 않도록 합니다.
+- 따라서 ZGC는 low latency를 요구하는 애플리케이션에 적합합니다.
+- 정지 시간은 사용되고 있는 heap의 크기와 무관합니다.
+- ZGC는 8MB부터 16TB까지의 heap 크기를 지원합니다.
+- ZGC는 커맨드 라인에서 `-XX:+UseZGC`옵션을 주면 사용할 수 있습니다.
+
+### Setting the Heap Size
+
+>
+The most important tuning option for ZGC is setting the max heap size (-Xmx).
+Since ZGC is a concurrent collector a max heap size must be selected such that, 1) the heap can accommodate the live-set of your application, and 2) there is enough headroom in the heap to allow allocations to be serviced while the GC is running.
+How much headroom is needed very much depends on the allocation rate and the live-set size of the application.
+In general, the more memory you give to ZGC the better.
+But at the same time, wasting memory is undesirable, so it’s all about finding a balance between memory usage and how often the GC needs to run.
+
+- ZGC 튜닝에서 가장 중요한 것은 max heap size 설정입니다(`-Xmx`).
+- ZGC는 concurrent collector이며, 다음의 이유들로 인해 max heap size를 반드시 선택해야 합니다.
+    1. heap이 애플리케이션의 live-set을 수용할 수 있어야 합니다.
+    2. heap에서 allocation을 수행하는 동안 GC가 수행될 수 있도록 headroom이 충분히 있어야 합니다.
+- 얼마나 많은 headroom이 필요한지는 애플리케이션의 live-set 크기와 allocation rate에 따라 달라집니다.
+- 일반적으로는 ZGC에 제공하는 메모리가 많으면 많을수록 좋습니다.
+- 하지만 그렇다고 메모리를 낭비하는 것은 바람직하지 않겠죠. 메모리 사용량과 GC 수행 빈도 사이의 균형을 찾아야 합니다.
+
+### Setting Number of Concurrent GC Threads
+
+>
+The second tuning option one might want to look at is setting the number of concurrent GC threads (`-XX:ConcGCThreads`).
+ZGC has heuristics to automatically select this number.
+This heuristic usually works well but depending on the characteristics of the application this might need to be adjusted.
+This option essentially dictates how much CPU-time the GC should be given.
+Give it too much and the GC will steal too much CPU-time from the application.
+Give it too little, and the application might allocate garbage faster than the GC can collect it.
+
+- 두 번째로 중요한 튜닝 옵션은 concurrent GC 스레드 수를 설정(`-XX:ConcGCThreads`)하는 것입니다.
+- ZGC는 휴리스틱을 통해 이 스레드 수를 자동으로 선택합니다.
+- 이 휴리스틱은 애플리케이션의 특성에 따라 잘 작동할 수 있지만, 조정이 필요할 수도 있습니다.
+- 즉 이 옵션은 CPU-time 중 얼마만큼을 GC에게 줄 것인지를 설정하는 것입니다.
+- 이 값을 너무 크게 주면 GC가 애플리케이션의 CPU-time을 그만큼 많이 잡아먹게 됩니다.
+- 이 값을 너무 작게 주면 애플리케이션이 GC가 쓰레기를 수집하는 것보다 더 빠르게 쓰레기를 할당하게 됩니다.
+
+### Returning Unused Memory to the Operating System
+
+>
+By default, ZGC uncommits unused memory, returning it to the operating system.
+This is useful for applications and environments where memory footprint is a concern.
+This feature can be disabled using `-XX:-ZUncommit`.
+Furthermore, memory will not be uncommitted so that the heap size shrinks below the minimum heap size (`-Xms`).
+This means this feature will be implicitly disabled if the minimum heap size (`-Xms`) is configured to be equal to the maximum heap size (`-Xmx`).
+>
+An uncommit delay can be configured using `-XX:ZUncommitDelay=<seconds>` (default is 300 seconds).
+This delay specifies for how long memory should have been unused before it's eligible for uncommit.
+
+- 기본적으로, ZGC는 사용되지 않은 메모리를 uncommit하고 운영체제로 반환합니다.
+- 이 기능은 메모리 footprint가 중요한 애플리케이션 및 환경에 적합합니다.
+- 이 기능은 `-XX:-ZUncommit`를 사용하여 비활성화할 수 있습니다.
+- 한편, 메모리 uncommit은 uncommit으로 인해 heap 사이즈가 minimum heap size(`-Xms`)보다 작아지는 경우에는 수행되지 않습니다.
+- 만약 minimum heap size(`-Xms`)가 maximum heap size(`-Xmx`)와 같게 설정되었다면, 이 기능은 암묵적으로 비활성화됩니다.
+- uncommit delay는 `-XX:ZUncommitDelay=<seconds>`를 사용하여 설정할 수 있습니다.
+    - 디폴트 값은 300초.
+- 이 delay 값만큼의 시간이 지나는 동안 메모리가 사용되지 않는다면 uncommit이 가능하게 됩니다.
 
 
-# 참고문헌
+## 참고문헌
 
 * 웹 문서
     * [JEP 333: ZGC: A Scalable Low-Latency Garbage Collector (Experimental)][jep-333]
     * [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 11)][java11]
     * [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 12)][java12]
     * [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 13)][java13]
+    * [HotSpot Virtual Machine Garbage Collection Tuning Guide(Java SE 17)][java17]
     * [The Z Garbage Collector An Introduction][ZGC-FOSDEM-2018]
     * [The Design of ZGC][design-of-zgc]
     * [CFV: New Project: ZGC][mail-new-project-zgc]
@@ -112,6 +185,7 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 [java11]: https://docs.oracle.com/en/java/javase/11/gctuning/z-garbage-collector1.html
 [java12]: https://docs.oracle.com/en/java/javase/12/gctuning/z-garbage-collector1.html
 [java13]: https://docs.oracle.com/en/java/javase/13/gctuning/z-garbage-collector1.html
+[java17]: https://docs.oracle.com/en/java/javase/17/gctuning/z-garbage-collector.html
 [ZGC-FOSDEM-2018]: http://cr.openjdk.java.net/~pliden/slides/ZGC-FOSDEM-2018.pdf
 [design-of-zgc]: http://cr.openjdk.java.net/~pliden/slides/ZGC-PLMeetup-2019.pdf
 [mail-new-project-jgc]: http://mail.openjdk.java.net/pipermail/announce/2017-October/000237.html
