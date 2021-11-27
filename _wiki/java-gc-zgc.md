@@ -3,7 +3,7 @@ layout  : wiki
 title   : ZGC, The Z Garbage Collector
 summary : 작성중인 문서
 date    : 2019-10-04 11:05:50 +0900
-updated : 2021-11-27 13:13:03 +0900
+updated : 2021-11-27 13:16:52 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -188,7 +188,7 @@ This delay specifies for how long memory should have been unused before it's eli
 [java17]: https://docs.oracle.com/en/java/javase/17/gctuning/z-garbage-collector.html
 [ZGC-FOSDEM-2018]: http://cr.openjdk.java.net/~pliden/slides/ZGC-FOSDEM-2018.pdf
 [design-of-zgc]: http://cr.openjdk.java.net/~pliden/slides/ZGC-PLMeetup-2019.pdf
-[mail-new-project-jgc]: http://mail.openjdk.java.net/pipermail/announce/2017-October/000237.html
+[mail-new-project-zgc]: http://mail.openjdk.java.net/pipermail/announce/2017-October/000237.html
 
 [^jep-333]: [JEP 333: ZGC: A Scalable Low-Latency Garbage Collector (Experimental)][jep-333]
 [^goals]: [The Design of ZGC][design-of-zgc]. 4쪽.
