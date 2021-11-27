@@ -3,7 +3,7 @@ layout  : wiki
 title   : ZGC, The Z Garbage Collector
 summary : 작성중인 문서
 date    : 2019-10-04 11:05:50 +0900
-updated : 2021-11-27 13:16:52 +0900
+updated : 2021-11-27 13:23:23 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -46,7 +46,7 @@ ZGC를 개발한 이유에 대해 더 자세히 알아보자.
 
 >
 Garbage collection is one of Java's main strengths. However, when garbage collection pauses become too long they start to affect application response times negatively. By removing or drastically reducing the length of GC pauses, we'll make Java a more attractive platform for an even wider set of applications.
-
+>
 Furthermore, the amount of memory available in modern systems continues to grow. Users and application developers expect the JVM to be equipped to take full advantage of this memory in an efficient manner, and without long GC pause times.
 
 두 가지로 요약할 수 있다.
