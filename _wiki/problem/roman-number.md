@@ -3,7 +3,7 @@ layout  : wiki
 title   : 로마 숫자 변환 문제
 summary : 
 date    : 2021-11-28 14:10:06 +0900
-updated : 2021-11-28 16:18:01 +0900
+updated : 2021-11-28 16:42:35 +0900
 tag     : 
 toc     : true
 public  : true
@@ -48,7 +48,7 @@ latex   : false
 
 ### 단순한 방법
 
-생각할 수 있는 가장 단순한 방법은 다음과 같을 것이다.
+생각할 수 있는 가장 단순한 방법은 다음과 같을 것이다. 언어는 Javascript를 사용했다.
 
 ```javascript
 // 값을 정의한다
