@@ -3,7 +3,7 @@ layout  : wiki
 title   : 선택사항 열어두기
 summary : 좋은 아키텍트는 결정되지 않은 사항의 수를 최대화한다
 date    : 2021-02-14 12:44:50 +0900
-updated : 2021-02-14 13:16:19 +0900
+updated : 2021-11-28 14:06:28 +0900
 tag     : architecture Uncle-Bob
 toc     : true
 public  : true
@@ -71,7 +71,7 @@ latex   : false
 
 ## 함께 읽기
 
-- [[spring-documents-overview]]
+- [[/spring/document/overview]]
 
 ## 참고문헌
 
