@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-11-26 20:51:29 +0900
+updated : 2021-11-28 13:58:34 +0900
 regenerate: true
 ---
 
@@ -178,7 +178,7 @@ regenerate: true
 * [[/pattern/visitor]]
 
 ## [[problem]]
-* [[two-eggs-100-floor]]
+* [[/problem/two-eggs-100-floor]]
 
 ## [[programming]]
 
