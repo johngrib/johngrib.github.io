@@ -1,0 +1,11 @@
+{
+ "type": "wiki",
+ "title": "Clojure",
+ "summary": "",
+ "parent": "language",
+ "url": "/wiki/clojure",
+ "updated": "2021-11-30 10:10:50 +0900",
+ "children": [
+  "clojure/reader"
+ ]
+}

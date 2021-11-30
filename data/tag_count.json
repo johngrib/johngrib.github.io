@@ -152,6 +152,10 @@
   "size": 2
  },
  {
+  "name": "clojure",
+  "size": 1
+ },
+ {
   "name": "command",
   "size": 65
  },
