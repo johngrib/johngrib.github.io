@@ -1,0 +1,65 @@
+---
+layout  : wiki
+title   : Clojure 학습
+summary : 
+date    : 2021-12-03 12:42:06 +0900
+updated : 2021-12-03 15:44:07 +0900
+tag     : clojure
+toc     : true
+public  : true
+parent  : [[/clojure]]
+latex   : false
+---
+* TOC
+{:toc}
+
+## 익명 함수
+
+`#()`를 사용해 익명 함수를 선언할 수 있다. 다음 코드[^p-clojure-2]의 `#(Character/isWhitespace %)`가 익명 함수이다.
+
+```clojure
+(defn blank? [s]
+  (every? #(Character/isWhitespace %) s))
+```
+
+이 함수는 다음과 같이 사용할 수 있다.
+
+```clojure
+(println (blank? ""))   ; true
+(println (blank? "1a")) ; false
+```
+
+여기에서 인상적인 것들 몇 가지를 살펴보자.
+
+- 함수 이름이 `blank?` 이다. Clojure에서는 함수 이름에 물음표를 쓸 수 있다. Java였다면 `isBlank`로 이름을 지었겠지만, Clojure에서는 그냥 `blank?`로 지을 수 있다.
+- `#`과 `%`를 사용해 익명 함수를 만든다.
+    - Perl이 떠오르는 축약 문법. `#`는 익명 함수의 선언을, `%`는 첫 번째 argument를 의미한다.[^reader]
+
+`#(Character/isWhitespace %)`를 Java 코드로 표현하자면 다음과 같다.
+
+```java
+Function<Character, Boolean> noname = ((Character c) -> Character.isWhitespace(c));
+```
+
+하지만 Java 사용자들은 아무도 이런 식으로 문자열이 공백인지 체크하지 않는다. 보통은 이렇게 한다.
+
+```java
+"sentence".isBlank();   // Java
+```
+
+물론 Clojure에서도 `String`의 `isBlank`를 사용할 수 있다.
+
+```clojure
+(.isBlank "sentence")   ; Clojure
+```
+
+잘 살펴보면 세미콜론과 공백을 제외하고 모든 문자가 그대로 있다. 순서만 다를 뿐이다.
+
+
+## 참고문헌
+
+- 프로그래밍 클로저 / 스튜어트 할로웨이 저 / 유찬우 역 / 인사이트(insight) / 초판 1쇄 발행 2010년 06월 20일 / 원제 : Programming Clojure (2009)
+
+## 주석
+[^p-clojure-2]: 프로그래밍 클로저 1장. 2쪽.
+[^reader]: [[/clojure/reader]] 참고.

@@ -1,3 +1,4 @@
 [
+ "clojure/example",
  "clojure/reader"
 ]
