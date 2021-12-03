@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure 학습
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-03 15:44:07 +0900
+updated : 2021-12-03 15:52:33 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -54,6 +54,39 @@ Function<Character, Boolean> noname = ((Character c) -> Character.isWhitespace(c
 ```
 
 잘 살펴보면 세미콜론과 공백을 제외하고 모든 문자가 그대로 있다. 순서만 다를 뿐이다.
+
+## 구조체
+
+구조체 선언은 이렇게 한다.
+
+```clojure
+(defstruct person :first-name :last-name :age)
+```
+
+Java라면 다음과 같이 할 것이다.
+
+```java
+public class Person {
+  String firstName;
+  String lastName;
+  int age;
+}
+```
+
+다음과 같이 새로운 인스턴스를 만들 수 있고, 값을 부를 수도 있다.
+
+```clojure
+(defstruct person :first-name :last-name :age)
+
+(def customer1 (struct person "John" "Grib" 28))
+
+(println customer1)
+; 출력 결과는 {:first-name John, :last-name Grib, :age 28}
+
+(println (:age customer1))
+; 출력 결과는 28
+```
+
 
 
 ## 참고문헌
