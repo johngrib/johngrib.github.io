@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure 학습
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-03 16:56:36 +0900
+updated : 2021-12-03 17:09:30 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -161,6 +161,42 @@ Clojure의 문자열 concatenation은 `str`을 사용하면 된다.
 
 잘 살펴보면 정규식의 옵션 플래그는 `#"(?옵션)hello"` 처럼 정규식 패턴 앞쪽에 둔다는 것도 알 수 있다.
 
+## 제어문
+
+`if`는 `true`인 경우와 `false`인 경우의 표현식을 제공해주면 된다.
+
+```clojure
+(def b 10)
+(println
+  (if (> b 2)
+    "b는 2보다 큽니다."
+    "b는 2보다 크지 않습니다."))
+```
+
+`cond`를 `else if`처럼 쓸 수 있다.
+
+```clojure
+(def x 28)
+
+(println
+  (cond
+    (< x 10) "10 미만"
+    (< x 20) "10 이상 20 미만"
+    (< x 30) "20 이상 30 미만"
+    :else "30 초과")
+  )
+; 20 이상 30 미만
+```
+
+`case`는 `swtich`와 비슷하다.
+
+```clojure
+(def a "apple")
+(case a
+  "test" (println "테스트")
+  "apple" (println "사과"))
+; 사과
+```
 
 ## 참고문헌
 
