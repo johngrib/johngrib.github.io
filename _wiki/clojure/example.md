@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure 학습
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-03 15:52:33 +0900
+updated : 2021-12-03 16:56:36 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -87,6 +87,79 @@ public class Person {
 ; 출력 결과는 28
 ```
 
+## 문자열 다루기
+
+Clojure의 문자열 concatenation은 `str`을 사용하면 된다.
+
+```clojure
+(println (str "123" "456" "789"))
+; 123456789
+```
+
+`String.format`은 Java와 똑같은 것 같다.
+
+```clojure
+(println
+  (format "hello %s %d"
+          "world" 123))
+; hello world 123
+```
+
+문자열의 길이는 `count`로 셀 수 있다. 물론 Java `String`의 `length` 메소드도 사용할 수 있다.
+
+```clojure
+(println (count "hello"))
+; 5
+(println (.length "hello"))
+; 5
+```
+
+`substring`은 `subs`를 사용한다. 물론 Java `String`의 `substring` 메소드도 사용할 수 있다.
+
+```clojure
+(println (subs "hello" 1 4))
+; ell
+(println (.substring "hello" 1 4))
+; ell
+(println (subs "hello" 1))
+; ell
+(println (.substring "hello" 1))
+; ello
+```
+
+이렇게 Java의 메소드를 그대로 사용할 수 있는 건 꽤 편안하게 느껴진다.
+
+반면 정규식을 사용한 `replace`는 Java보다 더 편리한 느낌이다. Clojure는 `#"pattern"`과 같이 정규식 리터럴을 따로 제공하는데, 정규식 내에서 역슬래시를 두 번 써서 이스케이프하지 않아도 된다.
+
+```clojure
+(println (clojure.string/replace
+           "Hello World" #"^Hello\s" "---"))
+; ---World
+```
+
+위의 `^Hello\s`를 잘 보면 공백문자 패턴으로 `\s`를 그대로 사용하고 있다. Java였다면 `\\s`로 사용해야 했을 것이다.
+
+그럼에도 이 정규식 리터럴이 생성하는 것은 `java.util.regex.Pattern`이다.
+
+다음은 Clojure 레퍼런스 문서에 있는 정규식 예제의 모습을 조금 수정한 것이다.
+
+```clojure
+(re-seq #"[0-9]+" "abs123def345ghi567")
+;("123" "345" "567")
+
+(re-find #"([-+]?[0-9]+)/([0-9]+)" "22/7")
+;["22/7" "22" "7"]
+
+(let
+  [[a b c] (re-matches #"([-+]?[0-9]+)/([0-9]+)" "22/7")]
+  [a b c])
+;["22/7" "22" "7"]
+
+(re-seq #"(?i)[fq].." "foo bar BAZ QUX quux")
+;("foo" "QUX" "quu")
+```
+
+잘 살펴보면 정규식의 옵션 플래그는 `#"(?옵션)hello"` 처럼 정규식 패턴 앞쪽에 둔다는 것도 알 수 있다.
 
 
 ## 참고문헌
