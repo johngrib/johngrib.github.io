@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure 학습
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-04 12:56:48 +0900
+updated : 2021-12-04 13:48:19 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -182,38 +182,6 @@ Function<Character, Boolean> noname = ((Character c) -> Character.isWhitespace(c
 
 잘 살펴보면 세미콜론과 공백을 제외하고 모든 문자가 그대로 있다. 순서만 다를 뿐이다.
 
-## 구조체
-
-구조체 선언은 이렇게 한다.
-
-```clojure
-(defstruct person :first-name :last-name :age)
-```
-
-Java라면 다음과 같이 할 것이다.
-
-```java
-public class Person {
-  String firstName;
-  String lastName;
-  int age;
-}
-```
-
-다음과 같이 새로운 인스턴스를 만들 수 있고, 값을 부를 수도 있다.
-
-```clojure
-(defstruct person :first-name :last-name :age)
-
-(def customer1 (struct person "John" "Grib" 28))
-
-(println customer1)
-; 출력 결과는 {:first-name John, :last-name Grib, :age 28}
-
-(println (:age customer1))
-; 출력 결과는 28
-```
-
 ## 문자열 다루기
 
 Clojure의 문자열 concatenation은 `str`을 사용하면 된다.
@@ -326,6 +294,118 @@ Clojure에서는 참/거짓을 구분해야 할 때에는 `nil`과 `false`가 �
   "apple" (println "사과"))
 ; 사과
 ```
+
+## Map
+
+Clojure에서는 `{}`를 사용해 Map을 만들 수 있다.
+
+```clojure
+(def fruit
+  {
+   "apple"  "사과"
+   "orange" "오렌지"
+   })
+```
+
+`:`과 `,`만 없을 뿐, Javascript의 `Object`를 만드는 것과 비슷해 보인다.
+
+```javascript
+var fruit = {
+  "apple"  : "사과",
+  "orange" : "오렌지"
+}
+```
+
+Java에서는 다음과 같이 `Map`을 만들어 사용한다.
+
+```java
+Map<String, String> fruit = new HashMap<>();
+fruit.put("apple", "사과");
+fruit.put("orange", "오렌지");
+```
+
+하지만 버전이 올라가면서 이렇게 작성할 수도 있게 됐다.
+
+```java
+Map<String, String> fruit = Map.of(
+  "apple", "사과",
+  "orange", "오렌지"
+);
+```
+
+Clojure에서 Map의 값을 꺼내는 것은 엄청 단순하다. Map이 바인딩된 상수를 그대로 함수처럼 쓰면 된다.
+
+```clojure
+(fruit "apple") ; "사과"
+```
+
+없는 값에 대한 대안이 필요하다면 `get`을 쓰면 된다.
+
+```clojure
+(get fruit "apple" "없는 과일입니다.")      ; "사과"
+(get fruit "fineapple" "없는 과일입니다.")  ; "없는 과일입니다."
+```
+
+`get`이 생각이 안 난다면 Java Map의 `getOrDefault`를 써도 된다.
+
+```clojure
+(.getOrDefault fruit "fineapple" "없는 과일입니다.") ; "없는 과일입니다."
+```
+
+### 키워드
+
+그런데 Clojure에서는 Map의 key로 String보다 키워드를 주로 사용한다고 한다.
+
+Clojure의 키워드는 `:`으로 시작한다.
+
+```clojure
+(type :foo) ; clojure.lang.Keyword
+```
+
+키워드를 key로 사용하는 Map을 다시 만들어보자.
+
+```clojure
+(def fruit
+  {
+   :apple  "사과"
+   :orange "오렌지"
+   })
+
+(fruit :orange) ; "오렌지"
+```
+
+## 구조체
+
+구조체 선언은 이렇게 한다.
+
+```clojure
+(defstruct person :first-name :last-name :age)
+```
+
+Java라면 다음과 같이 할 것이다.
+
+```java
+public class Person {
+  String firstName;
+  String lastName;
+  int age;
+}
+```
+
+다음과 같이 새로운 인스턴스를 만들 수 있고, 값을 부를 수도 있다.
+
+```clojure
+(defstruct person :first-name :last-name :age)
+
+(def customer1 (struct person "John" "Grib" 28))
+
+(println customer1)
+; 출력 결과는 {:first-name John, :last-name Grib, :age 28}
+
+(println (:age customer1))
+; 출력 결과는 28
+```
+
 
 ## 참고문헌
 
