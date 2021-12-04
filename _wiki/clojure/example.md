@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure 학습
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-04 13:48:19 +0900
+updated : 2021-12-04 13:52:17 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -404,6 +404,16 @@ public class Person {
 
 (println (:age customer1))
 ; 출력 결과는 28
+```
+
+`struct-map`을 사용하면 순서를 신경쓰지 않고 키워드별로 값을 할당할 수 있다.
+
+```clojure
+(struct-map person
+  :age 30
+  :first-name "John")
+
+; {:first-name "John", :last-name nil, :age 30}
 ```
 
 
