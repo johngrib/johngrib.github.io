@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure 학습
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-04 12:37:02 +0900
+updated : 2021-12-04 12:47:59 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -37,7 +37,37 @@ Clojure는 ratio 타입을 기본으로 지원하고 있기 때문에 나눗셈 
 (println (class (/ 9 4)))   ; 9/4의 타입은 clojure.lang.Ratio
 ```
 
-`class`를 사용해 타입을 알아낼 수 있다는 것도 기억해두자.
+마지막 줄에 주목. `class`를 사용해 타입을 알아낼 수 있다는 것도 기억해두자.
+
+### 타입 조사하기
+
+`type`을 써도 `class`와 똑같이 작동하는 것으로 보이는데 REPL에서 `(doc type)`, `(doc class)`로 조사해 보니 다음과 같은 차이점이 있었다.
+
+```
+(doc type)
+-------------------------
+clojure.core/type
+([x])
+  Returns the :type metadata of x, or its Class if none
+=> nil
+
+(doc class)
+-------------------------
+clojure.core/class
+([x])
+  Returns the Class of x
+=> nil
+```
+
+- `type`: 주어진 값의 metadata에 들어있는 `:type`을 리턴한다. 만약 `:type`이 없다면 Class를 리턴한다.
+- `class`: 주어진 값의 Class를 리턴한다.
+
+숫자의 타입을 조사해보면 Clojure는 기본적으로 `Double`과 `Long`을 사용하고 있다는 것을 알 수 있다.
+
+```clojure
+(type 1.0)  ; java.lang.Double
+(type 1)    ; java.lang.Long
+```
 
 ### 부동소수점과 BigDecimal
 
