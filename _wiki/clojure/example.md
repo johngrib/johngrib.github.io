@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure 학습
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-04 12:47:59 +0900
+updated : 2021-12-04 12:56:48 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -289,6 +289,8 @@ Clojure의 문자열 concatenation은 `str`을 사용하면 된다.
 잘 살펴보면 정규식의 옵션 플래그는 `#"(?옵션)hello"` 처럼 정규식 패턴 앞쪽에 둔다는 것도 알 수 있다.
 
 ## 제어문
+
+Clojure에서는 참/거짓을 구분해야 할 때에는 `nil`과 `false`가 아닌 모든 것은 `true`로 평가된다는 것만 기억하면 된다.
 
 `if`는 `true`인 경우와 `false`인 경우의 표현식을 제공해주면 된다.
 
