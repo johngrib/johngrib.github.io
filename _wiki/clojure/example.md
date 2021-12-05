@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-05 20:12:06 +0900
+updated : 2021-12-05 22:00:21 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -164,6 +164,64 @@ power(2, 10); // 1024
 ```
 
 Clojure는 `java.lang`은 기본으로 `import`를 해둔다고 한다. 그래서 `Math/pow`를 저렇게 간단하게 불러 쓸 수 있는 것 같다.
+
+## def, let
+
+`def`를 사용해 값에 이름을 붙일 수 있다.
+
+```clojure
+(def a 10)
+(println a)
+```
+
+`def`로 지정한 이름은 재지정도 가능하다.
+
+```clojure
+(def a 10) (println a)  ; 10
+(def a 89) (println a)  ; 89
+```
+
+`def`를 함수 내에서 사용하면 함수 호출이 끝난 후에도 `def`로 선언한 상수를 사용할 수 있다.
+
+```clojure
+(defn hello
+  []
+  (def a 3))
+
+(hello)
+(println a) ; 3
+```
+
+Javascript의 `const`와 같을 거라 생각했는데 착각이었다.
+
+'프로그래밍 클로저' 책을 읽어보니 이런 설명이 있다.
+
+>
+`def`나 `defn`을 사용해 새 객체를 정의할 때마다 그 객체는 클로저 `var` 속에 저장된다.
+
+아직 자세히는 모르겠지만 Java의 stack에 들어가는 frame 같은 개념으로 보인다. 천천히 알아가보자.
+
+한편 `let`은 Javascript의 `let`과 비슷한 느낌으로 쓸 수 있는 것 같다.
+다음 코드의 `a`는 `let`이 선언된 스코프 내에서만 사용 가능하다.
+
+```clojure
+(let [a 10]
+  (println (+ a 42)))
+```
+
+여러 값을 선언할 수도 있다.
+
+```clojure
+(let [a 10, b 23]
+  (println (+ a b)))
+```
+
+Clojure에서 `,`는 공백과 똑같이 판별되므로 위의 코드는 아래와 같은 의미를 갖는다.
+
+```clojure
+(let [a 10 b 23]
+  (println (+ a b)))
+```
 
 ## 문자열 다루기
 
