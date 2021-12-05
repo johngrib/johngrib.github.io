@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure 학습
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-05 19:20:01 +0900
+updated : 2021-12-05 19:30:33 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -504,6 +504,32 @@ void hello(String person1, String person2, String... otherPeople) {
 ```
 
 ### 익명 함수
+
+익명 함수는 `fn`으로 만들 수 있다.
+
+```clojure
+(filter (fn [s] (< 2 (count s))) ["a" "bb" "ccc" "ddd"])
+; (ccc ddd)
+```
+
+위의 코드에서 `(fn [s] (< 2 (count s)))`가 바로 익명 함수이다.
+
+이 코드를 Java의 Stream을 사용해 번역하면 다음과 같다.
+
+```java
+Stream.of("a", "bb", "ccc", "dddd")
+  .filter((s) -> 2 < s.length())    // lambda
+  .collect(Collectors.toList());
+```
+
+두 익명 함수를 잘 비교해 보자.
+
+| Clojure                    | Java                    |
+|----------------------------|-------------------------|
+| `(fn [s] (< 2 (count s)))` | `(s) -> 2 < s.length()` |
+
+
+#### 익명 함수를 축약해 선언하기
 
 `#()`를 사용해 익명 함수를 선언할 수 있다. 다음 코드[^p-clojure-2]의 `#(Character/isWhitespace %)`가 익명 함수이다.
 
