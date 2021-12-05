@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-05 23:16:55 +0900
+updated : 2021-12-06 00:04:46 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -849,6 +849,92 @@ hello("안녕")("디지몬");         // 안녕, 디지몬
 ((hello "안녕") "디지몬")         ; 안녕, 디지몬
 ```
 
+## namespace
+
+`resolve`를 사용하면 namespace를 확인할 수 있다고 한다. php의 namespace와 비슷한 느낌으로 사용할 수 있을 것 같다.
+
+```clojure
+(def foo 10)
+(println (resolve 'foo)) ; #'tutorial.core/foo
+```
+
+나는 지금 `tutorial`이라는 이름의 프로젝트의 `core.clj`에서 REPL을 가동하고 있으므로, `#'tutorial.core/foo`가 이를 표현한 것 같다.
+
+`in-ns`를 사용하면 새로운 namespace를 만들거나 다른 namespace를 선택할 수 있다고 한다. 일단은 기억만 해 두자.
+
+```clojure
+(in-ns 'johngrib)
+```
+
+Java Class에 한정하여 `import`를 사용할 수 있다.
+
+```clojure
+(import '(java.io InputStream File))
+(println File/separator)    ; /
+```
+
+`import`를 하지 않아도 전체 경로를 명시하면 사용할 수 있다.
+
+```clojure
+(println java.io.File/separator)    ; /
+```
+
+Java라면 이렇게 했을 것이다.
+
+```java
+System.out.println(java.io.File.separator);
+```
+
+Clojure namespace에 대해서는 `require`를 사용할 수 있는 것 같다.
+
+```clojure
+(require '(clojure.java.io))
+(clojure.java.io/file "filename")   ; java.io.File 클래스 인스턴스
+```
+
+그게 그거 같지만 `clojure.java.io.File`이 아니라 `java.io.File`을 `new` 하고 싶다면 이렇게 한다.
+
+```clojure
+(new java.io.File "filename")
+```
+
+`:as` 키워드를 사용해 `require`한 namespace의 알리아스를 설정할 수도 있다.
+
+```clojure
+(require '[clojure.java.io :as io])
+(io/file "Filename")
+```
+
+`use`를 쓰면 현재 namespace에서 지정한 namespace를 참조할 수 있도록 한다.
+
+```clojure
+(use 'clojure.java.io)
+(file "Filename")   ; clojure.java.io/file 을 그냥 file 로 사용 가능
+```
+
+만약 `clojure.java.io` namespace에서 `file`만 참조하고 싶다면 `:only` 키워드를 사용할 수 있다.
+
+```clojure
+(use '[clojure.java.io :only (file)])
+(file "Filename")
+```
+
+`:reload`를 사용하면 라이브러리를 다시 읽을 수 있다고 한다. 라이브러리가 동적으로 변경되는 경우에 사용할 수 있을 것으로 보인다.
+
+```clojure
+(use :reload '[clojure.java.io :only (file)])
+```
+
+리로드하는 라이브러리와 유관된 모든 라이브러리를 읽으려면 `:reload-all`을 사용하면 된다고 한다.[^reload-all]
+
+```clojure
+(use :reload-all 'clojure.java.io)
+```
+
+namespace의 특성상 소스코드 파일의 최상단에 나오는 경우가 흔한 것 같다.
+천천히 학습하며 추가해 보도록 한다.
+
+
 ## 참고문헌
 
 - 프로그래밍 클로저 / 스튜어트 할로웨이 저 / 유찬우 역 / 인사이트(insight) / 초판 1쇄 발행 2010년 06월 20일 / 원제 : Programming Clojure (2009)
@@ -861,4 +947,4 @@ hello("안녕")("디지몬");         // 안녕, 디지몬
 [^lisp-return]: [Common Lisp HyperSpec - Macro RETURN]( http://www.lispworks.com/documentation/HyperSpec/Body/m_return.htm ). 이 `return`은 키워드가 아니라 매크로이며, `nil` block에 대해 값을 `return`하는 것으로 보인다.
 [^clojure-regex]: [Regex Support (clojure.org)]( https://clojure.org/reference/other_functions#regex )
 [^destructuring-_]: 프로그래밍 클로저 2장. 50쪽.
-
+[^reload-all]: 프로그래밍 클로저 2장. 54쪽.
