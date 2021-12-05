@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-05 22:00:21 +0900
+updated : 2021-12-05 22:34:45 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -582,6 +582,80 @@ void hello(String person1, String person2, String... otherPeople) {
   }
 }
 ```
+
+### destructuring
+
+나는 Golang의 함수 하나만 정의하는 인터페이스를 꽤 좋아했으므로,
+Java에서도 비슷한 코드를 작성해 사용하는 경우가 종종 있었다.
+
+```java
+// Java
+interface IdSupplier {
+  String getId();   // 고의로 메소드 한 개만 선언한 인터페이스
+}
+
+class Member implements IdSupplier {
+  private String id;
+  private String name;
+  private int age;
+
+  @Override
+  public String getId() {
+    return this.id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
+  }
+  // ...
+}
+```
+
+이렇게 `getId` 메소드 하나만 선언한 `IdSupplier` 인터페이스를 정의해 주면 `id`만 필요한 메소드가 있을 때 다른 값에 대한 접근을 쉽게 제한할 수 있었다.
+
+```java
+/** 실제로 필요한 것은 id 인데 member를 모두 넘긴다. */
+void printId(Member member) {
+  String id = member.getId();
+
+  System.out.println("id: " + id);
+  member.setId(null);   // 이렇게 하면 메소드 설계 의도에서 어긋난다.
+}
+```
+
+이 메소드가 하는 일은 `id`를 출력하는 것 뿐이다. 그러나 `Member` 클래스에는 `setId`가 `public`으로 공개되어 있어 `printId` 메소드에 나중에 누군가가 `setId` 메소드를 호출할 위험도 있다.
+
+따라서 다음과 같이 `IdSupplier`만 제공해 주면 안전하게 `getId` 메소드만을 사용할 수 있는 `Member`를 넘겨주는 셈이 된다.
+
+```java
+/** 실제로 필요한 getId 메소드만 넘긴다. */
+void printId(IdSupplier member) {
+  String id = member.getId();
+
+  System.out.println("id: " + id);
+  // member.setId(null);   // IdSupplier는 setId를 제공하지 않으므로 setId를 쓰면 컴파일 에러 발생
+}
+```
+
+그러므로 Clojure의 [디스트럭처링]( https://clojure.org/guides/destructuring )은 나에게는 상당히 반가운 기능이다.
+
+```clojure
+(defstruct member :id :name :age)
+
+(defn print-id
+  [{id :id}]    ; destructuring
+  (println id))
+
+(let
+  [guest (struct member 42 "John" 28)]
+  (print-id guest))
+; 42
+```
+
+`defn print-id` 바로 아랫줄의 `[{id :id}]` 부분이 디스트럭처링을 의미한다.
+`:id` 필드를 갖고 있는 구조체가 입력되면 `id` 변수에 `:id`만 할당해 사용한다는 것.
+`member` 구조체에는 `:id`외에 `:name`과 `:age` 필드가 있지만, `print-id` 함수 내에서는 `:id`만 사용할 수 있는 셈이다.
+
 
 ### 익명 함수
 
