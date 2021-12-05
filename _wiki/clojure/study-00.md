@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-05 22:52:50 +0900
+updated : 2021-12-05 23:09:15 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -248,7 +248,11 @@ Clojure의 문자열 concatenation은 `str`을 사용하면 된다.
 ; 5
 (println (.length "hello"))
 ; 5
+(println (. "hello" length))
+; 5
 ```
+
+Java `String`의 `length` 메소드를 사용하는 방법이 2가지 있다는 점을 잘 기억해두자.
 
 `substring`은 `subs`를 사용한다. 물론 Java `String`의 `substring` 메소드도 사용할 수 있다.
 
