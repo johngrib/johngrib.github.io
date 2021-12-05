@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure 학습
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-04 13:52:17 +0900
+updated : 2021-12-05 18:04:52 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -12,6 +12,13 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 버전 확인
+
+```
+$ clojure --version
+Clojure CLI version 1.10.3.1040
+```
 
 ## 사칙연산
 
