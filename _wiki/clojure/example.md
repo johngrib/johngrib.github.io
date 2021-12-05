@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure 학습
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-05 18:08:09 +0900
+updated : 2021-12-05 19:20:01 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -384,14 +384,126 @@ public class Person {
 ## 함수 선언
 
 ```clojure
-(defn 함수-이름
+(defn function-name
   "함수를 설명하는 주석"
-  [파라미터1 파라미터2 파라미터3]
-  ; 함수 본문은 여기에
+  [param1 param2 param3]
+  ; 함수 본문은 여기에..
+  ; 함수 마지막에 평가된 값이 return된다.
   )
 ```
 
-## 익명 함수
+### return
+
+함수 마지막에 평가된 값이 return된다. 만약 이렇다 할 값이 없다면 `nil`이 return된다.
+
+`return` 키워드가 없다는 점을 기억해두자.
+
+Ruby나 Scala처럼 `return` 키워드를 생략 가능한 게 아니라 Elixir처럼 `return` 키워드가 없다.
+
+early return을 즐겨 쓰는 편이라 좀 아쉽긴 하지만 이해가 가지 않는 상황은 아니다.
+Clojure의 괄호는 단순한 표현식이 아니라 스코프를 의미하는 것 같다.
+하나의 함수 내에서도 괄호가 계속해서 중첩이 될 수 있는 Clojure에서 `(return 3)`을 한다면
+스택을 거슬러 올라가며 특정 순간에 값을 리턴해줄 수 있어야 하는데 그렇다면 `defn`이나 `fn`으로 생성한 함수를 특별취급해야 할 것 같다.
+실제 구현체에서 이런 함수들을 어떻게 취급하는지는 아직 모르겠고, 나중에 자세히 조사해봐야 알겠지만 early return의 구현은
+`goto`를 구현하는 것 같은 느낌이었을듯. 꽤나 골치아픈 문제이지만, 구현이 어려워서가 아니라 언어 철학과 상반되어 `return`이 빠진 느낌.
+
+조사해보니 Common-Lisp의 경우 special keyword로 `return-from`을 제공해주는 것 같은데[^return-from-stackoverflow] [^return-from] [^lisp-return], 위에서 생각한 것과 비슷한 이유로 정지 시점을 지정해 주는 형태로 사용해야 하는 것으로 보인다.
+
+```lisp
+; common-lisp
+(defun accumulate-list (list)
+  (when (null list)
+    (return-from accumulate-list 0)) ; return 값은 0. 대상은 accumulate-list을 지정하고 있다.
+  (+ (first list)
+     (accumulate-list (rest list))))
+```
+
+(나중에 조사해 보고 이 부분을 업데이트해 두도록 하자.)
+
+early return이 아쉽다면 `cond`를 사용하거나 `return-from`같은 매크로를 만들어야 할 것 같다.
+
+아무튼 이렇게 만든 함수를 `(doc function-name)`으로 조사해 보면 주석이 나온다.
+
+```
+(doc function-name)
+-------------------------
+hello.core/function-name
+([] [name])
+  함수를 설명하는 주석
+=> nil
+```
+
+### 함수 오버로딩
+
+함수 이름이 같아도 입력 파라미터의 수가 다르면 Java의 오버로딩과 똑같이 작동한다.
+
+```clojure
+(defn hello
+  "함수를 설명하기 위한 주석."
+  ([] "hello world")
+  ([name] (str "hello " name))
+  )
+
+(hello)         ; "hello world"
+(hello "john")  ; "hello john"
+```
+
+함수를 설명하기 위해 붙여주는 주석은 생략해도 문제없다.
+
+위의 함수 선언문을 Java로 옮기면 다음과 같다.
+
+```java
+/** 메소드를 설명하기 위한 주석. */
+String hello() {
+  return "hello world";
+}
+
+/** 메소드를 설명하기 위한 주석. */
+String hello(String name) {
+  return "hello " + name;
+}
+```
+
+### 가변 인자
+
+가변 인자를 사용하려면 `&` 기호를 사용하면 된다.
+
+```clojure
+(defn hello
+  [person1 person2 & other-people]  ; & other-people에 주목
+  (println "안녕하세요." person1)
+  (println "안녕하세요." person2)
+  (if (< 0 (count other-people))
+    (println
+      "더 오신 분들이 있네요. 안녕하세요."
+      (clojure.string/join ", " other-people))
+    )
+  )
+
+(hello "john" "mary")
+; 안녕하세요. john
+; 안녕하세요. mary
+
+(hello "john" "mary" "tom" "hong")
+; 안녕하세요. john
+; 안녕하세요. mary
+; 더 오신 분들이 있네요. 안녕하세요. tom, hong
+```
+
+위의 코드를 Java로 번역하면 다음과 같다. 즉, 인자 목록에서의 `&`은 Java의 `...` 연산자와 같은 역할을 한다.
+
+```java
+void hello(String person1, String person2, String... otherPeople) {
+  System.out.println("안녕하세요. " + person1);
+  System.out.println("안녕하세요. " + person2);
+  if (0 < otherPeople.length) {
+    System.out.println("더 오신 분들이 있네요. 안녕하세요. "
+      + String.join(", ", otherPeople));
+  }
+}
+```
+
+### 익명 함수
 
 `#()`를 사용해 익명 함수를 선언할 수 있다. 다음 코드[^p-clojure-2]의 `#(Character/isWhitespace %)`가 익명 함수이다.
 
@@ -441,3 +553,6 @@ Function<Character, Boolean> noname = ((Character c) -> Character.isWhitespace(c
 ## 주석
 [^p-clojure-2]: 프로그래밍 클로저 1장. 2쪽.
 [^reader]: [[/clojure/reader]] 참고.
+[^return-from-stackoverflow]: [stackoverflow.com에 올라온 질문과 답변]( https://stackoverflow.com/a/26289792 )
+[^return-from]: [Common Lisp HyperSpec - Special Operator RETURN-FROM]( http://www.lispworks.com/documentation/HyperSpec/Body/s_ret_fr.htm ). `return-from`은 스택을 거슬러 올라가는 작업을 멈춰줄 block을 지정해 주는 방식으로 사용하는 것 같다.
+[^lisp-return]: [Common Lisp HyperSpec - Macro RETURN]( http://www.lispworks.com/documentation/HyperSpec/Body/m_return.htm ). 이 `return`은 키워드가 아니라 매크로이며, `nil` block에 대해 값을 `return`하는 것으로 보인다.
