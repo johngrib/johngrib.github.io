@@ -1,4 +1,4 @@
 [
- "clojure/example",
- "clojure/reader"
+ "clojure/reader",
+ "clojure/study-00"
 ]
