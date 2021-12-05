@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-05 23:09:15 +0900
+updated : 2021-12-05 23:16:55 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -677,7 +677,7 @@ void printId(IdSupplier member) {
 ; 2
 ```
 
-위의 코드 중 `let [[x y] numbers`에 주모하자.
+위의 코드 중 `let [[x y] numbers`에 주목하자.
 `numbers` Vector의 첫번째, 두번째 아이템만 `x`, `y`에 할당하고 있는 것.
 
 만약 건너뛰고 싶은 아이템이 있다면 `_`를 사용하면 된다.
