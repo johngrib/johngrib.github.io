@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-05 19:48:57 +0900
+updated : 2021-12-05 20:12:06 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -22,7 +22,7 @@ Clojure CLI version 1.10.3.1040
 
 ## 사칙연산
 
-Clojure는 전위 표기법(prefix notation)을 사용한다. Java 코드와 비교해 보자.
+Clojure는 Lisp 방언이므로 전위 표기법(prefix notation)을 사용한다. Java 코드와 비교해 보자.
 
 | Java          | Clojure         |
 |---------------|-----------------|
@@ -34,7 +34,7 @@ Clojure는 전위 표기법(prefix notation)을 사용한다. Java 코드와 비
 | `5 / 2`       | `(quot 5 2)`    |
 | `5 % 2`       | `(rem 5 2)`     |
 
-Clojure는 ratio 타입을 기본으로 지원하고 있기 때문에 나눗셈 연산자를 그대로 사용하면 분수로 평가된다는 점을 기억해둘 필요가 있다.
+Clojure는 `Ratio` 타입을 기본으로 지원하고 있기 때문에 나눗셈 연산자를 그대로 사용하면 분수로 평가된다는 점을 기억해둘 필요가 있다.
 
 ```clojure
 (quot 9 4)  ; 2    몫
@@ -80,6 +80,8 @@ clojure.core/class
 
 한편 부동소수점 연산은 어떨까? Clojure가 기본적으로 부동소수점을 사용한다면 `0.1 + 0.2`의 결과는 `0.3`이 아니라 `0.30000000000000004`일 것이다.
 
+실험해 보자.
+
 ```clojure
 (+ 0.1 0.2) ; 0.30000000000000004
 ```
@@ -98,6 +100,7 @@ clojure.core/class
 ```clojure
 (bigdec "1.0")  ; 1.0M
 (bigdec 1.0)    ; 1.0M
+(bigdec 0.1)    ; 0.1M
 ```
 
 Java의 `BigDecimal` 클래스의 생성자를 사용하고 싶다면 그냥 `new` 키워드를 사용해도 된다.
@@ -108,7 +111,12 @@ Java의 `BigDecimal` 클래스의 생성자를 사용하고 싶다면 그냥 `ne
 (new BigDecimal 0.1)    ; 0.1000000000000000055511151231257827021181583404541015625M
 ```
 
-마지막 줄의 `0.1` 문제는 `0.1`을 부동소수점으로 표현할 때의 문제이므로 같은 코드를 쓰면 Java에서도 똑같은 결과가 나온다. Clojure의 문제는 아니다.
+마지막 줄의 `0.1` 문제는 `0.1`을 부동소수점으로 표현할 때의 문제이므로 Java에서 `new BigDecimal(0.1)`을 쓰면 똑같은 결과가 나온다. 즉 Clojure의 문제는 아니다.
+
+다만 `(bigdec 0.1)`은 `0.1M` 이었지만 `(new BigDecimal 0.1)`이 `0.1M`이 아니라는 것은 주목해야 한다.
+
+`bigdec`은 `new BigDecimal`을 단순하게 래핑한 함수가 아니라는 것.
+사용하게 되면 꼭 테스트 코드를 통해 실험해 보도록 하자.
 
 ### 거듭제곱
 
@@ -139,7 +147,17 @@ Clojure에서는 거듭제곱 연산자를 기본으로 지원하지는 않는 �
 
 기본 연산자가 제공되지 않는 건 아쉽지만 `reduce`-`*`-`repeat`이라는 코드를 작성할 수 있다는 것이 재미있다.
 
-만약 이렇게 만들어 쓰는 것이 귀찮거나 어떻게 Clojure 코드로 표현할 지 생각이 안 난다면 그냥 Java의 `java.lang.Math`의 `pow`를 가져다 써도 된다.
+Javascript에서 `Math.pow`를 사용하지 않고 굳이 비슷한 스타일의 코드를 작성한다면 다음과 같이 할 수 있겠다.
+
+```javascript
+function power(x, n) {
+  return Array(n).fill(x).reduce((a, b) => a * b);
+}
+
+power(2, 10); // 1024
+```
+
+만약 만들어 쓰는 것이 귀찮거나 어떻게 Clojure 코드로 표현할 지 생각이 안 난다면 그냥 Java의 `java.lang.Math`의 `pow`를 가져다 써도 된다.
 
 ```clojure
 (Math/pow 2 10) ; 1024.0
@@ -198,10 +216,12 @@ Clojure의 문자열 concatenation은 `str`을 사용하면 된다.
 ```
 
 위의 `^Hello\s`를 잘 보면 공백문자 패턴으로 `\s`를 그대로 사용하고 있다. Java였다면 `\\s`로 사용해야 했을 것이다.
+Java에서 정규식을 사용할 때 이것 때문에 항상 짜증이 났다.
+Perl처럼 엄청 간편하게 정규식을 선언할 수 있다면 훨씬 좋았겠지만 이 정도도 불편하진 않다. 괜찮아 보인다.
 
-그럼에도 이 정규식 리터럴이 생성하는 것은 `java.util.regex.Pattern`이다.
+아무튼 위의 정규식 리터럴이 생성하는 타입은 `java.util.regex.Pattern`이다.
 
-다음은 Clojure 레퍼런스 문서에 있는 정규식 예제의 모습을 조금 수정한 것이다.
+다음은 Clojure 레퍼런스 문서에 있는 정규식 예제의 모습을 조금 수정한 것이다.[^clojure-regex]
 
 ```clojure
 (re-seq #"[0-9]+" "abs123def345ghi567")
@@ -381,6 +401,8 @@ public class Person {
 ; {:first-name "John", :last-name nil, :age 30}
 ```
 
+값을 지정하지 않은 키워드가 있다면 `nil`이 할당된다.
+
 ## 함수 선언
 
 ```clojure
@@ -405,7 +427,7 @@ Clojure의 괄호는 단순한 표현식이 아니라 스코프를 의미하는 
 하나의 함수 내에서도 괄호가 계속해서 중첩이 될 수 있는 Clojure에서 `(return 3)`을 한다면
 스택을 거슬러 올라가며 특정 순간에 값을 리턴해줄 수 있어야 하는데 그렇다면 `defn`이나 `fn`으로 생성한 함수를 특별취급해야 할 것 같다.
 실제 구현체에서 이런 함수들을 어떻게 취급하는지는 아직 모르겠고, 나중에 자세히 조사해봐야 알겠지만 early return의 구현은
-`goto`를 구현하는 것 같은 느낌이었을듯. 꽤나 골치아픈 문제이지만, 구현이 어려워서가 아니라 언어 철학과 상반되어 `return`이 빠진 느낌.
+`goto`를 구현하는 느낌이었을듯. 꽤나 골치아픈 문제이지만 구현이 어려워서가 아니라 언어 철학과 상반되어 `return`이 빠진 느낌.
 
 조사해보니 Common-Lisp의 경우 special keyword로 `return-from`을 제공해주는 것 같은데[^return-from-stackoverflow] [^return-from] [^lisp-return], 위에서 생각한 것과 비슷한 이유로 정지 시점을 지정해 주는 형태로 사용해야 하는 것으로 보인다.
 
@@ -418,9 +440,9 @@ Clojure의 괄호는 단순한 표현식이 아니라 스코프를 의미하는 
      (accumulate-list (rest list))))
 ```
 
-(나중에 조사해 보고 이 부분을 업데이트해 두도록 하자.)
+TODO: 이 부분은 나중에 좀 더 자세히 조사해 보고 업데이트해 두도록 하자.
 
-early return이 아쉽다면 `cond`를 사용하거나 `return-from`같은 매크로를 만들어야 할 것 같다.
+따라서 early return이 아쉽다면 `cond`를 사용하는 정도로 만족하거나 `return-from` 매크로를 만들면 되겠다.
 
 아무튼 이렇게 만든 함수를 `(doc function-name)`으로 조사해 보면 주석이 나온다.
 
@@ -466,7 +488,7 @@ String hello(String name) {
 
 ### 가변 인자
 
-가변 인자를 사용하려면 `&` 기호를 사용하면 된다.
+가변 인자를 사용하려면 `&`를 사용하면 된다.
 
 ```clojure
 (defn hello
@@ -627,3 +649,5 @@ hello("안녕")("디지몬");         // 안녕, 디지몬
 [^return-from-stackoverflow]: [stackoverflow.com에 올라온 질문과 답변]( https://stackoverflow.com/a/26289792 )
 [^return-from]: [Common Lisp HyperSpec - Special Operator RETURN-FROM]( http://www.lispworks.com/documentation/HyperSpec/Body/s_ret_fr.htm ). `return-from`은 스택을 거슬러 올라가는 작업을 멈춰줄 block을 지정해 주는 방식으로 사용하는 것 같다.
 [^lisp-return]: [Common Lisp HyperSpec - Macro RETURN]( http://www.lispworks.com/documentation/HyperSpec/Body/m_return.htm ). 이 `return`은 키워드가 아니라 매크로이며, `nil` block에 대해 값을 `return`하는 것으로 보인다.
+[^clojure-regex]: [Regex Support (clojure.org)]( https://clojure.org/reference/other_functions#regex )
+
