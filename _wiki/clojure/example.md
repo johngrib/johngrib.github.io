@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : Clojure 학습
+title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-05 19:30:33 +0900
+updated : 2021-12-05 19:48:57 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -571,6 +571,51 @@ Function<Character, Boolean> noname = ((Character c) -> Character.isWhitespace(c
 
 잘 살펴보면 세미콜론과 공백을 제외하고 모든 문자가 그대로 있다. 순서만 다를 뿐이다.
 
+#### closure
+
+당연히 Clojure에서도 closure 개념이 있다.
+
+```clojure
+(defn hello [prefix]
+  (fn [name] (str prefix ", " name))
+  )
+
+((hello "Hello") "Dexter Morgan") ; Hello, Dexter Morgan
+((hello "안녕") "디지몬")         ; 안녕, 디지몬
+```
+
+이건 Java보다 Javascript 예제를 함께 들어보는 것이 이해하기 쉬울 것 같다.
+
+```javascript
+function hello(prefix) {
+  return function (name) {
+    return prefix + ", " + name;
+  }
+}
+
+hello("Hello")("Dexter Morgan"); // Hello, Dexter Morgan
+hello("안녕")("디지몬");         // 안녕, 디지몬
+```
+
+Javascript의 최신 문법을 사용한다면 좀 더 심플하게 작성할 수 있다.
+
+```javascript
+const hello = (prefix) => (name) => prefix + ", " + name;
+
+hello("Hello")("Dexter Morgan"); // Hello, Dexter Morgan
+hello("안녕")("디지몬");         // 안녕, 디지몬
+```
+
+물론 Clojure에서도 `#`, `%`를 써서 축약 문법으로 표현할 수 있다.
+
+```clojure
+(defn hello [prefix]
+  #(str prefix ", " %)
+  )
+
+((hello "Hello") "Dexter Morgan") ; Hello, Dexter Morgan
+((hello "안녕") "디지몬")         ; 안녕, 디지몬
+```
 
 ## 참고문헌
 
