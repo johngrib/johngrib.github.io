@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-05 22:34:45 +0900
+updated : 2021-12-05 22:52:50 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -585,6 +585,8 @@ void hello(String person1, String person2, String... otherPeople) {
 
 ### destructuring
 
+#### 구조체에 대한 destructuring
+
 나는 Golang의 함수 하나만 정의하는 인터페이스를 꽤 좋아했으므로,
 Java에서도 비슷한 코드를 작성해 사용하는 경우가 종종 있었다.
 
@@ -655,6 +657,78 @@ void printId(IdSupplier member) {
 `defn print-id` 바로 아랫줄의 `[{id :id}]` 부분이 디스트럭처링을 의미한다.
 `:id` 필드를 갖고 있는 구조체가 입력되면 `id` 변수에 `:id`만 할당해 사용한다는 것.
 `member` 구조체에는 `:id`외에 `:name`과 `:age` 필드가 있지만, `print-id` 함수 내에서는 `:id`만 사용할 수 있는 셈이다.
+
+#### Vector에 대한 destructuring
+
+이런 destructuring은 구조체에 대해서만 동작하는 것은 아니다. Vector에 대해서도 동작한다.
+
+```clojure
+(def numbers [1 2 3 4 5])
+
+(let [[x y] numbers]
+  (println x)
+  (println y))
+
+; 1
+; 2
+```
+
+위의 코드 중 `let [[x y] numbers`에 주모하자.
+`numbers` Vector의 첫번째, 두번째 아이템만 `x`, `y`에 할당하고 있는 것.
+
+만약 건너뛰고 싶은 아이템이 있다면 `_`를 사용하면 된다.
+
+```clojure
+(def numbers [1 2 3 4 5])
+
+(let [[_ _ x y] numbers]
+  (println x)
+  (println y)
+  )
+
+; 3
+; 4
+```
+
+`_`를 사용해 세번째 아이템부터 `x`, `y`에 할당한 것이다.
+Perl의 `$_`, Scala의 `_`와 미묘하게 다른 느낌이므로 헷갈리지 않도록 주의하자.
+
+그런데 갑자기 의문이 하나 들었다. `_`는 Vim의 black hole register `"_` 처럼 작동하는 것일까?
+
+```clojure
+(def numbers [1 2 3 4 5])
+
+(let [[_ _ x y] numbers]
+  (println x)
+  (println y)
+  (println _)
+  )
+
+; 3
+; 4
+; 2
+```
+
+그렇지는 않은 것 같다. `2`가 할당되어 있다. 아마도 `1`, `2`가 순서대로 할당된 것 같다.
+
+프로그래밍 클로저 책을 찾아보니 `destructuring`에서의 ```_```는 비할당을 표현하기 위해 관용적으로 사용하는 심벌이라 한다.[^destructuring-_]
+
+한편, `:as 변수명`을 사용하면 destructuring을 하면서도 입력된 컬렉션을 변수명에 바인딩할 수 있다.
+
+```clojure
+(def numbers [1 2 3 4 5])
+
+(let [[x y :as total] numbers]
+  (println x)
+  (println y)
+  (println total)
+  )
+
+; 1
+; 2
+; [1 2 3 4 5]
+```
+
 
 
 ### 익명 함수
@@ -782,4 +856,5 @@ hello("안녕")("디지몬");         // 안녕, 디지몬
 [^return-from]: [Common Lisp HyperSpec - Special Operator RETURN-FROM]( http://www.lispworks.com/documentation/HyperSpec/Body/s_ret_fr.htm ). `return-from`은 스택을 거슬러 올라가는 작업을 멈춰줄 block을 지정해 주는 방식으로 사용하는 것 같다.
 [^lisp-return]: [Common Lisp HyperSpec - Macro RETURN]( http://www.lispworks.com/documentation/HyperSpec/Body/m_return.htm ). 이 `return`은 키워드가 아니라 매크로이며, `nil` block에 대해 값을 `return`하는 것으로 보인다.
 [^clojure-regex]: [Regex Support (clojure.org)]( https://clojure.org/reference/other_functions#regex )
+[^destructuring-_]: 프로그래밍 클로저 2장. 50쪽.
 
