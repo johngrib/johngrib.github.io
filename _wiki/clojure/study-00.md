@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-06 12:26:27 +0900
+updated : 2021-12-06 12:58:29 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -505,6 +505,114 @@ Clojure의 키워드는 `:`으로 시작한다.
 
 (fruit :orange) ; "오렌지"
 ```
+
+### Vector
+
+Vector는 `[ ]`를 사용해 만들 수 있고, `get`을 사용해 인덱스에 해당하는 값을 꺼낼 수 있다.
+
+```clojure
+(def v [12 52 34 61 19]) ; Vector 선언
+
+(get v 2)          ; 34
+(get [65 31 58] 1) ; 31
+```
+
+`get`을 제외하면 Javascript와 같은 느낌이다.
+
+```javascript
+const v = [12, 52, 34, 61, 19];
+
+v[2];            // 34
+[65, 31, 58][2]; // 31
+```
+
+길이는 `count`로 잴 수 있다.
+
+```clojure
+(count v) ; 5
+```
+
+Vector에 아이템을 추가하려면 `conj`를 사용한다.
+어원은 "conjoin(결합, 연합)"이라 한다.
+
+```clojure
+(conj v 1 2 3)
+; [12 52 34 61 19 1 2 3]
+```
+
+Javascript의 `push`와 비슷하게 작동하는 것 같이 보이지만...
+
+```javascript
+v.push(1, 2, 3);
+
+console.log(v); // [12, 52, 34, 61, 19, 1, 2, 3]
+```
+
+Javascript의 `push`는 list의 뒤에 아이템을 이어붙이기 때문에 list가 변경된다.
+
+그러나 Clojure의 Vector는 불변 자료형이므로 `conj`를 통해 변경되지 않는다.
+`conj`는 새로운 Vector를 만들어 리턴한 것이므로, `conj`의 결과에 이름을 붙일 필요가 있다면 따로 바인딩을 해줘야 한다.
+
+```clojure
+(conj v 1 2 3)
+; [12 52 34 61 19 1 2 3]
+
+(println v)
+; [12 52 34 61 19]
+```
+
+[github에서 PersistentVector.java 코드]( https://github.com/clojure/clojure/blob/541f04f1b75f95b159af0e4617643d45ebd43596/src/jvm/clojure/lang/PersistentVector.java#L220 )를 읽어보면 확실히 알 수 있다.
+
+```java
+public PersistentVector cons(Object val){
+  //room in tail?
+//  if(tail.length < 32)
+  if(cnt - tailoff() < 32)
+    {
+    Object[] newTail = new Object[tail.length + 1];
+    System.arraycopy(tail, 0, newTail, 0, tail.length);
+    newTail[tail.length] = val;
+    return new PersistentVector(meta(), cnt + 1, shift, root, newTail);
+    }
+  //full tail, push into tree
+  Node newroot;
+  Node tailnode = new Node(root.edit,tail);
+  int newshift = shift;
+  //overflow root?
+  if((cnt >>> 5) > (1 << shift))
+    {
+    newroot = new Node(root.edit);
+    newroot.array[0] = root;
+    newroot.array[1] = newPath(root.edit,shift, tailnode);
+    newshift += 5;
+    }
+  else
+    newroot = pushTail(shift, root, tailnode);
+  return new PersistentVector(meta(), cnt + 1, newshift, newroot, new Object[]{val});
+}
+```
+
+`return`키워드 뒤에 모두 `new PersistentVector`가 있다. 항상 새로운 Vector를 리턴하는 것.
+
+한편 Vector를 슬라이싱할 때에는 `subvec`을 사용한다. 이것도 새로운 Vector를 리턴한다는 점에 주의해야 한다.
+
+이번 예제에서는 숫자가 아니라 char Vector를 만들어 보자.
+
+```clojure
+(subvec [\a \b \c \d] 2)
+=> [\c \d]
+
+(subvec [\a \b \c \d] 2 3)
+=> [\c]
+```
+
+한편 Vector의 타입은 `clojure.lang.PersistentVector`이다.
+
+```clojure
+(type [])
+=> clojure.lang.PersistentVector
+```
+
 
 ## 구조체
 
