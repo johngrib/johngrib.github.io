@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-06 14:57:20 +0900
+updated : 2021-12-06 14:57:56 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -561,41 +561,6 @@ Javascript의 `push`는 list의 뒤에 아이템을 이어붙이기 때문에 li
 ; [12 52 34 61 19]
 ```
 
-[github에서 PersistentVector.java 코드]( https://github.com/clojure/clojure/blob/541f04f1b75f95b159af0e4617643d45ebd43596/src/jvm/clojure/lang/PersistentVector.java#L579 )를 읽어보면 확실히 알 수 있다.
-
-```java
-public TransientVector conj(Object val){
-  ensureEditable();
-  int i = cnt;
-  //room in tail?
-  if(i - tailoff() < 32)
-    {
-    tail[i & 0x01f] = val;
-    ++cnt;
-    return this;
-    }
-  //full tail, push into tree
-  Node newroot;
-  Node tailnode = new Node(root.edit, tail);
-  tail = new Object[32];
-  tail[0] = val;
-  int newshift = shift;
-  //overflow root?
-  if((cnt >>> 5) > (1 << shift))
-    {
-    newroot = new Node(root.edit);
-    newroot.array[0] = root;
-    newroot.array[1] = newPath(root.edit,shift, tailnode);
-    newshift += 5;
-    }
-  else
-    newroot = pushTail(shift, root, tailnode);
-  root = newroot;
-  shift = newshift;
-  ++cnt;
-  return this;
-}
-```
 
 `return`키워드 뒤에 모두 `new PersistentVector`가 있다. 항상 새로운 Vector를 리턴하는 것.
 
