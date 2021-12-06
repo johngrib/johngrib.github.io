@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-06 16:03:13 +0900
+updated : 2021-12-06 23:54:03 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -141,6 +141,15 @@ Clojure에서는 거듭제곱 연산자를 기본으로 지원하지는 않는 �
   (reduce * (repeat n x)))
 
 (power 2 10)  ; 1024
+```
+
+`*`도 함수 이름에 쓸 수 있는 문자이기 때문에 이렇게 할 수도 있다.[^clojure-star-star]
+
+```clojure
+(defn ** [x n]
+  (reduce * (repeat n x)))
+
+(** 2 10)  ; 1024
 ```
 
 `(repeat 10 2)`는 `(2 2 2 2 2 2 2 2 2 2)`를 생산하므로, 이 결과에 `*`을 `reduce`하는 코드라 할 수 있다.
@@ -1166,4 +1175,5 @@ namespace의 특성상 소스코드 파일의 최상단에 나오는 경우가 �
 [^destructuring-_]: 프로그래밍 클로저 2장. 50쪽.
 [^reload-all]: 프로그래밍 클로저 2장. 54쪽.
 [^javascript-exponentation]: Javascript에도 `**` 연산자가 있다. [거듭제곱(**) (developer.mozilla.org)]( https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Exponentiation ). 알려주신 [Hyeseong Kim]( https://twitter.com/KrComet/status/1467721959979253762?s=20) 님께 감사를 드립니다.
+[^clojure-star-star]: [남현우 님이 알려주신 팁]( https://twitter.com/namenu_/status/1467853184245055492 ). 남현우 님께 감사드립니다.
 
