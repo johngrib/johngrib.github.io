@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-06 14:57:56 +0900
+updated : 2021-12-06 15:03:00 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -561,8 +561,7 @@ Javascript의 `push`는 list의 뒤에 아이템을 이어붙이기 때문에 li
 ; [12 52 34 61 19]
 ```
 
-
-`return`키워드 뒤에 모두 `new PersistentVector`가 있다. 항상 새로운 Vector를 리턴하는 것.
+시간이 날 때 [PersistentVector.java]( https://github.com/clojure/clojure/blob/541f04f1b75f95b159af0e4617643d45ebd43596/src/jvm/clojure/lang/PersistentVector.java ) 소스 코드도 읽어보도록 하자.
 
 한편 Vector를 슬라이싱할 때에는 `subvec`을 사용한다. 이것도 새로운 Vector를 리턴한다는 점에 주의해야 한다.
 
