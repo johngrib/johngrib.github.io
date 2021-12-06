@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-06 12:58:29 +0900
+updated : 2021-12-06 14:56:36 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -561,7 +561,7 @@ Javascript의 `push`는 list의 뒤에 아이템을 이어붙이기 때문에 li
 ; [12 52 34 61 19]
 ```
 
-[github에서 PersistentVector.java 코드]( https://github.com/clojure/clojure/blob/541f04f1b75f95b159af0e4617643d45ebd43596/src/jvm/clojure/lang/PersistentVector.java#L220 )를 읽어보면 확실히 알 수 있다.
+[github에서 PersistentVector.java 코드]( https://github.com/clojure/clojure/blob/541f04f1b75f95b159af0e4617643d45ebd43596/src/jvm/clojure/lang/PersistentVector.java#L579 )를 읽어보면 확실히 알 수 있다.
 
 ```java
 public PersistentVector cons(Object val){
