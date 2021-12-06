@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-06 14:56:36 +0900
+updated : 2021-12-06 14:57:20 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -564,19 +564,21 @@ Javascript의 `push`는 list의 뒤에 아이템을 이어붙이기 때문에 li
 [github에서 PersistentVector.java 코드]( https://github.com/clojure/clojure/blob/541f04f1b75f95b159af0e4617643d45ebd43596/src/jvm/clojure/lang/PersistentVector.java#L579 )를 읽어보면 확실히 알 수 있다.
 
 ```java
-public PersistentVector cons(Object val){
+public TransientVector conj(Object val){
+  ensureEditable();
+  int i = cnt;
   //room in tail?
-//  if(tail.length < 32)
-  if(cnt - tailoff() < 32)
+  if(i - tailoff() < 32)
     {
-    Object[] newTail = new Object[tail.length + 1];
-    System.arraycopy(tail, 0, newTail, 0, tail.length);
-    newTail[tail.length] = val;
-    return new PersistentVector(meta(), cnt + 1, shift, root, newTail);
+    tail[i & 0x01f] = val;
+    ++cnt;
+    return this;
     }
   //full tail, push into tree
   Node newroot;
-  Node tailnode = new Node(root.edit,tail);
+  Node tailnode = new Node(root.edit, tail);
+  tail = new Object[32];
+  tail[0] = val;
   int newshift = shift;
   //overflow root?
   if((cnt >>> 5) > (1 << shift))
@@ -588,7 +590,10 @@ public PersistentVector cons(Object val){
     }
   else
     newroot = pushTail(shift, root, tailnode);
-  return new PersistentVector(meta(), cnt + 1, newshift, newroot, new Object[]{val});
+  root = newroot;
+  shift = newshift;
+  ++cnt;
+  return this;
 }
 ```
 
