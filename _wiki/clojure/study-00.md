@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-06 15:03:00 +0900
+updated : 2021-12-06 15:14:22 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -122,7 +122,7 @@ Java의 `BigDecimal` 클래스의 생성자를 사용하고 싶다면 그냥 `ne
 
 거듭제곱은 어떻게 표현할 수 있을까?
 
-Javascript라면 `Math.pow(x, y)`를 사용하면 된다.
+Javascript라면 `Math.pow(x, y)`를 사용하면 된다.[^javascript-exponentation]
 
 ```javascript
 Math.pow(2, 10);    // 1024
@@ -1110,3 +1110,5 @@ namespace의 특성상 소스코드 파일의 최상단에 나오는 경우가 �
 [^clojure-regex]: [Regex Support (clojure.org)]( https://clojure.org/reference/other_functions#regex )
 [^destructuring-_]: 프로그래밍 클로저 2장. 50쪽.
 [^reload-all]: 프로그래밍 클로저 2장. 54쪽.
+[^javascript-exponentation]: Javascript에도 `**` 연산자가 있다. [거듭제곱(**) (developer.mozilla.org)]( https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Exponentiation ). 알려주신 [Hyeseong Kim]( https://twitter.com/KrComet/status/1467721959979253762?s=20) 님께 감사를 드립니다.
+
