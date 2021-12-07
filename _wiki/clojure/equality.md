@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Equality
 summary : 
 date    : 2021-12-07 21:04:40 +0900
-updated : 2021-12-07 23:25:26 +0900
+updated : 2021-12-07 23:52:35 +0900
 tag     : 
 toc     : true
 public  : true
@@ -372,6 +372,74 @@ It achieves this by its `intern` method of the Keyword class guaranteeing that a
 
 ### Numbers
 
+>
+Java `equals` is only true for two numbers if the types and numeric values are the same.
+Thus `equals` is false even for `Integer` `1` and `Long` `1`, because they have different types.
+Exception: Java `equals` is also false for two `BigDecimal` values that are numerically equal if they have different scales, e.g. `1.50M` and `1.500M` are not equal.
+This behavior is documented for `BigDecimal` method [equals]( https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#equals-java.lang.Object- ).
+
+- Java의 `equals`는 숫자와 타입과 숫자 값이 같은 경우에만 `true`를 리턴합니다.
+    - 그러므로 `Integer` `1`과 `Long` `1` `equals`에 대해 `equals`는 `false`를 리턴합니다. 타입이 다르기 때문입니다.
+- 예외사항: Java의 `equals`는 `BigDecimal` 값이 같은데도 `false`를 리턴할 수 있습니다.
+    - 예를 들어 `1.50M`은 `1.500M`과 같지 않습니다.
+    - 이 동작은 `BigDecimal`의 [equals]( https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#equals-java.lang.Object- ) 문서에 설명이 있습니다.
+
+>
+Clojure `=` is `true` if the 'category' and numeric values are the same. Category is one of:
+>
+- integer or ratios, where integer includes all Java integer types such as `Byte`, `Short`, `Integer`, `Long`, `BigInteger`, and `clojure.lang.BigInt`, and ratios are represented with the Java type named `clojure.lang.Ratio`.
+- floating point: `Float` and `Double`
+- decimal: `BigDecimal`
+
+- Clojure의 `=`는 숫자의 '카테고리'와 값이 같다면 `true`를 리턴합니다. 카테고리는 다음과 같습니다.
+    - 정수, 비율, Java의 모든 정수 타입들(`Byte`, `Short`, `Integer`, `Long`, `BigInteger`), `clojure.lang.BigInt`, 그리고 `clojure.lang.Ratio`라는 Java 타입으로 표현되는 비율.
+- 부동 소수점 수: `Float`과 `Double`
+- 소수: `BigDecimal`
+
+>
+So `(= (int 1) (long 1))` is `true` because they are in the same integer category, but `(= 1 1.0)` is `false` because they are in different categories (integer vs. floating).
+While integers and ratios are separate types in the Clojure implementation, for the purposes of `=` they are effectively in the same category.
+The results of arithmetic operations on ratios are auto-converted to integers if they are whole numbers.
+Thus any Clojure number that has type `Ratio` cannot equal any integer, so `=` always gives the correct numerical answer (`false`) when comparing a ratio to an integer.
+
+- 그러므로 `(= (int 1) (long 1))`은 `true`를 리턴합니다. 두 수가 같은 integer 카테고리에 있기 때문입니다.
+    - 하지만 `(= 1 1.0)`은 `false`를 리턴합니다. 두 수가 integer와 floating이라는 다른 카테고리에 있기 때문입니다.
+- integer와 ratio는 Clojure에서는 따로 구현리되어 있지만, `=`에 대해서는 같은 카테고리로 간주합니다.
+    - 산술 연산을 할 때 ratio 숫자는 값이 정수인 경우에, 자동으로 integer로 변환됩니다.
+- 따라서 `Ratio` 타입인 Clojure 숫자는 어떤 정수와도 같지 않습니다.
+    - 그래서 `=`는 ratio와 integer를 비교할 때 항상 올바른 대답(`false`)을 리턴합니다.
+
+>
+Clojure also has `==` that is only useful for comparing numbers.
+It returns `true` whenever `=` does.
+It also returns `true` for numbers that are numerically equal, even if they are in different categories.
+Thus `(= 1 1.0)` is false, but `(== 1 1.0)` is `true`.
+
+- Clojure에서도 `==`를 사용하여 숫자를 비교할 수 있습니다.
+- `=`가 `true`를 리턴한다면 `==`도 `true`를 리턴합니다.
+- `==`는 숫자들이 숫자의 값이 같다면, 카테고리가 다르더라도 `true`를 리턴합니다.
+    - 그러므로 `(= 1 1.0)`은 `false`를 리턴하고, `(== 1 1.0)`은 `true`를 리턴합니다.
+
+>
+Why does `=` have different categories for numbers, you might wonder?
+It would be difficult (if it is even possible) to make `hash` consistent with `=` if it behaved like `==` (see section [Equality and hash]( https://clojure.org/guides/equality#equality_and_hash )).
+Imagine trying to write `hash` such that it was guaranteed to return the same hash value for all of `(float 1.5)`, `(double 1.5)`, `BigDecimal` values `1.50M`, `1.500M`, etc. and the ratio `(/ 3 2)`.
+
+- 그렇다면 `=`는 왜 숫자 비교에 카테고리를 사용할까요?
+- `hash`가 `==`와 같은 방식으로 작동하는 것을 보장하는 것이 어려울 수 있기 때문입니다.
+    - [Equality and hash]( https://clojure.org/guides/equality#equality_and_hash ) 문서를 참고하세요.
+    - `(float 1.5)`, `(double 1.5)`, `BigDecimal` 타입인 값 `1.50M`, `1.500M` 같은 모든 숫자들과 비율 `(/ 3 2)`에 대해 같은 해시 값을 리턴하도록 `hash` 함수를 만든다고 생각해 봅시다.
+
+>
+Clojure uses `=` to compare values for equality when they are used as elements in sets, or keys in maps.
+Thus Clojure’s numeric categories come into play if you use sets with numeric elements or maps with numeric keys.
+
+- Clojure는 `=`를 사용해서 set의 원소나 map의 key로 사용되는 value를 비교합니다.
+- 그러므로, 숫자 원소가 있는 set이나 숫자 key가 있는 map을 사용한다면 Clojure의 숫자 카테고리가 사용됩니다.
+
+#### Floating point numbers are usually approximations
+
+부동소수점은 일반적으로 근사값입니다.
 
 ## 참고문헌
 
