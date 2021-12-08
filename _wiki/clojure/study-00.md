@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-08 21:52:32 +0900
+updated : 2021-12-08 22:06:35 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -1492,6 +1492,13 @@ System.getProperties().get("os.name")
 Map<String, Integer> map = new HashMap<>();
 map.put("a", 1);
 map.put("b", 2);
+```
+
+`instanceof`는 `instance?` 함수를 쓰면 된다.
+
+```clojure
+(instance? String "") ; true
+(instance? Comparable 10) ; true
 ```
 
 ## 참고문헌
