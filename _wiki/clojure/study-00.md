@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-06 23:54:03 +0900
+updated : 2021-12-08 18:30:57 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -1160,9 +1160,212 @@ Clojure namespace에 대해서는 `require`를 사용할 수 있는 것 같다.
 namespace의 특성상 소스코드 파일의 최상단에 나오는 경우가 흔한 것 같다.
 천천히 학습하며 추가해 보도록 한다.
 
+## 동등비교
+
+이 부분을 공부하기 위해 Clojure 공식 사이트의 [[/clojure/equality]] 문서를 번역해 보았다.
+그러므로 이 문서에서는 몇 가지 메모만 남겨두자.
+
+여기에서 기억해둬야 하는 함수는 넷이다. `=`, `==`, `hash`, `identical?`.
+
+### =
+
+Clojure의 `=`는 숫자와 Clojure collection을 제외하고 Java의 `equals`와 똑같이 작동한다..
+
+Clojure의 `=`는 기본적으로 다음 경우에는 항상 `true` 이다.
+- immutable 한 값을 비교할 때, 두 값이 같은 경우
+- mutable 객체를 비교할 때, 두 객체가 같은 경우
+
+하지만 그 외의 경우는 편의 제공을 위해 타입이 다른 Collection일 경우에도 내용물이 같다고 판단되면 `true`를 리턴한다.
+
+이 때, 내용물의 비교는 `=`를 사용한다. `=`를 사용할 때에는 이걸 주의해야 할 것으로 보인다.
+
+세부사항은 꽤 복잡하지만 일단 이정도로 기억해두자.
+
+그렇다면 `=`는 숫자에 대해서 어떻게 작동할까?
+
+Java의 모든 숫자 타입들의 `equals`를 읽어보면 타입에 엄격하다. 다음은 `Long::equals`의 소스코드이다. 타입이 다르면 `==`로 검사하지도 않는다.
+
+```java
+public boolean equals(Object obj) {
+  if (obj instanceof Long) {
+    return value == ((Long)obj).longValue();
+  }
+  return false;
+}
+```
+
+하지만 Clojure는 `=`로 숫자를 비교할 때 Java와 달리 숫자의 카테고리와 값이 같으면 `true`를 리턴한다.
+
+Clojure의 숫자 카테고리는 다음과 같다. (A, B, C는 내가 붙였다.)
+
+- 카테고리 A: Java의 모든 정수 타입들(Byte, Short, Integer, Long, BigInteger), clojure.lang.BigInt, clojure.lang.Ratio라는 Java 타입으로 표현되는 비율.
+- 카테고리 B: Float, Double
+- 카테고리 C: BigDecimal
+
+Java는 타입이 기준이고 Clojure는 카테고리가 기준인 것이다. 따라서 다음과 같은 차이가 발생한다.
+
+- Java에서 `((Long) 1L).equals((Integer) 1)`은 `false` 이다. 타입이 다르기 때문이다.
+- Clojure에서 `(= (int 1) (long 1))`는 `true` 이다. int와 long의 카테고리가 같기 때문이다.
+
+`BigDecimal`로 실험해보면 좀 더 흥미롭다.
+
+Java의 `BigDecimal`은 `1`과 `1.0`이 `equals`하지 않은데, `scale`이 다르기 때문이다.
+
+`(new BigDecimal("1")).equals(new BigDecimal("1.0"))`가 `false`를 리턴하는 과정을 디버거로 확인해 봤다.
+`scale` 때문에 `false`를 리턴하는 것을 볼 수 있다.
+
+![BigDecimal equals 비교가 실패하는 debugger 장면]( ./bigdecimal-equals-debug.jpg )
+
+그러나 Clojure에서 `(= 1M 1.0M)`은 `true`이다.
+
+### ==
+
+한편 Clojure의 `==`는 `=`와 다르다. `==`는 카테고리를 넘나들며 숫자의 크기를 비교한다.
+
+```clojure
+(= 0 0.0)  ; false
+(== 0 0.0) ; true
+
+(= 1.0 1.0M)  ; false
+(== 1.0 1.0M) ; true
+```
+
+하지만 숫자 타입만 비교할 수 있다. 다음과 같이 문자열을 비교하려 하면 인자를 `java.lang.Number` 캐스팅하다 에러가 발생한다.
+
+```clojure
+(== "123" "123")
+Execution error (ClassCastException) at tutorial.core/eval1698 (form-init6027016705512429245.clj:1).
+class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+```
+
+### identical?
+
+`identical?` 함수는 Java의 `==`와 똑같다.
+
+[richhickey의 "added identical?" commit]( https://github.com/clojure/clojure/commit/59fede97ed5a7bb8f2531dd9bcbd08f36139e4ad#diff-acddf4ef15ed09e1bfb6c1c3efc03396bcc49fcd223c395b11f6eb765e52f22cR1570-R1573 )을 읽어보면 `identical?`의 Java 코드는 다음과 같이 `==`를 사용하고 있다.
+
+```java
+public Object eval() throws Exception{
+  return expr1.eval() == expr2.eval() ?
+       RT.T : null;
+}
+```
+
+`==`를 사용하므로 `new String` 테스트를 해볼 수 있을 것이다.
+
+```clojure
+(== "123" (new String "123"))         ; ClassCastException
+
+(identical? "123" "123")              ; true
+(identical? "123" (new String "123")) ; false
+
+(= "123" "123")                       ; true
+(= "123" (new String "123"))          ; true
+```
+
+예상대로 동작한다.
+
+따라서 String 비교는 `=`를 사용하는 것이 바람직해 보인다.
+
+### NaN 문제
+
+"같음"의 비교는 프로그래밍 언어별로 개념이 조금씩 다르므로 주의해야 한다.
+다만 Clojure는 Java를 기반으로 하고 있으므로 Java의 스펙에 대한 지식이 도움이 될 거라 생각한다.
+
+Java의 `==` 연산자는 [Java Language Specification의 15.21 절]( https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.21.1 )에 등장한다.
+
+해당 항목 중 중요한 몇 가지만 발췌해보자.
+
+- 15.21 절
+    - 동등비교 연산자는 다음의 두 피연산자를 비교할 때 사용한다.
+        - numeric 타입으로 변환 가능한 두 피연산자
+        - `boolean` 또는 `Boolean` 타입의 두 피연산자
+        - 레퍼런스 타입이거나 null 타입인 두 피연산자
+    - 그 외의 타입을 비교하려 하면 컴파일 에러가 발생한다.
+    - 동등비교 연산자는 언제나 boolean 타입으로 평가된다.
+- 15.21.1 절
+    - `x`가 `NaN`이면 `x != x`는 `true`이다.
+- 15.21.3 절
+    - `==`의 결과는 피연산자 값이 둘 다 `null`이거나 둘 다 같은 객체나 배열을 참조하면 `true`이다. 그 외에는 `false`이다.
+    - `==`가 String 타입의 참조를 비교할 때, 두 피연산자가 같은 String 객체를 참조하는지를 판별한다.
+        - 두 피연산자가 같은 문자를 포함하더라도 다른 String 객체라면 결과는 `false`이다.
+
+여기에서 주의깊게 기억해둬야 하는 것은 14.21.1 절의 `NaN` 비교이다.
+IEEE 754에서는 `NaN`이 `NaN`을 포함해 어떤 것과도 같지 않다고 정의해놨으므로 `NaN`과 `NaN`을 `!=`으로 비교하면 `true`가 된다.
+
+IEEE 754를 모른다면 다음 예제의 `NaN` 비교는 영문을 알 수 없는 정말 이상한 Java 코드로 보일 것이다.
+
+```java
+// 기대한 대로 둘은 같다.
+Float.NEGATIVE_INFINITY == Float.NEGATIVE_INFINITY; // true
+
+// 느낌상 같아야 할 것 같은데 false가 나온다.
+Float.NaN == Float.NaN; // false
+```
+
+여기에서 문제가 발생한다.
+
+두 collection이 있는데 하나는 `[1 1 NaN]` 이고 다른 하나는 `[1 1 NaN]` 이다.
+두 collection은 같은가 다른가?
+
+Java 코드를 먼저 돌려보자. 다음 테스트 코드는 성공한다.
+
+```java
+Set<Integer> seti1 = Set.of(1, 2);
+Set<Integer> seti2 = Set.of(1, 2);
+Assertions.assertTrue(seti1.equals(seti2));
+
+Set<Double> set1 = Set.of(1.0, 2.0, Double.NaN);
+Set<Double> set2 = Set.of(1.0, 2.0, Double.NaN);
+Assertions.assertTrue(set1.equals(set2));
+
+Assertions.assertTrue(set1.contains(Double.NaN));
+```
+
+이것이 성공하는 이유는 java의 `Double`에 구현된 `equals`가 `NaN`을 `0x7ff8000000000000L`로 변환해 비교하기 때문이다.
+
+```java
+public static long doubleToLongBits(double value) {
+  if (!isNaN(value)) {
+    return doubleToRawLongBits(value);
+  }
+  return 0x7ff8000000000000L;
+}
+```
+
+`Double`의 `hashCode` 또한 `doubleToRawLongBits`를 사용하고 있으므로 `HashSet`이나 `HashMap`에 `NaN`이 들어가도 별다른 문제가 없다.
+
+```java
+public static int hashCode(double value) {
+  long bits = doubleToLongBits(value);
+  return (int)(bits ^ (bits >>> 32));
+}
+```
+
+하지만 Clojure의 collection에 `##NaN`이 들어가면 `=`은 기대한대로 작동하지 않는다.
+
+```clojure
+(= [1 2 3] [1 2 3])         ; true
+(= [1 2 ##NaN] [1 2 ##NaN]) ; false
+```
+
+`##NaN`을 제대로 비교하고 싶다면 `=`나 `==`를 쓰면 안된다.
+Java의 `==`이나 `equals`를 사용해야 한다. 즉, `identical`이나 `.equals`를 쓰면 된다.
+
+```clojure
+(= ##NaN ##NaN)  ; false
+(== ##NaN ##NaN) ; false
+(identical? ##NaN ##NaN) ; true
+(.equals ##NaN ##NaN)    ; true
+```
+
+Clojure 공식 문서에서는 "`=`를 써서 `true`를 결과로 얻는 것이 필요한 경우에는 Clojure data structure에 `##NaN`을 포함시키지 말 것"을 권장한다.
+
+자세한 내용은 [[/clojure/equality]] 문서를 참고.
 
 ## 참고문헌
 
+- [The Java® Language Specification Java SE 8 Edition]( https://docs.oracle.com/javase/specs/jls/se8/html/index.html )
 - 프로그래밍 클로저 / 스튜어트 할로웨이 저 / 유찬우 역 / 인사이트(insight) / 초판 1쇄 발행 2010년 06월 20일 / 원제 : Programming Clojure (2009)
 
 ## 주석
