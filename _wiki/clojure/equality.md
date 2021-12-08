@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Equality
 summary :
 date    : 2021-12-07 21:04:40 +0900
-updated : 2021-12-08 11:21:33 +0900
+updated : 2021-12-08 11:27:22 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 ## Equality: Clojure guide 문서 번역
 
-[Equality]( https://clojure.org/guides/equality )
+원문: [Equality]( https://clojure.org/guides/equality )
 
 >
 This document discusses the concept of equality in Clojure, including the functions `=`, `==`, and `identical?`, and how they differ from Java’s `equals` method.
