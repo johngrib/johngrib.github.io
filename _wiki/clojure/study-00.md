@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-08 19:41:58 +0900
+updated : 2021-12-08 21:52:32 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -1430,11 +1430,14 @@ collection이나 symbol에 메타데이터를 추가할 수 있다.
 (.equals person person-2) ; true
 ```
 
-## Java
+## Java 코드 호출
 
 위에서 계속 사용하긴 했지만 이것도 이번에 기록해보자.
 
-`new`는 이렇게 하면 된다.
+`new`는 두 가지 방법이 있다.
+
+- `(new 클래스이름 인자)`
+- `(클래스이름. 인자)`
 
 ```clojure
 (new java.util.ArrayList [1 2 3]) ; [1 2 3]
@@ -1443,6 +1446,53 @@ collection이나 symbol에 메타데이터를 추가할 수 있다.
 
 위의 두 코드는 `new ArrayList(List.of(1, 2, 3))`과 똑같다.
 
+메소드 호출도 두 가지 방법이 있다.
+
+- `(.메소드이름 객체 인자)`
+- `(. 객체 메소드이름 인자)`
+    - Java에서 메소드를 호출할 때와 순서가 같아 비슷한 느낌으로 사용할 수 있다.
+
+```clojure
+(def name "John Grib")
+
+// name.equals("John Grib") 과 같음
+(.equals name "John Grib")  ; true
+
+// name.equals("John Grib") 과 같음
+(. name equals "John Grib") ; true
+```
+
+`..` 연산자를 사용하면 `.`이 연쇄되는 Java 코드를 Clojure 코드로 작성할 수 있다.
+
+```java
+// Java
+System.getProperties().get("os.name")
+```
+
+아래의 세 코드는 같은 일을 한다. 쉬운 쪽을 고르자.
+
+```clojure
+(. (. System (getProperties)) (get "os.name"))  ; Linux
+(.. System (getProperties) (get "os.name"))     ; Linux
+(-> (System/getProperties) (.get "os.name"))    ; Linux
+```
+
+객체 하나에 대해 계속 메소드를 부를 일이 있다면 `doto`를 쓴다.
+
+```clojure
+(doto (new java.util.HashMap)
+  (.put "a" 1)
+  (.put "b" 2))
+; {a=1, b=2}
+```
+
+위의 코드는 아래의 Java 코드와 동일하다.
+
+```java
+Map<String, Integer> map = new HashMap<>();
+map.put("a", 1);
+map.put("b", 2);
+```
 
 ## 참고문헌
 
