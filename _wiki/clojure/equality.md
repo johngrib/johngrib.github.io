@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Equality
 summary : 
 date    : 2021-12-07 21:04:40 +0900
-updated : 2021-12-07 23:52:35 +0900
+updated : 2021-12-08 09:04:19 +0900
 tag     : 
 toc     : true
 public  : true
@@ -440,6 +440,134 @@ Thus Clojure’s numeric categories come into play if you use sets with numeric 
 #### Floating point numbers are usually approximations
 
 부동소수점은 일반적으로 근사값입니다.
+
+>
+Note that floating point values might behave in ways that surprise you, if you have not learned of their approximate nature before.
+They are often approximations simply because they are represented with a fixed number of bits, and thus many values cannot be represented exactly and must be approximated (or be out of range).
+This is true for floating point numbers in any programming language.
+
+부동소수점의 접근적 특성을 모르고 있다면 관련 동작 때문에 당황할 수 있습니다.
+부동소수점은 고정된 수의 비트로 표현되므로, 종종 정확한 값을 표현할 수 없는 숫자들이 있습니다.
+따라서 그런 종류의 숫자들에 대해서는 근사값으로 표현하게 됩니다.(또는 범위를 넘어서게 됩니다.)
+이는 어느 프로그래밍 언어에서건 부동소수점을 다룬다면 발생하는 일입니다.
+
+```clojure
+user> (def d1 (apply + (repeat 100 0.1)))
+#'user/d1
+user> d1
+9.99999999999998
+user> (== d1 10.0)
+false
+```
+
+>
+There is a whole field called [Numerical Analysis]( https://en.wikipedia.org/wiki/Numerical_analysis ) dedicated to studying algorithms that use numerical approximation.
+There are libraries of Fortran code that are used because their order of floating point operations is carefully crafted to give guarantees on the difference between their approximate answers and the exact answers.
+["What Every Computer Scientist Should Know About Floating-Point Arithmetic"]( http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html ) is good reading if you want quite a few details.
+
+- 수치 근사(numerical approximation) 사용 알고리즘을 연구하는 [Numerical Analysis]( https://en.wikipedia.org/wiki/Numerical_analysis )라는 분야가 있습니다.
+- 그 분야에서는 부동소수점 연산의 결과에 대해 근사값과 정확한 값 사이의 차이를 유의미하게 보장하기 위해 부동 소수점 연산의 순서를 조심스럽게 조정한 Fortran 코드 라이브러리들이 있습니다.
+- ["What Every Computer Scientist Should Know About Floating-Point Arithmetic"]( http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html )은 이와 관련된 좋은 문서입니다.
+
+>
+If you want exact answers for at least some kinds of problems, ratios or BigDecimals might suit your needs.
+Realize that these require variable amounts of memory if the number of digits required grow (e.g. after many arithmetic operations), and significantly more computation time.
+They also won’t help if you want exact values of pi or the square root of 2.
+
+- 몇 가지 종류의 문제에 대해 정확한 값이 필요하다면, ratio 또는 BigDecimal이 적합할 수 있습니다.
+- (다양한 연산을 거친 후라던가) 숫자의 자릿수가 꽤 증가하게 되면, 메모리도 많이 필요하고 계산에도 많은 시간이 필요하게 됩니다.
+- 물론 ratio나 BigDecimal도 π나 루트 2의 정확한 값은 제공해줄 수 없습니다.
+
+#### Floating point "Not A Number"
+
+부동소수점 NaN에 대하여
+
+>
+Clojure uses the underlying Java double-size floating point numbers (64-bit) with representation and behavior defined by a standard, IEEE 754.
+There is a special value [NaN]( http://en.wikipedia.org/wiki/NaN ) ("Not A Number") that is not even equal to itself. Clojure represents this value as the symbolic value `##NaN`.
+
+- Clojure는 IEEE 754 표준에 정의된 동작을 구현한 Java의 64비트 배정밀도 부동 소수점 숫자를 사용합니다.
+- IEEE 754에는 NaN ("Not A Number")라는 특수한 값이 있는데, 이 값은 자기 자신을 포함해 어떤 값과도 같지 않습니다.
+    - Clojure는 이 값을 `##NaN`이라는 심볼로 표현합니다.
+
+```clojure
+user> (Math/sqrt -1)
+##NaN
+user> (= ##NaN ##NaN)
+false
+user> (== ##NaN ##NaN)
+false
+```
+
+>
+This leads to some odd behavior if this "value" appears in your data.
+While no error occurs when adding `##NaN` as a set element or a key in a map, you cannot then search for it and find it.
+You also cannot remove it using functions like `disj` or `dissoc`.
+It will appear normally in sequences created from collections containing it.
+
+- 이로 인해 이 "값"이 데이터에 포함되어 있을 때 이상 동작이 발생할 수 있습니다.
+- `##NaN`을 set에 원소로 추가하거나 map의 키로 사용해도 에러는 발생하지 않는데, 일단 집어넣으면 찾을 수가 없습니다.
+    - `disj`또는 `dissoc`와 같은 함수를 사용해도 제거할 수 없습니다.
+    - 이 문제는 이 값을 포함하고 있는 collection에서 sequence를 생성하는 경우에 발생할 수 있습니다.
+
+```clojure
+user> (def s1 #{1.0 2.0 ##NaN})
+#'user/s1
+user> s1
+#{2.0 1.0 ##NaN}
+user> (s1 1.0)
+1.0
+user> (s1 1.5)
+nil
+user> (s1 ##NaN)
+nil             ; cannot find ##NaN in a set, because it is not = to itself
+
+user> (disj s1 2.0)
+#{1.0 ##NaN}
+user> (disj s1 ##NaN)
+#{2.0 1.0 ##NaN}    ; ##NaN is still in the result!
+```
+
+>
+In many cases, collections that contain `##NaN` will not be `=` to another collection, even if they look like they should be, because `(= ##NaN ##NaN)` is `false`:
+
+`##NaN`을 포함하는 collection이 다른 collection과 `=`일 것 같은데 아닌 경우가 많습니다.
+왜냐하면 `(= ##NaN ##NaN)`은 `false`이기 때문입니다.
+
+```clojure
+user> (= [1 ##NaN] [1 ##NaN])
+false
+```
+
+>
+Oddly enough, there are exceptions where collections contain `##NaN` that look like they should be `=`, and they are, because `(identical? ##NaN ##NaN)` is `true`:
+
+그런데 `(identical? ##NaN ##NaN)`은 `true`이기 때문에,
+collection에 `##NaN`이 포함되어 있어도 `=`가 성립하는 예외적인 경우도 있습니다.
+
+```clojure
+user> (def s2 #{##NaN 2.0 1.0})
+#'user/s2
+user> s2
+#{2.0 1.0 ##NaN}
+user> (= s1 s2)
+true
+```
+
+>
+Java has a special case in its `equals` method for floating point values that makes `##NaN` equal to itself.
+Clojure `=` and `==` do not.
+
+- Java는 부동소수점 타입에서 제공하는 `equals` 메서드를 통해 `##NaN`이 자기 자신과 같은지 확인할 수 있습니다.
+- Clojure의 `=`와 `==`는 그렇지 않습니다.
+
+```clojure
+user> (.equals ##NaN ##NaN)
+true
+```
+
+### Equality and hash
+
 
 ## 참고문헌
 
