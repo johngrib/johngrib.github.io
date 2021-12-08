@@ -1,13 +1,13 @@
 ---
 layout  : wiki
 title   : Clojure Equality
-summary : 
+summary :
 date    : 2021-12-07 21:04:40 +0900
-updated : 2021-12-08 09:04:19 +0900
-tag     : 
+updated : 2021-12-08 11:21:33 +0900
+tag     : clojure
 toc     : true
 public  : true
-parent  : 
+parent  : [[/clojure]]
 latex   : false
 ---
 * TOC
@@ -568,6 +568,335 @@ true
 
 ### Equality and hash
 
+>
+Java has `equals` to compare pairs of objects for equality.
+>
+Java has a method `hashCode` that is _consistent_ with this notion of equality (or is documented that it should be, at least).
+This means that for any two objects `x` and `y` where `equals` is `true`, `x.hashCode()` and `y.hashCode()` are equal, too.
+
+- Java는 두 객체의 같음을 비교하는 `equals` 메서드를 제공합니다.
+- Java는 `hashCode` 메서드도 제공하는데, 일관성을 갖춘 논리적 일치를 의미합니다.
+    - 즉, 두 객체 `x`와 `y`에 대해 `equals`가 `true`라면, `x.hashCode()`와 `y.hashCode()`는 리턴값이 같습니다.
+
+>
+This hash consistency property makes it possible to use `hashCode` to implement hash-based data structures like maps and sets that use hashing techniques internally.
+For example, a hash table could be used to implement a set, and it will be guaranteed that objects with different `hashCode` values can be put into different hash buckets, and objects in different hash buckets will never be equal to each other.
+
+- hash의 일관성으로 인해 `hashCode`를 사용해 map이나 set 같은 hash 기반의 자료구조를 사용하는 것이 가능해집니다.
+- 예를 들어, hash 테이블을 써서 set을 구현할 수 있습니다.
+    - `hashCode` 값이 다르면 다른 hash bucket에 넣으면 됩니다. 다른 hash bucket에 담긴 객체들은 서로 다르다는 것이 보장됩니다.
+
+>
+Clojure has `=` and `hash` for similar reasons.
+Since Clojure `=` considers more pairs of things equal to each other than Java `equals`, Clojure `hash` must return the same hash value for more pairs of objects.
+For example, `hash` always returns the same value regardless of whether a sequence of `=` elements is in a sequence, vector, list, or queue:
+
+- 비슷한 이유로 Clojure도 `=`와 `hash`를 제공합니다.
+- Clojure의 `=`는 Java의 `equals`보다 더 많은 것들을 서로 같다고 판단합니다.
+    - 따라서 Clojure의 `hash`도 더 많은 객체에 대해 같은 hash 값을 리턴해야 합니다.
+- 예를 들어 sequence, vector, list, queue에 대해서는 (자료구조 상관 없이) `hash`는 항상 같은 값을 리턴해야 합니다.
+
+```clojure
+user> (hash ["a" 5 :c])
+1698166287
+user> (hash (seq ["a" 5 :c]))
+1698166287
+user> (hash '("a" 5 :c))
+1698166287
+user> (hash (conj clojure.lang.PersistentQueue/EMPTY "a" 5 :c))
+1698166287
+```
+
+>
+However, since `hash` is not consistent with `=` when comparing Clojure immutable collections with their non-Clojure counterparts, mixing the two can lead to undesirable behavior, as shown in the examples below.
+
+그러나 `hash`는 `=`와 일치하지 않으므로, Clojure의 immutable collection과 그에 대응되는 non-Clojure collection을 비교할 때 의도하지 않은 동작이 나타날 수 있습니다.
+
+```clojure
+user=> (def java-list (java.util.ArrayList. [1 2 3]))
+#'user/java-list
+user=> (def clj-vec [1 2 3])
+#'user/clj-vec
+
+;; They are =, even though they are different classes
+user=> (= java-list clj-vec)
+true
+user=> (class java-list)
+java.util.ArrayList
+user=> (class clj-vec)
+clojure.lang.PersistentVector
+
+;; Their hash values are different, though.
+;; = 로 비교했을 때에는 같지만, hash값은 다르다.
+
+user=> (hash java-list)
+30817
+user=> (hash clj-vec)
+736442005
+
+;; If java-list and clj-vec are put into collections that do not use
+;; their hash values, like a vector or array-map, then those
+;; collections will be equal, too.
+;; vector나 array-map처럼 집어넣을 때 hash값을 사용하지 않는 collection이므로 같다고 평가된다.
+
+user=> (= [java-list] [clj-vec])
+true
+user=> (class {java-list 5})
+clojure.lang.PersistentArrayMap
+user=> (= {java-list 5} {clj-vec 5})
+true
+user=> (assoc {} java-list 5 clj-vec 3)
+{[1 2 3] 3}
+
+;; However, if java-list and clj-vec are put into collections that do
+;; use their hash values, like a hash-set, or a key in a hash-map,
+;; then those collections will not be equal because of the different
+;; hash values.
+;; 그러나 hash-set이나 hash-map처럼 집어넣을 때 hash값을 사용하는 collection이라면 같지 않다고 평가된다.
+
+user=> (class (hash-map java-list 5))
+clojure.lang.PersistentHashMap
+user=> (= (hash-map java-list 5) (hash-map clj-vec 5))
+false               ; sorry, not true
+user=> (= (hash-set java-list) (hash-set clj-vec))
+false               ; also not true
+
+user=> (get (hash-map java-list 5) java-list)
+5
+user=> (get (hash-map java-list 5) clj-vec)
+nil                 ; you were probably hoping for 5
+
+user=> (conj #{} java-list clj-vec)
+#{[1 2 3] [1 2 3]}          ; you may have been expecting #{[1 2 3]}
+user=> (hash-map java-list 5 clj-vec 3)
+{[1 2 3] 5, [1 2 3] 3}      ; I bet you wanted {[1 2 3] 3} instead
+```
+
+>
+Most of the time you use maps in Clojure, you do not specify whether you want an array map or a hash map.
+By default array maps are used if there are at most 8 keys, and hash maps are used if there are over 8 keys.
+Clojure functions choose the implementation for you as you do operations on the maps.
+Thus even if you tried to use array maps consistently, you are likely to frequently get hash maps as you create larger maps.
+
+- Clojure에서 map을 사용할 때, 대부분의 경우 array map을 쓸 것인지 hash map을 쓸 것인지를 지정하지 않습니다.
+- 기본적으로 key가 최대 8개라면 array map이, 8개를 초과하면 hash map이 사용됩니다.
+- Clojure 함수는 map 연산을 사용할 때 자동으로 어떤 구현체를 사용할지 알아서 결정합니다.
+- 그러므로 일관성있게 array map만 사용하려 시도해도, 더 큰 규모의 map을 생성하게 되면 종종 hash map을 갖게 될 것입니다.
+
+>
+We do _not_ recommend trying to avoid the use of hash-based sets and maps in Clojure.
+They use hashing to help achieve high performance in their operations.
+Instead we would recommend avoiding the use of non-Clojure collections as parts within Clojure collections.
+Primarily this advice is because most such non-Clojure collections are mutable, and mutability often leads to subtle bugs.
+Another reason is the inconsistency of `hash` with `=`.
+
+- Clojure에서 hash 기반의 set과 map의 사용을 피하는 것을 추천하지 않습니다.
+- 그런 자료구조들은 hashing을 통해 높은 성능을 보장하기 때문입니다.
+- 다만, non-Clojure collection을 Clojure collection에 포함시키는 방식으로 사용하는 것은 권장하지 않습니다.
+    - non-Clojure collection은 변경 가능한 경우가 많으며, 변경 가능성이 종종 버그의 원인이 되기 때문입니다.
+    - 그리고 `hash`와 `=`의 비일치도 원인입니다.
+
+>
+Similar behavior occurs for Java collections that implement `java.util.List`, `java.util.Set`, and `java.util.Map`, and any of the few kinds of values for which Clojure’s `hash` is not consistent with `=`.
+
+Java collection(`java.util.List`, `java.util.Set`, `java.util.Map` 같은 것들)과는 달리 Clojure의 `hash`는 몇몇 값들에 대해 `=`와 일치하지 않습니다.
+
+>
+If you use hash-inconsistent values as parts within _any_ Clojure collection, even as elements in a sequential collection like a list or vector, those collections become hash-inconsistent with each other, too.
+This occurs because the hash value of collections is calculated by combining the hash values of their parts.
+
+- 만약 어떤 Clojure collection에서 hash-inconsistent 값을 사용한다면, (그 collection이 list나 vector 같은 sequential collection이라 하더라도) 해당 collection은 다른 collection과 hash-inconsistent 하게 될 것입니다.
+- 이는 collection의 hash값이 collection의 부분의 hash값을 조합해 계산되기 때문에 발생하는 일입니다.
+
+#### Historical notes on hash inconsistency for non-Clojure collections
+
+>
+You are likely wondering _why_ `hash` is not consistent with `=` for non-Clojure collections.
+Non-Clojure collections have used Java’s `hashCode` method long before Clojure existed.
+When Clojure was initially developed, it used the same formula for calculating a hash function from collection elements as `hashCode` did.
+>
+Before the release of Clojure 1.6.0 it was discovered that this use of `hashCode` for Clojure’s `hash` function can lead to many hash collisions when small collections are used as set elements or map keys.
+>
+For example, imagine a Clojure program that represents the contents of a 2-dimensional grid with 100 rows and 100 columns using a map with keys that are vectors of two numbers in the range [0, 99].
+There are 10,000 such points in this grid, so 10,000 keys in the map, but `hashCode` only gives 3,169 different results.
+
+- non-Clojure collection에 대해 `hash`는 `=`가 일치하지 않는 이유가 궁금할 것입니다.
+- Clojure가 탄생하기 오래전부터, non-Clojure collection은 Java의 `hashCode` 메소드를 사용해왔습니다.
+- Clojure가 처음 개발되었을 때, Clojure는 collection의 원소들을 통해 hash값을 계산할 때 `hashCode`와 동일한 방법을 사용했었습니다.
+- Clojure 1.6.0을 릴리즈하기 전에, `hashCode`를 Clojure의 `hash` 함수로 사용하면, 작은 collection을 set의 원소나 map의 key로 사용할 때 hash 충돌이 발생할 수 있다는 것을 발견하게 됐습니다.
+- 예를 들어, 100 * 100 사이즈의 그리드를 가진 2차원 그리드를 표현하는 Clojure 프로그램이 있다고 생각해 봅시다.
+    - 이 프로그램은 map을 사용하며, 이 map은 [0, 99] 범위의 두 숫자를 가진 vector를 key로 쓰고 있습니다.
+    - 이 그리드에는 10,000 개의 포인트가 있으므로, map 에도 10,000 개의 key가 있습니다.
+        - 그런데 `hashCode`는 3,169 개의 결과만 생산합니다.
+
+```clojure
+user=> (def grid-keys (for [x (range 100), y (range 100)]
+                        [x y]))
+#'user/grid-keys
+user=> (count grid-keys)
+10000
+user=> (take 5 grid-keys)
+([0 0] [0 1] [0 2] [0 3] [0 4])
+user=> (take-last 5 grid-keys)
+([99 95] [99 96] [99 97] [99 98] [99 99])
+user=> (count (group-by #(.hashCode %) grid-keys))
+3169
+```
+
+>
+Thus there are an average of 10,000 / 3,169 = 3.16 collisions per hash bucket if the map uses the default Clojure implementation of a hash-map.
+>
+The Clojure developers [analyzed]( https://archive.clojure.org/design-wiki/display/design/Better%2Bhashing.html ) several alternate hash functions, and chose one based on the Murmur3 hash function, which has been in use since Clojure 1.6.0.
+It also uses a different way than Java’s `hashCode` does to combine the hashes of multiple elements in a collection.
+
+- 따라서 hash-map으로 기본 Clojure 구현체를 사용한다면 hash bucket에서는 평균적으로 10,000 / 3,169 = 3.16 개의 충돌이 발생합니다.
+- Clojure 언어의 개발자들은 대안으로 여러 다른 hash 함수를 [연구]( https://archive.clojure.org/design-wiki/display/design/Better%2Bhashing.html )했습니다.
+    - 그리고 Murmur3 hash 함수 기반의 hash 함수를 선택했고, 이는 Clojure 1.6.0 이후에 적용되었습니다.
+    - 이 hash 함수는 Java의 `hashCode`와 다른 방법으로 collection의 여러 원소의 hash를 조합합니다.
+
+>
+At that time, Clojure could have changed `hash` to use the new technique for non-Clojure collections as well, but it was judged that doing so would significantly slow down a Java method called `hasheq`, used to implement `hash`.
+See [CLJ-1372]( https://clojure.atlassian.net/browse/CLJ-1372 ) for approaches that have been considered so far, but as of this time no one has discovered a competitively fast way to do it.
+
+- 그 무렵의 Clojure는 non-Clojure collection에서도 새로운 기법으로 바뀐 `hash`를 사용하도록 할 수 있었지만, 그렇게 하면 `hash`를 구현하는데 사용되는 `hasheq`라는 Java 메소드가 너무 느려질 것이라 판단했습니다.
+- 지금까지 고려한 접근 방법에 대해서는 [CLJ-1372]( https://clojure.atlassian.net/browse/CLJ-1372 ) 문서를 참고해 주세요. 아직까지는 아무도 더 빠른 방법을 찾지 못했습니다.
+
+#### Other cases of hash inconsistent with =
+
+`hash`와 `=`가 불일치하는 그 외의 경우들
+
+>
+For some Float and Double values that are `=` to each other, their `hash` values are inconsistent:
+
+몇몇 Float과 Double 값의 경우 `=`인데도, `hash` 값이 불일치합니다.
+
+```clojure
+user> (= (float 1.0e9) (double 1.0e9))
+true
+user> (map hash [(float 1.0e9) (double 1.0e9)])
+(1315859240 1104006501)
+user> (hash-map (float 1.0e9) :float-one (double 1.0e9) :oops)
+{1.0E9 :oops, 1.0E9 :float-one}
+```
+
+>
+You can avoid the `Float` vs `Double` hash inconsistency by consistently using one or the other types in floating point code. Clojure defaults to doubles for floating point values, so that may be the most convenient choice.
+>
+Rich Hickey has decided that changing this inconsistency in hash values for types `Float` and `Double` is out of scope for Clojure (mentioned in a comment of [CLJ-1036]( https://clojure.atlassian.net/browse/CLJ-1036 )).
+Ticket [CLJ-1649]( https://clojure.atlassian.net/browse/CLJ-1649 ) has been filed suggesting a change that `=` always return false when comparing floats to doubles, which would make `hash` consistent with `=` by eliminating the restriction on `hash`, but there is no decision on that yet.
+
+- 부동소수점을 다루는 경우 그냥 하나의 타입만 사용해서 `Float`과 `Double` 사이에 나타나는 이런 `hash` 불일치를 피할 수 있습니다.
+- Clojure은 부동소수점에 기본적으로 `Double`을 사용하고 있으므로, 기본을 사용하는 것이 가장 편한 선택일 것입니다.
+- Rich Hickey는 `Float`과 `Double`의 hash 불일치를 변경하는 것이 Clojure 언어의 범위를 벗어나는 것이라 판단했습니다.
+    - [CLJ-1036]( https://clojure.atlassian.net/browse/CLJ-1036 )에서 언급된 댓글 참고.
+- [CLJ-1649]( https://clojure.atlassian.net/browse/CLJ-1649 ) 티켓은 `=`가 float과 double을 비교할 때 항상 `false`를 리턴하는 것을 제안하고 있습니다. 이는 `hash`의 제약을 제거하여 `=`과 일관성을 갖도록 만들기 위해서입니다.
+    - 그러나 이에 대해서는 아직 결정된 바가 없습니다.
+
+### Defining equality for your own types
+
+>
+See the code of the projects below for examples of how to do this, and much more. In particular, the Java methods `equals` and `hashCode` from standard Java objects, and the Clojure Java methods `equiv` and `hasheq` are the most relevant for how `=` and `hash` behave.
+>
+- [org.clojure/data.priority-map]( https://github.com/clojure/data.priority-map )
+- [org.flatland/ordered]( https://github.com/clj-commons/ordered ) but note that it needs a change so that its custom ordered map data structure is not `=` to any Clojure record: [PR #34]( https://github.com/clj-commons/ordered/pull/34 )
+
+- 아래의 프로젝트 코드를 예제로 참고하세요.
+- 특히, 기본 Java 객체의 `equals`와 `hashCode` 메소드와 Clojure Java 객체의 `equiv`와 `hasheq` 메소드가 어떻게 `=`와 `hash`의 동작과 관련이 있는지가 중요합니다.
+    - [org.clojure/data.priority-map]( https://github.com/clojure/data.priority-map )
+    - [org.flatland/ordered]( https://github.com/clj-commons/ordered )
+        - 하지만 커스텀 ordered map 자료구조가 다른 어떤 Clojure record와 `=`하지 않도록 수정될 필요가 있습니다. [PR #34]( https://github.com/clj-commons/ordered/pull/34 )
+
+### References
+
+>
+The paper ["Equal Rights for Functional Objects, or, the More Things Change, The More They Are the Same"]( http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=1?doi=10.1.1.23.9999&rep=rep1&type=pdf ) by Henry Baker includes code written in Common Lisp for a function `EGAL` that was an inspiration for Clojure’s `=`.
+The idea of "deep equality" making sense for immutable values, but not as much sense for mutable objects (unless the mutable objects are the same object in memory), is independent of programming language.
+>
+Some differences between `EGAL` and Clojure’s `=` are described below.
+These are fairly esoteric details about the behavior of `EGAL`, and are not necessary to know for an understanding of Clojure’s `=`.
+
+- Henry Baker의 논문 "Equal Rights for Functional Objects, or, the More Things Change, The More They Are the Same"에는 Common Lisp의 `EGAL` 함수 코드가 포함되어 있습니다. Clojure의 `=`는 이 함수 코드에 영감을 받았습니다.
+- "deep equality"라는 아이디어는 immutable 값에 대해서만 의미가 있지만, mutable 객체(비교 대상인 mutable 객체들이 메모리상의 같은 객체가 아닌 경우)에 대해서는 별로 의미가 없는 의미가 없으며 프로그래밍 언어와는 독립적인 개념입니다.
+- `EGAL`과 Clojure의 `=`의 몇몇 차이점은 아래에서 언급합니다.
+    - 이 정보들은`EGAL`의 동작에 대한 상당히 난해한 내용이며, Clojure의 `=`를 이해하기 위해 굳이 알아야 할 것은 아닙니다.
+
+#### Comparing mutable collections to other things
+
+>
+`EGAL` is defined to be `false` when comparing mutable objects to anything else, unless that other thing is the same identical mutable object in memory.
+>
+As a convenience, Clojure’s `=` is designed to return `true` in some cases when comparing Clojure immutable collections to non-Clojure collections.
+>
+There is no Java method to determine whether an arbitrary collection is mutable or immutable, so it is not possible in Clojure to implement the intended behavior of `EGAL`, although one might consider `=` "closer" to `EGAL` if it always returned `false` when one of the arguments was a non-Clojure collection.
+
+- `EGAL`은 mutable 객체를 다른 대상과 비교할 때 `false`를 리턴하도록 정의됐습니다.
+    - 비교하는 mutable 객체가 메모리상에서 똑같은 객체인 경우는 제외됩니다.
+- 편의상 Clojure의 `=`는 Clojure의 immutable collection과 non-Clojure collection을 비교하는 몇몇 케이스에서 `true`를 리턴하도록 설계되었습니다.
+- 어떤 임의의 collection이 mutable인지 immutable인지를 판단해주는 Java 메소드는 존재하지 않습니다.
+    - 따라서, Clojure의 `=`는 이러한 경우에는 의도적으로 `EGAL`와 가까운 행동을 하도록 구현되었습니다.
+    - 인자 중 하나가 non-Clojure collection인 경우에는 `=`는 `false`를 리턴합니다.
+
+#### Lazy and pending values
+
+>
+Baker recommends that `EGAL` force lazy values when comparing them (see Section 3. J. "Lazy Values" in the "Equal Rights for Functional Objects" paper).
+When comparing a lazy sequence to another sequential thing, Clojure’s `=` does force the evaluation of the lazy sequence, stopping if it reaches a non-`=` sequence element.
+Chunked sequences, e.g. as produced by `range`, can cause evaluation to proceed a little bit further than that point, as is the case for any event in Clojure that causes evaluation of part of a lazy sequence.
+>
+Clojure’s `=` does not `deref` delay, promise, or future objects when comparing them.
+Instead, it compares them via `identical?`, thus returning `true` only if they are the same identical object in memory, even if calling `deref` on them would result in values that were `=`.
+
+- Baker는 `EGAL`로 값을 비교할 때 lazy 값을 강제하는 것을 추천합니다. ("Equal Rights for Functional Objects"의 Section 3. J. "Lazy Values" 참고)
+- Clojure의 `=`는 lazy sequence를 다른 sequential 한 자료와 비교할 때 강제로 lazy sequence 평가를 하며, `=`이 아닌 sequence 원소에 도달하게 되면 정지합니다.
+- `range`로 생산된 것 같은 chunked sequence는 lazy sequence를 부분적으로 평가하게 하는 Clojure의 모든 이벤트와 마찬가지로, 평가가 특정 포인트보다 더 진행될 수 있습니다.
+- Clojure의 `=`는 delay, promise, future 객체에 대해 `deref`를 사용하지 않습니다.
+    - 이러한 경우에 `=`는 `identical?`를 사용하여 메모리상에서 같은 객체인 경우에만 `true`를 리턴합니다.
+    - 오히려 이런 값들에 `deref`를 호출하면 `=`의 결과값을 얻게 됩니다.
+
+#### Closures
+
+>
+Baker describes in detail how `EGAL` can return `true` in some cases when comparing [closures]( https://en.wikipedia.org/wiki/Closure_(computer_programming) ) to each other (see Section 3. D. "Equality of Functions and Function-Closures" in the "Equal Rights for Functional Objects" paper).
+>
+When given a function or closure as an argument, Clojure’s `=` only returns `true` if they are `identical?` to each other.
+>
+Baker appeared to be motivated to define `EGAL` this way because of the prevalence in some Lisp family languages of using closures to represent objects, where those objects could contain mutable state, or immutable values (see the example below). Given that Clojure has multiple other ways of creating immutable values and mutable objects (e.g. records, reify, proxy, deftype), using closures to do so is uncommon.
+
+- Baker는 closure들을 비교할 때 `EGAL`이 `true`를 리턴하는 경우에 대해 자세하게 설명합니다. ("Equal Rights for Functional Objects"의 Section 3. D. "Equality of Functions and Function-Closures" 참고)
+- 함수나 closure가 인자로 전달된 경우, Clojure의 `=`는 `identical?`의 결과를 리턴합니다.
+- Baker가 이런 방식의 `EGAL`을 정의하게 된 것은, 몇몇 Lisp 계열 언어에서 객체를 표현할 때 closure를 사용하는 유행에 영향을 받은 것으로 보입니다.
+- 이런 객체들은 mutable 상태를 가질 수 있거나, immutable한 값을 가질 수 있습니다. (아래 예제 참고)
+- 이를 통해 Clojure는 별로 일반적인 방법은 아니지만 closure를 사용해 immutable 값과 mutable 객체를 생성하는 다양한 방법을 갖게 되었습니다. (예: record, reify, proxy, deftype)
+
+```clojure
+(defn make-point [init-x init-y]
+  (let [x init-x
+        y init-y]
+    (fn [msg]
+      (cond (= msg :get-x) x
+            (= msg :get-y) y
+	    (= msg :get-both) [x y]
+	    :else nil))))
+
+user=> (def p1 (make-point 5 7))
+#'user/p1
+user=> (def p2 (make-point -3 4))
+#'user/p2
+user=> (p1 :get-x)
+5
+user=> (p2 :get-both)
+[-3 4]
+user=> (= p1 p2)
+false             ; We expect this to be false,
+                  ; because p1 and p2 have different x, y values
+user=> (def p3 (make-point 5 7))
+#'user/p3
+user=> (= p1 p3)
+false             ; Baker's EGAL would return true here.  Clojure
+                  ; = returns false because p1 and p3 are not identical?
+```
+
+Original author: Andy Fingerhut
 
 ## 참고문헌
 

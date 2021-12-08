@@ -1,4 +1,5 @@
 [
+ "clojure/equality",
  "clojure/reader",
  "clojure/study-00"
 ]
