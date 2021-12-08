@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-08 18:30:57 +0900
+updated : 2021-12-08 19:00:31 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -1362,6 +1362,47 @@ Java의 `==`이나 `equals`를 사용해야 한다. 즉, `identical`이나 `.equ
 Clojure 공식 문서에서는 "`=`를 써서 `true`를 결과로 얻는 것이 필요한 경우에는 Clojure data structure에 `##NaN`을 포함시키지 말 것"을 권장한다.
 
 자세한 내용은 [[/clojure/equality]] 문서를 참고.
+
+### hash
+
+Java에 `hashCode` 메소드가 있다면 Clojure에는 `hash` 함수가 있다.
+
+주의해야 할 점은 Java의 collection과 Clojure 고유의 collection이 다른 해시값을 생산한다는 것이다.
+
+```clojure
+ArrayList<Integer> a1 = new ArrayList<>(List.of(1, 2, 3));
+LinkedList<Integer> a2 = new LinkedList<>(List.of(1, 2, 3));
+Vector<Integer> v = new Vector<>(List.of(1, 2, 3));
+
+System.out.println(a1.hashCode());  // 30817
+System.out.println(a2.hashCode());  // 30817
+System.out.println(v.hashCode());   // 30817
+```
+
+위의 코드를 보면 Java의 `List` 인터페이스 구현체들은 내용물이 모두 같으므로 해시값도 `30817`로 똑같다.
+
+그러나 Clojure의 List들은 내용물이 같아도 Java collection과는 해시값이 다르다.
+
+```clojure
+(hash (java.util.ArrayList. [1 2 3]))  ; 30817
+(hash (java.util.LinkedList. [1 2 3])) ; 30817
+(hash (java.util.Vector. [1 2 3]))     ; 30817
+
+(hash '(1 2 3)) ; 736442005
+(hash [1 2 3])  ; 736442005
+```
+
+따라서 Java의 collection을 Clojure 고유의 collection에 원소로 입력할 때에는 조심해야 한다.
+
+```clojure
+(hash [1 2 [3 4 5]])  ; 952363223
+(hash [1 2 '(3 4 5)]) ; 952363223
+(hash [1 2 (java.util.ArrayList. [3 4 5])])   ; 911552362
+(hash [1 2 (java.util.LinkedList. '(3 4 5))]) ; 911552362
+(hash [1 2 (java.util.Vector. '(3 4 5))])     ; 911552362
+```
+
+Java collection이 들어가면 해시값이 달라지므로, 해시값을 통한 비교가 의도대로 되지 않을 수 있다.
 
 ## 참고문헌
 
