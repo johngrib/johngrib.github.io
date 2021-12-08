@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-08 19:26:34 +0900
+updated : 2021-12-08 19:41:58 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -1429,6 +1429,20 @@ collection이나 symbol에 메타데이터를 추가할 수 있다.
 (.equals person person) ; true
 (.equals person person-2) ; true
 ```
+
+## Java
+
+위에서 계속 사용하긴 했지만 이것도 이번에 기록해보자.
+
+`new`는 이렇게 하면 된다.
+
+```clojure
+(new java.util.ArrayList [1 2 3]) ; [1 2 3]
+(java.util.ArrayList. [1 2 3])    ; [1 2 3]
+```
+
+위의 두 코드는 `new ArrayList(List.of(1, 2, 3))`과 똑같다.
+
 
 ## 참고문헌
 
