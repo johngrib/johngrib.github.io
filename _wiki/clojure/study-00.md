@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-08 19:00:31 +0900
+updated : 2021-12-08 19:26:34 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -1403,6 +1403,32 @@ System.out.println(v.hashCode());   // 30817
 ```
 
 Java collection이 들어가면 해시값이 달라지므로, 해시값을 통한 비교가 의도대로 되지 않을 수 있다.
+
+## metadata
+
+collection이나 symbol에 메타데이터를 추가할 수 있다.
+
+`with-meta`로 메타데이터를 추가하고 `meta`로 읽을 수 있다.
+
+```clojure
+(def person {:name "John" :age 28})
+(def person-2 (with-meta person {:serializable true}))
+
+(meta person-2) ; {:serializable true}
+```
+
+특이한 점은 메타데이터가 비교에 영향을 주지 않는다는 것이다.
+
+```clojure
+(= person person) ; true
+(= person person-2) ; true
+
+(identical? person person) ; true
+(identical? person person-2) ; false ; 레퍼런스는 달라진다
+
+(.equals person person) ; true
+(.equals person person-2) ; true
+```
 
 ## 참고문헌
 
