@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-08 22:06:35 +0900
+updated : 2021-12-08 22:41:05 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -1499,6 +1499,17 @@ map.put("b", 2);
 ```clojure
 (instance? String "") ; true
 (instance? Comparable 10) ; true
+```
+
+## try catch finally
+
+다음은 [clojuredocs.org]( https://clojuredocs.org/clojure.core/finally )의 에제를 복사해 온 것이다.
+
+```clojure
+(try
+  (/ 1 0)
+  (catch ArithmeticException e (str "caught exception: " (.getMessage e)))
+  (finally (println "final exception.")))
 ```
 
 ## 참고문헌
