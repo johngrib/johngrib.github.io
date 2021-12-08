@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-12-07 21:01:08 +0900
+updated : 2021-12-08 22:48:19 +0900
 regenerate: true
 ---
 
@@ -275,6 +275,7 @@ regenerate: true
 * [[/clojure/equality]]
 * [[/clojure/reader]]
 * [[/clojure/study-00]]
+* [[/clojure/study-01]]
 
 ### [[php]]
 
