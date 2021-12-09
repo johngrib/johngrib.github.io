@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 1
 summary : 
 date    : 2021-12-08 22:48:20 +0900
-updated : 2021-12-09 16:17:14 +0900
+updated : 2021-12-09 17:42:51 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -325,6 +325,52 @@ for (int num : list) {
 (split-with even? [0 2 4 5 6 8])
 ; [(0 2 4) (5 6 8)]
 ```
+
+### every?, not-every?
+
+```clojure
+(every? zero? [0 0 0 1 0]) ; false
+(every? zero? [0 0 0 0 0]) ; true
+
+(not-every? zero? [0 0 0 1 0]) ; true
+(not-every? zero? [0 0 0 0 0]) ; false
+```
+
+### map, reduce
+
+```clojure
+(map #(* 10 %) [1 2 3]) ; (10 20 30)
+
+(reduce * [2 3 10]) ; 60
+
+(reduce #(- %1 %2) [2 3 10]) ; -11
+; 2 - 3 - 10 의 결과는 -11
+```
+
+### sort, sort-by
+
+```clojure
+(sort [2 1 3])                    ; (1 2 3)
+(sort (fn [a b] (< a b)) [2 1 3]) ; (1 2 3)
+(sort (fn [a b] (> a b)) [2 1 3]) ; (3 2 1)
+```
+
+위의 예제 중 익명 함수를 사용한 것은 이렇게 표현하는 것이 좀 더 심플할 것이다.
+
+```clojure
+(sort < [2 1 3]) ; (1 2 3)
+(sort > [2 1 3]) ; (3 2 1)
+```
+
+`sort-by`는 구조체의 특정 멤버를 기준으로 정렬할 수 있다.
+
+```clojure
+(sort-by :grade > [{:grade 83} {:grade 90} {:grade 77}])
+; ({:grade 90} {:grade 83} {:grade 77})
+(sort-by :grade < [{:grade 83} {:grade 90} {:grade 77}])
+; ({:grade 77} {:grade 83} {:grade 90})
+```
+
 
 ## 참고문헌
 
