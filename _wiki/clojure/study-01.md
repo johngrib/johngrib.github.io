@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 1
 summary : 
 date    : 2021-12-08 22:48:20 +0900
-updated : 2021-12-09 21:09:28 +0900
+updated : 2021-12-09 22:08:41 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -347,7 +347,7 @@ for (int num : list) {
 ; 2 - 3 - 10 의 결과는 -11
 ```
 
-### sort, sort-by
+### sort, sort-by, reverse
 
 ```clojure
 (sort [2 1 3])                    ; (1 2 3)
@@ -369,6 +369,12 @@ for (int num : list) {
 ; ({:grade 90} {:grade 83} {:grade 77})
 (sort-by :grade < [{:grade 83} {:grade 90} {:grade 77}])
 ; ({:grade 77} {:grade 83} {:grade 90})
+```
+
+`reverse`는 시퀀스를 뒤집는다.
+
+```clojure
+(reverse [1 2 3]) ; (3 2 1)
 ```
 
 ### for
