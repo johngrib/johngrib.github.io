@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 1
 summary : 
 date    : 2021-12-08 22:48:20 +0900
-updated : 2021-12-09 20:58:22 +0900
+updated : 2021-12-09 21:09:28 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -447,6 +447,38 @@ for c in col:
     print('{}{}'.format(c, r))
 ```
 
+## lazy sequence
+
+Clojure의 시퀀스 대부분은 lazy하다. 다음은 '프로그래밍 클로저'에 등장하는 예제이다.[^programming-clojure-123]
+
+```clojure
+(def x
+  (for
+    [i (range 1 3)]
+    (do (println i) i)))
+```
+
+이 코드에는 `(println i)`가 있는데도, 이 코드를 실행해도 출력 결과는 나오지 않는다. lazy하기 때문에 아직 실행이 미뤄져 있는 것이다.
+
+`doall`을 사용하면 지연된 연산을 실행할 수 있다.
+
+```clojure
+(doall x)
+1
+2
+=> (1 2)
+```
+
+`dorun`은 `doall`처럼 작동하지만 실행 과정에서 접근했던 원소를 메모리에 보존하지 않는다고 한다. 그래서 `nil`을 리턴한다. `dorun`을 사용하면 굉장히 커서 메모리에 부담이 되는 컬렉션도 취급할 수 있을 것으로 보인다.
+
+```clojure
+(dorun x)
+1
+2
+=> nil
+```
+
+다만, `dorun`과 `doall`은 Clojure에서는 거의 사용되지 않는 함수라고 한다.
 
 ## 참고문헌
 
@@ -455,4 +487,5 @@ for c in col:
 ## 주석
 
 [^programming-clojure-121]: 프로그래밍 클로저. 4장. 121쪽.
+[^programming-clojure-123]: 프로그래밍 클로저. 4장. 123쪽.
 
