@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 1
 summary : 
 date    : 2021-12-08 22:48:20 +0900
-updated : 2021-12-08 23:40:17 +0900
+updated : 2021-12-09 15:22:08 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -13,10 +13,44 @@ latex   : false
 * TOC
 {:toc}
 
+### apply
+
+Lisp을 다룬다면 역사적인 함수인 `apply`를 빠뜨릴 수 없을 것이다.
+
+`apply`는 시퀀스를 받아 주어진 함수의 인자로 제공해 준다.
+
+나는 이번에 Clojure를 통해 Lisp을 처음 접하므로 내가 `apply`를 가장 많이 사용해 본 언어인 Javascript를 통해 연습해 보자.
+
+Javascript에서 `apply`는 다음과 같이 사용한다.
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+add.apply(null, [7, 12]); // 19
+```
+
+`add(7, 12)`로 호출할 수 있는 함수에 `[7, 12]`를 제공해서 호출하고 있다.
+`this` 바인딩은 필요 없어서 그냥 `null`을 줬다.
+
+그렇다면 이번엔 Clojure에서 `apply`를 사용해 보자.
+
+```clojure
+(+ 1 2 3) ; 6
+
+(apply + [1 2 3]) ; 6
+```
+
+참 쉽다. `apply` 함수에 적용할 함수와 인자 시퀀스를 함께 넘기면 끝.
+
+
+
 ## Clojure sequence의 특징
 
 - lazy하다. 따라서 무한대의 시퀀스를 다룰 수도 있다.
 - immutable하다.
+
 
 ## sequence 연산
 
@@ -171,7 +205,14 @@ latex   : false
 (join "," [1 2 3]) ; "1,2,3"
 ```
 
-### set, hash-set, vec
+### vec, set, hash-set
+
+`vec`은 vector를 만들어 준다.
+
+```clojure
+(vec '(1 2 3)) ; [1 2 3]
+(type (vec '(1 2 3))) ; clojure.lang.PersistentVector
+```
 
 `set`은 주어진 컬렉션을 set으로 만들어 리턴한다.
 
@@ -189,11 +230,10 @@ latex   : false
 (type (hash-set 1 2 3)) ; clojure.lang.PersistentHashSet
 ```
 
-`vec`은 vector를 만들어 준다.
+`hash`가 아니라 굳이 `hash-set`을 쓰겠다면 `apply`를 써도 될 것 같다. 하지만 이렇게 쓸 일은 없을 것 같다.
 
 ```clojure
-(vec '(1 2 3)) ; [1 2 3]
-(type (vec '(1 2 3))) ; clojure.lang.PersistentVector
+(apply hash-set [1 2 3]) ; #{1 3 2}
 ```
 
 
