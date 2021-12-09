@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 1
 summary : 
 date    : 2021-12-08 22:48:20 +0900
-updated : 2021-12-09 17:42:51 +0900
+updated : 2021-12-09 20:58:22 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -371,7 +371,88 @@ for (int num : list) {
 ; ({:grade 77} {:grade 83} {:grade 90})
 ```
 
+### for
+
+다른 언어의 `for`와는 다르다. Clojure의 `for`는 루프 키워드가 아니라 다양한 조건을 받아 새로운 리스트를 만들어내는 함수다.
+
+```clojure
+(for
+  [x '(1 2 3)]
+  (* 2 x))
+; (2 4 6)
+```
+
+이 코드를 Javascript로 표현하면 다음과 같다.
+
+```javascript
+[1, 2, 3].map(x => 2*x); // [2, 4, 6]
+```
+
+`:when` 키워드를 사용하고 뒤에 함수를 제공하면 `filter`로 작동한다.
+
+```clojure
+(for
+  [x '(1 -2 3) :when (> x 0)]
+  (* 10 x))
+; (10 30)
+```
+
+Javascript로는 다음과 같다.
+
+```javascript
+[1, -2, 3]
+  .filter(x => x > 0)   // :when (> x 0)
+  .map(x => 10 * x);    // (* 10 x)
+// [10, 30]
+```
+
+`:let`을 사용하면 임시 변수를 사용할 수 있다.
+
+```clojure
+(for
+  [x [1 -2 3]
+  :let [temp (* x 100)]
+  :when (pos? temp)]
+  (str temp "%"))
+; ("100%" "300%")
+```
+
+Javascript로는 다음과 같다.
+
+```javascript
+[1, -2, 3]
+  .map(x => x * 100)    // :let [temp (* x 100)]
+  .filter(x => x > 0)   // :when (pos? temp)]
+  .map(x => `${x}%`)    // (str temp "%")
+// ['100%', '300%']
+```
+
+다음 예제는 책 '프로그래밍 클로저'의 예제를 일부 수정한 것인데, `[]` 내에서 두 개의 임시변수를 생성해 사용한다.[^programming-clojure-121] 이 에제는 체스판의 모든 위치를 출력한다.
+
+```clojure
+(for
+  [col "ABCDEFGH" row (range 1 9)]
+  (format "%c%d" col row))
+
+; ("A1" "A2" "A3" ... "H8")
+```
+
+Python에서 2중 루프를 사용해 비슷한 일을 한다면 이럴 것 같다.
+
+```python
+col = list('ABCDEFGH')
+row = range(1, 9)
+for c in col:
+  for r in row:
+    print('{}{}'.format(c, r))
+```
+
 
 ## 참고문헌
 
 - 프로그래밍 클로저 / 스튜어트 할로웨이 저 / 유찬우 역 / 인사이트(insight) / 초판 1쇄 발행 2010년 06월 20일 / 원제 : Programming Clojure (2009)
+
+## 주석
+
+[^programming-clojure-121]: 프로그래밍 클로저. 4장. 121쪽.
+
