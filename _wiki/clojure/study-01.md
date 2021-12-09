@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 1
 summary : 
 date    : 2021-12-08 22:48:20 +0900
-updated : 2021-12-09 16:12:39 +0900
+updated : 2021-12-09 16:17:14 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -310,7 +310,21 @@ for (int num : list) {
 
 `drop-while`도 앞부분의 2, 4는 제외했지만 drop을 멈춘 이후에 나온 짝수인 8, 10, 12는 그대로 남겨두고 있다.
 
+### split-at, split-with
 
+`split-at`은 컬렉션을 쪼갠다.
+
+```clojure
+(split-at 3 ["a" "b" "c" "d" "e" "f" "g"])
+; [("a" "b" "c") ("d" "e" "f" "g")]
+```
+
+`split-with`는 체크 함수를 기준으로 컬렉션을 쪼갠다. `filter`처럼 작동하지는 않고, 함수가 `false`를 리턴하는 곳을 기준으로 쪼갠다.
+
+```clojure
+(split-with even? [0 2 4 5 6 8])
+; [(0 2 4) (5 6 8)]
+```
 
 ## 참고문헌
 
