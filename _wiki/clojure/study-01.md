@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 1
 summary : 
 date    : 2021-12-08 22:48:20 +0900
-updated : 2021-12-09 15:22:08 +0900
+updated : 2021-12-09 16:12:39 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -235,6 +235,81 @@ add.apply(null, [7, 12]); // 19
 ```clojure
 (apply hash-set [1 2 3]) ; #{1 3 2}
 ```
+
+### filter
+
+`filter`는 이름 그대로의 역할을 한다.
+
+```clojure
+(filter neg? [1 -2 3 -4 5 -6]) ; (-2 -4 -6)
+```
+
+`neg?`는 음수값을 판별하는 함수이다. 즉, 다음과 같이 해도 똑같다.
+
+```clojure
+(filter (fn [x] (< x 0)) [1 -2 3 -4 5 -6])
+; (-2 -4 -6)
+````
+
+익명함수 축약 문법을 사용하면 이렇게도 할 수 있겠다.
+
+```clojure
+(filter #(< % 0) [1 -2 3 -4 5 -6])
+; (-2 -4 -6)
+```
+
+### take-while, drop-while
+
+`take-while`은 주어진 함수가 실패하는 지점까지의 컬렉션을 리턴한다.
+
+```clojure
+(filter even? [2 4 5 8 10 11 12])
+; (2 4 8 10 12)
+
+(take-while even? [2 4 5 8 10 11 12])
+; (2 4)
+```
+
+위의 예제는 `take-while`은 짝수가 아닌 5 에서 멈추고 `(2 4)`를 리턴했다.
+`filter`와는 다르다는 점을 분명히 기억해 두자. `filter`였다면 뒤에 있는 짝수인 8, 10, 12도 추가됐을 것이다.
+
+`filter`와 `take-while`의 차이를 Java 코드로 살펴보자.
+
+```java
+// filter
+List<Integer> list = List.of(2, 4, 5, 8, 10, 11, 12);
+List<Integer> result = new ArrayList<>();
+for (int num : list) {
+  if (num % 2 == 0) {
+    result.add(num);  // 루프를 끝까지 돌면서 수집한다.
+  }
+}
+```
+
+```java
+// take-while
+List<Integer> list = List.of(2, 4, 5, 8, 10, 11, 12);
+List<Integer> result = new ArrayList<>();
+for (int num : list) {
+  if (num % 2 == 0) {
+    result.add(num);
+  } else {
+    break;  // 조건이 만족되지 않으면 루프를 중단한다.
+  }
+}
+```
+
+`drop-while`은 `take-while`과 반대로 동작한다.
+
+`take-while`이 조건에 맞는 아이템을 수집한다면, `drop-while`은 조건에 맞는 아이템을 제외한다.
+
+```clojure
+(drop-while even? [2 4 5 8 10 11 12])
+; (5 8 10 11 12)
+```
+
+`drop-while`도 앞부분의 2, 4는 제외했지만 drop을 멈춘 이후에 나온 짝수인 8, 10, 12는 그대로 남겨두고 있다.
+
 
 
 ## 참고문헌
