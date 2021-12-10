@@ -1,0 +1,11 @@
+{
+ "type": "wiki",
+ "title": "Clojure Guide",
+ "summary": "clojure.org/guides 문서 번역",
+ "parent": "clojure",
+ "url": "/wiki/clojure/guide",
+ "updated": "2021-12-10 22:42:33 +0900",
+ "children": [
+  "clojure/equality"
+ ]
+}

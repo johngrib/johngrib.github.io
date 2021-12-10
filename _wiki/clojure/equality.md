@@ -3,11 +3,11 @@ layout  : wiki
 title   : Clojure Equality
 summary :
 date    : 2021-12-07 21:04:40 +0900
-updated : 2021-12-08 11:27:22 +0900
+updated : 2021-12-10 22:40:55 +0900
 tag     : clojure
 toc     : true
 public  : true
-parent  : [[/clojure]]
+parent  : [[/clojure/guide]]
 latex   : false
 ---
 * TOC

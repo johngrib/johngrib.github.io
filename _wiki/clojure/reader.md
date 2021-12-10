@@ -3,11 +3,11 @@ layout  : wiki
 title   : Clojure Reader
 summary : 
 date    : 2021-11-30 10:12:05 +0900
-updated : 2021-11-30 23:23:26 +0900
+updated : 2021-12-10 22:40:40 +0900
 tag     : clojure
 toc     : true
 public  : true
-parent  : [[/clojure]]
+parent  : [[/clojure/reference]]
 latex   : false
 ---
 * TOC

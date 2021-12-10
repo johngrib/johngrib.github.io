@@ -6,8 +6,8 @@
  "url": "/wiki/clojure",
  "updated": "2021-11-30 10:10:50 +0900",
  "children": [
-  "clojure/equality",
-  "clojure/reader",
+  "clojure/guide",
+  "clojure/reference",
   "clojure/study-00",
   "clojure/study-01"
  ]
