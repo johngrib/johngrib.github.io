@@ -4,5 +4,6 @@
  "clojure/reader",
  "clojure/reference",
  "clojure/study-00",
- "clojure/study-01"
+ "clojure/study-01",
+ "clojure/threading-macros"
 ]
