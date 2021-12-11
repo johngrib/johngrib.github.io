@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-12-10 22:47:20 +0900
+updated : 2021-12-11 17:59:45 +0900
 regenerate: true
 ---
 
@@ -275,8 +275,9 @@ regenerate: true
 * [[/clojure/reference]]
     * [[/clojure/reader]]
 * [[/clojure/guide]]
-    * [[/clojure/equality]]
     * [[/clojure/threading-macros]]
+    * [[/clojure/equality]]
+    * [[/clojure/higher-order-functions]]
 * [[/clojure/study-00]]
 * [[/clojure/study-01]]
 
