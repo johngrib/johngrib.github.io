@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2020-02-11 23:37:36 +0900
+updated : 2021-12-12 21:23:01 +0900
 tag     : http
 toc     : true
 public  : true
@@ -167,6 +167,30 @@ extension-method = token
 | 204 No Content | 삭제에 성공하여, 해당 리소스가 없음.       |
 | 200 OK         | 삭제 성공.                                 |
 | 202 Accepted   | 삭제 요청을 받아들였음. 나중에 삭제하겠다. |
+
+>
+**9.7 DELETE**
+>
+The DELETE method requests that the origin server delete the resource identified by the Request-URI.
+This method MAY be overridden by human intervention (or other means) on the origin server.
+The client cannot be guaranteed that the operation has been carried out, even if the status code returned from the origin server indicates that the action has been completed successfully.
+However, the server SHOULD NOT indicate success unless, at the time the response is given, it intends to delete the resource or move it to an inaccessible location.
+>
+A successful response SHOULD be 200 (OK) if the response includes an entity describing the status, 202 (Accepted) if the action has not yet been enacted, or 204 (No Content) if the action has been enacted but the response does not include an entity.
+>
+If the request passes through a cache and the Request-URI identifies one or more currently cached entities, those entries SHOULD be treated as stale.
+Responses to this method are not cacheable.
+
+- DELETE 메소드는 Request-URI를 통해 지정된 자원을 origin 서버에서 삭제하도록 요청합니다.
+- 이 메소드는 origin 서버에서 인간의 개입(또는 다른 방식)으로 인해 무시되거나 다른 방식으로 처리될 수 있습니다.
+- 이 요청은 클라이언트가 요청한대로 처리된다고 보장할 수 없습니다. 심지어 origin 서버가 작업이 성공적으로 완료되었다는 의미의 상태 코드로 응답했다 하더라도 마찬가지입니다.
+- 한편 서버는 해당 자원을 삭제하려는 의도가 없거나, 접근할 수 없는 위치로 이동시키려는 의도가 없다면, 성공했다고 응답하지 않아야 합니다.
+- 성공에 대한 응답은,
+    - 응답에 상태를 설명하는 엔티티가 포함된다면 200 (OK),
+    - 접수는 되었지만 실행이 아직 되지 않은 경우에는 202 (Accepted),
+    - 조치가 시행되어 응답에 엔티티가 포함되지 않는다면 204 (No Content)를 사용합니다.
+- 만약 요청이 cache를 통해 전달되며 Request-URI가 하나 이상의 현재 캐시된 엔티티를 식별한다면, 해당 항목들은 낡은(stale) 자료로 취급해야 합니다.
+- 이 메소드에 대한 응답은 캐시하지 않도록 합니다.
 
 ## Response
 
