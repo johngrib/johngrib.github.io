@@ -6,6 +6,7 @@
  "url": "/wiki/clojure",
  "updated": "2021-12-11 13:48:46 +0900",
  "children": [
+  "clojure/boolean",
   "clojure/guide",
   "clojure/reference",
   "clojure/study-00",

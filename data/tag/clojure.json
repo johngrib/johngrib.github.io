@@ -1,4 +1,5 @@
 [
+ "clojure/boolean",
  "clojure/equality",
  "clojure/evaluation",
  "clojure/guide",

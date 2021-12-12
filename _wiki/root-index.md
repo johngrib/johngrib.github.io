@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-12-12 13:36:04 +0900
+updated : 2021-12-12 15:54:43 +0900
 regenerate: true
 ---
 
@@ -281,6 +281,7 @@ regenerate: true
     * [[/clojure/higher-order-functions]]
 * [[/clojure/study-00]]
 * [[/clojure/study-01]]
+* [[/clojure/boolean]]
 
 ### [[php]]
 
