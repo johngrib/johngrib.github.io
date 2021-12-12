@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure boolean
 summary : 
 date    : 2021-12-12 15:54:43 +0900
-updated : 2021-12-12 20:12:16 +0900
+updated : 2021-12-12 20:30:11 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+이 문서는 [Clojure 1.11.0 버전]( https://github.com/clojure/clojure/releases/tag/clojure-1.11.0-alpha3 )을 기준으로 합니다.
 
 ## 타입
 
