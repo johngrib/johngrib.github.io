@@ -1,0 +1,11 @@
+{
+ "type": "wiki",
+ "title": "뉴스",
+ "summary": "",
+ "parent": "root-index",
+ "url": "/wiki/news",
+ "updated": "2021-12-12 20:52:40 +0900",
+ "children": [
+  "news/2021"
+ ]
+}
