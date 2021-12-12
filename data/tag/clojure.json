@@ -1,5 +1,6 @@
 [
  "clojure/equality",
+ "clojure/evaluation",
  "clojure/guide",
  "clojure/higher-order-functions",
  "clojure/reader",
