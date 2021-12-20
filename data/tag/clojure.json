@@ -6,7 +6,9 @@
  "clojure/higher-order-functions",
  "clojure/reader",
  "clojure/reference",
+ "clojure/study",
  "clojure/study-00",
  "clojure/study-01",
+ "clojure/study/merge-with",
  "clojure/threading-macros"
 ]
