@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-12-20 00:17:30 +0900
+updated : 2021-12-20 10:50:41 +0900
 regenerate: true
 ---
 
@@ -276,6 +276,7 @@ regenerate: true
 
 ### [[clojure]]
 
+* [[/clojure/cursive]]
 * [[/clojure/reference]]
     * [[/clojure/reader]]
     * [[/clojure/evaluation]]
