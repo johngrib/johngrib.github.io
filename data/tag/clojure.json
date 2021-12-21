@@ -1,8 +1,10 @@
 [
  "clojure/boolean",
+ "clojure/cursive",
  "clojure/equality",
  "clojure/evaluation",
  "clojure/guide",
+ "clojure/guide/spec",
  "clojure/higher-order-functions",
  "clojure/reader",
  "clojure/reference",
