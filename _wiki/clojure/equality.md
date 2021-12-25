@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Equality
 summary :
 date    : 2021-12-07 21:04:40 +0900
-updated : 2021-12-10 22:40:55 +0900
+updated : 2021-12-25 20:30:52 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -64,7 +64,7 @@ Clojure’s `=` is `true` when called with two immutable scalar values, if:
 - 둘 다 같은 string인 경우
 - 둘 다 namespace와 name이 같은 symbol인 경우
 - 둘 다 namespace와 name이 같은 keyword인 경우
-- 둘 다 같은 '카테고리'에 포함된 숫자이면서, 동시에 같은 숫자인 경우. '카테고리'는 다음과 같음.
+- 둘 다 같은 '카테고리'에 포함된 number 이면서 같은 값을 갖는다면, '카테고리'는 다음과 같음.
     - integer 또는 ratio
     - floating point (float 또는 double)
     - [BigDecimal]( https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html )
@@ -112,17 +112,17 @@ Clojure’s `==` is intended specifically for numerical values:
 - `==` can be used with numbers across different number categories (such as integer `0` and floating point `0.0`).
 - If any value being compared is not a number, an exception is thrown.
 
-Clojure의 `==`는 숫자에 대해서는 특별히 작동합니다.
+Clojure의 `==`는 number 전용입니다.
 
-- `==`는 카테고리가 다른 숫자들에 대해서도 사용할 수 있습니다. (가령 정수 `0`과 `0.0`도 비교가 가능)
-- 만약 비교 대상인 값이 숫자가 아니라면 예외가 던져집니다.
+- `==`는 카테고리가 다른 number에 대해서도 사용할 수 있습니다. (가령 정수 `0`과 `0.0`도 비교가 가능)
+- 만약 비교 대상인 값이 number가 아니라면 예외가 던져집니다.
 
 >
 If you call `=` or `==` with more than two arguments, the result will be `true` when all consecutive pairs are `=` or `==`.
 `hash` is consistent with `=`, with the exceptions given below.
 
 - 만약 `=`이나 `==`를 호출할 때 2개보다 많은 인자를 주면, 각각의 연속적인 두 값이 `=`이나 `==`인 경우에만 `true`를 리턴합니다.
-- `hash`는 `=`와 일치하지만, 아래와 같은 예외 사항들이 있습니다.
+- `hash`는 `=`와 일관성있게 작동하지만, 아래와 같은 예외 사항들이 있습니다.
 
 >
 Exceptions, or possible surprises:
@@ -137,7 +137,7 @@ Exceptions, or possible surprises:
 
 - Clojure hash 기반의 collection 안에서 non-Clojure collection을 사용한다면(map key나 set 원소 등), hashing 동작의 차이 때문에 `=`가 Clojure에 대응하는 collection과 똑같이 작동하지 않을 것입니다.
     - 자세한 내용은 [Equality and hash]( https://clojure.org/guides/equality#equality_and_hash ), [CLJ-1372]( https://clojure.atlassian.net/browse/CLJ-1372 ) 문서를 참고하세요.
-- collection을 `=`로 비교할 때, collection 내부의 숫자들도 `=`로 비교됩니다. 따라서 앞에서 언급한 숫자 카테고리들이 이 작업에서 중요합니다.
+- collection을 `=`로 비교할 때, collection 내부의 number들도 `=`로 비교됩니다. 따라서 앞에서 언급한 number 카테고리들이 이 작업에서 중요합니다.
 - `##NaN`, `Float/NaN`, `Double/NaN` 같은 'Not a Number' 값들은 어떤 것과도 `=`나 `==`를 호출해도 `false`입니다.
     - 심지어 자기 자신과 비교해도 `false`입니다.
     - 권장사항: `=`를 써서 `true`를 결과로 얻는 것이 필요한 경우에는 Clojure data structure에 `##NaN`을 포함시키지 마세요.
@@ -165,7 +165,7 @@ In most cases, `hash` is consistent with `=`, meaning: if `(= x y)`, then `(= (h
 만약 이 규칙이 적용되지 않는 값이나 객체라면, Clojure hash 기반 collection은 이런 객체를 정확히 찾거나 삭제할 수 없습니다.
 예를 들어 그런 아이템들을 원소로 갖는 hash 기반의 set 이나, 그런 아이템들을 key로 삼는 hash 기반이 map들이 이에 해당됩니다.
 
-- `hash`는 숫자에 대해서는 `=`와 똑같습니다.
+- `hash`는 number에 대해서는 `=`와 똑같습니다.
     - 특별한 `float`과 `double` 값은 예외입니다.
     - 권장사항: 이 문제를 피하고 싶다면 `(double x)`를 써서 `float`을 `double`으로 변환하세요.
 - `hash`는 immutable Clojure collection과 그 외의 non-Clojure collection을 비교할 때 `=`와 똑같지 않습니다.
@@ -203,7 +203,7 @@ true
 >
 `=` does **not** always return true when two numbers have the same numeric value.
 
-그러나 `=`는 두 숫자가 같다 하더라도 항상 `true`를 리턴하지는 않습니다.
+그러나 `=`는 두 수가 같다 하더라도 항상 `true`를 리턴하지는 않습니다.
 
 ```clojure
 user> (= 2 2.0)
@@ -214,7 +214,7 @@ false
 If you want to test for numeric equality across different numeric categories, use `==`.
 See the section [Numbers]( https://clojure.org/guides/equality#numbers ) below for details.
 
-- 만약 각각 다른 숫자 카테고리에 대해 숫자 값이 같은지를 확인하고 싶다면 `==`를 사용하세요.
+- 만약 각각 다른 number 카테고리에 대해 값이 같은지를 확인하고 싶다면 `==`를 사용하세요.
 - 자세한 내용은 [Numbers]( https://clojure.org/guides/equality#numbers ) 문서를 참고하세요.
 
 >
@@ -360,7 +360,7 @@ Two keywords are equal given the same conditions.
 Clojure makes equality testing for keywords particularly quick (a simple pointer comparison).
 It achieves this by its `intern` method of the Keyword class guaranteeing that all keywords with the same namespace and name will return the same keyword object.
 
-- 숫자와 Clojure collection을 제외하고 Clojure의 `=`는 Java의 `equals`와 똑같이 작동합니다.
+- number와 Clojure collection을 제외하고 Clojure의 `=`는 Java의 `equals`와 똑같이 작동합니다.
 - boolean과 character는 있는 그대로 비교합니다.
 - String도 있는 그대로 비교합니다. 그러나 Unicode를 포함하는 String의 경우, 눈으로 보기엔 똑같은 Unicode character가 다른 시퀀스를 갖는 경우가 있어서 `=`를 써도 `false`를 리턴할 수 있습니다.
     - 관심이 있다면 위키피디아의 [Unicode equivalence]( http://en.wikipedia.org/wiki/Unicode_equivalence )문서에서 "Normalization"을 읽어보세요.
@@ -378,7 +378,7 @@ Thus `equals` is false even for `Integer` `1` and `Long` `1`, because they have 
 Exception: Java `equals` is also false for two `BigDecimal` values that are numerically equal if they have different scales, e.g. `1.50M` and `1.500M` are not equal.
 This behavior is documented for `BigDecimal` method [equals]( https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#equals-java.lang.Object- ).
 
-- Java의 `equals`는 숫자와 타입과 숫자 값이 같은 경우에만 `true`를 리턴합니다.
+- Java의 `equals`는 두 number에 대해 타입과 값이 같은 경우에만 `true`를 리턴합니다.
     - 그러므로 `Integer` `1`과 `Long` `1` `equals`에 대해 `equals`는 `false`를 리턴합니다. 타입이 다르기 때문입니다.
 - 예외사항: Java의 `equals`는 `BigDecimal` 값이 같은데도 `false`를 리턴할 수 있습니다.
     - 예를 들어 `1.50M`은 `1.500M`과 같지 않습니다.
@@ -391,7 +391,7 @@ Clojure `=` is `true` if the 'category' and numeric values are the same. Categor
 - floating point: `Float` and `Double`
 - decimal: `BigDecimal`
 
-- Clojure의 `=`는 숫자의 '카테고리'와 값이 같다면 `true`를 리턴합니다. 카테고리는 다음과 같습니다.
+- Clojure의 `=`는 number에 대해 '카테고리'와 값이 같다면 `true`를 리턴합니다. 카테고리는 다음과 같습니다.
     - 정수, 비율, Java의 모든 정수 타입들(`Byte`, `Short`, `Integer`, `Long`, `BigInteger`), `clojure.lang.BigInt`, 그리고 `clojure.lang.Ratio`라는 Java 타입으로 표현되는 비율.
 - 부동 소수점 수: `Float`과 `Double`
 - 소수: `BigDecimal`
@@ -405,8 +405,8 @@ Thus any Clojure number that has type `Ratio` cannot equal any integer, so `=` a
 - 그러므로 `(= (int 1) (long 1))`은 `true`를 리턴합니다. 두 수가 같은 integer 카테고리에 있기 때문입니다.
     - 하지만 `(= 1 1.0)`은 `false`를 리턴합니다. 두 수가 integer와 floating이라는 다른 카테고리에 있기 때문입니다.
 - integer와 ratio는 Clojure에서는 따로 구현리되어 있지만, `=`에 대해서는 같은 카테고리로 간주합니다.
-    - 산술 연산을 할 때 ratio 숫자는 값이 정수인 경우에, 자동으로 integer로 변환됩니다.
-- 따라서 `Ratio` 타입인 Clojure 숫자는 어떤 정수와도 같지 않습니다.
+    - 산술 연산을 할 때 ratio는 값이 정수인 경우에, 자동으로 integer로 변환됩니다.
+- 따라서 `Ratio` 타입인 Clojure number는 어떤 정수와도 같지 않습니다.
     - 그래서 `=`는 ratio와 integer를 비교할 때 항상 올바른 대답(`false`)을 리턴합니다.
 
 >
@@ -415,9 +415,9 @@ It returns `true` whenever `=` does.
 It also returns `true` for numbers that are numerically equal, even if they are in different categories.
 Thus `(= 1 1.0)` is false, but `(== 1 1.0)` is `true`.
 
-- Clojure에서도 `==`를 사용하여 숫자를 비교할 수 있습니다.
+- Clojure에서도 `==`를 사용하여 수를 비교할 수 있습니다.
 - `=`가 `true`를 리턴한다면 `==`도 `true`를 리턴합니다.
-- `==`는 숫자들이 숫자의 값이 같다면, 카테고리가 다르더라도 `true`를 리턴합니다.
+- `==`는 number들의 값이 같다면, 카테고리가 다르더라도 `true`를 리턴합니다.
     - 그러므로 `(= 1 1.0)`은 `false`를 리턴하고, `(== 1 1.0)`은 `true`를 리턴합니다.
 
 >
@@ -425,17 +425,17 @@ Why does `=` have different categories for numbers, you might wonder?
 It would be difficult (if it is even possible) to make `hash` consistent with `=` if it behaved like `==` (see section [Equality and hash]( https://clojure.org/guides/equality#equality_and_hash )).
 Imagine trying to write `hash` such that it was guaranteed to return the same hash value for all of `(float 1.5)`, `(double 1.5)`, `BigDecimal` values `1.50M`, `1.500M`, etc. and the ratio `(/ 3 2)`.
 
-- 그렇다면 `=`는 왜 숫자 비교에 카테고리를 사용할까요?
+- 그렇다면 `=`는 왜 number와 number를 비교할 때 카테고리를 사용할까요?
 - `hash`가 `==`와 같은 방식으로 작동하는 것을 보장하는 것이 어려울 수 있기 때문입니다.
     - [Equality and hash]( https://clojure.org/guides/equality#equality_and_hash ) 문서를 참고하세요.
-    - `(float 1.5)`, `(double 1.5)`, `BigDecimal` 타입인 값 `1.50M`, `1.500M` 같은 모든 숫자들과 비율 `(/ 3 2)`에 대해 같은 해시 값을 리턴하도록 `hash` 함수를 만든다고 생각해 봅시다.
+    - `(float 1.5)`, `(double 1.5)`, `BigDecimal` 타입인 값 `1.50M`, `1.500M` 같은 모든 number들과 비율 `(/ 3 2)`에 대해 같은 해시 값을 리턴하도록 `hash` 함수를 만든다고 생각해 봅시다.
 
 >
 Clojure uses `=` to compare values for equality when they are used as elements in sets, or keys in maps.
 Thus Clojure’s numeric categories come into play if you use sets with numeric elements or maps with numeric keys.
 
 - Clojure는 `=`를 사용해서 set의 원소나 map의 key로 사용되는 value를 비교합니다.
-- 그러므로, 숫자 원소가 있는 set이나 숫자 key가 있는 map을 사용한다면 Clojure의 숫자 카테고리가 사용됩니다.
+- 그러므로, number 원소가 있는 set이나 number key가 있는 map을 사용한다면 Clojure의 수 카테고리가 사용됩니다.
 
 #### Floating point numbers are usually approximations
 
@@ -447,8 +447,8 @@ They are often approximations simply because they are represented with a fixed n
 This is true for floating point numbers in any programming language.
 
 부동소수점의 접근적 특성을 모르고 있다면 관련 동작 때문에 당황할 수 있습니다.
-부동소수점은 고정된 수의 비트로 표현되므로, 종종 정확한 값을 표현할 수 없는 숫자들이 있습니다.
-따라서 그런 종류의 숫자들에 대해서는 근사값으로 표현하게 됩니다.(또는 범위를 넘어서게 됩니다.)
+부동소수점은 고정된 수의 비트로 표현되므로, 정확한 값을 표현할 수 없는 수들도 있습니다.
+따라서 그런 종류의 수에 대해서는 근사값으로 표현하게 됩니다.(또는 범위를 넘어서게 됩니다.)
 이는 어느 프로그래밍 언어에서건 부동소수점을 다룬다면 발생하는 일입니다.
 
 ```clojure
@@ -475,7 +475,7 @@ Realize that these require variable amounts of memory if the number of digits re
 They also won’t help if you want exact values of pi or the square root of 2.
 
 - 몇 가지 종류의 문제에 대해 정확한 값이 필요하다면, ratio 또는 BigDecimal이 적합할 수 있습니다.
-- (다양한 연산을 거친 후라던가) 숫자의 자릿수가 꽤 증가하게 되면, 메모리도 많이 필요하고 계산에도 많은 시간이 필요하게 됩니다.
+- (다양한 연산을 거친 후라던가) 수의 자릿수가 꽤 증가하게 되면, 메모리도 많이 필요하고 계산에도 많은 시간이 필요하게 됩니다.
 - 물론 ratio나 BigDecimal도 π나 루트 2의 정확한 값은 제공해줄 수 없습니다.
 
 #### Floating point "Not A Number"
@@ -486,7 +486,7 @@ They also won’t help if you want exact values of pi or the square root of 2.
 Clojure uses the underlying Java double-size floating point numbers (64-bit) with representation and behavior defined by a standard, IEEE 754.
 There is a special value [NaN]( http://en.wikipedia.org/wiki/NaN ) ("Not A Number") that is not even equal to itself. Clojure represents this value as the symbolic value `##NaN`.
 
-- Clojure는 IEEE 754 표준에 정의된 동작을 구현한 Java의 64비트 배정밀도 부동 소수점 숫자를 사용합니다.
+- Clojure는 IEEE 754 표준에 정의된 동작을 구현한 Java의 64비트 배정밀도 부동 소수점을 사용합니다.
 - IEEE 754에는 NaN ("Not A Number")라는 특수한 값이 있는데, 이 값은 자기 자신을 포함해 어떤 값과도 같지 않습니다.
     - Clojure는 이 값을 `##NaN`이라는 심볼로 표현합니다.
 
@@ -725,7 +725,7 @@ There are 10,000 such points in this grid, so 10,000 keys in the map, but `hashC
 - Clojure가 처음 개발되었을 때, Clojure는 collection의 원소들을 통해 hash값을 계산할 때 `hashCode`와 동일한 방법을 사용했었습니다.
 - Clojure 1.6.0을 릴리즈하기 전에, `hashCode`를 Clojure의 `hash` 함수로 사용하면, 작은 collection을 set의 원소나 map의 key로 사용할 때 hash 충돌이 발생할 수 있다는 것을 발견하게 됐습니다.
 - 예를 들어, 100 * 100 사이즈의 그리드를 가진 2차원 그리드를 표현하는 Clojure 프로그램이 있다고 생각해 봅시다.
-    - 이 프로그램은 map을 사용하며, 이 map은 [0, 99] 범위의 두 숫자를 가진 vector를 key로 쓰고 있습니다.
+    - 이 프로그램은 map을 사용하며, 이 map은 [0, 99] 범위의 두 수를 가진 vector를 key로 쓰고 있습니다.
     - 이 그리드에는 10,000 개의 포인트가 있으므로, map 에도 10,000 개의 key가 있습니다.
         - 그런데 `hashCode`는 3,169 개의 결과만 생산합니다.
 
