@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정규 표현식
 summary : 작성중인 문서
 date    : 2020-05-18 22:45:12 +0900
-updated : 2021-10-17 19:22:46 +0900
+updated : 2021-12-25 23:19:27 +0900
 tag     : regex
 toc     : true
 public  : true
@@ -14,7 +14,7 @@ latex   : true
 {:toc}
 
 >
-참고: 이 문서는 [[ag]] 명령을 사용합니다.
+참고: 이 문서는 [[/cmd/ag]] 명령을 사용합니다.
 
 ## 역사
 

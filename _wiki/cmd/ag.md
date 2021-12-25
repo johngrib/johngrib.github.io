@@ -3,11 +3,11 @@ layout  : wiki
 title   : ag
 summary : the silver searcher
 date    : 2018-12-27 22:01:47 +0900
-updated : 2021-10-17 18:45:58 +0900
+updated : 2021-12-25 23:19:01 +0900
 tag     : bash command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

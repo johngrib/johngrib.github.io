@@ -1,5 +1,4 @@
 [
- "ag",
  "basename",
  "bash-history",
  "bat-cmd",
@@ -7,6 +6,7 @@
  "brew",
  "cal-cmd",
  "chsh-cmd",
+ "cmd/ag",
  "cmd/grep",
  "cmd/man",
  "cmd/xxd",

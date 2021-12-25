@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-12-21 09:33:06 +0900
+updated : 2021-12-25 23:19:06 +0900
 regenerate: true
 ---
 
@@ -420,10 +420,11 @@ regenerate: true
 
 ### [[cmd]]
 
+* [[/cmd/ag]]
 * [[/cmd/grep]]
 * [[/cmd/man]]
 * [[/cmd/xxd]]
-* [[ag]]
+
 * [[basename]]
 * [[bash-history]]
 * [[bat-cmd]]
