@@ -59,6 +59,7 @@ latex: true
 
 ## 인터뷰, 강연
 
+* 2021-12-21 [스타트업 개발자, 회사와 함께 성장하기]( https://class101.net/hidden-products/wqHXxHcuEhhENRMoo8cz )
 * 2020-01-29 [2020릴레이인터뷰 첫 번째 주자, 마켓컬리 소프트웨어 엔지니어 "이종립"]( https://monthly-jiandson.tistory.com/49 )
 * 2017-11-16 [OKKY 미니세미나 "비전공 학원출신 SI개발자, 유명스타트업 들어간.ssul" 참석 후기]( https://jojoldu.tistory.com/247 )
 
