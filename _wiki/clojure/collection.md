@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure의 collection
 summary : 작성중인 문서
 date    : 2021-12-26 17:48:37 +0900
-updated : 2021-12-26 18:19:55 +0900
+updated : 2021-12-26 18:51:11 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -153,6 +153,157 @@ else if(x instanceof IPersistentVector) {
     w.write(']');
 }
 ```
+
+## java.util.Map 구현체
+
+### Map 생성
+
+Clojure에서는 `{}`를 사용해 HashMap을 만들 수 있다.
+
+```clojure
+(def fruit {
+  "apple" "사과"
+  "orange" "오렌지"
+})
+```
+
+key 와 value를 따로 표시해주지는 않고 홀수번째 아이템은 key, 짝수번째 아이템은 value가 된다.
+
+이 방식은 [`PersistentHashMap`의 `create` 구현 코드]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/PersistentHashMap.java#L52 )를 보면 확실히 알 수 있다.
+
+```java
+public static PersistentHashMap create(Object... init){
+  ITransientMap ret = EMPTY.asTransient();
+  for(int i = 0; i < init.length; i += 2)
+    {
+    ret = ret.assoc(init[i], init[i + 1]);
+    }
+  return (PersistentHashMap) ret.persistent();
+}
+```
+
+Java 코드를 잘 읽어보면 `for`문이 인덱스를 2씩 증가시키면서 key와 value를 `ret`(`ITransientMap`)에 put(`assoc`)하고 있음을 알 수 있다.
+
+
+한편 `,`는 Clojure에서는 공백으로 인식되는 문자이므로, 위의 코드가 헷갈린다면 편의를 위해 콤마를 집어넣어도 아무런 문제가 없다.
+
+```clojure
+(def fruit {
+  "apple" "사과",
+  "orange" "오렌지",
+})
+```
+
+`:`과 `,`만 없을 뿐, Javascript의 `Object`를 만드는 것과 비슷해 보인다.
+
+```javascript
+var fruit = {
+  "apple"  : "사과",
+  "orange" : "오렌지"
+}
+```
+
+Java에서는 다음과 같이 `Map`을 만들어 사용한다.
+
+```java
+Map<String, String> fruit = new HashMap<>();
+fruit.put("apple", "사과");
+fruit.put("orange", "오렌지");
+```
+
+하지만 버전이 올라가면서 이렇게 작성할 수도 있게 됐다.
+
+```java
+Map<String, String> fruit = Map.of(
+  "apple", "사과",
+  "orange", "오렌지"
+);
+```
+
+Java의 `Map.of`가 사용하고 있는 `MapN` 메소드도 살펴보면 `for`에서 2씩 인덱스를 증가시키는 방법이다. 즉 Clojure와 크게 다르지 않다.
+
+```java
+MapN(Object... input) {
+  if ((input.length & 1) != 0) { // implicit nullcheck of input
+    throw new InternalError("length is odd");
+  }
+  size = input.length >> 1;
+
+  int len = EXPAND_FACTOR * input.length;
+  len = (len + 1) & ~1; // ensure table is even length
+  table = new Object[len];
+
+  for (int i = 0; i < input.length; i += 2) {
+    @SuppressWarnings("unchecked")
+      K k = Objects.requireNonNull((K)input[i]);
+    @SuppressWarnings("unchecked")
+      V v = Objects.requireNonNull((V)input[i+1]);
+    int idx = probe(k);
+    if (idx >= 0) {
+      throw new IllegalArgumentException("duplicate key: " + k);
+    } else {
+      int dest = -(idx + 1);
+      table[dest] = k;
+      table[dest+1] = v;
+    }
+  }
+}
+```
+
+#### PersistentArrayMap과 PersistentHashMap
+
+똑같이 `{}`를 사용해 생성하더라도 아이템의 수에 따라 구현체가 달라진다는 것은 기억해 둘 필요가 있어보인다.
+
+엔트리가 8개 이하인 경우에는 `PersistentArrayMap`이 생성되고, 8개를 초과한 경우에는 `PersistentHashMap`이 생성된다.
+
+```clojure
+(type {1 1, 2 2})
+=> clojure.lang.PersistentArrayMap
+
+(type {1 1, 2 2, 3 3, 4 4, 5 5, 6 6, 7 7, 8 8})
+=> clojure.lang.PersistentArrayMap
+
+(type {1 1, 2 2, 3 3, 4 4, 5 5, 6 6, 7 7, 8 8, 9 9})
+=> clojure.lang.PersistentHashMap
+```
+
+엔트리의 수가 적은 경우에 사용되는 [`PersistentArrayMap`은 내부에 배열을 두고 있다]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/PersistentArrayMap.java#L32 ). 오버헤드를 줄이고 퍼포먼스 향상을 위한 선택인 것으로 보인다.
+
+```java
+public class PersistentArrayMap extends APersistentMap implements IObj, IEditableCollection, IMapIterable, IKVReduce{
+
+final Object[] array;
+static final int HASHTABLE_THRESHOLD = 16;
+```
+
+`HASHTABLE_THRESHOLD`가 16이라는 것은 배열의 사이즈 최대값을 의미한다.
+
+배열에 들어간 key와 value가 번갈아가며 있다는 것도 확인할 수 있다.
+
+```java
+public IMapEntry entryAt(Object key){
+  int i = indexOf(key);
+  if(i >= 0)
+    return (IMapEntry) MapEntry.create(array[i],array[i+1]);
+  return null;
+}
+```
+
+배열이기 때문에 `count`나 `containsKey` 메소드의 구현도 배열답게 되어 있다.
+
+```java
+public int count(){
+  return array.length / 2;
+}
+
+public boolean containsKey(Object key){
+  return indexOf(key) >= 0;
+}
+```
+
+
+
+## java.util.Set 구현체
 
 ## collection용 함수
 

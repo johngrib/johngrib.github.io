@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 0
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-26 18:03:42 +0900
+updated : 2021-12-26 18:27:57 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -288,41 +288,6 @@ Javascript에서는 재귀할 일이 있어도 이런 키워드가 없어서 익
 
 ### Map
 
-Clojure에서는 `{}`를 사용해 Map을 만들 수 있다.
-
-```clojure
-(def fruit
-  {
-   "apple"  "사과"
-   "orange" "오렌지"
-   })
-```
-
-`:`과 `,`만 없을 뿐, Javascript의 `Object`를 만드는 것과 비슷해 보인다.
-
-```javascript
-var fruit = {
-  "apple"  : "사과",
-  "orange" : "오렌지"
-}
-```
-
-Java에서는 다음과 같이 `Map`을 만들어 사용한다.
-
-```java
-Map<String, String> fruit = new HashMap<>();
-fruit.put("apple", "사과");
-fruit.put("orange", "오렌지");
-```
-
-하지만 버전이 올라가면서 이렇게 작성할 수도 있게 됐다.
-
-```java
-Map<String, String> fruit = Map.of(
-  "apple", "사과",
-  "orange", "오렌지"
-);
-```
 
 Clojure에서 Map의 값을 꺼내는 것은 엄청 단순하다. Map이 바인딩된 상수를 그대로 함수처럼 쓰면 된다.
 
