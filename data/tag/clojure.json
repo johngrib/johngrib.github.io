@@ -12,5 +12,6 @@
  "clojure/study-00",
  "clojure/study-01",
  "clojure/study/merge-with",
+ "clojure/study/number",
  "clojure/threading-macros"
 ]

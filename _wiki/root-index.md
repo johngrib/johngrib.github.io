@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-12-26 11:00:39 +0900
+updated : 2021-12-26 11:08:20 +0900
 regenerate: true
 ---
 
@@ -290,6 +290,7 @@ regenerate: true
 * [[/clojure/boolean]]
 * [[/clojure/study]]
     * [[/clojure/study/merge-with]]
+    * [[/clojure/study/number]]
 
 ### [[php]]
 
