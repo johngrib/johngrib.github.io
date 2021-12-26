@@ -13,5 +13,6 @@
  "clojure/study-01",
  "clojure/study/merge-with",
  "clojure/study/number",
+ "clojure/study/PersistentList",
  "clojure/threading-macros"
 ]
