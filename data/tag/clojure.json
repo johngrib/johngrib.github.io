@@ -1,5 +1,6 @@
 [
  "clojure/boolean",
+ "clojure/collection",
  "clojure/cursive",
  "clojure/equality",
  "clojure/evaluation",
