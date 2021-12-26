@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure의 collection
 summary : 작성중인 문서
 date    : 2021-12-26 17:48:37 +0900
-updated : 2021-12-26 18:51:11 +0900
+updated : 2021-12-26 20:06:49 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -167,7 +167,17 @@ Clojure에서는 `{}`를 사용해 HashMap을 만들 수 있다.
 })
 ```
 
-key 와 value를 따로 표시해주지는 않고 홀수번째 아이템은 key, 짝수번째 아이템은 value가 된다.
+Clojure에서는 map의 key로 String보다는 [Keyword]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/Keyword.java )를 주로 사용한다.
+키워드는 Clojure의 기본 타입 중 하나이며, 다양한 용도로 사용한다. 키워드는 `:`로 시작한다.
+
+```clojure
+(def fruit {
+  :apple "사과"
+  :orange "오렌지"
+})
+```
+
+한편, key 와 value를 따로 표시해주지는 않고 홀수번째 아이템은 key, 짝수번째 아이템은 value가 된다는 것에 주목하자.
 
 이 방식은 [`PersistentHashMap`의 `create` 구현 코드]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/PersistentHashMap.java#L52 )를 보면 확실히 알 수 있다.
 
