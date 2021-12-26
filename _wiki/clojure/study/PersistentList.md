@@ -3,7 +3,7 @@ layout  : wiki
 title   : clojure.lang. PersistentList.java
 summary : 
 date    : 2021-12-26 16:34:40 +0900
-updated : 2021-12-26 17:34:02 +0900
+updated : 2021-12-26 17:38:46 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -22,6 +22,16 @@ Clojure의 리스트는 `'()`와 같이 생성하며, 타입은 [clojure.lang.Pe
 ```clojure
 (type '(1 2 3)) ; clojure.lang.PersistentList
 (type '())      ; clojure.lang.PersistentList$EmptyList
+```
+
+## 클래스 시그니처
+
+```java
+public class PersistentList extends ASeq implements IPersistentList, IReduce, List, Counted {
+
+private final Object _first;
+private final IPersistentList _rest;
+private final int _count;
 ```
 
 ## 생성자
