@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure의 collection
 summary : 작성중인 문서
 date    : 2021-12-26 17:48:37 +0900
-updated : 2021-12-26 20:06:49 +0900
+updated : 2021-12-26 20:37:22 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -167,14 +167,24 @@ Clojure에서는 `{}`를 사용해 HashMap을 만들 수 있다.
 })
 ```
 
-Clojure에서는 map의 key로 String보다는 [Keyword]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/Keyword.java )를 주로 사용한다.
-키워드는 Clojure의 기본 타입 중 하나이며, 다양한 용도로 사용한다. 키워드는 `:`로 시작한다.
+그런데 Clojure에서는 Map의 key로 String보다 [Keyword]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/Keyword.java )를 주로 사용한다고 한다.
+키워드는 Clojure의 기본 타입 중 하나이며, 다양한 용도로 사용한다.
+키워드는 `:`로 시작한다.
 
 ```clojure
-(def fruit {
-  :apple "사과"
-  :orange "오렌지"
-})
+(type :foo) ; clojure.lang.Keyword
+```
+
+키워드를 key로 사용하는 Map을 다시 만들어보자.
+
+```clojure
+(def fruit
+  {
+   :apple  "사과"
+   :orange "오렌지"
+   })
+
+(fruit :orange) ; "오렌지"
 ```
 
 한편, key 와 value를 따로 표시해주지는 않고 홀수번째 아이템은 key, 짝수번째 아이템은 value가 된다는 것에 주목하자.
@@ -199,8 +209,8 @@ Java 코드를 잘 읽어보면 `for`문이 인덱스를 2씩 증가시키면서
 
 ```clojure
 (def fruit {
-  "apple" "사과",
-  "orange" "오렌지",
+  :apple "사과",
+  :orange "오렌지",
 })
 ```
 
@@ -311,7 +321,66 @@ public boolean containsKey(Object key){
 }
 ```
 
+### get
 
+Clojure에서 Map의 값을 꺼내는 것은 엄청 단순하다. Map이 바인딩된 상수를 그대로 함수처럼 쓰면 된다.
+
+```clojure
+(def fruit {
+  :apple "사과"
+  :orange "오렌지"
+})
+
+(fruit :apple)     ; "사과"
+(:apple fruit)     ; "사과" ; 이렇게 반대로 해도 된다
+(get fruit :apple) ; "사과" ; get 함수를 쓰는 방법
+```
+
+없는 값에 대한 대안이 필요하다면 `get`을 쓰면 된다.
+
+```clojure
+(get fruit "apple" "없는 과일입니다.")      ; "사과"
+(get fruit "fineapple" "없는 과일입니다.")  ; "없는 과일입니다."
+```
+
+`get`이 생각이 안 난다면 Java Map의 `getOrDefault`를 써도 되긴 하지만 기왕이면 Java의 메소드보다 Clojure 함수를 사용하도록 하자.
+
+```clojure
+(.getOrDefault fruit "fineapple" "없는 과일입니다.") ; "없는 과일입니다."
+```
+
+### assoc
+
+`assoc` 함수를 쓰면 새로운 엔트리를 추가한 map을 생성할 수 있다. 그러나 Clojure의 map은 불변이라는 점에 주의할 필요가 있다.
+
+```clojure
+(assoc fruit :banana "바나나")
+=> {:apple "사과", :orange "오렌지", :banana "바나나"}
+
+fruit
+=> {:apple "사과", :orange "오렌지"}
+```
+
+### dissoc
+
+엔트리를 제거한 map 생성은 `dissoc`을 사용하면 된다.
+
+```clojure
+(dissoc fruit :apple)
+=> {:orange "오렌지"}
+```
+
+### keys, vals
+
+`keys`, `vals` 함수를 사용해서 key와 values의 리스트를 얻을 수 있다.
+
+```clojure
+(keys fruit)
+=> (:apple :orange)
+
+(vals fruit)
+=> ("사과" "오렌지")
+```
 
 ## java.util.Set 구현체
 

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 0
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-26 18:27:57 +0900
+updated : 2021-12-26 20:33:23 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -286,51 +286,7 @@ Javascript에서는 재귀할 일이 있어도 이런 키워드가 없어서 익
 
 ## Collection
 
-### Map
-
-
-Clojure에서 Map의 값을 꺼내는 것은 엄청 단순하다. Map이 바인딩된 상수를 그대로 함수처럼 쓰면 된다.
-
-```clojure
-(fruit "apple") ; "사과"
-```
-
-없는 값에 대한 대안이 필요하다면 `get`을 쓰면 된다.
-
-```clojure
-(get fruit "apple" "없는 과일입니다.")      ; "사과"
-(get fruit "fineapple" "없는 과일입니다.")  ; "없는 과일입니다."
-```
-
-`get`이 생각이 안 난다면 Java Map의 `getOrDefault`를 써도 된다.
-
-```clojure
-(.getOrDefault fruit "fineapple" "없는 과일입니다.") ; "없는 과일입니다."
-```
-
-#### 키워드
-
-그런데 Clojure에서는 Map의 key로 String보다 키워드를 주로 사용한다고 한다.
-
-Clojure의 키워드는 `:`으로 시작한다.
-
-```clojure
-(type :foo) ; clojure.lang.Keyword
-```
-
-키워드를 key로 사용하는 Map을 다시 만들어보자.
-
-```clojure
-(def fruit
-  {
-   :apple  "사과"
-   :orange "오렌지"
-   })
-
-(fruit :orange) ; "오렌지"
-```
-
-### List, Vector
+### Map, List, Vector
 
 ([[/clojure/collection]]으로 문서를 분리했다.)
 
