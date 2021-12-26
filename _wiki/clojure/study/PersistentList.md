@@ -3,7 +3,7 @@ layout  : wiki
 title   : clojure.lang. PersistentList.java
 summary : 
 date    : 2021-12-26 16:34:40 +0900
-updated : 2021-12-26 17:28:34 +0900
+updated : 2021-12-26 17:34:02 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -92,7 +92,7 @@ public int count(){
 }
 ```
 
-이 연산들은 리스트에서는 대단히 빠른 연산들이다.
+코드를 읽어보면 이 연산들은 리스트에서는 대단히 빠를 것이라고 예측할 수 있다.
 
 눈에 띄는 것은 `next`와 `pop`. `_rest`를 리턴한다는 점에서 거의 같지만 미세하게 다르다.
 
