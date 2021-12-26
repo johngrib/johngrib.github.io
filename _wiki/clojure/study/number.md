@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure number
 summary : 작성중인 문서
 date    : 2021-12-26 11:08:25 +0900
-updated : 2021-12-26 15:05:22 +0900
+updated : 2021-12-26 15:17:43 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -169,9 +169,7 @@ clojure.core/class
 
 ## 부동소수점과 BigDecimal
 
-한편 부동소수점 연산은 어떨까? Clojure가 기본적으로 부동소수점을 사용한다면 `0.1 + 0.2`의 결과는 `0.3`이 아니라 `0.30000000000000004`일 것이다.
-
-실험해 보자.
+앞에서 언급했던 `0.1 + 0.2` 문제를 다시 살펴보자.
 
 ```clojure
 (+ 0.1 0.2) ; 0.30000000000000004
