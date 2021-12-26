@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure의 collection
 summary : 작성중인 문서
 date    : 2021-12-26 17:48:37 +0900
-updated : 2021-12-26 18:04:01 +0900
+updated : 2021-12-26 18:19:55 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -13,7 +13,8 @@ latex   : false
 * TOC
 {:toc}
 
-## List
+## java.util.List 구현체
+### List
 
 List는 REPL의 출력 결과에서 `( )`로 표현된다.
 
@@ -39,7 +40,31 @@ class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is
 (class '(1 2)) ; clojure.lang.PersistentList
 ```
 
-## Vector
+한편 REPL에서 리스트를 평가해보면 다음과 같이 문자열로 표현되어 출력되는 것을 볼 수 있다.
+
+```clojure
+'(1 2 3)
+=> (1 2 3)
+```
+
+이렇게 출력되도록 작동하고 있는 곳은 [`clojure.lang.RT.java`]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/RT.java#L1905 )를 읽어보면 찾을 수 있다.
+
+```java
+if(x == null)
+    w.write("nil");
+else if(x instanceof ISeq || x instanceof IPersistentList) {
+    w.write('(');
+    printInnerSeq(seq(x), w);
+    w.write(')');
+}
+```
+
+`ISeq`나 `IPersistentList`의 구현체라면 양쪽에 `(`와 `)`를 붙여서 출력하도록 되어 있다.
+
+보너스: 바로 윗줄을 보면 `null` 값은 `nil`로 출력하도록 되어 있으니 Java의 `null`이 Clojure에서 `nil`로 표현된다는 것도 알 수 있다.
+
+
+### Vector
 
 한편, Vector는 `[ ]`를 사용해 만들 수 있고, 타입은 `clojure.lang.PersistentVector`이다.
 소스코드 [PersistentVector.java]( https://github.com/clojure/clojure/blob/541f04f1b75f95b159af0e4617643d45ebd43596/src/jvm/clojure/lang/PersistentVector.java )도 틈날 때 읽어두자.
@@ -112,6 +137,21 @@ Javascript의 `push`는 list의 뒤에 아이템을 이어붙이기 때문에 li
 
 (subvec [\a \b \c \d] 2 3)
 => [\c]
+```
+
+Vector는 REPL에서도 `[ ]`와 같이 출력되는데, 이것도 [`RT.java`]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/RT.java#L1960 )를 보면 알 수 있다.
+
+```java
+else if(x instanceof IPersistentVector) {
+    IPersistentVector a = (IPersistentVector) x;
+    w.write('[');
+    for(int i = 0; i < a.count(); i++) {
+        print(a.nth(i), w);
+        if(i < a.count() - 1)
+            w.write(' ');
+    }
+    w.write(']');
+}
 ```
 
 ## collection용 함수
