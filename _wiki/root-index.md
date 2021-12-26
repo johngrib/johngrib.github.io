@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-12-25 23:19:06 +0900
+updated : 2021-12-26 11:00:39 +0900
 regenerate: true
 ---
 
@@ -421,6 +421,7 @@ regenerate: true
 ### [[cmd]]
 
 * [[/cmd/ag]]
+* [[/cmd/curl]]
 * [[/cmd/grep]]
 * [[/cmd/man]]
 * [[/cmd/xxd]]
@@ -433,7 +434,6 @@ regenerate: true
 * [[chsh-cmd]]
 * [[csplit]]
 * [[ctags]]
-* [[curl]]
 * [[cut]]
 * [[date-cmd]]
 * [[dc-cmd]]

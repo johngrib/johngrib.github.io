@@ -3,11 +3,11 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2021-03-21 10:35:19 +0900
+updated : 2021-12-26 11:00:45 +0900
 tag     : bash command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

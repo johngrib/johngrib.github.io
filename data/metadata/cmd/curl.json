@@ -3,7 +3,7 @@
  "title": "curl 명령어",
  "summary": "transfer a URL",
  "parent": "cmd",
- "url": "/wiki/curl",
- "updated": "2021-03-21 10:35:19 +0900",
+ "url": "/wiki/cmd/curl",
+ "updated": "2021-12-26 11:00:45 +0900",
  "children": []
 }
