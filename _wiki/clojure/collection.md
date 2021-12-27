@@ -3,12 +3,12 @@ layout  : wiki
 title   : Clojure의 collection
 summary : 작성중인 문서
 date    : 2021-12-26 17:48:37 +0900
-updated : 2021-12-26 20:37:22 +0900
+updated : 2021-12-27 21:40:39 +0900
 tag     : clojure
 toc     : true
 public  : true
 parent  : [[/clojure/study]]
-latex   : false
+latex   : true
 ---
 * TOC
 {:toc}
@@ -62,7 +62,6 @@ else if(x instanceof ISeq || x instanceof IPersistentList) {
 `ISeq`나 `IPersistentList`의 구현체라면 양쪽에 `(`와 `)`를 붙여서 출력하도록 되어 있다.
 
 보너스: 바로 윗줄을 보면 `null` 값은 `nil`로 출력하도록 되어 있으니 Java의 `null`이 Clojure에서 `nil`로 표현된다는 것도 알 수 있다.
-
 
 ### Vector
 
@@ -153,6 +152,131 @@ else if(x instanceof IPersistentVector) {
     w.write(']');
 }
 ```
+
+### List와 Vector의 인덱스 접근과 Vector의 tailoff
+
+PersistentList는 연결 리스트 구조이기 때문에 `nth`와 `last`를 사용할 때 효율이 좋지 않다.
+
+[PersistentList에서의 get 연산 코드]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/RT.java#L921-L929 )를 읽어보면 랜덤 엑세스를 하지 않고 `for` 루프를 돌면서 값을 가지러 간다는 것을 알 수 있다.
+
+```java
+else if(coll instanceof Sequential) {
+  ISeq seq = RT.seq(coll);
+  coll = null;
+  for(int i = 0; i <= n && seq != null; ++i, seq = seq.next()) {
+    if(i == n)
+      return seq.first();   // 해당 인덱스에 도달하면 시퀀스의 첫번째 아이템을 리턴한다.
+  }
+  throw new IndexOutOfBoundsException();
+}
+```
+
+한편 [Vector는 Java의 배열을 사용하고 있으므로]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/PersistentVector.java#L161-L164 ) 거의 모든 인덱스에 대해 좀 더 효율적인 엑세스가 가능하다.
+
+```java
+public Object[] arrayFor(int i){
+  if(i >= 0 && i < cnt)
+    {
+    if(i >= tailoff())
+      return tail;
+    Node node = root;
+    for(int level = shift; level > 0; level -= 5)
+      node = (Node) node.array[(i >>> level) & 0x01f];
+    return node.array;
+    }
+  throw new IndexOutOfBoundsException();
+}
+
+public Object nth(int i){
+  Object[] node = arrayFor(i);
+  return node[i & 0x01f];   // 여기!
+}
+```
+
+`arrayFor` 메소드를 잘 살펴보면 `if(i >= tailoff())` 인 경우에는 `tail`을 리턴한다는 것을 알 수 있다.
+
+PersistentVector의 `tail`은 평범한 `Object` 배열이다. 따라서 인덱스가 `tailoff` 이상인 경우에는 그냥 배열을 사용하는 셈이다.
+
+```java
+public final Object[] tail;
+```
+
+하지만 `tailoff`보다 작다면 뭔가 `for` 루프를 돌게 된다.
+
+그렇다면 `tailoff`는 무엇일까? `tailoff()` 메소드의 코드를 읽어보면 다음과 같다.
+
+```java
+final int tailoff(){
+  if(cnt < 32)
+    return 0;
+  return ((cnt - 1) >>> 5) << 5;
+}
+```
+
+`cnt`는 벡터에 포함된 아이템의 수이므로, 아이템의 수가 32개 미만이면 `0`을 리턴하게 되고, `arrayFor` 메소드는 그냥 `tail` 배열을 리턴하게 될 것이다.
+한편, 그 외의 경우는 `>>>`, `<<` 를 사용해 숫자의 오른쪽 비트 5개를 0으로 채운다. `tailoff`가 cnt에 따라 리턴하는 수를 정리해 보자.
+
+| cnt     | 리턴값 | 설명                                         |
+|---------|--------|----------------------------------------------|
+| 0 ~ 31  | 0      | 32 미만인 경우 그냥 0 리턴                   |
+| 32      | 0      | 32 - 1 = 31 이고, 31은 $$11111_2$$ 이므로 0. |
+| 33 ~ 64 | 32     | 33 = $$1000001_2$$, 64 = $$1000000_2$$       |
+| 65 ~ 96 | 64     | 65 = $$1000001_2$$, 96 = $$1100000_2$$       |
+| ...     |        |                                              |
+
+즉 `tailoff`리턴값은 32의 배수로 뛴다.
+
+만약 아이템이 `60`개가 들어있는 벡터에 대해 `50`번째 아이템을 get 하려 했다고 가정하자.
+
+그렇다면 `tailoff`는 `32`가 될 것이고, `50`은 `32`보다 큰 수이므로 `tail`에 엑세스하여 값을 리턴할 것이다.
+
+하지만 인덱스가 `tailoff`보다 작은 경우라면?
+아이템이 `60`개가 들어있는 벡터에 대해 `3`번째 아이템을 get 하려 했다고 해보자.
+
+그렇다면 `tailoff`보다 `i`가 작으므로 `root` 노드부터 `level`을 5씩 줄여가며 `i` 인덱스에 해당하는 아이템이 있는 노드를 찾아 리턴한다.
+
+즉, Clojure의 PersistentVector는 Java의 ArrayList와는 달리 하나의 배열을 다이나믹하게 조절하는 클래스가 아니다.
+
+PersistentVector는 사이즈 32의 배열로 이루어진 각 노드를 연결해 놓은 것이며, 마지막 노드가 `tail`인 것으로 보인다.
+
+`TransientVector`의 `conj` 메소드를 살펴보자. `//full tail, push into tree`라는 주석이 보인다. `tail`이 꽉 차면 새로운 루트(`newroot.array[1]`)에 `tail`을 추가하고, 새로운 `tail`로 `new Object[32]`를 만들고 있다.
+
+```java
+  public TransientVector conj(Object val){
+    ensureEditable();
+    int i = cnt;
+    //room in tail?
+    if(i - tailoff() < 32)
+      {
+      tail[i & 0x01f] = val;
+      ++cnt;
+      return this;
+      }
+    //full tail, push into tree
+    Node newroot;
+    Node tailnode = new Node(root.edit, tail);
+    tail = new Object[32];
+    tail[0] = val;
+    int newshift = shift;
+    //overflow root?
+    if((cnt >>> 5) > (1 << shift))
+      {
+      newroot = new Node(root.edit);
+      newroot.array[0] = root;
+      newroot.array[1] = newPath(root.edit,shift, tailnode);
+      newshift += 5;
+      }
+    else
+      newroot = pushTail(shift, root, tailnode);
+    root = newroot;
+    shift = newshift;
+    ++cnt;
+    return this;
+  }
+```
+
+
+
 
 ## java.util.Map 구현체
 
