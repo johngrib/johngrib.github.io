@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2020-05-22 23:51:52 +0900
+updated : 2021-12-27 18:15:22 +0900
 tag     : vim wiki
 public  : true
 parent  : [[Vim]]
@@ -495,6 +495,20 @@ augroup vimwikiauto
     autocmd BufWritePre *wiki/*.md call LastModified()
     autocmd BufRead,BufNewFile *wiki/*.md call NewTemplate()
 augroup END
+```
+
+## 문제 해결
+
+### 짜증나는 백틱 신택스 컬러 끄기
+
+마크다운 편집중에 사용하는 백틱(``` ` ```)은 보통 짝을 맞춰 사용하지만,
+가끔 코드 블록 안에 들어가거나 할 때 딱 한 개만 사용하는 경우가 있다.
+문제는 vimwiki가 이것 때문에 신택스 색칠을 잘못 하는 버그가 있다.
+
+`/syntax/vimwiki.vim` 파일에서 다음 라인을 주석처리해주면 아예 백틱 신택스 하이라이팅을 끌 수 있다.
+
+```viml
+" hi def link VimwikiCode PreProc
 ```
 
 ## Links
