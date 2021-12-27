@@ -6,7 +6,7 @@
  "url": "/wiki/clojure/study",
  "updated": "2021-12-20 00:16:24 +0900",
  "children": [
-  "clojure/collection",
+  "clojure/study/collection",
   "clojure/study/merge-with",
   "clojure/study/number",
   "clojure/study/PersistentList"

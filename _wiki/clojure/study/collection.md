@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure의 collection
 summary : 작성중인 문서
 date    : 2021-12-26 17:48:37 +0900
-updated : 2021-12-27 21:40:39 +0900
+updated : 2021-12-27 21:59:33 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -275,7 +275,11 @@ PersistentVector는 사이즈 32의 배열로 이루어진 각 노드를 연결�
   }
 ```
 
+이는 32개를 초과하는 아이템을 갖는 `PersistentVector`를 생성해보면서 디버거를 돌려보면 눈으로 확인할 수 있다.
 
+![]( ./vector-root-tail.png ){:style="max-width:350px"}
+
+32개의 아이템은 `root`에 있고, 그 이후의 아이템은 `tail`에 있다.
 
 
 ## java.util.Map 구현체
