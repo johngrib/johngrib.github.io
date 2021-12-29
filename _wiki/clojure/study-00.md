@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 0
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-26 20:33:23 +0900
+updated : 2021-12-30 00:06:39 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -288,7 +288,7 @@ Javascript에서는 재귀할 일이 있어도 이런 키워드가 없어서 익
 
 ### Map, List, Vector
 
-([[/clojure/collection]]으로 문서를 분리했다.)
+([[/clojure/study/collection]]으로 문서를 분리했다.)
 
 
 ## 구조체
