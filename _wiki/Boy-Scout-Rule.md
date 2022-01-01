@@ -7,7 +7,7 @@ updated : 2021-02-08 21:37:44 +0900
 tag     : rule Uncle-Bob
 toc     : true
 public  : true
-parent  : [[proverb]]
+parent  : [[jargon]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2020-05-22 23:57:44 +0900
 tag     : proverb Fred-Brooks
 toc     : true
 public  : true
-parent  : [[proverb]]
+parent  : [[jargon]]
 latex   : false
 ---
 * TOC

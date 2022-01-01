@@ -7,7 +7,7 @@ updated : 2019-12-11 10:41:43 +0900
 tag     : encryption
 toc     : true
 public  : true
-parent  : [[proverb]]
+parent  : [[jargon]]
 latex   : false
 ---
 * TOC

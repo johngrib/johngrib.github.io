@@ -7,7 +7,7 @@ updated : 2021-05-01 21:00:05 +0900
 tag     : proverb law conway-s-law
 toc     : true
 public  : true
-parent  : [[proverb]]
+parent  : [[jargon]]
 latex   : false
 ---
 * TOC

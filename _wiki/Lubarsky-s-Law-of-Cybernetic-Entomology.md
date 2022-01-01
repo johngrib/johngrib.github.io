@@ -7,7 +7,7 @@ updated : 2020-06-12 23:42:28 +0900
 tag     : proverb law bug
 toc     : true
 public  : true
-parent  : [[proverb]]
+parent  : [[jargon]]
 latex   : false
 ---
 * TOC

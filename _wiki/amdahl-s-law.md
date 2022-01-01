@@ -7,7 +7,7 @@ updated : 2020-08-03 08:08:35 +0900
 tag     : performance proverb law
 toc     : true
 public  : true
-parent  : [[proverb]]
+parent  : [[jargon]]
 latex   : true
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2021-10-04 13:54:10 +0900
 tag     : Gerald-Weinberg proverb
 toc     : true
 public  : true
-parent  : [[proverb]]
+parent  : [[jargon]]
 latex   : false
 ---
 * TOC

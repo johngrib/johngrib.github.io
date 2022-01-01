@@ -196,10 +196,6 @@
   "size": 1
  },
  {
-  "name": "culture",
-  "size": 1
- },
- {
   "name": "curl",
   "size": 1
  },
@@ -452,6 +448,10 @@
   "size": 2
  },
  {
+  "name": "jargon",
+  "size": 1
+ },
+ {
   "name": "java",
   "size": 68
  },
@@ -661,7 +661,7 @@
  },
  {
   "name": "proverb",
-  "size": 12
+  "size": 11
  },
  {
   "name": "python",

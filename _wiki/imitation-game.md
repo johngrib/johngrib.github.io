@@ -7,7 +7,7 @@ updated : 2020-06-24 20:28:04 +0900
 tag     : turing
 toc     : true
 public  : true
-parent  : [[proverb]]
+parent  : [[jargon]]
 latex   : false
 ---
 * TOC

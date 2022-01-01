@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-01 12:24:10 +0900
+updated : 2022-01-01 12:40:34 +0900
 regenerate: true
 ---
 
@@ -305,7 +305,7 @@ regenerate: true
 ### [[rust]]
 * [[start-rust-with-vim]]
 
-## [[proverb]]{나의 용어 사전}
+## [[jargon]]
 
 * [[ACID]]
 * [[airplain-rule]]
