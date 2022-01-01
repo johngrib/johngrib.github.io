@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2021-12-26 17:48:36 +0900
+updated : 2022-01-01 12:24:10 +0900
 regenerate: true
 ---
 
@@ -328,6 +328,7 @@ regenerate: true
 * [[linus-s-law]]
 * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
 * [[metcalfe-s-law]]
+* [[moore-s-law]]
 * [[Naming-Principle]]
 * [[no-problem-syndrome]]
 * [[No-Silver-Bullet]]
