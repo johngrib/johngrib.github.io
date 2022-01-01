@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-01 12:40:34 +0900
+updated : 2022-01-01 13:09:11 +0900
 regenerate: true
 ---
 
@@ -307,6 +307,7 @@ regenerate: true
 
 ## [[jargon]]
 
+* [[/jargon/moore-s-law]]
 * [[ACID]]
 * [[airplain-rule]]
 * [[amdahl-s-law]]
@@ -328,7 +329,6 @@ regenerate: true
 * [[linus-s-law]]
 * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
 * [[metcalfe-s-law]]
-* [[moore-s-law]]
 * [[Naming-Principle]]
 * [[no-problem-syndrome]]
 * [[No-Silver-Bullet]]

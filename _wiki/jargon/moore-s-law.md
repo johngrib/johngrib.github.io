@@ -3,11 +3,11 @@ layout  : wiki
 title   : 무어의 법칙 (Moore's Law)
 summary : 
 date    : 2022-01-01 12:24:07 +0900
-updated : 2022-01-01 12:38:17 +0900
+updated : 2022-01-01 13:09:20 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
