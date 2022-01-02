@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure cursive
 summary : 
 date    : 2021-12-20 10:50:43 +0900
-updated : 2022-01-02 23:55:23 +0900
+updated : 2022-01-03 00:00:57 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -130,6 +130,59 @@ Parinfer보다 surround.vim의 동작이 더 편리한 경우도 있다. 이럴 
 ```viml
 nmap scp :cursive.actions.paredit/toggle
 ```
+
+### 폼 업/다운
+
+폼 업/다운은 괄호 내 아이템의 위치를 서로 스왑해준다. 매우 편리하다.
+
+```viml
+nmap scj :action :cursive.actions.paredit/move-form-up<CR>
+nmap sck :action :cursive.actions.paredit/move-form-down<CR>
+```
+
+커서가 v 위치에 있다고 하자.
+
+```clojure
+;         v
+(first [1 2 3])
+```
+
+`sck`를 입력하면 `2`와 `3`이 서로 자리를 바꾼다. 커서는 `2` 위에 있다.
+
+```clojure
+;           v
+(first [1 3 2])
+```
+
+`scj`를 입력하면 다시 원위치가 된다.
+
+```clojure
+;         v
+(first [1 2 3])
+```
+
+그런데 이건 form에 대해 작동하기 때문에 굉장히 강력하다.
+
+```clojure
+;      v
+(first [1 2 3])
+```
+
+커서를 `[`에 놓고 `scj`를 입력하면 `first`와 `[1 2 3]`이 서로 자리를 바꾼다.
+
+```clojure
+;v
+([1 2 3] first)
+```
+
+다시 `sck`를 입력하면 `first`와 `[1 2 3]`이 또다시 자리를 바꾼다.
+
+```clojure
+;      v
+(first [1 2 3])
+```
+
+수십줄로 묶인 괄호에 대해서도 잘 작동하므로 편리하게 사용하자.
 
 ## Ideavim actionlist
 
