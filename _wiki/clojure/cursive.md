@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure cursive
 summary : 
 date    : 2021-12-20 10:50:43 +0900
-updated : 2022-01-03 00:00:57 +0900
+updated : 2022-01-03 00:11:34 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -183,6 +183,40 @@ nmap sck :action :cursive.actions.paredit/move-form-down<CR>
 ```
 
 수십줄로 묶인 괄호에 대해서도 잘 작동하므로 편리하게 사용하자.
+
+### 내가 사용하지 않는 기능들
+
+```
+:cursive.actions.paredit/splice
+```
+
+splice는 커서가 있는 곳을 감싸는 괄호를 제거한다. surround.vim의 `ds`와 같은 기능이므로 필요없다.
+
+```
+:cursive.actions.paredit/cycle-collection-type
+```
+
+cycle-collection-type은 커서가 있는 곳을 감싸는 괄호의 컬렉션 타입을 순환시킨다.
+
+순환 순서는 이렇다. `#{}` → `()` → `{}` → `[]` → `#{}`
+
+즉, vim의 axring 같은 기능을 하는데.. 순환이 5개나 되다 보니 돌리는 게 생각보다 불편하다.
+surround.vim의 `cs`가 훨씬 빠르고 눌러야 하는 키도 더 적다. 그냥 surround.vim을 쓰자.
+
+
+```
+:cursive.actions.paredit/close-curly-and-newline
+:cursive.actions.paredit/close-paren-and-newline
+:cursive.actions.paredit/close-square-and-newline
+:cursive.actions.paredit/wrap-curly
+
+:cursive.actions.paredit/wrap-paren
+:cursive.actions.paredit/wrap-quotes
+:cursive.actions.paredit/wrap-square
+```
+
+괄호를 닫고 씌우고 하는 기능들인데, surround.vim의 `ys`가 더 편리하고 직관적이다.
+쓸 일이 없어서 키 할당을 모두 제거해 주었다.
 
 ## Ideavim actionlist
 
