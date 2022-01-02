@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure cursive
 summary : 
 date    : 2021-12-20 10:50:43 +0900
-updated : 2021-12-20 10:51:21 +0900
+updated : 2022-01-02 15:33:44 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -13,7 +13,76 @@ latex   : false
 * TOC
 {:toc}
 
+## Ideavim 설정
+
+### slurp, barf
+
+IntelliJ 플러그인인 Cursive에서는 paredit의 기능으로 제공하고 있다.
+
+그런데 단축키 조합이 뜬금없어서 외울 생각이 들지 않는다.
+
+- slurp backwards : `control + command + j`
+- barf backwards: `control + command + k`
+- barf forwards: `shift + command + j`
+- slurp forwards : `shift + command + k`
+
+그래서 다음과 같이 매핑해주었다.
+
+```viml
+nmap sch :action :cursive.actions.paredit/slurp-backwards<CR>
+nmap scj :action :cursive.actions.paredit/barf-backwards<CR>
+nmap sck :action :cursive.actions.paredit/barf-forwards<CR>
+nmap scl :action :cursive.actions.paredit/slurp-forwards<CR>
+```
+
+prefix를 `sc`로 주고 마지막 구분을 `hjkl`로 준 것이다.
+게다가 hjkl 은 서로 좌우로 붙어있으므로 다음과 같이 생각하면 외우기 쉽다고 생각한다.
+
+|                      | sch | scj | sck | scl |
+|----------------------|-----|-----|-----|-----|
+| 괄호가 움직이는 방향 | ← ( | → ( | ) ← | ) → |
+
+
+아래의 키워드 `:b`에 커서가 있다고 하자. 커서 위치는 `v`로 표시한다.
+
+```clojure
+;    v
+:a (:b) :c :d
+```
+
+이 때 sch 를 입력하면 다음과 같이 왼쪽 괄호가 왼쪽 아이템 하나를 잡아먹는다(slurp backwards).
+
+```clojure
+;    v
+(:a :b) :c :d
+```
+
+이 상태에서 scl을 입력하면 오른쪽 괄호가 오른쪽 아이템 하나를 잡아먹는다(slurp forwards).
+
+```clojure
+;    v
+(:a :b :c) :d
+```
+
+이제 barf도 해보자.
+
+위의 상태에서 scj를 입력하면 왼쪽 괄호가 아이템 하나를 내보낸다(barf backwards).
+
+```clojure
+;    v
+:a (:b :c) :d
+```
+
+그리고 sck 를 입력하면 오른쪽 괄호가 아이템 하나를 내보낸다(barf forwards).
+
+```clojure
+;    v
+:a (:b) :c :d
+```
+
 ## Ideavim actionlist
+
+다음은 cursive 1.12.1-2021.3의 모든 Ideavim actionlist 이다.
 
 ```
 :cursive.actions.paredit/backward                  <M-Left> <A-Left>
