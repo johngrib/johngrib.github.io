@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure cursive
 summary : 
 date    : 2021-12-20 10:50:43 +0900
-updated : 2022-01-02 15:33:44 +0900
+updated : 2022-01-02 15:46:50 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -30,15 +30,20 @@ IntelliJ 플러그인인 Cursive에서는 paredit의 기능으로 제공하고 �
 
 ```viml
 nmap sch :action :cursive.actions.paredit/slurp-backwards<CR>
-nmap scj :action :cursive.actions.paredit/barf-backwards<CR>
-nmap sck :action :cursive.actions.paredit/barf-forwards<CR>
+nmap scH :action :cursive.actions.paredit/barf-backwards<CR>
+nmap scL :action :cursive.actions.paredit/barf-forwards<CR>
 nmap scl :action :cursive.actions.paredit/slurp-forwards<CR>
 ```
 
-prefix를 `sc`로 주고 마지막 구분을 `hjkl`로 준 것이다.
-게다가 hjkl 은 서로 좌우로 붙어있으므로 다음과 같이 생각하면 외우기 쉽다고 생각한다.
+prefix `s`는 내가 서포트 기능들에 주는 prefix이다. 즉, `sc`는 다음과 같은 의미를 갖는다.
 
-|                      | sch | scj | sck | scl |
+- `s`: 서포트 기능
+- `c`: cursive의 기능
+
+prefix를 `sc`로 주고 마지막 구분을 `hH`와 `Ll`로 준 것이다.
+`h`와 `l`은 vim에서 왼쪽과 오른쪽을 표현하며, vim에서 shift와 함께 누르는 입력은 반대를 의미하므로 외우기 쉽다.
+
+|                      | sch | scH | scK | scl |
 |----------------------|-----|-----|-----|-----|
 | 괄호가 움직이는 방향 | ← ( | → ( | ) ← | ) → |
 
@@ -66,14 +71,14 @@ prefix를 `sc`로 주고 마지막 구분을 `hjkl`로 준 것이다.
 
 이제 barf도 해보자.
 
-위의 상태에서 scj를 입력하면 왼쪽 괄호가 아이템 하나를 내보낸다(barf backwards).
+위의 상태에서 scH를 입력하면 왼쪽 괄호가 아이템 하나를 내보낸다(barf backwards).
 
 ```clojure
 ;    v
 :a (:b :c) :d
 ```
 
-그리고 sck 를 입력하면 오른쪽 괄호가 아이템 하나를 내보낸다(barf forwards).
+그리고 scL 를 입력하면 오른쪽 괄호가 아이템 하나를 내보낸다(barf forwards).
 
 ```clojure
 ;    v
