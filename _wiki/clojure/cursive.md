@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure cursive
 summary : 
 date    : 2021-12-20 10:50:43 +0900
-updated : 2022-01-02 15:46:50 +0900
+updated : 2022-01-02 15:55:12 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -84,6 +84,44 @@ prefix를 `sc`로 주고 마지막 구분을 `hH`와 `Ll`로 준 것이다.
 ;    v
 :a (:b) :c :d
 ```
+
+### thread-form, unthread-form
+
+thread-form은 평범한 form에 thread macro를 적용시켜 주는 편리한 기능이다. 디폴트 단축키는 다음과 같다.
+
+- Thread Form `control + option + ,`
+- Unthread Form `control + option + .`
+
+하지만 `control`과 `option`을 눌러야 하는 이유를 잘 모르겠다.
+내 취향대로 매핑해 주자. Thread라는 의미로 `sct`를, 해제의 의미로 `scT`로 지정했다.
+
+```viml
+nmap sct :action :cursive.actions.paredit/thread-form<CR>
+nmap scT :action :cursive.actions.paredit/unthread-form<CR>
+```
+
+다음과 같은 쓰레드 매크로를 사용한 Clojure 코드가 있다고 하자.
+
+```clojure
+(->> [10 20 30]
+     (map inc)
+     (map str))
+```
+여기에 커서를 두고 `scT`를 입력해 쓰레드 매크로를 해제하면 다음과 같이 `(map str)`이 빠져나온 것을 볼 수 있다.
+
+```clojure
+(map str (->> [10 20 30]
+              (map inc)))
+```
+
+한번 더 `scT` 하면 이렇게 된다.
+
+```clojure
+(map str (map inc [10 20 30]))
+```
+
+쓰레드 매크로 해제는 간단하지만 쓰레드 매크로 적용은 `->`를 쓸 지, `->>`를 쓸 지 선택지를 물어보기도 한다.
+어렵진 않으니 적용에 대해서는 생략한다.
 
 ## Ideavim actionlist
 
