@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure cursive
 summary : 
 date    : 2021-12-20 10:50:43 +0900
-updated : 2022-01-02 15:55:12 +0900
+updated : 2022-01-02 23:55:23 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -122,6 +122,14 @@ nmap scT :action :cursive.actions.paredit/unthread-form<CR>
 
 쓰레드 매크로 해제는 간단하지만 쓰레드 매크로 적용은 `->`를 쓸 지, `->>`를 쓸 지 선택지를 물어보기도 한다.
 어렵진 않으니 적용에 대해서는 생략한다.
+
+### Parinfer 토글
+
+Parinfer보다 surround.vim의 동작이 더 편리한 경우도 있다. 이럴 땐 Parinfer가 방해되기 때문에 그때 그때 토글하며 사용한다.
+
+```viml
+nmap scp :cursive.actions.paredit/toggle
+```
 
 ## Ideavim actionlist
 
