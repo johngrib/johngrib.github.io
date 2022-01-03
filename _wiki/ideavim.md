@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 사용하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2022-01-03 17:46:38 +0900
+updated : 2022-01-03 21:23:44 +0900
 tag     : vim ideavim intellij
 toc     : true
 public  : true
@@ -27,7 +27,7 @@ set commentary  " tim pope의 commentary.vim 에뮬레이션 기능 사용.
 
 ## action 호출 설정
 
-참고: 모든 action의 목록은 `:actionlist`로 볼 수 있다.
+참고: 모든 action의 목록은 `:actionlist`로 볼 수 있다. 3000개가 넘으므로, `command + a`로 복사해서 다른 곳에 붙여넣고 쓸만한 것이 있는지 찾아보면 된다.
 
 ```viml
 " tabbar와 비슷한 느낌으로 사용할 수 있다
