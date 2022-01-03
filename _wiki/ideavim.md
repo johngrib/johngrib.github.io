@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 사용하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2021-07-12 19:33:01 +0900
+updated : 2022-01-03 17:46:38 +0900
 tag     : vim ideavim intellij
 toc     : true
 public  : true
@@ -13,8 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 설정
-### set options
+## set options
 
 모든 set 옵션은 [set-commands][set-commands]에서 볼 수 있다.
 
@@ -26,7 +25,7 @@ set surround    " tim pope의 vim-surround 에뮬레이션 기능 사용.
 set commentary  " tim pope의 commentary.vim 에뮬레이션 기능 사용.
 ```
 
-### action 호출 설정
+## action 호출 설정
 
 참고: 모든 action의 목록은 `:actionlist`로 볼 수 있다.
 
@@ -38,7 +37,7 @@ nnoremap \t :action ActivateStructureToolWindow<CR>
 nnoremap \s :action ManageRecentProjects<CR>
 ```
 
-### 플러그인
+## 플러그인
 
 ideavim은 유명한 vim 플러그인의 에뮬레이션을 제공한다.
 
@@ -85,6 +84,37 @@ nmap <Leader>j <Plug>(easymotion-j)
 nmap <Leader>k <Plug>(easymotion-k)
 nmap <Leader>h <Plug>(easymotion-linebackward)
 nmap <Leader>a <Plug>(easymotion-jumptoanywhere)
+```
+
+### NERDTree
+
+<https://github.com/JetBrains/ideavim/wiki/NERDTree-support >
+
+vim에서의 NERDTree는 아쉬운 점이 많아서 잘 안 쓰는데, Ideavim에서는 Project Explorer 제어 기능으로 포팅이 되면서 엄청 편리한 기능이 되었다.
+
+Ideavim을 쓴다면 NERDTree는 필수 기능이라 생각한다. `command + 1`로 커서가 프로젝트 익스플로러로 이동한 이후에 j, k로 커서를 이동할 수 있고, 검색도 된다.
+
+```viml
+Plug 'preservim/nerdtree'
+```
+
+- `j`, `k` - 커서 위/아래 이동.
+- `C-j`, `C-k` - 위/아래 sibling 이동.
+- `S-j`, `S-k` - sibling 중 마지막, 첫번째로 이동.
+- `m` - 컨텍스트 메뉴(우클릭).
+- `o` - 파일 열기.
+- `go` - 파일은 열지만 커서는 프로젝트 익스플로러에 남아 있음.
+- `/` - 파일 이름 검색.
+- `p` - 현재 커서가 위치한 노드의 직계 부모 노드로 이동.
+- `P` - 최상위 노드로 이동. 즉 프로젝트 루트 디렉토리로 이동.
+
+제공하는 명령은 여러가지가 있지만 굳이 다 알 거 없고 `:NERDTreeFind` 하나면 알아도 충분한 것 같다.
+
+Project Explorer를 활성화 시키면서 현재 편집중인 파일을 하이라이트시켜준다.
+IntelliJ의 기본 키 제어로는 `option - F1, 1`을 써야 했는데, 이제는 이렇게 설정해서 쓴다.
+
+```viml
+nmap \f :NERDTreeFind<CR>
 ```
 
 ## 경험
