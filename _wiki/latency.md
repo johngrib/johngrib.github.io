@@ -3,7 +3,7 @@ layout  : wiki
 title   : 지연시간 (Latency)
 summary : 요청이 처리되길 기다리는 시간
 date    : 2019-06-28 16:30:28 +0900
-updated : 2022-01-03 23:03:27 +0900
+updated : 2022-01-03 23:06:31 +0900
 tag     : network performance
 toc     : true
 public  : true
@@ -14,6 +14,14 @@ latex   : false
 {:toc}
 
 ## 인용
+
+### From: 브라이언 커니핸
+
+>
+레이턴시<sub>latency</sub> 또는 지연<sub>delay</sub>은 일정한 단위의 정보가 시스템을 통과하는 데 걸리는 시간을 측정한 값이다.
+레이턴시가 높다고 반드시 대역폭이 낮음을 의미하는 것은 아니다.
+트럭에 디스크 드라이브를 가득 싣고 전국을 가로질러 운전한다고 하면 지연은 높아도 대역폭은 어마어마할 것이다.
+[^brian-249]
 
 ### From: 데이터 중심 애플리케이션 설계
 
@@ -149,6 +157,7 @@ TCP 연결 지연시간은 초기화(TCP 핸드세이크)에 걸리는 시간만
 
 ## 참고문헌
 
+* 1일 1로그 100일 완성 IT 지식 / 브라이언 W. 커니핸 저/하성창 역 / 인사이트(insight) / 초판 1쇄 2021년 12월 31일 / 원제 : UNDERSTANDING THE DIGITAL WORLD (2nd Edition)
 * HTTP/2 in Action / 배리 폴라드 저/임혜연 역 / 에이콘출판사 / 2020년 08월 31일 / 원서 : HTTP/2 in Action
 * TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
 * 데이터 중심 애플리케이션 설계 / 마틴 클레프만 저/정재부,김영준,이도경 역 / 위키북스 / 2018년 04월
@@ -165,6 +174,7 @@ TCP 연결 지연시간은 초기화(TCP 핸드세이크)에 걸리는 시간만
 [belshe]: https://docs.google.com/a/chromium.org/viewer?a=v&pid=sites&srcid=Y2hyb21pdW0ub3JnfGRldnxneDoxMzcyOWI1N2I4YzI3NzE2
 [^belshe]: [More Bandwidth Doesn’t Matter (much)][belshe]
 
+[^brian-249]: 1일 1로그 100일 완성 IT 지식. 249쪽.
 [^ddia-14]: 데이터 중심 애플리케이션 설계. 14쪽.
 [^ent-arc-17]: 엔터프라이즈 애플리케이션 아키텍처 패턴. 17쪽.
 [^http2-in-action-90]: HTTP/2 IN ACTION. 2.1.1장. 90쪽.
