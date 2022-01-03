@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure cursive
 summary : 
 date    : 2021-12-20 10:50:43 +0900
-updated : 2022-01-03 00:11:34 +0900
+updated : 2022-01-03 16:18:53 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -33,6 +33,11 @@ nmap sch :action :cursive.actions.paredit/slurp-backwards<CR>
 nmap scH :action :cursive.actions.paredit/barf-backwards<CR>
 nmap scL :action :cursive.actions.paredit/barf-forwards<CR>
 nmap scl :action :cursive.actions.paredit/slurp-forwards<CR>
+
+nmap <Tab>h :action :cursive.actions.paredit/slurp-backwards<CR>
+nmap <Tab>H :action :cursive.actions.paredit/barf-backwards<CR>
+nmap <Tab>L :action :cursive.actions.paredit/barf-forwards<CR>
+nmap <Tab>l :action :cursive.actions.paredit/slurp-forwards<CR>
 ```
 
 prefix `s`는 내가 서포트 기능들에 주는 prefix이다. 즉, `sc`는 다음과 같은 의미를 갖는다.
@@ -47,6 +52,11 @@ prefix를 `sc`로 주고 마지막 구분을 `hH`와 `Ll`로 준 것이다.
 |----------------------|-----|-----|-----|-----|
 | 괄호가 움직이는 방향 | ← ( | → ( | ) ← | ) → |
 
+한편 `<Tab>`은 내가 랭귀지 서포트를 위해 사용하고 있는 키이기 때문에 매핑해 주었다.
+한동안 사용해 보고 양쪽 중 더 편한 쪽을 선택할 생각이다.
+Ideavim은 autocommand를 지원하지 않아 언어별로 이런 설정을 다르게 할 수 없다는 것이 아쉽다.
+
+#### 사용방법
 
 아래의 키워드 `:b`에 커서가 있다고 하자. 커서 위치는 `v`로 표시한다.
 
