@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 사용하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2022-01-04 11:17:59 +0900
+updated : 2022-01-04 23:36:18 +0900
 tag     : vim ideavim intellij
 toc     : true
 public  : true
@@ -17,17 +17,37 @@ latex   : false
 
 모든 set 옵션은 [set-commands][set-commands]에서 볼 수 있다.
 
-ideavimdm은 vim 플러그인을 그대로 사용할 수 없으므로, 유명한 플러그인의 에뮬레이션을 제공하기도 한다.
+## action 호출
+
+`:action`은 IntelliJ의 내장 기능을 실행해주는 편리한 명령이며, IntelliJ의 대부분의 기능은 `:action`으로 호출할 수 있는 아이디를 갖고 있다.
+
+(IntelliJ 전용이기 때문에 당연히 vim 에서는 쓸 수 없다.)
+
+모든 action은 `:actionlist`로 볼 수 있다. 3000개가 넘으므로 `command + a`로 복사해서 다른 곳에 붙여넣고 쓸만한 것이 있는지 찾아보면 된다.
+
+`:action` 명령을 쓰는 기본적인 방법은 vim 명령행에서 입력하는 것이다.
+
+예를 들어 `:action ManageRecentProjects`를 입력하고 엔터를 치면 프로젝트 선택 화면이 나온다.
+
+하지만 `:action`의 진정한 활용은 역시 `nmap`, `map`에 있다.
+
+`map`을 사용해 매핑할 때에는 두 가지 문법을 사용할 수 있다.
+
+다음은 `<tab>f`에 `QuickFixes`를 매핑한 예제이다.
 
 ```viml
-set ideamarks   " global 마크를 IntelliJ의 북마크 기능으로 사용한다.
-set surround    " tim pope의 vim-surround 에뮬레이션 기능 사용.
-set commentary  " tim pope의 commentary.vim 에뮬레이션 기능 사용.
+nnoremap <Tab>f :action QuickFixes<CR>
 ```
 
-## action 호출 설정
+`<Action>`을 사용해도 된다. 이렇게 하면 `<CR>`을 마지막에 넣지 않아도 되므로 편리하다.
+단, 재귀적 사용을 금지하는 `noremap` 옵션을 쓸 수 없으므로 `nnoremap`은 못 쓰고 `nmap`이나 `map` 만 쓸 수 있다.
+어차피 `<Action>`으로는 IntelliJ의 기능만 호출하므로 당연히 재귀적 사용이 기본적으로 제한되어 있어서 그런 것 같다.
 
-참고: 모든 action의 목록은 `:actionlist`로 볼 수 있다. 3000개가 넘으므로, `command + a`로 복사해서 다른 곳에 붙여넣고 쓸만한 것이 있는지 찾아보면 된다.
+```viml
+nmap <Tab>f <Action>(QuickFixes)
+```
+
+좀 더 pure vim 스럽게 쓰고 싶다면 그냥 `nnoremap` ... `<CR>`을 쓰면 되겠다.
 
 ```viml
 " tabbar와 비슷한 느낌으로 사용할 수 있다
