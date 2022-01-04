@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 사용하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2022-01-03 21:23:44 +0900
+updated : 2022-01-04 11:17:59 +0900
 tag     : vim ideavim intellij
 toc     : true
 public  : true
@@ -153,6 +153,7 @@ git pull --rebase upstrem master
 * [JetBrains/ideavim][repo]
 * [List of Supported Set Commands][set-commands]
 * [나의 .ideavimrc][my]
+* [Share your `~/.ideavimrc`](https://github.com/JetBrains/ideavim/discussions/303#discussioncomment-1899760 )
 
 ## 주석
 
