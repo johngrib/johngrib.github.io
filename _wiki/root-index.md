@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-01 13:09:11 +0900
+updated : 2022-01-04 11:11:42 +0900
 regenerate: true
 ---
 
@@ -36,7 +36,7 @@ regenerate: true
 
 ## [[article]]
 
-- [[hierarchical-controller-package-structure]]
+- [[/article/hierarchical-controller-package-structure]]
 
 ## [[algorithm]]
 
@@ -289,7 +289,7 @@ regenerate: true
 * [[/clojure/study-01]]
 * [[/clojure/boolean]]
 * [[/clojure/study]]
-    * [[/clojure/collection]]
+    * [[/clojure/study/collection]]
     * [[/clojure/study/PersistentList]]
     * [[/clojure/study/merge-with]]
     * [[/clojure/study/number]]
