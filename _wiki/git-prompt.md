@@ -3,7 +3,7 @@ layout  : wiki
 title   : git prompt 설정
 summary : 
 date    : 2020-01-06 19:58:34 +0900
-updated : 2022-01-04 23:48:24 +0900
+updated : 2022-01-04 23:50:30 +0900
 tag     : git
 toc     : true
 public  : true
@@ -39,7 +39,7 @@ latex   : false
 
 코드는 다음과 같다.
 
-그냥 `git`, [[/cmd/grep]], `cut`, `awk`, `sort`, `uniq`, `tr`, `sed` 같은 기본 도구들을 사용해 간단히 만들었다.
+그냥 `git`, [[/cmd/grep]]{grep}, `cut`, `awk`, `sort`, `uniq`, `tr`, `sed` 같은 기본 도구들을 사용해 간단히 만들었다.
 
 ```sh
 function gbr {
@@ -87,6 +87,4 @@ ${B_BLUE}\w \
 ${COLOR_END}\
 \$(gbr)\n\$ "
 ```
-
-
 
