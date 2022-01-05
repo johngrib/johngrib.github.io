@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-04 11:11:42 +0900
+updated : 2022-01-05 23:54:39 +0900
 regenerate: true
 ---
 
@@ -21,6 +21,7 @@ regenerate: true
     * [[links-2018]]
 
 * [[review]]{후기}
+    * [[/review/2022]]
     * [[/review/2021]]
     * [[/review/2020]]
     * [[/review/2019]]
