@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure의 collection
 summary : 작성중인 문서
 date    : 2021-12-26 17:48:37 +0900
-updated : 2021-12-27 22:07:40 +0900
+updated : 2022-01-07 23:23:01 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -522,7 +522,7 @@ fruit
 
 ## java.util.Set 구현체
 
-## collection용 함수
+## collection 다루기
 
 ### first
 
@@ -530,6 +530,12 @@ fruit
 
 ```clojure
 (first [12 52 34 61 19]) ; 12
+```
+
+Map에 사용하면 첫 번째 엔트리를 얻을 수 있다.
+
+```clojure
+(first {:a 1 :b 2 :c 3}) ; [:a 1]
 ```
 
 ### rest
