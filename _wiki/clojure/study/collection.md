@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure의 collection
 summary : 작성중인 문서
 date    : 2021-12-26 17:48:37 +0900
-updated : 2022-01-07 23:23:01 +0900
+updated : 2022-01-07 23:32:25 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -548,6 +548,20 @@ Map에 사용하면 첫 번째 엔트리를 얻을 수 있다.
 (rest [1 2 3]) ; (2 3)
 ```
 
+### cons
+
+`cons`는 아이템 하나를 컬렉션의 앞에 추가한다.
+
+```clojure
+(cons 3 [:a :b])  ; (3 :a :b)
+(cons 3 #{:a :b}) ; (3 :b :a)
+```
+
+Map에 cons를 사용하면 리스트를 리턴하므로 주의하자.
+
+```clojure
+(cons :a {:b 7 :c 8}) ; (:a [:b 7] [:c 8])
+```
 
 ### take
 
