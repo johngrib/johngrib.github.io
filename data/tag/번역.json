@@ -1,5 +1,6 @@
 [
  "clojure/evaluation",
+ "clojure/guide/reading-clojure-characters",
  "clojure/higher-order-functions",
  "Go-Blog-translation",
  "golang-debugging-what-you-deploy",

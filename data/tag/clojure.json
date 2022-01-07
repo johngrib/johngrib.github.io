@@ -4,6 +4,7 @@
  "clojure/equality",
  "clojure/evaluation",
  "clojure/guide",
+ "clojure/guide/reading-clojure-characters",
  "clojure/guide/spec",
  "clojure/higher-order-functions",
  "clojure/reader",

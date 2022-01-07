@@ -7,6 +7,7 @@
  "updated": "2021-12-10 22:42:33 +0900",
  "children": [
   "clojure/equality",
+  "clojure/guide/reading-clojure-characters",
   "clojure/guide/spec",
   "clojure/higher-order-functions",
   "clojure/threading-macros"
