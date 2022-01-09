@@ -3,7 +3,7 @@ layout  : wiki
 title   : Ultisnips
 summary : 자신만의 snippet 파일을 만들어 쓰자
 date    : 2020-01-03 21:32:03 +0900
-updated : 2020-01-03 21:54:38 +0900
+updated : 2022-01-09 14:48:29 +0900
 tag     : vim completion
 toc     : true
 public  : true
@@ -289,6 +289,13 @@ Indent is: 0.
 ```
     Indent is: 4.
 ```
+
+## 문제 해결
+
+### coc.nvim과 함께 사용하기
+
+`:CocInstall coc-ultisnips` 명령을 실행해 `coc-ultisnips`를 설치해 주도록 한다.
+
 
 ## See Also
 
