@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2022-01-09 16:05:04 +0900
+updated : 2022-01-09 16:10:57 +0900
 tag     : vim completion
 toc     : true
 public  : true
@@ -382,6 +382,17 @@ go 작성자들이 제공하는 `gopls`를 사용하도록 `coc-settings.json`�
 ```viml
 :CocInstall coc-ultisnips
 ```
+
+### copilot.vim
+
+- <https://copilot.github.com/ >
+- <https://github.com/github/copilot.vim >
+
+copilot.vim 을 사용하면 인공지능 기반의 추천 완성 기능을 사용할 수 있다.
+
+단순한 자동 완성이나 github 어딘가에 있는 코드의 복붙 수준이 아니라 놀라운 수준의 추론 능력을 보여주므로 감탄하며 사용하고 있다.
+
+copilot.vim 플러그인은 vim 세계에서의 스타 개발자인 Tim Pope가 만들었으며, vim에 적용하는 방법도 굉장히 쉽다.
 
 
 ## 문제 해결
