@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2022-01-09 15:52:11 +0900
+updated : 2022-01-09 16:05:04 +0900
 tag     : vim completion
 toc     : true
 public  : true
@@ -202,6 +202,8 @@ iabbr <expr> __branch system("git rev-parse --abbrev-ref HEAD")
 
 ### youcompleteme
 
+참고: 나는 2020년 즈음부터는 ycm을 전혀 사용하지 않고 있으며, ycm의 대체 플러그인으로 coc.vim 을 사용하고 있다.
+
 ycm과 UltiSnips를 활용하면 편리한 자동완성 환경을 갖출 수 있다.
 
 #### ycm 설치
@@ -319,7 +321,9 @@ let g:ycm_filetype_blacklist = {
 
 ### ultisnips
 
-이 항목은 별도의 문서로 분리하였다.
+ultisnips는 Vim 최고의 플러그인 중 하나라 생각하며, 나는 하루에도 수십번씩 ultisnips를 사용한다.
+
+이 항목은 내용이 길어 별도의 문서로 분리하였다.
 
 * [[ultisnips]]
 
