@@ -540,7 +540,7 @@ regenerate: true
 * [[trouble-shooting-node-7-install]]
 * [[vagrant-docker-get-start]]
 
-## [[Vim]]
+## [[vim]]
 
 * [[/vim/auto-completion]]
 * [[ideavim]]

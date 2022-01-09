@@ -7,7 +7,7 @@ updated : 2020-02-13 22:50:24 +0900
 tag     : vim asciidoc
 toc     : true
 public  : true
-parent  : [[Vim]]
+parent  : [[vim]]
 latex   : false
 ---
 * TOC

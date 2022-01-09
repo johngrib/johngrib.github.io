@@ -7,7 +7,7 @@ updated : 2021-10-17 18:42:33 +0900
 tag     : vim
 toc     : true
 public  : true
-parent  : [[Vim]]
+parent  : [[vim]]
 latex   : false
 ---
 * TOC

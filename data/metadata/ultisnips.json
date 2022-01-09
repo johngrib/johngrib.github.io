@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "Ultisnips",
  "summary": "자신만의 snippet 파일을 만들어 쓰자",
- "parent": "Vim",
+ "parent": "vim",
  "url": "/wiki/ultisnips",
  "updated": "2022-01-09 14:48:29 +0900",
  "children": []

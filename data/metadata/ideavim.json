@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "IdeaVim 사용하기",
  "summary": "이거라도 쓰는 수 밖에 없다",
- "parent": "Vim",
+ "parent": "vim",
  "url": "/wiki/ideavim",
  "updated": "2022-01-04 23:36:18 +0900",
  "children": []

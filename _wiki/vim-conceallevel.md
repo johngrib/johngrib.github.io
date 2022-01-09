@@ -7,7 +7,7 @@ updated : 2017-12-20 13:13:32 +0900
 tag     : vim trouble-shooting
 toc     : true
 public  : true
-parent  : [[Vim]]
+parent  : [[vim]]
 latex   : false
 ---
 * TOC

@@ -7,7 +7,7 @@ updated : 2022-01-04 23:36:18 +0900
 tag     : vim ideavim intellij
 toc     : true
 public  : true
-parent  : [[Vim]]
+parent  : [[vim]]
 latex   : false
 ---
 * TOC

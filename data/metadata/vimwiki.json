@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "Vimwiki 사용법",
  "summary": "로컬에서 Vim으로 관리하는 나만의 위키",
- "parent": "Vim",
+ "parent": "vim",
  "url": "/wiki/vimwiki",
  "updated": "2021-12-27 18:15:22 +0900",
  "children": []

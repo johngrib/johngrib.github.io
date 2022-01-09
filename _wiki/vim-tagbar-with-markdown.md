@@ -7,7 +7,7 @@ updated : 2020-01-26 22:32:39 +0900
 tag     : vim tagbar markdown
 toc     : true
 public  : true
-parent  : [[Vim]]
+parent  : [[vim]]
 latex   : false
 ---
 * TOC
