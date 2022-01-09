@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2022-01-09 16:10:57 +0900
+updated : 2022-01-09 17:51:23 +0900
 tag     : vim completion
 toc     : true
 public  : true
@@ -396,6 +396,33 @@ copilot.vim 플러그인은 vim 세계에서의 스타 개발자인 Tim Pope가 
 
 
 ## 문제 해결
+
+### coc.nvim, ultisnips, copilot.vim 을 트리거 키를 하나로 통일하기
+
+이 셋의 트리거 키가 다르기 때문에 자동 완성을 사용할 때마다 헷갈리는 문제가 있다.
+
+따라서 다음과 같이 설정해 주었다.
+
+```viml
+" ultisnips
+let g:UltiSnipsExpandTrigger="<C-y>"
+let g:UltiSnipsJumpForwardTrigger="<Right>"
+let g:UltiSnipsJumpBackwardTrigger="<Left>"
+
+" coc.nvim
+inoremap <silent><script><expr> <Tab> pumvisible() ? "\<C-y>" : copilot#Accept("\<CR>")
+```
+
+- ultisnips의 트리거 키를 `<C-y>`로 설정해서 coc.nvim의 트리거 키인 `<C-y>`와 맞춰준다.
+    - snippet placeholder 이동은 Right, Left로 한다.
+- `<Tab>`키를 입력했을 때 메뉴가 떠 있다면
+    - `<C-y>`를 입력한다. coc-ultisnips가 설치되어 있다면 coc / ultisnips 둘 중 적절한 것이 자동으로 선택된다.
+- `<Tab>`키를 입력했을 때 메뉴가 없다면
+    - `copilot#Accept` 함수를 호출한다.
+
+이렇게 하면 `<Tab>`키를 누르는 것으로 copilot과 ultisnips, coc.nvim을 모두 사용할 수 있다.
+
+그냥 탭 문자 입력이 필요할 때에는 `<C-v><Tab>`을 사용하면 되니 탭 문자 입력도 문제 없다.
 
 ### neovim 에서 ycm, UltiSnips가 돌아가지 않는 문제 해결하기
 
