@@ -9,7 +9,6 @@
   "two-views-of-vim",
   "ultisnips",
   "vim-asciidoc-setting",
-  "vim-auto-completion",
   "vim-clang",
   "vim-coc",
   "vim-conceallevel",
@@ -21,6 +20,7 @@
   "vim-tmux-t-ut",
   "vim-with-space-char",
   "vim-ycm-python3",
+  "vim/auto-completion",
   "vimwiki"
  ]
 }

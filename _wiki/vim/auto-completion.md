@@ -3,11 +3,11 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2020-01-03 21:42:41 +0900
+updated : 2022-01-09 15:52:11 +0900
 tag     : vim completion
 toc     : true
 public  : true
-parent  : [[Vim]]
+parent  : [[/Vim]]
 latex   : false
 ---
 * TOC

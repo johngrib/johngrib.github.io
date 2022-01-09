@@ -8,7 +8,6 @@
  "ultisnips",
  "Vim",
  "vim-asciidoc-setting",
- "vim-auto-completion",
  "vim-coc",
  "vim-conceallevel",
  "vim-configure-split",
@@ -23,6 +22,7 @@
  "vim-update-book-progress",
  "vim-with-space-char",
  "vim-ycm-python3",
+ "vim/auto-completion",
  "vimwiki",
  "web-browser-vim"
 ]

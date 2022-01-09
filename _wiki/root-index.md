@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-09 14:45:01 +0900
+updated : 2022-01-09 15:51:22 +0900
 regenerate: true
 ---
 
@@ -542,11 +542,11 @@ regenerate: true
 
 ## [[Vim]]
 
+* [[/vim/auto-completion]]
 * [[ideavim]]
 * [[two-views-of-vim]]
 * [[ultisnips]]
 * [[vim-asciidoc-setting]]
-* [[vim-auto-completion]]
 * [[vim-clang]]
 * [[vim-coc]]
 * [[vim-conceallevel]]{conceallevel (Vim)}
