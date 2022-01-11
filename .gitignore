@@ -8,3 +8,5 @@ Gemfile.lock
 package-lock.json
 .jekyll-cache/
 .DS_Store
+.localhost.log
+.localhost.pid
