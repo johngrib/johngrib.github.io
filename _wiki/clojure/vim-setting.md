@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Clojure 코드를 작성하자
 summary : 삽질의 흔적
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-01-11 17:51:17 +0900
+updated : 2022-01-12 23:11:16 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -45,6 +45,14 @@ latex   : false
 ```sh
 brew remove clojure-lsp # if you have old clojure-lsp installed via brew
 brew install clojure-lsp/brew/clojure-lsp-native
+```
+
+`clojure-lsp --version`으로 설치가 완료되었는지 확인하자.
+
+```sh
+$ clojure-lsp  --version
+clojure-lsp 2022.01.03-19.46.10
+clj-kondo 2021.12.20-SNAPSHOT
 ```
 
 ### coc.nvim 설정
