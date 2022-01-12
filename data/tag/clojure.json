@@ -16,5 +16,6 @@
  "clojure/study/merge-with",
  "clojure/study/number",
  "clojure/study/PersistentList",
- "clojure/threading-macros"
+ "clojure/threading-macros",
+ "clojure/vim-setting"
 ]
