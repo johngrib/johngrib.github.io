@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Clojure 코드를 작성하자
 summary : 삽질의 흔적
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-01-12 23:35:20 +0900
+updated : 2022-01-13 00:43:33 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -97,17 +97,27 @@ conjure는 neovim을 위한 대화식 소프트웨어 개발 도구인데, Cloju
 Plug 'Olical/conjure'
 ```
 
-이러면 끝이다.
+이러면 설치는 끝이다.
 
+이제 vim 설정을 해줘야 한다.
 
-다 나열하는 건 곤란하고 몇 가지 필수적인 것들만 나열해 본다.
+좀 더 내 손에 맞게 사용하기 위해 다음과 같이 설정해 주었다.
 
-- `<localleader>ee` : 현재 커서가 놓인 form을 평가한다.
-- `<localleader>eb` : 현재 편집중인 버퍼를 평가한다.
+```viml
+augroup vim_conjure
+    " Goto the definition
+    autocmd FileType clojure nmap <silent> <C-]> <localleader>gd
+    let g:conjure#mapping#prefix = "<leader>"
+augroup END
+```
 
-## 사용 방법
+이렇게 하면 다음과 같이 사용할 수 있게 된다.
 
-### REPL을 띄우고 vim에서 REPL에 붙기
+- `<leader>ee` : 현재 커서가 놓인 form을 평가한다.
+- `<leader>eb` : 현재 편집중인 버퍼를 평가한다.
+- `<leader>lv` : 화면 오른쪽에 REPL 출력 버퍼를 띄운다.
+
+## REPL을 띄우고 vim에서 REPL에 붙기
 
 `deps.edn` 파일이 있는 프로젝트 루트에 가서 REPL을 띄운다.
 (자세한 내용은 `clojure --help` 참고)
