@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Clojure 코드를 작성하자
 summary : 삽질의 흔적
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-01-12 23:14:44 +0900
+updated : 2022-01-12 23:35:20 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -105,9 +105,10 @@ Plug 'Olical/conjure'
 - `<localleader>ee` : 현재 커서가 놓인 form을 평가한다.
 - `<localleader>eb` : 현재 편집중인 버퍼를 평가한다.
 
-## 나의 사용 방법
+## 사용 방법
 
 ### REPL을 띄우고 vim에서 REPL에 붙기
+
 `deps.edn` 파일이 있는 프로젝트 루트에 가서 REPL을 띄운다.
 (자세한 내용은 `clojure --help` 참고)
 
@@ -132,7 +133,7 @@ nREPL server started on port 58617 on host localhost - nrepl://localhost:58617
 
 이제 vim을 열고 프로젝트의 `deps.edn`이 있는 경로를 루트로 삼는 세션을 연다.
 
-자동으로 연결되었다면 vim 화면 오른쪽 위에 다음과 같이 출력된다.
+별다른 문제가 없다면 자동으로 연결되며, vim 화면 오른쪽 위에 다음과 같이 출력된다.
 
 ```
 ; --------------------------------------------------------
@@ -141,11 +142,9 @@ nREPL server started on port 58617 on host localhost - nrepl://localhost:58617
 ; Assumed session: Entlebucher Mountain Dog (Clojure)
 ```
 
-하지만 처음으로 해본다거나, 뭔가 문제가 있거나, 다른 REPL에 연결하고 싶다면 수동으로 연결해주면 된다.
+만약 다른 포트에 떠 있는 REPL에 연결하고 싶다면 수동으로 연결해주면 된다.
 
-(이것도 한 번 연결하면 다음에는 자동으로 붙게 된다.)
-
-`58617` 포트에 붙으려면 vim에서 이렇게 입력하면 된다.
+가령 `58617` 포트에 붙는다면 vim 커맨드 라인에서 다음 명령을 입력해주면 된다.
 
 ```
 :ConjureConnect 58617
@@ -157,6 +156,9 @@ nREPL server started on port 58617 on host localhost - nrepl://localhost:58617
 - `:ConjureConnect 5678` : host 주소는 localhost로 하고, 포트 번호를 지정해서 붙기
 - `:ConjureConnect staging.my-app.com 5678` : host 주소와 포트 번호를 지정해서 붙기
 
+항상 자동으로 붙은 REPL만 쓰는 게 아니라 가끔씩 다른 REPL에 붙을 일이 생길 수 있으므로 기억해 둘 필요가 있다.
+
+심심하다면 IntelliJ의 Cursive를 통해 띄운 REPL에 붙어보자. Eclim과 같이 IntelliJ를 vim 플러그인처럼 쓰는 기분을 느낄 수 있다.
 
 ## 주석
 
