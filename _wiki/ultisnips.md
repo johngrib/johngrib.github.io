@@ -3,7 +3,7 @@ layout  : wiki
 title   : Ultisnips
 summary : 자신만의 snippet 파일을 만들어 쓰자
 date    : 2020-01-03 21:32:03 +0900
-updated : 2022-01-09 14:48:29 +0900
+updated : 2022-01-12 16:12:19 +0900
 tag     : vim completion
 toc     : true
 public  : true
@@ -299,7 +299,7 @@ Indent is: 0.
 
 ## See Also
 
-* [[vim-auto-completion]]{Vim 자동 완성 기능 사용하기}
+* [[/vim/auto-completion]]
 * [[my-study-method]]{나의 공부 방법} - 나는 새로운 프로그래밍 언어를 익힐 때 ultisnips로 사용할 snippet을 만들면서 공부한다.
 
 ## Links
