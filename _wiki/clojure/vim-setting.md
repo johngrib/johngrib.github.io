@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Clojure 코드를 작성하자
 summary : 삽질의 흔적
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-01-12 23:11:16 +0900
+updated : 2022-01-12 23:14:44 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -60,6 +60,8 @@ clj-kondo 2021.12.20-SNAPSHOT
 coc.nvim 의 Wiki 페이지에 있는 Language Servers 목록을 보면 반갑게도 Clojure가 있다.
 
 - <https://github.com/neoclide/coc.nvim/wiki/Language-servers#clojure >
+
+위 링크에 나와 있는 설정값을 복사해서 coc.nvim의 설정 파일에 추가해주면 된다.
 
 `:CocConfig`명령으로 `coc-settings.json`[^coc-config-file]을 열고, 다음과 같이 clojure-lsp 설정을 추가하자.
 
