@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "mv 명령어",
+ "summary": "파일을 옮긴다",
+ "parent": "cmd",
+ "url": "/wiki/cmd/mv",
+ "updated": "2022-01-13 22:53:06 +0900",
+ "children": []
+}

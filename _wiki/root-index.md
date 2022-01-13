@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-09 22:53:19 +0900
+updated : 2022-01-13 22:55:46 +0900
 regenerate: true
 ---
 
@@ -431,6 +431,7 @@ regenerate: true
 * [[/cmd/curl]]
 * [[/cmd/grep]]
 * [[/cmd/man]]
+* [[/cmd/mv]]
 * [[/cmd/xxd]]
 
 * [[basename]]
@@ -466,7 +467,6 @@ regenerate: true
 * [[lldb-cmd]]
 * [[lsof]]
 * [[make-cmd]]
-* [[mv-cmd]]
 * [[my-bash-cheatsheet]]
 * [[openssl]]
 * [[perl-one-liner]]
