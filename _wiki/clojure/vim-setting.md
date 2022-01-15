@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Clojure 코드를 작성하자
 summary : 삽질의 흔적
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-01-15 09:26:10 +0900
+updated : 2022-01-15 14:28:46 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -119,7 +119,9 @@ augroup END
 - `<leader>eb` : 현재 편집중인 버퍼를 평가한다.
 - `<leader>lv` : 화면 오른쪽에 REPL 출력 버퍼를 띄운다.
 
-## REPL을 띄우고 vim에서 REPL에 붙기
+#### REPL을 띄우고 vim에서 REPL에 붙기
+
+이제 REPL이 떠 있을 때 vim을 실행하면 conjure가 자동으로 연결을 해 줄 것이다.
 
 `deps.edn` 파일이 있는 프로젝트 루트에 가서 REPL을 띄운다.
 (자세한 내용은 `clojure --help` 참고)
@@ -171,6 +173,82 @@ nREPL server started on port 58617 on host localhost - nrepl://localhost:58617
 항상 자동으로 붙은 REPL만 쓰는 게 아니라 가끔씩 다른 REPL에 붙을 일이 생길 수 있으므로 기억해 둘 필요가 있다.
 
 심심하다면 IntelliJ의 Cursive를 통해 띄운 REPL에 붙어보자. Eclim과 같이 IntelliJ를 vim 플러그인처럼 쓰는 기분을 느낄 수 있다.
+
+## 편집 설정
+
+### vim-sexp
+
+- <https://github.com/guns/vim-sexp >
+- 도움말은 `:help vim-sexp`.
+
+vim-sexp를 설치하면 Lisp 편집에 유용한 다양한 키 매핑을 사용할 수 있다. 몇 가지만 소개해 보자.
+
+#### slurp, barf
+
+`<M-S-h>`, `<M-S-j>`, `<M-S-k>`, `<M-S-l>`로 사용할 수 있다.
+
+![slurp, barf]( ./slurp-barf.gif )
+
+이 영상에서는 `[ ]`만 움직이고 있지만, 실제로는 모든 종류의 Lisp 괄호에서 잘 작동한다. (`< >`에 대해서는 작동하지 않는다.)
+
+| 키 조합 (Mac)        | 동작                            |
+|----------------------|---------------------------------|
+| `option + shift + h` | 여는 괄호 `( { [` 를 왼쪽으로   |
+| `option + shift + j` | 여는 괄호 `( { [` 를 오른쪽으로 |
+| `option + shift + k` | 닫는 괄호 `) } ]` 를 왼쪽으로   |
+| `option + shift + l` | 닫는 괄호 `) } ]` 를 오른쪽으로 |
+
+#### swap
+
+`<M-h>`, `<M-j>`, `<M-k>`, `<M-l>`로 사용할 수 있다.
+
+![swap]( ./swap.gif )
+
+| 키 조합 (Mac) | 동작                             |
+|---------------|----------------------------------|
+| `option + h`  | 원소를 다음 원소와 스왑한다.     |
+| `option + j`  | 리스트를 다음 리스트와 스왑한다. |
+| `option + k`  | 리스트를 이전 리스트와 스왑한다. |
+| `option + l`  | 원소를 이전 원소와 스왑한다.     |
+
+#### 텍스트 오브젝트
+
+sexp는 다양한 텍스트 오브젝트를 제공한다.
+(다만 vim-surround가 있다면 sexp의 몇몇 텍스트 오브젝트는 아예 쓸 일이 없다.)
+
+| 키         | 의미          | 참고                                                                   |
+|------------|---------------|------------------------------------------------------------------------|
+| `af`, `if` | form          | surround의 `i(`, `a(`, `i{`, `i[`, ... 등이 더 편리하고 더 직관적이다. |
+| `aF`, `iF` | to-level form |                                                                        |
+| `as`, `is` | String        | surround의 `i"`, `a"`가 더 직관적이다.                                 |
+| `ae`, `ie` | element       | `aW`, `iW`로도 대부분 커버될 것 같지만 `e`는 매크로 캐릭터를 포함한다. |
+
+#### 커서 모션
+
+| 키               | 의미                                    | 참고                                                                             |
+|------------------|-----------------------------------------|----------------------------------------------------------------------------------|
+| `(`, `)`         | 여는 괄호, 닫는 괄호로 이동한다.        | `F(`와 비슷하지만 행이 달라도 작동하며, `{`과 `[`에도 된다.                      |
+| `<M-b>`, `<M-w>` | 이전, 다음 엘리먼트로 이동한다.         | 그냥 `b`랑 `w`를 써도 비슷해서 잘 안 쓸 것 같다.                                 |
+| `\[[`, `]]`      | 이전, 다음 톱 레벨 엘리먼트로 이동한다. | 개행만 잘 했다면 `{`, `}`로도 되긴 한다. 즉 `def`, `defn` 단위로 이동할 수 있다. |
+
+#### insert mode 보조
+
+- 여는 괄호나 쌍따옴표를 입력할 때 닫는 괄호, 닫는 쌍따옴표를 함께 입력해주는 보조 기능이 있다.
+- 삭제할 때에도 내용을 모두 지우고 여는 괄호/쌍따옴표를 지우면 닫는 괄호/쌍다옴표도 함께 지워준다.
+
+### parinfer
+
+parinfer 에디터 플러그인에 대해서는 [shaunlebron.github.io]( https://shaunlebron.github.io/parinfer/#editor-plugins )에서 정보를 얻을 수 있었다.
+
+다만 [vim-parinfer]( https://github.com/bhurlow/vim-parinfer )는 On/Off 조절이 편리하지 않았기 때문에 [parinfer-rust]( https://github.com/eraserhd/parinfer-rust )를 사용하기로 했다.
+
+parinfer-rust는 rust로 작성되었기 때문에 그냥 `Plug`를 연결하면 안 되고, 빌드를 해 줘야 한다. 따라서 다음과 같이 `Plug`를 선언해주면 된다.
+
+```
+Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+```
+
+- `:ParinferOff`, `:ParinferOn` : parinfer를 끄고 켠다.
 
 ## 주석
 
