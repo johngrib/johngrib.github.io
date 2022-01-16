@@ -3,7 +3,7 @@ layout  : wiki
 title   : git index
 summary : 
 date    : 2020-04-06 23:05:14 +0900
-updated : 2022-01-16 13:49:51 +0900
+updated : 2022-01-16 16:03:20 +0900
 tag     : git
 toc     : true
 public  : true
@@ -28,31 +28,6 @@ each with permissions and the SHA-1 of a blob object; git-ls-files can show you 
     - 각 파일과 디렉토리의 permission
     - blob 객체의 SHA-1 값
 
-`git ls-files` 명령을 사용하면 인덱스의 내용물을 볼 수 있다.
-
-```
-$ git ls-files --stage | tail
-100644 d344d060ac0c5db0f9bb01c4f1ce7e0d156598b9 0	search.html
-100644 f259c5a08dd5d121a34a000017cd197ea02dc90b 0	sitemap.xml
-100755 764df0355bdab53e2362b2f821e6c649162694d5 0	start.sh
-100644 c9712bd9af8e82846391e82f7c50077b095f87fc 0	tag.html
-100755 bdfb10641d93f265a382b3014341a15c68e4b139 0	tool/find-orphan-post-img.sh
-100755 537c62c2bb5465d7594f085f8cf4935cf07ac4c4 0	tool/fix-image-references.sh
-100755 01433e92888c8ce58bb79792ef786aa58d1acfc9 0	tool/pre-commit
-100755 95b19d9863b6ad564bf6208f719a2bcc657a9ffc 0	tool/save-images.sh
-100755 e36c4a696d2e351dc0efcd40db81d87e7ef1fb11 0	tool/to-skeleton.sh
-100644 50fe65a76cb17611bb041bd5d2cc517ec863323f 0	utterances.json
-```
-
-- 첫 번째 필드의 `100644`, `100755`는 타입과 권한을 의미한다.
-    - `100644`: 일반 파일
-    - `100755`: 실행 가능한 일반 파일
-- 두 번째 필드는 SHA-1 값이다.
-- 세 번째 필드는 stage number 이다.
-    - 이 값은 보통 `0` 이며, 컨플릭트가 발생했을 경우 각 스테이지 넘버를 표현한다.
-- 네 번째 필드는 path name 이다.
-
-`ls-files`에 대한 자세한 내용은 `git ls-files --help`를 참고할 것.
 
 ## git index 의 세 가지 중요한 특성
 ### 인덱스를 통해 tree 객체를 만들 수 있다
@@ -90,9 +65,100 @@ If you blow the index away entirely, you generally haven't lost any information 
 - 인덱스는 임시 스테이징 공간이며, 작업중인 tree 로 채워져 있다.
 - 만약 index를 완전히 날려버려도, tree 이름만 갖고 있다면 어떤 정보도 손실되지는 않는다.
 
+## index 포맷
+
+자세한 내용은 [Git index format]( https://github.com/git/git/blob/v2.35.0-rc1/Documentation/technical/index-format.txt ) 문서를 참고.
+
+### ls-files 출력 결과 포맷
+
+`git ls-files` 명령을 사용하면 인덱스의 내용물을 볼 수 있다.
+
+```
+$ git ls-files --stage | tail
+100644 d344d060ac0c5db0f9bb01c4f1ce7e0d156598b9 0	search.html
+100644 f259c5a08dd5d121a34a000017cd197ea02dc90b 0	sitemap.xml
+100755 764df0355bdab53e2362b2f821e6c649162694d5 0	start.sh
+100644 c9712bd9af8e82846391e82f7c50077b095f87fc 0	tag.html
+100755 bdfb10641d93f265a382b3014341a15c68e4b139 0	tool/find-orphan-post-img.sh
+100755 537c62c2bb5465d7594f085f8cf4935cf07ac4c4 0	tool/fix-image-references.sh
+100755 01433e92888c8ce58bb79792ef786aa58d1acfc9 0	tool/pre-commit
+100755 95b19d9863b6ad564bf6208f719a2bcc657a9ffc 0	tool/save-images.sh
+100755 e36c4a696d2e351dc0efcd40db81d87e7ef1fb11 0	tool/to-skeleton.sh
+100644 50fe65a76cb17611bb041bd5d2cc517ec863323f 0	utterances.json
+```
+
+다만 각 필드 이름이 보이지 않는데, `git ls-files --help`에서 `OUTPUT`에 나와 있다.
+
+>
+OUTPUT
+>
+`git ls-files` just outputs the filenames unless `--stage` is specified in which case it outputs:
+>
+> ```
+> [<tag> ]<mode> <object> <stage> <file>
+> ```
+
+- `mode`
+    - 타입과 권한을 의미
+    - `100644`: 일반 파일
+    - `100755`: 실행 가능한 일반 파일
+- `object` : SHA-1 값
+- `stage` : 이 값은 보통 `0` 이며, 컨플릭트가 발생했을 경우 각 스테이지 넘버를 표현한다.
+- `file` : path name
+
+이 중 첫 번째 필드인 `mode`를 살펴보자. [index-format.txt]( https://github.com/git/git/blob/v2.35.0-rc1/Documentation/technical/index-format.txt#L72-L81 ) 문서를 읽어보면 된다.
+
+```
+32-bit mode, split into (high to low bits)
+
+  4-bit object type
+    valid values in binary are 1000 (regular file), 1010 (symbolic link)
+    and 1110 (gitlink)
+
+  3-bit unused
+
+  9-bit unix permission. Only 0755 and 0644 are valid for regular files.
+  Symbolic links and gitlinks have value 0 in this field.
+```
+
+- 첫 4 비트
+    - `1000`으로 시작하면 일반 파일.
+    - `1010`으로 시작하면 심볼릭 링크.
+    - `1110`으로 시작하면 gitlink.
+- 다음 3 비트는 사용하지 않는다.
+- 다음 9 비트는 unix permission 이다.
+    - 일반 파일에는 `0755`, `0644`만 사용한다.
+    - 심볼릭 링크와 gitlink는 이 값으로 `0`을 사용한다.
+
+확인하는 김에 다음의 관련 코드도 한번 봐두도록 하자.
+
+- [_S_IFDIR = 0x4000]( https://github.com/git/git/blob/v2.35.0-rc1/compat/vcbuild/include/unistd.h#L74 )
+- [0755와 0644]( https://github.com/git/git/blob/df6c4f722c94641d5a9ea5496511f7043433abc2/fsck.c#L663-L664 )
+- [S_IFLNK = 0120000]( https://github.com/git/git/blob/142430338477d9d1bb25be66267225fb58498d92/compat/mingw.h#L28 )
+- [S_IFGITLINK = 0160000]( https://github.com/git/git/blob/v2.35.0-rc1/cache.h#L69 )
+
+아무튼 이 정보를 토대로 다음과 같이 정리할 수 있다. ([Directory는 `040000`]( https://github.com/git/git/blob/v2.35.0-rc1/Documentation/technical/index-format.txt#L51 ))
+
+```
+object
+type      permission
+=====     ===========
+0 100 000 000 000 000 : 040000 directory
+1 000 000 110 100 100 : 100644 regular file
+1 000 000 111 101 101 : 100755 regular file (실행 가능)
+1 010 000 000 000 000 : 120000 symbolic link
+1 110 000 000 000 000 : 160000 gitlink
+      ===
+      unused
+```
+
+
+
+
 ## 참고문헌
 
 - [Git 사용자 매뉴얼][user-manual-3370]
+- [git v2.34.1 - fsck.c]( https://github.com/git/git/blob/v2.34.1/fsck.c )
 
 ## 주석
 
