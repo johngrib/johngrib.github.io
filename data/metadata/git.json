@@ -7,7 +7,6 @@
  "updated": "2022-01-16 13:54:12 +0900",
  "children": [
   "git-alias",
-  "git-checkout-specific-files",
   "git-log",
   "git-prompt",
   "git-study-with-action",

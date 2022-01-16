@@ -3,7 +3,7 @@ layout  : wiki
 title   : git 명령 예제 모음
 summary : 가끔 써먹게 될 때마다 기록해두자
 date    : 2022-01-16 13:53:32 +0900
-updated : 2022-01-16 16:32:06 +0900
+updated : 2022-01-16 16:58:14 +0900
 tag     : git
 toc     : true
 public  : true
@@ -129,6 +129,35 @@ git show-branch b02f90c8 12ae872d
 
 ```sh
 git update-ref -d HEAD
+```
+
+## 특정 커밋에서 특정 파일만 체크아웃
+
+`git checkout --help`를 보면 알 수 있다.
+
+```
+git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>...]
+```
+
+이렇게 사용하면 된다.
+
+```sh
+git checkout 해시값 -- 파일경로
+```
+
+다음과 같은 상황에서 이 기능을 쓸 일이 있었다.
+
+* 개발팀은 `develop`이라는 저장소를 쓴다.
+* 디자인팀은 `design`이라는 저장소를 쓴다.
+* 새로 개발하는 웹 페이지에 대해 디자인팀이 작성한 `scss` 파일이 필요하다.
+    * 디자인팀의 작업 결과는 아직 `design` 저장소에만 있다.
+    * 디자인팀이 관련 작업을 한 브랜치는 `new-scss`이다.
+
+`design` 저장소 `new-scss`브랜치의 `cdn/scss` 디렉토리의 내용만 받기 위해서는 먼저 `new-scss`를 `git fetch`로 받은 다음,
+다음과 같이 checkout 해주면 된다.
+
+```sh
+git checkout design/new-scss -- cdn/scss/
 ```
 
 ## 참고문헌
