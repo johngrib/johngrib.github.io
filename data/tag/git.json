@@ -6,5 +6,6 @@
  "git-prompt",
  "git-tutorial",
  "git/examples",
+ "git/fetch",
  "git/index"
 ]

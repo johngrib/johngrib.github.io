@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "git fetch",
+ "summary": "Download objects and refs from another repository",
+ "parent": "git",
+ "url": "/wiki/git/fetch",
+ "updated": "2022-01-16 17:22:12 +0900",
+ "children": []
+}
