@@ -3,7 +3,7 @@ layout  : wiki
 title   : git 명령 예제 모음
 summary : 가끔 써먹게 될 때마다 기록해두자
 date    : 2022-01-16 13:53:32 +0900
-updated : 2022-01-16 14:13:01 +0900
+updated : 2022-01-16 16:32:06 +0900
 tag     : git
 toc     : true
 public  : true
@@ -90,16 +90,31 @@ git commit --no-verify
 
 ## filter-branch 사용
 ```sh
-$ git filter-branch --tree-filter 'rm -f passwords.txt' HEAD    # passwords.txt 파일을 모든 히스토리에서 삭제
-$ git filter-branch --commit-filter '
-    if [ "$GIT_AUTHOR_EMAIL" = "schacon@localhost" ];
+# passwords.txt 파일을 모든 히스토리에서 삭제
+git filter-branch --tree-filter 'rm -f passwords.txt' HEAD
+```
+
+```sh
+# 이메일 주소가 target@localhost인 모든 커밋의 이메일 주소를 modified@example.com 으로 수정한다
+git filter-branch --commit-filter '
+    if [ "$GIT_AUTHOR_EMAIL" = "target@localhost" ];
     then
-            GIT_AUTHOR_NAME="Scott Chacon";
-            GIT_AUTHOR_EMAIL="schacon@example.com";
+            GIT_AUTHOR_NAME="modified name";
+            GIT_AUTHOR_EMAIL="modified@example.com";
             git commit-tree "$@";
     else
             git commit-tree "$@";
-    fi' HEAD    # 모든 커밋의 이메일 주소를 수정한다
+    fi' HEAD
+```
+
+아래의 명령을 사용하면 `시작커밋` 부터 `마지막커밋` 범위의 커밋 메시지를 [[/cmd/sed]] 로 편집하게 된다.
+
+- 참고: [What's the fastest way to edit hundreds of Git commit messages?]( https://stackoverflow.com/questions/14332551/whats-the-fastest-way-to-edit-hundreds-of-git-commit-messages )
+
+```sh
+git filter-branch --msg-filter \
+ 'sed -E "s/pattern/replace/"' \
+ 시작커밋..마지막커밋
 ```
 
 ## show-branch
