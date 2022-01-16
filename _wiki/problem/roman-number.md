@@ -3,7 +3,7 @@ layout  : wiki
 title   : 로마 숫자 변환 문제
 summary : 
 date    : 2021-11-28 14:10:06 +0900
-updated : 2022-01-16 10:38:47 +0900
+updated : 2022-01-16 10:53:26 +0900
 tag     : 
 toc     : true
 public  : true
@@ -187,7 +187,7 @@ printRoman(1);
 
 [Codewars의 Roman Numerals Decoder 문제]( https://www.codewars.com/kata/51b6249c4612257ac0000005/ )의 [해법 중 하나]( https://www.codewars.com/kata/reviews/5d2cafbf0abb7b000108af5a/groups/6040fa6e6f2b2b00019c85c9 )를 보고 배운 방법이다.
 
-아래의 코드는 이 방법을 응용해 내가 작성한 것으로 `let`을 사용하지 않고 스레딩 매크로(`->>`)를 사용한다는 점이 다르다.
+아래의 코드는 이 방법을 응용해 내가 Clojure로 작성한 것으로 `let`을 사용하지 않고 스레딩 매크로(`->>`)를 사용한다는 점이 다르다.
 
 ```clojure
 (def roman-number {"M"  1000
