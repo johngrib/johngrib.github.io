@@ -4,7 +4,7 @@
  "summary": "",
  "parent": "root-index",
  "url": "/wiki/git",
- "updated": "2022-01-16 13:05:00 +0900",
+ "updated": "2022-01-16 13:54:12 +0900",
  "children": [
   "git-alias",
   "git-chagne-hundreds-commit-messages",
@@ -13,6 +13,7 @@
   "git-prompt",
   "git-study-with-action",
   "git-tutorial",
+  "git/examples",
   "git/index"
  ]
 }
