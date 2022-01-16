@@ -3,11 +3,11 @@ layout  : category
 title   : git
 summary : 
 date    : 2018-12-02 10:11:09 +0900
-updated : 2021-06-20 23:45:30 +0900
+updated : 2022-01-16 13:05:00 +0900
 tag     : git command
 toc     : true
 public  : true
-parent  : [[tools]]
+parent  : [[/root-index]]
 latex   : false
 comment : false
 ---

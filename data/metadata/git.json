@@ -2,9 +2,9 @@
  "type": "wiki",
  "title": "git",
  "summary": "",
- "parent": "tools",
+ "parent": "root-index",
  "url": "/wiki/git",
- "updated": "2021-06-20 23:45:30 +0900",
+ "updated": "2022-01-16 13:05:00 +0900",
  "children": [
   "git-alias",
   "git-chagne-hundreds-commit-messages",
