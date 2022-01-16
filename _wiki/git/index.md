@@ -3,11 +3,11 @@ layout  : wiki
 title   : git index
 summary : 
 date    : 2020-04-06 23:05:14 +0900
-updated : 2020-04-06 23:37:43 +0900
-tag     : 
+updated : 2022-01-16 13:15:59 +0900
+tag     : git
 toc     : true
 public  : true
-parent  : [[git]]
+parent  : [[/git]]
 latex   : true
 ---
 * TOC
