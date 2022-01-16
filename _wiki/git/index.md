@@ -3,7 +3,7 @@ layout  : wiki
 title   : git index
 summary : 
 date    : 2020-04-06 23:05:14 +0900
-updated : 2022-01-16 13:15:59 +0900
+updated : 2022-01-16 13:49:51 +0900
 tag     : git
 toc     : true
 public  : true
@@ -27,7 +27,32 @@ each with permissions and the SHA-1 of a blob object; git-ls-files can show you 
     - 각 파일과 디렉토리의 정렬된 path name들
     - 각 파일과 디렉토리의 permission
     - blob 객체의 SHA-1 값
-- `git ls-files` 명령을 사용하면 인덱스의 내용물을 볼 수 있다.
+
+`git ls-files` 명령을 사용하면 인덱스의 내용물을 볼 수 있다.
+
+```
+$ git ls-files --stage | tail
+100644 d344d060ac0c5db0f9bb01c4f1ce7e0d156598b9 0	search.html
+100644 f259c5a08dd5d121a34a000017cd197ea02dc90b 0	sitemap.xml
+100755 764df0355bdab53e2362b2f821e6c649162694d5 0	start.sh
+100644 c9712bd9af8e82846391e82f7c50077b095f87fc 0	tag.html
+100755 bdfb10641d93f265a382b3014341a15c68e4b139 0	tool/find-orphan-post-img.sh
+100755 537c62c2bb5465d7594f085f8cf4935cf07ac4c4 0	tool/fix-image-references.sh
+100755 01433e92888c8ce58bb79792ef786aa58d1acfc9 0	tool/pre-commit
+100755 95b19d9863b6ad564bf6208f719a2bcc657a9ffc 0	tool/save-images.sh
+100755 e36c4a696d2e351dc0efcd40db81d87e7ef1fb11 0	tool/to-skeleton.sh
+100644 50fe65a76cb17611bb041bd5d2cc517ec863323f 0	utterances.json
+```
+
+- 첫 번째 필드의 `100644`, `100755`는 타입과 권한을 의미한다.
+    - `100644`: 일반 파일
+    - `100755`: 실행 가능한 일반 파일
+- 두 번째 필드는 SHA-1 값이다.
+- 세 번째 필드는 stage number 이다.
+    - 이 값은 보통 `0` 이며, 컨플릭트가 발생했을 경우 각 스테이지 넘버를 표현한다.
+- 네 번째 필드는 path name 이다.
+
+`ls-files`에 대한 자세한 내용은 `git ls-files --help`를 참고할 것.
 
 ## git index 의 세 가지 중요한 특성
 ### 인덱스를 통해 tree 객체를 만들 수 있다
