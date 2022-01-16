@@ -3,11 +3,11 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2021-10-17 18:44:53 +0900
+updated : 2022-01-16 16:24:59 +0900
 tag     : bash command grep ed
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

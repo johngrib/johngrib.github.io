@@ -1,4 +1,4 @@
 [
  "cmd/grep",
- "sed"
+ "cmd/sed"
 ]

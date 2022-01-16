@@ -3,7 +3,7 @@
  "title": "sed",
  "summary": "stream editor",
  "parent": "cmd",
- "url": "/wiki/sed",
- "updated": "2021-10-17 18:44:53 +0900",
+ "url": "/wiki/cmd/sed",
+ "updated": "2022-01-16 16:24:59 +0900",
  "children": []
 }

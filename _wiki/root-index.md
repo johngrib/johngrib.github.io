@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-16 13:53:31 +0900
+updated : 2022-01-16 16:24:45 +0900
 regenerate: true
 ---
 
@@ -432,6 +432,7 @@ regenerate: true
 * [[/cmd/grep]]
 * [[/cmd/man]]
 * [[/cmd/mv]]
+* [[/cmd/sed]]
 * [[/cmd/xxd]]
 
 * [[basename]]
@@ -477,7 +478,6 @@ regenerate: true
 * [[ripgrep]]
 * [[say]]
 * [[sdkman]]
-* [[sed]]
 * [[sha256sum]]
 * [[sort]]
 * [[strfile-cmd]]
