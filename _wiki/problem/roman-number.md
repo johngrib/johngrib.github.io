@@ -3,7 +3,7 @@ layout  : wiki
 title   : 로마 숫자 변환 문제
 summary : 
 date    : 2021-11-28 14:10:06 +0900
-updated : 2021-11-28 16:42:35 +0900
+updated : 2022-01-16 10:38:47 +0900
 tag     : 
 toc     : true
 public  : true
@@ -181,4 +181,38 @@ printRoman(2);
 printRoman(1);
 ```
 
+## 로마 숫자를 아라비아 숫자로 변환
+
+### 정규식을 쓰는 방법
+
+[Codewars의 Roman Numerals Decoder 문제]( https://www.codewars.com/kata/51b6249c4612257ac0000005/ )의 [해법 중 하나]( https://www.codewars.com/kata/reviews/5d2cafbf0abb7b000108af5a/groups/6040fa6e6f2b2b00019c85c9 )를 보고 배운 방법이다.
+
+아래의 코드는 이 방법을 응용해 내가 작성한 것으로 `let`을 사용하지 않고 스레딩 매크로(`->>`)를 사용한다는 점이 다르다.
+
+```clojure
+(def roman-number {"M"  1000
+                   "CM" 900
+                   "D"  500
+                   "CD" 400
+                   "C"  100
+                   "XC" 90
+                   "L"  50
+                   "XL" 40
+                   "X"  10
+                   "IX" 9
+                   "V"  5
+                   "IV" 4
+                   "I"  1})
+
+(defn translate-roman-numerals [roman-number-string]
+  (->> (re-seq #"CM|CD|XC|XL|IX|IV|[MDCLXVI]" roman-number-string)
+       (map roman-number)
+       (apply +)))
+```
+
+Clojure의 간결함이 눈에 띈다.
+
+## 참고문헌
+
+- [Codewars의 Roman Numerals Decoder 문제]( https://www.codewars.com/kata/51b6249c4612257ac0000005/ )
 
