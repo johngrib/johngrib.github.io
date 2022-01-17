@@ -3,7 +3,7 @@ layout  : wiki
 title   : h2database
 summary : H2, the Java SQL database
 date    : 2021-01-07 23:42:08 +0900
-updated : 2021-01-07 23:46:16 +0900
+updated : 2022-01-17 17:19:06 +0900
 tag     : db
 toc     : true
 public  : true
@@ -30,4 +30,8 @@ spring:
     username: sa
     password:
 ```
+
+## Clojure와 함께
+
+- [Including H2 in Clojure projects]( https://practical.li/clojure-webapps/relational-databases-and-sql/h2-database/ )
 
