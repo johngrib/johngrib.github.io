@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : git 명령 예제 모음
+title   : git 명령 예제, 팁 모음
 summary : 가끔 써먹게 될 때마다 기록해두자
 date    : 2022-01-16 13:53:32 +0900
-updated : 2022-01-16 16:58:14 +0900
+updated : 2022-01-17 23:59:25 +0900
 tag     : git
 toc     : true
 public  : true
@@ -12,6 +12,10 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## rerere
+
+`.git/rr-cache` 디렉토리를 만들면 `rerere`를 켤 수 있다.
 
 ## log 검색
 
