@@ -3,7 +3,7 @@ layout  : wiki
 title   : git 명령 예제, 팁 모음
 summary : 가끔 써먹게 될 때마다 기록해두자
 date    : 2022-01-16 13:53:32 +0900
-updated : 2022-01-17 23:59:25 +0900
+updated : 2022-01-18 22:55:30 +0900
 tag     : git
 toc     : true
 public  : true
@@ -98,13 +98,15 @@ git commit --no-verify
 git filter-branch --tree-filter 'rm -f passwords.txt' HEAD
 ```
 
+다음은 Pro Git 2/E에 수록된 예제이다.[^pro-git-237]
+
 ```sh
-# 이메일 주소가 target@localhost인 모든 커밋의 이메일 주소를 modified@example.com 으로 수정한다
+# 이메일 주소가 target@localhost인 모든 커밋의 이메일 주소를 schacon@example.com 으로 수정한다
 git filter-branch --commit-filter '
-    if [ "$GIT_AUTHOR_EMAIL" = "target@localhost" ];
+    if [ "$GIT_AUTHOR_EMAIL" = "schacon@localhost" ];
     then
-            GIT_AUTHOR_NAME="modified name";
-            GIT_AUTHOR_EMAIL="modified@example.com";
+            GIT_AUTHOR_NAME="Scott Chacon";
+            GIT_AUTHOR_EMAIL="schacon@example.com";
             git commit-tree "$@";
     else
             git commit-tree "$@";
@@ -167,4 +169,8 @@ git checkout design/new-scss -- cdn/scss/
 ## 참고문헌
 
 - 프로 Git 2판 - 그림으로 이해하는 Git의 작동 원리와 사용법 / 스캇 샤콘, 벤 스트라웁 공저 / 박창우, 이성환, 최용재 공역 / 인사이트(insight) / 2016년 03월 30일
+
+## 주석
+
+[^pro-git-237]: 프로 Git 2판. 7.6장. 237쪽.
 
