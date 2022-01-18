@@ -3,7 +3,7 @@ layout  : wiki
 title   : git index
 summary : 
 date    : 2020-04-06 23:05:14 +0900
-updated : 2022-01-16 16:03:20 +0900
+updated : 2022-01-18 23:08:26 +0900
 tag     : git
 toc     : true
 public  : true
@@ -28,6 +28,16 @@ each with permissions and the SHA-1 of a blob object; git-ls-files can show you 
     - 각 파일과 디렉토리의 permission
     - blob 객체의 SHA-1 값
 
+Pro Git 2/E 에서는 다음과 같이 설명한다.
+
+>
+Index는 **바로 다음에 커밋할** 것들이다. 이미 앞에서 우리는 이런 개념을 "Staging Area"라고 배운 바 있다.
+“Staging Area"는 사용자가 `git commit` 명령을 실행했을 때 Git이 처리할 것들이 있는 곳이다.
+>
+먼저 Index는 워킹 디렉터리에서 마지막으로 Checkout한 브랜치의 파일 목록과 파일내용으로 채워진다.
+이후 파일을 변경하고 변경한 내용으로 Index를 업데이트할 수 있다.
+이렇게 업데이트하고 `git commit` 명령을 실행하면 Index는 새 커밋으로 변환된다.
+[^pro-git-238]
 
 ## git index 의 세 가지 중요한 특성
 ### 인덱스를 통해 tree 객체를 만들 수 있다
@@ -159,9 +169,12 @@ type      permission
 
 - [Git 사용자 매뉴얼][user-manual-3370]
 - [git v2.34.1 - fsck.c]( https://github.com/git/git/blob/v2.34.1/fsck.c )
+- Pro Git 2/E / 스캇 샤콘, 벤 스트라웁 공저 / 박창우, 이성환, 최용재 공역 / 인사이트(insight) / 2016년 03월 30일
 
 ## 주석
 
 [^user-manual-3370]: [Git 사용자 매뉴얼][user-manual-3370]
 [user-manual-3370]: https://github.com/git/git/blob/9fadedd637b312089337d73c3ed8447e9f0aa775/Documentation/user-manual.txt#L3370
 
+[^pro-git-238]: Pro Git 2/E. 7.7장. 238쪽.
+ㅏ
