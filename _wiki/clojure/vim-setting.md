@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Clojure 코드를 작성하자
 summary : 삽질의 흔적
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-01-19 20:52:59 +0900
+updated : 2022-01-20 00:01:01 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -119,7 +119,7 @@ augroup END
 - `<leader>eb` : 현재 편집중인 버퍼를 평가한다.
 - `<leader>lv` : 화면 오른쪽에 REPL 출력 버퍼를 띄운다.
 
-#### REPL을 띄우고 vim에서 REPL에 붙기
+#### REPL을 띄우고 conjure로 붙기
 
 이제 REPL이 떠 있을 때 vim을 실행하면 conjure가 자동으로 연결을 해 줄 것이다.
 
@@ -173,6 +173,50 @@ nREPL server started on port 58617 on host localhost - nrepl://localhost:58617
 항상 자동으로 붙은 REPL만 쓰는 게 아니라 가끔씩 다른 REPL에 붙을 일이 생길 수 있으므로 기억해 둘 필요가 있다.
 
 심심하다면 IntelliJ의 Cursive를 통해 띄운 REPL에 붙어보자. Eclim과 같이 IntelliJ를 vim 플러그인처럼 쓰는 기분을 느낄 수 있다.
+
+### vim-iced
+
+conjure가 훌륭하긴 하지만 session과 관련된 버그가 있어 매우 골치가 아팠다.
+
+[vim-iced]( https://liquidz.github.io/vim-iced/ )는 conjure의 대안으로 충분하다 생각한다.
+
+단 conjure보다 iced가 좀 더 기능이 많고 통합적인 환경을 지향하는 것으로 보인다.
+
+설치는 어렵지 않다.
+
+```viml
+Plug 'liquidz/vim-iced', {'for': 'clojure'}
+```
+
+다음과 같이 설정해서 기본 키 맵핑을 사용할 수 있도록 해주자.
+
+```viml
+let g:iced_default_key_mapping_leader = '<Leader>'
+let g:iced_enable_default_key_mappings = v:true
+```
+
+`.bashrc`나 `.bash_profile`에 `iced` 명령의 PATH도 추가해 주자.
+
+```
+export PATH="$PATH:~/.vim/plugged/vim-iced/bin"
+```
+
+#### REPL을 띄우고 iced로 붙기
+
+터미널에서 다음과 같이 `iced`를 사용해 REPL을 실행해준다.
+
+```
+iced repl
+```
+
+`:dev` 알리아스를 지정하고 싶다면 이렇게 하면 된다.
+
+```
+iced repl -A:dev
+```
+
+REPL이 뜨면 vim에서 `:IcedConnect`를 입력하면 된다.
+
 
 ## 편집 설정
 
