@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Clojure 코드를 작성하자
 summary : 삽질의 흔적
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-01-15 14:28:46 +0900
+updated : 2022-01-19 20:52:59 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -249,6 +249,19 @@ Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 ```
 
 - `:ParinferOff`, `:ParinferOn` : parinfer를 끄고 켠다.
+
+#### 문제점: 기본 상태가 On 이다
+
+parinfer의 기본 상태가 On 이기 때문에, 빌트인 라이브러리를 열어봤을 때에도 포매팅을 하여 변경사항이 발생하는 문제가 있다.
+
+따라서 사용하지 않기로 결정. 만약 기본 상태를 Off로 하려 한다면 다음과 같이 설정하는 것을 고려할 수 있을 것이다.
+
+```viml
+augroup vim_conjure
+    autocmd BufRead,BufNewFile *.clj ParinferOff
+augroup END
+```
+
 
 ## 주석
 
