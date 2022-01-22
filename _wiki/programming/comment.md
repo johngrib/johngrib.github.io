@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Comment
-summary : 
+summary : 주석은 짧고 간결하게
 date    : 2022-01-22 10:47:02 +0900
-updated : 2022-01-22 14:49:17 +0900
+updated : 2022-01-22 14:52:51 +0900
 tag     : 
 toc     : true
 public  : true
