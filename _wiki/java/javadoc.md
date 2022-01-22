@@ -3,11 +3,11 @@ layout  : wiki
 title   : Javadoc 작성하기
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2021-08-26 22:32:02 +0900
+updated : 2022-01-22 10:41:03 +0900
 tag     : java javadoc
 toc     : true
 public  : true
-parent  : [[java]]
+parent  : [[/java]]
 latex   : false
 issue-number : 169
 ---

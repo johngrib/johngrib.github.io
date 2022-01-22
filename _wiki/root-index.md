@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-18 21:52:02 +0900
+updated : 2022-01-22 10:43:23 +0900
 regenerate: true
 ---
 
@@ -230,10 +230,11 @@ regenerate: true
 ### [[java]]
 
 * [[/java/exception-handling]]
+* [[/java/feel-of-java]]
+* [[/java/javadoc]]
 * [[/java/object-equals]]
 * [[/java/stream]]
 * [[/java/switch]]
-* [[/java/feel-of-java]]
 * [[Object-hashCode]]
 * [[Object-toString]]
 * [[java-TemporalAdjusters]]
@@ -244,7 +245,6 @@ regenerate: true
 * [[java-functional-interface]]
 * [[java-inner-class-may-be-static]]
 * [[java-interface]]
-* [[java-javadoc]]
 * [[java-jigsaw-quick-start]]
 * [[java-lambda]]
 * [[java-mockito]]
