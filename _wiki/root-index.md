@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-22 16:30:39 +0900
+updated : 2022-01-22 17:43:04 +0900
 regenerate: true
 ---
 
@@ -283,6 +283,7 @@ regenerate: true
 * [[/clojure/reference]]
     * [[/clojure/reader]]
     * [[/clojure/evaluation]]
+    * [[/clojure/reference/transient]]
 * [[/clojure/guide]]
     * [[/clojure/guide/spec]]
     * [[/clojure/guide/reading-clojure-characters]]

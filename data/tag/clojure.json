@@ -9,6 +9,7 @@
  "clojure/higher-order-functions",
  "clojure/reader",
  "clojure/reference",
+ "clojure/reference/transient",
  "clojure/study",
  "clojure/study-00",
  "clojure/study-01",
