@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Clojure 코드를 작성하자
 summary : 삽질의 흔적
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-01-22 15:48:49 +0900
+updated : 2022-01-22 16:01:11 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -23,6 +23,7 @@ latex   : false
     - 꽤 괜찮았지만 ultisnips가 작동하지 않고, 명령행 모드가 위에 있는 것이 불편하게 느껴진다.
 - [IntelliJ]( https://www.jetbrains.com/ko-kr/idea/download/ ) + [Cursive]( https://cursive-ide.com/ ) + [ideavim]( https://github.com/JetBrains/ideavim )
     - ideavim 빼고는 다 좋다.
+    - [Clojure Extras]( https://plugins.jetbrains.com/plugin/18108-clojure-extras )도 함께 사용하자.
     - vim 서버를 띄우는 방식이 아니라 vim을 흉내내는 방식이므로 거의 모든 vim 플러그인을 사용할 수 없다.
 
 이러다 그냥 Vim을 쓰거나 IntelliJ와 함께 써야겠다는 생각을 하게 되었다.
