@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Clojure 코드를 작성하자
 summary : 삽질의 흔적
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-01-20 00:01:01 +0900
+updated : 2022-01-22 15:48:49 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -27,13 +27,31 @@ latex   : false
 
 이러다 그냥 Vim을 쓰거나 IntelliJ와 함께 써야겠다는 생각을 하게 되었다.
 
-## 환경 설정
+경험상 이 중 가장 쾌적한 환경은 IntelliJ + Cursive + ideavim 이었다.
 
-다음 세 가지 도구를 사용한다.
+하지만 Ultisnips를 사용할 수 없는 게 너무 아쉽다. 그래서 IntelliJ와 Vim을 필요에 따라 번갈아가며 사용하는 것을 고려하게 됐다.
+
+
+## 환경 설정
 
 - `clojure-lsp` : Clojure Language Server
 - `coc.nvim` : lsp와 vim 사용자를 중개해 주며, 잡다한 IDE 기능을 제공해 준다.
-- `conjure` : vim에서 다양한 언어의 대화형 환경을 구성해 준다. Clojure에 대해서는 nREPL.
+
+그리고 Vim의 Clojure REPL 통합 도구가 필요한데, 둘 중 하나를 사용하면 적절한 것 같다. (둘 다 사용하는 것은 곤란할 수 있다.)
+
+둘 다 vim에서 Lisp 계열 언어들의 대화형 환경을 구성해 준다는 공통점이 있다.
+
+- `conjure`
+    - 깔끔한 REPL 화면과 편리한 키 매핑을 제공한다.
+    - IntelliJ + Cursive와 비슷한 느낌을 준다.
+    - REPL에 붙으려면 `clj` 같은 명령의 사용 방법과 옵션을 어느 정도 이해해야 한다.
+    - 문서화가 좀 아쉽다.
+    - session 관련 버그가 있다. 해결하기 쉽지 않다.
+- `vim-iced`
+    - `iced`라는 터미널 명령을 제공해 REPL을 쉽게 띄울 수 있다.
+    - 머그잔에 들어간 귀여운 핑크색 토끼가 마스코트이다.
+    - [문서화]( https://liquidz.github.io/vim-iced/ )가 잘 되어 있는 편이다.
+    - "회사에서 개발에 사용하는 데에 지장이 없는 것"을 목표로 개발되고 있는 프로젝트이다.
 
 ### clojure-lsp 설치
 
