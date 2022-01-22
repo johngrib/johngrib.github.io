@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-22 10:43:23 +0900
+updated : 2022-01-22 10:47:01 +0900
 regenerate: true
 ---
 
@@ -192,6 +192,7 @@ regenerate: true
 
 * [[inversion-of-control]]
 * [[n-version-programming]]
+* [[/programming/comment]]
 
 ## [[language]]
 
