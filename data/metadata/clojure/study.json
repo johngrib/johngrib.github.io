@@ -9,6 +9,7 @@
   "clojure/study/collection",
   "clojure/study/merge-with",
   "clojure/study/number",
-  "clojure/study/PersistentList"
+  "clojure/study/PersistentList",
+  "clojure/study/vector"
  ]
 }

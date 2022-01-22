@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-22 10:47:01 +0900
+updated : 2022-01-22 16:30:39 +0900
 regenerate: true
 ---
 
@@ -293,10 +293,11 @@ regenerate: true
 * [[/clojure/study-01]]
 * [[/clojure/boolean]]
 * [[/clojure/study]]
-    * [[/clojure/study/collection]]
     * [[/clojure/study/PersistentList]]
+    * [[/clojure/study/collection]]
     * [[/clojure/study/merge-with]]
     * [[/clojure/study/number]]
+    * [[/clojure/study/vector]]
 * [[/clojure/vim-setting]]
 
 ### [[php]]
