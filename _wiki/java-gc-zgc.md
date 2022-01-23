@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : ZGC, The Z Garbage Collector
-summary : 작성중인 문서
+summary : scalable low-latency garbage collector
 date    : 2019-10-04 11:05:50 +0900
-updated : 2021-11-27 13:23:23 +0900
+updated : 2022-01-23 23:15:34 +0900
 tag     : java gc
 toc     : true
 public  : true
