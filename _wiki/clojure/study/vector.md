@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-23 21:58:45 +0900
+updated : 2022-01-23 22:02:18 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -45,7 +45,7 @@ latex   : true
 
 ## clojure.lang.PersistentVector
 
-vector의 구현체는 `clojure.lang.PersistentVector` 이다.
+`IPersistentVector`의 구현체 중 하나인 `clojure.lang.PersistentVector`.
 
 ### 생성과 구조
 
