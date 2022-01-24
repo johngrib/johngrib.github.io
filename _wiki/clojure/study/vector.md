@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-24 15:33:28 +0900
+updated : 2022-01-24 19:09:57 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -226,6 +226,42 @@ $$ 32 \times 32 + 32 = 1056 $$
 
 다만 `PersistentVector`는 B+ Tree와는 기능과 용도가 다르다.
 `PersistentVector`는 B+ Tree와는 달리 값 탐색을 위한 구조로 만들어진 Tree가 아니며 인덱스를 통한 랜덤 접근을 지원하는 유사 배열 구현으로 볼 수 있다.
+
+### nth를 통한 랜덤 엑세스
+
+다음은 `PersistentVector`의 `nth` 메소드이다.
+
+[clojure.lang.PersistentVector::nth]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/PersistentVector.java#L161 )
+
+```java
+public Object nth(int i){
+    ensureEditable();               // TransientVector 라면 예외를 던진다
+    Object[] node = arrayFor(i);
+    return node[i & 0x01f];
+}
+```
+
+읽어보면 `arrayFor`에 인덱스값을 넘겨 배열을 받아오는데, 이건 해당 인덱스의 아이템이 포함되어 있는 노드 하나를 가져오는 작업이다.
+
+노드 하나는 다음과 같이 가져온다.
+
+```java
+private Object[] arrayFor(int i){
+    if(i >= 0 && i < cnt)
+        {
+        if(i >= tailoff())
+            return tail;
+        Node node = root;
+        for(int level = shift; level > 0; level -= 5)
+            node = (Node) node.array[(i >>> level) & 0x01f];
+        return node.array;
+        }
+    throw new IndexOutOfBoundsException();
+}
+```
+
+- 인덱스 `i`가 `tailoff()` 이상이면 `tail`을 리턴한다.
+- 그렇지 않다면 `root` 노드의 깊이를 타고 내려가서 (이 과정에서 `for` 루프가 사용된다) 해당 인덱스가 포함된 노드를 리턴한다.
 
 
 ### Clojure 컴파일러의 벡터 생성
