@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-25 00:14:12 +0900
+updated : 2022-01-25 00:25:20 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -262,9 +262,26 @@ f(n) =
 \end{cases}
 $$
 
+- 참고: $$ 0 \le n \lt 33$$ 인 경우에는 아이템이 tail에만 있기 때문에 트리의 높이가 0 이다.
+
+이 함수를 Javascript로 간단하게 표현하자면 다음과 같다.
+
+```javascript
+function calcHeight(cnt) {
+    if (0 <= cnt && cnt < 33) {
+        reutrn 0;
+    } else if (33 <= cnt && cnt < 65) {
+        return 2;
+    }
+    return 1 + Math.floor(Math.log(cnt - 33) / Math.log(32));
+}
+```
+
+아래의 입력칸에 아이템 수를 넣어보면 계산 결과를 볼 수 있다.
+
 {% raw %}
 <div id="locomotive-search">
-    <div>N = <input type="number" value="32800" id="vector-item-count"/>, f(n) = <span id="tree-height">3</span> </div>
+    <div>n = <input type="number" value="32800" id="vector-item-count"/>, f(n) = <span id="tree-height">3</span> </div>
     <div><input type="button" value="Tree 높이 계산하기" onClick="calcHeight()"/>
     <input type="button" value="WolframAlpha에 물어보기" onClick="wolfram()"/></div>
 </div>
@@ -286,7 +303,7 @@ function calcHeight() {
     } else if (33 <= cnt && cnt < 65) {
         result = '2';
     } else if (65 <= cnt) {
-        result = Math.floor(Math.log(cnt - 33) / Math.log(32)) + 1;
+        result = 1 + Math.floor(Math.log(cnt - 33) / Math.log(32));
     }
     div.innerHTML = result;
 }
