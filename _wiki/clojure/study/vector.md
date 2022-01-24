@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-24 14:07:11 +0900
+updated : 2022-01-24 14:33:34 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -46,6 +46,51 @@ latex   : true
 ## clojure.lang.PersistentVector
 
 `IPersistentVector`의 구현체 중 하나인 `clojure.lang.PersistentVector`.
+
+### TransientVector
+
+`PersistentVector`의 정적 팩토리 메소드를 보면 `TransientVector`라는 타입을 볼 수 있다.
+`TransientVector`는 `PersistentVector`의 내부 클래스이다.
+
+[clojure.lang.PersistentVector::create]( https://github.com/clojure/clojure/blob/5451cee06b9e31513a19e596e4e155d1f08d2a8d/src/jvm/clojure/lang/PersistentVector.java#L91 )
+
+```java
+static public PersistentVector create(List list){
+    int size = list.size();
+    if (size <= 32)
+        return new PersistentVector(size, 5, PersistentVector.EMPTY_NODE, list.toArray());
+
+    TransientVector ret = EMPTY.asTransient();
+    for(int i=0; i<size; i++)
+        ret = ret.conj(list.get(i));
+    return ret.persistent();
+}
+```
+
+1. size가 32 이하라면 `new PersistentVector`를 호출하며 `list.toArray()`를 넘긴다.
+    - 이렇게 넘겨준 `list.toArray()`는 새로 생성된 `PersistentVector`의 tail이 된다.
+2. 그러나 32를 초과한다면 `TransientVector`를 생성한다.
+    - `asTransient()`는 `return new TransientVector(this);`.
+3. `items`를 순회하며 `TransientVector`의 `conj`를 호출해 `item`을 하나하나 붙여준다.
+    - 이 `conj`는 매번 새로운 벡터를 생성하지 않는다. `TransientVector`의 상태를 바꿔가며 작업을 한다.
+    - [[/clojure/reference/transient]] 문서 참고.
+4. 루프가 끝나면 `TransientVector`를 `PersistentVector`로 변환해 리턴한다.
+
+`persistent()`는 단순하게 `arraycopy`를 수행한 다음, `new PersistentVector`를 리턴한다.
+
+```java
+public PersistentVector persistent(){
+    ensureEditable();
+    root.edit.set(null);
+    Object[] trimmedTail = new Object[cnt-tailoff()];
+    System.arraycopy(tail,0,trimmedTail,0,trimmedTail.length);
+    return new PersistentVector(cnt, shift, root, trimmedTail);
+}
+```
+
+`TransientVector`는 `PersistentVector`를 생성하는 과정에서 퍼포먼스를 위해 임시로 생성하는 mutable한 자료구조로, 성능을 위해 선택된 방식이다.
+
+단, `TransientVector`는 생성 과정에서만 사용되며, `PersistentVector`의 생성 결과로 공유되지는 않는다.
 
 ### 생성과 구조
 
@@ -180,50 +225,6 @@ $$ 32 \times 32 + 32 = 1056 $$
 
 다만 `PersistentVector`는 B+ Tree와는 기능과 용도가 다르다.
 `PersistentVector`는 B+ Tree와는 달리 값 탐색을 위한 구조로 만들어진 Tree가 아니며 인덱스를 통한 랜덤 접근을 지원하는 유사 배열 구현으로 볼 수 있다.
-
-### TransientVector
-
-`PersistentVector`의 정적 팩토리 메소드를 보면 `TransientVector`라는 타입을 볼 수 있다.
-
-[clojure.lang.PersistentVector::create]( https://github.com/clojure/clojure/blob/5451cee06b9e31513a19e596e4e155d1f08d2a8d/src/jvm/clojure/lang/PersistentVector.java#L91 )
-
-```java
-static public PersistentVector create(List list){
-    int size = list.size();
-    if (size <= 32)
-        return new PersistentVector(size, 5, PersistentVector.EMPTY_NODE, list.toArray());
-
-    TransientVector ret = EMPTY.asTransient();
-    for(int i=0; i<size; i++)
-        ret = ret.conj(list.get(i));
-    return ret.persistent();
-}
-```
-
-1. size가 32 이하라면 `new PersistentVector`를 호출하며 `list.toArray()`를 넘긴다.
-    - 이렇게 넘겨준 `list.toArray()`는 새로 생성된 `PersistentVector`의 tail이 된다.
-2. 그러나 32를 초과한다면 `TransientVector`를 생성한다.
-    - `asTransient()`는 `return new TransientVector(this);`.
-3. `items`를 순회하며 `TransientVector`의 `conj`를 호출해 `item`을 하나하나 붙여준다.
-    - 이 `conj`는 매번 새로운 벡터를 생성하지 않는다. `TransientVector`의 상태를 바꿔가며 작업을 한다.
-    - [[/clojure/reference/transient]] 문서 참고.
-4. 루프가 끝나면 `TransientVector`를 `PersistentVector`로 변환해 리턴한다.
-
-`persistent()`는 단순하게 `arraycopy`를 수행한 다음, `new PersistentVector`를 리턴한다.
-
-```java
-public PersistentVector persistent(){
-    ensureEditable();
-    root.edit.set(null);
-    Object[] trimmedTail = new Object[cnt-tailoff()];
-    System.arraycopy(tail,0,trimmedTail,0,trimmedTail.length);
-    return new PersistentVector(cnt, shift, root, trimmedTail);
-}
-```
-
-`TransientVector`는 `PersistentVector`를 생성하는 과정에서 퍼포먼스를 위해 임시로 생성하는 mutable한 자료구조로, 성능을 위해 선택된 방식이다.
-
-단, `TransientVector`는 생성 과정에서만 사용되며, `PersistentVector`의 생성 결과로 공유되지는 않는다.
 
 
 ### Clojure 컴파일러의 벡터 생성
