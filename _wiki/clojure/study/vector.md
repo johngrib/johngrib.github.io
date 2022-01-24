@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-23 22:02:18 +0900
+updated : 2022-01-24 14:07:11 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -88,9 +88,11 @@ public final static PersistentVector EMPTY =
 
 ![]( ./vector-96.svg )
 
-아이템이 97개라면 `tail`이 그대로 `root[2]`가 되며, 새로운 `tail`이 만들어진다.
+아이템이 1개 더 있는 97개라면 `tail`이 그대로 `root[2]`가 되며, 새로운 `tail`이 만들어진다.
 
 ![]( ./vector-97.svg )
+
+그림 속의 새로 만든 `tail`은 마치 1칸만 갖고 있는 것 같지만 실제로는 32 사이즈를 갖는 배열이다.
 
 이 과정은 [`clojure.lang.PersistentVector::create(List list)`의 `return` 문](https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/PersistentVector.java#L99 )에 break point를 찍어두고 벡터를 생성해보면 쉽게 관찰할 수 있다.
 
