@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-24 19:09:57 +0900
+updated : 2022-01-24 23:59:01 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -12,6 +12,12 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+$$
+\def\ceil#1{\lceil #1 \rceil}
+\def\floor#1{\lfloor #1 \rfloor}
+\def\frfr#1{\{ #1 \}}
+$$
 
 ## defn
 
@@ -227,9 +233,74 @@ $$ 32 \times 32 + 32 = 1056 $$
 다만 `PersistentVector`는 B+ Tree와는 기능과 용도가 다르다.
 `PersistentVector`는 B+ Tree와는 달리 값 탐색을 위한 구조로 만들어진 Tree가 아니며 인덱스를 통한 랜덤 접근을 지원하는 유사 배열 구현으로 볼 수 있다.
 
+### 트리의 높이
+
+아이템의 수에 따른 트리의 높이를 실험해보면 다음과 같다.
+
+| 아이템의 수 | 트리의 높이 | tail 개수 | 아이템의 수           |
+|-------------|-------------|-----------|-----------------------|
+| 1           | 0           | 1         | $$ 1 $$               |
+| 32          | 0           | 32        | $$ 32 $$              |
+| 33          | 2           | 1         | $$ 32 + 1 $$          |
+| 1056        | 2           | 32        | $$ 32 ^ 2 + 32 $$     |
+| 1057        | 3           | 1         | $$ 32 ^ 2 + 32 + 1 $$ |
+| 32800       | 3           | 32        | $$ 32 ^ 3 + 32 $$     |
+| 32801       | 4           | 1         | $$ 32 ^ 3 + 32 + 1 $$ |
+| 1048608     | 4           | 32        | $$ 32 ^ 4 + 32 $$     |
+| 1048609     | 5           | 1         | $$ 32 ^ 4 + 32 + 1 $$ |
+| 33554464    | 5           | 32        | $$ 32 ^ 5 + 32 $$     |
+
+잘 살펴보면 규칙이 눈에 보인다.
+다음과 같이 규칙에 따라 트리의 높이를 계산하는 식 $$ f(n) $$을 만들어 보았다.
+
+$$
+f(n) =
+\begin{cases}
+    0,  & \text{if } \ 0 \le n \lt 33 \\
+    2, & \text{if } \ 33 \le n \lt 65 \\
+    \floor{ \log_{32} (N-33) } + 1, & \text{if } \ 65 \le n \\
+\end{cases}
+$$
+
+{% raw %}
+<div id="locomotive-search">
+    <div>N = <input type="number" value="32800" id="vector-item-count"/>, f(n) = <span id="tree-height">3</span> </div>
+    <div><input type="button" value="Tree 높이 계산하기" onClick="calcHeight()"/>
+    <input type="button" value="WolframAlpha에 물어보기" onClick="wolfram()"/></div>
+</div>
+{% endraw %}
+
+{% raw %}
+<script>
+function wolfram() {
+    var cnt = parseInt(document.getElementById('vector-item-count').value, 10);
+    var url = `https://www.wolframalpha.com/input/?i=floor%28log32%28${cnt}-33%29%29+%2B+1` ;
+    window.open(url, '_blank');
+}
+function calcHeight() {
+    var cnt = parseInt(document.getElementById('vector-item-count').value, 10);
+    var div = document.getElementById('tree-height');
+    var result = '';
+    if (0 <= cnt && cnt < 33) {
+        result = '0';
+    } else if (33 <= cnt && cnt < 65) {
+        result = '2';
+    } else if (65 <= cnt) {
+        result = Math.floor(Math.log(cnt - 33) / Math.log(32)) + 1;
+    }
+    div.innerHTML = result;
+}
+</script>
+{% endraw %}
+
 ### nth를 통한 랜덤 엑세스
 
-다음은 `PersistentVector`의 `nth` 메소드이다.
+아이템의 수가 65 이상일 때 트리의 높이가 $$\floor{ \log_{32} (N-33) } + 1 $$ 이므로
+랜덤 엑세스 퍼포먼스는 $$O( \log_{32} N )$$ 이라는 것을 알 수 있다.
+
+아이템의 수가 3355만 4465개가 되어야 높이가 6에 도달한다는 걸 생각해 보면 랜덤 엑세스 퍼포먼스는 괜찮은 편이다.
+
+이제 이 작업을 수행하는 `nth` 메소드를 살펴보자.
 
 [clojure.lang.PersistentVector::nth]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/PersistentVector.java#L161 )
 
