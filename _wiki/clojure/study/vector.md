@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-24 14:33:34 +0900
+updated : 2022-01-24 15:33:28 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -123,7 +123,8 @@ public final static PersistentVector EMPTY =
 
 `root`는 각각 `32`개의 아이템을 갖는 배열의 배열이며, `tail`은 `32`개 까지의 아이템을 가질 수 있는 배열이다.
 
-새로운 아이템을 계속해서 추가한다면 `tail`은 일종의 버퍼 역할을 하는데 `tail`에 32개의 아이템이 들어가게 되면 `tail`이 `root`의 새로운 아이템으로 등록되는 방식으로 작동한다.
+`PersistentVector`를 생성할 때 임시로 만든 `TransientVector`에 `conj`를 사용해 새로운 아이템을 계속해서 추가하게 된다.
+이 때 `tail`은 일종의 버퍼 역할을 하는데 `tail`에 32개의 아이템이 들어가게 되면 `tail`이 `root`에 추가되는 방식으로 작동한다.
 
 아래는 이렇게 90개의 아이템이 있는 경우를 내가 그림으로 그린 것이다.
 
