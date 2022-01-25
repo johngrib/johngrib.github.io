@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 00:33:52 +0900
+updated : 2022-01-26 00:40:12 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -56,9 +56,11 @@ $$
 ### TransientVector
 
 `PersistentVector`의 정적 팩토리 메소드를 보면 `TransientVector`라는 타입을 볼 수 있다.
-`TransientVector`는 `PersistentVector`의 내부 클래스이다.
+`TransientVector`는 `PersistentVector`의 내부 클래스이며, `PersistentVector`의 생성에 사용되는 특수한 구현이다.
 
-[clojure.lang.PersistentVector::create]( https://github.com/clojure/clojure/blob/5451cee06b9e31513a19e596e4e155d1f08d2a8d/src/jvm/clojure/lang/PersistentVector.java#L91 )
+(Clojure의 transient 개념에 대해서는 [[/clojure/reference/transient]] 문서 참고.)
+
+[clojure.lang.PersistentVector::create]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/PersistentVector.java#L91-L100 )
 
 ```java
 static public PersistentVector create(List list){
@@ -79,7 +81,6 @@ static public PersistentVector create(List list){
     - `asTransient()`는 `return new TransientVector(this);`.
 3. `items`를 순회하며 `TransientVector`의 `conj`를 호출해 `item`을 하나하나 붙여준다.
     - 이 `conj`는 매번 새로운 벡터를 생성하지 않는다. `TransientVector`의 상태를 바꿔가며 작업을 한다.
-    - [[/clojure/reference/transient]] 문서 참고.
 4. 루프가 끝나면 `TransientVector`를 `PersistentVector`로 변환해 리턴한다.
 
 `persistent()`는 단순하게 `arraycopy`를 수행한 다음, `new PersistentVector`를 리턴한다.
