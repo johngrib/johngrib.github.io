@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-25 11:50:54 +0900
+updated : 2022-01-26 00:33:52 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -352,9 +352,88 @@ private Object[] arrayFor(int i){
 - 인덱스 `i`가 `tailoff()` 이상이면 `tail`을 리턴한다.
 - 그렇지 않다면 `root` 노드의 깊이를 타고 내려가서 (이 과정에서 `for` 루프가 사용된다) 해당 인덱스가 포함된 노드를 리턴한다.
 
+### 불변성을 활용한 노드의 공유
+
+`PersistentVector`는 불변성을 보장하는 자료구조이기 때문에, 벡터를 이루는 각 아이템 값의 업데이트를 지원하지 않는다.
+
+즉 한 인덱스의 값을 바꾸는 것이 필요하다면 값 하나만 다른, 복제된 벡터를 만들어야 하는 방식이다.
+
+그러나 그렇다고 해서 `PersistentVector`는 모든 아이템을 array copy하는 방식이 아니라,
+해당 아이템이 포함되어 있는 노드(길이가 32인 배열)만 새로 생성하고 벡터의 나머지는 원본 벡터의 다른 노드들을 참조하는 방식을 사용한다.
+
+이 작업을 이해하기 위해 `assocN` 메소드를 살펴보자.
+
+[clojure.lang.PersistentVector::assocN]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/PersistentVector.java#L172-L203 )
+
+```java
+public PersistentVector assocN(int i, Object val){
+    if(i >= 0 && i < cnt)
+        {
+        if(i >= tailoff())
+            {
+            // assoc 하려는 인덱스가 tail에 있다면 새로운 복제 tail을 만든다.
+            Object[] newTail = new Object[tail.length];
+            System.arraycopy(tail, 0, newTail, 0, tail.length);
+            // 복제한 새로운 tail의 목표 인덱스의 값을 업데이트한다.
+            newTail[i & 0x01f] = val;
+            // 새로운 tail을 달고 있고, 나머지 노드는 그대로 연결되어 있는 벡터를 리턴한다.
+            return new PersistentVector(meta(), cnt, shift, root, newTail);
+            }
+        // assoc 하려는 인덱스가 노드 중에 있다면...
+        return new PersistentVector(meta(), cnt, shift, doAssoc(shift, root, i, val), tail);
+        }
+    if(i == cnt)
+        return cons(val);
+    throw new IndexOutOfBoundsException();
+}
+
+private static Node doAssoc(int level, Node node, int i, Object val){
+    // 목표 노드의 복제 노드
+    Node ret = new Node(node.edit,node.array.clone());
+    if(level == 0)
+        {
+        // 목표 노드가 맞다면 목표 인덱스의 값을 업데이트한다.
+        ret.array[i & 0x01f] = val;
+        }
+    else
+        {
+        // 목표 노드가 아니라면 다음 노드로 재귀하며 작업한다.
+        // level은 shift 값으로 5씩 감소시킨다.
+        int subidx = (i >>> level) & 0x01f;
+        ret.array[subidx] = doAssoc(level - 5, (Node) node.array[subidx], i, val);
+        }
+    // 작업이 끝난 복제 노드를 리턴한다.
+    return ret;
+}
+```
+
+앞에서 살펴봤던 1057개의 아이템이 있는 벡터에서 `item1056`만 `item1056 updated`로 편집된 벡터가 필요하다고 하자.
+이럴 때 `assocN`을 사용하면 다음과 같은 벡터가 생성되어 리턴된다. 새로 생성된 벡터의 `root[0]`은 이전 벡터의 `root[0]`과 같은 배열을 공유한다.
+(이 그림에서 `tail`은 그리기 귀찮아서 생략하였다.)
+
+![]( ./vector-1057-tree-copy.svg )
+
+즉 리프 노드 아이템은 `item1025`부터 `item1055`까지의 31개만 복사되었고, 나머지는 원본의 노드를 참조하는 방식으로 해결되었다.
+`PersistentVector`는 불변성을 토대로 하고 있기 때문에, 이렇게 내부 구조를 이루고 있는 노드들을 다른 벡터와 자유롭게 공유할 수 있다.
+한편 불변성을 토대로 삼는 트리 구조라는 특성 때문에 가능한 자연스러운 노드 공유는 git의 핵심 기법이기도 하다.
+
+![git의 데이터 모델]( git-data-model-3.png )
+{:style="max-width:600px"}
+[^pro-git-10-2]
+
+위의 그림은 git의 데이터 모델의 예제로, `version 2`와 `new file`이라는 blob을 `3c4e9c`와 `0155eb`라는 두 트리가 참조하고 있는 상황을 보여준다.
+이렇게 두 트리가 같은 blob을 안심하고 참조하는 것이 가능한 이유는 git의 blob이 immutable하기 때문이다.
+
+Java ArrayList는 mutable하기 때문에 두 ArrayList가 아이템을 공유하면 다양한 문제가 발생할 수 있다.
+따라서 보통은 ArrayList를 이렇게 사용하지 않는다.
+하지만 이건 ArrayList의 결함이나 단점이 아니라 ArrayList가 Dynamic Array의 구현이기 때문이다.
+구조와 컨셉이 다르기 때문에 자료구조의 사용 방법이 다른 것이지 ArrayList가 나쁘거나 잘못된 것은 아니다.
+
 ### java.util.ArrayList와의 비교
 
 Java의 ArrayList는 최종적으로 추가되는 아이템의 수를 초기화 시점에 알고있는지에 따라 성능상에 차이가 크다.
+
+ArrayList는 grow factor를 1.5로 삼고 있는 Dynamic Array의 구현체이므로 grow의 횟수를 잘 제어할 수 있는지 없는지에 따라 생성 퍼포먼스가 크게 차이날 수 있다.
 
 [ArrayList의 `DEFAULT_CAPACITY`는 10]( https://github.com/openjdk/jdk/blob/jdk-19%2B6/src/java.base/share/classes/java/util/ArrayList.java#L118 )인데,
 하나씩 하나씩 아이템을 추가하게 되면 1.5배의 capacity를 갖는 새로운 배열을 생성하고, 그 배열로 array copy를 한다.
@@ -564,10 +643,11 @@ public class Tuple{
 ## 참고문헌
 
 - <https://clojuredocs.org/clojure.core/vector >
-- [openjdk/jdk jdk-19+6 (github.com)]( https://github.com/openjdk/jdk/tree/jdk-19%2B6 )
+- [Pro Git 10.2 Git Internals - Git Objects (git-scm.com)]( https://git-scm.com/book/en/v2/Git-Internals-Git-Objects )
 - [Understanding Clojure's Persistent Vectors, pt. 1]( https://hypirion.com/musings/understanding-persistent-vector-pt-1 )
 - [Understanding Clojure's Persistent Vectors, pt. 2]( https://hypirion.com/musings/understanding-persistent-vector-pt-2 )
 - [Understanding Clojure's Persistent Vectors, pt. 3]( https://hypirion.com/musings/understanding-persistent-vector-pt-3 )
+- [openjdk/jdk jdk-19+6 (github.com)]( https://github.com/openjdk/jdk/tree/jdk-19%2B6 )
 - 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
 
 ## 주석
@@ -575,4 +655,5 @@ public class Tuple{
 [^bernstein-b-tree-example]: 트랜잭션 처리의 원리. 6.9 B-Tree 잠금. 225쪽.
 [^vim-macro-grow]: 이 목록은 vim 매크로로 생성했다. 사용한 매크로는 `"ayiwo^R=@a*1.5^M<Esc>0` 이다.
 [^calc-bc]: vim substitute를 사용해 `,` 를 `+` 로 바꾸고 vim command line에서 `:!bc`로 계산하였다.
+[^pro-git-10-2]: [Pro Git 10.2장]( https://git-scm.com/book/en/v2/Git-Internals-Git-Objects )에 포함된 그림 149.
 
