@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-25 00:25:20 +0900
+updated : 2022-01-25 09:24:36 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -226,9 +226,10 @@ $$ 32 \times 32 + 32 = 1056 $$
 
 그림 속 `root[1].root[0]`을 빨간색으로 색칠한 이유는 해당 노드가 아이템의 수가 1056개일때까지는 tail이었다는 점을 강조하기 위해서이다.
 
-그런데 이 그림을 보다보면 차수가 13인 B+ Tree와 유사한 모양을 갖고 있다는 것도 알 수 있다.
+그런데 이 그림을 보다보면 차수가 13인 [[b-tree]]{B+ Tree}와 유사한 모양을 갖고 있다는 것도 알 수 있다.
 
 ![]( ./bplus-example.png )
+[^bernstein-b-tree-example]
 
 다만 `PersistentVector`는 B+ Tree와는 기능과 용도가 다르다.
 `PersistentVector`는 B+ Tree와는 달리 값 탐색을 위한 구조로 만들어진 Tree가 아니며 인덱스를 통한 랜덤 접근을 지원하는 유사 배열 구현으로 볼 수 있다.
@@ -486,4 +487,9 @@ public class Tuple{
 - [Understanding Clojure's Persistent Vectors, pt. 1]( https://hypirion.com/musings/understanding-persistent-vector-pt-1 )
 - [Understanding Clojure's Persistent Vectors, pt. 2]( https://hypirion.com/musings/understanding-persistent-vector-pt-2 )
 - [Understanding Clojure's Persistent Vectors, pt. 3]( https://hypirion.com/musings/understanding-persistent-vector-pt-3 )
+- 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
+
+## 주석
+
+[^bernstein-b-tree-example]: 트랜잭션 처리의 원리. 6.9 B-Tree 잠금. 225쪽.
 
