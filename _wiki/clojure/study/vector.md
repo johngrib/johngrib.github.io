@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 01:19:28 +0900
+updated : 2022-01-26 01:22:14 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -513,11 +513,9 @@ public ArrayList(int initialCapacity) {
 
 `TransientVector`를 사용해 생성되는 `PersistentVector`는 아이템을 추가했을 때 array copy를 사용하지 않는다. 아이템이 많아도 각 tail을 트리에 연결해주는 작업만 하면 된다.
 
-tail은 32개가 될 때마다 꽉 차며, 33번째 아이템이 추가되려 할 때 트리에 연결되므로, tail의 레퍼런스가 트리에 연결된 횟수는 대략 $$ \frac{ 32801 }{ 32 } $$. 약 1025 회에 가깝다. ArrayList에 32801개의 아이템을 집어넣을 때 아이템 복사가 14만회 이상 수행된다는 추정을 떠올려보면 `PersistentVector`의 용도도 머릿속에서 좁혀진다.
-
-`PersistentVector`는 배열을 32차 B+ 트리로 구성한 것과 흡사하므로 ArrayList와는 용도가 상당히 다르다고 할 수 있다.
-
-`PersistentVector`는 immutable하다는 특징이 있기 때문에 내부의 노드를 자연스럽게 공유할 수 있다는 무서운 특징이 있다.
+tail은 32개가 될 때마다 꽉 차며 33번째 아이템이 추가되려 할 때 트리에 연결되므로, tail의 레퍼런스가 트리에 연결된 횟수는 대략 $$ \frac{ 32801 }{ 32 } $$.
+약 1025 회에 가깝다.
+ArrayList에 32801개의 아이템을 집어넣을 때 아이템 복사가 14만회 이상 수행된다는 추정을 떠올려보자.
 
 
 ### Clojure 컴파일러의 벡터 생성
