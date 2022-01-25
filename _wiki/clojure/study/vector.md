@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 01:05:51 +0900
+updated : 2022-01-26 01:13:54 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -261,13 +261,19 @@ f(n) =
 \begin{cases}
     0,  & \text{if } \ 0 \le n \lt 33 \\
     2, & \text{if } \ 33 \le n \lt 65 \\
-    \floor{ \log_{32} (N-33) } + 1, & \text{if } \ 65 \le n \\
+    \floor{ \log_{32} (n-33) } + 1, & \text{if } \ 65 \le n \\
 \end{cases}
 $$
 
 - 참고: $$ 0 \le n \lt 33$$ 인 경우에는 아이템이 tail에만 있기 때문에 트리의 높이가 0 이다.
 
+복잡해 보이지만 이진 트리의 높이가 $$ 2^n - 1 $$ 이라는 것을 고려해보면 이해하기 쉽다.
+
+- 차수가 32인 트리이므로 log의 밑을 32로 삼았고, `-1`에 `-32`도 해 주어서 `-33`이 된 것이다.
+- $$ \floor{ \ } $$ 는 내림(floor)을 의미하며 트리의 높이를 자연수로 얻기 위해 추가한 것이다.
+
 이 함수를 Javascript로 간단하게 표현하자면 다음과 같다.
+로그 연산은 $$ \log_{32} (n-33) = \frac{ \log n-33 }{ \log 32 } $$ 성질을 응용했다.
 
 ```javascript
 function calcHeight(cnt) {
