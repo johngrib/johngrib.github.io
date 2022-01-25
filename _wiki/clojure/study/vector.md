@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 01:13:54 +0900
+updated : 2022-01-26 01:19:28 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -417,7 +417,7 @@ private static Node doAssoc(int level, Node node, int i, Object val){
 
 앞에서 살펴봤던 1057개의 아이템이 있는 벡터에서 `item1056`만 `item1056 updated`로 편집된 벡터가 필요하다고 하자.
 이럴 때 `assocN`을 사용하면 다음과 같은 벡터가 생성되어 리턴된다. 새로 생성된 벡터의 `root[0]`은 이전 벡터의 `root[0]`과 같은 배열을 공유한다.
-(이 그림에서 `tail`은 그리기 귀찮아서 생략하였다.)
+(이 그림에서 `tail`은 그리기 귀찮아서 생략하였다.)[^polymatheia-vector-1]
 
 ![]( ./vector-1057-tree-copy.svg )
 
@@ -655,6 +655,7 @@ public class Tuple{
 - [Understanding Clojure's Persistent Vectors, pt. 1]( https://hypirion.com/musings/understanding-persistent-vector-pt-1 )
 - [Understanding Clojure's Persistent Vectors, pt. 2]( https://hypirion.com/musings/understanding-persistent-vector-pt-2 )
 - [Understanding Clojure's Persistent Vectors, pt. 3]( https://hypirion.com/musings/understanding-persistent-vector-pt-3 )
+- [clojure 1.11.0-alpha4 소스코드 (github.com)]( https://github.com/clojure/clojure/tree/clojure-1.11.0-alpha4 )
 - [openjdk/jdk jdk-19+6 (github.com)]( https://github.com/openjdk/jdk/tree/jdk-19%2B6 )
 - 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
 
@@ -664,4 +665,5 @@ public class Tuple{
 [^vim-macro-grow]: 이 목록은 vim 매크로로 생성했다. 사용한 매크로는 `"ayiwo^R=@a*1.5^M<Esc>0` 이다.
 [^calc-bc]: vim substitute를 사용해 `,` 를 `+` 로 바꾸고 vim command line에서 `:!bc`로 계산하였다.
 [^pro-git-10-2]: [Pro Git 10.2장]( https://git-scm.com/book/en/v2/Git-Internals-Git-Objects )에 포함된 그림 149.
+[^polymatheia-vector-1]: [Understanding Clojure's Persistent Vectors, pt. 1](https://hypirion.com/musings/understanding-persistent-vector-pt-1 ) 문서를 참고하면 이와 관련된 풍부한 설명을 읽을 수 있다.
 
