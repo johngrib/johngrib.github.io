@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-25 09:46:28 +0900
+updated : 2022-01-25 11:50:54 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -352,6 +352,86 @@ private Object[] arrayFor(int i){
 - 인덱스 `i`가 `tailoff()` 이상이면 `tail`을 리턴한다.
 - 그렇지 않다면 `root` 노드의 깊이를 타고 내려가서 (이 과정에서 `for` 루프가 사용된다) 해당 인덱스가 포함된 노드를 리턴한다.
 
+### java.util.ArrayList와의 비교
+
+Java의 ArrayList는 최종적으로 추가되는 아이템의 수를 초기화 시점에 알고있는지에 따라 성능상에 차이가 크다.
+
+[ArrayList의 `DEFAULT_CAPACITY`는 10]( https://github.com/openjdk/jdk/blob/jdk-19%2B6/src/java.base/share/classes/java/util/ArrayList.java#L118 )인데,
+하나씩 하나씩 아이템을 추가하게 되면 1.5배의 capacity를 갖는 새로운 배열을 생성하고, 그 배열로 array copy를 한다.
+
+[java.util.ArrayList::grow]( https://github.com/openjdk/jdk/blob/jdk-19%2B6/src/java.base/share/classes/java/util/ArrayList.java#L224-L241 )
+
+```java
+private Object[] grow(int minCapacity) {
+    int oldCapacity = elementData.length;
+    if (oldCapacity > 0 || elementData != DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
+        // 일반적으로 새 capacity는 oldCapacity + (oldCapacity / 2)
+        int newCapacity = ArraysSupport.newLength(oldCapacity,
+                minCapacity - oldCapacity, /* minimum growth */
+                oldCapacity >> 1           /* preferred growth */);
+        return elementData = Arrays.copyOf(elementData, newCapacity);
+    } else {
+        return elementData = new Object[Math.max(DEFAULT_CAPACITY, minCapacity)];
+    }
+}
+```
+
+따라서 만약 다수의 아이템을 ArrayList에 집어넣으려 할 때의 최악의 케이스는 다음과 같이 아이템을 하나하나 추가하는 것이다.
+
+```java
+final List<Integer> numbers = new ArrayList<>();
+for (int i = 0; i < 32801; i++) {
+    numbers.add(i);
+}
+```
+
+이렇게 하면 32801개의 아이템을 ArrayList에 추가할 때 내부에서 새로 만드는 배열만 해도 다음과 같다.
+
+10, 15, 22, 33, 49, 73, 109, 163, 244, 366, 549, 823, 1234, 1851, 2776, 4164, 6246, 9369, 14053, 21079, 31618, 47427
+[^vim-macro-grow]
+
+array copy를 통해 복사된 아이템의 수만 계산하면 146,029.[^calc-bc]
+
+$$ 10 + 15 + ... + 31618 + (32801 - 31618) = 146029 $$
+
+그러므로 32801개의 아이템을 ArrayList에 하나 하나 추가하면 최소한 146029회의 값 복사가 발생한다.
+이를 비트 연산으로 인한 floor를 고려하지 않는다면 단순 등비수열의 합으로 소박하게 표현하는 것도 가능하다.
+
+아이템의 수를 n 이라 하면 grow의 발생 횟수 $$ G_n $$을 다음과 같이 생각할 수 있다. (아이템의 수가 11일 때 최초 발생한다는 전제)
+
+$$ G_n = \ceil{ \log_{1.5} ( { n \over 10 }) } $$
+
+[n = 47427 인 경우의 $$ G_n $$ (www.wolframalpha.com)]( https://www.wolframalpha.com/input/?i=ceil%28log1.5%28+47427+%2F10%29%29 )
+
+그러므로 복사 횟수는 아이템의 수가 10 이상일 경우 대충 다음과 같을 것이다.
+
+$$
+\begin{align}
+S_n & = { 10 ( 1.5^{G_n} - 1 ) \over 1.5 - 1 } \\
+    & =   20 ( 1.5^{G_n} - 1 ) \\
+    & =   20 ( 1.5^{ \ceil{ \log_{1.5} ( { n \over 10 }) } } - 1 ) \\
+\end{align}
+$$
+
+식으로 따지면 복잡하니 32801개의 아이템이 있을 때 146029회의 값 복사가 예상된다는 것에 주목하자.
+그러나 이것은 ArrayList를 멍청하게 사용한 방법이기 때문에 그렇다.
+
+ArrayList는 몇 개의 아이템을 추가할 지 결정하면 최적의 생성 finalize 성능을 보이는데, `initialCapacity`를 지정해 생성하면 내부 배열의 사이즈를 확정할 수 있기 때문이다.
+
+```java
+public ArrayList(int initialCapacity) {
+```
+
+이 생성자를 사용하고 capcity를 초과하는 아이템을 더 넣지만 않는다면, array copy를 하지 않기 때문에 $$O(n)$$의 성능을 보인다.
+
+`TransientVector`를 사용해 생성되는 `PersistentVector`는 아이템을 추가했을 때 array copy를 사용하지 않는다. 아이템이 많아도 각 tail을 트리에 연결해주는 작업만 하면 된다.
+
+tail은 32개가 될 때마다 꽉 차며, 33번째 아이템이 추가되려 할 때 트리에 연결되므로, tail의 레퍼런스가 트리에 연결된 횟수는 대략 $$ \frac{ 32801 }{ 32 } $$. 약 1025 회에 가깝다. ArrayList에 32801개의 아이템을 집어넣을 때 아이템 복사가 14만회 이상 수행된다는 추정을 떠올려보면 `PersistentVector`의 용도도 머릿속에서 좁혀진다.
+
+`PersistentVector`는 배열을 32차 B+ 트리로 구성한 것과 흡사하므로 ArrayList와는 용도가 상당히 다르다고 할 수 있다.
+
+`PersistentVector`는 immutable하다는 특징이 있기 때문에 내부의 노드를 자연스럽게 공유할 수 있다는 무서운 특징이 있다.
+
 
 ### Clojure 컴파일러의 벡터 생성
 
@@ -484,6 +564,7 @@ public class Tuple{
 ## 참고문헌
 
 - <https://clojuredocs.org/clojure.core/vector >
+- [openjdk/jdk jdk-19+6 (github.com)]( https://github.com/openjdk/jdk/tree/jdk-19%2B6 )
 - [Understanding Clojure's Persistent Vectors, pt. 1]( https://hypirion.com/musings/understanding-persistent-vector-pt-1 )
 - [Understanding Clojure's Persistent Vectors, pt. 2]( https://hypirion.com/musings/understanding-persistent-vector-pt-2 )
 - [Understanding Clojure's Persistent Vectors, pt. 3]( https://hypirion.com/musings/understanding-persistent-vector-pt-3 )
@@ -492,4 +573,6 @@ public class Tuple{
 ## 주석
 
 [^bernstein-b-tree-example]: 트랜잭션 처리의 원리. 6.9 B-Tree 잠금. 225쪽.
+[^vim-macro-grow]: 이 목록은 vim 매크로로 생성했다. 사용한 매크로는 `"ayiwo^R=@a*1.5^M<Esc>0` 이다.
+[^calc-bc]: vim substitute를 사용해 `,` 를 `+` 로 바꾸고 vim command line에서 `:!bc`로 계산하였다.
 
