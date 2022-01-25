@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 00:40:12 +0900
+updated : 2022-01-26 01:05:51 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -120,11 +120,11 @@ public final static PersistentVector EMPTY =
 ```
 
 - `Node EMPTY_NODE`: 비어있는 초기화된 노드. 길이는 `32`.
-- `int cnt`: 벡터의 길이
-- `int shift`: 
-- `Node root`: 루트 노드
-- `Object[] tail`: 벡터의 꼬리
-- `IPersistentMap _meta`: 벡터의 메타 정보
+- `int cnt`: 벡터의 길이.
+- `int shift`: 벡터 내부의 트리를 순회하기 위한 비트 쉬프트 기준값. 5의 배수로 설정된다.
+- `Node root`: 루트 노드.
+- `Object[] tail`: 벡터의 꼬리.
+- `IPersistentMap _meta`: 벡터의 메타 정보.
 
 여기에 있는 `root`와 `tail`이 `PersistentVector`에 담겨 있는 아이템을 나누어 갖게 된다.
 
@@ -151,9 +151,9 @@ public final static PersistentVector EMPTY =
 
 ![]( ./create-break-point.jpg )
 
-이렇게 `tail`에 값을 할당하거나, `tail`을 `root`로 옮겨 달아주는 작업은 `conj` 메소드를 읽어보면 알 수 있다.
+이렇게 `tail`에 값을 할당하거나, `tail`을 `root`로 옮겨 달아주는 작업은 `conj`의 코드를 읽어보면 알 수 있다.
 
-[clojure.lang.PersistentVector::conj]( https://github.com/clojure/clojure/blob/5451cee06b9e31513a19e596e4e155d1f08d2a8d/src/jvm/clojure/lang/PersistentVector.java#L579 )
+[clojure.lang.PersistentVector::conj]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/PersistentVector.java#L579-L609 )
 
 ```java
 public TransientVector conj(Object val){
@@ -166,27 +166,30 @@ public TransientVector conj(Object val){
         ++cnt;
         return this;
         }
+
     // tail의 32칸이 꽉 차있는 상태라면,
-    // tail을 root로 옮기고, tail을 새로 생성한다.
-    // 이번에 추가하는 아이템은 새로 만든 tail에 할당해준다.
+    // tail을 root로 옮기고, tail을 새로 생성해야 한다.
+    // (이번에 추가하는 아이템은 새로 만든 tail에 할당해준다.)
     Node newroot;
     Node tailnode = new Node(root.edit, tail);  // tail을 포함하고 있는 새로운 루트 노드
     tail = new Object[32];                      // 새로 만든 empty tail. 길이는 32.
     tail[0] = val;
     int newshift = shift;
-    // 만약 root가 overflow 한다면...
-    if((cnt >>> 5) > (1 << shift))
+
+    if((cnt >>> 5) > (1 << shift))  // shift는 5의 배수이므로 > 의 오른쪽 항은 32^n
+        // 만약 root가 overflow 한다면 새로운 노드를 생성해 최상단 노드로 삼는다
         {
         newroot = new Node(root.edit);
         newroot.array[0] = root;
         newroot.array[1] = newPath(root.edit,shift, tailnode);
-        newshift += 5;
+        newshift += 5;  // 새로운 최상단 노드가 생겼으므로 트리는 한 단계 높아졌다
         }
     else
+        // 만약 root에 아직 공간이 있다면 tail을 root에 달아준다
         newroot = pushTail(shift, root, tailnode);
     root = newroot;
-    shift = newshift;
-    ++cnt;
+    shift = newshift;   // 트리의 높이가 변하지 않았으므로 shift는 그대로 유지
+    ++cnt;              // 벡터에 아이템이 1개 추가되었으므로 cnt는 1 증가
     return this;
 }
 ```
@@ -195,7 +198,7 @@ public TransientVector conj(Object val){
 `shift`와 `newshift`를 읽어보면 5씩 증가하는 값이라는 것을 알 수 있으므로, 이렇게 트리를 구성하는 기준도 `32`라는 것을 추측할 수 있다.
 
 ```java
-// 만약 root가 overflow 한다면...
+//overflow root?
 if((cnt >>> 5) > (1 << shift))
     {
     newroot = new Node(root.edit);
@@ -225,19 +228,17 @@ $$ 32 \times 32 + 32 = 1056 $$
 
 ![]( ./vector-1057-tree.svg )
 
-그림 속 `root[1].root[0]`을 빨간색으로 색칠한 이유는 해당 노드가 아이템의 수가 1056개일때까지는 tail이었다는 점을 강조하기 위해서이다.
+그림 속 `root[1][0]`을 빨간색으로 색칠한 이유는 해당 노드가 아이템의 수가 `1056`개일때까지는 tail이었다는 점을 강조하기 위해서이다.
 
-그런데 이 그림을 보다보면 차수가 13인 [[b-tree]]{B+ Tree}와 유사한 모양을 갖고 있다는 것도 알 수 있다.
+그런데 이 그림을 보다보면 차수가 32인 [[b-tree]]{B+ Tree}와 유사한 모양을 갖고 있다는 것도 알 수 있다.
+즉 `PersistentVector`는 불변성을 토대로 삼는 차수 32 B+ Tree의 일종이라 할 수 있다.
 
 ![]( ./bplus-example.png )
 [^bernstein-b-tree-example]
 
-다만 `PersistentVector`는 B+ Tree와는 기능과 용도가 다르다.
-`PersistentVector`는 B+ Tree와는 달리 값 탐색을 위한 구조로 만들어진 Tree가 아니며 인덱스를 통한 랜덤 접근을 지원하는 유사 배열 구현으로 볼 수 있다.
-
 ### 트리의 높이
 
-아이템의 수에 따른 트리의 높이를 실험해보면 다음과 같다.
+`PersistentVector`의 생성에 사용된 아이템의 수에 따른 트리의 높이를 실험해보니 다음과 같았다.
 
 | 아이템의 수 | 트리의 높이 | tail 개수 | 아이템의 수           |
 |------------:|:-----------:|:---------:|-----------------------|
