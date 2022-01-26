@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 14:34:44 +0900
+updated : 2022-01-26 14:38:20 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -298,7 +298,7 @@ tail이 있기 때문에 조정값이 더 포함된 정도이다.
 - $$ + 1 $$은 트리 높이 숫자를 맞추기 위한 것.
 
 이 함수를 Javascript로 간단하게 표현하자면 다음과 같다.
-로그 연산은 $$ \log_{32} (n-33) = \frac{ \log n-33 }{ \log 32 } $$ 성질을 응용했다.
+마지막 `return`문의 로그 계산은 $$ \log_{32} (n-33) = \frac{ \log n-33 }{ \log 32 } $$이 되는 로그의 성질을 응용했다.
 
 ```javascript
 function calcHeight(cnt) {
