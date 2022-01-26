@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 14:44:40 +0900
+updated : 2022-01-26 14:48:52 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -434,7 +434,7 @@ private static Node doAssoc(int level, Node node, int i, Object val){
         }
     else
         {
-        // 목표 노드가 아니라면 다음 노드로 재귀하며 작업한다.
+        // 목표 노드가 아니라면 재귀하며 노드 연결 작업.
         // level은 shift 값으로 5씩 감소시킨다.
         int subidx = (i >>> level) & 0x01f;
         ret.array[subidx] = doAssoc(level - 5, (Node) node.array[subidx], i, val);
