@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 13:50:08 +0900
+updated : 2022-01-26 14:04:47 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -144,23 +144,26 @@ public final static PersistentVector EMPTY =
 `PersistentVector`를 생성할 때 임시로 만든 `TransientVector`에 `conj`를 사용해 새로운 아이템을 계속해서 추가하게 된다.
 이 때 `tail`은 일종의 버퍼 역할을 하는데 `tail`에 32개의 아이템이 들어가게 되면 `tail`이 `root`에 추가되는 방식으로 작동한다.
 
+이 과정은 [`clojure.lang.PersistentVector::create(List list)`의 `return` 문](https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/PersistentVector.java#L99 )에
+break point를 찍어두고 디버거를 켠 상태에서 벡터를 생성해보면 쉽게 관찰할 수 있다.
+
+![디버거 작동 화면]( ./create-break-point.jpg )
+
+(스크린샷을 보면 임시로 생성한 `TransientVector`에 `conj`를 반복하고 있다.)
+
 아래는 이렇게 90개의 아이템이 있는 경우를 내가 그림으로 그린 것이다.
 
-![]( ./vector-90.svg )
+![90개의 아이템을 갖는 벡터]( ./vector-90.svg )
 
 만약 아이템이 96개라면 `tail`의 아이템이 32개로 꽉 차게 된다.
 
-![]( ./vector-96.svg )
+![96개의 아이템을 갖는 벡터]( ./vector-96.svg )
 
 아이템이 1개 더 있는 97개라면 `tail`이 그대로 `root[2]`가 되며, 새로운 `tail`이 만들어진다.
 
-![]( ./vector-97.svg )
+![97개의 아이템을 갖는 벡터]( ./vector-97.svg )
 
 그림 속의 새로 만든 `tail`은 마치 1칸만 갖고 있는 것 같지만 실제로는 32 사이즈를 갖는 배열이다.
-
-이 과정은 [`clojure.lang.PersistentVector::create(List list)`의 `return` 문](https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/PersistentVector.java#L99 )에 break point를 찍어두고 벡터를 생성해보면 쉽게 관찰할 수 있다.
-
-![]( ./create-break-point.jpg )
 
 이렇게 `tail`에 값을 할당하거나, `tail`을 `root`로 옮겨 달아주는 작업은 `conj`의 코드를 읽어보면 알 수 있다.
 
@@ -205,7 +208,8 @@ public TransientVector conj(Object val){
 }
 ```
 
-여기에서 흥미로운 것은 root가 overflow 하게 되었을 때 `newroot`를 만들고, 기존의 `root`를 `newroot`의 `[0]`에 할당하는 부분이다.
+root가 overflow 하게 되었을 때 `newroot`를 만들고, 기존의 `root`를 `newroot`의 `[0]`에 할당하는 부분이 흥미롭다.
+트리의 높이가 한 단계 높아진 것이다.
 `shift`와 `newshift`를 읽어보면 5씩 증가하는 값이라는 것을 알 수 있으므로, 이렇게 트리를 구성하는 기준도 `32`라는 것을 추측할 수 있다.
 
 ```java
@@ -235,14 +239,14 @@ $$ 32 \times 32 + 32 = 1056 $$
 
 ![]( ./vector-1025-tree.svg )
 
-아이템의 수가 1056개라면 tail까지 꽉 차게 되며, 1057개가 되면 트리에 계층 구조가 만들어진다.
+아이템의 수가 1056개라면 tail까지 꽉 차게 되며, 1057개가 되면 트리의 계층 구조가 한 단계 더 높아진다.
 
 ![]( ./vector-1057-tree.svg )
 
-그림 속 `root[1][0]`을 빨간색으로 색칠한 이유는 해당 노드가 아이템의 수가 `1056`개일때까지는 tail이었다는 점을 강조하기 위해서이다.
+그림 속 `root[1][0]`을 핑크색으로 눈에 띄게 색칠한 이유는 해당 노드가 아이템의 수가 `1056`개일때까지는 tail이었다는 점을 강조하기 위해서이다.
 
 그런데 이 그림을 보다보면 차수가 32인 [[b-tree]]{B+ Tree}와 유사한 모양을 갖고 있다는 것도 알 수 있다.
-즉 `PersistentVector`는 불변성을 토대로 삼는 차수 32 B+ Tree의 일종이라 할 수 있다.
+`PersistentVector`는 불변성을 토대로 삼는 차수 32의 균형잡힌 B+ Tree의 일종으로 보인다.
 
 ![]( ./bplus-example.png )
 [^bernstein-b-tree-example]
