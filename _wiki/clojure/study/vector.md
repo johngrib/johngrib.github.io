@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 14:04:47 +0900
+updated : 2022-01-26 14:23:15 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -252,6 +252,14 @@ $$ 32 \times 32 + 32 = 1056 $$
 [^bernstein-b-tree-example]
 
 ### 트리의 높이
+
+vector의 root부터 시작해서 리프에 있는 아이템에 도달하기까지의 `array`의 수를 트리의 높이라고 정의하자.
+(공식 정의는 아니고 이 문서 안에서 편하게 이야기하기 위한 local 정의이다.)
+
+90개의 아이템으로 구성된 벡터를 예로 들자면, `vector.root`부터 `"item1"`까지 `array`가 두 번 나타나므로 트리의 높이는 2 이다.
+
+![트리의 높이를 보기 위해 디버거를 중지시킨 모습]( ./tree-height-arrays.jpg )
+{:style="max-width:350px"}
 
 `PersistentVector`의 생성에 사용된 아이템의 수에 따른 트리의 높이를 실험해보니 다음과 같았다.
 
