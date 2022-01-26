@@ -3,8 +3,8 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-27 00:08:06 +0900
-tag     : clojure
+updated : 2022-01-27 00:39:56 +0900
+tag     : clojure java
 toc     : true
 public  : true
 parent  : [[/clojure/study]]
