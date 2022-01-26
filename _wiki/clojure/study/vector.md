@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-27 00:39:56 +0900
+updated : 2022-01-27 00:41:05 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -835,6 +835,10 @@ public class Tuple{
 - [clojure 1.11.0-alpha4 소스코드 (github.com)]( https://github.com/clojure/clojure/tree/clojure-1.11.0-alpha4 )
 - [openjdk/jdk jdk-19+6 (github.com)]( https://github.com/openjdk/jdk/tree/jdk-19%2B6 )
 - 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
+
+## 참고사항
+
+- 이 글은 2022년 1월 26일 수요일 그린랩스 사내 세미나 발표 자료로 활용되었음.
 
 ## 주석
 
