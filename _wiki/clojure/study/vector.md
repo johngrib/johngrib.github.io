@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 16:48:39 +0900
+updated : 2022-01-27 00:08:06 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -303,7 +303,7 @@ tail이 있기 때문에 조정값이 더 포함된 정도이다.
 ```javascript
 function calcHeight(cnt) {
     if (0 <= cnt && cnt < 33) {
-        reutrn 0;
+        return 0;
     } else if (33 <= cnt && cnt < 65) {
         return 2;
     }
