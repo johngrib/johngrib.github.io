@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 14:48:52 +0900
+updated : 2022-01-26 15:46:44 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -451,26 +451,40 @@ private static Node doAssoc(int level, Node node, int i, Object val){
 ![]( ./vector-1057-tree-copy.svg )
 
 즉 리프 노드 아이템은 `item1025`부터 `item1055`까지의 31개만 복사되었고, 나머지는 원본의 노드를 참조하는 방식으로 해결되었다.
-`PersistentVector`는 불변성을 토대로 하고 있기 때문에, 이렇게 내부 구조를 이루고 있는 노드들을 다른 벡터와 자유롭게 공유할 수 있다.
+`PersistentVector`는 불변성을 토대로 하고 있기 때문에 이렇게 내부 구조를 이루고 있는 노드들을 다른 자료구조와 부담없이 공유할 수 있다.
 한편 불변성을 토대로 삼는 트리 구조라는 특성 때문에 가능한 자연스러운 노드 공유는 git의 핵심 기법이기도 하다.
 
 ![git의 데이터 모델]( git-data-model-3.png )
 {:style="max-width:600px"}
 [^pro-git-10-2]
 
-위의 그림은 git의 데이터 모델의 예제로, `version 2`와 `new file`이라는 blob을 `3c4e9c`와 `0155eb`라는 두 트리가 참조하고 있는 상황을 보여준다.
+위의 그림은 git 데이터 모델의 예제로, `version 2`와 `new file`이라는 blob을 `3c4e9c`와 `0155eb`라는 두 트리가 참조하고 있는 상황을 보여준다.
 이렇게 두 트리가 같은 blob을 안심하고 참조하는 것이 가능한 이유는 git의 blob이 immutable하기 때문이다.
+git의 DB가 update와 delete를 허용하지 않기 때문에 git의 트리는 `PersistentVector`와 구조적 공통점을 갖게 된 셈이다.
 
-Java ArrayList는 mutable하기 때문에 두 ArrayList가 아이템을 공유하면 다양한 문제가 발생할 수 있다.
-따라서 보통은 ArrayList를 이렇게 사용하지 않는다.
-하지만 이건 ArrayList의 결함이나 단점이 아니라 ArrayList가 Dynamic Array의 구현이기 때문이다.
-구조와 컨셉이 다르기 때문에 자료구조의 사용 방법이 다른 것이지 ArrayList가 나쁘거나 잘못된 것은 아니다.
+git의 DB와 JVM의 heap을 blob 저장소라는 개념으로 본다면 이런 그림도 떠올릴 수 있을 것이다.
+
+![벡터와 heap]( ./vector-heap.svg )
 
 ### java.util.ArrayList와의 비교
+
+반면 [[/java-util-arraylist]]는 mutable하기 때문에 두 ArrayList가 아이템을 공유하면 다양한 문제가 발생할 수 있다.
+
+다음 그림은 ArrayList가 내장하는 배열의 주소를 다른 ArrayList가 참조하는 배열의 중간에 연결되는 가상의 상황을 그린 것이다.
+
+![ArrayList와 heap]( ./arraylist-heap.svg )
+
+ArrayList는 mutable하므로 온갖 재앙이 터져나올 것이다.
+그러므로 ArrayList는 이렇게 설계되지 않았다.
+하지만 이건 ArrayList의 결함이나 단점이 아니라 ArrayList가 [Dynamic Array]( https://en.wikipedia.org/wiki/Dynamic_array )의 구현이기 때문이다.
+구조와 컨셉이 다르기 때문에 자료구조의 사용 방법이 다른 것이지 ArrayList에 문제가 있는 것은 아니다.
 
 Java의 ArrayList는 최종적으로 추가되는 아이템의 수를 초기화 시점에 알고있는지에 따라 성능상에 차이가 크다.
 
 ArrayList는 grow factor를 1.5로 삼고 있는 Dynamic Array의 구현체이므로 grow의 횟수를 잘 제어할 수 있는지 없는지에 따라 생성 퍼포먼스가 크게 차이날 수 있다.
+
+소멸할 때까지 contain하는 아이템의 수가 결정되어 있다면, $$ O(n) $$의 성능을 보인다.
+그러나 몇 개를 추가하게 될 지 알 수 없다면 이야기가 다르다.
 
 [ArrayList의 `DEFAULT_CAPACITY`는 10]( https://github.com/openjdk/jdk/blob/jdk-19%2B6/src/java.base/share/classes/java/util/ArrayList.java#L118 )인데,
 하나씩 하나씩 아이템을 추가하게 되면 1.5배의 capacity를 갖는 새로운 배열을 생성하고, 그 배열로 array copy를 한다.
@@ -492,7 +506,7 @@ private Object[] grow(int minCapacity) {
 }
 ```
 
-따라서 만약 다수의 아이템을 ArrayList에 집어넣으려 할 때의 최악의 케이스는 다음과 같이 아이템을 하나하나 추가하는 것이다.
+만약 다수의 아이템을 ArrayList에 집어넣으려 할 때의 최악의 케이스는 다음과 같이 아이템을 하나하나 추가하는 것이다.
 
 ```java
 final List<Integer> numbers = new ArrayList<>();
@@ -501,19 +515,20 @@ for (int i = 0; i < 32801; i++) {
 }
 ```
 
-이렇게 하면 32801개의 아이템을 ArrayList에 추가할 때 내부에서 새로 만드는 배열만 해도 다음과 같다.
+32801개의 아이템을 하나씩 일일이 ArrayList에 추가할 때 내부에서 새로 만드는 배열의 사이즈를 순서대로 나열해보면 다음과 같다.
 
 10, 15, 22, 33, 49, 73, 109, 163, 244, 366, 549, 823, 1234, 1851, 2776, 4164, 6246, 9369, 14053, 21079, 31618, 47427
 [^vim-macro-grow]
 
-array copy를 통해 복사된 아이템의 수만 계산하면 146,029.[^calc-bc]
+array copy를 통한 아이템의 복사는 146,029 회.[^calc-bc]
 
 $$ 10 + 15 + ... + 31618 + (32801 - 31618) = 146029 $$
 
 그러므로 32801개의 아이템을 ArrayList에 하나 하나 추가하면 최소한 146029회의 값 복사가 발생한다.
-이를 비트 연산으로 인한 floor를 고려하지 않는다면 단순 등비수열의 합으로 소박하게 표현하는 것도 가능하다.
+(게다가 복제 이후에 이전의 배열은 안 쓰게 되므로 gc가 모두 청소할 것이다.)
+비트 연산으로 인한 1 비트 무조건 내림을 고려하지 않는다면 단순 등비수열의 합으로 소박하게 표현하는 것도 가능하다.
 
-아이템의 수를 n 이라 하면 grow의 발생 횟수 $$ G_n $$을 다음과 같이 생각할 수 있다. (아이템의 수가 11일 때 최초 발생한다는 전제)
+아이템의 수를 n 이라 하면 grow의 발생 횟수 $$ G_n $$을 다음과 같이 생각할 수 있다. (아이템의 수가 11일 때 grow가 최초 발생한다는 전제)
 
 $$ G_n = \ceil{ \log_{1.5} ( { n \over 10 }) } $$
 
@@ -675,9 +690,14 @@ public class Tuple{
 }
 ```
 
+## 함께 읽기
+
+- [[/java-util-arraylist]]
+
 ## 참고문헌
 
 - <https://clojuredocs.org/clojure.core/vector >
+- [Dynamic array (wikipedia.org)]( https://en.wikipedia.org/wiki/Dynamic_array )
 - [Pro Git 10.2 Git Internals - Git Objects (git-scm.com)]( https://git-scm.com/book/en/v2/Git-Internals-Git-Objects )
 - [Understanding Clojure's Persistent Vectors, pt. 1]( https://hypirion.com/musings/understanding-persistent-vector-pt-1 )
 - [Understanding Clojure's Persistent Vectors, pt. 2]( https://hypirion.com/musings/understanding-persistent-vector-pt-2 )
