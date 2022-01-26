@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 16:35:33 +0900
+updated : 2022-01-26 16:45:42 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -660,6 +660,33 @@ public ISeq more(){
 
 public int count(){
     return 1 + RT.count(_more);
+}
+```
+
+한편 벡터에 `rest`를 사용했을 때 리턴되는 타입인 `ChunkedSeq` 또한 `Cons`처럼 벡터의 wrapper이다.
+
+[clojure.lang.PersistentVector.ChunkedSeq]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/PersistentVector.java#L373-L378 )
+
+```java
+public ChunkedSeq(PersistentVector vec, int i, int offset){
+    this.vec = vec;
+    this.i = i;
+    this.offset = offset;
+    this.node = vec.arrayFor(i);
+}
+```
+
+`arrayFor`를 사용해 `PersistentVector`의 특정 노드를 root로 선정한 다음, `i`와 `offset`을 활용해 인덱스를 보정해 다양한 오퍼레이션에 대응하는 방식이다.
+
+```java
+public Object first(){
+    return node[offset];
+}
+```
+
+```java
+public int count(){
+    return vec.cnt - (i + offset);
 }
 ```
 
