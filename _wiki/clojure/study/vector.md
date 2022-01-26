@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 16:45:42 +0900
+updated : 2022-01-26 16:46:38 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -601,7 +601,7 @@ public Object nth(int i){
 }
 ```
 
-### cons의 작동
+### Cons와 ChunkedSeq
 
 `cons`를 벡터에 사용하면 `Cons` 타입의 인스턴스가 리턴된다.
 
