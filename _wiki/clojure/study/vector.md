@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 15:46:44 +0900
+updated : 2022-01-26 16:04:36 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -561,6 +561,45 @@ tail은 32개가 될 때마다 꽉 차며 33번째 아이템이 추가되려 할
 약 1025 회에 가깝다.
 ArrayList에 32801개의 아이템을 집어넣을 때 아이템 복사가 14만회 이상 수행된다는 추정을 떠올려보자.
 
+### APersistentVector의 subvec을 통한 순서 있는 부분집합의 생성
+
+`PersistentVector`는 `APersistentVector`에서 상속받은 `subList`를 통해 순서가 유지되는 부분집합을 제공하는데,
+`subList`는 `RT`의 `subvec`을 호출하고, `RT`의 `subvec`은 `APersistentVector`의 `SubVector`를 생성하게 된다.
+
+다음은 `SubVector`의 생성자이다.
+
+[clojure.lang.APersistentVector.SubVector]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/APersistentVector.java#L558-L571 )
+
+```java
+public SubVector(IPersistentMap meta, IPersistentVector v, int start, int end){
+    this._meta = meta;
+
+    if(v instanceof APersistentVector.SubVector)
+        {
+        APersistentVector.SubVector sv = (APersistentVector.SubVector) v;
+        start += sv.start;
+        end += sv.start;
+        v = sv.v;
+        }
+    this.v = v;
+    this.start = start;
+    this.end = end;
+}
+```
+
+코드를 보면 `SubVector`는 시작점과 끝점을 갖고 있는 벡터 `v`의 wrapper이다.
+
+그래서 `nth`도 `start`를 활용해 작동한다.
+
+[clojure.lang.APersistentVector.SubVector::nth]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/APersistentVector.java#L590-L594 )
+
+```java
+public Object nth(int i){
+    if((start + i >= end) || (i < 0))
+        throw new IndexOutOfBoundsException();
+    return v.nth(start + i);
+}
+```
 
 ### Clojure 컴파일러의 벡터 생성
 
