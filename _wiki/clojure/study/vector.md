@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 16:04:36 +0900
+updated : 2022-01-26 16:35:33 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -600,6 +600,70 @@ public Object nth(int i){
     return v.nth(start + i);
 }
 ```
+
+### cons의 작동
+
+`cons`를 벡터에 사용하면 `Cons` 타입의 인스턴스가 리턴된다.
+
+```clojure
+(cons 777 [666])
+=> (777 666)
+(type (cons 777 [666]))
+=> clojure.lang.Cons
+(type (rest (cons 777 [666])))
+=> clojure.lang.PersistentVector$ChunkedSeq
+```
+
+이건 위에서 살펴본 벡터의 구조상 앞에 뭔가를 추가했을 때 트리구조를 전부 재구성하지 않기 위해 벡터를 래핑하는 `Cons`를 사용하고 있는 것이다.
+
+[clojure.lang.RT:cons]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/RT.java#L680-L688 )
+
+```java
+static public ISeq cons(Object x, Object coll){
+    //ISeq y = seq(coll);
+    if(coll == null)
+        return new PersistentList(x);
+    else if(coll instanceof ISeq)
+        return new Cons(x, (ISeq) coll);
+    else
+        return new Cons(x, seq(coll));  // 벡터에 cons를 쓰면 여기로 온다
+}
+```
+
+`Cons`의 생성자는 굉장히 심플하며, `more`가 있는 것으로 보아 연결 리스트처럼 작동한다는 것도 알 수 있다.
+
+[clojure.lang.Cons]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/Cons.java#L22 )
+
+```java
+public Cons(Object first, ISeq _more){
+    this._first = first;
+    this._more = _more;
+}
+```
+
+`Cons`의 메소드들은 매우 심플하므로 이해하기도 어렵지 않다.
+
+```java
+public Object first(){
+    return _first;
+}
+
+public ISeq next(){
+    return more().seq();
+}
+
+public ISeq more(){
+    if(_more == null)
+        return PersistentList.EMPTY;
+    return _more;
+}
+
+public int count(){
+    return 1 + RT.count(_more);
+}
+```
+
+
 
 ### Clojure 컴파일러의 벡터 생성
 
