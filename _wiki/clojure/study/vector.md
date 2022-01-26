@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 14:38:20 +0900
+updated : 2022-01-26 14:44:40 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -346,12 +346,16 @@ function calcHeight() {
 
 ### nth를 통한 랜덤 엑세스
 
-아이템의 수가 65 이상일 때 트리의 높이가 $$\floor{ \log_{32} (N-33) } + 1 $$ 이므로
-랜덤 엑세스 퍼포먼스는 $$O( \log_{32} N )$$ 이라는 것을 알 수 있다. (tail에 있는 아이템에 접근하는 경우에는 $$ O(1) $$.)
+아이템의 수가 65 이상일 때 트리의 높이가 $$\floor{ \log_{32} (n-33) } + 1 $$ 이므로
+tail에 없는 아이템에 대한 랜덤 엑세스 퍼포먼스는 $$O( \log_{32} n )$$ 이라는 것을 알 수 있다.
+(tail에 있는 아이템이라면 $$ O(1) $$.)
 
-아이템의 수가 3355만 4465개가 되어야 높이가 6에 도달한다는 걸 생각해 보면 랜덤 엑세스 퍼포먼스는 괜찮은 편이다.
+아이템의 수가 3355만 4465개가 되어도 높이가 6 밖에 안 된다.
+벡터에 이정도까지 아이템을 많이 집어넣을 일은 흔하지 않다.
+(진짜로 넣을 일이 있다면 상황을 잘 판단해보고 그냥 C 스타일의 배열을 사용하는 것도 고려할 수 있을 것이다.)
+랜덤 엑세스 퍼포먼스는 괜찮은 편이다.
 
-이제 이 작업을 수행하는 `nth` 메소드를 살펴보자.
+아래는 랜덤 엑세스를 제공해주는 `nth`이다.
 
 [clojure.lang.PersistentVector::nth]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/jvm/clojure/lang/PersistentVector.java#L161 )
 
