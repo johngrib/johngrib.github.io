@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-26 01:22:14 +0900
+updated : 2022-01-26 13:50:08 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -53,7 +53,7 @@ $$
 
 `IPersistentVector`의 구현체 중 하나인 `clojure.lang.PersistentVector`.
 
-### TransientVector
+### TransientVector: 인적 없는 숲에서 쓰러진 나무
 
 `PersistentVector`의 정적 팩토리 메소드를 보면 `TransientVector`라는 타입을 볼 수 있다.
 `TransientVector`는 `PersistentVector`의 내부 클래스이며, `PersistentVector`의 생성에 사용되는 특수한 구현이다.
@@ -98,6 +98,17 @@ public PersistentVector persistent(){
 `TransientVector`는 `PersistentVector`를 생성하는 과정에서 퍼포먼스를 위해 임시로 생성하는 mutable한 자료구조로, 성능을 위해 선택된 방식이다.
 
 단, `TransientVector`는 생성 과정에서만 사용되며, `PersistentVector`의 생성 결과로 공유되지는 않는다.
+
+Clojure의 레퍼런스 문서[Transient Data Structures]( https://clojure.org/reference/transients )( [[/clojure/reference/transient]]{한국어 번역} )에서는 이러한 `TransientVector`의 특성을 두고 재미있는 비유를 이야기한다.
+
+>
+If a tree falls in the woods, does it make a sound?
+>
+If a pure function mutates some local data in order to produce an immutable return value, is that ok?
+>
+만약 아무도 없는 숲 속에서 나무 한 그루가 쓰러졌다면, 과연 소리가 났을까?
+>
+만약 어떤 순수 함수가 변경 불가능한 리턴값을 생산하기 위해 로컬 데이터를 변경했다면, 올바른 일일까?
 
 ### 생성과 구조
 
