@@ -3,12 +3,13 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 0
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2021-12-30 00:06:39 +0900
+updated : 2022-01-29 01:18:22 +0900
 tag     : clojure
 toc     : true
 public  : true
 parent  : [[/clojure]]
 latex   : false
+issue-number: 180
 ---
 * TOC
 {:toc}

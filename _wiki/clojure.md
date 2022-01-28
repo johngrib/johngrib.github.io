@@ -3,12 +3,13 @@ layout  : category
 title   : Clojure
 summary : 
 date    : 2021-11-30 10:10:29 +0900
-updated : 2021-12-11 13:48:46 +0900
+updated : 2022-01-29 01:18:02 +0900
 tag     : 
 toc     : true
 public  : true
 parent  : [[language]]
 latex   : false
+issue-number: 184
 ---
 * TOC
 {:toc}
