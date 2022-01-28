@@ -3,11 +3,11 @@ layout  : wiki
 title   : java.util.ArrayList
 summary : 이걸 모르면 곤란하지
 date    : 2021-03-31 23:24:24 +0900
-updated : 2021-04-03 20:13:54 +0900
+updated : 2022-01-28 17:57:26 +0900
 tag     : java algorithm
 toc     : true
 public  : true
-parent  : [[java]]
+parent  : [[/java]]
 latex   : true
 ---
 * TOC

@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-22 17:43:04 +0900
+updated : 2022-01-28 17:57:16 +0900
 regenerate: true
 ---
 
@@ -230,6 +230,7 @@ regenerate: true
 
 ### [[java]]
 
+* [[/java/arraylist]]
 * [[/java/exception-handling]]
 * [[/java/feel-of-java]]
 * [[/java/javadoc]]
@@ -253,7 +254,6 @@ regenerate: true
 * [[java-optional]]
 * [[java-random]]
 * [[java-remainder-operator]]
-* [[java-util-arraylist]]
 * [[java10-var]]
 * [[java8-performance-improvement-for-hashmap]]
 * [[java8-why-permgen-removed]]

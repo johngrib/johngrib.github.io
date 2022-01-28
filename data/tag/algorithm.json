@@ -8,7 +8,7 @@
  "gray-code",
  "heap-sort",
  "insertion-sort",
- "java-util-arraylist",
+ "java/arraylist",
  "merge-sort",
  "selection-sort",
  "sort-stability",

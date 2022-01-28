@@ -20,7 +20,7 @@
   "java-random",
   "java-remainder-operator",
   "java-TemporalAdjusters",
-  "java-util-arraylist",
+  "java/arraylist",
   "java/exception-handling",
   "java/feel-of-java",
   "java/javadoc",
