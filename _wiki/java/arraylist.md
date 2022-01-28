@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util.ArrayList
 summary : 이걸 모르면 곤란하지
 date    : 2021-03-31 23:24:24 +0900
-updated : 2022-01-28 17:57:26 +0900
+updated : 2022-01-29 00:55:15 +0900
 tag     : java algorithm
 toc     : true
 public  : true
@@ -466,6 +466,95 @@ private void fastRemove(Object[] es, int i) {
 
 - 원소를 삭제하고 배열의 사이즈를 줄인다.
     - `newSize = size - 1`
+
+## ArrayList의 구조와 grow
+
+ArrayList를 기본 생성자를 호출해 생성했다면 `elementData`는 `DEFAULTCAPACITY_EMPTY_ELEMENTDATA`를 가리키고 있다.
+
+[java.util.ArrayList]( https://github.com/openjdk/jdk/blob/jdk-19%2B7/src/java.base/share/classes/java/util/ArrayList.java#L168 )
+
+```java
+/**
+ * Constructs an empty list with an initial capacity of ten.
+ */
+public ArrayList() {
+    this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+}
+```
+
+주석을 읽어보면 `initial capcity`가 `ten`이라고 하는데, 실제로도 DEFAULT_CAPACITY`가 `10`으로 선언되어 있다.
+
+```java
+private static final int DEFAULT_CAPACITY = 10;
+```
+
+그런데 `DEFAULTCAPACITY_EMPTY_ELEMENTDATA`는 다음과 같이 선언되어 있다.
+
+[java.util.ArrayList. DEFAULTCAPACITY_EMPTY_ELEMENTDATA]( https://github.com/openjdk/jdk/blob/jdk-19%2B7/src/java.base/share/classes/java/util/ArrayList.java#L130 )
+
+```java
+/**
+ * Shared empty array instance used for default sized empty instances. We
+ * distinguish this from EMPTY_ELEMENTDATA to know how much to inflate when
+ * first element is added.
+ */
+private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+```
+
+즉 기본 생성자로 초기화된 ArrayList의 capacity는 `10`이지만,
+`elementData`는 길이가 0인 배열인 `DEFAULTCAPACITY_EMPTY_ELEMENTDATA`를 가리키고 있다는 것.
+
+하지만 아이템 하나를 추가하면 길이가 10인 배열로 `elementData`를 교체하게 되므로 크게 신경쓸 일은 아니다.
+
+이제 아이템을 하나 추가하면 `grow(1)`이 호출된다. `grow`의 코드는 다음과 같다.
+
+[java.util.ArrayList::grow]( https://github.com/openjdk/jdk/blob/jdk-19%2B7/src/java.base/share/classes/java/util/ArrayList.java#L231 )
+
+```java
+private Object[] grow(int minCapacity) {
+    int oldCapacity = elementData.length;
+    if (oldCapacity > 0 || elementData != DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
+        int newCapacity = ArraysSupport.newLength(oldCapacity,
+                minCapacity - oldCapacity, /* minimum growth */
+                oldCapacity >> 1           /* preferred growth */);
+        return elementData = Arrays.copyOf(elementData, newCapacity);
+    } else {
+        // 여기
+        return elementData = new Object[Math.max(DEFAULT_CAPACITY, minCapacity)];
+    }
+}
+```
+
+첫 아이템을 추가하게 되면 `elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA` 이므로 `DEFAULT_CAPACITY` 사이즈(10)를 갖는 배열을 생성한다.
+
+![아이템이 1개 있는 ArrayList]( ./arraylist-1.svg )
+
+아이템을 9개 더 추가하면 `elementData`가 꽉 차게 된다.
+
+![아이템이 10개 있는 ArrayList]( ./arraylist-10.svg )
+
+이 때 아이템을 한 개 더 추가하면 `grow(size+1)`, 즉 `grow(11)`이 호출된다.
+
+![아이템이 11개 있는 ArrayList]( ./arraylist-11.svg )
+
+그 결과는 위의 그림과 같다. 즉, grow는 `elementData`가 부족할 때마다 `1.5`배 사이즈를 갖는 배열을 생성해 값을 복사하는 작업을 한다.
+
+`elementData` 배열의 사이즈가 작을 때에는 이런 복사작업이 좀 있어도 괜찮은데, 아이템의 수가 많아지면 그만큼 grow가 여러 차례 발생한다는 점을 고려해야 한다.
+특히 아이템을 1개씩 계속해서 추가하고 있다면 grow를 통한 복사가 누적될 수 있으므로 주의해야 한다.
+
+다음은 [[/clojure/study/vector]] 문서에서 인용한 것이다.
+
+>
+32801개의 아이템을 하나씩 일일이 ArrayList에 추가할 때 내부에서 새로 만드는 배열의 사이즈를 순서대로 나열해보면 다음과 같다.
+>
+10, 15, 22, 33, 49, 73, 109, 163, 244, 366, 549, 823, 1234, 1851, 2776, 4164, 6246, 9369, 14053, 21079, 31618, 47427
+>
+array copy를 통한 아이템의 복사는 146,029 회.
+>
+$$ 10 + 15 + ... + 31618 + (32801 - 31618) = 146029 $$
+>
+그러므로 32801개의 아이템을 ArrayList에 하나 하나 추가하면 최소한 146029회의 값 복사가 발생한다.
+(게다가 복제 이후에 이전의 배열은 안 쓰게 되므로 gc가 모두 청소할 것이다.)
 
 ## 참고문헌
 
