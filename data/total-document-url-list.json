@@ -129,6 +129,7 @@
  "/wiki/clojure/vim-setting",
  "/wiki/cmd",
  "/wiki/cmd/ag",
+ "/wiki/cmd/bind",
  "/wiki/cmd/curl",
  "/wiki/cmd/grep",
  "/wiki/cmd/man",

@@ -13,6 +13,7 @@
   "cal-cmd",
   "chsh-cmd",
   "cmd/ag",
+  "cmd/bind",
   "cmd/curl",
   "cmd/grep",
   "cmd/man",
