@@ -3,7 +3,7 @@ layout  : wiki
 title   : bash history 다루기
 summary : 사용법 및 잡다한 팁 요약
 date    : 2018-09-01 18:01:04 +0900
-updated : 2019-12-21 10:26:31 +0900
+updated : 2022-01-29 15:54:36 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -114,7 +114,7 @@ export HISTSIZE=2000
 export HISTFILESIZE=2000
 ```
 
-### [[fc]] 명령어
+### [[/cmd/fc]]
 
 * `fc` 명령어를 사용하면 vim이 실행되며, 방금 실행한 명령어가 나타난다.
 * 명령어를 편집하고 저장한 다음 vi를 종료하면 명령이 실행된다.
