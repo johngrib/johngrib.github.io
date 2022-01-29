@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 bash cheatsheet
 summary : bash tip 모음
 date    : 2018-09-24 13:06:49 +0900
-updated : 2022-01-29 16:14:06 +0900
+updated : 2022-01-29 21:22:58 +0900
 tag     : bash
 toc     : true
 public  : true
@@ -46,40 +46,24 @@ export EDITOR=$(which vim)
 
 ## 이전 명령의 arguments 재사용
 
-`!$` `!!:1`
-
-`!!:숫자`는 이전 명령의 arguments로 expand 된다.
-
 다음과 같이 `echo` 명령을 실행했다고 하자.
 
 ```sh
-$ echo a b c
-a b c
+$ echo a b c d
+a b c d
 ```
 
-이후 아래와 같이 하면 `echo a b c`로 확장된다. 즉 똑같은 명령을 재실행하는 것과 같다.
+이 때 아래와 같이 arg를 재참조할 수 있다.
 
-```sh
-$ !!:0 !!:1 !!:2 !!:3
-echo a b c
-a b c
-```
+| form     | 설명                  | form 예제     | expand 예제     |
+|----------|-----------------------|---------------|-----------------|
+| `!!:n`   | 이전 명령의 n번째 arg | `!!:0 !!:2`   | `echo b`        |
+| `!!:n-m` | n번째 ~ m번째 args    | `echo !!:1-3` | `echo a b c`    |
+| `!!:n-$` | n번째 ~ 마지막 args   | `echo !!:2-$` | `echo b c d`    |
+| `!^`     | 첫번째 arg            | `echo !^`     | `echo a`        |
+| `!$`     | 마지막 arg            | `echo !$`     | `echo d`        |
+| `!*`     | 모든 args             | `echo !*`     | `echo a b c d`  |
 
-`!!:2`는 두 번째 argument로 expand 된다.
-
-```sh
-$ echo !!:2
-echo b
-b
-```
-
-`!$`는 마지막 argument로 expand 된다.
-
-```sh
-$ echo !$
-echo c
-b
-```
 
 ## vim session 디렉토리로 cd
 
