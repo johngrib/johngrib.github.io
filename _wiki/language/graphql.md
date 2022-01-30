@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-01-30 21:51:50 +0900
+updated : 2022-01-31 00:34:14 +0900
 tag     : 
 toc     : true
 public  : true
@@ -428,6 +428,162 @@ type AddReactionPayload {
 ```
 
 [type AddReactionPayload {..}]( https://gist.github.com/johngrib/32436503ccb7c95f0c13a1174d6db2f2#file-schema-docs-graphql-L695 )
+
+### GraphQL 공식 사이트 예제 참고
+
+#### GraphQL 소개
+
+<https://graphql-kr.github.io/learn/ >
+
+다음과 같이 스키마를 구성해 두었다고 하자.
+
+```graphql
+type Query {
+  me: User
+}
+
+type User {
+  id: ID
+  name: String
+}
+```
+
+그리고 위의 두 타입에 대해 아래와 같은 Javascript 함수를 작성하였다고 하자.
+
+```javascript
+function Query_me(request) {
+  return request.auth.user;
+}
+
+function User_name(user) {
+  return user.getName();
+}
+```
+
+각 함수가 `return request...`와 같은 형태를 취하고 있는데, 이렇게 해야만 하는 건 아니고 실제로는 저 함수 안쪽에서 DB를 조회해서 조회한 결과를 리턴한다던가 하게 된다.
+예제를 단순하게 표현하기 위해 `request`에 포함된 값을 그냥 돌려주는 것일 뿐이다.
+
+이 때 이렇게 쿼리를 작성해 전송하면 결과는 다음과 같다.
+
+| 쿼리                    | 결과                     |
+|-------------------------|--------------------------|
+| <span id="query-CAC3"/> | <span id="result-CAC3"/> |
+
+```graphql
+query {
+  me {
+    name
+  }
+}
+```
+{:class="dynamic-insert" data-target-selector="#query-CAC3"}
+
+```json
+{
+  "me": {
+    "name": "Luke Skywalker"
+  }
+}
+```
+{:class="dynamic-insert" data-target-selector="#result-CAC3"}
+
+- 이 결과를 만들기 위해 위에서 만든 두 개의 함수가 사용된다.
+- `me`를 조회하기 위해 `Query_me` 함수를 호출하고, 그 결과에서 `name`을 완성해주기 위해 `User_name` 함수를 호출하게 되는 것.
+- `me`와 `Query_me`의 관계, 그리고 `name`과 `User_name`의 관계는 자동으로 되는 건 아니고 따로 다른 곳에서 연결해줘야 한다.
+
+#### 쿼리 & 뮤테이션
+
+<https://graphql-kr.github.io/learn/queries/ >
+
+| 쿼리                    | 결과                     |
+|-------------------------|--------------------------|
+| <span id="query-CD58"/> | <span id="result-CD58"/> |
+
+```graphql
+query {
+  human(id: "1000") {
+    name
+    height(unit: FOOT)
+  } }
+```
+{:class="dynamic-insert" data-target-selector="#query-CD58"}
+
+```json
+{
+  "data": {
+    "human": {
+      "name": "Luke Skywalker",
+      "height": 5.6430448
+    } } }
+```
+{:class="dynamic-insert" data-target-selector="#result-CD58"}
+
+- `human(id: "1000")`은 함수에 `id: "1000"`을 넘겨서, `id`가 `1000`인 `human`을 조회한다.
+    - `SELECT name, height FROM human WHERE id = 1000` 라고 생각해두자.
+- `name` 필드는 `String`을 리턴한다.
+- `height(unit: FOOT)`은 함수에 `unit: FOOT`을 넘겨서, 단위를 FOOT으로 맞춘다.
+    - `human`에서 `id`는 조회 기준이었는데, `height`에서 `unit`은 단위 지정이다.
+        - 함수가 어떤 결과를 리턴할지는 함수를 만든 사람 마음이다. 동료들과 잘 이야기하며 정해야 하는 문제이다.
+    - `height` 필드는 `Float`을 리턴한다.
+
+| 쿼리                    | 결과                     |
+|-------------------------|--------------------------|
+| <span id="query-245D"/> | <span id="result-245D"/> |
+
+```graphql
+query {
+  hero(episode: EMPIRE) {
+    name
+    friends {
+      name
+    } } }
+```
+{:class="dynamic-insert" data-target-selector="#query-245D"}
+
+```json
+{
+  "data": {
+    "hero": {
+      "name": "Luke Skywalker",
+      "friends": [
+        { "name": "Han Solo" },
+        { "name": "Leia Organa" },
+        { "name": "C-3PO" },
+        { "name": "R2-D2" }
+      ] } } }
+```
+{:class="dynamic-insert" data-target-selector="#result-245D"}
+
+- `friends` 필드는 배열을 리턴한다.
+
+| 쿼리                    | 결과                     |
+|-------------------------|--------------------------|
+| <span id="query-C9B9"/> | <span id="result-C9B9"/> |
+
+```graphql
+query {
+  empireHero: hero(episode: EMPIRE) {
+    name
+  }
+  jediHero: hero(episode: JEDI) {
+    name
+  } }
+```
+{:class="dynamic-insert" data-target-selector="#query-C9B9"}
+
+```json
+{
+  "data": {
+    "empireHero": {
+      "name": "Luke Skywalker"
+    },
+    "jediHero": {
+      "name": "R2-D2"
+    } } }
+```
+{:class="dynamic-insert" data-target-selector="#result-C9B9"}
+
+- `empireHero:`와 `jediHero:`는 알리아싱을 의미한다. 같은 `hero`이지만 결과를 보면 다른 key 값이 돌아왔다.
 
 ## 참고문헌
 
