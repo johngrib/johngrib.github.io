@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-01-30 21:43:36 +0900
+updated : 2022-01-30 21:51:50 +0900
 tag     : 
 toc     : true
 public  : true
@@ -167,13 +167,8 @@ query {
 
 ### github
 
+[github의 Introduction to GraphQL]( https://docs.github.com/en/graphql/guides/introduction-to-graphql )을 읽으며
 [GitHub의 GraphQL playground]( https://docs.github.com/en/graphql/overview/explorer )에서 연습해보자.
-
-[github의 Introduction to GraphQL]( https://docs.github.com/en/graphql/guides/introduction-to-graphql )을 읽으며 학습해보자.
-
-Personal access token을 다음 주소에서 생성할 수 있다.
-
-https://github.com/settings/tokens
 
 #### query
 
