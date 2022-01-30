@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-29 15:51:25 +0900
+updated : 2022-01-30 09:54:13 +0900
 regenerate: true
 ---
 
@@ -198,6 +198,7 @@ regenerate: true
 
 * [[/language/aheui]]
 * [[/language/css]]
+* [[/language/graphql]]
 * [[Groovy]]
 * [[TOML]]
 * [[YAML]]
