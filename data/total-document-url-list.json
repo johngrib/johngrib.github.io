@@ -124,6 +124,7 @@
  "/wiki/clojure/study/map",
  "/wiki/clojure/study/merge-with",
  "/wiki/clojure/study/number",
+ "/wiki/clojure/study/persistent-map",
  "/wiki/clojure/study/PersistentList",
  "/wiki/clojure/study/vector",
  "/wiki/clojure/threading-macros",
