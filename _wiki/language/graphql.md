@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-01-31 10:57:17 +0900
+updated : 2022-01-31 11:28:22 +0900
 tag     : 
 toc     : true
 public  : true
@@ -103,7 +103,7 @@ GitHub이 GraphQL을 선택하게 된 더 자세한 이유에 대해서는 [블�
 
 ### SWAPI
 
-[SWAPI GraphQL API](https://graphql.org/swapi-graphql )에서 스타워즈 정보를 통해 GraphQL을 연습해 보며 학습할 수 있다.
+[SWAPI GraphQL API](https://graphql.org/swapi-graphql )에서 GraphQL을 연습해 보며 학습할 수 있다. 데이터를 조회해보면 스타워즈가 주제라는 것을 알 수 있다. (이름의 SWAPI가 Star Wars API를 의미하는 것 같다.)
 
 다음과 같이 [Query를 작성하고 전송해보자.]( https://graphql.org/swapi-graphql?query=query%20%7B%0A%20%20person(personID%3A%201)%20%7B%0A%20%20%20%20name%20%20%20%0A%20%20%7D%0A%7D )
 
