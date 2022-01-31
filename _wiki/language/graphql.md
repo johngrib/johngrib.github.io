@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-01-31 00:34:14 +0900
+updated : 2022-01-31 10:57:17 +0900
 tag     : 
 toc     : true
 public  : true
@@ -61,7 +61,7 @@ SQL의 QL과 GraphQL의 QL은 둘 다 마찬가지로 쿼리 언어(Query Langua
 
 ### GraphQL의 도입으로 기대할 수 있는 것들
 
-github은 API v4부터 GraphQL을 사용하고 있으며, [다음과 같이 이유를 밝힌다]( https://docs.github.com/en/graphql/overview/about-the-graphql-api#why-github-is-using-graphql ).
+github은 API v4부터 GraphQL을 사용하고 있으며, [다음과 같이 이유를 밝힌다.]( https://docs.github.com/en/graphql/overview/about-the-graphql-api#why-github-is-using-graphql )
 
 >
 **Why GitHub is using GraphQL**
