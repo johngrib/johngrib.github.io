@@ -14,6 +14,7 @@
  "clojure/study-00",
  "clojure/study-01",
  "clojure/study/collection",
+ "clojure/study/map",
  "clojure/study/merge-with",
  "clojure/study/number",
  "clojure/study/PersistentList",
