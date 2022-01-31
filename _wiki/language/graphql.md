@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-01-31 11:28:22 +0900
+updated : 2022-01-31 16:17:35 +0900
 tag     : 
 toc     : true
 public  : true
@@ -101,7 +101,7 @@ GitHub이 GraphQL을 선택하게 된 더 자세한 이유에 대해서는 [블�
 
 ## 예제를 통한 연습
 
-### SWAPI
+### SWAPI로 query 조회하기
 
 [SWAPI GraphQL API](https://graphql.org/swapi-graphql )에서 GraphQL을 연습해 보며 학습할 수 있다. 데이터를 조회해보면 스타워즈가 주제라는 것을 알 수 있다. (이름의 SWAPI가 Star Wars API를 의미하는 것 같다.)
 
@@ -149,6 +149,14 @@ query {
 }
 ```
 
+이 요청 또한 다음과 같은 요청으로 보내진다. 엔드포인트가 똑같지만 payload에 담긴 쿼리만 다르다는 점에 주목하자.
+
+```sh
+curl 'https://swapi-graphql.netlify.app/.netlify/functions/index' \
+  -H 'content-type: application/json' \
+  --data-raw '{"query":"query { person(personID: 1) { name eyeColor homeworld { name }}}","variables":null}'
+```
+
 결과는 다음과 같다.
 
 ```json
@@ -165,7 +173,7 @@ query {
 }
 ```
 
-### github
+### github API
 
 [github의 Introduction to GraphQL]( https://docs.github.com/en/graphql/guides/introduction-to-graphql )을 읽으며
 [GitHub의 GraphQL playground]( https://docs.github.com/en/graphql/overview/explorer )에서 연습해보자.
@@ -491,19 +499,54 @@ query {
 - `me`를 조회하기 위해 `Query_me` 함수를 호출하고, 그 결과에서 `name`을 완성해주기 위해 `User_name` 함수를 호출하게 되는 것.
 - `me`와 `Query_me`의 관계, 그리고 `name`과 `User_name`의 관계는 자동으로 되는 건 아니고 따로 다른 곳에서 연결해줘야 한다.
 
-#### 쿼리 & 뮤테이션
+#### operation name
 
-<https://graphql-kr.github.io/learn/queries/ >
+<https://graphql.org/learn/queries/#operation-name >
+
+```graphql
+query HeroNameAndFriends {
+  hero { name }
+}
+```
+
+- `query`는 operation type.
+    - `query`는 생략 가능하지만 가급적이면 생략하지 않도록 하자.
+- `HeroNameAndFriends`는 operation name.
+    - operation name은 이름을 붙인 쿼리를 만들어 계속 재활용할 수 있게 한다.
+    - 조회를 요청하는 쪽에 무한한 권한을 줄 수는 없으니 이런 이름을 붙인 쿼리를 적절히 잘 사용해야 한다.
+- operation type
+    - 조회에 사용하는 `query`
+    - 업데이트에 사용하는 `mutation`
+    - 구독에 사용하는 `subscription`
+
+#### variables
+
+<https://graphql.org/learn/queries/#variables >
+
+다음과 같이 변수와, 변수 기본값을 지정할 수 있다.
+
+```graphql
+query HeroNameAndFriends($episode: Episode = "JEDI") {
+  hero(episode: $episode) {
+    name
+    friends { name }
+  } }
+```
+
+#### arguments
+
+<https://graphql.org/learn/queries/#arguments >
 
 | 쿼리                    | 결과                     |
 |-------------------------|--------------------------|
 | <span id="query-CD58"/> | <span id="result-CD58"/> |
+| <span id="query-245D"/> | <span id="result-245D"/> |
 
 ```graphql
 query {
-  human(id: "1000") {
+  human(id: "1000") {   # id가 인자
     name
-    height(unit: FOOT)
+    height(unit: FOOT)  # unit이 인자
   } }
 ```
 {:class="dynamic-insert" data-target-selector="#query-CD58"}
@@ -517,18 +560,6 @@ query {
     } } }
 ```
 {:class="dynamic-insert" data-target-selector="#result-CD58"}
-
-- `human(id: "1000")`은 함수에 `id: "1000"`을 넘겨서, `id`가 `1000`인 `human`을 조회한다.
-    - `SELECT name, height FROM human WHERE id = 1000` 라고 생각해두자.
-- `name` 필드는 `String`을 리턴한다.
-- `height(unit: FOOT)`은 함수에 `unit: FOOT`을 넘겨서, 단위를 FOOT으로 맞춘다.
-    - `human`에서 `id`는 조회 기준이었는데, `height`에서 `unit`은 단위 지정이다.
-        - 함수가 어떤 결과를 리턴할지는 함수를 만든 사람 마음이다. 동료들과 잘 이야기하며 정해야 하는 문제이다.
-    - `height` 필드는 `Float`을 리턴한다.
-
-| 쿼리                    | 결과                     |
-|-------------------------|--------------------------|
-| <span id="query-245D"/> | <span id="result-245D"/> |
 
 ```graphql
 query {
@@ -554,7 +585,17 @@ query {
 ```
 {:class="dynamic-insert" data-target-selector="#result-245D"}
 
-- `friends` 필드는 배열을 리턴한다.
+- `id`, `unit`, `episode`가 인자에 해당한다.
+    - 인자가 계층 구조의 여러 곳에 들어갈 수 있다는 점에 주목하자.
+    - `id`는 String 타입 인자.
+    - `unit`과 `episode`는 enum 타입 인자.
+- 인자를 받는 함수가 어떻게 구현되었는지에 따라 인자의 용도가 다르다.
+    - `human`에서 `id`는 조회 기준이었는데, `height`에서 `unit`은 단위 지정이다.
+    - 함수가 어떤 결과를 리턴할지는 함수를 만든 사람 마음이다. 동료들과 잘 이야기하며 정해야 하는 문제이다.
+
+#### aliases
+
+<https://graphql.org/learn/queries/#aliases >
 
 | 쿼리                    | 결과                     |
 |-------------------------|--------------------------|
@@ -583,7 +624,100 @@ query {
 ```
 {:class="dynamic-insert" data-target-selector="#result-C9B9"}
 
-- `empireHero:`와 `jediHero:`는 알리아싱을 의미한다. 같은 `hero`이지만 결과를 보면 다른 key 값이 돌아왔다.
+- `empireHero:`와 `jediHero:`는 알리아스를 의미한다.
+- 즉, 같은 `hero`이지만 결과 json을 보면 key 값이 지정한 알리아스로 되어 있다.
+    - SQL의 `as`를 떠올리게 하는 기능이다.
+
+#### fragments
+
+<https://graphql.org/learn/queries/#fragments >
+
+중복 필드를 fragment로 묶어 표현하는 것도 가능하다.
+
+| 쿼리                    | 결과                     |
+|-------------------------|--------------------------|
+| <span id="query-59EC"/> | <span id="result-59EC"/> |
+
+```graphql
+{
+  leftComparison: hero(episode: EMPIRE) {
+    ...comparisonFields
+  }
+  rightComparison: hero(episode: JEDI) {
+    ...comparisonFields
+  } }
+
+fragment comparisonFields on Character {
+  name
+  friends { name }
+}
+```
+{:class="dynamic-insert" data-target-selector="#query-59EC"}
+
+```json
+{
+  "data": {
+    "leftComparison": {
+      "name": "Luke Skywalker",
+      "friends": [
+        { "name": "Han Solo" },
+        { "name": "Leia Organa" },
+        { "name": "C-3PO" },
+        { "name": "R2-D2" } ] },
+    "rightComparison": {
+      "name": "R2-D2",
+      "friends": [
+        { "name": "Luke Skywalker" },
+        { "name": "Han Solo" },
+        { "name": "Leia Organa" } ]
+    } } }
+```
+{:class="dynamic-insert" data-target-selector="#result-59EC"}
+
+- fragment는 `fragment 이름 on 타입 { 필드 }` 형태로 정의한다.
+- 정의한 fragment는 query에서 `...프래그먼트이름`으로 사용한다.
+- `leftComparison`과 `rightComparison`은 `...comparisonFields` fragment를 사용하고 있다.
+    - 따라서 둘 다 `name`과 `friends { name }` 필드를 갖는다.
+
+#### mutations
+
+<https://graphql.org/learn/queries/#mutations >
+
+다음과 같이 mutation을 정의할 수 있다.
+
+```graphql
+mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
+  createReview(episode: $ep, review: $review) {
+    stars
+    commentary
+  }
+}
+```
+
+다음과 같은 json을 전송하면..
+
+```json
+{
+  "ep": "JEDI",
+  "review": {
+    "stars": 5,
+    "commentary": "This is a great movie!"
+  } }
+```
+
+업데이트 결과가 돌아온다.
+
+```json
+{
+  "data": {
+    "createReview": {
+      "stars": 5,
+      "commentary": "This is a great movie!"
+    } } }
+```
+
+- `ep`는 업데이트 대상 조회용으로 사용되었고, `review`는 업데이트 내용으로 사용되었다.
+- 이 때 `review`는 `input object type`으로 선언된 것이다.
 
 ## 참고문헌
 
