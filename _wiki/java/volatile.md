@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java volatile
 summary : 
 date    : 2022-02-01 10:46:59 +0900
-updated : 2022-02-01 14:35:49 +0900
+updated : 2022-02-01 15:09:28 +0900
 tag     : java
 toc     : true
 public  : true
@@ -120,8 +120,32 @@ See [§17.4]( https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls
 
 자세한 내용과 예제는 17.4 절을 참고하세요.
 
+## 다른 언어의 volatile
 
-## From: The C Programming Language
+이 문서는 Java의 volatile을 알아보는 것이 주제이다.
+그러나 volatile은 다른 언어들에도 있는 개념이며 Java에서는 좀 독특한 방식으로 사용된다고 볼 수 있다.
+
+### From: Fortran77 Language Reference
+
+[FORTRAN 77 Language Reference]( https://docs.oracle.com/cd/E19957-01/805-4939/6j4m0vnbq/index.html )
+
+>
+**VOLATILE**
+>
+The `VOLATILE` @ statement prevents optimization on the specified items.
+
+`VOLATILE @` 문은 지정한 아이템에 대한 최적화를 방지합니다.
+
+>
+**Description**
+>
+The `VOLATILE` statement prevents optimization on the items in the list. Programs relying on it are usually nonportable.
+
+`VOLATILE` 문은 목록의 아이템에 대한 최적화를 방지합니다. 이 기능에 의존하는 프로그램은 이식성을 보장할 수 없습니다.
+
+심심하다면 [XL Fortran for Blue Gene/Q - VOLATILE]( https://www.ibm.com/docs/en/xffbg/121.141?topic=attributes-volatile )도 읽어보도록 하자.
+
+### From: The C Programming Language
 
 >
 **A.4.4 형 한정사**
@@ -146,7 +170,7 @@ See [§17.4]( https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls
 세 번째 한정어 noalias는 현재 표준화 위원회에서 심사 중에 있다.
 [^tcpl-314]
 
-## From: The C++ Programming Language, 4th Edition
+### From: The C++ Programming Language, 4th Edition
 
 >
 **41.4 volatile**
@@ -173,7 +197,7 @@ See [§17.4]( https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls
 동기화를 위해서라면 `atomic`(41.3절), `mutex`(42.31절), 또는 `condition_variable`(42.3.4절)을 이용하기 바란다.
 [^bjarne-1289]
 
-## From: C# language specification
+### From: C# language specification
 
 [14.5.4 Volatile fields]( https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/classes#1454-volatile-fields )
 ([한국어]( https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/language-specification/classes#volatile-fields ))
@@ -217,6 +241,7 @@ volatile 필드의 타입은 다음 중 하나여야 합니다.
 - KERNIGHAN의 C 언어 프로그래밍 Second Edition 수정판 / Brian W. Kernighan, Dennis M. Ritchie 공저 / 김석환, 박용규, 최홍순 공저 / 휴먼싸이언스 / 2016년 02월 01일 2판 1쇄 발행 / 원제: The C Programming Language, 2nd Edition
 - The C++ Programming Language Fourth EDition / 비야네 스트롭스트룹 저 / 박지유 역 / 에이콘출판사 / 발행 2016년 1월 4일 / 원제 : The C++ Programming Language
 - [C# language specification - volatile fields]( https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/language-specification/classes#volatile-fields )
+- [FORTRAN 77 Language Reference]( https://docs.oracle.com/cd/E19957-01/805-4939/6j4m0vnbq/index.html )
 - [JLS 17 - 8.3.1.4. volatile Fields]( https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.3.1.4 )
 - [JLS 7 - 8.3.1.4. volatile Fields]( https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.4 )
 
