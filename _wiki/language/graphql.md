@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-02-01 20:55:16 +0900
+updated : 2022-02-01 21:15:59 +0900
 tag     : 
 toc     : true
 public  : true
@@ -256,6 +256,93 @@ query {
 물론 이렇게 스키마를 구성하고 쿼리를 정의해 서버로 보낸다고 모든 값이 자동으로 DB에서 다 조회되어 응답되는 게 아니다.
 위에서 정의한 정렬 방향 정의, 정렬 가능 필드, 정렬 쿼리 등에 대해 resolver를 백엔드에서 다 만들어야 의도한대로 작동할 것이다.
 지금 살펴보고 있는 것은 모두 백엔드가 작업을 완료했다는 것을 전제하고 있다.
+
+### mutation
+
+다음은 Learning GraphQL 책 4장의 예제를 참고해 작성한 것이다.[^learning-graphql-90]
+
+>
+뮤테이션은 반드시 스키마 안에 정의해 두어야 합니다.
+쿼리를 정의할 때처럼 커스텀 타입으로 정의한 다음에 스키마에 추가합니다.
+엄밀히 말하자면 스키마 안에서 쿼리와 뮤테이션 작성법은 차이가 없습니다.
+유일한 차이는 구문 작성 의도에서 발생합니다.
+애플리케이션 상태를 바꿀 액션이나 이벤트가 있을 때만 뮤테이션을 작성해야 합니다.
+>
+뮤테이션은 애플리케이션의 동사 역할을 해야 합니다.
+사용자가 GraphQL 서비스를 가지고 할 수 있는 일을 정의해야 합니다.
+사용자가 GraphQL로 만든 애플리케이션에서 취할 수 있는 동작을 일단 모두 목록으로 만들어 보면, 대부분이 뮤테이션일 확률이 높습니다.
+[^learning-graphql-89]
+
+<span/>
+
+>
+뮤테이션은 스키마의 루트 mutation 타입에 추가하여 클라이언트에서 사용할 수 있도록 합니다.
+[^learning-graphql-90]
+
+```graphql
+# mutation 정의
+type Mutation {
+    postPhoto(
+        name: String!
+        description: String
+        category: PhotoCategory = PORTRAIT
+    ): Photo!
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+```
+
+쿼리는 다음과 같이 보낼 수 있다.
+
+```graphql
+# 새로운 사진을 등록한다. 사진의 이름은 "Sending the Palisades".
+mutation {
+    postPhoto(name: "Sending the Palisades") {
+        id
+        name
+        created
+        postedBy { name }
+    }
+}
+```
+
+- 사진이 어떻게 보내졌는지는 생략하고, 의미를 생각하자.
+    - 사진 `name`은 필수값이므로 `"Sending the Palisades"`를 전송.
+    - `category`는 지정하지 않았으므로, 기본값인 `PORTRAIT`를 전송.
+- 사진이 새로 등록되면, 등록된 사진의 `id`, `name`, `created`와 `postedBy` 등이 응답으로 돌아오게 된다.
+
+쿼리에 변수를 사용하는 방법도 있다.
+
+```graphql
+mutation postPhoto(
+    $name: String!
+    $description: String
+    $category: PhotoCategory
+) {
+    postPhoto(
+        name: $name
+        description: $description
+        category: $category
+    ) {
+        id
+        name
+        email
+    }
+}
+```
+
+이렇게 정의하고 각 변수에 해당하는 값들을 json으로 보내주는 방법이다.
+
+```json
+{
+    "name": "Sending the Palisades",
+    "description": "A photo of the Palisades in the US",
+    "category": "PORTRAIT"
+}
+```
 
 ## 예제를 통한 연습
 
@@ -889,6 +976,8 @@ mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 [^learning-graphql-71]: 웹 앱 API 개발을 위한 GraphQL. 4장. 71쪽.
 [^learning-graphql-71-76]: 웹 앱 API 개발을 위한 GraphQL. 4장. 71~76쪽.
 [^learning-graphql-84-89]: 웹 앱 API 개발을 위한 GraphQL. 4장. 84~89쪽.
+[^learning-graphql-89]: 웹 앱 API 개발을 위한 GraphQL. 4장. 89쪽.
+[^learning-graphql-90]: 웹 앱 API 개발을 위한 GraphQL. 4장. 90쪽.
 [^github-schema-repository-from]: `type Query {..}`는 30042~30537번 라인. `repository(..): Repository`는 30288~30303번 라인.
 [^github-schema-repository-type]: `Repository {..}`는 34616~36013번 라인. `issues(..)` 는 35175~35215
 [^github-schema-add-reaction]: `addReaction(..)`는 18003~18008번 라인.
