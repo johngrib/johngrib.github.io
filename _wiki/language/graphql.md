@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-01-31 16:17:35 +0900
+updated : 2022-02-01 17:13:28 +0900
 tag     : 
 toc     : true
 public  : true
@@ -98,6 +98,56 @@ GitHub이 GraphQL을 선택하게 된 더 자세한 이유에 대해서는 [블�
     - 여러 개의 조회용 API 엔드포인트 주소를 GraphQL 쿼리를 받는 엔드포인트 하나로 합쳐갈 수 있다.
     - 특정 API에서의 조회 요청에 대응하는 GraphQL 스키마만 정의되어 있다면 해당 API 호출부를 GraphQL 쿼리를 만들고 GraphQL 엔드포인트를 호출하도록 수정하면 된다. 이후 문제가 없는 것을 확인하고, 오래된 API를 삭제하면 된다.
     - 쿼리를 수정하기만 하면 결과 포맷도 변경이 가능하므로, 결과 셋 형식에 대한 책임이 SQL/ORM을 사용하는 쪽에서, GraphQL 쿼리를 생성하는 쪽으로 넘어간다.
+
+## schema
+
+> 스키마에는 타입 정의를 모아 둡니다.
+스키마는 자바스크립트 파일에 문자열로 작성하거나, 따로 텍스트 파일로 작성해 둘 수도 있습니다.
+텍스트 파일의 주요 확장자는 `.graphql` 입니다.
+[^learning-graphql-71]
+
+다음은 Learning GraphQL 책 4장의 예제를 참고해 작성한 것이다.[^learning-graphql-71-76]
+
+```graphql
+# 커스텀 스칼라 타입 정의
+scalar DateTime
+
+# enum 타입 정의
+enum PhotoCategory {
+    SELFIE
+    PORTRAIT
+}
+
+type User {
+    githubLogin: ID!
+    name: String
+    avatar: String
+    # null을 허용하지 않는 리스트. 리스트 자체도 not null.
+    postedPhotos: [Photo!]!
+}
+
+# Photo 타입 선언
+type Photo {
+    id: ID!
+    name: String!
+    url: String!          # String 타입이며, non null
+    description: String   # String 타입이며, nullable
+    created: DateTime!    # 커스텀 스칼라 타입
+    category: PhotoCategory!
+    postedBy: User!       # type 안에서 다른 type을 참조할 수 있다
+}
+```
+
+- `!`를 써서 null을 허용하지 않는다는 것을 선언할 수 있다.
+- `!`와 배열 `[]`을 함께 사용하면 좀 헷갈리는데 다음과 같이 요약할 수 있다.
+
+| 리스트 선언 | 아이템   | 리스트 자체 | valid 예제                    |
+|-------------|----------|-------------|-------------------------------|
+| `[Int]`     |          |             | `null`, `[1, null]`, `[1, 2]` |
+| `[Int!]`    | not null |             | `null`, `[1, 2]`              |
+| `[Int]!`    |          | not null    | `[1, null]`, `[1, 2]`         |
+| `[Int!]!`   | not null | not null    | `[1, 2]`                      |
+
 
 ## 예제를 통한 연습
 
@@ -728,6 +778,8 @@ mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 ## 주석
 
 [^learning-graphql-38]: 웹 앱 API 개발을 위한 GraphQL. 3장. 38쪽.
+[^learning-graphql-71]: 웹 앱 API 개발을 위한 GraphQL. 4장. 71쪽.
+[^learning-graphql-71-76]: 웹 앱 API 개발을 위한 GraphQL. 4장. 71~76쪽.
 [^github-schema-repository-from]: `type Query {..}`는 30042~30537번 라인. `repository(..): Repository`는 30288~30303번 라인.
 [^github-schema-repository-type]: `Repository {..}`는 34616~36013번 라인. `issues(..)` 는 35175~35215
 [^github-schema-add-reaction]: `addReaction(..)`는 18003~18008번 라인.
