@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java volatile
 summary : 
 date    : 2022-02-01 10:46:59 +0900
-updated : 2022-02-01 13:55:16 +0900
+updated : 2022-02-01 14:35:49 +0900
 tag     : java
 toc     : true
 public  : true
@@ -173,10 +173,50 @@ See [§17.4]( https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls
 동기화를 위해서라면 `atomic`(41.3절), `mutex`(42.31절), 또는 `condition_variable`(42.3.4절)을 이용하기 바란다.
 [^bjarne-1289]
 
+## From: C# language specification
+
+[14.5.4 Volatile fields]( https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/classes#1454-volatile-fields )
+([한국어]( https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/language-specification/classes#volatile-fields ))
+
+>
+When a field_declaration includes a `volatile` modifier, the fields introduced by that declaration are **volatile fields**.
+For non-volatile fields, optimization techniques that reorder instructions can lead to unexpected and unpredictable results in multi-threaded programs that access fields without synchronization such as that provided by the lock_statement ([§12.13]( https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/statements#1213-the-lock-statement )).
+These optimizations can be performed by the compiler, by the run-time system, or by hardware. For volatile fields, such reordering optimizations are restricted:
+
+_field_declaration_ 에 `volatile` 한정자가 포함되어 있다면, 해당 필드는 **휘발성 필드**(volatile fields)로 선언된 것입니다.
+비휘발성 필드(non-volatile fields)의 경우, 명령 순서를 변경하는 등의 최적화 기술은 lock_statement에서 제공 하는 것 같은 종류의 동기화가 없이 필드에 액세스하는 멀티 스레드 프로그램에서 예상치 못한 결과를 초래할 수 있습니다.
+이러한 최적화는 컴파일러, 런타임 시스템 또는 하드웨어에서 수행할 수 있습니다.
+volatile 필드의 경우에는 이런 순서 재정렬 방식의 최적화가 다음과 같이 제한됩니다.
+
+>
+- A read of a volatile field is called a **volatile read**. A volatile read has "acquire semantics"; that is, it is guaranteed to occur prior to any references to memory that occur after it in the instruction sequence.
+- A write of a volatile field is called a **volatile write**. A volatile write has "release semantics"; that is, it is guaranteed to happen after any memory references prior to the write instruction in the instruction sequence.
+
+- Volatile 필드를 읽는 것을 **휘발성 읽기**(volatile read)라고 합니다. volatile read는 "의미 획득"의 의미가 있습니다. 즉, 명령 시퀀스에서 메모리 참조 이후에 발생하는 다른 어떤 메모리 참조보다 먼저 발생하도록 보장됩니다.
+- Volatile 필드에 쓰는 것을 **휘발성 쓰기**(volatile write)라고 합니다. volatile 쓰기에는 "풀어주기 의미"가 있습니다. 즉, 명령 시퀀스에서 쓰기 명령 이전의 메모리 참조 이후에 발생하도록 보장됩니다.
+
+>
+These restrictions ensure that all threads will observe volatile writes performed by any other thread in the order in which they were performed.
+A conforming implementation is not required to provide a single total ordering of volatile writes as seen from all threads of execution.
+The type of a volatile field shall be one of the following:
+
+이러한 제한 사항으로 인해 모든 스레드가 다른 스레드에서 실행한 휘발성 쓰기를 실행 순서대로 관찰할 수 있습니다.
+모든 실행 스레드에서 볼 수 있듯, 휘발성 쓰기의 단일한 전체 순서를 제공하기 위한 적합한 구현은 필요하지 않습니다.
+volatile 필드의 타입은 다음 중 하나여야 합니다.
+
+>
+- A _reference_type_.
+- A _type_parameter_ that is known to be a reference type ([§14.2.5]( https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/classes#1425-type-parameter-constraints )).
+- The type `byte`, `sbyte`, `short`, `ushort`, `int`, `uint`, `char`, `float`, `bool`, `System.IntPtr`, or `System.UIntPtr`.
+- An _enum_type_ having an _enum_base_ type of `byte`, `sbyte`, `short`, `ushort`, `int`, or `uint`.
+
+
+
 ## 참고문헌
 
 - KERNIGHAN의 C 언어 프로그래밍 Second Edition 수정판 / Brian W. Kernighan, Dennis M. Ritchie 공저 / 김석환, 박용규, 최홍순 공저 / 휴먼싸이언스 / 2016년 02월 01일 2판 1쇄 발행 / 원제: The C Programming Language, 2nd Edition
 - The C++ Programming Language Fourth EDition / 비야네 스트롭스트룹 저 / 박지유 역 / 에이콘출판사 / 발행 2016년 1월 4일 / 원제 : The C++ Programming Language
+- [C# language specification - volatile fields]( https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/language-specification/classes#volatile-fields )
 - [JLS 17 - 8.3.1.4. volatile Fields]( https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.3.1.4 )
 - [JLS 7 - 8.3.1.4. volatile Fields]( https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.4 )
 
@@ -185,3 +225,4 @@ See [§17.4]( https://docs.oracle.com/javase/specs/jls/se17/html/jls-17.html#jls
 [^tcpl-290]: The C Programming Language. Appendix A. 290쪽.
 [^tcpl-314]: The C Programming Language. Appendix A. 314쪽.
 [^bjarne-1289]: The C++ Programming Language 한국어판 [4판]. 41장. 1289쪽.
+
