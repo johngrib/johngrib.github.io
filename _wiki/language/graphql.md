@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-02-01 21:15:59 +0900
+updated : 2022-02-01 22:18:14 +0900
 tag     : 
 toc     : true
 public  : true
@@ -118,6 +118,7 @@ scalar DateTime
 enum PhotoCategory {
     SELFIE
     PORTRAIT
+    LANDSCAPE
 }
 
 type User {
@@ -343,6 +344,57 @@ mutation postPhoto(
     "category": "PORTRAIT"
 }
 ```
+
+#### input
+
+input 타입을 사용하면 query와 mutation에서 사용하는 인자를 따로 정의해 사용할 수 있다.
+물론 재활용도 가능하다.
+
+위에서 정의한 `mutation postPhoto`의 세 인자 `$name`, `$description`, `$category`를 `input`으로 분리해 보자.
+
+다음은 Learning GraphQL 책 4장의 예제를 참고해 작성한 것이다.[^learning-graphql-92]
+
+```perl
+# input 정의
+input PostPhotoInput {
+    name: String!
+    description: String
+    category: PhotoCategory = PORTRAIT
+}
+
+type Mutation {
+                    # ↓ 여기에서 사용한다
+    postPhoto(input: PostPhotoInput): Photo!
+}
+```
+
+이제 mutation 요청을 정의해보자.
+
+```graphql
+mutation newPhoto($input: PostPhotoInput!) {
+                    # ↓ 여기. 타입은 PostPhotoInput 이어야 한다.
+    postPhoto(input: $input) {
+        id
+        url
+        created
+    }
+}
+```
+
+json은 이렇게 보내면 된다.
+
+```json
+{
+    "input": {
+        "name": "Hanging at the Arc"",
+        "description": "Sunny on the deck of the Arc",
+        "category": "LANDSCAPE"
+    }
+}
+```
+
+
+
 
 ## 예제를 통한 연습
 
@@ -978,6 +1030,7 @@ mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 [^learning-graphql-84-89]: 웹 앱 API 개발을 위한 GraphQL. 4장. 84~89쪽.
 [^learning-graphql-89]: 웹 앱 API 개발을 위한 GraphQL. 4장. 89쪽.
 [^learning-graphql-90]: 웹 앱 API 개발을 위한 GraphQL. 4장. 90쪽.
+[^learning-graphql-92]: 웹 앱 API 개발을 위한 GraphQL. 4장. 92쪽.
 [^github-schema-repository-from]: `type Query {..}`는 30042~30537번 라인. `repository(..): Repository`는 30288~30303번 라인.
 [^github-schema-repository-type]: `Repository {..}`는 34616~36013번 라인. `issues(..)` 는 35175~35215
 [^github-schema-add-reaction]: `addReaction(..)`는 18003~18008번 라인.
