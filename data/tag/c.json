@@ -2,6 +2,7 @@
  "brian-w-kernighan",
  "cmd/man",
  "duff-s-device",
+ "java/volatile",
  "lldb-cmd",
  "make-cmd"
 ]

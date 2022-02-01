@@ -125,7 +125,7 @@
  },
  {
   "name": "c",
-  "size": 5
+  "size": 6
  },
  {
   "name": "calculator",
@@ -188,8 +188,16 @@
   "size": 1
  },
  {
+  "name": "cpp",
+  "size": 1
+ },
+ {
   "name": "cs",
   "size": 14
+ },
+ {
+  "name": "csharp",
+  "size": 1
  },
  {
   "name": "ctags",
@@ -301,6 +309,10 @@
  },
  {
   "name": "font",
+  "size": 1
+ },
+ {
+  "name": "fortran",
   "size": 1
  },
  {

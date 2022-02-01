@@ -3,8 +3,8 @@ layout  : wiki
 title   : Java volatile
 summary : 
 date    : 2022-02-01 10:46:59 +0900
-updated : 2022-02-01 15:09:28 +0900
-tag     : java
+updated : 2022-02-01 15:10:14 +0900
+tag     : java fortran c cpp csharp
 toc     : true
 public  : true
 parent  : [[/java]]
