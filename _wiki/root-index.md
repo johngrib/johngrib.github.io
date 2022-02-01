@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-01-31 22:03:14 +0900
+updated : 2022-02-01 10:46:54 +0900
 regenerate: true
 ---
 
@@ -238,6 +238,8 @@ regenerate: true
 * [[/java/object-equals]]
 * [[/java/stream]]
 * [[/java/switch]]
+* [[/java/volatile]]
+
 * [[Object-hashCode]]
 * [[Object-toString]]
 * [[java-TemporalAdjusters]]

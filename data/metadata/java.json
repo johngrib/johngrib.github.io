@@ -27,6 +27,7 @@
   "java/object-equals",
   "java/stream",
   "java/switch",
+  "java/volatile",
   "java10-var",
   "java8",
   "java8-performance-improvement-for-hashmap",
