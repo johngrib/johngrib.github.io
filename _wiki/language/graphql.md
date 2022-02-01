@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-02-01 17:13:28 +0900
+updated : 2022-02-01 20:55:16 +0900
 tag     : 
 toc     : true
 public  : true
@@ -99,7 +99,9 @@ GitHub이 GraphQL을 선택하게 된 더 자세한 이유에 대해서는 [블�
     - 특정 API에서의 조회 요청에 대응하는 GraphQL 스키마만 정의되어 있다면 해당 API 호출부를 GraphQL 쿼리를 만들고 GraphQL 엔드포인트를 호출하도록 수정하면 된다. 이후 문제가 없는 것을 확인하고, 오래된 API를 삭제하면 된다.
     - 쿼리를 수정하기만 하면 결과 포맷도 변경이 가능하므로, 결과 셋 형식에 대한 책임이 SQL/ORM을 사용하는 쪽에서, GraphQL 쿼리를 생성하는 쪽으로 넘어간다.
 
-## schema
+## GraphQL 이것저것
+
+### schema
 
 > 스키마에는 타입 정의를 모아 둡니다.
 스키마는 자바스크립트 파일에 문자열로 작성하거나, 따로 텍스트 파일로 작성해 둘 수도 있습니다.
@@ -148,6 +150,112 @@ type Photo {
 | `[Int]!`    |          | not null    | `[1, null]`, `[1, 2]`         |
 | `[Int!]!`   | not null | not null    | `[1, 2]`                      |
 
+### query
+
+다음은 Learning GraphQL 책 4장의 예제를 참고해 작성한 것이다.[^learning-graphql-84-89]
+
+```graphql
+# 쿼리 선언
+# 필수 조회 인자로 User의 githubLogin과 Photo의 id를 요구한다
+type Query {
+    User(githubLogin: ID!): User!
+    Photo(id: ID!): Photo!
+}
+```
+
+위에서 선언한 쿼리는 다음과 같이 사용할 수 있다.
+
+```graphql
+query {
+    # User 조회 조건으로 "John Doe"를 지정한다
+    User(githubLogin: "John Doe") {
+        name
+        avatar
+    }
+}
+```
+
+- 쿼리 선언에서는 `User`와 `Photo`를 모두 정의했다.
+- 그러나 조회 쿼리에서는 `Photo`가 별로 필요가 없는 상황이었는지 `User`만 조회해 달라고 질의하고 있다.
+    - `User`의 필드는 여러 가지가 있는데, `name`과 `avatar`만 필요했는지 이 두 가지만 조회해 달라고 질의하고 있다.
+
+위에서 선언한 쿼리를 통해 다음과 같은 쿼리도 만들어 사용할 수 있다.
+
+```graphql
+query {
+    Photo(id: "14TH5B6NS4KIG3H4S") {
+        name
+        description
+        url
+    }
+}
+```
+
+- 이 조회 쿼리에서는 `User`는 필요가 없었는지 `Photo`만 조회하고 있다.
+- `Photo`또한 다양한 필드를 갖고 있지만 여기에서는 `name`, `description`, `url`만을 선택하고 있다.
+
+```perl
+# 페이징 쿼리 선언
+type Query {
+    # first는 한 페이지에 들어가는 레코드의 수 (Int=50 은 기본값)
+    # start는 페이지 첫번째 레코드의 인덱스 (Int=0 은 기본값)
+    allUsers(first: Int=50 start: Int=0): [User!]!
+    allPhotos(first: Int=25 start: Int=0): [Photo!]!
+}
+```
+
+- 이 쿼리를 호출할 때 `first`와 `start` 값을 제공하지 않으면 기본값을 사용한다.
+
+```graphql
+# 페이징 쿼리를 사용한 조회
+query {
+    allUsers(first: 10 start: 90) {
+        name
+        avatar
+    }
+}
+```
+
+- `90`번 user부터 시작하여 10명의 user를 조회한다.
+    - 각 user의 `name`과 `avatar`를 선택해 조회.
+
+이번에는 정렬 인자도 제공해 보자.
+
+```perl
+# 정렬 방향 정의
+enum SortDirection {
+    ASCENDING
+    DESCENDING
+}
+
+# 정렬 가능한 필드 선언
+enum SortablePhotoField {
+    name
+    description
+    category
+    created
+}
+
+# 정렬 쿼리 선언
+Query {
+    allPhotos(
+        sort: SortDirection = DESCENDING
+        sortBy: SortablePhotoField = created
+    ): [Photo!]!
+}
+```
+
+조회는 이렇게 할 수 있을 것이다.
+
+```graphql
+query {
+    allPhotos(sortBy: name)
+}
+```
+
+물론 이렇게 스키마를 구성하고 쿼리를 정의해 서버로 보낸다고 모든 값이 자동으로 DB에서 다 조회되어 응답되는 게 아니다.
+위에서 정의한 정렬 방향 정의, 정렬 가능 필드, 정렬 쿼리 등에 대해 resolver를 백엔드에서 다 만들어야 의도한대로 작동할 것이다.
+지금 살펴보고 있는 것은 모두 백엔드가 작업을 완료했다는 것을 전제하고 있다.
 
 ## 예제를 통한 연습
 
@@ -780,6 +888,7 @@ mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 [^learning-graphql-38]: 웹 앱 API 개발을 위한 GraphQL. 3장. 38쪽.
 [^learning-graphql-71]: 웹 앱 API 개발을 위한 GraphQL. 4장. 71쪽.
 [^learning-graphql-71-76]: 웹 앱 API 개발을 위한 GraphQL. 4장. 71~76쪽.
+[^learning-graphql-84-89]: 웹 앱 API 개발을 위한 GraphQL. 4장. 84~89쪽.
 [^github-schema-repository-from]: `type Query {..}`는 30042~30537번 라인. `repository(..): Repository`는 30288~30303번 라인.
 [^github-schema-repository-type]: `Repository {..}`는 34616~36013번 라인. `issues(..)` 는 35175~35215
 [^github-schema-add-reaction]: `addReaction(..)`는 18003~18008번 라인.
