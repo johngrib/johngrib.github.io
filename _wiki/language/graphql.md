@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-02-02 13:42:26 +0900
+updated : 2022-02-02 13:52:16 +0900
 tag     : 
 toc     : true
 public  : true
@@ -345,7 +345,7 @@ mutation postPhoto(
 }
 ```
 
-#### input
+### input
 
 input 타입을 사용하면 query와 mutation에서 사용하는 인자를 따로 정의해 사용할 수 있다.
 물론 재활용도 가능하다.
