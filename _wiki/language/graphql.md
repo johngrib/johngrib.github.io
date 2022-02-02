@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-02-02 13:59:52 +0900
+updated : 2022-02-02 15:35:48 +0900
 tag     : 
 toc     : true
 public  : true
@@ -1047,6 +1047,10 @@ mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 
 - `ep`는 업데이트 대상 조회용으로 사용되었고, `review`는 업데이트 내용으로 사용되었다.
 - 이 때 `review`는 `input object type`으로 선언된 것이다.
+
+## 함께 읽기
+
+- [[/REST-paper-summary]]
 
 ## 참고문헌
 
