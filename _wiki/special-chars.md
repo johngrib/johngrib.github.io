@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-02-02 17:10:10 +0900
+updated : 2022-02-02 17:15:59 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -827,6 +827,7 @@ val hello = "hello, world"
 그가 그 기호를 쓴 것은 "세상에서 그 두 선만큼 똑같은 것은 없기" 때문이었다.
 레코드의 선택은 옳았다.
 등호는 450년이라는 오랜 세월 동안 사용되었다.
+[^ian-14]
 
 
 #### Perl 언어의 `=`가 포함된 연산자
@@ -1110,9 +1111,11 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 - [ASCII (The Jargon File)]( http://www.catb.org/jargon/html/A/ASCII.html )
 - [ASCII(7) (man7.org)]( http://man7.org/linux/man-pages/man7/ascii.7.html )
 - [Basic Latin (Unicode block) (wikipedia)]( https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block) )
+- 세계를 바꾼 17가지 방정식 / 이언 스튜어트 저/김지선 역 / 사이언스북스 / 1판 7쇄 펴냄 2017년 06월 23일 / 원제: 17 Equations That Changed the World
 - 컴파일러 개발자가 들려주는 C 이야기 / 페터르 판데르린던 저/정기훈 역 / 인사이트(insight) / 초판 1쇄 발행 2022년 01월 14일 / 원제: Expert C Programming
 
 
 ## 주석
 
+[^ian-14]: 세계를 바꾼 17가지 방정식. 머리말. 14쪽.
 [^expert-c-programming-39]: 컴파일러 개발자가 들려주는 C 이야기. 2장. 39쪽.
