@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-02-02 13:54:27 +0900
+updated : 2022-02-02 13:59:52 +0900
 tag     : 
 toc     : true
 public  : true
@@ -393,7 +393,39 @@ json은 이렇게 보내면 된다.
 }
 ```
 
+### subscription
 
+Subscription 타입은 구독 모델을 지원한다.
+
+다음은 Learning GraphQL 책 4장의 예제를 참고해 작성한 것이다.[^learning-graphql-97]
+
+```graphql
+type Subscription {
+    newPhoto(category: PhotoCategory): Photo!
+    newUser: User!
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}
+```
+
+요청은 다음과 같이 보낸다.
+
+```graphql
+subscription {
+    newPhoto(category: "ACTION") {
+        id
+        name
+        url
+        postedBy { name }
+    }
+}
+```
+
+이렇게 요청을 보내면 `ACTION` 카테고리에 올라온 새로운 사진을 실시간으로 구독하게 해달라고 서버에 부탁하는 것이다.
 
 
 ## 예제를 통한 연습
@@ -1031,6 +1063,7 @@ mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 [^learning-graphql-89]: 웹 앱 API 개발을 위한 GraphQL. 4장. 89쪽.
 [^learning-graphql-90]: 웹 앱 API 개발을 위한 GraphQL. 4장. 90쪽.
 [^learning-graphql-92]: 웹 앱 API 개발을 위한 GraphQL. 4장. 92쪽.
+[^learning-graphql-97]: 웹 앱 API 개발을 위한 GraphQL. 4장. 97쪽.
 [^github-schema-repository-from]: `type Query {..}`는 30042~30537번 라인. `repository(..): Repository`는 30288~30303번 라인.
 [^github-schema-repository-type]: `Repository {..}`는 34616~36013번 라인. `issues(..)` 는 35175~35215
 [^github-schema-add-reaction]: `addReaction(..)`는 18003~18008번 라인.
