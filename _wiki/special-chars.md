@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2021-09-25 17:43:53 +0900
+updated : 2022-02-02 17:10:10 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -37,7 +37,7 @@ latex   : true
 ### 눈에 보이지 않는 문자와 Vim notation
 
 * Vim notation : Vim의 key notation을 말한다. `:help keycodes`로 볼 수 있다.
-* 눈에 보이지 않는 문자 : Null이나, Backspace 등의 문자는 MS워드와 같은 대중적인 편집기 상에서는 눈으로 확인할 수 없다.
+* 눈에 보이지 않는 문자 : NUL이나, Backspace 등의 문자는 MS워드와 같은 대중적인 편집기 상에서는 눈으로 확인할 수 없다.
 
 ### 참고: Vim에서는 눈에 보이지 않는 문자를 보이게 하는 방법이 있다
 
@@ -122,9 +122,9 @@ latex   : true
 * [fileformat.info/info/unicode/char/00](http://www.fileformat.info/info/unicode/char/00 )
 * [Null character(wikipedia)](https://en.wikipedia.org/wiki/Null_character )
 
-#### C 언어 문자열
+#### C 언어에서의 NUL과 null
 
-C 언어에서 `\0`은 문자열의 마지막을 표시하는 용도로도 사용한다.
+C 언어에서 `NUL` 즉, `\0`은 문자열의 마지막을 표시하는 용도로도 사용한다.
 
 * 끝을 알 수 있으므로, 문자열을 복사할 때도 쓰고 출력할 때도 쓰고 비교할 때도 쓴다.
 * `\0` 때문에 실제 문자의 수는 사람이 보는 것보다 한 글자 더 많다.
@@ -142,6 +142,22 @@ char name[10] = "foo bar";
 | f | o | o |  | b | a | r | \0 |  |  |
 ---------------------------------------
 ```
+
+한편 '컴파일러 개발자가 들려주는 C 이야기'에서는 C 언어에서의 `NUL` 문자와 `NULL`의 개념이 다르다는 것을 강조한다.
+(단, [RFC 20]( https://datatracker.ietf.org/doc/html/rfc20#section-4.1 ) 문서에서는 `NUL` 에 대해 `Null`이라 언급하고 있으므로 C 언어에서의 정의와 RFC 20의 정의가 미묘하게 다르다는 점을 고려해야 한다.)
+
+>
+이 짧은 각운을 기억하고 있으면 포인터와 아스키 0에 대한 올바른 표현을 떠올릴 수 있을 것이다.
+>
+- 'l'이 한 개인 `NUL`은 아스키 문자열을 끝내고,
+- 'l'이 두 개인 `NULL`은 아무것도 가리키지 않는다.
+>
+오그덴 내시(Ogden Nash)에게는 미안하지만 'l' 세 개인 nulll은 철자를 확인해야 함을 의미한다.
+비트 패턴이 0인 아스키 문자를 `NUL`이라고 한다.
+아무것도 가리키지 않는 특벼류한 포인터값이 `NULL`이다.
+이 두 용어는 의미를 바꿀 수 없다.
+[^expert-c-programming-39]
+
 
 ### End of Text
 
@@ -1089,9 +1105,14 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * [fileformat.info/info/unicode/char/203b]( https://www.fileformat.info/info/unicode/char/203b/index.htm )
 * [Reference mark(wikipedia)]( https://en.wikipedia.org/wiki/Reference_mark )
 
-## Links
+## 참고문헌
 
-* [ASCII (The Jargon File)]( http://www.catb.org/jargon/html/A/ASCII.html )
-* [Basic Latin (Unicode block) (wikipedia)]( https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block) )
-* [ASCII(7) (man7.org)]( http://man7.org/linux/man-pages/man7/ascii.7.html )
+- [ASCII (The Jargon File)]( http://www.catb.org/jargon/html/A/ASCII.html )
+- [ASCII(7) (man7.org)]( http://man7.org/linux/man-pages/man7/ascii.7.html )
+- [Basic Latin (Unicode block) (wikipedia)]( https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block) )
+- 컴파일러 개발자가 들려주는 C 이야기 / 페터르 판데르린던 저/정기훈 역 / 인사이트(insight) / 초판 1쇄 발행 2022년 01월 14일 / 원제: Expert C Programming
 
+
+## 주석
+
+[^expert-c-programming-39]: 컴파일러 개발자가 들려주는 C 이야기. 2장. 39쪽.
