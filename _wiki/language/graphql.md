@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-02-02 13:52:16 +0900
+updated : 2022-02-02 13:54:27 +0900
 tag     : 
 toc     : true
 public  : true
@@ -386,7 +386,7 @@ json은 이렇게 보내면 된다.
 ```json
 {
     "input": {
-        "name": "Hanging at the Arc"",
+        "name": "Hanging at the Arc",
         "description": "Sunny on the deck of the Arc",
         "category": "LANDSCAPE"
     }
