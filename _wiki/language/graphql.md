@@ -3,7 +3,7 @@ layout  : wiki
 title   : GraphQL
 summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
-updated : 2022-02-02 15:35:48 +0900
+updated : 2022-02-02 15:40:58 +0900
 tag     : 
 toc     : true
 public  : true
@@ -22,6 +22,15 @@ latex   : false
 >
 GraphQL은 API를 위한 쿼리 언어이며 이미 존재하는 데이터로 쿼리를 수행하기 위한 런타임 입니다.
 GraphQL은 API에 있는 데이터에 대한 완벽하고 이해하기 쉬운 설명을 제공하고 클라이언트에게 필요한 것을 정확하게 요청할 수 있는 기능을 제공하며 시간이 지남에 따라 API를 쉽게 진화시키고 강력한 개발자 도구를 지원합니다.
+
+GraphQL을 사용하면 API 엔드포인트를 최소화하게 된다.
+GraphQL을 처리하는 엔드포인트 하나만 서비스하게 되는 경우도 가능하기 때문이다.
+한편, 쿼리에 포함시킬 타입에 대한 고민을 많이 하게 될 수 있다.
+
+>
+GraphQL을 사용하면 API 설계 과정이 바뀔 수도 있습니다.
+API가 엔드포인트의 집합이 아니라 타입 집합으로 보이게 됩니다.
+[^learning-graphql-69]
 
 ### SQL과 GraphQL
 
@@ -1061,6 +1070,7 @@ mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 ## 주석
 
 [^learning-graphql-38]: 웹 앱 API 개발을 위한 GraphQL. 3장. 38쪽.
+[^learning-graphql-69]: 웹 앱 API 개발을 위한 GraphQL. 3장. 69쪽.
 [^learning-graphql-71]: 웹 앱 API 개발을 위한 GraphQL. 4장. 71쪽.
 [^learning-graphql-71-76]: 웹 앱 API 개발을 위한 GraphQL. 4장. 71~76쪽.
 [^learning-graphql-84-89]: 웹 앱 API 개발을 위한 GraphQL. 4장. 84~89쪽.
