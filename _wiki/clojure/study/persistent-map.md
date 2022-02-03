@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure PersistentMap
 summary : 
 date    : 2022-01-31 22:03:18 +0900
-updated : 2022-01-31 23:50:27 +0900
+updated : 2022-02-03 23:59:25 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -262,7 +262,23 @@ public static PersistentHashMap create(Object... init){
 
 (Clojure의 transient 개념에 대해서는 [[/clojure/reference/transient]] 문서 참고.)
 
-TODO 계속 작성
+시험삼아 엔트리 9개를 갖는 `PersistentHashMap`을 생성해 보았더니 다음과 같은 구조를 갖고 있었다.
+
+![9개의 아이템이 있는 PersistentHashMap]( ./item-9.jpg ){:style="max-width:350px"}
+
+엔트리 기준으로 요약하자면 다음과 같은 것이다.
+
+- **array**
+    - entry 0
+    - **array**
+        - entry 3
+        - entry 2
+    - entry 4
+    - entry 1
+    - entry 8
+    - entry 5
+    - entry 7
+    - entry 6
 
 ## 함께 읽기
 
