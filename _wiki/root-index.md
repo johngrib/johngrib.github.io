@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-02-01 10:46:54 +0900
+updated : 2022-02-04 18:06:24 +0900
 regenerate: true
 ---
 
@@ -443,6 +443,7 @@ regenerate: true
 * [[/cmd/grep]]
 * [[/cmd/man]]
 * [[/cmd/mv]]
+* [[/cmd/openssl]]
 * [[/cmd/sed]]
 * [[/cmd/xxd]]
 
@@ -479,7 +480,6 @@ regenerate: true
 * [[lsof]]
 * [[make-cmd]]
 * [[my-bash-cheatsheet]]
-* [[openssl]]
 * [[perl-one-liner]]
 * [[phpbrew]]
 * [[pwgen-cmd]]
