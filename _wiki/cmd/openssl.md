@@ -3,11 +3,11 @@ layout  : wiki
 title   : openssl 명령어
 summary : cryptography toolkit
 date    : 2018-09-14 22:54:57 +0900
-updated : 2019-01-19 12:58:50 +0900
+updated : 2022-02-04 18:56:23 +0900
 tag     : bash encryption command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
@@ -65,6 +65,84 @@ $ openssl prime 997                 # 997 이 소수인지 조사한다
 $ openssl prime -hex ff0            # ff0 이 소수인지 조사한다
 $ openssl prime -generate -bits 16  # 랜덤으로 16 비트 소수 생성
 ```
+
+## 경험
+
+### KG 이니시스 개발가이드 예제
+
+[KG 이니시스 개발가이드 - INIAPI(취소포함)]( https://manual.inicis.com/iniapi/api-info.php#enc )
+
+
+![]( ./kg-iniapi-aes-enc.jpg )
+
+주어진 PlainText `01011112222`를 `aes-cbc-128`을 사용해 암호화해보자. 암호화된 결과는 `5l8uENBFbTe50/9F3/7o0g==` 여야 한다.
+
+예제에서 제공하고 있는 INIAPI key와 INIAPI iv는 각각 `ItEQKi3rY7uvDS8l`와 `HYb3yQ4f65QL89==` 이다.
+이 값들을 openssl에서 사용하기 위해 16진수로 변환해주자.
+변환은 `xxd -ps` 명령을 사용하면 된다.
+
+```sh
+$ printf ItEQKi3rY7uvDS8l | xxd -ps
+497445514b693372593775764453386c
+
+$ printf HYb3yQ4f65QL89== | xxd -ps
+48596233795134663635514c38393d3d
+```
+
+정리해보면 다음과 같다.
+
+| 키         | 값                 | HEX                                |
+|------------|--------------------|------------------------------------|
+| INIAPI key | `ItEQKi3rY7uvDS8l` | `497445514b693372593775764453386c` |
+| INIAPI iv  | `HYb3yQ4f65QL89==` | `48596233795134663635514c38393d3d` |
+
+이제 이 값을 사용해 암호화를 해보자. `-K`에 키를 지정해주고 `-iv`에 iv를 지정해주면 된다.
+
+```sh
+$ printf "01011112222" \
+    | openssl aes-128-cbc -e \
+        -K "497445514b693372593775764453386c" \
+        -iv "48596233795134663635514c38393d3d" \
+        -a -A
+
+5l8uENBFbTe50/9F3/7o0g==
+```
+
+또는 이렇게 해도 된다.
+
+```sh
+$ printf "01011112222" \
+    | openssl enc -aes-128-cbc \
+        -K "497445514b693372593775764453386c" \
+        -iv "48596233795134663635514c38393d3d" \
+        -a -A
+
+5l8uENBFbTe50/9F3/7o0g==
+```
+
+결과 디코딩도 해보자.
+
+```sh
+$ printf "5l8uENBFbTe50/9F3/7o0g==" \
+    | openssl enc -aes-128-cbc \
+        -K "497445514b693372593775764453386c" \
+        -iv "48596233795134663635514c38393d3d" \
+        -a -A -d
+
+01011112222
+```
+
+잘 나온다.
+
+이제 `ItEQKi3rY7uvDS8lIssueReceipt20191128121211123.123.123.123INIpayTest1000100100` 에 `5l8uENBFbTe50/9F3/7o0g==`를 이어붙인 평문을 SHA512로 해싱해보자.
+
+```sh
+$ printf "ItEQKi3rY7uvDS8lIssueReceipt20191128121211123.123.123.123INIpayTest10001001005l8uENBFbTe50/9F3/7o0g==" | openssl sha512
+
+e55083c6e4d492b0f4c3f3145348c20d9d9d8fbafbe530245e77ea4db824d81a412073195f86110224568c613efd146bada7755b2113fa94a82007ce1795e8c8
+```
+
+잘 나온다.
 
 ## Links
 * <https://www.madboa.com/geek/openssl/ >
