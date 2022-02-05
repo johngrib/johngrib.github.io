@@ -3,11 +3,11 @@ layout  : wiki
 title   : tr 명령어
 summary : translate characters
 date    : 2019-11-18 13:52:25 +0900
-updated : 2020-07-30 21:50:49 +0900
+updated : 2022-02-05 23:38:50 +0900
 tag     : bash command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
