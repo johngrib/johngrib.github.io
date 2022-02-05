@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-02-05 15:58:45 +0900
+updated : 2022-02-05 22:06:11 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -56,11 +56,23 @@ $$
 (class []) ; clojure.lang.PersistentVector
 ```
 
-`nth`로 벡터의 각 인덱스에 접근할 수 있고, 길이는 `count`로 얻을 수 있다.ㅓ
+인덱스를 통한 벡터의 각 아이템 접근은 이렇게 한다.
 
 ```clojure
+; 벡터를 함수처럼 사용하고 인덱스를 넘기면 된다.
+([:a :b :c] 0)     ; :a
+([:a :b :c] 1)     ; :b
+
+; nth나 get을 사용해도 된다.
 (nth [:a :b :c] 0) ; :a
 (nth [:a :b :c] 1) ; :b
+(get [:a :b :c] 1) ; :b
+(get [:a :b :c] 2) ; :c
+```
+
+길이는 `count`로 얻을 수 있다.
+
+```clojure
 (count [:a :b :c]) ; 3
 ```
 
