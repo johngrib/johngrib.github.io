@@ -15,10 +15,10 @@
   "language/aheui",
   "language/css",
   "language/graphql",
+  "language/toml",
   "php",
   "Python3",
   "rust",
-  "TOML",
   "YAML"
  ]
 }

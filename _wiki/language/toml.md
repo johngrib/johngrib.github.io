@@ -3,11 +3,11 @@ layout  : wiki
 title   : TOML
 summary : Tom's Obvious, Minimal Language
 date    : 2018-10-23 10:06:00 +0900
-updated : 2021-02-16 23:11:50 +0900
+updated : 2022-02-05 21:40:07 +0900
 tag     : toml filetype
 toc     : true
 public  : true
-parent  : [[language]]
+parent  : [[/language]]
 latex   : false
 ---
 * TOC
