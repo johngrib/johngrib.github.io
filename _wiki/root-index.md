@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-02-05 21:40:25 +0900
+updated : 2022-02-05 21:58:22 +0900
 regenerate: true
 ---
 
@@ -297,7 +297,7 @@ regenerate: true
 * [[/clojure/study-01]]
 * [[/clojure/boolean]]
 * [[/clojure/study]]
-    * [[/clojure/study/PersistentList]]
+    * [[/clojure/study/persistent-list]]
     * [[/clojure/study/collection]]
     * [[/clojure/study/map]]
     * [[/clojure/study/merge-with]]

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure의 collection
 summary : 작성중인 문서
 date    : 2021-12-26 17:48:37 +0900
-updated : 2022-01-07 23:32:25 +0900
+updated : 2022-02-05 21:58:57 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -34,7 +34,7 @@ class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is
 '(1 2 3)
 ```
 
-이렇게 만든 List의 타입은 `clojure.lang.PersistentList`이다. [[/clojure/study/PersistentList]]도 잊지 말고 읽어 두도록 하자. 연결 리스트 구조로 되어 있다는 것도 잊지 말자.
+이렇게 만든 List의 타입은 `clojure.lang.PersistentList`이다. [[/clojure/study/persistent-list]]도 잊지 말고 읽어 두도록 하자. 연결 리스트 구조로 되어 있다는 것도 잊지 말자.
 
 ```clojure
 (class '(1 2)) ; clojure.lang.PersistentList
