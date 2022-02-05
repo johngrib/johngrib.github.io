@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-01-30 22:01:06 +0900
+updated : 2022-02-05 15:58:45 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -39,14 +39,55 @@ $$
 
 ## Examples
 
+벡터는 `[]`과 `vector`로 생성할 수 있다.
+
 ```clojure
 []       ; []
 (vector) ; []
 
 [1 2 3]        ; [1 2 3]
 (vector 1 2 3) ; [1 2 3]
+```
 
+벡터의 타입은 `PersistentVector`.
+
+```clojure
 (type []) ; clojure.lang.PersistentVector
+(class []) ; clojure.lang.PersistentVector
+```
+
+`nth`로 벡터의 각 인덱스에 접근할 수 있고, 길이는 `count`로 얻을 수 있다.ㅓ
+
+```clojure
+(nth [:a :b :c] 0) ; :a
+(nth [:a :b :c] 1) ; :b
+(count [:a :b :c]) ; 3
+```
+
+`first`, `second`, `rest`, `last` 모두 잘 작동한다. 단, `rest`는 `ChunkedSeq` 타입을 리턴한다.
+
+```clojure
+(first [:a :b :c])  ; :a
+(second [:a :b :c]) ; :b
+(last [:a :b :c])   ; :c
+
+(rest [:a :b :c])   ; (:b :c)
+(type (rest [:a :b :c])) ; clojure.lang.PersistentVector$ChunkedSeq
+```
+
+`cons`는 리턴 타입이 `Cons`라는 점을 기억해두자.
+
+```clojure
+(conj [:a :b :c] :tail) ; [:a :b :c :tail]
+
+(cons :head [:a :b :c]) ; (:head :a :b :c)
+(type (cons :head [:a :b :c])) ; clojure.lang.Cons
+```
+
+`assoc`은 이렇게 쓴다.
+
+```clojure
+(assoc [:a :b :c] 1 :foo) ; [:a :foo :c]
 ```
 
 ## clojure.lang.PersistentVector
