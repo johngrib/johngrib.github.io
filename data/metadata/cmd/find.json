@@ -3,7 +3,7 @@
  "title": "find 명령어",
  "summary": "walk a file hierarchy",
  "parent": "cmd",
- "url": "/wiki/find-cmd",
- "updated": "2021-10-17 18:41:32 +0900",
+ "url": "/wiki/cmd/find",
+ "updated": "2022-02-06 17:00:23 +0900",
  "children": []
 }

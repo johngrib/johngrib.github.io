@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-02-05 23:38:42 +0900
+updated : 2022-02-06 17:00:09 +0900
 regenerate: true
 ---
 
@@ -440,6 +440,7 @@ regenerate: true
 * [[/cmd/bind]]
 * [[/cmd/curl]]
 * [[/cmd/fc]]
+* [[/cmd/find]]
 * [[/cmd/grep]]
 * [[/cmd/man]]
 * [[/cmd/mv]]
@@ -465,7 +466,6 @@ regenerate: true
 * [[du]]
 * [[fd-cmd]]
 * [[file-cmd]]
-* [[find-cmd]]
 * [[fish-shell]]
 * [[fortune-cmd]]
 * [[glow-cmd]]

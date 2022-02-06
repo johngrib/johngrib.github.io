@@ -3,11 +3,11 @@ layout  : wiki
 title   : find 명령어
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2021-10-17 18:41:32 +0900
+updated : 2022-02-06 17:00:23 +0900
 tag     : bash command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
