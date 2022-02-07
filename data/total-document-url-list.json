@@ -126,6 +126,7 @@
  "/wiki/clojure/study/number",
  "/wiki/clojure/study/persistent-list",
  "/wiki/clojure/study/persistent-map",
+ "/wiki/clojure/study/set",
  "/wiki/clojure/study/vector",
  "/wiki/clojure/threading-macros",
  "/wiki/clojure/vim-setting",
