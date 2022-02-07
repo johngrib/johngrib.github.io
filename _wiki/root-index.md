@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-02-06 17:00:09 +0900
+updated : 2022-02-07 22:07:59 +0900
 regenerate: true
 ---
 
@@ -231,6 +231,7 @@ regenerate: true
 
 ### [[java]]
 
+* [[/java/8]]
 * [[/java/arraylist]]
 * [[/java/exception-handling]]
 * [[/java/feel-of-java]]
@@ -260,7 +261,6 @@ regenerate: true
 * [[java10-var]]
 * [[java8-performance-improvement-for-hashmap]]
 * [[java8-why-permgen-removed]]
-* [[java8]]
 * [[jdk13]]
 * [[private-constructor]]
 * [[ternary-operator-and-null-pointer-exception]]
