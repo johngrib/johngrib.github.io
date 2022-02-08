@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-02-05 22:06:11 +0900
+updated : 2022-02-08 23:45:19 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -87,13 +87,21 @@ $$
 (type (rest [:a :b :c])) ; clojure.lang.PersistentVector$ChunkedSeq
 ```
 
-`cons`는 리턴 타입이 `Cons`라는 점을 기억해두자.
+앞에 값을 이어붙이는 `cons`는 리턴 타입이 `Cons`라는 점을 기억해두자.
+벡터의 구조를 알고 있다면 앞에 붙이는 연산의 결과 리턴 타입이 vector가 아닌 이유를 어렵지 않게 알 수 있다.
 
 ```clojure
 (conj [:a :b :c] :tail) ; [:a :b :c :tail]
 
 (cons :head [:a :b :c]) ; (:head :a :b :c)
 (type (cons :head [:a :b :c])) ; clojure.lang.Cons
+```
+
+뒤에 값을 붙이는 `conj`는 타입이 바뀌지 않는다. 타입이 바뀌지 않는 이유는 아래의 `PersistentVector` 구현을 참고할 것.
+
+```clojure
+(conj [:a :b :c] :d)        ; [:a :b :c :d]
+(type (conj [:a :b :c] :d)) ; clojure.lang.PersistentVector
 ```
 
 `assoc`은 이렇게 쓴다.
