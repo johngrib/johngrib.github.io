@@ -67,10 +67,6 @@ table.gsc-search-box {
     padding: 5px;
 }
 
-.post-tag a {
-    color: #888888;
-    text-decoration: none;
-}
 @media (max-width: 1120px) {
     .page-content .wrapper:before {
         display: none;
@@ -114,17 +110,6 @@ ul.tag-list {
   padding: 10px 30px;
   border: 1px solid #E8E8E8;
   border-radius: 3px;
-}
-
-.history-button {
-    text-align: right;
-    font-size: 0.8em;
-}
-
-.title-summary {
-    font-size: 1.6em;
-    font-style: italic;
-    color: gray;
 }
 
 .visible {
@@ -195,18 +180,6 @@ div.search {
     right: 0;
     height: 100%;
     z-index: 2;
-}
-
-.post-header {
-    h2 {
-        border: 0px;
-    }
-    p {
-        margin: 0;
-    }
-    .page-title a {
-        text-decoration: none;
-    }
 }
 
 .post-excerpt {
