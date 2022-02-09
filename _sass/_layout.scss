@@ -63,33 +63,10 @@ table.gsc-search-box {
 }
 
 .post {
-
     overflow-x: auto;
     padding: 5px;
-
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-        border-color: #000000;
-        margin-bottom: 10px;
-
-        td, th {
-            border: 1px solid $third-font-color;
-            padding: 5px 5px;
-        }
-        th {
-            font-weight:normal;
-            color: #FFFFFF;
-            background: $theme-color
-        }
-        tr:nth-child(even) {
-            background-color: #f4f4f4;
-        }
-        tr:hover {
-            background: #BEE7F6;
-        }
-    }
 }
+
 .post-tag a {
     color: #888888;
     text-decoration: none;
