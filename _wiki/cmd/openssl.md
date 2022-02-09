@@ -3,7 +3,7 @@ layout  : wiki
 title   : openssl 명령어
 summary : cryptography toolkit
 date    : 2018-09-14 22:54:57 +0900
-updated : 2022-02-04 18:56:23 +0900
+updated : 2022-02-09 14:57:37 +0900
 tag     : bash encryption command
 toc     : true
 public  : true
@@ -77,7 +77,7 @@ $ openssl prime -generate -bits 16  # 랜덤으로 16 비트 소수 생성
 
 주어진 PlainText `01011112222`를 `aes-cbc-128`을 사용해 암호화해보자. 암호화된 결과는 `5l8uENBFbTe50/9F3/7o0g==` 여야 한다.
 
-예제에서 제공하고 있는 INIAPI key와 INIAPI iv는 각각 `ItEQKi3rY7uvDS8l`와 `HYb3yQ4f65QL89==` 이다.
+예제에서 제공하고 있는 INIAPI key와 INIAPI iv[^iv]는 각각 `ItEQKi3rY7uvDS8l`와 `HYb3yQ4f65QL89==` 이다.
 이 값들을 openssl에서 사용하기 위해 16진수로 변환해주자.
 변환은 `xxd -ps` 명령을 사용하면 된다.
 
@@ -148,3 +148,6 @@ e55083c6e4d492b0f4c3f3145348c20d9d9d8fbafbe530245e77ea4db824d81a412073195f861102
 * <https://www.madboa.com/geek/openssl/ >
 * [블록 암호 운용 방식(wikipedia)](https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A1%9D_%EC%95%94%ED%98%B8_%EC%9A%B4%EC%9A%A9_%EB%B0%A9%EC%8B%9D )
 
+## 주석
+
+[^iv]: initialization vector. cbc 방식에서 cbc는 "cipher-block chaining" 이므로 블록 체인 방식을 말한다. `iv`는 여기에서 첫번째 블록을 암호화할 때 사용하는 값이다.
