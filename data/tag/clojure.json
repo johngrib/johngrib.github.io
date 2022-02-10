@@ -18,7 +18,6 @@
  "clojure/study/merge-with",
  "clojure/study/number",
  "clojure/study/persistent-list",
- "clojure/study/persistent-map",
  "clojure/study/set",
  "clojure/study/vector",
  "clojure/threading-macros",
