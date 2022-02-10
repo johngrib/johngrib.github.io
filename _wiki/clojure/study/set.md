@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure set
 summary : 
 date    : 2022-02-07 23:19:20 +0900
-updated : 2022-02-07 23:43:50 +0900
+updated : 2022-02-11 00:39:33 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -101,6 +101,12 @@ Clojure에서는 조건문에서 `nil`과 `false`만 부정의 의미로 해석�
 ```clojure
 (conj #{:a :b :c} :d)        ; #{:c :b :d :a}
 (type (conj #{:a :b :c} :d)) ; clojure.lang.PersistentHashSet
+```
+
+`disj`를 쓰면 집합에서 아이템을 제거한 새로운 집합을 얻을 수 있다.
+
+```clojure
+(disj #{:a :b :c} :b) ; #{:c :a}
 ```
 
 ### clojure.set 함수
