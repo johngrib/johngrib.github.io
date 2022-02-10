@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure map
 summary : 
 date    : 2022-01-31 21:57:24 +0900
-updated : 2022-02-10 23:53:32 +0900
+updated : 2022-02-11 00:36:56 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -163,6 +163,62 @@ hash map에 적용할 때에는 hash map의 각 `MapEntry`에 적용된다.
 ```
 
 ## 자료구조 map
+
+### Examples
+
+`{key value key value ...}` 형태로 선언할 수 있다.
+
+```clojure
+{:a 1 :b 2 :c 3}
+```
+
+Java나 Javascript 같은 다른 언어에 익숙하다면 key 값으로 문자열을 사용하는 것이 익숙하겠지만, Clojure에서는 hash map의 key로 Keyword를 주로 사용한다.
+
+```clojure
+; 문자열을 key 로 사용하는 경우
+{"a" 1 "b" 2 "c" 3}
+
+; Clojure의 Keyword를 key로 사용하는 경우(권장)
+{:a 1 :b 2 :c 3}
+```
+
+hash map에서 값을 꺼내는 기본적인 방법은 3가지.
+
+- hash map을 함수로 사용하고, key를 인자로 제공하는 방법.
+- Keyword를 함수로 사용하고, hash map을 인자로 제공하는 방법. (권장)
+- `get` 함수를 사용하는 방법.
+    - `get` 함수는 찾는 값이 없을 경우의 대안도 정의할 수 있다.
+
+```clojure
+; hash map을 함수로 사용하는 경우
+({:a 1 :b 2 :c 3} :b) ; 2
+
+; Keyword를 함수로 사용하는 경우
+(:b {:a 1 :b 2 :c 3}) ; 2
+
+; 그냥 get 함수를 사용하는 경우
+(get {:a 1 :b 2 :c 3} :b) ; 2
+
+; get을 쓰면 찾는 값이 없는 경우의 대안을 제공할 수 있다
+(get {:a 1 :b 2 :c 3} :d 777)
+=> 777
+```
+
+`assoc`, `dissoc`의 사용.
+
+```clojure
+(assoc {:a 1 :b 2 :c 3} :b 1000) ; {:a 1, :b 1000, :c 3}
+(assoc {:a 1 :b 2 :c 3} :d 888)  ; {:a 1, :b 2, :c 3, :d 888}
+
+(dissoc {:a 1 :b 2 :c 3} :a)     ; {:b 2, :c 3}
+```
+
+`merge`를 쓰면 두 hash map을 합친 hash map을 얻을 수 있다. 단 중복 key가 있다면 나중의 hash map의 것으로 적용된다.
+
+```clojure
+(merge {:a 1 :b 2 :c 3} {:a 100 :d 400})
+=> {:a 100, :b 2, :c 3, :d 400}
+```
 
 ### IPersistentMap
 
