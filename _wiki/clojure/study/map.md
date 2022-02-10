@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure map
 summary : 
 date    : 2022-01-31 21:57:24 +0900
-updated : 2022-02-10 22:03:14 +0900
+updated : 2022-02-10 23:53:32 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -74,6 +74,92 @@ Clojure에서 `map`은 두 가지 의미를 갖는다.
                     (when (every? identity ss)
                       (cons (map first ss) (step (map rest ss)))))))]
      (map #(apply f %) (step (conj colls c3 c2 c1))))))
+```
+
+### Examples
+
+`map` 함수의 기본적인 사용은 리스트에 적용할 함수를 제공하는 것이다.
+
+```clojure
+(map inc [1 2 3])   ; (2 3 4)
+(map inc '(1 2 3))  ; (2 3 4)
+(map even? [1 2 3]) ; (false true false)
+(map str [1 2 3])   ; ("1" "2" "3")
+
+; 익명 함수
+(map #(* 2 %) [1 2 3]) ; (2 4 6)
+```
+
+그렇다고 리스트에만 사용할 수 있는 건 아니다.
+
+```clojure
+; 집합에 적용
+(map inc #{1 2 3}) ; (2 4 3)
+```
+
+hash map에 적용할 때에는 hash map의 각 `MapEntry`에 적용된다.
+
+```clojure
+; hash map 에 적용
+(map (fn [entry] (type entry))
+     {:name "John" :age 28})
+=> (clojure.lang.MapEntry clojure.lang.MapEntry)
+```
+
+`MapEntry`는 vector처럼 사용할 수 있다.
+
+```clojure
+(map (fn [entry] entry)
+     {:name "John" :age 28})
+=> ([:name "John"] [:age 28])
+
+(map (fn [entry] (str (first entry) "->" (second entry)))
+     {:name "John" :age 28})
+=> (":name->John" ":age->28")
+
+; entry를 구조분해하여 key 와 value 를 사용
+(map (fn [[key value]] (str key "->" value))
+     {:name "John" :age 28})
+=> (":name->John" ":age->28")
+```
+
+함수처럼 사용할 수 있는 자료구조를 적용하는 것도 가능하다.
+
+```clojure
+; hash set을 리스트에 적용
+(map #{1 3 5}
+     [1 2 3 4 5])
+=> (1 nil 3 nil 5)
+
+; hash map을 리스트에 적용
+(map {1 "일" 3 "삼" 5 "오"}
+     [1 2 3 4 5])
+=> ("일" nil "삼" nil "오")
+
+; 키워드를 hash map을 아이템으로 삼는 리스트에 적용
+(map :name
+     [{:age 10 :name "John"} {:age 11 :name "Jack"}])
+=> ("John" "Jack")
+```
+
+여러 개의 리스트에 적용하면, 리스트의 각 아이템 순서쌍에 적용한다.
+
+```clojure
+(map +
+     [1 2 3]
+     [100 200 300])
+=> (101 202 303)
+
+(map #(str %1 "," %2)
+     [1 2 3]
+     [100 200 300])
+=> ("1,100" "2,200" "3,300")
+
+(map #(str %1 "," %2 "," %3)
+     [1 2 3]
+     [100 200 300]
+     [:a :b :c])
+=> ("1,100,:a" "2,200,:b" "3,300,:c")
 ```
 
 ## 자료구조 map
