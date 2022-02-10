@@ -3,11 +3,11 @@ layout  : wiki
 title   : cal, ncal 명령어
 summary : displays a calendar and the date of Easter
 date    : 2019-01-06 21:27:09 +0900
-updated : 2022-02-11 00:42:55 +0900
+updated : 2022-02-11 00:47:05 +0900
 tag     : bash command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

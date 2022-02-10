@@ -3,7 +3,7 @@
  "title": "cal, ncal 명령어",
  "summary": "displays a calendar and the date of Easter",
  "parent": "cmd",
- "url": "/wiki/cal-cmd",
- "updated": "2022-02-11 00:42:55 +0900",
+ "url": "/wiki/cmd/cal",
+ "updated": "2022-02-11 00:47:05 +0900",
  "children": []
 }
