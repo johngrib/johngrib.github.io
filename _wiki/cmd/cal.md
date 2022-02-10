@@ -3,7 +3,7 @@ layout  : wiki
 title   : cal, ncal 명령어
 summary : displays a calendar and the date of Easter
 date    : 2019-01-06 21:27:09 +0900
-updated : 2022-02-11 00:47:05 +0900
+updated : 2022-02-11 00:55:43 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -40,5 +40,18 @@ cal -B 2 -A 3
  # 전, 후 1달을 추가로 본다. (3개 달력 보기)
 cal -3
 cal -3 10 2019
+```
+
+## 1752년 9월
+
+`cal 9 1752`를 입력해 1752년 9월의 달력도 볼 수 있다.
+
+```
+$ cal 9 1752
+   September 1752
+Su Mo Tu We Th Fr Sa
+       1  2 14 15 16
+17 18 19 20 21 22 23
+24 25 26 27 28 29 30
 ```
 
