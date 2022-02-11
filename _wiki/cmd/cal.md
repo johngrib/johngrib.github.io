@@ -3,7 +3,7 @@ layout  : wiki
 title   : cal, ncal 명령어
 summary : displays a calendar and the date of Easter
 date    : 2019-01-06 21:27:09 +0900
-updated : 2022-02-11 00:55:43 +0900
+updated : 2022-02-11 09:18:25 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -14,6 +14,12 @@ latex   : false
 {:toc}
 
 ## Examples
+
+```sh
+ # 도움말을 본다
+cal -help
+```
+
 ```sh
  # 이번달 달력을 본다
 cal
