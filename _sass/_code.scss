@@ -1,4 +1,6 @@
 /* based on Monokai Theme from https://github.com/richleland/pygments-css/blob/master/monokai.css */
+$background-color: #202030;
+$default-font-color: #fafafa;
 code {
     font-family: Consolas, "Courier New", Courier;
     color: inherit;
@@ -14,12 +16,13 @@ pre {
     font-family:  $coding-font;
     overflow-x: auto;
     padding: 10px 10px;
-    color: #fafafa;
-    background-color: #223;
+    color: $default-font-color;
+    background-color: $background-color;
+    border: 1px solid #c6c6c6;
 }
 pre code {
-    color: #fafafa;
-    background-color: #223;
+    color: $default-font-color;
+    background-color: $background-color;
     padding: 0;
 }
 
