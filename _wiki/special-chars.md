@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-02-14 23:29:08 +0900
+updated : 2022-02-14 23:30:37 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -521,6 +521,7 @@ $$$$$$$a;   // "World"
 * BASIC에서는 Integer 자료형 변수명의 suffix로 쓰인다.
 * C언어 계열의 프로그래밍 언어에서 `printf` 함수 formatting 기호로 사용된다.
 * SQL의 like 검색에서 wild card로 사용한다. 가령 `SELECT...WHERE MSG LIKE 'foo%'`로 조회하면 `foo`로 시작하는 문자열을 찾는다.
+* Clojure에서는 익명 함수의 인자를 표현할 때 사용한다.
 * Vim에서는 괄호 위에 커서를 놓고 `%`를 입력하면 짝에 해당하는 괄호로 커서가 점프한다.
     * 사용 가능한 괄호는 `()`, `{}`, `[]`. 안타깝지만 `< >`나 `" "`, `' '`는 안된다.
     * 괄호 외에 C 언어 스타일의 주석 `/* */`에서도 사용할 수 있다.
