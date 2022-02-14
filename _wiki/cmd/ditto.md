@@ -3,7 +3,7 @@ layout  : wiki
 title   : ditto 명령어
 summary : copy directory hierarchies, create and extract archives
 date    : 2020-03-08 19:19:29 +0900
-updated : 2022-02-14 22:49:45 +0900
+updated : 2022-02-14 22:51:08 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -47,6 +47,8 @@ ditto dir1 directory2
 
 ### 압축 해제
 
+
 ```bash
+ # test.zip 파일의 압축을 해제해서 unzip-directory 디렉토리에 풀어놓는다.
 ditto -V -x -k --sequesterRsrc --rsrc test.zip ./unzip-directory
 ```
