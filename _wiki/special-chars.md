@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-02-02 17:15:59 +0900
+updated : 2022-02-14 23:29:08 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -725,6 +725,7 @@ $$$$$$$a;   // "World"
 * Scala 언어에서 List concatenation에 `::`, `:::`을 사용한다.
     * Scala 언어에서는 연산자를 만들 수 있고, 오버라이드도 가능하므로 (사실은 연산자가 없고, 모두 메소드로 돌아간다)
 * C++, Java 8, PHP 등의 언어에서 클래스 멤버, 메소드에 접근하는 연산자(double colon scope resolution operator)로 `::`를 사용한다.
+* Clojure 언어에서 많이 사용하는 `Keyword` 타입이 `:`로 시작한다.
 
 | 읽는 방법   | 콜론, colon                        |
 | 유니코드    | Unicode Character 'COLON' (U+003A) |
