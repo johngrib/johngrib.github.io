@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-02-14 23:30:37 +0900
+updated : 2022-02-14 23:31:51 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -404,6 +404,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * 해시태그 앞에 붙이는 기호로도 사용된다.
 * Vim에서는 NORMAL 모드에서 사용하면 단어 역순 검색을 할 수 있다.
 * Perl, Python, Ruby 외 여러 프로그래밍 언어에서 `#`는 주석을 선언하는 데 사용된다.
+* Clojure에서는 `#"pattern"`의 형태로 정규식을 선언할 수 있다.
 * Markdown에서 문단 제목을 표시할 때 사용한다.
 * 스크립트 파일의 첫 줄에 들어가는 `#!`은 [유닉스 환경에서 스크립트 인터프리터를 지정](https://en.wikipedia.org/wiki/Shebang_(Unix))하겠다는 의미이다.
 
