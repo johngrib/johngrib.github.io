@@ -3,12 +3,13 @@ layout  : wiki
 title   : 팩토리 (Factory)
 summary : 다른 객체를 생성하는 책임을 갖는 프로그램 요소
 date    : 2021-10-16 16:11:07 +0900
-updated : 2021-10-16 16:36:18 +0900
+updated : 2022-02-14 23:03:21 +0900
 tag     : ddd
 toc     : true
 public  : true
 parent  : [[/pattern]]
 latex   : false
+issue-number: 185
 ---
 * TOC
 {:toc}
