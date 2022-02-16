@@ -8,6 +8,7 @@
  "children": [
   "clojure/evaluation",
   "clojure/reader",
+  "clojure/reference/metadata",
   "clojure/reference/transient"
  ]
 }
