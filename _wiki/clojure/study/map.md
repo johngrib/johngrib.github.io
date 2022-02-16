@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure map
 summary : 
 date    : 2022-01-31 21:57:24 +0900
-updated : 2022-02-11 00:36:56 +0900
+updated : 2022-02-16 23:53:23 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -487,11 +487,55 @@ public static PersistentHashMap create(Object... init){
     - entry 7
     - entry 6
 
+## 활용
+
+### submap?
+
+map과 map의 포함관계를 확인해야 할 때가 있다.
+
+나는 처음에 이런 형태를 생각했다.
+
+```clojure
+(defn submap?
+  "m1이 m2의 subset이면 true를 리턴합니다."
+  [m1 m2]
+  (= m1 (select-keys m2 (keys m1))))
+```
+
+다음은 [namenu]( https://github.com/namenu ) 님이 알려주신 코드로, 재귀하는 구조를 갖고 있다.
+
+[clojure.tools.deps.alpha.script.test-make-classpath2 submap?]( https://github.com/clojure/tools.deps.alpha/blob/635a95db0b0a350ff00a2bbca46383f4089b6a23/src/test/clojure/clojure/tools/deps/alpha/script/test_make_classpath2.clj#L14-L21 )
+
+```clojure
+(defn submap?
+  "Is m1 a subset of m2?"
+  [m1 m2]
+  (if (and (map? m1) (map? m2))
+    (every? (fn [[k v]] (and (contains? m2 k)
+                          (submap? v (get m2 k)))) ; 재귀
+      m1)
+    (= m1 m2)))
+```
+
+stackoverflow.com의 질문 [How to check if a map is a subset of another in clojure?]( https://stackoverflow.com/questions/20421405/how-to-check-if-a-map-is-a-subset-of-another-in-clojure )이 읽어볼 만하다.
+
+위 글에 나오는 `clojure.set/subset?`을 사용하는 방법이 무척 흥미롭고 재미있다. 나는 이 방법이 마음에 든다.
+
+```clojure
+(defn submap?
+  "m1이 m2의 submap이면 true를 리턴합니다."
+  [m1 m2]
+  (clojure.set/subset? (set m1) (set m2)))
+```
+
+
 ## 함께 읽기
 
 - [[/clojure/study/vector]]
 
 ## 참고문헌
 
+- [How to check if a map is a subset of another in clojure? (stackoverflow.com)]( https://stackoverflow.com/questions/20421405/how-to-check-if-a-map-is-a-subset-of-another-in-clojure )
 - [clojure 1.11.0-alpha4 소스코드 (github.com)]( https://github.com/clojure/clojure/tree/clojure-1.11.0-alpha4 )
+- [clojure.tools.deps.alpha.script.test-make-classpath2 submap? (github.com)]( https://github.com/clojure/tools.deps.alpha/blob/635a95db0b0a350ff00a2bbca46383f4089b6a23/src/test/clojure/clojure/tools/deps/alpha/script/test_make_classpath2.clj#L14-L21 )
 
