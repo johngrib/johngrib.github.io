@@ -3,7 +3,7 @@ layout  : category
 title   : Clojure
 summary : 
 date    : 2021-11-30 10:10:29 +0900
-updated : 2022-01-29 01:18:02 +0900
+updated : 2022-02-17 23:56:23 +0900
 tag     : 
 toc     : true
 public  : true
@@ -22,6 +22,7 @@ issue-number: 184
     - [NEWS]( https://clojure.org/news/news ) - 버전 릴리즈, 추천 웹 문서와 영상 등이 올라온다.
 - <https://github.com/clojure/clojure >
     - [Rich Hickey의 clojure github repository]( https://github.com/richhickey/clojure ) - Old repo.
+    - [changes.md]( https://github.com/clojure/clojure/blob/master/changes.md ) - 클로저의 버전별 변경사항 등
 - <http://clojure-doc.org/ >
 
 ## Cheatsheet, Tutorial
