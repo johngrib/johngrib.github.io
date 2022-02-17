@@ -3,12 +3,13 @@ layout  : wiki
 title   : (기록) 한 개의 메소드만 갖는 계층형 컨트롤러/서비스 패키지 스타일
 summary : 찾기 쉬워야 한다
 date    : 2021-10-24 14:32:16 +0900
-updated : 2021-10-25 23:41:09 +0900
+updated : 2022-02-17 22:22:15 +0900
 tag     : 
 toc     : true
 public  : true
 parent  : [[/article]]
 latex   : false
+issue-number: 175
 ---
 * TOC
 {:toc}
