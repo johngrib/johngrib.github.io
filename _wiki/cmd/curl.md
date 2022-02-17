@@ -3,7 +3,7 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2021-12-26 11:00:45 +0900
+updated : 2022-02-17 22:13:12 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -19,6 +19,7 @@ latex   : false
     - httpget 0.1 버전은 C 언어로 작성된 300줄 미만의 프로그램이었음
     - Daniel Stenberg가 발견하고 기여하기 시작
     - 비슷한 시기(1996-11)에 wget의 최초 릴리즈(1.4.0)도 있었음
+- 2022-02-02 - [`--json` 옵션 추가]( https://daniel.haxx.se/blog/2022/02/02/curl-dash-dash-json/ )
 
 {% raw %}
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">This day 23 years ago, I uploaded the first ever curl release. Happy birthday to all of us who use and appreciate curl. I love you all.<a href="https://t.co/sbw4Yps3s6">https://t.co/sbw4Yps3s6</a> <a href="https://t.co/4VXtdiuP5b">pic.twitter.com/4VXtdiuP5b</a></p>&mdash; Daniel Stenberg (@bagder) <a href="https://twitter.com/bagder/status/1373047807876153349?ref_src=twsrc%5Etfw">March 19, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -120,6 +121,12 @@ curl --http1.0 http://httpbin.org/ip
 curl -o my_ip.json http://httpbin.org/ip
 ```
 
+### --json 옵션의 사용
+
+[CURL DASH-DASH-JSON]( https://daniel.haxx.se/blog/2022/02/02/curl-dash-dash-json/ )
+
+- curl에 `--json` 옵션이 추가되었다.
+
 ### 재미있는 사용법
 ```sh
 curl wttr.in          # 날씨를 본다
@@ -133,6 +140,7 @@ curl ifconfig.me  # ip주소를 본다
 
 - [curl / Docs / Project / History of curl][curl-history]
 - [curl 23주년을 기념하는 Daniel Stenberg의 포스트 (2021-03-20)]( https://daniel.haxx.se/blog/2021/03/20/curl-is-23-years-old-today/ )
+- [--json 옵션의 추가를 알리는 Daniel Stenberg의 글 (2022-02-02)]( https://daniel.haxx.se/blog/2022/02/02/curl-dash-dash-json/ )
 
 [curl-history]: https://curl.se/docs/history.html
 [curl-23]: https://daniel.haxx.se/blog/2021/03/20/curl-is-23-years-old-today/
