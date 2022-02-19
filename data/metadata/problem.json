@@ -6,6 +6,7 @@
  "url": "/wiki/problem",
  "updated": "2018-04-16 20:58:12 +0900",
  "children": [
+  "problem/collatz-conjecture",
   "problem/roman-number",
   "problem/two-eggs-100-floor"
  ]

@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-02-17 22:06:29 +0900
+updated : 2022-02-19 23:33:25 +0900
 regenerate: true
 ---
 
@@ -185,6 +185,7 @@ regenerate: true
 
 ## [[problem]]
 
+* [[/problem/collatz-conjecture]]
 * [[/problem/roman-number]]
 * [[/problem/two-eggs-100-floor]]
 
