@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-20 21:36:16 +0900
+updated : 2022-02-20 22:32:31 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -414,6 +414,95 @@ Note that `@` is not available in edn.
 
 
 ### `^` (and `#^`) - Metadata
+
+>
+`^` is the metadata marker.
+Metadata is a map of values (with shorthand option) that can be attached to various forms in Clojure.
+This provides extra information for these forms and can be used for documentation, compilation warnings, typehints, and other features.
+
+`^`는 metadata를 표시합니다.
+metadata는 Clojure에서 다양한 form에 붙일 수 있는 map 입니다.
+metadata는 form에 대한 추가 정보를 제공해 주며 문서화, 컴파일 경고, 타입 힌트 등의 다양한 기능에 활용됩니다.
+
+```clojure
+user=> (def ^{:debug true} five 5) ; meta map with single boolean value
+#'user/five
+```
+
+>
+We can access the metadata by the `meta` function which should be executed against the declaration itself (rather than the returned value):
+
+선언된 대상 자체에 `meta` 함수를 사용해 metadata에 접근할 수 있습니다.
+
+```clojure
+user=> (def ^{:debug true} five 5)
+#'user/five
+user=> (meta #'five)
+{:ns #<Namespace user>, :name five, :column 1, :debug true, :line 1, :file "NO_SOURCE_PATH"}
+```
+
+>
+As we have a single value here, we can use a shorthand notation for declaring the metadata `^:name` which is useful for flags, as the value will be set to true.
+
+플래그가 필요하다면 `^:name`과 같이 짧은 표기법을 사용해 metadata를 선언할 수 있습니다.
+이렇게 선언하면 해당 metadata는 true로 설정됩니다.
+
+```clojure
+user=> (def ^:debug five 5)
+#'user/five
+user=> (meta #'five)
+{:ns #<Namespace user>, :name five, :column 1, :debug true, :line 1, :file "NO_SOURCE_PATH"}
+```
+
+>
+Another use of `^` is for type hints.
+These are used to tell the compiler what type the value will be and allow it to perform type specific optimizations thus potentially making resultant code faster:
+
+`^`의 또다른 용도는 타입 힌트입니다.
+타입 힌트를 통해 컴파일러에 값의 타입을 알려주는 방식을 통해, 타입별 최적화를 수행해 잠재적으로 성능을 향상시킬 수 있습니다.
+
+```clojure
+user=> (def ^Integer five 5)
+#'user/five
+user=> (meta #'five)
+{:ns #<Namespace user>, :name five, :column 1, :line 1, :file "NO_SOURCE_PATH", :tag java.lang.Integer}
+```
+
+>
+We can see in that example the `:tag` property is set.
+
+바로 앞의 에제를 보면 `:tag` 속성이 설정되어 있는 것을 알 수 있습니다.
+
+>
+You can also stack the shorthand notations:
+
+축약 표기법은 여러개를 사용할 수도 있습니다.
+
+```clojure
+user=> (def ^Integer ^:debug ^:private five 5)
+#'user/five
+user=> (meta #'five)
+{:ns #<Namespace user>, :name five, :column 1, :private true, :debug true, :line 1, :file "NO_SOURCE_PATH", :tag java.lang.Integer}
+```
+
+>
+Originally, meta was declared with `#^`, which is now deprecated (but still works).
+Later, this was simplified to just `^` and that is what you will see in most Clojure, but occasionally you will encounter the `#^` syntax in older code.
+
+본래 `meta`는 `#^`로 선언되었었지만, 이제는 deprecated되었습니다(아직 작동하긴 합니다).
+이는 나중에 `^`로 더 단순하게 축약되었으므로 대부분의 Clojure 코드에서 `^`를 볼 수 있을 것입니다.
+하지만 오래된 몇몇 코드에서는 `#^` 표기법을 목격하게 될 수 있습니다.
+
+>
+Note that metadata is available in edn, but type hints are not.
+
+metadata는 edn에서 사용할 수 있지만, 타입 힌트는 edn에서는 사용할 수 없습니다.
+
+- [Clojure Official Documentation]( https://clojure.org/reference/metadata )
+    - [[/clojure/reference/metadata]] (한국어)
+- [Learning Clojure: Meta Data]( http://en.wikibooks.org/wiki/Learning_Clojure/Meta_Data )
+
+### `'` - Quote
 
 
 ## 참고문헌
