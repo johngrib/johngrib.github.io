@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 좀 큰 숫자들
+title   : 좀 큰 수
 summary : 
 date    : 2019-07-19 14:42:52 +0900
-updated : 2022-02-07 00:35:49 +0900
+updated : 2022-02-20 13:10:47 +0900
 tag     : 
 toc     : true
 public  : true
