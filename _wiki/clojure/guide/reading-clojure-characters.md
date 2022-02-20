@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-01-09 14:37:23 +0900
+updated : 2022-02-20 21:36:16 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -383,6 +383,38 @@ Anonymous functions and `%` are not part of edn.
 익명 함수와 `%`는 edn에서 사용할 수 없습니다.
 
 ### `@` - Deref
+
+>
+`@` expands into a call to the `deref` function, so these two forms are the same:
+
+`@`는 `deref` 함수 호출로 확장됩니다. 따라서 다음의 두 form은 같습니다.
+
+```clojure
+user=> (def x (atom 1))
+#'user/x
+user=> @x
+1
+user=> (deref x)
+1
+user=>
+```
+
+>
+`@` is used to get the current value of a reference.
+The above example uses `@` to get the current value of an [atom]( https://clojure.org/reference/atoms ), but `@` can be applied to other things such as future s, delay s, promises s etc. to force computation and potentially block.
+
+`@`는 참조의 현재 값을 가져오는 데 사용합니다.
+위의 예제는 `@`를 사용해서 atom의 현재 값을 가져옵니다.
+그러나 `@`는 `future` s, `delay` s, `promise` s 등의 다른 것들에도 적용해 강제로 계산하게 하고 잠재적으로 차단할 수 있습니다.
+
+>
+Note that `@` is not available in edn.
+
+`@`는 edn 에서는 사용할 수 없습니다.
+
+
+### `^` (and `#^`) - Metadata
+
 
 ## 참고문헌
 
