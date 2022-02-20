@@ -3,7 +3,7 @@ layout  : wiki
 title   : 좀 큰 수
 summary : 
 date    : 2019-07-19 14:42:52 +0900
-updated : 2022-02-20 13:10:47 +0900
+updated : 2022-02-20 13:26:03 +0900
 tag     : 
 toc     : true
 public  : true
@@ -84,6 +84,21 @@ $$ 45 C 6 = 8,145,060 $$
 |------------|--------------------------------|---------|----------------------|
 | 2022-02-07 | 약 `1,448,167,730,623` barrels | 13 자리 | `15,102` 일(41.3 년) |
 | 2020-04-12 | 약 `1,511,989,370,363` barrels | 13 자리 | `15,768` 일(43.2 년) |
+
+## 31 자리 - $$2^{100}$$
+
+- [$$ 2^{100} $$ = 1267650600228229401496703205376 ]( https://www.wolframalpha.com/input?i=2%5E100 )
+- [$$ \ceil{\log_{10} 2^{100}} = 31 $$]( https://www.wolframalpha.com/input/?i=log_10+%282%5E100%29 )
+
+>
+항아리 속 구슬의 반이 같은 번호를 가진 구슬들이라고 하자. 그 번호가 3이라고 하자.
+그러면 100번을 뽑아볼 때 3번 구슬들이 뽑히지 않을 확률은 $$(1/2)^{100} = 0.00000000000000000000000000000078886...$$ 이다.
+이 확률은 동전을 100번 던져서 모두 앞면이 나올 확률과 같다.
+이럴 가능성은 물론 엄청 작다.
+어느 정도로 작냐 하면, 우주의 탄생 이후 지금까지 매 나노($$ 1 / 10^9 $$, 10억분의 1)초마다 동전 던지기를 100번씩 한다고 했을 때,
+이런 결과를 지금까지 한 번이라도 만날 확률이 1/2000 보다 작다.
+[^leslie-100]
+
 
 ## 39 자리 - IPv6 주소 공간
 
@@ -175,12 +190,14 @@ $$2^{82,589,933}-1$$
 - [Largest known prime number]( https://en.wikipedia.org/wiki/Largest_known_prime_number )
 
 
-## Link
+## 참고문헌
 
-* <https://www.worldometers.info/ >
+- <https://www.worldometers.info/ >
+- 기계 학습을 다시 묻다 / 레슬리 밸리언트 저/이광근 역 / 인사이트(insight) / 초판 1쇄 발행 2021년 11월 01일 / 원제: Probably Approximately Correct
 
 ## 주석
 
 [^jlab]: [How many atoms are there in the world?](https://education.jlab.org/qa/mathatom_05.html )
 [^boyslife]: [How Many Atoms Are There In The World?]( https://headsup.boyslife.org/many-atoms-world/ )
+[^leslie-100]: 기계학습을 다시 묻다. 5장. 100쪽.
 
