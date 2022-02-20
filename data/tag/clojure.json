@@ -1,6 +1,7 @@
 [
  "clojure/boolean",
  "clojure/cursive",
+ "clojure/earmuffs",
  "clojure/equality",
  "clojure/evaluation",
  "clojure/guide",
