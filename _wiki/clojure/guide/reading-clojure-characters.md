@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-21 22:11:20 +0900
+updated : 2022-02-21 22:15:50 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -527,7 +527,32 @@ user=>
 
 - [Clojure Special Forms](https://clojure.org/reference/special_forms#quote)
 
+### `;` - Comment
 
+>
+`;` starts a line comment and ignores all input from its starting point to the end of the line.
+
+line comment는 `;`로 시작합니다.
+
+```clojure
+user=> (def x "x") ; this is a comment
+#'user/x
+user=> ; this is a comment too
+<returns nothing>
+```
+
+>
+It is common in Clojure to use multiple semicolons for readability or emphasis, but these are all the same to Clojure
+
+Clojure에서는 특정 구문을 강조하거나 가독성 확보를 위해 여러 개의 세미콜론을 사용하곤 합니다. 물론 Clojure 에서는 세미콜론을 몇 개를 사용해도 한 개를 사용한 것과 같습니다.
+
+```clojure
+;; This is probably more important than
+
+; this
+```
+
+### `:` - Keyword
 
 ## 참고문헌
 
