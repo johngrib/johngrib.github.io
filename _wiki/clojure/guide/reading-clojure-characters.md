@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-20 22:32:31 +0900
+updated : 2022-02-21 22:11:20 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -503,6 +503,30 @@ metadata는 edn에서 사용할 수 있지만, 타입 힌트는 edn에서는 사
 - [Learning Clojure: Meta Data]( http://en.wikibooks.org/wiki/Learning_Clojure/Meta_Data )
 
 ### `'` - Quote
+
+>
+Quoting is used to indicate that the next form should be read but not evaluated.
+The reader expands `'` into a call to the `quote` special form.
+
+외따옴표는 form을 읽을 때 evaluate하지 않아야 한다는 것을 표현할 때 사용합니다.
+reader는 `'`를 확장해서 `quote` form으로 확장합니다.
+
+```clojure
+user=> (1 3 4) ; fails as it tries to invoke 1 as a function
+
+Execution error (ClassCastException) at myproject.person-names/eval230 (REPL:1).
+class java.lang.Long cannot be cast to class clojure.lang.IFn
+
+user=> '(1 3 4) ; quote
+(1 3 4)
+
+user=> (quote (1 2 3)) ; using the longer quote method
+(1 2 3)
+user=>
+```
+
+- [Clojure Special Forms](https://clojure.org/reference/special_forms#quote)
+
 
 
 ## 참고문헌
