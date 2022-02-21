@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-21 22:25:12 +0900
+updated : 2022-02-21 22:36:37 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -598,6 +598,41 @@ user => (get my-map :three 3) ; same as above, but using get
 - [Data Structures - Keywords](https://clojure.org/reference/data_structures#Keywords)
 
 ### `::` - Auto-resolved keyword
+
+>
+`::` is used to auto-resolve a keyword in the current namespace.
+If no qualifier is specified, it will auto-resolve to the current namespace.
+If a qualifier is specified, it may use aliases in the current namespace:
+
+`::`를 쓰면 현재 namespace 기준으로 경로를 자동 지정해 줍니다.
+만약 qualifier를 지정해주지 않는다면, 자동으로 현재 namespace로 자동 설정합니다.
+qualifier를 지정한다면, 현재 namespace에서 alias를 사용하는 것이 가능합니다.
+
+```clojure
+user=> :my-keyword
+:my-keyword
+user=> ::my-keyword
+:user/my-keyword
+user=> (= ::my-keyword :my-keyword)
+false
+```
+
+>
+This is useful when creating macros.
+If you want to ensure that a macro that calls another function in the macro namespace correctly expands to call the function, you could use ::my-function to refer to the fully qualified name.
+
+이로 인해 macro를 만들 때 유용하게 사용할 수 있습니다.
+만약 macro의 namespace에 있는 다른 함수를 호출하도록 macro가 확장되게 하려면, `::my-function`을 사용해 (자동으로) 정규화된 이름을 지정할 수 있습니다.
+
+>
+Note that `::` is not available in edn.
+
+`::`는 edn 에서는 사용할 수 없습니다.
+
+- [Reader](https://clojure.org/reference/reader)
+
+### `#:` and `#::` - Namespace Map Syntax
+
 
 ## 참고문헌
 
