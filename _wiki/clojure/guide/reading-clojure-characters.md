@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-21 22:57:06 +0900
+updated : 2022-02-21 23:05:33 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -732,7 +732,31 @@ Namespace qualifiers can thus prevent naming collisions for simple names.
 
 * [Reader](https://clojure.org/reference/reader )
 
+### `\` - Character literal
 
+>
+`\` indicates a literal character as in:
+
+`\`는 문자 리터럴을 표현합니다.
+
+```clojure
+user=> (str \h \i)
+"hi"
+```
+
+>
+There are also a small number of special characters to name special ASCII characters: `\newline`, `\space`, `\tab`, `\formfeed`, `\backspace`, and `\return`.
+
+보통은 `\h` 처럼 `\` 뒤에 한 글자가 오지만, 다음과 같이 몇몇 특수한 ASCII 문자들을 표현하기 위한 표기법도 있습니다.
+
+`\newline`, `\space`, `\tab`, `\formfeed`, `\backspace`, `\return`
+
+>
+The `\` can also be followed by a Unicode literal of the form `\uNNNN`. For example, `\u03A9` is the literal for `Ω`.
+
+`\uNNNN`의 형식으로 유니코드 리터럴을 사용할 수도 있습니다. 예를 들어, `\u03A9`는 `Ω`를 나타냅니다.
+
+### `$` - Inner class reference
 
 
 
