@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-21 22:15:50 +0900
+updated : 2022-02-21 22:25:12 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -553,6 +553,51 @@ Clojure에서는 특정 구문을 강조하거나 가독성 확보를 위해 여
 ```
 
 ### `:` - Keyword
+
+>
+`:` is the indicator for a keyword.
+Keywords are often used as keys in maps and they provide faster comparisons and lower memory overhead than strings (because instances are cached and reused).
+
+키워드는 `:`로 시작합니다.
+키워드는 string에 비해 메모리 오버헤드가 더 적으며, 비교가 훨씬 빠릅니다(왜냐하면 키워드의 인스턴스가 캐시되며, 재사용되기 때문입니다).
+키워드는 map에서 key로 주로 사용됩니다.
+
+```clojure
+user=> (type :test)
+clojure.lang.Keyword
+```
+
+>
+Alternatively you can use the keyword function to create a keyword from a string
+
+`string`을 사용해 키워드를 생성하려면 `keyword` 함수를 사용하면 됩니다.
+
+```clojure
+user=> (keyword "test")
+:test
+```
+
+>
+Keywords can also be invoked as functions to look themselves up as a key in a map:
+
+키워드를 함수로 사용하면 map에 대해 값을 조회하는 용도로 쓸 수 있습니다.
+
+```clojure
+user=> (def my-map {:one 1 :two 2})
+#'user/my-map
+user=> (:one my-map) ; get the value for :one by invoking it as function
+1
+user=> (:three my-map) ; it can safely check for missing keys
+nil
+user=> (:three my-map 3) ; it can return a default if specified
+3
+user => (get my-map :three 3) ; same as above, but using get
+3
+```
+
+- [Data Structures - Keywords](https://clojure.org/reference/data_structures#Keywords)
+
+### `::` - Auto-resolved keyword
 
 ## 참고문헌
 
