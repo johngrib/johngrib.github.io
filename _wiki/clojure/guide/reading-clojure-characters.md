@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-21 23:05:33 +0900
+updated : 2022-02-21 23:18:42 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -758,6 +758,27 @@ The `\` can also be followed by a Unicode literal of the form `\uNNNN`. For exam
 
 ### `$` - Inner class reference
 
+>
+Used to reference inner classes and interfaces in Java. Separates the container class name and the inner class name.
+
+Java에서 inner class와 interface를 참조하기 위해 사용됩니다. `$` 기호를 통해 컨테이너 class 이름과 inner class 이름이 구분됩니다.
+
+```clojure
+(import (basex.core BaseXClient$EventNotifier)
+
+(defn- build-notifier [notifier-action]
+  (reify BaseXClient$EventNotifier
+    (notify [this value]
+      (notifier-action value))))
+```
+
+>
+`EventNotifier` is an inner interface of the `BaseXClient` class which is an imported Java class
+
+`EventNotifier`는 `BaseXClient` class의 inner interface입니다.
+
+- [Clojure: Using Java Inner Classes](http://blog.jayfields.com/2011/01/clojure-using-java-inner-classes.html )
+- [Official Documentation](https://clojure.org/reference/java_interop )
 
 
 ## 참고문헌
