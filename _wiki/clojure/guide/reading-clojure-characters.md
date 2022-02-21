@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-21 22:36:37 +0900
+updated : 2022-02-21 22:50:45 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -632,6 +632,97 @@ Note that `::` is not available in edn.
 - [Reader](https://clojure.org/reference/reader)
 
 ### `#:` and `#::` - Namespace Map Syntax
+
+>
+Namespace map syntax was added in Clojure 1.9 and is used to specify a default namespace context when keys or symbols in a map where they share a common namespace.
+
+Namespace map syntax는 Clojure 1.9 부터 추가됐으며, map 안의 key나 symbol이 공통되는 namespace를 가지고 있을 때 그러한 namespace context를 지정하기 위해 사용됩니다.
+
+>
+The `#:ns` syntax specifies a fully-qualified namespace map prefix n alias in the namespace map prefix with, where ns is the name of a namespace and the prefix precedes the opening brace `{` of the map.
+
+`#:ns`는 namespace map prefix에 지정해줍니다. 여기에서 `ns`는 namespace의 이름이며, map의 `{` 앞에 써주면 됩니다.
+
+>
+For example, the following map literal with namespace syntax:
+
+다음은 namespace syntax를 사용한 map 리터럴의 예입니다.
+
+```clojure
+#:person{:first "Han"
+         :last "Solo"
+         :ship #:ship{:name "Millennium Falcon"
+                      :model "YT-1300f light freighter"}}
+```
+
+>
+is read as:
+
+위의 map 리터럴은 아래와 같이 읽힙니다.
+
+```clojure
+{:person/first "Han"
+ :person/last "Solo"
+ :person/ship {:ship/name "Millennium Falcon"
+               :ship/model "YT-1300f light freighter"}}
+```
+
+>
+Note that these maps represent the identical object - these are just alternate syntaxes.
+
+위의 두 map은 같습니다. 같은 대상을 표현하는 다른 문법이라 할 수 있습니다.
+
+>
+`#::` can be used to auto-resolve the namespace of keyword or symbol keys in a map using the current namespace.
+>
+These two examples are equivalent:
+
+`#::`는 현재 namespace를 사용해 keyword나 symbol의 namespace를 자동으로 지정해 줍니다.
+
+아래의 두 예제는 같습니다.
+
+```clojure
+user=> (keys {:user/a 1, :user/b 2})
+(:user/a :user/b)
+user=> (keys #::{:a 1, :b 2})
+(:user/a :user/b)
+```
+
+>
+Similar to [autoresolved keywords](https://clojure.org/guides/weird_characters#autoresolved_keys ), you can also use `#::alias` to auto-resolve with a namespace alias defined in the `ns` form:
+
+`::`와 비슷하게, `#::alias`를 써서 namespace alias를 사용해서 자동으로 namespace를 지정할 수도 있습니다.
+
+```clojure
+(ns rebel.core
+  (:require
+    [rebel.person :as p]
+    [rebel.ship   :as s] ))
+
+#::p{:first "Han"
+     :last "Solo"
+     :ship #::s{:name "Millennium Falcon"
+                :model "YT-1300f light freighter"}}
+```
+
+>
+is read the same as:
+
+위의 에제는 아래와 같이 읽힙니다.
+
+```clojure
+{:rebel.person/first "Han"
+ :rebel.person/last "Solo"
+ :rebel.person/ship {:rebel.ship/name "Millennium Falcon"
+                     :rebel.ship/model "YT-1300f light freighter"}}
+```
+
+- [Reader](https://clojure.org/reference/reader#map_namespace_syntax )
+
+
+### `/` - Namespace separator
+
+
 
 
 ## 참고문헌
