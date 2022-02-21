@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-21 22:50:45 +0900
+updated : 2022-02-21 22:57:06 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -721,6 +721,17 @@ is read the same as:
 
 
 ### `/` - Namespace separator
+
+>
+`/` can be the division function `clojure.core//`, but can also act as a separator in a symbol name to separate a symbol’s name and namespace qualifier, e.g. my-namespace/utils.
+Namespace qualifiers can thus prevent naming collisions for simple names.
+
+`/`는 나눗셈 함수이기도 합니다(`clojure.core//`).
+한편으로는 symbol의 이름과 namespace를 구분하기 위한 구분자이기도 합니다. (예: `my-namespace/utils`)
+구분자가 있기 때문에 Namespace 한정자는 간단한 이름들이 중복되는 것을 방지할 수 있습니다.
+
+* [Reader](https://clojure.org/reference/reader )
+
 
 
 
