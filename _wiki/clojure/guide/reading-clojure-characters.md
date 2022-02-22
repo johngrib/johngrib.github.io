@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-21 23:18:42 +0900
+updated : 2022-02-22 23:38:36 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -779,6 +779,17 @@ Java에서 inner class와 interface를 참조하기 위해 사용됩니다. `$` 
 
 - [Clojure: Using Java Inner Classes](http://blog.jayfields.com/2011/01/clojure-using-java-inner-classes.html )
 - [Official Documentation](https://clojure.org/reference/java_interop )
+
+
+### `->`, `->>`, `some->`, `cond->`, `as->` etc. - Threading macros
+
+>
+These are threading macros. Please refer to [Official Clojure Documentation](https://clojure.org/guides/threading_macros )
+
+이들은 스레딩 매크로입니다. 공식 문서를 참고하세요.
+
+- [Understanding the Clojure -> macro](http://blog.fogus.me/2009/09/04/understanding-the-clojure-macro/)
+
 
 
 ## 참고문헌
