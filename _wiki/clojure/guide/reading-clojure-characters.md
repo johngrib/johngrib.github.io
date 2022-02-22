@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-22 23:38:36 +0900
+updated : 2022-02-22 23:50:27 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -790,6 +790,77 @@ These are threading macros. Please refer to [Official Clojure Documentation](ht
 
 - [Understanding the Clojure -> macro](http://blog.fogus.me/2009/09/04/understanding-the-clojure-macro/)
 
+### ``` ` ```  - Syntax quote
+
+>
+``` ` ``` is the syntax quote. Syntax quote is similar to quoting (to delay evaluation) but has some additional effects.
+>
+Basic syntax quote may look similar to normal quoting:
+
+``` ` ```는 syntax quote입니다. 평가를 고의로 지연시키기 위해 인용하는 것과 비슷하지만, 추가적인 효과가 있습니다.
+
+이 구문은 기본적으로 평범한 인용과 비슷하게 보입니다.
+
+```clojure
+user=> (1 2 3)
+Execution error (ClassCastException) at myproject.person-names/eval232 (REPL:1).
+class java.lang.Long cannot be cast to class clojure.lang.IFn
+user=> `(1 2 3)
+(1 2 3)
+```
+
+>
+However, symbols used within a syntax quote are fully resolved with respect to the current namespace:
+
+그러나 syntax quote에서 사용된 symbol은 현재의 namespace를 기준으로 resolve됩니다.
+
+```clojure
+user=> (def five 5)
+#'user/five
+user=> `five
+user/five
+```
+
+>
+Syntax quote is most used as a "template" mechanism within macros. We can write one now:
+
+syntax quote는 macro 내에서 "template" 메커니즘으로 많이 사용됩니다. 아래과 같이 작성할 수 있습니다.
+
+```clojure
+user=> (defmacro debug [body]
+  #_=>   `(let [val# ~body]
+  #_=>      (println "DEBUG: " val#)
+  #_=>      val#))
+#'user/debug
+user=> (debug (+ 2 2))
+DEBUG:  4
+4
+```
+
+>
+Macros are functions invoked by the compiler with code as data.
+They are expected to return code (as data) that can be further compiled and evaluated.
+This macro takes a single body expression and returns a `let` form that will evaluate the body, print its value, and then return the value.
+Here the syntax quote creates a list, but does not evaluate it.
+That list is actually code.
+
+macro는 코드를 입력 데이터로 삼는 컴파일러에서 호출되는 함수라 할 수 있습니다.
+macro는 컴파일도 되고 평가도 되는 코드(데이터로서의 코드)를 리턴해야만 합니다.
+이 macro는 하나의 body expression을 입력으로 받아서 하나의 `let` form을 리턴합니다.
+그리고 이 `let` form은 주어진 body를 평가하고, 그 값을 출력한 다음 리턴합니다.
+이 때, syntax quote 는 list 하나를 생성하지만, 평가하지는 않습니다.
+그리고 그 생성된 list는 실제 코드입니다.
+
+>
+See [`~@`](https://clojure.org/guides/weird_characters#unquote_splicing ) and [`~`](https://clojure.org/guides/weird_characters#unquote ) for additional syntax allowed only within syntax quote.
+
+syntax quote 내에서는 허용되는 추가적인 syntax에 대해서는 `~@`와 `~` 문서를 참고하세요.
+
+- [Clojure for the Brave and True - Writing Macros](http://www.braveclojure.com/writing-macros/)
+- [Clojure from the ground up: macros](http://aphyr.com/posts/305-clojure-from-the-ground-up-macros)
+- [Clojure Official Documentation](https://clojure.org/reference/macros)
+
+### `~` - Unquote
 
 
 ## 참고문헌
