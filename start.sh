@@ -14,6 +14,16 @@ elif [[ $1 = "inc" ]]; then
     ./generateData.js
     bundle exec jekyll server --incremental --trace
 
+elif [[ $1 = "null" ]]; then
+    bundle update && bundle install
+    ./generateData.js
+
+    bundle exec jekyll serve --incremental --trace >> /dev/null 2>&1 &
+    echo "Server started. But Logs are in /dev/null"
+
+    ps -ef | grep 'jekyll serve' | grep ruby | awk '{print $2}' > .localhost.pid
+    echo "PID is saved in .localhost.pid"
+
 elif [[ $1 = "back" ]]; then
     # local server를 백그라운드로 띄웁니다.
     # 로그는 .localhost.log 파일에 추가로 기록합니다.
