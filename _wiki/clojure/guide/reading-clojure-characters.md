@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-23 23:01:39 +0900
+updated : 2022-02-23 23:09:06 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -893,7 +893,33 @@ syntax quote와 unquote는 macro 작성에 있어 필수적인 도구라 할 수
 - [Clojure from the ground up: macros](http://aphyr.com/posts/305-clojure-from-the-ground-up-macros )
 - [Clojure Official Documentation](https://clojure.org/macros )
 
+### `~@` - Unquote splicing
 
+>
+See [``` ` ```](https://clojure.org/guides/weird_characters#syntax_quote ) and [`~`](https://clojure.org/guides/weird_characters#unquote ) for additional information.
+>
+`~@` is unquote-splicing.
+Where unquote [(`~`)](https://clojure.org/guides/weird_characters#unquote ) evaluates a form and places the result into the quoted result, `~@` expects the evaluated value to be a collection and splices the _contents_ of that collection into the quoted result.
+
+`~@`는 unquote-splicing을 의미합니다.
+unquote(`~`)와 비교해 봅시다.
+unquote는 form을 평가하고 평가한 결과를 quoted result에 집어넣는데, `~@`는 평가된 결과 값을 컬렉션으로 가정하고 quoted result에 컬렉션의 내용물들을 집어넣습니다.
+
+```clojure
+user=> (def three-and-four (list 3 4))
+#'user/three-and-four
+user=> `(1 ~three-and-four) ; evaluates `three-and-four` and places it in the result
+(1 (3 4))
+user=> `(1 ~@three-and-four) ;  evaluates `three-and-four` and places its contents in the result
+(1 3 4)
+```
+
+>
+Again, this is a powerful tool for writing macros.
+
+`~@` 또한 macro 작성을 위한 강력한 도구입니다.
+
+### `<symbol>#` - Gensym
 
 ## 참고문헌
 
