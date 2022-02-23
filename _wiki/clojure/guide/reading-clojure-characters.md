@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-22 23:50:27 +0900
+updated : 2022-02-23 23:01:39 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -861,6 +861,38 @@ syntax quote 내에서는 허용되는 추가적인 syntax에 대해서는 `~@`�
 - [Clojure Official Documentation](https://clojure.org/reference/macros)
 
 ### `~` - Unquote
+
+>
+See [``` ` ```](https://clojure.org/guides/weird_characters#syntax_quote ) for additional information.
+>
+`~` is unquote. Syntax quote, like quote, means that evaluation is not occurring within the syntax quoted form.
+Unquoting turns off quoting and evaluates an expression inside the syntax quoted expression.
+
+`~`는 인용을 해제합니다. syntax quote는 quote처럼 form의 평가를 발생시키지 않는 것을 의미합니다.
+unquote는 syntax quote된 표현식에서 이러한 quote를 해제하여,  표현식을 평가하도록 합니다.
+
+```clojure
+user=> (def five 5) ; create a named var with the value 5
+#'user/five
+user=> five ; the symbol five is evaluated to its value
+5
+user=> `five ; syntax quoting five will avoid evaluating the symbol, and fully resolve it
+user/five
+user=> `~five ; within a syntax quoted block, ~ will turn evaluation back on just for the next form
+5
+user=> `[inc ~(+ 1 five)]
+[clojure.core/inc 6]
+```
+
+>
+Syntax quoting and unquote are essential tools for writing macros, which are functions invoked during compilation that take code and return code.
+
+syntax quote와 unquote는 macro 작성에 있어 필수적인 도구라 할 수 있습니다.
+
+- [Clojure for the Brave and True - Writing Macros](http://www.braveclojure.com/writing-macros/ )
+- [Clojure from the ground up: macros](http://aphyr.com/posts/305-clojure-from-the-ground-up-macros )
+- [Clojure Official Documentation](https://clojure.org/macros )
+
 
 
 ## 참고문헌
