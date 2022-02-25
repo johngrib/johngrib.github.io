@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-02-20 22:46:54 +0900
+updated : 2022-02-26 00:38:00 +0900
 regenerate: true
 ---
 
@@ -559,6 +559,8 @@ regenerate: true
 ## [[vim]]
 
 * [[/vim/auto-completion]]
+* [[/vim/help]]
+
 * [[ideavim]]
 * [[two-views-of-vim]]
 * [[ultisnips]]

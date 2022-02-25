@@ -21,6 +21,7 @@
   "vim-update-book-progress",
   "vim-with-space-char",
   "vim-ycm-python3",
+  "vim/help",
   "vimwiki"
  ]
 }
