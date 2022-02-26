@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-26 20:54:31 +0900
+updated : 2022-02-26 21:03:36 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -1106,6 +1106,51 @@ This makes asynchronously executed code appear to be synchronous, removing the p
 - [core.async Wiki](https://github.com/clojure/core.async/wiki )
 - [Go Block Best Practices](https://clojure.org/guides/core_async_go )
 
+### `<symbol>?` - Predicate Suffix
+
+>
+Putting `?` at the end of a symbol is a naming convention common across many languages that support special characters in their symbol names.
+It is used to indicate that the thing is a predicate, i.e. that it _poses a question_.
+For example, imagine using an API that dealt with buffer manipulation:
+
+symbol 마지막에 `?`기호를 붙이는 것은, symbol 이름에 특수 문자를 허용하는 다양한 언어들에서 흔히 찾아볼 수 있는 컨벤션입니다.
+이 표기법은 주어진 대상에 대한 단정을 표현합니다. 즉, 참인지 거짓인지를 질문하는 표현입니다.
+예를 들어, 버퍼 조작을 처리하는 API를 사용해 본다고 가정해 봅시다.
+
+```clojure
+(def my-buffer (buffers/create-buffer [1 2 3]))
+(buffers/empty my-buffer)
+```
+
+>
+At a glance, how would you know if the function `empty` in this case,
+>
+- Returned `true` if the passed in buffer was empty, or,
+- Cleared the buffer
+
+이 경우에 `empty` 함수가 어떻게 작동하는지 한 눈에 알아볼 수 있나요?
+
+- 버퍼가 비어 있다면 `true`를 리턴하는 함수
+- 버퍼를 클리어하는 함수
+
+>
+While the author could have renamed `empty` to `is-empty`, the richness of symbol naming in Clojure allows us to express intent more symbolically.
+
+물론 코드 작성자는 이 함수의 이름을 `empty`에서 `is-empty`로 바꿀 수 있긴 합니다.
+그러나 Clojure에서는 symbol 이름을 지을 때 다양한 기호를 사용할 수 있으므로 `?` 같은 기호를 써서 의도를 더 잘 표현할 수 있습니다.
+
+```clojure
+(def my-buffer (buffers/create-buffer [1 2 3]))
+(buffers/empty? my-buffer)
+false
+```
+
+>
+This is simply a recommended convention, not a requirement.
+
+이것은 권장 컨벤션이며, 필수적인 규칙은 아닙니다.
+
+- [Clojure Style Guide](https://github.com/bbatsov/clojure-style-guide#naming)
 
 
 ## 참고문헌
