@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-02-26 23:25:19 +0900
+updated : 2022-02-26 23:29:14 +0900
 regenerate: true
 ---
 
@@ -539,6 +539,8 @@ regenerate: true
 
 ## [[/mac]]
 
+* [[/mac/keyboard-shortcuts]]
+* [[/mac/screenshot-png-to-jpg]]
 * [[hammerspoon]]
     * [[hammerspoon-inputsource-aurora]]
     * [[hammerspoon-luarocks]]
@@ -548,8 +550,6 @@ regenerate: true
     * [[hammerspoon-tutorial-03]]
     * [[hammerspoon-tutorial-04]]
     * [[hammerspoon-tutorial-05]]
-* [[mac-keyboard-shortcuts]]
-* [[mac-screenshot-png-to-jpg]]
 * [[migrate-to-new-macbook]]
 
 ## [[til]]

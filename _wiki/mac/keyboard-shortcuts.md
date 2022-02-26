@@ -3,11 +3,11 @@ layout  : wiki
 title   : 맥 키보드 단축키
 summary : 자주 쓰는 맥 단축키 정리
 date    : 2018-01-28 09:09:54 +0900
-updated : 2019-11-19 23:57:24 +0900
+updated : 2022-02-26 23:27:41 +0900
 tag     : 단축키 mac
 toc     : true
 public  : true
-parent  : [[index]]
+parent  : [[/mac]]
 latex   : false
 ---
 * TOC
