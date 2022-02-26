@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2021-12-27 18:15:22 +0900
+updated : 2022-02-26 22:16:08 +0900
 tag     : vim wiki
 public  : true
 parent  : [[vim]]
@@ -509,6 +509,52 @@ augroup END
 
 ```viml
 " hi def link VimwikiCode PreProc
+```
+
+### 신택스 파일 재작성하기
+
+vimwiki의 신택스 컬러링은 좀 거친 편이고, 때때로 의도하지 않은 범위에 색깔이 지정되어 스트레스를 받게 된다.
+
+이 문제를 잡다하게 해결하다 그냥 내가 `/syntax/vimwiki.vim`을 재작성해서 사용하고 있다.
+
+700줄 정도 되는 코드를 30줄 정도로 줄였는데, 이 정도로도 충분하다고 생각한다. 필요하면 나중에 또 추가하면 된다.
+
+[johngrib/vimwiki/syntax/vimwiki.vim]( https://github.com/johngrib/vimwiki/blob/dev/syntax/vimwiki.vim )
+
+```viml
+" vim:tabstop=2:shiftwidth=2:expandtab:textwidth=99
+
+if v:version < 600
+  syntax clear
+elseif exists('b:current_syntax')
+  finish
+endif
+
+let b:current_syntax = "vimwiki"
+
+syntax match headers /^##* /
+hi def link headers Statement
+
+syntax match quote_code /`[^`]*`/hs=s+1,he=e-1
+hi def link quote_code PreProc
+
+syntax match foot_note "\v\[\^[^\] ]*\]"
+hi def link foot_note Comment
+
+syntax match markdown_link "\vhttps?://[^ ]*"
+hi def link markdown_link Comment
+
+syntax match code_block "```[^ ]*"
+hi def link code_block PreProc
+
+syntax match vimwiki_link /\v\[\[[^\]]+\]\]/
+hi def link vimwiki_link PreProc
+
+syntax match block_quote /^>/
+hi def link block_quote PreProc
+
+syntax match markdown_list /^ *-/
+hi def link markdown_list Identifier
 ```
 
 ## Links
