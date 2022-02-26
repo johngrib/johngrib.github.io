@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-26 21:10:00 +0900
+updated : 2022-02-26 21:15:08 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -1187,6 +1187,39 @@ Note that the exclamation mark is often pronounced as bang.
 느낌표를 소리 내어 읽을 때에는 보통 "bang"으로 발음합니다.
 
 * [Clojure Style Guide](https://github.com/bbatsov/clojure-style-guide#naming )
+
+### `_` - Unused argument
+
+>
+When you see the underscore character used as function arguments or in a `let` binding, `_` is a common naming convention to indicate you won’t be using this argument.
+>
+This is an example using the `add-watch` function that can be used to add callback style behaviour when atoms change value.
+Imagine, given an atom, we want to print the new value every time it changes:
+
+함수 인자나, `let` 바인딩에서 `_`를 종종 볼 수 있을 것입니다.
+`_`는 사용하지 않는 인자에 대한 일반적인 명명 컨벤션입니다.
+
+다음은 `add-watch` 함수를 사용해 atom 값이 변경될 때에 대한 콜백 스타일 동작을 추가하는 예입니다.
+주어진 atom에 대해 값이 변경될 때마다 새로운 값을 출력하고 싶은 상황이라고 생각해 보세요.
+
+```clojure
+(def value (atom 0))
+
+(add-watch value nil (fn [_ _ _ new-value]
+                       (println new-value))
+
+(reset! value 6)
+; prints 6
+(reset! value 9)
+; prints 9
+```
+
+>
+`add-watch` takes four arguments, but in our case we only really care about the last argument - the new value of the atom so we use `_` for the others.
+
+`add-watch`는 4개의 인자를 받지만, 여기에서는 atom의 새로운 값으로 할당할 마지막 인자만 사용하고 있습니다.
+따라서 나머지 인자들의 이름은 모두 `_`로 지정해 주었습니다.
+
 
 
 ## 참고문헌
