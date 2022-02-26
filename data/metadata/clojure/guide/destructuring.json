@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "Destructuring in Clojure",
+ "summary": "번역중인 문서",
+ "parent": "clojure/guide",
+ "url": "/wiki/clojure/guide/destructuring",
+ "updated": "2022-02-27 00:59:25 +0900",
+ "children": []
+}

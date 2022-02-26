@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-02-27 00:13:21 +0900
+updated : 2022-02-27 00:36:37 +0900
 regenerate: true
 ---
 
@@ -292,11 +292,13 @@ regenerate: true
     * 14 [[/clojure/reference/metadata]]
 * [[/clojure/guide]]
     * LANGUAGE
-        * [[/clojure/guide/spec]]
-        * [[/clojure/guide/reading-clojure-characters]]
-        * [[/clojure/threading-macros]]
-        * [[/clojure/equality]]
-        * [[/clojure/higher-order-functions]]
+        * 01 [[/clojure/guide/spec]]
+        * 02 [[/clojure/guide/reading-clojure-characters]]
+        * 03 [[/clojure/guide/destructuring]]
+        * 04 [[/clojure/threading-macros]]
+        * 05 [[/clojure/equality]]
+        * 06 /clojure/guide/comparators
+        * 08 [[/clojure/higher-order-functions]]
 * [[/clojure/study-00]]
 * [[/clojure/study-01]]
 * [[/clojure/boolean]]
