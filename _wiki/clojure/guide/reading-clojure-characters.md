@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-26 20:40:46 +0900
+updated : 2022-02-26 20:54:31 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -1049,6 +1049,63 @@ Clojure의 core 예제를 살펴보면 standard out을 표현하는 `*out*`과 s
 
 - [How is the var-name naming-convention used in clojure?](http://stackoverflow.com/questions/1986961/how-is-the-var-name-naming-convention-used-in-clojure )
 - [Clojure API Docs](http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/*out* )
+
+
+### `>!!`, `<!!`, `>!`, and `<!` - core.async channel macros
+
+>
+These symbols are channel operations in [`core.async`](https://github.com/clojure/core.async ) - a Clojure/ClojureScript library for channel based asynchronous programming (specifically [CSP - Communicating Sequential Processes](http://en.wikipedia.org/wiki/Communicating_sequential_processes )).
+>
+If you imagine, for the sake of argument, a channel is a bit like a queue that things can put stuff on and take stuff off, then these symbols support that simple API.
+>
+- `>!!` and `<!!` are _blocking put_ and _take_ respectively
+- `>!` and `<!` are, simply _put_ and _take_
+
+이 symbol들은 `core.async`의 channel operation들입니다.
+`core.async`는 Clojure와 ClojureScript의 channel 기반(특히 CSP - Communicating Sequential Processes) 비동기 프로그래밍 라이브러리입니다.
+
+channel은 무언가를 넣고 뺄 수 있는 queue와 같은 것이라고 상상해 보세요.
+
+- `>!!`, `<!!` - 동기식의 blocking put 과 blocking take.
+- `>!`, `<!` - 간단한 비동기식의 put 과 take.
+
+>
+The difference being the blocking version operate outside `go` blocks and block the thread they operate on.
+
+blocking 버전은 `go` 블록 바깥에서 작동하며, 작동하는 동안 스레드를 차단합니다.
+
+```clojure
+user=> (def my-channel (chan 10)) ; create a channel
+user=> (>!! my-channel "hello")   ; put stuff on the channel
+user=> (println (<!! my-channel)) ; take stuff off the channel
+hello
+```
+
+>
+The non-blocking versions need to be executed within a `go` block, otherwise they’ll throw an exception.
+
+반면 non-blocking 버전은 `go` 블록 안쪽에서 실행해줘야 하며, 그렇게 하지 않으면 예외를 던지게 됩니다.
+
+```clojure
+user=> (def c (chan))
+#'user/c
+user=> (>! c "nope")
+AssertionError Assert failed: >! used not in (go ...) block
+nil  clojure.core.async/>! (async.clj:123)
+```
+
+>
+While the difference between these is well outside the scope of this guide, fundamentally the `go` blocks operate and manage their own resources pausing **execution** of code without blocking threads.
+This makes asynchronously executed code appear to be synchronous, removing the pain of managing asynchronous code from the code base.
+
+이 두 방식 간의 차이점을 논하는 것은 이 가이드 문서의 범위를 벗어나는 것이지만, 기본적인 사항만 언급합니다.
+`go` 블록은 스레드를 차단하지 않으면서 자신만의 리소스를 관리하고 실행합니다.
+이를 통해 비동기식으로 실행된 코드가 동기식 코드와 비슷하게 보이게 되어, 코드 베이스에서 비동기식 코드를 관리하는 괴로움을 제거해 줍니다.
+
+- [core.async Code Walkthrough](https://github.com/clojure/core.async/blob/master/examples/walkthrough.clj )
+- [core.async Wiki](https://github.com/clojure/core.async/wiki )
+- [Go Block Best Practices](https://clojure.org/guides/core_async_go )
+
 
 
 ## 참고문헌
