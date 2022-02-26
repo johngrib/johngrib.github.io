@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-23 23:09:06 +0900
+updated : 2022-02-26 20:02:36 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -920,6 +920,68 @@ Again, this is a powerful tool for writing macros.
 `~@` 또한 macro 작성을 위한 강력한 도구입니다.
 
 ### `<symbol>#` - Gensym
+
+>
+A `#` _at the end_ of a symbol is used to automatically generate a new symbol.
+This is useful inside macros to keep macro specifics from leaking into the userspace.
+A regular `let` will fail in a macro definition:
+
+symbol 끝에 있는 `#`는 자동으로 새로운 symbol을 생성하는 데에 사용됩니다.
+매크로 내부에서 매크로의 상세 내역을 userspace로 유출되는 것을 방지하고 싶을 때 유용하게 사용할 수 있습니다.
+
+다음 예제를 봅시다.
+macro를 정의할 때 평범하게 `let`을 사용하면 실패합니다.
+
+```clojure
+user=> (defmacro m [] `(let [x 1] x))
+#'user/m
+user=> (m)
+Syntax error macroexpanding clojure.core/let at (REPL:1:1).
+myproject.person-names/x - failed: simple-symbol? at: [:bindings :form :local-symbol]
+  spec: :clojure.core.specs.alpha/local-name
+myproject.person-names/x - failed: vector? at: [:bindings :form :seq-destructure]
+  spec: :clojure.core.specs.alpha/seq-binding-form
+myproject.person-names/x - failed: map? at: [:bindings :form :map-destructure]
+  spec: :clojure.core.specs.alpha/map-bindings
+myproject.person-names/x - failed: map? at: [:bindings :form :map-destructure]
+  spec: :clojure.core.specs.alpha/map-special-binding
+```
+
+>
+This is because symbols inside a syntax quote are fully resolved, including the local binding `x` here.
+>
+Instead you can append `#` to the end of the variable name and let Clojure generate a unique (unqualified) symbol:
+
+이렇게 실패하는 이유는 `let`을 통한 로컬 바인딩인 `x`를 포함한 quote syntax 내부에 있는 symbol들이 전부 해석되기 때문입니다.
+
+대안으로 `#`를 변수명 뒤에 붙여줘 봅시다.
+이렇게 하면 Clojure가 유니크한(정규화되지 않은) symbol을 생성하게 됩니다.
+
+```clojure
+user=> (defmacro m [] `(let [x# 1] x#))
+#'user/m
+user=> (m)
+1
+user=>
+```
+
+>
+Importantly, every time a particular `x#` is used within a single syntax quote, the _same_ generated name will be used.
+>
+If we expand this macro, we can see the `gensym` 'd name:
+
+이때 중요한 점은, quote syntax 안쪽에서 `x#`이 쓰이는 곳마다 똑같은 이름이 사용되도록 생성된다는 것입니다.
+
+이 macro를 확장해보면, `gensym`된 이름을 확인해 볼 수 있습니다.
+
+```clojure
+user=> (macroexpand '(m))
+(let* [x__681__auto__ 1] x__681__auto__)
+```
+
+- [ClojureDocs - gensym](http://clojuredocs.org/clojure_core/clojure.core/gensym )
+
+## [](https://clojure.org/guides/weird_characters#_reader_conditional)`   `
 
 ## 참고문헌
 
