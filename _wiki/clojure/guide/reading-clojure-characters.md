@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-26 20:22:58 +0900
+updated : 2022-02-26 20:40:46 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -1028,6 +1028,27 @@ as this:
 ```
 
 - [Reader conditonals](https://clojure.org/guides/reader_conditionals )
+
+### `*var-name*` - "Earmuffs"
+
+>
+Earmuffs (a pair of asterisk bookending var names) is a naming convention in many LISPs used to denote _special vars_.
+Most commonly in Clojure this is used to denote _dynamic_ vars, i.e. ones that can change depending on dynamic scope.
+The earmuffs act as a warning that "here be dragons" and to never assume the state of the var.
+Remember, this is a convention, not a rule.
+
+많은 LISP 언어의 이름 짓기 컨벤셔션에서 별표가 좌우에 있는 특수한 변수들을 귀마개 변수라고 부릅니다.
+Clojure에서는 이 귀마개 변수를 일반적으로 dynamic vars라고 부르며, 스코프에 따라 동적으로 변화할 수 있는 변수를 의미합니다.
+단, 귀마개는 "여기에 드래곤이 있어요!"라고 경고하는 것이며 절대로 변수가 어떤 것인지를 보장하지는 않습니다.
+이게 규칙이 아니라 관례라는 것을 꼭 기억해 두세요.
+
+>
+Core Clojure examples include `*out*` and `*in*` which represent the standard in and out streams for Clojure.
+
+Clojure의 core 예제를 살펴보면 standard out을 표현하는 `*out*`과 standard in을 표현하는 `*in*`이 포함되어 있습니다.
+
+- [How is the var-name naming-convention used in clojure?](http://stackoverflow.com/questions/1986961/how-is-the-var-name-naming-convention-used-in-clojure )
+- [Clojure API Docs](http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/*out* )
 
 
 ## 참고문헌
