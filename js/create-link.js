@@ -53,7 +53,7 @@
             '<a href="/tag#$1" class="inner-link labeled-link" data-name="$1"><sup class="tagged-link"/></sup>$2</a>');
 
         // (태그 처리) "[[#tagName#]]"을 <a href="/wiki/tagName#">tagName</a> 로 replace하여 링크를 만든다.
-        //                           [[#           #]]      {            }
+        //                           [[#           #]]
         content = content.replace(/\[\[#([^\[\]]+?)#\s*\]\]/g,
             '<a href="/tag#$1" class="inner-link labeled-link" data-name="$1"><sup class="tagged-link"/></sup>$1</a>');
 
