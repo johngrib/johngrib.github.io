@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-26 20:08:48 +0900
+updated : 2022-02-26 20:22:58 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -988,9 +988,9 @@ Reader conditionals are designed to allow different dialects of Clojure to share
 The reader conditional behaves similarly to a traditional `cond`.
 The syntax for usage is `#?` and looks like this:
 
-reader conditional은 Clojure의 방언이 공통 코드를 공유할 수 있도록 하기 위해 설계되었습니다.
-reader conditional은 전통적인 `cond`와 비슷하게 동작합니다.
-방법은 `#?`를 예제와 같이 사용해주면 됩니다.
+조건부 reader는 Clojure의 여러 방언에서 돌아갈 수 있는 코드를 지원하기 위해 설계되었습니다.
+조건부 reader는 언어 키워드가 조건으로 주어진 `cond`와 비슷하게 동작합니다.
+조건부 reader는 `#?`로 시작하는 form에 예제와 같이 언어별 조건을 작성해 주는 식으로 사용할 수 있습니다.
 
 ```clojure
 #?(:clj  (Clojure expression)
@@ -1000,6 +1000,34 @@ reader conditional은 전통적인 `cond`와 비슷하게 동작합니다.
 ```
 
 - [Reader conditionals](https://clojure.org/guides/reader_conditionals )
+
+### `#?@` - Splicing Reader conditional
+
+>
+The syntax for a splicing reader conditional is `#?@`.
+It is used to splice lists into the containing form.
+So the Clojure reader would read this:
+
+`#?@`를 사용하면 조건부 reader에 넘겨줄 form에 포함된 list를 splicing합니다.
+즉 아래와 같은 코드가 주어지면, Clojure reader는(`:clj` 조건)...
+
+```clojure
+(defn build-list []
+  (list #?@(:clj  [5 6 7 8]
+            :cljs [1 2 3 4])))
+```
+
+>
+as this:
+
+다음과 같이 읽습니다.
+
+```clojure
+(defn build-list []
+  (list 5 6 7 8))
+```
+
+- [Reader conditonals](https://clojure.org/guides/reader_conditionals )
 
 
 ## 참고문헌
