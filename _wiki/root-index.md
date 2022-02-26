@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-02-26 23:29:14 +0900
+updated : 2022-02-27 00:13:21 +0900
 regenerate: true
 ---
 
@@ -303,6 +303,7 @@ regenerate: true
 * [[/clojure/study]]
     * [[/clojure/earmuffs]]
     * [[/clojure/study/collection]]
+    * [[/clojure/study/function]]
     * [[/clojure/study/map]]
     * [[/clojure/study/merge-with]]
     * [[/clojure/study/number]]
