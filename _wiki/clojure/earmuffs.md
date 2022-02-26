@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure earmuffs (*귀마개*)
 summary : 
 date    : 2022-02-20 21:20:48 +0900
-updated : 2022-02-20 21:26:46 +0900
+updated : 2022-02-27 00:04:00 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -31,6 +31,11 @@ latex   : false
 > *ns*
 > ;=> #object[clojure.lang.Namespace 0x356680cb "alice.favfoods"]
 > ```
+
+## 함께 읽기
+
+- [[/clojure/guide/reading-clojure-characters#var-name&#45;&#45;&#45;earmuffs]]
+
 
 ## 참고문헌
 
