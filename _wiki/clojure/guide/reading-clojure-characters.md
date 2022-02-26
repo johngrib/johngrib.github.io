@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-26 21:15:08 +0900
+updated : 2022-02-26 21:21:34 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -1220,10 +1220,32 @@ Imagine, given an atom, we want to print the new value every time it changes:
 `add-watch`는 4개의 인자를 받지만, 여기에서는 atom의 새로운 값으로 할당할 마지막 인자만 사용하고 있습니다.
 따라서 나머지 인자들의 이름은 모두 `_`로 지정해 주었습니다.
 
+### `,` - Whitespace character
+
+>
+In Clojure, `,` is treated as whitespace, exactly the same as spaces, tabs, or newlines.
+Commas are thus never required in literal collections, but are often used to enhance readability:
+
+Clojure에서 `,`는 공백으로 취급됩니다. 좀 더 자세히 설명하자면 스페이스, 탭, 개행문자와 완전히 똑같이 취급됩니다.
+콤마는 리터럴 컬렉션에서는 필요하지 않지만, 가독성을 향상시키기 위해 사용되곤 합니다.
+
+```clojure
+user=>(def m {:a 1, :b 2, :c 3}
+{:a 1, :b 2, :c 3}
+```
+
+### 감사 인사
+
+>
+Many thanks to everyone who has contributed ideas and [the copious amounts of] spelling corrections (crikey I’m bad at speelingz - so thanks Michael R. Mayne, lobsang_ludd).
+I’ve tried to call out people who have specifically asked for things. Sorry if I’ve missed you.
+>
+Original author: James Hughes
 
 
 ## 참고문헌
 
+- [Reading Clojure Characters]( https://clojure.org/guides/weird_characters )
 
 ## 주석
 
