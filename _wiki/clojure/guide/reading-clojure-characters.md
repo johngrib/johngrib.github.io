@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-26 21:03:36 +0900
+updated : 2022-02-26 21:10:00 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -1151,6 +1151,42 @@ This is simply a recommended convention, not a requirement.
 이것은 권장 컨벤션이며, 필수적인 규칙은 아닙니다.
 
 - [Clojure Style Guide](https://github.com/bbatsov/clojure-style-guide#naming)
+
+### `<symbol>!` - Unsafe Operations
+
+>
+[The Clojure style guide has this to say](https://github.com/bbatsov/clojure-style-guide#changing-state-fns-with-exclamation-mark ):
+>>
+The names of functions/macros that are not safe in STM transactions should end with an exclamation mark (e.g `reset!`).
+>
+You’ll most commonly see this appended to function names whose purpose is to mutate state, e.g. connecting to a data store, updating an atom or closing a file stream
+
+
+Clojure 스타일 가이드 문서에는 다음과 같은 말이 있습니다.
+
+**"STM 트랜잭션에서 안전하지 않은 함수와 매크로의 이름은 느낌표로 끝내야 합니다.(예: `reset!`)**
+
+데이터 저장소에 접속한다던가, atom을 업데이트한다던가, file stream을 close하는 것과 같이 상태를 변경하는 종류의 함수 이름에서 `!`를 볼 수 있을 것입니다.
+
+```clojure
+user=> (def my-stateful-thing (atom 0))
+#'user/my-stateful-thing
+user=> (swap! my-stateful-thing inc)
+1
+user=> @my-stateful-thing
+1
+```
+
+>
+This is simply a recommended convention and not a requirement.
+>
+Note that the exclamation mark is often pronounced as bang.
+
+이것 또한 권장 컨벤션이며, 필수적인 규칙은 아닙니다.
+
+느낌표를 소리 내어 읽을 때에는 보통 "bang"으로 발음합니다.
+
+* [Clojure Style Guide](https://github.com/bbatsov/clojure-style-guide#naming )
 
 
 ## 참고문헌
