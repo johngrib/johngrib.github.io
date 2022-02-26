@@ -3,11 +3,11 @@ layout  : wiki
 title   : macOS의 기본 스크린샷 저장 포맷을 png에서 jpg로 바꾸는 방법
 summary : 
 date    : 2020-06-01 21:49:38 +0900
-updated : 2020-06-01 21:54:35 +0900
+updated : 2022-02-26 23:25:11 +0900
 tag     : macos
 toc     : true
 public  : true
-parent  : [[macos]]
+parent  : [[/mac]]
 latex   : false
 ---
 * TOC

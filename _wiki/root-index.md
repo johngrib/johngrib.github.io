@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-02-26 00:38:00 +0900
+updated : 2022-02-26 23:25:19 +0900
 regenerate: true
 ---
 
@@ -537,7 +537,7 @@ regenerate: true
 * [[microsoft-hwp-word-converter]]
 * [[twitter-tools]]
 
-## [[macos]]
+## [[/mac]]
 
 * [[hammerspoon]]
     * [[hammerspoon-inputsource-aurora]]
