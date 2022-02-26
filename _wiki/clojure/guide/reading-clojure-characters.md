@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Reading Clojure Characters
-summary : 번역 중인 문서
+summary : Clojure의 다양한 특수문자들
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-26 21:56:41 +0900
+updated : 2022-02-26 22:24:59 +0900
 tag     : clojure 번역
 toc     : true
 public  : true

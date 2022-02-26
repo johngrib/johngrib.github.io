@@ -1,9 +1,9 @@
 {
  "type": "wiki",
  "title": "Reading Clojure Characters",
- "summary": "번역 중인 문서",
+ "summary": "Clojure의 다양한 특수문자들",
  "parent": "clojure/guide",
  "url": "/wiki/clojure/guide/reading-clojure-characters",
- "updated": "2022-02-26 21:56:41 +0900",
+ "updated": "2022-02-26 22:24:59 +0900",
  "children": []
 }
