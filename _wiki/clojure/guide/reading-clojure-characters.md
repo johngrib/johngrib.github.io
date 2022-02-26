@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : 번역 중인 문서
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-26 20:02:36 +0900
+updated : 2022-02-26 20:08:48 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -981,7 +981,26 @@ user=> (macroexpand '(m))
 
 - [ClojureDocs - gensym](http://clojuredocs.org/clojure_core/clojure.core/gensym )
 
-## [](https://clojure.org/guides/weird_characters#_reader_conditional)`   `
+### `#?` - Reader conditional
+
+>
+Reader conditionals are designed to allow different dialects of Clojure to share common code.
+The reader conditional behaves similarly to a traditional `cond`.
+The syntax for usage is `#?` and looks like this:
+
+reader conditional은 Clojure의 방언이 공통 코드를 공유할 수 있도록 하기 위해 설계되었습니다.
+reader conditional은 전통적인 `cond`와 비슷하게 동작합니다.
+방법은 `#?`를 예제와 같이 사용해주면 됩니다.
+
+```clojure
+#?(:clj  (Clojure expression)
+   :cljs (ClojureScript expression)
+   :cljr (Clojure CLR expression)
+   :default (fallthrough expression))
+```
+
+- [Reader conditionals](https://clojure.org/guides/reader_conditionals )
+
 
 ## 참고문헌
 
