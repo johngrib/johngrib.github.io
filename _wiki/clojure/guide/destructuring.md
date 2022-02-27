@@ -3,7 +3,7 @@ layout  : wiki
 title   : Destructuring in Clojure
 summary : 번역중인 문서
 date    : 2022-02-27 00:36:51 +0900
-updated : 2022-02-27 21:08:31 +0900
+updated : 2022-02-28 00:09:00 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -310,6 +310,186 @@ When you have nested vectors, you can use `:as` or `&` at any level as well.
 ```
 
 ### Associative Destructuring
+
+>
+Associative destructuring is similar to sequential destructuring, but applied instead to associative (key-value) structures (including maps, records, vectors, etc).
+The associative bindings are concerned with concisely extracting values of the map by key.
+>
+Let’s first consider an example that extracts values from a map without destructuring:
+
+연관 구조분해는 sequential 구조분해와 비슷하지만, 리스트가 아니라 key와 value가 있는 연관 구조(map, record, vector 등)에 적용하다는 특징이 있습니다.
+연관 바인딩을 사용하면 key를 통해 map에 담겨있는 값들을 간결하게 추출할 수 있습니다.
+
+먼저 구조분해를 사용하지 않고 map에서 값을 뽑아내는 예제를 살펴봅시다.
+
+```clojure
+(def client {:name "Super Co."
+             :location "Philadelphia"
+             :description "The worldwide leader in plastic tableware."})
+
+(let [name (:name client)
+      location (:location client)
+      description (:description client)]
+  (println name location "-" description))
+;= Super Co. Philadelphia - The worldwide leader in plastic tableware.
+```
+
+>
+Note that each line of the let binding is essentially the same - it extracts a value from the map by the name of the key, then binds it to a local with the same name.
+>
+Below is a first example of doing the same thing with associative destructuring:
+
+`let` 바인딩의 한 줄 한 줄을 봅시다.
+이들은 모두 본질적으로 똑같은 일을 하고 있는데,
+key 이름으로 map에서 값을 추출해서 같은 이름으로 로컬 바인딩을 하고 있습니다.
+
+아래의 코드를 봅시다. 연관 구조분해를 사용하는 첫 번째 에제라 할 수 있습니다.
+
+```clojure
+(let [{name :name
+       location :location
+       description :description} client]
+  (println name location "-" description))
+;= Super Co. Philadelphia - The worldwide leader in plastic tableware.
+```
+
+>
+The destructuring form is now a map rather than a vector, and instead of a symbol on the left side of the let, we have a map.
+The keys of the map are the symbols we want to bind in the let.
+The values of the destructuring map are the keys we will look up in the associative value.
+Here they are keywords (the most common case), but they could be any key value - numbers, strings, symbols, etc.
+>
+Similar to sequential destructuring, if you try to bind a key that is not present in the map, the binding value will be nil.
+
+구조분해의 모양을 보면 앞에서와 달리 vector가 아니라 map 형태를 갖고 있습니다.
+그리고 `let` 바인딩 왼쪽에 symbol이 있는 게 아니라 map이 있게 되었습니다.
+이 때, map의 각 key들은 우리가 `let`을 통해 바인딩하려는 symbol들입니다.
+그리고 구조분해하는 map의 각 값들은, 구조분해되는 map의 key들에 해당됩니다.
+여기에서는 keyword를 사용하고 있는데(보통 이렇게 씁니다),
+map에서 key로 사용하는 값이라면 number, string, symbol 등 그 외의 아무거나 사용할 수 있습니다.
+
+시퀀셜 구조분해와 똑같이, map에 없는 값을 바인딩하면 `nil`을 값으로 갖게 됩니다.
+
+```clojure
+(let [{category :category} client]
+  (println category))
+;= nil
+```
+
+>
+Associative destructuring, however, also allows you to supply a default value if the key is not present in the associative value with the `:or` key.
+
+그러나 연관 구조분해를 사용하는 경우에는, `:or`을 사용해서 key가 map에 없을 때도 기본값을 지정할 수 있습니다.
+
+```clojure
+(let [{category :category, :or {category "Category not found"}} client]
+  (println category))
+;= Category not found
+```
+
+>
+The value for `:or` is a map where the bound symbol (here `category`) is bound to the expression `"Category not found"`.
+When category is not found in `client`, it is instead found in the `:or` map and bound to that value instead.
+
+`:or`의 값으로 주어진 것은 바인딩할 symbol을 갖고 있는 map이며(여기에서는 `category`), `"Category not found"`라는 값을 마련하고 있습니다.
+만약 `client` map에서 `category`를 찾지 못한다면, `:or` map에 들어있는 `category` 값을 찾아서 바인딩하게 됩니다.
+
+>
+In sequential destructuring, you generally bind unneeded values with an `_`.
+Since associative destructuring doesn’t require traversing the entire structure, you can simply omit any keys you don’t plan on using from the destructuring form.
+>
+If you need access to the entire map, you can use the `:as` key to bind the entire incoming value, just as in sequential destructuring.
+
+시퀀셜 구조분해에서는 필요없는 값들을 `_`로 바인딩했었습니다.
+연관 구조분해에서는 주어진 자료구조 전체를 탐색하지 않기 때문에 사용하지 않을 key는 그냥 무시하면 됩니다.
+
+만약 map 전체에 엑세스할 필요가 있다면, 시퀀셜 구조분해에서 했던 것과 똑같이 `:as`를 사용해서 전체 값을 바인딩할 수 있습니다.
+
+```clojure
+(let [{name :name :as all} client]
+  (println "The name from" all "is" name))
+;= The name from {:name Super Co., :location Philadelphia, :description The world wide leader in plastic table-ware.} is Super Co.
+```
+
+>
+The `:as` and `:or` keywords can be combined in a single destructuring.
+
+`:as`와 `:or` 키워드를 함께 사용하는 것도 가능합니다.
+
+```clojure
+(def my-map {:a "A" :b "B" :c 3 :d 4})
+(let [{a :a, x :x, :or {x "Not found!"}, :as all} my-map]
+  (println "I got" a "from" all)
+  (println "Where is x?" x))
+;= I got A from {:a "A" :b "B" :c 3 :d 4}
+;= Where is x? Not found!
+```
+
+>
+You might have noticed that our original example still contains redundant information (the local binding name and the key name) in the associative destructuring form.
+The `:keys` key can be used to further remove the duplication:
+
+이 예제를 잘 살펴보면, 연관 구조분해를 하면서도 중복된 이름들이 보일 것입니다(`a :a` `x :x` 처럼 로컬 바인딩하는 이름과 key 이름이 반복되는 모습).
+`:keys`를 사용하면 이런 종류의 중복을 제거할 수 있습니다.
+
+```clojure
+(let [{:keys [name location description]} client]
+  (println name location "-" description))
+;= Super Co. Philadelphia - The worldwide leader in plastic tableware.
+```
+
+>
+This example is exactly the same as the prior version - it binds `name` to `(:name client)`, `location` to `(:location client)`, and `description` to `(:description client)`.
+
+이 예제는 앞의 예제와 똑같습니다.
+
+- `name`은 `(:name client)`에 바인딩.
+- `location`은 `(:location client)`에 바인딩.
+- `description`은 `(:description client)`에 바인딩.
+
+>
+The `:keys` key is for associative values with keyword keys, but there are also `:strs` and `:syms` for string and symbol keys respectively.
+In all of these cases the vector contains symbols which are the local binding names.
+
+`:keys` 키는 연관 자료구조의 값들을 위한 것이지만, string에 쓰기 위한 `:strs`와 symbol에 쓰기 위한 `:syms`도 있습니다.
+이런 키워드들을 사용하는 경우에는 vector에 로컬 바인딩에 사용할 symbol 이름을 포함하도록 작성합니다.
+
+```clojure
+(def string-keys {"first-name" "Joe" "last-name" "Smith"})
+
+(let [{:strs [first-name last-name]} string-keys]
+  (println first-name last-name))
+;= Joe Smith
+
+(def symbol-keys {'first-name "Jane" 'last-name "Doe"})
+
+(let [{:syms [first-name last-name]} symbol-keys]
+  (println first-name last-name))
+;= Jane Doe
+```
+
+>
+Associative destructuring can be nested and combined with sequential destructuring as needed.
+
+연관 구조분해는 중첩해서 사용할 수 있으며, 필요한 경우 sequential 구조분해와 함께 사용할 수도 있습니다.
+
+```clojure
+(def multiplayer-game-state
+  {:joe {:class "Ranger"
+         :weapon "Longbow"
+         :score 100}
+   :jane {:class "Knight"
+          :weapon "Greatsword"
+          :score 140}
+   :ryan {:class "Wizard"
+          :weapon "Mystic Staff"
+          :score 150}})
+
+(let [{{:keys [class weapon]} :joe} multiplayer-game-state]
+  (println "Joe is a" class "wielding a" weapon))
+;= Joe is a Ranger wielding a Longbow
+```
+
 
 #### Keyword arguments
 
