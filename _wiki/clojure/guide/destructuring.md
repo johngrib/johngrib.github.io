@@ -3,7 +3,7 @@ layout  : wiki
 title   : Destructuring in Clojure
 summary : 번역중인 문서
 date    : 2022-02-27 00:36:51 +0900
-updated : 2022-02-28 00:09:00 +0900
+updated : 2022-02-28 00:46:58 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -492,6 +492,83 @@ Associative destructuring can be nested and combined with sequential destructuri
 
 
 #### Keyword arguments
+
+>
+One special case is using associative destructuring for keyword-arg parsing.
+Consider a function that takes options `:debug` and `:verbose`.
+These could be specified in an options map:
+
+키워드 인자를 파악하는 방식으로 연관 구조분해를 쓰는 특별한 케이스가 하나 있습니다.
+
+`:debug`와 `:verbose`를 갖는 `options`라는 map을 입력받는 함수를 하나 생각해 봅시다.
+이 키워드들은 아래 예제와 같이 `options` map에 지정됩니다.
+
+```clojure
+(defn configure [val options]
+  (let [{:keys [debug verbose] :or {debug false, verbose false}} options]
+    (println "val =" val " debug =" debug " verbose =" verbose)))
+
+(configure 12 {:debug true})
+;;val = 12  debug = true  verbose = false
+```
+
+>
+However, it would be nicer to type if we could pass those optional arguments as just additional "keyword" arguments like this:
+
+그런데 이 함수에 인자를 넘길 때 아래와 같이 "keyword" 인자로 전달할 수 있다면 좀 더 편리할 것 같습니다.
+
+```clojure
+(configure 12 :debug true)
+```
+>
+To support this style of invocation, associative destructuring also works with lists or sequences of key-value pairs for keyword argument parsing.
+The sequence comes from the rest arg of a variadic function but is destructured not with sequential destructuring, but with associative destructuring (so a sequence destructured as if it were the key-value pairs in a map):
+
+이런 방식의 호출을 지원하기 위해, 연관 구조분해는 key-value 쌍을 갖는 list나 sequence 에서도 작동합니다.
+가변 함수의 나머지 인수에서 딸려온 sequence는 시퀀셜 구조분해가 아니라, 연관 구조분해로 구조분해됩니다.
+(즉, 시퀀스는 마치 map의 key-value 쌍처럼 구조분해됩니다.)
+
+```clojure
+(defn configure [val & {:keys [debug verbose]
+                        :or {debug false, verbose false}}]
+  (println "val =" val " debug =" debug " verbose =" verbose))
+
+(configure 10)
+;;val = 10  debug = false  verbose = false
+
+(configure 5 :debug true)
+;;val = 5  debug = true  verbose = false
+
+;; Note that any order is ok for the kwargs
+ (configure 12 :verbose true :debug true)
+;;val = 12  debug = true  verbose = true
+```
+
+>
+The use of keyword arguments had fallen in and out of fashion in the Clojure community over the years.
+They are now mostly used when presenting interfaces that people are expected to type at the REPL or the outermost layers of an API.
+In general, inner layers of the code found it easier to pass options as an explicit map.
+However, in Clojure 1.11 the capability was added to allow passing of alternating key→values, or a map of those same mappings, or even a map with key→values before it to functions expecting keyword arguments.
+Therefore, the call to `configure` above can take any of the following forms in addition to those shown above:
+
+keyword 인자를 사용하는 방법은 Clojure 커뮤니티에서 몇 년간은 인기있었지만, 이제는 흘러간 유행이 됐습니다.
+이제 이 기법은 REPL이나 API의 가장 바깥쪽 레이어에서 입력해야 하는 인터페이스를 표현할 때 주로 사용됩니다.
+일반적으로, 코드의 안쪽 레이어들에서는 옵션을 명시적으로 선언한 map으로 전달하는 것이 더 쉽다는 것을 깨닫게 되었기 때문입니다.
+그러나 Clojure 1.11 부터는 이에 대한 대체적인 기능이 추가되었으며,
+`configure` 함수를 호출하는 방법으로 앞에서 본 것 외에도 아래와 같은 방법들을 사용할 수 있습니다.
+
+```clojure
+ (configure 12 {:verbose true :debug true})
+;;val = 12  debug = true  verbose = true
+
+ (configure 12 :debug true {:verbose true})
+;;val = 12  debug = true  verbose = true
+```
+
+>
+The trailing map to functions expecting keyword aguments is often useful in overriding the default keys provided as key→value pairs.
+
+마지막 예제와 같이 키워드 인자를 기대하는 함수에 대해 뒤따르는 map을 제공하면 key→value 쌍으로 제공되는 기본 키를 덮어쓸 수 있어 유용하게 사용할 수 있습니다.
 
 #### Namespaced keywords
 
