@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Destructuring in Clojure
-summary : 번역중인 문서
+summary : 클로저의 구조분해
 date    : 2022-02-27 00:36:51 +0900
-updated : 2022-03-01 00:26:08 +0900
+updated : 2022-03-01 00:27:36 +0900
 tag     : clojure
 toc     : true
 public  : true

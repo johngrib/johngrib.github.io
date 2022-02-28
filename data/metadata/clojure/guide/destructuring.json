@@ -1,9 +1,9 @@
 {
  "type": "wiki",
  "title": "Destructuring in Clojure",
- "summary": "번역중인 문서",
+ "summary": "클로저의 구조분해",
  "parent": "clojure/guide",
  "url": "/wiki/clojure/guide/destructuring",
- "updated": "2022-03-01 00:26:08 +0900",
+ "updated": "2022-03-01 00:27:36 +0900",
  "children": []
 }
