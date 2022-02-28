@@ -3,7 +3,7 @@ layout  : wiki
 title   : Destructuring in Clojure
 summary : 번역중인 문서
 date    : 2022-02-27 00:36:51 +0900
-updated : 2022-02-28 00:46:58 +0900
+updated : 2022-02-28 21:59:12 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -571,6 +571,92 @@ The trailing map to functions expecting keyword aguments is often useful in over
 마지막 예제와 같이 키워드 인자를 기대하는 함수에 대해 뒤따르는 map을 제공하면 key→value 쌍으로 제공되는 기본 키를 덮어쓸 수 있어 유용하게 사용할 수 있습니다.
 
 #### Namespaced keywords
+
+>
+If the keys in your map are namespaced keywords, you can also use destructuring with it, even though local binding symbols are not allowed to have namespaces.
+Destructuring a namespaced key will bind a value to the local name part of the key and drop the namespace.
+(Thus you can use `:or` as with a non-namespaced key.)
+
+로컬 바인딩 symbol에는 네임스페이스가 허용되지 않지만, map의 key가 네임스페이스 키워드인 경우라면 구조분해를 할 수 있습니다.
+네임스페이스 key를 구조분해하면 key의 로컬 이름 부분에 값이 바인딩되며, 네임스페이스 부분은 버려 버립니다.
+(따라서 네임스페이스가 없는 key에서도 `:or`을 사용할 수 있습니다.)
+
+```clojure
+(def human {:person/name "Franklin"
+            :person/age 25
+            :hobby/hobbies "running"})
+(let [{:keys [hobby/hobbies]
+       :person/keys [name age]
+       :or {age 0}} human]
+  (println name "is" age "and likes" hobbies))
+;= Franklin is 25 and likes running
+```
+
+>
+Destructuring namespaced keywords using `:keys` alone can result in local bindings that clash.
+Because all map destructuring options can be combined, any local binding form can be defined individually.
+
+`:keys`만 사용해 네임스페이스 키워드를 구조분해하면 로컬 바인딩을 하는 과정에서 충돌이 발생할 수 있습니다.
+왜냐하면 map에 대한 구조분해 옵션 규칙들이 전부 작동할 수 있기 때문입니다.
+그러므로 로컬 바인딩 형식을 개별적으로 정의할 수 있습니다.
+
+```clojure
+(def human {:person/name "Franklin"
+            :person/age 25
+            :hobby/name "running"})
+(let [{:person/keys [age]
+       hobby-name :hobby/name
+       person-name :person/name} human]
+  (println person-name "is" age "and likes" hobby-name))
+;= Franklin is 25 and likes running
+```
+
+>
+You can even destructure using auto-resolved keywords, which will again be bound to only the name part of the key:
+
+auto-resolved 키워드를 사용해서 구조분해하는 것도 가능합니다.
+이런 키워드는 키의 이름 부분에만 바인딩됩니다.
+
+```clojure
+;; this assumes you have a person.clj namespace in your project
+;; if not do the following at your repl instead: (create-ns 'person) (alias 'p 'person)
+(require '[person :as p])
+
+(let [person {::p/name "Franklin", ::p/age 25}
+      {:keys [::p/name ::p/age]} person]
+  (println name "is" age))
+
+;= Franklin is 25
+```
+
+>
+Creating and destructuring maps with auto-resolved keywords allow us to write code using a namespace alias (here `p`) that is defined by a `require` in the current namespace, giving us a means of namespace indirection that can be changed at a single place in the code.
+
+auto-resolved 키워드를 사용해서 map을 생성하거나 구조분해하면, 현재 네임스페이스에서 `require`로 정의된 네임스페이스 알리아스(방금 전 예제에서 `p`)를 사용해 코드를 작성할 수 있으며, 이로 인해 네임스페이스에 대한 간접적인 참조가 가능하게 됩니다.
+
+>
+All symbols bound in the context of destructuring can be further destructured - this allows destructuring to be used in a nested fashion for both sequential and associative destructuring.
+It is less obvious, but this also extends to the symbol defined after `&`.
+
+구조분해 컨텍스트에 바인딩된 모든 symbol들은 더 작은 구조분해를 통해 다시 구조분해될 수 있습니다.
+따라서 구조분해는 시퀀셜 구조분해와 연관 구조분해 전부에 대해 중첩적으로 사용할 수가 있는 것입니다.
+이 기법은 (좀 덜 명확한 방법이긴 하지만) `&` 기호의 정의까지 확장됩니다.
+
+>
+This example destructures the `&` seq in place to decode the rest of the arguments as options (note that we are thus destructuring the two arguments sequentially and the rest associatively):
+
+아래의 예제는 나머지 인자들을 받는 `&` 시퀀스를 구조분해하는 내용입니다.
+(이 예제에서 앞의 두 인자는 시퀀셜 구조분해를 사용하고, 나머지는 연관 구조분해를 사용한다는 점에 주목하세요)
+
+```clojure
+(defn f-with-options
+  [a b & {:keys [opt1]}]
+  (println "Got" a b opt1))
+
+(f-with-options 1 2 :opt1 true)
+;= Got 1 2 true
+```
+
 
 ### Where to destructure
 
