@@ -3,7 +3,7 @@ layout  : wiki
 title   : Destructuring in Clojure
 summary : 번역중인 문서
 date    : 2022-02-27 00:36:51 +0900
-updated : 2022-02-28 21:59:12 +0900
+updated : 2022-03-01 00:08:34 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -484,10 +484,11 @@ Associative destructuring can be nested and combined with sequential destructuri
    :ryan {:class "Wizard"
           :weapon "Mystic Staff"
           :score 150}})
-
+{% raw %}
 (let [{{:keys [class weapon]} :joe} multiplayer-game-state]
   (println "Joe is a" class "wielding a" weapon))
 ;= Joe is a Ranger wielding a Longbow
+{% endraw %}
 ```
 
 
@@ -659,6 +660,128 @@ This example destructures the `&` seq in place to decode the rest of the argum
 
 
 ### Where to destructure
+
+>
+You can utilize destructuring anywhere that there is an explicit or implicit let binding.
+>
+One of the most common places to see destructuring is in pulling apart the arguments passed to a function.
+>
+Here we have the standard let x equal this, let y equal that, etc…
+Again, this is perfectly valid code, it’s just verbose.
+
+명시적이건 암시적이건 `let` 바인딩을 쓰는 곳이라면 어디든지 구조분해를 사용할 수 있습니다.
+
+구조분해를 사용하는 가장 흔한 예는 바로 함수에 전달된 인자들을 구조분해하는 것일 겁니다.
+
+예제 코드를 봅시다. `let x`를 이렇게 하고, `let y`를 저렇게 하는 식의 코드가 보입니다.
+이 코드는 잘 작동하는 적합한 코드이지만 좀 수다스럽군요.
+
+```clojure
+(defn print-coordinates-1 [point]
+  (let [x (first point)
+        y (second point)
+        z (last point)]
+    (println "x:" x ", y:" y ", z:" z)))
+```
+
+>
+Any time we see code that is using `first`, `second`, `nth`, or `get` to pull apart a data structure, it’s likely that destructuring can clean that up - we can start by rewriting the `let`:
+
+주어진 자료구조에서 원하는 값을 꺼내기 위해
+`first`, `second`, `nth`, `get`를 사용하는 코드는 어디에서나 볼 수 있습니다.
+이제 이걸 `let`을 사용한 구조분해로 깨끗한 코드로 다시 작성해 봅시다.
+
+```clojure
+(defn print-coordinates-2 [point]
+  (let [[x y z] point]
+    (println "x:" x ", y:" y ", z:" z)))
+```
+
+>
+When defining a function in clojure, destructuring can be applied on the incoming parameters, just like in a let:
+
+Clojure에서 함수를 정의할 때에도 `let`에서 썼던 것과 똑같은 방법으로 주어지는 인자에 대한 구조분해를 적용할 수 있습니다.
+
+```clojure
+(defn print-coordinates-3 [[x y z]]
+  (println "x:" x ", y:" y ", z:" z))
+```
+
+>
+We have replaced several lines of code that pulled apart the incoming point data with a concise statement about the structure of that data that also binds the data to local values.
+>
+For a more realistic example, let’s create a map containing some basic contact information for the infamous John Smith.
+
+위 예제에서 함수에 입력되는 데이터를 분해하는 여러 줄의 코드를 로컬 변수에 바인딩하는 간단한 코드로 대체할 수 있었습니다.
+
+좀 더 현실적인 예제를 살펴봅시다. 다음은 악명 높은 John Smith 씨의 연락처 정보가 포함된 map 입니다.
+
+```clojure
+(def john-smith {:f-name "John"
+                 :l-name "Smith"
+                 :phone "555-555-5555"
+                 :company "Functional Industries"
+                 :title "Sith Lord of Git"})
+```
+
+>
+Now that we have John’s personal information we need to access the values within this map.
+
+이제 John의 개인 정보에 엑세스해보도록 합시다.
+
+```clojure
+(defn print-contact-info [{:keys [f-name l-name phone company title]}]
+  (println f-name l-name "is the" title "at" company)
+  (println "You can reach him at" phone))
+
+(print-contact-info john-smith)
+;= John Smith is the Sith Lord of Git at Functional Industries
+;= You can reach him at 555-555-5555
+```
+
+>
+This function will associatively destructure the input using the `:keys` shortcut and then print out the contact information that we provided.
+>
+But what about when we want to send John a nice letter?
+
+이 함수는 `:keys`를 사용한 축약 규칙을 써서 입력된 map을 구조분해하고, 연락처 정보를 출력할 것입니다.
+
+그런데 John 씨에게 멋진 편지를 보내고 싶다면 어떻게 해야 할까요?
+
+```clojure
+(def john-smith {:f-name "John"
+                 :l-name "Smith"
+                 :phone "555-555-5555"
+                 :address {:street "452 Lisp Ln."
+                           :city "Macroville"
+                           :state "Kentucky"
+                           :zip "81321"}
+                 :hobbies ["running" "hiking" "basketball"]
+                 :company "Functional Industries"
+                 :title "Sith Lord of Git"})
+```
+
+>
+We have an address in there now, but we needed to nest a map into our original structure in order to accomplish this.
+
+주소를 얻기 위해서는 중첩된 map을 써야 합니다.
+
+```clojure
+(defn print-contact-info
+  [{:keys [f-name l-name phone company title]
+    {:keys [street city state zip]} :address
+    [fav-hobby second-hobby] :hobbies}]
+  (println f-name l-name "is the" title "at" company)
+  (println "You can reach him at" phone)
+  (println "He lives at" street city state zip)
+  (println "Maybe you can write to him about" fav-hobby "or" second-hobby))
+
+(print-contact-info john-smith)
+;= John Smith is the Sith Lord of Git at Functional Industries
+;= You can reach him at 555-555-5555
+;= He lives at 452 Lisp Ln. Macroville Kentucky 81321
+;= Maybe you can write to him about running or hiking
+```
 
 ### Macros
 
