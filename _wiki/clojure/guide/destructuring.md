@@ -3,7 +3,7 @@ layout  : wiki
 title   : Destructuring in Clojure
 summary : 번역중인 문서
 date    : 2022-02-27 00:36:51 +0900
-updated : 2022-03-01 00:08:34 +0900
+updated : 2022-03-01 00:26:08 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -784,6 +784,41 @@ We have an address in there now, but we needed to nest a map into our original s
 ```
 
 ### Macros
+
+>
+Macro writers may find the need to write a macro that incorporates destructuring.
+The most common way to do so is to produce a call to something that already does destructuring (like `let`, `loop`, `fn`, etc).
+Some examples of this in `clojure.core` include `if-let`, `when-let`, `when-some`, etc.
+
+macro를 작성할 때 구조분해를 포함하는 macro를 만들 필요가 있을 수 있습니다.
+가장 일반적인 방법은 이미 구조분해를 잘 수행하고 있는 것(`let`, `loop`, `fn` 등)을 호출하는 것입니다.
+`clojure.core`의 `if-let`, `when-let`, `when-some` 등이 이에 해당됩니다.
+
+>
+However, in rare cases you might want to instead resolve the destructuring yourself in a macro. In this case, use the (undocumented) `clojure.core/destructure` function, which implements the destructuring logic and is what `let` and `loop` actually invoke. The `destructure` function is designed to be invoked in a macro and expects to take a form and return a form:
+
+그런데, 좀 드문 경우이긴 하지만 macro 내에서 직접 구조분해를 할 필요가 있을 수 있습니다.
+이런 경우에는 `clojure.core/destructure` 함수를 사용해 보세요.
+이 함수는 구조분해 로직을 구현하고 있으며, `let`과 `loop`가 이걸 사용하고 있습니다.
+이 `destructure` 함수는 macro에서 호출하도록 설계되었으며, form을 입력받아서 form을 리턴하도록 구성되어 있습니다.
+
+```clojure
+(destructure '[[x & remaining :as all] numbers])
+;= [vec__1 numbers
+;=  x (clojure.core/nth vec__1 0 nil)
+;=  remaining (clojure.core/nthnext vec__1 1)
+;=  all vec__1]
+```
+
+>
+The result was formatted here to give it a little more clarity.
+This example should also give you some insight into how destructuring works under the hood.
+
+결과를 더 명확히 보여주기 위해 포매팅을 해 두었습니다.
+이 예제는 또한 구조분해가 내부적으로 어떻게 작동하는지에 대한 통찰을 제공해줍니다.
+
+Original author: Michael Zavarella
+
 
 ## 참고문헌
 
