@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-01 22:50:45 +0900
+updated : 2022-03-01 22:56:16 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -192,6 +192,15 @@ You must implement your own comparator if you wish to sort such values.
 이런 값들을 비교하기 위해서는 직접 comparator를 구현해야 합니다.
 
 ### Off-the-shelf comparators
+
+>
+First consider using well-tested comparators developed by others, especially if they are complex.
+>
+A perfect example of this would be sorting Unicode strings in different languages in orders specific to different locales. The Java [Collator](https://docs.oracle.com/javase/8/docs/api/java/text/Collator.html ) class and [ICU](http://site.icu-project.org/home#TOC-What-is-ICU- ) (International Components for Unicode) provide libraries for this.
+
+직접 만들기 전에 먼저 다른 사람들이 개발해 잘 검증된 comparator를 사용하는 것을 고려해 보세요. 특히 구현이 복잡한 경우에는 다른 사람들이 만든 것을 꼭 검토해 보세요.
+
+이런 복잡한 상황을 보여주는 아주 좋은 사례가 하나 있습니다. 다른 로케일에 대해 특정한 순서로 다른 언어의 Unicode 문자열을 정렬하는 문제입니다. Java [Collator](https://docs.oracle.com/javase/8/docs/api/java/text/Collator.html ) 클래스와 [ICU](http://site.icu-project.org/home#TOC-What-is-ICU- ) (International Components for Unicode)는 이런 문제를 해결할 수 있는 라이브러리를 제공합니다.
 
 ### Writing your own comparators
 
