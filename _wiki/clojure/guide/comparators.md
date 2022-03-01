@@ -3,12 +3,12 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-01 23:53:59 +0900
+updated : 2022-03-02 00:29:05 +0900
 tag     : clojure
 toc     : true
 public  : true
 parent  : [[/clojure/guide]]
-latex   : false
+latex   : true
 ---
 * TOC
 {:toc}
@@ -375,6 +375,40 @@ See Clojure source file [src/jvm/clojure/lang/AFunction.java](https://github.co
 이에 대한 자세한 내용을 알고 싶다면 Clojure 소스 파일 [src/jvm/clojure/lang/AFunction.java](https://github.com/clojure/clojure/blob/clojure-1.10.0/src/jvm/clojure/lang/AFunction.java#L50 )의 `compare` 메소드를 확인해 보세요.
 
 #### General rules for comparators
+
+>
+Any comparator, whether 3-way or boolean, should return answers consistent with a [total order](https://en.wikipedia.org/wiki/Total_order ) on the values you want to compare.
+>
+A total order is simply an ordering of all values from smallest to largest, where some groups of values can all be equal to each other.
+Every pair of values must be comparable to each other (i.e. no "I do not know how to compare them" answers from the comparator).
+>
+For example, you can order all fractions written in the form _m/n_ for integers m and n from smallest to largest, in the usual way this is done in mathematics.
+Many of the fractions would be equal to each other, e.g. _1/2 = 2/4 = 3/6_.
+A comparator implementing that total order should behave as if they are all the same.
+>
+A 3-way comparator `(cmp a b)` should return a negative, positive, or 0 _int_ if _a_ is before, after, or is considered equal to b in the total order, respectively.
+>
+A boolean comparator `(cmp a b)` should return true if _a_ is before _b_ in the total order, or false if _a_ is after or considered equal to _b_.
+That is, it should work like `<` does for numbers.
+As explained later, it should not behave like `<=` for numbers (see section "Comparators for sorted sets and maps are easy to get wrong").
+
+3-way가 되었건 boolean이 되었건, comparator는 비교하는 값들을 입력받았을 때 전순서 집합에 어긋나지 않는 값을 리턴해야 합니다.
+
+전순서 집합은 단순히 가장 작은 값부터 가장 큰 값까지를 순서대로 정렬한 것입니다.
+이 때 몇몇 값들은 서로 같은 크기를 갖고 있을 수도 있으며, 모든 값들의 쌍은 서로 비교가 가능해야 합니다.
+(comparator가 "이건 어떻게 비교해야 할 지 모르겠는데요?" 같은 대답을 하는 상황이 있어서는 안 됩니다.)
+
+예를 들어 정수 m과 n으로 만든 분수 $$\frac{m}{n}$$과 같은 형태의 수들을 가장 작은 것부터 가장 큰 것까지를 정렬할 수 있습니다.
+이건 수학에서는 일반적인 방식입니다.
+그런데 $$ 1 \over 2 $$ = $$ 2 \over 4 $$ = $$ 3 \over 6 $$ 처럼 많은 분수들이 서로 같은 크기를 갖는다는 문제가 있습니다.
+전순서 집합을 구현하는 comparator는 이런 분수들을 같다고 취급하도록 동작해야 합니다.
+
+`(cmp a b)` 형태의 3-way comparator는 전순서 집합 기준으로 `a`가 `b`에 대해 앞선다면 음수, 나중이라면 양수, 같다면 0을 리턴해야 합니다.
+
+`(cmp a b)` 형태의 boolean comparator는 전순서 집합 기준으로 `a`가 `b`에 대해 앞선다면 true를, 나중이거나 같은 경우라면 false를 리턴해야 합니다.
+즉, 숫자에 대해 `<`가 작동하는 것과 똑같이 작동해야 합니다.
+나중에 설명하겠지만 boolean comparator는 숫자에 대해 `<=` 처럼 작동하면 안됩니다. (이 문서 아래쪽의 섹션 "Comparators for sorted sets and maps are easy to get wrong"를 참고하세요.)
+
 
 ### Mistakes to avoid
 
