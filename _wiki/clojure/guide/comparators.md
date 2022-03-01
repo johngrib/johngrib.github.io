@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-01 22:21:08 +0900
+updated : 2022-03-01 22:50:45 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -107,6 +107,89 @@ After that we give examples of other comparators, with some guidelines to follow
 그리고 나서 다른 comparator를 다루는 예제들을 살펴본 다음, 자신만의 comparator를 만들기 위한 방법과 실수를 방지하는 방법에 대해 알아봅니다.
 
 ### Clojure’s default comparator
+
+>
+If you do not specify your own comparator, sorting is done by a built-in function `compare`.
+ `compare` works for many types of values, ordering them in one particular way:
+>
+- numbers are sorted in increasing numeric order, returning 0 if two numbers are numerically equal by `==`, even if `=` returns false. Exception: Even though `(== ##NaN x)` is false for all numbers _x_, even `##NaN`, `(compare ##NaN x)` is 0 for all numbers _x_, including `##NaN`.
+- strings are sorted in [lexicographic order](http://en.wikipedia.org/wiki/Lexicographical_order ) (aka dictionary order) by their representation as sequences of UTF-16 code units. This is alphabetical order (case-sensitive) for strings restricted to the ASCII subset.
+- symbols are sorted first by their namespace, if they have one, and if they have the same namespace, then by their name. Both the namespace and names are compared as their string representations would be, lexicographically. All symbols that do not have a namespace are sorted before any symbol with a namespace.
+- keywords are sorted the same way as symbols, but an exception is thrown if you attempt to compare a keyword to a symbol.
+- vectors are sorted from fewest elements to most elements, with [lexicographic ordering](http://en.wikipedia.org/wiki/Lexicographical_order ) among equal length vectors.
+- Clojure refs are sorted in the order that they were created.
+- All Java types implementing the [Comparable](https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html ) interface such as characters, booleans, File, URI, and UUID are compared via their `compareTo` methods.
+- `nil`: can be compared to all values above, and is considered less than anything else.
+
+
+자신만의 comparator를 지정하지 않는다면, 빌트인 함수인 `comparator`가 정렬에 사용됩니다.
+`compare`는 다양한 타입의 값에 대해서도 작동하며, 아래와 같은 방식으로 정렬을 수행합니다.
+
+- 수는 오름차순으로 정렬됩니다.
+    - `==`에 의해 두 수가 같다고 판별된 경우, `compare`는 `0`을 리턴합니다.
+        - `=`가 `false`를 리턴하는 경우라도 `==`가 `true`이면, `compare`는 `0`을 리턴합니다.
+    - 예외 케이스: 모든 수 `x`에 대해 `(== ##NaN x)`는 `false` 입니다. 심지어 `x`가 `##NaN`인 경우에도 그렇기 때문에 `(compare ##NaN x)`는 `0`을 리턴합니다.
+- string은 UTf-16 코드 단위의 시퀀스로 표현하는 방식에 따라 사전 순서로 정렬됩니다. 이 순서는 ASCII의 하위 집합으로 제한된 문자열들의 대소문자를 구분하는 알파벳 순서입니다.
+- symbol은 네임스페이스를 갖고 있다면 자신의 네임스페이스를 기준으로 먼저 정렬되며, 서로 같은 네임스페이스를 갖는 경우라면 symbol의 이름으로 비교를 합니다. 네임스페이스와 이름은 모두 string과 똑같이 사전 순서로 정렬됩니다. 네임스페이스가 없는 모든 symbol들은 네임스페이스가 있는 symbol보다 먼저 정렬됩니다.
+- keyword는 symbol과 같은 방식으로 정렬되지만, keyword와 symbol을 비교하려고 하면 예외가 던져집니다.
+- vector는 가장 적은 수의 엘리먼트를 가진 vector부터 가장 많은 엘리먼트를 가진 vector 순으로 정렬됩니다.
+    - 만약 두 vector의 길이가 같다면, 사전 순서로 정렬됩니다.
+- Clojure 참조(ref)는 생성된 순서대로 정렬됩니다.
+- java.lang.Comparable을 구현하는 모든 Java 타입은 자신이 갖고 있는 `compareTo` 메서드를 통해 비교됩니다.
+    - character, boolean, File, URI, UUID 같은 것들이 이에 해당됩니다.
+- `nil`은 위의 모든 값들과 비교가 가능하며, 어떤 값보다도 작은 값으로 간주됩니다.
+
+
+>
+`compare` throws an exception if given two values whose types are "too different", e.g. it can compare integers, longs, and doubles to each other, but not strings to keywords or keywords to symbols.
+It cannot compare lists, sequences, sets, or maps.
+>
+The examples below with `sort`, `sorted-set`, and `sorted-map` all use the default comparator.
+
+`compare`는 주어진 두 값의 타입이 "너무 다르면" 예외를 던집니다.
+예를 들어 `compare`는 integer, long, double은 서로 비교할 수 있지만, string은 keyword나 symbol과 비교할 수 없습니다.
+그리고 list, sequence, set, map도 서로 비교할 수 없습니다.
+
+아래는 디폴트 comparator를 써서 `sort`와 `sorted-set`, `sorted-map`을 사용하는 예제입니다.
+
+```clojure
+user> (sort [22/7 2.71828 ##-Inf 1 55 3N])
+(##-Inf 1 2.71828 3N 22/7 55)
+
+user> (sorted-set "aardvark" "boo" "a" "Antelope" "bar")
+#{"Antelope" "a" "aardvark" "bar" "boo"}
+
+user> (sorted-set 'user/foo 'clojure.core/pprint 'bar 'clojure.core/apply 'user/zz)
+#{bar clojure.core/apply clojure.core/pprint user/foo user/zz}
+
+user> (sorted-map :map-key 10, :amp [3 2 1], :blammo "kaboom")
+{:amp [3 2 1], :blammo "kaboom", :map-key 10}
+
+user> (sort [[-8 2 5] [-5 -1 20] [1 2] [1 -5] [10000]])
+([10000] [1 -5] [1 2] [-8 2 5] [-5 -1 20])
+
+user> (import '(java.util UUID))
+java.util.UUID
+
+user> (sort [(UUID. 0xa 0) (UUID. 5 0x11) (UUID. 5 0xb)])
+(#uuid "00000000-0000-0005-0000-00000000000b"
+ #uuid "00000000-0000-0005-0000-000000000011"
+ #uuid "00000000-0000-000a-0000-000000000000")
+
+user> (sort [:ns2/kw1 :ns2/kw2 :ns1/kw2 :kw2 nil])
+(nil :kw2 :ns1/kw2 :ns2/kw1 :ns2/kw2)
+```
+
+>
+An exception will be thrown if you call `compare` with different types.
+Any numeric types above can be compared to each other, but not to a non-numeric type.
+An exception will also be thrown if you use `compare` on a list, set, map, or any other type not mentioned above.
+You must implement your own comparator if you wish to sort such values.
+
+`compare`에 다른 타입들을 제공하면 예외를 던지게 됩니다.
+위의 에제에 나온 모든 숫자 타입들은 서로 비교가 가능하지만, 숫자가 아닌 타입과는 비교할 수 없습니다.
+`compare`를 list, set, map, 또는 위에서 언급하지 않은 다른 타입들과 사용하면 예외가 던져질 수도 있습니다.
+이런 값들을 비교하기 위해서는 직접 comparator를 구현해야 합니다.
 
 ### Off-the-shelf comparators
 
