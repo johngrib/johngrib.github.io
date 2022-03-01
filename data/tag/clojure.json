@@ -5,6 +5,7 @@
  "clojure/equality",
  "clojure/evaluation",
  "clojure/guide",
+ "clojure/guide/comparators",
  "clojure/guide/destructuring",
  "clojure/guide/reading-clojure-characters",
  "clojure/guide/spec",
