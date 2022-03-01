@@ -2,15 +2,16 @@
 
 const YAML = require('yamljs');
 const fs = require('fs');
-const list = [];
-const tagMap = {};
-const pageMap = {};
 const PRINT = true;
 const NO_PRINT = false;
 
 main();
 
 function main() {
+    const list = [];
+    const tagMap = {};
+    const pageMap = {};
+
     getFiles('./_wiki', 'wiki', list);
     getFiles('./_posts', 'blog', list);
 
