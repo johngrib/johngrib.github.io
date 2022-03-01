@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-01 22:56:16 +0900
+updated : 2022-03-01 23:00:42 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -205,6 +205,37 @@ A perfect example of this would be sorting Unicode strings in different language
 ### Writing your own comparators
 
 #### Reverse order
+
+>
+To sort numbers in decreasing order, simply write a comparator that calls `compare` with the arguments in the opposite order:
+
+수를 내림차순으로 정렬하려면 간단하게 `compare`에 인자를 반대 순서로 넣어주는 comparator를 만들어 주면 됩니다.
+
+```clojure
+user> (sort [4 2 3 1])
+(1 2 3 4)
+
+user> (defn reverse-cmp [a b]
+        (compare b a))
+#'user/reverse-cmp
+
+user> (sort reverse-cmp [4 3 2 1])
+(4 3 2 1)
+```
+
+>
+Such short functions are often written using Clojure’s #() notation, where the two arguments are %1 and %2, in that order.
+
+이런 짧은 함수는 Clojure의 `#()` 표기법을 사용해 작성되곤 합니다. 인자가 `%1`, `%2` 순서대로 들어온다는 점을 이용하면 됩니다.
+
+```clojure
+user> (sort #(compare %2 %1) [4 3 2 1])
+```
+
+>
+`reverse-cmp` will also work for all other types `compare` works for.
+
+`reverse-cmp`는 `compare`가 동작하는 다른 타입들에서도 잘 동작할 것입니다.
 
 #### Multi-field comparators
 
