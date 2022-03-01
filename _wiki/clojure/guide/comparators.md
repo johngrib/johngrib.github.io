@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-01 23:00:42 +0900
+updated : 2022-03-01 23:36:28 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -238,6 +238,74 @@ user> (sort #(compare %2 %1) [4 3 2 1])
 `reverse-cmp`는 `compare`가 동작하는 다른 타입들에서도 잘 동작할 것입니다.
 
 #### Multi-field comparators
+
+>
+Because equal-length Clojure vectors are compared lexicographically, they can be used to do multi-field sorting on values like maps or records.
+This only works if the fields are already sorted by `compare` in the order you wish (or the reverse of that).
+>
+First we will show a way to do it that does not compare vectors.
+
+길이가 같은 Clojure vector들은 사전 순서로 비교되기 때문에, map이나 record와 같은 값들에 대한 다중 필드 정렬에 활용할 수 있습니다.
+이 방식은 이미 `compare`를 통해 필드들이 원하는 순서대로 정렬된 경우(또는 역순으로)에만 작동합니다.
+
+먼저 이 방법을 사용하지 않는 코드를 살펴봅시다.
+
+```clojure
+(def john1 {:name "John", :salary 35000.00, :company "Acme"})
+(def mary  {:name "Mary", :salary 35000.00, :company "Mars Inc"})
+(def john2 {:name "John", :salary 40000.00, :company "Venus Co"})
+(def john3 {:name "John", :salary 30000.00, :company "Asteroids-R-Us"})
+(def people [john1 mary john2 john3])
+
+(defn by-salary-name-co [x y]
+  ;; :salary values sorted in decreasing order because x and y
+  ;; swapped in this compare.
+  (let [c (compare (:salary y) (:salary x))]
+    (if (not= c 0)
+      c
+      ;; :name and :company are sorted in increasing order
+      (let [c (compare (:name x) (:name y))]
+        (if (not= c 0)
+          c
+          (let [c (compare (:company x) (:company y))]
+            c))))))
+
+user> (pprint (sort by-salary-name-co people))
+({:name "John", :salary 40000.0, :company "Venus Co"}
+ {:name "John", :salary 35000.0, :company "Acme"}
+ {:name "Mary", :salary 35000.0, :company "Mars Inc"}
+ {:name "John", :salary 30000.0, :company "Asteroids-R-Us"})
+```
+
+>
+Below is the shorter way, by comparing Clojure vectors.
+It behaves exactly the same as above.
+Note that as above, the field :salary is sorted in descending order because x and y are swapped.
+
+다음은 Clojure vector를 사용해 정렬을 수행하는 더 짧은 코드입니다.
+위의 에제와 완전히 똑같이 작동하죠.
+물론 `:salary`는 x와 y가 바뀌어 있기 때문에 위에서와 같이 내림차순으로 정렬됩니다.
+
+```clojure
+(defn by-salary-name-co2 [x y]
+    (compare [(:salary y) (:name x) (:company x)]
+             [(:salary x) (:name y) (:company y)]))
+
+user> (pprint (sort by-salary-name-co2 people))
+({:name "John", :salary 40000.0, :company "Venus Co"}
+ {:name "John", :salary 35000.0, :company "Acme"}
+ {:name "Mary", :salary 35000.0, :company "Mars Inc"}
+ {:name "John", :salary 30000.0, :company "Asteroids-R-Us"})
+```
+
+>
+The above is fine for key values that are inexpensive to compute from the values being sorted.
+If the key values are expensive to compute, it is better to calculate them once for each value.
+See the "decorate-sort-undecorate" technique described in the documentation for [sort-by](https://github.com/jafingerhut/thalia/blob/master/doc/project-docs/clojure.core-1.5.1/clojure.core/sort-by.md ).
+
+위의 방법은 정렬할 데이터셋에서 정렬에 필요한 비용이 싼 경우에는 괜찮습니다.
+만약 키 값들을 비교하는 비용이 비싸다면, 각 값에 대해 한번씩만 계산할 수 있도록 하는 것이 좋습니다.
+[sort-by](https://github.com/jafingerhut/thalia/blob/master/doc/project-docs/clojure.core-1.5.1/clojure.core/sort-by.md ) 문서에 설명되어 있는 "decorate-sort-undecorate" 기법을 참고하세요.
 
 #### Boolean comparators
 
