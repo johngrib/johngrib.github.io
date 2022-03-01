@@ -6,7 +6,6 @@
  "my-mac-os-terminal",
  "start-rust-with-vim",
  "two-views-of-vim",
- "ultisnips",
  "vim",
  "vim-asciidoc-setting",
  "vim-coc",
@@ -24,6 +23,7 @@
  "vim-with-space-char",
  "vim-ycm-python3",
  "vim/auto-completion",
+ "vim/ultisnips",
  "vimwiki",
  "web-browser-vim"
 ]

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Ultisnips와 vim-go를 같이 사용할 때 발생하는 E734 에러 해결
 summary : += 는 list 타입에만 쓰자
 date    : 2018-08-23 23:14:09 +0900
-updated : 2018-09-21 08:36:26 +0900
+updated : 2022-03-01 12:17:37 +0900
 tag     : ultisnips golang vim
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 ## 발단
 
-[Ultisnips](https://github.com/SirVer/ultisnips )는 최강의 Vim 플러그인 중 하나이지만,
+[[/vim/ultisnips]]는 최강의 Vim 플러그인 중 하나이지만,
 이상하게 다른 플러그인과 충돌하는 경우가 많은데...
 
 오늘 하나 더 발견했다.
@@ -87,6 +87,9 @@ let g:UltiSnipsSnippetDirectories = []
 
 이거 하나면 위의 삽질이 다 필요없다.
 
+## 함께 읽기
+
+- [[/vim/ultisnips]]
 
 ## Links
 

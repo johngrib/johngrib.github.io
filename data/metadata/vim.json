@@ -7,7 +7,6 @@
  "children": [
   "ideavim",
   "two-views-of-vim",
-  "ultisnips",
   "vim-asciidoc-setting",
   "vim-clang",
   "vim-coc",
@@ -22,6 +21,7 @@
   "vim-with-space-char",
   "vim-ycm-python3",
   "vim/help",
+  "vim/ultisnips",
   "vimwiki"
  ]
 }

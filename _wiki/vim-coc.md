@@ -3,7 +3,7 @@ layout  : wiki
 title   : coc.nvim을 사용해보자
 summary : 
 date    : 2019-05-16 22:19:50 +0900
-updated : 2019-06-04 21:19:17 +0900
+updated : 2022-03-01 12:16:35 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -39,7 +39,7 @@ vimrc에서 정의하는 방식이면 더 좋았겠지만 이런 방법도 나�
 
 ## Ultisnips 와의 연동
 
-나는 나만의 snippet이 많은 편이라 Ultisnips와의 연동은 중요하다.
+나는 나만의 snippet이 많은 편이라 [[/vim/ultisnips]]와의 연동이 중요하다.
 
 만약 Ultisnips와의 연동이 안 된다면 youcompleteme로 돌아갈 생각을 했는데...
 
@@ -54,6 +54,10 @@ vimrc에서 정의하는 방식이면 더 좋았겠지만 이런 방법도 나�
 ```
 
 공들여 여기저기 설정해놓은 ultisnips 미리보기가 안 되는 건 아쉽지만 랭귀지 서버 기능이 youcompleteme보다 괜찮은 느낌이라 한동안 사용해보기로 했다.
+
+## 함께 읽기
+
+- [[/vim/ultisnips]]
 
 ## Links
 
