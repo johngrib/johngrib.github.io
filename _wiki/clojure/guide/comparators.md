@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-01 22:18:48 +0900
+updated : 2022-03-01 22:21:08 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -98,6 +98,13 @@ See also:
 [rsubseq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rsubseq )
 
 ### Introduction
+
+>
+Here we describe the default sorting order provided by the function `compare`.
+After that we give examples of other comparators, with some guidelines to follow and mistakes to avoid when writing your own.
+
+여기에서는 `compare` 함수를 통한 기본적인 정렬에 대해 다룹니다.
+그리고 나서 다른 comparator를 다루는 예제들을 살펴본 다음, 자신만의 comparator를 만들기 위한 방법과 실수를 방지하는 방법에 대해 알아봅니다.
 
 ### Clojure’s default comparator
 
