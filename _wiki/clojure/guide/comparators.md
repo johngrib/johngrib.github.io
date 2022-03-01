@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-01 23:36:28 +0900
+updated : 2022-03-01 23:53:59 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -308,6 +308,71 @@ See the "decorate-sort-undecorate" technique described in the documentation for�
 [sort-by](https://github.com/jafingerhut/thalia/blob/master/doc/project-docs/clojure.core-1.5.1/clojure.core/sort-by.md ) 문서에 설명되어 있는 "decorate-sort-undecorate" 기법을 참고하세요.
 
 #### Boolean comparators
+
+>
+Java comparators are all 3-way, meaning they return a negative, 0, or positive integer depending upon whether the first argument should be considered less than, equal to, or greater than the second argument.
+>
+In Clojure, you may also use boolean comparators that return `true` if the first argument should come before the second argument, or `false` otherwise (i.e. should come after, or it is equal).
+The function `<` is a perfect example, as long as you only need to compare numbers.
+`>` works for sorting numbers in decreasing order.
+Behind the scenes, when such a Clojure function `bool-cmp-fn` is "called as a comparator", Clojure runs code that works like this to return an _int_ instead:
+
+Java의 comparator들은 모두 3-way comparator 입니다. 즉, 첫 번째 인자가 두 번째 인자보다 작으면 음수, 같으면 0, 크면 양수를 리턴합니다.
+
+Java와 달리 Clojure에서는 boolean comparator를 사용할 수 있습니다.
+boolean comparator는 첫 번째 인자가 두 번째 인자보다 앞에 와야 한다면 `true`를 리턴하고, 그렇지 않으면 `false`를 리턴합니다(`false`는 두 인자가 같은 경우도 포함합니다).
+숫자 비교에 대해서 `<` 함수는 이에 대한 완벽한 예입니다.
+한편 `>`는 수를 내림차순으로 정렬할 때 사용합니다.
+
+사실 이런 작업들의 이면에서는, `bool-cmp-fn` 같은 Clojure 함수가 "comparator로 호출될 때" Clojure는 아래와 같이 작동하는 코드를 실행해서 `boolean`이 아니라 `int`를 리턴합니다.
+
+```clojure
+(if (bool-cmp-fn x y)
+  -1     ; x < y
+  (if (bool-cmp-fn y x)  ; note the reversed argument order
+    1    ; x > y
+    0))  ; x = y
+```
+
+>
+You can see this by calling the compare method of any Clojure function.
+Below is an example with a custom version `my-<` of `<` that prints its arguments when it is called, so you can see the cases where it is called more than once:
+
+Clojure의 어떤 비교 메소드를 호출하더라도 이와 같이 작동하는 것을 확인할 수 있을 것입니다.
+호출될 때 `<`의 인자와 결과를 화면에 출력하도록 만든 `my-<` 함수를 사용해 이런 동작을 확인해 봅시다.
+
+```clojure
+user> (defn my-< [a b]
+        (println "(my-<" a b ") returns " (< a b))
+        (< a b))
+#'user/my-<
+
+;; (. o (compare a b)) calls the method named compare for object
+;; o, with arguments a and b.  In this case the object is the
+;; Clojure function my-<
+user> (. my-< (compare 1 2))
+(my-< 1 2 ) returns  true
+-1
+user> (. my-< (compare 2 1))
+(my-< 2 1 ) returns  false
+(my-< 1 2 ) returns  true
+1
+user> (. my-< (compare 1 1))
+(my-< 1 1 ) returns  false
+(my-< 1 1 ) returns  false
+0
+
+;; Calling a Clojure function in the normal way uses its invoke
+;; method, not compare.
+user> (. my-< (invoke 2 1))
+(my-< 2 1 ) returns  false
+false
+```
+
+>
+See Clojure source file [src/jvm/clojure/lang/AFunction.java](https://github.com/clojure/clojure/blob/clojure-1.10.0/src/jvm/clojure/lang/AFunction.java#L50 ) method `compare` if you want all the details.
+
+이에 대한 자세한 내용을 알고 싶다면 Clojure 소스 파일 [src/jvm/clojure/lang/AFunction.java](https://github.com/clojure/clojure/blob/clojure-1.10.0/src/jvm/clojure/lang/AFunction.java#L50 )의 `compare` 메소드를 확인해 보세요.
 
 #### General rules for comparators
 
