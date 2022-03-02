@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-02 00:29:05 +0900
+updated : 2022-03-03 00:30:28 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -413,6 +413,61 @@ As explained later, it should not behave like `<=` for numbers (see section "C
 ### Mistakes to avoid
 
 #### Be wary of "Not a Number" values as compared values in sorted collections
+
+**정렬할 컬렉션에 "NaN" 값이 들어있는 경우를 조심하세요**
+
+>
+Clojure’s default comparator `compare` treats "Not a Number" (`##NaN`) values as equal to all other numbers.
+If you call [sort](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sort ) on sequences of numbers that contain occurrences of `##NaN`, it might throw an exception.
+
+Clojure의 디폴트 comparator인 `compare`는 "Not a Number"(`##NaN`)와 다른 모든 숫자를 같다고 비교합니다.
+만약 `##NaN`이 포함되어 있는 숫자들의 시퀀스에 `sort`를 호출하면 예외가 던져질 수 있습니다.
+
+```clojure
+user> (sort [##NaN 5 13 ##NaN 3 7 12 ##NaN 8 4 2 20 6 9 ##NaN 50 83 19 -7 0 18 26 30 42 ##NaN 57 90 -8 -12 43 87 38])
+Execution error (IllegalArgumentException) at java.util.TimSort/mergeHi (TimSort.java:899).
+Comparison method violates its general contract!
+```
+
+>
+Even if it does not throw an exception, it is likely that the returned sequence will not be sorted.
+This is because `compare` does not put `##NaN` into a total order with other numbers as a comparator should, in order for `sort` to work correctly:
+
+예외가 던져지지 않았다 하더라도, 제대로 정렬되지 않은 시퀀스가 리턴될 가능성이 있습니다.
+이는 다른 숫자들과 달리 `compare`가 `##NaN`을 전순서 집합의 원소로 고려하지 않기 때문이며,
+`sort`가 제대로 동작하게 하기 위해서입니다.
+
+```clojure
+user> (sort [##NaN 10 5 13 ##NaN 3 7 12 ##NaN 8 4 2 20 6 9 ##NaN 50 83 19 -7])
+(##NaN -7 2 3 4 5 6 7 8 10 12 13 ##NaN ##NaN 9 19 20 ##NaN 50 83)
+```
+
+>
+Because `##NaN` is not equal to any other value, you cannot use code like this to remove values from a sequence of numbers:
+
+왜냐하면 `##NaN`은 (자기 자신을 포함해) 다른 어떤 값과도 같지 않기 때문입니다.
+따라서 아래와 같은 코드를 사용해도 숫자 시퀀스에서 값을 제거할 수 없습니다.
+
+```clojure
+user> (remove #(= % ##NaN) [9 3 ##NaN 4])
+(9 3 ##NaN 4)
+```
+
+>
+You may use the function `NaN?` to determine whether a value is `##NaN`.
+The function `NaN?` was added in Clojure version 1.11.0.
+You may use the Java method `Double/isNaN` with any version of Clojure:
+
+`NaN?` 함수를 사용하면 주어진 값이 `##NaN`인지 아닌지를 확인할 수 있습니다.
+`NaN?` 함수는 Clojure 1.11.0 버전부터 추가되었습니다.
+Java의 `Double/isNaN` 메소드는 Clojure 버전과 관계 없이 언제나 사용할 수 있습니다.
+
+```clojure
+user> (remove NaN? [9 3 ##NaN 4])
+(9 3 4)
+user> (remove #(Double/isNaN %) [9 3 ##NaN 4])
+(9 3 4)
+```
 
 #### Comparators for sorted sets and maps are easy to get wrong
 
