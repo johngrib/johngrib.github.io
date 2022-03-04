@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Comparators Guide
-summary : 번역 중인 문서
+summary : 정렬용 비교 함수 가이드
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-04 23:34:33 +0900
+updated : 2022-03-04 23:35:58 +0900
 tag     : clojure
 toc     : true
 public  : true
