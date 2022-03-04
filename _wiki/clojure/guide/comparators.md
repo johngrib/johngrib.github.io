@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-04 21:49:58 +0900
+updated : 2022-03-04 22:24:30 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -680,4 +680,231 @@ Java는 character를 비교하거나 string을 비교할 때 뺄셈 comparator�
 만약 여러분이 comparator를 만들 때 이런 것들을 확실히 보장할 수 없다면 굳이 모험을 하지 않는 것이 바람직합니다.
 
 ### Comparators that work between different types
+
+**서로 다른 타입이 주어져도 작동하도록 comparator를 만들 때 주의하세요**
+
+>
+Sometimes you might wish to sort a collection of values by some key, but that key is not unique.
+You want the values with the same key to be sorted in some predictable, repeatable order, but you do not care much what that order is.
+>
+As a toy example, you might have a collection of vectors, each with two elements, where the first element is always a string and the second is always a number.
+You want to sort them by the number value in increasing order, but you know your data can contain more than one vector with the same number.
+You want to break ties in some way, consistently across multiple sorts.
+>
+This case is easily implemented using a multi-field comparator as described in an earlier section.
+
+어떨 때에는 어떤 key 값을 통해 컬렉션을 정렬할 필요가 있는 경우도 있습니다.
+그리고 그 key가 unique가 아닌 경우라고 생각해 봅시다.
+이 때 정렬이 어떻게 되건 상관없는데 일단 같은 key를 가진 값들이라면 예측 가능한 순서로 정렬되고, 여러 차례 정렬해봐도 똑같은 순서로 정렬되기를 바란다고 합시다.
+
+예를 들어 각각 두 개의 원소를 갖는 vector들의 컬렉션이 있다고 합시다.
+여기에서 첫 번째 원소는 무조건 string이고 두 번째 원소는 무조건 number가 온다고 합시다.
+이 vector들을 number 기준으로 오름차순으로 정렬하고자 하지만 전체 데이터에 같은 숫자를 가진 vector가 여러개 있을 수 있다는 사실도 알고 있습니다.
+여기에서 이런 관계를 어떻게든 일관성있게 끊고 싶다고 합시다.
+
+이런 경우에는 위의 섹션에서 설명한 바와 같이 다중 필드 comparator를 사용하면 쉽게 구현할 수 있습니다.
+
+```clojure
+(defn by-number-then-string [[a-str a-num] [b-str b-num]]
+  (compare [a-num a-str]
+           [b-num b-str]))
+```
+
+>
+If the entire vector values can be compared with `compare`, because all vectors are equal length, and the type of each corresponding elements can be compared to each other with `compare`, then you can also do this, using the entire vector values as the final tie-breaker:
+
+모든 vector들이 같은 길이를 갖고 있으며, 원소의 타입들도 서로 `compare`로 비교가 되기 때문에 모든 vector값은 `compare`로 비교가 가능합니다.
+그러므로 여러분도 이렇게 한다면 전체 vector 값들의 연관관계를 끊을 수 있습니다.
+
+```clojure
+(defn by-number-then-whatever [a-vec b-vec]
+  (compare [(second a-vec) a-vec]
+           [(second b-vec) b-vec]))
+```
+
+>
+However, that will throw an exception if some element position in the vectors contain types too different for `compare` to work on, and those vectors have the same second element:
+
+하지만 만약 vector에 들어있는 원소 중에 `compare`로 검사하지 못하는 이질적인 타입이 있거나, 두번째 원소로 중복값이 있다면 예외가 던져집니다.
+
+```clojure
+;; compare throws exception if you try to compare a string and a
+;; keyword
+user> (sort by-number-then-whatever [["a" 2] ["c" 3] [:b 2]])
+Execution error (ClassCastException) at user/by-number-then-whatever (REPL:2).
+class java.lang.String cannot be cast to class clojure.lang.Keyword
+```
+
+>
+`cc-cmp` ("cross class compare") below may be useful in such cases.
+It can compare values of different types, which it orders based on a string that represents the type of the value.
+It is not simply `(class x)`, because then numbers like `Integer` and `Long` would not be sorted in numeric order.
+The library [clj-arrangement](https://github.com/greglook/clj-arrangement ) may also be useful to you.
+
+`cc-cmp` ("cross class compare")는 이런 경우에 유용할 수 있습니다.
+`cc-cmp`는 다른 타입의 값들을 해당 타입의 값을 표현하는 string을 기준으로 정렬하기 때문입니다.
+이 방법은 `(class x)`를 그냥 호출해 사용하지 않는데, `(class x)`를 써서 비교하게 되면 `Integer`나 `Long` 같은 숫자들이 수의 크기대로 올바르게 정렬되지 않기 때문입니다.
+한편, [clj-arrangement](https://github.com/greglook/clj-arrangement ) 라이브러리도 이런 문제에 유용할 수 있습니다.
+
+```clojure
+;; comparison-class throws exceptions for some types that might be
+;; useful to include.
+
+(defn comparison-class [x]
+  (cond (nil? x) ""
+        ;; Lump all numbers together since Clojure's compare can
+        ;; compare them all to each other sensibly.
+        (number? x) "java.lang.Number"
+
+        ;; sequential? includes lists, conses, vectors, and seqs of
+        ;; just about any collection, although it is recommended not
+        ;; to use this to compare seqs of unordered collections like
+        ;; sets or maps (vectors should be OK).  This should be
+        ;; everything we would want to compare using cmp-seq-lexi
+        ;; below.  TBD: Does it leave anything out?  Include anything
+        ;; it should not?
+        (sequential? x) "clojure.lang.Sequential"
+
+        (set? x) "clojure.lang.IPersistentSet"
+        (map? x) "clojure.lang.IPersistentMap"
+        (.isArray (class x)) "java.util.Arrays"
+
+        ;; Comparable includes Boolean, Character, String, Clojure
+        ;; refs, and many others.
+        (instance? Comparable x) (.getName (class x))
+        :else (throw
+               (ex-info (format "cc-cmp does not implement comparison of values with class %s"
+                                (.getName (class x)))
+                        {:value x}))))
+
+(defn cmp-seq-lexi
+  [cmpf x y]
+  (loop [x x
+         y y]
+    (if (seq x)
+      (if (seq y)
+        (let [c (cmpf (first x) (first y))]
+          (if (zero? c)
+            (recur (rest x) (rest y))
+            c))
+        ;; else we reached end of y first, so x > y
+        1)
+      (if (seq y)
+        ;; we reached end of x first, so x < y
+        -1
+        ;; Sequences contain same elements.  x = y
+        0))))
+
+;; The same result can be obtained by calling cmp-seq-lexi on two
+;; vectors, but cmp-vec-lexi should allocate less memory comparing
+;; vectors.
+(defn cmp-vec-lexi
+  [cmpf x y]
+  (let [x-len (count x)
+        y-len (count y)
+        len (min x-len y-len)]
+    (loop [i 0]
+      (if (== i len)
+        ;; If all elements 0..(len-1) are same, shorter vector comes
+        ;; first.
+        (compare x-len y-len)
+        (let [c (cmpf (x i) (y i))]
+          (if (zero? c)
+            (recur (inc i))
+            c))))))
+
+(defn cmp-array-lexi
+  [cmpf x y]
+  (let [x-len (alength x)
+        y-len (alength y)
+        len (min x-len y-len)]
+    (loop [i 0]
+      (if (== i len)
+        ;; If all elements 0..(len-1) are same, shorter array comes
+        ;; first.
+        (compare x-len y-len)
+        (let [c (cmpf (aget x i) (aget y i))]
+          (if (zero? c)
+            (recur (inc i))
+            c))))))
+
+(defn cc-cmp
+  [x y]
+  (let [x-cls (comparison-class x)
+        y-cls (comparison-class y)
+        c (compare x-cls y-cls)]
+    (cond (not= c 0) c  ; different classes
+
+          ;; Compare sets to each other as sequences, with elements in
+          ;; sorted order.
+          (= x-cls "clojure.lang.IPersistentSet")
+          (cmp-seq-lexi cc-cmp (sort cc-cmp x) (sort cc-cmp y))
+
+          ;; Compare maps to each other as sequences of [key val]
+          ;; pairs, with pairs in order sorted by key.
+          (= x-cls "clojure.lang.IPersistentMap")
+          (cmp-seq-lexi cc-cmp
+                        (sort-by key cc-cmp (seq x))
+                        (sort-by key cc-cmp (seq y)))
+
+          (= x-cls "java.util.Arrays")
+          (cmp-array-lexi cc-cmp x y)
+
+          ;; Make a special check for two vectors, since cmp-vec-lexi
+          ;; should allocate less memory comparing them than
+          ;; cmp-seq-lexi.  Both here and for comparing sequences, we
+          ;; must use cc-cmp recursively on the elements, because if
+          ;; we used compare we would lose the ability to compare
+          ;; elements with different types.
+          (and (vector? x) (vector? y)) (cmp-vec-lexi cc-cmp x y)
+
+          ;; This will compare any two sequences, if they are not both
+          ;; vectors, e.g. a vector and a list will be compared here.
+          (= x-cls "clojure.lang.Sequential")
+          (cmp-seq-lexi cc-cmp x y)
+
+          :else (compare x y))))
+```
+
+>
+Here is a quick example demonstrating `cc-cmp’s ability to compare values of different types.
+
+아래 예제는 `cc-cmp`를 사용해서 서로 다른 타입의 값을 비교하는 것을 보여줍니다.
+
+```clojure
+user> (pprint (sort cc-cmp [true false nil Double/MAX_VALUE 10
+                            Integer/MIN_VALUE :a "b" 'c (ref 5)
+                            [5 4 3] '(5 4) (seq [5]) (cons 6 '(1))
+                            #{1 2 3} #{2 1}
+                            {:a 1, :b 2} {:a 1, :b -2}
+                            (object-array [1 2 3 4])]))
+(nil
+ {:a 1, :b -2}
+ {:a 1, :b 2}
+ #{1 2}
+ #{1 2 3}
+ :a
+ #<Ref@1493d9b3: 5>
+ (5)
+ (5 4)
+ [5 4 3]
+ (6 1)
+ c
+ false
+ true
+ -2147483648
+ 10
+ 1.7976931348623157E308
+ "b"
+ [1, 2, 3, 4])
+nil
+```
+
+>
+Original author: Andy Fingerhut
+
+## 참고문헌
+
+- [Comparators Guide]( https://clojure.org/guides/comparators )
+
 
