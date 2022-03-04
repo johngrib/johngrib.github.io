@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-04 21:25:13 +0900
+updated : 2022-03-04 21:49:58 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -578,6 +578,106 @@ It gives exactly the behavior you want.
 
 
 #### Beware using subtraction in a comparator
+
+**comparator에서 빼기는 주의해서 사용해야 합니다.**
+
+>
+Java comparators return a negative int value if the first argument is to be treated as less than the second, a positive int value if the first argument is to be treated as greater than the second, and 0 if they are equal.
+
+Java의 comparator는 첫 번째 인자가 두 번째보다 작은 경우에는 음수를, 두 번째보다 큰 경우에는 양수를 리턴하고, 그 외의 경우에는 0을 리턴합니다.
+
+```clojure
+user> (compare 10 20)
+-1
+user> (compare 20 10)
+1
+user> (compare 20 20)
+0
+```
+
+>
+Because of this, you might be tempted to write a comparator by subtracting one numeric value from another, like so.
+
+그렇기 때문에 여러분이 comparator를 작성할 때 두 수를 뺄셈하는 것도 괜찮겠다는 생각을 하게 될 수도 있습니다.
+
+```clojure
+user> (sort #(- %1 %2) [4 2 3 1])
+(1 2 3 4)
+```
+
+>
+While this works in many cases, think twice (or three times) before using this technique.
+It is less error-prone to use explicit conditional checks and return -1, 0, or 1, or to use boolean comparators.
+
+이 방법은 다양한 경우에 잘 작동하긴 하는데, 이 방법을 쓰기 전에는 두 번(세 번도 괜찮습니다) 정도는 생각해 보세요.
+조건 검사를 통해 `-1`, `0`, `1`을 확실히 리턴하게 하거나, 그냥 boolean comparator를 사용하는 것이 에러가 발생할 가능성이 더 적습니다.
+
+>
+Why?
+Java comparators must return a 32-bit _int_ type, so when a Clojure function is used as a comparator and it returns any type of number, that number is converted to an _int_ behind the scenes using the Java method [intValue](https://docs.oracle.com/javase/8/docs/api/java/lang/Number.html#intValue-- ).
+See Clojure source file [src/jvm/clojure/lang/AFunction.java](https://github.com/clojure/clojure/blob/clojure-1.10.0/src/jvm/clojure/lang/AFunction.java#L50 ) method `compare` if you want the details.
+>
+For comparing floating point numbers and ratios, this causes numbers differing by less than 1 to be treated as equal, because a return value between -1 and 1 is truncated to the _int_ 0:
+
+왜 그럴까요?
+Java의 comparator는 32 bit int 타입을 리턴해야 합니다.
+따라서 Clojure 함수를 comparator로 사용하게 되면, comparator가 리턴하는 수는 타입이 뭐가 되었건 Java의 `intValue` 메소드를 통해 int 로 변환됩니다.
+자세한 내용을 알고 싶다면 Clojure 소스 파일 [src/jvm/clojure/lang/AFunction.java](https://github.com/clojure/clojure/blob/clojure-1.10.0/src/jvm/clojure/lang/AFunction.java#L50 )의 `compare` 메소드를 참고하세요.
+
+그리고 부동 소수점 수와 ratio를 비교하게 될 때도 문제입니다.
+이 경우에는 두 수의 차이가 1 미만인 경우에는 같은 수로 취급될 수 있습니다.
+왜냐하면 `-1`과 `1` 사이의 실수는 int 0 으로 변환되기 때문입니다.
+
+```clojure
+;; This gives the correct answer
+user> (sort #(- %1 %2) [10.0 9.0 8.0 7.0])
+(7.0 8.0 9.0 10.0)
+
+;; but this does not, because all values are treated as equal by
+;; the bad comparator.
+user> (sort #(- %1 %2) [1.0 0.9 0.8 0.7])
+(1.0 0.9 0.8 0.7)
+
+;; .intValue converts all values between -1.0 and 1.0 to 0
+user> (map #(.intValue %) [-1.0 -0.99 -0.1 0.1 0.99 1.0])
+(-1 0 0 0 0 1)
+```
+
+>
+This also leads to bugs when comparing integer values that differ by amounts that change sign when you truncate it to a 32-bit int (by discarding all but its least significant 32 bits).
+About half of all pairs of long values are compared incorrectly by using subtraction as a comparator.
+
+이런 원리로 인해 정수 값을 비교할 때 또다른 버그가 발생할 수 있습니다.
+(32 bit int로 변환해야 하므로 최하위 32개의 비트를 제외한 상위 비트가 다 버려집니다)
+그러므로 뺄셈을 사용하는 compartor를 사용한다면 long 타입 숫자들의 절반은 올바르지 않게 비교되는 셈입니다.
+
+```clojure
+;; This looks good
+user> (sort #(- %1 %2) [4 2 3 1])
+(1 2 3 4)
+
+;; What the heck?
+user> (sort #(- %1 %2) [2147483650 2147483651 2147483652 4 2 3 1])
+(3 4 2147483650 2147483651 2147483652 1 2)
+
+user> [Integer/MIN_VALUE Integer/MAX_VALUE]
+[-2147483648 2147483647]
+
+;; How .intValue truncates a few selected values.  Note especially
+;; the first and last ones.
+user> (map #(.intValue %) [-2147483649 -2147483648 -1 0 1
+                            2147483647  2147483648])
+(2147483647 -2147483648 -1 0 1 2147483647 -2147483648)
+```
+
+>
+Java itself uses a subtraction comparator for strings and characters, among others.
+This does not cause any problems, because the result of subtracting an arbitrary pair of 16-bit characters converted to ints is guaranteed to fit within an int without wrapping around.
+If your comparator is not guaranteed to be given such restricted inputs, better not to risk it.
+
+Java는 character를 비교하거나 string을 비교할 때 뺄셈 comparator를 사용합니다.
+16 비트 문자들은 int로 문제없이 변환되도록 보장되기 때문에 이런 작업에서는 아무런 문제가 발생하지 않습니다.
+만약 여러분이 comparator를 만들 때 이런 것들을 확실히 보장할 수 없다면 굳이 모험을 하지 않는 것이 바람직합니다.
 
 ### Comparators that work between different types
 
