@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 번역 중인 문서
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-03 00:30:28 +0900
+updated : 2022-03-04 21:25:13 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -470,6 +470,112 @@ user> (remove #(Double/isNaN %) [9 3 ##NaN 4])
 ```
 
 #### Comparators for sorted sets and maps are easy to get wrong
+
+**sorted set과 sorted map에 대해 comparator를 잘 사용하는 것은 어려운 일입니다.**
+
+>
+This is just as accurately stated as "comparators are easy to get wrong", but it is often more noticeable when you use a bad comparator for sorted sets and maps.
+If you write the kinds of bad comparators in this section and use them to call `sort`, usually little or nothing will go wrong (although inconsistent comparators are not good for sorting, either).
+With sorted sets and maps, these bad comparators can cause values not to be added to your sorted collections, or to be added but not be found when you search for them.
+>
+Suppose you want a sorted set containing vectors of two elements, where each is a string followed by a number, e.g. `["a" 5]`.
+You want the set sorted by the number, and to allow multiple vectors with the same number but different strings.
+Your first try might be to write something like `by-2nd`:
+
+"comparator를 잘 사용하는 것은 어렵다"라고 말하긴 했지만, 특히 sorted set과 sorted map에 나쁜 comparator를 사용하는 경우가 흔하게 발생합니다.
+
+만약 여러분이 이 섹션에서 소개하는 나쁜 종류의 comparator를 만들어서 `sort`와 함께 사용한다 하더라도, 딱히 잘못되는 일은 일어나지 않을 것입니다. (물론 일관성없는 comparator가 정렬에 좋다는 건 아닙니다.)
+
+sorted set과 sorted map에 나쁜 comparator를 사용하면 정렬된 컬렉션에 값이 빠져있게 되거나, 값이 추가가 되기는 하지만 찾지는 못하게 될 수도 있습니다.
+
+예를 들어 원소가 2개인 vector들의 sorted set이 필요하다고 합시다.
+그리고 각 vector는 예를 들어 `["a" 5]`처럼 string이 하나, number가 하나 들어있습니다.
+이 때 정렬 기준은 number이며, 같은 number를 가졌지만 string이 다른 vector들이라면 중복을 허용한다고 합시다.
+
+정렬을 위해 처음으로 `by-2nd`라는 comparator를 만들었습니다.
+
+```clojure
+(defn by-2nd [a b]
+  (compare (second a) (second b)))
+```
+
+>
+But look what happens when you try to add multiple vectors with the same number.
+
+`by-2nd`를 사용해 같은 number를 가진 vector 여러 개를 정렬해 봅시다. 어떻게 될까요?
+
+```clojure
+user> (sorted-set-by by-2nd ["a" 1] ["b" 1] ["c" 1])
+#{["a" 1]}
+```
+
+>
+Only one element is in the set, because `by-2nd` treats all three of the vectors as equal.
+Sets should not contain duplicate elements, so the other elements are not added.
+>
+A common thought in such a case is to use a boolean comparator function based on `<=` instead of `<`:
+
+set에 딱 한 개의 원소만이 들어있습니다.
+`by-2nd`가 주어진 3개의 vector를 전부 같은 것으로 취급해버렸기 때문입니다.
+set은 원소의 중복을 허용하지 않으므로 다른 원소들은 하나도 추가되지 않은 것입니다.
+
+이런 경우를 처리하기 위한 일반적인 아이디어는 `<`가 아니라 `<=`를 기반으로 삼는 boolean comparator 함수를 사용하는 것입니다.
+
+```clojure
+(defn by-2nd-<= [a b]
+  (<= (second a) (second b)))
+```
+
+>
+The boolean comparator `by-2nd-<=` seems to work correctly on the first step of creating the set, but fails when testing whether elements are in the set.
+
+boolean comparator인 `by-2nd-<=`는 set 생성이라는 첫 번째 목표는 잘 달성하는 것처럼 보입니다.
+그러나 set에 원소가 포함되어 있는지 검사해보면 원하지 않은 결과가 나옵니다.
+
+```clojure
+user> (def sset (sorted-set-by by-2nd-<= ["a" 1] ["b" 1] ["c" 1]))
+#'user/sset
+user> sset
+#{["c" 1] ["b" 1] ["a" 1]}
+user> (sset ["c" 1])
+nil
+user> (sset ["b" 1])
+nil
+user> (sset ["a" 1])
+nil
+```
+
+>
+The problem here is that `by-2nd-<=` gives inconsistent answers.
+If you ask it whether `["c" 1]` comes before `["b" 1]`, it returns true (which Clojure’s boolean-to-int comparator conversion turns into -1).
+If you ask it whether `["b" 1]` comes before `["c" 1]`, again it returns true (again converted into -1 by Clojure).
+One cannot reasonably expect an implementation of a sorted data structure to provide any kind of guarantees on its behavior if you give it an inconsistent comparator.
+
+여기서 문제점은 `by-2nd-<=` 함수가 대답을 일관성 없게 한다는 것입니다.
+
+만약 `["c" 1]`이 `["b" 1]`보다 우선하는지 물어보면 `true`를 리턴합니다(이걸 Clojure의 boolean-to-int comparator라면 `-1` 을 리턴했을 겁니다).
+
+그런데 `["b" 1]`이 `["c" 1]`보다 우선하는지를 물어보면 또 `true`를 리턴합니다(이것도 Clojure의 boolean-to-int는 `-1`을 리턴합니다).
+
+정렬된 데이터 구조의 구현에 일관성 없는 comparator를 제공하면 어떤 종류의 안전성도 기대할 수 없습니다.
+
+>
+The techniques described in "Multi-field comparators" above provide correct comparators for this example.
+In general, be wary of comparing only parts of values to each other.
+Consider having some kind of tie-breaking condition after all of the fields of interest to you have been compared.
+
+앞의 "Multi-field comparators" 섹션에서 설명한 기법을 사용하면 이 예제에 대한 올바른 comparator를 만들 수 있습니다.
+다만, 값의 일부만 비교하는 실수를 하지 않도록 주의할 필요가 있습니다.
+관심사에 해당하는 모든 필드를 비교한 다음, 우선순위가 같은 경우에 대한 조건을 추가하는 것을 고려해 보세요.
+
+>
+Aside: If you do not want multiple vectors in your set with the same number, `by-2nd` is the comparator you should use.
+It gives exactly the behavior you want.
+(TBD: Are there any caveats here? Will `sorted-set` ever use `=` to compare elements for any reason, or only the supplied comparator function?)
+
+한편 이건 좀 다른 이야기이긴 한데, 만약 같은 number를 갖는 여러 개의 vector가 필요하지 않은 상황이라면 `by-2nd`는 이 상황에 적합한 comparator입니다.
+(확인해야 할 사항: 이 문장에 고려해야 할 주의사항이 있지 않을까요? `sorted-set`은 어떤 방식으로든 비교에 `=`를 사용하는 것인가요? 아니면 주어진 comparator 함수만을 사용하나요?)
+
 
 #### Beware using subtraction in a comparator
 
