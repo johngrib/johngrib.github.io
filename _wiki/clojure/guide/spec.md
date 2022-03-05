@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure spec Guide
 summary : 
 date    : 2021-12-21 09:33:11 +0900
-updated : 2022-03-05 17:34:08 +0900
+updated : 2022-03-05 17:47:08 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -125,15 +125,14 @@ Sets can also be used as predicates that match one or more literal values:
 
 >
 Until now, we’ve been using specs directly. However, spec provides a central registry for globally declaring reusable specs. The registry associates a namespaced keyword with a specification. The use of namespaces ensures that we can define reusable non-conflicting specs across libraries or applications.
-
-지금까지 spec을 직접 사용해 보았습니다.
-한편, spec은 글로벌하게 재사용 가능한 spec을 정의할 수 있는 명시적인 registry를 제공합니다.
-registry는 스펙과 네임스페이스의 키워드를 서로 연결합니다.
-네임스페이스를 사용하면, 스펙을 충돌 없이 다른 라이브러리나 애플리케이션에서 재활용할 수 있습니다.
-
 >
 Specs are registered using [`s/def`]( https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/def ).
 It’s up to you to register the specification in a namespace that makes sense (typically a namespace you control).
+
+지금까지 spec을 직접 사용해 보았습니다만, spec 라이브러리는 spec을 글로벌하게 재사용할 수 있도록 central registry도 제공합니다.
+
+- registry는 spec과 네임스페이스 키워드를 서로 연결해주는 역할을 합니다.
+- 네임스페이스를 사용하면 spec을 충돌 없이 다양한 라이브러리나 애플리케이션에서 재활용할 수 있습니다.
 
 spec은 `s/def`를 통해 등록할 수 있습니다.
 어떤 네임스페이스에 spec을 등록하는지는 여러분의 선택입니다.
@@ -146,7 +145,7 @@ spec은 `s/def`를 통해 등록할 수 있습니다.
 >
 A registered spec identifier can be used in place of a spec definition in the operations we’ve seen so far - `conform` and `valid?`.
 
-앞에서 살펴본 `conform`과 `valid?`를 등록된 spec 식별자와 함께 사용할 수 있습니다.
+앞에서 살펴본 `conform`과 `valid?` 함수도 registered spec 식별자와 함께 사용할 수 있습니다.
 
 ```clojure
 (s/valid? :order/date (Date.))
@@ -179,7 +178,7 @@ In this guide we will often use shorter qualified names for example brevity.
 >
 Once a spec has been added to the registry, `doc` knows how to find it and print it as well:
 
-spec이 registry에 추가되면, `doc`으로 spec을 찾고 출력할 수도 있습니다.
+spec을 registry에 추가하면 `doc`으로 spec을 찾고 출력하는 것도 가능합니다.
 
 ```clojure
 (doc :order/date)
