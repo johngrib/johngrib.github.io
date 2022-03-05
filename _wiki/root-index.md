@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-05 10:43:44 +0900
+updated : 2022-03-05 23:21:58 +0900
 regenerate: true
 ---
 
@@ -458,6 +458,7 @@ regenerate: true
 * [[/cmd/sed]]
 * [[/cmd/tr]]
 * [[/cmd/xxd]]
+* [[/cmd/date]]
 
 * [[basename]]
 * [[bash-history]]
@@ -467,7 +468,6 @@ regenerate: true
 * [[csplit]]
 * [[ctags]]
 * [[cut]]
-* [[date-cmd]]
 * [[dc-cmd]]
 * [[df]]
 * [[diff]]
