@@ -1,9 +1,0 @@
-{
- "type": "wiki",
- "title": "Ultisnips",
- "summary": "자신만의 snippet 파일을 만들어 쓰자",
- "parent": "vim",
- "url": "/wiki/ultisnips",
- "updated": "2022-01-12 16:12:19 +0900",
- "children": []
-}

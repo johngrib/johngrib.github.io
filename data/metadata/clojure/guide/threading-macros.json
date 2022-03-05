@@ -3,7 +3,7 @@
  "title": "Threading Macros Guide",
  "summary": "",
  "parent": "clojure/guide",
- "url": "/wiki/clojure/threading-macros",
+ "url": "/wiki/clojure/guide/threading-macros",
  "updated": "2021-12-11 00:43:40 +0900",
  "children": []
 }

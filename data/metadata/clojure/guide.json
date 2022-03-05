@@ -11,7 +11,7 @@
   "clojure/guide/destructuring",
   "clojure/guide/reading-clojure-characters",
   "clojure/guide/spec",
-  "clojure/higher-order-functions",
-  "clojure/threading-macros"
+  "clojure/guide/threading-macros",
+  "clojure/higher-order-functions"
  ]
 }

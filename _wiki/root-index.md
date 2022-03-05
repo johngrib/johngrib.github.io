@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-01 21:23:08 +0900
+updated : 2022-03-05 10:43:44 +0900
 regenerate: true
 ---
 
@@ -295,7 +295,7 @@ regenerate: true
         * 01 [[/clojure/guide/spec]]
         * 02 [[/clojure/guide/reading-clojure-characters]]
         * 03 [[/clojure/guide/destructuring]]
-        * 04 [[/clojure/threading-macros]]
+        * 04 [[/clojure/guide/threading-macros]]
         * 05 [[/clojure/equality]]
         * 06 [[/clojure/guide/comparators]]
         * 08 [[/clojure/higher-order-functions]]

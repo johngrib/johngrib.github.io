@@ -9,6 +9,7 @@
  "clojure/guide/destructuring",
  "clojure/guide/reading-clojure-characters",
  "clojure/guide/spec",
+ "clojure/guide/threading-macros",
  "clojure/higher-order-functions",
  "clojure/reader",
  "clojure/reference",
@@ -25,6 +26,5 @@
  "clojure/study/persistent-list",
  "clojure/study/set",
  "clojure/study/vector",
- "clojure/threading-macros",
  "clojure/vim-setting"
 ]
