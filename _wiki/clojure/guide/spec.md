@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure spec Guide
 summary : 
 date    : 2021-12-21 09:33:11 +0900
-updated : 2021-12-21 15:39:41 +0900
+updated : 2022-03-05 17:34:08 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -21,11 +21,10 @@ latex   : false
 
 >
 The [spec]( https://clojure.org/about/spec ) library ([API docs]( https://clojure.github.io/spec.alpha )) specifies the structure of data, validates or conforms it, and can generate data based on the spec.
-
-spec 라이브러리는 spec을 기준으로 데이터의 구조를 정의하고, 검증하고, 데이터를 생성할 수 있도록 해줍니다.
-
 >
 To use spec, declare a dependency on Clojure 1.9.0 or higher:
+
+spec 라이브러리는 spec을 기준으로 데이터의 구조를 정의하고, 검증하고, 데이터를 생성할 수 있도록 해줍니다.
 
 spec을 사용하려면 Clojure 1.9.0 이상의 의존 라이브러리를 사용하세요.
 
@@ -55,16 +54,15 @@ Or include spec in your namespace:
 ### Predicates
 
 >
-Each spec describes a set of allowed values. There are several ways to build specs and all of them can be composed to build more sophisticated specs.
-
-각각의 spec은 허용되는 값의 집합을 설명하는 것입니다.
-spec을 만드는 방법은 다양하며, spec을 조합해서 더 복잡한 spec을 만들 수도 있습니다.
-
+Each spec describes a set of allowed values.
+There are several ways to build specs and all of them can be composed to build more sophisticated specs.
 >
 Any existing Clojure function that takes a single argument and returns a truthy value is a valid predicate spec. We can check whether a particular data value conforms to a spec using [`conform`]( https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/conform ):
 
-한 개의 argument를 받아서 참/거짓 값을 리턴하는 Clojure 함수는 유효한 predicate spec입니다.
-conform을 사용하면 특정 데이터가 spec을 지키는지 확인할 수 있습니다.
+- 각각의 spec은 허용하는 값의 집합을 설명합니다.
+- spec을 만드는 방법은 다양하며, 여러 spec을 조합해서 더 복잡한 spec을 만들 수도 있습니다.
+- 한 개의 argument를 받아서 참/거짓 값을 리턴하는 Clojure 함수는 유효한 predicate spec이라 할 수 있습니다.
+- conform을 사용하면 특정 데이터가 spec을 지키는지 확인할 수 있습니다.
 
 ```clojure
 (s/conform even? 1000)
@@ -73,18 +71,17 @@ conform을 사용하면 특정 데이터가 spec을 지키는지 확인할 수 �
 
 >
 The `conform` function takes something that can be a spec and a data value. Here we are passing a predicate which is implicitly converted into a spec. The return value is "conformed". Here, the conformed value is the same as the original value - we’ll see later where that starts to deviate. If the value does not conform to the spec, the special value `:clojure.spec.alpha/invalid` is returned.
-
-`conform`은 spec이 될 수 있는 무언가와 data 값을 받는 함수입니다.
-이 함수에 spec으로 변환될 무언가로 predicate를 넣어주면, 그에 따른 "적합한 값"이 리턴되는 것입니다.
-이때 "적합한 값"은 입력된 값과 같은 값입니다.
-(리턴값이 어디에서 달라지게 되는지에 대해서는 나중에 살펴볼 것입니다.)
-만약 주어진 값이 spec과 맞지 않는다면, 특수한 값인 `:clojure.spec.alpha/invalid`가 리턴됩니다.
-
-```clojure
+>
 If you don’t want to use the conformed value or check for `:clojure.spec.alpha/invalid`, the helper [`valid?`]( https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/valid? ) can be used instead to return a boolean.
-```
 
-만약 리턴된 "적합한 값"을 쓰고 싶지 않거나 `:clojure.spec.alpha/invalid`를 확인하고 싶지 않다면, boolean 값을 리턴하는 `valid?` 함수를 사용하면 됩니다.
+`conform`은 spec으로 취급할 수 있는 것과 data 값을 받는 함수입니다.
+
+- 이 함수에 predicate를 넣어주면 spec으로 변환되는데, 변환된 함수는 "검증된 값"을 리턴하게 됩니다.
+    - 이때 "검증된 값"은 함수에 넘겨준 값과 같은 값입니다.
+    - (이에 대해서는 나중에 살펴볼 것입니다.)
+- 만약 주어진 값이 spec과 맞지 않는다면, 특수한 값인 `:clojure.spec.alpha/invalid`가 리턴됩니다.
+
+리턴된 "검증된 값"을 쓰고 싶지 않거나 `:clojure.spec.alpha/invalid`를 확인하고 싶지 않다면, boolean 값을 리턴하는 `valid?` 함수를 사용하면 됩니다.
 
 ```clojure
 (s/valid? even? 10)
@@ -92,10 +89,14 @@ If you don’t want to use the conformed value or check for `:clojure.spec.alpha
 ```
 
 >
-Note that again `valid?` implicitly converts the predicate function into a spec. The spec library allows you to leverage all of the functions you already have - there is no special dictionary of predicates. Some more examples:
+Note that again `valid?` implicitly converts the predicate function into a spec.
+The spec library allows you to leverage all of the functions you already have - there is no special dictionary of predicates.
+Some more examples:
 
-`valid?`는 predicate 함수를 spec으로 암묵적으로 변환합니다.
-spec 라이브러리에는 특별한 dictionary나 predicate가 없습니다. 즉 이미 존재하는 함수들을 활용할 수 있게 되어 있습니다.
+`valid?`는 넘겨받은 predicate 함수를 암묵적으로 spec으로 변환합니다.
+
+spec 라이브러리는 여러분이 갖고 있는 모든 함수를 활용할 수 있도록 만들어져 있으므로,
+spec 라이브러리에는 특별한 dictionary나 predicate가 없습니다.
 
 ```clojure
 (s/valid? nil? nil)  ;; true
@@ -538,6 +539,7 @@ The dog entity itself can be described as a `merge` of those two attribute sets:
 ### multi-spec
 
 [multi-spec]( https://clojure.org/guides/spec#_multi_spec )
+
 
 ### Collections
 ### Sequences
