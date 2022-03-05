@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure spec Guide
 summary : 
 date    : 2021-12-21 09:33:11 +0900
-updated : 2022-03-05 18:00:55 +0900
+updated : 2022-03-05 18:27:26 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -263,7 +263,7 @@ To include `nil` as a valid value, use the provided function [`nilable`]( https:
 [`explain`]( https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain ) is another high-level operation in spec that can be used to report (to `*out*`) why a value does not conform to a spec.
 Let’s see what explain says about some non-conforming examples we’ve seen so far.
 
-`explain`은 해당 값이 spec과 적합하지 않은 이유를 (`*out*`을 통해) 보고하는 spec의 또다른 고급 오퍼레이션입니다.
+`explain`은 spec의 고급 오퍼레이션 중 하나로, 주어진 값이 spec과 적합하지 않은 이유를 (`*out*`을 통해) 보고해 줍니다.
 앞에서 봤던 예제를 사용해 설명해 보겠습니다.
 
 ```clojure
@@ -284,29 +284,45 @@ Let’s examine the output of the final example more closely. First note that th
 - predicate - the actual predicate that was not satisfied by val
 - in - the key path through a nested data val to the failing value. In this example, the top-level value is the one that is failing so this is essentially an empty path and is omitted.
 
-마지막 예제의 결과를 더 자세히 살펴보겠습니다.
+마지막 예제의 결과를 살펴봅시다.
 일단 두 개의 에러가 보고되어 있군요. (spec은 모든 가능한 조건을 평가하며, 모든 조건에서 발생한 에러를 보고합니다.)
-에러의 각 부분을 살펴보자면 다음과 같습니다.
 
-- val - 적합하지 않은 것으로 판별된 값
-- spec - 평가에 사용된 spec
-- at - 에러가 발생한 위치 경로(keyword로 이루어진 vector) - spec의 경로에서 태그로 표시된 부분(`or`이나 `alt`이면 대안들, `cat`의 부분, map의 키 등등)에 대한 경로입니다.
-- predicate - 해당 val이 만족시키지 못한 predicate
-- in - 최상위부터 시작하는 실패한 값의 경로. 이 예제와 같이 최상위 값이 실패하면 일반적으로 빈 경로로 표현합니다.
+- 에러의 각 부분을 자세히 살펴봅시다.
+```clojure
+     val    predicate       at          spec
+;; :foo - failed: string? at: [:name] spec: :domain/name-or-id
+;; :foo - failed: int?    at: [:id]   spec: :domain/name-or-id
+```
+    - `val` - 적합하지 않은 것으로 판별된 값
+    - `predicate` - val이 만족시키지 못한 predicate
+    - `at` - 에러가 발생한 위치 경로(keyword가 들어있는 vector)
+        - spec에서 태그로 표시된 부분(`or`이나 `alt`이면 대안들, `cat`의 부분, map의 키 등등)에 대한 경로.
+    - `spec` - 평가에 사용된 spec
+    - `in` - 최상위부터 시작하는 실패한 값의 경로.
+        - 이 예제와 같이 최상위 값이 실패하면 일반적으로 빈 경로로 표현합니다.
 
 >
 For the first reported error we can see that the value `:foo` did not satisfy the predicate `string?` at the path `:name` in the spec `:domain/name-or-id`.
 The second reported error is similar but fails on the `:id` path instead.
 The actual value is a keyword so neither is a match.
 
-첫 번째로 보고된 에러의 경우 값 `:foo`는 `:domain/name-or-id` spec에 있는 `:name` 경로의 `string?` predicate를 만족시키지 못했습니다.
-두 번째로 보고된 에러는 첫 번째와 비슷하지만 `:name` 경로가 아니라 `:id` 경로에서 실패했습니다.
-실제 값이 keyword이므로 둘 다 만족시키지 못한 것입니다.
+
+- 첫 번째로 보고된 에러를 살펴봅시다.
+```clojure
+;; :foo - failed: string? at: [:name] spec: :domain/name-or-id
+```
+    - 값 `:foo`는 `:domain/name-or-id` spec에 있는 `:name` 경로의 `string?` predicate를 만족시키지 못했습니다.
+- 두 번째로 보고된 에러를 살펴봅시다.
+```clojure
+;; :foo - failed: int? at: [:id] spec: :domain/name-or-id
+```
+    - 첫 번째와 비슷하지만 `:name` 경로가 아니라 `:id` 경로에서 실패했습니다.
+- 실제 값이 keyword 타입이므로, string도 아니고 int도 아니어서 둘 다 만족시키지 못한 것입니다.
 
 >
 In addition to `explain`, you can use [`explain-str`](https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain-str ) to receive the error messages as a string or [`explain-data`]( https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/explain-data ) to receive the errors as data.
 
-`explain`에 추가로 설명하자면, `explain-str`을 써서 에러 메시지를 string으로 받거나, `explain-data`를 써서 에러 내역을 데이터로 받을 수도 있습니다.
+`explain`에 추가로 설명하자면 `explain-str`을 써서 에러 메시지를 string으로 받거나, `explain-data`를 써서 에러 내역을 데이터로 받는 것도 가능합니다.
 
 ```clojure
 (s/explain-data :domain/name-or-id :foo)
@@ -327,9 +343,9 @@ In addition to `explain`, you can use [`explain-str`](https://clojure.github.io/
 This result also demonstrates the namespace map literal syntax added in Clojure 1.9. Maps may be prefixed with `#:` or `#::` (for autoresolve) to specify a default namespace for all keys in the map. In this example, this is equivalent to `{:clojure.spec.alpha/problems …}`
 {:style="background-color: #e6fae3;"}
 
-- 이 결과는 또한 Clojure 1.9에서 추가된 namespace map literal syntax에 대해 보여줍니다.
-- map은 `#:` 또는 `#::`(autoresolve를 위한 것)으로 map에 포함되는 모든 key의 default namespace를 지정할 수 있습니다.
-- 이 예제에서 이는 `{:clojure.spec.alpha/problems …}`와 같습니다.
+- 이 결과를 통해 Clojure 1.9에서 추가된 namespace map literal syntax에 대해서도 배울 수 있습니다.
+- map은 `#:` 또는 `#::`(autoresolve를 위한 표현)으로 map에 포함되는 모든 key의 default namespace를 지정할 수 있습니다.
+- 이 예제에서 `#:clojure.spec.alpha`를 사용한 것은 `{:clojure.spec.alpha/problems …}`처럼 선언한 것과 같습니다.
 
 ### Entity Maps
 
