@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Threading Macros Guide
-summary : 
+summary : 스레딩 매크로 가이드
 date    : 2021-12-10 22:47:25 +0900
-updated : 2021-12-11 00:43:40 +0900
+updated : 2022-03-05 10:47:51 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -31,7 +31,7 @@ In idiomatic Clojure, pure functions transform immutable data structures into a 
 Consider a function that applies two transformations to a map:
 
 - Clojure의 관용적 표현에서, 순수 함수는 immutable한 자료 구조를 우리에게 필요한 출력 형식으로 변환합니다.
-- 다음과 같이 map 자료에 두 가지의 변환이 적용되는 함수를 생각해 봅시다.
+- 다음과 같이 map 자료에 두 가지의 변환을 적용하는 함수를 생각해 봅시다.
 
 ```clojure
 (defn transform [person]
