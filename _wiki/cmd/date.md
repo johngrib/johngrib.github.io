@@ -3,7 +3,7 @@ layout  : wiki
 title   : date 명령어
 summary : 날짜나 시간을 출력하거나 설정한다
 date    : 2018-08-03 05:19:22 +0900
-updated : 2022-03-05 23:22:45 +0900
+updated : 2022-03-05 23:34:40 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -39,6 +39,36 @@ date +%s
 date -r 1572511074
 ```
 
+### GNU
+
+mac에서 GNU `date`를 사용하려면 `coreutils`를 설치하면 된다.
+
+```sh
+brew install coreutils
+```
+
+```sh
+$ # 날짜를 unixtimestamp로 변환
+$ gdate --date="0001-01-01T00:00:00Z" +%s
+-62135596800
+
+$ gdate --date="1970-01-01T00:00:00Z" +%s
+0
+
+$ gdate --date="2022-01-01T00:00:00Z+0000" +%s
+1640995200
+
+$ gdate --date="2022-01-01T00:00:00Z+0900" +%s
+1640962800
+
+$ # unixtimestamp를 날짜로 변환
+$ gdate -d @1640995200 +"%F %T %z"
+2022-01-01 09:00:00 +0900
+
+$ gdate -d @1640995200 +"%F %T %z" --utc
+2022-01-01 00:00:00 +0000
+```
+
 ## Format
 
 * 명령어 예제를 실행한 결과의 기준은 `2018년 8월 3일 금요일 05시 49분 37초`.
@@ -65,5 +95,10 @@ date -r 1572511074
 | `%S`      | 초(00 ~ 59)          | `date +%S`  | `37`                     |
 | `%V`      | week 숫자            | `date +%V`  | `31`                     |
 | `%Z`      | 타임존               | `date +%Z`  | `KST`                    |
+
+
+## 참고문헌
+
+- [21.1.7 Examples of date (gnu.org)]( https://www.gnu.org/software/coreutils/manual/html_node/Examples-of-date.html )
 
 
