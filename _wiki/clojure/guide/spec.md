@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure spec Guide
 summary : 
 date    : 2021-12-21 09:33:11 +0900
-updated : 2022-03-05 18:27:26 +0900
+updated : 2022-03-05 21:49:21 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -354,21 +354,20 @@ Clojure programs rely heavily on passing around maps of data.
 A common approach in other libraries is to describe each entity type, combining both the keys it contains and the structure of their values.
 Rather than define attribute (key+value) specifications in the scope of the entity (the map), specs assign meaning to individual attributes, then collect them into maps using set semantics (on the keys).
 This approach allows us to start assigning (and sharing) semantics at the attribute level across our libraries and applications.
+>
+For example, most Ring middleware functions modify the request or response map with unqualified keys. However, each middleware could instead use namespaced keys with registered semantics for those keys. The keys could then be checked for conformance, creating a system with greater opportunities for collaboration and consistency.
+>
+Entity maps in spec are defined with [`keys`]( https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/keys ):
 
-Clojure 프로그램은 데이터를 전달할 때 map을 쓰는 방식을 많이 사용하고 있습니다.
-다른 라이브러리들의 공통적인 전략은 자료 구조에 포함된 키와 값의 구조를 모두 결합해 각 엔티티 타입을 설명하는 것입니다.
+Clojure 프로그램들은 주로 map 자료구조를 사용해 데이터를 전달하는 방식을 사용하고 있습니다.
+따라서 라이브러리들은 자료구조에 포함된 키와 값의 구조를 엮은 엔티티 타입을 명시하는 전략을 일반적으로 사용하고 있습니다.
+
 spec은 엔티티(map)의 스코프 내에서 각 속성(key+value)을 정의하는 대신, 각 개별 속성의 의미를 할당해준 다음 (key 기준의) set semantic을 사용해 한꺼번에 map으로 수집해냅니다.
 이 방법으로 인해 우리는 라이브러리는 물론 애플리케이션 전반에 걸쳐 속성 수준에서 semantic을 할당하고 공유할 수 있습니다.
 
->
-For example, most Ring middleware functions modify the request or response map with unqualified keys. However, each middleware could instead use namespaced keys with registered semantics for those keys. The keys could then be checked for conformance, creating a system with greater opportunities for collaboration and consistency.
-
-예를 들어, 대부분의 Ring 미들웨어 함수들은 규정되지 않은 key값들로 request 또는 response map을 수정해왔습니다.
-하지만 이제 각각의 미들웨어에서 해당 key에 대한 semantic이 등록된 namespace를 사용할 수 있게 된 것입니다.
-key들의 적합성을 체크할 수 있으므로 더 협업 가능하고 더 일관성있는 시스템을 만들 수 있습니다.
-
->
-Entity maps in spec are defined with [`keys`]( https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/keys ):
+예를 들어, Ring 미들웨어 함수들 대부분은 request나 response map을 규정되지 않은 key값들로 수정합니다.
+하지만 그렇게 하는 대신에 각각의 미들웨어들은 해당 key에 대한 semantic이 등록된 namespaced key를 사용할 수도 있습니다.
+이를 통해 key들의 적합성을 체크할 수 있으므로 더 협업 가능하고 더 일관성있는 시스템을 만들 수 있습니다.
 
 spec의 entity map은 `keys`를 사용하여 정의됩니다.
 
@@ -389,8 +388,11 @@ spec의 entity map은 `keys`를 사용하여 정의됩니다.
 This registers a `:acct/person` spec with the required keys `:acct/first-name`, `:acct/last-name`, and `:acct/email`, with optional key `:acct/phone`.
 The map spec never specifies the value spec for the attributes, only what attributes are required or optional.
 
-위의 코드는 `:acct/person` spec을 등록하며 필수 key로 `:acct/first-name`, `:acct/last-name`, `:acct/email`를 지정하고, 선택적 key로 `:acct/phone`를 지정합니다.
-map spec은 어떤 속성들이 필수인지 선택적인지만 명시하고, 속성의 값 spec은 지정하지 않습니다.
+위의 코드는 `:acct/person` spec을 등록하며, 필수 key와 선택적 key도 지정합니다.
+- 필수 key - `:acct/first-name`, `:acct/last-name`, `:acct/email`
+- 선택적 key - `:acct/phone`
+
+map spec은 어떤 속성들이 필수인지 선택적인지만 명시하고, 각 속성의 값 spec은 따로 지정하지 않습니다.
 
 >
 When conformance is checked on a map, it does two things - checking that the required attributes are included, and checking that every registered key has a conforming value.
@@ -398,7 +400,7 @@ We’ll see later where optional attributes can be useful.
 Also note that ALL attributes are checked via `keys`, not just those listed in the `:req` and `:opt` keys.
 Thus a bare `(s/keys)` is valid and will check all attributes of a map without checking which keys are required or optional.
 
-어떤 map의 적합성 판별은 두 가지 일을 합니다.
+map에 적합성 판별을 하게 되면 두 가지 작업이 실행됩니다.
 
 1. 필수 속성이 포함되어 있는지 확인합니다.
 2. 등록된 모든 key에 대해 적합한 value가 있는지 확인합니다.
@@ -440,13 +442,16 @@ Let’s take a moment to examine the explain error output on that final example:
 - at - the path in the spec where the failing value is located
 - predicate - the predicate that failed, here `(re-matches email-regex %)`
 
-예제 마지막의 에러 출력을 살펴보는 시간을 가져봅시다.
-
-- in - 실패한 값이 있는 경로 (person 인스턴스의 key)
-- val - 실패한 값. 여기서는 `"n/a"`.
-- spec - 실패한 spec. 여기서는 `:acct/email-type`
-- at - 실패한 값이 있는 spec의 경로
-- predicate - 실패한 검사. 여기서는 `(re-matches email-regex %)`.
+- 예제의 마지막 에러 출력을 살펴보는 시간을 가져봅시다.
+```clojure
+;; "n/a" - failed: (re-matches email-regex %) in: [:acct/email]
+;;   at: [:acct/email] spec: :acct/email-type
+```
+    - `in` - 실패한 값이 있는 경로 (person 인스턴스의 key)
+    - `val` - 실패한 값. 여기서는 `"n/a"`.
+    - `spec` - 실패한 spec. 여기서는 `:acct/email-type`
+    - `at` - 실패한 값이 있는 spec의 경로
+    - `predicate` - 실패한 검사. 여기서는 `(re-matches email-regex %)`.
 
 >
 Much existing Clojure code does not use maps with namespaced keys and so `keys` can also specify `:req-un` and `:opt-un` for required and optional unqualified keys.
