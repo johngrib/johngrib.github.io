@@ -24,3 +24,14 @@
         }
     }
 }
+
+.post {
+    li:hover {
+        background: #E6E6E6;
+    }
+    li > ul > li:hover {
+        background: #BEE7f6;
+    }
+}
+
+
