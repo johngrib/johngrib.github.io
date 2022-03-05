@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure spec Guide
 summary : 
 date    : 2021-12-21 09:33:11 +0900
-updated : 2022-03-05 17:47:08 +0900
+updated : 2022-03-05 18:00:55 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -201,6 +201,7 @@ The simplest way to compose specs is with [`and`]( https://clojure.github.io/spe
 Let’s create a spec that combines several predicates into a composite spec with s/and:
 
 spec을 조합하는 가장 간단한 방법은 `and`와 `or`를 사용하는 것입니다.
+
 `s/and`를 사용해 여러 개의 predicate를 하나의 composite spec으로 조합해 봅시다.
 
 ```clojure
@@ -213,7 +214,7 @@ spec을 조합하는 가장 간단한 방법은 `and`와 `or`를 사용하는 �
 >
 We can also use `s/or` to specify two alternatives:
 
-`s/or`를 사용해 대상을 두 개 지정할 수도 있습니다.
+`s/or`를 사용해 검증 방법을 두 가지로 지정할 수도 있습니다.
 
 ```clojure
 (s/def :domain/name-or-id (s/or :name string?
@@ -225,13 +226,14 @@ We can also use `s/or` to specify two alternatives:
 
 >
 This `or` spec is the first case we’ve seen that involves a choice during validity checking. Each choice is annotated with a tag (here, between `:name` and `:id`) and those tags give the branches names that can be used to understand or enrich the data returned from `conform` and other spec functions.
-
-이 `or` spec은 유효성 체크 중에서 선택이 있는 첫 번째 사례라 할 수 있습니다.
-각각의 선택지를 보면 tag(여기에서는 `:name`과 `:id`)를 사용해 분기를 표시하여 읽는 사람의 이해를 돕는 한편, `conform`이나 다른 spec 함수들이 리턴한 데이터를 다양하게 처리할 수 있게 합니다.
-
 >
 When an `or` is conformed, it returns a vector with the tag name and conformed value:
 
+이 `or` spec은 지금까지 우리가 살펴본 유효성 검사 방법 중에서 선택지가 있는 첫 번째 예제라 할 수 있습니다.
+
+각각의 선택지를 보면 tag(여기에서는 `:name`과 `:id`)를 사용해 분기를 표시하여 읽는 사람의 이해를 돕는 한편, `conform`이나 다른 spec 함수들이 리턴한 데이터를 다양하게 처리할 수 있게 합니다.
+
+아래의 예제를 봅시다.
 `or`이 conform되면, tag 이름과 conform된 값이 들어있는 vector를 리턴합니다.
 
 ```clojure
@@ -245,8 +247,8 @@ When an `or` is conformed, it returns a vector with the tag name and conformed v
 Many predicates that check an instance’s type do not allow `nil` as a valid value (`string?`, `number?`, `keyword?`, etc).
 To include `nil` as a valid value, use the provided function [`nilable`]( https://clojure.github.io/spec.alpha/clojure.spec.alpha-api.html#clojure.spec.alpha/nilable ) to make a spec:
 
-인스턴스의 타입을 체크하는 많은 predicate들이 `nil`을 유효한 값으로 취급하지 않습니다(`string?`, `number?`, `keyword?` 같은 것들).
-`nil`을 유효한 값으로 취급하려면, `nilable`을 사용하여 spec을 만들면 됩니다.
+검사 대상의 인스턴스 타입을 체크하는 많은 predicate들이 `nil`을 유효한 값으로 취급하지 않습니다(`string?`, `number?`, `keyword?` 같은 것들).
+`nil`을 유효한 값으로 취급하는 spec이 필요하다면 spec을 만들 때 `nilable`을 사용하면 됩니다.
 
 ```clojure
 (s/valid? string? nil)
