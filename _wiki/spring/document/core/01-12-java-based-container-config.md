@@ -3,7 +3,7 @@ layout  : wiki
 title   : Spring Core Technologies - 1.12. Java-based Container Configuration
 summary : 
 date    : 2021-07-11 13:42:50 +0900
-updated : 2021-07-15 22:13:47 +0900
+updated : 2022-03-05 14:43:05 +0900
 tag     : java spring
 toc     : true
 public  : true
@@ -93,23 +93,24 @@ Unlike full `@Configuration`, lite `@Bean` methods cannot declare inter-bean dep
 In common scenarios, `@Bean` methods are to be declared within `@Configuration` classes, ensuring that “full” mode is always used and that cross-method references therefore get redirected to the container’s lifecycle management. This prevents the same `@Bean` method from accidentally being invoked through a regular Java call, which helps to reduce subtle bugs that can be hard to track down when operating in “lite” mode.
 {:style="background-color: #ecf1e8;"}
 
-- **Full @Configuration vs “lite” @Bean mode?**
-    - `@Configuration` 애노테이션이 붙지 않은 클래스에서 `@Bean` 메소드를 선언하면, 그런 메소드들은 "lite" 모드로 처리가 됩니다.
-        - `@Component`나 순수한 클래스 안에서 선언된 bean 메소드는 "lite"로 간주됩니다.
-            - 일종의 보너스에 해당하는 목적이 있기 때문입니다.
-        - 예를 들어, 서비스 컴포넌트는 컨테이너에 대한 관리적인 관점에서 적용 가능한 각 컴포넌트 클래스에 대해 추가적인 `@Bean` 메소드를 사용할 수 있습니다.
-        - 이런 시나리오에서 `@Bean` 메소드는 범용적인 팩토리 메소드 메커니즘이 됩니다.
-    - full `@Configuration`과 달리 lite `@Bean` 메소드는 bean과 bean 사이의 dependencies를 선언할 수 없습니다.
-        - 그 대신, lite `@Bean` 메소드를 포함하는 컴포넌트의 내부 상태와, 옵셔널하게 선언할 수 있는 인자에 따라 작동하게 됩니다.
-        - 따라서 이런 종류의 (lite) `@Bean` 메소드는 다른 `@Bean` 메소드를 호출하지 않아야 합니다.
-        - 이런 메소드들은 특별한 런타임상의 의미가 없고, 말 그대로 특정 bean 참조에 대한 팩토리 메소드일 뿐입니다.
-        - lite `@Bean`의 긍정적인 사이드 이펙트는 클래스 디자인 측면에서 제안이 별로 없다는 것입니다.
-            - (예를 들어 포함하는 클래스가 `final`이어도 가능합니다)
-            - 런타임에 CGLIB 서브클래싱을 적용할 필요가 없기 때문입니다.
-    - 일반적인 시나리오에서 `@Bean` 메소드는 `@Configuration` 클래스 내에서 선언되어 항상 "full" 모드가 적용됩니다.
-        - 따라서 교차 메소드 참조(cross-method references)가 있다면 컨테이너의 생명주기 관리로 리다이렉션됩니다.
-        - 이러한 구조 때문에 평범한 Java 호출을 통해 똑같은 `@Bean` 메소드가 우발적으로 호출되는 것이 방지되어 미묘한 버그를 줄이는 데에 도움이 됩니다.
-            - (lite 모드에서는 이것이 방지되지 않기 때문)
+**Full @Configuration vs “lite” @Bean mode?**
+
+- `@Configuration` 애노테이션이 붙지 않은 클래스에서 `@Bean` 메소드를 선언하면, 그런 메소드들은 "lite" 모드로 처리가 됩니다.
+    - `@Component`나 순수한 클래스 안에서 선언된 bean 메소드는 "lite"로 간주됩니다.
+        - 일종의 보너스에 해당하는 목적이 있기 때문입니다.
+    - 예를 들어, 서비스 컴포넌트는 컨테이너에 대한 관리적인 관점에서 적용 가능한 각 컴포넌트 클래스에 대해 추가적인 `@Bean` 메소드를 사용할 수 있습니다.
+    - 이런 시나리오에서 `@Bean` 메소드는 범용적인 팩토리 메소드 메커니즘이 됩니다.
+- full `@Configuration`과 달리 lite `@Bean` 메소드는 bean과 bean 사이의 dependencies를 선언할 수 없습니다.
+    - 그 대신, lite `@Bean` 메소드를 포함하는 컴포넌트의 내부 상태와, 옵셔널하게 선언할 수 있는 인자에 따라 작동하게 됩니다.
+    - 따라서 이런 종류의 (lite) `@Bean` 메소드는 다른 `@Bean` 메소드를 호출하지 않아야 합니다.
+    - 이런 메소드들은 특별한 런타임상의 의미가 없고, 말 그대로 특정 bean 참조에 대한 팩토리 메소드일 뿐입니다.
+    - lite `@Bean`의 긍정적인 사이드 이펙트는 클래스 디자인 측면에서 제안이 별로 없다는 것입니다.
+        - (예를 들어 포함하는 클래스가 `final`이어도 가능합니다)
+        - 런타임에 CGLIB 서브클래싱을 적용할 필요가 없기 때문입니다.
+- 일반적인 시나리오에서 `@Bean` 메소드는 `@Configuration` 클래스 내에서 선언되어 항상 "full" 모드가 적용됩니다.
+    - 따라서 교차 메소드 참조(cross-method references)가 있다면 컨테이너의 생명주기 관리로 리다이렉션됩니다.
+    - 이러한 구조 때문에 평범한 Java 호출을 통해 똑같은 `@Bean` 메소드가 우발적으로 호출되는 것이 방지되어 미묘한 버그를 줄이는 데에 도움이 됩니다.
+        - (lite 모드에서는 이것이 방지되지 않기 때문)
 
 >
 The `@Bean` and `@Configuration` annotations are discussed in depth in the following sections. First, however, we cover the various ways of creating a spring container using by Java-based configuration.
