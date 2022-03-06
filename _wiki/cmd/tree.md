@@ -3,7 +3,7 @@ layout  : wiki
 title   : tree 명령어
 summary : 디렉토리의 내용을 트리 구조로 보여준다
 date    : 2020-02-09 23:09:43 +0900
-updated : 2022-03-06 20:39:02 +0900
+updated : 2022-03-06 20:41:51 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -14,6 +14,11 @@ latex   : false
 {:toc}
 
 ## Examples
+
+```sh
+ # mac에서는 brew 를 이용해 설치할 수 있다.
+brew install tree
+```
 
 ```sh
  # 현재 디렉토리의 모든 하위 파일과 모든 하위 디렉토리를 본다.
