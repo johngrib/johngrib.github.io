@@ -3,7 +3,7 @@ layout  : wiki
 title   : tree 명령어
 summary : 디렉토리의 내용을 트리 구조로 보여준다
 date    : 2020-02-09 23:09:43 +0900
-updated : 2022-03-06 20:41:51 +0900
+updated : 2022-03-06 21:02:05 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -41,4 +41,11 @@ tree . -I "node_modules|bin"
 
  # 1 depth 하위 디렉토리까지만 본다.
 tree . -L 1
+
+ # html 파일만 본다
+tree --prune -P '*.html'
+
+ # vim.md 로 이름이 끝나는 파일만 본다
+tree --prune -P '*vim.md'
 ```
+
