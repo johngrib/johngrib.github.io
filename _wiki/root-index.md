@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-05 23:21:58 +0900
+updated : 2022-03-06 20:38:31 +0900
 regenerate: true
 ---
 
@@ -448,6 +448,7 @@ regenerate: true
 * [[/cmd/bind]]
 * [[/cmd/cal]]
 * [[/cmd/curl]]
+* [[/cmd/date]]
 * [[/cmd/ditto]]
 * [[/cmd/fc]]
 * [[/cmd/find]]
@@ -457,8 +458,8 @@ regenerate: true
 * [[/cmd/openssl]]
 * [[/cmd/sed]]
 * [[/cmd/tr]]
+* [[/cmd/tree]]
 * [[/cmd/xxd]]
-* [[/cmd/date]]
 
 * [[basename]]
 * [[bash-history]]
@@ -504,7 +505,6 @@ regenerate: true
 * [[tail]]
 * [[top]]
 * [[touch]]
-* [[tree-cmd]]
 * [[uptime]]
 * [[yes-cmd]]
 * [[ykman]]

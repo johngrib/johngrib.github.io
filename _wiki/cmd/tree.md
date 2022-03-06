@@ -3,11 +3,11 @@ layout  : wiki
 title   : tree 명령어
 summary : 디렉토리의 내용을 트리 구조로 보여준다
 date    : 2020-02-09 23:09:43 +0900
-updated : 2020-02-09 23:17:05 +0900
+updated : 2022-03-06 20:39:02 +0900
 tag     : bash command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

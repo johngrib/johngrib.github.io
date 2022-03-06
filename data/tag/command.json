@@ -20,6 +20,7 @@
  "cmd/openssl",
  "cmd/sed",
  "cmd/tr",
+ "cmd/tree",
  "cmd/xxd",
  "csplit",
  "ctags",
@@ -61,7 +62,6 @@
  "tail",
  "top",
  "touch",
- "tree-cmd",
  "uptime",
  "yes-cmd",
  "ykman"
