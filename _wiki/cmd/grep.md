@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : grep, egrep 명령어
+title   : grep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2021-10-17 18:37:10 +0900
+updated : 2022-03-07 23:59:32 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 toc     : true
 public  : true
