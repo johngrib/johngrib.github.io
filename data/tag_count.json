@@ -17,7 +17,7 @@
  },
  {
   "name": "alfred-aho",
-  "size": 2
+  "size": 1
  },
  {
   "name": "algirithm",
@@ -69,7 +69,7 @@
  },
  {
   "name": "bash",
-  "size": 61
+  "size": 60
  },
  {
   "name": "bayes",
@@ -109,7 +109,7 @@
  },
  {
   "name": "brian-kernighan",
-  "size": 4
+  "size": 3
  },
  {
   "name": "bsd",
@@ -157,7 +157,7 @@
  },
  {
   "name": "command",
-  "size": 66
+  "size": 65
  },
  {
   "name": "command-line",
@@ -501,7 +501,7 @@
  },
  {
   "name": "ken-tompson",
-  "size": 2
+  "size": 1
  },
  {
   "name": "keyboard",
