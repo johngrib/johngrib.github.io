@@ -3,7 +3,7 @@ layout  : wiki
 title   : grep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2022-03-08 00:02:16 +0900
+updated : 2022-03-08 00:07:17 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 toc     : true
 public  : true
@@ -123,8 +123,11 @@ bar
 - `-R`, `-r`, `--recursive`: 재귀적으로 디렉토리 트리를 탐색한다.
 
 ```sh
- # 현재 위치의 모든 하위 디렉토리에서 vim 문자열을 포함하고 있는 파일을 찾는다
+ # 현재 위치의 모든 하위 디렉토리의 모든 파일에서 vim 문자열을 포함하고 있는 라인을 찾아 출력한다
 grep -r vim
+
+ # _wiki 의 모든 하위 디렉토리에서 vim 문자열을 포함하고 있는 파일 이름을 출력한다
+grep -r -l vim _wiki
 ```
 
 ## 참고문헌
