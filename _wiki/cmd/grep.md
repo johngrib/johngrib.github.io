@@ -3,7 +3,7 @@ layout  : wiki
 title   : grep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2022-03-07 23:59:32 +0900
+updated : 2022-03-08 00:02:16 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 toc     : true
 public  : true
@@ -118,6 +118,13 @@ $ grep -e foo -e bar test.txt
 foobar
 foo
 bar
+```
+
+- `-R`, `-r`, `--recursive`: 재귀적으로 디렉토리 트리를 탐색한다.
+
+```sh
+ # 현재 위치의 모든 하위 디렉토리에서 vim 문자열을 포함하고 있는 파일을 찾는다
+grep -r vim
 ```
 
 ## 참고문헌
