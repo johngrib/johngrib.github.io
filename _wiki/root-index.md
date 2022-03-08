@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-06 20:38:31 +0900
+updated : 2022-03-08 22:36:06 +0900
 regenerate: true
 ---
 
@@ -292,7 +292,7 @@ regenerate: true
     * 14 [[/clojure/reference/metadata]]
 * [[/clojure/guide]]
     * LANGUAGE
-        * 01 [[/clojure/guide/spec]]
+        * 01 [[/clojure/guide/spec]] 번역중
         * 02 [[/clojure/guide/reading-clojure-characters]]
         * 03 [[/clojure/guide/destructuring]]
         * 04 [[/clojure/guide/threading-macros]]
