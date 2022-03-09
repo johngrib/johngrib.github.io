@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-08 22:36:06 +0900
+updated : 2022-03-09 11:40:50 +0900
 regenerate: true
 ---
 
@@ -457,6 +457,7 @@ regenerate: true
 * [[/cmd/mv]]
 * [[/cmd/openssl]]
 * [[/cmd/sed]]
+* [[/cmd/shellcheck]]
 * [[/cmd/tr]]
 * [[/cmd/tree]]
 * [[/cmd/xxd]]

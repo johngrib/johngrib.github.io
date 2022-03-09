@@ -147,6 +147,7 @@
  "/wiki/cmd/mv",
  "/wiki/cmd/openssl",
  "/wiki/cmd/sed",
+ "/wiki/cmd/shellcheck",
  "/wiki/cmd/tr",
  "/wiki/cmd/tree",
  "/wiki/cmd/xxd",

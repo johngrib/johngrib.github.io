@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "shellcheck",
+ "summary": "A shell script static analysis tool",
+ "parent": "cmd",
+ "url": "/wiki/cmd/shellcheck",
+ "updated": "2022-03-09 11:44:35 +0900",
+ "children": []
+}

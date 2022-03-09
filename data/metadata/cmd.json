@@ -24,6 +24,7 @@
   "cmd/mv",
   "cmd/openssl",
   "cmd/sed",
+  "cmd/shellcheck",
   "cmd/tr",
   "cmd/tree",
   "cmd/xxd",
