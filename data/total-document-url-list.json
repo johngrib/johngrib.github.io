@@ -117,6 +117,7 @@
  "/wiki/clojure/guide/spec",
  "/wiki/clojure/guide/threading-macros",
  "/wiki/clojure/higher-order-functions",
+ "/wiki/clojure/macros",
  "/wiki/clojure/reader",
  "/wiki/clojure/reference",
  "/wiki/clojure/reference/metadata",

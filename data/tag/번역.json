@@ -2,6 +2,7 @@
  "clojure/evaluation",
  "clojure/guide/reading-clojure-characters",
  "clojure/higher-order-functions",
+ "clojure/macros",
  "clojure/reference/transient",
  "Go-Blog-translation",
  "golang-debugging-what-you-deploy",

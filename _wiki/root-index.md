@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-09 11:40:50 +0900
+updated : 2022-03-09 23:56:29 +0900
 regenerate: true
 ---
 
@@ -288,6 +288,7 @@ regenerate: true
 * [[/clojure/reference]]
     * 01 [[/clojure/reader]]
     * 03 [[/clojure/evaluation]]
+    * 05 [[/clojure/macros]]
     * 10 [[/clojure/reference/transient]]
     * 14 [[/clojure/reference/metadata]]
 * [[/clojure/guide]]
