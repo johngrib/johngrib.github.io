@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail; IFS=$'\n\t'
+
 if [[ $1 = "docker" ]]; then
     bundle update && bundle install
     ./generateData.js
