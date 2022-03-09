@@ -3,7 +3,7 @@ layout  : wiki
 title   : date 명령어
 summary : 날짜나 시간을 출력하거나 설정한다
 date    : 2018-08-03 05:19:22 +0900
-updated : 2022-03-05 23:34:40 +0900
+updated : 2022-03-09 22:26:39 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -37,6 +37,14 @@ date +%s
 
  # unix timestamp를 읽기 쉬운 날짜로 변환
 date -r 1572511074
+
+ # yyyy-MM-dd 형식의 날짜를 timestamp로 변환
+date -jf %Y-%m-%d "2022-03-09" +%s
+
+ # 두 날짜 사이의 일수를 구하기
+from_time=$(date -jf %Y-%m-%d "2022-03-09" +%s)
+to_time=$(date -jf %Y-%m-%d "2022-03-07" +%s)
+echo $(((from_time - to_time) / 86400))         # 결과는 2
 ```
 
 ### GNU
