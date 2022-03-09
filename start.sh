@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 if [[ $1 = "docker" ]]; then
     bundle update && bundle install
@@ -21,7 +22,7 @@ elif [[ $1 = "null" ]]; then
     bundle exec jekyll serve --incremental --trace >> /dev/null 2>&1 &
     echo "Server started. But Logs are in /dev/null"
 
-    ps -ef | grep 'jekyll serve' | grep ruby | awk '{print $2}' > .localhost.pid
+    pgrep 'jekyll serve' > .localhost.pid
     echo "PID is saved in .localhost.pid"
 
 elif [[ $1 = "back" ]]; then
@@ -35,11 +36,11 @@ elif [[ $1 = "back" ]]; then
     bundle exec jekyll serve --incremental --trace >> .localhost.log 2>&1 &
     echo "Server started. Logs are in .localhost.log"
 
-    ps -ef | grep 'jekyll serve' | grep ruby | awk '{print $2}' > .localhost.pid
+    pgrep 'jekyll serve' > .localhost.pid
     echo "PID is saved in .localhost.pid"
 
 elif [[ $1 = "kill" && -f .localhost.pid ]]; then
-    kill `cat .localhost.pid`
+    kill "$(cat .localhost.pid)"
     rm .localhost.pid
     echo "Server killed"
 
