@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 0
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2022-01-29 01:18:22 +0900
+updated : 2022-03-09 22:45:09 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -1148,7 +1148,7 @@ map.put("b", 2);
 
 ## try catch finally
 
-다음은 [clojuredocs.org]( https://clojuredocs.org/clojure.core/finally )의 에제를 복사해 온 것이다.
+다음은 [clojuredocs.org]( https://clojuredocs.org/clojure.core/finally )의 예제를 복사해 온 것이다.
 
 ```clojure
 (try
