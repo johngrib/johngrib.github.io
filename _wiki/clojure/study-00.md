@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure를 학습하며 남기는 기록과 예제 0
 summary : 
 date    : 2021-12-03 12:42:06 +0900
-updated : 2022-03-09 22:45:09 +0900
+updated : 2022-03-09 22:59:50 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -293,6 +293,10 @@ Javascript에서는 재귀할 일이 있어도 이런 키워드가 없어서 익
 
 
 ## 구조체
+
+Clojure에 조금 익숙해지고 나니 Clojure 구조체보다 hashmap을 더 사용한다는 것을 알게 됐다.
+
+구조체는 사실 쓸 일이 없다. 이런 게 있다고만 알아두자.
 
 구조체 선언은 이렇게 한다.
 
