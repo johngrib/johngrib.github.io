@@ -16,6 +16,7 @@
  "clojure/reference",
  "clojure/reference/metadata",
  "clojure/reference/transient",
+ "clojure/repl-and-main",
  "clojure/study",
  "clojure/study-00",
  "clojure/study-01",

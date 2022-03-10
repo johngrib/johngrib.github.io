@@ -10,6 +10,7 @@
   "clojure/macros",
   "clojure/reader",
   "clojure/reference/metadata",
-  "clojure/reference/transient"
+  "clojure/reference/transient",
+  "clojure/repl-and-main"
  ]
 }
