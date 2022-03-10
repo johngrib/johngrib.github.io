@@ -15,7 +15,6 @@
  "vim-go-auto-import",
  "vim-go-env",
  "vim-go-with-ultisnips",
- "vim-persistent-undo",
  "vim-rest-console",
  "vim-tagbar-with-markdown",
  "vim-tmux-t-ut",
@@ -23,6 +22,7 @@
  "vim-with-space-char",
  "vim-ycm-python3",
  "vim/auto-completion",
+ "vim/persistent-undo",
  "vim/ultisnips",
  "vimwiki",
  "web-browser-vim"

@@ -3,7 +3,7 @@
  "title": "Vim persistent_undo 기능 사용하기",
  "summary": "Vim을 재실행해도 undo를 쓸 수 있다",
  "parent": "vim",
- "url": "/wiki/vim-persistent-undo",
- "updated": "2021-10-17 18:42:33 +0900",
+ "url": "/wiki/vim/persistent-undo",
+ "updated": "2022-03-10 21:43:58 +0900",
  "children": []
 }

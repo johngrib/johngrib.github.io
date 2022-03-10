@@ -13,7 +13,6 @@
   "vim-conceallevel",
   "vim-configure-split",
   "vim-f-hangul",
-  "vim-persistent-undo",
   "vim-rest-console",
   "vim-tagbar-with-markdown",
   "vim-tmux-t-ut",
@@ -21,6 +20,7 @@
   "vim-with-space-char",
   "vim-ycm-python3",
   "vim/help",
+  "vim/persistent-undo",
   "vim/ultisnips",
   "vimwiki"
  ]

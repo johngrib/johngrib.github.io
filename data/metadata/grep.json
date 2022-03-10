@@ -1,9 +1,0 @@
-{
- "type": "wiki",
- "title": "grep 명령어",
- "summary": "file pattern searcher",
- "parent": "cmd",
- "url": "/wiki/grep",
- "updated": "2021-10-17 18:38:47 +0900",
- "children": []
-}
