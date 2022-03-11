@@ -3,7 +3,7 @@ layout  : wiki
 title   : The REPL and main entry points
 summary : 번역 중인 문서
 date    : 2022-03-10 22:18:00 +0900
-updated : 2022-03-10 23:08:32 +0900
+updated : 2022-03-11 22:11:48 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -91,6 +91,51 @@ repl을 실행하기 전에 eval 옵션이 있다면 "Clojure ~(clojure-version)
 classpath 기준의 상대 경로는 `@` 또는 `@/` 접두사를 사용합니다.
 
 ### Launching a REPL
+
+>
+The simplest way to launch a Clojure _repl_ is to use the [clj](https://clojure.org/guides/getting_started ) command tool, which invokes clojure.main:
+
+Clojure repl을 시작하는 가장 간단한 방법은 `clojure.main`을 실행하는 clj 명령 툴을 사용하는 것입니다.
+
+```bash
+$ clj
+Clojure 1.10.0
+user=>
+```
+
+>
+The REPL prompt shows the name of the current namespace (\*ns\*), which defaults to _user_.
+>
+Several special vars are available when using the REPL:
+>
+- \*1, \*2, \*3 - hold the result of the last three expressions that were evaluated
+- \*e - holds the result of the last exception.
+
+REPL 프롬프트는 현재 네임스페이스(`*ns*`)의 이름을 보여줍니다. 디폴트 네임스페이스는 `user` 입니다.
+
+REPL을 사용할 때에는 다음과 같은 몇 가지 특수한 변수를 사용할 수 있습니다.
+
+- `*1`, `*2`, `*3` - 가장 최근에 평가한 표현식의 결과들을 순서대로 갖고 있습니다.
+- `*e` - 가장 최근 발생한 예외의 결과를 갖고 있습니다.
+
+>
+The [clojure.repl](https://clojure.github.io/clojure/clojure.repl-api.html ) namespace has a number of useful functions for inspecting the source and documentation of available functions:
+>
+- [doc](https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/doc ) - prints the docstring for a var given its name
+- [find-doc](https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/find-doc ) - prints the docstring for any var whose doc or name matches the pattern
+- [apropos](https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/apropos ) - returns a seq of definitions matching a regex
+- [source](https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/source ) - prints the source for a symbol
+- [pst](https://clojure.github.io/clojure/clojure.repl-api.html#clojure.repl/pst ) - **p**rint **s**tack **t**race for a given exception or \*e by default
+
+`clojure.repl` 네임스페이스에는 소스코드를 검사하는 데에 도움이 되는 다양하고 유용한 함수들과 그런 함수들을 설명하는 문서들도 포함되어 있습니다.
+
+- doc - name이 있는 var에 대한 docstring을 출력합니다.
+- find-doc - 주어진 패턴과 일치하는 doc이나 name에 대한 docstring을 출력합니다.
+- apropos - 정규식과 일치하는 정의들 시퀀스를 리턴합니다.
+- source - symbol의 소스를 출력합니다.
+- pst - **p**rint **s**tack **t**race. 주어진 예외에 대한 스택 트레이스를 출력합니다. 예외 기본값은 `*e` 입니다.
+
+
 ### Launching a Script
 ### Passing arguments to a Script
 ### Error printing
