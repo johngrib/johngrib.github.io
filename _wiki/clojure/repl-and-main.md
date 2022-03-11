@@ -3,7 +3,7 @@ layout  : wiki
 title   : The REPL and main entry points
 summary : 번역 중인 문서
 date    : 2022-03-10 22:18:00 +0900
-updated : 2022-03-11 22:40:17 +0900
+updated : 2022-03-11 22:44:22 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -148,6 +148,25 @@ clj -M /path/to/myscript.clj
 ```
 
 ### Passing arguments to a Script
+
+>
+To pass in arguments to a script, pass them in as further arguments when launching `clojure.main`:
+
+스크립트를 실행할 때 인자를 주고 싶다면, `clojure.main`을 실행할 때 함께 전달합니다.
+
+```bash
+clj -M /path/to/myscript.clj arg1 arg2 arg3
+```
+
+>
+The arguments will be provided to your program as a seq of strings bound to the var `*command-line-args*`:
+
+인자들은 여러분의 프로그램에 `*command-line-args*` 변수에 담긴 문자열 시퀀스로 전달됩니다.
+
+```clojure
+*command-line-args* => ("arg1" "arg2" "arg3")
+```
+
 ### Error printing
 #### At REPL
 #### As launcher
