@@ -3,7 +3,7 @@ layout  : wiki
 title   : The REPL and main entry points
 summary : 번역 중인 문서
 date    : 2022-03-10 22:18:00 +0900
-updated : 2022-03-11 22:11:48 +0900
+updated : 2022-03-11 22:40:17 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -137,6 +137,16 @@ The [clojure.repl](https://clojure.github.io/clojure/clojure.repl-api.html ) n
 
 
 ### Launching a Script
+
+>
+To run a file full of Clojure code as a script, pass the path to the script to `clojure.main` as an argument:
+
+Clojure 코드로 이루어진 스크립트 파일을 실행하려면, 해당 스크립트의 경로를 `clojure.main`의 인수로 전달합니다.
+
+```bash
+clj -M /path/to/myscript.clj
+```
+
 ### Passing arguments to a Script
 ### Error printing
 #### At REPL
