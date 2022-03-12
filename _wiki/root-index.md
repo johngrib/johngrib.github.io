@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-11 23:16:08 +0900
+updated : 2022-03-12 13:12:45 +0900
 regenerate: true
 ---
 
@@ -192,9 +192,10 @@ regenerate: true
 
 ## [[programming]]
 
+* [[/programming/comment]]
+* [[/programming/destructuring]]
 * [[inversion-of-control]]
 * [[n-version-programming]]
-* [[/programming/comment]]
 
 ## [[language]]
 
@@ -307,7 +308,6 @@ regenerate: true
 * [[/clojure/study]]
     * [[/clojure/earmuffs]]
     * [[/clojure/study/collection]]
-    * [[/clojure/study/destructuring]]
     * [[/clojure/study/function]]
     * [[/clojure/study/map]]
     * [[/clojure/study/merge-with]]

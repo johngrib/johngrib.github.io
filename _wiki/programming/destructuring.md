@@ -1,13 +1,13 @@
 ---
 layout  : wiki
-title   : Clojure의 destructuring
+title   : Destructuring
 summary : 작성중인 문서
 date    : 2022-03-11 23:16:09 +0900
-updated : 2022-03-11 23:33:08 +0900
+updated : 2022-03-12 13:10:32 +0900
 tag     : clojure
 toc     : true
 public  : true
-parent  : [[/clojure/study]]
+parent  : [[/programming]]
 latex   : false
 ---
 * TOC
@@ -15,11 +15,37 @@ latex   : false
 
 ## 구조분해?
 
-구조분해(destructuring)은 Clojure에서 주어진 자료구조의 내부 값들에 이름을 붙여주는 기법이다.
+구조분해(destructuring)은 자료구조의 내부 값들에 이름을 붙여주는 기법이다.
 
-`let` 바인딩이나, 함수에 입력되는 인자에서 구조분해를 사용하면 굉장 편리하다.
+`let` 바인딩이나, 함수에 입력되는 인자에서 구조분해를 사용하면 굉장히 편리하다.
 
-## 사용 예제
+## 여러 언어의 구조분해
+### JavaScript
+
+다음과 같은 함수가 있다고 하자.
+
+```javascript
+function print_head_numbers(numbers) {
+  const num0 = numbers[0];
+  const num1 = numbers[1];
+
+  console.log(num0, num1);
+}
+```
+
+위의 함수에 구조분해를 적용해 수정해 보자.
+
+```javascript
+// 배열이 함수에 입력될 때 num0, num1 로 배열의 구조를 분해한다
+//                           ↓
+function print_head_numbers([num0, num1]) {
+  console.log(num0, num1);
+}
+
+print_head_numbers([2, 9, 44]); //=> 2 9
+```
+
+### Clojure
 
 ```clojure
 (def names ["Kim" "Lee" "Park"])
@@ -30,7 +56,7 @@ latex   : false
     (println name3)))
 ```
 
-## destructure 함수
+#### defn destructure
 
 놀랍게도 destructure는 언어 문법이 아니라 `clojure.core`에서 제공하는 함수이다.
 

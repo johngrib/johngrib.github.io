@@ -8,7 +8,6 @@
  "children": [
   "clojure/earmuffs",
   "clojure/study/collection",
-  "clojure/study/destructuring",
   "clojure/study/function",
   "clojure/study/map",
   "clojure/study/merge-with",

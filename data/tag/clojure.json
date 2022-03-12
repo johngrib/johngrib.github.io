@@ -21,7 +21,6 @@
  "clojure/study-00",
  "clojure/study-01",
  "clojure/study/collection",
- "clojure/study/destructuring",
  "clojure/study/function",
  "clojure/study/map",
  "clojure/study/merge-with",
@@ -29,5 +28,6 @@
  "clojure/study/persistent-list",
  "clojure/study/set",
  "clojure/study/vector",
- "clojure/vim-setting"
+ "clojure/vim-setting",
+ "programming/destructuring"
 ]

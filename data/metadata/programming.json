@@ -7,6 +7,7 @@
  "updated": "2021-07-24 14:55:06 +0900",
  "children": [
   "inversion-of-control",
-  "n-version-programming"
+  "n-version-programming",
+  "programming/destructuring"
  ]
 }
