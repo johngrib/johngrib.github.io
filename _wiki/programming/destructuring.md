@@ -3,7 +3,7 @@ layout  : wiki
 title   : Destructuring
 summary : 작성중인 문서
 date    : 2022-03-11 23:16:09 +0900
-updated : 2022-03-12 15:19:53 +0900
+updated : 2022-03-12 23:39:52 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -404,6 +404,8 @@ map 에서도 사용할 수 있다.
       (reduce1 process-entry [] bents))))
 ```
 
+### Kotlin
+
 ## 함께 읽기
 
 - [[/clojure/guide/destructuring]]
@@ -412,3 +414,6 @@ map 에서도 사용할 수 있다.
 
 - [Destructuring assignment (developer.mozilla.org)]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment )
     - [한국어]( https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment )
+- [Destructuring declarations (kotlinlang.org)]( https://kotlinlang.org/docs/destructuring-declarations.html )
+
+
