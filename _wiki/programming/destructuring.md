@@ -3,7 +3,7 @@ layout  : wiki
 title   : Destructuring
 summary : 작성중인 문서
 date    : 2022-03-11 23:16:09 +0900
-updated : 2022-03-12 13:36:22 +0900
+updated : 2022-03-12 15:19:53 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -91,6 +91,10 @@ console.log(first_name, age); // John 28
 
 ### Clojure
 
+Clojure에서는 주로 `let` 바인딩과 함수 인자에서 구조분해를 사용한다.
+
+리스트 구조와 맵 구조를 갖고 있는 자료라면 무엇이든 가능하므로, Clojure 코드에서는 구조분해를 흔하게 볼 수 있다.
+
 ```clojure
 (def names ["Kim" "Lee" "Park"])
 
@@ -98,6 +102,176 @@ console.log(first_name, age); // John 28
     (println name1)
     (println name2)
     (println name3)))
+```
+
+필요없는 값이 있다면 보통 `_`에 할당해준다.
+`_`의 사용은 Clojure 사용자들끼리의 컨벤션이며, 사용해도 값이 할당되지 않는 건 아니다.
+
+```clojure
+(def names ["Kim" "Lee" "Park"])
+
+(let [[name1 _ name3] names]
+    (println name1)
+    (println name3)))
+```
+
+Clojure의 구조분해는 중첩해서 사용해도 잘 작동하므로, 복잡한 자료가 주어졌을 때 편리하게 사용할 수 있다.
+
+```clojure
+(let [[[a b] c] [[1 2] 3]]
+  (println a)
+  (println b)
+  (println c))
+; 1
+; 2
+; 3
+```
+
+```clojure
+(let [[[a [b]] c] [[1 [2]] 3]]
+  (println a)
+  (println b)
+  (println c))
+; 1
+; 2
+; 3
+```
+
+String에도 사용할 수 있다는 점에서 Lisp 철학을 엿볼 수 있다.
+
+```clojure
+(let [[x y z] "hello"]
+  (println x y z)
+  (map type [x y z]))
+; h e l
+; (java.lang.Character java.lang.Character java.lang.Character)
+```
+
+주어진 리스트의 나머지는 `&`을 사용해서 벡터로 할당할 수 있다. (JavaScript의 `...`를 떠올려보자)
+
+```clojure
+(let [[x y & rest] [\a \b \c \d \e]]
+  (println x y rest)
+  (map type [x y rest]))
+; a b (c d e)
+; (java.lang.Character java.lang.Character clojure.lang.PersistentVector$ChunkedSeq)
+```
+
+`:as`를 사용하면 구조분해의 대상인 자료구조를 `:as` 뒤에 있는 심볼에 할당할 수 있다.
+
+```clojure
+(let [[x y & rest :as total] [\a \b \c \d \e]]
+  (println x y rest)
+  (println total))
+; a b (c d e)
+; [a b c d e]
+```
+
+map 에서도 사용할 수 있다.
+
+```clojure
+(def person {:name "John"
+             :age  28
+             :fav  ["Running" "Reading"]})
+
+(let [{first-name :name
+       age        :age
+       fav        :fav} person]
+  (println first-name)
+  (println age)
+  (println fav))
+; John
+; 28
+; [Running Reading]
+```
+
+키워드를 그대로 이름으로 사용하고 싶다면 `:keys`를 쓴다.
+
+```clojure
+(def person {:name "John"
+             :age  28
+             :fav  ["Running" "Reading"]})
+
+(let [{:keys [name age fav]} person]
+  (println first)
+  (println age)
+  (println fav))
+; John
+; 28
+; [Running Reading]
+```
+
+`:as`도 사용 가능하다.
+
+```clojure
+(let [{name :name
+       age  :age
+       :as  all} person] ; person을 all에 할당
+  (println name)
+  (println age)
+  (println all))
+; John
+; 28
+; {:name John, :age 28, :fav [Running Reading]
+```
+
+찾을 수 없는 키에 대한 대안은 `:or`로 지정하면 된다.
+
+```clojure
+(let [{name :name
+       age  :age
+       :as  all
+       :or  {name "no name"
+             age  0}} (dissoc person :name)]
+  (println name)
+  (println age)
+  (println all))
+
+; no name
+; 28
+; {:age 28, :fav [Running Reading]}
+```
+
+만약 map의 키가 키워드가 아니라 string이라면 `:strs`를 사용할 수 있다.
+
+```clojure
+(let [{:strs [name age]
+       :as   all} {"name" "John" "age" 28}]
+  (println name)
+  (println age)
+  (println all))
+; John
+; 28
+; {name John, age 28}
+```
+
+키가 Symbol이라면 `:syms`를 쓰면 된다.
+
+```clojure
+(let [{:syms [name age]
+       :as   all} {'name "John" 'age 28}]
+  (println name)
+  (println age)
+  (println all))
+; John
+; 28
+; {name John, age 28}
+```
+
+중첩 구조분해가 가능하므로 깊은 곳에 지정된 값도 이름을 붙일 수 있다.
+
+```clojure
+(let [{name        :name
+       age         :age
+       [fav1 fav2] :fav     ; 중첩 구조분해
+       :as         all
+       :or         {name "no name"}} person]
+  (println name)
+  (println fav1)
+  (println fav2))
+; John
+; Running
+; {:name John, :age 28, :fav [Running Reading]}
 ```
 
 #### defn destructure
