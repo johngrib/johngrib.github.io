@@ -3,7 +3,7 @@ layout  : wiki
 title   : The REPL and main entry points
 summary : 번역 중인 문서
 date    : 2022-03-10 22:18:00 +0900
-updated : 2022-03-11 22:44:22 +0900
+updated : 2022-03-12 12:18:08 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -169,6 +169,75 @@ The arguments will be provided to your program as a seq of strings bound to the 
 
 ### Error printing
 #### At REPL
+
+>
+As of Clojure 1.10, Clojure errors categorized into one of several phases:
+>
+- `:read-source` - an error thrown while reading characters at the REPL or from a source file.
+- `:macro-syntax-check` - a syntax error found in the syntax of a macro call, either from spec or from a macro throwing IllegalArgumentException, IllegalStateException, or ExceptionInfo.
+- `:macroexpansion` - all other errors thrown during macro evaluation are categorized as macroexpansion errors.
+- `:compile-syntax-check` - a syntax error caught during compilation.
+- `:compilation` - non-syntax errors caught during compilation.
+- `:execution` - any errors thrown at execution time.
+- `:read-eval-result` - any error thrown while reading the result of execution (only applicable for REPLs that read the result).
+- `:print-eval-result` - any error thrown while printing the result of execution.
+
+Clojure 1.10 부터, Clojure error는 단계별로 분류되었습니다.
+
+- `:read-source` - 소스 파일에서 문자를 읽는 동안 던져진 에러.
+- `:macro-syntax-check` - 매크로 호출시 발견된 문법 에러.
+    - spec에서 던진 에러이거나, `IllegalArgumentException`, `IllegalStateException`, `ExceptionInfo`를 던지는 매크로인 경우에 해당합니다.
+- `:macroexpansion` - 매크로 평가 중에 던져지는 그 외의 에러는 매크로 확장 에러(macroexpansion error)로 분류됩니다.
+- `:compile-syntax-check` - 컴파일 중에 캐치된 문법 에러.
+- `:compilation` - 컴파일 중에 캐치된 non-syntax 에러.
+- `:execution` - 실행 중에 던져지는 모든 에러.
+- `:read-eval-result` - 실행 결과를 읽는 동안 던져진 에러. (결과를 읽는 REPL에서만 적용되는 에러)
+- `:print-eval-result` - 실행 결과를 출력하는 동안 던져진 에러.
+
+>
+Exceptions thrown during all phases (exception `:execution`) will have ex-data attached with one or more of the following keys:
+>
+- `:clojure.error/phase` - phase indicator
+- `:clojure.error/source` - file name (no path)
+- `:clojure.error/line` - integer line number
+- `:clojure.error/column` - integer column number
+- `:clojure.error/symbol` - symbol being expanded/compiled/invoked
+- `:clojure.error/class` - cause exception class symbol
+- `:clojure.error/cause` - cause exception message
+- `:clojure.error/spec` - explain-data for a spec error
+
+모든 단계에서 던져진 예외(`:execution` 예외)에는 추가 데이터가 덧붙여지며, 추가 데이터는 다음과 같은 키 집합을 갖습니다.
+
+- `:clojure.error/phase` - 단계
+- `:clojure.error/source` - 파일 이름(파일 경로는 없음)
+- `:clojure.error/line` - 행 번호
+- `:clojure.error/column` - 열 번호
+- `:clojure.error/symbol` - 확장/컴파일/실행되는 심볼
+- `:clojure.error/class` - 예외 클래스 심볼
+- `:clojure.error/cause` - 예외 메시지
+- `:clojure.error/spec` - spec 에러의 설명 데이터
+
+>
+The clojure.main REPL includes the categorization and printing of errors by default, but the individual steps of this process are exposed as well for other REPLs to use, specifically the functions:
+>
+- [Throwable-\>map](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/Throwable-%3Emap ) - converts an Exception chain into Clojure data
+- [ex-triage](https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/ex-triage ) - analyzes Clojure exception data to pull relevant information from the top and bottom of the exception chain into a map describing just the set of data needed to format an exception string
+- [ex-str](https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/ex-str ) - produces a phase-appropriate message given a set of exception data
+
+`clojure.main` REPL는 에러의 분류와 출력 기능을 기본적으로 포함하고 있습니다.
+그러나 이러한 프로세스의 각 단계별로 다음의 함수들을 사용해 다른 REPL에서 활용할 수 있습니다.
+
+- `Throwable->map` - 예외 체인을 Clojure 데이터로 변환
+- `ex-triage` - Clojure 예외 데이터를 탑다운으로 분석하여 맵으로 변환하며, 이 맵은 exception string 포맷에 필요한 데이터의 집합입니다.
+- `ex-str` - 주어진 예외 데이터 집합을 참고해 단계에 따른 적절한 메시지를 생성합니다.
+
+>
+The clojure.main REPL combines these functions in a pipeline to produce the printed exception message: `(-> ex Throwable->map clojure.main/ex-triage clojure.main/ex-str)`.
+Other REPLs can use one or more pieces of this pipeline as necessary when building or customizing their exception printing.
+
+`clojure.main` REPL은 이러한 함수들을 하나의 파이프라인으로 구성하여 예외 메시지를 출력합니다. `(-> ex Throwable->map clojure.main/ex-triage clojure.main/ex-str)`
+다른 REPL들을 사용할 때 예외 출력을 구성하거나 커스터마이징이 필요하다면 이 파이프라인의 일부를 가져다 쓰면 됩니다.
+
 #### As launcher
 ### tap
 ### Launching a Socket Server
