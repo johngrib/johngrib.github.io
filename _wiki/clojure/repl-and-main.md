@@ -3,7 +3,7 @@ layout  : wiki
 title   : The REPL and main entry points
 summary : 번역 중인 문서
 date    : 2022-03-10 22:18:00 +0900
-updated : 2022-03-12 12:18:08 +0900
+updated : 2022-03-12 23:08:57 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -239,6 +239,46 @@ Other REPLs can use one or more pieces of this pipeline as necessary when buildi
 다른 REPL들을 사용할 때 예외 출력을 구성하거나 커스터마이징이 필요하다면 이 파이프라인의 일부를 가져다 쓰면 됩니다.
 
 #### As launcher
+
+>
+Up to Clojure 1.10.0, clojure.main when used as a program launcher (with -m, -e, or with a script), uncaught exceptions would be automatically printed along with the full nested stack trace.
+In this case, the error triage and printing process above was not applied.
+>
+As of Clojure 1.10.1, uncaught exceptions will now be caught and printed according to the same error triage and printing functionality as the Clojure REPL.
+The full stack trace, ex-info, and other information will be printed to a target specified by the configuration.
+>
+The three available error targets are:
+>
+> - `file` - write to a temp file (default, falls back to `stderr`)
+> - `stderr` - write to stderr stream
+> - `none` - don’t write
+>
+These error targets can be specified either as options to clojure.main, or as Java system properties (flags take precedence).
+When invoking clojure.main (or using the clj tool), use `--report <target>`.
+For Java system property, use `-Dclojure.main.report=<target>`.
+>
+Other programs may wish to take advantage of this functionality, and it is available in [report-error](https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/report-error ), which takes a Throwable and optionally the :target.
+
+Clojure 1.10.0 버전까지는 `clojure.main`을 (`-m`, `-e` 옵션을 주거나 스크립트 파일을 제공해서) 프로그램 런처로 사용할 때, 캐치하지 못한 예외는 자동으로 중첩된 스택 트레이스 전체를 출력하도록 되어 있었습니다.
+이런 경우에는 위에서 언급한 에러별 단계나 출력 과정이 적용되지 않았습니다.
+
+그러나 Clojure 1.10.1 버전부터는 캐치하지 못한 예외라 하더라도 캐치되어 Clojure REPL과 같은 에러 단계와 출력 함수를 통해 출력됩니다.
+스택 트레이스 전체와 추가 정보, 그리고 그 외의 정보들은 설정에서 지정한 곳으로 출력됩니다.
+
+에러 출력 대상은 3가지이며 다음과 같습니다.
+
+- `file` - 임시 파일로 출력합니다. (이 설정이 기본값이며, 실패하게 되면 `stderr`로 출력됩니다.)
+- `stderr` - stderr 스트림에 출력합니다.
+- `none` - 출력하지 않습니다.
+
+
+이런 에러 출력 대상들은 `clojure.main`에 주는 옵션이나 Java 시스템 속성(여기에 지정한 플래그가 우선순위를 갖습니다)으로 지정할 수 있습니다.
+`clojure.main`이나 `clj` 도구를 사용하는 경우에는 `--report <target>`를 사용하여 에러 출력 대상을 지정할 수 있습니다.
+Java 시스템 속성을 지정하려면 `-Dclojure.main.report=<target>`를 사용하세요.
+
+
+다른 프로그램에서 이 기능을 활용하고자 한다면, [report-error](https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/report-error )를 통해 사용할 수 있습니다. `report-error`는 `Throwable`와 `:target`을 입력받는 함수입니다.
+
 ### tap
 ### Launching a Socket Server
 ### Related functions
