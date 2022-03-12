@@ -3,7 +3,7 @@ layout  : wiki
 title   : Destructuring
 summary : 작성중인 문서
 date    : 2022-03-11 23:16:09 +0900
-updated : 2022-03-12 13:15:05 +0900
+updated : 2022-03-12 13:36:22 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -40,7 +40,53 @@ function print_head_numbers([num0, num1]) {
   console.log(num0, num1);
 }
 
-print_head_numbers([2, 9, 44]); //=> 2 9
+print_head_numbers([2, 9, 44]); // 2 9
+```
+
+물론 함수에 진입할 때에만 쓸 수 있는 것은 아니다.
+
+```javascript
+// ... 을 사용해 rest에 나머지 배열 할당
+var [a, b, ...rest] = ['a', 'b', 'c', 'd'];
+console.log(a); // a
+console.log(b); // b
+console.log(rest); // ['c', 'd']
+```
+
+구조분해는 중첩해 사용할 수도 있다.
+
+```javascript
+var [[a, b]] = [['aa', 'bb']]
+console.log(a, b)   // aa bb
+```
+
+그러나 구조분해 레벨을 맞추지 않는다면 에러가 발생한다.
+
+```javascript
+var [[a, b], c] = [['aa', 'bb'], 'c']
+// Uncaught SyntaxError: Identifier 'c' has already been declared
+```
+
+기본값을 제공할 수도 있다.
+
+```javascript
+var [a='a', b='b'] = ['aa']
+console.log(a, b)   // aa b
+```
+
+구조분해는 Object에도 사용할 수 있다.
+
+```javascript
+var {name, age} = {name: 'John', age: 28};
+console.log(name, age); // John 28
+```
+
+`:`를 사용해 Object의 키 값과 다른 이름을 지정할 수도 있다.
+
+```javascript
+var {name: first_name, age, fav} = {name: 'John', age: 28, fav: ['Running', 'Reading']};
+
+console.log(first_name, age); // John 28
 ```
 
 ### Clojure
