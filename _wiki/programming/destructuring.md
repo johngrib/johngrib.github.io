@@ -3,7 +3,7 @@ layout  : wiki
 title   : Destructuring
 summary : 작성중인 문서
 date    : 2022-03-11 23:16:09 +0900
-updated : 2022-03-12 13:10:32 +0900
+updated : 2022-03-12 13:15:05 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -15,9 +15,7 @@ latex   : false
 
 ## 구조분해?
 
-구조분해(destructuring)은 자료구조의 내부 값들에 이름을 붙여주는 기법이다.
-
-`let` 바인딩이나, 함수에 입력되는 인자에서 구조분해를 사용하면 굉장히 편리하다.
+구조분해(destructuring)는 자료구조의 내부 값들에 이름을 붙여주는 기법이다.
 
 ## 여러 언어의 구조분해
 ### JavaScript
@@ -190,3 +188,7 @@ print_head_numbers([2, 9, 44]); //=> 2 9
 
 - [[/clojure/guide/destructuring]]
 
+## 참고문헌
+
+- [Destructuring assignment (developer.mozilla.org)]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment )
+    - [한국어]( https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment )
