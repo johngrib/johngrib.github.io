@@ -3,11 +3,11 @@ layout  : wiki
 title   : git log
 summary : 
 date    : 2019-12-01 08:14:22 +0900
-updated : 2019-12-01 19:20:57 +0900
+updated : 2022-03-13 11:06:33 +0900
 tag     : git
 toc     : true
 public  : true
-parent  : [[git]]
+parent  : [[/git]]
 latex   : false
 ---
 * TOC
