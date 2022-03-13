@@ -3,7 +3,7 @@ layout  : wiki
 title   : git log
 summary : 
 date    : 2019-12-01 08:14:22 +0900
-updated : 2022-03-13 11:06:33 +0900
+updated : 2022-03-13 11:13:19 +0900
 tag     : git
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 ## 로그 그래프
 
-나는 로그 그래프 확인에 다음 알리아스를 사용해왔다.
+나는 로그 그래프 확인에 주로 다음 알리아스를 사용한다.
 
 ```sh
 l = "log \
@@ -26,18 +26,7 @@ l = "log \
 
 `git l`을 입력하면 다음과 같이 출력된다.
 
-![]( /resource/wiki/git-log/69907636-866a3000-141b-11ea-8b50-732c038279a3.png )
-
-그리고 최근에 다음과 같이 바꿔서 사용하기 시작했다.
-
-```sh
-l = "log \
-    --color --graph --decorate \
-    --date=format:'%Y-%m-%d' \
-    --pretty=format:'%C(cyan)%h%C(auto)%d %s %C(magenta)(%ad)%C(bold blue) %an'"
-```
-
-![]( /resource/wiki/git-log/69907643-a26dd180-141b-11ea-9359-9a809f5b621e.png )
+![]( ./69907636-866a3000-141b-11ea-8b50-732c038279a3.png )
 
 
 
