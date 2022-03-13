@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-13 23:37:45 +0900
+updated : 2022-03-13 23:44:30 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -272,6 +272,25 @@ return RT.list(Compiler.FN, args, form);
   [& body]
   (list 'new 'clojure.lang.LazySeq (list* '^{:once true} fn* [] body)))
 ```
+
+### if-not
+
+[clojure.core/if-not]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L769 )
+
+```clojure
+(defmacro if-not
+  "Evaluates test. If logical false, evaluates and returns then expr, 
+  otherwise else expr, if supplied, else nil."
+  {:added "1.0"}
+  ([test then] `(if-not ~test ~then nil))
+  ([test then else]
+   `(if (not ~test) ~then ~else)))
+```
+
+`if-not`은 `when-not`과 비슷하지만 `else`가 있다는 차이점이 있다.
+
+`~`를 많이 사용하고 있는 것이 눈에 띈다.
+[[/clojure/guide/reading-clojure-characters#&#45;&#45;&#45;unquote]]{`~`는 unquote}로, quot를 풀어버리는 의미를 갖고 있다.
 
 ## 참고문헌
 
