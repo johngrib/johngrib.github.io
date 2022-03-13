@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 00:05:42 +0900
+updated : 2022-03-14 00:13:53 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -318,6 +318,7 @@ return RT.list(Compiler.FN, args, form);
 이제 매크로 코드를 읽어보자.
 
 - `(let [and# ~x]` - 첫 번째 인자인 `x`를 `and#`에 `let` 할당한다.
+    - [[/clojure/guide/reading-clojure-characters#&#45;&#45;&#45;&#45;syntax-quote]]{``` `(let ```에서 ``` ` ```은 syntax unquote}이며, 심볼을 현재 namespace로 resolve해준다.
 - `(if and#` - `and#`가 참이면...
     - `(and ~@next)` - 첫번째 조건은 통과했다. 이제 나머지 인자들에 대해 `and`를 재귀한다.
 - `(if and#` - `and#`가 거짓이면...
