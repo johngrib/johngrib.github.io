@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-13 23:29:44 +0900
+updated : 2022-03-13 23:37:45 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -248,6 +248,30 @@ return RT.list(Compiler.FN, args, form);
 ```
 
 `FnReader`라는 클래스 이름과 `invoke`라는 메소드 이름, 그리고 `(FN args form)`이라는 모양을 조합해 보면 함수 호출이라는 것을 짐작할 수 있다.
+
+### delay
+
+[clojure.core/delay]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L748 )
+
+```clojure
+(defmacro delay
+  "Takes a body of expressions and yields a Delay object that will
+  invoke the body only the first time it is forced (with force or deref/@), and
+  will cache the result and return it on all subsequent force
+  calls. See also - realized?"
+  {:added "1.0"}
+  [& body]
+    (list 'new 'clojure.lang.Delay (list* `^{:once true} fn* [] body)))
+```
+
+`delay`는 `lazy-seq`와 매우 비슷한 구조를 갖는 매크로이다.
+어떤 Java 클래스를 사용하는지만 다르다.
+
+```clojure
+(defmacro lazy-seq
+  [& body]
+  (list 'new 'clojure.lang.LazySeq (list* '^{:once true} fn* [] body)))
+```
 
 ## 참고문헌
 
