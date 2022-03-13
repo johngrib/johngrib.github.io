@@ -3,7 +3,7 @@ layout  : wiki
 title   : The REPL and main entry points
 summary : 번역 중인 문서
 date    : 2022-03-10 22:18:00 +0900
-updated : 2022-03-12 23:08:57 +0900
+updated : 2022-03-13 21:28:55 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -280,6 +280,28 @@ Java 시스템 속성을 지정하려면 `-Dclojure.main.report=<target>`를 사
 다른 프로그램에서 이 기능을 활용하고자 한다면, [report-error](https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/report-error )를 통해 사용할 수 있습니다. `report-error`는 `Throwable`와 `:target`을 입력받는 함수입니다.
 
 ### tap
+
+>
+tap is a shared, globally accessible system for distributing a series of informational or diagnostic values to a set of (presumably effectful) handler functions.
+It can be used as a better debug `prn`, or for facilities like logging etc.
+>
+[`tap>`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/tap%3E ) sends a value to the set of taps.
+Taps can be added with [`add-tap`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/add-tap ) and will be called with any value sent to tap\>.
+The tap function may (briefly) block (e.g. for streams) and will never impede calls to tap\>, but blocking indefinitely may cause tap values to be dropped.
+If no taps are registered, tap\> discards.
+Remove taps with [`remove-tap`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-tap ).
+
+tab은 일련의 정보나 디버깅용 값 등을 처리 함수에 전달하기 위한 것으로, 전역적으로 사용할 수 있는 공유된 시스템입니다.
+tab은 뛰어난 디버깅 도구인 `prn`이나 logging 등을 통해 사용할 수 있습니다.
+
+`tap>` 함수는 tap 집합에 값을 보냅니다.
+`add-tap` 함수를 사용하면 tap을 추가할 수 있으며, `tap>` 함수를 통해 tap으로 보낸 값을 호출할 수 있습니다.
+tap 함수는 실행 흐름을 살짝 block(예를 들어 streams)을 할 수 있지만, `tap>` 함수 호출은 차단하지 않습니다.
+그러나 만약 무기한으로 block한다면 tap 값이 버려질 수도(dropped) 있습니다.
+
+만약 등록된 tap이 없다면, `tab>` 함수로 삭제를 할 수 있습니다.
+tap 삭제는 `remove-tap` 함수로 수행할 수 있습니다.
+
 ### Launching a Socket Server
 ### Related functions
 
