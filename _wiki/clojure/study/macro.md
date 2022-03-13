@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-13 23:59:33 +0900
+updated : 2022-03-14 00:05:42 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 예제
+## clojure.core
 
 ### when
 
