@@ -3,7 +3,7 @@ layout  : wiki
 title   : The REPL and main entry points
 summary : 번역 중인 문서
 date    : 2022-03-10 22:18:00 +0900
-updated : 2022-03-13 21:28:55 +0900
+updated : 2022-03-13 21:48:16 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -303,5 +303,82 @@ tap 함수는 실행 흐름을 살짝 block(예를 들어 streams)을 할 수 �
 tap 삭제는 `remove-tap` 함수로 수행할 수 있습니다.
 
 ### Launching a Socket Server
+
+>
+The Clojure runtime now has the ability to start a socket server at initialization based on system properties.
+One expected use for this is serving a socket-based REPL, but it also has many other potential uses for dynamically adding server capability to existing programs without code changes.
+
+이제 Clojure runtime도 시스템 속성을 기반으로 초기화할 때 소켓 서버를 시작할 수 있는 기능을 갖게 됐습니다.
+이 기능은 일차적으로는 소켓 기반 REPL을 제공하는 용도로 사용할 수 있습니다.
+그러나 이미 돌아가고 있는 프로그램의 코드를 수정하지 않고도 서버 기능을 동적으로 추가하는 등의 다양한 잠재적인 용도로도 활용할 수 있습니다.
+
+>
+A socket server will be started for each JVM system property like "clojure.server.<server-name\>".
+The value for this property is an edn map representing the configuration of the socket server with the following properties:
+>
+- `server-daemon` - defaults to true, socket server thread doesn’t block exit
+- `address` - host or address, defaults to loopback
+- `port` - positive integer, required
+- `accept` - namespaced symbol of function to invoke on socket accept, required
+- `args` - sequential collection of args to pass to accept
+- `bind-err` - defaults to true, binds `*err*` to socket out stream
+- `client-daemon` - defaults to true, socket client thread doesn’t block exit
+
+`clojure.server<server-name>`과 같이 JVM 시스템 속성을 지정해 주면 각각의 JVM 에서 소켓 서버가 시작될 것입니다.
+이 속성의 값은 소켓 서버의 설정을 표현하는 edn 맵이며, 아래에 나열된 속성값들을 갖습니다.
+
+- `server-daemon` - 기본값은 true. 소켓 서버 스레드는 프로세스를 블록하지 않고 백그라운드로 실행됩니다.
+- `address` - 호스트 또는 주소. 기본값은 loopback.
+- `port` - 양의 정수. 필수값.
+- `accept` - 소켓이 accept 할 때 호출할 함수의 네임 스페이스가 명시된 심볼. 필수값.
+- `args` - accept 함수에 전달할 순차적인 인자 컬렉션. 필수값.
+- `bind-err` - 기본값은 true. `*err*`를 소켓 출력 스트림으로 바인딩합니다.
+- `client-daemon` - 기본값은 true. 소켓 클라이언트 스레드는 프로세스를 블록하지 않고 백그라운드로 실행됩니다.
+
+>
+Additionally, there is a repl function provided that is slightly customized for use with the socket server in [clojure.core.server/repl](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl ).
+>
+Following is an example of starting a socket server with a repl listener.
+This can be added to any existing Clojure program to allow it to accept external REPL clients via a local connection to port 5555.
+
+한편, `clojure.core.server/repl`에는 소켓 서버와 함께 사용하도록 적절히 커스터마이즈된 repl 함수가 제공됩니다.
+
+다음은 repl 리스너를 사용해 소켓 서버를 시작하는 예제입니다.
+이 옵션을 기존의 Clojure 프로그램에 제공해서, 외부 REPL 클라이언트를 5555 포트에 대한 local 연결을 통해 accept하도록 할 수 있습니다.
+
+```bash
+-Dclojure.server.repl="{:port 5555 :accept clojure.core.server/repl}"
+```
+
+>
+An example client you can use to connect to this repl remotely is telnet:
+
+이 REPL에 원격으로 연결하는 데 사용하는 예제 클라이언트로 telnet을 사용해 봅시다.
+
+```bash
+$ telnet 127.0.0.1 5555
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+user=> (println "hello")
+hello
+```
+
+>
+You can instruct the server to close the client repl session by using the special command `:repl/quit`:
+
+특수한 명령어인 `:repl/quit`을 사용하면 서버에 클라이언트 repl 세션을 닫으라고 지시할 수 있습니다.
+
+```bash
+user=> :repl/quit
+Connection closed by foreign host.
+```
+
+>
+Also see:
+>
+- [CLJ-1671](https://clojure.atlassian.net/browse/CLJ-1671 )
+- [Socket Server and REPL design page](https://archive.clojure.org/design-wiki/display/design/Socket%2BServer%2BREPL.html )
+
 ### Related functions
 
