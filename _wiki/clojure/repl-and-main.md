@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : The REPL and main entry points
-summary : 번역 중인 문서
+summary : 
 date    : 2022-03-10 22:18:00 +0900
-updated : 2022-03-13 21:48:16 +0900
+updated : 2022-03-13 21:54:25 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -382,3 +382,10 @@ Also see:
 
 ### Related functions
 
+>
+- Main entry point: [clojure.main/main](https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/main )
+- Reusable REPL: [clojure.main/repl](https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/repl )
+- Error handling: [clojure.main/ex-triage](https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/ex-triage ) [clojure.main/ex-str](https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/ex-str )
+- Allowing set! for the customary REPL vars: [clojure.main/with-bindings](https://clojure.github.io/clojure/clojure.main-api.html#clojure.main/with-bindings )
+- Socket server control: [clojure.core.server/start-server](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/start-server ) [clojure.core.server/stop-server](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/stop-server ) [clojure.core.server/stop-servers](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/stop-servers )
+- Socket repl: [clojure.core.server/repl](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core.server/repl )
