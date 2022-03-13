@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-13 23:44:30 +0900
+updated : 2022-03-13 23:59:33 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -291,6 +291,55 @@ return RT.list(Compiler.FN, args, form);
 
 `~`를 많이 사용하고 있는 것이 눈에 띈다.
 [[/clojure/guide/reading-clojure-characters#&#45;&#45;&#45;unquote]]{`~`는 unquote}로, quot를 풀어버리는 의미를 갖고 있다.
+
+### and
+
+다른 언어에서는 핵심 키워드였을 `and`는 Clojure에서는 우아하게 macro로 정의되어 있다.
+
+[clojure.core/and]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L844 )
+
+```clojure
+(defmacro and
+  "Evaluates exprs one at a time, from left to right. If a form
+  returns logical false (nil or false), and returns that value and
+  doesn't evaluate any of the other expressions, otherwise it returns
+  the value of the last expr. (and) returns true."
+  {:added "1.0"}
+  ([] true)
+  ([x] x)
+  ([x & next]
+   `(let [and# ~x]
+      (if and# (and ~@next) and#))))
+```
+
+- `and#`에서 [[/clojure/guide/reading-clojure-characters#symbol&#45;&#45;&#45;gensym]]{마지막에 `#`를 붙이는 것은 generated symbol을 위한 것}으로, macro 안쪽에서 `let`을 사용할 때 쓰는 기법이다.
+- `~@next`에서 [[/clojure/guide/reading-clojure-characters#&#45;&#45;&#45;unquote-splicing]]{`~@`는 unquote splicing 이다}.
+
+이제 매크로 코드를 읽어보자.
+
+- `(let [and# ~x]` - 첫 번째 인자인 `x`를 `and#`에 `let` 할당한다.
+- `(if and#` - `and#`가 참이면...
+    - `(and ~@next)` - 첫번째 조건은 통과했다. 이제 나머지 인자들에 대해 `and`를 재귀한다.
+- `(if and#` - `and#`가 거짓이면...
+    - `and#` - 거짓으로 평가된 값을 리턴한다.
+
+REPL에서 `and`를 사용해보며 macro의 동작을 체험해보자.
+
+```clojure
+;; 거짓이 하나라도 포함되어 있는 경우
+;; macro 정의대로 가장 먼저 거짓으로 평가되는 값을 리턴
+(and nil 3)     ; nil
+(and false 3)   ; false
+(and 1 2 3 false 4) ; false
+```
+
+```clojure
+;; 모두 참인 경우
+;; macro 정의대로 순서대로 평가해서 가장 마지막에 참으로 평가한 값을 리턴
+(and 1 2 3 4)       ; 4
+(and true #{} [] 7) ; 7
+```
+
 
 ## 참고문헌
 
