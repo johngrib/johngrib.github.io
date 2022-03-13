@@ -22,6 +22,7 @@
  "clojure/study-01",
  "clojure/study/collection",
  "clojure/study/function",
+ "clojure/study/macro",
  "clojure/study/map",
  "clojure/study/merge-with",
  "clojure/study/number",
