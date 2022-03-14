@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 09:23:02 +0900
+updated : 2022-03-14 18:23:02 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -355,6 +355,7 @@ REPL에서 `and`를 사용해보며 macro의 동작을 체험해보자.
      and__5531__auto__))
 ```
 
+- 참고로 `let`이 `clojure.core/let`으로 확장된 것은 ``` ` ```의 영향이다.
 
 
 ## 참고문헌
