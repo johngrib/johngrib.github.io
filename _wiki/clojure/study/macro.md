@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 21:09:23 +0900
+updated : 2022-03-14 21:47:56 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -407,7 +407,7 @@ REPL에서 `and`를 사용해보며 macro의 동작을 체험해보자.
             (monitor-exit locklocal#)))))))
 ```
 
-[clojuredocs.org의 예제]( https://clojuredocs.org/clojure.core/locking#example-542692cdc026201cdc326d21 )를 읽어보면 `locking`이 Java의 `synchronized`처럼 작동하는 매크로라는 설명이 있다.
+[clojuredocs.org의 예제]( https://clojuredocs.org/clojure.core/locking#example-542692cdc026201cdc326d21 )를 읽어보면 `locking`이 [[/java/synchronized]]처럼 작동하는 매크로라는 설명이 있다.
 
 > ```clojure
 > ;; locking operates like the synchronized keyword in Java.
