@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 23:21:46 +0900
+updated : 2022-03-14 23:23:56 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -613,6 +613,24 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
      ret#))
 ```
 
+### defstruct
+
+[clojure.core/defstruct]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L4046 )
+
+```clojure
+(defmacro defstruct
+  "Same as (def name (create-struct keys...))"
+  {:added "1.0"
+   :static true}
+  [name & keys]
+  `(def ~name (create-struct ~@keys)))
+```
+
+가장 간단한 형태의 함수 호출 매크로라 할 수 있다.
+
+- 첫 번째 인자는 `name`으로, `def`를 통해 이름을 붙여준다.
+- `create-struct` 함수에 두번째부터 마지막 인자까지를 넘겨준다.
+
 ## TODO
 
 ```text
@@ -634,7 +652,6 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
 ### doto
 ### memfn
 ### def-aset
-### defstruct
 ```
 
 ## 참고문헌
