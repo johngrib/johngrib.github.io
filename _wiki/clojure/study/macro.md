@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 23:23:56 +0900
+updated : 2022-03-14 23:26:56 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -631,27 +631,57 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
 - 첫 번째 인자는 `name`으로, `def`를 통해 이름을 붙여준다.
 - `create-struct` 함수에 두번째부터 마지막 인자까지를 넘겨준다.
 
+### let
+
+[clojure.core/let]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L4498 )
+
+```clojure
+(defmacro let
+  "binding => binding-form init-expr
+  binding-form => name, or destructuring-form
+  destructuring-form => map-destructure-form, or seq-destructure-form
+
+  Evaluates the exprs in a lexical context in which the symbols in
+  the binding-forms are bound to their respective init-exprs or parts
+  therein.
+
+  See https://clojure.org/reference/special_forms#binding-forms for
+  more information about destructuring."
+  {:added "1.0", :special-form true, :forms '[(let [bindings*] exprs*)]}
+  [bindings & body]
+  ;; 입력 assert
+  (assert-args
+     ;; 바인딩이 vector 타입이어야 한다
+     (vector? bindings) "a vector for its binding"
+     ;; 바인딩 vector의 원소가 짝수개여야 한다
+     (even? (count bindings)) "an even number of forms in binding vector")
+
+  ;; 바인딩을 구조분해하고, let*의 첫 번째 인자로. body 리스트는 그 이후 인자로.
+  `(let* ~(destructure bindings) ~@body))
+```
+
 ## TODO
 
 ```text
-### if-let
-### when-let
-### if-some
-### when-some
-### binding
-### with-bindings
-### bound-fn
-### sync
-### io!
-### vswap!
-### dotimes
-### declare
-### doseq
-### import
-### with-open
-### doto
-### memfn
-### def-aset
+ ### if-let
+ ### when-let
+ ### if-some
+ ### when-some
+ ### binding
+ ### with-bindings
+ ### bound-fn
+ ### sync
+ ### io!
+ ### vswap!
+ ### dotimes
+ ### declare
+ ### doseq
+ ### import
+ ### with-open
+ ### doto
+ ### memfn
+ ### def-aset
+ ### with-local-vars
 ```
 
 ## 참고문헌
