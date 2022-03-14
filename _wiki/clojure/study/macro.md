@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 22:46:37 +0900
+updated : 2022-03-14 22:49:00 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -543,6 +543,32 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
 스레딩 매크로를 거치면서 메타데이터가 유실되지 않도록 처리해주는 것이다.
 
 `seq?` 함수는 검사 대상이 `clojure.lang.ISeq` 타입인지를 검사하는데, 이를 통해 메타데이터 적용 가능 대상을 `seq?`로 판별할 수 있다는 것을 배울 수 있다.
+
+### ->>
+
+[clojure.core/->>]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L1710 )
+
+```clojure
+(defmacro ->>
+  "Threads the expr through the forms. Inserts x as the
+  last item in the first form, making a list of it if it is not a
+  list already. If there are more forms, inserts the first form as the
+  last item in second form, etc."
+  {:added "1.1"}
+  [x & forms]
+  (loop [x x, forms forms]
+    (if forms
+      (let [form (first forms)
+            threaded (if (seq? form)
+              ;;                                         ↓
+              (with-meta `(~(first form) ~@(next form)  ~x) (meta form))
+              (list form x))]
+        (recur threaded (next forms)))
+      x)))
+```
+
+`->`와 거의 같다. `~x`의 위치만 다르다는 점에 주목.
+
 
 ## 참고문헌
 
