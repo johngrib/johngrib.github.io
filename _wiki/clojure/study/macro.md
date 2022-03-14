@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 18:37:25 +0900
+updated : 2022-03-14 21:09:23 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -387,6 +387,69 @@ REPL에서 `and`를 사용해보며 macro의 동작을 체험해보자.
 `(let [or# ~x]
       ;; or는 첫 번째 인자가 참이라면 검사가 끝난다
       (if or# or# (or ~@next)))
+```
+
+### locking
+
+```clojure
+(defmacro locking
+  "Executes exprs in an implicit do, while holding the monitor of x.
+  Will release the monitor of x in all circumstances."
+  {:added "1.0"}
+  [x & body]
+  `(let [lockee# ~x]
+     (try
+       (let [locklocal# lockee#]
+         (monitor-enter locklocal#)
+         (try
+           ~@body
+           (finally
+            (monitor-exit locklocal#)))))))
+```
+
+[clojuredocs.org의 예제]( https://clojuredocs.org/clojure.core/locking#example-542692cdc026201cdc326d21 )를 읽어보면 `locking`이 Java의 `synchronized`처럼 작동하는 매크로라는 설명이 있다.
+
+> ```clojure
+> ;; locking operates like the synchronized keyword in Java.
+> ```
+
+매크로를 잘 읽어보면 `try`-`catch`로 감싼 `monitor-enter`-`monitor-exit` 호출 구조를 만드는 내용이다.
+
+#### monitor-enter 와 monitor-exit
+
+`doc`으로 이 두 함수를 조사해 보면 사용자 코드에서는 권장되지 않으며, 대안으로 `locking` 매크로를 사용해야 한다는 내용을 읽을 수 있다.
+
+```clojure
+(doc monitor-enter)
+-------------------------
+monitor-enter
+  (monitor-enter x)
+Special Form
+  Synchronization primitive that should be avoided
+  in user code. Use the 'locking' macro.
+
+  Please see http://clojure.org/special_forms#monitor-enter
+```
+
+`monitor-enter`와 `monitor-exit`은 `clojure.core`에 정의되어 있지 않고, `clojure.lang.Compiler`와 `clojure.asm.Opcodes`에 정의되어 있다.
+
+[clojure.lang.Compiler]( https://github.com/clojure/clojure/blob/658693f6cf97e6ab0ff789e096c9eb6654e4d3ab/src/jvm/clojure/lang/Compiler.java#L58-L59 )
+
+```java
+static final Symbol TRY = Symbol.intern("try");     // try, catch, finally 도 여기에 있다.
+static final Symbol CATCH = Symbol.intern("catch");
+static final Symbol FINALLY = Symbol.intern("finally");
+static final Symbol THROW = Symbol.intern("throw");
+static final Symbol MONITOR_ENTER = Symbol.intern("monitor-enter"); // 여기
+static final Symbol MONITOR_EXIT = Symbol.intern("monitor-exit");   // 여기
+static final Symbol IMPORT = Symbol.intern("clojure.core", "import*");
+```
+
+[clojure.asm.Opcodes]( https://github.com/clojure/clojure/blob/b1b88dd25373a86e41310a525a21b497799dbbf2/src/jvm/clojure/asm/Opcodes.java#L342-L343 )
+
+```java
+int MONITORENTER = 194; // visitInsn
+int MONITOREXIT = 195; // -
 ```
 
 ## 참고문헌
