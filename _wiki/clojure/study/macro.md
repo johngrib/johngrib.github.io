@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 23:26:56 +0900
+updated : 2022-03-14 23:32:04 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -658,6 +658,80 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
 
   ;; 바인딩을 구조분해하고, let*의 첫 번째 인자로. body 리스트는 그 이후 인자로.
   `(let* ~(destructure bindings) ~@body))
+```
+
+### fn
+
+[clojure.core/fn]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L4535 )
+
+```clojure
+;redefine fn with destructuring and pre/post conditions
+(defmacro fn
+  "params => positional-params*, or positional-params* & rest-param
+  positional-param => binding-form
+  rest-param => binding-form
+  binding-form => name, or destructuring-form
+
+  Defines a function.
+
+  See https://clojure.org/reference/special_forms#fn for more information"
+  {:added "1.0", :special-form true,
+   :forms '[(fn name? [params* ] exprs*) (fn name? ([params* ] exprs*)+)]}
+  ;; sigs 는 함수 시그니처
+  [& sigs]
+    ;; (fn name [params* ] exprs*) 처럼 사용했다면 name 이 있다.
+    ;; (fn [params* ] exprs*) 처럼 사용했다면 name 이 없다.
+    (let [name (if (symbol? (first sigs)) (first sigs) nil)
+          sigs (if name (next sigs) sigs)
+          sigs (if (vector? (first sigs))  ; 첫번째가 vector이면 인자 목록.
+                 (list sigs) 
+                 (if (seq? (first sigs))
+                   sigs
+                   ;; Assume single arity syntax
+                   (throw (IllegalArgumentException. 
+                            (if (seq sigs)
+                              (str "Parameter declaration " 
+                                   (first sigs)
+                                   " should be a vector")
+                              (str "Parameter declaration missing"))))))
+          psig (fn* [sig]
+                 ;; Ensure correct type before destructuring sig
+                 (when (not (seq? sig))
+                   (throw (IllegalArgumentException.
+                            (str "Invalid signature " sig
+                                 " should be a list"))))
+                 (let [[params & body] sig
+                       _ (when (not (vector? params))
+                           (throw (IllegalArgumentException. 
+                                    (if (seq? (first sigs))
+                                      (str "Parameter declaration " params
+                                           " should be a vector")
+                                      (str "Invalid signature " sig
+                                           " should be a list")))))
+                       conds (when (and (next body) (map? (first body))) 
+                                           (first body))
+                       body (if conds (next body) body)
+                       conds (or conds (meta params))
+                       pre (:pre conds)
+                       post (:post conds)                       
+                       body (if post
+                              `((let [~'% ~(if (< 1 (count body)) 
+                                            `(do ~@body) 
+                                            (first body))]
+                                 ~@(map (fn* [c] `(assert ~c)) post)
+                                 ~'%))
+                              body)
+                       body (if pre
+                              (concat (map (fn* [c] `(assert ~c)) pre) 
+                                      body)
+                              body)]
+                   (maybe-destructured params body)))
+          new-sigs (map psig sigs)]
+      (with-meta
+        (if name
+          (list* 'fn* name new-sigs)
+          (cons 'fn* new-sigs))
+        (meta &form))))
 ```
 
 ## TODO
