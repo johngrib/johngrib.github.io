@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 23:06:13 +0900
+updated : 2022-03-14 23:21:46 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -593,6 +593,49 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
 
 - 첫 번째 `pairs`를 평가한 다음, 참이 아니라면 `IllegalArgumentException` 예외를 던진다.
 - `(do`를 쓰고 있으므로, 예외를 던지지 않았다면 그 다음 평가를 하기 위해 재귀한다.
+
+
+### time
+
+[clojure.core/time]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L3885 )
+
+```clojure
+(defmacro time
+  "Evaluates expr and prints the time it took.  Returns the value of
+ expr."
+  {:added "1.0"}
+  [expr]
+  `(let [start# (. System (nanoTime))  ; 시작 시간을 보관해 둔 다음,
+         ret# ~expr]                   ; 표현식을 평가하고,
+     ;; 소요 시간을 출력한다
+     (prn (str "Elapsed time: " (/ (double (- (. System (nanoTime)) start#)) 1000000.0) " msecs"))
+     ;; 그리고 표현식 평가 결과를 리턴한다
+     ret#))
+```
+
+## TODO
+
+```text
+### if-let
+### when-let
+### if-some
+### when-some
+### binding
+### with-bindings
+### bound-fn
+### sync
+### io!
+### vswap!
+### dotimes
+### declare
+### doseq
+### import
+### with-open
+### doto
+### memfn
+### def-aset
+### defstruct
+```
 
 ## 참고문헌
 
