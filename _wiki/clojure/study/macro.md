@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 00:13:53 +0900
+updated : 2022-03-14 09:23:02 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -340,6 +340,21 @@ REPL에서 `and`를 사용해보며 macro의 동작을 체험해보자.
 (and 1 2 3 4)       ; 4
 (and true #{} [] 7) ; 7
 ```
+
+`and` 매크로를 펼쳐보면 재귀 구조가 한 눈에 들어온다.
+
+```clojure
+(macroexpand-1 '(and 11 22 33 44 55 66 77 false))
+=>
+;; let 에서 gensym에 11 을 할당한다
+(clojure.core/let [and__5531__auto__ 11]
+ (if and__5531__auto__
+     ;; 첫 번째 조건이 참이면, 나머지 조건들에 대해서 재귀한다
+     (clojure.core/and 22 33 44 55 66 77 false)
+     ;; 첫 번째 조건이 거짓이면, 거짓으로 평가한 값을 리턴한다
+     and__5531__auto__))
+```
+
 
 
 ## 참고문헌
