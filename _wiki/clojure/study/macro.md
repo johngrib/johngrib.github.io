@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 22:49:00 +0900
+updated : 2022-03-14 23:06:13 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -569,6 +569,30 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
 
 `->`와 거의 같다. `~x`의 위치만 다르다는 점에 주목.
 
+### defmulti
+
+### defmethod
+
+### assert-args
+
+[clojure.core/assert-args]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L1849 )
+
+```clojure
+(defmacro ^{:private true} assert-args
+  [& pairs]
+  `(do
+     ;; (first pairs)가 참이 아니라면 예외를 던진다.
+     (when-not ~(first pairs)
+         (throw (IllegalArgumentException.
+                  (str (first ~'&form) " requires " ~(second pairs) " in " ~'*ns* ":" (:line (meta ~'&form))))))
+     ;; 예외를 안 던졌다면 다음 값을 체크하기 위해 재귀한다.
+     ~(let [more (nnext pairs)]
+        (when more
+          (list* `assert-args more)))))
+```
+
+- 첫 번째 `pairs`를 평가한 다음, 참이 아니라면 `IllegalArgumentException` 예외를 던진다.
+- `(do`를 쓰고 있으므로, 예외를 던지지 않았다면 그 다음 평가를 하기 위해 재귀한다.
 
 ## 참고문헌
 
