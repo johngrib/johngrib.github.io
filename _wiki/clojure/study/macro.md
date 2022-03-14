@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 21:47:56 +0900
+updated : 2022-03-14 22:31:03 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -450,6 +450,56 @@ static final Symbol IMPORT = Symbol.intern("clojure.core", "import*");
 ```java
 int MONITORENTER = 194; // visitInsn
 int MONITOREXIT = 195; // -
+```
+
+### ..
+
+[clojure.core/..]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L1676 )
+
+```clojure
+(defmacro ..
+  "form => fieldName-symbol or (instanceMethodName-symbol args*)
+
+  Expands into a member access (.) of the first member on the first
+  argument, followed by the next member on the result, etc. For
+  instance:
+
+  (.. System (getProperties) (get \"os.name\"))
+
+  expands to:
+
+  (. (. System (getProperties)) (get \"os.name\"))
+
+  but is easier to write, read, and understand."
+  {:added "1.0"}
+  ;; form이 1개인 경우에는 . 으로 Java 코드를 호출한다.
+  ([x form] `(. ~x ~form))
+  ;; form 이후 여러 인자가 있다면 ~@more 를 사용해 재귀한다.
+  ([x form & more] `(.. (. ~x ~form) ~@more)))
+```
+
+`..`은 Java interop과 관련이 있다. `.`를 줄줄이 이어서 쓰는 메소드 체인 방식의 Java 코드 호출이 필요한 경우에 쓰는 것.
+
+```clojure
+(.. "fooBAR" (toLowerCase) (substring 3))
+=> "bar"
+```
+
+위의 Clojure 코드는 아래의 Java 코드와 같다.
+
+```java
+"fooBar".toLowerCase().substring(3);
+```
+
+이 매크로도 재귀 구조를 갖고 있다. 재귀하며 `~@more`를 넘기는 방식으로 인자를 앞에서부터 하나씩 줄여나간다.
+
+```clojure
+(defmacro ..
+  ;; form이 1개인 경우에는 . 으로 Java 코드를 호출한다.
+  ([x form] `(. ~x ~form)) ; Java 로 따지면 객체 x의 메소드 호출 form을 실행하는 것.
+
+  ;; form 이후 인자가 있다면 ~@more 를 사용해 재귀한다.
+  ([x form & more] `(.. (. ~x ~form) ~@more)))
 ```
 
 ## 참고문헌
