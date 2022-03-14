@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 18:23:02 +0900
+updated : 2022-03-14 18:37:25 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -357,6 +357,37 @@ REPL에서 `and`를 사용해보며 macro의 동작을 체험해보자.
 
 - 참고로 `let`이 `clojure.core/let`으로 확장된 것은 ``` ` ```의 영향이다.
 
+### or
+
+[clojure.core/or]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L856 )
+
+```clojure
+(defmacro or
+  "Evaluates exprs one at a time, from left to right. If a form
+  returns a logical true value, or returns that value and doesn't
+  evaluate any of the other expressions, otherwise it returns the
+  value of the last expression. (or) returns nil."
+  {:added "1.0"}
+  ([] nil)
+  ([x] x)
+  ([x & next]
+      `(let [or# ~x]
+         (if or# or# (or ~@next)))))
+```
+
+`or` 매크로는 `and`와 `if`의 인자 순서가 다르다는 것을 빼면 똑같다.
+
+```clojure
+`(let [and# ~x]
+      ;; and는 첫 번째 인자가 참이어도 나머지를 모두 검사해야 한다
+      (if and# (and ~@next) and#))
+```
+
+```clojure
+`(let [or# ~x]
+      ;; or는 첫 번째 인자가 참이라면 검사가 끝난다
+      (if or# or# (or ~@next)))
+```
 
 ## 참고문헌
 
