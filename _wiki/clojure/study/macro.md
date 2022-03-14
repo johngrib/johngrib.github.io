@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 23:32:04 +0900
+updated : 2022-03-14 23:35:06 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -734,6 +734,37 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
         (meta &form))))
 ```
 
+### loop
+
+[clojure.core/loop]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L4599 )
+
+```clojure
+(defmacro loop
+  "Evaluates the exprs in a lexical context in which the symbols in
+  the binding-forms are bound to their respective init-exprs or parts
+  therein. Acts as a recur target."
+  {:added "1.0", :special-form true, :forms '[(loop [bindings*] exprs*)]}
+  [bindings & body]
+    (assert-args
+      (vector? bindings) "a vector for its binding"
+      (even? (count bindings)) "an even number of forms in binding vector")
+    (let [db (destructure bindings)]
+      (if (= db bindings)
+        `(loop* ~bindings ~@body)
+        (let [vs (take-nth 2 (drop 1 bindings))
+              bs (take-nth 2 bindings)
+              gs (map (fn [b] (if (symbol? b) b (gensym))) bs)
+              bfs (reduce1 (fn [ret [b v g]]
+                            (if (symbol? b)
+                              (conj ret g v)
+                              (conj ret g v b g)))
+                          [] (map vector bs vs gs))]
+          `(let ~bfs
+             (loop* ~(vec (interleave gs gs))
+               (let ~(vec (interleave bs gs))
+                 ~@body)))))))
+```
+
 ## TODO
 
 ```text
@@ -756,6 +787,9 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
  ### memfn
  ### def-aset
  ### with-local-vars
+ ### when-first
+ ### lazy-cat
+ ### for
 ```
 
 ## 참고문헌
