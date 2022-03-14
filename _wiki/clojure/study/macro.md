@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 22:31:03 +0900
+updated : 2022-03-14 22:46:37 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -501,6 +501,48 @@ int MONITOREXIT = 195; // -
   ;; form 이후 인자가 있다면 ~@more 를 사용해 재귀한다.
   ([x form & more] `(.. (. ~x ~form) ~@more)))
 ```
+
+### ->
+
+[clojure.core/->](https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L1694 )
+
+```clojure
+(defmacro ->
+  "Threads the expr through the forms. Inserts x as the
+  second item in the first form, making a list of it if it is not a
+  list already. If there are more forms, inserts the first form as the
+  second item in second form, etc."
+  {:added "1.0"}
+  [x & forms]
+  (loop [x x, forms forms]
+    (if forms
+      ;; forms 가 있다면.
+
+      (let [form (first forms)  ; 실행할 form
+            threaded (if (seq? form)
+                        ;; form이 (A B C) 같은 시퀀스라면, (A x B C) 처럼 x를 넣어 실행한다
+                        ;; 그리고 메타데이터가 유실되지 않도록 붙여준다.
+                       (with-meta `(~(first form) ~x ~@(next form)) (meta form))
+
+                       ;; form 이 시퀀스가 아니라면 그냥 함수만 있는 것이다.
+                       ;; (form x)로 실행한다
+                       (list form x))]
+        ;; 나머지 form들이 있으므로 다음 loop를 진행한다
+        (recur threaded (next forms)))
+
+      ;; forms 가 없다면, 넘겨받은 x 를 리턴한다
+      x)))
+```
+
+`->`는 [[/clojure/guide/threading-macros]]{스레딩 매크로}이다.
+
+스레딩 파이프를 타고 흐르는 값을 `seq?`로 검사해서 메타데이터 유실을 막는 처리가 있다는 점이 인상적이다.
+
+Clojure에서 primitive 타입은 메타데이터를 가질 수 없지만
+map이나 시퀀스는 메타데이터를 가질 수 있으므로
+스레딩 매크로를 거치면서 메타데이터가 유실되지 않도록 처리해주는 것이다.
+
+`seq?` 함수는 검사 대상이 `clojure.lang.ISeq` 타입인지를 검사하는데, 이를 통해 메타데이터 적용 가능 대상을 `seq?`로 판별할 수 있다는 것을 배울 수 있다.
 
 ## 참고문헌
 
