@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 23:35:06 +0900
+updated : 2022-03-14 23:37:03 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -764,6 +764,22 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
                (let ~(vec (interleave bs gs))
                  ~@body)))))))
 ```
+
+### comment
+
+[clojure.core/comment]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L4735 )
+
+```clojure
+(defmacro comment
+  "Ignores body, yields nil"
+  {:added "1.0"}
+  [& body])  ;; 아무 것도 안한다.
+```
+
+`[& body])`에서 `]`와 `)` 사이에 아무 것도 없다는 사실에 주목.
+
+`comment` 매크로를 읽고 약간 웃음이 났다.
+
 
 ## TODO
 
