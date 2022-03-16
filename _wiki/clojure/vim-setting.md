@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Clojure 코드를 작성하자
 summary : 삽질의 흔적
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-01-22 16:01:11 +0900
+updated : 2022-03-16 22:26:32 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -226,16 +226,17 @@ export PATH="$PATH:~/.vim/plugged/vim-iced/bin"
 
 ```
 iced repl
-```
-
-`:dev` 알리아스를 지정하고 싶다면 이렇게 하면 된다.
-
-```
+ # :dev 알리아스 지정
 iced repl -A:dev
+ # :dev, :test 알리아스 지정
+iced repl -A:dev -A:test
 ```
 
 REPL이 뜨면 vim에서 `:IcedConnect`를 입력하면 된다.
 
+#### vim에서 stdout 버퍼 띄우기
+
+`:IcedStdoutBufferToggle`을 사용하면 된다. 또는 `<Leader>`를 사용한다.
 
 ## 편집 설정
 
@@ -325,6 +326,54 @@ augroup vim_conjure
 augroup END
 ```
 
+## Conjure로 Clojure 코딩하기
+
+Clojure + Vim + Conjure로 작업하는 과정을 기록으로 남겨본다.
+
+### REPL 띄우고 vim에서 붙기
+
+먼저 터미널에서 REPL을 띄운다. 명령이 좀 길기 때문에 `__start.sh`라는 셸 스크립트 하나를 만들어서 사용하고 있다.
+
+```bash
+#!/usr/bin/env bash
+
+clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version "0.8.3"}} :aliases {:nrepl {:main-opts ["-m" "nrepl.cmdline"]}}}' -M:nrepl:dev &
+```
+
+- 제일 오른쪽에 `-M:nrepl:dev`로 `:dev` alias를 지정한 점에 주목한다.
+
+이 명령을 실행하면 다음과 같은 로그가 출력된다.
+
+```
+[main] INFO org.eclipse.jetty.util.log - Logging initialized @12559ms to org.eclipse.jetty.util.log.Slf4jLog
+nREPL server started on port 59594 on host localhost - nrepl://localhost:59594
+```
+
+nREPL 서버가 시작되었고, 포트가 `59594`라는 것을 알 수 있다.
+
+만약 유효하지 않은 alias라면 다음과 같이 경고가 뜬다.
+이런 경우에는 해당 alias가 존재하는지 확인해 주도록 한다.
+
+```
+WARNING: Specified aliases are undeclared and are not being used: [:dev]
+nREPL server started on port 59594 on host localhost - nrepl://localhost:59594
+```
+
+이제 vim을 실행하고 프로젝트 세션으로 붙는다.
+
+![vim을 실행하고 conjure가 자동으로 nrepl에 붙는 장면]( ./conjure-connect.jpg )
+
+vim에 들어가자마자 Conjure가 알아서 `59594` 포트로 접속한다.
+
+만약 자동 접속이 제대로 안 된다면 vim 명령을 써서 수동으로 접속할 수도 있다. 모두 3가지 방법이 있다.
+
+```
+:ConjureConnect
+:ConjureConnect 59594
+:ConjureConnect localhost 59594
+```
+
+`:conjureco` 까지 쓰고 탭을 누르면 자동완성이 되므로 일일이 대소문자 지켜가며 쓸 필요가 없다는 점을 기억해두자.
 
 ## 주석
 
