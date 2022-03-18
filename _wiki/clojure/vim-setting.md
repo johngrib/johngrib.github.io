@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 00:37:11 +0900
+updated : 2022-03-19 00:38:33 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -242,6 +242,7 @@ vim 전통의 명령 `K`를 입력하면 된다.
 - `strings->codes`, `run-operation-list` 이렇게 두 함수를 사용하고 있다.
     - dependencies list 영역에서도 엔터 키를 사용해 해당 함수로 이동할 수 있다.
 - 오른쪽의 TagBar 영역은 vim 사용자들이라면 익숙하게 사용하는 것으로, 현재 파일에 정의된 모든 상수와 함수 목록을 보여준다. 선택해서 이동하는 기능도 있다.
+    - 참고로 TagBar는 vim-iced와는 별개의 플러그인이며 언제든지 켜고 끌 수 있다.
 
 #### macroexpand
 
