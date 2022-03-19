@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 16:47:29 +0900
+updated : 2022-03-19 16:47:55 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -280,7 +280,7 @@ ultisnips snippet을 만들며 작업할 때는 위의 스크린샷과 같이 �
 
 #### github copilot
 
-copilot도 문제 없이 작동하는 것을 확인할 수 있었다.
+[copilot]( https://github.com/github/copilot.vim )도 문제 없이 작동하는 것을 확인할 수 있었다.
 
 `(defn factorial`을 입력했더니 함수 본문을 제안해 주고 있다.
 
