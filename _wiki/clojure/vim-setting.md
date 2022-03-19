@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 16:31:50 +0900
+updated : 2022-03-19 16:36:29 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -194,6 +194,7 @@ autocmd FileType clojure nmap sem <Plug>(iced_eval_at_mark)
 이제 REPL을 열어보자. REPL 조작은 `sr`로 시작한다.
 
 - `src`: REPL에 연결한다. (`c`: connect)
+    - (사실 `src`를 일일이 입력하지 않아도 `ser` 처럼 코드를 평가하려고 해도 알아서 접속한다.)
 - `srr`: REPL 버퍼를 열었다 닫았다 한다. (`rr`: vim 반복명령 설탕)
 - `srd`: REPL 버퍼의 내용을 전부 지운다. (`d`: delete)
 - `sri`: REPL에 인터럽트를 보낸다. 오래 걸리는 작업을 취소할 때 쓸 수 있다. (`i`: interrupt)
@@ -201,6 +202,16 @@ autocmd FileType clojure nmap sem <Plug>(iced_eval_at_mark)
 ![화면 오른쪽에 나타난 REPL 버퍼]( ./iced-repl-on-right.jpg )
 
 화면 오른쪽의 버퍼가 REPL 이다. 평가 결과들이 출력되어 있는 것을 볼 수 있다.
+
+설정은 이렇게 하였다.
+
+```viml
+" REPL: - "sr"
+autocmd FileType clojure nmap srr <Plug>(iced_stdout_buffer_toggle)
+autocmd FileType clojure nmap srd <Plug>(iced_stdout_buffer_clear)
+autocmd FileType clojure nmap src <Plug>(iced_connect)
+autocmd FileType clojure nmap sri <Plug>(iced_interrupt)
+```
 
 ### 코드 자동완성
 
@@ -382,35 +393,6 @@ Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 
 ```viml
 :CocInstall coc-clojure
-```
-
-### REPL 다루기
-
-이제 vim에 들어가서 프로젝트 세션을 열거나 clj 파일을 열거나 해서 코딩을 할 수 있다.
-
-나는 vim의 `s`키를 죽이고 프로그래밍 언어별 특수 기능의 prefix로 사용하고 있다.
-따라서 위의 `s`로 시작하는 키스트로크는 다음과 같이 생각하고 쓰면 된다.
-
-- `s`-`rc`: Clojure 특수기능 - REPL - Connect
-- `s`-`rr`: Clojure 특수기능 - REPL - Toggle REPL Buffer (`r`의 반복이라 누르기 쉽다)
-- `s`-`rd`: Clojure 특수기능 - REPL - Delete
-- `s`-`ri`: Clojure 특수기능 - REPL - Interrupt (오래 걸리는 평가 중단)
-
-`src`를 입력하면 iced가 `.nrepl-port`에 저장된 포트를 읽고 알아서 REPL에 접속한다.
-(사실 `src`를 일일이 입력하지 않아도 `ser` 처럼 코드를 평가하려고 해도 알아서 접속한다.)
-
-이제 REPL 버퍼를 띄우려면 `srr`을 입력한다. 다시 한 번 더 `srr`을 입력하면 버퍼가 닫힌다.
-
-버퍼에 출력된 내용을 청소하려면 `srd`를 입력한다.
-
-설정은 이렇게 하였다.
-
-```viml
-" REPL: - "sr"
-autocmd FileType clojure nmap srr <Plug>(iced_stdout_buffer_toggle)
-autocmd FileType clojure nmap srd <Plug>(iced_stdout_buffer_clear)
-autocmd FileType clojure nmap src <Plug>(iced_connect)
-autocmd FileType clojure nmap sri <Plug>(iced_interrupt)
 ```
 
 ### Code Evaluation
