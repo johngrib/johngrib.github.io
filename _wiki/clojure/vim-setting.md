@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 21:29:57 +0900
+updated : 2022-03-19 21:58:14 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -327,9 +327,9 @@ autocmd FileType clojure nmap <silent> <C-]> :IcedDefJump<CR>
 
 vim-iced는 clj-kondo와 통합이 되어 있어 문제가 있는 코드에 밑줄을 쳐주고, 커서를 올리면 경고 팝업을 띄워준다.
 
-그런데 아쉽게도 정작 이런 경고 목록을 만들어주는 기능은 없다.
+그런데 아쉽게도 정작 이런 경고 목록을 만들어주는 기능은 없어서 커서를 일일이 문제 위치에 갖다 놓아야만 팝업으로 경고의 내용을 알 수 있다.
 
-하지만 기능이 없다고 못 쓰면 말이 안 된다. `sal`을 입력하면 `clj-kondo`를 실행해 목록을 만들고 quickfix 버퍼에서 보여주도록 하면 된다.
+하지만 기능이 없다고 못 쓰면 말이 안 된다. `sal`을 입력하면 `clj-kondo`를 실행해 목록을 만들고 quickfix 버퍼에서 보여주도록 하자.
 
 - `sal`: 린터를 실행하고 결과 목록을 보여준다. (`l`: lint)
 
@@ -338,10 +338,11 @@ vim-iced는 clj-kondo와 통합이 되어 있어 문제가 있는 코드에 밑�
 quickfix 버퍼에서 엔터를 치면 경고가 있는 위치로 이동한다.
 
 구현은 다음과 같이 하였다.
-`makeprg`로 컴파일러를 지정하고, `errorformat`으로 컴파일러 에러를 해석하는 포맷 문자열을 지정해주면 되는 C 언어 시절의 방식이지만 아직 잘 동작한다.
+`makeprg`로 컴파일러를 지정하고, `errorformat`으로 컴파일러 에러를 해석하는 포맷 문자열을 지정해주면 되는 C 언어 시절의 방식이지만.. 오래된 방법일 뿐 문제없이 잘 동작한다.
 
 ```vim
 autocmd FileType clojure nmap sal :make<CR>:copen<CR>
+" autocmd FileType clojure nmap sal :Dispatch<CR>
 autocmd FileType clojure setlocal makeprg=clj-kondo\ --lint\ %
 autocmd FileType clojure setlocal errorformat=%f:%l:%c:\ Parse\ %t%*[^:]:\ %m,%f:%l:%c:\ %t%*[^:]:\ %m
 ```
@@ -352,24 +353,45 @@ autocmd FileType clojure setlocal errorformat=%f:%l:%c:\ Parse\ %t%*[^:]:\ %m,%f
 
 #### 사용하는 곳들 조사하기
 
-`sar`를 입력하면 커서가 위치한 엘리먼트, 심볼, 함수 등을 사용하는 곳을 모두 조사해서 목록으로 만들어 준다.
+- `sar`: 커서가 지시하는 아이템을 사용하는 곳을 모두 조사해서 목록으로 만들어 준다.
 (`r`: references)
 
 ![apply 함수를 사용하는 곳들]( ./iced-references.jpg )
 
-목록에서 엔터를 입력하면 해당 파일의 해당 라인으로 이동하게 된다.
+목록에서 아이템에 커서를 올려놓고 엔터를 입력하면 해당 파일의 해당 라인으로 이동하게 된다.
 
-`sa/`는 grep을 사용할 수 있다. 키워드, 문자열까지 찾아주므로 `sar`보다 더 많은 검색결과가 나온다.
-(`/`: vim search)
+한편 파일로 저장할 수 있는 형식으로 보는 방법도 있다.
+
+- `sau`: `sar`과 같지만 좀 더 raw format으로 보여준다. (`u`: usages)
+
+![sau를 사용하는 모습]( ./iced-sau.jpg )
+
+`sau`의 결과는 파일의 이름과 행 번호 열 번호를 목록으로 보여준다.
+vim은 기본적으로 파일 이름과 행 번호가 이 포맷으로 주어지면 `gf`, `gF`를 써서 해당 파일의 해당 위치를 바로 열 수 있으므로
+quickfix보다 사용성이 더 떨어지지도 않는다. 보기에 좀 덜 예쁠 뿐이다.
+
+- `sa/`: 커서가 위치한 아이템을 검색. (`/`: vim search)
+
+이 방법은 grep과 같다.
+키워드, 문자열까지 찾아주므로 `sar`보다 더 많은 검색결과가 나온다.
+게다가 clj나 edn 파일 뿐 아니라 다른 확장자를 갖는 파일에서도 찾아주므로 쓸모가 많다.
 
 ![sa/를 사용한 모습]( ./iced-grep.jpg )
 
 위의 이미지는 문자열 안에 있는 `중복`에 커서를 놓고 `sa/`를 실행한 것이다.
 검색 결과를 보면 문자열은 물론이고 주석까지 전부 찾아주고 있다.
 
+설정은 아래와 같이 해 주었다. `sau`에는 `gF`를 잊지 말라고 출력 문구를 달아주었다.
+
+```viml
+autocmd FileType clojure nmap sar :IcedBrowseReferences<CR>
+autocmd FileType clojure nmap sau :IcedUseCaseOpen<CR>:echom "list use case: gF to open file"<CR>
+autocmd FileType clojure nmap sa/ <Plug>(iced_grep)
+```
+
 #### 의존관계 조사하기
 
-`sad`로 커서가 위치한 함수가 어떤 다른 함수나 상수들에 의존하는지 확인할 수 있다.
+- `sad`: 커서가 지시하는 함수가 어떤 다른 함수나 상수들에 의존하는지 확인한다. (`d`: dependencies)
 
 ![의존관계 리스트]( ./iced-sad.jpg )
 
@@ -377,6 +399,10 @@ autocmd FileType clojure setlocal errorformat=%f:%l:%c:\ Parse\ %t%*[^:]:\ %m,%f
 
 - `strings->codes`, `run-operation-list` 이렇게 두 함수를 사용하고 있다.
     - dependencies list 영역에서도 엔터 키를 사용해 해당 함수로 이동할 수 있다.
+
+```viml
+autocmd FileType clojure nmap sad :IcedBrowseDependencies<CR>
+```
 
 #### 파일 구조 확인하기
 
@@ -387,6 +413,15 @@ tagbar는 오랜 세월 vim 사용자들의 사랑을 받은 플러그인이다.
 
 - 오른쪽의 TagBar 영역은 vim 사용자들이라면 익숙하게 사용하는 것으로, 현재 파일에 정의된 모든 상수와 함수 목록을 보여준다.
 - 목록에서 선택하면 해당 위치로 이동한다.
+
+tagbar를 잘 쓰려면 [[/ctags]] 사용법을 조금은 알아야 하며, 백그라운드에서 tags 파일을 생성하는 방법도 준비해야 한다.
+(tags 파일은 프로젝트 전체의 함수 이름과 주요 변수, 상수, 네임스페이스 등을 정리해두는 인덱스 파일이라 생각하면 된다.
+IntelliJ가 항상 갱신하고 있는 그것과 같다.)
+
+나는 백그라운드 tags 갱신은 [vim-gutentags]( https://github.com/ludovicchabant/vim-gutentags )를 사용하고 있는데,
+5년 가까이 사용하고 있는데 단 한 번도 불만을 느끼지 못한 멋진 플러그인이다.
+
+vim-gutentags는 git status를 참고해 효율적으로 태그를 갱신한다.
 
 #### macroexpand
 
