@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 23:41:13 +0900
+updated : 2022-03-20 00:02:44 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -593,6 +593,16 @@ vim-sexp는 탑 레벨 form까지 자동으로 포함시키는 `=-`도 제공해
 나는 전체 파일 텍스트 오브젝트로 `iE`, `aE`를 사용하고 있으므로 다음과 같이 전체 파일 포매팅을 할 수 있다.
 
 - `=iE` 또는 `=aE`
+
+#### NS :require 에 라이브러리 추가
+
+- `sns`: 현재 편집중인 파일 최상단의 `ns` `:require`에 사용할 라이브러리를 추가하고 알리아스도 지정해 준다.
+
+![sns를 사용하는 모습]( ./iced-sns.gif )
+
+```viml
+autocmd FileType clojure nmap sns :IcedAddNs<CR>
+```
 
 ### 파일 탐색
 
