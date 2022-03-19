@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 00:02:44 +0900
+updated : 2022-03-20 00:20:44 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -59,10 +59,74 @@ Neovim + [coc.nvim]( https://github.com/neoclide/coc.nvim ) + [clojure-lsp]( htt
     - vim과 REPL의 통합적 사용을 위한 `iced`라는 셸 명령을 제공한다. `iced`를 사용하면 [nrepl]( https://github.com/nrepl/nrepl )을 띄워주므로 다른 에디터에서도 붙을 수 있다.
     - 코드를 평가하면 stdout 출력만 REPL 버퍼에 띄워주는 것이 불만이었다. IntelliJ + Cursive나 VsCode + Calva 는 stdout도 출력하고 평가 결과도 출력해주니까 굉장히 불편하게 느껴졌다. 그러나 결국 해결 방법을 찾아서 다른 환경에서의 REPL과 비슷하게 사용할 수 있었다.
     - Conjure와 달리 REPL이 평범한 버퍼여서 session 문제가 없다.
+    - 머그잔에 들어간 귀여운 핑크색 토끼가 마스코트이다.
+    - [문서화]( https://liquidz.github.io/vim-iced/ )가 잘 되어 있는 편이다.
     - lsp 통합이 잘 되어 있어서 어지간한 기능은 대부분 vim-iced에서 wrapping해서 제공한다.
 
 Conjure와 vim-iced 를 왔다갔다 하면서 vim을 사용했다.
 처음에는 Conjure가 훨씬 좋다고 느꼈는데, 사용하면 할수록 vim-iced가 나에게 더 맞는 도구라는 생각이 들었다.
+
+## 공통 환경 설정
+
+- `clojure-lsp` : Clojure Language Server
+- `coc.nvim` : lsp와 vim 사용자를 중개해 주며, 잡다한 IDE 기능을 제공해 준다.
+
+
+### clojure-lsp 설치
+
+가장 먼저 할 일은 Clojure용 Language Server인 clojure-lsp를 설치하는 것이다.
+
+- <https://github.com/clojure-lsp/clojure-lsp >
+- <https://clojure-lsp.io/installation/ >
+
+나는 Mac을 사용하고 있으므로 위의 안내 페이지를 읽고 `brew`를 사용해 설치했다.
+
+```sh
+brew remove clojure-lsp # if you have old clojure-lsp installed via brew
+brew install clojure-lsp/brew/clojure-lsp-native
+```
+
+`clojure-lsp --version`으로 설치가 완료되었는지 확인하자.
+
+```sh
+$ clojure-lsp  --version
+clojure-lsp 2022.01.03-19.46.10
+clj-kondo 2021.12.20-SNAPSHOT
+```
+
+### coc.nvim 설정
+
+coc.nvim 플러그인 설치가 완료되었다면 [coc의 Language Servers 문서 - clojure]( https://github.com/neoclide/coc.nvim/wiki/Language-servers#clojure )를 참고해서 vim 명령으로 clojure coc 설치를 해준다.
+
+위 링크에 나와 있는 설정값을 복사해서 coc.nvim의 설정 파일에 추가해주면 된다.
+
+`:CocConfig`명령으로 `coc-settings.json`[^coc-config-file]을 열고, 다음과 같이 clojure-lsp 설정을 추가하자.
+
+```jsonc
+"languageserver": {
+    "clojure-lsp": {
+        "command": "bash",
+        "args": ["-c", "clojure-lsp"],
+        "filetypes": ["clojure"],
+        "rootPatterns": ["project.clj", "deps.edn"],    // deps.edn 추가
+        "additionalSchemes": ["jar", "zipfile"],
+        "trace.server": "verbose",
+        "initializationOptions": {
+            "ignore-classpath-directories": true
+        }
+    }
+}
+```
+
+나는 회사에서 `deps.edn`을 사용하고 있으므로, coc.nvim에서 제공하고 있는 예제에 `deps.edn`을 추가했다.
+
+주의: coc config가 비어 있는 파일이라면 "languageserver"를 감싸는 중괄호도 추가해야 한다.
+
+또는 그냥 다음 명령을 실행해도 된다.
+
+```viml
+:CocInstall coc-clojure
+```
 
 ## Clojure + Vim + vim-iced 로 Clojure 코딩하기
 
@@ -571,11 +635,12 @@ autocmd FileType clojure nmap >)  <Plug>(sexp_capture_next_element)
 #### 텍스트 오브젝트
 
 vim-sexp는 다음과 같이 8개의 텍스트 오브젝트를 제공하므로 surround와 좋은 조합을 보인다.
+(다만 surround 가 더 넓은 범위를 커버하므로 sexp의 몇몇 텍스트 오브젝트는 쓸 일이 없다.)
 
-- `af`, `if`: select COMPOUND FORMS.
-- `aF`, `iF`: select top-level COMPOUND FORMS.
-- `as`, `is`: select STRINGS.
-- `ae`, `ie`: select ELEMENTS.
+- `af`, `if`: COMPOUND FORMS. surround의 `i(`, `a(`, `i{`, `i[`, ... 등이 더 편리하고 더 직관적이다.
+- `aF`, `iF`: top-level COMPOUND FORMS.
+- `as`, `is`: STRINGS. surround의 `i"`, `a"`가 더 직관적이다.
+- `ae`, `ie`: ELEMENTS. 좋은 텍스트 오브젝트. vim 기본인 `aW`, `iW`로도 대부분 커버될 것 같지만 `ae`, `ie` 는 매크로 캐릭터도 포함한다.
 
 vim-sexp-mappings-for-regular-people을 설치하면 다음과 같이 8개의 텍스트 오브젝트를 제공한다.
 
@@ -620,168 +685,52 @@ autocmd FileType clojure nmap sns :IcedAddNs<CR>
 
 여기에서 파일을 추가하거나 삭제하거나 열거나 이동하거나 하는 등의 작업이 가능하다.
 
-### plugin 설정
+### plugin 목록
 
-```viml
-Plug 'liquidz/vim-iced', {'for': 'clojure'}
-Plug 'guns/vim-sexp', {'for': 'clojure'}
-```
 - 필수 플러그인
     - `vim-iced`
     - `vim-sexp`: vim-iced의 일부 명령이 `vim-sexp`에 의존한다.
-
-```viml
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
-```
 
 - 자동 완성 플러그인
     - `coc.nvim`: 꼭 coc를 사용하지 않아도 된다. 하지만 나는 coc를 몇 년째 잘 사용하고 있으므로 그대로 사용한다.
     - `vim-iced-coc-source`: vim-iced와 coc와의 통합을 위한 플러그인.
 
-플러그인 설치가 완료되었다면 [coc의 Language Servers 문서 - clojure]( https://github.com/neoclide/coc.nvim/wiki/Language-servers#clojure )를 참고해서 vim 명령으로 clojure coc 설치를 해준다.
+그 외에는 없어도 딱히 지장이 없거나 내가 원래 평소에 사용하던 플러그인들이다.
+
+#### vim-iced 설치
 
 ```viml
-:CocInstall coc-clojure
+Plug 'liquidz/vim-iced', {'for': 'clojure'}
+Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 ```
 
+다음과 같이 설정해서 기본 키 맵핑을 사용할 수 있도록 해주자.
 
-## Conjure로 Clojure 코딩하기
+```viml
+let g:iced_default_key_mapping_leader = '<Leader>'
+let g:iced_enable_default_key_mappings = v:true
+```
+
+`.bashrc`나 `.bash_profile`에 `iced` 명령의 PATH도 추가해 준다.
+
+```
+export PATH="$PATH:~/.vim/plugged/vim-iced/bin"
+```
+
+#### vim-sexp, vim-sexp-mappings-for-regular-people 설치
+
+```viml
+Plug 'guns/vim-sexp',    {'for': 'clojure'}
+Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
+```
+
+## Clojure + Vim + Conjure로 Clojure 코딩하기
 
 주의: 나는 이제 Conjure를 사용하지 않는다.
 
 Clojure + Vim + Conjure로 작업하는 과정을 기록으로 남겨본다.
 
-### REPL 띄우고 vim에서 붙기
-
-먼저 터미널에서 REPL을 띄운다. 명령이 좀 길기 때문에 `__start.sh`라는 셸 스크립트 하나를 만들어서 사용하고 있다.
-
-```bash
-#!/usr/bin/env bash
-
-clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version "0.8.3"}} :aliases {:nrepl {:main-opts ["-m" "nrepl.cmdline"]}}}' -M:nrepl:dev &
-```
-
-- 제일 오른쪽에 `-M:nrepl:dev`로 `:dev` alias를 지정한 점에 주목한다.
-
-이 명령을 실행하면 다음과 같은 로그가 출력된다.
-
-```
-[main] INFO org.eclipse.jetty.util.log - Logging initialized @12559ms to org.eclipse.jetty.util.log.Slf4jLog
-nREPL server started on port 59594 on host localhost - nrepl://localhost:59594
-```
-
-nREPL 서버가 시작되었고, 포트가 `59594`라는 것을 알 수 있다.
-
-만약 유효하지 않은 alias라면 다음과 같이 경고가 뜬다.
-이런 경우에는 해당 alias가 존재하는지 확인해 주도록 한다.
-
-```
-WARNING: Specified aliases are undeclared and are not being used: [:dev]
-nREPL server started on port 59594 on host localhost - nrepl://localhost:59594
-```
-
-이제 vim을 실행하고 프로젝트 세션으로 붙는다.
-
-![vim을 실행하고 conjure가 자동으로 nrepl에 붙는 장면]( ./conjure-connect.jpg )
-
-vim에 들어가자마자 Conjure가 알아서 `59594` 포트로 접속한다.
-
-만약 자동 접속이 제대로 안 된다면 vim 명령을 써서 수동으로 접속할 수도 있다. 모두 3가지 방법이 있다.
-
-```
-:ConjureConnect
-:ConjureConnect 59594
-:ConjureConnect localhost 59594
-```
-
-`:conjureco` 까지 쓰고 탭을 누르면 자동완성이 되므로 일일이 대소문자 지켜가며 쓸 필요가 없다는 점을 기억해두자.
-
-
-
-
-
-
-
-
-
-
-
-
-## 환경 설정
-
-- `clojure-lsp` : Clojure Language Server
-- `coc.nvim` : lsp와 vim 사용자를 중개해 주며, 잡다한 IDE 기능을 제공해 준다.
-
-그리고 Vim의 Clojure REPL 통합 도구가 필요한데, 둘 중 하나를 사용하면 적절한 것 같다. (둘 다 사용하는 것은 곤란할 수 있다.)
-
-둘 다 vim에서 Lisp 계열 언어들의 대화형 환경을 구성해 준다는 공통점이 있다.
-
-- `conjure`
-    - 깔끔한 REPL 화면과 편리한 키 매핑을 제공한다.
-    - IntelliJ + Cursive와 비슷한 느낌을 준다.
-    - REPL에 붙으려면 `clj` 같은 명령의 사용 방법과 옵션을 어느 정도 이해해야 한다.
-    - 문서화가 좀 아쉽다.
-    - session 관련 버그가 있다. 해결하기 쉽지 않다.
-- `vim-iced`
-    - `iced`라는 터미널 명령을 제공해 REPL을 쉽게 띄울 수 있다.
-    - 머그잔에 들어간 귀여운 핑크색 토끼가 마스코트이다.
-    - [문서화]( https://liquidz.github.io/vim-iced/ )가 잘 되어 있는 편이다.
-    - "회사에서 개발에 사용하는 데에 지장이 없는 것"을 목표로 개발되고 있는 프로젝트이다.
-
-### clojure-lsp 설치
-
-가장 먼저 할 일은 Clojure용 Language Server인 clojure-lsp를 설치하는 것이다.
-
-- <https://github.com/clojure-lsp/clojure-lsp >
-- <https://clojure-lsp.io/installation/ >
-
-나는 Mac을 사용하고 있으므로 위의 안내 페이지를 읽고 `brew`를 사용해 설치했다.
-
-```sh
-brew remove clojure-lsp # if you have old clojure-lsp installed via brew
-brew install clojure-lsp/brew/clojure-lsp-native
-```
-
-`clojure-lsp --version`으로 설치가 완료되었는지 확인하자.
-
-```sh
-$ clojure-lsp  --version
-clojure-lsp 2022.01.03-19.46.10
-clj-kondo 2021.12.20-SNAPSHOT
-```
-
-### coc.nvim 설정
-
-coc.nvim 의 Wiki 페이지에 있는 Language Servers 목록을 보면 반갑게도 Clojure가 있다.
-
-- <https://github.com/neoclide/coc.nvim/wiki/Language-servers#clojure >
-
-위 링크에 나와 있는 설정값을 복사해서 coc.nvim의 설정 파일에 추가해주면 된다.
-
-`:CocConfig`명령으로 `coc-settings.json`[^coc-config-file]을 열고, 다음과 같이 clojure-lsp 설정을 추가하자.
-
-```jsonc
-"languageserver": {
-    "clojure-lsp": {
-        "command": "bash",
-        "args": ["-c", "clojure-lsp"],
-        "filetypes": ["clojure"],
-        "rootPatterns": ["project.clj", "deps.edn"],    // deps.edn 추가
-        "additionalSchemes": ["jar", "zipfile"],
-        "trace.server": "verbose",
-        "initializationOptions": {
-            "ignore-classpath-directories": true
-        }
-    }
-}
-```
-
-주의: coc config가 비어 있는 파일이라면 "languageserver"를 감싸는 중괄호도 추가해야 한다.
-
-나는 회사에서 `deps.edn`을 사용하고 있으므로, coc.nvim에서 제공하고 있는 예제에 `deps.edn`을 추가했다.
-
-### conjure
+### conjure 설치
 
 - <https://github.com/Olical/conjure >
 
@@ -813,7 +762,7 @@ augroup END
 - `<leader>eb` : 현재 편집중인 버퍼를 평가한다.
 - `<leader>lv` : 화면 오른쪽에 REPL 출력 버퍼를 띄운다.
 
-#### REPL을 띄우고 conjure로 붙기
+### REPL을 띄우고 conjure로 붙기
 
 이제 REPL이 떠 있을 때 vim을 실행하면 conjure가 자동으로 연결을 해 줄 것이다.
 
@@ -868,120 +817,51 @@ nREPL server started on port 58617 on host localhost - nrepl://localhost:58617
 
 심심하다면 IntelliJ의 Cursive를 통해 띄운 REPL에 붙어보자. Eclim과 같이 IntelliJ를 vim 플러그인처럼 쓰는 기분을 느낄 수 있다.
 
-### vim-iced
+### REPL 띄우고 vim에서 붙기
 
-conjure가 훌륭하긴 하지만 session과 관련된 버그가 있어 매우 골치가 아팠다.
+먼저 터미널에서 REPL을 띄운다. 명령이 좀 길기 때문에 `__start.sh`라는 셸 스크립트 하나를 만들어서 사용하고 있다.
 
-[vim-iced]( https://liquidz.github.io/vim-iced/ )는 conjure의 대안으로 충분하다 생각한다.
+```bash
+#!/usr/bin/env bash
 
-단 conjure보다 iced가 좀 더 기능이 많고 통합적인 환경을 지향하는 것으로 보인다.
-
-설치는 어렵지 않다.
-
-```viml
-Plug 'liquidz/vim-iced', {'for': 'clojure'}
+clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version "0.8.3"}} :aliases {:nrepl {:main-opts ["-m" "nrepl.cmdline"]}}}' -M:nrepl:dev &
 ```
 
-다음과 같이 설정해서 기본 키 맵핑을 사용할 수 있도록 해주자.
+- 제일 오른쪽에 `-M:nrepl:dev`로 `:dev` alias를 지정한 점에 주목한다.
 
-```viml
-let g:iced_default_key_mapping_leader = '<Leader>'
-let g:iced_enable_default_key_mappings = v:true
-```
-
-`.bashrc`나 `.bash_profile`에 `iced` 명령의 PATH도 추가해 주자.
+이 명령을 실행하면 다음과 같은 로그가 출력된다.
 
 ```
-export PATH="$PATH:~/.vim/plugged/vim-iced/bin"
+[main] INFO org.eclipse.jetty.util.log - Logging initialized @12559ms to org.eclipse.jetty.util.log.Slf4jLog
+nREPL server started on port 59594 on host localhost - nrepl://localhost:59594
 ```
 
-## 편집 설정
+nREPL 서버가 시작되었고, 포트가 `59594`라는 것을 알 수 있다.
 
-### vim-sexp
-
-- <https://github.com/guns/vim-sexp >
-- 도움말은 `:help vim-sexp`.
-
-vim-sexp를 설치하면 Lisp 편집에 유용한 다양한 키 매핑을 사용할 수 있다. 몇 가지만 소개해 보자.
-
-#### slurp, barf
-
-`<M-S-h>`, `<M-S-j>`, `<M-S-k>`, `<M-S-l>`로 사용할 수 있다.
-
-![slurp, barf]( ./slurp-barf.gif )
-
-이 영상에서는 `[ ]`만 움직이고 있지만, 실제로는 모든 종류의 Lisp 괄호에서 잘 작동한다. (`< >`에 대해서는 작동하지 않는다.)
-
-| 키 조합 (Mac)        | 동작                            |
-|----------------------|---------------------------------|
-| `option + shift + h` | 여는 괄호 `( { [` 를 왼쪽으로   |
-| `option + shift + j` | 여는 괄호 `( { [` 를 오른쪽으로 |
-| `option + shift + k` | 닫는 괄호 `) } ]` 를 왼쪽으로   |
-| `option + shift + l` | 닫는 괄호 `) } ]` 를 오른쪽으로 |
-
-#### swap
-
-`<M-h>`, `<M-j>`, `<M-k>`, `<M-l>`로 사용할 수 있다.
-
-![swap]( ./swap.gif )
-
-| 키 조합 (Mac) | 동작                             |
-|---------------|----------------------------------|
-| `option + h`  | 원소를 다음 원소와 스왑한다.     |
-| `option + j`  | 리스트를 다음 리스트와 스왑한다. |
-| `option + k`  | 리스트를 이전 리스트와 스왑한다. |
-| `option + l`  | 원소를 이전 원소와 스왑한다.     |
-
-#### 텍스트 오브젝트
-
-sexp는 다양한 텍스트 오브젝트를 제공한다.
-(다만 vim-surround가 있다면 sexp의 몇몇 텍스트 오브젝트는 아예 쓸 일이 없다.)
-
-| 키         | 의미          | 참고                                                                   |
-|------------|---------------|------------------------------------------------------------------------|
-| `af`, `if` | form          | surround의 `i(`, `a(`, `i{`, `i[`, ... 등이 더 편리하고 더 직관적이다. |
-| `aF`, `iF` | to-level form |                                                                        |
-| `as`, `is` | String        | surround의 `i"`, `a"`가 더 직관적이다.                                 |
-| `ae`, `ie` | element       | `aW`, `iW`로도 대부분 커버될 것 같지만 `e`는 매크로 캐릭터를 포함한다. |
-
-#### 커서 모션
-
-| 키               | 의미                                    | 참고                                                                             |
-|------------------|-----------------------------------------|----------------------------------------------------------------------------------|
-| `(`, `)`         | 여는 괄호, 닫는 괄호로 이동한다.        | `F(`와 비슷하지만 행이 달라도 작동하며, `{`과 `[`에도 된다.                      |
-| `<M-b>`, `<M-w>` | 이전, 다음 엘리먼트로 이동한다.         | 그냥 `b`랑 `w`를 써도 비슷해서 잘 안 쓸 것 같다.                                 |
-| `\[[`, `]]`      | 이전, 다음 톱 레벨 엘리먼트로 이동한다. | 개행만 잘 했다면 `{`, `}`로도 되긴 한다. 즉 `def`, `defn` 단위로 이동할 수 있다. |
-
-#### insert mode 보조
-
-- 여는 괄호나 쌍따옴표를 입력할 때 닫는 괄호, 닫는 쌍따옴표를 함께 입력해주는 보조 기능이 있다.
-- 삭제할 때에도 내용을 모두 지우고 여는 괄호/쌍따옴표를 지우면 닫는 괄호/쌍다옴표도 함께 지워준다.
-
-### parinfer
-
-parinfer 에디터 플러그인에 대해서는 [shaunlebron.github.io]( https://shaunlebron.github.io/parinfer/#editor-plugins )에서 정보를 얻을 수 있었다.
-
-다만 [vim-parinfer]( https://github.com/bhurlow/vim-parinfer )는 On/Off 조절이 편리하지 않았기 때문에 [parinfer-rust]( https://github.com/eraserhd/parinfer-rust )를 사용하기로 했다.
-
-parinfer-rust는 rust로 작성되었기 때문에 그냥 `Plug`를 연결하면 안 되고, 빌드를 해 줘야 한다. 따라서 다음과 같이 `Plug`를 선언해주면 된다.
+만약 유효하지 않은 alias라면 다음과 같이 경고가 뜬다.
+이런 경우에는 해당 alias가 존재하는지 확인해 주도록 한다.
 
 ```
-Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+WARNING: Specified aliases are undeclared and are not being used: [:dev]
+nREPL server started on port 59594 on host localhost - nrepl://localhost:59594
 ```
 
-- `:ParinferOff`, `:ParinferOn` : parinfer를 끄고 켠다.
+이제 vim을 실행하고 프로젝트 세션으로 붙는다.
 
-#### 문제점: 기본 상태가 On 이다
+![vim을 실행하고 conjure가 자동으로 nrepl에 붙는 장면]( ./conjure-connect.jpg )
 
-parinfer의 기본 상태가 On 이기 때문에, 빌트인 라이브러리를 열어봤을 때에도 포매팅을 하여 변경사항이 발생하는 문제가 있다.
+vim에 들어가자마자 Conjure가 알아서 `59594` 포트로 접속한다.
 
-따라서 사용하지 않기로 결정. 만약 기본 상태를 Off로 하려 한다면 다음과 같이 설정하는 것을 고려할 수 있을 것이다.
+만약 자동 접속이 제대로 안 된다면 vim 명령을 써서 수동으로 접속할 수도 있다. 모두 3가지 방법이 있다.
 
-```viml
-augroup vim_conjure
-    autocmd BufRead,BufNewFile *.clj ParinferOff
-augroup END
 ```
+:ConjureConnect
+:ConjureConnect 59594
+:ConjureConnect localhost 59594
+```
+
+`:conjureco` 까지 쓰고 탭을 누르면 자동완성이 되므로 일일이 대소문자 지켜가며 쓸 필요가 없다는 점을 기억해두자.
+
 
 ## 주석
 
