@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 16:47:55 +0900
+updated : 2022-03-19 17:05:14 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -261,7 +261,7 @@ endsnippet
 
 ![ultisnips를 사용하는 모습]( ./ultisnips-java-interop.gif )
 
-`"fred".toUpperCase`를 입력하고 `control+y`를 누르면 `(.toUpperCase "fred")`로 변환되는 것을 볼 수 있다.
+`"fred".toUpperCase`를 입력하고 `tab`을 누르면 `(.toUpperCase "fred")`로 변환되는 것을 볼 수 있다.
 
 시간이 흐르며 ultisnips snippet이 하나 하나 쌓이게 되는데, ultisnips snippet은 자동으로 언어별로 별도로 관리되므로 일종의 cheatsheet로 활용하는 방법도 있다.
 
@@ -272,7 +272,7 @@ endsnippet
 
 이 스크린샷은 bash의 `date` 명령을 사용하는 자동 완성 snippet을 만들고 실행한 결과를 캡처한 것이다.
 
-`today`를 입력하고 `control+y`를 누른 결과 `"Today is 2022.03.19."`로 완성된 것.
+`today`를 입력하고 `tab`을 누른 결과 `"Today is 2022.03.19."`로 완성된 것.
 
 ultisnips snippet을 만들며 작업할 때는 위의 스크린샷과 같이 오른쪽에 스니펫 에디터를 띄워놓고 코딩하는 것이 일반적이다.
 파일을 리로드하지 않아도 오른쪽에 작성하고 있는 스니펫을 바로 코드 영역에서 사용할 수 있다.
