@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 00:29:01 +0900
+updated : 2022-03-20 00:32:41 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -127,6 +127,14 @@ coc.nvim 플러그인 설치가 완료되었다면 [coc의 Language Servers 문�
 ```viml
 :CocInstall coc-clojure
 ```
+
+### clj-kondo
+
+clj-kondo는 clojure 코드 정적분석기이다.
+[Installation 문서]( https://github.com/clj-kondo/clj-kondo/blob/master/doc/install.md )를 참고해 설치하면 된다.
+
+만약 vim-iced를 사용한다면 clj-kondo를 일부러 설치하지 않아도 된다.
+vim-iced가 설치하겠냐고 물어본 다음 알아서 설치해준다.
 
 ## Clojure + Vim + vim-iced 로 Clojure 코딩하기
 
