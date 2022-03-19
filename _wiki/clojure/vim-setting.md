@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 12:39:05 +0900
+updated : 2022-03-19 15:02:01 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -65,6 +65,8 @@ Conjure와 vim-iced 를 왔다갔다 하면서 vim을 사용했다.
 처음에는 Conjure가 훨씬 좋다고 느꼈는데, 사용하면 할수록 vim-iced가 나에게 더 맞는 도구라는 생각이 들었다.
 
 ## Clojure + Vim + vim-iced 로 Clojure 코딩하기
+
+설정을 마친 다음, 내가 어떻게 Clojure로 코딩하고 있는지를 기록으로 남겨본다.
 
 ### REPL 실행
 
@@ -175,15 +177,27 @@ vim 답게 물 흐르듯이 부드럽게 순서대로 입력할 수 있도록 �
 
 ### 코드 자동완성
 
-#### 함수
+#### 함수, 심볼, 키워드, 문자열, 주석
 
-다음은 `(sol`을 입력했을 때 자동완성 추천이 나타나는 장면을 찍은 것이다.
+다음은 `(s`를 입력했을 때 자동완성 추천이 나타나는 장면을 찍은 것이다.
 
 ![자동완성 추천]( ./iced-code-suggestion.jpg )
 
 - 왼쪽 하이라이트 메뉴에서는 완성할 코드를 선택할 수 있다.
 - 하이라이트 메뉴 오른쪽은 선택한 코드의 docstring과 clojuredocs.org 조회 결과를 보여준다.
 - `clojure.core`만 보여주는 게 아니라 내가 만든 `def`나 함수도 잘 보여준다.
+
+물론 키워드도 자동완성 추천에 나타난다.
+
+![키워드 추천]( ./iced-coc-keyword.jpg )
+
+그리고 vim 자체의 기능 덕분에 `;` 주석이나 문자열 내에 있는 단어도 자동완성 추천에 나타난다.
+
+![문자열 추천]( ./iced-completion-string.jpg )
+
+물론 그 외에도 `abbr`, `iabbr` 같은 vim의 기본 자동완성들도 사용 가능하므로, 필요한 것들을 만들어 쓰면 된다.
+
+자세한 내용은 [[/vim/auto-completion]] 문서 참고.
 
 #### ultisnips
 
@@ -211,7 +225,7 @@ endsnippet
 
 `"fred".toUpperCase`를 입력하고 `control+y`를 누르면 `(.toUpperCase "fred")`로 변환되는 것을 볼 수 있다.
 
-Clojure도 천천히 개발하다보면 이런 ultisnips snippet이 하나 하나 쌓이게 될 것이다.
+시간이 흐르며 ultisnips snippet이 하나 하나 쌓이게 되는데, ultisnips snippet은 자동으로 언어별로 별도로 관리되므로 일종의 cheatsheet로 활용하는 방법도 있다.
 
 
 #### github copilot
@@ -224,13 +238,12 @@ copilot도 문제 없이 작동하는 것을 확인할 수 있었다.
 
 ### 코드 조사하기
 
-몇몇 기능을 제외하고 전부 `sa`로 시작하도록 명령을 설정해 두었다. `a`는 analyze.
+몇몇 기능을 제외하고 전부 `sa`로 시작하도록 명령을 설정해 두었다. (`a`: analyze)
 
 #### docstring
 
 docstring을 보는 것은 엄청 쉽다.
 vim 전통의 명령 `K`를 입력하면 된다.
-
 다음은 `apply`에 커서를 두고 `K`를 입력한 것이다.
 
 ![K로 docstring 보기]( ./iced-k-docstring.jpg )
@@ -238,12 +251,14 @@ vim 전통의 명령 `K`를 입력하면 된다.
 #### 사용하는 곳들 조사하기
 
 `sar`를 입력하면 커서가 위치한 엘리먼트, 심볼, 함수 등을 사용하는 곳을 모두 조사해서 목록으로 만들어 준다.
+(`r`: references)
 
 ![apply 함수를 사용하는 곳들]( ./iced-references.jpg )
 
 목록에서 엔터를 입력하면 해당 파일의 해당 라인으로 이동하게 된다.
 
 `sa/`는 grep을 사용할 수 있다. 키워드, 문자열까지 찾아주므로 `sar`보다 더 많은 검색결과가 나온다.
+(`/`: vim search)
 
 ![sa/를 사용한 모습]( ./iced-grep.jpg )
 
@@ -254,16 +269,31 @@ vim 전통의 명령 `K`를 입력하면 된다.
 
 `sad`로 커서가 위치한 함수가 어떤 다른 함수나 상수들에 의존하는지 확인할 수 있다.
 
-![의존관계 리스트]( ./iced-dependencies.jpg )
+![의존관계 리스트]( ./iced-sad.jpg )
 
 위의 스크린샷은 `solve-8-1` 함수가 어떤 사용자 함수를 사용하고 있는지 조사한 것이다.
 
 - `strings->codes`, `run-operation-list` 이렇게 두 함수를 사용하고 있다.
     - dependencies list 영역에서도 엔터 키를 사용해 해당 함수로 이동할 수 있다.
-- 오른쪽의 TagBar 영역은 vim 사용자들이라면 익숙하게 사용하는 것으로, 현재 파일에 정의된 모든 상수와 함수 목록을 보여준다. 선택해서 이동하는 기능도 있다.
-    - 참고로 TagBar는 vim-iced와는 별개의 플러그인이며 언제든지 켜고 끌 수 있다.
+
+#### 파일 구조 확인하기
+
+파일 구조는 [tagbar]( https://github.com/preservim/tagbar )를 통해 확인하면 된다.
+tagbar는 오랜 세월 vim 사용자들의 사랑을 받은 플러그인이다.
+
+![tagbar를 띄운 모습]( ./tagbar.jpg)
+
+- 오른쪽의 TagBar 영역은 vim 사용자들이라면 익숙하게 사용하는 것으로, 현재 파일에 정의된 모든 상수와 함수 목록을 보여준다.
+- 목록에서 선택하면 해당 위치로 이동한다.
 
 #### macroexpand
+
+- `sam`: `macroexpand-1`로 매크로를 펼쳐 보여준다. (`m`: macroexpand-1)
+- `saM`: `macroexpand`로 매크로를 펼쳐 보여준다.
+
+다음 스크린샷은 `->` 매크로를 `sam`으로 펼친 것이다.
+
+![macroexpand-1]( ./iced-sam.jpg )
 
 ---
 
