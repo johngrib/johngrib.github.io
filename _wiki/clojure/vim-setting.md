@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 15:07:55 +0900
+updated : 2022-03-19 16:16:43 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -253,6 +253,33 @@ vim 전통의 명령 `K`를 입력하면 된다.
 vim의 기본 코드 점프 기능인 `control + ]` 으로 함수나 상수가 정의된 곳으로 이동할 수 있다.
 
 vim 기본 기능이기 때문에 `control + o`로 이전 커서 위치로 돌아갈 수 있고, `control + i`로 앞으로 갈 수도 있다.
+
+#### clj-kondo로 lint 하기
+
+vim-iced는 clj-kondo와 통합이 되어 있어 문제가 있는 코드에 밑줄을 쳐주고, 커서를 올리면 경고 팝업을 띄워준다.
+
+그런데 아쉽게도 정작 이런 경고 목록을 만들어주는 기능은 없다.
+
+하지만 기능이 없다고 못 쓰면 말이 안 된다. `sal`을 입력하면 `clj-kondo`를 실행해 목록을 만들고 quickfix 버퍼에서 보여주도록 하면 된다.
+
+- `sal`: 린터를 실행하고 결과 목록을 보여준다. (`l`: lint)
+
+![quickfix 버퍼를 연 모습]( ./clj-kondo-quickfix.jpg )
+
+quickfix 버퍼에서 엔터를 치면 경고가 있는 위치로 이동한다.
+
+구현은 다음과 같이 하였다.
+`makeprg`로 컴파일러를 지정하고, `errorformat`으로 컴파일러 에러를 해석하는 포맷 문자열을 지정해주면 되는 C 언어 시절의 방식이지만 아직 잘 동작한다.
+
+```vim
+autocmd FileType clojure nmap sal :make<CR>:copen<CR>
+autocmd FileType clojure setlocal makeprg=clj-kondo\ --lint\ %
+autocmd FileType clojure setlocal errorformat=%f:%l:%c:\ Parse\ %t%*[^:]:\ %m,%f:%l:%c:\ %t%*[^:]:\ %m
+```
+
+만약 비동기식으로 작동하길 바란다면 팀 포프의 [vim-dispatch]( https://github.com/tpope/vim-dispatch )를 설치하고
+`:make<CR>:copen<CR>` 대신 `:Dispatch` 명령을 사용하면 된다.
+
 
 #### 사용하는 곳들 조사하기
 
