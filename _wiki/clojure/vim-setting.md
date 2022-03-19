@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 21:13:26 +0900
+updated : 2022-03-19 21:29:57 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -265,11 +265,11 @@ endsnippet
 시간이 흐르며 ultisnips snippet이 하나 하나 쌓이게 되는데, ultisnips snippet은 자동으로 언어별로 별도로 관리되므로 일종의 cheatsheet로 활용하는 방법도 있다.
 
 한편 ultisnips는 셸에서 실행해서 문자열을 얻을 수 있는 프로그램이라면 무엇이든 활용할 수 있으므로,
-자신이 즐겨 쓰는 프로그래밍 언어로 자동 완성 기능을 얼마든지 만들어 붙일 수 있다.
+자신이 즐겨 쓰는 프로그래밍 언어(Python, JavaScript, Perl 등등)로 자동 완성 기능을 얼마든지 만들어 붙일 수 있다.
 
 ![ultisnips와 함께 코딩]( ./ultisnips-edit.jpg )
 
-이 스크린샷은 bash의 `date` 명령을 사용하는 자동 완성 snippet을 만들고 실행한 결과를 캡처한 것이다.
+위의 스크린샷은 bash의 `date` 명령을 사용하는 자동 완성 snippet을 만들고 실행한 결과를 캡처한 것이다.
 
 `today`를 입력하고 `tab`을 누른 결과 `"Today is 2022.03.19."`로 완성된 것.
 
@@ -291,17 +291,37 @@ ultisnips snippet을 만들며 작업할 때는 위의 스크린샷과 같이 �
 
 #### docstring
 
-docstring을 보는 것은 엄청 쉽다.
-vim 전통의 명령 `K`를 입력하면 된다.
-다음은 `apply`에 커서를 두고 `K`를 입력한 것이다.
+- `sak` - 전용 버퍼를 열고 docstring 보기. (`k` - vim의 문서 보기 명령 K 에서 따옴)
+
+다음은 `apply`에 커서를 두고 `sak`를 입력한 것이다.
+
+![sak를 사용한 장면]( ./iced-sak.jpg )
+
+굳이 버퍼를 열어 보는 것이 귀찮다면, man 페이지를 열어주는 vim 전통의 명령 `K`를 입력하면 된다.
+이러면 버퍼가 아니라 팝업으로 볼 수 있다.
+팝업은 다음 키 입력이 있을 때까지 사라지지 않고 기다려 준다.
 
 ![K로 docstring 보기]( ./iced-k-docstring.jpg )
 
+이 설정은 이렇게 해 주었다.
+
+```viml
+autocmd FileType clojure nmap K <Plug>(iced_document_popup_open)
+autocmd FileType clojure nmap sak <Plug>(iced_document_open)
+```
+
 #### definition으로 점프
 
-vim의 기본 코드 점프 기능인 `control + ]` 으로 함수나 상수가 정의된 곳으로 이동할 수 있다.
+vim의 기본 코드 점프 기능인 `control + ]` 으로 함수나 상수가 정의된 곳으로 이동할 수 있게 했다.
 
 vim 기본 기능이기 때문에 `control + o`로 이전 커서 위치로 돌아갈 수 있고, `control + i`로 앞으로 갈 수도 있다.
+
+```viml
+" autocmd FileType clojure nmap <silent> <C-]> <Plug>(coc-definition)
+autocmd FileType clojure nmap <silent> <C-]> :IcedDefJump<CR>
+```
+
+- 윗줄의 주석처리한 설정은 coc.nvim 의 definition jump 이다.
 
 #### clj-kondo로 lint 하기
 
