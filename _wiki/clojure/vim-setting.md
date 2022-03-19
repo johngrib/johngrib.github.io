@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 16:16:43 +0900
+updated : 2022-03-19 16:28:05 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -161,6 +161,28 @@ vim 답게 물 흐르듯이 부드럽게 순서대로 입력할 수 있도록 �
 - 하단의 메시지 출력 바에도 평가 결과가 나타난다.
 - REPL의 `#1`, `#2`, `#3`과 같이, 평가 결과는 1번 레지스터에 저장된다. 평가가 누적될수록 2, 3, .. 9 숫자 레지스터로 밀리게 된다.
     - 평범한 vim 레지스터에 저장된 것이기 때문에 `:reg`로 볼 수도 있고, `p`로 붙여넣을 수도 있고, vimscript로 조작할 수도 있다. 신경을 좀 쓴다면 `@` 매크로로 활용할 수도 있다.
+
+위의 기능들을 사용하기 위해 설정은 다음과 같이 했다.
+
+```vim
+" Eval Code: - "se"
+"  (defn greet [] (println "hello world"))
+"                           <--inner-->
+"                 <-----outer_list------>
+"  <-----------outer_top_list------------>
+autocmd FileType clojure vmap se <Plug>(iced_eval_visual)
+
+autocmd FileType clojure nmap s? :vs ~/dotfiles/vim-include/set-clojure.vim<CR>
+autocmd FileType clojure nmap see <Plug>(iced_eval_and_print)<Plug>(sexp_outer_list)``
+autocmd FileType clojure nmap sew <Plug>(iced_eval_and_print)<Plug>(sexp_inner_element)``
+autocmd FileType clojure nmap ser <Plug>(iced_eval_and_print)<Plug>(sexp_outer_top_list)``
+autocmd FileType clojure nmap sef :IcedRequire<CR>:echom "file loaded:" expand("%")<CR>
+autocmd FileType clojure nmap seF :IcedRequireAll<CR>:echom "Require and reload current file."<CR>
+autocmd FileType clojure nmap sea :IcedRefresh<CR>:echom "Reload all changed files on the classpath."<CR>
+autocmd FileType clojure nmap seu <Plug>(iced_undef_all_in_ns)
+autocmd FileType clojure nmap se' <Plug>(iced_eval_at_mark)
+autocmd FileType clojure nmap sem <Plug>(iced_eval_at_mark)
+```
 
 ### REPL 다루기
 
@@ -361,16 +383,6 @@ Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 
 이제 vim에 들어가서 프로젝트 세션을 열거나 clj 파일을 열거나 해서 코딩을 할 수 있다.
 
-다음은 REPL 과 관련된 내 map 설정이다.
-
-```viml
-" REPL: - "sr"
-autocmd FileType clojure nmap src <Plug>(iced_connect)
-autocmd FileType clojure nmap srr <Plug>(iced_stdout_buffer_toggle)
-autocmd FileType clojure nmap srd <Plug>(iced_stdout_buffer_clear)
-autocmd FileType clojure nmap sri <Plug>(iced_interrupt)
-```
-
 나는 vim의 `s`키를 죽이고 프로그래밍 언어별 특수 기능의 prefix로 사용하고 있다.
 따라서 위의 `s`로 시작하는 키스트로크는 다음과 같이 생각하고 쓰면 된다.
 
@@ -379,11 +391,22 @@ autocmd FileType clojure nmap sri <Plug>(iced_interrupt)
 - `s`-`rd`: Clojure 특수기능 - REPL - Delete
 - `s`-`ri`: Clojure 특수기능 - REPL - Interrupt (오래 걸리는 평가 중단)
 
-먼저 REPL에 접속해 보자. `src`를 입력하면 iced가 `.nrepl-port`에 저장된 포트를 읽고 알아서 접속한다.
+`src`를 입력하면 iced가 `.nrepl-port`에 저장된 포트를 읽고 알아서 REPL에 접속한다.
+(사실 `src`를 일일이 입력하지 않아도 `ser` 처럼 코드를 평가하려고 해도 알아서 접속한다.)
 
 이제 REPL 버퍼를 띄우려면 `srr`을 입력한다. 다시 한 번 더 `srr`을 입력하면 버퍼가 닫힌다.
 
 버퍼에 출력된 내용을 청소하려면 `srd`를 입력한다.
+
+설정은 이렇게 하였다.
+
+```viml
+" REPL: - "sr"
+autocmd FileType clojure nmap srr <Plug>(iced_stdout_buffer_toggle)
+autocmd FileType clojure nmap srd <Plug>(iced_stdout_buffer_clear)
+autocmd FileType clojure nmap src <Plug>(iced_connect)
+autocmd FileType clojure nmap sri <Plug>(iced_interrupt)
+```
 
 ### Code Evaluation
 
