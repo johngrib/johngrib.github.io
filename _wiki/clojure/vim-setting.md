@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 22:33:12 +0900
+updated : 2022-03-19 23:25:48 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -473,17 +473,109 @@ surround는 약 5분 정도 훈련이 필요하긴 하지만 그 이후로는 �
 
 surround는 따옴표, 괄호, 스페이스까지 모두 사용이 가능하며 사용자 정의 텍스트 오브젝트도 쓸 수 있기 때문에 굉장히 강력하다.
 
+게다가 vim-sexp는 다음과 같이 8개의 텍스트 오브젝트를 제공하므로 surround와 좋은 조합을 보인다.
+
+- `af`, `if`: select COMPOUND FORMS.
+- `aF`, `iF`: select top-level COMPOUND FORMS.
+- `as`, `is`: select STRINGS.
+- `ae`, `ie`: select ELEMENTS.
+
 다음은 이런 기법들을 사용해 괄호나 따옴표 쌍을 조작하고 선택하는 장면을 gif로 만든 것이다.
 
 ![vim surround를 사용하는 모습]( ./surround.gif )
 
 (gif로 만들면서 속도가 빨라졌는데 실제로는 이 정도로 빠르게 작업하지 않는다.)
 
-#### 괄호짝으로 커서 이동
+#### 커서 점프
 
-vim은 기본적으로 괄호짝을 맞춰 커서를 점프시키는 `%` 명령(`shift + 5`)이 있으므로 이걸 쓰면 된다.
+vim은 기본적으로 괄호짝을 맞춰 커서를 점프시키는 `%` 명령(`shift + 5`)이 있으므로 짝으로의 이동은 이걸 쓴다.
 
 ![%를 사용하는 모습]( ./percent.gif )
+
+vim-sexp 기능으로 `(`, `)`를 쓰면 같은 레벨의 이전 여는 괄호, 다음 닫는 괄호로 이동할 수 있다.
+
+![양쪽 괄호를 사용해 이동하는 모습]( ./sexp-left-right.gif )
+
+`\[[`와 `]]`로 탑 레벨 엘리먼트 이동을 할 수 있다. vim-sexp 기능.
+
+![양쪽 대괄호 두번으로 이동하는 모습]( ./sexp-top-move.gif )
+
+`[e`, `]e`를 사용하면 이전, 다음 엘리먼트를 비주얼 모드로 선택할 수 있다.
+선택 후 복사하거나 삭제할 때 사용할 수 있을텐데 surround로도 가능해서 잘 쓸 것 같지는 않다.
+
+![이전 다음 엘리먼트를 선택하는 모습]( ./sexp-visual-move.gif )
+
+그 외에도 다양한 이동 명령을 제공하는데,
+아쉬운 것은 워낙 많다 보니 키가 부족했는지 vim스럽지 않게 메타 키 조합이 종종 등장한다는 것.
+
+그런데 팀 포프가 vim-sexp의 이런 키 맵핑에 대해 괜찮은 대안으로
+[vim-sexp-mappings-for-regular-people]( https://github.com/tpope/vim-sexp-mappings-for-regular-people )이라는 플러그인을 만들어 둔 바 있다.
+
+플러그인을 설치해도 괜찮긴 한데, 아주 작은 플러그인이라 굳이 설치할 필요는 없고 적당히 복사해 쓰는 정도로도 충분하다고 판단했다.
+
+다음은 내가 복사해서 쓰고 있는 설정이다. 전부 커서 이동 명령이다.
+
+```viml
+autocmd FileType clojure nmap B   <Plug>(sexp_move_to_prev_element_head)
+autocmd FileType clojure nmap W   <Plug>(sexp_move_to_next_element_head)
+autocmd FileType clojure nmap gE  <Plug>(sexp_move_to_prev_element_tail)
+autocmd FileType clojure nmap E   <Plug>(sexp_move_to_next_element_tail)
+autocmd FileType clojure xmap B   <Plug>(sexp_move_to_prev_element_head)
+autocmd FileType clojure xmap W   <Plug>(sexp_move_to_next_element_head)
+autocmd FileType clojure xmap gE  <Plug>(sexp_move_to_prev_element_tail)
+autocmd FileType clojure xmap E   <Plug>(sexp_move_to_next_element_tail)
+autocmd FileType clojure omap B   <Plug>(sexp_move_to_prev_element_head)
+autocmd FileType clojure omap W   <Plug>(sexp_move_to_next_element_head)
+autocmd FileType clojure omap gE  <Plug>(sexp_move_to_prev_element_tail)
+autocmd FileType clojure omap E   <Plug>(sexp_move_to_next_element_tail)
+```
+
+읽어보면 불필요하게 메타 키(Mac이라면 `option` 키) 조합을 누르지 않아도
+vim의 기본 키에 쉬프트만 더 누르면 sexp의 동작을 그대로 사용할 수 있도록 되어 있다는 것을 알 수 있다.
+기본 키와 똑같으므로 외울 필요도 없다.
+
+gif는 일일이 찍기 어려워 생략하도록 한다.
+
+#### slurp, barf, swap
+
+vim-sexp는 이 기능에 대한 복잡한 메타 키 조합을 제공한다.
+쓰고 있다보면 vim이 아니라 emacs를 쓰는 기분이 든다.
+
+이것 또한 팀 포프의 vim-sexp-mappings-for-regular-people 설정을 참고해 몇 개를 고쳐서 사용하기로 했다.
+
+```viml
+autocmd FileType clojure nmap <i  <Plug>(sexp_insert_at_list_head)
+autocmd FileType clojure nmap >a  <Plug>(sexp_insert_at_list_tail)
+autocmd FileType clojure nmap <f  <Plug>(sexp_swap_list_backward)
+autocmd FileType clojure nmap >f  <Plug>(sexp_swap_list_forward)
+autocmd FileType clojure nmap <e  <Plug>(sexp_swap_element_backward)
+autocmd FileType clojure nmap >e  <Plug>(sexp_swap_element_forward)
+autocmd FileType clojure nmap >(  <Plug>(sexp_emit_head_element)
+autocmd FileType clojure nmap <)  <Plug>(sexp_emit_tail_element)
+autocmd FileType clojure nmap <(  <Plug>(sexp_capture_prev_element)
+autocmd FileType clojure nmap >)  <Plug>(sexp_capture_next_element)
+```
+
+직관적인 표현이 마음에 든다.
+
+- slurp
+    - `>)`: slurp forward. 닫는 괄호를 오른쪽으로 옮겨서 다음 엘리먼트를 잡아먹는다.
+    - `<(`: slurp backward. 여는 괄호를 왼쪽으로 옮겨서 이전 엘리먼트를 잡아먹는다.
+- barf
+    - `<)`: bark forward. 닫는 괄호를 왼쪽으로 옮겨서 엘리먼트 하나를 토해낸다.
+    - `>(`: barf backward. 여는 괄호를 오른쪽으로 옮겨서 첫 번째 엘리먼트를 토해낸다.
+- swap
+    - `<f`: swap forward. 표현식을 왼쪽 표현식과 자리바꿈한다.
+    - `>f`: swap backward. 표현식을 오른쪽 표현식과 자리바꿈한다.
+    - `<e`: swap element forward. 엘리먼트를 왼쪽 엘리먼트와 자리바꿈한다.
+    - `>e`: swap element backward. 엘리먼트를 오른쪽 엘리먼트와 자리바꿈한다.
+- insert 커서
+    - `<i`: 현재 표현식의 첫번째 위치를 편집할 수 있도록 커서를 이동시키고 insert 모드로 바꾼다.
+    - `>a`: 현재 표현식의 마지막 위치를 편집할 수 있도록 커서를 이동시키고 insert 모드로 바꾼다.
+
+이 표현식의 훌륭한 점은 vim의 `>`와 `<` 명령이 motion 명령이라는 컨벤션을 무시하지 않고 활용했다는 것이다.
+
+따라서 '괄호 이동', '표현식 이동'을 생각할 때 자연스럽게  `<`, `>`를 떠올리게 된다.
 
 ### 파일 탐색
 
