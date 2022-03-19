@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 15:02:01 +0900
+updated : 2022-03-19 15:07:55 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -247,6 +247,12 @@ vim 전통의 명령 `K`를 입력하면 된다.
 다음은 `apply`에 커서를 두고 `K`를 입력한 것이다.
 
 ![K로 docstring 보기]( ./iced-k-docstring.jpg )
+
+#### definition으로 점프
+
+vim의 기본 코드 점프 기능인 `control + ]` 으로 함수나 상수가 정의된 곳으로 이동할 수 있다.
+
+vim 기본 기능이기 때문에 `control + o`로 이전 커서 위치로 돌아갈 수 있고, `control + i`로 앞으로 갈 수도 있다.
 
 #### 사용하는 곳들 조사하기
 
