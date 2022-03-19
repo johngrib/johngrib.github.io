@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 23:25:48 +0900
+updated : 2022-03-19 23:36:15 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -473,13 +473,6 @@ surround는 약 5분 정도 훈련이 필요하긴 하지만 그 이후로는 �
 
 surround는 따옴표, 괄호, 스페이스까지 모두 사용이 가능하며 사용자 정의 텍스트 오브젝트도 쓸 수 있기 때문에 굉장히 강력하다.
 
-게다가 vim-sexp는 다음과 같이 8개의 텍스트 오브젝트를 제공하므로 surround와 좋은 조합을 보인다.
-
-- `af`, `if`: select COMPOUND FORMS.
-- `aF`, `iF`: select top-level COMPOUND FORMS.
-- `as`, `is`: select STRINGS.
-- `ae`, `ie`: select ELEMENTS.
-
 다음은 이런 기법들을 사용해 괄호나 따옴표 쌍을 조작하고 선택하는 장면을 gif로 만든 것이다.
 
 ![vim surround를 사용하는 모습]( ./surround.gif )
@@ -511,9 +504,7 @@ vim-sexp 기능으로 `(`, `)`를 쓰면 같은 레벨의 이전 여는 괄호, 
 그런데 팀 포프가 vim-sexp의 이런 키 맵핑에 대해 괜찮은 대안으로
 [vim-sexp-mappings-for-regular-people]( https://github.com/tpope/vim-sexp-mappings-for-regular-people )이라는 플러그인을 만들어 둔 바 있다.
 
-플러그인을 설치해도 괜찮긴 한데, 아주 작은 플러그인이라 굳이 설치할 필요는 없고 적당히 복사해 쓰는 정도로도 충분하다고 판단했다.
-
-다음은 내가 복사해서 쓰고 있는 설정이다. 전부 커서 이동 명령이다.
+이 플러그인을 설치하면 다음 설정을 사용할 수 있다.
 
 ```viml
 autocmd FileType clojure nmap B   <Plug>(sexp_move_to_prev_element_head)
@@ -541,7 +532,7 @@ gif는 일일이 찍기 어려워 생략하도록 한다.
 vim-sexp는 이 기능에 대한 복잡한 메타 키 조합을 제공한다.
 쓰고 있다보면 vim이 아니라 emacs를 쓰는 기분이 든다.
 
-이것 또한 팀 포프의 vim-sexp-mappings-for-regular-people 설정을 참고해 몇 개를 고쳐서 사용하기로 했다.
+이것 또한 팀 포프의 vim-sexp-mappings-for-regular-people 설정을 사용하면 적절하다.
 
 ```viml
 autocmd FileType clojure nmap <i  <Plug>(sexp_insert_at_list_head)
@@ -570,12 +561,28 @@ autocmd FileType clojure nmap >)  <Plug>(sexp_capture_next_element)
     - `<e`: swap element forward. 엘리먼트를 왼쪽 엘리먼트와 자리바꿈한다.
     - `>e`: swap element backward. 엘리먼트를 오른쪽 엘리먼트와 자리바꿈한다.
 - insert 커서
-    - `<i`: 현재 표현식의 첫번째 위치를 편집할 수 있도록 커서를 이동시키고 insert 모드로 바꾼다.
-    - `>a`: 현재 표현식의 마지막 위치를 편집할 수 있도록 커서를 이동시키고 insert 모드로 바꾼다.
+    - `<I`: 현재 표현식의 첫번째 위치를 편집할 수 있도록 커서를 이동시키고 insert 모드로 바꾼다.
+    - `>I`: 현재 표현식의 마지막 위치를 편집할 수 있도록 커서를 이동시키고 insert 모드로 바꾼다.
 
 이 표현식의 훌륭한 점은 vim의 `>`와 `<` 명령이 motion 명령이라는 컨벤션을 무시하지 않고 활용했다는 것이다.
 
 따라서 '괄호 이동', '표현식 이동'을 생각할 때 자연스럽게  `<`, `>`를 떠올리게 된다.
+
+#### 텍스트 오브젝트
+
+vim-sexp는 다음과 같이 8개의 텍스트 오브젝트를 제공하므로 surround와 좋은 조합을 보인다.
+
+- `af`, `if`: select COMPOUND FORMS.
+- `aF`, `iF`: select top-level COMPOUND FORMS.
+- `as`, `is`: select STRINGS.
+- `ae`, `ie`: select ELEMENTS.
+
+vim-sexp-mappings-for-regular-people을 설치하면 다음과 같이 8개의 텍스트 오브젝트를 제공한다.
+
+- `dsf`: splice (delete surroundings of form)
+- `cse(`, `cse)`, `cseb`: surround element in parentheses
+- `cse[`, `cse]`: surround element in brackets
+- `cse{`, `cse}`: surround element in braces
 
 ### 파일 탐색
 
