@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 17:05:14 +0900
+updated : 2022-03-19 17:14:21 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -407,36 +407,10 @@ Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 :CocInstall coc-clojure
 ```
 
-### Code Evaluation
-
-```viml
-" Eval Code: - "se"
-"  (defn greet [] (println "hello world"))
-"                           <--inner-->
-"                 <-----outer_list------>
-"  <-----------outer_top_list------------>
-autocmd FileType clojure nmap s? :vs ~/dotfiles/vim-include/set-clojure.vim<CR>
-autocmd FileType clojure vmap se <Plug>(iced_eval_visual)
-autocmd FileType clojure nmap see <Plug>(iced_eval_and_print)<Plug>(sexp_outer_list)``
-autocmd FileType clojure nmap sew <Plug>(iced_eval_and_print)<Plug>(sexp_inner_element)``
-autocmd FileType clojure nmap ser <Plug>(iced_eval_and_print)<Plug>(sexp_outer_top_list)``
-autocmd FileType clojure nmap sef :IcedRequire<CR>:echom "file loaded:" expand("%")<CR>
-autocmd FileType clojure nmap seF :IcedRequireAll<CR>:echom "Require and reload current file."<CR>
-autocmd FileType clojure nmap se<CR> :IcedRefresh<CR>:echom "Reload all changed files on the classpath."<CR>
-autocmd FileType clojure nmap seu <Plug>(iced_undef_all_in_ns)
-autocmd FileType clojure nmap sex <Plug>(iced_macroexpand_1_outer_list)
-autocmd FileType clojure nmap seX <Plug>(iced_macroexpand_outer_list)
-autocmd FileType clojure nmap se' <Plug>(iced_eval_at_mark)
-autocmd FileType clojure nmap sem <Plug>(iced_eval_at_mark)
-```
-
-- `s` - `?`: 도움말, 즉 clojure vim 설정 파일을 열어준다.
-- `s` - `ee`: 현재 커서가 위치하고 있는 form을 평가한다.
-- `s` - `ef`: 현재 편집중인 파일을 읽는다.
-- `s` -`e'`: vim mark가 찍혀 있는 곳을 평가한다.
-
 
 ## Conjure로 Clojure 코딩하기
+
+주의: 나는 이제 Conjure를 사용하지 않는다.
 
 Clojure + Vim + Conjure로 작업하는 과정을 기록으로 남겨본다.
 
