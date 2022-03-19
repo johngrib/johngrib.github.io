@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 00:20:44 +0900
+updated : 2022-03-20 00:29:01 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -57,7 +57,7 @@ Neovim + [coc.nvim]( https://github.com/neoclide/coc.nvim ) + [clojure-lsp]( htt
 - \+ [vim-iced](https://liquidz.github.io/vim-iced/ )
     - [clojure-emacs/cider](https://github.com/clojure-emacs/cider )에 영감을 받아 만들어진 플러그인이며, ["Emacs CIDER에 필적하는 Clojure 도구 = 회사에서 Clojure 개발에 사용할 때 지장이 없는 도구"]( https://liquidz.github.io/vim-iced/#_overview )라는 훌륭한 목표를 갖고 있다.
     - vim과 REPL의 통합적 사용을 위한 `iced`라는 셸 명령을 제공한다. `iced`를 사용하면 [nrepl]( https://github.com/nrepl/nrepl )을 띄워주므로 다른 에디터에서도 붙을 수 있다.
-    - 코드를 평가하면 stdout 출력만 REPL 버퍼에 띄워주는 것이 불만이었다. IntelliJ + Cursive나 VsCode + Calva 는 stdout도 출력하고 평가 결과도 출력해주니까 굉장히 불편하게 느껴졌다. 그러나 결국 해결 방법을 찾아서 다른 환경에서의 REPL과 비슷하게 사용할 수 있었다.
+    - 코드를 평가하면 stdout 출력만 REPL 버퍼에 띄워주는 것이 불만이었다. IntelliJ + Cursive나 VsCode + Calva 는 stdout도 출력하고 평가 결과도 출력해주니까 굉장히 불편하게 느껴졌고 그래서 vim-iced의 첫인상도 좋지 않았다. 그러나 결국 해결 방법을 찾아서 다른 환경에서의 REPL과 비슷하게 사용할 수 있었다.
     - Conjure와 달리 REPL이 평범한 버퍼여서 session 문제가 없다.
     - 머그잔에 들어간 귀여운 핑크색 토끼가 마스코트이다.
     - [문서화]( https://liquidz.github.io/vim-iced/ )가 잘 되어 있는 편이다.
