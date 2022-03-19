@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 22:01:12 +0900
+updated : 2022-03-19 22:28:15 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -442,60 +442,40 @@ autocmd FileType clojure nmap saM <Plug>(iced_macroexpand_outer_list)
 
 ### Clojure 코딩
 
-#### 괄호 입력, 삭제, 편집, 선택
+- vim의 기본 기능과 [vim-sexp]( https://github.com/guns/vim-sexp )의 도움을 많이 받는다.
+- vim-sexp는 vim에서의 s-expression 편집을 위한 플러그인으로 paredit를 대신한다.
+- 팀 포프의 vim-surround는 원래 많이 사용하는 플러그인이긴 하지만 Clojure가 괄호를 많이 다루는 프로그래밍 언어이다 보니 특히 빛을 발한다.
 
-[vim-sexp]( https://github.com/guns/vim-sexp )가 괄호 편집 기능을 제공해 준다.
+#### 괄호 삭제, 입력, 편집, 선택
 
-vim 사용자라면 많이들 사용하는 [vim-surround]( https://github.com/tpope/vim-surround )가 있으므로 걱정할 필요가 없다.
+![괄호를 삭제하는 모습]( ./sexp-delete.gif )
+
+그냥 앞으로 지우고 있으면 vim-sexp가 닫는 괄호까지 알아서 지워준다.
+
+![괄호를 추가하는 모습]( ./sexp-insert-pair.gif )
+
+여는 괄호만 입력해도 닫는 괄호도 자동으로 잘 추가된다. 물론 `( )` 뿐 아니라 `{ }`, `[ ]` 도 잘 된다.
+
+한편, 편집과 선택은 vim 에서 흔하게 사용되는 [vim-surround]( https://github.com/tpope/vim-surround )를 그대로 써도 문제없다.
 
 surround는`y`와 `s`를 사용해 매우 세련되게 vim 언어를 확장하는 훌륭한 플러그인이다.
 vim의 텍스트 오브젝트와 함께 사용하면 매우 편리하게 괄호 뿐 아니라 다양한 텍스트 뭉치를 편집할 수 있다.
 
-아래와 같은 코드가 있고 커서가 `"hello"`에 있다고 하자.
+surround는 약 5분 정도 훈련이 필요하긴 하지만 그 이후로는 게임처럼 재미있게 사용할 수 있다.
 
-```clojure
-(println 1 2 "hello" 4 "world")
-;               ↑
-```
+이건 나름의 문법이 있어서 공부를 해야 하긴 하지만 대표격인 3가지만 소개한다면 다음과 같다.
 
-- `cs)}`: 커서를 감싸는 `)` 괄호쌍을 중괄호 `}`로 바꾼다.
+- `ys<text object><char>`: 텍스트 오브젝트를 `char`로 감싼다.
+- `ds<char>`: 텍스트 오브젝트를 감싸는 `char`를 삭제한다.
+- `cs<char><replace>`: 텍스트 오브젝트를 감싸는 `char`를 `replace`로 바꾼다.
 
-```clojure
-; 결과
-{println 1 2 "hello" 4 "world"}
-;               ↑
-```
+surround는 따옴표, 괄호, 스페이스까지 모두 사용이 가능하며 사용자 정의 텍스트 오브젝트도 쓸 수 있기 때문에 굉장히 강력하다.
 
-- `ysa"]`: 커서를 감싸는 `"` 쌍따옴표 범위를 대괄호 `]`로 감싼다.
-
-```clojure
-; 결과
-{println 1 2 ["hello"] 4 "world"}
-;               ↑
-```
-
-- `cs">`: 커서를 감싸는 쌍따옴표를 각괄호 `>`로 감싼다.
-
-```clojure
-; 결과
-{println 1 2 [<hello>] 4 "world"}
-;               ↑
-```
-
-- `yi]`: 대괄호 `]` 안쪽을 복사한다.
-
-```clojure
-; 결과
-{println 1 2 [<hello>] 4 "world"}
-;             ------- ← 복사된 값은 <hello>
-```
-
-다음은 이런 기법들을 사용해 괄호나 따옴표 쌍을 조작하는 장면을 gif로 만든 것이다.
+다음은 이런 기법들을 사용해 괄호나 따옴표 쌍을 조작하고 선택하는 장면을 gif로 만든 것이다.
 
 ![vim surround를 사용하는 모습]( ./surround.gif )
 
-gif로 만들면서 속도가 빨라졌는데 실제로는 이 정도로 빠르게 작업하지 않는다.
-
+(gif로 만들면서 속도가 빨라졌는데 실제로는 이 정도로 빠르게 작업하지 않는다.)
 
 #### 괄호 이동
 
