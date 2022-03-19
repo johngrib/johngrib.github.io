@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 16:28:05 +0900
+updated : 2022-03-19 16:31:50 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -183,6 +183,11 @@ autocmd FileType clojure nmap seu <Plug>(iced_undef_all_in_ns)
 autocmd FileType clojure nmap se' <Plug>(iced_eval_at_mark)
 autocmd FileType clojure nmap sem <Plug>(iced_eval_at_mark)
 ```
+
+- `s?`: Clojure 관련 vim 설정 파일을 본다. 도움말처럼 쓰려고 이렇게 설정했다.
+- `vmap se`: 위에서는 설명하지 않았는데, visual 모드일 때 `se`를 입력하면 선택한 영역을 평가한다.
+- `sef`, `seF`, `sea`에 `:echom`을 붙인 이유는 이 명령들이 아무런 메시지가 없이 끝나서 실행에 들어갔는지를 알 수 없었기 때문이다.
+- `sem`은 vim mark라는 것을 강조하기 위해 `se'`로도 쓸 수 있게 했다.
 
 ### REPL 다루기
 
