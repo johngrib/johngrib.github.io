@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 18:06:01 +0900
+updated : 2022-03-19 21:13:26 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -239,8 +239,7 @@ autocmd FileType clojure nmap sri <Plug>(iced_interrupt)
 
 #### ultisnips
 
-vim을 쓰는데 ultisnips를 안 쓰면 서운하다.
-이번에는 ultisnips를 써보자.
+vim으로 코딩을 하는데 ultisnips를 안 쓰면 vim의 매력이 확 줄어든다.
 
 Lisp에 macro가 있다면 vim에는 vim register macro와 [[/vim/ultisnips]]가 있다.
 
@@ -380,11 +379,9 @@ tagbar는 오랜 세월 vim 사용자들의 사랑을 받은 플러그인이다.
 
 ### Clojure 코딩
 
-#### 괄호짝 입력
+#### 괄호 입력, 삭제, 편집, 선택
 
-여는 괄호를 입력하면 vim-iced는 자동으로 닫는 괄호를 입력해 준다.
-
-#### 괄호 삭제, 편집, 선택
+[vim-sexp]( https://github.com/guns/vim-sexp )가 괄호 편집 기능을 제공해 준다.
 
 vim 사용자라면 많이들 사용하는 [vim-surround]( https://github.com/tpope/vim-surround )가 있으므로 걱정할 필요가 없다.
 
