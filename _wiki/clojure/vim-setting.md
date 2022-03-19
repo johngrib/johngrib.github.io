@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 21:58:14 +0900
+updated : 2022-03-19 22:01:12 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -425,12 +425,20 @@ vim-gutentags는 git status를 참고해 효율적으로 태그를 갱신한다.
 
 #### macroexpand
 
+Clojure 코딩을 하다 보면 `macroexpand-1`를 사용할 때도 있다.
+REPL에 입력해서 쓰는 방법도 있지만 vim-iced는 고맙게도 래핑 명령을 제공해 준다.
+
 - `sam`: `macroexpand-1`로 매크로를 펼쳐 보여준다. (`m`: macroexpand-1)
-- `saM`: `macroexpand`로 매크로를 펼쳐 보여준다.
+- `saM`: `macroexpand`로 매크로를 펼쳐 보여준다. (`M`: macroexpand)
 
 다음 스크린샷은 `->` 매크로를 `sam`으로 펼친 것이다.
 
 ![macroexpand-1]( ./iced-sam.jpg )
+
+```viml
+autocmd FileType clojure nmap sam <Plug>(iced_macroexpand_1_outer_list)
+autocmd FileType clojure nmap saM <Plug>(iced_macroexpand_outer_list)
+```
 
 ### Clojure 코딩
 
