@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 17:14:21 +0900
+updated : 2022-03-19 17:24:56 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -378,9 +378,21 @@ tagbar는 오랜 세월 vim 사용자들의 사랑을 받은 플러그인이다.
 
 ![macroexpand-1]( ./iced-sam.jpg )
 
----
+### 파일 탐색
 
----
+파일 탐색은 Clojure 코딩의 문제는 아니지만
+통합적인 환경을 설명한다면 빠뜨릴 수 없는 내용일 것이다.
+
+나는 보통은 fzf를 사용해 파일을 탐색한다.
+
+![fzf Files 명령]( ./fzf-files.jpg )
+
+만약 트리 구조의 파일 목록을 보고 싶다면 [coc-explorer]( ./https://github.com/weirongxu/coc-explorer )를 사용한다.
+(나는 [NERDTree]( https://github.com/preservim/nerdtree )를 별로 안 좋아한다.)
+
+![coc-explorer]( ./coc-explorer.jpg )
+
+여기에서 파일을 추가하거나 삭제하거나 열거나 이동하거나 하는 등의 작업이 가능하다.
 
 ### plugin 설정
 
