@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-19 22:28:15 +0900
+updated : 2022-03-19 22:33:12 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -452,6 +452,8 @@ autocmd FileType clojure nmap saM <Plug>(iced_macroexpand_outer_list)
 
 그냥 앞으로 지우고 있으면 vim-sexp가 닫는 괄호까지 알아서 지워준다.
 
+(그런데 이 기능은 별로 쓸모가 없다. surround의 `dab`가 있기 때문이다.)
+
 ![괄호를 추가하는 모습]( ./sexp-insert-pair.gif )
 
 여는 괄호만 입력해도 닫는 괄호도 자동으로 잘 추가된다. 물론 `( )` 뿐 아니라 `{ }`, `[ ]` 도 잘 된다.
@@ -477,9 +479,9 @@ surround는 따옴표, 괄호, 스페이스까지 모두 사용이 가능하며 
 
 (gif로 만들면서 속도가 빨라졌는데 실제로는 이 정도로 빠르게 작업하지 않는다.)
 
-#### 괄호 이동
+#### 괄호짝으로 커서 이동
 
-vim은 기본적으로 괄호짝을 맞춰 커서를 점프시키는 `%` 명령(`shift + 5`)이 있다.
+vim은 기본적으로 괄호짝을 맞춰 커서를 점프시키는 `%` 명령(`shift + 5`)이 있으므로 이걸 쓰면 된다.
 
 ![%를 사용하는 모습]( ./percent.gif )
 
