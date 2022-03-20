@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 23:53:31 +0900
+updated : 2022-03-21 00:03:25 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -403,6 +403,20 @@ autocmd FileType clojure nmap <silent> <C-]> :IcedDefJump<CR>
 ```
 
 - 윗줄의 주석처리한 설정은 coc.nvim 의 definition jump 이다.
+
+#### 소스 코드 흘끗 읽기
+
+- `sas`: 커서가 지시하는 함수의 소스 코드를 팝업으로 보여준다. (`s`: source)
+- `saS`: 커서가 지시하는 함수의 소스 코드를 작은 버퍼를 열어 보여준다.
+
+다음은 `is`에 커서를 두고 `sas`를 입력했을 때 나타난 팝업을 캡처한 것이다.
+
+![sas를 사용한 모습]( ./iced-sas.jpg )
+
+```viml
+autocmd FileType clojure nmap sas :IcedSourcePopupShow<CR>
+autocmd FileType clojure nmap saS :IcedSourceShow<CR>
+```
 
 #### clj-kondo로 lint 하기
 
