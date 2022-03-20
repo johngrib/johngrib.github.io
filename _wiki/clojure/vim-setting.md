@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 22:31:53 +0900
+updated : 2022-03-20 23:05:06 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -738,6 +738,20 @@ autocmd FileType clojure nmap <silent> scc :call CocAction('runCommand', 'lsp-cl
 
 ```viml
 autocmd FileType clojure nmap <silent> sct :call CocAction('runCommand', 'lsp-clojure-create-test')<CR>
+```
+
+### clj-kondo 작업
+
+- `skl`: 현재 파일을 린팅하고 목록을 보여준다. `sal`과 똑같다. (`k`: kondo, `l`: lint)
+- `skm`: `.clj-kondo/config.edn`에 매크로를 등록해서 clj-kondo가 매크로를 인식하게 해준다. (`m`: macro)
+    - TODO: 아직 쓸 일이 없어서 실제로 써보지 않았음. 사용해 본 다음 업데이트할 것.
+- `sks`: `.clj-kondo/ignore`에 현재 라인을 추가해서 경고가 나오지 않도록 한다. (`s`: suppress)
+    - TODO: 문제가 있는지 작동하지 않는다. 방법을 찾아볼 것.
+
+```viml
+autocmd FileType clojure nmap skl :Dispatch<CR>
+autocmd FileType clojure nmap skm :call CocAction('runCommand', 'lsp-clojure-resolve-macro-as')<CR>
+autocmd FileType clojure nmap sks :call CocAction('runCommand', 'lsp-clojure-suppress-diagnostic')<CR>
 ```
 
 ### 파일 탐색
