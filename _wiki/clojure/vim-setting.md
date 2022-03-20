@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 18:54:48 +0900
+updated : 2022-03-20 20:42:45 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -678,7 +678,7 @@ vim-sexp는 탑 레벨 form까지 자동으로 포함시키는 `=-`도 제공해
 
 - `sna`: 현재 편집중인 파일 최상단의 `ns` `:require`에 사용할 라이브러리를 추가하고 알리아스도 지정해 준다. (`a`: add)
 
-![sns를 사용하는 모습]( ./iced-sns.gif )
+![sna를 사용하는 모습]( ./iced-sna.gif )
 
 - `snc`: 편집중인 파일 최상단의 `ns` `:require`에서 사용하지 않는 라이브러리를 제거한다. (`c`: clear)
 
