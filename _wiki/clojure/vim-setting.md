@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 12:29:13 +0900
+updated : 2022-03-20 18:15:39 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -639,6 +639,13 @@ autocmd FileType clojure nmap >)  <Plug>(sexp_capture_next_element)
 이 표현식의 훌륭한 점은 vim의 `>`와 `<` 명령이 motion 명령이라는 컨벤션을 무시하지 않고 활용했다는 것이다.
 
 따라서 '괄호 이동', '표현식 이동'을 생각할 때 자연스럽게  `<`, `>`를 떠올리게 된다.
+
+게다가 `<`, `>`를 사용하므로 횟수를 지정할 수 있다는 것도 장점이다.
+즉 `3>)`는 slurp를 3회 하라는 뜻이다. 세 번 연속 누르는 것보다 vim 스럽다.
+
+![slurp, barf, swap을 사용하는 모습]( ./sexp-regular.gif )
+
+이 gif에서는 3가지 명령을 사용한다. `3>)`, `2<)`, `3>e`.
 
 #### 텍스트 오브젝트
 
