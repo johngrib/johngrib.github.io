@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 23:38:28 +0900
+updated : 2022-03-20 23:53:31 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -190,6 +190,7 @@ REPL과 관련된 명령은 모두 `sr`로 시작하도록 설정해 보았다.
 - `see`: 커서 위치의 form을 평가한다. (`ee`: 두 번 반복해 누르는 vim 설탕)
 - `sew`: 커서 위치의 element를 평가한다. (`w`: word)
 - `sea`: classpath의 모든 변경된 파일을 다시 읽는다. (프로젝트 전체를 읽는다)
+- `seA`: classpath의 모든 파일을 읽는다. (프로젝트 전체를 읽는다)
 - `seu`: 현재 네임스페이스의 모든 `def`를 undef 한다.
     - (`seu` `sef`를 쓰면 파일을 다시 읽기 위해 REPL을 껐다 켜지 않아도 된다)
 
@@ -251,6 +252,7 @@ autocmd FileType clojure nmap ser <Plug>(iced_eval_and_print)<Plug>(sexp_outer_t
 autocmd FileType clojure nmap sef :IcedRequire<CR>:echom "file loaded:" expand("%")<CR>
 autocmd FileType clojure nmap seF :IcedRequireAll<CR>:echom "Require and reload current file."<CR>
 autocmd FileType clojure nmap sea :IcedRefresh<CR>:echom "Reload all changed files on the classpath."<CR>
+autocmd FileType clojure nmap seA :IcedRefreshAll<CR>:echom "Reload all files on the classpath."<CR>
 autocmd FileType clojure nmap seu <Plug>(iced_undef_all_in_ns)
 autocmd FileType clojure nmap se' <Plug>(iced_eval_at_mark)
 autocmd FileType clojure nmap sem <Plug>(iced_eval_at_mark)
