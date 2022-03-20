@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 22:02:01 +0900
+updated : 2022-03-20 22:31:53 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -728,6 +728,16 @@ autocmd FileType clojure nmap scr :IcedRenameSymbol<CR>
 
 ```viml
 autocmd FileType clojure nmap <silent> scc :call CocAction('runCommand', 'lsp-clojure-cycle-coll')<CR>
+```
+
+#### 테스트 코드 파일 생성
+
+- `sct`: 커서가 지시하고 있는 함수를 테스트하기 위한 테스트 파일을 테스트 경로에 생성해 준다. (`c`: create, `t`: test)
+
+테스트 파일을 생성할 때 기본이라 할 수 있는 최상단 `ns`와 `:require`, 첫 번째 `deftest` 구문은 자동으로 완성되어 있다.
+
+```viml
+autocmd FileType clojure nmap <silent> sct :call CocAction('runCommand', 'lsp-clojure-create-test')<CR>
 ```
 
 ### 파일 탐색
