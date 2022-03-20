@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 23:05:06 +0900
+updated : 2022-03-20 23:38:28 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -730,15 +730,40 @@ autocmd FileType clojure nmap scr :IcedRenameSymbol<CR>
 autocmd FileType clojure nmap <silent> scc :call CocAction('runCommand', 'lsp-clojure-cycle-coll')<CR>
 ```
 
-#### 테스트 코드 파일 생성
+### 테스트 코드
 
-- `sct`: 커서가 지시하고 있는 함수를 테스트하기 위한 테스트 파일을 테스트 경로에 생성해 준다. (`c`: create, `t`: test)
+- `stc`: 커서가 지시하고 있는 함수를 테스트하기 위한 테스트 파일을 테스트 경로에 생성해 준다. (`t`: test, `c`: create)
+    - 테스트 파일을 생성할 때 기본이라 할 수 있는 최상단 `ns`와 `:require`, 첫 번째 `deftest` 구문은 자동으로 완성되어 있다.
+- `st'`: 현재 파일의 테스트 코드 파일로 점프한다. 한 번 더 입력하면 소스코드 파일로 점프. (`'`: mark jump를 의도했다)
+    - `file_name.clj` - `file_name_test.clj`로 파일 이름 형식이 맞아야 작동한다.
+- `stt`: 커서가 지시하고 있는 테스트 코드 하나를 실행한다. (`tt`: vim 설탕)
+- `stn`: 현재 네임스페이스의 테스트 코드를 모두 실행한다. (`n`: namespace)
+- `sta`: 프로젝트의 모든 테스트 코드를 실행한다. (`a`: all)
+    - TODO: 테스트를 찾지 못한다는 메시지가 나온다. 작동하지 않는 원인을 찾아보도록 하자.
+- `str`: 실패한 테스트를 다시 실행한다. (`r`: redo)
+- `st.`: 마지막에 실행한 테스트를 다시 실행한다. (`.`: vim repeat)
 
-테스트 파일을 생성할 때 기본이라 할 수 있는 최상단 `ns`와 `:require`, 첫 번째 `deftest` 구문은 자동으로 완성되어 있다.
+`stc`를 제외하고 모두 vim-iced의 기능을 사용하고 있다.
+vim-iced는 실패한 테스트가 있을 경우 보기 좋게 레포트 버퍼를 만들어 보여주고, 테스트 옆 라인 넘버에 🔥 이모지를 보여준다.
+
+다음은 `stn`으로 실패한 테스트가 발견됐을 경우이다.
+
+![stn 테스트가 실패한 경우]( ./iced-test-fail.jpg )
+
+테스트에 성공하면 레포트 버퍼와 🔥 이모지는 사라진다.
+
+![테스트에 성공한 경우]( ./iced-test-success.jpg )
 
 ```viml
-autocmd FileType clojure nmap <silent> sct :call CocAction('runCommand', 'lsp-clojure-create-test')<CR>
+autocmd FileType clojure nmap <silent> stc :call CocAction('runCommand', 'lsp-clojure-create-test')<CR>
+autocmd FileType clojure nmap st' <Plug>(iced_cycle_src_and_test)
+autocmd FileType clojure nmap stt :IcedTestUnderCursor<CR>
+autocmd FileType clojure nmap stn :IcedTestNs<CR>
+autocmd FileType clojure nmap sta :IcedTestAll<CR>
+autocmd FileType clojure nmap str :IcedTestRedo<CR>
+autocmd FileType clojure nmap st. :IcedTestRerunLast<CR>
 ```
+
 
 ### clj-kondo 작업
 
