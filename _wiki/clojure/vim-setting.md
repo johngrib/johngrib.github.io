@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 21:15:48 +0900
+updated : 2022-03-20 21:16:27 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -339,7 +339,7 @@ endsnippet
 ![ultisnips를 사용하는 모습2]( ./ultisnips-hash-underbar-repeat.gif )
 
 `4#_`를 입력하고 `tab`을 누르면 `#_#_#_#_`로 완성되는 것을 볼 수 있다.
-물론 `100#_`도 되고 `10000#_`된다.
+물론 `100#_`도 되고 `10000#_`도 된다.
 
 시간이 흐르며 ultisnips snippet이 하나 하나 쌓이게 되는데, ultisnips snippet은 자동으로 언어별로 별도로 관리되므로 일종의 cheatsheet로 활용하는 방법도 있다.
 
