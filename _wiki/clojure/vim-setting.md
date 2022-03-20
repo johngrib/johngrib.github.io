@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 00:32:41 +0900
+updated : 2022-03-20 12:29:13 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -676,6 +676,31 @@ vim-sexp는 탑 레벨 form까지 자동으로 포함시키는 `=-`도 제공해
 ```viml
 autocmd FileType clojure nmap sns :IcedAddNs<CR>
 ```
+
+#### 리네임
+
+![리네임하는 모습]( ./iced-rename.gif )
+
+- `scr`: 심볼 rename. (`c`: code, `r`: rename)
+
+이 기능은 [jet]( https://github.com/borkdude/jet )에 의존하기 때문에 jet을 설치해 줘야 한다.
+
+```bash
+brew install borkdude/brew/jet
+```
+
+그런데 문제가 좀 있다.
+
+- 연속적으로 rename을 할 때 깔끔하게 되지 않는 느낌이 든다.
+- symbol rename 은 잘 되지만 키워드는 지원하지 않는다. [[/cmd/sed]]를 사용하는 도구를 만들어야 할까?
+- clj-kondo가 바뀐 이름을 인지하지 못하는 경우가 있다.
+
+이 문제는 시간을 두고 천천히 해결해보자.
+
+```viml
+autocmd FileType clojure nmap scr :IcedRenameSymbol<CR>
+```
+
 
 ### 파일 탐색
 
