@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-20 21:16:27 +0900
+updated : 2022-03-20 22:02:01 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -718,6 +718,17 @@ brew install borkdude/brew/jet
 autocmd FileType clojure nmap scr :IcedRenameSymbol<CR>
 ```
 
+#### cycle collection
+
+- `scc`: 컬렉션 리터럴 순환. (`c`: cycle)
+
+`scc`를 입력할 때마다 `#{}`, `{}`, `[]`, `()`로 바꾼다.
+
+![컬렉션 순환을 사용하는 모습]( ./coc-scc.gif )
+
+```viml
+autocmd FileType clojure nmap <silent> scc :call CocAction('runCommand', 'lsp-clojure-cycle-coll')<CR>
+```
 
 ### 파일 탐색
 
