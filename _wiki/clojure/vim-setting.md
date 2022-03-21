@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-21 00:03:25 +0900
+updated : 2022-03-21 09:58:07 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -788,11 +788,14 @@ autocmd FileType clojure nmap st. :IcedTestRerunLast<CR>
     - TODO: 아직 쓸 일이 없어서 실제로 써보지 않았음. 사용해 본 다음 업데이트할 것.
 - `sks`: `.clj-kondo/ignore`에 현재 라인을 추가해서 경고가 나오지 않도록 한다. (`s`: suppress)
     - TODO: 문제가 있는지 작동하지 않는다. 방법을 찾아볼 것.
+    - 일단 `i#_:clj-kondo/ignore<ESC>`으로 대체하여 사용중.
+
 
 ```viml
 autocmd FileType clojure nmap skl :Dispatch<CR>
 autocmd FileType clojure nmap skm :call CocAction('runCommand', 'lsp-clojure-resolve-macro-as')<CR>
-autocmd FileType clojure nmap sks :call CocAction('runCommand', 'lsp-clojure-suppress-diagnostic')<CR>
+autocmd FileType clojure nmap sks i#_:clj-kondo/ignore<ESC>
+" autocmd FileType clojure nmap sks :call CocAction('runCommand', 'lsp-clojure-suppress-diagnostic')<CR>
 ```
 
 ### 파일 탐색
