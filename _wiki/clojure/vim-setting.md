@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-21 09:58:07 +0900
+updated : 2022-03-21 18:33:48 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -140,6 +140,15 @@ vim-iced가 설치하겠냐고 물어본 다음 알아서 설치해준다.
 
 설정을 마친 다음, 내가 어떻게 Clojure로 코딩하고 있는지를 기록으로 남겨본다.
 
+`s`는 내가 프로그래밍 언어별로 특화된 기능을 붙일 때 쓰는 키이다.
+따라서 Clojure 코딩과 관련된 vim 명령은 `s`로 시작하도록 매핑해 두었다.
+
+- `sss`: vim-iced 명령 검색 메뉴 띄우기.
+
+```vim
+autocmd FileType clojure nmap sss :IcedCommandPalette<CR>
+```
+
 ### REPL 실행
 
 vim-iced는 통합적인 환경을 위해 자체적으로 `iced`라는 명령을 제공한다.
@@ -162,8 +171,6 @@ iced repl -A:dev &  # 백그라운드로 실행
 포트 번호는 굳이 기억해두지 않아도 자동으로 `.nrepl-port` 파일에 저장되니 신경쓰지 않아도 된다.
 
 ### vim에서 REPL에 접속하기
-
-`s`는 내가 프로그래밍 언어별로 특화된 기능을 붙일 때 쓰는 키이다.
 
 REPL과 관련된 명령은 모두 `sr`로 시작하도록 설정해 보았다.
 
