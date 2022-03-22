@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2020-01-26 22:36:12 +0900
+updated : 2022-03-23 00:40:03 +0900
 tag     : bash vim ctags golang command
 toc     : true
 public  : true
@@ -135,6 +135,56 @@ autocmd BufWritePost * call system("ctags -R")
     * tagbar 윈도우에서 함수명, 변수명에 커서를 놓고 엔터를 입력하면 해당 위치로 점프한다.
 
 #### tagbar에 markdown 요약 보여주기
+
+##### 새로운 언어 vimwiki 정의하기
+
+Universal ctags는 vimwiki의 `.md` 확장자를 갖는 파일을 markdown 언어로 인식하여 자동으로 tagbar에 인덱스를 만들어 준다.
+
+![Universal ctags가 만들어준 vimwiki 인덱스]( ./tagbar-vimwiki-ugly.jpg )
+
+그런데 몇 가지 문제가 있다.
+
+- 더 심플하게 보고 싶다.
+    - `section`, `subsection` 같은 타입 표시는 나에게는 필요없다.
+    - fold 기능도 필요없다.
+- 문서에 실시간으로 새로운 섹션을 추가해도 곧바로 인덱스에 추가되지 않는다.
+    - `:e`를 입력해야 반영된다. 이게 엄청 귀찮다.
+
+이에 대한 해결책으로 `vimwiki`를 Universal ctags가 인식하는 새로운 언어로 등록해보자.
+
+일단 알아둬야 할 것은 [Universal ctags가 설정 파일로 `~/.ctags`를 사용하지 않는다는 것]( https://github.com/universal-ctags/ctags#differences-from-exuberant-ctags )이다.
+
+`~/.ctags.d/vimwiki.ctags` 파일을 만들고 다음과 같이 내용을 작성한다.
+
+```
+--langdef=vimwiki
+--langmap=vimwiki:.md
+--regex-vimwiki=/^(##+[ \t]+.*)/\1/h,heading,headings/
+```
+
+그리고 `.vimrc`에 다음과 같이 `vimwiki` 언어를 `tagbar`가 인식할 수 있도록 설정해 준다.
+
+```viml
+let g:tagbar_type_vimwiki = {
+    \ 'ctagstype' : 'vimwiki',
+    \ 'sort': 0,
+    \ 'kinds' : [
+        \ 'h:Heading'
+    \ ]
+\ }
+``` 
+
+그러면 다음과 같이 더 단순한 모습의 tagbar를 볼 수 있다.
+이 방식을 사용하면 파일을 저장할 때마다 tagbar가 자동으로 갱신되므로 더 편리하다.
+
+![심플한 태그바가 나온 모습]( ./tagbar-vimwiki-simple.jpg )
+
+##### Deprecated: 이제는 사용하지 않는 방법
+
+>
+이 방법은 Universal ctags가 markdown 언어를 지원하지 않았던 때의 해결책이다.
+>
+Universal ctags는 2019년 10월 22일부터 markdown 언어를 지원한다.
 
 [tagbar wiki: markdown](https://github.com/majutsushi/tagbar/wiki#markdown )
 

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-22 23:35:13 +0900
+updated : 2022-03-23 00:18:55 +0900
 tag     : clojure vim
 toc     : true
 public  : true
