@@ -20,6 +20,7 @@
   "vim-with-space-char",
   "vim-ycm-python3",
   "vim/help",
+  "vim/match",
   "vim/persistent-undo",
   "vim/ultisnips",
   "vimwiki"

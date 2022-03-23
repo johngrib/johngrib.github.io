@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-14 21:19:22 +0900
+updated : 2022-03-23 23:40:54 +0900
 regenerate: true
 ---
 
@@ -570,6 +570,7 @@ regenerate: true
 
 * [[/vim/auto-completion]]
 * [[/vim/help]]
+* [[/vim/match]]
 * [[/vim/persistent-undo]]
 * [[/vim/ultisnips]]
 

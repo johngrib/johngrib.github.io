@@ -22,6 +22,7 @@
  "vim-with-space-char",
  "vim-ycm-python3",
  "vim/auto-completion",
+ "vim/match",
  "vim/persistent-undo",
  "vim/ultisnips",
  "vimwiki",
