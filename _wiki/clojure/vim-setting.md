@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-23 00:18:55 +0900
+updated : 2022-03-25 16:56:26 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -733,19 +733,6 @@ autocmd FileType clojure nnoremap ={ vi{<c-v>$:EasyAlign\ g/^\S/<cr>gv=
 
 `=[`와 `={`는 [vim-easy-align]( https://github.com/junegunn/vim-easy-align ) 플러그인을 사용한다.
 
-#### 네임스페이스
-
-- `sna`: 현재 편집중인 파일 최상단의 `ns` `:require`에 사용할 라이브러리를 추가하고 알리아스도 지정해 준다. (`a`: add)
-
-![sna를 사용하는 모습]( ./iced-sna.gif )
-
-- `snc`: 편집중인 파일 최상단의 `ns` `:require`에서 사용하지 않는 라이브러리를 제거한다. (`c`: clear)
-
-```viml
-autocmd FileType clojure nmap sna :IcedAddNs<CR>
-autocmd FileType clojure nmap snc :IcedCleanNs<CR>
-```
-
 #### 리네임
 
 ![리네임하는 모습]( ./iced-rename.gif )
@@ -781,6 +768,38 @@ autocmd FileType clojure nmap scr :IcedRenameSymbol<CR>
 ```viml
 autocmd FileType clojure nmap <silent> scc :call CocAction('runCommand', 'lsp-clojure-cycle-coll')<CR>
 ```
+
+#### 네임스페이스 관리
+
+- `sna`: 현재 편집중인 파일 최상단의 `ns` `:require`에 사용할 라이브러리를 추가하고 알리아스도 지정해 준다. (`a`: add)
+
+![sna를 사용하는 모습]( ./iced-sna.gif )
+
+- `snc`: 편집중인 파일 최상단의 `ns` `:require`에서 사용하지 않는 라이브러리를 제거한다. (`c`: clear)
+- `sns`: `:require`, `:import` 등 파일 최상단의 `ns` 목록을 정렬해 준다. (`s`: sort)
+    - vim 매크로를 사용해 정렬한다. 빠르다. 시간 소요를 거의 못 느낌.
+
+![sns를 사용하는 모습]( ./require-sort-vim.gif )
+
+- `snS`: `sns`와 같지만 몇 가지 기능이 더 붙어있다.
+    - `clojure-lsp`의 `clean-ns`를 사용한다. 느리다. 4~6초 정도 걸린다.
+
+```viml
+autocmd FileType clojure nmap sna :IcedAddNs<CR>
+autocmd FileType clojure nmap snc :IcedCleanNs<CR>
+
+autocmd FileType clojure nmap sns :call Sort_clojure_namspace_require()<CR>
+function! Sort_clojure_namspace_require()
+    if input("namespace require list를 정렬하시겠습니까? (y/n)") =~ "y"
+        execute "normal! gg/:require ^Mea^M^M^[/))^Mi^M^M^[ggvip}10</[^Mvip:sort^MkkJJ}kJJvip="
+    endif
+endfunction
+
+autocmd FileType clojure nmap snS :call system("clojure-lsp clean-ns --settings '{:clean {:ns-inner-blocks-indentation :same-line :sort {:ns true :require true :import true :refer {:max-line-length 80}}}}' --filenames " . expand("%"))<CR>:e<CR>
+```
+
+- 주의: `Sort_clojure_namspace_require`에 포함되어 있는 `^M`은 표기상 문제로 `^M` 두 글자로 대체했지만 실제로는 개행문자 한 글자이다.
+    - 참고: [나의 설정 파일]( https://github.com/johngrib/dotfiles/blob/78cec0a6d5f2cf258d4868f7b5a071e1caba1488/vim-include/set-clojure.vim#L91 )
 
 ### 테스트 코드
 
