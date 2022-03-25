@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-25 17:58:36 +0900
+updated : 2022-03-25 19:09:52 +0900
 regenerate: true
 ---
 
@@ -609,7 +609,6 @@ regenerate: true
 * [[floating-point]]
 * [[gray-code]]
 * [[groupId-artifactId]]
-* [[http]]
 * [[indent-style]]
 * [[IP]]
 * [[latency]]
@@ -760,16 +759,17 @@ regenerate: true
 
 ## 미분류
 
+* [[Byzantine-failure]]
 * [[abbr]]
 * [[backus-naur-form]]
 * [[bell-labs]]
 * [[big-numbers]]
-* [[Byzantine-failure]]
 * [[coding-font]]{코딩 폰트}
 * [[color-model]]
 * [[defensive-copy]]
 * [[email-validation]]
 * [[gnu-project]]
+* [[http]]
 * [[integer]]
 * [[junit5-nested]]
 * [[locking]]

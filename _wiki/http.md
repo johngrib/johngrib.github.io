@@ -1,13 +1,13 @@
 ---
-layout  : wiki
+layout  : category
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2021-12-12 21:23:01 +0900
+updated : 2022-03-25 19:09:29 +0900
 tag     : http
 toc     : true
 public  : true
-parent  : [[what]]
+parent  : [[/root-index]]
 latex   : false
 ---
 * TOC
