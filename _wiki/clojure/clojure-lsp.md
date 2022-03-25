@@ -3,7 +3,7 @@ layout  : wiki
 title   : clojure-lsp
 summary : A Language Server for Clojure(script).
 date    : 2022-03-25 17:58:51 +0900
-updated : 2022-03-25 18:47:37 +0900
+updated : 2022-03-25 18:49:12 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -137,6 +137,9 @@ clojure-lsp clean-ns \
 - [clojure-lsp/lib/test/clojure_lsp/feature/clean_ns_test.clj]( https://github.com/clojure-lsp/clojure-lsp/blob/62075f342dc98f5bbae0a59ee68e91e5c38aacfa/lib/test/clojure_lsp/feature/clean_ns_test.clj )
 
 
+#### vim에서의 활용
+
+나는 [이렇게]( https://github.com/johngrib/dotfiles/commit/78cec0a6d5f2cf258d4868f7b5a071e1caba1488 ) 설정해서 사용하고 있다.
 
 ## Links
 
