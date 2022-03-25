@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-25 16:56:26 +0900
+updated : 2022-03-26 00:26:27 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -756,6 +756,18 @@ brew install borkdude/brew/jet
 ```viml
 autocmd FileType clojure nmap scr :IcedRenameSymbol<CR>
 ```
+
+#### 주석처리
+
+나는 팀 포프의 [vim-commentary]( https://github.com/tpope/vim-commentary )를 오랫동안 사용해오고 있으므로
+Clojure 코딩을 하는 동안에도 특별한 설정 없이 그대로 사용하고 있다.
+
+- `gcc`: 한 줄 주석처리.
+- `gc<텍스트 오브젝트>`: 텍스트 오브젝트 주석처리.
+    - `gcip`: 문단 주석처리.
+    - `gciE`: 파일 전체 주석처리. (나는 `iE`, `aE`를 파일 전체로 사용하고 있다.)
+
+![gcc와 gc를 사용하는 모습]( ./gcc.gif )
 
 #### cycle collection
 
