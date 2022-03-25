@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-26 00:26:27 +0900
+updated : 2022-03-26 00:59:09 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -768,6 +768,22 @@ Clojure 코딩을 하는 동안에도 특별한 설정 없이 그대로 사용�
     - `gciE`: 파일 전체 주석처리. (나는 `iE`, `aE`를 파일 전체로 사용하고 있다.)
 
 ![gcc와 gc를 사용하는 모습]( ./gcc.gif )
+
+#### Discard
+
+엘리먼트나 form 앞에 `#_` 붙여 사용할 수 있는 Discard를 편하게 사용할 수 있도록 설정해 쓰고 있다.
+
+- `sc#`: form에 `#_`를 추가한다.
+- `sc3`: 엘리먼트에 `#_`를 추가한다.
+
+`숫자.`과 함께 사용하면 꽤 편리하다.
+
+![sc3, sc#을 사용하는 모습]( ./sc3.gif )
+
+```viml
+autocmd FileType clojure nmap sc# <Plug>(sexp_move_to_prev_bracket)i#_<Esc>``
+autocmd FileType clojure nmap sc3 <Plug>(sexp_move_to_prev_element_head)i#_<Esc>l
+```
 
 #### cycle collection
 
