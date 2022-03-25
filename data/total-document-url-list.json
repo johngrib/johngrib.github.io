@@ -106,6 +106,7 @@
  "/wiki/clipping",
  "/wiki/clojure",
  "/wiki/clojure/boolean",
+ "/wiki/clojure/clojure-lsp",
  "/wiki/clojure/cursive",
  "/wiki/clojure/earmuffs",
  "/wiki/clojure/equality",

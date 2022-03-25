@@ -7,6 +7,7 @@
  "updated": "2022-02-17 23:56:23 +0900",
  "children": [
   "clojure/boolean",
+  "clojure/clojure-lsp",
   "clojure/cursive",
   "clojure/guide",
   "clojure/reference",
