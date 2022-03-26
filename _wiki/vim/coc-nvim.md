@@ -3,7 +3,7 @@ layout  : wiki
 title   : coc.nvim
 summary : vim을 vscode처럼 사용할 수 있게 도와주는 자동완성 플러그인
 date    : 2019-05-16 22:19:50 +0900
-updated : 2022-03-26 13:07:47 +0900
+updated : 2022-03-26 13:14:20 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -55,7 +55,9 @@ coc의 랭귀지 서버 설치는 쉽다.
 
 coc 서비스를 중복으로 사용하고 있는 것이 원인이다.
 
-coc.nvim에도 [Duplicate Suggestions in autocompletion #1824]( https://github.com/neoclide/coc.nvim/issues/1824 ){같은 이슈}가 등록되어 있으므로 참고해 볼 만하다.
+coc.nvim에도 이슈가 등록되어 있으므로 읽어보도록 하자.
+
+- [Duplicate Suggestions in autocompletion #1824]( https://github.com/neoclide/coc.nvim/issues/1824 ) 
 
 다음 명령을 사용하면 서비스 목록을 볼 수 있다.
 
