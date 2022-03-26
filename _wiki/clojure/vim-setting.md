@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-26 10:52:18 +0900
+updated : 2022-03-26 13:28:47 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -169,6 +169,36 @@ iced repl -A:dev &  # 백그라운드로 실행
 ```
 
 포트 번호는 굳이 기억해두지 않아도 자동으로 `.nrepl-port` 파일에 저장되니 신경쓰지 않아도 된다.
+
+참고로 vim-iced의 매뉴얼을 읽어보면 `iced` 명령이 어떤 설정들을 래핑한 것인지 짐작할 수 있다.
+
+```
+                                                    *vim-iced-manual-leiningen*
+LEININGEN~
+
+  $HOME/.lein/profile.clj
+>
+  {:user
+   {:dependencies [[nrepl "0.9.0"]
+                   [com.github.liquidz/iced-nrepl "1.2.8"]
+                   [cider/cider-nrepl "0.28.2"]]
+    :repl-options {:nrepl-middleware [cider.nrepl/wrap-classpath
+                                      cider.nrepl/wrap-clojuredocs
+                                      cider.nrepl/wrap-complete
+                                      cider.nrepl/wrap-debug
+                                      cider.nrepl/wrap-format
+                                      cider.nrepl/wrap-info
+                                      cider.nrepl/wrap-macroexpand
+                                      cider.nrepl/wrap-ns
+                                      cider.nrepl/wrap-out
+                                      cider.nrepl/wrap-spec
+                                      cider.nrepl/wrap-test
+                                      cider.nrepl/wrap-trace
+                                      cider.nrepl/wrap-undef
+                                      cider.nrepl/wrap-xref
+                                      iced.nrepl/wrap-iced]}
+    :plugins [[refactor-nrepl "3.3.2"]]}}
+```
 
 ### vim에서 REPL에 접속하기
 
