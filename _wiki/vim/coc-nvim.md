@@ -1,13 +1,13 @@
 ---
 layout  : wiki
-title   : coc.nvim을 사용해보자
-summary : 
+title   : coc.nvim
+summary : vim을 vscode처럼 사용할 수 있게 도와주는 자동완성 플러그인
 date    : 2019-05-16 22:19:50 +0900
-updated : 2022-03-01 12:16:35 +0900
+updated : 2022-03-26 12:28:09 +0900
 tag     : vim
 toc     : true
 public  : true
-parent  : [[vim]]
+parent  : [[/vim]]
 latex   : false
 ---
 * TOC
