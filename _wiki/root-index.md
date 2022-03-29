@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-26 12:28:45 +0900
+updated : 2022-03-29 23:53:38 +0900
 regenerate: true
 ---
 
@@ -453,6 +453,7 @@ regenerate: true
 * [[/cmd/ag]]
 * [[/cmd/bind]]
 * [[/cmd/cal]]
+* [[/cmd/column]]
 * [[/cmd/curl]]
 * [[/cmd/date]]
 * [[/cmd/ditto]]

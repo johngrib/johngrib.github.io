@@ -69,7 +69,7 @@
  },
  {
   "name": "bash",
-  "size": 61
+  "size": 62
  },
  {
   "name": "bayes",
@@ -157,7 +157,7 @@
  },
  {
   "name": "command",
-  "size": 66
+  "size": 67
  },
  {
   "name": "command-line",

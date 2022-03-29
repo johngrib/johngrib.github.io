@@ -8,6 +8,7 @@
  "cmd/ag",
  "cmd/bind",
  "cmd/cal",
+ "cmd/column",
  "cmd/curl",
  "cmd/date",
  "cmd/ditto",
