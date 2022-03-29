@@ -3,7 +3,7 @@ layout  : wiki
 title   : clojure-lsp
 summary : A Language Server for Clojure(script).
 date    : 2022-03-25 17:58:51 +0900
-updated : 2022-03-25 18:49:12 +0900
+updated : 2022-03-29 21:12:17 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -129,7 +129,7 @@ clojure-lsp clean-ns \
  # next-line 을 사용하는 경우
 clojure-lsp clean-ns \
     --settings '{:clean {:ns-inner-blocks-indentation :next-line :sort {:ns true :require true :import true :refer {:max-line-length 80}}}}' \
-    --filenames src/sinsun_market/cash
+    --filenames src/경로
 ```
 
 `clean-ns`의 동작을 확실하게 알고 싶다면 `clean-ns`의 테스트 코드를 읽어보면 도움이 된다.
