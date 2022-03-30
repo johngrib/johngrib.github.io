@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-26 13:28:47 +0900
+updated : 2022-03-30 23:47:41 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -666,6 +666,16 @@ vim의 기본 키에 쉬프트만 더 누르면 sexp의 동작을 그대로 사�
 기본 키와 똑같으므로 외울 필요도 없다.
 
 gif는 일일이 찍기 어려워 생략하도록 한다.
+
+#### 커서 점프(INSERT MODE)
+
+- `control + f`: 현재 입력중인 form의 닫는 괄호 바깥으로 점프.
+- `control + b`: 현재 입력중인 form의 여는 괄호 바깥으로 점프.
+
+```viml
+autocmd FileType clojure imap <C-f> <Esc><Plug>(sexp_move_to_next_bracket)a
+autocmd FileType clojure imap <C-b> <Esc><Plug>(sexp_move_to_prev_bracket)i
+```
 
 #### slurp, barf, swap
 
