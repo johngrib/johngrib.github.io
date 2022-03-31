@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-30 23:47:41 +0900
+updated : 2022-03-31 19:37:06 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -671,6 +671,8 @@ gif는 일일이 찍기 어려워 생략하도록 한다.
 
 - `control + f`: 현재 입력중인 form의 닫는 괄호 바깥으로 점프.
 - `control + b`: 현재 입력중인 form의 여는 괄호 바깥으로 점프.
+
+![c-f, c-b를 사용하는 모습]( ./c-f.gif )
 
 ```viml
 autocmd FileType clojure imap <C-f> <Esc><Plug>(sexp_move_to_next_bracket)a
