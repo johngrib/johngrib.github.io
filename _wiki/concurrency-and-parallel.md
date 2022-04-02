@@ -3,7 +3,7 @@ layout  : wiki
 title   : Concurrency 와 Parallel
 summary : 병행과 병렬
 date    : 2021-02-21 23:11:54 +0900
-updated : 2022-04-02 12:12:50 +0900
+updated : 2022-04-02 12:25:50 +0900
 tag     : 
 toc     : true
 public  : true
@@ -109,9 +109,10 @@ Concurrency      │              Parallel
 
 - [DANI] 누구나 쉽게 배우는 클로저 / 다니엘 히긴보텀 저 / 김종덕 역 / 비제이퍼블릭(BJ퍼블릭) / 초판 1쇄 발행 2016년 08월 30일 / 원제: Clojure for the Brave and True
 - [JANG] Practical 모던 자바 / 장윤기 저 / 인사이트(insight) / 초판 1쇄 2020년 09월 21일
+    - [원문]( https://www.braveclojure.com/concurrency/ )
 
 ## 주석
 
 [^JANG-6]: [JANG] 6장 병렬 프로그래밍
-[^DANI-222]: [DANI] 9장. 동시와 병렬의 개념
+[^DANI-222]: [DANI] 9장. 동시와 병렬의 개념.
 
