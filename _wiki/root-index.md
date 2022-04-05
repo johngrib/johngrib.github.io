@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-03-29 23:53:38 +0900
+updated : 2022-04-05 23:44:17 +0900
 regenerate: true
 ---
 
@@ -528,6 +528,7 @@ regenerate: true
 
 ### [[git]]
 
+* [[/git/cherry-pick]]
 * [[/git/examples]]
 * [[/git/fetch]]
 * [[/git/index]]
