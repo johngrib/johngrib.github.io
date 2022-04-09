@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-10 00:16:35 +0900
+updated : 2022-04-10 00:21:20 +0900
 tag     : git
 toc     : true
 public  : true
@@ -166,4 +166,20 @@ If there is no -s option, a built-in list of strategies is used instead (ort whe
 주어진 merge 전략을 사용합니다.
 merge 전략은 시도할 순서대로 제공할 수 있으므로, 하나 이상 지정할 수 있습니다.
 만약 `-s` 옵션이 없다면, 기본적으로 내장된 전략들이 사용됩니다(단일 head일 경우에는 `ort`, 그 외의 경우에는 `octopus`).
+
+#### \--autostash, \--no-autostash
+
+>
+Automatically create a temporary stash entry before the operation begins, record it in the special ref `MERGE_AUTOSTASH` and apply it after the operation ends.
+>
+This means that you can run the operation on a dirty worktree.
+>
+However, use with care: the final stash application after a successful merge might result in non-trivial conflicts.
+
+작업이 시작되기 전에 임시 stash 항목을 자동으로 만들고, 특수한 ref인 `MERGE_AUTOSTASH`에 기록한 다음, 작업이 끝났을 때 `apply` 합니다.
+
+즉, 이 옵션을 사용하면 worktree가 지저분한 상태에서도 머지 작업을 수행할 수 있게 됩니다.
+
+그러나 merge가 성공적으로 완료된 이후의 stash 적용은 conflict를 일으킬 수 있다는 점을 주의해야 합니다.
+
 
