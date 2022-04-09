@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-09 18:22:15 +0900
+updated : 2022-04-09 18:38:44 +0900
 tag     : git
 toc     : true
 public  : true
@@ -79,7 +79,7 @@ Perform the merge and commit the result.
 This option can be used to override \--no-commit.
 
 `--commit`은 merge를 수행하고, 그 결과를 commit합니다.
-이 옵션은 `--no-commit` 옵션을 오버라이드 할 수 있습니다.
+이 옵션은 `--no-commit` 옵션을 무시합니다.
 
 >
 With \--no-commit perform the merge and stop just before creating a merge commit, to give the user a chance to inspect and further tweak the merge result before committing.
@@ -141,6 +141,27 @@ With \--ff-only, resolve the merge as a fast-forward when possible. When not pos
 #### \--stat, -n, \--no-stat
 
 #### \--squash, \--no-squash
+
+>
+Produce the working tree and index state as if a real merge happened (except for the merge information), but do not actually make a commit, move the HEAD, or record $GIT_DIR/MERGE_HEAD (to cause the next `git commit` command to create a merge commit).
+>
+This allows you to create a single commit on top of the current branch whose effect is the same as merging another branch (or more in case of an octopus).
+
+working tree와 index의 상태를 실제로 merge가 완료된 것과 같은 상태로 만들어 줍니다(merge 정보는 포함되지 않습니다).
+그러나 실제로 커밋을 생성하거나, HEAD를 옮기거나, `$GIT_DIR/MERGE_HEAD`를 기록하지는 않습니다(뒤이어 이어지는 `git commit` 명령으로 merge 커밋을 생성하게 됩니다).
+
+이 옵션을 통해 현재 브랜치에 다른 브랜치를 merge하는 것과 동일한 효과를 갖는 단일 커밋을 생성할 수 있습니다.
+
+>
+With \--no-squash perform the merge and commit the result. This option can be used to override \--squash.
+
+`--no-squash`를 사용하면 merge를 수행하고 결과를 커밋합니다.
+이 옵션은 `--squash`를 무시합니다.
+
+>
+With --squash, --commit is not allowed, and will fail.
+
+`--squash`를 사용하면, `--commit` 옵션을 허용하지 않습니다.
 
 #### --[no-]verify
 
