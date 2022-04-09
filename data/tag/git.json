@@ -8,5 +8,6 @@
  "git/examples",
  "git/fetch",
  "git/index",
- "git/log"
+ "git/log",
+ "git/merge"
 ]

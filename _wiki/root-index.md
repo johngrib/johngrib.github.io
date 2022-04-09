@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-04-05 23:44:17 +0900
+updated : 2022-04-09 17:09:02 +0900
 regenerate: true
 ---
 
@@ -533,6 +533,7 @@ regenerate: true
 * [[/git/fetch]]
 * [[/git/index]]
 * [[/git/log]]
+* [[/git/merge]]
 
 * [[git-alias]]
 * [[git-prompt]]
