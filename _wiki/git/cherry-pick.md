@@ -3,7 +3,7 @@ layout  : wiki
 title   : git cherry-pick
 summary : 
 date    : 2022-04-05 23:44:19 +0900
-updated : 2022-04-06 00:05:03 +0900
+updated : 2022-04-09 12:55:08 +0900
 tag     : git
 toc     : true
 public  : true
@@ -40,8 +40,58 @@ When it is not obvious how to apply a change, the following happens:
 4. 충돌하는 경로(conflicting paths)의 경우 인덱스 파일은 git-merge(1)의 "TRUE MERGE" 섹션에 설명된 대로 최대 세 가지 버전을 기록합니다. 작업 트리 파일에는 일반적인 충돌 표시자 `<<<<<<` 및 `>>>>>>>`로 묶인 충돌에 대한 설명이 포함됩니다.
 5. 그 외의 다른 수정사항이 만들어지지 않습니다.
 
+## Examples
 
+### fast forwad가 가능한 경우
 
+![]( ./exam-00.svg)
 
+- [a0]( https://github.com/johngrib/git-examples/commit/2601ac167a5b7f9ce8ebe8e9daa49c3aa1743510 ), [a1]( https://github.com/johngrib/git-examples/commit/11b3a50e929289ff2caa3a4c3ecef57bf890454c )
 
+`br-1`에서 `a1`을 `cherry-pick` 하면...
 
+```bash
+git switch br-1
+git cherry-pick a1
+```
+
+새로운 커밋 `a11`이 생성되며, `br-1`은 `a11`을 포인팅하게 된다.
+
+![]( ./exam-01.svg)
+
+- [a11]( https://github.com/johngrib/git-examples/commit/f3bde6a17dc094034fbe24327596f928d163d956 )
+
+`merge`와는 달리 `cherry-pick`은 기본적으로 fast forward를 하지 않는다.
+따라서 `a11`은 새로 생성된 커밋이며, `a1`과는 다른 해시값을 갖고 있다.
+
+물론 커밋의 해시값이 다를 뿐이며, 두 커밋이 바라보고 있는 `tree`의 해시값은 똑같다.
+
+```bash
+$ git cat-file -p a1 | grep tree
+tree a049352084659b9b87816f3fc8d4b37137ba6d32
+
+$ git cat-file -p a11 | grep tree
+tree a049352084659b9b87816f3fc8d4b37137ba6d32
+```
+
+그러므로 `git diff`로 비교해 보거나 [github에서 comapare 해보아도]( https://github.com/johngrib/git-examples/compare/f3bde6a..11b3a50 ) 비교할 것이 없다는 결과만 나온다.
+
+```bash
+$ git diff a1 a11
+
+```
+
+만약 새로운 커밋을 생성하는 것이 불필요하게 느껴진다면(하지만 보통은 이럴 필요가 없다) `--ff` 옵션을 줘서 fast forward 방식으로 `cherry-pick`을 할 수도 있다.
+
+```bash
+git switch br-1
+git reset --hard a0
+git cherry-pick a1 --ff
+```
+
+그러면 다음과 같이 `br-1` 파일이 `a1`을 포인팅하는 것으로 수정될 뿐, 새로운 커밋을 생성하지는 않는다.
+
+![]( ./exam-01-ff.svg)
+
+다만, fast forward를 할 수 없는 상황이라면 `--ff` 옵션을 사용할 수 없으니 주의한다.
+물론 `cherry-pick`은 `--ff`를 쓸 일이 아예 없다시피 하다.
