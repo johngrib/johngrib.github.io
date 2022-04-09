@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-10 00:34:06 +0900
+updated : 2022-04-10 00:43:27 +0900
 tag     : git
 toc     : true
 public  : true
@@ -205,4 +205,21 @@ To avoid recording unrelated changes in the merge commit, `git pull` and `git me
 If all named commits are already ancestors of `HEAD`, `git merge` will exit early with the message "Already up to date."
 
 만약 모든 커밋이 이미 `HEAD`의 조상이라면, `git merge`는 "Already up to date."라는 메시지를 남기고 종료됩니다.
+
+### FAST-FORWARD MERGE
+
+>
+Often the current branch head is an ancestor of the named commit.
+This is the most common case especially when invoked from `git pull`: you are tracking an upstream repository, you have committed no local changes, and now you want to update to a newer upstream revision.
+In this case, a new commit is not needed to store the combined history; instead, the `HEAD` (along with the index) is updated to point at the named commit, without creating an extra merge commit.
+>
+This behavior can be suppressed with the `--no-ff` option.
+
+종종 현재 브랜치의 head가 머지 대상으로 지정한 커밋의 조상일 때가 있습니다.
+이런 경우는 보통 `git pull`에 merge를 호출할 때 일반적으로 발생합니다.
+upstream repository를 따라가고 있고, 로컬에서 변경사항을 커밋하지 않았을 때 upstream의 최신 버전으로 업데이트하려 하는 상황이 이런 경우입니다.
+이럴 때에 히스토리를 통합하기 위해 새로운 커밋을 만들지 않아도 됩니다.
+그러는 대신 `HEAD`(인덱스 포함)가 포인팅하는 대상을 머지 대상 커밋으로 지정하도록 업데이트하고 끝냅니다.
+
+이러한 동작은 `--no-ff` 옵션을 사용하여 무시할 수 있습니다.
 
