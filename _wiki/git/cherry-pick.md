@@ -3,7 +3,7 @@ layout  : wiki
 title   : git cherry-pick
 summary : 
 date    : 2022-04-05 23:44:19 +0900
-updated : 2022-04-09 12:55:08 +0900
+updated : 2022-04-09 16:55:25 +0900
 tag     : git
 toc     : true
 public  : true
@@ -95,3 +95,37 @@ git cherry-pick a1 --ff
 
 다만, fast forward를 할 수 없는 상황이라면 `--ff` 옵션을 사용할 수 없으니 주의한다.
 물론 `cherry-pick`은 `--ff`를 쓸 일이 아예 없다시피 하다.
+
+### \-\-no-commit 옵션의 사용
+
+다음 상태를 보자. `br-2`에서는 파일 A를 수정한 커밋 두 개를 갖고 있다. 이 때 `br-1`에서 `a2`를 `cherry-pick` 하면..
+
+![]( ./exam-02.svg)
+
+- [a0]( https://github.com/johngrib/git-examples/commit/2601ac167a5b7f9ce8ebe8e9daa49c3aa1743510 ), [a2]( https://github.com/johngrib/git-examples/commit/51a07467459f27ab244ffd6f0d67b1e498127c13 )
+
+```bash
+git switch br-1
+git reset --hard a0
+git cherry-pick a2
+```
+
+다음과 같이 새로운 커밋 `a21`이 생성되고 `br-1`은 `a21`을 포인팅하며, 파일 `A`의 내용은 `cc`만 포함되어 있다.
+
+![]( ./exam-02-result.svg)
+
+- [a21]( https://github.com/johngrib/git-examples/commit/51a07467459f27ab244ffd6f0d67b1e498127c13 )
+
+그런데 새로운 커밋을 생성하지 않고, 변경사항만 가져오고 싶다면 `--no-commit`, `-n` 옵션을 사용할 수 있다.
+
+```bash
+git reset --hard a0
+git cherry-pick a2 -n
+```
+
+이렇게 하면 커밋이 추가되지 않고, 가져온 변경사항이 스테이징에 추가되어 있다.
+
+![]( ./exam-02-n.svg )
+
+![]( ./exam-02-n-terminal.jpg )
+
