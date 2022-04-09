@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-10 00:43:27 +0900
+updated : 2022-04-10 01:12:27 +0900
 tag     : git
 toc     : true
 public  : true
@@ -222,4 +222,45 @@ upstream repository를 따라가고 있고, 로컬에서 변경사항을 커밋�
 그러는 대신 `HEAD`(인덱스 포함)가 포인팅하는 대상을 머지 대상 커밋으로 지정하도록 업데이트하고 끝냅니다.
 
 이러한 동작은 `--no-ff` 옵션을 사용하여 무시할 수 있습니다.
+
+### TRUE MERGE
+
+>
+Except in a fast-forward merge (see above), the branches to be merged must be tied together by a merge commit that has both of them as its parents.
+
+fast-forward merge를 제외하고, merge 되어야 하는 브랜치들은 양쪽을 부모로 삼는 merge 커밋으로 연결되어야 합니다.
+
+>
+A merged version reconciling the changes from all branches to be merged is committed, and your HEAD, index, and working tree are updated to it.
+It is possible to have modifications in the working tree as long as they do not overlap; the update will preserve them.
+
+merge할 모든 브랜치의 변경사항을 조정하는 merged version이 커밋되고 나면, HEAD, index, working tree도 그에 맞춰 업데이트됩니다.
+작업이 겹치지만 않는다면 워킹 트리에 있는 변경사항은 유지될 수 있습니다. 업데이트를 해도 변경 사항은 보존됩니다.
+
+>
+When it is not obvious how to reconcile the changes, the following happens:
+>
+1. The `HEAD` pointer stays the same.
+2. The `MERGE_HEAD` ref is set to point to the other branch head.
+3. Paths that merged cleanly are updated both in the index file and in your working tree.
+4. For conflicting paths, the index file records up to three versions: stage 1 stores the version from the common ancestor, stage 2 from `HEAD`, and stage 3 from `MERGE_HEAD` (you can inspect the stages with `git ls-files -u`). The working tree files contain the result of the "merge" program; i.e. 3-way merge results with familiar conflict markers `<<< === >>>`.
+5. No other changes are made. In particular, the local modifications you had before you started merge will stay the same and the index entries for them stay as they were, i.e. matching `HEAD`.
+
+
+만약 변경 사항을 조정하는 방법이 명확하지 않다면, 다음과 같은 일들이 벌어집니다.
+
+1. HEAD 포인터가 변경되지 않습니다.
+2. `MERGE_HEAD` ref가 다른 브랜치의 head를 포인팅하도록 설정됩니다.
+3. 깔끔하게 merge된 히스토리 경로는 index 파일과 워킹 트리에도 업데이트됩니다.
+4. conflict가 발생한 경로의 경우, index 파일은 최대 3개의 버전을 저장합니다.
+    - stage 1: 공통 조상의 버전을 저장
+    - stage 2: `HEAD`의 버전을 저장
+    - stage 3: `MERGE_HEAD`의 버전을 저장 (`git ls-files -u` 명령으로 각 stage들을 조사할 수 있습니다)
+    - 워킹 트리 파일들은 "merge" 프로그램의 결과를 포함하는데, `<<<`, `===`, `>>>` conflict 표시가 있는 3-way merge 결과가 그 내용입니다.
+5. 그 외에 다른 변경 사항은 없습니다. 특히, merge를 시작하기 전의 로컬 변경 사항은 그대로 유지됩니다. index 항목들도 그대로 유지됩니다. 즉, `HEAD`와 일치합니다.
+
+>
+If you tried a merge which resulted in complex conflicts and want to start over, you can recover with `git merge --abort`.
+
+만약 merge를 시도했는데 복잡한 conflict가 발생해서, 처음부터 다시 시도하고 싶다면 `git merge --abort` 명령을 사용해서 복구할 수 있습니다.
 
