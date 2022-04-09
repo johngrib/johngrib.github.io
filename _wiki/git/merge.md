@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-10 00:14:15 +0900
+updated : 2022-04-10 00:16:35 +0900
 tag     : git
 toc     : true
 public  : true
@@ -94,14 +94,6 @@ Thus, if you want to ensure your branch is not changed or updated by the merge c
 fast-forward 업데이트는 merge 커밋을 생성하지 않기 때문에 `---no-commit` 옵션을 사용해도 중단하지 못합니다.
 그러므로, merge 명령으로 인해 branch가 변경되거나 업데이트되는 것을 막고 싶다면 `--no-commit` 이 아니라 `--no-ff` 옵션을 사용하세요.
 
-#### \--edit, -e, \--no-edit
-
-생략
-
-#### \--cleanup=\<mode>
-
-생략
-
 #### \--ff, \--no-ff, \--ff-only
 
 >
@@ -131,14 +123,6 @@ With \--ff-only, resolve the merge as a fast-forward when possible. When not pos
 
 `--ff-only`를 사용하면, 가능한 경우에 한해 merge를 fast forward로 해결합니다.
 만약 fast forward로 해결할 수 없는 상황이라면 merge를 하지 않고 0이 아닌 상태(오류 상태)로 종료합니다.
-
-#### -S[\<keyid>], \--gpg-sign[=\<keyid>], \--no-gpg-sign
-
-#### \--log[=\<n>], \--no-log
-
-#### \--signoff, \--no-signoff
-
-#### \--stat, -n, \--no-stat
 
 #### \--squash, \--no-squash
 
