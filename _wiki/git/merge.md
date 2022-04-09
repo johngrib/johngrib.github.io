@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-10 01:12:27 +0900
+updated : 2022-04-10 01:41:03 +0900
 tag     : git
 toc     : true
 public  : true
@@ -264,3 +264,102 @@ If you tried a merge which resulted in complex conflicts and want to start over,
 
 만약 merge를 시도했는데 복잡한 conflict가 발생해서, 처음부터 다시 시도하고 싶다면 `git merge --abort` 명령을 사용해서 복구할 수 있습니다.
 
+### HOW CONFLICTS ARE PRESENTED
+
+>
+During a merge, the working tree files are updated to reflect the result of the merge.
+Among the changes made to the common ancestor’s version, non-overlapping ones (that is, you changed an area of the file while the other side left that area intact, or vice versa) are incorporated in the final result verbatim.
+When both sides made changes to the same area, however, Git cannot randomly pick one side over the other, and asks you to resolve it by leaving what both sides did to that area.
+>
+By default, Git uses the same style as the one used by the "merge" program from the RCS suite to present such a conflicted hunk, like this:
+
+merge를 작업하는 동안, 워킹 트리의 파일들은 merge 결과를 반영하도록 업데이트됩니다.
+공통 조상 버전을 기준으로, 양쪽의 변경사항 중 겹치지 않는 것이 최종 결과에 통합됩니다.
+하지만 양쪽에서 같은 영역을 변경한 경우, Git은 한 쪽을 스스로 선택할 수 없습니다. 따라서 해당 영역에 양쪽의 작업을 모두 남겨놓고 작업을 명령한 여러분에게 해결할 것을 요청합니다.
+
+기본적으로, Git 다음과 같이 conflict가 발생한 덩어리를 표시하기 위해 RCS suite의 "merge" 프로그램 같은 스타일의 표기법을 사용합니다.
+
+```
+Here are lines that are either unchanged from the common
+ancestor, or cleanly resolved because only one side changed,
+or cleanly resolved because both sides changed the same way.
+<<<<<<< yours:sample.txt
+Conflict resolution is hard;
+let's go shopping.
+=======
+Git makes conflict resolution easy.
+>>>>>>> theirs:sample.txt
+And here is another line that is cleanly resolved or unmodified.
+```
+
+>
+The area where a pair of conflicting changes happened is marked with markers `<<<<<<<`, `=======`, and `>>>>>>>`.
+The part before the `=======` is typically your side, and the part afterwards is typically their side.
+
+양쪽의 충돌이 발생한 영역은 `<<<<<<<`, `=======`, `>>>>>>>`로 표시됩니다.
+`=======` 이전 부분은 일반적으로 여러분 담당(your side)이며, 그 이후 부분은 보통 상대방 담당(their side)입니다.
+
+>
+The default format does not show what the original said in the conflicting area.
+You cannot tell how many lines are deleted and replaced with Barbie’s remark on your side.
+The only thing you can tell is that your side wants to say it is hard and you’d prefer to go shopping, while the other side wants to claim it is easy.
+
+기본 포맷은 conflict가 발생한 영역의 original 내용을 보여주지는 않습니다. (양쪽의 내용을 보여줄 뿐입니다)
+몇 줄이 삭제대로 수정되었는지 알 수 없는 것입니다.
+
+알 수 있는 것은 그냥 여러분의 담당 영역에 충돌 해결이 어렵다는 말이 있고 쇼핑을 가고 싶어한다는 텍스트가 있다는 것과,
+상대방 영역에서는 충돌 해결이 쉽다는 말이 있다는 것입니다.
+
+>
+An alternative style can be used by setting the "merge.conflictStyle" configuration variable to either "diff3" or "zdiff3". In "diff3" style, the above conflict may look like this:
+
+`merge.conflictStyle` 설정을 `diff3` 이나 `zdiff3`으로 설정하면 이런 기본 설정을 바꿀 수 있습니다.
+`diff3` 스타일의 경우 위의 conflict는 다음과 같이 보이게 됩니다.
+
+```
+Here are lines that are either unchanged from the common
+ancestor, or cleanly resolved because only one side changed,
+<<<<<<< yours:sample.txt
+or cleanly resolved because both sides changed the same way.
+Conflict resolution is hard;
+let's go shopping.
+||||||| base:sample.txt
+or cleanly resolved because both sides changed identically.
+Conflict resolution is hard.
+=======
+or cleanly resolved because both sides changed the same way.
+Git makes conflict resolution easy.
+>>>>>>> theirs:sample.txt
+And here is another line that is cleanly resolved or unmodified.
+```
+
+>
+while in "zdiff3" style, it may look like this:
+
+
+`zdiff3` 스타일이면 이렇습니다.
+
+```
+Here are lines that are either unchanged from the common
+ancestor, or cleanly resolved because only one side changed,
+or cleanly resolved because both sides changed the same way.
+<<<<<<< yours:sample.txt
+Conflict resolution is hard;
+let's go shopping.
+||||||| base:sample.txt
+or cleanly resolved because both sides changed identically.
+Conflict resolution is hard.
+=======
+Git makes conflict resolution easy.
+>>>>>>> theirs:sample.txt
+And here is another line that is cleanly resolved or unmodified.
+```
+
+>
+In addition to the `<<<<<<<`, `=======`, and `>>>>>>>` markers, it uses another `|||||||` marker that is followed by the original text.
+You can tell that the original just stated a fact, and your side simply gave in to that statement and gave up, while the other side tried to have a more positive attitude.
+You can sometimes come up with a better resolution by viewing the original.
+
+`<<<<<<<`, `=======`, `>>>>>>>` 마커에 추가로 `|||||||` 마커를 사용하며, 이 마커 이후에는 원본(original) 텍스트를 보여준다는 것을 알 수 있습니다.
+읽어보면 원본은 사실을 있는 그대로 이야기했고, 상대방은 긍정적인 태도로 노력한 반면, 여러분은 굴복하고 포기했음을 알 수 있습니다.
+가끔은 원본을 읽으면 더 좋은 해결을 찾을 수 있을 것입니다.
