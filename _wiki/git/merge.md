@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-09 18:50:39 +0900
+updated : 2022-04-09 18:56:32 +0900
 tag     : git
 toc     : true
 public  : true
@@ -151,6 +151,7 @@ working tree와 index의 상태를 실제로 merge가 완료된 것과 같은 �
 그러나 실제로 커밋을 생성하거나, HEAD를 옮기거나, `$GIT_DIR/MERGE_HEAD`를 기록하지는 않습니다(뒤이어 이어지는 `git commit` 명령으로 merge 커밋을 생성하게 됩니다).
 
 이 옵션을 통해 현재 브랜치에 다른 브랜치를 merge하는 것과 동일한 효과를 갖는 단일 커밋을 생성할 수 있습니다.
+(octopus merge를 하는 경우라면 여러 커밋을 생성할 수도 있습니다)
 
 >
 With \--no-squash perform the merge and commit the result. This option can be used to override \--squash.
