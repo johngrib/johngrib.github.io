@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-10 00:21:20 +0900
+updated : 2022-04-10 00:34:06 +0900
 tag     : git
 toc     : true
 public  : true
@@ -182,4 +182,27 @@ However, use with care: the final stash application after a successful merge mig
 
 그러나 merge가 성공적으로 완료된 이후의 stash 적용은 conflict를 일으킬 수 있다는 점을 주의해야 합니다.
 
+### PRE-MERGE CHECKS
+
+>
+Before applying outside changes, you should get your own work in good shape and committed locally, so it will not be clobbered if there are conflicts.
+See also git-stash(1).
+`git pull` and `git merge` will stop without doing anything when local uncommitted changes overlap with files that `git pull`/`git merge` may need to update.
+
+외부 변경 사항을 적용하기 전에, 먼저 작업 상태를 바람직한 형태로 만들어 놓고 로컬에서 커밋을 해둬야 컨플릭트가 발생해도 큰 문제가 되지 않습니다.
+이에 대해 `git-stash(1)` 문서도 참고 두세요.
+
+`git pull`과 `git merge`는 로컬에 커밋되지 않은 변경 사항이 있고, 그 변경 사항들이 `git pull`/`git merge`가 업데이트할 파일들과 충돌하는 경우에는 아무것도 수행하지 않습니다.
+
+>
+To avoid recording unrelated changes in the merge commit, `git pull` and `git merge` will also abort if there are any changes registered in the index relative to the `HEAD` commit.
+(Special narrow exceptions to this rule may exist depending on which merge strategy is in use, but generally, the index must match HEAD.)
+
+`HEAD` 커밋 기준으로 인덱스에 등록된 변경 사항이 있는 경우라면, merge 커밋에 관게 없는 변경 사항을 기록하는 것을 방지하기 위해 `git pull` `git merge`은 작업을 중단합니다.
+(merge 전략별로 이 규칙에 대한 예외가 있을 수도 있지만, 일반적으로 인덱스는 HEAD와 일치해야 합니다.)
+
+>
+If all named commits are already ancestors of `HEAD`, `git merge` will exit early with the message "Already up to date."
+
+만약 모든 커밋이 이미 `HEAD`의 조상이라면, `git merge`는 "Already up to date."라는 메시지를 남기고 종료됩니다.
 
