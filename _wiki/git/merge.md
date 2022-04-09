@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-09 18:56:32 +0900
+updated : 2022-04-10 00:14:15 +0900
 tag     : git
 toc     : true
 public  : true
@@ -174,3 +174,12 @@ See also githooks(5).
 `--no-verify`를 사용하면 이런 hook을 실행하지 않습니다.
 
 #### -s \<strategy>, \--strategy=\<strategy>
+
+>
+Use the given merge strategy; can be supplied more than once to specify them in the order they should be tried.
+If there is no -s option, a built-in list of strategies is used instead (ort when merging a single head, octopus otherwise).
+
+주어진 merge 전략을 사용합니다.
+merge 전략은 시도할 순서대로 제공할 수 있으므로, 하나 이상 지정할 수 있습니다.
+만약 `-s` 옵션이 없다면, 기본적으로 내장된 전략들이 사용됩니다(단일 head일 경우에는 `ort`, 그 외의 경우에는 `octopus`).
+
