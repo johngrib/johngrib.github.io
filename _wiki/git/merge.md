@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-09 18:38:44 +0900
+updated : 2022-04-09 18:50:39 +0900
 tag     : git
 toc     : true
 public  : true
@@ -159,10 +159,17 @@ With \--no-squash perform the merge and commit the result. This option can be us
 이 옵션은 `--squash`를 무시합니다.
 
 >
-With --squash, --commit is not allowed, and will fail.
+With \--squash, \--commit is not allowed, and will fail.
 
 `--squash`를 사용하면, `--commit` 옵션을 허용하지 않습니다.
 
-#### --[no-]verify
+#### \--[no-]verify
+
+>
+By default, the pre-merge and commit-msg hooks are run. When `--no-verify` is given, these are bypassed.
+See also githooks(5).
+
+기본적으로 merge를 할 때에는 `pre-merge`와 `commit-msg` hook이 실행됩니다.
+`--no-verify`를 사용하면 이런 hook을 실행하지 않습니다.
 
 #### -s \<strategy>, \--strategy=\<strategy>
