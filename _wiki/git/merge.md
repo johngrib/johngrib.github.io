@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-10 10:40:05 +0900
+updated : 2022-04-10 11:30:55 +0900
 tag     : git
 toc     : true
 public  : true
@@ -424,3 +424,144 @@ maint 브랜치를 현재 브랜치에 머지합니다. 하지만 자동으로 �
 이 방법은 merge에 변경사항을 따로 추가하거나, 커밋 메시지를 직접 작성하려는 경우에 쓰면 됩니다.
 
 이 옵션을 남용해 merge 커밋에 많은 양의 변경 사항을 몰래몰래 넣는 일을 삼가해야 합니다. release/version 이름을 수정하는 것 같은 작은 변경은 괜찮습니다.
+
+### MERGE STRATEGIES
+
+>
+The merge mechanism (`git merge` and `git pull` commands) allows the backend `merge strategies` to be chosen with `-s` option.
+Some strategies can also take their own options, which can be passed by giving `-X<option>` arguments to `git merge` and/or `git pull`.
+
+merge 메커니즘(`git merge`와 `git pull` 명령)을 사용할 때 `-s` 옵션으로 백엔드 `merge strategies`를 선택할 수 있습니다.
+종류에 따라 어떤 전략은 자신만 옵션을 갖고 있기도 합니다.
+이런 옵션들은 `git merge`와 `git pull` 명령에 `-X<option>` 인자를 주는 방식으로 지정할 수 있습니다.
+
+#### ort
+
+>
+This is the default merge strategy when pulling or merging one branch.
+This strategy can only resolve two heads using a 3-way merge algorithm.
+When there is more than one common ancestor that can be used for 3-way merge, it creates a merged tree of the common ancestors and uses that as the reference tree for the 3-way merge.
+This has been reported to result in fewer merge conflicts without causing mismerges by tests done on actual merge commits taken from Linux 2.6 kernel development history.
+Additionally this strategy can detect and handle merges involving renames.
+It does not make use of detected copies.
+The name for this algorithm is an acronym ("Ostensibly Recursive’s Twin") and came from the fact that it was written as a replacement for the previous default algorithm, recursive.
+
+- `ort`는 브랜치 하나를 pull 하거나 merge 할 때 사용하는 기본 merge 전략입니다.
+- 이 전략은 3-way merge 알고리즘을 사용하며, 2개의 헤드만 처리할 수 있습니다.
+- 만약 3-way merge에 사용할 수 있는 공통 조상이 둘 이상이라면, `ort` 전략은 공통 조상들의 merged tree를 만들고, 이 트리를 3-way merge의 레퍼런스 트리로 사용합니다.
+- Linux 2.6 커널 개발할 때 실제로 발생했던 merge 커밋들로 테스트했을 때 잘못된 merge를 만들지 않으면서 merge conflict도 감소시키는 것으로 보고됐습니다.
+- 이 전략은 detected copy를 사용하지 않습니다.
+- 이 알고리즘의 이름 `ort`는 "Ostensibly Recursive’s Twin"의 약어이며, 이전 버전의 기본 merge 알고리즘인 recursive를 대체하기 위해 만들어졌다는 사실에서 따온 것입니다.
+
+>
+The `ort` strategy can take the following options:
+
+`ort` 전략은 다음과 같은 옵션들이 있습니다.
+
+##### ours
+
+>
+This option forces conflicting hunks to be auto-resolved cleanly by favoring `our` version.
+Changes from the other tree that do not conflict with our side are reflected in the merge result.
+For a binary file, the entire contents are taken from our side.
+
+이 옵션은 clonflict가 발생한 덩어리들에 `our` 버전을 우선하게 해서 자동으로 깔끔하게 해결되게 합니다.
+our 쪽과 충돌하지 않는 다른 트리의 변경 사항은 merge 결과에 반영됩니다.
+만약 바이너리 파일이라면 파일의 전체 내용을 our 쪽에서 가져옵니다.
+
+>
+This should not be confused with the `ours` merge strategy, which does not even look at what the other tree contains at all.
+It discards everything the other tree did, declaring `our` history contains all that happened in it.
+
+이 옵션을 `ours` merge 전략과 헷갈리면 안됩니다. `ours` merge 전략은 다른 트리에 포함된 내용을 전혀 고려하지 않는 전략입니다.
+`ours` 전략은 다른 트리의 모든 것을 버려 버리고, `our` 히스토리에 포함된 모든 것만이 실제 역사라고 선언합니다.
+
+##### theirs
+
+>
+This is the opposite of `ours`; note that, unlike `ours`, there is no `theirs` merge strategy to confuse this merge option with.
+
+`ours`의 반대입니다.
+`ours` 전략과 헷갈리는 `ours` 옵션과는 달리, `theirs` 전략은 없기 때문에 이 옵션은 헷갈리지 않을 것입니다.
+
+
+##### ignore-space-change, ignore-all-space, ignore-space-at-eol, ignore-cr-at-eol
+
+>
+Treats lines with the indicated type of whitespace change as unchanged for the sake of a three-way merge.
+Whitespace changes mixed with other changes to a line are not ignored.
+See also `git-diff`(1) `-b`, `-w`, `--ignore-space-at-eol`, and `--ignore-cr-at-eol`.
+>
+- If `their` version only introduces whitespace changes to a line, `our` version is used;
+- If `our` version introduces whitespace changes but `their` version includes a substantial change, `their` version is used;
+- Otherwise, the merge proceeds in the usual way.
+
+3-way merge를 할 때 공백 타입의 변경이 있는 라인을 변경되지 않았다고 간주하고 처리합니다.
+같은 라인 안에 다른 변경 사항과 공백 변경이 섞여 있다면 무시하지 않습니다.
+`git-diff`(1) `-b`, `-w`, `--ignore-space-at-eol`, `--ignore-cr-at-eol`도 참고하세요.
+
+- `their` 버전이 한 라인에 공백 변경만 추가한 것이라면, `our` 버전을 사용합니다.
+- `our` 버전이 공백 변경을 추가하지만, `their` 버전에는 상당한 변경이 포함되어 있다면, `their` 버전을 사용합니다.
+- 그 외의 경우에는 일반적인 방법으로 merge가 진행됩니다.
+
+##### renormalize
+
+>
+This runs a virtual check-out and check-in of all three stages of a file when resolving a three-way merge.
+This option is meant to be used when merging branches with different clean filters or end-of-line normalization rules.
+See "Merging branches with differing checkin/checkout attributes" in `gitattributes`(5) for details.
+
+이 옵션을 사용하면 3-way merge를 해결할 때, 파일의 세 stage 모두에 대한 가상 check-out 및 check-in을 실행합니다.
+이 옵션은 다른 clean 필터 또는 end-of-line normalization 규칙을 가진 브랜치와 merge할 때 사용할 수 있습니다.
+
+자세한 내용은 `gitattributes`(5)의 "체크인/체크아웃 속성이 다른 브랜치 병합"을 참조하세요.
+
+##### no-renormalize
+
+>
+Disables the `renormalize` option.
+This overrides the `merge.renormalize` configuration variable.
+
+`renormalize` 옵션을 끕니다. 이 옵션은 `merge.renormalize` 설정값을 무시합니다.
+
+##### find-renames[=<n>]
+
+>
+Turn on rename detection, optionally setting the similarity threshold.
+This is the default.
+This overrides the merge.renames configuration variable.
+See also `git-diff`(1) `--find-renames`.
+
+rename 감지를 켭니다. 유사성 임계값을 설정할 수도 있습니다.
+이 옵션은 기본값이며, 이 옵션을 명시하면 `merge.renames` 설정값을 무시합니다.
+`git-diff`(1) `--find-renames`를 참조하세요.
+
+##### rename-threshold=<n>
+
+> Deprecated synonym for find-renames=<n>.
+
+이제 사용되지 않으며, `find-renames=<n>`로 대체되었습니다.
+
+##### subtree[=<path>]
+
+>
+This option is a more advanced form of `subtree` strategy, where the strategy makes a guess on how two trees must be shifted to match with each other when merging.
+Instead, the specified path is prefixed (or stripped from the beginning) to make the shape of two trees to match.
+
+이 옵션 `subtree` 전략의 발전된 형태로, merge할 때 두 트리가 서로 일치하도록 이동시켜 맞추는 방법을 추측합니다.
+지정된 경로에 prefix를 붙이거나(또는 시작부분부터 제거) 해서 두 트리의 모양이 갖도록 맞춥니다.
+
+#### recursive
+
+
+#### resolve
+
+
+#### octopus
+
+
+
+#### ours
+
+
+#### subtree
