@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-10 10:26:10 +0900
+updated : 2022-04-10 10:40:05 +0900
 tag     : git
 toc     : true
 public  : true
@@ -396,3 +396,31 @@ You can work through the conflict with a number of tools:
     - `git show :2:filename`은 `HEAD` 버전을 보여줍니다.
     - `git show :3:filename`는 `MERGE_HEAD` 버전을 보여줍니다.
 
+### EXAMPLES
+
+> - Merge branches fixes and enhancements on top of the current branch, making an octopus merge:
+```bash
+$ git merge fixes enhancements
+```
+
+현재 브랜치에 여러 수정 사항과 개선 사항을 합치기 위해 octopus merge를 수행합니다.
+
+> - Merge branch obsolete into the current branch, using ours merge strategy:
+```bash
+$ git merge -s ours obsolete
+```
+
+사용하지 않는 브랜치를 현재 브랜치에 머지합니다. 머지 전략은 `ours`를 사용합니다.
+
+> - Merge branch maint into the current branch, but do not make a new commit automatically:
+```bash
+$ git merge --no-commit maint
+```
+This can be used when you want to include further changes to the merge, or want to write your own merge commit message.  
+You should refrain from abusing this option to sneak substantial changes into a merge commit. Small fixups like bumping release/version name would be acceptable.
+
+maint 브랜치를 현재 브랜치에 머지합니다. 하지만 자동으로 커밋이 생성되지 않게 합니다.
+
+이 방법은 merge에 변경사항을 따로 추가하거나, 커밋 메시지를 직접 작성하려는 경우에 쓰면 됩니다.
+
+이 옵션을 남용해 merge 커밋에 많은 양의 변경 사항을 몰래몰래 넣는 일을 삼가해야 합니다. release/version 이름을 수정하는 것 같은 작은 변경은 괜찮습니다.
