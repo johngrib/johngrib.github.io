@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-10 01:41:03 +0900
+updated : 2022-04-10 10:26:10 +0900
 tag     : git
 toc     : true
 public  : true
@@ -363,3 +363,36 @@ You can sometimes come up with a better resolution by viewing the original.
 `<<<<<<<`, `=======`, `>>>>>>>` 마커에 추가로 `|||||||` 마커를 사용하며, 이 마커 이후에는 원본(original) 텍스트를 보여준다는 것을 알 수 있습니다.
 읽어보면 원본은 사실을 있는 그대로 이야기했고, 상대방은 긍정적인 태도로 노력한 반면, 여러분은 굴복하고 포기했음을 알 수 있습니다.
 가끔은 원본을 읽으면 더 좋은 해결을 찾을 수 있을 것입니다.
+
+### HOW TO RESOLVE CONFLICTS
+
+>
+After seeing a conflict, you can do two things:
+>
+- Decide not to merge. The only clean-ups you need are to reset the index file to the `HEAD` commit to reverse 2. and to clean up working tree changes made by 2. and 3.; `git merge --abort` can be used for this.
+- Resolve the conflicts. Git will mark the conflicts in the working tree. Edit the files into shape and `git add` them to the index. Use `git commit` or `git merge --continue` to seal the deal. The latter command checks whether there is a (interrupted) merge in progress before calling `git commit`.
+
+conflict가 발생하면, 두 가지를 할 수 있습니다.
+
+- 머지하지 않기로 결정한다. 상황을 정리하기 위해 필요한 작업은, index 파일을 `HEAD` 커밋으로 reset하여 2로 돌려놓고, 2와 3에 의해 수행된 워킹 트리 변경 사항을 정리하는 것입니다. 이 작업을 위해 `git merge --abort` 명령을 사용할 수 있습니다.
+- conflict를 해결한다. Git은 워킹 트리 내의 conflict 지점에 표시를 합니다. 해당 파일들을 편집해 맞춰놓고, `git add` 명령을 써서 index에 추가하세요. `git commit` 이나 `git merge --continue` 명령으로 이런 conflict 해결 작업을 마칠 수 있습니다. 두 명령 중 후자는 `git commit` 명령을 내부적으로 호출하기 전에 merge가 진행중인지(또는 중단됐는지)를 확인합니다.
+
+>
+You can work through the conflict with a number of tools:
+>
+- Use a mergetool.  `git mergetool` to launch a graphical mergetool which will work you through the merge.
+- Look at the diffs.  `git diff` will show a three-way diff, highlighting changes from both the `HEAD` and `MERGE_HEAD` versions.
+- Look at the diffs from each branch.  `git log --merge -p <path>` will show diffs first for the `HEAD` version and then the `MERGE_HEAD` version.
+- Look at the originals.  `git show :1:filename` shows the common ancestor, `git show :2:filename` shows the `HEAD` version, and `git show :3:filename` shows the `MERGE_HEAD` version.
+
+다음과 같이 여러 도구들을 사용해 conflict를 해결할 수 있습니다.
+
+- mergetool을 사용하세요.
+    - `git mergetool` 명령을 쓰면 머지를 진행할 그래픽 도구를 시작하게 됩니다.
+- diff 를 살펴보세요.
+    - `git diff` 명령은 `HEAD`와 `MERGE_HEAD` 두 버전의 변경사항을 강조하는 3-way diff를 보여줍니다.
+- 원본을 살펴보세요.
+    - `git show :1:filename`은 공통 조상을 보여줍니다.
+    - `git show :2:filename`은 `HEAD` 버전을 보여줍니다.
+    - `git show :3:filename`는 `MERGE_HEAD` 버전을 보여줍니다.
+
