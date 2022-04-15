@@ -31,5 +31,6 @@
  "clojure/study/set",
  "clojure/study/vector",
  "clojure/vim-setting",
- "programming/destructuring"
+ "programming/destructuring",
+ "vim/quickfix"
 ]

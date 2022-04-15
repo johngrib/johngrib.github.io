@@ -3,8 +3,8 @@ layout  : wiki
 title   : vim quickfix
 summary : 
 date    : 2022-04-15 22:20:55 +0900
-updated : 2022-04-15 23:24:09 +0900
-tag     : 
+updated : 2022-04-15 23:48:40 +0900
+tag     : vim quickfix clojure
 toc     : true
 public  : true
 parent  : [[/vim]]
@@ -36,6 +36,10 @@ nnoremap <Tab>qN :cprevious<CR>
 ```
 
 ## 응용
+
+### Clojure clj-kondo lint report
+
+[[/clojure/vim-setting#clj-kondo로-lint-하기]]
 
 ### 프로젝트 bookmark
 
@@ -110,4 +114,8 @@ nnoremap <Tab>q` :call OpenQuickfixBookmarkFile()<CR>
 
 - 북마크 파일을 소스로 삼아 퀵픽스 창을 열어준다.
 - `<Tab>q'`를 순서대로 입력해 사용할 수 있다. (`'`: Jump to the mark)
+
+## 함께 읽기
+
+- [[/clojure/vim-setting]]
 

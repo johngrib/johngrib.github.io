@@ -24,6 +24,7 @@
  "vim/coc-nvim",
  "vim/match",
  "vim/persistent-undo",
+ "vim/quickfix",
  "vim/ultisnips",
  "vimwiki",
  "web-browser-vim"

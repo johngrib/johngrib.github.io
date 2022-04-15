@@ -153,7 +153,7 @@
  },
  {
   "name": "clojure",
-  "size": 33
+  "size": 34
  },
  {
   "name": "command",
@@ -676,6 +676,10 @@
   "size": 2
  },
  {
+  "name": "quickfix",
+  "size": 1
+ },
+ {
   "name": "random",
   "size": 2
  },
@@ -893,7 +897,7 @@
  },
  {
   "name": "vim",
-  "size": 28
+  "size": 29
  },
  {
   "name": "vimwiki",
