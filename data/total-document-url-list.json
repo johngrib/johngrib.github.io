@@ -677,6 +677,7 @@
  "/wiki/vim/help",
  "/wiki/vim/match",
  "/wiki/vim/persistent-undo",
+ "/wiki/vim/quickfix",
  "/wiki/vim/ultisnips",
  "/wiki/vimwiki",
  "/wiki/von-neumann-extractor",

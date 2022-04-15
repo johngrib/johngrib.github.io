@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-04-09 17:09:02 +0900
+updated : 2022-04-15 22:20:53 +0900
 regenerate: true
 ---
 
@@ -577,6 +577,7 @@ regenerate: true
 * [[/vim/help]]
 * [[/vim/match]]
 * [[/vim/persistent-undo]]
+* [[/vim/quickfix]]
 * [[/vim/ultisnips]]
 
 * [[ideavim]]
