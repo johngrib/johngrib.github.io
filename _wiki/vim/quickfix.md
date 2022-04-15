@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim quickfix
 summary : 
 date    : 2022-04-15 22:20:55 +0900
-updated : 2022-04-15 23:48:40 +0900
+updated : 2022-04-16 00:48:18 +0900
 tag     : vim quickfix clojure
 toc     : true
 public  : true
@@ -35,7 +35,50 @@ nnoremap <Tab>qn :cnext<CR>
 nnoremap <Tab>qN :cprevious<CR>
 ```
 
-## 응용
+## 활용
+
+### vimgrep
+
+```
+:vimgrep /pattern/j **
+:vim /pattern/j **
+:vim /pattern/g **
+```
+
+- `:vimgrep` 명령은 `:vim`으로 축약해 사용해도 문제없다.
+- 하위 경로의 모든 파일에서 pattern 으로 검색한다.
+- `j` 플래그가 없다면 첫 번째 검색 결과가 버퍼에 자동으로 열린다.
+- 검색 결과는 quickfix 창에서 볼 수 있다.
+
+```
+:vim // **
+```
+
+- 하위 경로의 모든 파일에서 마지막 검색어로 검색한다.
+
+### grep
+
+```
+:grep arguments
+:gr arguments
+```
+
+- `grep`을 vim 밖에서 쓰는 것처럼 arguments를 주면 된다.
+- 검색 결과는 quickfix 창에서 볼 수 있다.
+
+`:grep` 은 `grepprg`에 지정된 프로그램을 사용하며, 해당 프로그램의 출력 포맷을 `grepformat`으로 지정 줘야 한다.
+
+다음은 [[/cmd/ag]]와 `ack`를 설정한 예이다.
+
+```viml
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor\ --column
+    set grepformat=%f:%l:%c%m
+elseif executable('ack')
+    set grepprg=ack\ --nogroup\ --column\ $*
+    set grepformat=%f:%l:%c:%m
+endif
+```
 
 ### Clojure clj-kondo lint report
 
