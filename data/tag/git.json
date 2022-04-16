@@ -9,5 +9,6 @@
  "git/fetch",
  "git/index",
  "git/log",
- "git/merge"
+ "git/merge",
+ "git/rebase"
 ]
