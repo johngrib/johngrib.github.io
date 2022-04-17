@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-04-16 22:34:58 +0900
+updated : 2022-04-17 11:27:16 +0900
 regenerate: true
 ---
 
@@ -460,6 +460,7 @@ regenerate: true
 * [[/cmd/fc]]
 * [[/cmd/find]]
 * [[/cmd/grep]]
+* [[/cmd/less]]
 * [[/cmd/man]]
 * [[/cmd/mv]]
 * [[/cmd/openssl]]
@@ -493,7 +494,6 @@ regenerate: true
 * [[ioreg-cmd]]
 * [[java_home]]
 * [[jq-cmd]]
-* [[less-cmd]]
 * [[lldb-cmd]]
 * [[lsof]]
 * [[make-cmd]]

@@ -3,11 +3,11 @@ layout  : wiki
 title   : less 명령어
 summary : less is more
 date    : 2020-01-19 22:06:24 +0900
-updated : 2020-04-18 13:47:07 +0900
+updated : 2022-04-17 11:28:28 +0900
 tag     : bash command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
