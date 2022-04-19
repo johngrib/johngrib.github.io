@@ -3,7 +3,7 @@ layout  : wiki
 title   : less 명령어
 summary : less is more
 date    : 2020-01-19 22:06:24 +0900
-updated : 2022-04-17 11:28:28 +0900
+updated : 2022-04-17 11:31:59 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -67,3 +67,4 @@ m<letter>  Mark the current position with <letter>.
 export LESS='-N'
 ```
 
+만약 이미 `less`가 실행중인 상태라면 `-N` 을 입력해서 라인 넘버를 토글할 수 있다.
