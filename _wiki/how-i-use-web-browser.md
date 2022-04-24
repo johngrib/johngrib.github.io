@@ -3,7 +3,7 @@ layout  : category
 title   : 내가 웹 브라우저를 사용하는 방법
 summary : 적절한 익스텐션을 사용한다
 date    : 2018-03-04 00:38:22 +0900
-updated : 2020-03-26 20:41:14 +0900
+updated : 2022-04-24 23:28:46 +0900
 tag     : chrome
 toc     : true
 public  : true
@@ -118,6 +118,12 @@ Tab Wrangler를 사용하면 일정 시간 이상 들어가지 않은 탭을 자
 - 탭이 10개 이상인 경우에만 탭을 수거하게 했다.
 - 히스토리 사이즈는 1,000(최대값)으로 한다.
 - 1초 활성화 옵션은 탭 이동을 통해 잠시 스쳐 지나간 탭의 타이머를 갱신하지 않게 해준다.
+
+## Firefox
+
+### 상단 베젤 높이 줄이기
+
+- `about:config` 에서 `browser.compactmode.show`를 `true`로 바꾸면, customize toolbar에서 `density`를 `compact`로 바꿀 수 있다.
 
 ## 함께 읽기
 
