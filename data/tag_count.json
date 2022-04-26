@@ -673,7 +673,7 @@
  },
  {
   "name": "python",
-  "size": 2
+  "size": 3
  },
  {
   "name": "quickfix",
@@ -897,7 +897,7 @@
  },
  {
   "name": "vim",
-  "size": 29
+  "size": 30
  },
  {
   "name": "vimwiki",

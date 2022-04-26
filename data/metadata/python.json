@@ -5,5 +5,7 @@
  "parent": "language",
  "url": "/wiki/python",
  "updated": "2022-02-26 00:58:39 +0900",
- "children": []
+ "children": [
+  "python/vim-setting"
+ ]
 }
