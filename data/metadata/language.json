@@ -17,7 +17,7 @@
   "language/graphql",
   "language/toml",
   "php",
-  "Python3",
+  "python",
   "rust",
   "YAML"
  ]

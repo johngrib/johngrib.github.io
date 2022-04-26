@@ -3,9 +3,7 @@
  "title": "Python3",
  "summary": "",
  "parent": "language",
- "url": "/wiki/Python3",
+ "url": "/wiki/python",
  "updated": "2022-02-26 00:58:39 +0900",
- "children": [
-  "python3-simple-file-sharing"
- ]
+ "children": []
 }

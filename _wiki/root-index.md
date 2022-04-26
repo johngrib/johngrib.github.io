@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-04-17 11:27:16 +0900
+updated : 2022-04-26 20:52:22 +0900
 regenerate: true
 ---
 
@@ -325,7 +325,7 @@ regenerate: true
 * [[/php/composer]]
 * [[/php/story]]
 
-### [[Python3]]
+### [[python]]
 * [[python3-simple-file-sharing]]
 
 ### [[rust]]
