@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-04-26 21:40:50 +0900
+updated : 2022-04-26 21:55:46 +0900
 regenerate: true
 ---
 
@@ -326,6 +326,7 @@ regenerate: true
 * [[/php/story]]
 
 ### [[python]]
+* [[/python/pyenv]]
 * [[/python/vim-setting]]
 * [[python3-simple-file-sharing]]
 

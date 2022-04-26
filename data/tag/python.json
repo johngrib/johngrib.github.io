@@ -1,4 +1,5 @@
 [
+ "python/pyenv",
  "python/vim-setting",
  "python3-simple-file-sharing",
  "vim-ycm-python3"
