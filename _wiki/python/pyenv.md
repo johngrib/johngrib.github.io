@@ -3,7 +3,7 @@ layout  : wiki
 title   : pyenv
 summary : 
 date    : 2022-04-26 21:55:48 +0900
-updated : 2022-04-26 22:19:53 +0900
+updated : 2022-04-26 22:21:15 +0900
 tag     : python
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 <https://github.com/pyenv/pyenv >
 
-## Examples
+## 설치 및 설정
 
 ```bash
  # 설치
@@ -27,6 +27,17 @@ brew upgrade pyenv
  # 버전 확인
 pyenv --version
 ```
+
+이후 `.bash_profile`에 다음과 같이 추가해 주었다.
+
+```bash
+if which pyenv > /dev/null; then
+    eval "$(pyenv init --path)"
+    eval "$(pyenv init -)"
+fi
+```
+
+## Examples
 
 ```bash
  # 설치 가능한 버전 확인
