@@ -3,7 +3,7 @@ layout  : wiki
 title   : 피보나치 수열
 summary : Fibonacci Sequence
 date    : 2019-08-18 22:45:59 +0900
-updated : 2019-12-16 22:20:50 +0900
+updated : 2022-04-27 20:25:36 +0900
 tag     : math
 toc     : true
 public  : true
@@ -43,6 +43,20 @@ for $$n = 2,3,4,...$$.
 
 위의 표는 개행 문제 때문에 `,`대신 공백을 주어 표현하였다.
 
+## 재귀를 사용해 풀기
+
+* 가장 단순한 코드로 표현 가능하지만 $$O(2^n)$$의 시간 복잡도를 갖는다.
+
+```go
+func f(n int) int {
+    if n <= 1 {
+        return n
+    }
+    return f(n-1) + f(n-2)
+}
+```
+
+
 ## 반복법(iteration)으로 풀기
 
 * 초기조건 $$f_0, f_1$$부터 반복적으로 덧셈을 하여 $$f_n$$을 얻어낼 때까지 계산하는 방법.
@@ -77,19 +91,6 @@ func f(n int) int {
         a, b = b, b+a   // swap
     }
     return a + b
-}
-```
-
-## 재귀를 사용해 풀기
-
-* 가장 단순한 코드로 표현 가능하지만 $$O(2^n)$$의 시간 복잡도를 갖는다.
-
-```go
-func f(n int) int {
-    if n <= 1 {
-        return n
-    }
-    return f(n-1) + f(n-2)
 }
 ```
 
