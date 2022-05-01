@@ -3,7 +3,7 @@ layout  : wiki
 title   : SOLID 원칙
 summary : 객체지향 5대 원칙
 date    : 2019-09-05 18:06:38 +0900
-updated : 2021-10-16 19:58:26 +0900
+updated : 2022-05-02 00:39:41 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -37,6 +37,7 @@ SOLID는 다섯 개의 원칙으로 이루어져 있다.
 >
 * 한 클래스는 단 한 가지의 변경 이유만을 가져야 한다.[^clean-soft-124]
 * 하나의 모듈은 하나의, 오직 하나의 액터에 대해서만 책임져야 한다.[^clean-arch-66]
+* 컴포넌트를 변경하는 이유는 오직 하나뿐이어야 한다.[^hombergs-13]
 
 단일 책임 원칙은 "응집도(cohesion)"와 관련이 있다.
 
@@ -227,6 +228,7 @@ HR 부서가 파일 시스템이나 네트워크 소켓에 관심을 갖을 가�
 
 ## 참고문헌
 
+- 만들면서 배우는 클린 아키텍처 / 톰 홈버그 저/박소은 역 / 위키북스 / 초판 발행 2021년 11월 26일 / 원제: Get Your Hands Dirty On Clean Architecture
 - 클린 소프트웨어 / 로버트 C. 마틴 저 / 이용원, 김정민, 정지호 공역 / 제이펍 / 초판 1쇄 2017년 05월 15일 / 원제 : Agile Software Development, Principles, Patterns, and Practices
 - 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
 - 파이썬으로 살펴보는 아키텍처 패턴 / 해리 퍼시벌, 밥 그레고리 저/오현석 역 / 한빛미디어 / 2021년 06월 03일 / 원서 : Architecture Patterns with Python
@@ -247,6 +249,6 @@ HR 부서가 파일 시스템이나 네트워크 소켓에 관심을 갖을 가�
 [^dip-list]: 클린 아키텍처. 11장 93쪽.
 [^python-30]: 파이썬으로 살펴보는 아키텍처 패턴. 0장. 30쪽.
 [^python-31]: 파이썬으로 살펴보는 아키텍처 패턴. 0장. 31쪽.
-
+[^hombergs-13]: 만들면서 배우는 클린 아키텍처. 2장. 13쪽.
 
 [isp-wiki]: https://ko.wikipedia.org/wiki/인터페이스_분리_원칙
