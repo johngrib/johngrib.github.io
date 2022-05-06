@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-06 14:16:10 +0900
+updated : 2022-05-06 16:00:50 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -177,7 +177,45 @@ If no expressions are supplied, returns `nil`.
 여러 expr 표현식들을 순서대로 평가하고, 마지막 평가 결과값을 리턴합니다.
 만약 평가식이 주어지지 않는다면, `nil`을 리턴합니다.
 
-### (`let [` binding* `]` expr*)
+### (`let` [ binding* ] expr*)
+
+>
+_binding_ ⇒ _binding-form_ _init-expr_
+>
+Evaluates the expressions _expr_s in a lexical context in which the symbols in the _binding-form_s are bound to their respective _init-expr_s or parts therein.
+The bindings are sequential, so each _binding_ can see the prior bindings.
+The _expr_s are contained in an implicit `do`.
+If a _binding_ symbol is annotated with a metadata tag, the compiler will try to resolve the tag to a class name and presume that type in subsequent references to the _binding_.
+The simplest _binding-form_ is a symbol, which is bound to the entire _init-expr_:
+
+binding-form에서 선언하는 symbol들로 구성된 어휘적 컨텍스트 내에서 expr 표현식들을 평가합니다.
+binding-form들은 각자의 init-expr이나 이전 binding-form에 바인딩될 수 있습니다.
+
+바인딩은 순서대로 이루어지며, 각각의 binding은 이전의 binding들을 바라볼 수도 있습니다.
+
+expr 표현식들은 암묵적으로 `do`로 묶이게 됩니다.
+
+만약 binding symbol에 metadata로 tag가 표시되어 있다면 컴파일러는 클래스 이름으로 tag를 붙이려 시도하고, 다음에 binding을 참조할 때 해당 클래스를 사용하게 됩니다.
+
+가장 단순한 binding-form은 symbol이며, 해당 symbol에 init-expr이 바인딩됩니다.
+
+>
+> ```clojure
+> (let [x 1
+>       y x]
+>   y)
+> -> 1
+> ```
+>
+See [Binding Forms](https://clojure.org/reference/special_forms#binding-forms ) for more information about binding forms.
+>
+**Locals created with `let` are not variables. Once created their values never change!**
+
+binding form에 대한 자세한 내용은 [Binding Forms](https://clojure.org/reference/special_forms#binding-forms ) 섹션을 참고하세요.
+
+`let`으로 생성한 Local은 변수(variables)가 아닙니다. 한번 생성되면 값은 절대로 변하지 않습니다!
+
+### (`quote` form)
 
 ## 참고문헌
 
