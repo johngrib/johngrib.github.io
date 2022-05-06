@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-06 13:55:46 +0900
+updated : 2022-05-06 14:13:09 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+- 원문: [Special Forms]( https://clojure.org/reference/special_forms )
 
 ## Special Forms: Clojure Reference 문서 번역
 
@@ -143,7 +145,32 @@ Consider either using binding to provide a thread-local value for the var, or pu
 var를 변경 가능한 전역변수로 사용하는 것이기 때문입니다.
 바인딩을 사용해 var에 스레드 로컬 값을 제공하거나, var에 `ref`나 `agent`를 넣고 트랜잭션을 써서 값을 변경하는 방법을 고려해 보세요.
 
-### (if test then else?)
+### (`if` test then else?)
 
-https://clojure.org/reference/special_forms#if
+>
+Evaluates _test_.
+If not the singular values `nil` or `false`, evaluates and yields _then_, otherwise, evaluates and yields _else_.
+If _else_ is not supplied it defaults to `nil`.
+All of the other conditionals in Clojure are based upon the same logic, that is, `nil` and `false` constitute logical falsity, and everything else constitutes logical truth, and those meanings apply throughout.
+ `if` performs conditional tests of boolean Java method return values without conversion to Boolean.
+Note that `if` does not test for arbitrary values of java.lang.Boolean, only the singular value `false` (Java’s `Boolean.FALSE`), so if you are creating your own boxed Booleans make sure to use `Boolean/valueOf` and not the Boolean constructors.
+
+- test를 평가합니다.
+    - test가 `nil` 이나 `false`가 아니라면 then을 평가하고 그 결과를 반환합니다.
+    - test가 `nil` 이나 `false` 라면 else를 평가하고 그 결과를 반환합니다.
+
+Clojure에서 `nil`과 `false`는 논리적 거짓을 의미하며, 그 외의 모든 것들은 논리적 참을 의미합니다.
+Clojure의 모든 제어문은 이와 같은 논리를 토대로 작동합니다.
+
+`if`는 boolean을 리턴하는 Java 메소드를 이용해 조건 테스트를 수행합니다.
+그러나 리턴값을 Boolean으로 변환하지는 않습니다.
+주목할만한 점은 `if`가 java.lang.Boolean의 모든 값(`true`, `false`)을 테스트하지 않는다는 것입니다.
+`if`는 `false`(Java의 `Boolean.FALSE`)만을 테스트합니다.
+따라서 여러분이 자신만의 boxed Boolean을 만들 필요가 있다면 `Boolean/valueOf`를 사용하시기 바랍니다. `Boolean` 생성자를 사용하는 것은 바람직하지 않습니다.
+
+### (`do` expr*)
+
+## 참고문헌
+
+- [Special Forms]( https://clojure.org/reference/special_forms )
 
