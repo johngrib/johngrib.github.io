@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-06 16:22:44 +0900
+updated : 2022-05-07 01:58:43 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -244,6 +244,145 @@ reader 매크로 `#'x`는 `(var x)`로 펼쳐집니다.
 
 ### (`fn` name? [params* ] expr*)
 ### (`fn` name? ([params* ] expr*)+)
+
+>
+_params_ ⇒ _positional-param_\* , or _positional-param_\* & _rest-param_  
+_positional-param_ ⇒ _binding-form_  
+_rest-param_ ⇒ _binding-form_  
+_name_ ⇒ _symbol_
+>
+Defines a function (fn).
+Fns are first-class objects that implement the [IFn interface](https://clojure.github.io/clojure/javadoc/clojure/lang/IFn.html ).
+The `IFn` interface defines an `invoke()` function that is overloaded with arity ranging from 0-20.
+A single fn object can implement one or more invoke methods, and thus be overloaded on arity.
+One and only one overload can itself be variadic, by specifying the ampersand followed by a single _rest-param_.
+Such a variadic entry point, when called with arguments that exceed the positional params, collects them in a seq which is bound to, or destructured by, the rest param.
+If the supplied args do not exceed the positional params, the rest param will be `nil`.
+
+`fn`은 함수를 정의합니다.
+fn은 `IFn` 인터페이스를 구현하는 일급 객체이기도 합니다.
+
+`IFn` 인터페이스는 `invoke()` 함수를 정의하는데, `invoke`는 0개에서 20개까지의 인자를 갖도록 오버로딩되어 있습니다.
+하나의 fn 객체는 하나 이상의 invoke 메소드를 구현할 수 있으므로, 오버로딩을 사용할 수 있습니다.
+
+하나의 함수만 정의하거나, 하나의 오버로드 함수만 정의하는 경우에만 `&` 뒤에 rest-param 하나를 붙여서 가변 인자를 사용할 수 있습니다.
+
+함수가 호출될 때 위치가 고정된 인자들보다 많은 인자가 주어지면, 이렇게 넘친 인자들은 seq에 수집되며 이 seq는 rest-param에 바인딩되거나 구조분해에 사용됩니다.
+
+만약 제공된 인자들의 수가 위치가 고정된 인자들의 수를 넘지 않는다면, rest param은 `nil`이 됩니다.
+
+>
+The first form defines a fn with a single invoke method.
+The second defines a fn with one or more overloaded invoke methods.
+The arities of the overloads must be distinct.
+In either case, the result of the expression is a single fn object.
+
+- 위의 첫번째 form은 하나의 invoke 메소드를 가진 fn을 정의합니다.
+- 두 번째 form은 하나 이상의 오버로드된 invoke 메소드를 가진 fn을 정의합니다.
+
+이렇게 오버로딩된 함수들의 arity들은 반드시 서로 달라야 합니다.
+
+두 방법 모두, 평가 결과는 하나의 fn 객체입니다.
+
+>
+The expressions _expr_s are compiled in an environment in which the _params_ are bound to the actual arguments.
+The _expr_s are enclosed in an implicit `do`.
+If a name _symbol_ is provided, it is bound within the function definition to the function object itself, allowing for self-calling, even in anonymous functions.
+If a _param_ symbol is annotated with a metadata tag, the compiler will try to resolve the tag to a class name and presume that type in subsequent references to the binding.
+
+expr 표현식들은 실제 인자들이 params에 바인딩된 환경에서 컴파일됩니다.
+
+expr 표현식들은 암묵적으로 `do` 문으로 감싸집니다.
+만약 symbol 이름이 주어진다면, 함수 정의에서 함수 객체 자신으로 바인딩됩니다.
+그로 인해 자기 자신을 호출하는 것이 가능해집니다.
+이는 익명 함수에서도 가능합니다.
+만약 param symbol에 tag 메타데이터가 붙는다면 컴파일러는 tag를 클래스 이름으로 인지하여, 다음에 해당 바인딩을 참조할 때 그 타입을 사용할 것입니다.
+
+> ```clojure
+> (def mult
+>   (fn this
+>       ([] 1)
+>       ([x] x)
+>       ([x y] (* x y))
+>       ([x y & more]
+>           (apply this (this x y) more))))
+> ```
+>
+Note that named fns such as `mult` are normally defined with `defn`, which expands into something such as the above.
+>
+A fn (overload) defines a recursion point at the top of the function, with arity equal to the number of _param_s _including the rest param, if present_.
+See [`recur`](https://clojure.org/reference/special_forms#recur ).
+>
+fns implement the Java `Callable`, `Runnable` and `Comparator` interfaces.
+
+`defn` 매크로를 사용해 `mult`라는 이름을 붙인 여러 fn을 정의하면, 위의 코드와 같이 펼쳐지게 됩니다.
+
+오버로딩되는 fn은 함수의 시작점에서 인자들을 나열하여 recursion point를 정의합니다.
+자세한 내용은 [`recur`](https://clojure.org/reference/special_forms#recur) 문서를 참고하세요.
+
+fn은 Java의 `Callable`, `Runnable`, `Comparator` 인터페이스를 구현합니다.
+
+>
+**_Since 1.1_**
+>
+Functions support specifying runtime pre- and post-conditions.
+>
+The syntax for function definitions becomes the following:
+
+1.1 버전부터 함수는 런타임에 대해 사전/사후 조건을 지정할 수 있으며, 다음 문법을 통해 정의할 수 있습니다.
+
+### (`fn` name? [param* ] condition-map? expr*)
+### (`fn` name? ([param* ] condition-map? expr*)+)
+
+>
+The syntax extension also applies to `defn` and other macros which expand to `fn` forms.
+>
+Note: If the sole form following the parameter vector is a map, it is treated as the function body, and not the condition map.
+>
+The _condition-map_ parameter may be used to specify pre- and post-conditions for a function. It is of the following form:
+
+이 신택스 확장은 `defn`처럼 `fn`으로 펼쳐지는 매크로들에 적용됩니다.
+
+참고: 만약 parameter vector 바로 뒤에 map 하나만 있다면, 그 map은 condition map 이 아니라 함수 본문으로 사용됩니다.
+
+condition map parameter는 다음 형식과 같이 함수의 사전/사후 조건을 지정하는 데에 사용할 수 있습니다.
+
+> ```clojure
+> {:pre [pre-expr*]
+>  :post [post-expr*]}
+> ```
+>
+where either key is optional.
+The condition map may also be provided as metadata of the arglist.
+
+여기에서 `:pre`와 `:post` 키는 선택사항입니다.
+condition map은 arglist의 메타데이터로 제공될 수도 있습니다.
+
+>
+_pre-expr_ and _post-expr_ are boolean expressions that may refer to the parameters of the function.
+In addition, `%` may be used in a _post-expr_ to refer to the function’s return value.
+If any of the conditions evaluate to `false` and `*assert*` is true, a `java.lang.AssertionError` exception is thrown.
+
+pre-expr 과 post-expr 은 함수의 parameters를 참조할 수 있는 boolean 표현식입니다.
+한편, post-expr 에서는 함수의 리턴값을 참조하기 위해 `%`를 사용할 수 있습니다.
+만약 pre-expr 이나 post-expr 중 하나라도 `false`로 평가되고 `*assert*`가 true이면, `java.lang.AssertionError` 예외가 던져집니다.
+
+>
+Example:
+>
+> ```clojure
+> (defn constrained-sqr [x]
+>     {:pre  [(pos? x)]
+>      :post [(> % 16), (< % 225)]}
+>     (* x x))
+> ```
+>
+See [Binding Forms](https://clojure.org/reference/special_forms#binding-forms ) for more information about binding forms.
+
+binding forms에 대한 더 자세한 내용은 [Binding Forms](https://clojure.org/reference/special_forms#binding-forms ) 문서를 참고하세요.
+
+### (`loop` [binding* ] expr*)
+
 
 ## 참고문헌
 
