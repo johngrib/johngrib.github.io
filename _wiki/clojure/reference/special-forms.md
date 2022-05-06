@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-06 16:03:14 +0900
+updated : 2022-05-06 16:22:44 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -233,6 +233,17 @@ Note there is no attempt made to call the function `a`. The return value is a l
 예제의 리턴값은 3개 symbol로 구성된 하나의 list입니다.
 
 ### (`var` symbol)
+
+>
+The _symbol_ must resolve to a var, and the Var object itself _(not its value)_ is returned.
+The reader macro `#'x` expands to `(var x)`.
+
+symbol은 반드시 var로서 확인되, Var 객체 자체가 리턴됩니다(var의 값이 아님).
+
+reader 매크로 `#'x`는 `(var x)`로 펼쳐집니다.
+
+### (`fn` name? [params* ] expr*)
+### (`fn` name? ([params* ] expr*)+)
 
 ## 참고문헌
 
