@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-06 14:13:09 +0900
+updated : 2022-05-06 14:16:10 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -169,6 +169,15 @@ Clojure의 모든 제어문은 이와 같은 논리를 토대로 작동합니다
 따라서 여러분이 자신만의 boxed Boolean을 만들 필요가 있다면 `Boolean/valueOf`를 사용하시기 바랍니다. `Boolean` 생성자를 사용하는 것은 바람직하지 않습니다.
 
 ### (`do` expr*)
+
+>
+Evaluates the expressions exprs in order and returns the value of the last.
+If no expressions are supplied, returns `nil`.
+
+여러 expr 표현식들을 순서대로 평가하고, 마지막 평가 결과값을 리턴합니다.
+만약 평가식이 주어지지 않는다면, `nil`을 리턴합니다.
+
+### (`let [` binding* `]` expr*)
 
 ## 참고문헌
 
