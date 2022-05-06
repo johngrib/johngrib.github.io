@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-06 16:00:50 +0900
+updated : 2022-05-06 16:03:14 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -216,6 +216,23 @@ binding form에 대한 자세한 내용은 [Binding Forms](https://clojure.org/r
 `let`으로 생성한 Local은 변수(variables)가 아닙니다. 한번 생성되면 값은 절대로 변하지 않습니다!
 
 ### (`quote` form)
+
+>
+Yields the unevaluated _form_.
+>
+> ```clojure
+> user=> '(a b c)
+> (a b c)
+> ```
+>
+Note there is no attempt made to call the function `a`. The return value is a list of 3 symbols.
+
+평가되지 않은 form을 그대로 리턴합니다.
+
+위의 예제에서 함수 `a`는 호출되지 않는다는 점에 주목하세요.
+예제의 리턴값은 3개 symbol로 구성된 하나의 list입니다.
+
+### (`var` symbol)
 
 ## 참고문헌
 
