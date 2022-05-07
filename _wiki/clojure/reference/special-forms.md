@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 11:36:52 +0900
+updated : 2022-05-07 11:38:37 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -461,6 +461,14 @@ catch-clause가 주어졌을 때 예외가 발생했다면, 예외 인스턴스�
 
 ### (`monitor-enter` expr)
 ### (`monitor-exit` expr)
+
+>
+These are synchronization primitives that should be avoided in user code. Use the `locking` macro.
+
+사용자 코드에서는 사용하지 않는 것이 바람직한 synchronization primitives 입니다.
+이것들을 사용하지 말고 `locking` 매크로를 사용하세요.
+
+## Other Special Forms
 
 ## 참고문헌
 
