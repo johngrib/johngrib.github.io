@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 17:22:48 +0900
+updated : 2022-05-07 17:46:51 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -635,6 +635,48 @@ Clojure 1.9 에서는 다음과 같은 구조분해 키 형식을 사용해서 �
 > ```
 
 ### Keyword Arguments
+
+>
+Keyword arguments are optional trailing variadic arguments of the form `akey aval bkey bval…` that can be accessed in the function body via associative destructuring.
+Also, introduced in Clojure 1.11, a function specified to take kwargs may be passed a single map instead of or in addition to (and following) the key/value pairs.
+When a lone map is passed, it is used outright for destructuring, else a trailing map is added to the map built from the preceding key/values via `conj`.
+To define a function that accepts keyword arguments you supply a map destructuring form in the _rest-param_ declaration position.
+For example, a function that takes a sequence and optional keyword arguments and returns a vector containing the values is defined as:
+
+선택적으로 사용할 수 있는 키워드 인자는 `akey aval bkey bval…` 형식의 끝에 따라오는 가변 인자들이며, 함수 본문에 연관 구조분해를 통해 접근할 수 있습니다.
+
+또한 Clojure 1.11 부터 kwargs를 사용하도록 함수 하나를 지정해서 key/value 쌍이 아니라 map 하나를 지정하는 방법을 쓸 수 있습니다.
+
+주어진 map은 구조분해의 용도로 사용되는데, `conj`를 통해 앞의 key/value 쌍을 포함시킨 map을 사용하게 될 수도 있습니다.
+키워드 인자를 받는 함수를 정의하려면 rest-param 인자의 위치에 map 구조분해 형식을 지정하면 됩니다.
+다음은 시퀀스 하나와 선택적으로 키워드 인자들을 받아서, 값을 포함하는 벡터 하나를 리턴하는 함수의 예제입니다.
+
+> ```clojure
+> (defn destr [& {:keys [a b] :as opts}]
+>   [a b opts])
+>
+> (destr :a 1)
+> ->[1 nil {:a 1}]
+>
+> (destr {:a 1 :b 2})
+> ->[1 2 {:a 1 :b 2}]
+> ```
+>
+The map _binding-form_ to the right of the `&` in `destr` is an associative destructuring _binding-form_ [detailed above](https://clojure.org/reference/special_forms#associative-destructuring ).
+>
+The two declarations of `foo` below are equivalent, demonstrating associative destructuring’s interpretation of seqs:
+
+`destr`에 있는 `&`의 오른쪽에 있는 바인딩 폼 map은 연관 구조분해에 사용되는 바인딩 폼입니다.
+
+아래의 예제에 나오는 두 개의 `foo` 함수 정의는 연관 구조분해가 시퀀스를 어떻게 인식하는지를 보여줍니다.
+
+> ```clojure
+> (defn foo [& {:keys [quux]}] ...)
+>
+> (defn foo [& opts]
+>   (let [{:keys [quux]} opts] ...))
+> ```
+
 
 ## 참고문헌
 
