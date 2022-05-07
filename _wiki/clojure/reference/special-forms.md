@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 01:58:43 +0900
+updated : 2022-05-07 10:45:11 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -383,6 +383,14 @@ binding forms에 대한 더 자세한 내용은 [Binding Forms](https://clojure.
 
 ### (`loop` [binding* ] expr*)
 
+>
+`loop` is exactly like `let`, except that it establishes a recursion point at the top of the loop, with arity equal to the number of bindings.
+See [`recur`](https://clojure.org/reference/special_forms#recur ).
+
+`loop`는 루프가 시작하는 곳에 같은 수의 바인딩을 갖는 arity가 있는 재귀 포인트를 생성한다는 것을 제외하면 `let`과 똑같습니다.
+자세한 내용은 [`recur`](https://clojure.org/reference/special_forms#recur ) 문서를 참고하세요.
+
+### (`recur` expr*)
 
 ## 참고문헌
 
