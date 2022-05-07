@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 10:45:11 +0900
+updated : 2022-05-07 11:10:06 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -391,6 +391,47 @@ See [`recur`](https://clojure.org/reference/special_forms#recur ).
 자세한 내용은 [`recur`](https://clojure.org/reference/special_forms#recur ) 문서를 참고하세요.
 
 ### (`recur` expr*)
+
+>
+Evaluates the expressions _expr_s in order, then, in parallel, rebinds the bindings of the recursion point to the values of the _expr_s.
+If the recursion point was a `fn` method, then it rebinds the params.
+If the recursion point was a [`loop`](https://clojure.org/reference/special_forms#loop ), then it rebinds the `loop` bindings.
+Execution then jumps back to the recursion point.
+The `recur` expression must match the arity of the recursion point exactly.
+In particular, if the recursion point was the top of a variadic fn method, there is no gathering of `rest` args - a single seq (or null) should be passed.
+`recur` in other than a tail position is an error.
+
+expr 표현식들을 순서대로 평가합니다. 그리고 그와 동시에 expr의 값들을 재귀 포인트에 다시 바인딩합니다.
+- 만약 재귀 포인트가 `fn` 메소드라면, params에 리바인딩됩니다.
+- 만약 재귀 포인트가 `loop`라면, `loop` 바인딩에 리바인딩됩니다.
+
+그리고 나면 재귀 포인트로 점프해 돌아간 다음 실행을 계속합니다.
+
+`recur` 표현식은 반드시 재귀 포인트의 arity와 정확히 일치해야 합니다.
+
+만약 재귀 포인트가 가변 인자를 갖는 fn 메소드의 최상단이라면, `rest` 인자는 수집되지 않으며 하나의 seq (또는 null)만이 전달됩니다.
+
+`recur`는 마지막 꼬리 위치에 있어야 합니다. 그렇지 않다면 오류입니다.
+
+>
+Note that `recur` is the only non-stack-consuming looping construct in Clojure.
+There is no tail-call optimization and the use of self-calls for looping of unknown bounds is discouraged.
+ `recur` is functional and its use in tail-position is verified by the compiler.
+
+`recur`는 Clojure에서 스택을 사용하지 않는 유일한 루프 구조입니다.
+Clojure에는 tail-call 최적화가 없기 때문에, 임의의 범위를 반복적으 로돌리기 위해 자기 자신을 호출하는 것은 권장하지 않습니다.
+`recur`은 함수적인 방법이면서 꼬리 위치에서 사용할 때에도 컴파일러의 지원을 받을 수 있습니다.
+
+```clojure
+(def factorial
+  (fn [n]
+    (loop [cnt n acc 1]
+       (if (zero? cnt)
+            acc
+          (recur (dec cnt) (* acc cnt))))))
+```
+
+### (`throw` expr)
 
 ## 참고문헌
 
