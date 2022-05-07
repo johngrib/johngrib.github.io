@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 11:38:37 +0900
+updated : 2022-05-07 13:27:33 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -469,6 +469,17 @@ These are synchronization primitives that should be avoided in user code. Use th
 이것들을 사용하지 말고 `locking` 매크로를 사용하세요.
 
 ## Other Special Forms
+
+>
+The special forms [dot ('.')](https://clojure.org/reference/java_interop#dot ), [new](https://clojure.org/reference/java_interop#new ), and [set!](https://clojure.org/reference/java_interop#set ) of fields are described in the [Java Interop](https://clojure.org/reference/java_interop ) section of the reference.
+>
+[set!](https://clojure.org/reference/vars#set%21 ) of vars is described in the [Vars](https://clojure.org/reference/vars ) section of the reference.
+
+`.`, `new`, 그리고 필드에 대한 `set!` 같은 special form은 레퍼런스 문서의 [Java Interop](https://clojure.org/reference/java_interop ) 섹션을 참조하세요.
+
+vars의 `set!`는 레퍼런스 문서의 [Vars](https://clojure.org/reference/vars ) 섹션을 참조하세요.
+
+## Binding Forms (Destructuring)
 
 ## 참고문헌
 
