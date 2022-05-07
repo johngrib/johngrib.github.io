@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 15:55:32 +0900
+updated : 2022-05-07 17:22:48 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -538,6 +538,103 @@ In all of the sequential cases the _binding-form_s in the destructure binding w
 구조분해 바인딩에서, 시퀀셜한 구조를 갖는 모든 바인딩 폼은 대상 데이터 구조의 해당 위치와 일치하는 구조를 갖습니다.
 
 ### Associative destructuring
+
+>
+Map _binding-form_s create bindings by looking up values in collections like maps, sets, vectors, strings, and arrays (the latter three have integer keys).
+It consists of a map of _binding-form→key_ pairs, each _binding-form_ bound to the value in the _init-expr_ at the key provided.
+In addition, and optionally, an `:as` key in the binding form followed by a symbol binds that symbol to the entire _init-expr_.
+Also optionally, an `:or` key in the binding form followed by another map may be used to supply default values for some or all of the keys if they are not found in the _init-expr_:
+
+map 바인딩 폼은 map, set, vector, string, array 등의 컬렉션 에서 값을 찾아 바인딩합니다(마지막 세 종류의 경우는 integer 키를 갖습니다).
+
+연관 구조분해는 binding-form→key 쌍으로 이루어지며, 각각의 바인딩 폼은 주어진 key에 해당하는 init-expr의 값을 바인딩합니다.
+
+바인딩 폼에 `:as` 키와 symbol이 주어진다면 해당 symbol에 init-expr 전체를 바인딩하게 됩니다.
+
+만약 바인딩 폼에 `:or` 키와 별도의 map이 주어진다면 해당 map은 init-expr에서 키에 해당하는 값을 찾지 못했을 때 default 값을 제공하는 용도로 사용됩니다.
+
+> ```clojure
+> (let [{a :a, b :b, c :c, :as m :or {a 2 b 3}}  {:a 5 :c 6}]
+>   [a b c m])
+> 
+> ->[5 3 6 {:c 6, :a 5}]
+> ```
+>
+It is often the case that you will want to bind symbols with the same name as the corresponding map keys.
+The `:keys` directive addresses the redundancy often found in the binding _binding-form→key_ pairs:
+
+바인딩하려는 심볼과 map에 포함되어 있는 키가 같은 이름을 갖는 경우는 흔한 일입니다.
+이런 흔한 중복 문제는 `:keys`를 사용하면 해결할 수 있습니다.
+
+> ```clojure
+> (let [{fred :fred ethel :ethel lucy :lucy} m] ...
+> ```
+>
+can be written:
+>
+> ```clojure
+> (let [{:keys [fred ethel lucy]} m] ...
+> ```
+>
+As of Clojure 1.6, you can also use prefixed map keys in the map destructuring form:
+
+Clojure 1.6 버전부터는 map 구조분해 형식 내에서 prefix를 붙인 map key를 사용하는 것도 가능합니다.
+
+```clojure
+(let [m {:x/a 1, :y/b 2}
+      {:keys [x/a y/b]} m]
+  (+ a b))
+
+-> 3
+```
+
+>
+In the case of using prefixed keys, the bound symbol name is the same as the right-hand side of the prefixed key.
+You can also use auto-resolved keyword forms in the `:keys` directive:
+
+prefix를 붙인 키를 사용하는 경우, 바인딩된 symbol 이름은 prefixed key의 오른쪽에 있는 이름과 같습니다.
+또한, `:keys` 지시자를 사용해서 자동으로 지정되는 키워드 형식을 사용할 수도 있습니다.
+
+```clojure
+(let [m {::x 42}
+      {:keys [::x]} m]
+  x)
+
+-> 42
+```
+
+>
+There are similar `:strs` and `:syms` directives for matching string and symbol keys, the latter also allowing prefixed symbol keys since Clojure 1.6.
+>
+Clojure 1.9 adds support for directly destructuring many keys (or symbols) that share the same namespace using the following destructuring key forms:
+>
+- `:_ns_/keys` - _ns_ specifies the default namespace for the key to look up in the input
+    - keys elements should not specify a namespace
+    - keys elements also define new local symbols, as with `:keys`
+- `:_ns_/syms` - _ns_ specifies the default namespace for the symbol to look up in the input
+    - syms elements should not specify a namespace
+    - syms elements also define new local symbols, as with `:syms`
+
+비슷한 기능을 갖는 `:strs`와 `:syms` 지시자는 각각 string과 symbol 키와 매칭됩니다. 또한 후자는 Clojure 1.6부터는 prefix를 붙인 symbol 키도 처리가 가능합니다.
+
+Clojure 1.9 에서는 다음과 같은 구조분해 키 형식을 사용해서 같은 네임스페이스를 공유하는 많은 키(또는 심볼)를 처리하는 것을 지원합니다.
+
+- `:_ns_/keys` - ns는 입력에서 찾을 키의 기본 네임스페이스입니다.
+    - keys 원소들은 네임스페이스를 지정하지 않습니다.
+    - `:keys`가 있다면 keys 원소들은 새로운 로컬 심볼을 정의합니다.
+- `:_ns_/syms` - ns는 입력에서 찾을 심볼의 기본 네임스페이스입니다.
+    - syms 원소들은 네임스페이스를 지정하지 않습니다.
+    - `:syms`가 있다면 syms 원소들은 새로운 로컬 심볼을 정의합니다.
+
+> ```clojure
+> (let [m #:domain{:a 1, :b 2}
+>       {:domain/keys [a b]} m]
+>   [a b])
+>
+> -> [1 2]
+> ```
+
+### Keyword Arguments
 
 ## 참고문헌
 
