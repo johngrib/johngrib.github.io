@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 11:22:14 +0900
+updated : 2022-05-07 11:36:52 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -439,6 +439,28 @@ The _expr_ is evaluated and thrown, therefore it should yield an instance of s
 expr을 평가한 다음 던집니다. 즉, expr은 `Throwable`를 구현하는 인스턴스여야 합니다.
 
 ### (`try` expr* catch-clause* finally-clause?)
+
+>
+_catch-clause_ → (catch _classname_ _name_ _expr_\*)  
+_finally-clause_ → (finally _expr_\*)
+>
+The _expr_s are evaluated and, if no exceptions occur, the value of the last expression is returned.
+If an exception occurs and _catch-clause_s are provided, each is examined in turn and the first for which the thrown exception is an instance of the _classname_ is considered a matching _catch-clause_.
+If there is a matching _catch-clause_, its _expr_s are evaluated in a context in which _name_ is bound to the thrown exception, and the value of the last is the return value of the function.
+If there is no matching _catch-clause_, the exception propagates out of the function.
+Before returning, normally or abnormally, any _finally-clause_ _expr_s will be evaluated for their side effects.
+
+expr을 평가하는 도중에 예외가 발생하지 않았다면 마지막 표현식의 값을 리턴합니다.
+
+catch-clause가 주어졌을 때 예외가 발생했다면, 예외 인스턴스와 매치되는 classname을 가진 첫 번째 catch-clause를 찾습니다.
+매치되는 catch-clause를 찾았다면, 던져진 예외에 대해 name이 바인딩된 컨텍스트에서 catch-clause의 expr이 평가되며 이렇게 평가된 마지막 값이 함수의 리턴값이 됩니다.
+
+만약 매치되는 catch-clause가 없다면, 예외는 함수 바깥으로 전파됩니다.
+
+예외가 발생하건 발생하지 않건 간에, 값을 리턴하기 전에는 사이드 이펙트로 finally-clause expr이 평가됩니다.
+
+### (`monitor-enter` expr)
+### (`monitor-exit` expr)
 
 ## 참고문헌
 
