@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 14:17:25 +0900
+updated : 2022-05-07 15:55:32 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -501,6 +501,43 @@ vector 형식을 써서 바인딩의 위치를 순차적으로 만들어 놓고 
 binding-form은 데이터가 주어지지 않으면(sequential한 구조에 너무 적은 원소가 주어졌다던가, 연관 구조에 키가 없다던가 등), `nil`로 바인딩됩니다.
 
 ### Sequential destructuring
+
+>
+Vector _binding\_form_s sequentially bind values in collections like vectors, lists, seqs, strings, arrays, and anything that supports [`nth`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth ).
+The sequential destructuring form is a vector of _binding-form_s, which will be bound to successive elements from the _init-expr_, looked up via `nth`.
+In addition, and optionally, a _binding-form_ following a `&` will be bound to the remainder of the sequence, i.e. that part not yet bound, and looked up via [`nthnext`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nthnext ).
+>
+Finally, also optionally, `:as` followed by a symbol binds that symbol to the entire _init-expr_:
+
+vector 바인딩 폼은 nth 연산을 지원하는 모든 콜렉션(vector, list, seq, string, array 등)의 값들을 순서대로 바인딩합니다.
+시퀀셜 구조분해 폼은 바인딩 폼들로 이루어진 vector이며, init-expr의 원소들을 `nth`를 통해 찾아 바인딩합니다.
+바인딩 폼의 마지막에 `&`이 온다면 시퀀스의 잔여 값들을 바인딩합니다. 이 부분에 대해서는 `nthnext` 문서를 읽어보세요.
+
+그리고 `:as`를 사용하면 뒤에 오는 symbol에 init-expr 전체를 바인딩하게 됩니다.
+
+> ```clojure
+> (let [[a b c & d :as e] [1 2 3 4 5 6 7]]
+>   [a b c d e])
+> 
+> ->[1 2 3 (4 5 6 7) [1 2 3 4 5 6 7]]
+> ```
+>
+These forms can nest:
+
+중첩된 형태로 사용할 수도 있습니다.
+
+> ```clojure
+> (let [[[x1 y1][x2 y2]] [[1 2] [3 4]]]
+>   [x1 y1 x2 y2])
+> 
+> ->[1 2 3 4]
+> ```
+>
+In all of the sequential cases the _binding-form_s in the destructure binding will match the places in the target data structure where the desired values reside.
+
+구조분해 바인딩에서, 시퀀셜한 구조를 갖는 모든 바인딩 폼은 대상 데이터 구조의 해당 위치와 일치하는 구조를 갖습니다.
+
+### Associative destructuring
 
 ## 참고문헌
 
