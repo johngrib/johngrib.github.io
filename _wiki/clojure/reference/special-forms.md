@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 13:27:33 +0900
+updated : 2022-05-07 14:17:25 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -480,6 +480,27 @@ The special forms [dot ('.')](https://clojure.org/reference/java_interop#dot ),
 vars의 `set!`는 레퍼런스 문서의 [Vars](https://clojure.org/reference/vars ) 섹션을 참조하세요.
 
 ## Binding Forms (Destructuring)
+
+>
+The simplest _binding-form_ in Clojure is a symbol.
+However, Clojure also supports abstract structural binding called destructuring in `let` binding lists, `fn` parameter lists, and by extension any macro that expands into a `let` or `fn`.
+Destructuring is a way to create a set of bindings to values within a collection by using an analogous collection as a binding form.
+A vector form specifies bindings by position in a sequential collection, a map form by key in an associative collection.
+Destructuring forms can appear anywhere _binding-form_s can, and thus nest, yielding code that is clearer than using collection accessors.
+>
+_Binding-form_s that don’t match their respective part due to an absence of data (i.e. too few elements in a sequential structure, no key in an associative structure, etc) bind to `nil`.
+
+
+Clojure에서 가장 간단한 binding-form은 symbol입니다.
+그러나 Clojure는 구조분해라는 이름의 추상적인 구조 바인딩도 지원하며 `let`의 바인딩 리스트와 `fn`의 파라미터 리스트, 그리고 `let`과 `fn`으로 펼쳐지는 모든 매크로에서 사용할 수 있습니다.
+
+구조분해는 유사 collection을 바인딩 형식으로 사용하여 collection 안쪽에 여러 바인딩 집합을 만드는 방법이라 할 수 있습니다.
+vector 형식을 써서 바인딩의 위치를 순차적으로 만들어 놓고 키를 매핑합니다.
+구조분해는 binding-form이 가능한 곳이라면 어디든 나타날 수 있으며, collection에 직접 엑세스하는 것보다 더 명확한 코드를 생산하게 도와줍니다.
+
+binding-form은 데이터가 주어지지 않으면(sequential한 구조에 너무 적은 원소가 주어졌다던가, 연관 구조에 키가 없다던가 등), `nil`로 바인딩됩니다.
+
+### Sequential destructuring
 
 ## 참고문헌
 
