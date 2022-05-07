@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 17:46:51 +0900
+updated : 2022-05-07 17:48:59 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -675,6 +675,21 @@ The two declarations of `foo` below are equivalent, demonstrating associative 
 >
 > (defn foo [& opts]
 >   (let [{:keys [quux]} opts] ...))
+> ```
+
+### Nested destructuring
+
+>
+Since binding forms can be nested within one another arbitrarily, you can pull apart just about anything:
+
+바인딩 form은 중첩 선언이 가능하기 때문에 어떤 구조가 주어져도 분해가 가능합니다.
+
+> ```clojure
+> (let [m {:j 15 :k 16 :ivec [22 23 24 25]}
+>       {j :j, k :k, i :i, [r s & t :as v] :ivec, :or {i 12 j 13}} m]
+>   [i j k r s t v])
+> 
+> -> [12 15 16 22 23 (24 25) [22 23 24 25]]
 > ```
 
 
