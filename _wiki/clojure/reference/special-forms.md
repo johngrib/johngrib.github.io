@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 11:10:06 +0900
+updated : 2022-05-07 11:22:14 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -432,6 +432,13 @@ Clojure에는 tail-call 최적화가 없기 때문에, 임의의 범위를 반�
 ```
 
 ### (`throw` expr)
+
+>
+The _expr_ is evaluated and thrown, therefore it should yield an instance of some derivee of `Throwable`.
+
+expr을 평가한 다음 던집니다. 즉, expr은 `Throwable`를 구현하는 인스턴스여야 합니다.
+
+### (`try` expr* catch-clause* finally-clause?)
 
 ## 참고문헌
 
