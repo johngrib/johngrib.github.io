@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary : 번역 중인 문서
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-07 17:48:59 +0900
+updated : 2022-05-08 11:45:21 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -40,9 +40,30 @@ Support for _doc-string_ was added in Clojure 1.3.
 `symbol` 이름과 "현재 네임스페이스(`*ns*`)"를 사용해서 global var를 생성하고 intern 처리합니다.
 
 - `init`
-    - `init`이 주어진다면, `init`을 평가해서 var의 루트 바인딩에 할당합니다.
-    - `init`이 없다면, var의 루트 바인딩은 아무런 영향을 받지 않습니다.
-        - 역주: init이 없는 def 표현식인 `(def foo)`를 평가하고 나서 `foo`를 평가해 보면 `Unable to resolve symbol: foo in this context`가 발생한다.
+    - `init`이 있다면 평가해서 var의 루트 바인딩에 할당합니다.
+    - `init`이 없다면 var의 루트 바인딩은 아무런 영향을 받지 않습니다.
+
+>
+**역주**
+>
+init이 없다면 var의 루트 바인딩은 영향을 안 받지만, symbol에는 `Var$Unbound`가 할당된다.
+일종의 [[/pattern/null-object]].
+>
+init이 없는 def 표현식은 `(def foo)` 처럼 작성할 수 있다.
+>
+> ```clojure
+> ;; REPL
+> (def foo)
+> #'user/foo
+>
+> foo
+> #object[clojure.lang.Var$Unbound 0x332779a6 "Unbound: #'user/foo"]
+> ```
+>
+`Var$Unbound` 클래스 코드는 [clojure.lang.Var.java]( https://github.com/clojure/clojure/blob/clojure-1.11.1/src/jvm/clojure/lang/Var.java#L33 )에서 읽어볼 수 있다.
+{:style="background-color: #ecf1e8;"}
+
+
 - `def`
     - `def`는 언제나 루트 바인딩에 적용됩니다. var가 스레드 바인딩되었을 때 `def`가 호출되어도 마찬가지입니다.
     - `def`는 var 자체를 반환합니다(var의 값이 아니라 var 자체).
