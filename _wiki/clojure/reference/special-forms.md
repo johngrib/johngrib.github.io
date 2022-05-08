@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Clojure Special Forms
-summary : 번역 중인 문서
+summary :
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-08 11:45:21 +0900
+updated : 2022-05-08 21:54:54 +0900
 tag     : clojure 번역
 toc     : true
 public  : true

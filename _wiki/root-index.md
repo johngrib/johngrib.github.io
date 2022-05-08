@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-05-08 11:21:43 +0900
+updated : 2022-05-08 21:54:58 +0900
 regenerate: true
 ---
 
@@ -292,7 +292,7 @@ regenerate: true
     * 01 [[/clojure/reader]]
     * 02 [[/clojure/repl-and-main]]
     * 03 [[/clojure/evaluation]]
-    * 04 [[/clojure/reference/special-forms]] 번역중
+    * 04 [[/clojure/reference/special-forms]]
     * 05 [[/clojure/macros]]
     * 10 [[/clojure/reference/transient]]
     * 14 [[/clojure/reference/metadata]]
