@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-05-08 21:54:58 +0900
+updated : 2022-05-08 22:38:10 +0900
 regenerate: true
 ---
 
@@ -294,7 +294,12 @@ regenerate: true
     * 03 [[/clojure/evaluation]]
     * 04 [[/clojure/reference/special-forms]]
     * 05 [[/clojure/macros]]
+    * 06 /clojure/reference/other-functions
+    * 07 /clojure/reference/data-structures
+    * 08 /clojure/reference/datatypes
+    * 09 /clojure/reference/sequences
     * 10 [[/clojure/reference/transient]]
+    * 11 /clojure/reference/transducers
     * 14 [[/clojure/reference/metadata]]
 * [[/clojure/guide]]
     * LANGUAGE
