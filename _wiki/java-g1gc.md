@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java HotSpot VM G1GC
 summary : Java9 ~ 12 디폴트 GC
 date    : 2019-09-16 14:36:19 +0900
-updated : 2021-11-26 20:52:20 +0900
+updated : 2022-05-11 00:05:23 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -25,7 +25,7 @@ G1GC: Garbage First Garbage Collector
 
 * G1은 이름을 보면 짐작할 수 있듯, 쓰레기로 가득찬 heap 영역을 집중적으로 수집한다.
 * G1은 큰 메모리를 가진 멀티 프로세서 시스템에서 사용하기 위해 개발된 GC이다.
-* GC 일시 정지 시간을 최소화하면서, 따로 설정을 하지 않아도 가능한 한 처리량(throughput)도 확보하는 것이  G1GC의 목표이다.
+* GC 일시 정지 시간을 최소화하면서, 따로 설정을 하지 않아도 가능한 한 처리율(throughput)도 확보하는 것이  G1GC의 목표이다.
 * G1은 Java 9부터 디폴트 GC이다.
 * G1은 실시간(real time) GC가 아니다. 일시 정지 시간을 최소화하긴 하지만 완전히 없애지는 못한다.
 * G1은 통계를 계산해가면서 GC 작업량을 조절한다.
@@ -40,7 +40,7 @@ G1GC: Garbage First Garbage Collector
 
 * Parallel GC
     * Parallel GC는 old gen의 공간에서만 재확보(reclaim)와 조각 모음(compaction)을 한다.
-    * G1은 이런 작업을 더 짧은 GC 작업들로 분배하여 수행하여, 전체적인 처리량이 줄어드는 대신 일시 정지 시간을 크게 단축한다.
+    * G1은 이런 작업을 더 짧은 GC 작업들로 분배하여 수행하여, 전체적인 처리율이 줄어드는 대신 일시 정지 시간을 크게 단축한다.
 * CMS
     * G1도 CMS처럼 old gen 영역을 동시에(concurrently) 작업한다.
     * CMS는 old gen의 조각 모음을 하지 않으므로 Full GC 시간이 길어지는 문제가 있다.
@@ -209,8 +209,8 @@ G1은 GC가 끝날 무렵에 대피 실패의 뒷수습이 끝났다고 가정�
 * 가급적이면 기본 설정으로 사용할 것.
 * 필요하다면 `-Xmx` 옵션으로 최대 heap 사이즈를 넉넉하게 설정할 것.
 * `-Xmn`, `-XX:NewRatio` 옵션으로 young gen의 사이즈를 설정하지 말 것. 이 사이즈 목표가 일시 중지 시간 목표보다 우선하게 되며, 일시 중지 시간 목표는 비활성화된다.
-* GC 튜닝시 처리량과 정지 시간 사이의 상충 관계를 염두에 둘 것.
-    * G1은 90%의 애플리케이션 시간과 10%의 GC 시간을 목표로 한다(Parallel GC의 경우 99%의 애플리케이션 시간과 1%의 GC 시간 목표). 따라서 처리량을 늘리고자 한다면 일시 정지 시간 목표를 어느 정도 느슨하게 해줘야 한다.
+* GC 튜닝시 처리율과 정지 시간 사이의 상충 관계를 염두에 둘 것.
+    * G1은 90%의 애플리케이션 시간과 10%의 GC 시간을 목표로 한다(Parallel GC의 경우 99%의 애플리케이션 시간과 1%의 GC 시간 목표). 따라서 처리율을 늘리고자 한다면 일시 정지 시간 목표를 어느 정도 느슨하게 해줘야 한다.
 
 ### G1 퍼포먼스 향상
 
@@ -288,16 +288,16 @@ RS는 Remember Set를 말한다.
 
 #### Throughput
 
-**처리량을 늘리고 싶다면?**
+**처리율을 늘리고 싶다면?**
 
 * `-XX:MaxGCPauseMillis`로 최대 일시 정지 시간을 늘려준다.
 * `-XX:G1NewSizePercent`로 young gen의 최소 사이즈를 늘려준다.
 * `-XX:G1MaxNewSizePercent`로 young gen의 최대 사이즈를 늘려준다.
-* 동시 작업을 위한 Remeber Set 업데이트에는 CPU 리소스가 많이 필요하므로, 동시 작업량을 줄이면 처리량이 늘어난다.
+* 동시 작업을 위한 Remeber Set 업데이트에는 CPU 리소스가 많이 필요하므로, 동시 작업량을 줄이면 처리율이 늘어난다.
     * `-XX:G1RSetUpdatingPauseTimePercent`를 늘려주면 동시 작업이 줄어들고, GC 일시 정지 시간이 늘어난다.
     * 최악의 경우, 다음 세 옵션을 설정하면 Remember Set 업데이트를 아예 끌 수도 있다. 이렇게 하면 RS 업데이트 작업을 다음 GC 작업으로 미룬다.
         * `-XX:-G1UseAdaptiveConcRefinement`, `-XX:G1ConcRefinementGreenZone=2G` `-XX:G1ConcRefinementThreads=0` 
-* `-XX:+UseLargePages`를 설정해서 큰 페이지를 사용하면 처리량이 향상된다. (운영체제 메뉴얼을 참고할 것)
+* `-XX:+UseLargePages`를 설정해서 큰 페이지를 사용하면 처리율이 향상된다. (운영체제 메뉴얼을 참고할 것)
 * heap 사이즈 조정 작업을 끄거나 최소화한다. 다음 두 방법을 쓰면 일관된 일시 정지 시간을 얻을 가능성이 올라간다.
     * `-Xms`, `-Xmx`를 같은 값으로 설정한다.
     * `-XX:+AlwaysPreTouch`를 설정한다.

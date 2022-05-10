@@ -3,7 +3,7 @@ layout  : wiki
 title   : JVM 메모리 구조와 GC
 summary : 작성중인 문서
 date    : 2019-08-28 15:52:08 +0900
-updated : 2019-09-15 15:06:24 +0900
+updated : 2022-05-11 00:04:28 +0900
 tag     : java
 toc     : true
 public  : true
@@ -80,7 +80,7 @@ $$
 
 #### Concurrent Collectors
 
-* 전체 처리량보다 응답 시간이 더 중요한 경우에 사용할 것.
+* 전체 처리율보다 응답 시간이 더 중요한 경우에 사용할 것.
     * 프로세서가 GC와 처리 역할을 나누어 일하기 때문에 일시 정지가 짧아진다.
     * 프로세서의 수를 늘릴수록 효과를 볼 수 있지만 한계가 있음.
 
@@ -123,7 +123,7 @@ $$
 * G1GC 라고도 부른다.
 * 서버 스타일 컬렉터.
 * 큰 메모리를 가진 멀티 프로세서 머신을 위한 컬렉터.
-* 높은 확률로 일시 정지 시간에 대한 목표와 높은 처리량을 달성할 것이다.
+* 높은 확률로 일시 정지 시간에 대한 목표와 높은 처리율을 달성할 것이다.
 * `-XX:+UseG1GC` 옵션으로 G1 컬렉터를 켤 수 있다.
 * Young Generation Collection 알고리즘: Snapshot-At-The-Beginning(SATB)
 * Old Generation Collection 알고리즘: Snapshot-At-The-Beginning(SATB)
@@ -165,7 +165,7 @@ G1GC만 Generational GC가 아니라는 점에 주의.
 * VM이 알아서 컬렉터를 선택하게 놔둔다.
 * VM이 알아서 잘 선택하겠지만 수동으로 선택하고 싶다면 `-XX:+UseParallelGC` 옵션을 켠다.
 
-**응답 시간이 전체 처리량보다 중요하고 일시 정지 시간이 1초 이하여야 하는 경우**
+**응답 시간이 전체 처리율보다 중요하고 일시 정지 시간이 1초 이하여야 하는 경우**
 
 * Concurrent Collector를 사용해 본다.
     * `-XX:+UseConcMarkSweepGC` 옵션이나 `-XX:+UseG1GC` 옵션을 켠다.
@@ -177,7 +177,7 @@ G1GC만 Generational GC가 아니라는 점에 주의.
 **그래도 성능이 부족하다면**
 
 * 컬렉터를 바꿔가면서 테스트해볼 것.
-* Concurrent Collector로 일시 정지 시간을 줄여보고, Parallel Collector로 멀티 프로세서 하드웨어의 이점을 살려 전체 처리량을 늘려볼 것.
+* Concurrent Collector로 일시 정지 시간을 줄여보고, Parallel Collector로 멀티 프로세서 하드웨어의 이점을 살려 전체 처리율을 늘려볼 것.
 
 ---
 
@@ -339,7 +339,7 @@ _패러렐 컴팩션은 패러렐 컬렉터가 메이저 컬렉션을 병렬로 
 >
 The mostly concurrent collector performs most of its work concurrently (for example, while the application is still running) to keep garbage collection pauses short. It is designed for applications with medium-sized to large-sized data sets in which response time is more important than overall throughput because the techniques used to minimize pauses can reduce application performance. The Java HotSpot VM offers a choice between two mostly concurrent collectors; see The Mostly Concurrent Collectors. Use the option -XX:+UseConcMarkSweepGC to enable the CMS collector or -XX:+UseG1GC to enable the G1 collector.
 
-_대부분의 동시(concurrent) 컬렉터는 가비지 컬렉션으로 인한 일시 정지 현상을 짧게 하기 위해 동시에(concurrently) 작업을 수행합니다. 일시 정지 현상을 최소화하기 위해 사용되는 테크닉이 애플리케이션 퍼포먼스를 감소시킬 수 있기 때문에, 동시 컬렉터는 응답 시간이 전체 처리량보다 더 중요한 중대형 규모의 데이터셋을 다루는 애플리케이션을 위해 설계되었습니다. Java HotSpot VM에서는 주로 두 개의 동시 컬렉터 중 하나를 선택할 수 있습니다. 이에 대해서는 [The Mostly Concurrent Collectors][concurrent8] 문서를 참고하세요. `-XX:+UseConcMarkSweepGC` 옵션을 켜면 CMS 컬렉터를 활성화할 수 있고, `-XX:+UseG1GC` 옵션을 켜면 G1 컬렉터를 활성화할 수 있습니다._
+_대부분의 동시(concurrent) 컬렉터는 가비지 컬렉션으로 인한 일시 정지 현상을 짧게 하기 위해 동시에(concurrently) 작업을 수행합니다. 일시 정지 현상을 최소화하기 위해 사용되는 테크닉이 애플리케이션 퍼포먼스를 감소시킬 수 있기 때문에, 동시 컬렉터는 응답 시간이 전체 처리율보다 더 중요한 중대형 규모의 데이터셋을 다루는 애플리케이션을 위해 설계되었습니다. Java HotSpot VM에서는 주로 두 개의 동시 컬렉터 중 하나를 선택할 수 있습니다. 이에 대해서는 [The Mostly Concurrent Collectors][concurrent8] 문서를 참고하세요. `-XX:+UseConcMarkSweepGC` 옵션을 켜면 CMS 컬렉터를 활성화할 수 있고, `-XX:+UseG1GC` 옵션을 켜면 G1 컬렉터를 활성화할 수 있습니다._
 
 
 ### GC 선택 가이드라인
@@ -367,7 +367,7 @@ _만약 애플리케이션의 최고 성능이 최우선 순위이고, 일시 �
 
 > If response time is more important than overall throughput and garbage collection pauses must be kept shorter than approximately 1 second, then select the concurrent collector with -XX:+UseConcMarkSweepGC or -XX:+UseG1GC.
 
-_만약 응답 시간이 전체 처리량보다 중요하고 가비지 컬렉션으로 인한 일시 정지가 1초보다 짧아야 한다면, `-XX:+UseConcMarkSweepGC` 옵션이나 `-XX:+UseG1GC` 옵션을 켜서 Concurrent Collector를 선택하세요._
+_만약 응답 시간이 전체 처리율보다 중요하고 가비지 컬렉션으로 인한 일시 정지가 1초보다 짧아야 한다면, `-XX:+UseConcMarkSweepGC` 옵션이나 `-XX:+UseG1GC` 옵션을 켜서 Concurrent Collector를 선택하세요._
 
 > These guidelines provide only a starting point for selecting a collector because performance is dependent on the size of the heap, the amount of live data maintained by the application, and the number and speed of available processors. Pause times are particularly sensitive to these factors, so the threshold of 1 second mentioned previously is only approximate: the parallel collector will experience pause times longer than 1 second on many data size and hardware combinations; conversely, the concurrent collector may not be able to keep pauses shorter than 1 second on some combinations.
 
@@ -376,7 +376,7 @@ _이 가이드라인은 컬렉터 선택에 대한 시작점을 제공할 뿐입
 >
 If the recommended collector does not achieve the desired performance, first attempt to adjust the heap and generation sizes to meet the desired goals. If performance is still inadequate, then try a different collector: use the concurrent collector to reduce pause times and use the parallel collector to increase overall throughput on multiprocessor hardware.
 
-_권장한 컬렉터가 필요한 성능을 달성하지 못한다면, 먼저 heap과 generation 사이즈를 조절하세요. 그래도 성능이 부족하다면, 다른 종류의 컬렉터 사용을 시도해 보세요. 컨커런트 컬렉터를 사용해 일시 정지 시간을 줄이고, 패러렐 컬렉터를 사용해 멀티 프로세서 하드웨어의 전체 처리량을 늘려보세요._
+_권장한 컬렉터가 필요한 성능을 달성하지 못한다면, 먼저 heap과 generation 사이즈를 조절하세요. 그래도 성능이 부족하다면, 다른 종류의 컬렉터 사용을 시도해 보세요. 컨커런트 컬렉터를 사용해 일시 정지 시간을 줄이고, 패러렐 컬렉터를 사용해 멀티 프로세서 하드웨어의 전체 처리율을 늘려보세요._
 
 
 ### Concurrent 컬렉터
@@ -391,7 +391,7 @@ _Concurrent Mark Sweep(CMS) Collector: 이 컬렉터는 가비지 컬렉션 일�
 >
 Garbage-First Garbage Collector: This server-style collector is for multiprocessor machines with large memories. It meets garbage collection pause time goals with high probability while achieving high throughput.
 
-_G1 Garbage Collector: 이 서버 스타일 컬렉터는 큰 메모리를 가진 멀티 프로세서 머신을 위한 것입니다. 높은 확률로 일시 정지 시간에 대한 목표와 높은 처리량을 달성할 것입니다._
+_G1 Garbage Collector: 이 서버 스타일 컬렉터는 큰 메모리를 가진 멀티 프로세서 머신을 위한 것입니다. 높은 확률로 일시 정지 시간에 대한 목표와 높은 처리율을 달성할 것입니다._
 
 ### 동시성(Concurrency)의 오버헤드
 
@@ -400,7 +400,7 @@ _G1 Garbage Collector: 이 서버 스타일 컬렉터는 큰 메모리를 가진
 >
 The mostly concurrent collector trades processor resources (which would otherwise be available to the application) for shorter major collection pause times. The most visible overhead is the use of one or more processors during the concurrent parts of the collection. On an N processor system, the concurrent part of the collection will use K/N of the available processors, where 1<=K<=ceiling{N/4}. (Note that the precise choice of and bounds on K are subject to change.) In addition to the use of processors during concurrent phases, additional overhead is incurred to enable concurrency. Thus while garbage collection pauses are typically much shorter with the concurrent collector, application throughput also tends to be slightly lower than with the other collectors.
 
-_대부분의 동시 컬렉터는 프로세서 자원과 짧은 메이저 컬렉션 일시 정지 시간을 트레이드합니다. 가장 눈에 띄는 오버헤드는 컬렉션의 동시 처리 부분(concurrent parts)에서 하나 이상의 프로세서를 사용하는 것입니다. N 개의 프로세서가 있는 시스템에서, 컬렉션의 동시 처리 부분은 사용 가능한 프로세서들의 $$\frac{K}{N}$$을 사용합니다($$1 \le K \le \ceil{ {N \over 4} }$$이며, K의 선택값이나 범위는 변경될 수 있습니다). 그 외에도 동시성을 사용하기 위한 추가적인 오버헤드가 있습니다. 그러므로 일반적으로 동시 컬렉터에서는 가비지 컬렉션의 일시 정지가 훨씬 짧은 편이지만 애플리케이션의 처리량은 다른 컬렉터보다 낮은 경향이 있습니다._
+_대부분의 동시 컬렉터는 프로세서 자원과 짧은 메이저 컬렉션 일시 정지 시간을 트레이드합니다. 가장 눈에 띄는 오버헤드는 컬렉션의 동시 처리 부분(concurrent parts)에서 하나 이상의 프로세서를 사용하는 것입니다. N 개의 프로세서가 있는 시스템에서, 컬렉션의 동시 처리 부분은 사용 가능한 프로세서들의 $$\frac{K}{N}$$을 사용합니다($$1 \le K \le \ceil{ {N \over 4} }$$이며, K의 선택값이나 범위는 변경될 수 있습니다). 그 외에도 동시성을 사용하기 위한 추가적인 오버헤드가 있습니다. 그러므로 일반적으로 동시 컬렉터에서는 가비지 컬렉션의 일시 정지가 훨씬 짧은 편이지만 애플리케이션의 처리율은 다른 컬렉터보다 낮은 경향이 있습니다._
 
 >
 On a machine with more than one processing core, processors are available for application threads during the concurrent part of the collection, so the concurrent garbage collector thread does not "pause" the application. This usually results in shorter pauses, but again fewer processor resources are available to the application and some slowdown should be expected, especially if the application uses all of the processing cores maximally. As N increases, the reduction in processor resources due to concurrent garbage collection becomes smaller, and the benefit from concurrent collection increases. The section Concurrent Mode Failure in Concurrent Mark Sweep (CMS) Collector discusses potential limits to such scaling.

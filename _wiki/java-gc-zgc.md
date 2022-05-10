@@ -3,7 +3,7 @@ layout  : wiki
 title   : ZGC, The Z Garbage Collector
 summary : scalable low-latency garbage collector
 date    : 2019-10-04 11:05:50 +0900
-updated : 2022-01-23 23:15:34 +0900
+updated : 2022-05-11 00:03:28 +0900
 tag     : java gc
 toc     : true
 public  : true
@@ -36,11 +36,11 @@ ZGC는 확장 가능한 낮은 레이턴시의 GC이다.
 
 * GC 일시 정지 시간이 10ms를 초과하지 않아야 한다.
 * 비교적 작은(수백 MB) 크기에서 매우 큰(수 TB) 사이즈의 heap을 다룰 수 있어야 한다.
-* G1 보다 애플리케이션 처리량이 15% 이상 떨어지지 않을 것.
+* G1 보다 애플리케이션 처리율이 15% 이상 떨어지지 않을 것.
 * colored pointers, load barriers를 사용하여 미래의 GC를 위한 기능/최적화 기반을 마련한다.
 * 최초 지원 플랫폼은 Linux/x64.
 
-즉 ZGC의 목표는 G1보다 더 짧은 latency를 가지면서 G1보다 크게 뒤쳐지지 않는 처리량을 갖는 것이다.
+즉 ZGC의 목표는 G1보다 더 짧은 latency를 가지면서 G1보다 크게 뒤쳐지지 않는 처리율을 갖는 것이다.
 
 ZGC를 개발한 이유에 대해 더 자세히 알아보자.
 
@@ -73,7 +73,7 @@ ZGC 튜닝에서 가장 중요한 것은 `-Xmx`로 설정할 수 있는 최대 �
 
 일반적으로 ZGC는 메모리가 많으면 많을수록 좋다고 한다.
 
-ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레드의 수이다. `-XX:ConcGCThreads`로 설정할 수 있으며, ZGC는 휴리스틱을 통해 이 값을 자동으로 선택한다. 다만, 이 값이 너무 크면 GC가 애플리케이션의 CPU 시간을 다 빼앗아버리므로 처리량이 떨어진다. 반면 이 값이 너무 작으면 쓰레기 수거보다 쓰레기가 쌓이는 속도가 더 빠를 수 있다.
+ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레드의 수이다. `-XX:ConcGCThreads`로 설정할 수 있으며, ZGC는 휴리스틱을 통해 이 값을 자동으로 선택한다. 다만, 이 값이 너무 크면 GC가 애플리케이션의 CPU 시간을 다 빼앗아버리므로 처리율이 떨어진다. 반면 이 값이 너무 작으면 쓰레기 수거보다 쓰레기가 쌓이는 속도가 더 빠를 수 있다.
 
 
 
@@ -83,7 +83,7 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 
 ![compare1]( /resource/wiki/java-gc-zgc/zgc-compare1.jpg )
 
-* 레이턴시에 대한 요구 조건이 있는 상황에서도 ZGC의 처리량이 G1보다 괜찮았다.
+* 레이턴시에 대한 요구 조건이 있는 상황에서도 ZGC의 처리율이 G1보다 괜찮았다.
 
 ![compare2]( /resource/wiki/java-gc-zgc/zgc-compare2.jpg )
 

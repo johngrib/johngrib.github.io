@@ -4,6 +4,6 @@
  "summary": "scalable low-latency garbage collector",
  "parent": "java/gc",
  "url": "/wiki/java-gc-zgc",
- "updated": "2022-01-23 23:15:34 +0900",
+ "updated": "2022-05-11 00:03:28 +0900",
  "children": []
 }
