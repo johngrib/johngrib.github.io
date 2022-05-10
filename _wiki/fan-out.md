@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : fan out, fan in
+title   : fan in, fan out
 summary : 
 date    : 2022-05-10 22:45:43 +0900
-updated : 2022-05-10 22:52:44 +0900
+updated : 2022-05-10 22:55:40 +0900
 tag     : 논리회로
 toc     : true
 public  : true
@@ -13,7 +13,12 @@ latex   : false
 * TOC
 {:toc}
 
+## 요약
 
+- fan in: 게이트에 연결될 수 있는 최대입력수.
+- fan out: 게이트의 출력에 연결될 수 있는 입력게이트의 최대 수.
+
+## 인용
 >
 팬아웃(fan-out)이란 정상동작에 영향을 주지 않고 게이트 출력부에 연결할 수 있는 표준부하의 수이다.
 여기서 표준부하란 대개 동일 IC군에서 다른 게이트 평가 정상적으로 동작하기 위해 게이트 입력에 필요한 전류량으로 표시된다.
