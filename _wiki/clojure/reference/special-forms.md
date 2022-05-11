@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure Special Forms
 summary :
 date    : 2022-05-05 23:15:05 +0900
-updated : 2022-05-08 21:54:54 +0900
+updated : 2022-05-11 20:51:08 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -283,8 +283,8 @@ If the supplied args do not exceed the positional params, the rest param will be
 `fn`은 함수를 정의합니다.
 fn은 `IFn` 인터페이스를 구현하는 일급 객체이기도 합니다.
 
-`IFn` 인터페이스는 `invoke()` 함수를 정의하는데, `invoke`는 0개에서 20개까지의 인자를 갖도록 오버로딩되어 있습니다.
-하나의 fn 객체는 하나 이상의 invoke 메소드를 구현할 수 있으므로, 오버로딩을 사용할 수 있습니다.
+`IFn` 인터페이스는 `invoke()` 함수를 정의하는데, `invoke`는 0개에서 20개까지의 인자 수(arity)를 갖도록 오버로딩되어 있습니다.
+하나의 fn 객체는 하나 이상의 invoke 메소드를 구현할 수 있으며, 인자의 수(arity)를 기반으로 오버로딩됩니다.
 
 하나의 함수만 정의하거나, 하나의 오버로드 함수만 정의하는 경우에만 `&` 뒤에 rest-param 하나를 붙여서 가변 인자를 사용할 수 있습니다.
 
@@ -301,7 +301,7 @@ In either case, the result of the expression is a single fn object.
 - 위의 첫번째 form은 하나의 invoke 메소드를 가진 fn을 정의합니다.
 - 두 번째 form은 하나 이상의 오버로드된 invoke 메소드를 가진 fn을 정의합니다.
 
-이렇게 오버로딩된 함수들의 arity들은 반드시 서로 달라야 합니다.
+이렇게 오버로딩된 함수들의 인자의 수(arity)는 반드시 서로 달라야 합니다.
 
 두 방법 모두, 평가 결과는 하나의 fn 객체입니다.
 
@@ -338,7 +338,7 @@ fns implement the Java `Callable`, `Runnable` and `Comparator` interfaces.
 
 `defn` 매크로를 사용해 `mult`라는 이름을 붙인 여러 fn을 정의하면, 위의 코드와 같이 펼쳐지게 됩니다.
 
-오버로딩되는 fn은 함수의 시작점에서 인자들을 나열하여 recursion point를 정의합니다.
+오버로딩되는 fn은 함수의 시작점에서 인자들을 arity에 맞게 나열하여 recursion point를 정의합니다.
 자세한 내용은 [`recur`](https://clojure.org/reference/special_forms#recur) 문서를 참고하세요.
 
 fn은 Java의 `Callable`, `Runnable`, `Comparator` 인터페이스를 구현합니다.
@@ -408,7 +408,7 @@ binding forms에 대한 더 자세한 내용은 [Binding Forms](https://clojure.
 `loop` is exactly like `let`, except that it establishes a recursion point at the top of the loop, with arity equal to the number of bindings.
 See [`recur`](https://clojure.org/reference/special_forms#recur ).
 
-`loop`는 루프가 시작하는 곳에 같은 수의 바인딩을 갖는 arity가 있는 재귀 포인트를 생성한다는 것을 제외하면 `let`과 똑같습니다.
+`loop`는 루프가 시작하는 곳에 같은 수의 바인딩을 갖는 재귀 포인트를 생성한다는 것을 제외하면 `let`과 똑같습니다.
 자세한 내용은 [`recur`](https://clojure.org/reference/special_forms#recur ) 문서를 참고하세요.
 
 ### (`recur` expr*)

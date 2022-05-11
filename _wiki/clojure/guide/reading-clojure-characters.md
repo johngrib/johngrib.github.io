@@ -3,7 +3,7 @@ layout  : wiki
 title   : Reading Clojure Characters
 summary : Clojure의 다양한 특수문자들
 date    : 2022-01-07 21:55:12 +0900
-updated : 2022-02-26 22:24:59 +0900
+updated : 2022-05-11 20:46:52 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -212,10 +212,11 @@ See [`#`]( https://clojure.org/guides/weird_characters#dispatch ) for additional
 ```
 
 >
-The reader expands an anonymous function into a function definition whose arity (the number of arguments it takes) is defined by how the `%` placeholders are declared. See the `%` character for discussion around arity.
+The reader expands an anonymous function into a function definition whose arity (the number of arguments it takes) is defined by how the `%` placeholders are declared.
+See the `%` character for discussion around arity.
 
 reader는 이런 익명 함수를 함수 정의로 확장해 인식합니다.
-이 함수의 인자들은 `%`가 있는 위치에 입력됩니다.
+해당 함수의 arity(함수가 받는 인자의 개수)는 `%` 인자 지정을 어떻게 사용하는지에 따라 정의됩니다.
 `%`를 사용하는 방식에 대한 자세한 정보는 `%` 항목을 참고하세요.
 
 ```clojure
@@ -332,8 +333,9 @@ user=> (macroexpand `#(println %))
 Numbers can be placed directly after the `%` to indicate the argument positions (1-based).
 Anonymous function arity is determined based on the highest number `%` argument.
 
-`%` 뒤에 숫자가 붙어있다면 순서로 구분한 인자를 의미합니다. 이 숫자는 1부터 시작합니다.
-즉 익명 함수의 인자 개수는 `%` 뒤의 숫자 중 가장 큰 수에 의해 결정됩니다.
+`%` 뒤에 숫자가 붙어있다면 순서로 구분한 인자를 의미합니다.
+이 숫자는 1부터 시작합니다.
+즉 익명 함수의 인자 개수(arity)는 `%` 뒤의 숫자 중 가장 큰 수에 의해 결정됩니다.
 
 ```clojure
 user=> (#(println %1 %2) "Hello " "Clojure")
