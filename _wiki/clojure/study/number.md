@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure number
 summary : 작성중인 문서
 date    : 2021-12-26 11:08:25 +0900
-updated : 2022-05-15 22:58:06 +0900
+updated : 2022-05-15 23:36:00 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -166,6 +166,94 @@ Clojure는 `Ratio` 타입을 기본으로 지원하고 있기 때문에 나눗�
 (type (/ 9 4))    ; 9/4의 타입은 clojure.lang.Ratio
 ```
 
+## 유리수
+
+유리수를 만드는 가장 쉬운 방법은 `/` 표기법을 쓰거나 `/` 함수를 사용하는 것이다.
+
+```clojure
+1/5     ;; => 1/5
+(/ 1 3) ;; => 1/3
+
+(type 1/3)     ;; => clojure.lang.Ratio
+(type (/ 1 3)) ;; => clojure.lang.Ratio
+```
+
+다음 세 표현식은 모두 똑같이 `1/3`로 평가된다.
+
+```clojure
+(+ (/ 1 6) (/ 1 6)) ;; => 1/3
+(+ 1/6 (/ 1 6))     ;; => 1/3
+(+ 1/6 1/6)         ;; => 1/3
+```
+
+또는 `rationalize` 함수를 써도 된다.
+
+```clojure
+; 유리수가 아님
+1.07e-20 ;; => 1.07E-20
+(type 1.07e-20) ;; => java.lang.Double
+
+; 유리수
+(rationalize 1.07e-20) ;; => 107/10000000000000000000000
+(type (rationalize 1.07e-20)) ;; => clojure.lang.Ratio
+
+; 루트 2
+(rationalize (Math/sqrt 2)) ;; => 14142135623730951/10000000000000000
+
+; PI
+(rationalize Math/PI) ;; => 3141592653589793/1000000000000000
+```
+
+몇 번 사칙연산을 해보면 편리하게 자동으로 약분이 된다는 것도 알 수 있다.
+
+```clojure
+(+ 1/6) (/ 1 6)) ;; => 1/3
+(+ (/ 1 6) (/ 8 6)) ;; => 3/2
+```
+
+유리수 검사 함수는 `ratio?`가 있는데 `rational?`과 이름이 헷갈리므로 주의해야 한다.
+
+```clojure
+(type 22/7)      ;; => clojure.lang.Ratio
+(ratio? 22/7)    ;; => true
+(rational? 22/7) ;; => true
+
+(type 22)        ;; => java.lang.Long
+(ratio? 22)      ;; => false
+(rational? 22)   ;; => true
+
+(type 2.2)       ;; => java.lang.Double
+(ratio? 2.2)     ;; => false
+(rational? 2.2)  ;; => false
+
+(type 2.2M)      ;; => java.math.BigDecimal
+(ratio? 2.2M)    ;; => false
+(rational? 2.2M) ;; => true
+
+(type 22222222222222222222222222222222N)      ;; => clojure.lang.BigInt
+(ratio? 22222222222222222222222222222222N)    ;; => false
+(rational? 22222222222222222222222222222222N) ;; => true
+```
+
+- `ratio?`: 주어진 수가 `clojure.lang.Ratio` 타입인 경우에만 `true`를 리턴한다.
+- `rational?`: 주어진 수가 부동소수점 수가 아니라면 `true`를 리턴한다.
+
+| type                 | `ratio?` | `rational?` |
+|----------------------|----------|-------------|
+| java.lang.Long       | false    | true        |
+| java.lang.Integer    | false    | true        |
+| java.lang.Double     | false    | `false`     |
+| java.lang.Float      | false    | `false`     |
+| java.math.BigDecimal | false    | true        |
+| clojure.lang.BigInt  | false    | true        |
+| clojure.lang.Ratio   | `true`   | true        |
+
+분자와 분모는 각각 `numerator`, `denominator` 함수로 얻을 수 있다.
+
+```clojure
+(numerator 3/2)   ;; => 3
+(denominator 3/2) ;; => 2
+```
 
 ## 타입
 
