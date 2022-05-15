@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure number
 summary : 작성중인 문서
 date    : 2021-12-26 11:08:25 +0900
-updated : 2022-05-15 22:13:37 +0900
+updated : 2022-05-15 22:15:51 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -182,7 +182,9 @@ clojure.core/class
 (class *1)      ; java.math.BigDecimal
 ```
 
-여기에서 `*1`은 REPL에서 가장 최근에 평가한 결과를 의미한다. 그 이전은 `*2`.
+>
+참고: `*1`은 REPL에서 가장 최근에 평가한 결과를 의미한다. 그 이전은 `*2`.
+{:style="background-color: #ecf1e8;"}
 
 만약 이미 정의된 숫자를 사용해 `BigDecimal` 타입의 인스턴스를 생성하려면 다음과 같이 하면 된다.
 
