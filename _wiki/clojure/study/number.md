@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure number
 summary : 작성중인 문서
 date    : 2021-12-26 11:08:25 +0900
-updated : 2022-05-15 22:34:58 +0900
+updated : 2022-05-15 22:49:56 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -167,6 +167,26 @@ Clojure는 `Ratio` 타입을 기본으로 지원하고 있기 때문에 나눗�
 ```
 
 마지막 줄에 주목. `class`와 `type`을 사용해 타입을 알아낼 수 있다는 것도 기억해두자.
+
+## 타입
+
+### promotion
+
+Long이나 Double의 경계를 넘나드는 수나 연산을 다루면 자동으로 프로모션이 발생한다.
+
+```clojure
+(def a-num 1)
+(type a-num) ;; => java.lang.Long
+
+(def b-num (+ a-num 99999999999999999999)) ;; => 100000000000000000000N
+(type b-num) ;; => clojure.lang.BigInt
+
+(def c-num (+ a-num 99999999999999999999.8)) ;; => 1.0E20
+(type c-num) ;; => java.lang.Double
+
+(def d-num (+ a-num 99999999999999999999.8M)) ;; => 100000000000000000000.8M
+(type d-num) ;; => java.math.BigDecimal
+```
 
 ## 정밀도
 
