@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure number
 summary : 작성중인 문서
 date    : 2021-12-26 11:08:25 +0900
-updated : 2022-05-15 22:22:31 +0900
+updated : 2022-05-15 22:32:48 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -168,7 +168,32 @@ Clojure는 `Ratio` 타입을 기본으로 지원하고 있기 때문에 나눗�
 
 마지막 줄에 주목. `class`와 `type`을 사용해 타입을 알아낼 수 있다는 것도 기억해두자.
 
-## 부동소수점과 BigDecimal
+## 정밀도
+
+### truncation
+
+```clojure
+;                               ↓                           ↓
+(def a-number 0.123456789123456789) ;; => 0.12345678912345678
+(def b-number 0.123456789123456780) ;; => 0.12345678912345678
+
+(= a-number b-number) ;; => true
+(type a-number) ;; => java.lang.Double
+(type b-number) ;; => java.lang.Double
+```
+
+위의 예제를 보면 `a-number`의 마지막 `9`가 절삭(truncation)되어 정밀도가 떨어졌음을 알 수 있다.
+
+따라서 `a-number`를 더 작은 수인 `b-number`와 `=`로 비교하면 `true`로 평가된다.
+
+정밀도를 보장하려면 수 마지막에 `M`을 붙여서 `java.math.BigDecimal` 타입으로 생성해 주어야 한다.
+
+```clojure
+(def a-number 0.123456789123456789M) ;; => 0.123456789123456789M
+(type a-number) ;; => java.math.BigDecimal
+```
+
+### 부동소수점과 BigDecimal
 
 앞에서 언급했던 `0.1 + 0.2` 문제를 다시 살펴보자.
 
