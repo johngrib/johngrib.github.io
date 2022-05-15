@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure number
 summary : 작성중인 문서
 date    : 2021-12-26 11:08:25 +0900
-updated : 2022-05-15 22:15:51 +0900
+updated : 2022-05-15 22:22:31 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -12,6 +12,37 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 이 문서를 읽기 위한 준비물: 타입 조사 방법
+
+`class`와 `type` 함수를 사용해 타입을 조사할 수 있다.
+두 함수는 `doc` 함수로 조사해 보면 다음과 같은 차이점이 있다.
+
+```
+(doc type)
+-------------------------
+clojure.core/type
+([x])
+  Returns the :type metadata of x, or its Class if none
+=> nil
+
+(doc class)
+-------------------------
+clojure.core/class
+([x])
+  Returns the Class of x
+=> nil
+```
+
+- `type`: 주어진 값의 metadata에 들어있는 `:type`을 리턴한다. 만약 `:type`이 없다면 Class를 리턴한다.
+- `class`: 주어진 값의 Class를 리턴한다.
+
+숫자의 타입을 조사해보면 Clojure는 기본적으로 `Double`과 `Long`을 사용하고 있다는 것을 확인할 수 있다.
+
+```clojure
+(type 1.0)  ; java.lang.Double
+(type 1)    ; java.lang.Long
+```
 
 ## number category
 
@@ -136,36 +167,6 @@ Clojure는 `Ratio` 타입을 기본으로 지원하고 있기 때문에 나눗�
 ```
 
 마지막 줄에 주목. `class`와 `type`을 사용해 타입을 알아낼 수 있다는 것도 기억해두자.
-
-### 타입 조사하기
-
-`class`와 `type`이 똑같이 작동하는 것으로 보이는데 REPL에서 `(doc type)`, `(doc class)`로 조사해 보니 다음과 같은 차이점이 있었다.
-
-```
-(doc type)
--------------------------
-clojure.core/type
-([x])
-  Returns the :type metadata of x, or its Class if none
-=> nil
-
-(doc class)
--------------------------
-clojure.core/class
-([x])
-  Returns the Class of x
-=> nil
-```
-
-- `type`: 주어진 값의 metadata에 들어있는 `:type`을 리턴한다. 만약 `:type`이 없다면 Class를 리턴한다.
-- `class`: 주어진 값의 Class를 리턴한다.
-
-숫자의 타입을 조사해보면 Clojure는 기본적으로 `Double`과 `Long`을 사용하고 있다는 것을 확인할 수 있다.
-
-```clojure
-(type 1.0)  ; java.lang.Double
-(type 1)    ; java.lang.Long
-```
 
 ## 부동소수점과 BigDecimal
 
