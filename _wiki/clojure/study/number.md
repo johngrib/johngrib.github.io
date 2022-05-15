@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure number
 summary : 작성중인 문서
 date    : 2021-12-26 11:08:25 +0900
-updated : 2022-05-15 22:32:48 +0900
+updated : 2022-05-15 22:34:58 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -331,6 +331,7 @@ Double과 BigDecimal의 합은 Double.
 - [clojure.lang.Ratio.java (github.com/clojure)]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha3/src/jvm/clojure/lang/Ratio.java ) - clojure-1.11.0-alpha3의 `Ratio` Java 클래스
 - [java.lang.Long.java (github.com/AdoptOpenJDK)]( https://github.com/AdoptOpenJDK/openjdk-jdk11/blob/master/src/java.base/share/classes/java/lang/Long.java ) - openjdk-jdk11의 `Long` Java 클래스
 - [java.math.BigDecimal.java (github.com/AdoptOpenJDK)]( https://github.com/AdoptOpenJDK/openjdk-jdk11/blob/master/src/java.base/share/classes/java/math/BigDecimal.java ) - openjdk-jdk11의 `BigDecimal` Java 클래스
+- 클로저 프로그래밍의 즐거움 / 마이클 포거스, 크리스 하우저 공저 / 김선호 역 / 비제이퍼블릭(BJ퍼블릭) / 초판 1쇄 발행 2016년 03월 04일 / 원서 : The Joy of Clojure
 
 ## 주석
 
