@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure number
 summary : 작성중인 문서
 date    : 2021-12-26 11:08:25 +0900
-updated : 2022-05-15 22:49:56 +0900
+updated : 2022-05-15 22:53:59 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -187,6 +187,25 @@ Long이나 Double의 경계를 넘나드는 수나 연산을 다루면 자동으
 (def d-num (+ a-num 99999999999999999999.8M)) ;; => 100000000000000000000.8M
 (type d-num) ;; => java.math.BigDecimal
 ```
+
+### overflow
+
+Java에서 `Long.MAX_VALUE`에 `1`을 더하면 다음과 같이 오버플로우가 발생한다.
+
+```java
+long num = Long.MAX_VALUE + 1;
+// -9223372036854775808
+```
+
+그러나 Clojure에서는 `ArithmeticException` 예외가 던져진다.
+
+```clojure
+(+ Long/MAX_VALUE 1)
+
+; Execution error (ArithmeticException) at ... (REPL:57).
+; integer overflow
+```
+
 
 ## 정밀도
 
