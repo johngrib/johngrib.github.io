@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure number
 summary : 작성중인 문서
 date    : 2021-12-26 11:08:25 +0900
-updated : 2022-03-09 22:50:30 +0900
+updated : 2022-05-15 22:09:28 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -263,7 +263,7 @@ power(2, 10); // 1024
 
 Clojure는 `java.lang`은 기본으로 `import`를 해둔다고 한다. 그래서 `Math/pow`를 저렇게 간단하게 불러 쓸 수 있는 것 같다.
 
-## 계산 예제
+## 사용 예제
 
 Double과 BigDecimal의 합은 Double.
 
