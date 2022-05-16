@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2021-09-11 15:10:25 +0900
+updated : 2022-05-16 11:39:11 +0900
 tag     : java test
 toc     : true
 public  : true
@@ -872,7 +872,7 @@ object CalculatorSpec: Spek({
 })
 ```
 
-[betterspecs]: http://www.betterspecs.org/ko/
+[betterspecs]: https://www.betterspecs.org/
 [ginkgo]: https://onsi.github.io/ginkgo/
 [kahlan]: https://github.com/kahlan/kahlan
 [kotlin-spek]: https://www.spekframework.org/specification/
