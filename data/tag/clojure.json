@@ -29,6 +29,7 @@
  "clojure/study/merge-with",
  "clojure/study/number",
  "clojure/study/persistent-list",
+ "clojure/study/regex",
  "clojure/study/set",
  "clojure/study/vector",
  "clojure/vim-setting",
