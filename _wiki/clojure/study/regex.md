@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure regex
 summary : 
 date    : 2022-05-17 00:05:29 +0900
-updated : 2022-05-17 21:27:31 +0900
+updated : 2022-05-17 21:29:47 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -93,8 +93,11 @@ Clojure는 Java의 embedded flag와 똑같이 `(?플래그문자)` 형식으로 
 - A paragraph-separator character (`'\u2029'`).
 {:style="background-color: #ecf1e8;"}
 
+## Examples
+
+### i 플래그의 사용
+
 ```clojure
-; i 플래그의 사용
 (re-seq #"(?i)foo"
         "FOO BAR foo bar fOo bAr")
 ;; => ("FOO" "foo" "fOo")
@@ -102,7 +105,11 @@ Clojure는 Java의 embedded flag와 똑같이 `(?플래그문자)` 형식으로 
 (re-seq #"(?i)\b[a-z]+\b"
         ".foo bAr-BAZ")
 ;; => ("foo" "bAr" "BAZ")
+```
 
+### m 플래그의 사용
+
+```clojure
 ; m 플래그의 사용
 (re-seq #"(?m)\w+"
         "foo-bar*
