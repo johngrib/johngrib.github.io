@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure regex
 summary : 
 date    : 2022-05-17 00:05:29 +0900
-updated : 2022-05-17 21:29:47 +0900
+updated : 2022-05-17 22:00:05 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -95,19 +95,84 @@ Clojure는 Java의 embedded flag와 똑같이 `(?플래그문자)` 형식으로 
 
 ## Examples
 
-### i 플래그의 사용
+### re-seq
+
+>
+Returns a lazy sequence of successive matches of pattern in string, using `java.util.regex.Matcher.find()`, each such match processed with re-groups.
+
+`re-seq`는 매치된 문자열의 레이지 시퀀스를 리턴한다.
 
 ```clojure
 (re-seq #"(?i)foo"
         "FOO BAR foo bar fOo bAr")
 ;; => ("FOO" "foo" "fOo")
-
-(re-seq #"(?i)\b[a-z]+\b"
-        ".foo bAr-BAZ")
-;; => ("foo" "bAr" "BAZ")
 ```
 
-### m 플래그의 사용
+위의 Clojure 코드는 아래의 Java 코드와 똑같다.
+
+```java
+List<String> result = new ArrayList<>();
+while (m.find()) {
+    result.add(m.group());
+}
+// result => ["FOO", "foo", "fOo"]
+```
+
+### clojure.string/replace
+
+```
+(clojure.string/replace "aaaaBBbbBBccc"
+                        #"B"
+                        "_")
+;; => "aaaa__bb__ccc"
+
+(clojure.string/replace "aaaaBBbbBBccc"
+                        #"(?i)b"
+                        "_")
+;; => "aaaa______ccc"
+```
+
+### re-find
+
+>
+Returns the next regex match, if any, of string to pattern, using java.util.regex.Matcher.find().  Uses re-groups to return the groups.
+
+```clojure
+(re-find #"[a-zA-Z]+"
+         "F477AB5E-B959-4359-8EF5-EAB0059F0525")
+;; => "F"
+
+(re-find #"(\d+)-[a-zA-Z]+"
+         "123-abc,42622-sf..52-rot")
+;; => ["123-abc" "123"]
+```
+
+```clojure
+(def alphabet-matcher
+  (re-matcher #"[a-zA-Z]+"
+              "F477AB5E-B959-4359-8EF5-EAB0059F0525"))
+
+(re-find alphabet-matcher) ;; => "F"
+(re-find alphabet-matcher) ;; => "AB"
+(re-find alphabet-matcher) ;; => "E"
+(re-find alphabet-matcher) ;; => "B"
+(re-find alphabet-matcher) ;; => "EF"
+```
+
+### re-pattern
+
+>
+Returns an instance of java.util.regex.Pattern, for use, e.g. in re-matcher.
+
+`re-pattern`은 `java.util.regex.Pattern` 인스턴스를 리턴한다.
+`#` 표기법을 쓰지 않고 정규식을 정의할 필요가 있을 때 사용한다.
+
+```
+(re-pattern "\\d+")
+;; => #"\d+"
+```
+
+### m (MULTILINE) 플래그의 사용
 
 ```clojure
 ; m 플래그의 사용
