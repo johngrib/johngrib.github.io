@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure regex
 summary : 
 date    : 2022-05-17 00:05:29 +0900
-updated : 2022-05-17 22:00:05 +0900
+updated : 2022-05-17 22:04:21 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -120,7 +120,7 @@ while (m.find()) {
 
 ### clojure.string/replace
 
-```
+```clojure
 (clojure.string/replace "aaaaBBbbBBccc"
                         #"B"
                         "_")
