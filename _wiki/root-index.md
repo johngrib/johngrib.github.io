@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-05-17 00:05:26 +0900
+updated : 2022-05-20 00:08:53 +0900
 regenerate: true
 ---
 
@@ -214,6 +214,9 @@ regenerate: true
 - [[/aheui/hello-world]]
 
 ### [[go]]
+
+* [[/go/gvm]]
+
 * [[Go-Blog-translation]]
     * [[golang-debugging-what-you-deploy]]{(번역) Go 1.12에서 배포한 것을 디버깅하기}
     * [[golang-mod]]

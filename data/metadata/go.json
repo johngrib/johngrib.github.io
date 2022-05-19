@@ -9,6 +9,7 @@
   "commit-go-mod-go-sum",
   "ginkgo",
   "Go-Blog-translation",
+  "go/gvm",
   "golang-cheatsheet",
   "golang-dependency-manager",
   "golang-reflect",
