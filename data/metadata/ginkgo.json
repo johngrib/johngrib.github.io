@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "Ginkgo 사용하기",
  "summary": "BDD Testing Framework for Go",
- "parent": "Golang",
+ "parent": "go",
  "url": "/wiki/ginkgo",
  "updated": "2018-10-04 16:44:56 +0900",
  "children": []

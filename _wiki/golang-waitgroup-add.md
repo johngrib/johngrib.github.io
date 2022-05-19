@@ -7,7 +7,7 @@ updated : 2020-01-24 23:59:22 +0900
 tag     : gloang goroutine
 toc     : true
 public  : true
-parent  : [[Golang]]
+parent  : [[go]]
 latex   : true
 ---
 * TOC

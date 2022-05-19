@@ -7,7 +7,7 @@ updated : 2022-03-01 12:17:37 +0900
 tag     : ultisnips golang vim
 toc     : true
 public  : true
-parent  : [[Golang]]
+parent  : [[go]]
 latex   : false
 ---
 * TOC

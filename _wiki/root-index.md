@@ -213,7 +213,7 @@ regenerate: true
 
 - [[/aheui/hello-world]]
 
-### [[Golang]]
+### [[go]]
 * [[Go-Blog-translation]]
     * [[golang-debugging-what-you-deploy]]{(번역) Go 1.12에서 배포한 것을 디버깅하기}
     * [[golang-mod]]
