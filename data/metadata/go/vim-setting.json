@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "Neovim에서 Go 코드를 작성하자",
+ "summary": "",
+ "parent": "go",
+ "url": "/wiki/go/vim-setting",
+ "updated": "2022-05-22 00:03:34 +0900",
+ "children": []
+}

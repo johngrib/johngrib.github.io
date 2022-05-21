@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-05-20 00:08:53 +0900
+updated : 2022-05-21 13:48:46 +0900
 regenerate: true
 ---
 
@@ -216,6 +216,7 @@ regenerate: true
 ### [[go]]
 
 * [[/go/gvm]]
+* [[/go/vim-setting]]
 
 * [[Go-Blog-translation]]
     * [[golang-debugging-what-you-deploy]]{(번역) Go 1.12에서 배포한 것을 디버깅하기}

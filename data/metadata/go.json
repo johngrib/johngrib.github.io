@@ -10,6 +10,7 @@
   "ginkgo",
   "Go-Blog-translation",
   "go/gvm",
+  "go/vim-setting",
   "golang-cheatsheet",
   "golang-dependency-manager",
   "golang-reflect",
