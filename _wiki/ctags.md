@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-05-22 16:55:25 +0900
+updated : 2022-05-22 17:01:03 +0900
 tag     : bash vim ctags golang command clojure vim-syntax-color
 toc     : true
 public  : true
@@ -395,6 +395,12 @@ let g:tagbar_type_clojure = {
 - `defn`, `defn-`가 별도의 섹션으로 그룹이 잡힌다. 내가 원하는 건 소스코드에서 정의한 순서대로 나오는 것.
 - tagbar에 `defn`이 두 번 중복되어 나타나므로 보기 짜증난다.
 - 함수 이름이 `-`로 시작하거나, 함수 이름에 `>`, `<`가 포함되는 경우를 인식하지 못한다. 모두 Clojure에서는 가능한 함수 이름이다.
+
+내가 원하는 형태는 다음 스크린샷 수준으로 중요 정보들이 모두 표시되는 것이다.
+
+![git.c 파일을 tagbar로 본 내용]( ./git-c-tagbar.jpg )
+
+위의 스크린샷은 [git.c]( https://github.com/git/git/blob/master/git.c ) 파일을 tagbar로 본 결과이다.
 
 #### 복사한 거 쓰지 말고 내 취향에 맞게 내가 작성하자
 
