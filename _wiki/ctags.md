@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-05-22 14:35:10 +0900
+updated : 2022-05-22 16:36:59 +0900
 tag     : bash vim ctags golang command
 toc     : true
 public  : true
@@ -243,6 +243,203 @@ let g:tagbar_type_vimwiki = {
 다음은 이 설정을 적용한 tagbar의 모습이다.
 
 ![완성된 간략화된 vimwiki tagbar의 모습]( ./grey-dot-vimwiki.jpg )
+
+### Clojure
+
+#### Universal ctags를 그대로 사용하는 경우의 문제
+
+Universal ctags는 Clojure 프로그래밍 언어를 지원하지만 다소 허술하다는 문제가 있다.
+
+아마 Clojure를 쓰는 사람들 중 Vim + tagbar를 쓰는 사람의 수가 부족해서 그런 것 같다.
+
+다음은 Universal ctags를 사용해 Clojure tags 파일을 만들고 tagbar를 띄운 화면이다.
+
+![universal ctags와 tagbar를 조합한 모습]( ./clojure-universal-ctags.jpg )
+
+오른쪽의 tagbar를 보면 `defn`으로 정의한 `public` 함수는 있지만, `defn-`로 정의한 `private` 함수는 나타나지 않았다.
+
+그리고 `def` 로 정의한 상수와 `defmacro` 등도 나타나지 않는다.
+
+이건 tagbar의 문제가 아니라 Universal ctags가 `defn`만 수집해서 tags 파일을 만들기 때문에 발생하는 문제이다.
+
+다음은 `ctags chess_board.clj` 명령을 실행해 생성한 tags 파일인데, 마지막 3줄을 보면 `defn`으로 정의한 함수만 태그를 만들었다는 것을 알 수 있다.
+
+```
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Users/johngrib/Dropbox/project-local/clojure-aoc/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+initial-board	src/joy_of_clojure/ch1/chess_board.clj	/^(defn initial-board$/;"	f	namespace:joy-of-clojure.ch1.chess-board
+joy-of-clojure.ch1.chess-board	src/joy_of_clojure/ch1/chess_board.clj	/^(ns joy-of-clojure.ch1.chess-board$/;"	n
+lookup	src/joy_of_clojure/ch1/chess_board.clj	/^(defn lookup$/;"	f	namespace:joy-of-clojure.ch1.chess-board
+```
+
+`defn-`를 인식하지 못하는 이유는 [Universal ctags의 parser가 `defn`만 함수로 인식하도록 코딩되어 있기 때문이다]( https://github.com/universal-ctags/ctags/blob/9f5a3ddac16749bb45bedd97ed910413d2af53f4/parsers/clojure.c#L40-L43 ).
+
+```c
+static int isFunction (const char *strp)
+{
+    return (strncmp (++strp, "defn", 4) == 0 && isspace (strp[4]));
+}
+```
+
+#### 인터넷에서 복사해온 설정이 돌아가게 만들자
+
+다행히 ctags는 설정 파일에서 정규식을 써서 확장이 가능한 구조로 되어 있다.
+
+따라서 누가 미리 작성해 둔 괜찮은 설정 파일만 사용하면 되는데, 인터넷에서 구하기 쉬운 가장 유명한 설정은 다음과 같다.
+
+[xzj/clojure.ctags](https://gist.github.com/xzj/1518834 )
+
+```
+--langdef=Clojure
+--langmap=Clojure:.clj
+--regex-clojure=/\([ \t]*create-ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+--regex-clojure=/\([ \t]*def[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/d,definition/
+--regex-clojure=/\([ \t]*defn[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/f,function/
+--regex-clojure=/\([ \t]*defn-[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/p,private function/
+--regex-clojure=/\([ \t]*defmacro[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/m,macro/
+--regex-clojure=/\([ \t]*definline[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/i,inline/
+--regex-clojure=/\([ \t]*defmulti[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/a,multimethod definition/
+--regex-clojure=/\([ \t]*defmethod[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/b,multimethod instance/
+--regex-clojure=/\([ \t]*defonce[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/c,definition (once)/
+--regex-clojure=/\([ \t]*defstruct[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/s,struct/
+--regex-clojure=/\([ \t]*intern[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/v,intern/
+--regex-clojure=/\([ \t]*ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+```
+
+설정을 잘 읽어보면 `defn-`이 `p,private function`으로 설정되어 있어 잘 동작할 것처럼 보인다.
+
+하지만 이 설정은 2011년에 작성된 것으로, 최근의 ctags와 호환되지 않아 돌아가지 않는다.
+
+- `--langdef=Clojure`: Universal ctags는 이제 Clojure를 지원하므로 이렇게 `langdef`를 하면 에러가 발생해 `tags` 파일을 생성하지 못한다.
+- 설정 중간에 공백 문자가 있어서 에러가 난다. 공백을 제거해 줘야 한다.
+    ```
+                                                                             ↓
+    --regex-clojure=/\([ \t]*defn-[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/p,private function/
+                                                                                    ↓
+    --regex-clojure=/\([ \t]*defmulti[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/a,multimethod definition/
+                                                                                     ↓
+    --regex-clojure=/\([ \t]*defmethod[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/b,multimethod instance/
+                                                                                  ↓
+    --regex-clojure=/\([ \t]*defonce[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/c,definition (once)/
+    ```
+
+따라서 위의 설정은 다음과 같이 수정해줘야 Universal ctags에서 작동한다.
+
+```
+--langmap=Clojure:.clj
+--regex-clojure=/\([ \t]*create-ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+--regex-clojure=/\([ \t]*def[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/d,definition/
+--regex-clojure=/\([ \t]*defn[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/f,function/
+--regex-clojure=/\([ \t]*defn-[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/p,privateFunction/
+--regex-clojure=/\([ \t]*defmacro[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/m,macro/
+--regex-clojure=/\([ \t]*definline[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/i,inline/
+--regex-clojure=/\([ \t]*defmulti[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/a,multimethodDefinition/
+--regex-clojure=/\([ \t]*defmethod[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/b,multimethodInstance/
+--regex-clojure=/\([ \t]*defonce[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/c,definitionOnce/
+--regex-clojure=/\([ \t]*defstruct[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/s,struct/
+--regex-clojure=/\([ \t]*intern[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/v,intern/
+--regex-clojure=/\([ \t]*ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+```
+
+이제 tags 파일을 재생성해보면 다음과 같이 private 함수에 대한 태그도 생성된다.
+
+```
+$ ctags src/joy_of_clojure/ch1/chess_board.clj
+
+$ grep -v '^!' tags
+file-component	src/joy_of_clojure/ch1/chess_board.clj	/^(defn- file-component$/;"	p
+index	src/joy_of_clojure/ch1/chess_board.clj	/^(defn- index$/;"	p
+initial-board	src/joy_of_clojure/ch1/chess_board.clj	/^(defn initial-board$/;"	f
+initial-board	src/joy_of_clojure/ch1/chess_board.clj	/^(defn initial-board$/;"	f	namespace:joy-of-clojure.ch1.chess-board
+joy-of-clojure.ch1.chess-board	src/joy_of_clojure/ch1/chess_board.clj	/^(ns joy-of-clojure.ch1.chess-board$/;"	n
+lookup	src/joy_of_clojure/ch1/chess_board.clj	/^(defn lookup$/;"	f
+lookup	src/joy_of_clojure/ch1/chess_board.clj	/^(defn lookup$/;"	f	namespace:joy-of-clojure.ch1.chess-board
+rank-component	src/joy_of_clojure/ch1/chess_board.clj	/^(defn- rank-component$/;"	p
+``` 
+
+하지만 이번에는 tagbar에서 `p`를 인식하지 못한다는 문제가 있다.
+다음과 같이 설정해주면 `p`, `m`, `d` 등을 인식하게 할 수 있다.
+
+```viml
+let g:tagbar_type_clojure = {
+    \ 'ctagstype' : 'Clojure',
+    \ 'sort': 0,
+    \ 'kinds' : [
+        \ 'n:ns',
+        \ 'd:def',
+        \ 'p:defn-',
+        \ 'f:defn',
+        \ 'm:defmacro',
+        \ ],
+    \}
+```
+
+![tagbar 설정을 통해 private 함수가 표시되도록 수정한 모습]( ./clojure-naive-tagbar.jpg )
+
+- `def`가 단순하게 설정되어 있어, metadata가 붙은 `def`를 인식하지 못한다.
+    ```clojure
+    (def ^:dynamic *file-key* "x 좌표 기준" \a)
+    (def ^:dynamic *rank-key* "y 좌표 기준" \0)
+    ```
+- `defn`, `defn-`가 별도의 섹션으로 그룹이 잡힌다. 내가 원하는 건 소스코드에서 정의한 순서대로 나오는 것.
+- tagbar에 `defn`이 두 번 중복되어 나타나므로 보기 짜증난다.
+- 함수 이름이 `-`로 시작하거나, 함수 이름에 `>`, `<`가 포함되는 경우를 인식하지 못한다. 모두 Clojure에서는 가능한 함수 이름이다.
+
+#### 복사한 거 쓰지 말고 내 취향에 맞게 내가 작성하자
+
+복사해 온 게 더 골치아픈 느낌이다. 그래서 다음과 같이 설정을 직접 작성했다.
+
+```
+--langmap=clojure:.clj
+
+--kinddef-clojure=e,expressionAndFunction,expressions_and_functions
+
+--regex-clojure=/\([ \t]*create-ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+--regex-clojure=/\([ \t]*ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+
+--regex-clojure=/\([ \t]*def[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/+D·\1/e/
+--regex-clojure=/\([ \t]*def[ \t]+\^:[a-zA-Z0-9]+[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/+D·\1/e/
+--regex-clojure=/\([ \t]*defn[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/+F·\1/e/
+--regex-clojure=/\([ \t]*defn-[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/-F·\1/e/
+--regex-clojure=/\([ \t]*defmacro[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/+M·\1/e/
+--regex-clojure=/\(comment[ \t]?/-·comment/e/
+
+--regex-clojure=/^[\{ \t](:[a-zA-Z0-9\/\-]+)/+\1/e/
+--regex-clojure=/^[\{ \t]{2}(:[a-zA-Z0-9\/\-]+)/-·\1/e/
+```
+
+vim 설정은 다음과 같다.
+
+```viml
+let g:tagbar_type_clojure = {
+    \ 'ctagstype' : 'Clojure',
+    \ 'sort': 0,
+    \ 'kinds' : [
+        \ 'n:ns',
+        \ 'e:form',
+        \ ],
+    \}
+```
+
+이제 tagbar를 띄우면 다음과 같이 나온다.
+
+![access 기호가 포함된 clojure tagbar]( ./clojure-access-symbol.jpg )
+
+- Universal ctags는 이미 Clojure를 language로 인식하고 있으므로 `--langdef=clojure` 처럼 언어를 새로 정의해주면 에러가 발생한다. 따라서 langdef는 생략했다.
+- `--kinddef`로 `e`를 정의해 줬다.
+- `e`를 써서 모든 코드를 같은 타입으로 인식하게 했으므로 소스코드에서의 상대적 순서가 tagbar에서도 유지된다.
+- `public`은 `+`, `private`은 `-`로 시작하게 했다.
+- 함수는 `F`, 상수는 `D`, 매크로는 `M`을 붙였다.
+- 마지막을 보면 `(comment`도 있어서, 코멘트 위치를 파악해 이동하기에도 좋다.
 
 
 ### Deprecated: tagbar에 마크다운 요약 보여주기
