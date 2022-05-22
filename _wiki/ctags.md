@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-03-23 00:40:03 +0900
+updated : 2022-05-22 14:05:50 +0900
 tag     : bash vim ctags golang command
 toc     : true
 public  : true
@@ -136,7 +136,9 @@ autocmd BufWritePost * call system("ctags -R")
 
 #### tagbar에 markdown 요약 보여주기
 
-##### 새로운 언어 vimwiki 정의하기
+## 활용 사례
+
+### 새로운 언어 vimwiki 정의하고 tagbar에 보여주기
 
 Universal ctags는 vimwiki의 `.md` 확장자를 갖는 파일을 markdown 언어로 인식하여 자동으로 tagbar에 인덱스를 만들어 준다.
 
@@ -179,7 +181,71 @@ let g:tagbar_type_vimwiki = {
 
 ![심플한 태그바가 나온 모습]( ./tagbar-vimwiki-simple.jpg )
 
-##### Deprecated: 이제는 사용하지 않는 방법
+#### tagbar에 표시되는 목차 꾸미기
+
+위와 같이 설정해도 잘 돌아가지만 `#`가 반복적으로 나타나는 것이 눈에 거슬린다.
+
+따라서 `~/.ctags.d/vimwiki.ctags` 파일을 다음과 같이 수정해 주었다.
+
+```
+--langdef=vimwiki
+--langmap=vimwiki:.md
+
+--kinddef-vimwiki=t,subTitle,sub_title
+
+--regex-vimwiki=/^## (.+)/\1/t/
+--regex-vimwiki=/^### (.+)/·\1/t/
+--regex-vimwiki=/^#### (.+)/··\1/t/
+--regex-vimwiki=/^##### (.+)/···\1/t/
+--regex-vimwiki=/^###### (.+)/····\1/t/
+--regex-vimwiki=/^####### (.+)/·····\1/t/
+--regex-vimwiki=/^######## (.+)/······\1/t/
+--regex-vimwiki=/^######### (.+)/·······\1/t/
+```
+
+전에 쓰던 `headings`는 Universal ctags가 이미 쓰고 있어서 굳이 다시 쓰지 않기로 했다.
+
+그래서 `--kinddef`를 사용해 `t` 라는 새로운 타입을 정의했다. (참고: [Regex control flags]( https://docs.ctags.io/en/latest/optlib.html#regex-control-flags ))
+
+```
+                  ↓
+--kinddef-vimwiki=t,subTitle,sub_title
+```
+
+각 항목이 `##`, `###` 로 시작하는 것이 보기 싫었으므로 `·`로 표시되도록 설정했다.
+
+```
+                             ↓↓↓
+--regex-vimwiki=/^##### (.+)/···\1/t/
+```
+
+tagbar 에서 `·`가 잘 안보이는 색(회색)으로 표시되도록 `set-tagbar.vim` 파일에 다음 내용을 추가해 주었다.
+
+```viml
+augroup tagbar_custom_color
+    autocmd FileType tagbar syntax match tagbar_ignore_char /·/
+    autocmd FileType tagbar hi def link tagbar_ignore_char Comment
+augroup END
+```
+
+그리고 tagbar에 `t` 타입이 표시되도록 했다.
+
+```viml
+let g:tagbar_type_vimwiki = {
+    \ 'ctagstype' : 'vimwiki',
+    \ 'sort': 0,
+    \ 'kinds' : [
+        \ 't:목차'
+    \ ]
+\ }
+```
+
+다음은 이 설정을 적용한 tagbar의 모습이다.
+
+![완성된 간략화된 vimwiki tagbar의 모습]( ./grey-dot-vimwiki.jpg )
+
+
+### Deprecated: tagbar에 마크다운 요약 보여주기
 
 >
 이 방법은 Universal ctags가 markdown 언어를 지원하지 않았던 때의 해결책이다.
@@ -213,23 +279,22 @@ let g:tagbar_type_markdown = {
 * 이후 `.md` 파일을 편집할 때 tagbar를 열어보면 각 섹션의 제목이 목록으로 보이게 된다.
 * 목록이 갱신되지 않는다면, `:e`를 입력하여 수동으로 갱신할 수 있다.
 
+## 참고문헌
 
+[Ctags(wikipedia)](https://en.wikipedia.org/wiki/Ctags )
 
-## Links
+- [Universal ctags](https://github.com/universal-ctags/ctags )
+    - [Extending ctags with Regex parser (optlib)]( https://docs.ctags.io/en/latest/optlib.html# ) - Universal Ctags 공식 문서
+        - 지원 언어 목록은 `ctags --list-languages`로 확인.
+        - [Universal-ctags Hacking Guide](http://docs.ctags.io/en/latest/index.html#universal-ctags-hacking-guide )
+- [Exuberant Ctags](http://ctags.sourceforge.net/ )
+    - [지원 언어 목록](http://ctags.sourceforge.net/languages.html )
+- [gotags](https://github.com/jstemmer/gotags )
+- [Will universal-ctags replace exuberant-ctags? #446](https://github.com/universal-ctags/ctags/issues/446 ) - Drew Neil이 Universal ctags에 남긴 issue.
 
-* [Ctags(wikipedia)](https://en.wikipedia.org/wiki/Ctags )
-    * [Universal ctags](https://github.com/universal-ctags/ctags )
-        * 지원 언어 목록은 `ctags --list-languages`로 확인.
-        * [Universal-ctags Hacking Guide](http://docs.ctags.io/en/latest/index.html#universal-ctags-hacking-guide )
-    * [Exuberant Ctags](http://ctags.sourceforge.net/ )
-        * [지원 언어 목록](http://ctags.sourceforge.net/languages.html )
-    * [gotags](https://github.com/jstemmer/gotags )
-* [Will universal-ctags replace exuberant-ctags? #446](https://github.com/universal-ctags/ctags/issues/446 ) - Drew Neil이 Universal ctags에 남긴 issue.
+[tagbar](https://github.com/majutsushi/tagbar )
 
----
-
-* [tagbar](https://github.com/majutsushi/tagbar )
-    * [tagbar wiki: markdown](https://github.com/majutsushi/tagbar/wiki#markdown )
+* [tagbar wiki: markdown](https://github.com/majutsushi/tagbar/wiki#markdown )
 * [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags )
 * [markdown2ctags](https://github.com/jszakmeister/markdown2ctags )
 
