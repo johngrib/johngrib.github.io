@@ -3,8 +3,8 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-05-22 16:51:13 +0900
-tag     : bash vim ctags golang command
+updated : 2022-05-22 16:55:25 +0900
+tag     : bash vim ctags golang command clojure vim-syntax-color
 toc     : true
 public  : true
 parent  : [[cmd]]
