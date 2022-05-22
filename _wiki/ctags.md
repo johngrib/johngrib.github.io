@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-05-22 14:05:50 +0900
+updated : 2022-05-22 14:35:10 +0900
 tag     : bash vim ctags golang command
 toc     : true
 public  : true
@@ -185,7 +185,7 @@ let g:tagbar_type_vimwiki = {
 
 위와 같이 설정해도 잘 돌아가지만 `#`가 반복적으로 나타나는 것이 눈에 거슬린다.
 
-따라서 `~/.ctags.d/vimwiki.ctags` 파일을 다음과 같이 수정해 주었다.
+따라서 [~/.ctags.d/vimwiki.ctags]( https://github.com/johngrib/dotfiles/blob/d63403b802d922aa5ea064267083fc851e588de7/.ctags.d/vimwiki.ctags ) 파일을 다음과 같이 수정해 주었다.
 
 ```
 --langdef=vimwiki
