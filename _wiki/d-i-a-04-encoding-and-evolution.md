@@ -3,11 +3,11 @@ layout  : wiki
 title   : 데이터 중심 애플리케이션 설계.04.부호화와 발전
 summary : 04.Encoding and Evolution
 date    : 2018-07-08 12:40:13 +0900
-updated : 2018-07-08 18:45:06 +0900
+updated : 2022-05-22 18:08:42 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[study-data-intensive-application]]
+parent  : [[/study/ddia]]
 latex   : true
 ---
 * TOC

@@ -3,11 +3,11 @@ layout  : wiki
 title   : 데이터 중심 애플리케이션 설계.02.데이터 모델과 질의 언어
 summary : 02.Data Models and Query Languages
 date    : 2018-07-07 05:19:18 +0900
-updated : 2018-07-08 18:44:27 +0900
+updated : 2022-05-22 18:08:33 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[study-data-intensive-application]]
+parent  : [[/study/ddia]]
 latex   : false
 ---
 * TOC
