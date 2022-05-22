@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-05-22 17:01:03 +0900
+updated : 2022-05-23 00:46:49 +0900
 tag     : bash vim ctags golang command clojure vim-syntax-color
 toc     : true
 public  : true
@@ -449,6 +449,44 @@ let g:tagbar_type_clojure = {
 - 함수는 `F`, 상수는 `D`, 매크로는 `M`을 붙였다.
 - 마지막을 보면 `(comment`도 있어서, 코멘트 위치를 파악해 이동하기에도 좋다.
 
+#### access 추가
+
+`public`, `private` 같은 접근제한자를 추가하고 싶어서 다음과 같이 작성해 보았다.
+
+```
+--langmap=clojure:.clj
+
+--kinddef-clojure=e,expressionAndFunction,expressions_and_functions
+
+--_fielddef-clojure=access,accessScope
+--fields-clojure=+{access}
+
+--regex-clojure=/\([ \t]*create-ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+--regex-clojure=/\([ \t]*ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+
+ # +, - 기호를 넣어서 접근제어를 쉽게 알 수 있게 한다
+--regex-clojure=/^\(def[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/D·\1/e/{_field=access:public}
+--regex-clojure=/^\(def[ \t]+\^:[a-zA-Z0-9]+[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/D·\1/e/{_field=access:public}
+--regex-clojure=/^\(defn[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/F·\1/e/{_field=access:public}
+--regex-clojure=/^\(defn-[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/F·\1/e/{_field=access:private}
+--regex-clojure=/^\(defmacro[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/M·\1/e/{_field=access:public}
+
+ # comment
+--regex-clojure=/^\(comment[ \t]?/comment/e/{_field=access:private}
+
+ # 인덴팅 있는 def 와 defn 등. 보통 이렇게 안쪽에 있으면 comment 에 포함된 것들.
+--regex-clojure=/^[ \t]+\([ \t]*def[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/·D·\1/e/
+--regex-clojure=/^[ \t]+\([ \t]*def[ \t]+\^:[a-zA-Z0-9]+[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/·D·\1/e/
+--regex-clojure=/^[ \t]+\([ \t]*defn[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/·F·\1/e/
+--regex-clojure=/^[ \t]+\([ \t]*defn-[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/·F·\1/e/
+--regex-clojure=/^[ \t]+\([ \t]*defmacro[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/·M·\1/e/
+
+ # edn 용
+--regex-clojure=/^[\{ \t](:[a-zA-Z0-9\/\-]+)/+\1/e/
+--regex-clojure=/^[\{ \t]{2}(:[a-zA-Z0-9\/\-]+)/-·\1/e/
+```
+
+이렇게 작성하면 굳이 앞에 `-`, `+`를 넣어주지 않아도 작동한다.
 
 ### Deprecated: tagbar에 마크다운 요약 보여주기
 
