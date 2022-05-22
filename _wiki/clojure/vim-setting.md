@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-03-31 19:37:06 +0900
+updated : 2022-05-22 17:06:41 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -549,7 +549,7 @@ autocmd FileType clojure nmap sad :IcedBrowseDependencies<CR>
 파일 구조는 [tagbar]( https://github.com/preservim/tagbar )를 통해 확인하면 된다.
 tagbar는 오랜 세월 vim 사용자들의 사랑을 받은 플러그인이다.
 
-![tagbar를 띄운 모습]( ./tagbar.jpg)
+![tagbar를 띄운 모습]( ./clojure-access-symbol.jpg )
 
 - 오른쪽의 TagBar 영역은 vim 사용자들이라면 익숙하게 사용하는 것으로, 현재 파일에 정의된 모든 상수와 함수 목록을 보여준다.
 - 목록에서 선택하면 해당 위치로 이동한다.
