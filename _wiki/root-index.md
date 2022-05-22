@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-05-21 13:48:46 +0900
+updated : 2022-05-22 17:54:07 +0900
 regenerate: true
 ---
 
@@ -384,7 +384,7 @@ regenerate: true
 * [[Zipf-s-law]]
 
 ## [[study]]
-* [[study-note]]
+* [[/study/note]]
 
 ### [[study-concrete-math]]
 * [[c-m-01-Recurrent-Problems-01]]

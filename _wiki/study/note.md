@@ -3,11 +3,11 @@ layout  : wiki
 title   : 공부, 마음가짐
 summary : 
 date    : 2019-05-11 11:12:24 +0900
-updated : 2019-10-16 15:09:25 +0900
+updated : 2022-05-22 17:54:17 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[study]]
+parent  : [[/study]]
 latex   : false
 ---
 * TOC
