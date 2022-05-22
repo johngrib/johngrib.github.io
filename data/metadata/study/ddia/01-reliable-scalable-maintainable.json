@@ -3,7 +3,7 @@
  "title": "데이터 중심 애플리케이션 설계.01.신뢰성,확장성,유지보수성.",
  "summary": "01.Reliable, Scalable, and Maintainable Applications",
  "parent": "study/ddia",
- "url": "/wiki/d-i-a-01-reliable-scalable-maintainable",
+ "url": "/wiki/study/ddia/01-reliable-scalable-maintainable",
  "updated": "2022-05-22 18:08:18 +0900",
  "children": []
 }

@@ -6,10 +6,10 @@
  "url": "/wiki/study/ddia",
  "updated": "2022-05-22 18:08:11 +0900",
  "children": [
-  "d-i-a-01-reliable-scalable-maintainable",
-  "d-i-a-02-data-models-and-query-languages",
-  "d-i-a-03-storage-and-retrieval",
-  "d-i-a-04-encoding-and-evolution",
-  "d-i-a-05-replication"
+  "study/ddia/01-reliable-scalable-maintainable",
+  "study/ddia/02-data-models-and-query-languages",
+  "study/ddia/03-storage-and-retrieval",
+  "study/ddia/04-encoding-and-evolution",
+  "study/ddia/05-replication"
  ]
 }

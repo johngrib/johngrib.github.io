@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-05-22 18:08:50 +0900
+updated : 2022-05-22 18:15:45 +0900
 regenerate: true
 ---
 
@@ -404,11 +404,12 @@ regenerate: true
 * [[c-m-05-Binomial-Coefficients-04]]
 
 ### [[/study/ddia]]
-* [[d-i-a-01-reliable-scalable-maintainable]]
-* [[d-i-a-02-data-models-and-query-languages]]
-* [[d-i-a-03-storage-and-retrieval]]
-* [[d-i-a-04-encoding-and-evolution]]
-* [[d-i-a-05-replication]]
+
+* [[/study/ddia/01-reliable-scalable-maintainable]]
+* [[/study/ddia/02-data-models-and-query-languages]]
+* [[/study/ddia/03-storage-and-retrieval]]
+* [[/study/ddia/04-encoding-and-evolution]]
+* [[/study/ddia/05-replication]]
 
 ### [[study-discrete-mathematics]]
 * [[discrete-math-propositional-logic]]
