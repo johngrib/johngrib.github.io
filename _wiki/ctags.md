@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-05-22 16:36:59 +0900
+updated : 2022-05-22 16:51:13 +0900
 tag     : bash vim ctags golang command
 toc     : true
 public  : true
@@ -317,7 +317,7 @@ static int isFunction (const char *strp)
 
 설정을 잘 읽어보면 `defn-`이 `p,private function`으로 설정되어 있어 잘 동작할 것처럼 보인다.
 
-하지만 이 설정은 2011년에 작성된 것으로, 최근의 ctags와 호환되지 않아 돌아가지 않는다.
+하지만 이 설정은 2011년에 작성된 것으로, 최근의 Universal ctags와 호환되지 않아 돌아가지 않는다.
 
 - `--langdef=Clojure`: Universal ctags는 이제 Clojure를 지원하므로 이렇게 `langdef`를 하면 에러가 발생해 `tags` 파일을 생성하지 못한다.
 - 설정 중간에 공백 문자가 있어서 에러가 난다. 공백을 제거해 줘야 한다.
@@ -384,6 +384,8 @@ let g:tagbar_type_clojure = {
 ```
 
 ![tagbar 설정을 통해 private 함수가 표시되도록 수정한 모습]( ./clojure-naive-tagbar.jpg )
+
+이번에도 마음에 들지 않는 몇 가지 문제가 있다.
 
 - `def`가 단순하게 설정되어 있어, metadata가 붙은 `def`를 인식하지 못한다.
     ```clojure
