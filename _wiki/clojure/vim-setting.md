@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-05-22 17:06:41 +0900
+updated : 2022-05-22 17:15:52 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -562,6 +562,10 @@ IntelliJ가 항상 갱신하고 있는 그것과 같다.)
 5년 가까이 사용하고 있는데 단 한 번도 불만을 느끼지 못한 멋진 플러그인이다.
 
 vim-gutentags는 git status를 참고해 효율적으로 태그를 갱신한다.
+
+![tagbar로 미리보기를 사용하는 모습]( ./tagbar.gif )
+
+tagbar는 소스코드 미리보기 기능도 있어서 코드를 브라우징할 때 편리하다.
 
 #### macroexpand
 
