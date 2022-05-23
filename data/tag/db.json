@@ -8,5 +8,6 @@
  "h2database",
  "locking",
  "sharding",
- "sql-char-comparison"
+ "sql-char-comparison",
+ "study/ddia/02-data-models-and-query-languages"
 ]
