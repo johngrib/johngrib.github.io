@@ -3,7 +3,7 @@ layout  : wiki
 title   : 데이터 중심 애플리케이션 설계.02.데이터 모델과 질의 언어
 summary : 02.Data Models and Query Languages
 date    : 2018-07-07 05:19:18 +0900
-updated : 2022-05-23 20:48:53 +0900
+updated : 2022-05-23 21:37:35 +0900
 tag     : db
 toc     : true
 public  : true
@@ -35,6 +35,20 @@ latex   : false
 - 관계형 모델(relational model)
 - 문서 모델(document model)
 - 그래프 기반 데이터 모델(graph-based data model)
+
+## 관계형 모델과 문서 모델
+
+관계형 모델의 경쟁자들은 대부분 반짝 나타났다가 사라졌다.
+관계형 모델은 거의 30년 이상 우위를 차지해왔고, 대부분의 웹 서비스가 관게형 데이터베이스를 사용하고 있다.
+
+보통 NoSQL을 채택하는 이유는 다음과 같다.
+
+- RDB보다 확장이 용이하다. 그러면서 write throughput도 괜찮다.
+- RDB에서 지원하지 않는 특수한 쿼리가 가능하다.
+- RDB보다 스키마 제한이 적다.
+
+
+대규모 데이터셋, 매우 높은 쓰기 처리율(throughput)을 RDB보다 쉽게 달성할 수 있다.
 
 
 ## 참고문헌
