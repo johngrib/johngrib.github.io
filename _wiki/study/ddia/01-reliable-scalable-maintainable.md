@@ -3,7 +3,7 @@ layout  : wiki
 title   : 데이터 중심 애플리케이션 설계.01.신뢰성,확장성,유지보수성.
 summary : 01.Reliable, Scalable, and Maintainable Applications
 date    : 2018-07-06 23:19:30 +0900
-updated : 2022-05-22 20:51:03 +0900
+updated : 2022-05-24 00:14:04 +0900
 tag     : study
 toc     : true
 public  : true
@@ -12,6 +12,9 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+- 이 문서는 Designing Data Intensive Applications 책의 1장을 공부하며 메모한 것입니다.
+- 이 문서는 메모일 뿐이니 자세한 내용은 교재를 참고해야 합니다.
 
 ## 개요
 

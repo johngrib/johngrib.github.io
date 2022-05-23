@@ -3,7 +3,7 @@ layout  : wiki
 title   : 데이터 중심 애플리케이션 설계.02.데이터 모델과 질의 언어
 summary : 02.Data Models and Query Languages
 date    : 2018-07-07 05:19:18 +0900
-updated : 2022-05-23 21:37:35 +0900
+updated : 2022-05-24 00:14:13 +0900
 tag     : db
 toc     : true
 public  : true
@@ -12,6 +12,9 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+- 이 문서는 Designing Data Intensive Applications 책의 2장을 공부하며 메모한 것입니다.
+- 이 문서는 메모일 뿐이니 자세한 내용은 교재를 참고해야 합니다.
 
 ## 개요
 
