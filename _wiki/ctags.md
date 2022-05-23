@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-05-23 00:46:49 +0900
+updated : 2022-05-23 09:48:35 +0900
 tag     : bash vim ctags golang command clojure vim-syntax-color
 toc     : true
 public  : true
@@ -464,7 +464,7 @@ let g:tagbar_type_clojure = {
 --regex-clojure=/\([ \t]*create-ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
 --regex-clojure=/\([ \t]*ns[ \t]+([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
 
- # +, - 기호를 넣어서 접근제어를 쉽게 알 수 있게 한다
+ # access로 public, private을 넣어서 접근제어를 쉽게 알 수 있게 한다
 --regex-clojure=/^\(def[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/D·\1/e/{_field=access:public}
 --regex-clojure=/^\(def[ \t]+\^:[a-zA-Z0-9]+[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/D·\1/e/{_field=access:public}
 --regex-clojure=/^\(defn[ \t]+([-[:alnum:]*+!_<>:\/.?]+)/F·\1/e/{_field=access:public}
