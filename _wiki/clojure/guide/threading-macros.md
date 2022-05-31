@@ -3,7 +3,7 @@ layout  : wiki
 title   : Threading Macros Guide
 summary : 스레딩 매크로 가이드
 date    : 2021-12-10 22:47:25 +0900
-updated : 2022-03-05 10:47:51 +0900
+updated : 2022-05-31 22:51:37 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -113,7 +113,7 @@ Syntactically, the threading macro also allows the reader to read the functions 
 - threading macro를 사용하면 코드를 읽는 사람이 괄호 표현식의 안쪽부터 바깥쪽으로 읽지 않아도 됩니다.
 - 즉, 왼쪽에서 오른쪽으로 함수를 읽어나가면 됩니다.
 
-### thread-last (->>) and thread-as (as->) macros
+### thread-last (-\>\>) and thread-as (as->) macros
 
 thread-last 매크로(`->>`)와 thread-as 매크로(`as->`)
 
@@ -234,7 +234,7 @@ This allows a value to thread into any argument position, not just first or last
 
 역주: `[:foo :bar]`에 `v`라는 이름을 바인딩해서 `(map name v)`처럼 마지막 인자로도 집어넣고, `(.substring v 1)`처럼 첫번째 인자로도 집어넣고 있음.
 
-### some->, some->> and cond->
+### some->, some-\>\> and cond->
 
 >
 Two of Clojure’s more specialized threading macros, [`some->`][some-v] and [`some->>`][some-vv], are used most commonly when interfacing with Java methods.
