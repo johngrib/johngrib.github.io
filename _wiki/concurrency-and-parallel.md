@@ -3,7 +3,7 @@ layout  : wiki
 title   : Concurrency 와 Parallel
 summary : 병행과 병렬
 date    : 2021-02-21 23:11:54 +0900
-updated : 2022-04-02 12:25:50 +0900
+updated : 2022-06-06 00:49:40 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,20 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## From: 실용주의 프로그래머 20주년 기념판
+
+>
+'동시성<sub>concurrency</sub>'은 둘 이상의 코드 조각이 실행될 때 동시에 실행 중인 것처럼 행동하는 것이다.
+그리고 '병렬성<sub>parallelism</sub>'이란 실제로 동시에 실행되는 것이다.
+>
+동시성을 얻으려면 실행 중에 코드의 다른 부분으로 실행을 전환할 수 있는 환경에서 코드를 구동해야 한다.
+보통은 파이버<sub>fiber</sub>나 스레드, 프로세스 등을 사용하여 동시성을 구현한다.
+>
+병렬성을 얻으려면 두 가지 일을 동시에 할 수 있는 하드웨어가 필요하다.
+CPU 하나에 있는 여러 개의 코어일 수도 있고,
+컴퓨터 한 대에 있는 여러 CPU이거나 아니면 네트워크로 연결된 여러 대의 컴퓨터일 수도 있다.
+[^prag-241]
 
 ## From: Practical 모던 자바
 
@@ -107,6 +121,7 @@ Concurrency      │              Parallel
 
 ## 참고 문헌
 
+- 실용주의 프로그래머 (20주년 기념판) / 데이비드 토머스, 앤드류 헌트 저/정지용 역/김창준 감수 / 인사이트(insight) / 2판 1쇄 발행 2022년 02월 24일
 - [DANI] 누구나 쉽게 배우는 클로저 / 다니엘 히긴보텀 저 / 김종덕 역 / 비제이퍼블릭(BJ퍼블릭) / 초판 1쇄 발행 2016년 08월 30일 / 원제: Clojure for the Brave and True
 - [JANG] Practical 모던 자바 / 장윤기 저 / 인사이트(insight) / 초판 1쇄 2020년 09월 21일
     - [원문]( https://www.braveclojure.com/concurrency/ )
@@ -115,4 +130,4 @@ Concurrency      │              Parallel
 
 [^JANG-6]: [JANG] 6장 병렬 프로그래밍
 [^DANI-222]: [DANI] 9장. 동시와 병렬의 개념.
-
+[^prag-241]: 실용주의 프로그래머 (20주년 기념판). 6장. 241쪽.
