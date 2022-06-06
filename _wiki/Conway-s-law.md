@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2022-06-06 17:00:42 +0900
+updated : 2022-06-06 17:09:33 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -260,8 +260,9 @@ The principle creates an imperative (1)to keep asking: “Is there a better desi
 
 * [CONWAY'S LAW](http://www.melconway.com/Home/Conways_Law.html): Conway 홈페이지에 소개된 Conway's law.
 * [How Do Committees Invent? - Melvin E. Conway](http://www.melconway.com/Home/Committees_Paper.html ): 1968년 Conway's law가 소개된 콘웨이의 페이퍼.
-* [Toward Simplifying Application Development, in a Dozen Lessons - Mel Conway (pdf)]( http://melconway.com/Home/pdf/simplify.pdf ): 콘웨이의 2017년 페이퍼.
+* [Toward Simplifying Application Development, in a Dozen Lessons - Mel Conway (pdf)]( http://melconway.com/Home/pdf/simplify.pdf ): 콘웨이의 2018년 페이퍼.
     * [백업]( ./simplify.pdf )
+    * [이 글을 소개하는 콘웨이의 트윗]( https://twitter.com/conways_law/status/740585070566756353?s=20&t=HGyp9Ukijies78lZ71Kvbg )
 
 * [Conway's law(the jargon file)](http://www.catb.org/jargon/html/C/Conways-Law.html)
 * [Conway's law(wikipedia)](https://en.wikipedia.org/wiki/Conway%27s_law)
