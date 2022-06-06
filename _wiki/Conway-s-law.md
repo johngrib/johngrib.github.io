@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2022-06-06 16:40:56 +0900
+updated : 2022-06-06 16:52:41 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -82,6 +82,14 @@ The development of such a philosophy promises to unearth basic questions about v
 **N 명의 그룹이 코볼 컴파일러를 구현한다면, N-1 단계가 될 것이다. 왜냐하면 한 사람은 관리자가 되어야 할 테니까.**
 
 * 관료제를 중시한 코볼 업계를 돌려 비판한 말이라고 할 수 있겠다.
+
+### Ruth Malan의 해석
+
+>
+If the architecture of the system and the architecture of the organization are at odds, the architecture of the organization wins.
+>
+시스템 구조와 조직 구조가 대립하면 언제나 조직 구조가 승리한다.
+[^team-topologies-53]
 
 ### 실용주의 프로그래머에서 말하는 콘웨이의 법칙
 
@@ -260,6 +268,7 @@ The principle creates an imperative (1)to keep asking: “Is there a better desi
 - 마이크로서비스 패턴 / 크리스 리처드슨 저/이일웅 역 / 길벗 / 초판발행 2020년 01월 30일
 - 실용주의 프로그래머 (20주년 기념판) / 데이비드 토머스, 앤드류 헌트 저/정지용 역/김창준 감수 / 인사이트(insight) / 2판 1쇄 발행 2022년 02월 24일
 - 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
+- 팀 토폴로지 / 매튜 스켈톤, 마누엘 페이스 저/김연수 역 / 에이콘출판사 / 2020년 12월 30일 / 원서 : Team Topologies: Organizing Business and Technology Teams for Fast Flow
 - 해커 영어사전 제3판 / Guy L. Steel Jr. Eric S.RayMond 편저, 한경훈 역 / 기전연구사 / 1판 1쇄 1998년 12월 25일 / 원제 : The New Hacker's Dictionary(3rd)
 
 ## 각주
@@ -274,4 +283,5 @@ The principle creates an imperative (1)to keep asking: “Is there a better desi
 [^richardson-63]: 마이크로서비스 패턴. 1.7장.
 [^prag-368]: 실용주의 프로그래머 20주년 기념판. Topic 47. 368쪽.
 [^simplify]: Toward Simplifying Application Development, in a Dozen Lessons - Mel Conway (pdf). 4쪽.
+[^team-topologies-53]: 팀 토폴로지. 2장. 53쪽.
 
