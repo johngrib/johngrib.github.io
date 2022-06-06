@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-05-22 17:15:52 +0900
+updated : 2022-06-07 00:12:19 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -934,6 +934,19 @@ autocmd FileType clojure nmap skm :call CocAction('runCommand', 'lsp-clojure-res
 autocmd FileType clojure nmap sks i#_:clj-kondo/ignore<ESC>
 " autocmd FileType clojure nmap sks :call CocAction('runCommand', 'lsp-clojure-suppress-diagnostic')<CR>
 ```
+
+### 디버거 사용하기
+
+vim-iced는 [CIDER의 debugger]( https://docs.cider.mx/cider/debugging/debugger.html )를 감싸고 있어서 CIDER의 디버거를 사용할 수 있다.
+
+![디버거를 사용하는 모습]( ./debugger.gif )
+
+디버거로 멈추고 싶은 form 앞에 `#break`나 `#dbg`를 적어두고 코드를 평가하는 방식으로 사용할 수 있다.
+
+- `#break`를 적어두면 실행중에 해당 위치에서 멈춘다.
+    - 이후 `:n`이나 `:c`를 입력하면 끝까지 실행된다.
+- `#dbg`를 적어두면 실행중에 해당 form의 안쪽에 있는 모든 코드에서 매번 멈춘다.
+    - 멈출 때마다 `:n`을 입력하면 다음 스텝으로 이동한다.
 
 ### 파일 탐색
 
