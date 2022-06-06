@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2022-06-06 16:58:15 +0900
+updated : 2022-06-06 17:00:42 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -59,6 +59,13 @@ The development of such a philosophy promises to unearth basic questions about v
 조직을 기민하고 유연하게 유지한 설계 관리자에게 보상을 할 수 있는 방법을 찾아야 한다.
 단순하게 인력을 추가하는 것이 생산성을 증가시킨다는 가정에 근거하지 않는 시스템 설계 관리상의 철학이 필요하다.
 이러한 철학의 발전은 자원의 가치와 의사소통의 기술에 대한 근본적인 문제들, 즉 우리의 시스템 구축 기술이 확신 위에서 진행되기 위한 과제들을 밝혀내게 될 것이다.
+
+#### stages of design
+
+>
+Given any design team organization, there is a class of design alternatives which cannot be effectively pursued by such an organization because the necessary communication paths do not exist.
+
+어떤 설계 팀 조직이라도 필요한 커뮤니케이션 경로가 전혀 존재하지 않기 때문에 추구할 수 없는 대안적인 설계 유형이 존재한다.
 
 ### 데브옵스 핸드북에서 말하는 콘웨이의 법칙
 
