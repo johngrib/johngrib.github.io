@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2022-06-06 16:52:41 +0900
+updated : 2022-06-06 16:58:15 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -32,7 +32,9 @@ latex   : false
 
 * 1968년4월, Datamation 지에 실린 콘웨이의 논문 "HOW DO COMMITTEES INVENT?".
 
-결론 부분만 인용하고 간단하게 번역해 보았다.
+#### 결론
+
+다음은 콘웨이 논문의 결론 부분을 인용하고 간단하게 번역한 것이다.
 
 > Conclusion
 >
