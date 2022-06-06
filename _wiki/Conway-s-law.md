@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2022-06-05 18:26:02 +0900
+updated : 2022-06-06 16:40:56 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -221,11 +221,30 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 >
 > 역콘웨이의 법칙 때문에 발생하는 관련 문제는 더 있다. 모놀리식 아키텍처를 사용하는 회사에서 거의 발견되지 않는 운영 조직에 대한 운영의 어려움이다. 모놀리스에서는 애플리케이션을 위해 운영 인력의 배치와 비상 대기 업무 지원이 용이하지만 마이크로서비스 아키텍처에서는 잘 해내기가 매우 어렵다. 왜냐하면 마이크로서비스마다 개발 팀과 운영 팀 둘 다 배치해야 하기 때문이다. 결과적으로 마이크로서비스 개발 팀은 운영 업무와 마이크로서비스에 연관된 작업을 담당해야 한다. 비상 대기 업무와 모니터링 업무를 맡을 별도의 운영 조직이 없다. 즉, 개발자는 자신의 서비스에 대해 비상 대기해야 한다.
 
+## 애플리케이션 개발 단순화를 위한 교훈들
+
+[Toward Simplifying Application Development, in a Dozen Lessons Mel Conway]( http://melconway.com/Home/pdf/simplify.pdf )
+
+>
+So how do you use it?
+The importance of the principle as a guide to action is not that your design organization determines the things you can design; as a guide to action, that’s not particularly useful.
+The importance of the principle as a guide to action is that you need to know that your design organization is keeping you from designing some things that perhaps you should be building.
+The principle creates an imperative (1)to keep asking: “Is there a better design that is not available to us because of our organization?” and (2)to be open to changing the organization if a better design is found.
+[^simplify]
+
+그래서 우리는 이것을 어떻게 이용해야 할까요?
+행동 지침으로서 이 원칙의 중요성은 설계 조직이 당신이 설계할 수 있는 것을 결정짓는다는 지점에 있지 않습니다. 그런 측면은 행동 지침으로서는 유용하지 않죠.
+
+행동 지침으로서 이 원칙의 중요성은, 만들어야 하는 어떤 것들이 조직 구조 때문에 설계를 할 수 없도록 막혀 있다는 사실을 알아야 한다는 것입니다.
+
+이 원칙은 다음 질문을 계속해서 던지라고 합니다. "조직 구조 때문에 우리가 만들 수 없다고 여겼던, 더 나은 설계가 존재하는가?" 그리고 더 나은 설계가 발견되었을 때 변화할 수 있는 열린 조직이 되어야 한다고 합니다.
 
 ## Links
 
 * [CONWAY'S LAW](http://www.melconway.com/Home/Conways_Law.html): Conway 홈페이지에 소개된 Conway's law.
 * [How Do Committees Invent? - Melvin E. Conway](http://www.melconway.com/Home/Committees_Paper.html ): 1968년 Conway's law가 소개된 콘웨이의 페이퍼.
+* [Toward Simplifying Application Development, in a Dozen Lessons - Mel Conway (pdf)]( http://melconway.com/Home/pdf/simplify.pdf ): 콘웨이의 2017년 페이퍼.
+    * [백업]( ./simplify.pdf )
 
 * [Conway's law(the jargon file)](http://www.catb.org/jargon/html/C/Conways-Law.html)
 * [Conway's law(wikipedia)](https://en.wikipedia.org/wiki/Conway%27s_law)
@@ -254,4 +273,5 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 [^newman-264]: 마이크로서비스 아키텍처 구축. 10장. 264쪽.
 [^richardson-63]: 마이크로서비스 패턴. 1.7장.
 [^prag-368]: 실용주의 프로그래머 20주년 기념판. Topic 47. 368쪽.
+[^simplify]: Toward Simplifying Application Development, in a Dozen Lessons - Mel Conway (pdf). 4쪽.
 
