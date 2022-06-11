@@ -16,6 +16,7 @@
  "clojure/reader",
  "clojure/reference",
  "clojure/reference/metadata",
+ "clojure/reference/other-functions",
  "clojure/reference/special-forms",
  "clojure/reference/transient",
  "clojure/repl-and-main",

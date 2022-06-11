@@ -3,6 +3,7 @@
  "clojure/guide/reading-clojure-characters",
  "clojure/higher-order-functions",
  "clojure/macros",
+ "clojure/reference/other-functions",
  "clojure/reference/special-forms",
  "clojure/reference/transient",
  "Go-Blog-translation",
