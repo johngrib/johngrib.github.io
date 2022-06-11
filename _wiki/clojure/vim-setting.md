@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-06-11 18:49:35 +0900
+updated : 2022-06-11 18:56:54 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -841,6 +841,10 @@ Clojure 코딩을 하는 동안에도 특별한 설정 없이 그대로 사용�
 autocmd FileType clojure nmap sc# <Plug>(sexp_move_to_prev_bracket)i#_<Esc>``
 autocmd FileType clojure nmap sc3 <Plug>(sexp_move_to_prev_element_head)i#_<Esc>l
 ```
+
+Ultisnips를 써서 `3#_` 처럼 숫자와 조합하면 `#_#_#_` 로 완성해주는 기능도 만들어 쓰고 있다. ( [ultisnips 섹션]( #ultisnips) 참고 )
+
+![ultisnips를 사용해 #_를 입력하는 모습]( ./ultisnips-hash-underbar-repeat.gif )
 
 #### cycle collection
 
