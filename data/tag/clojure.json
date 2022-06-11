@@ -15,6 +15,7 @@
  "clojure/macros",
  "clojure/reader",
  "clojure/reference",
+ "clojure/reference/data-structures",
  "clojure/reference/metadata",
  "clojure/reference/other-functions",
  "clojure/reference/special-forms",

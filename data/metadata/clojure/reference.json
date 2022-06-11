@@ -9,6 +9,7 @@
   "clojure/evaluation",
   "clojure/macros",
   "clojure/reader",
+  "clojure/reference/data-structures",
   "clojure/reference/metadata",
   "clojure/reference/other-functions",
   "clojure/reference/special-forms",
