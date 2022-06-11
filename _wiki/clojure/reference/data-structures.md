@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 01:02:46 +0900
+updated : 2022-06-12 01:03:48 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -12,6 +12,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## Data Structures: Clojure Reference 문서 번역
 
 - 원문: [Data Structures]( https://clojure.org/reference/data_structures )
 
@@ -44,16 +46,16 @@ Clojure는 다음과 같은 속성들을 갖는 다양한 종류의 데이터 �
     - java.lang.Iterable을 구현합니다.
     - java.util.Collection 또는 java.util.Map의 일부분을 읽기 전용으로 구현합니다.
 
-## nil
-## Numbers
-## Strings
-## Characters
-## Keywords
-## Symbols
-## Collections
-## Lists (IPersistentList)
-## Vectors (IPersistentVector)
-## Maps (IPersistentMap)
-## StructMaps
-## ArrayMaps
-## Sets
+### nil
+### Numbers
+### Strings
+### Characters
+### Keywords
+### Symbols
+### Collections
+### Lists (IPersistentList)
+### Vectors (IPersistentVector)
+### Maps (IPersistentMap)
+### StructMaps
+### ArrayMaps
+### Sets
