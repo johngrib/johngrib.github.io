@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-06-07 00:12:19 +0900
+updated : 2022-06-11 18:49:35 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -789,26 +789,29 @@ autocmd FileType clojure nnoremap ={ vi{<c-v>$:EasyAlign\ g/^\S/<cr>gv=
 
 #### 리네임
 
-![리네임하는 모습]( ./iced-rename.gif )
+![리네임하는 모습]( ./scr.gif )
 
 - `scr`: 심볼 rename. (`c`: code, `r`: rename)
 
-이 기능은 [jet]( https://github.com/borkdude/jet )에 의존하기 때문에 jet을 설치해 줘야 한다.
+이 기능은 coc.nvim의 `<Plug>(coc-rename)`을 사용한다.
 
-```bash
-brew install borkdude/brew/jet
-```
+설정 초기에는 vim-iced의 `:IcedRenameSymbol` 사용했지만 다음과 같은 문제가 있었다.
 
-그런데 문제가 좀 있다.
-
+- [jet]( https://github.com/borkdude/jet )에 의존하기 때문에 jet을 설치해 줘야 한다.
+    ```bash
+    brew install borkdude/brew/jet
+    ```
 - 연속적으로 rename을 할 때 깔끔하게 되지 않는 느낌이 든다.
-- symbol rename 은 잘 되지만 키워드는 지원하지 않는다. [[/cmd/sed]]를 사용하는 도구를 만들어야 할까?
+- symbol rename 은 잘 되지만 키워드는 지원하지 않는다. [[/cmd/sed]]를 사용하는 도구를 만들어야 할지 고민스러웠다.
 - clj-kondo가 바뀐 이름을 인지하지 못하는 경우가 있다.
 
-이 문제는 시간을 두고 천천히 해결해보자.
+coc.nvim의 coc-rename은 IcedRenameSymbol에 비해 만족스럽게 잘 작동한다.
+
+단 키워드 리네임은 제공하지 않으니 vim의 기본 substitute를 사용해야 한다.
 
 ```viml
-autocmd FileType clojure nmap scr :IcedRenameSymbol<CR>
+" autocmd FileType clojure nmap scR :IcedRenameSymbol<CR>
+autocmd FileType clojure nmap scr <Plug>(coc-rename)
 ```
 
 #### 주석처리
