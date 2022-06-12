@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 14:18:16 +0900
+updated : 2022-06-12 14:19:21 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -197,6 +197,19 @@ Clojure의 string은 Java의 String과 같습니다.
 [with-out-str](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str )
 
 ### Characters
+
+>
+Clojure characters are Java Characters.
+
+Clojure의 character는 Java의 Character와 같습니다.
+
+#### Related functions
+
+[char](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char )
+[char-name-string](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-name-string )
+[char-escape-string](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/char-escape-string )
+
+
 ### Keywords
 ### Symbols
 ### Collections
