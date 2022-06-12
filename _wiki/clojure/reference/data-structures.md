@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 14:13:17 +0900
+updated : 2022-06-12 14:18:16 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -178,6 +178,24 @@ Coercions: [int][int] [bigdec][bigdec] [bigint][bigint] [double][double] [f
 [short]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/short
 
 ### Strings
+
+>
+Clojure strings are Java Strings.
+See also [Printing](https://clojure.org/reference/other_functions#printing ).
+
+Clojure의 string은 Java의 String과 같습니다.
+자세한 내용은 [Printing](https://clojure.org/reference/other_functions#printing )을 참고하세요.
+
+#### Related functions
+
+[str](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/str )
+[string?](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/string? )
+[pr-str](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pr-str )
+[prn-str](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prn-str )
+[print-str](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/print-str )
+[println-str](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/println-str )
+[with-out-str](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-out-str )
+
 ### Characters
 ### Keywords
 ### Symbols
