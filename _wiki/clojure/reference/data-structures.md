@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 15:53:40 +0900
+updated : 2022-06-12 16:03:54 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -375,6 +375,27 @@ The [mix-collection-hash](https://clojure.github.io/clojure/clojure.core-api.ht
 
 
 ### Lists (IPersistentList)
+
+>
+Lists are collections.
+They implement the ISeq interface directly.
+(Note that the empty list implements ISeq as well, however the `seq` function will always return `nil` for an empty sequence.)
+[count](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count ) is O(1).
+[conj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj ) puts the item at the front of the list.
+
+List는 collection 이며, ISeq interface를 직접 구현합니다.
+(empty List도 ISeq를 구현하지만, `seq` 함수가 비어 있는 시퀀스에 대해 호출했을 때 `nil`을 리턴한다는 점에 주목하세요.)
+
+[count](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count )는 O(1)입니다.
+[conj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj )는 List의 앞에서부터 아이템을 삽입합니다.
+
+#### Related functions
+
+>
+Create a list: [list](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list ) [list\*](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list* )  
+Treat a list like a stack: [peek](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/peek ) [pop](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pop )  
+Examine a list: [list?](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list? )
+
 ### Vectors (IPersistentVector)
 ### Maps (IPersistentMap)
 ### StructMaps
