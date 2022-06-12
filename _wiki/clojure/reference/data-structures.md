@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 16:14:02 +0900
+updated : 2022-06-12 16:49:42 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -439,6 +439,63 @@ Examine a vector:
 See also [zippers](https://clojure.org/reference/other_libraries )
 
 ### Maps (IPersistentMap)
+
+>
+A Map is a collection that maps keys to values.
+Two different map types are provided - hashed and sorted.
+Hash maps require keys that correctly support hashCode and equals.
+Sorted maps require keys that implement Comparable, or an instance of Comparator.
+Hash maps provide faster access (log32N hops) vs (logN hops), but sorted maps are, well, sorted.
+[count](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count ) is O(1).
+[conj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj ) expects another (possibly single entry) map as the item, and returns a new map which is the old map plus the entries from the new, which may overwrite entries of the old.
+[conj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj ) also accepts a MapEntry or a vector of two items (key and value).
+[seq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq ) returns a sequence of map entries, which are key/value pairs.
+Sorted map also supports [rseq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq ), which returns the entries in reverse order.
+Maps implement IFn, for invoke() of one argument (a key) with an optional second argument (a default value), i.e. maps are functions of their keys.
+nil keys and values are ok.
+
+Map은 key와 value 쌍을 갖는 collection 입니다.
+Map은 hashed와 sorted 라는 두 가지 타입이 있습니다.
+
+- Hash map은 hashCode와 equals를 지원하는 키값을 사용해야 합니다.
+- Sorted map은 Comparable 인터페이스를 구현하거나 Comparator의 인스턴스인 키값을 사용해야 합니다.
+
+Hash map은 log32N 단계로 접근할 수 있어 logN 으로 접근하는 sorted map보다 빠른 성능을 보입니다.
+
+[count](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count )는 O(1)입니다.
+[conj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj )는 다른 map(엔트리 하나만 있어도 가능)을 인자로 받아, 이전 map에 새로운 아이템을 추가하거나 기존 key를 덮어쓴 새로운 map을 리턴합니다.
+[conj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj )는 또한 MapEntry를 받을 수도 있고 key/value 쌍을 의미하는 두 개의 아이템을 갖는 vector를 인자로 받기도 합니다.
+[seq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq )는 map 엔트리를 순차적으로 리턴합니다.
+
+Sorted map은 뒤집은 시퀀스를 리턴하는 [rseq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq )도 지원합니다.
+
+Map은 invoke() 함수를 정의한 IFn 인터페이스를 구현합니다.
+하나의 인자는 key로 사용해 값을 리턴하게 되고, 선택적으로 줄 수 있는 두번째 인자는 default value를 의미합니다.
+즉, Map은 자신이 갖고 있는 key에 대해 값을 리턴하는 함수로 작동합니다.
+nil도 key와 value로 사용할 수 있습니다.
+
+#### Related functions
+
+>
+Create a new map: [hash-map](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/hash-map )
+[sorted-map](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map )
+[sorted-map-by](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-map-by )  
+'change' a map: [assoc](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc )
+[dissoc](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dissoc )
+[select-keys](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/select-keys )
+[merge](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/merge )
+[merge-with](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/merge-with )
+[zipmap](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/zipmap )  
+Examine a map: [get](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get )
+[contains?](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/contains? )
+[find](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/find )
+[keys](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keys )
+[vals](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vals )
+[map?](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map? )  
+Examine a map entry: [key](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/key )
+[val](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/val )
+
+
 ### StructMaps
 ### ArrayMaps
 ### Sets
