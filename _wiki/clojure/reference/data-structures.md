@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 16:03:54 +0900
+updated : 2022-06-12 16:14:02 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -397,6 +397,47 @@ Treat a list like a stack: [peek](https://clojure.github.io/clojure/clojure.cor
 Examine a list: [list?](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/list? )
 
 ### Vectors (IPersistentVector)
+
+>
+A Vector is a collection of values indexed by contiguous integers.
+Vectors support access to items by index in log32N hops.
+[count](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count ) is O(1).
+[conj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj ) puts the item at the end of the vector.
+Vectors also support [rseq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq ), which returns the items in reverse order.
+Vectors implement IFn, for invoke() of one argument, which they presume is an index and look up in themselves as if by nth, i.e. vectors are functions of their indices.
+Vectors are compared first by length, then each element is compared in order.
+
+Vector는 연속적인 정수 인덱스를 갖는 값들의 collection 입니다.
+Vector는 아이템에 접근할 때 인덱스를 통해 log32N 단계를 거쳐 접근할 수 있습니다.
+
+[count](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count )는 O(1)입니다.
+[conj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj )는 Vector의 끝에 아이템을 삽입합니다.
+
+Vector는 아이템들의 순서를 뒤집은 결과를 리턴하는 [rseq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq )를 지원합니다.
+Vector는 invoke() 메소드를 정의하는 IFn을 구현하여, 인자가 하나 주어지면 인덱스로 간주하여 nth를 사용해 아이템을 찾습니다.
+즉, Vector는 인덱스를 인자로 받는 함수이기도 합니다.
+Vector를 비교할 때에는 가장 먼저 길이를 대조하고, 그 다음에 순서대로 각각의 아이템을 비교합니다.
+
+#### Related functions
+
+>
+Create a vector:
+[vector](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector )
+[vec](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vec )
+[vector-of](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector-of )  
+Examine a vector:
+[get](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get )
+[nth](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/nth )
+[peek](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/peek )
+[rseq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rseq )
+[vector?](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/vector? )  
+'change' a vector: [assoc](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/assoc )
+[pop](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/pop )
+[subvec](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/subvec )
+[replace](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace )
+>
+See also [zippers](https://clojure.org/reference/other_libraries )
+
 ### Maps (IPersistentMap)
 ### StructMaps
 ### ArrayMaps
