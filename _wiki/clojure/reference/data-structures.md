@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 17:05:45 +0900
+updated : 2022-06-12 17:20:07 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -548,6 +548,26 @@ Create individual struct: [struct-map](https://clojure.github.io/clojure/clojur
 
 
 ### ArrayMaps
+
+>
+When doing code form manipulation it is often desirable to have a map which maintains key order.
+An array map is such a map - it is simply implemented as an array of key val key val...
+As such, it has linear lookup performance, and is only suitable for _very small_ maps.
+It implements the full map interface.
+New ArrayMaps can be created with the [array-map](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/array-map ) function.
+Note that an array map will only maintain sort order when un-'modified'.
+Subsequent assoc-ing will eventually cause it to 'become' a hash-map.
+
+코드 form을 조작할 때 key 순서를 유지하는 map이 필요한 경우가 종종 있습니다.
+
+ArrayMap이 바로 그런 특징을 갖는 map 입니다. 단순하게 key, value, key, value, ... 를 순서대로 집어넣은 배열로 구현한 map 이죠.
+이와 같은 구현 때문에 조회를 할 때 선형으로 증가하는 성능을 가지며, _아주 적은_ 수의 엔트리를 갖는 map이 필요할 때 사용하는 것이 적절합니다.
+ArrayMap 또한 map interface를 완전히 구현하고 있습니다.
+
+[array-map](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/array-map ) 함수를 호출해서 새로운 ArrayMap을 생성할 수 있습니다.
+ArrayMap은 수정되지 않은 경우에만 정렬 순서를 유지한다는 것을 기억해 두세요.
+생성 후에 엔트리를 추가하면 ArrayMap이 아니라 hash-map이 될 수 있습니다.
+
 ### Sets
 
 vf)"zymz}oz0f(r:a $x`zf(df)hviW"zyPE:delm z
