@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 16:49:42 +0900
+updated : 2022-06-12 17:05:45 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -497,6 +497,56 @@ Examine a map entry: [key](https://clojure.github.io/clojure/clojure.core-api.h
 
 
 ### StructMaps
+
+>
+(i) Most uses of StructMaps would now be better served by [records](https://clojure.org/reference/datatypes ).
+
+정보: 이제는 대부분의 경우 StructMap 보다 [record](https://clojure.org/reference/datatypes )를 사용하는 것이 더 낫습니다.
+
+>
+Often many map instances have the same base set of keys, for instance when maps are used as structs or objects would be in other languages.
+StructMaps support this use case by efficiently sharing the key information, while also providing optional enhanced-performance accessors to those keys.
+StructMaps are in all ways maps, supporting the same set of functions, are interoperable with all other maps, and are persistently extensible (i.e. struct maps are not limited to their base keys).
+The only restriction is that you cannot dissociate a struct map from one of its base keys.
+A struct map will retain its base keys in order.
+>
+StructMaps are created by first creating a structure basis object using [create-struct](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-struct ) or [defstruct](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct ), then creating instances with [struct-map](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct-map ) or [struct](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct ).
+
+다른 언어에서 구조체나 객체를 쓰는 것처럼, 같은 key 세트를 갖고 있는 map 인스턴스를 쓰는 경우가 종종 있습니다.
+StructMap은 이러한 사용 사례를 지원하는 것으로, 효율성을 위해 key 정보를 공유하며 key에 대해 더 높은 성능을 가진 접근자를 선택적으로 제공합니다.
+StructMap은 모든 면에서 map과 같은 기능을 갖고 있습니다.
+map에서 사용할 수 있는 것과 같은 함수들을 지원하고, 다른 모든 map들과도 함께 사용할 수 있으며, 지속적으로 확장할 수 있습니다(StructMap은 base key만 갖도록 제한되지 않습니다).
+StructMap의 유일한 제약사항은 base key를 dissociate할 수 없다는 것입니다.
+StructMap은 base key를 순서대로 유지합니다.
+
+StructMap는 [create-struct](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-struct ) 또는 [defstruct](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct )를 사용하여 베이스 객체를 생성하고, [struct-map](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct-map ) 또는 [struct](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct )를 사용하여 인스턴스를 생성합니다.
+
+> ```clojure
+> (defstruct desilu :fred :ricky)
+> (def x (map (fn [n]
+>               (struct-map desilu
+>                 :fred n
+>                 :ricky 2
+>                 :lucy 3
+>                 :ethel 4))
+>              (range 100000)))
+> (def fred (accessor desilu :fred))
+> (reduce (fn [n y] (+ n (:fred y))) 0 x)
+>  -> 4999950000
+> (reduce (fn [n y] (+ n (fred y))) 0 x)
+>  -> 4999950000
+> ```
+
+#### Related functions
+
+>
+StructMap setup: [create-struct](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/create-struct )
+[defstruct](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defstruct )
+[accessor](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/accessor )  
+Create individual struct: [struct-map](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct-map )
+[struct](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/struct )
+
+
 ### ArrayMaps
 ### Sets
 
