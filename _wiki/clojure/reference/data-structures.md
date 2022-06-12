@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 14:30:19 +0900
+updated : 2022-06-12 14:43:09 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -239,6 +239,35 @@ map 하나를 인자로 전달해 값을 얻을 수 있고 선택적으로 두 �
 [keyword?](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword? )
 
 ### Symbols
+
+>
+Symbols are identifiers that are normally used to refer to something else.
+They can be used in program forms to refer to function parameters, let bindings, class names and global vars.
+They have names and optional [namespaces](https://clojure.org/reference/namespaces ), both of which are strings.
+Symbols can have metadata (see [with-meta](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta )).
+>
+Symbols, just like Keywords, implement IFn for invoke() of one argument (a map) with an optional second argument (a default value).
+For example `('mysym my-hash-map :none)` means the same as `(get my-hash-map 'mysym :none)`.
+See [get](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get ).
+
+Symbol은 일반적으로 다른 무언가를 참조하는 식별자입니다.
+Symbol은 프로그램 form에서 함수 파라미터, let binding, class 이름, global var를 참조할 때 사용합니다.
+Symbol은 name을 갖고, 선택적으로 namespace를 갖습니다. 그리고 name과 namespace는 둘 다 문자열로 이루어집니다.
+Symbol은 메타데이터를 가질 수 있습니다([with-meta](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/with-meta ) 참고).
+
+Symbol은 Keyword와 마찬가지로 invoke() 메소드를 정의한 IFn 인터페이스를 구현하고 있습니다.
+따라서 map 인자 하나를 받아 값을 얻을 수 있고, 선택적으로 두 번째 인자로 default value를 전달할 수도 있습니다.
+예를 들어 `('mysym my-hash-map :none)`은 `(get my-hash-map 'mysym :none)`과 같은 의미를 갖습니다.
+
+자세한 내용은 [get](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get )을 참고하세요.
+
+#### Related functions
+
+[symbol](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/symbol )
+[symbol?](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/symbol? )
+[gensym](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/genysm )
+(see also the #-suffix [reader](https://clojure.org/reference/reader ) macro)
+
 ### Collections
 ### Lists (IPersistentList)
 ### Vectors (IPersistentVector)
