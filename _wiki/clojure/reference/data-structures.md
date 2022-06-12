@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 14:19:21 +0900
+updated : 2022-06-12 14:30:19 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -211,6 +211,33 @@ Clojure의 character는 Java의 Character와 같습니다.
 
 
 ### Keywords
+
+>
+Keywords are symbolic identifiers that evaluate to themselves.
+They provide very fast equality tests.
+Like Symbols, they have names and optional [namespaces](https://clojure.org/reference/namespaces ), both of which are strings.
+The leading ':' is not part of the namespace or name.
+>
+Keywords implement IFn for invoke() of one argument (a map) with an optional second argument (a default value).
+For example `(:mykey my-hash-map :none)` means the same as `(get my-hash-map :mykey :none)`.
+See [get](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get ).
+
+키워드는 그 자체로 평가되는 기호 식별자입니다.
+키워드의 동일성 테스트는 굉장히 빠릅니다.
+키워드는 Symbol처럼 자신의 name을 갖고 있고, 선택적으로 namespace를 갖습니다. 그리고 name과 namespace는 둘 다 문자열로 이루어집니다.
+키워드 앞의 `:`는 namespace와 name에 포함되지 않습니다.
+
+키워드는 invoke() 메소드를 정의한 IFn 인터페이스를 구현하고 있으므로,
+map 하나를 인자로 전달해 값을 얻을 수 있고 선택적으로 두 번째 인자로 default value를 전달할 수도 있습니다.
+예를 들어 `(:mykey my-hash-map :none)`는 `(get my-hash-map :mykey :none)`과 같은 의미를 갖습니다.
+
+자세한 내용은 [get](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/get )을 참고하세요.
+
+#### Related functions
+
+[keyword](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword )
+[keyword?](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keyword? )
+
 ### Symbols
 ### Collections
 ### Lists (IPersistentList)
