@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 17:20:07 +0900
+updated : 2022-06-12 17:32:01 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -570,4 +570,95 @@ ArrayMap은 수정되지 않은 경우에만 정렬 순서를 유지한다는 �
 
 ### Sets
 
-vf)"zymz}oz0f(r:a $x`zf(df)hviW"zyPE:delm z
+>
+Sets are collections of unique values.
+>
+There is literal support for hash-sets:
+
+Set는 유일한 값들을 갖는 collection 입니다.
+
+hash-set을 만들기 위한 리터럴을 사용하는 것도 가능합니다.
+
+```clojure
+#{:a :b :c :d}
+-> #{:d :a :b :c}
+```
+
+>
+You can create sets with the [hash-set](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/hash-set ) and [sorted-set](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-set ) functions:
+
+[hash-set](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/hash-set )과 [sorted-set](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sorted-set ) 함수를 호출해서 set을 생성할 수 있습니다.
+
+> ```clojure
+> (hash-set :a :b :c :d)
+> -> #{:d :a :b :c}
+>
+> (sorted-set :a :b :c :d)
+> -> #{:a :b :c :d}
+> ```
+>
+You can also get a set of the values in a collection using the [set](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set ) function:
+
+[set](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/set ) 함수를 호출해서 collection에 있는 값들의 set을 생성할 수도 있습니다.
+
+> ```clojure
+> (set [1 2 3 2 1 2 3])
+> -> #{1 2 3}
+> ```
+>
+Sets are collections:
+
+set은 collection 입니다.
+
+> ```clojure
+> (def s #{:a :b :c :d})
+> (conj s :e)
+> -> #{:d :a :b :e :c}
+>
+> (count s)
+> -> 4
+>
+> (seq s)
+> -> (:d :a :b :c)
+>
+> (= (conj s :e) #{:a :b :c :d :e})
+> -> true
+> ```
+
+>
+Sets support 'removal' with [disj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/disj ), as well as _**contains?**_ and _**get**_, the latter returning the object that is held in the set which compares equal to the key, if found:
+
+set은 [disj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/disj )를 통해 '삭제'를 지원합니다.
+그리고 _**contains?**_와, _**get**_도 지원합니다.
+`get`은 주어진 key와 같다고 평가되는 원소를 찾아 해당 객체를 리턴합니다.
+
+> ```clojure
+> (disj s :d)
+> -> #{:a :b :c}
+>
+> (contains? s :b)
+> -> true
+>
+> (get s :a)
+> -> :a
+> ```
+
+>
+Sets are functions of their members, using _get_:
+
+set 또한 set의 원소들에 대한 함수로 작동합니다. `get`을 사용하는 것과 같습니다.
+
+> ```clojure
+> (s :b)
+> -> :b
+>
+> (s :k)
+> -> nil
+> ```
+
+>
+Clojure provides basic set operations like [union](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/union ) / [difference](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/difference ) / [intersection](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/intersection ), as well as some pseudo-relational algebra support for 'relations', which are simply sets of maps - [select](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/select ) / [index](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/index ) / [rename](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/rename ) / [join](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/join ).
+
+Clojure는 합집합 [union](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/union ) / 차집합 [difference](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/difference ) / 교집합 [intersection](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/intersection ) 등의 기본적인 set 연산을 제공합니다.
+이는 일종의 의사 관계 대수이며, map에 대해서는 [select](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/select ) / [index](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/index ) / [rename](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/rename ) / [join](https://clojure.github.io/clojure/clojure.set-api.html#clojure.set/join ) 등과 같습니다.
+
