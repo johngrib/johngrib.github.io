@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 14:43:09 +0900
+updated : 2022-06-12 15:24:28 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -269,6 +269,90 @@ Symbol은 Keyword와 마찬가지로 invoke() 메소드를 정의한 IFn 인터�
 (see also the #-suffix [reader](https://clojure.org/reference/reader ) macro)
 
 ### Collections
+
+>
+All of the Clojure collections are immutable and [persistent](https://en.wikipedia.org/wiki/Persistent_data_structure ).
+In particular, the Clojure collections support efficient creation of 'modified' versions, by utilizing structural sharing, and make all of their performance bound guarantees for persistent use.
+The collections are efficient and inherently thread-safe.
+Collections are represented by abstractions, and there may be one or more concrete realizations.
+In particular, since 'modification' operations yield new collections, the new collection might not have the same concrete type as the source collection, but will have the same logical (interface) type.
+>
+All the collections support [count](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count ) for getting the size of the collection, [conj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj ) for 'adding' to the collection, and [seq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq ) to get a sequence that can walk the entire collection, though their specific behavior is slightly different for different types of collections.
+>
+Because collections support the [seq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq ) function, all of the [sequence functions](https://clojure.org/reference/sequences ) can be used with any collection.
+
+Clojure의 모든 collection은 immutable 하며 [persistent](https://en.wikipedia.org/wiki/Persistent_data_structure ) 합니다.
+
+특히 Clojure의 collection은 내부 자료의 구조적 공유를 통해 '수정된' 버전을 효율적으로 생성할 수 있게 하면서, 영구적(persistent)인 사용을 가능하게 하기 위한 안정적인 성능도 보장합니다.
+Clojure collection은 모두 효율적이며 근본적으로 thread-safe 합니다.
+Clojure collection은 추상적으로 정의되어 표현되며, 하나 이상의 구체적인 구현을 갖습니다.
+특히 '수정하는' 종류의 작업은 언제나 새로운 collection을 생성하는데, 이렇게 생성된 새 collection은 원본 collection과 동일한 타입이 아닐 수 있지만, 동일한 논리적(interface) 타입을 갖습니다.
+
+모든 collection은 사이즈를 알기 위한 [count](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count ),
+collection에 무언가를 '추가'하기 위한 [conj](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/conj ),
+collection 전체를 순회(walk)하기 위한 시퀀스를 얻을 수 있는 [seq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq )를 제공합니다.
+(특정한 동작은 collection의 타입에 따라 다르게 작동합니다.)
+
+collection이 [seq](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/seq )함수를 지원하기 때문에, 어떠한 collection이라 하더라도 모든 종류의 [시퀀스 함수](https://clojure.org/reference/sequences )를 사용할 수 있습니다.
+
+#### Java collection hashes
+
+>
+The Java collection interfaces specify algorithms for [Lists](https://docs.oracle.com/javase/8/docs/api/java/util/List.html#hashCode() ), [Sets](https://docs.oracle.com/javase/8/docs/api/java/util/Set.html#hashCode() ), and [Maps](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html#hashCode() ) in calculating hashCode() values.
+All Clojure collections conform to these specifications in their hashCode() implementations.
+
+Java의 collection 인터페이스들은 `List`, `Set`, `Map` 를 위한 `hashCode()` 값 계산 알고리즘을 정의하고 있습니다.
+Clojure collection들의 `hashCode()` 구현은 이러한 스펙을 따릅니다.
+
+#### Clojure collection hashes
+
+>
+Clojure provides its own hash computations that provide better hash properties for collections (and other types), known as the _hasheq_ value.
+>
+The `IHashEq` interface marks collections that provide the `hasheq()` function to obtain the hasheq value.
+In Clojure, the [hash](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/hash ) function can be used to compute the hasheq value.
+>
+Ordered collections (vector, list, seq, etc) must use the following algorithm for calculating hasheq (where hash computes hasheq).
+Note that unchecked-add-int and unchecked-multiply-int are used to get integer overflow calculations.
+
+Clojure는 collection을 포함한 다양한 타입들이 더 나은 해시 속성을 가질 수 있도록, _hasheq_라고 부르는 자체적인 해시값 계산법을 제공합니다.
+
+hasheq 값을 리턴하는 `hasheq()` 함수를 갖고 있는 collection을 표시하기 위해 `IHashEq` 인터페이스가 사용되고 있으며,
+Clojure 코드에서는 `hash` 함수를 써서 hasheq 값을 계산할 수 있습니다.
+
+순서가 있는 collection들(vector, list, seq, 등등)은 반드시 hasheq를 계산(hash 함수를 호출하면 hasheq를 계산합니다)하기 위해 다음의 알고리즘을 사용해야 합니다.
+이 때, unchecked-add-int와 unchecked-multiply-int를 사용하여 정수 오버플로우 계산을 한다는 점을 주목하세요.
+
+
+> ```clojure
+> (defn hash-ordered [collection]
+>   (-> (reduce (fn [acc e] (unchecked-add-int
+>                             (unchecked-multiply-int 31 acc)
+>                             (hash e)))
+>               1
+>               collection)
+>       (mix-collection-hash (count collection))))
+> ```
+>
+Unordered collections (maps, sets) must use the following algorithm for calculating hasheq.
+A map entry is treated as an ordered collection of key and value.
+Note that unchecked-add-int is used to get integer overflow calculations.
+
+순서가 없는 collection들(map, set)은 hasheq를 계산할 때 아래의 알고리즘을 반드시 사용해야 합니다.
+각각의 map 엔트리는 key와 value를 갖는 하나의 순서 있는 collection으로 취급됩니다.
+이번에도 unchecked-add-int를 사용하여 정수 오버플로우 계산을 한다는 점을 주목하세요.
+
+> ```clojure
+> (defn hash-unordered [collection]
+>   (-> (reduce unchecked-add-int 0 (map hash collection))
+>       (mix-collection-hash (count collection))))
+> ```
+>
+The [mix-collection-hash](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mix-collection-hash ) algorithm is an implementation detail subject to change.
+
+[mix-collection-hash](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mix-collection-hash ) 알고리즘은 구현에 따라 상세 내용이 다를 수 있습니다.
+
+
 ### Lists (IPersistentList)
 ### Vectors (IPersistentVector)
 ### Maps (IPersistentMap)
