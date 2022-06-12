@@ -3,7 +3,7 @@ layout  : wiki
 title   : Data Structures
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
-updated : 2022-06-12 15:24:28 +0900
+updated : 2022-06-12 15:53:40 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -333,6 +333,27 @@ Clojure 코드에서는 `hash` 함수를 써서 hasheq 값을 계산할 수 있�
 >               collection)
 >       (mix-collection-hash (count collection))))
 > ```
+
+<span/>
+
+>
+**역주**
+>
+`hash-ordered` 함수는 다음 과정을 통해 collection의 해시값을 계산한다.
+- reduce. `acc` 초기값으로 `1`을 설정한다.
+    1. 전달받은 `acc` 값에 31을 곱한다. (`unchecked-multiply-int` 사용)
+        - 왜 `31`을 쓰는지에 대해서는 [[/java/object-hashcode]] 문서 참고.
+    2. collection의 원소 `e`의 해시값을 구한다.
+    3. 위의 두 값을 더한다. 이 값이 reduce 다음 단계의 `acc`가 된다.
+- 1 ~ 3을 반복해서 나온 값을 `hash-basis`라 한다.
+- `mix-collection-hash` 함수에 collection의 `hash-basis`와 collection의 길이를 전달한다.
+    - `mix-collection-hash` 함수는 `clojure.lang.Murmur3/mixCollHash` 함수를 사용해 collection의 해시값을 계산한다.
+    - 이 값이 collection의 해시값이다.
+>
+{:style="background-color: #ecf1e8;"}
+
+<span/>
+
 >
 Unordered collections (maps, sets) must use the following algorithm for calculating hasheq.
 A map entry is treated as an ordered collection of key and value.
