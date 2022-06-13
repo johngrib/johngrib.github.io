@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-13 23:19:04 +0900
+updated : 2022-06-13 23:21:03 +0900
 regenerate: true
 ---
 
@@ -129,7 +129,9 @@ regenerate: true
 * [[sigma-notation]]{시그마 표기법}
 * [[two-n-base-converting]]
 
-## [[book]]{도서}
+## [[book]]
+
+- [[/book/lyubishev]]
 
 - [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]
 - [[Algorithms-to-Live-By]]
@@ -151,7 +153,6 @@ regenerate: true
 - [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}
 - [[The-Jargon-File]]
 - [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
-- [[book-lyubishev]]
 - [[grow-together]]
 - [[secret-of-consulting]]
 
