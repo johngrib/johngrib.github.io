@@ -57,10 +57,12 @@ latex: true
 * 2017-07-06 [레거시 코드를 파괴하는 Vim 벽돌 깨기]( https://woowabros.github.io/tools/2017/07/06/vim-game-code-break.html ) - 우아한형제들 기술 블로그
 * 2016-06-18 [IntelliJ 의 VIM 플러그인 마개조하기]( https://woowabros.github.io/tools/2016/06/18/ideavim-customize-00.html ) - 우아한형제들 기술 블로그
 
-## 인터뷰, 강연
+## 인터뷰, 발표
 
+* 2022-06-10 [송파 Clojure 밋업 1회]( https://youtu.be/BdSoNmWksuk )
 * 2021-12-21 [스타트업 개발자, 회사와 함께 성장하기]( https://class101.net/hidden-products/wqHXxHcuEhhENRMoo8cz )
 * 2020-01-29 [2020릴레이인터뷰 첫 번째 주자, 마켓컬리 소프트웨어 엔지니어 "이종립"]( https://monthly-jiandson.tistory.com/49 )
+* 2019-05-23 [Vim 교정학원 (VIMRC 2019)]( https://youtu.be/lNWuf48vgV4 )
 * 2017-11-16 [OKKY 미니세미나 "비전공 학원출신 SI개발자, 유명스타트업 들어간.ssul" 참석 후기]( https://jojoldu.tistory.com/247 )
 
 ## Job Experience
