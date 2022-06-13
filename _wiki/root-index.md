@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-13 23:21:03 +0900
+updated : 2022-06-13 23:28:04 +0900
 regenerate: true
 ---
 
@@ -132,6 +132,7 @@ regenerate: true
 ## [[book]]
 
 - [[/book/lyubishev]]
+- [[/book/team-topologies]]
 
 - [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]
 - [[Algorithms-to-Live-By]]
