@@ -7,6 +7,7 @@
  "children": [
   "17-EQUATIONS-THAT-CHANGED-THE-WORLD",
   "Algorithms-to-Live-By",
+  "book/jargon-file",
   "book/lyubishev",
   "book/team-topologies",
   "Clean-Code",
@@ -28,7 +29,6 @@
   "Software-Craftsman",
   "Take-the-Bully-by-the-Horns",
   "TETRIS-EFFECT",
-  "The-Jargon-File",
   "Think-Bayes"
  ]
 }

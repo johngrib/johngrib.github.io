@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2022-06-06 17:09:33 +0900
+updated : 2022-06-14 00:42:32 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -76,7 +76,7 @@ Given any design team organization, there is a class of design alternatives whic
 
 ### The Jargon File에 수록된 콘웨이의 법칙
 
-에릭 레이몬드는 [[The-Jargon-File]]의 [콘웨이의 법칙 항목](http://www.catb.org/jargon/html/C/Conways-Law.html )에서 다음과 같이 말했다.
+에릭 레이몬드는 [[/book/the-jargon-file]]의 [콘웨이의 법칙 항목](http://www.catb.org/jargon/html/C/Conways-Law.html )에서 다음과 같이 말했다.
 
 > If you have four groups working on a compiler, you'll get a 4-pass compiler.
 
