@@ -3,11 +3,11 @@ layout  : wiki
 title   : (책) 류비셰프
 summary : 시간을 정복한 남자 류비셰프
 date    : 2020-06-14 11:31:31 +0900
-updated : 2020-06-14 15:13:27 +0900
+updated : 2022-06-13 23:19:13 +0900
 tag     : time
 toc     : true
 public  : true
-parent  : [[book-memo]]
+parent  : [[book]]
 latex   : false
 ---
 * TOC

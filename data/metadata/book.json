@@ -1,12 +1,13 @@
 {
  "type": "wiki",
  "title": "도서",
- "parent": "media",
+ "parent": "root-index",
  "url": "/wiki/book",
- "updated": "2018-02-07 21:47:12 +0900",
+ "updated": "2022-06-13 23:18:27 +0900",
  "children": [
   "17-EQUATIONS-THAT-CHANGED-THE-WORLD",
   "Algorithms-to-Live-By",
+  "book-lyubishev",
   "Clean-Code",
   "Code-Complete-2",
   "CONCRETE-MATH",

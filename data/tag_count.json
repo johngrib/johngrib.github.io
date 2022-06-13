@@ -101,7 +101,7 @@
  },
  {
   "name": "book",
-  "size": 17
+  "size": 16
  },
  {
   "name": "bot",
@@ -562,10 +562,6 @@
  {
   "name": "math",
   "size": 48
- },
- {
-  "name": "media",
-  "size": 1
  },
  {
   "name": "memory-leak",

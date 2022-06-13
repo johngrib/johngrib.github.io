@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-12 00:53:55 +0900
+updated : 2022-06-13 23:19:04 +0900
 regenerate: true
 ---
 
@@ -129,31 +129,31 @@ regenerate: true
 * [[sigma-notation]]{시그마 표기법}
 * [[two-n-base-converting]]
 
-## [[media]]
+## [[book]]{도서}
 
-* [[book]]{도서}
-    * [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]
-    * [[Algorithms-to-Live-By]]
-    * [[Clean-Code]]
-    * [[Code-Complete-2]]
-    * [[CONCRETE-MATH]]
-    * [[Designing-Data-Intensive-Applications]]
-    * [[Geek-Atlas]]
-    * [[GoF-Design-Pattern]]
-    * [[grow-together]]
-    * [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
-    * [[Mythical-Man-Month]]
-    * [[PATTERN-ON-THE-STONE]]
-    * [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]
-    * [[SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness]]
-    * [[secret-of-consulting]]
-    * [[Shunsho-juwa]]{수학자의 공부}
-    * [[Software-Craftsman]]{소프트웨어 장인}
-    * [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}
-    * [[TETRIS-EFFECT]]
-    * [[The-Jargon-File]]
-    * [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
-    * [[Schrodinger-s-goyang-Hee]]
+- [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]
+- [[Algorithms-to-Live-By]]
+- [[CONCRETE-MATH]]
+- [[Clean-Code]]
+- [[Code-Complete-2]]
+- [[Designing-Data-Intensive-Applications]]
+- [[Geek-Atlas]]
+- [[GoF-Design-Pattern]]
+- [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
+- [[Mythical-Man-Month]]
+- [[PATTERN-ON-THE-STONE]]
+- [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]
+- [[SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness]]
+- [[Schrodinger-s-goyang-Hee]]
+- [[Shunsho-juwa]]{수학자의 공부}
+- [[Software-Craftsman]]{소프트웨어 장인}
+- [[TETRIS-EFFECT]]
+- [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}
+- [[The-Jargon-File]]
+- [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
+- [[book-lyubishev]]
+- [[grow-together]]
+- [[secret-of-consulting]]
 
 ## [[pattern]]
 
@@ -763,10 +763,6 @@ regenerate: true
 * [[professionalism]]
 * [[purpose-of-business]]
 * [[working-together]]
-
-## [[book-memo]]
-
-- [[book-lyubishev]]
 
 ## 반도체
 
