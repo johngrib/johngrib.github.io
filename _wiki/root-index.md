@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-18 10:22:06 +0900
+updated : 2022-06-18 10:34:32 +0900
 regenerate: true
 ---
 
@@ -596,6 +596,7 @@ regenerate: true
 * [[/vim/match]]
 * [[/vim/persistent-undo]]
 * [[/vim/quickfix]]
+* [[/vim/rest-console]]
 * [[/vim/ultisnips]]
 
 * [[ideavim]]
@@ -604,7 +605,6 @@ regenerate: true
 * [[vim-clang]]
 * [[vim-conceallevel]]{conceallevel (Vim)}
 * [[vim-f-hangul]]
-* [[vim-rest-console]]
 * [[vim-tagbar-with-markdown]]
 * [[vim-tmux-t-ut]]
 * [[vim-update-book-progress]]

@@ -4,6 +4,6 @@
  "httpbin.org",
  "httpie-cmd",
  "URI",
- "vim-rest-console",
+ "vim/rest-console",
  "why-http-80-https-443"
 ]

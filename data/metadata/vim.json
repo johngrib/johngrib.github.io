@@ -11,7 +11,6 @@
   "vim-clang",
   "vim-conceallevel",
   "vim-f-hangul",
-  "vim-rest-console",
   "vim-tagbar-with-markdown",
   "vim-tmux-t-ut",
   "vim-update-book-progress",
@@ -23,6 +22,7 @@
   "vim/match",
   "vim/persistent-undo",
   "vim/quickfix",
+  "vim/rest-console",
   "vim/ultisnips",
   "vimwiki"
  ]
