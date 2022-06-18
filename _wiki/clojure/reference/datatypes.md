@@ -3,7 +3,7 @@ layout  : wiki
 title   : Datatypes - deftype, defrecord and reify
 summary : Clojure Reference 문서 번역 - 번역중
 date    : 2022-06-18 11:02:52 +0900
-updated : 2022-06-18 17:02:20 +0900
+updated : 2022-06-18 17:26:10 +0900
 tag     : 
 toc     : true
 public  : true
@@ -230,6 +230,40 @@ datatype과 protocol을 사용하면 인터페이스 기반의 깨끗한 API를 
 
 
 ### reify
+
+>
+While deftype and defrecord define named types, [reify][reify] defines both an anonymous type and creates an instance of that type.
+The use case is where you need a one-off implementation of one or more protocols or interfaces and would like to take advantage of the local context.
+In this respect its use case is similar to proxy, or anonymous inner classes in Java.
+>
+The method bodies of reify are lexical closures, and can refer to the surrounding local scope.
+**reify** differs from **proxy** in that:
+>
+- Only protocols or interfaces are supported, no concrete superclass.
+- The method bodies are true methods of the resulting class, not external fns.
+- Invocation of methods on the instance is direct, not using map lookup.
+- No support for dynamic swapping of methods in the method map.
+
+>
+The result is better performance than proxy, both in construction and invocation.
+**reify** is preferable to proxy in all cases where its constraints are not prohibitive.
+
+deftype과 defrecord는 이름있는 타입을 정의합니다. 반면, [reify][reify]는 익명 타입을 정의하고 해당 타입의 인스턴스도 생성합니다.
+
+하나 이상의 protocol이나 interface의 일회성 구현과 로컬 컨텍스트의 활용이 필요한 경우가 바로 reify의 사용 사례가 됩니다.
+
+이런 사용 사례는 proxy나 Java의 익명 내부 클래스와 비슷합니다.
+
+reify의 메소드 본문은 어휘적 closure이며, 주위를 감싸는 로컬 스코프를 참조할 수 있습니다.
+**reify**와 **proxy**는 다음과 같은 차이점이 있습니다.
+
+- protocol이나 interface만 지원되며, 구체 superclass는 없습니다.
+- 메소드 본문은 외부의 fn 이 아니라 결과 클래스의 실제 메소드입니다.
+- 인스턴스에서 메소드를 호출할 때, 메소드를 map에서 찾지 않습니다. 직접 호출합니다.
+- 메소드 map에서 method의 동적 스와핑을 지원하지 않습니다.
+
+reify를 사용한 결과는 proxy를 사용한 것보다 더 나은 성능을 제공합니다.
+제약 조건이 금지되지 않은 모든 경우에 대해 **reify**는 proxy보다 더 선호됩니다.
 
 ### Java annotation support
 
