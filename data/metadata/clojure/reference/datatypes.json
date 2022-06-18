@@ -1,9 +1,9 @@
 {
  "type": "wiki",
- "title": "Datatypes: deftype, defrecord and reify",
- "summary": "",
- "parent": "",
+ "title": "Datatypes - deftype, defrecord and reify",
+ "summary": "Clojure Reference 문서 번역",
+ "parent": "clojure/reference",
  "url": "/wiki/clojure/reference/datatypes",
- "updated": "2022-06-18 11:03:25 +0900",
+ "updated": "2022-06-18 17:51:24 +0900",
  "children": []
 }

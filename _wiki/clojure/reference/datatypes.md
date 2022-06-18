@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Datatypes - deftype, defrecord and reify
-summary : Clojure Reference 문서 번역 - 번역중
+summary : Clojure Reference 문서 번역
 date    : 2022-06-18 11:02:52 +0900
-updated : 2022-06-18 17:30:48 +0900
+updated : 2022-06-18 17:51:24 +0900
 tag     : 
 toc     : true
 public  : true
@@ -325,7 +325,5 @@ Example:
 [deftype]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deftype
 [protocols]: https://clojure.org/reference/protocols
 [reify]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify
-
-## 주석
 
 
