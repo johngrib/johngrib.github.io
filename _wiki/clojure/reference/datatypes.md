@@ -3,7 +3,7 @@ layout  : wiki
 title   : Datatypes - deftype, defrecord and reify
 summary : Clojure Reference 문서 번역 - 번역중
 date    : 2022-06-18 11:02:52 +0900
-updated : 2022-06-18 17:26:10 +0900
+updated : 2022-06-18 17:30:48 +0900
 tag     : 
 toc     : true
 public  : true
@@ -266,6 +266,59 @@ reify를 사용한 결과는 proxy를 사용한 것보다 더 나은 성능을 �
 제약 조건이 금지되지 않은 모든 경우에 대해 **reify**는 proxy보다 더 선호됩니다.
 
 ### Java annotation support
+
+>
+Types created with deftype, defrecord, and definterface, can emit classes that include Java annotations for Java interop. Annotations are described as meta on:
+
+deftype, defrecord, definterface로 생성한 타입은 Java interop을 위한 Java annotation을 포함하는 클래스를 내보낼 수 있습니다.
+annotation은 다음과 같은 메타데이터로 명시할 수 있습니다.
+
+>
+- Type name (deftype/record/interface) - class annotations
+- Field names (deftype/record) - field annotations
+- Method names (deftype/record) - method annotations
+
+<span/>
+
+>
+Example:
+>
+> ```clojure
+> (import [java.lang.annotation Retention RetentionPolicy Target ElementType]
+>         [javax.xml.ws WebServiceRef WebServiceRefs])
+>
+> (definterface Foo (foo []))
+> 
+> ;; annotation on type
+> (deftype ^{Deprecated true
+>            Retention RetentionPolicy/RUNTIME
+>            javax.annotation.processing.SupportedOptions ["foo" "bar" "baz"]
+>            javax.xml.ws.soap.Addressing {:enabled false :required true}
+>            WebServiceRefs [(WebServiceRef {:name "fred" :type String})
+>                            (WebServiceRef {:name "ethel" :mappedName "lucy"})]}
+>   Bar [^int a
+>        ;; on field
+>        ^{:tag int
+>          Deprecated true
+>          Retention RetentionPolicy/RUNTIME
+>          javax.annotation.processing.SupportedOptions ["foo" "bar" "baz"]
+>          javax.xml.ws.soap.Addressing {:enabled false :required true}
+>          WebServiceRefs [(WebServiceRef {:name "fred" :type String})
+>                          (WebServiceRef {:name "ethel" :mappedName "lucy"})]}
+>        b]
+>   ;; on method
+>   Foo (^{Deprecated true
+>          Retention RetentionPolicy/RUNTIME
+>          javax.annotation.processing.SupportedOptions ["foo" "bar" "baz"]
+>          javax.xml.ws.soap.Addressing {:enabled false :required true}
+>          WebServiceRefs [(WebServiceRef {:name "fred" :type String})
+>                          (WebServiceRef {:name "ethel" :mappedName "lucy"})]}
+>        foo [this] 42))
+>
+> (seq (.getAnnotations Bar))
+> (seq (.getAnnotations (.getField Bar "b")))
+> (seq (.getAnnotations (.getMethod Bar "foo" nil)))
+> ```
 
 [datatypes]: https://clojure.org/reference/datatypes
 [defrecord]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord
