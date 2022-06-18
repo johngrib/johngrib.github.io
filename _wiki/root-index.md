@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-18 10:34:32 +0900
+updated : 2022-06-18 11:02:51 +0900
 regenerate: true
 ---
 
@@ -302,7 +302,7 @@ regenerate: true
     * 05 [[/clojure/macros]]
     * 06 [[/clojure/reference/other-functions]]
     * 07 [[/clojure/reference/data-structures]]
-    * 08 /clojure/reference/datatypes
+    * 08 [[/clojure/reference/datatypes]]
     * 09 /clojure/reference/sequences
     * 10 [[/clojure/reference/transient]]
     * 11 /clojure/reference/transducers
