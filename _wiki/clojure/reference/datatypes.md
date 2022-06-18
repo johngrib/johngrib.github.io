@@ -3,7 +3,7 @@ layout  : wiki
 title   : Datatypes - deftype, defrecord and reify
 summary : Clojure Reference 문서 번역 - 번역중
 date    : 2022-06-18 11:02:52 +0900
-updated : 2022-06-18 16:37:11 +0900
+updated : 2022-06-18 17:02:20 +0900
 tag     : 
 toc     : true
 public  : true
@@ -183,6 +183,51 @@ defrecord를 사용하면 정보를 일반적인 방식으로 처리할 수 있�
 AOT 컴파일된 deftype/defrecord는 **gen-class**처럼 사용하는 것이 적절한 때도 있는데, 그런 경우에는 gen-class 보다 더 성능이 좋을 것입니다.
 
 ### Datatypes and protocols are opinionated
+
+**datatype과 protocol의 원칙**
+
+>
+While datatypes and protocols have well-defined relationships with host constructs, and make for a great way to expose Clojure functionality to Java programs, they are not primarily interop constructs.
+That is, they make no effort to completely mimic or adapt to all of the OO mechanisms of the host.
+In particular, they reflect the following opinions:
+>
+- Concrete derivation is bad
+    - you cannot derive datatypes from concrete classes, only interfaces
+- You should always program to protocols or interfaces
+    - datatypes cannot expose methods not in their protocols or interfaces
+- Immutability should be the default
+    - and is the only option for records
+- Encapsulation of information is folly
+    - fields are public, use protocols/interfaces to avoid dependencies
+- Tying polymorphism to inheritance is bad
+    - protocols free you from that
+
+datatype과 protocol은 호스트 구조체와 잘 맞물려 돌아가도록 정의되었고, Java 프로그램에 Clojure의 기능을 노출하는 좋은 방법을 제공하긴 하지만 기본적으로 구조체 interop은 아닙니다.
+즉, 호스트의 모든 객체지향 메커니즘을 완전히 모방하거나 적용하려 하지 않는다는 것입니다.
+이는 다음과 같은 의견을 반영한 것입니다.
+
+- 구체 상속은 나쁘다
+    - 구체 클래스에서 datatype을 상속하지 않도록 합니다. 인터페이스만 상속하도록 합니다.
+- 항상 protocol이나 interface만 사용해서 프로그래밍하도록 합니다.
+    - datatype가 자신의 protocol이나 interface에 없는 메소드를 노출하는 것은 불가능합니다.
+- 불변이 기본이어야 합니다.
+    - record는 불변으로만 만들 수 있습니다.
+- 정보의 캡슐화는 어려석은 선택입니다.
+    - 모든 필드를 public으로 하고, 의존성을 피하기 위해 protocol/interface를 사용합니다.
+- 다형성을 상속에 연계시키는 것은 나쁩니다.
+    - protocol은 이런 연계에서 해방시킵니다.
+
+>
+If you use datatypes and protocols you will have a clean, interface-based API to offer your Java consumers.
+If you are dealing with a clean, interface-based Java API, datatypes and protocols can be used to interoperate with and extend it.
+If you have a 'bad' Java API, you will have to use gen-class.
+Only in this way can the programming constructs you use to design and implement your Clojure programs be free of the incidental complexities of OO.
+
+datatype과 protocol을 사용하면 인터페이스 기반의 깨끗한 API를 여러분의 Java 소비자들에게 제공할 수 있습니다.
+깨끗한 인터페이스 기반의 Java API를 다룬다면 datatype과 protocol을 사용해서 API를 확장하고 상호 운용하는 것이 가능해집니다.
+만약 '나쁜' Java API가 있다면, gen-class를 사용해야 합니다.
+이것이 Clojure 프로그램을 설계하고 구현할 때 사용하는 프로그래밍 구조체에서 객체지향의 부수적인 복잡성을 떼어내는 유일한 방법입니다.
+
 
 ### reify
 
