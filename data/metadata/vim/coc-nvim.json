@@ -4,6 +4,6 @@
  "summary": "vim을 vscode처럼 사용할 수 있게 도와주는 자동완성 플러그인",
  "parent": "vim",
  "url": "/wiki/vim/coc-nvim",
- "updated": "2022-03-26 13:14:20 +0900",
+ "updated": "2022-06-19 00:47:07 +0900",
  "children": []
 }

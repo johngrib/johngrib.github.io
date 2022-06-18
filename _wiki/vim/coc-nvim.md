@@ -3,7 +3,7 @@ layout  : wiki
 title   : coc.nvim
 summary : vim을 vscode처럼 사용할 수 있게 도와주는 자동완성 플러그인
 date    : 2019-05-16 22:19:50 +0900
-updated : 2022-03-26 13:14:20 +0900
+updated : 2022-06-19 00:47:07 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -17,6 +17,24 @@ latex   : false
 
 ```viml
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+```
+
+## 설치된 플러그인 목록 확인
+
+`~/.config/coc/extensions/package.json` 파일을 확인하면 된다.
+
+다음은 2022-06-19 기준의 내 `package.json` 파일의 내용이다.
+
+```json
+{
+  "dependencies": {
+    "coc-clojure": ">=0.0.4",
+    "coc-explorer": ">=0.22.7",
+    "coc-go": ">=1.3.0",
+    "coc-pyright": ">=1.1.235",
+    "coc-ultisnips": ">=1.2.3"
+  }
+}
 ```
 
 ## Language Server 설치
@@ -117,3 +135,4 @@ coc.nvim에도 이슈가 등록되어 있으므로 읽어보도록 하자.
 * <https://github.com/neoclide/coc.nvim >
 * <https://github.com/neoclide/coc.nvim/wiki/Language-servers >
 * <https://github.com/neoclide/coc.nvim/wiki/Using-snippets >
+
