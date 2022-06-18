@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim help
 summary : 
 date    : 2022-02-26 00:38:03 +0900
-updated : 2022-02-26 00:51:35 +0900
+updated : 2022-06-18 21:50:40 +0900
 tag     : 
 toc     : true
 public  : true
@@ -29,6 +29,12 @@ E149: Sorry, no help for vimwiki
 
 ```
 :helptags ALL
+```
+
+이렇게 하는 것도 괜찮다.
+
+```
+:helptags $VIMRUNTIME/doc
 ```
 
 문제 해결과 별개로, [vim에는 `E149` 에러에 대한 한국어 설명도 포함](https://github.com/vim/vim/blob/113cb513f76d8866cbb6dc85fa18aded753e01da/src/po/ko.UTF-8.po#L1203-L1205 )되어 있다.
