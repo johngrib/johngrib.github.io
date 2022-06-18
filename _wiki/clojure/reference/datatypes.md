@@ -3,7 +3,7 @@ layout  : wiki
 title   : Datatypes - deftype, defrecord and reify
 summary : Clojure Reference 문서 번역 - 번역중
 date    : 2022-06-18 11:02:52 +0900
-updated : 2022-06-18 15:45:27 +0900
+updated : 2022-06-18 16:37:11 +0900
 tag     : 
 toc     : true
 public  : true
@@ -137,6 +137,50 @@ deftype과 defrecord의 차이점은 다음과 같습니다.
 - defrecord `Bar`가 정의될 때 map 하나를 받아 새로운 record 인스턴스를 만들어주는 `map->Bar` 함수가 자동으로 정의됩니다. (Clojure 1.3 이후 버전부터 가능.)
 
 ### Why have both deftype and defrecord?
+
+**deftype과 defrecord 둘 중 하나만 있어도 되는 거 아닌가요?**
+
+>
+It ends up that classes in most OO programs fall into two distinct categories: those classes that are artifacts of the implementation/programming domain, e.g. String or collection classes, or Clojure’s reference types; and classes that represent application domain information, e.g. Employee, PurchaseOrder etc.
+It has always been an unfortunate characteristic of using classes for application domain information that it resulted in information being hidden behind class-specific micro-languages, e.g. even the seemingly harmless employee.getName() is a custom interface to data.
+Putting information in such classes is a problem, much like having every book being written in a different language would be a problem.
+You can no longer take a generic approach to information processing.
+This results in an explosion of needless specificity, and a dearth of reuse.
+>
+This is why Clojure has always encouraged putting such information in maps, and that advice doesn’t change with datatypes.
+By using defrecord you get generically manipulable information, plus the added benefits of type-driven polymorphism, and the structural efficiencies of fields.
+OTOH, it makes no sense for a datatype that defines a collection like vector to have a default implementation of map, thus deftype is suitable for defining such programming constructs.
+>
+Overall, records will be better than structmaps for all information-bearing purposes, and you should move such structmaps to defrecord.
+It is unlikely much code was trying to use structmaps for programming constructs, but if so, you will find deftype much more suitable.
+>
+AOT-compiled deftype/defrecord may be suitable for some of the use cases of **gen-class**, where their limitations are not prohibitive. In those cases, they will have better performance than gen-class.
+
+어지간한 객체지향 프로그램의 클래스는 결국 두 가지 유형으로 나뉘게 됩니다.
+
+- 구현/프로그래밍 도메인을 위해 만든 클래스
+    - 예: String, collection 클래스, Clojure의 reference 클래스
+- 애플리케이션 도메인 정보를 표현하는 클래스
+    - 예: `Employee`, `PurchaseOrder` 등
+
+애플리케이션 도메인 정보를 위한 클래스의 사용에는 안타까운 특성이 있습니다.
+클래스별로 정의된 마이크로 언어 뒤에 정보가 숨겨져 있다는 거죠.
+예를 들어 `employee.getName()`은 겉보기에 무난해 보이지만 데이터에 대한 커스텀 인터페이스이기도 합니다.
+
+이런 클래스에 정보를 집어넣는 것은, 마치 세상의 모든 책이 각기 다른 언어로 쓰여지는 것과 같은 문제를 가지고 있습니다.
+
+데이터를 처리하기 위한 일반적인 접근이 불가능해지는 것입니다.
+이로 인해 불필요한 특이성의 폭발이 발생하며 재사용도 극히 어려워집니다.
+
+이것이 바로 Clojure가 datatype과 관계 없이 항상 자료를 map에 넣는 것을 권장하고 있는 이유입니다.
+defrecord를 사용하면 정보를 일반적인 방식으로 처리할 수 있습니다. 그리고 타입 기반의 다형성이라는 이점과 필드들을 포함하는 구조체라는 이점을 함께 얻을 수 있습니다.
+반면에, vector 같은 컬렉션을 정의할 때라면 map의 기본 구현을 제공해주는 defrecord는 적절하지 않습니다.
+이런 프로그래밍 구조를 정의할 때에는 deftype이 적합합니다.
+
+전반적으로 모든 종류의 정보 전달에 대해 record는 structmap보다 나은 선택입니다. 따라서 structmap으로 만들어둔 게 있다면 defrecord로 바꾸도록 해야 합니다.
+프로그래밍 구조체에 대해서 일반적으로 structmap을 사용했을 것 같지는 않지만, 만약 그렇게 했다면 그보다 deftype이 더 적합하다는 것도 알게 될 것입니다.
+
+AOT 컴파일된 deftype/defrecord는 **gen-class**처럼 사용하는 것이 적절한 때도 있는데, 그런 경우에는 gen-class 보다 더 성능이 좋을 것입니다.
 
 ### Datatypes and protocols are opinionated
 
