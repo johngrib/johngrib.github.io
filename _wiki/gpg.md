@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2022-06-19 20:03:34 +0900
+updated : 2022-06-19 20:21:40 +0900
 tag     : bash encryption gnu command
 toc     : true
 public  : true
@@ -944,6 +944,7 @@ $ killall gpg-agent
 * git 서명 관련
     * [Managing commit signature verification (help.github.com)](https://help.github.com/articles/managing-commit-signature-verification/ )
     * [Git 도구 - 내 작업에 서명하기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%EB%82%B4-%EC%9E%91%EC%97%85%EC%97%90-%EC%84%9C%EB%AA%85%ED%95%98%EA%B8%B0 )
+    * [Telling Git about your signing key (docs.github.com)]( https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key )
 
 ## 주석
 
