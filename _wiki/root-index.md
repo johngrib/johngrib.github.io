@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-20 00:07:30 +0900
+updated : 2022-06-20 00:31:22 +0900
 regenerate: true
 ---
 
@@ -354,6 +354,7 @@ regenerate: true
 ## [[jargon]]
 
 * [[/jargon/airplane-rule]]
+* [[/jargon/kiss-principle]]
 * [[/jargon/moore-s-law]]
 
 * [[ACID]]
