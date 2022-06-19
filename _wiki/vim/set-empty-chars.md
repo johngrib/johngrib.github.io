@@ -3,11 +3,11 @@ layout  : wiki
 title   : Vim 공백 문자 조작 설정
 summary : 
 date    : 2018-10-31 08:32:31 +0900
-updated : 2018-10-31 10:00:21 +0900
+updated : 2022-06-19 14:00:01 +0900
 tag     : vim
 toc     : true
 public  : true
-parent  : [[vim]]
+parent  : [[/vim]]
 latex   : false
 ---
 * TOC

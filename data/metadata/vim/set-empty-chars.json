@@ -3,7 +3,7 @@
  "title": "Vim 공백 문자 조작 설정",
  "summary": "",
  "parent": "vim",
- "url": "/wiki/vim-with-space-char",
- "updated": "2018-10-31 10:00:21 +0900",
+ "url": "/wiki/vim/set-empty-chars",
+ "updated": "2022-06-19 14:00:01 +0900",
  "children": []
 }
