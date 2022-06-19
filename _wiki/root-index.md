@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-18 11:02:51 +0900
+updated : 2022-06-19 09:58:17 +0900
 regenerate: true
 ---
 
@@ -598,6 +598,7 @@ regenerate: true
 * [[/vim/quickfix]]
 * [[/vim/rest-console]]
 * [[/vim/ultisnips]]
+* [[/vim/window]]
 
 * [[ideavim]]
 * [[two-views-of-vim]]

@@ -27,6 +27,7 @@
  "vim/quickfix",
  "vim/rest-console",
  "vim/ultisnips",
+ "vim/window",
  "vimwiki",
  "web-browser-vim"
 ]
