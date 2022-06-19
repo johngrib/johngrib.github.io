@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : Clojure Metadata
-summary : 
+title   : Metadata
+summary : Clojure Reference 문서 번역
 date    : 2022-02-15 23:36:00 +0900
-updated : 2022-02-16 10:05:18 +0900
+updated : 2022-06-19 19:28:58 +0900
 tag     : clojure
 toc     : true
 public  : true
