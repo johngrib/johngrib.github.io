@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-19 16:07:13 +0900
+updated : 2022-06-20 00:07:30 +0900
 regenerate: true
 ---
 
@@ -353,9 +353,10 @@ regenerate: true
 
 ## [[jargon]]
 
+* [[/jargon/airplane-rule]]
 * [[/jargon/moore-s-law]]
+
 * [[ACID]]
-* [[airplain-rule]]
 * [[amdahl-s-law]]
 * [[Boy-Scout-Rule]]
 * [[Brooks-s-law]]

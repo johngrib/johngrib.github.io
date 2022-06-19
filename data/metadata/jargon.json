@@ -6,7 +6,6 @@
  "updated": "2022-01-01 12:40:18 +0900",
  "children": [
   "ACID",
-  "airplain-rule",
   "amdahl-s-law",
   "Boy-Scout-Rule",
   "Brooks-s-law",
@@ -20,6 +19,7 @@
   "hollywood-principle",
   "imitation-game",
   "information-hiding",
+  "jargon/airplane-rule",
   "jargon/moore-s-law",
   "kees-koster-good-programming-language",
   "Kerckhoffs-s-principle",
