@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.equals 메소드
 summary :
 date    : 2018-03-07 21:40:19 +0900
-updated : 2021-10-04 11:25:28 +0900
+updated : 2022-06-19 19:16:28 +0900
 tag     : java 번역
 toc     : true
 public  : true
@@ -138,8 +138,6 @@ public boolean equals(Object o) {
 }
 ```
 
-#### 번역
-
 equals 메소드는 this 집합(Set)과 주어진 객체의 동치 관계를 비교합니다.
 
 주어진 객체가 집합이고, 두 집합의 크기가 같으며, 주어진 집합의 모든 원소가 this 집합에 포함되어 있다면 `true`를 리턴합니다.
@@ -200,8 +198,6 @@ public boolean equals(Object o) {
     return !(e1.hasNext() || e2.hasNext());
 }
 ```
-
-#### 번역
 
 equals 메소드는 this 리스트와 지정한 객체의 동치 관계를 비교합니다.
 
