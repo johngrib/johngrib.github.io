@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-19 14:41:32 +0900
+updated : 2022-06-19 16:03:48 +0900
 regenerate: true
 ---
 
@@ -306,7 +306,11 @@ regenerate: true
     * 09 [[/clojure/reference/sequences]]
     * 10 [[/clojure/reference/transient]]
     * 11 /clojure/reference/transducers
+    * 12 /clojure/reference/multimethods - https://clojure.org/reference/multimethods
+    * 13 /clojure/reference/protocols - https://clojure.org/reference/protocols
     * 14 [[/clojure/reference/metadata]]
+    * 15 /clojure/reference/namespaces - https://clojure.org/reference/namespaces
+    * 16 /clojure/reference/libs - https://clojure.org/reference/libs
     * ?? /clojure/reference/lazy - https://clojure.org/reference/lazy
 * [[/clojure/guide]]
     * LANGUAGE
