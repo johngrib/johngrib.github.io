@@ -1,11 +1,11 @@
 [
  "basename",
  "bash-history",
- "bat-cmd",
  "bc",
  "brew",
  "chsh-cmd",
  "cmd/ag",
+ "cmd/bat",
  "cmd/bind",
  "cmd/cal",
  "cmd/column",
