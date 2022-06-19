@@ -3,8 +3,8 @@ layout  : wiki
 title   : Sequences
 summary : Clojure Reference 문서 번역
 date    : 2022-06-19 14:22:33 +0900
-updated : 2022-06-19 15:52:43 +0900
-tag     : 
+updated : 2022-06-19 16:06:29 +0900
+tag     : clojure 번역
 toc     : true
 public  : true
 parent  : [[/clojure/reference]]

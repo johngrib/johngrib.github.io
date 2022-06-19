@@ -5,6 +5,7 @@
  "clojure/macros",
  "clojure/reference/data-structures",
  "clojure/reference/other-functions",
+ "clojure/reference/sequences",
  "clojure/reference/special-forms",
  "clojure/reference/transient",
  "Go-Blog-translation",
