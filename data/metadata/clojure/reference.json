@@ -13,6 +13,7 @@
   "clojure/reference/datatypes",
   "clojure/reference/metadata",
   "clojure/reference/other-functions",
+  "clojure/reference/sequences",
   "clojure/reference/special-forms",
   "clojure/reference/transient",
   "clojure/repl-and-main"

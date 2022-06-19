@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-19 14:07:26 +0900
+updated : 2022-06-19 14:41:32 +0900
 regenerate: true
 ---
 
@@ -303,10 +303,11 @@ regenerate: true
     * 06 [[/clojure/reference/other-functions]]
     * 07 [[/clojure/reference/data-structures]]
     * 08 [[/clojure/reference/datatypes]]
-    * 09 /clojure/reference/sequences
+    * 09 [[/clojure/reference/sequences]]
     * 10 [[/clojure/reference/transient]]
     * 11 /clojure/reference/transducers
     * 14 [[/clojure/reference/metadata]]
+    * ?? /clojure/reference/lazy - https://clojure.org/reference/lazy
 * [[/clojure/guide]]
     * LANGUAGE
         * 01 [[/clojure/guide/spec]] 번역중
