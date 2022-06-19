@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2022-02-24 17:08:48 +0900
+updated : 2022-06-19 20:03:34 +0900
 tag     : bash encryption gnu command
 toc     : true
 public  : true
@@ -305,6 +305,11 @@ gpg: sending key 21831..... to hkp://pgp.key-server.io
 
 이후 키 서버로 들어가 키를 검색해 보면 `revoke`되었다는 표시가 뜨는 것을 확인할 수 있다.
 
+## 비밀 키 export
+
+```
+$ gpg --armor --export-secret-key testuser
+```
 
 ## 공개 키 import
 
