@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-02-14 23:31:51 +0900
+updated : 2022-06-20 09:11:09 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -342,6 +342,21 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [RFC 20](https://tools.ietf.org/html/rfc20#page-8 )
 * [fileformat.info/info/unicode/char/1B](http://www.fileformat.info/info/unicode/char/1B )
 * [Escape character(wikipedia)](https://en.wikipedia.org/wiki/Escape_character#ASCII_escape_character )
+
+#### Escape와 Alt
+
+터미널을 사용하다보면 Alt, Option 키를 누르는 것이 Escape 키를 누르는 것과 관련이 있다는 것을 알 수 있는데,
+이에 대해 해커 영어사전에서 설명해 둔 글이 있다.
+
+>
+3\. 명사. 사어. (PDP-10에서; 대문자로 사용된다.) 아스키 ESC 문자(ASCII 0011011)의 또 다른 명칭. 그 후 예전의 구식 단말장치의 키탑에 표시되었다. 또는 _altmode_(/awltmohd/).
+이 문자는 TECO를 사용하는 ITS 및 TOPS-10에서는 'escape'라고 전혀 발음하지 않고 언제나 alt이다.
+"Type alt alt to end a TECO command" "alt-U onto the system"(ITS 시스템에 로그온하기 위해).
+이는 아마도 escape라고 발음하기보다는 alt라고 하는 것이 편리하기 때문일 것이다.
+특히 앞의 예처럼 또 다른 ALT 또는 문자가 뒤따를 때는 말이다(혹은 또 다른 ALT 문자).
+>
+-- 해커 영어사전 제3판. 80쪽.
+
 
 ### Delete
 
@@ -1116,6 +1131,7 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 - [Basic Latin (Unicode block) (wikipedia)]( https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block) )
 - 세계를 바꾼 17가지 방정식 / 이언 스튜어트 저/김지선 역 / 사이언스북스 / 1판 7쇄 펴냄 2017년 06월 23일 / 원제: 17 Equations That Changed the World
 - 컴파일러 개발자가 들려주는 C 이야기 / 페터르 판데르린던 저/정기훈 역 / 인사이트(insight) / 초판 1쇄 발행 2022년 01월 14일 / 원제: Expert C Programming
+- 해커 영어사전 제3판 / ERIC S.RAYMOND 편 / 기전연구사 / 1998년 12월 25일 제1판 제1발행.
 
 
 ## 주석
