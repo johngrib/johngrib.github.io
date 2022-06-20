@@ -3,11 +3,11 @@ layout  : wiki
 title   : Java enum의 사용
 summary : 
 date    : 2020-01-05 16:23:57 +0900
-updated : 2020-01-05 22:33:57 +0900
+updated : 2022-06-21 00:13:40 +0900
 tag     : java
 toc     : true
 public  : true
-parent  : [[java]]
+parent  : [[/java]]
 latex   : false
 ---
 * TOC
@@ -378,3 +378,4 @@ Java API 문서에서는 `enum`의 `ordinal` 메서드에 대해 다음과 같�
 [api-ordinal]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Enum.html#ordinal()
 [api-enumset]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/EnumSet.html
 [api-enummap]: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/EnumMap.html
+
