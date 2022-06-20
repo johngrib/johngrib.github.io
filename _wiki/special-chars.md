@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-06-20 09:11:09 +0900
+updated : 2022-06-20 09:23:43 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -800,7 +800,7 @@ val hello = "hello, world"
 * C, C++, Java, JavaScript 에서 비트 쉬프트 연산자로 `<<`, `>>`가 쓰인다.
 * SQL에서는 not equal의 의미로 `<>` 연산자를 사용한다.
 
-| 읽는 방법   | less than, greater than, left/right angle bracket                          |
+| 읽는 방법   | less than, greater than, left/right angle bracket, left/right broket       |
 | 유니코드    | Unicode Character 'LESS-THAN SIGN' (U+003C) / 'GREATER-THAN SIGN' (U+003E) |
 | HTML entity | `&#60;`, `&#x3c;`, `&lt;` / `&#62;`, `&#x3e;`, `&gt;`                      |
 | UTF-8 (HEX) | 3C / 3E                                                                    |
@@ -810,6 +810,7 @@ val hello = "hello, world"
 * [fileformat.info/info/unicode/char/3E](http://www.fileformat.info/info/unicode/char/3E )
 * [Less-than sign(wikipedia)](https://en.wikipedia.org/wiki/Less-than_sign )
 * [Greater-than_sign(wikipedia)](https://en.wikipedia.org/wiki/Greater-than_sign )
+* [broket (jargon file)]( http://catb.org/jargon/html/B/broket.html )
 
 ### `=` Equals sign
 
