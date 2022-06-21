@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-06-21 21:58:32 +0900
+updated : 2022-06-21 22:02:00 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -435,6 +435,16 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [Unicode Character 'MUSIC SHARP SIGN' (U+266F)](http://www.fileformat.info/info/unicode/char/266f/index.htm ) - 음악의 샵
 * [Unicode Han Character 'well, mine shaft, pit' (U+4E95)(fileformat.info)](http://www.fileformat.info/info/unicode/char/4e95/index.htm ) - 한자: 우물 정
 * [Hashtag(wikipedia)](https://en.wikipedia.org/wiki/Hashtag#cite_ref-17 )
+
+>
+미국에서는 #을 보통 pound로 발음한다.
+그러나 이것은 좋은 생각이 아니다.
+해커 공화국에서는 오히려 pound sign이라고 하는 것이 더욱 적절하다고 여기고 있다(희한하게도 영국식 자판에서 화폐단위인 파운드 도형은 #로 대체된 것도 있다.
+이렇게 영국인들은 종종 미국 아스키 자판상의 #을 파운드라 불러 미국인들의 실수를 조장한다).
+미국식 어법은 선화증권상 파운드 무게를 단 후에 #을 사용하는 상업적 관행에서 유래한다.
+이 문자는 대개 미국을 제외한 나라에서는 hash라고 발음한다.
+>
+-- 해커 영어사전 제3판. 89쪽.
 
 #### `#`을 사용한 문자열 보간(interpolation)
 
