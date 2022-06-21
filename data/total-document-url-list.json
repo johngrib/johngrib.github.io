@@ -126,6 +126,7 @@
  "/wiki/clojure/reference/other-functions",
  "/wiki/clojure/reference/sequences",
  "/wiki/clojure/reference/special-forms",
+ "/wiki/clojure/reference/transducers",
  "/wiki/clojure/reference/transient",
  "/wiki/clojure/repl-and-main",
  "/wiki/clojure/study",
