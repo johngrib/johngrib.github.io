@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-06-20 09:23:43 +0900
+updated : 2022-06-21 21:58:32 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -560,10 +560,10 @@ $$$$$$$a;   // "World"
 * 많은 프로그래밍 언어에서 비트 AND 연산자로 사용한다.
 * `&&`는 많은 프로그래밍 언어에서 논리 AND 연산자로 사용한다.
 
-| 읽는 방법   | 앰퍼샌드, 앤, 앤드, ampersand, and sign, bitand |
-| 유니코드    | 'AMPERSAND' (U+0026)                            |
-| HTML entity | `&#38;`, `&#x26;`, `&amp;`                      |
-| UTF-8 (HEX) | 26                                              |
+| 읽는 방법   | 앰퍼샌드, 앤, 앤드, ampersand, amper, and, bitand |
+| 유니코드    | 'AMPERSAND' (U+0026)                              |
+| HTML entity | `&#38;`, `&#x26;`, `&amp;`                        |
+| UTF-8 (HEX) | 26                                                |
 
 * [RFC 20](https://tools.ietf.org/html/rfc20#section-4.2 )
 * [fileformat.info/info/unicode/char/26](http://www.fileformat.info/info/unicode/char/26 )
@@ -967,10 +967,10 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * Vim에서는 보통 `<Leader>`키로 지정한다.
 * LaTeX에서 키워드 prefix로 사용한다. `\lt`, `\gt`, `\frac` 등등.
 
-| 읽는 방법   | 백슬래시, 역슬래시, backslash, escape, reverse slash |
-| 유니코드    | 'REVERSE SOLIDUS' (U+005C)                           |
-| HTML entity | `&#92;`, `&#x5c;`                                    |
-| UTF-8 (HEX) | 5C                                                   |
+| 읽는 방법   | 백슬래시, 역슬래시, backslash, escape, reverse slash, slosh |
+| 유니코드    | 'REVERSE SOLIDUS' (U+005C)                                  |
+| HTML entity | `&#92;`, `&#x5c;`                                           |
+| UTF-8 (HEX) | 5C                                                          |
 
 * [RFC 20](https://tools.ietf.org/html/rfc20#section-4.2 )
 * [fileformat.info/info/unicode/char/5C](http://www.fileformat.info/info/unicode/char/5C )
@@ -991,10 +991,10 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
     * `\pi^3`은 $$ \pi^3 $$이 된다.
     * `\log_2^8`은 $$ \log_2^8 $$이 된다.
 
-| 읽는 방법   | 카렛, 캐럿, caret, control   |
-| 유니코드    | 'CIRCUMFLEX ACCENT' (U+005E) |
-| HTML entity | `&#94;`, `&#x5e;`            |
-| UTF-8 (HEX) | 5E                           |
+| 읽는 방법   | 카렛, 캐럿, caret, control, hat, uparrow |
+| 유니코드    | 'CIRCUMFLEX ACCENT' (U+005E)             |
+| HTML entity | `&#94;`, `&#x5e;`                        |
+| UTF-8 (HEX) | 5E                                       |
 
 * [RFC 20](https://tools.ietf.org/html/rfc20#section-4.2 )
 * [fileformat.info/info/unicode/char/5E](http://www.fileformat.info/info/unicode/char/5E )
@@ -1009,10 +1009,10 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * PHP의 magic method들의 prefix로 `__`를 쓴다.
 * [JavaScript 라이브러리 underscore.js](http://underscorejs.org/)를 쓰면 `_` 객체에서 underscore.js의 함수들을 꺼내 쓸 수 있다.
 
-| 읽는 방법   | 언더바, 언더스코어, 밑줄, underline, underscore, underbar |
-| 유니코드    | 'LOW LINE' (U+005F)                                       |
-| HTML entity | `&#95;`, `&#x5f;`                                         |
-| UTF-8 (HEX) | 5F                                                        |
+| 읽는 방법   | 언더바, 언더스코어, 밑줄, underline, underscore, underbar, under |
+| 유니코드    | 'LOW LINE' (U+005F)                                              |
+| HTML entity | `&#95;`, `&#x5f;`                                                |
+| UTF-8 (HEX) | 5F                                                               |
 
 * [RFC 20](https://tools.ietf.org/html/rfc20#section-4.2 )
 * [fileformat.info/info/unicode/char/5F](http://www.fileformat.info/info/unicode/char/5F )
@@ -1084,10 +1084,10 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
     * `?` : 한 글자
     * `~?` : ?
 
-| 읽는 방법   | 물결, tilde, not   |
-| 유니코드    | 'TILDE' (U+007E)   |
-| HTML entity | `&#126;`, `&#x7e;` |
-| UTF-8 (HEX) | 7E                 |
+| 읽는 방법   | 물결, tilde, squiggle, twiddle, not |
+| 유니코드    | 'TILDE' (U+007E)                    |
+| HTML entity | `&#126;`, `&#x7e;`                  |
+| UTF-8 (HEX) | 7E                                  |
 
 * [RFC 20](https://tools.ietf.org/html/rfc20#section-4.2 )
 * [fileformat.info/info/unicode/char/7E](http://www.fileformat.info/info/unicode/char/7E )
