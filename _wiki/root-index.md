@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-21 00:13:28 +0900
+updated : 2022-06-21 22:13:40 +0900
 regenerate: true
 ---
 
@@ -29,9 +29,6 @@ regenerate: true
     * [[/review/2019]]
     * [[/review/2018]]
     * [[/review/2017]]
-
-* log-everything (아무거나 기록)
-    * [[log-2021]]
 
 ## [[news]]
 
