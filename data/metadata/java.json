@@ -27,6 +27,7 @@
   "java/javadoc",
   "java/object-equals",
   "java/object-hashcode",
+  "java/object-tostring",
   "java/stream",
   "java/switch",
   "java/synchronized",
@@ -36,7 +37,6 @@
   "java8-why-permgen-removed",
   "jdk13",
   "jvm",
-  "Object-toString",
   "private-constructor",
   "ternary-operator-and-null-pointer-exception",
   "use-java-primitive-type-for-performance"

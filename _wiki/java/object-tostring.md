@@ -3,11 +3,11 @@ layout  : wiki
 title   : java.lang.Object.toString 메소드
 summary :
 date    : 2018-03-10 23:04:50 +0900
-updated : 2020-05-27 14:03:25 +0900
+updated : 2022-06-21 22:20:20 +0900
 tag     : java 번역
 toc     : true
 public  : true
-parent  : [[java]]
+parent  : [[/java]]
 latex   : false
 ---
 * TOC
@@ -141,3 +141,4 @@ public class ToStringExample {
 
 - 이펙티브 자바 (2판) / 조슈아 블로크 저 / 이병준 역 / 인사이트(insight) / 초판 2쇄 2015년 07월 21일
 - 이펙티브 자바 (3판) / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+
