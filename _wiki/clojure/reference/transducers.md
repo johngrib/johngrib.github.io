@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-22 23:47:38 +0900
+updated : 2022-06-22 23:51:49 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -150,6 +150,12 @@ The following functions produce a transducer when the input collection is omitte
 [take]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take
 
 #### Using Transducers
+
+>
+Transducers can be used in many contexts (see below for how to create new ones).
+
+transduce는 다양한 상황에서 사용할 수 있습니다(새로운 transducer를 만드는 방법은 아래를 참고하세요).
+
 #### transduce
 #### eduction
 #### into
