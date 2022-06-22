@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-22 00:07:50 +0900
+updated : 2022-06-22 23:47:38 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -51,6 +51,104 @@ transducer는 감소 함수가 다른 감소 함수로 변환되는 것입니다
 ```
 
 ### Defining Transformations With Transducers
+
+>
+Most sequence functions included in Clojure have an arity that produces a transducer.
+This arity omits the input collection; the inputs will be supplied by the process applying the transducer.
+_Note: this reduced arity is not currying or partial application._
+>
+For example:
+>
+> ```clojure
+> (filter odd?) ;; returns a transducer that filters odd
+> (map inc)     ;; returns a mapping transducer for incrementing
+> (take 5)      ;; returns a transducer that will take the first 5 values
+> ```
+
+Clojure에 포함된 대부분의 시퀀스 함수들은 transducer를 생성하는 arity를 갖고 있습니다.
+이 arity에는 입력 collection이 생략되어 있습니다.
+왜냐하면 입력은 transducer를 적용하는 프로세스가 제공할 것이기 때문입니다.
+
+참고: 이런 collection이 빠져 있는 arity는 currying이나 partial 적용과는 다른 것입니다.
+
+예를 들어 봅시다.
+
+```clojure
+(filter odd?) ;; 홀수를 필터링하는 transducer를 리턴합니다
+(map inc)     ;; 수를 증가시키는 mapping transducer를 리턴합니다.
+(take 5)      ;; 첫 다섯 값을 취하는 transducer를 리턴합니다.
+```
+
+>
+Transducers compose with ordinary function composition.
+A transducer performs its operation before deciding whether and how many times to call the transducer it wraps.
+The recommended way to compose transducers is with the existing **comp** function:
+
+transducer는 일반적인 함수들의 조합으로 이루어집니다.
+transducer는 자신이 감싸는 transducer를 몇 번이나 호출할지를 결정하기 전에 먼저 자신의 작업을 수행합니다.
+transducer를 만들 때 권장하는 방법은 **comp** 함수를 사용하는 것입니다.
+
+> ```clojure
+> (def xf
+>   (comp
+>     (filter odd?)
+>     (map inc)
+>     (take 5)))
+> ```
+
+<span/>
+
+>
+The transducer xf is a transformation stack that will be applied by a process to a series of input elements.
+Each function in the stack is performed _before_ the operation it wraps.
+Composition of the transformer runs right-to-left but builds a transformation stack that runs left-to-right (filtering happens before mapping in this example).
+
+xf 라는 transducer는 일련의 입력 원소들에 적용되는 변환 스택이라 할 수 있습니다.
+스택을 이루고 있는 각각의 함수들은 하나의 스택으로 포장되기 전에 먼저 처리됩니다.
+변환기는 오른쪽에서 왼쪽으로 조합되지만, 실행은 왼쪽에서 오른쪽으로 진행됩니다.
+(이 예제에서는 filtering을 먼저 하고 그 다음에 mapping이 이뤄지게 됩니다.
+
+>
+As a mnemonic, remember that the ordering of transducer functions in **comp** is the same order as sequence transformations in **\-\>\>**. The transformation above is equivalent to the sequence transformation:
+
+**comp**에 포함된 transducer 함수들의 작동 순서가 `->>` 매크로의 시퀀스 변환과 순서가 같다는 것을 기억해 두세요.
+즉, 위의 예제 속 변환은 아래의 시퀀스 변환과 같습니다.
+
+> ```clojure
+> (->> coll
+>      (filter odd?)
+>      (map inc)
+>      (take 5))
+> ```
+
+<span/>
+
+>
+The following functions produce a transducer when the input collection is omitted: [map][map] [cat][cat] [mapcat][mapcat] [filter][filter] [remove][remove] [take][take] [take-while][take-while] [take-nth][take-nth] [drop][drop] [drop-while][drop-while] [replace][replace] [partition-by][partition-by] [partition-all][partition-all] [keep][keep] [keep-indexed][keep-indexed] [map-indexed][map-indexed] [distinct][distinct] [interpose][interpose] [dedupe][dedupe] [random-sample][random-sample]
+
+이 함수들은 입력 collection이 생략된다면 transducer를 생성하게 됩니다: [map][map] [cat][cat] [mapcat][mapcat] [filter][filter] [remove][remove] [take][take] [take-while][take-while] [take-nth][take-nth] [drop][drop] [drop-while][drop-while] [replace][replace] [partition-by][partition-by] [partition-all][partition-all] [keep][keep] [keep-indexed][keep-indexed] [map-indexed][map-indexed] [distinct][distinct] [interpose][interpose] [dedupe][dedupe] [random-sample][random-sample]
+
+[cat]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cat
+[dedupe]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dedupe
+[distinct]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/distinct
+[drop-while]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-while
+[drop]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop
+[filter]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter
+[interpose]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interpose
+[keep-indexed]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed
+[keep]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep
+[map-indexed]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map-indexed
+[map]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map
+[mapcat]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/mapcat
+[partition-all]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-all
+[partition-by]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-by
+[random-sample]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/random-sample
+[remove]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove
+[replace]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace
+[take-nth]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-nth
+[take-while]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-while
+[take]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take
+
 #### Using Transducers
 #### transduce
 #### eduction
