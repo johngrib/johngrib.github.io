@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-26 22:59:01 +0900
+updated : 2022-06-26 23:07:45 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -193,6 +193,17 @@ These applications will be performed each time reduce/iterator is called.
 ```
 
 #### into
+
+>
+To apply a transducer to an input collection and construct a new output collection, use [into][into] (which efficiently uses reduce and transients if possible):
+
+컬렉션에 transducer를 적용해서 새로운 컬렉션을 생성하려면 [into][into] 함수를 사용하세요.
+(가능한 경우에 한해 reduce와 transient를 써서 작업을 최적화해줍니다.)
+
+```clojure
+(into [] xf (range 1000))
+```
+
 #### sequence
 ### Creating Transducers
 #### Early termination
@@ -207,6 +218,7 @@ These applications will be performed each time reduce/iterator is called.
 [eduction]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/eduction
 [filter]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter
 [interpose]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interpose
+[into]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/into
 [keep-indexed]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed
 [keep]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep
 [map-indexed]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/map-indexed
