@@ -7,6 +7,7 @@
  "clojure/reference/other-functions",
  "clojure/reference/sequences",
  "clojure/reference/special-forms",
+ "clojure/reference/transducers",
  "clojure/reference/transient",
  "Go-Blog-translation",
  "golang-debugging-what-you-deploy",
