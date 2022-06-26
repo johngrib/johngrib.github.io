@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-27 00:09:18 +0900
+updated : 2022-06-27 00:32:01 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -290,6 +290,60 @@ transducer를 사용하는 프로세스는 step 함수가 reduced 값을 리턴�
 
 
 #### Transducers with reduction state
+
+>
+Some transducers (such as **take**, **partition-all**, etc) require state during the reduction process.
+This state is created each time the transducible process applies the transducer.
+For example, consider the dedupe transducer that collapses a series of duplicate values into a single value.
+This transducer must remember the previous value to determine whether the current value should be passed on:
+
+**take**나 **partition-all** 같은 몇몇 transducer들은 reduce 프로세스가 진행되는 동안 필수적으로 "상태"를 사용합니다.
+이런 "상태"는 변환 프로세스에 transducer를 적용할 때마다 생성됩니다.
+예를 들어, 연속적으로 나타나는 중복값이 있을 때 하나만 남겨놓는 dedupe transducer를 생각해 봅시다.
+이 transducer는 현재 보고 있는 값을 보존할지 말 지를 판별해야 하므로 반드시 이전 값을 기억해야만 합니다.
+
+```clojure
+(defn dedupe []
+  (fn [xf]
+    (let [prev (volatile! ::none)]
+      (fn
+        ([] (xf))
+        ([result] (xf result))
+        ([result input]
+          (let [prior @prev]
+            (vreset! prev input)
+              (if (= prior input)
+                result
+                (xf result input))))))))
+```
+
+>
+**역주**: 이 dedupe 함수를 다음과 같이 사용할 수 있다.
+>
+> ```clojure
+> (sequence (dedupe) [1 1 1 2 2 3 3 3])
+> ;; => (1 2 3)
+>
+> (transduce (dedupe) + [1 1 1 2 2 3 3 3])
+> ;; => 6
+> ```
+{:style="background-color: #ecf1e8;"}
+
+>
+In dedupe, **prev** is a stateful container that stores the previous value during the reduction.
+The prev value is a volatile for performance, but it could also be an atom.
+The prev value will not be initialized until the transducing process starts (in a call to **transduce** for example).
+The stateful interactions are therefore contained within the context of the transducible process.
+>
+In the completion step, a transducer with reduction state should flush state prior to calling the nested transformer’s completion function, unless it has previously seen a reduced value from the nested step in which case pending state should be discarded.
+
+위의 dedupe 함수에서 `prev`는 reduce 과정에서 이전 값을 보관하는 상태 저장 컨테이너라 할 수 있습니다.
+prev 값은 성능을 위해 volatile로 선언되며, atom으로 선언될 수도 있습니다.
+prev 값은 변환 프로세스가 시작되기 전까지는 초기화되지 않습니다.
+즉 상태와 관련된 작업은 변환 프로세스 컨텍스트 안쪽에서만 수행됩니다.
+
+reduction 상태를 갖는 transducer가 completion step이 됐을 때, 아직 reduced 값을 보지 못한 중첩된 변환기가 있다면 completion 함수를 호출하기 전에 상태를 flush해야 합니다. 이렇게 되면 pending 상태는 폐기해야 합니다.
+
 ### Creating Transducible Processes
 
 [cat]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cat
