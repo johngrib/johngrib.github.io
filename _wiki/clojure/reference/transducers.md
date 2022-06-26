@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-27 00:32:01 +0900
+updated : 2022-06-27 00:42:05 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -345,6 +345,29 @@ prev 값은 변환 프로세스가 시작되기 전까지는 초기화되지 않
 reduction 상태를 갖는 transducer가 completion step이 됐을 때, 아직 reduced 값을 보지 못한 중첩된 변환기가 있다면 completion 함수를 호출하기 전에 상태를 flush해야 합니다. 이렇게 되면 pending 상태는 폐기해야 합니다.
 
 ### Creating Transducible Processes
+
+>
+Transducers are designed to be used in many kinds of processes.
+A transducible process is defined as a succession of steps where each step ingests an input.
+The source of the inputs is specific to each process (from a collection, an iterator, a stream, etc).
+Similarly, the process must choose what to do with the outputs produced by each step.
+>
+If you have a new context for applying transducers, there are a few general rules to be aware of:
+>
+- If a step function returns a reduced value, the transducible process must not supply any more inputs to the step function. The reduced value must be unwrapped with deref before completion.
+- A completing process must call the completion operation on the final accumulated value exactly once.
+- A transducing process must encapsulate references to the function returned by invoking a transducer - these may be stateful and unsafe for use across threads.
+
+transducer는 다양한 작업에 사용할 수 있도록 설계됐습니다.
+transducer를 사용하는 작업은 단계별로 입력을 수집하는 각각의 단계로 정의됩니다.
+입력 소스는 각 프로세스에 따라 달라집니다(collection, iterator, stream, 등).
+이와 비슷하게, 프로세스는 각 단계에서 생성된 결과물로 무엇을 할 것인지를 반드시 선택해야 합니다.
+
+transducer를 새로운 컨텍스트에 적용해보고 싶다면, 다음과 같은 일반적인 규칙들을 알아둬야 합니다.
+
+- step 함수가 reduced 값을 리턴한다면, transducing process는 step 함수에 입력을 추가로 제공하면 안됩니다. reduced 값은 completion이 실행되기 전에 반드시 deref로 래핑을 해제해야 합니다.
+- completing process는 최종 accumulated 값에 completion 작업을 정확히 딱 한 번만 호출해야 합니다.
+- transducing process는 transducer를 호출했을 때 리턴된 함수 레퍼런스들을 반드시 캡슐화해야 합니다 - 이런 레퍼런스들은 상태를 토대로 하므로 스레드 안전하지 않습니다.
 
 [cat]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cat
 [completing]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing
