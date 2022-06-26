@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-26 23:16:20 +0900
+updated : 2022-06-26 23:57:36 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -225,11 +225,53 @@ This behavior differs from the equivalent operations on lazy sequences.
 이 동작은 lazy sequence의 동작과 같지 않습니다.
 
 ### Creating Transducers
+
+>
+Transducers have the following shape (custom code in "…"):
+
+transducer는 다음과 같은 형태를 갖습니다.
+
+```clojure
+(fn [rf]
+  (fn ([] ...)
+      ([result] ...)
+      ([result input] ...)))
+```
+
+>
+Many of the core sequence functions (like map, filter, etc) take operation-specific arguments (a predicate, function, count, etc) and return a transducer of this shape closing over those arguments.
+In some cases, like **cat**, the core function _is_ a transducer function and does not take an **rf**.
+
+map, filter 같은 대다수의 core sequence 함수들은 연산을 명시하는 인자(predicate, function, count, 등등)를 받아서 그 인자들을 담고 있는 transducer를 리턴합니다.
+다만 core 함수 `cat` 같은 경우는 transducer 함수이지만 `rf`를 인자로 받지 않습니다.
+
+>
+The inner function is defined with 3 arities used for different purposes:
+>
+- **Init** (arity 0) - should call the init arity on the nested transform **rf**, which will eventually call out to the transducing process.
+- **Step** (arity 2) - this is a standard reduction function but it is expected to call the **rf** step arity 0 or more times as appropriate in the transducer. For example, filter will choose (based on the predicate) whether to call **rf** or not. map will always call it exactly once. cat may call it many times depending on the inputs.
+- **Completion** (arity 1) - some processes will not end, but for those that do (like **transduce**), the completion arity is used to produce a final value and/or flush state. This arity must call the **rf** completion arity exactly once.
+
+안쪽의 함수는 서로 다른 용도를 갖는 3 가지 arity들을 정의합니다.
+
+- **Init arity** (인자 0개) - 중첩된 변환 **rf**에 대해 init arity를 호출해야 합니다. 이를 통해 transduce를 수행하는 프로세스를 호출하게 됩니다.
+- **Step arity** (인자 2개) - step arity는 표준적인 reduce 함수이지만, transducer안에서 돌아갈 때는 **rf** step arity를 0회 이상 호출할 수 있습니다. 예를 들어 `filter`는 predicate를 통해 **rf**를 호출할지 말지 선택하게 됩니다. `map`은 **rf**를 정확히 딱 한 번 호출하며, `cat`은 입력에 따라 여러번 호출할 수도 있습니다.
+- **Completion arity** (인자 1개) - completion arity는 프로세스가 종료되는 경우(예를 들어 `transduce`)에 한해 최종 결과값을 생산하고 상태를 flush하는 데 사용됩니다. 이 arity는 **rf** completion arity를 딱 한번만 호출해야 합니다.
+
+>
+An example use of **completion** is **partition-all**, which must flush any remaining elements at the end of the input.
+The [completing][completing] function can be used to convert a reducing function to a transducing function by adding a default completion arity.
+
+**partition-all**이 **completion**의 사용 예라 할 수 있습니다.
+**partition-all**은 입력 끝에 남아있는 원소를 반드시 flush해야 하기 때문입니다.
+[completing][completing] 함수를 사용하면 디폴트 completion arity 하나를 추가해서 reducing 함수를 transducing 함수로 변환할 수 있습니다.
+
 #### Early termination
 #### Transducers with reduction state
 ### Creating Transducible Processes
 
 [cat]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cat
+[completing]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing
 [dedupe]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dedupe
 [distinct]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/distinct
 [drop-while]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-while
