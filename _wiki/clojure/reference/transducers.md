@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-22 23:51:49 +0900
+updated : 2022-06-26 22:29:42 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -128,6 +128,60 @@ The following functions produce a transducer when the input collection is omitte
 
 이 함수들은 입력 collection이 생략된다면 transducer를 생성하게 됩니다: [map][map] [cat][cat] [mapcat][mapcat] [filter][filter] [remove][remove] [take][take] [take-while][take-while] [take-nth][take-nth] [drop][drop] [drop-while][drop-while] [replace][replace] [partition-by][partition-by] [partition-all][partition-all] [keep][keep] [keep-indexed][keep-indexed] [map-indexed][map-indexed] [distinct][distinct] [interpose][interpose] [dedupe][dedupe] [random-sample][random-sample]
 
+#### Using Transducers
+
+>
+Transducers can be used in many contexts (see below for how to create new ones).
+
+transduce는 다양한 상황에서 사용할 수 있습니다(새로운 transducer를 만드는 방법은 아래를 참고하세요).
+
+#### transduce
+
+>
+One of the most common ways to apply transducers is with the [transduce][transduce] function, which is analogous to the standard reduce function:
+
+transducer를 적용하는 가장 일반적인 방법은 표준 reduce 함수와 비슷한 [transduce][transduce] 함수를 쓰는 것입니다.
+
+> ```clojure
+> (transduce xform f coll)
+> (transduce xform f init coll)
+> ```
+
+>
+**transduce** will immediately (not lazily) reduce over **coll** with the transducer **xform** applied to the reducing function **f**, using init as the initial value if supplied or (f) otherwise.
+f supplies the knowledge of how to accumulate the result, which occurs in the (potentially stateful) context of the reduce.
+
+위의 코드는 주어진 컬렉션 `coll`에 transducer인 `xform`을 적용한 결과를 함수 `f`로 reducing합니다.
+reducing은 lazy하지 않게 실행됩니다.
+초기값 `init`을 제공할 수도 있습니다.
+
+이 때, `f`의 역할은 reduce가 돌아가는 컨텍스트에서 결과들을 누적하는 방법을 제공하는 것입니다.
+
+> ```clojure
+> (def xf (comp (filter odd?) (map inc)))
+> (transduce xf + (range 5))
+> ;; => 6
+> (transduce xf + 100 (range 5))
+> ;; => 106
+> ```
+>
+The composed xf transducer will be invoked left-to-right with a final call to the reducing function f.
+In the last example, input values will be filtered, then incremented, and finally summed.
+
+함수들을 조합해 만든 `xf` transducer는 왼쪽에서 오른쪽으로 실행되며, 최종 단계에서 reducing 함수 f를 호출하게 됩니다.
+즉, 마지막 예제에서 입력값은 `filter` 되고 `inc`된 다음, 마지막으로 `+`를 통해 합계에 적용됩니다.
+
+![Nested transformations]( ./xf.png )
+
+
+#### eduction
+#### into
+#### sequence
+### Creating Transducers
+#### Early termination
+#### Transducers with reduction state
+### Creating Transducible Processes
+
 [cat]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cat
 [dedupe]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dedupe
 [distinct]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/distinct
@@ -148,20 +202,5 @@ The following functions produce a transducer when the input collection is omitte
 [take-nth]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-nth
 [take-while]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-while
 [take]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take
-
-#### Using Transducers
-
->
-Transducers can be used in many contexts (see below for how to create new ones).
-
-transduce는 다양한 상황에서 사용할 수 있습니다(새로운 transducer를 만드는 방법은 아래를 참고하세요).
-
-#### transduce
-#### eduction
-#### into
-#### sequence
-### Creating Transducers
-#### Early termination
-#### Transducers with reduction state
-### Creating Transducible Processes
+[transduce]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/transduce
 
