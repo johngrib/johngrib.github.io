@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-26 23:07:45 +0900
+updated : 2022-06-26 23:16:20 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -205,6 +205,25 @@ To apply a transducer to an input collection and construct a new output collecti
 ```
 
 #### sequence
+
+>
+To create a sequence from the application of a transducer to an input collection, use [sequence][sequence]:
+
+컬렉션에 transducer를 적용해서 새로운 sequence를 생성하려면 [sequence][sequence] 함수를 사용하세요.
+
+```clojure
+(sequence xf (range 1000))
+```
+
+>
+The resulting sequence elements are incrementally computed.
+These sequences will consume input incrementally as needed and fully realize intermediate operations.
+This behavior differs from the equivalent operations on lazy sequences.
+
+결과 sequence의 원소들은 점진적으로 계산됩니다.
+이러한 sequence들은 필요할 때마다 입력을 점진적으로 소비하며, 중간 작업을 완전히 realize합니다.
+이 동작은 lazy sequence의 동작과 같지 않습니다.
+
 ### Creating Transducers
 #### Early termination
 #### Transducers with reduction state
@@ -229,6 +248,7 @@ To apply a transducer to an input collection and construct a new output collecti
 [random-sample]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/random-sample
 [remove]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove
 [replace]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace
+[sequence]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sequence
 [take-nth]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-nth
 [take-while]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take-while
 [take]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/take
