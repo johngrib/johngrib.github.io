@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-26 22:29:42 +0900
+updated : 2022-06-26 22:59:01 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -175,6 +175,23 @@ In the last example, input values will be filtered, then incremented, and finall
 
 
 #### eduction
+
+>
+To capture the process of applying a transducer to a coll, use the [eduction][eduction] function.
+It takes any number of xforms and a final coll and returns a reducible/iterable application of the transducer to the items in coll.
+These applications will be performed each time reduce/iterator is called.
+
+[eduction][eduction] 함수를 사용하면 transducer를 coll에 적용하는 과정을 캡쳐할 수 있습니다.
+이 함수는 xform 여러개와 coll을 받아서, coll의 각 아이템에 대해 reducible/iterable한 transducer를 리턴합니다.
+
+이런 transducer는 reduce/iterator 함수가 호출될 때마다 매번 실행됩니다.
+
+```clojure
+(def iter (eduction xf (range 5)))
+(reduce + 0 iter)
+;; => 6
+```
+
 #### into
 #### sequence
 ### Creating Transducers
@@ -187,6 +204,7 @@ In the last example, input values will be filtered, then incremented, and finall
 [distinct]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/distinct
 [drop-while]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-while
 [drop]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop
+[eduction]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/eduction
 [filter]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/filter
 [interpose]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/interpose
 [keep-indexed]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/keep-indexed
