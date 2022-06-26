@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-26 23:57:36 +0900
+updated : 2022-06-27 00:09:18 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -267,12 +267,35 @@ The [completing][completing] function can be used to convert a reducing functi
 [completing][completing] 함수를 사용하면 디폴트 completion arity 하나를 추가해서 reducing 함수를 transducing 함수로 변환할 수 있습니다.
 
 #### Early termination
+
+>
+Clojure has a mechanism for specifying early termination of a reduce:
+>
+> - [reduced][reduced] - takes a value and returns a _reduced_ value indicating reduction should stop
+> - [reduced?][reduced?] - returns true if the value was created with _reduced_
+> - [deref][deref] or @ can be used to retrieve the value inside a _reduced_
+>
+A process that uses transducers must check for and stop when the step function returns a reduced value (more on that in Creating Transducible Processes).
+Additionally, a transducer step function that uses a nested reduce must check for and convey reduced values when they are encountered.
+(See the implementation of cat for an example.)
+
+Clojure는 reduce를 진행 도중에 중단할 수 있는 메커니즘을 제공합니다.
+
+- [reduced][reduced] - 값을 하나 받고, reduce를 조기 중단하면서 리턴하게 될 값을 하나 리턴합니다.
+- [reduced?][reduced?] - 값이 reduced로 만들어졌다면 true를 리턴합니다.
+- [deref][deref] 또는 @를 사용하면 _reduced_안에 있는 값을 가져올 수 있습니다.
+
+transducer를 사용하는 프로세스는 step 함수가 reduced 값을 리턴하는지를 반드시 체크해야 하며, reduced 값이 리턴될 때 중단되어야 합니다(자세한 내용은 이 문서의 마지막 절인 Creating Transducible Processes를 참고하세요).
+또한, 중첩된 reduce를 사용하는 transducer step 함수라면 reduced 값이 발생했을 때 반드시 이를 확인하고 전달도 해야 합니다(예제로 `cat`의 구현을 참고하세요).
+
+
 #### Transducers with reduction state
 ### Creating Transducible Processes
 
 [cat]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/cat
 [completing]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/completing
 [dedupe]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/dedupe
+[deref]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/deref
 [distinct]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/distinct
 [drop-while]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop-while
 [drop]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/drop
@@ -288,6 +311,8 @@ The [completing][completing] function can be used to convert a reducing functi
 [partition-all]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-all
 [partition-by]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/partition-by
 [random-sample]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/random-sample
+[reduced?]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced?
+[reduced]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reduced
 [remove]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove
 [replace]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace
 [sequence]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/sequence
