@@ -1,13 +1,13 @@
 ---
 layout  : wiki
-title   : 2^n 진수 숫자의 상호 변환
+title   : 2^n 진수의 상호 변환
 summary : 
 date    : 2021-03-13 20:04:49 +0900
-updated : 2021-03-13 20:52:32 +0900
+updated : 2022-06-27 23:43:47 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[math]]
+parent  : [[/math]]
 latex   : true
 ---
 * TOC

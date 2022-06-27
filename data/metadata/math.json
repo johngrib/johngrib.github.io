@@ -16,12 +16,12 @@
   "graph",
   "halting-problem",
   "log",
+  "math/two-n-base-converting",
   "precision-of-number",
   "primitive-roots",
   "relations",
   "rule-of-succession",
   "secretary-problem",
-  "sigma-notation",
-  "two-n-base-converting"
+  "sigma-notation"
  ]
 }

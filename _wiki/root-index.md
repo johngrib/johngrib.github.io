@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-06-21 23:35:42 +0900
+updated : 2022-06-27 23:43:38 +0900
 regenerate: true
 ---
 
@@ -107,6 +107,8 @@ regenerate: true
 
 ## [[math]]
 
+* [[/math/two-n-base-converting]]
+
 * [[Bayes-theorem]]
 * [[Binomial-Theorem]]
 * [[complement-number]]
@@ -124,7 +126,6 @@ regenerate: true
 * [[rule-of-succession]]
 * [[secretary-problem]]
 * [[sigma-notation]]{시그마 표기법}
-* [[two-n-base-converting]]
 
 ## [[book]]
 
