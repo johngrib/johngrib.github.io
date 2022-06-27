@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hammerspoon 튜토리얼 00 - 시작하기
 summary : 일단 맥이 있어야 한다
 date    : 2017-07-31 21:57:27 +0900
-updated : 2018-04-21 11:24:48 +0900
+updated : 2022-06-27 09:57:37 +0900
 tag     : hammerspoon
 toc     : true
 comment : true
@@ -31,7 +31,7 @@ parent  : [[hammerspoon]]
 
 ### 무슨 일을 할 수 있나?
 
-대충 다음과 같은 일을 할 수 있다고 보면 됩니다. ([이전 글](/blog/2017/07/30/luarocks)에서 복붙한 내용)
+대충 다음과 같은 일을 할 수 있다고 보면 됩니다. ([[hammerspoon-luarocks]]{이전 글}에서 복붙한 내용)
 
 * `Esc` 키를 누를 때마다 input source를 영문으로 전환하게 한다. Vim 사용자에게 너무 좋은 기능.
 * 현재 실행 중인 애플리케이션의 윈도우를 특정 위치로 움직이게 하거나 사이즈를 조절한다.
