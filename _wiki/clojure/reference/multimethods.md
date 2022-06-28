@@ -3,7 +3,7 @@ layout  : wiki
 title   : Multimethods and Hierarchies
 summary : 번역 중인 문서
 date    : 2022-06-27 21:03:54 +0900
-updated : 2022-06-28 23:59:26 +0900
+updated : 2022-06-29 00:06:15 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -47,7 +47,20 @@ multimethod를 정의할 때에는 `defmulti`를 통해 반드시 분기 용도�
 만약 분기 값과 연결된 메소드가 없다면 multimethod는 기본 분기 값(기본값은 `:default`)과 연결된 메소드를 찾아 사용하게 됩니다.
 이런 경우에 기본 분기 메소드가 없다면 에러가 발생합니다.
 
+>
+The multimethod system exposes this API: [defmulti][defmulti] creates new multimethods, [defmethod][defmethod] creates and installs a new method of multimethod associated with a dispatch-value, [remove-method][remove-method] removes the method associated with a dispatch-value and [prefer-method][prefer-method] creates an ordering between methods when they would otherwise be ambiguous.
+
+multimethod 시스템이 제공하는 API:
+
+- [defmulti][defmulti]는 새로운 multimethod를 생성합니다.
+- [defmethod][defmethod]는 multimethod에 새로운 메소드를 생성해서 연결합니다. 각 메소드는 분기값을 갖습니다.
+- [remove-method][remove-method]는 분기값에 연결된 메소드를 제거합니다.
+- [prefer-method][prefer-method]는 메소드 우선순위를 설정합니다.
+
 
 ### isa? based dispatch
 
 [defmethod]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmethod
+[defmulti]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defmulti
+[prefer-method]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/prefer-method
+[remove-method]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/remove-method
