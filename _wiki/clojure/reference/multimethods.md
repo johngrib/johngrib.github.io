@@ -3,7 +3,7 @@ layout  : wiki
 title   : Multimethods and Hierarchies
 summary : 번역 중인 문서
 date    : 2022-06-27 21:03:54 +0900
-updated : 2022-06-27 21:53:25 +0900
+updated : 2022-06-28 23:59:26 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -23,7 +23,7 @@ However, Clojure fully recognizes the value of runtime polymorphism in enabling 
 Clojure supports sophisticated runtime polymorphism through a multimethod system that supports dispatching on types, values, attributes and metadata of, and relationships between, one or more arguments.
 
 전통적인 객체지향 패러다임에서는 매번 새로운 데이터 타입을 생성하는 것을 기본으로 합니다.
-반면에 Clojure는 몇 개 안 되는 타입 세트를 지원하는 다양한 함수를 모아두는 방식의 대규모 라이브러리를 구축하는 방법을 선호합니다.
+반면에 Clojure는 몇 개 안 되는 타입 세트를 지원하는 다양한 함수를 제공하는 대규모 라이브러리를 구축하는 방법을 선호합니다.
 
 그럼에도 Clojure는 런타임에서 다형성을 지원하면 유연하고 확장 가능한 시스템 아키텍처를 구축하기 용이하다는 것도 인식하고 있습니다.
 Clojure에서는 multimethod 시스템을 통해 정교한 런타임 다형성을 지원합니다.
@@ -38,13 +38,14 @@ If one has been defined (via [defmethod]),[defmethod]), it will then be called 
 If no method is associated with the dispatching value, the multimethod will look for a method associated with the default dispatching value (which defaults to _**:default**_), and will use that if present.
 Otherwise the call is an error.
 
-Clojure의 multimethod는 dispatching 함수와 여러 method들을 조합하는 것이라 할 수 있습니다.
+Clojure의 multimethod는 분기(dispatching) 함수와 여러 method들을 조합하는 것이라 할 수 있습니다.
 
-multimethod를 정의할 때에는 `defmulti`를 통해 반드시 dispatching 함수를 제공해줘야 합니다.
-이렇게 제공한 함수는 디스패치 값을 생성하기 위해 multimethod의 인자들에 적용됩니다.
-그러고 나서 multimethod는 디스패칭 값이나 디스패치 값이 파생된 값과 연결된 메소드를 찾아봅니다.
-만약 [defmethod][defmethod]를 통해 하나가 정의되었다면, 해당 메소드는 인자들과 함께 호출되며, 그 결과값이 호출된 multimethod의 호출의 값이 됩니다.
-만약 디스패치 값과 연결된 메소드가 없다면 multimethod는 기본 디스패치 값(기본값은 `:default`)과 연결된 메소드를 찾고, 그게 있다면 사용하게 됩니다. 그렇지 않다면 호출은 에러가 됩니다.
+multimethod를 정의할 때에는 `defmulti`를 통해 반드시 분기 용도로 쓸 함수를 제공해줘야 합니다.
+이렇게 제공한 분기 함수는 multimethod의 인자에 적용되어 분기의 기준이 될 값을 생성하게 됩니다.
+분기 기준값이 생성되면 multimethod는 해당 값과 연결된 메소드를 탐색합니다.
+[defmethod][defmethod]를 통해 정의된 함수를 찾아내면 해당 메소드에 인자를 집어넣고 호출하며, 그 결과값이 multimethod의 리턴값이 됩니다.
+만약 분기 값과 연결된 메소드가 없다면 multimethod는 기본 분기 값(기본값은 `:default`)과 연결된 메소드를 찾아 사용하게 됩니다.
+이런 경우에 기본 분기 메소드가 없다면 에러가 발생합니다.
 
 
 ### isa? based dispatch
