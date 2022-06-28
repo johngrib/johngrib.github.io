@@ -3,7 +3,7 @@ layout  : wiki
 title   : Transducers
 summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
-updated : 2022-06-27 00:42:05 +0900
+updated : 2022-06-28 23:07:45 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -173,6 +173,40 @@ In the last example, input values will be filtered, then incremented, and finall
 
 ![Nested transformations]( ./xf.png )
 
+>
+**역주**
+>
+위의 예제에서 소개한 transducer인 `(def xf (comp (filter odd?) (map inc)))`을 사용하는 몇 가지 방법을 더 알아봅시다.
+>
+- `into`를 쓰면 컬렉션으로 수집해 리턴합니다. (lazy하지 않고, eager하게 작업합니다.)
+    ```clojure
+    (into [] xf [11 12 13 14 15 16])
+    ;; => [12 14 16]
+    ```
+- `sequence`를 쓰면 lazy sequence를 리턴합니다.
+    ```clojure
+    (take 3
+          (sequence xf [1 2 3 4 5 6 7 8 9]))
+    ;; => (2 4 6)
+    ```
+- transduce를 쓰면 transducer를 통해 변환한 모든 원소를 reducing 한 결과를 리턴합니다.
+    ```clojure
+    (transduce xf
+               (fn
+                 ([p1] (str p1))
+                 ([p1 p2] (str p1 "," p2)))
+               "start"
+               [1 2 3 4 5 6 7 8]) ;; => "start,2,4,6,8"
+    ```
+    - 두 번째 인자로 주어진 함수는 arity-1 과 arity-2 가 있습니다. arity-2 만 있다면 `reduce`처럼 보일텐데, 그렇게 하면 `transduce`가 예외를 던집니다. 둘 다 있어야 하는 것입니다. 따라서 이걸 일일이 만들기 귀찮으면 `completing` 함수를 쓸 수도 있습니다. 이렇게 하면 좀 더 `reduce` 처럼 보이는 코드가 됩니다.
+        ```clojure
+        (transduce xf
+                   (completing #(str %1 "," %2))
+                   "start"
+                   [1 2 3 4 5 6 7 8]) ;; => "start,2,4,6,8"
+        ```
+>
+{:style="background-color: #ecf1e8;"}
 
 #### eduction
 
