@@ -12,6 +12,7 @@
   "clojure/reference/data-structures",
   "clojure/reference/datatypes",
   "clojure/reference/metadata",
+  "clojure/reference/multimethods",
   "clojure/reference/other-functions",
   "clojure/reference/sequences",
   "clojure/reference/special-forms",

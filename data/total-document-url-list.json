@@ -123,6 +123,7 @@
  "/wiki/clojure/reference/data-structures",
  "/wiki/clojure/reference/datatypes",
  "/wiki/clojure/reference/metadata",
+ "/wiki/clojure/reference/multimethods",
  "/wiki/clojure/reference/other-functions",
  "/wiki/clojure/reference/sequences",
  "/wiki/clojure/reference/special-forms",

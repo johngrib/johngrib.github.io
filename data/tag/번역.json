@@ -4,6 +4,7 @@
  "clojure/higher-order-functions",
  "clojure/macros",
  "clojure/reference/data-structures",
+ "clojure/reference/multimethods",
  "clojure/reference/other-functions",
  "clojure/reference/sequences",
  "clojure/reference/special-forms",
