@@ -6,6 +6,7 @@
  "clojure/reference/data-structures",
  "clojure/reference/multimethods",
  "clojure/reference/other-functions",
+ "clojure/reference/protocols",
  "clojure/reference/sequences",
  "clojure/reference/special-forms",
  "clojure/reference/transducers",
