@@ -3,7 +3,7 @@ layout  : wiki
 title   : Protocols
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-07-02 23:21:40 +0900
-updated : 2022-07-03 10:59:11 +0900
+updated : 2022-07-03 13:08:17 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -220,6 +220,28 @@ protocol은 완전히 구체화되며, protocol의 reflection 기능은 [extends
 ```
 
 #### Guidelines for extension
+
+>
+Protocols are an open system, extensible to any type. To minimize conflicts, consider these guidelines:
+>
+- If you don’t own the protocol or the target type, you should only extend in app (not public lib) code, and expect to maybe be broken by either owner.
+- If you own the protocol you get to provide some base versions for common targets as part of the package, subject to the dictatorial nature of doing so.
+- If you are shipping a lib of potential targets you can provide implementations of common protocols for them, subject to the fact that you are dictating. You should take particular care when extending protocols included with Clojure itself.
+- If you are a library developer, you should not extend if you own neither the protocol nor the target
+
+>
+Also see this [mailing list discussion][mailing list discussion].
+
+protocol은 어떤 타입으로도 확장할 수 있는 열린 시스템입니다.
+다음은 protocol을 쓸 때 충돌을 최소화하기 위한 가이드입니다.
+
+- 만약 여러분이 해당 protocol이나 대상 타입을 소유하고 있지 않다면 app 코드(공개된 라이브러리가 아닌 경우)에서만 확장해야 합니다. 그리고 양쪽에서 깨질 수 있다는 걸 알아둬야 합니다.
+- 여러분이 해당 protocol을 소유하고 있다면 일반적인 대상에 대한 기본적인 버전 몇 가지를 패키지의 일부로 제공할 수 있습니다.
+- 만약 잠재적 대상에 대한 라이브러리를 제공한다면 해당 대상에 대한 공용 protocol의 구현을 제공할 수 있습니다. 단, Clojure 자체에 포함된 protocol을 확장할 때에는 특히 주의하세요.
+- 라이브러리를 개발할 때, 만약 여러분이 protocol이나 작업 대상을 소유하고 있지 않다면 확장하면 안 됩니다.
+
+자세한 내용은 [이메일을 통한 토론 내역][mailing list discussion]을 읽어 보세요.
+
 #### Extend via metadata
 
 [datatypes]: https://clojure.org/reference/datatypes
@@ -231,6 +253,7 @@ protocol은 완전히 구체화되며, protocol의 reflection 기능은 [extends
 [extend]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extend
 [extenders]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extenders
 [extends?]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/extends%3F
+[mailing list discussion]: https://groups.google.com/d/msg/clojure/vyX5-F3NiVg/Ti1apkxDFl0J
 [protocols]: https://clojure.org/reference/protocols
 [reify]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify
 [satisfies?]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/satisfies%3F
