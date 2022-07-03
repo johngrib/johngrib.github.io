@@ -3,7 +3,7 @@ layout  : wiki
 title   : Protocols
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-07-02 23:21:40 +0900
-updated : 2022-07-03 13:11:10 +0900
+updated : 2022-07-03 13:27:41 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -247,6 +247,35 @@ protocol은 어떤 타입으로도 확장할 수 있는 열린 시스템입니�
 
 #### Extend via metadata
 
+>
+As of Clojure 1.10, protocols can optionally elect to be extended via per-value metadata:
+
+Clojure 1.10 부터 protocol이 각 값의 메타데이터를 통해 확장되도록 할 수도 있습니다.
+
+```clojure
+(defprotocol Component
+  :extend-via-metadata true
+  (start [component]))
+```
+
+>
+When :extend-via-metadata is true, values can extend protocols by adding metadata where keys are fully-qualified protocol function symbols and values are function implementations.
+Protocol implementations are checked first for direct definitions (defrecord, deftype, reify), then metadata definitions, then external extensions (extend, extend-type, extend-protocol).
+
+`:extend-via-metadata`가 `true`이면, key가 정규화된 protocol 함수 symbol이고 value가 함수 구현체인 메타데이터를 추가해서 protocol을 확장할 수 있습니다.
+
+protocol 구현의 체크 순서는 다음과 같습니다.
+
+1. 직접 정의된 것들(defrecord, deftype, reify) 체크
+2. 메타데이터 정의
+3. 외부 확장(extend, extend-type, extend-protocol)
+
+```clojure
+(def component (with-meta {:name "db"} {`start (constantly "started")}))
+(start component)
+;;=> "started"
+```
+
 [datatypes]: https://clojure.org/reference/datatypes
 [defprotocol]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defprotocol
 [defrecord]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/defrecord
@@ -260,3 +289,4 @@ protocol은 어떤 타입으로도 확장할 수 있는 열린 시스템입니�
 [protocols]: https://clojure.org/reference/protocols
 [reify]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/reify
 [satisfies?]: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/satisfies%3F
+
