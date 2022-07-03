@@ -3,7 +3,7 @@ layout  : wiki
 title   : Protocols
 summary : Clojure 레퍼런스 문서 번역
 date    : 2022-07-02 23:21:40 +0900
-updated : 2022-07-03 13:08:17 +0900
+updated : 2022-07-03 13:11:10 +0900
 tag     : clojure 번역
 toc     : true
 public  : true
@@ -42,6 +42,8 @@ Clojure는 이런 추상화에 대한 많은 구현체들을 제공하는 언어
 Motivation의 첫 문단은 [[/clojure/reference/datatypes]]와 똑같습니다.
 {:style="background-color: #ecf1e8;"}
 
+<span/>
+
 >
 There are several motivations for protocols:
 >
@@ -71,6 +73,7 @@ protocol의 설계 목적은 다음과 같습니다.
 
 >
 (i) Protocols were introduced in Clojure 1.2.
+{:style="background-color: #e6fae3;"}
 
 protocol은 Clojure 1.2에서 추가되었습니다.
 
@@ -201,7 +204,7 @@ protocol은 완전히 구체화되며, protocol의 reflection 기능은 [extends
 - 편리한 매크로인 [extend-type][extend-type], [extend-protocol][extend-protocol]를 기억해 두세요.
 - 외부 정의를 인라인에서 제공하고 싶다면 위의 매크로들이 `extend`를 직접 사용하는 것보다 편리할 것입니다.
 
-``clojure
+```clojure
 (extend-type MyType
   Countable
     (cnt [c] ...)
