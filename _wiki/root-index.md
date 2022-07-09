@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-07-09 11:10:19 +0900
+updated : 2022-07-09 11:22:30 +0900
 regenerate: true
 ---
 
@@ -66,7 +66,7 @@ regenerate: true
 
 * [[keeping-options-open]]
 
-## [[clipping]]{글 모음 및 요약}
+## [[clipping]]
 
 * [[Software-Engineering-Code-of-Ethics]]
 * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
@@ -115,7 +115,7 @@ regenerate: true
 * [[Cromwell-s-rule]]
 * [[Fermat-s-little-theorem]]
 * [[fibonacci]]
-* [[frac1e]]{n개의 제비뽑기에 n번 도전}
+* [[frac1e]]
 * [[gcd]]
 * [[graph]]
 * [[halting-problem]]
@@ -125,7 +125,7 @@ regenerate: true
 * [[relations]]
 * [[rule-of-succession]]
 * [[secretary-problem]]
-* [[sigma-notation]]{시그마 표기법}
+* [[sigma-notation]]
 
 ## [[book]]
 
@@ -141,17 +141,17 @@ regenerate: true
 - [[Designing-Data-Intensive-Applications]]
 - [[Geek-Atlas]]
 - [[GoF-Design-Pattern]]
-- [[HTTP-THE-DEFINITIVE-GUIDE]]{HTTP 완벽 가이드}
+- [[HTTP-THE-DEFINITIVE-GUIDE]]
 - [[Mythical-Man-Month]]
 - [[PATTERN-ON-THE-STONE]]
 - [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]
 - [[SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness]]
 - [[Schrodinger-s-goyang-Hee]]
-- [[Shunsho-juwa]]{수학자의 공부}
-- [[Software-Craftsman]]{소프트웨어 장인}
+- [[Shunsho-juwa]]
+- [[Software-Craftsman]]
 - [[TETRIS-EFFECT]]
-- [[Take-the-Bully-by-the-Horns]]{함부로 말하는 사람과 대화하는 법}
-- [[Think-Bayes]]{파이썬을 활용한 베이지안 통계}
+- [[Take-the-Bully-by-the-Horns]]
+- [[Think-Bayes]]
 - [[grow-together]]
 - [[secret-of-consulting]]
 
@@ -219,9 +219,9 @@ regenerate: true
 * [[/go/vim-setting]]
 
 * [[Go-Blog-translation]]
-    * [[golang-debugging-what-you-deploy]]{(번역) Go 1.12에서 배포한 것을 디버깅하기}
+    * [[golang-debugging-what-you-deploy]]
     * [[golang-mod]]
-    * [[golang-subtests]]{(번역) 서브 테스트와 서브 벤치마크 사용하기}
+    * [[golang-subtests]]
     * [[golang-the-laws-of-reflection]]
 
 * [[commit-go-mod-go-sum]]
@@ -360,7 +360,7 @@ regenerate: true
 * [[Boy-Scout-Rule]]
 * [[Brooks-s-law]]
 * [[CAP-theorem]]
-* [[constantine-s-law]]{콘스탄틴의 법칙}
+* [[constantine-s-law]]
 * [[Conway-s-law]]
 * [[Copernican-Principle]]
 * [[dry-principle]]
@@ -373,7 +373,7 @@ regenerate: true
 * [[Kerckhoffs-s-principle]]
 * [[law-of-demeter]]
 * [[linus-s-law]]
-* [[Lubarsky-s-Law-of-Cybernetic-Entomology]]{루바르스키의 사이버네틱 곤충학 법칙}
+* [[Lubarsky-s-Law-of-Cybernetic-Entomology]]
 * [[metcalfe-s-law]]
 * [[Naming-Principle]]
 * [[no-problem-syndrome]]
@@ -384,8 +384,8 @@ regenerate: true
 * [[Postel-s-law]]
 * [[power-distance-index]]
 * [[richardson-maturity-model]]
-* [[rule-of-3-and-10]]{3과 10의 규칙}
-* [[Schopenhauer-s-Law-Of-Entropy]]{쇼펜하우어의 엔트로피 법칙}
+* [[rule-of-3-and-10]]
+* [[Schopenhauer-s-Law-Of-Entropy]]
 * [[SOLID]]
 * [[Tompson-s-rule-for-first-time-telescope-makers]]
 * [[Zipf-s-law]]
@@ -567,7 +567,7 @@ regenerate: true
 * [[archive-org-games]]
 * [[downdetector]]
 * [[ecos-bok-or-kr]]
-* [[google-search-console-remove-outdated-content]]{구글 웹 도구 - 오래된 콘텐츠 삭제}
+* [[google-search-console-remove-outdated-content]]
 * [[httpbin.org]]
 * [[labs-strava-com-heatmap]]
 * [[microsoft-hwp-word-converter]]
@@ -610,7 +610,7 @@ regenerate: true
 * [[two-views-of-vim]]
 * [[vim-asciidoc-setting]]
 * [[vim-clang]]
-* [[vim-conceallevel]]{conceallevel (Vim)}
+* [[vim-conceallevel]]
 * [[vim-f-hangul]]
 * [[vim-tagbar-with-markdown]]
 * [[vim-tmux-t-ut]]
@@ -788,7 +788,7 @@ regenerate: true
 * [[backus-naur-form]]
 * [[bell-labs]]
 * [[big-numbers]]
-* [[coding-font]]{코딩 폰트}
+* [[coding-font]]
 * [[color-model]]
 * [[defensive-copy]]
 * [[email-validation]]
