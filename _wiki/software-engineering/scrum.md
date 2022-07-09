@@ -3,7 +3,7 @@ layout  : wiki
 title   : 스크럼 (Scrum)
 summary : 
 date    : 2019-01-02 22:45:37 +0900
-updated : 2022-07-09 11:30:55 +0900
+updated : 2022-07-09 14:02:26 +0900
 tag     : agile
 toc     : true
 public  : true
@@ -12,6 +12,37 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## From: 애자일 조직은 이렇게 일합니다
+
+### 스크럼이 뭐야?
+
+>
+스크럼은 가볍지만 체계적이고 잘 짜여진 팀 워크플로<sub>Workflow</sub> 관리 방식이다.
+스크럼은 특정 기술 실천법을 강요하지 않는다.
+팀에서 일을 어떻게 다뤄야 하는지 정의하고, 팀이 사용하는 특정 역할과 업무 조정에 필요한 방법을 규정한다.
+[^steve-42]
+
+### 스크럼 기초
+
+>
+스크럼은 일련의 규칙을 담고 있는 이벤트(회의나 행사라고도 함), 역할, 산출물로 요약된다.
+>
+스크럼은 개념적으로 스크럼에서 요구사항을 담당하는 프로덕트 오너<sub>Product Owner, PO</sub>가 만든 '제품 백로그'<sub>Product Backlog</sub>로 시작한다.
+제품 백로그는 스크럼팀이 전달해야 하는 요구사항, 진행 중인 요구사항, 피처, 기능, 스토리, 개선사항 및 수정사항의 묶음이다.
+제품 백로그는 가능한 모든 요구사항의 완벽한 리스트를 제공하는 대신 가장 중요하고 가장 시급하며 가장 ROI가 높은 요구사항에 초점을 둔다.
+>
+스크럼팀은 1~4주의 반복적인 시간 주기인 '스프린트'<sub>Sprint</sub> 안에서 작업을 수행한다.
+보통 1~3주 스프린트가 가장 잘 작동한다.
+스프린트가 길어질수록 리스크가 증가하고 개선 기회는 제한된다.
+2주 스프린트가 가장 일반적이다.
+[^steve-43]
+
+
+### 스크럼 프로젝트의 작업 흐름
+
+![스크럼의 작업 흐름 요약]( ./scrum-process.png )
+[^steve-44]
 
 
 ## From: HARD CODE
@@ -118,9 +149,10 @@ But integrating regularly to see the whole.
 
 ## 참고문헌
 
-- [Kanban vs Scrum - How to make the most of both (PDF)](https://www.crisp.se/file-uploads/Kanban-vs-Scrum.pdf )
 - HARD CODE / 박재호 역 / 에이콘출판사 / 발행 2009년 06월 30일 / 원제 : I. M. Wright's Hard Code
+- [Kanban vs Scrum - How to make the most of both (PDF)](https://www.crisp.se/file-uploads/Kanban-vs-Scrum.pdf )
 - 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+- 애자일 조직은 이렇게 일합니다 / 스티브 매코널 저/백미진 역 / 인사이트(insight) / 초판 1쇄 발행 2022년 06월 29일 / 원제: More Effective Agile
 
 ## Links
 
@@ -133,6 +165,9 @@ But integrating regularly to see the whole.
 
 [^devops-handbook-168]: 데브옵스 핸드북. 168쪽.
 [^hardcode-2]: HARD CODE. 2장.
+[^steve-42]: 애자일 조직은 이렇게 일합니다. 4장. 42쪽.
+[^steve-43]: 애자일 조직은 이렇게 일합니다. 4장. 43쪽.
+[^steve-44]: 애자일 조직은 이렇게 일합니다. 4장. 44쪽.
 
 [agile-bullet]: https://imwrightshardcode.com/2006/03/the-agile-bullet/
 
