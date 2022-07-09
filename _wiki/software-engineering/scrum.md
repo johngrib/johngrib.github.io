@@ -3,7 +3,7 @@ layout  : wiki
 title   : 스크럼 (Scrum)
 summary : 
 date    : 2019-01-02 22:45:37 +0900
-updated : 2022-07-09 14:02:26 +0900
+updated : 2022-07-09 14:07:09 +0900
 tag     : agile
 toc     : true
 public  : true
@@ -42,8 +42,8 @@ latex   : false
 ### 스크럼 프로젝트의 작업 흐름
 
 ![스크럼의 작업 흐름 요약]( ./scrum-process.png )
+{:style="max-width:500px"}
 [^steve-44]
-
 
 ## From: HARD CODE
 
