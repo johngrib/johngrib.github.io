@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-07-09 11:29:50 +0900
+updated : 2022-07-09 17:17:01 +0900
 regenerate: true
 ---
 
@@ -731,6 +731,7 @@ regenerate: true
 ## [[software-engineering]]
 
 * [[/software-engineering/scrum]]
+* [[/software-engineering/kanban]]
 
 * [[20-percent-project]]
 * [[agile]]
@@ -740,7 +741,6 @@ regenerate: true
 * [[ddd-quotes]]
 * [[dev-schedule-quotes]]
 * [[devops]]
-* [[kanban]]
 * [[persona]]
 * [[polite-software]]
 * [[Software-Engineering-Code-of-Ethics]]

@@ -3,11 +3,11 @@ layout  : wiki
 title   : 칸반 (Kanban)
 summary : 
 date    : 2019-01-02 22:45:37 +0900
-updated : 2022-07-09 17:16:21 +0900
+updated : 2022-07-09 17:16:43 +0900
 tag     : agile
 toc     : true
 public  : true
-parent  : [[software-engineering]]
+parent  : [[/software-engineering]]
 latex   : false
 ---
 * TOC
