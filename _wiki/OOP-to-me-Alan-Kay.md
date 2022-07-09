@@ -3,8 +3,8 @@ layout  : wiki
 title   : 앨런 케이의 심플한 OOP 정의
 summary :
 date    : 2019-10-17 22:48:17 +0900
-updated : 2020-07-10 21:31:29 +0900
-tag     : oop
+updated : 2022-07-10 00:38:27 +0900
+tag     : oop alan-kay
 toc     : true
 public  : true
 parent  : [[jargon]]

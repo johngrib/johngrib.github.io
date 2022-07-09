@@ -3,8 +3,8 @@ layout  : wiki
 title   : Predicting The Future By Alan C. Kay
 summary : 미래를 예견하기 - 앨런 케이
 date    : 2022-07-09 18:28:36 +0900
-updated : 2022-07-10 00:37:42 +0900
-tag     : 번역
+updated : 2022-07-10 00:38:39 +0900
+tag     : 번역 alan-kay
 toc     : true
 public  : true
 parent  : [[/clipping]]
