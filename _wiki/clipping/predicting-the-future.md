@@ -3,7 +3,7 @@ layout  : wiki
 title   : Predicting The Future By Alan C. Kay
 summary : 미래를 예견하기 - 앨런 케이
 date    : 2022-07-09 18:28:36 +0900
-updated : 2022-07-10 00:38:39 +0900
+updated : 2022-07-10 00:48:26 +0900
 tag     : 번역 alan-kay
 toc     : true
 public  : true
@@ -20,6 +20,8 @@ _Alan C. Kay is a fellow at Apple Computer Inc., a visionary, one of a few selec
 {:style="background-color: #e9f1f6;"}
 
 Alan C. Kay는 Apple Computer Inc의 펠로우이면서, 동시에 독창적인 아이디어를 추구할 수 있는 독립적인 권한을 갖고 있는 소수의 선견지명을 갖고 있는 과학자들 중 한 명입니다.
+그는 그의 직업이 그가 늙지 않게 해준다고 말합니다.
+이 글은 Stanford Computer Forum의 20회 연례 회의에서 앨런 케이의 강연을 옮긴 것입니다.
 
 >
 "Xerox PARC (a computer science think tank for which Kay was a founding principal in 1970) was set up in Palo Alto to be as far away from corporate headquarters in Stamford, Connecticut. as possible and still be in the continental U.S.
