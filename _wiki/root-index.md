@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-07-09 17:17:01 +0900
+updated : 2022-07-09 18:28:33 +0900
 regenerate: true
 ---
 
@@ -67,6 +67,8 @@ regenerate: true
 * [[keeping-options-open]]
 
 ## [[clipping]]
+
+* [[/clipping/predicting-the-future]]
 
 * [[Software-Engineering-Code-of-Ethics]]
 * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
