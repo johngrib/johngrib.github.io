@@ -3,11 +3,11 @@ layout  : wiki
 title   : 스크럼 (Scrum)
 summary : 
 date    : 2019-01-02 22:45:37 +0900
-updated : 2021-03-09 15:49:55 +0900
+updated : 2022-07-09 11:30:55 +0900
 tag     : agile
 toc     : true
 public  : true
-parent  : [[software-engineering]]
+parent  : [[/software-engineering]]
 latex   : false
 ---
 * TOC
