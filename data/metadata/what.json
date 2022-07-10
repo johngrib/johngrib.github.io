@@ -7,7 +7,6 @@
  "children": [
   "availability",
   "bandwidth",
-  "bootstrapping",
   "braille-pattern-chars",
   "Caesar-cipher",
   "concurrency-and-parallel",

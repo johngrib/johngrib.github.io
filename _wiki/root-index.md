@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-07-09 18:28:33 +0900
+updated : 2022-07-10 15:42:29 +0900
 regenerate: true
 ---
 
@@ -354,6 +354,7 @@ regenerate: true
 ## [[jargon]]
 
 * [[/jargon/airplane-rule]]
+* [[/jargon/bootstrapping]]
 * [[/jargon/kiss-principle]]
 * [[/jargon/moore-s-law]]
 
@@ -628,7 +629,6 @@ regenerate: true
 
 * [[availability]]
 * [[bandwidth]]
-* [[bootstrapping]]
 * [[braille-pattern-chars]]
 * [[Caesar-cipher]]
 * [[concurrency-and-parallel]]

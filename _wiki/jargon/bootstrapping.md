@@ -3,11 +3,11 @@ layout  : wiki
 title   : 부트스트래핑 (bootstrapping)의 어원
 summary : 
 date    : 2019-02-25 10:40:19 +0900
-updated : 2021-09-22 23:46:17 +0900
+updated : 2022-07-10 15:44:47 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[what]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
