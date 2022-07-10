@@ -8,6 +8,7 @@
  "children": [
   "hammerspoon",
   "mac/keyboard-shortcuts",
-  "mac/screenshot-png-to-jpg"
+  "mac/screenshot-png-to-jpg",
+  "mac/setting"
  ]
 }

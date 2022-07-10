@@ -1,13 +1,13 @@
 ---
 layout  : wiki
-title   : 새 맥북으로 이사가기, 설정하기
+title   : 맥북 설정하기
 summary : 새 맥북 셋팅하면서 작성하는 문서
 date    : 2020-05-06 15:39:42 +0900
-updated : 2022-03-01 10:36:18 +0900
+updated : 2022-07-10 17:14:15 +0900
 tag     : mac
 toc     : true
 public  : true
-parent  : index
+parent  : [[/mac]]
 latex   : false
 ---
 * TOC
@@ -238,7 +238,7 @@ finder를 실행한 다음, 상단 메뉴 `보기`를 선택한다.
 
 그러면 다음 이미지와 같이 파인더 아래쪽에 경로와 용량 등의 정보가 나온다.
 
-![image]( /resource/wiki/migrate-to-new-macbook/82563757-971d8680-9bb2-11ea-90c8-73ef23b27f8f.png )
+![image]( ./82563757-971d8680-9bb2-11ea-90c8-73ef23b27f8f.png )
 
 경로 막대의 경로는 더블 클릭하면 해당 위치로 한번에 이동할 수 있다.
 
