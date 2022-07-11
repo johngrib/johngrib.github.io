@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-07-10 17:12:48 +0900
+updated : 2022-07-12 08:42:18 +0900
 regenerate: true
 ---
 
@@ -488,6 +488,7 @@ regenerate: true
 * [[/cmd/less]]
 * [[/cmd/man]]
 * [[/cmd/mv]]
+* [[/cmd/mysqldump]]
 * [[/cmd/openssl]]
 * [[/cmd/sed]]
 * [[/cmd/shellcheck]]

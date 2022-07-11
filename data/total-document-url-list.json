@@ -160,6 +160,7 @@
  "/wiki/cmd/less",
  "/wiki/cmd/man",
  "/wiki/cmd/mv",
+ "/wiki/cmd/mysqldump",
  "/wiki/cmd/openssl",
  "/wiki/cmd/sed",
  "/wiki/cmd/shellcheck",

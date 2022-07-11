@@ -160,6 +160,10 @@
   "size": 43
  },
  {
+  "name": "cmd",
+  "size": 1
+ },
+ {
   "name": "command",
   "size": 67
  },
