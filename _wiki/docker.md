@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2022-07-18 23:48:04 +0900
+updated : 2022-07-18 23:52:43 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -123,6 +123,16 @@ $ # 시스템 리소스 사용 상태 보기
 $ docker container stats
 ```
 
+### ps
+
+```bash
+$ # 도움말 보기
+$ docker ps --help
+
+$ # 모든 컨테이너 보기
+$ docker ps -a
+$ docker ps --all
+```
 
 ## Tutorial
 
