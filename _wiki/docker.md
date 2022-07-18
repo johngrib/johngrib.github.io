@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2020-02-05 22:54:41 +0900
+updated : 2022-07-18 23:48:04 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -49,6 +49,7 @@ $ docker container --help
 ```sh
 $ docker search nginx
 $ docker search nginx --limit 10
+$ docker search ubuntu
 ```
 
 ### image
@@ -59,9 +60,11 @@ $ docker image build -t IMAGE:TAG Dockerfile경로
 
 $ # 이미지 목록 보기
 $ docker image ls
+$ docker images
 
 $ # 이미지 다운로드
 $ docker image pull IMAGE:TAG
+$ docker pull ubuntu:16.04
 
 $ # 이미지 태그 설정
 $ docker image tag TARGET_IMAGE:TAG  NEW_IMAGE:TAG
