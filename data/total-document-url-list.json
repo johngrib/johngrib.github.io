@@ -168,6 +168,7 @@
  "/wiki/cmd/tr",
  "/wiki/cmd/tree",
  "/wiki/cmd/xxd",
+ "/wiki/cmd/yes",
  "/wiki/Code-Complete-2",
  "/wiki/CodeDeploy",
  "/wiki/coding-font",
@@ -706,7 +707,6 @@
  "/wiki/Wordstar",
  "/wiki/working-together",
  "/wiki/YAML",
- "/wiki/yes-cmd",
  "/wiki/ykman",
  "/wiki/You-and-Your-Research",
  "/wiki/Zipf-s-law"

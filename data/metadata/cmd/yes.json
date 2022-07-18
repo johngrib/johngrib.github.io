@@ -3,7 +3,7 @@
  "title": "yes 명령어",
  "summary": "문자열을 반복 출력한다",
  "parent": "cmd",
- "url": "/wiki/yes-cmd",
- "updated": "2020-01-25 21:31:04 +0900",
+ "url": "/wiki/cmd/yes",
+ "updated": "2022-07-18 22:45:33 +0900",
  "children": []
 }

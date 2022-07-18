@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-07-13 23:12:42 +0900
+updated : 2022-07-18 22:45:21 +0900
 regenerate: true
 ---
 
@@ -496,6 +496,7 @@ regenerate: true
 * [[/cmd/tr]]
 * [[/cmd/tree]]
 * [[/cmd/xxd]]
+* [[/cmd/yes]]
 
 * [[basename]]
 * [[bash-history]]
@@ -540,7 +541,6 @@ regenerate: true
 * [[top]]
 * [[touch]]
 * [[uptime]]
-* [[yes-cmd]]
 * [[ykman]]
 
 ### [[Excel]]

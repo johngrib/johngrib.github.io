@@ -24,6 +24,7 @@
  "cmd/tr",
  "cmd/tree",
  "cmd/xxd",
+ "cmd/yes",
  "csplit",
  "ctags",
  "cut",
@@ -59,6 +60,5 @@
  "top",
  "touch",
  "uptime",
- "yes-cmd",
  "ykman"
 ]

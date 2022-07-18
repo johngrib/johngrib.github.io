@@ -3,11 +3,11 @@ layout  : wiki
 title   : yes 명령어
 summary : 문자열을 반복 출력한다
 date    : 2018-09-15 21:45:14 +0900
-updated : 2020-01-25 21:31:04 +0900
+updated : 2022-07-18 22:45:33 +0900
 tag     : bash command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
@@ -94,3 +94,4 @@ yes "$(seq 231 -1 16)" | while read i; do printf "\x1b[48;5;${i}m\n"; sleep .02;
 * [All work and no play makes Jack a dull boy(wikipedia)](https://en.wikipedia.org/wiki/All_work_and_no_play_makes_Jack_a_dull_boy )
 * [List of chalkboard gags (simpsons.wikia.com)](http://simpsons.wikia.com/wiki/List_of_chalkboard_gags )
 * [Command Line Magic(twitter.com)](https://twitter.com/climagic/status/1005103669233311744 )
+
