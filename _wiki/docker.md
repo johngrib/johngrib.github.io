@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2022-07-18 23:52:43 +0900
+updated : 2022-07-19 09:43:38 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -64,7 +64,7 @@ $ docker images
 
 $ # 이미지 다운로드
 $ docker image pull IMAGE:TAG
-$ docker pull ubuntu:16.04
+$ docker pull ubuntu:22.04
 
 $ # 이미지 태그 설정
 $ docker image tag TARGET_IMAGE:TAG  NEW_IMAGE:TAG
