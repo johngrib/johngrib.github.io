@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2022-07-19 09:43:38 +0900
+updated : 2022-07-19 22:40:01 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -286,6 +286,159 @@ $ docker container stop f6cb8fe1673a
 
 ```sh
 $ docker run -d -t -p 8080:3000 hello
+```
+
+### ubuntu 이미지 컨테이너 사용하기
+
+[`docker search` 명령]( https://docs.docker.com/engine/reference/commandline/search/ )으로 우분투 이미지 리스트를 볼 수 있다.
+
+```
+$ docker search ubuntu
+NAME                 DESCRIPTION                                    STARS  OFFICIAL   AUTOMATED
+ubuntu               Ubuntu is a Debian-based Linux operating sys…  14618  [OK]
+websphere-liberty    WebSphere Liberty multi-architecture images …  286    [OK]
+ubuntu-upstart       DEPRECATED, as is Upstart (find other proces…  112    [OK]
+neurodebian          NeuroDebian provides neuroscience research s…  92     [OK]
+ubuntu/nginx         Nginx, a high-performance reverse proxy & we…  55
+...
+```
+
+`docker pull` 명령으로 이미지를 다운로드 받을 수 있다.
+
+```sh
+$ docker pull ubuntu:22.04
+```
+
+`docker images` 명령을 입력하면 다운로드 받은 이미지 목록을 확인할 수 있다.
+
+```
+$ docker images
+REPOSITORY                      TAG       IMAGE ID       CREATED         SIZE
+mongo                           5.0       a3da2fc22ead   5 weeks ago     671MB
+ubuntu                          22.04     a7870fd478f4   6 weeks ago     69.2MB
+ubuntu                          latest    a7870fd478f4   6 weeks ago     69.2MB
+ubuntu                          16.04     fe3b34cb9255   9 months ago    119MB
+jekyll/jekyll                   latest    61e560f6aee2   12 months ago   680MB
+mysql                           8.0.23    cbe8815cbea8   15 months ago   546MB
+...
+```
+
+`docker images ubuntu`로 ubuntu 이미지만 확인하는 것도 가능하다.
+
+```
+$ docker images ubuntu
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+ubuntu       22.04     a7870fd478f4   6 weeks ago    69.2MB
+ubuntu       latest    a7870fd478f4   6 weeks ago    69.2MB
+ubuntu       16.04     fe3b34cb9255   9 months ago   119MB
+```
+
+`docker run` 명령으로 컨테이너를 생성할 수 있다. 다음 명령을 입력하면 컨테이너를 생성하고 곧바로 `/bin/bash`를 실행해 컨테이너 터미널을 볼 수 있다.
+
+```
+$ docker run -it --name hello-ubuntu ubuntu:latest /bin/bash
+root@473add4c106e:/#
+```
+
+컨테이너 내에서 `ls -alh` 같은 명령을 실행해서 둘러보도록 하자.
+
+```
+root@473add4c106e:/# ls -alh
+total 56K
+drwxr-xr-x   1 root root 4.0K Jul 19 13:22 .
+drwxr-xr-x   1 root root 4.0K Jul 19 13:22 ..
+-rwxr-xr-x   1 root root    0 Jul 19 13:22 .dockerenv
+lrwxrwxrwx   1 root root    7 May 31 15:48 bin -> usr/bin
+drwxr-xr-x   2 root root 4.0K Apr 18 10:28 boot
+drwxr-xr-x   5 root root  360 Jul 19 13:22 dev
+drwxr-xr-x   1 root root 4.0K Jul 19 13:22 etc
+drwxr-xr-x   2 root root 4.0K Apr 18 10:28 home
+lrwxrwxrwx   1 root root    7 May 31 15:48 lib -> usr/lib
+drwxr-xr-x   2 root root 4.0K May 31 15:48 media
+drwxr-xr-x   2 root root 4.0K May 31 15:48 mnt
+drwxr-xr-x   2 root root 4.0K May 31 15:48 opt
+dr-xr-xr-x 186 root root    0 Jul 19 13:22 proc
+drwx------   2 root root 4.0K May 31 16:12 root
+drwxr-xr-x   5 root root 4.0K May 31 16:12 run
+lrwxrwxrwx   1 root root    8 May 31 15:48 sbin -> usr/sbin
+drwxr-xr-x   2 root root 4.0K May 31 15:48 srv
+dr-xr-xr-x  13 root root    0 Jul 19 13:22 sys
+drwxrwxrwt   2 root root 4.0K May 31 16:12 tmp
+drwxr-xr-x  11 root root 4.0K May 31 15:48 usr
+drwxr-xr-x  11 root root 4.0K May 31 16:12 var
+```
+
+다음과 같이 hello.md 파일을 만들고 hello2.md 파일로 복사도 해보자.
+
+```
+root@473add4c106e:/# echo "Hello, World!" > hello.md
+root@473add4c106e:/# cat hello.md
+Hello, World!
+root@473add4c106e:/# cp hello.md hello2.md
+root@473add4c106e:/# ls hello*
+hello.md  hello2.md
+root@473add4c106e:/#
+```
+
+컨테이너에서 빠져나가려면 bash의 `exit` 명령을 사용하면 된다.
+
+```
+root@473add4c106e:/# exit
+``` 
+
+`docker ps -a` 명령으로 컨테이너 목록을 볼 수 있다.
+
+```
+$ docker ps -a
+CONTAINER ID   IMAGE           COMMAND                  CREATED         STATUS                          PORTS                               NAMES
+473add4c106e   ubuntu:latest   "/bin/bash"              6 minutes ago   Exited (0) About a minute ago                                       hello-ubuntu
+a7dde106aaa7   mysql:8.0.23    "docker-entrypoint.s…"   3 months ago    Up 23 hours                     0.0.0.0:3306->3306/tcp, 33060/tcp   local-mysql
+```
+
+`docker restart`를 사용해 컨테이너를 재시작하고 `docker attach`를 사용하면 컨테이너에 다시 접속할 수 있다.
+
+```
+$ docker restart hello-ubuntu
+hello-ubuntu
+
+$ docker attach hello-ubuntu
+root@473add4c106e:/# ls hello*
+hello.md  hello2.md
+```
+
+앞에서 만들어 뒀던 파일의 내용을 다시 확인할 수 있다.
+
+```
+root@473add4c106e:/# ls hello* | xargs cat
+Hello, World!
+Hello, World!
+root@473add4c106e:/#
+```
+
+이제 컨테이너를 삭제해보자.
+
+`docker ps -a`로 삭제하고 싶은 컨테이너 아이디를 확인한다.
+
+```
+$ docker ps -a
+CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS                     PORTS                               NAMES
+473add4c106e   ubuntu:latest   "/bin/bash"              15 minutes ago   Exited (0) 4 minutes ago                                       hello-ubuntu
+a7dde106aaa7   mysql:8.0.23    "docker-entrypoint.s…"   3 months ago     Up 23 hours                0.0.0.0:3306->3306/tcp, 33060/tcp   local-mysql
+```
+
+삭제할 컨테이너 아이디를 `docker rm` 명령에 제공한다.
+
+```
+$ docker rm 473add4c106e
+473add4c106e
+```
+
+다시 `docker ps -a`로 확인해보면 해당 컨테이너가 없어져 있다.
+
+```
+$ docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED        STATUS        PORTS                               NAMES
+a7dde106aaa7   mysql:8.0.23   "docker-entrypoint.s…"   3 months ago   Up 23 hours   0.0.0.0:3306->3306/tcp, 33060/tcp   local-mysql
 ```
 
 ## docker-compose
