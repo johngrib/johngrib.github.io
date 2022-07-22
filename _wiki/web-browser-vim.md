@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim의 방식으로 웹 브라우저를 조작하기
 summary : Vimium, Tridactyl
 date    : 2018-03-04 00:40:04 +0900
-updated : 2021-02-06 20:16:36 +0900
+updated : 2022-07-22 10:10:55 +0900
 tag     : chrome firefox vim
 toc     : true
 public  : true
