@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-07-18 22:45:21 +0900
+updated : 2022-07-23 22:57:36 +0900
 regenerate: true
 ---
 
@@ -599,6 +599,7 @@ regenerate: true
 
 ## [[vim]]
 
+* [[/vim/numbered-register-shift]]
 * [[/vim/auto-completion]]
 * [[/vim/coc-nvim]]
 * [[/vim/configure-split]]

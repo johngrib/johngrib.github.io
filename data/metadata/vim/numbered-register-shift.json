@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "Vim 숫자 레지스터 쉬프터 만들기",
+ "summary": "VIMRC 2022 발표를 자세히 설명하는 글",
+ "parent": "vim",
+ "url": "/wiki/vim/numbered-register-shift",
+ "updated": "2022-07-23 23:05:40 +0900",
+ "children": []
+}

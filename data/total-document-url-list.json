@@ -692,6 +692,7 @@
  "/wiki/vim/configure-split",
  "/wiki/vim/help",
  "/wiki/vim/match",
+ "/wiki/vim/numbered-register-shift",
  "/wiki/vim/persistent-undo",
  "/wiki/vim/quickfix",
  "/wiki/vim/rest-console",

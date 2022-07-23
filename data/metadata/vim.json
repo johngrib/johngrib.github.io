@@ -19,6 +19,7 @@
   "vim/configure-split",
   "vim/help",
   "vim/match",
+  "vim/numbered-register-shift",
   "vim/persistent-undo",
   "vim/quickfix",
   "vim/rest-console",
