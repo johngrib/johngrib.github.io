@@ -3,7 +3,7 @@ layout  : wiki
 title   : Homebrew
 summary : macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 brew.
 date    : 2018-02-12 10:03:46 +0900
-updated : 2022-07-25 23:03:01 +0900
+updated : 2022-07-25 23:03:48 +0900
 tag     : bash mac command
 toc     : true
 public  : true
@@ -15,11 +15,9 @@ latex   : false
 
 ## Installation
 
-<https://brew.sh/index >
+설치 명령은 공식 홈페이지를 참고.
 
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+<https://brew.sh/index >
 
 ## Examples
 
