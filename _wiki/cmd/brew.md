@@ -3,7 +3,7 @@ layout  : wiki
 title   : Homebrew
 summary : macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 brew.
 date    : 2018-02-12 10:03:46 +0900
-updated : 2022-07-25 23:03:48 +0900
+updated : 2022-07-25 23:06:07 +0900
 tag     : bash mac command
 toc     : true
 public  : true
@@ -31,6 +31,20 @@ brew uninstall ag     # uninstall ag
 ```
 
 ### 전용 경로 확인하기
+
+`--prefix`로 전용 경로를 확인할 수 있다.
+
+```bash
+ # macOS ARM 인 경우 (M1을 쓰는 경우)
+$ brew --prefix
+/opt/homebrew
+
+ # macOS Intel 인 경우
+$ brew --prefix
+/usr/local
+```
+
+ARM 프로세서를 쓰는 경우와 Intel 프로세서를 쓰는 경우의 경로가 다르니 주의할 것.
 
 ```sh
 cd /usr/local/Cellar  # brew로 설치한 패키지는 모두 여기에 있다
