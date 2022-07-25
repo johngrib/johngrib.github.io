@@ -3,7 +3,7 @@ layout  : wiki
 title   : (문제해결) Mac에서 Node 7 버전으로 다운그레이드
 summary : nodejs.org에서 받아서 해결
 date    : 2018-02-12 14:52:15 +0900
-updated : 2018-02-12 15:09:45 +0900
+updated : 2022-07-25 21:23:12 +0900
 tag     : trouble-shooting
 toc     : true
 public  : true
@@ -35,7 +35,7 @@ $ node --version
 v8.9.4
 ```
 
-node 7 버전을 [[brew]]로 설치하면 되겠지?
+node 7 버전을 [[/cmd/brew]]로 설치하면 되겠지?
 
 그래서 다음과 같이 brew가 node 7을 지원하는지 알아보았다.
 

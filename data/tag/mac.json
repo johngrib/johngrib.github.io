@@ -1,5 +1,5 @@
 [
- "brew",
+ "cmd/brew",
  "ioreg-cmd",
  "iterm",
  "java_home",

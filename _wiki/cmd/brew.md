@@ -3,11 +3,11 @@ layout  : wiki
 title   : Homebrew
 summary : macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 brew.
 date    : 2018-02-12 10:03:46 +0900
-updated : 2022-01-29 12:27:29 +0900
+updated : 2022-07-25 21:22:45 +0900
 tag     : bash mac command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
