@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-07-25 21:21:48 +0900
+updated : 2022-07-28 00:17:25 +0900
 regenerate: true
 ---
 
@@ -599,13 +599,14 @@ regenerate: true
 
 ## [[vim]]
 
-* [[/vim/numbered-register-shift]]
 * [[/vim/auto-completion]]
 * [[/vim/coc-nvim]]
 * [[/vim/configure-split]]
 * [[/vim/help]]
 * [[/vim/match]]
+* [[/vim/numbered-register-shift]]
 * [[/vim/persistent-undo]]
+* [[/vim/plug]]
 * [[/vim/quickfix]]
 * [[/vim/rest-console]]
 * [[/vim/set-empty-chars]]
