@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "vim-plug",
+ "summary": "vim 플러그인 관리자",
+ "parent": "vim",
+ "url": "/wiki/vim/plug",
+ "updated": "2022-07-28 00:24:34 +0900",
+ "children": []
+}

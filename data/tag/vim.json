@@ -24,6 +24,7 @@
  "vim/match",
  "vim/numbered-register-shift",
  "vim/persistent-undo",
+ "vim/plug",
  "vim/quickfix",
  "vim/rest-console",
  "vim/set-empty-chars",
