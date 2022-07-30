@@ -7,7 +7,7 @@ updated : 2020-02-15 11:04:01 +0900
 tag     : money experiment
 toc     : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 latex   : false
 ---
 * TOC

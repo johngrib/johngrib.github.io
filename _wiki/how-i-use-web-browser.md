@@ -7,7 +7,7 @@ updated : 2022-04-24 23:28:46 +0900
 tag     : chrome
 toc     : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 latex   : false
 ---
 * TOC

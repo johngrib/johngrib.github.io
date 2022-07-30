@@ -8,7 +8,7 @@ tag     : keyboard
 toc     : true
 comment : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 ---
 * TOC
 {:toc}

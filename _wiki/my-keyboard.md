@@ -7,7 +7,7 @@ updated : 2020-05-07 13:32:50 +0900
 tag     : keyboard
 toc     : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 latex   : false
 ---
 * TOC

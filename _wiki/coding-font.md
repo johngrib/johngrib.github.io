@@ -7,7 +7,7 @@ updated : 2020-02-27 18:28:34 +0900
 tag     : font config
 toc     : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 latex   : false
 ---
 * TOC

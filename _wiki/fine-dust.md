@@ -7,7 +7,7 @@ updated : 2020-02-24 22:57:43 +0900
 tag     : tools 미세먼지
 toc     : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 latex   : true
 ---
 * TOC

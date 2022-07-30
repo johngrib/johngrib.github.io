@@ -7,7 +7,7 @@ updated : 2021-07-25 22:11:23 +0900
 tag     : keyboard hhkb hammerspoon
 toc     : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 latex   : false
 ---
 * TOC

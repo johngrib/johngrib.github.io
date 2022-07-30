@@ -7,7 +7,7 @@ updated : 2020-02-15 11:05:04 +0900
 tag     : love problem network
 toc     : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 issue-number : 159
 latex   : true
 ---

@@ -704,7 +704,7 @@ regenerate: true
 * [[sharding]]
 * [[/database/sqlite]]
 
-## [[my-lifehack]]
+## [[/hack]]
 
 * [[cleaning-tile-cycle]]
 * [[email-gardening]]

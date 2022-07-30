@@ -7,7 +7,7 @@ updated : 2021-10-17 18:48:07 +0900
 tag     : terminal study vim
 toc     : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 latex   : false
 ---
 * TOC

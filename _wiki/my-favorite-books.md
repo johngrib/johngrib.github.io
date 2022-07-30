@@ -7,7 +7,7 @@ updated : 2021-10-04 13:57:44 +0900
 tag     : book
 toc     : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 latex   : false
 ---
 * TOC

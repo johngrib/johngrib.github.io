@@ -7,7 +7,7 @@ updated : 2021-05-31 20:52:56 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[my-lifehack]]
+parent  : [[/hack]]
 latex   : false
 ---
 * TOC
