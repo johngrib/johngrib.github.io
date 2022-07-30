@@ -3,7 +3,7 @@ layout  : wiki
 title   : VRC와 Postman의 대안으로 clj 파일을 사용하기
 summary : 이제 Postman 쓸 필요 없다
 date    : 2022-07-30 00:35:09 +0900
-updated : 2022-07-30 15:03:31 +0900
+updated : 2022-07-30 15:06:23 +0900
 tag     : postman vrc http clojure
 toc     : true
 public  : true
@@ -17,12 +17,14 @@ latex   : false
 
 백엔드 개발을 하다보면 거의 고정된 템플릿으로 http 리퀘스트를 보내는 도구가 필요할 때가 있다.
 
-나는 이런 종류의 도구로 몇 가지를 사용해왔고, [[/vim/rest-console]]과 을 사용해 왔지만 모두 장점과 단점이 있어 하나에 정착하기 어려웠다.
+나는 이런 종류의 도구로 몇 가지를 사용해왔지만 모두 장점과 단점이 있어 하나에 정착하기 어려웠다.
 
 내가 현재 사용하고 있는 http client 도구는 두 가지다.
 
 - [[/vim/rest-console]]
 - [Postman]( https://www.postman.com/ )
+
+이 글에서는 이 둘의 장단점을 검토하고, 내가 두 http client의 대안으로 사용하기 시작한 방법을 소개한다.
 
 ### vim-rest-console
 
