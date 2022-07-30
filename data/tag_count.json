@@ -157,7 +157,7 @@
  },
  {
   "name": "clojure",
-  "size": 43
+  "size": 44
  },
  {
   "name": "cmd",
@@ -429,7 +429,7 @@
  },
  {
   "name": "http",
-  "size": 7
+  "size": 8
  },
  {
   "name": "hwp",
@@ -654,6 +654,10 @@
  {
   "name": "posa",
   "size": 2
+ },
+ {
+  "name": "postman",
+  "size": 1
  },
  {
   "name": "principle",
@@ -914,6 +918,10 @@
  {
   "name": "von-neumann",
   "size": 2
+ },
+ {
+  "name": "vrc",
+  "size": 1
  },
  {
   "name": "web",

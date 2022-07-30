@@ -40,6 +40,7 @@
  "clojure/study/vector",
  "clojure/vim-setting",
  "ctags",
+ "hack/http-client-clojure",
  "programming/destructuring",
  "vim/quickfix"
 ]

@@ -1,4 +1,5 @@
 [
+ "hack/http-client-clojure",
  "http",
  "HTTP-THE-DEFINITIVE-GUIDE",
  "httpbin.org",
