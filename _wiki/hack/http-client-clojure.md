@@ -3,7 +3,7 @@ layout  : wiki
 title   : VRC와 Postman의 대안으로 clj 파일을 사용하기
 summary : 이제 Postman 쓸 필요 없다
 date    : 2022-07-30 00:35:09 +0900
-updated : 2022-07-30 15:06:23 +0900
+updated : 2022-07-30 15:18:23 +0900
 tag     : postman vrc http clojure
 toc     : true
 public  : true
@@ -92,7 +92,7 @@ vim에서 돌아갈 뿐, Postman이나 IntelliJ의 Http Client와 거의 똑같�
 다음과 같은 이유로 Postman을 좋아한다.
 
 - 화면 구성이 알아보기 편리하다.
-- 동료들 대부분이 사용하고 있어 커뮤니케이션이 쉽고, 도움을 주고받기 좋다.
+- 주위 사람들 대부분이 사용하고 있어 커뮤니케이션이 쉽고, 도움을 주고받기 좋다.
 - `command + enter`로 요청을 전송하고 바로 결과를 확인할 수 있다.
 - Header 값 등에 변수값을 할당할 수 있다.
     - 예) `Authorization: Bearer {{토큰}}`과 같이 토큰을 동적으로 입력할 수 있어 편리하다.
