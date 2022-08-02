@@ -1,13 +1,13 @@
 ---
 layout  : wiki
-title   : conceallevel (Vim)
+title   : conceallevel
 summary : Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자
 date    : 2017-11-29 17:47:59 +0900
-updated : 2017-12-20 13:13:32 +0900
+updated : 2022-08-02 23:46:59 +0900
 tag     : vim trouble-shooting
 toc     : true
 public  : true
-parent  : [[vim]]
+parent  : [[/vim]]
 latex   : false
 ---
 * TOC

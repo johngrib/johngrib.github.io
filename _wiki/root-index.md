@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-07-28 00:17:25 +0900
+updated : 2022-08-02 23:46:17 +0900
 regenerate: true
 ---
 
@@ -601,6 +601,7 @@ regenerate: true
 
 * [[/vim/auto-completion]]
 * [[/vim/coc-nvim]]
+* [[/vim/conceallevel]]
 * [[/vim/configure-split]]
 * [[/vim/help]]
 * [[/vim/match]]
@@ -617,7 +618,6 @@ regenerate: true
 * [[two-views-of-vim]]
 * [[vim-asciidoc-setting]]
 * [[vim-clang]]
-* [[vim-conceallevel]]
 * [[vim-f-hangul]]
 * [[vim-tagbar-with-markdown]]
 * [[vim-tmux-t-ut]]

@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2022-02-26 22:16:08 +0900
+updated : 2022-08-02 23:47:12 +0900
 tag     : vim wiki
 public  : true
 parent  : [[vim]]
@@ -143,7 +143,7 @@ nnoremap <S-F4> :execute "VWB" <Bar> :lopen<CR>
 * 가령 문서 내에 링크를 걸려면 `\[[link]]`과 같이 적는데, conceal 레벨을 설정하면 좌우의 `\[[  ]]`가 안 보이고, 밑줄이 보이게 된다.
 * 보기엔 깔끔해도 안 보이는 문자가 있어, 커서 점프 시 짜증나는 경우가 많다.
 
-[[vim-conceallevel]]{conceallevel} 관련 값은 특별한 이유가 있지 않는 이상 꺼놓는 쪽이 좋다고 생각한다.
+[[/vim/conceallevel]]{conceallevel} 관련 값은 특별한 이유가 있지 않는 이상 꺼놓는 쪽이 좋다고 생각한다.
 
 * 게임이나, Startify, 음악 재생 플러그인처럼 독자적인 UI를 제공하는 플러그인인 경우에만 켜야 한다고 생각한다.
 * 나는 Vimwiki의 독자적인 UI가 별로 도움이 안 된다고 생각하기 때문에 `0`으로 설정하였다.
@@ -566,7 +566,7 @@ hi def link markdown_list Identifier
 
 
 * [[my-wiki]]{Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자}
-* [[vim-conceallevel]]{Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자}
+* [[/vim/conceallevel]]{Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자}
 
 ## 주석
 
