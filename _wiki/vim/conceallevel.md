@@ -3,7 +3,7 @@ layout  : wiki
 title   : conceallevel
 summary : Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자
 date    : 2017-11-29 17:47:59 +0900
-updated : 2022-08-02 23:46:59 +0900
+updated : 2022-08-02 23:49:18 +0900
 tag     : vim trouble-shooting
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 0. 개요
+## 개요
 
 * Vim에서 syntax 설정에 따라 특정 문자를 사용자가 눈으로 볼 수 없도록 숨기는 기능.
 * 파일엔 존재하지만 눈으로는 보이지 않게 된다.
@@ -24,7 +24,7 @@ latex   : false
 * 특정 문법에서 따옴표나 인용 부호 등을 숨길 수 있다.
 * Vimwiki에서는 기본값으로 `[[ ]]` 와 같은 이중 대괄호를 숨긴다.
 
-## 1. 설정값
+## 설정값
 
 ```viml
 :help conceallevel
@@ -35,7 +35,7 @@ latex   : false
 * `2`: 숨김 대상 텍스트가 사용자에게 보이지 않게 된다. 단, replacement character를 지정했다면 해당 문자로 보이게 된다.
 * `3`: 숨김 대상 텍스트가 사용자에게 보이지 않게 된다.
 
-## 2. 사용법
+## 사용법
 
 * help 문서 보기
 ```viml
@@ -52,7 +52,7 @@ latex   : false
 :set conceallevel=0
 ```
 
-## 3. 경험
+## 경험
 
 * conceal 때문에 스트레스를 너무 많이 받았다.
 * 나는 기본적으로 conceallevel을 `0`으로 설정해 사용하고 있다.
