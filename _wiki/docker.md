@@ -3,7 +3,7 @@ layout  : wiki
 title   : Docker
 summary : 
 date    : 2019-06-01 07:55:33 +0900
-updated : 2022-07-19 22:40:01 +0900
+updated : 2022-08-03 00:08:58 +0900
 tag     : bash command container
 toc     : true
 public  : true
@@ -46,10 +46,22 @@ $ docker container --help
 ```
 
 ### search
+
+[docker hub]( https://hub.docker.com/ )에서 이미지를 검색한다.
+
 ```sh
 $ docker search nginx
 $ docker search nginx --limit 10
 $ docker search ubuntu
+```
+
+### pull
+
+docker hub에서 이미지를 다운로드한다.
+
+```sh
+$ docker pull ubuntu
+$ docker pull ubuntu:22.04
 ```
 
 ### image
@@ -132,6 +144,47 @@ $ docker ps --help
 $ # 모든 컨테이너 보기
 $ docker ps -a
 $ docker ps --all
+```
+
+### run
+
+컨테이너를 실행하고 bash shell 터미널에 붙는다.
+
+```bash
+$ docker run -it ubuntu:latest /bin/bash
+```
+
+`-v`, `--volume`을 사용하면 볼륨에 마운트한다. 즉 호스트 컴퓨터와 디스크를 공유한다.
+
+```bash
+$ docker run -v 호스트경로:컨테이너경로 -it ubuntu:latest /bin/bash
+```
+
+`-p`, `--expose`로 포트를 포워딩할 수 있다.
+
+```bash
+$ docker run -p 호스트포트:컨테이너포트 ubuntu bash
+$ docker run -p 80:80 ubuntu bash
+$ docker run -p 80 ubuntu bash
+```
+
+### restart
+
+종료된 컨테이너를 리스타트할 수 있다.
+
+```bash
+$ docker restart 컨테이너ID
+$ docker restart hello-docker
+```
+
+### attach
+
+<https://docs.docker.com/engine/reference/commandline/attach/ >
+
+실행중인 컨테이너 터미널에 붙는다.
+
+```bash
+docker attach 컨테이너ID
 ```
 
 ## Tutorial
