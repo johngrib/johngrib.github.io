@@ -3,7 +3,7 @@ layout  : wiki
 title   : 로마 숫자 변환 문제
 summary : 
 date    : 2021-11-28 14:10:06 +0900
-updated : 2022-01-16 10:53:26 +0900
+updated : 2022-08-04 00:04:39 +0900
 tag     : 
 toc     : true
 public  : true
@@ -85,6 +85,45 @@ const arabic_to_roman = (arabic) => {
 ```
 
 로직은 단순하다. 주어진 아라비아 숫자에서 뺄 수 있는 가장 큰 로마 숫자를 뺄셈해가며 문자열을 완성하는 방법이다.
+
+만약 루프를 좀 덜 돌게 하고 싶다면 이렇게 할 수도 있겠다.
+
+```javascript
+// 아라비아 숫자를 입력받아 로마 숫자 문자열을 리턴한다
+const arabic_to_roman = (arabic) => {
+    let result = '';
+    let i = 0;
+    while (arabic > 0) {
+        if (arabic >= mapping[i].arabic) {
+            const count = Math.floor(arabic / mapping[i].arabic);
+            result = result.concat(mapping[i].roman.repeat(count));
+            arabic = arabic % mapping[i].arabic;
+        } else {
+            i++;
+        }
+    }
+    return result;
+};
+```
+
+재귀로 표현하는 것도 재미있는 방법일 것이다.
+
+```javascript
+// 아라비아 숫자를 입력받아 로마 숫자 문자열을 리턴한다
+const arabic_to_roman = (arabic, level) => {
+    if (arabic <= 0) {
+        return '';
+    }
+    if (level == undefined) {
+        level = 0;
+    }
+    const count = Math.floor(arabic / mapping[level].arabic);
+    const prefix = mapping[level].roman.repeat(count);
+    const postfix = arabic_to_roman(arabic % mapping[level].arabic, level + 1);
+
+    return prefix + postfix
+};
+```
 
 테스트 코드는 굳이 테스트 프레임워크를 사용하지 않고도 다음과 같이 단순하게 작성할 수 있다.
 
