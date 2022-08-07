@@ -59,6 +59,7 @@ latex: true
 
 ## 인터뷰, 발표
 
+* 2022-07-23 [Vim 교정학원 (VIMRC 2022)]( https://youtu.be/yWkVn4SSHn0 )
 * 2022-06-10 [송파 Clojure 밋업 1회]( https://youtu.be/BdSoNmWksuk )
 * 2021-12-21 [스타트업 개발자, 회사와 함께 성장하기]( https://class101.net/hidden-products/wqHXxHcuEhhENRMoo8cz )
 * 2020-01-29 [2020릴레이인터뷰 첫 번째 주자, 마켓컬리 소프트웨어 엔지니어 "이종립"]( https://monthly-jiandson.tistory.com/49 )
