@@ -3,7 +3,7 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-08 00:08:02 +0900
+updated : 2022-08-09 00:50:06 +0900
 tag     : 번역
 toc     : true
 public  : true
@@ -130,3 +130,182 @@ Indeed, a review of my Scientific American article (in Computer Reviews 8, 1, Ja
 실제로, 나의 Scientific American 글에 대한 리뷰를 읽어보면 프로그램은 "dictionary lookup 루틴, search 및 comparison 함수들의 sequence, sort-merge 타입 연산"들로 구성된다는 주장이 있습니다.
 
 ### LOGIC AND CONSISTENCY
+
+**논리와 일관성**
+
+>
+Let me begin by discussing one of the skeptical attitudes that is derived from some statements of good logicians and bad philosophers.
+We are told that certain theorems about proving the self‑consistency of logical systems have the consequence:
+"It is impossible to mechanize completely the process of discovery and therefore humans will always have the advantage over machines."
+I am sure almost every reader has heard of Godel's theorem, and most have heard of this alleged consequence.
+But this is not a logical consequence, for it is based on a careless technical oversight.
+If applicable at all to the problem‑solving question, Godel's theorem applies strictly only to perfectly self‑consistent logical systems.
+People are not this consistent, and there is no reason whatever why we should feel constrained to build our machines along such lines.
+Instead we can, and already do, build machines that can tolerate contradictory factual assertions.
+To do this, we have to add selection rules for resolving contradictions, priority hierarchies for choosing between incompatible statements, and the like.
+A simple example of such a scheme is described in Bertram Raphael's 1964 MIT PhD dissertation.
+Here is an example of a dialog with that program:
+>
+> ```
+> →       EVERY BOY IS A PERSON
+> (I UNDERSTAND)
+> →       A FINGER IS PART OF A HAND
+> (I UNDERSTAND)
+> →       EACH PERSON HAS TWO HANDS
+> THE ABOVE SENTENCE IS AMBIGUOUS •• PLEASE REPHRASE IT)
+> →       THERE ARE TWO HANDS ON EACH PERSON
+> (I UNDERSTAND)
+> →       HOW MANY FINGERS DOES JOHN HAVE?
+> (I DON'T KNOW WHETHER FINGER IS PART OF JOHN)
+> →       JOHN IS A BOY
+> (I UNDERSTAND)
+> →       HOW MANY FINGERS DOES JOHN HAVE?
+> (HOW MANY FINGERS PER HAND?)
+> →       EVERY HAND HAS 5 FINGERS)
+> (I UNDERSTAND)
+> →       HOW MANY FINGERS DOES JOHN HAVE?
+> (THE ANSWER IS 10)
+> →       HOW MANY AUTOMOBILES DOES JOHN HAVE?
+> THE ABOVE SENTENCE IS AMBIGUOUS. PLEASE RE-PHRASE IT)
+> →       WHO IS PRESIDENT OF THE UNITED STATES?)
+> (STATEMENT FORM NOT RECOGNIZED)
+> →       THE B0Y IS JUST TO THE LEFT OF THE TABLE
+> (G02840 IS A TABLE)
+> (I UNDERSTAND)
+> →       THE LAMP IS JUST TO THE LEFT OF THE TABLE
+> (G02841 IS A LAMP)
+> (THE ABOVE STATEMENT IS IMPOSSIBLE)
+> →       THE TABLE IS TO THE RIGHT OF THE CHAIR
+> (G02842 IS A CHAIR)
+> (I UNDERSTAND)
+> →       WHAT IS THE RELATIVE POSITION OF A PERSON?
+> (THE LEFT-TO-RIGHT ORDER IS AS FOLLOWS)
+> (CHAIR BOY TABLE))
+> ```
+
+좋은 논리학자와 나쁜 철학자의 몇 가지 발언에서 유래된 회의적인 태도 중 하나를 논의하는 것으로 시작해보죠.
+
+논리 시스템의 자기 일관성을 증명하는 것에 대한 어떤 정리는 "발견 과정을 완전히 기계화하는 것은 불가능하다. 그러므로 인간은 항상 기계보다 우수하다"는 결론을 내렸다고 합니다.
+나는 이 글을 읽는 독자 대부분이 괴델의 정리를 들어본 적이 있고 이런 주장에 대해서도 들어본 적이 있을 거라고 확신합니다. 이 주장은 기술적으로 부주의하게 간과한 면이 있어 논리적인 결론이라 할 수 없습니다.
+
+만약 problem‑solving 문제에 적용한다 치면 괴델의 정리는 완벽히 자기 모순이 없는 논리 시스템에만 엄격하게 적용할 수 있습니다.
+그러나 사람들은 그렇게까지 일관성을 갖는 존재가 아니며, 우리가 굳이 그런 까다로운 제약에 따라 기계를 만들어야 할 이유도 없습니다.
+그래서 그렇게 하는 대신에 우리는 모순되는 주장들을 수용하는 것이 가능한 기계를 만들 수 있으며, 이미 실제로 그렇게 하고 있습니다.
+이것이 가능하게 하려면 모순들을 해결하기 위한 선택 규칙과 호환되지 않는 선언들에 적용할 우선순위를 규칙 등을 추가해야 합니다.
+
+1964년 Bertram Raphael의 MIT 박사 논문에 이런 설계의 간단한 예가 나와 있습니다.
+다음은 그 프로그램의 대화 예제입니다.
+
+
+```
+→       모든 소년은 사람이다
+(알겠습니다)
+→       손가락은 손의 일부이다
+(알겠습니다)
+→       사람은 두 개의 손을 갖고 있다
+위의 문장은 모호합니다 .. 다시 말해 주십시오)
+→       각각의 사람들은 두 개의 손을 갖고 있다
+(알겠습니다)
+→       JOHN은 손가락을 몇 개 갖고 있는가?
+(손가락이 JOHN의 일부인지 아닌지 모르겠습니다)
+→       JOHN은 소년이다
+(알겠습니다)
+→       JOHN은 손가락을 몇 개 갖고 있는가?
+(손 하나에는 몇 개의 손가락이 있습니까?)
+→       모든 손은 다섯개의 손가락을 갖는다)
+(알겠습니다)
+→       JOHN은 손가락을 몇 개 갖고 있는가?
+(답은 10 입니다)
+→       JOHN은 자동차를 몇 대 갖고 있는가?
+위의 문장은 모호합니다. 다시 말해 주십시오)
+→       미국 대통령은 누구인가?)
+(질문 형식을 인식할 수 없음)
+→       소년은 테이블 바로 왼쪽에 있다
+(G02840은 테이블입니다)
+(알겠습니다)
+→       램프는 테이블 바로 왼쪽에 있다
+(G02841은 램프입니다)
+(위의 설명은 불가능합니다)
+→       테이블은 의자의 오른쪽에 있다
+(G02842는 의자입니다)
+(알겠습니다)
+→       사람의 상대적인 위치는?
+(THE LEFT-TO-RIGHT ORDER IS AS FOLLOWS)
+(왼쪽에서 오른쪽 순서에 따르겠습니다)
+(의자 소년 테이블))
+```
+
+>
+Raphael's knowledge‑collecting, question‑answering system shows how it gives higher priority to particular facts when they conflict with general principles.
+This "Exception Principle" is, of course, a rather simple‑minded way to resolve contradictions, and it can be only used when there is a clear difference in level of generality between the statements.
+When they are on the same level, the program simply rejects the later statement, as seen here:
+>
+> ```
+> →       THERE ARE 5 FINGERS ON EVERY HAND)
+> (I UNDERSTAND)
+> →       THERE ARE TWO HANDS ON A PERSON
+> (I UNDERSTAND)
+> →       A BOY IS A PERSON
+> (I UNDERSTAND)
+> →       TOM IS A BOY
+> (I UNDERSTAND)
+> →       DICK IS A BOY
+> (I UNDERSTAND)
+> →       HARRY IS A BOY
+> (I UNDERSTAND)
+> →       TOM HAS NINE FINGERS
+> (THE ABOVE SENTENCE IS AMBIGUOUS •• BUT I ASSUME (HAS) MEANS (HAS AS PARTS))
+> (I UNDERSTAND)
+> →       DICK HAS ONE HAND
+> (THE ABOVE SENTENCE IS AMBIGUOUS •• BUT I ASSUME (HAS) MEANS (HAS AS PARTS))
+> (I UNDERSTAND)
+> →       HOW MANY FINGERS DOES TOM HAVE?
+> (THE ANSWER IS 9)
+> →       HON MANY FINGERS DOES DICK HAVE?
+> (THE ANSWER IS 5)
+> →       HOW MANY FINGERS DOES HARRY HAVE?
+> (THE ANSWER IS 10)
+> →       HOW MANY FINGERS DOES JOE HAVE?
+> (I DON’T KNOW WHETHER FINGER IS PART OF JOE)
+> ```
+
+Raphael의 지식 수집, 질문 응답 시스템은 특정한 사실들이 일반 원칙과 모순되는 경우에 더 높은 우선 순위를 부여하는 방법을 보여줍니다.
+이러한 "예외 원칙"은 모순을 해결하기 위한 방법 중에서는 상당히 단순한 방법이고, 명령문 간의 일반성 수준에 분명한 차이가 있을 때만 사용할 수 있습니다.
+명령문들이 같은 레벨에 있다면 프로그램은 다음과 같이 나중에 입력된 명령을 단순하게 거부합니다.
+
+```
+→       모든 손에는 다섯 개의 손가락이 있다)
+(알겠습니다)
+→       사람은 두 개의 손을 갖고 있다
+(알겠습니다)
+→       소년은 사람이다
+(알겠습니다)
+→       TOM은 소년이다
+(알겠습니다)
+→       DICK은 소년이다
+(알겠습니다)
+→       HARRY는 소년이다
+(알겠습니다)
+→       TOM은 손가락을 아홉개 갖고 있다
+(위의 문장은 모호합니다 .. 그러나 (갖는다)의 의미를 (부분으로 갖는다)로 가정합니다)
+(알겠습니다)
+→       DICK은 손을 하나 갖고 있다
+(위의 문장은 모호합니다 .. 그러나 (갖는다)의 의미를 (부분으로 갖는다)로 가정합니다)
+(알겠습니다)
+→       TOM의 손가락은 몇 개인가?
+(답은 9 입니다)
+→       DICK의 손가락은 몇 개인가?
+(답은 5 입니다)
+→       HARRY의 손가락은 몇 개인가?
+(답은 10 입니다)
+→       JOE의 손가락은 몇 개인가?
+(손가락이 JOE의 일부인지 아닌지 모르겠습니다)
+```
+
+>
+But of course Raphael could have written some other priority rule.
+Incidentally, the program's statement, "The above sentence is ambiguous..." concerns the possibility that the word "has" might mean either "has as a part" or "owns. "
+Raphael's program usually guesses correctly by a study of whether the entities in question are already known to own things, or to be parts of things, etc.
+I will describe this later in more detail.
+Raphael's demonstration that such "contextual" decisions can be programmed, illustrates a more general point, or rather, shows a different and healthier attitude toward programs than the "nothing but" approach.
+We will therefore try to explain some of these better ways to think about programs.
