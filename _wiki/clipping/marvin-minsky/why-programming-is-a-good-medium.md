@@ -3,7 +3,7 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-09 00:50:06 +0900
+updated : 2022-08-09 23:10:48 +0900
 tag     : 번역
 toc     : true
 public  : true
@@ -38,15 +38,15 @@ Thus, computers do not have to be programmed with extremely clear and precise fo
 
 컴퓨터는 프로그래밍된 작업만 수행할 수 있다는 믿음이 널리 펴져 있습니다.
 이 잘못된 믿음은 형식<sub>form</sub>과 내용<sub>content</sub>을 혼동하는 데에서 비롯됐습니다.
-아무리 엄격한 문법이라 해도 프로세스를 기술할 때의 정확성은 보장해주지 않습니다.
+아무리 문법이 엄격하다 해도 프로세스를 기술할 때의 정확성까지 보장해주지는 않습니다.
 프로그래머는 컴퓨터 문법을 매우 정확하게 따라야 하지만, 의도하는 내용<sub>content</sub>은 얼마든지 자유롭게 표현할 수 있는 셈이죠.
 
 딱딱한 것은 문법이며, 문법이 엄격한 이유는 문법을 사용하는 프로그래머 때문입니다. 컴퓨터 때문이 아닙니다.
 프로그래머는 아이디어를 아주 정확하게 가다듬지 않아도 됩니다.
-컴퓨터의 응답 범위를 적절히 생각해두고 컴퓨터의 응답이 이 범위를 벗어나지 않으면 만족합니다.
+컴퓨터의 응답 범위를 적절히 생각해두고 컴퓨터의 응답이 이 범위를 벗어나지 않으면 만족하는 것이 프로그래머입니다.
 프로그래머는 특정 프로세스에 맞춰 컴퓨터를 고정해놓고 사용하지 않아도 됩니다.
-문제가 불확실한 영역에 있다면 프로그래머는 컴퓨터에게 새로운 절차<sub>procedures</sub>를 생성하도록 요청할 수 있습니다.
-아니면 선택 규칙을 추천해주는 식으로 어떤 선택을 해야 하는지에 대해 컴퓨터에게 조언을 줄 수도 있습니다.
+문제가 불확실한 영역에 있다면 프로그래머는 컴퓨터에게 새로운 절차<sub>procedures</sub>를 생성하도록 요청하면 그만입니다.
+아니면 선택 규칙을 추천해주는 식으로 어떤 선택을 해야 하는지에 대해 컴퓨터에게 알려주는 방법도 있습니다.
 
 즉, 컴퓨터는 무엇을 어떻게 실행해야 하는지에 대해 극도로 명확하고 정확한 공식을 통해 프로그래밍하지 않아도 되는 것입니다.
 
@@ -61,14 +61,14 @@ _"We must not fall into anthropomorphic ways of thinking about machines; they do
 We have all heard these views, and most of us accept them.
 
 여기에서 말하고자 하는 바는 구체적으로 "설계<sub>design</sub>"에 대한 것이 아닙니다.
-우리가 컴퓨터를 사용해서 무엇을 할 수 있는가라는 일반적인 문제에 대한 것입니다.
+우리가 컴퓨터를 사용해서 무엇을 할 수 있는가라는 광범위한 질문이 우리의 주제라 할 수 있습니다.
 
-다양한 이유로 컴퓨터의 가능성은 과소평가되는 것이 일반적입니다.
-나는 먼저 겉보기에 "온건해 보이는" 입장을 받아들이는 것의 함정을 경고하고 싶습니다.
+일반적으로 여러가지 이유로 컴퓨터의 가능성은 과소평가되고 있습니다.
+그래서 나는 일단 겉보기에 "온건해 보이는" 입장을 받아들이는 것의 함정을 경고하면서 이야기를 시작하고 싶습니다.
 상황을 이해한다고 생각하는 많은 사람들이 취하는 입장이죠.
-SF 작가, 모든 분야의 과학자, 경제 예측가, 심리학자, 심지어 논리학자도 컴퓨터가 실제로는 생각하지 않는 기계라며 설득력 있는 논조로 이렇게 이야기하곤 합니다.
-"기계를 의인화하는 사고 방식에 빠지면 안됩니다. 기계는 프로그램된 대로만 작동하며 스스로 독창적일 수 없고, 창의적이지도 않습니다."
-이런 말을 안 들어본 사람은 없겠죠. 대다수의 사람들은 이런 의견을 받아들입니다.
+SF 작가라던가, 온갖 분야의 과학자, 경제 예측가, 심리학자, 심지어 논리학자들도 진지한 논조로 컴퓨터가 실제로는 절대로 생각을 못하는 기계라고 이야기하곤 합니다.
+*"기계를 의인화하는 사고 방식에 빠지면 안됩니다. 기계는 프로그램된 대로만 작동하며 스스로 독창적일 수 없고, 창의적이지도 않습니다."*
+이런 말을 안 들어본 사람은 없겠죠. 대다수의 사람들은 이런 의견을 무비판적으로 받아들입니다.
 
 >
 It is easy to understand why a humanist will want to rhapsodize about the obscurity of thought processes, for there is an easy non sequitur between that obscurity and the desired an anthropomorphic uniqueness.
@@ -76,11 +76,11 @@ But this isn't the non sequitur important here.
 The fallacy under discussion is the widespread superstition that we can't write a computer program to do something unless one has an extremely clear, precise formulation of what is to be done, and exactly how to do it.
 This superstition is propagated at least as much by scientists—and even by "computer scientists"—as by humanists.
 
-인문주의자들이 사고 프로세스의 난해함에 대해 이렇게 강하게 이야기하고 싶어하는 이유를 이해하는 것은 간단합니다.
-왜냐하면 이런 종류의 불명확함과 다른 곳에서 찾아볼 수 없는 방식으로 의인화된 것을 구분하기가 쉽지 않기 때문입니다.
+사고의 프로세스의 난해함에 대해 인문주의자들이 이렇게 강하게 이야기하고 싶어하는 이유를 이해하는 것은 간단합니다.
+이런 종류의 의인화는 다른 곳에서 찾아볼 수 없는 독특한 것이므로, 이 주제의 난해함과 구분해서 생각하기가 쉽지 않기 때문입니다.
 
-그러나 이것은 여기에서 중요한 논점이 아닙니다.
-우리가 따져보고 있는 오류는, "수행할 작업과 수행하는 방법에 대해 아주 명확하고 정확한 공식이 없으면 컴퓨터 프로그램을 만들어서 돌릴 수 없다는" 널리 퍼져 있는 미신입니다.
+그러나 이런 것은 이 글에서 중요한 논점이 아닙니다.
+우리가 따져보고 있는 문제는, *"수행할 작업과 수행하는 방법에 대해 아주 명확하고 정확한 공식이 없으면 컴퓨터 프로그램을 만들어서 돌릴 수 없다"* 는 엄청 유명한 미신입니다.
 이 미신은 과학자들은 물론이고 심지어 "컴퓨터 과학자"들에게도 인문주의자들만큼이나 퍼져 있습니다.
 
 >
@@ -90,10 +90,10 @@ Now this is perfectly true in one sense, and it is absolutely false in another.
 Before explaining why, it is interesting to note that ‑ long before computers ‑ the same was said of the Devil: he could only appear to be creative.
 
 우리 귀에 들려오곤 하는 컴퓨터의 한계에 대한 이야기는 보통 이런 식입니다.
-"컴퓨터는 스스로 창조하지 못합니다. 컴퓨터는 그냥 시키는 것만 할 수 있습니다. 완벽한 정밀도로 공식화한 프로세스를 주지 않으면 컴퓨터는 돌아가지 않을 겁니다."
+*"컴퓨터는 스스로 창조하지 못합니다. 컴퓨터는 그냥 시키는 것만 할 수 있습니다. 완벽한 정밀도로 공식화한 프로세스를 주지 않으면 컴퓨터는 돌아가지 않을 겁니다."*
 
-이제 이 말은 어떤 의미에서는 완벽하게 사실이기도 하지만, 한편으로는 절대적으로 거짓이기도 합니다.
-왜 그런지 이유를 설명하기 전에 - 컴퓨터가 등장하기 훨씬 이전에 악마에 대해서도 똑같은 말이 있었다는 사실이 무척 흥미롭게 느껴집니다. 악마는 창의적으로 보인다는 거죠.
+오늘날의 관점에서 이 말은 어떤 의미에서는 완벽하게 사실이기도 하지만, 한편으로는 절대적으로 거짓이기도 합니다.
+왜 그런지 이유를 설명하기 전에 문득... 컴퓨터가 등장하기 한참 전에 악마에 대해서도 똑같은 말이 있었다는 것이 무척 흥미롭게 느껴집니다. 악마는 창조력을 갖고 있는 것처럼 보이지만 실제로는 그렇지 않다는 거요.
 
 >
 In the September 1966 issue of Scientific American, I discussed three programs: one is the checkers program of Samuel, which plays at the master level.
@@ -106,16 +106,16 @@ In that article I was concerned with problems of going further, to extend such w
 But for my purpose here, they can serve as adequate examples even in their present state, for while limited in what they can handle, they already do enough to confound the old comfortable superstitions.
 
 Scientific American 1966년 9월호에서 나는 세 가지 프로그램에 대해 논의한 바 있습니다.
-하나는 마스터 수준으로 체커 게임을 하는 Samuel의 체커 프로그램입니다.
-다른 하나는 Evans의 ANALOGY 프로그램인데, 기하학적 도형들 사이의 유사성을 인식하는 특정한 지능 테스트 문제를 상당히 잘 풀어냅니다.
-그리고 세 번째는 아래와 같이 영어로 된 "이야기" 형식의 고등학교 대수 문제를 푸는 Bobrow의 "STUDENT" 프로그램입니다.
+하나는 마스터 수준의 실력을 보이는 Samuel의 체커 프로그램입니다.
+다른 하나는 Evans의 ANALOGY 프로그램인데, 기하학적 도형들 사이의 유사성을 인식하는 종류의 지능 테스트 문제를 상당히 잘 풀어냅니다.
+그리고 세 번째는 영어로 된 "이야기" 형식의 고등학교 대수 문제를 푸는 Bobrow의 "STUDENT" 프로그램입니다. 이런 식이죠.
 
 **"메리의 나이는 메리가 앤의 현재 나이였을 때의 두 배입니다. 메리가 24세라면, 앤은 현재 몇 살입니까?"**
 
-이 프로그램은 문제를 좀 풀긴 하지만 모든 문제를 잘 풀어내지는 않습니다.
-그 글에서 내 관심은 다재다능한 일반 지능으로 발전하는 문제에 대한 것이었습니다만,
-이 프로그램들은 미신을 타파하겠다는 나의 목적에 적합한 예제가 될 수 있을 것 같습니다.
-왜냐하면 이 프로그램들이 취급할 수 있는 것은 제한적이긴 하나 오랫동안 받아들여진 미신을 혼란시켜 꺾기에는 충분하기 때문입니다.
+이 프로그램은 문제를 제법 풀긴 하지만 모든 문제를 잘 풀어내지는 않습니다.
+그 글에서 내가 표현하려 한 주제는 다재다능한 일반 지능으로의 발전에 대한 것이었습니다만,
+이 프로그램들은 미신을 타파하겠다는 이 글의 목적에도 적합한 예제가 될 수 있을 것 같습니다.
+왜냐하면 이 프로그램들이 제한적인 대상을 취급하긴 하지만 오랫동안 받아들여진 미신을 뒤흔들기에는 충분할 것으로 보이기 때문입니다.
 
 >
 The old view is that a program is "nothing but" a set of rigid rules for exactly what to do in each situation.
@@ -123,11 +123,11 @@ This is indeed a useful point of view for reassuring beginners at programming, o
 However, for more advanced processes, while "perfectly" true in one sense, it would be as correct to say that "houses are nothing but arrangements of construction materials" or "books are merely long strings of words."
 Indeed, a review of my Scientific American article (in Computer Reviews 8, 1, Jan. 1967) asserts that these programs are made of "dictionary lookup routines, sequences of search and comparison functions, and sort-merge type operations."
 
-프로그램에 대한 낡은 관점 하나는 프로그램이 "아무것도 아니며" 단지 각각의 상황에서 정확히 무엇을 해야 하는지에 대한 엄격한 규칙 집합이라는 것입니다.
-이 관점은 프로그래밍 초보자를 안심하게 해주고, 초보자가 작성한 프로그램을 분석할 때에는 유용한 관점이라 할 수 있습니다.
-그러나 고급 프로세스에 대해서는 이 관점은 특정한 의미에서만 "완전히" 사실일 뿐이며 "집은 건설자재들을 배치해 놓은 것에 불과하다", "책은 단순히 단어들을 길게 늘어놓은 것에 불과하다"라고 말하는 것과 다름이 없습니다.
+프로그램에 대한 고리타분한 관점 중 하나는 프로그램이 "아무것도 아니며<sub>nothing but</sub>" 단지 각각의 상황에서 정확히 무엇을 해야 하는지에 대한 엄격한 규칙을 모아놓은 집합이라는 것입니다.
+이 관점은 프로그래밍 초보자를 안심하게 해주는 효능을 갖고 있고, 초보자가 작성한 프로그램을 분석할 때에 한해서는 유용하기도 합니다.
+그러나 고급 프로세스에 대해 논할 때 이 관점은 특정한 의미에서만 "완전히" 사실일 뿐이며 "집은 건설자재들을 배치해 놓은 것에 불과하다", "책은 단순히 단어들을 길게 늘어놓은 것에 불과하다"라고 말하는 것과 다름이 없습니다.
 
-실제로, 나의 Scientific American 글에 대한 리뷰를 읽어보면 프로그램은 "dictionary lookup 루틴, search 및 comparison 함수들의 sequence, sort-merge 타입 연산"들로 구성된다는 주장이 있습니다.
+실제로, Scientific American에 실린 나의 글에 대한 어떤 리뷰에서는 프로그램은 "dictionary lookup 루틴, search 및 comparison 함수들의 sequence, sort-merge 타입 연산"들로 구성된다고 말하는 반론을 읽어볼 수 있습니다.
 
 ### LOGIC AND CONSISTENCY
 
@@ -185,13 +185,13 @@ Here is an example of a dialog with that program:
 
 좋은 논리학자와 나쁜 철학자의 몇 가지 발언에서 유래된 회의적인 태도 중 하나를 논의하는 것으로 시작해보죠.
 
-논리 시스템의 자기 일관성을 증명하는 것에 대한 어떤 정리는 "발견 과정을 완전히 기계화하는 것은 불가능하다. 그러므로 인간은 항상 기계보다 우수하다"는 결론을 내렸다고 합니다.
-나는 이 글을 읽는 독자 대부분이 괴델의 정리를 들어본 적이 있고 이런 주장에 대해서도 들어본 적이 있을 거라고 확신합니다. 이 주장은 기술적으로 부주의하게 간과한 면이 있어 논리적인 결론이라 할 수 없습니다.
+논리 시스템의 자기 일관성을 증명하는 것에 대한 어떤 정리는 *"발견 과정을 완전히 기계화하는 것은 불가능하다. 그러므로 인간은 항상 기계보다 우수하다"* 는 결론을 내렸다고 합니다.
+나는 이 글을 읽는 독자 대부분이 괴델의 정리를 들어본 적이 있고 이런 주장에 대해서도 들어본 적이 있을 거라고 확신합니다. 이 주장은 기술적으로 부주의하게 간과한 면이 있죠. 그래서 논리적인 결론이라 할 수 없습니다.
 
 만약 problem‑solving 문제에 적용한다 치면 괴델의 정리는 완벽히 자기 모순이 없는 논리 시스템에만 엄격하게 적용할 수 있습니다.
-그러나 사람들은 그렇게까지 일관성을 갖는 존재가 아니며, 우리가 굳이 그런 까다로운 제약에 따라 기계를 만들어야 할 이유도 없습니다.
-그래서 그렇게 하는 대신에 우리는 모순되는 주장들을 수용하는 것이 가능한 기계를 만들 수 있으며, 이미 실제로 그렇게 하고 있습니다.
-이것이 가능하게 하려면 모순들을 해결하기 위한 선택 규칙과 호환되지 않는 선언들에 적용할 우선순위를 규칙 등을 추가해야 합니다.
+그러나 인간은 그렇게까지 일관성을 갖는 존재가 아니며, 우리가 굳이 그런 까다로운 제약에 따라 기계를 만들어야 할 이유도 없습니다.
+그래서 그렇게 모순 없는 것을 만드는 대신에 우리는 모순되는 주장들을 수용하는 것이 가능한 기계를 만들 수 있으며, 이미 실제로 그렇게 하고 있습니다.
+이것이 가능하려면 모순들을 해결하기 위한 선택 규칙과 호환되지 않는 선언들에 적용할 우선순위를 규칙 등을 추가해야 합니다.
 
 1964년 Bertram Raphael의 MIT 박사 논문에 이런 설계의 간단한 예가 나와 있습니다.
 다음은 그 프로그램의 대화 예제입니다.
@@ -269,9 +269,10 @@ When they are on the same level, the program simply rejects the later statement,
 > (I DON’T KNOW WHETHER FINGER IS PART OF JOE)
 > ```
 
-Raphael의 지식 수집, 질문 응답 시스템은 특정한 사실들이 일반 원칙과 모순되는 경우에 더 높은 우선 순위를 부여하는 방법을 보여줍니다.
-이러한 "예외 원칙"은 모순을 해결하기 위한 방법 중에서는 상당히 단순한 방법이고, 명령문 간의 일반성 수준에 분명한 차이가 있을 때만 사용할 수 있습니다.
-명령문들이 같은 레벨에 있다면 프로그램은 다음과 같이 나중에 입력된 명령을 단순하게 거부합니다.
+Raphael의 지식 수집, 질문 응답 시스템은 일반 원칙과 특정한 사실들이 모순될 때 어떤 방식으로 우선 순위를 부여하는지를 보여줍니다.
+모순을 해결하기 위한 방법들 중에서 이러한 "예외 원칙"은 상당히 단순한 방법입니다.
+명령문들 사이에 일반성 레벨에 확실한 차이가 있는 경우에만 사용할 수 있죠.
+명령문들이 같은 레벨에 있다면 프로그램은 아래와 같이 단순하게 나중에 입력된 명령을 거부합니다.
 
 ```
 →       모든 손에는 다섯 개의 손가락이 있다)
@@ -309,3 +310,11 @@ Raphael's program usually guesses correctly by a study of whether the entities i
 I will describe this later in more detail.
 Raphael's demonstration that such "contextual" decisions can be programmed, illustrates a more general point, or rather, shows a different and healthier attitude toward programs than the "nothing but" approach.
 We will therefore try to explain some of these better ways to think about programs.
+
+물론 Raphael은 다른 방식으로 작동하는 우선순위 규칙을 만들 수도 있었겠지만 그러지 않았습니다.
+이 프로그램에서 말하는 *"위의 문장은 모호합니다..."* 는 *"갖는다<sub>has</sub>"* 라는 단어가 *"부분으로 갖는다<sub>has as a part</sub>"* 또는 *"소유한다<sub>owns</sub>"* 는 의미를 포함하고 있을 가능성을 표현하고 있습니다.
+즉, Raphael의 프로그램은 문제 속 대상이 일반적으로 무언가를 갖고 있거나, 아니면 다른 무언가의 일부로서 존재하는 것으로 추측하고 있습니다.
+이것에 대해서는 나중에 설명하도록 하죠.
+
+너무 일반적인 지점을 묘사하거나 "프로그램이 아무것도 아니라는<sub>nothing but</sub>" 접근방식에 비해, 이와 같이 "맥락을 고려한" 결정 과정이 프로그래밍될 수 있다는 Raphael의 예제는 논증에 있어 훨씬 건강한 태도를 보여주는 사례라 할 수 있겠습니다.
+지금부터는 이와 같이 프로그램에 대해 고찰하는 더 나은 방법들을 써서 살펴보도록 하겠습니다.
