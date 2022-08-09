@@ -3,7 +3,7 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-09 23:33:51 +0900
+updated : 2022-08-10 00:13:31 +0900
 tag     : 번역
 toc     : true
 public  : true
@@ -355,3 +355,66 @@ Of course, until the analysis is made, one should think of the program as an exp
 "GO TO" 명령도 "main loop"의 다양한 변형 중 하나로 간주할 수 있죠.
 
 분석이 필요하다는 문제가 있긴 하지만 이 관점에서는 프로그램은 이해하기는 좀 어려워도 유용한 아이디어를 표현하는 것이라 생각할 수 있습니다.
+
+### (2) A PROGRAM AS A COURT OF LAW
+
+**(2) 프로그램은 법원이나 다름없다**
+
+>
+In Raphael's program, it has to be decided whether "has" means "owns" or "has as parts" when a statement of the form "x has y" is encountered:
+>
+> ```
+> →     JOHN IS A PERSON)
+> (I UNDERSTAND)
+> →     DICK IS A PERSON)
+> (I UNDERSTAND)
+> →     A CHAIN IS PART OF A BICYCLE
+> (I UNDERSTAND)
+> →     THE POWER-SAW HAS A CHAIN
+> (THE ABOVE SENTENCE IS AMBIGUOUS •• BUT I ASSUME (HAS) MEANS (HAS AS PARTS))
+> (I UNDERSTAND)
+> →     JOHN OWNS A CHAIN
+> (I UNDERSTAND)
+> →     DICK HAS A CHAIR
+> (THE ABOVE SENTENCE IS AMBIGUOUS •• BUT I ASSUME (HAS) MEANS (HAS AS PARTS))
+> →     THE CUCKOO-CLOCK HAS A CHAIN
+> (THE ABOVE SENTENCE IS AMBIGUOUS •• PLEASE REPHRASE IT)
+> ```
+
+Raphael의 프로그램은 "x가 y를 갖는다"라는 형태의 명령에 대해 "갖는다<sub>has</sub>"가 "소유한다<sub>own</sub>"를 의미하는지, "부분으로 갖는다<sub>has as parts</sub>"를 의미하는지 결정해야 합니다.
+
+```
+→     JOHN은 사람이다)
+(알겠습니다)
+→     DICK은 사람이다)
+(알겠습니다)
+→     체인은 자전거의 일부이다
+(알겠습니다)
+→     전기톱은 체인을 갖고 있다
+(위의 문장은 모호합니다 .. 그러나 (갖는다)의 의미를 (부분으로 갖는다)로 가정합니다)
+(알겠습니다)
+→     JOHN은 체인을 소유한다
+(알겠습니다)
+→     DICK은 의자를 갖고 있다
+(위의 문장은 모호합니다 .. 그러나 (갖는다)의 의미를 (부분으로 갖는다)로 가정합니다)
+→     뻐꾸기 시계는 체인을 갖고 있다
+위의 문장은 모호합니다 .. 다시 말해 주십시오)
+```
+
+>
+The problem, when recognized, is transmitted to a part of the program that is able to review all that has happened before.
+This sub‑program makes its decision on the following basis:
+- _(1) Is y already known to be part of some other thing? Or is y a member of some set whose members are known to be parts of something?_
+- _(2) Is y known to be owned by something, or is it a member of some set whose members are known to be owned by something?_
+- _(3) If exactly one of (1) or (2) is true, make the choice in the corresponding direction. If neither holds, give up and ask for more information. If both are true, then consider the further possibilities at (4) below. (Thus the program uses evidence about how previously acquired information has been incorporated into its "model" of the world.)_
+- _(4) If we get to this point, then y is known already to be involved in being part of something and in being owned and we need a finer test._
+
+인식된 문제는 이전에 발생한 모든 것을 검토하는 서브 프로그램으로 전달됩니다.
+이 서브 프로그램은 다음 규칙에 따라 결정을 내립니다.
+
+- (1) `y`는 다른 것의 일부로 알려져 있는 것인가? 아니면 `y`는 다른 무언가의 일부로 구성된 집합의 원소인가?
+- (2) `y`는 어떤 것의 소유물로 알려져 있는가? 아니면 무언가의 소유물로 이루어진 어떤 집합의 원소인가?
+- (3) 만약 (1) 이나 (2) 중 하나만 참이라면 해당 방향으로 선택한다.
+    - 만약 둘 다 거짓이라면, 처리를 포기하고 더 많은 정보를 얻기 위해 질문을 한다.
+    - 만약 둘 다 참이라면, 아래의 (4)를 통해 다른 가능성을 고려한다. (이렇게 하여 프로그램은 앞에서 획득한 정보가 세계의 "모델"에 어떻게 통합되었는지에 대한 증거로 사용합니다.)
+- (4) 여기까지 왔다면, `y`는 이미 알려진 무언가의 일부이며 소유된 상태라는 것을 알게 되므로 더 정밀한 테스트가 필요하다.
