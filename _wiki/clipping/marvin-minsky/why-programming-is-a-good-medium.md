@@ -3,12 +3,12 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-10 00:13:31 +0900
+updated : 2022-08-10 00:48:57 +0900
 tag     : 번역
 toc     : true
 public  : true
 parent  : [[/clipping]]
-latex   : false
+latex   : true
 ---
 * TOC
 {:toc}
@@ -418,3 +418,33 @@ This sub‑program makes its decision on the following basis:
     - 만약 둘 다 거짓이라면, 처리를 포기하고 더 많은 정보를 얻기 위해 질문을 한다.
     - 만약 둘 다 참이라면, 아래의 (4)를 통해 다른 가능성을 고려한다. (이렇게 하여 프로그램은 앞에서 획득한 정보가 세계의 "모델"에 어떻게 통합되었는지에 대한 증거로 사용합니다.)
 - (4) 여기까지 왔다면, `y`는 이미 알려진 무언가의 일부이며 소유된 상태라는 것을 알게 되므로 더 정밀한 테스트가 필요하다.
+
+>
+Let $$U_1$$ and $$U_2$$ be the "something" or the "some set" that we know exists, respectively, in the answers to questions (1) and (2).
+These depend on‑ y.
+We now ask: is x a member of, or a subject of $$U_1$$ or $$U_2$$?
+If neither, we give up.
+If one, we choose the corresponding result‑"part of" or "owns."
+If both, we again give up and ask for more information. As Raphael says:
+
+질문 (1)과 질문 (2)의 답변에 사용되는 우리가 알고 있는 "무언가" 내지 "어떤 집합"이 $$U_1$$과 $$U_2$$ 라고 생각해 봅시다.
+이것들은 `y`에 따라 달라지겠죠.
+그래서 **`x`는 $$U_1$$ 또는 $$U_2$$ 의 원소인가?** 라고 질문하게 됩니다.
+만약 둘 다 아니라면 처리를 포기합니다.
+만약 둘 중 하나라면 해당하는 결과, 즉 "일부" 또는 "소유"를 선택하게 됩니다.
+만약 둘 다라면 우리는 추가 정보를 얻기 위해 질문을 하게 됩니다.
+
+이에 대해 Raphael은 다음과 같이 말합니다.
+
+>
+_"These criteria are simple, yet they are sufficient to enable the program to make quite reasonable decisions about the intended purpose in various sentences of the ambiguous word "has."
+Of course, the program can be fooled into making mistakes, e.g., in case the sentence, "Dick has a chain," had been presented before the sentence, "John owns a chain," in the above dialogue.
+However, a human being exposed to a new word in a similar situation would make a similar error.
+The point here is that it is feasible to automatically resolve ambiguities in sentence meaning by referring to the descriptions of the words in the sentence‑descriptions which can automatically be created through proper prior exposure to unambiguous sentences."_
+
+"이 기준은 심플하긴 하지만 다양한 문장에서 모호하게 사용되는 "갖는다<sub>has</sub>"라는 단어가 사용된 의도를 판별하는 데에 충분히 합리적인 결정을 내릴 수 있게 해줍니다.
+물론, 프로그램은 속아서 실수를 저지를 수도 있습니다.
+예를 들어 위의 예제에서 "John은 체인을 소유한다" 앞에 "Dick은 체인을 갖는다"는 문장이 먼저 제시되는 상황 같은 거죠.
+그러나 인간도 비슷한 상황일 때 새로운 단어를 접하게 되면 비슷한 오류를 저지르게 됩니다.
+여기에서 핵심은 명확한 문장을 적절히 미리 노출시킬 수 있다면, 단어에 대한 설명을 자동으로 생성 가능할 것이고, 이런 설명을 참조하여 문장 의미의 모호함을 자동으로 해결할 수 있다는 것입니다."
+
