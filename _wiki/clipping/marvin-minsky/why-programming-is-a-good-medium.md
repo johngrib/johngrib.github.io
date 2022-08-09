@@ -3,7 +3,7 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-09 23:10:48 +0900
+updated : 2022-08-09 23:33:51 +0900
 tag     : 번역
 toc     : true
 public  : true
@@ -318,3 +318,40 @@ We will therefore try to explain some of these better ways to think about progra
 
 너무 일반적인 지점을 묘사하거나 "프로그램이 아무것도 아니라는<sub>nothing but</sub>" 접근방식에 비해, 이와 같이 "맥락을 고려한" 결정 과정이 프로그래밍될 수 있다는 Raphael의 예제는 논증에 있어 훨씬 건강한 태도를 보여주는 사례라 할 수 있겠습니다.
 지금부터는 이와 같이 프로그램에 대해 고찰하는 더 나은 방법들을 써서 살펴보도록 하겠습니다.
+
+### (1) A PROGRAM AS A SEQUENCE OF INSTRUCTIONS TO BE OBEYED.
+
+**(1) 프로그램은 준수해야 하는 명령들의 시퀀스이다.**
+
+>
+The most common and simple‑minded view is that a computer program is a sequence of clear-cut operations to be performed on some data.
+Let's take a simple example of a program: suppose that X is a number given as input:
+
+가장 일반적이면서 단순한 관점은 컴퓨터 프로그램이 어떤 데이터에 대해 수행되는 명료한 작업들의 시퀀스라는 것입니다.
+이런 프로그램의 간단한 예를 들어보죠. 입력으로 `X`라는 숫자가 주어졌다고 합시다.
+
+```
+START: SET R = 1
+LOOP:   SET S = X/R
+        SET T=R+S
+        SET R = T/2
+        SET U = R x R
+        SET V = X - U
+        IF |V| > .001, GO TO LOOP
+        ELSE PRINT V
+```
+
+>
+This program (attributed to Isaac Newton) will compute an approximation to the square root of X.
+At each line in the program it is perfectly clear what is the current status of things, and what is to be done next.
+Of course, it requires a mathematical analysis, to show that the sequence of situations so developed will eventually lead to an acceptable value of R, and terminate the computation.'
+So there is no great harm in thinking of these statements as a sequence of steps.
+The "GO TO" instruction might be considered to be a super‑abbreviation for several more copies of the "main loop."
+Of course, until the analysis is made, one should think of the program as an expression of a useful but poorly understood idea.
+
+아이작 뉴턴이 만든 이 프로그램은 `X`의 제곱근의 근사값을 계산합니다.
+이 프로그램의 각 라인은 현재 상태와 다음에 수행해야 할 작업을 완전히 명확하게 표현하고 있습니다.
+물론 이렇게 진행되는 상태의 시퀀스가 허용 가능한 R 값으로 귀결되며 계산 과정이 종료된다는 것을 보여주기 위해서는 수학적 분석이 필요하긴 하지만, 이런 명령문들의 나열이라면 단계적인 시퀀스로 생각해도 별다른 문제는 없습니다.
+"GO TO" 명령도 "main loop"의 다양한 변형 중 하나로 간주할 수 있죠.
+
+분석이 필요하다는 문제가 있긴 하지만 이 관점에서는 프로그램은 이해하기는 좀 어려워도 유용한 아이디어를 표현하는 것이라 생각할 수 있습니다.
