@@ -3,7 +3,7 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-10 00:48:57 +0900
+updated : 2022-08-10 09:57:54 +0900
 tag     : 번역
 toc     : true
 public  : true
@@ -443,8 +443,33 @@ However, a human being exposed to a new word in a similar situation would make a
 The point here is that it is feasible to automatically resolve ambiguities in sentence meaning by referring to the descriptions of the words in the sentence‑descriptions which can automatically be created through proper prior exposure to unambiguous sentences."_
 
 "이 기준은 심플하긴 하지만 다양한 문장에서 모호하게 사용되는 "갖는다<sub>has</sub>"라는 단어가 사용된 의도를 판별하는 데에 충분히 합리적인 결정을 내릴 수 있게 해줍니다.
-물론, 프로그램은 속아서 실수를 저지를 수도 있습니다.
-예를 들어 위의 예제에서 "John은 체인을 소유한다" 앞에 "Dick은 체인을 갖는다"는 문장이 먼저 제시되는 상황 같은 거죠.
-그러나 인간도 비슷한 상황일 때 새로운 단어를 접하게 되면 비슷한 오류를 저지르게 됩니다.
-여기에서 핵심은 명확한 문장을 적절히 미리 노출시킬 수 있다면, 단어에 대한 설명을 자동으로 생성 가능할 것이고, 이런 설명을 참조하여 문장 의미의 모호함을 자동으로 해결할 수 있다는 것입니다."
+물론, "Dick은 체인을 갖고 있다"가 "John은 체인을 소유한다"보다 먼저 나오게 한다던가 해서 프로그램을 속여 실수하게 할 수도 있습니다.
+하지만 인간 또한 비슷한 상황에서 새로운 단어를 접하게 되면 비슷한 오류를 저지르게 됩니다.
+여기에서 핵심은 명확한 문장을 적절히 미리 노출시킬 수 있다면, 단어에 대한 설명을 자동으로 생성 가능할 것이고, 이런 설명을 참고해서 모호한 의미를 갖는 문장 문제를 자동으로 해결할 수 있다는 것입니다."
 
+>
+Thus, the program is instructed to attempt to search though its collection of prior knowledge, to find whether x and y are related, if at all, more closely in one or the other way.
+This "part" of the program is best conceived of as a little trial court, or as an evidence‑collecting and evidence-weighing procedure.
+It is not good to think of it as a procedure directly within a pre‑specified sequence of problem solving, but rather as an appeal court to consult when the program encounters an inconsistency or ambiguity.
+Now when we write a large program, with many such courts, each capable if necessary of calling upon others for help, it becomes meaningless to think of the program as a "sequence."
+Even though the programmer himself has stated the "legal" principles which permit such "appeals," he may have only a very incomplete understanding of when and where in the course of the program's operation these procedures will call on each other.
+And for a particular "court," he has only a sketchy idea of only some of the circumstances that will cause it to be called upon.
+In short, once past the beginner level, programmers do not simply write 'sequences of instructions'.
+Instead, they write for the individuals of little societies or processes.
+For try as we may, we rarely can fully envision, in advance, all the details of their interactions.
+For that, after all, is why we need computers.
+
+그러므로 이 프로그램은 서로 관련되어 있는 x와 y가 어떤 형태로 밀접하게 연관되어 있는지를 탐색하기 위해, 사전에 수집해 놓은 지식을 검색하라는 명령을 받아 처리하는 도구라 할 수 있습니다.
+이런 "측면"을 두고 잘 생각해 보면 작은 재판 법원이라던가, 증거 수집, 증거 평가 절차 같은 것들을 떠올리기 좋습니다.
+즉 이 프로그램을 '미리 지정해둔 문제 해결을 위한 순서를 따라가는 절차'로 여기는 것은 바람직하지 않습니다.
+모순점이나 모호한 상황을 접하게 된 프로그램이 찾아가는 항소 법원이라 보는 것이 더 자연스럽습니다.
+
+
+이제 우리가 대규모의 프로그램을 작성할 때, 상황에 따라 도움을 요청할 수 있는 이런 법원을 내부에 많이 포함하고 있게 한다면 그 프로그램을 단순히 "시퀀스"라고 여기는 것은 무의미한 일이라는 것을 알게 되었습니다.
+심지어 이런 "소송"이 작동하는 "법적" 원칙을 만들어낸 프로그래머라 하더라도, 프로그램이 돌아갈 때 언제 어디서 이런 절차가 서로 호출되는지에 대해서는 명확하게 이해하지 못하고 있을 수 있습니다.
+그리고 특정한 "법원"이 호출되는 상황이 어떤 것이 있는지에 대해서도 프로그래머는 대략적인 아이디어만 갖습니다.
+즉 초보자 레벨을 넘어선 프로그래머가 작성하는 프로그램은 단순한 명령의 나열이 아닙니다.
+프로그래머는 작은 사회와 그 사회의 절차를 담당하는 개인들을 만들어내는 것입니다.
+그러한 프로그램 속 상호작용의 모든 디테일을 완전히 상상해내는 것은 거의 불가능하죠.
+
+그리고 이것이 바로 우리에게 컴퓨터가 필요한 이유입니다.
