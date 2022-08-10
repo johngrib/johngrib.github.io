@@ -3,7 +3,7 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-11 01:45:31 +0900
+updated : 2022-08-11 01:49:55 +0900
 tag     : 번역
 toc     : true
 public  : true
@@ -321,7 +321,7 @@ We will therefore try to explain some of these better ways to think about progra
 
 ### (1) A PROGRAM AS A SEQUENCE OF INSTRUCTIONS TO BE OBEYED.
 
-**준수해야 하는 명령 시퀀스로서의 프로그램**
+**(1) 준수해야 하는 명령 시퀀스로서의 프로그램**
 
 >
 The most common and simple‑minded view is that a computer program is a sequence of clear-cut operations to be performed on some data.
@@ -476,7 +476,7 @@ For that, after all, is why we need computers.
 
 ### (3) A PROGRAM AS A COLLECTION OF STATEMENTS OF ADVICE
 
-**조언 명령의 집합으로서의 프로그램**
+**(3) 조언 명령의 집합으로서의 프로그램**
 
 >
 The great illusion shared not only by all terrified humanists but also by most computer "experts," that programming is an inherently precise and rigid medium of expression, is based on an elementary confusion between form and content.
