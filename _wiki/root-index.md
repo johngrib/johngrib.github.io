@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-08-02 23:46:17 +0900
+updated : 2022-08-07 17:03:27 +0900
 regenerate: true
 ---
 
@@ -68,8 +68,9 @@ regenerate: true
 
 ## [[clipping]]
 
-* [[/clipping/predicting-the-future]]
 * [[/clipping/ewd/32]]
+* [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]
+* [[/clipping/predicting-the-future]]
 
 * [[Software-Engineering-Code-of-Ethics]]
 * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
