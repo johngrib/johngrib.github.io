@@ -3,7 +3,7 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-11 00:46:54 +0900
+updated : 2022-08-11 01:41:07 +0900
 tag     : 번역
 toc     : true
 public  : true
@@ -609,4 +609,67 @@ There isn't any one programmer.
 ### LATITUDE OF EXPRESSION AND SPECIFICITY OF IDEAS
 
 **표현의 자유도와 아이디어의 특수성**
+
+>
+Finally we come to the question of what to do when we want to write a program but our idea of what is to be done, or how to do it, is incompletely specified.
+The non sequitur that put everyone off about this problem is very simple:
+>
+> - _Major Premise: If I write a program it will do something particular, for every program does something definite._
+> - _Minor Premise: My idea is vague. I don't have any particular result in mind._
+> - _Conclusion: Ergo, the program won't do what I want._
+>
+So, everyone thinks, programs aren't expressive of vague ideas.
+There are really two fallacies.
+First, it isn't enough to say that one doesn't have a particular result in mind.
+Instead, one has an (ill-defined) range of acceptable performances, and would be delighted if the machine's performance lies in the range.
+The wider the range, then, the wider is one's latitude in specifying the program.
+This isn't necessarily nullified, even when one writes down particular words or instructions, for one is still free to regard that program as an instance.
+In this sense, one could consider a particular written-down story as an instance of the concept that still may remain indefinite in the author's mind.
+
+결국 우리는 하나의 질문에 도달하게 되었습니다.
+"무엇을 어떻게 할 지에 대해 불완전한 생각만 있을 때, 프로그램을 작성하고 싶다면 무엇을 해야 하는가?"
+이 문제를 모든 사람들이 싫어할 것 같은 방식으로 다음과 같이 간단하게 전개할 수도 있습니다.
+
+- 대전제: 만약 내가 프로그램을 작성한다면, 그 프로그램은 특정한 일을 하게 될 것이다. 왜냐하면 모든 프로그램은 의도한 작업을 수행하기 때문이다.
+- 소전제: 내 아이디어는 모호하다. 나는 내가 원하는 특정한 결과가 뭔지 모르겠다.
+- 결론: 그러므로 내가 만든 프로그램은 내가 원하는 것을 하지 않을 것이다.
+
+프로그램은 모호한 아이디어를 표현하는 매체가 아니라고 모든 사람들이 생각합니다.
+
+사실 위의 생각에는 두 가지 오류가 있습니다.
+첫째, 내가 원하는 특정한 결과가 뭔지 모르겠다고 말하는 것으로는 충분하지 않습니다.
+그 대신 (잘못 정의된) 허용 가능한 성능 범위가 있을 수 있으며, 이런 경우에는 기계의 성능이 해당 범위 내에 있다면 만족한다고 할 수 있습니다.
+이런 범위가 넓어질수록 프로그램을 지정할 수 있는 자유도 또한 넓어지게 됩니다.
+이렇게 하는 방식은 특정한 단어나 지시문을 기록한다 하더라도 무효화되지 않습니다.
+왜냐하면 해당 프로그램을 범위 속 하나의 사례<sub>instance</sub>로 간주할 수 있기 때문입니다.
+이런 의미에서, 이미 기록된 특정한 이야기를 작가의 마음 속에 아직 불명확하게 남아있을 수 있는 개념의 사례<sub>instance</sub>로도 생각할 수 있습니다.
+
+>
+At this point there might be a final objection: does it lie exactly over this range?
+Remember, I'm not saying that programming is an easy way to express poorly defined ideas!
+To take advantage of the unsurpassed flexibility of this medium requires tremendous skill‑technical, intellectual, and esthetic.
+To constrain the behavior of a program precisely to a range may be very hard, just as a writer will need some skill to express just a certain degree of ambiguity.
+A computer is like a violin.
+You can imagine a novice trying first a phonograph and then a violin.
+The latter, he says, sounds terrible.
+That is the argument we have heard from our humanists and most of our computer scientists.
+Computer programs are good, they say, for particular purposes, but they aren't flexible.
+Neither is a violin, or a typewriter, until you learn how to use it.
+
+이 시점에서 "그런 이야기는 논점이라는 범위를 벗어나는 것이 아닌가요?"
+라는 최종적인 반론이 있을 수 있습니다.
+
+나는 프로그래밍이 충분하지 않게 정의된 아이디어를 표현하는 간단한 방법이라고 말하는 것이 아닙니다.
+이 매체의 탁월한 유연성을 이용하려면 상당한 기술과, 지적이고 심미적인 능력이 필요합니다.
+프로그램의 동작을 정확하게 특정한 범위 내로 제한하는 것은 매우 어려운 일일 수 있습니다.
+이것은 작가가 어느 정도는 모호하게 표현하는 기술을 사용하는 것과 비슷합니다.
+
+컴퓨터는 바이올린과 비슷합니다.
+초보자가 먼저 축음기로 대단한 음악을 들은 다음에 바이올린을 연주한다고 생각해 보세요.
+그러면 그 사람은 연주 소리가 별로라고 말할 것입니다.
+우리의 인문주의자들과 대부분의 컴퓨터 과학자들은 이런 이야기를 합니다.
+컴퓨터 프로그램은 특정한 목적에는 적합할 수는 있어도, 유연하지는 않다고 합니다.
+하지만 바이올린이나 타자기도 유연하지 않은 것은 마찬가지입니다.
+
+우리가 사용법을 익히기 전에는 말이죠.
 
