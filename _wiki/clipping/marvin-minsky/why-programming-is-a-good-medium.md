@@ -3,7 +3,7 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-11 01:41:07 +0900
+updated : 2022-08-11 01:45:31 +0900
 tag     : 번역
 toc     : true
 public  : true
@@ -76,12 +76,12 @@ But this isn't the non sequitur important here.
 The fallacy under discussion is the widespread superstition that we can't write a computer program to do something unless one has an extremely clear, precise formulation of what is to be done, and exactly how to do it.
 This superstition is propagated at least as much by scientists—and even by "computer scientists"—as by humanists.
 
-사고의 프로세스의 난해함에 대해 인문주의자들이 이렇게 강하게 이야기하고 싶어하는 이유를 이해하는 것은 간단합니다.
+사고의 프로세스의 난해함에 대해 인본주의자들이 이렇게 강하게 이야기하고 싶어하는 이유를 이해하는 것은 간단합니다.
 이런 종류의 의인화는 다른 곳에서 찾아볼 수 없는 독특한 것이므로, 이 주제의 난해함과 구분해서 생각하기가 쉽지 않기 때문입니다.
 
 그러나 이런 것은 이 글에서 중요한 논점이 아닙니다.
 우리가 따져보고 있는 문제는, *"수행할 작업과 수행하는 방법에 대해 아주 명확하고 정확한 공식이 없으면 컴퓨터 프로그램을 만들어서 돌릴 수 없다"* 는 엄청 유명한 미신입니다.
-이 미신은 과학자들은 물론이고 심지어 "컴퓨터 과학자"들에게도 인문주의자들만큼이나 퍼져 있습니다.
+이 미신은 과학자들은 물론이고 심지어 "컴퓨터 과학자"들에게도 인본주의자들만큼이나 퍼져 있습니다.
 
 >
 What we are told, about the limitations of computers, usually takes this general form:
@@ -496,7 +496,7 @@ It's because of the programmers who specified the language!
 In Bobrow's STUDENT program, you could type once and for all, if you wish, "USE ALWAYS MEANS GO TO" and in simple situations it would then allow you to use "USE" instead of "GO T0."
 This is, of course, a trivial example of flexibility, but it is a point that most people don't appreciate: FORTRAN's stiffness is, if anything, derived from the stiffness superstition, not an instance of some stiffness fact!
 
-끔찍한 인문주의자들 뿐 아니라 대부분의 컴퓨터 "전문가들"도 품고 있는 *'프로그래밍은 본질적으로 정확하고 엄격한 표현 매체'* 라는 엄청난 환상은 기본적으로 형식과 내용을 헷갈리고 있기 때문에 발생하는 것입니다.
+끔찍한 인본주의자들 뿐 아니라 대부분의 컴퓨터 "전문가들"도 품고 있는 *'프로그래밍은 본질적으로 정확하고 엄격한 표현 매체'* 라는 엄청난 환상은 기본적으로 형식과 내용을 헷갈리고 있기 때문에 발생하는 것입니다.
 
 14행 단위로 시인이 시를 써야 하는 제약이 생긴다고 칩시다. 그것 때문에 시가 더 정밀해지지는 않을 겁니다.
 작곡가는 12음계를 사용해야 하지만 음악 또한 그런 형식에 갇히지 않습니다.
@@ -667,7 +667,7 @@ Neither is a violin, or a typewriter, until you learn how to use it.
 컴퓨터는 바이올린과 비슷합니다.
 초보자가 먼저 축음기로 대단한 음악을 들은 다음에 바이올린을 연주한다고 생각해 보세요.
 그러면 그 사람은 연주 소리가 별로라고 말할 것입니다.
-우리의 인문주의자들과 대부분의 컴퓨터 과학자들은 이런 이야기를 합니다.
+우리의 인본주의자들과 대부분의 컴퓨터 과학자들은 이런 이야기를 합니다.
 컴퓨터 프로그램은 특정한 목적에는 적합할 수는 있어도, 유연하지는 않다고 합니다.
 하지만 바이올린이나 타자기도 유연하지 않은 것은 마찬가지입니다.
 
