@@ -3,7 +3,7 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-10 09:57:54 +0900
+updated : 2022-08-11 00:46:54 +0900
 tag     : 번역
 toc     : true
 public  : true
@@ -321,7 +321,7 @@ We will therefore try to explain some of these better ways to think about progra
 
 ### (1) A PROGRAM AS A SEQUENCE OF INSTRUCTIONS TO BE OBEYED.
 
-**(1) 프로그램은 준수해야 하는 명령들의 시퀀스이다.**
+**준수해야 하는 명령 시퀀스로서의 프로그램**
 
 >
 The most common and simple‑minded view is that a computer program is a sequence of clear-cut operations to be performed on some data.
@@ -358,7 +358,7 @@ Of course, until the analysis is made, one should think of the program as an exp
 
 ### (2) A PROGRAM AS A COURT OF LAW
 
-**(2) 프로그램은 법원이나 다름없다**
+**(2) 법원으로서의 프로그램**
 
 >
 In Raphael's program, it has to be decided whether "has" means "owns" or "has as parts" when a statement of the form "x has y" is encountered:
@@ -473,3 +473,140 @@ For that, after all, is why we need computers.
 그러한 프로그램 속 상호작용의 모든 디테일을 완전히 상상해내는 것은 거의 불가능하죠.
 
 그리고 이것이 바로 우리에게 컴퓨터가 필요한 이유입니다.
+
+### (3) A PROGRAM AS A COLLECTION OF STATEMENTS OF ADVICE
+
+**조언 명령의 집합으로서의 프로그램**
+
+>
+The great illusion shared not only by all terrified humanists but also by most computer "experts," that programming is an inherently precise and rigid medium of expression, is based on an elementary confusion between form and content.
+If poets were required to write in units of fourteen lines, it wouldn't make them more precise;
+if composers had to use all twelve tones, it wouldn't constrain the overall forms;
+if designers had to use only fourth order surfaces no ‑one would notice it much!
+It is humorous, then, to find such unanimity about how the rather stiff grammar of (the older) programming language makes for precision in describing processes.
+It's perfectly true that you have to be very precise in your computer grammar (syntax) to get your program to run at all.
+No spelling or punctuation errors are allowed!
+But it's perfectly false that this makes you have a precise idea of what your program will do.
+In FORTRAN, if you want your program to call upon some already written procedure, you have to use one of the fixed forms like "GO TO."
+You can't say "USE," or "PROCEED ON TO," etc., so the syntax is stiff.
+But, you can "GO TO" almost anything, so the content is free.
+>
+A worse fallacy is to assume that such stiffness is because of the computer!
+It's because of the programmers who specified the language!
+In Bobrow's STUDENT program, you could type once and for all, if you wish, "USE ALWAYS MEANS GO TO" and in simple situations it would then allow you to use "USE" instead of "GO T0."
+This is, of course, a trivial example of flexibility, but it is a point that most people don't appreciate: FORTRAN's stiffness is, if anything, derived from the stiffness superstition, not an instance of some stiffness fact!
+
+끔찍한 인문주의자들 뿐 아니라 대부분의 컴퓨터 "전문가들"도 품고 있는 *'프로그래밍은 본질적으로 정확하고 엄격한 표현 매체'* 라는 엄청난 환상은 기본적으로 형식과 내용을 헷갈리고 있기 때문에 발생하는 것입니다.
+
+14행 단위로 시인이 시를 써야 하는 제약이 생긴다고 칩시다. 그것 때문에 시가 더 정밀해지지는 않을 겁니다.
+작곡가는 12음계를 사용해야 하지만 음악 또한 그런 형식에 갇히지 않습니다.
+만약 디자이너가 4개의 레이어만 사용해야 하는 상황이라 해도 아무도 그걸 눈치채지 못할 것입니다.
+이와 유사하게, 상당히 엄격한 문법 규칙을 갖는 (오래된) 프로그래밍 언어를 쓰는 것이야말로 프로세스를 작성할 때의 정확성을 유지하는 방법이라고 다같이 맞장구친다면 꽤나 우스운 일일 것입니다.
+
+물론 우리가 작성한 프로그램을 실행하려면 컴퓨터의 문법(구문)을 매우 정확하게 따라야 한다는 것은 누구도 부정할 수 없는 사실입니다.
+오타는 물론이고 구두점을 잘못 사용하는 것도 절대 허용되지 않죠!
+그러나 이렇게 문법을 따르는 것을 두고 '문법을 따르면 프로그램이 무엇을 하는지에 대해 정확하게 파악할 수 있다'고 생각한다면 완전히 잘못된 것입니다.
+
+예를 들어 FORTRAN에서는 이미 만들어둔 프로시저를 프로그래밍 방식으로 호출하려면 "GO TO"와 같은 고정된 형식 중 하나를 사용해야 합니다.
+"USE" 라던가, "PROCEED ON TO"라고 쓰면 안되니까 문법이 딱딱하다고 할 수 있겠습니다.
+하지만 "GO TO"를 통해 거의 무엇이든 해낼 수 있죠.
+때문에 형식은 딱딱하지만 내용은 자유로운 셈입니다.
+
+더더욱 바람직하지 않은 것은 그런 딱딱함의 원인이 바로 컴퓨터라고 생각하는 것입니다.
+그건 컴퓨터가 아니라 언어를 만든<sub>specified</sub> 프로그래머들 때문입니다!
+가령 Bobrow의 STUDENT 프로그램을 쓰면 "USE ALWAYS MEANS GO TO"를 딱 한 번만 입력하고, 그 이후부터는 "GO TO" 대신 "USE"를 사용할 수 있게 됩니다.
+이것은 유연성을 보여주는 사례 중에서는 사소한 것이지만 대부분의 사람들이 무심코 지나치는 특장점이기도 합니다.
+FORTRAN의 딱딱함은 딱딱함에 대한 미신에서 강조하는 것이며, 컴퓨터의 딱딱함에 대한 적절한 예가 아닙니다!
+
+>
+For an example of a modern system with more flexibility, a programming language called PILOT, developed by Warren Teitelman (Ph.D. dissertation, MIT, 1966), allows the programmer to make modifications both in his programs and in the language itself, by external statements in the (current version of) the language.
+We can often think of these as "advice" rather than as "program," because they are written at odd times, and are usually conditionally applied in default situations, or as a consequence of previous advice.
+**An example is the following** typed in while developing a program to solve problems like the well‑known "missionaries and cannibals" dilemma ‑ the one with the boat that holds only two people, etc:
+
+>
+_Tell progress, if m is a member of side‑1 and m is a member of side‑2 and (countq side‑1 m) is not equal to (countq side‑1 c), then quit._ (An earlier collection of advice statements to the input system has been used to produce the reasonably humanoid input syntax.)
+
+보다 유연한 최신 시스템의 예로 Warren Teitelman(1966년 MIT 박사논문)이 개발한 PILOT이라는 프로그래밍 언어를 사용하면, 언어 바깥의 명령을 통해 프로그래머는 프로그램은 물론이고 언어 자체까지 수정할 수 있습니다.
+우리는 이런 것을 "프로그램"이라기보다는 "조언<sub>advice</sub>"으로 생각해 볼 수 있습니다.
+왜냐하면 이런 조언들은 프로그램 작성 당시가 아니라 별도의 타이밍에 작성되며, 기본 상황에서는 조건부로 적용되기도 하고 이전 조언들의 영향을 받은 결과로 적용되기도 하기 때문입니다.
+예를 들어, 잘 알려진 딜레마인 "두 명만 탈 수 있는 보트가 등장하는 선교사와 식인종 문제"를 해결하기 위한 프로그램을 개발하고 있을 때 다음과 같이 입력했다고 합시다.
+
+*만약 `m`이 side-1의 멤버이고, `m`이 side-2의 멤버일 때, `(countq side-1 m)`이 `(countq side-1 c)`와 같지 않다면 진행 상황을 설명하고 종료하라.
+(이 입력 시스템을 구성하기 위한 조언 명령의 이전 컬렉션은 합리적인 휴머노이드 입력 구문을 생성하는 데에 사용되었습니다)*
+
+>
+(역주) 예제의 코드는 마빈 민스키가 Lisp과 관련이 깊다는 점도 함께 떠올려보면 더 흥미롭게 읽을 수 있다고 생각합니다.
+`(countq side-1 m)`와 `(countq side-1 c)`는 Lisp 코드로, 각각 1번 강변의 선교사의 수와 1번 강변의 식인종의 수를 표현하고 있습니다.
+선교사와 식인종이 보트를 타고 강을 건너는 문제들은 보통 식인종이 수적으로 우세하지 않은 경우에는 선교사를 공격하지 않는다는 조건이 붙습니다. 1번 강변에 선교사 2명 식인종이 2명 있다면 안전하겠지만, 1번 강변에 선교사가 1명 식인종이 2명 있다면 그 선교사는 잡아먹히게 되겠죠.
+{:style="background-color: #ecf1e8;"}
+
+<span/>
+
+>
+The program is a heuristic search that tries various arrangements and moves, and prefers those that make "progress" toward getting the people across the river.
+Teitelman writes the basic program first.
+But the missionaries get eaten, and the above "advice" says to "modify the progress‑measuring part of the program to reject moves that leave unequal numbers of missionaries and cannibals on the sides of the river."
+As Teitelman says:
+>
+_This gives the eating conditions to PROGRESS.
+It is not sufficient to simply count and compare, because when all of the cannibals are on one side with no missionaries, they do outnumber the missionaries 3 to 0.
+However, nobody gets eaten._
+
+이 프로그램은 휴리스틱한 탐색을 통해 다양한 배치와 움직임을 시도하며, 사람들이 강을 건너갈 수 있도록 "진행"하는 것을 우선시합니다.
+Teitelman은 먼저 간단한 프로그램을 작성했는데 실행해 놓고 보니 선교사가 잡아먹히게 됐습니다.
+그래서 위의 "조언"은 *"양쪽 강가에 선교사와 식인종의 수가 똑같지 않게 하는 움직임을 거부할 수 있도록, 프로그램의 진행률을 측정하는 부분을 수정하십시오."* 라고 제안했습니다.
+
+Teitelman은 다음과 같이 말합니다.
+
+*이 조언은 PROGRESS에 잡아먹는 것과 관련된 조건을 부여합니다.
+단순히 수를 세고 비교하는 것만 따지면 헛점이 있다는 거죠.
+왜냐하면 모든 식인종들이 선교사 없이 한쪽 강변에만 있다고 합시다.
+이렇게 되면 식인종들이 선교사들을 3:0 으로 압도하게 되긴 하는데 수만 따졌을 때 그런 거고 실제로는 선교사가 없으니 잡아먹지는 못합니다.*
+
+>
+The point, however, is not in the relaxation of syntax restrictions, but in the advice‑like character of the modification just made in the program.
+The "tell progress" statement can be made without knowing very much about how "progress" works already or where it lies in the "program."
+It may already be affected by other advice, and one might not have a clear idea of when the new advice will be used and when it will be ignored.
+Some other function may have been modified so that, in certain situations, "progress" won't get to evaluate the situation at all, and someone might get eaten anyway.
+If that happened, the outsider would try to guess why.
+>
+He would have the options (1) of thoroughly understanding the existing program and "really fixing" the trouble, or (2) of entering anew advice statement describing what he imagines to be the defective situation and telling the program not to move the missionary into the position of being eaten.
+When a program grows in power by an evolution of partially‑understood patches and fixes, the programmer begins to lose track of internal details and can no longer predict what will happen—and begins to hope instead of know, watching the program as though it were an individual of unpredictable behavior.
+
+여기에서 중요한 것은 구문에 대한 딱딱한 제한이 완화된다는 것이 아니라, 프로그램을 즉시 수정할 수 있는 "조언"의 특성입니다.
+"progress"가 어떻게 작동하는지, "program"의 안쪽 어디에서 돌아가는지 알지 못한다 하더라도,
+"진행 상황을 알려줘<sub>tell progress</sub>"라고 지시를 할 수 있다는 것입니다.
+물론 이미 다른 조언의 영향을 받고 있는 중일 수도 있고, 새로운 조언이 언제 사용되고 언제 무시되는지는 명확하지 않을 수도 있습니다.
+또는 어떤 함수가 수정되어서, 특정 상황에서 "progress"가 상황을 평가하지 못하고 누군가가 잡아먹히게 되는 일이 일어나게 될 수도 있습니다.
+
+이런 일들이 발생하게 되면, 외부에서 관찰하는 사람은 이렇게 돌아가게 된 이유를 추측하려 할 것입니다.
+
+그 사람은 둘 중 하나를 선택할 수 있습니다.
+
+1. 기존 프로그램을 철저하게 이해해서 문제를 "진짜로 수정"하는 방법.
+2. 결함이 있는 상황이라는 것을 염두에 두고, 프로그램에 선교사가 잡아먹히도록 옮기면 안된다는 내용의 새로운 "조언"을 입력하는 방법.
+
+부분적인 이해를 통해 만들어진 패치와 온갖 수정 사항들이 쌓여 프로그램이 발전하게 되면, 프로그래머는 프로그램의 내부에서 무슨 일이 일어나는지 못 따라가게 되며 어떤 일이 발생하게 될 지 예측하지 못하게 됩니다.
+
+>
+This is already true in some big programs, but as we enter the era of multiple‑console computers, it will soon be much more acute.
+With time‑sharing, large heuristic programs will be developed and modified by several programmers, each testing them on different examples from different consoles and inserting advice independently.
+The program will grow in effectiveness, but no one of the programmers will understand it all.
+(Of course, this won't always be successful‑the interactions might make it get worse, and no one might be able to fix it again!)
+Now we see the real trouble with statements like "it only does what its programmer told it to do."
+There isn't any one programmer.
+
+이미 몇몇 대형 프로그램에서는 이런 일들이 일어나고 있습니다.
+그리고 이 문제는 다중 콘솔 컴퓨터 시대에 들어서게 되면 훨씬 심각해질 것입니다.
+시분할<sub>time-sharing</sub> 시스템에서의 대규모 휴리스틱 프로그램은 여러 명의 프로그래머에 의해 개발되고 수정될 것이며, 각기 다른 콘솔에서 다양한 예제를 통해 테스트되고 독립적으로 "조언"이 삽입되게 될 것입니다.
+프로그램의 효율성은 향상되겠지만, 어떤 프로그래머도 프로그램의 모든 것을 이해하지는 못하게 될 것입니다.
+(물론 이런 미래가 항상 성공적이지는 않을 것입니다. 상호 작용이 오히려 더 좋지 않은 상황을 만들 수도 있고, 그걸 고칠 수 있는 사람이 아무도 없을 수 있기 때문입니다!)
+
+이제 "프로그래머가 지시한 것만 그대로 수행합니다" 같은 말의 진짜 문제를 알 수 있게 되었습니다.
+
+프로그래머는 프로그램을 혼자서 만들지 않는다는 것입니다.
+
+### LATITUDE OF EXPRESSION AND SPECIFICITY OF IDEAS
+
+**표현의 자유도와 아이디어의 특수성**
+
