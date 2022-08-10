@@ -3,8 +3,8 @@ layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
 summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-11 01:49:55 +0900
-tag     : 번역
+updated : 2022-08-11 01:51:40 +0900
+tag     : 번역 lisp
 toc     : true
 public  : true
 parent  : [[/clipping]]
