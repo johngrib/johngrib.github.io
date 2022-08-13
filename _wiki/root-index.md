@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-08-07 17:03:27 +0900
+updated : 2022-08-13 16:31:16 +0900
 regenerate: true
 ---
 
@@ -37,6 +37,7 @@ regenerate: true
 ## [[article]]
 
 - [[/article/hierarchical-controller-package-structure]]
+- [[/article/science-and-delete]]
 
 ## [[algorithm]]
 
