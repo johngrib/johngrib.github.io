@@ -3,7 +3,7 @@ layout  : wiki
 title   : 과학적 프로그래밍에 대한 메모
 summary : 2022년 8월 12일 ~ 8월 13일 트위터에 쓴 생각 정리
 date    : 2022-08-13 16:31:23 +0900
-updated : 2022-08-13 23:08:07 +0900
+updated : 2022-08-13 23:15:08 +0900
 tag     : 
 toc     : true
 public  : true
@@ -97,9 +97,9 @@ OOP를 하건 FP를 하건 거기서 거기고 네임스페이스를 잘 꾸리�
 
 어제에 이어서 생각한다. 최근 나는 옛날 글 몇 개를 번역했는데, 목록은 대략 다음과 같다.
 
-- [[/clipping/predicting-the-future/]]{앨런 케이: 미래를 예측하는 가장 좋은 방법은 미래를 만드는 것}
-- [[/clipping/ewd/32]]{데이크스트라: 과학적으로 프로그래밍하자}
-- [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]{마빈 민스키: 프로그래밍은 확실하지 않게 이해한 대상을 표현하기 좋은 도구}
+- [[/clipping/predicting-the-future/]]{1989년, 앨런 케이: 미래를 예측하는 가장 좋은 방법은 미래를 만드는 것}
+- [[/clipping/ewd/32]]{1962년, 데이크스트라: 과학적으로 프로그래밍하자}
+- [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]{1967년, 마빈 민스키: 프로그래밍은 확실하지 않게 이해한 대상을 표현하기 좋은 도구}
 
 이 글들을 선택한 것은 내가 요즘 생각하고 있는 것들을 정리하기 위해서였다. 특히 과학적 프로그래밍은 오래 고심해왔던 주제와 맞닿는 면이 있어서 큰 도움을 받았다.
 
