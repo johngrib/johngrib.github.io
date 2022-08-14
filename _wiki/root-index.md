@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-08-14 18:58:08 +0900
+updated : 2022-08-14 19:03:40 +0900
 regenerate: true
 ---
 
@@ -92,7 +92,9 @@ regenerate: true
 
 * [[/people/bill-atkinson]]
 * [[/people/gerald-weinberg]]
+* [[/people/grady-booch]]
 * [[/people/ronald-wayne]]
+
 * [[Bill-Joy-and-10000-hours-rule]]
 * [[Donald-Ervin-Knuth]]
 * [[James-Gosling-super-programmer]]
