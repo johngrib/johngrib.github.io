@@ -6,7 +6,6 @@
  "url": "/wiki/people",
  "updated": "2021-07-24 14:55:27 +0900",
  "children": [
-  "Bill-Atkinson-productivity",
   "Bill-Joy-and-10000-hours-rule",
   "brian-w-kernighan",
   "claude-elwood-shannon",
@@ -15,6 +14,7 @@
   "jeff-bezos",
   "John-von-Neumann",
   "John-W-Backus",
+  "people/bill-atkinson",
   "people/gerald-weinberg",
   "people/ronald-wayne",
   "the-beginning-of-linux"
