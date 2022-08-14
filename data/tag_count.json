@@ -88,6 +88,10 @@
   "size": 1
  },
  {
+  "name": "bill-gates",
+  "size": 1
+ },
+ {
   "name": "binary",
   "size": 3
  },
@@ -1005,7 +1009,7 @@
  },
  {
   "name": "번역",
-  "size": 30
+  "size": 31
  },
  {
   "name": "벨-연구소",

@@ -3,11 +3,11 @@ layout  : wiki
 title   : AN OPEN LETTER TO HOBBYISTS By William Henry Gates III
 summary : 컴퓨터 애호가들에게 보내는 편지 by 빌 게이츠
 date    : 2022-08-14 22:07:13 +0900
-updated : 2022-08-14 23:05:22 +0900
-tag     : 
+updated : 2022-08-14 23:21:07 +0900
+tag     : 번역 bill-gates
 toc     : true
 public  : true
-parent  : 
+parent  : [[/clipping]]
 latex   : false
 ---
 * TOC
