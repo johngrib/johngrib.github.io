@@ -3,7 +3,7 @@ layout  : wiki
 title   : AN OPEN LETTER TO HOBBYISTS By William Henry Gates III
 summary : 컴퓨터 애호가들에게 보내는 편지 by 빌 게이츠
 date    : 2022-08-14 22:07:13 +0900
-updated : 2022-08-14 23:21:07 +0900
+updated : 2022-08-14 23:22:34 +0900
 tag     : 번역 bill-gates
 toc     : true
 public  : true
@@ -113,3 +113,8 @@ Nothing would please me more than being able to hire ten programmers and deluge 
 Bill Gates
 >
 General Partner, Micro-Soft
+
+## 함께 읽기
+
+- [Open Letter to Hobbyists (en.wikipedia.org)]( https://en.wikipedia.org/wiki/Open_Letter_to_Hobbyists )
+
