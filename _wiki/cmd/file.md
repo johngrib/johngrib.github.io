@@ -3,11 +3,11 @@ layout  : wiki
 title   : file 명령어
 summary : 파일 타입을 조사한다
 date    : 2020-09-03 18:38:21 +0900
-updated : 2020-09-03 18:42:09 +0900
+updated : 2022-08-16 22:16:37 +0900
 tag     : bash command
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-08-14 22:07:10 +0900
+updated : 2022-08-16 22:16:32 +0900
 regenerate: true
 ---
 
@@ -490,6 +490,7 @@ regenerate: true
 * [[/cmd/date]]
 * [[/cmd/ditto]]
 * [[/cmd/fc]]
+* [[/cmd/file]]
 * [[/cmd/find]]
 * [[/cmd/grep]]
 * [[/cmd/less]]
@@ -515,7 +516,6 @@ regenerate: true
 * [[diff]]
 * [[du]]
 * [[fd-cmd]]
-* [[file-cmd]]
 * [[fish-shell]]
 * [[fortune-cmd]]
 * [[glow-cmd]]
