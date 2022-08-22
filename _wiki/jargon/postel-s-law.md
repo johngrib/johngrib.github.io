@@ -3,7 +3,7 @@ layout  : wiki
 title   : 포스텔의 법칙(Postel's law)
 summary : 받을 때는 관대하게, 보낼 때는 엄격하게.
 date    : 2018-01-07 17:51:33 +0900
-updated : 2022-08-22 23:39:23 +0900
+updated : 2022-08-22 23:44:27 +0900
 tag     : proverb law
 toc     : true
 public  : true
@@ -55,7 +55,20 @@ That is, it should be careful to send well-formed datagrams, but should accept a
 다른 서비스로부터 받는 것에는 관대해야 함을 의미한다.
 어떤 서비스가 외부에서 받은 데이터의 일부만 사용한다고 하더라도,
 나머지 데이터를 지금 사용할 필요가 없다고 해서 거부하거나 배제해서는 안된다.
-[^JOS-236]
+>
+-- 클라우드 네이티브 자바. 2.6장. 236쪽.
+
+### From: 유연한 소프트웨어를 만드는 설계 원칙
+
+>
+유연성을 극대화하려면 한 부품의 출력 범위가 상당히 작고 잘 정의되어야 한다.
+특히, 부품의 출력 범위는 그 출력을 받는 모든 부품의 입력 허용 범위보다 훨씬 작아야 한다.
+이는 컴퓨터 시스템 관련 기초 강좌의 학생들에게 우리가 가르치는 디지털 추상의 정적 규율(static discipline)에 대응되는 원칙이다.
+디지털 추상의 핵심은, 출력이 항상 다음 단계의 허용 가능한 입력보다 좋아야 한다는 것이다(잡음을 억제할 수 있도록).
+>
+소프트웨어 공학에서는 이 원리를 인터넷 선구자 존 포스텔<sup>Jon Postel</sup>의 이름을 딴 '포스텔의 법칙(Postel's law)'으로 떠받든다.
+>
+-- 유연한 소프트웨어를 만드는 설계 원칙. 1장. 29쪽.
 
 ## 존 포스텔
 
@@ -70,9 +83,6 @@ That is, it should be careful to send well-formed datagrams, but should accept a
 * [견고함의 원칙(wikipedia)](https://ko.wikipedia.org/wiki/%EA%B2%AC%EA%B3%A0%ED%95%A8%EC%9D%98_%EC%9B%90%EC%B9%99)
 * [Internet Hall of Fame(wikipedia)](https://en.wikipedia.org/wiki/Internet_Hall_of_Fame)
 * [JOS] 클라우드 네이티브 자바 / 조쉬 롱, 케니 바스타니 저/정윤진, 오명운, 장현희 역 / 책만 / 초판 1쇄 2018년 06월 29일
+* 유연한 소프트웨어를 만드는 설계 원칙 / 크리스 핸슨, 제럴드 제이 서스먼 저/류광 역 / 한빛미디어 / 초판 1쇄 발행 2022년 03월 30일 / 원제: Software Design for Flexibility
 
-
-## 주석
-
-[^JOS-236]: [JOS] 2.6장. 236쪽.
 
