@@ -3,11 +3,11 @@ layout  : wiki
 title   : 포스텔의 법칙(Postel's law)
 summary : 받을 때는 관대하게, 보낼 때는 엄격하게.
 date    : 2018-01-07 17:51:33 +0900
-updated : 2020-12-06 23:50:00 +0900
+updated : 2022-08-22 23:16:40 +0900
 tag     : proverb law
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC

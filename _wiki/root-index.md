@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-08-16 22:16:32 +0900
+updated : 2022-08-22 23:16:35 +0900
 regenerate: true
 ---
 
@@ -363,6 +363,7 @@ regenerate: true
 * [[/jargon/bootstrapping]]
 * [[/jargon/kiss-principle]]
 * [[/jargon/moore-s-law]]
+* [[/jargon/postel-s-law]]
 
 * [[ACID]]
 * [[amdahl-s-law]]
@@ -390,7 +391,6 @@ regenerate: true
 * [[OOP-to-me-Alan-Kay]]
 * [[orange-juice-test]]
 * [[oregon-swing]]
-* [[Postel-s-law]]
 * [[power-distance-index]]
 * [[richardson-maturity-model]]
 * [[rule-of-3-and-10]]
