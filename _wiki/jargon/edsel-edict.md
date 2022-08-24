@@ -3,11 +3,11 @@ layout  : wiki
 title   : 에드셀 강령(Edsel edict)
 summary : 새것을 도입할 때에는 한 번에 하나씩 하자
 date    : 2018-01-18 21:06:12 +0900
-updated : 2021-10-04 13:54:10 +0900
+updated : 2022-08-24 21:00:37 +0900
 tag     : Gerald-Weinberg proverb
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC

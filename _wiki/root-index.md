@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-08-22 23:16:35 +0900
+updated : 2022-08-24 21:00:58 +0900
 regenerate: true
 ---
 
@@ -361,6 +361,7 @@ regenerate: true
 
 * [[/jargon/airplane-rule]]
 * [[/jargon/bootstrapping]]
+* [[/jargon/edsel-edict]]
 * [[/jargon/kiss-principle]]
 * [[/jargon/moore-s-law]]
 * [[/jargon/postel-s-law]]
@@ -374,7 +375,6 @@ regenerate: true
 * [[Conway-s-law]]
 * [[Copernican-Principle]]
 * [[dry-principle]]
-* [[Edsel-edict]]
 * [[hofstadter-s-law]]
 * [[hollywood-principle]]
 * [[imitation-game]]
