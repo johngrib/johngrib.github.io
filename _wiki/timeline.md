@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2022-08-25 10:00:51 +0900
+updated : 2022-08-25 10:03:21 +0900
 tag     : 
 toc     : true
 public  : true
@@ -15,7 +15,6 @@ latex   : false
 
 ## 사건
 
-* 1885 - 오트마 메르겐탈러<sub>Ottmar mergenthaler</sub>, 조판 기계를 위한 자동주조 식자기(키보드)를 고안하다.
 * 2015-05 [HTTP/2](https://tools.ietf.org/html/rfc7540 )
 * 1999-02-26 - 펜티엄III 프로세서 출시
 * 1997-05-07 - 펜티엄II 프로세서 출시
@@ -34,17 +33,18 @@ latex   : false
 * 1983-11 - 최초의 IDE, 터보 파스칼 출시
 * 1980 - 도시바의 후지오 마스오카 박사, 플래시 메모리 개발.
 * 1974-12 [RFC-675: SPECIFICATION OF INTERNET TRANSMISSION CONTROL PROGRAM](https://tools.ietf.org/html/rfc675 ) - TCP
-* 1969 - IBM의 E.F. Codd 박사가 발표한 논문에서 관계형 모델(Relational Model)이 처음 등장하다.
 * 1969 - Telnet 개발.
+* 1969 - IBM의 E.F. Codd 박사가 발표한 논문에서 관계형 모델(Relational Model)이 처음 등장하다.
 * 1960 - Ted Nelson이 하이퍼텍스트 소프트웨어 모델을 적용한 Xanadu 시스템을 고안하다.
 * 1956 - IBM, 하드디스크(HDD) 생산.
 * 1954-06-07 - 앨런 튜링 사망
 * 1952 - 폰 노이만 방식의 컴퓨터 EDVAC 개발
 * 1947 - 트랜지스터 발명
-* 1945 - Vannevar Bush가 Memex에 대한 아이디어를 소개하다.
 * 1945 - 폰 노이만, 프로그램 내장 방식 제안
+* 1945 - Vannevar Bush가 Memex에 대한 아이디어를 소개하다.
 * 1937 - 디지털 논리 회로
 * 1936 - 앨런 튜링, 튜링 머신 개념 창안
+* 1885 - 오트마 메르겐탈러<sub>Ottmar mergenthaler</sub>, 조판 기계를 위한 자동주조 식자기(키보드)를 고안하다.
 * 1854 - 부울 대수
 
 ## 주석
