@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2020-11-22 17:16:02 +0900
+updated : 2022-08-25 10:00:51 +0900
 tag     : 
 toc     : true
 public  : true
@@ -15,6 +15,7 @@ latex   : false
 
 ## 사건
 
+* 1885 - 오트마 메르겐탈러<sub>Ottmar mergenthaler</sub>, 조판 기계를 위한 자동주조 식자기(키보드)를 고안하다.
 * 2015-05 [HTTP/2](https://tools.ietf.org/html/rfc7540 )
 * 1999-02-26 - 펜티엄III 프로세서 출시
 * 1997-05-07 - 펜티엄II 프로세서 출시
