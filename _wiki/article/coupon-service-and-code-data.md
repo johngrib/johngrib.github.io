@@ -3,7 +3,7 @@ layout  : wiki
 title   : 더 나은 쿠폰 서비스에 대한 아이디어 기록
 summary : 
 date    : 2022-08-28 15:28:07 +0900
-updated : 2022-08-28 19:19:32 +0900
+updated : 2022-08-28 19:21:59 +0900
 tag     : 아이디어
 toc     : true
 public  : true
@@ -242,6 +242,7 @@ for (CouponComponent component : components) {
     context = component.apply(context);
   } else {
     context.setFail(component);
+    break;
   }
 }
 ```
