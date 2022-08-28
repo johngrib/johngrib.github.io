@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-08-24 21:00:58 +0900
+updated : 2022-08-28 15:28:06 +0900
 regenerate: true
 ---
 
@@ -36,6 +36,7 @@ regenerate: true
 
 ## [[article]]
 
+- [[/article/coupon-service-and-code-data]]
 - [[/article/hierarchical-controller-package-structure]]
 - [[/article/science-and-delete]]
 
