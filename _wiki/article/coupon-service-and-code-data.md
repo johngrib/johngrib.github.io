@@ -3,7 +3,7 @@ layout  : wiki
 title   : 더 나은 쿠폰 서비스에 대한 아이디어 기록
 summary : 
 date    : 2022-08-28 15:28:07 +0900
-updated : 2022-08-28 19:08:44 +0900
+updated : 2022-08-28 19:19:32 +0900
 tag     : 아이디어
 toc     : true
 public  : true
@@ -91,7 +91,7 @@ boolean isAvailableCoupon(Coupon c, OrderSheet o, Payment p) {
 
 따라서 간단한 종류의 쿠폰만을 만들고 쿠폰의 종류나 조합의 경우의 수를 증가시키지 않는 방향으로 핸들링하기도 한다.
 
-하지만 이러한 복잡도의 원인은 쿠폰의 적용/검증 과정을 하나의 플로우 차트로 모델로 생각하고 구현했기 때문이다.
+하지만 이러한 복잡도의 원인은 쿠폰의 적용/검증 과정을 하나의 플로우 차트 모델로 생각하고 구현했기 때문이다.
 새로운 요구사항이 도착하면 플로우 차트에 새로운 `if`를 추가하는 것이 문제인 것.
 
 그리고 이런 과정을 통해 수십~수백개의 `if`/`else`가 쌓이게 되면 쿠폰을 구성하는 다양한 조건들의 우선순위와 처리 과정을 명확하게 이해하는 사람이 점점 줄어들게 된다. 관리자 화면에 보이는 여러 데이터들의 우선순위를 모르면 의도와 다르게 작동하는 엉뚱한 쿠폰이 만들어질 수도 있다.
@@ -193,7 +193,7 @@ class DiscountFixed implements CouponComponent {
   // 생성자 생략
   private int discountPrice;
 
-  boolan isPass(Context c) {
+  boolean isPass(Context c) {
     return c.getOrderSheet().getTotalPrice() >= discountPrice;
   }
 
