@@ -3,7 +3,7 @@ layout  : wiki
 title   : 더 나은 쿠폰 서비스에 대한 아이디어 기록
 summary : 
 date    : 2022-08-28 15:28:07 +0900
-updated : 2022-08-28 19:21:59 +0900
+updated : 2022-08-28 22:10:13 +0900
 tag     : 아이디어
 toc     : true
 public  : true
@@ -38,7 +38,7 @@ latex   : false
 
 ```java
 boolean isAvailableCoupon(Coupon c, OrderSheet o) {
-  if (CategoryAllow == c.type && c.category != null && o.size() > 0) {
+  if (CATEGORY_ALLOW == c.type && c.category != null && o.size() > 0) {
     // 카테고리 허용 쿠폰이라면 주문서에 해당 카테고리 상품이 있나 확인한다
     for (OrderProduct product : o) {
       if (c.category.equals(product.getCategory()) {
