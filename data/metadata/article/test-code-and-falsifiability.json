@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "테스트 코드와 반증가능성에 대한 메모",
+ "summary": "실패 가능성이 높은 위험한 테스트가 중요하다",
+ "parent": "article",
+ "url": "/wiki/article/test-code-and-falsifiability",
+ "updated": "2022-08-31 01:29:35 +0900",
+ "children": []
+}

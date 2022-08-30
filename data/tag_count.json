@@ -512,6 +512,10 @@
   "size": 1
  },
  {
+  "name": "karl-popper",
+  "size": 1
+ },
+ {
   "name": "ken-tompson",
   "size": 1
  },
@@ -801,7 +805,7 @@
  },
  {
   "name": "test",
-  "size": 5
+  "size": 6
  },
  {
   "name": "testing",
