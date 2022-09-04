@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : 
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-05-12 15:27:35 +0900
+updated : 2022-09-05 00:00:16 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -36,6 +36,10 @@ $$
   ([a b c d e f & args]
      (. clojure.lang.LazilyPersistentVector (create (cons a (cons b (cons c (cons d (cons e (cons f args))))))))))
 ```
+
+## Clojure collection으로서 vector의 특성
+
+벡터는 `coll?`, `counted?`, `sequential?`, `associative?`로 검사했을 때 모두 `true`로 평가되는 유일한 Clojure collection 이다.
 
 ## Examples
 
@@ -889,6 +893,7 @@ public class Tuple{
 ## 참고문헌
 
 - <https://clojuredocs.org/clojure.core/vector >
+- [Collections and Sequences in Clojure (www.brainonfire.net)]( https://www.brainonfire.net/files/seqs-and-colls/main.html )
 - [Dynamic array (wikipedia.org)]( https://en.wikipedia.org/wiki/Dynamic_array )
 - [Pro Git 10.2 Git Internals - Git Objects (git-scm.com)]( https://git-scm.com/book/en/v2/Git-Internals-Git-Objects )
 - [Understanding Clojure's Persistent Vectors, pt. 1]( https://hypirion.com/musings/understanding-persistent-vector-pt-1 )
