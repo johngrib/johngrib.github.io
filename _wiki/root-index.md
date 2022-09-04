@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-04 19:25:37 +0900
+updated : 2022-09-04 19:44:49 +0900
 regenerate: true
 ---
 
@@ -140,6 +140,7 @@ regenerate: true
 
 ## [[book]]
 
+- [[/book/linchpin]]
 - [[/book/lyubishev]]
 - [[/book/team-topologies]]
 - [[/book/the-jargon-file]]
