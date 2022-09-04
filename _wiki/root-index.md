@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-04 17:14:10 +0900
+updated : 2022-09-04 19:25:37 +0900
 regenerate: true
 ---
 
@@ -366,6 +366,7 @@ regenerate: true
 * [[/jargon/bootstrapping]]
 * [[/jargon/edsel-edict]]
 * [[/jargon/kiss-principle]]
+* [[/jargon/metcalfe-s-law]]
 * [[/jargon/moore-s-law]]
 * [[/jargon/postel-s-law]]
 
@@ -387,7 +388,6 @@ regenerate: true
 * [[law-of-demeter]]
 * [[linus-s-law]]
 * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]
-* [[metcalfe-s-law]]
 * [[Naming-Principle]]
 * [[no-problem-syndrome]]
 * [[No-Silver-Bullet]]

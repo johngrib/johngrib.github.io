@@ -3,11 +3,11 @@ layout  : wiki
 title   : 멧칼프의 법칙 (Metcalfe's law)
 summary : 
 date    : 2020-08-02 16:51:41 +0900
-updated : 2022-09-04 19:25:24 +0900
+updated : 2020-08-02 16:56:08 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[/jargon]]
+parent  : [[jargon]]
 latex   : false
 ---
 * TOC
