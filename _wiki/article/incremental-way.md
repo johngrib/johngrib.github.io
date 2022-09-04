@@ -1,0 +1,119 @@
+---
+layout  : wiki
+title   : 점진적으로 쌓아가기
+summary : 조금씩 매일 하다보면 처리되는 일들
+date    : 2022-09-04 17:14:32 +0900
+updated : 2022-09-04 18:30:37 +0900
+tag     : 
+toc     : true
+public  : true
+parent  : [[/article]]
+latex   : false
+---
+* TOC
+{:toc}
+
+## 증분주의?
+
+[우리말샘]( https://opendict.korean.go.kr/dictionary/view?sense_no=1196234&viewType=confirm )에서는
+증분주의에 대해 다음과 같이 설명한다.
+
+>
+증분-주의(增分主義)
+>
+- 발음 [증분주의/증분주이]
+- 품사 「명사」
+- 분야 『사회 일반』
+>
+「001」사물이 완전히 변화하는 것이 아니라 완만하게 늘어나는 상황이 지속적으로 이루어지면서 변화하는 상황을 이르는 말.
+>
+대역어
+>
+- 영어 incrementalism
+
+나는 이 증분주의에 따라 점진적으로 무언가를 쌓아가는 방식을 좋아한다.
+
+## 사례
+### 테스트 코드를 쌓아가기
+
+나는 [[/article/test-code-and-falsifiability]]에서 다음과 같은 농담을 작성했다.
+
+>
+1. 코딩한다.
+2. 배포한다.
+3. 새로운 버그가 발견되면, 버그를 검출하는 테스트 코드를 작성한다.
+4. 버그를 고쳐서 테스트 코드가 통과하게 만든다.
+5. 2로 돌아간다.
+{:style="background-color: #ecf1e8;"}
+
+이걸 실제로 실행하기보다는 전단계에서 충분한 검증 테스트를 마련하는 보완이 필요하다.
+
+즉 다음과 같이 하는 것이 바람직하다고 생각한다.
+
+>
+1. 충분한 양의 검증 테스트를 마련한다.
+2. 코딩한다.
+3. 배포한다.
+4. 새로운 버그가 발견되면, 버그를 검출하는 테스트 코드를 작성한다.
+5. 버그를 고쳐서 테스트 코드가 통과하게 만든다.
+6. 2로 돌아간다.
+
+### 글을 쌓아가기
+
+나는 [[/blog/this/random-link]]{랜덤 링크 버튼}을 통해 글을 쌓아가고 있다.
+
+- 일단 생각나는 것이 있으면 글을 적는다.
+    - 글을 꼭 완성하지 않아도 배포한다.
+- 매일 밤 잠들기 전에 랜덤 버튼을 몇 번씩 클릭한다.
+- 랜덤하게 발견한 글에서 오타나 보완할 내용을 발견하면 수정한다.
+
+### 이메일을 정리하기
+
+[[/email-gardening]]에서도 작성한 내용으로, 다음과 같이 한다.
+
+- 최근에 받은 스팸 메일이나 완료된 작업에 대한 이메일을 하나 삭제한다.
+- page down을 몇 번 누른 다음, 필요하지 않은 메일 하나를 선택해 삭제한다.
+
+이걸 반복하면 메일 1개가 도착할 때마다 2개씩 삭제하게 되므로 대부분의 스팸 메일을 없앨 수 있다.
+
+## 함께 읽기
+
+- [[/my-bookshelf]]
+
+### 생각해 볼 문제: 바닥부터 경고를 쌓아가기
+
+"데브옵스 핸드북"에서는 다음과 같이 Tom Limoncelli의 농담을 소개한다.
+
+>
+**바람직하지 않은 결과를 측정하고 경고하라**
+>
+"The Practice of Cloud System Administration"(Addison-Wesley, 2014)의 공동 저자이자 이전의 구글 사이트 신뢰성 엔지니어인 톰 리몬첼리<sup>Tom Limoncelli</sup>)는 다음과 같이 말했다.
+>
+"사람들이 나에게 무엇을 모니터링해야 하는지 조언을 구하는 경우, 이상적인 세계<sup>ideal world</sup>에서는 현재의 모니터링 시스템에 있는 모든 경고를 삭제할 것이라고 농담한다.
+그런 다음, 각 사용자가 확인할 수 있는 사고 이후에 어떤 지시자가 해당 사고를 예측할 수 있는지 묻고, 필요에 따라 해당 지시자와 경고를 모니터링 시스템에 추가한다. 그리고 이 과정을 반복한다. 그렇게 하면 사고가 발생한 이후 경고로 폭격을 당하는 대신, 사고를 방지할 수 있는 경보만 받을 수 있다."
+>
+-- 데브옵스 핸드북. 4부. 272쪽.
+
+Tom Limoncelli의 블로그 글 [Stop monitoring whether or not your service is up!]( https://everythingsysadmin.com/2013/11/stop-monitoring-if-service-is-up.html )에서 이 이야기를 더 자세하게 읽어볼 수 있다.
+
+>
+- Step 1: Delete all alerts in your monitoring system.
+- Step 2: Each time there is a user-visible outage, determine what indicators would have predicted that outage.
+- Step 3: Update your monitoring system to collect those indicators and alert as needed.
+- Step 4: Repeat. Eventually you will only have alerts that prevent outages, not respond to outages.
+
+- 1단계: 모니터링 시스템의 모든 경고를 삭제한다.
+- 2단계: 사용자가 볼 수 있는 중단이 있을 때마다 해당 중단을 예측한 지표를 결정한다.
+- 3단계: 모니터링 시스템을 업데이트하여 해당 지표를 수집하고 필요에 따라 경고한다.
+- 4단계: 이걸 반복한다. 결국 중단 방지 경고들만 남게 되며, 중단이 발생해 뒤늦게 대응하는 일은 사라진다.
+
+그는 시스템의 모든 경고를 삭제하는 것은 유효하지 않다고 밝힌다. ("Obviously Step 1 is not tenable. Ok, Ok.")
+나 또한 이대로 실행하는 것은 극도로 위험하다고 생각한다.
+그러나 경고를 쌓아가는 방식에 대해 관점을 바꿔 생각할 거리를 제공한다고 본다.
+
+자꾸 생각하다 보면 뭔가를 더 얻을 수 있을지도 모른다.
+
+## 참고문헌
+
+- 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+
