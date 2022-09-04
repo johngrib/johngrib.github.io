@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim-rest-console
 summary : vim을 cURL 클라이언트로 사용하자
 date    : 2018-04-12 21:41:12 +0900
-updated : 2022-07-30 00:40:33 +0900
+updated : 2022-09-04 23:41:29 +0900
 tag     : vim http
 toc     : true
 public  : true
@@ -169,3 +169,6 @@ let g:vrc_debug = 0
 
 * [vim rest console](https://github.com/diepm/vim-rest-console )
 
+## 함께 읽기
+
+- [[/hack/http-client-clojure]]
