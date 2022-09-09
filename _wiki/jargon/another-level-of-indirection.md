@@ -3,7 +3,7 @@ layout  : wiki
 title   : 또 다른 수준의 간접층
 summary : Another level of indirection
 date    : 2022-09-09 17:43:57 +0900
-updated : 2022-09-09 18:05:40 +0900
+updated : 2022-09-09 18:16:24 +0900
 tag     : 
 toc     : true
 public  : true
@@ -64,6 +64,16 @@ All problems in Computer Science can be solved by another level of indirection.
 하지만 다른 여러 설계 특징들처럼, 간접 지정을 만드는 것은 나중에 추가하는 것보다 쉽다.
 >
 -- 11장. 201쪽.
+
+<span/>
+
+>
+**패러다임 불일치**
+>
+때때로 내부적인 구현에 대한 패러다임과 여러분이 만든 인터페이스의 패러다임이 일치하지 않을 수 있다.
+보통 이러한 차이점을 감추기 위해서 어댑터를 만든다.
+>
+-- 11장. 206쪽.
 
 ## 참고문헌
 
