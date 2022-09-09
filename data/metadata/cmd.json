@@ -31,6 +31,7 @@
   "cmd/shellcheck",
   "cmd/tr",
   "cmd/tree",
+  "cmd/uname",
   "cmd/xxd",
   "cmd/yes",
   "csplit",

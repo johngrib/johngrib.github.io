@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-09 11:56:18 +0900
+updated : 2022-09-09 15:06:30 +0900
 regenerate: true
 ---
 
@@ -506,6 +506,7 @@ regenerate: true
 * [[/cmd/shellcheck]]
 * [[/cmd/tr]]
 * [[/cmd/tree]]
+* [[/cmd/uname]]
 * [[/cmd/xxd]]
 * [[/cmd/yes]]
 

@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "uname 명령어",
+ "summary": "Print operating system name",
+ "parent": "cmd",
+ "url": "/wiki/cmd/uname",
+ "updated": "2022-09-09 15:18:46 +0900",
+ "children": []
+}
