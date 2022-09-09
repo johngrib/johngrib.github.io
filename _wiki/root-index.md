@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-09 17:43:56 +0900
+updated : 2022-09-09 23:44:42 +0900
 regenerate: true
 ---
 
@@ -68,6 +68,7 @@ regenerate: true
 
 ## [[architecture]]
 
+* [[conceptual-integrity]]
 * [[keeping-options-open]]
 
 ## [[clipping]]
