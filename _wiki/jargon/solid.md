@@ -3,11 +3,11 @@ layout  : wiki
 title   : SOLID 원칙
 summary : 객체지향 5대 원칙
 date    : 2019-09-05 18:06:38 +0900
-updated : 2022-05-02 00:39:41 +0900
+updated : 2022-09-09 11:56:26 +0900
 tag     : oop
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC

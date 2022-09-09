@@ -25,6 +25,7 @@
   "jargon/metcalfe-s-law",
   "jargon/moore-s-law",
   "jargon/postel-s-law",
+  "jargon/solid",
   "kees-koster-good-programming-language",
   "Kerckhoffs-s-principle",
   "law-of-demeter",
@@ -40,7 +41,6 @@
   "richardson-maturity-model",
   "rule-of-3-and-10",
   "Schopenhauer-s-Law-Of-Entropy",
-  "SOLID",
   "Tompson-s-rule-for-first-time-telescope-makers",
   "Zipf-s-law"
  ]

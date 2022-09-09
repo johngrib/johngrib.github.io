@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-04 19:44:49 +0900
+updated : 2022-09-09 11:56:18 +0900
 regenerate: true
 ---
 
@@ -370,6 +370,7 @@ regenerate: true
 * [[/jargon/metcalfe-s-law]]
 * [[/jargon/moore-s-law]]
 * [[/jargon/postel-s-law]]
+* [[/jargon/solid]]
 
 * [[ACID]]
 * [[amdahl-s-law]]
@@ -399,7 +400,6 @@ regenerate: true
 * [[richardson-maturity-model]]
 * [[rule-of-3-and-10]]
 * [[Schopenhauer-s-Law-Of-Entropy]]
-* [[SOLID]]
 * [[Tompson-s-rule-for-first-time-telescope-makers]]
 * [[Zipf-s-law]]
 
