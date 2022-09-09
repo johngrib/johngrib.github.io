@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2021-10-17 18:47:17 +0900
+updated : 2022-09-10 00:42:31 +0900
 tag     : fzf git bash
 toc     : true
 public  : true
@@ -353,6 +353,21 @@ branch-clean = "!# Search and delete merged branches.;\n\
 
 이 알리아스는 바로 윗절의 **merged branch clean** 도구를 개선한 것이다.
 겉보기엔 똑같이 작동하지만 `.git`의 파일을 삭제하므로 주의해서 사용해야 한다.
+
+#### 이미 만들어져 있는 tag가 현재 HEAD를 지시하도록 하기
+
+```perl
+tag-refresh = "!# Re reference tag.;\n \
+    f() { \
+        _height=$(stty size | awk '{print $1}');\
+        tag_name=`git tag | fzf --preview=\"git l {1} | head -n $_height\" `; \
+        echo $tag_name; \
+        git tag -d $tag_name; \
+        git tag $tag_name; \
+    }; f"
+```
+
+`wip`처럼 자주 옮기는 태그를 관리할 때 쓴다. 꽤 자주 쓰는 알리아스.
 
 ### fzf preview를 사용해 미리보기 기능 추가하기
 
