@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-09-04 23:54:09 +0900
+updated : 2022-09-10 00:35:19 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -787,6 +787,7 @@ val hello = "hello, world"
 * 수많은 프로그래밍 언어에서 코드 라인의 끝을 인터프리터나 컴파일러에게 알려주기 위해 사용한다.
 * 프로그래머의 새끼손가락 건강을 위해 `;`을 쓰지 않아도 되도록 설계한 Scala 같은 착한 언어들이 있다
     * 참고: Scala를 만든 마틴 오더스키가 Programming in Scala에서 새끼손가락 건강 이야기를 했다.
+* Clojure 언어에서는 주석을 작성할 때 쓰인다.
 * Vim에서는 `f`, `F`, `t`, `T`의 검색을 반복하는 용도로 사용한다.
 
 | 읽는 방법   | 세미콜론, semicolon                    |
