@@ -3,7 +3,7 @@ layout  : wiki
 title   : SOLID 원칙
 summary : 객체지향 5대 원칙
 date    : 2019-09-05 18:06:38 +0900
-updated : 2022-09-09 11:56:26 +0900
+updated : 2022-09-09 12:02:03 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -38,11 +38,6 @@ SOLID는 다섯 개의 원칙으로 이루어져 있다.
 * 한 클래스는 단 한 가지의 변경 이유만을 가져야 한다.[^clean-soft-124]
 * 하나의 모듈은 하나의, 오직 하나의 액터에 대해서만 책임져야 한다.[^clean-arch-66]
 * 컴포넌트를 변경하는 이유는 오직 하나뿐이어야 한다.[^hombergs-13]
-
-단일 책임 원칙은 "응집도(cohesion)"와 관련이 있다.
-
-> 단일 책임 원칙(SRP: Single-Responsibility Principle)은 톰 드마르코(Tom DeMarco)와 메이릴 페이지 존스(Meilir Page-Jones)의 연구에서 설명된 것으로,
-그들은 이것을 **응집도(cohesion)**라 불렀다.[^clean-soft-124]
 
 특정 코드의 책임을 파악하기 어렵다면 다음 조언을 기억해 두자.
 
@@ -86,6 +81,23 @@ SOLID는 다섯 개의 원칙으로 이루어져 있다.
 │+ area():double│    └───────────┘
 └───────────────┘
 ```
+
+### 응집도(cohesion)
+
+단일 책임 원칙은 "응집도(cohesion)"와 관련이 있다.
+
+> 단일 책임 원칙(SRP: Single-Responsibility Principle)은 톰 드마르코(Tom DeMarco)와 메이릴 페이지 존스(Meilir Page-Jones)의 연구에서 설명된 것으로,
+그들은 이것을 **응집도(cohesion)**라 불렀다.[^clean-soft-124]
+
+<span/>
+
+>
+**응집도**
+>
+하나의 클래스는 하나의 추상적인 개념을 나타내야 한다.
+또한 각 클래스는 클래스의 목적과 의미를 한 줄로 기술할 수 있어야 한다.
+만약 클래스를 간단하게 기술할 수 없다면, 아마도 하나 이상의 추상적인 개념을 나타내고 있을 것이다.
+클래스에 추가된 책임들은 클래스의 설명에 부합해야 한다.[^prefactoring-116]
 
 ## 개방-폐쇄 원칙(OCP)
 
@@ -232,6 +244,7 @@ HR 부서가 파일 시스템이나 네트워크 소켓에 관심을 갖을 가�
 - 클린 소프트웨어 / 로버트 C. 마틴 저 / 이용원, 김정민, 정지호 공역 / 제이펍 / 초판 1쇄 2017년 05월 15일 / 원제 : Agile Software Development, Principles, Patterns, and Practices
 - 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
 - 파이썬으로 살펴보는 아키텍처 패턴 / 해리 퍼시벌, 밥 그레고리 저/오현석 역 / 한빛미디어 / 2021년 06월 03일 / 원서 : Architecture Patterns with Python
+- 프리팩토링 켄 푸 저 / 서우석 역 / 한빛미디어 / 초판 발행 2006년 10월 20일
 
 ## 주석
 
@@ -250,5 +263,6 @@ HR 부서가 파일 시스템이나 네트워크 소켓에 관심을 갖을 가�
 [^python-30]: 파이썬으로 살펴보는 아키텍처 패턴. 0장. 30쪽.
 [^python-31]: 파이썬으로 살펴보는 아키텍처 패턴. 0장. 31쪽.
 [^hombergs-13]: 만들면서 배우는 클린 아키텍처. 2장. 13쪽.
+[^prefactoring-116]: 프리팩토링. 6장. 116쪽.
 
 [isp-wiki]: https://ko.wikipedia.org/wiki/인터페이스_분리_원칙
