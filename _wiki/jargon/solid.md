@@ -3,7 +3,7 @@ layout  : wiki
 title   : SOLID 원칙
 summary : 객체지향 5대 원칙
 date    : 2019-09-05 18:06:38 +0900
-updated : 2022-09-09 12:02:03 +0900
+updated : 2022-09-09 18:02:57 +0900
 tag     : oop
 toc     : true
 public  : true
@@ -244,7 +244,7 @@ HR 부서가 파일 시스템이나 네트워크 소켓에 관심을 갖을 가�
 - 클린 소프트웨어 / 로버트 C. 마틴 저 / 이용원, 김정민, 정지호 공역 / 제이펍 / 초판 1쇄 2017년 05월 15일 / 원제 : Agile Software Development, Principles, Patterns, and Practices
 - 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
 - 파이썬으로 살펴보는 아키텍처 패턴 / 해리 퍼시벌, 밥 그레고리 저/오현석 역 / 한빛미디어 / 2021년 06월 03일 / 원서 : Architecture Patterns with Python
-- 프리팩토링 켄 푸 저 / 서우석 역 / 한빛미디어 / 초판 발행 2006년 10월 20일
+- 프리팩토링 / 켄 푸 저 / 서우석 역 / 한빛미디어 / 초판 발행 2006년 10월 20일
 
 ## 주석
 

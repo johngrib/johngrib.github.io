@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-09 17:32:34 +0900
+updated : 2022-09-09 17:43:56 +0900
 regenerate: true
 ---
 
@@ -364,6 +364,7 @@ regenerate: true
 ## [[jargon]]
 
 * [[/jargon/airplane-rule]]
+* [[/jargon/another-level-of-indirection]]
 * [[/jargon/biondi-s-law]]
 * [[/jargon/bootstrapping]]
 * [[/jargon/edsel-edict]]
