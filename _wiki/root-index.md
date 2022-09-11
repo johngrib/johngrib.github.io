@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-09 23:44:42 +0900
+updated : 2022-09-11 23:36:37 +0900
 regenerate: true
 ---
 
@@ -215,7 +215,7 @@ regenerate: true
 * [[/language/aheui]]
 * [[/language/css]]
 * [[/language/graphql]]
-* [[/language/tomL]]
+* [[/language/toml]]
 * [[Groovy]]
 * [[YAML]]
 * [[awk]]
@@ -258,7 +258,7 @@ regenerate: true
 * [[/java/feel-of-java]]
 * [[/java/javadoc]]
 * [[/java/object-equals]]
-* [[/java/object-hashCode]]
+* [[/java/object-hashcode]]
 * [[/java/object-tostring]]
 * [[/java/stream]]
 * [[/java/switch]]
