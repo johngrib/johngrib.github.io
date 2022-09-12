@@ -3,7 +3,7 @@ layout  : wiki
 title   : VRC와 Postman의 대안으로 clj 파일을 사용하기
 summary : 이제 Postman 쓸 필요 없다
 date    : 2022-07-30 00:35:09 +0900
-updated : 2022-07-30 15:18:23 +0900
+updated : 2022-09-12 23:28:20 +0900
 tag     : postman vrc http clojure
 toc     : true
 public  : true
@@ -433,4 +433,8 @@ http header에 `Authorization: Bearer @token`을 지정하고 있다는 점에 �
 Clojure 코딩에 익숙하다면 Postman의 거의 완벽한 무료 대체제가 될 수 있다고 생각한다.
 
 왠지 Emacs에는 이런 게 이미 있을 것 같다.
+
+## 함께 읽기
+
+- [[/vim/rest-console]]
 
