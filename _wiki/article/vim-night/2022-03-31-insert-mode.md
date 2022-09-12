@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 3월 31일
 summary : INSERT MODE 이야기
 date    : 2022-09-12 18:46:06 +0900
-updated : 2022-09-12 23:09:21 +0900
+updated : 2022-09-12 23:12:19 +0900
 tag     :
 toc     : true
 public  : true
@@ -90,11 +90,11 @@ latex   : false
 
 `o`를 사용해서 선택 영역의 시작~끝을 왔다갔다할 수 있고, 만약 블록 비주얼 모드(사각형 선택 모드)라면 `O`를 눌러서 반대편 각으로 이동하는 것도 가능합니다. 
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/5lQJ-JQxkDvD_GTk.mp4 " type="video/mp4"></video>
+<video controls autoplay loop style="max-width: 100%"><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/5lQJ-JQxkDvD_GTk.mp4 " type="video/mp4"></video>
 
 물론 마우스로 선택했을 때도 `o`가 됩니다. vim에서 `set mouse=a`로 설정해두면 다른 에디터처럼 마우스를 쓸 수 있어요. 전 대체로 키보드를 쓰긴 하지만 그때그때 편하게 쓸 수 있는 건 다 동원하는 편이라 vim에서도 마우스를 설정해놓고 씁니다. 
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/AR5TVrwBqwAAtrcs.mp4 " type="video/mp4"></video>
+<video controls autoplay loop style="max-width: 100%"><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/AR5TVrwBqwAAtrcs.mp4 " type="video/mp4"></video>
 
 이 이야기의 시작은 `'[` `']` 그리고 `'<` `'>` 였죠. 이 중에서 비주얼 마크인 `'<` `'>`로 돌아가보죠. 선택한 영역을 기억한다는 건 재선택이 가능하다는 점에서 상당한 매력이 있습니다. 그런데 흥미로운 것은 이 재선택이 눈에 보이지 않는 방식으로도 가능하다는 사실. `'<` `'>`를 `:s`와 쓸 수 있습니다. 
 
