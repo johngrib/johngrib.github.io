@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 정렬용 비교 함수 가이드
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-09-12 23:32:55 +0900
+updated : 2022-09-12 23:34:48 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -923,6 +923,10 @@ nil
 
 >
 Original author: Andy Fingerhut
+
+## 함께 읽기
+
+- [Comparator - Java SE 17 (docs.oracle.com)]( https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Comparator.html )
 
 ## 참고문헌
 
