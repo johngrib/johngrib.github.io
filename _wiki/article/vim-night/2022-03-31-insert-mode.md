@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 3월 31일
 summary : INSERT MODE 이야기
 date    : 2022-09-12 18:46:06 +0900
-updated : 2022-09-12 22:34:06 +0900
+updated : 2022-09-12 22:45:38 +0900
 tag     :
 toc     : true
 public  : true
@@ -17,11 +17,37 @@ latex   : false
 이 글은 2022년 3월 31일 트위터에 쓴 글을 백업한 것입니다.
 {:style="background-color: #fff9e4;"}
 
-## 첫 트윗
+## g;
+
+### 첫 트윗
+
+<blockquote class="twitter-tweet"><p lang="ko" dir="ltr">g; 종종 사용하는 명령인데, 이게 있는지 몰라서 안 쓰는 분들을 본 적이 있다. 입력할 때마다 마지막으로 편집한 곳으로 커서를 점프시켜 준다. 물론 숫자 조합도 가능. 3g; 처럼. 반대 방향으로 점프는 g, 를 쓰면 된다. 방금 사용하고 보니 아 이거나 트윗타에 올려볼까 싶어서 올림. <a href="https://t.co/105jESUAyw">pic.twitter.com/105jESUAyw</a></p>&mdash; 기계인간 John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1509183787954933766?ref_src=twsrc%5Etfw">March 30, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+### 스레드
+
+`g;` 종종 사용하는 명령인데, 이게 있는지 몰라서 안 쓰는 분들을 본 적이 있다. 입력할 때마다 마지막으로 편집한 곳으로 커서를 점프시켜 준다. 물론 숫자 조합도 가능. `3g;`처럼. 반대 방향으로 점프는 `g,`를 쓰면 된다. 방금 사용하고 보니 아 이거나 트윗타에 올려볼까 싶어서 올림.
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/EIeTF2nCO5ToeJiG.mp4 ?tag=12" type="video/mp4"></video>
+
+`.`마크가 마지막으로 편집한 위치를 저장하므로, `'.` 하거나 ``` `. ``` 해도 같은 효과를 볼 수는 있음.
+근데 `g;`이 IntelliJ에서 되던가 안 되던가... 기억으로는 안됐던 것 같다. 그래서 IntelliJ 에서는 이렇게 설정해서 사용했던 것으로 기억한다. Ideavim에서 제공하는 명령을 호출하는 방식.
+
+![Image]( /resource/wiki/article/vim-night/2022-03-31-insert-mode/FPGzUcUVgAAmWT-.jpg )
+
+이거 언제 추가했더라 하고 깃헙 들어가서 blame 보니 5년 전에 추가한 설정이네. 그래도 그동안 잘 썼다. 쓸 때마다 `g;` 한번 입력했다 안 돌아가서 짜증내며 ``` `. ``` 입력했던 기억이 난다. 으  
+  
+
+![Image]( /resource/wiki/article/vim-night/2022-03-31-insert-mode/FPGz7ICVcAcrb95.jpg )
+
+[https://github.com/johngrib/dotfiles/blame/master/.ideavimrc#L97-L98](https://github.com/johngrib/dotfiles/blame/master/.ideavimrc#L97-L98 )
+
+## INSERT MODE
+
+### 첫 트윗
 
 <blockquote class="twitter-tweet"><p lang="ko" dir="ltr">그렇지 이것도 올려보자. 코딩하다 화면을 스크롤 할 일이 있으면 선택하는 방법은<br>1. 마우스 휠로 스크롤한다<br>2. 위/아래 커서를 계속 눌러서 제일 윗줄이나 아랫줄로 보내고 계속 누르고 있는다인데, vim에서는 커서를 안 움직이고 줄 단위로 스크롤하는 방법이 있다. &lt;C-e&gt; 랑 &lt;C-y&gt;. <a href="https://t.co/ehmp2HQUjx">pic.twitter.com/ehmp2HQUjx</a></p>&mdash; 기계인간 John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1509526196991668235?ref_src=twsrc%5Etfw">March 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## 스레드
+### 스레드
 
 그렇지 이것도 올려보자. 코딩하다 화면을 스크롤 할 일이 있으면 선택하는 방법은
 1. 마우스 휠로 스크롤한다
@@ -89,6 +115,7 @@ vim은 help 문서가 아주 잘 되어 있어서, vim에 어느 정도 익숙�
 
 ## Links
 
+- [Thread reader 0]( https://threadreaderapp.com/thread/1509183787954933766.html )
 - [Thread reader 1]( https://threadreaderapp.com/thread/1509526196991668235.html )
 - [Thread reader 2]( https://threadreaderapp.com/thread/1509873426684469251.html )
 
