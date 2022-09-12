@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comparators Guide
 summary : 정렬용 비교 함수 가이드
 date    : 2022-03-01 21:23:11 +0900
-updated : 2022-03-04 23:35:58 +0900
+updated : 2022-09-12 23:32:55 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -335,7 +335,7 @@ The function `<` is a perfect example, as long as you only need to compare num
 `>` works for sorting numbers in decreasing order.
 Behind the scenes, when such a Clojure function `bool-cmp-fn` is "called as a comparator", Clojure runs code that works like this to return an _int_ instead:
 
-Java의 comparator들은 모두 3-way comparator 입니다. 즉, 첫 번째 인자가 두 번째 인자보다 작으면 음수, 같으면 0, 크면 양수를 리턴합니다.
+Java의 comparator들은 모두 3-way comparator 입니다. 즉, 첫 번째 인자가 두 번째 인자보다 작으면 음수, 같으면 `0`, 크면 양수를 리턴합니다.
 
 Java와 달리 Clojure에서는 boolean comparator를 사용할 수 있습니다.
 boolean comparator는 첫 번째 인자가 두 번째 인자보다 우선한다면 `true`를 리턴하고, 그렇지 않으면 `false`를 리턴합니다(두 인자가 같은 경우도 `false`입니다).
