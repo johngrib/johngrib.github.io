@@ -3,7 +3,7 @@ layout  : wiki
 title   : kluge
 summary : 클루지
 date    : 2022-09-12 11:22:36 +0900
-updated : 2022-09-12 12:43:50 +0900
+updated : 2022-09-12 13:13:16 +0900
 tag     : 
 toc     : true
 public  : true
@@ -116,9 +116,6 @@ The building of a Kludge, however, is not work for amateurs. There is a certain,
 시간의 흐름 속에서 진화는 이 두 가지를 모두 낳을 수 있다.
 생물의 세계에는 절묘한 측면들과 아무리 좋게 보아도 날림으로 된 측면들이 함께 존재한다.
 [^marcus-0]
-
-## 나의 메모
-
 
 
 ## 함께 읽기
