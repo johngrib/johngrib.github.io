@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 3월 31일
 summary : INSERT MODE 이야기
 date    : 2022-09-12 18:46:06 +0900
-updated : 2022-09-12 22:45:38 +0900
+updated : 2022-09-12 22:57:41 +0900
 tag     :
 toc     : true
 public  : true
@@ -40,6 +40,42 @@ latex   : false
 ![Image]( /resource/wiki/article/vim-night/2022-03-31-insert-mode/FPGz7ICVcAcrb95.jpg )
 
 [https://github.com/johngrib/dotfiles/blame/master/.ideavimrc#L97-L98](https://github.com/johngrib/dotfiles/blame/master/.ideavimrc#L97-L98 )
+
+## gi
+
+### 첫 트윗
+
+<blockquote class="twitter-tweet"><p lang="ko" dir="ltr">g; 과 차이가 좀 있긴 하지만 살짝 비슷한 기능으로 gi 가 있다. 요걸 쓰면 마지막에 편집한 곳으로 커서를 점프하고 INSERT 모드로 바꿔줌. 가끔 코딩하다가 한참 위에 있는 곳 좀시 보다가 다시 코딩하던 그 곳 그 자리로 돌아가서 타이핑할 때 편함. <a href="https://t.co/WCV1X3eprZ">https://t.co/WCV1X3eprZ</a> <a href="https://t.co/HOkb6GVNHF">pic.twitter.com/HOkb6GVNHF</a></p>&mdash; 기계인간 John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1509341951488757765?ref_src=twsrc%5Etfw">March 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+### 스레드
+
+`g;`과 차이가 좀 있긴 하지만 살짝 비슷한 기능으로 `gi`가 있다. 요걸 쓰면 마지막에 편집한 곳으로 커서를 점프하고 INSERT 모드로 바꿔줌. 가끔 코딩하다가 한참 위에 있는 곳 좀시 보다가 다시 코딩하던 그 곳 그 자리로 돌아가서 타이핑할 때 편함.
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/wkor6nUZc491b_2b.mp4 ?tag=12" type="video/mp4"></video>
+
+`gi`와 `g;`를 비교하자면 압도적으로 `g;`을 더 많이 씀. `g;`은 스택 기반으로 점프하므로 히스토리를 타고 쭉쭉 이동 가능. `gi`는 따지고 보면 `g;i` 또는 ``` `.i ```와 똑같아서 사실 굳이 알아둘 필요도 없는 명령이긴 하다. 하지만 그럼에도 이걸 쓰는 이유는 3번 누르는 게 묘하게 귀찮기 때문. 걍 `gi`. 
+
+이야기하는 김에 `.`도 얹어보자. vim에서 `.`은 "가장 최근"의 의미를 갖고 있다. 그래서 normal에서 `.`은 방금 한 작업을 반복하는 거고, `'.`는 마지막에 편집한 장소를 기억하는 mark 이고, `".`은 INSERT 모드에서 마지막에 입력한 문자열을 저장하는 레지스터가 된다. 
+
+이제 퇴근했으니 이어서 써보자. 이렇게 `.`은 vim에서 반복의 의미를 갖기 때문에 종종 쓰인다. `3.` 하면 방금 한 걸 세 번 반복. `100.` 하면 100번 반복. 그런데 플러그인을 통한 동작은 이게 잘 안된다. 기본 동작만 반복하기 때문. 그래서 쓰는 게 팀 포프님의 vim-repeat.
+
+[https://github.com/tpope/vim-repeat](https://github.com/tpope/vim-repeat )
+
+반복하면 빠질 수 없는게 `<C-a>`랑 `<C-x>`. `<C-뫄>`가 별거 아니고 `control + 뫄` 를 말하는 것. 즉 `<C-a>`는 컨트롤 a, `<C-x>`는 컨트롤 엑스. vim에서 숫자 위에 커서를 놓고 `<C-a>`를 하면 숫자가 증가하고, `<C-x>`하면 감소한다. 물론 숫자 조합도 가능. `37`위에 커서를 놓고 `1763<C-a>` 하면 `1800`. 
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/eDcWlzYVtLNGAa7d.mp4 ?tag=12" type="video/mp4"></video>
+
+간단한 덧셈,뺄셈은 vim에서는 `<C-a>`, `<C-x>`로 걍 해버린다. `12423832`에 `1899` 더하는 상황이라면 암산으로 따져서 고쳐도 되겠지만, 나는 이럴 때마다 자신이 미덥지 못하고 좀 자신이 없다. 그래서 그냥 커서를 위에 놓고 `1800<C-a>` 하면 끝. 계산기 열어도 되겠지만 vim에서 되니까 굳이. 
+
+그런데 이걸 쓰다보면 기능이 아깝다. 숫자에 대해서만 돌아가는 게 아깝다. 다른 것도 되면 얼마나 좋을까? 그래서 쓰는 게 [axring](https://github.com/tenfyzhong/axring.vim ) 비슷한 플러그인 여러개가 있지만 난 이거로도 충분해서 이걸 쓴다.
+
+[https://github.com/tenfyzhong/axring.vim](https://github.com/tenfyzhong/axring.vim )
+
+이런 게 된다. `<C-a>`, `<C-x>`로 사전에 설정한 문자열을 회전시킬 수 있음. 만족스럽게도 (편집하고 있는 파일 확장자에 따라) 프로그래밍 언어별로 다르게 설정할 수도 있다. 그냥 글을 쓸 때에도 활용할 곳이 있는데, 월화수목금토일 같은 것도 돌릴 수 있고, 마크다운 헤더도 가능.
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/FPKzeE0VUAEUnSh.mp4 " type="video/mp4"></video>
+
+
 
 ## INSERT MODE
 
@@ -115,7 +151,8 @@ vim은 help 문서가 아주 잘 되어 있어서, vim에 어느 정도 익숙�
 
 ## Links
 
-- [Thread reader 0]( https://threadreaderapp.com/thread/1509183787954933766.html )
-- [Thread reader 1]( https://threadreaderapp.com/thread/1509526196991668235.html )
-- [Thread reader 2]( https://threadreaderapp.com/thread/1509873426684469251.html )
+- [Thread reader - g;]( https://threadreaderapp.com/thread/1509183787954933766.html )
+- [Thread reader - gi]( https://threadreaderapp.com/thread/1509341951488757765.html )
+- [Thread reader - scroll]( https://threadreaderapp.com/thread/1509526196991668235.html )
+- [Thread reader - insert mode]( https://threadreaderapp.com/thread/1509873426684469251.html )
 
