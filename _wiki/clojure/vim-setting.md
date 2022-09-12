@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-06-11 18:56:54 +0900
+updated : 2022-09-12 23:38:55 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -410,6 +410,8 @@ ultisnips snippet을 만들며 작업할 때는 위의 스크린샷과 같이 �
 `(defn factorial`을 입력했더니 함수 본문을 제안해 주고 있다.
 
 ![copilot이 함수 완성을 추천해주는 장면]( ./copilot.jpg )
+
+나는 INSERT 모드에서 `<C-j>`를 통해 copilot 자동완성을 사용한다.
 
 ### 코드 조사하기
 
