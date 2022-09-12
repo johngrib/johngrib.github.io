@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 3월 31일
 summary : INSERT MODE 이야기
 date    : 2022-09-12 18:46:06 +0900
-updated : 2022-09-12 22:57:41 +0900
+updated : 2022-09-12 22:59:07 +0900
 tag     :
 toc     : true
 public  : true
@@ -19,11 +19,7 @@ latex   : false
 
 ## g;
 
-### 첫 트윗
-
 <blockquote class="twitter-tweet"><p lang="ko" dir="ltr">g; 종종 사용하는 명령인데, 이게 있는지 몰라서 안 쓰는 분들을 본 적이 있다. 입력할 때마다 마지막으로 편집한 곳으로 커서를 점프시켜 준다. 물론 숫자 조합도 가능. 3g; 처럼. 반대 방향으로 점프는 g, 를 쓰면 된다. 방금 사용하고 보니 아 이거나 트윗타에 올려볼까 싶어서 올림. <a href="https://t.co/105jESUAyw">pic.twitter.com/105jESUAyw</a></p>&mdash; 기계인간 John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1509183787954933766?ref_src=twsrc%5Etfw">March 30, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-### 스레드
 
 `g;` 종종 사용하는 명령인데, 이게 있는지 몰라서 안 쓰는 분들을 본 적이 있다. 입력할 때마다 마지막으로 편집한 곳으로 커서를 점프시켜 준다. 물론 숫자 조합도 가능. `3g;`처럼. 반대 방향으로 점프는 `g,`를 쓰면 된다. 방금 사용하고 보니 아 이거나 트윗타에 올려볼까 싶어서 올림.
 
@@ -42,12 +38,6 @@ latex   : false
 [https://github.com/johngrib/dotfiles/blame/master/.ideavimrc#L97-L98](https://github.com/johngrib/dotfiles/blame/master/.ideavimrc#L97-L98 )
 
 ## gi
-
-### 첫 트윗
-
-<blockquote class="twitter-tweet"><p lang="ko" dir="ltr">g; 과 차이가 좀 있긴 하지만 살짝 비슷한 기능으로 gi 가 있다. 요걸 쓰면 마지막에 편집한 곳으로 커서를 점프하고 INSERT 모드로 바꿔줌. 가끔 코딩하다가 한참 위에 있는 곳 좀시 보다가 다시 코딩하던 그 곳 그 자리로 돌아가서 타이핑할 때 편함. <a href="https://t.co/WCV1X3eprZ">https://t.co/WCV1X3eprZ</a> <a href="https://t.co/HOkb6GVNHF">pic.twitter.com/HOkb6GVNHF</a></p>&mdash; 기계인간 John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1509341951488757765?ref_src=twsrc%5Etfw">March 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-### 스레드
 
 `g;`과 차이가 좀 있긴 하지만 살짝 비슷한 기능으로 `gi`가 있다. 요걸 쓰면 마지막에 편집한 곳으로 커서를 점프하고 INSERT 모드로 바꿔줌. 가끔 코딩하다가 한참 위에 있는 곳 좀시 보다가 다시 코딩하던 그 곳 그 자리로 돌아가서 타이핑할 때 편함.
 
@@ -78,12 +68,6 @@ latex   : false
 
 
 ## INSERT MODE
-
-### 첫 트윗
-
-<blockquote class="twitter-tweet"><p lang="ko" dir="ltr">그렇지 이것도 올려보자. 코딩하다 화면을 스크롤 할 일이 있으면 선택하는 방법은<br>1. 마우스 휠로 스크롤한다<br>2. 위/아래 커서를 계속 눌러서 제일 윗줄이나 아랫줄로 보내고 계속 누르고 있는다인데, vim에서는 커서를 안 움직이고 줄 단위로 스크롤하는 방법이 있다. &lt;C-e&gt; 랑 &lt;C-y&gt;. <a href="https://t.co/ehmp2HQUjx">pic.twitter.com/ehmp2HQUjx</a></p>&mdash; 기계인간 John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1509526196991668235?ref_src=twsrc%5Etfw">March 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-### 스레드
 
 그렇지 이것도 올려보자. 코딩하다 화면을 스크롤 할 일이 있으면 선택하는 방법은
 1. 마우스 휠로 스크롤한다
