@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 3월 31일
 summary : INSERT MODE 이야기
 date    : 2022-09-12 18:46:06 +0900
-updated : 2022-09-12 22:59:07 +0900
+updated : 2022-09-12 23:09:21 +0900
 tag     :
 toc     : true
 public  : true
@@ -23,15 +23,15 @@ latex   : false
 
 `g;` 종종 사용하는 명령인데, 이게 있는지 몰라서 안 쓰는 분들을 본 적이 있다. 입력할 때마다 마지막으로 편집한 곳으로 커서를 점프시켜 준다. 물론 숫자 조합도 가능. `3g;`처럼. 반대 방향으로 점프는 `g,`를 쓰면 된다. 방금 사용하고 보니 아 이거나 트윗타에 올려볼까 싶어서 올림.
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/EIeTF2nCO5ToeJiG.mp4 ?tag=12" type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/EIeTF2nCO5ToeJiG.mp4" type="video/mp4"></video>
 
 `.`마크가 마지막으로 편집한 위치를 저장하므로, `'.` 하거나 ``` `. ``` 해도 같은 효과를 볼 수는 있음.
 근데 `g;`이 IntelliJ에서 되던가 안 되던가... 기억으로는 안됐던 것 같다. 그래서 IntelliJ 에서는 이렇게 설정해서 사용했던 것으로 기억한다. Ideavim에서 제공하는 명령을 호출하는 방식.
 
 ![Image]( /resource/wiki/article/vim-night/2022-03-31-insert-mode/FPGzUcUVgAAmWT-.jpg )
 
-이거 언제 추가했더라 하고 깃헙 들어가서 blame 보니 5년 전에 추가한 설정이네. 그래도 그동안 잘 썼다. 쓸 때마다 `g;` 한번 입력했다 안 돌아가서 짜증내며 ``` `. ``` 입력했던 기억이 난다. 으  
-  
+이거 언제 추가했더라 하고 깃헙 들어가서 blame 보니 5년 전에 추가한 설정이네. 그래도 그동안 잘 썼다. 쓸 때마다 `g;` 한번 입력했다 안 돌아가서 짜증내며 ``` `. ``` 입력했던 기억이 난다. 으
+
 
 ![Image]( /resource/wiki/article/vim-night/2022-03-31-insert-mode/FPGz7ICVcAcrb95.jpg )
 
@@ -41,7 +41,7 @@ latex   : false
 
 `g;`과 차이가 좀 있긴 하지만 살짝 비슷한 기능으로 `gi`가 있다. 요걸 쓰면 마지막에 편집한 곳으로 커서를 점프하고 INSERT 모드로 바꿔줌. 가끔 코딩하다가 한참 위에 있는 곳 좀시 보다가 다시 코딩하던 그 곳 그 자리로 돌아가서 타이핑할 때 편함.
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/wkor6nUZc491b_2b.mp4 ?tag=12" type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/wkor6nUZc491b_2b.mp4" type="video/mp4"></video>
 
 `gi`와 `g;`를 비교하자면 압도적으로 `g;`을 더 많이 씀. `g;`은 스택 기반으로 점프하므로 히스토리를 타고 쭉쭉 이동 가능. `gi`는 따지고 보면 `g;i` 또는 ``` `.i ```와 똑같아서 사실 굳이 알아둘 필요도 없는 명령이긴 하다. 하지만 그럼에도 이걸 쓰는 이유는 3번 누르는 게 묘하게 귀찮기 때문. 걍 `gi`. 
 
@@ -53,7 +53,7 @@ latex   : false
 
 반복하면 빠질 수 없는게 `<C-a>`랑 `<C-x>`. `<C-뫄>`가 별거 아니고 `control + 뫄` 를 말하는 것. 즉 `<C-a>`는 컨트롤 a, `<C-x>`는 컨트롤 엑스. vim에서 숫자 위에 커서를 놓고 `<C-a>`를 하면 숫자가 증가하고, `<C-x>`하면 감소한다. 물론 숫자 조합도 가능. `37`위에 커서를 놓고 `1763<C-a>` 하면 `1800`. 
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/eDcWlzYVtLNGAa7d.mp4 ?tag=12" type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/eDcWlzYVtLNGAa7d.mp4" type="video/mp4"></video>
 
 간단한 덧셈,뺄셈은 vim에서는 `<C-a>`, `<C-x>`로 걍 해버린다. `12423832`에 `1899` 더하는 상황이라면 암산으로 따져서 고쳐도 되겠지만, 나는 이럴 때마다 자신이 미덥지 못하고 좀 자신이 없다. 그래서 그냥 커서를 위에 놓고 `1800<C-a>` 하면 끝. 계산기 열어도 되겠지만 vim에서 되니까 굳이. 
 
@@ -65,7 +65,44 @@ latex   : false
 
 <video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/FPKzeE0VUAEUnSh.mp4 " type="video/mp4"></video>
 
+## mark에 대해
 
+<blockquote class="twitter-tweet"><p lang="ko" dir="ltr">쿨한 기능이죠. 한편 복사한 줄로 이동하는 게 왜 두개지? 하는 의문을 갖는 분도 있을 것 같아요. vim mark중에는 이렇게 짝을 이루는 것들이 있습니다. 그리고 여는 쪽이 시작, 닫는 쪽이 마지막을 의미합니다. 즉 &#39;[ 는 복사한 문자열의 시작지점, &#39;]는 복사한 문자열의 끝나는 지점. <a href="https://t.co/Rq5DxYClLW">https://t.co/Rq5DxYClLW</a></p>&mdash; 기계인간 John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1509680082561896449?ref_src=twsrc%5Etfw">March 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+쿨한 기능이죠. 한편 복사한 줄로 이동하는 게 왜 두개지? 하는 의문을 갖는 분도 있을 것 같아요. vim mark중에는 이렇게 짝을 이루는 것들이 있습니다. 그리고 여는 쪽이 시작, 닫는 쪽이 마지막을 의미합니다. 즉 `'[`는 복사한 문자열의 시작지점, `']`는 복사한 문자열의 끝나는 지점.
+
+이걸 알아두면 다른 괄호 마크도 같이 이해가 됩니다. 근데 `'(` `')` `'{` `'}` 는 텍스트오브젝트가 있어서 잘 안 쓰고, ``` `<``` ``` `>```는 종종 매우 편리하게 사용할 수 있습니다. 이것이 가장 최근 비주얼 모드로 선택했던 영역의 마크. 마우스 모드를 켜도 돌아갑니다. 드래그해서 선택한 영역을 기억하는거죠. 
+
+이게 무슨 얘기냐면 특정 영역을 선택했다가, 선택을 풀고 다른 거 하다가 ``` `<```를 입력하면 선택했던 영역의 시작점으로 커서가 점프한다는 뜻. 오오 그렇다면 ``` `<v`> ``` 하면 그 영역을 다시 선택할 수 있겠네요? 그렇습니다. 그런데 이렇게 하면 키를 5번 눌러야 하잖아요? 이걸 줄인 것이 `gv`입니다. 
+
+`gv`를 사용하는 모습을 영상으로 찍어 봤습니다.
+
+1. `vip`로 패러그래프 비주얼 모드 선택
+2. `L`로 마지막 줄로 이동
+3. 아무거나 입력하다가
+4. `gv`로 처음 선택한 영역 다시 선택 
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/MeXZ2CBuSAp6VPAc.mp4 " type="video/mp4"></video>
+
+비주얼 모드 이야기가 나온 김에 `o` 하나 더 얹어봅니다. NORMAL에서 `o` `O`는 new line을 만드는... 자주 쓰지만 꽤 평범한 기능을 제공하죠. 그런데 VISUAL 모드에서 `o`는 다른 에디터에서는 보기 힘든 기능 하나를 제공합니다. 그것은 바로 선택 영역 내 커서 점프입니다. 범위를 쭉 선택하고 나서 
+
+커서를 옮기면 범위 시작 지점은 못 바꾸고 범위 끝 지점만 바꿀 수 있죠. 그런데 `o`를 누르면 시작 지점으로 커서가 점프해서 시작 지점도 바꿀 수 있게 해줍니다. 다시 `o` 누르면 끝 지점으로 돌아가고... 아 이걸 말로는 설명이 힘든데 영상 찍고 다시 올게요. 
+
+`o`를 사용해서 선택 영역의 시작~끝을 왔다갔다할 수 있고, 만약 블록 비주얼 모드(사각형 선택 모드)라면 `O`를 눌러서 반대편 각으로 이동하는 것도 가능합니다. 
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/5lQJ-JQxkDvD_GTk.mp4 " type="video/mp4"></video>
+
+물론 마우스로 선택했을 때도 `o`가 됩니다. vim에서 `set mouse=a`로 설정해두면 다른 에디터처럼 마우스를 쓸 수 있어요. 전 대체로 키보드를 쓰긴 하지만 그때그때 편하게 쓸 수 있는 건 다 동원하는 편이라 vim에서도 마우스를 설정해놓고 씁니다. 
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/AR5TVrwBqwAAtrcs.mp4 " type="video/mp4"></video>
+
+이 이야기의 시작은 `'[` `']` 그리고 `'<` `'>` 였죠. 이 중에서 비주얼 마크인 `'<` `'>`로 돌아가보죠. 선택한 영역을 기억한다는 건 재선택이 가능하다는 점에서 상당한 매력이 있습니다. 그런데 흥미로운 것은 이 재선택이 눈에 보이지 않는 방식으로도 가능하다는 사실. `'<` `'>`를 `:s`와 쓸 수 있습니다. 
+
+보통 visual 모드로 선택을 한 다음 `:s`로 substitute를 하려 하면 커맨드 라인에 이렇게 나옵니다. 왼쪽의 range 표기를 보면 `'<,'>` 이렇게 나오죠. range에 `'<` `'>`를 쓰고 있다는 것인데, 잘 생각해보면 지금 선택중이 아니어도, 아까 선택한 거라면 `:s`를 사용할 수 있다는 것을 알 수 있습니다.
+
+![Image]( /resource/wiki/article/vim-night/2022-03-31-insert-mode/FPN-hh4VkA4qgs3.png )
+
+아마 보통은 선택을 해놓고 replace를 하려 할 때 바로 `:s`를 쓸 거에요. 근데 뭐 다른 곳에 클릭을 했다던가 해서 선택이 풀리면 아 짜증나 하면서 다시 선택하는 경우가 있죠? vim에서는 걍 `'<`,`'>` 마크를 쓰면 재선택이 필요 없습니다. 아 물론 `gv:s` 해도 되고요.
 
 ## INSERT MODE
 
@@ -137,6 +174,7 @@ vim은 help 문서가 아주 잘 되어 있어서, vim에 어느 정도 익숙�
 
 - [Thread reader - g;]( https://threadreaderapp.com/thread/1509183787954933766.html )
 - [Thread reader - gi]( https://threadreaderapp.com/thread/1509341951488757765.html )
+- [Thread reader - mark]( https://threadreaderapp.com/thread/1509680082561896449.html )
 - [Thread reader - scroll]( https://threadreaderapp.com/thread/1509526196991668235.html )
 - [Thread reader - insert mode]( https://threadreaderapp.com/thread/1509873426684469251.html )
 
