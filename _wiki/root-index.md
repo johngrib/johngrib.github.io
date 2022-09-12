@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-11 23:36:37 +0900
+updated : 2022-09-12 11:22:33 +0900
 regenerate: true
 ---
 
@@ -370,6 +370,7 @@ regenerate: true
 * [[/jargon/bootstrapping]]
 * [[/jargon/edsel-edict]]
 * [[/jargon/kiss-principle]]
+* [[/jargon/kluge]]
 * [[/jargon/metcalfe-s-law]]
 * [[/jargon/moore-s-law]]
 * [[/jargon/postel-s-law]]
