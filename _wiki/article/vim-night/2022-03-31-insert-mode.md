@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 3월 31일
 summary : INSERT MODE 이야기
 date    : 2022-09-12 18:46:06 +0900
-updated : 2022-09-12 22:28:00 +0900
+updated : 2022-09-12 22:34:06 +0900
 tag     :
 toc     : true
 public  : true
@@ -27,7 +27,7 @@ latex   : false
 1. 마우스 휠로 스크롤한다
 2. 위/아래 커서를 계속 눌러서 제일 윗줄이나 아랫줄로 보내고 계속 누르고 있는다인데, vim에서는 커서를 안 움직이고 줄 단위로 스크롤하는 방법이 있다. `<C-e>` 랑 `<C-y>`. 
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/g-Zg--yS8aejcEr4.mp4 ?tag=12" type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/g-Zg--yS8aejcEr4.mp4" type="video/mp4"></video>
 
 당연히 숫자 조합이 가능해서, `10<C-e>` 이렇게 해도 된다. 이러면 10줄 아래로 스크롤. 커서를 움직이지 않고도 스크롤을 할 수 있으니 그만큼 쓸데없이 위아래 끝으로 커서를 안 보내도 된다. 사실 `H`, `L`이 있어서 보내기까지가 어려운 건 아닌데, 커서를 원래 위치로 돌려놓는 건 귀찮은 일이니까.
 
@@ -35,7 +35,7 @@ latex   : false
 
 insert 모드라도 이렇게 먼저 `c-x` (control x)를 누른 다음이라면 `c-e` `c-y`가 잘 돌아간다. 편집하다가도 위아래 스크롤을 할 필요가 있을 때 하면 된다. 앗 그런데 여기에서 설명할 것들이 분기가 생겨버린다. 하나는 `c-x`이고, 다른 하나는 INSERT 모드에서 NORMAL 명령을 작동하는 방법인데 
 
-<video controls="" autoplay="" name="media"><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/tS33zBZAfBkVIB5j.mp4 ?tag=12" type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/tS33zBZAfBkVIB5j.mp4" type="video/mp4"></video>
 
 기왕 이야기가 나온 김에 `c-x` 이야기를 먼저 하자. `c-x` `c-e`라니 너무 emacs 같아요! 라고 생각할 수 있지만 아무려면 어떤가 싶다. (난 emacs 잘 모르지만 좋아한다 멋있음)
 
@@ -83,7 +83,7 @@ vim은 help 문서가 아주 잘 되어 있어서, vim에 어느 정도 익숙�
 
 쓰는 모습을 찍어봤다. `__time` 부터 `__pwd`는 vim의 빌트인 펑션을 쓰고, `__branch`와 `__uuid`는 system 함수로 셸 명령을 호출한다. 셸 명령을 부를 수 있다는 이야기는 나에게 익숙한 프로그래밍 언어로 나만의 완성 문구를 만들 수 있다는 의미이기도 하다. 인터넷에서 뭘 가져올 수도 있을 거고. 
 
-<video controls="" autoplay="" name="media"><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/CcSkwLbeIhkVx6tx.mp4 ?tag=12" type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/2022-03-31-insert-mode/CcSkwLbeIhkVx6tx.mp4" type="video/mp4"></video>
 
 내가 설정한 `iabbr`이 전부 앞에 `_`가 두개씩 있는 이유는 별거 없고 괜히 타이핑하다 의도하지 않은 순간에 iabbr 자동완성이 되기를 바라지 않았기 때문. `__` 정도면 거의 쓸 일이 없으니까 의도적으로 음 오늘 날짜가.. 할 때 `__date` 하고 쓰는 식.
 
