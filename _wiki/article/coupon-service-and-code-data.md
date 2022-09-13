@@ -3,7 +3,7 @@ layout  : wiki
 title   : 더 나은 쿠폰 서비스에 대한 아이디어 기록
 summary : 
 date    : 2022-08-28 15:28:07 +0900
-updated : 2022-09-05 23:04:57 +0900
+updated : 2022-09-13 09:44:27 +0900
 tag     : 아이디어
 toc     : true
 public  : true
@@ -316,6 +316,11 @@ for (CouponComponent component : components) {
 나는 `CouponComponent` 인터페이스를 사용하는 방법 정도로 충분하다고 생각한다.
 
 ## 함께 읽기
+
+### 2022-09-12 Woojin Kim님의 글
+
+[로직을 데이터 모양으로 표현한 간단한 스킬 시스템](https://www.woojinkim.org/wiki/spaces/me/pages/663192750 )
+
 ### 2022-09-05 내가 트위터에 쓴 글
 
 다음은 [내가 트위터에 쓴 메모]( https://twitter.com/John_Grib/status/1566760532366860288?s=20&t=gwFOcf8x4_0xCNojyRmgGw )를 옮겨와 정리한 것이다.
