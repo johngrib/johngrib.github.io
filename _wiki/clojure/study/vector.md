@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Clojure vector
-summary : 
+summary : Clojure Vector의 내부 구조를 알아보고 Java의 ArrayList와 비교한다
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-09-05 00:00:16 +0900
+updated : 2022-09-13 13:21:41 +0900
 tag     : clojure java
 toc     : true
 public  : true
