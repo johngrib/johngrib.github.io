@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-12 18:09:34 +0900
+updated : 2022-09-16 22:47:42 +0900
 regenerate: true
 ---
 
@@ -97,6 +97,7 @@ regenerate: true
 ### [[people]]
 
 * [[/people/bill-atkinson]]
+* [[/people/fred-brooks]]
 * [[/people/gerald-weinberg]]
 * [[/people/grady-booch]]
 * [[/people/ronald-wayne]]
