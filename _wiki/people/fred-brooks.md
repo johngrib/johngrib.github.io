@@ -3,7 +3,7 @@ layout  : wiki
 title   : 프레드 브룩스
 summary : Frederick P. Brooks, Jr.
 date    : 2022-09-16 22:47:43 +0900
-updated : 2022-09-16 22:53:19 +0900
+updated : 2022-09-16 23:03:37 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,16 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## Computer architecture 단어를 만들다
+
+프레드 브룩스의 에세이에 의하면, 그가 속해 있던 집단이 "Computer architecture"라는 단어를 처음 사용한 것으로 보인다.
+
+>
+좁지만 상당히 정확한 **컴퓨터 아키텍처(Computer architecture)에 대한 정의로 작업 범위를 유지한다.
+우리가 이 단어를 1962년에 만들어 냈고 1964년에 상당히 정확하게 정의했지만, 이 단어는 훨씬 느슨한 의미로 폭넓게 사용되게 되었다.
+[^design-413]
+
 
 ## Ted Codd 와의 관계
 
@@ -37,3 +47,5 @@ IBM의 관리자로서 내가 했던 가장 생산적인 행동은 제품 개발
 ## 주석
 
 [^design-298]: 디자인 오브 디자인. 20장. 298쪽.
+[^design-413]: 디자인 오브 디자인. 26장. 413쪽.
+
