@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-16 22:47:42 +0900
+updated : 2022-09-17 08:46:02 +0900
 regenerate: true
 ---
 
@@ -42,6 +42,7 @@ regenerate: true
 - [[/article/science-and-delete]]
 - [[/article/test-code-and-falsifiability]]
 - [[/article/vim-night/2022-03-27-ultisnips]]
+- [[/article/vim-night/2022-03-31-insert-mode]]
 
 ## [[algorithm]]
 
