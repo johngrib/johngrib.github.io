@@ -3,7 +3,7 @@ layout  : wiki
 title   : 더 나은 쿠폰 서비스에 대한 아이디어 기록
 summary : 
 date    : 2022-08-28 15:28:07 +0900
-updated : 2022-09-13 09:44:27 +0900
+updated : 2022-09-17 11:03:54 +0900
 tag     : 아이디어
 toc     : true
 public  : true
@@ -400,5 +400,7 @@ DB에 저장되는 값들은 다양한 얼굴과 역할을 갖고 있지만 그 
 [[GPG스터디] 1.0 데이터 주도적 설계의 마법]( https://www.slideshare.net/sehyeonnam9/10-38127704 )  
 대충 슬라이드 뜯어서 보시면 문제를 파는 시작지점으로 써먹을수 있을겁니다
 
+### 2022-08-29 @dylayed 님의 멘션
 
+<blockquote class="twitter-tweet"><p lang="ko" dir="ltr">설명해주신 파이프라인 시스템은 얼마전 알게된 Buildpack과 비슷하네요!<br><br>Buildpack은 유저의 소스코드를 컨테이너로 만드는 시스템인데, 쿠폰 문제와 비슷하게 누적되는 if-else 과정 (이 소스 코드는 루비인가? 파이썬인가? 등)을 buidpack이란 개념으로 추상화 합니다<a href="https://t.co/4PLmcYKoVf">https://t.co/4PLmcYKoVf</a></p>&mdash; Daniel Lee (@dylayed) <a href="https://twitter.com/dylayed/status/1563906945005670400?ref_src=twsrc%5Etfw">August 28, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
