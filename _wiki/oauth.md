@@ -3,7 +3,7 @@ layout  : wiki
 title   : OAuth
 summary : 
 date    : 2022-09-18 10:07:56 +0900
-updated : 2022-09-18 16:50:13 +0900
+updated : 2022-09-18 17:15:00 +0900
 tag     : 
 toc     : true
 public  : true
@@ -92,6 +92,49 @@ OAuth 2.0 인가 그랜트 절차.
 - 8\. 인가 서버는 엑세스 토큰을 클라이언트에게 전달한다.
     - 이제 클라이언트는 토큰을 얻었다.
 
+## Access Token
+
+### From: RFC 6749. 1.4. Access Token
+>
+Access tokens are credentials used to access protected resources. An access token is a string representing an authorization issued to the client. The string is usually opaque to the client. Tokens represent specific scopes and durations of access, granted by the resource owner, and enforced by the resource server and authorization server.
+>
+The token may denote an identifier used to retrieve the authorization information or may self-contain the authorization information in a verifiable manner (i.e., a token string consisting of some data and a signature). Additional authentication credentials, which are beyond the scope of this specification, may be required in order for the client to use a token.
+>
+The access token provides an abstraction layer, replacing different authorization constructs (e.g., username and password) with a single token understood by the resource server. This abstraction enables issuing access tokens more restrictive than the authorization grant used to obtain them, as well as removing the resource server's need to understand a wide range of authentication methods.
+>
+Access tokens can have different formats, structures, and methods of utilization (e.g., cryptographic properties) based on the resource server security requirements. Access token attributes and the methods used to access protected resources are beyond the scope of this specification and are defined by companion specifications such as [RFC6750]( https://www.rfc-editor.org/rfc/rfc6750 ).
+
+엑세스 토큰은 보호된 리소스에 접근하는 데 사용되는 자격 증명입니다.
+엑세스 토큰은 클라이언트에게 발급된 권한을 나타내는 문자열입니다.
+이 문자열은 일반적으로 클라이언트에게는 불투명합니다.
+토큰은 특정 권한 범위(scopes)와 엑세스 기간을 나타내며, 리소스 소유자가 부여해주고 리소스 서버 및 인가 서버에서 취급합니다.
+
+토큰은 인증 정보를 얻는 데 사용되는 식별자를 나타내거나, 검증 가능한 방식(데이터와 서명 문자열로 만들어지는 토큰 문자열 등)으로 인증 정보를 자체적으로 포함할 수 있습니다.
+클라이언트가 토큰을 사용하기 위해서 이 스펙의 범위를 벗어나는 추가적인 인증 자격 증명이 필요할 수도 있습니다.
+
+엑세스 토큰은 추상화 계층을 제공해서, 다른 방식의 인증 구조(예: 사용자 이름과 패스워드)를 리소스 서버가 이해하는 토큰 하나를 쓰는 방식으로 대체하게 됩니다.
+이러한 추상화가 있기 때문에 엑세스 토큰을 얻을 데 사용한 권한보다 더 제한된 권한을 갖는 엑세스 토큰을 발급할 수 있습니다. 그리고 리소스 서버가 광범위한 인증 방법을 이해해야 할 필요성을 제거할 수 있습니다.
+
+엑세스 토큰은 리소스 서버 보안 요구 사항에 따라 다양한 형식과 구조 및 활용 방법(예: 암호화 속성)을 가질 수 있습니다.
+보호된 리소스에 접근하기 위해 사용되는 엑세스 토큰 속성과 접근 방법은 이 스펙의 범위를 벗어나며, RFC 6750 스펙에 정의되어 있습니다.
+
+### From: OAuth 2 in Action
+
+>
+OAuth 액세스 토큰<sup>Access tokens</sup>은 간단히 토큰이라고도 하며, 클라이언트에게 권한이 위임됐다는 것을 나타내기 위해 인가 서버가 클라이언트에게 발급한다.
+OAuth에서는 토큰의 포맷이나 내용을 정의하지 않는다.
+하지만 항상 클라이언트가 요청한 접근 권한, 리소스 소유자의 클라이언트 인가 그리고 인가 과정에서 클라이언트에게 부여된 권한(일반적으로 접근할 수 있는 보호된 리소스의 범위)을 나타낸다.
+>
+클라이언트가 볼 때 OAuth 토큰의 형식은 명확하지 않다.
+따라서 클라이언트는 토큰 자체를 분석할 필요(또는 분석할 능력)가 없다.
+클라이언트의 역할은 인가 서버에 토큰을 요청하고 인가 서버가 발급한 토큰을 이용해 보호된 리소스에 접근하는 것이다.
+하지만 OAuth 시스템의 모든 구성 요소에게 토큰의 형식이 불명확한 것은 아니다.
+인가 서버는 토큰을 만들어 발급하고 보호된 리소스는 전달된 토큰을 검증한다.
+따라서 인가 서버와 보호된 리소스는 토큰 자체를 이해할 수 있으며, 그것이 어떤 내용을 의미하는지 알 수 있다.
+하지만 클라이언트는 토큰의 내용이나 의미를 전혀 알지 못한다.
+그렇게 함으로써 클라이언트가 좀 더 단순해지고, 인가 서버와 보호된 리소스는 토큰을 배포하는 방법에 있어 엄청난 유연성을 얻을 수 있다.
+[^richer-71]
+
 ## Refresh Token
 
 ### From: RFC 6749. 1.5. Refresh Token
@@ -154,11 +197,13 @@ OAuth 2.0에서는 토큰의 유효 기간이 자동으로 설정되기 때문�
 ## 참고문헌
 
 - OAuth 2 in Action / 저스틴 리처, 안토니오 산소 저/윤우빈 역 / 에이콘출판사 / 발행 2018년 04월 17일 / 원제 : OAuth 2 in Action
-- [RFC 6749](https://www.rfc-editor.org/rfc/rfc6749 )
+- [RFC 6749 - The OAuth 2.0 Authorization Framework]( https://www.rfc-editor.org/rfc/rfc6749 )
+- [RFC 6750 - The OAuth 2.0 Authorization Framework: Bearer Token Usage]( https://www.rfc-editor.org/rfc/rfc6750 )
 
 ## 주석
 
 [^richer-60]: OAuth 2 in Action. 2장. 60쪽의 그림 2.1을 참고해 그린 다이어그램이다.
+[^richer-71]: OAuth 2 in Action. 2장. 71쪽.
 [^richer-74]: OAuth 2 in Action. 2장. 74쪽.
 [^rfc-6749-1-1]: RFC 6749. 1.1. Roles
 [^rfc-6749-1-5]: RFC 6749. 1.5. Refresh Token
