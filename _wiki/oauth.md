@@ -3,7 +3,7 @@ layout  : wiki
 title   : OAuth
 summary : 
 date    : 2022-09-18 10:07:56 +0900
-updated : 2022-09-18 15:47:24 +0900
+updated : 2022-09-18 16:50:13 +0900
 tag     : 
 toc     : true
 public  : true
@@ -92,7 +92,26 @@ OAuth 2.0 인가 그랜트 절차.
 - 8\. 인가 서버는 엑세스 토큰을 클라이언트에게 전달한다.
     - 이제 클라이언트는 토큰을 얻었다.
 
-## 클라이언트는 왜 리프레시 토큰을 사용하는가?
+## Refresh Token
+
+### From: RFC 6749. 1.5. Refresh Token
+
+>
+Refresh tokens are credentials used to obtain access tokens.
+Refresh tokens are issued to the client by the authorization server and are used to obtain a new access token when the current access token becomes invalid or expires, or to obtain additional access tokens with identical or narrower scope (access tokens may have a shorter lifetime and fewer permissions than authorized by the resource owner).
+Issuing a refresh token is optional at the discretion of the authorization server.
+If the authorization server issues a refresh token, it is included when issuing an access token (i.e., step (D) in Figure 1).
+>
+-- RFC 6749. 1.5. [^rfc-6749-1-5]
+
+리프레시 토큰은 엑세스 토큰을 얻기 위해 사용되는 자격 증명입니다.
+리프레시 토큰은 인가 서버에서 클라이언트에게 발급해주며, 현재 갖고 있는 엑세스 토큰이 유효하지 않거나 만료되었을 때 새로운 엑세스 토큰을 획득하거나 이전과 같거나 더 좁은 범위(엑세스 토큰은 수명이 더 짧을 수 있으며, 리소스 소유자가 승인한 것보다 더 적은 권한)의 엑세스 토큰을 획득할 때 사용합니다.
+
+리프레시 토큰의 발행은 인가 서버의 재량에 따라 지원할 수도 있고 안 할 수도 있습니다.
+
+인가 서버가 리프레시 토큰을 발생한다면, 엑세스 토큰을 발행할 때 리프레시 토큰도 같이 발행합니다.
+
+### 클라이언트는 왜 리프레시 토큰을 사용하는가?
 
 >
 그렇다면 클라이언트는 왜 리프레시 토큰을 사용해야 할까?
@@ -141,4 +160,5 @@ OAuth 2.0에서는 토큰의 유효 기간이 자동으로 설정되기 때문�
 
 [^richer-60]: OAuth 2 in Action. 2장. 60쪽의 그림 2.1을 참고해 그린 다이어그램이다.
 [^richer-74]: OAuth 2 in Action. 2장. 74쪽.
-[^rfc-6749-1-1]: RFC 6749. 1.1. Roles.
+[^rfc-6749-1-1]: RFC 6749. 1.1. Roles
+[^rfc-6749-1-5]: RFC 6749. 1.5. Refresh Token
