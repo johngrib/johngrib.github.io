@@ -3,7 +3,7 @@ layout  : wiki
 title   : OAuth
 summary : 
 date    : 2022-09-18 10:07:56 +0900
-updated : 2022-09-18 13:32:40 +0900
+updated : 2022-09-18 14:43:47 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,14 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## OAuth 2.0 Authorization grant process
+
+OAuth 2.0 인가 그랜트 절차.
+
+![OAuth 2.0 인가 그랜트 절차]( /resource/wiki/oauth/process-sequence.svg )
+[^richer-60]
+
 
 
 ## 클라이언트는 왜 리프레시 토큰을 사용하는가?
@@ -60,5 +68,5 @@ OAuth 2.0에서는 토큰의 유효 기간이 자동으로 설정되기 때문�
 
 ## 주석
 
+[^richer-60]: OAuth 2 in Action. 2장. 60쪽의 그림 2.1을 참고해 그린 다이어그램이다.
 [^richer-74]: OAuth 2 in Action. 2장. 74쪽.
-
