@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "wiki",
  "url": "/wiki/root-index",
- "updated": "2022-09-17 08:46:02 +0900",
+ "updated": "2022-09-18 10:07:55 +0900",
  "children": [
   "architecture",
   "article",
@@ -11,6 +11,7 @@
   "emacs",
   "git",
   "http",
-  "news"
+  "news",
+  "oauth"
  ]
 }
