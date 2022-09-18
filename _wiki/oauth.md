@@ -3,11 +3,11 @@ layout  : wiki
 title   : OAuth
 summary : 
 date    : 2022-09-18 10:07:56 +0900
-updated : 2022-09-18 17:15:00 +0900
+updated : 2022-09-18 23:28:19 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[/root-index]]
+parent  : [[/index]]
 latex   : false
 ---
 * TOC
