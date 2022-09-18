@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정규 표현식
 summary : 작성중인 문서
 date    : 2020-05-18 22:45:12 +0900
-updated : 2022-07-05 23:02:10 +0900
+updated : 2022-09-18 23:31:49 +0900
 tag     : regex
 toc     : true
 public  : true
@@ -25,7 +25,7 @@ latex   : true
 사실 정규식이 나타내고자 하는 바는 유한자동자가 나타내고자 하는 바와 동등하다.
 정규식이 실제로 쓰인 최초의 프로그램은 1960년대 중반 켄 톰슨<sup>Ken Thompson</sup>이 만든 텍스트 편집기 QED의 한 버전이었다.
 1967년에 톰슨은 정규식에 근거한 빠른 텍스트 부합을 위한 어떤 메커니즘으로 특허를 신청했다.
-그 특허는 1971년에 승인되었는데, 소프트웨어 특허로는 최초의 것들 중 하나이다[U.S. Patent 3,568,156, Text Matching Algorithm, 1971년 3월 2일].
+그 특허는 1971년에 승인되었는데, 소프트웨어 특허로는 최초의 것들 중 하나이다[U.S. Patent 3,568,156, Text Matching Algorithm, 1971년 3월 2일].[^patent-3568156]
 >
 QED 의 정규식은 Unix용 편집기 ed로 옮겨졌고, 그런 후 필수 Unix 도구인 [[/cmd/grep]]{grep}으로도 이식 되었다(grep은 톰슨이 ed를 크게 뜯어 고쳐서 만든 것이다).
 널리 쓰이는 이런 프로그램들 덕분에 정규식은 초기 Unix 공동체 전반에서 잘 알려지게 되었다.
@@ -285,5 +285,5 @@ $$[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]$$
 
 ## 주석
 
+[^patent-3568156]: US-3568156-A - Text Matching Algorithm. [Google Patents]( https://patents.google.com/patent/US3568156A/en ). [US-3568156-A - Text Matching Algorithm]( https://portal.unifiedpatents.com/patents/patent/US-3568156-A )
 [^b-code-28]: Beautiful Code. 1장. 28쪽.
-
