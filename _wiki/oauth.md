@@ -3,7 +3,7 @@ layout  : wiki
 title   : OAuth
 summary : 
 date    : 2022-09-18 10:07:56 +0900
-updated : 2022-09-18 15:33:06 +0900
+updated : 2022-09-18 15:47:24 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,43 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## OAuth 2.0 Roles
+
+>
+1.1.  Roles
+>
+OAuth defines four roles:
+>
+> - resource owner
+>     - An entity capable of granting access to a protected resource. When the resource owner is a person, it is referred to as an end-user.
+> - resource server
+>     - The server hosting the protected resources, capable of accepting and responding to protected resource requests using access tokens.
+> - client
+>     - An application making protected resource requests on behalf of the resource owner and with its authorization.  The term "client" does not imply any particular implementation characteristics (e.g., whether the application executes on a server, a desktop, or other devices).
+> - authorization server
+>     - The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+>
+The interaction between the authorization server and resource server is beyond the scope of this specification.  The authorization server may be the same server as the resource server or a separate entity. A single authorization server may issue access tokens accepted by multiple resource servers.
+>
+-- RFC 6749. 1.1.[^rfc-6749-1-1]
+
+- 리소스 소유자
+    - 보호된 리소스에 대해 엑세스 권한을 부여할 수 있는 엔티티.
+    - 만약 리소스 소유자가 사람이라면, 엔드 유저라고 부른다.
+- 리소스 서버
+    - 보호된 리소스를 호스팅하는 서버.
+    - 보호된 리소스에 대한 '엑세스 토큰을 사용하는 요청'을 수락하고 응답할 수 있다.
+- 클라이언트
+    - 리소스 소유자를 대행하는 권한을 받아 보호된 리소스에 대한 요청을 보내는 애플리케이션.
+    - "client"라는 단어는 특정한 구현 특성(예: 애플리케이션이 서버, 데스크탑, 특정 디바이스에서 실행되는지)를 의미하지 않는다.
+- 인가 서버
+    - 성공적으로 리소스 소유자를 인증하고 권한을 획득했다면 클라이언트에 엑세스 토큰을 발급해주는 서버.
+
+인가 서버와 리소스 서버 간의 상호 작용은 이 스펙 문서의 범위를 벗어난다.
+권한 부여 서버는 리소스 서버와 동일한 서버일 수도 있고, 별도의 엔티티일 수도 있다.
+단일한 인가 서버는 여러 리소스 서버에서 허용하는 엑세스 토큰을 발급할 수 있다.
+
 
 ## OAuth 2.0 Authorization grant process
 
@@ -98,8 +135,10 @@ OAuth 2.0에서는 토큰의 유효 기간이 자동으로 설정되기 때문�
 ## 참고문헌
 
 - OAuth 2 in Action / 저스틴 리처, 안토니오 산소 저/윤우빈 역 / 에이콘출판사 / 발행 2018년 04월 17일 / 원제 : OAuth 2 in Action
+- [RFC 6749](https://www.rfc-editor.org/rfc/rfc6749 )
 
 ## 주석
 
 [^richer-60]: OAuth 2 in Action. 2장. 60쪽의 그림 2.1을 참고해 그린 다이어그램이다.
 [^richer-74]: OAuth 2 in Action. 2장. 74쪽.
+[^rfc-6749-1-1]: RFC 6749. 1.1. Roles.
