@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2021-10-17 18:44:00 +0900
+updated : 2022-09-25 18:58:52 +0900
 tag     : command 언어 brian-kernighan awk
 toc     : true
 public  : true
@@ -119,10 +119,28 @@ awk '{ for (i=1; i <= NF; i++) wd[$i]++ } END { for (w in wd) print w, wd[w] }' 
 ## 함께 읽기
 * [[vim-update-book-progress]]
 
+### From: Beautiful Code
+
+>
+**집계 처리의 역사**
+>
+선구자들의 업적을 존중하는 의미에서 잠깐 언급하자면,
+텍스트 입력의 행들을 훑으면서 정규식과 내용 접근 저장소를 이용해 결과를 구축하는 방식으로 실제 작업을 수행한다는 개념은 awk 프로그래밍 언어에서 처음으로 유명해졌다.
+awk라는 이름은 그 언어의 창시자인 아호<sup>Aho</sup>, 웨인버거<sup>Wernberger</sup>, 커니핸<sup>Kerighan</sup>에서 비롯된 것이다.
+>
+물론 이 성과는 일반적으로 자료는 텍스트 파일에 행 별로 저장되어야 한다는, 당시에는 급진적이었던 Unix 원리(대부분은 리치<sup>Ritchie</sup>와 톰슨<sup>Thomson</sup>에서 기인한)에 기반을 둔 것이다.
+이 성과가 그 원리의 유효성을 어느 정도는 증명했다고 할 수 있다.
+>
+Per의 작성자인 월<sup>Larry Wall</sup>은 awk에 깔린 그러한 개념을 취해서 Perl을 고성능이자 업계에서 실용적으로 사용할 수 있는 수준의 범용 도구로 바꾸어 놓았다.
+Perl을 좀 무시하는 개발자들도 있는 것 같은데, 사실 Perl은 유닉스 시스템들의 세계를 한데 묶는 접착제 역할을 했으며, 또한 1세대 웹의 큰 부분을 차지하기도 했다.
+>
+-- Beautiful Code. 4장. 88쪽.
+
 ## 참고문헌
 
-- [KER] 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
+- Beautiful Code / 찰스 페졸드 외 37 저 / 한빛미디어 / 초판발행 2007년 12월 17일
 - [How To Use awk In Bash Scripting](https://www.cyberciti.biz/faq/bash-scripting-using-awk/ )
+- [KER] 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
 
 ## 주석
 
