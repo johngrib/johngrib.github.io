@@ -5,6 +5,7 @@
  "url": "/wiki/algorithm",
  "updated": "2020-03-04 20:46:42 +0900",
  "children": [
+  "algorithm/binary-search",
   "average-complexity",
   "b-tree",
   "base64",

@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-09-18 10:07:55 +0900
+updated : 2022-10-01 23:12:31 +0900
 regenerate: true
 ---
 
@@ -46,6 +46,7 @@ regenerate: true
 
 ## [[algorithm]]
 
+* [[/algorithm/binary-search]]
 * [[average-complexity]]
 * [[b-tree]]
 * [[base64]]
