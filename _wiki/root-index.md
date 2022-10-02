@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-10-01 23:12:31 +0900
+updated : 2022-10-02 21:04:17 +0900
 regenerate: true
 ---
 
@@ -352,6 +352,10 @@ regenerate: true
     * [[/clojure/study/set]]
     * [[/clojure/study/vector]]
 * [[/clojure/vim-setting]]
+
+### [[/kotlin]]
+
+* [[/kotlin/vim-setting]]
 
 ### [[php]]
 
