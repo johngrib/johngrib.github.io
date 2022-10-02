@@ -3,7 +3,7 @@ layout  : wiki
 title   : bash history 다루기
 summary : 사용법 및 잡다한 팁 요약
 date    : 2018-09-01 18:01:04 +0900
-updated : 2022-01-29 15:54:36 +0900
+updated : 2022-10-02 14:01:58 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -81,7 +81,7 @@ bash 명령 히스토리는 메모리에 보관되어 있다가 쉘에서 나갈
 다음 코드를 `.bashrc`에 추가하면 명령어를 입력할 때마다 히스토리가 갱신된다.
 
 ```sh
-function update_history {
+function share_history {
     history -a
     history -c
     history -r
