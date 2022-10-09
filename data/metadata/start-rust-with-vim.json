@@ -1,9 +1,0 @@
-{
- "type": "wiki",
- "title": "Rust 언어를 위한 Vim 설정",
- "summary": "",
- "parent": "rust",
- "url": "/wiki/start-rust-with-vim",
- "updated": "2022-10-10 00:05:37 +0900",
- "children": []
-}

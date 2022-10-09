@@ -6,6 +6,6 @@
  "url": "/wiki/rust",
  "updated": "2019-12-26 22:40:46 +0900",
  "children": [
-  "start-rust-with-vim"
+  "rust/vim-setting"
  ]
 }

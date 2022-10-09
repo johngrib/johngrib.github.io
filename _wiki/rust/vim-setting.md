@@ -1,13 +1,13 @@
 ---
 layout  : wiki
-title   : Rust 언어를 위한 Vim 설정
+title   : Neovim에서 Rust 코드를 작성하자
 summary : 
 date    : 2019-12-26 22:41:05 +0900
-updated : 2022-10-10 00:05:37 +0900
+updated : 2022-10-10 00:10:05 +0900
 tag     : rust vim
 toc     : true
 public  : true
-parent  : [[rust]]
+parent  : [[/rust]]
 latex   : false
 ---
 * TOC
