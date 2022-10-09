@@ -3,7 +3,7 @@ layout  : wiki
 title   : Rust 언어를 위한 Vim 설정
 summary : 
 date    : 2019-12-26 22:41:05 +0900
-updated : 2019-12-29 08:46:50 +0900
+updated : 2022-10-10 00:05:37 +0900
 tag     : rust vim
 toc     : true
 public  : true
@@ -15,6 +15,8 @@ latex   : false
 
 ## Rust 설치
 
+<https://rustup.rs/ >에 방문하거나 다음 명령을 실행한다.
+
 ```sh
 curl https://sh.rustup.rs -sSf | sh
 ```
@@ -22,7 +24,7 @@ curl https://sh.rustup.rs -sSf | sh
 이후, `.bash_profile`이나 `.bashrc`에 다음을 추가하자.
 
 ```sh
-export PATH="$HOME/.cargo/bin:$PATH"
+[[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 ```
 
 잘 설치되었는지 확인한다.
