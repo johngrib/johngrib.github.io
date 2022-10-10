@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-05-23 09:48:35 +0900
+updated : 2022-10-10 16:59:11 +0900
 tag     : bash vim ctags golang command clojure vim-syntax-color
 toc     : true
 public  : true
@@ -40,6 +40,14 @@ latex   : false
     * 나에게 가장 필요한 종류의 도구는 아니다.
     * gotags는 내 컴퓨터에서 vim-gutentags와 사용할 때마다 제대로 동작하지 않았다. (내 잘못일 수도 있다)
 * 중요: [**Drew Neil**도 Universal ctags를 사용한다](https://github.com/universal-ctags/ctags/issues/446 ).
+
+### 설치되어 있는 ctags 종류 확인하기
+
+다음 명령을 입력해보면 Universal Ctags 인지 Exuberant Ctags 인지 확인할 수 있다.
+
+```sh
+ctags --version
+```
 
 ## Install
 
