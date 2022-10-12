@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Rust 코드를 작성하자
 summary : 
 date    : 2019-12-26 22:41:05 +0900
-updated : 2022-10-10 01:08:21 +0900
+updated : 2022-10-12 23:50:40 +0900
 tag     : rust vim
 toc     : true
 public  : true
@@ -49,12 +49,20 @@ Plug 'rust-lang/rust.vim'
 
 `rust-lang/rust.vim`을 설치했다면 자동 완성과 이런저런 편의 기능을 위해 coc.nvim에 rust 설정을 해 준다.
 
-[coc.nvim의 위키](https://github.com/neoclide/coc.nvim/wiki/Language-servers#rust )에서는 세 가지 방법을 제안하는데, 나는 첫 번째 방법인 [coc-rls](https://github.com/neoclide/coc-rls/ )를 설치하기로 했다.
+[coc.nvim의 위키](https://github.com/neoclide/coc.nvim/wiki/Language-servers#rust )에서는 세 가지 방법을 제안하는데,
+[coc-rls](https://github.com/neoclide/coc-rls/ )는 deprecated 되었으므로
+[rust-analyzer]( https://github.com/rust-lang/rust-analyzer  )를
+[coc-rust-analyzer]( https://github.com/fannheyward/coc-rust-analyzer ) 통해 사용하도록 하자.
 
-설치는 매우 쉬운데, coc.nvim이 설치된 vim에서 다음 명령을 입력하기만 하면 된다.
+- rust-analyzer: Rust를 위한 모듈식 컴파일러의 프론트엔드.
+- coc-rust-analyzer: coc.nvim에서 rust-analyzer를 사용하기 위한 플러그인.
+
+[coc-rust-analyzer]( https://github.com/fannheyward/coc-rust-analyzer  )를 설치하면 알아서 rust-analyzer도 설치해 준다.
+
+그러므로 coc.nvim이 설치된 vim에서 다음 명령을 입력하기만 하면 된다.
 
 ```
-:CocInstall coc-rls
+:CocInstall coc-rust-analyzer
 ```
 
 이렇게 하는 것만으로 vim에서 rust와 관련된 자동완성 셋팅이 완료된다.
