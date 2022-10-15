@@ -6,10 +6,10 @@
  "url": "/wiki/cmd",
  "updated": "2018-02-12 10:15:29 +0900",
  "children": [
-  "basename",
   "bash-history",
   "chsh-cmd",
   "cmd/ag",
+  "cmd/basename",
   "cmd/bat",
   "cmd/bind",
   "cmd/brew",

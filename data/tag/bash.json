@@ -1,9 +1,9 @@
 [
- "basename",
  "bash-history",
  "bc",
  "chsh-cmd",
  "cmd/ag",
+ "cmd/basename",
  "cmd/bat",
  "cmd/bind",
  "cmd/brew",
