@@ -30,6 +30,7 @@
  "clojure/study-01",
  "clojure/study/collection",
  "clojure/study/function",
+ "clojure/study/hashmap",
  "clojure/study/macro",
  "clojure/study/map",
  "clojure/study/merge-with",

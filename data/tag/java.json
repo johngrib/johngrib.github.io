@@ -1,4 +1,5 @@
 [
+ "clojure/study/hashmap",
  "clojure/study/vector",
  "defensive-copy",
  "google-java-format",

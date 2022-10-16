@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "Clojure persistent map",
+ "summary": "Clojure의 array map과 hash map",
+ "parent": "clojure/study",
+ "url": "/wiki/clojure/study/hashmap",
+ "updated": "2022-10-16 19:52:10 +0900",
+ "children": []
+}
