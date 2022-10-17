@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2021-10-22 00:13:55 +0900
+updated : 2022-10-17 23:47:23 +0900
 tag     : java
 toc     : true
 public  : true
@@ -13,6 +13,10 @@ issue-number : 158
 ---
 * TOC
 {:toc}
+
+## 짜증나는 one line method fold 옵션 끄기
+
+`Preferences` - `Editor` - `General` - `Code Folding` - `Java` - `One-line methods` 체크박스를 해제한다.
 
 ## 파일 탭 닫기 버튼(x) 왼쪽으로 옮기기
 
