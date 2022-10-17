@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure persistent map
 summary : Clojure의 array map과 hash map
 date    : 2022-10-16 15:16:49 +0900
-updated : 2022-10-16 19:52:10 +0900
+updated : 2022-10-17 22:02:49 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -79,6 +79,34 @@ public static final PersistentArrayMap EMPTY = new PersistentArrayMap();
 ```
 
 ## PersistentArrayMap
+
+### 생성
+
+`PersistentArrayMap`의 생성을 이해하는 가장 쉬운 방법은 [createWithCheck]( https://github.com/clojure/clojure/blob/1.5.x/src/jvm/clojure/lang/PersistentArrayMap.java#L64-L74 ) 메소드를 읽어보는 것이다.
+
+```java
+static public PersistentArrayMap createWithCheck(Object[] init){
+    // 2중 for를 돌면서 key 중복을 검사한다.
+    for(int i = 0; i < init.length; i += 2) {
+        for(int j = i + 2; j < init.length; j += 2) {
+            if(equalKey(init[i], init[j]))
+                // 중복이 있다면 예외를 던진다.
+                throw new IllegalArgumentException("Duplicate key: " + init[i]);
+        }
+    }
+    // 중복이 없다면 array map을 생성한다.
+    return new PersistentArrayMap(init);
+}
+```
+
+이렇게 호출된 [PersistentArrayMap의 생성자]( https://github.com/clojure/clojure/blob/1.5.x/src/jvm/clojure/lang/PersistentArrayMap.java#L142-L145 )는 다음과 같다.
+
+```java
+public PersistentArrayMap(Object[] init){
+    this.array = init;
+    this._meta = null;
+}
+```
 
 ### indexOf
 
@@ -213,23 +241,6 @@ array map의 [엔트리 카운트]( https://github.com/clojure/clojure/blob/1.5.
 ```java
 public int count(){
     return array.length / 2;
-}
-```
-
-
-### PersistentArrayMap의 생성
-
-```java
-static public PersistentArrayMap createWithCheck(Object[] init){
-    for(int i=0;i< init.length;i += 2)
-        {
-        for(int j=i+2;j<init.length;j += 2)
-            {
-            if(equalKey(init[i],init[j]))
-                throw new IllegalArgumentException("Duplicate key: " + init[i]);
-            }
-        }
-    return new PersistentArrayMap(init);
 }
 ```
 
