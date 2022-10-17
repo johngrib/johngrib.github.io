@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure persistent map
 summary : Clojure의 array map과 hash map
 date    : 2022-10-16 15:16:49 +0900
-updated : 2022-10-17 22:32:34 +0900
+updated : 2022-10-17 22:42:00 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -320,6 +320,55 @@ public int count(){
     return array.length / 2;
 }
 ```
+
+## PersistentHashMap
+
+### 생성
+
+이번에도 [createWithCheck]( https://github.com/clojure/clojure/blob/1.5.x/src/jvm/clojure/lang/PersistentHashMap.java#L61-L94 ) 메소드를 읽어보자.
+
+```java
+public static PersistentHashMap createWithCheck(Object... init){
+    // mutable Map 을 임시로 생성한다.
+    ITransientMap ret = EMPTY.asTransient();
+
+    for(int i = 0; i < init.length; i += 2) {
+        // mutable Map에 key, value를 순서대로 추가한다.
+        ret = ret.assoc(init[i], init[i + 1]);
+
+        if(ret.count() != i/2 + 1)
+            // key의 수가 증가하지 않았다면, key가 중복됐다는 뜻이다. 예외를 던진다.
+            throw new IllegalArgumentException("Duplicate key: " + init[i]);
+    }
+
+    // mutable Map을 통해 immutable Map을 생성해 리턴한다.
+    return (PersistentHashMap) ret.persistent();
+}
+```
+
+```java
+static public PersistentHashMap createWithCheck(ISeq items){
+    // mutable Map 을 임시로 생성한다.
+    ITransientMap ret = EMPTY.asTransient();
+
+    // next를 사용해 시퀀스를 2개씩 순회한다.
+    for(int i=0; items != null; items = items.next().next(), ++i) {
+        if(items.next() == null)
+            // key에 value 짝이 없다면 예외를 던진다.
+            throw new IllegalArgumentException(String.format("No value supplied for key: %s", items.first()));
+
+        // mutable Map에 key, value를 순서대로 추가한다.
+        ret = ret.assoc(items.first(), RT.second(items));
+
+        if(ret.count() != i + 1)
+            // key의 수가 증가하지 않았다면, key가 중복됐다는 뜻이다. 예외를 던진다.
+            throw new IllegalArgumentException("Duplicate key: " + items.first());
+    }
+    // mutable Map을 통해 immutable Map을 생성해 리턴한다.
+    return (PersistentHashMap) ret.persistent();
+}
+```
+
 
 ## 공통
 
