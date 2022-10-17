@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure persistent map
 summary : Clojure의 array map과 hash map
 date    : 2022-10-16 15:16:49 +0900
-updated : 2022-10-17 22:30:26 +0900
+updated : 2022-10-17 22:32:34 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -79,6 +79,10 @@ public static final PersistentArrayMap EMPTY = new PersistentArrayMap();
 ```
 
 ## PersistentArrayMap
+
+`PersistentArrayMap`은 최대 길이 8인 배열을 사용하는 map으로, 매우 단순한 구조를 갖고 있으며 거의 모든 작업이 상수 시간에 수행된다.
+
+key 탐색과 할당에 hash 알고리즘이 아니라 단순한 for loop를 사용한다.
 
 ### 생성
 
