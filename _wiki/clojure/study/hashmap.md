@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure persistent map
 summary : Clojure의 array map과 hash map
 date    : 2022-10-16 15:16:49 +0900
-updated : 2022-10-17 22:12:33 +0900
+updated : 2022-10-17 22:20:57 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -233,6 +233,46 @@ static public boolean pcequiv(Object k1, Object k2){
 ##### 그 외의 경우 동등성 판별
 
 `equals`로 비교한다.
+
+### assoc
+
+[clojure.lang.PersistentArrayMap:assoc]( https://github.com/clojure/clojure/blob/1.5.x/src/jvm/clojure/lang/PersistentArrayMap.java#L188-L209 )
+
+```java
+public IPersistentMap assoc(Object key, Object val) {
+    int i = indexOf(key);
+    Object[] newArray;
+
+    if(i >= 0) {
+        // 주어진 key가 이미 map에 들어있는 경우
+
+        if(array[i + 1] == val)
+            // value 도 같다면 할당 작업을 하지 않는다. 그대로 리턴.
+            return this;
+
+        // value가 다르다면 배열을 복사하고 복사한 배열에 새로운 값을 할당한다.
+        newArray = array.clone();
+        newArray[i + 1] = val;
+
+    } else {
+        // 주어진 key가 map에 없는 경우
+
+        if(array.length >= HASHTABLE_THRESHOLD)
+            // array map의 사이즈 제한에 도달했다면 hash map을 생성하고, assoc 한다.
+            return createHT(array).assoc(key, val);
+
+        // array map의 사이즈 제한을 넘기지 않았다면
+        // 배열을 복사하고, 복사한 배열에 새로운 key, value를 추가한다.
+        newArray = new Object[array.length + 2];
+        if(array.length > 0)
+            System.arraycopy(array, 0, newArray, 0, array.length);
+        newArray[newArray.length-2] = key;
+        newArray[newArray.length-1] = val;
+    }
+    // 새로 만든 배열을 써서 새로운 array map을 생성한다.
+    return create(newArray);
+}
+```
 
 ### count
 
