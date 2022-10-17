@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure persistent map
 summary : Clojure의 array map과 hash map
 date    : 2022-10-16 15:16:49 +0900
-updated : 2022-10-17 22:20:57 +0900
+updated : 2022-10-17 22:30:26 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -271,6 +271,39 @@ public IPersistentMap assoc(Object key, Object val) {
     }
     // 새로 만든 배열을 써서 새로운 array map을 생성한다.
     return create(newArray);
+}
+```
+
+### dissoc
+
+dissoc은 [without]( https://github.com/clojure/clojure/blob/1.5.x/src/jvm/clojure/lang/PersistentArrayMap.java#L211-L232 ) 메소드를 읽어보면 알 수 있다.
+
+```java
+public IPersistentMap without(Object key){
+    int i = indexOf(key);
+    if(i >= 0) {
+        // key가 map에 존재한다면
+
+        // 새로운 길이 = 기존의 길이 - 2
+        int newlen = array.length - 2;
+
+        if(newlen == 0)
+            return empty();
+
+        // 새로운 배열을 만들고, 삭제 대상 key를 제외한 나머지를 복사한다.
+        Object[] newArray = new Object[newlen];
+        for(int s = 0, d = 0; s < array.length; s += 2) {
+            if(!equalKey(array[s], key)) {
+                newArray[d] = array[s];
+                newArray[d + 1] = array[s + 1];
+                d += 2;
+            }
+        }
+        // array map을 생성해 리턴한다.
+        return create(newArray);
+    }
+    // key 가 map에 없다면 아무것도 하지 않는다.
+    return this;
 }
 ```
 
