@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure persistent map
 summary : Clojure의 array map과 hash map
 date    : 2022-10-16 15:16:49 +0900
-updated : 2022-10-17 22:02:49 +0900
+updated : 2022-10-17 22:12:33 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -244,3 +244,49 @@ public int count(){
 }
 ```
 
+## 공통
+
+`PersistentArrayMap`과 `PersistentHashMap`의 공통 로직을 살펴보자.
+
+### equals
+
+`PersistentArrayMap`과 `PersistentHashMap`은 공통적으로 `APersistentMap`을 상속받고 있다.
+
+두 클래스는 별도로 `equals` 메소드를 오버라이드하고 있지 않으므로 동등성 비교에 `APersistentMap`의 `equals` 메소드를 호출해 사용한다.
+
+[clojure.lang.APersistentMap:equals]( https://github.com/clojure/clojure/blob/1.5.x/src/jvm/clojure/lang/APersistentMap.java#L48-L71 )
+
+```java
+public boolean equals(Object obj){
+    return mapEquals(this, obj);
+}
+
+static public boolean mapEquals(IPersistentMap m1, Object obj){
+    // m1과 m2가 같은 레퍼런스라면 true
+    if(m1 == obj) return true;
+
+    // m2가 Map 구현체가 아니라면 false
+    if(!(obj instanceof Map))
+        return false;
+
+    Map m = (Map) obj;
+
+    // 두 map의 사이즈가 다르면 false
+    if(m.size() != m1.count())
+        return false;
+
+    for(ISeq s = m1.seq(); s != null; s = s.next()) {
+        // m1의 key 하나하나가 m2에도 들어있는지 확인한다.
+        Map.Entry e = (Map.Entry) s.first();
+        boolean found = m.containsKey(e.getKey());
+
+        // m1의 key가 m2에도 있다면 두 키의 value도 같은지 확인한다.
+        // 같지 않다면 false
+        if(!found || !Util.equals(e.getValue(), m.get(e.getKey())))
+            return false;
+    }
+
+    // 이 과정을 모두 통과했다면 true
+    return true;
+}
+```
