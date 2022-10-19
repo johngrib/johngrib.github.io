@@ -21,6 +21,7 @@
  "vim/coc-nvim",
  "vim/conceallevel",
  "vim/configure-split",
+ "vim/highlight",
  "vim/match",
  "vim/numbered-register-shift",
  "vim/persistent-undo",

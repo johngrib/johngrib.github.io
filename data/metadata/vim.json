@@ -18,6 +18,7 @@
   "vim/conceallevel",
   "vim/configure-split",
   "vim/help",
+  "vim/highlight",
   "vim/match",
   "vim/numbered-register-shift",
   "vim/persistent-undo",

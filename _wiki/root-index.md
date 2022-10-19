@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-10-16 15:16:47 +0900
+updated : 2022-10-19 22:00:25 +0900
 regenerate: true
 ---
 
@@ -628,6 +628,7 @@ regenerate: true
 * [[/vim/conceallevel]]
 * [[/vim/configure-split]]
 * [[/vim/help]]
+* [[/vim/highlight]]
 * [[/vim/match]]
 * [[/vim/numbered-register-shift]]
 * [[/vim/persistent-undo]]

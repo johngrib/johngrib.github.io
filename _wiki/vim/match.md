@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim :match
 summary : 현재 윈도우에서 하이라이트할 패턴을 지정한다
 date    : 2022-03-23 23:40:55 +0900
-updated : 2022-03-24 00:14:36 +0900
+updated : 2022-10-19 22:24:29 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -65,3 +65,8 @@ autocmd CursorMoved * exe printf('match CocListBlueBlack /\V\<%s\>/', escape(exp
 이렇게 설정하면 커서를 움직일 때마다 단어가 하이라이트되는 것을 볼 수 있다.
 
 ![하이라이트 예제]( ./highlight-example.gif )
+
+## 함께 읽기
+
+- [[/vim/highlight]]
+
