@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim :match
 summary : 현재 윈도우에서 하이라이트할 패턴을 지정한다
 date    : 2022-03-23 23:40:55 +0900
-updated : 2022-10-19 22:24:29 +0900
+updated : 2022-10-19 23:01:32 +0900
 tag     : vim
 toc     : true
 public  : true
@@ -49,17 +49,21 @@ latex   : false
 
 다음과 같이 설정하면 커서가 지시하는 단어를 하이라이트해준다.
 
-나는 다음과 같이 설정해 사용하고 있다.
+나는 다음과 같이 커스텀 highlight인 `CursorSelected001`을 만들어 설정해 사용하고 있다.
 
 ```viml
-autocmd CursorMoved * exe printf('match CocListBlueBlack /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+augroup cursor_move_selected_word
+    " :so $VIMRUNTIME/syntax/hitest.vim
+    autocmd CursorMoved * exe printf('match CursorSelected001 /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+    highlight CursorSelected001 ctermfg=14 ctermbg=23 guifg=#00ffff guibg=#005f5f
+augroup END
 ```
 
 - `autocmd CursorMoved *`: 모든 타입의 파일에서 `CursorMoved` 이벤트가 발생할 때마다 작동하도록 한다.
 - `exe`: `execute`의 축약.
 - `expand('<cword>')`: 커서가 지시하고 있는 단어로 확장해주는 함수. (`:help expand()`)
 - `escape( ... , '/\')`: 백슬래시 문자 이스케이핑 처리. (`:help escape()`)
-- `printf('match CocListBlueBlack /\V\<%s\>/', ... )`
+- `printf('match CursorSelected001 /\V\<%s\>/', ... )`
     - 포맷 출력. `...`에 있는 내용을 `%s`에 넣어준다. 여기에서는 커서가 지시하는 단어를 넣어준다.
 
 이렇게 설정하면 커서를 움직일 때마다 단어가 하이라이트되는 것을 볼 수 있다.
