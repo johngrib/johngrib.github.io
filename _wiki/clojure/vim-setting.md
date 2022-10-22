@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-09-12 23:38:55 +0900
+updated : 2022-10-23 00:24:03 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -1010,6 +1010,64 @@ export PATH="$PATH:~/.vim/plugged/vim-iced/bin"
 ```viml
 Plug 'guns/vim-sexp',    {'for': 'clojure'}
 Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
+```
+
+### 문제 해결
+
+#### 자동완성 목록에 중복 아이템이 나오는 경우
+
+다음과 같이 coc 자동완성 목록에 중복 아이템이 나온다면 여러 개의 coc 서비스가 떠 있을 수 있다.
+
+![자동완성 제안이 2개씩 나오고 있다]( /resource/wiki/clojure/vim-setting/197347081-7bf16bb0-de98-4c97-907f-83f30700979b.png )
+
+`:CocList services`를 입력하면 아래와 같이 서비스 목록을 볼 수 있다.
+
+![CocList services로 확인한 모습]( /resource/wiki/clojure/vim-setting/197347190-0d471a13-2c44-4975-b0a5-638049f46c67.png )
+
+스크린샷을 보면 `languageserver.clojure-lsp`와 `clojure`가 `[running]` 상태로 떠 있음을 알 수 있다. 즉 두 개가 돌고 있는 것이다.
+
+`languageserver.clojure-lsp`는 `coc-settings.json`에 내가 지정해 준 설정으로 작동하고 있는 것이고,
+아래에 있는 `clojure`는 [coc-clojure]( https://github.com/NoahTheDuke/coc-clojure ) 이다. 따라서 `coc-settings.json`에서 `languageserver.clojure-lsp` 설정을 삭제하여 해결하였다.
+
+관련 링크: <https://github.com/neoclide/coc.nvim/issues/1824 >
+
+```js
+// vim: ft=jsonc
+// https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file
+{
+    "suggest": {
+        "noselect": false
+    },
+    "coc": {
+        "preferences": {
+            "formatOnSaveFileTypes": ["rust"],
+            "promptInput": true
+        },
+        "source": {
+            "iced.enable": false
+        }
+    },
+    "languageserver": {
+        "kotlin": {
+            "command": "/opt/homebrew/bin/kotlin-language-server",
+            "filetypes": ["kotlin"]
+        },
+        // "clojure-lsp": {
+        //     // 참고: https://clojure-lsp.io/clients/#nvim
+        //     "command": "clojure-lsp",
+        //     "filetypes": ["clojure"],
+        //     "rootPatterns": ["project.clj", "deps.edn"],
+        //     "additionalSchemes": ["jar", "zipfile"],
+        //     "trace.server": "verbose",
+        //     "diagnostic.showUnused": true,
+        //     "diagnostic.showDeprecated": true,
+        //     "diagnostic.highlightPriority": 1000000,
+        //     "initializationOptions": {
+        //         "ignore-classpath-directories": true
+        //     }
+        // }
+    }
+}
 ```
 
 ## Clojure + Vim + Conjure로 Clojure 코딩하기
