@@ -3,7 +3,7 @@ layout  : wiki
 title   : 더 나은 쿠폰 서비스에 대한 아이디어 기록
 summary : 
 date    : 2022-08-28 15:28:07 +0900
-updated : 2022-09-17 11:03:54 +0900
+updated : 2022-10-22 13:33:37 +0900
 tag     : 아이디어
 toc     : true
 public  : true
@@ -316,6 +316,30 @@ for (CouponComponent component : components) {
 나는 `CouponComponent` 인터페이스를 사용하는 방법 정도로 충분하다고 생각한다.
 
 ## 함께 읽기
+
+### 2022-10-22 @chena_dev_ko 님의 멘션
+
+>
+[@chena_dev_ko]( https://twitter.com/chena_dev_ko/status/1583663828042031104?s=20&t=L3Z0PADeyeWfHy1yzx5SXQ ):
+저한테는 Chain of responsibility 패턴을 살짝 변형한 것처럼 보이는데 1) 쿠폰이 적용될수있는지 조건을 체크하는 부분과  실제 디스카운트를 적용하는 부분은 완전히 다른 성격이라고 느껴지는데요 - 쿠폰하나는 디스카운트 하나를 표현하는 객체라고 보통 이해하지 않나 해서요
+>
+[@chena_dev_ko]( https://twitter.com/chena_dev_ko/status/1583664279009443840?s=20&t=L3Z0PADeyeWfHy1yzx5SXQ ):
+왜 두개다 같은 인터페이스로, 같은 체인에 넣으셨는지 궁금합니다. 2) 쿠폰 하나가 여러개 디스카운트를 한번에 적용하도록 했다면 여러 조합을 다 duplicated 되게 일일히 만들어야할텐데 쿠폰을 하나만 적용할수있게 만드신건가요? 쿠폰을 여러개 적용하는 경우는 없었는지요
+>
+[@chena_dev_ko]( https://twitter.com/chena_dev_ko/status/1583664512968065024?s=20&t=L3Z0PADeyeWfHy1yzx5SXQ ):
+쿠폰을 여러개 적용하면 뭐가 먼저 들어가는지 순서도 중요하고 하니까.. 그리고 3) 쿠폰이 적용되는 조건이 현재 AND 조건만 표현가능한데 더 복잡한 조건들은 고려할 필요가 없었는지요?
+>
+[@chena_dev_ko]( https://twitter.com/chena_dev_ko/status/1583664742698098688?s=20&t=L3Z0PADeyeWfHy1yzx5SXQ ):
+And 만 써도 가능하긴 하겠지만 아무래도 그러면 관리자가 모든 가능한 and 조건을 다 손으로 일일히 만들어야하니까..
+>
+[@John_Grib]( https://twitter.com/John_Grib/status/1583672896173772800?s=20&t=L3Z0PADeyeWfHy1yzx5SXQ ):
+의견 감사합니다. 아이디어를 남겨두기 위해 쓴 글이어서 문제를 단순화했고 허술한 점이 많습니다. 말씀하신 것들을 해결하기에는 문제를 소박하게 다루고 있어요. 인터페이스를 하나로 한 것도 나중에 개발할 때 상황에 맞춰 만들어야지 하고 작성한 거여서 깊이 생각하지 않았어요.
+>
+[@chena_dev_ko]( https://twitter.com/chena_dev_ko/status/1583673300047527936?s=20&t=L3Z0PADeyeWfHy1yzx5SXQ ):
+아 문제가 그렇게 복잡하진 않았나봐요! 그냥 궁금했어요 ☺️ 굳이 없는 문제를 풀 필요는 없는게 맞죠! 리테일쪽 문제들이 생각보다 엄청나게 빠르게 복잡해지더라고요
+>
+[@John_Grib]( https://twitter.com/John_Grib/status/1583674659945738242?s=20&t=L3Z0PADeyeWfHy1yzx5SXQ ):
+맞습니다. 계기가 된 유지보수를 덜컥 맡게 되었던 쿠폰 시스템은 너무 복잡해서 플로우 차트를 그리게 되면 몹시 복잡했어요. 아예 잊고 단순하게 시작한다면 어떨까 하는 생각을 하다 수직으로 이어 내려가는 이미지라는 일관성을 줄 수 있는 개념이 필요하지 않을까 싶어서 떠올린 거였어요.
 
 ### 2022-09-12 Woojin Kim님의 글
 
