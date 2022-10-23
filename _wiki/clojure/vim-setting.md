@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-10-23 23:22:39 +0900
+updated : 2022-10-23 23:28:01 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -384,6 +384,8 @@ function! s:jack_in(selected)
     IcedJackIn
 endfunction
 ```
+
+첫 번째 줄의 `popup_menu#open`은 [kamykn/popup-menu.nvim]( https://github.com/kamykn/popup-menu.nvim ) 플러그인이 필요하다.
 
 ### 코드 자동완성
 
