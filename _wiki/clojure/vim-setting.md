@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-10-23 23:13:37 +0900
+updated : 2022-10-23 23:22:39 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -351,6 +351,7 @@ autocmd FileType clojure nmap sem <Plug>(iced_eval_at_mark)
 - `srr`: REPL 버퍼를 열었다 닫았다 한다. (`rr`: vim 반복명령 설탕)
 - `srd`: REPL 버퍼의 내용을 전부 지운다. (`d`: delete)
 - `sri`: REPL에 인터럽트를 보낸다. 오래 걸리는 작업을 취소할 때 쓸 수 있다. (`i`: interrupt)
+- `srj`: REPL을 띄우고 Jack In 한다. (`j`: jack in)
 
 ![화면 오른쪽에 나타난 REPL 버퍼]( ./iced-repl-on-right.jpg )
 
@@ -364,6 +365,24 @@ autocmd FileType clojure nmap srr <Plug>(iced_stdout_buffer_toggle)
 autocmd FileType clojure nmap srd <Plug>(iced_stdout_buffer_clear)
 autocmd FileType clojure nmap src <Plug>(iced_connect)
 autocmd FileType clojure nmap sri <Plug>(iced_interrupt)
+```
+
+Jack In의 경우는 프로젝트 별로 실행 옵션을 다르게 줄 필요가 있어서 옵션을 선택하거나 직접 입력하는 기능을 넣었다.
+
+```viml
+autocmd FileType clojure nmap srj :call popup_menu#open([' ', ' -A:dev:itest:test', ' 직접입력'], {selected -> <SID>jack_in(selected)})<CR>
+
+" Jack In을 수행한다
+function! s:jack_in(selected)
+    call Noti_pipe(v:null, 'REPL을 시작합니다.')
+    if a:selected == ' 직접입력'
+        let l:options = input('options: ', '-A:dev:itest:test')
+    else
+        let l:options = a:selected
+    endif
+    let g:iced#nrepl#connect#jack_in_command = g:iced#nrepl#connect#iced_command . ' repl ' . l:options
+    IcedJackIn
+endfunction
 ```
 
 ### 코드 자동완성
