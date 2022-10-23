@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-10-23 10:13:56 +0900
+updated : 2022-10-23 16:15:07 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -216,6 +216,8 @@ LEININGEN~
 
 ### vim에서 REPL에 접속하기
 
+#### 방법1. 띄워둔 REPL에 접속하기
+
 REPL과 관련된 명령은 모두 `sr`로 시작하도록 설정해 보았다.
 
 ![]( ./iced-src.gif )
@@ -226,6 +228,14 @@ REPL과 관련된 명령은 모두 `sr`로 시작하도록 설정해 보았다.
 접속이 완료되면 왼쪽 아래에 흐릿하게 `connected`라고 표시된다.
 
 접속할 때 현재 편집중인 파일도 함께 읽어들인다.
+
+#### 방법2. vim 안에서 REPL을 띄우고 접속하기
+
+에디터 안에서 REPL을 띄우고 접속하는 방법을 Jack In 이라 부른다.
+
+- `srj`: Jack In. (`j`: jack in)
+
+이것도 접속이 완료되면 `connected`라고 표시된다.
 
 ### 코드 평가하기
 
