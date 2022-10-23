@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-10-23 16:15:07 +0900
+updated : 2022-10-23 23:13:37 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -236,6 +236,16 @@ REPL과 관련된 명령은 모두 `sr`로 시작하도록 설정해 보았다.
 - `srj`: Jack In. (`j`: jack in)
 
 이것도 접속이 완료되면 `connected`라고 표시된다.
+
+Jack In을 기본값 외의 설정으로 작동하게 하기 위해서는 다음 두 변수를 지정해 줘야 한다.
+
+- `g:iced#nrepl#connect#iced_command`
+    - `iced` 명령의 경로. 기본값은 `iced`.
+- `g:iced#nrepl#connect#jack_in_command`
+    - REPL을 실행할 전체 명령.
+
+위의 두 변수를 설정해주지 않으면 기본값인 `iced repl` 로 Jack In이 작동하게 된다.
+
 
 ### 코드 평가하기
 
@@ -1037,6 +1047,37 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
 ```
 
 ### 문제 해결
+
+#### vim-iced에서 Jack In을 실행하면 iced 명령을 찾지 못하는 경우
+
+![iced를 찾지 못하는 vim]( /resource/wiki/clojure/vim-setting/197396998-cf352d90-f734-4b00-9fc1-f0a0d611e4ee.png )
+
+`g:iced#nrepl#connect#iced_command`에 설정된 `iced` 명령이 잘못 지정됐거나 vim이 `iced` 명령을 찾지 못하는 경우이다.
+
+Vim에서 다음 명령을 실행해보자. `0`이 출력된다면 `g:iced#nrepl#connect#iced_command`를 잘못 지정한 것이다.
+
+```viml
+:echo executable(g:iced#nrepl#connect#iced_command)
+```
+
+`g:iced#nrepl#connect#iced_command`의 기본값은 `iced`인데, 기본값으로 작동하지 않는다면 full path를 지정해주면 된다.
+
+다음은 나의 설정이다.
+
+```viml
+let g:iced#nrepl#connect#iced_command = $HOME . '/.config/nvim/plugged/vim-iced/bin/iced'
+let g:iced#nrepl#connect#jack_in_command = g:iced#nrepl#connect#iced_command . ' repl -A:dev:test:itest'
+```
+
+- `g:iced#nrepl#connect#iced_command`: `iced` 명령의 경로. 기본값은 `iced`.
+- `g:iced#nrepl#connect#jack_in_command`: REPL을 실행할 전체 명령.
+
+REPL 실행시 알리아스를 제공하고 싶다면 `g:iced#nrepl#connect#jack_in_command`에 꼭 지정해 줘야 한다.
+단, `iced repl` 명령이 prefix로 들어가 있어야 한다.
+
+- (작동함) `g:iced#nrepl#connect#jack_in_command = 'iced repl -A:dev'`
+- (작동함) `g:iced#nrepl#connect#jack_in_command = '/Users/johngrib/.config/nvim/plugged/vim-iced/bin/iced repl -A:dev'`
+- (작동안함) `g:iced#nrepl#connect#jack_in_command = '-A:dev'`
 
 #### 자동완성 목록에 중복 아이템이 나오는 경우
 
