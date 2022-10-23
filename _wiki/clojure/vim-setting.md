@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-10-23 00:24:03 +0900
+updated : 2022-10-23 10:13:56 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -96,23 +96,40 @@ clj-kondo 2021.12.20-SNAPSHOT
 
 ### coc.nvim 설정
 
-coc.nvim 플러그인 설치가 완료되었다면 [coc의 Language Servers 문서 - clojure]( https://github.com/neoclide/coc.nvim/wiki/Language-servers#clojure )를 참고해서 vim 명령으로 clojure coc 설치를 해준다.
+#### 방법1. coc-clojure 설치
 
-위 링크에 나와 있는 설정값을 복사해서 coc.nvim의 설정 파일에 추가해주면 된다.
+[coc의 Language Servers 문서 - clojure]( https://github.com/neoclide/coc.nvim/wiki/Language-servers#clojure )에서 추천하는 방법이다.
+
+간단하게 [coc-clojure]( https://github.com/NoahTheDuke/coc-clojure )를 설치하면 된다.
+
+```viml
+:CocInstall coc-clojure
+```
+
+
+#### 방법2. clojure-lsp를 사용하도록 설정
+
+>
+주의: coc-clojure를 설치하는 것이 더 편리하기 때문에 이 방법은 권장하지 않는다. coc-clojure를 사용할 수 없는 경우에 이 방법을 쓸 것.
+{:style="background-color: #ecf1e8;"}
+
+다음 설정을 복사해서 coc.nvim의 설정 파일인 `coc-settings.json`[^coc-config-file]에 추가해주면 된다.
 
 `:CocConfig`명령으로 `coc-settings.json`[^coc-config-file]을 열고, 다음과 같이 clojure-lsp 설정을 추가하자.
 
 ```jsonc
-"languageserver": {
-    "clojure-lsp": {
-        "command": "bash",
-        "args": ["-c", "clojure-lsp"],
-        "filetypes": ["clojure"],
-        "rootPatterns": ["project.clj", "deps.edn"],    // deps.edn 추가
-        "additionalSchemes": ["jar", "zipfile"],
-        "trace.server": "verbose",
-        "initializationOptions": {
-            "ignore-classpath-directories": true
+{
+    "languageserver": {
+        "clojure-lsp": {
+            "command": "bash",
+            "args": ["-c", "clojure-lsp"],
+            "filetypes": ["clojure"],
+            "rootPatterns": ["project.clj", "deps.edn"],    // deps.edn 추가
+            "additionalSchemes": ["jar", "zipfile"],
+            "trace.server": "verbose",
+            "initializationOptions": {
+                "ignore-classpath-directories": true
+            }
         }
     }
 }
@@ -120,13 +137,10 @@ coc.nvim 플러그인 설치가 완료되었다면 [coc의 Language Servers 문�
 
 나는 회사에서 `deps.edn`을 사용하고 있으므로, coc.nvim에서 제공하고 있는 예제에 `deps.edn`을 추가했다.
 
-주의: coc config가 비어 있는 파일이라면 "languageserver"를 감싸는 중괄호도 추가해야 한다.
-
-또는 그냥 다음 명령을 실행해도 된다.
-
-```viml
-:CocInstall coc-clojure
-```
+- [참고 설정 파일 링크]( https://github.com/johngrib/dotfiles/blob/db2279bcae1b0b519f9236757afbc845e587e86f/nvim/coc-settings.json )
+    - 2022-10-23 기준
+    - languageserver 설정이 포함되어 있으나 사용하지 않아 주석 처리되어 있다.
+    - 이 설정이 필요한 경우에 주석을 풀고 사용하면 된다.
 
 ### clj-kondo
 
