@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure hasheq
 summary : Clojure의 hash값 계산을 담당하는 hasheq 메소드
 date    : 2022-10-24 22:43:41 +0900
-updated : 2022-10-24 23:07:03 +0900
+updated : 2022-10-25 23:54:20 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -79,7 +79,55 @@ private static int dohasheq(IHashEq o) {
 
 ### Number
 
-TODO: 작성중
+#### Long
+
+[clojure.lang.Numbers:hasheq]( https://github.com/clojure/clojure/blob/clojure-1.12.0-alpha1/src/jvm/clojure/lang/Numbers.java#L1151-L1167 )
+
+```java
+static int hasheq(Number x){
+    Class xc = x.getClass();
+
+    if(xc == Long.class) {
+        long lpart = x.longValue();
+        return Murmur3.hashLong(lpart);
+        //return (int) (lpart ^ (lpart >>> 32));
+    }
+    if(xc == Double.class) {
+        if(x.equals(-0.0))
+            return 0;  // match 0.0
+        return x.hashCode();
+    }
+    return hasheqFrom(x, xc);
+}
+```
+
+Long 타입의 해시값은 `Murmur3.hashLong` 메소드를 사용해서 구한다.
+
+[clojure.lang.Murmur3:hashLong]( https://github.com/clojure/clojure/blob/clojure-1.12.0-alpha1/src/jvm/clojure/lang/Murmur3.java#L58-L70 )
+
+```java
+public static int hashLong(long input){
+    if(input == 0) return 0;
+    int low = (int) input;
+    int high = (int) (input >>> 32);
+
+    int k1 = mixK1(low);
+    int h1 = mixH1(seed, k1);
+
+    k1 = mixK1(high);
+    h1 = mixH1(h1, k1);
+
+    return fmix(h1, 8);
+}
+```
+
+#### Double
+
+#### Integer, Short, Byte, BigInteger
+
+#### BigDecimal
+
+#### Float
 
 ### String
 
