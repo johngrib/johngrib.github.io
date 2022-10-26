@@ -6,6 +6,7 @@
  "updated": "2020-03-04 20:46:42 +0900",
  "children": [
   "algorithm/binary-search",
+  "algorithm/murmurhash",
   "average-complexity",
   "b-tree",
   "base64",

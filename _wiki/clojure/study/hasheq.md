@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure hasheq
 summary : Clojure의 hash값 계산을 담당하는 hasheq 메소드
 date    : 2022-10-24 22:43:41 +0900
-updated : 2022-10-25 23:54:20 +0900
+updated : 2022-10-26 23:51:33 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -122,6 +122,14 @@ public static int hashLong(long input){
 ```
 
 #### Double
+
+Double 타입의 해시값은 `Number`의 `hashCode` 메소드를 사용해서 구한다.
+
+`Number`의 `hashCode`는 따로 오버라이드 하지 않았으므로 `java.lang.Object`의 `hashCode`를 호출하는 것과 같다.
+
+```java
+public native int hashCode();
+```
 
 #### Integer, Short, Byte, BigInteger
 
