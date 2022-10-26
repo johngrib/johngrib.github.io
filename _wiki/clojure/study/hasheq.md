@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure hasheq
 summary : Clojure의 hash값 계산을 담당하는 hasheq 메소드
 date    : 2022-10-24 22:43:41 +0900
-updated : 2022-10-26 23:51:33 +0900
+updated : 2022-10-26 23:56:18 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -101,7 +101,7 @@ static int hasheq(Number x){
 }
 ```
 
-Long 타입의 해시값은 `Murmur3.hashLong` 메소드를 사용해서 구한다.
+`java.lang.Long` 타입의 해시값은 `Murmur3.hashLong` 메소드를 사용해서 구한다.
 
 [clojure.lang.Murmur3:hashLong]( https://github.com/clojure/clojure/blob/clojure-1.12.0-alpha1/src/jvm/clojure/lang/Murmur3.java#L58-L70 )
 
@@ -123,9 +123,9 @@ public static int hashLong(long input){
 
 #### Double
 
-Double 타입의 해시값은 `Number`의 `hashCode` 메소드를 사용해서 구한다.
+`java.lang.Double` 타입의 해시값은 `java.lang.Number`의 `hashCode` 메소드를 사용해서 구한다.
 
-`Number`의 `hashCode`는 따로 오버라이드 하지 않았으므로 `java.lang.Object`의 `hashCode`를 호출하는 것과 같다.
+`java.lang.Number`의 `hashCode`는 따로 오버라이드 하지 않았으므로 `java.lang.Object`의 `hashCode`를 호출하는 것과 같다.
 
 ```java
 public native int hashCode();
