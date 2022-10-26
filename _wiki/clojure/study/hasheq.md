@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure hasheq
 summary : Clojure의 hash값 계산을 담당하는 hasheq 메소드
 date    : 2022-10-24 22:43:41 +0900
-updated : 2022-10-27 00:04:07 +0900
+updated : 2022-10-27 00:21:02 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -14,7 +14,7 @@ latex   : false
 {:toc}
 
 >
-참고: 이 문서는 [Clojure 1.12.0-alpha1]( https://github.com/clojure/clojure/tree/clojure-1.12.0-alpha1 )을 기준으로 합니다.
+참고: 이 문서는 [Clojure 1.12.0-alpha1]( https://github.com/clojure/clojure/tree/clojure-1.12.0-alpha1 )과 [openjdk-jdk11](https://github.com/AdoptOpenJDK/openjdk-jdk11 )을 기준으로 합니다.
 {:style="background-color: #ecf1e8;"}
 
 ## hasheq
@@ -153,6 +153,40 @@ static int hasheqFrom(Number x, Class xc){
 
 
 #### BigDecimal
+
+마지막에 붙은 소수점 이하의 무의미한 `0`을 제거하고, `java.math.BigDecimal`의 `hashCode`를 사용해서 해시값을 구한다.
+
+[clojure.lang.Numbers::hasheqFrom]( https://github.com/clojure/clojure/blob/clojure-1.12.0-alpha1/src/jvm/clojure/lang/Numbers.java#L1118-L1148 )
+
+```java
+if(xc == BigDecimal.class) {
+    // stripTrailingZeros() to make all numerically equal
+    // BigDecimal values come out the same before calling
+    // hashCode.  Special check for 0 because
+    // stripTrailingZeros() does not do anything to values
+    // equal to 0 with different scales.
+    if (isZero(x))
+        return BigDecimal.ZERO.hashCode();
+    else {
+        BigDecimal tmp = ((BigDecimal) x).stripTrailingZeros();
+        return tmp.hashCode();
+    }
+}
+```
+
+[java.math.BigDecimal::hashCode]( https://github.com/AdoptOpenJDK/openjdk-jdk11/blob/master/src/java.base/share/classes/java/math/BigDecimal.java#L3110-L3118 )
+
+```java
+public int hashCode() {
+    if (intCompact != INFLATED) {
+        long val2 = (intCompact < 0)? -intCompact : intCompact;
+        int temp = (int)( ((int)(val2 >>> 32)) * 31  +
+                          (val2 & LONG_MASK));
+        return 31*((intCompact < 0) ?-temp:temp) + scale;
+    } else
+        return 31*intVal.hashCode() + scale;
+}
+```
 
 #### Float
 
