@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure hasheq
 summary : Clojure의 hash값 계산을 담당하는 hasheq 메소드
 date    : 2022-10-24 22:43:41 +0900
-updated : 2022-10-26 23:56:18 +0900
+updated : 2022-10-27 00:04:07 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -132,6 +132,25 @@ public native int hashCode();
 ```
 
 #### Integer, Short, Byte, BigInteger
+
+이 타입들의 수가 `long` 타입의 범위 내에 있다면 `long`으로 변환된 다음, `Murmer3.hashLong`을 통해 해시값을 구하게 된다.
+
+[clojure.lang.Numbers::hasheqFrom]( https://github.com/clojure/clojure/blob/clojure-1.12.0-alpha1/src/jvm/clojure/lang/Numbers.java#L1118-L1148 )
+
+```java
+static int hasheqFrom(Number x, Class xc){
+    if(xc == Integer.class
+            || xc == Short.class
+            || xc == Byte.class
+            || (xc == BigInteger.class && lte(x, Long.MAX_VALUE) && gte(x,Long.MIN_VALUE))) {
+        long lpart = x.longValue();
+        return Murmur3.hashLong(lpart);
+        //return (int) (lpart ^ (lpart >>> 32));
+    }
+```
+
+`long` 타입의 범위를 넘어선다면 `java.lang.Object`의 `hashCode`를 사용해서 해시값을 구한다.
+
 
 #### BigDecimal
 
