@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-10-23 23:28:01 +0900
+updated : 2022-10-27 23:33:13 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -679,6 +679,38 @@ surround는 따옴표, 괄호, 스페이스까지 모두 사용이 가능하며 
 ![vim surround를 사용하는 모습]( ./surround.gif )
 
 (gif로 만들면서 속도가 빨라졌는데 실제로는 이 정도로 빠르게 작업하지 않는다.)
+
+#### sexp를 사용한 surround 확장
+
+- `dsp`: 부모 form을 삭제한다. (`d`elete `s`urround `p`arent)
+- `dso`: 형제 엘리먼트를 삭제한다. (`d`elete `s`urround `o`ther)
+- `csp`: 부모 form과 현재 form을 교체한다. (`c`hange `s`urround `p`arent)
+
+sexp의 명령 중 raise list, raise element, convolute를 surround의 개념으로 포섭할 수 있다고 생각했다.
+마침 `dsp` ,`dso`, `csp`는 surround 명령과 겹치지 않았다.
+
+
+```viml
+" v는 커서 위치
+
+" 부모 form 삭제
+"                            v
+" from: (let [foo bar] (if a b c))
+" to  : (if a b c)
+let g:sexp_mappings.sexp_raise_list = 'dsp'
+
+" 형제 element 모두 삭제하고 혼자 남게 됨
+"                            v
+" from: (let [foo bar] (if a b c))
+" to  : (let [foo bar] b)
+let g:sexp_mappings.sexp_raise_element = 'dso'
+
+" convolute - https://stackoverflow.com/a/18192105
+"                   v
+" from: (+ 1 2 (* 3 4))
+" to  : (* 3 (+ 1 2 4))
+let g:sexp_mappings.sexp_convolute = 'csp'
+```
 
 #### 커서 점프
 
