@@ -3,7 +3,7 @@ layout  : wiki
 title   : Homebrew
 summary : macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 brew.
 date    : 2018-02-12 10:03:46 +0900
-updated : 2022-10-28 22:03:22 +0900
+updated : 2022-10-28 22:09:30 +0900
 tag     : bash mac command
 toc     : true
 public  : true
@@ -28,6 +28,16 @@ brew install ag       # ag 설치
 
  # 패키지 uninstall
 brew uninstall ag     # uninstall ag
+```
+
+### upgrade
+
+```sh
+ # gh를 최신 버전으로 업그레이드
+brew upgrade gh
+
+ # wezterm을 최신 버전으로 업그레이드
+brew upgrade --cask wezterm
 ```
 
 ### 전용 경로 확인하기
