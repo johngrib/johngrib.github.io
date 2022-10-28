@@ -3,7 +3,7 @@ layout  : wiki
 title   : Homebrew
 summary : macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 brew.
 date    : 2018-02-12 10:03:46 +0900
-updated : 2022-07-25 23:06:07 +0900
+updated : 2022-10-28 22:03:22 +0900
 tag     : bash mac command
 toc     : true
 public  : true
@@ -59,7 +59,7 @@ brew leaves
 
 ## Brewfile
 
-```
+```sh
  # Brewfile 을 자동으로 생성한다
 brew bundle dump
 
