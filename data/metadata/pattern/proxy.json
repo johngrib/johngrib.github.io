@@ -4,6 +4,6 @@
  "summary": "컴포넌트 자체가 아니라 컴포넌트의 대리자와 통신하도록 해준다",
  "parent": "pattern",
  "url": "/wiki/pattern/proxy",
- "updated": "2021-11-07 20:46:19 +0900",
+ "updated": "2022-10-28 21:09:02 +0900",
  "children": []
 }

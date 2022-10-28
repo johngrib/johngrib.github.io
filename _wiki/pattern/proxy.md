@@ -3,7 +3,7 @@ layout  : wiki
 title   : 프록시 패턴 (Proxy Pattern)
 summary : 컴포넌트 자체가 아니라 컴포넌트의 대리자와 통신하도록 해준다
 date    : 2021-11-06 21:55:46 +0900
-updated : 2021-11-07 20:46:19 +0900
+updated : 2022-10-28 21:09:02 +0900
 tag     : GoF-design-pattern posa
 toc     : true
 public  : true
@@ -15,7 +15,7 @@ latex   : false
 
 ## 의도
 
-GoF 책에서는 다음과 같이 옵저버 패턴의 의도를 밝힌다.
+GoF 책에서는 다음과 같이 프록시 패턴의 의도를 밝힌다.
 
 >
 다른 객체에 대한 접근을 제어하기 위한 대리자 또는 자리채움자 역할을 하는 객체를 둡니다.[^gof]
