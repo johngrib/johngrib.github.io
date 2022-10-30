@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-10-30 23:51:11 +0900
+updated : 2022-10-31 00:00:56 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -1136,6 +1136,8 @@ autocmd FileType clojure nmap sctl :call ClojureLsp('thread-first-all')<CR>
 ```
 
 위의 함수와 함수 호출은 [clojure-lsp.io/clients/#vim](https://clojure-lsp.io/clients/#vim )에서 소개하는 [.vimrc]( https://github.com/snoe/dotfiles/blob/master/home/.vimrc )를 참고해 응용한 것이다.
+
+기능 목록 또한 [clojure-lsp.io/features/#execute-command]( https://clojure-lsp.io/features/#execute-command )에서 확인하면 된다.
 
 #### vim-iced에서 Jack In을 실행하면 iced 명령을 찾지 못하는 경우
 
