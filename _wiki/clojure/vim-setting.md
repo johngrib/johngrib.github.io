@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-10-27 23:33:13 +0900
+updated : 2022-10-30 23:51:11 +0900
 tag     : clojure vim
 toc     : true
 public  : true
@@ -1100,6 +1100,42 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
 ```
 
 ### 문제 해결
+
+#### coc-clojure가 작동하지 않는 경우 clojure-lsp 기능을 coc에서 호출하는 방법
+
+coc-clojure에 문제가 있어 작동하지 않는 경우에는 clojure-lsp 기능을 coc를 통해 호출하면 된다.
+
+```viml
+" coc-clojure를 사용하는 경우
+autocmd FileType clojure nmap sctl :call
+    \ CocActionAsync('runCommand', 'lsp-clojure-thread-last-all')<CR>
+```
+
+```viml
+" coc-clojure를 사용하지 않고 호출하는 경우
+autocmd FileType clojure nmap sctl :call CocRequest(
+    \ 'clojure-lsp',
+    \ 'workspace/executeCommand',
+    \ {'command': 'thread-first-all', 'arguments': [FileExpand('%:p'), line('.') - 1, col('.') - 1]})<CR>
+```
+
+`CocRequest`에 입력해야 하는 인자가 많기 때문에 나는 다음과 같은 함수를 작성해 사용하고 있다.
+
+```viml
+function! FileExpand(exp) abort
+    let l:result = expand(a:exp)
+    return l:result ==# '' ? '' : "file://" . l:result
+endfunction
+
+" https://github.com/snoe/dotfiles/blob/f427da9ab83bbedf30a90c490309ee90a08f4abf/home/.vimrc#L275-L295
+function! ClojureLsp(command)
+    call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': a:command, 'arguments': [FileExpand('%:p'), line('.') - 1, col('.') - 1]})
+endfunction
+
+autocmd FileType clojure nmap sctl :call ClojureLsp('thread-first-all')<CR>
+```
+
+위의 함수와 함수 호출은 [clojure-lsp.io/clients/#vim](https://clojure-lsp.io/clients/#vim )에서 소개하는 [.vimrc]( https://github.com/snoe/dotfiles/blob/master/home/.vimrc )를 참고해 응용한 것이다.
 
 #### vim-iced에서 Jack In을 실행하면 iced 명령을 찾지 못하는 경우
 
