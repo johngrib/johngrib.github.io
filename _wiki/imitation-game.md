@@ -3,7 +3,7 @@ layout  : wiki
 title   : 이미테이션 게임 (The Imitation Game)
 summary : 튜링 테스트
 date    : 2020-06-23 23:15:28 +0900
-updated : 2020-06-24 20:28:04 +0900
+updated : 2022-11-03 13:05:41 +0900
 tag     : turing
 toc     : true
 public  : true
@@ -48,7 +48,7 @@ our original, "Can machines think?"
 
 앨런 튜링의 1951년 5월 15일 BBC 라디오 강연 "Can Digital Computers Think?"에서도 이 게임이 언급된다.
 
-[The Turing Digital Archive]( http://www.turingarchive.org/browse.php/B/5 )
+[The Turing Digital Archive]( https://turingarchive.kings.cam.ac.uk/publications-lectures-and-talks-amtb/amt-b-5 )
 
 ![]( /resource/wiki/imitation-game/1951-4.jpg )
 
