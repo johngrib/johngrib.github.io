@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-10-10 16:59:11 +0900
+updated : 2022-11-05 00:08:18 +0900
 tag     : bash vim ctags golang command clojure vim-syntax-color
 toc     : true
 public  : true
@@ -495,6 +495,31 @@ let g:tagbar_type_clojure = {
 ```
 
 이렇게 작성하면 굳이 앞에 `-`, `+`를 넣어주지 않아도 작동한다.
+
+### TODO, FIXME, XXX 보여주기
+
+Clojure 코딩을 할 때 `TODO`, `FIXME`, `XXX`도 보이도록 하면 편할 것 같아서 다음 두 줄을 clojure.ctags 파일에 추가해 주었다.
+
+```
+--kinddef-clojure=t,toDo,to_do
+--regex-clojure=/; *(TODO|FIXME|XXX):?[ \t]+(.+)$/\1 ✏️  \2/t/
+```
+
+그리고 vim 설정 파일에서 `g:tagbar_type_clojure`에 `t:ToDo`를 추가해 주었다.
+
+```viml
+"* tagbar 설정
+let g:tagbar_type_clojure = {
+    \ 'ctagstype' : 'Clojure',
+    \ 'sort': 0,
+    \ 'kinds' : ['n:ns', 'e:form', 't:ToDo'],
+    \}
+```
+
+이렇게 하면 tagbar에 다음과 같이 `TODO` 등이 나타나게 된다.
+
+![적용한 모습]( /resource/wiki/ctags/200007646-1686d51b-2b0e-47bc-ad6a-c9182c409e9a.jpg )
+
 
 ### Deprecated: tagbar에 마크다운 요약 보여주기
 
