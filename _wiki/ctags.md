@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-11-05 00:08:18 +0900
+updated : 2022-11-05 10:43:36 +0900
 tag     : bash vim ctags golang command clojure vim-syntax-color
 toc     : true
 public  : true
@@ -30,7 +30,8 @@ latex   : false
 |              | Exuberant ctags   | Universal ctags   | gotags     |
 | ----------   | :---------------: | :---------------: | :------:   |
 | 지원 언어 수 | 41                | 101               | 1          |
-| 최신 버전    | 2009-07-09        | 2018-09-28        | 2018-02-03 |
+| 최신 버전    | 2009-07-09        | 2022-10-22        | 2018-02-03 |
+| 버전업 빈도  |                   | 한 달에 2~3번     |            |
 | markdown     | X                 | O                 | X          |
 | golang       | X                 | O                 | O          |
 | customize    | O                 | O                 | ?          |
@@ -574,7 +575,7 @@ let g:tagbar_type_markdown = {
 * [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags )
 * [markdown2ctags](https://github.com/jszakmeister/markdown2ctags )
 
-## See also
+## 함께 읽기
 
 * [[vim-tagbar-with-markdown]]
 
