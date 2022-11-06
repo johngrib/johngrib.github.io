@@ -37,6 +37,7 @@
  "java/stream",
  "java/switch",
  "java/synchronized",
+ "java/thread/state",
  "java/volatile",
  "java10-var",
  "java8-performance-improvement-for-hashmap",
