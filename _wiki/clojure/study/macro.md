@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-11-06 18:26:05 +0900
+updated : 2022-11-06 18:47:25 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -156,6 +156,35 @@ latex   : false
 `lazy-seq`는 아주 짧고 단순하다.
 `new LazySeq`를 사용해 `LazySeq`의 새로운 인스턴스를 만드는데,
 여기에 `(fn* [] body)`를 제공해서 `body`의 평가 시점을 함수 호출 시점으로 미루고 있다.
+
+다음은 `lazy-seq`를 사용해 피보나치 수열을 생성하는 예제이다.
+
+```clojure
+(defn fibonacci
+  ([]
+   (fibonacci 1 1))
+  ([a b]
+   (lazy-seq (cons a
+                   (fibonacci b (+ a b))))))
+
+(take 15 (fibonacci))
+; (1 1 2 3 5 8 13 21 34 55 89 144 233 377 610)
+```
+
+이 `fibonacci` 함수의 매크로를 펼쳐보자.
+
+```clojure
+(def fibonacci
+  (fn*
+    ([]
+     (fibonacci 1 1))
+    ([a b]
+     (new clojure.lang.LazySeq #(cons a (fibonacci b (+ a b)))))))
+```
+
+- `lazy-seq`가 `new clojure.lang.LazySeq`를 호출하는 Java interop 코드로 바뀌었다.
+- `(cons a ...)` 가 `#(cons a ...)`로 앞에 `#`이 붙어 람다 함수 되었다.
+
 
 #### fn*
 
