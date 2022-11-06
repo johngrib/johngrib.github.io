@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-11-06 18:47:25 +0900
+updated : 2022-11-06 18:54:10 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -157,7 +157,7 @@ latex   : false
 `new LazySeq`를 사용해 `LazySeq`의 새로운 인스턴스를 만드는데,
 여기에 `(fn* [] body)`를 제공해서 `body`의 평가 시점을 함수 호출 시점으로 미루고 있다.
 
-다음은 `lazy-seq`를 사용해 피보나치 수열을 생성하는 예제이다.
+다음은 `lazy-seq`를 사용해 [[/fibonacci]]을 생성하는 예제이다.
 
 ```clojure
 (defn fibonacci
