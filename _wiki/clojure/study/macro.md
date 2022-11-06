@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-11-06 17:07:18 +0900
+updated : 2022-11-06 18:26:05 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -122,17 +122,17 @@ latex   : false
 `macroexpand-1`로 펼쳐보면 이런 재귀 구조가 쉽게 눈에 들어온다.
 
 ```clojure
-(macroexpand-1 '(cond (= 2 3)
-                      (println "2 = 3")
+(macroexpand-1 '(cond (= 2 3)           ; 첫 번째 clause
+                      (println "2 = 3") ; 두 번째 clause
 
-                      (= 3 3)
-                      (println "3 = 3")
+                      (= 3 3)           ; 세 번째 clause
+                      (println "3 = 3") ; 네 번째 clause
 
-                      :else
-                      (println "end")))
+                      :else             ; 다섯 번째 clause
+                      (println "end"))) ; 여섯 번째 clause
 
 => (if (= 2 3)
-       (println "2 = 3")
+       (println "2 = 3");   ; 첫번째, 두번째 clause를 처리, 나머지 clause들은 재귀로 처리
        (clojure.core/cond (= 3 3) (println "3 = 3")
                           (= 4 5) (println "4 = 5")
                           :else   (println "end")))
