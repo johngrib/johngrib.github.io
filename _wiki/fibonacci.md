@@ -3,7 +3,7 @@ layout  : wiki
 title   : 피보나치 수열
 summary : Fibonacci Sequence
 date    : 2019-08-18 22:45:59 +0900
-updated : 2022-04-27 20:25:36 +0900
+updated : 2022-11-06 18:53:18 +0900
 tag     : math
 toc     : true
 public  : true
@@ -248,6 +248,24 @@ TAOCP 2권. 4.6.3. Evaluation of Powers에서는 거듭제곱을 효율 좋게 �
 * [6487075382438781 번째 피보나치 수(wolframalpha)](https://www.wolframalpha.com/input/?i=fibonacci(6487075382438781) ) - 계산 결과로 1355718576299609 자리의 엄청나게 큰 숫자가 나온다.
 * [6487075382438782 번째 피보나치 수(wolframalpha)](https://www.wolframalpha.com/input/?i=fibonacci(6487075382438782) ) - 계산 결과가 안 나온다.
 
+## 구현 예제
+
+### Clojure에서 lazy-seq 사용
+
+```clojure
+(defn fibonacci
+  ([]
+   (fibonacci 1 1))
+  ([a b]
+   (lazy-seq (cons a
+                   (fibonacci b (+ a b))))))
+
+(take 15 (fibonacci))
+; (1 1 2 3 5 8 13 21 34 55 89 144 233 377 610)
+```
+
+자세한 내용은 [[/clojure/study/macro#lazy-seq]] 문서 참고.
+
 ## 참고문헌
 
 * Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
@@ -260,6 +278,11 @@ TAOCP 2권. 4.6.3. Evaluation of Powers에서는 거듭제곱을 효율 좋게 �
 * [Fibonacci Number(mathworld.wolfram.com)](http://mathworld.wolfram.com/FibonacciNumber.html )
 * [Fibonacci Q-Matrix(mathworld.wolfram.com)](http://mathworld.wolfram.com/FibonacciQ-Matrix.html )
 
+## 함께 읽기
+
+- [[/clojure/study/macro#lazy-seq]]
+
 ## 주석
 
 [^wolfram-test]: 이진 탐색으로 알아냈다.
+
