@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-03-14 23:37:03 +0900
+updated : 2022-11-06 17:07:18 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -28,8 +28,14 @@ latex   : false
 ```
 
 - `(defmacro when` - `when` 매크로 정의.
-- `[test & body]` - test 구문과 body 구문을 받는다. body는 test 이후 나머지 인자들의 시퀀스이다.
-- `(list 'if test (cons 'do body))` - `(if test (do '(body1 body2 ...)))`로 확장되는 매크로.
+- `[test & body]` - test 구문과 body 구문을 인자로 받는다. body는 test 이후 나머지 인자들의 시퀀스이다.
+- `(list 'if test (cons 'do body))`
+    - `cons`는 `body` 리스트의 앞에 `do`를 추가한다.
+        ```clojure
+        (cons 1 '(2 3 4 5 6))
+        ;;=> (1 2 3 4 5 6)
+        ```
+    - `'if` 와 `'do` 앞에 붙은 `'`([[/clojure/guide/reading-clojure-characters#-\-\-quote]]{qoute})에 주목.
 
 다음과 같이 `when` 매크로를 사용한 코드가 있다고 하자.
 
@@ -71,7 +77,7 @@ latex   : false
                           (println "a")
                           (println "b")))
 => (if (= 3 (+ 1 2))
-       nil
+       nil    ; true 인 경우 nil 리턴
        (do (println "a")
            (println "b")))
 ```
