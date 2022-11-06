@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-11-06 18:54:10 +0900
+updated : 2022-11-06 21:54:35 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -579,7 +579,7 @@ map이나 시퀀스는 메타데이터를 가질 수 있으므로
 
 `seq?` 함수는 검사 대상이 `clojure.lang.ISeq` 타입인지를 검사하는데, 이를 통해 메타데이터 적용 가능 대상을 `seq?`로 판별할 수 있다는 것을 배울 수 있다.
 
-### ->>
+### -\>>
 
 [clojure.core/->>]( https://github.com/clojure/clojure/blob/clojure-1.11.0-alpha4/src/clj/clojure/core.clj#L1710 )
 
