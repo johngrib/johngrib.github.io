@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure macro
 summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
-updated : 2022-11-06 21:54:35 +0900
+updated : 2022-11-07 23:31:01 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -415,13 +415,17 @@ REPL에서 `and`를 사용해보며 macro의 동작을 체험해보자.
 ```clojure
 `(let [and# ~x]
       ;; and는 첫 번째 인자가 참이어도 나머지를 모두 검사해야 한다
-      (if and# (and ~@next) and#))
+      (if and#
+        (and ~@next)
+        and#))
 ```
 
 ```clojure
 `(let [or# ~x]
       ;; or는 첫 번째 인자가 참이라면 검사가 끝난다
-      (if or# or# (or ~@next)))
+      (if or#
+        or#
+        (or ~@next)))
 ```
 
 ### locking
