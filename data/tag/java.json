@@ -48,6 +48,7 @@
  "jvm-memory",
  "jvm-stack",
  "private-constructor",
+ "problem/is-number-string",
  "restdoc-item-generator",
  "spring-annotation-value",
  "spring-versions",
