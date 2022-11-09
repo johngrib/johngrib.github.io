@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Java 버전별 변경점
-summary : 1996년 1.0 부터 2020년 9월까지
+summary : 1996년 1.0 부터 2022년 11월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2022-11-10 00:13:17 +0900
+updated : 2022-11-10 00:16:31 +0900
 tag     : java
 toc     : true
 public  : true
@@ -13,7 +13,12 @@ latex   : true
 * TOC
 {:toc}
 
-## JDK 17
+## JDK 21 (LTS)
+## JDK 20
+## JDK 19
+## JDK 18
+
+## JDK 17 (LTS)
 
 - 2021-09-15 [JDK 17 발표 및 새로운 변화]( https://blogs.oracle.com/javakr/post/jdk-17 )
     - 새로운 LTS인 Java 17이 발표되었다.
@@ -82,7 +87,7 @@ latex   : true
 
 * [Shenandoah GC](https://wiki.openjdk.java.net/display/shenandoah/Main )
 
-## JDK 11
+## JDK 11 (LTS)
 
 2018-09-25 [Consolidated JDK 11 Release Notes]( https://www.oracle.com/java/technologies/javase/11all-relnotes.html )
 
@@ -131,7 +136,7 @@ latex   : true
 - `CompletableFuture` 개선 - 타임아웃과 지연 기능 추가
 - Reactive stream API
 
-## JDK 8
+## JDK 8 (LTS)
 
 2014-03-18 [What's New in JDK 8](https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html )
 
@@ -160,7 +165,7 @@ latex   : true
     * [[java8-why-permgen-removed]]{Removal of PermGen}
 * ...
 
-## JDK 7
+## JDK 7 (LTS)
 
 [2011-07-28](https://openjdk.java.net/projects/jdk7/ )
 
