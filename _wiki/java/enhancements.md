@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2022년 11월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2022-11-10 00:16:31 +0900
+updated : 2022-11-10 00:31:19 +0900
 tag     : java
 toc     : true
 public  : true
@@ -13,10 +13,46 @@ latex   : true
 * TOC
 {:toc}
 
+## 참고
+### LTS에 대하여
+
+[Oracle Java SE Support Roadmap]( https://www.oracle.com/java/technologies/java-se-support-roadmap.html ) 문서에 의하면 LTS는 Long Term Support의 약자로, 장기 지원 릴리스 의미한다.
+
+>
+**Oracle Java SE Product Releases**
+>
+Oracle provides Customers with Oracle Premier Support on Oracle Java SE products as described in the [Oracle Lifetime Support Policy](https://www.oracle.com/support/lifetime-support/ ).
+For product releases after Java SE 8, Oracle will designate only certain releases as Long-Term-Support (LTS) releases.
+Java SE 7, 8, 11 and 17 are LTS releases.
+Oracle intends to make future LTS releases every two years meaning the next planned LTS release is Java 21 in September 2023.
+For the purposes of Oracle Premier Support, non-LTS releases are considered a cumulative set of implementation enhancements of the most recent LTS release.
+Once a new feature release is made available, any previous non-LTS release will be considered superseded.
+For example, Java SE 9 was a non-LTS release and immediately superseded by Java SE 10 (also non-LTS), Java SE 10 in turn is immediately superseded by Java SE 11.
+Java SE 11 however is an LTS release, and therefore Oracle Customers will receive Oracle Premier Support and periodic update releases, even though Java SE 12 was released.
+
+- Oracle은 [평생지원 정책문서]( https://www.oracle.com/support/lifetime-support/ )에 명시한 대로 Oracle Java SE 제품군 대한 Oracle Premier Support를 고객 여러분께 제공합니다.
+- Java SE 8 버전 이후 릴리스되는 제품의 경우, Oracle은 특정 릴리스 버전만을 Long-Term-Support(LTS, 장기 지원) 릴리스로 지정합니다.
+- Oracle은 2년마다 다음 LTS 릴리스를 선보일 예정이며, 이는 다음 LTS 릴리스가 2023년 9월에 나올 Java 21 버전이라는 것을 의미합니다.
+- Oracle Premier Support의 본래 목적상, LTS가 아닌 릴리스는 가장 최신 LTS 릴리스 구현의 개선을 누적한 집합으로 간주합니다.
+- 새로운 기능 릴리스 출시되면, 이전의 non-LTS 릴리스는 대체된 것으로 간주합니다.
+- 예를 들어, non-LTS 릴리스인 Java SE 9는, Java SE 10(non-LTS)가 나오자마자 대체되었으며, Java SE 10 또한 Java SE 11에 의해 바로 대체되었습니다.
+- 하지만 Java SE 11 은 LTS 릴리스이므로, Java SE 12가 릴리스된 이후라 하더라도 Java SE 11을 사용하시는 Oracle 고객 여러분은 Oracle Premier Support와 주기적인 업데이트 릴리스를 받을 수 있습니다.
+
 ## JDK 21 (LTS)
+
+TODO
+
 ## JDK 20
+
+TODO
+
 ## JDK 19
+
+TODO
+
 ## JDK 18
+
+TODO
 
 ## JDK 17 (LTS)
 
