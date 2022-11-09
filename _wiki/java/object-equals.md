@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.equals 메소드
 summary :
 date    : 2018-03-07 21:40:19 +0900
-updated : 2022-11-09 23:52:09 +0900
+updated : 2022-11-09 23:53:49 +0900
 tag     : java 번역
 toc     : true
 public  : true
@@ -298,6 +298,9 @@ public boolean equals(java.lang.Object ts) {
 * `date.equals(timestamp)` : date 기준으로 시간이 같은지만 검사하므로 true가 된다.
 * `timestamp.equals(date)` : date는 Timestamp의 인스턴스가 아니므로 false가 된다. 인스턴스 검사를 하지 않고 date가 timestamp로 형변환이 가능하다 쳐도, nanos 검사에서 false가 나올 수 밖에 없다.
 
+## 함께 읽기
+
+- [[/java/object-hashcode]]
 
 ## Links
 
