@@ -7,7 +7,6 @@
  "children": [
   "java-abstract-class",
   "java-abstract-method",
-  "java-enhancements",
   "java-functional-interface",
   "java-inner-class-may-be-static",
   "java-interface",
@@ -21,6 +20,7 @@
   "java-TemporalAdjusters",
   "java/8",
   "java/arraylist",
+  "java/enhancements",
   "java/enum",
   "java/exception-handling",
   "java/feel-of-java",
