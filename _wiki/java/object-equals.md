@@ -3,11 +3,11 @@ layout  : wiki
 title   : java.lang.Object.equals 메소드
 summary :
 date    : 2018-03-07 21:40:19 +0900
-updated : 2022-06-19 19:16:28 +0900
+updated : 2022-11-09 23:52:09 +0900
 tag     : java 번역
 toc     : true
 public  : true
-parent  : [[java]]
+parent  : [[/java]]
 latex   : false
 ---
 * TOC
@@ -76,10 +76,10 @@ equals 메소드는 이 객체가 다른 객체와 **같은지** 아닌지를 �
 equals 메소드는 null이 아닌 객체 참조들에 대한 **동치 관계**를 구현하며, 동치 관계의 조건은 다음과 같습니다.
 
 * null이 아닌 참조 x, y, z에 대하여,
-    * 반사관계: `x.equals(x)`는 `true`여야 한다.
-    * 대칭관계: `y.equals(x)`가 `true`이면, `x.equals(y)`도 `true`여야 한다.
-    * 추이관계: `x.equals(y)`가 `true`이고, `y.equals(z)`도 `true`이면, `x.equals(z)` 또한 `true`여야 한다.
-    * 일관성: `equals` 비교에 필요한 정보가 수정되지 않았다면, `x.equals(y)`를 여러 차례 실행한 결과는 일관성 있게 `true`만 리턴하거나 `false`만 리턴해야 한다.
+    * 반사성(reflexive): `x.equals(x)`는 `true`여야 한다.
+    * 대칭성(symmetric): `y.equals(x)`가 `true`이면, `x.equals(y)`도 `true`여야 한다.
+    * 이행성(transitive)[^transitive]: `x.equals(y)`가 `true`이고, `y.equals(z)`도 `true`이면, `x.equals(z)` 또한 `true`여야 한다.
+    * 일관성(consistent): `equals` 비교에 필요한 정보가 수정되지 않았다면, `x.equals(y)`를 여러 차례 실행한 결과는 일관성 있게 `true`만 리턴하거나 `false`만 리턴해야 한다.
     * `x.equals(null)`은 `false`여야 한다.
 
 Object 클래스에 들어 있는 equals 메소드는 가장 확실한 근거만으로 동치 관계를 판별하는데, 그 조건은 null이 아닌 참조 x와 y가 똑같은 객체인지의 여부(`x == y`가 `true`인 경우)입니다.
@@ -317,4 +317,5 @@ public boolean equals(java.lang.Object ts) {
 
 [^joshua2-55]: 이펙티브 자바 2판. 규칙 8. 55쪽.
 [^joshua3-55-ref]: 이펙티브 자바 2판의 "규칙 8"은, 3판에서는 "아이템 10"으로 인덱스가 변경되었다.
+[^transitive]: '추이성'이라고 부르기도 한다.
 
