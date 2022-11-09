@@ -3,7 +3,7 @@ layout  : wiki
 title   : Integer 이것저것
 summary : 
 date    : 2019-12-08 17:38:25 +0900
-updated : 2019-12-08 18:51:17 +0900
+updated : 2022-11-09 22:00:21 +0900
 tag     : 
 toc     : true
 public  : true
@@ -13,7 +13,7 @@ latex   : true
 * TOC
 {:toc}
 
-## 범위 관련
+## 범위
 
 * `Integer.MAX_VALUE`는 $$2^{31} -1 = 2,147,483,647$$ 이다.
 * `Integer.MIN_VALUE`는 $$-2^{31} = -2,147,483,648$$ 이다.
