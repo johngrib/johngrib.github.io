@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2022년 11월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2022-11-10 00:31:19 +0900
+updated : 2022-11-11 00:18:40 +0900
 tag     : java
 toc     : true
 public  : true
@@ -63,6 +63,7 @@ TODO
     - JDK 17부터 기존에 Oracle JDK에 적용이 되었던 Oracle Technology Network (OTN) 라이선스 대신에 Oracle No-Fee Terms and Conditions (NFTC) 라이선스가 적용.
         - 여러 사용 용도 및 배포에 있어 제약 조건이 있던 OTN 라이선스와는 달리, 상업 및 프로덕션 용도를 포함하여 모든 사용자들에게 무료로 사용 및 배포를 허용.
 
+2021-10-19 [Consolidated JDK 17 Release Notes]( https://www.oracle.com/java/technologies/javase/17all-relnotes.html#R17_0_1 )
 
 ## JDK 16
 
