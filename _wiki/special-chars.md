@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-09-10 00:35:19 +0900
+updated : 2022-11-11 00:48:08 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -874,6 +874,29 @@ Perl에는 `=`가 포함된 다양한 연산자가 있다.
 * `<=` - less than or equal to.
 * `<=>` - 크기 비교 연산자. 이 연산자는 `-1`, `0`, `1` 중 하나를 리턴한다. `3 <=> 4`의 결과는 `-1`.
 * `=~` - 정규식 패턴과 매치되는지를 비교한다. `if ($text =~ /^test$/) { }`와 같이 사용.
+
+#### vimscript의 비교 연산자
+
+Vimscript의 비교 연산자는 꽤 다양한데, `=`를 사용하는 것들이 꽤 많다.
+
+`==#`, `==?`, `!=#`, `!=?`, `>=#`, `>=?`, `<=#`, `<=?`, `=~`, `=~#`, `=~?` 같은 다른 언어에서 보기 힘든 연산자들이 있다.
+
+다음은 `:h expr-==`로 볼 수 있는 비교 연산자 목록을 좀 다듬어서 옮겨둔 것이다.
+
+|                       | use 'ignorecase' | match case | ignore case |
+|-----------------------|------------------|------------|-------------|
+| equal                 | `==`             | `==#`      | `==?`       |
+| not equal             | `!=`             | `!=#`      | `!=?`       |
+| greater than          | `>`              | `>#`       | `>?`        |
+| greater than or equal | `>=`             | `>=#`      | `>=?`       |
+| smaller than          | `<`              | `<#`       | `<?`        |
+| smaller than or equal | `<=`             | `<=#`      | `<=?`       |
+| regexp matches        | `=~`             | `=~#`      | `=~?`       |
+| regexp doesn't match  | `!~`             | `!~#`      | `!~?`       |
+| same instance         | `is`             | `is#`      | `is?`       |
+| different instance    | `isnot`          | `isnot#`   | `isnot?`    |
+
+대소문자 비교 기능이 있다는 점에 주목.
 
 ### `?` Question mark
 
