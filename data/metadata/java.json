@@ -29,6 +29,7 @@
   "java/object-hashcode",
   "java/object-tostring",
   "java/stream",
+  "java/string",
   "java/switch",
   "java/synchronized",
   "java/thread/state",
