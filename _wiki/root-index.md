@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-11 00:27:20 +0900
+updated : 2022-11-11 09:42:05 +0900
 regenerate: true
 ---
 
@@ -311,6 +311,7 @@ regenerate: true
 
 ### [[clojure]]
 
+* [[/clojure/clj-kondo]]
 * [[/clojure/clojure-lsp]]
 * [[/clojure/cursive]]
 * [[/clojure/reference]]

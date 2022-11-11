@@ -1,5 +1,6 @@
 [
  "clojure/boolean",
+ "clojure/clj-kondo",
  "clojure/clojure-lsp",
  "clojure/cursive",
  "clojure/earmuffs",

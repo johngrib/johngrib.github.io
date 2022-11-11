@@ -1,0 +1,9 @@
+{
+ "type": "wiki",
+ "title": "clj-kondo",
+ "summary": "Clojure static analyzer and linter",
+ "parent": "clojure",
+ "url": "/wiki/clojure/clj-kondo",
+ "updated": "2022-11-11 09:57:41 +0900",
+ "children": []
+}
