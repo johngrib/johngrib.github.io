@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-11-11 09:33:24 +0900
+updated : 2022-11-11 09:40:10 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -1165,6 +1165,10 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 
 * [fileformat.info/info/unicode/char/203b]( https://www.fileformat.info/info/unicode/char/203b/index.htm )
 * [Reference mark(wikipedia)]( https://en.wikipedia.org/wiki/Reference_mark )
+
+## 함께 읽기
+
+- [[/clojure/guide/reading-clojure-characters]]
 
 ## 참고문헌
 
