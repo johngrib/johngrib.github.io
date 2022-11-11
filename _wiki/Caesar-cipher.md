@@ -3,7 +3,7 @@ layout  : wiki
 title   : 카이사르 암호(Caesar cipher)
 summary : 자리이동식 암호법
 date    : 2019-03-09 18:06:30 +0900
-updated : 2022-11-11 23:42:03 +0900
+updated : 2022-11-11 23:48:42 +0900
 tag     : encryption
 toc     : true
 public  : true
@@ -124,6 +124,7 @@ caesar(enc, decrypt);
 이 암호들의 일반 원리는 k 자리만큼 문자를 이동하는 것이다.
 즉 모듈로 26에 대해 k를 더하는 방식이다.
 이를 일반적으로 키 값이 k인 **이동 암호**(shift cipher) 또는 **덧셈 암호**(additive cipher)라 한다.
+[^josh-6]
 
 ### Vim의 g?
 
@@ -227,10 +228,14 @@ $$
 - Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
 - [English Letter Frequency (based on a sample of 40,000 words)](http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html )
 - [Letter frequency](https://en.wikipedia.org/wiki/Letter_frequency )
+- 수학으로 이해하는 암호의 원리 / 조슈아 홀던 저/허성심 역 / 프리렉 / 초판 1쇄 2017년 11월 30일 / 원제 : THE MATHEMATICS OF SECRETS: Cryptography From Caesar Ciphers To Digital Encryption
 
 ## 함께 읽기
 
 * [[/discrete-math-modular]]{모듈러 연산(나머지 연산)}
 * [[/discrete-math-linear-congruences#a-모듈로-m-의-역inverse]]{a 모듈로 m의 역}
 
+## 주석
+
+[^josh-6]: 수학으로 이해하는 암호의 원리. 1장. 6쪽.
 
