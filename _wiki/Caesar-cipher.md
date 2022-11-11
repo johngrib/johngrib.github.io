@@ -3,7 +3,7 @@ layout  : wiki
 title   : 카이사르 암호(Caesar cipher)
 summary : 자리이동식 암호법
 date    : 2019-03-09 18:06:30 +0900
-updated : 2022-11-11 23:25:35 +0900
+updated : 2022-11-11 23:42:03 +0900
 tag     : encryption
 toc     : true
 public  : true
@@ -115,6 +115,34 @@ caesar(enc, decrypt);
 // "MEET YOU IN THE PARK"
 ```
 
+## ROT13
+
+>
+각 문자를 13자리씩 밀어내 치환하고 끝에 도달하면 앞으로 돌아가는 방식도 있다.
+이 암호는 로트13(rot13)이라 하는데, 회전을 의미하는 영어 단어 rotate를 줄여서 붙인 이름이다.
+로트13은 핵심을 찌르는 유머나 공격적인 말을 숨길 때 인터넷상에서 종종 사용된다.
+이 암호들의 일반 원리는 k 자리만큼 문자를 이동하는 것이다.
+즉 모듈로 26에 대해 k를 더하는 방식이다.
+이를 일반적으로 키 값이 k인 **이동 암호**(shift cipher) 또는 **덧셈 암호**(additive cipher)라 한다.
+
+### Vim의 g?
+
+Vim의 `g?`를 사용하면 간편하게 ROT13 방식의 암호화를 할 수 있다.
+
+다음은 `:help g?`를 인용한 것이다.
+
+```
+							*g?* *rot13*
+g?{motion}		Rot13 encode {motion} text.
+
+							*v_g?*
+{Visual}g?		Rot13 encode the highlighted text (for {Visual} see
+			|Visual-mode|).
+
+g?g?							*g?g?* *g??*
+g??			Rot13 encode current line.
+```
+
 ## 아핀 암호
 
 **Affine cipher**
@@ -193,8 +221,6 @@ $$
 | Z      | 128   | 0.07      |
 
 * [자료 출처](http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html )
-
-
 
 ## 참고문헌
 
