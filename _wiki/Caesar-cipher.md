@@ -3,7 +3,7 @@ layout  : wiki
 title   : 카이사르 암호(Caesar cipher)
 summary : 자리이동식 암호법
 date    : 2019-03-09 18:06:30 +0900
-updated : 2019-12-04 22:56:48 +0900
+updated : 2022-11-11 23:25:35 +0900
 tag     : encryption
 toc     : true
 public  : true
@@ -192,17 +192,19 @@ $$
 | J      | 188   | 0.10      |
 | Z      | 128   | 0.07      |
 
-* [자료 출처](http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html)
+* [자료 출처](http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html )
 
 
 
 ## 참고문헌
 
-* Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
+- Rosen의 이산수학 / Kenneth H. Rosen 저 / 공은배 등저 / 한국맥그로힐(McGraw-Hill KOREA) / 2017년 01월 06일
+- [English Letter Frequency (based on a sample of 40,000 words)](http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html )
+- [Letter frequency](https://en.wikipedia.org/wiki/Letter_frequency )
 
-## See also
+## 함께 읽기
 
-* [[discrete-math-modular]]{모듈러 연산(나머지 연산)}
-* [[/wiki/discrete-math-linear-congruences/#a-모듈로-m-의-역inverse]]{a 모듈로 m의 역}
-* [English Letter Frequency (based on a sample of 40,000 words)](http://pi.math.cornell.edu/~mec/2003-2004/cryptography/subs/frequencies.html)
-* [Letter frequency](https://en.wikipedia.org/wiki/Letter_frequency)
+* [[/discrete-math-modular]]{모듈러 연산(나머지 연산)}
+* [[/discrete-math-linear-congruences#a-모듈로-m-의-역inverse]]{a 모듈로 m의 역}
+
+
