@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-11-11 00:48:08 +0900
+updated : 2022-11-11 09:33:24 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -897,6 +897,12 @@ Vimscript의 비교 연산자는 꽤 다양한데, `=`를 사용하는 것들이
 | different instance    | `isnot`          | `isnot#`   | `isnot?`    |
 
 대소문자 비교 기능이 있다는 점에 주목.
+
+- use 'ignorecase': vim의 `ignorecase` 옵션에 따라 동작이 달라진다.
+- match case: 대소문자를 구분한다.
+- ignore case: 대소문자를 구분하지 않는다.
+
+나는 보통은 `ignorecase`에 의존하지 않는 `#`, `?` 연산자들을 사용하곤 한다.
 
 ### `?` Question mark
 
