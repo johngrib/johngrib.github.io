@@ -3,7 +3,7 @@ layout  : wiki
 title   : clj-kondo
 summary : Clojure static analyzer and linter
 date    : 2022-11-11 09:42:11 +0900
-updated : 2022-11-11 09:57:41 +0900
+updated : 2022-11-13 12:34:16 +0900
 tag     : clojure
 toc     : true
 public  : true
@@ -12,6 +12,14 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## install
+
+[install.md]( https://github.com/clj-kondo/clj-kondo/blob/master/doc/install.md )
+
+```bash
+brew install borkdude/brew/clj-kondo
+```
 
 ## comment 매크로 안쪽의 run-tests 에 대한 경고 끄기
 
