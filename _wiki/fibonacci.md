@@ -3,7 +3,7 @@ layout  : wiki
 title   : 피보나치 수열
 summary : Fibonacci Sequence
 date    : 2019-08-18 22:45:59 +0900
-updated : 2022-11-06 18:53:18 +0900
+updated : 2022-11-13 22:19:18 +0900
 tag     : math
 toc     : true
 public  : true
@@ -229,7 +229,7 @@ $$
 
 Q 행렬을 곱하는 것만으로도 피보나치 수를 구할 수 있으므로, 단순히 덧셈을 반복하는 것보다 빠르게 피보나치 수를 구할 수 있다.
 
-[거듭제곱을 효율 좋게 계산하는 방법](/wiki/egyptian-multiplication/#거듭제곱 )을 활용할 수 있다.
+[[/algorithm/egyptian-multiplication#거듭제곱]]{거듭제곱을 효율 좋게 계산하는 방법}을 활용할 수 있다.
 
 TAOCP 2권. 4.6.3. Evaluation of Powers에서는 거듭제곱을 효율 좋게 계산하기 위한 여러 기법을 소개하는데 그 중 한 가지 방법은 다음과 같은 것이다.
 

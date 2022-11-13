@@ -6,6 +6,7 @@
  "updated": "2020-03-04 20:46:42 +0900",
  "children": [
   "algorithm/binary-search",
+  "algorithm/egyptian-multiplication",
   "algorithm/murmurhash",
   "average-complexity",
   "b-tree",
@@ -14,7 +15,6 @@
   "counting-sort",
   "dijkstra-2-stack-for-exp-eval",
   "duff-s-device",
-  "egyptian-multiplication",
   "heap-sort",
   "insertion-sort",
   "master-theorem",

@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-13 22:04:26 +0900
+updated : 2022-11-13 22:19:59 +0900
 regenerate: true
 ---
 
@@ -47,6 +47,7 @@ regenerate: true
 ## [[algorithm]]
 
 * [[/algorithm/binary-search]]
+* [[/algorithm/egyptian-multiplication]]
 * [[/algorithm/murmurhash]]
 * [[average-complexity]]
 * [[b-tree]]
@@ -55,7 +56,6 @@ regenerate: true
 * [[counting-sort]]
 * [[dijkstra-2-stack-for-exp-eval]]
 * [[duff-s-device]]
-* [[egyptian-multiplication]]
 * [[heap-sort]]
 * [[insertion-sort]]
 * [[master-theorem]]
