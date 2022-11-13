@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정규 표현식 기본
 summary : 작성중인 문서
 date    : 2020-05-18 22:45:12 +0900
-updated : 2022-11-13 21:59:41 +0900
+updated : 2022-11-13 22:01:22 +0900
 tag     : regex
 toc     : true
 public  : true
@@ -289,4 +289,3 @@ $$[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]$$
 [^b-code-28]: Beautiful Code. 1장. 28쪽.
 
 
-## 하위 문서
