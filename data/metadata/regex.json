@@ -4,7 +4,7 @@
  "summary": "",
  "parent": "index",
  "url": "/wiki/regex",
- "updated": "2022-11-13 22:00:20 +0900",
+ "updated": "2022-11-13 22:10:36 +0900",
  "children": [
   "regex/basic",
   "regex/email-validation",
