@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-13 21:59:28 +0900
+updated : 2022-11-13 22:04:26 +0900
 regenerate: true
 ---
 
@@ -62,7 +62,6 @@ regenerate: true
 * [[merge-sort]]
 * [[p-np]]
 * [[quick-sort]]
-* [[regex-prime]]
 * [[selection-sort]]
 * [[shell-sort]]
 * [[sort-stability]]
@@ -826,6 +825,7 @@ regenerate: true
 
 * [[/regex/basic]]
 * [[/regex/email-validation]]
+* [[/regex/prime-number]]
 
 ## 미분류
 

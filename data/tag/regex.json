@@ -1,5 +1,5 @@
 [
- "regex-prime",
  "regex/basic",
- "regex/email-validation"
+ "regex/email-validation",
+ "regex/prime-number"
 ]

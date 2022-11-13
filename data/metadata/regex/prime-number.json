@@ -2,8 +2,8 @@
  "type": "wiki",
  "title": "소수를 판별하는 정규식",
  "summary": "1진법을 사용해 소수를 판별하자!",
- "parent": "algorithm",
- "url": "/wiki/regex-prime",
- "updated": "2022-02-17 23:06:12 +0900",
+ "parent": "regex",
+ "url": "/wiki/regex/prime-number",
+ "updated": "2022-11-13 22:04:33 +0900",
  "children": []
 }

@@ -3,12 +3,12 @@ layout  : wiki
 title   : 소수를 판별하는 정규식
 summary : 1진법을 사용해 소수를 판별하자!
 date    : 2017-09-20 20:56:55 +0900
-updated : 2022-02-17 23:06:12 +0900
+updated : 2022-11-13 22:04:33 +0900
 tag     : perl regex
 toc     : true
 comment : true
 public  : true
-parent  : [[algorithm]]
+parent  : [[/regex]]
 ---
 * TOC
 {:toc}
