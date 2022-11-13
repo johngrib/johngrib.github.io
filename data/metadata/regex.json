@@ -1,9 +1,12 @@
 {
  "type": "wiki",
  "title": "정규 표현식",
- "summary": "작성중인 문서",
+ "summary": "",
  "parent": "index",
  "url": "/wiki/regex",
- "updated": "2022-09-19 09:36:28 +0900",
- "children": []
+ "updated": "2022-11-13 22:00:20 +0900",
+ "children": [
+  "regex/basic",
+  "regex/email-validation"
+ ]
 }

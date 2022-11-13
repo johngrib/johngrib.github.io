@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-12 12:56:42 +0900
+updated : 2022-11-13 21:59:28 +0900
 regenerate: true
 ---
 
@@ -822,6 +822,10 @@ regenerate: true
 
 ## [[/oauth]]
 
+## [[/regex]]
+
+* [[/regex/basic]]
+* [[/regex/email-validation]]
 
 ## 미분류
 
@@ -833,7 +837,6 @@ regenerate: true
 * [[coding-font]]
 * [[color-model]]
 * [[defensive-copy]]
-* [[email-validation]]
 * [[gnu-project]]
 * [[http]]
 * [[integer]]
@@ -842,7 +845,6 @@ regenerate: true
 * [[mac-address]]
 * [[mac-tex]]
 * [[oop-quotes]]
-* [[regex]]
 * [[responsibility-driven-design]]
 * [[restdoc-item-generator]]
 * [[saga]]

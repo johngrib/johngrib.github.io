@@ -3,11 +3,11 @@ layout  : wiki
 title   : 이메일 주소 형식 검증하기
 summary : 이메일 주소 검증 코드를 짤 일이 있어 작업한 기록을 남긴다
 date    : 2019-04-11 22:05:44 +0900
-updated : 2019-11-13 21:45:37 +0900
+updated : 2022-11-13 21:53:29 +0900
 tag     : email regex php
 toc     : true
 public  : true
-parent  : [[index]]
+parent  : [[/regex]]
 latex   : false
 ---
 * TOC

@@ -1,6 +1,6 @@
 [
- "email-validation",
  "php",
  "php/composer",
- "phpbrew"
+ "phpbrew",
+ "regex/email-validation"
 ]
