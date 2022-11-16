@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-13 22:19:59 +0900
+updated : 2022-11-16 22:42:05 +0900
 regenerate: true
 ---
 
@@ -41,8 +41,8 @@ regenerate: true
 - [[/article/incremental-way]]
 - [[/article/science-and-delete]]
 - [[/article/test-code-and-falsifiability]]
-- [[/article/vim-night/2022-03-27-ultisnips]]
-- [[/article/vim-night/2022-03-31-insert-mode]]
+- [[/article/vim-night/20220327-ultisnips]]
+- [[/article/vim-night/20220331-insert-mode]]
 
 ## [[algorithm]]
 
