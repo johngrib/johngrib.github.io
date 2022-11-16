@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 4월 1일
 summary : INSERT MODE 자동완성 이야기
 date    : 2022-11-16 22:46:50 +0900
-updated : 2022-11-16 23:21:55 +0900
+updated : 2022-11-16 23:27:38 +0900
 tag     : 
 toc     : true
 public  : true
@@ -136,3 +136,32 @@ c-r 누르고 a 누르면 a 레지스터의 값들을 붙여넣고, b 누르면 
 참고로 여기 사용한 트릭은 1진법을 사용해 정규식으로 합성수를 골라내서 vim의 g 명령으로 d 를 보내 합성수 라인만 삭제한 것.
 
 [[/regex/prime-number]]
+
+## i 반복
+
+어제 이야기에 이어서. 가끔 `--------` 같은 걸 쭉 길게 코드에 적을 때가 있죠. (나중에 지운다 하더라도) 이게 사실 손가락을 꾹 누르고 있어야 하는 끔찍한 단순노가다인데 그냥 넘어가는 경우가 있을 겁니다. 그럴 땐 그냥 반복횟수i를 쓰면 끝.
+
+`50i-<Esc>` 하면 `-`로 가득한 한 줄이 만들어짐.
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220401-insert-mode/u-jnOIDP-TR0gF6N.mp4 " type="video/mp4"></video>
+
+이번엔 `-` 하나를 입력하고 49. 를 하는 방법.
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220401-insert-mode/ttvzPd4ISc9aCStX.mp4 " type="video/mp4"></video>
+
+여기에 보너스 하나를 더 얹자면 이런 방법도 가능. read 명령을 써서 외부 프로그램 호출의 표준 출력을 가져다 붙인다.
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220401-insert-mode/KikJ5b8wQWIrDtYS.mp4 " type="video/mp4"></video>
+
+그러면 vim 커맨드라인에서만 될 거 같은데... 그런데 말입니다(정색). visual mode로 선택한 텍스트를 표준 입력으로 ! 명령에 밀어넣는 방법이 있습니다. `-` 를 50번 반복하는 명령을 python3로 실행하고, 곧바로 node.js 로 실행하는 걸 찍어 봤습니다.
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220401-insert-mode/xuJ48njcIVpejT2F.mp4 " type="video/mp4"></video>
+
+이번엔 매크로를 써봅시다. `-` 한 글자를 입력해주는 매크로를 만들고 49회 반복하기. q 매크로에 `-` 하나를 입력하는 과정을 알려준 다음, 49회, 300회 반복해봤음.
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220401-insert-mode/MgF5hykdCiDmV7L3.mp4 " type="video/mp4"></video>
+
+그렇다면 q매크로 내용도 볼 수 있느냐? 볼 수 있습니다. 사실 매크로는 레지스터에 저장된 값을 vim이 normal 모드로 순서대로 실행하는 기능일 뿐. 레지스터를 복붙용으로 쓰면 문자열을 평가하지 않고 에디터에 붙여넣는 거고, 매크로로 쓰면 eval을 하는 거죠. 방금 만든 q 매크로는 그냥 `i-^[` .
+
+![reg q]( /resource/wiki/article/vim-night/20220401-insert-mode/FPTi4rWVIAUsKDQ.png )
+
