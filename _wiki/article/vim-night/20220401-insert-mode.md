@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 4월 1일
 summary : INSERT MODE 자동완성 이야기
 date    : 2022-11-16 22:46:50 +0900
-updated : 2022-11-16 23:10:26 +0900
+updated : 2022-11-16 23:21:55 +0900
 tag     : 
 toc     : true
 public  : true
@@ -117,3 +117,22 @@ c-r 누르고 a 누르면 a 레지스터의 값들을 붙여넣고, b 누르면 
 
 <video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220401-insert-mode/bMjG-9exkJNUPKBK.mp4 " type="video/mp4"></video>
 
+## 매크로에 대한 잡담
+
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="ko" dir="ltr">Vim 오래 써왔지만, 요즘 올려주시는 글에서 새롭게 배우는거 많아요. 저는 비쥬얼 블록 선택하고 `:&#39;&lt;,&#39;&gt;norm i#` 랑 `:&#39;&lt;,&#39;&gt;norm x` 요세트 정도!</p>&mdash; asbubam (@asbubam) <a href="https://twitter.com/asbubam/status/1509883489138601985?ref_src=twsrc%5Etfw">April 1, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="ko" dir="ltr">오 저는 그걸 걍 c-v 로 선택하고 I 하고 해요. &#39;&lt;,&#39;&gt;norm 은 정말 무서운 활용법이 하나 있는데 그것은 @ 를 쓰는 것입니다. 이건 나중에 이야기를 달아보죠.</p>&mdash; John Grib (@John_Grib) <a href="https://twitter.com/John_Grib/status/1509883991381340165?ref_src=twsrc%5Etfw">April 1, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+`'<,'>norm @알파벳` 이런 식으로 하면 각 행에 대해 알파벳 매크로를 실행할 수 있습니다. 이거 참 편리한데요, 여러 행에 매크로를 실행할 때 쓸만해요.
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220401-insert-mode/N8Va-9uzBch3an9X.mp4 " type="video/mp4"></video>
+
+매크로.. vim에 어느정도 익숙하신 분들은 종종 사용하실 텐데 이게 엑셀에서 사용자 입력 녹화하는 거랑 똑같은 기능. 매크로를 쓰면 엄청 편리한데, `'<,'>` 로 범위로 매크로를 지정하는 방법을 알게 되면 훨씬 편리하게 사용할 수 있다. 정말 온갖 것을 할 수 있음. 
+
+매크로에 대해 더 얹어보자. 매크로로 무엇을 할 수 있나? 정말 어마어마하게 많은 것을 할 수 있는데... 뭘 예로 들까 하다가 vim 매크로와 정규식을 사용해 소수 목록을 만드는 과정을 영상으로 찍어 봤다. 초반에 숫자 목록 만드는 게 vim macro. 이거 가끔 회사 동료들에게 보여주면 인기가 좋다..
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220401-insert-mode/TG43DiO0epVGP2V1.mp4 " type="video/mp4"></video>
+
+참고로 여기 사용한 트릭은 1진법을 사용해 정규식으로 합성수를 골라내서 vim의 g 명령으로 d 를 보내 합성수 라인만 삭제한 것.
+
+[[/regex/prime-number]]
