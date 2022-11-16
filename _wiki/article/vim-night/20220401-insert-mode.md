@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 4월 1일
 summary : INSERT MODE 자동완성 이야기
 date    : 2022-11-16 22:46:50 +0900
-updated : 2022-11-16 23:05:29 +0900
+updated : 2022-11-16 23:10:26 +0900
 tag     : 
 toc     : true
 public  : true
@@ -102,3 +102,18 @@ c-x 를 이야기하며 나왔던 인서트 모드 자동완성으로 돌아가�
 <video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220401-insert-mode/CcSkwLbeIhkVx6tx.mp4 " type="video/mp4"></video>
 
 내가 설정한 iabbr이 전부 앞에 `_`가 두개씩 있는 이유는 별거 없고 괜히 타이핑하다 의도하지 않은 순간에 iabbr 자동완성이 되기를 바라지 않았기 때문. `__` 정도면 거의 쓸 일이 없으니까 의도적으로 음 오늘 날짜가.. 할 때 `__date` 하고 쓰는 식.
+
+## expression 레지스터
+
+아까 vim의 인라인 자동완성 (iabbr, c-x) 이야기를 죽 했는데, 생각해보니 이 주제로 이야기안한 게 하나가 더 있다. 이것만 이야기하고 오늘 턴을 종료해야지. 별 건 아니고 expression register.
+
+vim의 인서트 모드에서 c-r 을 누르면 레지스터의 값들을 붙여넣을 수가 있는데, 아무래도 c-r 을 누르는게 " 누르는 것보다 미묘하게 더 편해서 보통 붙여넣기를 할 때 인서트 모드 c-r 을 " 보다 조금 더 자주 쓰는 편인 것 같다.
+
+c-r 누르고 a 누르면 a 레지스터의 값들을 붙여넣고, b 누르면 b 레지스터 값들을 붙여넣는데 이게 쉽게 말하자면 직접 관리할 수 있는 복붙공간이 26개 있는 방식이라 vim이 그냥 카피&페이스트를 할 때 상당히 유리하다는 것은 vim 초보들도 많이 알고 있는 사실.
+
+그런데 참 다양한 vim register 중 = 레지스터라는 것이 있다. 레지스터 이름이 알파벳이 아니라 = 등호. 이렇게 해보자. 인서트 모드에서 c-r = 2 + 3 엔터. 그러면 에디터에 5가 나타난다. 그러면 숫자 계산만 되느냐? `=expand('%')` 하면 현재 편집중인 파일 이름으로 완성된다.
+
+글로만 쓰면 심심하니까 영상을 찍었다. 이것도 핵심은 system 명령 호출이 가능하다는 것. 물론 이것만 되는 게 아니라 vimscript 함수도 부를 수 있고... 생각할 수 있는 터미널로 할 수 있는건 대부분 할 수 있다. 만약 해머스푼이랑 연결하면 OS UI도 조작 가능.
+
+<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220401-insert-mode/bMjG-9exkJNUPKBK.mp4 " type="video/mp4"></video>
+
