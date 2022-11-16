@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-11-11 09:40:10 +0900
+updated : 2022-11-16 23:53:48 +0900
 tag     : special-chars
 toc     : true
 public  : true
@@ -204,7 +204,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 
 * 보통 캡스락 키 위에 있는 키.
 * 타자기에서 표를 작성/정렬을 편하게 하기 위해 발명됐다. 입력할 때마다 캐리지가 다음 탭 스탑으로 이동하는 방식.
-    * F.W Hillard가 [1900년 8월 22일에 미국에서 특허](http://pdfpiw.uspto.gov/.piw?docid=00720520&PageNum=1&&IDKey=289D668C7D94&HomeUrl=http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1%2526Sect2=HITOFF%2526d=PALL%2526p=1%2526u=%25252Fnetahtml%25252FPTO%25252Fsrchnum.htm%2526r=1%2526f=G%2526l=50%2526s1=0720520.PN.%2526OS=PN/0720520%2526RS=PN/0720520 )를 냈다.
+    * F.W Hillard가 [1900년 8월 22일에 미국에서 특허]( https://patents.google.com/patent/US720520 )를 냈다.
     * 특허를 읽어보면 왜 탭이 `^I`로 표기되는지 알 수 있다.
         * 탭 스탑에서 캐리지를 멈춰주는 (금속) 막대기가 "tabulator-rack  I"이다.
 * 일반적인 UNIX 환경에서 탭의 공백 사이즈는 스페이스 8개이다.
