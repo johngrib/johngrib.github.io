@@ -3,11 +3,11 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 4월 3일
 summary : 텍스트 검색 이야기
 date    : 2022-11-17 22:10:07 +0900
-updated : 2022-11-17 22:23:08 +0900
+updated : 2022-11-17 22:25:39 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : 
+parent  : [[/article]]
 latex   : false
 ---
 * TOC
