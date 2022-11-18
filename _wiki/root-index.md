@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-17 22:25:07 +0900
+updated : 2022-11-18 23:58:59 +0900
 regenerate: true
 ---
 
@@ -190,6 +190,7 @@ regenerate: true
 * [[/pattern/factory]]
 * [[/pattern/interpreter]]
 * [[/pattern/layered-architecture]]
+* [[/pattern/marker-interface]]
 * [[/pattern/null-object]]
 * [[/pattern/observer]]
 * [[/pattern/pipeline]]

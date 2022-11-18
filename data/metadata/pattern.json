@@ -18,6 +18,7 @@
   "pattern/factory-method",
   "pattern/interpreter",
   "pattern/layered-architecture",
+  "pattern/marker-interface",
   "pattern/null-object",
   "pattern/observer",
   "pattern/pipeline",

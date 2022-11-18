@@ -521,6 +521,7 @@
  "/wiki/pattern/factory-method",
  "/wiki/pattern/interpreter",
  "/wiki/pattern/layered-architecture",
+ "/wiki/pattern/marker-interface",
  "/wiki/pattern/null-object",
  "/wiki/pattern/observer",
  "/wiki/pattern/pipeline",
