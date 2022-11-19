@@ -1,5 +1,4 @@
 [
- "gc-death-spiral",
  "java-g1gc",
  "java-gc-eden-to-survivor",
  "java-gc-parallel-collector",
@@ -7,5 +6,6 @@
  "java-gc-tuning",
  "java-gc-zgc",
  "java/gc",
+ "java/gc/death-spiral",
  "summary-The-Pauseless-GC-Algorithm"
 ]

@@ -3,7 +3,7 @@
  "title": "죽음의 GC 소용돌이",
  "summary": "GC death spiral",
  "parent": "java/gc",
- "url": "/wiki/gc-death-spiral",
+ "url": "/wiki/java/gc/death-spiral",
  "updated": "2022-11-20 00:03:52 +0900",
  "children": []
 }

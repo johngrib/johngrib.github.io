@@ -6,12 +6,12 @@
  "url": "/wiki/java/gc",
  "updated": "2022-02-26 00:57:42 +0900",
  "children": [
-  "gc-death-spiral",
   "java-g1gc",
   "java-gc-eden-to-survivor",
   "java-gc-parallel-collector",
   "java-gc-serial-collector",
   "java-gc-tuning",
-  "java-gc-zgc"
+  "java-gc-zgc",
+  "java/gc/death-spiral"
  ]
 }
