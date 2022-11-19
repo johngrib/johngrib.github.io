@@ -3,7 +3,7 @@ layout  : wiki
 title   : 죽음의 GC 소용돌이
 summary : GC death spiral
 date    : 2019-10-29 23:02:40 +0900
-updated : 2021-11-26 20:51:11 +0900
+updated : 2022-11-20 00:03:52 +0900
 tag     : gc
 toc     : true
 public  : true
@@ -20,7 +20,7 @@ latex   : false
 
 ## 참고문헌
 
-*  * 사이트 신뢰성 엔지니어링 / 벳시 베이어, 크리스 존스, 제니퍼 펫오프, 니얼 리처드 머피 저/장현희 역 / 제이펍 / 초판 1쇄 2018년 01월 18일 / 원서 : Site Reliability Engineering: How Google Runs Production Systems
+* 사이트 신뢰성 엔지니어링 / 벳시 베이어, 크리스 존스, 제니퍼 펫오프, 니얼 리처드 머피 저/장현희 역 / 제이펍 / 초판 1쇄 2018년 01월 18일 / 원서 : Site Reliability Engineering: How Google Runs Production Systems
 
 ## 주석
 
