@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.clone 메소드
 summary : 
 date    : 2022-11-19 12:08:15 +0900
-updated : 2022-11-19 12:32:45 +0900
+updated : 2022-11-19 13:06:42 +0900
 tag     : java
 toc     : true
 public  : true
@@ -82,6 +82,64 @@ latex   : false
 @IntrinsicCandidate
 protected native Object clone() throws CloneNotSupportedException;
 ```
+
+`this` 객체의 복사본을 생성해 리턴합니다.
+"복사"의 정확한 의미는 클래스에 따라 달라질 수 있지만,
+모든 객체 `x`에 대해 다음 표현식이 성립하는 것이 기본적인 의도라고 할 수 있습니다.
+
+```java
+x.clone() != x
+```
+
+위의 코드는 `true`가 됩니다.
+
+```java
+x.clone().getClass() == x.getClass()
+```
+
+그리고 위의 표현식은 `true`가 되지만, 반드시 따라야 하는 요구사항은 아닙니다.
+
+```java
+x.clone().equals(x)
+```
+
+위의 표현식은 `true`이며, 이 케이스가 일반적이라 할 수 있겠습니다.
+그러나 물론 이것도 절대적인 요구사항은 아닙니다.
+
+관례적인 규칙으로, 리턴된 객체는 `super.clone`의 호출로 얻어낸 것이어야 합니다.
+만약 클래스와 해당 클래스의 모든 슈퍼클래스가(`Object`는 제외) 이 규칙을 따른다면,
+`x.clone().getClass() == x.getClass()`가 성립하는 케이스가 됩니다.
+
+규칙에 따라, 이 메소드가 리턴하는 객체 `this` 객체(복제대상 객체)와는 독립적이어야 합니다.
+이러한 독립성을 달성하기 위해서 `super.clone`에 의해 리턴된 객체의 필드를 하나 이상 수정해야 할 수도 있습니다.
+
+이런 독립성을 위한 수정 작업이 무슨 뜻이냐면, 복제되는 객체 "내부의 구조체(deep structure)"를 구성하는 변경 가능한(mutable) 객체들을 복사하고, 이 객체들에 대한 참조를 복사본에 대한 참조로 바꾸는 것을 의미합니다.
+만약 클래스가 primitive 필드들만 갖고 있거나, 불변(immutable) 객체들 대한 레퍼런스만 갖고 있다면, 보통은 `super.clone`이 리턴한 객체의 필드를 수정하지 않아도 됩니다.
+
+- Implementation Requirements
+
+Object 클래스의 clone 메소드는 특정한 복제 작업을 수행합니다.
+
+먼저 알아두어야 할 것은, 만약 `this` 객체의 클래스가 `Cloneable` 인터페이스를 구현하지 않았다면, `CloneNotSupportedException`을 던진다는 것입니다.
+참고로 모든 종류의 배열은 `Cloneable` 인터페이스를 구현한 것으로 간주되며, 배열 타입 `T[]`의 `clone` 메소드의 리턴 타입도 `T[]`가 됩니다. 이 때 `T`는 레퍼런스 또는 primitive 타입 양쪽 다 가능합니다.
+그 외의 경우 이 메소드는 해당 클래스의 새로운 인스턴스를 생성하고 `this` 객체 필드 내용물로 새 인스턴스 각 필드들을 초기화합니다. 이때 각 필드의 내용물들은 복사되 않습니다.
+그러므로 이 메소드는 "얕은 복사(shallow copy)"를 수행합니다. "깊은 복사(deep copy)"가 아닙니다.
+
+`Object` 클래스 자신은 `Cloneable` 인터페이스를 구현하지 않습니다.
+따라서 런타임에서 `Object` 클래스의 인스턴스를 복제하려고 하면 `CloneNotSupportedException`이 던져집니다.
+
+- Returns
+
+this 인스턴스의 복사본
+
+- Throws
+
+`CloneNotSupportedException` - 객체 클래스 `Cloneable` 인터페이스를 지원하지 않는 경우.
+`clone` 메소드를 오버라이드하는 서브클래스는 인스턴스가 clone되면 안된다는 것을 표현하기 위해 이 예외를 던질 수 있습니다.
+
+- See Also
+
+`Cloneable`
 
 
 ## jvm.cpp의 native code
