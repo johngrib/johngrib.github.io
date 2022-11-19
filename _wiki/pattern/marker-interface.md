@@ -3,7 +3,7 @@ layout  : wiki
 title   : 마커 인터페이스 패턴 (Marker Interface Pattern)
 summary : 
 date    : 2022-11-18 23:59:03 +0900
-updated : 2022-11-19 10:01:11 +0900
+updated : 2022-11-19 11:50:56 +0900
 tag     : 
 toc     : true
 public  : true
@@ -82,6 +82,25 @@ package java.lang;
  */
 public interface Cloneable {
 }
+```
+
+다음은 위의 JavaDoc을 번역한 것이다.
+
+>
+`Cloneable` 인터페이스를 구현하는 클래스는 `Object.clone()` 메소드를 통해 클래스 인스턴스의 필드 간 복사본을 만드는 것이 허용됩니다.
+`Cloneable` 인터페이스를 구현하지 않은 인스턴스에 대해 `Object.clone()` 메소드를 호출하면 `CloneNotSupportedException` 예외가 던져집니다.
+>
+관례상, 이 인터페이스를 구현하는 클래스는 `Object.clone()` 메소드(protected)를 오버라이드해야 합니다.
+이 메소드를 오버라이드하는 방법에 대해서는 `Object.clone()`을 참고하세요.
+>
+이 인터페이스는 `clone` 메소드를 포함하지 않습니다.
+따라서, 이 인터페이스를 구현하는 것만으로는 객체를 복제할 수 없습니다.
+리플렉션을 통해 `clone` 메소드를 호출하더라도, 복제가 성공한다고 보장할 수 없습니다.
+
+참고: [jdk-17+35 java.lang.Object#clone]( https://github.com/openjdk/jdk/blob/jdk-17%2B35/src/java.base/share/classes/java/lang/Object.java#L228 )
+
+```java
+protected native Object clone() throws CloneNotSupportedException;
 ```
 
 ### Clojure
