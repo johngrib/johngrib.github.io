@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.clone 메소드
 summary : 
 date    : 2022-11-19 12:08:15 +0900
-updated : 2022-11-19 13:25:22 +0900
+updated : 2022-11-19 13:46:44 +0900
 tag     : java
 toc     : true
 public  : true
@@ -292,6 +292,55 @@ if (!klass->is_cloneable()) {
 }
 ```
 
+## 인용
+### clone의 사용에 대해
+
+>
+`Object` 클래스는 `clone()`이라는 메서드를 지원한다.
+이 메서드는 얕은 복사본을 생성할 때 유용하다(깊은 복사본도 생성할 수 있다).
+이 메서드를 사용하려면 클래스에서 다음 단계를 따라야 한다.
+>
+> - `Cloneable` 인터페이스를 구현한다(이 인터페이스를 구현하지 않으면 `CloneNotSupportedException`이 발생한다).
+> - `clone()` 메서드를 오버라이딩한다(`Object.clone()`은 `protected`다).
+> - `super.clone()`을 호출한다.
+>
+`Cloneable` 인터페이스는 어떤 메서드도 포함하지 않는다.
+JVM에 이 객체를 복제할 수 있다고 알릴 뿐이다.
+인터페이스를 구현한 후에는 코드에서 `Object.clone()` 메서드를 오버라이딩해야 한다.
+`Object.clone()`은 `protected`이기 때문에 super로 호출하려면 반드시 오버라이딩해야 한다.
+자식 클래스에 `clone()`을 추가하면 모든 상위 클래스마다 `clone()` 메서드를 정의해야 `super.clone()`의 연쇄 호출이 실패하지 않으므로 이는 어떻게 보면 심각한 결점이다.
+>
+게다가 `Object.clone()`은 생성자를 호출하지 않으므로 개발자가 객체 생성을 제어할 수 없다.
+>
+> ```java
+> public class Point implements Cloneable {
+>   private double x;
+>   private double y;
+>
+>   public Point(){}
+>
+>   public Point(double x, double y) {
+>     this.x = x; this.y = y;
+>   }
+>
+>   @Override
+>   public Point clone() throws CloneNotSupportedException {
+>     return (Point) super.clone();
+>   }
+>
+>   // 게터와 세터
+> }
+> ```
+>
+> 다음과 같이 복제본을 생성한다.
+> 
+> ```java
+> Point point = new Porint(...);
+> Point clone = point.clone();
+> ```
+[^anghel-122]
+
+
 ## 함께 읽기
 
 - [[/pattern/marker-interface#java.lang.Cloneable]]
@@ -301,4 +350,9 @@ if (!klass->is_cloneable()) {
 - [javase 11 java.lang.Object.clone() (docs.oracle.com)]( https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone() )
 - [javase 17 java.lang.Object.clone() (docs.oracle.com)]( https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone() )
 - [jdk8u share.vm.prims.jvm.cpp (hg.openjdk.java.net)]( https://hg.openjdk.java.net/jdk8u/jdk8u/hotspot/file/69087d08d473/src/share/vm/prims/jvm.cpp )
+- 코딩 개념 잡는 자바 코딩 문제집 / 앵겔 레너드 저/심지현 역 / 길벗 / 2022년 09월 30일 / 원서 : Java Coding Problems
+
+## 주석
+
+[^anghel-122]: 코딩 개념 잡는 자바 코딩 문제집. 2장. 122쪽.
 
