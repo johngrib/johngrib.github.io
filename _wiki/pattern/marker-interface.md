@@ -3,7 +3,7 @@ layout  : wiki
 title   : 마커 인터페이스 패턴 (Marker Interface Pattern)
 summary : 
 date    : 2022-11-18 23:59:03 +0900
-updated : 2022-11-19 13:52:10 +0900
+updated : 2022-11-19 14:12:54 +0900
 tag     : java clojure
 toc     : true
 public  : true
@@ -234,14 +234,14 @@ public interface MapEquivalence{
 이 Java 인터페이스에는 주석으로 `//marker interface`라고 메모가 남겨져 있다.
 
 
-
 ## 함께 읽기
 
-- [Marker interface pattern (en.wikipedia.org)]( https://en.wikipedia.org/wiki/Marker_interface_pattern )
+- [[/java/object-clone]]
 
 ## 참고문헌
 
 - Thinking in Java [3판] / Bruce Eckel 저 / 이용원 외 공역 / 대웅미디어 / 초판 1쇄 2003년 07월 26일
+- [Marker interface pattern (en.wikipedia.org)]( https://en.wikipedia.org/wiki/Marker_interface_pattern )
 - [clojure-1.11.1 clojure.lang]( https://github.com/clojure/clojure/blob/clojure-1.11.1/src/jvm/clojure/lang/ )
 - 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 
