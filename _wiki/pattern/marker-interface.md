@@ -3,7 +3,7 @@ layout  : wiki
 title   : 마커 인터페이스 패턴 (Marker Interface Pattern)
 summary : 
 date    : 2022-11-18 23:59:03 +0900
-updated : 2022-11-19 11:50:56 +0900
+updated : 2022-11-19 11:55:36 +0900
 tag     : 
 toc     : true
 public  : true
@@ -16,7 +16,7 @@ latex   : false
 ## From: Effective Java 3/E
 
 >
-아무 메서드도 담고 있지 않고, 단지 자신을 구현하 클래스가 특정 속성을 가짐을 표시해주는 인터페이스를 마커 인터페이스(marker interface)라 한다.
+아무 메서드도 담고 있지 않고, 단지 자신을 구현하는 클래스가 특정 속성을 가짐을 표시해주는 인터페이스를 마커 인터페이스(marker interface)라 한다.
 >
 -- 이펙티 자바 3/E. 아이템 41.
 
