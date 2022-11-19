@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.clone 메소드
 summary : 
 date    : 2022-11-19 12:08:15 +0900
-updated : 2022-11-19 13:06:42 +0900
+updated : 2022-11-19 13:10:32 +0900
 tag     : java
 toc     : true
 public  : true
@@ -144,7 +144,7 @@ this 인스턴스의 복사본
 
 ## jvm.cpp의 native code
 
-`Obejct.clone`이 `native`이기 때문에 소스코드는 `jvm.cpp`에 읽어볼 수 있다.
+`Obejct.clone`이 `native`이기 때문에 소스코드는 `jvm.cpp`에서 읽어볼 수 있다.
 
 `fixup_cloned_reference` 함수를 보면 된다.
 
