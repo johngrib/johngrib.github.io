@@ -3,7 +3,7 @@ layout  : category
 title   : 유용한 웹 사이트 모음
 summary : 
 date    : 2018-02-06 07:01:45 +0900
-updated : 2021-10-12 21:18:43 +0900
+updated : 2022-11-19 15:17:12 +0900
 tag     : 
 toc     : true
 public  : true
@@ -12,6 +12,12 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## Cloudflare의 인터넷 속도 측정 사이트
+
+<https://speed.cloudflare.com >
+
+다양한 수치를 볼 수 있으며, 서버 위치까지 지도로 보여준다.
 
 ## whichjdk.com
 
