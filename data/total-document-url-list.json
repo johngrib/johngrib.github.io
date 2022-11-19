@@ -409,6 +409,7 @@
  "/wiki/java/feel-of-java",
  "/wiki/java/gc",
  "/wiki/java/javadoc",
+ "/wiki/java/object-clone",
  "/wiki/java/object-equals",
  "/wiki/java/object-hashcode",
  "/wiki/java/object-tostring",

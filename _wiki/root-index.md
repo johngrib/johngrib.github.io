@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-19 11:59:28 +0900
+updated : 2022-11-19 12:08:14 +0900
 regenerate: true
 ---
 
@@ -267,6 +267,7 @@ regenerate: true
 * [[/java/exception-handling]]
 * [[/java/feel-of-java]]
 * [[/java/javadoc]]
+* [[/java/object-clone]]
 * [[/java/object-equals]]
 * [[/java/object-hashcode]]
 * [[/java/object-tostring]]
