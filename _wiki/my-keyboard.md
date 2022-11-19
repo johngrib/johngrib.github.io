@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 키보드 히스토리
 summary : 역사를 정리해 보자
 date    : 2018-11-22 10:57:14 +0900
-updated : 2020-05-07 13:32:50 +0900
+updated : 2022-11-19 15:27:19 +0900
 tag     : keyboard
 toc     : true
 public  : true
@@ -205,6 +205,18 @@ MDA 키캡 구매
 * 손가락 끝 피부의 피로가 적어서 좋다고 생각한다.
 
 ![mda-zoom](/resource/wiki/my-keyboard/xda-zoom.jpg )
+
+### 2022-11-16 과전류로 HHKB JP 컨트롤러 보드 고장
+
+오래된 맥북에 모니터를 usb-c로 연결했다 뽑았다하는 작업을 반복하다가, 이미 연결되어 있었던 usb 허브와 함께 다음 장비들이 모두 고장났다.
+
+- usb 허브
+- yubikey 4
+- usb-c to usb-c 연장 케이블
+- hdmi to usb-c 케이블
+- HHKB-JP 컨트롤러 보드
+
+다행히 두 키보드 중 하나만 고장났으므로 컨트롤러 보드만 고장난 것을 검증하기 쉬웠으며, 판매자에게 구매 요청을 넣어둔 상태.
 
 ## 나의 키보드 선택/커스터마이즈 기준
 
