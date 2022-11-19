@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.clone 메소드
 summary : 
 date    : 2022-11-19 12:08:15 +0900
-updated : 2022-11-19 15:00:45 +0900
+updated : 2022-11-19 15:03:23 +0900
 tag     : java
 toc     : true
 public  : true
@@ -381,6 +381,8 @@ if (!klass->is_cloneable()) {
 이러한 다른 연산들이 정확히 무엇인지를 알기 위해 Object.clone()이 하는 일을 정확히 이해해야 한다.
 특히 "모든 참조의 대상을 자동으로 복제하는가?"도 이해해야 한다. 다음 예제는 이것을 테스트한다.
 [^bruce-1124]
+
+- 참고. RTTI: Run-Time Type Information
 
 <span/>
 
