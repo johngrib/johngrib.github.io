@@ -3,8 +3,8 @@ layout  : wiki
 title   : 마커 인터페이스 패턴 (Marker Interface Pattern)
 summary : 
 date    : 2022-11-18 23:59:03 +0900
-updated : 2022-11-19 13:51:30 +0900
-tag     : 
+updated : 2022-11-19 13:52:10 +0900
+tag     : java clojure
 toc     : true
 public  : true
 parent  : [[/pattern]]

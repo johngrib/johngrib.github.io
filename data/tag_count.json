@@ -161,7 +161,7 @@
  },
  {
   "name": "clojure",
-  "size": 47
+  "size": 48
  },
  {
   "name": "cmd",
@@ -477,7 +477,7 @@
  },
  {
   "name": "java",
-  "size": 77
+  "size": 78
  },
  {
   "name": "javadoc",
