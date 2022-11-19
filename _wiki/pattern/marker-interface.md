@@ -3,7 +3,7 @@ layout  : wiki
 title   : 마커 인터페이스 패턴 (Marker Interface Pattern)
 summary : 
 date    : 2022-11-18 23:59:03 +0900
-updated : 2022-11-19 11:55:36 +0900
+updated : 2022-11-19 13:51:30 +0900
 tag     : 
 toc     : true
 public  : true
@@ -19,6 +19,23 @@ latex   : false
 아무 메서드도 담고 있지 않고, 단지 자신을 구현하는 클래스가 특정 속성을 가짐을 표시해주는 인터페이스를 마커 인터페이스(marker interface)라 한다.
 >
 -- 이펙티 자바 3/E. 아이템 41.
+
+## From: Thinking in Java 3판
+
+tagging interface라고 부르기도 한다.
+
+>
+객체 복제 능력을 완성하기 위해 `Cloneable` 인터페이스를 구현하는 한 가지가 더 필요하다.
+이 인터페이스는 비어있기 때문 약간 이상할 것이다.
+>
+> ```java
+> interface Cloneable {}
+> ```
+>
+빈 인터페이스를 구현하는 이유는 `Cloneable`로 상향 캐스트하고 메소드 중 하나를 호출하려는 것은 아니다.
+이러한 방법으로 인터페이스 사용하려는 것을 클래스 타입을 나타내는 플래그와 같이 행동하기 때문에 **태깅 인터페이스**(tagging interface)라고 한다.
+>
+-- Thinking in Java 3판. 부록A. 1120쪽.
 
 ## 사례
 
@@ -224,6 +241,7 @@ public interface MapEquivalence{
 
 ## 참고문헌
 
+- Thinking in Java [3판] / Bruce Eckel 저 / 이용원 외 공역 / 대웅미디어 / 초판 1쇄 2003년 07월 26일
 - [clojure-1.11.1 clojure.lang]( https://github.com/clojure/clojure/blob/clojure-1.11.1/src/jvm/clojure/lang/ )
 - 이펙티브 자바 Effective Java 3/E / 조슈아 블로크 저/개앞맵시(이복연) 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 
