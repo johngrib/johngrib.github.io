@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-18 23:58:59 +0900
+updated : 2022-11-19 11:59:28 +0900
 regenerate: true
 ---
 
@@ -523,6 +523,7 @@ regenerate: true
 * [[/cmd/file]]
 * [[/cmd/find]]
 * [[/cmd/grep]]
+* [[/cmd/java_home]]
 * [[/cmd/less]]
 * [[/cmd/man]]
 * [[/cmd/mv]]
@@ -554,7 +555,6 @@ regenerate: true
 * [[how-to-escape-cli]]
 * [[httpie-cmd]]
 * [[ioreg-cmd]]
-* [[java_home]]
 * [[jq-cmd]]
 * [[lldb-cmd]]
 * [[lsof]]
