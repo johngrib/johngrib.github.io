@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.clone 메소드
 summary : 
 date    : 2022-11-19 12:08:15 +0900
-updated : 2022-11-19 14:07:28 +0900
+updated : 2022-11-19 14:11:58 +0900
 tag     : java
 toc     : true
 public  : true
@@ -368,7 +368,7 @@ JVM에 이 객체를 복제할 수 있다고 알릴 뿐이다.
 
 >
 객체 복제 능력을 완성하기 위해 `Cloneable` 인터페이스를 구현하는 한 가지가 더 필요하다.
-이 인터페이스는 비어있기 때문 약간 이상할 것이다.
+이 인터페이스는 비어있기 때문에 약간 이상할 것이다.
 >
 > ```java
 > interface Cloneable {}
