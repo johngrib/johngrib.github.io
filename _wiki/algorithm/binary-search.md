@@ -3,7 +3,7 @@ layout  : wiki
 title   : 이진 탐색 (Binary Search)
 summary : 
 date    : 2022-10-01 23:12:37 +0900
-updated : 2022-10-02 00:31:42 +0900
+updated : 2022-11-20 13:55:12 +0900
 tag     : 
 toc     : true
 public  : true
@@ -47,12 +47,7 @@ $$
 <span/>
 
 
-## 함께 읽기
-
-- [Extra, Extra - Read All About It: Nearly All Binary Searches and Mergesorts are Broken]( https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html ) - Joshua Bloch의 2006년 블로그 글.
-- [JDK-5045582 : (coll) binarySearch() fails for size larger than `1<<30`][JDK-5045582]
-
-### mid 값을 계산할 때 오버플로우를 주의할 것
+## mid 값을 계산할 때 오버플로우를 주의할 것
 
 >
 이진 검색은 간단하면서도 부정확하게 구현하기가 아주 쉽다는 점에서 훌륭한 예제가 된다.
@@ -110,8 +105,185 @@ int mid = low + ((high - low) / 2);
 int mid = (low + high) >>> 1;
 ```
 
+## Java의 Arrays.binarySearch() 메소드
+
+- java.util.Arrays 에는 다양한 타입 맞게 오버로딩된 `binarySearch()` 메소드가 있다.
+
+```java
+public static <T> int binarySearch(T[] a, T key, Comparator<? super T> c) {
+public static <T> int binarySearch(T[] a, int fromIndex, int toIndex, T key, Comparator<? super T> c) {
+private static <T> int binarySearch0(T[] a, int fromIndex, int toIndex, T key, Comparator<? super T> c) {
+
+public static int binarySearch(Object[] a, Object key) {
+public static int binarySearch(Object[] a, int fromIndex, int toIndex, Object key) {
+private static int binarySearch0(Object[] a, int fromIndex, int toIndex, Object key) {
+
+public static int binarySearch(byte[] a, byte key) {
+public static int binarySearch(byte[] a, int fromIndex, int toIndex, byte key) {
+private static int binarySearch0(byte[] a, int fromIndex, int toIndex, byte key) {
+
+public static int binarySearch(char[] a, char key) {
+public static int binarySearch(char[] a, int fromIndex, int toIndex, char key) {
+private static int binarySearch0(char[] a, int fromIndex, int toIndex, char key) {
+
+public static int binarySearch(double[] a, double key) {
+public static int binarySearch(double[] a, int fromIndex, int toIndex, double key) {
+private static int binarySearch0(double[] a, int fromIndex, int toIndex, double key) {
+
+public static int binarySearch(float[] a, float key) {
+public static int binarySearch(float[] a, int fromIndex, int toIndex, float key) {
+private static int binarySearch0(float[] a, int fromIndex, int toIndex, float key) {
+
+public static int binarySearch(int[] a, int fromIndex, int toIndex, int key) {
+public static int binarySearch(int[] a, int key) {
+private static int binarySearch0(int[] a, int fromIndex, int toIndex, int key) {
+
+public static int binarySearch(long[] a, int fromIndex, int toIndex, long key) {
+public static int binarySearch(long[] a, long key) {
+private static int binarySearch0(long[] a, int fromIndex, int toIndex, long key) {
+
+public static int binarySearch(short[] a, int fromIndex, int toIndex, short key) {
+public static int binarySearch(short[] a, short key) {
+private static int binarySearch0(short[] a, int fromIndex, int toIndex, short key) {
+```
+
+다음은 JDK 17 Arrays.binarySearch 중 하나이다.
+
+[jdk-17+35 java.util.Arrays.binarySearch - long]( https://github.com/openjdk/jdk/blob/jdk-17+35/src/java.base/share/classes/java/util/Arrays.java#L1558-L1579 )
+
+```java
+/**
+ * Searches the specified array of longs for the specified value using the
+ * binary search algorithm.  The array must be sorted (as
+ * by the {@link #sort(long[])} method) prior to making this call.  If it
+ * is not sorted, the results are undefined.  If the array contains
+ * multiple elements with the specified value, there is no guarantee which
+ * one will be found.
+ *
+ * @param a the array to be searched
+ * @param key the value to be searched for
+ * @return index of the search key, if it is contained in the array;
+ *         otherwise, <code>(-(<i>insertion point</i>) - 1)</code>.  The
+ *         <i>insertion point</i> is defined as the point at which the
+ *         key would be inserted into the array: the index of the first
+ *         element greater than the key, or {@code a.length} if all
+ *         elements in the array are less than the specified key.  Note
+ *         that this guarantees that the return value will be &gt;= 0 if
+ *         and only if the key is found.
+ */
+public static int binarySearch(long[] a, long key) {
+    return binarySearch0(a, 0, a.length, key);
+}
+```
+
+다음은 JavaDoc을 번역한 것이다.
+
+>
+이진탐색 알고리즘을 사용해 주어진 long 배열에서 주어진 value를 찾습니다.
+주어지는 배열은 이 메소드를 호출하기 전에 (`sort()` 메소드 등을 통해)반드시 정렬되어 있어야 합니다.
+정렬되지 않은 배열에 대한 결과는 정의되어 있지 않습니다.
+만약 배열에 주어진 value가 여럿 들어있다면, 그 중 어떤 것을 찾게 될 지는 보장할 수 없습니다.
+>
+> - @param a : 탐색할 배열
+> - @param key : 찾을 값
+> - @return : 찾아낸 값의 인덱스. 찾지 못했다면 `-1`.
 
 
+실제 정렬은 `binarySearch0`에서 수행된다.
+
+[jdk-17+35 java.util.Arrays.binarySearch0 - long]( https://github.com/openjdk/jdk/blob/jdk-17+35/src/java.base/share/classes/java/util/Arrays.java#L1619-L1637 )
+
+```java
+// Like public version, but without range checks.
+private static int binarySearch0(long[] a, int fromIndex, int toIndex,
+                                 long key) {
+    int low = fromIndex;
+    int high = toIndex - 1;
+
+    while (low <= high) {
+        int mid = (low + high) >>> 1;
+        long midVal = a[mid];
+
+        if (midVal < key)
+            low = mid + 1;
+        else if (midVal > key)
+            high = mid - 1;
+        else
+            return mid; // key found
+    }
+    return -(low + 1);  // key not found.
+}
+```
+
+- `double` 타입에 대해서는 `Double.doubleToLongBits`를 사용하고 있다는 점에 주목.
+    - (`float` 타입에 대해서는 `Float.floatToIntBits`을 사용한다.)
+
+[jdk-17+35 java.util.Arrays.binarySearch0 ]( https://github.com/openjdk/jdk/blob/jdk-17+35/src/java.base/share/classes/java/util/Arrays.java#L2026-L2052 )
+
+```java
+// Like public version, but without range checks.
+private static int binarySearch0(double[] a, int fromIndex, int toIndex,
+                                 double key) {
+    int low = fromIndex;
+    int high = toIndex - 1;
+
+    while (low <= high) {
+        int mid = (low + high) >>> 1;
+        double midVal = a[mid];
+
+        if (midVal < key)
+            low = mid + 1;  // Neither val is NaN, thisVal is smaller
+        else if (midVal > key)
+            high = mid - 1; // Neither val is NaN, thisVal is larger
+        else {
+            long midBits = Double.doubleToLongBits(midVal);  // 여기
+            long keyBits = Double.doubleToLongBits(key);
+            if (midBits == keyBits)     // Values are equal
+                return mid;             // Key found
+            else if (midBits < keyBits) // (-0.0, 0.0) or (!NaN, NaN)
+                low = mid + 1;
+            else                        // (0.0, -0.0) or (NaN, !NaN)
+                high = mid - 1;
+        }
+    }
+    return -(low + 1);  // key not found.
+}
+```
+
+- 제네릭을 사용한 `T[]` 타입에서는 `Comparator`를 쓰기 때문에 `compare` 메소드를 호출한다.
+
+[jdk-17+35 java.util.Arrays.binarySearch0 ]( https://github.com/openjdk/jdk/blob/jdk-17+35/src/java.base/share/classes/java/util/Arrays.java#L2328-L2349 )
+
+```java
+// Like public version, but without range checks.
+private static <T> int binarySearch0(T[] a, int fromIndex, int toIndex,
+                                     T key, Comparator<? super T> c) {
+    if (c == null) {
+        return binarySearch0(a, fromIndex, toIndex, key);
+    }
+    int low = fromIndex;
+    int high = toIndex - 1;
+
+    while (low <= high) {
+        int mid = (low + high) >>> 1;
+        T midVal = a[mid];
+        int cmp = c.compare(midVal, key);   // 여기
+        if (cmp < 0)
+            low = mid + 1;
+        else if (cmp > 0)
+            high = mid - 1;
+        else
+            return mid; // key found
+    }
+    return -(low + 1);  // key not found.
+}
+```
+
+## 함께 읽기
+
+- [Extra, Extra - Read All About It: Nearly All Binary Searches and Mergesorts are Broken]( https://ai.googleblog.com/2006/06/extra-extra-read-all-about-it-nearly.html ) - Joshua Bloch의 2006년 블로그 글.
+- [JDK-5045582 : (coll) binarySearch() fails for size larger than `1<<30`][JDK-5045582]
+- [[/clojure/guide/comparators]]
 
 ## 참고문헌
 
