@@ -161,7 +161,7 @@
  },
  {
   "name": "clojure",
-  "size": 49
+  "size": 50
  },
  {
   "name": "cmd",
@@ -786,6 +786,10 @@
  {
   "name": "story",
   "size": 9
+ },
+ {
+  "name": "string",
+  "size": 1
  },
  {
   "name": "study",

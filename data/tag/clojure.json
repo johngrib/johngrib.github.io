@@ -13,6 +13,7 @@
  "clojure/guide/spec",
  "clojure/guide/threading-macros",
  "clojure/higher-order-functions",
+ "clojure/keyword",
  "clojure/macros",
  "clojure/reader",
  "clojure/reference",

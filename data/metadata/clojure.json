@@ -11,6 +11,7 @@
   "clojure/clojure-lsp",
   "clojure/cursive",
   "clojure/guide",
+  "clojure/keyword",
   "clojure/reference",
   "clojure/study",
   "clojure/study-00",
