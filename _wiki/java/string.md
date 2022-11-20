@@ -3,8 +3,8 @@ layout  : wiki
 title   : Java String
 summary : 
 date    : 2022-11-11 00:27:32 +0900
-updated : 2022-11-20 20:58:17 +0900
-tag     : java
+updated : 2022-11-20 21:17:05 +0900
+tag     : java clojure
 toc     : true
 public  : true
 parent  : [[/java]]
@@ -66,9 +66,62 @@ String 리터럴은 Java Language Specification의 3.10.5 절에 정의되어 �
 
 ## The Run-Time Constant Pool
 
+## Clojure
+
+### Clojure의 Keyword는 interned string
+
+Clojure의 RT.java 파일을 읽어보면 Clojure의 Keyword를 생성할 때 `Keyword.intern` static method를 호출하는 것을 알 수 있다.
+
+[Clojure 1.11.1 clojure.lang.RT.keyword]( https://github.com/clojure/clojure/blob/clojure-1.11.1/src/jvm/clojure/lang/RT.java#L347-L349 )
+
+```java
+static public Keyword keyword(String ns, String name){
+    return Keyword.intern((Symbol.intern(ns, name)));
+}
+```
+
+다만 JVM에서 운영하는 interned string pool이 아니라 `ConcurrentHashMap`을 사용해 Keyword를 위한 별도의 pool을 관리하고 있다는 점이 인상적이다.
+
+코드가 짧고 단순해 이해하기 어렵지 않다.
+
+[Clojure 1.11.1 clojure.lang.Keyword.intern]( https://github.com/clojure/clojure/blob/clojure-1.11.1/src/jvm/clojure/lang/Keyword.java#L28-L53 )
+
+```java
+private static ConcurrentHashMap<Symbol, Reference<Keyword>> table
+    = new ConcurrentHashMap();  // 이 table이 interned keyword의 pool이 된다.
+static final ReferenceQueue rq = new ReferenceQueue();
+public final Symbol sym;
+final int hasheq;
+transient String _str;
+
+public static Keyword intern(Symbol sym){
+    Keyword k = null;
+    // table에 들어있는지 확인한다
+    Reference<Keyword> existingRef = table.get(sym);
+    if(existingRef == null) {
+        // table에 키워드가 없다면
+        Util.clearCache(rq, table);
+        if(sym.meta() != null) {
+            sym = (Symbol) sym.withMeta(null);
+        }
+        k = new Keyword(sym);
+        // 새로 집어넣는다
+        existingRef = table.putIfAbsent(sym, new WeakReference<Keyword>(k, rq));
+    }
+    if(existingRef == null)
+        return k;
+    Keyword existingk = existingRef.get();
+    if(existingk != null)
+        return existingk;
+    //entry died in the interim, do over
+    table.remove(sym, existingRef);
+    return intern(sym);
+}
+```
+
 
 ## 참고문헌
 
 - [5.1. The Run-Time Constant Pool (JVMS 7)]( https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-5.html#jvms-5.1 )
+- [Clojure 1.11.1 clojure.lang.RT.java]( https://github.com/clojure/clojure/blob/clojure-1.11.1/src/jvm/clojure/lang/RT.java )
 - [jdk-17+35 java.lang.String.java]( https://github.com/openjdk/jdk/blob/jdk-17%2B35/src/java.base/share/classes/java/lang/String.java )
-

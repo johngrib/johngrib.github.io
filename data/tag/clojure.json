@@ -44,6 +44,7 @@
  "clojure/vim-setting",
  "ctags",
  "hack/http-client-clojure",
+ "java/string",
  "pattern/marker-interface",
  "programming/destructuring",
  "vim/quickfix"
