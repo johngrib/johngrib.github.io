@@ -17,6 +17,7 @@
   "cmd/column",
   "cmd/curl",
   "cmd/date",
+  "cmd/dc",
   "cmd/ditto",
   "cmd/fc",
   "cmd/file",

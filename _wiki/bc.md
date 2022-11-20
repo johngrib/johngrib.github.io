@@ -3,7 +3,7 @@ layout  : wiki
 title   : bc
 summary : An arbitrary precision calculator language
 date    : 2018-10-07 18:12:19 +0900
-updated : 2020-08-01 15:34:21 +0900
+updated : 2022-11-20 12:26:39 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -17,8 +17,8 @@ latex   : true
 
 - 로린다 체리(Lorinda Cherry)
 
-> 또 다른 예는 `bc`로, 로버트 모리스가 처음 개발한 무한 정밀도 계산기인 [[dc-cmd]]{dc}를 위해 로린다 체리가 개발한 전처리기다.
-로린다는 [[dc-cmd]]{dc}에 전통적인 중위 산술 표기법을 제공하기 위해 `bc`를 작성했는데, [[dc-cmd]]{dc}의 후위 표기법은 아무래도 초보자들에게는 수월하지 않았기 때문이다.
+> 또 다른 예는 `bc`로, 로버트 모리스가 처음 개발한 무한 정밀도 계산기인 [[/cmd/dc]]{dc}를 위해 로린다 체리가 개발한 전처리기다.
+로린다는 [[/cmd/dc]]{dc}에 전통적인 중위 산술 표기법을 제공하기 위해 `bc`를 작성했는데, [[/cmd/dc]]{dc}의 후위 표기법은 아무래도 초보자들에게는 수월하지 않았기 때문이다.
 [^KER-5-195]
 
 ## Examples
@@ -184,7 +184,7 @@ $ echo "scale=100; 4*a(1)" | bc -l
 
 ## 함께 읽기
 
-- [[dc-cmd]]{dc}
+- [[/cmd/dc]]
 
 ## Links
 

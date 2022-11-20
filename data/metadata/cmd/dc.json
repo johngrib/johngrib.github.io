@@ -3,7 +3,7 @@
  "title": "dc 명령어",
  "summary": "an arbitrary precision calculator",
  "parent": "cmd",
- "url": "/wiki/dc-cmd",
- "updated": "2022-11-20 12:24:25 +0900",
+ "url": "/wiki/cmd/dc",
+ "updated": "2022-11-20 12:26:03 +0900",
  "children": []
 }

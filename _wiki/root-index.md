@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-20 12:07:22 +0900
+updated : 2022-11-20 12:24:41 +0900
 regenerate: true
 ---
 
@@ -521,6 +521,7 @@ regenerate: true
 * [[/cmd/column]]
 * [[/cmd/curl]]
 * [[/cmd/date]]
+* [[/cmd/dc]]
 * [[/cmd/ditto]]
 * [[/cmd/fc]]
 * [[/cmd/file]]
@@ -545,7 +546,6 @@ regenerate: true
 * [[csplit]]
 * [[ctags]]
 * [[cut]]
-* [[dc-cmd]]
 * [[df]]
 * [[diff]]
 * [[du]]

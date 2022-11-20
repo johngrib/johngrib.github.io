@@ -3,7 +3,7 @@ layout  : wiki
 title   : dc 명령어
 summary : an arbitrary precision calculator
 date    : 2020-08-01 15:32:11 +0900
-updated : 2022-11-20 12:24:25 +0900
+updated : 2022-11-20 12:26:03 +0900
 tag     : bash command calculator
 toc     : true
 public  : true
