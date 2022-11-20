@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-20 12:24:41 +0900
+updated : 2022-11-20 20:14:43 +0900
 regenerate: true
 ---
 
@@ -278,6 +278,7 @@ regenerate: true
 * [[/java/synchronized]]
 * [[/java/thread/state]]
 * [[/java/volatile]]
+* [[/java/optional]]
 
 * [[java-TemporalAdjusters]]
 * [[java-abstract-class]]
@@ -290,7 +291,6 @@ regenerate: true
 * [[java-lambda]]
 * [[java-mockito]]
 * [[java-modifier-order-with-jls-suggestion]]
-* [[java-optional]]
 * [[java-random]]
 * [[java-remainder-operator]]
 * [[java10-var]]
