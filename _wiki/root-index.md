@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-20 20:14:43 +0900
+updated : 2022-11-20 21:35:24 +0900
 regenerate: true
 ---
 
@@ -319,9 +319,12 @@ regenerate: true
 
 ### [[clojure]]
 
+* [[/clojure/vim-setting]]
+
 * [[/clojure/clj-kondo]]
 * [[/clojure/clojure-lsp]]
 * [[/clojure/cursive]]
+
 * [[/clojure/reference]]
     * 01 [[/clojure/reader]]
     * 02 [[/clojure/repl-and-main]]
@@ -366,7 +369,6 @@ regenerate: true
     * [[/clojure/study/regex]]
     * [[/clojure/study/set]]
     * [[/clojure/study/vector]]
-* [[/clojure/vim-setting]]
 
 ### [[/kotlin]]
 
