@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-20 00:07:14 +0900
+updated : 2022-11-20 12:07:22 +0900
 regenerate: true
 ---
 
@@ -393,6 +393,7 @@ regenerate: true
 * [[/jargon/biondi-s-law]]
 * [[/jargon/bootstrapping]]
 * [[/jargon/edsel-edict]]
+* [[/jargon/hofstadter-s-law]]
 * [[/jargon/kiss-principle]]
 * [[/jargon/kluge]]
 * [[/jargon/metcalfe-s-law]]
@@ -409,7 +410,6 @@ regenerate: true
 * [[Conway-s-law]]
 * [[Copernican-Principle]]
 * [[dry-principle]]
-* [[hofstadter-s-law]]
 * [[hollywood-principle]]
 * [[imitation-game]]
 * [[information-hiding]]

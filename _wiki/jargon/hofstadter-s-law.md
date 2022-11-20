@@ -3,11 +3,11 @@ layout  : wiki
 title   : 호프스태터의 법칙 (Hofstadter's Law)
 summary : 
 date    : 2020-08-28 22:05:09 +0900
-updated : 2020-08-28 22:14:47 +0900
+updated : 2022-11-20 12:07:28 +0900
 tag     : 
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
