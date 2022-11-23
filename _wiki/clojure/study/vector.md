@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : Clojure Vector의 내부 구조를 알아보고 Java의 ArrayList와 비교한다
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-09-13 13:21:41 +0900
+updated : 2022-11-23 09:56:01 +0900
 tag     : clojure java
 toc     : true
 public  : true
@@ -889,6 +889,7 @@ public class Tuple{
 
 - [[/discrete-math-summations]]
 - [[/java/arraylist]]
+- [이 글을 작성하기 위해 만든 테스트 코드]( https://github.com/johngrib/clojure-study-on-java/blob/master/src/test/java/clojure/lang/PersistentVectorTest.java )
 
 ## 참고문헌
 
