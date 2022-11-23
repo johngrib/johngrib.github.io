@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-23 14:25:08 +0900
+updated : 2022-11-23 17:09:55 +0900
 regenerate: true
 ---
 
@@ -295,7 +295,6 @@ regenerate: true
 * [[java-random]]
 * [[java-remainder-operator]]
 * [[java10-var]]
-* [[java8-performance-improvement-for-hashmap]]
 * [[java8-why-permgen-removed]]
 * [[jdk13]]
 * [[private-constructor]]

@@ -1,27 +1,29 @@
 ---
 layout  : wiki
-title   : Java 8 HashMap 퍼포먼스 향상
-summary : 균형 트리를 도입해 O(n) 에서 O(log n)으로 향상됐다
+title   : java.util. HashMap
+summary : 
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-11-23 17:07:53 +0900
+updated : 2022-11-23 17:12:13 +0900
 tag     : java
 toc     : true
 public  : true
-parent  : [[java]]
+parent  : [[/java]]
 latex   : true
 ---
 * TOC
 {:toc}
 
-## 요약
+## Java 8 HashMap 퍼포먼스 향상에 대하여
+
+요약하자면 균형 트리를 도입해 $$O(n)$$ 에서 $$O(log n)$$으로 향상됐다.
 
 * Java 8 부터 `HashMap`, `LinkedHashMap`, `ConcurrentHashMap`의 퍼포먼스가 향상된다.
 * 기존에는 키 충돌이 많은 아이템들을 linked list로 관리했는데, 이후로는 balanced tree로 관리하게 된다.
     * 최악의 경우 시간 복잡도가 $$O(n)$$에서 $$O(\log n)$$으로 향상됐다.
 
-## 문서를 찾아보자
+### 문서를 찾아보자
 
-### What's New in JDK 8
+#### What's New in JDK 8
 
 다음은 [What's New in JDK 8][new-jdk8] 문서의 "Collections" 항목을 인용한 것이다.
 
@@ -36,7 +38,7 @@ latex   : true
 
 이 문서에서는 두 번째 항목인 "Performance Improvement for HashMaps with Key Collisions"에 대해 조사하는 것이 목표이므로, [Collections Framework Enhancements in Java SE 8][new-jdk8-collections] 문서로 따라 들어가 읽어보도록 하자.
 
-### Collections Framework Enhancements in Java SE 8
+#### Collections Framework Enhancements in Java SE 8
 
 다음은 [Collections Framework Enhancements in Java SE 8][new-jdk8-collections] 문서의 일부를 인용한 것이다.
 
@@ -55,7 +57,7 @@ Note that, other than removing the feature introduced in 7u6, the java.util.Hash
 * 드물게 `HashMap`, `HashSet`에서 이터레이팅 순서가 바뀔 수 있는데, `HashMap` 이터레이팅 순서에 의존하는 코드는 좋지 않으므로 고치는 것이 좋다.
 
 
-### JEP 180
+#### JEP 180
 
 읽는 김에 [JEP 180][jep-180]도 읽어보았다. 다음은 기억해 두고 싶은 부분을 몇 군데 인용한 것이다.
 
@@ -130,11 +132,11 @@ This change will likely result in a change to the iteration order of the HashMap
 * 이 변경으로 인해 약간의 오버 헤드가 발생하지만, 그 정도의 오버헤드는 무시해도 된다고 생각한다.
 * 이 변경으로 인해 `HashMap` 클래스의 이터레이션 순서가 바뀔 수 있지만, `HashMap` 스펙은 이터레이션 순서를 보장하지 않는다. `LinkedHashMap` 클래스의 이터레이션 순서는 유지된다.
 
-## 코드를 읽어보자
+### 코드를 읽어보자
 
 이제 문서는 그만 읽고 코드를 읽어보자.
 
-### Java 7의 HashMap
+#### Java 7의 HashMap
 
 다음은 Java 7의 java.util.HashMap의 put 메소드 코드이다. 한국어 주석은 내가 작성한 것이다.
 
@@ -180,7 +182,7 @@ public V put(K key, V value) {
 
 코드를 읽어보면 같은 해시값을 가진 아이템을 LinkedList로 관리하는 방식을 사용하고 있음을 확인할 수 있다.
 
-### Java 8 ~ 12의 HashMap
+#### Java 8 ~ 12의 HashMap
 
 다음은 Java 8 의 put 메소드 코드이다. 역시 한국어 주석은 내가 작성한 것이다.
 
@@ -273,7 +275,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 
 이렇게 되면 최선의 경우 $$O(1)$$, 최악의 경우 $$O(\log n)$$ 시간 복잡도가 나올 것이다.
 
-## 참고문헌
+### 참고문헌
 
 - [Collections Framework Enhancements in Java SE 8][new-jdk8-collections]
 - [JEP 180: Handle Frequent HashMap Collisions with Balanced Trees][jep-180]
@@ -282,7 +284,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 - [jdk-17+35 java.util.HashMap.java]( https://github.com/openjdk/jdk/blob/jdk-17%2B35/src/java.base/share/classes/java/util/HashMap.java )
 
 
-## 주석
+### 주석
 
 [new-jdk8]: https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html
 [new-jdk8-collections]: https://docs.oracle.com/javase/8/docs/technotes/guides/collections/changes8.html

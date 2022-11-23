@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2022년 11월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2022-11-11 00:18:40 +0900
+updated : 2022-11-23 17:13:16 +0900
 tag     : java
 toc     : true
 public  : true
@@ -187,7 +187,7 @@ TODO
     * `java.util.stream` 패키지 추가.
         * stream의 원소들에 함수형 스타일의 작업을 지원.
         * stream API는 Collections API에 통합.
-    * [[java8-performance-improvement-for-hashmap]]{HashMap 퍼포먼스 향상}
+    * [[/java/hashmap##java-8-hashmap-퍼포먼스-향상에-대하여]]{HashMap 퍼포먼스 향상}
 * Date-Time Package
 * `Optional`
 * `CompletableFuture` - `Future` 인터페이스에서 제공하는 기능을 개선
