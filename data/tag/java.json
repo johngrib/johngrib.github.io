@@ -29,6 +29,7 @@
  "java/enhancements",
  "java/enum",
  "java/exception-handling",
+ "java/hashmap",
  "java/javadoc",
  "java/object-clone",
  "java/object-equals",

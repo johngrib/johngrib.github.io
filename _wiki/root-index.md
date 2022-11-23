@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-20 21:35:54 +0900
+updated : 2022-11-23 14:25:08 +0900
 regenerate: true
 ---
 
@@ -266,11 +266,13 @@ regenerate: true
 * [[/java/enum]]
 * [[/java/exception-handling]]
 * [[/java/feel-of-java]]
+* [[/java/hashmap]]
 * [[/java/javadoc]]
 * [[/java/object-clone]]
 * [[/java/object-equals]]
 * [[/java/object-hashcode]]
 * [[/java/object-tostring]]
+* [[/java/optional]]
 * [[/java/run-time-constant-pool]]
 * [[/java/stream]]
 * [[/java/string]]
@@ -278,7 +280,6 @@ regenerate: true
 * [[/java/synchronized]]
 * [[/java/thread/state]]
 * [[/java/volatile]]
-* [[/java/optional]]
 
 * [[java-TemporalAdjusters]]
 * [[java-abstract-class]]
