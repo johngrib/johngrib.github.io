@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 8 HashMap 퍼포먼스 향상
 summary : 균형 트리를 도입해 O(n) 에서 O(log n)으로 향상됐다
 date    : 2019-10-27 11:54:24 +0900
-updated : 2020-03-04 21:29:58 +0900
+updated : 2022-11-23 17:07:53 +0900
 tag     : java
 toc     : true
 public  : true
@@ -275,9 +275,11 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 
 ## 참고문헌
 
-* [What's New in JDK 8][new-jdk8]
-* [Collections Framework Enhancements in Java SE 8][new-jdk8-collections]
-* [JEP 180: Handle Frequent HashMap Collisions with Balanced Trees][jep-180]
+- [Collections Framework Enhancements in Java SE 8][new-jdk8-collections]
+- [JEP 180: Handle Frequent HashMap Collisions with Balanced Trees][jep-180]
+- [What's New in JDK 8][new-jdk8]
+- [jdk-11+28 java.util.HashMap.java]( https://github.com/openjdk/jdk/blob/jdk-11%2B28/src/java.base/share/classes/java/util/HashMap.java )
+- [jdk-17+35 java.util.HashMap.java]( https://github.com/openjdk/jdk/blob/jdk-17%2B35/src/java.base/share/classes/java/util/HashMap.java )
 
 
 ## 주석
