@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util. HashMap
 summary : 
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-11-23 23:25:14 +0900
+updated : 2022-11-23 23:47:35 +0900
 tag     : java
 toc     : true
 public  : true
@@ -335,7 +335,7 @@ public Node<K, V>[] getTable() {
 }
 ```
 
-[TreeNode를 공개하고, left / right 자식 노드도 공개]( https://github.com/johngrib/study-java-hashmap/commit/7836fb26d14111059425ed44d8fef896f8a28967#diff-9dcc04de4527a2285a835274cc5c739157e34f13a7acb711c0c85cdf55c2ed2fR1664 )
+[TreeNode를 공개하고, left / right 자식 노드도 공개]( https://github.com/johngrib/study-java-hashmap/commit/7836fb26d14111059425ed44d8fef896f8a28967#diff-9dcc04de4527a2285a835274cc5c739157e34f13a7acb711c0c85cdf55c2ed2fR1664-R1667 )
 
 ```java
 public static final class TreeNode<K, V> extends _LinkedHashMap.Entry<K, V> {
