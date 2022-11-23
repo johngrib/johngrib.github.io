@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util. HashMap
 summary : 
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-11-23 17:12:13 +0900
+updated : 2022-11-23 23:25:14 +0900
 tag     : java
 toc     : true
 public  : true
@@ -274,6 +274,271 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 코드를 읽어보면 아이템을 LinkedList로 관리하다가, LinkedList가 일정 이상 길어지면 해당 인덱스를 Tree로 변경해 관리한다는 것을 알 수 있다.
 
 이렇게 되면 최선의 경우 $$O(1)$$, 최악의 경우 $$O(\log n)$$ 시간 복잡도가 나올 것이다.
+
+## HashMap의 TreeNode를 확인하는 실험
+
+실제로 사용해보며 작동하는 모습을 관찰해 보자.
+
+- Java 11을 사용하는 프로젝트 하나를 만든다.
+- `java.util.HashMap`을 복사해 몇 가지 내부 값들을 확인할 수 있는 클래스 `_HashMap`을 만든다.
+    - `_HashMap`은 공개되어 있지 않은 `table`과 `Node` 등을 `public`으로 변경해 접근할 수 있도록 한다.
+- 좁은 해시값 범위를 갖는 `Key` 클래스를 만들어 고의로 해시 충돌을 일으키도록 한다.
+
+
+이 실험에 사용한 소스코드는 [study-java-hashmap]( https://github.com/johngrib/study-java-hashmap/tree/print-hashmap-tree ) 리포지토리에 올려두었다.
+
+### 고의로 해시 충돌을 일으키기 위한 Key 클래스
+
+```java
+public class Key {
+  private final int i;
+
+  public Key(int i) {
+    this.i = i;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Key key = (Key) o;
+    return i == key.i;
+  }
+
+  @Override
+  public String toString() {
+    return "Key:" + i;
+  }
+
+  // 여기가 핵심
+  @Override
+  public int hashCode() {
+    return i % 3;   // 0, 1, 2
+  }
+}
+```
+
+이 클래스의 핵심은 `hashCode`로, `i % 3`을 사용하고 있다.
+이렇게 하면 이 클래스의 가능한 해시값은 모두 `0`, `1`, `2`가 된다.
+
+### 고의로 특정 필드를 공개한 _HashMap 클래스
+
+[Node table getter 추가]( https://github.com/johngrib/study-java-hashmap/commit/7836fb26d14111059425ed44d8fef896f8a28967#diff-9dcc04de4527a2285a835274cc5c739157e34f13a7acb711c0c85cdf55c2ed2fR393-R395 )
+
+```java
+public Node<K, V>[] getTable() {
+  return table;
+}
+```
+
+[TreeNode를 공개하고, left / right 자식 노드도 공개]( https://github.com/johngrib/study-java-hashmap/commit/7836fb26d14111059425ed44d8fef896f8a28967#diff-9dcc04de4527a2285a835274cc5c739157e34f13a7acb711c0c85cdf55c2ed2fR1664 )
+
+```java
+public static final class TreeNode<K, V> extends _LinkedHashMap.Entry<K, V> {
+  TreeNode<K, V> parent;  // red-black tree links
+  public TreeNode<K, V> left;
+  public TreeNode<K, V> right;
+  TreeNode<K, V> prev;    // needed to unlink next upon deletion
+
+  // ...
+}
+```
+
+### 출력 코드
+
+간단한 테스트 코드를 만든다. 대신, assertion은 하지 않고 출력만 해보자.
+
+먼저 트리를 walk를 하며 출력하는 메소드를 작성한다.
+
+```java
+static void printRecur(Node<Key, Integer> node, int level) {
+  if (node instanceof _HashMap.TreeNode) {
+    // 트리인 경우
+    _HashMap.TreeNode<Key, Integer> tree = (_HashMap.TreeNode<Key, Integer>) node;
+    tree.level = level;
+    System.out.println(Strings.repeat("  ", level) + "Tree " + ((Node) tree));
+
+    if (tree.left != null) {
+      printRecur(tree.left, level + 1);
+    }
+    if (tree.right != null) {
+      printRecur(tree.right, level + 1);
+    }
+    return;
+  } else {
+    // 연결 리스트인 경우
+    node.level = level;
+    System.out.println(Strings.repeat("  ", level) + "Link " + node);
+    if (node.getNext() != null) {
+      printRecur(node.getNext(), level + 1);
+    }
+  }
+}
+```
+
+그리고 다음과 같은 테스트를 작성했다.
+
+```java
+@Nested
+static class IncrementalInput {
+  private _HashMap<Key, Integer> map = new _HashMap<>();
+
+  @BeforeEach
+  void prepareTest() {
+    map.clear();
+    List<Integer> givenList = List.of(
+        // 해시값 0 후보
+        0, 3, 6, 9, 12, 15, 18, 21, 24,
+        // 해시값 1 후보
+        1, 4, 7, 10, 13, 16, 19, 22, 25, 28,
+        // 해시값 2 후보
+        2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38
+    );
+    for (var i :  givenList) {
+      map.put(new Key(i), i);
+    }
+  }
+
+  @Test
+  void it() {
+    final Node<Key, Integer>[] nodes = map.getTable();
+
+    for (var node : nodes) {
+      if (node == null) {
+        continue;
+      }
+      System.out.println();
+      printRecur(node, 0);
+    }
+  }
+}
+```
+
+### 출력 결과
+
+이 테스트를 가동해 보면 다음과 같이 출력된다.
+
+```
+Link {level=0, Key:0}
+  Link {level=1, Key:3}
+    Link {level=2, Key:6}
+      Link {level=3, Key:9}
+        Link {level=4, Key:12}
+          Link {level=5, Key:15}
+            Link {level=6, Key:18}
+              Link {level=7, Key:21}
+                Link {level=8, Key:24}
+
+Tree {level=0, Key:4}
+  Tree {level=1, Key:19}
+    Tree {level=2, Key:10}
+      Tree {level=3, Key:22}
+    Tree {level=2, Key:16}
+      Tree {level=3, Key:28}
+  Tree {level=1, Key:1}
+    Tree {level=2, Key:13}
+    Tree {level=2, Key:7}
+      Tree {level=3, Key:25}
+
+Tree {level=0, Key:11}
+  Tree {level=1, Key:5}
+    Tree {level=2, Key:2}
+    Tree {level=2, Key:20}
+  Tree {level=1, Key:8}
+    Tree {level=2, Key:29}
+      Tree {level=3, Key:23}
+        Tree {level=4, Key:38}
+      Tree {level=3, Key:32}
+        Tree {level=4, Key:35}
+    Tree {level=2, Key:17}
+      Tree {level=3, Key:14}
+      Tree {level=3, Key:26}
+```
+
+#### 첫 번째 해시 버킷
+
+하나하나 살펴보자.
+
+첫 번째 해시 버킷은 `0`, `3`, `6`, `9`, `12`, `15`, `18`, `21`, `24`로 만든 9개의 Key가 들어가 있다.
+
+```
+Link {level=0, Key:0}
+  Link {level=1, Key:3}
+    Link {level=2, Key:6}
+      Link {level=3, Key:9}
+        Link {level=4, Key:12}
+          Link {level=5, Key:15}
+            Link {level=6, Key:18}
+              Link {level=7, Key:21}
+                Link {level=8, Key:24}
+```
+
+그림으로 그려본다면 다음과 같을 것이다.
+
+![]( ./linked-list.svg )
+
+연결 리스트라는 것을 눈으로 쉽게 확인할 수 있다.
+
+`TREEIFY_THRESHOLD` 값인 `8`을 기준으로 삼는데, `binCount`가 `0`부터 시작하므로, 아이템 9개까지는 연결 리스트로 유지한다.
+
+#### 두 번째 해시 버킷
+
+두 번째 해시 버킷은 `1`, `4`, `7`, `10`, `13`, `16`, `19`, `22`, `25`, `28`로 만든 10개의 Key가 들어가 있다.
+
+아이템의 수가 연결 리스트 기준을 넘어섰으므로 연결 리스트가 아니라 이진 트리로 관리된다.
+
+```
+Tree {level=0, Key:4}
+  Tree {level=1, Key:19}
+    Tree {level=2, Key:10}
+      Tree {level=3, Key:22}
+    Tree {level=2, Key:16}
+      Tree {level=3, Key:28}
+  Tree {level=1, Key:1}
+    Tree {level=2, Key:13}
+    Tree {level=2, Key:7}
+      Tree {level=3, Key:25}
+```
+
+그림으로 그려보면 이진 트리라는 것을 쉽게 확인할 수 있다.
+
+![]( ./tree-node.svg )
+
+첫 번째 해시 버킷과 아이템 수 1개 차이가 난다는 점에 주목.
+
+#### 세 번째 해시 버킷
+
+세 번째 해시 버킷은 `2`, `5`, `8`, `11`, `14`, `17`, `20`, `23`, `26`, `29`, `32`, `35`, `38`로 만든 13개의 Key가 들어가 있다.
+
+```
+Tree {level=0, Key:11}
+  Tree {level=1, Key:5}
+    Tree {level=2, Key:2}
+    Tree {level=2, Key:20}
+  Tree {level=1, Key:8}
+    Tree {level=2, Key:29}
+      Tree {level=3, Key:23}
+        Tree {level=4, Key:38}
+      Tree {level=3, Key:32}
+        Tree {level=4, Key:35}
+    Tree {level=2, Key:17}
+      Tree {level=3, Key:14}
+      Tree {level=3, Key:26}
+```
+
+이것도 그림으로 그려보자.
+
+![]( ./third-bucket.svg )
+
+#### 종합
+
+다음은 위의 세 그림을 종합한 것이다.
+
+![]( ./all-buckets.svg )
 
 ### 참고문헌
 
