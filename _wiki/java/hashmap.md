@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util. HashMap
 summary : 
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-11-23 23:47:35 +0900
+updated : 2022-11-24 16:41:05 +0900
 tag     : java
 toc     : true
 public  : true
@@ -539,6 +539,123 @@ Tree {level=0, Key:11}
 다음은 위의 세 그림을 종합한 것이다.
 
 ![]( ./all-buckets.svg )
+
+### 같은 해시값을 갖는 두 Key를 비교하는 방법
+
+같은 해시값을 갖고 있는 여러 Key를 집어넣을 때, 어떤 Key는 노드의 왼쪽 붙고 어떤 Key는 오른쪽에 붙는 것을 보면,
+Key를 `put` 하거나 `get` 할 때 Key 사이의 비교가 일어난다는 것을 알 수 있다.
+
+이 비교는 다음과 같이 작동한다.
+
+1. `a.equals(b)`로 비교했을 때 `true`이면 같은 Key로 간주한다.
+2. Key가 `Comparable`을 구현하는 클래스라면, `a.compareTo(b)`로 우선순위를 매긴다.
+3. `a`, `b` 둘 중 하나가 `null` 이라면 `System.identityHashCode` 메소드를 사용해 결과값을 비교한다.
+4. `a`와 `b`가 `equals`로 같지 않고, `Comparable` 구현체도 아니고 `null`도 아니라면 `.getClass().getName()`을 사용해 두 `String`을 얻은 다음 `compareTo`로 비교한다.
+5. 위의 모든 경우가 다 아니라면 `System.identityHashCode` 메소드를 사용해 결과값을 비교한다.
+
+자세한 내용은 `putTreeVal`과 `tieBreakOrder` 메소드를 보면 알 수 있다.
+
+#### putTreeVal 메소드
+
+[jdk-11+28 java.util.HashMap.putTreeVal]( https://github.com/openjdk/jdk/blob/jdk-11%2B28/src/java.base/share/classes/java/util/HashMap.java#L2021-L2065 )
+
+`putTreeVal`은 한 글자짜리 변수 이름을 많이 사용해서 알아보기 어렵다.
+
+다음은 내가 주석을 추가하고 변수 이름을 바꾼(알아보기 쉽게 snake_case로 바꾸었다) `putTreeVal` 메소드이다.
+
+```java
+final TreeNode<K, V> putTreeVal(_HashMap<K, V> map, Node<K, V>[] tab,
+                                int key_hash, K given_key, V given_value) {
+  Class<?> key_class = null;
+  boolean searched = false;
+  TreeNode<K, V> root = (parent != null) ? root() : this;
+
+  // 무한 루프를 돌며 given_key / given_value를 집어넣을 곳을 찾는다.
+  for (TreeNode<K, V> pointer_node = root; ; ) {
+    int direction, pointer_hash;
+    K pointer_key;
+    if ((pointer_hash = pointer_node.hash) > key_hash)
+      // 만약 포인터 노드의 해시값이, 주어진 key의 해시값보다 크다면 방향은 왼쪽
+      direction = -1;
+    else if (pointer_hash < key_hash)
+      // 만약 포인터 노드의 해시값이, 주어진 key의 해시값보다 작다면 방향은 오른쪽
+      direction = 1;
+    else if ((pointer_key = pointer_node.key) == given_key || (given_key != null && given_key.equals(pointer_key)))
+      // 만약 포인터 노드와 주어진 key 가 같다면 중복이다. 삽입하지 않고 그냥 포인터 노드를 리턴한다.
+      return pointer_node;
+    else if ((key_class == null && (key_class = comparableClassFor(given_key)) == null)
+            ||
+            (direction = compareComparables(key_class, given_key, pointer_key)) == 0) {
+      // 만약 주어진 key 클래스가 Comparable 인터페이스를 구현한다면 key_class를 할당한다.
+      // 만약 주어진 key 클래스가 Comparable 구현체가 맞다면 compare 해보고, 결과가 0인지(같은지) 판별한다.
+      if (!searched) {
+        // 이번 루프에서 삽입할 지점을 찾지 못했다면 이번에 찾는다
+        TreeNode<K, V> found_node, child_node;
+        searched = true;
+        if (
+            ((child_node = pointer_node.left) != null && (found_node = child_node.find(key_hash, given_key, key_class)) != null)
+            ||
+            ((child_node = pointer_node.right) != null && (found_node = child_node.find(key_hash, given_key, key_class)) != null)
+        )
+          // 왼쪽 또는 오른쪽 중 중복된 key 를 갖는 노드를 찾았다면 삽입하지 않고 리턴한다.
+          return found_node;
+      }
+      // direction이 0,-1 인지 1 인지에 따라 새로운 노드를 왼쪽에 붙일지 오른쪽에 붙일지가 달라진다.
+      direction = tieBreakOrder(given_key, pointer_key);
+      // ↑ 주목: 같은 해시값을 갖는 노드를 어느 방향에 붙일지 결정한다
+    }
+
+    TreeNode<K, V> xp = pointer_node;
+    // direction이 0 이하이면 왼쪽에 붙이고, 1 이면 오른쪽에 붙인다.
+    if ((pointer_node = (direction <= 0) ? pointer_node.left : pointer_node.right) == null) {
+      // 붙일 노드가 null 이라면 새로운 노드를 생성해 key / value를 붙인다.
+      Node<K, V> xp_next = xp.next;
+      TreeNode<K, V> new_tree_node = map.newTreeNode(key_hash, given_key, given_value, xp_next);
+      if (direction <= 0)
+        xp.left = new_tree_node;
+      else
+        xp.right = new_tree_node;
+      xp.next = new_tree_node;
+      new_tree_node.parent = new_tree_node.prev = xp;
+      if (xp_next != null)
+        ((TreeNode<K, V>) xp_next).prev = new_tree_node;
+      moveRootToFront(tab, balanceInsertion(root, new_tree_node));
+      return null;
+    }
+  }
+}
+```
+
+#### tieBreakOrder 메소드
+
+`tieBreakOrder` 메소드를 읽어보면 해시값이 같은 두 key의 우선순위를 어떻게 결정하는지 알 수 있다.
+
+[jdk-11+28 java.util.HashMap.tieBreakOrder]( https://github.com/openjdk/jdk/blob/jdk-11%2B28/src/java.base/share/classes/java/util/HashMap.java#L1946-L1954 )
+
+```java
+/**
+ * Tie-breaking utility for ordering insertions when equal
+ * hashCodes and non-comparable. We don't require a total
+ * order, just a consistent insertion rule to maintain
+ * equivalence across rebalancings. Tie-breaking further than
+ * necessary simplifies testing a bit.
+ */
+static int tieBreakOrder(Object a, Object b) {
+  int d;
+  if (a == null || b == null ||
+      (d = a.getClass().getName().
+          compareTo(b.getClass().getName())) == 0) {
+    d = (System.identityHashCode(a) <= System.identityHashCode(b) ?
+        -1 : 1);
+  }
+  return d;
+}
+```
+
+- `a` 또는 `b`가 `null` 이면
+    - `System.identityHashCode` 값을 비교해 `-1`, `1` 을 리턴한다.
+- `a`의 클래스 이름 String과 `b`의 클래스 이름 String을 compare 한 결과를 리턴한다.
+
 
 ### 참고문헌
 
