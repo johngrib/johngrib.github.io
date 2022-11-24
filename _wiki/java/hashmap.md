@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util. HashMap
 summary : 
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-11-24 16:41:05 +0900
+updated : 2022-11-24 16:42:48 +0900
 tag     : java
 toc     : true
 public  : true
@@ -540,7 +540,7 @@ Tree {level=0, Key:11}
 
 ![]( ./all-buckets.svg )
 
-### 같은 해시값을 갖는 두 Key를 비교하는 방법
+## 같은 해시값을 갖는 두 Key를 비교하는 방법
 
 같은 해시값을 갖고 있는 여러 Key를 집어넣을 때, 어떤 Key는 노드의 왼쪽 붙고 어떤 Key는 오른쪽에 붙는 것을 보면,
 Key를 `put` 하거나 `get` 할 때 Key 사이의 비교가 일어난다는 것을 알 수 있다.
@@ -555,7 +555,7 @@ Key를 `put` 하거나 `get` 할 때 Key 사이의 비교가 일어난다는 것
 
 자세한 내용은 `putTreeVal`과 `tieBreakOrder` 메소드를 보면 알 수 있다.
 
-#### putTreeVal 메소드
+### putTreeVal 메소드
 
 [jdk-11+28 java.util.HashMap.putTreeVal]( https://github.com/openjdk/jdk/blob/jdk-11%2B28/src/java.base/share/classes/java/util/HashMap.java#L2021-L2065 )
 
@@ -626,7 +626,7 @@ final TreeNode<K, V> putTreeVal(_HashMap<K, V> map, Node<K, V>[] tab,
 }
 ```
 
-#### tieBreakOrder 메소드
+### tieBreakOrder 메소드
 
 `tieBreakOrder` 메소드를 읽어보면 해시값이 같은 두 key의 우선순위를 어떻게 결정하는지 알 수 있다.
 
@@ -657,7 +657,7 @@ static int tieBreakOrder(Object a, Object b) {
 - `a`의 클래스 이름 String과 `b`의 클래스 이름 String을 compare 한 결과를 리턴한다.
 
 
-### 참고문헌
+## 참고문헌
 
 - [Collections Framework Enhancements in Java SE 8][new-jdk8-collections]
 - [JEP 180: Handle Frequent HashMap Collisions with Balanced Trees][jep-180]
@@ -666,7 +666,7 @@ static int tieBreakOrder(Object a, Object b) {
 - [jdk-17+35 java.util.HashMap.java]( https://github.com/openjdk/jdk/blob/jdk-17%2B35/src/java.base/share/classes/java/util/HashMap.java )
 
 
-### 주석
+## 주석
 
 [new-jdk8]: https://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html
 [new-jdk8-collections]: https://docs.oracle.com/javase/8/docs/technotes/guides/collections/changes8.html
