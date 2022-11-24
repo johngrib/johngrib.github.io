@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util. HashMap
 summary : 
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-11-24 16:42:48 +0900
+updated : 2022-11-24 16:45:02 +0900
 tag     : java
 toc     : true
 public  : true
@@ -540,7 +540,7 @@ Tree {level=0, Key:11}
 
 ![]( ./all-buckets.svg )
 
-## 같은 해시값을 갖는 두 Key를 비교하는 방법
+## HashMap이 같은 해시값을 갖는 두 Key를 비교하는 방법
 
 같은 해시값을 갖고 있는 여러 Key를 집어넣을 때, 어떤 Key는 노드의 왼쪽 붙고 어떤 Key는 오른쪽에 붙는 것을 보면,
 Key를 `put` 하거나 `get` 할 때 Key 사이의 비교가 일어난다는 것을 알 수 있다.
