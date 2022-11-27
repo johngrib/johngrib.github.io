@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2021-05-22 20:53:37 +0900
+updated : 2022-11-27 10:58:46 +0900
 tag     : wiki vimwiki jekyll blog
 toc     : true
 comment : true
@@ -12,6 +12,21 @@ parent  : [[blog]]
 ---
 * TOC
 {:toc}
+
+## 요약
+
+- 로컬에서 Vim으로 글을 쓴다.
+    - Vimwiki를 사용해서 글과 글을 쉽게 링크하고, 표를 쉽게 만든다.
+    - Vimscript, JavaScript로 코딩해서 글 수정 일시, 각 파일별 메타데이터등이 자동으로 업데이트되게 한다.
+- github을 활용해 무료로 운영한다.
+    - github.io에서 기본으로 제공하는 Jekyll 블로그를 쓴다.
+    - 이미지는 github의 issue 기능을 사용하면 쉽게 복붙으로 등록할 수 있다.
+    - git의 특성상 문서 history도 관리할 수 있다.
+- 위키 사이트 기본 기능들은 다른 걸 가져다 쓰고, 없으면 만든다.
+    - 검색은 google 커스텀 검색 활용.
+    - 문서별 링크, 부모문서 링크, 해시태그 링크 등은 바닐라 JS로 코딩해서 구현.
+
+2017년 11월에 만들어서 12월부터 현재까지 계속 운영중.
 
 ## Vimwiki
 
