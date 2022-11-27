@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki + Jekyll + Github.io로 나만의 위키를 만들자
 summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
-updated : 2022-11-27 10:58:46 +0900
+updated : 2022-11-27 11:07:05 +0900
 tag     : wiki vimwiki jekyll blog
 toc     : true
 comment : true
@@ -26,7 +26,9 @@ parent  : [[blog]]
     - 검색은 google 커스텀 검색 활용.
     - 문서별 링크, 부모문서 링크, 해시태그 링크 등은 바닐라 JS로 코딩해서 구현.
 
-2017년 11월에 만들어서 12월부터 현재까지 계속 운영중.
+2017년 11월 26일에 만들어서 현재까지 계속 운영중.
+
+![첫 커밋]( /resource/wiki/my-wiki/204116036-b868a7c8-7d8a-471d-a628-ad64c9379261.png )
 
 ## Vimwiki
 
