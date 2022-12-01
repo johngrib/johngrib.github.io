@@ -183,7 +183,10 @@ sup[role=doc-noteref] {
     position: absolute;
 
     a.footnote {
+        position: relative;
         padding-bottom: 5px;
+        top: -0.8em;
+        left: -1px;
     }
 }
 
@@ -200,7 +203,7 @@ sup[role=doc-noteref] {
   padding: 0px 12px 0px 12px;
   position: absolute;
   left: 0px;
-  bottom: 23px;
+  bottom: 29px;
   z-index: 1;
 }
 
