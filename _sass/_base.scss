@@ -178,3 +178,38 @@ h6 {
 video {
     max-width: 100%;
 }
+
+sup[role=doc-noteref] {
+    position: absolute;
+
+    a.footnote {
+        padding-bottom: 5px;
+    }
+}
+
+
+.footnote + .tooltiptext {
+  visibility: hidden;
+  max-width: 800px;
+  min-width: 300px;
+  background-color: #ffffff;
+  color: $main-font-color;
+  text-align: left;
+  border-radius: 7px;
+  border: 1px solid #df0000;
+  padding: 0px 12px 0px 12px;
+  position: absolute;
+  left: 0px;
+  bottom: 23px;
+  z-index: 1;
+}
+
+.footnote:hover {
+    color: #df0000;
+}
+
+.footnote:hover + .tooltiptext {
+  visibility: visible;
+  text-decoration: none;
+}
+

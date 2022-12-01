@@ -141,8 +141,7 @@
         const note = noteList[i];
         const id = note.getAttribute('href')
             .replace(/^#/, "");
-        const text = document.getElementById(id).innerText
-            .replace(/ ↩.*$/, "");
-        note.setAttribute('title', text);
+        const text = document.getElementById(id).innerHTML;
+        note.parentNode.innerHTML += `<span class="tooltiptext">${text}</span>`
     }
 })();
