@@ -3,7 +3,7 @@ layout  : wiki
 title   : fortune 명령어
 summary : 랜덤으로 격언/속담 등을 보여준다
 date    : 2019-12-25 19:03:11 +0900
-updated : 2021-10-17 18:47:07 +0900
+updated : 2022-12-02 01:32:43 +0900
 tag     : bash command
 toc     : true
 public  : true
@@ -43,7 +43,7 @@ fortune
 
 이 파일 이름을 `quotes.txt`라는 이름으로 저장했다고 하자.
 
-이제 [[strfile]]명령을 사용해 인덱스 파일을 만들어 준다.
+이제 [[/cmd/strfile]]명령을 사용해 인덱스 파일을 만들어 준다.
 (strfile 명령은 fortune 명령을 설치할 때 함께 설치된다.)
 
 ```sh
@@ -125,5 +125,5 @@ fortune ~/my-fortune
 ## 함께 읽기
 
 - [[/cmd/grep]]
-- [[strfile-cmd]]
+- [[/cmd/strfile]]
 

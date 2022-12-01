@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-11-23 17:09:55 +0900
+updated : 2022-12-02 01:31:29 +0900
 regenerate: true
 ---
 
@@ -538,6 +538,7 @@ regenerate: true
 * [[/cmd/openssl]]
 * [[/cmd/sed]]
 * [[/cmd/shellcheck]]
+* [[/cmd/strfile]]
 * [[/cmd/tr]]
 * [[/cmd/tree]]
 * [[/cmd/uname]]
@@ -576,7 +577,6 @@ regenerate: true
 * [[sdkman]]
 * [[sha256sum]]
 * [[sort]]
-* [[strfile-cmd]]
 * [[sw_vers-cmd]]
 * [[tail]]
 * [[top]]
