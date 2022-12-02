@@ -179,40 +179,42 @@ video {
     max-width: 100%;
 }
 
+// 팝업 주석
 sup[role=doc-noteref] {
     position: absolute;
 
     a.footnote {
         position: relative;
         padding-bottom: 5px;
-        top: -0.8em;
-        left: -1px;
+        top: -0.9em;
+        left: -2px;
+        text-decoration: none;
+
+        &:before { content: "[" }
+        &:after { content: "]" }
+        &:hover {
+            color: #df0000;
+
+            & + .tooltiptext {
+                visibility: visible;
+            }
+        }
+
+        & + .tooltiptext {
+            visibility: hidden;
+            max-width: 800px;
+            min-width: 300px;
+            background-color: #ffffff;
+            color: $main-font-color;
+            text-align: left;
+            border-radius: 7px;
+            border: 1px solid #df0000;
+            padding: 0px 12px 0px 12px;
+            position: absolute;
+            left: 0px;
+            bottom: 29px;
+            z-index: 1;
+        }
     }
-}
-
-
-.footnote + .tooltiptext {
-  visibility: hidden;
-  max-width: 800px;
-  min-width: 300px;
-  background-color: #ffffff;
-  color: $main-font-color;
-  text-align: left;
-  border-radius: 7px;
-  border: 1px solid #df0000;
-  padding: 0px 12px 0px 12px;
-  position: absolute;
-  left: 0px;
-  bottom: 29px;
-  z-index: 1;
-}
-
-.footnote:hover {
-    color: #df0000;
-}
-
-.footnote:hover + .tooltiptext {
-  visibility: visible;
-  text-decoration: none;
 }
 
