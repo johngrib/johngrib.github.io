@@ -5,7 +5,6 @@
  "url": "/wiki/jargon",
  "updated": "2022-01-01 12:40:18 +0900",
  "children": [
-  "ACID",
   "amdahl-s-law",
   "Boy-Scout-Rule",
   "Brooks-s-law",
@@ -17,6 +16,7 @@
   "hollywood-principle",
   "imitation-game",
   "information-hiding",
+  "jargon/acid",
   "jargon/airplane-rule",
   "jargon/biondi-s-law",
   "jargon/bootstrapping",

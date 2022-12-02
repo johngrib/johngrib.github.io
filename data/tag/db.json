@@ -1,11 +1,11 @@
 [
- "ACID",
  "b-tree",
  "database/sqlite",
  "db-index",
  "db-processlist",
  "dbeaver",
  "h2database",
+ "jargon/acid",
  "locking",
  "sharding",
  "sql-char-comparison",

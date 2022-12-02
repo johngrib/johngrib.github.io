@@ -3,11 +3,11 @@ layout  : wiki
 title   : ACID
 summary : 트랜잭션의 중요한 네 가지 속성
 date    : 2019-10-03 00:33:18 +0900
-updated : 2021-06-22 23:11:51 +0900
+updated : 2022-12-02 23:08:43 +0900
 tag     : db
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
