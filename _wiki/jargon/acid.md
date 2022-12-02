@@ -3,7 +3,7 @@ layout  : wiki
 title   : ACID
 summary : 트랜잭션의 중요한 네 가지 속성
 date    : 2019-10-03 00:33:18 +0900
-updated : 2022-12-02 23:29:24 +0900
+updated : 2022-12-02 23:36:35 +0900
 tag     : db
 toc     : true
 public  : true
@@ -17,7 +17,10 @@ latex   : false
 
 네 가지 속성의 이니셜을 따서 ACID라 부른다.
 
-- Atomicity, Consistency, Isolation, Durability
+- Atomicity : 원자성
+- Consistency : 일관성
+- Isolation : 고립성, 격리성
+- Durability : 영속성, 지속성
 
 ## 인용
 
