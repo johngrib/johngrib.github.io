@@ -3,7 +3,7 @@ layout  : wiki
 title   : ACID
 summary : 트랜잭션의 중요한 네 가지 속성
 date    : 2019-10-03 00:33:18 +0900
-updated : 2022-12-02 23:52:26 +0900
+updated : 2022-12-02 23:55:46 +0900
 tag     : db
 toc     : true
 public  : true
@@ -295,7 +295,7 @@ ACID는 유감스럽게도 거의 마케팅 용어가 돼버렸다.
     - 자바 ORM 표준 JPA 프로그래밍 / 김영한 저 / 에이콘출판사 / 2015년 07월 28일
     - 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
 - 웹 문서
-    - [Theo Harder, Andreas Reuter: "Principles of Transaction-Oriented Database Recovery", 1983][haerder-1983]: ACID가 최초로 소개된 논문. [백업](https://web.archive.org/web/20190923153438/https://sites.fas.harvard.edu/~cs265/papers/haerder-1983.pdf )
+    - [Theo Harder, Andreas Reuter: "Principles of Transaction-Oriented Database Recovery", 1983][haerder-1983]: ACID가 최초로 소개된 논문. [백업 PDF(web.archive.org)](https://web.archive.org/web/20190923153438/https://sites.fas.harvard.edu/~cs265/papers/haerder-1983.pdf ) [백업 PDF]( ./haerder-1983.pdf )
 
 ## 주석
 
