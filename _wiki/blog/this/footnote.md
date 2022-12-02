@@ -3,7 +3,7 @@ layout  : wiki
 title   : footnote 팝업 기능
 summary : 주석 기능
 date    : 2022-12-02 15:09:21 +0900
-updated : 2022-12-02 16:33:02 +0900
+updated : 2022-12-02 19:14:53 +0900
 tag     : 
 toc     : true
 public  : true
@@ -23,7 +23,7 @@ latex   : false
 
 다음과 같이 평범하게 markdown 주석을 작성한다.
 
-```markdown
+```
 여기에 주석이 붙게 된다.[^my-comment]
 두 번째 주석도 이렇게 붙일 수 있다.[^my-comment2]
 
