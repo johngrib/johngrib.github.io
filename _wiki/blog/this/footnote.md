@@ -3,7 +3,7 @@ layout  : wiki
 title   : footnote 팝업 기능
 summary : 주석 기능
 date    : 2022-12-02 15:09:21 +0900
-updated : 2022-12-03 10:40:22 +0900
+updated : 2022-12-03 13:56:44 +0900
 tag     : 
 toc     : true
 public  : true
@@ -59,55 +59,37 @@ latex   : false
 ```scss
 // 팝업 주석
 sup[role=doc-noteref] {
+    position: absolute;
+
     a.footnote {
+        position: relative;
+        padding-bottom: 1em;
+        top: -0.9em;
+        text-decoration: none;
+
         &:before { content: "[" }
         &:after { content: "]" }
-    }
-}
-
-@media (max-width: 1120px) {
-    // 모바일
-    a.footnote + .tooltiptext {
-        display: none;
-    }
-}
-
-@media (min-width: 800px) {
-    // 데스크탑
-    sup[role=doc-noteref] {
-        position: absolute;
-
-        a.footnote {
-            position: relative;
-            padding-bottom: 5px;
-            top: -0.9em;
-            left: -2px;
-            text-decoration: none;
-
-            &:hover {
-                color: #df0000;
-
-                & + .tooltiptext {
-                    color: red;
-                    display: block;
-                }
-            }
-
+        &:hover {
+            color: #df0000;
             & + .tooltiptext {
-                display: none;
-                max-width: 800px;
-                min-width: 300px;
-                background-color: #ffffff;
-                color: $main-font-color;
-                text-align: left;
-                border-radius: 7px;
-                border: 1px solid #df0000;
-                padding: 0px 12px 0px 12px;
-                position: absolute;
-                left: 0px;
-                bottom: 29px;
-                z-index: 1;
+                color: red;
+                // display: block; // create-link.js 에서 처리한다
             }
+        }
+
+        & + .tooltiptext {
+            display: none;
+            max-width: 800px;
+            min-width: 300px;
+            background-color: #ffffff;
+            color: $main-font-color;
+            text-align: left;
+            border-radius: 7px;
+            border: 1px solid #df0000;
+            padding: 0px 12px 0px 12px;
+            position: absolute;
+            bottom: 29px;
+            z-index: 1;
         }
     }
 }
@@ -115,19 +97,46 @@ sup[role=doc-noteref] {
 
 #### JavaScript
 
-[create-link.js]( https://github.com/johngrib/johngrib.github.io/blob/55c740cb6118a1fb21e54db0338b7bb2e512f94d/js/create-link.js#L136-L147 )
+[create-link.js]( https://github.com/johngrib/johngrib.github.io/blob/master/js/create-link.js#L136 )
 
 ```javascript
 ;(function footnoteToolTip() {
     // 주석에 툴팁을 붙인다
-    const noteList = document.querySelectorAll('.footnote');
+    const supList = document.querySelectorAll('sup[role="doc-noteref"]');
+    for (let i = 0; i < supList.length; i++) {
+        const sup = supList[i];
 
-    for (let i = 0; i < noteList.length; i++) {
-        const note = noteList[i];
-        const id = note.getAttribute('href')
-            .replace(/^#/, "");
+        const note = sup.querySelector('.footnote');
+        const id = note.getAttribute('href').replace(/^#/, "");
         const text = document.getElementById(id).innerHTML;
-        note.parentNode.innerHTML += `<span class="tooltiptext">${text}</span>`
+        sup.innerHTML += `<span class="tooltiptext" id="tooltip-${i}">${text}</span>`
+
+        const tooltip = sup.querySelector(".tooltiptext");
+
+        sup.addEventListener('mouseover', function() {
+            const supRect = sup.getBoundingClientRect();
+            const postRect =  document.querySelector('.page-content')
+                .getBoundingClientRect();
+
+            tooltip.style.display = "block";
+            const tooltipRect = tooltip.getBoundingClientRect();
+
+            if (supRect.left + tooltipRect.width > postRect.right) {
+                // 툴팁이 포스트 오른쪽 경계를 넘어간다면, 넘어간 만큼 왼쪽으로 이동시킨다.
+                tooltip.style.left = `-${supRect.left + tooltipRect.width - postRect.right}px`;
+                tooltip.style.right = null;
+                return;
+            } else {
+                // 오른쪽 경계를 넘어가지 않는다면, 그냥 sup 위에 띄운다.
+                tooltip.style.left = `0px`;
+                tooltip.style.right = null;
+                return;
+            }
+        });
+
+        sup.addEventListener('mouseout', function() {
+            tooltip.style.display = "none";
+        });
     }
 })();
 ```
