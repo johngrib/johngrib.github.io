@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-02 23:08:10 +0900
+updated : 2022-12-03 23:23:19 +0900
 regenerate: true
 ---
 
@@ -809,6 +809,7 @@ regenerate: true
     * [[/blog/this/img-migration-to-resource]]
     * [[/blog/this/random-link]]
     * [[/blog/this/table-generate]]
+    * [[/blog/this/toc]]
     * [[/blog/this/todo]]
 
 ## [[better-work]]
