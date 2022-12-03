@@ -3,7 +3,7 @@ layout  : wiki
 title   : 선형합동
 summary : Linear Congruences
 date    : 2019-02-24 00:13:22 +0900
-updated : 2019-11-06 08:02:30 +0900
+updated : 2022-12-03 16:47:57 +0900
 tag     : math
 toc     : true
 public  : true
@@ -25,7 +25,7 @@ and $$x$$ is a variable, is called a linear congruence.
 * 양의 정수 m, 정수 a,b 에 대하여,
     * $$ ax ≡ b \ (\bmod m) $$ 형태의 합동을 선형합동(linear congruence)이라 부른다.
 
-### a 모듈로 m 의 역(inverse)
+### a 모듈로 m 의 역 (inverse)
 
 * $$ \bar{a} a \equiv 1 \ (\bmod m) $$ 인 정수 $$ a $$가 존재한다면,
     * 정수 $$ \bar{a} $$를 $$a$$ 모듈로 $$m$$의 역(inverse)이라 부른다.

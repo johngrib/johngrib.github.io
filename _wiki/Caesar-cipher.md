@@ -3,7 +3,7 @@ layout  : wiki
 title   : 카이사르 암호(Caesar cipher)
 summary : 자리이동식 암호법
 date    : 2019-03-09 18:06:30 +0900
-updated : 2022-11-11 23:48:42 +0900
+updated : 2022-12-03 16:53:25 +0900
 tag     : encryption
 toc     : true
 public  : true
@@ -233,7 +233,7 @@ $$
 ## 함께 읽기
 
 * [[/discrete-math-modular]]{모듈러 연산(나머지 연산)}
-* [[/discrete-math-linear-congruences#a-모듈로-m-의-역inverse]]{a 모듈로 m의 역}
+* [[/discrete-math-linear-congruences#a-모듈로-m-의-역-inverse]]{a 모듈로 m의 역}
 
 ## 주석
 
