@@ -3,7 +3,7 @@ layout  : wiki
 title   : footnote 팝업 기능
 summary : 주석 기능
 date    : 2022-12-02 15:09:21 +0900
-updated : 2022-12-02 19:14:53 +0900
+updated : 2022-12-03 10:40:22 +0900
 tag     : 
 toc     : true
 public  : true
@@ -54,44 +54,60 @@ latex   : false
 
 #### scss
 
-[_base.scss]( https://github.com/johngrib/johngrib.github.io/blob/55c740cb6118a1fb21e54db0338b7bb2e512f94d/_sass/_base.scss#L182-L219 )
+[_base.scss]( https://github.com/johngrib/johngrib.github.io/blob/master/_sass/_base.scss#L182 )
 
 ```scss
 // 팝업 주석
 sup[role=doc-noteref] {
-    position: absolute;
-
     a.footnote {
-        position: relative;
-        padding-bottom: 5px;
-        top: -0.9em;
-        left: -2px;
-        text-decoration: none;
-
         &:before { content: "[" }
         &:after { content: "]" }
-        &:hover {
-            color: #df0000;
+    }
+}
+
+@media (max-width: 1120px) {
+    // 모바일
+    a.footnote + .tooltiptext {
+        display: none;
+    }
+}
+
+@media (min-width: 800px) {
+    // 데스크탑
+    sup[role=doc-noteref] {
+        position: absolute;
+
+        a.footnote {
+            position: relative;
+            padding-bottom: 5px;
+            top: -0.9em;
+            left: -2px;
+            text-decoration: none;
+
+            &:hover {
+                color: #df0000;
+
+                & + .tooltiptext {
+                    color: red;
+                    display: block;
+                }
+            }
 
             & + .tooltiptext {
-                visibility: visible;
+                display: none;
+                max-width: 800px;
+                min-width: 300px;
+                background-color: #ffffff;
+                color: $main-font-color;
+                text-align: left;
+                border-radius: 7px;
+                border: 1px solid #df0000;
+                padding: 0px 12px 0px 12px;
+                position: absolute;
+                left: 0px;
+                bottom: 29px;
+                z-index: 1;
             }
-        }
-
-        & + .tooltiptext {
-            visibility: hidden;
-            max-width: 800px;
-            min-width: 300px;
-            background-color: #ffffff;
-            color: $main-font-color;
-            text-align: left;
-            border-radius: 7px;
-            border: 1px solid #df0000;
-            padding: 0px 12px 0px 12px;
-            position: absolute;
-            left: 0px;
-            bottom: 29px;
-            z-index: 1;
         }
     }
 }
