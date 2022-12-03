@@ -135,13 +135,40 @@
 
 ;(function footnoteToolTip() {
     // 주석에 툴팁을 붙인다
-    const noteList = document.querySelectorAll('.footnote');
+    const supList = document.querySelectorAll('sup[role="doc-noteref"]');
+    for (let i = 0; i < supList.length; i++) {
+        const sup = supList[i];
 
-    for (let i = 0; i < noteList.length; i++) {
-        const note = noteList[i];
-        const id = note.getAttribute('href')
-            .replace(/^#/, "");
+        const note = sup.querySelector('.footnote');
+        const id = note.getAttribute('href').replace(/^#/, "");
         const text = document.getElementById(id).innerHTML;
-        note.parentNode.innerHTML += `<span class="tooltiptext">${text}</span>`
+        sup.innerHTML += `<span class="tooltiptext" id="tooltip-${i}">${text}</span>`
+
+        const tooltip = sup.querySelector(".tooltiptext");
+
+        sup.addEventListener('mouseover', function() {
+            const supRect = sup.getBoundingClientRect();
+            const postRect =  document.querySelector('.page-content')
+                .getBoundingClientRect();
+
+            tooltip.style.display = "block";
+            const tooltipRect = tooltip.getBoundingClientRect();
+
+            if (supRect.left + tooltipRect.width > postRect.right) {
+                // 툴팁이 포스트 오른쪽 경계를 넘어간다면, 넘어간 만큼 왼쪽으로 이동시킨다.
+                tooltip.style.left = `-${supRect.left + tooltipRect.width - postRect.right}px`;
+                tooltip.style.right = null;
+                return;
+            } else {
+                // 오른쪽 경계를 넘어가지 않는다면, 그냥 sup 위에 띄운다.
+                tooltip.style.left = `0px`;
+                tooltip.style.right = null;
+                return;
+            }
+        });
+
+        sup.addEventListener('mouseout', function() {
+            tooltip.style.display = "none";
+        });
     }
 })();
