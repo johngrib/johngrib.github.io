@@ -27,7 +27,7 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 
 구조는 다음과 같다.[^structure]
 
-![]( ./abstract-factory-pattern.svg )
+![]( /resource/FC/2F6EF0-3060-4B1E-B140-9DF90EC0F6E8/abstract-factory-pattern.svg )
 
 * AbstractFactory: 개념적 제품에 대한 객체를 생성하는 연산으로 인터페이스를 정의한다.
 * ConcreteFactory: 구체적인 제품에 대한 객체를 생성하는 연산을 구현한다.
@@ -41,7 +41,7 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.[^gof]
 
 추상 팩토리 패턴이 적용된 가장 유명한 Java 코드가 `Collection` 인터페이스의 `Iterator<E> iterator()`이기 때문이다.
 
-![]( ./iterator.svg )
+![]( /resource/FC/2F6EF0-3060-4B1E-B140-9DF90EC0F6E8/iterator.svg )
 
 그림 속의 `Abstract Factory`(회색 글씨)를 눈여겨보자. `Collection.iterator()`가 바로 추상 팩토리이다.
 
