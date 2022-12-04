@@ -4,6 +4,7 @@
  "parent": "index",
  "url": "/wiki/algorithm",
  "updated": "2020-03-04 20:46:42 +0900",
+ "id": "08B2DC83-6C42-46CC-8347-663C12027BF0",
  "children": [
   "algorithm/binary-search",
   "algorithm/egyptian-multiplication",

@@ -4,6 +4,7 @@
  "parent": "index",
  "url": "/wiki/vim",
  "updated": "2022-01-03 23:39:21 +0900",
+ "id": "6C70CFE8-2EC6-4BBE-ABB2-0B0C47459C44",
  "children": [
   "ideavim",
   "two-views-of-vim",

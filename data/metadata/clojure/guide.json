@@ -5,6 +5,7 @@
  "parent": "clojure",
  "url": "/wiki/clojure/guide",
  "updated": "2021-12-10 22:42:33 +0900",
+ "id": "2E29E908-FE72-42B0-95D3-E3EDA97CD291",
  "children": [
   "clojure/equality",
   "clojure/guide/comparators",

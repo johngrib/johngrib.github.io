@@ -5,6 +5,7 @@
  "parent": "language",
  "url": "/wiki/python",
  "updated": "2022-02-26 00:58:39 +0900",
+ "id": "5E9991D5-0ACA-4AEE-B65C-84E02DEBF2EC",
  "children": [
   "python/pyenv",
   "python/vim-setting"

@@ -5,6 +5,7 @@
  "parent": "mac",
  "url": "/wiki/hammerspoon",
  "updated": "2022-02-26 23:25:15 +0900",
+ "id": "9C6FEF96-FC4D-4794-B686-9C6AE66B57A9",
  "children": [
   "hammerspoon-inputsource-aurora",
   "hammerspoon-luarocks",

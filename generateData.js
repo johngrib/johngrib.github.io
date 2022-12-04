@@ -51,6 +51,7 @@ function main() {
                     parent: page.parent,
                     url: page.url,
                     updated: page.updated || page.date,
+                    id: page.id,
                     children: [],
                 };
         });

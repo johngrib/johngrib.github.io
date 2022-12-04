@@ -5,6 +5,7 @@
  "parent": "clojure",
  "url": "/wiki/clojure/study",
  "updated": "2022-02-07 23:17:34 +0900",
+ "id": "1C6A2333-3452-4A25-977C-DF2760BB9C10",
  "children": [
   "clojure/earmuffs",
   "clojure/study/collection",

@@ -5,6 +5,7 @@
  "parent": "root-index",
  "url": "/wiki/git",
  "updated": "2022-01-16 13:54:12 +0900",
+ "id": "1CE46931-AF68-411A-B011-564D7AD34E61",
  "children": [
   "git-alias",
   "git-prompt",

@@ -5,6 +5,7 @@
  "parent": "index",
  "url": "/wiki/database",
  "updated": "2021-07-24 14:55:51 +0900",
+ "id": "DD180D56-C6F0-4B1B-B0DE-F88C2A048744",
  "children": [
   "database/acid",
   "database/sqlite",

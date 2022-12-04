@@ -5,6 +5,7 @@
  "parent": "index",
  "url": "/wiki/programming",
  "updated": "2021-07-24 14:55:06 +0900",
+ "id": "DAF053BA-A05F-4265-B6E6-4C02533133A4",
  "children": [
   "inversion-of-control",
   "n-version-programming",

@@ -5,6 +5,7 @@
  "parent": "index",
  "url": "/wiki/pattern",
  "updated": "2021-10-03 10:35:26 +0900",
+ "id": "45BB171A-F6BD-4115-B2B1-32515DF2CE53",
  "children": [
   "pattern/abstract-factory",
   "pattern/adapter",

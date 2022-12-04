@@ -5,6 +5,7 @@
  "parent": "blog",
  "url": "/wiki/blog/this",
  "updated": "2021-07-20 16:44:17 +0900",
+ "id": "81ABB92E-9C77-4660-AB1F-45599193E7BA",
  "children": [
   "blog/this/404-fallback",
   "blog/this/dynamic-insert",

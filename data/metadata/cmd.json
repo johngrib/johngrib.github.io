@@ -5,6 +5,7 @@
  "parent": "tools",
  "url": "/wiki/cmd",
  "updated": "2018-02-12 10:15:29 +0900",
+ "id": "FFCB9E78-56B8-484C-9419-671F1E58BEA1",
  "children": [
   "bash-history",
   "chsh-cmd",

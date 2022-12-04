@@ -5,6 +5,7 @@
  "parent": "language",
  "url": "/wiki/rust",
  "updated": "2019-12-26 22:40:46 +0900",
+ "id": "604B19FF-1BBA-4A2F-80EA-58F12C085903",
  "children": [
   "rust/vim-setting"
  ]

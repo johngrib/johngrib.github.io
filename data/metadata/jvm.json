@@ -5,6 +5,7 @@
  "parent": "java",
  "url": "/wiki/jvm",
  "updated": "2021-07-24 14:55:39 +0900",
+ "id": "F5A3BE9B-F1D6-42A2-A590-4D3FC92BD027",
  "children": [
   "jvm-memory",
   "jvm-stack"

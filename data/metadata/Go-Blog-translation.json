@@ -5,6 +5,7 @@
  "parent": "go",
  "url": "/wiki/Go-Blog-translation",
  "updated": "2019-06-10 20:58:52 +0900",
+ "id": "60F49D93-CDC3-4EE1-BDB0-34AA2CC4636D",
  "children": [
   "golang-debugging-what-you-deploy",
   "golang-mod",
