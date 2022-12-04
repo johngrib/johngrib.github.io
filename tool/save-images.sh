@@ -11,8 +11,11 @@ FAIL_COUNT=0
 for CHANGED_FILE in $CHANGE_LIST; do
     echo "이미지경로를 교정할 문서 파일: [$CHANGED_FILE]"
 
-    DIR_NAME=`echo $CHANGED_FILE | sed -E 's,^_(.+)\.md$,\1,'`
-    TARGET_PATH="./resource/$DIR_NAME"
+    UUID=`head $CHANGED_FILE | egrep -o '[A-F0-9-]{36}$'`
+    UUID_HEAD=`echo $UUID | cut -c -2`
+    UUID_TAIL=`echo $UUID | cut -c 3-`
+
+    TARGET_PATH="./resource/$UUID_HEAD/$UUID_TAIL"
 
     echo "생성할 디렉토리 경로: [$TARGET_PATH]"
     mkdir -p $TARGET_PATH
