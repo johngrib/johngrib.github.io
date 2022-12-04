@@ -5,6 +5,7 @@ summary : cut out selected portions of each line of a file
 date    : 2019-01-15 17:09:24 +0900
 updated : 2019-11-10 12:18:12 +0900
 tag     : bash command
+resource: 3D/795B19-8944-4EA9-9C91-67222814313B
 toc     : true
 public  : true
 parent  : [[cmd]]

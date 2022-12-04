@@ -5,6 +5,7 @@ summary : 복붙을 편하게!
 date    : 2017-08-04 21:32:22 +0900
 updated : 2018-04-21 11:37:42 +0900
 tag     : hammerspoon
+resource: 3B/FB8648-07F5-4535-A53D-D58653B379F7
 toc     : true
 comment : true
 public  : true

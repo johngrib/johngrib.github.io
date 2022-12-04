@@ -5,6 +5,7 @@ summary : 동전 던지기와 하키 승률로 배우는 데이터 분석
 date    : 2018-04-08 23:07:56 +0900
 updated : 2020-03-01 19:07:09 +0900
 tag     : Think-Bayes bayes
+resource: F4/D6E37E-AA74-480F-B2F4-5A3C499896DE
 toc     : true
 public  : true
 parent  : [[book]]

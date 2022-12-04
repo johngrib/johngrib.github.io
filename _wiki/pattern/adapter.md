@@ -5,6 +5,7 @@ summary : 서로 일치하지 않는 인터페이스를 가진 클래스를 함�
 date    : 2019-10-29 14:53:41 +0900
 updated : 2021-10-10 14:13:55 +0900
 tag     : pattern
+resource: F1/22F75B-0A13-4845-A03D-0865E1EDEDFB
 toc     : true
 public  : true
 parent  : [[pattern]]

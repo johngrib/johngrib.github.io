@@ -5,6 +5,7 @@ summary :
 date    : 2021-04-12 23:25:16 +0900
 updated : 2022-01-22 10:41:03 +0900
 tag     : java javadoc
+resource: 87/9E7A94-A802-44B7-A248-97974C1256F7
 toc     : true
 public  : true
 parent  : [[/java]]

@@ -5,6 +5,7 @@ summary : 03.Storage and Retrieval
 date    : 2018-07-07 21:33:33 +0900
 updated : 2022-05-22 18:08:38 +0900
 tag     : 
+resource: DC/DA9474-DD23-4555-BC17-3BC1AC00902F
 toc     : true
 public  : true
 parent  : [[/study/ddia]]

@@ -5,6 +5,7 @@ summary : Matrices
 date    : 2019-02-02 18:38:20 +0900
 updated : 2019-02-04 20:07:14 +0900
 tag     : math
+resource: 0E/31273B-6C44-446E-ABF0-4B31AB2B3C0F
 toc     : true
 public  : true
 parent  : [[study-discrete-mathematics]]

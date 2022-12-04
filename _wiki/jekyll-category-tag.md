@@ -5,6 +5,7 @@ summary : 마음에 드는 플러그인이 없어서 조잡하게나마 직접 �
 date    : 2017-01-22 08:52:22 +0900
 updated : 2020-02-09 12:43:39 +0900
 tag     : jekyll blog
+resource: E7/2A5B3E-2FBE-4B6C-8D3B-F36D86D2C674
 toc     : true
 public  : true
 parent  : [[blog]]

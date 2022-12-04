@@ -5,6 +5,7 @@ summary : Proofs
 date    : 2019-01-06 16:36:55 +0900
 updated : 2020-02-04 23:42:31 +0900
 tag     : math
+resource: DE/FC5019-A185-4120-A2CA-393C65C39419
 toc     : true
 public  : true
 parent  : [[study-discrete-mathematics]]

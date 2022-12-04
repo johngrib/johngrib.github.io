@@ -5,6 +5,7 @@ summary :
 date    : 2020-12-21 21:43:01 +0900
 updated : 2021-10-04 11:12:57 +0900
 tag     : people amazon start-up
+resource: 4C/C17321-9D27-4504-B6F4-9B08C9F35B0C
 toc     : true
 public  : true
 parent  : [[people]]

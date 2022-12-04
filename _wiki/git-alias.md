@@ -5,6 +5,7 @@ summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
 updated : 2022-09-10 00:42:31 +0900
 tag     : fzf git bash
+resource: 1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3
 toc     : true
 public  : true
 parent  : [[git]]

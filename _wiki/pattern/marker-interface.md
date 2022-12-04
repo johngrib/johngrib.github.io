@@ -5,6 +5,7 @@ summary :
 date    : 2022-11-18 23:59:03 +0900
 updated : 2022-11-19 14:12:54 +0900
 tag     : java clojure
+resource: D3/A8B38B-610C-4752-9BA1-9A23039CB3A3
 toc     : true
 public  : true
 parent  : [[/pattern]]

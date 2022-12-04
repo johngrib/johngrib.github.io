@@ -5,6 +5,7 @@ summary : Vim을 재실행해도 undo를 쓸 수 있다
 date    : 2018-09-18 16:05:10 +0900
 updated : 2022-03-10 21:43:58 +0900
 tag     : vim
+resource: 8C/60986B-A0AA-4D1B-8F42-5CBE5575C06C
 toc     : true
 public  : true
 parent  : [[/vim]]

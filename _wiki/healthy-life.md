@@ -5,6 +5,7 @@ summary :
 date    : 2020-02-19 23:22:02 +0900
 updated : 2021-07-09 22:13:05 +0900
 tag     : health
+resource: 3B/C5E228-2E6D-4759-A851-1D891C92997C
 toc     : true
 public  : true
 parent  : [[/hack]]

@@ -5,6 +5,7 @@ summary : make a hexdump or do the reverse
 date    : 2021-09-24 21:39:48 +0900
 updated : 2021-10-11 15:20:32 +0900
 tag     : bash command
+resource: BF/918E84-1974-41F0-82D0-7E37B4C945F7
 toc     : true
 public  : true
 parent  : [[/cmd]]

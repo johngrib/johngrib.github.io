@@ -5,6 +5,7 @@ summary : 수학자 오카 기요시의 일본 교육 비판
 date    : 2018-03-13 22:36:38 +0900
 updated : 2018-03-14 09:03:34 +0900
 tag     : review 교육
+resource: 3A/6967B1-1D04-4372-9C55-AC152E229816
 toc     : true
 public  : true
 parent  : [[book]]

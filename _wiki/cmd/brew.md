@@ -5,6 +5,7 @@ summary : macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 
 date    : 2018-02-12 10:03:46 +0900
 updated : 2022-10-28 22:09:30 +0900
 tag     : bash mac command
+resource: F4/81FF40-317B-45FF-BF0C-90DB22CB9915
 toc     : true
 public  : true
 parent  : [[/cmd]]

@@ -5,6 +5,7 @@ summary : 받을 때는 관대하게, 보낼 때는 엄격하게.
 date    : 2018-01-07 17:51:33 +0900
 updated : 2022-08-24 18:24:02 +0900
 tag     : proverb law
+resource: 27/CBC3D4-6C76-4A3D-B16E-F552136B665E
 toc     : true
 public  : true
 parent  : [[/jargon]]

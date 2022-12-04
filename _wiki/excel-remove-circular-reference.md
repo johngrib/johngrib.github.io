@@ -5,6 +5,7 @@ summary :
 date    : 2018-09-19 11:44:51 +0900
 updated : 2018-09-19 11:49:01 +0900
 tag     : excel
+resource: 97/5A9006-406B-43F5-A57D-A12AF525D30E
 toc     : true
 public  : true
 parent  : [[Excel]]

@@ -5,6 +5,7 @@ summary : A multi-faceted language for the Java platform
 date    : 2017-12-03 15:01:36 +0900
 updated : 2021-04-16 17:26:37 +0900
 tag     : language jvm-lang groovy
+resource: F0/5219A5-AA39-49AF-9836-C1B62DEFB97B
 toc     : true
 public  : true
 parent  : [[language]]

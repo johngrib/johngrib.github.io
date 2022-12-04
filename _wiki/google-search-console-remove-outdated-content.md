@@ -5,6 +5,7 @@ summary : 구글 웹 도구 - 오래된 콘텐츠 삭제
 date    : 2017-11-28 08:50:10 +0900
 updated : 2020-05-31 10:35:16 +0900
 tag     : google
+resource: A9/6C092B-1EAF-46C0-A5D6-CDBE36BE28ED
 toc     : true
 public  : true
 parent  : [[useful-site]]

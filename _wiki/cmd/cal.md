@@ -5,6 +5,7 @@ summary : displays a calendar and the date of Easter
 date    : 2019-01-06 21:27:09 +0900
 updated : 2022-02-12 21:05:40 +0900
 tag     : bash command
+resource: 71/5E6824-8DC1-44DA-8E54-E135DD73D662
 toc     : true
 public  : true
 parent  : [[/cmd]]

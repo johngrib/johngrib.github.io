@@ -5,6 +5,7 @@ summary : Clojure의 매크로
 date    : 2022-03-09 23:56:39 +0900
 updated : 2022-03-10 00:28:02 +0900
 tag     : clojure 번역
+resource: E2/79F2AE-F3CE-4712-9AAC-461C3084ED2D
 toc     : true
 public  : true
 parent  : [[/clojure/reference]]

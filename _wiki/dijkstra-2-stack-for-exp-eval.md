@@ -5,6 +5,7 @@ summary : Dijkstra's Two-Stack Algorithm for Expression Evaluation
 date    : 2020-05-24 23:04:24 +0900
 updated : 2020-05-25 22:50:23 +0900
 tag     : algorithm dijkstra
+resource: CE/7A85D1-DBAC-4F9E-A3C6-7C409D16D91D
 toc     : true
 public  : true
 parent  : [[algorithm]]

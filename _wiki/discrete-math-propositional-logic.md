@@ -5,6 +5,7 @@ summary : Propositional Logic
 date    : 2019-01-05 17:39:32 +0900
 updated : 2019-01-06 10:27:36 +0900
 tag     : math
+resource: C1/7278F8-A571-422F-B974-1932AC00C102
 toc     : true
 public  : true
 parent  : [[study-discrete-mathematics]]

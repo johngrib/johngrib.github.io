@@ -5,6 +5,7 @@ summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
 updated : 2022-08-02 23:47:12 +0900
 tag     : vim wiki
+resource: 6F/207F04-DA7A-43F7-810F-FB059E57480A
 public  : true
 parent  : [[vim]]
 latex   : false

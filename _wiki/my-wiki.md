@@ -5,6 +5,7 @@ summary : 마음에 드는 무료 위키가 없어서 만들어보았다
 date    : 2017-12-06 21:44:18 +0900
 updated : 2022-11-27 11:07:05 +0900
 tag     : wiki vimwiki jekyll blog
+resource: 97/285ACF-0CF1-465E-AA32-EA86A9DEEB1B
 toc     : true
 comment : true
 public  : true

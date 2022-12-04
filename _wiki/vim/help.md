@@ -5,6 +5,7 @@ summary :
 date    : 2022-02-26 00:38:03 +0900
 updated : 2022-06-18 21:50:40 +0900
 tag     : 
+resource: 44/A86F86-A8DF-4EF0-8E32-7CA5B07F8E79
 toc     : true
 public  : true
 parent  : [[/vim]]

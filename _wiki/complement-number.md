@@ -5,6 +5,7 @@ summary :
 date    : 2021-03-14 23:13:11 +0900
 updated : 2021-03-15 00:11:50 +0900
 tag     : math binary
+resource: 94/7422FA-77EA-4A2F-8A01-B81602F3AE8F
 toc     : true
 public  : true
 parent  : [[math]]

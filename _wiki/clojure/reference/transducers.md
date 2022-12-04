@@ -5,6 +5,7 @@ summary : 번역 중인 문서
 date    : 2022-06-21 23:35:47 +0900
 updated : 2022-06-28 23:11:34 +0900
 tag     : clojure 번역
+resource: 99/1ACF65-65E9-4A66-BA0A-8872F42DCBA1
 toc     : true
 public  : true
 parent  : [[/clojure/reference]]

@@ -5,6 +5,7 @@ summary : 복잡성은 실패할 확률을 높인다
 date    : 2017-12-25 13:02:38 +0900
 updated : 2022-06-20 00:25:09 +0900
 tag     : complexity law
+resource: 08/C7B718-1B92-4020-887C-1A210AF9CB20
 toc     : true
 public  : true
 parent  : [[/jargon]]

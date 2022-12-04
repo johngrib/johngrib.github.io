@@ -5,6 +5,7 @@ summary : Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다
 date    : 2018-03-04 13:47:40 +0900
 updated : 2021-04-22 09:39:22 +0900
 tag     : java performance auto-boxing
+resource: 17/E8794B-A083-4FD9-90C7-1D6C7E504CBF
 toc     : true
 public  : true
 parent  : [[java]]

@@ -5,6 +5,7 @@ summary : 자리이동식 암호법
 date    : 2019-03-09 18:06:30 +0900
 updated : 2022-12-03 16:53:25 +0900
 tag     : encryption
+resource: 0A/017DC0-0D2C-46A4-8259-069ADA7F10A1
 toc     : true
 public  : true
 parent  : [[what]]

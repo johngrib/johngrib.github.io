@@ -5,6 +5,7 @@ summary : 가짜 신원과 주소를 랜덤으로 만들어 준다
 date    : 2020-01-05 13:30:42 +0900
 updated : 2020-01-06 10:06:43 +0900
 tag     : bash command
+resource: F6/795213-1B07-44BC-92B7-134162E65364
 toc     : true
 public  : true
 parent  : [[cmd]]

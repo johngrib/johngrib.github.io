@@ -5,6 +5,7 @@ summary :
 date    : 2018-04-09 22:31:42 +0900
 updated : 2018-04-24 20:49:22 +0900
 tag     : Think-Bayes bayes
+resource: 30/20D7CF-98CB-40B7-AFC0-BBD4385FF60D
 toc     : true
 public  : true
 parent  : [[study-think-bayes]]

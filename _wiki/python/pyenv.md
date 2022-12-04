@@ -5,6 +5,7 @@ summary :
 date    : 2022-04-26 21:55:48 +0900
 updated : 2022-04-26 22:21:15 +0900
 tag     : python
+resource: 81/47103F-FF92-4D75-9E4E-DABDBC674DD8
 toc     : true
 public  : true
 parent  : [[/python]]

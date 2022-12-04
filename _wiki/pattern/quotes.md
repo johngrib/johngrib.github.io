@@ -5,6 +5,7 @@ summary :
 date    : 2019-11-20 21:30:04 +0900
 updated : 2021-10-18 23:16:18 +0900
 tag     : anti-pattern
+resource: E4/8EE43B-93D0-48F1-A072-C977CFA86650
 toc     : true
 public  : true
 parent  : [[/pattern]]

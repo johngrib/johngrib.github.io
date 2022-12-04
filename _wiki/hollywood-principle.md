@@ -5,6 +5,7 @@ summary : "Do not call us, we call You."
 date    : 2019-08-31 13:30:16 +0900
 updated : 2021-09-21 22:39:25 +0900
 tag     : 
+resource: D3/E444B2-7868-4AC8-9A3F-CE06D738781D
 toc     : true
 public  : true
 parent  : [[jargon]]

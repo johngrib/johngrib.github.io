@@ -5,6 +5,7 @@ summary : 네트워킹을 여러 계층에서 동작하는 별도의 기능으�
 date    : 2019-07-10 16:37:12 +0900
 updated : 2019-12-02 23:23:18 +0900
 tag     : network
+resource: 5D/F85194-D976-44AD-88B0-8B9D318F79C8
 toc     : true
 public  : true
 parent  : [[what]]

@@ -5,6 +5,7 @@ summary : Preface
 date    : 2018-11-12 00:06:18 +0900
 updated : 2018-11-12 08:59:52 +0900
 tag     : cs
+resource: 8B/3D6E06-C76F-4DE3-AB37-AE4B08269CFE
 toc     : true
 public  : true
 parent  : [[study-formal-languages-and-automata]]

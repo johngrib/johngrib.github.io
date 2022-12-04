@@ -5,6 +5,7 @@ summary : golang을 배우면서 까먹기 쉬운 것들을 적어두자
 date    : 2018-10-01 10:30:40 +0900
 updated : 2020-05-25 22:12:32 +0900
 tag     : golang cheatsheet
+resource: AF/DD7601-B725-436B-B4CF-399A4E1BE9AF
 toc     : true
 public  : true
 parent  : [[go]]

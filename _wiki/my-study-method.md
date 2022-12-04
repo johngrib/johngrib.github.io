@@ -5,6 +5,7 @@ summary :
 date    : 2019-01-18 23:12:07 +0900
 updated : 2020-02-25 20:37:40 +0900
 tag     : study
+resource: B2/8395A5-73DB-41F1-90AB-C84D38B6061A
 toc     : true
 public  : true
 parent  : [[/hack]]

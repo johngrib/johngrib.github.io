@@ -5,6 +5,7 @@ summary : 내가 선호하는 코딩 폰트를 기록한다
 date    : 2017-12-01 06:02:30 +0900
 updated : 2020-02-27 18:28:34 +0900
 tag     : font config
+resource: BE/126176-417D-4228-AA6D-2AE727DC42B7
 toc     : true
 public  : true
 parent  : [[/hack]]

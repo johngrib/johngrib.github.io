@@ -5,6 +5,7 @@ summary : VIMRC 2022 발표를 자세히 설명하는 글
 date    : 2022-07-23 22:57:48 +0900
 updated : 2022-07-24 09:42:58 +0900
 tag     : vim
+resource: 66/AC3816-2EFD-4730-9F2E-AF4D8EC1AF0F
 toc     : true
 public  : true
 parent  : [[/vim]]

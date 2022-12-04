@@ -5,6 +5,7 @@ summary : ∑ 기호의 의미와 사용
 date    : 2020-03-04 20:49:36 +0900
 updated : 2020-03-04 21:06:48 +0900
 tag     : math
+resource: EA/5A3232-875C-4A6F-BF13-F180F276CC75
 toc     : true
 public  : true
 parent  : [[math]]

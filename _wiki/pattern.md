@@ -5,6 +5,7 @@ summary : 디자인 패턴, 아키텍처 패턴 등
 date    : 2018-02-12 08:18:46 +0900
 updated : 2021-10-03 10:35:26 +0900
 tag     : pattern
+resource: E7/35F890-C284-4D79-9FA5-4C6F2163D3FD
 toc     : true
 public  : true
 parent  : [[index]]

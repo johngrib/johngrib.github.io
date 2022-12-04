@@ -5,6 +5,7 @@ summary : compare files line by line
 date    : 2019-01-11 11:27:49 +0900
 updated : 2021-07-21 23:15:32 +0900
 tag     : bash command
+resource: 87/6AB1CF-ED23-4EED-AF62-5DEE3218040C
 toc     : true
 public  : true
 parent  : [[cmd]]

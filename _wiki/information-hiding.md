@@ -5,6 +5,7 @@ summary :
 date    : 2021-04-30 23:50:07 +0900
 updated : 2021-05-01 21:00:32 +0900
 tag     : proverb oop
+resource: AA/27CE39-3EAD-4CEF-86F4-F51B9B3315A5
 toc     : true
 public  : true
 parent  : [[jargon]]

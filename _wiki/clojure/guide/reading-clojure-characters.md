@@ -5,6 +5,7 @@ summary : Clojure의 다양한 특수문자들
 date    : 2022-01-07 21:55:12 +0900
 updated : 2022-05-11 20:46:52 +0900
 tag     : clojure 번역
+resource: 1E/FEA196-2411-48EE-A1A2-5275B142A880
 toc     : true
 public  : true
 parent  : [[/clojure/guide]]

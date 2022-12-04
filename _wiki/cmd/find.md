@@ -5,6 +5,7 @@ summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
 updated : 2022-02-06 17:47:54 +0900
 tag     : bash command
+resource: 4F/D2AFEF-7A65-4637-82FF-86AEAE03D596
 toc     : true
 public  : true
 parent  : [[/cmd]]

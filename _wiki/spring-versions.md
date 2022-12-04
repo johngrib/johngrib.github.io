@@ -5,6 +5,7 @@ summary :
 date    : 2019-09-21 09:34:43 +0900
 updated : 2019-09-21 11:28:35 +0900
 tag     : java
+resource: CB/CF2267-D748-4A03-BBA6-4B4CCA849FEC
 toc     : true
 public  : true
 parent  : [[spring]]

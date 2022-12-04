@@ -5,6 +5,7 @@ summary : bash tip 모음
 date    : 2018-09-24 13:06:49 +0900
 updated : 2022-01-29 21:26:15 +0900
 tag     : bash
+resource: 6A/7D266D-86AC-46E6-89C2-AA5FD6A2632F
 toc     : true
 public  : true
 parent  : [[cmd]]

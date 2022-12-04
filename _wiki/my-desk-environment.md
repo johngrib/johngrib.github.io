@@ -5,6 +5,7 @@ summary : 경험은 소중하다. 잊지 말고 기록해 두자.
 date    : 2020-02-09 11:43:39 +0900
 updated : 2020-05-22 21:54:44 +0900
 tag     : 
+resource: D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583
 toc     : true
 public  : true
 parent  : [[/hack]]

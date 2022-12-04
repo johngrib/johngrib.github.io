@@ -5,6 +5,7 @@ summary : Debugging what you deploy in Go 1.12
 date    : 2019-06-09 23:13:28 +0900
 updated : 2020-01-25 21:00:23 +0900
 tag     : golang 번역 the-go-blog
+resource: 88/755B32-6BFE-4315-93C9-5A3534C8F4A6
 toc     : true
 public  : true
 parent  : [[Go-Blog-translation]]

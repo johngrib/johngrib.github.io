@@ -5,6 +5,7 @@ summary : 내일 발표인데 오늘 밤에 만든, 회사 동료들을 위해 �
 date    : 2020-04-01 22:24:07 +0900
 updated : 2020-08-06 23:33:44 +0900
 tag     : git
+resource: 17/7ADA27-2AA0-4B6A-93F3-DF3BFA933D7D
 toc     : true
 public  : true
 parent  : [[git]]

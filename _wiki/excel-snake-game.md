@@ -5,6 +5,7 @@ summary : 언젠간 DOOM을 엑셀에서 돌리고 싶다
 date    : 2020-02-23 21:57:16 +0900
 updated : 2020-02-23 23:28:57 +0900
 tag     : game
+resource: D4/9EFC9B-CDD3-4B80-BFAD-619C6072AD05
 toc     : true
 public  : true
 parent  : [[Excel]]

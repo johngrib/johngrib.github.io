@@ -5,6 +5,7 @@ summary : 암호화 정보 이것저것
 date    : 2018-10-09 22:35:58 +0900
 updated : 2018-10-10 10:04:16 +0900
 tag     : encryption
+resource: 08/E3C599-C9C8-43C2-AE82-3A08E07BE3B5
 toc     : true
 public  : true
 parent  : [[what]]

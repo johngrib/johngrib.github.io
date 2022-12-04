@@ -5,6 +5,7 @@ summary : 현재 시간, 시스템 부팅 후 경과된 시간, 로그인 사용
 date    : 2018-02-06 12:33:02 +0900
 updated : 2019-12-22 22:25:24 +0900
 tag     : bash command
+resource: 20/E9A7C0-6504-4402-BFDC-B408A74C355A
 toc     : true
 public  : true
 parent  : [[cmd]]

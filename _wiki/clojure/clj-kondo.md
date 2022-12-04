@@ -5,6 +5,7 @@ summary : Clojure static analyzer and linter
 date    : 2022-11-11 09:42:11 +0900
 updated : 2022-11-13 12:34:16 +0900
 tag     : clojure
+resource: 1F/42D5DE-0FDC-448E-885D-806C3CBEE47F
 toc     : true
 public  : true
 parent  : [[/clojure]]

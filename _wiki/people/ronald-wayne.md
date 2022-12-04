@@ -5,6 +5,7 @@ summary : 2020년 기준 애플 10%는 252조 원
 date    : 2020-12-21 22:17:42 +0900
 updated : 2021-10-06 21:02:09 +0900
 tag     : people
+resource: 93/4B8EB4-710A-4E70-8111-36952669E9AC
 toc     : true
 public  : true
 parent  : [[people]]

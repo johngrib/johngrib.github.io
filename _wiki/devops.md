@@ -5,6 +5,7 @@ summary :
 date    : 2020-01-14 20:15:49 +0900
 updated : 2020-07-19 13:39:26 +0900
 tag     : devops
+resource: EC/C24CBB-D82B-435F-9AC8-7EC2CB12FFFF
 toc     : true
 public  : true
 parent  : [[software-engineering]]

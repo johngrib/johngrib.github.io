@@ -5,6 +5,7 @@ summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
 updated : 2022-03-01 12:13:35 +0900
 tag     : vim completion
+resource: 5B/931A55-1993-4115-B645-57AE9986CA6A
 toc     : true
 public  : true
 parent  : [[/Vim]]

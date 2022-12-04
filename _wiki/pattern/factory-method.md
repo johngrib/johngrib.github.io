@@ -5,6 +5,7 @@ summary : 객체를 생성하기 위한 인터페이스를 정의하고, 인스�
 date    : 2019-10-07 00:16:49 +0900
 updated : 2021-10-16 16:35:12 +0900
 tag     : pattern
+resource: F5/30F0D9-2862-4FC8-992B-011FB14A80EF
 toc     : true
 public  : true
 parent  : [[pattern]]

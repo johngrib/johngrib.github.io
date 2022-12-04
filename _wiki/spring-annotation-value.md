@@ -5,6 +5,7 @@ summary : 환경 변수값을 주입할 수 있다
 date    : 2020-11-29 22:06:37 +0900
 updated : 2020-11-29 22:24:00 +0900
 tag     : spring java annotation
+resource: 20/4CAF4C-D907-49AD-8F6D-FB77B108D8CE
 toc     : true
 public  : true
 parent  : [[spring]]

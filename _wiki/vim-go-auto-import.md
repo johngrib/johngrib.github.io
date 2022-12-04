@@ -5,6 +5,7 @@ summary : 그래 안 될 리가 없지
 date    : 2018-09-18 17:18:21 +0900
 updated : 2018-09-21 08:36:09 +0900
 tag     : golang vim
+resource: 28/E3DBE7-7C8A-4EAF-BECF-E18AF6FE8E58
 toc     : true
 public  : true
 parent  : [[go]]

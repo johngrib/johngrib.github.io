@@ -5,6 +5,7 @@ summary : Sequences
 date    : 2019-01-27 20:09:06 +0900
 updated : 2019-02-16 21:29:36 +0900
 tag     : math
+resource: 43/CBFA0A-C6F6-4B1A-888D-D1FDA86803F1
 toc     : true
 public  : true
 parent  : [[study-discrete-mathematics]]

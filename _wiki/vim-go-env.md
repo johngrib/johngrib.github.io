@@ -5,6 +5,7 @@ summary : 사실 이 문서의 대부분은 vim-go cheatsheet라 할 수 있다
 date    : 2018-09-21 08:29:49 +0900
 updated : 2020-01-27 15:41:51 +0900
 tag     : vim golang
+resource: 3E/023561-FA57-41A2-9F7E-0BCC2AB992BC
 toc     : true
 public  : true
 parent  : [[go]]

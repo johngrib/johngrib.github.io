@@ -5,6 +5,7 @@ summary : 검사시점/사용시점 취약점을 방어하자
 date    : 2020-01-12 22:39:36 +0900
 updated : 2021-07-12 00:07:03 +0900
 tag     : java pattern
+resource: A3/51A03E-7BDA-4DB0-B9F4-D5688156F225
 toc     : true
 public  : true
 parent  : [[index]]

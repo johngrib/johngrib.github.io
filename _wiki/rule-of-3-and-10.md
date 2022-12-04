@@ -5,6 +5,7 @@ summary : 회사 규모가 3과 10의 배수로 커질 때마다 모든 것이 �
 date    : 2020-11-08 17:39:03 +0900
 updated : 2020-11-08 19:45:53 +0900
 tag     : rule
+resource: 8B/4E9669-B373-4E25-9E4F-9B655F0707EE
 toc     : true
 public  : true
 parent  : [[jargon]]

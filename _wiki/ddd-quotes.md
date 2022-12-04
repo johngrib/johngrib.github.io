@@ -5,6 +5,7 @@ summary :
 date    : 2020-07-12 17:27:28 +0900
 updated : 2020-07-12 17:38:37 +0900
 tag     : 
+resource: D0/B80E4A-90AC-4FFB-A655-9A210A37CAC7
 toc     : true
 public  : true
 parent  : [[software-engineering]]

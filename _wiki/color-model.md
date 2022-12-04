@@ -5,6 +5,7 @@ summary : RGB, CMYK, HSB, 인덱스...
 date    : 2021-03-06 17:34:21 +0900
 updated : 2021-03-06 20:48:10 +0900
 tag     : 
+resource: C7/D60EF7-6FD8-4046-BEDF-EF9C53787D97
 toc     : true
 public  : true
 parent  : [[index]]

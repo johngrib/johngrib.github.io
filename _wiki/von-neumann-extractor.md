@@ -5,6 +5,7 @@ summary : 0과 1이 발생할 확률이 다른 경우 사용하자
 date    : 2018-02-04 15:28:29 +0900
 updated : 2021-07-13 21:28:10 +0900
 tag     : von-neumann random
+resource: 72/312C77-D975-4D0E-B40D-9AEA4C7AE0DE
 toc     : true
 public  : true
 parent  : [[algorithm]]

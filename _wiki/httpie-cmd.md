@@ -5,6 +5,7 @@ summary : 아직 curl이 더 익숙하긴 하지만...
 date    : 2021-01-17 13:12:24 +0900
 updated : 2021-01-17 13:24:20 +0900
 tag     : command http
+resource: 39/2302CA-E172-40BF-AAFE-8358FE7714E6
 toc     : true
 public  : true
 parent  : [[cmd]]

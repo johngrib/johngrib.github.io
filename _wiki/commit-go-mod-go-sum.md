@@ -5,6 +5,7 @@ summary : 커밋하자
 date    : 2019-06-02 23:23:24 +0900
 updated : 2020-03-04 22:23:07 +0900
 tag     : golang git
+resource: 40/B8FB4A-F22D-4D88-8085-AA2EEF0FA5E3
 toc     : true
 public  : true
 parent  : [[go]]

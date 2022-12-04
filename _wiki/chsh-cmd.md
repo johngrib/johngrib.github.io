@@ -5,6 +5,7 @@ summary : change your login shell
 date    : 2020-05-07 08:01:50 +0900
 updated : 2020-05-07 08:23:19 +0900
 tag     : bash zsh command
+resource: AE/213528-A967-4B37-8157-C04302668924
 toc     : true
 public  : true
 parent  : [[cmd]]

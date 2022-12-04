@@ -5,6 +5,7 @@ summary : Go Version Manager
 date    : 2022-05-20 00:08:56 +0900
 updated : 2022-05-20 00:26:56 +0900
 tag     : 
+resource: 5D/73CA1A-F031-4A69-9B2C-ABE81F25DA8E
 toc     : true
 public  : true
 parent  : [[/go]]

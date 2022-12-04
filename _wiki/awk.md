@@ -5,6 +5,7 @@ summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
 updated : 2022-09-25 18:58:52 +0900
 tag     : command 언어 brian-kernighan awk
+resource: 97/3C865D-C4E1-43B2-B80E-F96DA7AC7703
 toc     : true
 public  : true
 parent  : [[language]]

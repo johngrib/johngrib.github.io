@@ -5,6 +5,7 @@ summary : vim 플러그인 관리자
 date    : 2022-07-28 00:17:28 +0900
 updated : 2022-07-28 00:24:34 +0900
 tag     : vim
+resource: B8/A5B7AD-DE54-440D-B1FE-F9D12DF11A63
 toc     : true
 public  : true
 parent  : [[/vim]]

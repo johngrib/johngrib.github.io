@@ -5,6 +5,7 @@ summary :
 date    : 2019-07-14 19:51:37 +0900
 updated : 2021-08-01 10:52:33 +0900
 tag     : 
+resource: CA/77EF68-F6E5-457F-8CC3-93D81B5A4B61
 toc     : true
 public  : true
 parent  : [[index]]

@@ -5,6 +5,7 @@ summary :
 date    : 2022-01-29 12:36:51 +0900
 updated : 2022-01-29 15:39:39 +0900
 tag     : bash command
+resource: A5/DC6546-73C7-41A3-B083-096AD890BF84
 toc     : true
 public  : true
 parent  : [[/cmd]]

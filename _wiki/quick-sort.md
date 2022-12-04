@@ -5,6 +5,7 @@ summary : 빠른정렬
 date    : 2020-07-19 14:19:21 +0900
 updated : 2022-09-25 13:35:18 +0900
 tag     : sort
+resource: CF/898846-73A7-4247-9649-7363FB6F2CC3
 toc     : true
 public  : true
 parent  : [[algorithm]]

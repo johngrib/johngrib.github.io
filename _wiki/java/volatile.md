@@ -5,6 +5,7 @@ summary :
 date    : 2022-02-01 10:46:59 +0900
 updated : 2022-02-01 15:10:14 +0900
 tag     : java fortran c cpp csharp
+resource: BF/E0A171-7AFF-4A20-9010-C17091869478
 toc     : true
 public  : true
 parent  : [[/java]]

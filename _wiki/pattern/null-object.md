@@ -5,6 +5,7 @@ summary : 인터페이스는 구현하지만 아무 일도 하지 않는 객체
 date    : 2019-10-07 22:48:28 +0900
 updated : 2021-10-14 19:46:44 +0900
 tag     : pattern
+resource: 70/8A6799-B38A-4559-B181-9CDFE7882F83
 toc     : true
 public  : true
 parent  : [[pattern]]

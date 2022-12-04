@@ -5,6 +5,7 @@ summary :
 date    : 2021-09-23 13:55:43 +0900
 updated : 2021-10-10 18:26:29 +0900
 tag     : 
+resource: 8B/8C9CB0-84EB-46CD-9952-02B9F919B7C8
 toc     : true
 public  : true
 parent  : [[root-index]]

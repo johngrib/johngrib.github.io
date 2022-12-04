@@ -5,6 +5,7 @@ summary : java.lang.Thread.State enum
 date    : 2022-11-06 22:20:15 +0900
 updated : 2022-11-06 23:00:43 +0900
 tag     : java thread
+resource: 4C/D08810-AD42-47FF-9A9C-35A7378762F3
 toc     : true
 public  : true
 parent  : [[/java]]

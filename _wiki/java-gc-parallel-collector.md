@@ -5,6 +5,7 @@ summary : Java8 디폴트 GC
 date    : 2019-09-16 12:18:37 +0900
 updated : 2022-05-11 00:03:49 +0900
 tag     : java gc
+resource: 57/D95DA8-C9B0-48C9-A913-4CD198FC1A27
 toc     : true
 public  : true
 parent  : [[/java/gc]]

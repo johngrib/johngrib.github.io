@@ -5,6 +5,7 @@ summary :
 date    : 2019-08-13 13:32:07 +0900
 updated : 2019-11-19 22:17:55 +0900
 tag     : book
+resource: A2/CEEF2F-8C07-4CD1-93D5-47B2D34B3BA6
 toc     : true
 public  : true
 parent  : [[diary]]

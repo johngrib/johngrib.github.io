@@ -5,6 +5,7 @@ summary :
 date    : 2018-07-06 16:30:54 +0900
 updated : 2018-07-06 23:22:57 +0900
 tag     : 
+resource: EB/FFFC01-D3C4-4005-BA3A-C3ACF4E4958A
 toc     : true
 public  : true
 parent  : [[book]]

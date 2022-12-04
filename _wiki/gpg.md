@@ -5,6 +5,7 @@ summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
 updated : 2022-06-19 20:21:40 +0900
 tag     : bash encryption gnu command
+resource: 66/BFEA1D-BCE2-445A-A6AD-64909525CDE2
 toc     : true
 public  : true
 parent  : [[cmd]]

@@ -5,6 +5,7 @@ summary : 전자 신호 및 전력을 증폭하거나 스위칭하는 데 사용
 date    : 2019-03-17 18:08:43 +0900
 updated : 2020-08-02 10:29:38 +0900
 tag     : transistor bell-labs
+resource: 6F/2C80FE-980E-490F-AE13-B0FDA19BBE48
 toc     : true
 public  : true
 parent  : [[what]]

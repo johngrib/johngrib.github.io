@@ -5,6 +5,7 @@ summary :
 date    : 2020-08-09 11:15:09 +0900
 updated : 2020-08-09 11:25:52 +0900
 tag     : 
+resource: 04/08EE04-1205-48F5-9044-2FEB31BE0390
 toc     : true
 public  : true
 parent  : [[people]]

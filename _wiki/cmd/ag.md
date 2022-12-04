@@ -5,6 +5,7 @@ summary : the silver searcher
 date    : 2018-12-27 22:01:47 +0900
 updated : 2021-12-25 23:19:01 +0900
 tag     : bash command
+resource: 3A/B767D9-C133-4453-8511-E7DC2EA9B142
 toc     : true
 public  : true
 parent  : [[/cmd]]

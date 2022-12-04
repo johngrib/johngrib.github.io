@@ -5,6 +5,7 @@ summary : 결론은 터미널
 date    : 2017-08-06 13:35:00 +0900
 updated : 2018-04-21 11:41:57 +0900
 tag     : hammerspoon
+resource: 2C/ADC2E7-E82F-41AD-AB90-75AE0748FDF6
 toc     : true
 comment : true
 public  : true

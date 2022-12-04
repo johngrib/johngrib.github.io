@@ -5,6 +5,7 @@ summary : 테트리스 개발과 저작권 분쟁 이야기
 date    : 2018-03-20 22:25:10 +0900
 updated : 2018-03-20 23:21:57 +0900
 tag     : review game history
+resource: FB/A9A409-7A3B-4FBE-93CE-A9B67D403AA6
 toc     : true
 public  : true
 parent  : [[book]]

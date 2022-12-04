@@ -5,6 +5,7 @@ summary :
 date    : 2018-04-30 22:46:10 +0900
 updated : 2020-05-04 23:41:25 +0900
 tag     : 
+resource: 09/2B835A-ED1A-46D2-A1BD-9DA7665F65CC
 toc     : true
 public  : true
 parent  : [[book]]

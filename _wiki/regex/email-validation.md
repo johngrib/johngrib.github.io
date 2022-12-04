@@ -5,6 +5,7 @@ summary : 이메일 주소 검증 코드를 짤 일이 있어 작업한 기록�
 date    : 2019-04-11 22:05:44 +0900
 updated : 2022-11-13 21:53:29 +0900
 tag     : email regex php
+resource: 48/634ABC-ECC5-4120-A645-AC6D95280B89
 toc     : true
 public  : true
 parent  : [[/regex]]

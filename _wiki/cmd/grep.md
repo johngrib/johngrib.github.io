@@ -5,6 +5,7 @@ summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
 updated : 2022-03-08 00:07:17 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
+resource: E6/02C9DC-B4FA-4FD4-B205-D2D93AD4BBAF
 toc     : true
 public  : true
 parent  : [[/cmd]]

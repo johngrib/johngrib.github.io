@@ -5,6 +5,7 @@ summary : S = 1 / ((1-f) + f/s)
 date    : 2020-06-19 23:31:46 +0900
 updated : 2020-08-03 08:08:35 +0900
 tag     : performance proverb law
+resource: ED/A4B409-6647-443D-94B7-54A59987ABB8
 toc     : true
 public  : true
 parent  : [[jargon]]

@@ -5,6 +5,7 @@ summary : 상식선은 알아두자
 date    : 2020-12-27 22:33:53 +0900
 updated : 2020-12-27 22:56:10 +0900
 tag     : finance
+resource: DD/A62D98-83D9-4EEE-AF1F-42D2E397E739
 toc     : true
 public  : true
 parent  : [[index]]

@@ -5,6 +5,7 @@ summary : 컴포넌트 자체가 아니라 컴포넌트의 대리자와 통신�
 date    : 2021-11-06 21:55:46 +0900
 updated : 2022-10-28 21:09:02 +0900
 tag     : GoF-design-pattern posa
+resource: FA/8151E5-5F5E-4C54-A7B5-9AC710573010
 toc     : true
 public  : true
 parent  : [[/pattern]]

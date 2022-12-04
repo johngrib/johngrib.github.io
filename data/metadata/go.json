@@ -5,7 +5,7 @@
  "parent": "language",
  "url": "/wiki/go",
  "updated": "2021-10-26 22:13:38 +0900",
- "id": "922803F1-5005-439A-A3D6-50D1910126E6",
+ "resource": "9C/C08D64-902F-4DB0-A197-0416F811B3BF",
  "children": [
   "commit-go-mod-go-sum",
   "ginkgo",

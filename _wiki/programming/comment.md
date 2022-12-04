@@ -5,6 +5,7 @@ summary : 주석은 짧고 간결하게
 date    : 2022-01-22 10:47:02 +0900
 updated : 2022-01-22 14:52:51 +0900
 tag     : 
+resource: 2D/614D4B-51A0-4958-8CE2-A59175F1A0F0
 toc     : true
 public  : true
 parent  : /programming

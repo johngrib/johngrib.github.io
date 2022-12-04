@@ -5,6 +5,7 @@ summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
 updated : 2021-10-10 10:24:41 +0900
 tag     : GoF-design-pattern
+resource: F2/0FBC79-6C84-46B1-B5C2-5D3C1CAF8064
 toc     : true
 public  : true
 parent  : [[/pattern]]

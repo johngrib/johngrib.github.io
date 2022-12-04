@@ -5,6 +5,7 @@ summary :
 date    : 2021-10-14 23:17:27 +0900
 updated : 2021-10-15 21:14:39 +0900
 tag     : ddd
+resource: 5E/37F311-6C7C-4AD2-AEF6-D7DCFB25EC27
 toc     : true
 public  : true
 parent  : [[/pattern]]

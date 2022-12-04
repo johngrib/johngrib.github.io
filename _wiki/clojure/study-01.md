@@ -5,6 +5,7 @@ summary :
 date    : 2021-12-08 22:48:20 +0900
 updated : 2021-12-09 23:14:02 +0900
 tag     : clojure
+resource: 30/D76CA0-E8E0-4D6B-8F62-DFFB87253C44
 toc     : true
 public  : true
 parent  : [[/clojure]]

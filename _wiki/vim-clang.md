@@ -5,6 +5,7 @@ summary :
 date    : 2020-03-29 19:51:36 +0900
 updated : 2020-03-29 20:53:29 +0900
 tag     : 
+resource: D3/402D3B-3EFE-457A-BD03-E341DEB9CD4E
 toc     : true
 public  : true
 parent  : [[vim]]

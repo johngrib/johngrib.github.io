@@ -5,6 +5,7 @@ summary : Software Engineering Code of Ethics
 date    : 2018-02-06 23:11:38 +0900
 updated : 2018-02-07 06:48:10 +0900
 tag     : ACM IEEE ethics 번역
+resource: 13/35350B-B898-45D2-96B8-F5348972ACE5
 toc     : true
 public  : true
 parent  : [[software-engineering]]

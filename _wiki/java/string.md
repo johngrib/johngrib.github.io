@@ -5,6 +5,7 @@ summary :
 date    : 2022-11-11 00:27:32 +0900
 updated : 2022-11-20 21:17:05 +0900
 tag     : java clojure
+resource: 8C/44F1A0-7F42-415F-BB9C-1098ECC5E5D2
 toc     : true
 public  : true
 parent  : [[/java]]

@@ -5,6 +5,7 @@ summary : Esc - 영문전환도 만들어 봅시다
 date    : 2017-08-05 12:11:00 +0900
 updated : 2018-04-21 11:39:59 +0900
 tag     : hammerspoon
+resource: E0/719853-86E6-4129-BED3-12AD6BF0FCCF
 toc     : true
 comment : true
 public  : true

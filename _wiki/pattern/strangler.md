@@ -5,6 +5,7 @@ summary : 레거시 시스템을 점진적으로 교체하여 레거시 시스�
 date    : 2020-01-18 07:50:57 +0900
 updated : 2021-10-03 10:35:55 +0900
 tag     : pattern
+resource: F7/90F218-996C-431C-84E6-31E163F6D11F
 toc     : true
 public  : true
 parent  : [[/pattern]]

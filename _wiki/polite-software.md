@@ -5,6 +5,7 @@ summary : Polite Software
 date    : 2019-07-08 21:46:38 +0900
 updated : 2019-07-08 22:23:43 +0900
 tag     : 
+resource: EE/DEED64-0960-423B-BD8F-8AADCED4D56C
 toc     : true
 public  : true
 parent  : [[software-engineering]]

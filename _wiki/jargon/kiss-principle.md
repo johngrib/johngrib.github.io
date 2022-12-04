@@ -5,6 +5,7 @@ summary : Keep It Simple Stupid
 date    : 2022-06-20 00:31:26 +0900
 updated : 2022-06-20 00:46:28 +0900
 tag     : 
+resource: FD/53F597-B8EC-41A9-9192-34501AA5EBE4
 toc     : true
 public  : true
 parent  : [[/jargon]]

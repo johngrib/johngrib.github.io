@@ -5,6 +5,7 @@ summary : 그리고 나의 vim 사용 습관
 date    : 2019-05-19 22:31:27 +0900
 updated : 2020-07-19 13:32:18 +0900
 tag     : vim
+resource: 0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA
 toc     : true
 public  : true
 parent  : [[vim]]

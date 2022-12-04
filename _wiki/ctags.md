@@ -5,6 +5,7 @@ summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
 updated : 2022-11-05 10:43:36 +0900
 tag     : bash vim ctags golang command clojure vim-syntax-color
+resource: 4D/8CF153-8D49-406F-875F-8385D1599361
 toc     : true
 public  : true
 parent  : [[cmd]]

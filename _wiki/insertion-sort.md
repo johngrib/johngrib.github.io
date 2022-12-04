@@ -5,6 +5,7 @@ summary : 최선 O(N), 평균 O(N^2), 최악 O(N^2)
 date    : 2020-06-14 17:32:52 +0900
 updated : 2020-09-20 15:50:20 +0900
 tag     : algorithm sort
+resource: 77/538BF2-1F58-4C54-ABF3-AACA9CDAF5D2
 toc     : true
 public  : true
 parent  : [[algorithm]]

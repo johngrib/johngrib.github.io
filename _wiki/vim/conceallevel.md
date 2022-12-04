@@ -5,6 +5,7 @@ summary : Vim에서 글자나 기호가 사라진다면 conceallevel을 확인�
 date    : 2017-11-29 17:47:59 +0900
 updated : 2022-08-02 23:49:18 +0900
 tag     : vim trouble-shooting
+resource: FE/0B7ED0-3244-49B7-A460-C0F53E31C64F
 toc     : true
 public  : true
 parent  : [[/vim]]

@@ -5,6 +5,7 @@ summary :
 date    : 2020-01-14 20:30:41 +0900
 updated : 2020-01-16 21:43:40 +0900
 tag     : 
+resource: 14/E6ABFA-4A30-4C93-9599-396784699245
 toc     : true
 public  : true
 parent  : [[software-engineering]]

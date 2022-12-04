@@ -5,6 +5,7 @@ summary :
 date    : 2020-03-26 22:52:47 +0900
 updated : 2020-03-28 14:12:28 +0900
 tag     : business
+resource: 19/611EE6-D45A-49BE-825A-6A38F3FAC1D8
 toc     : true
 public  : true
 parent  : [[better-work]]

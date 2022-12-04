@@ -5,6 +5,7 @@ summary :
 date    : 2020-06-06 17:20:02 +0900
 updated : 2020-06-06 17:27:46 +0900
 tag     : proverb
+resource: AA/6DCE67-359F-4F4F-AE90-F47785F0A154
 toc     : true
 public  : true
 parent  : [[jargon]]

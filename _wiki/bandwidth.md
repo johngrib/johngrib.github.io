@@ -5,6 +5,7 @@ summary : 단위 시간 동안 전달 가능한 최대 데이터 양
 date    : 2019-07-09 16:22:04 +0900
 updated : 2022-01-03 22:54:36 +0900
 tag     : network performance
+resource: F4/BEE0C2-230B-475E-885F-35013BF43C42
 toc     : true
 public  : true
 parent  : [[what]]

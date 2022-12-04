@@ -5,6 +5,7 @@ summary : 요청이 처리되길 기다리는 시간
 date    : 2019-06-28 16:30:28 +0900
 updated : 2022-01-03 23:06:31 +0900
 tag     : network performance
+resource: AA/9FC4AE-9A48-4C96-AE89-30E383723B88
 toc     : true
 public  : true
 parent  : [[what]]

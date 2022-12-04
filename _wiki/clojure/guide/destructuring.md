@@ -5,6 +5,7 @@ summary : 클로저의 구조분해
 date    : 2022-02-27 00:36:51 +0900
 updated : 2022-03-01 00:27:36 +0900
 tag     : clojure
+resource: 5E/2AC796-8B14-4571-B2DF-6671479CB46C
 toc     : true
 public  : true
 parent  : [[/clojure/guide]]

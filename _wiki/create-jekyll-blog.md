@@ -5,6 +5,7 @@ summary : 누구나 만드는 github 공짜 블로그
 date    : 2017-01-21 22:37:25 +0900
 updated : 2020-02-09 12:43:43 +0900
 tag     : jekyll
+resource: E1/C03E76-760D-4C4B-B130-B8A454200CF3
 toc     : true
 public  : true
 parent  : [[blog]]

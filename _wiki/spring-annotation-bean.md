@@ -5,6 +5,7 @@ summary :
 date    : 2021-01-09 22:36:00 +0900
 updated : 2021-01-10 00:09:35 +0900
 tag     : spring
+resource: 41/FEABC4-38B4-4D3D-B234-CDAE576A8F28
 toc     : true
 public  : true
 parent  : [[spring]]

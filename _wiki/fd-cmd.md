@@ -5,6 +5,7 @@ summary : 이름으로 파일을 찾아준다
 date    : 2019-12-28 17:03:29 +0900
 updated : 2020-03-03 23:19:35 +0900
 tag     : bash command
+resource: E6/FC7094-46CA-42A3-8A7D-710AE9E0BA24
 toc     : true
 public  : true
 parent  : [[cmd]]

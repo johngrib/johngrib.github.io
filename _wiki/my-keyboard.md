@@ -5,6 +5,7 @@ summary : 역사를 정리해 보자
 date    : 2018-11-22 10:57:14 +0900
 updated : 2022-11-19 15:27:19 +0900
 tag     : keyboard
+resource: A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7
 toc     : true
 public  : true
 parent  : [[/hack]]

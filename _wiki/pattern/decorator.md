@@ -5,6 +5,7 @@ summary : 객체에 동적으로 새로운 책임을 추가한다
 date    : 2019-10-05 10:42:26 +0900
 updated : 2021-10-11 13:55:53 +0900
 tag     : GoF-design-pattern
+resource: 2A/CF0F9F-65A0-4F88-BA10-330E4AB1DBDF
 toc     : true
 public  : true
 parent  : [[/pattern]]

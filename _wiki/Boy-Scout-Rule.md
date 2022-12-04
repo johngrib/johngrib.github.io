@@ -5,6 +5,7 @@ summary : 캠프장은 처음 왔을 때보다 더 깨끗하게 해놓고 떠나
 date    : 2018-02-04 16:18:51 +0900
 updated : 2022-07-17 20:05:35 +0900
 tag     : rule Uncle-Bob
+resource: DA/921A27-7835-4743-8E7C-9FD27D837AEE
 toc     : true
 public  : true
 parent  : [[jargon]]

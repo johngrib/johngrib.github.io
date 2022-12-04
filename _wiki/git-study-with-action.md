@@ -5,6 +5,7 @@ summary : 아직 작성중인 글입니다
 date    : 2020-04-19 22:27:20 +0900
 updated : 2021-10-07 21:37:43 +0900
 tag     : 
+resource: 82/7A8D95-910C-4E22-951E-5BFAA3AAAC67
 toc     : true
 public  : true
 parent  : [[git]]

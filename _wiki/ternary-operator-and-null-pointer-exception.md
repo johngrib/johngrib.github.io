@@ -5,6 +5,7 @@ summary : 언박싱하다 NPE가 터지는 것이 원인
 date    : 2020-03-05 22:50:36 +0900
 updated : 2021-04-22 09:40:40 +0900
 tag     : java auto-boxing npe
+resource: 2A/418BD3-E101-4963-A3DF-20478E49F36B
 toc     : true
 public  : true
 parent  : [[java]]

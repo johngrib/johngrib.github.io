@@ -5,6 +5,7 @@ summary : 실패 가능성이 높은 위험한 테스트가 중요하다
 date    : 2022-08-30 21:36:47 +0900
 updated : 2022-08-31 21:04:54 +0900
 tag     : test karl-popper
+resource: 53/BE71C3-DD62-47CF-A71A-EFB68F6AC128
 toc     : true
 public  : true
 parent  : [[/article]]

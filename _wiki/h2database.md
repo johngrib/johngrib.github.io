@@ -5,6 +5,7 @@ summary : H2, the Java SQL database
 date    : 2021-01-07 23:42:08 +0900
 updated : 2022-01-17 17:19:06 +0900
 tag     : db
+resource: 68/3957B4-AD22-4DDA-98D3-C67578BE4587
 toc     : true
 public  : true
 parent  : tools

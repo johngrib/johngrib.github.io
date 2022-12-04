@@ -5,6 +5,7 @@ summary :
 date    : 2022-04-05 23:44:19 +0900
 updated : 2022-04-09 16:55:25 +0900
 tag     : git
+resource: E3/A42C58-8477-4141-ABFB-53FB131AF829
 toc     : true
 public  : true
 parent  : [[/git]]

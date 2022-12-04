@@ -5,6 +5,7 @@ summary :
 date    : 2020-02-10 23:04:19 +0900
 updated : 2020-02-10 23:08:06 +0900
 tag     : random
+resource: 91/CC177D-FB4D-4067-8E89-A3BFE3B24BFD
 toc     : true
 public  : true
 parent  : [[java]]

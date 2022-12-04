@@ -5,6 +5,7 @@ summary : 구글 및 여러 검색 서비스 사용법
 date    : 2017-12-23 18:23:50 +0900
 updated : 2020-07-19 18:29:23 +0900
 tag     : google twitter facebook
+resource: 1D/717663-7D10-49F2-BC0E-CC52049DD385
 toc     : true
 public  : true
 parent  : [[how-to]]

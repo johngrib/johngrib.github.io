@@ -5,6 +5,7 @@ summary :
 date    : 2020-02-05 21:03:59 +0900
 updated : 2020-08-05 22:31:09 +0900
 tag     : story
+resource: 71/D1710A-4F98-48D7-A39A-7FFF52137674
 toc     : true
 public  : true
 parent  : [[legend]]

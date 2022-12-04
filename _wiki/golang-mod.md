@@ -5,6 +5,7 @@ summary : Using Go Modules
 date    : 2019-06-02 23:23:24 +0900
 updated : 2021-10-26 22:13:44 +0900
 tag     : golang 번역 the-go-blog
+resource: F1/94635D-0343-4B61-95CD-39A8793E6CA7
 toc     : true
 public  : true
 parent  : [[Go-Blog-translation]]

@@ -5,6 +5,7 @@ summary :
 date    : 2019-06-01 07:55:33 +0900
 updated : 2022-08-03 00:08:58 +0900
 tag     : bash command container
+resource: 45/7F8101-FE66-44F1-B0A4-F27F1CCFE273
 toc     : true
 public  : true
 parent  : [[how-to]]

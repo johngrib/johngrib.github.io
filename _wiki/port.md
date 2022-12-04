@@ -5,6 +5,7 @@ summary :
 date    : 2019-07-26 20:08:40 +0900
 updated : 2019-07-26 20:58:45 +0900
 tag     : network
+resource: 16/F2303D-2D85-42CB-B2E9-2FA2281EB945
 toc     : true
 public  : true
 parent  : [[what]]

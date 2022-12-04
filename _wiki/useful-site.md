@@ -5,6 +5,7 @@ summary :
 date    : 2018-02-06 07:01:45 +0900
 updated : 2022-11-19 15:17:12 +0900
 tag     : 
+resource: 29/4A9F29-0C6F-4C1D-8600-34457BE41700
 toc     : true
 public  : true
 parent  : [[tools]]

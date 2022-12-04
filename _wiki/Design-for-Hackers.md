@@ -5,6 +5,7 @@ summary : 디자인을 이해하는 공학적 사고방식
 date    : 2018-03-01 16:54:12 +0900
 updated : 2020-07-19 13:42:42 +0900
 tag     : book design
+resource: 51/364B5C-4741-41E3-983E-6729684A5B19
 toc     : true
 public  : true
 parent  : [[book]]

@@ -5,6 +5,7 @@ summary : 02.SUMS.01.NOTATION
 date    : 2018-05-02 22:02:21 +0900
 updated : 2020-04-10 23:51:40 +0900
 tag     : math
+resource: EB/D2947C-93BD-4AC0-8214-F34B5369E2CA
 toc     : true
 public  : true
 parent  : [[study-concrete-math]]

@@ -5,6 +5,7 @@ summary : awk 만세
 date    : 2019-11-30 21:01:19 +0900
 updated : 2019-11-30 21:57:13 +0900
 tag     : vim awk
+resource: 65/48F94E-D4A9-47E0-8B24-3EEBE188F96E
 toc     : true
 public  : true
 parent  : [[vim]]

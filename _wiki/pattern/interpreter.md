@@ -5,6 +5,7 @@ summary : 언어를 위한 인터프리터를 구현한다.
 date    : 2021-10-10 18:35:08 +0900
 updated : 2021-10-11 11:39:07 +0900
 tag     : GoF-design-pattern
+resource: 72/1F482B-C738-43B5-A114-607E10DBDF98
 toc     : true
 public  : true
 parent  : [[/pattern]]

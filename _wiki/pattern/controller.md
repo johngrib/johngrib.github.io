@@ -5,6 +5,7 @@ summary : UI 계층으로부터 가장 먼저 메시지를 받는 객체는 누�
 date    : 2021-09-12 10:16:13 +0900
 updated : 2021-09-12 11:08:33 +0900
 tag     : GRASP
+resource: 3C/5F18E8-ED1E-44B6-8F92-AC39A112DF06
 toc     : true
 public  : true
 parent  : [[/pattern]]

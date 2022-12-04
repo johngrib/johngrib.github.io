@@ -5,6 +5,7 @@ summary : 작성중인 문서
 date    : 2021-12-26 17:48:37 +0900
 updated : 2022-02-05 21:58:57 +0900
 tag     : clojure
+resource: D8/E8EA63-0B5C-4926-8DF8-88BF97F9903C
 toc     : true
 public  : true
 parent  : [[/clojure/study]]

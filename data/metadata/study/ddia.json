@@ -5,7 +5,7 @@
  "parent": "study",
  "url": "/wiki/study/ddia",
  "updated": "2022-05-22 18:08:11 +0900",
- "id": "59C073AA-9220-4D3C-BF34-52202ACF7F35",
+ "resource": "58/90F1E5-FF8A-4BE2-80A8-4D26EEC5BF2C",
  "children": [
   "study/ddia/01-reliable-scalable-maintainable",
   "study/ddia/02-data-models-and-query-languages",

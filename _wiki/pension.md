@@ -5,6 +5,7 @@ summary : 하나도 모르겠다 정리해 보자
 date    : 2020-12-27 09:57:32 +0900
 updated : 2020-12-27 14:37:52 +0900
 tag     : finance
+resource: F0/E62955-7750-42FD-9183-E5B4913F86E4
 toc     : true
 public  : true
 parent  : [[index]]

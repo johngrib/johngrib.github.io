@@ -5,6 +5,7 @@ summary :
 date    : 2020-12-27 21:21:30 +0900
 updated : 2020-12-27 21:25:48 +0900
 tag     : twitter
+resource: 5B/1119C5-D5EF-499D-8ED5-DBD8FF83C768
 toc     : true
 public  : true
 parent  : [[useful-site]]

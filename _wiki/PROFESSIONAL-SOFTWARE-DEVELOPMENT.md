@@ -5,6 +5,7 @@ summary : PROFESSIONAL SOFTWARE DEVELOPMENT
 date    : 2018-02-06 08:48:58 +0900
 updated : 2018-02-06 23:05:06 +0900
 tag     : book
+resource: 7C/629515-B415-4097-B27E-F072D7F0C746
 toc     : true
 public  : true
 parent  : [[book]]

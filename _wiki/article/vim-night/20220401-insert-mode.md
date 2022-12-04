@@ -5,6 +5,7 @@ summary : INSERT MODE 자동완성 이야기
 date    : 2022-11-16 22:46:50 +0900
 updated : 2022-11-16 23:27:38 +0900
 tag     : 
+resource: 42/427FC2-3485-4ABD-89AC-FABF27939D50
 toc     : true
 public  : true
 parent  : [[/article]]

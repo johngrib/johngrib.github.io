@@ -5,6 +5,7 @@ summary : 프로그램을 6배 빠르게 하고, 보고서에 -2000 줄을 작�
 date    : 2018-02-08 12:06:18 +0900
 updated : 2022-08-14 19:01:21 +0900
 tag     : story Bill-Atkinson Steve-Jobs
+resource: 2B/360A80-6EBE-4CE8-8609-3CCEEEFDAE9D
 toc     : true
 public  : true
 parent  : [[/people]]

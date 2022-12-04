@@ -5,6 +5,7 @@ summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
 updated : 2022-10-31 00:00:56 +0900
 tag     : clojure vim
+resource: C8/18B9F8-7A97-432E-9CEC-795E39AB8608
 toc     : true
 public  : true
 parent  : [[/clojure]]

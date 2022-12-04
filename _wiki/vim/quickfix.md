@@ -5,6 +5,7 @@ summary :
 date    : 2022-04-15 22:20:55 +0900
 updated : 2022-04-16 00:48:18 +0900
 tag     : vim quickfix clojure
+resource: 28/70E648-FF7A-4193-8A66-83767057E8D6
 toc     : true
 public  : true
 parent  : [[/vim]]

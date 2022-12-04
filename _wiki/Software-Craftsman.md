@@ -5,6 +5,7 @@ summary : The Software Craftman-Professionalism, Pragmatism, Pride by Sandro Man
 date    : 2018-01-30 22:43:43 +0900
 updated : 2018-02-01 22:56:16 +0900
 tag     : review 장인정신 괴담
+resource: 4C/3508D3-0403-4B95-9575-32B158F4508E
 toc     : true
 public  : true
 parent  : [[book]]

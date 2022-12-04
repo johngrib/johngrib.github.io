@@ -5,6 +5,7 @@ summary : 나는 엔지니어입니다
 date    : 2020-07-09 21:41:30 +0900
 updated : 2021-10-03 00:54:20 +0900
 tag     : 
+resource: 8B/8FBBA9-C4F7-40FF-931F-A55377B20C0C
 toc     : true
 public  : true
 parent  : [[summary]]

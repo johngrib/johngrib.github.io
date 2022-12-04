@@ -5,6 +5,7 @@ summary : Another level of indirection
 date    : 2022-09-09 17:43:57 +0900
 updated : 2022-09-09 18:22:48 +0900
 tag     : 
+resource: F5/915B72-C537-4B0E-9807-592DA839EB00
 toc     : true
 public  : true
 parent  : 

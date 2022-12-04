@@ -5,6 +5,7 @@ summary : Project Jigsaw; Module System Quick-Start Guide
 date    : 2019-09-12 19:31:50 +0900
 updated : 2021-10-16 19:59:06 +0900
 tag     : java 번역
+resource: 38/00D58F-EBA9-4ACB-88D6-6F39ADF39761
 toc     : true
 public  : true
 parent  : [[java]]

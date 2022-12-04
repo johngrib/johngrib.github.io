@@ -5,6 +5,7 @@ summary : Java9 ~ 12 디폴트 GC
 date    : 2019-09-16 14:36:19 +0900
 updated : 2022-05-11 00:05:23 +0900
 tag     : java gc
+resource: 59/4C50BB-E399-4936-A00F-1A9D9C900CC9
 toc     : true
 public  : true
 parent  : [[/java/gc]]

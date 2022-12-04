@@ -5,6 +5,7 @@ summary : An arbitrary precision calculator language
 date    : 2018-10-07 18:12:19 +0900
 updated : 2022-11-20 12:26:39 +0900
 tag     : bash command
+resource: 2D/9A7DF4-5801-4163-BAAF-8BBC5D36B3AB
 toc     : true
 public  : true
 parent  : [[language]]

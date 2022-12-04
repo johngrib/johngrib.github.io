@@ -5,6 +5,7 @@ summary :
 date    : 2022-04-26 21:40:55 +0900
 updated : 2022-04-26 21:47:22 +0900
 tag     : python vim
+resource: E3/4B023C-7F7F-4E15-B01E-45A9250825D2
 toc     : true
 public  : true
 parent  : [[/python]]

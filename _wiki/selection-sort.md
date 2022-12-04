@@ -5,6 +5,7 @@ summary : O(N^2)의 매우 단순한 정렬 알고리즘
 date    : 2020-06-06 18:20:16 +0900
 updated : 2020-06-06 18:47:45 +0900
 tag     : algorithm sort
+resource: 9F/78B831-5173-477C-979E-2EF9D63089AE
 toc     : true
 public  : true
 parent  : [[algorithm]]

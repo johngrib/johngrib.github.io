@@ -5,6 +5,7 @@ summary : Dependency Manager for PHP
 date    : 2019-01-13 22:21:50 +0900
 updated : 2021-07-05 21:57:22 +0900
 tag     : php command
+resource: 79/4DA1E4-2692-486A-9808-CEDD1A3E63FE
 toc     : true
 public  : true
 parent  : [[php]]

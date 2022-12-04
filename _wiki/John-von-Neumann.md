@@ -5,6 +5,7 @@ summary : 천재는 오직 폰 노이만 뿐이다(von Neumann was the only geni
 date    : 2018-04-03 22:22:28 +0900
 updated : 2021-06-29 23:16:20 +0900
 tag     : von-neumann sort 인물
+resource: C9/DC2C2A-EA2A-44C6-BDCE-AA7B347547D2
 toc     : true
 public  : true
 parent  : [[people]]

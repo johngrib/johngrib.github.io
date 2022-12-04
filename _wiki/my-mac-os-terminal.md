@@ -5,6 +5,7 @@ summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
 updated : 2021-10-17 18:48:07 +0900
 tag     : terminal study vim
+resource: FB/032717-48AB-406E-9732-3208E3B9AA95
 toc     : true
 public  : true
 parent  : [[/hack]]

@@ -5,6 +5,7 @@ summary :
 date    : 2020-07-25 11:03:27 +0900
 updated : 2020-08-02 16:33:07 +0900
 tag     : unix 알렉산더-그레이엄-벨 bell-labs
+resource: 57/7F2CCB-E73D-4468-8AFF-F4459991C92F
 toc     : true
 public  : true
 parent  : [[index]]

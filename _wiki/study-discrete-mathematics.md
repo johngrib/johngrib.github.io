@@ -5,6 +5,7 @@ summary :
 date    : 2019-01-03 21:03:00 +0900
 updated : 2019-01-05 17:15:40 +0900
 tag     : math
+resource: 1A/CCA608-E3DB-4028-8C1F-830892CBFD4C
 toc     : true
 public  : true
 parent  : [[study]]

@@ -5,6 +5,7 @@ summary :
 date    : 2020-03-13 23:35:38 +0900
 updated : 2022-09-10 00:32:04 +0900
 tag     : java
+resource: E1/8E456B-310F-4946-B48C-F1DD258A85F0
 toc     : true
 public  : true
 parent  : [[index]]

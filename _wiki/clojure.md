@@ -5,6 +5,7 @@ summary :
 date    : 2021-11-30 10:10:29 +0900
 updated : 2022-02-17 23:56:23 +0900
 tag     : 
+resource: 4F/F271CC-72B6-4B13-88F1-90D5F276871E
 toc     : true
 public  : true
 parent  : [[language]]

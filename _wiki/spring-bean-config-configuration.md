@@ -5,6 +5,7 @@ summary : Springboot만 쓰다보니 잊어먹을 것 같다
 date    : 2019-08-15 16:30:03 +0900
 updated : 2019-08-15 22:23:28 +0900
 tag     : spring xml
+resource: DC/B47F52-FA0E-4D22-887F-DC8E85B18823
 toc     : true
 public  : true
 parent  : [[spring]]

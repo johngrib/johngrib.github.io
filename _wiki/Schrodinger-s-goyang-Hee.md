@@ -5,6 +5,7 @@ summary : 반-바지. SF 단편집
 date    : 2018-04-22 16:53:16 +0900
 updated : 2018-04-22 17:16:53 +0900
 tag     : sf
+resource: 3C/4E167A-BC91-4765-B8D5-FE761EE3AE24
 toc     : true
 public  : true
 parent  : [[book]]

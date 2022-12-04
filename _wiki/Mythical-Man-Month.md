@@ -5,6 +5,7 @@ summary : The Mythical Man-Month - Essays on Software Engineering
 date    : 2018-02-19 12:52:55 +0900
 updated : 2018-02-21 22:38:43 +0900
 tag     : book Fred-Brooks
+resource: 41/4AA21D-D411-47C9-A38C-E82A5867287D
 toc     : true
 public  : true
 parent  : [[book]]

@@ -5,6 +5,7 @@ summary :
 date    : 2019-05-13 23:13:33 +0900
 updated : 2020-05-24 11:52:17 +0900
 tag     : math
+resource: F3/950A58-00F1-4244-90EC-FEE986BD16B0
 toc     : true
 public  : true
 parent  : [[math]]

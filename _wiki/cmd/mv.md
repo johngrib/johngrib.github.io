@@ -5,6 +5,7 @@ summary : 파일을 옮긴다
 date    : 2020-04-18 23:08:16 +0900
 updated : 2022-01-13 22:53:06 +0900
 tag     : bash command
+resource: 80/3C0DB7-6376-448D-94B9-C4C8452D1E9F
 toc     : true
 public  : true
 parent  : [[cmd]]

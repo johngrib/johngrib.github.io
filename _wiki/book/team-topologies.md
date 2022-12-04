@@ -5,6 +5,7 @@ summary :
 date    : 2022-06-13 23:28:07 +0900
 updated : 2022-06-14 00:18:52 +0900
 tag     : 
+resource: EC/D5A496-2EB9-496A-8957-E03D5DE0B70B
 toc     : true
 public  : true
 parent  : [[/book]]

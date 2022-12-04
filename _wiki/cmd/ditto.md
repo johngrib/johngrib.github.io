@@ -5,6 +5,7 @@ summary : copy directory hierarchies, create and extract archives
 date    : 2020-03-08 19:19:29 +0900
 updated : 2022-02-14 22:51:08 +0900
 tag     : bash command
+resource: CA/FEE562-6828-4788-AF90-499EBA973667
 toc     : true
 public  : true
 parent  : [[/cmd]]

@@ -5,6 +5,7 @@ summary :
 date    : 2021-04-17 23:00:42 +0900
 updated : 2021-04-18 12:31:29 +0900
 tag     : java test
+resource: 52/D75524-D1C5-4C0B-9914-5A0A1AD02855
 toc     : true
 public  : true
 parent  : [[java]]

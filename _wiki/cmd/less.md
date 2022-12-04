@@ -5,6 +5,7 @@ summary : less is more
 date    : 2020-01-19 22:06:24 +0900
 updated : 2022-04-17 11:31:59 +0900
 tag     : bash command
+resource: 77/4C3318-288A-4C7A-B3B2-3EE94A79FA4D
 toc     : true
 public  : true
 parent  : [[/cmd]]

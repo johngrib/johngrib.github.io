@@ -5,6 +5,7 @@ summary :
 date    : 2021-10-11 16:04:22 +0900
 updated : 2021-10-11 17:28:02 +0900
 tag     : GoF-design-pattern
+resource: 6B/3EDA4F-9BBF-4245-9F6A-14D1680CE20A
 toc     : true
 public  : true
 parent  : [[/pattern]]

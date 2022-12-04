@@ -5,6 +5,7 @@ summary :
 date    : 2021-03-13 20:04:49 +0900
 updated : 2022-06-27 23:43:47 +0900
 tag     : 
+resource: 66/616599-DAA3-4EAA-BFC3-3CA9013FB670
 toc     : true
 public  : true
 parent  : [[/math]]

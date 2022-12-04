@@ -5,6 +5,7 @@ summary : 교환원이 사라지면 도청을 할 수 없어
 date    : 2018-02-05 09:42:32 +0900
 updated : 2019-09-29 20:32:04 +0900
 tag     : story
+resource: 17/BCF80C-0B0D-42DF-A554-CCB0C5D5BF73
 toc     : true
 public  : true
 parent  : [[legend]]

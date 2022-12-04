@@ -5,6 +5,7 @@ summary : Clojure의 Keyword
 date    : 2022-11-20 21:35:56 +0900
 updated : 2022-11-20 21:47:28 +0900
 tag     : clojure string
+resource: 80/F2208E-7766-4DD0-9985-132D5A44A72D
 toc     : true
 public  : true
 parent  : [[/clojure]]

@@ -5,6 +5,7 @@ summary :
 date    : 2022-03-10 22:18:00 +0900
 updated : 2022-03-13 21:54:25 +0900
 tag     : clojure
+resource: 11/DA106D-1D52-4C22-A042-3BF427D35717
 toc     : true
 public  : true
 parent  : [[/clojure/reference]]

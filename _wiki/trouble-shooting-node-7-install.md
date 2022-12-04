@@ -5,6 +5,7 @@ summary : nodejs.org에서 받아서 해결
 date    : 2018-02-12 14:52:15 +0900
 updated : 2022-07-25 21:23:12 +0900
 tag     : trouble-shooting
+resource: C7/ABCEA6-3B17-4373-9B1E-00125EA6976A
 toc     : true
 public  : true
 parent  : [[til]]

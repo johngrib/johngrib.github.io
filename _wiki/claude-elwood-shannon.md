@@ -5,6 +5,7 @@ summary : 작성중인 문서
 date    : 2020-07-25 19:47:22 +0900
 updated : 2020-07-29 22:19:17 +0900
 tag     : legend 인물 정보이론 벨-연구소
+resource: 6E/B5BA3F-6EB0-48B6-B3BF-B696DD2163CD
 toc     : true
 public  : true
 parent  : [[people]]

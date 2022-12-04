@@ -5,6 +5,7 @@ summary : 기관차 한 대의 번호를 보고 전체 기관차 수를 추정�
 date    : 2018-04-14 12:04:06 +0900
 updated : 2019-12-10 15:16:17 +0900
 tag     : Think-Bayes bayes
+resource: FD/26EE21-9A4D-4E11-8F65-37433C535446
 toc     : true
 public  : true
 parent  : [[study-think-bayes]]

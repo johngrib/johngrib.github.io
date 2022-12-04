@@ -5,6 +5,7 @@ summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
 updated : 2022-05-16 11:39:11 +0900
 tag     : java test
+resource: D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6
 toc     : true
 public  : true
 parent  : [[index]]

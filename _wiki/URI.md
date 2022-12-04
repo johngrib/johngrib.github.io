@@ -5,6 +5,7 @@ summary : Uniform Resource Identifier
 date    : 2017-12-12 22:05:28 +0900
 updated : 2020-07-25 19:46:01 +0900
 tag     : http
+resource: 6B/F07875-A920-4A76-B0D1-21EEA07F76A6
 toc     : true
 public  : true
 parent  : [[what]]

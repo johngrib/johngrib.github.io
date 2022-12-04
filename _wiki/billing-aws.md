@@ -5,6 +5,7 @@ summary : 가랑비에 옷이 젖지 않도록 하자
 date    : 2018-09-17 10:05:48 +0900
 updated : 2019-11-15 07:59:24 +0900
 tag     : aws money
+resource: DC/57966D-E8A0-438A-BFD8-28F333500AF8
 toc     : true
 public  : true
 parent  : [[aws]]

@@ -5,7 +5,7 @@
  "parent": "index",
  "url": "/wiki/java/gc",
  "updated": "2022-02-26 00:57:42 +0900",
- "id": "71B7F84B-9EBC-4C43-A99F-0F94EB75A41E",
+ "resource": "C2/FC95D1-F793-4E3B-A98E-6112E0FBCEB5",
  "children": [
   "java-g1gc",
   "java-gc-eden-to-survivor",

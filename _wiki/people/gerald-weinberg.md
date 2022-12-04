@@ -5,6 +5,7 @@ summary :
 date    : 2018-02-08 12:00:14 +0900
 updated : 2021-10-04 14:10:37 +0900
 tag     : story Gerald-Weinberg
+resource: 6B/6173F8-AC59-4A5D-B3D2-43B128A03345
 toc     : true
 public  : true
 parent  : [[people]]

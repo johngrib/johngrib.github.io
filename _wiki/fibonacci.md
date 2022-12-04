@@ -5,6 +5,7 @@ summary : Fibonacci Sequence
 date    : 2019-08-18 22:45:59 +0900
 updated : 2022-11-13 22:19:18 +0900
 tag     : math
+resource: 93/06128A-B855-48FD-A8F4-84CE47AA2872
 toc     : true
 public  : true
 parent  : [[math]]

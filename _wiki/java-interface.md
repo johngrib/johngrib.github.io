@@ -5,6 +5,7 @@ summary : 자바 인터페이스
 date    : 2019-08-10 12:17:35 +0900
 updated : 2020-05-18 22:11:29 +0900
 tag     : java
+resource: 44/7F7D5B-FCFF-44A4-B62F-71FA2CE6AA38
 toc     : true
 public  : true
 parent  : [[java]]

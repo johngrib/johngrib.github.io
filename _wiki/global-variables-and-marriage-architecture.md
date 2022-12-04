@@ -5,6 +5,7 @@ summary : 연결에 제약을 가한 네트워크로 가족 갈등을 예방한�
 date    : 2020-02-14 21:17:30 +0900
 updated : 2020-02-15 11:05:04 +0900
 tag     : love problem network
+resource: 11/955BB8-9B9A-4667-9F46-8388EAC21C14
 toc     : true
 public  : true
 parent  : [[/hack]]

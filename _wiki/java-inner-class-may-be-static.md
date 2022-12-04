@@ -5,6 +5,7 @@ summary : 메모리를 더 먹고, 느리고, 바깥 클래스가 GC 대상에�
 date    : 2021-02-11 19:01:50 +0900
 updated : 2021-02-14 13:18:58 +0900
 tag     : java memory-leak
+resource: E8/EB9311-6660-4911-94DD-7B5AB25FC545
 toc     : true
 public  : true
 parent  : [[java]]

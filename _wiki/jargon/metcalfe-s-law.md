@@ -5,6 +5,7 @@ summary :
 date    : 2020-08-02 16:51:41 +0900
 updated : 2022-09-04 19:30:37 +0900
 tag     : 
+resource: A5/3172CA-EEBA-4A31-A2AC-EF029599010C
 toc     : true
 public  : true
 parent  : [[jargon]]

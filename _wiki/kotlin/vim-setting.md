@@ -5,6 +5,7 @@ summary :
 date    : 2022-10-02 21:04:23 +0900
 updated : 2022-10-02 22:02:57 +0900
 tag     : 
+resource: 8C/9FA53B-3E34-4632-A829-D260F39F01A6
 toc     : true
 public  : true
 parent  : [[/kotlin]]

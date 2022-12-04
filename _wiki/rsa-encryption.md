@@ -5,6 +5,7 @@ summary :
 date    : 2019-03-10 09:24:37 +0900
 updated : 2019-12-15 19:08:53 +0900
 tag     : encryption
+resource: 11/0029D5-BF09-4087-B20B-D8DC86953AB4
 toc     : true
 public  : true
 parent  : [[what]]

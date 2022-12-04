@@ -5,6 +5,7 @@ summary : GNU make utility to maintain groups of programs
 date    : 2020-03-29 23:15:11 +0900
 updated : 2021-02-20 16:43:14 +0900
 tag     : bash command c
+resource: D7/42003E-C34F-49A2-9BA4-10C98F83584D
 toc     : true
 public  : true
 parent  : [[cmd]]

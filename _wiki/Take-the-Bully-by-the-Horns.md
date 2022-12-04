@@ -5,6 +5,7 @@ summary : Take the Bully by the Horns
 date    : 2018-02-02 22:51:41 +0900
 updated : 2018-02-02 22:55:21 +0900
 tag     : review soft-skill
+resource: 50/AEC232-A5E1-405D-9501-57F8DA5E86F5
 toc     : true
 public  : true
 parent  : [[book]]

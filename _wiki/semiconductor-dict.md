@@ -5,6 +5,7 @@ summary : 산업도 이해하고 싶다
 date    : 2020-12-05 14:24:43 +0900
 updated : 2020-12-06 11:35:51 +0900
 tag     : 반도체 용어
+resource: 3C/76F40C-681B-43A0-ACD6-27DE4E11D981
 toc     : true
 public  : true
 parent  : [[index]]

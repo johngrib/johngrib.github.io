@@ -5,6 +5,7 @@ summary : 목차를 보여주는 것과 관련된 기능들
 date    : 2022-12-03 23:23:21 +0900
 updated : 2022-12-03 23:58:47 +0900
 tag     : 
+resource: BD/6C0CF6-AD44-44D5-83BE-1919BC9638C9
 toc     : true
 public  : true
 parent  : [[/blog/this]]

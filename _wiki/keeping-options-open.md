@@ -5,6 +5,7 @@ summary : 좋은 아키텍트는 결정되지 않은 사항의 수를 최대화�
 date    : 2021-02-14 12:44:50 +0900
 updated : 2022-09-09 11:56:44 +0900
 tag     : architecture Uncle-Bob
+resource: 40/6F27F5-1A7F-47B7-8E52-17826D4607B9
 toc     : true
 public  : true
 parent  : [[architecture]]

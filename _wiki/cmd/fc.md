@@ -5,6 +5,7 @@ summary : 명령어 입력/편집, 나열, 재실행 등을 할 수 있다
 date    : 2018-08-29 09:22:26 +0900
 updated : 2022-02-07 22:26:52 +0900
 tag     : bash command
+resource: 60/416A2C-1FE6-4CF1-9D95-1C7D8C927323
 toc     : true
 public  : true
 parent  : [[/cmd]]

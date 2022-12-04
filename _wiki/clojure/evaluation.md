@@ -5,6 +5,7 @@ summary :
 date    : 2021-12-12 13:36:05 +0900
 updated : 2021-12-12 14:51:13 +0900
 tag     : clojure 번역
+resource: D5/36FC0C-341D-4F8C-851C-944F6856A5B4
 toc     : true
 public  : true
 parent  : [[/clojure/reference]]

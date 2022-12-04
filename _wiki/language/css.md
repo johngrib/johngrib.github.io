@@ -5,6 +5,7 @@ summary : Cascading Style Sheets
 date    : 2021-09-23 15:58:21 +0900
 updated : 2021-09-23 17:58:36 +0900
 tag     : 
+resource: F5/A8184C-DBA8-4099-B637-B909FA43CBEF
 toc     : true
 public  : true
 parent  : [[language]]

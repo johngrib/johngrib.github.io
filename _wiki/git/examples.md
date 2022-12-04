@@ -5,6 +5,7 @@ summary : 가끔 써먹게 될 때마다 기록해두자
 date    : 2022-01-16 13:53:32 +0900
 updated : 2022-01-18 22:55:30 +0900
 tag     : git
+resource: 4D/EBAA7E-136B-45D4-906D-9904AA06CC80
 toc     : true
 public  : true
 parent  : [[/git]]

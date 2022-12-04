@@ -5,6 +5,7 @@ summary :
 date    : 2019-01-02 22:45:37 +0900
 updated : 2022-07-09 17:16:43 +0900
 tag     : agile
+resource: E5/24DFF0-39F8-41F6-8FC0-385875E125D4
 toc     : true
 public  : true
 parent  : [[/software-engineering]]

@@ -5,6 +5,7 @@ summary : 늦어진 소프트웨어 프로젝트에 인력을 추가로 투입�
 date    : 2018-02-20 22:59:38 +0900
 updated : 2018-02-21 20:59:54 +0900
 tag     : law Fred-Brooks
+resource: C7/4F029A-DA93-47AE-9E99-4337358E5623
 toc     : true
 public  : true
 parent  : [[jargon]]

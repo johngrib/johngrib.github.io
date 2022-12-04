@@ -5,6 +5,7 @@ summary : 생산성, 신뢰성, 단순성을 10배 이상 향상시킬 발전은
 date    : 2018-02-21 21:13:04 +0900
 updated : 2020-05-22 23:57:44 +0900
 tag     : proverb Fred-Brooks
+resource: 85/47AB7D-A5BE-4093-8730-C8EC072A00BB
 toc     : true
 public  : true
 parent  : [[jargon]]

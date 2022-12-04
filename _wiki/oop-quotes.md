@@ -5,6 +5,7 @@ summary : 객체지향 단어 사전
 date    : 2020-03-03 22:11:40 +0900
 updated : 2021-09-05 16:29:51 +0900
 tag     : 
+resource: 89/A7B5B7-443D-48FE-A818-E906916928C5
 toc     : true
 public  : true
 parent  : [[index]]

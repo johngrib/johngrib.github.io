@@ -5,6 +5,7 @@ summary : 더하는 숫자가 중요한 게 아니라 0을 맞추는 게 중요
 date    : 2018-11-29 07:42:53 +0900
 updated : 2020-01-24 23:59:22 +0900
 tag     : gloang goroutine
+resource: 9A/9B82B5-63D9-4DAE-B0B1-6F33E9C2845A
 toc     : true
 public  : true
 parent  : [[go]]

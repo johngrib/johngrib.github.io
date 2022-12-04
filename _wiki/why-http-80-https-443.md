@@ -5,6 +5,7 @@ summary : 80은 처음부터 지정, 443은 나중에 요청을 받아 빈 공�
 date    : 2017-12-12 23:19:48 +0900
 updated : 2018-09-09 11:20:07 +0900
 tag     : http rfc
+resource: A6/0D7B82-1760-41A6-8B70-1B23F92D97F0
 toc     : true
 public  : true
 parent  : [[why]]

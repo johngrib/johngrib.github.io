@@ -5,6 +5,7 @@ summary :
 date    : 2022-06-19 09:59:02 +0900
 updated : 2022-06-19 13:52:15 +0900
 tag     : vim
+resource: 00/0D174B-6016-4374-BC83-EC17CE44CEE2
 toc     : true
 public  : true
 parent  : [[/vim]]

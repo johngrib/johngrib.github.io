@@ -5,6 +5,7 @@ summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
 updated : 2021-08-18 17:03:02 +0900
 tag     : gradle tool
+resource: 09/DC229C-F689-45B3-ABD1-23A4C247C76A
 toc     : true
 public  : true
 parent  : [[tools]]

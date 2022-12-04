@@ -5,6 +5,7 @@ summary :
 date    : 2021-01-15 21:51:29 +0900
 updated : 2021-01-15 21:53:16 +0900
 tag     : hwp ms-office
+resource: 08/18393D-F553-4528-A0DA-1731E7F4D12F
 toc     : true
 public  : true
 parent  : [[useful-site]]

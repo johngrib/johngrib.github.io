@@ -5,6 +5,7 @@ summary :
 date    : 2019-10-17 22:48:17 +0900
 updated : 2022-07-10 00:38:27 +0900
 tag     : oop alan-kay
+resource: 1A/DD4D5F-7B6B-48DE-8F33-F3201883B6EF
 toc     : true
 public  : true
 parent  : [[jargon]]

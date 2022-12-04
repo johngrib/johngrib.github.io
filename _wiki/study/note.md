@@ -5,6 +5,7 @@ summary :
 date    : 2019-05-11 11:12:24 +0900
 updated : 2022-05-22 17:54:17 +0900
 tag     : 
+resource: CE/641383-FE65-4936-B4C1-E7D40F5D7268
 toc     : true
 public  : true
 parent  : [[/study]]

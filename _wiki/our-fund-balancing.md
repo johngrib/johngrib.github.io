@@ -5,6 +5,7 @@ summary : 우리 부부의 자금 밸런싱 전략
 date    : 2020-02-01 22:21:37 +0900
 updated : 2020-02-15 11:04:01 +0900
 tag     : money experiment
+resource: 30/FBAE29-FEDF-4D79-9C27-CAB263E552D9
 toc     : true
 public  : true
 parent  : [[/hack]]

@@ -5,6 +5,7 @@ summary : 윈도우즈에는 있으나 맥에는 없는 그것
 date    : 2017-08-01 22:47:08 +0900
 updated : 2020-03-21 16:53:41 +0900
 tag     : hammerspoon
+resource: 98/2801C4-C8DE-4973-93BF-2A712588E577
 toc     : true
 comment : true
 public  : true

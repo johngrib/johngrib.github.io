@@ -5,6 +5,7 @@ summary : 이제 Postman 쓸 필요 없다
 date    : 2022-07-30 00:35:09 +0900
 updated : 2022-09-12 23:28:20 +0900
 tag     : postman vrc http clojure
+resource: E2/AD0722-A27E-4327-9AB0-3383F39508F1
 toc     : true
 public  : true
 parent  : [[/hack]]

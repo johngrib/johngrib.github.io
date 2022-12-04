@@ -5,6 +5,7 @@ summary : 02.SUMS.06.INFINITE SUMS
 date    : 2018-05-27 17:04:23 +0900
 updated : 2020-03-14 18:27:49 +0900
 tag     : math
+resource: 7B/5EEBEE-C335-4DB8-9EC5-00EA67D11FBB
 toc     : true
 public  : true
 parent  : [[study-concrete-math]]

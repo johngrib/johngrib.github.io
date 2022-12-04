@@ -5,6 +5,7 @@ summary : 최초의 편집기 + 디버거 + 컴파일러
 date    : 2019-12-09 22:50:16 +0900
 updated : 2020-04-04 18:44:00 +0900
 tag     : 
+resource: 39/B30CD2-746D-445C-AD98-DE7E76F4398A
 toc     : true
 public  : true
 parent  : [[legend]]

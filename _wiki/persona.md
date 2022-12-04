@@ -5,6 +5,7 @@ summary : 페르소나 디자인 방법론
 date    : 2019-07-08 15:25:27 +0900
 updated : 2019-07-08 16:07:45 +0900
 tag     : 방법론
+resource: 78/66DF7F-12B4-47D1-A9AC-728062342920
 toc     : true
 public  : true
 parent  : [[software-engineering]]

@@ -5,6 +5,7 @@ summary :
 date    : 2019-12-26 22:41:05 +0900
 updated : 2022-10-12 23:50:40 +0900
 tag     : rust vim
+resource: 1A/916B19-D820-4038-91A7-112B20469DD0
 toc     : true
 public  : true
 parent  : [[/rust]]

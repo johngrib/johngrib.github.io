@@ -5,6 +5,7 @@ summary : 특정 클래스/메소드 예외를 처리한다
 date    : 2020-12-06 22:24:46 +0900
 updated : 2020-12-06 22:58:50 +0900
 tag     : spring
+resource: E2/50EFC9-E1B2-4313-AEF4-0306B23F8682
 toc     : true
 public  : true
 parent  : [[spring]]

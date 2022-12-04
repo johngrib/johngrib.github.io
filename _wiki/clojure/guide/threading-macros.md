@@ -5,6 +5,7 @@ summary : 스레딩 매크로 가이드
 date    : 2021-12-10 22:47:25 +0900
 updated : 2022-05-31 22:51:37 +0900
 tag     : clojure
+resource: BD/0330A1-8F04-4800-B384-A9E6AC6DF2D8
 toc     : true
 public  : true
 parent  : [[/clojure/guide]]

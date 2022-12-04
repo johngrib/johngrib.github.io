@@ -5,6 +5,7 @@ summary : 트랜잭션의 중요한 네 가지 속성
 date    : 2019-10-03 00:33:18 +0900
 updated : 2022-12-04 12:53:28 +0900
 tag     : db
+resource: 72/CBBFDC-8E07-46AA-880A-39AD31254FE1
 toc     : true
 public  : true
 parent  : [[/database]]

@@ -5,6 +5,7 @@ summary : 흔한 혈액형으로는 유죄로 몰 수 없지
 date    : 2018-04-22 22:26:19 +0900
 updated : 2020-01-25 22:46:33 +0900
 tag     : bayes
+resource: 48/3AB391-818F-4F2F-AD9F-8A0E4066637E
 toc     : true
 public  : true
 parent  : [[study-think-bayes]]

@@ -5,6 +5,7 @@ summary :
 date    : 2019-09-19 10:40:38 +0900
 updated : 2020-03-04 21:19:06 +0900
 tag     : java
+resource: 7C/E39536-BEB0-4B32-A1D5-ACEF1E5E2060
 toc     : true
 public  : true
 parent  : [[java]]

@@ -5,6 +5,7 @@ summary : 다양한 소프트웨어 개발 도구의 버전을 관리한다
 date    : 2019-09-11 22:44:15 +0900
 updated : 2021-10-05 14:33:32 +0900
 tag     : bash command
+resource: 41/A74DA3-2CC1-4F03-8B1E-CB251C3C8527
 toc     : true
 public  : true
 parent  : [[cmd]]

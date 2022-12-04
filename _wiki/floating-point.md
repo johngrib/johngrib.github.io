@@ -5,6 +5,7 @@ summary :
 date    : 2018-10-28 08:03:23 +0900
 updated : 2021-05-02 22:06:24 +0900
 tag     : binary
+resource: 3C/AFC569-C4E4-4015-AA71-F8A5096CD2C4
 toc     : true
 public  : true
 parent  : [[what]]

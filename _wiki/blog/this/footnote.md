@@ -5,6 +5,7 @@ summary : 주석 기능
 date    : 2022-12-02 15:09:21 +0900
 updated : 2022-12-03 13:56:44 +0900
 tag     : 
+resource: 28/9B73E9-6A44-4742-AD40-1F55993DA83F
 toc     : true
 public  : true
 parent  : [[/blog/this]]

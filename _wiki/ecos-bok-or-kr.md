@@ -5,6 +5,7 @@ summary :
 date    : 2020-12-05 18:06:21 +0900
 updated : 2020-12-05 18:15:28 +0900
 tag     : 통계 경제
+resource: F2/1ED3BA-91C3-4BA6-B237-436C808A845C
 toc     : true
 public  : true
 parent  : [[useful-site]]

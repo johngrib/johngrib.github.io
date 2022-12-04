@@ -5,6 +5,7 @@ summary : 동전이 한 쪽으로 기울었다는 것을 증명하자
 date    : 2018-04-19 22:01:22 +0900
 updated : 2018-04-24 20:49:06 +0900
 tag     : Think-Bayes bayes
+resource: 05/3B54A9-6BC9-4D70-A321-017324E750D4
 toc     : true
 public  : true
 parent  : [[study-think-bayes]]

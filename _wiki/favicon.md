@@ -5,6 +5,7 @@ summary : 웹 브라우저 탭에 나오는 개인화된 아이콘
 date    : 2020-02-09 12:48:09 +0900
 updated : 2020-05-13 23:08:16 +0900
 tag     : 
+resource: 40/0D91E3-4759-48DB-BCC8-5C278B854511
 toc     : true
 public  : true
 parent  : [[blog]]

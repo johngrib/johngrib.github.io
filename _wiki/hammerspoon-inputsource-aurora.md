@@ -5,6 +5,7 @@ summary : 지금 선택된 입력기가 한글인지 영어인지 쉽게 알아�
 date    : 2019-12-18 21:25:35 +0900
 updated : 2020-01-25 00:30:38 +0900
 tag     : hammerspoon
+resource: 07/4A6BBD-D51D-42D5-AE86-4F017DEBBBD2
 toc     : true
 public  : true
 parent  : [[hammerspoon]]

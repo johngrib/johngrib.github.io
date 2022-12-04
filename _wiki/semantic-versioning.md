@@ -5,6 +5,7 @@ summary : 주버전.부버전.수버전
 date    : 2020-01-12 18:33:50 +0900
 updated : 2022-06-25 15:03:58 +0900
 tag     : 
+resource: 14/F57A95-5E15-43D7-8A80-4F8BF63E2E98
 toc     : true
 public  : true
 parent  : [[index]]

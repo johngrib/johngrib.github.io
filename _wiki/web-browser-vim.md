@@ -5,6 +5,7 @@ summary : Vimium, Tridactyl
 date    : 2018-03-04 00:40:04 +0900
 updated : 2022-07-22 10:10:55 +0900
 tag     : chrome firefox vim
+resource: 95/D15BD4-2BBD-4EA6-9BCC-568D2CB14B1F
 toc     : true
 public  : true
 parent  : [[index]]

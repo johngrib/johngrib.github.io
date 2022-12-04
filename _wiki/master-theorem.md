@@ -5,6 +5,7 @@ summary :
 date    : 2020-06-28 19:18:22 +0900
 updated : 2020-06-28 20:29:21 +0900
 tag     : 
+resource: 30/A7CBA8-BA48-48CB-8F7F-E0B8895A671A
 toc     : true
 public  : true
 parent  : [[algorithm]]

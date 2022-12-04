@@ -5,6 +5,7 @@ summary : 개별 객체와 복합 객체를 모두 동일하게 다룰 수 있�
 date    : 2021-10-05 17:08:26 +0900
 updated : 2021-10-16 23:48:08 +0900
 tag     : GoF-design-pattern
+resource: 85/2D3547-A02A-41AA-A8BC-DB7787845375
 toc     : true
 public  : true
 parent  : [[/pattern]]

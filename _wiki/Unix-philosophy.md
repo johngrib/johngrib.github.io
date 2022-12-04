@@ -5,6 +5,7 @@ summary : 유닉스 철학
 date    : 2018-07-15 07:34:20 +0900
 updated : 2020-03-14 18:03:32 +0900
 tag     : 
+resource: 20/14864F-4691-4877-B856-4884D9C5BD70
 toc     : true
 public  : true
 parent  : [[what]]

@@ -5,6 +5,7 @@ summary :
 date    : 2018-03-07 21:40:19 +0900
 updated : 2022-11-09 23:53:49 +0900
 tag     : java 번역
+resource: A2/61240B-5DFD-47EB-B793-51DCBEC05565
 toc     : true
 public  : true
 parent  : [[/java]]

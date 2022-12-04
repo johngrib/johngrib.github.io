@@ -5,6 +5,7 @@ summary : A Language Server for Clojure(script).
 date    : 2022-03-25 17:58:51 +0900
 updated : 2022-03-29 21:12:17 +0900
 tag     : clojure
+resource: 00/3307FC-B734-44F7-882F-44B1E98144B7
 toc     : true
 public  : true
 parent  : [[/clojure]]

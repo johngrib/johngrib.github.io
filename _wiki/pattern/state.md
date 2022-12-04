@@ -5,6 +5,7 @@ summary : 객체의 내부 상태에 따라 행동을 변경할 수 있다.
 date    : 2021-10-09 09:59:41 +0900
 updated : 2021-10-09 18:10:08 +0900
 tag     : GoF-design-pattern refactoring
+resource: 49/9A87A2-E5AD-4FCA-B028-200F9DC2BDA2
 toc     : true
 public  : true
 parent  : [[/pattern]]

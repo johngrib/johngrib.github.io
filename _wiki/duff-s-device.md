@@ -5,6 +5,7 @@ summary : 1983년에 고안된 C 언어 루프 풀기 기법
 date    : 2020-10-01 23:08:10 +0900
 updated : 2020-10-02 15:57:36 +0900
 tag     : algorithm c black-magic 1983
+resource: 18/D736EC-1796-46BC-B3AF-B411751CEB35
 toc     : true
 public  : true
 parent  : [[algorithm]]

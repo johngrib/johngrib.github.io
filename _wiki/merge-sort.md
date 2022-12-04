@@ -5,6 +5,7 @@ summary :
 date    : 2020-06-27 17:03:29 +0900
 updated : 2021-10-03 00:46:40 +0900
 tag     : algorithm sort
+resource: 62/198F3A-E169-44EF-A3B8-3DF8763774DE
 toc     : true
 public  : true
 parent  : [[algorithm]]

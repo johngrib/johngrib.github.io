@@ -5,6 +5,7 @@ summary : return a value for $JAVA_HOME
 date    : 2017-12-03 15:01:36 +0900
 updated : 2022-11-19 12:01:00 +0900
 tag     : bash java mac command
+resource: 5A/06BC97-3BA2-4B67-A43E-3BF847465ECF
 toc     : true
 public  : true
 parent  : [[/cmd]]

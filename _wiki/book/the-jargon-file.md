@@ -4,6 +4,7 @@ title   : The Jargon File
 summary : 해커들의 은어 사전
 updated : 2022-06-14 00:41:46 +0900
 tag     : book hacker
+resource: 01/898BB7-704A-4068-9290-481548C4A312
 toc     : true
 public  : true
 parent  : [[/book]]

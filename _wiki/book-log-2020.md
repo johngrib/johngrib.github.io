@@ -5,6 +5,7 @@ summary :
 date    : 2020-01-06 19:35:58 +0900
 updated : 2020-05-21 22:04:28 +0900
 tag     : book
+resource: 08/A5E936-5466-489C-9CC5-C6AEA7AE7A4B
 toc     : true
 public  : true
 parent  : [[diary]]

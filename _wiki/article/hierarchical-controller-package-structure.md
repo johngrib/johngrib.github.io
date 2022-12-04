@@ -5,6 +5,7 @@ summary : 찾기 쉬워야 한다
 date    : 2021-10-24 14:32:16 +0900
 updated : 2022-05-02 23:21:44 +0900
 tag     : 
+resource: 20/65C8F7-F560-4004-8383-EA5747BB26BE
 toc     : true
 public  : true
 parent  : [[/article]]

@@ -5,6 +5,7 @@ summary : 02.SUMS.05.GENERAL METHODS
 date    : 2018-05-19 10:40:25 +0900
 updated : 2020-01-10 22:12:14 +0900
 tag     : math
+resource: 62/17EC46-77AC-4531-A2FF-6FD0E6CA4971
 toc     : true
 public  : true
 parent  : [[study-concrete-math]]

@@ -5,6 +5,7 @@ summary : 포트란의 탄생
 date    : 2019-02-28 12:53:46 +0900
 updated : 2021-07-24 13:25:43 +0900
 tag     : story
+resource: 88/A0281C-FB41-4196-B3F2-FD2847A9E773
 toc     : true
 public  : true
 parent  : [[people]]

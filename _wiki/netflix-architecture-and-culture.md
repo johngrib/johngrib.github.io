@@ -5,6 +5,7 @@ summary :
 date    : 2020-01-20 21:17:07 +0900
 updated : 2020-01-20 21:50:07 +0900
 tag     : availability
+resource: 48/2FEBA5-1D25-40AD-AD80-2C24EC8A15C4
 toc     : true
 public  : true
 parent  : [[legend]]

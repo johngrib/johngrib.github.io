@@ -5,6 +5,7 @@ summary : API를 위한 쿼리 언어
 date    : 2022-01-30 09:54:17 +0900
 updated : 2022-02-02 15:40:58 +0900
 tag     : 
+resource: 3C/F6FFE3-E281-48AA-80D0-236D6E6BC7AB
 toc     : true
 public  : true
 parent  : [[/language]]

@@ -5,6 +5,7 @@ summary :
 date    : 2018-01-26 21:35:22 +0900
 updated : 2018-04-12 12:30:46 +0900
 tag     : book algirithm
+resource: 12/70013D-D362-4D51-AE8D-9B0BC081E9E8
 toc     : true
 public  : true
 parent  : [[book]]

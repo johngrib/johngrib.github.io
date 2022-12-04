@@ -5,6 +5,7 @@ summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
 updated : 2022-11-16 23:53:48 +0900
 tag     : special-chars
+resource: 72/469FCC-A10B-46DC-A4DB-B7A9242EDF6D
 toc     : true
 public  : true
 parent  : [[what]]

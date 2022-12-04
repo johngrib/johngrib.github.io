@@ -5,6 +5,7 @@ summary : Frederick P. Brooks, Jr.
 date    : 2022-09-16 22:47:43 +0900
 updated : 2022-09-16 23:06:55 +0900
 tag     : 
+resource: 0F/A675E4-A82C-45D4-A38A-099F4593CACC
 toc     : true
 public  : true
 parent  : [[/people]]

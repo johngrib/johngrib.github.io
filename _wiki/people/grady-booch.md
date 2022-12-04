@@ -5,6 +5,7 @@ summary :
 date    : 2022-08-14 19:03:41 +0900
 updated : 2022-08-14 19:06:29 +0900
 tag     : 
+resource: A1/C7E597-3EA6-4132-B772-D06E89D4169C
 toc     : true
 public  : true
 parent  : [[/people]]

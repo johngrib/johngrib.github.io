@@ -5,6 +5,7 @@ summary : (책) 시간을 정복한 남자 류비셰프
 date    : 2020-06-14 11:31:31 +0900
 updated : 2022-06-13 23:22:27 +0900
 tag     : time
+resource: 51/E32D31-8BE3-4AA3-A38F-1807A9D7B336
 toc     : true
 public  : true
 parent  : [[/book]]

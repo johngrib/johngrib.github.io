@@ -5,6 +5,7 @@ summary :
 date    : 2019-12-30 23:15:30 +0900
 updated : 2020-07-19 13:35:23 +0900
 tag     : 
+resource: 43/2240CD-FEA6-4473-BD0C-EF593369BD3B
 toc     : true
 public  : true
 parent  : [[software-engineering]]

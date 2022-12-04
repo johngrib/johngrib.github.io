@@ -5,6 +5,7 @@ summary : vim에서 f로 한글을 검색하는 플러그인
 date    : 2018-03-18 22:48:58 +0900
 updated : 2018-03-18 22:51:56 +0900
 tag     : vim plugin
+resource: 4A/DE1B37-B2EE-47F1-B549-A84676A5CF5C
 toc     : true
 public  : true
 parent  : [[vim]]

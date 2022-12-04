@@ -5,6 +5,7 @@ summary : 일단 맥이 있어야 한다
 date    : 2017-07-31 21:57:27 +0900
 updated : 2022-06-27 09:57:37 +0900
 tag     : hammerspoon
+resource: 47/2655FE-ACAE-4681-B846-74775DF7B8EA
 toc     : true
 comment : true
 public  : true

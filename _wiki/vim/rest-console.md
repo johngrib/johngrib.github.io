@@ -5,6 +5,7 @@ summary : vim을 cURL 클라이언트로 사용하자
 date    : 2018-04-12 21:41:12 +0900
 updated : 2022-09-04 23:41:29 +0900
 tag     : vim http
+resource: 9F/634180-60B6-49B2-8B9D-882E33FBD9F1
 toc     : true
 public  : true
 parent  : [[/vim]]

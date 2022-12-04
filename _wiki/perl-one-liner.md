@@ -5,6 +5,7 @@ summary :
 date    : 2020-06-29 23:33:40 +0900
 updated : 2020-07-18 21:14:38 +0900
 tag     : bash command
+resource: 53/93E136-7E69-41D7-8A7E-1A9D866F9EEA
 toc     : true
 public  : true
 parent  : [[cmd]]

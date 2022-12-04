@@ -5,6 +5,7 @@ summary : Print operating system name
 date    : 2022-09-09 15:06:32 +0900
 updated : 2022-09-09 15:18:46 +0900
 tag     : 
+resource: 2E/D85590-7EB5-41BA-B7A8-DA98364CD806
 toc     : true
 public  : true
 parent  : [[/cmd]]

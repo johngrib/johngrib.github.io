@@ -5,6 +5,7 @@ summary :
 date    : 2018-11-11 23:56:15 +0900
 updated : 2018-11-12 00:08:19 +0900
 tag     : cs
+resource: 9C/F30428-2B0D-47D8-9655-5343D6D905D5
 toc     : true
 public  : true
 parent  : [[study]]

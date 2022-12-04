@@ -5,6 +5,7 @@ summary :
 date    : 2020-01-25 10:26:51 +0900
 updated : 2020-07-31 18:11:42 +0900
 tag     : game ms-dos
+resource: 2C/00A55C-7121-45E7-B3D9-0783900043E1
 toc     : true
 public  : true
 parent  : [[index]]

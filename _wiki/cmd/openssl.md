@@ -5,6 +5,7 @@ summary : cryptography toolkit
 date    : 2018-09-14 22:54:57 +0900
 updated : 2022-02-09 14:57:37 +0900
 tag     : bash encryption command
+resource: 83/0E9814-D091-458F-9586-48A0687FDCC9
 toc     : true
 public  : true
 parent  : [[/cmd]]

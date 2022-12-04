@@ -5,6 +5,7 @@ summary : 단어의 빈도는 단어 빈도 랭킹에 반비례한다
 date    : 2018-04-15 17:47:44 +0900
 updated : 2020-04-16 23:48:58 +0900
 tag     : law stat
+resource: CD/E04537-14E9-4C4A-9A47-793A83FA578F
 toc     : true
 public  : true
 parent  : [[jargon]]

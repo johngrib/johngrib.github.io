@@ -5,6 +5,7 @@ summary : 01.Reliable, Scalable, and Maintainable Applications
 date    : 2018-07-06 23:19:30 +0900
 updated : 2022-05-24 00:14:04 +0900
 tag     : study
+resource: A2/7839B0-1E84-4A81-91F7-6DBB34B86CE5
 toc     : true
 public  : true
 parent  : [[/study/ddia]]

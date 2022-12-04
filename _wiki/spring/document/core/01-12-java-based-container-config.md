@@ -5,6 +5,7 @@ summary :
 date    : 2021-07-11 13:42:50 +0900
 updated : 2022-03-05 14:43:05 +0900
 tag     : java spring
+resource: D8/623EF2-C450-44D0-A060-4C7CBAAADC0A
 toc     : true
 public  : true
 parent  : [[/spring/document/core]]

@@ -5,6 +5,7 @@ summary : 버그는 언제나 한 마리가 더 있다
 date    : 2017-12-04 21:34:28 +0900
 updated : 2020-06-12 23:42:28 +0900
 tag     : proverb law bug
+resource: A5/D0B346-EA11-4E6F-BF37-391F578D4636
 toc     : true
 public  : true
 parent  : [[jargon]]

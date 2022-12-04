@@ -5,6 +5,7 @@ summary : += 는 list 타입에만 쓰자
 date    : 2018-08-23 23:14:09 +0900
 updated : 2022-03-01 12:17:37 +0900
 tag     : ultisnips golang vim
+resource: E3/E88603-1753-480A-A8B5-8B0351465478
 toc     : true
 public  : true
 parent  : [[go]]

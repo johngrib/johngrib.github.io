@@ -5,6 +5,7 @@ summary : Greatest Common Divisor, Least Common Multiple
 date    : 2018-10-26 11:33:33 +0900
 updated : 2019-12-07 08:02:22 +0900
 tag     : math
+resource: 35/2A6CEB-C165-4FFF-BC09-60F89F659BFA
 toc     : true
 public  : true
 parent  : [[math]]

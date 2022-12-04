@@ -5,6 +5,7 @@ summary : (a / b) * b + ( a % b ) == a
 date    : 2019-10-13 17:00:49 +0900
 updated : 2020-01-12 11:41:32 +0900
 tag     : java 번역
+resource: 27/3BBD09-0FB3-4C76-A341-774B29AEFA7C
 toc     : true
 public  : true
 parent  : [[java]]

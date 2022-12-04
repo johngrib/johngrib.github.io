@@ -5,6 +5,7 @@ summary : p(A|B) = p(A) * p(B|A) / p(B)
 date    : 2018-04-08 20:50:58 +0900
 updated : 2018-04-22 18:56:03 +0900
 tag     : bayes
+resource: 89/6A3FC8-22E7-40B9-AA69-6C293DAC097F
 toc     : true
 public  : true
 parent  : [[math]]

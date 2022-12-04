@@ -5,6 +5,7 @@ summary :
 date    : 2022-03-14 21:19:24 +0900
 updated : 2022-03-14 21:47:05 +0900
 tag     : java 번역
+resource: 22/D08151-CE22-4709-9B37-11A4CF3D5862
 toc     : true
 public  : true
 parent  : [[/java]]

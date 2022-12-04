@@ -5,6 +5,7 @@ summary : 02.SUMS.03.MULTIPLE SUMS
 date    : 2018-05-13 10:35:14 +0900
 updated : 2018-05-19 10:34:45 +0900
 tag     : math
+resource: D6/AD9129-A8D8-4C6F-BEEC-B1F9FD39C551
 toc     : true
 public  : true
 parent  : [[study-concrete-math]]

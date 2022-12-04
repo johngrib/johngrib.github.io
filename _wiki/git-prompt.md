@@ -5,6 +5,7 @@ summary :
 date    : 2020-01-06 19:58:34 +0900
 updated : 2022-01-04 23:50:30 +0900
 tag     : git
+resource: 19/D18D8A-C819-4507-AE60-26E361BF638F
 toc     : true
 public  : true
 parent  : [[git]]

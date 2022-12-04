@@ -5,6 +5,7 @@ summary : 새 맥북 셋팅하면서 작성하는 문서
 date    : 2020-05-06 15:39:42 +0900
 updated : 2022-07-10 17:17:26 +0900
 tag     : mac
+resource: 56/A48CC2-67A4-4C57-951C-7902E53A7719
 toc     : true
 public  : true
 parent  : [[/mac]]

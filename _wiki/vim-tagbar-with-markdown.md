@@ -5,6 +5,7 @@ summary : .vimrc와 .ctags를 약간만 손보면 된다
 date    : 2018-09-14 16:38:19 +0900
 updated : 2020-01-26 22:32:39 +0900
 tag     : vim tagbar markdown
+resource: AC/00D860-FC55-438F-92A1-4EA6CA7D1143
 toc     : true
 public  : true
 parent  : [[vim]]

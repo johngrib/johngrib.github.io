@@ -5,6 +5,7 @@ summary :
 date    : 2017-12-24 23:21:39 +0900
 updated : 2022-03-25 19:09:29 +0900
 tag     : http
+resource: B3/11C257-D292-4A23-954A-365DD925237C
 toc     : true
 public  : true
 parent  : [[/root-index]]

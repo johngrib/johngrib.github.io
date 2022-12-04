@@ -5,6 +5,7 @@ summary : column 기준으로 수직 정렬한다
 date    : 2022-03-29 23:53:40 +0900
 updated : 2022-03-29 23:59:10 +0900
 tag     : bash command
+resource: 2F/065C96-B53A-4BE5-8E07-A6058DCAC435
 toc     : true
 public  : true
 parent  : [[/cmd]]

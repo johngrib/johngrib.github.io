@@ -5,6 +5,7 @@ summary : 마감이 없는 일을 미루지 않도록 주의하라
 date    : 2020-07-12 12:52:37 +0900
 updated : 2020-07-13 21:50:33 +0900
 tag     : 
+resource: C3/5FF552-EA41-4AF5-8167-FE0BADA441F5
 toc     : true
 public  : true
 parent  : [[summary]]

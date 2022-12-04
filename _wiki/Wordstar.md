@@ -5,6 +5,7 @@ summary : 최초의 WYSIWYG 워드프로세서
 date    : 2019-12-06 22:10:45 +0900
 updated : 2019-12-09 22:56:22 +0900
 tag     : 
+resource: 31/EB4A23-3B41-4470-9333-240799D71E96
 toc     : true
 public  : true
 parent  : [[legend]]

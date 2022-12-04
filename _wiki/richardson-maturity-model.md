@@ -5,6 +5,7 @@ summary : REST 성숙도를 4단계로 표현한다
 date    : 2020-07-12 20:24:29 +0900
 updated : 2020-07-12 20:38:13 +0900
 tag     : rest
+resource: 78/4BA724-E55B-406A-8BAD-388FD368E5C5
 toc     : true
 public  : true
 parent  : [[jargon]]

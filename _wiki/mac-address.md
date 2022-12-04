@@ -5,6 +5,7 @@ summary :
 date    : 2020-12-25 22:50:38 +0900
 updated : 2020-12-25 23:10:25 +0900
 tag     : network cs
+resource: 00/F23893-ED12-4F7C-A8C5-4DB6FDB035C3
 toc     : true
 public  : true
 parent  : [[index]]

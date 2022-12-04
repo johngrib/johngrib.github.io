@@ -5,6 +5,7 @@ summary : 05.Replication
 date    : 2018-07-08 21:33:31 +0900
 updated : 2022-05-22 18:08:45 +0900
 tag     : 
+resource: F1/747811-0DEC-41F1-9972-617F3B250F26
 toc     : true
 public  : true
 parent  : [[/study/ddia]]

@@ -5,6 +5,7 @@ summary : (책) Are you indispensable?
 date    : 2022-09-04 19:44:49 +0900
 updated : 2022-09-04 19:54:27 +0900
 tag     : 
+resource: 91/BB70F7-D3BC-4E02-A4A2-584C9DDA9A90
 toc     : true
 public  : true
 parent  : [[/book]]

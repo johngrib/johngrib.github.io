@@ -5,6 +5,7 @@ summary :
 date    : 2018-09-17 12:06:47 +0900
 updated : 2018-09-17 13:49:55 +0900
 tag     : excel vba
+resource: 34/C00717-4F13-4FB9-A904-1C00D50FFDFF
 toc     : true
 public  : true
 parent  : [[Excel]]

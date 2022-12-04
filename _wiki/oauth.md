@@ -5,6 +5,7 @@ summary :
 date    : 2022-09-18 10:07:56 +0900
 updated : 2022-09-18 23:28:19 +0900
 tag     : 
+resource: E0/693179-858B-4605-8427-D50D0D3DD9DE
 toc     : true
 public  : true
 parent  : [[/index]]

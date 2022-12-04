@@ -5,6 +5,7 @@ summary : 사람들이 많이 쓰는 걸 쓰자
 date    : 2018-10-21 10:19:44 +0900
 updated : 2020-01-03 08:45:11 +0900
 tag     : golang
+resource: 5C/941345-982B-4557-9374-88CA8059C52E
 toc     : true
 public  : true
 parent  : [[go]]

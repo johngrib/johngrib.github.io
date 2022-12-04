@@ -5,6 +5,7 @@ summary : 정렬용 비교 함수 가이드
 date    : 2022-03-01 21:23:11 +0900
 updated : 2022-09-12 23:34:48 +0900
 tag     : clojure
+resource: 88/294CD1-6000-4576-9522-DEE287BF9188
 toc     : true
 public  : true
 parent  : [[/clojure/guide]]

@@ -5,6 +5,7 @@ summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조�
 date    : 2017-12-04 21:34:28 +0900
 updated : 2022-06-14 00:42:32 +0900
 tag     : proverb law
+resource: 12/A29B77-E521-4B40-AAC3-1C2C7B323612
 toc     : true
 public  : true
 parent  : [[jargon]]

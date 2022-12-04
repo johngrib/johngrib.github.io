@@ -5,6 +5,7 @@ summary :
 date    : 2019-08-30 10:05:12 +0900
 updated : 2019-08-30 12:18:19 +0900
 tag     : java
+resource: 27/E5A6D5-476B-487D-AF97-B576235B3580
 toc     : true
 public  : true
 parent  : [[jvm]]

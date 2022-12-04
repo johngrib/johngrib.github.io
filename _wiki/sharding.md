@@ -5,6 +5,7 @@ summary :
 date    : 2019-09-26 16:00:47 +0900
 updated : 2020-09-21 13:16:51 +0900
 tag     : db
+resource: 41/7AC1DF-B9FA-4145-AD83-42D5FADBB136
 toc     : true
 public  : true
 parent  : [[database]]

@@ -5,6 +5,7 @@ summary :
 date    : 2020-07-29 22:19:22 +0900
 updated : 2022-01-16 10:57:59 +0900
 tag     : 인물 awk c bell-labs brian-kernighan
+resource: 0B/4625D1-0CE6-4D9D-8FE2-CBC4DA0F8935
 toc     : true
 public  : true
 parent  : [[people]]

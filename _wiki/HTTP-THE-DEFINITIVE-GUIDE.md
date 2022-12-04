@@ -5,6 +5,7 @@ summary : HTTP - THE DEFINITIVE GUIDE
 date    : 2018-01-20 18:20:21 +0900
 updated : 2018-02-05 22:51:00 +0900
 tag     : book http
+resource: EB/0E67B9-1AA0-4672-B5C3-8EE5368299B0
 toc     : true
 public  : true
 parent  : [[book]]

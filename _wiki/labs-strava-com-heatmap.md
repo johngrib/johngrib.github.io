@@ -5,6 +5,7 @@ summary : 운동 위치추적 앱 스트라바가 공개한 열 지도
 date    : 2018-02-04 11:05:57 +0900
 updated : 2018-02-07 21:30:38 +0900
 tag     : tools map 보안 twitter
+resource: 11/8674D0-5E81-4A60-B0BA-6E510572746F
 toc     : true
 public  : true
 parent  : [[useful-site]]

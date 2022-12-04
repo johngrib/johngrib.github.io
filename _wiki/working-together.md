@@ -5,6 +5,7 @@ summary : 협업도 열심히 배우고 익혀야 하는 스킬이다
 date    : 2020-03-09 20:45:18 +0900
 updated : 2020-03-15 12:33:37 +0900
 tag     : work
+resource: 91/5FF9D9-9CD7-4B76-B62C-356517517495
 toc     : true
 public  : true
 parent  : [[better-work]]

@@ -5,6 +5,7 @@ summary : 데이터 스트림을 처리하는 시스템 구조를 제공한다
 date    : 2021-10-31 11:38:24 +0900
 updated : 2021-10-31 14:36:38 +0900
 tag     : posa architecture
+resource: 96/7254C8-40E0-4EF6-8BE5-50F84817387E
 toc     : true
 public  : true
 parent  : [[/pattern]]

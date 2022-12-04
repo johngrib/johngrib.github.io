@@ -5,6 +5,7 @@ summary : 틸다 표기법
 date    : 2020-05-31 18:35:05 +0900
 updated : 2020-05-31 20:08:26 +0900
 tag     : algorithm
+resource: 88/EF8C7D-9A37-4CCA-AF05-3226BEB9A5BD
 toc     : true
 public  : true
 parent  : [[algorithm]]

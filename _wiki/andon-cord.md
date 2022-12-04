@@ -5,6 +5,7 @@ summary : 문제가 발생하면 누구나 잡아당길 수 있는 코드
 date    : 2020-01-16 21:01:15 +0900
 updated : 2021-08-24 23:29:34 +0900
 tag     : 
+resource: 58/C9C252-ADD9-44B3-A298-59AEB151E204
 toc     : true
 public  : true
 parent  : [[software-engineering]]

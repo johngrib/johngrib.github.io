@@ -5,6 +5,7 @@ summary :
 date    : 2022-11-19 12:08:15 +0900
 updated : 2022-11-19 15:03:23 +0900
 tag     : java
+resource: 54/E0DDC3-7230-4AF5-94B5-E999C57B53B3
 toc     : true
 public  : true
 parent  : [[/java]]

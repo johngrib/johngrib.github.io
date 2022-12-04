@@ -5,6 +5,7 @@ summary :
 date    : 2022-11-08 23:17:58 +0900
 updated : 2022-11-09 00:10:15 +0900
 tag     : java
+resource: 5E/133421-653D-4C8F-BF3D-E098CDF4C49B
 toc     : true
 public  : true
 parent  : [[/problem]]

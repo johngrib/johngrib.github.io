@@ -5,6 +5,7 @@ summary : 자신만의 snippet 파일을 만들어 쓰자
 date    : 2020-01-03 21:32:03 +0900
 updated : 2022-03-01 12:14:37 +0900
 tag     : vim completion
+resource: DB/D2A67D-5E12-4B85-803B-E54CFE95600D
 toc     : true
 public  : true
 parent  : [[/vim]]

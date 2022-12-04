@@ -5,6 +5,7 @@ summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
 updated : 2020-08-03 23:09:30 +0900
 tag     : rfc
+resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
 public  : true
 parent  : [[what]]

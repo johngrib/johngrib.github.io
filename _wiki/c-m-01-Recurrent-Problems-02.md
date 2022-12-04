@@ -5,6 +5,7 @@ summary : 01.RECURRENT PROBLEMS
 date    : 2018-04-26 21:58:11 +0900
 updated : 2020-03-04 20:45:00 +0900
 tag     : math
+resource: 61/636078-FD11-4843-B2B6-82CA9CC2CDFB
 toc     : true
 public  : true
 parent  : [[study-concrete-math]]

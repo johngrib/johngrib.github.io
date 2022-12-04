@@ -5,6 +5,7 @@ summary :
 date    : 2022-09-09 17:32:36 +0900
 updated : 2022-09-09 17:38:58 +0900
 tag     : 
+resource: 05/E8403B-3DDD-4F43-84F7-6152E83E18E3
 toc     : true
 public  : true
 parent  : [[/jargon]]

@@ -5,6 +5,7 @@ summary : yubikey를 관리한다
 date    : 2019-12-15 17:32:45 +0900
 updated : 2019-12-15 18:22:57 +0900
 tag     : command bash
+resource: 0F/2CE4E4-4FE3-444E-A21C-23E9016B3EAC
 toc     : true
 public  : true
 parent  : [[cmd]]

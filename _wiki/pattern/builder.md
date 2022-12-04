@@ -5,6 +5,7 @@ summary : 객체의 생성 방법과 표현 방법을 분리한다
 date    : 2018-02-12 08:18:46 +0900
 updated : 2021-10-16 16:34:07 +0900
 tag     : pattern
+resource: 28/8D0CB8-8125-483C-9C40-5BA23E68C4DB
 toc     : true
 public  : true
 parent  : [[pattern]]

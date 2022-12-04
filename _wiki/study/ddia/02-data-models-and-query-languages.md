@@ -5,6 +5,7 @@ summary : 02.Data Models and Query Languages
 date    : 2018-07-07 05:19:18 +0900
 updated : 2022-05-24 00:14:13 +0900
 tag     : db
+resource: E2/77C857-60DA-46C6-AA18-09A6927EB83D
 toc     : true
 public  : true
 parent  : [[/study/ddia]]

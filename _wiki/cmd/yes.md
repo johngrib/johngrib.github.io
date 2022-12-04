@@ -5,6 +5,7 @@ summary : 문자열을 반복 출력한다
 date    : 2018-09-15 21:45:14 +0900
 updated : 2022-07-18 22:45:33 +0900
 tag     : bash command
+resource: D3/48DA7F-5A9D-4DE7-9B1E-98C92FEA7EB3
 toc     : true
 public  : true
 parent  : [[/cmd]]

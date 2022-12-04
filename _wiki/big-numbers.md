@@ -5,6 +5,7 @@ summary :
 date    : 2019-07-19 14:42:52 +0900
 updated : 2022-02-20 13:26:03 +0900
 tag     : 
+resource: 43/F581FC-7003-413B-9BDC-7A8468546F39
 toc     : true
 public  : true
 parent  : [[index]]

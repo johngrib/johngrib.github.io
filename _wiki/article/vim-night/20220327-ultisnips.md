@@ -5,6 +5,7 @@ summary : Ultisnips 이야기
 date    : 2022-09-12 18:09:35 +0900
 updated : 2022-09-12 22:35:22 +0900
 tag     :
+resource: E6/1B0086-264A-497A-8BCE-D5BE8DECA7E5
 toc     : true
 public  : true
 parent  : [[/article]]

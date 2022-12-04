@@ -5,6 +5,7 @@ summary : 암호의 안전성은 알고리즘이 아니라 키의 비밀성에�
 date    : 2018-10-10 09:27:05 +0900
 updated : 2019-12-11 10:41:43 +0900
 tag     : encryption
+resource: 8E/45E12F-C428-4443-8FFB-294D8F06EC0F
 toc     : true
 public  : true
 parent  : [[jargon]]

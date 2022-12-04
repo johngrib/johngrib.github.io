@@ -5,6 +5,7 @@ summary : Brew & manage PHP versions in pure PHP at HOME
 date    : 2019-01-08 15:43:24 +0900
 updated : 2019-01-08 22:43:54 +0900
 tag     : php command
+resource: A0/F5DFA3-4FD6-4ACA-8599-880DF0F420A3
 toc     : true
 public  : true
 parent  : [[cmd]]

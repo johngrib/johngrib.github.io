@@ -5,6 +5,7 @@ summary : 10년간 세계 유일의 전파천문학자
 date    : 2018-02-08 12:06:18 +0900
 updated : 2020-05-22 23:54:52 +0900
 tag     : story science
+resource: 7C/1A3FA3-B8E9-4EF6-BED9-7D6D9017E832
 toc     : true
 public  : true
 parent  : [[legend]]

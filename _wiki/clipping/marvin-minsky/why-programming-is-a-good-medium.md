@@ -5,6 +5,7 @@ summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 �
 date    : 2022-08-06 11:15:12 +0900
 updated : 2022-08-11 01:51:40 +0900
 tag     : 번역 lisp
+resource: 5A/3FD6C4-694B-4196-9BF0-13AB73D9B6F0
 toc     : true
 public  : true
 parent  : [[/clipping]]

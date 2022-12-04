@@ -5,6 +5,7 @@ summary : 다른 객체를 생성하는 책임을 갖는 프로그램 요소
 date    : 2021-10-16 16:11:07 +0900
 updated : 2022-02-14 23:03:21 +0900
 tag     : ddd
+resource: BC/316AA7-331A-4E34-BA5F-345008FC1DA0
 toc     : true
 public  : true
 parent  : [[/pattern]]

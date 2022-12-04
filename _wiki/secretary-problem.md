@@ -5,6 +5,7 @@ summary : 37% 법칙
 date    : 2018-03-31 18:03:21 +0900
 updated : 2020-03-08 18:42:04 +0900
 tag     : math
+resource: 47/A89431-8C3E-4503-AE2E-54CA29A383EF
 toc     : true
 public  : true
 parent  : [[math]]

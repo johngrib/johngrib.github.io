@@ -5,6 +5,7 @@ summary : 미세먼지 대응에 대한 나의 노하우를 기록한다
 date    : 2018-03-24 11:07:17 +0900
 updated : 2020-02-24 22:57:43 +0900
 tag     : tools 미세먼지
+resource: E5/0B2EB8-72B6-46EC-A7F8-3175ED5A85A7
 toc     : true
 public  : true
 parent  : [[/hack]]

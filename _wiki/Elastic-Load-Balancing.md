@@ -5,6 +5,7 @@ summary : AWS 로드 밸런서
 date    : 2018-09-16 18:23:02 +0900
 updated : 2020-04-21 22:26:51 +0900
 tag     : aws devops
+resource: 76/BD9AD8-8BF3-415B-A3B0-039E7EB2C97F
 toc     : true
 public  : true
 parent  : [[aws]]

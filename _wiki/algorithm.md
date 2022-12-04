@@ -5,6 +5,7 @@ summary :
 date    : 2018-03-31 18:01:38 +0900
 updated : 2020-03-04 20:46:42 +0900
 tag     : algorithm
+resource: E5/44EF40-A196-48BB-971B-D09FFAF009D1
 toc     : true
 public  : true
 parent  : [[index]]

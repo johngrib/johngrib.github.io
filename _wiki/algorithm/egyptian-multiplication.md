@@ -5,6 +5,7 @@ summary : EGYPTIAN MULTIPLICATION
 date    : 2018-11-14 23:24:36 +0900
 updated : 2022-11-13 22:19:53 +0900
 tag     : math
+resource: 9D/222E02-12C6-4EA6-95D7-4055F3CF88AD
 toc     : true
 public  : true
 parent  : [[/algorithm]]

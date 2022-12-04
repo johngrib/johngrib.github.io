@@ -5,6 +5,7 @@ summary : Gmail 만세
 date    : 2020-01-19 09:02:58 +0900
 updated : 2022-03-01 23:59:55 +0900
 tag     : email
+resource: 1E/B6B559-9D5E-4F3C-A7D0-F78C922BB8F5
 toc     : true
 public  : true
 parent  : [[/hack]]

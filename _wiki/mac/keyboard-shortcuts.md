@@ -5,6 +5,7 @@ summary : 자주 쓰는 맥 단축키 정리
 date    : 2018-01-28 09:09:54 +0900
 updated : 2022-02-26 23:27:41 +0900
 tag     : 단축키 mac
+resource: 1B/E264F7-D678-471E-A98C-4C6FDCC2FE75
 toc     : true
 public  : true
 parent  : [[/mac]]

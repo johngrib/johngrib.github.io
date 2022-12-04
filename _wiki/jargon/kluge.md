@@ -5,6 +5,7 @@ summary : 클루지
 date    : 2022-09-12 11:22:36 +0900
 updated : 2022-09-12 13:13:16 +0900
 tag     : 
+resource: 9C/553E6D-0927-487F-8915-6AC769AC328C
 toc     : true
 public  : true
 parent  : [[/jargon]]

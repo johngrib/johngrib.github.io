@@ -5,6 +5,7 @@ summary :
 date    : 2019-05-25 09:42:51 +0900
 updated : 2021-07-24 14:55:02 +0900
 tag     : 
+resource: CA/A7F899-FE40-4E63-B530-027EC3FC4FCF
 toc     : true
 public  : true
 parent  : [[index]]

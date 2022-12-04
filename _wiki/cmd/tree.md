@@ -5,6 +5,7 @@ summary : 디렉토리의 내용을 트리 구조로 보여준다
 date    : 2020-02-09 23:09:43 +0900
 updated : 2022-03-06 21:02:05 +0900
 tag     : bash command
+resource: 49/A43344-11FD-46E0-BC88-5A17A47B1797
 toc     : true
 public  : true
 parent  : [[/cmd]]

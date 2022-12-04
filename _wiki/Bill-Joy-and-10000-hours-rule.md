@@ -5,6 +5,7 @@ summary :
 date    : 2020-05-17 20:24:14 +0900
 updated : 2020-07-29 22:21:42 +0900
 tag     : 
+resource: 1D/D41A46-7366-4054-801A-E7CCDAD63910
 toc     : true
 public  : true
 parent  : [[people]]

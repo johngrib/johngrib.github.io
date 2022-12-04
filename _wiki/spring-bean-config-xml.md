@@ -5,6 +5,7 @@ summary : 잊어먹고 후회말고 기록해두자
 date    : 2019-08-15 16:30:03 +0900
 updated : 2019-08-15 22:11:42 +0900
 tag     : spring xml
+resource: 15/6A0B1B-E814-4D08-913B-97708C1414B0
 toc     : true
 public  : true
 parent  : [[spring]]

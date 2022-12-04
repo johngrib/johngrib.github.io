@@ -5,6 +5,7 @@ summary : Golang의 타입
 date    : 2018-10-14 17:04:19 +0900
 updated : 2019-11-14 23:59:58 +0900
 tag     : golang type
+resource: 25/50E5BB-A3E9-4DA9-BFC8-9306C5F54EFC
 toc     : true
 public  : true
 parent  : [[go]]

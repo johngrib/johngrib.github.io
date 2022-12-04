@@ -5,6 +5,7 @@ summary : java.util.stream.Stream
 date    : 2019-09-24 09:37:07 +0900
 updated : 2021-10-05 15:58:29 +0900
 tag     : java
+resource: 98/0444D8-078F-4E75-82D3-8AF8B4B26D6A
 toc     : true
 public  : true
 parent  : [[/java]]

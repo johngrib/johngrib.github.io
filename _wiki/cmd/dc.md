@@ -5,6 +5,7 @@ summary : an arbitrary precision calculator
 date    : 2020-08-01 15:32:11 +0900
 updated : 2022-11-20 12:26:03 +0900
 tag     : bash command calculator
+resource: 5A/333E63-47EB-4779-B3DA-68EE8CF2BB83
 toc     : true
 public  : true
 parent  : [[/cmd]]

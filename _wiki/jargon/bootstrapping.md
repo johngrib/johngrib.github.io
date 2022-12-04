@@ -5,6 +5,7 @@ summary :
 date    : 2019-02-25 10:40:19 +0900
 updated : 2022-07-10 15:44:47 +0900
 tag     : 
+resource: 59/A06FA3-1EB6-4BC5-86C8-86CF2FF62BA6
 toc     : true
 public  : true
 parent  : [[/jargon]]

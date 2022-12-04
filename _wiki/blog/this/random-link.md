@@ -5,6 +5,7 @@ summary :
 date    : 2021-07-20 21:49:15 +0900
 updated : 2021-07-25 14:47:02 +0900
 tag     : 
+resource: 87/AA5089-14C8-43D7-909A-5CF34596EE2A
 toc     : true
 public  : true
 parent  : [[/blog/this]]

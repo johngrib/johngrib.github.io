@@ -5,6 +5,7 @@ summary :
 date    : 2022-10-01 23:12:37 +0900
 updated : 2022-11-20 13:55:12 +0900
 tag     : 
+resource: 5F/C17323-ABF2-4011-B272-A9B7D27BB269
 toc     : true
 public  : true
 parent  : [[/algorithm]]

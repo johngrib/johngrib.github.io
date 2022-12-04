@@ -5,6 +5,7 @@ summary : 인쇄 식자공들이 소문자 활자를 아래쪽 상자에 담고,
 date    : 2018-02-07 21:41:02 +0900
 updated : 2020-05-22 23:48:52 +0900
 tag     : letter case
+resource: 83/54259B-BC7F-44FD-B4A0-C3A178F697EE
 toc     : true
 public  : true
 parent  : [[why]]

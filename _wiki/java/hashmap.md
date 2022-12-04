@@ -5,6 +5,7 @@ summary :
 date    : 2019-10-27 11:54:24 +0900
 updated : 2022-11-24 16:45:02 +0900
 tag     : java
+resource: AD/0DA9BB-65E8-490B-BFF7-77004E50553D
 toc     : true
 public  : true
 parent  : [[/java]]

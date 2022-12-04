@@ -5,6 +5,7 @@ summary : Unified Modeling Language
 date    : 2020-07-02 23:23:45 +0900
 updated : 2020-07-04 22:38:25 +0900
 tag     : oop
+resource: 98/9EBA09-4F5C-4BA0-840D-D31EE2468104
 toc     : true
 public  : true
 parent  : [[index]]

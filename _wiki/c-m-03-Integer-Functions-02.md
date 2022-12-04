@@ -5,6 +5,7 @@ summary : 03.Integer Functions.01.FLOOR/CEILING APPLICATIONS
 date    : 2018-06-03 14:17:27 +0900
 updated : 2020-04-03 23:25:18 +0900
 tag     : math
+resource: 5B/2D61E1-866D-4F74-A387-602ABC1E353C
 toc     : true
 public  : true
 parent  : [[study-concrete-math]]

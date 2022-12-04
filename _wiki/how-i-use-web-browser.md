@@ -5,6 +5,7 @@ summary : 적절한 익스텐션을 사용한다
 date    : 2018-03-04 00:38:22 +0900
 updated : 2022-04-24 23:28:46 +0900
 tag     : chrome
+resource: C3/F7D543-D04C-4FAF-8BB6-867E95298624
 toc     : true
 public  : true
 parent  : [[/hack]]

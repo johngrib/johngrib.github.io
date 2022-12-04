@@ -5,6 +5,7 @@ summary :
 date    : 2019-10-17 16:44:17 +0900
 updated : 2019-10-17 17:04:34 +0900
 tag     : 
+resource: 46/8FAF64-D177-4AEB-86A9-A502A83A67A2
 toc     : true
 public  : true
 parent  : [[index]]

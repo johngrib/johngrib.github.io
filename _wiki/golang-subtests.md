@@ -5,6 +5,7 @@ summary : Using Subtests and Sub-benchmarks
 date    : 2019-06-06 18:59:15 +0900
 updated : 2019-06-06 23:57:33 +0900
 tag     : golang 번역 the-go-blog testing
+resource: 21/BDA37D-6C96-46ED-99B2-37EE1E487F0F
 toc     : true
 public  : true
 parent  : [[Go-Blog-translation]]

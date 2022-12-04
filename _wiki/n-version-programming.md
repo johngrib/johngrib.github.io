@@ -5,6 +5,7 @@ summary : 여러 구현체에 같은 요청을 보낸 후 결과를 비교해 �
 date    : 2021-05-24 22:04:57 +0900
 updated : 2021-05-24 22:25:48 +0900
 tag     : 
+resource: DD/E515F6-F9DC-46DC-83D0-857587C89FE6
 toc     : true
 public  : true
 parent  : [[programming]]

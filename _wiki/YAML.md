@@ -5,6 +5,7 @@ summary : YAML Ain't Markup Language
 date    : 2017-12-02 16:45:25 +0900
 updated : 2018-04-08 19:48:46 +0900
 tag     : yaml data-format
+resource: AB/56A225-A724-46A6-8BA8-EC2060C84D52
 toc     : true
 public  : true
 parent  : [[language]]

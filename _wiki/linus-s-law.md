@@ -5,6 +5,7 @@ summary : 보는 눈이 충분하면 모든 버그를 찾을 수 있다
 date    : 2020-02-05 22:11:19 +0900
 updated : 2020-02-05 22:17:28 +0900
 tag     : 
+resource: 11/418314-5BD5-4AC8-A895-4CFC8C8719BD
 toc     : true
 public  : true
 parent  : [[jargon]]

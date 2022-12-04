@@ -5,6 +5,7 @@ summary :
 date    : 2019-09-15 15:01:28 +0900
 updated : 2021-11-26 20:51:55 +0900
 tag     : java gc
+resource: BA/DE1541-BA02-4738-9C0E-66B4DCA12F9C
 toc     : true
 public  : true
 parent  : [[/java/gc]]

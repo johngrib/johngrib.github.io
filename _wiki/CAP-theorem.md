@@ -5,6 +5,7 @@ summary :
 date    : 2019-10-27 22:43:59 +0900
 updated : 2021-08-22 15:35:52 +0900
 tag     : 
+resource: C9/5A81A4-E2D5-4861-B1BB-7BCF0A4CBA5B
 toc     : true
 public  : true
 parent  : [[jargon]]

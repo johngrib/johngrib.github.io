@@ -5,6 +5,7 @@ summary : compute and check SHA256 message digest
 date    : 2018-08-24 21:37:34 +0900
 updated : 2018-08-24 22:12:12 +0900
 tag     : bash encryption command
+resource: 67/C44AB9-1816-4E3B-AD93-7E181ADFC275
 toc     : true
 public  : true
 parent  : [[cmd]]

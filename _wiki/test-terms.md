@@ -5,6 +5,7 @@ summary :
 date    : 2019-07-07 07:46:18 +0900
 updated : 2020-02-18 21:24:28 +0900
 tag     : test
+resource: F3/E515E8-E358-4A3E-8AD8-4EDC0B7135AB
 toc     : true
 public  : true
 parent  : [[software-engineering]]

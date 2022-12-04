@@ -5,6 +5,7 @@ summary :
 date    : 2019-03-13 21:07:50 +0900
 updated : 2021-11-28 13:57:54 +0900
 tag     : math
+resource: 1D/FFC3AC-72E2-4EA5-AD59-EA68E5805309
 toc     : true
 public  : true
 parent  : [[/problem]]

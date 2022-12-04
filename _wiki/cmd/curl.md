@@ -5,6 +5,7 @@ summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
 updated : 2022-02-17 22:13:12 +0900
 tag     : bash command
+resource: B6/81C877-1018-4D8C-832C-D96244F87479
 toc     : true
 public  : true
 parent  : [[/cmd]]

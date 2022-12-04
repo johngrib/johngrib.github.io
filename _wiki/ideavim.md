@@ -5,6 +5,7 @@ summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
 updated : 2022-01-04 23:36:18 +0900
 tag     : vim ideavim intellij
+resource: 44/580326-0E29-46DE-81F7-50A7AD8B4F60
 toc     : true
 public  : true
 parent  : [[vim]]

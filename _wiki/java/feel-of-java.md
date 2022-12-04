@@ -5,6 +5,7 @@ summary :
 date    : 2021-11-20 21:19:49 +0900
 updated : 2021-11-21 19:24:15 +0900
 tag     : james-gosling
+resource: D7/C9FE3B-AD9E-45FD-A4FF-CC5C029CC762
 toc     : true
 public  : true
 parent  : [[/java]]

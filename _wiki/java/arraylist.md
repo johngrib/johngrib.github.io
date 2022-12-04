@@ -5,6 +5,7 @@ summary : 이걸 모르면 곤란하지
 date    : 2021-03-31 23:24:24 +0900
 updated : 2022-01-29 00:55:15 +0900
 tag     : java algorithm
+resource: 6A/7AB989-C200-477D-B71B-F3873C6D6690
 toc     : true
 public  : true
 parent  : [[/java]]

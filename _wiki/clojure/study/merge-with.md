@@ -5,6 +5,7 @@ summary :
 date    : 2021-12-20 00:17:32 +0900
 updated : 2021-12-20 10:03:57 +0900
 tag     : clojure
+resource: B0/9F952D-92FF-4339-A3BC-74CEA96AD763
 toc     : true
 public  : true
 parent  : [[/clojure/study]]

@@ -5,6 +5,7 @@ summary :
 date    : 2018-11-01 09:03:36 +0900
 updated : 2021-06-28 00:11:50 +0900
 tag     : excel hotkey
+resource: 9E/C8DAD3-B8B8-4FE4-B262-97CCB7ECAB53
 toc     : true
 public  : true
 parent  : [[Excel]]

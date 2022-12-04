@@ -5,6 +5,7 @@ summary : 특정 항목을 지정한 위치로 옮겨주는 기능
 date    : 2021-07-28 14:46:18 +0900
 updated : 2021-07-28 15:36:52 +0900
 tag     : 
+resource: 85/D7E7B8-F58E-4A8A-847A-1F4C47CD4DCB
 toc     : true
 public  : true
 parent  : [[/blog/this]]

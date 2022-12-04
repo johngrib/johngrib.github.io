@@ -5,6 +5,7 @@ summary : K&R style, Allman style
 date    : 2017-03-08 23:00:00 +0900
 updated : 2019-01-14 21:41:31 +0900
 tag     :
+resource: E1/637B87-9434-4845-86DA-397DD6C05970
 toc     : true
 public  : true
 parent  : [[what]]

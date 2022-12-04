@@ -5,6 +5,7 @@ summary : control 키 이야기
 date    : 2022-11-17 22:25:09 +0900
 updated : 2022-11-17 23:03:57 +0900
 tag     : vim
+resource: 4D/557E8F-C2DF-494B-933B-5AA63F2596CA
 toc     : true
 public  : true
 parent  : [[/article]]

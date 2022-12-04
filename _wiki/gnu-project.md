@@ -5,6 +5,7 @@ summary :
 date    : 2020-04-08 21:44:07 +0900
 updated : 2020-07-31 23:57:45 +0900
 tag     : gnu richard-stallman
+resource: EC/C5A359-7294-4480-BF93-A59E4E6D4418
 toc     : true
 public  : true
 parent  : [[index]]

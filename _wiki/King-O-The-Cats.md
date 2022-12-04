@@ -5,6 +5,7 @@ summary :
 date    : 2018-07-28 22:54:25 +0900
 updated : 2018-07-29 00:13:44 +0900
 tag     : 번역
+resource: 67/D4811E-CE30-4104-A27D-A4FD36B6BB1A
 toc     : true
 public  : true
 parent  : [[clipping]]

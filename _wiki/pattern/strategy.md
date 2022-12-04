@@ -5,6 +5,7 @@ summary : 동일 계열의 알고리즘을 정의하고 상호교환이 가능�
 date    : 2019-09-21 16:49:12 +0900
 updated : 2021-10-29 10:53:48 +0900
 tag     : GoF-design-pattern
+resource: 96/A50B3C-0D8D-4942-95B8-302AA1401411
 toc     : true
 public  : true
 parent  : [[pattern]]

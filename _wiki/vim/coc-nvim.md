@@ -5,6 +5,7 @@ summary : vim을 vscode처럼 사용할 수 있게 도와주는 자동완성 플
 date    : 2019-05-16 22:19:50 +0900
 updated : 2022-06-19 00:47:07 +0900
 tag     : vim
+resource: 4F/DD09BC-1FAF-411D-B5BF-23146748331C
 toc     : true
 public  : true
 parent  : [[/vim]]

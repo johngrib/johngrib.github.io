@@ -5,6 +5,7 @@ summary : 자바 추상 메소드
 date    : 2021-05-25 23:05:20 +0900
 updated : 2021-05-26 20:18:43 +0900
 tag     : java
+resource: 9E/F59370-707A-4DB3-AE3F-D8027E87EC16
 toc     : true
 public  : true
 parent  : [[java]]

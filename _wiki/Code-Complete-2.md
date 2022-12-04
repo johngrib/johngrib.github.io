@@ -5,6 +5,7 @@ summary : Code Complete 2nd Edition by Steve McConnell
 date    : 2017-12-05 19:22:28 +0900
 updated : 2018-01-26 21:35:22 +0900
 tag     : book jolt-award
+resource: A4/8A500B-023B-4966-8C62-526925245F91
 toc     : true
 public  : true
 parent  : [[book]]

@@ -5,6 +5,7 @@ summary : 베이즈 이론 연습문제
 date    : 2018-04-09 09:14:07 +0900
 updated : 2018-04-24 20:48:48 +0900
 tag     : Think-Bayes bayes
+resource: 2B/9DE452-3231-4722-86E2-DA9A58DC6E32
 toc     : true
 public  : true
 parent  : [[study-think-bayes]]

@@ -5,6 +5,7 @@ summary : BDD Testing Framework for Go
 date    : 2018-10-02 10:55:21 +0900
 updated : 2018-10-04 16:44:56 +0900
 tag     : golang test
+resource: 6A/E2CCB8-A863-4DE8-A5B3-C32656CC8889
 toc     : true
 public  : true
 parent  : [[go]]

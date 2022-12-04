@@ -5,6 +5,7 @@ summary :
 date    : 2019-02-22 06:53:06 +0900
 updated : 2021-09-12 18:41:32 +0900
 tag     : unit
+resource: FE/DA2033-EBBF-4B63-82E2-17EEB8758D21
 toc     : true
 public  : true
 parent  : [[what]]

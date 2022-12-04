@@ -5,6 +5,7 @@ summary : Download objects and refs from another repository
 date    : 2022-01-16 17:02:42 +0900
 updated : 2022-01-16 17:22:12 +0900
 tag     : git
+resource: 09/08BB0B-160C-46B1-8568-68342F8938D8
 toc     : true
 public  : true
 parent  : [[/git]]

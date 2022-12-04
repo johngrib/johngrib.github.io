@@ -5,6 +5,7 @@ summary : 엔터프라이즈 애플리케이션이란 무엇인가?
 date    : 2019-12-29 20:17:18 +0900
 updated : 2019-12-29 22:52:57 +0900
 tag     : 
+resource: 16/C8D5E5-12F9-4FAD-988A-51CA1769F1ED
 toc     : true
 public  : true
 parent  : [[what]]

@@ -5,6 +5,7 @@ summary : 조금씩 매일 하다보면 처리되는 일들
 date    : 2022-09-04 17:14:32 +0900
 updated : 2022-09-09 18:13:29 +0900
 tag     : 
+resource: 68/A84513-B1D1-46E2-8122-369A902F57FA
 toc     : true
 public  : true
 parent  : [[/article]]

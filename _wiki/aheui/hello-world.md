@@ -5,6 +5,7 @@ summary : 아희 재밌네
 date    : 2017-07-14 23:00:17 +0900
 updated : 2021-10-26 23:38:12 +0900
 tag     : aheui
+resource: 05/6E275D-AC10-4D0A-8B3A-BD5A3CA58045
 toc     : true
 public  : true
 parent  : [[/language/aheui]]

@@ -5,6 +5,7 @@ summary : 실제로 갖고 있지 않은 정보를 창조하면 안된다
 date    : 2019-11-06 21:23:53 +0900
 updated : 2020-03-11 23:08:17 +0900
 tag     : 
+resource: C1/6EC0B1-5283-4E96-B107-02C6F4B77E3F
 toc     : true
 public  : true
 parent  : [[math]]

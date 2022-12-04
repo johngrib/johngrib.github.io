@@ -5,6 +5,7 @@ summary : 서로 관련성이 있는 다양한 객체를 생성하기 위한 인
 date    : 2019-10-16 23:44:57 +0900
 updated : 2022-02-14 23:03:48 +0900
 tag     : GoF-design-pattern
+resource: FC/2F6EF0-3060-4B1E-B140-9DF90EC0F6E8
 toc     : true
 public  : true
 parent  : [[/pattern]]

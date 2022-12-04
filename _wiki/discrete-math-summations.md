@@ -5,6 +5,7 @@ summary : Summations
 date    : 2019-01-27 21:09:13 +0900
 updated : 2019-09-10 23:43:08 +0900
 tag     : math
+resource: D3/8F4018-93BD-4070-A05E-60E110315C15
 toc     : true
 public  : true
 parent  : [[study-discrete-mathematics]]

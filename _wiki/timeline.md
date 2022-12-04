@@ -5,6 +5,7 @@ summary :
 date    : 2019-04-28 00:06:37 +0900
 updated : 2022-08-28 11:35:36 +0900
 tag     : 
+resource: 85/85BD50-3D0B-4A77-BAD1-FC9918F4B956
 toc     : true
 public  : true
 parent  : [[index]]

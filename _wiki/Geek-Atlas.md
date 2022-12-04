@@ -5,6 +5,7 @@ summary : The Geek Atlas
 date    : 2018-02-07 12:59:19 +0900
 updated : 2018-02-13 21:38:46 +0900
 tag     : book o-reilly science map
+resource: 35/19861B-3662-4B82-B77C-04AACCE63556
 toc     : true
 public  : true
 parent  : [[book]]

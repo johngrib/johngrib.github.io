@@ -5,6 +5,7 @@ summary : 1진법을 사용해 소수를 판별하자!
 date    : 2017-09-20 20:56:55 +0900
 updated : 2022-11-13 22:04:33 +0900
 tag     : perl regex
+resource: C0/A3C8AB-0AC5-4B29-BD74-550A24462F3E
 toc     : true
 comment : true
 public  : true

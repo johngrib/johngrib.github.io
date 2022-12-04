@@ -5,6 +5,7 @@ summary : 성공적인 면접의 90%는 준비
 date    : 2021-01-11 23:40:29 +0900
 updated : 2021-01-11 23:57:46 +0900
 tag     : 
+resource: E3/44CEA5-C9D1-432C-AC30-95932DFECE97
 toc     : true
 public  : true
 parent  : [[better-work]]

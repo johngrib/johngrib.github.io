@@ -5,6 +5,7 @@ summary : Mac OS X 의 운영체제 버전 정보를 출력한다
 date    : 2020-01-03 22:21:25 +0900
 updated : 2020-01-03 22:24:28 +0900
 tag     : bash command
+resource: 06/41D140-153C-4E42-BAEB-EDB4E91CF395
 toc     : true
 public  : true
 parent  : [[cmd]]

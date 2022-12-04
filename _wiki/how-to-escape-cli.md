@@ -5,6 +5,7 @@ summary : 터미널에서는 나도 후디니가 될 수 있다!
 date    : 2020-01-25 22:00:51 +0900
 updated : 2020-01-25 22:21:33 +0900
 tag     : bash command
+resource: DE/7EFC85-2316-41FB-B1BF-5039703022AC
 toc     : true
 public  : true
 parent  : [[cmd]]

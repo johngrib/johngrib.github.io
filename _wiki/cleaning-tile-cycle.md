@@ -5,6 +5,7 @@ summary : 매일 샤워할 때 가장 더러운 타일 하나를 닦는다
 date    : 2019-10-29 11:25:41 +0900
 updated : 2022-05-11 00:04:45 +0900
 tag     : 
+resource: 17/7DA628-0364-4DE8-9B13-2A7F182D22C9
 toc     : true
 public  : true
 parent  : [[/hack]]

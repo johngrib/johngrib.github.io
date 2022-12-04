@@ -5,6 +5,7 @@ summary : 집안의 문명 레벨이 1 상승했습니다
 date    : 2020-01-30 21:13:03 +0900
 updated : 2021-03-21 12:45:00 +0900
 tag     : google
+resource: 44/067FBF-0330-45E9-8EB8-1896B06F3362
 toc     : true
 public  : true
 parent  : [[tools]]

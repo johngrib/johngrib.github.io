@@ -5,6 +5,7 @@ summary : 알고리즘의 일부 단계를 서브클래스에서 정의한다
 date    : 2019-08-31 15:27:07 +0900
 updated : 2021-10-10 09:13:38 +0900
 tag     : GoF-design-pattern refactoring
+resource: 5C/ABE1C7-49C5-4CF3-9DDE-E6B3FB7E323A
 toc     : true
 public  : true
 parent  : [[/pattern]]

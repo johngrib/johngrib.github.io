@@ -5,6 +5,7 @@ summary : 영속적 저장소를 추상화한다.
 date    : 2021-10-03 23:05:34 +0900
 updated : 2021-10-03 23:49:30 +0900
 tag     : ddd
+resource: 1C/5C0B08-D090-431D-9DD5-C7670C797F4A
 toc     : true
 public  : true
 parent  : [[/pattern]]

@@ -5,6 +5,7 @@ summary : python2 좀 그만 쓰자
 date    : 2018-03-21 22:48:40 +0900
 updated : 2022-03-26 12:30:18 +0900
 tag     : vim python
+resource: 49/498169-3D81-4923-8F09-828428B88AD1
 toc     : true
 public  : true
 parent  : [[vim]]

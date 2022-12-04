@@ -5,6 +5,7 @@ summary :
 date    : 2022-08-28 15:28:07 +0900
 updated : 2022-10-22 13:33:37 +0900
 tag     : 아이디어
+resource: F2/45AF92-13C1-471B-A0EC-217AABB70332
 toc     : true
 public  : true
 parent  : [[/article]]

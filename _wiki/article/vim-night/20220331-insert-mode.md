@@ -5,6 +5,7 @@ summary : INSERT MODE 이야기
 date    : 2022-09-12 18:46:06 +0900
 updated : 2022-09-12 23:12:19 +0900
 tag     :
+resource: 81/185E03-6478-42B3-B5C0-E5C98CFA9AB7
 toc     : true
 public  : true
 parent  : [[/article]]

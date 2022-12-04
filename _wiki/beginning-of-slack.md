@@ -5,6 +5,7 @@ summary :
 date    : 2020-08-17 10:05:00 +0900
 updated : 2020-08-17 10:29:42 +0900
 tag     : slack hbr
+resource: C0/5BC0B7-6605-46C6-AD1F-4CE1DCC3109C
 toc     : true
 public  : true
 parent  : [[legend]]

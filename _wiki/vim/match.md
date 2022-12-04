@@ -5,6 +5,7 @@ summary : 현재 윈도우에서 하이라이트할 패턴을 지정한다
 date    : 2022-03-23 23:40:55 +0900
 updated : 2022-10-19 23:01:32 +0900
 tag     : vim
+resource: EA/C316A4-B298-4AC2-A261-A994BE71BA36
 toc     : true
 public  : true
 parent  : [[/vim]]

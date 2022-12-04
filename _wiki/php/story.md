@@ -5,6 +5,7 @@ summary :
 date    : 2020-02-05 21:57:38 +0900
 updated : 2020-07-14 23:32:28 +0900
 tag     : 
+resource: 32/6A91FB-495C-4A0B-8D39-7EDBB4B62C70
 toc     : true
 public  : true
 parent  : [[php]]

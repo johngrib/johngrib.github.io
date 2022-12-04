@@ -5,6 +5,7 @@ summary : 아마도 평생 작성 중일 문서
 date    : 2020-06-13 18:32:06 +0900
 updated : 2021-10-04 13:57:44 +0900
 tag     : book
+resource: C9/A52182-A4DB-4DFD-8BF1-4E2E55D34CE5
 toc     : true
 public  : true
 parent  : [[/hack]]

@@ -5,6 +5,7 @@ summary : 추정은 숫자가 아니라 분포다
 date    : 2019-12-16 08:05:47 +0900
 updated : 2022-08-15 17:20:08 +0900
 tag     : 
+resource: 76/10FDB9-5145-46B2-8FDC-A9C459B3FB75
 toc     : true
 public  : true
 parent  : [[software-engineering]]

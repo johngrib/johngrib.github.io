@@ -5,6 +5,7 @@ summary : The Halting Problem
 date    : 2019-02-10 21:30:53 +0900
 updated : 2020-01-10 20:52:11 +0900
 tag     : cs
+resource: 15/7FF532-F47A-4166-8597-D6CA737285DA
 toc     : true
 public  : true
 parent  : [[math]]

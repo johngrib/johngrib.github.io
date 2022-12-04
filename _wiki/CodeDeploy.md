@@ -5,6 +5,7 @@ summary : AWS 배포 서비스
 date    : 2019-09-04 21:30:27 +0900
 updated : 2020-03-18 23:01:09 +0900
 tag     : aws
+resource: DD/E42DD1-ECB4-400F-BA9D-B8C15AC7BDAB
 toc     : true
 public  : true
 parent  : [[aws]]

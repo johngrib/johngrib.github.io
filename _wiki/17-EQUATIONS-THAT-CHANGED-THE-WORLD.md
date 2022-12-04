@@ -5,6 +5,7 @@ summary : 쉽고 재미있는, 훌륭한 교양 수학책
 date    : 2018-04-12 13:00:57 +0900
 updated : 2018-04-18 20:44:02 +0900
 tag     : math
+resource: 83/321A71-90E9-4312-8422-4D811AA859FA
 toc     : true
 public  : true
 parent  : [[book]]

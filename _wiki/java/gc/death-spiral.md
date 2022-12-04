@@ -5,6 +5,7 @@ summary : GC death spiral
 date    : 2019-10-29 23:02:40 +0900
 updated : 2022-11-20 00:03:52 +0900
 tag     : gc
+resource: BA/269276-A6E7-4DE2-B828-8CF57DC43A27
 toc     : true
 public  : true
 parent  : [[/java/gc]]

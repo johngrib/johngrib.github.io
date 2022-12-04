@@ -5,6 +5,7 @@ summary :
 date    : 2021-06-26 17:43:22 +0900
 updated : 2021-06-26 21:12:28 +0900
 tag     : mysql
+resource: 1C/CC8411-E647-4CD1-825A-68EEAF2676B1
 toc     : true
 public  : true
 parent  : [[database]]

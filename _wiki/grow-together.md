@@ -5,6 +5,7 @@ summary : 애자일 철학을 삶에 적용해 다른 사람들과 함께 성장
 date    : 2018-12-18 22:32:10 +0900
 updated : 2019-12-19 23:03:58 +0900
 tag     : agile study
+resource: FD/1EDFF8-2AB2-47B4-A6E8-5717ABDF40D7
 toc     : true
 public  : true
 parent  : [[book]]

@@ -5,6 +5,7 @@ summary : Fermat's little theorem
 date    : 2019-03-02 21:17:20 +0900
 updated : 2020-04-21 22:27:45 +0900
 tag     : math
+resource: 83/A9446E-618D-444D-8056-C4D4746EB548
 toc     : true
 public  : true
 parent  : [[math]]

@@ -5,6 +5,7 @@ summary : Clojure 레퍼런스 문서 번역
 date    : 2022-06-12 00:53:56 +0900
 updated : 2022-06-12 17:32:01 +0900
 tag     : clojure 번역
+resource: 32/64F45C-2B6C-4BE3-B53D-5E6C714D20C1
 toc     : true
 public  : true
 parent  : [[/clojure/reference]]

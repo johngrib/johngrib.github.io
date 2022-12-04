@@ -5,6 +5,7 @@ summary :
 date    : 2021-11-12 20:58:35 +0900
 updated : 2022-07-20 22:52:01 +0900
 tag     : emacs
+resource: 1C/75DF1F-FC2C-408B-BE4C-94AA427AA2C1
 toc     : true
 public  : true
 parent  : [[/emacs]]

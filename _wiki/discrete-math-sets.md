@@ -5,6 +5,7 @@ summary : Sets
 date    : 2019-01-14 22:13:18 +0900
 updated : 2019-02-02 14:50:16 +0900
 tag     : math
+resource: 90/8AE3FD-AD7E-4268-9C3E-59909FA88A3D
 toc     : true
 public  : true
 parent  : [[study-discrete-mathematics]]

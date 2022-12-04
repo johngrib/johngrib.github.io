@@ -5,6 +5,7 @@ summary :
 date    : 2020-05-31 21:45:47 +0900
 updated : 2021-10-02 23:04:00 +0900
 tag     : java
+resource: 23/CBE45E-96BA-41DC-879B-0497F8439911
 toc     : true
 public  : true
 parent  : [[/java]]

@@ -5,6 +5,7 @@ summary :
 date    : 2022-02-20 21:20:48 +0900
 updated : 2022-02-27 00:04:00 +0900
 tag     : clojure
+resource: 46/F5D1A3-CB3C-4979-B74C-BA36A7D5D390
 toc     : true
 public  : true
 parent  : [[/clojure/study]]

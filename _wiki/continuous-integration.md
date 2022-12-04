@@ -5,6 +5,7 @@ summary :
 date    : 2018-07-06 10:46:27 +0900
 updated : 2022-06-25 16:06:03 +0900
 tag     : martin-fowler
+resource: D4/87E011-DB03-4E13-821D-5C7D4BBC6E5F
 toc     : true
 public  : true
 parent  : [[software-engineering]]

@@ -5,6 +5,7 @@ summary : 새것을 도입할 때에는 한 번에 하나씩 하자
 date    : 2018-01-18 21:06:12 +0900
 updated : 2022-08-25 12:23:46 +0900
 tag     : Gerald-Weinberg proverb
+resource: 7F/C4B51A-7C57-4EAD-BCE8-425BEA6698B1
 toc     : true
 public  : true
 parent  : [[/jargon]]

@@ -5,6 +5,7 @@ summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
 updated : 2022-01-16 16:24:59 +0900
 tag     : bash command grep ed
+resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
 public  : true
 parent  : [[/cmd]]

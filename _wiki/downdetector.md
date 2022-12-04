@@ -5,6 +5,7 @@ summary :
 date    : 2020-12-14 21:29:15 +0900
 updated : 2021-06-08 22:19:40 +0900
 tag     : 장애
+resource: B4/E58FDE-B0A0-4BB7-BBB1-B42395FD6757
 toc     : true
 public  : true
 parent  : [[useful-site]]

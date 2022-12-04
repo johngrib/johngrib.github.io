@@ -5,6 +5,7 @@ summary : 패스워드를 생성한다
 date    : 2019-12-09 20:50:26 +0900
 updated : 2019-12-09 20:58:29 +0900
 tag     : command bash encryption
+resource: D1/326A54-5C26-48F5-83AD-B5DA154032AF
 toc     : true
 public  : true
 parent  : [[cmd]]

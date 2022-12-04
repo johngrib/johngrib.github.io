@@ -5,6 +5,7 @@ summary : More advanced usage of regular expressions
 date    : 2020-05-19 21:52:22 +0900
 updated : 2021-07-25 17:14:17 +0900
 tag     : 
+resource: BA/153BD8-7FF2-4FC6-9583-2CA4ACEC70B8
 toc     : true
 public  : true
 parent  : [[cmd]]

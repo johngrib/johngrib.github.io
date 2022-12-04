@@ -5,6 +5,7 @@ summary : Modular Arithmetic
 date    : 2019-02-17 21:58:31 +0900
 updated : 2019-03-16 23:25:56 +0900
 tag     : math
+resource: 8B/F556C3-E9AD-4D54-B97B-2F8F2488FD28
 toc     : true
 public  : true
 parent  : [[study-discrete-mathematics]]

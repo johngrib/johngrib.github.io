@@ -5,6 +5,7 @@ summary : 간단하게 가상 환경을 꾸며보자
 date    : 2018-09-15 09:26:59 +0900
 updated : 2018-09-16 22:05:58 +0900
 tag     : vagrant docker centos ubuntu vm devops
+resource: 6C/B13E4D-C4B9-4E1F-8AEF-CF08EEEBBAFD
 toc     : true
 public  : true
 parent  : [[til]]

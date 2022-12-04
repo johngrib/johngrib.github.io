@@ -5,6 +5,7 @@ summary : Rules of Inference
 date    : 2019-01-06 11:36:44 +0900
 updated : 2020-05-31 16:59:06 +0900
 tag     : math
+resource: 89/258AD9-BCF2-4F0C-B552-7254FC938C7B
 toc     : true
 public  : true
 parent  : [[study-discrete-mathematics]]

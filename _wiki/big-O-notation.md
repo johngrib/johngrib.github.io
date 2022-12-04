@@ -5,6 +5,7 @@ summary : 알고리즘의 효율성을 나타내는 표기법이다
 date    : 2018-06-24 17:32:45 +0900
 updated : 2021-06-26 23:25:28 +0900
 tag     : algorithm
+resource: BB/A901EB-6E74-4E62-8414-0F6C08B6F50D
 toc     : true
 public  : true
 parent  : [[algorithm]]

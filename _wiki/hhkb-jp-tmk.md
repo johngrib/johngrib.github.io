@@ -5,6 +5,7 @@ summary : 해피해킹을 더욱 해피하게
 date    : 2017-05-14 15:50:31 +0900
 updated : 2020-07-03 23:48:31 +0900
 tag     : keyboard
+resource: 12/D84E43-FC79-4CCA-9D26-3ADCE9585B31
 toc     : true
 comment : true
 public  : true

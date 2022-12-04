@@ -5,6 +5,7 @@ summary : 자동 완성이 편리하고 눈이 즐거운 셸
 date    : 2018-03-12 22:04:50 +0900
 updated : 2018-03-12 23:07:23 +0900
 tag     : fish terminal
+resource: 89/22D3A1-27FB-40D1-B4C7-B9AB558EA9BC
 toc     : true
 public  : true
 parent  : [[cmd]]

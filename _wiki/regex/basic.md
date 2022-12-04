@@ -5,6 +5,7 @@ summary : 작성중인 문서
 date    : 2020-05-18 22:45:12 +0900
 updated : 2022-11-13 22:10:27 +0900
 tag     : regex
+resource: 4A/97067A-7B34-4C9F-A609-43701006C9A6
 toc     : true
 public  : true
 parent  : [[/regex]]

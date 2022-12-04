@@ -5,6 +5,7 @@ summary : 랜덤으로 격언/속담 등을 보여준다
 date    : 2019-12-25 19:03:11 +0900
 updated : 2022-12-02 01:32:43 +0900
 tag     : bash command
+resource: A1/10A069-3130-4810-BCF1-41F2F75BC4F4
 toc     : true
 public  : true
 parent  : [[cmd]]

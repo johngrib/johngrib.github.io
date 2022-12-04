@@ -5,6 +5,7 @@ summary :
 date    : 2021-12-07 21:04:40 +0900
 updated : 2021-12-25 20:30:52 +0900
 tag     : clojure
+resource: 52/867735-9C47-4179-8C65-1222C17EF81E
 toc     : true
 public  : true
 parent  : [[/clojure/guide]]

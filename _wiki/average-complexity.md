@@ -5,6 +5,7 @@ summary : Average Case Computational Complexity
 date    : 2019-04-07 23:29:38 +0900
 updated : 2020-07-14 23:46:05 +0900
 tag     : algorithm
+resource: B2/BD6A11-55FF-4634-9E0E-F60DC929CA43
 toc     : true
 public  : true
 parent  : [[algorithm]]

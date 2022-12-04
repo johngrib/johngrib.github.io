@@ -5,6 +5,7 @@ summary : 사용법 및 잡다한 팁 요약
 date    : 2018-09-01 18:01:04 +0900
 updated : 2022-10-02 14:01:58 +0900
 tag     : bash command
+resource: 8E/4F8CFB-31D4-4678-975B-D5947D152564
 toc     : true
 public  : true
 parent  : [[cmd]]

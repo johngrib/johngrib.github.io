@@ -5,6 +5,7 @@ summary :
 date    : 2020-06-01 21:49:38 +0900
 updated : 2022-02-26 23:30:38 +0900
 tag     : mac
+resource: AF/775D83-E350-4540-B27A-FFE12B134AD4
 toc     : true
 public  : true
 parent  : [[/mac]]

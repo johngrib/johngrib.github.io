@@ -5,6 +5,7 @@ summary :
 date    : 2019-05-13 22:55:45 +0900
 updated : 2019-11-01 21:33:32 +0900
 tag     : 
+resource: 9F/F9352C-A5C8-4F36-80AA-AFF72DC4E859
 toc     : true
 public  : true
 parent  : [[jargon]]

@@ -5,6 +5,7 @@ summary : 조직이나 단체에서 권력이 작은 구성원이 권력의 불�
 date    : 2020-05-17 18:59:44 +0900
 updated : 2020-05-17 19:45:43 +0900
 tag     : 
+resource: 9C/353600-BED1-4B3D-8885-5948399BE91F
 toc     : true
 public  : true
 parent  : [[jargon]]

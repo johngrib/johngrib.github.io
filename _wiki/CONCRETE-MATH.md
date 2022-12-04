@@ -5,6 +5,7 @@ summary : 로널드 그레이엄과 도널드 커누스, 오렌 파타슈닉의 
 date    : 2018-04-25 22:17:17 +0900
 updated : 2020-01-23 23:58:56 +0900
 tag     : book
+resource: BE/4AD54F-EF52-48CF-BD73-2D55ECFB1D16
 toc     : true
 public  : true
 parent  : [[book]]

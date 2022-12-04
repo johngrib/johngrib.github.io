@@ -5,6 +5,7 @@ summary : 컴퓨터 애호가들에게 보내는 편지 by 빌 게이츠
 date    : 2022-08-14 22:07:13 +0900
 updated : 2022-08-14 23:22:34 +0900
 tag     : 번역 bill-gates
+resource: 07/8378E5-5655-4611-B718-C5D486E038DC
 toc     : true
 public  : true
 parent  : [[/clipping]]

@@ -5,6 +5,7 @@ summary : Pauseless GC 알고리즘 논문 요약
 date    : 2019-10-15 17:55:05 +0900
 updated : 2022-05-11 00:03:55 +0900
 tag     : java gc
+resource: 09/B40B35-A279-4304-945F-C9C083F8E224
 toc     : true
 public  : true
 parent  : [[summary]]

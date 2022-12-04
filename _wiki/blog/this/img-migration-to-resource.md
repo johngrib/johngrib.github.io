@@ -5,6 +5,7 @@ summary : post-img에서 resource 로 한꺼번에 옮기자
 date    : 2021-07-25 16:36:59 +0900
 updated : 2021-07-25 16:56:09 +0900
 tag     : 
+resource: A2/A3F2A3-13DF-4793-ADD2-33822EEB81ED
 toc     : true
 public  : true
 parent  : [[/blog/this]]

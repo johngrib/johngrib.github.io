@@ -5,6 +5,7 @@ summary : 조건에 맞는 값의 sum 값을 구한다
 date    : 2018-04-26 17:52:29 +0900
 updated : 2020-01-31 23:26:29 +0900
 tag     : excel
+resource: FC/ECE73F-C78C-492B-B6AD-FFC700788061
 toc     : true
 public  : true
 parent  : [[Excel]]

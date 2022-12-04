@@ -5,6 +5,7 @@ summary : translate characters
 date    : 2019-11-18 13:52:25 +0900
 updated : 2022-02-06 00:28:08 +0900
 tag     : bash command
+resource: 89/84AC90-2C84-4506-AB5A-CB5D964C06EE
 toc     : true
 public  : true
 parent  : [[/cmd]]

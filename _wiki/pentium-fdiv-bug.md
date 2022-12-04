@@ -5,6 +5,7 @@ summary : 이 버그로 인텔이 입은 손해가 약 50억 달러였다고
 date    : 2020-06-17 23:58:50 +0900
 updated : 2020-06-18 00:38:38 +0900
 tag     : intel pentium bug float
+resource: 9C/9F45FC-C1E3-4D08-B2A1-83D89331CE86
 toc     : true
 public  : true
 parent  : [[legend]]

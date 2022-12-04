@@ -5,6 +5,7 @@ summary : 클립보드 히스토리도 만들어 봅시다
 date    : 2017-08-07 09:33:00 +0900
 updated : 2018-04-21 11:44:18 +0900
 tag     : hammerspoon
+resource: F9/C110DE-461A-4727-8D16-AECCDBCB69D0
 toc     : true
 comment : true
 public  : true

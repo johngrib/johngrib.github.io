@@ -5,6 +5,7 @@ summary : 아무런 정보가 없을 때 종말을 추정하는 방법
 date    : 2018-04-15 16:38:17 +0900
 updated : 2019-12-07 08:12:29 +0900
 tag     : 추정 bayes
+resource: 21/22ED77-5AC0-4C76-AD85-582BE25F4244
 toc     : true
 public  : true
 parent  : [[jargon]]

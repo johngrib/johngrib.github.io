@@ -5,6 +5,7 @@ summary : 인덱스 이것저것
 date    : 2021-02-17 22:28:47 +0900
 updated : 2021-02-17 22:33:47 +0900
 tag     : db index
+resource: AA/6E2EB9-C39C-429A-9FEC-D525B0A0C39B
 toc     : true
 public  : true
 parent  : [[database]]

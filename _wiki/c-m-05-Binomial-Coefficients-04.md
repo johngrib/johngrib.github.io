@@ -5,6 +5,7 @@ summary : 02.SUMS.06.FINITE AND INFINITE CALCULUS
 date    : 2018-05-22 18:43:02 +0900
 updated : 2018-05-22 18:43:06 +0900
 tag     : math
+resource: 3D/F7D9B0-8258-49E3-B028-22FAD545A43D
 toc     : true
 public  : true
 parent  : [[study-concrete-math]]

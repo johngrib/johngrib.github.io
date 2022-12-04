@@ -5,6 +5,7 @@ summary : 2022년 8월 12일 ~ 8월 13일 트위터에 쓴 생각 정리
 date    : 2022-08-13 16:31:23 +0900
 updated : 2022-08-14 18:56:57 +0900
 tag     : 
+resource: 0D/D25C0F-E795-45EE-88C1-2A60773704F9
 toc     : true
 public  : true
 parent  : [[/article]]

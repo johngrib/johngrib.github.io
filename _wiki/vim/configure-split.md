@@ -5,6 +5,7 @@ summary : vimrc를 대청소하자
 date    : 2020-01-26 13:46:19 +0900
 updated : 2022-06-18 10:28:34 +0900
 tag     : vim
+resource: 47/C5736C-AF57-49E2-811F-13768565D6CC
 toc     : true
 public  : true
 parent  : [[/vim]]

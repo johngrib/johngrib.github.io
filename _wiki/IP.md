@@ -5,6 +5,7 @@ summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
 updated : 2020-12-25 22:52:34 +0900
 tag     : network
+resource: F1/0A089F-47D1-4B30-BF00-98D6BD79FF3F
 toc     : true
 public  : true
 parent  : [[what]]

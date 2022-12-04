@@ -5,6 +5,7 @@ summary : 유한락스가 아니라 루아락스로 깨끗하게
 date    : 2017-07-30 16:32:25 +0900
 updated : 2018-04-21 11:48:11 +0900
 tag     : hammerspoon lua
+resource: 39/B5404C-9ED3-46F9-9E07-1BE9D6857172
 toc     : true
 comment : true
 public  : true

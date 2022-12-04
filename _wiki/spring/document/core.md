@@ -5,6 +5,7 @@ summary : Version 5.3.7
 date    : 2021-06-06 15:56:22 +0900
 updated : 2021-07-10 20:57:19 +0900
 tag     : java spring
+resource: BF/123373-0753-48D7-89FE-16A65D1E531A
 toc     : true
 public  : true
 parent  : [[/spring/document]]

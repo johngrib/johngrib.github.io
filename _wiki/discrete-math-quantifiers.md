@@ -5,6 +5,7 @@ summary : Quantifiers
 date    : 2019-01-05 22:47:57 +0900
 updated : 2019-01-06 11:21:04 +0900
 tag     : math
+resource: 34/49BD02-B5C8-47B7-BACF-C9B8159A5BCA
 toc     : true
 public  : true
 parent  : [[study-discrete-mathematics]]

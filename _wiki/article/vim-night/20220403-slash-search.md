@@ -5,6 +5,7 @@ summary : 텍스트 검색 이야기
 date    : 2022-11-17 22:10:07 +0900
 updated : 2022-11-17 22:49:50 +0900
 tag     : 
+resource: 52/0471E5-B7FB-4761-A435-CF52E3CAAAAA
 toc     : true
 public  : true
 parent  : [[/article]]

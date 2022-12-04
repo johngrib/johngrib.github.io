@@ -5,6 +5,7 @@ summary : 다음 세대 블루 칼라의 대표적인 일자리는 코딩이다
 date    : 2018-01-11 14:15:00 +0900
 updated : 2018-01-12 10:46:53 +0900
 tag     : 번역
+resource: 82/75DC82-A571-4E2E-91DC-36DDABF0CD45
 toc     : true
 public  : true
 parent  : [[clipping]]

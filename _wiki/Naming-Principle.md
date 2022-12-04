@@ -5,6 +5,7 @@ summary : 프로그래밍 할 때 이름 짓기가 가장 어렵더라
 date    : 2018-11-18 22:04:16 +0900
 updated : 2020-07-23 23:26:19 +0900
 tag     : proverb principle naming
+resource: 4A/46ED35-3756-494C-B709-5707FE7B1C50
 toc     : true
 public  : true
 parent  : [[jargon]]

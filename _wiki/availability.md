@@ -5,6 +5,7 @@ summary : 시스템이 다운되지 않고 정상 운영되는 시간의 비율
 date    : 2019-09-20 09:10:51 +0900
 updated : 2021-08-16 20:36:00 +0900
 tag     : 
+resource: DA/975638-2892-45B0-8729-89DD730DDFAC
 toc     : true
 public  : true
 parent  : [[what]]

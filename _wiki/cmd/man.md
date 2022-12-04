@@ -5,6 +5,7 @@ summary : 유닉스 메뉴얼 페이지를 찾아보는 명령
 date    : 2020-09-30 09:38:35 +0900
 updated : 2022-04-17 11:29:34 +0900
 tag     : bash command c
+resource: 3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA
 toc     : true
 public  : true
 parent  : [[/cmd]]

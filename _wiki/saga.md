@@ -5,6 +5,7 @@ summary : 작성중인 문서
 date    : 2020-07-15 23:22:02 +0900
 updated : 2020-07-23 23:55:11 +0900
 tag     : 
+resource: 40/1C925F-EE37-4FFA-87BE-E9E9A70041BC
 toc     : true
 public  : true
 parent  : [[index]]

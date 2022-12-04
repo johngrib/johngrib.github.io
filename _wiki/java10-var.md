@@ -5,6 +5,7 @@ summary :
 date    : 2019-09-12 21:13:19 +0900
 updated : 2019-09-12 22:01:56 +0900
 tag     : java
+resource: 02/76470F-F819-4653-8CF2-4B2A0E9517F7
 toc     : true
 public  : true
 parent  : [[java]]

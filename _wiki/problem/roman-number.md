@@ -5,6 +5,7 @@ summary :
 date    : 2021-11-28 14:10:06 +0900
 updated : 2022-08-04 00:04:39 +0900
 tag     : 
+resource: 49/3AF7E6-633D-45B4-9A57-B27097B02F77
 toc     : true
 public  : true
 parent  : [[/problem]]

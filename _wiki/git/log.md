@@ -5,6 +5,7 @@ summary : 로그를 잘 읽어야 한다
 date    : 2019-12-01 08:14:22 +0900
 updated : 2022-03-13 12:33:34 +0900
 tag     : git
+resource: 1A/6E0987-315D-4ECC-B38E-2937C808EB7C
 toc     : true
 public  : true
 parent  : [[/git]]

@@ -5,6 +5,7 @@ summary : Ethereum White Paper
 date    : 2019-01-22 22:56:21 +0900
 updated : 2019-02-11 15:54:54 +0900
 tag     : blockchain
+resource: 2A/BF81BC-191F-4DFB-B0FC-2C2EB07018D9
 toc     : true
 public  : true
 parent  : [[what]]

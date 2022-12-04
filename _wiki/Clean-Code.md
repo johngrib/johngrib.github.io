@@ -5,6 +5,7 @@ summary : 애자일 소프트웨어 장인 정신
 date    : 2018-01-26 21:35:22 +0900
 updated : 2018-02-04 16:25:41 +0900
 tag     : book Uncle-Bob
+resource: 86/8E7C17-085A-4FEB-B5C2-5E281AA4EE0A
 toc     : true
 public  : true
 parent  : [[book]]

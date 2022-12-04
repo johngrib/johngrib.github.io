@@ -5,6 +5,7 @@ summary : Reapply commits on top of another base tip
 date    : 2022-04-16 22:35:01 +0900
 updated : 2022-04-16 23:50:28 +0900
 tag     : git
+resource: 2B/CD2F8E-4B42-4D40-A5FE-1B2BD03F49B0
 toc     : true
 public  : true
 parent  : [[/git]]

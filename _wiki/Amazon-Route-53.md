@@ -5,6 +5,7 @@ summary :
 date    : 2018-09-16 09:37:08 +0900
 updated : 2019-11-18 21:31:29 +0900
 tag     : aws devops
+resource: FF/3C6D8B-5294-4C05-B720-0BDC53C947B1
 toc     : true
 public  : true
 parent  : [[aws]]

@@ -5,6 +5,7 @@ summary :
 date    : 2021-02-26 22:32:35 +0900
 updated : 2021-04-17 18:44:10 +0900
 tag     : language
+resource: 4E/479F04-03F3-4F72-A7E4-8B98D1B73D9D
 toc     : true
 public  : true
 parent  : [[language]]

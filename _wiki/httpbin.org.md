@@ -5,6 +5,7 @@ summary : mock 데이터가 필요할 때 사용하기 좋다
 date    : 2018-04-22 21:21:07 +0900
 updated : 2018-04-22 21:28:11 +0900
 tag     : http
+resource: E6/A1E5CD-8691-464B-A303-09D52BB0E4EB
 toc     : true
 public  : true
 parent  : [[useful-site]]

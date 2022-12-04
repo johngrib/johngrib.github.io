@@ -5,6 +5,7 @@ summary :
 date    : 2022-10-26 00:25:20 +0900
 updated : 2022-10-26 00:34:02 +0900
 tag     : 
+resource: DB/A6065B-4830-48B6-A118-A7BBE869856C
 toc     : true
 public  : true
 parent  : [[/algorithm]]

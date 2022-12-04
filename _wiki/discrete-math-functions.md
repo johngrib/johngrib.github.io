@@ -5,6 +5,7 @@ summary : Functions
 date    : 2019-01-23 22:56:50 +0900
 updated : 2019-01-25 21:22:58 +0900
 tag     : math
+resource: A9/057D55-A38D-424C-976A-E6F4CD7AF498
 toc     : true
 public  : true
 parent  : [[study-discrete-mathematics]]

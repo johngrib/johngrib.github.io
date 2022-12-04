@@ -5,6 +5,7 @@ summary :
 date    : 2019-12-08 17:38:25 +0900
 updated : 2022-11-09 22:43:40 +0900
 tag     : 
+resource: D2/B9DBB8-64D0-4BFA-961D-EFE074050E4F
 toc     : true
 public  : true
 parent  : [[index]]

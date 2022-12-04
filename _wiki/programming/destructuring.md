@@ -5,6 +5,7 @@ summary : 작성중인 문서
 date    : 2022-03-11 23:16:09 +0900
 updated : 2022-03-12 23:39:52 +0900
 tag     : clojure
+resource: 80/84CC1A-8D40-478C-8E60-E05E0E57FD06
 toc     : true
 public  : true
 parent  : [[/programming]]

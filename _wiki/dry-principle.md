@@ -5,6 +5,7 @@ summary : Don't Repeat Yourself
 date    : 2020-03-30 21:39:43 +0900
 updated : 2021-09-23 22:15:25 +0900
 tag     : 
+resource: 1F/23E542-32BB-48EC-BDE2-96510E617158
 toc     : true
 public  : true
 parent  : [[jargon]]

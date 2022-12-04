@@ -5,6 +5,7 @@ summary :
 date    : 2019-10-10 11:48:51 +0900
 updated : 2021-09-24 14:06:08 +0900
 tag     : transaction db
+resource: B7/548648-23AC-418D-8996-576FE1BF4995
 toc     : true
 public  : true
 parent  : [[index]]

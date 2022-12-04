@@ -5,6 +5,7 @@ summary :
 date    : 2022-09-09 23:44:52 +0900
 updated : 2022-09-10 00:14:45 +0900
 tag     : 
+resource: 0E/C4B4FA-C442-4505-8AB5-E085B769AB5E
 toc     : true
 public  : true
 parent  : [[/architecture]]

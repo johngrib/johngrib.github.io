@@ -5,6 +5,7 @@ summary : 파트너쉽에 대해 생각해 볼 수 있는 영상
 date    : 2020-07-13 22:00:32 +0900
 updated : 2020-07-13 22:52:43 +0900
 tag     : 
+resource: 83/388002-8541-4D93-BBEE-19A88D5466D2
 toc     : true
 public  : true
 parent  : [[summary]]

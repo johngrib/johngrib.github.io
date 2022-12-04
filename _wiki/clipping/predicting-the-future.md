@@ -5,6 +5,7 @@ summary : 미래를 예견하기 - 앨런 케이
 date    : 2022-07-09 18:28:36 +0900
 updated : 2022-07-10 00:48:26 +0900
 tag     : 번역 alan-kay
+resource: 98/26825F-D3CA-4AFC-974A-8083C7DAFDF0
 toc     : true
 public  : true
 parent  : [[/clipping]]

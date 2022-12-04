@@ -5,6 +5,7 @@ summary :
 date    : 2021-09-24 21:58:53 +0900
 updated : 2021-09-24 22:39:36 +0900
 tag     : encoding
+resource: 11/F1AC44-FDE6-4904-AA28-C23A2BE09657
 toc     : true
 public  : true
 parent  : [[algorithm]]

@@ -5,6 +5,7 @@ summary :
 date    : 2020-03-15 12:46:21 +0900
 updated : 2022-04-28 00:09:13 +0900
 tag     : 
+resource: 87/A28A66-F3EB-437D-8103-CB1C50CA96BB
 toc     : true
 public  : true
 parent  : [[better-work]]

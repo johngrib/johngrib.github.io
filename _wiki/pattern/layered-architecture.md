@@ -5,6 +5,7 @@ summary :
 date    : 2021-10-12 21:27:41 +0900
 updated : 2021-10-18 23:40:27 +0900
 tag     : ddd architecture
+resource: C9/870455-F126-4CF9-95B0-ABA6C404EFD5
 toc     : true
 public  : true
 parent  : [[/pattern]]

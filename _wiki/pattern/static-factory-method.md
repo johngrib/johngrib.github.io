@@ -5,6 +5,7 @@ summary : static 메서드로 객체 생성을 캡슐화한다
 date    : 2018-03-03 11:16:36 +0900
 updated : 2021-10-16 19:55:04 +0900
 tag     : programming pattern
+resource: E7/670521-3AB6-4B4F-B15B-355A41A8A40C
 toc     : true
 public  : true
 parent  : [[/pattern]]

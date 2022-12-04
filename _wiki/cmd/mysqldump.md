@@ -5,6 +5,7 @@ summary :
 date    : 2022-07-12 08:42:21 +0900
 updated : 2022-07-12 08:43:37 +0900
 tag     : cmd
+resource: C1/921C3E-9AB5-407D-BFBC-9AC57CC1CD13
 toc     : true
 public  : true
 parent  : [[/cmd]]

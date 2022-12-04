@@ -5,6 +5,7 @@ summary : 04.Encoding and Evolution
 date    : 2018-07-08 12:40:13 +0900
 updated : 2022-05-22 18:08:42 +0900
 tag     : 
+resource: 9A/DB2364-97E8-4EEF-83FD-3CB0D525FB20
 toc     : true
 public  : true
 parent  : [[/study/ddia]]

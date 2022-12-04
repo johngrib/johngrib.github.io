@@ -5,6 +5,7 @@ summary : 1/e
 date    : 2017-12-03 09:44:20 +0900
 updated : 2020-03-08 18:41:34 +0900
 tag     : math 확률
+resource: 69/CB4350-F109-4785-BEB4-9708B024FA00
 toc     : true
 public  : true
 parent  : [[math]]

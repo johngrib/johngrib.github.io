@@ -5,6 +5,7 @@ summary : 같은 사무실이면 메신저로 보내지 말고 python3 -m http.s
 date    : 2018-09-18 20:45:43 +0900
 updated : 2019-12-22 21:11:25 +0900
 tag     : python ip curl
+resource: 75/9A8B5A-EBC8-47F4-BB38-132573B01246
 toc     : true
 public  : true
 parent  : [[Python3]]

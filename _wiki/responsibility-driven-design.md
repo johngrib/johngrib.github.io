@@ -5,6 +5,7 @@ summary : Responsibility-Driven Design, RDD
 date    : 2020-03-03 22:47:35 +0900
 updated : 2020-03-03 22:57:07 +0900
 tag     : 
+resource: 79/37C52F-6888-4E42-887B-BC93D29DABD8
 toc     : true
 public  : true
 parent  : [[index]]

@@ -5,6 +5,7 @@ summary : 논리적으로 참 거짓이 명확하지 않은 사건에 대하여 
 date    : 2018-04-08 15:13:06 +0900
 updated : 2020-05-14 22:58:48 +0900
 tag     : math history
+resource: 3D/54C0FE-0874-4E5D-98BC-F57A02A642CC
 toc     : true
 public  : true
 parent  : [[math]]

@@ -5,6 +5,7 @@ summary : SECRET OF CONSCIOUSNESS
 date    : 2018-02-05 12:56:32 +0900
 updated : 2018-02-05 22:29:54 +0900
 tag     : book science
+resource: F4/B2BC97-8696-4456-BBC4-3914ECA3F4A4
 toc     : true
 public  : true
 parent  : [[book]]

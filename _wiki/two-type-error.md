@@ -5,6 +5,7 @@ summary :
 date    : 2020-01-11 15:19:59 +0900
 updated : 2020-01-18 19:16:31 +0900
 tag     : test statistics
+resource: 73/ACC90F-57B0-4104-A5E2-32664B72FADE
 toc     : true
 public  : true
 parent  : [[index]]

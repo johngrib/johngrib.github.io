@@ -5,6 +5,7 @@ summary :
 date    : 2019-02-24 20:38:46 +0900
 updated : 2019-06-12 10:05:45 +0900
 tag     : math cs
+resource: 20/EB58C6-AF35-4A8C-B1C1-A2D65574DFB6
 toc     : true
 public  : true
 parent  : [[algorithm]]

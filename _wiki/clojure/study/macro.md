@@ -5,6 +5,7 @@ summary : Clojure의 macro 둘러보기
 date    : 2022-03-13 22:14:01 +0900
 updated : 2022-11-07 23:31:01 +0900
 tag     : clojure
+resource: 23/CF3D38-EAEE-49F7-A843-33138B568A0A
 toc     : true
 public  : true
 parent  : [[/clojure/study]]

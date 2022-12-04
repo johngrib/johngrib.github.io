@@ -5,6 +5,7 @@ summary : 아직 별로 대단한 건 없다
 date    : 2020-02-13 22:42:59 +0900
 updated : 2020-02-13 22:50:24 +0900
 tag     : vim asciidoc
+resource: 43/E28524-D4F1-44D9-AE1E-69344E7C5F56
 toc     : true
 public  : true
 parent  : [[vim]]

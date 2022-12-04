@@ -5,6 +5,7 @@ summary : 8.1.1, 8.3.1, 8.4.3 을 읽자
 date    : 2021-03-05 20:34:20 +0900
 updated : 2021-03-06 12:10:22 +0900
 tag     : java jls
+resource: 9D/83DF93-4016-42B4-B1E2-A5A7D2AB2A77
 toc     : true
 public  : true
 parent  : [[java]]

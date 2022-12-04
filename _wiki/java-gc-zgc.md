@@ -5,6 +5,7 @@ summary : scalable low-latency garbage collector
 date    : 2019-10-04 11:05:50 +0900
 updated : 2022-05-11 00:03:28 +0900
 tag     : java gc
+resource: 60/53F63E-420B-40C3-9423-8034F797515A
 toc     : true
 public  : true
 parent  : [[/java/gc]]

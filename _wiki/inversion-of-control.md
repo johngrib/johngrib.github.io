@@ -5,6 +5,7 @@ summary : Inversion of Control, Dependency Injection
 date    : 2019-08-30 22:39:18 +0900
 updated : 2021-10-16 19:54:05 +0900
 tag     : spring oop
+resource: 35/B526B3-9345-4B68-9B12-CEDBF06535BA
 toc     : true
 public  : true
 parent  : [[programming]]

@@ -5,6 +5,7 @@ summary : 규칙을 통해 노력을 최소화하는 물리 레이어 컬렉션 
 date    : 2019-10-11 23:42:16 +0900
 updated : 2021-05-31 20:52:56 +0900
 tag     : 
+resource: FE/22D956-5ED1-441C-BC3E-95D654BC06E7
 toc     : true
 public  : true
 parent  : [[/hack]]

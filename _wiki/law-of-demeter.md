@@ -5,6 +5,7 @@ summary : 객체는 그것이 내부적으로 보유하고 있거나 메시지�
 date    : 2020-03-22 12:13:49 +0900
 updated : 2020-07-19 13:38:01 +0900
 tag     : law oop
+resource: 03/356387-940E-43A3-A2BF-6B19752A0A71
 toc     : true
 public  : true
 parent  : [[jargon]]

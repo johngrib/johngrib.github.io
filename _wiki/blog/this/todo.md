@@ -5,6 +5,7 @@ summary : 이 웹사이트를 관리하기 위한 할 일 모음
 date    : 2021-07-23 19:44:46 +0900
 updated : 2021-08-01 15:58:15 +0900
 tag     : todo
+resource: D4/BB1650-E752-4261-B988-E19A699EDB85
 toc     : true
 public  : true
 parent  : [[/blog/this]]
