@@ -2,8 +2,8 @@
  "type": "wiki",
  "title": "ACID",
  "summary": "트랜잭션의 중요한 네 가지 속성",
- "parent": "jargon",
- "url": "/wiki/jargon/acid",
- "updated": "2022-12-04 12:16:01 +0900",
+ "parent": "database",
+ "url": "/wiki/database/acid",
+ "updated": "2022-12-04 12:21:56 +0900",
  "children": []
 }

@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-03 23:23:19 +0900
+updated : 2022-12-04 12:20:34 +0900
 regenerate: true
 ---
 
@@ -391,7 +391,6 @@ regenerate: true
 
 ## [[jargon]]
 
-* [[/jargon/acid]]
 * [[/jargon/airplane-rule]]
 * [[/jargon/another-level-of-indirection]]
 * [[/jargon/biondi-s-law]]
@@ -740,11 +739,12 @@ regenerate: true
 
 ## [[database]]
 
+* [[/database/acid]]
+* [[/database/sqlite]]
 * [[db-index]]
 * [[db-processlist]]
 * [[mariadb-connector-j]]
 * [[sharding]]
-* [[/database/sqlite]]
 
 ## [[/hack]]
 
