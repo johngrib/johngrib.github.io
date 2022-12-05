@@ -29,11 +29,11 @@ Gene Amdahl, 1922 ~ 2015
 - 유명한 수식은 논문에는 포함되어 있지 않다.
 - 약 2~3장 분량의 짧은 논문이고, 읽어보면 단순한 그래프 하나가 첨부되어 있다.
 
-![]( /resource/wiki/amdahl-s-law/figure.jpg )
+![]( /resource/ED/A4B409-6647-443D-94B7-54A59987ABB8/figure.jpg )
 
 다음은 암달의 논문에 수록된 그래프를 SSCS News의 에디터들이 다시 그린 것이다.
 
-![]( /resource/wiki/amdahl-s-law/new-figure.jpg )
+![]( /resource/ED/A4B409-6647-443D-94B7-54A59987ABB8/new-figure.jpg )
 
 
 
@@ -138,7 +138,7 @@ $$ S_\text{latency} = { 1 \over (1-f) + \frac{f}{n} } $$
 
 다음은 [영문 위키백과 Amdahl's law]( https://en.wikipedia.org/wiki/Amdahl%27s_law )에 첨부된 이미지이다.
 
-![]( /resource/wiki/amdahl-s-law/800px-AmdahlsLaw.svg.png )
+![]( /resource/ED/A4B409-6647-443D-94B7-54A59987ABB8/800px-AmdahlsLaw.svg.png )
 
 > The theoretical speedup of the latency of the execution of a program as a function of the number of processors executing it, according to Amdahl's law. The speedup is limited by the serial part of the program. For example, if 95% of the program can be parallelized, the theoretical maximum speedup using parallel computing would be 20 times.
 
@@ -172,7 +172,7 @@ $$ S_\text{latency} = { 1 \over (1-f) + \frac{f}{n} } $$
 물론 이 공식은 프로세서 N이 완벽하게 P만큼의 일을 병렬 처리한다는 매우 이상적인 가정을 하고 있다.
 암달의 법칙으로 병렬화 가능한 부분이 80%, 60%, 40%일 때 얻을 수 있는 이상적인 성능 향상 곡선을 생각해보자.
 그림 4-1에 이 결과가 나타나 있다.  
-> ![]( /resource/wiki/amdahl-s-law/figure-4-1.jpg )  
+> ![]( /resource/ED/A4B409-6647-443D-94B7-54A59987ABB8/figure-4-1.jpg )  
 > 그림 4-1에서 보듯이 만약 자신의 프로그램 중 40%만 병렬화가 가능하다면 아무리 많은 프로세서가 있다 하더라도 성능 향상은 채 두 배도 될 수 없다. 또 80% 이상 병렬화 할 수 있다해도 성능을 다섯 배 이상 향상시킬 수는 없다.
 >
 > 병렬화 문제에서도 암달의 법칙은 매우 중요한 과제를 준다.
@@ -207,7 +207,7 @@ $$1/F$$라는 속도 증가량은 순차적으로 실행돼야 하는 부분이 
 같은 상황에서 CPU를 100개를 꽂는다면 최대 9.2배까지 속도가 증가(CPU 활용도는 9.2배/100개 = 0.092, 즉 9.2%)할 것이라고 예상할 수 있다. 그러다 보니, 속도를 최대 10배까지 증가시키려면 CPU의 활용도가 너무나 비효율적으로 떨어질 수밖에 없다.
 >
 > 그림 11.1을 보면 순차적인 작업의 비율과 프로세서의 개수를 놓고 볼 때 프로세서 활용도가 어떻게 변하는지를 한눈에 볼 수 있다(CPU 활용도는 속도 증가량을 프로세서의 개수로 나눈 값이라고 정의한다). 암달의 법칙에 따르면 프로세서의 개수가 증가하면 할 수록, 순차적으로 실행해야 하는 부분이 아주 조금이라도 늘어나면 프로세서 개수에 비해 얻을 수 있는 속도 증가량이 크게 떨어진다.  
-> ![]( /resource/wiki/amdahl-s-law/figure-11-1.jpg )  
+> ![]( /resource/ED/A4B409-6647-443D-94B7-54A59987ABB8/figure-11-1.jpg )  
 > 애플리케이션의 작업을 작은 단위 작업으로 분할하는 방법에 대해서는 이미 6장에서 살펴본 바가 있다.
 하지만 멀티프로세서 시스템에서 애플리케이션을 실행할 때 속도가 얼마만큼 빨라질 것인지에 대한 예측을 해보려면, 애플리케이션 내부에서 순차적으로 처리해야 하는 작업이 얼마나 되는지를 먼저 확인해야 한다.
 [^brian-333]
@@ -224,9 +224,9 @@ $$1/F$$라는 속도 증가량은 순차적으로 실행돼야 하는 부분이 
 웹 문서
 
 - [Validity of the single processor approach to achieving large scale computing capabilitie - Gene M. Amdahl (PDF)][pdf1]
-    - [백업 PDF]( /resource/wiki/amdahl-s-law/Amdahl-1967.pdf )
+    - [백업 PDF]( /resource/ED/A4B409-6647-443D-94B7-54A59987ABB8/Amdahl-1967.pdf )
 - [Validity of the single processor approach to achieving large scale computing capabilitie - Gene M. Amdahl (PDF)][pdf2] - Guihai Chen이 옮겨 적은 버전. (This paper is retyped as the present form by Guihai Chen He wishes you would enjoy reading this historic)
-    - [백업 PDF]( /resource/wiki/amdahl-s-law/Amdahl.pdf )
+    - [백업 PDF]( /resource/ED/A4B409-6647-443D-94B7-54A59987ABB8/Amdahl.pdf )
 
 ## 주석
 

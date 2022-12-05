@@ -24,7 +24,7 @@ latex   : true
     * 귀무 가설이 거짓인데도 귀무 가설을 채택하는 오류.
 
 
-![]( /resource/wiki/two-type-error/error-table.jpg )
+![]( /resource/73/ACC90F-57B0-4104-A5E2-32664B72FADE/error-table.jpg )
 
 _이미지 출처는 공학 학교에서 배운 101가지_ [^engineering-47]
 
@@ -62,7 +62,7 @@ _이미지 출처는 공학 학교에서 배운 101가지_ [^engineering-47]
 
 ## 유명한 짤방
 
-![]( /resource/wiki/two-type-error/pregnant.jpeg )
+![]( /resource/73/ACC90F-57B0-4104-A5E2-32664B72FADE/pregnant.jpeg )
 
 _이미지 출처는 Quora._ [^pregnant]
 
@@ -92,7 +92,7 @@ _이미지 출처는 Quora._ [^pregnant]
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Type I and type II errors are widely used terms for false positive and false negative. It&#39;s really hard to remember their meanings, so I have drawn an image with an easy to remember mnemonic.<br>Inspired by <a href="https://twitter.com/chrisalbon?ref_src=twsrc%5Etfw">@chrisalbon</a> and his <a href="https://twitter.com/hashtag/machinelearningflashcards?src=hash&amp;ref_src=twsrc%5Etfw">#machinelearningflashcards</a> <a href="https://t.co/oO8av8hWP3">pic.twitter.com/oO8av8hWP3</a></p>&mdash; Victor Pr👨🏻‍💻 (@bikutoru) <a href="https://twitter.com/bikutoru/status/981977290430189569?ref_src=twsrc%5Etfw">April 5, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endraw %}
 
-([혹시 이미지가 안 보인다면]( /resource/wiki/two-type-error/remember.jpeg ))
+([혹시 이미지가 안 보인다면]( /resource/73/ACC90F-57B0-4104-A5E2-32664B72FADE/remember.jpeg ))
 
 ## 인용
 

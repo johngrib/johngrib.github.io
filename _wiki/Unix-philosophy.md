@@ -23,7 +23,7 @@ latex   : false
     * 57호의 표제는 "UNIX TIME-SHARING SYSTEM".
     * Douglas McIlroy가 Foreword(서문, 머리말)을 썼는데, 이 서문의 "Style" 부분에 유닉스 철학의 개념들이 등장한다.
 
-![THE BELL SYSTEM TECHNICAL JOURNAL]( /resource/wiki/Unix-philosophy/42728954-3538fff4-8803-11e8-88ad-aa2f297773f5.png )
+![THE BELL SYSTEM TECHNICAL JOURNAL]( /resource/20/14864F-4691-4877-B856-4884D9C5BD70/42728954-3538fff4-8803-11e8-88ad-aa2f297773f5.png )
 
 ## 유닉스 철학
 

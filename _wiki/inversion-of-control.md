@@ -46,7 +46,7 @@ The major difference between an object-oriented framework and a class library is
 
 PicoContainer 프레임워크의 문서 [Inversion of Control History][history]에는 IoC의 역사가 잘 나와 있다.
 
-![ioc-timeline]( /resource/wiki/inversion-of-control/ioc-timeline.png )
+![ioc-timeline]( /resource/35/B526B3-9345-4B68-9B12-CEDBF06535BA/ioc-timeline.png )
 
 이 글에서 언급하는 선행 기술을 옮겨보자면 다음과 같다.
 

@@ -159,7 +159,7 @@ latex   : false
     * 설계는 물론이고 리더쉽도 함께 키워야 한다.
 * 설계자들이 서로 소통하며 자극을 줄 수 있는 기회를 제공해야 한다.
 
-![Computer지에 실린 No Silver Bullet 표지]( /resource/wiki/No-Silver-Bullet/no-silver-bullet.jpg )
+![Computer지에 실린 No Silver Bullet 표지]( /resource/85/47AB7D-A5BE-4093-8730-C8EC072A00BB/no-silver-bullet.jpg )
 
 ## Links
 

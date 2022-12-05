@@ -101,7 +101,7 @@ func main() {
 >
 A string is represented in memory as a 2-word structure containing a pointer to the string data and a length. Because the string is immutable, it is safe for multiple strings to share the same storage, so slicing s results in a new 2-word structure with a potentially different pointer and length that still refers to the same byte sequence. This means that slicing can be done without allocation or copying, making string slices as efficient as passing around explicit indexes.
 
-![string]( /resource/wiki/golang-types/46915840-92631a80-cfec-11e8-9e82-175d7cec7693.png )
+![string]( /resource/25/50E5BB-A3E9-4DA9-BFC8-9306C5F54EFC/46915840-92631a80-cfec-11e8-9e82-175d7cec7693.png )
 
 * string의 구조는 2 word로 되어 있다.
     * 배열의 첫 번째 인덱스의 포인터

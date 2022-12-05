@@ -33,7 +33,7 @@ MatchParen	The character under the cursor or just before it, if it
 highlight MatchParen ctermbg=red guibg=#ff0000
 ```
 
-<video controls autoplay loop width="100%"><source src=" /resource/wiki/vim/highlight/196702197-4313e945-3f9f-4b31-a98d-7940ee647fca.mp4 " type="video/mp4"></video>
+<video controls autoplay loop width="100%"><source src=" /resource/B2/EAB4AC-124E-4FC0-BEE2-A30235F90329/196702197-4313e945-3f9f-4b31-a98d-7940ee647fca.mp4 " type="video/mp4"></video>
 
 ## 함께 읽기
 

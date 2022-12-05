@@ -69,7 +69,7 @@ $$ 6 = \log (64) $$인 것은 우연이 아니다.
 
 ## heap의 어원
 
-![]( /resource/wiki/heap-sort/sand-heap.jpg ){:style="max-width: 350px;"}
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/sand-heap.jpg ){:style="max-width: 350px;"}
 
 모래나 곡식이 원뿔형으로 쌓여 있는 모양을 heap 이라 한다.
 
@@ -83,7 +83,7 @@ $$ 6 = \log (64) $$인 것은 우연이 아니다.
 
 다음 이진 트리는 힙 정렬되었다고 할 수 있다.
 
-![]( /resource/wiki/heap-sort/sorted-heap.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/sorted-heap.svg )
 
 아무 노드나 잡고 부모 노드로 계속 따라 올라가면 오름차순 시퀀스를 얻을 수 있다는 특징이 있다.
 위의 정렬된 힙을 예로 들자면 다음과 같다.
@@ -99,7 +99,7 @@ $$ 6 = \log (64) $$인 것은 우연이 아니다.
 >
 > 정의. 이진 힙은 힙-정렬된 완전 이진 트리의 노드들이 그 트리 레벨 순서대로 배열에 나열된 것이다(단 배열의 첫 번째 항목은 이용하지 않는다).[^sedgewick-2-4]
 
-![]( /resource/wiki/heap-sort/sorted-heap.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/sorted-heap.svg )
 
 예를 들어 위와 같이 힙-정렬된 완전 이진 트리가 있다면, 다음과 같은 배열을 만든다.
 
@@ -129,13 +129,13 @@ $$ 6 = \log (64) $$인 것은 우연이 아니다.
 
 다음과 같이 힙 정렬 상태를 불완전하게 하는 노드 `23`이 있다고 하자.
 
-![]( /resource/wiki/heap-sort/swim-01.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/swim-01.svg )
 
 swim 방식을 사용하면 `23`이 다음과 같이 루트 노드까지 헤엄쳐 올라가면서(부모 노드와 자리를 바꾸면서) 힙 정렬된 상태로 복구한다.
 
-![]( /resource/wiki/heap-sort/swim-02.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/swim-02.svg )
 
-![]( /resource/wiki/heap-sort/swim-03.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/swim-03.svg )
 
 ```java
 /**
@@ -160,13 +160,13 @@ private void swim(int k) {
 
 다음과 같이 힙 정렬 상태를 불완전하게 하는 노드 `17`이 있다고 하자.
 
-![]( /resource/wiki/heap-sort/sink-01.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/sink-01.svg )
 
 sink 방식을 사용하면 `17`이 가라앉으면서(자식 노드와 자리를 바꾸면서) 힙 정렬된 상태로 복구한다.
 
-![]( /resource/wiki/heap-sort/sink-02.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/sink-02.svg )
 
-![]( /resource/wiki/heap-sort/sink-03.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/sink-03.svg )
 
 ```java
 /**
@@ -223,19 +223,19 @@ private void sink(int k) {
 이 힙에 이미 추가된 노드들의 바로 뒤인 `11`번 인덱스에 새로운 노드 `(20)`을 추가한다고 하자.
 그래프로 표현하면 다음과 같을 것이다.
 
-![]( /resource/wiki/heap-sort/insert-01.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/insert-01.svg )
 
 다음과 같이 `(20)`을 추가하면 정렬이 깨진 상태가 된다.
 
-![]( /resource/wiki/heap-sort/insert-02.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/insert-02.svg )
 
 따라서 `(20)`은 swim을 시켜서 힙 정렬된 상태로 돌려놓아야 한다. 한 단계씩 swim 시켜보자.
 
-![]( /resource/wiki/heap-sort/insert-03.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/insert-03.svg )
 
 `(8)`과 `(20)`을 바꿨다. 그러나 아직 `(16)`이 위에 있다.
 
-![]( /resource/wiki/heap-sort/insert-04.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/insert-04.svg )
 
 `(16)`과 `(20)`을 바꿨다. `(20)`위에는 `(22)`가 있으므로 swim이 끝난다.
 
@@ -255,19 +255,19 @@ private void sink(int k) {
 
 다음과 같이 정렬된 힙에서 루트 노드 `(22)`를 제거한다고 하자.
 
-![]( /resource/wiki/heap-sort/remove-01.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/remove-01.svg )
 
 루트 노드를 제거한 다음, 배열의 마지막에 있는 노드 `(8)`를 루트 위치로 옮긴다.
 
-![]( /resource/wiki/heap-sort/remove-02.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/remove-02.svg )
 
 이제 `(8)`에 sinc 연산을 적용한다. `(20)`과 `(19)` 중 더 큰 노드와 `(8)`의 자리를 바꾼다.
 
-![]( /resource/wiki/heap-sort/remove-03.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/remove-03.svg )
 
 `(16)`과 `(8)`이 자리를 바꾸고 sink 연산은 종료된다.
 
-![]( /resource/wiki/heap-sort/remove-04.svg )
+![]( /resource/31/DCB4E8-59F3-4535-8A44-C9391C0902B4/remove-04.svg )
 
 ### 배열 사이즈 자동 조정
 

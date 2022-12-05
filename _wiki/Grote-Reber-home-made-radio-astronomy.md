@@ -47,7 +47,7 @@ For nearly a decade he was the world's only radio astronomer.
 
 [Manchester 대학 천체물리학과 홈페이지](http://www.jb.man.ac.uk/news/2004/reber/)에 그의 사진이 있었다.
 
-![]( /resource/wiki/Grote-Reber-home-made-radio-astronomy/Grote-Reber.jpg )
+![]( /resource/7C/1A3FA3-B8E9-4EF6-BED9-7D6D9017E832/Grote-Reber.jpg )
 
 ## Links
 

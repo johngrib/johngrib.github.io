@@ -34,7 +34,7 @@ Vimium의 가장 강력한 기능은 `f`와 `F`이다.
 
 웹 브라우저를 사용하다 `f`를 누르면 다음과 같이 클릭 힌트가 나타난다.
 
-![]( /resource/wiki/how-i-use-web-browser/vimium-f.png )
+![]( /resource/C3/F7D543-D04C-4FAF-8BB6-867E95298624/vimium-f.png )
 
 클릭하고 싶은 곳의 힌트를 보고 키보드로 입력하면, Vimium이 해당 항목을 클릭해주는 방식이다.
 
@@ -73,7 +73,7 @@ map <space> Vomnibar.activateTabSelection
 
 웹 브라우저를 사용하다 `space`를 누르면 다음과 같이 탭 선택기가 열린다.
 
-![]( /resource/wiki/how-i-use-web-browser/vimium-t.png ){:style="border: 1px solid black"}
+![]( /resource/C3/F7D543-D04C-4FAF-8BB6-867E95298624/vimium-t.png ){:style="border: 1px solid black"}
 
 ### 상위 url 경로로 이동하기
 
@@ -109,11 +109,11 @@ Tab Wrangler를 사용하면 일정 시간 이상 들어가지 않은 탭을 자
 
 검색 입력에 커서가 있으므로 곧바로 검색을 할 수 있다.
 
-![]( /resource/wiki/how-i-use-web-browser/tab-wrangler.png )
+![]( /resource/C3/F7D543-D04C-4FAF-8BB6-867E95298624/tab-wrangler.png )
 
 ### 상세 설정
 
-![]( /resource/wiki/how-i-use-web-browser/config.png )
+![]( /resource/C3/F7D543-D04C-4FAF-8BB6-867E95298624/config.png )
 
 - 들어가지 않은 지 2시간 반이 지난 탭을 탭 랭글러가 수거하게 해 두었다.
 - 탭이 10개 이상인 경우에만 탭을 수거하게 했다.

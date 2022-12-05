@@ -29,14 +29,14 @@ latex   : false
 중요한 건 `<c-h>`가 `control + h`라는 것입니다. 터미널에서 뭔가 입력하다가 control을 누르면서 h 를 누르면 백스페이스를 누른 것처럼 왼쪽으로 문자가 지워지는 경험을 하신 분들이 많을 것입니다.
 그리고 mac 빌트인 터미널의 설정에 들어가 보면 "Delete로 Control-H" 전송이라는 항목도 보입니다.
 
-![Apple terminal]( /resource/wiki/article/vim-night/20220404-control-key/202458846-88652ecc-a56c-48e8-a54a-e63f65d17f30.png )
+![Apple terminal]( /resource/4D/557E8F-C2DF-494B-933B-5AA63F2596CA/202458846-88652ecc-a56c-48e8-a54a-e63f65d17f30.png )
 
 그래서 터미널에서 뭘 쓰다가 백스페이스까지 손을 옮기기 귀찮을 때 그냥 `<c-h>`를 눌러서 지우곤 하는 거죠. 키보드 오른쪽 꼭대기에 있는 `BS`보다야 `h`가 가까우니까요. 그런데.. `h`와 `BS`의 관계는 알고보면 꽤나 흥미롭습니다.
 이건 아스키코드 테이블을 달달 외우고 다니던 선배 개발자들이라면 상식으로 알고 계실 내용 같기도 한데요, 아스키 코드 테이블을 보면 관계를 미루어 짐작할 수 있습니다.
 
 사진을 첨부했습니다. `H`를 찾아보면 10진수로 `72` 이고, 16진수로는 `48` 이라는 걸 알 수 있습니다. 그러면 백스페이스를 볼까요? `BS`는 10진수로 `8`이고, 16진수로도 `8`입니다.
 
-![ascii code table]( /resource/wiki/article/vim-night/20220404-control-key/202459233-4b8ac749-d499-4bf8-ac25-6056890eda40.png )
+![ascii code table]( /resource/4D/557E8F-C2DF-494B-933B-5AA63F2596CA/202459233-4b8ac749-d499-4bf8-ac25-6056890eda40.png )
 
 _이미지 출처: <https://www.asciitable.com/ >_
 
@@ -65,12 +65,12 @@ line feed 가 이렇다면 캐리지 리턴도 있겠죠? 네 `<c-m>`이 그렇�
 
 제가 가끔 사진을 올리곤 하는 제 키보드의 `m`에 `enter` 키캡이 끼워져 있는 이유이기도 합니다.
 
-![my keyboard]( /resource/wiki/article/vim-night/20220404-control-key/202460016-b58b1950-d567-4e63-9d6b-a9f59bfa8f64.png )
+![my keyboard]( /resource/4D/557E8F-C2DF-494B-933B-5AA63F2596CA/202460016-b58b1950-d567-4e63-9d6b-a9f59bfa8f64.png )
 
 그러면 이제 `I`를 살펴보죠. `I`는 `0100 1001` 이고... 두번째 비트를 바꾸면 `0000 1001` 인데, 이게 탭입니다.
 vim 에서 레지스터에 문자열을 저장할 때 탭이 `^I` 로 저장된 걸 볼 수 있는데 바로 이것이 그 이유입니다.
 
-![vim register]( /resource/wiki/article/vim-night/20220404-control-key/202460238-aae39480-3d46-410b-8bb1-d77533d8312a.png )
+![vim register]( /resource/4D/557E8F-C2DF-494B-933B-5AA63F2596CA/202460238-aae39480-3d46-410b-8bb1-d77533d8312a.png )
 
 이미지를 올리고 보니까 제일 오른쪽에 `^J`도 보이네요. 이제 이게 `LF` 라는 걸 알고 있으니 `"` 레지스터에 `탭asdLF` 가 들어갔다는 것을 판별할 수 있습니다.
 
@@ -175,7 +175,7 @@ vim 매뉴얼에 방법이 있었거든요. (vim에서 `:help i_ctrl-v`를 입�
 
 영상을 찍어 봤습니다. 이렇게 에디터 안에 해당 문자들을 입력할 수 있죠.
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220404-control-key/xsMOcA5TXar_F8hP.mp4 " type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/4D/557E8F-C2DF-494B-933B-5AA63F2596CA/xsMOcA5TXar_F8hP.mp4 " type="video/mp4"></video>
 
 영상을 보면 컨트롤L, 컨트롤C 같은 문자들을 그대로 입력하고 있습니다.
 그리고 이건 git 으로 commit 해서 github에 올리잖아요? 그러면 github에서도 그대로 나옵니다. 최근에도 올린 게 하나 있었던 거 같은데... 찾아와볼게요. 아 여기 있네요. `^M`이 있습니다.

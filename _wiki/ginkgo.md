@@ -102,12 +102,12 @@ var _ = Describe("Test functions",
 
 * `go test` 또는 `ginkgo -r`을 실행해보면 테스트를 수행한다.
 
-![image]( /resource/wiki/ginkgo/46329142-908d7480-c646-11e8-8bcd-41b6e09f2d0c.png )
+![image]( /resource/6A/E2CCB8-A863-4DE8-A5B3-C32656CC8889/46329142-908d7480-c646-11e8-8bcd-41b6e09f2d0c.png )
 
 * vim-go의 `:GoTest`로도 잘 돌아간다.
 * vim-go의 `:GoCoverageToggle`를 통해 coverage를 검사해 보면 `two` 함수를 테스트하는 케이스가 없으므로 `two` 함수에 빨간색을 칠해준다.
 
-![coverage]( /resource/wiki/ginkgo/46329021-dc8be980-c645-11e8-8442-e45a70e7e9b0.png )
+![coverage]( /resource/6A/E2CCB8-A863-4DE8-A5B3-C32656CC8889/46329021-dc8be980-c645-11e8-8442-e45a70e7e9b0.png )
 
 
 ## Links

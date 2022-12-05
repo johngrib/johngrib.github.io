@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-10-31 00:00:56 +0900
+updated : 2022-12-05 22:58:30 +0900
 tag     : clojure vim
 resource: C8/18B9F8-7A97-432E-9CEC-795E39AB8608
 toc     : true
@@ -221,7 +221,7 @@ LEININGEN~
 
 REPL과 관련된 명령은 모두 `sr`로 시작하도록 설정해 보았다.
 
-![]( ./iced-src.gif )
+![]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-src.gif )
 
 - `src`: REPL 접속. (`c`: connect)
 
@@ -255,7 +255,7 @@ Jack In을 기본값 외의 설정으로 작동하게 하기 위해서는 다음
 
 (`sef`와 `ser`은 Cursive의 `command + shift + L`, `command + shift + P`에 해당한다.)
 
-![vim-iced로 Clojure 코드를 평가하는 gif]( ./iced-eval.gif )
+![vim-iced로 Clojure 코드를 평가하는 gif]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-eval.gif )
 
 - `sef`: 파일을 읽고 평가한다. (`e`: eval, `f`: file)
 - `ser`: 커서 위치의 outer form을 평가하고 결과를 출력한다. (`r`: oute**r**, 그리고 위치가 좋아서 선택.)
@@ -270,7 +270,7 @@ vim 답게 물 흐르듯이 부드럽게 순서대로 입력할 수 있도록 �
 `ser`은 세 손가락으로 순서대로 누르므로 손가락이 꼬이지도 않는다.
 `w < e < r < f` 순으로 범위가 커지는 것도 마음에 든다. `a`는 `g`로 할까 하다가 `all`의 의미를 강조하고 싶어 `a`로 정했다.
 
-![ser을 입력하는 경우의 키보드 키 입력 순서]( ./iced-ser-keyboard.jpg ){:style="max-width:300px"}
+![ser을 입력하는 경우의 키보드 키 입력 순서]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-ser-keyboard.jpg ){:style="max-width:300px"}
 
 `see`나 `sew`는 자주 사용하는 건 아니지만 가끔 표현식을 더 섬세하게 평가할 필요가 있을 때 유용하다.
 아래와 같은 코드가 있고, 커서가 셋째 줄의 `ten`에 있다고 하자.
@@ -288,7 +288,7 @@ vim 답게 물 흐르듯이 부드럽게 순서대로 입력할 수 있도록 �
 
 평가 결과를 바로 주석으로 남기는 방법도 마련해 두었다. 중간에 `c`를 끼워넣으면 된다. (`c`: comment)
 
-![sec를 사용하는 모습]( ./iced-sec.gif )
+![sec를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-sec.gif )
 
 - `secw`: `sew`로 평가하고 결과를 오른쪽에 주석으로 남긴다.
 - `sece`: `see`로 평가하고..
@@ -296,7 +296,7 @@ vim 답게 물 흐르듯이 부드럽게 순서대로 입력할 수 있도록 �
 
 한편, vim의 특성을 정말 잘 살린 평가 방법도 있다. vim mark를 지정해 놓고 mark를 평가하는 방법인데, 이렇게 하면 커서가 위치하지 않은 곳의 표현식도 평가할 수 있다.
 
-![sem을 사용하는 장면]( ./iced-sem.gif )
+![sem을 사용하는 장면]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-sem.gif )
 
 이 gif는 `a`,`b`,`C` 마크를 지정하고 평가하는 모습을 찍은 것이다.
 
@@ -307,7 +307,7 @@ vim 답게 물 흐르듯이 부드럽게 순서대로 입력할 수 있도록 �
 
 한편 REPL stdout 버퍼가 열려 있지 않을 경우의 평가 결과는 다음과 같이 보여준다.
 
-![REPL 팝업]( ./iced-repl-popup.jpg )
+![REPL 팝업]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-repl-popup.jpg )
 
 - 만약 REPL 버퍼가 열려 있지 않다면 오른쪽에 팝업이 잠시 떠서 결과를 보여준 다음 사라진다.
 - 어떤 방식으로든 평가를 하면 공통적으로 코드 오른쪽에 평가 결과가 잠시 회색으로 표시되다가 잠시 후에 사라진다.
@@ -354,7 +354,7 @@ autocmd FileType clojure nmap sem <Plug>(iced_eval_at_mark)
 - `sri`: REPL에 인터럽트를 보낸다. 오래 걸리는 작업을 취소할 때 쓸 수 있다. (`i`: interrupt)
 - `srj`: REPL을 띄우고 Jack In 한다. (`j`: jack in)
 
-![화면 오른쪽에 나타난 REPL 버퍼]( ./iced-repl-on-right.jpg )
+![화면 오른쪽에 나타난 REPL 버퍼]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-repl-on-right.jpg )
 
 화면 오른쪽의 버퍼가 REPL 이다. 평가 결과들이 출력되어 있는 것을 볼 수 있다.
 
@@ -394,7 +394,7 @@ endfunction
 
 다음은 `(s`를 입력했을 때 자동완성 추천이 나타나는 장면을 찍은 것이다.
 
-![자동완성 추천]( ./iced-code-suggestion.jpg )
+![자동완성 추천]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-code-suggestion.jpg )
 
 - 왼쪽 하이라이트 메뉴에서는 완성할 코드를 선택할 수 있다.
 - 하이라이트 메뉴 오른쪽은 선택한 코드의 docstring과 clojuredocs.org 조회 결과를 보여준다.
@@ -402,11 +402,11 @@ endfunction
 
 물론 키워드도 자동완성 추천에 나타난다.
 
-![키워드 추천]( ./iced-coc-keyword.jpg )
+![키워드 추천]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-coc-keyword.jpg )
 
 그리고 vim 자체의 기능 덕분에 `;` 주석이나 문자열 내에 있는 단어도 자동완성 추천에 나타난다.
 
-![문자열 추천]( ./iced-completion-string.jpg )
+![문자열 추천]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-completion-string.jpg )
 
 물론 그 외에도 `abbr`, `iabbr` 같은 vim의 기본 자동완성들도 사용 가능하므로, 필요한 것들을 만들어 쓰면 된다.
 
@@ -433,13 +433,13 @@ endsnippet
 
 [clojure.org의 Java interop 예제]( https://clojure.org/reference/java_interop )를 Java 코드에서 Clojure 코드로 변환하는 모습을 gif 이미지로 찍어 보았다.
 
-![ultisnips를 사용하는 모습]( ./ultisnips-java-interop.gif )
+![ultisnips를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/ultisnips-java-interop.gif )
 
 `"fred".toUpperCase`를 입력하고 `tab`을 누르면 `(.toUpperCase "fred")`로 변환되는 것을 볼 수 있다.
 
 다음은 문득 생각나서 만들어 본 `#_`를 반복 입력해주는 snippet이다.
 
-![ultisnips를 사용하는 모습2]( ./ultisnips-hash-underbar-repeat.gif )
+![ultisnips를 사용하는 모습2]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/ultisnips-hash-underbar-repeat.gif )
 
 `4#_`를 입력하고 `tab`을 누르면 `#_#_#_#_`로 완성되는 것을 볼 수 있다.
 물론 `100#_`도 되고 `10000#_`도 된다.
@@ -449,7 +449,7 @@ endsnippet
 한편 ultisnips는 셸에서 실행해서 문자열을 얻을 수 있는 프로그램이라면 무엇이든 활용할 수 있으므로,
 자신이 즐겨 쓰는 프로그래밍 언어(Python, JavaScript, Perl 등등)로 자동 완성 기능을 얼마든지 만들어 붙일 수 있다.
 
-![ultisnips와 함께 코딩]( ./ultisnips-edit.jpg )
+![ultisnips와 함께 코딩]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/ultisnips-edit.jpg )
 
 위의 스크린샷은 bash의 `date` 명령을 사용하는 자동 완성 snippet을 만들고 실행한 결과를 캡처한 것이다.
 
@@ -465,7 +465,7 @@ ultisnips snippet을 만들며 작업할 때는 위의 스크린샷과 같이 �
 
 `(defn factorial`을 입력했더니 함수 본문을 제안해 주고 있다.
 
-![copilot이 함수 완성을 추천해주는 장면]( ./copilot.jpg )
+![copilot이 함수 완성을 추천해주는 장면]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/copilot.jpg )
 
 나는 INSERT 모드에서 `<C-j>`를 통해 copilot 자동완성을 사용한다.
 
@@ -479,13 +479,13 @@ ultisnips snippet을 만들며 작업할 때는 위의 스크린샷과 같이 �
 
 다음은 `apply`에 커서를 두고 `sak`를 입력한 것이다.
 
-![sak를 사용한 장면]( ./iced-sak.jpg )
+![sak를 사용한 장면]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-sak.jpg )
 
 굳이 버퍼를 열어 보는 것이 귀찮다면, man 페이지를 열어주는 vim 전통의 명령 `K`를 입력하면 된다.
 이러면 버퍼가 아니라 팝업으로 볼 수 있다.
 팝업은 다음 키 입력이 있을 때까지 사라지지 않고 기다려 준다.
 
-![K로 docstring 보기]( ./iced-k-docstring.jpg )
+![K로 docstring 보기]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-k-docstring.jpg )
 
 이 설정은 이렇게 해 주었다.
 
@@ -514,7 +514,7 @@ autocmd FileType clojure nmap <silent> <C-]> :IcedDefJump<CR>
 
 다음은 `is`에 커서를 두고 `sas`를 입력했을 때 나타난 팝업을 캡처한 것이다.
 
-![sas를 사용한 모습]( ./iced-sas.jpg )
+![sas를 사용한 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-sas.jpg )
 
 ```viml
 autocmd FileType clojure nmap sas :IcedSourcePopupShow<CR>
@@ -531,7 +531,7 @@ vim-iced는 clj-kondo와 통합이 되어 있어 문제가 있는 코드에 밑�
 
 - `sal`: 린터를 실행하고 결과 목록을 보여준다. (`l`: lint)
 
-![quickfix 버퍼를 연 모습]( ./clj-kondo-quickfix.jpg )
+![quickfix 버퍼를 연 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/clj-kondo-quickfix.jpg )
 
 quickfix 버퍼에서 엔터를 치면 경고가 있는 위치로 이동한다.
 
@@ -554,7 +554,7 @@ autocmd FileType clojure setlocal errorformat=%f:%l:%c:\ Parse\ %t%*[^:]:\ %m,%f
 - `sar`: 커서가 지시하는 아이템을 사용하는 곳을 모두 조사해서 목록으로 만들어 준다.
 (`r`: references)
 
-![apply 함수를 사용하는 곳들]( ./iced-references.jpg )
+![apply 함수를 사용하는 곳들]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-references.jpg )
 
 목록에서 아이템에 커서를 올려놓고 엔터를 입력하면 해당 파일의 해당 라인으로 이동하게 된다.
 
@@ -562,7 +562,7 @@ autocmd FileType clojure setlocal errorformat=%f:%l:%c:\ Parse\ %t%*[^:]:\ %m,%f
 
 - `sau`: `sar`과 같지만 좀 더 raw format으로 보여준다. (`u`: usages)
 
-![sau를 사용하는 모습]( ./iced-sau.jpg )
+![sau를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-sau.jpg )
 
 `sau`의 결과는 파일의 이름과 행 번호 열 번호를 목록으로 보여준다.
 vim은 기본적으로 파일 이름과 행 번호가 이 포맷으로 주어지면 `gf`, `gF`를 써서 해당 파일의 해당 위치를 바로 열 수 있으므로
@@ -574,7 +574,7 @@ quickfix보다 사용성이 더 떨어지지도 않는다. 보기에 좀 덜 예
 키워드, 문자열까지 찾아주므로 `sar`보다 더 많은 검색결과가 나온다.
 게다가 clj나 edn 파일 뿐 아니라 다른 확장자를 갖는 파일에서도 찾아주므로 쓸모가 많다.
 
-![sa/를 사용한 모습]( ./iced-grep.jpg )
+![sa/를 사용한 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-grep.jpg )
 
 위의 이미지는 문자열 안에 있는 `중복`에 커서를 놓고 `sa/`를 실행한 것이다.
 검색 결과를 보면 문자열은 물론이고 주석까지 전부 찾아주고 있다.
@@ -591,7 +591,7 @@ autocmd FileType clojure nmap sa/ <Plug>(iced_grep)
 
 - `sad`: 커서가 지시하는 함수가 어떤 다른 함수나 상수들에 의존하는지 확인한다. (`d`: dependencies)
 
-![의존관계 리스트]( ./iced-sad.jpg )
+![의존관계 리스트]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-sad.jpg )
 
 위의 스크린샷은 `solve-8-1` 함수가 어떤 사용자 함수를 사용하고 있는지 조사한 것이다.
 
@@ -607,7 +607,7 @@ autocmd FileType clojure nmap sad :IcedBrowseDependencies<CR>
 파일 구조는 [tagbar]( https://github.com/preservim/tagbar )를 통해 확인하면 된다.
 tagbar는 오랜 세월 vim 사용자들의 사랑을 받은 플러그인이다.
 
-![tagbar를 띄운 모습]( ./clojure-access-symbol.jpg )
+![tagbar를 띄운 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/clojure-access-symbol.jpg )
 
 - 오른쪽의 TagBar 영역은 vim 사용자들이라면 익숙하게 사용하는 것으로, 현재 파일에 정의된 모든 상수와 함수 목록을 보여준다.
 - 목록에서 선택하면 해당 위치로 이동한다.
@@ -621,7 +621,7 @@ IntelliJ가 항상 갱신하고 있는 그것과 같다.)
 
 vim-gutentags는 git status를 참고해 효율적으로 태그를 갱신한다.
 
-![tagbar로 미리보기를 사용하는 모습]( ./tagbar.gif )
+![tagbar로 미리보기를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/tagbar.gif )
 
 tagbar는 소스코드 미리보기 기능도 있어서 코드를 브라우징할 때 편리하다.
 
@@ -635,7 +635,7 @@ REPL에 입력해서 쓰는 방법도 있지만 vim-iced는 고맙게도 래핑 
 
 다음 스크린샷은 `->` 매크로를 `sam`으로 펼친 것이다.
 
-![macroexpand-1]( ./iced-sam.jpg )
+![macroexpand-1]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-sam.jpg )
 
 ```viml
 autocmd FileType clojure nmap sam <Plug>(iced_macroexpand_1_outer_list)
@@ -650,13 +650,13 @@ autocmd FileType clojure nmap saM <Plug>(iced_macroexpand_outer_list)
 
 #### 괄호 삭제, 입력, 편집, 선택
 
-![괄호를 삭제하는 모습]( ./sexp-delete.gif )
+![괄호를 삭제하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/sexp-delete.gif )
 
 그냥 앞으로 지우고 있으면 vim-sexp가 닫는 괄호까지 알아서 지워준다.
 
 (그런데 이 기능은 별로 쓸모가 없다. surround의 `dab`가 있기 때문이다.)
 
-![괄호를 추가하는 모습]( ./sexp-insert-pair.gif )
+![괄호를 추가하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/sexp-insert-pair.gif )
 
 여는 괄호만 입력해도 닫는 괄호도 자동으로 잘 추가된다. 물론 `( )` 뿐 아니라 `{ }`, `[ ]` 도 잘 된다.
 
@@ -677,7 +677,7 @@ surround는 따옴표, 괄호, 스페이스까지 모두 사용이 가능하며 
 
 다음은 이런 기법들을 사용해 괄호나 따옴표 쌍을 조작하고 선택하는 장면을 gif로 만든 것이다.
 
-![vim surround를 사용하는 모습]( ./surround.gif )
+![vim surround를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/surround.gif )
 
 (gif로 만들면서 속도가 빨라졌는데 실제로는 이 정도로 빠르게 작업하지 않는다.)
 
@@ -717,20 +717,20 @@ let g:sexp_mappings.sexp_convolute = 'csp'
 
 vim은 기본적으로 괄호짝을 맞춰 커서를 점프시키는 `%` 명령(`shift + 5`)이 있으므로 짝으로의 이동은 이걸 쓴다.
 
-![%를 사용하는 모습]( ./percent.gif )
+![%를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/percent.gif )
 
 vim-sexp 기능으로 `(`, `)`를 쓰면 같은 레벨의 이전 여는 괄호, 다음 닫는 괄호로 이동할 수 있다.
 
-![양쪽 괄호를 사용해 이동하는 모습]( ./sexp-left-right.gif )
+![양쪽 괄호를 사용해 이동하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/sexp-left-right.gif )
 
 `\[[`와 `]]`로 탑 레벨 엘리먼트 이동을 할 수 있다. vim-sexp 기능.
 
-![양쪽 대괄호 두번으로 이동하는 모습]( ./sexp-top-move.gif )
+![양쪽 대괄호 두번으로 이동하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/sexp-top-move.gif )
 
 `[e`, `]e`를 사용하면 이전, 다음 엘리먼트를 비주얼 모드로 선택할 수 있다.
 선택 후 복사하거나 삭제할 때 사용할 수 있을텐데 surround로도 가능해서 잘 쓸 것 같지는 않다.
 
-![이전 다음 엘리먼트를 선택하는 모습]( ./sexp-visual-move.gif )
+![이전 다음 엘리먼트를 선택하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/sexp-visual-move.gif )
 
 그 외에도 다양한 이동 명령을 제공하는데,
 아쉬운 것은 워낙 많다 보니 키가 부족했는지 vim스럽지 않게 메타 키 조합이 종종 등장한다는 것.
@@ -766,7 +766,7 @@ gif는 일일이 찍기 어려워 생략하도록 한다.
 - `control + f`: 현재 입력중인 form의 닫는 괄호 바깥으로 점프.
 - `control + b`: 현재 입력중인 form의 여는 괄호 바깥으로 점프.
 
-![c-f, c-b를 사용하는 모습]( ./c-f.gif )
+![c-f, c-b를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/c-f.gif )
 
 ```viml
 autocmd FileType clojure imap <C-f> <Esc><Plug>(sexp_move_to_next_bracket)a
@@ -817,7 +817,7 @@ autocmd FileType clojure nmap >)  <Plug>(sexp_capture_next_element)
 게다가 `<`, `>`를 사용하므로 횟수를 지정할 수 있다는 것도 장점이다.
 즉 `3>)`는 slurp를 3회 하라는 뜻이다. 세 번 연속 누르는 것보다 vim 스럽다.
 
-![slurp, barf, swap을 사용하는 모습]( ./sexp-regular.gif )
+![slurp, barf, swap을 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/sexp-regular.gif )
 
 이 gif에서는 3가지 명령을 사용한다. `3>)`, `2<)`, `3>e`.
 
@@ -853,7 +853,7 @@ vim-sexp는 탑 레벨 form까지 자동으로 포함시키는 `=-`도 제공해
 - `=[`: `[ ]` 안쪽 vertical align.
 - `={`: `{ }` 안쪽 vertical align.
 
-![포매팅하는 모습]( ./formatting.gif )
+![포매팅하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/formatting.gif )
 
 이 gif에서는 `==`, `=[`, `={` 를 연달아 사용한다.
 
@@ -879,7 +879,7 @@ autocmd FileType clojure nnoremap ={ vi{<c-v>$:EasyAlign\ g/^\S/<cr>gv=
 
 #### 리네임
 
-![리네임하는 모습]( ./scr.gif )
+![리네임하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/scr.gif )
 
 - `scr`: 심볼 rename. (`c`: code, `r`: rename)
 
@@ -914,7 +914,7 @@ Clojure 코딩을 하는 동안에도 특별한 설정 없이 그대로 사용�
     - `gcip`: 문단 주석처리.
     - `gciE`: 파일 전체 주석처리. (나는 `iE`, `aE`를 파일 전체로 사용하고 있다.)
 
-![gcc와 gc를 사용하는 모습]( ./gcc.gif )
+![gcc와 gc를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/gcc.gif )
 
 #### Discard
 
@@ -925,7 +925,7 @@ Clojure 코딩을 하는 동안에도 특별한 설정 없이 그대로 사용�
 
 `숫자.`과 함께 사용하면 꽤 편리하다.
 
-![sc3, sc#을 사용하는 모습]( ./sc3.gif )
+![sc3, sc#을 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/sc3.gif )
 
 ```viml
 autocmd FileType clojure nmap sc# <Plug>(sexp_move_to_prev_bracket)i#_<Esc>``
@@ -934,7 +934,7 @@ autocmd FileType clojure nmap sc3 <Plug>(sexp_move_to_prev_element_head)i#_<Esc>
 
 Ultisnips를 써서 `3#_` 처럼 숫자와 조합하면 `#_#_#_` 로 완성해주는 기능도 만들어 쓰고 있다. ( [ultisnips 섹션]( #ultisnips) 참고 )
 
-![ultisnips를 사용해 #_를 입력하는 모습]( ./ultisnips-hash-underbar-repeat.gif )
+![ultisnips를 사용해 #_를 입력하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/ultisnips-hash-underbar-repeat.gif )
 
 #### cycle collection
 
@@ -942,7 +942,7 @@ Ultisnips를 써서 `3#_` 처럼 숫자와 조합하면 `#_#_#_` 로 완성해�
 
 `scc`를 입력할 때마다 `#{}`, `{}`, `[]`, `()`로 바꾼다.
 
-![컬렉션 순환을 사용하는 모습]( ./coc-scc.gif )
+![컬렉션 순환을 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/coc-scc.gif )
 
 ```viml
 autocmd FileType clojure nmap <silent> scc :call CocAction('runCommand', 'lsp-clojure-cycle-coll')<CR>
@@ -952,13 +952,13 @@ autocmd FileType clojure nmap <silent> scc :call CocAction('runCommand', 'lsp-cl
 
 - `sna`: 현재 편집중인 파일 최상단의 `ns` `:require`에 사용할 라이브러리를 추가하고 알리아스도 지정해 준다. (`a`: add)
 
-![sna를 사용하는 모습]( ./iced-sna.gif )
+![sna를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-sna.gif )
 
 - `snc`: 편집중인 파일 최상단의 `ns` `:require`에서 사용하지 않는 라이브러리를 제거한다. (`c`: clear)
 - `sns`: `:require`, `:import` 등 파일 최상단의 `ns` 목록을 정렬해 준다. (`s`: sort)
     - vim 매크로를 사용해 정렬한다. 빠르다. 시간 소요를 거의 못 느낌.
 
-![sns를 사용하는 모습]( ./require-sort-vim.gif )
+![sns를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/require-sort-vim.gif )
 
 - `snS`: `sns`와 같지만 몇 가지 기능이 더 붙어있다.
     - `clojure-lsp`의 `clean-ns`를 사용한다. 느리다. 4~6초 정도 걸린다.
@@ -998,11 +998,11 @@ vim-iced는 실패한 테스트가 있을 경우 보기 좋게 레포트 버퍼�
 
 다음은 `stn`으로 실패한 테스트가 발견됐을 경우이다.
 
-![stn 테스트가 실패한 경우]( ./iced-test-fail.jpg )
+![stn 테스트가 실패한 경우]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-test-fail.jpg )
 
 테스트에 성공하면 레포트 버퍼와 🔥 이모지는 사라진다.
 
-![테스트에 성공한 경우]( ./iced-test-success.jpg )
+![테스트에 성공한 경우]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/iced-test-success.jpg )
 
 ```viml
 autocmd FileType clojure nmap <silent> stc :call CocAction('runCommand', 'lsp-clojure-create-test')<CR>
@@ -1036,7 +1036,7 @@ autocmd FileType clojure nmap sks i#_:clj-kondo/ignore<ESC>
 
 vim-iced는 [CIDER의 debugger]( https://docs.cider.mx/cider/debugging/debugger.html )를 감싸고 있어서 CIDER의 디버거를 사용할 수 있다.
 
-![디버거를 사용하는 모습]( ./debugger.gif )
+![디버거를 사용하는 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/debugger.gif )
 
 디버거로 멈추고 싶은 form 앞에 `#break`나 `#dbg`를 적어두고 코드를 평가하는 방식으로 사용할 수 있다.
 
@@ -1052,12 +1052,12 @@ vim-iced는 [CIDER의 debugger]( https://docs.cider.mx/cider/debugging/debugger.
 
 나는 보통은 fzf를 사용해 파일을 탐색한다.
 
-![fzf Files 명령]( ./fzf-files.jpg )
+![fzf Files 명령]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/fzf-files.jpg )
 
 만약 트리 구조의 파일 목록을 보고 싶다면 [coc-explorer]( ./https://github.com/weirongxu/coc-explorer )를 사용한다.
 (나는 [NERDTree]( https://github.com/preservim/nerdtree )를 별로 안 좋아한다.)
 
-![coc-explorer]( ./coc-explorer.jpg )
+![coc-explorer]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/coc-explorer.jpg )
 
 여기에서 파일을 추가하거나 삭제하거나 열거나 이동하거나 하는 등의 작업이 가능하다.
 
@@ -1142,7 +1142,7 @@ autocmd FileType clojure nmap sctl :call ClojureLsp('thread-first-all')<CR>
 
 #### vim-iced에서 Jack In을 실행하면 iced 명령을 찾지 못하는 경우
 
-![iced를 찾지 못하는 vim]( /resource/wiki/clojure/vim-setting/197396998-cf352d90-f734-4b00-9fc1-f0a0d611e4ee.png )
+![iced를 찾지 못하는 vim]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/197396998-cf352d90-f734-4b00-9fc1-f0a0d611e4ee.png )
 
 `g:iced#nrepl#connect#iced_command`에 설정된 `iced` 명령이 잘못 지정됐거나 vim이 `iced` 명령을 찾지 못하는 경우이다.
 
@@ -1175,11 +1175,11 @@ REPL 실행시 알리아스를 제공하고 싶다면 `g:iced#nrepl#connect#jack
 
 다음과 같이 coc 자동완성 목록에 중복 아이템이 나온다면 여러 개의 coc 서비스가 떠 있을 수 있다.
 
-![자동완성 제안이 2개씩 나오고 있다]( /resource/wiki/clojure/vim-setting/197347081-7bf16bb0-de98-4c97-907f-83f30700979b.png )
+![자동완성 제안이 2개씩 나오고 있다]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/197347081-7bf16bb0-de98-4c97-907f-83f30700979b.png )
 
 `:CocList services`를 입력하면 아래와 같이 서비스 목록을 볼 수 있다.
 
-![CocList services로 확인한 모습]( /resource/wiki/clojure/vim-setting/197347190-0d471a13-2c44-4975-b0a5-638049f46c67.png )
+![CocList services로 확인한 모습]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/197347190-0d471a13-2c44-4975-b0a5-638049f46c67.png )
 
 스크린샷을 보면 `languageserver.clojure-lsp`와 `clojure`가 `[running]` 상태로 떠 있음을 알 수 있다. 즉 두 개가 돌고 있는 것이다.
 
@@ -1351,7 +1351,7 @@ nREPL server started on port 59594 on host localhost - nrepl://localhost:59594
 
 이제 vim을 실행하고 프로젝트 세션으로 붙는다.
 
-![vim을 실행하고 conjure가 자동으로 nrepl에 붙는 장면]( ./conjure-connect.jpg )
+![vim을 실행하고 conjure가 자동으로 nrepl에 붙는 장면]( /resource/C8/18B9F8-7A97-432E-9CEC-795E39AB8608/conjure-connect.jpg )
 
 vim에 들어가자마자 Conjure가 알아서 `59594` 포트로 접속한다.
 

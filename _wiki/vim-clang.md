@@ -52,10 +52,10 @@ int main(int argc, char *argv[])
 
 자동완성도 잘 되나 확인해 보자.
 
-![]( /resource/wiki/vim-clang/completion.png )
+![]( /resource/D3/402D3B-3EFE-457A-BD03-E341DEB9CD4E/completion.png )
 
 
 컴파일한 다음, 실행해보자.
 
-![]( /resource/wiki/vim-clang/hello.png )
+![]( /resource/D3/402D3B-3EFE-457A-BD03-E341DEB9CD4E/hello.png )
 

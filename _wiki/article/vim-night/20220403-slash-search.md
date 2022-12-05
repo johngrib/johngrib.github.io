@@ -42,7 +42,7 @@ s//replace/
 이건 당연히 `*` 검색에서도 통한다. `*`은 다른게 아니고 단어 텍스트 오브젝트를 검색해주는 normal 명령인데 커서가 지시하고 있는 단어를 바로 검색해주므로 몹시 편하다.
 그런데 패턴을 잘 보면 양쪽에 `\< \>`를 씌우고 있다. 이건 vim에서 사용하는 단어의 경계를 의미하는 패턴.
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220403-slash-search/5OcBUnUm_zdLTR9C.mp4 " type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/52/0471E5-B7FB-4761-A435-CF52E3CAAAAA/5OcBUnUm_zdLTR9C.mp4 " type="video/mp4"></video>
 
 그래서 단어 하나를 검색해 replace하는 쉬운 방법 하나는 단어 위에 커서가 있을 때 `*`을 누르고 `:%s//replace/g` 처럼 입력하는 것.
 이러면 검색 패턴도 `*` 한 번 누르는 것으로 해결되므로 실제로 누르는 키스트로크가 많이 줄어든다.
@@ -61,7 +61,7 @@ s//replace/
 `vimgrep`을 써서 검색하고 나서 검색 목록을 보려면 `:copen`을 입력하면 된다. 그러면 파일명 행번호 열번호 내용이 요약이 되고, 그 위에서 엔터를 치면 해당 파일로 이동하는 식.
 quickfix 이야기를 하려면 quickfix 설정법도 이야기하게 될테니 엄청 길어질 거라 이건 다음 기회에.
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220403-slash-search/HYRjBUExe2w2nfvh.mp4 " type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/52/0471E5-B7FB-4761-A435-CF52E3CAAAAA/HYRjBUExe2w2nfvh.mp4 " type="video/mp4"></video>
 
 quickfix 이야기는 다음으로 미뤘고, 그러면 여러 파일 검색할 때 `vimgrep`만 쓰느냐 하면 그건 아님. `vimgrep`보다 더 많이 쓰는 게 `fzf.vim`.
 혁명적인 UI로 CLI에 빛을 던져준 명령 `fzf`를 vim에서 쓸 수 있게 도와주는 플러그인이라 할 수 있다.
@@ -71,7 +71,7 @@ quickfix 이야기는 다음으로 미뤘고, 그러면 여러 파일 검색할 
 fzf.vim을 쓰는 방법은 다양한데, 플러그인에서 제공해주는 기본 셋팅만으로도 꽤 편리한 명령이 많아서 어지간해서는 커스터마이징이 필요없을 정도.
 가장 많이 쓰는 건 `:Files`, `:Ag`. Ag 는 나도 늘 사용하고 있는 [[/cmd/ag]]를 통합하는 명령이지만 다른 걸로 바꿔 끼울 수도 있을듯.
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220403-slash-search/FJT12RdljVUeegN-.mp4 " type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/52/0471E5-B7FB-4761-A435-CF52E3CAAAAA/FJT12RdljVUeegN-.mp4 " type="video/mp4"></video>
 
 ## / 와 숫자의 조합
 
@@ -85,7 +85,7 @@ fzf.vim을 쓰는 방법은 다양한데, 플러그인에서 제공해주는 기
 
 `10/plug`로 검색한 영상을 찍어 보았다.
 
-<video controls autoplay loop><source src=" /resource/wiki/article/vim-night/20220403-slash-search/3dJ5EcXdNBeo2Fo8.mp4 " type="video/mp4"></video>
+<video controls autoplay loop><source src=" /resource/52/0471E5-B7FB-4761-A435-CF52E3CAAAAA/3dJ5EcXdNBeo2Fo8.mp4 " type="video/mp4"></video>
 
 ## / 에서 구분자는 꼭 / 가 아니어 된다
 

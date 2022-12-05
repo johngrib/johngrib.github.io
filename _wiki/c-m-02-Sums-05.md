@@ -522,7 +522,7 @@ $$
 \end{align}
 $$
 
-![integral]( /resource/wiki/c-m-02-Sums-05/40342951-6e092800-5dc8-11e8-940f-4dd19a822c64.png )
+![integral]( /resource/62/17EC46-77AC-4531-A2FF-6FD0E6CA4971/40342951-6e092800-5dc8-11e8-940f-4dd19a822c64.png )
 
 * $$ f(x) = x^2 $$ &nbsp;
 * 위의 그래프에서 곡선 아래쪽 면적의 넓이는 다음과 같다.

@@ -51,9 +51,9 @@ our original, "Can machines think?"
 
 [The Turing Digital Archive]( https://turingarchive.kings.cam.ac.uk/publications-lectures-and-talks-amtb/amt-b-5 )
 
-![]( /resource/wiki/imitation-game/1951-4.jpg )
+![]( /resource/0D/23F21E-A4FA-4D14-BE92-7826ADE7DF97/1951-4.jpg )
 
-![]( /resource/wiki/imitation-game/1951-5.jpg )
+![]( /resource/0D/23F21E-A4FA-4D14-BE92-7826ADE7DF97/1951-5.jpg )
 
 > 이를 염두에 두면 디지털 컴퓨터가 '기계 두뇌'나 '전자 두뇌'라는 주장을 비판하는 가장 현명한 근거는
 뇌처럼 행동하도록 프로그래밍 할 수는 있어도 어떻게 해야 하는지 현재로서는 알 수 없다는 것입니다.
@@ -69,7 +69,7 @@ our original, "Can machines think?"
 ## 참고문헌
 
 - [COMPUTING MACHINERY AND INTELLIGENCE By A. M. Turing]( https://www.csee.umbc.edu/courses/471/papers/turing.pdf ) - 앨런 튜링의 1950년 논문, 계산 기계와 지능.
-    - []( /resource/wiki/imitation-game/computing-machinary-and-intelligence.pdf )
+    - []( /resource/0D/23F21E-A4FA-4D14-BE92-7826ADE7DF97/computing-machinary-and-intelligence.pdf )
 - 앨런 튜링 지능에 관하여 / 앨런 튜링 저/곽재식 해제/노승영 역 / 에이치비프레스 / 1판 2쇄 2019년 12월 24일
 
 ## 주석

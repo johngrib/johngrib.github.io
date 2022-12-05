@@ -21,7 +21,7 @@ latex   : true
 
 예를 들어 전화번호를 설계의 핵심으로 전제하고, 서로 전화를 걸 수 있는 관계를 아주 단순하게 그려보면 다음과 같은 그림이 나온다.
 
-![처음에 생각한 전화 관계도]( /resource/wiki/global-variables-and-marriage-architecture/simple-complex.png )
+![처음에 생각한 전화 관계도]( /resource/11/955BB8-9B9A-4667-9F46-8388EAC21C14/simple-complex.png )
 
 **각 노드는 다른 모든 노드에 카톡을 보낼 수 있다.**
 
@@ -31,7 +31,7 @@ $$n$$개의 노드가 있을 때 모든 노드가 서로 연결된다면 연결�
 
 John 과 Loui 의 실제 가족 구성원을 생각해보면, 만약 두 사람이 결혼하고 전화번호를 충분히 주고받는다면 다음과 같은 그림이 나오게 될 수도 있다.
 
-![최악의 경우]( /resource/wiki/global-variables-and-marriage-architecture/real-complex.png )
+![최악의 경우]( /resource/11/955BB8-9B9A-4667-9F46-8388EAC21C14/real-complex.png )
 
 모든 노드가 연결된 것은 아니지만, 이 정도의 복잡도만 되어도 우리 부부의 비중이 상당히 줄어들기 때문에 John 노드와 Loui 노드로 날아드는 리퀘스트를 적절하게 컨트롤하기 힘들다.
 뿐만 아니라 한국의 사회 문화적 특성상 Loui 노드로 전달되는 리퀘스트의 수가 John 노드로 전달되는 리퀘스트의 수보다 훨씬 많을 것이다.
@@ -42,7 +42,7 @@ John 과 Loui 의 실제 가족 구성원을 생각해보면, 만약 두 사람�
 
 따라서 우리 부부는 다음과 같은 구조를 구상하였다.
 
-![간단하게 최적화한 구조]( /resource/wiki/global-variables-and-marriage-architecture/simple-optimized.png )
+![간단하게 최적화한 구조]( /resource/11/955BB8-9B9A-4667-9F46-8388EAC21C14/simple-optimized.png )
 
 이 구조는 혈족 1촌 이하의 관계에 한해서 메시징을 허용한다.
 
@@ -61,7 +61,7 @@ John 과 Loui 의 실제 가족 구성원을 생각해보면, 만약 두 사람�
 
 실제 가족 관계를 생각하면 이 구조는 다음과 같은 모양을 갖게 된다.
 
-![실제 가족 관계를 반영한 구조]( /resource/wiki/global-variables-and-marriage-architecture/real-optimized.png )
+![실제 가족 관계를 반영한 구조]( /resource/11/955BB8-9B9A-4667-9F46-8388EAC21C14/real-optimized.png )
 
 이런 제약이 가해진 네트워크 구조의 장점은 다음과 같다.
 

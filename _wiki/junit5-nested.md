@@ -113,7 +113,7 @@ Java에서는 다른 언어와 달리 메소드 내부에 메소드를 곧바로
 
 다음은 가볍게 작성한 클래스 하나를 테스트하는 코드를 IntelliJ에서 돌려본 결과를 캡처한 것이다.
 
-![]( /resource/wiki/junit5-nested/dci-eng.png )
+![]( /resource/D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6/dci-eng.png )
 
 계층 구조이기 때문에 특정 범위를 폴드하는 것도 가능하다.
 
@@ -138,7 +138,7 @@ Java에서는 다른 언어와 달리 메소드 내부에 메소드를 곧바로
     * 테스트 대상의 행동은 `~이다`, `~한다`, `~를 갖는다`가 적절한다.
     * `~된다` 같은 수동형 표현은 좋지 않다.
 
-![새롭게 작성한 테스트 문구]( /resource/wiki/junit5-nested/test-kor.png )
+![새롭게 작성한 테스트 문구]( /resource/D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6/test-kor.png )
 
 즉, **BDD**가 테스트 대상의 행동을 묘사하는 방식이라는 것을 염두에 두고 작성하면 된다.
 
@@ -282,7 +282,7 @@ class ComplexNumberKoTest {
 
 한편 html 보고서를 출력하면 다음과 같이 나온다.
 
-![]( /resource/wiki/junit5-nested/result.png )
+![]( /resource/D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6/result.png )
 
 ### subject 메소드의 사용
 
@@ -477,7 +477,7 @@ class MemberRepositoryTest {
 
 테스트 결과는 다음과 같다.
 
-![]( /resource/wiki/junit5-nested/save-method.png )
+![]( /resource/D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6/save-method.png )
 
 
 #### Invalid Data Access Api Usage Exception 예외가 발생하는 테스트
@@ -550,7 +550,7 @@ class Describe_increase {
 org.springframework.dao.InvalidDataAccessApiUsageException: No EntityManager with actual transaction available for current thread - cannot reliably process 'flush' call;
 nested exception is javax.persistence.TransactionRequiredException: No EntityManager with actual transaction available for current thread - cannot reliably process 'flush' call
 
-![]( /resource/wiki/junit5-nested/increase-fail.png )
+![]( /resource/D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6/increase-fail.png )
 
 
 이유는 뻔한데 `@Nested` 때문이다.
@@ -606,7 +606,7 @@ class Describe_increase {
 }
 ```
 
-![]( /resource/wiki/junit5-nested/resolve-annotation.png )
+![]( /resource/D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6/resolve-annotation.png )
 
 
 이 방법은 잘 작동한다. 그러나 `Context` 마다 모두 `@DataJpaTest`를 붙여주는 건 괜찮은데, 일일이 `@Autowired private MemberRepository repository`를 넣어주는 것이 너무 귀찮다.
@@ -677,7 +677,7 @@ class Describe_increase {
 }
 ```
 
-![]( /resource/wiki/junit5-nested/resolve-inherit.png )
+![]( /resource/D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6/resolve-inherit.png )
 
 이 방법이 그나마 편해서 사용하고 있다. 그러나 더 좋은 방법이 있기를 바란다.
 

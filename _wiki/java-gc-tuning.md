@@ -201,7 +201,7 @@ generational collection은 객체를 세대별로 관리하는 기법이다. 초
 
 generational collection은 논리적으로 완벽한 이론을 바탕으로 하고 있는 것은 아니다. 이 방식은 경험과 가설을 근거로 삼는다. GC 설계자들은 객체 대부분이 생겨나자마자 얼마 지나지 않아 쓰레기가 된다는 것을 경험적으로 알고 있었다. 이를 "weak generational hypothesis", 즉 "약한 세대 가설"이라 부른다.
 
-![weak generational hypothesis]( /resource/wiki/java-gc-tuning/generational.png )
+![weak generational hypothesis]( /resource/32/39995B-3DF5-4904-AC2A-DCD73638FD17/generational.png )
 
 * x축: 객체의 수명(할당된 바이트 단위)
 * y축: 해당 수명을 가진 객체의 총 바이트

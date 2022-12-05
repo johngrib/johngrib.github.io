@@ -27,7 +27,7 @@ jdbc:(mysql|mariadb):[replication:|loadbalance:|sequential:|aurora:]//<hostDescr
 
 다음은 이 포맷을 내가 [regexper][connection-string-regexper]를 사용해 다이어그램으로 표현해 본 것이다.
 
-![image]( /resource/wiki/mariadb-connector-j/123508148-91914a80-d6a8-11eb-9218-76f52145d45f.png )
+![image]( /resource/1C/CC8411-E647-4CD1-825A-68EEAF2676B1/123508148-91914a80-d6a8-11eb-9218-76f52145d45f.png )
 
 HostDescription 포맷은 다음과 같다.
 

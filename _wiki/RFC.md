@@ -106,7 +106,7 @@ RFC에 문제가 있을 때는 새로운 버전의 RFC로 갱신되기도 하고
 
 ### HTTP
 
-![rfc-graph](/resource/wiki/RFC/rfc_graph.jpg)
+![rfc-graph](/resource/6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D/rfc_graph.jpg)
 
 이미지 출처: "리얼월드 HTTP" 36쪽.
 

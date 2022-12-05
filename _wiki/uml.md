@@ -39,7 +39,7 @@ static class TreeMapNode {
 }
 ```
 
-![]( /resource/wiki/uml/uml-01.svg )
+![]( /resource/98/9EBA09-4F5C-4BA0-840D-D31EE2468104/uml-01.svg )
 
 - `+`: `public`
 - `-`: `private`

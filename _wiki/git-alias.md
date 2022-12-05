@@ -138,7 +138,7 @@ Hello World
     ch = "!git checkout $(git branch | fzf)"
 ```
 
-![gitch]( /resource/wiki/git-alias/49334948-c5598000-f625-11e8-9de3-11eaee3d8bc2.gif )
+![gitch]( /resource/1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3/49334948-c5598000-f625-11e8-9de3-11eaee3d8bc2.gif )
 
 브랜치 이름만 나오게 하면 좀 심심하니까 `-vv`로 각 브랜치의 가장 마지막 commit의 hash 값 일부와 커밋 메시지 첫번째 라인도 보이도록 하자.
 
@@ -173,7 +173,7 @@ Hello World
 
 `git a`를 입력하고 `tab` 키로 추가하고 싶은 파일만 체크한 다음, 엔터 키를 치면 된다.
 
-![git-a]( /resource/wiki/git-alias/49334580-91c62800-f61c-11e8-88d0-be5636161d8a.gif )
+![git-a]( /resource/1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3/49334580-91c62800-f61c-11e8-88d0-be5636161d8a.gif )
 
 ### 일회용 함수 선언으로 복잡한 셸 스크립트 실행하기
 
@@ -306,7 +306,7 @@ bclean = "! # Search and delete merged branches;\n\
 
 아무튼 이 `bclean`을 `git bb clean`으로 등록해 두고 실행하면 다음과 같이 돌아간다.
 
-![gitbbc]( /resource/wiki/git-alias/49380943-339d6000-f756-11e8-93de-2274e3b4a5c3.gif )
+![gitbbc]( /resource/1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3/49380943-339d6000-f756-11e8-93de-2274e3b4a5c3.gif )
 
 * 이 alias를 실행하면 일단 다음 명령어를 실행해 merged branch를 일괄적으로 삭제한다.
 
@@ -391,7 +391,7 @@ ch를 다음과 같이 수정해보자.
 * 하나의 알리아스로 만들어도 되겠지만 `bselect`는 여러모로 쓸모가 있을 것 같아 따로 만들었다.
 * 터미널 높이 길이 값으로 `$LINES`를 쓰면 더 깔끔했겠지만, git alias 설정 문자열 내에서는 `$LINES`값이 제대로 출력되지 않아 `stty size`를 사용했다.
 
-![gitch]( /resource/wiki/git-alias/49552798-6901a380-f938-11e8-9c62-8b9228492f55.gif )
+![gitch]( /resource/1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3/49552798-6901a380-f938-11e8-9c62-8b9228492f55.gif )
 
 #### add 파일 선택기에 미리보기 기능 추가하기
 
@@ -409,7 +409,7 @@ ch를 다음과 같이 수정해보자.
 * 코드 미리보기에 색깔을 칠해주기 위해 [Pygment](http://pygments.org/)를 사용했다.
     * 설치는 심플하게 `pip3 install Pygments`
 
-![gita_]( /resource/wiki/git-alias/49553461-2392a580-f93b-11e8-9117-ea0d32c24ee0.gif )
+![gita_]( /resource/1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3/49553461-2392a580-f93b-11e8-9117-ea0d32c24ee0.gif )
 
 ##### 파일 이름 옆에 변경 라인 숫자 보여주기
 
@@ -441,7 +441,7 @@ diff-info = "! # get diff info;\n\
 
 실행하면 다음과 같이 아래쪽에 변경에 대한 전체 정보가 나오고, 각 파일별로 추가/삭제 정보가 나온다.
 
-![image]( /resource/wiki/git-alias/49681236-6db58b80-fae1-11e8-8b39-11a24531cfbb.png )
+![image]( /resource/1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3/49681236-6db58b80-fae1-11e8-8b39-11a24531cfbb.png )
 
 ## 헷갈릴 때 사용하는 alias 추가하기
 
@@ -489,7 +489,7 @@ alias.sync=!f() { git fetch $1 && git reset --hard $1/$(git b0); }; f
     alias = "!git config --list | egrep '^alias.+' | sed -e 's/^alias\\.//' | sed -e 's/^[^=]*=/\\'$'\\033[31m&\\033[(B\\033[m/'"
 ```
 
-![image]( /resource/wiki/git-alias/49335205-8d097000-f62c-11e8-9ba1-97ab3d49d792.png )
+![image]( /resource/1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3/49335205-8d097000-f62c-11e8-9ba1-97ab3d49d792.png )
 
 ### alias 설명서를 보기 좋게 다듬어 보자
 
@@ -512,7 +512,7 @@ alias = "!# Prints all aliases.;\n\
 
 구글 번역기를 열심히 돌리며 영작했다.
 
-![image]( /resource/wiki/git-alias/49694946-5efcd080-fbd6-11e8-9aed-2c678882c010.png )
+![image]( /resource/1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3/49694946-5efcd080-fbd6-11e8-9aed-2c678882c010.png )
 
 ## 나의 git config
 

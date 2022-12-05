@@ -93,7 +93,7 @@ git add *.dat
 
 나는 책을 읽다가 마음에 드는 문장이 나오거나 하면 그 때마다 `fortune` 파일을 만들어 둔다.
 
-![]( /resource/wiki/fortune-cmd/my-fortune-dir.jpg )
+![]( /resource/A1/10A069-3130-4810-BCF1-41F2F75BC4F4/my-fortune-dir.jpg )
 
 인용하고 싶은 문장이 많은 좋은 책은 따로 파일로 만들어 두면 구별하기 편하다.
 

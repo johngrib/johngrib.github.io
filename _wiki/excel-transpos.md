@@ -37,7 +37,7 @@ latex   : false
 
 ## 붙여넣기
 
-![image]( /resource/wiki/excel-transpos/45604838-364fb980-ba73-11e8-97b5-638355611998.png )
+![image]( /resource/34/C00717-4F13-4FB9-A904-1C00D50FFDFF/45604838-364fb980-ba73-11e8-97b5-638355611998.png )
 
 * 영역을 지정한다.
 * `ctrl+c`로 복사한다.

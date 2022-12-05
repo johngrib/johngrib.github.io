@@ -16,11 +16,11 @@ latex   : false
 
 ## From: 패턴, Wiki 그리고 XP
 
-![변형된 버전]( /resource/wiki/oregon-swing/swing-parodie.jpg )
+![변형된 버전]( /resource/EB/5FB7E8-7FBA-4DC0-9475-43BC4818DF67/swing-parodie.jpg )
 
 _그림 2.a IT 업계에 있어서의 그네의 비유_
 
-![The Oregon Experiment의 그네 만화]( /resource/wiki/oregon-swing/swing-original.jpg )
+![The Oregon Experiment의 그네 만화]( /resource/EB/5FB7E8-7FBA-4DC0-9475-43BC4818DF67/swing-original.jpg )
 
 _그림 2.b "오레곤 대학교의 실험"에 있어서 그네의 비유_
 

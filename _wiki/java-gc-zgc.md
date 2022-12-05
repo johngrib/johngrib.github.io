@@ -82,11 +82,11 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 
 한편 ZGC project의 리드인 Per Liden이 [FOSDEM 2018에서 발표한 자료][ZGC-FOSDEM-2018]를 보면 SPECjbb에서 2015년에 수행한 테스트 결과가 실려 있다.
 
-![compare1]( /resource/wiki/java-gc-zgc/zgc-compare1.jpg )
+![compare1]( /resource/60/53F63E-420B-40C3-9423-8034F797515A/zgc-compare1.jpg )
 
 * 레이턴시에 대한 요구 조건이 있는 상황에서도 ZGC의 처리율이 G1보다 괜찮았다.
 
-![compare2]( /resource/wiki/java-gc-zgc/zgc-compare2.jpg )
+![compare2]( /resource/60/53F63E-420B-40C3-9423-8034F797515A/zgc-compare2.jpg )
 
 * 일시 정지 시간도 압도적으로 짧았다.
 

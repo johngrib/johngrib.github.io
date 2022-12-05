@@ -33,7 +33,7 @@ latex   : false
 
 [제조사 소개 페이지]( http://www.sidiz.com/product/T800HLDA_MESH/484 )
 
-![T800HLDA 메쉬 의자]( /resource/wiki/my-desk-environment/T80.png )
+![T800HLDA 메쉬 의자]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/T80.png )
 
 * 2017 ~ 2019년. 두 회사에서 사용했던 의자.
 * 시디즈 T80 의자는 흔하게 볼 수 있어서 그런지 좋다는 느낌도 나쁘다는 느낌도 받지 못했다. 무난한 의자였다.
@@ -48,7 +48,7 @@ latex   : false
 
 [제조사 소개 홈페이지]( http://fursysmall.com/product/detail.html?product_no=9140&cate_no=499&display_group=1#none )
 
-![CHN4300]( /resource/wiki/my-desk-environment/CHN4300A.jpg )
+![CHN4300]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/CHN4300A.jpg )
 
 * 현재 회사에서 사용하고 있는 의자.
 * 목받침이 없는 것이 매우 아쉬운 의자.
@@ -62,7 +62,7 @@ latex   : false
 
 [제조사 소개 페이지]( https://store.flokk.com/global/en-gb/products/hag-capisco-puls?model=8020-STD&code=00ECGY )
 
-| ![앞모습]( /resource/wiki/my-desk-environment/00ECGY_front.jpg ) | ![뒷모습]( /resource/wiki/my-desk-environment/00ECGY_back.jpg ) |
+| ![앞모습]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/00ECGY_front.jpg ) | ![뒷모습]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/00ECGY_back.jpg ) |
 
 * 집에서 사용중인 의자.
 * 2017년 초 ~ 2020년 2월(현재)까지 잘 사용하고 있다.
@@ -97,7 +97,7 @@ latex   : false
 
 구매 의사가 있다면 직구를 하는 것도 괜찮은 선택일듯.
 
-![539달러에 팔고 있는 외국 쇼핑몰]( /resource/wiki/my-desk-environment/capisco-530.png ){: style="display: block; margin: 0px auto; height:400px"}
+![539달러에 팔고 있는 외국 쇼핑몰]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/capisco-530.png ){: style="display: block; margin: 0px auto; height:400px"}
 
 #### Humanscale Freedom
 
@@ -105,7 +105,7 @@ latex   : false
 
 [제조사 소개 홈페이지(한국)]( https://kr.humanscale.com/products/seating/freedom-headrest-executive-chair/custom )
 
-| ![freedom 앞]( /resource/wiki/my-desk-environment/freedom-front.png ) | ![freedom 뒤]( /resource/wiki/my-desk-environment/freedom-back.png ) |
+| ![freedom 앞]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/freedom-front.png ) | ![freedom 뒤]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/freedom-back.png ) |
 
 [티앤제이 인터네셔널 매장][tnjshop1]에 가면 앉아볼 수 있다.
 
@@ -142,7 +142,7 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 #### Knoll 의자
 
-![knoll]( /resource/wiki/my-desk-environment/knoll.jpg )
+![knoll]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/knoll.jpg )
 
 2020년 1월, 시디즈 강남점에서 앉아본 의자.
 
@@ -153,7 +153,7 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 #### Herman Miller Aeron
 
-![herman miller aeron]( /resource/wiki/my-desk-environment/aeron.jpeg )
+![herman miller aeron]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/aeron.jpeg )
 
 2020년 1월, 시디즈 강남점, 인노바드에서 앉아본 의자.
 
@@ -176,7 +176,7 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 다음은 구글에서 VARIER 의자를 검색하면 나오는 사진들이다.
 
-![VARIER 구글 검색 결과]( /resource/wiki/my-desk-environment/varier.png )
+![VARIER 구글 검색 결과]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/varier.png )
 
 
 #### 티엔제이 인터네셔널
@@ -225,7 +225,7 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 2019년 12월 31일에 구매.
 
-![엔산 마운트 거치대]( /resource/wiki/my-desk-environment/nsan-mount.jpg )
+![엔산 마운트 거치대]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/nsan-mount.jpg )
 
 **엔산마운트 NS-43**
 
@@ -247,13 +247,13 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 나는 집에서는 위의 팔이 4개(관절 8개)인 거치대에 모니터 하나를 올려 쓰고 있고, 회사에서는 팔이 없는 거치대에 집에서 쓰고 남은 관절 2개를 끼워 쓰고 있다.
 
 | 팔이 없는 거치대                                           | 남은 관절 2 개를 끼우면 이렇게 된다                      |
-| ![]( /resource/wiki/my-desk-environment/nsan-mount-simple.png ) | ![]( /resource/wiki/my-desk-environment/nsan-mount-join.png ) |
+| ![]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/nsan-mount-simple.png ) | ![]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/nsan-mount-join.png ) |
 | 엔산마운트 NS-11                                           | 엔산마운트 NS-13                                         |
 
 ## 독서대
 ### YIYO 독서대
 
-![yiyo 독서대]( /resource/wiki/my-desk-environment/yiyo-bookstand.jpg )
+![yiyo 독서대]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/yiyo-bookstand.jpg )
 
 사진은 2017년에 내가 직접 찍은 것이다.
 
@@ -270,7 +270,7 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 제품 이름이 "누어서독서대" 이다.
 
-![누어서독서대]( /resource/wiki/my-desk-environment/lie-bookstand.jpg )
+![누어서독서대]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/lie-bookstand.jpg )
 
 누워서 책을 볼 수 있다는 장점이 있다. 아이폰이나 아이패드도 끼울 수 있다.
 
@@ -278,7 +278,7 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 다음은 내가 2019년 9월에 찍은 사진이다. 높이를 적절하게 조절하고 베개를 놓으면 아주 좋다.
 
-![누어서독서대 사용]( /resource/wiki/my-desk-environment/lie-bookstand2.jpeg )
+![누어서독서대 사용]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/lie-bookstand2.jpeg )
 
 ### 액토 4차원 슈퍼 독서대
 
@@ -294,7 +294,7 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 * 토비의 스프링 3.1 1권(870 페이지) 정도의 책을 올리면 독서대가 약간 기울어진다. 사용은 할 수 있다.
 * TCP/IP 완벽 가이드(1540 페이지, 하드커버)까지도 그럭저럭 쓸만한 것 같은데 이것보다 무거운 책을 올리면 오래 못 쓸 것 같다.
 
-| ![]( /resource/wiki/my-desk-environment/4d-super-bookstand1.jpg ) | ![]( /resource/wiki/my-desk-environment/4d-super-bookstand2.jpg ) |
+| ![]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/4d-super-bookstand1.jpg ) | ![]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/4d-super-bookstand2.jpg ) |
 
 위의 사진은 이펙티브 자바 3판을 올려놓고 찍은 것이다.
 
@@ -302,17 +302,17 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 엔산마운트 NS-13 과 엔산마운트 NB-02, 그리고 평범한 나무 독서대를 조합하면 다음과 같은 높이 조절 독서대를 만들 수 있다.
 
-![image]( /resource/wiki/my-desk-environment/82669064-b204ff00-9c75-11ea-953d-14565fcdd1b0.JPG )
+![image]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/82669064-b204ff00-9c75-11ea-953d-14565fcdd1b0.JPG )
 
 원래 모니터를 지지하기 위한 장비이므로 굉장히 튼튼하며, 액토 4차원 슈퍼 독서대처럼 한쪽으로 기울어지지도 않는다.
 
 엔산마운트 NB-02는 원래 노트북 거치대로, 각도를 조절할 수 있으며 상판에 올려놓는 대상을 고정하는 걸쇠가 있다.
 
-![image]( /resource/wiki/my-desk-environment/82669204-fe503f00-9c75-11ea-8146-3542d95c8642.png )
+![image]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/82669204-fe503f00-9c75-11ea-8146-3542d95c8642.png )
 
 NB-02 를 모니터 브라켓에 연결할 때에는 다음과 같이 모니터 브라켓을 위아래를 거꾸로 해서 연결하는 것이 좋다.
 
-![IMG_4995]( /resource/wiki/my-desk-environment/82669475-79195a00-9c76-11ea-9475-634864b3bf93.JPG )
+![IMG_4995]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/82669475-79195a00-9c76-11ea-9475-634864b3bf93.JPG )
 
 책이 앞쪽으로 올라가니 자연히 앞쪽에 하중이 실리게 되는데 위와 같이 하면 무게중심이 상대적으로 뒤쪽으로 이동해 안정적으로 고정된다.
 
@@ -324,7 +324,7 @@ NB-02 를 모니터 브라켓에 연결할 때에는 다음과 같이 모니터 
 
 제조사 홈페이지를 검색해봐도 안 나온다. 쿠팡이나 옥션 같은 온라인 쇼핑몰에서 검색하면 잘 나온다.
 
-![큐어백]( /resource/wiki/my-desk-environment/cureback.png )
+![큐어백]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/cureback.png )
 
 보통 이런 종류의 등받이 쿠션은 한 번 끼워놓으면 천천히 엉덩이 쪽으로 떨어지는데 이 제품은 멜빵이 달려 있어 아래로 내려가지 않는다.
 
@@ -336,7 +336,7 @@ NB-02 를 모니터 브라켓에 연결할 때에는 다음과 같이 모니터 
 
 2017년인가 2018년부터 사용.
 
-![발 보온기]( /resource/wiki/my-desk-environment/airex.jpg )
+![발 보온기]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/airex.jpg )
 
 전기 온열 발판이다. 책상 밑에 두고 발을 올려놓으면 된다. 발바닥이 따뜻해서 기분이 좋다!
 
@@ -356,7 +356,7 @@ NB-02 를 모니터 브라켓에 연결할 때에는 다음과 같이 모니터 
 
 2016년부터 사용.
 
-![목 마사지기]( /resource/wiki/my-desk-environment/runwave.jpg )
+![목 마사지기]( /resource/D3/D226CC-49CD-4B15-B8AA-B1AC90E4A583/runwave.jpg )
 
 골프공이 두 개 붙어있는 모양의 마사지 도구.
 

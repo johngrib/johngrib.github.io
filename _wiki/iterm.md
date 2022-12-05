@@ -27,7 +27,7 @@ brew cask install iterm2
 
 한글이 포함된 이름을 가진 파일이 다음과 같이 자소가 분리되어 보이는 경우가 있다.
 
-![image]( /resource/wiki/iterm/120248953-26747400-c2b4-11eb-9968-7d361204278c.png )
+![image]( /resource/01/5EE992-8715-460E-A336-239AE4A4EA4D/120248953-26747400-c2b4-11eb-9968-7d361204278c.png )
 
 이는 유니코드 정규화 기준이 적절하지 않게 선택되었기 때문일 수 있다.
 
@@ -35,7 +35,7 @@ brew cask install iterm2
 
 그러면 다음과 같이 한글이 조합된 형태로 돌아온다.
 
-![image]( /resource/wiki/iterm/120249035-76ebd180-c2b4-11eb-9c09-8e2976f466e4.png )
+![image]( /resource/01/5EE992-8715-460E-A336-239AE4A4EA4D/120249035-76ebd180-c2b4-11eb-9c09-8e2976f466e4.png )
 
 - 함께 읽기
     - [HFS 플러스(위키백과)]( https://ko.wikipedia.org/wiki/HFS_플러스 ) 

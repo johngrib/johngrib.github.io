@@ -49,7 +49,7 @@ latex   : false
 
 다음은 MacOS의 터미널이다.
 
-![]( /resource/wiki/three-dots-in-menu/terminal.png )
+![]( /resource/AF/C9D131-34F1-4C80-BA2E-D8FBFF90C820/terminal.png )
 
 `셸` 탭을 살펴보면 `...`이 있는 메뉴가 6개 있음을 알 수 있다.
 
@@ -73,7 +73,7 @@ latex   : false
 >
 While menu commands are used for immediate actions, more information might be needed to perform the action. **Indicate a command that needs additional information (including a confirmation) by adding an ellipsis at the end of the label.**
 >
-![screen shot of print command and print dialog box]( /resource/wiki/three-dots-in-menu/134750169-2dc9e42f-0242-419d-837f-ec188255317d.png )
+![screen shot of print command and print dialog box]( /resource/AF/C9D131-34F1-4C80-BA2E-D8FBFF90C820/134750169-2dc9e42f-0242-419d-837f-ec188255317d.png )
 >
 In this example, the Print... command displays a Print dialog box to gather more information.
 >

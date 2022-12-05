@@ -127,7 +127,7 @@ $$ \color{red} k, \color{red} C $$ 를 $$ f(x) $$ 가 $$ O(g(x)) $$ 라는 관�
 * 만약 $$ k, C $$ 증인 한 쌍이 있다면, 무한히 많은 증인이 있다.
     * $$ C \lt C', k \lt k' $$ 인 $$ k', C'$$ 도 증인이기 때문이다.
 
-![image]( /resource/wiki/big-O-notation/52638241-e3403c80-2f14-11e9-93d2-7ce10d468d6e.png )
+![image]( /resource/BB/A901EB-6E74-4E62-8414-0F6C08B6F50D/52638241-e3403c80-2f14-11e9-93d2-7ce10d468d6e.png )
 
 위의 그래프를 보면 쉽게 이해할 수 있다.
 
@@ -285,7 +285,7 @@ $$\text{ $f(x)$는 $\Theta(g(x))$ 이다.}$$
 
 ### 그래프 비교
 
-![Graphs of functions commonly used in the analysis of algorithms]( /resource/wiki/big-O-notation/41817416-d269efb0-77d5-11e8-8220-6b8e7c9eacbc.png )
+![Graphs of functions commonly used in the analysis of algorithms]( /resource/BB/A901EB-6E74-4E62-8414-0F6C08B6F50D/41817416-d269efb0-77d5-11e8-8220-6b8e7c9eacbc.png )
 
 이미지 출처는 [Big_O_notation(wikipedia)](https://en.wikipedia.org/wiki/Big_O_notation )
 

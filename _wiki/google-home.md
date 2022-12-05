@@ -61,13 +61,13 @@ LG ThinQ 앱을 폰에 설치하고 에어컨과 연동한 다음, 구글홈과 
 
 내가 구매한 조명은 샤오미 이라이트. 소켓 사이즈는 한국 표준인 E26.
 
-![]( /resource/wiki/google-home/bulb.jpg ){:style="max-height:300px"}
+![]( /resource/44/067FBF-0330-45E9-8EB8-1896B06F3362/bulb.jpg ){:style="max-height:300px"}
 
 스탠드는 "스피아노 플로어 장스탠드 SS-1000"를 샀다. 소켓 사이즈는 E26, E27 호환.
 
 디자인도 괜찮아 보이고 가격도 싸길래 깊게 고민하지 않고 선택. 가격은 2만 4천원 정도.
 
-![]( /resource/wiki/google-home/light.jpg ){:style="max-height:400px"}
+![]( /resource/44/067FBF-0330-45E9-8EB8-1896B06F3362/light.jpg ){:style="max-height:400px"}
 
 
 ## TV

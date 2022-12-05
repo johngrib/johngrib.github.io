@@ -16,7 +16,7 @@ latex   : false
 
 ## 기능 소개
 
-![image]( /resource/wiki/blog/this/random-link/126327221-5e7fe6fc-2356-48b8-8004-7b21d790626a.png )
+![image]( /resource/87/AA5089-14C8-43D7-909A-5CF34596EE2A/126327221-5e7fe6fc-2356-48b8-8004-7b21d790626a.png )
 
 화면 상단의 `random` 버튼을 클릭하면 이 블로그의 모든 문서들 중 하나로 랜덤하게 이동하는 기능이다.
 

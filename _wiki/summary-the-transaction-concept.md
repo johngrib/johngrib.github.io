@@ -160,7 +160,7 @@ A simple transaction is a linear sequence of actions. A complex transaction may 
 - 이러한 트랜잭션은 트랜잭션이 중첩(nested)된 것처럼 보이지만 중첩된 트랜잭션의 효과는 트랜잭션의 다른 부분에서만 볼 수 있다.
 
 >
-![image]( /resource/wiki/summary-the-transaction-concept/115991313-c6c6e100-a602-11eb-8fb5-f39d555c5b49.png )
+![image]( /resource/A7/B7947C-DF61-46E6-8DAC-0FF37C109A26/115991313-c6c6e100-a602-11eb-8fb5-f39d555c5b49.png )
 
 - T1: 간단한 일련의 작업.
 - T2: 병렬성과 트랜잭션 중첩이 있는 복잡한 트랜잭션.
@@ -467,7 +467,7 @@ This is a simplified description of Reed’s proposal. The full proposal has man
 - Reed는 글로벌한 시계 구현의 어려움을 회피하기 위해 "실제 시간"이 아니라 "의사 시간"을 사용한다.
 
 >
-![image]( /resource/wiki/summary-the-transaction-concept/116098727-42e62500-a6e6-11eb-9107-97abd4752cbc.png )
+![image]( /resource/A7/B7947C-DF61-46E6-8DAC-0FF37C109A26/116098727-42e62500-a6e6-11eb-9107-97abd4752cbc.png )
 
 그림 2. 객체 E의 여러 버전들을 표현한 그림. 세 개의 커밋된 버전(committed version)과 하나의 요청된 버전(proposed version)이 그림에 나타나 있다. `V3` 버전이 커밋되거나 중단되면 커밋 레코드와 객체 헤더가 업데이트된다.
 
@@ -521,7 +521,7 @@ Hansel and Gretel copied Theseus’ trick as they wandered into the woods in sea
 - 안타깝게도 그들이 흘린 빵조각은 새들이 먹었고, 최초의 로그 실패(log failure) 사례가 되었다.
 
 >
-![image]( /resource/wiki/summary-the-transaction-concept/116246821-442a5700-a7a5-11eb-9729-4972dc63efce.png )
+![image]( /resource/A7/B7947C-DF61-46E6-8DAC-0FF37C109A26/116246821-442a5700-a7a5-11eb-9729-4972dc63efce.png )
 
 그림 3. DO-UNDO-REDO 프로토콜.
 - 각각의 protected 작업을 실행하면 로그 레코드가 생성되며, 이 로그를 사용해 작업을 취소하거나 다시 실행할 수 있게 된다.
@@ -581,7 +581,7 @@ Some actions need not generate log records. Actions on unprotected objects (e.g.
 일부 작업은 로그 레코드를 생성할 필요가 없기도 하다. 예를 들어 보호되지 않는 객체에 대한 작업(스크래치 파일에 쓰기 등)이나 객체 상태를 변경하지 않는 작업(객체 읽기)과 같은 경우는 로그 레코드를 생성할 필요가 없다.
 
 >
-![image]( /resource/wiki/summary-the-transaction-concept/116418494-275e5400-a877-11eb-9d28-5fba54dde236.png )
+![image]( /resource/A7/B7947C-DF61-46E6-8DAC-0FF37C109A26/116418494-275e5400-a877-11eb-9d28-5fba54dde236.png )
 
 그림 4.  실제 작업(실행 취소할 수 없는 작업)은 커밋할 때까지 연기해야 한다. 로깅으로 이 방식을 구현하려면 지연 작업의 redo 로그를 적용하는 것을 커밋 완료 작업에 포함시킨다.
 
@@ -606,7 +606,7 @@ Another detail is that the undo and redo operations must be restartable, that is
 - 그렇지 않으면(시퀀스 번호가 다르면) 객체와 시퀀스 번호를 변경한다.
 
 >
-![image]( /resource/wiki/summary-the-transaction-concept/120102909-28d9af80-c188-11eb-90f3-1ff6095d209b.png )
+![image]( /resource/A7/B7947C-DF61-46E6-8DAC-0FF37C109A26/120102909-28d9af80-c188-11eb-90f3-1ff6095d209b.png )
 
 그림 5. UNDO 와 REDO 는 restartable 해야 하며, 작업이 이미 시작된 상태라면 객체를 변경해서는 안된다.
 

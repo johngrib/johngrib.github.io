@@ -26,7 +26,7 @@ vim에서 돌아가는 [vim-game-code-break]( https://github.com/johngrib/vim-ga
 
 아무튼 오랫동안 잊고 있다가 최근에 다시 생각나서 팀 동료들에게 기술 공유 시간에 발표를 했고(사실 발표할 거리가 부족해서 예전에 만든 것을 써먹은 것이다) 반응이 괜찮아서 기록해 둔다.
 
-![]( /resource/wiki/excel-snake-game/snake-excel.gif )
+![]( /resource/D4/9EFC9B-CDD3-4B80-BFAD-619C6072AD05/snake-excel.gif )
 
 ## 실행 방법
 
@@ -34,8 +34,8 @@ vim에서 돌아가는 [vim-game-code-break]( https://github.com/johngrib/vim-ga
 
 다음 링크의 엑셀 파일을 다운로드 받는다.
 
-* [snake-32bit.xlsm]( /resource/wiki/excel-snake-game/snake-32bit.xlsm ) - 32비트 윈도우즈에서만 실행될 것이다.
-* [snake-64bit.xlsm]( /resource/wiki/excel-snake-game/snake-64bit.xlsm ) - 64비트에서 돌아가게 수정한 버전. 테스트를 충분히 안 해봐서 모르겠다. 집에 64비트 윈도우즈가 없다.
+* [snake-32bit.xlsm]( /resource/D4/9EFC9B-CDD3-4B80-BFAD-619C6072AD05/snake-32bit.xlsm ) - 32비트 윈도우즈에서만 실행될 것이다.
+* [snake-64bit.xlsm]( /resource/D4/9EFC9B-CDD3-4B80-BFAD-619C6072AD05/snake-64bit.xlsm ) - 64비트에서 돌아가게 수정한 버전. 테스트를 충분히 안 해봐서 모르겠다. 집에 64비트 윈도우즈가 없다.
 
 다운받은 파일을 실행하고, 매크로를 사용하겠다고 선택한다.
 
@@ -63,7 +63,7 @@ vim에서 돌아가는 [vim-game-code-break]( https://github.com/johngrib/vim-ga
 
 32비트 스네이크 게임을 64비트 운영체제에서 열어보면 다음과 같은 에러를 볼 수 있다.
 
-![]( /resource/wiki/excel-snake-game/compile-error.png )
+![]( /resource/D4/9EFC9B-CDD3-4B80-BFAD-619C6072AD05/compile-error.png )
 
 이 문제는 다음과 같이 `Declare` 뒤에 `PtrSafe`를 붙여주고, 함수 포인터를 `Long`에서 `LongPtr`로 바꿔주면 해결된다.
 

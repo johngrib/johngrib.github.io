@@ -178,7 +178,7 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 
 ### 콘웨이의 법칙과 3계층 아키텍처
 
-![image]( /resource/wiki/Conway-s-law/116693536-0a518e80-a9f9-11eb-856b-d5d99e6a9612.png )
+![image]( /resource/12/A29B77-E521-4B40-AAC3-1C2C7B323612/116693536-0a518e80-a9f9-11eb-856b-d5d99e6a9612.png )
 
 >
 바로 3계층 아키텍처가 이런 콘웨이 법칙이 적용되는 좋은 예다.

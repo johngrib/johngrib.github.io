@@ -51,9 +51,9 @@ CAP는 네트워크 분단이 생겼을 때 일관성과 가용성 중 하나를
 -- [CAP 정리(ibm.com)]( https://www.ibm.com/kr-ko/cloud/learn/cap-theorem )
 
 - Dr. Eric A. Brewer - Towards Robust Distributed Systems
-    - [PDF]( https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf ), [백업 PDF]( /resource/wiki/CAP-theorem/PODC-keynote.pdf )
+    - [PDF]( https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf ), [백업 PDF]( /resource/C9/5A81A4-E2D5-4861-B1BB-7BCF0A4CBA5B/PODC-keynote.pdf )
 - Nancy Lynch and Seth Gilbert - Brewer’s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services
-    - [PDF]( https://web.archive.org/web/20080908063921/http://lpd.epfl.ch/sgilbert/pubs/BrewersConjecture-SigAct.pdf ), [백업]( /resource/wiki/CAP-theorem/BrewersConjecture-SigAct.pdf )
+    - [PDF]( https://web.archive.org/web/20080908063921/http://lpd.epfl.ch/sgilbert/pubs/BrewersConjecture-SigAct.pdf ), [백업]( /resource/C9/5A81A4-E2D5-4861-B1BB-7BCF0A4CBA5B/BrewersConjecture-SigAct.pdf )
 
 ## 인용
 ### From: 사이트 신뢰성 엔지니어링

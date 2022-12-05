@@ -62,5 +62,5 @@ latex   : false
 
 
 [reddit-2018-01-10]: https://www.reddit.com/r/pics/comments/7p9n1j/photo_of_jeff_bezos_in_1999_think_about_this_the/
-[bezos-in-office]: /resource/wiki/jeff-bezos/102778450-f015fd00-43d5-11eb-9356-6be763ba95a2.jpg
+[bezos-in-office]: /resource/4C/C17321-9D27-4504-B6F4-9B08C9F35B0C/102778450-f015fd00-43d5-11eb-9356-6be763ba95a2.jpg
 [google-bezos-1999]: https://www.google.com/search?q=jeff+bezos+in+1999

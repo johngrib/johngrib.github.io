@@ -79,7 +79,7 @@ yes 'All Work and No Play makes Jack a dull boy'
 yes 'I WILL NOT WASTE COMPUTING POWER'
 ```
 
-![I WILL NOT WASTE CHALK]( /resource/wiki/yes-cmd/chalkboard.png )
+![I WILL NOT WASTE CHALK]( /resource/D3/48DA7F-5A9D-4DE7-9B1E-98C92FEA7EB3/chalkboard.png )
 
 * 터미널에서 무지개 그라데이션을 볼 수 있다. (화면보호기로 써보자)
 

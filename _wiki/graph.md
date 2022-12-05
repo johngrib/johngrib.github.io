@@ -203,28 +203,28 @@ is a simple graph that contains exactly one edge between each pair of distinct v
 * 완전 그래프(Complete graph)는 각 정점들이 하나의 간선으로 연결된 단순 그래프이다.
 * 모든 정점이 다른 나머지 정점들과 다 연결이 되어 있다.
 
-![]( /resource/wiki/graph/57778513-2d78ca00-775f-11e9-81b4-e5603fd3d0ab.png )
+![]( /resource/F3/950A58-00F1-4244-90EC-FEE986BD16B0/57778513-2d78ca00-775f-11e9-81b4-e5603fd3d0ab.png )
 
 > A cycle $$C_n, n ≥ 3$$, consists of n vertices $$\{v_1, v_2\}, \{v_2, v_3\}, ... , \{v_{n−1}, v_n\}$$, and $$\{v_n, v_1\}$$.
 
 * 사이클(Cycle)은 다음과 같이 $$v_i, v_{i+1}$$이 연결된 형태의 그래프이다.
 * 바퀴 모양이다.
 
-![]( /resource/wiki/graph/57778754-ab3cd580-775f-11e9-8207-610eb5feb079.png )
+![]( /resource/F3/950A58-00F1-4244-90EC-FEE986BD16B0/57778754-ab3cd580-775f-11e9-8207-610eb5feb079.png )
 
 > We obtain a wheel $$W_n$$ when we add an additional vertex to a cycle $$C_n$$, for $$n ≥ 3$$, and connect this new vertex to each of the n vertices in $$C_n$$, by new edges.
 
 * 휠(Wheel)은 한 정점이 다른 모든 정점과 연결되어 있다.
 * 가운데에 축이 있는 바퀴 모양이다.
 
-![]( /resource/wiki/graph/57779652-76ca1900-7761-11e9-93f4-65da6108ed81.png )
+![]( /resource/F3/950A58-00F1-4244-90EC-FEE986BD16B0/57779652-76ca1900-7761-11e9-93f4-65da6108ed81.png )
 
 > An n-dimensional hypercube, or n-cube, denoted by $$Q_n$$, is a graph that has vertices representing the $$2^n$$ bit strings of length n. Two vertices are adjacent if and only if the bit strings that they represent differ in exactly one bit position.
 
 * n 큐브(n-Cubes)는 길이 n의 $$2^n$$개의 비트 스트링을 나타내는 정점들을 갖는 그래프.
     * 두 정점이 서로 인접해 있다면 이 두 정점의 비트 스트링은 1개의 비트만 다르다.
 
-![]( /resource/wiki/graph/57780075-741bf380-7762-11e9-9304-ba6cebe978bb.png )
+![]( /resource/F3/950A58-00F1-4244-90EC-FEE986BD16B0/57780075-741bf380-7762-11e9-9304-ba6cebe978bb.png )
 
 > Bipartite Graphs.  
 A simple graph G is called bipartite if its vertex set V can be partitioned into two disjoint sets $$V_1$$ and $$V_2$$ such that every edge in the graph connects a vertex in $$V_1$$ and a vertex in $$V_2$$ (so that no edge in G connects either two vertices in $$V_1$$ or two vertices in $$V_2$$). When this condition holds, we call the pair $$(V_1, V_2)$$ a bipartition of the vertex set V of G.

@@ -32,7 +32,7 @@ latex   : false
 
 ### 2014-11-05: Realforce87 구매
 
-![realforce87-white](/resource/wiki/my-keyboard/realforce87white.jpg )
+![realforce87-white](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/realforce87white.jpg )
 
 Topre Realforce87 저소음 차등 영문 화이트
 
@@ -45,7 +45,7 @@ Topre Realforce87 저소음 차등 영문 화이트
 * 오른쪽 키패드가 없는 텐키레스 키보드로, 마우스를 오른손으로 사용할 때 편의가 있다.
     * 그러나 그마저도 멀게 느껴져서 나는 왼손으로 마우스를 사용했다.
 
-![swap](/resource/wiki/my-keyboard/swap.jpg )
+![swap](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/swap.jpg )
 
 * 새끼손가락을 위한 Capslock-Ctrl 스왑.
 * VIM 사용 편의를 위한 Esc-Backtick 스왑.
@@ -53,7 +53,7 @@ Topre Realforce87 저소음 차등 영문 화이트
 
 ### 2015-01-04: Ducky Mini 구매
 
-![ducky-mini](/resource/wiki/my-keyboard/ducky-mini.jpg )
+![ducky-mini](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/ducky-mini.jpg )
 
 Ducky Mini 다크 그레이 적축
 
@@ -65,7 +65,7 @@ Ducky Mini 다크 그레이 적축
 
 ### 2015-05-26 Realforce87 하나 더 구매
 
-![realforce87-white](/resource/wiki/my-keyboard/realforce87-blue.jpg )
+![realforce87-white](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/realforce87-blue.jpg )
 
 Realforce87 10주년 모델 저소음 차등 영문
 
@@ -96,7 +96,7 @@ HHKB JP
 
 ### 2017-05-17 HHKB JP 하나 더 구매
 
-![hhkb-twins](/resource/wiki/my-keyboard/hhkb-twins.jpg )
+![hhkb-twins](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/hhkb-twins.jpg )
 
 * 시험삼아 구입해본 HHKB JP + TMK 조합이 마음에 들었기 때문에 하나 더 구매해서 똑같이 개조했다.
 * 하나는 집, 하나는 회사.
@@ -106,7 +106,7 @@ HHKB JP
 
 ### 2017-05-23 HHKB JP 무각 키캡 사용 시작
 
-![none-keycaps](/resource/wiki/my-keyboard/nonekeycap.jpg )
+![none-keycaps](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/nonekeycap.jpg )
 
 * 무각 토프레 키캡을 구매하여 두 키보드에 모두 끼웠다.
 * TMK를 통해 레이아웃을 자주 바꾸다보니, 키캡 프린팅 레이블과 실제 키가 달라지는 일이 빈번하게 되어 고민하게 되었다.
@@ -114,7 +114,7 @@ HHKB JP
 
 ### 2017-07-26 블랙 무각 키캡 추가
 
-![black-keycaps](/resource/wiki/my-keyboard/black-keycap.jpg )
+![black-keycaps](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/black-keycap.jpg )
 
 * 무각에 익숙해지긴 했지만 그래도 5, 6, Y, B 같은 키는 종종 헷갈렸다.
     * 타이핑을 열심히 하는 중에는 헷갈리지 않았는데, 가끔 키 한두 개씩 입력할 때에는 헷갈렸다.
@@ -131,7 +131,7 @@ HHKB JP
 
 ### 2018-10-31 XD75 기계식 키보드 조립 키트 구매
 
-![XD75](/resource/wiki/my-keyboard/XD75.jpg )
+![XD75](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/XD75.jpg )
 
 * XD75 조립 키트를 구매하여 사용하였다.
 * 굉장히 좌우로 넓은 QMK 키보드로, 키패드를 한가운데에 넣으면 팔을 좌우로 편하게 벌리고 사용할 수 있다는 장점이 있다.
@@ -167,7 +167,7 @@ MDA 키캡 구매
 * 몇 년 걸린 분도 있다고 들었으니 늦게 주문해서 다행이라 생각한다.
 * 사진은 기본 키캡을 MDA 키캡으로 교환한 상태.
 
-![uhk](/resource/wiki/my-keyboard/uhk.jpg )
+![uhk](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/uhk.jpg )
 
 * 좌우 키보드를 전화선이 연결하고 있어, 시중에서 파는 더 긴 전화선을 사용하면 정말 양팔을 쭉 벌리고 사용할 수 있다.
 * 두 키보드 사이에 애플 트랙패드를 두고 사용하니 괜찮았다.
@@ -177,7 +177,7 @@ MDA 키캡 구매
 
 ### 2019-06-02 체리 키캡 호환 어댑터로 교환하고 MDA 키캡 추가
 
-![uhk](/resource/wiki/my-keyboard/adapter.jpg )
+![uhk](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/adapter.jpg )
 
 * HHKB JP에 MDA 키캡을 사용하기 위해 체리 키캡 호환 어댑터로 교환하는 작업을 하였다.
     * 사진의 민트색 어댑터가 체리 호환 어댑터이다.
@@ -199,13 +199,13 @@ MDA 키캡 구매
 * [알리 익스프레스에서 "topre switch adapter"라고 검색](https://www.aliexpress.com/af/topre-switch-adapter.html?SearchText=topre+switch+adapter ).
 
 
-![mda](/resource/wiki/my-keyboard/xda.jpg )
+![mda](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/xda.jpg )
 
 * MDA 키캡은 키캡 상단이 오목하여, 손가락 끝을 상하좌우로 감싸주는 것 같은 느낌이 든다.
 * 손가락 끝과 닿는 면적이 넓어서 그런지 손가락 끝에 오는 충격량이 잘 분산되는 느낌이 좋았다.
 * 손가락 끝 피부의 피로가 적어서 좋다고 생각한다.
 
-![mda-zoom](/resource/wiki/my-keyboard/xda-zoom.jpg )
+![mda-zoom](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/xda-zoom.jpg )
 
 ### 2022-11-16 과전류로 HHKB JP 컨트롤러 보드 고장
 
@@ -238,7 +238,7 @@ MDA 키캡 구매
 
 타이핑 습관을 고치는 것으로 천천히 해결할 수도 있었겠지만, 내 경우에는 문제가 되는 키의 위치를 스페이스 바 옆으로 옮겨주었다.
 
-![layout01](/resource/wiki/my-keyboard/layout01.jpg )
+![layout01](/resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/layout01.jpg )
 
 * 스페이스 오른쪽
     * L1: 다른 키보드의 FN 키. 엄지손가락으로 누른다.

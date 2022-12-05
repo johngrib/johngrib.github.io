@@ -14,7 +14,7 @@ latex   : false
 * TOC
 {:toc}
 
-![image]( /resource/wiki/andon-cord/130634802-d8148526-8662-492d-9b9a-f5b7d4ddd858.png )
+![image]( /resource/58/C9C252-ADD9-44B3-A298-59AEB151E204/130634802-d8148526-8662-492d-9b9a-f5b7d4ddd858.png )
 [^image-ref]
 
 ## From: 데브옵스 핸드북

@@ -43,7 +43,7 @@ latex   : false
 
 ### 반도체 제품
 
-![]( /resource/wiki/semiconductor-dict/10602_4229_4327.jpg )
+![]( /resource/3C/76F40C-681B-43A0-ACD6-27DE4E11D981/10602_4229_4327.jpg )
 
 [출처]( http://www.msdkr.com/news/articleView.html?idxno=10602 )
 

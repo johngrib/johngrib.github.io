@@ -152,7 +152,7 @@ autocmd BufWritePost * call system("ctags -R")
 
 Universal ctags는 vimwiki의 `.md` 확장자를 갖는 파일을 markdown 언어로 인식하여 자동으로 tagbar에 인덱스를 만들어 준다.
 
-![Universal ctags가 만들어준 vimwiki 인덱스]( ./tagbar-vimwiki-ugly.jpg )
+![Universal ctags가 만들어준 vimwiki 인덱스]( /resource/4D/8CF153-8D49-406F-875F-8385D1599361/tagbar-vimwiki-ugly.jpg )
 
 그런데 몇 가지 문제가 있다.
 
@@ -189,7 +189,7 @@ let g:tagbar_type_vimwiki = {
 그러면 다음과 같이 더 단순한 모습의 tagbar를 볼 수 있다.
 이 방식을 사용하면 파일을 저장할 때마다 tagbar가 자동으로 갱신되므로 더 편리하다.
 
-![심플한 태그바가 나온 모습]( ./tagbar-vimwiki-simple.jpg )
+![심플한 태그바가 나온 모습]( /resource/4D/8CF153-8D49-406F-875F-8385D1599361/tagbar-vimwiki-simple.jpg )
 
 #### tagbar에 표시되는 목차 꾸미기
 
@@ -252,7 +252,7 @@ let g:tagbar_type_vimwiki = {
 
 다음은 이 설정을 적용한 tagbar의 모습이다.
 
-![완성된 간략화된 vimwiki tagbar의 모습]( ./grey-dot-vimwiki.jpg )
+![완성된 간략화된 vimwiki tagbar의 모습]( /resource/4D/8CF153-8D49-406F-875F-8385D1599361/grey-dot-vimwiki.jpg )
 
 ### Clojure
 
@@ -264,7 +264,7 @@ Universal ctags는 Clojure 프로그래밍 언어를 지원하지만 다소 허�
 
 다음은 Universal ctags를 사용해 Clojure tags 파일을 만들고 tagbar를 띄운 화면이다.
 
-![universal ctags와 tagbar를 조합한 모습]( ./clojure-universal-ctags.jpg )
+![universal ctags와 tagbar를 조합한 모습]( /resource/4D/8CF153-8D49-406F-875F-8385D1599361/clojure-universal-ctags.jpg )
 
 오른쪽의 tagbar를 보면 `defn`으로 정의한 `public` 함수는 있지만, `defn-`로 정의한 `private` 함수는 나타나지 않았다.
 
@@ -393,7 +393,7 @@ let g:tagbar_type_clojure = {
     \}
 ```
 
-![tagbar 설정을 통해 private 함수가 표시되도록 수정한 모습]( ./clojure-naive-tagbar.jpg )
+![tagbar 설정을 통해 private 함수가 표시되도록 수정한 모습]( /resource/4D/8CF153-8D49-406F-875F-8385D1599361/clojure-naive-tagbar.jpg )
 
 이번에도 마음에 들지 않는 몇 가지 문제가 있다.
 
@@ -408,7 +408,7 @@ let g:tagbar_type_clojure = {
 
 내가 원하는 형태는 다음 스크린샷 수준으로 중요 정보들이 모두 표시되는 것이다.
 
-![git.c 파일을 tagbar로 본 내용]( ./git-c-tagbar.jpg )
+![git.c 파일을 tagbar로 본 내용]( /resource/4D/8CF153-8D49-406F-875F-8385D1599361/git-c-tagbar.jpg )
 
 위의 스크린샷은 [git.c]( https://github.com/git/git/blob/master/git.c ) 파일을 tagbar로 본 결과이다.
 
@@ -450,7 +450,7 @@ let g:tagbar_type_clojure = {
 
 이제 tagbar를 띄우면 다음과 같이 나온다.
 
-![access 기호가 포함된 clojure tagbar]( ./clojure-access-symbol.jpg )
+![access 기호가 포함된 clojure tagbar]( /resource/4D/8CF153-8D49-406F-875F-8385D1599361/clojure-access-symbol.jpg )
 
 - Universal ctags는 이미 Clojure를 language로 인식하고 있으므로 `--langdef=clojure` 처럼 언어를 새로 정의해주면 에러가 발생한다. 따라서 langdef는 생략했다.
 - `--kinddef`로 `e`를 정의해 줬다.
@@ -520,7 +520,7 @@ let g:tagbar_type_clojure = {
 
 이렇게 하면 tagbar에 다음과 같이 `TODO` 등이 나타나게 된다.
 
-![적용한 모습]( /resource/wiki/ctags/200007646-1686d51b-2b0e-47bc-ad6a-c9182c409e9a.jpg )
+![적용한 모습]( /resource/4D/8CF153-8D49-406F-875F-8385D1599361/200007646-1686d51b-2b0e-47bc-ad6a-c9182c409e9a.jpg )
 
 
 ### Deprecated: tagbar에 마크다운 요약 보여주기

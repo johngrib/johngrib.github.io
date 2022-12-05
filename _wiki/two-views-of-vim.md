@@ -710,18 +710,18 @@ endif
 * [How to tweet](https://help.twitter.com/ko/using-twitter/how-to-tweet )
 
 
-[calculator]: /resource/wiki/two-views-of-vim/58091330-491f1d00-7c04-11e9-82e3-658661f89b7e.png 
-[starcraft]: /resource/wiki/two-views-of-vim/58091581-ea0dd800-7c04-11e9-84ca-b7934e156bc7.png 
-[surjective]: /resource/wiki/two-views-of-vim/58082306-ab225700-7bf1-11e9-93cb-67b8f56350df.png 
-[intellij]: /resource/wiki/two-views-of-vim/58091746-61dc0280-7c05-11e9-97cc-5d66a03de51d.png 
-[twitter]: /resource/wiki/two-views-of-vim/58219111-af12be00-7d44-11e9-9f77-66213de909f8.png 
-[facebook]: /resource/wiki/two-views-of-vim/58219253-25afbb80-7d45-11e9-9385-509cbbc7ed00.png 
-[gmail]: /resource/wiki/two-views-of-vim/58220906-a5408900-7d4b-11e9-84e7-359c55ad800f.png 
-[endeavour]: /resource/wiki/two-views-of-vim/58084360-aa8bbf80-7bf5-11e9-82fa-b9388f5361ed.png 
-[vim-cheatsheet]: /resource/wiki/two-views-of-vim/58084159-554fae00-7bf5-11e9-9b9f-78387f06216b.png 
-[intellij-f1]: /resource/wiki/two-views-of-vim/58094860-8daeb680-7c0c-11e9-8cfe-61ee688920b4.png 
-[vim-game]: /resource/wiki/two-views-of-vim/27774457-7e001646-5fcd-11e7-9e90-c37eafefad9c.gif 
-[fzf]: /resource/wiki/two-views-of-vim/58028441-b1fb8c00-7b55-11e9-86fa-bb376029b623.png 
-[ultisnips]: /resource/wiki/two-views-of-vim/58098324-462c2880-7c14-11e9-9c83-d39b00b2e6c3.png 
+[calculator]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58091330-491f1d00-7c04-11e9-82e3-658661f89b7e.png 
+[starcraft]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58091581-ea0dd800-7c04-11e9-84ca-b7934e156bc7.png 
+[surjective]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58082306-ab225700-7bf1-11e9-93cb-67b8f56350df.png 
+[intellij]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58091746-61dc0280-7c05-11e9-97cc-5d66a03de51d.png 
+[twitter]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58219111-af12be00-7d44-11e9-9f77-66213de909f8.png 
+[facebook]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58219253-25afbb80-7d45-11e9-9385-509cbbc7ed00.png 
+[gmail]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58220906-a5408900-7d4b-11e9-84e7-359c55ad800f.png 
+[endeavour]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58084360-aa8bbf80-7bf5-11e9-82fa-b9388f5361ed.png 
+[vim-cheatsheet]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58084159-554fae00-7bf5-11e9-9b9f-78387f06216b.png 
+[intellij-f1]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58094860-8daeb680-7c0c-11e9-8cfe-61ee688920b4.png 
+[vim-game]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/27774457-7e001646-5fcd-11e7-9e90-c37eafefad9c.gif 
+[fzf]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58028441-b1fb8c00-7b55-11e9-86fa-bb376029b623.png 
+[ultisnips]: /resource/0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA/58098324-462c2880-7c14-11e9-9c83-d39b00b2e6c3.png 
 
 

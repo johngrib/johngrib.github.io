@@ -24,11 +24,11 @@ latex   : false
 
 `gbr` 함수를 실행하면 다음과 같이 출력된다.
 
-![gbr 함수를 실행한 모습]( /resource/wiki/git-prompt/gbr.png )
+![gbr 함수를 실행한 모습]( /resource/19/D18D8A-C819-4507-AE60-26E361BF638F/gbr.png )
 
 프롬프트를 설정하면 터미널에서는 다음과 같이 보이게 된다.
 
-![나의 프롬프트를 캡처한 사진]( /resource/wiki/git-prompt/my-prompt.png )
+![나의 프롬프트를 캡처한 사진]( /resource/19/D18D8A-C819-4507-AE60-26E361BF638F/my-prompt.png )
 
 - `[master]` - 현재 브랜치가 `master`.
 - `2??` - untracked file이 2개.

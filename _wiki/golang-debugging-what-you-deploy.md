@@ -90,7 +90,7 @@ _This shows an example of stepping through a simple function in a debugger in 1.
 
 (역: 개발자가 디버거로 한 줄 한 줄 실행하고 싶어도 최적화된 코드 때문에 디버거가 건너뛸 수밖에 없거나, 지나갔다가 바로 윗줄로 돌아가서 다시 실행하는 라인이 있다는 의미)
 
-![flow](/resource/wiki/golang-debugging-what-you-deploy/debugging-what-you-deploy.svg)
+![flow](/resource/88/755B32-6BFE-4315-93C9-5A3534C8F4A6/debugging-what-you-deploy.svg)
 
 _Flaws like this make it easy to lose track of where you are when stepping through a program and interfere with hitting breakpoints._
 

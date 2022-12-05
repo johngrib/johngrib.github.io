@@ -29,7 +29,7 @@ parent  : [[blog]]
 
 2017년 11월 26일에 만들어서 현재까지 계속 운영중.
 
-![첫 커밋]( /resource/wiki/my-wiki/204116036-b868a7c8-7d8a-471d-a628-ad64c9379261.png )
+![첫 커밋]( /resource/97/285ACF-0CF1-465E-AA32-EA86A9DEEB1B/204116036-b868a7c8-7d8a-471d-a628-ad64c9379261.png )
 
 ## Vimwiki
 
@@ -502,7 +502,7 @@ git add _data
 
 * `0`을 누르면 위키가 열리게 되고, `1`을 누르면 로컬에서만 돌리고 있는 비공개 위키가 열리게 된다.
 
-![start-with-startify]( /resource/wiki/my-wiki/startify.png )
+![start-with-startify]( /resource/97/285ACF-0CF1-465E-AA32-EA86A9DEEB1B/startify.png )
 
 ### startify에서 위키를 선택한다
 
@@ -513,7 +513,7 @@ git add _data
     * 목차에 있는 소제목을 더블 클릭하면 화면과 커서가 해당 소제목으로 점프한다.
     * 물론 커서를 소제목에 놓고 엔터를 쳐도 된다.
 
-![main]( /resource/wiki/my-wiki/main.png )
+![main]( /resource/97/285ACF-0CF1-465E-AA32-EA86A9DEEB1B/main.png )
 
 ### 글을 편집한 다음 발행한다
 
@@ -529,7 +529,7 @@ git add _data
 * `index.md`파일을 열기 위해 `fzf`로 파일을 탐색한다. 나는 `fzf` 파일 탐색을 `<f1><f1>`으로 등록해놨으므로 `f1`키를 두 번 누르면 파일 탐색이 시작된다.
     * 오른쪽에 파일 내용 미리보기도 나오므로 편리하다.
 
-![fzf]( /resource/wiki/my-wiki/find-file.png )
+![fzf]( /resource/97/285ACF-0CF1-465E-AA32-EA86A9DEEB1B/find-file.png )
 
 * 적당히 파일 이름을 입력해 찾고 엔터를 누르면 파일이 열린다.
 
@@ -541,15 +541,15 @@ git add _data
 * 커서를 놓고 새로운 라인을 추가하면 `*`이 자동으로 추가된다.
 * `cargo`라고 타이핑한다.
 
-![]( /resource/wiki/my-wiki/new-link.png )
+![]( /resource/97/285ACF-0CF1-465E-AA32-EA86A9DEEB1B/new-link.png )
 
 * normal 모드에서 엔터를 누르면 링크가 생긴다. 좌우에 생긴 두 개의 대괄호가 링크를 의미한다.
 
-![]( /resource/wiki/my-wiki/new-cargo.png )
+![]( /resource/97/285ACF-0CF1-465E-AA32-EA86A9DEEB1B/new-cargo.png )
 
 * 한 번 더 엔터를 누르면 새로 만들어진 파일로 이동하게 된다.
 
-![]( /resource/wiki/my-wiki/new-file.png )
+![]( /resource/97/285ACF-0CF1-465E-AA32-EA86A9DEEB1B/new-file.png )
 
 * 이 파일에 내용을 채우고 저장한 다음 git으로 `add`, `commit`, `push`를 하면 글이 발행된다.
 
@@ -565,7 +565,7 @@ git add _data
 
 github의 issue 를 하나 열고 이미지를 붙여넣으면 다음과 같이 마크다운 형식의 이미지 링크 문자열이 생성된다.
 
-![issue 화면]( /resource/wiki/my-wiki/82725036-3ce90680-9d15-11ea-939d-545c63dceec5.png )
+![issue 화면]( /resource/97/285ACF-0CF1-465E-AA32-EA86A9DEEB1B/82725036-3ce90680-9d15-11ea-939d-545c63dceec5.png )
 
 이 문자열을 작성하고 있는 마크다운 파일에 붙여넣고 저장하면 문서에 이미지를 쉽게 추가할 수 있다.
 
@@ -624,7 +624,7 @@ ag 'parent\s*:\s*[^\[\]]*$' -l \
 
 아무튼 이 작업을 하고 나면 다음과 같이 검증할 수 있을 것이다.
 
-![]( /resource/wiki/my-wiki/parent-wrap.png )
+![]( /resource/97/285ACF-0CF1-465E-AA32-EA86A9DEEB1B/parent-wrap.png )
 
 ```sh
  # 몇 개의 파일이 변경되었는지 확인한다

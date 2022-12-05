@@ -49,6 +49,6 @@ $ lldb hello
 (lldb) quit # 종료
 ```
 
-![]( /resource/wiki/lldb-cmd/break.jpg )
+![]( /resource/F4/332E97-20EF-4D8A-84B9-46FB6120293B/break.jpg )
 
 

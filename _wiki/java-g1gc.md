@@ -64,7 +64,7 @@ G1GC의 힙 레이아웃은 다른 generational collector와 좀 다르다.
 * 꽉 찬 영역에서 라이브 객체를 다른 영역으로 옮기고, 꽉 찬 영역은 깨끗하게 비운다.
 * 이렇게 옮기는 과정이 조각 모음의 역할도 한다.
 
-![g1gc-layout]( /resource/wiki/java-g1gc/g1gc-layout.png )
+![g1gc-layout]( /resource/59/4C50BB-E399-4936-A00F-1A9D9C900CC9/g1gc-layout.png )
 
 * 빨간색은 Eden으로 쓰이고 있는 영역을 의미한다.
 * 빨간색 S는 Survivor. Eden이 꽉 차면 라이브 객체를 S로 옮기고 Eden은 비워버린다.
@@ -80,7 +80,7 @@ G1은 두 페이즈를 번갈아 가며 GC 작업을 한다.
 * young-only 페이즈: old 객체를 새로운 공간으로 옮긴다.
 * space-reclamation 페이즈: 공간 회수.
 
-![g1gc-cycle]( /resource/wiki/java-g1gc/g1gc-cycle.png )
+![g1gc-cycle]( /resource/59/4C50BB-E399-4936-A00F-1A9D9C900CC9/g1gc-cycle.png )
 
 그림을 보며 생각하자.
 

@@ -94,7 +94,7 @@ To put it another way, when you define a bean definition and it is scoped as a s
         - 요청이 들어오면 캐싱된 bean을 리턴하는 방식입니다.
 - 다음 이미지는 싱글톤 스코프의 작동 방식을 보여줍니다.
 
-![image]( /resource/wiki/spring/document/core/01-05-bean-scopes/122636538-bb84c300-d124-11eb-89e4-ae1541b57b35.png )
+![image]( /resource/E4/FBA18E-AF6F-4D4C-B6AF-97CF17331A04/122636538-bb84c300-d124-11eb-89e4-ae1541b57b35.png )
 
 - 이미지
     - 딱 하나의 인스턴스만 만들어지고...
@@ -131,7 +131,7 @@ The following diagram illustrates the Spring prototype scope:
 - stateful bean을 사용할 때에는 프로토타입 스코프를, stateless bean을 사용할 때에는 싱글톤 스코프를 사용하도록 합니다.
 - 다음 다이어그램은 Spring 프로토타입 스코프를 설명합니다.
 
-![image]( /resource/wiki/spring/document/core/01-05-bean-scopes/122637802-8f207500-d12b-11eb-8516-4bd925282041.png )
+![image]( /resource/E4/FBA18E-AF6F-4D4C-B6AF-97CF17331A04/122637802-8f207500-d12b-11eb-8516-4bd925282041.png )
 
 - 이미지
     - 새로운 bean은... 협업 객체가 프로토타입을 참조할 때마다 생성됩니다.

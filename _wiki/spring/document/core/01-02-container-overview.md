@@ -65,7 +65,7 @@ The following diagram shows a high-level view of how Spring works. Your applicat
 - 여러분의 애플리케이션 클래스들은 configuration 메타 데이터에 정의된 대로 조합된다.
 - `ApplicationContext`가 생성되고 초기화 되면, 여러분은 설정이 완전히 반영되어 있는 실행 가능한 애플리케이션을 갖게 된다.
 
-![image]( /resource/wiki/spring/document/core/01-02-container-overview/120928640-6dcd8b00-c720-11eb-932c-2398df0faa48.png )
+![image]( /resource/85/33345D-E8EF-4CD5-8C07-46FAEBD00C95/120928640-6dcd8b00-c720-11eb-932c-2398df0faa48.png )
 
 ### 1.2.1. Configuration Metadata
 

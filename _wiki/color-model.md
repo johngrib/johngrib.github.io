@@ -16,7 +16,7 @@ latex   : false
 
 ## RGB 모델
 
-![Red, Green, Blue]( /resource/wiki/color-model/rgb.svg )
+![Red, Green, Blue]( /resource/C7/D60EF7-6FD8-4046-BEDF-EF9C53787D97/rgb.svg )
 
 Red, Green, Blue
 
@@ -29,7 +29,7 @@ Red, Green, Blue
 
 ## CMYK 모델
 
-![Cyan, Magenta, Yellow, Black]( /resource/wiki/color-model/cmyk.svg )
+![Cyan, Magenta, Yellow, Black]( /resource/C7/D60EF7-6FD8-4046-BEDF-EF9C53787D97/cmyk.svg )
 
 Cyan, Magenta, Yellow, Black
 

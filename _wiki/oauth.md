@@ -55,7 +55,7 @@ The interaction between the authorization server and resource server is beyond t
 
 OAuth 2.0 인가 그랜트 절차.
 
-![OAuth 2.0 인가 그랜트 절차]( /resource/wiki/oauth/process-sequence.svg )
+![OAuth 2.0 인가 그랜트 절차]( /resource/E0/693179-858B-4605-8427-D50D0D3DD9DE/process-sequence.svg )
 [^richer-60]
 
 ### 상황 예제: 트위터에 질문/답변을 올려주는 클라이언트
@@ -73,7 +73,7 @@ OAuth 2.0 인가 그랜트 절차.
 - 2\. 사용자 에이전트(웹 브라우저)는 인가 엔드 포인트를 로드한다.
     - 리다이렉트된 화면은 아래와 같다.
 
-![사용자 로그인을 요구하는 화면]( /resource/wiki/oauth/190888368-19ad7db4-71e1-4a19-920d-904670b38693.png )
+![사용자 로그인을 요구하는 화면]( /resource/E0/693179-858B-4605-8427-D50D0D3DD9DE/190888368-19ad7db4-71e1-4a19-920d-904670b38693.png )
 {:style="max-width:450px"}
 
 - 3\. 리소스 소유자가 인가 서버에 인증을 수행한다.
@@ -85,7 +85,7 @@ OAuth 2.0 인가 그랜트 절차.
     - 인가 서버는 해당 클라이언트에 대한 인가 코드를 생성한다.
     - 다음은 인가 서버가 클라이언트로 리다이렉트를 시키는 도중의 화면이다.
 
-![인가 서버가 클라이언트로 리다이렉트 시키는 화면]( /resource/wiki/oauth/190888617-6df4854f-1457-4b16-bdac-1970daf08b98.png )
+![인가 서버가 클라이언트로 리다이렉트 시키는 화면]( /resource/E0/693179-858B-4605-8427-D50D0D3DD9DE/190888617-6df4854f-1457-4b16-bdac-1970daf08b98.png )
 {:style="max-width:450px"}
 
 - 6\. 사용자 에이전트는 인가 코드로 클라이언트의 리다이렉트 URI를 로드한다.

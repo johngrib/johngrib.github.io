@@ -19,7 +19,7 @@ latex   : false
 * vim으로 코딩만 하지 않고 일기도 쓰고 블로깅도 하는 등 대부분의 문서 편집을 vim에서 하다 보니 답답해서 만들었다.
 * vim에서는 `f`, `t`로 알파벳은 검색되지만 한글은 검색되지 않는데 이 문제를 해결하기 위해 만든 것.
 
-![vim-f-hangul]( /resource/wiki/vim-f-hangul/37564249-165161d4-2ad5-11e8-9b20-cc70d0df45a1.gif )
+![vim-f-hangul]( /resource/4A/DE1B37-B2EE-47F1-B549-A84676A5CF5C/37564249-165161d4-2ad5-11e8-9b20-cc70d0df45a1.gif )
 
 ## Links
 

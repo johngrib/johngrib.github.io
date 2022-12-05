@@ -14,7 +14,7 @@ latex   : false
 * TOC
 {:toc}
 
-![]( /resource/wiki/dumang-dk6-keyboard/Dk6-nkro-swapable-rgb-cherry-mx-kaih-box.jpg )
+![]( /resource/36/D39A0B-43B7-48D9-AE6B-C809080BF84A/Dk6-nkro-swapable-rgb-cherry-mx-kaih-box.jpg )
 
 ## 구매
 

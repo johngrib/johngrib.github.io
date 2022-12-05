@@ -30,7 +30,7 @@ public class TestClass {
 
 위의 예제처럼 `NestedClass` 와 같은 중첩 클래스를 선언하면 인스펙터가 다음과 같이 경고를 해준다. 경고 주제는 Memory.
 
-![image]( /resource/wiki/java-inner-class-may-be-static/107623207-557ebf80-6c9c-11eb-91c4-9b53d14a8880.png )
+![image]( /resource/E8/EB9311-6660-4911-94DD-7B5AB25FC545/107623207-557ebf80-6c9c-11eb-91c4-9b53d14a8880.png )
 
 이 경고는 다음과 같이 `NestedClass`를 `static`으로 선언해주면 조건을 만족하여 다시 나타나지 않는다.
 

@@ -211,7 +211,7 @@ Vimwiki는 크게 다음 몇 가지 기능만 기억하면 충분히 유용하�
     * 원하는 파일을 고른 다음 `Enter`를 치면 해당 파일이 열린다.
         * `<NL>`이나 `<CR>`에 `map`이 걸려 있으면 검색 결과에서 파일이 안 열리므로 주의.
 
-![]( /resource/wiki/vimwiki/vimwiki-search.jpg )
+![]( /resource/6F/207F04-DA7A-43F7-810F-FB059E57480A/vimwiki-search.jpg )
 
 * 이미지의 마지막 줄을 읽어보면 `:VWS` 명령은 `:vimgrep` 명령어를 사용한 것임을 알 수 있다.
     * 그러나 `:VWS`는 마크다운 파일에서만 검색하므로 조금 더 빠르게 검색 결과를 얻을 수 있다.

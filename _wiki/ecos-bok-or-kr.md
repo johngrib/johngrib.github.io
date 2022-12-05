@@ -35,5 +35,5 @@ latex   : false
 
 2020년 12월 5일 기준 메인 화면은 다음과 같다.
 
-![]( /resource/wiki/ecos-bok-or-kr/ecos.jpg )
+![]( /resource/F2/1ED3BA-91C3-4BA6-B237-436C808A845C/ecos.jpg )
 

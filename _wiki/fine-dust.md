@@ -43,7 +43,7 @@ latex   : true
 
 다음 표를 보면 감소 추세임을 알 수 있다.
 
-| ![PM 2.5 의 도시별 추세]( /resource/wiki/fine-dust/pm2.5-korea.png ) | ![PM 10 의 도시별 추세]( /resource/wiki/fine-dust/pm10-korea.png ) |
+| ![PM 2.5 의 도시별 추세]( /resource/E5/0B2EB8-72B6-46EC-A7F8-3175ED5A85A7/pm2.5-korea.png ) | ![PM 10 의 도시별 추세]( /resource/E5/0B2EB8-72B6-46EC-A7F8-3175ED5A85A7/pm10-korea.png ) |
 
 * 단, 대전의 경우 PM10은 그다지 개선되지 않았다.
 
@@ -140,9 +140,9 @@ latex   : true
 
 다음은 실내공기질 관리법 시행규칙의 일부를 캡처한 것이다.
 
-![]( /resource/wiki/fine-dust/air-polution-law.png )
+![]( /resource/E5/0B2EB8-72B6-46EC-A7F8-3175ED5A85A7/air-polution-law.png )
 
-[출처는 실내공기질 관리법 시행규칙[별표 2] 개정 2018.10.18.]( http://www.law.go.kr/LSW/flDownload.do?flSeq=53710335&flNm=%5B%EB%B3%84%ED%91%9C+2%5D+%EC%8B%A4%EB%82%B4%EA%B3%B5%EA%B8%B0%EC%A7%88+%EC%9C%A0%EC%A7%80%EA%B8%B0%EC%A4%80%28%EC%A0%9C3%EC%A1%B0+%EA%B4%80%EB%A0%A8%29%0A ) [백업 PDF]( /resource/wiki/fine-dust/law3backup.pdf )
+[출처는 실내공기질 관리법 시행규칙[별표 2] 개정 2018.10.18.]( http://www.law.go.kr/LSW/flDownload.do?flSeq=53710335&flNm=%5B%EB%B3%84%ED%91%9C+2%5D+%EC%8B%A4%EB%82%B4%EA%B3%B5%EA%B8%B0%EC%A7%88+%EC%9C%A0%EC%A7%80%EA%B8%B0%EC%A4%80%28%EC%A0%9C3%EC%A1%B0+%EA%B4%80%EB%A0%A8%29%0A ) [백업 PDF]( /resource/E5/0B2EB8-72B6-46EC-A7F8-3175ED5A85A7/law3backup.pdf )
 
 
 ### AWAIR 1, 2, MINT
@@ -188,7 +188,7 @@ latex   : true
 
 참고로 어웨어에 화학물질에 대해 자세히 알려달라고 이메일을 보냈더니(2020년 2월 15일) 다음과 같은 답장이 돌아왔다(2020년 2월 17일).
 
-![어웨어에서 보내준 답장]( /resource/wiki/fine-dust/awair-email.png )
+![어웨어에서 보내준 답장]( /resource/E5/0B2EB8-72B6-46EC-A7F8-3175ED5A85A7/awair-email.png )
 
 그리고 메일에는 어웨어의 화학물질이 측정하는 화학물질의 목록이 담긴 첨부 파일이 들어 있었다.
 
@@ -255,11 +255,11 @@ Chlorobenzene
 
 미세먼지가 심한 날인줄 모르고 환기를 하다가 어웨어 민트가 다음과 같은 화면을 보여 창문을 얼른 닫은 적이 있다.
 
-![미세먼지가 심한 날에 창문을 열고 있을 때]( /resource/wiki/fine-dust/awair-mint-window-open.png ){:style="max-height:300px"}
+![미세먼지가 심한 날에 창문을 열고 있을 때]( /resource/E5/0B2EB8-72B6-46EC-A7F8-3175ED5A85A7/awair-mint-window-open.png ){:style="max-height:300px"}
 
 드물지만 100 점이 나오는 날도 있다.
 
-![100점이 나온 모습]( /resource/wiki/fine-dust/awair-100.jpg )
+![100점이 나온 모습]( /resource/E5/0B2EB8-72B6-46EC-A7F8-3175ED5A85A7/awair-100.jpg )
 
 
 
@@ -366,7 +366,7 @@ PURE 121은 굉장히 비싼 공기청정기인 블루에어 중에서 가장 �
 
 **PM2.5와 PM10 방지용 3M(TM) 마스크 가이드**
 
-![mask guide](/resource/wiki/fine-dust/mask-guide.jpg)
+![mask guide](/resource/E5/0B2EB8-72B6-46EC-A7F8-3175ED5A85A7/mask-guide.jpg)
 
 * 이 보고서에서 추천하는 미세먼지 마스크는 5 종이다.
     * `8511`, `8210`, `9322+`, `9332+`, `8822`

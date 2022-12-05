@@ -17,7 +17,7 @@ latex   : false
 ## 문제
 iTerm2 tmux에서 Vim이나 MacVim을 사용하면 스크린샷과 같이 터미널의 배경색이 Vim의 배경색을 침범한다.
 
-![My helpful screenshot]( /resource/wiki/vim-tmux-t-ut/2017-04-03-vim-tmux-t-ut.png )
+![My helpful screenshot]( /resource/BE/D34F0A-7E6F-4B1E-AE13-CF9FFF2425AE/2017-04-03-vim-tmux-t-ut.png )
 
 ### 미봉책: NeoVim
 

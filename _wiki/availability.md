@@ -146,7 +146,7 @@ $$\text{가용성} = { \text{성공한 요청 수} \over \text{전체 요청 수
 
 ## 시스템 작업의 가용성
 
-![]( /resource/wiki/availability/three-services.jpg )
+![]( /resource/DA/975638-2892-45B0-8729-89DD730DDFAC/three-services.jpg )
 
 > 세 서비스 모두 HTTP를 사용하기 때문에 주문 생성 요청이 정상 처리되려면 세 서비스 모두 가동 중이어야 합니다.
 어느 한 서비스라도 내려가면 주문 생성은 불가능합니다.

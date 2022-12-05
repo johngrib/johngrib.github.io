@@ -307,22 +307,22 @@ double > float > long > int
 
 ### 표: 모든 경우의 수
 
-![]( /resource/wiki/ternary-operator-and-null-pointer-exception/15-25-a.png )  
-![]( /resource/wiki/ternary-operator-and-null-pointer-exception/15-25-b.png )  
-![]( /resource/wiki/ternary-operator-and-null-pointer-exception/15-25-c.png )  
-![]( /resource/wiki/ternary-operator-and-null-pointer-exception/15-25-d.png )  
-![]( /resource/wiki/ternary-operator-and-null-pointer-exception/15-25-e.png )  
+![]( /resource/2A/418BD3-E101-4963-A3DF-20478E49F36B/15-25-a.png )  
+![]( /resource/2A/418BD3-E101-4963-A3DF-20478E49F36B/15-25-b.png )  
+![]( /resource/2A/418BD3-E101-4963-A3DF-20478E49F36B/15-25-c.png )  
+![]( /resource/2A/418BD3-E101-4963-A3DF-20478E49F36B/15-25-d.png )  
+![]( /resource/2A/418BD3-E101-4963-A3DF-20478E49F36B/15-25-e.png )  
 
 ### 예: 표를 읽는 방법
 
-![byte-short]( /resource/wiki/ternary-operator-and-null-pointer-exception/byte-short.png )
+![byte-short]( /resource/2A/418BD3-E101-4963-A3DF-20478E49F36B/byte-short.png )
 
 2번째 항이 `byte`이고 3번째 항이 `short` 이면?
 
 * 표에서 다음과 같이 찾는다.
     * 즉 `check ? byte : short`의 타입은 `short`이다.
 
-![]( /resource/wiki/ternary-operator-and-null-pointer-exception/example2.png )
+![]( /resource/2A/418BD3-E101-4963-A3DF-20478E49F36B/example2.png )
 
 2번째 항이 `int` 이고 3번째 항이 `long` 이면?
 
@@ -334,7 +334,7 @@ double > float > long > int
 * 표에서 찾아보면... `bnp(Long, float)` 이다.
     * `bnp` 규칙에 따라 `bnp(long, float)` → `float` 이다.
 
-![]( /resource/wiki/ternary-operator-and-null-pointer-exception/or-bnp.png )
+![]( /resource/2A/418BD3-E101-4963-A3DF-20478E49F36B/or-bnp.png )
 
 2번째 항이 `int` 이고 3번째 항이 `byte` 이면?
 

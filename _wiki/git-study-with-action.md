@@ -340,7 +340,7 @@ Date:   Mon Apr 20 00:19:55 2020 +0900
 
 정보가 너무 많아서 복잡하니 처음에 설정했던 `git l` 알리아스를 사용해서 보도록 하자.
 
-![]( /resource/wiki/git-study-with-action/git-l.png )
+![]( /resource/82/7A8D95-910C-4E22-951E-5BFAA3AAAC67/git-l.png )
 
 commit 해시값 `8bfd73cf22f502c6977ce5ffb315301533f33391`가 `8bfd73c`로 축약되어 출력되는 것을 볼 수 있다.
 

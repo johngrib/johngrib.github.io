@@ -142,11 +142,11 @@ latex   : false
 
 예를 들어 "미리보기.app"의 상단 메뉴 `도구` 안에 있는 `크기 조절...`을 등록하고 싶다면 다음과 같이 `도구->크기 조절...`로 작성한 다음 단축키를 등록하면 된다.
 
-![preview.app]( /resource/wiki/mac-keyboard-shortcuts/69153977-81a3a300-0b22-11ea-80a5-a6aa557a98f4.png )
+![preview.app]( /resource/1B/E264F7-D678-471E-A98C-4C6FDCC2FE75/69153977-81a3a300-0b22-11ea-80a5-a6aa557a98f4.png )
 
 그러면 다음과 같이 등록한 단축키를 사용할 수 있게 된다.
 
-![menu of preview.app]( /resource/wiki/mac-keyboard-shortcuts/69154235-faa2fa80-0b22-11ea-86f2-62232789a34a.png )
+![menu of preview.app]( /resource/1B/E264F7-D678-471E-A98C-4C6FDCC2FE75/69154235-faa2fa80-0b22-11ea-86f2-62232789a34a.png )
 
 ## Links
 

@@ -25,7 +25,7 @@ latex   : false
 - 항상 마감을 앞두고 일을 몰아쳐서 하게 된다.
 - 할 일을 미루는 사람의 뇌 구조는 다음과 같다.
 
-![]( /resource/wiki/summary-inside-the-mind-of-a-master-procrastinator-tim-urban/brain.jpg )
+![]( /resource/C3/5FF552-EA41-4AF5-8167-FE0BADA441F5/brain.jpg )
 
 - 사람: 합리적인 의사 결정자
 - 원숭이: 순간적인 만족감만 찾는다
@@ -107,7 +107,7 @@ latex   : false
 
 ### 인생 달력
 
-![]( /resource/wiki/summary-inside-the-mind-of-a-master-procrastinator-tim-urban/life-calendar.jpg )
+![]( /resource/C3/5FF552-EA41-4AF5-8167-FE0BADA441F5/life-calendar.jpg )
 
 - 90년의 인생
 - 1주일을 네모 하나로 표현

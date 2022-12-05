@@ -92,7 +92,7 @@ DB알못인 저는 업무 중에 우연히 MySQL에서 `'a' = 'a '`의 결과가
 
 [MySQL 5.6 Reference Manual](https://dev.mysql.com/doc/refman/5.6/en/string-comparison-functions.html)을 확인해보니 버그가 아닙니다.
 
->![mysql](/resource/wiki/sql-char-comparison/mysql.jpg)
+>![mysql](/resource/66/CAE9B4-5039-4EBB-90FB-BDD633570826/mysql.jpg)
 
 이럴 수가....... DB알못은 그저 혼란스러울 뿐입니다.
 
@@ -130,11 +130,11 @@ When CHAR values are retrieved, trailing spaces are removed unless the PAD_CHAR_
 
 그리고 여기에서도 같은 문제를 언급하는 예제가 있습니다.
 
->![mysql](/resource/wiki/sql-char-comparison/mysql_char.jpg)
+>![mysql](/resource/66/CAE9B4-5039-4EBB-90FB-BDD633570826/mysql_char.jpg)
 
 다음과 같은 테이블도 있네요.
 
->![mysql](/resource/wiki/sql-char-comparison/mysql_char_table.jpg)
+>![mysql](/resource/66/CAE9B4-5039-4EBB-90FB-BDD633570826/mysql_char_table.jpg)
 
 CHAR(4) 컬럼에 `'ab'`를 저장하면 `'ab__'`처럼 된다는 말이군요. (이제부터는 가독성을 위해 공백 대신 `_` 를 쓰겠습니다.)
 

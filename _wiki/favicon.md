@@ -35,7 +35,7 @@ latex   : false
 
 파비콘을 적용하면 다음과 같이 웹 브라우저 위쪽 탭의 타이틀 왼쪽에 파비콘이 나오게 된다.
 
-![파비콘을 적용한 모습]( /resource/wiki/favicon/favicon.png )
+![파비콘을 적용한 모습]( /resource/40/0D91E3-4759-48DB-BCC8-5C278B854511/favicon.png )
 
 ### 어떻게 만드는가?
 

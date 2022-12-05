@@ -234,7 +234,7 @@ main();
 $ node train.js | pbcopy
 ```
 
-![train-graph]( /resource/wiki/locomotive-problem/38775199-8f1b2274-40b7-11e8-9038-4df7be310dd4.jpg )
+![train-graph]( /resource/FD/26EE21-9A4D-4E11-8F65-37433C535446/38775199-8f1b2274-40b7-11e8-9038-4df7be310dd4.jpg )
 
 
 ### 기대값을 구해보자

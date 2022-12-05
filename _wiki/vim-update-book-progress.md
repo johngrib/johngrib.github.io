@@ -97,11 +97,11 @@ augroup END
 
 다음 스크린샷은 이 작업 이후로 띄워본 로컬 위키의 `book.md` 파일의 목차이다.
 
-![in web]( /resource/wiki/vim-update-book-progress/69900511-aff17000-13b7-11ea-9990-38831cf016d0.png )
+![in web]( /resource/65/48F94E-D4A9-47E0-8B24-3EEBE188F96E/69900511-aff17000-13b7-11ea-9990-38831cf016d0.png )
 
 한편, vim에서는 파일을 편집할 때 tagbar를 통해 화면 오른쪽에 자동으로 목차가 업데이트된다.
 
-![in vim]( /resource/wiki/vim-update-book-progress/69900879-52135700-13bc-11ea-91bf-291a8710354e.png )
+![in vim]( /resource/65/48F94E-D4A9-47E0-8B24-3EEBE188F96E/69900879-52135700-13bc-11ea-91bf-291a8710354e.png )
 
 이제 목차에서 퍼센티지를 볼 수 있기 때문에 한 눈에 전체 진행도를 볼 수 있게 됐다.
 

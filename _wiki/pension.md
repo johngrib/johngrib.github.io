@@ -56,10 +56,10 @@ DB/DC는 내가 고를 수 없고, 내가 다니고 있는 회사가 둘 중 어
 ### 퇴직연금 제도별 비교
 
 - 참고
-    - [하나은행 퇴직연금 - 퇴직연금 제도간 비교]( https://pension.kebhana.com/rpc/hhom/kr/rpc08220700.do ) [(이미지)]( /resource/wiki/pension/103163958-3e008a00-4848-11eb-953f-d2e0fa203098.png )
-    - [신한생명 퇴직연금 제도별 비교]( https://www.shinhanlife.co.kr/pbc/a/PBCA204.jsp ) [(이미지)]( /resource/wiki/pension/103163974-89b33380-4848-11eb-9144-3609ba42e5aa.png )
-    - [IBK 연금보험 - 퇴직연금제도 종류]( https://www.ibki.co.kr/process/HP_RTANTY_SYS_KND_STD5 ) [(이미지)]( /resource/wiki/pension/103163995-e6165300-4848-11eb-91d7-1aa1fb2c9663.png )
-    - [데이비드 바크의 자동 부자 습관 4장에 나오는 비교 표]( /resource/wiki/pension/103163913-9e42fc00-4847-11eb-8c65-0571b9d888b0.png )
+    - [하나은행 퇴직연금 - 퇴직연금 제도간 비교]( https://pension.kebhana.com/rpc/hhom/kr/rpc08220700.do ) [(이미지)]( /resource/F0/E62955-7750-42FD-9183-E5B4913F86E4/103163958-3e008a00-4848-11eb-953f-d2e0fa203098.png )
+    - [신한생명 퇴직연금 제도별 비교]( https://www.shinhanlife.co.kr/pbc/a/PBCA204.jsp ) [(이미지)]( /resource/F0/E62955-7750-42FD-9183-E5B4913F86E4/103163974-89b33380-4848-11eb-9144-3609ba42e5aa.png )
+    - [IBK 연금보험 - 퇴직연금제도 종류]( https://www.ibki.co.kr/process/HP_RTANTY_SYS_KND_STD5 ) [(이미지)]( /resource/F0/E62955-7750-42FD-9183-E5B4913F86E4/103163995-e6165300-4848-11eb-91d7-1aa1fb2c9663.png )
+    - [데이비드 바크의 자동 부자 습관 4장에 나오는 비교 표]( /resource/F0/E62955-7750-42FD-9183-E5B4913F86E4/103163913-9e42fc00-4847-11eb-8c65-0571b9d888b0.png )
 
 다음은 내가 여러 비교 표를 살펴보고 종합하여 작성한 것이다.
 
@@ -203,7 +203,7 @@ DB(Defined Benefit)
 
 - A. [다층 노후소득보장 (온라인 행정학 전자사전)]( https://www.kapa21.or.kr/epadic/print.php?num=730 )
 - B. [해외 연금제도 개혁 사례 연구 - 연금개혁 과정의 정치적 쟁점을 중심으로 - (한국보건사회연구원 연구보고서)]( https://www.kihasa.re.kr/web/publication/research/view.do?division=001&menuId=44&tid=71&bid=12&ano=500 )
-    - [PDF]( /resource/wiki/pension/2006-21-1.pdf )
+    - [PDF]( /resource/F0/E62955-7750-42FD-9183-E5B4913F86E4/2006-21-1.pdf )
 - C. [금융감독원 퇴직연금종합안내]( http://m.fss.or.kr:8000/pension/cmsContents/contentsView.do?mId=M06050100000000 )
 
 서적

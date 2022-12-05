@@ -101,11 +101,11 @@ $ ag '\Z' hello.c
 
 `\b`는 단어의 경계 지점에 매치된다.
 
-![]( /resource/wiki/regex/b.jpg )
+![]( /resource/4A/97067A-7B34-4C9F-A609-43701006C9A6/b.jpg )
 
 반대로 `\B`는 단어의 경계가 아닌 곳에 매치된다.
 
-![]( /resource/wiki/regex/Bl.jpg )
+![]( /resource/4A/97067A-7B34-4C9F-A609-43701006C9A6/Bl.jpg )
 
 
 ## 수량자

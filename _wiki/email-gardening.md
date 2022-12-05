@@ -52,7 +52,7 @@ latex   : false
 * 일치하는 대화에도 필터 적용 - 과거에 받은 비슷한 메일에도 이 필터를 적용해서 라벨로 분류한다.
 * 읽은 상태로 표시는 하지 않는다. 이걸 해제해놔야 라벨에서 몇 개의 메일이 왔는지 볼 수 있다.
 
-![filtering]( /resource/wiki/email-gardening/filtering.png )
+![filtering]( /resource/1E/B6B559-9D5E-4F3C-A7D0-F78C922BB8F5/filtering.png )
 
 
 ## 나의 라벨링 관리 방법
@@ -107,7 +107,7 @@ latex   : false
 * 초대장 - 1월 24일 일정에 대한 초대장이므로 남겨 두었다. 오늘은 1월 19일이다.
 * 진행중인 업무 - 내일 출근하면 읽고 처리해야 하는 메일이다.
 
-![my email]( /resource/wiki/email-gardening/my-gmail-dashboard.png )
+![my email]( /resource/1E/B6B559-9D5E-4F3C-A7D0-F78C922BB8F5/my-gmail-dashboard.png )
 
 ## 협업하는 동료들에게 업무와 관련된 중요한 사항을 이메일로 달라고 부탁한다
 
