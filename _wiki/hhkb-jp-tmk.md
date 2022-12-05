@@ -99,7 +99,7 @@ parent  : [[/hack]]
 놀랍게도 두 물건이 한날 한시에 도착하였는데 아마도 우체부님이 편의상 묶어서 배송해주신 것 같았다.
 지름신의 가호라고도 할 수 있겠다.
 
-![hhkb jp]({{ site.url }}/resource/wiki/hhkb-jp-tmk/2017-05-14-hhkb-jp-tmk-00.jpg)
+![hhkb jp]( /resource/wiki/hhkb-jp-tmk/2017-05-14-hhkb-jp-tmk-00.jpg )
 
 구매한 해피해킹은 키가 많은 HHKB pro JP 버전.
 ISO 배열이라는 문제점이 있긴 하지만 어차피 다 바꿀 수 있을 것이므로 문제가 되지 않는다고 생각했다.
@@ -109,7 +109,7 @@ ISO 배열이라는 문제점이 있긴 하지만 어차피 다 바꿀 수 있�
 해피해킹 하우징을 열고, 해피해킹 컨트롤 보드(사진의 왼쪽)를 tmk 보드로 교체하였다.
 이러면 dip 스위치 구멍에 tmk 보드의 리셋 스위치가 나오게 된다.
 
-![tmk set]({{ site.url }}/resource/wiki/hhkb-jp-tmk/2017-05-14-hhkb-jp-tmk-01.jpg)
+![tmk set]( /resource/wiki/hhkb-jp-tmk/2017-05-14-hhkb-jp-tmk-01.jpg )
 
 ## 펌웨어 설치 및 키 레이아웃 변경
 
@@ -176,7 +176,7 @@ tmk 보드를 쓰면 7개의 `fn` 키와 7개의 레이어를 사용할 수 있�
     * 화살표 키 바로 아래에 `shift` 키를 배치했다.
         * 이러면 `shift` + 화살표를 누를 때 손가락이 매우 편하게 된다.
 
-![tmk set]({{ site.url }}/resource/wiki/hhkb-jp-tmk/2017-05-14-hhkb-jp-tmk-03.jpg)
+![tmk set]( /resource/wiki/hhkb-jp-tmk/2017-05-14-hhkb-jp-tmk-03.jpg )
 
 ### `fn1` 레이어
 
@@ -191,7 +191,7 @@ tmk 보드를 쓰면 7개의 `fn` 키와 7개의 레이어를 사용할 수 있�
     * 오른쪽 위의 `delete` 키는 너무 멀어서 가기 귀찮다.
 * 오른쪽 아래의 키 여섯 개는 `insert`, `delete`, `home`, `end`, `pageup`, `pagedown`.
 
-![tmk set]({{ site.url }}/resource/wiki/hhkb-jp-tmk/2017-05-14-hhkb-jp-tmk-04.jpg)
+![tmk set]( /resource/wiki/hhkb-jp-tmk/2017-05-14-hhkb-jp-tmk-04.jpg )
 
 ### `fn2` 레이어
 
@@ -219,7 +219,7 @@ tmk 보드를 쓰면 7개의 `fn` 키와 7개의 레이어를 사용할 수 있�
 하지만 더 좋은 생각이 나거나, 다른 손가락이 아프게 된다면
 다른 배열로 수정할 예정. 얼마든지 배열을 바꿀 수 있다는 것이 강점이다.
 
-![tmk set]({{ site.url }}/resource/wiki/hhkb-jp-tmk/2017-05-14-hhkb-jp-tmk-02.jpg)
+![tmk set]( /resource/wiki/hhkb-jp-tmk/2017-05-14-hhkb-jp-tmk-02.jpg )
 
 현재 키캡은 좀 난잡한 느낌.
 키캡만 끼우면 완성된다...

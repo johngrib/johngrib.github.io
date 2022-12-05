@@ -28,7 +28,7 @@ hs.hotkey.bind({'shift'}, 'F1', hs.hints.windowHints)
 
 `init.lua`를 리로드한 다음 `shift`+`f1` 키를 입력해 보면 다음과 같은 화면이 나타납니다.
 
-![hints]({{ site.url }}/resource/wiki/hammerspoon-tutorial-01/2017-08-01-hammerspoon-hints.jpg)
+![hints]( /resource/wiki/hammerspoon-tutorial-01/2017-08-01-hammerspoon-hints.jpg )
 
 현재 제 맥북에서 실행 중인 앱들의 아이콘이 키 힌트와 함께 나타난 것이라 보면 됩니다.
 
@@ -93,7 +93,7 @@ hs.hotkey.bind({'option', 'shift'}, 'right', move_win_to_right)
 
 다음은 `option`+`shift`+`←` 으로 크롬을 이동시킨 결과를 찍은 것입니다.
 
-![left]({{ site.url }}/resource/wiki/hammerspoon-tutorial-01/2017-08-01-hammerspoon-left.jpg)
+![left]( /resource/wiki/hammerspoon-tutorial-01/2017-08-01-hammerspoon-left.jpg )
 
 ### 윈도우를 다양한 방향으로 이동시켜 봅시다
 
@@ -131,7 +131,7 @@ hs.hotkey.bind(mod, '9', move_win(1/2, 0, 1/2, 1/2))
 
 이렇게 하면 `option`+`shift`+`숫자`의 조합으로 윈도우를 좌/우/대각선 방향으로 모두 움직일 수 있고, 전체화면으로 사이즈를 조정하는 것도 가능합니다.
 
-![left]({{ site.url }}/resource/wiki/hammerspoon-tutorial-01/2017-08-01-hammerspoon-window.gif)
+![left]( /resource/wiki/hammerspoon-tutorial-01/2017-08-01-hammerspoon-window.gif )
 
 ## Links
 

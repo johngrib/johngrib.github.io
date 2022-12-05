@@ -52,13 +52,13 @@ parent  : [[hammerspoon]]
 * 실행해보면 스크린 위쪽의 상태 막대에 망치+숟가락 모양의 아이콘이 나타납니다.
 * 아이콘을 클릭해보면 메뉴가 나옵니다.
 
-![hammerspoon icon]({{ site.url }}/resource/wiki/hammerspoon-tutorial-00/2017-07-31-hammerspoon-icon.png)
+![hammerspoon icon]( /resource/wiki/hammerspoon-tutorial-00/2017-07-31-hammerspoon-icon.png )
 
 * 설정 파일을 리로드하는 `Reload Config`를 눈여겨 두도록 합니다. 단축키를 할당하기 전에는 꽤 여러 차례 누르게 될 겁니다.
 
 * `Preferences...` 에서 `Launch Hammerspoon at login`을 선택해주면 앞으로 맥을 재부팅 할 때마다 Hammerspoon이 자동으로 실행됩니다.
 
-![hammerspoon menu]({{ site.url }}/resource/wiki/hammerspoon-tutorial-00/2017-07-31-hammerspoon-preference.png)
+![hammerspoon menu]( /resource/wiki/hammerspoon-tutorial-00/2017-07-31-hammerspoon-preference.png )
 
 * `Open Config`를 선택하면 시스템 기본 편집기로 `~/.hammerspoon/init.lua` 파일을 열어줍니다.
     * 만약 이 파일이 없거나 뭔가 문제가 생겼다면 직접 파일을 만들어 주면 됩니다.
@@ -92,7 +92,7 @@ hs.hotkey.bind({'shift', 'cmd'}, 'H', function() hs.alert.show('Hello, world!') 
 
 이제 설정을 리로드 한 다음, `cmd`+`shift`+`h`키를 누르면 `Hello, world!` 가 나타납니다.  
 
-![hello world]({{ site.url }}/resource/wiki/hammerspoon-tutorial-00/2017-07-31-hammerspoon-helloworld.png)
+![hello world]( /resource/wiki/hammerspoon-tutorial-00/2017-07-31-hammerspoon-helloworld.png )
 
 `function() ... end` 구문은 익명 함수로, 위의 코드를 다음과 같이 작성하는 것도 가능합니다.
 
@@ -152,7 +152,7 @@ end)
 
 `launchOrFocus` 함수의 파라미터로 넘겨줘야 하는 앱의 이름은 아래와 같이 확인할 수 있습니다.
 
-![chrome]({{ site.url }}/resource/wiki/hammerspoon-tutorial-00/2017-07-31-hammerspoon-chrome.png)
+![chrome]( /resource/wiki/hammerspoon-tutorial-00/2017-07-31-hammerspoon-chrome.png )
 
 ## Links
 

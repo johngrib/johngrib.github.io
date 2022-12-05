@@ -16,7 +16,7 @@ parent  : [[hammerspoon]]
 
 ## 콘솔을 열어 봅시다
 
-![hammerspoon icon]({{ site.url }}/resource/wiki/hammerspoon-tutorial-03/2017-07-31-hammerspoon-icon.png)
+![hammerspoon icon]( /resource/wiki/hammerspoon-tutorial-03/2017-07-31-hammerspoon-icon.png )
 
 1. 상단 메뉴의 Hammerspoon 아이콘을 클릭하고,
 1. `Console...` 을 선택하면 콘솔이 열립니다.

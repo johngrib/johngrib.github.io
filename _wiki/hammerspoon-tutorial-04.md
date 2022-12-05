@@ -48,7 +48,7 @@ end)
 
 그리고 `option`+`h`를 입력해 보면 아래와 같은 작은 창이 나타납니다.
 
-![hints]({{ site.url }}/resource/wiki/hammerspoon-tutorial-04/2017-08-06-hammerspoon-html.png)
+![hints]( /resource/wiki/hammerspoon-tutorial-04/2017-08-06-hammerspoon-html.png )
 
 한 번 더 `option`+`h`를 입력하면 창은 사라집니다.
 
