@@ -3,7 +3,7 @@ layout  : wiki
 title   : ACID
 summary : 트랜잭션의 중요한 네 가지 속성
 date    : 2019-10-03 00:33:18 +0900
-updated : 2022-12-07 23:39:27 +0900
+updated : 2022-12-07 23:52:55 +0900
 tag     : db
 resource: 72/CBBFDC-8E07-46AA-880A-39AD31254FE1
 toc     : true
@@ -311,7 +311,7 @@ ACID는 유감스럽게도 거의 마케팅 용어가 돼버렸다.
 (ACID 표준을 따르지 않는 시스템은 때로 **BASE**라고 불린다. 기본적으로 가용성을 제공하고(Basically Available), 유연한 상태를 가지며(Soft state), 최종적 일관성(Eventual consistency)을 지닌다는 뜻이다. ACID의 정의보다 더 모호하다. BASE의 그럴듯한 정의는 "ACID가 아니다" 뿐인 것 같다. 즉 아무 의미나 갖다 붙일 수 있는 것처럼 보인다.)
 [^history]
 
-* 참고로 "데이터 중심 애플리케이션 설계"에서는 Joe Hellerstein이 C에 대해 "tossed in to make the acronym work", 즉 "약어를 만들기 위해" 끼워넣었다는 주장[^c-in-acid]이 있다. 아마도 그의 저서들 중 하나에 나온 말일 것이라는 생각이 들지만 나는 찾아내지 못했다.
+* 참고로 "데이터 중심 애플리케이션 설계"에서는 Joe Hellerstein이 C에 대해 "tossed in to make the acronym work", 즉 "약어를 만들기 위해" 끼워넣었다는 주장[^c-in-acid]을 소개한다. 아마도 Joe Hellerstein의 저서들 중 하나에 나온 말일 것이라는 생각이 들지만 나는 확인하지는 못했다.
 
 ## 함께 읽기
 
