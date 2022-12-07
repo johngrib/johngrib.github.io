@@ -3,7 +3,7 @@ layout  : wiki
 title   : ACID
 summary : 트랜잭션의 중요한 네 가지 속성
 date    : 2019-10-03 00:33:18 +0900
-updated : 2022-12-04 12:53:28 +0900
+updated : 2022-12-07 23:39:27 +0900
 tag     : db
 resource: 72/CBBFDC-8E07-46AA-880A-39AD31254FE1
 toc     : true
@@ -313,6 +313,9 @@ ACID는 유감스럽게도 거의 마케팅 용어가 돼버렸다.
 
 * 참고로 "데이터 중심 애플리케이션 설계"에서는 Joe Hellerstein이 C에 대해 "tossed in to make the acronym work", 즉 "약어를 만들기 위해" 끼워넣었다는 주장[^c-in-acid]이 있다. 아마도 그의 저서들 중 하나에 나온 말일 것이라는 생각이 들지만 나는 찾아내지 못했다.
 
+## 함께 읽기
+
+- [[/summary-the-transaction-concept]]
 
 ## 참고문헌
 
