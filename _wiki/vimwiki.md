@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki 사용법
 summary : 로컬에서 Vim으로 관리하는 나만의 위키
 date    : 2018-03-27 21:16:39 +0900
-updated : 2022-08-02 23:47:12 +0900
+updated : 2022-12-10 23:21:10 +0900
 tag     : vim wiki
 resource: 6F/207F04-DA7A-43F7-810F-FB059E57480A
 public  : true
@@ -434,13 +434,15 @@ autocmd BufWritePre *.md call LastModified()
 현재 파일이 Vimwiki의 하위 경로에 있고, 내용이 한 줄 밖에 없다면
 메타 데이터 기본 값을 넣어주는 함수이다.
 
+[set-vimwiki.vim]( https://github.com/johngrib/dotfiles/blob/ecf130149d81a3e7e0f784adbb74abb7f2f01d99/nvim/config/set-vimwiki.vim#L63-L105 )
+
 ```viml
 function! NewTemplate()
 
     let l:wiki_directory = v:false
 
     for wiki in g:vimwiki_list
-        if expand('%:p:h') . '/' == wiki.path
+        if expand('%:p:h') =~ expand(wiki.path)
             let l:wiki_directory = v:true
             break
         endif
@@ -461,11 +463,12 @@ function! NewTemplate()
     call add(l:template, 'summary : ')
     call add(l:template, 'date    : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
     call add(l:template, 'updated : ' . strftime('%Y-%m-%d %H:%M:%S +0900'))
-    call add(l:template, 'tags    : ')
+    call add(l:template, 'tag     : ')
     call add(l:template, 'toc     : true')
     call add(l:template, 'public  : true')
     call add(l:template, 'parent  : ')
     call add(l:template, 'latex   : false')
+    call add(l:template, 'resource: ' . substitute(system("uuidgen"), '\n', '', ''))
     call add(l:template, '---')
     call add(l:template, '* TOC')
     call add(l:template, '{:toc}')
