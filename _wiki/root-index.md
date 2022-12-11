@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-11 22:01:54 +0900
+updated : 2022-12-11 22:50:38 +0900
 regenerate: true
 ---
 
@@ -309,8 +309,8 @@ regenerate: true
 ### [[/java/gc]]
 
 * [[/java/gc/death-spiral]]
+* [[/java/gc/tuning-guide]]
 
-* [[java-gc-tuning]]
 * [[java-gc-eden-to-survivor]]
 * [[java-gc-serial-collector]]
 * [[java-gc-parallel-collector]]

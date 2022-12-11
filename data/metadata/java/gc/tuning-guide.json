@@ -3,8 +3,8 @@
  "title": "Java GC 튜닝",
  "summary": "Oracle의 튜닝 가이드를 읽고 정리해 보자",
  "parent": "java/gc",
- "url": "/wiki/java-gc-tuning",
- "updated": "2022-05-11 00:03:12 +0900",
+ "url": "/wiki/java/gc/tuning-guide",
+ "updated": "2022-12-11 22:54:34 +0900",
  "resource": "32/39995B-3DF5-4904-AC2A-DCD73638FD17",
  "children": []
 }

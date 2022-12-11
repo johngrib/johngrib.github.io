@@ -3,13 +3,14 @@ layout  : wiki
 title   : Java GC 튜닝
 summary : Oracle의 튜닝 가이드를 읽고 정리해 보자
 date    : 2019-09-12 22:35:34 +0900
-updated : 2022-05-11 00:03:12 +0900
+updated : 2022-12-11 22:54:34 +0900
 tag     : java gc
 resource: 32/39995B-3DF5-4904-AC2A-DCD73638FD17
 toc     : true
 public  : true
 parent  : [[/java/gc]]
 latex   : true
+issue-number: 108
 ---
 * TOC
 {:toc}

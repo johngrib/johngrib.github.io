@@ -308,7 +308,7 @@ RS는 Remember Set를 말한다.
 
 ## 함께 읽기
 
-* [[java-gc-tuning]]{Java GC 튜닝}
+* [[/java/gc/tuning-guide]]
 
 ## 참고문헌
 

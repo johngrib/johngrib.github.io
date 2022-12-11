@@ -158,7 +158,7 @@ GC에 전체 시간의 98% 이상이 소모되고, heap의 2% 이하가 GC로 �
 ## 함께 읽기
 
 - [[/cmd/grep]]
-- [[java-gc-tuning]]{Java GC 튜닝}
+- [[/java/gc/tuning-guide]]
 
 ## 참고문헌
 
