@@ -3,7 +3,7 @@ layout  : wiki
 title   : 스프링 버전 체크
 summary : 
 date    : 2019-09-21 09:34:43 +0900
-updated : 2019-09-21 11:28:35 +0900
+updated : 2022-12-11 21:53:55 +0900
 tag     : java
 resource: CB/CF2267-D748-4A03-BBA6-4B4CCA849FEC
 toc     : true
@@ -16,6 +16,8 @@ latex   : false
 
 ## Spring - JDK Version 범위
 
+* Spring Framework 6.0.x: JDK 17-21 (for native images: JDK 17-19)
+* Spring Framework 5.3.x: JDK 8-19
 * Spring Framework 5.1.x: JDK 8-12
 * Spring Framework 5.0.x: JDK 8-10
 * Spring Framework 4.3.x: JDK 6-8
