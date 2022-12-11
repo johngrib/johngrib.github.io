@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2022년 11월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2022-12-11 23:03:29 +0900
+updated : 2022-12-11 23:18:32 +0900
 tag     : java
 resource: F7/24638D-3BAC-44BD-875C-F401971F22C3
 toc     : true
@@ -65,6 +65,16 @@ TODO
         - 여러 사용 용도 및 배포에 있어 제약 조건이 있던 OTN 라이선스와는 달리, 상업 및 프로덕션 용도를 포함하여 모든 사용자들에게 무료로 사용 및 배포를 허용.
 
 2021-10-19 [Consolidated JDK 17 Release Notes]( https://www.oracle.com/java/technologies/javase/17all-relnotes.html#R17_0_1 )
+
+- specification
+    - [JEP 409: Sealed Classes]( https://openjdk.org/jeps/409 )
+    - [JEP 406: Pattern Matching for switch (Preview)]( https://openjdk.org/jeps/406 )
+- core-libs/java.net
+    - [DatagramSocket Can Be Used Directly to Join Multicast Groups]( https://bugs.openjdk.org/browse/JDK-8260667 )
+- core-libs/java.util
+    - [JEP 356: Enhanced Pseudo-Random Number Generators]( https://openjdk.org/jeps/356 )
+
+... 작성중
 
 ## JDK 16
 
