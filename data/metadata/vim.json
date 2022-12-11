@@ -14,7 +14,6 @@
   "vim-tagbar-with-markdown",
   "vim-tmux-t-ut",
   "vim-update-book-progress",
-  "vim-ycm-python3",
   "vim/coc-nvim",
   "vim/conceallevel",
   "vim/configure-split",
@@ -29,6 +28,7 @@
   "vim/set-empty-chars",
   "vim/ultisnips",
   "vim/window",
+  "vim/ycm-python3",
   "vimwiki"
  ]
 }

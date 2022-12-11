@@ -18,7 +18,6 @@
  "vim-tagbar-with-markdown",
  "vim-tmux-t-ut",
  "vim-update-book-progress",
- "vim-ycm-python3",
  "vim/auto-completion",
  "vim/coc-nvim",
  "vim/conceallevel",
@@ -33,6 +32,7 @@
  "vim/set-empty-chars",
  "vim/ultisnips",
  "vim/window",
+ "vim/ycm-python3",
  "vimwiki",
  "web-browser-vim"
 ]

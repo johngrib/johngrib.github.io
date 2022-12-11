@@ -3,19 +3,22 @@ layout  : wiki
 title   : youcompleteme를 python3로 구동하기
 summary : python2 좀 그만 쓰자
 date    : 2018-03-21 22:48:40 +0900
-updated : 2022-03-26 12:30:18 +0900
+updated : 2022-12-11 22:04:43 +0900
 tag     : vim python
 resource: 49/498169-3D81-4923-8F09-828428B88AD1
 toc     : true
 public  : true
-parent  : [[vim]]
+parent  : [[/vim]]
 latex   : false
 ---
 * TOC
 {:toc}
 
+## 일러두기
+
 >
 참고: 나는 2019년 5월 이후로는 youcompleteme를 아예 사용하지 않는다. 대신 [[/vim/coc-nvim]]을 사용하고 있다.
+{:style="background-color: #fff9e4;"}
 
 ## 버전 확인
 

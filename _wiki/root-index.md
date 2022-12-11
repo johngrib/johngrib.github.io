@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-11 21:58:39 +0900
+updated : 2022-12-11 22:01:54 +0900
 regenerate: true
 ---
 
@@ -654,6 +654,7 @@ regenerate: true
 * [[/vim/set-empty-chars]]
 * [[/vim/ultisnips]]
 * [[/vim/window]]
+* [[/vim/ycm-python3]]
 
 * [[ideavim]]
 * [[two-views-of-vim]]
@@ -663,7 +664,6 @@ regenerate: true
 * [[vim-tagbar-with-markdown]]
 * [[vim-tmux-t-ut]]
 * [[vim-update-book-progress]]
-* [[vim-ycm-python3]]
 * [[vimwiki]]
 
 ## [[emacs]]
