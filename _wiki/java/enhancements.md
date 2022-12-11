@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2022년 11월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2022-11-23 17:13:16 +0900
+updated : 2022-12-11 23:03:29 +0900
 tag     : java
 resource: F7/24638D-3BAC-44BD-875C-F401971F22C3
 toc     : true
@@ -282,6 +282,7 @@ TODO
     - 새로운 JIT(Just In Time) 컴파일러
     - JNI(Java Native Interface) 변환
 - 향상된 JDBC 2.0
+- Collections Framework
 - 그 외 여러가지
 
 ## JDK 1.1
