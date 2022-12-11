@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-04 12:20:34 +0900
+updated : 2022-12-11 21:58:39 +0900
 regenerate: true
 ---
 
@@ -278,10 +278,10 @@ regenerate: true
 * [[/java/string]]
 * [[/java/switch]]
 * [[/java/synchronized]]
+* [[/java/temporal-adjusters]]
 * [[/java/thread/state]]
 * [[/java/volatile]]
 
-* [[java-TemporalAdjusters]]
 * [[java-abstract-class]]
 * [[java-abstract-method]]
 * [[java-enhancements]]
