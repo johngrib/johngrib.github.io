@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-11 22:50:38 +0900
+updated : 2022-12-12 21:42:59 +0900
 regenerate: true
 ---
 
@@ -403,6 +403,7 @@ regenerate: true
 * [[/jargon/moore-s-law]]
 * [[/jargon/postel-s-law]]
 * [[/jargon/solid]]
+* [[/jargon/no-problem-syndrome]]
 
 * [[amdahl-s-law]]
 * [[Boy-Scout-Rule]]
@@ -421,7 +422,6 @@ regenerate: true
 * [[linus-s-law]]
 * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]
 * [[Naming-Principle]]
-* [[no-problem-syndrome]]
 * [[No-Silver-Bullet]]
 * [[OOP-to-me-Alan-Kay]]
 * [[orange-juice-test]]

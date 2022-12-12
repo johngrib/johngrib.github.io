@@ -3,12 +3,12 @@ layout  : wiki
 title   : 문제 없어요 증후군 (No-Problem Syndrome)
 summary : 자신이 모든 문제의 답을 알고 있다고 믿는 증후군
 date    : 2020-03-17 21:30:20 +0900
-updated : 2021-10-04 14:05:33 +0900
+updated : 2022-12-12 21:43:24 +0900
 tag     : 
 resource: 4C/EC96B4-61CC-4428-A1DA-59F8478A5215
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
