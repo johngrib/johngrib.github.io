@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 설정 파일을 주제별로 여러 파일로 분리하자
 summary : vimrc를 대청소하자
 date    : 2020-01-26 13:46:19 +0900
-updated : 2022-06-18 10:28:34 +0900
+updated : 2022-12-13 23:38:26 +0900
 tag     : vim
 resource: 47/C5736C-AF57-49E2-811F-13768565D6CC
 toc     : true
@@ -147,4 +147,67 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#buffer_nr_format = '%s:'
 let g:airline_powerline_fonts = 1
 ```
+
+## 방법 4: PlugFile 명령으로 include 파일을 명시해준다
+
+> 내가 2022년부터 사용하고 있는 방법이다.
+
+파일을 분리해서 사용하다 보니 각각의 파일 하나하나가 개념상 플러그인의 역할을 하게 되거나,
+다른 플러그인의 보조 플러그인으로 사용하게 되는 경우가 많다는 것을 깨달았다.
+그러다보니 의존성 관리의 필요성을 느끼게 되었다.
+
+예를 들어 `set-vim-textobj-user.vim` 파일은 `kana/vim-textobj-user` 플러그인에서 정의한 함수를 사용한다.
+때문에 `kana/vim-textobj-user` 플러그인을 끌 경우 `set-vim-textobj-user.vim` 파일을 읽어들일 때 로딩되지 않은 함수를 호출하여 에러가 발생하게 된다.
+
+그래서 플러그인을 끌 경우에 의존하는 파일도 쉽게 끌 수 있도록 명시하는 문법이 필요하다는 생각을 하게 되었다.
+
+따라서 다음과 같이 `PlugFile` 명령을 정의해 사용하기로 했다.
+
+```viml
+let g:config_dir = expand('~/dotfiles/nvim/config/')
+let s:file_plug_candidate = []
+
+command! -nargs=1 PlugFile call <SID>plug_file(<args>)
+function! s:plug_file( ... )
+    call add(s:file_plug_candidate, g:config_dir . a:1)
+endfunction
+
+call plug#begin('~/.vim/plugged')
+
+    Plug 'rcarriga/nvim-notify'
+    PlugFile 'set-notify.vim'
+    Plug 'simeji/winresizer'
+    PlugFile 'set-winresizer.vim'
+
+    PlugFile 'vim-gx-on-regex.vim'
+
+    Plug 'kana/vim-textobj-user'
+    PlugFile 'set-vim-textobj-user.vim'
+
+    " 생략
+call plug#end()
+
+for include_file in s:file_plug_candidate
+    execute "source " . include_file
+endfor
+let s:file_plug_candidate = v:null
+```
+
+`PlugFile` 명령을 사용하게 되면 주어진 파일을 `s:file_plug_candidate` 배열에 집어넣게 된다.
+그리고 `call plug#end()`를 호출한 이후(즉 플러그인을 모두 로드한 이후), 배열을 순회하며 `source` 명령을 실행한다.
+
+따라서 의존관계에 대한 순서를 신경쓰지 않아도 되며, 플러그인을 끌 경우에도 이렇게 주석 처리하기만 하면 된다.
+
+```
+    " Plug 'kana/vim-textobj-user'
+    " PlugFile 'set-vim-textobj-user.vim'
+```
+
+그리고 `PlugFile`은 `Plug`와 비슷한 이름을 갖고 있기 때문에 같이 사용해도 별로 위화감이 없어 보이며,
+vim-plug는 파일 하나로 이루어진 vim 플러그인을 처리하는 기능은 없(는 것 같)으므로 이렇게 사용하는 것도 나름 괜찮은 방법인 것 같다.
+
+실제 내가 작업한 코드는 여기에서 볼 수 있다.
+
+- [PlugFile 기능 추가]( https://github.com/johngrib/dotfiles/commit/9689020a97249d98be0a42fae5593c7832cc8de7 )
+- [Vim 플러그인 설정 방식에 PlugFile 추가]( https://github.com/johngrib/dotfiles/commit/ecf130149d81a3e7e0f784adbb74abb7f2f01d99 )
 
