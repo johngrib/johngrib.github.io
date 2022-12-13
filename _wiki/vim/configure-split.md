@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 설정 파일을 주제별로 여러 파일로 분리하자
 summary : vimrc를 대청소하자
 date    : 2020-01-26 13:46:19 +0900
-updated : 2022-12-13 23:38:26 +0900
+updated : 2022-12-13 23:43:25 +0900
 tag     : vim
 resource: 47/C5736C-AF57-49E2-811F-13768565D6CC
 toc     : true
@@ -171,20 +171,32 @@ command! -nargs=1 PlugFile call <SID>plug_file(<args>)
 function! s:plug_file( ... )
     call add(s:file_plug_candidate, g:config_dir . a:1)
 endfunction
+```
+
+실제로는 이렇게 사용하면 된다.
+
+```viml
+let g:config_dir = expand('~/dotfiles/nvim/config/')
+let s:file_plug_candidate = []
+
+command! -nargs=1 PlugFile call <SID>plug_file(<args>)
+function! s:plug_file( ... )
+    call add(s:file_plug_candidate, g:config_dir . a:1)
+endfunction
 
 call plug#begin('~/.vim/plugged')
 
     Plug 'rcarriga/nvim-notify'
     PlugFile 'set-notify.vim'
     Plug 'simeji/winresizer'
-    PlugFile 'set-winresizer.vim'
+    PlugFile 'set-winresizer.vim'   " 여기
 
-    PlugFile 'vim-gx-on-regex.vim'
+    PlugFile 'vim-gx-on-regex.vim'  " 여기
 
     Plug 'kana/vim-textobj-user'
-    PlugFile 'set-vim-textobj-user.vim'
+    PlugFile 'set-vim-textobj-user.vim'     " 여기
 
-    " 생략
+    " 이후 생략
 call plug#end()
 
 for include_file in s:file_plug_candidate
