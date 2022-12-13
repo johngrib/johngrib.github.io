@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-11-05 10:43:36 +0900
+updated : 2022-12-14 00:05:46 +0900
 tag     : bash vim ctags golang command clojure vim-syntax-color
 resource: 4D/8CF153-8D49-406F-875F-8385D1599361
 toc     : true
@@ -28,14 +28,14 @@ latex   : false
 
 * Exuberant ctags가 ctags를 대체하기 위해 나온 것이므로 original ctags는 고려하지 않는다.
 
-|              | Exuberant ctags   | Universal ctags   | gotags     |
-| ----------   | :---------------: | :---------------: | :------:   |
-| 지원 언어 수 | 41                | 101               | 1          |
-| 최신 버전    | 2009-07-09        | 2022-10-22        | 2018-02-03 |
-| 버전업 빈도  |                   | 한 달에 2~3번     |            |
-| markdown     | X                 | O                 | X          |
-| golang       | X                 | O                 | O          |
-| customize    | O                 | O                 | ?          |
+|              | Exuberant ctags   | Universal ctags            | gotags                      |
+| ----------   | :---------------: | :---------------:          | :------:                    |
+| 지원 언어 수 | 41                | 101                        | 1                           |
+| 최신 버전    | 2009-07-09        | [2022-12-03][u-ctags-tags] | [2018-02-03][gotags-master] |
+| 버전업 빈도  |                   | 한 달에 2~3번              |                             |
+| markdown     | X                 | O                          | X                           |
+| golang       | X                 | O                          | O                           |
+| customize    | O                 | O                          | ?                           |
 
 * Exuberant ctags는 golang, markdown을 쓰려면 [[vim-tagbar-with-markdown]]{커스터마이즈} 해줘야 한다.
 * [gotags](https://github.com/jstemmer/gotags )는 golang 에서만 작동한다.
@@ -580,3 +580,5 @@ let g:tagbar_type_markdown = {
 
 * [[vim-tagbar-with-markdown]]
 
+[u-ctags-tags]: https://github.com/universal-ctags/ctags/tags
+[gotags-master]: https://github.com/jstemmer/gotags/commits/master
