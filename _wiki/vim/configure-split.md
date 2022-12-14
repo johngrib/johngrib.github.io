@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 설정 파일을 주제별로 여러 파일로 분리하자
 summary : vimrc를 대청소하자
 date    : 2020-01-26 13:46:19 +0900
-updated : 2022-12-13 23:43:25 +0900
+updated : 2022-12-14 21:35:36 +0900
 tag     : vim
 resource: 47/C5736C-AF57-49E2-811F-13768565D6CC
 toc     : true
@@ -198,6 +198,9 @@ call plug#begin('~/.vim/plugged')
 
     " 이후 생략
 call plug#end()
+
+syntax enable
+filetype plugin indent on
 
 for include_file in s:file_plug_candidate
     execute "source " . include_file
