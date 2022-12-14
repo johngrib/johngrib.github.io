@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-12 21:42:59 +0900
+updated : 2022-12-14 22:08:08 +0900
 regenerate: true
 ---
 
@@ -239,6 +239,7 @@ regenerate: true
 ### [[go]]
 
 * [[/go/gvm]]
+* [[/go/struct-padding]]
 * [[/go/vim-setting]]
 
 * [[Go-Blog-translation]]
@@ -252,7 +253,6 @@ regenerate: true
 * [[golang-cheatsheet]]
 * [[golang-dependency-manager]]
 * [[golang-reflect]]
-* [[golang-struct-padding]]
 * [[golang-types]]
 * [[golang-waitgroup-add]]
 * [[vim-go-auto-import]]

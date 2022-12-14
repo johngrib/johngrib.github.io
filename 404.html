@@ -30,7 +30,6 @@ permalink: /404.html
     console.log(window.location.pathname, "->", url);
 
     const fallbackRouter = {
-        '/wiki/spring-documents-overview/': '/wiki/spring/document/overview/',
         '/wiki/template-method-pattern/': '/wiki/pattern/template-method/',
         '/wiki/design-pattern/template-method-pattern/': '/wiki/pattern/template-method/',
 
@@ -145,6 +144,7 @@ permalink: /404.html
         '/wiki/vim-ycm-python3/': '/wiki/vim/ycm-python3/',
         '/wiki/java-gc-tuning/': '/wiki/java/gc/tuning-guide/',
         '/wiki/no-problem-syndrome/': '/wiki/jargon/no-problem-syndrome/',
+        '/wiki/golang-struct-padding/': '/wiki/go/struct-padding/',
     };
 
     if (fallbackRouter[url]) {

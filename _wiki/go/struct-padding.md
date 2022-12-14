@@ -3,12 +3,12 @@ layout  : wiki
 title   : Golang struct alignment padding
 summary : 구조체 멤버 정렬 순서에 따라 구조체 크기가 달라진다
 date    : 2018-10-14 21:47:38 +0900
-updated : 2018-10-15 10:15:05 +0900
+updated : 2022-12-14 22:08:13 +0900
 tag     : golang padding alignment
 resource: 53/A66F82-D878-42E1-9266-C3D3C96F3779
 toc     : true
 public  : true
-parent  : [[go]]
+parent  : [[/go]]
 latex   : false
 ---
 * TOC

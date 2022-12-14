@@ -3,8 +3,8 @@
  "title": "Golang struct alignment padding",
  "summary": "구조체 멤버 정렬 순서에 따라 구조체 크기가 달라진다",
  "parent": "go",
- "url": "/wiki/golang-struct-padding",
- "updated": "2018-10-15 10:15:05 +0900",
+ "url": "/wiki/go/struct-padding",
+ "updated": "2022-12-14 22:08:13 +0900",
  "resource": "53/A66F82-D878-42E1-9266-C3D3C96F3779",
  "children": []
 }
