@@ -8,6 +8,7 @@
  "resource": "9D/B9E40E-EF0D-49F0-B3EC-74C508B1B759",
  "children": [
   "database/acid",
+  "database/isolation-level",
   "database/sqlite",
   "db-index",
   "db-processlist",

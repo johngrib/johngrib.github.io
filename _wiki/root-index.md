@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-14 22:08:08 +0900
+updated : 2022-12-15 23:22:50 +0900
 regenerate: true
 ---
 
@@ -737,10 +737,12 @@ regenerate: true
     * [[/spring/document/core/01-16-bean-factory]]
     * [[/spring/document/core/02-resources]]
 
-## [[database]]
+## [[/database]]
 
 * [[/database/acid]]
+* [[/database/isolation-level]]
 * [[/database/sqlite]]
+
 * [[db-index]]
 * [[db-processlist]]
 * [[mariadb-connector-j]]
