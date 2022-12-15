@@ -3,7 +3,7 @@ layout  : wiki
 title   : 격리 수준 (isolation level)
 summary : 
 date    : 2022-12-15 23:23:05 +0900
-updated : 2022-12-15 23:54:13 +0900
+updated : 2022-12-16 00:11:35 +0900
 tag     : sql-92
 toc     : true
 public  : true
@@ -39,10 +39,49 @@ The four isolation levels guarantee that each SQL-transaction will be executed c
 >
 -- Database Language SQL July 1992 (SQL-92). 4.28 SQL-transactions. 68쪽.
 
+## 인용: 데이터베이스 시스템
+
+>
+SQL 표준에서 한 트랜잭션이 다른 트랜잭션들과 직렬 불가능한 방식으로 수행되는 것을 허용한다.
+예를 들어, 다른 트랜잭션이 기록한 데이터 항목을 그 트랜잭션이 커밋하지 않았는데도 읽는 것을 허용하는 **커밋되지 않은 데이터 읽기**[^johngrib-28527]라는 고립성 수준이 있다.
+수행 시간이 오래 걸리고 결과가 정확하지 않아도 괜찮은 트랜잭션에 대해서는 이와 같은 고립성 수준을 사용할 수 있다.
+만일 이런 트랜잭션을 본래의 "직렬 가능" 방식으로 수행한다면 명령어들의 교차 수행 과정에서 서로의 실행을 지연시키게 된다.
+>
+SQL 표준에 명시된 **고립성 수준**(isolation level)은 다음과 같다.
+>
+> - **직렬 가능(serializable)**은 직렬 가능한 실행을 보장한다. 그러나 곧 설명하겠지만 몇몇 데이터베이스 시스템은 특정한 경우 직렬 불가능한 실행을 허용하는 고립성 수준을 구현하기도 한다.
+> - **반복 가능한 읽기(Repeatable read)**는 단지 커밋된 레코드만 읽을 수 있고 한 트랜잭션이 한 레코드를 두 번 읽는 사이에 다른 트랜잭션이 그 레코드를 갱신하지 못하도록 한다. 그러나 트랜잭션들은 직렬 가능하지 않을 수 있다. 예를 들어, 특정 조건을 만족하는 레코드를 검색할 때 커밋된 트랜잭션에 의해 삽입된 레코드 중 일부는 검색될 수도 있고 아닐 수도 있다.
+> - **커밋된 데이터 읽기(Read committed)**는 커밋된 레코드만 읽을 수 있지만, 반복 가능한 읽기는 요구하지 않는다. 예를 들어, 한 트랜잭션이 한 레코드를 두 번 읽는 사이에 그 레코드는 다른 완료된 트랜잭션들에 의해 갱신될 수 있다.
+> - **커밋되지 않은 데이터 읽기(Read uncommitted)**는 커밋되지 않은 데이터도 읽는다. SQL에서 허용하는 가장 낮은 수준의 고립성 수준이다.
+>
+위의 모든 고립성 수준은 또한 **더티 쓰기(dirty write)**를 허용하지 않는다.
+즉 커밋 또는 중단되지 않은 다른 트랜잭션이 기록한 데이터 항목에 덮어쓰는 것은 허용하지 않는다.
+>
+많은 데이터베이스 시스템은 기본적으로 커밋된 데이터 읽기 고립성 수준으로 동작한다.
+시스템의 기본 설정을 사용하지 않고 SQL을 이용해 명시적으로 고립성 수준을 설정할 수 있다. 예를 들어 문장
+>
+> ```sql
+> set transaction isolation level serializable
+> ```
+>
+은 고립성 수준을 직렬 가능으로 설정한다. 다른 고립성 수준도 마찬가지로 위와 같이 설정할 수 있다.
+위 문법은 Oracle, PostgresSQL 그리고 SQL Server에서 지원한다. Oracle은
+> ```sql
+> alter session set isolation level = serializable
+> ```
+>
+을 사용하며 DB2는 "`change isolation level`"을 사용하고 고립성 수준을 고유한 약자를 사용해 지정한다.
+>
+-- 데이터베이스 시스템 [7판]. 17장. 751쪽.
 
 
 ## 참고문헌
 
 - [SQL-92]( http://www.contrib.andrew.cmu.edu/~shadow/sql/sql1992.txt )
     - [백업 TXT]( ./resource/ED/C7080C-15D6-4CEB-8A4B-DCB285381536/sql1992.txt )
+- 데이터베이스 시스템 [7판] / Abraham Silberschatz, Henry F. Korth, S. Sudarshan 저/정연돈, 권준호 역 외 3명 정보 더 보기/감추기 / 한빛아카데미 / 초판발행: 2021년 08월 05일 / 원서: DATABASE SYSTEM CONCEPTS, Seventh Edition
+
+## 주석
+
+[^johngrib-28527]: JohnGrib: Read uncommitted
 
