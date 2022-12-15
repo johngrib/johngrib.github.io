@@ -3,12 +3,12 @@ layout  : wiki
 title   : 읽고 있는 책의 진행도를 Vim에서 자동으로 계산하자
 summary : awk 만세
 date    : 2019-11-30 21:01:19 +0900
-updated : 2019-11-30 21:57:13 +0900
+updated : 2022-12-15 22:55:53 +0900
 tag     : vim awk
 resource: 65/48F94E-D4A9-47E0-8B24-3EEBE188F96E
 toc     : true
 public  : true
-parent  : [[vim]]
+parent  : [[/vim]]
 latex   : false
 ---
 * TOC
@@ -16,7 +16,7 @@ latex   : false
 
 ## 읽고 있는 책의 진행도를 관리하기
 
-[[two-views-of-vim]]{Vim, 두 가지 관점} 글에서도 한 이야기이지만,
+[[/two-views-of-vim]] 글에서도 한 이야기이지만,
 나는 읽고 있는 책들의 진행 상태를 vim으로 관리하고 있다.
 
 ```
@@ -109,6 +109,6 @@ augroup END
 
 ## 함께 읽기
 
-* [[two-views-of-vim]]{Vim, 두 가지 관점}
+* [[/two-views-of-vim]]
 
 
