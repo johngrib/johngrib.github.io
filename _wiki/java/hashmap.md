@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util. HashMap
 summary : 
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-12-17 19:19:14 +0900
+updated : 2022-12-17 19:50:18 +0900
 tag     : java
 resource: AD/0DA9BB-65E8-490B-BFF7-77004E50553D
 toc     : true
@@ -328,7 +328,7 @@ public class Key {
 
 ### 고의로 특정 필드를 공개한 _HashMap 클래스
 
-[Node table getter 추가]( https://github.com/johngrib/study-java-hashmap/commit/7836fb26d14111059425ed44d8fef896f8a28967#diff-9dcc04de4527a2285a835274cc5c739157e34f13a7acb711c0c85cdf55c2ed2fR393-R395 )
+[Node table getter 추가]( https://github.com/johngrib/study-java-hashmap/blob/1ab6030003dd9bcd26fb5fe51fd6886cd1342805/src/main/java/_java/_HashMap.java#L393-L395 )
 
 ```java
 public Node<K, V>[] getTable() {
@@ -336,7 +336,7 @@ public Node<K, V>[] getTable() {
 }
 ```
 
-[TreeNode를 공개하고, left / right 자식 노드도 공개]( https://github.com/johngrib/study-java-hashmap/commit/7836fb26d14111059425ed44d8fef896f8a28967#diff-9dcc04de4527a2285a835274cc5c739157e34f13a7acb711c0c85cdf55c2ed2fR1664-R1667 )
+[TreeNode를 공개하고, left / right 자식 노드도 공개]( https://github.com/johngrib/study-java-hashmap/blob/1ab6030003dd9bcd26fb5fe51fd6886cd1342805/src/main/java/_java/_HashMap.java#L1664 )
 
 ```java
 public static final class TreeNode<K, V> extends _LinkedHashMap.Entry<K, V> {
