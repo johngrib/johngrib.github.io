@@ -3,8 +3,8 @@ layout  : wiki
 title   : 격리 수준 (isolation level)
 summary : 
 date    : 2022-12-15 23:23:05 +0900
-updated : 2022-12-16 00:11:35 +0900
-tag     : sql-92
+updated : 2022-12-17 13:20:37 +0900
+tag     : sql-92 db
 toc     : true
 public  : true
 parent  : [[/database]]

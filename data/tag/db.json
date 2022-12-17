@@ -1,6 +1,7 @@
 [
  "b-tree",
  "database/acid",
+ "database/isolation-level",
  "database/sqlite",
  "db-index",
  "db-processlist",
