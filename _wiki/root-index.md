@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-17 12:10:52 +0900
+updated : 2022-12-18 00:23:50 +0900
 regenerate: true
 ---
 
@@ -543,6 +543,7 @@ regenerate: true
 * [[/cmd/uname]]
 * [[/cmd/xxd]]
 * [[/cmd/yes]]
+* [[/cmd/pwgen]]
 
 * [[bash-history]]
 * [[chsh-cmd]]
@@ -568,7 +569,6 @@ regenerate: true
 * [[my-bash-cheatsheet]]
 * [[perl-one-liner]]
 * [[phpbrew]]
-* [[pwgen-cmd]]
 * [[rans-cmd]]
 * [[rig-cmd]]
 * [[ripgrep]]

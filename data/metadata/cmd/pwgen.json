@@ -3,8 +3,8 @@
  "title": "pwgen 명령어",
  "summary": "패스워드를 생성한다",
  "parent": "cmd",
- "url": "/wiki/pwgen-cmd",
- "updated": "2019-12-09 20:58:29 +0900",
+ "url": "/wiki/cmd/pwgen",
+ "updated": "2022-12-18 00:23:55 +0900",
  "resource": "D1/326A54-5C26-48F5-83AD-B5DA154032AF",
  "children": []
 }

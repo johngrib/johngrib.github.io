@@ -1,10 +1,10 @@
 [
  "Caesar-cipher",
  "cmd/openssl",
+ "cmd/pwgen",
  "encryption",
  "gpg",
  "Kerckhoffs-s-principle",
- "pwgen-cmd",
  "rsa-encryption",
  "sha256sum"
 ]
