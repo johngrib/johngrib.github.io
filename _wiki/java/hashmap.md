@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util. HashMap
 summary : 
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-11-24 16:45:02 +0900
+updated : 2022-12-17 19:19:14 +0900
 tag     : java
 resource: AD/0DA9BB-65E8-490B-BFF7-77004E50553D
 toc     : true
@@ -480,7 +480,7 @@ Link {level=0, Key:0}
 
 그림으로 그려본다면 다음과 같을 것이다.
 
-![]( ./linked-list.svg )
+![]( /resource/AD/0DA9BB-65E8-490B-BFF7-77004E50553D/linked-list.svg )
 
 연결 리스트라는 것을 눈으로 쉽게 확인할 수 있다.
 
@@ -507,7 +507,7 @@ Tree {level=0, Key:4}
 
 그림으로 그려보면 이진 트리라는 것을 쉽게 확인할 수 있다.
 
-![]( ./tree-node.svg )
+![]( /resource/AD/0DA9BB-65E8-490B-BFF7-77004E50553D/tree-node.svg )
 
 첫 번째 해시 버킷과 아이템 수 1개 차이가 난다는 점에 주목.
 
@@ -533,13 +533,13 @@ Tree {level=0, Key:11}
 
 이것도 그림으로 그려보자.
 
-![]( ./third-bucket.svg )
+![]( /resource/AD/0DA9BB-65E8-490B-BFF7-77004E50553D/third-bucket.svg )
 
 #### 종합
 
 다음은 위의 세 그림을 종합한 것이다.
 
-![]( ./all-buckets.svg )
+![]( /resource/AD/0DA9BB-65E8-490B-BFF7-77004E50553D/all-buckets.svg )
 
 ## HashMap이 같은 해시값을 갖는 두 Key를 비교하는 방법
 
