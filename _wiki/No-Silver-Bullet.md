@@ -3,7 +3,7 @@ layout  : wiki
 title   : 은총알은 없다(No Silver Bullet)
 summary : 생산성, 신뢰성, 단순성을 10배 이상 향상시킬 발전은 나타나지 않을 것이다
 date    : 2018-02-21 21:13:04 +0900
-updated : 2020-05-22 23:57:44 +0900
+updated : 2022-12-17 20:29:01 +0900
 tag     : proverb Fred-Brooks
 resource: 85/47AB7D-A5BE-4093-8730-C8EC072A00BB
 toc     : true
@@ -43,6 +43,9 @@ latex   : false
 
 * 늑대인간 : 평범한 인간의 모습을 하고 있다가 공포스러운 괴물로 변신한다.
 * 은총알 : 늑대인간을 잡을 수 있는 유일한 무기.
+
+![은총알]( /resource/85/47AB7D-A5BE-4093-8730-C8EC072A00BB/208239265-5a66ed97-6b64-48ee-8073-eec92ce258e3.png )
+[^eerie-indiana]
 
 ### 소프트웨어 프로젝트에서의 은총알
 
@@ -166,3 +169,7 @@ latex   : false
 * [No Silver Bullet(솔즈베리 대학)](http://faculty.salisbury.edu/~xswang/Research/Papers/SERelated/no-silver-bullet.pdf) : 논문 pdf를 받아볼 수 있다.
 * ["Computer" Volume 20, issue 4](http://ieeexplore.ieee.org/document/1663532/ )
 * [No Silver Bullet(wikipedia)](https://en.wikipedia.org/wiki/No_Silver_Bullet)
+
+## 주석
+
+[^eerie-indiana]: 미국 드라마 EERIE, INDIANA episode 14의 한 장면. 어렸을 때 딱 한번 봤지만 오랫동안 기억에 남은 장면이다. 늑대인간을 죽이기 위한 유일한 방법인 은총일 이야기를 하고 있다. [이미지는 YouTube 영상]( https://youtu.be/a5tsJlfd2ME?t=1101 )을 캡처한 것.
