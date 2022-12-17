@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-15 23:22:50 +0900
+updated : 2022-12-17 12:10:52 +0900
 regenerate: true
 ---
 
@@ -645,6 +645,7 @@ regenerate: true
 * [[/vim/configure-split]]
 * [[/vim/help]]
 * [[/vim/highlight]]
+* [[/vim/ideavim]]
 * [[/vim/match]]
 * [[/vim/numbered-register-shift]]
 * [[/vim/persistent-undo]]
@@ -656,7 +657,6 @@ regenerate: true
 * [[/vim/window]]
 * [[/vim/ycm-python3]]
 
-* [[ideavim]]
 * [[two-views-of-vim]]
 * [[vim-asciidoc-setting]]
 * [[vim-clang]]

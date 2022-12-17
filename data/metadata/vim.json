@@ -6,7 +6,6 @@
  "updated": "2022-01-03 23:39:21 +0900",
  "resource": "97/761AA5-EA5A-42D5-B497-C2DF928D0EC2",
  "children": [
-  "ideavim",
   "two-views-of-vim",
   "vim-asciidoc-setting",
   "vim-clang",
@@ -19,6 +18,7 @@
   "vim/configure-split",
   "vim/help",
   "vim/highlight",
+  "vim/ideavim",
   "vim/match",
   "vim/numbered-register-shift",
   "vim/persistent-undo",

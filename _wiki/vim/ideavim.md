@@ -3,12 +3,12 @@ layout  : wiki
 title   : IdeaVim 사용하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2022-01-04 23:36:18 +0900
+updated : 2022-12-17 12:14:23 +0900
 tag     : vim ideavim intellij
 resource: 44/580326-0E29-46DE-81F7-50A7AD8B4F60
 toc     : true
 public  : true
-parent  : [[vim]]
+parent  : [[/vim]]
 latex   : false
 ---
 * TOC
@@ -168,13 +168,17 @@ git pull --rebase upstrem master
 [link-ideavim]: https://twitter.com/ideavim
 [link-answer]: https://twitter.com/ideavim/status/826032176286269440
 
+## 함께 읽기
+
+- [[/intellij]]
 
 ## Link
 
-* [JetBrains/ideavim][repo]
-* [List of Supported Set Commands][set-commands]
-* [나의 .ideavimrc][my]
-* [Share your `~/.ideavimrc`](https://github.com/JetBrains/ideavim/discussions/303#discussioncomment-1899760 )
+- [JetBrains/ideavim][repo]
+- [List of Supported Set Commands][set-commands]
+- [나의 .ideavimrc][my]
+- [Share your `~/.ideavimrc`]( https://github.com/JetBrains/ideavim/discussions/303 )
+    * [Show Context Actions](https://github.com/JetBrains/ideavim/discussions/303#discussioncomment-1899760 )
 
 ## 주석
 
