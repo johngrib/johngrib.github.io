@@ -3,7 +3,7 @@ layout  : wiki
 title   : 은총알은 없다(No Silver Bullet)
 summary : 생산성, 신뢰성, 단순성을 10배 이상 향상시킬 발전은 나타나지 않을 것이다
 date    : 2018-02-21 21:13:04 +0900
-updated : 2022-12-17 20:30:01 +0900
+updated : 2022-12-17 20:30:38 +0900
 tag     : proverb Fred-Brooks
 resource: 85/47AB7D-A5BE-4093-8730-C8EC072A00BB
 toc     : true
@@ -172,4 +172,4 @@ latex   : false
 
 ## 주석
 
-[^eerie-indiana]: 미국 드라마 EERIE, INDIANA episode 14의 한 장면. 어렸을 때 딱 한번 봤지만 오랫동안 기억에 남은 장면이다. 늑대인간을 죽이기 위한 유일한 방법인 은총알 이야기를 하고 있다. [이미지는 YouTube 영상]( https://youtu.be/a5tsJlfd2ME?t=1101 )을 캡처한 것.
+[^eerie-indiana]: 미국 드라마 EERIE, INDIANA episode 14의 한 장면. 어렸을 때 딱 한번 봤지만 오랫동안 기억에 남은 장면이다. 늑대인간을 죽이기 위한 유일한 방법인 은총알 이야기를 하고 있다. 이미지는 [YouTube 영상]( https://youtu.be/a5tsJlfd2ME?t=1101 )을 캡처한 것.
