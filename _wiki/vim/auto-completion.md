@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2022-03-01 12:13:35 +0900
+updated : 2022-12-17 12:24:50 +0900
 tag     : vim completion
 resource: 5B/931A55-1993-4115-B645-57AE9986CA6A
 toc     : true
@@ -194,16 +194,92 @@ iabbr <expr> __branch system("git rev-parse --abbrev-ref HEAD")
 
 이 글에서는 다음의 세 플러그인을 다룬다.
 
-* youcompleteme
 * coc.nvim
 * UltiSnips
+* youcompleteme (deprecated)
 
-나는 2019년 6월 이전까지는 youcompleteme + UltiSnips 조합으로 사용해왔으나,
-그 이후로는 coc.nvim + UltiSnips 조합으로만 사용하고 있다.
+나는 2019년 6월 이전까지는 youcompleteme + UltiSnips 조합으로 사용해왔으나, 그 이후로는 coc.nvim + UltiSnips 조합으로만 사용하고 있다.
+{:style="background-color: #ecf1e8;"}
+
+### ultisnips
+
+ultisnips는 Vim 최고의 플러그인 중 하나라 생각하며, 나는 하루에도 수십번씩 ultisnips를 사용한다.
+
+이 항목은 내용이 길어 별도의 문서로 분리하였다.
+
+* [[/vim/ultisnips]]
+
+### coc.nvim
+
+* coc.nvim은 VSCode와 비슷한 수준의 자동완성 기능을 제공하는 것을 목표로 하는 vim 플러그인이다.
+* 사용해보면 매우 만족스럽다. VSCode 만큼은 된다.
+    * youcompleteme에서 잘 안 되는 언어들이 매우 잘 되며, php/javascript 자동완성도 훌륭하다.
+    * UltiSnips와의 연동도 youcompleteme 만큼은 된다.
+
+#### coc.nvim 설치
+
+Node.js와 yarn을 먼저 설치한 다음, `.vimrc`에서 다음과 같이 플러그인을 정의해주면 된다.
+
+```viml
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+```
+
+#### 필요한 프로그래밍 언어의 랭귀지 서버 설치
+
+1. coc.nvim의 [Language-servers](https://github.com/neoclide/coc.nvim/wiki/Language-servers ) 문서에서 내가 사용하는 언어를 찾는다.
+2. 해당 언어 섹션에서 coc.nvim이 추천하는 랭귀지 서버 플러그인을 찾는다.
+3. 해당 랭귀지 서버 플러그인 저장소에 가서 추천하는 설치 방법으로 설치한다.
+
+보통은 `:CocInstall` 명령어를 사용해 필요한 언어의 랭귀지 서버를 설치하면 끝난다. 매우 간편하다.
+
+
+##### golang 랭귀지 서버 설치
+
+go 작성자들이 제공하는 `gopls`를 사용하도록 `coc-settings.json`에 다음과 같이 설정을 추가해주면 된다.
+
+`coc-settings.json` 파일은 `:CocConfig` 명령어를 입력하면 vim에서 바로 열 수 있다.
+
+```json
+{
+    "suggest.detailField": "abbr",
+    "suggest.enablePreview": false,
+    "languageserver": {
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["go"]
+        }
+    }
+}
+```
+
+##### php 랭귀지 서버 설치
+
+```viml
+:CocInstall coc-phpls
+```
+
+##### UltiSnips와의 연동
+
+```viml
+:CocInstall coc-ultisnips
+```
+
+### copilot.vim
+
+- <https://copilot.github.com/ >
+- <https://github.com/github/copilot.vim >
+
+copilot.vim 을 사용하면 인공지능 기반의 추천 완성 기능을 사용할 수 있다.
+
+단순한 자동 완성이나 github 어딘가에 있는 코드의 복붙 수준이 아니라 놀라운 수준의 추론 능력을 보여주므로 감탄하며 사용하고 있다.
+
+copilot.vim 플러그인은 vim 세계에서의 스타 개발자인 Tim Pope가 만들었으며, vim에 적용하는 방법도 굉장히 쉽다.
 
 ### youcompleteme
 
-참고: 나는 2020년 즈음부터는 ycm을 전혀 사용하지 않고 있으며, ycm의 대체 플러그인으로 coc.vim 을 사용하고 있다.
+참고: 나는 2019년 6월 이후부터는 ycm을 전혀 사용하지 않고 있으며, ycm의 대체 플러그인으로 coc.vim 을 사용하고 있다.
+{:style="background-color: #ecf1e8;"}
 
 ycm과 UltiSnips를 활용하면 편리한 자동완성 환경을 갖출 수 있다.
 
@@ -319,81 +395,6 @@ let g:ycm_filetype_blacklist = {
     \ 'mail' : 1
     \}
 ```
-
-### ultisnips
-
-ultisnips는 Vim 최고의 플러그인 중 하나라 생각하며, 나는 하루에도 수십번씩 ultisnips를 사용한다.
-
-이 항목은 내용이 길어 별도의 문서로 분리하였다.
-
-* [[/vim/ultisnips]]
-
-### coc.nvim
-
-* coc.nvim은 VSCode와 비슷한 수준의 자동완성 기능을 제공하는 것을 목표로 하는 vim 플러그인이다.
-* 사용해보면 매우 만족스럽다. VSCode 만큼은 된다.
-    * youcompleteme에서 잘 안 되는 언어들이 매우 잘 되며, php/javascript 자동완성도 훌륭하다.
-    * UltiSnips와의 연동도 youcompleteme 만큼은 된다.
-
-#### coc.nvim 설치
-
-Node.js와 yarn을 먼저 설치한 다음, `.vimrc`에서 다음과 같이 플러그인을 정의해주면 된다.
-
-```viml
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-```
-
-#### 필요한 프로그래밍 언어의 랭귀지 서버 설치
-
-1. coc.nvim의 [Language-servers](https://github.com/neoclide/coc.nvim/wiki/Language-servers ) 문서에서 내가 사용하는 언어를 찾는다.
-2. 해당 언어 섹션에서 coc.nvim이 추천하는 랭귀지 서버 플러그인을 찾는다.
-3. 해당 랭귀지 서버 플러그인 저장소에 가서 추천하는 설치 방법으로 설치한다.
-
-보통은 `:CocInstall` 명령어를 사용해 필요한 언어의 랭귀지 서버를 설치하면 끝난다. 매우 간편하다.
-
-
-##### golang 랭귀지 서버 설치
-
-go 작성자들이 제공하는 `gopls`를 사용하도록 `coc-settings.json`에 다음과 같이 설정을 추가해주면 된다.
-
-`coc-settings.json` 파일은 `:CocConfig` 명령어를 입력하면 vim에서 바로 열 수 있다.
-
-```json
-{
-    "suggest.detailField": "abbr",
-    "suggest.enablePreview": false,
-    "languageserver": {
-        "golang": {
-            "command": "gopls",
-            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-            "filetypes": ["go"]
-        }
-    }
-}
-```
-
-##### php 랭귀지 서버 설치
-
-```viml
-:CocInstall coc-phpls
-```
-
-##### UltiSnips와의 연동
-
-```viml
-:CocInstall coc-ultisnips
-```
-
-### copilot.vim
-
-- <https://copilot.github.com/ >
-- <https://github.com/github/copilot.vim >
-
-copilot.vim 을 사용하면 인공지능 기반의 추천 완성 기능을 사용할 수 있다.
-
-단순한 자동 완성이나 github 어딘가에 있는 코드의 복붙 수준이 아니라 놀라운 수준의 추론 능력을 보여주므로 감탄하며 사용하고 있다.
-
-copilot.vim 플러그인은 vim 세계에서의 스타 개발자인 Tim Pope가 만들었으며, vim에 적용하는 방법도 굉장히 쉽다.
 
 
 ## 문제 해결
