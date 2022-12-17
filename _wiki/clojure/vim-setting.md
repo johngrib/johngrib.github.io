@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Clojure 코드를 작성하자
 summary : vim-iced까지 이르는 삽질과 고민의 기록
 date    : 2022-01-09 22:53:22 +0900
-updated : 2022-12-05 22:58:30 +0900
+updated : 2022-12-17 12:34:46 +0900
 tag     : clojure vim
 resource: C8/18B9F8-7A97-432E-9CEC-795E39AB8608
 toc     : true
@@ -1365,6 +1365,9 @@ vim에 들어가자마자 Conjure가 알아서 `59594` 포트로 접속한다.
 
 `:conjureco` 까지 쓰고 탭을 누르면 자동완성이 되므로 일일이 대소문자 지켜가며 쓸 필요가 없다는 점을 기억해두자.
 
+## 함께 읽기
+
+- [[/vim/auto-completion]]
 
 ## 주석
 

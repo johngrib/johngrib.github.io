@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim 자동완성 기능 사용하기
 summary : vim을 똑똑하게 사용하자
 date    : 2018-11-22 23:10:03 +0900
-updated : 2022-12-17 12:24:50 +0900
+updated : 2022-12-17 12:34:23 +0900
 tag     : vim completion
 resource: 5B/931A55-1993-4115-B645-57AE9986CA6A
 toc     : true
@@ -444,6 +444,9 @@ pip로 neovim을 업그레이드하면 해결되는 문제이므로 신경을 �
 $ sudo pip3 install --upgrade neovim
 ```
 
+## 함께 읽기
+
+- [[/clojure/vim-setting]]
 
 ## Links
 
