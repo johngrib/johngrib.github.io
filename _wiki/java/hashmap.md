@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : java.util. HashMap
-summary : 
+summary : HashMap의 구조를 정리한다
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-12-17 19:58:55 +0900
+updated : 2022-12-17 19:59:37 +0900
 tag     : java
 resource: AD/0DA9BB-65E8-490B-BFF7-77004E50553D
 toc     : true
