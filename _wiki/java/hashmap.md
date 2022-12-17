@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util. HashMap
 summary : 
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-12-17 19:50:18 +0900
+updated : 2022-12-17 19:58:55 +0900
 tag     : java
 resource: AD/0DA9BB-65E8-490B-BFF7-77004E50553D
 toc     : true
@@ -324,7 +324,7 @@ public class Key {
 ```
 
 이 클래스의 핵심은 `hashCode`로, `i % 3`을 사용하고 있다.
-이렇게 하면 이 클래스의 가능한 해시값은 모두 `0`, `1`, `2`가 된다.
+이렇게 하면 이 클래스 인스턴스의 가능한 해시값은 모두 `0`, `1`, `2`가 된다.
 
 ### 고의로 특정 필드를 공개한 _HashMap 클래스
 
