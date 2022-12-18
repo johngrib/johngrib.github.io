@@ -3,7 +3,7 @@ layout  : wiki
 title   : 옵저버 패턴(Observer Pattern)
 summary : 상태 변화를 감시자에게 통지한다
 date    : 2019-09-29 18:29:07 +0900
-updated : 2021-10-10 10:24:41 +0900
+updated : 2022-12-18 12:32:58 +0900
 tag     : GoF-design-pattern
 resource: F2/0FBC79-6C84-46B1-B5C2-5D3C1CAF8064
 toc     : true
@@ -31,7 +31,7 @@ GoF 책에서는 다음과 같이 옵저버 패턴의 의도를 밝힌다.[^gof]
 
 구조는 다음과 같다.[^structure]
 
-![옵저버 패턴의 구조를 표현하는 다이어그램]( ./observer.svg )
+![옵저버 패턴의 구조를 표현하는 다이어그램]( /resource/F2/0FBC79-6C84-46B1-B5C2-5D3C1CAF8064/observer.svg )
 
 ## 요약
 
@@ -39,7 +39,7 @@ GoF 책에서는 다음과 같이 옵저버 패턴의 의도를 밝힌다.[^gof]
 
 구조 다이어그램에서 Subject를 잘 살펴보면 어렵지 않게 이해할 수 있다.
 
-![옵저버 패턴의 구조 중 Subject 부분을 강조한 다이어그램]( ./observer-part.svg )
+![옵저버 패턴의 구조 중 Subject 부분을 강조한 다이어그램]( /resource/F2/0FBC79-6C84-46B1-B5C2-5D3C1CAF8064/observer-part.svg )
 
 Subject에 여러 Observer를 등록(Attach)해 두고, Notify를 하게 되면 루프를 돌면서 각 Observer를 Update하는 패턴이다.
 
