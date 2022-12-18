@@ -3,7 +3,7 @@ layout  : wiki
 title   : 샤딩(Sharding)과 파티셔닝
 summary : 
 date    : 2019-09-26 16:00:47 +0900
-updated : 2022-12-18 15:32:11 +0900
+updated : 2022-12-18 18:08:23 +0900
 tag     : db
 resource: 41/7AC1DF-B9FA-4145-AD83-42D5FADBB136
 toc     : true
@@ -13,6 +13,24 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+
+## 기능적 샤딩과 수평적 샤딩
+
+>
+_Functional sharding_ means splitting specific tables that serve a specific business function into a dedicated cluster in order to manage separately this data set’s uptime, performance, or even access controls.
+>
+_Horizontal sharding_ is when you have a data set that has grown past the size you can reliably serve out of a single cluster, so you split it into multiple clusters and serve the data from several nodes, relying on some look-up mechanism to locate the subset you need.
+
+<span/>
+
+>
+**기능적 샤딩**은 데이터 세트의 가동 시간, 성능 또는 엑세스 제어를 별도로 관리하기 위해 특정 비즈니스 기능을 수행하는 특정 테이블을 전용 클러스터로 분할하는 것을 의미합니다.
+>
+**수평적 샤딩**은 단일 클러스터에서 안정적으로 제공할 수 있는 크기 이상으로 데이터 세트가 증가한 경우, 이를 여러 클러스터로 분할하여 여러 노드의 데이터를 제공하고 필요한 하위 집합을 찾는 조회 메커니즘에 따라 데이터를 제공하는 것입니다.
+[^h-p-mysql-41]
+
+이 문서에서는 주로 수평적 샤딩을 다룬다.
 
 ## From: 관계형 데이터베이스 실전 입문
 
@@ -167,11 +185,12 @@ HBase에서는 **리전(region)**, 빅테이블에서는 **태블릿(tablet)**, 
 
 ## 참고문헌
 
-* 관계형 데이터베이스 실전 입문 / 오쿠노 미키야 저 / 성창규 역 / 위키북스 / 초판 2016년 07월 20일 / 원서 : 理論から學ぶデ-タベ-ス實踐入門 リレ-ショナルモデルによる效率的なSQL/奧野幹也
-* 데이터 중심 애플리케이션 설계 / 마틴 클레프만 저/정재부, 김영준, 이도경 역 / 위키북스 / 초판발행 2018년 04월 12일
+- MySQL 성능 최적화 / 실비아 보트로스, 제레미 틴리 저/류수미, 송희정 역 / 위키북스 / 초판발행 2022년 09월 22일 /  원제 : High Performance MySQL 4E
+- 관계형 데이터베이스 실전 입문 / 오쿠노 미키야 저 / 성창규 역 / 위키북스 / 초판 2016년 07월 20일 / 원서 : 理論から學ぶデ-タベ-ス實踐入門 リレ-ショナルモデルによる效率的なSQL/奧野幹也
+- 데이터 중심 애플리케이션 설계 / 마틴 클레프만 저/정재부, 김영준, 이도경 역 / 위키북스 / 초판발행 2018년 04월 12일
 
 ## 주석
 
 [^define-sharding]: 데이터 중심 애플리케이션 설계. 6장. 199쪽.
 [^define-partition]: 데이터 중심 애플리케이션 설계. 6장. 199쪽.
-
+[^h-p-mysql-41]: MySQL 성능 최적화. 2장. 41쪽.
