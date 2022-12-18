@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-18 09:46:10 +0900
+updated : 2022-12-18 12:21:17 +0900
 regenerate: true
 ---
 
@@ -520,6 +520,7 @@ regenerate: true
 * [[/cmd/bind]]
 * [[/cmd/brew]]
 * [[/cmd/cal]]
+* [[/cmd/chsh]]
 * [[/cmd/column]]
 * [[/cmd/curl]]
 * [[/cmd/date]]
@@ -547,7 +548,6 @@ regenerate: true
 * [[/cmd/yes]]
 
 * [[bash-history]]
-* [[chsh-cmd]]
 * [[csplit]]
 * [[ctags]]
 * [[cut]]

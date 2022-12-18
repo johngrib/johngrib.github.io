@@ -30,7 +30,6 @@ permalink: /404.html
     console.log(window.location.pathname, "->", url);
 
     const fallbackRouter = {
-        '/wiki/template-method-pattern/': '/wiki/pattern/template-method/',
         '/wiki/design-pattern/template-method-pattern/': '/wiki/pattern/template-method/',
 
         '/wiki/design-pattern/': '/wiki/pattern/',
@@ -147,6 +146,7 @@ permalink: /404.html
         '/wiki/golang-struct-padding/': '/wiki/go/struct-padding/',
         '/wiki/ideavim/': '/wiki/vim/ideavim/',
         '/wiki/pwgen-cmd/': '/wiki/cmd/pwgen/',
+        '/wiki/chsh-cmd/': '/wiki/cmd/chsh/',
     };
 
     if (fallbackRouter[url]) {
