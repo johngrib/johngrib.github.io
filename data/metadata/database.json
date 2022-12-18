@@ -9,10 +9,10 @@
  "children": [
   "database/acid",
   "database/isolation-level",
+  "database/sharding",
   "database/sqlite",
   "db-index",
   "db-processlist",
-  "mariadb-connector-j",
-  "sharding"
+  "mariadb-connector-j"
  ]
 }

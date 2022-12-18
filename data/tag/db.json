@@ -2,13 +2,13 @@
  "b-tree",
  "database/acid",
  "database/isolation-level",
+ "database/sharding",
  "database/sqlite",
  "db-index",
  "db-processlist",
  "dbeaver",
  "h2database",
  "locking",
- "sharding",
  "sql-char-comparison",
  "study/ddia/02-data-models-and-query-languages"
 ]
