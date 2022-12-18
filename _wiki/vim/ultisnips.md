@@ -3,7 +3,7 @@ layout  : wiki
 title   : Ultisnips
 summary : 자신만의 snippet 파일을 만들어 쓰자
 date    : 2020-01-03 21:32:03 +0900
-updated : 2022-03-01 12:14:37 +0900
+updated : 2022-12-18 13:28:14 +0900
 tag     : vim completion
 resource: DB/D2A67D-5E12-4B85-803B-E54CFE95600D
 toc     : true
@@ -264,6 +264,24 @@ rust 언어를 공부하다 만들어본 snippet이다. `kebab-case`를 작성�
 # kebab-case to snake_case
 snippet "([\S]+(\-[\S]+)+)" "kebab-case to snake_case" r
 `!p snip.rv = re.sub('-','_', match.group(1))`$0
+endsnippet
+```
+
+### 날짜 요일 자동완성
+
+일기를 쓰다 필요해서 만든 snippet 이다.
+
+`12-12`를 입력하고 자동완성하면 `2022-12-12 월`로 완성해준다.
+
+```python
+snippet "(\d\d-\d\d)" "년-월-일 요일" r
+`!p
+import datetime
+yyyy_mm_dd = str(datetime.datetime.now().year) + '-' + match.group(1)
+subject_date = datetime.datetime.strptime(yyyy_mm_dd, "%Y-%m-%d")
+weekday = str(subject_date.weekday())
+snip.rv = yyyy_mm_dd + ' ' + ['월', '화', '수', '목', '금', '토', '일'][int(weekday)]
+`$0
 endsnippet
 ```
 
