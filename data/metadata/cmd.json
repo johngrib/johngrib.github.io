@@ -24,6 +24,7 @@
   "cmd/file",
   "cmd/find",
   "cmd/grep",
+  "cmd/iostat",
   "cmd/java_home",
   "cmd/less",
   "cmd/man",
