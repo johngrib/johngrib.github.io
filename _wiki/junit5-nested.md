@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2022-05-16 11:39:11 +0900
+updated : 2022-12-19 15:19:56 +0900
 tag     : java test
 resource: D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6
 toc     : true
@@ -76,7 +76,15 @@ Describe("Sum", func() {
 })
 ```
 
-이와 같은 형태를 갖는 테스트 코드의 장점을 다시 강조하자면 다음 두 가지이다.
+이 테스트는 아래와 같이 읽힌다.
+
+- Sum 함수는,
+    - 입력으로 300과 200이 주어지면,
+        - 500을 리턴한다.
+    - 입력으로 -300과 200이 주어지면,
+        - -100을 리턴한다.
+
+이런 테스트 코드의 장점을 다시 강조하자면 다음 두 가지이다.
 
 * 테스트 결과가 계층 구조로 출력된다는 것이다.
 * `Describe`, `Context`, `It`함수를 테스트 프레임워크에서 지원해준다.
@@ -114,6 +122,7 @@ Java에서는 다른 언어와 달리 메소드 내부에 메소드를 곧바로
 다음은 가볍게 작성한 클래스 하나를 테스트하는 코드를 IntelliJ에서 돌려본 결과를 캡처한 것이다.
 
 ![]( /resource/D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6/dci-eng.png )
+[^dci-eng-comment]
 
 계층 구조이기 때문에 특정 범위를 폴드하는 것도 가능하다.
 
@@ -887,4 +896,8 @@ object CalculatorSpec: Spek({
 [jpatest]: https://github.com/johngrib/example-junit5/commit/a5b4aeb4f7711dc84e3e531dc6f09815f392a949#diff-31c578db0d1719a05d6477038214d1c7
 [resolve-anno]: https://github.com/johngrib/example-junit5/commit/a5b4aeb4f7711dc84e3e531dc6f09815f392a949#diff-dd8b588364151772ee73a9d72dcf0419
 [resolve-inherit]: https://github.com/johngrib/example-junit5/commit/a5b4aeb4f7711dc84e3e531dc6f09815f392a949#diff-d448362a92356e56b2ea1d6f86f9ea30
+
+## 주석
+
+[^dci-eng-comment]: 나는 보통 `Describe:`, `Context:`는 생략한다. 그러나 이 글을 초심자가 본다고 생각하고 고의로 생략하지 않았다.
 
