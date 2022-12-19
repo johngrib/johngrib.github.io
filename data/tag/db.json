@@ -2,6 +2,7 @@
  "b-tree",
  "database/acid",
  "database/isolation-level",
+ "database/mysql/tips",
  "database/sharding",
  "database/sqlite",
  "db-index",
