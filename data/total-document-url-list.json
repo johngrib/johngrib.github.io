@@ -219,6 +219,7 @@
  "/wiki/cut",
  "/wiki/database",
  "/wiki/database/acid",
+ "/wiki/database/cardinality",
  "/wiki/database/isolation-level",
  "/wiki/database/mysql",
  "/wiki/database/mysql/tips",
