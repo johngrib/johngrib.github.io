@@ -89,7 +89,7 @@ Command 패턴을 구현하려면, 일단 각 요청을 처리하는 로직을 `
 
 구조는 다음과 같다.[^structure]
 
-![커맨드 패턴의 구조를 표현한 그림]( ./command.svg )
+![커맨드 패턴의 구조를 표현한 그림]( /resource/2B/0D86B3-7EAB-4E51-853E-4E4B57EB03BF/command.svg )
 
 이 패턴의 핵심은 Command 인터페이스다.
 
