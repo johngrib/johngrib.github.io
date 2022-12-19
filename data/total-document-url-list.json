@@ -220,6 +220,8 @@
  "/wiki/database",
  "/wiki/database/acid",
  "/wiki/database/isolation-level",
+ "/wiki/database/mysql",
+ "/wiki/database/mysql/tips",
  "/wiki/database/sharding",
  "/wiki/database/sqlite",
  "/wiki/db-index",

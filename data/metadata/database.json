@@ -9,6 +9,7 @@
  "children": [
   "database/acid",
   "database/isolation-level",
+  "database/mysql",
   "database/sharding",
   "database/sqlite",
   "db-index",
