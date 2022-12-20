@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-19 22:57:14 +0900
+updated : 2022-12-20 23:28:11 +0900
 regenerate: true
 ---
 
@@ -541,6 +541,7 @@ regenerate: true
 * [[/cmd/sed]]
 * [[/cmd/shellcheck]]
 * [[/cmd/strfile]]
+* [[/cmd/touch]]
 * [[/cmd/tr]]
 * [[/cmd/tree]]
 * [[/cmd/uname]]
@@ -580,7 +581,6 @@ regenerate: true
 * [[sw_vers-cmd]]
 * [[tail]]
 * [[top]]
-* [[touch]]
 * [[uptime]]
 * [[ykman]]
 

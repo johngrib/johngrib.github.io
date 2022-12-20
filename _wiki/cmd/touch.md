@@ -1,14 +1,14 @@
 ---
 layout  : wiki
-title   : touch 명령어
+title   : touch
 summary : change file access and modification times
 date    : 2019-01-13 18:10:46 +0900
-updated : 2019-01-13 18:22:50 +0900
+updated : 2022-12-20 23:29:03 +0900
 tag     : bash command
 resource: F0/546F35-303B-466A-83CF-9FB012A9EE68
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

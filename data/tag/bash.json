@@ -27,6 +27,7 @@
  "cmd/sed",
  "cmd/shellcheck",
  "cmd/strfile",
+ "cmd/touch",
  "cmd/tr",
  "cmd/tree",
  "cmd/xxd",
@@ -60,7 +61,6 @@
  "sw_vers-cmd",
  "tail",
  "top",
- "touch",
  "uptime",
  "ykman"
 ]
