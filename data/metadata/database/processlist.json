@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "show processlist",
+ "summary": "현재 실행중인 작업 상태를 보여준다",
+ "parent": "database",
+ "url": "/wiki/database/processlist",
+ "updated": "2022-12-21 00:29:24 +0900",
+ "resource": "7B/F99C9C-DC2A-4549-ACB8-B2F3E8A7DA11",
+ "children": []
+}

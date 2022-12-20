@@ -1,14 +1,14 @@
 ---
 layout  : wiki
-title   : Database show processlist
-summary : 현재 실행중인 작업을 보여준다
+title   : show processlist
+summary : 현재 실행중인 작업 상태를 보여준다
 date    : 2020-12-11 23:05:14 +0900
-updated : 2020-12-12 13:27:57 +0900
+updated : 2022-12-21 00:29:24 +0900
 tag     : db
 resource: 7B/F99C9C-DC2A-4549-ACB8-B2F3E8A7DA11
 toc     : true
 public  : true
-parent  : [[database]]
+parent  : [[/database]]
 latex   : false
 ---
 * TOC

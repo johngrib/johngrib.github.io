@@ -11,10 +11,10 @@
   "database/cardinality",
   "database/isolation-level",
   "database/mysql",
+  "database/processlist",
   "database/sharding",
   "database/sqlite",
   "db-index",
-  "db-processlist",
   "mariadb-connector-j"
  ]
 }
