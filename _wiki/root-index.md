@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-20 23:28:11 +0900
+updated : 2022-12-20 23:52:53 +0900
 regenerate: true
 ---
 
@@ -743,10 +743,11 @@ regenerate: true
 * [[/database/acid]]
 * [[/database/cardinality]]
 * [[/database/isolation-level]]
-* [[/database/mysql/tips]]
-* [[/database/mysql]]
 * [[/database/sharding]]
 * [[/database/sqlite]]
+
+* [[/database/mysql]]
+* [[/database/mysql/tips]]
 
 * [[db-index]]
 * [[db-processlist]]
