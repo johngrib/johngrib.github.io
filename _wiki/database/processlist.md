@@ -3,7 +3,7 @@ layout  : wiki
 title   : show processlist
 summary : 현재 실행중인 작업 상태를 보여준다
 date    : 2020-12-11 23:05:14 +0900
-updated : 2022-12-21 00:38:08 +0900
+updated : 2022-12-21 00:40:46 +0900
 tag     : db
 resource: 7B/F99C9C-DC2A-4549-ACB8-B2F3E8A7DA11
 toc     : true
@@ -22,23 +22,23 @@ latex   : false
 쿼리가 수명 주기를 거치면서 상태가 여러 번 변경되고, 그래서 수십 개의 상태가 있습니다.
 MySQL 매뉴얼은 모든 상태에 대한 신뢰할 수 있는 정보 소스이지만 다음에 그 몇 가지를 나열하고 의미를 설명합니다.
 >
-`Sleep`  
+**Sleep**  
 스레드가 클라이언트의 새 쿼리를 기다리는 중입니다.
 >
-`Query`  
+**Query**  
 스레드가 쿼리를 실행 중이거나 결과를 클라이언트로 다시 보냅니다.
 >
-`Locked`  
+**Locked**  
 스레드는 서버 수준에서 테이블 잠금이 부여되기를 기다리고 있습니다. InnoDB의 행 잠금과 같이 스토리지 엔진에 의해 구현되는 잠금은 스레드가 Locked 상태로 전환되지 않습니다.
 >
-`Analyzing and statistics`  
+**Analyzing and statistics**  
 스레드가 스토리지 엔진 통계를 확인하고 쿼리를 최적화하고 있습니다.
 >
-`Copying to tmp table [on disk]`  
+**Copying to tmp table [on disk]**  
 스레드가 쿼리를 처리하고 결과를 임시 테이블(아마도 `GROUP BY`, 파일 정렬, 또는 `UNION`을 충족시키기 위해)에 복사하고 있습니다.
 상태가 'on disk'로 끝나면 MySQL은 메모리 내 테이블을 디스크 테이블로 변환합니다.
 >
-`Sorting result`  
+**Sorting result**  
 스레드가 결과 셋을 정렬하고 있습니다.
 >
 최소한 기본 상태를 아는 것이 도움이 됩니다.
