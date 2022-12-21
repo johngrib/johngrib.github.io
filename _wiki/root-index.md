@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-21 00:27:37 +0900
+updated : 2022-12-21 12:05:33 +0900
 regenerate: true
 ---
 
@@ -743,12 +743,12 @@ regenerate: true
 * [[/database/acid]]
 * [[/database/cardinality]]
 * [[/database/isolation-level]]
+* [[/database/processlist]]
 * [[/database/sharding]]
 * [[/database/sqlite]]
-* [[/database/processlist]]
+* [[/database/tips]]
 
 * [[/database/mysql]]
-* [[/database/mysql/tips]]
 
 * [[db-index]]
 * [[mariadb-connector-j]]
