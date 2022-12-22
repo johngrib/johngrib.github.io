@@ -3,12 +3,12 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2022-06-14 00:42:32 +0900
+updated : 2022-12-22 18:01:29 +0900
 tag     : proverb law
 resource: 12/A29B77-E521-4B40-AAC3-1C2C7B323612
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
@@ -124,7 +124,7 @@ If the architecture of the system and the architecture of the organization are a
 
 ### 스티브 맥코넬이 설명한 콘웨이의 법칙
 
-[[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발}에서 스티브 맥코넬은 다음과 같이 설명한다.
+[[/PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발}에서 스티브 맥코넬은 다음과 같이 설명한다.
 
 >
 콘웨이 법칙은 "프로그램의 구조는 그것을 제작하는 조직의 구조를 반영한다"는 것이다.
@@ -134,7 +134,7 @@ If the architecture of the system and the architecture of the organization are a
 
 ### 프레드 브룩스가 설명한 콘웨이의 법칙
 
-[[Mythical-Man-Month]]의 "10장 기록물 가설"을 읽어보면 프레드 브룩스가 콘웨이의 법칙을 설명한다.
+[[/Mythical-Man-Month]]의 "10장 기록물 가설"을 읽어보면 프레드 브룩스가 콘웨이의 법칙을 설명한다.
 
 >
 조직도는 콘웨이의 법칙이 말하는 것처럼 인터페이스 명세와 서로 얽혀 있다.
@@ -286,7 +286,7 @@ The principle creates an imperative (1)to keep asking: “Is there a better desi
 
 [^origin]: [CONWAY'S LAW](http://www.melconway.com/Home/Conways_Law.html ): 콘웨이의 홈페이지에서 인용.
 [^reject]: 마이크로서비스 아키텍처 구축 10.1
-[^steve]: [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{Professional 소프트웨어 개발} 184쪽.
+[^steve]: [[/PROFESSIONAL-SOFTWARE-DEVELOPMENT]] 184쪽.
 [^bob]: 클린 아키텍처 16장 독립성. 158쪽.
 [^inverse-conway]: 마이크로서비스 구축과 운영 1장 마이크로서비스. 51쪽.
 [^devops-handbook-123]: 데브옵스 핸드북. 123쪽.
