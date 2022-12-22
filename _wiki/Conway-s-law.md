@@ -3,7 +3,7 @@ layout  : wiki
 title   : 콘웨이의 법칙(Conway's law)
 summary : 소프트웨어 구조는 개발 조직의 커뮤니케이션 구조를 닮는다.
 date    : 2017-12-04 21:34:28 +0900
-updated : 2022-12-22 18:01:29 +0900
+updated : 2022-12-22 18:26:11 +0900
 tag     : proverb law
 resource: 12/A29B77-E521-4B40-AAC3-1C2C7B323612
 toc     : true
@@ -239,6 +239,25 @@ Windows Vista 개발 조직과 소프트웨어 품질과의 상관관계를 연�
 >
 > 역콘웨이의 법칙 때문에 발생하는 관련 문제는 더 있다. 모놀리식 아키텍처를 사용하는 회사에서 거의 발견되지 않는 운영 조직에 대한 운영의 어려움이다. 모놀리스에서는 애플리케이션을 위해 운영 인력의 배치와 비상 대기 업무 지원이 용이하지만 마이크로서비스 아키텍처에서는 잘 해내기가 매우 어렵다. 왜냐하면 마이크로서비스마다 개발 팀과 운영 팀 둘 다 배치해야 하기 때문이다. 결과적으로 마이크로서비스 개발 팀은 운영 업무와 마이크로서비스에 연관된 작업을 담당해야 한다. 비상 대기 업무와 모니터링 업무를 맡을 별도의 운영 조직이 없다. 즉, 개발자는 자신의 서비스에 대해 비상 대기해야 한다.
 
+### 주의할 점: 팀의 구조에 따라 Functional Sharding을 하지 말 것
+
+- 팀의 구조에 따라 각각의 데이터 table을 다른 database에 두고 싶다면 매우 신중하게 결정해야 한다.
+- 팀보다 데이터가 더 오래 살아남기 때문이다.
+
+>
+비즈니스에서 '기능'을 기반으로 데이터를 분할하려면 데이터가 무엇인지 깊은 이해가 필요합니다.
+이는 서비스 지향 아키텍처(SOA) 및 마이크로 서비스와 같은 일반적인 소프트웨어 아키텍처 패러다임과 맞물려 있습니다.
+모든 기능적 접근 방식이 동일한 것은 아니며, 위의 극단적인 비즈니스 사레에서 각 테이블을 자체 '기능적' 데이터베이스에 넣는다면 너무 많은 단편화로 인해 모든 것을 악화시킬 수 있습니다.
+>
+우려되는 대규모 단일/혼합 데이터베이스를 비즈니스 확장에 도움이 되는 합리적인 소규모 클러스터 세트로 분할하려면 어떻게 해야 할까요?
+다음 몇 가지 지침을 기억해두세요.
+>
+- 엔지니어링 팀의 구조에 따라 나누지 마십시오. 그 구조는 어느 순간 바뀔 것입니다.
+- 비즈니스 기능에 따라 테이블을 분할합니다. 계정 등록을 지원하는 테이블은 기존 고객 설정을 호스팅하는 테이블과 분리될 수 있으며 새로운 기능을 지원하는 테이블은 자체 데이터베이스에서 시작해야 합니다.
+- 데이터에 별도의 비즈니스 문제가 뒤섞이는 것을 너무 두려워하지 마십시오. 데이터 분리뿐만 아니라 애플리케이션 리팩터링이나 API 액세스 도입 문제가 있을 수도 있습니다. 흔한 예로 고객 ID와 고객 청구서를 혼합하는 것을 들 수 있습니다.
+[^hi-perf-mysql-331]
+
+
 ## 애플리케이션 개발 단순화를 위한 교훈들
 
 [Toward Simplifying Application Development, in a Dozen Lessons Mel Conway]( http://melconway.com/Home/pdf/simplify.pdf )
@@ -271,6 +290,7 @@ The principle creates an imperative (1)to keep asking: “Is there a better desi
 
 ## 참고문헌
 
+- MySQL 성능 최적화 / 실비아 보트로스, 제레미 틴리 저/류수미, 송희정 역 / 위키북스 / 초판발행 2022년 09월 22일 /  원제 : High Performance MySQL 4E
 - Professional 소프트웨어 개발 / 스티브 맥코넬 저 / 윤준호, 한지윤 공역 / 인사이트(insight) / 초판 4쇄 2006년 10월 13일 / 원제 : Professional Software Development (Addison-Wesley)
 - 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
 - 마이크로서비스 구축과 운영 / 수잔 파울러 저/서영일 역 / 에이콘출판사 / 발행 2019년 05월 31일 / 원서 : Production-Ready Microservices: Building Standardized Systems Across an Engineering Organization
@@ -295,4 +315,5 @@ The principle creates an imperative (1)to keep asking: “Is there a better desi
 [^prag-368]: 실용주의 프로그래머 20주년 기념판. Topic 47. 368쪽.
 [^simplify]: Toward Simplifying Application Development, in a Dozen Lessons - Mel Conway (pdf). 4쪽.
 [^team-topologies-53]: 팀 토폴로지. 2장. 53쪽.
+[^hi-perf-mysql-331]: MySQL 성능 최적화. 11장. 331쪽.
 
