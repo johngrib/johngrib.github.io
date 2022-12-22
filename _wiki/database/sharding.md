@@ -3,7 +3,7 @@ layout  : wiki
 title   : 샤딩(Sharding)과 파티셔닝
 summary : 
 date    : 2019-09-26 16:00:47 +0900
-updated : 2022-12-18 18:08:23 +0900
+updated : 2022-12-22 22:11:52 +0900
 tag     : db
 resource: 41/7AC1DF-B9FA-4145-AD83-42D5FADBB136
 toc     : true
@@ -13,24 +13,6 @@ latex   : false
 ---
 * TOC
 {:toc}
-
-
-## 기능적 샤딩과 수평적 샤딩
-
->
-_Functional sharding_ means splitting specific tables that serve a specific business function into a dedicated cluster in order to manage separately this data set’s uptime, performance, or even access controls.
->
-_Horizontal sharding_ is when you have a data set that has grown past the size you can reliably serve out of a single cluster, so you split it into multiple clusters and serve the data from several nodes, relying on some look-up mechanism to locate the subset you need.
-
-<span/>
-
->
-**기능적 샤딩**은 데이터 세트의 가동 시간, 성능 또는 엑세스 제어를 별도로 관리하기 위해 특정 비즈니스 기능을 수행하는 특정 테이블을 전용 클러스터로 분할하는 것을 의미합니다.
->
-**수평적 샤딩**은 단일 클러스터에서 안정적으로 제공할 수 있는 크기 이상으로 데이터 세트가 증가한 경우, 이를 여러 클러스터로 분할하여 여러 노드의 데이터를 제공하고 필요한 하위 집합을 찾는 조회 메커니즘에 따라 데이터를 제공하는 것입니다.
-[^h-p-mysql-41]
-
-이 문서에서는 주로 수평적 샤딩을 다룬다.
 
 ## From: 관계형 데이터베이스 실전 입문
 
@@ -48,6 +30,52 @@ _Horizontal sharding_ is when you have a data set that has grown past the size y
     * 해당 DB 서버 내부의 데이터만 join할 수 있다.
 * 각각의 샤드는 같은 구조의 스키마를 갖지만, 자동으로 동기화되지는 않는다는 점에 주의.
     * 스키마 구조를 변경하려면 DBA가 모든 샤드에 적용해줘야 한다.
+
+## From: MySQL 성능 최적화
+
+>
+**샤딩(Sharding)**은 더 많은 소스 호스트에서 동시에 더 많은 쓰기를 실행할 수 있도록 데이터를 각기 다른 더 작은 데이터베이스 클러스터로 분할하는 것을 의미합니다.
+[^h-p-mysql-339]
+
+### 기능적 샤딩과 수평적 샤딩
+
+>
+_Functional sharding_ means splitting specific tables that serve a specific business function into a dedicated cluster in order to manage separately this data set’s uptime, performance, or even access controls.
+>
+_Horizontal sharding_ is when you have a data set that has grown past the size you can reliably serve out of a single cluster, so you split it into multiple clusters and serve the data from several nodes, relying on some look-up mechanism to locate the subset you need.
+
+<span/>
+
+>
+**기능적 샤딩**은 데이터 세트의 가동 시간, 성능 또는 엑세스 제어를 별도로 관리하기 위해 특정 비즈니스 기능을 수행하는 특정 테이블을 전용 클러스터로 분할하는 것을 의미합니다.
+>
+**수평적 샤딩**은 단일 클러스터에서 안정적으로 제공할 수 있는 크기 이상으로 데이터 세트가 증가한 경우, 이를 여러 클러스터로 분할하여 여러 노드의 데이터를 제공하고 필요한 하위 집합을 찾는 조회 메커니즘에 따라 데이터를 제공하는 것입니다.
+[^h-p-mysql-41]
+
+이 책은 "기능적 샤딩(Functional sharding)"과 "수평적 샤딩(Horizontal sharding)"에 대해 "기능적 파티셔닝(Functional partitioning)"과 "데이터 샤딩(Data sharding)"으로 혼용한다.
+
+>
+**기능적 파티셔닝** 또는 업무 분담은 다른 노드를 다른 작업에 할당하는 것을 의미합니다.
+사용자 레코드를 한 클러스터에 배치하고 청구서를 다른 클러스터에 두는 예를 들 수 있습니다.
+이 접근방식을 사용하면 각 클러스터를 독립적으로 확장할 수 있습니다.
+사용자 등록의 급증은 사용자 클러스터에 부담을 줄 수 있습니다.
+별도의 시스템을 사용하면 청구 클러스터의 로드가 줄어 고객에게 청구가 가능합니다.
+반대로 청구 주기가 매월 1일이면 사용자 등록에 영향을 미치지 않는다는 것을 알고 실행할 수 있습니다.
+>
+**데이터 샤딩**은 오늘날의 초대형 MySQL 애플리케이션을 확장하기 위한 가장 보편적이고 성공적인 접근 방식입니다.
+데이터를 더 작은 조각 또는 샤드로 분할하고 다른 노드에 저장함으로써 데이터를 샤딩합니다.
+>
+대부분의 애플리케이션은 샤딩이 필요한 데이터(일반적으로 매우 커질 데이터 세트의 일부)만 샤딩합니다.
+블로그 서비스를 구축한다고 가정합시다.
+1,000만 명의 사용자가 있을 것으로 예상 되는 경우 모든 사용자(또는 해당 사용자의 활성 하위 집합)를 메모리에 완전히 저장할 수 있으므로 사용자 등록정보를 분할할 필요가 없습니다.
+반면에 5억 명의 사용자가 예상된다면 이 데이터를 샤딩해야 합니다. 게시물이나 댓글과 같은 사용자가 생성하는 콘텐츠는 어느 경우든 샤딩이 필요할 것이 거의 확실합니다.
+왜냐하면 이러한 레코드는 훨씬 크고 더 많기 때문입니다.
+>
+대규모 애플리케이션에는 다르게 분할할 수 있는 여러 논리적 데이터 세트가 있을 수 있습니다.
+다른 서버 세트에 저장할 수 있지만 꼭 그럴 필요는 없습니다. 액세스 방법에 따라 동일한 데이터를 다양한 방법으로 샤딩할 수도 있습니다.
+[^h-p-mysql-340]
+
+
 
 ## From: 데이터 중심 애플리케이션 설계
 
@@ -194,3 +222,5 @@ HBase에서는 **리전(region)**, 빅테이블에서는 **태블릿(tablet)**, 
 [^define-sharding]: 데이터 중심 애플리케이션 설계. 6장. 199쪽.
 [^define-partition]: 데이터 중심 애플리케이션 설계. 6장. 199쪽.
 [^h-p-mysql-41]: MySQL 성능 최적화. 2장. 41쪽.
+[^h-p-mysql-339]: MySQL 성능 최적화. 11장. 339쪽.
+[^h-p-mysql-340]: MySQL 성능 최적화. 11장. 340쪽.
