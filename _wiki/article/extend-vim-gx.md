@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim의 gx 확장하기
 summary : 
 date    : 2022-12-23 14:53:36 +0900
-updated : 2022-12-23 16:26:12 +0900
+updated : 2022-12-23 16:31:31 +0900
 tag     : 
 resource: 10/9A63EA-F82B-4583-BAE6-33BAFB4B0449
 toc     : true
@@ -33,7 +33,7 @@ NeoVim에서 `gx`를 누르면 현재 커서가 위치한 문자열을 인식해
 
 이제부터는 NeoVim이라 부르면 번거로우니까 그냥 Vim이라 부르겠습니다.
 
-아무튼 `gx`를 확인해보기 위해 vim의 설정 파일을 `/dev/null`로 지정해서 열어봅시다.
+아무튼 `gx`를 확인해보기 위해 vim의 설정 파일을 `/dev/null`로 지정해서 열어봅시다.[^u-option]
 
 ```bash
 $ vim -u /dev/null
@@ -185,4 +185,8 @@ nnoremap gx <cmd>call <SID>openWhatever()<CR>
 그리고 `gx`에 배열을 루프하며 정규식을 검사해서 함수를 호출해주는 `s:openWhatever`를 연결해 줬습니다.
 
 이제 이걸 사용해서 `Plug` 구문에서 `gx`하면 브라우저가 열리는 것을 확인할 수 있습니다.
+
+## 주석
+
+[^u-option]: `vim -u filename` 형식으로 Vim 초기화에 사용할 설정 파일을 지정할 수 있습니다. 자세한 내용은 `man vim` 또는 `:help -u`, `:help initialization`를 참고하세요.
 
