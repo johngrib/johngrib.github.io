@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim의 gx 확장하기
 summary : gx를 확장해서 다양한 용도로 사용하자
 date    : 2022-12-23 14:53:36 +0900
-updated : 2022-12-23 18:25:31 +0900
+updated : 2022-12-23 18:27:13 +0900
 tag     : vim
 resource: 10/9A63EA-F82B-4583-BAE6-33BAFB4B0449
 toc     : true
@@ -141,7 +141,7 @@ call add(s:match_config, {'regex': "\\vPlug +'([^ /]+/[^ /]+)'", 'exec': {p -> s
 
 `PlugFile`은 제가 간단히 만든 파일 단위 vim 플러그인을 꽂아넣기 위한 기능인데요, 이번 발표의 범위는 아니니 넘어가도록 하겠습니다.[^about-plugfile]
 
-### gx 매핑 함수
+### gx에 매핑할 NetrwBrowseX 대체 함수
 
 여기에서 주목할 것은 셋째 줄입니다. `Plug` 구문을 인식해서 `s:plug_simple_match` 함수를 호출하도록 해 두었습니다.
 
