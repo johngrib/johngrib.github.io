@@ -1,10 +1,10 @@
 ---
 layout  : wiki
 title   : Vim의 gx 확장하기
-summary : 
+summary : gx를 확장해서 다양한 용도로 사용하자
 date    : 2022-12-23 14:53:36 +0900
-updated : 2022-12-23 17:16:58 +0900
-tag     : 
+updated : 2022-12-23 18:25:31 +0900
+tag     : vim
 resource: 10/9A63EA-F82B-4583-BAE6-33BAFB4B0449
 toc     : true
 public  : true
