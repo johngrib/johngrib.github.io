@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim의 gx 확장하기
 summary : 
 date    : 2022-12-23 14:53:36 +0900
-updated : 2022-12-23 16:23:42 +0900
+updated : 2022-12-23 16:26:12 +0900
 tag     : 
 resource: 10/9A63EA-F82B-4583-BAE6-33BAFB4B0449
 toc     : true
@@ -15,6 +15,8 @@ latex   : false
 {:toc}
 
 ## 일러두기
+
+![VimEnter 2022]( /resource/10/9A63EA-F82B-4583-BAE6-33BAFB4B0449/209291566-58be1a09-3b39-42e1-a472-182483de17d5.png )
 
 >
 - 이 글은 [au VimEnter * call Bye2022()]( https://event-us.kr/vim/event/51490 ) 발표 자료입니다.
