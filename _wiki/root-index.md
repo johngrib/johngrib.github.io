@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-21 12:05:33 +0900
+updated : 2022-12-23 14:53:33 +0900
 regenerate: true
 ---
 
@@ -47,6 +47,7 @@ regenerate: true
 - [[/article/vim-night/20220401-insert-mode]]
 - [[/article/vim-night/20220327-ultisnips]]
 - [[/article/vim-night/20220331-insert-mode]]
+- [[/article/extend-vim-gx]]
 
 ## [[algorithm]]
 
