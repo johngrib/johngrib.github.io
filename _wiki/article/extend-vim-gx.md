@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim의 gx 확장하기
 summary : 
 date    : 2022-12-23 14:53:36 +0900
-updated : 2022-12-23 15:31:17 +0900
+updated : 2022-12-23 16:23:42 +0900
 tag     : 
 resource: 10/9A63EA-F82B-4583-BAE6-33BAFB4B0449
 toc     : true
@@ -17,7 +17,8 @@ latex   : false
 ## 일러두기
 
 >
-이 글은 [au VimEnter * call Bye2022()]( https://event-us.kr/vim/event/51490 )에서 사용한 발표 자료입니다.
+- 이 글은 [au VimEnter * call Bye2022()]( https://event-us.kr/vim/event/51490 ) 발표 자료입니다.
+- [NVIM v0.8.0 버전]( https://github.com/neovim/neovim/releases/tag/v0.8.0 )을 기준으로 합니다.
 {:style="background-color: #ecf1e8;"}
 
 ## NeoVim의 gx
