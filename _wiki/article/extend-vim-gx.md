@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim의 gx 확장하기
 summary : 
 date    : 2022-12-23 14:53:36 +0900
-updated : 2022-12-23 16:31:31 +0900
+updated : 2022-12-23 17:16:58 +0900
 tag     : 
 resource: 10/9A63EA-F82B-4583-BAE6-33BAFB4B0449
 toc     : true
@@ -139,7 +139,7 @@ call add(s:match_config, {'regex': "\\vPlugFile +'([^ ]+)'", 'exec': {p -> s:plu
 call add(s:match_config, {'regex': "\\vPlug +'([^ /]+/[^ /]+)'", 'exec': {p -> s:plug_simple_match(p)} })
 ```
 
-`PlugFile`은 제가 간단히 만든 파일 단위 vim 플러그인을 꽂아넣기 위한 기능인데요, 이번 발표의 범위는 아니니 넘어가도록 하겠습니다.
+`PlugFile`은 제가 간단히 만든 파일 단위 vim 플러그인을 꽂아넣기 위한 기능인데요, 이번 발표의 범위는 아니니 넘어가도록 하겠습니다.[^about-plugfile]
 
 ### gx 매핑 함수
 
@@ -189,4 +189,4 @@ nnoremap gx <cmd>call <SID>openWhatever()<CR>
 ## 주석
 
 [^u-option]: `vim -u filename` 형식으로 Vim 초기화에 사용할 설정 파일을 지정할 수 있습니다. 자세한 내용은 `man vim` 또는 `:help -u`, `:help initialization`를 참고하세요.
-
+[^about-plugfile]: [[/vim/configure-split#방법-4-plugfile-명령으로-include-파일을-명시해준다]] 문서를 참고하세요.
