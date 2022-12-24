@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-24 14:22:59 +0900
+updated : 2022-12-24 21:17:00 +0900
 regenerate: true
 ---
 
@@ -264,6 +264,7 @@ regenerate: true
 
 * [[/java/8]]
 * [[/java/arraylist]]
+* [[/java/enhancements]]
 * [[/java/enum]]
 * [[/java/exception-handling]]
 * [[/java/feel-of-java]]
@@ -285,7 +286,6 @@ regenerate: true
 
 * [[java-abstract-class]]
 * [[java-abstract-method]]
-* [[java-enhancements]]
 * [[java-functional-interface]]
 * [[java-inner-class-may-be-static]]
 * [[java-interface]]
@@ -812,6 +812,7 @@ regenerate: true
 * [[my-wiki]]
 * [[/blog/this]]
     * [[/blog/this/404-fallback]]
+    * [[/blog/this/broken-link]]
     * [[/blog/this/dynamic-insert]]
     * [[/blog/this/footnote]]
     * [[/blog/this/img-migration-to-resource]]
