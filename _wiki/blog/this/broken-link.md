@@ -3,7 +3,7 @@ layout  : wiki
 title   : 깨진 문서 링크를 표시해주는 기능
 summary : 
 date    : 2022-12-24 21:03:35 +0900
-updated : 2022-12-24 21:23:57 +0900
+updated : 2022-12-24 21:33:49 +0900
 tag     : 
 resource: B1/F75A3A-F7CC-4B33-857A-4DEEF91C864E
 toc     : true
@@ -107,8 +107,9 @@ latex   : false
                 return;
             })
             .catch(function(error) {
+                // metadata fetch에 실패하면...
                 item.classList.add('broken-link');
-                item.innerHTML += `<sub class="link-${status}"></sub>`
+                item.innerHTML += `<sub class="link-${status}"></sub>`  // 여기
                 console.log(target, status);
             });
     }
