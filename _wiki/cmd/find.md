@@ -3,7 +3,7 @@ layout  : wiki
 title   : find 명령어
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2022-02-06 17:47:54 +0900
+updated : 2022-12-25 11:44:24 +0900
 tag     : bash command
 resource: 4F/D2AFEF-7A65-4637-82FF-86AEAE03D596
 toc     : true
@@ -31,6 +31,10 @@ find . -size +1024
 
  # 사이즈가 100 MB 이상인 파일을 모두 찾아 사이즈가 큰 순서대로 정렬한다
 find ~/Documents/ -size +100M -ls | sort -k7nr
+
+ # 비어 있는 디렉토리를 찾는다
+find . -d -empty
+find . -type d -empty
 ```
 
 ### 삭제
