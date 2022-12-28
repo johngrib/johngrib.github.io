@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-24 21:17:00 +0900
+updated : 2022-12-28 11:41:03 +0900
 regenerate: true
 ---
 
@@ -41,6 +41,7 @@ regenerate: true
 - [[/article/incremental-way]]
 - [[/article/science-and-delete]]
 - [[/article/test-code-and-falsifiability]]
+- [[/article/vim-night/20220406-escape]]
 - [[/article/vim-night/20220404-control-key]]
 - [[/article/vim-night/20220403-slash-search]]
 - [[/article/vim-night/20220402-surround]]
