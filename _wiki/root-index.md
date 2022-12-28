@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-28 19:55:40 +0900
+updated : 2022-12-28 22:38:56 +0900
 regenerate: true
 ---
 
@@ -535,6 +535,7 @@ regenerate: true
 * [[/cmd/fc]]
 * [[/cmd/file]]
 * [[/cmd/find]]
+* [[/cmd/fortune]]
 * [[/cmd/grep]]
 * [[/cmd/iostat]]
 * [[/cmd/java_home]]
@@ -564,7 +565,6 @@ regenerate: true
 * [[du]]
 * [[fd-cmd]]
 * [[fish-shell]]
-* [[fortune-cmd]]
 * [[glow-cmd]]
 * [[google-java-format]]
 * [[gpg]]

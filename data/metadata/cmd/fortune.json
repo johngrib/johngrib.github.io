@@ -3,8 +3,8 @@
  "title": "fortune 명령어",
  "summary": "랜덤으로 격언/속담 등을 보여준다",
  "parent": "cmd",
- "url": "/wiki/fortune-cmd",
- "updated": "2022-12-02 01:32:43 +0900",
+ "url": "/wiki/cmd/fortune",
+ "updated": "2022-12-28 22:39:02 +0900",
  "resource": "A1/10A069-3130-4810-BCF1-41F2F75BC4F4",
  "children": []
 }
