@@ -3,7 +3,7 @@ layout  : wiki
 title   : 클로드 섀넌 (Claude Elwood Shannon)
 summary : 작성중인 문서
 date    : 2020-07-25 19:47:22 +0900
-updated : 2020-07-29 22:19:17 +0900
+updated : 2022-12-28 22:36:50 +0900
 tag     : legend 인물 정보이론 벨-연구소
 resource: 6E/B5BA3F-6EB0-48B6-B3BF-B696DD2163CD
 toc     : true
@@ -94,7 +94,7 @@ latex   : false
 
 ## 참고문헌
 
-- [SON]: 저글러, 땜장이, 놀이꾼, 디지털 세상을 설계하다 / 지미 소니, 로브 굿맨 저/양병찬 역 / 곰출판 / 1판 1쇄 2020년 02월 20일 / 원제: A Mind at Play
+- [SON] 저글러, 땜장이, 놀이꾼, 디지털 세상을 설계하다 / 지미 소니, 로브 굿맨 저/양병찬 역 / 곰출판 / 1판 1쇄 2020년 02월 20일 / 원제: A Mind at Play
 
 ## 주석
 
