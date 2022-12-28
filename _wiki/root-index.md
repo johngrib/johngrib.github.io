@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-28 15:17:25 +0900
+updated : 2022-12-28 15:30:58 +0900
 regenerate: true
 ---
 
@@ -42,6 +42,7 @@ regenerate: true
 - [[/article/science-and-delete]]
 - [[/article/test-code-and-falsifiability]]
 
+- [[/article/vim-night/20220409-session]]
 - [[/article/vim-night/20220408-ctags]]
 - [[/article/vim-night/20220407-cheatsheet]]
 - [[/article/vim-night/20220406-escape]]
