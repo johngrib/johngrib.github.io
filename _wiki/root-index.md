@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-28 22:38:56 +0900
+updated : 2022-12-29 20:18:23 +0900
 regenerate: true
 ---
 
@@ -274,6 +274,7 @@ regenerate: true
 * [[/java/exception-handling]]
 * [[/java/feel-of-java]]
 * [[/java/hashmap]]
+* [[/java/inner-class-may-be-static]]
 * [[/java/javadoc]]
 * [[/java/object-clone]]
 * [[/java/object-equals]]
@@ -292,7 +293,6 @@ regenerate: true
 * [[java-abstract-class]]
 * [[java-abstract-method]]
 * [[java-functional-interface]]
-* [[java-inner-class-may-be-static]]
 * [[java-interface]]
 * [[java-jigsaw-quick-start]]
 * [[java-lambda]]

@@ -3,8 +3,8 @@
  "title": "Java의 내부 클래스는 static으로 선언하자",
  "summary": "메모리를 더 먹고, 느리고, 바깥 클래스가 GC 대상에서 빠질 수 있다",
  "parent": "java",
- "url": "/wiki/java-inner-class-may-be-static",
- "updated": "2021-02-14 13:18:58 +0900",
+ "url": "/wiki/java/inner-class-may-be-static",
+ "updated": "2022-12-29 20:19:06 +0900",
  "resource": "E8/EB9311-6660-4911-94DD-7B5AB25FC545",
  "children": []
 }

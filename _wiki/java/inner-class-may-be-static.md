@@ -3,12 +3,12 @@ layout  : wiki
 title   : Java의 내부 클래스는 static으로 선언하자
 summary : 메모리를 더 먹고, 느리고, 바깥 클래스가 GC 대상에서 빠질 수 있다
 date    : 2021-02-11 19:01:50 +0900
-updated : 2021-02-14 13:18:58 +0900
+updated : 2022-12-29 20:19:06 +0900
 tag     : java memory-leak
 resource: E8/EB9311-6660-4911-94DD-7B5AB25FC545
 toc     : true
 public  : true
-parent  : [[java]]
+parent  : [[/java]]
 latex   : false
 ---
 * TOC
@@ -91,9 +91,9 @@ static을 생략하면 바깥 인스턴스로의 숨은 외부 참조를 갖게 
 
 ## 참고문헌
 
-- [JOS] 이펙티브 자바 (3판) / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
+- 이펙티브 자바 (3판) / 조슈아 블로크 저/개앞맵시 역 / 인사이트(insight) / 초판 2쇄 2018년 11월 21일
 
 ## 주석
 
-[^JOS-24]: [JOS] 아이템 24. 멤버 클래스는 되도록 static으로 만들라
+[^JOS-24]: 이펙티브 자바 (3판). 아이템 24. 멤버 클래스는 되도록 static으로 만들라
 
