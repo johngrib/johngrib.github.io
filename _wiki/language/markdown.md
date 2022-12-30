@@ -3,7 +3,7 @@ layout  : wiki
 title   : Markdown
 summary : 
 date    : 2022-12-30 17:36:07 +0900
-updated : 2022-12-30 18:26:58 +0900
+updated : 2022-12-30 18:32:06 +0900
 tag     : 
 resource: C7/560D95-CA1F-4AA4-A4C4-134414A9C712
 toc     : true
@@ -116,3 +116,6 @@ latex   : false
     - [X] 수학
     - [X] 과학
 
+## 참고문헌
+
+- <https://www.markdownguide.org/extended-syntax/ >
