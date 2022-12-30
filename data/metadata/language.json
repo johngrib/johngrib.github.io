@@ -16,6 +16,7 @@
   "language/aheui",
   "language/css",
   "language/graphql",
+  "language/markdown",
   "language/toml",
   "php",
   "python",
