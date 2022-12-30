@@ -1,14 +1,14 @@
 ---
 layout  : wiki
-title   : sort 명령어
+title   : sort
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
-updated : 2021-10-17 18:44:26 +0900
+updated : 2022-12-30 23:12:06 +0900
 tag     : bash sort command
 resource: 0F/C08091-20AE-4A88-83AD-0735D902E917
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 issue-number : 171
 ---
