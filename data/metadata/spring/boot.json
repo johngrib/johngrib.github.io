@@ -6,5 +6,7 @@
  "url": "/wiki/spring/boot",
  "updated": "2022-12-30 23:43:18 +0900",
  "resource": "B7/DD9BBF-319B-4827-9A22-92D11A8F1F6F",
- "children": []
+ "children": [
+  "spring/boot/starter"
+ ]
 }
