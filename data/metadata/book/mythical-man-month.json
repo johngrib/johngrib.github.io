@@ -1,10 +1,10 @@
 {
  "type": "wiki",
- "title": "(책) 맨먼스 미신 - 소프트웨어 공학에 관한 에세이",
+ "title": "맨먼스 미신",
  "summary": "The Mythical Man-Month - Essays on Software Engineering",
  "parent": "book",
- "url": "/wiki/Mythical-Man-Month",
- "updated": "2018-02-21 22:38:43 +0900",
+ "url": "/wiki/book/mythical-man-month",
+ "updated": "2022-12-30 18:47:05 +0900",
  "resource": "41/4AA21D-D411-47C9-A38C-E82A5867287D",
  "children": []
 }

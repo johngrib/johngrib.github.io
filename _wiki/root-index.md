@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2022-12-30 17:36:03 +0900
+updated : 2022-12-30 18:41:11 +0900
 regenerate: true
 ---
 
@@ -157,6 +157,7 @@ regenerate: true
 
 - [[/book/linchpin]]
 - [[/book/lyubishev]]
+- [[/book/mythical-man-month]]
 - [[/book/team-topologies]]
 - [[/book/the-jargon-file]]
 
@@ -169,7 +170,6 @@ regenerate: true
 - [[Geek-Atlas]]
 - [[GoF-Design-Pattern]]
 - [[HTTP-THE-DEFINITIVE-GUIDE]]
-- [[Mythical-Man-Month]]
 - [[PATTERN-ON-THE-STONE]]
 - [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]
 - [[SCIENTIFIC-AMERICAN-The-Secrets-Of-Consciousness]]

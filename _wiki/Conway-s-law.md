@@ -134,7 +134,7 @@ If the architecture of the system and the architecture of the organization are a
 
 ### 프레드 브룩스가 설명한 콘웨이의 법칙
 
-[[/Mythical-Man-Month]]의 "10장 기록물 가설"을 읽어보면 프레드 브룩스가 콘웨이의 법칙을 설명한다.
+[[/book/mythical-man-month]]의 "10장 기록물 가설"을 읽어보면 프레드 브룩스가 콘웨이의 법칙을 설명한다.
 
 >
 조직도는 콘웨이의 법칙이 말하는 것처럼 인터페이스 명세와 서로 얽혀 있다.

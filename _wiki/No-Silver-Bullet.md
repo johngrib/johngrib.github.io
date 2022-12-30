@@ -22,7 +22,7 @@ latex   : false
 * [[Brooks-s-law]]{프레드 브룩스}가 1986년에 쓴 논문이다.
 * 1986년, IFIP(International Federation for Information Processing) 학회의 초청 논문으로 회보에 실렸다.
 * 1987년 4월, IEEE Computer Society의 월간지인 ["Computer" Volume 20, issue 4](http://ieeexplore.ieee.org/document/1663532/ )에 다시 실렸다.
-* [[Mythical-Man-Month]] 20주년 판에도 수록되었다(16장).
+* [[/book/mythical-man-month]] 20주년 판에도 수록되었다(16장).
 
 
 프레드 브룩스의 주장을 요약하자면 다음과 같다.

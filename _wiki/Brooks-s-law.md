@@ -20,7 +20,7 @@ latex   : true
 
 > 브룩스의 법칙 : "늦어진 소프트웨어 프로젝트에 인력을 추가로 투입하면 더 늦어지게 된다"
 
-프레드 브룩스(Frederick P. Brooks Jr.)가 자신의 책 [[Mythical-Man-Month]] 2장 '맨먼스 미신'에서 제시한 법칙이다.
+프레드 브룩스(Frederick P. Brooks Jr.)가 자신의 책 [[/book/mythical-man-month]] 2장 '맨먼스 미신'에서 제시한 법칙이다.
 
 * 프레드 브룩스는
     * [1999년 튜링상 수상자](https://amturing.acm.org/award_winners/brooks_1002187.cfm).
@@ -93,6 +93,6 @@ $$n$$ 명이 수행중인 프로젝트 막바지에 새로 $$m$$ 명의 인력�
 
 ## Links
 
-* [[Mythical-Man-Month]]
+* [[/book/mythical-man-month]]
 * [Brooks's law(wikipedia)](https://en.wikipedia.org/wiki/Brooks%27s_law#cite_note-BROOKS-1)
 * [1999년 튜링상 수상](https://amturing.acm.org/award_winners/brooks_1002187.cfm).

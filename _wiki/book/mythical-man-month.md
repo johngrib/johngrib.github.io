@@ -1,14 +1,14 @@
 ---
 layout  : wiki
-title   : (책) 맨먼스 미신 - 소프트웨어 공학에 관한 에세이
+title   : 맨먼스 미신
 summary : The Mythical Man-Month - Essays on Software Engineering
 date    : 2018-02-19 12:52:55 +0900
-updated : 2018-02-21 22:38:43 +0900
+updated : 2022-12-30 18:47:05 +0900
 tag     : book Fred-Brooks
 resource: 41/4AA21D-D411-47C9-A38C-E82A5867287D
 toc     : true
 public  : true
-parent  : [[book]]
+parent  : [[/book]]
 latex   : false
 ---
 * TOC
@@ -28,7 +28,7 @@ latex   : false
 
 * [1999년 튜링상 수상자](https://amturing.acm.org/award_winners/brooks_1002187.cfm).
 * [노스 캐롤라이나 대학 컴퓨터 과학과를 설립했다](http://cs.unc.edu/people/frederick-p-brooks-jr/).
-* 논문 [[No-Silver-Bullet]]{은총알은 없다}를 쓴 사람이다.
+* 논문 [[/No-Silver-Bullet]]{은총알은 없다}를 쓴 사람이다.
     * "은총알은 없다"는 맨먼스 미신 20주년 기념판의 16장에 수록되어 있다.
 
 ## 인상적인 부분 내용 정리
@@ -37,7 +37,7 @@ latex   : false
 
 맨먼스(Man-Month) 단위를 사용해 일정을 추정하는 것은 잘못된 사고방식이다.
 
-* [[Brooks-s-law]]{브룩스의 법칙} 참고.
+* [[/Brooks-s-law]]{브룩스의 법칙} 참고.
 
 ### 3장. 외과 수술 팀
 
@@ -62,7 +62,7 @@ latex   : false
 
 #### 외과 수술 팀에 대한 스티브 맥코넬의 코멘트
 
-스티브 맥코넬은 [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]] 10장. "건축가와 목수"에서 프레드 브룩스의 외과 수술 팀 모델에 대해 다음과 같이 적었다.
+스티브 맥코넬은 [[/PROFESSIONAL-SOFTWARE-DEVELOPMENT]] 10장. "건축가와 목수"에서 프레드 브룩스의 외과 수술 팀 모델에 대해 다음과 같이 적었다.
 
 >
 그러나 이 방식을 25년 동안 적용해 오면서, 생산성 향상이 외과 수술 팀 구조에 기인한 게 아니라,
@@ -70,7 +70,7 @@ latex   : false
 
 ### 16장. 은총알은 없다
 
-[[No-Silver-Bullet]] 참고.
+[[/No-Silver-Bullet]] 참고.
 
 * (1986년 기준으로) 앞으로 10년간 소프트웨어 분야에서 프로그래밍 생산성을 10배 이상 향상시킬 발전은 나타나지 않을 것이다.
 * 소프트웨어 개발은 본질적으로 빠른 발전이 불가능한 분야이다.
@@ -78,9 +78,9 @@ latex   : false
 ## Links
 
 * [맨먼스 미신(인사이트 출판사)](http://www.insightbook.co.kr/ppp/%EB%A7%A8%EB%A8%BC%EC%8A%A4-%EB%AF%B8%EC%8B%A0)
-* [[Brooks-s-law]]{브룩스의 법칙}
+* [[/Brooks-s-law]]
 * [프레드 브룩스의 홈페이지](http://www.cs.unc.edu/~brooks/)
-* [[PROFESSIONAL-SOFTWARE-DEVELOPMENT]]{(책) Professional 소프트웨어 개발}
-* [[No-Silver-Bullet]]{은총알은 없다}
+* [[/PROFESSIONAL-SOFTWARE-DEVELOPMENT]]
+* [[/No-Silver-Bullet]]
 
 

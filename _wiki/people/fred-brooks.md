@@ -42,7 +42,7 @@ IBM의 관리자로서 내가 했던 가장 생산적인 행동은 제품 개발
 ## 함께 읽기
 
 - [[/Brooks-s-law]]
-- [[/Mythical-Man-Month]]
+- [[/book/mythical-man-month]]
 - [[/No-Silver-Bullet]]
 
 ## 주석
