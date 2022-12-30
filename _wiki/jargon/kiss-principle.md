@@ -42,7 +42,7 @@ Wikipedia에서는 1960년대의 미 해군에서 비롯되었다는 것.
 
 [KISS - used as a reminder to keep it simple, stupid - US, 1960]( https://books.google.co.kr/books?id=5F-YNZRv-VMC&pg=PA595&redir_esc=y#v=onepage&q&f=false )
 
-![책의 내용]( ./modern-american-slang.jpg )
+![책의 내용]( /resource/FD/53F597-B8EC-41A9-9192-34501AA5EBE4/modern-american-slang.jpg )
 
 ## 참고문헌
 
