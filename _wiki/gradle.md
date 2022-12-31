@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2021-08-18 17:03:02 +0900
+updated : 2022-12-31 14:53:13 +0900
 tag     : gradle tool
 resource: 09/DC229C-F689-45B3-ABD1-23A4C247C76A
 toc     : true
@@ -197,6 +197,7 @@ Java 버전을 11 버전으로 낮춰주었더니 빌드가 잘 되었다.
 * [gradle.org/docs](https://gradle.org/docs/): 문서
 * [github.com/gradle/gradle](https://github.com/gradle/gradle): 소스코드
 * [Apache License 2.0](https://www.apache.org/licenses/#2.0)
+* [Spring Boot Gradle Plugin Reference Guide (spring-boot 3.0.1)]( https://docs.spring.io/spring-boot/docs/3.0.1/gradle-plugin/reference/htmlsingle/ )
 
 ## 참고문헌
 
