@@ -8,6 +8,7 @@
  "spring-bean-config-configuration",
  "spring-bean-config-xml",
  "spring/boot/starter",
+ "spring/cloud",
  "spring/document",
  "spring/document/core",
  "spring/document/core/01-01-introduction",
