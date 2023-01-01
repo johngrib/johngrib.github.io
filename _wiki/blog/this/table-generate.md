@@ -3,7 +3,7 @@ layout  : wiki
 title   : 리스트를 테이블로 변환하는 기능
 summary : 
 date    : 2021-07-19 22:16:43 +0900
-updated : 2022-12-02 19:09:56 +0900
+updated : 2023-01-02 00:29:20 +0900
 tag     : 
 resource: 00/9650BA-0119-4EDC-8557-BD618687B99A
 toc     : true
@@ -206,6 +206,7 @@ ke Spring’s @Qualifier with a value) can be associated through javax.inject.Na
 ## 이 기능을 사용하는 몇몇 페이지들
 
 - [[/pattern/layered-architecture]]
+- [[/spring/cloud/release-train]]
 - [[/spring/document/core/01-11-using-jsr-330-standard-annotations]]
 - [[/spring/document/core/01-15-additional-capabilities-ac]]
 
