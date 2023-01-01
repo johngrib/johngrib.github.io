@@ -3,7 +3,7 @@ layout  : wiki
 title   : java
 summary : 
 date    : 2023-01-01 15:08:19 +0900
-updated : 2023-01-01 16:33:57 +0900
+updated : 2023-01-01 16:51:06 +0900
 tag     : java
 resource: 30/3086D2-D92F-4CEA-914D-7CC3247B680C
 toc     : true
@@ -83,6 +83,13 @@ java [options] --module module[/mainclass] [args...]
 
 ```
 -Dfoo="bar baz"
+```
+
+- 예제
+
+```
+ # spring.profiles.active를 dev 로 설정하고, myapp.jar를 실행한다.
+java -jar -Dspring.profiles.active=dev myapp.jar
 ```
 
 #### -version
