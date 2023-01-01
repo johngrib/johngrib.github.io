@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-01 15:08:17 +0900
+updated : 2023-01-01 20:38:06 +0900
 regenerate: true
 ---
 
@@ -716,7 +716,7 @@ regenerate: true
 * [[tmux-c-dash]]
 * [[why-http-80-https-443]]
 
-## [[spring]]
+## [[/spring]]
 
 * [[spring-annotation-bean]]
 * [[spring-annotation-exceptionhandler]]
