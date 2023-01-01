@@ -6,5 +6,7 @@
  "url": "/wiki/spring/cloud",
  "updated": "2023-01-01 20:43:01 +0900",
  "resource": "66/DBF50B-DD41-43C9-AC75-B507D967424D",
- "children": []
+ "children": [
+  "spring/cloud/release-train"
+ ]
 }

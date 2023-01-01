@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-01 20:42:13 +0900
+updated : 2023-01-01 20:43:32 +0900
 regenerate: true
 ---
 
@@ -730,6 +730,7 @@ regenerate: true
 * [[/spring/boot/starter]]
 
 * [[/spring/cloud]]
+* [[/spring/cloud/release-train]]
 
 ### [[/spring/document]]
 
