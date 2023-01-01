@@ -1,6 +1,7 @@
 [
  "clojure/study/hashmap",
  "clojure/study/vector",
+ "cmd/java",
  "cmd/java_home",
  "defensive-copy",
  "google-java-format",

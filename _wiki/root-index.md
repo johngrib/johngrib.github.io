@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-01 14:25:59 +0900
+updated : 2023-01-01 15:08:17 +0900
 regenerate: true
 ---
 
@@ -541,6 +541,7 @@ regenerate: true
 * [[/cmd/fortune]]
 * [[/cmd/grep]]
 * [[/cmd/iostat]]
+* [[/cmd/java]]
 * [[/cmd/java_home]]
 * [[/cmd/less]]
 * [[/cmd/man]]
