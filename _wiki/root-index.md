@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-01 20:43:32 +0900
+updated : 2023-01-03 13:59:39 +0900
 regenerate: true
 ---
 
@@ -18,6 +18,7 @@ regenerate: true
 * [[/memo/2022]]
 
 * [[links]]
+    * [[/links/2023]]
     * [[/links/2022]]
     * [[/links/2019]]
     * [[/links/2018]]
