@@ -3,7 +3,7 @@ layout  : wiki
 title   : 더프의 장치 (Duff's device)
 summary : 1983년에 고안된 C 언어 루프 풀기 기법
 date    : 2020-10-01 23:08:10 +0900
-updated : 2020-10-02 15:57:36 +0900
+updated : 2023-01-03 12:24:12 +0900
 tag     : algorithm c black-magic 1983
 resource: 18/D736EC-1796-46BC-B3AF-B411751CEB35
 toc     : true
@@ -134,9 +134,9 @@ _VAC C 컴파일러는 루프를 `movw`와 `sobleq`를 사용하는 2개의 인�
 ```
 > Disgusting, no?  But it compiles and runs just fine.  I feel a combination of pride and revulsion at this discovery.  If no one's thought of it before, I think I'll name it after myself.
 
-지저분해 보이죠? 하지만 컴파일도 잘 되고 실행도 잘 됩니다.
+_지저분해 보이죠? 하지만 컴파일도 잘 되고 실행도 잘 됩니다.
 저도 이 발견에 자부심과 혐오감을 함께 느끼고 있습니다.
-만약 이걸 지금까지 아무도 생각해내지 못했다면, 제 이름을 붙여도 될 것 같아요.
+만약 이걸 지금까지 아무도 생각해내지 못했다면, 제 이름을 붙여도 될 것 같아요._
 
 > It amazes me that after 10 years of writing C there are still little corners that I haven't explored fully.  (Actually, I have another revolting way to use switches to implement interrupt driven state machines but it's too horrid to go into.)
 
