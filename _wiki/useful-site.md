@@ -3,7 +3,7 @@ layout  : category
 title   : 유용한 웹 사이트 모음
 summary : 
 date    : 2018-02-06 07:01:45 +0900
-updated : 2022-11-19 15:17:12 +0900
+updated : 2023-01-03 13:41:07 +0900
 tag     : 
 resource: 29/4A9F29-0C6F-4C1D-8600-34457BE41700
 toc     : true
@@ -13,6 +13,15 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## KBS 유튜브 채널 한국맛집K 지도 서비스
+
+>
+KBS의 음식 콘텐츠를 큐레이션 하는 종합 미식채널, -한국맛집K Delicious Korea- 한국 구석구석 오래된 맛집과 다양한 '맛'의 한국인 소울 푸드를 소개합니다.
+
+<https://kmap.kbs.co.kr >
+
+- 확대/축소 잘 되고, 필터링도 가능하며 리뷰도 볼 수 있다.
 
 ## Cloudflare의 인터넷 속도 측정 사이트
 
