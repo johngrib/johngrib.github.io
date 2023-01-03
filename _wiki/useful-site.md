@@ -3,7 +3,7 @@ layout  : category
 title   : 유용한 웹 사이트 모음
 summary : 
 date    : 2018-02-06 07:01:45 +0900
-updated : 2023-01-03 13:52:57 +0900
+updated : 2023-01-03 13:56:12 +0900
 tag     : 
 resource: 29/4A9F29-0C6F-4C1D-8600-34457BE41700
 toc     : true
@@ -13,6 +13,23 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## DB 랭킹
+
+<https://db-engines.com/en/ranking >
+
+2022년 12월 기준 순위는 다음과 같다.
+
+1. Oracle
+1. MySQL
+1. Microsoft SQL Server
+1. PostgreSQL
+1. MongoDB
+1. Redis
+1. IBM Db2
+1. Elasticsearch
+1. Microsoft Access
+1. SQLite
 
 ## KBS 유튜브 채널 한국맛집K 지도 서비스
 
