@@ -10,7 +10,7 @@ toc     : true
 public  : true
 parent  : [[Go-Blog-translation]]
 latex   : false
-issue-number: 113
+giscus  : auto
 ---
 * TOC
 {:toc}

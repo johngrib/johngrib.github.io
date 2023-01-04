@@ -10,7 +10,7 @@ toc     : true
 public  : true
 parent  : [[/clojure]]
 latex   : false
-issue-number: 180
+giscus  : auto
 ---
 * TOC
 {:toc}

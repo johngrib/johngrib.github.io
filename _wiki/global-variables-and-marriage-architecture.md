@@ -9,8 +9,8 @@ resource: 11/955BB8-9B9A-4667-9F46-8388EAC21C14
 toc     : true
 public  : true
 parent  : [[/hack]]
-issue-number : 159
 latex   : true
+giscus  : auto
 ---
 * TOC
 {:toc}

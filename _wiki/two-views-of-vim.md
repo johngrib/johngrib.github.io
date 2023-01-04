@@ -10,6 +10,7 @@ toc     : true
 public  : true
 parent  : [[vim]]
 latex   : true
+giscus  : auto
 ---
 * TOC
 {:toc}

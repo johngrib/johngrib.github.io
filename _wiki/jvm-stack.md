@@ -10,6 +10,7 @@ toc     : true
 public  : true
 parent  : [[jvm]]
 latex   : false
+giscus  : auto
 ---
 * TOC
 {:toc}

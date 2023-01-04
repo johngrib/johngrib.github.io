@@ -10,7 +10,7 @@ toc     : true
 public  : true
 parent  : [[blog]]
 latex   : false
-issue-number : 134
+giscus  : auto
 ---
 * TOC
 {:toc}

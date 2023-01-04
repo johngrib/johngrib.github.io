@@ -10,7 +10,6 @@ toc     : true
 public  : true
 parent  : [[/cmd]]
 latex   : false
-issue-number : 171
 ---
 * TOC
 {:toc}

@@ -8,6 +8,7 @@ resource: 91/85DCEB-2F93-4628-A383-2DCD67F2E500
 toc     : true
 comment : true
 public  : true
+giscus  : auto
 ---
 * TOC
 {:toc}

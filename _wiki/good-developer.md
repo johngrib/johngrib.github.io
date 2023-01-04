@@ -10,6 +10,7 @@ toc     : true
 public  : true
 parent  : [[better-work]]
 latex   : true
+giscus  : auto
 ---
 * TOC
 {:toc}

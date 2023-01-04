@@ -10,7 +10,7 @@ toc     : true
 public  : true
 parent  : [[/regex]]
 latex   : true
-issue-number : 208
+giscus  : auto
 ---
 * TOC
 {:toc}

@@ -10,6 +10,7 @@ toc     : true
 public  : true
 parent  : [[/pattern]]
 latex   : false
+giscus  : auto
 ---
 * TOC
 {:toc}

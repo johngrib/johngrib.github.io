@@ -10,7 +10,7 @@ toc     : true
 public  : true
 parent  : [[/problem]]
 latex   : true
-issue-number: 95
+giscus  : auto
 ---
 * TOC
 {:toc}

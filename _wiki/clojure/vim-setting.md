@@ -10,6 +10,7 @@ toc     : true
 public  : true
 parent  : [[/clojure]]
 latex   : false
+giscus  : auto
 ---
 * TOC
 {:toc}

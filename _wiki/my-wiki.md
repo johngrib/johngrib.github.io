@@ -10,6 +10,7 @@ toc     : true
 comment : true
 public  : true
 parent  : [[blog]]
+giscus  : auto
 ---
 * TOC
 {:toc}

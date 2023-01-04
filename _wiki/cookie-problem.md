@@ -10,6 +10,7 @@ toc     : true
 public  : true
 parent  : [[study-think-bayes]]
 latex   : true
+giscus  : auto
 ---
 * TOC
 {:toc}

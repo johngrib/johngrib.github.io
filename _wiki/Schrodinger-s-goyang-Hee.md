@@ -10,6 +10,7 @@ toc     : true
 public  : true
 parent  : [[book]]
 latex   : false
+giscus  : auto
 ---
 * TOC
 {:toc}

@@ -10,7 +10,7 @@ toc     : true
 public  : true
 parent  : [[/java/gc]]
 latex   : true
-issue-number: 108
+giscus  : auto
 ---
 * TOC
 {:toc}

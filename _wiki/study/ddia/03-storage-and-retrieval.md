@@ -10,6 +10,7 @@ toc     : true
 public  : true
 parent  : [[/study/ddia]]
 latex   : false
+giscus  : auto
 ---
 * TOC
 {:toc}

@@ -10,7 +10,7 @@ toc     : true
 public  : true
 parent  : [[/article]]
 latex   : false
-issue-number: 175
+giscus  : auto
 ---
 * TOC
 {:toc}

@@ -10,6 +10,7 @@ toc     : true
 public  : true
 parent  : [[go]]
 latex   : false
+giscus  : auto
 ---
 * TOC
 {:toc}
