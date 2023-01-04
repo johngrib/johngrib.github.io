@@ -3,7 +3,7 @@ layout  : wiki
 title   : Perl 한 줄 사용
 summary : 
 date    : 2020-06-29 23:33:40 +0900
-updated : 2020-07-18 21:14:38 +0900
+updated : 2023-01-04 16:37:35 +0900
 tag     : bash command
 resource: 53/93E136-7E69-41D7-8A7E-1A9D866F9EEA
 toc     : true
@@ -48,6 +48,9 @@ perl -pi.back -e 's/foo/bar/g unless /sample/' test.txt
 ```
 
 ### 멀티 라인 replace
+
+#### 사례: 모든 java 파일의 만료된 License 블록 주석 삭제하기
+
 ```java
 /*
  * 이 클래스는 License가 어쩌고 저쩌고...
@@ -80,3 +83,8 @@ find . -name '*.java' \
   | xargs perl -i -pe 'BEGIN{undef $/;} s,/\*.*License.*?\*/\s*(?=package),,smg'
 ```
 
+#### 사례: 모든 markdown 파일에서 사용하지 않는 metadata 삭제하기
+
+```bash
+ag giscus -l | grep .md$ | xargs perl -i -pe 'BEGIN{undef $/;} s,giscus *: *auto\s*---,---,smg'
+```
