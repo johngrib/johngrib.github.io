@@ -7,10 +7,6 @@
  "resource": "70/F736AB-3764-468E-AF34-6D809DB097C1",
  "children": [
   "book-log-2019",
-  "book-log-2020",
-  "memo/2019",
-  "memo/2020",
-  "memo/2021",
-  "memo/2022"
+  "book-log-2020"
  ]
 }
