@@ -10,7 +10,6 @@ toc     : true
 public  : true
 parent  : [[Python3]]
 latex   : false
-giscus  : auto
 ---
 * TOC
 {:toc}

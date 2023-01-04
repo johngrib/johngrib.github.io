@@ -10,7 +10,6 @@ toc     : true
 comment : true
 public  : true
 parent  : [[/hack]]
-giscus  : auto
 ---
 * TOC
 {:toc}

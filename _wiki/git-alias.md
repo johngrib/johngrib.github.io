@@ -10,7 +10,6 @@ toc     : true
 public  : true
 parent  : [[git]]
 latex   : false
-giscus  : auto
 ---
 * TOC
 {:toc}

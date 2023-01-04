@@ -10,7 +10,6 @@ toc     : true
 public  : true
 parent  : [[/blog/this]]
 latex   : false
-giscus  : auto
 ---
 * TOC
 {:toc}

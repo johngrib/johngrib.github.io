@@ -10,7 +10,6 @@ toc     : true
 public  : true
 parent  : [[Excel]]
 latex   : false
-giscus  : auto
 ---
 * TOC
 {:toc}

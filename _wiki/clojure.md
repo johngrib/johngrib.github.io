@@ -10,7 +10,6 @@ toc     : true
 public  : true
 parent  : [[language]]
 latex   : false
-giscus  : auto
 ---
 * TOC
 {:toc}

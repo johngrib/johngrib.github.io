@@ -10,7 +10,6 @@ toc     : true
 public  : true
 parent  : [[hammerspoon]]
 latex   : false
-giscus  : auto
 ---
 * TOC
 {:toc}

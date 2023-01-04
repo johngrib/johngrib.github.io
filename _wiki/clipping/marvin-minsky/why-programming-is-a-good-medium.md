@@ -10,7 +10,6 @@ toc     : true
 public  : true
 parent  : [[/clipping]]
 latex   : true
-giscus  : auto
 ---
 * TOC
 {:toc}

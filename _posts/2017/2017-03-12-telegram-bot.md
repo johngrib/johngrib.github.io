@@ -8,7 +8,6 @@ resource: CE/7B98C2-F86D-46A9-949B-56BAA0135AF6
 toc     : true
 comment : true
 public  : true
-giscus  : auto
 ---
 * TOC
 {:toc}

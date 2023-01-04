@@ -9,7 +9,6 @@ resource: 6F/207F04-DA7A-43F7-810F-FB059E57480A
 public  : true
 parent  : [[vim]]
 latex   : false
-giscus  : auto
 ---
 * TOC
 {:toc}
