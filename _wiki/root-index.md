@@ -829,6 +829,7 @@ regenerate: true
 * [[/blog/this]]
     * [[/blog/this/404-fallback]]
     * [[/blog/this/broken-link]]
+    * [[/blog/this/comment]]
     * [[/blog/this/dynamic-insert]]
     * [[/blog/this/footnote]]
     * [[/blog/this/img-migration-to-resource]]
