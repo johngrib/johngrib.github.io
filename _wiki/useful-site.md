@@ -3,7 +3,7 @@ layout  : category
 title   : 유용한 웹 사이트 모음
 summary : 
 date    : 2018-02-06 07:01:45 +0900
-updated : 2023-01-03 13:56:12 +0900
+updated : 2023-01-04 19:27:34 +0900
 tag     : 
 resource: 29/4A9F29-0C6F-4C1D-8600-34457BE41700
 toc     : true
@@ -133,6 +133,11 @@ Yb, `88       88           IP'`Yb IP'`Yb
 
 * [disqus]( https://disqus.com/ )와 비슷한, 개인 블로그 댓글 생성기.
 * 서비스 회사의 DB를 사용하는 disqus와는 달리 utterances는 Github issus 를 사용한다.
+
+[giscus]( https://giscus.app/ko )
+
+* utterances와 비슷하지만 github issue 가 아니라 github discussion 을 사용한다.
+
 
 ## BC 3000년부터 현재까지 연도별 세계의 국경선을 보여주는 사이트
 
