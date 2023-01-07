@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-07 15:31:11 +0900
+updated : 2023-01-07 23:55:48 +0900
 regenerate: true
 ---
 
@@ -417,9 +417,9 @@ regenerate: true
 * [[/jargon/postel-s-law]]
 * [[/jargon/solid]]
 * [[/jargon/no-problem-syndrome]]
+* [[/jargon/boy-scout-rule]]
 
 * [[amdahl-s-law]]
-* [[Boy-Scout-Rule]]
 * [[Brooks-s-law]]
 * [[CAP-theorem]]
 * [[constantine-s-law]]

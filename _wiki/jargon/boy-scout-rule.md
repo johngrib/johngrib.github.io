@@ -3,12 +3,12 @@ layout  : wiki
 title   : 보이 스카웃 규칙
 summary : 캠프장은 처음 왔을 때보다 더 깨끗하게 해놓고 떠나라
 date    : 2018-02-04 16:18:51 +0900
-updated : 2022-07-17 20:05:35 +0900
+updated : 2023-01-07 23:58:27 +0900
 tag     : rule Uncle-Bob
 resource: DA/921A27-7835-4743-8E7C-9FD27D837AEE
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
@@ -26,7 +26,7 @@ The Boy Scout Rule : "Always leave the campground cleaner than you found it."
 
 * [97 Things Every Programmer Should Know - The Boy Scout Rule (programmer.97things.oreilly.com)]( https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html )
 
-[[Clean-Code]]의 저자인 Uncle Bob이 작성한 문서이기 때문에 내용 대부분은 비슷하다.
+[[/Clean-Code]]의 저자인 Uncle Bob이 작성한 문서이기 때문에 내용 대부분은 비슷하다.
 
 다음은 위의 글을 번역한 것이다.
 
@@ -73,7 +73,7 @@ by Uncle Bob
 
 ### Clean Code 에서
 
-* [[Clean-Code]] - 1장 깨끗한 코드. 18쪽.
+* [[/Clean-Code]] - 1장 깨끗한 코드. 18쪽.
 
 >
 잘 짠 코드가 전부는 아니다.
@@ -136,7 +136,7 @@ by Uncle Bob
 
 ## Links
 
-* [[Clean-Code]]
+* [[/Clean-Code]]
 * [97 Things Every Programmer Should Know - The Boy Scout Rule (programmer.97things.oreilly.com)]( https://www.oreilly.com/library/view/97-things-every/9780596809515/ch08.html )
 
 

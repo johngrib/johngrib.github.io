@@ -3,7 +3,7 @@ layout  : wiki
 title   : (책) 클린 코드 - 로버트 C. 마틴
 summary : 애자일 소프트웨어 장인 정신
 date    : 2018-01-26 21:35:22 +0900
-updated : 2018-02-04 16:25:41 +0900
+updated : 2023-01-07 23:59:24 +0900
 tag     : book Uncle-Bob
 resource: 86/8E7C17-085A-4FEB-B5C2-5E281AA4EE0A
 toc     : true
@@ -20,7 +20,7 @@ latex   : false
 
 ## 함께 읽기
 
-* [[Boy-Scout-Rule]]{보이 스카웃 규칙}
+* [[/jargon/boy-scout-rule]]
 
 ## Links
 

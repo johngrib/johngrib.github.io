@@ -3,7 +3,7 @@ layout  : wiki
 title   : DRY 원칙
 summary : Don't Repeat Yourself
 date    : 2020-03-30 21:39:43 +0900
-updated : 2021-09-23 22:15:25 +0900
+updated : 2023-01-07 23:58:06 +0900
 tag     : 
 resource: 1F/23E542-32BB-48EC-BDE2-96510E617158
 toc     : true
@@ -98,7 +98,7 @@ OO 역시 모듈을 정리하고 중복을 제거하는 전략이다.
 
 ## 함께 읽기
 
-- [[Boy-Scout-Rule]]
+- [[/jargon/boy-scout-rule]]
 - [[/pattern/strategy]]
 - [[/pattern/template-method]]
 

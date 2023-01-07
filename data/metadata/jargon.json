@@ -7,7 +7,6 @@
  "resource": "9D/FF1ECF-CBDF-4760-8509-7C81543F7F07",
  "children": [
   "amdahl-s-law",
-  "Boy-Scout-Rule",
   "Brooks-s-law",
   "CAP-theorem",
   "constantine-s-law",
@@ -20,6 +19,7 @@
   "jargon/airplane-rule",
   "jargon/biondi-s-law",
   "jargon/bootstrapping",
+  "jargon/boy-scout-rule",
   "jargon/edsel-edict",
   "jargon/hofstadter-s-law",
   "jargon/kiss-principle",
