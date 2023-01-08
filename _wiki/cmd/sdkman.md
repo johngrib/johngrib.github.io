@@ -3,7 +3,7 @@ layout  : wiki
 title   : sdkman
 summary : 다양한 소프트웨어 개발 도구의 버전을 관리한다
 date    : 2019-09-11 22:44:15 +0900
-updated : 2023-01-08 20:42:48 +0900
+updated : 2023-01-08 20:45:39 +0900
 tag     : bash command
 resource: 41/A74DA3-2CC1-4F03-8B1E-CB251C3C8527
 toc     : true
@@ -36,6 +36,7 @@ $ sdk current java  # java 버전 확인
 ```sh
 $ sdk list java
 $ sdk list scala
+$ sdk list springboot
 ```
 
 ### 개발 도구 설치
@@ -44,6 +45,7 @@ $ sdk list scala
 $ sdk install java                  # latest stable 버전의 Java 설치
 $ sdk install java 11.0.4.hs-adpt   # list 확인 후 identifier를 선택할 것
 $ sdk install scala 2.12.1          # Scala 2.12.1 설치
+$ sdk install springboot 3.0.1      # springboot CLI 3.0.1 설치
 ```
 
 참고로 이렇게 설치하면 `~/.sdk/candidates`에 다운로드된다.
