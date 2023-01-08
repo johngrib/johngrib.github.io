@@ -3,7 +3,7 @@ layout  : wiki
 title   : spring boot starter
 summary : 
 date    : 2022-12-30 23:44:00 +0900
-updated : 2023-01-08 16:11:40 +0900
+updated : 2023-01-08 16:58:52 +0900
 tag     : spring
 resource: 49/827296-5B64-4EA8-8E84-C639F512FEA1
 toc     : true
@@ -93,6 +93,168 @@ The following application starters are provided by Spring Boot under the `org.sp
 그러므로 마이크로서비스의 경우에는 스프링 부트가 명백히 옳은 선택이다.
 >
 -- 마스터링 스프링 클라우드. 2장. 13쪽.
+
+## 목록
+
+<div id="table-starters"></div>
+
+- th
+    - 이름
+    - 설명
+- td
+    - [spring-boot-starter]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter/build.gradle )
+    - Core starter. auto-configuration 지원. logging, YAML 포함.
+- td
+    - [spring-boot-starter-amqp]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-amqp/build.gradle )
+    - Spring AMQP와 Rabbit MQ 사용을 위한 starter.
+- td
+    - [spring-boot-starter-aop]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-aop/build.gradle )
+    - Spring AOP와 AspectJ로 aspect-oriented 프로그래밍 지원.
+- td
+    - [spring-boot-starter-artemis]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-artemis/build.gradle )
+    - Apache Artemis를 위한 starter.
+- td
+    - [spring-boot-starter-batch]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-batch/build.gradle )
+    - Spring Batch를 위한 starter.
+- td
+    - [spring-boot-starter-cache]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-cache/build.gradle )
+    - Spring 프레임워크의 캐시 지원.
+- td
+    - [spring-boot-starter-data-cassandra]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-cassandra/build.gradle )
+    - Cassandra 분산 DB와 Spring Data Cassandra를 위한 starter.
+- td
+    - [spring-boot-starter-data-cassandra-reactive]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-cassandra-reactive/build.gradle )
+    - Cassandra 분산 DB와 Spring Data Cassandra Reactive를 위한 starter.
+- td
+    - [spring-boot-starter-data-couchbase]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-couchbase/build.gradle )
+    - Couchbase document oriented DB와 Spring Data Couchbase를 위한 starter.
+- td
+    - [spring-boot-starter-data-couchbase-reactive]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-couchbase-reactive/build.gradle )
+    - Couchbase document oriented DB와 Spring Data Couchbase Reactive를 위한 starter.
+- td
+    - [spring-boot-starter-data-elasticsearch]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-elasticsearch/build.gradle )
+    - Elasticsearch 검색과 분석 엔진, Spring Data Elasticsearch를 위한 starter.
+- td
+    - [spring-boot-starter-data-jdbc]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-jdbc/build.gradle )
+    - Spring Data JDBC를 위한 starter.
+- td
+    - [spring-boot-starter-data-jpa]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-jpa/build.gradle )
+    - Spring Data JPA with Hibernate를 위한 starter.
+- td
+    - [spring-boot-starter-data-ldap]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-ldap/build.gradle )
+    - Spring Data LDAP를 위한 starter.
+- td
+    - [spring-boot-starter-data-mongodb]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-mongodb/build.gradle )
+    - MongoDB document oriented DB와 Spring Data MongoDB를 위한 starter.
+- td
+    - [spring-boot-starter-data-mongodb-reactive]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-mongodb-reactive/build.gradle )
+    - MongoDB document oriented DB와 Spring Data MongoDB Reactive를 위한 starter.
+- td
+    - [spring-boot-starter-data-neo4j]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-neo4j/build.gradle )
+    - Neo4j graph DB와 Spring Data Neo4j를 위한 starter.
+- td
+    - [spring-boot-starter-data-r2dbc]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-r2dbc/build.gradle )
+    - Spring Data R2DBC를 위한 starter.
+- td
+    - [spring-boot-starter-data-redis]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-redis/build.gradle )
+    - Redis key-value data store와 Spring Data Redis, Lettuce client를 위한 starter.
+- td
+    - [spring-boot-starter-data-redis-reactive]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-redis-reactive/build.gradle )
+    - Redis key-value data store와 Spring Data Redis Reactive, Lettuce client를 위한 starter.
+- td
+    - [spring-boot-starter-data-rest]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-data-rest/build.gradle )
+    - Spring Data REST를 위한 starter.
+- td
+    - [spring-boot-starter-freemarker]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-freemarker/build.gradle )
+    - FreeMarker view를 사용한 MVC 웹 애플리케이션 구축을 위한 starter.
+- td
+    - [spring-boot-starter-graphql]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-graphql/build.gradle )
+    - GraphQL 애플리케이션 구축을 위한 Spring GraphQL starter.
+- td
+    - [spring-boot-starter-groovy-templates]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-groovy-templates/build.gradle )
+    - Groovy Template view를 사용한 MVC 웹 애플리케이션 구축을 위한 starter.
+- td
+    - [spring-boot-starter-hateoas]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-hateoas/build.gradle )
+    - hypermedia 기반의 RESTful 웹 애플리케이션 구축을 위한 Spring MVC 와 Spring HATEOAS starter.
+- td
+    - [spring-boot-starter-integration]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-integration/build.gradle )
+    - Spring Integration을 위한 starter.
+- td
+    - [spring-boot-starter-jdbc]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-jdbc/build.gradle )
+    - HicariCP 커넥션 풀을 통한 JDBC 사용을 위한 starter.
+- td
+    - [spring-boot-starter-jersey]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-jersey/build.gradle )
+    - JAX-RS와 Jersey를 사용한 RESTful 웹 애플리케이션 구축을 위한 starter. spring-boot-starter-web 의 대안.
+- td
+    - [spring-boot-starter-jooq]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-jooq/build.gradle )
+    - JDBC를 통해 SQL DB에 access하는 JOOQ를 위한 starter. spring-boot-starter-jpa 와 spring-boot-starter-jdbc 의 대안.
+- td
+    - [spring-boot-starter-json]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-json/build.gradle )
+    - json을 읽고 쓰기 위한 starter.
+- td
+    - [spring-boot-starter-mail]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-mail/build.gradle )
+    - Java Mail과 Spring 프레임워크의 email 전송 지원을 사용하는 starter.
+- td
+    - [spring-boot-starter-mustache]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-mustache/build.gradle )
+    - Mustache view를 사용하는 웹 애플리케이션 구축을 위한 starter.
+- td
+    - [spring-boot-starter-oauth2-client]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-oauth2-client/build.gradle )
+    - Spring Security의 OAuth2/OpenID Connect client 기능을 사용하는 starter.
+- td
+    - [spring-boot-starter-oauth2-resource-server]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-oauth2-resource-server/build.gradle )
+    - Spring Security의 OAuth2 리소스 서버 기능을 사용하는 starter.
+- td
+    - [spring-boot-starter-quartz]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-quartz/build.gradle )
+    - Quartz scheduler를 사용하는 starter.
+- td
+    - [spring-boot-starter-rsocket]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-rsocket/build.gradle )
+    - RSocket client와 server를 사용하는 starter.
+- td
+    - [spring-boot-starter-security]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-security/build.gradle )
+    - Spring Security를 사용하는 starter.
+- td
+    - [spring-boot-starter-test]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-test/build.gradle )
+    - Spring Boot 애플리케이션 테스트를 위한 starter. JUnit Jupiter, Hamcrest, Mockito 포함.
+- td
+    - [spring-boot-starter-thymeleaf]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-thymeleaf/build.gradle )
+    - Thymeleaf view를 사용하는 MVC 웹 애플리케이션 구축을 위한 starter.
+- td
+    - [spring-boot-starter-validation]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-validation/build.gradle )
+    - Hibernate Validator로 Java Bean Validation을 사용하는 starter.
+- td
+    - [spring-boot-starter-web]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-web/build.gradle )
+    - Spring MVC로 웹 애플리케이션 구축을 위한 starter. RESTful 가능. 디폴트 embedded container는 Tomcat.
+- td
+    - [spring-boot-starter-web-services]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-web-services/build.gradle )
+    - Spring Web Services를 사용하는 starter.
+- td
+    - [spring-boot-starter-webflux]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-webflux/build.gradle )
+    - Spring 프레임워크의 Reactive Web support를 사용해 Spring WebFlux를 애플리케이션을 구축하기 위한 starter.
+- td
+    - [spring-boot-starter-websocket]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-websocket/build.gradle )
+    - Spring 프레임워크의 WebSocket 지원을 사용해 WebSocket 애플리케이션을 구축하기 위한 starter.
+- td
+    - [spring-boot-starter-actuator]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-actuator/build.gradle )
+    - Spring Boot의 Actuator를 통해 애플리케이션의 상태를 모니터링하고 관리하기 위한 starter.
+- td
+    - [spring-boot-starter-jetty]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-jetty/build.gradle )
+    - Jetty를 embedded servlet container로 사용하는 starter. spring-boot-starter-tomcat 의 대안.
+- td
+    - [spring-boot-starter-log4j2]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-log4j2/build.gradle )
+    - logging에 Log4j2를 사용하는 starter. spring-boot-starter-logging 의 대안.
+- td
+    - [spring-boot-starter-logging]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-logging/build.gradle )
+    - logging에 Logback을 사용하는 starter. 디폴트 logging starter.
+- td
+    - [spring-boot-starter-reactor-netty]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-reactor-netty/build.gradle )
+    - Reactor Netty를 embedded reactive HTTP server로 사용하는 starter.
+- td
+    - [spring-boot-starter-tomcat]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-tomcat/build.gradle )
+    - Tomcat을 embedded servlet container로 사용하는 starter. spring-boot-starter-web에서 디폴트 servlet container로 사용하는 starter.
+- td
+    - [spring-boot-starter-undertow]( https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot-starters/spring-boot-starter-undertow/build.gradle )
+    - Undertow를 embedded servlet container로 사용하는 starter. spring-boot-starter-tomcat 의 대안.
+{:class="table-generate" data-target-id="table-starters"}
 
 ## Links
 
