@@ -3,7 +3,7 @@ layout  : wiki
 title   : find 명령어
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2022-12-25 11:44:24 +0900
+updated : 2023-01-08 10:08:00 +0900
 tag     : bash command
 resource: 4F/D2AFEF-7A65-4637-82FF-86AEAE03D596
 toc     : true
@@ -16,6 +16,7 @@ latex   : true
 
 ## Examples
 ### 찾기
+
 ```sh
  # 현재 디렉토리와 그 하위 디렉토리 전체에서 이름이 "README.md"인 파일을 찾는다.
 find . -name 'README.md'
@@ -35,6 +36,16 @@ find ~/Documents/ -size +100M -ls | sort -k7nr
  # 비어 있는 디렉토리를 찾는다
 find . -d -empty
 find . -type d -empty
+```
+
+```sh
+ # 하위 경로에 있는 모든 png, jpg 파일을 찾는다
+find . -type f \( -name "*.png" -o -name "*.jpg" \)
+```
+
+```sh
+ # 하위 경로에서 md 파일이 아닌 다른 모든 파일을 찾는다
+find . -type f ! -name "*.md"
 ```
 
 ### 삭제
