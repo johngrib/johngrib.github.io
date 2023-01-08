@@ -3,7 +3,7 @@ layout  : wiki
 title   : sdkman
 summary : 다양한 소프트웨어 개발 도구의 버전을 관리한다
 date    : 2019-09-11 22:44:15 +0900
-updated : 2023-01-08 20:45:39 +0900
+updated : 2023-01-08 20:50:34 +0900
 tag     : bash command
 resource: 41/A74DA3-2CC1-4F03-8B1E-CB251C3C8527
 toc     : true
@@ -93,5 +93,7 @@ $ sdk upgrade springboot
 
 ## Links
 
-* <https://sdkman.io >
-* <https://sdkman.io/usage >
+- <https://sdkman.io >
+- <https://sdkman.io/usage >
+- [Spring Boot Reference Documentation 3.0.1 - 4.3.2. Installation with SDKMAN!]( https://docs.spring.io/spring-boot/docs/3.0.1/reference/htmlsingle/#getting-started.installing.cli.sdkman )
+
