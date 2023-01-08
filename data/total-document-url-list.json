@@ -187,6 +187,7 @@
  "/wiki/cmd/fc",
  "/wiki/cmd/file",
  "/wiki/cmd/find",
+ "/wiki/cmd/for",
  "/wiki/cmd/fortune",
  "/wiki/cmd/grep",
  "/wiki/cmd/iostat",

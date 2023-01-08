@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-07 23:55:48 +0900
+updated : 2023-01-08 10:08:57 +0900
 regenerate: true
 ---
 
@@ -564,6 +564,7 @@ regenerate: true
 * [[/cmd/uname]]
 * [[/cmd/xxd]]
 * [[/cmd/yes]]
+* [[/cmd/for]]
 
 * [[bash-history]]
 * [[csplit]]

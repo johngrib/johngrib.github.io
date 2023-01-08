@@ -23,6 +23,7 @@
   "cmd/fc",
   "cmd/file",
   "cmd/find",
+  "cmd/for",
   "cmd/fortune",
   "cmd/grep",
   "cmd/iostat",
