@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Kotlin 코드를 작성하자
 summary : 
 date    : 2022-10-02 21:04:23 +0900
-updated : 2022-10-02 22:02:57 +0900
+updated : 2023-01-08 20:41:39 +0900
 tag     : 
 resource: 8C/9FA53B-3E34-4632-A829-D260F39F01A6
 toc     : true
@@ -18,7 +18,7 @@ latex   : false
 
 ### kotlin
 
-[[/sdkman]]으로 설치 가능한 버전을 확인하고...
+[[/cmd/sdkman]]으로 설치 가능한 버전을 확인하고...
 
 ```bash
 sdk list kotlin | cat
