@@ -126,7 +126,7 @@ git cherry-pick a2 -n
 
 이렇게 하면 커밋이 추가되지 않고, 가져온 변경사항이 스테이징에 추가되어 있다.
 
-![]( ./exam-02-n.svg )
+![]( /resource/E3/A42C58-8477-4141-ABFB-53FB131AF829/exam-02-n.svg )
 
-![]( ./exam-02-n-terminal.jpg )
+![]( /resource/E3/A42C58-8477-4141-ABFB-53FB131AF829/exam-02-n-terminal.jpg )
 

@@ -238,7 +238,7 @@ autocmd TextYankPost * :call s:numbered_register_shift()
 
 다음은 이 기능을 사용하는 장면을 gif로 만든 것이다.
 
-![사용 장면]( ./reg-example.gif )
+![사용 장면]( /resource/66/AC3816-2EFD-4730-9F2E-AF4D8EC1AF0F/reg-example.gif )
 
 ## 참고
 
