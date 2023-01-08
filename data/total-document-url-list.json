@@ -200,6 +200,7 @@
  "/wiki/cmd/openssl",
  "/wiki/cmd/pwgen",
  "/wiki/cmd/sed",
+ "/wiki/cmd/seq",
  "/wiki/cmd/shellcheck",
  "/wiki/cmd/sort",
  "/wiki/cmd/strfile",

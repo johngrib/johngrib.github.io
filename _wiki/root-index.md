@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-08 10:08:57 +0900
+updated : 2023-01-08 10:30:28 +0900
 regenerate: true
 ---
 
@@ -542,6 +542,7 @@ regenerate: true
 * [[/cmd/fc]]
 * [[/cmd/file]]
 * [[/cmd/find]]
+* [[/cmd/for]]
 * [[/cmd/fortune]]
 * [[/cmd/grep]]
 * [[/cmd/iostat]]
@@ -554,6 +555,7 @@ regenerate: true
 * [[/cmd/openssl]]
 * [[/cmd/pwgen]]
 * [[/cmd/sed]]
+* [[/cmd/seq]]
 * [[/cmd/shellcheck]]
 * [[/cmd/sort]]
 * [[/cmd/strfile]]
@@ -564,7 +566,6 @@ regenerate: true
 * [[/cmd/uname]]
 * [[/cmd/xxd]]
 * [[/cmd/yes]]
-* [[/cmd/for]]
 
 * [[bash-history]]
 * [[csplit]]
