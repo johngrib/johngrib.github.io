@@ -35,9 +35,9 @@ vim에서 `rest` 확장자를 갖는 파일을 열면 바로 사용할 수 있�
 
 vim에서 돌아갈 뿐, Postman이나 IntelliJ의 Http Client와 거의 똑같은 느낌으로 사용할 수 있다.
 
-![vrc 화면을 설명하는 그림]( ./vrc-explained.jpg )
+![vrc 화면을 설명하는 그림]( /resource/E2/AD0722-A27E-4327-9AB0-3383F39508F1/vrc-explained.jpg )
 
-![vrc를 사용하는 영상]( ./vim-rest-console.gif )
+![vrc를 사용하는 영상]( /resource/E2/AD0722-A27E-4327-9AB0-3383F39508F1/vim-rest-console.gif )
 
 나는 2017년부터 VRC를 사용해왔고, 내가 생각하는 장점은 다음과 같다.
 
@@ -202,7 +202,7 @@ clj 파일로 Postman을 대체하게 된다면 크게 두 가지 방향의 사�
 
 다음은 위의 구성을 Postman에서 만들어 본 것이다. 둘은 겉보기만 다를 뿐 실제로 같은 일을 하는 도구가 된다.
 
-![]( ./postman-example.jpg )
+![]( /resource/E2/AD0722-A27E-4327-9AB0-3383F39508F1/postman-example.jpg )
 
 ### 실천: Clojure로 Postman 대체제 만들기
 
@@ -273,7 +273,7 @@ clj 파일로 Postman을 대체하게 된다면 크게 두 가지 방향의 사�
 
 REPL을 켜놓고 괄호 안쪽에 커서를 놓은 다음, 평가를 하면 http 요청 결과가 오른쪽에 표시된다.
 
-![httpbin 예제를 실행하는 모습]( ./httpbin2.gif )
+![httpbin 예제를 실행하는 모습]( /resource/E2/AD0722-A27E-4327-9AB0-3383F39508F1/httpbin2.gif )
 
 #### jsonplaceholder
 
@@ -315,7 +315,7 @@ REPL을 켜놓고 괄호 안쪽에 커서를 놓은 다음, 평가를 하면 htt
 
 위의 코드에서 두 번째 항목에 커서를 놓고 평가하면 아래 이미지와 같이 jsonplaceholder에서 제공하는 todo 목록을 받아와 오른쪽 윈도우에 보여준다.
 
-![todo 목록을 조회한 모습]( ./jsonplaceholder.jpg )
+![todo 목록을 조회한 모습]( /resource/E2/AD0722-A27E-4327-9AB0-3383F39508F1/jsonplaceholder.jpg )
 
 POST 요청은 다음과 같이 보낼 수 있다.
 
