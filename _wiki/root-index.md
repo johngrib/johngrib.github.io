@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-08 10:30:28 +0900
+updated : 2023-01-08 15:11:16 +0900
 regenerate: true
 ---
 
@@ -540,6 +540,7 @@ regenerate: true
 * [[/cmd/dc]]
 * [[/cmd/ditto]]
 * [[/cmd/fc]]
+* [[/cmd/fd]]
 * [[/cmd/file]]
 * [[/cmd/find]]
 * [[/cmd/for]]
@@ -574,7 +575,6 @@ regenerate: true
 * [[df]]
 * [[diff]]
 * [[du]]
-* [[fd-cmd]]
 * [[fish-shell]]
 * [[glow-cmd]]
 * [[google-java-format]]

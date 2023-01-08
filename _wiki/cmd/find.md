@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : find 명령어
+title   : find
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2023-01-08 10:08:00 +0900
+updated : 2023-01-08 15:12:38 +0900
 tag     : bash command
 resource: 4F/D2AFEF-7A65-4637-82FF-86AEAE03D596
 toc     : true

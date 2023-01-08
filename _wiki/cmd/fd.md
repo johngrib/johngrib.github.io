@@ -3,21 +3,23 @@ layout  : wiki
 title   : fd 명령어
 summary : 이름으로 파일을 찾아준다
 date    : 2019-12-28 17:03:29 +0900
-updated : 2020-03-03 23:19:35 +0900
+updated : 2023-01-08 15:12:50 +0900
 tag     : bash command
 resource: E6/FC7094-46CA-42A3-8A7D-710AE9E0BA24
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
 {:toc}
 
 ## fd
+
 * Rust 로 작성된 find 명령의 대안
+    * <https://github.com/sharkdp/fd/ >
 * [벤치마크 결과](https://github.com/sharkdp/fd#benchmark )를 보면 `find`보다 빠르다.
-* `find`를 완전히 대체하지는 못한다. [유즈 케이스의 80% 정도 커버 가능](https://github.com/sharkdp/fd#fd ). 
+* [[/cmd/find]]를 완전히 대체하지는 못한다. [유즈 케이스의 80% 정도 커버 가능](https://github.com/sharkdp/fd#fd ).
 
 ## Examples
 ```sh
@@ -36,7 +38,4 @@ fd -t f '\.(py|pl)$'
  # 2019년 하반기에 변경된 파일을 찾는다
 fd -t f --change-newer-than '2019-07-01 00:00:00' --changed-before '2019-12-31 11:59:59'
 ```
-
-## Links
-* [sharkdp/fd](https://github.com/sharkdp/fd/)
 
