@@ -28,6 +28,7 @@
  "cmd/man",
  "cmd/mv",
  "cmd/openssl",
+ "cmd/ping",
  "cmd/pwgen",
  "cmd/sdkman",
  "cmd/sed",

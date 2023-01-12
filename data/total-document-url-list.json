@@ -200,6 +200,7 @@
  "/wiki/cmd/mv",
  "/wiki/cmd/mysqldump",
  "/wiki/cmd/openssl",
+ "/wiki/cmd/ping",
  "/wiki/cmd/pwgen",
  "/wiki/cmd/sdkman",
  "/wiki/cmd/sed",

@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-12 21:48:18 +0900
+updated : 2023-01-12 21:58:20 +0900
 regenerate: true
 ---
 
@@ -555,6 +555,7 @@ regenerate: true
 * [[/cmd/mv]]
 * [[/cmd/mysqldump]]
 * [[/cmd/openssl]]
+* [[/cmd/ping]]
 * [[/cmd/pwgen]]
 * [[/cmd/sdkman]]
 * [[/cmd/sed]]
