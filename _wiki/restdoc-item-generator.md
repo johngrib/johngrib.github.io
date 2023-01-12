@@ -3,7 +3,7 @@ layout  : wiki
 title   : 짜증나는 Restdoc 템플릿을 조금 더 편하게 작성하자
 summary : 
 date    : 2020-03-13 23:35:38 +0900
-updated : 2022-09-10 00:32:04 +0900
+updated : 2023-01-12 21:48:49 +0900
 tag     : java
 resource: E1/8E456B-310F-4946-B48C-F1DD258A85F0
 toc     : true
@@ -73,7 +73,7 @@ resultActions
 
 ## jq 명령으로 계층구조 상의 모든 아이템 경로를 출력해 쓰기
 
-물론 터미널에서 [[jq-cmd]]{jq 명령어}를 사용해 다음과 같이 모든 아이템까지의 경로를 출력하는 방법이 있긴 하다.
+물론 터미널에서 [[/cmd/jq]]를 사용해 다음과 같이 모든 아이템까지의 경로를 출력하는 방법이 있긴 하다.
 
 ```sh
 jq -c 'path(..)|[.[]|tostring]|join(".")' request.json
