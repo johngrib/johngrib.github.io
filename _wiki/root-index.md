@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-12 21:58:20 +0900
+updated : 2023-01-12 23:45:25 +0900
 regenerate: true
 ---
 
@@ -557,6 +557,7 @@ regenerate: true
 * [[/cmd/openssl]]
 * [[/cmd/ping]]
 * [[/cmd/pwgen]]
+* [[/cmd/rbenv]]
 * [[/cmd/sdkman]]
 * [[/cmd/sed]]
 * [[/cmd/seq]]

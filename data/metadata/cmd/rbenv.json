@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "rbenv",
+ "summary": "Ruby environment를 관리한다",
+ "parent": "cmd",
+ "url": "/wiki/cmd/rbenv",
+ "updated": "2023-01-12 23:55:35 +0900",
+ "resource": "06/455EB1-6D25-4009-A488-7E198CE9026F",
+ "children": []
+}

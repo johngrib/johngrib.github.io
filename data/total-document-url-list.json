@@ -202,6 +202,7 @@
  "/wiki/cmd/openssl",
  "/wiki/cmd/ping",
  "/wiki/cmd/pwgen",
+ "/wiki/cmd/rbenv",
  "/wiki/cmd/sdkman",
  "/wiki/cmd/sed",
  "/wiki/cmd/seq",

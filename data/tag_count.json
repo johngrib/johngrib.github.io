@@ -73,7 +73,7 @@
  },
  {
   "name": "bash",
-  "size": 67
+  "size": 68
  },
  {
   "name": "bayes",
@@ -169,7 +169,7 @@
  },
  {
   "name": "command",
-  "size": 72
+  "size": 73
  },
  {
   "name": "command-line",
@@ -729,6 +729,10 @@
  },
  {
   "name": "richard-stallman",
+  "size": 1
+ },
+ {
+  "name": "ruby",
   "size": 1
  },
  {

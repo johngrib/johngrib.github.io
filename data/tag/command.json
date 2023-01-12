@@ -30,6 +30,7 @@
  "cmd/openssl",
  "cmd/ping",
  "cmd/pwgen",
+ "cmd/rbenv",
  "cmd/sdkman",
  "cmd/sed",
  "cmd/seq",
