@@ -3,7 +3,7 @@ layout  : wiki
 title   : rbenv
 summary : Ruby environment를 관리한다
 date    : 2023-01-12 23:45:27 +0900
-updated : 2023-01-12 23:55:35 +0900
+updated : 2023-01-13 12:46:58 +0900
 tag     : ruby bash command
 resource: 06/455EB1-6D25-4009-A488-7E198CE9026F
 toc     : true
@@ -31,6 +31,7 @@ rbenv install 3.1.2
 
  # 이 컴퓨터에서 사용할 ruby 버전을 지정한다
 rbenv global 3.1.2
+rbenv global system
 
  # 이 디렉토리에서 사용할 ruby 버전을 지정한다
 rbenv local 3.1.2
