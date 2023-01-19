@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-12 23:45:25 +0900
+updated : 2023-01-19 23:20:44 +0900
 regenerate: true
 ---
 
@@ -558,6 +558,7 @@ regenerate: true
 * [[/cmd/ping]]
 * [[/cmd/pwgen]]
 * [[/cmd/rbenv]]
+* [[/cmd/say]]
 * [[/cmd/sdkman]]
 * [[/cmd/sed]]
 * [[/cmd/seq]]
@@ -595,7 +596,6 @@ regenerate: true
 * [[rans-cmd]]
 * [[rig-cmd]]
 * [[ripgrep]]
-* [[say]]
 * [[sha256sum]]
 * [[tail]]
 * [[top]]

@@ -3,12 +3,12 @@ layout  : wiki
 title   : say 명령어
 summary : macOS에서 음성으로 문자열을 읽게 한다
 date    : 2019-11-13 21:57:34 +0900
-updated : 2019-11-13 22:36:32 +0900
+updated : 2023-01-19 23:21:10 +0900
 tag     : command
 resource: BA/AE113B-02A3-465E-B6C9-CC407B634DFE
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
