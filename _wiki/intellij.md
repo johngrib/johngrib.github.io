@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2023-01-20 14:56:48 +0900
+updated : 2023-01-20 15:44:28 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -13,6 +13,18 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 커서가 지시하는 단어를 하이라이트
+
+Vim에서 하는 것만큼은 아니지만 비슷하게 할 수 있다.
+
+<video controls autoplay loop><source src=" /resource/F6/C37D5D-0E30-44D2-B873-E374D0E2CA90/213633807-7f998587-3696-4051-83c0-f5c5aff38ff2.mp4 " type="video/mp4"></video>
+
+`Preferences` - `Editor` - `Color Scheme` - `General` - `Code` - `Identifier under caret`에서 색을 설정해주면 된다.
+
+내 경우엔 `Foreground`를 `#00FFFF`로, `Background`를 `#005F5F`로 설정해 사용한다.
+
+- 함께 읽기: [[/vim/match]]
 
 ## 코드 에디터 배경색 바꾸기
 
