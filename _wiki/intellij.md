@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ IDEA
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2022-12-17 12:12:10 +0900
+updated : 2023-01-20 14:56:48 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -13,6 +13,15 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 코드 에디터 배경색 바꾸기
+
+`Preferences` - `Editor` - `Color Scheme` - `General` - `Text` - `Default text`에서 `Background`의 색을 바꾸면 된다.
+
+참고로 `Default text`의 `Background` 기본값은 `#2B2B2B` 이다.
+
+- 최근 사용 이력
+    - 2023-01-20
 
 ## 짜증나는 one line method fold 옵션 끄기
 
