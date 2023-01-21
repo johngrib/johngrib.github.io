@@ -3,7 +3,7 @@ layout  : wiki
 title   : seq
 summary : print sequences of numbers
 date    : 2023-01-08 10:30:31 +0900
-updated : 2023-01-08 12:17:54 +0900
+updated : 2023-01-22 00:00:42 +0900
 tag     : bash command
 resource: 25/48E43D-8A13-4DB5-9C32-D60CBD581175
 toc     : true
@@ -99,3 +99,6 @@ $ seq -f %.4f 1 0.2 2
 2.0000
 ```
 
+## 함께 읽기
+
+- [[/cmd/for]]

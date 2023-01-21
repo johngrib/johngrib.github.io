@@ -3,7 +3,7 @@ layout  : wiki
 title   : for
 summary : 
 date    : 2023-01-08 10:09:05 +0900
-updated : 2023-01-08 10:14:59 +0900
+updated : 2023-01-22 00:00:17 +0900
 tag     : bash command
 resource: EB/008418-5B78-4F95-BA1A-57F7EB35E8CC
 toc     : true
@@ -49,7 +49,7 @@ done
 4
 ```
 
-다음과 같이 seq 명령을 사용해도 똑같이 작동한다.
+다음과 같이 [[/cmd/seq]] 명령을 사용해도 똑같이 작동한다.
 
 ```sh
 for number in $(seq 1 4)
