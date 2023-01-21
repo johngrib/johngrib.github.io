@@ -477,7 +477,7 @@
  },
  {
   "name": "java",
-  "size": 79
+  "size": 80
  },
  {
   "name": "javadoc",
@@ -841,7 +841,7 @@
  },
  {
   "name": "time",
-  "size": 1
+  "size": 2
  },
  {
   "name": "tip",

@@ -452,6 +452,7 @@
  "/wiki/java/synchronized",
  "/wiki/java/temporal-adjusters",
  "/wiki/java/thread/state",
+ "/wiki/java/time/instant",
  "/wiki/java/volatile",
  "/wiki/java10-var",
  "/wiki/java8-why-permgen-removed",

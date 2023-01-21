@@ -43,6 +43,7 @@
  "java/synchronized",
  "java/temporal-adjusters",
  "java/thread/state",
+ "java/time/instant",
  "java/volatile",
  "java10-var",
  "java8-why-permgen-removed",
