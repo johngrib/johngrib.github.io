@@ -3,7 +3,7 @@ layout  : category
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2023-01-21 11:40:32 +0900
+updated : 2023-01-21 23:55:42 +0900
 tag     : http
 resource: B3/11C257-D292-4A23-954A-365DD925237C
 toc     : true
@@ -192,6 +192,10 @@ Responses to this method are not cacheable.
     - 조치가 시행되어 응답에 엔티티가 포함되지 않는다면 204 (No Content)를 사용합니다.
 - 만약 요청이 cache를 통해 전달되며 Request-URI가 하나 이상의 현재 캐시된 엔티티를 식별한다면, 해당 항목들은 낡은(stale) 자료로 취급해야 합니다.
 - 이 메소드에 대한 응답은 캐시하지 않도록 합니다.
+
+#### PATCH
+
+[RFC 5789 - PATCH Method for HTTP]( https://www.rfc-editor.org/rfc/rfc5789 )
 
 ## Response
 
