@@ -3,7 +3,7 @@ layout  : category
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2022-03-25 19:09:29 +0900
+updated : 2023-01-21 11:40:32 +0900
 tag     : http
 resource: B3/11C257-D292-4A23-954A-365DD925237C
 toc     : true
@@ -416,4 +416,6 @@ Status-Line = HTTP-Version SP Status-Code SP Reason-Phrase CRLF
 * 리얼월드 HTTP / 시부카와 요시키 저/김성훈 역 / 한빛미디어 / 2019년 04월 19일
 * HTTP 완벽 가이드 / 데이빗 고울리, 브라이언 토티, 마조리 세이어, 세일루 레디, 안슈 아가왈 공저 / 이응준, 정상일 공역 / 인사이트(insight) / 2014년 12월 15일
 * TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
+
+## 카테고리 하위 문서
 
