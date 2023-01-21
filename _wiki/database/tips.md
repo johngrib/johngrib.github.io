@@ -3,13 +3,13 @@ layout  : wiki
 title   : Database 이것저것
 summary : 
 date    : 2022-12-19 20:45:26 +0900
-updated : 2022-12-21 12:06:40 +0900
+updated : 2023-01-21 23:10:23 +0900
 tag     : db
 toc     : true
 public  : true
 parent  : [[/database]]
 latex   : false
-resource: E233A812-74FF-4210-A050-DF5B73DAD6C2
+resource: E2/33A812-74FF-4210-A050-DF5B73DAD6C2
 ---
 * TOC
 {:toc}

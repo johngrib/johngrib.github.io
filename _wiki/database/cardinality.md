@@ -3,13 +3,13 @@ layout  : wiki
 title   : Cardinality
 summary : 기수성
 date    : 2022-12-19 22:57:15 +0900
-updated : 2022-12-19 23:02:41 +0900
+updated : 2023-01-21 23:21:30 +0900
 tag     : 
+resource: 83/6F4D46-B963-4139-BF3F-AC026F7B961F
 toc     : true
 public  : true
 parent  : [[/database]]
 latex   : false
-resource: 836F4D46-B963-4139-BF3F-AC026F7B961F
 ---
 * TOC
 {:toc}
