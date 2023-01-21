@@ -4,7 +4,7 @@ title   : wiki
 toc     : true
 public  : true
 comment : false
-updated : 2023-01-19 23:20:44 +0900
+updated : 2023-01-21 11:38:36 +0900
 regenerate: true
 ---
 
@@ -100,6 +100,10 @@ regenerate: true
 * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
 * [[You-and-Your-Research]]
 * [[King-O-The-Cats]]
+
+## [[/http]]
+
+* [[/why-http-80-https-443]]
 
 ### [[legend]]
 
@@ -722,7 +726,6 @@ regenerate: true
 * [[letter-case]]
 * [[sql-char-comparison]]
 * [[tmux-c-dash]]
-* [[why-http-80-https-443]]
 
 ## [[/spring]]
 
@@ -885,7 +888,6 @@ regenerate: true
 * [[color-model]]
 * [[defensive-copy]]
 * [[gnu-project]]
-* [[http]]
 * [[integer]]
 * [[junit5-nested]]
 * [[locking]]
