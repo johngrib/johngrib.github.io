@@ -3,7 +3,9 @@ layout  : wiki
 title   : Neovim에서 Go 코드를 작성하자
 summary : 
 date    : 2022-05-21 13:48:52 +0900
-updated : 2022-05-22 00:03:34 +0900
+updated : 2023-01-21 23:19:51 +0900
+tag     :
+resource: 9F/E6B38E-AD23-4179-AB4C-477BE1E973CA
 toc     : true
 public  : true
 parent  : [[/go]]
