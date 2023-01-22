@@ -3,7 +3,7 @@ layout  : wiki
 title   : 20% project
 summary : 
 date    : 2019-12-30 23:15:30 +0900
-updated : 2020-07-19 13:35:23 +0900
+updated : 2023-01-22 23:25:37 +0900
 tag     : 
 resource: 43/2240CD-FEA6-4473-BD0C-EF593369BD3B
 toc     : true
@@ -50,6 +50,17 @@ latex   : false
 * Google 번역
 * Google 스카이
 
+>
+'20% 시간'은 구글러들이 사이드 프로젝트라고 부르는 것이다.
+그것은 개념 수준이 아니고 구글에 종사하는 사람들이 자신의 주요 업무와는 별도로 일주일에 하루를 다른 업무에 쓸 수 있게 하는 공식적인 구조다.
+이 아이디어는 주 5일 근무 중 4일은 돈을 버는 데 쓰고, 나머지 하루는 혁신과 실험을 하는 데 쓰라는 뜻이다.
+어디까지나 선택 사항이며, 이전 구글러들의 경우 이 아이디어는 미신이라고 주장했다.
+우리의 경험에 의하면 이 개념은 실제로 가능하고 우리 3명 모두 20%의 프로젝트를 하고 있었다.
+사실, 이 책에서 이야기하는 많은 툴이 20% 활동의 결과물이고, 결국에는 실체화돼 제품에 공헌했다.
+하지만 많은 구글러가 자신의 20% 시간을 단순히 다른 제품에 작업하는 것을 선택했다.
+따라서 20% 공헌자의 개념은 많은 제품, 특히 재밌는 새로운 제품을 즐기는 무엇인가가 됐다.
+[^how-google-test-57]
+
 ### Atlassian
 
 > 다른 위대한 기업가들과 마찬가지로 캐논-브룩스도 언제나 불만이 가득하던 시절을 겪어본 사람이었다.
@@ -80,13 +91,15 @@ latex   : false
 
 ## 참고문헌
 
-* DRIVE / 다니엘 핑크 저/김주환 역 / 청림출판 / 1판 16쇄 2017년 4월 10일 / 원제 : Drive : The Surprising Truth About What Motivates Us
-* 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+- DRIVE / 다니엘 핑크 저/김주환 역 / 청림출판 / 1판 16쇄 2017년 4월 10일 / 원제 : Drive : The Surprising Truth About What Motivates Us
+- 구글은 소프트웨어를 어떻게 테스트하는가 / 제임스 휘태커, 제이슨 아본, 제프 카롤로 공저 / 제갈호준, 이주형 공역 / 에이콘출판사 / 초판 인쇄 2013년 03월 22일 / 원제 : How Google Tests Software
+- 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
 
 ## 주석
 
 [^drive-fedex]: DRIVE 132쪽.
 [^drive-3m]: DRIVE 133쪽.
+[^how-google-test-57]: 구글은 소프트웨어를 어떻게 테스트하는가. 2장. 57쪽.
 
 [fedex-day]: http://www.ideachampions.com/weblogs/archives/2011/12/atlassian_is_a.shtml
 [atlassian-experiment]: https://www.atlassian.com/blog/archives/20_time_experiment
