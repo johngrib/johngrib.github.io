@@ -3,7 +3,7 @@ layout  : wiki
 title   : 이름 짓기
 summary : 프로그래밍 할 때 이름 짓기가 가장 어렵더라
 date    : 2018-11-18 22:04:16 +0900
-updated : 2023-01-27 21:09:20 +0900
+updated : 2023-01-27 21:17:52 +0900
 tag     : proverb principle naming
 resource: 4A/46ED35-3756-494C-B709-5707FE7B1C50
 toc     : true
@@ -65,5 +65,5 @@ Michael J. Hernandez는 데이터베이스 테이블 이름 짓기에 대한 지
 
 ## 주석
 
-[^mortals-148]
+[^mortals-148]: 운명적 존재를 위한 데이터베이스 설계. 7장. 148쪽.
 
