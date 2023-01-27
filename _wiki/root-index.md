@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-01-21 23:11:01 +0900
+updated : 2023-01-27 20:56:20 +0900
 regenerate: true
 ---
 
@@ -440,7 +440,6 @@ regenerate: true
 * [[law-of-demeter]]
 * [[linus-s-law]]
 * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]
-* [[Naming-Principle]]
 * [[No-Silver-Bullet]]
 * [[OOP-to-me-Alan-Kay]]
 * [[orange-juice-test]]
@@ -814,8 +813,9 @@ regenerate: true
 
 ## [[software-engineering]]
 
-* [[/software-engineering/scrum]]
 * [[/software-engineering/kanban]]
+* [[/software-engineering/naming]]
+* [[/software-engineering/scrum]]
 
 * [[20-percent-project]]
 * [[agile]]
