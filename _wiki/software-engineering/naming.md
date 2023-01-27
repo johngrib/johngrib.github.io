@@ -3,7 +3,7 @@ layout  : wiki
 title   : 이름 짓기
 summary : 프로그래밍 할 때 이름 짓기가 가장 어렵더라
 date    : 2018-11-18 22:04:16 +0900
-updated : 2023-01-27 20:56:45 +0900
+updated : 2023-01-27 21:09:20 +0900
 tag     : proverb principle naming
 resource: 4A/46ED35-3756-494C-B709-5707FE7B1C50
 toc     : true
@@ -42,9 +42,28 @@ The name vector in STL was taken from the earlier programming languages Scheme a
     * vector는 원래 array라 불려야 올바르다.
 * 이와 같이 원칙을 어기는 실수를 하게 되면, 그 결과는 오랫동안 남아 있게 된다.
 
+## From: DATABASE DESIGN FOR MERE MORTALS
+
+Michael J. Hernandez는 데이터베이스 테이블 이름 짓기에 대한 지침을 제시한다.
+[^mortals-148]
+
+- 유일하고, 전체 조직에 의미가 있는 설명적인 이름을 부여한다.
+- 테이블의 주제를 정확하게, 명확하게, 그리고 모호하지 않게 식별하는 이름을 부여한다.
+- 테이블의 주제를 전달하기 위해 필요한 최소 개수의 단어들을 사용하라.
+- 물리적 특성을 전달하는 단어들을 사용하지 말라.
+- 두문자어(頭文字語, acronyms)와 약어(abbreviations)를 사용하지 않는다.
+- 테이블에 입력되는 데이터를 지나치게 제한하는 독특한 이름이나 다른 단어들을 사용하지 않는다.
+- 하나 이상의 주제를 암시적 또는 명시적으로 식별하는 이름을 사용하지 않는다.
+- 이름의 복수형을 사용한다.
+
 
 ## 출처
 
 * [FROM MATHEMATICS TO GENERIC PROGRAMMING / ALEXANDER A. STEPANOV DANIEL E. ROSE](http://www.fm2gp.com/ )
     * 한국 출판: 알고리즘 산책 수학에서 제네릭 프로그래밍까지. 알렉산더 A. 스테파노프, 다니엘 E. 로즈 저/서환수 역 / 길벗 / 2018년 05월 30일
+- 운명적 존재를 위한 데이터베이스 설계 [제2판] / Michael J. Hernandez 저 / 손광수 역 / 지앤선(志&嬋) / 2004년 7월 20일 2쇄 / 원제: Database Design for Mere Mortals: A Hands-On Guide to Relational Database Design (2nd Edition)
+
+## 주석
+
+[^mortals-148]
 
