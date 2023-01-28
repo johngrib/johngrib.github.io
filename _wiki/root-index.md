@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-01-28 17:39:38 +0900
+updated : 2023-01-28 17:53:32 +0900
 regenerate: true
 ---
 
@@ -418,16 +418,17 @@ regenerate: true
 * [[/jargon/another-level-of-indirection]]
 * [[/jargon/biondi-s-law]]
 * [[/jargon/bootstrapping]]
+* [[/jargon/boy-scout-rule]]
 * [[/jargon/edsel-edict]]
 * [[/jargon/hofstadter-s-law]]
+* [[/jargon/kerckhoffs-principle]]
 * [[/jargon/kiss-principle]]
 * [[/jargon/kluge]]
 * [[/jargon/metcalfe-s-law]]
 * [[/jargon/moore-s-law]]
+* [[/jargon/no-problem-syndrome]]
 * [[/jargon/postel-s-law]]
 * [[/jargon/solid]]
-* [[/jargon/no-problem-syndrome]]
-* [[/jargon/boy-scout-rule]]
 
 * [[amdahl-s-law]]
 * [[Brooks-s-law]]
@@ -440,7 +441,6 @@ regenerate: true
 * [[imitation-game]]
 * [[information-hiding]]
 * [[kees-koster-good-programming-language]]
-* [[Kerckhoffs-s-principle]]
 * [[law-of-demeter]]
 * [[linus-s-law]]
 * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]

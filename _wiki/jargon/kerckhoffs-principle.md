@@ -3,16 +3,21 @@ layout  : wiki
 title   : 커코프의 원칙(Kerckhoffs's principle)
 summary : 암호의 안전성은 알고리즘이 아니라 키의 비밀성에만 의존해야 한다
 date    : 2018-10-10 09:27:05 +0900
-updated : 2019-12-11 10:41:43 +0900
+updated : 2023-01-28 17:54:16 +0900
 tag     : encryption
 resource: 8E/45E12F-C428-4443-8FFB-294D8F06EC0F
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
 {:toc}
+
+## 읽기
+
+- Kerckhoff
+    - '커코프', '케르크호프스' 라고도 읽는다.
 
 ## 의미
 
