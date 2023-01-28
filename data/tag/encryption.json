@@ -2,7 +2,7 @@
  "Caesar-cipher",
  "cmd/openssl",
  "cmd/pwgen",
- "encryption",
+ "crypto",
  "gpg",
  "Kerckhoffs-s-principle",
  "rsa-encryption",
