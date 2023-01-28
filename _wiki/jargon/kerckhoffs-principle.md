@@ -3,7 +3,7 @@ layout  : wiki
 title   : 커코프의 원칙(Kerckhoffs's principle)
 summary : 암호의 안전성은 알고리즘이 아니라 키의 비밀성에만 의존해야 한다
 date    : 2018-10-10 09:27:05 +0900
-updated : 2023-01-28 17:54:16 +0900
+updated : 2023-01-28 18:41:04 +0900
 tag     : encryption
 resource: 8E/45E12F-C428-4443-8FFB-294D8F06EC0F
 toc     : true
@@ -59,6 +59,21 @@ Some are no longer relevant given the ability of computers to perform complex en
 >
 몇가지 항목들은 복잡한 암호화를 수행할 수 있는 컴퓨터의 존재로 인해 더이상 의미가 없어졌지만, 2번째 항목은 이제 케르크호프스의 원리로 알려지게 되었으며, 아직까지도 매우 중요한 의미를 가지고 있다.
 
+## From: 리얼월드 암호학
+
+>
+공개된 암호화 표준을 구축하는 것은 케르크호프스의 원칙<sub>Kerckhoffs' principle</sub>이라는 개념과 관련이 있다.
+이 원칙은 대략 다음과 같다.
+'우리가 가장 많이 사용하는 알고리즘을 적이 발견하지 못하리라고 기대하는 건 어리석은 일이다. 차라리 적에게 공개적으로 개방하자.'
+>
+앨리스 여왕과 밥 경의 적들이 메시지를 암호화하는 방법을 정확히 알고 있다면 그들의 암호화 알고리즘이 어떻게 안전할 수 있을까?
+정답은 **비밀 키**다!
+키의 비밀은 알고리즘 자체가 아니라 프로토콜을 안전하게 만드는 것이다.
+이는 책에서 공통적으로 다루는 주제다.
+우리가 실제 세계에서 배우고 사용하는 모든 암호화 알고리즘은 자유롭게 연구하고 사용할 수 있다.
+이러한 알고리즘에 대한 입력으로 사용되는 비밀 키만 비밀로 유지된다.
+이 원칙은 1644년 장 로베르 뒤 칼레<sub>Jean Robert du Carlet</sub>의 "ars ipsi secreta magistro(거장조차 알 수 없는 비밀)"라는 표현에서 비롯했다.
+[^realworld-9]
 
 ## Links
 
@@ -71,3 +86,10 @@ Some are no longer relevant given the ability of computers to perform complex en
 [KOREAN]: https://ko.wikipedia.org/wiki/%EC%BC%80%EB%A5%B4%ED%81%AC%ED%98%B8%ED%94%84%EC%8A%A4%EC%9D%98_%EC%9B%90%EB%A6%AC
 [PDF]: http://petitcolas.net/kerckhoffs/crypto_militaire_2.pdf
 
+## 참고문헌
+
+- 리얼월드 암호학 / 데이비드 웡 저/임지순 역 / 제이펍 / 1쇄 발행 2023년 01월 20일 / 원제: Real-World Cryptography
+
+## 주석
+
+[^realworld-9]: 리얼월드 암호학. 1장. 9쪽.
