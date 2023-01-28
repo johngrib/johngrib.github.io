@@ -3,7 +3,7 @@ layout  : category
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2023-01-21 23:55:42 +0900
+updated : 2023-01-28 23:49:07 +0900
 tag     : http
 resource: B3/11C257-D292-4A23-954A-365DD925237C
 toc     : true
@@ -220,7 +220,7 @@ Response      = Status-Line               ; Section 6.1
 * CRLF
 * 메시지 본문
 
-예를 들어, 웹 브라우저에서 [https://developer.mozilla.org/ko/docs/Web/HTTP/Messages](https://developer.mozilla.org/ko/docs/Web/HTTP/Messages )로
+예를 들어, 웹 브라우저에서 <https://developer.mozilla.org/ko/docs/Web/HTTP/Messages >로
 접속한다면 다음과 같은 HTTP 리스폰스 메시지가 전송된다.
 
 ```yml
