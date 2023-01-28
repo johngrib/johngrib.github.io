@@ -3,8 +3,8 @@
  "cmd/openssl",
  "cmd/pwgen",
  "crypto",
+ "crypto/rsa",
  "gpg",
  "Kerckhoffs-s-principle",
- "rsa-encryption",
  "sha256sum"
 ]

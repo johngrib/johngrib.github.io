@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-01-28 17:18:31 +0900
+updated : 2023-01-28 17:39:38 +0900
 regenerate: true
 ---
 
@@ -193,6 +193,8 @@ regenerate: true
 - [[secret-of-consulting]]
 
 ## [[/crypto]]
+
+- [[/crypto/rsa]]
 
 ## [[pattern]]
 
@@ -717,7 +719,6 @@ regenerate: true
 * [[RFC]]
 * [[rouge-supported-languages]]
 * [[router]]
-* [[rsa-encryption]]
 * [[special-chars]]
 * [[transistor]]
 * [[units]]
