@@ -13,9 +13,9 @@
   "spring-annotation-value",
   "spring-bean-config-configuration",
   "spring-bean-config-xml",
-  "spring-versions",
   "spring/boot",
   "spring/cloud",
-  "spring/document"
+  "spring/document",
+  "spring/versions"
  ]
 }

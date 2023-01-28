@@ -3,12 +3,12 @@ layout  : wiki
 title   : 스프링 버전 체크
 summary : 
 date    : 2019-09-21 09:34:43 +0900
-updated : 2022-12-11 21:53:55 +0900
+updated : 2023-01-28 23:01:57 +0900
 tag     : java
 resource: CB/CF2267-D748-4A03-BBA6-4B4CCA849FEC
 toc     : true
 public  : true
-parent  : [[spring]]
+parent  : [[/spring]]
 latex   : false
 ---
 * TOC

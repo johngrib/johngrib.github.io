@@ -57,7 +57,6 @@
  "problem/is-number-string",
  "restdoc-item-generator",
  "spring-annotation-value",
- "spring-versions",
  "spring/document/core",
  "spring/document/core/01-01-introduction",
  "spring/document/core/01-02-container-overview",
@@ -76,6 +75,7 @@
  "spring/document/core/01-15-additional-capabilities-ac",
  "spring/document/core/01-16-bean-factory",
  "spring/document/core/02-resources",
+ "spring/versions",
  "summary-The-Pauseless-GC-Algorithm",
  "ternary-operator-and-null-pointer-exception",
  "use-java-primitive-type-for-performance"

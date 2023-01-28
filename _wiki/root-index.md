@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-01-28 22:54:27 +0900
+updated : 2023-01-28 23:00:18 +0900
 regenerate: true
 ---
 
@@ -732,13 +732,14 @@ regenerate: true
 
 ## [[/spring]]
 
+* [[/spring/versions]]
+
 * [[spring-annotation-bean]]
 * [[spring-annotation-exceptionhandler]]
 * [[spring-annotation-profile]]
 * [[spring-annotation-value]]
 * [[spring-bean-config-configuration]]
 * [[spring-bean-config-xml]]
-* [[spring-versions]]
 
 * [[/spring/boot]]
 * [[/spring/boot/starter]]
