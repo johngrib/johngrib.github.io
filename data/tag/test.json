@@ -1,6 +1,6 @@
 [
  "article/test-code-and-falsifiability",
- "ginkgo",
+ "go/ginkgo",
  "java-mockito",
  "junit5-nested",
  "test-terms",

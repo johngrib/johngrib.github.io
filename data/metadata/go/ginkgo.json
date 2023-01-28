@@ -3,8 +3,8 @@
  "title": "Ginkgo 사용하기",
  "summary": "BDD Testing Framework for Go",
  "parent": "go",
- "url": "/wiki/ginkgo",
- "updated": "2018-10-04 16:44:56 +0900",
+ "url": "/wiki/go/ginkgo",
+ "updated": "2023-01-28 22:56:32 +0900",
  "resource": "6A/E2CCB8-A863-4DE8-A5B3-C32656CC8889",
  "children": []
 }

@@ -3,12 +3,12 @@ layout  : wiki
 title   : Ginkgo 사용하기
 summary : BDD Testing Framework for Go
 date    : 2018-10-02 10:55:21 +0900
-updated : 2018-10-04 16:44:56 +0900
+updated : 2023-01-28 22:56:32 +0900
 tag     : golang test
 resource: 6A/E2CCB8-A863-4DE8-A5B3-C32656CC8889
 toc     : true
 public  : true
-parent  : [[go]]
+parent  : [[/go]]
 latex   : false
 ---
 * TOC
@@ -39,7 +39,7 @@ $ go get github.com/onsi/gomega
 
 ## vim에서 사용하기
 
-[[vim-go-env]]{vim-go}를 사용하고 있다면 `:help vim-go`에서 다음과 같은 질문/답변을 찾아볼 수 있다.
+[[/vim-go-env]]{vim-go}를 사용하고 있다면 `:help vim-go`에서 다음과 같은 질문/답변을 찾아볼 수 있다.
 
 ```
 How do I run focused ginkgo tests?
@@ -114,6 +114,6 @@ var _ = Describe("Test functions",
 
 * <https://github.com/onsi/ginkgo >
 * [Getting Started with BDD in Go Using Ginkgo](https://semaphoreci.com/community/tutorials/getting-started-with-bdd-in-go-using-ginkgo )
-* [[vim-go-env]]
+* [[/vim-go-env]]
 
 

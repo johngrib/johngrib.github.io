@@ -8,8 +8,8 @@
  "resource": "9C/C08D64-902F-4DB0-A197-0416F811B3BF",
  "children": [
   "commit-go-mod-go-sum",
-  "ginkgo",
   "Go-Blog-translation",
+  "go/ginkgo",
   "go/gvm",
   "go/struct-padding",
   "go/vim-setting",

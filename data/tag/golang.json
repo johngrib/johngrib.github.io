@@ -1,9 +1,9 @@
 [
  "commit-go-mod-go-sum",
  "ctags",
- "ginkgo",
  "go",
  "Go-Blog-translation",
+ "go/ginkgo",
  "go/struct-padding",
  "golang-cheatsheet",
  "golang-debugging-what-you-deploy",

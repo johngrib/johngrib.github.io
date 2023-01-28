@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-01-28 17:53:32 +0900
+updated : 2023-01-28 22:54:27 +0900
 regenerate: true
 ---
 
@@ -260,6 +260,7 @@ regenerate: true
 
 ### [[go]]
 
+* [[/go/ginkgo]]
 * [[/go/gvm]]
 * [[/go/struct-padding]]
 * [[/go/vim-setting]]
@@ -271,7 +272,6 @@ regenerate: true
     * [[golang-the-laws-of-reflection]]
 
 * [[commit-go-mod-go-sum]]
-* [[ginkgo]]
 * [[golang-cheatsheet]]
 * [[golang-dependency-manager]]
 * [[golang-reflect]]
