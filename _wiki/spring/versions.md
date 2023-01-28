@@ -3,7 +3,7 @@ layout  : wiki
 title   : 스프링 버전 체크
 summary : 
 date    : 2019-09-21 09:34:43 +0900
-updated : 2023-01-28 23:03:10 +0900
+updated : 2023-01-28 23:12:44 +0900
 tag     : java
 resource: CB/CF2267-D748-4A03-BBA6-4B4CCA849FEC
 toc     : true
@@ -24,7 +24,22 @@ latex   : false
 * Spring Framework 5.0.x: JDK 8-10
 * Spring Framework 4.3.x: JDK 6-8
 
+### iBatis 지원 중단
+
+- 2015년 11월, [Spring 4 부터 iBatis 지원이 중단][mybatis]됐다.
+    - iBatis를 써야 한다면 MyBatis를 쓰도록 한다.
+
 ## Spring Boot - JDK Version 범위
+
+### Spring Boot 3
+
+2022-11-28 업데이트된 [Spring Boot 3.0 Release Notes]( https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Release-Notes ).
+
+- Spring Boot 3.0 은 JDK 19 에서도 잘 돌아간다.
+- Spring Boot 3.0 은 최소 Java 17 을 사용해야 한다.
+    - Java 8이나 Java 11을 쓰고 있는데 Spring Boot 3.0을 쓰고 싶다면 JDK를 업그레이드해야 한다.
+
+### Spring Boot 2
 
 2019년 9월 9일 업데이트된 [Spring Boot 2.0 Release Notes][sb2.0] 문서를 읽어보면 다음과 같이 요약할 수 있다.
 
@@ -36,12 +51,6 @@ latex   : false
 * Spring Boot 2.0.1.RELEASE에서 Java 10이 지원된다.
 * Spring Boot 2.1.0.M2 에서 Java 11이 지원된다.
 * Spring Boot 2.2에서 Java 12가 공식적으로 지원되게 하는 것이 목표.
-
-## 그 외
-
-* 2015년 11월, [Spring 4 부터 iBatis 지원이 중단][mybatis]됐다.
-    * iBatis를 써야 한다면 MyBatis를 쓰도록 한다.
-
 
 ## References
 
