@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-01-28 23:00:18 +0900
+updated : 2023-01-29 20:47:46 +0900
 regenerate: true
 ---
 
@@ -108,13 +108,13 @@ regenerate: true
 
 ### [[legend]]
 
+* [[/legend/wordstar]]
 * [[begining-of-apache-webserver]]
 * [[beginning-of-slack]]
 * [[Las-chicas-del-cable]]
 * [[netflix-architecture-and-culture]]
 * [[pentium-fdiv-bug]]
 * [[Turbo-Pascal-the-first-IDE]]
-* [[Wordstar]]
 
 ### [[people]]
 
