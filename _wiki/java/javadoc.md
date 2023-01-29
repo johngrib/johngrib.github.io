@@ -3,7 +3,7 @@ layout  : wiki
 title   : Javadoc 작성하기
 summary : 
 date    : 2021-04-12 23:25:16 +0900
-updated : 2023-01-29 19:59:39 +0900
+updated : 2023-01-29 20:30:40 +0900
 tag     : java javadoc
 resource: 87/9E7A94-A802-44B7-A248-97974C1256F7
 toc     : true
@@ -50,6 +50,33 @@ Javadoc은 문서화를 위한 주석이기 때문에 경시되는 경우가 많
 
 추가로 나는 Javadoc의 원래 기능인 정적 사이트 빌드에는 별로 관심이 없다.
 
+### 함께 읽기: Reduce technical debt by valuing comments as much as code
+
+이 글을 쓰고 약 2년이 지났을 무렵, 평소의 내 생각과 거의 일치하는 이야기를 담고 있는 다음의 글을 읽게 되었다.
+
+함께 읽어볼만한 글이라 생각하여 링크를 추가하며 내용의 일부를 인용한다.
+
+[Reduce technical debt by valuing comments as much as code (2023-01-19, Java Magazine)]( https://blogs.oracle.com/javamagazine/post/java-comments-reduce-technical-debt )
+
+>
+**Comments explain the code.**
+Many developers have the quixotic belief that if the code is clear enough, they don’t need to use comments. This is what Bob Martin is asserting in Figure 1. It is a lovely premise that does not hold—at all. The first problem is that most developers are under great time pressure and don’t have the time to make the code so utterly clear that it requires no further comment. In fact, the far more common experience programmers have is looking at code they wrote just six months earlier and thinking “I can’t believe I wrote that!” Don’t kid yourself that you can write code so clear that it requires no comments to be understood.
+>
+Another limitation of the clear-code objection is that code explains only how a thing is done, not why it is done that way, especially if there are obvious alternatives; if the why is not evident and obvious, technical debt accrues in the absence of an explanation. Note that without such explanatory comments, code can be exceedingly difficult to maintain because no one dares to touch it, which is the very definition of technical debt.
+
+**주석은 코드를 설명합니다.**
+
+많은 개발자들은 코드가 충분히 명확하면 주석이 필요하지 않다는 신기한 믿음을 갖고 있습니다.
+이것이 바로 Bob Martin이 Figure 1에서 주장하는 내용입니다.
+이는 매력적인 선언이지만 실제로는 성립하지 않는다는 문제가 있습니다.
+첫 번째 문제는 대부분의 개발자가 상당한 수준의 일정 압박을 받고 있으며, 주석이 필요하지 않을 정도로 코드를 완전하고 명확하게 만들 시간이 없다는 것입니다.
+사실, 겨우 6개월 전에 자기 자신이 작성한 코드를 보면서 "내가 이걸 짰다는 게 믿어지지 않아!" 라고 생각하는 상황이 일반적으로 프로그래머들이 경험하는 일입니다.
+이해하는데 주석이 필요없을 정도로 코드를 명확하게 작성할 수 있다고 자기 자신을 속이지 마십시오
+
+clear-code 반론의 또 다른 한계점은 특정 작업이 수행되는 방식만 설명하고, 왜 그렇게 수행되는지에 대한 설명은 없다는 것입니다.
+특히 명백한 대안이 있는 경우에는 더욱 그러합니다.
+이유가 명확하지 않은데 여기에 대한 설명이 없다면 기술 부채가 발생합니다.
+설명이 없다면 아무도 코드를 건드리지 않게 되기 때문에 코드를 유지보수하기가 매우 어려울 수 있으며 이는 기술 부채의 정의에 부합합니다.
 
 ### main description
 
