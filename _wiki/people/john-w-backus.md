@@ -3,7 +3,7 @@ layout  : wiki
 title   : John W. Backus
 summary : 존 베커스
 date    : 2019-02-28 12:53:46 +0900
-updated : 2023-01-30 22:45:30 +0900
+updated : 2023-01-30 22:46:12 +0900
 tag     : story
 resource: 88/A0281C-FB41-4196-B3F2-FD2847A9E773
 toc     : true
@@ -54,6 +54,8 @@ IBM이 꼭 필요로 하는 사람이라면 어떤 경력의 소유자여도 상
 >
 바사르 칼리지에서 수학을 전공했던 로이스 하입트(Lois Haibt)의 말이다. 팀 인원은 10명까지 늘어났으며,
 그중에는 결정학자(crystallo-grapher)와 암호 해독자도 포함돼 있었다.
+>
+-- 당신은 구글에서 일할 만큼 똑똑한가?
 
 ## 참고문헌
 
