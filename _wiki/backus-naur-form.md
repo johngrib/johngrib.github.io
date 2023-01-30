@@ -3,7 +3,7 @@ layout  : wiki
 title   : 배커스-나우르 표기법 (Backus-Naur form)
 summary : 
 date    : 2021-09-23 13:55:43 +0900
-updated : 2021-10-10 18:26:29 +0900
+updated : 2023-01-30 23:19:32 +0900
 tag     : 
 resource: 8B/8C9CB0-84EB-46CD-9952-02B9F919B7C8
 toc     : true
@@ -330,6 +330,9 @@ template name이 우선 이용된 경우 템플릿 인자로 대체되는 템플
 >
 템플릿의 정의가 제한조건을 포함하면 템플릿 인자 타입과 값은 require가 따르는 Boolean 식을 충족해야 합니다.
 
+## 함께 읽기
+
+- [[/people/john-w-backus]]
 
 ## 참고문헌
 
