@@ -3,7 +3,7 @@ layout  : wiki
 title   : John W. Backus
 summary : 존 베커스
 date    : 2019-02-28 12:53:46 +0900
-updated : 2023-01-30 22:37:43 +0900
+updated : 2023-01-30 22:45:30 +0900
 tag     : story
 resource: 88/A0281C-FB41-4196-B3F2-FD2847A9E773
 toc     : true
@@ -14,7 +14,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 인용
+## 문제 해결사 팀을 만들다
 
 >
 미국에서는 특히 컴퓨터 업계에서 머리를 써야 하는 난제인,
