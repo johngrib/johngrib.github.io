@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-01-29 20:47:46 +0900
+updated : 2023-01-30 17:26:00 +0900
 regenerate: true
 ---
 
@@ -457,6 +457,10 @@ regenerate: true
 
 ## [[study]]
 * [[/study/note]]
+
+### [[/study/tis-100]]
+
+- [[/study/tis-100/segment-00150]]
 
 ### [[study-concrete-math]]
 * [[c-m-01-Recurrent-Problems-01]]
