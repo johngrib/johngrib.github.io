@@ -3,12 +3,12 @@ layout  : wiki
 title   : John W. Backus
 summary : 존 베커스
 date    : 2019-02-28 12:53:46 +0900
-updated : 2023-01-30 22:37:27 +0900
+updated : 2023-01-30 22:37:43 +0900
 tag     : story
 resource: 88/A0281C-FB41-4196-B3F2-FD2847A9E773
 toc     : true
 public  : true
-parent  : [[people]]
+parent  : [[/people]]
 latex   : false
 ---
 * TOC
