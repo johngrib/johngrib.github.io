@@ -3,7 +3,7 @@ layout  : wiki
 title   : SEGMENT 10981
 summary : SIGNAL AMPLIFIER
 date    : 2023-01-30 20:09:08 +0900
-updated : 2023-01-30 20:24:13 +0900
+updated : 2023-01-31 15:48:05 +0900
 tag     : 
 resource: 61/0E521D-145F-40FA-B330-B3BFFE091693
 toc     : true
@@ -94,6 +94,12 @@ MOV UP, DOWN
 이렇게 하면 84 CYCLES로 해결이 된다.
 
 - 84 CYCLES, 5 NODES, 11 INSTR
+
+84 CYCLES 이므로 **PARALLELIZE** 도전과제를 획득할 수 있었다.
+
+>
+**PARALLELIZE**  
+Solve SIGNAL AMPLIFIER in fewer than 100 cycles.
 
 ![image]( /resource/61/0E521D-145F-40FA-B330-B3BFFE091693/215462911-3f098ece-ee5b-4db4-bf63-21ea19539ca5.png )
 
