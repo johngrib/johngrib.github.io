@@ -3,7 +3,7 @@ layout  : wiki
 title   : SEGMENT 00150
 summary : SELF-TEST DIAGNOSTIC
 date    : 2023-01-30 18:15:06 +0900
-updated : 2023-01-30 18:16:20 +0900
+updated : 2023-02-01 22:39:22 +0900
 tag     : 
 resource: 5C/CF7112-08DF-4A47-B7DE-386EEDCE280E
 toc     : true
@@ -37,12 +37,10 @@ latex   : false
 
 ![image]( /resource/5C/CF7112-08DF-4A47-B7DE-386EEDCE280E/215428639-b54c530f-a02d-4441-9675-6cf6ac2a56a3.png )
 
-[save/00150.1.txt](https://github.com/johngrib/TIS-100-solutions/blob/master/save/00150.1.txt )
+[save/00150.0.txt](https://github.com/johngrib/TIS-100-solutions/blob/master/save/00150.0.txt )
 
 ```tis-100
 @0
-#BUSY LOOP
-#ACHIVEMENT
 MOV UP, DOWN
 
 @1
@@ -52,20 +50,7 @@ MOV RIGHT, DOWN
 MOV UP, LEFT
 
 @3
-MOV UP, ACC
-SAV
-MOV 10000, ACC
-
-START:
-SUB 1
-
-JEZ END
-JMP START
-
-
-END:
-SWP
-MOV ACC, DOWN
+MOV UP, DOWN
 
 @4
 MOV UP, DOWN
