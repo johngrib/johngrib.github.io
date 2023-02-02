@@ -2,9 +2,9 @@
  "type": "wiki",
  "title": "그레이 코드(Gray code)",
  "summary": "reflected binary Gray code",
- "parent": "what",
- "url": "/wiki/gray-code",
- "updated": "2023-02-02 21:31:47 +0900",
+ "parent": "algorithm",
+ "url": "/wiki/algorithm/gray-code",
+ "updated": "2023-02-02 22:29:21 +0900",
  "resource": "4C/F9C189-3F6F-4145-A62F-3F0433D3FA8A",
  "children": []
 }

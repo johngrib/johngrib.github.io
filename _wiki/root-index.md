@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-02-01 23:03:14 +0900
+updated : 2023-02-02 22:25:53 +0900
 regenerate: true
 ---
 
@@ -64,7 +64,9 @@ regenerate: true
 
 * [[/algorithm/binary-search]]
 * [[/algorithm/egyptian-multiplication]]
+* [[/algorithm/gray-code]]
 * [[/algorithm/murmurhash]]
+
 * [[average-complexity]]
 * [[b-tree]]
 * [[base64]]
@@ -716,7 +718,6 @@ regenerate: true
 * [[ethereum-white-paper]]
 * [[fan-out]]
 * [[floating-point]]
-* [[gray-code]]
 * [[groupId-artifactId]]
 * [[indent-style]]
 * [[IP]]

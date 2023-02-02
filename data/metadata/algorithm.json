@@ -8,6 +8,7 @@
  "children": [
   "algorithm/binary-search",
   "algorithm/egyptian-multiplication",
+  "algorithm/gray-code",
   "algorithm/murmurhash",
   "average-complexity",
   "b-tree",

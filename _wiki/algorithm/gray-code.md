@@ -3,12 +3,12 @@ layout  : wiki
 title   : 그레이 코드(Gray code)
 summary : reflected binary Gray code
 date    : 2018-10-15 21:40:31 +0900
-updated : 2023-02-02 21:31:47 +0900
+updated : 2023-02-02 22:29:21 +0900
 tag     : binary algorithm
 resource: 4C/F9C189-3F6F-4145-A62F-3F0433D3FA8A
 toc     : true
 public  : true
-parent  : [[what]]
+parent  : [[/algorithm]]
 latex   : true
 ---
 * TOC

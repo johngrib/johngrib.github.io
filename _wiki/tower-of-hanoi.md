@@ -3,7 +3,7 @@ layout  : wiki
 title   : 하노이의 탑 (The Tower of Hanoi)
 summary : 
 date    : 2019-12-16 21:24:41 +0900
-updated : 2019-12-17 08:07:12 +0900
+updated : 2023-02-02 22:27:58 +0900
 tag     : math
 resource: 3E/82CF77-2097-4A3F-84CA-9ED0B5136607
 toc     : true
@@ -53,7 +53,7 @@ func hanoi(source, destination, temp string, n int) {
 }
 ```
 
-[[gray-code]]{그레이 코드}는 하노이의 탑 솔루션이기도 하다.
+[[/algorithm/gray-code]]는 하노이의 탑 솔루션이기도 하다.
 
 
 ## 점화식
@@ -240,7 +240,7 @@ func hanoi(source, destination, temp string, n int) {
 
 ### 그레이 코드
 
-[[gray-code]]{그레이 코드}는 하노이의 탑 원반 이동 과정을 출력하는 문제의 솔루션이다.
+[[/algorithm/gray-code]]는 하노이의 탑 원반 이동 과정을 출력하는 문제의 솔루션이다.
 
 ## 참고문헌
 
