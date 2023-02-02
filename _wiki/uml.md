@@ -3,7 +3,7 @@ layout  : wiki
 title   : UML
 summary : Unified Modeling Language
 date    : 2020-07-02 23:23:45 +0900
-updated : 2020-07-04 22:38:25 +0900
+updated : 2023-02-02 22:49:02 +0900
 tag     : oop
 resource: 98/9EBA09-4F5C-4BA0-840D-D31EE2468104
 toc     : true
@@ -58,7 +58,7 @@ static class TreeMapNode {
 이 둘을 더 명확하게 구분하려고 나는 종종 상속 관계는 세로로, 연관 관계는 가로로 그린다.
 UML에서 화살촉의 방향은 모두 소스 코드 의존성의 방향이다.[^bob-c3]
 
-## UML에 대한 조언 모음
+## UML에 대한 엉클 밥의 조언들
 
 다이어그램을 그려야 할 경우
 
