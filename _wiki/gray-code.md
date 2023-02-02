@@ -3,7 +3,7 @@ layout  : wiki
 title   : 그레이 코드(Gray code)
 summary : reflected binary Gray code
 date    : 2018-10-15 21:40:31 +0900
-updated : 2019-11-15 08:00:15 +0900
+updated : 2023-02-02 21:31:47 +0900
 tag     : binary algorithm
 resource: 4C/F9C189-3F6F-4145-A62F-3F0433D3FA8A
 toc     : true
@@ -210,8 +210,9 @@ func toBin(gray int) int {
 
 ## 참고문헌
 
-* 해커의 기쁨. 비트와 바이트 그리고 알고리즘 (2판) / 헨리 워렌 지음 / 류광 옮김 / 제이펍 / 2013년 07월 22일 출간
-* 당신은 구글에서 일할 만큼 똑똑한가? / 윌리엄 파운드스톤 저 / 유지연 역 / 타임비즈 / 2012년 07월
+- 당신은 구글에서 일할 만큼 똑똑한가? / 윌리엄 파운드스톤 저/유지연 역 / 타임비즈 / 초판 2쇄 발행 2012년 05월 10일 / 원제 : Are You Smart Enough to Work at Google?
+    - Answers. 340쪽.
+- 해커의 기쁨. 비트와 바이트 그리고 알고리즘 (2판) / 헨리 워렌 지음 / 류광 옮김 / 제이펍 / 2013년 07월 22일 출간
 
 ## Links
 
