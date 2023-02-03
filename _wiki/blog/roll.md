@@ -3,7 +3,7 @@ layout  : wiki
 title   : 관심가는 wiki blogroll
 summary : 
 date    : 2022-12-24 13:14:04 +0900
-updated : 2023-01-28 12:03:15 +0900
+updated : 2023-02-03 18:51:30 +0900
 tag     : blog
 resource: FB/A44090-EF39-49E1-8F83-5E6617A16D36
 toc     : true
@@ -21,7 +21,11 @@ latex   : false
 - <https://achelous1.github.io/ >
     - [Johngrib 위키 로컬테스트]( https://achelous1.github.io/wiki/blog-testing-method/ )
 - <https://honggaruy.github.io/ >
+    - [위키 설정]( https://honggaruy.github.io/wiki/Wiki-Setting-Category/ )
     - [위키 문제점 해결](https://honggaruy.github.io/wiki/wiki-troubleshooting/ )
+    - [위키 편집 안내서]( https://honggaruy.github.io/wiki/wiki-update-guide/ )
+- <https://shouts77.github.io/ >
+    - [Vimwiki-Project - fork한 Vimwiki를 커스터마이징해 보자.]( https://shouts77.github.io/wiki/Vimwiki-Project/ )
 
 - <https://codesoom.github.io/ > - 작성자가 여럿인 코드숨의 팀 블로그
 - <https://aegis1920.github.io/ >
@@ -30,7 +34,6 @@ latex   : false
 - <https://diasm3.github.io/ >
 - <https://gxdxt.github.io/ >
 - <https://kkimdev-01.github.io/ >
-- <https://shouts77.github.io/ >
 - <https://wafy.github.io/ >
 - <https://www.anyjava.dev/ >
 - <https://sunghyunjin.com/blogwiki/ > - Sunghyun Jin's WIKI
