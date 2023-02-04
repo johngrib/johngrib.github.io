@@ -3,7 +3,7 @@ layout  : wiki
 title   : 관심가는 wiki blogroll
 summary : 
 date    : 2022-12-24 13:14:04 +0900
-updated : 2023-02-03 18:51:30 +0900
+updated : 2023-02-05 00:02:52 +0900
 tag     : blog
 resource: FB/A44090-EF39-49E1-8F83-5E6617A16D36
 toc     : true
@@ -37,4 +37,5 @@ latex   : false
 - <https://wafy.github.io/ >
 - <https://www.anyjava.dev/ >
 - <https://sunghyunjin.com/blogwiki/ > - Sunghyun Jin's WIKI
+- <https://www.padosum.dev/#-based-on > - Padosum Wiki
 
