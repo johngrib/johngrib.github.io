@@ -3,7 +3,7 @@ layout  : wiki
 title   : SEGMENT 31904
 summary : SEQUENCE COUNTER
 date    : 2023-02-04 14:59:49 +0900
-updated : 2023-02-04 15:18:18 +0900
+updated : 2023-02-04 15:53:13 +0900
 tag     : 
 resource: 9C/2591CA-7E04-4C97-8B5E-9E7F7F25F093
 toc     : true
@@ -31,7 +31,7 @@ latex   : false
 
 ## 풀이 1: NODES 고려
 
-- 337 CYCLES / 4 NODES / 25 INSTR
+- 335 CYCLES / 4 NODES / 24 INSTR
 
 4개의 노드를 사용하는 방법이다.
 
@@ -43,9 +43,7 @@ latex   : false
 @0
 
 @1
-MOV UP, ACC
-MOV ACC, DOWN   # 입력받은 값을 두 번 내려보낸다
-MOV ACC, DOWN
+MOV UP, DOWN
 
 @2
 
@@ -54,7 +52,9 @@ MOV ACC, DOWN
 
 
 @4
-MOV UP, DOWN
+MOV UP, ACC
+MOV ACC, DOWN   # 0 판별용
+MOV ACC, DOWN   # SUM 계산용
 
 @5
 
@@ -66,40 +66,36 @@ MOV UP, DOWN
 
 
 @8
- # SUM을 출력해야 하는 노드
 ^:
  SAV            # ACC(합계)를 BAK에 저장한다
  MOV UP, ACC    # IN 값을 ACC 에 저장한다
- JEZ 0          # ACC 가 0 이면(시퀀스가 끝났다면) goto 0
+ MOV ACC, RIGHT # 길이 계산을 하고 있는 @9 노드에 값을 보내준다
+ JEZ END-SEQ    # IN 값이 0 이면 시퀀스가 종료된 것이므로 goto END-SEQ
 
- SWP            # 시퀀스가 끝나지 않았으므로 BAK(합계)를 ACC로 가져온다
- ADD UP         # 입력값을 ACC(합계)에 더한다
- MOV 1, RIGHT   # 길이를 계산하는 @9 노드에 1을 더하라고 보내준다
- JMP ^          # goto 시작지점(^)
+ SWP        # 시퀀스가 끝나지 않았으므로 BAK(합계)를 ACC로 가져온다
+ ADD UP     # 입력값을 ACC(합계)에 더한다
+ JMP ^      # goto 시작지점(^)
 
-0:              # 0: 시퀀스가 끝났다면
- MOV UP, NIL    # @1 에서 오는 두번째 중복 입력을 버린다
- MOV 0, RIGHT   # 길이를 계산하는 @9 노드에도 종료 신호를 보내준다
- SWP            # ACC(합계) 와 BAK 를 교환한다
- MOV ACC, DOWN  # 합계를 출력한다
+END-SEQ:
+ SWP            # BAK에 저장해둔 합계를 ACC로 가져온다
+ MOV ACC, DOWN  # ACC(합계)를 출력한다
+ MOV UP, NIL    # SUM 계산용 두번째 중복값을 버린다
  MOV 0, ACC     # 다음 시퀀스를 위해 합계를 0 으로 초기화한다
 
 @9
- # LENGTH를 출력해야 하는 노드
 ^:
  SAV            # ACC(길이)를 BAK에 저장한다
- MOV LEFT, ACC  # @8 노드에서 보낸 값(1 또는 0)을 ACC에 저장한다
- JEZ 0          # 시퀀스가 끝났다면(0이면) goto 0
- 
- SWP            # 시퀀스가 끝나지 않았으므로 BAK(길이)를 ACC로 가져온다
- ADD 1          # 길이를 1 증가시킨다
- JMP ^          # goto 시작지점(^)
+ MOV LEFT, ACC  # @8 노드에서 보낸 값을 ACC에 저장한다
+ JEZ END-SEQ    # 시퀀스가 끝났다면(ACC가 0이면) goto END-SEQ
 
-0:              # 0: 시퀀스가 끝났다면
- SWP            # ACC(길이) 와 BAK 를 교환한다
- MOV ACC, DOWN  # 길이를 출력한다
+ SWP        # 시퀀스가 끝나지 않았으므로 BAK(길이)를 ACC로 가져온다
+ ADD 1      # 길이를 1 증가시킨다
+ JMP ^      # goto 시작지점(^)
+
+END-SEQ:
+ SWP            # BAK에 저장해둔 길이를 ACC로 가져온다
+ MOV ACC, DOWN  # ACC(길이)를 출력한다
  MOV 0, ACC     # 다음 시퀀스를 위해 길이를 0 으로 초기화한다
 
 @10
 ```
-
