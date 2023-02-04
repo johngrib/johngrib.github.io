@@ -3,7 +3,7 @@ layout  : wiki
 title   : SEGMENT 30647
 summary : SEQUENCE GENERATOR
 date    : 2023-02-03 23:02:34 +0900
-updated : 2023-02-03 23:48:05 +0900
+updated : 2023-02-04 14:34:47 +0900
 tag     : 
 resource: F1/4A6D92-1493-4952-B951-712D4C13491C
 toc     : true
@@ -31,7 +31,7 @@ latex   : false
 
 ![image]( /resource/F1/4A6D92-1493-4952-B951-712D4C13491C/216624183-f243862d-c9a5-4b14-a94f-b13595167743.jpg )
 
-## 풀이 1
+## 풀이 1: CYCLES 고려
 
 - 97 CYCLES / 7 NODES / 20 INSTR
 
@@ -91,7 +91,7 @@ MOV 0, DOWN     # 0 을 출력한다
 @10
 ```
 
-## 풀이 2
+## 풀이 2: NODES 고려
 
 - 131 CYCLES / 4 NODES / 18 INSTR
 
