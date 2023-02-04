@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2023-02-04 18:32:15 +0900
+updated : 2023-02-04 18:35:44 +0900
 tag     : 
 resource: 85/85BD50-3D0B-4A77-BAD1-FC9918F4B956
 toc     : true
@@ -48,6 +48,7 @@ latex   : false
 * 1885 - 오트마 메르겐탈러<sub>Ottmar mergenthaler</sub>, 조판 기계를 위한 자동주조 식자기(키보드)를 고안하다.
 * 1863-01-10 - [런던 지하철 개통]( https://en.wikipedia.org/wiki/London_Underground )
 * 1854 - 부울 대수
+* 1847 - [윌리엄 지멘스, 라인강을 가로지르는 최초의 수중 케이블 설치]( https://en.wikipedia.org/wiki/Submarine_communications_cable )
 
 ## 주석
 
