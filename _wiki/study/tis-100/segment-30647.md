@@ -3,7 +3,7 @@ layout  : wiki
 title   : SEGMENT 30647
 summary : SEQUENCE GENERATOR
 date    : 2023-02-03 23:02:34 +0900
-updated : 2023-02-04 14:34:47 +0900
+updated : 2023-02-04 14:42:36 +0900
 tag     : 
 resource: F1/4A6D92-1493-4952-B951-712D4C13491C
 toc     : true
@@ -149,6 +149,67 @@ MOV UP, DOWN
 MOV UP, DOWN    # 작은 값을 출력한다
 MOV UP, DOWN    # 큰 값을 출력한다
 MOV 0, DOWN     # 0 을 출력한다
+
+@10
+```
+
+## 풀이 3: INSTR 고려
+
+- 131 CYCLES / 5 NODES / 17 INSTR
+
+17개의 명령어만을 사용하는 방법이다.
+
+![image]( /resource/F1/4A6D92-1493-4952-B951-712D4C13491C/216750854-f81c0431-2b26-425e-8f42-a7d9feccae15.png )
+
+[save/30647.0.txt]( https://github.com/johngrib/TIS-100-solutions/blob/master/save/30647.0.txt )
+
+```tis-100
+@0
+
+@1
+MOV UP, ACC
+MOV ACC, RIGHT  # @2 에서의 SAV, SWP을 안 쓰고 명령을 아끼기 위해 두 번 보낸다
+MOV ACC, RIGHT
+
+@2
+^:
+MOV UP, ACC
+MOV ACC, RIGHT  # B 를 오른쪽의 @3 에 저장한다
+SUB LEFT        # 크기 비교를 위해 B - A 를 계산한다
+
+JLZ A>B     # B - A 가 0보다 작으면 A > B 이므로 goto A>B
+
+A<B:
+MOV LEFT, DOWN  # A가 더 작으므로 A 먼저 내려보낸다
+MOV RIGHT, DOWN # B 를 내려보낸다
+JMP ^           # 시작지점으로 돌아간다
+
+A>B:
+MOV RIGHT, DOWN # B 를 내려보낸다 
+MOV LEFT, DOWN  # A 를 내려보낸다
+
+@3
+MOV LEFT, LEFT
+
+@4
+
+
+@5
+
+
+@6
+MOV UP, DOWN
+
+@7
+
+
+@8
+
+
+@9
+MOV UP, DOWN
+MOV UP, DOWN
+MOV 0, DOWN     # 시퀀스 종료를 의미하는 0을 출력한다
 
 @10
 ```
