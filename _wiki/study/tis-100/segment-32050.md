@@ -3,7 +3,7 @@ layout  : wiki
 title   : SEGMENT 32050
 summary : SIGNAL EDGE DETECTOR
 date    : 2023-02-05 09:51:42 +0900
-updated : 2023-02-05 12:36:58 +0900
+updated : 2023-02-05 13:07:49 +0900
 tag     : 
 resource: C4/BFB3B9-262F-4736-B9A8-3FD04A813176
 toc     : true
@@ -91,3 +91,92 @@ JMP ^           # @9 노드의 처음으로 돌아간다.
 @10
 ```
 
+## 풀이 2
+
+- 203 CYCLES / 6 NODES / 30 INSTR
+
+입력을 교차시켜 두 개의 파이프라인으로 연결해 성능을 높인 방법이다. 파이프라인이 셋이라면 더 빠를텐데... 일단 여기에선 이렇게.
+
+![image]( /resource/C4/BFB3B9-262F-4736-B9A8-3FD04A813176/216800535-47b14754-ccd7-485b-9087-0d3b84bf9068.png )
+
+[save/32050.1.txt]( https://github.com/johngrib/TIS-100-solutions/blob/db070dc5d1fe06ade74989638bb4566877e80ac9/save/32050.1.txt )
+
+```tis-100
+@0
+
+@1
+               # IN을 두 번 받아서, @5와 @2에 각각 비교할 값과 함께 보낸다.
+MOV ACC, DOWN  # @5 로 보내는 이전의 IN 값
+MOV UP, ACC
+MOV ACC, DOWN  # @5 로 보내는 현재의 IN 값
+
+MOV ACC, RIGHT # @2 로 보내는 이전의 IN 값 (@5로 보낸 현재의 IN 값)
+MOV UP, ACC
+MOV ACC, RIGHT # @2 로 보내는 그 다음 IN 값
+
+@2
+MOV LEFT, ACC   # @1에서 이전의 IN 값을 받는다.
+SUB LEFT        # @1에서 그 다음 IN 값을 받아 뺀다.
+
+JGZ DIFF>0      # 두 값의 차이가 양수이면 goto DIFF>0
+NEG             # 두 값의 차이가 음수이면 부호를 뒤집어 양수로 만든다.
+
+DIFF>0:
+MOV ACC, DOWN   # 두 값의 차이를 @6으로 보낸다.
+
+@3
+
+
+@4
+
+
+@5
+                # @5는 @2와 하는 일이 똑같다. scale out 개념.
+MOV UP, ACC
+SUB UP
+
+JGZ DIFF>0
+NEG
+
+DIFF>0:
+
+MOV ACC, DOWN
+
+@6
+^:
+ MOV UP, ACC    # @2에서 두 IN 값의 차이를 받는다.
+
+ SUB 10         # 10을 뺀다.
+
+ JLZ DIFF<10    # 10을 뺀 값이 음수이면 goto DIFF<10
+ MOV 1, DOWN    # 두 값의 차이가 10 이상이므로 1을 출력한다.
+
+JMP ^       # @6 노드의 처음으로 돌아간다.
+
+DIFF<10:
+ MOV 0, DOWN    # 두 값의 차이가 10보다 작으므로 0을 출력한다.
+
+@7
+
+
+@8
+                # @8은 @6과 하는 일이 똑같다. scale out 개념.
+^:
+ MOV UP, ACC
+ SUB 10
+
+ JLZ DIFF<10
+
+ MOV 1, RIGHT
+
+JMP ^
+
+DIFF<10:
+ MOV 0, RIGHT
+
+@9
+MOV LEFT, DOWN
+MOV UP, DOWN
+
+@10
+```
