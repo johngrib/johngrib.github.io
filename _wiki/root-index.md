@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-02-05 09:51:42 +0900
+updated : 2023-02-05 16:03:54 +0900
 regenerate: true
 ---
 
@@ -828,6 +828,7 @@ regenerate: true
 
 ## [[software-engineering]]
 
+* [[/software-engineering/continuous-delivery]]
 * [[/software-engineering/kanban]]
 * [[/software-engineering/logging]]
 * [[/software-engineering/naming]]
@@ -836,7 +837,6 @@ regenerate: true
 * [[20-percent-project]]
 * [[agile]]
 * [[andon-cord]]
-* [[continuous-delivery]]
 * [[continuous-integration]]
 * [[ddd-quotes]]
 * [[dev-schedule-quotes]]

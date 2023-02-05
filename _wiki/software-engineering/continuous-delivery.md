@@ -1,14 +1,14 @@
 ---
 layout  : wiki
-title   : Continuous Delivery (지속적 전달)
-summary : 
+title   : Continuous Delivery
+summary : 지속적 전달
 date    : 2020-07-11 20:52:44 +0900
-updated : 2021-04-17 18:27:25 +0900
+updated : 2023-02-05 16:04:12 +0900
 tag     : 
 resource: 8F/11C0F4-601D-4310-A21A-7867803A86AD
 toc     : true
 public  : true
-parent  : [[software-engineering]]
+parent  : [[/software-engineering]]
 latex   : false
 ---
 * TOC
