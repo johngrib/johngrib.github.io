@@ -3,7 +3,7 @@ layout  : wiki
 title   : 프레드 브룩스
 summary : Frederick P. Brooks, Jr.
 date    : 2022-09-16 22:47:43 +0900
-updated : 2022-09-16 23:06:55 +0900
+updated : 2023-02-07 22:56:06 +0900
 tag     : 
 resource: 0F/A675E4-A82C-45D4-A38A-099F4593CACC
 toc     : true
@@ -41,7 +41,7 @@ IBM의 관리자로서 내가 했던 가장 생산적인 행동은 제품 개발
 
 ## 함께 읽기
 
-- [[/Brooks-s-law]]
+- [[/jargon/brooks-s-law]]
 - [[/book/mythical-man-month]]
 - [[/No-Silver-Bullet]]
 

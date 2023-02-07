@@ -3,7 +3,7 @@ layout  : wiki
 title   : 은총알은 없다(No Silver Bullet)
 summary : 생산성, 신뢰성, 단순성을 10배 이상 향상시킬 발전은 나타나지 않을 것이다
 date    : 2018-02-21 21:13:04 +0900
-updated : 2022-12-17 20:30:38 +0900
+updated : 2023-02-07 22:55:40 +0900
 tag     : proverb Fred-Brooks
 resource: 85/47AB7D-A5BE-4093-8730-C8EC072A00BB
 toc     : true
@@ -19,7 +19,7 @@ latex   : false
 > No Silver Bullet - Essence and Accident in Software Engineering  
 > 은총알은 없다 - 소프트웨어 공학에 있어 본질과 부수성
 
-* [[Brooks-s-law]]{프레드 브룩스}가 1986년에 쓴 논문이다.
+* [[/jargon/brooks-s-law]]{프레드 브룩스}가 1986년에 쓴 논문이다.
 * 1986년, IFIP(International Federation for Information Processing) 학회의 초청 논문으로 회보에 실렸다.
 * 1987년 4월, IEEE Computer Society의 월간지인 ["Computer" Volume 20, issue 4](http://ieeexplore.ieee.org/document/1663532/ )에 다시 실렸다.
 * [[/book/mythical-man-month]] 20주년 판에도 수록되었다(16장).

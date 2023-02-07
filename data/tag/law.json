@@ -1,9 +1,9 @@
 [
  "amdahl-s-law",
- "Brooks-s-law",
  "constantine-s-law",
  "Conway-s-law",
  "jargon/airplane-rule",
+ "jargon/brooks-s-law",
  "jargon/postel-s-law",
  "law-of-demeter",
  "Lubarsky-s-Law-of-Cybernetic-Entomology",

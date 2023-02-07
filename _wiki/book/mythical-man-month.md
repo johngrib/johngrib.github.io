@@ -3,7 +3,7 @@ layout  : wiki
 title   : 맨먼스 미신
 summary : The Mythical Man-Month - Essays on Software Engineering
 date    : 2018-02-19 12:52:55 +0900
-updated : 2022-12-30 18:47:05 +0900
+updated : 2023-02-07 22:56:38 +0900
 tag     : book Fred-Brooks
 resource: 41/4AA21D-D411-47C9-A38C-E82A5867287D
 toc     : true
@@ -37,7 +37,7 @@ latex   : false
 
 맨먼스(Man-Month) 단위를 사용해 일정을 추정하는 것은 잘못된 사고방식이다.
 
-* [[/Brooks-s-law]]{브룩스의 법칙} 참고.
+* [[/jargon/brooks-s-law]] 참고.
 
 ### 3장. 외과 수술 팀
 
@@ -78,7 +78,7 @@ latex   : false
 ## Links
 
 * [맨먼스 미신(인사이트 출판사)](http://www.insightbook.co.kr/ppp/%EB%A7%A8%EB%A8%BC%EC%8A%A4-%EB%AF%B8%EC%8B%A0)
-* [[/Brooks-s-law]]
+* [[/jargon/brooks-s-law]]
 * [프레드 브룩스의 홈페이지](http://www.cs.unc.edu/~brooks/)
 * [[/PROFESSIONAL-SOFTWARE-DEVELOPMENT]]
 * [[/No-Silver-Bullet]]
