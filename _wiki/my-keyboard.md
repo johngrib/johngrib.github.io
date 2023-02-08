@@ -3,7 +3,7 @@ layout  : wiki
 title   : 나의 키보드 히스토리
 summary : 역사를 정리해 보자
 date    : 2018-11-22 10:57:14 +0900
-updated : 2023-02-08 20:11:21 +0900
+updated : 2023-02-08 20:51:11 +0900
 tag     : keyboard
 resource: A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7
 toc     : true
@@ -80,7 +80,7 @@ Realforce87 10주년 모델 저소음 차등 영문
 
 ### 2017-05-11 HHKB JP 구매
 
-![hhkb-jp](/post-img/my-keyboard/hhkb-jp.jpg )
+![hhkb-jp]( /resource/A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7/217522038-c02f563a-a1c0-4fac-afe2-d7ae47eea2fd.png )
 
 HHKB JP
 
