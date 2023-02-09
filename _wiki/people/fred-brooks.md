@@ -3,7 +3,7 @@ layout  : wiki
 title   : 프레드 브룩스
 summary : Frederick P. Brooks, Jr.
 date    : 2022-09-16 22:47:43 +0900
-updated : 2023-02-10 00:10:18 +0900
+updated : 2023-02-10 00:24:24 +0900
 tag     : 
 resource: 0F/A675E4-A82C-45D4-A38A-099F4593CACC
 toc     : true
@@ -39,7 +39,7 @@ System/360의 하드웨어가 완성되자 이제는 운영체제가 필요했�
 따라서 IBM은 임시로 BOS(Basic Operating System), TOS(Tape Operating System), DOS(Disk Operating System)을 개발하고 System/360 시리즈에 탑재시킨다.
 >
 OS/360 프로젝트가 지연되면서 프로젝트 관리자인 프레더릭 브룩스는 큰 교훈을 얻게 되었다.
-그리고 자신이 기존에 경험한 프로젝트의 지식들과 OS/360에서 얻는 통찰력을 기반으로 1975년에 [The Mythical Man- Month](Addison-Wesley, 1995)라는 명저를 저술하였다.
+그리고 자신이 기존에 경험한 프로젝트의 지식들과 OS/360에서 얻는 통찰력을 기반으로 1975년에 [The Mythical Man- Month] (Addison-Wesley, 1995)라는 명저를 저술하였다.
 [^heart-152]
 
 ## Computer architecture 단어를 만들다
