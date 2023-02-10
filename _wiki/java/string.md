@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java String
 summary : 
 date    : 2022-11-11 00:27:32 +0900
-updated : 2022-11-20 21:17:05 +0900
+updated : 2023-02-10 23:39:40 +0900
 tag     : java clojure
 resource: 8C/44F1A0-7F42-415F-BB9C-1098ECC5E5D2
 toc     : true
@@ -63,7 +63,100 @@ String 리터럴은 Java Language Specification의 3.10.5 절에 정의되어 �
 >
 - @return this String과 같은 내용을 가진 문자열이며, unique한 문자열들이 들어있는 문자열 풀에서 가져온다는 것을 보장합니다.
 
+### format 메소드
 
+포매팅을 적용한 문자열을 리턴해준다.
+
+문자열은 다음과 같이 포매팅할 수 있다.
+
+```java
+String.format("_%s_", "JohnGrib");
+// _JohnGrib_
+
+String.format("_%10s_", "JohnGrib");
+// _  JohnGrib_
+
+String.format("_%-10s_", "JohnGrib");   // 왼쪽 정렬
+// _JohnGrib  _
+
+String.format("_%4$2s %3$2s %2$2s %1$2s_", "a", "b", "c", "d");
+// _ d  c  b  a_
+```
+
+콤마를 넣어주는 것도 쉽게 할 수 있다.
+
+```java
+String.format("%,d", 12345678);
+// 12,345,678
+
+String.format("%,f", 12345678.90123456);
+// 12,345,678.901235
+```
+
+실수 포맷팅은 이런 식으로 할 수 있다.
+
+```java
+String.format("%.2f", Math.PI);
+// 3.14
+
+String.format("%f", Math.PI);
+// 3.141593
+
+String.format("%3.5f", Math.PI);
+// 3.14159
+
+String.format("_%5d_", 123);
+// _  123_
+
+String.format("_%05d_", 123);
+// _00123_
+```
+
+날짜와 시간도 가능하다.
+
+```java
+String.format("%tF", LocalDate.now());
+// 2023-02-10
+
+String.format("Local time: %tT", LocalDateTime.now());
+// Local time: 23:37:08
+```
+
+국가별로 소수점을 `.`으로 쓰기도 하고, `,`로 쓰기도 하는데, 이런 경우에는 `Locale`을 지정해주면 된다.
+
+```java
+// 미국, 한국은 점을 소수점으로 사용한다.
+
+  String.format(Locale.US, "e = %+10.4f", Math.E * 1000);
+  // e = +2718.2818
+
+  String.format(Locale.KOREA, "e = %+10.4f", Math.E * 1000);
+  // e = +2718.2818
+
+// 이탈리아, 프랑스, 독일은 콤마를 소수점으로 사용한다.
+
+  String.format(Locale.ITALY, "e = %+10.4f", Math.E * 1000);
+  // e = +2718,2818
+
+  String.format(Locale.FRANCE, "e = %+10.4f", Math.E * 1000);
+  // e = +2718,2818
+
+  String.format(Locale.GERMAN, "e = %+10.4f", Math.E * 1000);
+  // e = +2718,2818
+```
+
+`(` 를 사용하면 회계에서 사용하곤 하는 것처럼 음수값을 괄호로 감싸준다.
+
+```java
+//                                                            ↓
+String.format("Amount gained or lost since last statement: $ %(,.2f", 6217.58);
+// Amount gained or lost since last statement: $ 6,217.58
+    // 양수이므로 6,217.58
+
+String.format("Amount gained or lost since last statement: $ %(,.2f", -6217.58);
+// Amount gained or lost since last statement: $ (6,217.58)
+    // 음수이므로 (6,217.58)
+```
 
 ## The Run-Time Constant Pool
 
