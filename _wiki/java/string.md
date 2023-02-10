@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java String
 summary : 
 date    : 2022-11-11 00:27:32 +0900
-updated : 2023-02-10 23:39:40 +0900
+updated : 2023-02-10 23:44:15 +0900
 tag     : java clojure
 resource: 8C/44F1A0-7F42-415F-BB9C-1098ECC5E5D2
 toc     : true
@@ -93,7 +93,7 @@ String.format("%,f", 12345678.90123456);
 // 12,345,678.901235
 ```
 
-실수 포맷팅은 이런 식으로 할 수 있다.
+실수와 정수 포맷팅은 이런 식으로 할 수 있다.
 
 ```java
 String.format("%.2f", Math.PI);
