@@ -3,7 +3,7 @@ layout  : wiki
 title   : SEGMENT 32050
 summary : SIGNAL EDGE DETECTOR
 date    : 2023-02-05 09:51:42 +0900
-updated : 2023-02-05 13:07:49 +0900
+updated : 2023-02-11 17:49:09 +0900
 tag     : 
 resource: C4/BFB3B9-262F-4736-B9A8-3FD04A813176
 toc     : true
@@ -179,4 +179,138 @@ MOV LEFT, DOWN
 MOV UP, DOWN
 
 @10
+```
+
+## 풀이 3: 3개의 파이프라인 사용
+
+- 138 CYCLES / 9 NODES / 54 INSTR
+
+steam community에서 발견한 [kschang77 님]( https://steamcommunity.com/id/kschang77 )의 풀이를 참고해 만든 것이다.
+
+- [32050 Signal Edge Detector Hint]( https://steamcommunity.com/app/370360/discussions/0/598198356169422808/ )
+- [참고한 스크린샷](http://steamcommunity.com/sharedfiles/filedetails/?id=462935892 )
+
+![image]( /resource/C4/BFB3B9-262F-4736-B9A8-3FD04A813176/218249143-dcaee827-6546-4a9c-92b3-8ea0e7111782.png )
+
+[save/32050.2.txt]( https://github.com/johngrib/TIS-100-solutions/blob/d86b16ce5a053d6c45c09c20a574a1cd8a9e8ecc/save/32050.2.txt )
+
+분기도 단순하고, 코드 자체는 어려운 것이 없으므로 코드에 굳이 주석을 남기지 않는다.
+흐름을 이해하는 것이 중요하다.
+
+```tis-100
+@0
+## 138 CYCLES
+# 9 NODES
+# 54 INSTR
+
+@1
+MOV UP,RIGHT
+MOV UP,RIGHT
+MOV UP,DOWN
+MOV UP,ACC
+MOV ACC,DOWN
+
+^:
+ MOV ACC, RIGHT
+ MOV UP, RIGHT
+ MOV UP, DOWN
+ MOV UP, ACC
+ MOV ACC, DOWN
+JMP ^
+
+@2
+MOV LEFT, RIGHT
+MOV LEFT, DOWN
+
+@3
+MOV LEFT, DOWN
+
+@4
+
+
+@5
+^:
+ MOV UP, ACC
+ MOV ACC, RIGHT
+ SUB UP
+
+ JGZ DIFF>0
+
+DIFF<0:
+ NEG
+
+DIFF>0:
+ SUB 10
+ MOV ACC, DOWN
+
+@6
+^:
+ MOV UP, ACC
+ MOV ACC, RIGHT
+ SUB LEFT
+
+ JGZ DIFF>0
+
+DIFF<0:
+ NEG
+
+DIFF>0:
+ SUB 10
+ MOV ACC, DOWN
+
+@7
+^:
+ MOV UP, ACC
+ SUB LEFT
+
+ JGZ DIFF>0
+
+DIFF<0:
+ NEG
+
+DIFF>0:
+ SUB 10
+ MOV ACC, DOWN
+
+@8
+^:
+ MOV UP, ACC
+ JLZ DIFF<10
+
+DIFF>=10:
+ MOV 1, RIGHT
+ JMP ^
+
+DIFF<10:
+ MOV 0, RIGHT
+
+@9
+MOV 0, DOWN
+^:MOV UP, ACC
+ JLZ DIFF<10
+
+DIFF>=10:
+ MOV RIGHT, DOWN
+ MOV 1, DOWN
+ JMP N
+
+DIFF<10:
+ MOV RIGHT, DOWN
+ MOV 0, DOWN
+N:
+ MOV LEFT, DOWN
+ JMP ^
+
+@10
+^:
+MOV UP, ACC
+
+JLZ DIFF<10
+
+DIFF>=10:
+ MOV 1, LEFT
+ JMP ^
+
+DIFF<10:
+ MOV 0, LEFT
 ```
