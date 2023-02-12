@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-02-12 14:28:29 +0900
+updated : 2023-02-12 17:58:33 +0900
 regenerate: true
 ---
 
@@ -125,6 +125,7 @@ regenerate: true
 * [[/people/gerald-weinberg]]
 * [[/people/grady-booch]]
 * [[/people/john-w-backus]]
+* [[/people/larry-ellison]]
 * [[/people/ronald-wayne]]
 
 * [[Bill-Joy-and-10000-hours-rule]]
