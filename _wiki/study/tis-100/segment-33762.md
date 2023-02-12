@@ -3,7 +3,7 @@ layout  : wiki
 title   : SEGMENT 33762
 summary : INTERRUPT HANDLER
 date    : 2023-02-12 14:28:32 +0900
-updated : 2023-02-12 15:07:52 +0900
+updated : 2023-02-12 15:18:51 +0900
 tag     : 
 resource: 1B/A9276A-4D6C-4BE9-98CD-A54EAECA9A67
 toc     : true
@@ -149,6 +149,105 @@ INC:            # SUM 이 증가했다면
 $:
  MOV UP, ACC    # 현재 SUM을 다음 사이클에서 사용하기 위해 SAV 한다
  SAV
+
+@10
+```
+
+## 풀이 2
+
+- 201 CYCLES / 9 NODES / 42 INSTR
+
+약간 최적화한 버전이다. 각 입력값이 1이 들어오면 다음 사이클에서는 0 을 확정적으로 출력한다.
+
+![image]( /resource/1B/A9276A-4D6C-4BE9-98CD-A54EAECA9A67/218296106-ac156f39-f9bb-44dc-b93f-c37c50b77d3b.png )
+
+[save/33762.1.txt]( https://github.com/johngrib/TIS-100-solutions/blob/master/save/33762.1.txt )
+
+```tis-100
+@0
+OFF:
+ MOV UP, ACC
+ JGZ +          # IN1. 값이 1 이면 goto +
+ MOV 0, DOWN    # 값이 0 이면 0 을 내려보낸다
+ JMP OFF        # goto OFF
+
++:
+ MOV 1, DOWN    # IN1. 값이 1 이면 1을 전달한다
+
+ON:             # 1이면 그 다음 출력에서 0 -> 1 될 수 없다
+ MOV UP, ACC    # 다음 입력값을 받는다
+ MOV 0, DOWN    # 무조건 0 을 내려보낸다
+ JGZ ON         # 입력값이 1 이었다면 goto ON
+
+@1
+OFF:
+ MOV UP, ACC
+ JGZ +
+ MOV 0, DOWN
+ JMP OFF
+
++:
+ MOV 2, DOWN
+
+ON:
+ MOV UP, ACC
+ MOV 0, DOWN
+ JGZ ON
+
+@2
+OFF:
+ MOV UP, ACC
+ JGZ +
+ MOV 0, DOWN
+ JMP OFF
+
++:
+ MOV 3, DOWN
+
+ON:
+ MOV UP, ACC
+ MOV 0, DOWN
+ JGZ ON
+
+@3
+OFF:
+ MOV UP, ACC
+ JGZ +
+ MOV 0, DOWN
+ JMP OFF
+
++:
+ MOV 4, DOWN
+
+ON:
+ MOV UP, ACC
+ MOV 0, DOWN
+ JGZ ON
+
+@4
+MOV UP, RIGHT
+
+@5
+MOV UP, ACC
+ADD LEFT
+MOV ACC, RIGHT
+
+@6
+MOV UP, ACC
+ADD RIGHT
+ADD LEFT
+MOV ACC, DOWN
+
+@7
+MOV UP, LEFT
+
+@8
+# 201 CYCLES
+# 9 NODES
+# 42 INSTR
+
+@9
+MOV UP, DOWN
 
 @10
 ```
