@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2022-11-16 23:53:48 +0900
+updated : 2023-02-18 09:49:50 +0900
 tag     : special-chars
 resource: 72/469FCC-A10B-46DC-A4DB-B7A9242EDF6D
 toc     : true
@@ -734,12 +734,13 @@ $$$$$$$a;   // "World"
 * 여러 프로그래밍 언어에서 `//`는 주석을 선언하는 데 사용된다.
 * HTML, XML의 태그를 닫는 데에 사용한다. `<TAG> ... </TAG>`.
 
-| 읽는 방법   | 슬래시, 나누기, slash, stroke, solidus |
-| 유니코드    | 'SOLIDUS' (U+002F)                     |
-| HTML entity | `&#47;`, `&#x2f;`                      |
-| UTF-8 (HEX) | 2F                                     |
+| 읽는 방법   | 슬래시, 나누기, slash, stroke, solidus, slant |
+| 유니코드    | 'SOLIDUS' (U+002F)                            |
+| HTML entity | `&#47;`, `&#x2f;`                             |
+| UTF-8 (HEX) | 2F                                            |
 
 * [RFC 20](https://tools.ietf.org/html/rfc20#section-4.2 )
+    * RFC 20 문서에서 `/`를 `slant`라고 부른다.
 * [fileformat.info/info/unicode/char/2F](http://www.fileformat.info/info/unicode/char/2F )
 * [Slash(wikipedia)](https://en.wikipedia.org/wiki/Slash_(punctuation) )
 * [sed manual](https://www.gnu.org/software/sed/manual/sed.html)
@@ -1009,12 +1010,13 @@ Python이나 Vimscript처럼 `-1`인덱스를 지원하는 언어도 있다.
 * Vim에서는 보통 `<Leader>`키로 지정한다.
 * LaTeX에서 키워드 prefix로 사용한다. `\lt`, `\gt`, `\frac` 등등.
 
-| 읽는 방법   | 백슬래시, 역슬래시, backslash, escape, reverse slash, slosh |
-| 유니코드    | 'REVERSE SOLIDUS' (U+005C)                                  |
-| HTML entity | `&#92;`, `&#x5c;`                                           |
-| UTF-8 (HEX) | 5C                                                          |
+| 읽는 방법   | 백슬래시, 역슬래시, backslash, escape, reverse slash, slosh, reverse slant |
+| 유니코드    | 'REVERSE SOLIDUS' (U+005C)                                                 |
+| HTML entity | `&#92;`, `&#x5c;`                                                          |
+| UTF-8 (HEX) | 5C                                                                         |
 
 * [RFC 20](https://tools.ietf.org/html/rfc20#section-4.2 )
+    * RFC 20 에서 `\`를 `reverse slant`라고 부른다.
 * [fileformat.info/info/unicode/char/5C](http://www.fileformat.info/info/unicode/char/5C )
 * [Backslash(wikipedia)](https://en.wikipedia.org/wiki/Backslash )
 
