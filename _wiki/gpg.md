@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2022-06-19 20:21:40 +0900
+updated : 2023-02-19 16:14:56 +0900
 tag     : bash encryption gnu command
 resource: 66/BFEA1D-BCE2-445A-A6AD-64909525CDE2
 toc     : true
@@ -884,7 +884,7 @@ commit에 서명을 하기 시작했다면 github에도 공개키를 등록하�
 $ brew upgrade gnupg
 $ brew install pinentry-mac
 
-$ # m1 맥북 이전
+$ # intel 맥북인 경우
 $ echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 
 $ killall gpg-agent
@@ -896,7 +896,7 @@ M1 맥북부터는 다음과 같이 한다.[^sto-1]
 $ brew upgrade gnupg
 $ brew install pinentry-mac
 
-$ # m1 맥북 이전
+$ # m1 맥북인 경우
 $ echo "pinentry-program /opt/homebrew/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 
 $ killall gpg-agent
