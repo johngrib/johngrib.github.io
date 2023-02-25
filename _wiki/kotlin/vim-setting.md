@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Kotlin 코드를 작성하자
 summary : 
 date    : 2022-10-02 21:04:23 +0900
-updated : 2023-02-25 23:55:39 +0900
+updated : 2023-02-26 00:01:22 +0900
 tag     : 
 resource: 8C/9FA53B-3E34-4632-A829-D260F39F01A6
 toc     : true
@@ -68,11 +68,11 @@ Plug 'beeender/Comrade', {'for': 'kotlin'}
 
 이유는 Comrade가 3년 동안 개발이 중지된 프로젝트이기 때문인데, `plugin/init.py`를 다음과 같이 수정해주면 된다.
 
-```python3
-    # NVIM_LISTEN_ADDRESS is deprecated : https://neovim.io/doc/user/deprecated.html
-    addr = os.getenv("NVIM_LISTEN_ADDRESS")
-    if addr is None:
-        addr = os.getenv("NVIM")
+```python
+# NVIM_LISTEN_ADDRESS is deprecated : https://neovim.io/doc/user/deprecated.html
+addr = os.getenv("NVIM_LISTEN_ADDRESS")
+if addr is None:
+    addr = os.getenv("NVIM")
 ```
 
 이 작업은 Comrade로 [PR](https://github.com/beeender/Comrade/pull/33 )을 보내둔 상태이다.
