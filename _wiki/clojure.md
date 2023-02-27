@@ -3,7 +3,7 @@ layout  : category
 title   : Clojure
 summary : 
 date    : 2021-11-30 10:10:29 +0900
-updated : 2022-02-17 23:56:23 +0900
+updated : 2023-02-27 17:46:18 +0900
 tag     : 
 resource: 4F/F271CC-72B6-4B13-88F1-90D5F276871E
 toc     : true
@@ -32,6 +32,7 @@ latex   : false
 - <https://clojuredocs.org/quickref >
 - <https://www.tutorialspoint.com/clojure/index.htm >
 - <https://hackr.io/tutorials/learn-clojure >
+- [Stuart Sierra의 Clojure do's and don'ts]( https://stuartsierra.com/tag/dos-and-donts )
 
 ## 그 외 참고할만한 곳들
 
