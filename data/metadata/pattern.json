@@ -20,6 +20,7 @@
   "pattern/interpreter",
   "pattern/layered-architecture",
   "pattern/marker-interface",
+  "pattern/microservice-architecture",
   "pattern/null-object",
   "pattern/observer",
   "pattern/pipeline",
