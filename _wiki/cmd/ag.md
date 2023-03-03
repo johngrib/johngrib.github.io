@@ -3,7 +3,7 @@ layout  : wiki
 title   : ag
 summary : the silver searcher
 date    : 2018-12-27 22:01:47 +0900
-updated : 2021-12-25 23:19:01 +0900
+updated : 2023-03-03 19:40:00 +0900
 tag     : bash command
 resource: 3A/B767D9-C133-4453-8511-E7DC2EA9B142
 toc     : true
@@ -30,6 +30,9 @@ ag test -l
 
  # 문자열 test를 가진 모든 파일을 찾아, 파일명과 일치한 숫자 카운트를 보여준다.
 ag test -c
+
+ # 대소문자 구별(case sensitive)
+ag Test -s
 
  # -A3 : 검색 결과와 일치한 라인 아래로 3줄을 더 보여준다.
  # -B2 : 검색 결과와 일치한 라인 위로 2줄을 더 보여준다.
