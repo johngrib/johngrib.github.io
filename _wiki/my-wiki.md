@@ -61,7 +61,7 @@ parent  : [[blog]]
 
 * Vimwiki가 있으니 엔터 키 하나로 새로운 항목을 추가하고 링크도 연결할 수 있다. 이보다 편하긴 어렵다.
 * 로컬에서 예상치 못한 귀찮은 문제가 생기면 Vimscript로 해결하면 된다.
-* 웹에서 링크 연결하는 문제는 Javascript를 써서 해결하자.
+* 웹에서 링크 연결하는 문제는 JavaScript를 써서 해결하자.
     * `\[[test]]`를 `<a href="../test.md">test</a>`로 리플레이스하면 될 것 같다.
 
 ### 검색 기능이 있어야 한다
@@ -131,7 +131,7 @@ let g:vimwiki_conceallevel = 0
 
 ### `\[[test]]`형식의 Vimwiki 링크를 html `<a>` 태그로 보여준다.
 
-[_includes/createLink.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/createLink.html) 파일을 만들고 다음과 같이 Javascript 코드를 짜 넣었다.
+[_includes/createLink.html](https://github.com/johngrib/johngrib-jekyll-skeleton/blob/v1.0/_includes/createLink.html) 파일을 만들고 다음과 같이 JavaScript 코드를 짜 넣었다.
 
 ```javascript
 <script>
@@ -143,7 +143,7 @@ let g:vimwiki_conceallevel = 0
 </script>
 ```
 
-위의 javascript 코드는 다음과 같은 두 가지 패턴에 대해 `<a>` 태그를 생성한다.
+위의 JavaScript 코드는 다음과 같은 두 가지 패턴에 대해 `<a>` 태그를 생성한다.
 
 * `\[[test]]{테스트}` => `<a href="../test">테스트</a>`
 * `\[[test]]` => `<a href="../test">test</a>`
@@ -406,7 +406,7 @@ autocmd BufWritePre *.md call LastModified()
 ruby를 써서 내가 직접 Jekyll 플러그인을 개발해도 Github.io에서는 사용할 수 없다는 것.
 
 이건 Github.io의 Jekyll이 제공하는 플러그인의 한계가 있는 것이므로,  
-javascript로 yml 데이터 파일을 생성하는 코드를 짜기로 했다.  
+JavaScript로 yml 데이터 파일을 생성하는 코드를 짜기로 했다.  
 Jekyll은 `_data` 디렉토리에 `json`이나 `yml`파일이 있다면 `site.data.파일명.키` 와 같은 방법으로 해당 데이터에 접근할 수 있다.
 
 이걸 이용하면 된다.

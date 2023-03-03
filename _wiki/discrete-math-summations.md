@@ -30,7 +30,7 @@ $$ \sum_\color{red}{ m ≤ i ≤ n } a_i = a_m + a_{m+1} + a_{m+2} ... + a_{n-1}
 
 이것을 "$$ a_i $$의 $$ i = m $$ 부터 $$ n $$ 까지의 합"이라 읽는다.
 
-javascript 로 따지면 그냥 m 번 인덱스부터 n 번 인덱스까지 더하라는 뜻이다.
+JavaScript 로 따지면 그냥 m 번 인덱스부터 n 번 인덱스까지 더하라는 뜻이다.
 
 ```js
 let sum = 0;

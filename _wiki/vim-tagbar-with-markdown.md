@@ -96,7 +96,7 @@ let g:tagbar_type_vimwiki = {
 
 ## 방법 2: markdown2ctags 를 사용하는 방법
 
-> 이 방법은 별로 추천하지 않는다. 마크다운 파일을 저장할 때마다 자동으로 태그바가 갱신되지 않기 때문이다. 자동으로 갱신하게 하려면 vimscript를 잡다하게 작성해야 하므로 불편한 점이 많다.
+> 이 방법은 별로 추천하지 않는다. 마크다운 파일을 저장할 때마다 자동으로 태그바가 갱신되지 않기 때문이다. 자동으로 갱신하게 하려면 Vimscript를 잡다하게 작성해야 하므로 불편한 점이 많다.
 
 이 방법은 [markdown2ctags](https://github.com/jszakmeister/markdown2ctags )를 사용하는 방법이다.
 

@@ -93,7 +93,7 @@ D
 
 ## 문제 해결: 복사도 Queue로 관리되도록 하자
 
-간단하게 짧은 vimscript를 작성해서 이 문제를 해결해 보도록 하자.
+간단하게 짧은 Vimscript를 작성해서 이 문제를 해결해 보도록 하자.
 
 ### 준비물: autocmd 이벤트 TextYankPost
 
@@ -129,7 +129,7 @@ D
     - `"1` 레지스터가 업데이트된다면 삭제가 발생한 것이다.
         - 삭제는 이미 Queue 관리되고 있다. 아무것도 안 해도 된다.
 
-여기에서 문제는 이전의 `"0` 값이 유실된다는 건데, 이건 vimscript를 사용해서 변수에 잘 보관해두면 해결된다.
+여기에서 문제는 이전의 `"0` 값이 유실된다는 건데, 이건 Vimscript를 사용해서 변수에 잘 보관해두면 해결된다.
 
 ### 코딩
 
@@ -242,7 +242,7 @@ autocmd TextYankPost * :call s:numbered_register_shift()
 
 ## 참고
 
-이 글에서 소개하는 vimscript는 VIMRC 2022 발표자료입니다.
+이 글에서 소개하는 Vimscript는 VIMRC 2022 발표자료입니다.
 
 - [Vim 교정학원, VIMRC: Vim Remediation Club 2022]( https://lqez.dev/events/vimrc/2022/ )
     - [VIMRC 2022 (festa.io)]( https://festa.io/events/2412 )

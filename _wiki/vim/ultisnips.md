@@ -18,7 +18,7 @@ latex   : false
 
 * vim을 위한 궁극의 snippet 솔루션.
 * 자신만의 snippet 파일을 만들어갈 수 있으므로, 점점 더 편해지는 즐거움이 있다.
-* 셸 스크립트, vimscript, python 코드를 실행할 수 있어 자유도가 높다.
+* 셸 스크립트, Vimscript, Python 코드를 실행할 수 있어 자유도가 높다.
 
 ## 설치
 
@@ -148,7 +148,7 @@ endsnippet
 
 `abbr <expr> system(...)`과 비슷하니, 편리하게 사용하도록 하자.
 
-## python 함수 정의해 사용하기
+## Python 함수 정의해 사용하기
 
 ```viml
 :help Ultisnips-python
@@ -165,7 +165,7 @@ ${1:Text}`!p snip.rv = (30-2*len(t[1]))*' '+t[1].upper()`
 endsnippet
 ```
 
-python에 익숙하다면 `!p snip.rv = ` 이후의 코드의 의미를 알 수 있을 것이다.
+Python에 익숙하다면 `!p snip.rv = ` 이후의 코드의 의미를 알 수 있을 것이다.
 
 * `(30-2*len(t[1]))*' '` : 공백 `' '`을 `30 - 2 * len(t[1])` 만큼 만든다.
 * `t[1].upper()` : `t[1]`을 대문자로 바꾼다.
@@ -227,9 +227,9 @@ endsnippet
 
 ![tag]( /resource/DB/D2A67D-5E12-4B85-803B-E54CFE95600D/lt.gif )
 
-### javascript import
+### JavaScript import
 
-다음은 웹 서핑을 하다가 찾아낸 snippet인데 특히 javascript 사용자에게 유용할 듯하여 소개한다.
+다음은 웹 서핑을 하다가 찾아낸 snippet인데 특히 JavaScript 사용자에게 유용할 듯하여 소개한다.
 
 [Magic Import for Vim UltiSnips](https://gist.github.com/mutewinter/825f44bfd3aa810088ea5de2f61bad63 )
 
@@ -285,9 +285,9 @@ snip.rv = yyyy_mm_dd + ' ' + ['월', '화', '수', '목', '금', '토', '일'][i
 endsnippet
 ```
 
-## UltiSnips에서 vimscript 사용하기
+## UltiSnips에서 Vimscript 사용하기
 
-`!v`를 사용하면 vimscript를 사용할 수 있다.
+`!v`를 사용하면 Vimscript를 사용할 수 있다.
 
 다음 snippet을 사용해 보자.
 

@@ -31,7 +31,7 @@ latex   : false
 ```
 
 읽고 있는 책 페이지를 수정하고 파일을 저장하면 퍼센티지가 자동으로 업데이트되게 해 두었던 것인데,
-다음과 같이 `awk`를 호출하는 짧은 vimscript 코드로 돌아간다.
+다음과 같이 `awk`를 호출하는 짧은 Vimscript 코드로 돌아간다.
 
 ```viml
 function! UpdateBookProgress()

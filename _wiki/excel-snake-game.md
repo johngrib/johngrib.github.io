@@ -22,7 +22,7 @@ VBA를 사용하면 만들 수 있다.
 
 다른 이유는 없고 나는 그냥 새로운 프로그래밍 언어를 배울 때마다 이런 류의 게임을 만든다.
 
-vim에서 돌아가는 [vim-game-code-break]( https://github.com/johngrib/vim-game-code-break )와 [vim-game-snake]( https://github.com/johngrib/vim-game-snake )도 vimscript를 익히기 시작했을 때 만든 것이다.
+vim에서 돌아가는 [vim-game-code-break]( https://github.com/johngrib/vim-game-code-break )와 [vim-game-snake]( https://github.com/johngrib/vim-game-snake )도 Vimscript를 익히기 시작했을 때 만든 것이다.
 
 아무튼 오랫동안 잊고 있다가 최근에 다시 생각나서 팀 동료들에게 기술 공유 시간에 발표를 했고(사실 발표할 거리가 부족해서 예전에 만든 것을 써먹은 것이다) 반응이 괜찮아서 기록해 둔다.
 
@@ -88,7 +88,7 @@ Public Declare PtrSafe Function KillTimer Lib "user32" ( _
 
 ## 구현
 
-* 먼저 익숙한 언어인 javascript와 html로 구현한 다음, vba로 구현한 게임이다.
+* 먼저 익숙한 언어인 JavaScript와 html로 구현한 다음, vba로 구현한 게임이다.
 * 뱀의 몸체에 대해 순환 큐를 썼다.
 * 각 셀의 크기를 정사각형으로 만들고, 까만 배경색을 지정하는 방식으로 게임판을 만들었다.
 

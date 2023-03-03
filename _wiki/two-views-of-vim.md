@@ -83,7 +83,7 @@ vim의 NORMAL 명령어를 언어 $$L_v$$로 보는 관점에서
 
 가령 vim-surround 사용자가 `s` 레지스터에 `ysiw$w.`를 넣어뒀다면, 이로 인해 `@s`를 입력하는 것만으로 `ysiw$w.`을 또 입력하는 일을 생략할 수 있다.
 
-(매크로의 활용은 vim 에디터를 vim 명령어와 vimscript를 일종의 난해한 프로그래밍 언어로 사용하는 데에도 핵심적인 방법일 정도로 강력하다.)
+(매크로의 활용은 vim 에디터를 vim 명령어와 Vimscript를 일종의 난해한 프로그래밍 언어로 사용하는 데에도 핵심적인 방법일 정도로 강력하다.)
 
 
 `:g`와 매크로를 조합해 쓰는 것은 이러한 특징을 잘 활용하는 재미있는 예가 될 수 있다고 생각한다.
@@ -443,7 +443,7 @@ Startify는 Most Recently Used Files도 제공하고 있어 편리하다.
 * vim 외의 다른 도구들을 함께 조화롭게 사용하는 방향을 생각해볼 수 있다.
 * vim 안에서 모든 것을 해결하려 집착할 필요는 없다.
 * 이미 고유의 목적에 맞춰 잘 만들어진 도구가 잔뜩 있다.
-* vimscript를 고집할 필요가 없음. 쉽게 쉽게 가는 것이 좋다.
+* Vimscript를 고집할 필요가 없음. 쉽게 쉽게 가는 것이 좋다.
 
 예를 들어 간단한 사칙연산을 `bc` 명령어로 수행하는 것이 가능하다(사실 `bc`는 그냥 계산 명령어가 아니라 하나의 언어이다).
 
@@ -488,9 +488,9 @@ console.log(39+3);
 undefined
 ```
 
-물론 node.js 만 되는 것은 아니고 python도 된다.
+물론 node.js 만 되는 것은 아니고 Python도 된다.
 
-vim 버퍼에 다음과 같은 python 코드를 작성한 다음 `vip:!python`을 입력해보자.
+vim 버퍼에 다음과 같은 Python 코드를 작성한 다음 `vip:!python`을 입력해보자.
 
 ```
 for i in range(4):
@@ -506,14 +506,14 @@ vim
 vim
 ```
 
-말하자면 vimscript를 몰라도 vim에서 다른 프로그래밍 언어의 능력을 가져다 쓸 수도 있다는 것.
+말하자면 Vimscript를 몰라도 vim에서 다른 프로그래밍 언어의 능력을 가져다 쓸 수도 있다는 것.
 
 평범한 bash 명령어와 같이 STDIN을 받아 처리하는 코드를 작성한다면,
 bash shell에서 pipe redirection과 함께 쓸 수 있는 것은 물론이고 vim 에디터 안에서도 쓸 수 있다.
 
-### 내가 작성한 vimscript 도구의 실행
+### 내가 작성한 Vimscript 도구의 실행
 
-$$L_v$$외에 vim에는 vimscript(VimL)라는 이름의 프로그래밍 언어가 내장되어 있다.
+$$L_v$$외에 vim에는 Vimscript(VimL)라는 이름의 프로그래밍 언어가 내장되어 있다.
 
 이 언어와 함께 제공되는 builtin function을 사용하면 이런저런 유용한 도구를 만들어 사용할 수 있다.
 
@@ -535,7 +535,7 @@ $$L_v$$외에 vim에는 vimscript(VimL)라는 이름의 프로그래밍 언어�
 * 책 제목이 있는 라인에 커서를 두고 `<c-space>`하면 `[X]`와 `[ ]`로 토글이 된다.
 * 책 페이지를 수정하고 파일을 저장하면 퍼센티지가 업데이트된다.
 
-퍼센티지 업데이트는 다음과 같은 짧은 vimscript 코드로 돌아간다(읽어보면 `awk` 언어를 사용하고 있음을 알 수 있다).
+퍼센티지 업데이트는 다음과 같은 짧은 Vimscript 코드로 돌아간다(읽어보면 `awk` 언어를 사용하고 있음을 알 수 있다).
 
 ```viml
 function! UpdateBookProgress()
@@ -561,14 +561,14 @@ augroup END
 
 #### 게임
 
-* vimscript로 게임을 개발하거나 실행하여 플레이할 수도 있다.
+* Vimscript로 게임을 개발하거나 실행하여 플레이할 수도 있다.
 
 <https://github.com/johngrib/vim-game-code-break >
 
 ![vim-game][vim-game]
 
 
-### 다른 사람이 작성한 vimscript 도구의 실행
+### 다른 사람이 작성한 Vimscript 도구의 실행
 
 Apple에 앱 스토어가 있다면 Vim에는 vim.org/scripts 와 Vim Awesome이 있다.
 
@@ -582,7 +582,7 @@ Apple에 앱 스토어가 있다면 Vim에는 vim.org/scripts 와 Vim Awesome이
 
 #### 내가 매일 사용하는 vim plugin 소개
 
-vimscript로 만든 vim 전용 도구는 vim plugin이라 부른다.
+Vimscript로 만든 vim 전용 도구는 vim plugin이라 부른다.
 
 
 ##### fzf.vim
@@ -672,7 +672,7 @@ endif
 
 크게 두 가지 방법이 있다.
 
-* vimscript 플러그인을 만들어 세상에 공유한다.
+* Vimscript 플러그인을 만들어 세상에 공유한다.
 * [vim.org](https://www.vim.org/) 에 기부한다.
     * 기부금은 우간다의 어린이를 돕는 데에 사용된다.
     * 기부자는 투표권을 받게 되며, 약 81가지 항목에 대한 찬/반 여부를 투표할 수 있게 된다.
