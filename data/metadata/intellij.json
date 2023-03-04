@@ -1,10 +1,12 @@
 {
  "type": "wiki",
  "title": "IntelliJ IDEA",
- "summary": "문제 해결한 경험을 모아본다",
+ "summary": "",
  "parent": "tools",
  "url": "/wiki/intellij",
- "updated": "2023-01-20 15:44:28 +0900",
- "resource": "F6/C37D5D-0E30-44D2-B873-E374D0E2CA90",
- "children": []
+ "updated": "2023-03-04 23:57:49 +0900",
+ "resource": "91/94D125-6324-4EFF-BB5C-F4637CD18E8D",
+ "children": [
+  "intellij/tips"
+ ]
 }

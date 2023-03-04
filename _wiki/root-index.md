@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-01 14:18:57 +0900
+updated : 2023-03-04 23:57:20 +0900
 regenerate: true
 ---
 
@@ -538,12 +538,14 @@ regenerate: true
 
 ## [[tools]]
 
+* [[/intellij]]
+    * [[/intellij/tips]]
+
 * [[dbeaver]]
 * [[dumang-dk6-keyboard]]
 * [[google-home]]
 * [[gradle]]
 * [[h2database]]
-* [[intellij]]
 * [[iterm]]
 
 ### [[aws]]
