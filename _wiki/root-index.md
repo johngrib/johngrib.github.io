@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-04 23:57:20 +0900
+updated : 2023-03-05 00:00:48 +0900
 regenerate: true
 ---
 
@@ -540,6 +540,7 @@ regenerate: true
 
 * [[/intellij]]
     * [[/intellij/tips]]
+    * [[/intellij/sdk-code-samples]]
 
 * [[dbeaver]]
 * [[dumang-dk6-keyboard]]
