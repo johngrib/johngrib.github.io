@@ -3,7 +3,7 @@ layout  : wiki
 title   : intellij-sdk-code-samples
 summary : IntelliJ SDK 문서의 샘플 코드 모음 리포지토리
 date    : 2023-03-05 00:00:51 +0900
-updated : 2023-03-05 00:08:57 +0900
+updated : 2023-03-05 17:24:33 +0900
 tag     : 
 resource: A9/2354FB-CB0E-479E-9742-FC7CD75C1414
 toc     : true
@@ -19,4 +19,11 @@ latex   : false
 ## Action Basics Sample Project
 
 [action_basics]( https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/action_basics ), [action_basics (2023-03-02)]( https://github.com/JetBrains/intellij-sdk-code-samples/tree/8b7c6c174a5cdeaae8e45fdeaedcbbad2308578f/action_basics )
+
+- 몇 가지 Action을 등록하는 예제 프로젝트.
+- 각 액션은 `AnAction` 추상 클래스를 확장한 것.
+- 마우스 우클릭 메뉴, 키보드 단축키 등을 통해 팝업 메시지를 띄우는 방법을 배울 수 있다.
+
+| ![image]( /resource/A9/2354FB-CB0E-479E-9742-FC7CD75C1414/222949641-55610a59-2522-47a6-b362-cd0672d50f4a.png ) | ![image]( /resource/A9/2354FB-CB0E-479E-9742-FC7CD75C1414/222949708-22e4195a-0814-4756-818d-8ef22c592e77.png ) |
+| ![image]( /resource/A9/2354FB-CB0E-479E-9742-FC7CD75C1414/222949653-2ce6aa2c-5078-4c94-aca1-a919bbfe7a5b.png ) | ![image]( /resource/A9/2354FB-CB0E-479E-9742-FC7CD75C1414/222949736-d84af76b-a1e8-405d-ac5b-c211f642fa76.png ) |
 
