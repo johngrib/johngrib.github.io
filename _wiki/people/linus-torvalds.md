@@ -3,7 +3,7 @@ layout  : wiki
 title   : Linus Torvalds
 summary : 
 date    : 2020-01-30 23:11:20 +0900
-updated : 2023-03-05 19:33:49 +0900
+updated : 2023-03-05 19:52:46 +0900
 tag     : linux story
 resource: 50/FBE0D2-79BD-4795-AD0C-6C777C929090
 toc     : true
@@ -13,6 +13,42 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 1991. 8. 26
+
+[What would you like to see most in minix?](https://groups.google.com/g/comp.os.minix/c/dlNtH7RRrGA/m/SwRavCzVE7gJ )
+
+![image]( /resource/50/FBE0D2-79BD-4795-AD0C-6C777C929090/222955351-ad0ab78b-d544-4a61-b914-8ee9391d1155.png )
+
+>
+Hello everybody out there using minix -
+I'm doing a (free) operating system (just a hobby, won't be big and professional like gnu) for 386(486) AT clones.
+This has been brewing since april, and is starting to get ready.
+I'd like any feedback on things people like/dislike in minix, as my OS resembles it somewhat (same physical layout of the file-system (due to practical reasons) among other things).
+>
+I've currently ported bash(1.08) and gcc(1.40), and things seem to work.
+This implies that I'll get something practical within a few months, and I'd like to know what features most people would want. Any suggestions are welcome, but I won't promise I'll implement them :-)
+>
+Linus (torv...@kruuna.helsinki.fi)
+>
+PS. Yes - it's free of any minix code, and it has a multi-threaded fs. It is NOT protable (uses 386 task switching etc), and it probably never will support anything other than AT-harddisks, as that's all I have :-(.
+
+minix를 사용하는 여러분 안녕하세요 -
+저는 386(486) AT 클론을위한 (무료) 운영체제를 만들고 있습니다(그냥 취미이고, gnu처럼 크고 전문적인 것은 아닙니다).
+이걸 4 월부터 집에서 한땀한땀 만들면서 준비를 시작하고 있습니다.
+제 OS가 minix와 좀 비슷하기도 해서(특히 실용적인 이유로 파일 시스템의 물리적 레이아웃이 동일함),
+다른 분들이 minix에서 좋아하거나 싫어하는 것들에 대한 피드백을 받아보고 싶습니다.
+
+현재 bash(1.08)와 gcc(1.40)를 포팅해봤는데 돌아가는 것 같습니다.
+즉 몇 달 안에 실용적인 결과물을 얻을 수 있다는 것을 의미하며, 대부분의 사람들이 원하는 기능이 뭔지 알고 싶습니다.
+어떤 제안이라도 환영하지만 제가 구현하겠다고 약속하지는 않겠습니다 :-)
+
+리누스 (torv...@kruuna.helsinki.fi)
+
+추신. 네 - 제 OS에 minix 코드는 없고, 멀티 스레드 fs가 있습니다.
+이식성도 없습니다(386 작업 전환 등을 사용하기 때문).
+그리고 AT-하드디스크만 지원하는데, 제가 갖고 있는 하드디스크가 그것 뿐이기 때문입니다.
+
 
 ## 운영체제: 설계와 구현을 읽다
 
@@ -58,8 +94,9 @@ GNU를 시작했을 때 이미 세계 정상의 기술 분야 대학교에서 �
 
 ## 참고문헌
 
-* 프리-오픈소스 소프트웨어 혁명의 역사 / 크리스토퍼 토찌 저/이재범 역 / 지식함지 / 초판 1쇄 2019년 12월 12일
-* 리눅스 그냥 재미로 / 리누스 토발즈 저 / 안진환 역 / 한겨레신문사 / 1쇄 발행 2001년 4월 20일
+- 프리-오픈소스 소프트웨어 혁명의 역사 / 크리스토퍼 토찌 저/이재범 역 / 지식함지 / 초판 1쇄 2019년 12월 12일
+- 리눅스 그냥 재미로 / 리누스 토발즈 저 / 안진환 역 / 한겨레신문사 / 1쇄 발행 2001년 4월 20일
+- [1991년 리누스 토발즈가 google group에 남긴 글]( https://groups.google.com/g/comp.os.minix/c/dlNtH7RRrGA/m/SwRavCzVE7gJ )
 
 ## 주석
 
