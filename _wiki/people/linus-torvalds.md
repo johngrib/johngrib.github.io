@@ -1,14 +1,14 @@
 ---
 layout  : wiki
-title   : 리누스 토발즈, 리눅스를 개발하다
+title   : Linus Torvalds
 summary : 
 date    : 2020-01-30 23:11:20 +0900
-updated : 2020-07-29 22:23:05 +0900
+updated : 2023-03-05 19:33:49 +0900
 tag     : linux story
 resource: 50/FBE0D2-79BD-4795-AD0C-6C777C929090
 toc     : true
 public  : true
-parent  : [[people]]
+parent  : [[/people]]
 latex   : false
 ---
 * TOC

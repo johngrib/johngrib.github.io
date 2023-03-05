@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-05 17:59:57 +0900
+updated : 2023-03-05 19:33:29 +0900
 regenerate: true
 ---
 
@@ -129,6 +129,7 @@ regenerate: true
 * [[/people/john-w-backus]]
 * [[/people/larry-ellison]]
 * [[/people/ronald-wayne]]
+* [[/people/linus-torvalds]]
 
 * [[Bill-Joy-and-10000-hours-rule]]
 * [[Donald-Ervin-Knuth]]
@@ -137,7 +138,6 @@ regenerate: true
 * [[brian-w-kernighan]]
 * [[claude-elwood-shannon]]
 * [[jeff-bezos]]
-* [[the-beginning-of-linux]]
 
 ## [[how-to]]
 
