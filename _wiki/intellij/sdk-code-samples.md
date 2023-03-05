@@ -3,7 +3,7 @@ layout  : wiki
 title   : intellij-sdk-code-samples
 summary : IntelliJ SDK 문서의 샘플 코드 모음 리포지토리
 date    : 2023-03-05 00:00:51 +0900
-updated : 2023-03-05 17:24:33 +0900
+updated : 2023-03-05 17:38:36 +0900
 tag     : 
 resource: A9/2354FB-CB0E-479E-9742-FC7CD75C1414
 toc     : true
@@ -16,7 +16,23 @@ latex   : false
 
 [JetBrains/intellij-sdk-code-samples (github.com)](https://github.com/JetBrains/intellij-sdk-code-samples )
 
-## Action Basics Sample Project
+## 빌드 및 설치 방법
+
+각 디렉토리로 이동해서 다음을 입력하면 된다.
+
+```bash
+$ ./gradlew assemble
+```
+
+이후 빌드된 결과로 생성된 zip 파일이 `{PROJECT}/build/distributions`에 추가된다.
+
+`Preferences` - `Plugins` - 오른쪽 위의 `톱니바퀴` - `Install Plugin from Disk`에서 이 zip 파일을 선택하면 IntelliJ에 설치할 수 있다.
+
+![image]( /resource/A9/2354FB-CB0E-479E-9742-FC7CD75C1414/222950448-f4ef0bca-a9e0-4bb6-a402-06c81d6742d3.png )
+
+## 프로젝트
+
+### Action Basics Sample Project
 
 [action_basics]( https://github.com/JetBrains/intellij-sdk-code-samples/tree/main/action_basics ), [action_basics (2023-03-02)]( https://github.com/JetBrains/intellij-sdk-code-samples/tree/8b7c6c174a5cdeaae8e45fdeaedcbbad2308578f/action_basics )
 
