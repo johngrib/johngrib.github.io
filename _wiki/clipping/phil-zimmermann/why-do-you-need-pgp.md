@@ -3,7 +3,7 @@ layout  : wiki
 title   : Why Do You Need PGP? by Phil Zimmermann
 summary : PGP가 필요한 이유 - 필 짐머만
 date    : 2023-03-09 22:06:47 +0900
-updated : 2023-03-09 23:24:25 +0900
+updated : 2023-03-09 23:29:22 +0900
 tag     : 
 resource: BF/3FF85D-D7C5-4256-AE86-CEC02C0AED02
 toc     : true
@@ -17,9 +17,9 @@ latex   : false
 ## 번역: Why Do You Need PGP?
 
 - 원문: [Why Do You Need PGP?]( https://groups.csail.mit.edu/mac/classes/6.805/articles/crypto/cypherpunks/zimmermann-why-pgp.html )
-
-이 글은 PGP User's Guide, vol. 1 (1994년 8월)에 실린 필 짐머만의 1967년 글을 번역한 것입니다.
-의역이 많으므로 원문과 대조해가며 읽기를 권합니다.
+- 이 글은 PGP User's Guide, vol. 1 (1994년 8월)에 실린 필 짐머만의 1967년 글을 번역한 것입니다.
+- 의역이 많으므로 원문과 대조해가며 읽기를 권합니다.
+- 초벌 번역에 [DeepL Translator]( https://www.deepl.com/translator )를 사용하였습니다.
 
 >
 Why Do You Need PGP?  
