@@ -3,7 +3,7 @@ layout  : wiki
 title   : Why Do You Need PGP? by Phil Zimmermann
 summary : PGP가 필요한 이유 - 필 짐머만
 date    : 2023-03-09 22:06:47 +0900
-updated : 2023-03-09 23:39:32 +0900
+updated : 2023-03-09 23:47:24 +0900
 tag     : 
 resource: BF/3FF85D-D7C5-4256-AE86-CEC02C0AED02
 toc     : true
@@ -192,6 +192,8 @@ PGP는 사람들이 자신의 개인정보를 스스로 관리할 수 있도록 
 
 ### From: 리얼월드 암호학
 
+#### 시대 배경
+
 >
 이메일은 암호화되지 않은 프로토콜로 탄생했으며, 오늘날에도 암호화되지 않았다. 이메일 탄생 당시에는 보안이 최우선이 아니었기 때문이다.
 이메일 암호화는 1991년에 PGP<sub>Pretty Good Privacy</sub>라는 도구가 출시된 후 단순한 아이디어 이상이 되기 시작했다.
@@ -200,11 +202,15 @@ PGP는 사람들이 자신의 개인정보를 스스로 관리할 수 있도록 
 1994년 에세이 \<Why Do You Need PGP?(PGP가 필요한 이유는 무엇인가?> 에서 필 짐머만은 "PGP는 사람들이 개인 정보를 스스로 관리할 수 있도록 한다. 이에 대한 사회적 요구가 커지고 있다"라고 서술했다.
 >
 이 프로토콜은 1998년에 [RFC 2440][rfc-2440]에서 OpenPGP로 마침내 표준화되었으며, 거의 같은 시기에 오픈소스 구현인 GNU 프라이버시 가드<sub>GNU Privacy Guard</sub>, GPG가 출시되면서 주목을 받았다.
-오늘날에 도 GPG는 여전히 주요 구현이며, 사람들은 GPG와 PGP라는 용어를 거의 같은 의미로 혼용한다.
+오늘날에도 GPG는 여전히 주요 구현이며, 사람들은 GPG와 PGP라는 용어를 거의 같은 의미로 혼용한다.
+[^real-219]
+
 
 ## 참고문헌
 
 - 리얼월드 암호학 / 데이비드 웡 저/임지순 역 / 제이펍 / 1쇄 발행 2023년 01월 20일 / 원제: Real-World Cryptography
 
-[rfc-2440]: https://www.rfc-editor.org/rfc/rfc2440.html
+## 주석
 
+[rfc-2440]: https://www.rfc-editor.org/rfc/rfc2440.html
+[^real-219]: 리얼월드 암호학. 10.3장. 219쪽.
