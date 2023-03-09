@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-05 23:52:08 +0900
+updated : 2023-03-09 22:38:06 +0900
 regenerate: true
 ---
 
@@ -94,10 +94,11 @@ regenerate: true
 
 ## [[clipping]]
 
+* [[/clipping/bill-gates/letter-to-hobbyists]]
 * [[/clipping/ewd/32]]
 * [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]
+* [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
 * [[/clipping/predicting-the-future]]
-* [[/clipping/bill-gates/letter-to-hobbyists]]
 
 * [[Software-Engineering-Code-of-Ethics]]
 * [[THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
