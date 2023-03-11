@@ -3,7 +3,7 @@ layout  : wiki
 title   : GnuPG 사용법
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2023-02-19 16:14:56 +0900
+updated : 2023-03-11 14:02:57 +0900
 tag     : bash encryption gnu command
 resource: 66/BFEA1D-BCE2-445A-A6AD-64909525CDE2
 toc     : true
@@ -903,6 +903,10 @@ $ killall gpg-agent
 ```
 
 이후 재시도해본다.
+
+## 함께 읽기
+
+- [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
 
 ## Links
 
