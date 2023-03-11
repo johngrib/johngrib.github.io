@@ -3,7 +3,7 @@ layout  : wiki
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2020-08-03 23:09:30 +0900
+updated : 2023-03-11 15:21:09 +0900
 tag     : rfc
 resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
@@ -262,6 +262,14 @@ http://example.com/dictionary/{term:1}/{term}
 http://example.com/search{?q,lang}
 ```
 
+### RFC 6749 - The Oauth 2.0 Authorization Framework
+
+- [The OAuth 2.0 Authorization Framework](https://www.rfc-editor.org/rfc/rfc6749 )
+- [[/oauth]]
+
+### RFC 6750 - The OAuth 2.0 Authorization Framework: Bearer Token Usage
+
+- [RFC 6750 - The OAuth 2.0 Authorization Framework: Bearer Token Usage]( https://www.rfc-editor.org/rfc/rfc6750 )
 
 ## 참고문헌
 
