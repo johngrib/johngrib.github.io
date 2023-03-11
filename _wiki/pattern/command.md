@@ -3,12 +3,12 @@ layout  : wiki
 title   : 커맨드 패턴 (Command Pattern)
 summary : 요구 사항을 객체로 캡슐화한다
 date    : 2019-10-24 16:32:27 +0900
-updated : 2021-10-10 01:14:51 +0900
+updated : 2023-03-11 14:22:31 +0900
 tag     : GoF-design-pattern refactoring
 resource: 2B/0D86B3-7EAB-4E51-853E-4E4B57EB03BF
 toc     : true
 public  : true
-parent  : [[pattern]]
+parent  : [[/pattern]]
 latex   : false
 ---
 * TOC
