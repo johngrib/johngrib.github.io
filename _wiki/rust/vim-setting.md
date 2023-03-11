@@ -3,7 +3,7 @@ layout  : wiki
 title   : Neovim에서 Rust 코드를 작성하자
 summary : 
 date    : 2019-12-26 22:41:05 +0900
-updated : 2022-10-12 23:50:40 +0900
+updated : 2023-03-11 22:04:09 +0900
 tag     : rust vim
 resource: 1A/916B19-D820-4038-91A7-112B20469DD0
 toc     : true
@@ -101,7 +101,7 @@ Plug 'rust-lang/rust.vim'
 
 ### tagbar 설정
 
-[[ctags]]{Universal ctags}를 쓰고 있다면 'rust-lang/rust.vim' 플러그인이 알아서 tagbar와 함께 작동한다.
+[[/ctags]]{Universal ctags}를 쓰고 있다면 'rust-lang/rust.vim' 플러그인이 알아서 tagbar와 함께 작동한다.
 
 ## 새로운 프로젝트를 시작하기
 
