@@ -3,7 +3,7 @@ layout  : category
 title   : HTTP
 summary :
 date    : 2017-12-24 23:21:39 +0900
-updated : 2023-01-28 23:49:07 +0900
+updated : 2023-03-12 21:44:13 +0900
 tag     : http
 resource: B3/11C257-D292-4A23-954A-365DD925237C
 toc     : true
@@ -133,22 +133,64 @@ extension-method = token
 
 * 지정한 리소스에 데이터를 전송할 때 사용한다.
 * 멱등성(idempotent)을 갖지 않는다.
+* 기능 예제
+    * 존재하는 리소스에 주석을 단다.
+    * 게시판, 뉴스그룹, 메일링 리스트, 또는 비슷한 종류의 그룹에 메시지를 등록한다.
+    * 폼 전송의 결과 등과 같은 데이터 블록을 데이터 처리 프로세스에 전송한다.
+    * 추가(append) 작업으로 데이터베이스를 확장한다.
 
+요청이 성공했을 경우 다음과 같은 상태 코드를 돌려주곤 한다.
+
+| 201 Created    | 새로운 리소스가 생성되었음.                                    |
+| 204 No Content | 새로운 리소스가 생성되지 않았음.                               |
+| 303 See Other  | 다른 자원 지시 또는 사용자 에이전트에게 캐시 리소스 검색 지시. |
+
+##### RFC 2616 번역
+
+>
+The POST method is used to request that the origin server accept the entity enclosed in the request as a new subordinate of the resource identified by the Request-URI in the Request-Line.
+POST is designed to allow a uniform method to cover the following functions:
 >
 - Annotation of existing resources;
 - Posting a message to a bulletin board, newsgroup, mailing list, or similar group of articles;
 - Providing a block of data, such as the result of submitting a form, to a data-handling process;
 - Extending a database through an append operation.
 
-* 존재하는 리소스에 주석을 단다.
-* 게시판, 뉴스그룹, 메일링 리스트, 또는 비슷한 종류의 그룹에 메시지를 등록한다.
-* 폼 전송의 결과 등과 같은 데이터 블록을 데이터 처리 프로세스에 전송한다.
-* 추가(append) 작업으로 데이터베이스를 확장한다.
+POST 메소드는 원본 서버가 request에 포함된 엔티티를, 요청의 URI로 식별된 리소스의 새로운 하위 항목으로 받아들이도록 요청하는 데 사용됩니다.
+POST는 다음과 같은 기능을 일관성있는 방법으로 처리할 수 있도록 설계되었습니다.
 
-요청이 성공했을 경우 다음과 같은 상태 코드를 돌려주곤 한다.
+- 기존 리소스에 주석을 단다.
+- 게시판, 뉴스 그룹, 메일링 리스트 또는 이와 유사한 게시글 그룹에 메시지 등록.
+- form 제출 결과와 같은 데이터 블록을 데이터 처리 프로세스에 제공하기.
+- append 작업으로, 이를 통해 데이터베이스 확장.
 
-| 201 Created | 새로운 리소스가 생성되었음. |
-|             |                             |
+>
+The actual function performed by the POST method is determined by the server and is usually dependent on the Request-URI.
+The posted entity is subordinate to that URI in the same way that a file is subordinate to a directory containing it, a news article is subordinate to a newsgroup to which it is posted, or a record is subordinate to a database.
+>
+The action performed by the POST method might not result in a resource that can be identified by a URI.
+In this case, either 200 (OK) or 204 (No Content) is the appropriate response status, depending on whether or not the response includes an entity that describes the result.
+>
+If a resource has been created on the origin server, the response SHOULD be 201 (Created) and contain an entity which describes the status of the request and refers to the new resource, and a Location header (see section 14.30).
+>
+Responses to this method are not cacheable, unless the response includes appropriate Cache-Control or Expires header fields. However, the 303 (See Other) response can be used to direct the user agent to retrieve a cacheable resource.
+>
+POST requests MUST obey the message transmission requirements set out in section 8.2.
+>
+See section 15.1.3 for security considerations.
+
+POST 메소드가 수행하는 실제 작업은 서버에 의해 결정되며, 일반적으로 Request-URI에 따라 달라지게 됩니다.
+게시된 엔티티는 파일이 포함된 디렉토리에 종속되거나 뉴스 기사가 게시된 뉴스 그룹에 종속되거나 레코드가 데이터베이스에 종속되는 것과 같은 방식으로 해당 URI에 종속됩니다.
+
+POST 메소드를 통해 어떤 작업이 실행되어도, URI로 식별할 수 있는 리소스가 생성되지 않을 수도 있습니다.
+이런 경우 응답에 결과를 설명하는 엔티티가 포함되어 있는지에 따라 200(OK) 또는 204(No Content) 중 하나가 적절한 응답 상태 코드가 됩니다.
+
+이 메소드에 대한 응답은 적절한 캐시 제어 또는 만료 헤더 필드를 포함하지 않는 한 캐싱할 수 없습니다.
+그러나 303(See Other) 응답은 사용자 에이전트가 캐시 가능한 리소스를 검색하도록 지시하는 데 사용할 수 있습니다.
+
+POST 요청은 섹션 8.2에 명시된 메시지 전송 요건을 준수해야 합니다.
+
+보안 고려 사항은 섹션 15.1.3을 참고하세요.
 
 #### PUT
 
