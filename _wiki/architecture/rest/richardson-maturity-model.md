@@ -3,12 +3,12 @@ layout  : wiki
 title   : 리처드슨의 REST 성숙도 모델 (Richardson Maturity Model)
 summary : REST 성숙도를 4단계로 표현한다
 date    : 2020-07-12 20:24:29 +0900
-updated : 2020-07-12 20:38:13 +0900
+updated : 2023-03-12 20:56:21 +0900
 tag     : rest
 resource: 78/4BA724-E55B-406A-8BAD-388FD368E5C5
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/architecture/rest]]
 latex   : false
 ---
 * TOC
@@ -27,7 +27,7 @@ latex   : false
 ## 함께 읽기
 
 - [Richardson Maturity Model (Martin Fowler)][fowler-model]
-- [[REST-paper-summary]]{(요약) Architectural Styles and the Design of Network-based Software Architectures by Roy Thomas Fielding, 2000} - 로이 필딩의 REST 논문 요약
+- [[/REST-paper-summary]] - 로이 필딩의 REST 논문 요약
 
 ## 참고문헌
 

@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-11 23:40:57 +0900
+updated : 2023-03-12 20:58:25 +0900
 regenerate: true
 ---
 * TOC
@@ -90,6 +90,9 @@ regenerate: true
 * [[von-neumann-extractor]]
 
 ## [[architecture]]
+
+* [[/architecture/rest]]
+* [[/architecture/rest/richardson-maturity-model]]
 
 * [[conceptual-integrity]]
 * [[keeping-options-open]]
@@ -458,7 +461,6 @@ regenerate: true
 * [[orange-juice-test]]
 * [[oregon-swing]]
 * [[power-distance-index]]
-* [[richardson-maturity-model]]
 * [[rule-of-3-and-10]]
 * [[Schopenhauer-s-Law-Of-Entropy]]
 * [[Tompson-s-rule-for-first-time-telescope-makers]]

@@ -1,0 +1,12 @@
+{
+ "type": "wiki",
+ "title": "REST",
+ "summary": "REpresentational State Transfer",
+ "parent": "architecture",
+ "url": "/wiki/architecture/rest",
+ "updated": "2023-03-12 20:55:38 +0900",
+ "resource": "31/E8AE2D-93C7-4F9B-BC95-141CCDB0CDA8",
+ "children": [
+  "architecture/rest/richardson-maturity-model"
+ ]
+}
