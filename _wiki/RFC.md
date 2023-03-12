@@ -3,7 +3,7 @@ layout  : wiki
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2023-03-11 15:21:09 +0900
+updated : 2023-03-12 20:47:45 +0900
 tag     : rfc
 resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
@@ -185,6 +185,10 @@ By 1977, the Arpanet employed several informal standards for the text messages (
 
 * URN Syntax
 * [https://www.ietf.org/rfc/rfc2141.txt](https://www.ietf.org/rfc/rfc2141.txt)
+
+### RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1
+
+- [Hypertext Transfer Protocol -- HTTP/1.1](https://www.rfc-editor.org/rfc/rfc2616 )
 
 ### RFC 3092
 
