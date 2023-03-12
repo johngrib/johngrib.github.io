@@ -3,7 +3,7 @@ layout  : wiki
 title   : 리처드슨의 REST 성숙도 모델 (Richardson Maturity Model)
 summary : REST 성숙도를 4단계로 표현한다
 date    : 2020-07-12 20:24:29 +0900
-updated : 2023-03-12 20:56:21 +0900
+updated : 2023-03-12 21:03:16 +0900
 tag     : rest
 resource: 78/4BA724-E55B-406A-8BAD-388FD368E5C5
 toc     : true
@@ -31,11 +31,11 @@ latex   : false
 
 ## 참고문헌
 
-- [RIC] 마이크로서비스 패턴 / 크리스 리처드슨 저/이일웅 역 / 길벗 / 초판발행 2020년 01월 30일
+- 마이크로서비스 패턴 / 크리스 리처드슨 저/이일웅 역 / 길벗 / 초판발행 2020년 01월 30일
 
 ## 주석
 
-[^ric-114]: [RIC] 3.2.1장.
+[^ric-114]: 마이크로서비스 패턴. 3.2.1장.
 
 [fowler-model]: https://martinfowler.com/articles/richardsonMaturityModel.html
 
