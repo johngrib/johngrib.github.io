@@ -3,7 +3,7 @@ layout  : wiki
 title   : 리처드슨의 REST 성숙도 모델 (Richardson Maturity Model)
 summary : REST 성숙도를 4단계로 표현한다
 date    : 2020-07-12 20:24:29 +0900
-updated : 2023-03-12 21:03:16 +0900
+updated : 2023-03-12 21:12:48 +0900
 tag     : rest
 resource: 78/4BA724-E55B-406A-8BAD-388FD368E5C5
 toc     : true
@@ -13,6 +13,14 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 개요
+
+- 레벨 0. 단일 URI, 단일 메소드(POST만 사용)
+- 레벨 1. 다중 URI 기반의 리소스, 단일 메소드(POST만 사용)
+- 레벨 2. 다중 URI 기반의 리소스 및 메소드(POST, GET, HEAD, DELETE, PUT)
+- 레벨 3. 애플리케이션 상태 엔진으로서의 하이퍼미디어(HATEOAS)
+    - HATEOAS: Hypermedia as the Engine of Application State
 
 ## From: 마이크로서비스 패턴
 
