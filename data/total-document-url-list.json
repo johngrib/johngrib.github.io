@@ -385,6 +385,8 @@
  "/wiki/html",
  "/wiki/http",
  "/wiki/HTTP-THE-DEFINITIVE-GUIDE",
+ "/wiki/http/request",
+ "/wiki/http/response",
  "/wiki/httpbin.org",
  "/wiki/httpie-cmd",
  "/wiki/imitation-game",

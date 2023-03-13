@@ -3,9 +3,11 @@
  "title": "HTTP",
  "parent": "root-index",
  "url": "/wiki/http",
- "updated": "2023-03-12 21:44:13 +0900",
+ "updated": "2023-03-13 23:22:55 +0900",
  "resource": "B3/11C257-D292-4A23-954A-365DD925237C",
  "children": [
+  "http/request",
+  "http/response",
   "why-http-80-https-443"
  ]
 }
