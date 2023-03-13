@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 4월 4일
 summary : control 키 이야기
 date    : 2022-11-17 22:25:09 +0900
-updated : 2022-11-17 23:03:57 +0900
+updated : 2023-03-13 21:39:55 +0900
 tag     : vim
 resource: 4D/557E8F-C2DF-494B-933B-5AA63F2596CA
 toc     : true
@@ -125,7 +125,7 @@ F.W Hillard가 1900년 8월 22일에 미국에서 특허를 냈다...
 한편 `esc` 이야기가 나온 김에 vim에서 `esc` 입력의 대안을 찾는 것과 관련된 가장 유명한 문서는 이것일 거라 생각합니다.
 `esc` 누르는 것 때문에 괴로웠던 분들이라면 아마 자신만의 해법들을 찾으셨을 거라 생각하지만, 입문자라면 이 문서는 빨리 보면 좋다고 생각해요.
 
-<https://vim.fandom.com/wiki/Avoid_the_escape_key >
+[Avoid the escape key](https://vim.fandom.com/wiki/Avoid_the_escape_key )
 
 아 뭐지 무슨 이야기를 하려다가 여기까지 온거지. 아무튼 생각나는대로 주절주절하고 있는데 전 전공자도 아니고 그냥 vim이랑 터미널로 삽질을 하다가 알게 된 것들을 이야기하고 있습니다.
 그러니 뭔가 사실과 다른 게 있거나 제가 잘못 알고 있던 게 있다면 알려주시면 감사히 듣겠습니다.
@@ -147,7 +147,7 @@ F.W Hillard가 1900년 8월 22일에 미국에서 특허를 냈다...
 기왕 이야기를 하게 됐으니 희귀한 방법부터 알아보죠. `:redraw` 명령을 쓰면 화면을 새로 그립니다.
 사람이 실제 입력해 쓰는 경우는 드물고 vim플러그인을 개발할 때만 가끔 쓰일 겁니다. 이걸 어떻게 알았냐면.. 저도 알고 싶지 않았어요. vim 게임을 만들다 알게 됐습니다.
 
-<https://github.com/johngrib/vim-game-code-break >
+[johngrib/vim-game-code-break](https://github.com/johngrib/vim-game-code-break )
 
 vim에서 돌아가는 이 게임은 아주 단순한 while 루프를 도는데요,
 사용자 입력을 받고, 게임 상태를 업데이트한 다음, redraw 작업을 반복할 뿐입니다. 원시적인 게임이지만.. 만들면서 redraw가 필요했죠.
@@ -180,7 +180,7 @@ vim 매뉴얼에 방법이 있었거든요. (vim에서 `:help i_ctrl-v`를 입�
 영상을 보면 컨트롤L, 컨트롤C 같은 문자들을 그대로 입력하고 있습니다.
 그리고 이건 git 으로 commit 해서 github에 올리잖아요? 그러면 github에서도 그대로 나옵니다. 최근에도 올린 게 하나 있었던 거 같은데... 찾아와볼게요. 아 여기 있네요. `^M`이 있습니다.
 
-<https://github.com/johngrib/dotfiles/blob/2ffc50b3bd272571320202d604d761511ab67e11/nvim/vim-include/set-clojure.vim#L154 >
+[set-clojure.vim#154](https://github.com/johngrib/dotfiles/blob/2ffc50b3bd272571320202d604d761511ab67e11/nvim/vim-include/set-clojure.vim#L154 )
 
 <strike>이걸 그대로 복붙해서 아무 곳에나 복붙해 보세요. 트위터에도 되고 vscode에도 되고 메모장에도 되고 아무데나 해보세요. 그러면 `^M`이 개행문자로 해석되어 github에서 볼 때 한 줄인 텍스트가 복붙한 곳에선 여러 줄로 보일 겁니다.</strike>
 
