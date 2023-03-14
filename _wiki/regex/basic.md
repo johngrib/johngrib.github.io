@@ -3,7 +3,7 @@ layout  : wiki
 title   : 정규 표현식 기본
 summary : 작성중인 문서
 date    : 2020-05-18 22:45:12 +0900
-updated : 2022-12-18 00:06:08 +0900
+updated : 2023-03-14 10:44:11 +0900
 tag     : regex
 resource: 4A/97067A-7B34-4C9F-A609-43701006C9A6
 toc     : true
@@ -278,7 +278,7 @@ $$[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]$$
 
 ## 함께 읽기
 
-- [[rans-cmd]]
+- [[/cmd/rans]]
 
 ## 참고문헌
 
