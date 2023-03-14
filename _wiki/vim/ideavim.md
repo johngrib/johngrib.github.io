@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 사용하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2022-12-17 12:14:23 +0900
+updated : 2023-03-14 23:58:18 +0900
 tag     : vim ideavim intellij
 resource: 44/580326-0E29-46DE-81F7-50A7AD8B4F60
 toc     : true
@@ -18,7 +18,7 @@ latex   : false
 
 모든 set 옵션은 [set-commands][set-commands]에서 볼 수 있다.
 
-## action 호출
+## action 명령
 
 `:action`은 IntelliJ의 내장 기능을 실행해주는 편리한 명령이며, IntelliJ의 대부분의 기능은 `:action`으로 호출할 수 있는 아이디를 갖고 있다.
 
@@ -57,6 +57,16 @@ nnoremap \t :action ActivateStructureToolWindow<CR>
 " startify와 비슷한 느낌으로 최근 프로젝트 이동을 할 수 있다
 nnoremap \s :action ManageRecentProjects<CR>
 ```
+
+### set trackactionids 을 통해 특정 기능의 action 아이디 알아내기
+
+참고: [marketplace plugin example]( https://github.com/JetBrains/ideavim/wiki/marketplace-plugin-example )
+
+`set trackactionids` 또는 `set tai`를 입력하면 IntelliJ의 기능을 사용할 때마다 화면 오른쪽 아래에 해당 기능의 action id를 팝업으로 보여준다.
+
+이 아이디를 사용해서 `:action 아이디`로 호출하면 해당 기능을 사용할 수 있으므로, `nmap` 등에 매핑해서 사용하면 된다.
+
+IntelliJ 빌트인 기능 뿐 아니라 marketplace에서 다운로드한 플러그인의 다양한 기능들도 아이디를 알아낼 수 있기 때문에 매우 유용하다.
 
 ## 플러그인
 
