@@ -216,7 +216,7 @@ regenerate: true
 * [[/pattern/interpreter]]
 * [[/pattern/layered-architecture]]
 * [[/pattern/marker-interface]]
-* [[/pattern/microservice-architecture]]
+* [[/pattern/msa]]
 * [[/pattern/null-object]]
 * [[/pattern/observer]]
 * [[/pattern/pipeline]]
