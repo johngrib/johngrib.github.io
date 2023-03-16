@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-16 20:56:18 +0900
+updated : 2023-03-16 22:40:50 +0900
 regenerate: true
 ---
 * TOC
@@ -88,14 +88,6 @@ regenerate: true
 * [[tilde-approximations]]
 * [[tower-of-hanoi]]
 * [[von-neumann-extractor]]
-
-## [[architecture]]
-
-* [[/architecture/rest]]
-* [[/architecture/rest/richardson-maturity-model]]
-
-* [[conceptual-integrity]]
-* [[keeping-options-open]]
 
 ## [[clipping]]
 
@@ -239,6 +231,14 @@ regenerate: true
 * [[/pattern/template-method]]
 * [[/pattern/value-object]]
 * [[/pattern/visitor]]
+
+## [[architecture]]
+
+* [[/architecture/rest]]
+* [[/architecture/rest/richardson-maturity-model]]
+
+* [[conceptual-integrity]]
+* [[keeping-options-open]]
 
 ## [[problem]]
 
