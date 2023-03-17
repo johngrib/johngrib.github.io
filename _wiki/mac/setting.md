@@ -3,7 +3,7 @@ layout  : wiki
 title   : 맥북 설정하기
 summary : 새 맥북 셋팅하면서 작성하는 문서
 date    : 2020-05-06 15:39:42 +0900
-updated : 2023-03-17 21:22:01 +0900
+updated : 2023-03-17 22:40:09 +0900
 tag     : mac
 resource: 56/A48CC2-67A4-4C57-951C-7902E53A7719
 toc     : true
@@ -44,6 +44,12 @@ brew bundle dump
 
 ### new 맥북에서 할 일
 
+#### Xcode 설치
+
+App Store에 들어가서 Xcode를 설치한다.
+
+꽤 오래 걸릴 수 있으므로 가장 먼저 시작하도록 한다.
+
 #### 패스워드 설정
 - `시스템 환경설정` - `Touch ID 및 암호`
 
@@ -56,6 +62,48 @@ brew bundle dump
 
 #### OS 업데이트
 - `시스템 환경설정` - `일반` - `소프트웨어 업데이트`에서 최신 버전으로 업데이트한다.
+
+#### 터미널을 열고..
+
+##### bash를 기본 셸로 설정
+
+맥 기본 셸이 짜증나는 `zsh`로 바뀐 이후로 번거로운 절차가 하나 추가됐다.
+
+다음과 같이 [[/cmd/chsh]] 명령을 사용해 `bash`를 기본 셸로 사용하도록 설정한다.
+
+```
+chsh -s /bin/bash
+```
+
+##### dotfiles 다운로드
+
+dotfiles를 다운로드 받는다.
+
+```bash
+cd ~
+git clone git@github.com:johngrib/dotfiles.git
+```
+
+##### .bashrc 와 .bash_profile 링크
+
+```bash
+cd ~
+ln -s ~/dotfiles/.bash_profile
+ln -s ~/dotfiles/.bashrc
+```
+
+이후 터미널을 재시작하거나, 새 탭을 열고 거기에서 작업한다.
+
+##### Xcode license 동의서 읽고 확인
+
+이걸 안 하면 brew bundle 명령을 실행할 때 설치되지 않는 것들이 있다. 어차피 해야 한다.
+
+```bash
+sudo xcodebuild -license
+```
+
+`space` 키를 입력해 아래로 스크롤하며 읽으면 된다.
+내용에 동의한다면 마지막 페이지에서 `agree`를 입력하고 엔터 키를 누른다.
 
 #### xcode-select 설치
 맥에서 개발을 하려면 `xcode-select`가 있어야 한다. 터미널을 열고 다음 명령을 입력한다.
@@ -89,26 +137,9 @@ brew bundle
 
 `Brewfile`을 잘 만들어 뒀다면 old 맥북에서 사용했던 어지간한 애플리케이션은 다 설치될 것이다.
 
-#### 패스워드 관리자에 로그인
-
-이후 입력할 비밀번호가 많으므로, 패스워드 관리자를 실행해 로그인한다.
-
-#### 웹 브라우저 실행
-
-`Brewfile`을 실행하면서 Google Chrome도 함께 설치되었을 것이다.
-
-실행하고 로그인한다. 다른 일을 하는 동안 확장 프로그램 등이 알아서 동기화될 것이다.
-
 #### 터미널 설정
-##### bash를 기본 셸로 설정
 
-맥 기본 셸이 짜증나는 `zsh`로 바뀐 이후로 번거로운 절차가 하나 추가됐다.
-
-다음과 같이 [[/cmd/chsh]] 명령을 사용해 `bash`를 기본 셸로 사용하도록 설정한다.
-
-```
-chsh -s /bin/bash
-```
+`brew bundle` 명령은 시간이 꽤 걸린다. 그동안 터미널 설정이나 해놓자.
 
 ##### 터미널 컬러 스킴 설정
 
@@ -120,6 +151,44 @@ chsh -s /bin/bash
 
 `터미널` - `환경설정` - `프로파일` - `키보드`에서 `Option을 Meta키로 사용`에 체크해준다.
 
+#### hammerspoon 설정
+
+hammerspoon 은 `Brewfile`을 실행할 때 함께 설치되었을 것이다.
+
+설치되어 있지 않았다면 brew cask 로 설치해 준다.
+
+```bash
+brew install --cask hammerspoon
+```
+
+설정은 다음과 같이 다운로드한다.
+
+```bash
+cd ~
+git clone https://github.com/johngrib/hammerspoon-config.git .hammerspoon
+
+```
+
+이후 `시스템 환경설정` - `개인정보 보호 및 보안` - `손쉬운 사용` 에서 `hammerspoon`에 체크해준다.
+
+#### 패스워드 관리자에 로그인
+
+이후 입력할 비밀번호가 많으므로, 패스워드 관리자를 실행해 로그인한다.
+
+내 경우에는 BitWarden.
+
+#### 웹 브라우저 실행
+
+`Brewfile`을 실행하면서 Google Chrome도 함께 설치되었을 것이다.
+
+설치가 안 됐다면 다음 명령을 실행해 준다.
+
+```bash
+brew install --cask google-chrome
+```
+
+실행하고 로그인한다. 다른 일을 하는 동안 확장 프로그램 등이 알아서 동기화될 것이다.
+
 #### gpg 설정
 
 새 컴퓨터에서 사용할 새 공개키/비밀키 쌍을 생성하도록 한다.
@@ -128,7 +197,7 @@ chsh -s /bin/bash
 gpg --full-generate-key
 ```
 
-TODO: gpg 문서 연결
+[[/gpg]] 참고.
 
 생성했다면 ~/.gitconfig 에 다음과 같이 서명할 키 아이디를 추가해 준다.
 
@@ -151,7 +220,7 @@ TODO: gpg 문서 연결
 ssh-keygen
 ```
 
-이후 생성된 공개 키를 github `settings` - `SSH and GPG keys` - `SSH keys`에 등록해 준다.
+이후 생성된 공개 키(`~/ssh/id_rsa.pub` 파일의 내용)를 github `settings` - `SSH and GPG keys` - `SSH keys`에 등록해 준다.
 
 그리고 `~/.ssh/config` 파일을 생성하고 다음과 같이 추가해 준다.
 
@@ -211,12 +280,6 @@ JetBrains Toolbox를 다운받은 다음, 라이선스를 갖고 있는 IDE를 �
 
 `시스템 환경설정` - `화면 모드` - `스크롤 막대보기`에서 `항상`을 체크한다.
 
-
-### hammerspoon 설정
-
-- hammerspoon 은 `Brewfile`을 실행할 때 함께 설치되었을 것이다.
-- 설정 파일도 dotfiles 디렉토리를 다운로드 받고 심볼릭 링크를 연결하는 단계에서 설치가 끝났을 것이다.
-- `시스템 환경설정` - `보안 및 개인 정보 보호` - `손쉬운 사용` 에서 `hammerspoon`에 체크해준다.
 
 ### finder 설정
 
