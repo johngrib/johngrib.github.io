@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ 이것저것
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2023-03-04 23:57:35 +0900
+updated : 2023-03-18 23:08:14 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -13,6 +13,20 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 키 반복입력이 안 되는 문제 해결하기
+
+방향키 등을 꾹 누르고 있어도 키가 한 번만 인식되는 문제가 있다면 다음 문서를 읽어보자.
+
+[lsd/IdeaVim OS X Key Repeat.markdown]( https://gist.github.com/lsd/1e1826907ab7e49c536a )
+
+- Ultimate Edition IntelliJ: `defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false`
+- Community Edition IntelliJ: `defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false`
+
+위의 명령을 터미널에서 입력하고, IntelliJ를 재실행하면 된다.
+
+- 최근 사용 이력
+    - 2023-03-18
 
 ## 커서가 지시하는 단어를 하이라이트
 
