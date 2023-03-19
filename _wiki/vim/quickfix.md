@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim quickfix
 summary : 
 date    : 2022-04-15 22:20:55 +0900
-updated : 2023-03-19 15:08:22 +0900
+updated : 2023-03-19 15:32:49 +0900
 tag     : vim quickfix clojure
 resource: 28/70E648-FF7A-4193-8A66-83767057E8D6
 toc     : true
@@ -76,6 +76,10 @@ endif
 위 명령은 quickfix 목록의 모든 항목에 대해 `hello`를 `hi`로 치환해준다.
 
 자세한 내용은 `:help :cfdo` 참고.
+
+다음 문서도 읽어볼 만하다.
+
+[Integralist/Examples.md]( https://gist.github.com/Integralist/8d01300efcd2006c69e8b9492c0eada8 )
 
 ## 응용 및 플러그인 활용
 
