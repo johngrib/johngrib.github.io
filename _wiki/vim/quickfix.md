@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim quickfix
 summary : 
 date    : 2022-04-15 22:20:55 +0900
-updated : 2023-03-19 15:02:11 +0900
+updated : 2023-03-19 15:04:28 +0900
 tag     : vim quickfix clojure
 resource: 28/70E648-FF7A-4193-8A66-83767057E8D6
 toc     : true
@@ -96,6 +96,20 @@ nnoremap <Tab>qq :call ToggleQuickfixList()<CR>
 nnoremap <Tab>qn :cnext<CR>
 nnoremap <Tab>qN :cprevious<CR>
 ```
+
+### fzf 에서 선택한 항목을 quickfix로 보내기
+
+나는 다음과 같이 fzf 단축키를 매핑해 놓고 있다. `<c-q>`에 주목.
+
+```viml
+let g:fzf_action = {
+            \ 'ctrl-s': 'split',
+            \ 'ctrl-v': 'vsplit',
+            \ 'ctrl-q': function('s:build_quickfix_list'),
+            \ }
+```
+
+fzf에서 tab 으로 quickfix로 보낼 항목을 선택한 다음 `<c-q>`를 입력하면 된다.
 
 ### Clojure clj-kondo lint report
 
