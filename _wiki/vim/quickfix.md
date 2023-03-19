@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim quickfix
 summary : 
 date    : 2022-04-15 22:20:55 +0900
-updated : 2023-03-19 14:40:19 +0900
+updated : 2023-03-19 15:02:11 +0900
 tag     : vim quickfix clojure
 resource: 28/70E648-FF7A-4193-8A66-83767057E8D6
 toc     : true
@@ -62,6 +62,20 @@ elseif executable('ack')
     set grepformat=%f:%l:%c:%m
 endif
 ```
+
+### cdo, cfdo
+
+- `:cdo`, `:cfdo`를 사용하면 quickfix에 리스팅된 모든 항목, 모든 파일에 대해 명령을 내릴 수 있다.
+- 제공하는 명령은 `|`를 통해 pipe 연결하는 것도 가능하다.
+- 리스트에 invalid한 항목이 있다면 실패하는데, 이런 것들을 무시하려면 `!`를 붙여주면 된다.
+
+```
+:cdo s/hello/hi/
+```
+
+위 명령은 quickfix 목록의 모든 항목에 대해 `hello`를 `hi`로 치환해준다.
+
+자세한 내용은 `:help :cfdo` 참고.
 
 ## 응용 및 플러그인 활용
 
