@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim quickfix
 summary : 
 date    : 2022-04-15 22:20:55 +0900
-updated : 2022-04-16 00:48:18 +0900
+updated : 2023-03-19 14:40:19 +0900
 tag     : vim quickfix clojure
 resource: 28/70E648-FF7A-4193-8A66-83767057E8D6
 toc     : true
@@ -18,25 +18,7 @@ latex   : false
 
 `:help quickfix` 로 볼 수 있다.
 
-## 커스터마이즈
-
-[vim-togglelist]( https://github.com/milkypostman/vim-togglelist )를 사용해 다음과 같이 토글하고 있다.
-
-```viml
-" quickfix 열기/닫기 토글
-nnoremap <Tab>ql :call ToggleLocationList()<CR>
-nnoremap <Tab>qq :call ToggleQuickfixList()<CR>
-```
-
-`:cnext`, `:cprevious` 입력은 귀찮은 일이기 때문에 이렇게 설정해 뒀다.
-
-```viml
-" quickfix 다음/이전 이동
-nnoremap <Tab>qn :cnext<CR>
-nnoremap <Tab>qN :cprevious<CR>
-```
-
-## 활용
+## vim 기본기능 활용
 
 ### vimgrep
 
@@ -79,6 +61,26 @@ elseif executable('ack')
     set grepprg=ack\ --nogroup\ --column\ $*
     set grepformat=%f:%l:%c:%m
 endif
+```
+
+## 응용 및 플러그인 활용
+
+### vim-togglelist
+
+[vim-togglelist]( https://github.com/milkypostman/vim-togglelist )를 사용해 다음과 같이 토글하고 있다.
+
+```viml
+" quickfix 열기/닫기 토글
+nnoremap <Tab>ql :call ToggleLocationList()<CR>
+nnoremap <Tab>qq :call ToggleQuickfixList()<CR>
+```
+
+`:cnext`, `:cprevious` 입력은 귀찮은 일이기 때문에 이렇게 설정해 뒀다.
+
+```viml
+" quickfix 다음/이전 이동
+nnoremap <Tab>qn :cnext<CR>
+nnoremap <Tab>qN :cprevious<CR>
 ```
 
 ### Clojure clj-kondo lint report
