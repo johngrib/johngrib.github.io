@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim quickfix
 summary : 
 date    : 2022-04-15 22:20:55 +0900
-updated : 2023-03-19 15:04:28 +0900
+updated : 2023-03-19 15:08:22 +0900
 tag     : vim quickfix clojure
 resource: 28/70E648-FF7A-4193-8A66-83767057E8D6
 toc     : true
@@ -110,6 +110,16 @@ let g:fzf_action = {
 ```
 
 fzf에서 tab 으로 quickfix로 보낼 항목을 선택한 다음 `<c-q>`를 입력하면 된다.
+
+### vim-enmasse 로 편리하게 편지하기
+
+[Olical/vim-enmasse](https://github.com/Olical/vim-enmasse )
+
+quickfix 리스팅을 해 놓은 다음, `:EnMasse`를 입력하면 quckfix 엔트리가 모여있는 버퍼가 하나 열린다.
+
+이 버퍼에서 각 엔트리를 편집하고 저장하면 각 파일의 각 엔트리가 업데이트된다.
+
+참고: [[/clojure/vim-setting]]{vim-iced}에도 비슷한 기능이 있다.
 
 ### Clojure clj-kondo lint report
 
