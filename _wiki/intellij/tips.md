@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ 이것저것
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2023-03-18 23:08:14 +0900
+updated : 2023-03-19 17:07:07 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -13,6 +13,17 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 로그 보기
+
+**Help - Show Log in Finder**를 선택하면 로그 파일이 있는 디렉토리가 파인더에서 열린다(윈도우라면 **Show Log in Explorer**).
+
+`-Xlog:gc*`를 설명하면 로그를 보는 재미가 좀 있겠지만 해보지는 않았다.
+
+자세한 내용은 [Locating IDE log files](https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files )를 읽어보자.
+
+- 최근 사용 이력
+    - 2023-03-19
 
 ## 키 반복입력이 안 되는 문제 해결하기
 
@@ -226,14 +237,6 @@ macOS의 경우 `~/Library/Preferences`에 있다.
 ## 메모리 상태 막대 보기
 
 `shift`를 두 번 누르고 `show memory indicator`를 검색한 다음 `on`으로 바꿔준다.
-
-## 로그 보기
-
-**Help - Show Log in Finder**를 선택하면 로그 파일이 있는 디렉토리가 파인더에서 열린다(윈도우라면 **Show Log in Explorer**).
-
-`-Xlog:gc*`를 설명하면 로그를 보는 재미가 좀 있겠지만 해보지는 않았다.
-
-자세한 내용은 [Locating IDE log files](https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files )를 읽어보자.
 
 ## 단축키를 빠르게 학습하고 싶다
 
