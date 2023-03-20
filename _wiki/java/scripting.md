@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java로 간단한 스크립트 작성하기
 summary : 가끔 쓸 일이 있다.
 date    : 2023-03-20 21:36:53 +0900
-updated : 2023-03-20 22:04:42 +0900
+updated : 2023-03-20 22:49:16 +0900
 tag     : 
 resource: 25/DC3824-750D-4731-A067-0E26ABABF835
 toc     : true
@@ -34,7 +34,7 @@ public class HelloWorld {
 
 이제 `java` 명령으로 실행해주면 된다. 파일 이름을 제공하는 것이기 때문에 확장자도 같이 지정해준다.
 
-```java
+```bash
  #              ↓ 파일 확장자에 주의
 java HelloWorld.java
 ```
