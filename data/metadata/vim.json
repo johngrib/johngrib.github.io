@@ -13,6 +13,7 @@
   "vim-tagbar-with-markdown",
   "vim-tmux-t-ut",
   "vim-update-book-progress",
+  "vim/client-server",
   "vim/coc-nvim",
   "vim/conceallevel",
   "vim/configure-split",

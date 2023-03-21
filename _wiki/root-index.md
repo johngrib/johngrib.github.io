@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-20 21:36:51 +0900
+updated : 2023-03-21 23:32:37 +0900
 regenerate: true
 ---
 * TOC
@@ -704,6 +704,7 @@ regenerate: true
 ## [[vim]]
 
 * [[/vim/auto-completion]]
+* [[/vim/client-server]]
 * [[/vim/coc-nvim]]
 * [[/vim/conceallevel]]
 * [[/vim/configure-split]]
