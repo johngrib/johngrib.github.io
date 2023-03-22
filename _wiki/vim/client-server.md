@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim client-server
 summary : 
 date    : 2023-03-21 22:18:54 +0900
-updated : 2023-03-21 23:32:08 +0900
+updated : 2023-03-22 09:10:12 +0900
 tag     : 
 resource: 6B/E38F50-DD5F-4C2C-ADF7-2D9ED73F8C29
 toc     : true
@@ -165,7 +165,18 @@ nvim --server ~/.cache/nvim/server.pipe --remote-send '<C-\><C-N>:wqa<CR>'
 
 ##### REMOTE EDITING
 
-TODO
+>
+REMOTE EDITING
+>
+The `--remote` argument will cause a |`:drop`| command to be constructed from the rest of the command line and sent as described above.
+Note that the `--remote` and `--remote-wait` arguments will consume the rest of the command line.
+I.e. all remaining arguments will be regarded as filenames.
+You can not put options there!
+
+`--remote` 인자를 사용하면 나머지 명령줄에서 |`:drop`| 명령이 생성되어 위에서 설명한 대로 전송됩니다.
+`--remote` 및 `--remote-wait` 인자는 명령줄의 나머지 부분을 사용한다는 점에 유의하세요.
+즉, 나머지 인자는 모두 파일명으로 취급됩니다.
+그래서 나머지 인자에 옵션을 넣으면 안됩니다!
 
 #### 2. Missing functionality
 
