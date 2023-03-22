@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comrade
 summary : IntelliJ를 NeoVim 플러그인으로 사용하기
 date    : 2023-03-22 21:15:25 +0900
-updated : 2023-03-23 00:01:26 +0900
+updated : 2023-03-23 00:07:24 +0900
 tag     : 
 resource: AB/9B1B40-C711-400A-8638-91C9B5ADECDC
 toc     : true
@@ -130,6 +130,9 @@ boolean isUnixSocket() {
 `createRPCConnection` 함수를 좀 수정했다.
 
 ```kotlin
+import org.newsclub.net.unix.AFUNIXSocket
+import org.newsclub.net.unix.AFUNIXSocketAddress
+
 private fun createRPCConnection(address: String): NeovimConnection {
     Log.info("Creating RPC connection from '$address'")
 
