@@ -15,6 +15,7 @@
   "vim-update-book-progress",
   "vim/client-server",
   "vim/coc-nvim",
+  "vim/comrade",
   "vim/conceallevel",
   "vim/configure-split",
   "vim/help",
