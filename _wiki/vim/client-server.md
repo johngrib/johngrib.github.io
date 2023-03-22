@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim client-server
 summary : 
 date    : 2023-03-21 22:18:54 +0900
-updated : 2023-03-22 09:26:18 +0900
+updated : 2023-03-22 09:26:46 +0900
 tag     : 
 resource: 6B/E38F50-DD5F-4C2C-ADF7-2D9ED73F8C29
 toc     : true
@@ -71,7 +71,7 @@ Vim은 하나의 초기화 명령을 허용합니다: `+{cmd}`.
 >
 As above, but don't complain if there is no server and the file is edited locally.
 
-위와 같지만 서버가 없습니다. 파일이 로컬에서 편집되더라도 불평하지 마세요.
+위와 같지만 서버가 없습니다. 파일이 로컬에서 편집되더라도 경고를 출력하지 않습니다.
 
 >
 `--remote-tab`  &nbsp;&nbsp;&nbsp;  *`--remote-tab`*
