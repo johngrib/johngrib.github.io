@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim client-server
 summary : 
 date    : 2023-03-21 22:18:54 +0900
-updated : 2023-03-22 09:26:46 +0900
+updated : 2023-03-22 09:32:07 +0900
 tag     : 
 resource: 6B/E38F50-DD5F-4C2C-ADF7-2D9ED73F8C29
 toc     : true
@@ -14,13 +14,13 @@ latex   : false
 * TOC
 {:toc}
 
-## NeoVim
-
-[NeoVim doc/remote.txt]( https://github.com/neovim/neovim/blob/ee26b227e15abc263195d4c746d5dba9f0e6dec4/runtime/doc/remote.txt ) - 2023-02-22
-
-### :help client-server 번역
+## :help client-server 번역
 
 참고: 번역에 [DeepL 번역기]( https://www.deepl.com/translator )의 도움을 일부 받았음.
+
+### NeoVim
+
+[NeoVim doc/remote.txt]( https://github.com/neovim/neovim/blob/ee26b227e15abc263195d4c746d5dba9f0e6dec4/runtime/doc/remote.txt ) - 2023-02-22
 
 #### 1. Common functionality
 
