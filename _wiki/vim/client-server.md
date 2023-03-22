@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim client-server
 summary : 
 date    : 2023-03-21 22:18:54 +0900
-updated : 2023-03-22 09:10:12 +0900
+updated : 2023-03-22 09:24:13 +0900
 tag     : 
 resource: 6B/E38F50-DD5F-4C2C-ADF7-2D9ED73F8C29
 toc     : true
@@ -180,7 +180,76 @@ You can not put options there!
 
 #### 2. Missing functionality
 
-TODO
+>
+2\. Missing functionality    &nbsp;&nbsp;&nbsp;  *E5600* *`clientserver-missing`*
+>
+Vim supports additional functionality in clientserver that's not yet implemented in Nvim.
+In particular, none of the "wait" variants are supported yet.
+The following command line arguments are not yet available:
+
+2\. 누락된 기능
+
+클라이언트 서버에 대해 Vim에는 Nvim에서는 아직 구현되지 않은 추가기능들이 있습니다.
+특히, "wait" 변형은 아직 Nvim에서는 지원하지 않는 기능입니다.
+다음 명령줄 인자들은 아직은 사용할 수 없습니다:
+
+>
+`--remote-wait [+{cmd}] {file} ...`   &nbsp;&nbsp;&nbsp;  *`--remote-wait`*
+>
+Not yet supported by Nvim.
+As `--remote`, but wait for files to complete (unload) in remote Vim.
+
+아직 Nvim에서 지원되지 않습니다.
+`--remote`와 같지만, 원격 Vim에서 파일이 완료(언로드) 될 때까지 기다립니다.
+
+>
+`--remote-wait-silent [+{cmd}] {file} ...`  &nbsp;&nbsp;&nbsp;  *`--remote-wait-silent`*
+
+Not yet supported by Nvim.
+As `--remote-wait`, but don't complain if there is no server.
+
+아직 Nvim에서 지원되지 않습니다.
+`--remote-wait`와 같지만, 서버가 없어도 경고하지 않습니다.
+
+>
+`--remote-tab-wait` &nbsp;&nbsp;&nbsp;  *`--remote-tab-wait`*
+>
+Not yet supported by Nvim.
+Like `--remote-wait` but open each file in a new tabpage.
+
+아직 Nvim에서 지원하지 않습니다.
+`--remote-wait`와 같지만, 각 파일을 새 탭 페이지에서 엽니다.
+
+>
+`--remote-tab-wait-silent`  &nbsp;&nbsp;&nbsp;  *`--remote-tab-wait-silent`*
+>
+Not yet supported by Nvim.
+Like `--remote-wait-silent` but open each file in a new tabpage.
+
+아직 Nvim에서 지원하지 않습니다.
+`--remote-wait-silent`와 같지만, 각 파일을 새 탭 페이지에서 엽니다.
+
+>
+`--servername {name}`   &nbsp;&nbsp;&nbsp;  *`--servername`*
+>
+Not yet supported by Nvim.
+Become the server `{name}`.
+When used together with one of the `--remote` commands: connect to server `{name}` instead of the default (see below).
+The name used will be uppercase.
+
+아직 Nvim에서 지원하지 않습니다.
+이름으로 `{name}`을 갖는 서버가 됩니다.
+`--remote` 명령과 함께 사용하면 기본값(아래 참조) 대신 서버 `{name}`에 연결됩니다.
+이름은 대문자로 사용됩니다.
+
+>
+`--serverlist`  &nbsp;&nbsp;&nbsp;  *`--serverlist`*
+>
+Not yet supported by Nvim.
+Output a list of server names.
+
+아직 Nvim에서 지원하지 않습니다.
+서버 이름 목록을 출력합니다.
 
 ##### SERVER NAME
 
