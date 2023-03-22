@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim client-server
 summary : 
 date    : 2023-03-21 22:18:54 +0900
-updated : 2023-03-22 09:24:13 +0900
+updated : 2023-03-22 09:26:18 +0900
 tag     : 
 resource: 6B/E38F50-DD5F-4C2C-ADF7-2D9ED73F8C29
 toc     : true
@@ -253,7 +253,14 @@ Output a list of server names.
 
 ##### SERVER NAME
 
-TODO
+>
+By default Vim will try to register the name under which it was invoked (gvim, egvim ...).
+This can be overridden with the `--servername` argument.
+Nvim either listens on a named pipe or a socket and does not yet support this `--servername` functionality.
+
+Vim은 기본적으로 호출된 이름을 등록하려고 시도합니다(gvim, egvim ...).
+이런 이름은 `--servername` 인자로 덮어쓸 수 있습니다.
+Nvim은 이름있는 파이프 또는 소켓을 수신하지만, 아직 `--servername` 기능은 지원하지 않습니다.
 
 ## 참고문헌
 
