@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-22 21:16:33 +0900
+updated : 2023-03-23 21:33:59 +0900
 regenerate: true
 ---
 * TOC
@@ -440,6 +440,7 @@ regenerate: true
 * [[/jargon/kerckhoffs-principle]]
 * [[/jargon/kiss-principle]]
 * [[/jargon/kluge]]
+* [[/jargon/law-of-demeter]]
 * [[/jargon/metcalfe-s-law]]
 * [[/jargon/moore-s-law]]
 * [[/jargon/no-problem-syndrome]]
@@ -456,7 +457,6 @@ regenerate: true
 * [[imitation-game]]
 * [[information-hiding]]
 * [[kees-koster-good-programming-language]]
-* [[law-of-demeter]]
 * [[linus-s-law]]
 * [[Lubarsky-s-Law-of-Cybernetic-Entomology]]
 * [[No-Silver-Bullet]]
