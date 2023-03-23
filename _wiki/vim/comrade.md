@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comrade
 summary : IntelliJ를 NeoVim 플러그인으로 사용하기
 date    : 2023-03-22 21:15:25 +0900
-updated : 2023-03-23 00:07:24 +0900
+updated : 2023-03-23 09:49:54 +0900
 tag     : 
 resource: AB/9B1B40-C711-400A-8638-91C9B5ADECDC
 toc     : true
@@ -70,10 +70,10 @@ private fun createRPCConnection(address: String): NeovimConnection {
 
 해결 과정을 나열해 보자면 다음과 같다.
 
-1. sbt의 `UnixDomainSocket`을 사용하면 `UnsupportedOperationException("Not supported")`가 던져진다.
+1. sbt의 `UnixDomainSocket`을 사용하면 `UnsupportedOperationException``("Not supported")`가 던져진다.
 2. 왜 그런가? 로그 코드를 추가하고, 빌드하고, IntelliJ에 설치한 다음, IntelliJ 로그를 보면서 확인.
 
-[sun.nio.ch.SocketChannelImpl.java]( https://github.com/AdoptOpenJDK/openjdk-jdk/blob/6bb7e45e8e1a8f5a3b2f9c92b610fa4236f2eb90/src/java.base/share/classes/sun/nio/ch/SocketChannelImpl.java#L223-L227 )
+[sun.nio.ch. SocketChannelImpl.java]( https://github.com/AdoptOpenJDK/openjdk-jdk/blob/6bb7e45e8e1a8f5a3b2f9c92b610fa4236f2eb90/src/java.base/share/classes/sun/nio/ch/SocketChannelImpl.java#L223-L227 )
 
 ```java
 @Override
@@ -117,7 +117,7 @@ boolean isUnixSocket() {
 - Java 16 부터 Unix domain socket 이 지원된다. (`SocketChannel`, `ServerSocketChannel`)
     - [JEP-380: Unix domain socket channels]( https://inside.java/2021/02/03/jep380-unix-domain-sockets-channels/ )
     - [Internet Protocol and UNIX Domain Sockets NIO Example (docs.oracle.com)]( https://docs.oracle.com/en/java/javase/16/core/internet-protocol-and-unix-domain-sockets-nio-example.html )
-- ComradeNeovim에서 사용하고 있는 [org.scalasbt.ipcsocket.UnixDomainSocket]( https://github.com/sbt/ipcsocket/blob/develop/src/main/java/org/scalasbt/ipcsocket/UnixDomainSocket.java )은 Apple Silicon을 아직 지원하지 않는다.
+- ComradeNeovim에서 사용하고 있는 [org.scalasbt.ipcsocket. UnixDomainSocket]( https://github.com/sbt/ipcsocket/blob/develop/src/main/java/org/scalasbt/ipcsocket/UnixDomainSocket.java )은 Apple Silicon을 아직 지원하지 않는다.
     - [SBT not functional on Apple M1 silicon (arm64 arch) #6187]( https://github.com/sbt/sbt/issues/6187 )
 - [junixsocket — Unix Domain Sockets for Java]( https://kohlschutter.github.io/junixsocket/ )은 Apple Silicon도 지원한다.
 
