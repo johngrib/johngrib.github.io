@@ -3,7 +3,7 @@ layout  : wiki
 title   : 디미터 법칙 (The Law of Demeter)
 summary : 객체는 그것이 내부적으로 보유하고 있거나 메시지를 통해 확보한 정보만 가지고 의사 결정을 내려야 한다
 date    : 2020-03-22 12:13:49 +0900
-updated : 2023-03-23 21:34:33 +0900
+updated : 2023-03-23 21:44:42 +0900
 tag     : law oop
 resource: 03/356387-940E-43A3-A2BF-6B19752A0A71
 toc     : true
@@ -17,6 +17,16 @@ latex   : false
 "Don't Talk to Strangers" 라고도 한다.
 
 ## 어원
+
+### From: 클린 코드의 기술
+
+>
+이 법칙은 1980년대 후반 이안 홀란드(Ian Holland)라는 소프트웨어 개발자가 농업, 성장과 다산의 그리스 신인 디미터(Demeter)라는 이름의 프로젝트를 진행하면서 그 이름을 따서 명명하였습니다.
+그 프로젝트 그룹은 단순히 소프트웨어를 개발하는 것이 아니라 "성장하는 소프트웨어"라는 아이디어를 홍보하였습니다.
+>
+하지만 디미터의 법칙으로 알려진 것은 이러한 형이상학적인 아이디어와는 전혀 관계가 없으며 객체지향 프로그래밍에서 느슨하게 결합된(loosely coupled) 코드를 작성하는 실용적인 접근법입니다.
+[^mayer-102]
+
 
 ### From: UML과 패턴의 적용
 
@@ -250,13 +260,14 @@ IntStream.of(1, 15, 20, 3, 9)
 ## 참고문헌
 
 - Clean Code / 로버트 C. 마틴 저/박재호, 이해영 역 / 인사이트(insight) / 초판 3쇄 2016년 05월 25일
+- UML과 패턴의 적용 [3판] / Craig Larman 저 / 김수동 역 / 홍릉과학출판사 / 3판 1쇄 2005년 12월 10일
+- UML을 활용한 객체지향 분석 설계 / 그래디 부치, 로버트 막심처크, 마이클 잉글 등저 / 박현철, 임춘봉 등역 / 에이콘출판사 / 발행 2013년 01월 31일 / 원서 : Object-Oriented Analysis and Design with Applications Third Edition
 - 리팩토링 / 마틴 파울러 저 / 김지원 역 / 한빛미디어 / 초판 2쇄 2013년 03월 07일 / 원서 : Refactoring (Addison-Wesley Professional; 1 edition, 1999)
+- 소트웍스 앤솔러지 / 정지웅 역 / 위키북스 / 초판발행 2009년 02월 26일 / 원제 : The ThoughtWorks Anthology
 - 실용주의 프로그래머 / 앤드류 헌트,데이비드 토머스 공저 / 김창준,정지호 공역 / 인사이트(insight) / 초판 1쇄 2005년 08월 15일
 - 오브젝트 / 조영호 저 / 위키북스 / 2쇄 2019년 07월 17일
+- 클린 코드의 기술 / Christian Mayer 저/유동환 역 / 영진닷컴 / 1판 1쇄 2023년 01월 20일 / 원제: The Art of Clean Code: Best Practices to Eliminate Complexity and Simplify Your Life
 - 테스트 주도 개발로 배우는 객체 지향 설계와 실천 / 스티브 프리먼, 냇 프라이스 공저 / 인사이트(insight) / 초판 3쇄 2016년 07월 05일 / 원제 : Growing object-oriented software, guided by tests
-- 소트웍스 앤솔러지 / 정지웅 역 / 위키북스 / 초판발행 2009년 02월 26일 / 원제 : The ThoughtWorks Anthology
-- UML을 활용한 객체지향 분석 설계 / 그래디 부치, 로버트 막심처크, 마이클 잉글 등저 / 박현철, 임춘봉 등역 / 에이콘출판사 / 발행 2013년 01월 31일 / 원서 : Object-Oriented Analysis and Design with Applications Third Edition
-- UML과 패턴의 적용 [3판] / Craig Larman 저 / 김수동 역 / 홍릉과학출판사 / 3판 1쇄 2005년 12월 10일
 
 ## 주석
 
@@ -282,3 +293,5 @@ IntStream.of(1, 15, 20, 3, 9)
 [^uml-151]: UML을 활용한 객체지향 분석 설계. 1부 3장. 151쪽.
 [^larman-461]: UML과 패턴의 적용. 25장. 461쪽.
 [^larman-462]: UML과 패턴의 적용. 25장. 462쪽.
+[^mayer-102]: 클린 코드의 기술. 4장. 102쪽.
+
