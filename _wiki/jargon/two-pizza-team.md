@@ -3,12 +3,12 @@ layout  : wiki
 title   : 피자 두 판 규모의 팀
 summary : 
 date    : 2020-01-16 21:52:52 +0900
-updated : 2020-01-16 22:03:47 +0900
+updated : 2023-03-24 17:47:07 +0900
 tag     : 
 resource: 24/BB3E0E-6B15-47AE-B46D-EB9CD7AE7A5B
 toc     : true
 public  : true
-parent  : [[software-engineering]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
