@@ -3,7 +3,7 @@ layout  : wiki
 title   : NeoVim에서 Lua 코드를 작성하자
 summary : 작성중인 문서
 date    : 2023-03-24 22:29:27 +0900
-updated : 2023-03-24 22:34:20 +0900
+updated : 2023-03-24 22:36:34 +0900
 tag     : 
 resource: 86/908EDB-0E91-4B89-8B4A-A7A75DC9CF9E
 toc     : true
@@ -25,6 +25,8 @@ latex   : false
  # 간단하게 brew로 설치할 수 있다
 brew install lua-language-server
 ```
+
+- [brew formulae lua-language-server]( https://formulae.brew.sh/formula/lua-language-server )
 
 ### coc-lua
 
