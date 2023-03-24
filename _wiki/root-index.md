@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-24 22:28:05 +0900
+updated : 2023-03-24 22:29:22 +0900
 regenerate: true
 ---
 * TOC
@@ -414,6 +414,8 @@ regenerate: true
 * [[/kotlin/vim-setting]]
 
 ### [[/lua]]
+
+* [[/lua/vim-setting]]
 
 ### [[php]]
 
