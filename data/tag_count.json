@@ -325,7 +325,7 @@
  },
  {
   "name": "fortran",
-  "size": 1
+  "size": 2
  },
  {
   "name": "Fred-Brooks",
@@ -793,7 +793,7 @@
  },
  {
   "name": "story",
-  "size": 9
+  "size": 8
  },
  {
   "name": "string",

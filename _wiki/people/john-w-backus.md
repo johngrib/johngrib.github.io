@@ -3,8 +3,8 @@ layout  : wiki
 title   : John W. Backus
 summary : 존 베커스
 date    : 2019-02-28 12:53:46 +0900
-updated : 2023-02-02 21:31:56 +0900
-tag     : story
+updated : 2023-03-25 22:45:40 +0900
+tag     : fortran
 resource: 88/A0281C-FB41-4196-B3F2-FD2847A9E773
 toc     : true
 public  : true
@@ -91,12 +91,34 @@ IBM으로부터의 도움은 거의, 아니 전혀 없었다.
 >
 -- 소프트웨어는 어떻게 밥벌이가 되었나. 2장. 64쪽.
 
+## Bjarne Stroustrup이 쓴 John Backus 이야기
+
+>
+Fortran은 IBM에서 존 배커스<sub>John Backus</sub>가 이끈 팀이 처음 정의하고 구현했다.
+"우리는 우리가 무엇을 원하는지, 그것을 어떻게 해야 하는지 알지 못했다. 그냥 (Fortran이)자라났다고 해야 할지도 모르겠다."
+사실 이전에 누구도 해 본 적이 없던 일이었으니 잘 모르는 것도 당연했을 것이다.
+<mark>그들이 개발 또는 발견한 것은 어휘 분석, 구문 분석, 최적화 같은 컴파일러의 기본 구성요소들이었다.</mark>
+오늘날까지도 수치 계산 최적화 분야는 Fortran이 선도하고 있다.
+또한 문법 명세를 위한 표기법도 하나 만들어졌다(초기 Fortran 이후에).
+바로 [[/backus-naur-form]]{배커스-나우어 형식(Backus-Naut Form, BNF)}이다.
+이것은 Algol60($22.2.3.1)에 처음 쓰였으며, 이제는 대부분의 현대적 언어들에 쓰인다.
+제6장과 제7장의 계산기 예제 들에 쓰인 수식 문법도 일종의 BNF이다.
+>
+한참 후 배커스는 메모리 장소들의 읽기/쓰기에 기초한 기계적 시각에 맞서 수학적인 프로그래밍 접근 방식을 주창하면서 완전히 새로운 프로그래밍 언어 어족("함수적 프로그래밍")을 개척하게 된다.
+순수한 수학에는 배정이라는 개념이 없으며 행동(action)이라는 개념도 없음을 주목하기 바란다.
+대신 수학에서는 주어진 조건들에서 무엇이 참인지를 "그냥" 진술한다.
+함수적 프로그래밍(functional programming, 또는 함수형 프로그래밍)의 뿌리 중 일부는 Lisp($22.2.2.3)에 있으며, 함수적 프로그래밍의 일부 착안들은 STL(제21장)에 반영되었다.
+>
+-- C++로 배우는 프로그래밍의 원리와 실제. 22.2.2.1 장. 903쪽.
+
+
 ## 함께 읽기
 
 - [[/backus-naur-form]]
 
 ## 참고문헌
 
+- C++로 배우는 프로그래밍의 원리와 실제 / Bjarne Stroustrup 저 / 류광 역 / 대웅출판사 / 발행일 2010년 08월 01일 초판 1쇄 / 원제: Programming: Principles and Practice Using C++, 1st Edition
 - 당신은 구글에서 일할 만큼 똑똑한가? / 윌리엄 파운드스톤 저/유지연 역 / 타임비즈 / 초판 2쇄 발행 2012년 05월 10일 / 원제 : Are You Smart Enough to Work at Google?
 - 소프트웨어는 어떻게 밥벌이가 되었나 / 마틴 캠벨-켈리 저/이재범 역 / 지식함지 / 초판 1쇄 2021년 06월 22일 / 원제: From Airline Reservations to Sonic the Hedgehog: A History of the Software Industry by Martin Campbell-Kelly
 
