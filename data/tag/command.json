@@ -1,5 +1,4 @@
 [
- "awk",
  "bash-history",
  "bc",
  "cmd/ag",
@@ -59,6 +58,7 @@
  "how-to-escape-cli",
  "httpie-cmd",
  "ioreg-cmd",
+ "language/awk",
  "lldb-cmd",
  "lsof",
  "make-cmd",
