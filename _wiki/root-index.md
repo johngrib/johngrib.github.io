@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-24 22:29:22 +0900
+updated : 2023-03-25 16:43:01 +0900
 regenerate: true
 ---
 * TOC
@@ -451,6 +451,7 @@ regenerate: true
 * [[/jargon/postel-s-law]]
 * [[/jargon/solid]]
 * [[/jargon/two-pizza-team]]
+* [[/jargon/zero-overhead-principle]]
 
 * [[amdahl-s-law]]
 * [[CAP-theorem]]
