@@ -3,7 +3,7 @@ layout  : wiki
 title   : SOLID 원칙
 summary : 객체지향 5대 원칙
 date    : 2019-09-05 18:06:38 +0900
-updated : 2022-09-09 18:02:57 +0900
+updated : 2023-03-25 17:12:39 +0900
 tag     : oop
 resource: 25/7E91F9-CC32-4DA7-95BE-21A2203E2058
 toc     : true
@@ -82,6 +82,17 @@ SOLID는 다섯 개의 원칙으로 이루어져 있다.
 │+ area():double│    └───────────┘
 └───────────────┘
 ```
+
+#### 인용: Bjarne Stroustrup
+
+>
+나는 우아하고 효율적인 코드를 좋아한다.
+논리가 간단해야 버그가 숨어들지 못한다.
+의존성을 최대한 줄여야 유지보수가 쉬워진다.
+오류는 명백한 전략에 의거해 철저히 처리한다.
+성능을 최적으로 유지해야 사람들이 원칙 없는 최적화로 코드를 망치려는 유혹에 빠지지 않는다.
+<mark>깨끗한 코드는 한 가지를 제대로 한다.</mark>
+[^clean-code-9]
 
 ### 응집도(cohesion)
 
@@ -241,6 +252,7 @@ HR 부서가 파일 시스템이나 네트워크 소켓에 관심을 갖을 가�
 
 ## 참고문헌
 
+- Clean Code / 로버트 C. 마틴 저/박재호, 이해영 역 / 인사이트(insight) / 초판 1쇄 발행 2013년 12월 24일 / 원제: Clean Code
 - 만들면서 배우는 클린 아키텍처 / 톰 홈버그 저/박소은 역 / 위키북스 / 초판 발행 2021년 11월 26일 / 원제: Get Your Hands Dirty On Clean Architecture
 - 클린 소프트웨어 / 로버트 C. 마틴 저 / 이용원, 김정민, 정지호 공역 / 제이펍 / 초판 1쇄 2017년 05월 15일 / 원제 : Agile Software Development, Principles, Patterns, and Practices
 - 클린 아키텍처 / 로버트 C. 마틴 저/송준이 역 / 인사이트(insight) / 초판 1쇄 2019년 08월 20일 / 원제 : Clean Architecture: A Craftsman's Guide to Software Structure and Design
@@ -265,5 +277,6 @@ HR 부서가 파일 시스템이나 네트워크 소켓에 관심을 갖을 가�
 [^python-31]: 파이썬으로 살펴보는 아키텍처 패턴. 0장. 31쪽.
 [^hombergs-13]: 만들면서 배우는 클린 아키텍처. 2장. 13쪽.
 [^prefactoring-116]: 프리팩토링. 6장. 116쪽.
+[^clean-code-9]: 클린 코드. 1장. 9쪽. 스트롭스트룹이 어디에서 한 말인지는 아직 찾지 못했다.
 
 [isp-wiki]: https://ko.wikipedia.org/wiki/인터페이스_분리_원칙
