@@ -9,7 +9,7 @@
  "children": [
   "better-checklist",
   "better-interview",
-  "better-meeting",
+  "better-work/meeting",
   "good-developer",
   "leadership",
   "professionalism",
