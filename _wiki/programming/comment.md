@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comment
 summary : 주석은 짧고 간결하게
 date    : 2022-01-22 10:47:02 +0900
-updated : 2022-01-22 14:52:51 +0900
+updated : 2023-03-25 23:37:31 +0900
 tag     : 
 resource: 2D/614D4B-51A0-4958-8CE2-A59175F1A0F0
 toc     : true
@@ -119,6 +119,15 @@ latex   : false
 
 ## 주의: 코드와 주석의 괴리
 
+>
+If the code and the comments disagree, then both are probably wrong.  
+Norm Schryer  
+Bell Labs
+>
+코드와 주석이 일치하지 않는다면 둘 다 틀렸을 가능성이 크다.  
+-- 슈라이어<sub>Norm Schryer</sub>
+[^schryer]
+
 문제는 코드와 주석 사이에 괴리가 생기는 경우이다.
 만약 주석은 명확한데 구현에 버그가 있거나, 주석과 다른 내용이 구현되어 있다면 주석이 없는 것이 나을 수 있다.
 
@@ -146,6 +155,7 @@ latex   : false
 
 ## 참고문헌
 
+- C++로 배우는 프로그래밍의 원리와 실제 / Bjarne Stroustrup 저 / 류광 역 / 대웅출판사 / 발행일 2010년 08월 01일 초판 1쇄 / 원제: Programming: Principles and Practice Using C++, 1st Edition
 - CODE COMPLETE [2판] / Steve McConnell 저 / 서우석 역 / 정보문화사 / 2005년 04월 22일 초판 발행
 - 프로그래머의 뇌 / 펠리너 헤르만스 저/차건회 역 / 제이펍 / 2022년 01월 12일 / 원제 : The Programmer's Brain
 - 프로그래밍 심리학 / 제럴드 M. 와인버그 저 / 인사이트(insight) / 신판 1쇄 발행 2014년 01월 02일
@@ -156,4 +166,4 @@ latex   : false
 [^brain-202]: 프로그래머의 뇌. 11장. 202쪽.
 [^psy-303]: 프로그래밍 심리학. 9장. 303쪽.
 [^compl-1076]: CODE COMPLETE. Chapter 32. 1076쪽.
-
+[^schryer]: 이 인용구는 John Bently의 "More Programming Perls" 6장에서 인용한 것을 옮겨온 것이다. 내가 알기로 아직까지(2023-03-25) 이 책은 한국어로 번역되지 않았다. 한편, 아래의 한국어 번역은 "C++로 배우는 프로그래밍의 원리와 실제" 부록 D 표지의 문구를 옮긴 것이다.
