@@ -3,7 +3,7 @@ layout  : wiki
 title   : 브라이언 W. 커니핸 (Brian W. Kernighan)
 summary : 
 date    : 2020-07-29 22:19:22 +0900
-updated : 2023-03-25 22:55:56 +0900
+updated : 2023-03-25 22:56:54 +0900
 tag     : 인물 awk c bell-labs brian-kernighan
 resource: 0B/4625D1-0CE6-4D9D-8FE2-CBC4DA0F8935
 toc     : true
@@ -61,10 +61,10 @@ C 튜토리얼은 인기가 많아졌고, 유닉스와 C가 확산되는 것을 
 
 ## 참고문헌
 
-- [KER] 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
+- 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
 
 ## 주석
 
-[^KER-059]: [KER] 1장. 59쪽.
-[^KER-152]: [KER] 4장. 152쪽.
+[^KER-059]: 유닉스의 탄생. 1장. 59쪽.
+[^KER-152]: 유닉스의 탄생. 4장. 152쪽.
 
