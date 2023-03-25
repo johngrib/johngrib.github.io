@@ -1,5 +1,5 @@
 [
- "brian-w-kernighan",
  "cmd/grep",
- "language/awk"
+ "language/awk",
+ "people/brian-w-kernighan"
 ]
