@@ -3,7 +3,7 @@ layout  : wiki
 title   : 무어의 법칙 (Moore's Law)
 summary : 
 date    : 2022-01-01 12:24:07 +0900
-updated : 2022-01-01 13:09:20 +0900
+updated : 2023-03-25 15:01:04 +0900
 tag     : 
 resource: 42/ACF750-AAF1-4F5E-A651-7F19100A0FD0
 toc     : true
@@ -30,6 +30,24 @@ latex   : false
 컴퓨터 시스템에는 흔히 프로세서 칩이 여러 개 들어간다.
 즉, 개별 코어의 실행 속도가 빨라진다기보다는 장착 가능한 코어의 개수가 늘면서 성능이 향상된다고 볼 수 있다.
 [^brian-1]
+
+## From: 고든 무어의 부고
+
+- [Gordon Moore, Intel Co-Founder, Dies at 94 (Intel Corporation)]( https://www.intc.com/news-events/press-releases/detail/1611/gordon-moore-intel-co-founder-dies-at-94 )
+    - 부고: 인텔 공동 창립자 고든 무어, 94세 나이로 별세
+
+>
+“All I was trying to do was get that message across, that by putting more and more stuff on a chip we were going to make all electronics cheaper,” Moore said in a 2008 interview.
+>
+With his 1965 prediction proven correct, in 1975 Moore revised his estimate to the doubling of transistors on an integrated circuit every two years for the next 10 years.
+Regardless, the idea of chip technology growing at an exponential rate, continually making electronics faster, smaller and cheaper, became the driving force behind the semiconductor industry and paved the way for the ubiquitous use of chips in millions of everyday products.
+
+무어는 2008년 인터뷰에서
+"칩에 점점 더 많은 것을 넣음으로써 모든 전자기기를 더 저렴하게 만들 수 있다는 메시지를 전달하려고 했을 뿐입니다."라고 말했습니다.
+
+1965년의 예측이 정확했음이 입증되자, 무어는 1975년에 이후 10년 동안 집적 회로의 트랜지스터가 2년마다 두 배씩 증가할 것이라고 예측을 수정했습니다.
+어쨌든 기하급수적으로 성장하는 칩 기술을 통해 전자 제품을 더 빠르고, 더 작고, 더 저렴하게 만들겠다는 아이디어는 반도체 산업의 원동력이 되었고,
+수백만 개의 일상 제품에 칩이 유비쿼터스하게 사용되는 길을 열었습니다.
 
 ## 함께 읽기
 
