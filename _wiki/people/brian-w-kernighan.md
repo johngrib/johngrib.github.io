@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 브라이언 W. 커니핸 (Brian W. Kernighan)
-summary : 
+title   : 브라이언 W. 커니핸
+summary : Brian Wilson Kernighan
 date    : 2020-07-29 22:19:22 +0900
-updated : 2023-03-25 22:56:54 +0900
+updated : 2023-03-25 22:58:17 +0900
 tag     : 인물 awk c bell-labs brian-kernighan
 resource: 0B/4625D1-0CE6-4D9D-8FE2-CBC4DA0F8935
 toc     : true

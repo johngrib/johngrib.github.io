@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2023-03-25 22:53:21 +0900
+updated : 2023-03-25 22:59:28 +0900
 tag     : command 언어 brian-kernighan awk
 resource: 97/3C865D-C4E1-43B2-B80E-F96DA7AC7703
 toc     : true
@@ -16,7 +16,7 @@ latex   : false
 
 ## 기원
 
-- 알프레드 에이호(Alfred Vaino Aho), 피터 와인버거(Peter Jay Weinberger), 브라이언 커니핸(Brian Wilson Kernighan)이 만들었다.
+- 알프레드 에이호(Alfred Vaino Aho), 피터 와인버거(Peter Jay Weinberger), [[/people/brian-w-kernighan]]이 만들었다.
 
 다음은 브라이언 커니핸의 글이다.
 
@@ -118,7 +118,9 @@ awk '{ for (i=1; i <= NF; i++) wd[$i]++ } END { for (w in wd) print w, wd[w] }' 
 ```
 
 ## 함께 읽기
-* [[/vim-update-book-progress]]
+
+- [[/people/brian-w-kernighan]]
+- [[/vim-update-book-progress]]
 
 ### From: Beautiful Code
 
