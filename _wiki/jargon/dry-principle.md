@@ -3,7 +3,7 @@ layout  : wiki
 title   : DRY 원칙
 summary : Don't Repeat Yourself
 date    : 2020-03-30 21:39:43 +0900
-updated : 2023-03-26 21:49:12 +0900
+updated : 2023-03-26 21:52:40 +0900
 tag     : 
 resource: 1F/23E542-32BB-48EC-BDE2-96510E617158
 toc     : true
@@ -95,6 +95,12 @@ OO 역시 모듈을 정리하고 중복을 제거하는 전략이다.
 짐작하겠지만, 구조적 프로그래밍도 마찬가지다.
 [^clean-code-373]
 
+## WET: DRY 원칙 위반
+
+>
+DRY 원칙의 위반은 WET 이라는 약자로 흔히 설명됩니다.
+_우리는 타이핑을 즐기고, 모든 것을 두 번 작성하고, 모든 사람의 시간을 낭비합니다. (we enjoy typing, write everything twice, and waste everyone's time)_
+[^clean-craftsmanship-95]
 
 ## 함께 읽기
 
@@ -104,8 +110,9 @@ OO 역시 모듈을 정리하고 중복을 제거하는 전략이다.
 
 ## 참고문헌
 
-- 실용주의 프로그래머 / 앤드류 헌트,데이비드 토머스 공저 / 김창준,정지호 공역 / 인사이트(insight) / 초판 1쇄 2005년 08월 15일
 - Clean Code / 로버트 C. 마틴 저/박재호, 이해영 역 / 인사이트(insight) / 초판 3쇈 2016년 05월 25일
+- 실용주의 프로그래머 / 앤드류 헌트,데이비드 토머스 공저 / 김창준,정지호 공역 / 인사이트(insight) / 초판 1쇄 2005년 08월 15일
+- 클린 코드의 기술 / Christian Mayer 저/유동환 역 / 영진닷컴 / 1판 1쇄 2023년 01월 20일 / 원제: The Art of Clean Code: Best Practices to Eliminate Complexity and Simplify Your Life
 
 ## 주석
 
@@ -115,4 +122,4 @@ OO 역시 모듈을 정리하고 중복을 제거하는 전략이다.
 [^clean-code-60]: Clean Code. 3장. 60쪽.
 [^clean-code-373]: Clean Code. 17장. 373쪽.
 [^clean-code-372]: Clean Code. 17장. 372쪽.
-
+[^clean-craftsmanship-95]: 클린 코드의 기술. 4장. 95쪽.
