@@ -901,6 +901,7 @@ regenerate: true
 
 ## [[better-work]]
 
+* [[/better-work/2023]]
 * [[/better-work/meeting]]
 * [[better-checklist]]
 * [[better-interview]]
