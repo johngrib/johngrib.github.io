@@ -3,7 +3,7 @@ layout  : wiki
 title   : 보이 스카웃 규칙
 summary : 캠프장은 처음 왔을 때보다 더 깨끗하게 해놓고 떠나라
 date    : 2018-02-04 16:18:51 +0900
-updated : 2023-01-07 23:58:27 +0900
+updated : 2023-03-26 14:54:25 +0900
 tag     : rule Uncle-Bob
 resource: DA/921A27-7835-4743-8E7C-9FD27D837AEE
 toc     : true
@@ -130,9 +130,10 @@ by Uncle Bob
 대신, 리팩토링을 잘하고 **야영지 규칙**을 따르세요.
 
 ## 참고문헌
-- [ROB1] Clean Code / 로버트 C. 마틴 저/박재호, 이해영 역 / 인사이트(insight) / 2013년 12월 24일
-- [RON] The Nature of Software Development 론 제프리스 저 / 이기곤 역 / 한빛미디어 / 2017년 01월 01일
-- [ROB2] 클린 코더 - 로버트 마틴 저 / 정희종 역 / 에이콘출판사 / 2016년 07월 20일 / 원서 : The Clean Coder: A Code of Conduct for Professional Programmers
+
+- Clean Code / 로버트 C. 마틴 저/박재호, 이해영 역 / 인사이트(insight) / 2013년 12월 24일
+- The Nature of Software Development 론 제프리스 저 / 이기곤 역 / 한빛미디어 / 2017년 01월 01일
+- 클린 코더 - 로버트 마틴 저 / 정희종 역 / 에이콘출판사 / 2016년 07월 20일 / 원서 : The Clean Coder: A Code of Conduct for Professional Programmers
 
 ## Links
 
