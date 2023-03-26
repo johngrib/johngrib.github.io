@@ -1,9 +1,9 @@
 ---
-layout  : wiki
+layout  : category
 title   : 애자일(agile) 이것저것
 summary : 
 date    : 2019-04-24 22:55:36 +0900
-updated : 2021-09-05 19:21:35 +0900
+updated : 2023-03-26 14:30:03 +0900
 tag     : agile
 resource: 99/0C2CFE-340D-4ACD-BC80-FA1D96C5101B
 toc     : true

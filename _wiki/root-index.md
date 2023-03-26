@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-26 10:04:37 +0900
+updated : 2023-03-26 14:30:12 +0900
 regenerate: true
 ---
 * TOC
@@ -867,7 +867,6 @@ regenerate: true
 * [[/software-engineering/scrum]]
 
 * [[20-percent-project]]
-* [[agile]]
 * [[andon-cord]]
 * [[continuous-integration]]
 * [[ddd-quotes]]
@@ -878,6 +877,10 @@ regenerate: true
 * [[Software-Engineering-Code-of-Ethics]]
 * [[technical-debt]]
 * [[test-terms]]
+
+### [[/agile]]
+
+* [[/agile/story-point]]
 
 ## [[blog]]
 
