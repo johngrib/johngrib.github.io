@@ -3,12 +3,12 @@ layout  : wiki
 title   : DRY 원칙
 summary : Don't Repeat Yourself
 date    : 2020-03-30 21:39:43 +0900
-updated : 2023-01-07 23:58:06 +0900
+updated : 2023-03-26 21:45:50 +0900
 tag     : 
 resource: 1F/23E542-32BB-48EC-BDE2-96510E617158
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
