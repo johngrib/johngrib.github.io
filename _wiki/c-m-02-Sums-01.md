@@ -50,4 +50,4 @@ bool(1 == 2) + bool(2 == 2) # 0 + 1 이므로 결과는 1
 
 ### Links
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]

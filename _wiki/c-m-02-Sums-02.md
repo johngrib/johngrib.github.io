@@ -14,7 +14,7 @@ latex   : true
 * TOC
 {:toc}
 
-이 문서는 [[CONCRETE-MATH]] **2장.합 - 2.합과 점화식**을 공부한 노트입니다.
+이 문서는 [[/book/concrete-math]] **2장.합 - 2.합과 점화식**을 공부한 노트입니다.
 
 $$
 S_n = \sum_{k = 0}^{n} a_k
@@ -613,5 +613,5 @@ $$
 
 # Links
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]
 * [조화수(wikipedia)](https://ko.wikipedia.org/wiki/%EC%A1%B0%ED%99%94%EC%88%98 )

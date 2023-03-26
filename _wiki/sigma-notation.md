@@ -111,7 +111,7 @@ print(sigma())  # 결과는 166650
 
 ## 함께 읽기
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]
 
 ## 참고 문헌
 

@@ -8,6 +8,7 @@
  "children": [
   "17-EQUATIONS-THAT-CHANGED-THE-WORLD",
   "Algorithms-to-Live-By",
+  "book/concrete-math",
   "book/linchpin",
   "book/lyubishev",
   "book/mythical-man-month",
@@ -15,7 +16,6 @@
   "book/the-jargon-file",
   "Clean-Code",
   "Code-Complete-2",
-  "CONCRETE-MATH",
   "Design-for-Hackers",
   "Designing-Data-Intensive-Applications",
   "Geek-Atlas",

@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-25 22:55:29 +0900
+updated : 2023-03-26 10:04:37 +0900
 regenerate: true
 ---
 * TOC
@@ -170,6 +170,7 @@ regenerate: true
 
 ## [[book]]
 
+- [[/book/concrete-math]]
 - [[/book/linchpin]]
 - [[/book/lyubishev]]
 - [[/book/mythical-man-month]]
@@ -178,7 +179,6 @@ regenerate: true
 
 - [[17-EQUATIONS-THAT-CHANGED-THE-WORLD]]
 - [[Algorithms-to-Live-By]]
-- [[CONCRETE-MATH]]
 - [[Clean-Code]]
 - [[Code-Complete-2]]
 - [[Designing-Data-Intensive-Applications]]

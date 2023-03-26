@@ -14,7 +14,7 @@ latex   : true
 * TOC
 {:toc}
 
-이 문서는 [[CONCRETE-MATH]] **3장.정수 함수 - 1.바닥과 천장**을 공부한 노트입니다.
+이 문서는 [[/book/concrete-math]] **3장.정수 함수 - 1.바닥과 천장**을 공부한 노트입니다.
 
 ## 바닥(floor) 함수와 천장(celing) 함수
 
@@ -272,5 +272,5 @@ $$
 
 ## Links
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]
 

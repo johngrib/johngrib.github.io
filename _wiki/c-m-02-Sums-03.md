@@ -14,7 +14,7 @@ latex   : true
 * TOC
 {:toc}
 
-이 문서는 [[CONCRETE-MATH]] **2장.합 - 2.합의 조작**을 공부한 노트입니다.
+이 문서는 [[/book/concrete-math]] **2장.합 - 2.합의 조작**을 공부한 노트입니다.
 
 ## 법칙들
 
@@ -226,4 +226,4 @@ $$
 
 ## Links
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]

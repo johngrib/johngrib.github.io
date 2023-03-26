@@ -23,7 +23,7 @@ $$
 * TOC
 {:toc}
 
-이 문서는 [[CONCRETE-MATH]] **3장.정수 함수 - 2.바닥 천장 함수의 응용**을 공부한 노트입니다.
+이 문서는 [[/book/concrete-math]] **3장.정수 함수 - 2.바닥 천장 함수의 응용**을 공부한 노트입니다.
 
 
 ## 문제를 풀며 시작
@@ -899,5 +899,5 @@ $$
 
 ## Links
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]
 

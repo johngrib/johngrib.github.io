@@ -16,7 +16,7 @@ latex   : true
 
 ## 개요
 
-* 이 문서는 [[CONCRETE-MATH]]책의 1장을 공부하며 메모한 것입니다.
+* 이 문서는 [[/book/concrete-math]]책의 1장을 공부하며 메모한 것입니다.
 * 이 문서는 메모일 뿐이니 자세한 내용은 교재를 참고해야 합니다.
 
 
@@ -914,6 +914,6 @@ $$
 
 ## Links
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]
 
 

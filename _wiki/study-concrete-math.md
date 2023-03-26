@@ -14,6 +14,6 @@ latex   : false
 * TOC
 {:toc}
 
-교재 : [[CONCRETE-MATH]]
+교재 : [[/book/concrete-math]]
 
 

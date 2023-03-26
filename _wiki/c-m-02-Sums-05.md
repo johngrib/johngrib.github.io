@@ -14,7 +14,7 @@ latex   : true
 * TOC
 {:toc}
 
-이 문서는 [[CONCRETE-MATH]] **2장.합 - 5.일반적인 방법들**을 공부한 노트입니다.
+이 문서는 [[/book/concrete-math]] **2장.합 - 5.일반적인 방법들**을 공부한 노트입니다.
 
 ## 개요
 
@@ -668,5 +668,5 @@ $$
 
 ## Links
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]
 

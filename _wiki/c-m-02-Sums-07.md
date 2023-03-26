@@ -14,7 +14,7 @@ latex   : true
 * TOC
 {:toc}
 
-이 문서는 [[CONCRETE-MATH]] **2장.합 - 7.무한합**을 공부한 노트입니다.
+이 문서는 [[/book/concrete-math]] **2장.합 - 7.무한합**을 공부한 노트입니다.
 
 ## 무한합 주의점
 
@@ -251,5 +251,5 @@ Absolutely convergent sums over two or more indices can always be summed first w
 
 ## Links
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]
 

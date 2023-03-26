@@ -14,7 +14,7 @@ latex   : true
 * TOC
 {:toc}
 
-이 문서는 [[CONCRETE-MATH]] **2장.합 - 4.다중합**을 공부한 노트입니다.
+이 문서는 [[/book/concrete-math]] **2장.합 - 4.다중합**을 공부한 노트입니다.
 
 # 둘 이상의 색인을 사용하기
 
@@ -731,4 +731,4 @@ $$
 
 # Links
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]

@@ -14,7 +14,7 @@ latex   : true
 * TOC
 {:toc}
 
-이 문서는 [[CONCRETE-MATH]] **2장.합 - 6.유한 - 무한 미적분**을 공부한 노트입니다.
+이 문서는 [[/book/concrete-math]] **2장.합 - 6.유한 - 무한 미적분**을 공부한 노트입니다.
 
 ## 표기법
 
@@ -1028,4 +1028,4 @@ $$
 
 ## Links
 
-* [[CONCRETE-MATH]]
+* [[/book/concrete-math]]
