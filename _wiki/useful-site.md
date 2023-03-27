@@ -3,7 +3,7 @@ layout  : category
 title   : 유용한 웹 사이트 모음
 summary : 
 date    : 2018-02-06 07:01:45 +0900
-updated : 2023-01-04 19:27:34 +0900
+updated : 2023-03-27 23:49:57 +0900
 tag     : 
 resource: 29/4A9F29-0C6F-4C1D-8600-34457BE41700
 toc     : true
@@ -13,6 +13,12 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## github 상태 보기
+
+github 장애났는지 확인할 때 본다.
+
+<https://www.githubstatus.com/ >
 
 ## DB 랭킹
 
