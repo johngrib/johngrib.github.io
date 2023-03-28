@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : Clojure Vector의 내부 구조를 알아보고 Java의 ArrayList와 비교한다
 date    : 2022-01-22 16:30:48 +0900
-updated : 2022-12-02 01:34:15 +0900
+updated : 2023-03-28 22:37:51 +0900
 tag     : clojure java
 resource: 9D/B58B14-9880-4A8D-BA6E-450E6FE88394
 toc     : true
@@ -311,7 +311,7 @@ $$ 32 \times 32 + 32 = 1056 $$
 
 그림 속 `root[1][0]`을 핑크색으로 눈에 띄게 색칠한 이유는 해당 노드가 아이템의 수가 `1056`개일때까지는 tail이었다는 점을 강조하기 위해서이다.
 
-그런데 이 그림을 보다보면 차수가 32인 [[/algorithm/b-tree]]{B+ Tree}와 유사한 모양을 갖고 있다는 것도 알 수 있다.
+그런데 이 그림을 보다보면 차수가 32인 [[/algorithm/b-tree#b-plus-tree]]{B+ Tree}와 유사한 모양을 갖고 있다는 것도 알 수 있다.
 `PersistentVector`는 불변성을 토대로 삼는 차수 32의 균형잡힌 B+ Tree의 일종으로 보인다.
 
 ![]( ./bplus-example.png )
