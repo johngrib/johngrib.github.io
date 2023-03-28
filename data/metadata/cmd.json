@@ -36,6 +36,7 @@
   "cmd/mv",
   "cmd/mysqldump",
   "cmd/openssl",
+  "cmd/pass",
   "cmd/ping",
   "cmd/pwgen",
   "cmd/rans",

@@ -205,6 +205,7 @@
  "/wiki/cmd/mv",
  "/wiki/cmd/mysqldump",
  "/wiki/cmd/openssl",
+ "/wiki/cmd/pass",
  "/wiki/cmd/ping",
  "/wiki/cmd/pwgen",
  "/wiki/cmd/rans",
