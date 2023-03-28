@@ -1,5 +1,5 @@
 [
- "b-tree",
+ "algorithm/b-tree",
  "database/acid",
  "database/isolation-level",
  "database/processlist",

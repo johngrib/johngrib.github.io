@@ -6,12 +6,12 @@
  "updated": "2020-03-04 20:46:42 +0900",
  "resource": "E5/44EF40-A196-48BB-971B-D09FFAF009D1",
  "children": [
+  "algorithm/b-tree",
   "algorithm/binary-search",
   "algorithm/egyptian-multiplication",
   "algorithm/gray-code",
   "algorithm/murmurhash",
   "average-complexity",
-  "b-tree",
   "base64",
   "big-O-notation",
   "counting-sort",

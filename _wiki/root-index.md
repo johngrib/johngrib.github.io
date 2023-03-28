@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-03-26 21:46:24 +0900
+updated : 2023-03-28 22:35:31 +0900
 regenerate: true
 ---
 * TOC
@@ -64,13 +64,13 @@ regenerate: true
 
 ## [[algorithm]]
 
+* [[/algorithm/b-tree]]
 * [[/algorithm/binary-search]]
 * [[/algorithm/egyptian-multiplication]]
 * [[/algorithm/gray-code]]
 * [[/algorithm/murmurhash]]
 
 * [[average-complexity]]
-* [[b-tree]]
 * [[base64]]
 * [[big-O-notation]]
 * [[counting-sort]]

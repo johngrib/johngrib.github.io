@@ -3,12 +3,12 @@ layout  : wiki
 title   : B-Tree
 summary : 보편적인 색인 구조
 date    : 2019-10-11 11:02:35 +0900
-updated : 2020-09-20 15:50:02 +0900
+updated : 2023-03-28 22:35:36 +0900
 tag     : db
 resource: F9/75C315-BA79-4CA6-AEF2-821DCBF2255F
 toc     : true
 public  : true
-parent  : [[algorithm]]
+parent  : [[/algorithm]]
 latex   : true
 ---
 * TOC
