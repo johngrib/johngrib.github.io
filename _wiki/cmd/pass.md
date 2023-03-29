@@ -3,7 +3,7 @@ layout  : wiki
 title   : pass
 summary : gpg로 작동하는 패스워드 관리 도구
 date    : 2023-03-28 23:24:21 +0900
-updated : 2023-03-29 00:30:42 +0900
+updated : 2023-03-29 22:34:25 +0900
 tag     : 
 resource: 31/3E64C6-3BC9-4D30-8679-320FAD6F5848
 toc     : true
@@ -145,4 +145,27 @@ URL: nid.naver.com/*
 ![]( /resource/31/3E64C6-3BC9-4D30-8679-320FAD6F5848/naver-list.png ){:style="max-width:500px"}
 
 클릭하면 아이디와 패스워드를 자동완성해준다.
+
+### 아이폰 앱 연동
+
+아이폰에서 [passforios]( https://mssun.github.io/passforios/ ) (Pass for iOS)으로 들어가 앱을 다운로드 받는다.
+
+그리고 [퀵 스타드 가이드 문서]( https://github.com/mssun/passforios/wiki#quick-start-guide-for-pass-for-ios )를 참고해 설정해 나가면 된다.
+
+내 경우에는 다음과 같이 하였다.
+
+1. github에 private repository를 만들고 `~/.password-store` 디렉토리를 push한다.
+2. `passforios` 앱을 실행하고 `Settings`에서 다음과 같이 설정한다.
+    - Password Repository
+        - `GIT REPOSITORY URL`을 `ssh://git@github.com/johngrib/리포지토리이름.git`으로 지정한다. (잘 읽어보면 `:` 하나가 `/`로 바뀌어 있다는 것을 알 수 있다.)
+        - `BRANCH NAME`에 자신이 원하는 브랜치 이름을 지정한다.
+        - `USERNAME`은 `git`으로 지정한다. (`git`말고 다른 값은 안됨)
+        - `AUTHENTICATION METHOD`는 `SSH Key`로 지정한다.
+            - 여기에 자신의 ssh key를 등록해준다.
+    - PGP Key
+        - 자신의 공개키와 비밀키를 등록해준다.
+
+이제 아이폰 `설정` 앱에서 `암호` - `암호 옵션` - `다음에서 자동 완성 허용`으로 들어간 다음, Pass 앱을 선택하면 다른 패스워드 관리자 앱처럼 Pass를 사용할 수 있다.
+
+Pass 앱은 아이폰에 저장된 git repository나 다름없으므로, 휴대폰에서 패스워드를 수정하는 것도 가능하다.
 
