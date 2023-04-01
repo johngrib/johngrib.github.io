@@ -3,7 +3,7 @@ layout  : wiki
 title   : 메뉴의 ... (말줄임표, ellipses, 점 3개)
 summary : 명령수행 전에 추가적인 정보가 필요한 항목을 표현한다
 date    : 2020-04-24 21:58:40 +0900
-updated : 2022-02-16 22:56:18 +0900
+updated : 2023-04-01 15:07:25 +0900
 tag     : ui
 resource: AF/C9D131-34F1-4C80-BA2E-D8FBFF90C820
 toc     : true
@@ -26,7 +26,6 @@ latex   : false
 | HTML entity | `&#8230;`, `&#x2026;`                             |
 | UTF-8 (HEX) | `0xE2 0x80 0xA6 (e280a6)`                         |
 
-* [[three-dots-in-menu]]
 * [fileformat.info/info/unicode/char/2026]( https://www.fileformat.info/info/unicode/char/2026/index.htm )
 * [Ellipsis (wikipedia)]( https://en.wikipedia.org/wiki/Ellipsis )
 
