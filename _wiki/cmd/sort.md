@@ -3,7 +3,7 @@ layout  : wiki
 title   : sort
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
-updated : 2022-12-30 23:12:06 +0900
+updated : 2023-04-01 23:37:32 +0900
 tag     : bash sort command
 resource: 0F/C08091-20AE-4A88-83AD-0735D902E917
 toc     : true
@@ -163,12 +163,12 @@ Ignore leading blank characters when comparing lines.
 ```text
     * [[/blog/this/random-link]]
     * [[/blog/this/table-generate]]
-* [[/blog/this ]]
-* [[my-wiki ]]
+* [[/blog/this]]
+* [[/my-wiki]]
     * [[my-wiki/123]]
     * [[/blog/this/img-migration-to-resource]]
-* [[favicon]]
-* [[create-jekyll-blog]]
+* [[/favicon]]
+* [[/blog/create-jekyll-blog]]
     * [[/blog/this/404-fallback]]
 * [[jekyll-category-tag]]
     * [[/blog/this/todo]]
@@ -177,16 +177,16 @@ Ignore leading blank characters when comparing lines.
 결과는 다음과 같다.
 
 ```text
-* [[/blog/this ]]
+* [[/blog/create-jekyll-blog]]
+* [[/blog/this]]
     * [[/blog/this/404-fallback]]
     * [[/blog/this/img-migration-to-resource]]
     * [[/blog/this/random-link]]
     * [[/blog/this/table-generate]]
     * [[/blog/this/todo]]
-* [[create-jekyll-blog]]
-* [[favicon]]
+* [[/favicon]]
 * [[jekyll-category-tag]]
-* [[my-wiki ]]
+* [[/my-wiki]]
     * [[my-wiki/123]]
 ```
 

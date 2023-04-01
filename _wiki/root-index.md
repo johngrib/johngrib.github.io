@@ -886,7 +886,7 @@ regenerate: true
 
 ## [[/blog]]
 
-* [[/create-jekyll-blog]]
+* [[/blog/create-jekyll-blog]]
 * [[/favicon]]
 * [[/jekyll-category-tag]]
 * [[/my-wiki]]

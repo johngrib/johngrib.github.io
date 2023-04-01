@@ -7,9 +7,9 @@
  "updated": "2021-07-24 14:55:33 +0900",
  "resource": "F5/BFDE75-9A32-4C62-873F-6608A3D441E3",
  "children": [
+  "blog/create-jekyll-blog",
   "blog/roll",
   "blog/this",
-  "create-jekyll-blog",
   "favicon",
   "jekyll-category-tag",
   "my-wiki"
