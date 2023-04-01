@@ -3,7 +3,7 @@ layout  : wiki
 title   : pass
 summary : gpg로 작동하는 패스워드 관리 도구
 date    : 2023-03-28 23:24:21 +0900
-updated : 2023-03-29 22:34:25 +0900
+updated : 2023-04-01 13:23:31 +0900
 tag     : 
 resource: 31/3E64C6-3BC9-4D30-8679-320FAD6F5848
 toc     : true
@@ -54,7 +54,7 @@ uid           [ultimate] John Grib <XXXXXXXXXX@gmail.com>
 sub   rsa4096 2023-03-17 [E] [expires: XXXX-XX-XX]
 ```
 
-gpg id `2F582344457F0`를 복사해서 다음과 같이 `pass init`을 실행한다.
+gpg id `2F582344457F0`[^fake-gpg-id]를 복사해서 다음과 같이 `pass init`을 실행한다.
 
 ```bash
 $ pass init 2F582344457F0
@@ -168,4 +168,8 @@ URL: nid.naver.com/*
 이제 아이폰 `설정` 앱에서 `암호` - `암호 옵션` - `다음에서 자동 완성 허용`으로 들어간 다음, Pass 앱을 선택하면 다른 패스워드 관리자 앱처럼 Pass를 사용할 수 있다.
 
 Pass 앱은 아이폰에 저장된 git repository나 다름없으므로, 휴대폰에서 패스워드를 수정하는 것도 가능하다.
+
+## 주석
+
+[^fake-gpg-id]: 당연히 이 아이디는 가짜 값이다.
 
