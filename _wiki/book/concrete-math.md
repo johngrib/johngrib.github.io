@@ -30,7 +30,7 @@ latex   : false
 
 수학에 약한 자신을 위해 작성하고 있는 노트이다.
 
-* [[/study-concrete-math]]{구체수학 스터디 노트}
+* [[/study/concrete-math]]{구체수학 스터디 노트}
 
 ## Links
 

@@ -8,7 +8,7 @@ tag     : math
 resource: A8/C19565-8873-4E94-BF96-BFE22CED5619
 toc     : true
 public  : true
-parent  : [[study-concrete-math]]
+parent  : [[/study/concrete-math]]
 latex   : true
 ---
 * TOC

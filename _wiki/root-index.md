@@ -494,7 +494,7 @@ regenerate: true
 - [[/study/tis-100/segment-42656]]
 - [[/study/tis-100/segment-43786]]
 
-### [[/study-concrete-math]]
+### [[/study/concrete-math]]
 * [[/c-m-01-Recurrent-Problems-01]]
 * [[/c-m-01-Recurrent-Problems-02]]
 * [[/c-m-01-Recurrent-Problems-03]]

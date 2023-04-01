@@ -7,10 +7,10 @@
  "updated": "2021-10-07 21:37:14 +0900",
  "resource": "A8/6D80E6-3EA9-4FA1-A159-CC388243E2FF",
  "children": [
-  "study-concrete-math",
   "study-discrete-mathematics",
   "study-formal-languages-and-automata",
   "study-think-bayes",
+  "study/concrete-math",
   "study/ddia",
   "study/note",
   "study/tis-100"
