@@ -22,7 +22,14 @@
             for (var i = 0; i < children.length; i++) {
                 html += `<li id="child-document-${i}" class="post-item"></li>`
             }
-            document.getElementById('document-list').innerHTML = `<ul class="post-list">${html}</ul>`
+
+            const containerTarget = document.getElementById('sub-document-list');
+
+            if (containerTarget) {
+                containerTarget.innerHTML = `<ul class="post-list">${html}</ul>`
+            } else {
+                document.getElementById('document-list').innerHTML = `<ul class="post-list">${html}</ul>`
+            }
 
             if (data.children && data.children.sort) {
                 insertChildren(data.children.sort());
