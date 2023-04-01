@@ -3,12 +3,12 @@ layout  : wiki
 title   : Rouge가 지원하는 언어 목록
 summary : Github Jekyll의 syntax highlight용 언어 키워드 모음
 date    : 2018-09-17 23:14:53 +0900
-updated : 2020-06-29 21:16:51 +0900
+updated : 2023-04-01 18:13:25 +0900
 tag     : github jekyll
 resource: DE/D89662-6D0A-4F51-AEE1-19FF92E26500
 toc     : true
 public  : true
-parent  : [[what]]
+parent  : [[/what]]
 latex   : false
 ---
 * TOC
