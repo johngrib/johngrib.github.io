@@ -3,7 +3,7 @@ layout  : category
 title   : 애자일(agile) 이것저것
 summary : 
 date    : 2019-04-24 22:55:36 +0900
-updated : 2023-03-26 14:30:03 +0900
+updated : 2023-04-01 14:10:12 +0900
 tag     : agile
 resource: 99/0C2CFE-340D-4ACD-BC80-FA1D96C5101B
 toc     : true
@@ -180,6 +180,10 @@ XP와 마찬가지로, 팀 구성원들도 매일 모여 각자 진도를 확인
 - 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
 - 리팩토링 데이터베이스 진화적 데이터베이스 디자인 / 스캇 W. 엠블러, 프라모드 J. 세달라지 공저 / 정원혁, 이재범, 권태돈, 성대중, 현중균 공역 / 위키북스 / 2007년 06월 29일 / 원제 : Refactoring Databases
 - 엔터프라이즈 애플리케이션 아키텍처 패턴 / 마틴 파울러 저 / 최민석 역 / 위키북스 / 2쇄 2018년 10월 31일 / 원제 : Patterns of Enterprise Application Architecture
+
+## 하위 문서
+
+<div id="sub-document-list"></div>
 
 ## 주석
 
