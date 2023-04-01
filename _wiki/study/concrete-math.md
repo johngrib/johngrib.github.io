@@ -8,7 +8,7 @@ tag     : math
 resource: 1B/1F94F5-9372-4296-981E-A69A3A80326F
 toc     : true
 public  : true
-parent  : [[study]]
+parent  : [[/study]]
 latex   : false
 ---
 * TOC

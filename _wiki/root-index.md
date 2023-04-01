@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-01 19:24:46 +0900
+updated : 2023-04-01 22:53:26 +0900
 regenerate: true
 ---
 * TOC
@@ -495,21 +495,22 @@ regenerate: true
 - [[/study/tis-100/segment-43786]]
 
 ### [[/study/concrete-math]]
-* [[/c-m-01-Recurrent-Problems-01]]
-* [[/c-m-01-Recurrent-Problems-02]]
-* [[/c-m-01-Recurrent-Problems-03]]
-* [[/c-m-01-Recurrent-Problems-Exercises]]
-* [[/c-m-02-Sums-01]]
-* [[/c-m-02-Sums-02]]
-* [[/c-m-02-Sums-03]]
-* [[/c-m-02-Sums-04]]
-* [[/c-m-02-Sums-05]]
-* [[/c-m-02-Sums-06]]
-* [[/c-m-02-Sums-07]]
-* [[/c-m-02-Sums-Exercises]]
-* [[/c-m-03-Integer-Functions-01]]
-* [[/c-m-03-Integer-Functions-02]]
-* [[/c-m-05-Binomial-Coefficients-04]]
+
+* [[/study/concrete-math/01-recurrent-problems-01]]
+* [[/study/concrete-math/01-recurrent-problems-02]]
+* [[/study/concrete-math/01-recurrent-problems-03]]
+* [[/study/concrete-math/01-recurrent-problems-exercises]]
+* [[/study/concrete-math/02-sums-01]]
+* [[/study/concrete-math/02-sums-02]]
+* [[/study/concrete-math/02-sums-03]]
+* [[/study/concrete-math/02-sums-04]]
+* [[/study/concrete-math/02-sums-05]]
+* [[/study/concrete-math/02-sums-06]]
+* [[/study/concrete-math/02-sums-07]]
+* [[/study/concrete-math/02-sums-exercises]]
+* [[/study/concrete-math/03-integer-functions-01]]
+* [[/study/concrete-math/03-integer-functions-02]]
+* [[/study/concrete-math/05-binomial-coefficients-04]]
 
 ### [[/study/ddia]]
 

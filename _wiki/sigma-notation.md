@@ -8,7 +8,7 @@ tag     : math
 resource: EA/5A3232-875C-4A6F-BF13-F180F276CC75
 toc     : true
 public  : true
-parent  : [[math]]
+parent  : [[/math]]
 latex   : true
 ---
 * TOC
