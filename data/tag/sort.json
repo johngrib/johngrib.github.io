@@ -1,11 +1,11 @@
 [
+ "algorithm/merge-sort",
  "algorithm/quick-sort",
  "cmd/sort",
  "counting-sort",
  "heap-sort",
  "insertion-sort",
  "John-von-Neumann",
- "merge-sort",
  "selection-sort",
  "sort-stability"
 ]

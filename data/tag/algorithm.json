@@ -1,6 +1,7 @@
 [
  "algorithm",
  "algorithm/gray-code",
+ "algorithm/merge-sort",
  "average-complexity",
  "big-O-notation",
  "counting-sort",
@@ -9,7 +10,6 @@
  "heap-sort",
  "insertion-sort",
  "java/arraylist",
- "merge-sort",
  "selection-sort",
  "sort-stability",
  "tilde-approximations"

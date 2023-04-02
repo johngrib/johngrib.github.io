@@ -390,7 +390,7 @@ $$
 | $$\formularcc$$ | $$ T(n) = \Theta(\log n) $$   | 이진 탐색의 수행 시간                                         |
 | $$\formulardd$$ | $$ T(n) = \Theta(n) $$        |                                                               |
 | $$\formularee$$ | $$ T(n) = \Theta(n) $$        |                                                               |
-| $$\formularff$$ | $$ T(n) = \Theta(n \log n) $$ | [[merge-sort]]의 수행 시간, [[/algorithm/quick-sort]]의 최선의 수행 시간 |
+| $$\formularff$$ | $$ T(n) = \Theta(n \log n) $$ | [[/algorithm/merge-sort]]의 수행 시간, [[/algorithm/quick-sort]]의 최선의 수행 시간 |
 
 ## 예제로 이해하자
 

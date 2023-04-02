@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-02 14:13:47 +0900
+updated : 2023-04-02 14:21:03 +0900
 regenerate: true
 ---
 * TOC
@@ -68,6 +68,7 @@ regenerate: true
 * [[/algorithm/binary-search]]
 * [[/algorithm/egyptian-multiplication]]
 * [[/algorithm/gray-code]]
+* [[/algorithm/merge-sort]]
 * [[/algorithm/murmurhash]]
 * [[/algorithm/quick-sort]]
 
@@ -80,7 +81,6 @@ regenerate: true
 * [[/heap-sort]]
 * [[/insertion-sort]]
 * [[/master-theorem]]
-* [[/merge-sort]]
 * [[/p-np]]
 * [[/selection-sort]]
 * [[/shell-sort]]

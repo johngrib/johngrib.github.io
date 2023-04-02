@@ -76,7 +76,7 @@ latex   : true
 
 ## 다양한 정렬 알고리즘 비교
 
-- [[insertion-sort]]와 [[merge-sort]]가 안정 정렬에 해당한다.
+- [[insertion-sort]]와 [[/algorithm/merge-sort]]가 안정 정렬에 해당한다.
 
 | algorithm                     | stable? | in place? | 실행 시간                   | 추가 공간 | 비고                                    |
 |-------------------------------|---------|-----------|-----------------------------|-----------|-----------------------------------------|
@@ -85,7 +85,7 @@ latex   : true
 | [[shell-sort]]{셸 정렬}       | no      | yes       | $$N \log N? \\ N^{6/5}?$$   | 1         |                                         |
 | [[/algorithm/quick-sort]]{퀵 정렬}       | no      | yes       | $$N \log N$$                | $$\lg N$$ | 확률적으로 보증됨                       |
 | [[/algorithm/quick-sort]]{3중 퀵 정렬}   | no      | yes       | $$N$$에서 $$N \log N$$ 사이 | $$\lg N$$ | 확률적이면서, 입력 키들에 영향을 받는다 |
-| [[merge-sort]]{병합 정렬}     | **yes** | no        | $$N \log N$$                | $$N$$     |                                         |
+| [[/algorithm/merge-sort]]{병합 정렬}     | **yes** | no        | $$N \log N$$                | $$N$$     |                                         |
 | [[heap-sort]]{힙 정렬}        | no      | yes       | $$N \log N$$                | 1         |                                         |
 
 출처[^SED-2-5]

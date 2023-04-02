@@ -3,12 +3,12 @@ layout  : wiki
 title   : 병합 정렬 (Merge Sort)
 summary : 
 date    : 2020-06-27 17:03:29 +0900
-updated : 2021-10-03 00:46:40 +0900
+updated : 2023-04-02 14:22:18 +0900
 tag     : algorithm sort
 resource: 62/198F3A-E169-44EF-A3B8-3DF8763774DE
 toc     : true
 public  : true
-parent  : [[algorithm]]
+parent  : [[/algorithm]]
 latex   : true
 ---
 * TOC
@@ -338,7 +338,7 @@ $$
 
 ### 성능 향상
 
-- 크기가 `15`이하인 서브 배열을 정렬할 때에는 재귀적으로 정렬하지 않고 [[insertion-sort]]를 사용하면 일반적인 병합 정렬 구현보다 10% ~ 15% 정도 성능이 개선된다고 한다.[^sedgewick-274]
+- 크기가 `15`이하인 서브 배열을 정렬할 때에는 재귀적으로 정렬하지 않고 [[/insertion-sort]]를 사용하면 일반적인 병합 정렬 구현보다 10% ~ 15% 정도 성능이 개선된다고 한다.[^sedgewick-274]
 - 두 서브 배열이 서로 겹치지 않을 때(비교할 필요가 없을 때) 정렬을 생략하면 성능을 향상시킬 수 있다.
     - `a[mid]` $$\le$$ `a[mid+1]` 인지 확인하면 된다.
 
@@ -480,7 +480,7 @@ $$\frac{1}{2} N \lg N \le C(N) \le N \lg N$$
 
 ## 함께 읽기
 
-- [[big-O-notation]]
+- [[/big-O-notation]]
 
 ## 참고문헌
 
