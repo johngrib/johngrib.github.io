@@ -3,12 +3,12 @@ layout  : wiki
 title   : 선택 정렬 (Selection Sort)
 summary : O(N^2)의 매우 단순한 정렬 알고리즘
 date    : 2020-06-06 18:20:16 +0900
-updated : 2020-06-06 18:47:45 +0900
+updated : 2023-04-02 14:28:43 +0900
 tag     : algorithm sort
 resource: 9F/78B831-5173-477C-979E-2EF9D63089AE
 toc     : true
 public  : true
-parent  : [[algorithm]]
+parent  : [[/algorithm]]
 latex   : true
 ---
 * TOC
@@ -35,8 +35,8 @@ latex   : true
 그러므로
 
 - $$(N-1) + (N-2) + ... + 2 + 1 + 0 = { N(N-1) \over 2 }$$ 회의 비교를 한다.
-    - [[tilde-approximations]]{틸다 표기법}으로는 $$ \sim { N^2 \over 2 } $$.
-    - [[big-O-notation]]으로는 $$ O(N^2) $$.
+    - [[/tilde-approximations]]{틸다 표기법}으로는 $$ \sim { N^2 \over 2 } $$.
+    - [[/big-O-notation]]으로는 $$ O(N^2) $$.
 - $$N$$회의 교환을 한다.
 
 ## 특징

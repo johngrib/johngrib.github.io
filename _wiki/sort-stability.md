@@ -80,7 +80,7 @@ latex   : true
 
 | algorithm                     | stable? | in place? | 실행 시간                   | 추가 공간 | 비고                                    |
 |-------------------------------|---------|-----------|-----------------------------|-----------|-----------------------------------------|
-| [[selection-sort]]{선택 정렬} | no      | yes       | $$N^2$$                     | 1         |                                         |
+| [[/algorithm/selection-sort]]{선택 정렬} | no      | yes       | $$N^2$$                     | 1         |                                         |
 | [[insertion-sort]]{삽입 정렬} | **yes** | yes       | $$N$$ 에서 $$N^2$$ 사이     | 1         | 사전 정렬된 정도에 영향을 받음          |
 | [[shell-sort]]{셸 정렬}       | no      | yes       | $$N \log N? \\ N^{6/5}?$$   | 1         |                                         |
 | [[/algorithm/quick-sort]]{퀵 정렬}       | no      | yes       | $$N \log N$$                | $$\lg N$$ | 확률적으로 보증됨                       |

@@ -3,8 +3,8 @@
  "title": "선택 정렬 (Selection Sort)",
  "summary": "O(N^2)의 매우 단순한 정렬 알고리즘",
  "parent": "algorithm",
- "url": "/wiki/selection-sort",
- "updated": "2020-06-06 18:47:45 +0900",
+ "url": "/wiki/algorithm/selection-sort",
+ "updated": "2023-04-02 14:28:43 +0900",
  "resource": "9F/78B831-5173-477C-979E-2EF9D63089AE",
  "children": []
 }
