@@ -1,6 +1,7 @@
 [
  "bash-history",
  "bc",
+ "better-work/random-lunch",
  "cmd/ag",
  "cmd/basename",
  "cmd/bat",
@@ -59,7 +60,6 @@
  "make-cmd",
  "my-bash-cheatsheet",
  "perl-one-liner",
- "random-lunch",
  "rig-cmd",
  "ripgrep",
  "sha256sum",

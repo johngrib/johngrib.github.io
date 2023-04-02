@@ -3,12 +3,12 @@ layout  : wiki
 title   : 랜덤 런치
 summary : 협업 증진과 네트워킹을 위해 랜덤 그룹과 식사를 하는 제도
 date    : 2019-05-04 08:19:41 +0900
-updated : 2021-10-17 18:46:32 +0900
+updated : 2023-04-02 19:48:00 +0900
 tag     : bash
 resource: E9/664B84-4B50-4D32-A631-F97F3F28056A
 toc     : true
 public  : true
-parent  : [[/hack]]
+parent  : [[/better-work]]
 latex   : true
 ---
 * TOC

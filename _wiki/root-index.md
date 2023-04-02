@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-02 19:18:40 +0900
+updated : 2023-04-02 19:47:39 +0900
 regenerate: true
 ---
 * TOC
@@ -846,7 +846,6 @@ regenerate: true
 * [[/my-mac-os-terminal]]
 * [[/my-study-method]]
 * [[/our-fund-balancing]]
-* [[/random-lunch]]
 
 
 ## [[/summary]]
@@ -910,6 +909,7 @@ regenerate: true
 * [[/better-work/2023]]
 * [[/better-work/informal-group-solves]]
 * [[/better-work/meeting]]
+* [[/better-work/random-lunch]]
 
 * [[/better-checklist]]
 * [[/better-interview]]
