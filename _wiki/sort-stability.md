@@ -83,8 +83,8 @@ latex   : true
 | [[selection-sort]]{선택 정렬} | no      | yes       | $$N^2$$                     | 1         |                                         |
 | [[insertion-sort]]{삽입 정렬} | **yes** | yes       | $$N$$ 에서 $$N^2$$ 사이     | 1         | 사전 정렬된 정도에 영향을 받음          |
 | [[shell-sort]]{셸 정렬}       | no      | yes       | $$N \log N? \\ N^{6/5}?$$   | 1         |                                         |
-| [[quick-sort]]{퀵 정렬}       | no      | yes       | $$N \log N$$                | $$\lg N$$ | 확률적으로 보증됨                       |
-| [[quick-sort]]{3중 퀵 정렬}   | no      | yes       | $$N$$에서 $$N \log N$$ 사이 | $$\lg N$$ | 확률적이면서, 입력 키들에 영향을 받는다 |
+| [[/algorithm/quick-sort]]{퀵 정렬}       | no      | yes       | $$N \log N$$                | $$\lg N$$ | 확률적으로 보증됨                       |
+| [[/algorithm/quick-sort]]{3중 퀵 정렬}   | no      | yes       | $$N$$에서 $$N \log N$$ 사이 | $$\lg N$$ | 확률적이면서, 입력 키들에 영향을 받는다 |
 | [[merge-sort]]{병합 정렬}     | **yes** | no        | $$N \log N$$                | $$N$$     |                                         |
 | [[heap-sort]]{힙 정렬}        | no      | yes       | $$N \log N$$                | 1         |                                         |
 
