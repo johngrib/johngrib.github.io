@@ -3,12 +3,12 @@ layout  : wiki
 title   : 셸 정렬 (Shell Sort)
 summary : 
 date    : 2020-06-15 22:21:06 +0900
-updated : 2020-06-15 23:35:34 +0900
+updated : 2023-04-02 14:54:21 +0900
 tag     : 
 resource: 7A/3D36C4-E969-4C77-BE9D-CC96F53502DF
 toc     : true
 public  : true
-parent  : [[algorithm]]
+parent  : [[/algorithm]]
 latex   : true
 ---
 * TOC
@@ -94,7 +94,7 @@ $$
 
 ## 함께 읽기
 
-- 삽입 정렬( [[insertion-sort]] )
+- 삽입 정렬( [[/insertion-sort]] )
 
 ## 참고문헌
 

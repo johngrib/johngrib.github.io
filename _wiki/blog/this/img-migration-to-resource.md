@@ -20,7 +20,7 @@ latex   : false
 
 각 문서에 삽입된 이미지 대부분은 `post-img` 경로에 있는 문서 자신의 이름과 같은 디렉토리를 참조한다.
 
-예를 들어 [[/shell-sort]] 문서는 `/post-img/shell-sort/8-4-2-1.jpg`라는 이미지를 보여준다.
+예를 들어 [[/algorithm/shell-sort]] 문서는 `/post-img/shell-sort/8-4-2-1.jpg`라는 이미지를 보여준다.
 
 여기에는 다음과 같은 문제가 있었다.
 
