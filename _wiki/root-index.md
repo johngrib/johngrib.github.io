@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-02 19:47:39 +0900
+updated : 2023-04-02 23:20:21 +0900
 regenerate: true
 ---
 * TOC
@@ -433,6 +433,7 @@ regenerate: true
 
 ## [[/jargon]]
 
+* [[/jargon/20-percent-project]]
 * [[/jargon/airplane-rule]]
 * [[/jargon/another-level-of-indirection]]
 * [[/jargon/biondi-s-law]]
@@ -867,7 +868,6 @@ regenerate: true
 * [[/software-engineering/naming]]
 * [[/software-engineering/scrum]]
 
-* [[/20-percent-project]]
 * [[/andon-cord]]
 * [[/continuous-integration]]
 * [[/ddd-quotes]]

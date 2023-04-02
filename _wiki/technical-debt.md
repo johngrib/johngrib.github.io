@@ -59,7 +59,7 @@ latex   : false
 
 ## 함께 읽기
 
-* [[20-percent-project]]
+* [[/jargon/20-percent-project]]
 
 ## 참고문헌
 

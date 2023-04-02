@@ -3,12 +3,12 @@ layout  : wiki
 title   : 20% project
 summary : 
 date    : 2019-12-30 23:15:30 +0900
-updated : 2023-01-22 23:25:37 +0900
+updated : 2023-04-02 23:19:59 +0900
 tag     : 
 resource: 43/2240CD-FEA6-4473-BD0C-EF593369BD3B
 toc     : true
 public  : true
-parent  : [[software-engineering]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
@@ -87,7 +87,7 @@ latex   : false
 
 ## 함께 읽기
 
-* [[technical-debt]]
+* [[/technical-debt]]
 
 ## 참고문헌
 
