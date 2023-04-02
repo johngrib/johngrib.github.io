@@ -59,8 +59,8 @@ latex: true
 * 2022-12-23 [au VimEnter * call Bye2022()]( https://au-vimenter.github.io/post/2022-12-23-au-vimenter/ ) - [Vim의 gx 확장하기]( /wiki/article/extend-vim-gx/ )
 * 2022-07-23 [Vim 교정학원 (VIMRC 2022)]( https://youtu.be/yWkVn4SSHn0 ) - [Vim 숫자 레지스터 쉬프터 만들기]( /wiki/vim/numbered-register-shift/ )
 * 2022-06-10 [송파 Clojure 밋업 1회]( https://youtu.be/BdSoNmWksuk ) - [Clojure에 빠진 사람 Vim푸라기라도 잡는다]( https://youtu.be/oQh-fJZccjo )
+* 2021-12-02 [인프랩 방문 - 스타트업에서 회사와 함께 성장하기]( https://www.inflearn.com/pages/weekly-inflearn-38-20211228 )
 * 2021-12-21 [CLASS 101 라이브 - 스타트업 개발자, 회사와 함께 성장하기]( https://class101.net/hidden-products/wqHXxHcuEhhENRMoo8cz )
-* 2020-01-29 [2020릴레이인터뷰 첫 번째 주자, 마켓컬리 소프트웨어 엔지니어 "이종립"]( https://monthly-jiandson.tistory.com/49 )
 * 2019-05-23 [Vim 교정학원 (VIMRC 2019)]( https://youtu.be/lNWuf48vgV4 )
 * 2017-11-16 [OKKY 미니세미나 "비전공 학원출신 SI개발자, 유명스타트업 들어간.ssul" 참석 후기]( https://jojoldu.tistory.com/247 )
 
