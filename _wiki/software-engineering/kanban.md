@@ -3,7 +3,7 @@ layout  : wiki
 title   : 칸반 (Kanban)
 summary : 
 date    : 2019-01-02 22:45:37 +0900
-updated : 2022-07-09 17:16:43 +0900
+updated : 2023-04-03 20:38:36 +0900
 tag     : agile
 resource: E5/24DFF0-39F8-41F6-8FC0-385875E125D4
 toc     : true
@@ -16,20 +16,24 @@ latex   : false
 
 ## Kanban 칸반?
 
->
-* Visualize the workflow
-    * Split the work into pieces, write each item on a card and put on the wall
-    * Use named columns to illustrate where each item is in the workflow.
-* Limit WIP (work in progress) – assign explicit limits to how many items may be in progress at each workflow state.
-* Measure the lead time (average time to complete one item, sometimes called "cycle time"), optimize the process to make lead time as small and predictable as possible. 
+다음은 [Kanban and Scrum](https://www.infoq.com/minibooks/kanban-scrum-minibook ) 3쪽을 인용한 것이다.
 
-* 작업 흐름을 시각화한다.
-    * 일을 작은 조각으로 쪼갠다. 그리고 카드에 적어서 벽에 붙인다.
-    * 각 칼럼에 이름을 붙여서 각 카드가 작업 흐름의 어디에 있는지 알아볼 수 있게 한다.
-* 진행중인 업무의 수를 제한한다.
-    * 각 작업 흐름별로 작업중인 업무 수의 제한을 명확하게 둔다.
-* 업무 하나를 완료하는 데 소요되는 평균 시간(cycle time)을 측정한다.
-    * 그리고 그 시간을 줄이고 예측할 수 있도록 하는 것을 목표로 프로세스를 최적화한다.
+>
+**Kanban in a nutshell**
+>
+> - Visualize the workflow
+>     - Split the work into pieces, write each item on a card and put on the wall
+>     - Use named columns to illustrate where each item is in the workflow.
+> - Limit WIP (work in progress) – assign explicit limits to how many items may be in progress at each workflow state.
+> - Measure the lead time (average time to complete one item, sometimes called "cycle time"), optimize the process to make lead time as small and predictable as possible. 
+
+- 작업 흐름을 시각화한다.
+    - 일을 작은 조각으로 쪼갠다. 그리고 카드에 적어서 벽에 붙인다.
+    - 각 칼럼에 이름을 붙여서 각 카드가 작업 흐름의 어디에 있는지 보이게 한다.
+- WIP의 수를 제한한다.
+    - 각 흐름별로 작업중인 업무의 수를 몇 개로 제한할지 명확하게 정한다.
+- 업무 하나를 완료하는 데 소요되는 평균 시간(cycle time)을 측정한다.
+    - 그리고 그 시간을 줄이고 예측 가능하게 만들기 위해 프로세스를 최적화한다.
 
 ## 칸반이 왜 필요한가?
 
