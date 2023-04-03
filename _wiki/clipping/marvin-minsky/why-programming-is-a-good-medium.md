@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : WHY PROGRAMMING IS A GOOD MEDIUM FOR EXPRESSING POORLY UNDERSTOOD AND SLOPPILY­FORMULATED IDEAS by Marvin Minsky
-summary : 제대로 이해되지 않고 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
+summary : 제대로 이해되지 않고 엉성하게 형식화된 아이디어를 표현할 때 프로그래밍이 좋은 수단인 이유 - 마빈 민스키
 date    : 2022-08-06 11:15:12 +0900
-updated : 2022-08-11 01:51:40 +0900
+updated : 2023-04-03 22:43:51 +0900
 tag     : 번역 lisp
 resource: 5A/3FD6C4-694B-4196-9BF0-13AB73D9B6F0
 toc     : true
