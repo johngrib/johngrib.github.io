@@ -3,7 +3,7 @@ layout  : wiki
 title   : 칸반 (Kanban)
 summary : 
 date    : 2019-01-02 22:45:37 +0900
-updated : 2023-04-03 20:38:36 +0900
+updated : 2023-04-03 21:32:27 +0900
 tag     : agile
 resource: E5/24DFF0-39F8-41F6-8FC0-385875E125D4
 toc     : true
@@ -63,6 +63,18 @@ latex   : false
 칸반 보드는 가시성을 창출하는 이상적인 도구다. 가시성은 모든 가치 흐름에서 운영 작업을 적절하게 인식하고 통합하는 핵심적인 구성 요소다. 칸반 보드를 잘 이용하면 조직도의 작성 방법과는 관계없이 시장지향적인 성과를 얻을 수 있다.
 [^devops-handbook-153]
 
+## 업무 카테고리화
+
+### 상사가 업무 카테고리를 정의해주면 곤란하다
+
+>
+상사나 몇몇 사람들이 전체 팀의 업무 항목 카테고리를 결정하는 것은 피해야 한다.
+실제 업무를 수행하는 사람들은 항상 아래의 두 가지 항목을 기준으로 업무 흐름 관리 시스템 설계에 참여해야 한다.
+>
+> 1. 실무자가 참여해서 전체 팀의 요구와 수요를 만족하는 카테고리의 적정 숫자와 유형을 결정하도록 돕는다.
+> 2. 사람들은 무언가를 만들어내는 과정에 참여할 때 주인의식을 갖게 된다. 주인의식은 문제를 해결하고 원하는 결과를 얻도록 노력할 수 있는 동기를 부여한다.
+[^visible-97]
+
 ## Links
 
 * [Kanban vs Scrum - How to make the most of both (PDF)](https://www.crisp.se/file-uploads/Kanban-vs-Scrum.pdf )
@@ -73,11 +85,13 @@ latex   : false
 
 ## 참고문헌
 
-* 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+- 데브옵스 핸드북 / 진 킴, 제즈 험블, 패트릭 드부아, 존 윌리스 저/김영기 역 외 1명 정보 더 보기/감추기 / 에이콘출판사 / 2018년 07월 06일 / 원제: The DevOps Handbook: How to Create World-Class Agility, Reliability, and Security in Technology Organizations
+- 업무 시각화 / 도미니카 드그란디스 저/유지은, 김혜주 역/조승빈 감수 / 에이콘출판사 / 발행: 2020년 01월 31일 / 원제 : Making Work Visible
 
 ## 주석
 
 [^devops-handbook-56]: 데브옵스 핸드북. 56쪽.
 [^devops-handbook-58]: 데브옵스 핸드북. 58쪽.
 [^devops-handbook-153]: 데브옵스 핸드북. 153쪽.
+[^visible-97]: 업무 시각화. 2.1장. 97쪽.
 
