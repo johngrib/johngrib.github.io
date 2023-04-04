@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim help
 summary : 
 date    : 2022-02-26 00:38:03 +0900
-updated : 2022-06-18 21:50:40 +0900
+updated : 2023-04-04 23:08:35 +0900
 tag     : 
 resource: 44/A86F86-A8DF-4EF0-8E32-7CA5B07F8E79
 toc     : true
@@ -13,6 +13,65 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## Example
+
+- `:help x`
+    - Normal 모드에서의 `x`에 대한 도움말을 본다.
+- `:help v_u`
+    - Visual 모드에서의 `u`에 대한 도움말을 본다.
+- `:help i_CTRL-R`
+    - Insert 모드에서의 `CTRL-R`에 대한 도움말을 본다.
+- `:help :wq`
+    - 커맨드 라인의 `:wq`에 대한 도움말을 본다.
+- `:help /.`
+    - Vim 정규식의 `.`에 대한 도움말을 본다.
+- `:help /\1`
+    - Vim 정규식의 `\1`에 대한 도움말을 본다.
+- `:help 'number'`
+    - `'number'` 옵션에 대한 도움말을 본다.
+
+## help 사용 팁 이것저것.
+
+### help-summary 를 읽는다
+
+```
+:help help-summary
+```
+
+### 링크 타고 가기
+
+- `Ctrl-]`: 현재 커서가 위치한 링크 문서를 연다.
+    - 그냥 마우스로 더블 클릭을 해도 된다.
+- `Ctrl-O`: 이전에 열었던 문서로 돌아간다. 쉽게 말하자면 뒤로 가기.
+
+### Ctrl-D의 활용
+
+검색어를 입력한 다음, `Ctrl-D` 를 입력하면 그 검색어와 관련된 모든 도움말을 보여준다. 그 상태에서 `Tab` 키를 누르면 해당 목록을 선택할 수 있다.
+
+- 예) `:help number`를 입력하고 `Ctrl-D`를 눌러보자. 이후 `Tab` 키를 누르면 자동완성 목록이 나오고, 또 `Tab` 키를 누르면 다음 항목이 선택된다.
+
+### 모드별로 검색 방법이 다르다
+
+Insert 모드 명령은 `i_`를 앞에 붙여 검색하면 된다.
+
+- `:help i_CTRL-W`
+- `:help i_<Esc>`
+
+Visual 모드 명령은 `v_`를 앞에 붙여 검색하면 된다.
+
+- `:help v_iw`
+- `:help v_$`
+
+### helpgrep 으로 검색
+
+`:helpgrep 주제`로 검색할 수 있다.
+
+이후 다음 방법으로 다음/이전으로 이동할 수 있다.
+
+- `:cnext`, `:cn`
+- `:cprevious`, `:cp`
+
 
 ## 문제 해결
 
