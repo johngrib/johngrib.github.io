@@ -59,6 +59,7 @@ google_adsense:
   client: ca-pub-3675948545737694
 
 blame: "https://github.com/johngrib/johngrib.github.io/blame/master/_wiki"
+history: "https://github.com/johngrib/johngrib.github.io/commits/master/_wiki"
 edit: "https://github.com/johngrib/johngrib.github.io/edit/master/_wiki"
 issue: "https://github.com/johngrib/johngrib.github.io/issues/new"
 
