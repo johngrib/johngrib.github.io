@@ -3,12 +3,12 @@ layout  : wiki
 title   : 평균 계산 복잡도 구하기
 summary : Average Case Computational Complexity
 date    : 2019-04-07 23:29:38 +0900
-updated : 2020-07-14 23:46:05 +0900
+updated : 2023-04-04 22:35:36 +0900
 tag     : algorithm
 resource: B2/BD6A11-55FF-4634-9E0E-F60DC929CA43
 toc     : true
 public  : true
-parent  : [[algorithm]]
+parent  : [[/algorithm]]
 latex   : true
 ---
 * TOC
@@ -275,8 +275,8 @@ $$ \Theta(n^2)$$ 이다.
 
 ## 함께 읽기
 
-- [[big-O-notation]]
-- [[insertion-sort]]
+- [[/big-O-notation]]
+- [[/insertion-sort]]
 
 ## 참고문헌
 

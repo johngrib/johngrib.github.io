@@ -123,7 +123,7 @@ function insert(a, pos, value) {
 
 ## 함께 읽기
 
-- [[average-complexity]]{평균 계산 복잡도 구하기}
+- [[/algorithm/average-complexity]]{평균 계산 복잡도 구하기}
 - [[/algorithm/shell-sort]]{셸 정렬}
 
 ## 참고문헌

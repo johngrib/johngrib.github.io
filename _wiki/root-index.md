@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-02 23:20:21 +0900
+updated : 2023-04-04 22:35:08 +0900
 regenerate: true
 ---
 * TOC
@@ -64,6 +64,7 @@ regenerate: true
 
 ## [[/algorithm]]
 
+* [[/algorithm/average-complexity]]
 * [[/algorithm/b-tree]]
 * [[/algorithm/binary-search]]
 * [[/algorithm/egyptian-multiplication]]
@@ -74,7 +75,6 @@ regenerate: true
 * [[/algorithm/selection-sort]]
 * [[/algorithm/shell-sort]]
 
-* [[/average-complexity]]
 * [[/base64]]
 * [[/big-O-notation]]
 * [[/counting-sort]]

@@ -1,9 +1,9 @@
 [
  "algorithm",
+ "algorithm/average-complexity",
  "algorithm/gray-code",
  "algorithm/merge-sort",
  "algorithm/selection-sort",
- "average-complexity",
  "big-O-notation",
  "counting-sort",
  "dijkstra-2-stack-for-exp-eval",

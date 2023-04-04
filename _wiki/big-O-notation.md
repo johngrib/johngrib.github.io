@@ -523,7 +523,7 @@ function test(listA, listB) {
 
 ## 함께 읽기
 
-- [[average-complexity]]{평균 계산 복잡도 구하기}
+- [[/algorithm/average-complexity]]{평균 계산 복잡도 구하기}
 - [[master-theorem]]{마스터 정리}
 - [[tilde-approximations]]{틸다 표기법}
 
