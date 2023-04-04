@@ -35,7 +35,7 @@ insert 모드라도 이렇게 먼저 `<c-x>` (control x)를 누른 다음이라�
 하나는 `<c-x>` 이고, 다른 하나는 INSERT 모드에서 NORMAL 명령을 작동하는 방법인데
 
 <div>
-<video controls autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/tS33zBZAfBkVIB5j.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/tS33zBZAfBkVIB5j.mp4 " type="video/mp4"></video>
 </div>
 
 기왕 이야기가 나온 김에 c-x 이야기를 먼저 하자.
@@ -100,7 +100,7 @@ c-x 를 이야기하며 나왔던 인서트 모드 자동완성으로 돌아가�
 
 쓰는 모습을 찍어봤다. `__time` 부터 `__pwd` 는 vim의 빌트인 펑션을 쓰고, `__branch` 와 `__uuid` 는 system 함수로 셸 명령을 호출한다. 셸 명령을 부를 수 있다는 이야기는 나에게 익숙한 프로그래밍 언어로 나만의 완성 문구를 만들 수 있다는 의미이기도 하다. 인터넷에서 뭘 가져올 수도 있을 거고.
 
-<video controls autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/CcSkwLbeIhkVx6tx.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/CcSkwLbeIhkVx6tx.mp4 " type="video/mp4"></video>
 
 내가 설정한 iabbr이 전부 앞에 `_`가 두개씩 있는 이유는 별거 없고 괜히 타이핑하다 의도하지 않은 순간에 iabbr 자동완성이 되기를 바라지 않았기 때문. `__` 정도면 거의 쓸 일이 없으니까 의도적으로 음 오늘 날짜가.. 할 때 `__date` 하고 쓰는 식.
 
@@ -116,7 +116,7 @@ c-r 누르고 a 누르면 a 레지스터의 값들을 붙여넣고, b 누르면 
 
 글로만 쓰면 심심하니까 영상을 찍었다. 이것도 핵심은 system 명령 호출이 가능하다는 것. 물론 이것만 되는 게 아니라 Vimscript 함수도 부를 수 있고... 생각할 수 있는 터미널로 할 수 있는건 대부분 할 수 있다. 만약 해머스푼이랑 연결하면 OS UI도 조작 가능.
 
-<video controls autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/bMjG-9exkJNUPKBK.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/bMjG-9exkJNUPKBK.mp4 " type="video/mp4"></video>
 
 ## 매크로에 대한 잡담
 
@@ -126,13 +126,13 @@ c-r 누르고 a 누르면 a 레지스터의 값들을 붙여넣고, b 누르면 
 
 `'<,'>norm @알파벳` 이런 식으로 하면 각 행에 대해 알파벳 매크로를 실행할 수 있습니다. 이거 참 편리한데요, 여러 행에 매크로를 실행할 때 쓸만해요.
 
-<video controls autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/N8Va-9uzBch3an9X.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/N8Va-9uzBch3an9X.mp4 " type="video/mp4"></video>
 
 매크로.. vim에 어느정도 익숙하신 분들은 종종 사용하실 텐데 이게 엑셀에서 사용자 입력 녹화하는 거랑 똑같은 기능. 매크로를 쓰면 엄청 편리한데, `'<,'>` 로 범위로 매크로를 지정하는 방법을 알게 되면 훨씬 편리하게 사용할 수 있다. 정말 온갖 것을 할 수 있음. 
 
 매크로에 대해 더 얹어보자. 매크로로 무엇을 할 수 있나? 정말 어마어마하게 많은 것을 할 수 있는데... 뭘 예로 들까 하다가 vim 매크로와 정규식을 사용해 소수 목록을 만드는 과정을 영상으로 찍어 봤다. 초반에 숫자 목록 만드는 게 vim macro. 이거 가끔 회사 동료들에게 보여주면 인기가 좋다..
 
-<video controls autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/TG43DiO0epVGP2V1.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/TG43DiO0epVGP2V1.mp4 " type="video/mp4"></video>
 
 참고로 여기 사용한 트릭은 1진법을 사용해 정규식으로 합성수를 골라내서 vim의 g 명령으로 d 를 보내 합성수 라인만 삭제한 것.
 
@@ -144,23 +144,23 @@ c-r 누르고 a 누르면 a 레지스터의 값들을 붙여넣고, b 누르면 
 
 `50i-<Esc>` 하면 `-`로 가득한 한 줄이 만들어짐.
 
-<video controls autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/u-jnOIDP-TR0gF6N.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/u-jnOIDP-TR0gF6N.mp4 " type="video/mp4"></video>
 
 이번엔 `-` 하나를 입력하고 49. 를 하는 방법.
 
-<video controls autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/ttvzPd4ISc9aCStX.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/ttvzPd4ISc9aCStX.mp4 " type="video/mp4"></video>
 
 여기에 보너스 하나를 더 얹자면 이런 방법도 가능. read 명령을 써서 외부 프로그램 호출의 표준 출력을 가져다 붙인다.
 
-<video controls autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/KikJ5b8wQWIrDtYS.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/KikJ5b8wQWIrDtYS.mp4 " type="video/mp4"></video>
 
 그러면 vim 커맨드라인에서만 될 거 같은데... 그런데 말입니다(정색). visual mode로 선택한 텍스트를 표준 입력으로 ! 명령에 밀어넣는 방법이 있습니다. `-` 를 50번 반복하는 명령을 python3로 실행하고, 곧바로 node.js 로 실행하는 걸 찍어 봤습니다.
 
-<video controls autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/xuJ48njcIVpejT2F.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/xuJ48njcIVpejT2F.mp4 " type="video/mp4"></video>
 
 이번엔 매크로를 써봅시다. `-` 한 글자를 입력해주는 매크로를 만들고 49회 반복하기. q 매크로에 `-` 하나를 입력하는 과정을 알려준 다음, 49회, 300회 반복해봤음.
 
-<video controls autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/MgF5hykdCiDmV7L3.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/MgF5hykdCiDmV7L3.mp4 " type="video/mp4"></video>
 
 그렇다면 q매크로 내용도 볼 수 있느냐? 볼 수 있습니다. 사실 매크로는 레지스터에 저장된 값을 vim이 normal 모드로 순서대로 실행하는 기능일 뿐. 레지스터를 복붙용으로 쓰면 문자열을 평가하지 않고 에디터에 붙여넣는 거고, 매크로로 쓰면 eval을 하는 거죠. 방금 만든 q 매크로는 그냥 `i-^[` .
 

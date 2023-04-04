@@ -82,7 +82,7 @@ $active-color: red;
 
 포스트를 스크롤할 때 현재 읽고 있는 챕터의 소제목을 자동으로 강조해서, 내가 어디를 읽고 있는지 알려준다.
 
-<video controls autoplay loop><source src=" /resource/BD/6C0CF6-AD44-44D5-83BE-1919BC9638C9/205447003-1d96f0a2-b93f-4ea9-9206-c81c31b17120.mp4 " type="video/mp4"><video>
+<video controls muted autoplay loop><source src=" /resource/BD/6C0CF6-AD44-44D5-83BE-1919BC9638C9/205447003-1d96f0a2-b93f-4ea9-9206-c81c31b17120.mp4 " type="video/mp4"><video>
 
 구현은 [js/toc-highlight.js]( https://github.com/johngrib/johngrib.github.io/blob/master/js/toc-highlight.js )에서 읽어볼 수 있다.
 

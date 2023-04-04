@@ -49,7 +49,7 @@ latex   : false
 
 주석을 웹 사이트에서 볼 때 마우스 오버를 하면 팝업으로 보여준다.
 
-<video controls autoplay loop><source src=" /resource/28/9B73E9-6A44-4742-AD40-1F55993DA83F/205227869-68135216-dd8c-442a-b557-a7db53e0c3da.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/28/9B73E9-6A44-4742-AD40-1F55993DA83F/205227869-68135216-dd8c-442a-b557-a7db53e0c3da.mp4 " type="video/mp4"></video>
 
 ### 구현
 

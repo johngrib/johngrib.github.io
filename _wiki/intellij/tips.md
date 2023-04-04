@@ -43,7 +43,7 @@ latex   : false
 
 Vim에서 하는 것만큼은 아니지만 비슷하게 할 수 있다.
 
-<video controls autoplay loop><source src=" /resource/F6/C37D5D-0E30-44D2-B873-E374D0E2CA90/213633807-7f998587-3696-4051-83c0-f5c5aff38ff2.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/F6/C37D5D-0E30-44D2-B873-E374D0E2CA90/213633807-7f998587-3696-4051-83c0-f5c5aff38ff2.mp4 " type="video/mp4"></video>
 
 `Preferences` - `Editor` - `Color Scheme` - `General` - `Code` - `Identifier under caret`에서 색을 설정해주면 된다.
 

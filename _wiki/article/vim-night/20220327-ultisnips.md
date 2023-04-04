@@ -46,7 +46,7 @@ ultisnips의 좋은 점은 바닥부터 시작해서 자신만의 자동완성�
 
 `,defn` 입력하고 탭을 누르면 =\> `(defn ..함수내용` 완성.  
 
-<video controls autoplay loop><source src=" /resource/E6/1B0086-264A-497A-8BCE-D5BE8DECA7E5/FO0YbNOVUAAzd8x.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/E6/1B0086-264A-497A-8BCE-D5BE8DECA7E5/FO0YbNOVUAAzd8x.mp4 " type="video/mp4"></video>
 
 하나의 `defn` 정의를 쓴 게 아니라 두 개의 자동완성을 연달아 사용한 것이다. 이제 이걸 사용한 응용이 가능해진다. 생각해보면 함수 정의를 항상 저 모양으로 사용하지는 않는다. 경우에 따라 docstring을 안 쓰는 경우도 있다. 그래서 함수 정의를 이렇게 수정했다. docstring이나 args body 제외.
 
@@ -54,7 +54,7 @@ ultisnips의 좋은 점은 바닥부터 시작해서 자신만의 자동완성�
 
 함수 이름은 고정된 이름이 아니라 (재미있게) 걍 현재 시각의 초가 입력되게 했다. 지금이 10시 17분 10초니까 함수 이름이 name10으로 완성. 그런데 args 부분이 사라져서 좀 더 입력해야 하는 불편이 생긴다.  
 
-<video controls autoplay loop><source src=" /resource/E6/1B0086-264A-497A-8BCE-D5BE8DECA7E5/FO0Z3xRVkAYD5A2.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/E6/1B0086-264A-497A-8BCE-D5BE8DECA7E5/FO0Z3xRVkAYD5A2.mp4 " type="video/mp4"></video>
 
 이제 여기에 하나를 더 추가한다. `defn`에 함수 이름까지 작성된 경우에 펼쳐지는 자동완성. args 를 위한 대괄호를 만들어 주고 그 안에 커서를 놓아준다.
 
@@ -66,7 +66,7 @@ ultisnips의 좋은 점은 바닥부터 시작해서 자신만의 자동완성�
 
 즉 어떤 고정된 폼이 등장할 때마다 탭만 누르면 되도록 자신만의 자동완성 흐름을 만들 수 있다.  
 
-<video controls autoplay loop><source src=" /resource/E6/1B0086-264A-497A-8BCE-D5BE8DECA7E5/FO0bktcUYAY_swp.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/E6/1B0086-264A-497A-8BCE-D5BE8DECA7E5/FO0bktcUYAY_swp.mp4 " type="video/mp4"></video>
 
 정형화된 코드 모양이 있다면 처음엔 걍 타이핑해서 입력하다가 아 얘네들 비슷하네 하면 바로 만들어서 설정으로 저장. 이건 `fn`과 `let`인데, 둘의 공통점은 바로 다음에 대괄호가 나온다는 것이다. `,fn` 탭 → `(fn` 탭 → `(fn [커서]` 로 완성된다. 탭탭탭. 하나 더 추가해서 대괄호 탈출도 가능하다.
 
@@ -80,7 +80,7 @@ ultisnips의 좋은 점은 바닥부터 시작해서 자신만의 자동완성�
 
 이렇게 변환된다.  
 
-<video controls autoplay loop><source src=" /resource/E6/1B0086-264A-497A-8BCE-D5BE8DECA7E5/FO0dln3VgAEMmvU.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/E6/1B0086-264A-497A-8BCE-D5BE8DECA7E5/FO0dln3VgAEMmvU.mp4 " type="video/mp4"></video>
 
 문제는 이런 플러그인이 없는 IntelliJ 자동완성이 너무 맛없게 느껴진다는 거. 새로 만들 수도 있겠지만 이미 vim에는 있어서 그냥 vim을 쓰게 됨.. 
 

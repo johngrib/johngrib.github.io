@@ -175,7 +175,7 @@ vim 매뉴얼에 방법이 있었거든요. (vim에서 `:help i_ctrl-v`를 입�
 
 영상을 찍어 봤습니다. 이렇게 에디터 안에 해당 문자들을 입력할 수 있죠.
 
-<video controls autoplay loop><source src=" /resource/4D/557E8F-C2DF-494B-933B-5AA63F2596CA/xsMOcA5TXar_F8hP.mp4 " type="video/mp4"></video>
+<video controls muted autoplay loop><source src=" /resource/4D/557E8F-C2DF-494B-933B-5AA63F2596CA/xsMOcA5TXar_F8hP.mp4 " type="video/mp4"></video>
 
 영상을 보면 컨트롤L, 컨트롤C 같은 문자들을 그대로 입력하고 있습니다.
 그리고 이건 git 으로 commit 해서 github에 올리잖아요? 그러면 github에서도 그대로 나옵니다. 최근에도 올린 게 하나 있었던 거 같은데... 찾아와볼게요. 아 여기 있네요. `^M`이 있습니다.
