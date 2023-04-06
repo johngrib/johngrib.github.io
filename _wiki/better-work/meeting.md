@@ -3,7 +3,7 @@ layout  : wiki
 title   : 회의
 summary : 
 date    : 2020-03-15 12:46:21 +0900
-updated : 2023-03-25 21:41:54 +0900
+updated : 2023-04-06 18:00:33 +0900
 tag     : 
 resource: 87/A28A66-F3EB-437D-8103-CB1C50CA96BB
 toc     : true
@@ -128,7 +128,7 @@ latex   : false
 
 - 비즈니스학교에서 배운 101가지 / 마이클 프레이스, 매튜 프레더릭 공저 / 매튜 프레더릭 그림 / 곽재은 역 / 동녘 / 초판 1쇄 2011년 12월 23일
 - 소프트웨어 장인 정신 이야기 / 로버트 C. 마틴 저/정지용 역 / 인사이트(insight) / 초판 1쇄 발행 2023년 03월 09일 / 원제: Clean Craftsmanship: Disciplines, Standards, and Ethics
-- 아마존처럼 회의하라 / 사토 마사유키 저/류두진 역 / 반니 / 1판 2쇄 발행 2021년 04월 23일
+- 아마존처럼 회의하라 / 사토 마사유키 저/류두진 역 / 반니 / 1판 2쇄 발행 2021년 04월 23일 / 원제: AMAZON NO SUGOI KAIGI by Masayuki Sato
 
 ## 주석
 
