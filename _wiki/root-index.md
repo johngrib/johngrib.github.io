@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-04 22:35:08 +0900
+updated : 2023-04-08 20:53:59 +0900
 regenerate: true
 ---
 * TOC
@@ -440,6 +440,7 @@ regenerate: true
 * [[/jargon/bootstrapping]]
 * [[/jargon/boy-scout-rule]]
 * [[/jargon/brooks-s-law]]
+* [[/jargon/burndown-chart]]
 * [[/jargon/dry-principle]]
 * [[/jargon/edsel-edict]]
 * [[/jargon/hofstadter-s-law]]
