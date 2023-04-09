@@ -1,14 +1,14 @@
 ---
 layout  : wiki
-title   : 빌 조이(Bill Joy)와 10,000 시간의 법칙
+title   : 빌 조이(Bill Joy)
 summary : 
 date    : 2020-05-17 20:24:14 +0900
-updated : 2020-07-29 22:21:42 +0900
+updated : 2023-04-09 16:09:24 +0900
 tag     : 
 resource: 1D/D41A46-7366-4054-801A-E7CCDAD63910
 toc     : true
 public  : true
-parent  : [[people]]
+parent  : [[/people]]
 latex   : false
 ---
 * TOC

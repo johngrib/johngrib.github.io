@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-08 20:53:59 +0900
+updated : 2023-04-09 16:09:04 +0900
 regenerate: true
 ---
 * TOC
@@ -123,6 +123,7 @@ regenerate: true
 ### [[/people]]
 
 * [[/people/bill-atkinson]]
+* [[/people/bill-joy]]
 * [[/people/brian-w-kernighan]]
 * [[/people/fred-brooks]]
 * [[/people/gerald-weinberg]]
@@ -132,7 +133,6 @@ regenerate: true
 * [[/people/linus-torvalds]]
 * [[/people/ronald-wayne]]
 
-* [[/Bill-Joy-and-10000-hours-rule]]
 * [[/Donald-Ervin-Knuth]]
 * [[/James-Gosling-super-programmer]]
 * [[/John-von-Neumann]]
