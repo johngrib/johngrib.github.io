@@ -370,7 +370,7 @@ $$ \frac{1}{e} = 0.3678794411714...$$
 
 ## 함께 읽기
 
-* [[frac1e]]{n개의 제비뽑기에 n번 도전}
+* [[/problem/miss-all-prizes-probability]]{n개의 제비뽑기에 n번 도전}
 
 
 ## Links

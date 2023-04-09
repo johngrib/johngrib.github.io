@@ -1,14 +1,14 @@
 ---
 layout  : wiki
-title   : n개의 제비뽑기에 n번 도전
+title   : n개의 제비뽑기에 n번 도전했을 때 당첨되지 않을 확률
 summary : 1/e
 date    : 2017-12-03 09:44:20 +0900
-updated : 2020-03-08 18:41:34 +0900
+updated : 2023-04-09 16:35:36 +0900
 tag     : math 확률
 resource: 69/CB4350-F109-4785-BEB4-9708B024FA00
 toc     : true
 public  : true
-parent  : [[math]]
+parent  : [[/problem]]
 latex   : true
 ---
 * TOC
@@ -132,7 +132,7 @@ $$
 
 ## 함께 읽기
 
-* [[secretary-problem]]{비서 문제}
+* [[/secretary-problem]]{비서 문제}
 
 [n_1]: https://www.wolframalpha.com/input/?i=n%3D1%3B+%28%28n-1%29%2Fn%29%5En
 [n_2]: https://www.wolframalpha.com/input/?i=n%3D2%3B+%28%28n-1%29%2Fn%29%5En
@@ -151,4 +151,5 @@ $$
 [n_5008]: https://www.wolframalpha.com/input/?i=n%3D5008%3B+%28%28n-1%29%2Fn%29%5En
 [n_7500]: https://www.wolframalpha.com/input/?i=n%3D7500%3B+%28%28n-1%29%2Fn%29%5En
 [n_inf]: https://www.wolframalpha.com/input/?i=lim+n-%3Einf+%28%28n-1%29%2Fn%29%5En
+
 

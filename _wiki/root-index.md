@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-09 16:09:04 +0900
+updated : 2023-04-09 16:34:01 +0900
 regenerate: true
 ---
 * TOC
@@ -156,7 +156,6 @@ regenerate: true
 * [[/Cromwell-s-rule]]
 * [[/Fermat-s-little-theorem]]
 * [[/fibonacci]]
-* [[/frac1e]]
 * [[/gcd]]
 * [[/graph]]
 * [[/halting-problem]]
@@ -244,6 +243,7 @@ regenerate: true
 
 * [[/problem/collatz-conjecture]]
 * [[/problem/is-number-string]]
+* [[/problem/miss-all-prizes-probability]]
 * [[/problem/roman-number]]
 * [[/problem/two-eggs-100-floor]]
 
