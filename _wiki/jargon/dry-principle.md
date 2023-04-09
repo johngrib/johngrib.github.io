@@ -3,7 +3,7 @@ layout  : wiki
 title   : DRY 원칙
 summary : Don't Repeat Yourself
 date    : 2020-03-30 21:39:43 +0900
-updated : 2023-03-26 21:52:40 +0900
+updated : 2023-04-09 15:47:52 +0900
 tag     : 
 resource: 1F/23E542-32BB-48EC-BDE2-96510E617158
 toc     : true
@@ -108,6 +108,29 @@ _우리는 타이핑을 즐기고, 모든 것을 두 번 작성하고, 모든 �
 - [[/pattern/strategy]]
 - [[/pattern/template-method]]
 
+### 생각해 볼 문제: 의존성 위생 {#dependency-hygiene}
+
+Rob Pike는 2012년 10월 25일, ["Go at Google: Language Design in the Service of Software Engineering"]( https://go.dev/talks/2012/splash.article )에서 다음과 같이 말했다.
+
+>
+Through the design of the standard library, great effort was spent on controlling dependencies.
+It can be better to copy a little code than to pull in a big library for one function.
+(A test in the system build complains if new core dependencies arise.)
+<mark>Dependency hygiene trumps code reuse.</mark>
+One example of this in practice is that the (low-level) net package has its own integer-to-decimal conversion routine to avoid depending on the bigger and dependency-heavy formatted I/O package.
+Another is that the string conversion package strconv has a private implementation of the definition of 'printable' characters rather than pull in the large Unicode character class tables; that strconv honors the Unicode standard is verified by the package's tests.
+[^go-at-google-7]
+
+표준 라이브러리를 설계하면서 의존성을 컨트롤하는 데에 많은 노력을 기울였습니다.
+한 개의 함수를 위해 큰 라이브러리를 끌어오는 것보다, 코드를 좀 복사하는 것이 더 나은 선택일 수 있습니다.
+(시스템 빌드에서 새로운 핵심 의존성이 추가되면 테스트가 경고를 띄웁니다.)
+<mark>의존성 위생이 코드 재사용보다 우선입니다.</mark>
+이에 대한 실제 사례 중 하나가 (로우레벨) net 패키지입니다.
+이 패키지는 더 크고 의존성이 많은 형식의 I/O 패키지에 의존하지 않기 위해 자체적으로 integer에서 decimal로의 변환 루틴을 갖고 있습니다.
+또 다른 사례는 string 변환 패키지 strconv입니다.
+strconv는 큰 유니코드 문자 클래스 테이블을 가져오지 않고 그 대신 'printable' 문자의 정의를 private 하게 구현하고 있습니다.
+strconv가 유니코드 표준을 준수하는지는 패키지의 테스트를 통해 확인됩니다.
+
 ## 참고문헌
 
 - Clean Code / 로버트 C. 마틴 저/박재호, 이해영 역 / 인사이트(insight) / 초판 3쇈 2016년 05월 25일
@@ -123,3 +146,5 @@ _우리는 타이핑을 즐기고, 모든 것을 두 번 작성하고, 모든 �
 [^clean-code-373]: Clean Code. 17장. 373쪽.
 [^clean-code-372]: Clean Code. 17장. 372쪽.
 [^clean-craftsmanship-95]: 클린 코드의 기술. 4장. 95쪽.
+[^go-at-google-7]: [Go at Google: Language Design in the Service of Software Engineering 의 7. Dependencies in Go]( https://go.dev/talks/2012/splash.article#TOC_7. ) 마지막 문단.
+
