@@ -33,6 +33,7 @@
   "jargon/no-problem-syndrome",
   "jargon/postel-s-law",
   "jargon/solid",
+  "jargon/telescope-rule",
   "jargon/two-pizza-team",
   "jargon/zero-overhead-principle",
   "kees-koster-good-programming-language",
@@ -45,7 +46,6 @@
   "power-distance-index",
   "rule-of-3-and-10",
   "Schopenhauer-s-Law-Of-Entropy",
-  "Tompson-s-rule-for-first-time-telescope-makers",
   "Zipf-s-law"
  ]
 }

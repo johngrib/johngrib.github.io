@@ -3,12 +3,12 @@ layout  : wiki
 title   : 망원경 규칙 (Telescope Rule)
 summary : 4인치 반사경을 만든 다음에 6인치 반사경을 만드는 것이, 6인치 반사경 하나 만드는 것보다 더 빠르다
 date    : 2019-11-24 08:48:36 +0900
-updated : 2019-11-24 09:36:53 +0900
+updated : 2023-04-11 22:45:44 +0900
 tag     : rule agile
 resource: 76/F6C872-F717-47D8-8DC2-A2F9184F130D
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
