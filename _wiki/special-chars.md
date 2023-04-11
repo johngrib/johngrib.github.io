@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2023-02-18 09:49:50 +0900
+updated : 2023-04-11 20:07:43 +0900
 tag     : special-chars
 resource: 72/469FCC-A10B-46DC-A4DB-B7A9242EDF6D
 toc     : true
@@ -276,7 +276,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [fileformat.info/info/unicode/char/0D](http://www.fileformat.info/info/unicode/char/0D )
 * [Carriage return(wikipedia)](https://en.wikipedia.org/wiki/Carriage_return )
 
-#### CR, LF
+#### CR, LF {#cr-lf}
 
 * LF는 옛날 타자기에서 종이를 한 줄 위로 올리는 것을 뜻했다.
 * CR은 옛날 타자기에서 타자기 헤드를 가장 왼쪽으로 옮겨, 헤드가 첫 번째 컬럼에 위치하도록 하는 것을 뜻했다.
