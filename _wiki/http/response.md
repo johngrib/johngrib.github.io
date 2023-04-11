@@ -3,7 +3,7 @@ layout  : wiki
 title   : HTTP Response
 summary : 
 date    : 2023-03-13 23:18:46 +0900
-updated : 2023-03-13 23:24:15 +0900
+updated : 2023-04-11 20:09:38 +0900
 tag     : 
 resource: 77/E88B2D-2568-4F2A-840C-7BBF299FA85D
 toc     : true
@@ -28,7 +28,7 @@ Response      = Status-Line               ; Section 6.1
 ```
 
 * 세미콜론 이후는 주석이며, RFC 2616의 색인을 의미한다.
-* [CRLF는 줄바꿈을 의미한다](/wiki/special-chars/#cr-lf).
+* [[/special-chars#cr-lf]]{CRLF는 줄바꿈을 의미한다}.
 
 문서의 내용을 종합하여 알아보기 쉽게 표현하면 다음과 같다.
 
