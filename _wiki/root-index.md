@@ -279,7 +279,7 @@ regenerate: true
 * [[/go/struct-padding]]
 * [[/go/vim-setting]]
 
-* [[/Go-Blog-translation]]
+* [[/go/blog]]
     * [[/golang-debugging-what-you-deploy]]
     * [[/golang-mod]]
     * [[/golang-subtests]]

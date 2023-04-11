@@ -15,7 +15,7 @@
  "clojure/reference/special-forms",
  "clojure/reference/transducers",
  "clojure/reference/transient",
- "Go-Blog-translation",
+ "go/blog",
  "golang-debugging-what-you-deploy",
  "golang-mod",
  "golang-subtests",

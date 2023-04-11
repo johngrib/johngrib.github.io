@@ -2,7 +2,7 @@
  "commit-go-mod-go-sum",
  "ctags",
  "go",
- "Go-Blog-translation",
+ "go/blog",
  "go/ginkgo",
  "go/struct-padding",
  "golang-cheatsheet",

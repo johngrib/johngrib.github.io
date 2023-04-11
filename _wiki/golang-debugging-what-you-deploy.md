@@ -8,7 +8,7 @@ tag     : golang 번역 the-go-blog
 resource: 88/755B32-6BFE-4315-93C9-5A3534C8F4A6
 toc     : true
 public  : true
-parent  : [[Go-Blog-translation]]
+parent  : [[/go/blog]]
 latex   : false
 ---
 * TOC
