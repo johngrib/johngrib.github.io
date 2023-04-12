@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구체수학 01.재귀적인 문제들.03.요세푸스 문제
 summary : 01.RECURRENT PROBLEMS
 date    : 2018-04-26 21:58:11 +0900
-updated : 2020-04-17 23:53:32 +0900
+updated : 2023-04-12 20:34:32 +0900
 tag     : math
 resource: CD/6CB13E-64AD-45E2-9474-7FE349ED49A1
 toc     : true
@@ -14,7 +14,7 @@ latex   : true
 * TOC
 {:toc}
 
-## 개요
+## 일러두기
 
 * 이 문서는 [[/book/concrete-math]]책의 1장을 공부하며 메모한 것입니다.
 * 이 문서는 메모일 뿐이니 자세한 내용은 교재를 참고해야 합니다.
