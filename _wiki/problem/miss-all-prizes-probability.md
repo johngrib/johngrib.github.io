@@ -3,7 +3,7 @@ layout  : wiki
 title   : n개의 제비뽑기에 n번 도전했을 때 당첨되지 않을 확률
 summary : 1/e
 date    : 2017-12-03 09:44:20 +0900
-updated : 2023-04-12 21:38:26 +0900
+updated : 2023-04-12 21:38:52 +0900
 tag     : math 확률
 resource: 69/CB4350-F109-4785-BEB4-9708B024FA00
 toc     : true
@@ -134,7 +134,7 @@ $$
 
 ## 함께 읽기
 
-* [[/secretary-problem]]{비서 문제}
+* [[/secretary-problem]]
 
 [n_1]: https://www.wolframalpha.com/input/?i=n%3D1%3B+%28%28n-1%29%2Fn%29%5En
 [n_2]: https://www.wolframalpha.com/input/?i=n%3D2%3B+%28%28n-1%29%2Fn%29%5En
