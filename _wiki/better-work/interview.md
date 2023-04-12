@@ -3,12 +3,12 @@ layout  : wiki
 title   : 면접관으로서 읽어볼만한 것들
 summary : 성공적인 면접의 90%는 준비
 date    : 2021-01-11 23:40:29 +0900
-updated : 2021-01-11 23:57:46 +0900
+updated : 2023-04-12 21:15:23 +0900
 tag     : 
 resource: E3/44CEA5-C9D1-432C-AC30-95932DFECE97
 toc     : true
 public  : true
-parent  : [[better-work]]
+parent  : [[/better-work]]
 latex   : false
 ---
 * TOC
