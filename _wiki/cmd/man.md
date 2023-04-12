@@ -42,7 +42,7 @@ man 1 sed
 
 각 설명서는 섹션이 나뉘어 있다. `sed` 설명서를 보면 최상단에 `SED(1)`이라고 되어 있는데 이는 1번 섹션 설명서를 의미한다.
 
-![]( ./man-sed.jpg )
+![]( /resource/3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA/man-sed.jpg )
 
 ```sh
  # 1 섹션의 printf 설명서를 본다
@@ -53,7 +53,7 @@ man 1 printf
 
 1번 섹션이 기본값이므로 `man printf`와 같이 입력하면 사용자 명령의 `printf` 설명서를 보게 된다.
 
-![]( ./printf-1.jpg )
+![]( /resource/3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA/printf-1.jpg )
 
 그러나 C 언어의 `printf` 설명을 보고 싶다면 3번 섹션을 지정해서 조회해야 한다.
 
@@ -62,7 +62,7 @@ man 1 printf
 man 3 printf
 ```
 
-![]( ./printf-3.jpg )
+![]( /resource/3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA/printf-3.jpg )
 
 ### 검색
 
@@ -75,7 +75,7 @@ man -k perl-compatible
 
 `-` 왼쪽이 설명서 이름과 섹션, `-` 오른쪽이 검색된 라인이다.
 
-![]( ./find-apropos.jpg )
+![]( /resource/3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA/find-apropos.jpg )
 
 모든 설명서를 대상으로 검색하고 싶다면 `-K` 옵션을 쓴다.
 
@@ -86,7 +86,7 @@ man -K string
 
 이 명령은 매우 느리며, 다음과 같이 검색 결과에 대해 `[ynq]`를 물어본다.
 
-![]( ./find-all.jpg )
+![]( /resource/3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA/find-all.jpg )
 
 - `y`: 문서 열기
 - `n`: 다음 문서
