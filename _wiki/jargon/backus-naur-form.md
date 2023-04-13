@@ -3,7 +3,7 @@ layout  : wiki
 title   : 배커스-나우르 표기법 (Backus-Naur form)
 summary : 
 date    : 2021-09-23 13:55:43 +0900
-updated : 2023-04-13 21:59:52 +0900
+updated : 2023-04-13 22:00:23 +0900
 tag     : 
 resource: 8B/8C9CB0-84EB-46CD-9952-02B9F919B7C8
 toc     : true
@@ -19,7 +19,7 @@ latex   : true
 ## Backus-Naur Form
 
 > 배커스-나우르 표기법(BNF)은 인도 산스크리트 철학자 파니니(Pāṇini, 기원전 5세기)의 작업에서 뿌리를 찾아볼 수 있다.
-BNF라는 이름은 포트란을 만든 미국 컴퓨터과학자인 존 배커스(John Backus, 1924~2007)와 덴마크 컴퓨터과학자 페테르 나우르(Peter Naur, 1928~2016)의 이름에서 비롯됐다.
+BNF라는 이름은 포트란을 만든 미국 컴퓨터과학자인 [[/people/john-w-backus]]{존 배커스(John Backus, 1924~2007)}와 덴마크 컴퓨터과학자 페테르 나우르(Peter Naur, 1928~2016)의 이름에서 비롯됐다.
 BNF는 언어를 정의하는 형식적인 방법이다. 여기서 BNF를 자세히 다루지는 않는다.
 하지만 여러 문서(예: 인터넷 프로토콜을 정의하는 RFC(request for comments)) 등에서 BNF가 쓰이기 때문에 여러분은 BNF에 익숙해져야만 한다.
 다음은 부동소수점 수를 정의하는 BNF다.
