@@ -115,7 +115,7 @@ IntelliJ, Eclipse 같은 IDE 에서 말하는 "탭"을 Vim 식으로 말하자�
 
 터미널 Vim에서도 마우스로 윈도우 사이즈를 조절하는 것이 가능하다.
 
-![]( ./vim-mouse-window-resize.gif )
+![]( /resource/00/0D174B-6016-4374-BC83-EC17CE44CEE2/vim-mouse-window-resize.gif )
 
 가로 경계를 움직이는 건 꽤 쉬운데, 세로 경계는 꽤 얇으므로 처음엔 찾기 어려울 수 있다.
 
@@ -131,14 +131,14 @@ IntelliJ, Eclipse 같은 IDE 에서 말하는 "탭"을 Vim 식으로 말하자�
 
 나는 다음과 같이 설정해 쓰고 있다.
 
-![vim-choosewin을 사용하는 모습]( ./choosewin.jpeg )
+![vim-choosewin을 사용하는 모습]( /resource/00/0D174B-6016-4374-BC83-EC17CE44CEE2/choosewin.jpeg )
 
 
 ### easymotion 사용
 
 easymotion은 window 점프용은 아니지만 overwin을 사용하면 훌륭한 window 점프 도구가 된다.
 
-![easymotion overwin을 사용한 모습]( ./easymotion-overwin.jpg )
+![easymotion overwin을 사용한 모습]( /resource/00/0D174B-6016-4374-BC83-EC17CE44CEE2/easymotion-overwin.jpg )
 
 빨간색 힌트 알파벳을 입력하면 해당 라인으로 커서를 보내준다.
 
