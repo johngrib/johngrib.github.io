@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-12 21:54:53 +0900
+updated : 2023-04-13 21:44:47 +0900
 regenerate: true
 ---
 * TOC
@@ -165,7 +165,6 @@ regenerate: true
 * [[/primitive-roots]]
 * [[/relations]]
 * [[/rule-of-succession]]
-* [[/secretary-problem]]
 * [[/sigma-notation]]
 
 ## [[/book]]
@@ -246,6 +245,7 @@ regenerate: true
 * [[/problem/is-number-string]]
 * [[/problem/miss-all-prizes-probability]]
 * [[/problem/roman-number]]
+* [[/problem/secretary]]
 * [[/problem/two-eggs-100-floor]]
 
 ## [[/programming]]

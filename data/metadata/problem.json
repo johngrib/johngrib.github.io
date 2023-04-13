@@ -11,6 +11,7 @@
   "problem/is-number-string",
   "problem/miss-all-prizes-probability",
   "problem/roman-number",
+  "problem/secretary",
   "problem/two-eggs-100-floor"
  ]
 }

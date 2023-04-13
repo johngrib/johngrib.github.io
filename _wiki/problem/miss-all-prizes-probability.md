@@ -134,7 +134,7 @@ $$
 
 ## 함께 읽기
 
-* [[/secretary-problem]]
+* [[/problem/secretary]]
 
 [n_1]: https://www.wolframalpha.com/input/?i=n%3D1%3B+%28%28n-1%29%2Fn%29%5En
 [n_2]: https://www.wolframalpha.com/input/?i=n%3D2%3B+%28%28n-1%29%2Fn%29%5En

@@ -55,7 +55,7 @@ Computer science is no more about computers than astronomy is about telescopes.
 
 ## 함께 읽기
 
-* [[secretary-problem]]
+* [[/problem/secretary]]
 * [[Bayes-theorem]]
 
 
