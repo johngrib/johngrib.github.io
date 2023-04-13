@@ -3,7 +3,7 @@ layout  : wiki
 title   : 배커스-나우르 표기법 (Backus-Naur form)
 summary : 
 date    : 2021-09-23 13:55:43 +0900
-updated : 2023-04-13 22:01:18 +0900
+updated : 2023-04-13 22:15:59 +0900
 tag     : 
 resource: 8B/8C9CB0-84EB-46CD-9952-02B9F919B7C8
 toc     : true
@@ -69,6 +69,36 @@ BNF는 언어를 정의하는 형식적인 방법이다. 여기서 BNF를 자세
 <number>      ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" |
                   "8" | "9"
 ```
+
+### 사례: 미국 우편주소
+
+다음은 해커 영어사전에 수록된 미국 우편주소의 BNF이다.[^hacker-dict-132]
+
+```bnf
+<postal-address> ::= <name-part><street-address> <zip-part>
+
+<personal-part> ::= <name> | <initial> "."
+
+<name-part> ::= <personal-part><last-name>[<jr-part>] <EOL>
+              | <personal-part><name-part>
+
+<street-address> ::= [<apt>]<house-num><street-name> <EOL>
+
+<zip-part> ::= <town-name> "." <state-code><ZIP-code> <EOL>
+```
+
+- `<postal-address> ::= <name-part><street-address> <zip-part>`
+    - 우편주소(postal-address)는 이름 부분(name-part)과 거리 주소(street-address) 그리고 우편번호(zip-part)로 구성된다.
+- `<personal-part> ::= <name> | <initial> "."`
+    - 개인 부분(personal-part)은 이름(name) 또는 이름의 이니셜과 점(.)으로 구성된다.
+- `<name-part> ::= <personal-part><last-name>[<jr-part>] <EOL>`
+    - 이름 부분(name-part)은 위에서 정의한 개인 부분(personal-part)과 성(last-name)으로 구성된다. 선택적으로 `Jr.` `Sr.` 같은 접미사(jr-part)가 올 수 있다.
+    - 또는 이름 부분(name-part)은 개인 부분(personal-part)과 이름 부분(name-part)으로 구성된다.
+- `<street-address> ::= [<apt>]<house-num><street-name> <EOL>`
+    - 거리 주소(street-address)는 선택적으로 아파트 번호(apt)가 올 수 있고, 건물 번호(house-num)와 거리 이름(street-name)으로 구성된다.
+- `<zip-part> ::= <town-name> "." <state-code><ZIP-code> <EOL>`
+    - 우편번호(zip-part)는 도시 이름(town-name)과 점(.), 주 코드(state-code) 그리고 우편번호(ZIP-code)로 구성된다.
+
 
 ## Extended Backus-Naur Form
 
@@ -339,6 +369,7 @@ template name이 우선 이용된 경우 템플릿 인자로 대체되는 템플
 - GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
 - 프로그래밍의 이해 / Alexander Stepanov, Paul McJones 지음 / 신용태 옮김 / PEARSON / 1쇄 발행 2012년 12월 26일 / 원서 : Elements of Programming
 - 한 권으로 읽는 컴퓨터 구조와 프로그래밍 / 조너선 스타인하트 저/오현석 역 / 책만 / 2021년 04월 08일 초판 1쇄 / 원서 : The Secret Life of Programs: Understand Computers -- Craft Better Code
+- 해커 영어사전 제3판 / ERIC S.RAYMOND 편 / 기전연구사 / 1998년 12월 25일 제1판 제1발행 / 원제: The New Hacker's Dictionary
 
 ## 주석
 
@@ -352,4 +383,4 @@ template name이 우선 이용된 경우 템플릿 인자로 대체되는 템플
 [^out-of-print-2018]: 알라딘 인터넷 서점에 의하면 [2018년 10월 22일에 절판이 확인되었다]( https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=22416971 ).
 [^alex-239-compound]: 번역서에서는 "혼합"이라 번역되어 있었으나, "compound"로 옮겼다.
 [^alex-intro]: 프로그래밍의 이해. 서문. xii쪽.
-
+[^hacker-dict-132]: 해커 영어사전. 132쪽.
