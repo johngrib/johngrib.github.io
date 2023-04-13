@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim window
 summary : 
 date    : 2022-06-19 09:59:02 +0900
-updated : 2022-06-19 13:52:15 +0900
+updated : 2023-04-13 21:35:52 +0900
 tag     : vim
 resource: 00/0D174B-6016-4374-BC83-EC17CE44CEE2
 toc     : true
@@ -119,6 +119,19 @@ IntelliJ, Eclipse 같은 IDE 에서 말하는 "탭"을 Vim 식으로 말하자�
 
 가로 경계를 움직이는 건 꽤 쉬운데, 세로 경계는 꽤 얇으므로 처음엔 찾기 어려울 수 있다.
 
+### simeji/winresizer
+
+[simeji/winresizer](https://github.com/simeji/winresizer ) 플러그인은 사이즈 조절 모드를 제공한다.
+
+내 경우에는 다음과 같이 `F4`를 윈도우 사이즈 조절 모드 변환 키로 사용하고 있다.
+
+```viml
+let g:winresizer_start_key = '<f4>'
+let g:winresizer_gui_start_key = '<f4>'
+```
+
+`F4`를 누른 다음, `h` `j` `k` `l`을 눌러서 윈도우 사이즈를 조절할 수 있다.
+
 ## 윈도우 점프
 
 ### 기본
@@ -145,4 +158,5 @@ easymotion은 window 점프용은 아니지만 overwin을 사용하면 훌륭한
 ```viml
 nmap <c-s><c-s> <Plug>(easymotion-overwin-line)
 ```
+
 
