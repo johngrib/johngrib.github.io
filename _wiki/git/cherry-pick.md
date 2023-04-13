@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : git cherry-pick
-summary : 
+summary : Apply the changes introduced by some existing commits
 date    : 2022-04-05 23:44:19 +0900
-updated : 2023-04-13 21:39:08 +0900
+updated : 2023-04-13 21:40:07 +0900
 tag     : git
 resource: E3/A42C58-8477-4141-ABFB-53FB131AF829
 toc     : true
