@@ -3,12 +3,12 @@ layout  : wiki
 title   : 배커스-나우르 표기법 (Backus-Naur form)
 summary : 
 date    : 2021-09-23 13:55:43 +0900
-updated : 2023-01-30 23:19:32 +0900
+updated : 2023-04-13 21:54:38 +0900
 tag     : 
 resource: 8B/8C9CB0-84EB-46CD-9952-02B9F919B7C8
 toc     : true
 public  : true
-parent  : [[root-index]]
+parent  : [[/jargon]]
 latex   : true
 ---
 * TOC
@@ -352,3 +352,4 @@ template name이 우선 이용된 경우 템플릿 인자로 대체되는 템플
 [^out-of-print-2018]: 알라딘 인터넷 서점에 의하면 [2018년 10월 22일에 절판이 확인되었다]( https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=22416971 ).
 [^alex-239-compound]: 번역서에서는 "혼합"이라 번역되어 있었으나, "compound"로 옮겼다.
 [^alex-intro]: 프로그래밍의 이해. 서문. xii쪽.
+

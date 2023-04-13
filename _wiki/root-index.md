@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-13 21:44:47 +0900
+updated : 2023-04-13 21:55:30 +0900
 regenerate: true
 ---
 * TOC
@@ -437,6 +437,7 @@ regenerate: true
 * [[/jargon/20-percent-project]]
 * [[/jargon/airplane-rule]]
 * [[/jargon/another-level-of-indirection]]
+* [[/jargon/backus-naur-form]]
 * [[/jargon/biondi-s-law]]
 * [[/jargon/bootstrapping]]
 * [[/jargon/boy-scout-rule]]
@@ -454,9 +455,9 @@ regenerate: true
 * [[/jargon/no-problem-syndrome]]
 * [[/jargon/postel-s-law]]
 * [[/jargon/solid]]
+* [[/jargon/telescope-rule]]
 * [[/jargon/two-pizza-team]]
 * [[/jargon/zero-overhead-principle]]
-* [[/jargon/telescope-rule]]
 
 * [[/amdahl-s-law]]
 * [[/CAP-theorem]]
@@ -943,7 +944,6 @@ regenerate: true
 
 * [[/Byzantine-failure]]
 * [[/abbr]]
-* [[/backus-naur-form]]
 * [[/bell-labs]]
 * [[/big-numbers]]
 * [[/coding-font]]

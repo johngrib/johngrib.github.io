@@ -100,7 +100,7 @@ Fortran은 IBM에서 존 배커스<sub>John Backus</sub>가 이끈 팀이 처음
 <mark>그들이 개발 또는 발견한 것은 어휘 분석, 구문 분석, 최적화 같은 컴파일러의 기본 구성요소들이었다.</mark>
 오늘날까지도 수치 계산 최적화 분야는 Fortran이 선도하고 있다.
 또한 문법 명세를 위한 표기법도 하나 만들어졌다(초기 Fortran 이후에).
-바로 [[/backus-naur-form]]{배커스-나우어 형식(Backus-Naut Form, BNF)}이다.
+바로 [[/jargon/backus-naur-form]]{배커스-나우어 형식(Backus-Naut Form, BNF)}이다.
 이것은 Algol60($22.2.3.1)에 처음 쓰였으며, 이제는 대부분의 현대적 언어들에 쓰인다.
 제6장과 제7장의 계산기 예제 들에 쓰인 수식 문법도 일종의 BNF이다.
 >
@@ -114,7 +114,7 @@ Fortran은 IBM에서 존 배커스<sub>John Backus</sub>가 이끈 팀이 처음
 
 ## 함께 읽기
 
-- [[/backus-naur-form]]
+- [[/jargon/backus-naur-form]]
 
 ## 참고문헌
 
