@@ -3,7 +3,7 @@ layout  : wiki
 title   : 배커스-나우르 표기법 (Backus-Naur form)
 summary : 
 date    : 2021-09-23 13:55:43 +0900
-updated : 2023-04-13 22:15:59 +0900
+updated : 2023-04-13 22:21:09 +0900
 tag     : 
 resource: 8B/8C9CB0-84EB-46CD-9952-02B9F919B7C8
 toc     : true
@@ -383,4 +383,4 @@ template name이 우선 이용된 경우 템플릿 인자로 대체되는 템플
 [^out-of-print-2018]: 알라딘 인터넷 서점에 의하면 [2018년 10월 22일에 절판이 확인되었다]( https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=22416971 ).
 [^alex-239-compound]: 번역서에서는 "혼합"이라 번역되어 있었으나, "compound"로 옮겼다.
 [^alex-intro]: 프로그래밍의 이해. 서문. xii쪽.
-[^hacker-dict-132]: 해커 영어사전. 132쪽.
+[^hacker-dict-132]: 해커 영어사전. 132쪽. 인터넷 문서로는 [catb.org의 BNF 항목]( http://catb.org/jargon/html/B/BNF.html ) 참고.
