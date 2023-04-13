@@ -3,12 +3,12 @@ layout  : wiki
 title   : 비서 문제(Secretary problem)
 summary : 37% 법칙
 date    : 2018-03-31 18:03:21 +0900
-updated : 2020-03-08 18:42:04 +0900
+updated : 2023-04-13 21:44:04 +0900
 tag     : math
 resource: 47/A89431-8C3E-4503-AE2E-54CA29A383EF
 toc     : true
 public  : true
-parent  : [[math]]
+parent  : [[/math]]
 latex   : true
 ---
 * TOC
@@ -379,5 +379,5 @@ $$ \frac{1}{e} = 0.3678794411714...$$
 * [Strategic dating: The 37% rule(plus.math.org)](https://plus.maths.org/content/mathematical-dating )
 * [비서문제 최고의 배우자 찾기 - 이승훈, 유원대학교 교양융합학부 교수](https://horizon.kias.re.kr/archives/allarticles/mathematics/%EC%B5%9C%EA%B3%A0%EC%9D%98-%EB%B0%B0%EC%9A%B0%EC%9E%90-%EC%B0%BE%EA%B8%B0/ )
 
-* [[Algorithms-to-Live-By]]
+* [[/Algorithms-to-Live-By]]
 
