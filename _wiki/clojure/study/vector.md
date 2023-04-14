@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : Clojure Vector의 내부 구조를 알아보고 Java의 ArrayList와 비교한다
 date    : 2022-01-22 16:30:48 +0900
-updated : 2023-03-28 22:37:51 +0900
+updated : 2023-04-14 20:06:09 +0900
 tag     : clojure java
 resource: 9D/B58B14-9880-4A8D-BA6E-450E6FE88394
 toc     : true
@@ -520,7 +520,7 @@ private static Node doAssoc(int level, Node node, int i, Object val){
 `PersistentVector`는 불변성을 토대로 하고 있기 때문에 이렇게 내부 구조를 이루고 있는 노드들을 다른 자료구조와 부담없이 공유할 수 있다.
 한편 불변성을 토대로 삼는 트리 구조라는 특성 때문에 가능한 자연스러운 노드 공유는 git의 핵심 기법이기도 하다.
 
-![git의 데이터 모델]( git-data-model-3.png )[^pro-git-10-2]
+![git의 데이터 모델]( /resource/9D/B58B14-9880-4A8D-BA6E-450E6FE88394/git-data-model-3.png )[^pro-git-10-2]
 {:style="max-width:600px"}
 
 위의 그림은 git 데이터 모델의 예제로, `version 2`와 `new file`이라는 blob을 `3c4e9c`와 `0155eb`라는 두 트리가 참조하고 있는 상황을 보여준다.
