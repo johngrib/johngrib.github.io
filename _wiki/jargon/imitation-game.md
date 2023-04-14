@@ -3,12 +3,12 @@ layout  : wiki
 title   : 이미테이션 게임 (The Imitation Game)
 summary : 튜링 테스트
 date    : 2020-06-23 23:15:28 +0900
-updated : 2022-11-03 13:05:41 +0900
+updated : 2023-04-14 20:00:16 +0900
 tag     : turing
 resource: 0D/23F21E-A4FA-4D14-BE92-7826ADE7DF97
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
