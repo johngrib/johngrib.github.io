@@ -129,7 +129,7 @@ RDB는 예제를 만들기엔 좀 골치아프니 다음과 같이 json 형태�
 
 나는 과거에 레거시 쿠폰 서비스를 리팩토링하다가 다음과 같이 [[/pattern/pipeline]] 패턴과 로직을 DB에 저장하는 기법을 조합해 응용하는 방법을 떠올린 적이 있다.
 
-![]( ./pipeline-coupon.svg )
+![]( /resource/F2/45AF92-13C1-471B-A0EC-217AABB70332/pipeline-coupon.svg )
 
 녹색 네모칸, 즉 체커와 할인 적용기를 컴포넌트라 부르도록 하자.
 각 컴포넌트는 다음과 같은 간단한 인터페이스의 구현체로 만든다.
@@ -212,7 +212,7 @@ class DiscountFixed implements CouponComponent {
 
 쿠폰을 만드는 관리자는 미리 만들어진 여러 컴포넌트들 중에서 적절한 것을 선택해 드래그해서 순서대로 배치한 다음, 옮겨놓은 각 컴포넌트들에 참고값을 입력하면 된다.
 
-![]( ./sample-pipeline1.svg )
+![]( /resource/F2/45AF92-13C1-471B-A0EC-217AABB70332/sample-pipeline1.svg )
 
 이 쿠폰은 DB에 이렇게 저장하면 된다.
 
@@ -259,7 +259,7 @@ for (CouponComponent component : components) {
 
 그래서 그는 다음과 같이 '회원등급' 컴포넌트를 드래그해서 쿠폰을 만들기 시작한다.
 
-![]( ./make-coupon-1.svg )
+![]( /resource/F2/45AF92-13C1-471B-A0EC-217AABB70332/make-coupon-1.svg )
 
 홍길동 대리가 생성하고자 하는 쿠폰은 가전제품에 적용할 수 있는 쿠폰이다. 그런데 냉장고는 최근 회사가 적자를 보며 팔고 있으므로, 냉장고에 대해서는 쿠폰을 적용하지 않기로 했다.
 
@@ -267,19 +267,19 @@ for (CouponComponent component : components) {
 
 이제 실버 회원 등급이어야 쓸 수 있는, 냉장고 아닌 가전제품을 구매할 때만 사용 가능한 쿠폰이 되었다.
 
-![]( ./make-coupon-2.svg )
+![]( /resource/F2/45AF92-13C1-471B-A0EC-217AABB70332/make-coupon-2.svg )
 
 이번에는 '결제방법' 컴포넌트를 갖다놓고 Visa 카드를 사용하는 조건을 추가한다. 쿠폰 사용 조건이 점점 까다로워지고 있다. 실버 회원이면서 Visa 카드도 갖고 있어야만 이 쿠폰을 쓸 수 있다.
 
-![]( ./make-coupon-3.svg )
+![]( /resource/F2/45AF92-13C1-471B-A0EC-217AABB70332/make-coupon-3.svg )
 
 이제 '주문서 최소 금액' 컴포넌트를 써서 10만원 미만 구매하는 경우의 쿠폰 사용을 금지한다.
 
-![]( ./make-coupon-4.svg )
+![]( /resource/F2/45AF92-13C1-471B-A0EC-217AABB70332/make-coupon-4.svg )
 
 마지막으로 '할인 적용' 컴포넌트를 드래그해서 할인 금액 5000을 설정한다.
 
-![]( ./make-coupon-5.svg )
+![]( /resource/F2/45AF92-13C1-471B-A0EC-217AABB70332/make-coupon-5.svg )
 
 홍길동 대리는 이렇게 만든 쿠폰 파이프라인을 위에서 아래로 읽으며 자신이 의도한대로 작동하는 쿠폰인지를 검토한다. 의도대로 만들었다는 것을 확인하고 나서는 쿠폰을 저장한다. 이 쿠폰은 머지 않아 실버 회원들에게 제공될 것이다.
 
