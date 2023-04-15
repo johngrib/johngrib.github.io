@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-15 23:53:02 +0900
+updated : 2023-04-16 00:05:19 +0900
 regenerate: true
 ---
 * TOC
@@ -452,6 +452,7 @@ regenerate: true
 * [[/jargon/kerckhoffs-principle]]
 * [[/jargon/kiss-principle]]
 * [[/jargon/kluge]]
+* [[/jargon/lampson-s-law]]
 * [[/jargon/law-of-demeter]]
 * [[/jargon/metcalfe-s-law]]
 * [[/jargon/moore-s-law]]
