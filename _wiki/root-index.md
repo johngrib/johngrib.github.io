@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-14 20:00:11 +0900
+updated : 2023-04-15 22:56:11 +0900
 regenerate: true
 ---
 * TOC
@@ -92,6 +92,7 @@ regenerate: true
 ## [[/clipping]]
 
 * [[/clipping/bill-gates/letter-to-hobbyists]]
+* [[/clipping/butler-w-lampson/hints-for-computer-system-design]]
 * [[/clipping/donn-seely/how-not-to-write-fortran-in-any-language]]
 * [[/clipping/ewd/32]]
 * [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]
