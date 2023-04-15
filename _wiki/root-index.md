@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-15 22:56:11 +0900
+updated : 2023-04-15 23:53:02 +0900
 regenerate: true
 ---
 * TOC
@@ -127,6 +127,7 @@ regenerate: true
 * [[/people/bill-atkinson]]
 * [[/people/bill-joy]]
 * [[/people/brian-w-kernighan]]
+* [[/people/butler-w-lampson]]
 * [[/people/fred-brooks]]
 * [[/people/gerald-weinberg]]
 * [[/people/grady-booch]]
