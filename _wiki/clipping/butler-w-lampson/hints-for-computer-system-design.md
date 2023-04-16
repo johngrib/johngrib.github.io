@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 16:51:30 +0900
+updated : 2023-04-16 17:38:46 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -431,8 +431,71 @@ But the performance is nearly as good as the special-purpose character-to-raster
 이 인터페이스의 구현에는 Alto의 표준 명령어 집합 전체 에뮬레이터만큼의 많은 마이크로 코드가 필요하며, 구축하는 데 상당한 기술과 경험이 필요했습니다.
 그러나 그 성능은 그것에 앞서 이루어진 특수 목적의 character-to-raster 연산에 준할 만큼 우수하며, 그 단순함과 범용성 덕분에 디스플레이 응용 프로그램을 훨씬 쉽게 구축할 수 있게 되었습니다.
 
-작업중...
+>
+The Dorado memory system [8] contains a cache and a separate high-bandwidth path for fast input/output.
+It provides a cache read or write in every 64 ns cycle, together with 500 MBits/second of I/O bandwidth, virtual addressing from both cache and I/O, and no special cases for the microprogrammer to worry about.
+However, the implementation takes 850 msi chips and consumed several man-years of design time.
+This could only be justified by extensive prior experience (30 years!) with this interface, and the knowledge that memory access is usually the limiting factor in performance.
+Even so, it seems in retrospect that the high I/O bandwidth is not worth the cost; it is used mainly for displays, and a dual-ported frame buffer would almost certainly be better.
 
+Dorado 메모리 시스템은 캐시와 빠른 input/output을 위한 별도의 고대역폭 경로를 포함하고 있습니다.
+이 시스템은 64ns 사이클마다 캐시 읽기와 쓰기를 제공하며, 500MBits/sec의 I/O 대역폭과 캐시와 I/O 에서의 가상 주소 지정 기능을 갖고 있습니다.
+또한 마이크로프로그래머가 걱정할만한 특수한 케이스가 없습니다.
+그러나 이 시스템을 구현하려면 850개의 msi 칩이 필요했고, 몇 년이나 되는 설계 시간이 필요했습니다.
+이러한 구현이 타당할 수 있었던 것은 이 인터페이스에 대한 경험과(30년!), 메모리 접근이 성능에서 일반적으로 제한 요인이라는 지식 덕분이었습니다.
+그럼에도 불구하고 돌이켜 생각해 보면, 높은 I/O 대역폭은 비용 대비 가치가 없어 보입니다.
+주로 디스플레이에 사용되지만, dual-port 프레임 버퍼가 거의 확실히 더 나은 선택이었을 것입니다.
+
+##### * Get it right
+
+>
+Finally, lest this advice seem too easy to take,
+
+마지막으로 이 조언을 너무 쉽게 받아들이지 않도록,
+
+>
+· Get it right.
+Neither abstraction nor simplicity is a substitute for getting it right.
+In fact, abstraction can be a source of severe difficulties, as this cautionary tale shows.
+Word processing and office information systems usually have provision for embedding named fields in the documents they handle.
+For example, a form letter might have ‘address’ and ‘salutation’ fields.
+Usually a document is represented as a sequence of characters, and a field is encoded by something like {name: contents}.
+Among other operations, there is a procedure FindNamedField that finds the field with a given name.
+One major commercial system for some time used a FindNamedField procedure that ran in time O(n^2), where n is the length of the document.
+This remarkable result was achieved by first writing a procedure FindIthField to find the ith field (which must take time O(n) if there is no auxiliary data structure), and then implementing FindNamedField(name) with the very natural program
+>
+> ```
+> for i := 0 to numberofFields do
+> FindIthField; if its name is name then exit
+> end loop
+> ```
+>
+Once the (unwisely chosen) abstraction FindIthField is available, only a lively awareness of its cost will avoid this disaster.
+Of course, this is not an argument against abstraction, but it is well to be aware of its dangers.
+
+올바르게 선택해야 합니다.
+추상화도 단순함도 올바른 선택을 대신하지 못합니다.
+사실 몇 가지 사례에서 알 수 있듯이, 추상화는 심각한 어려움의 원인이 될 수 있습니다.
+
+일반적으로 워드 프로세싱 및 사무용 정보 시스템에는 명명된 필드를 문서에 삽입하는 기능을 제공합니다.
+예를 들어, 양식 편지에는 '주소'와 '인사말' 같은 필드가 있을 수 있습니다.
+대개 문서는 문자들의 시퀀스로 표현되며, 필드는 `{name: contents}`와 같은 형태로 인코딩됩니다.
+다른 작업 중 하나로 주어진 이름의 필드를 찾는 `FindNamedField` 프로시저도 있습니다.
+어떤 상용 시스템에서는 길이가 n인 문서에 대해 O(n^2) 시간이 걸리는 `FindNamedField` 프로시저를 사용하기도 했습니다.
+이 기가막힌 프로시저는 먼저 i번째 필드를 찾는 `FindIthField` 프로시저를 작성하고(보조적인 데이터 구조가 없다면 O(n) 시간이 소요됨), 매우 당연하다는 듯이 `FindNamedField(name)` 을 구현해 달성하게 됐습니다.
+
+```
+for i := 0 to numberofFields do
+    FindIthField; if its name is name then exit
+end loop
+```
+
+(지혜롭지 못한 선택으로) 추상화된 `FindIthField`를 사용할 수 있게 되면, 그 비용에 대한 높은 인식만이 이러한 재앙을 피할 수 있게 해줍니다.
+물론 이것은 추상화를 반대하는 주장은 아닙니다. 그러나 그 위험성을 인식하고 대비하는 것이 바람직합니다.
+
+#### 2.2 Corollaries
+
+**부속 정리**
 
 ## Links
 
