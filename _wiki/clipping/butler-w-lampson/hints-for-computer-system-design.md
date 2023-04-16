@@ -3,13 +3,13 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 11:28:43 +0900
+updated : 2023-04-16 13:01:49 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
 public  : true
 parent  : [[/clipping]]
-latex   : false
+latex   : true
 ---
 * TOC
 {:toc}
@@ -220,6 +220,137 @@ Hoare’s hints on language design [19] can thus be read as a supplement to this
 
 #### 2.1 Keep it simple
 
+> > Perfection is reached not when there is no longer anything to add,
+> > but when there is no longer anything to take away. (A. Saint-Exupery)
+>
+> > Those friends thou hast, and their adoption tried,
+> > Grapple them unto thy soul with hoops of steel;
+> > But do not dull thy palm with entertainment
+> > Of each new-hatch’d unfledg’d comrade.
+
+완벽함은 더 이상 더할 것이 없을 때가 아니라, 더 이상 뺄 것이 없을 때 이루어집니다. (A. 생텍쥐페리)
+
+네가 갖고 있는 친구들, 그들의 성향을 시험해 본 후, 강철의 고리로 너의 영혼에 꽉 붙잡거라; 하지만 새로 사귄 미숙한 친구들과의 교제로 손을 무디게 하지는 말거라.
+
+##### * Do one thing well
+
+>
+_· Do one thing at a time, and do it well_.
+An interface should capture the _minimum_ essentials of an abstraction.
+_Don’t generalize_; generalizations are generally wrong.
+
+<mark>한 번에 한 가지만 잘 할 것.</mark>
+인터페이스는 추상화에 있어 _최소한의_ 필수 요소만 포착해야 합니다.
+_일반화하지 마세요._ 일반화는 일반적으로 잘못된 선택입니다.
+
+> > _We are faced with an insurmountable opportunity. (W. Kelley)_
+
+우리는 극복할 수 없는 기회를 마주하고 있습니다. (W. Kelley)
+
+>
+When an interface undertakes to do too much its implementation will probably be large, slow and complicated.
+An interface is a contract to deliver a certain amount of service; clients of the interface depend on the contract, which is usually documented in the interface specification.
+They also depend on incurring a reasonable cost (in time or other scarce resources) for using the interface; the definition of ‘reasonable’ is usually not documented anywhere.
+If there are six levels of abstraction, and each costs 50% more than is ‘reasonable’, the service delivered at the top will miss by more than a factor of 10.
+
+인터페이스가 너무 많은 작업을 커버하게 하려고 하면, 구현이 크고 느리고 복잡해지게 됩니다.
+인터페이스는 일정량의 서비스를 제공하기 위한 계약입니다.
+일반적으로 인터페이스의 클라이언트는 인터페이스 스펙에 문서화되어 있는 계약에 의존하며,
+인터페이스를 사용하기 위한 합리적인 비용(시간이나 다른 종류의 자원)을 지불하는 것에도 의존하고 있습니다. 물론 '합리적인'의 수준에 대해서는 어디에도 문서화되어 있지 않습니다.
+만약 추상화가 6 레벨로 나뉘는데 각각의 비용이 '합리적인' 선의 50% 이상으로 더 들어간다면, 최상위 레벨에서 제공하는 서비스의 비용은 10배 이상이 됩니다.[^six-level-50-cost]
+
+> > [[/jargon/kiss-principle]]{KISS: Keep It Simple, Stupid. (Anonymous)}
+>
+> > If in doubt, leave if out. (Anonymous)
+>
+> > Exterminate features. (C. Thacker)
+>
+On the other hand,
+>
+> > Everything should be made as simple as possible, but no simpler. (A. Einstein)
+
+- KISS: 바보야, 단순하게 해. (출처 모름)
+- 의심스럽다면, 그냥 빼라. (출처 모름)
+- 기능을 제거하라. (C. Thacker)
+
+그런 한편으로는,
+
+- 모든 것은 가능한 한 단순하게 만들어야 하지만, 그 선보다 더 단순하면 안됩니다. (A. Einstein)
+
+>
+Thus, service must have a fairly predictable cost, and the interface must not promise more than the implementer knows how to deliver.
+Especially, it should not promise features needed by only a few clients, unless the implementer knows how to provide them without penalizing others.
+A better implementer, or one who comes along ten years later when the problem is better understood, might be able to deliver, but unless the one you have can do so, it is wise to reduce your aspirations.
+
+그러므로 서비스는 상당히 예측 가능한 정도의 비용을 가져야 하며,
+인터페이스 구현자가 알고 있는 '전달 방법'보다 더 많은 것들을 약속해서는 안됩니다.
+특히 구현자가 '다른 클라이언트에게 불이익을 주지 않고 기능을 제공하는 방법'을 알지 못한다면, 소수의 클라이언트에게만 필요한 기능을 약속해서는 안됩니다.
+더 나은 구현자가 나타나거나, 10년 후에 문제가 더 잘 이해되었을 때 등장한 구현자가 그런 기능을 제공할 수 있을지도 모르겠지만, 당신이 그런 사람이 아니라면 그런 욕심이나 요구사항은 쳐내는 것이 현명합니다.
+
+>
+For example, pl/1 got into serious trouble by attempting to provide consistent meanings for a large number of generic operations across a wide variety of data types.
+Early implementations tended to handle all the cases inefficiently, but even with the optimizing compilers of 15 years later, it is hard for the programmer to tell what will be fast and what will be slow [31].
+A language like Pascal or C is much easier to use, because every construct has a roughly constant cost that is independent of context or arguments, and in fact most constructs have about the same cost.
+
+예를 들어, pl/1 은 다양한 데이터 유형에 걸쳐 많은 수의 일반 연산에 대해 일관된 의미를 제공하려 했기 때문에 심각한 문제에 빠지게 됐습니다.
+pl/1의 초기 구현은 모든 경우를 비효율적으로 처리하는 경향이 있었고, 심지어 15년 후에 나온 최적화 컴파일러를 사용해도 프로그래머가 어떤 것이 빠르고 어떤 것이 느린지 알기 어려운 상태입니다.
+
+Pascal이나 C와 같은 언어는 훨씬 사용하기 쉽습니다.
+왜냐하면 모든 구문이 컨텍스트나 인수와 무관하게 비용이 일정하며, 실제로 대부분의 구문이 거의 동일한 비용을 갖기 때문입니다.
+
+>
+Of course, these observations apply most strongly to interfaces that clients use heavily, such as virtual memory, files, display handling, or arithmetic.
+It is all right to sacrifice some performance for functionality in a seldom used interface such as password checking, interpreting user commands, or printing 72 point characters.
+(What this really means is that though the cost must still be predictable, it can be many times the minimum achievable cost.)
+And such cautious rules don’t apply to research whose object is learning how to make better implementations.
+But since research may well fail, others mustn’t depend on its success.
+
+물론 이런 특징은 가상 메모리, 파일, 디스플레이 처리, 산술 연산과 같이 클라이언트가 많이 사용하는 인터페이스에 가장 강력하게 적용됩니다.
+패스워드 체크, 사용자 명령 해석, 72 포인트 문자를 출력하기 같이 사용 빈도가 낮은 인터페이스에서는 성능을 희생해도 괜찮습니다.
+(희생이란 말은 비용이 여전히 예측 가능하긴 해야 하지만, 달성 가능한 최소 비용보다 여러 배가 될 수도 있다는 것을 의미합니다.)
+
+한편, 이런 종류의 규칙은 더 나은 구현 방법을 찾아내는 것이 목적인 연구에는 적용되지 않습니다.
+그리고 그런 연구도 실패할 수 있기 때문에 다른 사람들은 그런 연구의 성공에 의존해서는 안됩니다.
+
+> > Algol 60 was not only an improvement on its predecessors,
+> > but also on nearly all its successors. (C. Hoare)
+
+_Algol 60은 그 이전 언어들을 개선한 것뿐만 아니라, 이전 언어들의 거의 모든 후속 언어들보다도 더 좋다. (C. Hoare)_
+
+>
+Examples of offering too much are legion.
+The Alto operating system [29] has an ordinary read/write-n-bytes interface to files, and was extended for Interlisp-D [7] with an ordinary paging system that stores each virtual page on a dedicated disk page.
+Both have small implementations (about 900 lines of code for files, 500 for paging) and are fast (a page fault takes one disk access and has a constant computing cost that is a small fraction of the disk access time, and the client can fairly easily run the disk at full speed).
+The Pilot system [42] which succeeded the Alto OS follows Multics and several other systems in allowing virtual pages to be mapped to file pages, thus subsuming file input/output within the virtual memory system.
+The implementation is much larger (about 11,000 lines of code) and slower (it often incurs two disk accesses to handle a page fault and cannot run the disk at full speed).
+
+너무 많은 것을 제공한 사례는 많습니다.
+
+Alto OS는 파일에 대한 일반적인 read/write-n-byte 인터페이스를 제공하며,
+이는 각 가상 페이지를 전용 디스크 페이지에 저장하는 일반적인 페이징 시스템인 Interlisp-D 를 위해 확장되었습니다.
+둘 다 구현이 작고(파일에 대해 900줄, 페이징에 대해 500줄) 빠릅니다(페이지 폴트가 발생하면 디스크 엑세스가 한 번 발생. 그 컴퓨팅 비용은 상수이며, 디스크 엑세스 타임의 일부를 차지하고, 클라이언트는 디스크를 손쉽게 최고 속도로 실행할 수 있음).
+
+Alto OS를 계승한 Pilot 시스템은 Multics와 다른 시스템들을 따라서 가상 페이지를 파일 페이지에 매핑하여 가상 메모리 시스템 내에서 파일 input/output을 포함할 수 있도록 합니다.
+이 구현은 훨씬 더 크고(약 11,000 줄의 코드) 느립니다(페이지 폴트를 처리하기 위해 디스크 엑세스가 두 번 발생하고, 디스크를 최고 속도로 실행할 수 없는 경우가 많음).
+추가적인 기능을 높은 비용으로 탑재한 셈입니다.
+
+>
+This is not to say that a good implementation of this interface is impossible, merely that it is hard.
+This system was designed and coded by several highly competent and experienced people.
+Part of the problem is avoiding circularity: the file system would like to use the virtual memory, but virtual memory depends on files.
+Quite general ways are known to solve this problem [22], but they are tricky and easily lead to greater cost and complexity in the normal case.
+
+이것은 이 인터페이스를 잘 구현하는 것이 불가능하다는 말이 아닙니다. 그저 어렵다는 것입니다.
+이 시스템은 매우 유능하고 경험이 풍부한 사람들이 설계하고 코딩한 것입니다.
+
+이 문제의 측면 중 하나는 순환성을 피하는 것이라 할 수 있습니다.
+파일 시스템은 가상 메모리를 사용하고자 하지만, 가상 메모리는 파일에 의존하고 있습니다.
+이 문제의 해결책으로 널리 알려진 꽤 일반적인 방법이 있긴 하지만 몹시 까다롭고, 일반적인 경우 더 큰 비용과 더 큰 복잡성으로 쉽게 이어질 수 있습니다.
+
+> > And, in this upshot, purposes mistook
+> > Fall’n on th’ inventors’ heads. (V ii 387)
+
+작업중..
 
 ## Links
 
@@ -231,6 +362,7 @@ Hoare’s hints on language design [19] can thus be read as a supplement to this
 
 - 운영체제 아주 쉬운 세 가지 이야기 [제2판] / Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-dusseau 공저 / 원유집, 박민규, 이성진 공역 / 홍릉 / 제2판 발행: 2020년 09월 10일 / 원제: Operating Systems: Three Easy Pieces
 
+## 주석
 
 [^three-50]: 운영체제 아주 쉬운 세 가지 이야기. 5.7장. 50쪽.
-
+[^six-level-50-cost]: 1.5<sup>6</sup> = 11.390625
