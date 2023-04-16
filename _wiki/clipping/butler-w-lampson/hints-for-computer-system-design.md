@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 20:27:21 +0900
+updated : 2023-04-16 22:50:12 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -671,6 +671,77 @@ The _end-to-end_ slogan discussed in section 3 is another corollary of keeping i
 
 **2.3 연속성**
 
+>
+There is a constant tension between the desire to improve a design and the need for stability or continuity.
+
+'설계 개선에 대한 욕구'와 '안정성', '연속성의 필요' 사이에는 항상 긴장이 존재합니다.
+
+##### * Keep basic interfaces stable
+
+>
+· Keep basic interfaces stable.
+Since an interface embodies assumptions that are shared by more than one part of a system, and sometimes by a great many parts, it is very desirable not to change the interface.
+When the system is programmed in a language without type-checking, it is nearly out of the question to change any public interface because there is no way of tracking down its clients and checking for elementary incompatibilities, such as disagreements on the number of arguments or confusion between pointers and integers.
+With a language like Mesa [15] that has complete type-checking and language support for interfaces, it is much easier to change an interface without causing the system to collapse.
+But even if type-checking can usually detect that an assumption no longer holds, a programmer must still correct the assumption.
+When a system grows to more than 250K lines of code the amount of change becomes intolerable; even when there is no doubt about what has to be done, it takes too long to do it.
+There is no choice but to break the system into smaller pieces related only by interfaces that are stable for years.
+Traditionally only the interface defined by a programming language or operating system kernel is this stable.
+
+기본 인터페이스를 안정적으로 유지하라.
+인터페이스는 시스템의 여러 부분, 때로는 매우 많은 부분이 공유하는 가정을 전제로 구현합니다.
+때문에 인터페이스를 변경하지 않는 것이 매우 바람직합니다.
+타입 체크가 없는 언어로 프로그래밍된 시스템의 경우, 클라이언트를 추적하고 인자 개수의 불일치라던가 포인터와 정수 사이의 혼동 같은 기본적인 호환성 문제를 확인할 방법이 없기 때문에 공개된 인터페이스를 변경하는 것은 거의 불가능에 가깝습니다.
+Mesa와 같이 인터페이스에 대한 완벽한 타입 체크와 언어 차원의 지원이 있는 언어를 사용하면 시스템을 붕괴시키지 않고도 인터페이스를 변경하는 것이 훨씬 쉽습니다.
+그러나 일반적으로 타입 체크를 통해 이제 유효하지 않게 된 가정들을 찾아내는 것이 가능하다 하더라도, 프로그래머는 여전히 잘못된 가정을 교정하는 일을 해야 합니다.
+시스템이 25만 줄 이상의 코드로 커지면 변경량이 감당할 수 없을 정도로 많아져서, 무엇을 수정해야 하는지 의심의 여지가 없는 경우에도 수정하는 데 너무 오랜 시간이 걸리게 됩니다.
+결국 수 년이 지나도 안정적인 인터페이스로만 연결된 작은 부분들로 시스템을 분할하는 방법 밖에 없습니다.
+전통적으로 프로그래밍 언어나, 운영체제 커널에서 정의하는 인터페이스만이 이 정도로 안정적입니다.
+
+##### * Keep a place to stand
+
+>
+· Keep a place to stand if you do have to change interfaces.
+Here are two rather different examples to illustrate this idea.
+One is the compatibility package, which implements an old interface on top of a new system.
+This allows programs that depend on the old interface to continue working.
+Many new operating systems (including Tenex [2] and Cal [50]) have kept old software usable by simulating the supervisor calls of an old system (tops-10 and Scope, respectively).
+Usually these simulators need only a small amount of effort compared to the cost of reimplementing the old software, and it is not hard to get acceptable performance.
+At a different level, the ibm 360/370 systems provided emulation of the instruction sets of older machines like the 1401 and 7090.
+Taken a little further, this leads to virtual machines, which simulate (several copies of) a machine on the machine itself [9].
+
+인터페이스를 변경해야 한다면 서 있을 곳을 유지하라.
+이 아이디어를 설명하기 위해 두 가지 매우 다른 예를 들어보겠습니다.
+하나는 호환성 패키지로, 새 시스템 위에 이전 인터페이스를 구현하는 것입니다.
+이를 통해 이전 인터페이스에 의존하는 프로그램이 계속 작동할 수 있습니다.
+많은 새로운 운영체제들(Tenex와 Cal 같은)은 이전 시스템의 슈퍼바이저 호출을 시뮬레이션하여 이전 소프트웨어를 계속 사용할 수 있도록 했습니다(tops-10 과 Scope가 이에 해당합니다).
+일반적으로 이런 시뮬레이터들을 사용하면 이전 버전의 소프트웨어를 다시 구현하는 비용에 비해 상대적으로 적은 노력으로 만들 수 있으며, 만족할 만한 성능을 얻는 것도 어렵지 않습니다.
+다른 수준에서, IBM 360/370 시스템은 1401과 7090과 같은 구형 컴퓨터의 명령어 집합을 에뮬레이션해주었습니다.
+이러한 접근 방식은 한 단계 더 나아가서, 가상 머신으로 발전하게 됐습니다.
+즉 머신 자체에서 머신을 시뮬레이션(여러 개의 복사본)하게 됩니다.
+
+>
+A rather different example is the world-swap debugger, which works by writing the real memory of the target system (the one being debugged) onto a secondary storage device and reading in the debugging system in its place.
+The debugger then provides its user with complete access to the target world, mapping each target memory address to the proper place on secondary storage.
+With care it is possible to swap the target back in and continue execution.
+This is somewhat clumsy, but it allows very low levels of a system to be debugged conveniently, since the debugger does not depend on the correct functioning of anything in the target except the very simple world-swap mechanism.
+It is especially useful during bootstrapping.
+There are many variations.
+For instance, the debugger can run on a different machine, with a small ‘tele-debugging’ nub in the target world that can interpret ReadWord, WriteWord, Stop and Go commands arriving from the debugger over a network.
+Or if the target is a process in a time-sharing system, the debugger can run in a different process.
+
+다소 다른 사례로 월드 스왑 디버거가 있는데, 이는 대상 시스템(디버깅 중인 시스템)의 실제 메모리를 보조 저장 장치에 쓰고, 그 위치에 디버깅 시스템을 읽어들이는 방식으로 작동합니다.
+그런 다음 디버거는 사용자에게 대상 월드에 대한 완전한 엑세스 권한을 제공하여, 각 대상 메모리 주소를 보조 저장소의 적절한 위치에 연결해 줍니다.
+주의를 기울이면 대상을 다시 돌려놓고 실행을 계속하는 것도 할 수 있습니다.
+썩 좋은 디버깅 방법이라 할 수는 없지만, 매우 간단한 월드 스왑 매커니즘만 작동한다면 시스템의 매우 낮은 레벨에서도 편리하게 디버깅할 수 있습니다. 디버깅 대상의 정상적인 기능에 의존하지 않기 때문입니다.
+월드 스왑 디버거는 특히 부트스트래핑 중에 유용합니다.
+이러한 디버거에는 다양한 변형이 있습니다.
+예를 들어 디버거를 다른 머신에서 실행하는 것도 가능한데, 작은 'tele-debugging' 도구가 대상 월드에 있다면 네트워크를 통해 디버거로부터 전달받은 ReadWord, WriteWord, Stop, Go 명령을 실행할 수 있기 때문입니다.
+또는 디버깅 대상이 time-sharing 시스템의 프로세스인 경우, 디버거를 다른 프로세스에서 실행할 수도 있습니다.
+
+#### 2.4 Making implementations work
+
+TODO: 작업중
 
 ## Links
 
