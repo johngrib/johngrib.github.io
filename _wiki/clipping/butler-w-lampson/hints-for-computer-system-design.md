@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 13:03:11 +0900
+updated : 2023-04-16 16:51:30 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -347,10 +347,92 @@ Quite general ways are known to solve this problem [22], but they are tricky and
 파일 시스템은 가상 메모리를 사용하고자 하지만, 가상 메모리는 파일에 의존하고 있습니다.
 이 문제의 해결책으로 널리 알려진 꽤 일반적인 방법이 있긴 하지만 몹시 까다롭고, 일반적인 경우 더 큰 비용과 더 큰 복잡성으로 쉽게 이어질 수 있습니다.
 
-> > And, in this upshot, purposes mistook
+> > And, in this upshot, purposes mistook  
 > > Fall’n on th’ inventors’ heads. (V ii 387)
 
-작업중..
+그리고 결국, 목적이 오해되어,  
+발명자들의 머리로 떨어진다.
+
+>
+Another example illustrates how easily generality can lead to unexpected complexity.
+The Tenex system [2] has the following innocent-looking combination of features:
+>
+> - It reports a reference to an unassigned virtual page by a trap to the user program.
+> - A system call is viewed as a machine instruction for an extended machine, and any reference it makes to an unassigned virtual page is thus similarly reported to the user program.
+> - Large arguments to system calls, including strings, are passed by reference.
+> - There is a system call CONNECT to obtain access to another directory; one of its arguments is a string containing the password for the directory. If the password is wrong, the call fails after a three second delay, to prevent guessing passwords at high speed.
+
+또 다른 사례는 얼마나 쉽게 일반성이 예상치 못한 복잡도로 이어질 수 있는지를 보여줍니다.
+Tenex 시스템은 다음과 같이 별 문제 없어 보이는 기능들을 가지고 있습니다.
+
+- 트랩에 의해 할당되지 않은 가상 페이지에 대한 참조를 사용자 프로그램에 보고합니다.
+- 시스템 호출은 확장 머신에 대한 머신 명령으로 간주되며, 따라서 할당되지 않은 가상 페이지에 대한 모든 참조는 사용자 프로그램에 유사하게 보고됩니다.
+- string을 포함하여 시스템 호출에 대한 큰 인수는 참조로 전달됩니다.
+- 다른 디렉토리에 대한 엑세스 권한을 얻기 위한 시스템 호출 CONNECT가 있습니다. 그 인자 중 하나는 디렉토리의 패스워드가 포함된 string입니다. 만약 password가 틀렸다면 password를 빠르게 알아내는 것을 방지하기 위해 3초 지연 후 호출이 실패합니다.
+
+>
+CONNECT is implemented by a loop of the form
+
+CONNECT는 다음과 같은 형식의 루프로 구현됩니다.
+
+> ```
+> for i := 0 to Length(directoryPassword) do
+>     if directoryPassword[i] ≠ passwordArgument[i] then
+>         Wait three seconds; return BadPassword
+>     end if
+> end loop;
+> connect to directory; return Success
+> ```
+
+>
+The following trick finds a password of length n in 64n tries on the average, rather than 128n/2 (Tenex uses 7 bit characters in strings).
+Arrange the passwordArgument so that its first character is the last character of a page and the next page is unassigned, and try each possible character as the first.
+If CONNECT reports BadPassword, the guess was wrong; if the system reports a reference to an unassigned page, it was correct.
+Now arrange the passwordArgument so that its second character is the last character of the page, and proceed in the obvious way.
+
+그리고 이제 소개할 트릭을 쓰면 길이가 n인 패스워드를 평균적으로 $$128^n / 2$$ 가 아닌 $$64n$$ 만큼의 시도로 알아낼 수 있습니다(Tenex는 string에 7 비트 문자를 사용합니다).
+
+passwordArgument의 첫 번째 문자를 어느 페이지의 마지막 문자가 되도록 하고, 그 다음 페이지는 할당되지 않은 페이지가 되도록 배치한 후, 모든 문자를 암호의 첫 번째 문자로 시도해 봅니다.
+첫 번째 문자가 페이지의 마지막 문자이고 다음 페이지가 할당되지 않도록 passwordArgument를 정렬합니다. 그리고 첫 번째 문자에 가능한 모든 문자를 넣어보며 시도합니다.
+이 때 CONNECT 가 BadPassword라고 보고하면 추측이 틀린 것이고, 시스템이 할당된 페이지에 대한 참조를 보고하면 맞은 것입니다.
+이제 두 번째 문자가 페이지의 마지막 문자가 되도록 passwordArgument를 정렬하고, 같은 방법을 반복하면 됩니다.
+
+>
+This obscure and amusing bug went unnoticed by the designers because the interface provided by a Tenex system call is quite complex: it includes the possibility of a reported reference to an unassigned page.
+Or looked at another way, the interface provided by an ordinary memory reference instruction in system code is quite complex: it includes the possibility that an improper reference will be reported to the client without any chance for the system code to get control first.
+
+Tenex 시스템 호출이 제공하는 인터페이스가 상당히 복잡하기 때문에, 설계자는 이 미묘하고 재미있는 버그를 알아차리지 못했습니다.
+할당되지 않은 페이지에 대한 참조가 보고될 가능성 또한 그 복잡한 구조에 포함되어 있었던 것입니다.
+한편 다른 관점에서 보면, 시스템 코드에서 일반적인 메모리 참조 명령이 제공해주는 인터페이스가 굉장히 복잡하다는 것도 알 수 있습니다.
+시스템 코드가 먼저 제어권을 확보할 기회 없이 부적절한 참조가 클라이언트에 보고될 가능성도 포함되어 있었기 때문입니다.
+
+> > An engineer is a man who can do for a dime  
+> > what any fool can do for a dollar. (Anonymous)
+
+엔지니어는 바보들이 1 달러로 하고 있는 일을 10 센트만으로도 할 수 있는 사람이다. (출처 모름)
+
+>
+At times, however, it’s worth a lot of work to make a fast implementation of a clean and powerful interface.
+If the interface is used widely enough, the effort put into designing and tuning the implementation can pay off many times over.
+But do this only for an interface whose importance is already known from existing uses.
+And be sure that you know how to make it fast.
+
+그러나 때로는 깔끔하고 강력한 인터페이스를 갖는 빠른 성능 구현체를 위해 많은 노력을 기울이는 것도 가치있는 일이라 할 수 있습니다.
+그렇게 만든 인터페이스가 충분히 광범위하게 사용된다면 구현체를 설계하고 튜닝하는 데 투자한 노력은 몇 배의 보상으로 돌아올 것입니다.
+단, 기존의 사용 사례에서 이미 중요성이 알려진 인터페이스에 대해서만 수행하도록 합니다.
+그리고 빠른 성능을 구현하는 방법을 확실히 알고 있어야 합니다.
+
+>
+For example, the BitBlt or RasterOp interface for manipulating raster images [21, 37] was devised by Dan Ingalls after several years of experimenting with the Alto’s high-resolution interactive display.
+Its implementation costs about as much microcode as the entire emulator for the Alto’s standard instruction set and required a lot of skill and experience to construct.
+But the performance is nearly as good as the special-purpose character-to-raster operations that preceded it, and its simplicity and generality have made it much easier to build display applications.
+
+예를 들어, raster 이미지를 조작하는 BitBlt 나 RasterOp 인터페이스는 Dan Ingalls가 Alto의 고해상도 대화형 디스플레이를 몇 년 동안 실험한 결과 고안해낸 것입니다.
+이 인터페이스의 구현에는 Alto의 표준 명령어 집합 전체 에뮬레이터만큼의 많은 마이크로 코드가 필요하며, 구축하는 데 상당한 기술과 경험이 필요했습니다.
+그러나 그 성능은 그것에 앞서 이루어진 특수 목적의 character-to-raster 연산에 준할 만큼 우수하며, 그 단순함과 범용성 덕분에 디스플레이 응용 프로그램을 훨씬 쉽게 구축할 수 있게 되었습니다.
+
+작업중...
+
 
 ## Links
 
