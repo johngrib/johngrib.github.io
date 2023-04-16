@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 17:39:56 +0900
+updated : 2023-04-16 17:40:23 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -512,6 +512,6 @@ end loop
 ## 주석
 
 [^three-50]: 운영체제 아주 쉬운 세 가지 이야기. 5.7장. 50쪽.
-[^six-level-50-cost]: 1.5<sup>6</sup> = 11.390625
-[^ewd-32]: Algol 60에 대한 이야기는 [[/clipping/ewd/32]]도 읽어볼 만하다.
+[^six-level-50-cost]: 역주: 1.5<sup>6</sup> = 11.390625
+[^ewd-32]: 역주: Algol 60에 대한 이야기는 [[/clipping/ewd/32]]도 읽어볼 만하다.
 
