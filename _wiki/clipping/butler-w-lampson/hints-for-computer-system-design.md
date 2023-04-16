@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 17:38:46 +0900
+updated : 2023-04-16 17:39:56 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -35,6 +35,8 @@ Butler W. Lampson
 Computer Science Laboratory
 Xerox Palo Alto Research Center
 Palo Alto, CA 94304
+
+참고: 의역, 오역이 많을 수 있습니다. 참고용으로만 봐주세요.
 
 ### Abstract
 
