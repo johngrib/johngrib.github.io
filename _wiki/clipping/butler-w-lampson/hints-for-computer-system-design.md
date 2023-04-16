@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 22:50:12 +0900
+updated : 2023-04-16 23:16:40 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -740,6 +740,48 @@ Or if the target is a process in a time-sharing system, the debugger can run in 
 또는 디버깅 대상이 time-sharing 시스템의 프로세스인 경우, 디버거를 다른 프로세스에서 실행할 수도 있습니다.
 
 #### 2.4 Making implementations work
+
+**2.4 구현이 작동하게 만들기**
+
+> > Perfection must be reached by degrees; she requires the slow hand of time.
+> > (Voltaire)
+
+완벽함은 단계적으로 도달해야 한다. 그것은 시간의 느린 손길을 필요로 한다. (볼테르)
+
+##### * Plan to throw one away
+
+>
+· Plan to throw one away; you will anyhow [6].
+If there is anything new about the function of a system, the first implementation will have to be redone completely to achieve a satisfactory (that is, acceptably small, fast, and maintainable) result.
+It costs a lot less if you plan to have a prototype.
+Unfortunately, sometimes two prototypes are needed, especially if there is a lot of innovation.
+If you are lucky you can copy a lot from a previous system; thus Tenex was based on the sds 940 [2].
+This can even work even if the previous system was too grandiose; Unix took many ideas from Multics [44].
+
+어차피 버린다고 생각하고, 하나를 버릴 계획을 세워라.
+시스템의 기능에 새로운 것이 있다면 만족할만한(즉, 적당히 작고 빠르며 유지보수가 가능한) 결과를 얻기 위해 첫 번째 구현을 완전히 다시 해야 할 수도 있습니다.
+프로토타을 계획에 포함시키면 비용이 훨씬 적게 들어갑니다.
+불행하게도 어떤 경우에는 프로토타입이 두 개 필요하기도 합니다.
+특히 혁신이 많은 경우에 그러합니다.
+만약 운이 좋다면 이전 시스템에서 많은 부분을 참고할 수 있습니다.
+예를 들어 Tenex는 sds 940을 기반으로 삼았습니다.
+이전 시스템이 너무 거대했다고 해도 통하는 효과적인 방법이 바로 프로토타이핑입니다.
+Unix는 Multics에서 많은 아이디어를 가져왔습니다.
+
+>
+Even when an implementation is successful, it pays to revisit old decisions as the system evolves; in particular, optimizations for particular properties of the load or the environment (memory size, for example) often come to be far from optimal.
+
+구현이 성공적이었다 하더라도, 시스템이 발전함에 따라 이전 결정들을 재검토하는 것이 유익합니다.
+특히, 시스템 부하나 환경의 특정 속성(예를 들어 메모리 크기)에 대한 최적화가 종종 최적이 아닌 경우가 많기 때문입니다.
+
+> > Give thy thoughts no tongue,
+> > Nor any unproportion’d thought his act.
+
+생각을 말로 표현하지 말고,  
+무리한 생각을 행동으로 옮기지 말거라.
+
+##### * Keep secrets
+
 
 TODO: 작업중
 
