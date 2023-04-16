@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 17:40:23 +0900
+updated : 2023-04-16 17:41:20 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -498,6 +498,8 @@ end loop
 #### 2.2 Corollaries
 
 **부속 정리**
+
+TODO: .. 작업중 ..
 
 ## Links
 
