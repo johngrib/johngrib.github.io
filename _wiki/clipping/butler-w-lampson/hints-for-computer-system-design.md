@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 13:01:49 +0900
+updated : 2023-04-16 13:03:11 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -313,7 +313,7 @@ But since research may well fail, others mustn’t depend on its success.
 그리고 그런 연구도 실패할 수 있기 때문에 다른 사람들은 그런 연구의 성공에 의존해서는 안됩니다.
 
 > > Algol 60 was not only an improvement on its predecessors,
-> > but also on nearly all its successors. (C. Hoare)
+> > but also on nearly all its successors. (C. Hoare)[^ewd-32]
 
 _Algol 60은 그 이전 언어들을 개선한 것뿐만 아니라, 이전 언어들의 거의 모든 후속 언어들보다도 더 좋다. (C. Hoare)_
 
@@ -366,3 +366,5 @@ Quite general ways are known to solve this problem [22], but they are tricky and
 
 [^three-50]: 운영체제 아주 쉬운 세 가지 이야기. 5.7장. 50쪽.
 [^six-level-50-cost]: 1.5<sup>6</sup> = 11.390625
+[^ewd-32]: Algol 60에 대한 이야기는 [[/clipping/ewd/32]]도 읽어볼 만하다.
+
