@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 17:41:20 +0900
+updated : 2023-04-16 20:27:21 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -499,7 +499,178 @@ end loop
 
 **부속 정리**
 
-TODO: .. 작업중 ..
+>
+The rule about simplicity and generalization has many interesting corollaries.
+
+단순성과 일반화에 대한 규칙에는 흥미로운 부속 정리들이 많이 있습니다.
+
+> > Costly thy habit as thy purse can buy,  
+> > But not express’d in fancy; rich, not gaudy.
+
+비용이 많이 든다 해도 지갑이 버틸 수 있는 최고의 옷을 입어야 한단다.  
+그러나 화려함에만 길들여지면 안되며, 부유하면서도 과시하지 않도록 해야 한다.
+
+##### * Make it fast
+
+>
+· Make it fast, rather than general or powerful.
+If it’s fast, the client can program the function it wants, and another client can program some other function.
+It is much better to have basic operations executed quickly than more powerful ones that are slower (of course, a fast, powerful operation is best, if you know how to get it).
+The trouble with slow, powerful operations is that the client who doesn’t want the power pays more for the basic function.
+Usually it turns out that the powerful operation is not the right one.
+
+빠르게 만드세요. 범용적이거나 강력한 것보다 그게 낫습니다.
+빠르다면, 클라이언트는 원하는 함수를 프로그래밍하고, 다른 클라이언트는 다른 함수를 프로그래밍할 수 있습니다.
+느리지만 강력한 연산을 제공하는 것보다, 기본 연산이 빠르게 실행되는 것이 훨씬 좋습니다(물론, 할 수만 있다면 빠르면서도 강력한 것이 최선입니다).
+느리지만 강력한 연산의 문제는, 강력한 기능을 원하지 않는 클라이언트가 기본 기능에 대해 더 많은 비용을 지불해야 한다는 것입니다.
+대체로 강력한 연산을 제공하는 것이 올바른 선택이 아닌 경우가 많습니다.
+
+> > Had I but time (as this fell sergeant, death,  
+> > Is strict in his arrest) O, I could tell you —  
+> > But let it be. (V ii 339)
+
+나에게 시간이 있었다면(엄격한 사형 집행자, 죽음의 체포와 같이)  
+오, 내가 너에게 말해줄 수 있었을 텐데  
+하지만 그대로 받아들여야겠다.
+
+>
+For example, many studies (such as [23, 51, 52]) have shown that programs spend most of their time doing very simple things: loads, stores, tests for equality, adding one.
+Machines like the 801 [41] or the RISC [39] with instructions that do these simple operations quickly can run programs faster (for the same amount of hardware) than machines like the VAX with more general and powerful instructions that take longer in the simple cases.
+It is easy to lose a factor of two in the running time of a program, with the same amount of hardware in the implementation.
+Machines with still more grandiose ideas about what the client needs do even worse [18].
+
+예를 들어, 많은 연구들은 프로그램이 로드, 저장, 동등성 테스트, 1 더하기와 같은 매우 간단한 작업을 수행하는 데 대부분의 시간을 소비한다는 것을 보여줍니다.
+이런 간단한 작업을 빠르게 수행하는 명령을 갖고 있는 801이나 RISC 같은 기계는, 일반적이고 강력한 명령을 갖는 VAX와 같은 기계보다 (동일한 양의 하드웨어에도 불구하고) 프로그램을 더 빠르게 실행할 수 있습니다.
+동일한 양의 하드웨어를 사용해 구현했다고 해도, 프로그램 실행 시간에서 최대 2배의 차이를 보일 수 있는 것입니다.
+클라이언트가 필요로 하는 것에 대해 더 거창한 아이디어를 갖는 기계는 성능이 더 떨어집니다.
+
+>
+To find the places where time is being spent in a large system, it is necessary to have measurement tools that will pinpoint the time-consuming code.
+Few systems are well enough understood to be properly tuned without such tools; it is normal for 80% of the time to be spent in 20% of the code, but a priori analysis or intuition usually can’t find the 20% with any certainty.
+The performance tuning of Interlisp-D sped it up by a factor of 10 using one set of effective tools [7].
+
+대규모 시스템에서 시간이 낭비되는 부분을 찾으려면, 시간을 많이 잡아먹는 코드를 정확하게 찾아낼 수 있는 측정 도구가 필요합니다.
+이러한 도구 없이도 충분히 이해하여 적절하게 튜닝할 수 있는 시스템은 드뭅니다.
+일반적으로 80%의 시간이 20%의 코드에서 소비되지만, 선행 분석이나 직관만으로는 그 20%를 확실하게 찾아낼 수 없습니다.
+Interlisp-D는 효과적인 도구들을 사용해 성능 튜닝을 한 결과 10배나 빨라졌습니다.
+
+##### * Don't hide power
+
+>
+· Don’t hide power.
+This slogan is closely related to the last one.
+When a low level of abstraction allows something to be done quickly, higher levels should not bury this power inside something more general.
+The purpose of abstractions is to conceal undesirable properties; desirable ones should not be hidden.
+Sometimes, of course, an abstraction is multiplexing a resource, and this necessarily has some cost.
+But it should be possible to deliver all or nearly all of it to a single client with only slight loss of performance.
+
+파워를 숨기지 마세요.
+이 슬로건은 바로 이전의 슬로건과 밀접한 관련이 있습니다.
+낮은 수준의 추상화를 통해 무언가를 빠르게 처리할 수 있다면, 높은 수준의 추상화는 이런 능력을 일반화해서 파묻어서는 안됩니다.
+추상화의 목적은 바람직하지 않은 속성을 감추기 위한 것이지, 바람직한 속성을 숨기기 위한 것이 아닙니다.
+물론, 추상화는 때때로 리소스를 다중화하며, 이로 인해 필연적으로 비용이 발생하곤 합니다.
+그러나 약간의 성능 저하를 감수하면서도 단일 클라이언트에 거의 모든 리소스를 제공할 수 있어야 합니다.
+
+>
+For example, the Alto disk hardware [53] can transfer a full cylinder at disk speed.
+The basic file system [29] can transfer successive file pages to client memory at full disk speed, with time for the client to do some computing on each sector; thus with a few sectors of buffering the entire disk can be scanned at disk speed.
+This facility has been used to write a variety of applications, ranging from a scavenger that reconstructs a broken file system, to programs that search files for substrings that match a pattern.
+The stream level of the file system can read or write n bytes to or from client memory; any portions of the n bytes that occupy full disk sectors are transferred at full disk speed.
+Loaders, compilers, editors and many other programs depend for their performance on this ability to read large files quickly.
+At this level the client gives up the facility to see the pages as they arrive; this is the only price paid for the higher level of abstraction.
+
+예를 들어, Alto의 디스크 하드웨어는 디스크 회전 속도로 전체 실린더를 전송할 수 있습니다.
+기본 파일 시스템은 클라이언트가 각 섹터에서 일부 연산을 수행할 시간을 갖고 연속된 파일 페이지를 전체 디스크 속도로 클라이언트 메모리로 전송할 수 있습니다. 그러므로 섹터 몇 개의 버퍼링으로 전체 디스크를 디스크 속도로 스캔할 수 있습니다.
+이 기능은 손상된 파일 시스템을 재구성하는 정리 도구부터, 패턴과 일치하는 문자열을 여러 파일들에서 찾는 프로그램까지 다양한 애플리케이션 작성에 활용됐습니다.
+파일 시스템의 스트림 레벨은 클라이언트 메모리에서 n 바이트를 읽거나 쓸 수 있으며,
+n 바이트 중에서 전체 디스크 섹터를 차지하는 부분은 전체 디스크 속도로 전송됩니다.
+로더, 컴파일러, 편집기 등 많은 프로그램들은 대용량 파일을 빠르게 읽는 능력에 따라 성능이 좌우됩니다.
+이 레벨에서 클라이언트는 도착하는 페이지를 볼 수 있는 기능을 포기하게 되며,
+이는 더 높은 수준의 추상화에 대해 지불하는 유일한 비용입니다.
+
+##### * Use procedure arguments
+
+>
+· Use procedure arguments to provide flexibility in an interface.
+They can be restricted or encoded in various ways if necessary for protection or portability.
+This technique can greatly simplify an interface, eliminating a jumble of parameters that amount to a small programming language.
+A simple example is an enumeration procedure that returns all the elements of a set satisfying some property.
+The cleanest interface allows the client to pass a filter procedure that tests for the property, rather than defining a special language of patterns or whatever.
+
+프로시저 인자를 사용해 인터페이스에 유연성을 제공하라.
+보호나 이식성이 필요하다면, 인자를 다양한 방법으로 제한하거나 인코딩할 수 있습니다.
+이 기법은 인터페이스를 크게 단순화해서 작은 프로그래밍 언어에 해당하는 매개변수의 혼란스러움을 제거할 수 있습니다.
+간단한 예로, 특정 속성을 만족하는 집합의 모든 원소를 리턴하는 열거 프로시저를 들 수 있습니다.
+가장 깔끔한 인터페이스를 사용하면 클라이언트는 패턴 등의 특수한 언어를 정의하는 대신 속성을 검사하는 필터 프로시저를 전달할 수도 있습니다.
+
+>
+But this theme has many variations.
+A more interesting example is the Spy system monitoring facility in the 940 system at Berkeley [10], which allows an untrusted user program to plant patches in the code of the supervisor.
+A patch is coded in machine language, but the operation that installs it checks that it does no wild branches, contains no loops, is not too long, and stores only into a designated region of memory dedicated to collecting statistics.
+Using the Spy, the student of the system can fine-tune his measurements without any fear of breaking the system, or even perturbing its operation much.
+
+하지만 이 주제에는 많은 변형이 있습니다.
+더 흥미로운 사례는 Berkeley의 940 시스템의 Spy 시스템 모니터링 기능으로, 이 기능은 신뢰할 수 없는 사용자 프로그램이 슈퍼바이저의 코드에 패치를 적용할 수 있게 합니다.
+패치는 기계어로 코딩되지만, 설치 작업 중에 패치에 와일드 브랜치가 없는지, 루프가 없는지, 너무 길지는 않은지, 통계를 수집하기 위한 전용 메모리 영역에만 저장되는지 등을 확인합니다.
+Spy를 사용하면 시스템을 망가뜨리거나 작동을 크게 방해할 걱정 없이 측정값을 미세 조정할 수 있습니다.
+
+>
+Another unusual example that illustrates the power of this method is the FRETURN mechanism in the Cal time-sharing system for the cdc 6400 [30].
+From any supervisor call C it is possible to make another one CF that executes exactly like C in the normal case, but sends control to a designated failure handler if C gives an error return.
+The CF operation can do more (for example, it can extend files on a fast, limited-capacity storage device to larger files on a slower device), but it runs as fast as C in the (hopefully) normal case.
+
+이 기법의 힘을 보여주는 또 다른 독특한 사례는 cdc 6400용 Cal time-sharing 시스템의 FRETURN 메커니즘입니다.
+모든 슈퍼바이저 호출 C은 일반적인 경우 C와 똑같이 실행되지만, C가 에러를 리턴하게 되면 지정된 실패 핸들러로 제어를 전달하는 CF 라는 다른 호출을 만들 수 있는 것입니다.
+CF 연산은 더 많은 작업을 수행할 수 있지만(예를 들어, 용량이 제한된 고속 저장 장치의 파일을 더 큰 파일로 느린 장치에 확장할 수 있음), 일반적인 경우에는 C만큼 빠르게 실행됩니다.
+
+>
+It may be better to have a specialized language, however, if it is more amenable to static analysis for optimization.
+This is a major criterion in the design of database query languages, for example.
+
+그러나 최적화를 위한 정적 분석이 더 용이하다면 전문적인 언어를 사용하는 것이 더 나을 수 있습니다.
+예를 들어, 이것은 데이터베이스 쿼리 언어 설계의 주요 기준이기도 합니다.
+
+##### * Leave it to the client
+
+>
+· Leave it to the client.
+As long as it is cheap to pass control back and forth, an interface can combine simplicity, flexibility and high performance by solving only one problem and leaving the rest to the client.
+For example, many parsers confine themselves to doing context free recognition and call client-supplied "semantic routines" to record the results of the parse.
+This has obvious advantages over always building a parse tree that the client must traverse to find out what happened.
+
+클라이언트에 맞겨라.
+제어를 주고받는 데 드는 비용이 저렴한 한, 인터페이스는 한 가지 문제만 해결하고 나머지는 클라이언트에 맡김으로써 단순함, 유연성 및 고성능을 결합해낼 수 있습니다.
+예를 들어 많은 parser들은 문맥 인식 작업만 수행하고, parse 결과를 기록하기 위해 클라이언트가 제공하는 "시맨틱 루틴"을 호출합니다.
+이는 클라이언트가 무슨 일이 일어났는지 파악하기 위해 항상 parse tree를 구축해야 하는 것에 비해 분명한 이점이 있습니다.
+
+>
+The success of monitors [20, 25] as a synchronization device is partly due to the fact that the locking and signaling mechanisms do very little, leaving all the real work to the client programs in the monitor procedures.
+This simplifies the monitor implementation and keeps it fast;
+if the client needs buffer allocation, resource accounting or other frills, it provides these functions itself or calls other library facilities, and pays for what it needs.
+The fact that monitors give no control over the scheduling of processes waiting on monitor locks or condition variables, often cited as a drawback, is actually an advantage, since it leaves the client free to provide the scheduling it needs (using a separate condition variable for each class of process), without having to pay for or fight with some built-in mechanism that is unlikely to do the right thing.
+
+모니터가 동기화 장치로서 성공한 이유 중 하나는, 잠금 및 신호 매커니즘이 거의 작동하지 않고 모니터 프로시저의 클라이언트 프로그램에 모든 실질적인 작업을 맡긴다는 것입니다.
+이로 인해 모니터 구현은 단순해지고 속도도 빨라집니다.
+만약 클라이언트에 버퍼 할당, 리소스 어카운팅 또는 부가적인 기능이 필요하다면 클라이언트는 그런 기능을 직접 제공하거나 다른 라이브러리 기능을 호출해서 필요한 만큼 비용을 지불하면 됩니다.
+사실 모니터는 모니터 잠금이나 조건 변수에 대기 중인 프로세스의 스케쥴링에 대한 제어를 제공하지 않는다는 점이 종종 단점으로 지적되곤 하지만, 실제로는 클라이언트에 필요한 스케쥴링(각 프로세스 클래스마다 별도의 조건 변수를 사용)을 제공하면서 제대로 작동하는지 아닌지 모를 내장된 매커니즘과 씨름할 필요 없이 비용만 지불하도록 하는 장점이 있습니다.
+
+>
+The Unix system [44] encourages the building of small programs that take one or more character streams as input, produce one or more streams as output, and do one operation.
+When this style is imitated properly, each program has a simple interface and does one thing well, leaving the client to combine a set of such programs with its own code and achieve precisely the effect desired.
+
+Unix 시스템은 하나 이상의 문자 스트림을 입력으로 사용하고, 하나 이상의 스트림을 출력으로 생성하며, 한 가지 작업을 수행하는 작은 프로그램을 만드는 것을 권장합니다.
+이 스타일을 적절하게 따르면 각 프로그램은 간단한 인터페이스를 갖고 한 가지 작업을 잘 수행하므로,
+클라이언트는 이런 프로그램들을 자신의 코드와 결합하여 원하는 효과를 정확하게 얻을 수 있게 됩니다.
+
+>
+The _end-to-end_ slogan discussed in section 3 is another corollary of keeping it simple.
+
+3장에서 논의할 _end-to-end_ 슬로건 또한 단순함을 유지(Keeping it simple)하는 것의 또 다른 부속 정리입니다.
+
+#### 2.3 Continuity
+
+**2.3 연속성**
+
 
 ## Links
 
