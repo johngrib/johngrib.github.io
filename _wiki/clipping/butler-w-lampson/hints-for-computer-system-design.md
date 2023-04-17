@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-17 20:59:04 +0900
+updated : 2023-04-17 21:40:37 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -862,6 +862,31 @@ Alto의 디스크 조각 모음 프로그램이 이 기법의 좋은 사례라 �
 물론 이번에도 필요하다면 작업을 또 쪼개서 수행합니다.
 이 방법은 파일 하나의 인덱스가 너무 커서 디스크에 들어갈 수 없는 경우에만 실패합니다.
 
+>
+Another interesting example arises in the Dover raster printer [26, 53], which scan-converts lists of characters and rectangles into a large m ´ n array of bits, in which ones correspond to spots of ink on the paper and zeros to spots without ink.
+In this printer m=3300 and n=4200, so the array contains fourteen million bits and is too large to store in memory.
+The printer consumes bits faster than the available disks can deliver them, so the array cannot be stored on disk.
+Instead, the entire array is divided into 16 ´ 4200 bit slices called bands, and the printer electronics contains two one-band buffers.
+The characters and rectangles are sorted into buckets, one for each band; a bucket receives the objects that start in the corresponding band.
+Scan conversion proceeds by filling one band buffer from its bucket, and then playing it out to the printer and zeroing it while filling the other buffer from the next bucket.
+Objects that spill over the edge of one band are added to the next bucket; this is the trick that allows the problem to be subdivided.
+
+또 다른 흥미로운 사례는 Dover 래스터 프린터입니다.
+이 프린터는 문자와 직사각형 리스트를 m x n 크기의 배열로 스캔-변환하는데,
+비트가 1인 곳은 종이에 잉크를 찍는 부분이고, 0이면 잉크를 찍지 않는 부분이라 할 수 있습니다.
+이 프린터에서 m=3300 이고 n=4200 입니다.
+그러므로 비트 배열은 1400만 개의 비트를 포함하는데 사이즈가 너무 크기 때문에 메모리에 그대로 저장할 수 없습니다.
+게다가 프린터가 비트를 사용해 (출력하는) 속도가 디스크에서 비트를 전달하는 속도보다 빠르기 때문에,
+이 배열을 디스크에 저장할 수도 없습니다.
+이 문제를 이렇게 해결합니다.
+배열 전체를 'band'라고 부르는 16 x 4200 사이즈의 비트 조각들로 쪼갭니다.
+그리고 프린터의 전자 회로에 1 band 용량의 버퍼를 2개 탑재하게 합니다.
+
+이제 문자와 직사각형을 각 band별로 순서대로 버킷으로 퍼담아 프린터로 전달하게 됩니다.
+버킷은 일단 주어진 band에서 시작하는 객체를 전달받습니다.
+스캔 변환은 버킷을 통해 band 버퍼를 하나를 다 채운 다음, 프린터로 출력합니다.
+그리고 다음 버킷을 통해 다른 band 버퍼를 채우면서, 출력을 마친 이전 버퍼는 0으로 초기화합니다.
+만약 band 하나의 끝을 넘어서는 객체가 있다면 다음 버킷에 추가되는데, 이런 방식으로 문제를 쪼개고 있다고 할 수 있습니다.
 
 TODO: 작업중
 
