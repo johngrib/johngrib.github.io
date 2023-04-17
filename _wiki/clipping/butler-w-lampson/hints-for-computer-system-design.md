@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-17 23:09:21 +0900
+updated : 2023-04-17 23:30:56 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -957,6 +957,47 @@ Star 오피스 시스템의 사용자 인터페이스에는 텍스트, 그래픽
 #### 2.5 Handling all the cases
 
 **모든 케이스를 취급하기**
+
+##### * Handle normal and worst cases separately
+
+> > Diseases desperate grown  
+By desperate appliance are reliev’d  
+or not at all. (III vii 9)
+
+질병이 절망적으로 심해지면  
+절망적인 치료법으로만 고칠 수 있다.  
+그 외의 방법은 전혀 없다.
+
+> > Therefore this project  
+Should have a back or second, that might hold,  
+If this should blast in proof. (IV iii 151)
+
+그러므로 이 계획은  
+실패할 경우를 대비해 대비책이나 두번째 대안을 마련해야 한다.
+시도가 실패할 수 있으니까.
+
+>
+· Handle normal and worst cases separately as a rule, because the requirements for the two are quite different:
+>
+- The normal case must be fast.
+- The worst case must make some progress.
+
+일반적인 케이스와 최악의 케이스는 별도로 처리는 것을 원칙으로 하라. 왜냐하면 두 경우의 요구 사항이 상당히 다르기 때문이다.
+
+- 일반적인 케이스는 빨라야 합니다.
+- 최악의 경우라 하더라도 진전이 좀 있어야 합니다.
+
+>
+In most systems it is all right to schedule unfairly and give no service to some of the processes, or even to deadlock the entire system, as long as this event is detected automatically and doesn’t happen too often.
+The usual recovery is by crashing some processes, or even the entire system.
+At first this sounds terrible, but one crash a week is usually a cheap price to pay for 20% better performance.
+Of course the system must have decent error recovery (an application of the end-to-end principle; see section 4), but that is required in any case, since there are so many other possible causes of a crash.
+
+대부분의 시스템에서는 스케쥴을 불공정하게 예약해서 일부 프로세스에게 서비스를 제공하지 않거나 전체 시스템을 데드락에 빠뜨린다 하더라도, 이런 상황이 너무 자주 발생하지 않고 자동으로 감지된다면 문제가 되지 않습니다.
+이런 상황의 일반적인 복구 방법은 일부 프로세스나 전체 시스템을 강제 종료하는 것입니다.
+끔찍한 방법처럼 들리겠지만, 일주일에 한 번의 강제 종료로 20%의 성능 향상을 얻을 수 있어서 비용 대비 효과적인 선택이기도 합니다.
+물론 시스템은 적절한 에러 복구 기능(엔드 투 엔드 원칙의 응용. 4장 참고)을 가져야 하는데, 충돌의 원인이 다양하기 때문에 이건 원래 필요한 기능이라 할 수 있습니다.
+
 
 TODO: 작업중
 
