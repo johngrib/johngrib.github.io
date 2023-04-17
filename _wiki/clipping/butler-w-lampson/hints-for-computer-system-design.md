@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-17 21:40:37 +0900
+updated : 2023-04-17 22:49:39 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -888,6 +888,74 @@ Objects that spill over the edge of one band are added to the next bucket; this 
 그리고 다음 버킷을 통해 다른 band 버퍼를 채우면서, 출력을 마친 이전 버퍼는 0으로 초기화합니다.
 만약 band 하나의 끝을 넘어서는 객체가 있다면 다음 버킷에 추가되는데, 이런 방식으로 문제를 쪼개고 있다고 할 수 있습니다.
 
+>
+Sometimes it is convenient to artificially limit the resource, by quantizing it in fixed-size units;
+this simplifies bookkeeping and prevents one kind of fragmentation.
+The classical example is the use of fixed-size pages for virtual memory, rather than variable-size segments.
+In spite of the apparent advantages of keeping logically related information together, and transferring it between main storage and backing storage as a unit, paging systems have worked out better.
+The reasons for this are complex and have not been systematically studied.
+
+가끔은 고정된 크기를 갖는 단위로 의도적으로 자원을 정량화해서 사용하는 것이 편리할 때가 있습니다.
+이렇게 하면 bookkeeping[^what-bookkeeping]이 단순해지고, 일종의 단편화를 방지할 수도 있습니다.
+고전적인 사례로는 가상 메모리에서 가변크기의 '세그먼트'가 아닌, 고정된 크기의 '페이지'를 사용하는 것이 있습니다.
+논리적으로 연관된 정보를 함께 보관하고 메인 스토리지와 백업 스토리지 사이에서 한 덩어리로 전송할 수 있는 전자가 더 장점이 있을 것처럼 보이지만, 실제로는 페이징 시스템이 더 잘 작동했습니다.
+이런 이유는 복잡하며 아직 체계적으로 연구되지 않았습니다.
+
+##### * Use a good idea again
+
+> > And makes us rather bear those ills we have  
+> > Than fly to others that we know not of. (III i 81)[^hamlet-and-makes-us]
+
+그래서 우리는 알고 있는 고난을 참게 되며,  
+알 수 없는 다른 고난을 마주하는 것을 피하게 된다.
+
+>
+· Use a good idea again instead of generalizing it.
+A specialized implementation of the idea may be much more effective than a general one.
+The discussion of caching below gives several examples of applying this general principle.
+Another interesting example is the notion of replicating data for reliability.
+A small amount of data can easily be replicated locally by writing it on two or more disk drives [28].
+When the amount of data is large or the data must be recorded on separate machines, it is not easy to ensure that the copies are always the same.
+Gifford [16] shows how to solve this problem by building replicated data on top of a transactional storage system, which allows an arbitrarily large update to be done as an atomic operation (see section 4).
+The transactional storage itself depends on the simple local replication scheme to store its log reliably.
+There is no circularity here, since only the idea is used twice, not the code.
+A third way to use replication in this context is to store the commit record on several machines [27].
+
+좋은 아이디어는 일반화하기보다 재사용하라.
+특정 상황에 맞춘 아이디어 구현이 일반화된 구현보다 훨씬 더 효과적일 수 있습니다.
+아래에 이어지는 캐싱에 대한 논의에서 이 원칙이 적용된 몇 가지 사례를 확인할 수 있습니다.
+이번에 소개하는 흥미로운 사례는 '신뢰성을 위해 데이터를 복제한다'는 개념입니다.
+소량의 데이터는 2개 이상의 디스크 드라이브에 쓰는 것만으로도 간단하게 로컬에서 복제를 완료할 수 있습니다.
+그러나 데이터의 양이 많다던가 데이터를 별도의 머신에 기록해야 하는 상황이라면, 항상 복사본이 원본과 똑같은지를 확인하기 어렵습니다.
+
+Gifford는 트랜잭션 스토리지 시스템 위에 데이터 복제를 구축하는 방식으로 이 문제를 해결하는 방법을 제시했는데(section 4 참고),
+이 방식을 통해 아무리 큰 규모의 업데이트도 원자적으로 수행할 수 있게 됐습니다.
+
+이 트랜잭션 스토리지 자체는 로그를 안정적으로 저장하기 위해 간단한 로컬 복제 방식을 사용합니다.
+여기에는 순환성이 없습니다.
+왜냐하면 코드가 아니라 아이디어만 두 번 사용되었기 때문입니다.
+이러한 문제를 해결하는 세 번째 방법은 커밋 레코드를 여러 머신에 저장하는 것입니다.
+
+>
+The user interface for the Star office system [47] has a small set of operations (type text, move, copy, delete, show properties) that apply to nearly all the objects in the system: text, graphics, file folders and file drawers, record files, printers, in and out baskets, etc.
+The exact meaning of an operation varies with the class of object, within the limits of what the user might find natural.
+For instance, copying a document to an out basket causes it to be sent as a message; moving the endpoint of a line causes the line to follow like a rubber band.
+Certainly the implementations are quite different in many cases.
+But the generic operations do not simply make the system easier to use;
+they represent a view of what operations are possible and how the implementation of each class of object should be organized.
+
+Star 오피스 시스템의 사용자 인터페이스에는 텍스트, 그래픽, 파일 폴더, 레코드 파일, 프린터, 발신함, 수신함 등 시스템의 거의 모든 객체에 적용되는 작은 작업 세트(텍스트 타이핑, 이동하기, 복사하기, 삭제하기, 속성 보기)를 갖고 있습니다.
+각 작업의 의미는 사용자가 자연스럽게 사용하는 범위 내에서 객체의 종류에 따라 달라집니다.
+예를 들어 문서를 발신함에 복사하면 그 문서가 메시지로 전송되며,
+선의 끝점을 이동시켜보면 선이 고무줄처럼 따라서 움직입니다.
+물론, 이러한 기능들은 각각 구현하는 방법이 다 달랐습니다.
+하지만 일반적인 기능들은 단지 시스템 사용의 편의성을 증가시키는 것 뿐만 아니라
+어떤 작업들이 가능한지와 각 객체의 종류에 따른 구현에 대한 관점을 제공합니다.
+
+#### 2.5 Handling all the cases
+
+**모든 케이스를 취급하기**
+
 TODO: 작업중
 
 ## Links
@@ -905,4 +973,5 @@ TODO: 작업중
 [^three-50]: 운영체제 아주 쉬운 세 가지 이야기. 5.7장. 50쪽.
 [^six-level-50-cost]: 역주: 1.5<sup>6</sup> = 11.390625
 [^ewd-32]: 역주: Algol 60에 대한 이야기는 [[/clipping/ewd/32]]도 읽어볼 만하다.
-
+[^what-bookkeeping]: 역주: bookkeeping은 정보의 상태를 추적, 관리, 유지하는 연산을 말한다. 메모리 할당, 해제, 참조 관리 등이 해당된다. ([참고]( https://encyclopedia2.thefreedictionary.com/bookkeeping+operation ))
+[^hamlet-and-makes-us]: 역주: 셰익스피어의 햄릿에서 유명한 "To be or not to be" 이후에 이어지는 부분에 이 문장이 있다.
