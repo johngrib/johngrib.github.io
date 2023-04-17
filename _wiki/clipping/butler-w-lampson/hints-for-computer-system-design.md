@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-16 23:16:40 +0900
+updated : 2023-04-17 20:59:04 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -781,6 +781,86 @@ Even when an implementation is successful, it pays to revisit old decisions as t
 무리한 생각을 행동으로 옮기지 말거라.
 
 ##### * Keep secrets
+
+>
+· Keep secrets of the implementation.
+Secrets are assumptions about an implementation that client programs are not allowed to make (paraphrased from [5]).
+In other words, they are things that can change;
+the interface defines the things that cannot change (without simultaneous changes to both implementation and client).
+Obviously, it is easier to program and modify a system if its parts make fewer assumptions about each other.
+On the other hand, the system may not be easier to design—it’s hard to design a good interface.
+And there is a tension with the desire not to hide power.
+
+구현을 비밀로 유지하라.
+지켜야 할 '비밀'이란 것은 클라이언트 프로그램이 염두에 둬서는 안 되는 구체적인 구현에 대한 가정입니다.
+이런 것들은 변경될 수 있는 가정이기 때문입니다.
+클라이언트와 구현을 동시에 변경하지 않는 한 변경할 수 없는 것을 정의하는 것이 바로 인터페이스입니다.
+
+시스템의 각 부분이 서로에 대해 가정하는 것이 적을수록, 시스템을 프로그래밍하고 수정하기가 분명히 더 쉬울 것입니다.
+그러나 그런 시스템을 설계하는 것 자체는 쉬운 일이 아닙니다.
+좋은 인터페이스를 설계하는 것이 어렵기 때문입니다.
+또한, 강력함을 숨기고 싶지 않은 욕구와 충돌하는 문제도 있습니다.
+
+> > An efficient program is an exercise in logical brinkmanship. (E. Dijkstra)
+
+효율적인 프로그램을 작성하는 것은 논리적인 극한에 도전하는 연습이다.
+
+>
+There is another danger in keeping secrets.
+One way to improve performance is to increase the number of assumptions that one part of a system makes about another; the additional assumptions often allow less work to be done, sometimes a lot less.
+For instance, if a set of size n is known to be sorted, a membership test takes time log n rather than n.
+This technique is very important in the design of algorithms and the tuning of small modules.
+In a large system the ability to improve each part separately is usually more important.
+Striking the right balance remains an art.
+
+그런데 비밀을 유지하기 어려운 또 다른 위험이 있습니다.
+성능을 향상시키는 방법 중 하나는 시스템의 한 부분이 다른 부분에 대해 전제하는 가정의 수를 늘리는 것입니다.
+추가된 가정으로 인해 작업량이 줄어들곤 하는데, 어떤 경우에는 상당히 많이 줄이기도 합니다.
+예를 들어, 크기가 n 인 집합이 이미 정렬된 것으로 알려져 있다면, 집합의 원소인지 확인하는데 걸리는 시간이 n 에서 log n 으로 줄어듭니다.
+이런 기법은 알고리즘 설계와 소규모 모듈 최적화에서 매우 중요합니다.
+그리고 대규모 시스템에서는 일반적으로 각 부분을 독립적으로 개선하는 능력이 매우 중요합니다.
+적절한 균형점을 찾는 것은 여전히 예술의 영역입니다.
+
+> > O throw away the worser part of it,  
+> > And live the purer with the other half. (III iv 157)
+
+더 나쁜 부분을 버리거라,  
+그리고 남은 반을 더 순수하게 살아가거라.
+
+##### Divide and conquer
+
+>
+· Divide and conquer.
+This is a well known method for solving a hard problem: reduce it to several easier ones.
+The resulting program is usually recursive.
+When resources are limited the method takes a slightly different form: bite off as much as will fit, leaving the rest for another iteration.
+
+분할하여 정복하라.
+분할 정복은 어려운 문제를 해결하는 잘 알려진 방법입니다.
+바로 어려운 문제를 쉬운 문제 여러 개로 쪼개는 것입니다.
+분할 정복을 선택한 프로그램은 보통 재귀적입니다.
+자원이 제한되어 있을 때, 이 기법은 좀 다른 형태를 갖게 됩니다.
+가능한 한 많이 잘라내 처리하고, 나머지는 다음 반복에서 처리하는 방식입니다.
+
+>
+A good example is in the Alto’s Scavenger program, which scans the disk and rebuilds the index and directory structures of the file system from the file identifier and page number recorded on each disk sector [29].
+A recent rewrite of this program has a phase in which it builds a data structure in main storage, with one entry for each contiguous run of disk pages that is also a contiguous set of pages in a file.
+Normally files are allocated more or less contiguously and this structure is not too large.
+If the disk is badly fragmented, however, the structure will not fit in storage.
+When this happens, the Scavenger discards the information for half the files and continues with the other half.
+After the index for these files is rebuilt, the process is repeated for the other files.
+If necessary the work is further subdivided; the method fails only if a single file’s index won’t fit.
+
+Alto의 디스크 조각 모음 프로그램이 이 기법의 좋은 사례라 할 수 있습니다.
+조각 모음 프로그램은 디스크를 스캔한 다음, 디스크의 각 섹터에 기록된 파일 식별자와 페이지 번호를 확인하고, 파일 시스템의 인덱스와 디렉토리 구조를 다시 빌드하는 방식으로 돌아갑니다.
+이 프로그램은 최근에 다시 작성되었는데, 메인 저장 장치에 먼저 데이터 구조를 구축하는 단계를 갖고 있습니다.
+그리고 이 데이터 구조에서는 디스크 페이지와 파일 내 페이지가 모두 연속적으로 이어져 있다면 하나의 엔트리로 구성되게 됩니다.
+일반적으로는 파일이 연속적으로 할당된 정도가 적당하기 때문에, 이 데이터 구조는 지나치게 큰 사이즈가 되지는 않습니다.
+그러나 디스크가 조각나있는 상태가 심각하다면, (엔트리가 너무 많아지므로) 이 데이터 구조는 저장 장치에 들어갈 수 없게 됩니다.
+이런 일이 발생하면, 조각 모음 프로그램은 작업 파일들 절반을 처리하기 위한 정보를 버리고, 나머지 절반에 대해서만 작업을 처리합니다.
+그리고 처리한 파일들의 인덱스가 빌드 완료되면, (포기했던) 나머지 파일들에 대해 작업을 계속 진행합니다.
+물론 이번에도 필요하다면 작업을 또 쪼개서 수행합니다.
+이 방법은 파일 하나의 인덱스가 너무 커서 디스크에 들어갈 수 없는 경우에만 실패합니다.
 
 
 TODO: 작업중
