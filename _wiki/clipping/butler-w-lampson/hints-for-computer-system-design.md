@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-17 22:49:39 +0900
+updated : 2023-04-17 23:07:25 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -222,6 +222,8 @@ Hoare’s hints on language design [19] can thus be read as a supplement to this
 
 #### 2.1 Keep it simple
 
+##### * Do one thing well
+
 > > Perfection is reached not when there is no longer anything to add,
 > > but when there is no longer anything to take away. (A. Saint-Exupery)
 >
@@ -233,8 +235,6 @@ Hoare’s hints on language design [19] can thus be read as a supplement to this
 완벽함은 더 이상 더할 것이 없을 때가 아니라, 더 이상 뺄 것이 없을 때 이루어집니다. (A. 생텍쥐페리)
 
 네가 갖고 있는 친구들, 그들의 성향을 시험해 본 후, 강철의 고리로 너의 영혼에 꽉 붙잡거라; 하지만 새로 사귄 미숙한 친구들과의 교제로 손을 무디게 하지는 말거라.
-
-##### * Do one thing well
 
 >
 _· Do one thing at a time, and do it well_.
@@ -504,13 +504,13 @@ The rule about simplicity and generalization has many interesting corollaries.
 
 단순성과 일반화에 대한 규칙에는 흥미로운 부속 정리들이 많이 있습니다.
 
+##### * Make it fast
+
 > > Costly thy habit as thy purse can buy,  
 > > But not express’d in fancy; rich, not gaudy.
 
 비용이 많이 든다 해도 지갑이 버틸 수 있는 최고의 옷을 입어야 한단다.  
 그러나 화려함에만 길들여지면 안되며, 부유하면서도 과시하지 않도록 해야 한다.
-
-##### * Make it fast
 
 >
 · Make it fast, rather than general or powerful.
@@ -743,12 +743,12 @@ Or if the target is a process in a time-sharing system, the debugger can run in 
 
 **2.4 구현이 작동하게 만들기**
 
+##### * Plan to throw one away
+
 > > Perfection must be reached by degrees; she requires the slow hand of time.
 > > (Voltaire)
 
 완벽함은 단계적으로 도달해야 한다. 그것은 시간의 느린 손길을 필요로 한다. (볼테르)
-
-##### * Plan to throw one away
 
 >
 · Plan to throw one away; you will anyhow [6].
@@ -774,13 +774,13 @@ Even when an implementation is successful, it pays to revisit old decisions as t
 구현이 성공적이었다 하더라도, 시스템이 발전함에 따라 이전 결정들을 재검토하는 것이 유익합니다.
 특히, 시스템 부하나 환경의 특정 속성(예를 들어 메모리 크기)에 대한 최적화가 종종 최적이 아닌 경우가 많기 때문입니다.
 
+##### * Keep secrets
+
 > > Give thy thoughts no tongue,
 > > Nor any unproportion’d thought his act.
 
 생각을 말로 표현하지 말고,  
 무리한 생각을 행동으로 옮기지 말거라.
-
-##### * Keep secrets
 
 >
 · Keep secrets of the implementation.
@@ -821,13 +821,13 @@ Striking the right balance remains an art.
 그리고 대규모 시스템에서는 일반적으로 각 부분을 독립적으로 개선하는 능력이 매우 중요합니다.
 적절한 균형점을 찾는 것은 여전히 예술의 영역입니다.
 
+##### * Divide and conquer
+
 > > O throw away the worser part of it,  
 > > And live the purer with the other half. (III iv 157)
 
 더 나쁜 부분을 버리거라,  
 그리고 남은 반을 더 순수하게 살아가거라.
-
-##### Divide and conquer
 
 >
 · Divide and conquer.
