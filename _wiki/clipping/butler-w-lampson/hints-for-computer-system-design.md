@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-18 22:28:50 +0900
+updated : 2023-04-18 23:19:43 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1057,7 +1057,58 @@ reference-counting의 또 다른 문제점은, 카운트가 할당된 공간을 
 그러므로 4 비트만 있어도 최대 7까지 참조를 카운트할 수 있으며,
 참조 카운트가 4보다 많이 변경되는 드문 경우에만 오버플로 테이블을 사용하게 됩니다.
 
+>
+There are many cases when resources are dynamically allocated and freed (for example, real memory in a paging system), and sometimes additional resources are needed temporarily to free an item (some table might have to be swapped in to find out where to write out a page).
+Normally there is a cushion (clean pages that can be freed with no work), but in the worst case the cushion may disappear (all pages are dirty).
+The trick here is to keep a little something in reserve under a mattress, bringing it out only in a crisis.
+It is necessary to bound the resources needed to free one item;
+this determines the size of the reserve under the mattress, which must be regarded as a fixed cost of the resource multiplexing.
+When the crisis arrives, only one item should be freed at a time, so that the entire reserve is devoted to that job; this may slow things down a lot but it ensures that progress will be made.
 
+다음 사례를 살펴봅시다.
+리소스를 동적으로 할당하고 해제하는 경우가 많은데(예: 페이징 시스템의 실제 메모리),
+때로는 아이템 하나를 해제하기 위해 일시적으로 추가 리소스가 필요한 경우도 있습니다(페이지를 쓸 위치를 찾기 위해 몇몇 테이블을 스왑해야 할 수도 있음).
+보통은 쿠션(작업 없이 해제 가능한 깨끗한 페이지)이 있지만,
+쿠션이 없는 최악의 경우도 있을 수 있습니다(모든 페이지가 더려워진 상황).
+여기에서 중요한 전략은, 매트리스 아래에 약간의 여분을 남겨뒀다가 이런 위기 상황이 발생했을 경우에만 쓰는 것입니다.
+이걸 하려면 아이템 하나를 해제하는 데 필요한 리소스의 양을 정해놔야 합니다.
+이 양을 정해야 매트리스 밑 예비 공간의 크기도 결정할 수 있고, 이 크기를 리소스 다중화를 위한 고정 비용으로 간주하게 됩니다.
+위기 상황이 발생하면 이 공간을 활용해 한 번에 하나의 아이템만이라도 해제할 수 있게 됩니다.
+이 방법은 속도가 몹시 느리겠지만, 어떻게든 돌아가기는 할 것입니다.
+
+>
+Sometimes radically different strategies are appropriate in the normal and worst cases.
+The Bravo editor [24] uses a ‘piece table’ to represent the document being edited.
+This is an array of pieces, pointers to strings of characters stored in a file;
+each piece contains the file address of the first character in the string and its length.
+The strings are never modified during normal editing.
+Instead, when some characters are deleted, for example, the piece containing the deleted characters is split into two pieces, one pointing to the first undeleted string and the other to the second.
+Characters inserted from the keyboard are appended to the file, and the piece containing the insertion point is split into three pieces: one for the preceding characters, a second for the inserted characters, and a third for the following characters.
+After hours of editing there are hundreds of pieces and things start to bog down.
+It is then time for a cleanup, which writes a new file containing all the characters of the document in order.
+Now the piece table can be replaced by a single piece pointing to the new file, and editing can continue.
+Cleanup is a specialized kind of garbage collection.
+It can be done in background so that the user doesn’t have to stop editing (though Bravo doesn’t do this).
+
+때로는 정상적인 경우와 최악의 경우에 대해 근본적으로 다른 전략이 필요할 수도 있습니다.
+Bravo 에디터는 편집중인 문서를 나타내기 위해 '조각 테이블'이란 것을 사용합니다.
+이 테이블은 '조각'들로 이루어진 배열인데, '조각'이란 파일에 저장된 string들을 가리키는 포인터를 말합니다.
+각각의 '조각'에는 string의 첫 번째 글자의 파일 주소, 그리고 string의 길이가 포함되어 있습니다.
+Bravo 에디터에서 일반적인 편집을 하는 중에는 string이 수정되지 않습니다.
+그런데 예를 들어서 문자를 삭제할 때, 삭제된 문자가 들어있었던 '조각'이 두 개의 '조각'으로 나뉘게 됩니다.
+첫번째 '조각'은 삭제되지 않은 원래의 string을 가리키고,
+두번째 '조각'은 삭제된 문자 다음 부분의 string을 가리키게 됩니다.
+키보드로 입력한 문자는 파일에 추가되고 추가된 지점을 포함하는 '조각'은
+앞의 문자를 위한 '조각', 추가된 문자를 위한 '조각', 그리고 뒤의 문자를 위한 '조각' 이렇게 3개의 '조각'으로 나뉘게 됩니다.
+몇 시간 동안 문서를 편집하다 보면 수 백개의 '조각'이 생겨나게 되어 시스템이 매우 느려지게 됩니다.
+그러면 '정리 작업'을 하게 되는데, 문서의 모든 문자를 순서대로 새로운 파일에 쓰는 방식입니다.
+정리가 끝나면 '조각 테이블'을 새로 만든 파일을 가리키는 하나의 '조각'으로 교체하고, 편집을 계속할 수 있게 됩니다.
+'정리 작업'은 특수한 종류의 가비지 컬렉션이라 할 수 있습니다.
+이 작업은 백그라운드에서 실행되기 때문에 사용자가 편집을 중단하지 않아도 됩니다(하지만 Bravo 에디터는 이 작업을 백그라운드에서 실행하지 않습니다).
+
+### 3. Speed
+
+**3. 속도**
 
 TODO: 작업중
 
