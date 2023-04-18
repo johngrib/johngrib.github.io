@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-17 23:30:56 +0900
+updated : 2023-04-18 22:28:50 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -998,8 +998,117 @@ Of course the system must have decent error recovery (an application of the end-
 끔찍한 방법처럼 들리겠지만, 일주일에 한 번의 강제 종료로 20%의 성능 향상을 얻을 수 있어서 비용 대비 효과적인 선택이기도 합니다.
 물론 시스템은 적절한 에러 복구 기능(엔드 투 엔드 원칙의 응용. 4장 참고)을 가져야 하는데, 충돌의 원인이 다양하기 때문에 이건 원래 필요한 기능이라 할 수 있습니다.
 
+>
+Caches and hints (section 3) are examples of special treatment for the normal case, but there are many others.
+The Interlisp-D and Cedar programming systems use a reference-counting garbage collector [11] that has an important optimization of this kind.
+Pointers in the local frames or activation records of procedures are not counted; instead, the frames are scanned whenever garbage is collected.
+This saves a lot of reference-counting, since most pointer assignments are to local variables.
+There are not very many frames, so the time to scan them is small and the collector is nearly real-time.
+Cedar goes farther and does not keep track of which local variables contain pointers; instead, it assumes that they all do.
+This means that an integer that happens to contain the address of an object which is no longer referenced will keep that object from being freed.
+Measurements show that less than 1% of the storage is incorrectly retained [45].
+
+캐시와 힌트(section 3)는 일반적인 케이스를 위한 특별한 처리의 예이지만,
+다른 경우도 많이 있습니다.
+Interlisp-D와 Cedar 프로그래밍 시스템은 reference-counting 기반의 가비지 컬렉터를 사용하는데, 이런 종류의 중요한 최적화가 포함되어 있습니다.
+로컬 프레임의 포인터나 프로시저의 활성 레코드에 있는 포인터는 카운트하지 않는 것입니다.
+대신, 가비지를 수집할 때마다 프레임들을 스캔합니다.
+포인터 할당은 대부분 로컬 변수에 대해 이루어지기 때문에, 이렇게 하면 reference-counting 작업을 많이 절약할 수 있습니다.
+프레임의 수는 많지 않기 때문에, 스캔하는 데 걸리는 시간이 짧으므로 가비지 컬렉터는 거의 실시간으로 작동하게 됩니다.
+Cedar는 여기에서 더 나아가서, 어떤 로컬 변수에 포인터가 포함되어 있는지를 추적하지 않고 아예 모든 변수에 포인터가 포함되어 있다고 가정하고 작동합니다.
+즉, 만약에 더 이상 참조되지 않는 객체의 주소값을 갖고 있는 integer가 있다면, 해당 객체가 해제되지 않는 것입니다.
+측정을 해보니 1% 미만의 스토리지가 잘못 유지되는 것을 알 수 있었습니다.
+
+>
+Reference-counting makes it easy to have an incremental collector, so that computation need not stop during collection.
+However, it cannot reclaim circular structures that are no longer reachable.
+Cedar therefore has a conventional trace-and-sweep collector as well.
+This is not suitable for real time applications, since it stops the entire system for many seconds, but in interactive applications it can be used during coffee breaks to reclaim accumulated circular structures.
+
+Reference-counting 덕분에 증분 컬렉터를 쉽게 구현할 수 있게 되어, 컬렉션이 진행되는 동안 계산을 중단할 필요가 없어졌습니다.
+그러나 접근 불가능한 순환 구조를 갖는 참조를 회수할 수 없다는 문제가 있습니다.
+따라서 Cedar는 기존의 trace-and-sweep 컬렉터도 함께 사용합니다.
+이 방법은 전체 시스템을 수 초 동안 정지시키기 때문에 실시간 애플리케이션에는 적합하지 않지만,
+대화형 애플리케이션에서는 커피 마시러 간 사이에(휴식 시간에) 누적된 순환 참조를 회수하는 데 활용할 수 있습니다.
+
+>
+Another problem with reference-counting is that the count may overflow the space provided for it.
+This happens very seldom, because only a few objects have more than two or three references.
+It is simple to make the maximum value sticky.
+Unfortunately, in some applications the root of a large structure is referenced from many places; if the root becomes sticky, a lot of storage will unexpectedly become permanent.
+An attractive solution is to have an ‘overflow count’ table, which is a hash table keyed on the address of an object.
+When the count reaches its limit it is reduced by half, the overflow count is increased by one, and an overflow flag is set in the object.
+When the count reaches zero, the process is reversed if the overflow flag is set.
+Thus even with as few as four bits there is room to count up to seven, and the overflow table is touched only in the rare case that the count swings by more than four.
+
+reference-counting의 또 다른 문제점은, 카운트가 할당된 공간을 초과할 수 있다는 것입니다.
+이런 경우는 매우 드물게 발생하는데, 참조가 2~3개를 초과하는 객체가 매우 적기 때문입니다.
+최대값을 고정시키면 이 문제를 간단하게 해결할 수 있습니다.
+그러나 안타깝게도 일부 애플리케이션에서는 큰 구조의 루트 객체가 많은 곳에서 참조되는 경우가 있습니다.
+만약 루트 객체가 다른 많은 객체의 참조를 단단하게 쥐고 있다면, 상당한 양의 스토리지를 영구적으로 차지하게 되는 예상치 못한 문제가 발생합니다.
+
+이에 대한 매력적인 해결책은 '오버플로 카운트 테이블'을 도입하는 것입니다.
+{:id="overflow-count-table"}
+
+이 테이블은 객체의 주소를 key로 삼는 해시 테이블입니다.
+'참조 카운트'가 설정된 최대값에 도달하면 '참조 카운트'를 반으로 줄이고,
+'오버플로 카운트'를 1 증가시키며, 해당 객체에 오버플로 플래그를 설정합니다.
+'참조 카운트'가 0 이 되었을 때, 오버플로 플래그가 설정되어 있다면 이 과정을 반대로 수행합니다.
+그러므로 4 비트만 있어도 최대 7까지 참조를 카운트할 수 있으며,
+참조 카운트가 4보다 많이 변경되는 드문 경우에만 오버플로 테이블을 사용하게 됩니다.
+
+
 
 TODO: 작업중
+
+## 번역하며 남긴 메모
+
+### 참조 카운트 오버플로를 방지하기 위한 오버플로 테이블 알고리즘 시뮬레이션
+
+다음은 [오버플로 카운트 테이블]( #overflow-count-table )의 동작을 시뮬레이션 해 본 것이다.
+
+- 전제
+    - 참조 카운트의 최대값은 8 로 설정했다.
+    - 변수 a가 시뮬레이션의 주인공이다.
+    - 변수 a를 참조하는 객체는 현재 7개가 있다. 즉, a의 참조 카운트는 7 이다.
+    - 변수 a의 주소는 1234 이며, 아직 오버플로 테이블에 등록되지 않았다.
+
+시뮬레이션을 해보자.
+
+1. 현재 상태.
+    - a의 참조 카운트: `7`
+    - a의 오버플로 플래그: `false`
+    - 오버플로 카운트 테이블: `{}`
+2. 변수 a를 참조하는 새로운 객체가 생겨났다.
+    - a의 참조 카운트: `8`
+    - a의 오버플로 플래그: `false`
+    - 오버플로 카운트 테이블: `{}`
+3. a의 참조 카운트가 최대값인 8에 도달했으므로, a의 참조 카운트를 반으로 나누고, a에 오버플로 플래그를 설정하고, 오버플로 카운트 테이블에 a의 오버플로 횟수를 저장한다.
+    - a의 참조 카운트: `4`
+    - a의 오버플로 플래그: `true`
+    - 오버플로 카운트 테이블: `{key: 1234, value: 1}`
+        - `1234`는 a의 주소이고, `1`은 오버플로 카운트이다.
+    - (실제로 a를 참조하는 객체의 수: 8)
+        - 참조 카운트는 4 이지만, 최대값이 8이라는 것과 오버플로 카운트가 1이라는 것을 통해 실제 a를 참조하는 객체의 수는 4 + 8/2 = 8 이라는 것을 알 수 있다.
+4. a를 참조하는 객체 4개가 생겨났다.
+    - a의 참조 카운트: 4 + 4 = `8`
+    - 오버플로 카운트 테이블: `{key: 1234, value: 1}`
+    - (실제로 a를 참조하는 객체의 수: 12)
+5. a의 참조 카운트가 최대값인 8에 또 도달했으므로... 반으로 줄이고 오버플로 카운트를 1 증가시킨다.
+    - a의 참조 카운트: `4`
+    - a의 오버플로 플래그: `true`
+    - 오버플로 카운트 테이블: `{key: 1234, value: 2}`
+    - (실제로 a를 참조하는 객체의 수: 12)
+7. a를 참조하는 객체 4개가 사라졌다고 하자.
+    - a의 참조 카운트: `0`
+    - a의 오버플로 플래그: `true`
+    - 오버플로 카운트 테이블: `{key: 1234, value: 2}`
+    - (실제로 a를 참조하는 객체의 수: 8)
+8. 참조 카운트가 0 이 되었는데 오버플로 플래그가 설정되어 있으므로, 오버플로 카운트를 1 줄이고 참조 카운트를 4 복원한다.
+    - a의 참조 카운트: `4`
+    - a의 오버플로 플래그: `true`
+    - 오버플로 카운트 테이블: `{key: 1234, value: 1}`
+    - (실제로 a를 참조하는 객체의 수: 8)
 
 ## Links
 
