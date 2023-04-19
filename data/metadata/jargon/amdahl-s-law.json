@@ -3,8 +3,8 @@
  "title": "암달의 법칙 (Amdahl's law)",
  "summary": "S = 1 / ((1-f) + f/s)",
  "parent": "jargon",
- "url": "/wiki/amdahl-s-law",
- "updated": "2020-08-03 08:08:35 +0900",
+ "url": "/wiki/jargon/amdahl-s-law",
+ "updated": "2023-04-19 20:28:58 +0900",
  "resource": "ED/A4B409-6647-443D-94B7-54A59987ABB8",
  "children": []
 }

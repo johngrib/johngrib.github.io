@@ -1,8 +1,8 @@
 [
- "amdahl-s-law",
  "constantine-s-law",
  "Conway-s-law",
  "jargon/airplane-rule",
+ "jargon/amdahl-s-law",
  "jargon/brooks-s-law",
  "jargon/law-of-demeter",
  "jargon/postel-s-law",

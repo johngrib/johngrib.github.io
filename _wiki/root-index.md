@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-16 00:05:19 +0900
+updated : 2023-04-19 20:28:53 +0900
 regenerate: true
 ---
 * TOC
@@ -438,6 +438,7 @@ regenerate: true
 
 * [[/jargon/20-percent-project]]
 * [[/jargon/airplane-rule]]
+* [[/jargon/amdahl-s-law]]
 * [[/jargon/another-level-of-indirection]]
 * [[/jargon/backus-naur-form]]
 * [[/jargon/biondi-s-law]]
@@ -463,7 +464,6 @@ regenerate: true
 * [[/jargon/two-pizza-team]]
 * [[/jargon/zero-overhead-principle]]
 
-* [[/amdahl-s-law]]
 * [[/CAP-theorem]]
 * [[/constantine-s-law]]
 * [[/Conway-s-law]]
