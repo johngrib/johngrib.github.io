@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-19 20:23:49 +0900
+updated : 2023-04-19 21:51:21 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1168,7 +1168,56 @@ Unless the disk is ridiculously fragmented the space thus consumed is less than 
 따라서 Interlisp에서는 그렇게 하지 않고 실제 메모리를 이 용도에 전용으로 할당합니다.
 디스크가 터무니 없을 정도로 단편화되지 않는 이상, 이 용도로 사용되는 공간은 순환 참조를 방지하기 위해 추가되었을 공간보다는 작은 영역을 사용합니다.
 
-#### Use static analysis
+#### * Use static analysis
+
+>
+· Use static analysis if you can; this is a generalization of the last slogan.
+Static analysis discovers properties of the program that can usually be used to improve its performance.
+The hooker is "if you can"; when a good static analysis is not possible, don’t delude yourself with a bad one, but fall back on a dynamic scheme.
+
+가능하다면 정적 분석을 사용하라. 이것은 이전 슬로건을 일반화한 것입니다.
+정적 분석은 프로그램의 성능을 개선하는 데 사용할 수 있는 프로그램의 특성을 발견합니다.
+여기에서 "가능하다면"이라는 말이 중요합니다.
+좋은 정적 분석이 불가능한 상황이라면 나쁜 정적 분석으로 자신을 속이거나 하지 말고 동적 분석 방법을 사용하세요.
+
+>
+The remarks about registers above depend on the fact that the compiler can easily decide how to allocate them, simply by putting the local variables and temporaries there.
+Most machines lack multiple sets of registers or lack a way of stacking them efficiently.
+Good allocation is then much more difficult, requiring an elaborate inter-procedural analysis that may not succeed, and in any case must be redone each time the program changes.
+So a little bit of dynamic analysis (stacking the registers) goes a long way.
+Of course the static analysis can still pay off in a large procedure if the compiler is clever.
+
+앞에서 언급했던 레지스터 이야기는 컴파일러가 로컬 변수와 임시 변수를 쉽게 할당할 수 있다는 사실에 기반합니다.
+단순하게 로컬 변수와 임시 변수를 레지스터에 넣으면 되는 것입니다.
+그러나 대부분의 머신은 여러 개의 레지스터 셋을 갖고 있지 않거나, 효율적으로 스택을 쌓는 방법이 없습니다.
+따라서 좋은 할당은 꽤나 어려운 일이며, 성공할 보장이 없을 수도 있는 복잡한 프로시저 간 분석이 필요하고, 프로그램이 변경될 때마다 다시 돌려봐야 합니다.
+따라서 작은 규모의 동적 분석(레지스터 스택)이 큰 도움이 될 수 있습니다.
+물론 컴파일러가 똑똑하다면 큰 규모의 프로시저에서도 정적 분석이 효과가 있을 것입니다.
+
+>
+A program can read data much faster when it reads the data sequentially.
+This makes it easy to predict what data will be needed next and read it ahead into a buffer.
+Often the data can be allocated sequentially on a disk, which allows it to be transferred at least an order of magnitude faster.
+These performance gains depend on the fact that the programmer has arranged the data so that it is accessed according to some predictable pattern, that is, so that static analysis is possible.
+Many attempts have been made to analyze programs after the fact and optimize the disk transfers, but as far as I know this has never worked.
+The dynamic analysis done by demand paging is always at least as good.
+
+프로그램이 데이터를 순차적으로 읽으면 데이터를 훨씬 빠르게 읽을 수 있습니다.
+순차적으로 데이터를 읽으면 다음에 어떤 데이터가 필요할지 쉽게 예측하고 버퍼에 미리 읽어들일 수 있게 됩니다.
+데이터가 디스크에 순차적으로 할당되는 경우가 흔한 편인데, 이런 경우에는 데이터를 전송하는 속도가 적어도 10배 이상으로 빨라집니다.
+이러한 성능 향상은 프로그래머가 데이터를 예측 가능한 패턴에 따라 접근할 수 있게 배열해놨다는 사실에 기반합니다.
+즉, 정적 분석이 가능하다는 것입니다.
+프로그램을 사후에 분석하여 디스크 전송을 최적화하려는 다양한 시도가 있었지만, 내가 알기로 이런 방법들은 결코 성공하지 못했습니다.
+그런 방법들보다 적어도 수요 페이징(demand paging)[^what-demand-paging]에 의한 동적 분석이 언제나 더 좋았습니다.
+
+>
+Some kinds of static analysis exploit the fact that some invariant is maintained.
+A system that depends on such facts may be less robust in the face of hardware failures or bugs in software that falsify the invariant.
+
+어떤 종류의 정적 분석은 일부 불변성이 유지된다는 사실을 악용합니다.
+이런 사실에 의존하는 시스템은 하드웨어 오류나 불변성을 위반하는 소프트웨어 버그에 대한 안정성이 떨어질 수 있습니다.
+
+#### * Dynamic translation
 
 
 
@@ -1240,3 +1289,5 @@ TODO: 작업중
 [^ewd-32]: 역주: Algol 60에 대한 이야기는 [[/clipping/ewd/32]]도 읽어볼 만하다.
 [^what-bookkeeping]: 역주: bookkeeping은 정보의 상태를 추적, 관리, 유지하는 연산을 말한다. 메모리 할당, 해제, 참조 관리 등이 해당된다. ([참고]( https://encyclopedia2.thefreedictionary.com/bookkeeping+operation ))
 [^hamlet-and-makes-us]: 역주: 셰익스피어의 햄릿에서 유명한 "To be or not to be" 이후에 이어지는 부분에 이 문장이 있다.
+[^what-demand-paging]: 역주: 가상 메모리 시스템에서 사용하는 메모리 관리 기법 중 하나. 필요한 페이지를 요청할 때만 해당 페이지를 메모리에 로딩한다.
+
