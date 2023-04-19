@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-18 23:19:43 +0900
+updated : 2023-04-19 20:23:49 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1109,6 +1109,68 @@ Bravo 에디터에서 일반적인 편집을 하는 중에는 string이 수정�
 ### 3. Speed
 
 **3. 속도**
+
+>
+This section describes hints for making systems faster, forgoing any further discussion of why this is important.
+Bentley’s excellent book [55] says more about some of these ideas and gives many others.
+
+이 섹션에서는 시스템을 더 빠르게 만들기 위한 힌트를 설명하며, 이것이 왜 중요한지에 대한 설명은 생략합니다.
+Bentley의 훌륭한 책에서 이런 아이디어 중 몇몇을 자세히 설명하고, 관련 주제들도 소개하고 있습니다.
+
+#### * Split resources
+
+> > Neither a borrower, nor a lender be;  
+For loan oft loses both itself and friend,  
+And borrowing dulleth edge of husbandry.
+
+빌리지도 말고, 빌려주지도 말거라.  
+돈을 빌리면 돈과 친구 모두를 잃게 되곤 한단다.  
+빌리는 것은 절약의 날카로움을 무디게 한다.
+
+>
+· Split resources in a fixed way if in doubt, rather than sharing them.
+It is usually faster to allocate dedicated resources, it is often faster to access them, and the behavior of the allocator is more predictable.
+The obvious disadvantage is that more total resources are needed, ignoring multiplexing overheads, than if all come from a common pool.
+In many cases, however, the cost of the extra resources is small, or the overhead is larger than the fragmentation, or both.
+
+자원을 고정적으로 분할해서 사용하라. 확실하지 않은 경우라면 리소스를 공유하는 것보다 공유하지 않는 것이 낫습니다.
+일반적으로 전용으로 분할된 리소스는 빠르게 할당할 수 있고, 접근이 빠르며, 할당기의 동작도 더 예측하기 쉽습니다.
+
+단편화에 분명한 단점이 있긴 합니다. 다중화 오버헤드를 따로 고려하지 않을 때, 공유 풀에서 자원을 가져오는 것에 비해 더 많은 전체 자원이 필요하다는 것입니다.
+그러나 대부분의 경우 자원 단편화로 인한 추가 리소스의 비용이 적은 편이고, 단편화 때문에 낭비되는 비용보다 다중화 오버헤드가 더 크기도 합니다. 두 가지가 모두 해당되는 경우도 많습니다.
+
+>
+For example, it is always faster to access information in the registers of a processor than to get it from memory, even if the machine has a high-performance cache.
+Registers have gotten a bad name because it can be tricky to allocate them intelligently, and because saving and restoring them across procedure calls may negate their speed advantages.
+But when programs are written in the approved modern style with lots of small procedures, 16 registers are nearly always enough for all the local variables and temporaries, so that allocation is not a problem.
+With n sets of registers arranged in a stack, saving is needed only when there are n successive calls without a return [14, 39].
+
+예를 들어, 컴퓨터에 고성능 캐시가 있더라도 메모리에서 정보를 가져오는 것보다 프로세서의 레지스터에 있는 정보에 접근하는 것이 무조건 더 빠릅니다.
+레지스터는 악명이 높은 편인데, 지능적으로 할당하기가 꽤 어렵고 프로시저가 실행될 때마다 레지스터를 저장하고 복원하고 저장하고 복원하고 하면 속도라는 장점이 사라지기 때문입니다.
+그러나 작은 프로시저를 많이 사용하는 현대적 스타일로 작성된 프로그램이라면, 16개의 레지스터는 대부분의 경우에 모든 로컬 변수와 임시 변수를 담기에 충분하므로 레지스터 할당은 문제가 되지 않습니다.
+스택에 레지스터 집합 n 개가 들어가는 구조에서 `return` 없이 n번의 호출이 연속되는 경우에만 레지스터 저장이 필요하게 됩니다.
+
+>
+Input/output channels, floating-point coprocessors, and similar specialized computing devices are other applications of this principle.
+When extra hardware is expensive these services are provided by multiplexing a single processor, but when it is cheap, static allocation of computing power for various purposes is worthwhile.
+
+I/O 채널, 부동소수점 코프로세서와 같은 특수한 컴퓨팅 장치는 이 원칙의 다른 예시라 할 수 있습니다.
+추가적인 하드웨어가 값비싸다면 하나의 프로세서를 다중화하는 방식으로 서비스를 제공할 수 있을 것입니다. 그러나 하드웨어가 저렴하다면 다양한 용도로 컴퓨팅 파워를 정적으로 할당하는 것이 더 낫습니다.
+
+>
+The Interlisp virtual memory system mentioned earlier [7] needs to keep track of the disk address corresponding to each virtual address.
+This information could itself be held in the virtual memory (as it is in several systems, including Pilot [42]), but the need to avoid circularity makes this rather complicated.
+Instead, real memory is dedicated to this purpose.
+Unless the disk is ridiculously fragmented the space thus consumed is less than the space for the code to prevent circularity.
+
+앞에서 언급했던 Interlisp 가상 메모리 시스템은 각각의 가상 주소에 해당하는 디스크의 주소를 추적해야 합니다.
+이 정보 자체도 가상 메모리에 저장될 수 있습니다만(Pilot을 포함한 여러 시스템에서는 이런 방법을 씁니다), 순환 참조를 피하기 위해 꽤 복잡한 처리를 해야 합니다.
+따라서 Interlisp에서는 그렇게 하지 않고 실제 메모리를 이 용도에 전용으로 할당합니다.
+디스크가 터무니 없을 정도로 단편화되지 않는 이상, 이 용도로 사용되는 공간은 순환 참조를 방지하기 위해 추가되었을 공간보다는 작은 영역을 사용합니다.
+
+#### Use static analysis
+
+
 
 TODO: 작업중
 
