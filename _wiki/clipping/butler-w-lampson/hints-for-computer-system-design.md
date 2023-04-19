@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-19 22:08:15 +0900
+updated : 2023-04-20 00:34:56 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1219,9 +1219,49 @@ A system that depends on such facts may be less robust in the face of hardware f
 
 #### * Dynamic translation
 
-TODO: 작업중
+>
+· Dynamic translation from a convenient (compact, easily modified or easily displayed) representation to one that can be quickly interpreted is an important variation on the old idea of compiling.
+Translating a bit at a time is the idea behind separate compilation, which goes back at least to Fortran 2.
+Incremental compilers do it automatically when a statement, procedure or whatever is changed.
+Mitchell investigated smooth motion on a continuum between the convenient and the fast representation [34].
+A simpler version of his scheme is to always do the translation on demand and cache the result; then only one interpreter is required, and no decisions are needed except for cache replacement.
+
+편리한(간결하거나, 쉽게 수정할 수 있거나, 쉽게 표시할 수 있는) 표현에서 빠르게 해석될 수 있는 표현으로의 동적 번역은 컴파일이라는 오래된 개념에 대한 중요한 변형이라 할 수 있습니다.
+한 번에 조금씩 번역하는 것이 분할 컴파일의 기본적인 아이디어이며, 적어도 Fortran 2부터 이런 방식이 존재했습니다.
+증분 컴파일러는 문장이 되었건 프로시저가 되었건 무엇이건 변경되기만 하면 자동으로 작동합니다.
+Mitchell은 편리한 표현과 빠른 표현 사이를 원활하게 전환할 수 있는 절충점을 찾는 연구를 진행했습니다.
+그의 연구 결과를 단순화한 버전은 항상 요청할 때에만 번역을 하고 그 결과를 캐시에 저장하는 방법을 씁니다.
+그러면 한 개의 인터프리터만 필요하고, 캐시 교체 외에 다른 결정은 필요하지 않습니다.
+
+>
+For example, an experimental Smalltalk implementation [12] uses the bytecodes produced by the standard Smalltalk compiler as the convenient (in this case, compact) representation, and translates a single procedure from byte codes into machine language when it is invoked.
+It keeps a cache with room for a few thousand instructions of translated code.
+For the scheme to pay off, the cache must be large enough that on the average a procedure is executed at least n times, where n is the ratio of translation time to execution time for the untranslated code.
+
+예를 들어, Smalltalk의 어떤 실험적인 구현체는 표준 Smalltalk 컴파일러가 생성하는 바이트 코드를 편리한(이 경우에는 압축한) 표현으로 사용하고, 호출될 때마다 프로시저를 바이트 코드에서 기계어로 번역합니다.
+그 구현체는 번역된 코드의 명령어 수 천개를 저장할 수 있는 캐시를 유지합니다.
+이 방법이 효과를 보려면 캐시가 충분할 정도로 크게 할당되어야 합니다.
+그리고 프로시저가 평균적으로 최소 n회 실행되어야 합니다.
+여기에서 n은 번역되지 않은 코드의 실행 시간에 대한 번역 시간의 비율입니다.
+[^smalltalk-implementation]
+
+>
+The C-machine stack cache [14] provides a rather different example.
+In this device instructions are fetched into an instruction cache; as they are loaded, any operand address that is relative to the local frame pointer FP is converted into an absolute address, using the current value of FP (which remains constant during execution of the procedure).
+In addition, if the resulting address is in the range of addresses currently in the stack data cache, the operand is changed to register mode; later execution of the instruction will then access the register directly in the data cache.
+The FP value is concatenated with the instruction address to form the key of the translated instruction in the cache, so that multiple activations of the same procedure will still work.
+
+C-machine 스택 캐시는 좀 다른 사례를 보여줍니다.
+이 장치는 명령어를 명령어 캐시로 가져옵니다.
+명령어가 로드되는 동안 로컬 프레임 포인터 FP[^frame-pointer]에서 피연산자의 상대주소는 현재의 FP(프로시저 실행 중에는 상수로 유지됨)를 사용해 절대주소로 변환됩니다.
+또한 그렇게 변환된 절대주소가 현재 스택 데이터 캐시에 있는 주소 범위에 포함된다면, 피연산자는 레지스터 모드로 전환됩니다.
+그리고 나서 명령어가 실행되면 데이터 캐시에 있는 레지스터에 직접 접근합니다.
+FP 값은 명령어 주소와 연결되며, 캐시에 있는 번역된 명령어의 키를 만들게 됩니다. 따라서 동일한 프로시저를 여러번 활성화해도 여전히 잘 작동합니다.
 
 #### * Cache answers
+
+TODO: 작업중
+
 #### * Use hints
 #### * When it doubt, use brute force
 #### * Compute in background
@@ -1302,4 +1342,5 @@ TODO: 작업중
 [^what-bookkeeping]: 역주: bookkeeping은 정보의 상태를 추적, 관리, 유지하는 연산을 말한다. 메모리 할당, 해제, 참조 관리 등이 해당된다. ([참고]( https://encyclopedia2.thefreedictionary.com/bookkeeping+operation ))
 [^hamlet-and-makes-us]: 역주: 셰익스피어의 햄릿에서 유명한 "To be or not to be" 이후에 이어지는 부분에 이 문장이 있다.
 [^what-demand-paging]: 역주: 가상 메모리 시스템에서 사용하는 메모리 관리 기법 중 하나. 필요한 페이지를 요청할 때만 해당 페이지를 메모리에 로딩한다.
-
+[^smalltalk-implementation]: 역주: 기계어로 번역한 코드를 많이 실행할수록 코드를 번역하는 데 소모해버린 시간을 만회하게 된다. 그리고 n 회 실행한 시점부터는 성능상의 이득을 보게 될 것이다. `n = 번역하는 데 사용한 시간 / 번역되지 않은 코드의 실행 시간`이므로 만약 `n = 2 / 1` 이라면 실행 시간이 1인 코드를 번역하는 데 2의 시간을 사용한 것이라 생각할 수 있다.
+[^frame-pointer]: 역주: Frame Pointer. 함수 호출 스택에서 스택 프레임 하나를 가리키는 포인터.
