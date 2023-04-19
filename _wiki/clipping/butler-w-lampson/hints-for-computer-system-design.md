@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-19 21:51:21 +0900
+updated : 2023-04-19 22:08:15 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1219,9 +1219,21 @@ A system that depends on such facts may be less robust in the face of hardware f
 
 #### * Dynamic translation
 
-
-
 TODO: 작업중
+
+#### * Cache answers
+#### * Use hints
+#### * When it doubt, use brute force
+#### * Compute in background
+#### * Use batch processing
+#### * Safety first
+#### * Shed load
+### 4. Fault-tolerance
+#### * End-to-end
+#### * Log updates
+#### * Make actions atomic or restartable
+### 5. Conclusion
+### Acknowledgments
 
 ## 번역하며 남긴 메모
 
