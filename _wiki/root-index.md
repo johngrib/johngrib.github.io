@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-19 20:50:07 +0900
+updated : 2023-04-20 23:09:26 +0900
 regenerate: true
 ---
 * TOC
@@ -131,6 +131,7 @@ regenerate: true
 * [[/people/fred-brooks]]
 * [[/people/gerald-weinberg]]
 * [[/people/grady-booch]]
+* [[/people/jeff-bezos]]
 * [[/people/john-w-backus]]
 * [[/people/larry-ellison]]
 * [[/people/linus-torvalds]]
@@ -140,7 +141,6 @@ regenerate: true
 * [[/James-Gosling-super-programmer]]
 * [[/John-von-Neumann]]
 * [[/claude-elwood-shannon]]
-* [[/jeff-bezos]]
 
 ## [[/how-to]]
 
