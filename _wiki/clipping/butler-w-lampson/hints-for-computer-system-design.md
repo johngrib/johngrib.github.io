@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-21 09:41:20 +0900
+updated : 2023-04-21 15:46:33 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1307,10 +1307,100 @@ Virtual memory systems do exactly the same thing; main storage plays the role of
 가상 메모리 시스템도 이와 정확히 같은 방식으로 작동합니다.
 다만 메인 스토리지가 캐시의 역할을 하고, 디스크가 메인 스토리지의 역할을 하며, 페이지, 세그먼트 등이 전송 단위가 됩니다.
 
+>
+But nearly every non-trivial system has more specialized applications of caching.
+This is especially true for interactive or real-time systems, in which the basic problem is to incrementally update a complex state in response to frequent small changes.
+Doing this in an ad hoc way is extremely error-prone.
+The best organizing principle is to recompute the entire state after each change but cache all the expensive results of this computation.
+A change must invalidate at least the cache entries that it renders invalid; if these are too hard to identify precisely, it may invalidate more entries at the price of more computing to reestablish them.
+The secret of success is to organize the cache so that small changes invalidate only a few entries.
+
+그러나 거의 모든 단순하지 않은 시스템은 더 특화된 캐싱 기법을 사용합니다.
+특히 상호작용적이거나 실시간성 시스템이 그런 편입니다.
+이러한 시스템의 기본적인 문제는 빈번하게 발생하는 작은 변경에 대해 응답하며 복잡한 상태를 점진적으로 업데이트하는 것입니다.
+이런 작업을 그때 그때의 특정 상황에 따라 수행하는 것은 매우 오류가 발생하기 쉽습니다.
+변경 사항이 발생하면 전체적으로 상태를 다시 계산하지만, 계산 비용이 많이 드는 결과는 모두 캐시하는 것이 이를 조직화하는 최선의 원칙이라 할 수 있습니다.
+그리고 변경으로 인해 무효화해야 하는 캐시 항목의 수를 최소화해야합니다.
+만약 무효화할 항목들을 정확하게 식별하는 것이 너무 어렵다면, 더 많은 항목들을 무효화하게 될 테니, 결과적으로 더 많은 계산을 수행하게 됩니다.
+성공의 비결은 작은 변경으로 인해 무효화되는 항목이 최소화되도록 캐시를 구성하는 것입니다.
+
+>
+For example, the Bravo editor [24] has a function `DisplayLine(document, firstChar)` that returns the bitmap for the line of text in the displayed document that has `document[firstChar]` as its first character.
+It also returns lastChar and lastCharUsed, the numbers of the last character displayed on the line and the last character examined in computing the bitmap (these are usually not the same, since it is necessary to look past the end of the line in order to choose the line break).
+This function computes line breaks, does justification, uses font tables to map characters into their raster pictures, etc.
+There is a cache with an entry for each line currently displayed on the screen, and sometimes a few lines just above or below.
+An edit that changes characters i through j invalidates any cache entry for which [firstChar .. lastCharUsed] intersects [i .. j].
+The display is recomputed by
+
+예를 들어 Bravo 편집기는 `DisplayLine(document, firstChar)`라는 함수를 갖고 있습니다.
+이 함수는 화면에 표시된 문서의 텍스트 중 첫 번째 문자가 `document[firstChar]`인 행의 비트맵을 리턴합니다.
+그리고 `lastChar`와 `lastCharUsed`도 리턴하는데, 이는 행에 표시된 마지막 문자의 번호와 비트맵을 계산할 때 검토한 마지막 문자의 번호입니다(이 두 마지막 문자는 일반적으로 같지 않은 경우가 많은데, 줄바꿈을 어디에서 할 지 결정하려면 행의 끝을 확인해야 하기 때문입니다).
+이 함수는 줄바꿈 위치를 계산해 찾아내고, 정렬을 수행하고, 폰트 테이블을 사용해 문자를 래스터 이미지로 매핑하는 등의 작업을 수행합니다.
+Bravo 편집기에서는 현재 화면에 표시된 각 행(화면의 위나 아래에 몇 줄이 더 있기도 합니다)에 대한 캐시 항목이 있습니다.
+`i` 번째 문자부터 `j` 번째 문자까지의 문자를 변경하는 편집 작업은 `[firstChar .. lastCharUsed]`에서 `[i .. j]`에 해당되는 캐시 항목을 무효화하게 됩니다.
+그래서 화면 출력은 다음과 같이 재계산됩니다.
+
+```
+loop
+    (bitMap, lastChar, ) := DisplayLine(document, firstChar); Paint(bitMap); 
+    firstChar := lastChar + 1
+end loop
+```
+
+>
+The call of `DisplayLine` is short-circuited by using the cache entry for `[document, firstChar]` if it exists.
+At the end any cache entry that has not been used is discarded; these entries are not invalid, but they are no longer interesting because the line breaks have changed so that a line no longer begins at these points.
+
+`[document, firstChar]`에 대한 캐시된 항목이 있을 때 `DisplayLine` 함수를 호출하면 캐시를 사용해 숏 서킷으로 리턴됩니다.
+그리고 마지막에 사용되지 않은 모든 캐시 엔트리는 삭제됩니다.
+이런 엔트리는 무효가 아니긴 하지만, 줄바꿈의 변경으로 인해 해당 지점에서 새로운 행이 시작되지 않게 되므로 버려도 상관없는 것입니다.
+
+>
+The same idea can be applied in a very different setting.
+Bravo allows a document to be structured into paragraphs, each with specified left and right margins, inter-line leading, etc.
+In ordinary page layout all the information about the paragraph that is needed to do the layout can be represented very compactly:
+>
+- the number of lines;
+- the height of each line (normally all lines are the same height); 
+- any keep properties;
+- the pre and post leading.
+
+같은 아이디어를 매우 다른 상황에도 적용해볼 수 있습니다.
+Bravo 에디터는 문서를 여러 문단으로 구성할 수 있으며, 각 문단은 왼쪽/오른쪽 여백, 행 간격 등을 갖습니다.
+
+일반적인 페이지 레이아웃에서는 레이아웃을 만들기 위해 필요한 문단의 정보를 매우 간결하게 표현할 수 있습니다.
+
+- 행의 수
+- 각 행의 높이 (보통 모든 행의 높이는 같다)
+- 문단별 고정 속성
+- 문단의 앞/뒤 여백
+
+>
+In the usual case this can be encoded in three or four bytes.
+A 30 page chapter has perhaps 300 paragraphs, so about 1k bytes are required for all this data; this is less information than is required to specify the characters on a page.
+Since the layout computation is comparable to the line layout computation for a page, it should be possible to do the pagination for this chapter in less time than is required to render one page.
+Layout can be done independently for each chapter.
+
+이런 정보들은 보통 3~4 바이트로 인코딩할 수 있습니다.
+30 페이지 분량 정도라면 약 300개의 문단이 있으므로 약 1k 바이트가 필요하며,
+이는 한 페이지의 모든 문자 데이터보다 적은 양입니다.
+페이지 레이아웃 계산량은 한 페이지의 모든 행의 레이아웃을 계산하는 양과 비슷하기 때문에,
+문단 정보를 활용하면 한 페이지를 렌더링하는 것보다 더 빠르게 챕터의 페이지네이션을 수행할 수 있게 됩니다.
+그리고 레이아웃도 각 챕터별로 독립적으로 수행할 수 있습니다.
+
+>
+What makes this idea work is a cache of `[paragraph, ParagraphShape(paragraph)]` entries.
+If the paragraph is edited, the cache entry is invalid and must be recomputed.
+This can be done at the time of the edit (reasonable if the paragraph is on the screen, as is usually the case, but not so good for a global substitute), in background, or only when repagination is requested.
+
+이 방식이 가능한 이유는 `[paragraph, ParagraphShape(paragraph)]` 형태의 캐시가 있기 때문입니다.
+문단이 편집되면, 캐시 항목을 무효화하고 재계산해야 합니다.
+이런 작업은 편집이 진행되는 동안 수행할 수 있으며(보통 편집중인 문단이 화면에 표시되고 있다면 이 방법이 합리적이겠지만, 문서 전체에 치환 작업을 하는 경우에는 그렇지 않습니다), 백그라운드에서 처리하거나, 페이지네이션을 다시 구성하라고 요청할 때만 수행할 수도 있습니다.
+
+#### * Use hints
 
 TODO: 작업중
 
-#### * Use hints
 #### * When it doubt, use brute force
 #### * Compute in background
 #### * Use batch processing
