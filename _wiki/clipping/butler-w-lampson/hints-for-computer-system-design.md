@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-22 01:31:36 +0900
+updated : 2023-04-22 01:37:33 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -2054,7 +2054,28 @@ Such occasional disagreements and delays are not very important to the usefulnes
 
 ### 5. Conclusion
 
-TODO: 작업중
+**5. 결론**
+
+> > Most humbly do I take my leave, my lord.
+
+겸손하게 작별을 고합니다.
+
+>
+Such a collection of good advice and anecdotes is rather tiresome to read; perhaps it is best taken in small doses at bedtime.
+In extenuation I can only plead that I have ignored most of these rules at least once, and nearly always regretted it.
+The references tell fuller stories about the systems or techniques that I have only sketched.
+Many of them also have more complete rationalizations.
+>
+All the slogans are collected in Figure 1 near the beginning of the paper.
+
+조언과 이야기를 모아놓은 이런 글을 읽는 것은 꽤 지루한 일일 겁니다.
+아마 잠자리에 들기 전에 조금씩 읽는 것이 좋을 것 같습니다.
+변명을 하자면 저도 이런 규칙들을 한 번씩은 무시했고, 대부분 후회했습니다.
+참고 문헌들을 읽어보면 제가 간략하게 언급한 시스템이나 기술에 대한 더 자세한 이야기를 볼 수 있을 것입니다.
+참고 문헌들 대부분은 더 완벽한 근거를 제시하고 있습니다.
+
+모든 슬로건들은 논문의 맨 앞부분에 있는 그림 1에 모아 두었습니다.
+
 
 ### Acknowledgments
 
