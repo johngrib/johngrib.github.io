@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-21 22:26:02 +0900
+updated : 2023-04-21 23:13:14 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1787,6 +1787,82 @@ Thou canst not then be false to any man.
 네가 어떤 사람에게도 거짓될 수 없다는 것이다.
 
 #### * End-to-end
+
+>
+· End-to-end.
+Error recovery at the application level is absolutely necessary for a reliable system, and any other error detection or recovery is not logically necessary but is strictly for performance.
+This observation was first made by Saltzer [46] and is very widely applicable.
+
+엔드 투 엔드.
+애플리케이션 수준에서의 오류 복구는 신뢰성 있는 시스템을 위해 절대적으로 필요하며,
+논리적으로는 그 외의 오류 복구는 필요하진 않고 오직 성능을 위한 것이라 할 수 있습니다.
+이는 Saltzer에 의해 처음 제안되었으며, 매우 넓은 범위에 적용될 수 있습니다.
+
+>
+For example, consider the operation of transferring a file from a file system on a disk attached to machine A, to another file system on another disk attached to machine B.
+To be confident that the right bits are really on B’s disk, you must read the file from B’s disk, compute a checksum of reasonable length (say 64 bits), and find that it is equal to a checksum of the bits on A’s disk.
+Checking the transfer from A’s disk to A’s memory, from A over the network to B, or from B’s memory to B’s disk is not sufficient, since there might be trouble at some other point, the bits might be clobbered while sitting in memory, or whatever.
+These other checks are not necessary either, since if the end-to-end check fails the entire transfer can be repeated.
+Of course this is a lot of work, and if errors are frequent, intermediate checks can reduce the amount of work that must be repeated.
+But this is strictly a question of performance, irrelevant to the reliability of the file transfer.
+Indeed, in the ring based system at Cambridge it is customary to copy an entire disk pack of 58 MBytes with only an end-to-end check; errors are so infrequent that the 20 minutes of work very seldom needs to be repeated [36].
+
+예를 들어, 머신 A에 연결된 디스크의 파일 시스템에 있는 파일 하나를, 머신 B에 연결된 다른 디스크의 파일 시스템으로 전송하는 작업을 생각해 봅시다.
+B의 디스크에 올바른 비트들이 잘 복사되었나 확인하려면, B 디스크에서 파일을 읽고 적절한 길이의 체크섬(64비트라 합시다)을 계산한 다음, 그 체크섬이 A 디스크에 있는 비트들의 체크섬과 같은지를 확인해야 합니다.
+A 디스크에서 A 메모리로, 그리고 A에서 네트워크를 통해 B로, B의 메모리에서 B의 디스크로 전송하는 과정을 체크하는 것만으로는 충분하지 않습니다.
+어디에선가 이상한 문제가 생길 수도 있는 것입니다.
+비트가 메모리에 있는 동안 손상되는 일이 발생할 수도 있습니다.
+이런 종류의 체크를 하는 것들은 별로 필요한 일이 아닙니다.
+왜냐하면 그냥 엔드 투 엔드로 결과만 검사해서 실패했는지 확인하고, 실패한다면 전체 전송을 다시 시도하면 되기 때문입니다.
+물론 이 방식은 많은 작업이 필요한 일이긴 한데, 에러가 빈번하게 발생한다면 중간에 검사를 하는 방식을 써서 작업의 반복량을 줄일 수 있습니다.
+그러나 이는 엄밀히 말해 성능 문제에 해당되며, 파일 전송의 신뢰성과는 관련이 없습니다.
+실제로 캠브리지 대학의 링 기반 시스템에서는 58MB의 디스크 팩 전체를 복사하는 것이 일반적인 일입니다.
+엔드 투 엔드 검사만 해도 오류가 매우 드물기 때문에 20분간의 작업을 다시 반복하는 일이 거의 없습니다.
+
+>
+Many uses of hints are applications of this idea.
+In the Alto file system described earlier, for example, the check of the label on a disk sector before writing the sector ensures that the disk address for the write is correct.
+Any precautions taken to make it more likely that the address is correct may be important, or even critical, for performance, but they do not affect the reliability of the file system.
+
+힌트의 다양한 용도는 이런 아이디어를 응용한 것입니다.
+예를 들어 Alto 운영체제의 파일 시스템에서는 섹터에 대한 레이블을 쓰기 전에, 해당 섹터에 대한 디스크 주소가 올바른지 확인합니다.
+주소가 올바른지 확인하기 위해 취하는 모든 예방 조치는 매우 중요할 수 있고, 성능에도 큰 영향을 줄 수 있을 것입니다.
+그러나 파일 시스템의 신뢰성에는 영향을 주지 않습니다.
+
+>
+The Pup internet [4] adopts the end-to-end strategy at several levels.
+The main service offered by the network is transport of a data packet from a source to a destination.
+The packet may traverse a number of networks with widely varying error rates and other properties.
+Internet nodes that store and forward packets may run short of space and be forced to discard packets.
+Only rough estimates of the best route for a packet are available, and these may be wildly wrong when parts of the network fail or resume operation.
+In the face of these uncertainties, the Pup internet provides good service with a simple implementation by attempting only "best efforts" delivery.
+A packet may be lost with no notice to the sender, and it may be corrupted in transit.
+Clients must provide their own error control to deal with these problems, and indeed higher-level Pup protocols do provide more complex services such as reliable byte streams.
+However, the packet transport does attempt to report problems to its clients, by providing a modest amount of error control (a 16-bit checksum), notifying senders of discarded packets when possible, etc.
+These services are intended to improve performance in the face of unreliable communication and overloading; since they too are best efforts, they don’t complicate the implementation much.
+
+Pup 인터넷은 여러 수준에서 엔드 투 엔드 전략을 채택해 사용하고 있습니다.
+네트워크가 제공하는 주요 서비스는 데이터 패킷을 소스에서 목적지로 전송하는 것입니다.
+이 패킷은 각기 다양한 에러율과 다른 특성들을 가진 여러 네트워크를 통과하게 됩니다.
+패킷을 저장하고 전달하는 인터넷 노드들은 저장 공간이 부족해져서 패킷을 버려야 하는 상황에 처할 수 있습니다.
+패킷의 최적화된 경로에 대해서는 대략적인 추정치만 제공되며, 네트워크의 일부에 장애가 발생하거나 재가동되거나 하면 이런 추정치가 완전히 틀릴 수도 있습니다.
+그러나 이러한 불확실성에도 불구하고, Pup 인터넷은 "최선의 노력"으로만 전달을 시도하는 간단한 구현을 통해 좋은 서비스를 제공합니다.
+패킷은 발신자에게 알려지는 일 없이 유실될 수 있고, 전송 중에 손상될 수도 있습니다.
+클라이언트에서는 이런 문제를 처리하기 위해 자체적으로 에러 제어 기능을 제공해야 합니다.
+실제로 상위 레벨의 Pup 프로토콜은 신뢰성있는 바이트 스트림과 같은 더 복잡한 서비스를 제공합니다.
+그러나 패킷 전송은 적절한 수준의 에러 제어(16비트 체크섬)를 제공하고, 버려진 패킷을 발신자에게 알려주는 등의 방법으로 문제를 클라이언트에게 알려주려고 시도합니다.
+이러한 서비스는 신뢰할 수 없는 통신 및 과부하 상황에서 성능을 개선하기 위한 것입니다.
+이 또한 최선의 노력이기 때문에 구현을 많이 복잡하게 만들지 않습니다.
+
+>
+There are two problems with the end-to-end strategy.
+First, it requires a cheap test for success.
+Second, it can lead to working systems with severe performance defects that may not appear until the system becomes operational and is placed under heavy load.
+
+엔드 투 엔드 전략에는 두 가지 문제가 있습니다.
+
+- 첫째, 성공 여부를 확인할 수 있는 값싼 테스트 방법이 필요합니다.
+- 둘째, 시스템이 작동하고 과부하 상태에 놓이기 전까지는 성능적인 결함이 발견되지 않을 수 있습니다. 이는 (미래에 나타날 수 있는) 심각한 성능 결함을 가진 시스템이 가동되는 문제가 될 수 있습니다.
 
 TODO: 작업중
 
