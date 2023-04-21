@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-21 23:13:14 +0900
+updated : 2023-04-22 00:53:41 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1864,10 +1864,101 @@ Second, it can lead to working systems with severe performance defects that may 
 - 첫째, 성공 여부를 확인할 수 있는 값싼 테스트 방법이 필요합니다.
 - 둘째, 시스템이 작동하고 과부하 상태에 놓이기 전까지는 성능적인 결함이 발견되지 않을 수 있습니다. 이는 (미래에 나타날 수 있는) 심각한 성능 결함을 가진 시스템이 가동되는 문제가 될 수 있습니다.
 
+#### * Log updates
+
+>
+· Log updates to record the truth about the state of an object.
+A log is a very simple data structure that can be reliably written and read, and cheaply forced out onto disk or other stable storage that can survive a crash.
+Because it is append-only, the amount of writing is minimized, and it is fairly easy to ensure that the log is valid no matter when a crash occurs.
+It is also easy and cheap to duplicate the log, write copies on tape, or whatever.
+Logs have been used for many years to ensure that information in a data base is not lost [17], but the idea is a very general one and can be used in ordinary file systems [35, 49] and in many other less obvious situations.
+When a log holds the truth, the current state of the object is very much like a hint (it isn’t exactly a hint because there is no cheap way to check its correctness).
+
+객체의 상태에 대한 진실을 기록하기 위해 로그 업데이트를 사용하세요.
+로그는 매우 간단한 데이터 구조로, 신뢰성있게 쓰고 읽을 수 있습니다.
+그리고 매우 저렴하게 충돌을 견딜 수 있는 디스크나 다른 안정적인 스토리지에 강제로 기록하는 것도 가능합니다.
+로그는 특성상 추가만 하기 때문에, 쓰기 작업량을 최소화할 수 있으며, 충돌이 발생하더라도 로그가 유효한지 확인하는 것은 꽤 쉬운 일입니다.
+또한 로그를 복제하거나 테이프에 복사하는 것도 쉽고 저렴합니다.
+로그는 데이터베이스의 정보가 손실되지 않도록 보장하기 위해 여러 해동안 사용되어왔습니다.
+하지만 로그라는 아이디어는 매우 일반적이며, 일반적인 파일 시스템이나 그 외의 다른 상황에서도 사용할 수 있습니다.
+로그가 진실을 담고 있다고 생각해 보면, 객체의 현재 상태는 힌트와 매우 유사한 점이 있습니다.
+(물론 로그는 힌트가 아닙니다. 정확성을 확인할 수 있는 저렴한 방법이 없기 때문입니다.)
+
+>
+To use the technique, record every update to an object as a log entry consisting of the name of the update procedure and its arguments.
+The procedure must be functional: when applied to the same arguments it must always have the same effect.
+In other words, there is no state outside the arguments that affects the operation of the procedure.
+This means that the procedure call specified by the log entry can be re-executed later, and if the object being updated is in the same state as when the update was first done, it will end up in the same state as after the update was first done.
+By induction, this means that a sequence of log entries can be re-executed, starting with the same objects, and produce the same objects that were produced in the original execution.
+
+이 기법을 사용하기 위해서는, 객체의 모든 업데이트를 함수적인 로그 항목으로 기록해야 합니다.
+그리고 로그 항목에는 업데이트 프로시저의 이름과 인자가 포함되어야 합니다.
+해당 프로시저는 함수형이어야 합니다.
+즉, 같은 인자가 다시 주어진다면 항상 동일한 결과를 내야 합니다.
+다시 말해, 프로시저의 작업에 영향을 미치는 것은 인자 외에는 없어야 합니다.
+즉, 로그 항목에 지정된 프로시저 호출은 나중에 다시 실행될 수 있으며,
+업데이트 중인 객체가 처음으로 업데이트되었던 때와 상태가 똑같다면,
+해당 객체는 업데이트가 처음 완료었던 때와 동일한 상태로 끝나야 한다는 것입니다.
+귀납적으로 보면, 일련의 로그 항목 시퀀스는 같은 객체를 시작점으로 삼아 다시 실행될 수 있으며, 원래의 실행한 결과로 생성된 객체와 동일한 객체를 생성하게 됩니다.
+
+>
+For this to work, two requirements must be satisfied:
+>
+- The update procedure must be a true function:
+    - Its result does not depend on any state outside its arguments.
+    - It has no side effects, except on the object in whose log it appears.
+- The arguments must be values, one of:
+    - Immediate values, such as integers, strings, etc. An immediate value can be a large thing, like an array or even a list, but the entire value must be copied into the log entry.
+    - References to immutable objects.
+
+이를 위해서는 두 가지 요구사항이 충족되어야 합니다.
+
+- 업데이트 프로시저는 진짜 함수여야 합니다.
+    - 프로시저의 실행 결과는 인자 외에는 어떤 것에도 영향을 받지 않습니다.
+    - 로그 외에는 사이드 이펙트가 없어야 합니다.
+- 인자는 다음의 값들 중 하나여야 합니다.
+    - 정수, 문자열 등과 같은 즉시 값. 즉시 값은 배열이나 리스트와 같은 큰 것일 수도 있지만, 그 전체 값이 로그 항목에 복사될 수 있어야만 합니다.
+    - 변경 불가능한 객체에 대한 참조.
+
+>
+Most objects of course are not immutable, since they are updated.
+However, a particular version of an object is immutable; changes made to the object change the version.
+A simple way to refer to an object version unambiguously is with the pair `[object identifier, number of updates]`.
+If the object identifier leads to the log for that object, then replaying the specified number of log entries yields the particular version.
+Of course doing this replay may require finding some other object versions, but as long as each update refers only to existing versions, there won’t be any cycles and this process will terminate.
+
+물론 대부분의 객체는 업데이트되기 때문에 변경 불가능하지 않습니다.
+그러나 특정 버전의 객체는 변경 불가능합니다.
+객체에 변경이 가해지면 버전이 변경되는 방식이라면요.
+객체 버전을 명확하게 참조하는 간단한 방법은 `[object identifier, number of updates]` 쌍을 사용하는 것입니다.
+만약 객체 식별자를 통해 해당 객체의 로그로 접근할 수 있다면, 특정 범위의 로그를 재생해서 특정 버전을 얻을 수 있게 됩니다.
+물론 이런 재생을 할 수 있으려면 다른 객체 버전을 찾아야 할 수도 있습니다.
+그러나 각 업데이트가 이미 생성된 버전만 참조한다면 순환 구조가 생기지 않으므로 이 프로세스는 종료를 보장할 수 있습니다.
+
+>
+For example, the Bravo editor [24] has exactly two update functions for editing a document:
+
+예를 들어 Bravo 에디터는 문서를 편집하기 위한 업데이트 함수를 정확히 두 개만 가지고 있습니다.
+
+>
+> - `Replace(old: Interval, new: Interval)`
+> - `ChangeProperties(where: Interval, what: FormattingOp)`
+>
+An `Interval` is a triple `[document version, first character, last character]`.
+A `FormattingOp` is a function from properties to properties; a property might be `italic` or `leftMargin`, and a `FormattingOp` might be `leftMargin: = leftMargin + 10` or `italic: = true`.
+Thus only two kinds of log entries are needed. All the editing commands reduce to applications of these two functions.
+
+`Interval`은 `[document version, first character, last character]`의 삼중체입니다.
+`FormattingOp`는 속성에서 속성으로의 함수입니다.
+속성은 `italic`이나 `leftMargin` 등이 될 수 있고,
+`FormattingOp`는 `leftMargin: = leftMargin + 10` 또는 `italic: = true` 와 같은 함수가 될 수 있습니다.
+그러므로 로그 항목은 딱 두 가지 종류만 있으면 됩니다.
+모든 편집 명령은 이 두 함수의 적용으로 축약될 수 있습니다.
+
+#### * Make actions atomic or restartable
+
 TODO: 작업중
 
-#### * Log updates
-#### * Make actions atomic or restartable
 ### 5. Conclusion
 ### Acknowledgments
 
