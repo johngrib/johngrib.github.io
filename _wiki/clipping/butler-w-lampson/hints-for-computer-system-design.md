@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-21 19:39:31 +0900
+updated : 2023-04-21 20:07:45 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1554,9 +1554,37 @@ S-1은 명령어 캐시에 저장된 각 명령어에 대해 비트를 하나씩
 
 #### * When it doubt, use brute force
 
-TODO: 작업중
+>
+· When in doubt, use brute force.
+
+확신이 없다면, brute force를 써라.
+
+>
+Especially as the cost of hardware declines, a straightforward, easily analyzed solution that requires a lot of special-purpose computing cycles is better than a complex, poorly characterized one that may work well if certain assumptions are satisfied.
+For example, Ken Thompson’s chess machine Belle relies mainly on special-purpose hardware to generate moves and evaluate positions, rather than on sophisticated chess strategies.
+Belle has won the world computer chess championships several times.
+Another instructive example is the success of personal computers over time-sharing systems; the latter include much more cleverness and have many fewer wasted cycles, but the former are increasingly recognized as the most cost-effective way to do interactive computing.
+
+특히 하드웨어 비용이 점점 낮아지면서, 특수 목적의 컴퓨팅 사이클이 많이 필요한 '간단하고 쉽게 분석할 수 있는 솔루션'이 특정 가정이 만족되었을 때에만 잘 작동할지도 모르는 '복잡하고 설명하기 어려운 솔루션'보다 낫습니다.
+예를 들어 Ken Thompson의 체스 머신 Belle은 정교한 체스 전략보다는 특수 목적 하드웨어를 메인으로 사용해서 체스의 수를 생성하고 각 포지션을 평가합니다.
+Belle은 세계 컴퓨터 체스 선수권 대회에서 여러 번 우승했습니다.
+또 다른 흥미로운 사례는 개인용 컴퓨터가 시분할 시스템을 누르고 승리한 것을 꼽을 수 있습니다.
+시분할 시스템은 훨씬 더 똑똑하고 낭비되는 사이클이 훨씬 적지만, 개인용 컴퓨터는 가장 효율적인 방법으로 컴퓨터와 상호작용하는 수단으로 인정받고 있습니다.
+
+>
+Even an asymptotically faster algorithm is not necessarily better.
+There is an algorithm that multiplies two n × n matrices faster than O(n<sup>2.5</sup>), but the constant factor is prohibitive.
+On a more mundane note, the 7040 Watfor compiler uses linear search to look up symbols; student programs have so few symbols that the setup time for a better algorithm can’t be recovered.
+
+심지어 점근적으로 더 빠른 알고리즘이라 해도 언제나 더 좋은 것만은 아닙니다.
+n × n 행렬을 곱하는 알고리즘은 O(n<sup>2.5</sup>) 보다 빠르지만, 상수가 너무 크다는 문제가 있습니다.
+좀 더 평범한 사례를 보자면, 7040 Watfor 컴파일러는 심볼을 찾는 데에 선형 탐색을 사용합니다.
+학생들이 만든 프로그램은 심볼의 수가 많지 않아서 이보다 더 나은 알고리즘을 쓰면 소요되는 설정 시간이 더 비쌌기 때문입니다.
 
 #### * Compute in background
+
+TODO: 작업중
+
 #### * Use batch processing
 #### * Safety first
 #### * Shed load
