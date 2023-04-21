@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-21 20:28:27 +0900
+updated : 2023-04-21 20:54:49 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1638,9 +1638,83 @@ This design makes it much easier to meet the bank’s requirements for trustwort
 
 #### * Safety first
 
-TODO: 작업중
+> > Be wary then; best safety lies in fear. (I iii 43)
+
+그러니 조심하거라. 가장 좋은 안전은 두려움에서 나온다.
+
+>
+· Safety first.
+In allocating resources, strive to avoid disaster rather than to attain an optimum.
+Many years of experience with virtual memory, networks, disk allocation, database layout, and other resource allocation problems has made it clear that a general-purpose system cannot optimize the use of resources.
+On the other hand, it is easy enough to overload a system and drastically degrade the service.
+A system cannot be expected to function well if the demand for any resource exceeds two-thirds of the capacity, unless the load can be characterized extremely well.
+Fortunately hardware is cheap and getting cheaper; we can afford to provide excess capacity.
+Memory is especially cheap, which is especially fortunate since to some extent plenty of memory can allow other resources like processor cycles or communication bandwidth to be utilized more fully.
+
+안전 제일.
+자원을 할당할 때, 최적화보다는 재난을 피하기 위해 노력해야 합니다.
+가상 메모리, 네트워크, 디스크 할당, 데이터베이스 레이아웃 등의 자원 할당 문제에 대해 수년간의 경험을 통해, 일반적인 시스템은 자원을 최적화할 수 없다는 사실을 분명하게 알게 되었습니다.
+반면, 시스템을 과부하 상태로 만들어서 서비스를 크게 저하시키는 것은 쉽게 할 수 있는 일입니다.
+부하가 매우 정확하게 파악 가능한 경우를 제외하고, 어떤 자원에 대한 요구가 용량의 2/3을 초과하면 시스템의 원활한 동작을 기대할 수 없습니다.
+다행히 하드웨어는 저렴한 편이며, 점점 더 저렴해지고 있습니다.
+그래서 우리는 충분한 용량을 제공하는 것이 가능합니다.
+메모리는 특히 많이 저렴한데, 이는 프로세서 사이클이나 통신 대역폭과 같은 다른 자원을 더욱 효율적으로 사용할 수 있도록 메모리를 충분히 제공할 수 있기 때문에 유리합니다.
+
+>
+The sad truth about optimization was brought home by the first paging systems.
+In those days memory was very expensive, and people had visions of squeezing the most out of every byte by clever optimization of the swapping: putting related procedures on the same page, predicting the next pages to be referenced from previous references, running jobs together that share data or code, etc.
+No one ever learned how to do this.
+Instead, memory got cheaper, and systems spent it to provide enough cushion for simple demand paging to work.
+We learned that the only important thing is to avoid thrashing, or too much demand for the available memory.
+A system that thrashes spends all its time waiting for the disk.
+
+최적화에 대한 슬픈 사실은 최초의 페이징 시스템이 등장했을 때 드러났습니다.
+당시의 메모리는 매우 비쌌기 때문에, 사람들은 스와핑을 교묘하게 최적화해서 모든 바이트를 최대한 활용하려는 비전을 갖고 있었습니다.
+관련된 프로시저를 같은 페이지에 둔다던가, 이전 참조에서 다음에 참조할 페이지를 예측하거나, 데이터나 코드를 공유하는 작업을 함께 실행하는 등의 방법들을 구상한 것입니다.
+그러나 아무도 그런 최적화 기법들을 실현하지 못했습니다.
+그 대신, 메모리 가격이 점점 떨어졌고, 시스템은 단순한 demand paging을 수행할 수 있도록 충분한 여유를 제공하기 위해 메모리를 마구 사용했습니다.
+우리는 사용 가능한 메모리에 대한 과도한 수요, 즉 스래싱을 피하는 것이 유일하게 중요한 것이라는 사실을 깨달았습니다.
+스래싱이 발생하는 시스템은 디스크에서 데이터를 읽어오기 위해 모든 시간을 소모하게 됩니다.
+
+>
+The only systems in which cleverness has worked are those with very well-known loads.
+For instance, the 360/50 apl system [4] has the same size workspace for each user and common system code for all of them.
+It makes all the system code resident, allocates a contiguous piece of disk for each user, and overlaps a swap-out and a swap-in with each unit of computation.
+This works fine.
+
+아주 잘 알려진 종류의 부하를 갖는 시스템에서만 이런 교묘한 최적화가 작동했습니다.
+예를 들어, 360/50 APL 시스템은 각 사용자들에게 같은 크기의 작업공간을 제공하며, 모든 사용자들에게 공통된 시스템 코드를 제공합니다.
+이 시스템은 모든 시스템 코드를 램상주시키고, 각 사용자에게 연속된 디스크 공간을 할당시켜 주며, 각 계산 단위를 swap-out하고 swap-in 하는 것을 겹쳐서 할 수 있었습니다.[^swap-in-out]
+이 방식은 잘 작동합니다.
+
+> > The nicest thing about the Alto is that it doesn’t run faster at night. (J. Morris)
+
+Alto의 가장 멋진 점은 밤에 더 빨리 작동하지 않는다는 것이다. (J. Morris)
+
+>
+A similar lesson was learned about processor time.
+With interactive use the response time to a demand for computing is important, since a person is waiting for it.
+Many attempts were made to tune the processor scheduling as a function of priority of the computation, working set size, memory loading, past history, likelihood of an I/O request, etc..
+These efforts failed.
+Only the crudest parameters produce intelligible effects: interactive vs. non-interactive computation or high, foreground and background priority levels.
+The most successful schemes give a fixed share of the cycles to each job and don’t allocate more than 100%; unused cycles are wasted or, with luck, consumed by a background job.
+The natural extension of this strategy is the personal computer, in which each user has at least one processor to himself.
+
+프로세서 시간에 대해서도 이와 비슷한 교훈을 얻었습니다.
+대화식으로 컴퓨터를 사용할 때에는 사람이 응답을 기다리게 되기 때문에, 계산 요청에 대한 응답 시간이 중요합니다.
+계산의 우선순위, 작업 집합 크기, 메모리 로딩, 과거 기록, I/O 요청 가능성 등을 토대로 프로세서 스케쥴링을 조절해보려는 다양한 시도가 있었습니다.
+그러나 그런 시도는 실패했습니다.
+오직 가장 기본적인 파라미터만이 이해할 수 있는 결과를 만들어냅니다.
+그것은 바로 '대화식 vs 비대화식 계산'이나 '포어그라운드와 백그라운드의 우선순위 정도'입니다.
+가장 성공적인 방식은 각 작업에 100% 이상 할당하지 않고 고정된 비율의 사이클만 할당합니다.
+사용되지 않는 사이클은 그냥 낭비되거나, 운이 좋으면 백그라운드 작업에 의해 소비됩니다.
+이 전략을 자연스럽게 확장한 것이 바로 개인용 컴퓨터입니다.
+각 사용자가 적어도 하나의 프로세서를 독립적으로 사용할 수 있기 때문입니다.
 
 #### * Shed load
+
+TODO: 작업중
+
 ### 4. Fault-tolerance
 #### * End-to-end
 #### * Log updates
@@ -1720,4 +1794,4 @@ TODO: 작업중
 [^cache-fx-cost]: 역주: `f(x)`를 계산하는 속도가 느리면 느릴수록 캐시를 조회하는 것이 더 이득이다.
 [^cache-fx-example]: 역주: 배열 x의 총합 `sum`에서 i번째 원소인 $$x_i$$ 를 갱신하는 것을 설명하고 있다. `sum`에서 이전의 $$x_i$$를 빼고, 새로운 값 `v`를 더하면 `sum`을 쉽게 갱신할 수 있다. 만약 이 방법을 쓰지 않고 `f(x)`를 다시 계산해야 했다면 배열 `x`를 전부 다시 순회해야 한다.
 [^ethernet-hint]: 역주: 발신자의 수가 2<sup>n</sup>개라는 것은 엄밀하게 계산된 값은 아니며 적당한 추정치이다.
-
+[^swap-in-out]: 역주: 가상 메모리 시스템에서 메모리 페이지를 디스크로 옮기는 것을 swap-out, 디스크에서 메모리로 옮기는 것을 swap-in이라고 한다.
