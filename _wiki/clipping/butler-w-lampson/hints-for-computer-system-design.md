@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-21 20:54:49 +0900
+updated : 2023-04-21 21:17:08 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1713,9 +1713,60 @@ The natural extension of this strategy is the personal computer, in which each u
 
 #### * Shed load
 
-TODO: 작업중
+> > Give every man thy ear, but few thy voice;  
+Take each man’s censure, but reserve thy judgment.
+
+모든 사람에게 귀를 기울이되, 몇몇 사람에게만 말을 걸어라.  
+모든 사람의 비난을 받아들이되, 자신의 판단은 보류해 두거라.
+
+>
+· Shed load to control demand, rather than allowing the system to become overloaded.
+This is a corollary of the previous rule.
+There are many ways to shed load.
+An interactive system can refuse new users, or even deny service to existing ones.
+A memory manager can limit the jobs being served so that all their working sets fit in the available memory.
+A network can discard packets.
+If it comes to the worst, the system can crash and start over more prudently.
+
+부하를 줄여라.
+시스템이 과부하 상태가 되지 않도록 허용하지 말고, 수요를 제어하기 위해 부하를 줄이세요.
+이 규칙은 앞에서 언급한 규칙들을 통해 도출된 것입니다.
+부하를 줄이는 방법은 여러 가지가 있습니다.
+대화식 시스템에서는 새로운 사용자나 기존의 사용자들에게 서비스하는 것을 거부할 수 있습니다.
+메모리 관리자는 서비스 중인 작업들에 제한을 가해서, 모든 작업 집합이 사용 가능한 메모리에 들어갈 수 있도록 할 수 있습니다.
+네트워크라면 패킷을 버릴 수도 있습니다.
+최악의 경우가 발생해 시스템이 충돌하면 신중하게 다시 시작하도록 합니다.
+
+>
+Bob Morris suggested that a shared interactive system should have a large red button on each terminal.
+The user pushes the button if he is dissatisfied with the service, and the system must either improve the service or throw the user off; it makes an equitable choice over a sufficiently long period.
+The idea is to keep people from wasting their time in front of terminals that are not delivering a useful amount of service.
+
+Bob Morris는 공유 대화형 시스템의 각 터미널에 큰 빨간 버튼을 두는 것이 좋겠다고 제안한 적이 있습니다.
+사용자가 서비스에 만족하지 않으면 버튼을 누르는 겁니다.
+그러면 시스템은 서비스를 개선하거나 사용자 접근을 강제로 끊거나 해야 합니다.
+이 방법을 오랜 기간 사용하면 나름의 공정한 선택을 하는 셈이라 할 수 있습니다.
+이 아이디어는 유용하지 못한 서비스를 제공하는 터미널 앞에서 사용자가 시간을 낭비하지 않도록 도와주는 것입니다.
+
+>
+The original specification for the Arpanet [32] was that a packet accepted by the net is guaranteed to be delivered unless the recipient machine is down or a network node fails while it is holding the packet.
+This turned out to be a bad idea.
+This rule makes it very hard to avoid deadlock in the worst case, and attempts to obey it lead to many complications and inefficiencies even in the normal case.
+Furthermore, the client does not benefit, since it still has to deal with packets lost by host or network failure (see section 4 on end-to-end).
+Eventually the rule was abandoned.
+The Pup internet [3], faced with a much more variable set of transport facilities, has always ruthlessly discarded packets at the first sign of congestion.
+
+Arpanet의 최초 스펙은 네트워크가 받아들인 패킷은 수신자 머신이 다운되거나, 패킷을 보관하는 네트워크 노드가 장애가 발생하지 않는 한, 네트워크에서 수락한 패킷이 반드시 전달된다는 것이었습니다.
+하지만 이것은 좋지 않은 아이디어로 밝혀졌습니다.
+이 규칙은 최악의 경우 데드락을 피하는 것을 매우 어렵게 만들고, 정상적인 경우에도 수많은 복잡한 문제와 비효율을 야기시킵니다.
+게다가, 클라이언트는 호스트나 네트워크의 실패로 인한 패킷 손실을 처리해야 하기 때문에 이 규칙은 클라이언트에게도 이득이 없습니다.
+결국 이 규칙은 폐기됐습니다.
+Pup 인터넷은 훨씬 더 다양한 전송 장치들을 지원했으며, 부하의 첫 징후가 나타나면 무자비하게 패킷을 버리는 것으로 알려져 있습니다.
 
 ### 4. Fault-tolerance
+
+TODO: 작업중
+
 #### * End-to-end
 #### * Log updates
 #### * Make actions atomic or restartable
