@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-22 01:37:33 +0900
+updated : 2023-04-22 01:39:44 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -2078,6 +2078,71 @@ All the slogans are collected in Figure 1 near the beginning of the paper.
 
 
 ### Acknowledgments
+
+**감사**
+
+>
+I am indebted to many sympathetic readers of earlier drafts of this paper and to the comments of the program committee.
+
+이 논문의 초기 초안을 읽어주신 많은 분들과 프로그램 위원회의 의견에 감사를 드립니다.
+
+### References
+
+1. Birrell, A.D. et al. Grapevine: An exercise in distributed computing. Comm. acm 25, 4, April 1982, pp 260-273.
+2. Bobrow, D.G. et al. Tenex: A paged time-sharing system for the PDP-10. Comm. acm 15, 3, March 1972, pp 135-143.
+3. Boggs, D.R. et al. Pup: An internetwork architecture. IEEE Trans. Communications com-28, 4, April 1980, pp 612-624.
+4. Breed, L.M and Lathwell, R.H. The implementation of apl/360. In Interactive Systems for Experimental Applied Mathematics, Klerer and Reinfelds, eds., Academic Press, 1968, pp 390-399.
+5. Britton, K.H., et al. A procedure for designing abstract interfaces for device interface modules. Proc. 5th Int’l Conf. Software Engineering, ieee Computer Society order no. 332, 1981, pp 195-204.
+6. Brooks, F.H. The Mythical Man-Month, Addison-Wesley, 1975.
+7. Burton, R.R. et al. Interlisp-D overview. In Papers on Interlisp-D, Technical report SSL-80-4, Xerox Palo Alto Research Center, 1981.
+8. Clark, D.W. et al. The memory system of a high-performance personal computer. IEEE Trans. Computers TC-30, 10, Oct. 1981, pp 715-733.
+9. Creasy, R.J. The origin of the vm/370 time-sharing system. ibm J. Res. Develop. 25, 5, Sep. 1981, pp 483-491.
+10. Deutsch, L.P. and Grant. C.A. A flexible measurement tool for software systems. Proc. ifip Congress 1971, North-Holland.
+11. Deutsch, L.P. and Bobrow, D.G. An efficient incremental automatic garbage collector. Comm. acm 19, 9, Sep. 1976, pp 522-526.
+12. Deutsch, L.P. Efficient implementation of the Smalltalk-80 system. Proc. 11th acm Symposium on Principles of Programming Languages, 1984..
+13. Dijkstra. E.W. et al. On-the-fly garbage collection: An exercise in cooperation. Comm. acm 21, 11, Nov. 1978, pp 966-975.
+14. Ditzel, D.R. and McClellan, H.R. Register allocation for free: The C machine stack cache. sigplan Notices 17, 4, April 1982, pp 48-56.
+15. Geschke, C.M, et al. Early experience with Mesa. Comm. acm 20, 8, Aug. 1977, pp 540-553.
+16. Gifford, D.K. Weighted voting for replicated data. Operating Systems Review 13, 5, Dec. 1979, pp 150-162.
+17. Gray, J. et al. The recovery manager of the System R database manager. Computing Surveys 13, 2, June 1981, pp 223-242.
+18. Hansen, P.M. et al. A performance evaluation of the Intel iapx 432, Computer Architecture News 10, 4, June 1982, pp 17-26.
+19. Hoare, C.A.R. Hints on programming language design. sigact/sigplan Symposium on Principles of Programming Languages, Boston, Oct. 1973.
+20. Hoare, C.A.R. Monitors: An operating system structuring concept. Comm. acm 17, 10, Oct. 1974, pp 549-557.
+21. Ingalls, D. The Smalltalk graphics kernel. Byte 6, 8, Aug. 1981, pp 168-194.
+22. Janson, P.A. Using type-extension to organize virtual-memory mechanisms. Operating Systems Review 15, 4, Oct. 1981, pp 6-38.
+23. Knuth, D.E. An empirical study of Fortran programs, Software- Practice and Experience 1, 2, Mar. 1971, pp 105-133.
+24. Lampson. B.W. Bravo manual. In Alto Users Handbook, Xerox Palo Alto Research Center, 1976.
+25. Lampson, B.W. and Redell, D.D. Experience with processes and monitors in Mesa. Comm. acm 23, 2, Feb. 1980, pp 105-117.
+26. Lampson, B.W. et al. Electronic image processing system, U.S. Patent 4,203,154, May 1980.
+27. Lampson, B.W. Replicated commit. Circulated at a workshop on Fundamental Principles of Distributed Computing, Pala Mesa, CA, Dec. 1980.
+28. Lampson, B.W. and Sturgis, H.E. Atomic transactions. In Distributed Systems — An Advanced Course, Lecture Notes in Computer Science 105, Springer, 1981, pp 246-265.
+29. Lampson, B.W. and Sproull, R.S. An open operating system for a single-user machine. Operating Systems Review 13, 5, Dec. 1979, pp 98-105.
+30. Lampson, B.W. and Sturgis, H.E. Reflections on an operating system design. Comm. acm 19, 5, May 1976, pp 251-265.
+31. McNeil, M. and Tracz, W. pl/1 program efficiency. sigplan Notices 5, 6, June 1980, pp 46-60.
+32. McQuillan, J.M. and Walden, D.C. The arpa network design decisions. Computer Networks 1, Aug. 1977, pp 243-299.
+33. Metcalfe, R.M. and Boggs, D.R. Ethernet: Distributed packet switching for local computer networks. Comm. acm 19, 7, July 1976, pp 395-404.
+34. Mitchell, J.G. Design and Construction of Flexible and Efficient Interactive Programming Systems. Garland, 1979.
+35. Mitchell, J.G. and Dion, J. A comparison of two network-based file servers. Comm. acm 25, 4, April 1982, pp 233-245.
+36. Needham, R.M. Personal communication. Dec. 1980.
+37. Newman, W.M. and Sproull, R.F. Principles of Interactive Computer Graphics, 2nd ed., McGraw-Hill, 1979.
+38. Parnas, D.L. On the criteria to be used in decomposing systems into modules. Comm. acm 15, 12, Dec. 1972, pp 1053-1058.
+39. Patterson, D.A. and Sequin, C.H. risc 1: A reduced instruction set vlsi computer. 8th Symp. Computer Architecture, ieee Computer Society order no. 346, May 1981, pp 443-457.
+40. Paxton, W.H. A client-based transaction system to maintain data integrity. Operating Systems Review 13, 5, Dec. 1979, pp 18-23.
+41. Radin, G.H. The 801 minicomputer, sigplan Notices 17, 4, April 1992, pp 39-47.
+42. Redell, D.D. et al. Pilot: An operating system for a personal computer. Comm. acm 23, 2, Feb. 1980, pp 81-91.
+43. Reed, D. Naming and Synchronization in a Decentralized Computer System, mit lcs tr-205. Sep. 1978.
+44. Ritchie, D.M. and Thompson, K. The Unix time-sharing system. Bell System Tech. J. 57, 6, July 1978, pp 1905-1930.
+45. Rovner, P. Personal communication. Dec. 1982.
+46. Saltzer, J.H. et al. End-to-end arguments in system design. Proc. 2nd Int’l. Conf. Distributed Computing Systems, Paris, April 1981, pp 509-512.
+47. Smith, D.C. et al. Designing the Star user interface. Byte 7,4, April 1982, pp 242-282 .
+48. Smith, J.E. A study of branch prediction strategies. 8th Symp. Computer Architecture, ieee Computer Society order no. 346, May 1981, pp 135-148.
+49. Sturgis, H.E, et al. Issues in the design and use of a distributed file system. Operating Systems Review 14, 3, July 1980, pp 55-69.
+50. Sturgis, H.E. A Postmortem for a Time Sharing System. Technical Report csl-74-l, Xerox Palo Alto Research Center, 1974.
+51. Sweet, R., and Sandman, J. Static analysis of the Mesa instruction set. sigplan Notices 17, 4, April 1982, pp 158-166.
+52. Tanenbaum, A. Implications of structured programming for machine architecture. Comm. acm 21, 3, March 1978, pp 237-246.
+53. Thacker, C.P. et al. Alto: A personal computer. In Computer Structures: Principles and Examples, 2nd ed., Siewiorek, Bell, and Newell, eds., McGraw-Hill,1982.
+54. Traiger, I.L. Virtual memory management for data base systems. Operating Systems Review 16, 4, Oct. 1982, pp 26-48.
+55. Bentley, J.L. Writing Efficient Programs. Prentice-Hall, 1982.
 
 ## 번역하며 남긴 메모
 
