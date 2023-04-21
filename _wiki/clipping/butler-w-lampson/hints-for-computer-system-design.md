@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-21 15:46:33 +0900
+updated : 2023-04-21 19:39:31 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1399,9 +1399,163 @@ This can be done at the time of the edit (reasonable if the paragraph is on the 
 
 #### * Use hints
 
-TODO: 작업중
+> > For the apparel oft proclaims the man.
+
+의복은 종종 그 사람에 대해 알려준다.
+
+>
+· Use hints to speed up normal execution.
+A hint, like a cache entry, is the saved result of some computation.
+It is different in two ways: it may be wrong, and it is not necessarily reached by an associative lookup.
+Because a hint may be wrong, there must be a way to check its correctness before taking any unrecoverable action.
+It is checked against the ‘truth’, information that must be correct but can be optimized for this purpose rather than for efficient execution.
+Like a cache entry, the purpose of a hint is to make the system run faster.
+Usually this means that it must be correct nearly all the time.
+
+힌트를 써라. 일반적인 실행 속도를 높이기 위해 힌트를 사용하세요.
+힌트는 캐시 엔트리처럼 계산된 결과를 저장한 것입니다.
+그러나 힌트와 캐시와 두 가지 차이점이 있습니다.
+힌트는 틀릴 수 있습니다.
+그리고 힌트는 반드시 연관 검색을 통해 도달하지 않아도 됩니다.
+힌트는 잘못된 정보일 수 있기 때문에, 되돌릴 수 없는 작업을 하기 전이라면 올바른 힌트인지 아닌지를 확인할 수 있는 방법이 있어야 합니다.
+힌트를 평가할 때는 '사실'을 기준으로 해야 합니다.
+이러한 '사실'은 언제나 참된 정보여야만 하지만, 효율적인 실행보다는 힌트를 평가하는 목적에 맞게 최적화할 수도 있습니다.
+캐시 엔트리와 같이, 힌트의 목적은 시스템이 더 빠르게 실행되도록 하는 것입니다.
+대부분의 경우, 이는 힌트가 거의 항상 정확해야 한다는 것을 의미합니다.
+
+>
+For example, in the Alto [29] and Pilot [42] operating systems each file has a unique identifier, and each disk page has a ‘label’ field whose contents can be checked before reading or writing the data without slowing down the data transfer.
+The label contains the identifier of the file that contains the page and the number of that page in the file.
+Page zero of each file is called the ‘leader page’ and contains, among other things, the directory in which the file resides and its string name in that directory.
+This is the truth on which the file systems are based, and they take great pains to keep it correct.
+
+예를 들어, Alto와 Pilot 운영체제에서 각각의 파일은 unique 식별자를 갖고 있으며,
+각각의 디스크 페이지에는 데이터 읽기/쓰기를 하기 전에 내용을 확인할 수 있는 '레이블'필드를 둬서 데이터 전송 속도 저하를 방지하고 있습니다.
+레이블에는 페이지를 포함하는 파일의 식별자와 파일 내 페이지 번호가 포함되어 있습니다.
+각 파일의 0번째 페이지는 '리더 페이지'라고 불리는데, 리더 페이지에는 파일이 존재하는 디렉토리와, 해당 파일의 디렉토리 속 이름 등이 포함되어 있습니다.
+이것이 파일 시스템이 기반을 두고 있는 '사실'이며, 파일 시스템은 이것을 정확하게 유지하기 위해 많은 노력을 기울입니다.
+
+>
+With only this information, however, there is no way to find the identifier of a file from its name in a directory, or to find the disk address of page i, except to search the entire disk, a method that works but is unacceptably slow.
+Each system therefore maintains hints to speed up these operations.
+Both systems represent directory by a file that contains triples `[string name, file identifier, address of first page]`.
+Each file has a data structure that maps a page number into the disk address of the page.
+The Alto uses a link in each label that points to the next label; this makes it fast to get from page n to page n + 1.
+Pilot uses a B-tree that implements the map directly, taking advantage of the common case in which consecutive file pages occupy consecutive disk pages.
+Information obtained from any of these hints is checked when it is used, by checking the label or reading the file name from the leader page.
+If it proves to be wrong, all of it can be reconstructed by scanning the disk.
+Similarly, the bit table that keeps track of free disk pages is a hint; the truth is represented by a special value in the label of a free page, which is checked when the page is allocated and before the label is overwritten with a file identifier and page number.
+
+그러나 이 정보만으로는 한계가 있습니다.
+디렉토리에서 파일 이름을 사용해 파일 식별자를 찾거나, i번째 페이지의 디스크 주소를 찾거나 할 때에는 디스크 전체를 검색하는 수 밖에 없기 때문입니다.
+작동하긴 하지만 너무 느리기 때문에 이 방법은 사용할 수 없습니다.
+따라서 각 시스템은 이런 작업을 빠르게 수행하기 위해 힌트를 유지합니다.
+두 시스템 모두 디렉토리를 `[string name, file identifier, address of first page]` 형태로 포함하는 파일로 표현합니다.
+그리고 이러한 각각의 힌트 파일은 페이지 번호를 페이지의 디스크 주소로 매핑하는 데이터 구조를 갖고 있습니다.
+
+Alto에서는 각 레이블에서 다음 레이블을 가리키는 링크를 사용하고 있으므로,
+n번째 페이지에서 n+1번째 페이지로 빠르게 이동할 수 있습니다.
+
+한편 Pilot은 연속된 파일 페이지가 연속된 디스크 페이지를 차지하는 경우가 일반적이라는 점에 착안하여, 맵을 직접 구현하는 B-tree를 사용합니다.
+이러한 힌트들로부터 얻은 정보를 사용할 때에는 레이블을 확인하거나 리더 페이지에서 파일 이름을 읽는 방식으로 힌트의 사실 여부를 확인합니다.
+만약 힌트의 내용이 잘못된 것이라면, 디스크를 스캔해서 모든 힌트를 재구성하면 됩니다.
+이와 비슷하게, 디스크 페이지의 사용 여부를 추적하는 비트 테이블도 일종의 힌트에 해당됩니다.
+빈 페이지의 레이블에 특별한 값을 사용해 '사실'을 표현하며, 페이지를 할당할 때와 파일 식별자와 페이지 번호로 레이블을 덮어쓰기 전에 값을 확인하게 되는 것입니다.
+
+>
+Another example of hints is the store and forward routing first used in the Arpanet [32].
+Each node in the network keeps a table that gives the best route to each other node.
+This table is updated by periodic broadcasts in which each node announces to all the other nodes its opinion about the quality of its links to its neighbors.
+Because these broadcast messages are not synchronized and are not guaranteed to be delivered, the nodes may not have a consistent view at any instant.
+The truth in this case is that each node knows its own identity and hence knows when it receives a packet destined for itself.
+For the rest, the routing does the best it can; when things aren’t changing too fast it is nearly optimal.
+
+힌트의 또 다른 예로는 Arpanet에서 처음 사용된 '저장 후 전달' 라우팅이 있습니다.
+네트워크의 각 노드는 '다른 모든 노드로 가는 최적 경로'를 제공하는 테이블을 유지합니다.
+이 테이블은 각 노드가 이웃 노드와의 연결 품질에 대해 평가한 것을 다른 모든 노드들에게 알려주는 주기적인 브로드캐스트를 통해서 업데이트됩니다.
+이 브로드캐스트 메시지는 동기화되지도 않고 전달을 보장하지도 않기 때문에, 각 노드들은 동시에 전부 같은 정보를 갖고 있지 않을 수 있습니다.
+이런 경우의 '진실'은 각 노드가 자신의 식별자를 알고 있어서, 어떤 패킷을 받을 때 그 패킷의 목적지가 자신이라는 것을 알 수 있다는 것입니다.
+그 밖의 것들은 라우팅이 최선을 다해 작업을 해냅니다.
+상황이 급박하게 변하지만 않는다면 이 방식은 거의 최적의 경로를 제공합니다.
+
+>
+A more curious example is the Ethernet [33], in which lack of a carrier signal on the cable is used as a hint that a packet can be sent. If two senders take the hint simultaneously, there is a collision that both can detect; both stop, delay for a randomly chosen interval, and then try again. If n successive collisions occur, this is taken as a hint that the number of senders is 2<sup>n</sup>, and each sender sets the mean of its random delay interval to 2<sup>n</sup> times its initial value. This ‘exponential backoff’ ensures that the net does not become overloaded.
+
+더 흥미로운 사례는 이더넷입니다.
+이더넷에서는 케이블에서 캐리어 신호가 없는 것을 '패킷을 보낼 수 있다'는 힌트로 사용합니다.
+만약 두 개의 발신자가 동시에 이 힌트를 받는다면, 양쪽이 다 감지할 수 있는 충돌이 발생하게 됩니다.
+그러면 양쪽 모두 패킷 전송을 멈추고, 랜덤한 시간만큼 기다린 다음 재시도합니다.
+만약 충돌이 연속적으로 n번 발생한다면, 이것은 '발신자의 수가 2<sup>n</sup>개라는 것'[^ethernet-hint]을 나타내는 힌트로 받아들이게 됩니다.
+그리고 각 발신자는 이 힌트를 토대로 자신의 랜덤 대기 시간의 평균을 2<sup>n</sup>배로 설정합니다.
+이 '지수적 백오프'는 네트워크가 과부하되지 않도록 보장해줍니다.
+
+>
+A very different application of hints speeds up execution of Smalltalk programs [12].
+In Smalltalk the code executed when a procedure is called is determined dynamically by the type of the first argument.
+Thus `Print(x, format)` invokes the Print procedure that is part of the type of `x`.
+Since Smalltalk has no declarations, the type of `x` is not known statically.
+Instead, each object has a pointer to a table of pairs `[procedure name, address of code]`, and when this call is executed, `Print` is looked up x’s table (I have normalized the unusual Smalltalk terminology and syntax, and oversimplified a bit).
+This is expensive.
+It turns out that usually the type of `x` is the same as it was last time.
+So the code for the call `Print(x, format)` can be arranged like this:
+
+Smalltalk 프로그램의 성능 향상은 힌트를 꽤 다른 방식으로 응용한 사례라 할 수 있습니다.
+
+Smalltalk에서는 프로시저가 호출될 때, 첫 번째 인자의 타입에 따라 실행되는 코드가 동적으로 결정됩니다.
+그러므로 `Print(x, format)`은 타입 `x`에 포함된 `Print` 프로시저를 호출합니다.
+Smalltalk은 선언문이 없기 때문에, `x`의 타입은 정적으로 알 수 없습니다.
+그 대신, 각 객체는 `[procedure name, address of code]` 쌍을 담는 테이블에 대한 포인터를 갖고 있으며, 프로시저가 호출될 때 `x`의 테이블에서 `Print`를 검색합니다(설명을 위해 Smalltalk의 고유한 용어와 구문을 좀 단순하게 일반화했습니다).
+
+이 작업은 비용이 많이 듭니다.
+그런데 `x`의 타입이 이전의 호출과 같은 경우가 대부분이라는 것이 밝혀졌습니다.
+따라서 `Print(x, format)`를 호출하는 코드는 다음과 같이 구성될 수 있습니다.
+
+> ```smalltalk
+> push format; push x;
+> push lastType; call lastProc
+> ```
+>
+and each `Print` procedure begins with
+
+그리고 각 `Print` 프로시저는 다음과 같이 시작됩니다.
+
+> ```smalltalk
+> lastT := Pop(); x := Pop(); t := type of x;
+> if t ≠ lastT then LookupAndCall(x, "Print") else the body of the procedure end if.
+> ```
+
+>
+Here `lastType` and `lastProc` are immediate values stored in the code.
+The idea is that `LookupAndCall` should store the type of `x` and the code address it finds back into the `lastType` and `lastProc` fields.
+If the type is the same next time, the procedure is called directly.
+Measurements show that this cache hits about 96% of the time.
+In a machine with an instruction fetch unit, this scheme has the nice property that the transfer to `lastProc` can proceed at full speed; thus when the hint is correct the call is as fast as an ordinary subroutine call.
+The check of `t ≠ lastT` can be arranged so that it normally does not branch.
+
+여기에서 `lastType`과 `lastProc`는 코드에 저장된 즉시 값입니다.
+이 아이디어는 `LookupAndCall`이 '`x`의 타입'과 '찾은 코드 주소'를 `lastType`과 `lastProc` 필드에 다시 저장해야 한다는 것이 핵심입니다.
+만약 다음 호출에서도 타입이 동일하다면, 프로시저를 바로 호출하면 됩니다.
+
+측정 결과, 이 캐시는 96%의 시간 동안 히트한다고 합니다.
+명령어 페치 유닛이 있는 머신에서는 이 방식을 쓰면 `lastProc`로의 전송이 최고 속도로 진행된다는 큰 장점이 있습니다.
+그러므로 힌트가 정확한 경우, 호출은 일반적인 서브루틴 호출만큼 빠른 속도로 처리됩니다.
+(캐시 히트율이 높기 때문에) 일반적으로 `t != lastT` 에서 `else`로 잘 분기되지 않게 됩니다.
+
+>
+The same idea in a different guise is used in the S-1 [48], which has an extra bit for each instruction in its instruction cache.
+It clears the bit when the instruction is loaded, sets it when the instruction causes a branch to be taken, and uses it to choose the path that the instruction fetch unit follows.
+If the prediction turns out to be wrong, it changes the bit and follows the other path.
+
+같은 아이디어가 다른 형태로 S-1 에서도 사용되었습니다.
+S-1은 명령어 캐시에 저장된 각 명령어에 대해 비트를 하나씩 갖고 있게 합니다.
+명령어가 로드될 때 이 비트는 0으로 초기화되며, 명령어가 분기를 수행하게 되면 1로 설정됩니다.
+그리고 이 비트는 명령어 페치 유닛이 따라가는 경로를 선택하는 데 사용됩니다.
+만약 예측이 잘못된 것으로 판명되면, 이 비트를 변경하고 다른 경로를 따릅니다.
 
 #### * When it doubt, use brute force
+
+TODO: 작업중
+
 #### * Compute in background
 #### * Use batch processing
 #### * Safety first
@@ -1484,3 +1638,5 @@ TODO: 작업중
 [^frame-pointer]: 역주: Frame Pointer. 함수 호출 스택에서 스택 프레임 하나를 가리키는 포인터.
 [^cache-fx-cost]: 역주: `f(x)`를 계산하는 속도가 느리면 느릴수록 캐시를 조회하는 것이 더 이득이다.
 [^cache-fx-example]: 역주: 배열 x의 총합 `sum`에서 i번째 원소인 $$x_i$$ 를 갱신하는 것을 설명하고 있다. `sum`에서 이전의 $$x_i$$를 빼고, 새로운 값 `v`를 더하면 `sum`을 쉽게 갱신할 수 있다. 만약 이 방법을 쓰지 않고 `f(x)`를 다시 계산해야 했다면 배열 `x`를 전부 다시 순회해야 한다.
+[^ethernet-hint]: 역주: 발신자의 수가 2<sup>n</sup>개라는 것은 엄밀하게 계산된 값은 아니며 적당한 추정치이다.
+
