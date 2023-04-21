@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-20 00:34:56 +0900
+updated : 2023-04-21 09:41:20 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1260,6 +1260,54 @@ FP 값은 명령어 주소와 연결되며, 캐시에 있는 번역된 명령어
 
 #### * Cache answers
 
+> > If thou didst ever hold me in thy heart. (V ii 349)
+
+만약 네 마음 속에 나를 담아두고 있다면.
+
+>
+· Cache answers to expensive computations, rather than doing them over.
+By storing the triple $$[f, x, f(x)]$$ in an associative store with $$f$$ and $$x$$ as keys, we can retrieve $$f(x)$$ with a lookup.
+This is faster if $$f(x)$$ is needed again before it gets replaced in the cache, which presumably has limited capacity.
+How much faster depends on how expensive it is to compute $$f(x)$$.
+A serious problem is that when $$f$$ is not functional (can give different results with the same arguments), we need a way to invalidate or update a cache entry if the value of $$f(x)$$ changes.
+Updating depends on an equation of the form $$f(x + D ) = g(x, D , f(x))$$ in which $$g$$ is much cheaper to compute than $$f$$.
+For example, $$x$$ might be an array of 1000 numbers, $$f$$ the sum of the array elements, and $$D$$ a new value for one of them, that is, a pair $$[i, v]$$.
+Then $$g(x, [i, v], sum)$$ is $$sum - x_i + v$$.
+
+비싼 계산을 반복하지 말고 결과를 캐시하라.
+$$f$$와 $$x$$를 key로 사용해서 연관 저장소에 $$[f, x, f(x)]$$를 저장하면, 조회를 통해 $$f(x)$$를 얻을 수 있습니다.
+용량에 한계가 있는 캐싱 방식을 고려해, $$f(x)$$가 캐시에서 아직 남아있을 때 $$f(x)$$를 다시 조회한다면 이전보다 더 빠르게 얻을 수 있을 것입니다.
+그리고 조회가 얼마나 더 빨라지는지는 $$f(x)$$를 계산하는 비용에 달려있습니다.[^cache-fx-cost]
+
+그런데 $$f$$가 함수적이지 않은 경우(같은 인자가 주어져도 $$f$$가 다른 결과를 리턴하는 경우)라면 심각한 문제가 발생합니다.
+$$f(x)$$의 값이 바뀌어야 한다면 캐시된 내용을 무효화하거나 업데이트할 방법이 필요하게 됩니다.
+캐시의 갱신은 $$f(x + D ) = g(x, D , f(x))$$ 형태의 식을 사용하며, 이 식에서는 $$f$$보다 $$g$$를 계산하는 비용이 훨씬 적습니다.
+예를 들어, $$x$$ 는 1000개의 숫자 배열이고, $$f$$ 가 배열 요소의 합, $$D$$는 그 중 하나에 대한 새로운 값, 즉 $$[i, v]$$의 쌍이라 생각해 봅시다.
+그러면 $$g(x, [i, v], sum)$$은 $$sum - x_i + v$$가 됩니다.[^cache-fx-example]
+
+>
+A cache that is too small to hold all the ‘active’ values will thrash, and if recomputing $$f$$ is expensive performance will suffer badly.
+Thus it is wise to choose the cache size adaptively, making it bigger when the hit rate decreases and smaller when many entries go unused for a long time.
+
+용량이 너무 작아서 모든 '활성화된'값들을 저장할 수 없는 캐시에서는 스래싱이 발생하며,
+$$f$$를 다시 계산하는 비용이 크다면 성능이 크게 저하됩니다.
+따라서 히트율이 감소하면 캐시 크기를 크게 조절하고, 오랫동안 사용되지 않는 항목이 많아지면 캐시 크기를 작게 조절하는 것이 현명한 선택입니다.
+
+>
+The classic example of caching is hardware that speeds up access to main storage; its entries are triples [Fetch, address, contents of address].
+The `Fetch` operation is certainly not functional: `Fetch(x)` gives a different answer after `Store(x)` has been done.
+Hence the cache must be updated or invalidated after a store.
+Virtual memory systems do exactly the same thing; main storage plays the role of the cache, disk plays the role of main storage, and the unit of transfer is the page, segment or whatever.
+
+캐싱의 전형적인 예는 메인 스토리지 엑세스 속도를 높이는 하드웨어입니다.
+이 캐시의 엔트리는 `[Fetch, address, address의 내용]`으로 구성됩니다.
+`Fetch` 연산은 확실히 함수적이지 않습니다.
+`Fetch(x)`는 `Store(x)`가 실행된 후에는 다른 결과를 리턴합니다.
+따라서 저장하는 작업을 한 이후에는 캐시도 함께 업데이트해주거나 무효화해야 합니다.
+가상 메모리 시스템도 이와 정확히 같은 방식으로 작동합니다.
+다만 메인 스토리지가 캐시의 역할을 하고, 디스크가 메인 스토리지의 역할을 하며, 페이지, 세그먼트 등이 전송 단위가 됩니다.
+
+
 TODO: 작업중
 
 #### * Use hints
@@ -1344,3 +1392,5 @@ TODO: 작업중
 [^what-demand-paging]: 역주: 가상 메모리 시스템에서 사용하는 메모리 관리 기법 중 하나. 필요한 페이지를 요청할 때만 해당 페이지를 메모리에 로딩한다.
 [^smalltalk-implementation]: 역주: 기계어로 번역한 코드를 많이 실행할수록 코드를 번역하는 데 소모해버린 시간을 만회하게 된다. 그리고 n 회 실행한 시점부터는 성능상의 이득을 보게 될 것이다. `n = 번역하는 데 사용한 시간 / 번역되지 않은 코드의 실행 시간`이므로 만약 `n = 2 / 1` 이라면 실행 시간이 1인 코드를 번역하는 데 2의 시간을 사용한 것이라 생각할 수 있다.
 [^frame-pointer]: 역주: Frame Pointer. 함수 호출 스택에서 스택 프레임 하나를 가리키는 포인터.
+[^cache-fx-cost]: 역주: `f(x)`를 계산하는 속도가 느리면 느릴수록 캐시를 조회하는 것이 더 이득이다.
+[^cache-fx-example]: 역주: 배열 x의 총합 `sum`에서 i번째 원소인 $$x_i$$ 를 갱신하는 것을 설명하고 있다. `sum`에서 이전의 $$x_i$$를 빼고, 새로운 값 `v`를 더하면 `sum`을 쉽게 갱신할 수 있다. 만약 이 방법을 쓰지 않고 `f(x)`를 다시 계산해야 했다면 배열 `x`를 전부 다시 순회해야 한다.
