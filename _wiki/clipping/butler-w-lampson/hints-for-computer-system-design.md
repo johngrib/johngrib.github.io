@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-22 00:53:41 +0900
+updated : 2023-04-22 01:31:36 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1957,9 +1957,105 @@ Thus only two kinds of log entries are needed. All the editing commands reduce t
 
 #### * Make actions atomic or restartable
 
-TODO: 작업중
+> > Beware  
+Of entrance to a quarrel, but, being in,  
+Bear ’t that th’ opposed may beware of thee.
+
+말싸움에 끼어들지 않도록 하라.  
+이미 휘말려든 상황이라면,  
+상대방이 너를 두려워하게 해라.
+
+>
+· Make actions atomic or restartable.
+An atomic action (often called a transaction) is one that either completes or has no effect.
+For example, in most main storage systems fetching or storing a word is atomic.
+The advantages of atomic actions for fault-tolerance are obvious: if a failure occurs during the action it has no effect, so that in recovering from a failure it is not necessary to deal with any of the intermediate states of the action [28].
+Database systems have provided atomicity for some time [17], using a log to store the information needed to complete or cancel an action.
+The basic idea is to assign a unique identifier to each atomic action and use it to label all the log entries associated with that action.
+A commit record for the action [42] tells whether it is in progress, committed (logically complete, even if some cleanup work remains to be done), or aborted (logically canceled, even if some cleanup remains); changes in the state of the commit record are also recorded as log entries.
+An action cannot be committed unless there are log entries for all of its updates.
+After a failure, recovery applies the log entries for each committed action and undoes the updates for each aborted action.
+Many variations on this scheme are possible [54].
+
+작업을 원자적으로 또는 재시작 가능하게 만들어라.
+원자적인 작업(트랜잭션이라고도 부름)은 일단 실행되면 완료되거나 또는 아무런 영향도 남기지 않는 작업을 말합니다.
+예를 들어 워드를 가져오거나 저장하는 것은 대부분의 메인 스토리지 시스템에서 원자적인 작업입니다.
+fault-tolerance 관점에서 원자적인 작업의 장점은 명확합니다.
+작업 도중에 실패가 발생해도 아무런 영향이 없으므로, 실패를 복구할 때 작업 도중 발생한 중간 상태를 처리하지 않아도 됩니다.
+데이터베이스 시스템은 예전부터 오랫동안 원자성을 제공해왔으며,
+작업을 완료하거나 취소하기 위해 필요한 정보를 로그에 저장합니다.
+기본적인 아이디어는 각 원자적 작업에 고유한 식별자를 할당하고,
+그 식별자를 써서 해당 작업과 관련된 모든 로그 항목을 표시하는 것입니다.
+작업의 커밋 레코드는 in progress, committed(논리적으로는 완료됐지만, 일부 정리 작업이 남아있을 수 있음), aborted(논리적으로는 취소됐지만, 일부 정리 작업이 남아있을 수 있음) 중 하나를 표시합니다.
+커밋 레코드의 상태 변경도 로그 항목으로 기록됩니다.
+모든 업데이트에 대한 로그 항목이 없다면 작업을 커밋할 수 없기 때문입니다.
+실패가 발생한 후 복구하는 작업은 커밋된 작업에 대한 로그 항목을 적용하고, 중단된 작업에 대한 업데이트를 취소하는 방식입니다.
+이 방식은 여러 가지 변형이 가능합니다.
+
+>
+For this to work, a log entry usually needs to be restartable.
+This means that it can be partially executed any number of times before a complete execution, without changing the result; sometimes such an action is called ‘idempotent’.
+For example, storing a set of values into a set of variables is a restartable action; incrementing a variable by one is not.
+Restartable log entries can be applied to the current state of the object; there is no need to recover an old state.
+
+이것이 가능하려면 로그 항목이 일반적으로 재시작 가능해야 합니다.
+이는 완전하게 전체적으로 실행하기 전에도 결과에 영향을 주지 않고 여러 차례 부분적으로 실행할 수 있다는 것을 의미합니다.
+이런 특성의 작업을 '멱등(idempotent)'이라 부릅니다.
+예를 들어, 특정 값들의 집합을 변수들의 집합에 저장하는 것은 재시작 가능한 작업입니다.
+그러나 변수를 1씩 증가시키는 것은 재시작 가능한 작업이 아닙니다.
+재시작 가능한 로그 항목은 객체의 현재 상태에 적용될 수 있으며, 이전 상태를 복구할 필요가 없습니다.
+
+>
+This basic method can be used for any kind of permanent storage.
+If things are simple enough a rather distorted version will work.
+The Alto file system described above, for example, in effect uses the disk labels and leader pages as a log and rebuilds its other data structures from these if necessary.
+As in most file systems, it is only the file allocation and directory actions that are atomic; the file system does not help the client to make its updates atomic.
+The Juniper file system [35, 49] goes much further, allowing each client to make an arbitrary set of updates as a single atomic action.
+It uses a trick known as ‘shadow pages’, in which data pages are moved from the log into the files simply by changing the pointers to them in the B-tree that implements the map from file addresses to disk addresses; this trick was first used in the Cal system [50].
+Cooperating clients of an ordinary file system can also implement atomic actions, by checking whether recovery is needed before each access to a file; when it is they carry out the entries in specially named log files [40].
+
+이 기본적인 방법은 어떤 종류의 영구 저장장치에서도 적용할 수 있습니다.
+만약 작업이 충분히 단순하다면, 조금 변형된 버전도 작동할 수 있습니다.
+예를 들어 Alto의 파일 시스템은 디스크 레이블과 리더 페이지를 로그로 사용하며, 필요한 경우 이것들을 기반으로 다른 데이터 구조를 리빌드합니다.
+대부분의 파일 시스템에서 원자적인 작업은 파일 할당과 디렉토리 작업 뿐입니다.
+그리고 파일 시스템은 클라이언트가 업데이트를 원자적으로 수행하는 데 도움을 주지 않습니다.
+Juniper 파일 시스템은 여기에서 더 나아가, 각 클라이언트가 임의의 업데이트 세트를 단일한 원자적 작업으로 처리할 수 있게 합니다.
+파일 주소를 디스크 주소로 매핑하는 B-트리에 있는 포인터를 변경하여 데이터 페이지를 로그에서 파일로 이동시키는 'shadow pages'라는 트릭을 사용하는 것입니다.
+이 기법은 처음으로 Cal 시스템에서 사용됐습니다.
+일반 파일 시스템의 협력하는 클라이언트들도 파일에 엑세스하기 전에 복구가 필요한지 확인하는 방식으로 원자적 작업을 구현할 수 있습니다.
+필요한 경우가 된다면 특별한 이름의 로그 파일에 있는 항목들을 실행합니다.
+
+>
+Atomic actions are not trivial to implement in general, although the preceding discussion tries to show that they are not nearly as hard as their public image suggests.
+Sometimes a weaker but cheaper method will do.
+The Grapevine mail transport and registration system [1], for example, maintains a replicated data base of names and distribution lists on a large number of machines in a nationwide network.
+Updates are made at one site and propagated to other sites using the mail system itself.
+This guarantees that the updates will eventually arrive, but as sites fail and recover and the network partitions, the order in which they arrive may vary greatly.
+Each update message is time-stamped, and the latest one wins.
+After enough time has passed, all the sites will receive all the updates and will all agree.
+During the propagation, however, the sites may disagree, for example about whether a person is a member of a certain distribution list.
+Such occasional disagreements and delays are not very important to the usefulness of this particular system.
+
+
+일반적으로 원자적 작업은 구현하기가 쉽지 않지만,
+앞선 논의에서 그것들이 대중적으로 알려진 것만큼 어렵지 않다는 것을 보여줍니다.
+
+때로는 더 약하지만 비용이 저렴한 방법이 더 적합한 경우도 있습니다.
+예를 들어 Grapevine 메일 전송 및 등록 시스템은 전국적인 네트워크에 있는 수많은 머신들에 이름과 배포 목록 데이터베이스를 복제하여 유지합니다.
+업데이트는 한 사이트에서 이루어지는데, 이 업데이트도 메일 시스템 자체를 사용해 다른 사이트로 전파됩니다.
+이렇게 하면 업데이트 사항이 결국 도착하는 것이 보장되지만,
+사이트가 장애를 겪어 복구하게 되면 네트워크가 분할되는 동안 도착하는 순서가 크게 달라질 수 있습니다.
+각 업데이트 메시지에는 타임스탬프가 찍혀있어서, 가장 최신 메시지가 적용되는 방식입니다.
+충분한 시간이 지나면 모든 사이트가 모든 업데이트를 받고 동의를 마치게 됩니다.
+그러나 전파 과정에서 사이트와 사이트 사이에 불일치 상황이 발생할 수도 있습니다.
+예를 들어 특정 배포 목록의 구성원인지 아닌지에 대한 불일치가 발생할 수 있습니다.
+그러나 이런 일시적인 불일치와 딜레이는 이런 시스템의 유용성에 큰 영향을 미치지는 않습니다.
+
 
 ### 5. Conclusion
+
+TODO: 작업중
+
 ### Acknowledgments
 
 ## 번역하며 남긴 메모
