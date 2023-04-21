@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-21 21:17:08 +0900
+updated : 2023-04-21 22:26:02 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1765,9 +1765,31 @@ Pup 인터넷은 훨씬 더 다양한 전송 장치들을 지원했으며, 부�
 
 ### 4. Fault-tolerance
 
-TODO: 작업중
+**4. 내결함성**
+
+> > The unavoidable price of reliability is simplicity. (C. Hoare)
+
+신뢰성을 얻기 위한 피할 수 없는 대가는 단순함이다. (C. Hoare)[^hoare-1980-turing-award-lecture]
+
+>
+Making a system reliable is not really hard, if you know how to go about it.
+But retrofitting reliability to an existing design is very difficult.
+
+신뢰할 수 있는 시스템을 만드는 것은 방법만 알고 있다면 그리 어렵지 않습니다.
+하지만 기존 설계에 신뢰성을 뒤늦게 끼워 맞추는 것은 매우 어려운 일입니다.
+
+> > This above all: to thine own self be true,  
+And it must follow, as the night the day,  
+Thou canst not then be false to any man.
+
+무엇보다 너 자신에게 진실해야 한단다.  
+그것은 밤과 낮처럼 반드시 따르게 되는 것은,  
+네가 어떤 사람에게도 거짓될 수 없다는 것이다.
 
 #### * End-to-end
+
+TODO: 작업중
+
 #### * Log updates
 #### * Make actions atomic or restartable
 ### 5. Conclusion
@@ -1846,3 +1868,4 @@ TODO: 작업중
 [^cache-fx-example]: 역주: 배열 x의 총합 `sum`에서 i번째 원소인 $$x_i$$ 를 갱신하는 것을 설명하고 있다. `sum`에서 이전의 $$x_i$$를 빼고, 새로운 값 `v`를 더하면 `sum`을 쉽게 갱신할 수 있다. 만약 이 방법을 쓰지 않고 `f(x)`를 다시 계산해야 했다면 배열 `x`를 전부 다시 순회해야 한다.
 [^ethernet-hint]: 역주: 발신자의 수가 2<sup>n</sup>개라는 것은 엄밀하게 계산된 값은 아니며 적당한 추정치이다.
 [^swap-in-out]: 역주: 가상 메모리 시스템에서 메모리 페이지를 디스크로 옮기는 것을 swap-out, 디스크에서 메모리로 옮기는 것을 swap-in이라고 한다.
+[^hoare-1980-turing-award-lecture]: [Hoare의 1980년 튜링상 수상 강연]( https://www.cs.fsu.edu/~engelen/courses/COP4610/hoare.pdf )도 함께 읽어볼 만하다. "At first I hoped that such a technically unsound project would collapse but I soon realized it was doomed to success. Almost anything in software can be implemented, sold, and even used given enough determination. There is nothing a mere scientist can say that will stand against the flood of a hundred million dollars. But there is one quality that cannot be purchased in this way--and that is reliability. The price of reliability is the pursuit of the utmost simplicity. It is a price which the very rich find most hard to pay."
