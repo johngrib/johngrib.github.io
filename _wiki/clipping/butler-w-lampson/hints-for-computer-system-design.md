@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-21 20:18:44 +0900
+updated : 2023-04-21 20:28:27 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1618,9 +1618,28 @@ Interlisp와 Cedar 가비지 컬렉터는 거의 모든 작업을 이런 식으�
 
 #### * Use batch processing
 
-TODO: 작업중
+>
+· Use batch processing if possible.
+Doing things incrementally almost always costs more, even aside from the fact that disks and tapes work much better when accessed sequentially.
+Also, batch processing permits much simpler error recovery.
+The Bank of America has an interactive system that allows tellers to record deposits and check withdrawals.
+It is loaded with current account balances in the morning and does its best to maintain them during the day.
+But early the next morning the on-line data is discarded and replaced with the results of night’s batch run.
+This design makes it much easier to meet the bank’s requirements for trustworthy long-term data, and there is no significant loss in function.
+
+가능한 한 배치 처리를 사용하라.
+작업을 점진적으로 처리하는 것은 항상 비용이 더 많이 듭니다.
+특히 디스크나 테이프에 순차적으로 접근하는 것이 훨씬 더 좋다는 점을 논외로 치더라도 마찬가지입니다.
+또한, 배치 처리는 오류 복구가 훨씬 더 간단합니다.
+뱅크 오브 아메리카는 창구 직원들이 입출금을 기록할 수 있는 대화형 시스템을 가지고 있습니다.
+이 시스템은 아침에 현재 계좌 잔액을 로드하고 하루종일 데이터를 유지하려 노력합니다.
+그러나 다음날 아침 일찍이 되면, 온라인 데이터는 버려지고 밤에 배치로 실행된 결과로 대체됩니다.
+이 설계로 인해 은행은 신뢰할 수 있는 장기 데이터를 충족시키기가 훨씬 쉬워졌을 뿐 아니라, 기능상으로도 포기한 것이 거의 없었습니다.
 
 #### * Safety first
+
+TODO: 작업중
+
 #### * Shed load
 ### 4. Fault-tolerance
 #### * End-to-end
