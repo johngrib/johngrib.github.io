@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-21 20:07:45 +0900
+updated : 2023-04-21 20:18:44 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -1583,9 +1583,43 @@ n × n 행렬을 곱하는 알고리즘은 O(n<sup>2.5</sup>) 보다 빠르지�
 
 #### * Compute in background
 
-TODO: 작업중
+>
+· Compute in background when possible.
+
+가능한 한 백그라운드에서 계산하라.
+
+>
+In an interactive or real-time system, it is good to do as little work as possible before responding to a request.
+The reason is twofold: first, a rapid response is better for the users, and second, the load usually varies a great deal, so there is likely to be idle processor time later in which to do background work.
+Many kinds of work can be deferred to background.
+The Interlisp and Cedar garbage collectors [7, 11] do nearly all their work this way.
+Many paging systems write out dirty pages and prepare candidates for replacement in background.
+Electronic mail can be delivered and retrieved by background processes, since delivery within an hour or two is usually acceptable.
+Many banking systems consolidate the data on accounts at night and have it ready the next morning.
+These four examples have successively less need for synchronization between foreground and background tasks.
+As the amount of synchronization increases more care is needed to avoid subtle errors; an extreme example is the on-the-fly garbage collection algorithm given in [13].
+But in most cases a simple producer-consumer relationship between two otherwise independent processes is possible.
+
+대화형이나 실시간 시스템에서는 요청에 응답하기 전에 가능한 한 적응 양의 작업을 하는 것이 좋습니다.
+그 이유는 두 가지입니다.
+
+- 첫째, 빠른 응답은 사용자에게 더 좋습니다.
+- 둘째, 일반적으로 매우 다양한 부하가 있기 때문에, 나중에 백그라운드 작업을 할 수 있는 유휴 프로세서 시간이 있을 가능성이 높습니다.
+
+많은 종류의 작업을 백그라운드로 연기할 수 있습니다.
+Interlisp와 Cedar 가비지 컬렉터는 거의 모든 작업을 이런 식으로 합니다.
+많은 페이징 시스템들은 더러운 페이지를 작성하고 교체 후보를 준비하는 작업을 백그라운드에서 합니다.
+전자 메일은 보통 1~2시간의 전송시간도 괜찮기 때문에, 백그라운드로 프로세스로 전달하고 받아오면 됩니다.
+많은 은행 시스템들이 계정 데이터를 밤에 정리하는 방식으로 다음날 아침을 준비합니다.
+이 네 가지 예시들은 포어그라운드와 백그라운드 작업 간의 동기화가 필요한 정도가 점점 줄어들고 있습니다.
+동기화량이 증가될수록 미묘한 오류를 피하기 위해 더 많은 주의가 필요합니다.
+극단적인 예는 [13]에서 제시된 실시간 가비지 컬렉션 알고리즘입니다.
+하지만 대부분의 경우에는 두 개의 독립적인 프로세스 사이에서 간단한 producer-consumer 관계를 만드는 것이 가능합니다.
 
 #### * Use batch processing
+
+TODO: 작업중
+
 #### * Safety first
 #### * Shed load
 ### 4. Fault-tolerance
