@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-22 09:00:34 +0900
+updated : 2023-04-22 09:02:10 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -36,9 +36,9 @@ Computer Science Laboratory
 Xerox Palo Alto Research Center
 Palo Alto, CA 94304
 
-- 참고
-    - 의역이 많으며, 오역이 상당히 있을 수 있습니다.
-    - `*`로 시작하는 소제목은 원문에는 없는 것이며, 역자가 Hint들을 쉽게 찾기 위해 추가한 것입니다.
+- 의역이 많으며, 오역이 상당히 있을 수 있습니다.
+- `*`로 시작하는 소제목은 원문에는 없는 것이며, 역자가 Hint들을 쉽게 찾기 위해 추가한 것입니다.
+- 번역하는 과정에서 OpenAI의 GPT-4의 도움을 받았습니다.
 
 ### Abstract
 
