@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-22 22:50:46 +0900
+updated : 2023-04-22 23:01:09 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -178,31 +178,48 @@ JMS 명세는 소비 후 각각의 메시지를 순서에 상관없이 확인할
 
 >
 A number of specialized log aggregators have been built over the last few years.
-
 Facebook uses a system called Scribe.
-
 Each frontend machine can send log data to a set of Scribe machines over sockets.
-
 Each Scribe machine aggregates the log entries and periodically dumps them to HDFS [9] or an NFS device.
-
 Yahoo’s data highway project has a similar dataflow.
-
 A set of machines aggregate events from the clients and roll out “minute” files, which are then added to HDFS.
-
 Flume is a relatively new log aggregator developed by Cloudera.
-
 It supports extensible “pipes” and “sinks”, and makes streaming log data very flexible.
-
 It also has more integrated distributed support.
-
 However, most of those systems are built for consuming the log data offline, and often expose implementation details unnecessarily (e.g. “minute files”) to the consumer.
-
 Additionally, most of them use a “push” model in which the broker forwards data to consumers.
-
 At LinkedIn, we find the “pull” model more suitable for our applications since each consumer can retrieve the messages at the maximum rate it can sustain and avoid being flooded by messages pushed faster than it can handle.
-
 The pull model also makes it easy to rewind a consumer and we discuss this benefit at the end of Section 3.2.
 
+지난 몇 년 동안 수많은 전문적인 로그 집계기가 개발되었습니다.
+
+페이스북은 Scribe라는 시스템을 사용합니다.
+각 프론트엔드 머신은 Scribe 머신들에게 소켓을 통해 로그 데이터를 보낼 수 있습니다.
+각각의 Scribe 머신은 로그 엔트리들을 집계하고 주기적으로 HDFS나 NFS 장치에 저장합니다.
+
+야후의 데이터 하이웨이 프로젝트도 비슷한 데이터 흐름을 가지고 있습니다.
+클라이언트로부터 이벤트를 집계하는 머신 집합이 “minute” 파일을 만들어서 HDFS에 추가합니다.
+
+Flume는 클라우데라에서 개발한 상대적으로 새로운 로그 집계기입니다.
+확장 가능한 “pipes”와 “sinks”를 지원하며, 로그 데이터 스트리밍을 매우 유연하게 만들어 줍니다.
+또한 더 통합된 분산 지원을 제공합니다.
+
+그러나, 대부분의 이러한 시스템들은 로그 데이터를 오프라인으로 소비하기 위해 만들어졌으며, 종종 불필요한 세부 구현을 컨슈머에게 노출합니다.(예: “minute files”)
+게다가 대부분의 시스템에서는 브로커가 데이터를 컨슈머에게 전달하는 “push” 모델을 사용합니다.
+
+링크드인에서는 "pull" 모델이 우리의 애플리케이션에 더 적합하다고 판단합니다.
+각각의 컨슈머가 최대 속도로 메시지를 가져올 수 있고,
+처리할 수 없는 속도로 메시지가 푸시되는 것을 피할 수 있기 때문입니다.
+"pull" 모델은 컨슈머를 되감기하는 것을 쉽게 만들어주기도 합니다. 이러한 장점은 3.2절의 끝에서 논의합니다.
+
+>
+More recently, Yahoo! Research developed a new distributed pub/sub system called HedWig [13].
+HedWig is highly scalable and available, and offers strong durability guarantees.
+However, it is mainly intended for storing the commit log of a data store.
+
+최근, Yahoo! Research는 HedWig이라는 새로운 분산 pub/sub 시스템을 개발했습니다.
+HedWig는 높은 확장성과 가용성을 제공하며, 강력한 내구성 보장을 제공합니다.
+그러나, 주로 데이터 스토어의 커밋 로그를 저장하기 위한 목적으로 사용됩니다.
 
 ### 3. Kafka Architecture and Design Principles
 #### 3.1 Efficiency on a Single Partition
