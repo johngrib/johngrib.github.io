@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-22 01:39:44 +0900
+updated : 2023-04-22 09:00:34 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -22,7 +22,7 @@ latex   : true
 
 >
 컴퓨터 시스템의 설계에 관한 Lampson의 그 유명한 조언.
-언젠가 한번은 읽어야 할 논문ㅓ이자 아마 여러 번 읽어야 할 논문일 것이다.
+언젠가 한번은 읽어야 할 논문이자 아마 여러 번 읽어야 할 논문일 것이다.
 [^three-50]
 
 ## Hints for Computer System Design 번역
