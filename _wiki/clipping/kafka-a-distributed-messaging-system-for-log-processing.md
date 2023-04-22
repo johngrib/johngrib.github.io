@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 00:57:31 +0900
+updated : 2023-04-23 01:10:13 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -437,6 +437,50 @@ Linux와 다른 Unix 운영체제에서는 파일 채널에서 소켓 채널로 
 Kafka는 sendfile API를 사용하여 브로커에서 컨슈머로 로그 세그먼트 파일의 바이트를 효율적으로 전달합니다.
 
 ##### Stateless broker
+
+>
+Stateless broker: Unlike most other messaging systems, in Kafka, the information about how much each consumer has consumed is not maintained by the broker, but by the consumer itself.
+Such a design reduces a lot of the complexity and the overhead on the broker.
+However, this makes it tricky to delete a message, since a broker doesn’t know whether all subscribers have consumed the message.
+Kafka solves this problem by using a simple time-based SLA for the retention policy.
+A message is automatically deleted if it has been retained in the broker longer than a certain period, typically 7 days.
+This solution works well in practice.
+Most consumers, including the offline ones, finish consuming either daily, hourly, or in real-time.
+The fact that the performance of Kafka doesn’t degrade with a larger data size makes this long retention feasible.
+
+상태 없는 브로커: 대부분의 여타 메시징 시스템들과 달리, Kafka에서는 각 컨슈머가 얼마나 소비했는지에 대한 정보가 브로커가 아니라 컨슈머 자체에 의해 유지됩니다.
+이러한 설계로 인해 브로커의 복잡성과 오버헤드가 많이 줄어듭니다.
+그러나 이로 인해 모든 구독자가 메시지를 소비했는지를 브로커가 알 수 없으므로, 메시지를 삭제하는 것이 까다로워집니다.
+
+Kafka는 간단한 시간 기반 SLA를 사용하여 보존 정책을 해결합니다.
+특정 기간 이상 브로커에 보관된 메시지는 자동으로 삭제됩니다. 이 기간은 일반적으로는 7일 입니다.
+이 솔루션은 실제로 잘 작동합니다.
+오프라인 컨슈머를 포함한 대부분의 컨슈머는 매일, 매 시간마다, 또는 실시간으로 소비를 완료합니다.
+Kafka의 성능이 더 큰 데이터 크기에서도 저하되지 않는다는 사실로 인해, 이러한 긴 보존 기간이 가능해집니다.
+
+>
+There is an important side benefit of this design.
+A consumer can deliberately rewind back to an old offset and re-consume data.
+This violates the common contract of a queue, but proves to be an essential feature for many consumers.
+For example, when there is an error in application logic in the consumer, the application can re-play certain messages after the error is fixed.
+This is particularly important to ETL data loads into our data warehouse or Hadoop system.
+As another example, the consumed data may be flushed to a persistent store only periodically (e.g, a full-text indexer).
+If the consumer crashes, the unflushed data is lost.
+In this case, the consumer can checkpoint the smallest offset of the unflushed messages and re-consume from that offset when it’s restarted.
+We note that rewinding a consumer is much easier to support in the pull model than the push model.
+
+이 설계에는 중요한 부가적인 장점이 있습니다.
+컨슈머는 의도적으로 이전의 오프셋으로 되돌아가서 데이터를 다시 소비할 수 있습니다.
+이것은 일반적으로는 queue 데이터 구조의 계약을 위반하지만, 많은 컨슈머에게는 필수적인 기능으로 입증된 것입니다.
+예를 들어, 컨슈머의 애플리케이션 로직에 오류가 있을 때, 오류가 수정된 후 특정 메시지를 다시 재생할 수 있습니다.
+이것은 특히 데이터 웨어하우스나 하둡 시스템으로의 ETL 데이터 로드에 중요합니다.
+
+또 다른 예를 들어 보자면, 소비된 데이터는 주기적으로만 영구 저장소로 플러시될 수 있습니다(예: 전문 검색 인덱서) .
+만약 컨슈머가 크래시되면, 플러시되지 않은 데이터는 손실될 것입니다.
+이러한 경우에 컨슈머는 플러시되지 않은 메시지의 가장 작은 오프셋을 체크포인트로 남기고, 재시작할 때 그 오프셋부터 다시 소비할 수 있습니다.
+우리는 컨슈머를 되돌리는 것이 pull 모델에서는 push 모델보다 훨씬 더 지원하기 쉽다는 점에 착안했습니다.
+
+
 #### 3.2 Distributed Coordination
 #### 3.3 Delivery Guarantees
 ### 4. Kafka Usage at LinkedIn
