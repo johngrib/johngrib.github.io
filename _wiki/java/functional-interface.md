@@ -3,12 +3,12 @@ layout  : wiki
 title   : Java 함수형 인터페이스의 사용
 summary : 
 date    : 2020-01-25 16:21:36 +0900
-updated : 2021-02-21 17:52:16 +0900
+updated : 2023-04-22 15:54:59 +0900
 tag     : java
 resource: 84/621244-8C5F-44D3-A8BA-A45379221280
 toc     : true
 public  : true
-parent  : [[java]]
+parent  : [[/java]]
 latex   : false
 ---
 * TOC

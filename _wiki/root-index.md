@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-20 23:09:26 +0900
+updated : 2023-04-22 15:54:53 +0900
 regenerate: true
 ---
 * TOC
@@ -306,6 +306,7 @@ regenerate: true
 * [[/java/enum]]
 * [[/java/exception-handling]]
 * [[/java/feel-of-java]]
+* [[/java/functional-interface]]
 * [[/java/hashmap]]
 * [[/java/inner-class-may-be-static]]
 * [[/java/javadoc]]
@@ -327,7 +328,6 @@ regenerate: true
 
 * [[/java-abstract-class]]
 * [[/java-abstract-method]]
-* [[/java-functional-interface]]
 * [[/java-interface]]
 * [[/java-jigsaw-quick-start]]
 * [[/java-lambda]]

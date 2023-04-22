@@ -8,7 +8,6 @@
  "children": [
   "java-abstract-class",
   "java-abstract-method",
-  "java-functional-interface",
   "java-interface",
   "java-jigsaw-quick-start",
   "java-lambda",
@@ -22,6 +21,7 @@
   "java/enum",
   "java/exception-handling",
   "java/feel-of-java",
+  "java/functional-interface",
   "java/hashmap",
   "java/inner-class-may-be-static",
   "java/javadoc",
