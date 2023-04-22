@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 00:41:37 +0900
+updated : 2023-04-23 00:57:31 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -379,6 +379,63 @@ Kafka 로그의 레이아웃과 메모리 내 인덱스는 Figure 2에 나와 �
 
 
 ##### Efficient transfer
+
+>
+Efficient transfer: We are very careful about transferring data in and out of Kafka.
+Earlier, we have shown that the producer can submit a set of messages in a single send request.
+Although the end consumer API iterates one message at a time, under the covers, each pull request from a consumer also retrieves multiple messages up to a certain size, typically hundreds of kilobytes.
+
+효율적인 전송: 우리는 Kafka로 데이터를 주고받는 일에 매우 주의를 기울입니다.
+위에서 우리는 한 번의 send 요청으로 메시지들의 집합을 제출할 수 있다고 설명했습니다.
+최종 컨슈머 API는 한 번에 하나의 메시지를 반복하지만,
+내부적으로는 컨슈머의 각 pull 요청도 일정한 크기가 되기까지 여러 메시지를 가져옵니다.
+이 크기는 일반적으로 수백 킬로바이트입니다.
+
+>
+Another unconventional choice that we made is to avoid explicitly caching messages in memory at the Kafka layer.
+Instead, we rely on the underlying file system page cache.
+This has the main benefit of avoiding double buffering---messages are only cached in the page cache.
+This has the additional benefit of retaining warm cache even when a broker process is restarted.
+Since Kafka doesn’t cache messages in process at all, it has very little overhead in garbage collecting its memory, making efficient implementation in a VM-based language feasible.
+Finally, since both the producer and the consumer access the segment files sequentially, with the consumer often lagging the producer by a small amount, normal operating system caching heuristics are very effective (specifically write-through caching and readahead).
+We have found that both the production and the consumption have consistent performance linear to the data size, up to many terabytes of data.
+
+우리가 선택한 또다른 일반적이지 않은 선택은 Kafka 레이어에서 메모리에 메시지를 캐싱하지 않는다는 것입니다.
+대신, 우리는 기본 파일 시스템 페이지 캐시를 사용합니다.
+이로 인해 메시지는 페이지 캐시에만 캐싱되므로, 더블 버퍼링을 피할 수 있습니다.
+또한 브로커 프로세스가 재시작되어도 캐시가 유지되는 추가적인 장점이 있습니다.
+
+Kafka가 프로세스에서 전혀 메시지를 캐싱하지 않기 때문에, 메모리의 가비지 컬렉팅 오버헤드가 거의 없습니다.
+그러므로 VM 기반 언어에서 효율적인 구현이 가능합니다.
+마지막으로, 프로듀서와 컨슈머가 모두 세그먼트 파일에 순차적으로 접근하며,
+컨슈머가 프로듀서보다 작은 양만큼 뒤쳐져 있기 때문에,
+일반적인 운영체제 캐싱 휴리스틱이 매우 효과적으로 작동합니다(특히 write-through caching과 readahead).
+우리는 발행과 소비가 데이터 크기에 대해 선형적으로 일관된 성능을 갖는다는 것을 확인했습니다.
+그리고 이는 수 테라바이트의 데이터 규모에서도 적용됩니다.
+
+>
+In addition we optimize the network access for consumers.
+Kafka is a multi-subscriber system and a single message may be consumed multiple times by different consumer applications.
+A typical approach to sending bytes from a local file to a remote socket involves the following steps: (1) read data from the storage media to the page cache in an OS, (2) copy data in the page cache to an application buffer, (3) copy application buffer to another kernel buffer, (4) send the kernel buffer to the socket.
+This includes 4 data copying and 2 system calls.
+On Linux and other Unix operating systems, there exists a sendfile API [5] that can directly transfer bytes from a file channel to a socket channel.
+This typically avoids 2 of the copies and 1 system call introduced in steps (2) and (3).
+Kafka exploits the sendfile API to efficiently deliver bytes in a log segment file from a broker to a consumer.
+
+또한 우리는 컨슈머를 위한 네트워크 접근을 최적화합니다.
+Kafka는 다중 구독자 시스템이며, 하나의 메시지가 각기 다른 컨슈머 애플리케이션에 의해 여러 번 소비될 수 있습니다.
+로컬 파일에서 원격 소켓으로 바이트를 전송하는 일반적인 접근 방식은 다음과 같은 단계를 포함합니다.
+
+- (1) 저장 매체에서 OS 페이지 캐시로 데이터를 읽습니다.
+- (2) 페이지 캐시의 데이터를 애플리케이션 버퍼로 복사합니다.
+- (3) 애플리케이션 버퍼를 다른 커널 버퍼로 복사합니다.
+- (4) 커널 버퍼를 소켓으로 전송합니다.
+
+이로 인해 4번의 데이터 복사와 2번의 시스템 호출이 발생합니다.
+Linux와 다른 Unix 운영체제에서는 파일 채널에서 소켓 채널로 바이트를 직접 전송할 수 있는 sendfile API가 있습니다.
+이것을 사용하면 일반적으로 (2)와 (3) 단계에서 소개된 2개의 복사와 1개의 시스템 호출을 피할 수 있습니다.
+Kafka는 sendfile API를 사용하여 브로커에서 컨슈머로 로그 세그먼트 파일의 바이트를 효율적으로 전달합니다.
+
 ##### Stateless broker
 #### 3.2 Distributed Coordination
 #### 3.3 Delivery Guarantees
