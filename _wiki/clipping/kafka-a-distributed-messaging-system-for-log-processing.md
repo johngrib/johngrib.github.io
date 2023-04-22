@@ -3,13 +3,13 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 01:10:13 +0900
+updated : 2023-04-23 02:01:56 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
 public  : true
 parent  : [[/clipping]]
-latex   : false
+latex   : true
 ---
 * TOC
 {:toc}
@@ -482,6 +482,179 @@ We note that rewinding a consumer is much easier to support in the pull model th
 
 
 #### 3.2 Distributed Coordination
+
+**3.2 분산 조정**
+
+>
+We now describe how the producers and the consumers behave in a distributed setting.
+Each producer can publish a message to either a randomly selected partition or a partition semantically determined by a partitioning key and a partitioning function.
+We will focus on how the consumers interact with the brokers.
+
+이제 분산 환경에서 프로듀서와 컨슈머가 어떻게 동작하는지 설명합니다.
+각 프로듀서는 메시지를 '랜덤하게 선택된 파티션' 또는 '파티셔닝 키와 파티션 함수에 의해 의미론적으로 결정된 파티션'에 게시할 수 있습니다.
+우리는 컨슈머가 브로커와 어떻게 상호작용하는지에 대해 초점을 맞출 것입니다.
+
+>
+Kafka has the concept of consumer groups.
+Each consumer group consists of one or more consumers that jointly consume a set of subscribed topics, i.e., each message is delivered to only one of the consumers within the group.
+Different consumer groups each independently consume the full set of subscribed messages and no coordination is needed across consumer groups.
+The consumers within the same group can be in different processes or on different machines.
+Our goal is to divide the messages stored in the brokers evenly among the consumers, without introducing too much coordination overhead.
+
+Kafka는 컨슈머 그룹이라는 개념을 가지고 있습니다.
+각각의 컨슈머 그룹은 하나 이상의 컨슈머로 구성되며, 이들은 함께 구독하고 있는 토픽들을 소비합니다.
+즉, 각각의 메시지는 그룹 내의 컨슈머 중 하나에게만 전달됩니다.
+서로 다른 컨슈머 그룹은 각각 독립적으로 전체 구독된 메시지를 소비하며, 컨슈머 그룹 간에는 조정이 필요하지 않습니다.
+같은 그룹 내의 컨슈머는 다른 프로세스 또는 다른 머신에 있을 수 있습니다.
+우리의 목표는 브로커에 저장된 메시지를 컨슈머들 사이에 고르게 나누면서도, 이를 위한 조정 오버헤드가 너무 많이 발생하지 않도록 하는 것입니다.
+
+>
+Our first decision is to make a partition within a topic the smallest unit of parallelism.
+This means that at any given time, all messages from one partition are consumed only by a single consumer within each consumer group.
+Had we allowed multiple consumers to simultaneously consume a single partition, they would have to coordinate who consumes what messages, which necessitates locking and state maintenance overhead.
+In contrast, in our design consuming processes only need co-ordinate when the consumers rebalance the load, an infrequent event.
+In order for the load to be truly balanced, we require many more partitions in a topic than the consumers in each group.
+We can easily achieve this by over partitioning a topic.
+
+우리의 첫 번째 결정은 토픽 내의 파티션을 병렬 처리의 최소 단위로 만드는 것입니다.
+이는 어떤 주어진 시점에도, 각 컨슈머 그룹 내에서 하나의 파티션의 모든 메시지가 하나의 컨슈머에 의해서만 소비된다는 것을 의미합니다.
+만약 여러 컨슈머가 동시에 단일 파티션을 소비할 수 있도록 허용했다면, 누가 어떤 메시지를 소비할지를 조정해야 했을 텐데, 이는 락킹(locking)과 상태 유지 오버헤드를 필요로 합니다.
+반면, 우리의 설계에서 누가 소비할지를 지정하는 프로세스는 컨슈머가 부하를 재분배하는 것을 조정할 때만 필요한 일입니다.
+이는 드문 일입니다.
+부하의 균형을 맞추기 위해서는, 각 그룹의 컨슈머보다 토픽의 파티션 수가 훨씬 많아야 합니다.
+이는 토픽을 과도하게 파티션화함으로써 쉽게 달성할 수 있습니다.
+
+>
+The second decision that we made is to not have a central “master” node, but instead let consumers coordinate among themselves in a decentralized fashion.
+Adding a master can complicate the system since we have to further worry about master failures.
+To facilitate the coordination, we employ a highly available consensus service Zookeeper [10].
+Zookeeper has a very simple, file system like API.
+One can create a path, set the value of a path, read the value of a path, delete a path, and list the children of a path.
+It does a few more interesting things:
+(a) one can register a watcher on a path and get notified when the children of a path or the value of a path has changed; (b) a path can be created as ephemeral (as oppose to persistent), which means that if the creating client is gone, the path is automatically removed by the Zookeeper server; (c) zookeeper replicates its data to multiple servers, which makes the data highly reliable and available.
+
+우리의 두 번째 결정은 중앙의 "마스터" 노드를 갖지 않고, 대신 컨슈머들이 분산된 방식으로 서로간에 조정하도록 하는 것입니다.
+마스터를 추가하면 마스터 장애에 대한 걱정이 생겨서 시스템이 복잡해질 수 있습니다.
+조정을 용이하게 하기 위해서, 우리는 고가용성 합의 서비스인 Zookeeper를 사용합니다.
+
+Zookeeper는 매우 간단한 파일 시스템같은 API를 가지고 있습니다.
+Zookeeper는 path를 생성하고, path의 값을 설정하고, path의 값을 읽고, path를 삭제하고, path의 자식들을 나열할 수 있습니다.
+그리고 몇 가지 더 흥미로운 기능들도 가지고 있습니다.
+
+- (a) path에 watcher를 등록할 수 있고, path의 자식들이나 path의 값이 변경되었을 때 알림을 받을 수 있습니다.
+- (b) path를 일시적(ephemeral, persistent와 반대)으로 생성할 수 있습니다. 이는 생성한 클라이언트가 사라지면 Zookeeper 서버가 자동으로 path를 제거한다는 것을 의미합니다.
+- (c) zookeeper는 데이터를 여러 서버에 복제하여 데이터가 높은 신뢰성과 가용성을 가지도록 합니다.
+
+>
+Kafka uses Zookeeper for the following tasks: (1) detecting the addition and the removal of brokers and consumers, (2) triggering a rebalance process in each consumer when the above events happen, and (3) maintaining the consumption relationship and keeping track of the consumed offset of each partition.
+Specifically, when each broker or consumer starts up, it stores its information in a broker or consumer registry in Zookeeper.
+The broker registry contains the broker’s host name and port, and the set of topics and partitions stored on it.
+The consumer registry includes the consumer group to which a consumer belongs and the set of topics that it subscribes to.
+Each consumer group is associated with an ownership registry and an offset registry in Zookeeper.
+The ownership registry has one path for every subscribed partition and the path value is the id of the consumer currently consuming from this partition (we use the terminology that the consumer owns this partition).
+The offset registry stores for each subscribed partition, the offset of the last consumed message in the partition.
+
+Kafka는 Zookeeper를 다음과 같은 작업에 사용합니다.
+
+- (1) 브로커와 컨슈머의 추가와 제거를 감지합니다.
+- (2) 위의 이벤트가 발생할 때, 각 컨슈머의 재분배 프로세스를 트리거합니다.
+- (3) 소비 관계를 유지하고 각 파티션의 소비된 오프셋을 추적합니다.
+
+구체적으로, 각 브로커나 컨슈머가 시작될 때 자신의 정보를 Zookeeper의 브로커 레지스트리나 컨슈머 레지스트리에 저장합니다.
+브로커 레지스트리에는 브로커의 호스트 이름과 포트, 그리고 그 브로커에 저장된 토픽과 파티션의 집합이 포함됩니다.
+컨슈머 레지스트리에는 컨슈머가 속한 컨슈머 그룹과 그 컨슈머가 구독하는 토픽의 집합이 포함됩니다.
+각 컨슈머 그룹은 Zookeeper의 소유권 레지스트리와 오프셋 레지스트리와 연관됩니다.
+소유권 레지스트리는 구독한 파티션마다 하나의 path를 가지고 있고, path의 값은 현재 이 파티션을 소비하는 컨슈머의 id입니다.
+(우리는 이 컨슈머가 이 파티션을 소유한다는 용어를 써서 표현합니다.)
+오프셋 레지스트리는 각각의 구독되는 파티션에 대해 마지막으로 소비된 메시지의 오프셋을 저장합니다.
+
+>
+The paths created in Zookeeper are ephemeral for the broker registry, the consumer registry and the ownership registry, and persistent for the offset registry.
+If a broker fails, all partitions on it are automatically removed from the broker registry.
+The failure of a consumer causes it to lose its entry in the consumer registry and all partitions that it owns in the ownership registry.
+Each consumer registers a Zookeeper watcher on both the broker registry and the consumer registry, and will be notified whenever a change in the broker set or the consumer group occurs.
+
+Zookeeper에서 생성된 path는 브로커 레지스트리, 컨슈머 레지스트리, 소유권 레지스트리에 대해서는 일시적이고, 오프셋 레지스트리에 대해서는 영구적입니다.
+만약 브로커에 오류가 발생하면, 그 브로커에 있는 모든 파티션은 자동으로 브로커 레지스트리에서 제거됩니다.
+그리고 컨슈머에 오류가 발생하면, 컨슈머 레지스트리에서 그 컨슈머의 엔트리가 사라지고, 소유권 레지스트리에서 그 컨슈머가 소유한 모든 파티션을 잃게 됩니다.
+각 컨슈머는 브로커 레지스트리와 컨슈머 레지스트리에 대해 Zookeeper watcher를 등록하고, 브로커 집합이나 컨슈머 그룹이 변경될 때마다 알림을 받습니다.
+
+>
+During the initial startup of a consumer or when the consumer is notified about a broker/consumer change through the watcher, the consumer initiates a rebalance process to determine the new subset of partitions that it should consume from.
+The process is described in Algorithm 1.
+By reading the broker and the consumer registry from Zookeeper, the consumer first computes the set (PT) of partitions available for each subscribed topic T and the set (CT) of consumers subscribing to T.
+It then range-partitions PT into |CT| chunks and deterministically picks one chunk to own.
+For each partition the consumer picks, it writes itself as the new owner of the partition in the ownership registry.
+Finally, the consumer begins a thread to pull data from each owned partition, starting from the offset stored in the offset registry.
+As messages get pulled from a partition, the consumer periodically updates the latest consumed offset in the offset registry.
+
+컨슈머가 초기 시작할 때 또는 watcher를 통해 브로커/컨슈머 변경에 대해 알림을 받을 때, 컨슈머는 새로운 파티션 하위 집합을 결정하기 위해 리밸런싱 프로세스를 시작합니다.
+이 프로세스는 Algorithm 1에 설명되어 있습니다.
+
+컨슈머는 먼저 Zookeeper에서 브로커와 컨슈머 레지스트리를 읽어서, 각 구독된 토픽 T에 대해 사용 가능한 파티션의 집합 (PT)과 T를 구독하는 컨슈머의 집합 (CT)을 계산합니다.
+그런 다음 PT를 |CT|개의 청크로 범위-분할하고, 그 중 하나를 소유하도록 결정합니다.
+컨슈머가 선택한 각 파티션에 대해 컨슈머는 소유권 레지스트리에 파티션의 새 소유자로 자신을 기록합니다.
+마지막으로 컨슈머는 오프셋 레지스트리에 저장된 오프셋에서 시작하여 각 소유된 파티션에서 데이터를 가져오는 스레드를 시작합니다.j
+파티션에서 메시지를 가져오면, 컨슈머는 주기적으로 오프셋 레지스트리에 최신으로 소비된 오프셋을 업데이트합니다.
+
+>
+Algorithm 1: rebalance process for consumer $$C_i$$ in group G  
+For each topic T that $$C_i$$ subscribes to {  
+$$ \space $$   remove partitions owned by Ci from the ownership registry  
+$$ \space $$   read the broker and the consumer registries from Zookeeper  
+$$ \space $$   compute $$P_T$$ = partitions available in all brokers under topic T  
+$$ \space $$   compute $$C_T$$ = all consumers in G that subscribe to topic T  
+$$ \space $$   sort $$P_T$$ and $$C_T$$  
+$$ \space $$   let j be the index position of $$C_i$$ in $$C_T$$ and let $$N = | P_T |/| C_T |$$  
+$$ \space $$   assign partitions from $$j*N$$ to $$(j+1)*N - 1$$ in $$P_T$$ to consumer $$C_i$$  
+$$ \space $$   for each assigned partition p {  
+$$ \quad $$      set the owner of p to $$C_i$$ in the ownership registry  
+$$ \quad $$      let $$O_p$$ = the offset of partition p stored in the offset registry  
+$$ \quad $$      invoke a thread to pull data in partition p from offset $$O_p$$  
+$$ \space $$   }  
+}
+
+알고리즘 1: 그룹 G의 컨슈머 Ci에 대한 리밸런싱 프로세스
+
+for $$C_i$$가 구독하는 각 topic T에 대해 순회한다 {  
+$$ \space $$  소유권 레지스트리에서 $$C_i$$가 소유한 파티션들을 제거한다.  
+$$ \space $$  Zookeeper에서 브로커와 컨슈머 레지스트리를 읽는다.  
+$$ \space $$  $$P_T$$ = 모든 브로커에서 topic T에 대해 사용 가능한 파티션들  
+$$ \space $$  $$C_T$$ = G에 있는 모든 컨슈머 중 topic T를 구독하는 컨슈머들  
+$$ \space $$  $$P_T$$와 $$C_T$$를 정렬한다.  
+$$ \space $$  j = $$C_T$$에서 찾은 $$C_i$$의 인덱스 위치.  
+$$ \space $$  $$N = | P_T |/| C_T |$$.  
+$$ \space $$  $$P_T$$에 있는 파티션들 중 $$j*N$$에서 $$(j+1)*N - 1$$까지의 파티션을 컨슈머 $$C_i$$에게 할당한다.  
+$$ \space $$  for 할당된 각 파티션 p에 대해 순회한다. {
+$$ \quad $$  소유권 레지스트리에서 파티션 p의 소유자를 $$C_i$$로 설정한다.
+$$ \quad $$  $$O_p$$ = 오프셋 레지스트리에 저장된 파티션 p의 오프셋
+$$ \quad $$  파티션 p에서 오프셋 $$O_p$$부터 데이터를 가져오는 스레드를 실행한다.  
+$$ \space $$  }  
+}
+
+>
+When there are multiple consumers within a group, each of them will be notified of a broker or a consumer change.
+However, the notification may come at slightly different times at the consumers.
+So, it is possible that one consumer tries to take ownership of a partition still owned by another consumer.
+When this happens, the first consumer simply releases all the partitions that it currently owns, waits a bit and retries the rebalance process.
+In practice, the rebalance process often stabilizes after only a few retries.
+
+그룹 내에 여러 컨슈머가 있을 때, 각 컨슈머는 브로커 또는 컨슈머 변경에 대해 알림을 받습니다.
+그러나 알림은 컨슈머들에게 약간 다른 시간에 도착할 수 있습니다.
+그래서 한 컨슈머가 다른 컨슈머가 소유한 파티션의 소유권을 취하려고 할 수도 있습니다.
+이런 일이 발생하면, 첫 번째 컨슈머는 현재 소유한 모든 파티션을 해제하고 잠시 기다린 다음 리밸런싱 프로세스를 다시 시도합니다.
+실제로 리밸런싱 프로세스는 몇 번의 재시도 후에 대부분 안정화됩니다.
+
+>
+When a new consumer group is created, no offsets are available in the offset registry.
+
+새로운 컨슈머 그룹이 생성되면 오프셋 레지스트리에 오프셋이 없습니다.
+
+In this case, the consumers will begin with either the smallest or the largest offset (depending on a configuration) available on each subscribed partition, using an API that we provide on the brokers.
+
+이러한 경우, 컨슈머들은 각 구독한 파티션에서 사용 가능한 가장 작은 오프셋 또는 가장 큰 오프셋(구성에 따라 다름)을 사용해 시작하며, 이를 위해 브로커에 제공하는 API를 사용합니다.
+
+
 #### 3.3 Delivery Guarantees
 ### 4. Kafka Usage at LinkedIn
 ### 5. Experimental Results
