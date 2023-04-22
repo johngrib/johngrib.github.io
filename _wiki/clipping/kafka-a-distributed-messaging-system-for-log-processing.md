@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 00:22:17 +0900
+updated : 2023-04-23 00:41:37 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -313,7 +313,71 @@ Kafka는 분산 환경이기 때문에, Kafka 클러스터는 일반적으로 �
 
 
 #### 3.1 Efficiency on a Single Partition
+
+**3.1 단일 파티션에서의 효율성**
+
+>
+We made a few decisions in Kafka to make the system efficient
+
+Kafka에서는 시스템을 효율적으로 만들기 위해 몇 가지 결정을 내렸습니다.
+
 ##### Simple storage
+
+>
+Simple storage: Kafka has a very simple storage layout.
+Each partition of a topic corresponds to a logical log.
+Physically, a log is implemented as a set of segment files of approximately the same size (e.g., 1GB).
+Every time a producer publishes a message to a partition, the broker simply appends the message to the last segment file.
+For better performance, we flush the segment files to disk only after a configurable number of messages have been published or a certain amount of time has elapsed.
+A message is only exposed to the consumers after it is flushed.
+
+간단한 저장소: Kafka는 매우 간단한 저장소 레이아웃을 가지고 있습니다.
+토픽의 각 파티션은 논리적인 로그에 해당합니다.
+물리적으로, 로그는 대략 같은 크기(예: 1GB)의 세그먼트 파일의 집합으로 구현됩니다.
+프로듀서가 파티션에 메시지를 발행할 때마다, 브로커는 단순히 메시지를 마지막 세그먼트 파일에 추가합니다.
+더 나은 성능을 위해, 우리는 메시지가 일정한 수가 되었거나 또는 일정한 시간이 지날 때마다 세그먼트 파일을 디스크에 쓰도록 합니다.
+메시지는 디스크에 쓰여진(flushed) 후에만 컨슈머에게 노출됩니다.
+
+>
+Unlike typical messaging systems, a message stored in Kafka doesn’t have an explicit message id.
+Instead, each message is addressed by its logical offset in the log.
+This avoids the overhead of maintaining auxiliary, seek-intensive random-access index structures that map the message ids to the actual message locations.
+Note that our message ids are increasing but not consecutive.
+To compute the id of the next message, we have to add the length of the current message to its id.
+From now on, we will use message ids and offsets interchangeably.
+
+일반적인 메시징 시스템과는 달리, Kafka에 저장된 메시지에는 명시적인 메시지 id가 없습니다.
+그 대신, 각 메시지는 로그에서의 논리적인 오프셋에 의해 주소가 지정됩니다.
+이로 인해 메시지 id를 실제 메시지 위치에 매핑하는 '보조적이고 탐색에 집중된 랜덤 액세스 인덱스 구조'를 유지하는 오버헤드를 피할 수 있습니다.
+메시지 id는 증가하지만 연속적이지는 않다는 점에 유의하세요.
+다음 메시지의 id를 계산하기 위해서는, 현재 메시지의 id에 현재 메시지의 길이를 더해야 합니다.
+이제부터, 메시지 id와 오프셋을 서로 바꿔서 사용할 것입니다.
+
+>
+A consumer always consumes messages from a particular partition sequentially.
+If the consumer acknowledges a particular message offset, it implies that the consumer has received all messages prior to that offset in the partition.
+Under the covers, the consumer is issuing asynchronous pull requests to the broker to have a buffer of data ready for the application to consume.
+Each pull request contains the offset of the message from which the consumption begins and an acceptable number of bytes to fetch.
+Each broker keeps in memory a sorted list of offsets, including the offset of the first message in every segment file.
+The broker locates the segment file where the requested message resides by searching the offset list, and sends the data back to the consumer.
+After a consumer receives a message, it computes the offset of the next message to consume and uses it in the next pull request.
+The layout of an Kafka log and the in-memory index is depicted in Figure 2.
+Each box shows the offset of a message.
+
+컨슈머는 항상 특정 파티션에서 메시지를 순차적으로 소비합니다.
+만약 컨슈머가 특정 메시지 오프셋을 확인했다면, 그 파티션에서 해당 오프셋 이전의 모든 메시지를 받았다는 것을 의미합니다.
+내부적으로는,
+컨슈머는 브로커에게 비동기 pull 요청을 발행하여, 애플리케이션이 소비할 수 있도록 데이터를 버퍼링합니다.
+각 pull 요청에는 소비가 시작되는 메시지의 오프셋과 가져올 수 있는 바이트 수가 포함됩니다.
+각 브로커는 메모리에 정렬된 오프셋들의 목록을 유지하며, 이 목록에는 모든 세그먼트 파일의 첫 번째 메시지의 오프셋이 포함됩니다.
+브로커는 오프셋 목록을 검색하여 요청된 메시지가 있는 세그먼트 파일을 찾고, 데이터를 컨슈머에게 보냅니다.
+컨슈머가 메시지를 받으면, 다음에 소비할 메시지의 오프셋을 계산하고, 다음 pull 요청에 사용합니다.
+Kafka 로그의 레이아웃과 메모리 내 인덱스는 Figure 2에 나와 있습니다.
+각 박스는 메시지의 오프셋을 보여줍니다.
+
+![image]( /resource/27/329CF0-E844-4E3C-AAFA-E8D4252CD62C/233793778-642e4638-1d79-4ffb-b969-a270b0f9f5da.png )
+
+
 ##### Efficient transfer
 ##### Stateless broker
 #### 3.2 Distributed Coordination
