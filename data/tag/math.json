@@ -1,7 +1,6 @@
 [
  "17-EQUATIONS-THAT-CHANGED-THE-WORLD",
  "algorithm/egyptian-multiplication",
- "Binomial-Theorem",
  "complement-number",
  "Cromwell-s-rule",
  "discrete-math-functions",
@@ -21,6 +20,7 @@
  "graph",
  "log",
  "math",
+ "math/binomial-theorem",
  "p-np",
  "primitive-roots",
  "problem/miss-all-prizes-probability",

@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-22 15:54:53 +0900
+updated : 2023-04-22 16:00:11 +0900
 regenerate: true
 ---
 * TOC
@@ -151,10 +151,10 @@ regenerate: true
 
 ## [[/math]]
 
+* [[/math/binomial-theorem]]
 * [[/math/two-n-base-converting]]
 
 * [[/Bayes-theorem]]
-* [[/Binomial-Theorem]]
 * [[/complement-number]]
 * [[/Cromwell-s-rule]]
 * [[/Fermat-s-little-theorem]]

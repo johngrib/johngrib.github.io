@@ -7,7 +7,6 @@
  "resource": "A5/CA21F5-CF1C-4ADD-80E6-FB7177E930A5",
  "children": [
   "Bayes-theorem",
-  "Binomial-Theorem",
   "complement-number",
   "Cromwell-s-rule",
   "Fermat-s-little-theorem",
@@ -16,6 +15,7 @@
   "graph",
   "halting-problem",
   "log",
+  "math/binomial-theorem",
   "math/two-n-base-converting",
   "precision-of-number",
   "primitive-roots",
