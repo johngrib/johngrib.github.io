@@ -7,12 +7,12 @@
  "updated": "2022-02-26 00:57:42 +0900",
  "resource": "C2/FC95D1-F793-4E3B-A98E-6112E0FBCEB5",
  "children": [
-  "java-g1gc",
-  "java-gc-eden-to-survivor",
-  "java-gc-parallel-collector",
-  "java-gc-serial-collector",
-  "java-gc-zgc",
   "java/gc/death-spiral",
-  "java/gc/tuning-guide"
+  "java/gc/eden-to-survivor",
+  "java/gc/g1gc",
+  "java/gc/parallel-collector",
+  "java/gc/serial-collector",
+  "java/gc/tuning-guide",
+  "java/gc/zgc"
  ]
 }

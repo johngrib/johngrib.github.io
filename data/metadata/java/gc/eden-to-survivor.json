@@ -3,7 +3,7 @@
  "title": "Minor GC - Eden에서 Survivor 영역으로",
  "summary": "",
  "parent": "java/gc",
- "url": "/wiki/java-gc-eden-to-survivor",
+ "url": "/wiki/java/gc/eden-to-survivor",
  "updated": "2021-11-26 20:51:55 +0900",
  "resource": "BA/DE1541-BA02-4738-9C0E-66B4DCA12F9C",
  "children": []

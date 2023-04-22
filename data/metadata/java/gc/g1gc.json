@@ -3,7 +3,7 @@
  "title": "Java HotSpot VM G1GC",
  "summary": "Java9 ~ 12 디폴트 GC",
  "parent": "java/gc",
- "url": "/wiki/java-g1gc",
+ "url": "/wiki/java/gc/g1gc",
  "updated": "2022-05-11 00:05:23 +0900",
  "resource": "59/4C50BB-E399-4936-A00F-1A9D9C900CC9",
  "children": []

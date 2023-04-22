@@ -315,7 +315,7 @@ Survivor 0              Survivor 1
 
 다음 Minor GC에서는 Survivor 0이 객체를 복사받는 입장이 되고, Survivor 1이 청소의 대상이 될 것이다. Survivor는 이렇게 서로 교대를 한다.
 
-자세한 내용은 [[java-gc-eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로} 문서를 참고.
+자세한 내용은 [[/java/gc/eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로} 문서를 참고.
 
 ## 측정하기
 
@@ -629,7 +629,7 @@ Serial Collector는 싱글 스레드를 사용하여 GC 작업을 수행한다.
 싱글 스레드 GC라 할 수 있다.
 멀티 프로세서에서는 비효율적인 GC이지만, 100MB 정도로 작은 규모의 데이터셋을 사용하는 애플리케이션이라면 멀티 프로세서에서도 쓸만하다고 한다. Serial Collector는 VM이 운영체제와 하드웨어 환경에 따라 자동으로 선택하거나, `-XX:+UseSerialGC` 옵션으로 활성화할 수 있다.
 
-함께 읽기: [[java-gc-serial-collector]]
+함께 읽기: [[/java/gc/serial-collector]]
 
 ### Parallel Collector
 
@@ -646,7 +646,7 @@ Parallel Collector는 Parallel Compaction을 사용해 병렬로 메이저 GC를
 
 Parallel GC는 HTG-10 까지는 "많은 heap 사이즈 및 하드웨어 조합에서 1초 이상의 일시 정지 시간이 나타난다"고 하였으나, HTG-11 부터는 그러한 언급이 사라졌다.
 
-상세한 내용은 [[java-gc-parallel-collector]]{Parallel Collector} 문서를 참고할 것.
+상세한 내용은 [[/java/gc/parallel-collector]]{Parallel Collector} 문서를 참고할 것.
 
 ### Mostly Concurrent Collectors
 
@@ -672,7 +672,7 @@ G1은 많은 양의 메모리가 있는 멀티 프로세서 시스템을 위한 
 
 G1은 가상 머신이 하드웨어/운영체제를 참고하여 자동으로 선택하거나, `-XX:+UseG1GC` 옵션으로 활성화된다.
 
-상세한 내용은 [[java-g1gc]]{G1GC} 문서를 참고할 것.
+상세한 내용은 [[/java/gc/g1gc]]{G1GC} 문서를 참고할 것.
 
 #### Concurrent Mark Sweep Collector
 
@@ -691,7 +691,7 @@ ZGC는 10ms 미만의 짧은 대기 시간이 필요하거나 테라 바이트 �
 
 **ZGC는 JDK 11부터 실험적으로 도입되었다.**
 
-상세한 내용은 [[java-gc-zgc]]{ZGC} 문서를 참고할 것.
+상세한 내용은 [[/java/gc/zgc]]{ZGC} 문서를 참고할 것.
 
 ## 그 외의 고려할 사항들
 
@@ -712,11 +712,11 @@ ZGC는 10ms 미만의 짧은 대기 시간이 필요하거나 테라 바이트 �
 
 ## 함께 읽기
 
-* [[java-gc-eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로}
-* [[java-gc-serial-collector]]{Serial Collector}
-* [[java-gc-parallel-collector]]{Parallel Collector}
-* [[java-g1gc]]{G1GC}
-* [[java-gc-zgc]]{ZGC}
+* [[/java/gc/eden-to-survivor]]{Minor GC - Eden에서 Survivor 영역으로}
+* [[/java/gc/serial-collector]]{Serial Collector}
+* [[/java/gc/parallel-collector]]{Parallel Collector}
+* [[/java/gc/g1gc]]{G1GC}
+* [[/java/gc/zgc]]{ZGC}
 
 ## 참고문헌
 
