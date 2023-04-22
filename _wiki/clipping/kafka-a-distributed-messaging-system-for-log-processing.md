@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-22 23:01:09 +0900
+updated : 2023-04-23 00:22:17 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -222,6 +222,96 @@ HedWig는 높은 확장성과 가용성을 제공하며, 강력한 내구성 보
 그러나, 주로 데이터 스토어의 커밋 로그를 저장하기 위한 목적으로 사용됩니다.
 
 ### 3. Kafka Architecture and Design Principles
+
+>
+Because of limitations in existing systems, we developed a new messaging-based log aggregator Kafka.
+We first introduce the basic concepts in Kafka.
+A stream of messages of a particular type is defined by a topic.
+A producer can publish messages to a topic.
+The published messages are then stored at a set of servers called brokers.
+A consumer can subscribe to one or more topics from the brokers, and consume the subscribed messages by pulling data from the brokers.
+
+기존 시스템의 한계 때문에, 우리는 새로운 메시징 기반 로그 집계기인 Kafka를 개발했습니다.
+먼저 Kafka의 기본 개념을 소개합니다.
+특정한 타입의 메시지 스트림을 토픽으로 정의합니다.
+프로듀서는 토픽에 메시지를 발행할 수 있습니다.
+발행된 메시지는 브로커라고 불리는 서버 집합에 저장됩니다.
+컨슈머는 브로커에 있는 토픽을 하나 이상 구독할 수 있으며, 브로커로부터 데이터를 풀링하여 구독한 메시지를 소비할 수 있습니다.
+
+>
+Messaging is conceptually simple, and we have tried to make the Kafka API equally simple to reflect this.
+Instead of showing the exact API, we present some sample code to show how the API is used.
+The sample code of the producer is given below.
+A message is defined to contain just a payload of bytes.
+A user can choose her favorite serialization method to encode a message.
+For efficiency, the producer can send a set of messages in a single publish request.
+
+메시징은 개념적으로 간단하기 때문에, 우리는 이를 반영해 Kafka API도 가능한 간단하게 만들려고 노력했습니다.
+API가 어떻게 사용되는지 보여주기 위해 정확한 API를 보여주는 대신, 샘플 코드를 소개합니다.
+프로듀서의 샘플 코드는 아래와 같습니다.
+메시지는 바이트의 페이로드만 포함하도록 정의됩니다.
+사용자는 메시지를 인코딩하기 위해 선호하는 직렬화 방법을 선택할 수 있습니다.
+효율성을 위해, 프로듀서는 하나의 발행 요청에 메시지들의 집합을 보내는 것도 가능합니다.
+
+> Sample producer code:
+>
+> ```java
+> producer = new Producer(…);
+> message = new Message("test message str".getBytes());
+> set = new MessageSet(message);
+> producer.send("topic1", set);
+> ```
+
+>
+To subscribe to a topic, a consumer first creates one or more message streams for the topic.
+The messages published to that topic will be evenly distributed into these sub-streams.
+The details about how Kafka distributes the messages are described later in Section 3.2.
+Each message stream provides an iterator interface over the continual stream of messages being produced.
+The consumer then iterates over every message in the stream and processes the payload of the message.
+Unlike traditional iterators, the message stream iterator never terminates.
+If there are currently no more messages to consume, the iterator blocks until new messages are published to the topic.
+We support both the point-topoint delivery model in which multiple consumers jointly consume a single copy of all messages in a topic, as well as the publish/subscribe model in which multiple consumers each retrieve its own copy of a topic.
+
+토픽을 구독하려면, 컨슈머는 먼저 토픽에 대해 하나 이상의 메시지 스트림을 생성합니다.
+해당 토픽에 발행된 메시지는 이러한 하위 스트림에 균등하게 분배됩니다.
+Kafka가 메시지를 어떻게 분배하는지에 대한 세부 사항은 3.2절에서 설명합니다.
+각각의 메시지 스트림은 계속해서 생성되는 메시지 스트림에 대한 반복자 인터페이스를 제공합니다.
+컨슈머는 스트림의 모든 메시지를 반복하고, 메시지의 페이로드를 처리합니다.
+전통적인 반복자와 달리, 메시지 스트림 반복자는 종료되지 않습니다.
+현재 소비할 메시지가 없다면, 반복자는 새로운 메시지가 토픽에 발행될 때까지 블록됩니다.
+우리는 여러 컨슈머가 토픽의 모든 메시지의 단일 복사본을 공동으로 소비하는 점대점 전달 모델과, 여러 컨슈머가 각각 토픽의 복사본을 가져오는 발행/구독 모델을 모두 지원합니다.
+
+> Sample consumer code:
+>
+> ```java
+> streams[] = Consumer.createMessageStreams("topic1", 1)
+> for (message : streams[0]) {
+>   bytes = message.payload();
+>   // do something with the bytes
+> }
+> ```
+
+>
+The overall architecture of Kafka is shown in Figure 1.
+Since Kafka is distributed in nature, an Kafka cluster typically consists of multiple brokers.
+To balance load, a topic is divided into multiple partitions and each broker stores one or more of those partitions.
+Multiple producers and consumers can publish and retrieve messages at the same time.
+In Section 3.1, we describe the layout of a single partition on a broker and a few design choices that we selected to make accessing a partition efficient.
+In Section 3.2, we describe how the producer and the consumer interact with multiple brokers in a distributed setting.
+We discuss the delivery guarantees of Kafka in Section 3.3.
+
+Kafka의 전체 아키텍처는 Figure 1에 나와 있습니다.
+Kafka는 분산 환경이기 때문에, Kafka 클러스터는 일반적으로 여러 브로커들로 구성됩니다.
+부하를 균형있게 분산하기 위해, 토픽은 여러 파티션으로 나뉘며, 각 브로커는 그러한 파티션 중 하나 이상을 저장합니다.
+여러 프로듀서와 컨슈머가 동시에 메시지를 발행하고 가져올 수 있습니다.
+
+3.1절에서, 브로커의 하나의 파티션에 대한 레이아웃과 파티션에 효율적으로 접근하기 위해 선택한 몇 가지 설계상의 선택에 대해 설명합니다.
+그리고 3.2절에서는, 프로듀서와 컨슈머가 분산 환경에서 여러 브로커와 상호작용하는 방법에 대해 설명합니다.
+3.3절에서는, Kafka의 전달 보장에 대해 설명합니다.
+
+![image]( /resource/27/329CF0-E844-4E3C-AAFA-E8D4252CD62C/233792969-39665c96-9744-4202-aae7-d92220400912.png )
+
+
 #### 3.1 Efficiency on a Single Partition
 ##### Simple storage
 ##### Efficient transfer
