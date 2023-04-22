@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-22 21:39:06 +0900
+updated : 2023-04-22 21:41:05 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -36,10 +36,15 @@ Kafka는 낮은 시연 시간으로 대량의 로그 데이터를 수집하고 �
 우리의 실험 결과를 보면, 카프카는 두 가지 인기 있는 메시징 시스템과 비교해 보았을 때 우수한 성능을 보여줍니다.
 우리는 일정 시간 동안 카프카를 프로덕션 환경에서 사용해 왔고, 매일 수백 기가바이트의 새로운 데이터를 처리하고 있습니다.
 
-
 ### General Terms
 
+>
+Management, Performance, Design, Experimentation.
+
 ### Keywords
+
+>
+messaging, distributed, log processing, throughput, online.
 
 ### 1. Introduction
 
