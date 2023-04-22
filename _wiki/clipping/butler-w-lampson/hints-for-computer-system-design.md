@@ -3,7 +3,7 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-22 09:58:55 +0900
+updated : 2023-04-22 12:51:20 +0900
 tag     : 
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
@@ -2147,55 +2147,6 @@ I am indebted to many sympathetic readers of earlier drafts of this paper and to
 53. Thacker, C.P. et al. Alto: A personal computer. In Computer Structures: Principles and Examples, 2nd ed., Siewiorek, Bell, and Newell, eds., McGraw-Hill,1982.
 54. Traiger, I.L. Virtual memory management for data base systems. Operating Systems Review 16, 4, Oct. 1982, pp 26-48.
 55. Bentley, J.L. Writing Efficient Programs. Prentice-Hall, 1982.
-
-## 번역하며 남긴 메모
-
-### 참조 카운트 오버플로를 방지하기 위한 오버플로 테이블 알고리즘 시뮬레이션
-
-다음은 [오버플로 카운트 테이블]( #overflow-count-table )의 동작을 시뮬레이션 해 본 것이다.
-
-- 전제
-    - 참조 카운트의 최대값은 8 로 설정했다.
-    - 변수 a가 시뮬레이션의 주인공이다.
-    - 변수 a를 참조하는 객체는 현재 7개가 있다. 즉, a의 참조 카운트는 7 이다.
-    - 변수 a의 주소는 1234 이며, 아직 오버플로 테이블에 등록되지 않았다.
-
-시뮬레이션을 해보자.
-
-1. 현재 상태.
-    - a의 참조 카운트: `7`
-    - a의 오버플로 플래그: `false`
-    - 오버플로 카운트 테이블: `{}`
-2. 변수 a를 참조하는 새로운 객체가 생겨났다.
-    - a의 참조 카운트: `8`
-    - a의 오버플로 플래그: `false`
-    - 오버플로 카운트 테이블: `{}`
-3. a의 참조 카운트가 최대값인 8에 도달했으므로, a의 참조 카운트를 반으로 나누고, a에 오버플로 플래그를 설정하고, 오버플로 카운트 테이블에 a의 오버플로 횟수를 저장한다.
-    - a의 참조 카운트: `4`
-    - a의 오버플로 플래그: `true`
-    - 오버플로 카운트 테이블: `{key: 1234, value: 1}`
-        - `1234`는 a의 주소이고, `1`은 오버플로 카운트이다.
-    - (실제로 a를 참조하는 객체의 수: 8)
-        - 참조 카운트는 4 이지만, 최대값이 8이라는 것과 오버플로 카운트가 1이라는 것을 통해 실제 a를 참조하는 객체의 수는 4 + 8/2 = 8 이라는 것을 알 수 있다.
-4. a를 참조하는 객체 4개가 생겨났다.
-    - a의 참조 카운트: 4 + 4 = `8`
-    - 오버플로 카운트 테이블: `{key: 1234, value: 1}`
-    - (실제로 a를 참조하는 객체의 수: 12)
-5. a의 참조 카운트가 최대값인 8에 또 도달했으므로... 반으로 줄이고 오버플로 카운트를 1 증가시킨다.
-    - a의 참조 카운트: `4`
-    - a의 오버플로 플래그: `true`
-    - 오버플로 카운트 테이블: `{key: 1234, value: 2}`
-    - (실제로 a를 참조하는 객체의 수: 12)
-7. a를 참조하는 객체 4개가 사라졌다고 하자.
-    - a의 참조 카운트: `0`
-    - a의 오버플로 플래그: `true`
-    - 오버플로 카운트 테이블: `{key: 1234, value: 2}`
-    - (실제로 a를 참조하는 객체의 수: 8)
-8. 참조 카운트가 0 이 되었는데 오버플로 플래그가 설정되어 있으므로, 오버플로 카운트를 1 줄이고 참조 카운트를 4 복원한다.
-    - a의 참조 카운트: `4`
-    - a의 오버플로 플래그: `true`
-    - 오버플로 카운트 테이블: `{key: 1234, value: 1}`
-    - (실제로 a를 참조하는 객체의 수: 8)
 
 ## Links
 
