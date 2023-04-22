@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-22 22:25:44 +0900
+updated : 2023-04-22 22:50:46 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -18,17 +18,15 @@ latex   : false
 
 ### 일러두기
 
+**이 웹 사이트( https://johngrib.github.io )는 상업적인 용도로 운영하는 것이 아니며, 개인적인 공부 목적으로 이 논문을 번역합니다. 이 논문의 원본 저작권자에게 존경과 감사를 표합니다.**
+
+**This website( https://johngrib.github.io ) is not operated for commercial purposes, and the translation of this paper is for personal study purposes only. Respect and gratitude are expressed to the original copyright holders and publishers of this paper.**
+
 >
-Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page.
-To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee.
-NetDB'11, Jun. 12, 2011, Athens, Greece.
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page.  
+To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee.  
+NetDB'11, Jun. 12, 2011, Athens, Greece.  
 Copyright 2011 ACM 978-1-4503-0652-2/11/06…$10.00.
-
-이 작업물의 전부 또는 일부를 개인 또는 교실에서 사용하기 위해 디지털 또는 인쇄 복사본을 만드는 것은 이 복사본이 이익이나 상업적 이점을 위해 만들어지거나 배포되지 않으며, 이 공지와 첫 페이지에 전체 인용이 포함된 경우 비용 없이 허용됩니다. 다른 용도로 복사하거나 재게시, 서버에 게시하거나 목록으로 재배포하려면 사전 구체적인 허가 및/또는 수수료가 필요합니다.
-
-NetDB'11, 2011년 6월 12일, 그리스 아테네.
-
-저작권 2011 ACM 978-1-4503-0652-2/11/06…$10.00.
 
 ### ABSTRACT
 
@@ -137,6 +135,75 @@ Kafka로 인해 모든 유형의 로그 데이터를 온라인과 오프라인�
 섹션 6에서는 앞으로의 작업과 결론에 대해 논의합니다.
 
 ### 2. Related Work
+
+**2. 관련된 연구**
+
+>
+Traditional enterprise messaging systems [1][7][15][17] have existed for a long time and often play a critical role as an event bus for processing asynchronous data flows.
+However, there are a few reasons why they tend not to be a good fit for log processing.
+First, there is a mismatch in features offered by enterprise systems.
+Those systems often focus on offering a rich set of delivery guarantees.
+For example, IBM Websphere MQ [7] has transactional supports that allow an application to insert messages into multiple queues atomically.
+The JMS [14] specification allows each individual message to be acknowledged after consumption, potentially out of order.
+Such delivery guarantees are often overkill for collecting log data.
+For instance, losing a few pageview events occasionally is certainly not the end of the world.
+Those unneeded features tend to increase the complexity of both the API and the underlying implementation of those systems.
+Second, many systems do not focus as strongly on throughput as their primary design constraint.
+For example, JMS has no API to allow the producer to explicitly batch multiple messages into a single request.
+This means each message requires a full TCP/IP roundtrip, which is not feasible for the throughput requirements of our domain.
+Third, those systems are weak in distributed support.
+There is no easy way to partition and store messages on multiple machines.
+Finally, many messaging systems assume near immediate consumption of messages, so the queue of unconsumed messages is always fairly small.
+Their performance degrades significantly if messages are allowed to accumulate, as is the case for offline consumers such as data warehousing applications that do periodic large loads rather than continuous consumption.
+
+전통적인 기업용 메시징 시스템들은 오랫동안 존재해 왔으며, 비동기 데이터 흐름을 처리하는 이벤트 버스로서 종종 중요한 역할을 담당합니다.
+그러나 그러한 시스템들이 로그 처리에 적합하지 않은 이유가 몇 가지 있습니다.
+
+첫째, 기업용 시스템에서 제공하는 기능들 간의 불일치가 있습니다.
+이러한 시스템들은 종종 다양한 전달 보장을 제공하는데 집중합니다.
+예를 들어, IBM Websphere MQ는 애플리케이션이 여러 큐에 메시지를 원자적으로 입력할 수 있도록 해주는 트랜잭션을 지원합니다.
+JMS 명세는 소비 후 각각의 메시지를 순서에 상관없이 확인할 수 있도록 해줍니다.
+이러한 전달 보장은 로그 데이터 수집에 대해서는 과도한 기능입니다.
+가령, 가끔 페이지뷰 이벤트를 몇 개 잃어버린다 해도 세상이 끝장나는 것은 아니기 때문입니다.
+이러한 필요하지 않은 기능들은 API와 시스템의 기본 구현을 복잡하게 만드는 경향이 있습니다.
+
+둘째, 많은 시스템에서는 처리율을 설계의 핵심 제약조건으로 강하게 주목하지 않습니다.
+예를 들어 JMS에는, 프로듀서가 여러 메시지를 하나의 요청으로 명시적으로 묶을 수 있는 API가 없습니다.
+이는 각 메시지가 전체 TCP/IP 라운드트립을 필요로 한다는 것을 의미하며, 이런 것은 우리 도메인의 처리율 요구사항에는 적합하지 않습니다.
+
+셋째, 이러한 시스템들은 분산 지원이 약합니다.
+여러 대의 컴퓨터에 메시지를 분할하고 저장하는 것은 쉽지 않습니다.
+마지막으로, 많은 메시징 시스템들은 메시지 소비가 거의 즉시라고 가정하기 때문에, 항상 소비되지 않은 메시지의 큐가 꽤 작습니다.
+연속적인 소비 대신 주기적인 대량 적재를 수행하는 데이터 웨어하우징 애플리케이션과 같은 오프라인 소비자의 경우, 메시지가 쌓이는 것을 허용하면 성능이 크게 저하됩니다.
+
+>
+A number of specialized log aggregators have been built over the last few years.
+
+Facebook uses a system called Scribe.
+
+Each frontend machine can send log data to a set of Scribe machines over sockets.
+
+Each Scribe machine aggregates the log entries and periodically dumps them to HDFS [9] or an NFS device.
+
+Yahoo’s data highway project has a similar dataflow.
+
+A set of machines aggregate events from the clients and roll out “minute” files, which are then added to HDFS.
+
+Flume is a relatively new log aggregator developed by Cloudera.
+
+It supports extensible “pipes” and “sinks”, and makes streaming log data very flexible.
+
+It also has more integrated distributed support.
+
+However, most of those systems are built for consuming the log data offline, and often expose implementation details unnecessarily (e.g. “minute files”) to the consumer.
+
+Additionally, most of them use a “push” model in which the broker forwards data to consumers.
+
+At LinkedIn, we find the “pull” model more suitable for our applications since each consumer can retrieve the messages at the maximum rate it can sustain and avoid being flooded by messages pushed faster than it can handle.
+
+The pull model also makes it easy to rewind a consumer and we discuss this benefit at the end of Section 3.2.
+
+
 ### 3. Kafka Architecture and Design Principles
 #### 3.1 Efficiency on a Single Partition
 ##### Simple storage
