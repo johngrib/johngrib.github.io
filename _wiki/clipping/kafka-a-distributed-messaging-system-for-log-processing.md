@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 10:04:31 +0900
+updated : 2023-04-23 10:12:17 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -786,6 +786,29 @@ When a consumer gets a message, it looks up in the schema registry to retrieve t
 
 
 ### 5. Experimental Results
+
+**5. 실험 결과**
+
+>
+We conducted an experimental study, comparing the performance of Kafka with Apache ActiveMQ v5.4 [1], a popular open-source implementation of JMS, and RabbitMQ v2.4 [16], a message system known for its performance.
+We used ActiveMQ’s default persistent message store KahaDB.
+Although not presented here, we also tested an alternative AMQ message store and found its performance very similar to that of KahaDB.
+Whenever possible, we tried to use comparable settings in all systems.
+
+우리는 Kafka의 성능을 'Apache ActiveMQ v5.4', '인기 있는 오픈 소스 JMS 구현체', '뛰어난 성능으로 유명한 메시지 시스템 RabbitMQ v2.4' 와 비교하는 실험적 연구를 수행했습니다.
+우리는 ActiveMQ의 기본 메시지 저장소인 KahaDB를 사용했습니다.
+여기서는 표시하지 않았지만, 우리는 대안으로 AMQ 메시지 저장소도 테스트했고 그 성능이 KahaDB와 매우 유사하다는 것도 알게 되었습니다.
+가능한 한, 우리는 모든 시스템에서 비슷한 설정을 사용하려고 노력했습니다.
+
+>
+We ran our experiments on 2 Linux machines, each with 8 2GHz cores, 16GB of memory, 6 disks with RAID 10.
+The two machines are connected with a 1Gb network link.
+One of the machines was used as the broker and the other machine was used as the producer or the consumer.
+
+우리는 각각 8개의 2GHz 코어, 16GB 메모리, RAID 10을 사용하는 6개의 디스크를 가진 2개의 리눅스 머신에서 실험을 수행했습니다.
+두 머신은 1Gb 네트워크 링크로 연결되어 있습니다.
+한 대의 머신은 브로커로 사용되고, 다른 머신은 프로듀서 또는 컨슈머로 사용되었습니다.
+
 #### Producer Test
 #### Consumer Test
 ### 6. Conclusion and Future Works
