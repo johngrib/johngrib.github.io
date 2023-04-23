@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 10:30:49 +0900
+updated : 2023-04-23 10:39:40 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -876,6 +876,54 @@ ActiveMQ의 오버헤드 중 하나는, JMS에서 요구하는 무거운 메시�
 Kafka에서 배치 사이즈가 50인 경우, 처리율을 거의 한 자릿수 향상시켰습니다.
 
 #### Consumer Test
+
+>
+Consumer Test: In the second experiment, we tested the performance of the consumer.
+Again, for all systems, we used a single consumer to retrieve a total of 10 millions messages.
+We configured all systems so that each pull request should prefetch approximately the same amount data---up to 1000 messages or about 200KB.
+For both ActiveMQ and RabbitMQ, we set the consumer acknowledge mode to be automatic.
+Since all messages fit in memory, all systems were serving data from the page cache of the underlying file system or some in-memory buffers.
+The results are presented in Figure 5.
+
+컨슈머 테스트: 두 번째 실험에서는 컨슈머의 성능을 테스트했습니다.
+앞에서와 같이, 모든 시스템에서 한 개의 컨슈머를 사용해 총 천만 개의 메시지를 가져오도록 했습니다.
+우리가 구성한 모든 시스템은 각각의 풀 요청이 최대 1000개의 메시지 또는 약 200KB의 데이터를 가져오도록 했습니다.
+ActiveMQ와 RabbitMQ는 컨슈머 확인 모드를 자동으로 설정했습니다.
+모든 메시지가 메모리에 들어갈 만큼 작기 때문에, 모든 시스템은 기본 파일 시스템의 페이지 캐시 또는 메모리 버퍼에서 데이터를 제공했습니다.
+결과는 Figure 5에 나와 있습니다.
+
+![Figure 5]( /resource/27/329CF0-E844-4E3C-AAFA-E8D4252CD62C/233814510-08eec99f-a1f9-4d34-9f73-446a5c757bff.png )
+
+>
+On average, Kafka consumed 22,000 messages per second, more than 4 times that of ActiveMQ and RabbitMQ.
+We can think of several reasons.
+First, since Kafka has a more efficient storage format, fewer bytes were transferred from the broker to the consumer in Kafka.
+Second, the broker in both ActiveMQ and RabbitMQ had to maintain the delivery state of every message.
+We observed that one of the ActiveMQ threads was busy writing KahaDB pages to disks during this test.
+In contrast, there were no disk write activities on the Kafka broker.
+Finally, by using the sendfile API, Kafka reduces the transmission overhead.
+
+Kafka는 평균적으로 초당 22,000개의 메시지를 소비하여, 이는 ActiveMQ와 RabbitMQ보다 4배 이상 더 많은 것입니다.
+우리는 그 이유를 다음과 같이 생각했습니다.
+
+첫째, Kafka가 더 효율적인 저장 포맷을 가지고 있기 때문에, Kafka에서 브로커에서 컨슈머로 전송되는 바이트 수가 적었습니다.
+
+둘째, ActiveMQ와 RabbitMQ의 브로커는 모든 메시지의 전달 상태를 유지해야 했습니다.
+우리는 이 테스트 중에 ActiveMQ의 스레드 중 하나가 KahaDB 페이지를 디스크에 쓰는 작업을 하느라 바쁘다는 것을 관찰했습니다.
+반면, Kafka 브로커에서는 디스크 쓰기 활동이 없었습니다.
+
+마지막으로, Kafka는 sendfile API를 사용하여 전송 오버헤드를 줄입니다.
+
+>
+We close the section by noting that the purpose of the experiment is not to show that other messaging systems are inferior to Kafka.
+After all, both ActiveMQ and RabbitMQ have more features than Kafka.
+The main point is to illustrate the potential performance gain that can be achieved by a specialized system.
+
+우리는 이 섹션을 마무리하면서, 이 실험의 목적이 다른 메시징 시스템이 Kafka보다 더 나쁜 것을 보여주는 것이 아니라는 점을 언급하고자 합니다.
+종합적으로 봤을 때, ActiveMQ와 RabbitMQ는 Kafka보다 더 많은 기능을 가지고 있습니다.
+주요 포인트는 특수화된 시스템으로 달성할 수 있는 잠재적인 성능 향상을 보여주는 것이었습니다.
+
+
 ### 6. Conclusion and Future Works
 ### 7. REFERENCES
 
