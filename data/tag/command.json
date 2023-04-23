@@ -1,5 +1,4 @@
 [
- "bash-history",
  "bc",
  "cmd/ag",
  "cmd/basename",
@@ -20,6 +19,7 @@
  "cmd/for",
  "cmd/fortune",
  "cmd/grep",
+ "cmd/history",
  "cmd/httpie",
  "cmd/iostat",
  "cmd/java_home",

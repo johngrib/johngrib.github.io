@@ -7,7 +7,6 @@
  "updated": "2023-04-14 19:52:08 +0900",
  "resource": "26/2B1583-6BC0-4D96-926B-51728A24F463",
  "children": [
-  "bash-history",
   "cmd/ag",
   "cmd/basename",
   "cmd/bat",
@@ -27,6 +26,7 @@
   "cmd/for",
   "cmd/fortune",
   "cmd/grep",
+  "cmd/history",
   "cmd/httpie",
   "cmd/iostat",
   "cmd/java",

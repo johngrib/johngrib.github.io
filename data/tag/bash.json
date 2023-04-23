@@ -1,5 +1,4 @@
 [
- "bash-history",
  "bc",
  "better-work/random-lunch",
  "cmd/ag",
@@ -21,6 +20,7 @@
  "cmd/for",
  "cmd/fortune",
  "cmd/grep",
+ "cmd/history",
  "cmd/iostat",
  "cmd/java_home",
  "cmd/jq",
