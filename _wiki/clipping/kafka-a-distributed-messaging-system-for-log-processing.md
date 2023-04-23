@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 12:11:43 +0900
+updated : 2023-04-23 12:16:30 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -20,9 +20,9 @@ latex   : true
 
 ### 일러두기
 
-**이 웹 사이트( https://johngrib.github.io )는 상업적인 용도로 운영하는 것이 아니며, 개인적인 공부 목적으로 이 논문을 번역합니다. 이 논문의 원본 저작권자에게 존경과 감사를 표합니다.**
+**이 웹 사이트( https://johngrib.github.io )는 상업적인 용도로 운영하는 것이 아니며, 나는 개인적인 공부 목적으로 이 논문을 번역합니다. 이 논문의 원본 저작권자에게 존경과 감사를 표합니다.**
 
-**This website( https://johngrib.github.io ) is not operated for commercial purposes, and the translation of this paper is for personal study purposes only. Respect and gratitude are expressed to the original copyright holders and publishers of this paper.**
+**This website (https://johngrib.github.io) is not operated for commercial purposes, and I have translated this paper for my personal study. I express my respect and gratitude to the original copyright holders of this paper.**
 
 >
 Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page.  
