@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 09:28:06 +0900
+updated : 2023-04-23 09:40:50 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -654,6 +654,50 @@ In this case, the consumers will begin with either the smallest or the largest o
 
 
 #### 3.3 Delivery Guarantees
+
+**3.3 전달 보장**
+
+>
+In general, Kafka only guarantees at-least-once delivery.
+Exactlyonce delivery typically requires two-phase commits and is not necessary for our applications.
+Most of the time, a message is delivered exactly once to each consumer group.
+However, in the case when a consumer process crashes without a clean shutdown, the consumer process that takes over those partitions owned by the failed consumer may get some duplicate messages that are after the last offset successfully committed to zookeeper.
+If an application cares about duplicates, it must add its own deduplication logic, either using the offsets that we return to the consumer or some unique key within the message.
+This is usually a more cost-effective approach than using two-phase commits.
+
+일반적으로 카프카는 적어도 한 번의 전달만을 보장합니다.
+'정확히 한 번의 전달'은 일반적으로 2단계 커밋을 필요로 하며, 이는 우리의 애플리케이션에는 필수적이지 않습니다.
+대부분의 경우, 각 컨슈머 그룹에 메시지가 정확히 한 번 전달됩니다.
+그러나 컨슈머 프로세스가 정상적으로 종료되지 않고 크래시가 나는 경우, 실패한 컨슈머가 소유했던 파티션을 이어받는 컨슈머 프로세스는 마지막으로 성공적으로 커밋된 오프셋 이후의 중복 메시지를 얻을 수 있습니다.
+애플리케이션에서 중복을 신경쓰는 경우, 컨슈머에게 반환된 오프셋을 사용하거나 메시지 내의 고유 키를 사용하여 자체 중복 제거 로직을 추가해야 합니다.
+이는 일반적으로 2단계 커밋을 사용하는 것보다 비용 면에서 효율적인 접근 방식입니다.
+
+>
+Kafka guarantees that messages from a single partition are delivered to a consumer in order.
+However, there is no guarantee on the ordering of messages coming from different partitions.
+
+Kafka는 단일 파티션에서 온 메시지가 순서대로 컨슈머에게 전달된다는 것을 보장합니다.
+그러나 다른 파티션에서 온 메시지의 순서에 대한 보장은 없습니다.
+
+>
+To avoid log corruption, Kafka stores a CRC for each message in the log.
+If there is any I/O error on the broker, Kafka runs a recovery process to remove those messages with inconsistent CRCs.
+Having the CRC at the message level also allows us to check network errors after a message is produced or consumed.
+
+로그 손상을 방지하기 위해, Kafka는 각 메시지에 대한 CRC를 저장합니다.
+브로커에서 I/O 에러가 발생하면, Kafka는 일관성이 없는 CRC를 가진 메시지들을 제거하는 복구 프로세스를 실행합니다.
+메시지 레벨에서 CRC를 갖고 있으므로, 메시지가 생성되거나 소비된 이후에도 네트워크 에러를 확인할 수 있습니다.
+
+>
+If a broker goes down, any message stored on it not yet consumed becomes unavailable.
+If the storage system on a broker is permanently damaged, any unconsumed message is lost forever.
+In the future, we plan to add built-in replication in Kafka to redundantly store each message on multiple brokers.
+
+만약 브로커가 다운되면, 브로커에 저장된 아직 소비되지 않은 메시지는 사용할 수 없게 됩니다.
+브로커의 저장 시스템에 영구적인 손상이 발생했다면, 소비되지 않은 메시지는 영원히 잃게 됩니다.
+앞으로 Kafka에 빌트인 복제(replication) 기능을 추가하여 각 메시지를 여러 브로커에 중복으로 저장할 계획입니다.
+
+
 ### 4. Kafka Usage at LinkedIn
 ### 5. Experimental Results
 #### Producer Test
