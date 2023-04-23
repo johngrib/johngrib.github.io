@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 10:39:40 +0900
+updated : 2023-04-23 11:55:53 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -925,7 +925,63 @@ The main point is to illustrate the potential performance gain that can be achie
 
 
 ### 6. Conclusion and Future Works
+
+>
+We present a novel system called Kafka for processing huge volume of log data streams.
+Like a messaging system, Kafka employs a pull-based consumption model that allows an application to consume data at its own rate and rewind the consumption whenever needed.
+By focusing on log processing applications, Kafka achieves much higher throughput than conventional messaging systems.
+It also provides integrated distributed support and can scale out.
+We have been using Kafka successfully at LinkedIn for both offline and online applications.
+
+우리는 로그 데이터 스트림의 대량 처리를 위한 새로운 시스템인 Kafka를 소개했습니다.
+메시징 시스템처럼, Kafka는 애플리케이션이 자신의 속도로 데이터를 소비하고 필요할 때 소비를 되감을 수 있는 pull 기반의 소비 모델을 사용합니다.
+로그 처리 애플리케이션에 집중함으로써, Kafka는 전통적인 메시징 시스템보다 훨씬 높은 처리량을 달성합니다.
+또한, Kafka는 통합된 분산 지원을 제공하며 scale out도 가능합니다.
+우리는 LinkedIn에서 오프라인과 온라인 애플리케이션 모두에 대해 Kafka를 성공적으로 사용하고 있습니다.
+
+>
+There are a number of directions that we’d like to pursue in the future.
+First, we plan to add built-in replication of messages across multiple brokers to allow durability and data availability guarantees even in the case of unrecoverable machine failures.
+We’d like to support both asynchronous and synchronous replication models to allow some tradeoff between producer latency and the strength of the guarantees provided.
+An application can choose the right level of redundancy based on its requirement on durability, availability and throughput.
+Second, we want to add some stream processing capability in Kafka.
+After retrieving messages from Kafka, real time applications often perform similar operations such as window-based counting and joining each message with records in a secondary store or with messages in another stream.
+At the lowest level this is supported by semantically partitioning messages on the join key during publishing so that all messages sent with a particular key go to the same partition and hence arrive at a single consumer process.
+This provides the foundation for processing distributed streams across a cluster of consumer machines.
+On top of this we feel a library of helpful stream utilities, such as different windowing functions or join techniques will be beneficial to this kind of applications.
+
+우리가 앞으로 추진하고자 하는 방향은 다음과 같습니다.
+
+첫째, 여러 브로커간에 메시지를 복제하는 빌트인 기능을 추가하여, 회복할 수 없는 머신 장애가 발생하는 경우에도 데이터 내구성과 가용성을 보장하고자 합니다.
+비동기식 및 동기식 복제 모델을 모두 지원하여 프로듀서의 지연 시간과 제공되는 보장 강도 사이의 균형을 맞출 수 있도록 하고자 합니다.
+애플리케이션은 내구성, 가용성 및 처리율에 따라 적절한 중복 수준을 선택할 수 있습니다.
+
+둘째, 우리는 Kafka에 스트림 처리 기능을 추가하고자 합니다.
+Kafka에서 메시지를 가져온 후, 실시간 애플리케이션은 종종 윈도우 기반 카운팅과 같은 유사한 작업을 수행하며, 각 메시지를 두 번째 저장소 또는 다른 스트림의 메시지와 결합합니다.
+이 방법은 가장 낮은 레벨에서 지원되며, 특정 키로 전송된 모든 메시지가 동일한 파티션으로 전송되고, 따라서 단일 컨슈머 프로세스로 도착하도록 공급자가 조인 키를 기준으로 메시지를 파티션으로 나누는 것을 의미합니다.
+이를 통해 컨슈머 머신의 클러스터 전체에서 분산된 스트림을 처리하는 기반을 제공하게 됩니다.
+이를 기반으로 다양한 윈도우 기능이나 조인 기술과 같은 유용한 스트림 유틸리티 라이브러리가 이러한 애플리케이션에 유용할 것이라고 생각합니다.
+
 ### 7. REFERENCES
+
+- [1] http://activemq.apache.org/
+- [2] http://avro.apache.org/
+- [3] Cloudera’s Flume, https://github.com/cloudera/flume
+- [4] http://developer.yahoo.com/blogs/hadoop/posts/2010/06/enabling_hadoop_batch_processi_1/
+- [5] Efficient data transfer through zero copy: https://www.ibm.com/developerworks/linux/library/jzerocopy/
+- [6] Facebook’s Scribe, http://www.facebook.com/note.php?note_id=32008268919
+- [7] IBM Websphere MQ: http://www01.ibm.com/software/integration/wmq/
+- [8] http://hadoop.apache.org/
+- [9] http://hadoop.apache.org/hdfs/
+- [10] http://hadoop.apache.org/zookeeper/
+- [11] http://www.slideshare.net/cloudera/hw09-hadoop-baseddata-mining-platform-for-the-telecom-industry
+- [12] http://www.slideshare.net/prasadc/hive-percona-2009
+- [13] https://issues.apache.org/jira/browse/ZOOKEEPER-775
+- [14] JAVA Message Service: http://download.oracle.com/javaee/1.3/jms/tutorial/1_3_1-fcs/doc/jms_tutorialTOC.html.
+- [15] Oracle Enterprise Messaging Service: http://www.oracle.com/technetwork/middleware/ias/index093455.html
+- [16] http://www.rabbitmq.com/
+- [17] TIBCO Enterprise Message Service: http://www.tibco.com/products/soa/messaging/
+- [18] Kafka, http://sna-projects.com/kafka/
 
 ## Links
 
