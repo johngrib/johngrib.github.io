@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-22 16:09:20 +0900
+updated : 2023-04-22 21:16:03 +0900
 regenerate: true
 ---
 * TOC
@@ -95,6 +95,7 @@ regenerate: true
 * [[/clipping/butler-w-lampson/hints-for-computer-system-design]]
 * [[/clipping/donn-seely/how-not-to-write-fortran-in-any-language]]
 * [[/clipping/ewd/32]]
+* [[/clipping/kafka-a-distributed-messaging-system-for-log-processing]]
 * [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]
 * [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
 * [[/clipping/predicting-the-future]]
