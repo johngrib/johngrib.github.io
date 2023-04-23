@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 11:55:53 +0900
+updated : 2023-04-23 12:11:43 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -13,6 +13,8 @@ latex   : true
 ---
 * TOC
 {:toc}
+
+- 2011년에 LinkedIn에서 발표한 Kafka 논문.
 
 ## Kafka: a Distributed Messaging System for Log Processing 번역
 
@@ -27,6 +29,9 @@ Permission to make digital or hard copies of all or part of this work for person
 To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee.  
 NetDB'11, Jun. 12, 2011, Athens, Greece.  
 Copyright 2011 ACM 978-1-4503-0652-2/11/06…$10.00.
+
+- 의역이 많으며, 오역이 상당히 있을 수 있습니다.
+- 번역하는 과정에서 OpenAI의 GPT-4의 도움을 받았습니다.
 
 ### ABSTRACT
 
