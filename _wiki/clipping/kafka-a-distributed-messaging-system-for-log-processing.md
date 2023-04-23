@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 10:12:17 +0900
+updated : 2023-04-23 10:30:49 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -810,6 +810,71 @@ One of the machines was used as the broker and the other machine was used as the
 한 대의 머신은 브로커로 사용되고, 다른 머신은 프로듀서 또는 컨슈머로 사용되었습니다.
 
 #### Producer Test
+
+>
+Producer Test: We configured the broker in all systems to asynchronously flush messages to its persistence store.
+For each system, we ran a single producer to publish a total of 10 million messages, each of 200 bytes.
+We configured the Kafka producer to send messages in batches of size 1 and 50.
+ActiveMQ and RabbitMQ don’t seem to have an easy way to batch messages and we assume that it used a batch size of 1.
+The results are shown in Figure 4.
+The x-axis represents the amount of data sent to the broker over time in MB, and the y-axis corresponds to the producer throughput in messages per second.
+On average, Kafka can publish messages at the rate of 50,000 and 400,000 messages per second for batch size of 1 and 50, respectively.
+These numbers are orders of magnitude higher than that of ActiveMQ, and at least 2 times higher than RabbitMQ.
+
+프로듀서 테스트: 우리는 모든 시스템의 브로커를 비동기적으로 메시지를 영속성 저장소에 쓰도록 설정했습니다.
+각 시스템에 대해, 우리는 총 천만 개의 메시지를 발행하는 한 개의 프로듀서를 실행했고, 각 메시지 사이즈는 200바이트였습니다.
+Kafka 프로듀서는 메시지를 1개와 50개 규모로 배치로 보내도록 설정했습니다.
+ActiveMQ와 RabbitMQ는 메시지를 배치로 보내는 쉬운 방법이 없는 것으로 보여서, 우리는 배치 사이즈를 1개로 사용한다고 가정했습니다.
+
+결과는 Figure 4에 나와있습니다.
+
+x축은 시간의 흐름에 따라 브로커에 전송된 데이터 양을 MB로 나타내고, y축은 프로듀서의 처리량을 초당 메시지 수로 표시합니다.
+평균적으로, Kafka는 배치 사이즈가 1일 때 초당 5만 개의 메시지를, 배치 사이즈가 50일 때 초당 40만 개의 메시지를 발행할 수 있습니다.
+이 숫자는 ActiveMQ보다 훨씬 높고, RabbitMQ보다 적어도 2배 이상 높습니다.
+
+![Figure 4]( /resource/27/329CF0-E844-4E3C-AAFA-E8D4252CD62C/233814056-5a877703-5bcc-41e4-90be-4a4c932f2352.png )
+
+>
+There are a few reasons why Kafka performed much better.
+First, the Kafka producer currently doesn’t wait for acknowledgements from the broker and sends messages as faster as the broker can handle.
+This significantly increased the throughput of the publisher.
+With a batch size of 50, a single Kafka producer almost saturated the 1Gb link between the producer and the broker.
+This is a valid optimization for the log aggregation case, as data must be sent asynchronously to avoid introducing any latency into the live serving of traffic.
+We note that without acknowledging the producer, there is no guarantee that every published message is actually received by the broker.
+For many types of log data, it is desirable to trade durability for throughput, as long as the number of dropped messages is relatively small.
+However, we do plan to address the durability issue for more critical data in the future.
+
+Kafka가 훨씬 더 좋은 성능을 보인 이유는 다음과 같습니다.
+
+첫째, Kafka 프로듀서는 현재 브로커로부터 확인 응답을 기다리지 않고, 브로커가 처리할 수 있는 최대한 빠르게 메시지를 보냅니다.
+이는 퍼블리셔의 처리량을 크게 증가시켰습니다.
+배치 사이즈가 50일 때, 한 개의 Kafka 프로듀서는 프로듀서와 브로커 사이의 1Gb 링크를 거의 포화 상태로 만들었습니다.
+이것은 로그 집계의 경우에는 유효한 최적화이며, 실시간 트래픽 처리에 지연을 발생시키지 않기 위해 데이터를 비동기적으로 전송해야 합니다.
+
+프로듀서의 확인 응답을 받지 않는다면, 발행된 모든 메시지가 실제로 브로커에 전달되는 것을 보장할 수 없다는 점에 주의해야 합니다.
+많은 종류의 로그 데이터의 경우, 손실된 메시지의 수가 상대적으로 적은 편이라면 처리율을 위해 내구성을 희생하는 것이 바람직합니다.
+그러나, 우리는 앞으로 더 중요한 데이터에 대한 내구성 문제를 해결할 계획이 있습니다.
+
+>
+Second, Kafka has a more efficient storage format.
+On average, each message had an overhead of 9 bytes in Kafka, versus 144 bytes in ActiveMQ.
+This means that ActiveMQ was using 70% more space than Kafka to store the same set of 10 million messages.
+One overhead in ActiveMQ came from the heavy message header, required by JMS.
+Another overhead was the cost of maintaining various indexing structures.
+We observed that one of the busiest threads in ActiveMQ spent most of its time accessing a B-Tree to maintain message metadata and state.
+Finally, batching greatly improved the throughput by amortizing the RPC overhead.
+In Kafka, a batch size of 50 messages improved the throughput by almost an order of magnitude.
+
+둘째, Kafka는 더 효율적인 저장 포맷을 가지고 있습니다.
+평균적으로, Kafka에서 각 메시지의 오버헤드는 9 바이트였고, ActiveMQ에서는 144 바이트였습니다.
+이는 ActiveMQ가 똑같은 1000만 개의 메시지 집합을 저장하는 데 있어 Kafka보다 70% 더 많은 공간을 사용하고 있다는 것을 의미합니다.
+ActiveMQ의 오버헤드 중 하나는, JMS에서 요구하는 무거운 메시지 헤더입니다.
+또 다른 오버헤드는 다양한 인덱싱 구조를 유지하는 데 드는 비용입니다.
+우리는 관찰 결과 ActiveMQ에서 가장 바쁜 스레드 중 하나가 메시지 메타데이터와 메시지의 상태를 관리하기 위해 B-Tree에 접근하는 데 거의 모든 시간을 소비한다는 것을 알게 됐습니다.
+
+그리고 마지막으로, 배치는 RPC 오버헤드를 분산시켜 처리량을 크게 향상시켰습니다.
+Kafka에서 배치 사이즈가 50인 경우, 처리율을 거의 한 자릿수 향상시켰습니다.
+
 #### Consumer Test
 ### 6. Conclusion and Future Works
 ### 7. REFERENCES
