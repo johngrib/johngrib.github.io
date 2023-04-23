@@ -147,7 +147,7 @@ OCP의 목표는 시스템을 확장하기 쉬운 동시에 변경으로 인해 
 
 ## 리스코프 치환 원칙(LSP)
 
-1988년, Barbara Liskov가 논문 "[[summary-Data-Abstraction-and-Hierarchy]]{Data Abstraction and Hierarchy}"에서 서브 타입을 다음과 같이 정의하였다.
+1988년, Barbara Liskov가 논문 "[[/clipping/barbara-liskov/data-abstraction-and-hierarchy]]{Data Abstraction and Hierarchy}"에서 서브 타입을 다음과 같이 정의하였다.
 
 >
 What is wanted here is something like the following substitution property [6]: If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T.
@@ -159,7 +159,7 @@ S는 T의 하위 타입이다.
 
 이 개념을 리스코프 치환 원칙이라 부른다.
 
-논문 요약: [[summary-Data-Abstraction-and-Hierarchy]]
+논문 요약: [[/clipping/barbara-liskov/data-abstraction-and-hierarchy]]
 
 다음은 리스코프 치환 원칙을 준수하는 예제이다.[^lsp-example]
 

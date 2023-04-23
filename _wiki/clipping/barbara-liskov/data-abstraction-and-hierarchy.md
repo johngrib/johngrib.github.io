@@ -3,12 +3,12 @@ layout  : wiki
 title   : (요약) Data Abstraction and Hierarchy by Barbara Liskov 1988
 summary : 바바라 리스코프의 1988년 논문을 읽고 요약한다
 date    : 2019-10-06 12:00:14 +0900
-updated : 2019-11-05 22:17:00 +0900
+updated : 2023-04-23 20:10:34 +0900
 tag     : oop
 resource: 64/B75273-DD0F-40DF-812E-3A0E02EDF42F
 toc     : true
 public  : true
-parent  : [[summary]]
+parent  : [[/clipping]]
 latex   : false
 ---
 * TOC

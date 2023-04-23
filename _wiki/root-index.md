@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-23 20:05:15 +0900
+updated : 2023-04-23 20:09:02 +0900
 regenerate: true
 ---
 * TOC
@@ -99,6 +99,8 @@ regenerate: true
 * [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]
 * [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
 * [[/clipping/predicting-the-future]]
+
+* [[/clipping/barbara-liskov/data-abstraction-and-hierarchy]]
 
 * [[/Software-Engineering-Code-of-Ethics]]
 * [[/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
@@ -862,7 +864,6 @@ regenerate: true
 ## [[/summary]]
 
 * [[/REST-paper-summary]]
-* [[/summary-Data-Abstraction-and-Hierarchy]]
 * [[/summary-inside-the-mind-of-a-master-procrastinator-tim-urban]]
 * [[/summary-ldh-get-partnership]]
 * [[/summary-the-mind-behind-linux]]

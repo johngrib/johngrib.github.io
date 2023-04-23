@@ -6,6 +6,7 @@
  "updated": "2018-02-07 21:34:09 +0900",
  "resource": "F9/7C23D7-E9B9-4B73-97DC-EFCDA7D33476",
  "children": [
+  "clipping/barbara-liskov/data-abstraction-and-hierarchy",
   "clipping/bill-gates/letter-to-hobbyists",
   "clipping/butler-w-lampson/hints-for-computer-system-design",
   "clipping/donn-seely/how-not-to-write-fortran-in-any-language",
