@@ -3,7 +3,7 @@ layout  : wiki
 title   : git log
 summary : 로그를 잘 읽어야 한다
 date    : 2019-12-01 08:14:22 +0900
-updated : 2022-03-13 12:33:34 +0900
+updated : 2023-04-23 21:42:39 +0900
 tag     : git
 resource: 1A/6E0987-315D-4ECC-B38E-2937C808EB7C
 toc     : true
@@ -14,7 +14,9 @@ latex   : false
 * TOC
 {:toc}
 
-## 로그 그래프
+## 내가 사용하는 알리아스 {#my-alias}
+
+### git l {#alias-l}
 
 나는 로그 그래프 확인에 주로 다음 알리아스를 사용한다.
 
@@ -28,6 +30,14 @@ l = "log \
 `git l`을 입력하면 다음과 같이 출력된다.
 
 ![]( /resource/1A/6E0987-315D-4ECC-B38E-2937C808EB7C/69907636-866a3000-141b-11ea-8b50-732c038279a3.png )
+
+### git lh {#alias-lh}
+
+나는 25줄만 보고 싶은 경우가 흔한 편이어서 다음과 같이 `git lh`로 `git l`의 결과를 앞부분만 잘라 보는 편이다.
+
+```sh
+lh = "!git l | head -25"
+```
 
 ## Commit Ranges
 
