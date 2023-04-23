@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-22 21:16:03 +0900
+updated : 2023-04-23 20:05:15 +0900
 regenerate: true
 ---
 * TOC
@@ -620,6 +620,7 @@ regenerate: true
 * [[/cmd/for]]
 * [[/cmd/fortune]]
 * [[/cmd/grep]]
+* [[/cmd/httpie]]
 * [[/cmd/iostat]]
 * [[/cmd/java]]
 * [[/cmd/java_home]]
@@ -661,7 +662,6 @@ regenerate: true
 * [[/google-java-format]]
 * [[/gpg]]
 * [[/how-to-escape-cli]]
-* [[/httpie-cmd]]
 * [[/ioreg-cmd]]
 * [[/lldb-cmd]]
 * [[/lsof]]
