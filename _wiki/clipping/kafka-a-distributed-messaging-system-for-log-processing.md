@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 09:40:50 +0900
+updated : 2023-04-23 10:04:31 +0900
 tag     : 
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -699,6 +699,92 @@ In the future, we plan to add built-in replication in Kafka to redundantly store
 
 
 ### 4. Kafka Usage at LinkedIn
+
+**4. LinkedIn에서 Kafka를 사용하는 방법**
+
+>
+In this section, we describe how we use Kafka at LinkedIn.
+Figure 3 shows a simplified version of our deployment.
+We have one Kafka cluster co-located with each datacenter where our userfacing services run.
+The frontend services generate various kinds of log data and publish it to the local Kafka brokers in batches.
+We rely on a hardware load-balancer to distribute the publish requests to the set of Kafka brokers evenly.
+The online consumers of Kafka run in services within the same datacenter.
+
+이 섹션에서는 LinkedIn에서 Kafka를 사용하는 방법에 대해 설명합니다.
+
+Figure 3은 우리의 배포의 단순화된 버전을 보여줍니다.
+
+사용자와 대면하는 서비스가 실행되는 각 데이터 센터에는 하나의 Kafka 클러스터가 있습니다.
+프론트엔드 서비스는 다양한 종류의 로그 데이터를 생성하고, 이를 로컬 Kafka 브로커에 배치로 전송합니다.
+하드웨어 로드밸런서를 사용하여, Kafka 브로커 집합에 고르게 전송 요청을 분배합니다.
+Kafka의 온라인 컨슈머는 동일한 데이터 센터 내의 서비스에서 실행됩니다.
+
+![image]( /resource/27/329CF0-E844-4E3C-AAFA-E8D4252CD62C/233813447-2f4ac604-2ed7-4002-a29a-7dc163793673.png )
+
+>
+We also deploy a cluster of Kafka in a separate datacenter for offline analysis, located geographically close to our Hadoop cluster and other data warehouse infrastructure.
+This instance of Kafka runs a set of embedded consumers to pull data from the Kafka instances in the live datacenters.
+We then run data load jobs to pull data from this replica cluster of Kafka into Hadoop and our data warehouse, where we run various reporting jobs and analytical process on the data.
+We also use this Kafka cluster for prototyping and have the ability to run simple scripts against the raw event streams for ad hoc querying.
+Without too much tuning, the end-to-end latency for the complete pipeline is about 10 seconds on average, good enough for our requirements.
+
+우리는 또한 오프라인 분석을 위해 별도의 데이터 센터에 Kafka 클러스터를 배포합니다.
+이 클러스터는 Hadoop 클러스터와 기타 데이터 웨어하우스 인프라에 지리적으로 가까이 있습니다.
+이 Kafka 인스턴스는 실시간 데이터 센터의 Kafka 인스턴스에서 데이터를 가져오기 위해 내장된 컨슈머 집합을 실행합니다.
+그런 다음, 이 '복제 Kafka 클러스터에서 데이터를 가져오기 위한 데이터 로드 작업'을
+Hadoop 및 데이터 웨어하우스에서 실행하고, 이 데이터를 통해 다양한 리포팅 작업과 분석 프로세스를 실행합니다.
+또한, 이 Kafka 클러스터를 프로토타이핑에 사용하고, ad hoc 쿼리를 위해 원시 이벤트 스트림에 대해 간단한 스크립트를 실행할 수 있는 기능도 갖추고 있습니다.
+너무 많은 튜닝을 하지 않아도 전체 파이프라인의 엔드 투 엔드 지연 시간은 평균적으로 10초 정도로, 우리의 요구 사항에 충분합니다.
+
+>
+Currently, Kafka accumulates hundreds of gigabytes of data and close to a billion messages per day, which we expect will grow significantly as we finish converting legacy systems to take advantage of Kafka.
+More types of messages will be added in the future.
+The rebalance process is able to automatically redirect the consumption when the operation staffs start or stop brokers for software or hardware maintenance.
+
+현재 Kafka는 하루에 수백 기가 바이트의 데이터와 10억 건에 가까운 메시지를 누적하고 있습니다.
+이는 Kafka를 활용하도록 기존의 시스템을 전환하는 것이 완료되면 급격히 증가할 것으로 예상합니다.
+앞으로 더 많은 종류의 메시지가 추가될 것입니다.
+운영 직원이 소프트웨어 또는 하드웨어 유지 보수를 위해 브로커를 시작하거나 중지할 때, 리밸런스 프로세스가 자동으로 소비를 리디렉션할 수 있습니다.
+
+>
+Our tracking also includes an auditing system to verify that there is no data loss along the whole pipeline.
+To facilitate that, each message carries the timestamp and the server name when they are generated.
+We instrument each producer such that it periodically generates a monitoring event, which records the number of messages published by that producer for each topic within a fixed time window.
+The producer publishes the monitoring events to Kafka in a separate topic.
+The consumers can then count the number of messages that they have received from a given topic and validate those counts with the monitoring events to validate the correctness of data.
+
+전체 파이프라인에서 데이터 손실이 없는지 확인하기 위한 감사(auditing) 시스템도 포함되어 있습니다.
+이를 위해, 각 메시지는 생성될 때 타임스탬프와 서버 이름을 포함합니다.
+우리는 각 프로듀서를 측정해서, 고정된 시간 윈도우 내에서 해당 생산자가 각 토픽에 게시한 메시지 수를 기록하는 모니터링 이벤트를 주기적으로 생성하도록 합니다.
+프로듀서는 별도의 토픽에 모니터링 이벤트를 발행합니다.
+그런 다음, 컨슈머는 특정 토픽에서 수신한 메시지 수를 계산하고, 모니터링 이벤트와 비교하여 데이터의 정확성을 확인할 수 있습니다.
+
+>
+Loading into the Hadoop cluster is accomplished by implementing a special Kafka input format that allows MapReduce jobs to directly read data from Kafka.
+A MapReduce job loads the raw data and then groups and compresses it for efficient processing in the future.
+The stateless broker and client-side storage of message offsets again come into play here, allowing the MapReduce task management (which allows tasks to fail and be restarted) to handle the data load in a natural way without duplicating or losing messages in the event of a task restart.
+Both data and offsets are stored in HDFS only on the successful completion of the job.
+
+Hadoop 클러스터에 데이터를 로드하는 것은 Kafka에서 데이터를 직접 읽을 수 있는 MapReduce 작업에다가 특별한 Kafka 입력 형식을 구현하는 방식으로 수행됩니다.
+MapReduce 작업은 원시 데이터를 로드한 다음, 그룹화하고 압축하여 미래에 효율적인 처리를 가능하게 해둡니다.
+'상태없는 브로커와 클라이언트 측 메시지 오프셋 저장'은 여기에서도 작동합니다.
+작업 재시작 시 메시지를 중복하거나 손실하지 않고, MapReduce 작업 관리(작업이 실패해도 재시작되도록 허용)가 데이터 로드를 자연스럽게 처리할 수 있도록 해줍니다.
+작업이 성공적으로 완료되면 데이터와 오프셋은 HDFS에 저장됩니다.
+
+>
+We chose to use Avro [2] as our serialization protocol since it is efficient and supports schema evolution.
+For each message, we store the id of its Avro schema and the serialized bytes in the payload.
+This schema allows us to enforce a contract to ensure compatibility between data producers and consumers.
+We use a lightweight schema registry service to map the schema id to the actual schema.
+When a consumer gets a message, it looks up in the schema registry to retrieve the schema, which is used to decode the bytes into an object (this lookup need only be done once per schema, since the values are immutable).
+
+우리는 직렬화 프로토콜로 Avro를 선택했는데, Avro는 효율적이고 스키마의 변화를 지원하기 때문입니다.
+각 메시지에는 Avro 스키마의 id와 페이로드의 직렬화된 바이트를 저장합니다.
+이런 스키마를 사용하면 데이터 프로듀서와 컨슈머 사이의 호환성을 보장하기 위한 계약을 강제할 수 있습니다.
+우리는 스키마 id를 실제 스키마에 매핑하는 가벼운 스키마 레지스트리 서비스를 사용합니다.
+컨슈머가 메시지를 하나 받으면, 컨슈머는 스키마 레지스트리에서 스키마를 검색해서 바이트를 객체로 디코딩하는데 사용합니다(불변값을 사용하기 때문에 이 검색은 스키마당 한 번씩만 수행하면 됩니다).
+
+
 ### 5. Experimental Results
 #### Producer Test
 #### Consumer Test
