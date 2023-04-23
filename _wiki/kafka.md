@@ -3,7 +3,7 @@ layout  : wiki
 title   : Apache Kafka
 summary : 
 date    : 2023-04-23 22:07:35 +0900
-updated : 2023-04-23 22:41:07 +0900
+updated : 2023-04-23 22:43:27 +0900
 tag     : kafka
 resource: 89/BA2F48-41B3-410F-A771-F5F63028152F
 toc     : true
@@ -97,7 +97,7 @@ This style of pagecache-centric design is described in an [article](http://varni
 
 이러한 페이지 캐시 중심의 디자인 스타일은 Varnish 디자인에 대한 기사에서 설명합니다(약간의 오만함도 함께).
 
-#### From: [[/clipping/kafka-a-distributed-messaging-system-for-log-processing#choice-file-system-page-cache]]
+#### From: [[/clipping/kafka-a-distributed-messaging-system-for-log-processing#choice-file-system-page-cache]]{2011년 LinkedIn 논문}
 
 - Kafka 개발팀은 '일반적이지 않은' 선택을 결정했다.
 - 메모리에 저장하지 않고 파일 시스템에 저장한다는 것.
