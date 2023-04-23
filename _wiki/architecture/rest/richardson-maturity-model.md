@@ -61,7 +61,7 @@ HTTP 요청 시 여러 메소드를 사용하여 다양한 리소스를 제공�
 ## 함께 읽기
 
 - [Richardson Maturity Model (Martin Fowler)][fowler-model]
-- [[/REST-paper-summary]] - 로이 필딩의 REST 논문 요약
+- [[/clipping/roy-fielding/rest-paper]] - 로이 필딩의 REST 논문 요약
 
 ## 참고문헌
 

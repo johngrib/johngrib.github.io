@@ -14,7 +14,7 @@ latex   : false
 * TOC
 {:toc}
 
-* [[/REST-paper-summary]]
+* [[/clipping/roy-fielding/rest-paper]]
 
 ## 하위 문서
 

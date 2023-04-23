@@ -1060,7 +1060,7 @@ mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 
 ## 함께 읽기
 
-- [[/REST-paper-summary]]
+- [[/clipping/roy-fielding/rest-paper]]
 
 ## 참고문헌
 

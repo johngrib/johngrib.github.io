@@ -3,12 +3,12 @@ layout  : wiki
 title   : (요약) Architectural Styles and the Design of Network-based Software Architectures by Roy Thomas Fielding, 2000
 summary : 로이 필딩의 아키텍처 스타일과 네트워크 기반의 소프트웨어 아키텍처 설계 요약
 date    : 2019-07-24 19:59:55 +0900
-updated : 2020-02-17 08:07:39 +0900
+updated : 2023-04-23 20:14:16 +0900
 tag     : web
 resource: 6A/76E976-49B2-4F02-B07F-53EF9D56F28F
 toc     : true
 public  : true
-parent  : [[summary]]
+parent  : [[/clipping]]
 latex   : false
 ---
 * TOC

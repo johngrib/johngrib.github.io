@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-23 20:09:02 +0900
+updated : 2023-04-23 20:13:22 +0900
 regenerate: true
 ---
 * TOC
@@ -91,6 +91,7 @@ regenerate: true
 
 ## [[/clipping]]
 
+* [[/clipping/barbara-liskov/data-abstraction-and-hierarchy]]
 * [[/clipping/bill-gates/letter-to-hobbyists]]
 * [[/clipping/butler-w-lampson/hints-for-computer-system-design]]
 * [[/clipping/donn-seely/how-not-to-write-fortran-in-any-language]]
@@ -99,8 +100,7 @@ regenerate: true
 * [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]
 * [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
 * [[/clipping/predicting-the-future]]
-
-* [[/clipping/barbara-liskov/data-abstraction-and-hierarchy]]
+* [[/clipping/roy-fielding/rest-paper]]
 
 * [[/Software-Engineering-Code-of-Ethics]]
 * [[/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
@@ -863,7 +863,6 @@ regenerate: true
 
 ## [[/summary]]
 
-* [[/REST-paper-summary]]
 * [[/summary-inside-the-mind-of-a-master-procrastinator-tim-urban]]
 * [[/summary-ldh-get-partnership]]
 * [[/summary-the-mind-behind-linux]]
