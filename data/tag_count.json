@@ -508,6 +508,10 @@
   "size": 17
  },
  {
+  "name": "kafka",
+  "size": 2
+ },
+ {
   "name": "karabiner",
   "size": 1
  },

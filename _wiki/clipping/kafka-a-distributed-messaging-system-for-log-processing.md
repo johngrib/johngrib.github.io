@@ -3,8 +3,8 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 12:16:30 +0900
-tag     : 
+updated : 2023-04-23 22:41:12 +0900
+tag     : kafka
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
 public  : true
@@ -409,6 +409,7 @@ We have found that both the production and the consumption have consistent perfo
 대신, 우리는 기본 파일 시스템 페이지 캐시를 사용합니다.
 이로 인해 메시지는 페이지 캐시에만 캐싱되므로, 더블 버퍼링을 피할 수 있습니다.
 또한 브로커 프로세스가 재시작되어도 캐시가 유지되는 추가적인 장점이 있습니다.
+{:id="choice-file-system-page-cache"}
 
 Kafka가 프로세스에서 전혀 메시지를 캐싱하지 않기 때문에, 메모리의 가비지 컬렉팅 오버헤드가 거의 없습니다.
 그러므로 VM 기반 언어에서 효율적인 구현이 가능합니다.
