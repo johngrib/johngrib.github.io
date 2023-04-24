@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-23 22:48:26 +0900
+updated : 2023-04-24 23:05:59 +0900
 regenerate: true
 ---
 * TOC
@@ -638,6 +638,7 @@ regenerate: true
 * [[/cmd/pwgen]]
 * [[/cmd/rans]]
 * [[/cmd/rbenv]]
+* [[/cmd/rig]]
 * [[/cmd/say]]
 * [[/cmd/sdkman]]
 * [[/cmd/sed]]
@@ -671,7 +672,6 @@ regenerate: true
 * [[/my-bash-cheatsheet]]
 * [[/perl-one-liner]]
 * [[/phpbrew]]
-* [[/rig-cmd]]
 * [[/ripgrep]]
 * [[/sha256sum]]
 * [[/tail]]
