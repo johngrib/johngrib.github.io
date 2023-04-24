@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka - a Distributed Messaging System for Log Processing
 summary : Kafka - 대용량 로그 처리를 위한 분산 메시징 시스템
 date    : 2023-04-22 21:16:04 +0900
-updated : 2023-04-23 22:41:12 +0900
+updated : 2023-04-24 21:57:21 +0900
 tag     : kafka
 resource: 27/329CF0-E844-4E3C-AAFA-E8D4252CD62C
 toc     : true
@@ -600,7 +600,7 @@ As messages get pulled from a partition, the consumer periodically updates the l
 컨슈머는 먼저 Zookeeper에서 브로커와 컨슈머 레지스트리를 읽어서, 각 구독된 토픽 T에 대해 사용 가능한 파티션의 집합 (PT)과 T를 구독하는 컨슈머의 집합 (CT)을 계산합니다.
 그런 다음 PT를 |CT|개의 청크로 범위-분할하고, 그 중 하나를 소유하도록 결정합니다.
 컨슈머가 선택한 각 파티션에 대해 컨슈머는 소유권 레지스트리에 파티션의 새 소유자로 자신을 기록합니다.
-마지막으로 컨슈머는 오프셋 레지스트리에 저장된 오프셋에서 시작하여 각 소유된 파티션에서 데이터를 가져오는 스레드를 시작합니다.j
+마지막으로 컨슈머는 오프셋 레지스트리에 저장된 오프셋에서 시작하여 각 소유된 파티션에서 데이터를 가져오는 스레드를 시작합니다.
 파티션에서 메시지를 가져오면, 컨슈머는 주기적으로 오프셋 레지스트리에 최신으로 소비된 오프셋을 업데이트합니다.
 
 >
