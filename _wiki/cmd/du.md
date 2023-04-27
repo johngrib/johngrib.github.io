@@ -3,12 +3,12 @@ layout  : wiki
 title   : du 명령어
 summary : disk usage. 디스크 사용 현황을 본다.
 date    : 2018-02-08 22:58:36 +0900
-updated : 2018-02-08 23:11:05 +0900
+updated : 2023-04-27 23:33:49 +0900
 tag     : bash command
 resource: 09/8F1884-750F-489C-8361-FAE1EC8D8510
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
