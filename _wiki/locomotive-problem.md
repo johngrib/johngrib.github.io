@@ -507,7 +507,7 @@ main(2000); // { '5%': '91', '95%': '243' }
 
 * [[Bayes-theorem]]
 * [[Think-Bayes]]
-* [[Zipf-s-law]]
+* [[/jargon/zipf-s-law]]
 * [[Copernican-Principle]]
 
 

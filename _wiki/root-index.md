@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-04-24 23:05:59 +0900
+updated : 2023-04-27 23:32:08 +0900
 regenerate: true
 ---
 * TOC
@@ -469,6 +469,7 @@ regenerate: true
 * [[/jargon/telescope-rule]]
 * [[/jargon/two-pizza-team]]
 * [[/jargon/zero-overhead-principle]]
+* [[/jargon/zipf-s-law]]
 
 * [[/CAP-theorem]]
 * [[/constantine-s-law]]
@@ -486,7 +487,6 @@ regenerate: true
 * [[/power-distance-index]]
 * [[/rule-of-3-and-10]]
 * [[/Schopenhauer-s-Law-Of-Entropy]]
-* [[/Zipf-s-law]]
 
 ## [[/study]]
 * [[/study/note]]
