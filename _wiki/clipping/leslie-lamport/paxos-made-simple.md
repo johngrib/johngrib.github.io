@@ -3,7 +3,7 @@ layout  : wiki
 title   : Paxos Made Simple
 summary : 간단하게 설명한 Paxos
 date    : 2023-04-24 23:15:47 +0900
-updated : 2023-04-30 00:31:26 +0900
+updated : 2023-04-30 00:38:15 +0900
 tag     : 
 resource: AC/F578A5-1346-4919-AE96-7DDEFBA2C574
 toc     : true
@@ -753,7 +753,8 @@ This permits a simple implementation of an arbitrarily sophisticated reconfigura
 
 ## Links
 
-https://lamport.azurewebsites.net/pubs/paxos-simple.pdf
+- [Paxos Made Simple (pdf)]( https://lamport.azurewebsites.net/pubs/paxos-simple.pdf )
+- [The Part-Time Parliament]( https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf )
 
 ## 주석
 
