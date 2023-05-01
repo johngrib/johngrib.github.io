@@ -3,7 +3,7 @@ layout  : wiki
 title   : CAP Twelve Years Later - How the "Rules" Have Changed
 summary : CAP 정리 발표 후 12년 - '규칙'은 어떻게 변했는가
 date    : 2023-04-30 11:47:05 +0900
-updated : 2023-05-01 15:51:02 +0900
+updated : 2023-05-01 15:59:40 +0900
 tag     : 
 resource: BF/808304-A746-4297-A103-0D3D3EEDD14B
 toc     : true
@@ -497,7 +497,7 @@ Continuing to attempt communication will enable the system to discern when the p
 계속해서 통신을 시도하면 시스템이 파티션이 종료되는 시점을 파악할 수 있습니다.
 
 
-### * Which operations should proceed?
+### Which operations should proceed?
 
 **어떤 작업이 계속 진행되어야 하는가?**
 
@@ -835,7 +835,7 @@ However, unlike ACID transactions, this approach requires more thoughtful deploy
 최상의 솔루션은 서비스의 불변성과 운영에 대한 세부 정보에 따라 크게 달라집니다.
 
 
-### * Compensation issues in an automated teller machine
+### Compensation issues in an automated teller machine
 
 **현금 자동 입출금기에서의 보상 문제**
 
@@ -914,7 +914,7 @@ I thank Mike Dahlin, Hank Korth, Marc Shapiro, Justin Sheehy, Amin Vahdat, Ben Z
 
 이 작업에 도움을 주신 Mike Dahlin, Hank Korth, Marc Shapiro, Justin Sheehy, Amin Vahdat, Ben Zhao, 그리고 IEEE Computer Society 자원봉사자들에게 감사드립니다.
 
-### * About the Author
+### About the Author
 
 >
 Eric Brewer is a professor of computer science at the University of California, Berkeley, and vice president of infrastructure at Google.
