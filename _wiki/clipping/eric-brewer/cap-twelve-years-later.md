@@ -3,7 +3,7 @@ layout  : wiki
 title   : CAP Twelve Years Later - How the "Rules" Have Changed
 summary : CAP 정리 발표 후 12년 - '규칙'은 어떻게 변했는가
 date    : 2023-04-30 11:47:05 +0900
-updated : 2023-05-01 15:59:40 +0900
+updated : 2023-05-01 16:01:18 +0900
 tag     : 
 resource: BF/808304-A746-4297-A103-0D3D3EEDD14B
 toc     : true
@@ -955,6 +955,10 @@ Brewer는 MIT에서 전기 공학 및 컴퓨터 과학 박사 학위를 받았�
 20. G. DeCandia et al., "Dynamo: Amazon’s Highly Available Key-Value Store," Proc. 21st ACM SIGOPS Symp. Operating Systems Principles (SOSP 07), ACM, 2007, pp. 205-220.
 21. H. Garcia-Molina and K. Salem, "SAGAS," Proc. ACM SIGMOD Int’l Conf. Management of Data (SIGMOD 87), ACM, 1987, pp. 249-259.
 22. H. Korth, E. Levy, and A. Silberschatz, "A Formal Approach to Recovery by Compensating Transactions," Proc. VLDB Endowment (VLDB 90), ACM, 1990, pp. 95-106
+
+## 함께 읽기
+
+- [[/CAP-theorem]]
 
 ## 주석
 
