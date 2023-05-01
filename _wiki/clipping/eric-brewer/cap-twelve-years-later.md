@@ -958,7 +958,7 @@ Brewer는 MIT에서 전기 공학 및 컴퓨터 과학 박사 학위를 받았�
 
 ## 함께 읽기
 
-- [[/CAP-theorem]]
+- [[/jargon/cap-theorem]]
 
 ## 주석
 

@@ -6,7 +6,6 @@
  "updated": "2022-01-01 12:40:18 +0900",
  "resource": "9D/FF1ECF-CBDF-4760-8509-7C81543F7F07",
  "children": [
-  "CAP-theorem",
   "constantine-s-law",
   "Conway-s-law",
   "Copernican-Principle",
@@ -21,6 +20,7 @@
   "jargon/boy-scout-rule",
   "jargon/brooks-s-law",
   "jargon/burndown-chart",
+  "jargon/cap-theorem",
   "jargon/convoy-effect",
   "jargon/dry-principle",
   "jargon/edsel-edict",
