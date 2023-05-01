@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : CAP Twelve Years Later - How the "Rules" Have Changed
+title   : CAP Twelve Years Later - How the "Rules" Have Changed By Eric Brewer
 summary : CAP 정리 발표 후 12년 - '규칙'은 어떻게 변했는가
 date    : 2023-04-30 11:47:05 +0900
-updated : 2023-05-01 16:01:18 +0900
+updated : 2023-05-01 16:10:23 +0900
 tag     : 
 resource: BF/808304-A746-4297-A103-0D3D3EEDD14B
 toc     : true
@@ -16,6 +16,7 @@ latex   : false
 
 - 원문: [CAP Twelve Years Later: How the "Rules" Have Changed]( https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed/ )
 - 2000년에 CAP 정리를 발표한 Eric Brewer가 2012년에 쓴 글. Computer 매거진에 처음으로 게재되었다.
+- Eric Brewer는 버클리 컴퓨터 과학 교수이자, Google의 인프라스트럭처 부사장이다.
 
 ## CAP Twelve Years Later: How the "Rules" Have Changed 번역
 
