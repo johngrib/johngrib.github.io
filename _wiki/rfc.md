@@ -3,12 +3,12 @@ layout  : category
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2023-05-03 21:35:03 +0900
+updated : 2023-05-03 21:36:22 +0900
 tag     : rfc
 resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
 public  : true
-parent  : [[what]]
+parent  : [[/index]]
 latex   : false
 ---
 * TOC
