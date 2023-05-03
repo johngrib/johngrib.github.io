@@ -1,9 +1,9 @@
 ---
-layout  : wiki
+layout  : category
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2023-03-12 20:47:45 +0900
+updated : 2023-05-03 21:35:03 +0900
 tag     : rfc
 resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
@@ -280,6 +280,9 @@ http://example.com/search{?q,lang}
 * 리얼월드 HTTP 시부카와 요시키 저/김성훈 역 / 한빛미디어 / 2019년 04월 19일
 * TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
 
+## 하위 문서
+
+<div id="sub-document-list"></div>
 
 [RFC-7540]: https://tools.ietf.org/html/rfc7540
 [RFC-6410]: https://tools.ietf.org/html/rfc6410
