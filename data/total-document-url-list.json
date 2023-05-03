@@ -1,4 +1,5 @@
 [
+ "/wiki/_rfc",
  "/blog/2017/03/12/telegram-bot",
  "/blog/2017/04/02/jwp-00-prepare",
  "/blog/2017/04/03/emacs-start",
@@ -649,7 +650,6 @@
  "/wiki/review/2021",
  "/wiki/review/2022",
  "/wiki/review/2023",
- "/wiki/RFC",
  "/wiki/ripgrep",
  "/wiki/root-index",
  "/wiki/rouge-supported-languages",

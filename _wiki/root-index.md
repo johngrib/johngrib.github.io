@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-01 16:02:01 +0900
+updated : 2023-05-03 21:31:14 +0900
 regenerate: true
 ---
 * TOC
@@ -759,6 +759,8 @@ regenerate: true
 
 * [[/emacs/cheatsheet]]
 
+* [[/_rfc]]
+
 ## [[/what]]
 
 * [[/availability]]
@@ -776,7 +778,6 @@ regenerate: true
 * [[/latency]]
 * [[/osi-model]]
 * [[/port]]
-* [[/RFC]]
 * [[/rouge-supported-languages]]
 * [[/router]]
 * [[/special-chars]]
