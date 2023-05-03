@@ -6,7 +6,6 @@
  "updated": "2018-04-04 09:04:07 +0900",
  "resource": "E2/3DE0F6-FA5C-4730-9B37-5655F5528712",
  "children": [
-  "_rfc",
   "availability",
   "bandwidth",
   "braille-pattern-chars",
@@ -22,6 +21,7 @@
   "latency",
   "osi-model",
   "port",
+  "rfc",
   "rouge-supported-languages",
   "router",
   "special-chars",

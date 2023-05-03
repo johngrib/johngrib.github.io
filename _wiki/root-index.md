@@ -759,7 +759,7 @@ regenerate: true
 
 * [[/emacs/cheatsheet]]
 
-* [[/_rfc]]
+* [[/rfc]]
 
 ## [[/what]]
 
