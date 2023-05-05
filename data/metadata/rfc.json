@@ -6,5 +6,7 @@
  "url": "/wiki/rfc",
  "updated": "2023-05-03 21:36:22 +0900",
  "resource": "6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D",
- "children": []
+ "children": [
+  "rfc/1950"
+ ]
 }
