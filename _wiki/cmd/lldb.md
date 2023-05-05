@@ -3,12 +3,12 @@ layout  : wiki
 title   : lldb 명령어
 summary : command line interface to the LLDB debugger library
 date    : 2020-09-28 15:48:54 +0900
-updated : 2020-09-28 16:08:52 +0900
+updated : 2023-05-05 23:15:27 +0900
 tag     : bash command c
 resource: F4/332E97-20EF-4D8A-84B9-46FB6120293B
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

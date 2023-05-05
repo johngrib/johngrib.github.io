@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-05 17:28:44 +0900
+updated : 2023-05-05 23:15:14 +0900
 regenerate: true
 ---
 * TOC
@@ -632,6 +632,7 @@ regenerate: true
 * [[/cmd/java_home]]
 * [[/cmd/jq]]
 * [[/cmd/less]]
+* [[/cmd/lldb]]
 * [[/cmd/man]]
 * [[/cmd/mv]]
 * [[/cmd/mysqldump]]
@@ -668,7 +669,6 @@ regenerate: true
 * [[/gpg]]
 * [[/how-to-escape-cli]]
 * [[/ioreg-cmd]]
-* [[/lldb-cmd]]
 * [[/lsof]]
 * [[/make-cmd]]
 * [[/my-bash-cheatsheet]]
