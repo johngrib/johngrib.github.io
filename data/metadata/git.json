@@ -17,6 +17,7 @@
   "git/index",
   "git/log",
   "git/merge",
-  "git/rebase"
+  "git/rebase",
+  "git/revert"
  ]
 }

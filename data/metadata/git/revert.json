@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "git revert",
+ "summary": "Revert some existing commits",
+ "parent": "git",
+ "url": "/wiki/git/revert",
+ "updated": "2023-05-05 18:25:07 +0900",
+ "resource": "48/28375A-5833-4A33-8D5C-6307856D242A",
+ "children": []
+}
