@@ -24,6 +24,10 @@ body, th, td, div, p, li {
     word-break: keep-all;
 }
 
+a {
+    word-break: break-all;
+}
+
 $main-font-color: #4D5667;
 
 p, li {
