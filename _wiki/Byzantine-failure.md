@@ -3,7 +3,7 @@ layout  : wiki
 title   : 비잔틴 오류(Byzantine failure)
 summary : 
 date    : 2019-10-17 16:44:17 +0900
-updated : 2019-10-17 17:04:34 +0900
+updated : 2023-05-06 23:37:38 +0900
 tag     : 
 resource: 46/8FAF64-D177-4AEB-86A9-A502A83A67A2
 toc     : true
@@ -36,6 +36,7 @@ latex   : false
 ## 참고문헌
 
 * 웹 문서
+    * [The Byzantine Generals (PDF)]( https://lamport.azurewebsites.net/pubs/the-byz-generals.pdf )
     * [The Byzantine Generals Problem by LESLIE LAMPORT, ROBERT SHOSTAK, and MARSHALL PEASE. SRI International, 1982][pdf]
     * [Byzantine fault (wikipedia)][wiki-eng]
     * [비잔티움 장애 허용 (위키백과)][wiki]
@@ -48,7 +49,7 @@ latex   : false
 [^bernstein]: 트랜잭션 처리의 원리. 8 Two-Phase Commit. 291쪽.
 [^mastering]: 비트코인, 블록체인과 금융의 혁신. 1 서론. 36쪽.
 
-[pdf]: https://people.eecs.berkeley.edu/~luca/cs174/byzantine.pdf
+[pdf]: https://lamport.azurewebsites.net/pubs/byz.pdf
 [wiki]: https://ko.wikipedia.org/wiki/비잔티움_장애_허용
 [wiki-eng]: https://en.wikipedia.org/wiki/Byzantine_fault
 
