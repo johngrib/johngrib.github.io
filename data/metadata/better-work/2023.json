@@ -4,7 +4,9 @@
  "summary": "",
  "parent": "better-work",
  "url": "/wiki/better-work/2023",
- "updated": "2023-04-08 18:28:03 +0900",
+ "updated": "2023-05-06 15:28:37 +0900",
  "resource": "EC/BE101B-778C-48C2-BBE9-053502DC6E27",
- "children": []
+ "children": [
+  "better-work/2023/04-scrum-sprint"
+ ]
 }

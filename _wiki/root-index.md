@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-05 23:15:14 +0900
+updated : 2023-05-06 10:33:52 +0900
 regenerate: true
 ---
 * TOC
@@ -925,6 +925,7 @@ regenerate: true
 ## [[/better-work]]
 
 * [[/better-work/2023]]
+* [[/better-work/2023/04-scrum-sprint]]
 * [[/better-work/informal-group-solves]]
 * [[/better-work/interview]]
 * [[/better-work/meeting]]
