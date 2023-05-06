@@ -29,7 +29,6 @@
  "relations",
  "rule-of-succession",
  "sigma-notation",
- "study-discrete-mathematics",
  "study/concrete-math",
  "study/concrete-math/01-recurrent-problems-01",
  "study/concrete-math/01-recurrent-problems-02",
@@ -46,5 +45,6 @@
  "study/concrete-math/03-integer-functions-01",
  "study/concrete-math/03-integer-functions-02",
  "study/concrete-math/05-binomial-coefficients-04",
+ "study/rosen-discrete-math-7",
  "tower-of-hanoi"
 ]

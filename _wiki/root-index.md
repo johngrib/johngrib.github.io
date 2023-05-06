@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-06 10:33:52 +0900
+updated : 2023-05-06 23:22:18 +0900
 regenerate: true
 ---
 * TOC
@@ -535,7 +535,8 @@ regenerate: true
 * [[/study/ddia/04-encoding-and-evolution]]
 * [[/study/ddia/05-replication]]
 
-### [[/study-discrete-mathematics]]
+### [[/study/rosen-discrete-math-7]]
+
 * [[/discrete-math-propositional-logic]]
 * [[/discrete-math-quantifiers]]
 * [[/discrete-math-inference-rules]]

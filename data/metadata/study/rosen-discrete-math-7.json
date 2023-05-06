@@ -1,0 +1,22 @@
+{
+ "type": "wiki",
+ "title": "(study) Rosen의 이산수학 7판",
+ "summary": "",
+ "parent": "study",
+ "url": "/wiki/study/rosen-discrete-math-7",
+ "updated": "2023-05-06 23:21:36 +0900",
+ "resource": "1A/CCA608-E3DB-4028-8C1F-830892CBFD4C",
+ "children": [
+  "discrete-math-functions",
+  "discrete-math-inference-rules",
+  "discrete-math-linear-congruences",
+  "discrete-math-matrices",
+  "discrete-math-modular",
+  "discrete-math-proofs",
+  "discrete-math-propositional-logic",
+  "discrete-math-quantifiers",
+  "discrete-math-sequences",
+  "discrete-math-sets",
+  "discrete-math-summations"
+ ]
+}

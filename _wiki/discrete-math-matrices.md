@@ -8,7 +8,7 @@ tag     : math
 resource: 0E/31273B-6C44-446E-ABF0-4B31AB2B3C0F
 toc     : true
 public  : true
-parent  : [[study-discrete-mathematics]]
+parent  : [[/study/rosen-discrete-math-7]]
 latex   : true
 ---
 * TOC
