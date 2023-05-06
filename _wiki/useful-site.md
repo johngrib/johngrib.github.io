@@ -3,7 +3,7 @@ layout  : category
 title   : 유용한 웹 사이트 모음
 summary : 
 date    : 2018-02-06 07:01:45 +0900
-updated : 2023-03-27 23:49:57 +0900
+updated : 2023-05-06 22:59:51 +0900
 tag     : 
 resource: 29/4A9F29-0C6F-4C1D-8600-34457BE41700
 toc     : true
@@ -13,6 +13,10 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## CIA World Factbook
+
+<https://www.cia.gov/the-world-factbook/ >
 
 ## github 상태 보기
 
