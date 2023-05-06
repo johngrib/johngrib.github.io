@@ -233,8 +233,8 @@ $$
 
 ## 함께 읽기
 
-* [[/discrete-math-modular]]{모듈러 연산(나머지 연산)}
-* [[/discrete-math-linear-congruences#a-모듈로-m-의-역-inverse]]{a 모듈로 m의 역}
+* [[/study/rosen-discrete-math-7/modular]]{모듈러 연산(나머지 연산)}
+* [[/study/rosen-discrete-math-7/linear-congruences#a-모듈로-m-의-역-inverse]]{a 모듈로 m의 역}
 
 ## 주석
 

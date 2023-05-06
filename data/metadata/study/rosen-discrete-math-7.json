@@ -7,16 +7,16 @@
  "updated": "2023-05-06 23:21:36 +0900",
  "resource": "1A/CCA608-E3DB-4028-8C1F-830892CBFD4C",
  "children": [
-  "discrete-math-functions",
-  "discrete-math-inference-rules",
-  "discrete-math-linear-congruences",
-  "discrete-math-matrices",
-  "discrete-math-modular",
-  "discrete-math-proofs",
-  "discrete-math-propositional-logic",
-  "discrete-math-quantifiers",
-  "discrete-math-sequences",
-  "discrete-math-sets",
-  "discrete-math-summations"
+  "study/rosen-discrete-math-7/functions",
+  "study/rosen-discrete-math-7/inference-rules",
+  "study/rosen-discrete-math-7/linear-congruences",
+  "study/rosen-discrete-math-7/matrices",
+  "study/rosen-discrete-math-7/modular",
+  "study/rosen-discrete-math-7/proofs",
+  "study/rosen-discrete-math-7/propositional-logic",
+  "study/rosen-discrete-math-7/quantifiers",
+  "study/rosen-discrete-math-7/sequences",
+  "study/rosen-discrete-math-7/sets",
+  "study/rosen-discrete-math-7/summations"
  ]
 }

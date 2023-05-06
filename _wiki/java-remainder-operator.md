@@ -304,7 +304,7 @@ class Test2 {
 
 ## 함께 읽기
 
-* [[discrete-math-modular]]{모듈러 연산(나머지 연산)}
+* [[/study/rosen-discrete-math-7/modular]]{모듈러 연산(나머지 연산)}
 
 
 ## 참고문헌

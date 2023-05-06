@@ -591,7 +591,7 @@ $$ 10 + 15 + ... + 31618 + (32801 - 31618) = 146029 $$
 
 그러므로 32801개의 아이템을 ArrayList에 하나 하나 추가하면 최소한 146029회의 값 복사가 발생한다.
 (게다가 복제 이후에 이전의 배열은 안 쓰게 되므로 gc가 모두 청소할 것이다.)
-비트 연산으로 인한 1 비트 무조건 내림을 고려하지 않는다면 단순 [[/discrete-math-summations]]{등비수열의 합}으로 소박하게 표현하는 것도 가능하다.
+비트 연산으로 인한 1 비트 무조건 내림을 고려하지 않는다면 단순 [[/study/rosen-discrete-math-7/summations]]{등비수열의 합}으로 소박하게 표현하는 것도 가능하다.
 
 아이템의 수를 n 이라 하면 grow의 발생 횟수 $$ G_n $$을 다음과 같이 생각할 수 있다. (아이템의 수가 11일 때 grow가 최초 발생한다는 전제)
 
@@ -887,7 +887,7 @@ public class Tuple{
 
 ## 함께 읽기
 
-- [[/discrete-math-summations]]
+- [[/study/rosen-discrete-math-7/summations]]
 - [[/java/arraylist]]
 - [이 글을 작성하기 위해 만든 테스트 코드]( https://github.com/johngrib/clojure-study-on-java/blob/master/src/test/java/clojure/lang/PersistentVectorTest.java )
 

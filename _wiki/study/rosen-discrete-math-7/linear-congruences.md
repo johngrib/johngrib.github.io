@@ -3,7 +3,7 @@ layout  : wiki
 title   : 선형합동
 summary : Linear Congruences
 date    : 2019-02-24 00:13:22 +0900
-updated : 2022-12-03 16:47:57 +0900
+updated : 2023-05-06 23:28:30 +0900
 tag     : math
 resource: 50/811BD2-C81F-4A3E-8059-9426A6399845
 toc     : true
@@ -698,6 +698,6 @@ $$ \{ \color{red}3,7,8,6,1,2,0,4,5, \color{red}3, 7,8,6,... \} $$
 
 ## 함께 읽기
 
-* [[discrete-math-modular]]{모듈러 연산(나머지 연산)}
-* [[gcd]]{최대공약수와 최소공배수}
+* [[/study/rosen-discrete-math-7/modular]]{모듈러 연산(나머지 연산)}
+* [[/gcd]]{최대공약수와 최소공배수}
 
