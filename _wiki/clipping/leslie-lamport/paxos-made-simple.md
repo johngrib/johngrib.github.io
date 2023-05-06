@@ -3,7 +3,7 @@ layout  : wiki
 title   : Paxos Made Simple
 summary : 간단하게 설명한 Paxos
 date    : 2023-04-24 23:15:47 +0900
-updated : 2023-04-30 00:38:15 +0900
+updated : 2023-05-06 23:41:53 +0900
 tag     : 
 resource: AC/F578A5-1346-4919-AE96-7DDEFBA2C574
 toc     : true
@@ -761,7 +761,7 @@ This permits a simple implementation of an arbitrarily sophisticated reconfigura
 [^two-majorities]: 역주: 다수결 집합이 1개 있는 경우는 일상에서도 흔하므로 상상하기 어렵지 않다. 그러나 다수결 집합이 2개인 경우는 상상하기 좀 어려울 수 있는데 집합론으로 생각해보는 방법이 있다. A,B,C 라는 3명의 acceptor가 있고, 1이라는 값이 제안됐다고 하자. 이 때, 1을 다수결로 찬성하는 다수결 집합은 4개이다($$3C2 + 3C3 = 4$$, `[A,B]`, `[A,C]`, `[B,C]`, `[A,B,C]`) 이 4개의 집합들 중 두 개를 뽑은 뒤 비교해 보면 최소한 하나의 acceptor를 공유하고 있음을 알 수 있다.
 [^p2]: 역주: $$P2$$는 '선택된 제안들 간의 일관성'을 보장한다. 선택된 제안들은 모두 같은 값을 갖는다.
 [^p2a]: 역주: $$P2^a$$는 'acceptor가 수락한 제안들 간의 일관성'을 보장한다. 즉, 값 v를 갖는 제안이 '선택'되었다면, 그 이후에 모든 acceptor는 더 높은 번호를 갖는 제안을 수락할 때 동일한 값을 유지해야 한다.
-[^non-byzantine-failure]: 역주: Byzantine failure는 시스템의 구성원이 악의적으로 행동하거나 잘못된 정보를 전송하는 것을 말한다. 즉 non-Byzantine failure는 시스템의 구성원이 악의적으로 행동하지 않았지만 예상치 못한 이유 등으로 잘못된 동작을 하거나 잘못된 정보를 전송하는 것을 의미한다.
+[^non-byzantine-failure]: 역주: [[/jargon/byzantine-failure]]는 시스템의 구성원이 악의적으로 행동하거나 잘못된 정보를 전송하는 것을 말한다. 즉 non-Byzantine failure는 시스템의 구성원이 악의적으로 행동하지 않았지만 예상치 못한 이유 등으로 잘못된 동작을 하거나 잘못된 정보를 전송하는 것을 의미한다.
 [^p1-sentence]: "$$P1$$. acceptor는 자신이 받은 첫 번째 제안을 받아들여야만 한다."
 [^p2b-sentence]: "$$P2^b$$. 값 v를 가진 제안이 선택되었다면, 이후 모든 proposer가 내놓는 더 높은 번호의 제안은 값 v를 갖는다."
 [^p2c-sentence]: "$$P2^c$$. 임의의 v와 n에 대해서, 값이 v이고 번호가 n인 제안이 발행되면, 다음 중 하나를 만족하는 '과반수의 acceptor로 구성된 집합 S'가 존재한다. <br/> - (a) S에 소속된 어떤 acceptor도 번호가 n보다 작은 제안을 수락하지 않았다. 혹은, <br/> - (b) S에 소속된 acceptor들이 수락한, '번호가 n보다 작은 모든 제안들' 중 '가장 높은 번호를 갖는 제안'의 값이 v 이다."

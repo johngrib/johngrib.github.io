@@ -2,9 +2,9 @@
  "type": "wiki",
  "title": "비잔틴 오류(Byzantine failure)",
  "summary": "",
- "parent": "index",
- "url": "/wiki/Byzantine-failure",
- "updated": "2023-05-06 23:37:38 +0900",
+ "parent": "jargon",
+ "url": "/wiki/jargon/byzantine-failure",
+ "updated": "2023-05-06 23:41:09 +0900",
  "resource": "46/8FAF64-D177-4AEB-86A9-A502A83A67A2",
  "children": []
 }

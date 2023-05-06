@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-06 23:22:18 +0900
+updated : 2023-05-06 23:40:12 +0900
 regenerate: true
 ---
 * TOC
@@ -453,6 +453,7 @@ regenerate: true
 * [[/jargon/boy-scout-rule]]
 * [[/jargon/brooks-s-law]]
 * [[/jargon/burndown-chart]]
+* [[/jargon/byzantine-failure]]
 * [[/jargon/cap-theorem]]
 * [[/jargon/convoy-effect]]
 * [[/jargon/dry-principle]]
@@ -959,7 +960,6 @@ regenerate: true
 
 ## 미분류
 
-* [[/Byzantine-failure]]
 * [[/abbr]]
 * [[/bell-labs]]
 * [[/big-numbers]]

@@ -3,12 +3,12 @@ layout  : wiki
 title   : 비잔틴 오류(Byzantine failure)
 summary : 
 date    : 2019-10-17 16:44:17 +0900
-updated : 2023-05-06 23:37:38 +0900
+updated : 2023-05-06 23:41:09 +0900
 tag     : 
 resource: 46/8FAF64-D177-4AEB-86A9-A502A83A67A2
 toc     : true
 public  : true
-parent  : [[index]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
@@ -43,6 +43,10 @@ latex   : false
 * 도서
     * 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
     * 비트코인, 블록체인과 금융의 혁신 / 안드레아스 M. 안토노풀로스 저 / 최은실, 김도훈, 송주한 공역 / 코인플러그 감수 / 고려대학교출판부 / 초판 12쇄 2018년 05월 02일 / 원제: Mastering Bitcoin: Unlocking Digital Cryptocurrencies
+
+## 함께 읽기
+
+- [[/clipping/leslie-lamport/paxos-made-simple]]
 
 ## 주석
 
