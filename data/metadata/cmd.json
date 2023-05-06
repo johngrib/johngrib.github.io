@@ -33,6 +33,7 @@
   "cmd/java",
   "cmd/java_home",
   "cmd/jq",
+  "cmd/kill",
   "cmd/less",
   "cmd/lldb",
   "cmd/man",
