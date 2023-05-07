@@ -91,7 +91,7 @@ $ pgrep firefox
 $ kill -s TERM 70341
 ```
 
-### 응용: [[/lsof]]
+### 응용: [[/cmd/lsof]]
 
 ```bash
  # 3000번 포트를 사용하는 프로세스를 찾아서 종료
