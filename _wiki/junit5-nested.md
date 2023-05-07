@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2022-12-19 15:19:56 +0900
+updated : 2023-05-07 22:00:22 +0900
 tag     : java test
 resource: D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6
 toc     : true
@@ -864,23 +864,193 @@ describe("Example", function() {
 });
 ```
 
-### Kotlin - Spek
+### Kotlin - DescribeSpec
 
-Kotlin에는 [Spek][kotlin-spek]이 있다.
+Kotlin에는 [DescribeSpec]( https://kotest.io/docs/framework/testing-styles.html )이 있다.
+
+`build.gradle.kts` 파일에 다음과 같이 의존성을 추가하면 사용할 수 있다.
 
 ```kotlin
-object CalculatorSpec: Spek({
-    describe("A calculator") {
-        val calculator by memoized { Calculator() }
+repositories {
+    mavenCentral()
+}
 
-        describe("addition") {
-            it("returns the sum of its arguments") {
-                assertEquals(3, calculator.add(1, 2))
+dependencies {
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:5.5.5")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:5.5.5")
+    testImplementation("io.kotest:kotest-property-jvm:5.5.5")
+}
+```
+
+다음은 내가 작성한 Kotlin 테스트 코드 [RatioTest.kt]( https://github.com/johngrib/kotlin-playground/blob/master/src/test/kotlin/johngrib/math/RatioTest.kt ) 이다.
+
+
+```kotlin
+import io.kotest.core.spec.DisplayName
+import io.kotest.core.spec.style.DescribeSpec
+import io.kotest.matchers.shouldBe
+import org.junit.jupiter.api.Assertions.*
+import kotlin.math.abs
+
+@DisplayName("Ratio")
+class RatioTest : DescribeSpec({
+    describe("toString") {
+        context("분자가 0 이라면") {
+            val givenDenominators = listOf(
+                1, 2, 3, 100, Int.MAX_VALUE,
+                -1, -2, -3, -100, Int.MIN_VALUE + 1
+            )
+            it("문자열 '0' 을 리턴한다") {
+                givenDenominators.forEach { denominator ->
+                    Ratio.of(numerator = 0, denominator = denominator)
+                        .toString() shouldBe "0"
+                }
+            }
+        }
+        context("더 이상 약분할 수 없는 분수라면") {
+            val givenCases = listOf(
+                Triple(3, 2, "3/2"),
+                Triple(-3, 2, "-3/2"),
+                Triple(7, 100, "7/100"),
+            )
+
+            it("분자/분모 형태의 문자열을 리턴한다") {
+                givenCases.forEach { (numerator, denominator, expected) ->
+                    Ratio.of(numerator = numerator, denominator = denominator)
+                        .toString() shouldBe expected
+                }
+            }
+        }
+        context("약분 가능한 분수라면") {
+            val givenCases = listOf(
+                Triple(3, 6, "1/2"),
+                Triple(8, 40, "1/5"),
+                Triple(80, 200, "2/5"),
+            )
+
+            it("약분된 분자/분모 형태의 문자열을 리턴한다") {
+                givenCases.forEach { (numerator, denominator, expected) ->
+                    Ratio.of(numerator = numerator, denominator = denominator)
+                        .toString() shouldBe expected
+                }
+            }
+        }
+
+        context("분자 또는 분모 둘 중 하나가 음수이면") {
+
+        }
+
+        context("분자, 분모 둘 다 음수이면") {
+
+        }
+    }
+    describe("plus") {
+        context("더했을 때 자연수가 되는 두 분수가 주어지면") {
+            val givenCases = listOf(
+                Triple(Ratio.of(3, 4), Ratio.of(1, 4), "1"),
+                Triple(Ratio.of(3, 4), Ratio.of(-3, 4), "0"),
+                Triple(Ratio.of(0), Ratio.of(3), "3"),
+                Triple(Ratio.of(2, 5), Ratio.of(6, 10), "1"),
+            )
+            it("덧셈 결과로 자연수를 리턴한다") {
+                givenCases.forEach { (ratio1, ratio2, expectString) ->
+                    (ratio1 + ratio2).toString() shouldBe expectString
+                }
+            }
+        }
+        context("두 분수가 주어지면") {
+            val givenCases = listOf(
+                Triple(Ratio.of(3, 4), Ratio.of(2, 7), "29/28"),
+                Triple(Ratio.of(2, 6), Ratio.of(5, 2), "17/6"),
+            )
+            it("덧셈 결과를 리턴한다") {
+                givenCases.forEach { (ratio1, ratio2, expectString) ->
+                    (ratio1 + ratio2).toString() shouldBe expectString
+                }
+            }
+
+        }
+    }
+    describe("gcd") {
+        val gcdParcialFirst = { number1: Int -> { number2: Int -> Ratio.gcd(number1, number2) } }
+        val gcdParcialLast = { number1: Int -> { number2: Int -> Ratio.gcd(number2, number1) } }
+
+        context("서로 다른 두 정수가 주어지면") {
+            val givenCases = listOf(
+                Triple(2, 4, 2),
+                Triple(54, 24, 6),
+                Triple(-54, 24, 6),
+                Triple(48, 180, 12),
+                Triple(48, -180, 12),
+                Triple(17, 22, 1),
+            )
+
+            it("두 수의 최대공약수를 리턴한다") {
+                givenCases.forEach { (number1, number2, expected) ->
+                    assertNotEquals(number1, number2, "주어진 두 수는 서로 다른 수여야 합니다.")
+                    val resultGCD = Ratio.gcd(number1, number2)
+
+                    assertEquals(resultGCD, expected, "리턴된 GCD 값이 예상한 값과 같아야 합니다.")
+                    assertTrue(resultGCD > 0, "리턴된 GCD 값은 0보다 큰 정수여야 합니다.")
+                }
+            }
+        }
+        context("똑같은 두 정수가 주어지면") {
+            val givenCases = listOf(
+                2, 7, 31, 100, -41, Int.MAX_VALUE, Int.MIN_VALUE + 1
+            )
+
+            it("두 수의 최대공약수를 리턴한다") {
+                givenCases.forEach { number ->
+                    val resultGCD = Ratio.gcd(number, number)
+
+                    assertEquals(resultGCD, abs(number), "리턴된 GCD 값이 예상한 값과 같아야 합니다.")
+                    assertTrue(resultGCD > 0, "리턴된 GCD 값은 0보다 큰 정수여야 합니다.")
+                }
+            }
+        }
+
+        context("'1' 과 '정수'가 주어지면") {
+            val gcd1N = gcdParcialFirst(1)
+            val gcdN1 = gcdParcialLast(1)
+
+            val givenCases = listOf(
+                1, 2, 3, 7, 100,
+                -1, -2, -3, -7, -100,
+                Int.MAX_VALUE, Int.MIN_VALUE,
+            )
+
+            it("1을 리턴한다") {
+                givenCases.forEach { number ->
+                    gcd1N(number) shouldBe 1
+                    gcdN1(number) shouldBe 1
+                }
+            }
+        }
+
+        context("'0'과 '0이 아닌 정수'가 주어지면") {
+            val gcd1N = gcdParcialFirst(0)
+            val gcdN1 = gcdParcialLast(0)
+            val givenCases = listOf(
+                1, 2, 3, 7, 100,
+                -1, -2, -3, -7, -100,
+                Int.MAX_VALUE, Int.MIN_VALUE,
+            )
+
+            it("0이 아닌 주어진 수의 절대값을 리턴한다") {
+                givenCases.forEach { number ->
+                    gcd1N(number) shouldBe abs(number)
+                    gcdN1(number) shouldBe abs(number)
+                }
             }
         }
     }
 })
 ```
+
+## 주석
+
+[^dci-eng-comment]: 나는 보통 `Describe:`, `Context:`는 생략한다. 그러나 이 글을 초심자가 본다고 생각하고 고의로 생략하지 않았다.
 
 [betterspecs]: https://www.betterspecs.org/
 [ginkgo]: https://onsi.github.io/ginkgo/
@@ -896,8 +1066,4 @@ object CalculatorSpec: Spek({
 [jpatest]: https://github.com/johngrib/example-junit5/commit/a5b4aeb4f7711dc84e3e531dc6f09815f392a949#diff-31c578db0d1719a05d6477038214d1c7
 [resolve-anno]: https://github.com/johngrib/example-junit5/commit/a5b4aeb4f7711dc84e3e531dc6f09815f392a949#diff-dd8b588364151772ee73a9d72dcf0419
 [resolve-inherit]: https://github.com/johngrib/example-junit5/commit/a5b4aeb4f7711dc84e3e531dc6f09815f392a949#diff-d448362a92356e56b2ea1d6f86f9ea30
-
-## 주석
-
-[^dci-eng-comment]: 나는 보통 `Describe:`, `Context:`는 생략한다. 그러나 이 글을 초심자가 본다고 생각하고 고의로 생략하지 않았다.
 
