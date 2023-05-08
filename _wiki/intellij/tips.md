@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ 이것저것
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2023-03-19 17:07:07 +0900
+updated : 2023-05-08 22:44:40 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -31,12 +31,21 @@ latex   : false
 
 [lsd/IdeaVim OS X Key Repeat.markdown]( https://gist.github.com/lsd/1e1826907ab7e49c536a )
 
-- Ultimate Edition IntelliJ: `defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false`
-- Community Edition IntelliJ: `defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false`
+```bash
+ # IntelliJ(Ultimate Edition)인 경우
+defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false
 
-위의 명령을 터미널에서 입력하고, IntelliJ를 재실행하면 된다.
+ # IntelliJ(Community Edition)인 경우
+defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
+
+ # DataGrip인 경우
+defaults write com.jetbrains.datagrip ApplePressAndHoldEnabled -bool false
+```
+
+위의 명령을 제품에 맞춰 터미널에서 입력하고, IntelliJ를 재실행하면 된다.
 
 - 최근 사용 이력
+    - 2023-05-08
     - 2023-03-18
 
 ## 커서가 지시하는 단어를 하이라이트
