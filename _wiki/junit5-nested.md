@@ -3,7 +3,7 @@ layout  : wiki
 title   : JUnit5로 계층 구조의 테스트 코드 작성하기
 summary : 5의 @Nested 어노테이션을 쓰면 된다
 date    : 2019-12-22 10:54:33 +0900
-updated : 2023-05-07 22:00:22 +0900
+updated : 2023-05-09 22:39:18 +0900
 tag     : java test
 resource: D6/BB0A7E-C954-44D4-BA39-137A1A7F9DC6
 toc     : true
@@ -866,7 +866,7 @@ describe("Example", function() {
 
 ### Kotlin - DescribeSpec
 
-Kotlin에는 [DescribeSpec]( https://kotest.io/docs/framework/testing-styles.html )이 있다.
+Kotlin에는 [DescribeSpec]( https://kotest.io/docs/framework/testing-styles.html#describe-spec )이 있다.
 
 `build.gradle.kts` 파일에 다음과 같이 의존성을 추가하면 사용할 수 있다.
 
