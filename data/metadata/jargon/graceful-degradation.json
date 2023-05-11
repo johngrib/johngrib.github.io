@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "우아한 성능 저하 (graceful degradation)",
+ "summary": "시스템이 실패 상황이 됐을 때, 전체 시스템이 중단되는 대신 일부 기능이라도 작동하도록 설계하는 방식",
+ "parent": "jargon",
+ "url": "/wiki/jargon/graceful-degradation",
+ "updated": "2023-05-11 23:14:18 +0900",
+ "resource": "39/3BF582-2270-40A6-93FC-C5A62B556710",
+ "children": []
+}
