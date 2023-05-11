@@ -3,7 +3,7 @@ layout  : wiki
 title   : 프레드 브룩스
 summary : Frederick P. Brooks, Jr.
 date    : 2022-09-16 22:47:43 +0900
-updated : 2023-02-10 00:24:24 +0900
+updated : 2023-05-11 21:19:36 +0900
 tag     : 
 resource: 0F/A675E4-A82C-45D4-A38A-099F4593CACC
 toc     : true
@@ -93,6 +93,7 @@ OS/360과 다른 시스템/360용 소프트웨어들을 합쳐서 원래 예산�
 - [[/jargon/brooks-s-law]]
 - [[/book/mythical-man-month]]
 - [[/No-Silver-Bullet]]
+- [1999년 Turing Award]( https://amturing.acm.org/award_winners/brooks_1002187.cfm )
 
 ## 주석
 
