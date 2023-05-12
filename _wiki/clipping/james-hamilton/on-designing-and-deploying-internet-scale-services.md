@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-11 23:19:02 +0900
+updated : 2023-05-12 23:28:03 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -108,7 +108,243 @@ These sub-sections include overall service design; designing for automation and 
 
 이 하위 섹션들은 전반적인 서비스 설계, 자동화와 프로비저닝을 위한 설계, 의존성 관리, 릴리스 주기와 테스트, 하드웨어 선택과 표준화, 운영과 용량 계획, 감사, 모니터링과 알림, 점진적 기능 저하(graceful degradation)와 어드미션 컨트롤, 고객과 언론 커뮤니케이션 계획, 고객의 셀프 프로비저닝과 셀프 도움말 등을 다룹니다.
 
-### Overall Application Design
+#### Overall Application Design
+
+애플리케이션 설계 전반에 대하여
+
+>
+We have long believed that 80% of operations issues originate in design and development, so this section on overall service design is the largest and most important.
+When systems fail, there is a natural tendency to look first to operations since that is where the problem actually took place.
+Most operations issues, however, either have their genesis in design and development or are best solved there.
+>
+Throughout the sections that follow, a consensus emerges that firm separation of development, test, and operations isn't the most effective approach in the services world.
+The trend we've seen when looking across many services is that low-cost administration correlates highly with how closely the development, test, and operations teams work together.
+
+우리는 운영 중 발생하는 문제의 80%가 설계와 개발에서 비롯된다고 오랫동안 믿어왔습니다.
+따라서 전반적인 서비스 설계를 다루는 이 섹션은 가장 많은 내용을 담고 있으며 가장 중요합니다.
+시스템에 장애가 발생하면, 실제로 문제를 다루는 곳이 운영 부서이기 때문에 당연하다는 듯이 운영 부서를 먼저 살펴보는 경향이 있습니다.
+그러나 대부분의 운영 문제는 근본적으로 설계와 개발 과정에서 비롯된 것이므로, 설계와 개발 과정에서 해결하는 것이 가장 좋습니다.
+
+다음 섹션을 통해 '개발, 테스트, 운영을 엄격하게 분리하는 것'이 '서비스 업계에서 썩 효과적인 접근 방식이 아니라는 것'에 대한 공감대가 형성되고 있음을 살펴봅니다.
+
+우리는 많은 서비스를 살펴본 결과, 관리 비용의 절감은 개발팀, 테스트팀, 운영팀이 얼마나 밀접하게 협력하는가와 크게 연관되어 있다는 경향성을 발견했습니다.
+
+>
+In addition to the best practices on service design discussed here, the subsequent section, "Designing for Automation Management and Provisioning," also has substantial influence on service design.
+Effective automatic management and provisioning are generally achieved only with a constrained service model.
+This is a repeating theme throughout: simplicity is the key to efficient operations.
+Rational constraints on hardware selection, service design, and deployment models are a big driver of reduced administrative costs and greater service reliability.
+
+이 섹션에서 설명하는 '모범적인 서비스 설계 사례'들 외에도 다음 섹션인 '자동화 관리와 프로비저닝을 위한 설계'도 서비스 설계에 상당한 영향을 미칩니다.
+효과적으로 자동화된 관리와 프로비저닝은 일반적으로 제한된 서비스 모델을 통해서만 달성할 수 있습니다.
+
+'단순함이 효율적인 운영의 핵심'이라는 것은 이 논문 전반에 걸쳐 반복되는 주제입니다.
+
+하드웨어 선택, 서비스 설계, 배포 모델에 대한 합리적인 제약조건은 관리 비용을 줄이고 서비스 신뢰성을 높이는 큰 원동력이 됩니다.
+
+>
+Some of the operations-friendly basics that have the biggest impact on overall service design are:
+
+서비스 설계 전반에 걸쳐 가장 큰 영향을 미치는 운영 친화적 기본 사항은 다음과 같습니다.
+
+>
+- Design for failure.
+This is a core concept when developing large services that comprise many cooperating components.
+Those components will fail and they will fail frequently.
+The components don't always cooperate and fail independently either.
+Once the service has scaled beyond 10,000 servers and 50,000 disks, failures will occur multiple times a day.
+If a hardware failure requires any immediate administrative action, the service simply won't scale cost-effectively and reliably.
+The entire service must be capable of surviving failure without human administrative interaction.
+Failure recovery must be a very simple path and that path must be tested frequently.
+Armando Fox of Stanford [4, 5] has argued that the best way to test the failure path is never to shut the service down normally.
+Just hard-fail it.
+This sounds counter-intuitive, but if the failure paths aren't frequently used, they won't work when needed [7].
+
+- 장애를 대비한 설계.
+
+서로 협력하는 많은 컴포넌트들로 구성된 대규모 서비스를 개발할 때의 핵심 개념이라 할 수 있습니다.
+서비스를 구성하는 컴포넌트들은 빈번하게 장애를 겪을 수 있습니다.
+컴포넌트들은 항상 잘 협력하다가 혼자서만 장애를 겪거나 하지는 않습니다.
+서비스가 10,000대의 서버와 50,000개의 디스크를 넘어서는 규모가 되면, 하루에도 여러 번의 장애가 발생할 수 있습니다.
+만약 하드웨어 장애로 인해 즉각적인 관리 조치가 필요한 상황이라면, 효율적인 비용을 쓰면서 안정적으로 서비스를 확장할 수는 없습니다.
+
+즉, 사람이 개입해서 관리하지 않아도 전체 서비스가 스스로 장애를 극복할 수 있어야 합니다.
+장애를 복구하는 방법은 매우 단순해야 하며, 그 방법도 자주 테스트해야 합니다.
+
+Stanford 대학교의 Armando Fox는 장애 경로를 테스트하는 가장 좋은 방법은 서비스를 정상적으로 종료하지 않는 것이라고 주장했습니다.
+그냥 서비스를 강제로 종료하는 것이 그 방법입니다.
+이 방법은 역설적으로 들릴 수 있지만, 이런 장애 경로를 자주 테스트해보지 않으면 필요할 때 제대로 작동하지 않을 수 있습니다.
+
+>
+- Redundancy and fault recovery.
+The mainframe model was to buy one very large, very expensive server.
+Mainframes have redundant power supplies, hot-swappable CPUs, and exotic bus architectures that provide respectable I/O throughput in a single, tightly-coupled system.
+The obvious problem with these systems is their expense.
+And even with all the costly engineering, they still aren't sufficiently reliable.
+In order to get the fifth 9 of reliability, redundancy is required.
+Even getting four 9's on a single-system deployment is difficult.
+This concept is fairly well understood industry-wide, yet it's still common to see services built upon fragile, non-redundant data tiers.
+Designing a service such that any system can crash (or be brought down for service) at any time while still meeting the service level agreement (SLA) requires careful engineering.
+The acid test for full compliance with this design principle is the following:
+is the operations team willing and able to bring down any server in the service at any time without draining the work load first?
+If they are, then there is synchronous redundancy (no data loss), failure detection, and automatic take-over.
+As a design approach, we recommend one commonly used approach to find and correct potential service security issues: security threat modeling.
+In security threat modeling [8], we consider each possible security threat and, for each, implement adequate mitigation.
+The same approach can be applied to designing for fault resiliency and recovery.
+Document all conceivable component failures modes and combinations thereof.
+For each failure, ensure that the service can continue to operate without unacceptable loss in service quality, or determine that this failure risk is acceptable for this particular service (e.g., loss of an entire data center in a non-geo-redundant service).
+Very unusual combinations of failures may be determined sufficiently unlikely that ensuring the system can operate through them is uneconomical.
+Be cautious when making this judgment.
+We've been surprised at how frequently "unusual" combinations of events take place when running thousands of servers that produce millions of opportunities for component failures each day.
+Rare combinations can become commonplace.
+
+- 이중화, 그리고 장애 복구
+
+메인프레임 모델은 매우 크고 비싼 서버 한 대를 구매하는 것이었습니다.
+메인프레임은 이중화된 전원 공급장치, 핫-스왑이 가능한 여러 CPU들, 강하게 결합된 단일 시스템 위에서 돌아가는 상당한 수준의 I/O 처리율을 제공하는 굉장한 버스 아키텍처를 갖추고 있습니다.
+이런 시스템들의 가장 큰 문제는 비용이라 할 수 있습니다.
+상당한 비용이 소모되는 엔지니어링에도 불구하고, 이런 시스템들은 충분한 신뢰성을 제공하지 못합니다.
+
+신뢰성을 99.999%까지 높이기 위해서는 이중화를 해야 합니다.
+단일 시스템 배포에서는 99.99%의 신뢰성을 확보하는 것조차도 어렵습니다.
+업계 전반에 걸쳐 이런 이중화의 개념은 상당히 잘 알려져 있는데도, 이중화되지 않은 데이터 계층 위에 구축된 취약한 서비스는 여전히 많이 있습니다.
+
+서비스 수준 협약(SLA)[^term-sla]을 충족시키면서도 시스템이 언제든지 다운되거나 서비스가 중단되어도 괜찮도록 서비스를 설계하려면 신중한 엔지니어링이 필요합니다.
+
+이러한 설계 원칙을 완벽하게 준수하는지에 대한 가장 엄격한 테스트는 다음 질문이라 할 수 있습니다.
+운영팀이 특별히 더 작업을 하지 않아도 언제든지 서비스의 모든 서버를 중단할 수 있고, 그것에 대응할 수도 있는가?
+만약 그것이 가능하다면 동기식 이중화(데이터 손실 없음), 장애 감지, 그리고 자동 인수인계 기능을 갖추고 있는 것입니다.
+
+설계의 관점에서, 우리는 잠재적인 서비스 보안 문제를 찾고 수정하기 위해 흔히 사용되는 방법 중 하나인 '보안 위협 모델링'을 추천합니다.
+보안 위협 모델링은 가능한 모든 보안 위협을 고려하고, 각각에 대해 적절한 완화 조치를 구현하는 것입니다.
+
+장애 복원력 및 복구를 위한 설계에서도 이와 같은 접근 방식을 적용할 수 있습니다.
+이론적으로 가능한 모든 컴포넌트들의 장애 상황과 그것들의 복합적인 조합을 문서화하는 것입니다.
+각 장애에 대해, '서비스 품질상 절대 허용할 수 없는 피해' 없이 서비스가 계속 운영 가능한지 확인하거나, 특정 서비스에 대해 이런 장애 위험이 허용 가능한 수준인지를 판단합니다(예: 지리적으로 이중화되지 않은 서비스인데, 전체 데이터 센터 장애가 발생함).
+
+매우 이례적인 장애 상황의 조합인 경우, 장애가 발생할 가능성이 충분히 낮다고 판단하고 그런 장애에 대응한 시스템 운영을 보장하는 것이 경제적이지 않다고 판단하는 것도 가능합니다.
+물론 이러한 판단을 내릴 때에는 신중을 기해야 합니다.
+우리는 매일 수백만 건의 컴포넌트 장애가 발생하는 수천대의 서버를 운영하면서 "비정상적인" 사건의 조합이 얼마나 자주 발생하는지를 경험했습니다.
+규모에 따라 매우 드문 조합도 일상적인 사건이 될 수 있는 것입니다.
+
+>
+- Commodity hardware slice.
+All components of the service should target a commodity hardware slice.
+For example, storage-light servers will be dual socket, 2- to 4-core systems in the $1,000 to $2,500 range with a boot disk.
+Storage-heavy servers are similar servers with 16 to 24 disks.
+The key observations are:
+    - large clusters of commodity servers are much less expensive than the small number of large servers they replace,
+    - server performance continues to increase much faster than I/O performance, making a small server a more balanced system for a given amount of disk,
+    - power consumption scales linearly with servers but cubically with clock frequency, making higher performance servers more expensive to operate, and
+    - a small server affects a smaller proportion of the overall service workload when failing over.
+
+- 상용 하드웨어 조각을 사용할 것.
+
+서비스를 구성하는 모든 컴포넌트는 상용 하드웨어 조각을 타겟으로 해야 합니다.
+예를 들어, 가벼운 스토리지가 필요한 서버는 부트 디스크가 있는 듀얼 소켓, 2~4 코어 시스템이며 가격은 $1000 ~ $2500 정도일 것입니다.
+스토리지가 많이 필요한 서버는 전자와 유사하지만 16~24개의 디스크를 가진 서버일 것입니다.
+우리가 관찰한 핵심 사항들은 다음과 같습니다.
+
+- 대규모의 일반적인 서버 클러스터는 그들이 대체하는 적은 수의 대형 서버들보다 훨씬 저렴합니다.
+- 서버 성능은 I/O 성능보다 훨씬 빠르게 증가하고 있으므로, 같은 양의 디스크에 대해 더 작은 서버를 갖추면 더 균형 잡힌 시스템이 될 것입니다.
+- 전력 소비는 서버의 수에 따라 선형적으로 증가하지만, 클럭 주파수에 대해서는 세제곱으로 증가하므로, 더 높은 성능의 서버는 운영비가 더 많이 듭니다.
+- 작은 서버는 장애를 겪는다 해도 전체 서비스가 처리하는 작업량에 그만큼 작은 영향을 미칩니다.
+
+>
+- Single-version software.
+Two factors that make some services less expensive to develop and faster to evolve than most packaged products are
+    - the software needs to only target a single internal deployment and
+    - previous versions don't have to be supported for a decade as is the case for enterprise-targeted products.
+
+>
+Single-version software is relatively easy to achieve with a consumer service, especially one provided without charge.
+But it's equally important when selling subscription-based services to non-consumers.
+Enterprises are used to having significant influence over their software providers and to having complete control over when they deploy new versions (typically slowly).
+This drives up the cost of their operations and the cost of supporting them since so many versions of the software need to be supported.
+The most economic services don't give customers control over the version they run, and only host one version.
+Holding this single-version software line requires
+>
+- care in not producing substantial user experience changes release-to-release and
+- a willingness to allow customers that need this level of control to either host internally or switch to an application service provider willing to provide this people-intensive multi-version support.
+
+- 단일한 버전의 소프트웨어.
+
+어지간한 패키지 제품보다, 더 적은 비용으로 개발되고 더 빠르게 발전하는 몇몇 서비스들은 두 가지 특징을 갖고 있습니다.
+
+- 내부적으로 단일한 버전의 배포만을 타겟으로 삼습니다.
+- 엔터프라이즈 대상 제품의 경우와 같이 과거 버전을 10년이나 지원하지 않아도 됩니다.
+
+특히, 무료로 제공되는 소비자 서비스라면 단일한 버전의 소프트웨어를 구현하기가 상대적으로 쉽습니다.
+그러나 소비자를 대상으로 하지 않는 구독 기반의 서비스를 판매할 때에도 '단일 버전'은 중요합니다.
+
+기업체들은 소프트웨어 공급업체에 상당한 영향력을 행사할 수 있고,
+새로운 버전을 배포하는 시기를(일반적으로 느리게) 완전히 통제하는 데 익숙합니다.
+이로 인해 해당 소프트웨어의 많은 과거 버전들을 지원해야 하므로 운영 비용과 지원 비용이 증가합니다.
+가장 경제적인 서비스는 실행 버전에 대해 고객에게 통제권을 주지 않습니다. 그냥 하나의 버전만 호스팅합니다.
+
+이러한 단일 버전 소프트웨어 정책을 유지하려면 다음과 같은 것들을 유의해야 합니다.
+
+- 릴리스마다 사용자 경험이 크게 변경되지 않도록 주의해야 합니다.
+- 이러한 통제 수준을 필요로 하는 고객들이 내부적으로 호스팅해서 직접 제어할 수 있게 해주거나, 관리 인력이 필요한 다중 버전 지원을 직접 관리하려는 애플리케이션 서비스 제공자로 전환할 수 있도록 기꺼이 허용해줘야 합니다.
+
+>
+- Multi-tenancy.
+Multi-tenancy is the hosting of all companies or end users of a service in the same service without physical isolation, whereas single tenancy is the segregation of groups of users in an isolated cluster.
+The argument for multi-tenancy is nearly identical to the argument for single version support and is based upon providing fundamentally lower cost of service built upon automation and large-scale.
+
+멀티-테넌시.
+
+멀티 테넌시는 물리적인 격리 없이 동일한 서비스에서 모든 회사나 엔드 유저들을 호스팅하는 것이고,
+싱글 테넌시는 격리된 클러스터에서 사용자 그룹을 분리하는 것을 말합니다.
+
+멀티 테넌시를 지지하는 주장은 단일 버전 지원을 지지하는 주장과 거의 동일하며, 자동화와 대규모를 기반으로 근본적으로 저렴한 서비스 비용을 제공하는 것을 토대로 삼고 있습니다.
+
+>
+In review, the basic design tenets and considerations we have laid out above are:
+>
+- design for failure,
+- implement redundancy and fault recovery,
+- depend upon a commodity hardware slice,
+- support single-version software, and
+- enable multi-tenancy.
+
+위에서 설명한 기본적인 설계 원칙과 고려사항들은 다음과 같습니다.
+
+- 장애를 대비해 설계할 것.
+- 이중화, 그리고 장애 복구.
+- 저가의 하드웨어 조각에 의존할 것.
+- 단일 버전 소프트웨어를 지원할 것.
+- 멀티 테넌시를 가능하게 할 것.
+
+>
+We are constraining the service design and operations model to maximize our ability to automate and to reduce the overall costs of the service.
+We draw a clear distinction between these goals and those of application service providers or IT outsourcers.
+Those businesses tend to be more people intensive and more willing to run complex, customer specific configurations.
+
+우리는 서비스 설계와 운영 모델을 제한함으로써 자동화 능력을 극대화하고, 서비스의 전반적인 비용을 절감하고자 합니다.
+우리는 '이러한 목표'와 '애플리케이션 서비스 제공자나 IT 아웃소싱 업체의 목표'를 명확히 구분합니다.
+후자의 비즈니스는 많은 인력을 필요로 하며 고객 특화된 복잡한 구성을 실행하는 것에 더 집중하는 경향이 있습니다.
+
+>
+More specific best practices for designing operations-friendly services are:
+
+운영 친화적인 서비스를 설계하기 위한 보다 구체적인 모범 사례는 다음과 같습니다:
+
+>
+- Quick service health check.
+This is the services version of a build verification test.
+It's a sniff test that can be run quickly on a developer's system to ensure that the service isn't broken in any substantive way.
+Not all edge cases are tested, but if the quick health check passes, the code can be checked in.
+
+- 빠른 서비스 헬스 체크.
+이것은 빌드 검증 테스트의 서비스 버전입니다.
+개발자의 시스템에서 빠르게 실행해서 서비스가 실제로 살아있는지 확인할 수 있는 sniff 테스트라 할 수 있습니다.
+이것으로 모든 엣지 케이스가 테스트되는 것은 아니지만 빠른 헬스 체크가 통과되면 코드를 체크인할 수 있습니다.
+
+>
+- Develop in the full environment.
+Developers should be unit testing their components, but should also be testing the full service with their component changes.
+Achieving this goal efficiently requires single-server deployment (section 2.4), and the preceding best practice, a quick service health check.
 
 작업중
 
@@ -130,4 +366,8 @@ These sub-sections include overall service design; designing for automation and 
 
 ### References
 
+
+## 주석
+
+[^term-sla]: 역주: SLA, Service Level Agreement. 서비스 제공 업체와 고객 사이에 서비스의 품질, 책임 등에 대한 내용을 명시한 계약.
 
