@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-13 14:31:56 +0900
+updated : 2023-05-13 18:00:12 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -570,9 +570,186 @@ All database state is stored redundantly (on at least one) fully redundant hot s
 
 #### Automatic Management and Provisioning
 
-작업중
+자동 관리 및 프로비저닝
+
+>
+Many services are written to alert operations on failure and to depend upon human intervention for recovery.
+The problem with this model starts with the expense of a 24x7 operations staff.
+Even more important is that if operations engineers are asked to make tough decisions under pressure, about 20% of the time they will make mistakes.
+The model is both expensive and error-prone, and reduces overall service reliability.
+
+많은 서비스들은 장애가 발생하면 운영팀에 알림을 보내며, 장애 복구를 위해 사람의 개입을 필요로 합니다.
+이러한 모델의 문제는 24시간 연중무휴로 운영팀을 가동할 수 있는 인력이 필요하다는 점입니다.
+그리고 더 중요한 문제는, 운영 엔지니어가 압박을 받는 상황에서 어려운 결정을 내려야 한다면 20%의 확률로 실수를 하게 된다는 점입니다.
+사람에 의존하는 모델은 비용이 많이 들 뿐만 아니라 오류가 발생하기 쉬워 전반적인 서비스의 안정성을 떨어뜨립니다.
+
+>
+Designing for automation, however, involves significant service-model constraints.
+For example, some of the large services today depend upon database systems with asynchronous replication to a secondary, back-up server.
+Failing over to the secondary after the primary isn't able to service requests loses some customer data due to replicating asynchronously.
+However, not failing over to the secondary leads to service downtime for those users whose data is stored on the failed database server.
+Automating the decision to fail over is hard in this case since its dependent upon human judgment and accurately estimating the amount of data loss compared to the likely length of the down time.
+A system designed for automation pays the latency and throughput cost of synchronous replication.
+And, having done that, failover becomes a simple decision: if the primary is down, route requests to the secondary.
+This approach is much more amenable to automation and is considerably less error prone.
+
+하지만 자동화를 위한 설계는 서비스 모델에 상당한 제한을 가하게 됩니다.
+예를 들어, 오늘날의 몇몇 대규모 서비스는 보조 백업 서버에 비동기식으로 복제하는 데이터베이스 시스템에 의존합니다.
+그러나 프라이머리 서버가 요청을 처리할 수 없는 상황이 됐을 때 보조 서버로 장애를 조치하면(failing over) 비동기식 복제로 인해 일부 고객 데이터가 손실됩니다.
+
+하지만 그렇다고 해서 보조 서버로 장애 조치를 하지 않으면 장애가 발생한 데이터베이스 서버에 데이터가 저장된 사용자들에게 서비스 다운타임이 발생하게 됩니다.
+이러한 경우에는 장애 조치를 할지 사람이 결정해야 하며, 장애 조치로 인해 발생할 데이터 손실량을 정확하게 추정해야 하기 때문에
+장애 조치 결정은 자동화하는 것이 어렵습니다.
+
+자동화를 위해 설계된 시스템은 동기식 복제를 사용할 때의 지연 시간과 처리율 비용 등의 오버헤드를 감수해야 합니다.
+
+프라이머리 서버가 다운되면 요청을 보조 서버로 라우팅하도록 하는 방법이 있습니다.
+이렇게 하면 장애 조치(failover)를 간단하게 결정할 수 있습니다.
+이런 접근 방식은 자동화에 훨씬 더 적합하며, 오류 발생 가능성도 훨씬 적습니다.
+
+>
+Automating administration of a service after design and deployment can be very difficult.
+Successful automation requires simplicity and clear, easy-to-make operational decisions.
+This in turn depends on a careful service design that, when necessary, sacrifices some latency and throughput to ease automation.
+The trade-off is often difficult to make, but the administrative savings can be more than an order of magnitude in high-scale services.
+In fact, the current spread between the most manual and the most automated service we've looked at is a full two orders of magnitude in people costs.
+
+설계와 배포를 마친 서비스의 관리를 자동화하는 것은 매우 어려운 일이 될 수 있습니다.
+성공적인 자동화를 위해서는 '단순성'과 '명확하고 쉬운 운영 결정'이 필요합니다.
+이런 것들은 '자동화를 위해 필요하다면 일부 지연 시간과 처리율도 희생할 수 있는 신중한 서비스 설계'에 달려 있습니다.
+이런 절충점을 찾기가 어려운 경우가 많긴 하지만, 해낸다면 대규모 서비스에서는 관리 비용의 자릿수를 줄일 수도 있습니다.
+실제로 현재 가장 수동적인 서비스와 가장 자동화된 서비스의 인건비 차이는 2자리수에 달합니다.
+
+>
+Best practices in designing for automation include:
+
+자동화를 위한 설계를 달성하기 위한 최선의 방법들은 다음과 같습니다.
+
+>
+- Be restartable and redundant.
+All operations must be restartable and all persistent state stored redundantly.
+
+- 재시작이 가능하게 만들고, 이중화할 것.
+
+모든 작업은 재시작이 가능해야 하며, 모든 영속적 상태는 이중화되어 저장되어야 합니다.
+
+>
+- Support geo-distribution.
+All high scale services should support running across several hosting data centers.
+In fairness, automation and most of the efficiencies we describe here are still possible without geo-distribution.
+But lacking support for multiple data center deployments drives up operations costs dramatically.
+Without geo-distribution, it's difficult to use free capacity in one data center to relieve load on a service hosted in another data center.
+Lack of geo-distribution is an operational constraint that drives up costs.
+
+- 지리적으로 분산시킬 것.
+
+모든 대규모 서비스는 여러 호스팅 데이터 센터에서 가동될 수 있어야 합니다.
+사실 엄밀하게 말하자면 여기에서 설명하는 자동화나 대부분의 효율적인 것들은 지리적으로 분산하지 않아도 가능하긴 합니다.
+
+그러나 여러 데이터센터에 걸친 배포를 지원하지 않는다면 운영 비용이 크게 증가하게 됩니다.
+지리적 분산이 없다면 한 데이터센터의 여유 용량을 사용한다 해도, 다른 데이터센터에서 호스팅중인 서비스의 부하를 완화하기 어렵습니다.
+지리적 분산이 부족하면 운영상의 제약이 생겨 비용이 증가하게 됩니다.
+
+>
+- Automatic provisioning and installation.
+Provisioning and installation, if done by hand, is costly, there are too many failures, and small configuration differences will slowly spread throughout the service making problem determination much more difficult.
+
+- 자동으로 프로비저닝하고 설치할 것.
+
+프로비저닝과 설치를 수작업으로 하면 비용이 많이 들고, 실수를 많이 할 수 있으며, 작은 설정의 차이가 서비스 전체에 서서히 확산되어 문제를 파악하기가 훨씬 어려워집니다.
+
+>
+- Configuration and code as a unit. Ensure that
+    - the development team delivers the code and the configuration as a single unit,
+    - the unit is deployed by test in exactly the same way that operations will deploy it, and
+    - operations deploys them as a unit.
+
+>
+Services that treat configuration and code as a unit and only change them together are often more reliable.
+If a configuration change must be made in production, ensure that all changes produce an audit log record so it's clear what was changed, when and by whom, and which servers were effected (see section 2.7).
+Frequently scan all servers to ensure their current state matches the intended state.
+This helps catch install and configuration failures, detects server misconfigurations early, and finds non-audited server configuration changes.
+
+- 설정과 코드를 하나의 단위로 묶어 관리할 것.
+    - 개발팀은 코드와 설정을 하나의 단위로 제공해야 합니다.
+    - 운영팀이 배포하는 것과 똑같은 방식으로 테스트를 통해 배포할 수 있어야 합니다.
+    - 운영팀은 코드와 설정을 하나로 묶어 배포해야 합니다.
+
+설정과 코드를 하나의 단위로 취급하고 같이 변경하는 서비스가 더 안정적인 경우가 많습니다.
+
+만약 프로덕션 환경에서 설정을 변경해야 한다면, 모든 변경 사항이 감사 로그 레코드를 생성하게 해서 변경된 내용, 변경된 시기, 변경한 사람, 영향을 받은 서버를 명확하게 파악할 수 있도록 해야 합니다(섹션 2.7 참고).
+
+모든 서버를 빈번하게 검사해서 현재 상태가 의도한 상태와 일치하는지도 확인해야 합니다.
+이렇게 하면 설치와 설정 관련 실패를 잡아내는 데 도움이 되며, 서버의 잘못된 구성을 조기에 감지할 수 있고, 감사되지 않은 서버의 설정 변경을 찾을 수 있습니다.
+
+>
+- Manage server roles or personalities rather than servers.
+Every system role or personality should support deployment on as many or as few servers as needed.
+
+- 서버의 역할과 특성을 관리할 것.
+
+모든 시스템 역할이나 특성은 필요한 만큼의 서버에 배포할 수 있어야 합니다.
+
+>
+- Multi-system failures are common.
+Expect failures of many hosts at once (power, net switch, and rollout). Unfortunately, services with state will have to be topology-aware. Correlated failures remain a fact of life.
+
+- 한 번에 하나만 장애가 발생한다고 생각하지 말 것.
+
+한번에 여러 호스트의 장애(전원, 네트워크 스위치, 롤아웃)가 발생할 수 있습니다.
+안타깝게도 상태를 갖는 서비스는 토폴로지도 파악해야 합니다.
+상호 연관된 장애는 일상입니다.
+
+>
+- Recover at the service level.
+Handle failures and correct errors at the service level where the full execution context is available rather than in lower software levels.
+For example, build redundancy into the service rather than depending upon recovery at the lower software layer.
+
+- 서비스 레벨에서 장애를 복구할 수 있도록 할 것.
+
+하위 소프트웨어 레벨이 아닌 전체 실행 컨텍스트를 사용할 수 있는 서비스 레벨에서 장애를 처리하고 오류를 수정해야 합니다.
+예를 들어, 하위 소프트웨어 계층의 복구에 의존하는 대신 서비스를 이중화하여 구축해야 합니다.
+
+>
+- Never rely on local storage for non-recoverable information.
+Always replicate all the non-ephemeral service state.
+
+- 복구 불가능한 정보에 대해 로컬 저장소에 의존하지 말 것.
+
+모든 비휘발성 서비스 상태는 항상 복제해야 합니다.
+
+>
+- Keep deployment simple.
+File copy is ideal as it gives the most deployment flexibility.
+Minimize external dependencies.
+Avoid complex install scripts.
+Anything that prevents different components or different versions of the same component from running on the same server should be avoided.
+
+- 배포 과정을 단순하게 할 것.
+
+파일 복사 방식은 가장 유연한 배포 방식이므로 이상적입니다.
+외부 의존성을 최소화해야 합니다.
+그리고 복잡한 설치 스크립트는 가능한 한 피해야 합니다.
+동일한 서버에서 다른 컴포넌트 또는 동일한 컴포넌트의 다른 버전을 실행하지 못하게 하는 것은 피하도록 합니다.
+
+>
+- Fail services regularly.
+Take down data centers, shut down racks, and power off servers.
+Regular controlled brown-outs will go a long way to exposing service, system, and network weaknesses.
+Those unwilling to test in production aren't yet confident that the service will continue operating through failures.
+And, without production testing, recovery won't work when called upon.
+
+- 정기적으로 서비스를 실패시켜 볼 것.
+
+데이터센터를 다운시키고, 랙을 종료하고, 서버의 전원을 내려보세요.
+정기적으로 통제된 브라운-아웃은 서비스, 시스템, 네트워크의 약점을 드러내는 데 큰 도움이 될 것입니다.
+프로덕션 환경에서 테스트하지 않으려는 기업은 장애가 발생해도 서비스가 계속 운영될 것이라고 장담할 수 없습니다.
+또한 프로덕션 환경의 테스트 없이는 장애가 발생해도 복구가 제대로 이루어지지 않을 것입니다.
 
 #### Dependency Management
+
+작업중
+
 #### Release Cycle and Testing
 #### Hardware Selection and Standardization
 #### Operations and Capacity Planning
