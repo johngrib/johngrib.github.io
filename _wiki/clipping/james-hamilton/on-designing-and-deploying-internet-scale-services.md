@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-13 18:00:12 +0900
+updated : 2023-05-13 18:06:45 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -521,7 +521,6 @@ A best practice is to build it into the specification with a section such as, "W
 
 >
 - Version everything.
-
 Expect to run in a mixed-version environment.
 The goal is to run single version software but multiple versions will be live during rollout and production testing.
 Versions n and n+1 of all components need to coexist peacefully.
