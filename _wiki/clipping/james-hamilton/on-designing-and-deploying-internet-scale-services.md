@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-12 23:28:03 +0900
+updated : 2023-05-13 14:31:56 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -346,17 +346,240 @@ Not all edge cases are tested, but if the quick health check passes, the code ca
 Developers should be unit testing their components, but should also be testing the full service with their component changes.
 Achieving this goal efficiently requires single-server deployment (section 2.4), and the preceding best practice, a quick service health check.
 
+- 완전한 환경에서 개발할 것.
+
+개발자들은 자신이 개발중인 컴포넌트에 대해 단위 테스트를 해야 하지만, 컴포넌트 변경사항을 포함해 전체 서비스도 테스트해야 합니다.
+이 목표를 효율적으로 달성하려면 '단일 서버 배포'(2.4절)와 앞서 설명한 '빠른 서비스 헬스 체크'가 필요합니다.
+
+>
+- Zero trust of underlying components. Assume that underlying components will fail and ensure that components will be able to recover and continue to provide service. The recovery technique is service-specific, but common techniques are to
+    - continue to operate on cached data in read-only mode or
+    - continue to provide service to all but a tiny fraction of the user base during the short time while the service is accessing the redundant copy of the failed component.
+
+- 기본 컴포넌트를 절대 신뢰하지 않기(zero trust).
+
+기본 컴포넌트에 장애가 발생했다고 생각하고, 해당 컴포넌트들이 복구되면 서비스를 계속 제공할 수 있는지 확인하도록 합니다.
+복구 기술은 서비스에 따라 달라질 수 있지만, 일반적으로는 다음과 같습니다:
+
+- 읽기전용 모드로 캐시된 데이터를 사용해 계속 운영합니다.
+- 장애가 발생한 컴포넌트의 이중화된 복사본에 서비스가 엑세스하는 짧은 시간 동안, 극히 일부 사용자 집단을 제외한 모든 사용자에게 서비스를 제공할 수 있도록 합니다.
+
+
+>
+- Do not build the same functionality in multiple components.
+Foreseeing future interactions is hard, and fixes have to be made in multiple parts of the system if code redundancy creeps in.
+Services grow and evolve quickly. Without care, the code base can deteriorate rapidly.
+
+- 같은 기능을 여러 컴포넌트에 구현하지 말 것.
+
+미래의 상호작용을 예측하는 것은 어려우며, 중복된 코드가 있다면 시스템의 여러 부분에서 수정을 해야 합니다.
+서비스는 계속 성장하며 빠르게 진화해나갑니다.
+이런 면에 신경쓰지 않으면 코드 베이스가 빠르게 악화될 수 있습니다.
+
+>
+- One pod or cluster should not affect another pod or cluster.
+Most services are formed of pods or sub-clusters of systems that work together to provide the service, where each pod is able to operate relatively independently.
+Each pod should be as close to 100% independent and without inter-pod correlated failures.
+Global services even with redundancy are a central point of failure.
+Sometimes they cannot be avoided but try to have everything that a cluster needs inside the clusters.
+
+- 하나의 pod 또는 클러스터가 다른 pod나 다른 클러스터에 영향을 끼치지 않아야 한다.
+
+대부분의 서비스는 서비스를 제공하기 위해 함께 작동하는 시스템의 pod나 서브 클러스터로 구성되며, 각 pod는 비교적 독립적으로 작동할 수 있습니다.
+각 pod는 거의 100% 독립적으로 돌아갈 수 있어야 하고 pod간 상호 연관된 장애가 발생하지 않아야 합니다.
+이중화를 갖춘 글로벌 서비스에서도 중앙 장애점이 존재합니다.
+이런 장애 포인트는 때때로 피할 수 없지만, 클러스터가 필요로 하는 모든 것을 클러스터 내부에 갖추도록 노력해야 합니다.
+
+>
+- Allow (rare) emergency human intervention.
+The common scenario for this is the movement of user data due to a catastrophic event or other emergency.
+Design the system to never need human interaction, but understand that rare events will occur where combined failures or unanticipated failures require human interaction.
+These events will happen and operator error under these circumstances is a common source of catastrophic data loss.
+An operations engineer working under pressure at 2 a.m. will make mistakes.
+Design the system to first not require operations intervention under most circumstances, but work with operations to come up with recovery plans if they need to intervene.
+Rather than documenting these as multi-step, error-prone procedures, write them as scripts and test them in production to ensure they work.
+What isn't tested in production won't work, so periodically the operations team should conduct a "fire drill" using these tools.
+If the service-availability risk of a drill is excessively high, then insufficient investment has been made in the design, development, and testing of the tools.
+
+- 비상시에는 사람의 개입을 허용할 것(드문 경우이긴 하지만).
+
+사람이 개입하는 상황에 대한 일반적인 시나리오는 재난이나 비상사태로 인해 사용자 데이터를 이동시키는 것입니다.
+사람의 개입이 필요하지 않도록 시스템을 설계하긴 해야 합니다.
+그러나 복합적인 장애 또는 예상치 못한 장애로 인해 사람의 개입이 필요한 드문 상황이 발생할 수 있다는 것도 이해해야 합니다.
+이런 일들이 발생했을 때 운영자가 실수를 저지르는 상황은 치명적인 데이터 손실의 일반적인 원인이기도 합니다.
+운영 엔지니어가 새벽 2시에 압박감을 느끼며 작업을 하면 얼마든지 실수를 할 수 있습니다.
+
+대부분의 상황에서 운영자의 개입이 필요하지 않도록 시스템을 설계하되, 개입이 필요한 경우가 발생하면 운영팀과 협력하여 복구 계획을 마련해야 합니다.
+이러한 것들을 여러 단계의 절차를 설명하는 내용으로 문서화하는 것보다(오히려 문서 때문에 오류가 생길 수 있음), 스크립트로 작성하고 실제 운영 환경에서 테스트하여 작동하는지 확인하는 것이 좋습니다.
+프로덕션 환경에서 테스트되지 않은 것은 작동하지 않는다고 생각하고, 주기적으로 이런 도구들을 써서 운영팀의 "소방 훈련"을 실시해야 합니다.
+소방 훈련을 하는 것이 서비스 가용성에 대해 지나치게 높은 위험이 된다면, 도구의 설계, 개발, 테스트에 충분한 투자가 이루어지지 않았다는 것을 반증하는 것입니다.
+
+>
+- Keep things simple and robust.
+Complicated algorithms and component interactions multiply the difficulty of debugging, deploying, etc.
+Simple and nearly stupid is almost always better in a high-scale service-the number of interacting failure modes is already daunting before complex optimizations are delivered.
+Our general rule is that optimizations that bring an order of magnitude improvement are worth considering, but percentage or even small factor gains aren't worth it.
+
+- 단순하고 견고하게 만들 것.
+
+복잡한 알고리즘과 컴포넌트들 간의 상호작용은 디버깅, 배포 등의 작업을 어렵게 만듭니다.
+대규모 서비스에서는 복잡한 최적화를 적용하기 이전에도, 이미 상호작용으로 인해 발생 가능한 장애의 경우의 수가 많아서 매우 어렵습니다.
+따라서 단순하고, 좀 멍청해 보이는 것이 오히려 더 좋은 경우가 많습니다.
+일반적으로 성능을 10배 이상 향상시키는 최적화는 고려할 가치가 있지만, 몇 퍼센트 정도의 작은 성능 향상은 고려할 가치가 없습니다.
+
+>
+- Enforce admission control at all levels.
+Any good system is designed with admission control at the front door.
+This follows the long-understood principle that it's better to not let more work into an overloaded system than to continue accepting work and beginning to thrash.
+Some form of throttling or admission control is common at the entry to the service, but there should also be admission control at all major components boundaries.
+Work load characteristic changes will eventually lead to sub-component overload even though the overall service is operating within acceptable load levels.
+See the note below in section 2.8 on the "big red switch" as one way of gracefully degrading under excess load.
+The general rule is to attempt to gracefully degrade rather than hard failing and to block entry to the service before giving uniform poor service to all users.
+
+- 모든 레벨에서 출입 통제를 강제할 것.
+
+모든 좋은 시스템들은 전면에서부터 출입 통제를 강제하도록 설계되어 있습니다.
+이런 관행은 '과부하가 걸린 시스템에 더 많은 작업을 허용하지 않는 것'이 '계속해서 작업을 수락해서 과부하가 발생하게 만드는 것'보다 낫다는 오래된 원칙에 따른 것입니다.
+서비스 진입점에서 어떤 형태로건 쓰로틀링을 하거나 진입 제어를 하는 것이 일반적이긴 하지만, 그 외의 모든 주요 컴포넌트들의 경계에서도 진입을 제어하는 것이 있어야 합니다.
+'전체 서비스가 수용할 수 있는 부하 수준' 내에서 작동한다 하더라도,
+'작업량 부하 특성(work load characteristic)의 변화'는 결국 하위 컴포넌트의 과부하로 이어질 수 있습니다.
+
+아래의 섹션 2.8의 "큰 빨간 스위치"에 대한 노트를 참고해서, 과부하 상태에서 우아하게 성능을 저하시키는 방법을 알아보길 바랍니다.
+
+일반적인 규칙은 다음과 같습니다.
+
+- 강력한 장애를 유발하기 전에 우아하게 성능을 저하시키는 시도를 할 것.
+- 모든 사용자에게 일괄적으로 수준이 떨어진 서비스를 제공하기 전에, 서비스 진입을 차단할 것.
+
+>
+- Partition the service.
+Partitions should be infinitely-adjustable and fine-grained, and not be bounded by any real world entity (person, collection...).
+If the partition is by company, then a big company will exceed the size of a single partition.
+If the partition is by name prefix, then eventually all the P's, for example, won't fit on a single server.
+We recommend using a look-up table at the mid-tier that maps fine-grained entities, typically users, to the system where their data is managed.
+Those fine-grained partitions can then be moved freely between servers.
+
+- 서비스를 여러 파티션으로 나눌 것.
+
+파티션들은 무제한으로 조정할 수 있어야 하고, 세밀하게 나눌 수 있어야 합니다.
+실제 세계의 무언가(사람, 컬렉션 등)에 의해 제한되어서는 안됩니다.
+
+만약 회사별로 파티션을 분할하면 대기업은 단일 파티션의 크기를 초과하게 됩니다.
+그리고, 만약 이름 접두사를 기준으로 파티션을 분할하면 예를 들어 모든 'P'가 단일 서버에 들어갈 수 없게 됩니다.
+
+일반적으로 사용자들을 시스템에 매핑하는 룩업 테이블을 미드 티어에 사용하는 것을 권장합니다.
+그러면 이렇게 세분화한 파티션들을 자유롭게 서버들 사이에서 이동시킬 수 있습니다.
+
+>
+- Understand the network design.
+Test early to understand what load is driven between servers in a rack, across racks, and across data centers.
+Application developers must understand the network design and it must be reviewed early with networking specialists on the operations team.
+
+- 네트워크 설계를 이해할 것.
+
+서버 랙 내부, 랙과 랙 사이, 데이터 센터 간에 어떤 부하가 발생하는지를 이해하기 위해 초기부터 테스트를 해야 합니다.
+애플리케이션 개발자는 네트워크 설계를 이해해야 하고, 운영팀의 네트워킹 전문가들과 함께 초기에 설계를 검토해야 합니다.
+
+>
+- Analyze throughput and latency.
+Analysis of the throughput and latency of core service user interactions should be performed to understand impact.
+Do so with other operations running such as regular database maintenance, operations configuration (new users added, users migrated), service debugging, etc.
+This will help catch issues driven by periodic management tasks.
+For each service, a metric should emerge for capacity planning such as user requests per second per system, concurrent on-line users per system, or some related metric that maps relevant work load to resource requirements.
+
+- 처리율과 지연시간을 분석할 것.
+
+핵심 서비스의 사용자 상호작용에 대한 처리율과 지연 시간을 분석하고 그 영향력을 이해해둬야 합니다.
+이런 분석은 정기적인 데이터베이스 메인터넌스, 운영 설정(새로운 사용자 추가, 사용자 마이그레이션), 서비스 디버깅 등과 같은 다른 운영 작업을 수행하면서도 진행해야 합니다.
+이를 통해 주기적인 관리 작업으로 인해 발생하는 문제를 파악하는 데에 도움이 됩니다.
+
+각각의 서비스에 대해서도 시스템당 초당 사용자 요청 수, 시스템당 동시 온라인 사용자 수, 관련된 작업 부하를 리소스 요구 사항에 매핑하는 관련 메트릭과 같은 용량 계획을 위한 메트릭을 볼 수 있어야 합니다.
+
+>
+- Treat operations utilities as part of the service.
+Operations utilities produced by development, test, program management, and operations should be code-reviewed by development, checked into the main source tree, and tracked on the same schedule and with the same testing.
+Frequently these utilities are mission critical and yet nearly untested.
+
+- 운영용 유틸리티를 서비스의 일부로 취급할 것.
+
+개발팀, 테스트팀, 프로그램 관리팀 및 운영팀에서 만들어 쓰는 운영용 유틸리티는 개발할 때부터 코드 리뷰를 거쳐 메인 소스코드에 체크인하고 같은 일정흐름과 같은 테스트를 통해 추적 관리되어야 합니다.
+이런 유틸리티들은 업무에 필수적인데도 거의 테스트되지 않는 경우가 많습니다.
+
+>
+- Understand access patterns.
+When planning new features, always consider what load they are going to put on the backend store.
+Often the service model and service developers become so abstracted away from the store that they lose sight of the load they are putting on the underlying database.
+A best practice is to build it into the specification with a section such as, "What impacts will this feature have on the rest of the infrastructure?" Then measure and validate the feature for load when it goes live.
+
+- 접근 패턴을 이해할 것.
+
+새로운 기능을 계획할 때마다 백엔드 스토어에 어떤 부하를 주게 될 것인지를 항상 고려해야 합니다.
+서비스 모델과 서비스 개발자들은 종종 추상화에 너무 빠져서 백엔드 데이터베이스에 어떤 부하를 주는지를 놓치는 경우가 많습니다.
+
+이에 대한 모범적인 접근은 "이 기능이 다른 인프라에 어떤 영향을 끼치게 될까요?"와 같은 섹션을 스펙 문서에 추가하고,
+해당 기능이 라이브로 올라갈 때 부하를 측정하고 검증하는 것입니다.
+
+>
+- Version everything.
+
+Expect to run in a mixed-version environment.
+The goal is to run single version software but multiple versions will be live during rollout and production testing.
+Versions n and n+1 of all components need to coexist peacefully.
+
+- 모든 것을 버전 관리할 것.
+
+여러 버전이 혼합된 환경에서 가동될 수 있다고 예상해둬야 합니다.
+목표는 단일 버전의 소프트웨어를 가동하는 것이지만, 롤아웃과 프로덕션 테스트 과정에서는 여러 버전이 동시에 실행될 수 있습니다.
+즉, 모든 컴포넌트의 n 버전과 n+1 버전이 평화롭게 공존하며 돌아갈 수 있어야 합니다.
+
+>
+- Keep the unit/functional tests from the previous release.
+These tests are a great way of verifying that version n-1 functionality doesn't get broken.
+We recommend going one step further and constantly running service verification tests in production (more detail below).
+
+- 이전 릴리스의 단위/기능 테스트를 유지할 것.
+
+이런 테스트들은 n-1 버전의 기능이 깨지지 않았는지를 확인하는 좋은 방법입니다.
+우리는 여기에서 한 걸음 더 나아가 프로덕션 환경에서 서비스 검증 테스트를 지속적으로 실행하는 것을 권장합니다(아래에서 자세히 설명합니다).
+
+>
+- Avoid single points of failure.
+Single points of failure will bring down the service or portions of the service when they fail.
+Prefer stateless implementations.
+Don't affinitize requests or clients to specific servers.
+Instead, load balance over a group of servers able to handle the load.
+Static hashing or any static work allocation to servers will suffer from data and/or query skew problems over time.
+Scaling out is easy when machines in a class are interchangeable.
+Databases are often single points of failure and database scaling remains one of the hardest problems in designing internet-scale services.
+Good designs use fine-grained partitioning and don't support cross-partition operations to allow efficient scaling across many database servers.
+All database state is stored redundantly (on at least one) fully redundant hot standby server and failover is tested frequently in production.
+
+- 단일 장애 포인트를 피할 것.
+
+단일 장애 포인트는 장애가 발생하면 서비스 전체 또는 일부를 다운시킬 수 있습니다.
+가능한 한 상태를 갖지 않도록 구현해야 합니다(stateless implementation).
+그리고 요청이나 클라이언트를 특정 서버에 한정시키지 말아야 합니다.
+그렇게 하지 말고, 부하를 처리할 수 있는 여러 서버들의 그룹에 로드 밸런싱을 하세요.
+정적 해싱, 서버에 대한 정적 작업 할당과 같은 것들은 시간이 지남에 따라 데이터나 쿼리의 불균형 문제가 발생할 수 있습니다.
+한 클래스의 머신이 서로 교체 가능하다면 스케일 아웃이 쉬워집니다.
+
+데이터베이스가 단일 장애 포인트가 되는 경우가 많으며, 데이터베이스 확장은 인터넷 규모의 서비스를 설계할 때 가장 어려운 문제 중 하나입니다.
+좋은 설계는 세밀한 파티션을 사용하며, 많은 데이터베이스 서버를 효율적으로 확장할 수 있도록 파티션 간의 작업을 지원하지 않습니다.
+모든 데이터베이스 상태는 완전히 이중화된 핫 스탠바이 서버(적어도 하나)에 중복으로 저장하고, 프로덕션 환경에서는 자주 장애 조치(failover) 테스트를 진행해야 합니다.
+
+
+#### Automatic Management and Provisioning
+
 작업중
 
-### Automatic Management and Provisioning
-### Dependency Management
-### Release Cycle and Testing
-### Hardware Selection and Standardization
-### Operations and Capacity Planning
-### Auditing, Monitoring and Alerting
-### Graceful Degradation and Admission Control
-### Customer and Press Communication Plan
-### Customer Self-Provisioning and Self-Help
+#### Dependency Management
+#### Release Cycle and Testing
+#### Hardware Selection and Standardization
+#### Operations and Capacity Planning
+#### Auditing, Monitoring and Alerting
+#### Graceful Degradation and Admission Control
+#### Customer and Press Communication Plan
+#### Customer Self-Provisioning and Self-Help
 
 ### Conclusion
 
