@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-13 18:06:45 +0900
+updated : 2023-05-13 23:33:29 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -747,9 +747,118 @@ And, without production testing, recovery won't work when called upon.
 
 #### Dependency Management
 
-작업중
+의존성 관리
+
+>
+Dependency management in high-scale services often doesn't get the attention the topic deserves.
+As a general rule, dependence on small components or services doesn't save enough to justify the complexity of managing them.
+Dependencies do make sense when:
+>
+- the components being depended upon are substantial in size or complexity, or
+- the service being depended upon gains its value in being a single, central instance.
+
+>
+Examples of the first class are storage and consensus algorithm implementations.
+Examples of the second class of are identity and group management systems.
+The whole value of these systems is that they are a single, shared instance so multi-instancing to avoid dependency isn't an option.
+
+대규모 서비스에서의 상호 의존 관리는 종종 그 중요도만큼의 관심을 받지 못합니다.
+일반적으로 관리 복잡도를 이유로 작은 컴포넌트나 작은 서비스에 대해 의존하게 만들곤 하는데, 그것을 정당화할 만큼 충분히 비용을 절약하지 못하는 것이 보통입니다.
+의존성은 다음과 같은 경우에 의미가 있습니다.
+
+- 의존 컴포넌트의 크기나 복잡도가 상당한 규모인 경우
+- 의존 서비스가 단일 중앙 인스턴스로서의 가치를 얻는 경우
+
+저장소와 합의 알고리즘 구현과 같은 것들이 첫번째 경우의 예라 할 수 있습니다.
+ID와 그룹 관리 시스템 같은 것들은 두번째 경우의 예라 할 수 있습니다.
+이런 시스템들의 경우 단일한 공유 인스턴스를 유지한다는 점에서 가치가 있으므로, 의존성을 피하기 위한다는 이유로 다중 인스턴스를 사용할 수 없습니다.
+
+>
+Assuming that dependencies are justified according to the above rules, some best practices for managing them are:
+
+위의 규칙에 따라 의존이 정당화될 수 있다고 가정한다면, 의존성을 관리하기 위한 몇 가지 모범 사례는 다음과 같습니다.
+
+>
+- Expect latency.
+Calls to external components may take a long time to complete.
+Don't let delays in one component or service cause delays in completely unrelated areas.
+Ensure all interactions have appropriate timeouts to avoid tying up resources for protracted periods.
+Operational idempotency allows the restart of requests after timeout even though those requests may have partially or even fully completed.
+Ensure all restarts are reported and bound restarts to avoid a repeatedly failing request from consuming ever more system resources.
+
+- 지연 시간을 예측할 것.
+
+외부 컴포넌트를 호출하는 것은 작업 완료까지 시간이 오래 걸릴 수 있습니다.
+하나의 컴포넌트나 서비스의 딜레이로 인해 전혀 관계 없는 영역에서 딜레이가 발생하지 않도록 해야 합니다.
+모든 상호 작용에 적절한 타임아웃이 있는지 확인해서 어떤 리소스가 오랫동안 점유되지 않도록 해야 합니다.
+멱등성을 보장하면 요청이 일부만 완료되었건 전부 완료되었건 간에 상관 없이 타임아웃 이후에도 요청을 재시작할 수 있습니다.
+반복적으로 실패하는 요청 때문에 시스템 리소스가 더 많이 소모되지 않도록 모든 재시작을 보고하도록 하고, 재시작을 제한할 수 있어야 합니다.
+
+>
+- Isolate failures.
+The architecture of the site must prevent cascading failures.
+Always "fail fast." When dependent services fail, mark them as down and stop using them to prevent threads from being tied up waiting on failed components.
+
+- 장애를 격리할 것.
+
+사이트의 아키텍처는 연쇄적인 장애를 미연에 방지해야 합니다.
+항상 "빠르게 실패"해야 합니다.
+의존관계에 있는 서비스가 장애가 나면 해당 서비스를 다운된 것으로 표시하고 사용을 중단해서, 장애가 난 컴포넌트를 기다리는 스레드가 리소스를 점유하는 것을 막아야 합니다.
+
+>
+- Use shipping and proven components.
+Proven technology is almost always better than operating on the bleeding edge.
+Stable software is better than an early copy, no matter how valuable the new feature seems.
+This rule applies to hardware as well.
+Stable hardware shipping in volume is almost always better than the small performance gains that might be attained from early release hardware.
+
+- 배포되고 검증된 컴포넌트를 사용할 것.
+
+검증된 기술이 최신 기술을 사용하는 것보다 더 나은 경우가 거의 대부분입니다.
+새로운 기능이 아무리 괜찮아 보여도, 아직 초기 버전이라면 안정적인 소프트웨어가 더 나은 선택입니다.
+이 원칙은 하드웨어에도 적용됩니다.
+성능을 조금 향상시키기 위해 초기 릴리스된 하드웨어를 쓰는 것보다, 대량으로 출시되는 안정적인 하드웨어를 쓰는 것이 거의 항상 더 낫습니다.
+
+>
+- Implement inter-service monitoring and alerting.
+If the service is overloading a dependent service, the depending service needs to know and, if it can't back-off automatically, alerts need to be sent.
+If operations can't resolve the problem quickly, it needs to be easy to contact engineers from both teams quickly.
+All teams with dependencies should have engineering contacts on the dependent teams.
+
+- 서비스 간 모니터링과 알림을 구현할 것.
+
+의존성이 있는 서비스에 과부하가 걸린다면 해당 서비스를 의존하고 있는 서비스에서 그 사실을 알아야 하며,
+만약 자동으로 백오프[^auto-back-off]할 수 없다면 알림을 보내야 합니다.
+운영팀에서 신속하게 문제를 해결할 수 없는 상황이라면 양쪽 팀의 엔지니어에게 빠르게 연락할 수 있어야 합니다.
+의존관계가 있는 모든 팀에는 의존하는 팀의 엔지니어와 연락할 수 있는 연락처가 있어야 합니다.
+
+>
+- Dependent services require the same design point.
+Dependent services and producers of dependent components need to be committed to at least the same SLA as the depending service.
+
+- 의존 관계에 있는 서비스들끼리는 동일한 설계 포인트를 둘 것.
+
+의존 관계에 있는 서비스와 의존하는 컴포넌트를 만드는 사람은 의존하는 서비스와 최소한 동일한 SLA를 보장해야 합니다.
+
+>
+- Decouple components.
+Where possible, ensure that components can continue operation, perhaps in a degraded mode, during failures of other components.
+For example, rather than re-authenticating on each connect, maintain a session key and refresh it every N hours independent of connection status.
+On reconnect, just use existing session key.
+That way the load on the authenticating server is more consistent and login storms are not driven on reconnect after momentary network failure and related events.
+
+- 컴포넌트들을 디커플링할 것.
+
+가능한 한, 컴포넌트는 다른 컴포넌트에 장애가 발생한 동안에도 성능 저하 모드로라도 계속 작동할 수 있어야 합니다.
+예를 들어 연결할 때마다 다시 인증을 하는 대신, 세션 키를 유지하도록 해서 연결 상태와 관계 없이 N시간마다 인증을 갱신하도록 합니다.
+재연결을 할 때에는 기존의 세션 키를 사용하면 됩니다.
+이렇게 하면 인증 서버의 부하가 더 일정하게 유지되고, 잠시 동안 네트워크 장애가 발생한 이후에도 로그인 폭풍이 발생하지 않습니다.
 
 #### Release Cycle and Testing
+
+작업중
+
+
 #### Hardware Selection and Standardization
 #### Operations and Capacity Planning
 #### Auditing, Monitoring and Alerting
@@ -769,4 +878,4 @@ And, without production testing, recovery won't work when called upon.
 ## 주석
 
 [^term-sla]: 역주: SLA, Service Level Agreement. 서비스 제공 업체와 고객 사이에 서비스의 품질, 책임 등에 대한 내용을 명시한 계약.
-
+[^auto-back-off]: 역주: 백오프, back-off. 네트워크에서 특정 컴포넌트가 과부하가 걸리거나 장애 상태가 되었을 때 요청률을 일시적으로 줄이는 전략. 이를 통해 장애를 완화하는 시간을 확보하고, 더 심각한 상황이 되는 것을 방지한다. 이진 지수 백오프(Binary Exponential Backoff) 등이 대표적 예.
