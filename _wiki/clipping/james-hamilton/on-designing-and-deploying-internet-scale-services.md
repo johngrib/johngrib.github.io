@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-14 12:59:52 +0900
+updated : 2023-05-14 14:06:15 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -1210,9 +1210,129 @@ DNS 캐시를 플러시(flushing)하는 것을 피해야 한다면, TTL(Time To 
 
 운영과 용량 계획
 
-작업중
+>
+The key to operating services efficiently is to build the system to eliminate the vast majority of operations administrative interactions.
+The goal should be that a highly-reliable, 24x7 service should be maintained by a small 8x5 operations staff.
+
+서비스를 효율적으로 운영하기 위한 핵심은, 운영 관리를 위한 상호작용 대부분을 제거하는 시스템을 구축하는 것입니다.
+목표는 높은 신뢰성을 가진 '24시간 x 7일 서비스'를 '8시간 x 5일 근무하는 소수의 운영 직원들'이 유지할 수 있도록 하는 것입니다.
+
+>
+However, unusual failures will happen and there will be times when systems or groups of systems can't be brought back on line.
+Understanding this possibility, automate the procedure to move state off the damaged systems.
+Relying on operations to update SQL tables by hand or to move data using ad hoc techniques is courting disaster.
+Mistakes get made in the heat of battle.
+Anticipate the corrective actions the operations team will need to make, and write and test these procedures up-front.
+Generally, the development team needs to automate emergency recovery actions and they must test them.
+Clearly not all failures can be anticipated, but typically a small set of recovery actions can be used to recover from broad classes of failures.
+Essentially, build and test "recovery kernels" that can be used and combined in different ways depending upon the scope and the nature of the disaster.
+
+그러나 비정상적인 장애가 발생해서 시스템이나 시스템 그룹을 다시 온라인 상태로 되돌릴 수 없는 경우가 발생할 수 있습니다.
+이런 상황의 가능성을 받아들이고, 손상된 시스템에서 상태를 이동시키는 절차를 자동화해야 합니다.
+수작업으로 SQL 테이블을 업데이트하거나 임시적인 기술을 사용하여 데이터를 이동하는 작업에 의존하는 것은 재앙을 불러올 수 있습니다. 
+전투적인 상황 속에서는 실수를 하기 마련입니다.
+운영 팀이 해야 할 수정 작업을 미리 예상해서 절차를 미리 만들고 테스트하세요.
+일반적으로 개발팀은 긴급 복구 조치를 자동화하고 테스트해야 합니다.
+물론 모든 장애를 예상할 수 있는 것은 아니지만, 일반적으로 광범위한 종류의 장애를 복구하기 위한 작은 세트의 복구 조치를 사용할 수 있습니다.
+기본적으로 재해 상황의 범위와 성격에 따라 다른 방식으로 사용하고 조합할 수 있는 "복구 커널"을 구축하고 테스트해둬야 합니다.
+
+>
+The recovery scripts need to be tested in production.
+The general rule is that nothing works if it isn't tested frequently so don't implement anything the team doesn't have the courage to use.
+If testing in production is too risky, the script isn't ready or safe for use in an emergency.
+The key point here is that disasters happen and it's amazing how frequently a small disaster becomes a big disaster as a consequence of a recovery step that doesn't work as expected.
+Anticipate these events and engineer automated actions to get the service back on line without further loss of data or up time.
+
+복구 스크립트는 프로덕션에서 테스트해야 합니다.
+일반적인 원칙은 자주 테스트하지 않으면 아무것도 제대로 작동하지 않는다는 것이므로, 팀이 용기 내서 사용할 수 없는 것은 구현하지 않아야 합니다.
+프로덕션 환경에서 테스트하는 것이 너무 위험하다면 해당 스크립트는 긴급한 상황에서 사용할 준비가 되지 않았거나 충분히 안전하지 않은 것입니다.
+
+여기에서 중요한 점은 재해가 언제든지 발생할 수 있으며, 복구 단계가 예상대로 작동하지 않아서 작은 재해가 큰 재해로 변하는 경우가 얼마나 자주 발생하는지가 놀라울 정도라는 것입니다.
+
+이러한 사건을 예상하고, 데이터나 가동 시간의 추가 손실 없이 서비스를 다시 온라인 상태로 복구할 수 있도록 자동화된 조치를 설계해야 합니다.
+
+>
+- Make the development team responsible.
+Amazon is perhaps the most aggressive down this path with their slogan "you built it, you manage it."
+That position is perhaps slightly stronger than the one we would take, but it's clearly the right general direction.
+If development is frequently called in the middle of the night, automation is the likely outcome.
+If operations is frequently called, the usual reaction is to grow the operations team.
+
+- 개발팀에 책임을 부여할 것.
+
+Amazon은 "내가 만든 것은 내가 관리한다"라는 슬로건을 내세우며 이 방향으로 가장 공격적으로 나아가고 있습니다.
+이는 우리의 입장보다는 좀 더 강한 편이긴 하지만, 옳은 방향이라는 것은 분명합니다.
+만약 개발팀이 한밤중에 자주 호출된다면, 자연스럽게 자동화를 고려하게 됩니다.
+그러나 만약 운영팀이 자주 호출된다면, 보통 운영팀을 늘리는 방향으로 가게 될 것입니다.
+
+>
+- Soft delete only.
+Never delete anything.
+Just mark it deleted.
+When new data comes in, record the requests on the way.
+Keep a rolling two week (or more) history of all changes to help recover from software or administrative errors.
+If someone makes a mistake and forgets the where clause on a delete statement (it has happened before and it will again), all logical copies of the data are deleted.
+Neither RAID nor mirroring can protect against this form of error.
+The ability to recover the data can make the difference between a highly embarrassing issue or a minor, barely noticeable glitch.
+For those systems already doing off-line backups, this additional record of data coming into the service only needs to be since the last backup.
+But, being cautious, we recommend going farther back anyway.
+
+- 소프트 삭제만 허용할 것.
+절대로 아무것도 삭제하지 말아야 합니다.
+그냥 삭제된 것으로 표시만 하세요.
+새로운 데이터가 들어오면 해당 리퀘스트도 저장하세요.
+소프트웨어나 관리 오류로부터의 복구에 도움이 되도록 모든 변경 내역을 최소 2주 이상 보관하세요.
+만약 누군가가 delete 명령에서 where 절을 빼먹는다면(과거에도 이런 일들이 있었고, 앞으로도 있을 것입니다), 해당 데이터의 모든 논리적인 복사본이 삭제될 것입니다.
+RAID나 미러링은 이러한 형태의 문제를 방지할 수 없습니다.
+데이터를 복구할 수 있는 능력은, 매우 까다로운 문제와 거의 눈치채지 못할 정도의 작은 문제 사이에서 아주 큰 차이를 만들어줍니다.
+이미 오프라인 백업을 수행하고 있는 시스템의 경우, 추가적으로 기록해야 할 서비스에 들어오는 데이터는 마지막 백업 이후의 것만으로도 충분합니다.
+하지만 신중을 기하기 위해 우리는 더 오래된 데이터까지 기록하는 것을 권장합니다.
+
+>
+- Track resource allocation.
+Understand the costs of additional load for capacity planning.
+Every service needs to develop some metrics of use such as concurrent users online, user requests per second, or something else appropriate.
+Whatever the metric, there must be a direct and known correlation between this measure of load and the hardware resources needed.
+The estimated load number should be fed by the sales and marketing teams and used by the operations team in capacity planning.
+Different services will have different change velocities and require different ordering cycles.
+We've worked on services where we updated the marketing forecasts every 90 days, and updated the capacity plan and ordered equipment every 30 days.
+
+- 리소스 할당을 추적할 것.
+
+용량 계획을 위해 추가적인 부하에 대한 비용을 이해해야 합니다.
+모든 서비스는 온라인 동시 사용자의 수, 초당 사용자 요청 수, 또는 기타 적절한 사용 지표들을 개발해야 합니다.
+어떤 지표를 사용하건 이러한 '부하 측정치'와 필요한 '하드웨어 리소스' 간에 직접적이고 알려진 상관관계가 있어야 합니다.
+예상 부하 수치는 영업팀과 마케팅팀에서 제공하고, 운영팀에서는 이를 용량 계획에 사용해야 합니다.
+
+서비스마다 변화의 속도가 다르고 주문 주기도 다르기 때문에, 우리는 90일마다 마케팅 예측을 업데이트하고, 30일마다 용량 계획과 장비 주문을 업데이트하는 서비스에서 작업했습니다.
+
+>
+- Make one change at a time.
+When in trouble, only apply one change to the environment at a time.
+This may seem obvious, but we've seen many occasions when multiple changes meant cause and effect could not be correlated.
+
+- 한 번에 한 가지만 변경할 것.
+문제가 발생하는 상황이라면, 환경에 한 번에 단 하나의 변경 사항만 적용해보세요.
+당연한 말 같지만, 실제로는 여러 건의 변경으로 인해 원인과 결과를 연관시킬 수 없는 경우를 많이 보았습니다.
+
+>
+- Make everything configurable.
+Anything that has any chance of needing to be changed in production should be made configurable and tunable in production without a code change.
+Even if there is no good reason why a value will need to change in production, make it changeable as long as it is easy to do.
+These knobs shouldn't be changed at will in production, and the system should be thoroughly tested using the configuration that is planned for production.
+But when a production problem arises, it is always easier, safer, and much faster to make a simple configuration change compared to coding, compiling, testing, and deploying code changes.
+
+- 모든 것을 설정 가능하게 만들 것.
+
+프로덕션 환경에서 변경될 가능성이 있는 모든 것은 코드를 변경하지 않고도 프로덕션 환경에서 설정/조정할 수 있도록 만들어야 합니다.
+설령 프로덕션 환경에서 값을 변경할만한 정당한 이유가 없는 상황이라도, 쉽게 변경할 수 있게 만들 수 있다면 그렇게 만들어야 합니다.
+이러한 노브(knob)는 프로덕션 환경에서 마음대로 변경해서는 안 되며, 프로덕션을 위해 계획한 설정을 써서 시스템을 철저히 테스트해야 합니다.
+프로덕션에 문제가 발생하면 코드 변경사항을 코딩, 컴파일, 테스트, 배포하는 것보다 간단하게 설정을 변경하는 것이 항상 더 쉽고 안전하며 빠릅니다.
 
 #### Auditing, Monitoring and Alerting
+
+작업중
+
 #### Graceful Degradation and Admission Control
 #### Customer and Press Communication Plan
 #### Customer Self-Provisioning and Self-Help
