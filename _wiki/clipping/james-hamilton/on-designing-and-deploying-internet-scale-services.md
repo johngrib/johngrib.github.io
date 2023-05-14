@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-14 14:06:15 +0900
+updated : 2023-05-14 17:25:12 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -1331,9 +1331,178 @@ But when a production problem arises, it is always easier, safer, and much faste
 
 #### Auditing, Monitoring and Alerting
 
-작업중
+감사, 모니터링, 알림
+
+>
+The operations team can't instrument a service in deployment.
+Make substantial effort during development to ensure that performance data, health data, throughput data, etc. are all produced by every component in the system.
+
+운영팀은 배포중인 서비스를 계측할 수 없습니다.
+개발자가 개발 과정에서 성능 데이터, 상태 데이터, 처리율 데이터 등이 모두 시스템의 모든 구성 요소에서 생성되도록 상당한 노력을 기울여야 합니다.
+
+>
+Any time there is a configuration change, the exact change, who did it, and when it was done needs to be logged in the audit log.
+When production problems begin, the first question to answer is what changes have been made recently.
+Without a configuration audit trail, the answer is always "nothing" has changed and it's almost always the case that what was forgotten was the change that led to the question.
+
+설정(configuration)이 변경될 때마다 정확한 변경 사항, 변경한 사람, 변경이 완료된 시점을 감사 로그에 기록해야 합니다.
+만약 프로덕션에서 문제가 발생한다면 가장 먼저 체크해야 할 것은 최근에 어떤 변경이 있었는지입니다.
+설정 감사 추적(configuration audit trail)이 없다면, 항상 "아무것도 변경되지 않았다"는 답변을 얻게 될 것이며,
+문제의 원인이 된 변경 사항이 무엇인지 잊게 되는 경우가 대부분입니다.
+
+>
+Alerting is an art.
+There is a tendency to alert on any event that the developer expects they might find interesting and so version-one services often produce reams of useless alerts which never get looked at.
+To be effective, each alert has to represent a problem.
+Otherwise, the operations team will learn to ignore them.
+We don't know of any magic to get alerting correct other than to interactively tune what conditions drive alerts to ensure that all critical events are alerted and there are not alerts when nothing needs to be done.
+To get alerting levels correct, two metrics can help and are worth tracking:
+>
+- alerts-to-trouble ticket ratio (with a goal of near one), and
+- number of systems health issues without corresponding alerts (with a goal of near zero).
+
+알림 설정은 예술의 영역입니다.
+
+개발자는 자신의 관점에서 중요한 이벤트에 대해 알림을 보내는 경향이 있기 때문에,
+버전 1 서비스에서는 종종 쓸모없는 알림이 쏟아지게 되는데 이런 알림들은 결국 무시하게 됩니다.
+
+효과적인 알림이 되려면 각각의 알림이 문제를 나타내야 합니다.
+그렇지 않으면 운영팀은 알림을 무시하는 데 익숙해지게 됩니다.
+
+알림을 정확하게 설정하기 위한 특별한 방법은 없습니다.
+모든 중요한 이벤트에 알림이 가고 조치가 필요없는 상황에서는 알림이 가지 않도록, 알림을 생성하는 조건을 계속해서 그때그때 조정하는 것 외에는요.
+
+
+알림 수준을 올바르게 설정하려면 다음의 두 가지 지표가 도움이 될 수 있으므로, 추적해두는 것이 좋습니다.
+
+- 알림에 대한 문제 티켓의 비율(목표값은 1).
+- 알림이 없는 '문제있는 시스템 상태'의 수(목표값은 0).
+
+>
+Best practices include:
+
+모범적인 사례는 다음과 같습니다.
+
+>
+- Instrument everything.
+Measure every customer interaction or transaction that flows through the system and report anomalies.
+There is a place for "runners" (synthetic workloads that simulate user interactions with a service in production) but they aren't close to sufficient.
+Using runners alone, we've seen it take days to even notice a serious problem, since the standard runner workload was continuing to be processed well, and then days more to know why.
+
+- 모든 것을 계측할 것.
+
+시스템을 통해 흐르는 모든 고객 상호작용과 트랜잭션을 측정하고 이상현상을 보고해야 합니다.
+'러너'(운영 중인 서비스와 사용자 상호작용을 시뮬레이션하는 가상의 워크로드)를 사용하는 방법도 있겠지만 충분하지는 않습니다.
+표준 러너 워크로드는 계속 잘 처리되고 있기 때문에, 러너만으로는 심각한 문제를 발견하는 데에 며칠이 걸리며 그 이유를 알아내는 데에도 며칠이 더 걸릴 수 있습니다.
+
+>
+- Data is the most valuable asset.
+If the normal operating behavior isn't well-understood, it's hard to respond to what isn't.
+Lots of data on what is happening in the system needs to be gathered to know it really is working well.
+Many services have gone through catastrophic failures and only learned of the failure when the phones started ringing.
+
+- 데이터는 가장 가치있는 자산.
+운영상의 정상 동작을 잘 이해하지 못하면 무엇이 비정상적인 상황인지에 대해 파악하고 대응하기 어렵습니다.
+시스템이 실제로 잘 작동하는지 알기 위해서는 시스템에서 발생하는 많은 데이터를 수집해야 합니다.
+많은 서비스가 치명적인 장애를 겪고 전화벨이 울리기 시작한 이후에서야 장애 사실을 알게 되곤 합니다.
+
+>
+- Have a customer view of service.
+Perform end-to-end testing.
+Runners are not enough, but they are needed to ensure the service is fully working.
+Make sure complex and important paths such as logging in a new user are tested by the runners.
+Avoid false positives.
+If a runner failure isn't considered important, change the test to one that is.
+Again, once people become accustomed to ignoring data, breakages won't get immediate attention.
+
+- 고객의 관점에서 서비스를 바라볼 것.
+엔드 투 엔드 테스트를 하세요.
+러너만으로는 충분하지 않습니다. 엔드 투 엔드 테스트를 통해 서비스가 완벽하게 작동하는지 확인해야 합니다.
+신규 사용자의 로그인과 같이 복잡하고 중요한 경우는 러너를 통해 테스트해야 합니다.
+거짓 양성을 피하는 것도 중요합니다.
+러너 실패가 중요하지 않다고 생각되면 테스트를 중요한 것으로 변경하세요.
+다시 말하지만, 사람들이 데이터를 무시하는 데 익숙해지면 장애가 실제로 발생해도 즉각적인 대응을 하지 못할 수도 있습니다.
+
+>
+- Instrument for production testing.
+In order to safely test in production, complete monitoring and alerting is needed.
+If a component is failing, it needs to be detected quickly.
+
+- 프로덕션 테스트를 위해서도 계측할 것.
+프로덕션 환경에서 안전하게 테스트하려면 완벽한 모니터링과 알림이 필요합니다.
+컴포넌트가 실패하면 이를 빠르게 감지해야 합니다.
+
+>
+- Latencies are the toughest problem.
+Examples are slow I/O and not quite failing but processing slowly.
+These are hard to find, so instrument carefully to ensure they are detected.
+
+- 지연 시간은 가장 어려운 문제.
+예를 들어, 'I/O가 느린 경우'라던가 '실패하지는 않지만 처리 속도가 느린 경우' 등이 있습니다.
+이런 문제는 발견하기 어렵기 때문에 주의 깊게 계측하여 감지할 수 있도록 해야 합니다.
+
+>
+- Have sufficient production data. In order to find problems, data has to be available. Build fine-grained monitoring in early or it becomes expensive to retrofit later. The most important data that we've relied upon includes:
+    - Use performance counters for all operations. Record the latency of operations and number of operations per second at the least. The waxing and waning of these values is a huge red flag.
+    - Audit all operations. Every time somebody does something, especially something significant, log it. This serves two purposes: first, the logs can be mined to find out what sort of things users are doing (in our case, the kind of queries they are doing) and second, it helps in debugging a problem once it is found. A related point: this won't do much good if everyone is using the same account to administer the systems. A very bad idea but not all that rare.
+    - Track all fault tolerance mechanisms. Fault tolerance mechanisms hide failures. Track every time a retry happens, or a piece of data is copied from one place to another, or a machine is rebooted or a service restarted. Know when fault tolerance is hiding little failures so they can be tracked down before they become big failures. We had a 2000-machine service fall slowly to only 400 available over the period of a few days without it being noticed initially.
+    - Track operations against important entities. Make an "audit log" of everything significant that has happened to a particular entity, be it a document or chunk of documents. When running data analysis, it's common to find anomalies in the data. Know where the data came from and what processing it's been through. This is particularly difficult to add later in the project.
+    - Asserts. Use asserts freely and throughout the product. Collect the resulting logs or crash dumps and investigate them. For systems that run different services in the same process boundary and can't use asserts, write trace records. Whatever the implementation, be able to flag problems and mine frequency of different problems.
+    - Keep historical data. Historical performance and log data is necessary for trending and problem diagnosis.
+
+- 충분한 프로덕션 데이터를 확보할 것.
+문제를 찾아내려면 데이터를 사용할 수 있어야 합니다.
+초기에 세밀한 모니터링을 구축하지 않으면 나중에 그걸 개조하는 비용이 많이 들어가게 됩니다.
+우리가 의존하는 가장 중요한 데이터는 다음과 같습니다.
+    - 모든 작업에 퍼포먼스 카운터를 사용할 것. 작업 지연 시간과 초당 작업 수를 기록하세요. 이 값들의 증가와 감소는 큰 위험 신호입니다.
+    - 모든 작업을 감사할 것. 누가 무언가를 할 때마다, 특히 중요한 작업을 할 때마다 로그를 남기세요. 이렇게 하는 이유는 두 가지가 있습니다.
+        - 첫째, 로그를 마이닝하여 사용자가 어떤 종류의 작업을 하는지(우리의 경우, 어떤 종류의 쿼리를 하는지) 파악할 수 있습니다.
+        - 둘째, 문제가 발견됐을 때 디버깅하는 데 도움이 됩니다.
+        - 이 문제와 관련해서 모든 사람이 동일한 계정을 사용해서 시스템을 관리하는 것은 아무리 로그를 남겨도 도움이 되지 않습니다. 같은 계정을 쓰는 문제는 매우 나쁜 방식이지만 생각보다 흔합니다.
+    - 모든 내결함성 메커니즘을 추적할 것. 내결함성 메커니즘은 실패를 숨깁니다. 재시도가 발생하거나 데이터가 한 곳에서 다른 곳으로 복사되거나 컴퓨터가 재부팅되거나 서비스가 재시작 할 때마다 모두 추적하세요. 내결함성 메커니즘이 언제 작은 실패를 숨기는지를 알아야 그것들이 큰 장애로 번지기 전에 추적할 수 있습니다. 2000대의 머신을 사용할 수 있었던 서비스가 며칠 동안 400대만 사용하는 상태로 서서히 감소했는데도 아무도 알아차리지 못한 사건도 우리는 경험해봤습니다.
+    - 중요한 엔티티에 대한 작업을 추적할 것. 문서나 문서 덩어리(chunk) 등 특정 엔티티에서 발생한 중요한 모든 일에 대한 '감사 로그'를 작성하세요. 데이터를 분석할 때 데이터에서 이상 현상을 발견하는 것이 일반적입니다. 데이터의 출처와 어떤 처리를 거쳤는지를 파악해야 합니다. 이런 것들은 프로젝트 후반에 추가하기가 특히 어렵습니다.
+    - Asserts. 제품 전체에서 자유롭게 assert를 사용하세요. 그 결과로 발생하는 로그나 크래시 덤프를 수집해서 조사해야 합니다. 동일한 프로세스 경계에서 서로 다른 서비스를 실행하고, assert를 사용할 수 없는 시스템이라면 추적 레코드를 작성하세요. 구현 방식이 무엇이 되었건 문제에 플래그를 지정하고 다양한 문제의 발생 빈도를 파악할 수 있어야 합니다.
+    - 과거 데이터를 보관할 것. 과거의 성능과 로그 데이터는 추세 파악과 문제 진단에 필수적입니다.
+
+>
+- Configurable logging. Support configurable logging that can optionally be turned on or off as needed to debug issues. Having to deploy new builds with extra monitoring during a failure is very dangerous.
+
+- 로깅을 설정 가능하게 할 것.
+문제를 디버깅하기 위해 필요에 따라 선택적으로 끄고 켤 수 있는 설정 가능한 로깅을 지원하세요.
+장애 상황에서 추가 모니터링을 하기 위해 새로운 빌드를 배포하는 것은 매우 위험합니다.
+
+>
+- Expose health information for monitoring. Think about ways to externally monitor the health of the service and make it easy to monitor it in production.
+
+- 상태 정보를 모니터링할 수 있도록 노출할 것.
+서비스의 건강 상태를 외부에서 모니터링하는 방법을 고려하고, 프로덕션 환경에서의 모니터링을 용이하게 만드세요.
+
+>
+- Make all reported errors actionable. Problems will happen. Things will break. If an unrecoverable error in code is detected and logged or reported as an error, the error message should indicate possible causes for the error and suggest ways to correct it. Un-actionable error reports are not useful and, over time, they get ignored and real failures will be missed.
+
+- 보고된 모든 에러만 보고도 뭔가 조치할 수 있도록 할 것.
+문제는 언제든지 발생하고, 무언가가 멈추고 장애가 발생하곤 합니다.
+코드에서 복구할 수 없는 오류가 발견되어 로그에 남거나 에러로 보고되면, 오류 메시지에는 오류의 가능한 원인을 표시하고 오류를 수정할 수 있는 방법을 제시하는 내용이 포함되어야 합니다. 조치가 불가능한 오류 보고는 유용하지 않으며, 시간이 지남에 따라 무시받게 되어 실제 장애를 간과하게 됩니다.
+
+>
+- Enable quick diagnosis of production problems.
+    - Give enough information to diagnose. When problems are flagged, give enough information that a person can diagnose it. Otherwise the barrier to entry will be too high and the flags will be ignored. For example, don't just say "10 queries returned no results." Add "and here is the list, and the times they happened."
+    - Chain of evidence. Make sure that from beginning to end there is a path for developer to diagnose a problem. This is typically done with logs.
+    - Debugging in production. We prefer a model where the systems are almost never touched by anyone including operations and that debugging is done by snapping the image, dumping the memory, and shipping it out of production. When production debugging is the only option, developers are the best choice. Ensure they are well trained in what is allowed on production servers. Our experience has been that the less frequently systems are touched in production, the happier customers generally are. So we recommend working very hard on not having to touch live systems still in production.
+    - Record all significant actions. Every time the system does something important, particularly on a network request or modification of data, log what happened. This includes both when a user sends a command and what the system internally does. Having this record helps immensely in debugging problems. Even more importantly, mining tools can be built that find out useful aggregates, such as, what kind of queries are users doing (i.e., which words, how many words, etc.)
+
+- 프로덕션 문제를 빠르게 진단할 수 있도록 할 것.
+    - 상황 진단에 필요한 충분한 정보를 제공할 것. 문제가 발생하면, 사람이 진단할 수 있는 충분한 정보를 제공해야 합니다. 그렇지 않으면 진입 장벽이 너무 높아져서 문제를 무시하게 됩니다. 예를 들어, "10개의 쿼리가 결과를 반환하지 않았습니다."라고만 하지 말고, 차라리 "여기에 문제와 발생시간 목록이 있습니다."라는 식으로 정보를 제공하세요.
+    - 증거의 연속성을 확보할 것. 개발자가 문제를 파악하고 진단할 수 있는 처음부터 끝까지의 경로가 있는지 확인하세요. 보통은 로그가 이런 연속적 증거의 역할을 합니다.
+    - 프로덕션 환경에서의 디버깅. 우리는 시스템이 운영팀을 포함한 그 누구에게도 거의 접근되지 않는 모델을 선호합니다. 그래서 디버깅은 이미지를 스냅샷으로 남기고 메모리를 덤프하여 프로덕션에서 전송하는 방식으로 이루어집니다. 프로덕션에서의 디버깅이 유일한 선택지인 경우에는 개발자가 직접 하는 것이 가장 좋은 선택입니다. 그러므로 개발자들이 프로덕션 서버에서 무엇이 허용되는지에 대해 잘 훈련받도록 해야 합니다. 우리는 프로덕션 시스템이 접근하기 어려울수록 고객들이 일반적으로 더 만족한다는 것을 경험했습니다. 그래서 우리는 프로덕션에 살아있는 시스템을 건드리지 않도록 최대한 노력하는 것을 권장합니다.
+    - 모든 중요한 동작을 기록할 것. 특히 네트워크 요청이나 데이터 수정과 같이 중요한 작업을 수행할 때마다 무슨 일이 일어났는지를 기록해야 합니다. 여기에는 사용자가 보낸 명령과, 시스템이 내부적으로 수행하는 작업이 모두 포함됩니다. 이런 기록들은 문제를 디버깅하는 데 큰 도움이 됩니다. 더 중요한 것은 사용자가 어떤 종류의 쿼리를 수행하는지(예: 어떤 단어를 썼고, 얼마나 많은지 등)와 같은 유용한 집계를 찾아내는 마이닝 도구를 만들 수 있다는 것입니다.
 
 #### Graceful Degradation and Admission Control
+
+점진적 성능저하 및 수용 제어
+
+작업중
+
 #### Customer and Press Communication Plan
 #### Customer Self-Provisioning and Self-Help
 
