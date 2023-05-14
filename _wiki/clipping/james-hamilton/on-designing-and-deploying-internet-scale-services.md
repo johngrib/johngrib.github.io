@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-14 17:25:12 +0900
+updated : 2023-05-14 18:07:56 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -1499,11 +1499,117 @@ These are hard to find, so instrument carefully to ensure they are detected.
 
 #### Graceful Degradation and Admission Control
 
-점진적 성능저하 및 수용 제어
+점진적 저하 및 수용 제어
+
+>
+There will be times when DOS attacks or some change in usage patterns causes a sudden workload spike.
+The service needs be able to degrade gracefully and control admissions.
+For example, during 9/11 most news services melted down and couldn't provide a usable service to any of the user base.
+Reliably delivering a subset of the articles would have been a better choice.
+Two best practices, a "big red switch" and admission control, need to be tailored to each service.
+But both are powerful and necessary.
+
+DOS 공격이나 사용 패턴의 변화로 인해 갑자기 작업 부하가 급증(spiki)하는 경우가 있습니다.
+서비스는 이런 상황에서도 점진적으로 기능을 제한하면서 접속을 제어할 수 있어야 합니다.
+예를 들어, 9/11 테러사건 당시 대부분의 뉴스 서비스가 마비되어 사용자들에게 제대로 된 서비스를 제공하지 못했습니다.
+이런 경우에는 일부 기사만을 신뢰성 있게 전달하는 것이 더 나은 선택이었을 것입니다.
+
+'큰 빨간 스위치'와 '접근 제어'라는 두 가지 모범 사레는 각 서비스에 맞게 적절히 조정해야 합니다.
+하지만 두 가지 모두 강력하고 필수적인 도구라 할 수 있습니다.
+
+>
+- Support a "big red switch."
+The idea of the "big red switch" originally came from Windows Live Search and it has a lot of power.
+We've generalized it somewhat in that more transactional services differ from Search in significant ways.
+But the idea is very powerful and applicable anywhere.
+Generally, a "big red switch" is a designed and tested action that can be taken when the service is no longer able to meet its SLA, or when that is imminent.
+Arguably referring to graceful degradation as a "big red switch" is a slightly confusing nomenclature but what is meant is the ability to shed non-critical load in an emergency.
+The concept of a big red switch is to keep the vital processing progressing while shedding or delaying some non-critical workload.
+By design, this should never happen, but it's good to have recourse when it does.
+Trying to figure these out when the service is on fire is risky.
+If there is some load that can be queued and processed later, it's a candidate for a big red switch.
+If it's possible to continue to operate the transaction system while disabling advance querying, that's also a good candidate.
+The key thing is determining what is minimally required if the system is in trouble, and implementing and testing the option to shut off the non-essential services when that happens.
+Note that a correct big red switch is reversible.
+Resetting the switch should be tested to ensure that the full service returns to operation, including all batch jobs and other previously halted non-critical work.
+
+- "큰 빨간 스위치"를 지원할 것.
+
+"큰 빨간 스위치"라는 아이디어는 원래 Windows Live Search에서 나온 것으로, 이 스위치는 아주 강력한 기능을 갖습니다.
+우리는 이 스위치를 다소 일반화했습니다.
+Windows Live Search에서 트랜잭션 기반의 서비스는 좀 다른 방식으로 동작하기 때문입니다.
+하지만 이 아이디어는 매우 강력하며 어디서든 적용할 수 있습니다.
+
+일반적으로, "큰 빨간 스위치"는 서비스가 더 이상 SLA를 충족할 수 없거나 그럴 위험이 있을 때 취할 수 있는, 설계되고 테스트된 동작입니다.
+점진적 저하를 "큰 빨간 스위치"라고 부르는 것은 용어상으로는 약간 혼란스러울 수 있긴 합니다.
+그러나 그 의미는 긴급한 상황에서 중요하지 않은 종류의 부하를 줄여주는 능력을 말합니다.
+
+"큰 빨간 스위치"의 개념은 중요한 처리는 계속 진행하고, 그 와중에 중요하지 않은 작업은 줄이거나 지연시키는 것입니다.
+설계상으로는 이런 일이 일어나지 않아야 하지만, 이런 일이 발생했을 때의 대비책이 있는 것이 좋습니다.
+서비스가 불타고 있을 때 이런 것들을 찾아내려고 하면 위험합니다.
+
+나중에 대기열에 넣어서 처리할 수 있는 종류의 부하가 있다면, '큰 빨간 스위치'의 작동 대상 후보가 될 수 있습니다.
+트랜잭션 시스템은 계속 운영하면서, 복잡한 쿼리는 비활성화할 수 있다면 그것도 좋은 후보일 것입니다.
+중요한 것은 시스템이 문제가 생겼을 때 최소한으로 필요한 것이 무엇인지를 결정해서, 문제 상황에서 비필수 서비스를 끄는 옵션을 구현하고 테스트하는 것입니다.
+
+올바르게 구현한 "큰 빨간 스위치"는 되돌릴 수 있어야 한다는 점에 유의해야 합니다.
+스위치를 재설정하면 모든 배치 작업과 이전에 중단된 기타 중요하지 않은 작업을 포함하여 전체 서비스가 다시 작동하는지 확인해야 합니다.
+
+>
+- Control admission.
+The second important concept is admission control.
+If the current load cannot be processed on the system, bringing more work load into the system just assures that a larger cross section of the user base is going to get a bad experience.
+How this gets done is dependent on the system and some can do this more easily than others.
+As an example, the last service we led processed email.
+If the system was over-capacity and starting to queue, we were better off not accepting more mail into the system and let it queue at the source.
+The key reason this made sense, and actually decreased overall service latency, is that as our queues built, we processed more slowly.
+If we didn't allow the queues to build, throughput would be higher.
+Another technique is to service premium customers ahead of non-premium customers, or known users ahead of guests, or guests ahead of users if "try and buy" is part of the business model.
+
+- 접속 제어.
+
+두 번째로 중요한 개념은 접속 제어(admission control) 입니다.
+시스템이 현재 부하를 처리할 수 없을 때 더 많은 작업 부하가 가해지면, 더 많은 사용자들이 나쁜 경험을 하게 될 것입니다. 
+이런 일을 어떻게 처리할지는 시스템에 따라 다르며, 어떤 시스템은 다른 시스템보다 쉽게 처리할 수 있습니다.
+
+예를 들어, 우리가 이끌었던 최근 서비스 하나에는 이메일을 처리 작업이 있었습니다.
+
+그 시스템은 과부하 상태가 되어 대기열에 작업이 들어가기 시작하면,
+시스템이 더 이상의 메일을 받지 않고 소스에서 대기열에 넣어두는 방법을 사용했습니다.
+이 방법이 실제로 통했고 전체 서비스의 지연 시간을 줄인 핵심적인 이유는, 대기열이 쌓일수록 처리하는 속도가 더 느려졌기 때문입니다.
+만약 우리가 대기열이 쌓이지 않도록 했다면 처리율은 더 높아졌을 것입니다.
+
+또 다른 테크닉은 '체험 후 구매'가 비즈니스 모델에 포함되어 있는 경우에 '프리미엄 고객'을 '프리미엄이 아닌 고객'보다 먼저, '알려진 사용자'를 '알려지지 않은 사용자'보다 먼저, '사용자'를 '게스트'보다 먼저 처리하는 것입니다.
+
+>
+- Meter admission.
+Another incredibly important concept is a modification of the admission control point made above.
+If the system fails and goes down, be able to bring it back up slowly ensuring that all is well.
+It must be possible to let just one user in, then let in 10 users/second, and slowly ramp up.
+It's vital that each service have a fine-grained knob to slowly ramp up usage when coming back on line or recovering from a catastrophic failure.
+This capability is rarely included in the first release of any service.
+Where a service has clients, there must be a means for the service to inform the client that it's down and when it might be up.
+This allows the client to continue to operate on local data if applicable, and getting the client to back-off and not pound the service can make it easier to get the service back on line.
+This also gives an opportunity for the service owners to communicate directly with the user (see below) and control their expectations.
+Another client-side trick that can be used to prevent them all synchronously hammering the server is to introduce intentional jitter and per-entity automatic backup.
+
+- 접속 측정.
+
+또 다른 중요한 개념은 위에서 언급한 접속 제어 지점을 수정하는 것입니다.
+만약 시스템이 장애로 다운되면, 모든 것이 잘 작동하는지 확인하면서 천천히 다시 시작할 수 있어야 합니다.
+처음에는 한 명의 사용자만 받고, 그 다음에는 1초당 10명의 사용자를 받는 식으로 올리면서 천천히 증가시킬 수 있어야 합니다.
+각 서비스에는 온라인에 다시 접속하거나 치명적인 장애로부터 복구할 때 사용량을 천천히 늘릴 수 있는 세분화된 조절 장치가 있어야 합니다.
+이런 기능은 보통 서비스의 첫 번째 릴리스에는 거의 포함되지 않습니다.
+
+클라이언트가 있는 서비스에서는 서비스가 다운됐음을 알리고, 언제 다시 올라올지를 알려주는 수단도 있어야 합니다.
+이런 수단을 통해, 클라이언트는 로컬 데이터에서 계속 작업을 할 수 있게 되고, 클라이언트가 서비스를 백오프하고 서비스를 공격하지 않게 되어 서비스를 다시 온라인으로 올리는 것이 더 쉬워집니다.
+또한 서비스 소유자가 사용자와 직접 소통하고(아래 참조), 사용자의 기대치를 조절할 수 있는 기회를 제공하게 됩니다.
+클라이언트 측에서 사용할 수 있는 또 다른 트릭은 의도적인 지터(jitter)와 개별 엔티티 자동 백업을 도입해서 모든 클라이언트가 서버를 동기적으로 공격하는 것을 방지하는 것입니다.
+
+#### Customer and Press Communication Plan
 
 작업중
 
-#### Customer and Press Communication Plan
 #### Customer Self-Provisioning and Self-Help
 
 ### Conclusion
