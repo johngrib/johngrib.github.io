@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-14 18:29:38 +0900
+updated : 2023-05-14 18:33:44 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -20,6 +20,8 @@ latex   : false
 - 2007년 11월에 James Hamilton이 발표한 논문
 
 ## 번역
+
+- 번역 과정에서 [DeepL Translator](https://www.deepl.com/translator )를 사용했습니다.
 
 ### ABSTRACT
 
