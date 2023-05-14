@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-14 12:21:40 +0900
+updated : 2023-05-14 12:59:52 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -1106,9 +1106,112 @@ Most importantly, use the same data collection and mining techniques used in pro
 
 #### Hardware Selection and Standardization
 
-작업중
+하드웨어 선택과 표준화
+
+>
+The usual argument for SKU standardization is that bulk purchases can save considerable money.
+This is inarguably true.
+The larger need for hardware standardization is that it allows for faster service deployment and growth.
+If each service is purchasing their own private infrastructure, then each service has to:
+>
+> - determine which hardware currently is the best cost/performing option,
+> - order the hardware, and
+> - do hardware qualification and software deployment once the hardware is installed in the data center.
+>
+This usually takes a month and can easily take more.
+
+SKU 표준화에 대한 일반적인 주장은 대량 구매를 통해 많은 돈을 절약할 수 있다는 것입니다.
+이것은 논쟁의 여지가 없는 사실이긴 합니다.
+그러나 하드웨어 표준화가 더욱 필요한 이유는 빠른 서비스 배포와 성장을 가능하게 한다는 것입니다.
+각 서비스가 자신만의 인프라를 구매해 확보하고 있다면, 각 서비스는 다음을 수행해야 합니다.
+
+- 현재 어떤 하드웨어가 가성비가 가장 좋은지 결정하고,
+- 하드웨어를 주문하고,
+- 하드웨어를 데이터 센터에 설치하면, 하드웨어 검증과 소프트웨어 배포를 수행해야 합니다.
+
+이 과정은 보통 한 달 정도 걸리며, 더 오래 걸릴 수도 있습니다.
+
+>
+A better approach is a "services fabric" that includes a small number of hardware SKUs and the automatic management and provisioning infrastructure on which all service are run. If more machines are needed for a test cluster, they are requested via a web service and quickly made available. If a small service gets more successful, new resources can be added from the existing pool. This approach ensures two vital principles:
+>
+- all services, even small ones, are using the automatic management and provisioning infrastructure and
+- new services can be tested and deployed much more rapidly.
+
+이보다 더 나은 접근 방식은 소수의 하드웨어 SKU와 모든 서비스가 실행되는 자동 관리 및 프로비저닝 인프라를 포함하는 "서비스 패브릭"[^service-fabric]을 사용하는 것입니다.
+테스트 클러스터에 더 많은 머신이 필요하다면, 웹 서비스를 통해 요청해서 빠르게 사용할 수 있게 해줍니다.
+소규모 서비스가 성공하면, 기존 풀에서 새로운 리소스를 추가할 수 있습니다.
+이 접근 방식은 두 가지 중요한 원칙을 보장합니다.
+
+- 모든 서비스(소규모 서비스 포함)가 자동 관리 및 프로비저닝 인프라를 사용하며,
+- 새로운 서비스를 훨씬 더 빠르게 테스트하고 배포할 수 있습니다.
+
+>
+Best practices for hardware selection include:
+
+하드웨어 선택에 대한 최선의 방법은 다음과 같습니다.
+
+>
+- Use only standard SKUs.
+Having a single or small number of SKUs in production allows resources to be moved fluidly between services as needed.
+The most cost-effective model is to develop a standard service-hosting framework that includes automatic management and provisioning, hardware, and a standard set of shared services.
+Standard SKUs is a core requirement to achieve this goal.
+
+- 표준 SKU만 사용할 것.
+
+프로덕션에 한 가지, 또는 소수 종류의 SKU들만 사용하면 필요에 따라 리소스를 서비스 간에 유동적으로 이동시킬 수 있습니다.
+가장 비용적으로 효율적인 모델은 자동 관리 및 프로비저닝, 하드웨어, 표준 공유 서비스 세트를 포함하는 표준 서비스 호스팅 프레임워크를 개발하는 것입니다.
+표준 SKU는 이러한 목표를 달성하기 위한 핵심 요건입니다.
+
+>
+- Purchase full racks.
+Purchase hardware in fully configured and tested racks or blocks of multiple racks.
+Racking and stacking costs are inexplicably high in most data centers, so let the system manufacturers do it and wheel in full racks.
+
+- 완전히 구성된 랙을 구매할 것.
+
+완전히 구성되고 테스트된 랙, 또는 여러 랙으로 구성된 블록 단위로 하드웨어를 구매하세요.
+대부분의 데이터센터에서는 랙을 구성하고 쌓는 비용이 말로 설명할 수 없을 정도로 엄청나기 때문에 시스템 제조업체에 맡기고 완전한 랙을 끼워 넣도록(wheel in) 하세요.
+
+>
+- Write to a hardware abstraction.
+Write the service to an abstract hardware description.
+Rather than fully exploiting the hardware SKU, the service should neither exploit that SKU nor depend upon detailed knowledge of it.
+This allows the 2-way, 4-disk SKU to be upgraded over time as better cost/performing systems come available.
+The SKU should be a virtual description that includes number of CPUs and disks, and a minimum for memory.
+Finer-grained information about the SKU should not be exploited.
+
+- 하드웨어 추상화를 고려해 개발할 것.
+추상적인 하드웨어 설명을 토대로 서비스를 개발해야 합니다.
+하드웨어 SKU 스펙을 뿌리까지 완전히 활용하지 말고, 하드웨어 SKU 특성이나 자세한 지식에 의존해서는 안됩니다.
+이렇게 해두면 나중에 비용 대비 성능이 더 좋은 시스템이 출시되었을 때 2-way, 4-disk SKU로 업그레이드하는 것도 가능해집니다.
+SKU는 CPU와 디스크 개수, 그리고 최소 메모리를 포함하는 가상 스펙이어야 합니다.
+SKU에 대한 더 세부적인 정보를 사용하지 않아야 합니다.
+
+>
+- Abstract the network and naming.
+Abstract the network and naming as far as possible, using DNS and CNAMEs.
+Always, always use a CNAME.
+Hardware breaks, comes off lease, and gets repurposed.
+Never rely on a machine name in any part of the code.
+A flip of the CNAME in DNS is a lot easier than changing configuration files, or worse yet, production code.
+If you need to avoid flushing the DNS cache, remember to set Time To Live sufficiently low to ensure that changes are pushed as quickly as needed.
+
+- 네트워크와 이름을 추상화할 것.
+
+DNS와 CNAME을 사용해서 네트워크와 이름을 최대한 추상화하세요.
+반드시 언제나 CNAME을 사용하도록 해야 합니다.
+하드웨어란 것들은 언제든지 고장나거나 임대가 만료되거나 용도가 변경되곤 합니다.
+코드의 어떤 부분에서도 머신의 이름에 의존해서는 안됩니다.
+DNS에서 CNAME을 뒤집는 것은 설정 파일을 변경하거나 프로덕션 코드를 변경하는 것보다 훨씬 쉽습니다.
+DNS 캐시를 플러시(flushing)하는 것을 피해야 한다면, TTL(Time To Live)을 충분히 낮게 설정해서 변경 사항이 필요한 만큼 빨리 전파되도록 해야 합니다.
+
 
 #### Operations and Capacity Planning
+
+운영과 용량 계획
+
+작업중
+
 #### Auditing, Monitoring and Alerting
 #### Graceful Degradation and Admission Control
 #### Customer and Press Communication Plan
@@ -1127,3 +1230,4 @@ Most importantly, use the same data collection and mining techniques used in pro
 
 [^term-sla]: 역주: SLA, Service Level Agreement. 서비스 제공 업체와 고객 사이에 서비스의 품질, 책임 등에 대한 내용을 명시한 계약.
 [^auto-back-off]: 역주: 백오프, back-off. 네트워크에서 특정 컴포넌트가 과부하가 걸리거나 장애 상태가 되었을 때 요청률을 일시적으로 줄이는 전략. 이를 통해 장애를 완화하는 시간을 확보하고, 더 심각한 상황이 되는 것을 방지한다. 이진 지수 백오프(Binary Exponential Backoff) 등이 대표적 예.
+[^service-fabric]: 역주: [microsoft/service-fabric (github.com)]( https://github.com/microsoft/service-fabric ), [Microsoft Azure Service Fabric]( https://learn.microsoft.com/ko-kr/azure/service-fabric/service-fabric-overview ). 마이크로소프트의 분산 시스템 관리 플랫폼.<br/> "Azure Service Fabric은 손쉽게 패키지하고 배포하며 확장 가능하고 안정성이 뛰어난 마이크로서비스 및 컨테이너를 관리하는 분산 시스템 플랫폼입니다. 또한 Service Fabric은 클라우드 네이티브 애플리케이션 개발 및 관리에서 발생하는 중요한 과제를 해결합니다."
