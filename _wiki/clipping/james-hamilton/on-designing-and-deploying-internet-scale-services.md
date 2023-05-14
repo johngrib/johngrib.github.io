@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-13 23:33:29 +0900
+updated : 2023-05-14 12:21:40 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -856,10 +856,258 @@ That way the load on the authenticating server is more consistent and login stor
 
 #### Release Cycle and Testing
 
-작업중
+릴리스 주기와 테스팅
+
+>
+Testing in production is a reality and needs to be part of the quality assurance approach used by all internet-scale services.
+Most services have at least one test lab that is as similar to production as (affordably) possible and all good engineering teams use production workloads to drive the test systems realistically.
+Our experience has been, however, that as good as these test labs are, they are never full fidelity.
+They always differ in at least subtle ways from production.
+As these labs approach the production system in fidelity, the cost goes asymptotic and rapidly approaches that of the production system.
+
+프로덕션 환경에서의 테스트는 가장 현실에 가까운 테스트이며, 모든 인터넷 규모의 서비스에서 사용하는 품질보증 접근방식의 일부가 되어야 합니다.
+
+대부분의 서비스에는 프로덕션 환경과 최대한 (저렴하면서) 비슷한 테스트 공간이 하나 이상 있으며,
+모든 우수한 엔지니어링 팀은 프로덕션 워크로드를 사용해 테스트 시스템을 현실적으로 구동합니다.
+그러나 우리의 경험상, 이런 테스트 공간은 아무리 훌륭하다 하더라도 완벽하지는 않았습니다.
+
+테스트 환경은 항상 프로덕션 환경과 미묘하게 다릅니다.
+이러한 테스트 환경이 프로덕션 환경과 유사해질수록 비용은 기하급수적으로 증가하게 되어, 결국 프로덕션 환경의 비용에 빠르게 가까워집니다.
+
+>
+We instead recommend taking new service releases through standard unit, functional, and production test lab testing and then going into limited production as the final test phase.
+Clearly we don't want software going into production that doesn't work or puts data integrity at risk, so this has to be done carefully.
+The following rules must be followed:
+>
+- the production system has to have sufficient redundancy that, in the event of catastrophic new service failure, state can be quickly be recovered,
+- data corruption or state-related failures have to be extremely unlikely (functional testing must first be passing),
+- errors must be detected and the engineering team (rather than operations) must be monitoring system health of the code in test, and
+- it must be possible to quickly roll back all changes and this roll back must be tested before going into production.
+
+따라서 우리는 새로운 서비스 릴리스에 대해 표준 단위, 기능, 프로덕션 테스트를 거쳐 제한된 프로덕션 환경으로 넘어가는 것을 권장합니다.
+
+작동하지 않거나 데이터 무결성을 해치는 소프트웨어가 프로덕션에 적용되는 것을 원하지 않기 때문에, 이 과정은 신중하게 수행되어야 합니다.
+이를 위해서는 다음의 규칙들을 반드시 따라야 합니다.
+
+- 신규 서비스로 인한 치명적인 장애가 발생하더라도 상태를 신속하게 복구할 수 있는 충분한 이중화가 프로덕션 시스템에 있어야 합니다.
+- 데이터 손상이나 상태 관련 장애가 발생할 가능성이 매우 낮아야 합니다. (기능 테스트가 먼저 통과되어야 합니다.)
+- (운영팀이 아닌) 엔지니어링 팀이 테스트 중인 코드의 시스템 상태를 모니터링하고, 오류를 감지해야 합니다.
+- 모든 변경 사항은 신속하게 롤백할 수 있어야 하며, 그러한 롤백도 프로덕션에 적용되기 전에 테스트되어야 합니다.
+
+>
+This sounds dangerous.
+But we have found that using this technique actually improves customer experience around new service releases.
+Rather than deploying as quickly as possible, we put one system in production for a few days in a single data center.
+Then we bring one new system into production in each data center.
+Then we'll move an entire data center into production on the new bits.
+And finally, if quality and performance goals are being met, we deploy globally.
+This approach can find problems before the service is at risk and can actually provide a better customer experience through the version transition.
+Big-bang deployments are very dangerous.
+
+이런 방법이 위험해 보일 것입니다.
+하지만 이 방법을 사용하면 실제로 새로운 서비스 릴리스에 대한 고객 경험이 개선된다는 사실을 발견했습니다.
+
+1. 일단 가능한 선에서 빨리 배포하는 대신, 하나의 시스템을 단일 데이터 센터에서 며칠 동안 프로덕션에 배치합니다.
+2. 그런 다음 각 데이터 센터에서 새로운 시스템을 하나씩 프로덕션에 도입합니다.
+3. 그리고 전체 데이터 센터를 새로운 버전에 대한 프로덕션 환경으로 전환합니다.
+4. 마지막으로 품질과 성능 목표가 충족되면 전 세계에 배포합니다.
+
+이러한 접근 방법은 서비스가 위험에 처하기 전에 문제를 발견할 수 있게 해주며, 버전 전환을 통해 실제로 더 나은 고객 경험을 제공할 수도 있습니다.
+빅뱅 배포는 매우 위험합니다.
+
+>
+Another potentially counter-intuitive approach we favor is deployment mid-day rather than at night.
+At night, there is greater risk of mistakes.
+And, if anomalies crop up when deploying in the middle of the night, there are fewer engineers around to deal with them.
+The goal is to minimize the number of engineering and operations interactions with the system overall, and especially outside of the normal work day, to both reduce costs and to increase quality.
+
+직관적으로는 이상한 접근 방법으로 보일 수 있겠지만, 우리는 밤보다는 낮에 배포하는 것을 선호합니다.
+밤에는 실수할 위험이 더 큽니다.
+또한 한밤중에는 배포하다 문제가 발생하더라도 그 문제를 해결할 수 있는 엔지니어의 수가 더 적습니다.
+
+목표는 엔지니어링과 운영팀이 시스템과 상호작용하는 횟수를 전반적으로 최소화하고, 특히 정상적인 업무 시간 이외에 이런 상호작용을 최소화함으로써 비용을 줄이고 품질을 높이는 것입니다.
+
+>
+Some best practices for release cycle and testing include:
+
+릴리스 주기와 테스트에 대한 몇 가지 모범 사례는 다음과 같습니다.
+
+>
+- Ship often.
+Intuitively one would think that shipping more frequently is harder and more error prone.
+We've found, however, that more frequent releases have less big-bang changes.
+Consequently, the releases tend to be higher quality and the customer experience is much better.
+The acid test of a good release is that the user experience may have changed but the number of operational issues around availability and latency should be unchanged during the release cycle.
+We like shipping on 3-month cycles, but arguments can be made for other schedules.
+Our gut feel is that the norm will eventually be less than three months, and many services are already shipping on weekly schedules.
+Cycles longer than three months are dangerous.
+
+- 자주 배포하세요.
+
+느낌상으로는 자주 배포하면 더 어렵고 오류도 더 발생하기 쉬울 거라고 생각할 수 있습니다.
+하지만 우리는 릴리스 빈도가 높을수록 큰 폭의 변경(big-bang changes)도 줄어들게 된다는 사실을 발견했습니다.
+결과적으로 릴리스의 품질이 향상되고 고객 경험도 훨씬 더 좋아지는 경향을 끌어낼 수 있습니다.
+
+사용자 경험은 변할 수 있지만, 릴리스 주기 동안 가용성과 지연 시간에 관한 운영 이슈의 수는 변하지 않아야 하는 것이 좋은 릴리스에 대한 결정적인 시험이라 할 수 있습니다.
+
+우리는 3개월 주기로 릴리스하는 것을 선호하지만, 다른 방식의 일정을 적용할 수도 있습니다.
+우리의 직감으로는 결국 3개월 미만이 표준이 될 것으로 보며, 이미 많은 서비스가 주 단위(week)로 출시되고 있습니다.
+3개월보다 긴 주기는 위험합니다.
+
+>
+- Use production data to find problems.
+Quality assurance in a large-scale system is a data-mining and visualization problem, not a testing problem.
+Everyone needs to focus on getting the most out of the volumes of data in a production environment.
+A few strategies are:
+    - Measurable release criteria. Define specific criteria around the intended user experience, and continuously monitor it. If availability is supposed to be 99%, measure that availability meets the goal. Both alert and diagnose if it goes under.
+    - Tune goals in real time. Rather than getting bogged down deciding whether the goal should be 99% or 99.9% or any other goal, set an acceptable target and then ratchet it up as the system establishes stability in production.
+    - Always collect the actual numbers. Collect the actual metrics rather than red and green or other summary reports. Summary reports and graphs are useful but the raw data is needed for diagnosis.
+    - Minimize false positives. People stop paying attention very quickly when the data is incorrect. It's important to not over-alert or operations staff will learn to ignore them. This is so important that hiding real problems as collateral damage is often acceptable.
+    - Analyze trends. This can be used for predicting problems. For example, when data movement in the system diverges from the usual rate, it often predicts a bigger problem. Exploit the available data.
+    - Make the system health highly visible. Require a globally available, real-time display of service health for the entire organization. Have an internal website people can go at any time to understand the current state of the service.
+    - Monitor continuously. It bears noting that people must be looking at all the data every day. Everyone should do this, but make it the explicit job of a subset of the team to do this.
+
+- 프로덕션 데이터를 사용해 문제를 찾아낼 것.
+
+대규모 시스템에서의 품질 보증은 테스트 문제보다는 데이터 마이닝과 시각화에 달려 있습니다.
+모든 사람이 프로덕션 환경의 방대한 데이터를 최대한 활용하는 데 집중해야 합니다.
+이를 위한 전략들은 다음과 같습니다.
+
+- 릴리즈 기준을 달성했는지 측정할 것. 사용자들이 어떤 경험을 갖기를 바라는지에 대해 구체적인 기준을 정의하고, 이를 지속적으로 모니터링합니다. 가용성이 99% 여야 하는 경우라면, 가용성 목표를 달성하고 있는지를 측정하세요. 목표를 달성하지 못하고 있다면 알림을 날리고 원인을 진단해야 합니다.
+
+- 실시간으로 목표를 조정할 것.
+목표가 99% 인지, 99.9% 인지, 아니면 다른 목표인지 결정하는데 시간을 낭비하지 말고, 우선 수용 가능한 목표를 설정한 다음 시스템이 프로덕션 환경에서 안정성을 확립할 때마다 목표를 높여나가세요.
+
+- 항상 실제 수치를 수집할 것.
+빨간색 초록색 등으로 요약된 보고서가 아닌 실제 지표를 수집하세요.
+요약 보고서와 그래프는 유용하긴 하지만, 정확한 진단을 위해서는 원시 데이터가 필요합니다.
+
+- 거짓 양성을 최소화할 것.
+사람들은 정확하지 않은 데이터에 대해 매우 빠르게 관심을 잃어갑니다.
+너무 많은 알림을 보내지 않도록 주의해야 합니다.
+그렇지 않으면 운영 직원들이 알림을 무시하게 될 것입니다.
+이것은 매우 중요한 문제인데, 실제적인 문제를 부수적인 피해로 여겨 숨겨지는 상황도 종종 허용되곤 합니다.
+
+- 추세를 분석할 것.
+추세를 분석하면 문제를 예측할 수 있습니다.
+예를 들어 시스템 내 데이터 이동이 평소와 다른 속도로 변화한다면, 더 큰 문제를 예측하는 상황으로 이어지는 경우가 많습니다.
+사용 가능한 데이터를 최대한 활용하세요.
+
+- 시스템 상태를 눈으로 확인하기 좋게 만들 것.
+전체 조직에서 전역적으로 사용 가능한 실시간 서비스 상태 표시를 요구하세요.
+언제든지 직원들이 들어가서 서비스의 현재 상태를 파악할 수 있는 내부 웹사이트를 만드세요.
+
+- 지속적으로 모니터링할 것.
+사람들이 하루도 빠짐없이 모든 데이터를 살펴보고 있어야 한다는 것을 명심하세요.
+모든 사람이 이 일을 해야 하지만, 팀의 하위 집합에게는 이 작업을 명시적으로 맡겨야 합니다.
+
+>
+- Invest in engineering.
+Good engineering minimizes operational requirements and solves problems before they actually become operational issues.
+Too often, organizations grow operations to deal with scale and never take the time to engineer a scalable, reliable architecture.
+Services that don't think big to start with will be scrambling to catch up later.
+
+- 엔지니어링에 투자할 것.
+좋은 엔지니어링은 운영 요구 사항을 최소화하고, 실제 운영 문제가 발생하기 전에 문제를 해결합니다.
+규모 확장에 대응하기 위해 운영팀을 확장하는 조직은 매우 많이 있지만,
+확장 가능하고 안정적인 아키텍처를 엔지니어링하는 데 시간을 할애하는 조직은 많지 않습니다.
+처음부터 큰 그림을 그리지 않는 서비스는 나중에 따라잡기 위해 뒤늦게 애쓰게 될 것입니다.
+
+>
+- Support version roll-back. Version roll-back is mandatory and must be tested and proven before roll-out. Without roll-back, any form of production-level testing in very high risk. Reverting to the previous version is a rip cord that should always be available on any deployment.
+
+- 버전 롤백을 지원할 것.
+버전 롤백은 필수적이며, 배포 전에 테스트되고 검증되어야 합니다.
+롤백이 없다면 어떤 형태의 프로덕션 수준 테스트라도 매우 높은 위험을 수반하게 됩니다.
+이전 버전으로 되돌릴 수 있는 것은 모든 배포에서 항상 가능해야 합니다.
+
+>
+- Maintain forward and backward compatibility. This vital point strongly relates to the previous one. Changing file formats, interfaces, logging/ debugging, instrumentation, monitoring and contact points between components are all potential risk. Don't rip out support for old file formats until there is no chance of a roll back to that old format in the future.
+
+- 앞뒤 버전과의 호환성을 유지할 것.
+이 항목은 바로 앞의 것과 밀접한 관련이 있습니다.
+파일 포맷, 인터페이스, 로깅/디버깅, 계측, 모니터링, 컴포넌트 간의 연결 포인트를 변경하는 것은 모두 잠재적인 위험 요소입니다.
+미래에 '이전 포맷으로 롤백할 가능성이 사라질 때'까지는 이전 파일 포맷의 지원을 중단하면 안됩니다.
+
+>
+- Single-server deployment.
+This is both a test and development requirement.
+The entire service must be easy to host on a single system.
+Where single-server deployment is impossible for some component (e.g., a dependency on an external, non-single box deployable service), write an emulator to allow single-server testing.
+Without this, unit testing is difficult and doesn't fully happen.
+And if running the full system is difficult, developers will have a tendency to take a component view rather than a systems view.
+
+- 단일 서버 배포.
+이것은 테스트와 개발 관점의 요구 사항입니다.
+전체 서비스는 단일 시스템에서 쉽게 호스팅할 수 있어야 합니다.
+일부 컴포넌트 때문에 단일 서버 배포가 불가능하다면(예: 단일 서버 배포 불가능한 외부 서비스에 대한 의존), 단일 서버 테스트를 허용하는 에뮬레이터를 개발하세요.
+이렇게 하지 않으면 단위 테스트가 어렵고 완전히 수행되지도 않습니다.
+또한 전체 시스템을 실행하는 것이 어렵다면, 개발자들이 시스템 관점보다는 개별 컴포넌트 기준의 관점을 취하게 되는 경향이 있습니다.
+
+>
+- Stress test for load.
+Run some tiny subset of the production systems at twice (or more) the load to ensure that system behavior at higher than expected load is understood and that the systems don't melt down as the load goes up.
+
+
+- 부하 테스트를 수행할 것.
+예상보다 높은 부하에서 시스템이 어떻게 동작하는지 파악하고 부하가 증가해도 시스템이 다운되지는 않는지 확인하기 위해, 프로덕션 시스템의 작은 하위 집합에 두 배(또는 그 이상)의 부하를 주는 테스트를 하세요.
+
+>
+- Perform capacity and performance testing prior to new releases.
+Do this at the service level and also against each component since work load characteristics will change over time.
+Problems and degradations inside the system need to be caught early.
+
+- 새 릴리스 전에 용량 및 성능 테스트를 수행할 것.
+서비스 전체 레벨에서, 그리고 시간의 흐름에 따라서도 부하 특성이 달라질 수 있기 때문에 각 컴포넌트 단위에서 이런 테스트를 수행하세요.
+시스템 내부의 문제와 저하를 조기에 발견해야 합니다.
+
+
+>
+- Build and deploy shallowly and iteratively.
+Get a skeleton version of the full service up early in the development cycle.
+This full service may hardly do anything at all and may include shunts in places but it allows testers and developers to be productive and it gets the entire team thinking at the user level from the very beginning.
+This is a good practice when building any software system, but is particularly important for services.
+
+- 얕게, 반복적으로 빌드하고 배포할 것.
+개발에 들어선 주기 초반에 전체 서비스의 뼈대 버전을 빨리 만드세요.
+이렇게 만든 전체 서비스는 거의 아무것도 하지 않을 수도 있고, 몇몇 기능이 작동하지 않을 수도 있지만 테스터와 개발자가 생산적으로 일할 수 있게 해주며, 팀 전체가 처음부터 사용자 관점으로 생각하게 만들어줍니다.
+이것은 모든 종류의 소프트웨어 시스템을 구축할 때 좋은 방법이며 특히 서비스를 구축할 때 더 중요합니다.
+
+>
+- Test with real data.
+Fork user requests or workload from production to test environments.
+Pick up production data and put it in test environments.
+The diverse user population of the product will always be most creative at finding bugs.
+Clearly, privacy commitments must be maintained so it's vital that this data never leak back out into production.
+
+- 실제 데이터로 테스트할 것.
+프로덕션 환경의 사용자의 요청이나 워크로드 등을 테스트 환경으로 포크하세요.
+프로덕션 데이터를 가져와서 테스트 환경에 적용하세요.
+제품의 다양한 사용자 집단은 다양한 버그를 항상 가장 창의적인 방법으로 찾아내곤 합니다.
+물론 개인 정보 보호에 대한 약속을 지켜야 하므로, 이 데이터가 프로덕션 환경으로 다시 유출되지 않도록 주의해야 합니다.
+
+>
+- Run system-level acceptance tests. Tests that run locally provide sanity check that speeds iterative development. To avoid heavy maintenance cost they should still be at system level.
+
+- 시스템 레벨의 인수 테스트(acceptance test)를 수행할 것.
+로컬에서 실행하는 테스트는 반복적인 개발 속도를 가속화하는 건전성 검사를 제공합니다.
+유지 보수 비용이 많이 드는 것을 방지하려면 이런 테스트들은 여전히 시스템 레벨에서 수행되어야 합니다.
+
+
+>
+- Test and develop in full environments.
+Set aside hardware to test at interesting scale.
+Most importantly, use the same data collection and mining techniques used in production on these environments to maximize the investment.
+
+- 전체 환경에서 테스트하고 개발할 것.
+특정한 규모에서 테스트할 수 있는 하드웨어를 따로 마련하세요.
+가장 중요한 것은, 이 환경에서 프로덕션에서 사용하는 것과 동일한 데이터 수집 및 마이닝 기법을 사용해서 투자 효율을 극대화하는 것입니다.
 
 
 #### Hardware Selection and Standardization
+
+작업중
+
 #### Operations and Capacity Planning
 #### Auditing, Monitoring and Alerting
 #### Graceful Degradation and Admission Control
