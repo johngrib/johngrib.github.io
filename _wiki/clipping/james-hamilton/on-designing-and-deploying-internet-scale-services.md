@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-14 18:18:00 +0900
+updated : 2023-05-14 18:23:11 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -1654,13 +1654,19 @@ Each type of disaster should have a plan in place on who to call, when to call t
 커뮤니케이션 계획의 기본 골격이 이미 세워져 있어야 합니다.
 각각의 재난 유형에 따라 누구에게 전화를 걸고, 언제 전화를 걸고, 어떻게 커뮤니케이션을 처리할지 계획을 세워둬야 합니다.
 
-
-
-
-
-작업중
-
 #### Customer Self-Provisioning and Self-Help
+
+고객의 셀프 프로비저닝 및 셀프 문제해결
+
+>
+Customer self-provisioning substantially reduces costs and also increases customer satisfaction.
+If a customer can go to the web, enter the needed data and just start using the service, they are happier than if they had to waste time in a call processing queue.
+We've always felt that the major cell phone carriers miss an opportunity to both save and improve customer satisfaction by not allowing self-service for those that don't want to call the customer support group.
+
+고객의 셀프 프로비저닝은 비용을 크게 절감하고 고객 만족도를 높입니다.
+
+만약 고객이 웹에 접속해서 필요한 데이터를 스스로 입력하고 바로 서비스를 이용할 수 있다면, 고객은 상담원 전화 통화 대기열에서 시간을 낭비하는 것보다 더 만족할 것입니다.
+주요 휴대폰 통신사들은 고객센터에 전화하고 싶지 않은 고객들을 위한 셀프 서비스를 운영하고 있지 않는데, 우리는 통신사들이 비용을 절감하고 고객 만족도를 향상시킬 수 있는 기회를 놓치고 있다고 생각합니다.
 
 ### Conclusion
 
