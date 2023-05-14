@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-14 18:07:56 +0900
+updated : 2023-05-14 18:18:00 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -1607,6 +1607,56 @@ Another client-side trick that can be used to prevent them all synchronously ham
 클라이언트 측에서 사용할 수 있는 또 다른 트릭은 의도적인 지터(jitter)와 개별 엔티티 자동 백업을 도입해서 모든 클라이언트가 서버를 동기적으로 공격하는 것을 방지하는 것입니다.
 
 #### Customer and Press Communication Plan
+
+고객 및 언론과의 커뮤니케이션 계획
+
+>
+Systems fail, and there will be times when latency or other issues must be communicated to customers.
+Communications should be made available through multiple channels in an opt-in basis: RSS, web, instant messages, email, etc.
+For those services with clients, the ability for the service to communicate with the user through the client can be very useful.
+The client can be asked to back off until some specific time or for some duration.
+The client can be asked to run in disconnected, cached mode if supported.
+The client can show the user the system status and when full functionality is expected to be available again.
+
+시스템에 장애가 발생하여, 지연 시간이나 다른 문제를 고객에게 알려야 하는 경우도 있을 수 있습니다.
+커뮤니케이션은 RSS, 웹, 인스턴트 메시지, 이메일 등 다양한 채널을 통해 옵트인(opt-in) 방식으로 제공되어야 합니다.
+클라이언트가 있는 서비스의 경우, 서비스가 클라이언트를 통해 사용자와 소통할 수 있는 기능이 매우 유용할 수 있습니다.
+클라이언트에게 특정 시간까지 또는 특정 기간 동안 사용을 자제하도록(back off) 요청할 수 있습니다.
+지원되는 경우라면 클라이언트에게 연결이 끊긴 캐시 모드로 실행해 달라고 요청할 수도 있습니다.
+클라이언트는 사용자에게 시스템 상태와 전체 기능을 다시 사용할 수 있을 것으로 예상하는 시간을 보여줄 수 있습니다.
+
+>
+Even without a client, if users interact with the system via web pages for example, the system state can still be communicated to them.
+If users understand what is happening and have a reasonable expectation of when the service will be restored, satisfaction is much higher.
+There is a natural tendency for service owners to want to hide system issues but, over time, we've become convinced that making information on the state of the service available to the customer base almost always improves customer satisfaction.
+Even in no-charge systems, if people know what is happening and when it'll be back, they appear less likely to abandon the service.
+
+클라이언트가 없는 경우에도, 사용자가 웹 페이지 등을 통해 시스템과 상호작용하는 경우에도 시스템 상태를 사용자에게 알릴 수 있습니다.
+사용자가 현재 상황을 이해하고 서비스가 언제 복구되는지를 합리적으로 예상할 수 있다면 만족도가 훨씬 높아집니다.
+서비스 소유자는 시스템 문제를 숨기고 싶어하는 경향이 있지만, 우리는 시간이 지남에 따라 서비스 상태에 대한 정보를 고객에게 제공하는 것이 고객 만족도를 거의 항상 향상시킨다는 것을 확신하게 됐습니다.
+무료 시스템이라도 고객이 현재 상황과 복구 예상 시간을 알고 있다면 서비스를 포기할 가능성이 줄어듭니다.
+
+>
+Certain types of events will bring press coverage.
+The service will be much better represented if these scenarios are prepared for in advance.
+Issues like mass data loss or corruption, security breach, privacy violations, and lengthy service down-times can draw the press.
+Have a communications plan in place.
+Know who to call when and how to direct calls.
+The skeleton of the communications plan should already be drawn up.
+Each type of disaster should have a plan in place on who to call, when to call them, and how to handle communications.
+
+특정 유형의 이벤트는 언론에 보도될 수도 있습니다.
+이런 시나리오를 미리 대비해두면 훨씬 더 잘 대응하는 서비스가 될 수 있을 것입니다.
+대규모의 데이터 손실/손상, 보안 침해, 개인 정보 침해, 장기간의 서비스 다운타임과 같은 문제는 언론의 관심을 끌 수 있습니다.
+
+커뮤니케이션 계획을 미리 세워두세요.
+누구에게 언제 전화를 걸고 어떻게 통화를 이어나갈지 생각해둬야 합니다.
+커뮤니케이션 계획의 기본 골격이 이미 세워져 있어야 합니다.
+각각의 재난 유형에 따라 누구에게 전화를 걸고, 언제 전화를 걸고, 어떻게 커뮤니케이션을 처리할지 계획을 세워둬야 합니다.
+
+
+
+
 
 작업중
 
