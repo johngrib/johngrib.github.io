@@ -3,7 +3,7 @@ layout  : wiki
 title   : On Designing and Deploying Internet-Scale Services By James Hamilton - Windows Live Services Platform
 summary : 인터넷 규모의 서비스 설계와 배포에 대하여
 date    : 2023-05-11 22:01:08 +0900
-updated : 2023-05-14 18:23:11 +0900
+updated : 2023-05-14 18:29:38 +0900
 tag     : 
 resource: DA/DBCC95-AC92-4DFB-BD61-E7904C9B783D
 toc     : true
@@ -1670,12 +1670,51 @@ We've always felt that the major cell phone carriers miss an opportunity to both
 
 ### Conclusion
 
+결론
+
+>
+Reducing operations costs and improving service reliability for a high scale internet service starts with writing the service to be operations-friendly.
+In this document we define operations-friendly and summarize best practices in service design, development, deployment, and operation from engineers working on high-scale services.
+
+대규모 인터넷 서비스의 운영 비용을 절감하고 서비스의 신뢰성을 개선하는 것은 서비스를 운영 친화적으로 개발하는 것에서부터 시작됩니다.
+
+이 문서에서는 운영 친화적인 서비스를 정의하고 대규모 서비스를 담당하는 엔지니어의 서비스 설계, 개발, 배포 및 운영 모범 사례를 요약하였습니다.
+
 ### Acknowledgments
+
+감사 인사
+
+>
+We would like to thank Andrew Cencini (Rackable Systems), Tony Chen (Xbox Live), Filo D'Souza (Exchange Hosted Services & SQL Server), Jawaid Ekram (Exchange Hosted Services & Live Meeting), Matt Gambardella (Rackable Systems), Eliot Gillum (Windows Live Hotmail), Bill Hoffman (Windows Live Storage Platform), John Keiser (Windows Live Search), Anastasios Kasiolas (Windows Live Storage), David Nichols (Windows Live Messenger & Silverlight), Deepak Patil (Windows Live Operations), Todd Roman (Exchange Hosted Services), Achint Srivastava (Windows Live Search), Phil Smoot (Windows Live Hotmail), Yan Leshinsky (Windows Live Search), Mike Ziock (Exchange Hosted Services & Live Meeting), Jim Gray (Microsoft Research), and David Treadwell (Windows Live Platform Services) for background information, points from their experience, and comments on early drafts of this paper.
+We particularly appreciated the input from Bill Hoffman of the Windows Live Storate team and Achint Srivastava and John Keiser, both of the Windows Live Search team.
 
 ### Author Biography
 
+>
+James Hamilton is an architect on the Microsoft Live Platform Services team and has been with Microsoft for just over ten years. Previously, he led the Exchange Hosted Services team that provided email-related services to over two million users. He spent much of his first eight years at Microsoft as a member of the SQL Server team, where he led most of the core engine development teams.
+>
+Before joining Microsoft, James was lead architect for IBM's DB2 UDB relational database system, and earlier led the delivery of IBM's first C++ compiler. In the late 70's and early 80's he worked as a licensed auto mechanic servicing and racing exotic Italian cars. James' web site is <https://research.microsoft.com/~jamesrhand > his email is ... .
+
+James Hamilton은 Microsoft Live Platform Services 팀의 아키텍트로 10년 이상 Microsoft에서 근무하고 있습니다.
+이전에는 200만 명 이상의 사용자에게 이메일 관련 서비스를 제공하는 Exchange Hosted Services 팀을 이끌었습니다.
+Microsoft에 처음 8년 동안은 SQL Server 팀에서 대부분의 코어 엔진 개발 팀을 이끌었습니다.
+
+Microsoft에 입사하기 전에는 IBM의 DB2 UDB 관계형 데이터베이스 시스템의 수석 아키텍트였습니다.
+그 이전에는 IBM 최초의 C++ 컴파일러를 제공을 주도하였습니다.
+70년대 후반과 80년대 초반에는 이탈리아의 고급 스포츠카를 수리하고 경주하는 자동차 정비사로 일했습니다.
+James의 웹 사이트는 <https://research.microsoft.com/~jamesrhand > 이며, 이메일은 ... 입니다.
+
+
 ### References
 
+- [1] Isard, Michael, "Autopilot: Automatic Data Center Operation," Operating Systems Review, April, 2007, <https://research.microsoft.com/users/misard/papers/osr2007.pdf >.
+- [2] Patterson, David, Recovery Oriented Computing, Berkeley, CA, 2005, <https://roc.cs.berkeley.edu/ >.
+- [3] Patterson, David, Recovery Oriented Computing: A New Research Agenda for a New Century, February, 2002, <https://www.cs.berkeley.edu/~pattrsn/talks/HPCAkeynote.ppt >.
+- [4] Fox, Armando and D. Patterson, "Self-Repairing Computers," Scientific American, June, 2003, <https://www.sciam.com/article.cfm?articleID=000DAA41-3B4E-1EB7-BDC0809EC588EEDF > .
+- [5] Fox, Armando, Crash-Only Software, Stanford, CA, 2004, <https://crash.stanford.edu/ >.
+- [6] Hoffman, Bill, Windows Live Storage Platform, private communication, 2006.
+- [7] Shakib, Darren, Windows Live Search, private communication, 2004.
+- [8] Writing Secure Code, Second Edition, Howard, Michael, and David C. LeBlanc, <https://www.amazon.com/Writing-Secure-Second-Michael-Howard/dp/0735617228 >.
 
 ## 주석
 
