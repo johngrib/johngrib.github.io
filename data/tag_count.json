@@ -249,7 +249,7 @@
  },
  {
   "name": "dijkstra",
-  "size": 2
+  "size": 3
  },
  {
   "name": "docker",
@@ -1029,7 +1029,7 @@
  },
  {
   "name": "번역",
-  "size": 31
+  "size": 32
  },
  {
   "name": "벨-연구소",
