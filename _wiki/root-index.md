@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-17 22:20:29 +0900
+updated : 2023-05-18 23:26:27 +0900
 regenerate: true
 ---
 * TOC
@@ -103,6 +103,7 @@ regenerate: true
 * [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
 * [[/clipping/predicting-the-future]]
 * [[/clipping/roy-fielding/rest-paper]]
+* [[/clipping/out-of-the-tar-pit]]
 
 * [[/Software-Engineering-Code-of-Ethics]]
 * [[/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]

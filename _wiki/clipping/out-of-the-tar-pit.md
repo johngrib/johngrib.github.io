@@ -1,0 +1,228 @@
+---
+layout  : wiki
+title   : Out of the Tar Pit
+summary : 타르 구덩이에서 탈출하기
+date    : 2023-05-16 19:07:40 +0900
+updated : 2023-05-18 23:47:12 +0900
+tag     : 
+resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
+toc     : true
+public  : true
+parent  : [[/clipping]]
+latex   : false
+---
+* TOC
+{:toc}
+
+> 번역 중인 문서.
+{:style="background-color: #ecf1e8;"}
+
+- 원문
+    - [Out of the Tar Pit (PDF)]( https://curtclifton.net/papers/MoseleyMarks06a.pdf )
+    - [Out of the Tar Pit (papers-we-love)]( https://github.com/papers-we-love/papers-we-love/blob/main/design/out-of-the-tar-pit.pdf )
+
+## 번역
+
+### Abstract
+
+초록
+
+>
+Complexity is the single major diculty in the successful development of large-scale software systems.
+Following Brooks we distinguish accidental from essential diculty, but disagree with his premise that most complexity remaining in contemporary systems is essential.
+We identify common causes of complexity and discuss general approaches which can be taken to eliminate them where they are accidental in nature.
+To make things more concrete we then give an outline for a potential complexity-minimizing approach based on functional programming and Codd’s relational model of data.
+
+'복잡성'은 대규모 소프트웨어 시스템을 성공적으로 개발하는 데 있어 가장 큰 어려움입니다.
+우리는 Brooks가 제시한 우발적인 복잡성과 본질적인 복잡성을 구분하는 접근방법에는 동의하지만, 그가 주장하는 대로 현대 시스템에 남아있는 대부분의 복잡성이 본질적인 것이라는 주장에는 동의하지 않습니다.
+우리는 복잡성의 주요 원인들을 파악하고, 그것들이 우연한 성격의 복잡성인 경우 제거할 수 있는 일반적인 접근 방식을 논의합니다.
+그리고 더 구체적으로 설명하기 위해 함수형 프로그래밍과 Codd의 관계형 데이터 모델에 기반을 둔 복잡성을 최소화하는 잠재적인 접근법에 대한 개요를 제시합니다.
+
+### 1 Introduction
+
+1 서론
+
+>
+The "software crisis" was first identified in 1968 [NR69, p70] and in the intervening decades has deepened rather than abated. The biggest problem in the development and maintenance of large-scale software systems is complexity — large systems are hard to understand. We believe that the major contributor to this complexity in many systems is the handling of state and the burden that this adds when trying to analyse and reason about the system. Other closely related contributors are code volume, and explicit concern with the flow of control through the system.
+
+"소프트웨어 위기"론은 1968년에 처음으로 등장했습니다.
+그 이후 수십 년, 소프트웨어의 위기는 더 심각해졌으며 해결되지 못했습니다.
+대규모 소프트웨어 시스템의 개발 및 유지 관리에서 가장 큰 문제는 복잡성입니다(시스템이 클수록 이해하기 어렵습니다).
+우리는 많은 시스템에서 이 복잡성의 주요 원인이 '상태의 처리'와 이것이 시스템을 분석하고 이해하는 데 부과하는 부담이라고 믿습니다. 코드의 양과 시스템을 통한 제어 흐름에 대한 명확한 고려 등이 밀접하게 관련된 기여자들입니다.
+
+>
+The classical ways to approach the difficulty of state include object-oriented programming which tightly couples state together with related behaviour, and functional programming which — in its pure form — eschews state and side-effects all together.
+These approaches each suffer from various (and differing) problems when applied to traditional large-scale systems.
+
+상태의 어려움에 접근하는 고전적인 방법은 주로 두 가지입니다.
+하나는 상태를 관련된 동작과 밀접하게 결합시키는 객체지향 프로그래밍이고,
+다른 하나는 순수한 형식을 통해 상태와 사이드 이펙트를 모두 배제하는 함수형 프로그래밍입니다.
+
+이런 접근법들은 각각 전통적인 대규모 시스템에 적용할 때 각각 다양하고 서로 다른 문제들을 겪게 됩니다.
+
+>
+We argue that it is possible to take useful ideas from both and that — when combined with some ideas from the relational database world — this approach offers significant potential for simplifying the construction of large-scale software systems.
+
+우리는 두 가지 접근법 모두 우리에게 유용한 아이디어를 제공해 주며, 관계형 데이터베이스의 일부 아이디어와 결합하면 이런 접근법이 대규모 소프트웨어 시스템 구축을 단순화하는 데 상당한 잠재력을 발휘하게 될 것이라고 생각합니다.
+
+>
+The paper is divided into two halves.
+In the first half we focus on complexity.
+In section 2 we look at complexity in general and justify our assertion that it is at the root of the crisis, then we look at how we currently attempt to understand systems in section 3.
+In section 4 we look at the causes of complexity (i.e. things which make understanding difficult) before discussing the classical approaches to managing these complexity causes in section 5.
+In section 6 we define what we mean by “accidental” and “essential” and then in section 7 we give recommendations for alternative ways of addressing the causes of complexity — with an emphasis on avoidance of the problems rather than coping with them.
+>
+In the second half of the paper we consider in more detail a possible approach that follows our recommended strategy.
+We start with a review of the relational model in section 8 and give an overview of the potential approach in section 9.
+In section 10 we give a brief example of how the approach might be used.
+>
+Finally we contrast our approach with others in section 11 and then give conclusions in section 12.
+
+이 논문은 크게 두 부분으로 나눌 수 있습니다.
+
+- 전반부는 복잡성에 초점을 맞춥니다.
+    - 제2장에서는 일반적인 복잡성을 살펴보고, 이것이 위기의 근본적인 원인이라는 주장을 정당화한 다음,
+    - 제3장에서 우리가 시스템을 이해하려고 시도하는 현재의 방법들을 살펴봅니다.
+    - 제4장에서는 복잡성의 원인(이해를 어렵게 만드는 것들)을 살펴본 다음,
+    - 제5장에서 이런 복잡성의 원인이 되는 것들을 관리하기 위한 고전적인 접근 방식을 논의합니다.
+    - 제6장에서는 "우발적인"과 "본질적인"이라는 용어를 정의한 다음,
+    - 제7장에서 복잡성의 원인을 해결하는 대안적인 접근 방식을 제시합니다. 이때, 문제를 해결하는 것보다는 문제를 피하는 것에 중점을 둡니다.
+- 논문의 후반부에서는 우리가 권장하는 전략을 따르는 가능한 접근 방식을 더 자세히 살펴봅니다.
+    - 제8장에서는 관계형 모델에 대한 검토를 시작하고,
+    - 제9장에서 잠재적인 접근 방식에 대한 개요를 제시합니다.
+    - 제10장에서는 이런 접근 방식이 어떻게 사용될 수 있는지에 대한 간단한 예를 들어봅니다.
+    - 마지막으로, 제11장에서는 우리의 접근 방식을 다른 접근 방식과 대조하고,
+    - 제12장에서 결론을 내립니다.
+
+### 2 Complexity
+
+>
+In his classic paper — "No Silver Bullet" Brooks[Bro86] identified four properties of software systems which make building software hard: Complexity, Conformity, Changeability and Invisibility.
+Of these we believe that Complexity is the only significant one — the others can either be classified as forms of complexity, or be seen as problematic solely because of the complexity in the system.
+
+프레드 브룩스는 그의 고전이 된 논문인 "은총알은 없다"에서 소프트웨어 구축을 어렵게 만드는 소프트웨어 시스템의 네 가지 특성을 규명했습니다. 그것은 바로 '복잡성', '적합성', '변경 가능성', '비가시성'입니다.
+
+우리는 이들 중 복잡성만이 유일하게 중요하다고 생각하며, 다른 세 가지는 복잡성의 한 형태로 분류되거나, 시스템의 복잡성 때문에 문제가 되는 것으로 봅니다.
+
+>
+Complexity is the root cause of the vast majority of problems with software today.
+Unreliability, late delivery, lack of security — often even poor performance in large-scale systems can all be seen as deriving ultimately from unmanageable complexity.
+The primary status of complexity as the major cause of these other problems comes simply from the fact that being able to understand a system is a prerequisite for avoiding all of them, and of course it is this which complexity destroys.
+
+복잡성은 오늘날 소프트웨어와 관련된 대부분의 문제의 근본 원인이라 할 수 있습니다.
+불안정성, 지연된 일정, 부족한 보안, 심지어 대규모 시스템의 성능 저하까지 모두 따지고 보면 복잡성을 관리하기 어렵다는 것에서 비롯된 것으로 볼 수 있습니다.
+
+복잡성이 이렇게 다른 다양한 문제들의 주요 원인이 되는 이유는, 단순히 시스템을 일단 이해할 수 있어야 모든 가능한 문제를 피해낼 수 있다는 사실에서 비롯되는 것입니다. 그리고 복잡성이 파괴하는 것은 바로 그러한 '시스템을 이해하는 능력'입니다.
+
+>
+The relevance of complexity is widely recognised.
+As Dijkstra said [Dij97, EWD1243]:
+> >
+"...we have to keep it crisp, disentangled, and simple if we refuse to be crushed by the complexities of our own making..."
+>
+...and the Economist devoted a whole article to software complexity [Eco04] — noting that by some estimates software problems cost the American economy $59 billion annually.
+
+복잡성의 중요성은 널리 인식된 것이기도 합니다.
+Dijkstra가 말한 바와 같이,
+
+_"만약 우리가 자신이 만든 복잡성에 짓눌리고 싶지 않다면, 우리는 그것을 선명하게, 엉키지 않게, 그리고 단순하게 유지해야 합니다."_
+
+...그리고 Economist지는 소프트웨어 복잡성을 주제로 전체 기사를 할애하기도 했는데, 해당 기사에서는 소프트웨어 문제로 미국 경제가 연간 약 590억 달러의 손실을 보고 있다는 추정값에 주목했습니다.
+
+>
+Being able to think and reason about our systems (particularly the effects of changes to those systems) is of crucial importance.
+The dangers of complexity and the importance of simplicity in this regard have also been a popular topic in ACM Turing award lectures.
+In his 1990 lecture Corbato said [Cor91]:
+
+> >
+"The general problem with ambitious systems is complexity.",
+"...it is important to emphasize the value of simplicity and elegance, for complexity has a way of compounding diculties"
+
+시스템에 대해 생각하고, 특히 그 시스템에 변화가 생길 경우 그 영향에 대해 추론할 수 있는 능력은 매우 중요합니다.
+복잡성이 얼마나 위험하고 단순함이 얼마나 중요한지는 ACM Turing award 강연에서도 인기 있는 주제였습니다.
+Corbato는 1990년 튜링상 수상 강연에서 다음과 같이 말했습니다.
+
+- _"야심차게 만든 시스템에서 일반적으로 발생하는 문제는 복잡성입니다."_
+- _"...단순함과 우아함의 가치를 강조하는 것이 중요합니다. 왜냐하면 복잡성은 어려움을 복리적으로 증가시키는 경향이 있기 때문입니다."_
+
+>
+In 1977 Backus [Bac78] talked about the "complexities and weaknesses" of traditional languages and noted:
+
+> >
+"there is a desperate need for a powerful methodology to help us think about programs.
+... conventional languages create unnecessary confusion in the way we think about programs"
+
+그리고 1997년, Backus도 튜링상 수상 강연에서 전통적인 언어들의 "복잡성과 약점"을 언급하며 다음과 같이 이야기했습니다.
+
+_"프로그램에 대해 생각하는 데 도움이 되는 강력한 방법론이 절실하게 필요합니다.
+... 기존의 언어들은 우리가 프로그램을 생각하는 방식에 오히려 불필요한 혼란을 일으킵니다."_
+
+>
+Finally, in his Turing award speech in 1980 Hoare [Hoa81] observed:
+> >
+"...there is one quality that cannot be purchased... — and that is reliability.
+The price of reliability is the pursuit of the utmost simplicity"
+
+>
+and
+
+> >
+"I conclude that there are two ways of constructing a software design:
+One way is to make it so simple that there are obviously no deficiencies and the other way is to make it so complicated that there are no obvious deficiencies.
+The first method is far more difficult."
+
+마지막으로, 1980년 튜링상 수상 강연에서 Hoare는 다음과 같이 말했습니다.
+
+_"...돈으로도 얻을 수 없는 하나의 품질이 있습니다... 그것은 신뢰성입니다.
+신뢰성의 대가는 극도의 단순함을 추구하는 것입니다."_
+
+그리고
+
+_"나는 소프트웨어를 설계하는 방법에는 두 가지가 있다고 결론내렸습니다.
+한 가지 방법은 결함이 없다는 것이 명백한 정도로 단순하게 만드는 것이고,
+다른 한 가지 방법은 결함이 없다는 것이 명백한 정도로 복잡하게 만드는 것입니다.
+그리고 첫 번째 방법이 훨씬 더 어렵습니다."_
+
+>
+This is the unfortunate truth:
+
+>
+Simplicity is Hard
+{:style="text-align:center;"}
+
+>
+...but the purpose of this paper is to give some cause for optimism.
+
+불행히도 이것이 진실입니다.
+
+단순함은 달성하기 어렵다.
+{:style="text-align:center;"}
+
+...하지만 이 논문의 목적은 긍정적으로 볼 수 있는 근거를 제시하는 것입니다.
+
+>
+One final point is that the type of complexity we are discussing in this paper is that which makes large systems hard to understand.
+It is this that causes us to expend huge resources in creating and maintaining such systems.
+This type of complexity has nothing to do with complexity theory — the branch of computer science which studies the resources consumed by a machine executing a program.
+The two are completely unrelated — it is a straightforward matter to write a small program in a few lines which is incredibly simple (in our sense) and yet is of the highest complexity class (in the complexity theory sense).
+From this point on we shall only discuss complexity of the first kind.
+>
+We shall look at what we consider to be the major common causes of complexity (things which make understanding difficult) after first discussing exactly how we normally attempt to understand systems.
+
+마지막으로 이 논문에서 논의하는 종류의 복잡성은, '대규모 시스템을 이해하기 어렵게 만드는 종류의 복잡성'을 말한다는 것입니다.
+'이런 종류의 복잡성' 때문에 우리는 시스템을 만들고 유지보수하는 데에 막대한 자원을 소모하게 됩니다.
+프로그램을 실행하는 기계가 소비하는 리소스를 연구하는 컴퓨터 과학의 한 분야인 '복잡성 이론'과 '이런 종류의 복잡성'은 아무런 관련이 없습니다.
+몇 줄로 된 작은 프로그램은 우리가 보기에는 매우 간단한 것이지만,
+복잡성 이론의 관점에서 보면 가장 높은 복잡성 유형에 속하는 문제인 것입니다.
+
+이제부터 우리는 첫 번째 종류의 복잡성에 대해서만 논의하겠습니다.
+
+우리는 일단 시스템을 이해하려고 할 때 보통 어떤 방식으로 노력하는지에 대해 정확히 논의한 후,
+이해를 어렵게 만드는 복잡성의 주요한 공통적인 원인들에 대해 살펴보려 합니다.
+
+### 3 Approaches to Understanding
+
+시스템을 이해하려 할 때의 접근 방식들
+
+4쪽
+
