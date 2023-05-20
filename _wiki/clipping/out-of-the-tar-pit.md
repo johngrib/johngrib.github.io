@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-18 23:47:12 +0900
+updated : 2023-05-20 12:04:38 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -224,5 +224,109 @@ We shall look at what we consider to be the major common causes of complexity (t
 
 시스템을 이해하려 할 때의 접근 방식들
 
-4쪽
+>
+We argued above that the danger of complexity came from its impact on our attempts to understand a system.
+Because of this, it is helpful to consider the mechanisms that are commonly used to try to understand systems.
+We can then later consider the impact that potential causes of complexity have on these approaches.
+There are two widely-used approaches to understanding systems (or components of systems):
+>
+**Testing**
+This is attempting to understand a system from the outside — as a "black box".
+Conclusions about the system are drawn on the basis of observations about how it behaves in certain specific situations.
+Testing may be performed either by human or by machine.
+The former is more common for whole-system testing, the latter more common for individual component testing.
+>
+**Informal Reasoning**
+This is attempting to understand the system by examining it from the inside.
+The hope is that by using the extra information available, a more accurate understanding can be gained.
+
+앞에서 우리는 '시스템을 이해하기 어렵게 만든다'는 지점에서 복잡성이 위험하다고 주장했습니다.
+따라서, 시스템을 이해하려 할 때 일반적으로 사용되곤 하는 메커니즘을 살펴보는 것이 도움이 될 것입니다.
+그리고 나서 복잡성의 잠재적 원인이 이러한 접근 방식에 미치는 영향을 나중에 고려할 수 있을 것입니다.
+시스템, 또는 시스템을 구성하는 컴포넌트들을 이해하려 할 때 널리 사용되는 두 가지 접근 방식은 다음과 같습니다.
+
+**테스팅**
+
+이 방법은 시스템을 '블랙박스'처럼 외부의 관점에서 이해하려 시도하는 것입니다.
+따라서 특정한 상황에서 시스템이 어떻게 동작하는지에 대한 관찰을 바탕으로 시스템에 대한 결론을 도출합니다.
+이러한 테스트는 사람 또는 머신에 의해 수행될 수 있습니다.
+전자는 전체 시스템 테스트에 더 많이 사용되고, 후자는 개별 컴포넌트 테스트에 더 많이 사용됩니다.
+
+**비형식적 추론**
+
+이 방법은 시스템을 내부에서 살펴보면서 이해하려는 것입니다.
+가용한 추가적인 정보를 사용하여 보다 정확한 이해를 얻기를 바라는 활동입니다.
+
+>
+Of the two informal reasoning is the most important by far.
+This is because — as we shall see below — there are inherent limits to what can be achieved by testing, and because informal reasoning (by virtue of being an inherent part of the development process) is always used.
+The other justification is that improvements in informal reasoning will lead to less errors being created whilst all that improvements in testing can do is to lead to more errors being detected.
+As Dijkstra said in his Turing award speech [Dij72, EWD340]:
+
+> >
+"Those who want really reliable software will discover that they must find means of avoiding the majority of bugs to start with."
+
+>
+and as O’Keefe (who also stressed the importance of “understanding your problem” and that “Elegance is not optional”) said [O’K90]:
+
+> >
+“Our response to mistakes should be to look for ways that we can avoid making them, not to blame the nature of things.”
+
+이들 중 '비형식적 추론'이 훨씬 중요합니다.
+아래에서 살펴보겠지만, 테스팅을 통해 얻을 수 있는 것에는 본질적인 한계가 있는 반면, '비형식적 추론'은 개발 프로세스의 본질적인 부분이므로 항상 사용되고 있기 때문입니다.
+그리고 비형식적 추론이 개선되면 오류가 더 적게 발생하게 되지만, 테스팅은 개선한다 해도 더 많은 오류를 찾아낼 수 있을 뿐입니다.
+Dijkstra는 튜링상 수상 강연에서 다음과 같이 말한 바 있습니다.
+
+_"정말 신뢰할 수 있는 소프트웨어를 원하는 사람들은, 처음부터 대부분의 버그를 피할 수 있는 방법을 찾아야 한다는 것을 깨닫게 될 것입니다."_
+
+그리고 ("문제를 이해하는 것"의 중요성과 "우아함은 선택 사항이 아니다"라는 것을 강조한) O'Keefe는 다음과 같이 말했습니다.
+
+_"실수에 대한 우리의 대응은, 사물의 본질을 탓하는 것이 아니라 실수를 저지르지 않을 방법을 찾는 것이어야 합니다."_
+
+>
+The key problem with testing is that a test (of any kind) that uses one particular set of inputs tells you nothing at all about the behaviour of the system or component when it is given a different set of inputs.
+The huge number of different possible inputs usually rules out the possibility of testing them all, hence the unavoidable concern with testing will always be — have you performed the right tests?.
+The only certain answer you will ever get to this question is an answer in the negative — when the system breaks.
+Again, as Dijkstra observed [Dij71, EWD303]:
+> >
+“testing is hopelessly inadequate....(it) can be used very effectively to show the presence of bugs but never to show their absence.”
+>
+We agree with Dijkstra. Rely on testing at your peril.
+
+테스팅의 중요한 문제점은 (어떤 종류가 되었건 간에) 특정 입력 세트를 사용하는 테스트는, 다른 입력 세트가 주어졌을 때 시스템 또는 컴포넌트의 동작에 대해 전혀 알려주지 않는다는 것입니다.
+
+가능한 입력의 경우의 수가 너무 많기 때문에 일반적으로 모든 입력을 테스트하는 것은 불가능합니다.
+따라서 테스트에 대한 피할 수 없는 고민은 항상 '올바른 테스트를 수행했는가?'가 될 수 밖에 없습니다.
+이 질문에 대한 유일하고 확실한 답은 바로, 시스템에 고장이 났을 때 발생하는 부정적인 결과를 확인하는 것입니다.
+다시 Dijkstra를 인용해보겠습니다.
+
+_"테스트는 절망적으로 부적절하다... (테스트는) 버그의 존재를 보여주는 데는 매우 효과적으로 사용될 수 있지만 버그가 없다는 것을 보여주는 데에는 결코 사용될 수 없다."_
+
+우리도 Dijkstra의 말에 동의합니다.
+테스팅에 과도하게 의존하면 위험합니다.
+
+>
+This is not to say that testing has no use.
+The bottom line is that all ways of attempting to understand a system have their limitations (and this includes both informal reasoning — which is limited in scope, imprecise and hence prone to error — as well as formal reasoning — which is dependent upon the accuracy of a specification).
+Because of these limitations it may often be prudent to employ both testing and reasoning together.
+>
+It is precisely because of the limitations of all these approaches that simplicity is vital.
+When considered next to testing and reasoning, simplicity is more important than either.
+Given a stark choice between investment in testing and investment in simplicity, the latter may often be the better choice because it will facilitate all future attempts to understand the system — attempts of any kind.
+
+이것은 테스팅이 무의미하다는 말이 아닙니다.
+시스템을 이해하려는 모든 방법에는 한계가 있다는 것이 핵심입니다.
+(여기에는 범위가 제한적이고 부정확해서 오류가 발생하기 쉬운 '비형식적 추론'과, 스펙의 정확성에 의존하는 '형식적 추론'이 모두 포함됩니다.)
+이러한 한계로 인해 테스팅과 추론을 함께 사용하는 것이 현명한 선택일 수 있습니다.
+
+이러한 모든 접근 방법들에 한계가 있기 때문에, 단순성이 매우 중요합니다.
+테스팅, 그리고 추론과 동등하게 놓고 고려해 봤을 때, 단순성은 이들 중 어느 것보다 더 중요합니다.
+테스팅에 대한 투자와 단순성에 대한 투자 사이에서 강력한 선택을 해야 하는 상황이라면, 단순성에 대한 투자가 더 나은 선택일 수 있습니다.
+왜냐하면 단순성은 '어떠한 방식으로든 시스템을 이해하려 하는 모든 미래의 시도'들을 용이하게 만들어주기 때문입니다.
+
+### 4 Causes of Complexity
+
+복잡성의 원인
+
+5쪽
 
