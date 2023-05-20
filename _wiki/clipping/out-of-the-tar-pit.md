@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-21 07:38:33 +0900
+updated : 2023-05-21 08:08:44 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -661,10 +661,78 @@ We believe that — with the effective management of the two major complexity ca
 
 복잡성의 다른 원인들
 
-11쪽
+>
+Finally there are other causes, for example: duplicated code, code which is never actually used (“dead code”), **unnecessary abstraction**,[^orig-03] missed abstraction, poor modularity, poor documentation...
+>
+All of these other causes come down to the following three (inter-related) principles:
+
+마지막으로 그 외의 다른 원인들이 있습니다.
+중복된 코드, 실제로는 사용되지 않는 코드("죽은 코드"), 불필요한 추상화,[^orig-03] 누락된 추상화, 적절하지 않은 모듈화, 좋지 않은 문서화...
+
+>
+**Complexity breeds complexity**
+There are a whole set of secondary causes of complexity.
+This covers all complexity introduced as a result of not being able to clearly understand a system.
+Duplication is a prime example of this — if (due to state, control or code volume) it is not clear that functionality already exists, or it is too complex to understand whether what exists does exactly what is required, there will be a strong tendency to duplicate.
+This is particularly true in the presence of time pressures.
+
+**복잡성은 복잡성을 낳는다**
+
+복잡성의 이차적인 원인은 다양합니다.
+시스템을 명확하게 이해할 수 없기 때문에 발생하는 모든 복잡성이 여기에 포함됩니다.
+중복이 이러한 복잡성의 대표적인 예입니다.
+(상태, 제어 또는 코드의 양 때문에) 기능이 이미 존재하는지 명확하지 않거나,
+기존의 기능이 요구되는 기능을 정확히 수행하는지 이해하기가 너무 복잡하다면, 중복의 가능성이 높아집니다.
+특히 일정의 압박이 있는 경우에 더욱 그렇습니다.
+
+>
+**Simplicity is Hard**
+This was noted above — significant effort can be required to achieve simplicity.
+The first solution is often not the most simple, particularly if there is existing complexity, or time pressure.
+Simplicity can only be attained if it is recognised, sought and prized.
+
+**단순함은 달성하기 어렵다**
+
+앞에서 언급한 바와 같이 단순성을 달성하기 위해서는 상당한 노력이 필요할 수 있습니다.
+이미 존재하는 복잡성이 있거나 일정의 압박이 있는 경우에는, 첫 번째 솔루션이 가장 단순한 종류의 것이 아닌 경우가 많습니다.
+
+단순함을 인식하고, 추구하고, 중요하게 여기는 경우에만 단순함을 달성할 수 있습니다.
+
+>
+**Power corrupts**
+What we mean by this is that, in the absence of language-enforced guarantees (i.e. restrictions on the power of the language) mistakes (and abuses) will happen.
+This is the reason that garbage collection is good — the power of manual memory management is removed.
+Exactly the same principle applies to state — another kind of power.
+In this case it means that we need to be very wary of any language that even permits state, regardless of how much it discourages its use (obvious examples are ML and Scheme).
+The bottom line is that the more powerful a language (i.e. the more that is possible within the language), the harder it is to understand systems constructed in it.
+
+**권력은 부패한다**
+
+이것은 언어에 대한 제한(즉, 언어의 권력에 대한 제한)이 없으면 실수 및 남용이 발생할 수 있다는 뜻입니다.
+가비지 컬렉션이 좋은 이유이기도 합니다.
+가비지 컬렉션은 수동 메모리 관리의 권력을 제거하기 때문입니다.
+
+이와 동일한 원칙이 '상태'라는 또 다른 형태의 권력에도 적용됩니다.
+이 경우에는 상태를 허용하는 모든 언어를 사용할 때에는 아무리 사용을 억제하더라도, 극도로 주의해야 한다는 뜻입니다(ML과 Scheme이 대표적인 예입니다).
+
+결론은 강력한 언어일수록(즉, 언어 내에서 가능한 것이 많을수록) 그 언어로 구성된 시스템은 이해하기가 더 어렵다는 것입니다.
+
+>
+Some of these causes are of a human-nature, others due to environmental issues, but all can — we believe — be greatly alleviated by focusing on effective management of the complexity causes discussed in sections 4.1–4.3.
+
+이러한 원인 중 일부는 인간의 본성에 기인하는 것이고, 다른 일부는 환경 문제로 비롯된 것들입니다.
+그러나 우리는 4.1~4.3 절에서 논의한 복잡성의 원인을 효과적으로 관리하는 데 집중하면 이런 원인들을 모두 상당히 완화할 수 있다고 믿습니다.
+
+### 5 Classical approaches to managing complexity
+
+복잡성 관리를 위한 고전적인 접근법
+
+12쪽
 
 ## 주석
 
 [^orig-01]: 원주: By “state” we mean mutable state specifically — i.e. excluding things like (immutable) single-assignment variables which are provided by logic programming languages for example <br/> 번역: "상태"란 특별히 변경 가능한 상태(mutable state)를 의미합니다. 예를 들어 논리 프로그래밍 언어에서 제공하는 (불변) 단일 할당 변수와 같은 것은 이 개념에서 제외됩니다.
 
 [^orig-02]: 원주: Indeed early versions of the Oz language (with implicit concurrency at the statement level) were somewhat of this kind [vRH04, p809] <br/> 번역: 실제로 Oz 프로그래밍 언어의 초기 버전이 바로 이런 종류의 언어였습니다.(명령문 수준에서 암시적인 동시성이 있었음) 
+
+[^orig-03]: 원주: Particularly unnecessary data abstraction. We examine an argument that this is actually most data abstraction in section 9.2.4. <br/> 번역: 특히 불필요한 데이터 추상화. 9.2.4 절에서 이것이 실제로 대부분의 데이터 추상화에 해당한다는 주장을 살펴봅니다.
