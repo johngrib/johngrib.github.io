@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-20 19:29:08 +0900
+updated : 2023-05-20 20:39:07 +0900
 regenerate: true
 ---
 * TOC
@@ -100,10 +100,11 @@ regenerate: true
 * [[/clipping/kafka-a-distributed-messaging-system-for-log-processing]]
 * [[/clipping/leslie-lamport/paxos-made-simple]]
 * [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]
+* [[/clipping/out-of-the-tar-pit]]
 * [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
 * [[/clipping/predicting-the-future]]
 * [[/clipping/roy-fielding/rest-paper]]
-* [[/clipping/out-of-the-tar-pit]]
+* [[/clipping/the-unix-time-sharing-system]]
 
 * [[/Software-Engineering-Code-of-Ethics]]
 * [[/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
