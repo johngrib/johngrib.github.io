@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-18 23:26:27 +0900
+updated : 2023-05-20 18:20:13 +0900
 regenerate: true
 ---
 * TOC
@@ -322,6 +322,7 @@ regenerate: true
 * [[/java/hashmap]]
 * [[/java/inner-class-may-be-static]]
 * [[/java/javadoc]]
+* [[/java/mockito]]
 * [[/java/object-clone]]
 * [[/java/object-equals]]
 * [[/java/object-hashcode]]
@@ -343,7 +344,6 @@ regenerate: true
 * [[/java-interface]]
 * [[/java-jigsaw-quick-start]]
 * [[/java-lambda]]
-* [[/java-mockito]]
 * [[/java-modifier-order-with-jls-suggestion]]
 * [[/java-random]]
 * [[/java-remainder-operator]]
