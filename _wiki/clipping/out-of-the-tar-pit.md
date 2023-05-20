@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-20 12:04:38 +0900
+updated : 2023-05-20 12:17:51 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -327,6 +327,15 @@ Given a stark choice between investment in testing and investment in simplicity,
 ### 4 Causes of Complexity
 
 복잡성의 원인
+
+>
+In any non-trivial system there is some complexity inherent in the problem that needs to be solved.
+In real large systems however, we regularly encounter complexity whose status as “inherent in the problem” is open to some doubt.
+We now consider some of these causes of complexity.
+
+사소하지 않은 모든 시스템에서는 해결해야 하는 문제 자체에 복잡성이 내재되어 있습니다.
+그러나 실제의 대규모 시스템에서 마주하게 되는 복잡성들은 '문제에 내재된'것인지 아닌지 구별하기 어려운 경우가 자주 있습니다.
+이제 이러한 복잡성의 원인들 중 몇 가지를 살펴보겠습니다.
 
 5쪽
 
