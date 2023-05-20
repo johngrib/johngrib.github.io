@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-20 23:08:20 +0900
+updated : 2023-05-21 07:38:33 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -595,8 +595,73 @@ Running a test in the presence of concurrency with a known initial state and set
 
 #### 4.3 Complexity caused by Code Volume
 
-10쪽
+코드의 양 때문에 발생하는 복잡성
 
+>
+The final cause of complexity that we want to examine in any detail is sheer code volume.
+
+마지막으로 살펴볼 복잡성의 원인은 코드의 양입니다.
+
+>
+This cause is basically in many ways a secondary effect — much code is simply concerned with managing state or specifying control.
+Because of this we shall often not mention code volume explicitly.
+It is however worth brief independent attention for at least two reasons — firstly because it is the easiest form of complexity to measure, and secondly because it interacts badly with the other causes of complexity and this is important to consider.
+>
+Brooks noted [Bro86]:
+> >
+“Many of the classic problems of developing software products derive from this essential complexity and its nonlinear increase with size”
+
+이 원인은 많은 측면에서 부차적인 효과(secondary effect)에 불과합니다.
+많은 양의 코드는 단순히 상태를 관리하거나 제어를 지정하는 데 관여합니다.
+따라서 코드의 양에 대해서는 가급적 명시적으로 언급하지 않을 것입니다.
+그러나 적어도 두 가지 이유 때문에 이 문제는 별도로 주목할만한 가치가 있습니다.
+
+- 첫째, 코드의 양은 측정하기 가장 쉬운 형태의 복잡성이기 때문입니다.
+- 둘째, 코드의 양은 복잡성의 다른 원인과 부정적으로 상호작용을 하는데, 이는 중요하게 고려해야 하는 문제입니다.
+
+Brooks는 다음과 같이 말했습니다.
+
+_"소프트웨어 제품 개발의 고전적인 문제들 중 상당수는, '본질적인 복잡성'과 그러한 복잡성이 크기에 따라 비선형적으로 증가한다는 것으로부터 유래합니다."_
+
+>
+We basically agree that in most current systems this is true (we disagree with the word “essential” as already noted) — i.e. in most systems complexity definitely does exhibit nonlinear increase with size (of the code).
+This non-linearity in turn means that it’s vital to reduce the amount of code to an absolute minimum.
+
+우리는 기본적으로 현대적인 시스템의 대부분에서 이 문제가 사실이라는 점에 동의합니다(이미 언급했듯이 "본질적인"이라는 단어에는 동의하지 않습니다).
+즉, 대부분의 시스템에서 복잡성은 코드의 규모에 따라 비선형적으로 증가하는 것이 확실합니다.
+
+이러한 비선형성은 결국 코드의 양을 가능한 한 최소한으로 줄이는 것이 중요하다는 것을 의미합니다.
+
+>
+We also want to draw attention to one of Dijkstra’s [Dij72, EWD340] thoughts on this subject:
+> >
+“It has been suggested that there is some kind of law of nature telling us that the amount of intellectual e↵ort needed grows with the square of program length.
+But, thank goodness, no one has been able to prove this law.
+And this is because it need not be true.
+... I tend to the assumption — up till now not disproved by experience — that by suitable application of our powers of abstraction, the intellectual e↵ort needed to conceive or to understand a program need not grow more than proportional to program length.”
+
+우리는 또한 이 주제에 대한 Dijkstra의 생각 중 하나에 주목하고 싶습니다.
+
+"지적 노력의 양이, 프로그램 길이의 제곱에 비례하여 증가한다는 일종의 자연법칙이 있다는 주장이 제기되어 왔습니다.
+하지만 다행히도, 아무도 이 법칙을 증명하지 못했습니다.
+그리고 이 법칙은 꼭 사실일 필요도 없습니다.
+... 나는 지금까지의 경험을 통해, 추상화 능력을 적절히 적용하면 프로그램을 구상하거나 이해하는 데 필요한 지적 능력이 프로그램 길이에 비례하지 않아도 된다고 생각하는 편입니다.
+
+>
+We agree with this — it is the reason for our “in most current systems” caveat above.
+
+We believe that — with the effective management of the two major complexity causes which we have discussed, state and control — it becomes far less clear that complexity increases with code volume in a non-linear way.
+
+우리는 Dijkstra의 이 말에 동의하기 때문에 앞에서 "현대적인 시스템의 대부분에서"라고 주의깊게 언급한 것입니다.
+
+앞에서 논의한 두 가지의 주요한 복잡성 원인인 '상태'와 '제어'를 효과적으로 관리한다면,
+코드의 양에 따라 복잡성이 비선형적으로 증가하는 문제를 훨씬 약화시킬 것이라고 믿습니다.
+
+#### 4.4 Other causes of complexity
+
+복잡성의 다른 원인들
+
+11쪽
 
 ## 주석
 
