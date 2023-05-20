@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-20 18:16:53 +0900
+updated : 2023-05-20 22:01:43 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -435,7 +435,55 @@ Each introduces a huge amount of uncertainty, and we are left with very little a
 
 상태가 비형식적 추론에 미치는 영향
 
-7쪽
+>
+In addition to causing problems for understanding a system from the outside, state also hinders the developer who must attempt to reason (most commonly on an informal basis) about the expected behaviour of the system “from the inside”.
+
+상태는 외부에서 시스템을 이해하는 데 문제를 일으킬 뿐만 아니라, '내부에서' 시스템의 예상 동작을 추론(일반적으로 비형식적인 추론 기반)해야 하는 개발자에게도 방해가 됩니다.
+
+>
+The mental processes which are used to do this informal reasoning often revolve around a case-by-case mental simulation of behaviour: “if this variable is in this state, then this will happen — which is correct — otherwise that will happen — which is also correct”.
+As the number of states — and hence the number of possible scenarios that must be considered — grows, the e↵ectiveness of this mental approach buckles almost as quickly as testing (it does achieve some advantage through abstraction over sets of similar values which can be seen to be treated identically).
+
+이러한 비형식적 추론에 동원되는 정신적 프로세스는 종종 동작 사례에 대한 정신적인 시뮬레이션을 중심으로 이루어집니다.
+"만약에 이 변수가 이런 상태에 있다면, 이런 일이 일어나겠지. 음 이건 맞고, 그렇지 않으면 저런 일이 일어나겠지. 음 이것도 맞고." 이런 식으로 말이죠.
+
+상태의 수와 고려해야 하는 가능한 시나리오들의 수가 증가함에 따라, 이런 정신적인 접근 방식의 효율성은 테스팅만큼이나 빠르게 떨어져버립니다. (다만 테스팅은 동일하게 취급되는 것으로 볼 수 있는 유사한 값 집합에 비해서는 추상화를 통해 꽤나 이득을 얻을 수 있습니다.)
+
+>
+One of the issues (that affects both testing and reasoning) is the exponential rate at which the number of possible states grows — for every single bit of state that we add we double the total number of possible states.
+Another issue — which is a particular problem for informal reasoning — is contamination.
+
+테스팅과 추론 모두에 영향을 미치는 문제 중 하나는, 가능한 상태의 수가 기하급수적으로 증가한다는 것입니다.
+상태를 하나 추가할 때마다 가능한 상태의 총 수가 두 배로 늘어납니다.
+그리고 비형식적 추론에서 특히 문제가 되는 또 다른 문제는 오염(contamination)입니다.
+
+>
+Consider a system to be made up of procedures, some of which are stateful and others which aren’t.
+We have already discussed the difficulties of understanding the bits which are stateful, but what we would hope is that the procedures which aren’t themselves stateful would be more easy to comprehend.
+Alas, this is largely not the case.
+If the procedure in question (which is itself stateless) makes use of any other procedure which is stateful — even indirectly — then all bets are off, our procedure becomes contaminated and we can only understand it in the context of state.
+If we try to do anything else we will again run the risk of all the classic state-derived problems discussed above.
+As has been said, the problem with state is that “when you let the nose of the camel into the tent, the rest of him tends to follow”.
+
+어떤 시스템 하나가 프로시저들로 만들어져 있는데, 그 프로시저 중 몇몇은 상태 기반이고 나머지는 그렇지 않다고 가정해 봅시다.
+우리는 이미 상태 기반 비트를 이해하는 것에 대한 어려움을 이야기한 바 있습니다.
+따라서 상태 기반이 아닌 프로시저는 이해하기 쉬우면 좋겠지만, 아쉽게도 그렇지 않습니다.
+
+만약 문제의 프로시저(stateless)가 '간접적으로라도' 상태 기반의 다른 프로시저를 사용한다면,
+이 프로시저도 오염이 되어 '상태의 문맥'에서만 이해할 수 있게 되어버립니다.
+그리고 그 외의 다른 작업을 시도한다 해도 위에서 언급한 전형적인 상태 기반 문제들을 다시 한 번 마주하게 될 위험이 있습니다.
+앞에서 말했듯이, 상태의 문제는 _"낙타의 코를 텐트 안으로 들여보내면, 낙타의 나머지 몸뚱이도 코를 따라가는 경향이 있다"_ 는 말과 비슷합니다.
+
+>
+As a result of all the above reasons it is our belief that the single biggest remaining cause of complexity in most contemporary large systems is state, and the more we can do to limit and manage state, the better.
+
+위의 모든 이유로 인해, 대부분의 현대적인 대규모 시스템에서 복잡성을 유발하는 가장 큰 원인은 상태이며, 상태를 제한하고 관리하기 위해 할 수 있는 일이 많을수록 더 좋다고 생각합니다.
+
+#### 4.2 Complexity caused by Control
+
+제어로 인한 복잡성
+
+8쪽
 
 
 ## 주석
