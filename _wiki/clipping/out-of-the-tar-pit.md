@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-21 11:48:46 +0900
+updated : 2023-05-21 12:28:37 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -912,7 +912,7 @@ There are also concurrent versions of many functional languages, and the fact th
 
 (함수 인수의 계산 우선순위에 대해) 대부분의 함수형 언어는 암묵적으로 (왼쪽에서 오른쪽으로) 순서를 지정하므로 위에서 언급한 것과 동일한 문제에 직면하게 됩니다.
 
-함수형 언어는 명시적인 loop 대신, 함수(예: fold/map)를 사용하여 제어를 더 추상적으로 사용하도록 권장하므로, 제어에 관해서는 약간의 이점을 얻게 됩니다.
+함수형 언어는 명시적인 loop 대신, 함수(예: fold/map[^fold-map])를 사용하여 제어를 더 추상적으로 사용하도록 권장하므로, 제어에 관해서는 약간의 이점을 얻게 됩니다.
 
 또한 많은 함수형 언어들에는 동시성에 대한 버전도 있으며, 이 언어들이 일반적으로 '상태'를 피하는 방식이라는 사실 덕분에 동시성 측면에서 이점을 얻을 수 있습니다(예를 들어 순수한 함수형 언어에서는 함수의 모든 인수를 병렬로 평가해도 안전합니다).
 
@@ -920,8 +920,84 @@ There are also concurrent versions of many functional languages, and the fact th
 
 상태의 종류
 
+>
+In most of this paper when we refer to “state” what we really mean is mutable state.
 
-16쪽
+이 페이퍼에서 사용하는 '상태(state)'라는 용어는, '변경 가능한 상태(mutable state)'를 의미합니다.
+
+>
+In languages which do not support (or discourage) mutable state it is common to achieve somewhat similar effects by means of passing extra parameters to procedures (functions).
+Consider a procedure which performs some internal stateful computation and returns a result — perhaps the procedure implements a counter and returns an incremented value each time it is called:
+
+변경 가능한 상태(mutable state)를 지원하지 않거나 권장하지 않는 언어에서는 프로시저(함수)에 추가 매개변수를 전달하는 방식으로 비슷한 효과를 얻는 것이 일반적입니다.
+
+내부적으로 상태를 갖는 계산을 수행하고 결과를 반환하는 프로시저를 생각해 봅시다.
+다음의 프로시저는 카운터를 구현하고 호출될 때마다 증가된 값을 반환합니다.
+
+>
+```
+procedure int getNextCounter()
+  // ’counter’ is declared and initialized elsewhere in the code
+  counter := counter + 1
+  return counter
+```
+
+>
+The way that this is typically implemented in a basic functional programming language is to replace the stateful procedure which took no arguments and returned one result with a function which takes one argument and returns a pair of values as a result.
+
+기본적인 함수형 프로그래밍 언어에서 이런 프로시저를 구현하는 일반적인 방법은, '인수를 받지 않고 하나의 결과를 리턴하는 상태를 갖는 프로시저'(위의 예제)를, '인수를 하나 받고 두 개의 값을 리턴하는 함수'로 대체하는 것입니다.
+
+```
+function (int,int) getNextCounter(int oldCounter)
+  let int result = oldCounter + 1
+  let int newCounter = oldCounter + 1
+  return (newCounter, result)
+```
+
+>
+There is then an obligation upon the caller of the function to make sure that the next time the `getNextCounter` function gets called it is supplied with the `newCounter` returned from the previous invocation.
+Effectively what is happening is that the mutable state that was hidden inside the `getNextCounter` procedure is replaced by an extra parameter on both the input and output of the `getNextCounter` function.
+This extra parameter is not mutable in any way (the entity which is referred to by `oldCounter` is a different value each time the function is called).
+
+이렇게 하면, 함수 호출자는 다음번에 `getNextCounter` 함수를 호출할 때, 이전 호출의 리턴값으로 받은 `newCounter`를 인수로 전달해야 합니다.
+즉, `getNextCounter` 프로시저 내부에 숨겨져 있었던 변경 가능한 상태가 `getNextCounter` 함수의 입력과 출력 모두에서 추가 매개변수로 대체된 것입니다.
+이런 추가 매개변수는 어떤 방식으로도 변경할 수 없습니다(`oldCounter`가 참조하는 엔티티는 함수가 호출될 때마다 다른 값입니다).
+
+>
+As we have discussed, the functional version of this program is referentially transparent, and the imperative version is not (hence the caller of the `getNextCounter` procedure has no idea what may influence the result he gets — it could in principle be dependent upon many, many different hidden mutable variables — but the caller of the `getNextCounter` function can instantly see exactly that the result can depend only on the single value supplied to the function).
+
+앞에서 설명했듯이, 이 프로그램의 함수 버전은 참조 투명성(referential transparency)을 갖고 있지만, 명령형 버전은 참조 투명성을 갖고 있지 않습니다.
+
+`getNextCounter` 프로시저를 호출하는 쪽에서는 어떤 것이 결과에 영향을 미칠 수 있는지를 알 수 없으며, 이론적으로는 수많은 숨겨진 mutable 변수에 따라 결과가 달라질 수 있습니다.
+하지만 `getNextCounter` 함수의 호출자 입장에서는 함수에 전달하는 단일 값에만 결과가 의존한다는 것을 즉시 알 수 있습니다.
+
+>
+Despite this, the fact is that we are using functional values to simulate state.
+There is in principle nothing to stop functional programs from passing a single extra parameter into and out of every single function in the entire system.
+If this extra parameter were a collection (compound value) of some kind then it could be used to simulate an arbitrarily large set of mutable variables.
+In effect this approach recreates a single pool of global variables — hence, even though referential transparency is maintained, ease of reasoning is lost (we still know that each function is dependent only upon its arguments, but one of them has become so large and contains irrelevant values that the benefit of this knowledge as an aid to understanding is almost nothing).
+This is however an extreme example and does not detract from the general power of the functional approach.
+
+그럼에도 불구하고 우리는 함수형 값을 사용해 '상태'를 시뮬레이션하고 있는 것이 사실입니다.
+원칙적으로는 함수형 프로그램에서 전체 시스템의 모든 함수에 하나의 추가 매개변수를 전달하는 것을 막을 수 있는 방법은 없습니다.
+이러한 추가 매개변수가 어떤 종류의 컬렉션(복합 값)이라면, 이를 사용해 임의로 큰 크기의 mutable 변수 집합을 시뮬레이션할 수도 있습니다.
+
+사실상 이 접근 방식은 하나의 전역 변수 풀을 다시 생성하게 되므로, 참조 투명성은 유지되지만 추론의 용이성은 손실됩니다(각 함수가 그 인자에만 의존한다는 것은 여전히 알고 있지만, 그 추가 매개변수가 너무 커져서 불필요한 값들을 포함하게 되기 때문입니다. 이러한 것은 이해를 돕는다는 측면의 장점을 거의 없애버립니다).
+
+그러나 이것은 극단적인 사례이며, 함수형 접근법의 일반적인 효과를 떨어뜨리는 것은 아닙니다.
+
+>
+It is worth noting in passing that — even though it would be no substitute for a guarantee of referential transparency — there is no reason why the functional style of programming cannot be adopted in stateful languages (i.e. imperative as well as impure functional ones).
+More generally, we would argue that — whatever the language being used — there are large benefits to be had from avoiding hidden, implicit, mutable state.
+
+참조 투명성 보장을 대체할 수는 없지만, statueful 언어(명령형, 순수하지 못한 함수형)에서 함수형 프로그래밍 스타일을 채택하지 못할 이유가 없다는 점은 언급해 둘 가치가 있습니다.
+더 일반적으로는, 어떤 프로그래밍 언어를 사용하건 간에 암시적이고 변경 가능한 숨겨진 상태를 피함으로써 얻을 수 있는 이점이 크다고 주장할 수 있겠습니다.
+
+##### 5.2.4 State and Modularity
+
+상태와 모듈성
+
+17쪽
 
 ## 주석
 
@@ -933,3 +1009,4 @@ There are also concurrent versions of many functional languages, and the fact th
 
 [^orig-04]: 원주: this particular problem doesn’t really apply to object-oriented languages (such as CLOS) which are based upon generic functions — but they don’t have the same concept of encapsulation. <br/> 번역: 이 문제는 generic 함수를 기반으로 하는 OOP 언어(예: CLOS)에는 해당되지 않습니다. 캡슐화 개념이 다르기 때문입니다.
 
+[^fold-map]: 역주: fold와 map은 함수형 언어에서 흔히 사용하는 함수 유형이다. fold는 reduce라고도 부르며, 리스트의 원소를 하나씩 꺼내서 함수를 적용하고, 그 결과를 누적시킨 결과를 리턴한다. map은 리스트의 원소를 하나씩 꺼내서 함수를 적용하고, 그 결과 리스트를 리턴한다.
