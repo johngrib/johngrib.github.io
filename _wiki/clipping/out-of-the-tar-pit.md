@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-21 08:08:44 +0900
+updated : 2023-05-21 09:18:04 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -727,7 +727,135 @@ Some of these causes are of a human-nature, others due to environmental issues, 
 
 복잡성 관리를 위한 고전적인 접근법
 
-12쪽
+>
+The different classical approaches to managing complexity can perhaps best be understood by looking at how programming languages of each of the three major styles (imperative, functional, logic) approach the issue.
+(We take object-oriented languages as a commonly used example of the imperative style).
+
+복잡성 관리에 대한 다양한 고전적인 접근법은, 세 가지의 주요 스타일(명령형, 함수형, 논리형)의 프로그래밍 언어가 이 문제에 접근하는 방식을 살펴보면 가장 잘 이해할 수 있을 것입니다.
+(우리는 객체지향 언어를 명령형 스타일의 일반적인 예로 삼습니다.)
+
+#### 5.1 Object-Orientation
+
+객체지향
+
+>
+Object-orientation — whilst being a very broadly applied term (encompassing everything from Java-style class-based to Self-style prototype-based languages, from single-dispatch to CLOS-style multiple dispatch languages, and from traditional passive objects to the active / actor styles) — is essentially an imperative approach to programming.
+It has evolved as the dominant method of general software development for traditional (von-Neumann) computers, and many of its characteristics spring from a desire to facilitate von-Neumann style (i.e. state-based) computation.
+
+객체지향은 매우 광범위하게 적용되는 용어이지만(Java 스타일의 class 기반 언어에서 Self 스타일의 prototype 기반 언어, 단일 디스패치 언어부터 CLOS 스타일의 다중 디스패치 언어, 그리고 전통적인 수동 객체부터 active/actor 스타일까지 모두 객체지향에 포함됩니다), 그 본질은 명령형(imperative) 프로그래밍 접근법입니다.
+
+이는 전통적인(폰 노이만) 컴퓨터에 대한 일반적인 소프트웨어 개발 방법으로 발전해 왔으며, 그 특성 중 많은 것들은 폰 노이만 스타일(즉, 상태 기반)의 계산을 용이하게 하고자 하는 욕구에서 비롯됩니다.
+
+##### 5.1.1 State
+
+상태
+
+>
+In most forms of object-oriented programming (OOP) an object is seen as consisting of some state together with a set of procedures for accessing and manipulating that state.
+>
+This is essentially similar to the (earlier) idea of an abstract data type (ADT) and is one of the primary strengths of the OOP approach when compared with less structured imperative styles.
+In the OOP context this is referred to as the idea of encapsulation, and it allows the programmer to enforce integrity constraints over an object’s state by regulating access to that state through the access procedures (“methods”).
+
+대부분의 객체지향 프로그래밍(OOP)에서 '객체'는 특정한 상태와 그 상태에 접근하고 조작하기 위한 절차들의 집합으로 구성되는 것으로 간주할 수 있습니다.
+
+이는 본질적으로 추상 데이터 타입(ADT)의 (이전) 개념과 유사하며, 덜 구조화된 명령형 스타일과 비교했을 때 OOP 접근법의 주요 장점 중 하나입니다.
+OOP 맥락에서는 이것을 캡슐화라 부릅니다.
+이를 통해 프로그래머는 접근 프로시저("메소드")를 통한 상태 접근을 제한하는 방법으로 객체의 상태에 대한 무결성을 유지하게 합니다.
+
+>
+One problem with this is that, if several of the access procedures access or manipulate the same bit of state, then there may be several places where a given constraint must be enforced (these different access procedures may or may not be within the same file depending on the specific language and whether features, such as inheritance, are in use).
+Another major problem[^orig-04] is that encapsulation-based integrity constraint enforcement is strongly biased toward single-object constraints and it is awkward to enforce more complicated constraints involving multiple objects with this approach (for one thing it becomes unclear where such multiple-object constraints should reside).
+
+이 방법의 한 가지 문제점은 여러 접근 프로시저가 하나의 상태 비트에 접근하거나 그걸 조작하는 경우에, 주어진 제약 조건을 적용해야 하는 위치가 여러 곳에 있을 수 있다는 것입니다(특정 언어와 상속과 같은 기능의 사용 여부에 따라 서로 다른 접근 프로시저가 같은 파일에 있을 수도 있고, 다른 파일에 있을 수도 있습니다).
+
+그리고 또 다른 주요한 문제점[^orig-04]은 '캡슐화 기반의 무결성 제약 조건' 적용이, 주로 '단일 객체에 대한 제약'을 중심으로 하기 때문에, 이런 접근 방식으로는 여러 객체가 관련된 더 복잡한 제약 조건을 적용하기가 어렵다는 것입니다(일단 이런 다중 객체 제약 조건을 어디에 위치시켜야 하는지가 불분명합니다).
+
+###### Identity and State
+
+동일성과 상태
+
+>
+There is one other intrinsic aspect of OOP which is intimately bound up with the issue of state, and that is the concept of object identity.
+
+상태 문제와 밀접하게 연관되어 있는 OOP의 또다른 본질적인 측면이 하나 더 있습니다.
+바로 객체의 동일성 개념입니다.
+
+>
+In OOP, each object is seen as being a uniquely identifiable entity regardless of its attributes.
+This is known as intensional identity (in contrast with extensional identity in which things are considered the same if their attributes are the same).
+As Baker observed [Bak93]:
+> >
+In a sense, object identity can be considered to be a rejection of the “relational algebra” view of the world in which two objects can only be distinguished through differing attributes.
+
+OOP에서 각 객체는 속성값들과는 관계없이 고유하게 식별 가능한 엔티티로 간주됩니다.
+이를 '내재적 동일성'이라 합니다(속성값들이 같으면 동일한 것으로 간주하는 '확장적 동일성'과 대조적인 개념입니다).
+Baker는 다음과 같이 언급한 바 있습니다.
+
+_어떤 의미에서, 객체 동일성은 서로 다른 속성을 통해서만 두 객체를 구별할 수 있는 '관계 대수'의 세계관을 거부하는 것으로 간주할 수 있습니다._
+
+
+>
+Object identity does make sense when objects are used to provide a (mutable) stateful abstraction — because two distinct stateful objects can be mutated to contain different state even if their attributes (the contained state) happen initially to be the same.
+
+객체 동일성은 객체가 (변경 가능한) 상태 추상화(stateful abstraction)를 제공하는 데 사용될 때 의미가 있습니다.
+왜냐하면 두 개의 서로 다른 상태 저장 객체는 초기에는 속성(포함된 상태)이 같더라도, 나중에는 서로 다른 상태를 갖고 있게 변경될 수 있기 때문입니다.
+
+>
+However, in other situations where mutability is not required (such as — say — the need to represent a simple numeric value), the OOP approach is forced to adopt techniques such as the creation of “Value Objects”, and an attempt is made to de-emphasise the original intensional concept of object identity and re-introduce extensional identity.
+In these cases it is common to start using custom access procedures (methods) to determine whether two objects are equivalent in some other, domain-specific sense. (One risk — aside from the extra code volume required to support this — is that there can no longer be any guarantee that such domain-specific equivalence concepts conform to the standard idea of an equivalence relation — for example there is not necessarily any guarantee of transitivity).
+
+그러나 이런 변경 가능(mutability)이 필요하지 않은 다른 상황(예: 단순한 숫자값을 표현하는 경우)에서는 OOP식 접근 방법은 "값 객체(Value Objects)" 생성과 같은 기술을 채택할 수 밖에 없으며, 본래 의도했던 객체 동일성 컨셉이 아니라 확장적 동일성을 다시 도입하는 상황이 됩니다.
+이러한 경우에는 커스텀 접근 프로시저(메소드)를 사용해 두 객체가 다른 도메인별 의미에서 동등한지 아닌지를 결정하는 것이 일반적입니다.
+
+(이를 위해 추가해야 하는 코드의 양을 제외하고 생각한다 해도) 이런 방식은 도메인별 동등성 개념이 동등 관계(equivalence relation)의 표준 개념과 일치하는지에 대한 보장이 없다는 위험을 안고 있습니다. 예를 들어, 이행성(transitivity)을 보장할 수 없다는 문제도 있습니다.)
+
+>
+The intrinsic concept of object identity stems directly from the use of state, and is (being part of the paradigm itself) unavoidable.
+This additional concept of identity adds complexity to the task of reasoning about systems developed in the OOP style (it is necessary to switch mentally between the two equivalence concepts — serious errors can result from confusion between the two).
+
+객체 동일성의 본질적인 개념은 '상태'의 사용에서 직접적으로 비롯되며, (패러다임 자체에서 나온 것이므로) 피할 수 없습니다.
+이런 추가적인 동일성 개념은 OOP 스타일로 개발된 시스템에 대한 추론 작업에 복잡성을 더해줍니다(두 가지의 동등성 개념 사이를 정신적으로 전환해야 하며, 두 개념을 혼동하면 심각한 오류가 발생할 수 있습니다).
+
+###### State in OOP
+
+OOP의 상태
+
+>
+The bottom line is that all forms of OOP rely on state (contained within objects) and in general all behaviour is affected by this state.
+As a result of this, OOP suffers directly from the problems associated with state described above, and as such we believe that it does not provide an adequate foundation for avoiding complexity.
+
+결론은 모든 형태의 OOP는 객체 내에 포함되는 상태에 의존하며, 일반적으로 모든 동작이 이 상태의 영향을 받는다는 것입니다.
+그 결과, OOP는 앞에서 설명한 '상태'와 관련된 문제를 직접적으로 겪게 됩니다.
+따라서 복잡성을 피하기 위한 적절한 기반을 제공하지 못한다고 생각합니다.
+
+##### 5.1.2 Control
+
+제어
+
+>
+Most OOP languages offer standard sequential control flow, and many offer explicit classical “shared-state concurrency” mechanisms together with all the standard complexity problems that these can cause.
+One slight variation is that actor-style languages use the “message-passing” model of concurrency — they associate threads of control with individual objects and messages are passed between these.
+This can lead to easier informal reasoning in some cases, but the use of actor-style languages is not widespread.
+
+대부분의 OOP 언어는 표준적인 순차적 제어 흐름을 제공합니다.
+따라서 많은 언어가 명시적으로 고전적인 "공유 상태 동시성(shared-state concurrency)" 메커니즘을 제공하게 되기 때문에 이로 인해 발생할 수 있는 모든 표준적인 복잡성 문제도 함께 발생하게 됩니다.
+
+한 가지 차이점이 있다면 액터 스타일의 언어에서는 제어 스레드를 개별 객체와 연결하고 그 객체들 사이에 메시지를 전달하는 '메시지 전달' 동시성을 사용한다는 점입니다.
+이 기법을 사용하면 비형식적 추론이 더 쉬워질 수 있습니다.
+그러나 액터 스타일 언어는 널리 사용되고 있지는 않습니다.
+
+##### 5.1.3 Summary — OOP
+
+OOP 요약
+
+>
+Conventional imperative and object-oriented programs suffer greatly from both state-derived and control-derived complexity.
+
+현존하는 명령형 및 객체지향 프로그램은 상태와 제어로 인한 복잡성에 큰 어려움을 겪습니다.
+
+#### 5.2 Functional Programming
+
+15쪽
 
 ## 주석
 
@@ -736,3 +864,6 @@ Some of these causes are of a human-nature, others due to environmental issues, 
 [^orig-02]: 원주: Indeed early versions of the Oz language (with implicit concurrency at the statement level) were somewhat of this kind [vRH04, p809] <br/> 번역: 실제로 Oz 프로그래밍 언어의 초기 버전이 바로 이런 종류의 언어였습니다.(명령문 수준에서 암시적인 동시성이 있었음) 
 
 [^orig-03]: 원주: Particularly unnecessary data abstraction. We examine an argument that this is actually most data abstraction in section 9.2.4. <br/> 번역: 특히 불필요한 데이터 추상화. 9.2.4 절에서 이것이 실제로 대부분의 데이터 추상화에 해당한다는 주장을 살펴봅니다.
+
+[^orig-04]: 원주: this particular problem doesn’t really apply to object-oriented languages (such as CLOS) which are based upon generic functions — but they don’t have the same concept of encapsulation. <br/> 번역: 이 문제는 generic 함수를 기반으로 하는 OOP 언어(예: CLOS)에는 해당되지 않습니다. 캡슐화 개념이 다르기 때문입니다.
+
