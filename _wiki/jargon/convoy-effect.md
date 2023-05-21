@@ -3,7 +3,7 @@ layout  : wiki
 title   : Convoy effect
 summary : 수송대 효과, 호위 효과
 date    : 2023-04-19 20:50:10 +0900
-updated : 2023-04-19 21:15:45 +0900
+updated : 2023-05-21 22:28:15 +0900
 tag     : 
 resource: 18/827513-63B9-4FE1-8E72-C9E3EB23FABF
 toc     : true
@@ -60,6 +60,13 @@ CPU를 많이 필요로 하지 않는 프로세스들이, CPU를 오랫동안 �
 - [Operating Systems: Three Easy Pieces]( https://pages.cs.wisc.edu/~remzi/OSTEP/ ) - '운영체제 아주 쉬운 세 가지 이야기'의 인터넷에 공개된 원서.
     - [7 CPU Scheduling]( https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched.pdf )
 - 응용 운영체제 개념 / Abraham Silberschatz 저 / 조봉열 역 / 홍릉과학출판사 / 초판 발행: 2013년 02월 15일 / 원제: Operating System Concepts with JAVA 7TH EDITION
+
+## 함께 읽기
+
+- [THE CONVOY PHENOMENON (PDF)]( https://dl.acm.org/doi/pdf/10.1145/850657.850659 ) - Mike Blasgen, Jim Gray, Mike Mitoma, Tom Price 의 1977년 논문.
+    - 아직 안 읽었다. 나중에 읽으려고 링크 추가해 둠.
+    - [THE CONVOY PHENOMENON (PDF)]( https://jimgray.azurewebsites.net/papers/Convoy%20Phenomenon%20RJ%202516.pdf )
+    - [The convoy phenomenon]( https://blog.acolyer.org/2019/07/01/the-convoy-phenomenon/ )
 
 ## 주석
 
