@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-21 09:18:04 +0900
+updated : 2023-05-21 11:48:46 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -855,7 +855,73 @@ Conventional imperative and object-oriented programs suffer greatly from both st
 
 #### 5.2 Functional Programming
 
-15쪽
+함수형 프로그래밍
+
+>
+Whilst OOP developed out of a desire to offer improved ways of managing and dealing with the classic stateful von-Neumann architecture, functional programming has its roots in the completely stateless lambda calculus of Church (we are ignoring the even simpler functional systems based on combinatory logic).
+The untyped lambda calculus is known to be equivalent in power to the standard stateful abstraction of computation — the Turing machine.
+
+고전적인 상태 기반(stateful) 폰 노이만 아키텍처를 관리하고 처리하는 개선된 방법을 제공하려는 의도에서 OOP는 개발되었습니다.
+반면 함수형 프로그래밍은 Church의 완전한 무상태 기반의(stateless) 람다 계산법에 뿌리를 두고 있습니다(조합 논리에 기반한 더 단순한 함수형 시스템은 여기에서는 언급하지 않겠습니다).
+
+타입 없는 람다 계산법은 표준 상태 저장 추상화 계산, 즉 튜링 머신과 동등한 성능을 발휘하는 것으로 알려져 있습니다.
+
+##### 5.2.1 State
+
+상태
+
+>
+Modern functional programming languages are often classified as ‘pure’ — those such as Haskell[PJ+03] which shun state and side-effects completely, and ‘impure’ — those such as ML which, whilst advocating the avoidance of state and side-effects in general, do permit their use.
+Where not explicitly mentioned we shall generally be considering functional programming in its pure form.
+
+현대적인 함수형 프로그래밍 언어는 '상태와 사이드 이펙트를 완전히 배제하는' Haskell 같은 '순수한' 언어와, '상태와 부작용의 회피를 옹호하면서도 사용을 허용하기는 하는' ML과 같은 '불순한' 언어로 분류되곤 합니다.
+
+여기에서는 별도로 언급하지 않는 이상, 일반적으로는 순수한 형태의 함수형 프로그래밍을 고려하겠습니다.
+
+>
+The primary strength of functional programming is that by avoiding state (and side-effects) the entire system gains the property of referential transparency — which implies that when supplied with a given set of arguments a function will always return exactly the same result (speaking loosely we could say that it will always behave in the same way).
+Everything which can possibly affect the result in any way is always immediately visible in the actual parameters.
+
+함수형 프로그래밍의 가장 큰 장점은 상태(와 부작용)를 피함으로써 전체 시스템이 참조 투명성이라는 특성을 얻게 된다는 것입니다.
+이는 특정한 인수 집합이 제공될 때 함수가 항상 정확히 같은 결과를 반환한다는 것을 의미합니다(대충 말하자면 항상 같은 방식으로 동작한다고 할 수 있습니다).
+
+어떤 방식으로든 '결과에 영향을 줄 수 있는 모든 것'을 항상 실제 매개변수에서 바로 확인할 수 있다는 것입니다.
+
+>
+It is this cast iron guarantee of referential transparency that obliterates one of the two crucial weaknesses of testing as discussed above.
+As a result, even though the other weakness of testing remains (testing for one set of inputs says nothing at all about behaviour with another set of inputs), testing does become far more effective if a system has been developed in a functional style.
+
+참조 투명성의 이런 철저한 보장은, 앞에서 설명한 테스팅의 두 가지 중요한 약점 중 하나를 원천봉쇄하는 것입니다.
+
+결과적으로 테스트의 다른 약점(어떤 입력 집합에 대한 테스트만으로는, 다른 입력 집합에 대한 동작에 대해 전혀 알 수 없음)이 남아있게 되긴 하지만, 시스템이 함수형 스타일로 개발되었다면 테스트는 훨씬 효과적이 됩니다.
+
+>
+By avoiding state functional programming also avoids all of the other state-related weaknesses discussed above, so — for example — informal reasoning also becomes much more effective.
+
+상태를 회피함으로써, 함수형 프로그래밍은 상태와 관련된 앞에서 언급한 모든 약점을 회피하게 됩니다. 따라서 비형식적인 추론도 훨씬 효과적이 됩니다.
+
+##### 5.2.2 Control
+
+제어
+
+>
+Most functional languages specify implicit (left-to-right) sequencing (of calculation of function arguments) and hence they face many of the same issues mentioned above.
+Functional languages do derive one slight benefit when it comes to control because they encourage a more abstract use of control using functionals (such as fold / map) rather than explicit looping.
+>
+There are also concurrent versions of many functional languages, and the fact that state is generally avoided can give benefits in this area (for example in a pure functional language it will always be safe to evaluate all arguments to a function in parallel).
+
+(함수 인수의 계산 우선순위에 대해) 대부분의 함수형 언어는 암묵적으로 (왼쪽에서 오른쪽으로) 순서를 지정하므로 위에서 언급한 것과 동일한 문제에 직면하게 됩니다.
+
+함수형 언어는 명시적인 loop 대신, 함수(예: fold/map)를 사용하여 제어를 더 추상적으로 사용하도록 권장하므로, 제어에 관해서는 약간의 이점을 얻게 됩니다.
+
+또한 많은 함수형 언어들에는 동시성에 대한 버전도 있으며, 이 언어들이 일반적으로 '상태'를 피하는 방식이라는 사실 덕분에 동시성 측면에서 이점을 얻을 수 있습니다(예를 들어 순수한 함수형 언어에서는 함수의 모든 인수를 병렬로 평가해도 안전합니다).
+
+##### 5.2.3 Kinds of State
+
+상태의 종류
+
+
+16쪽
 
 ## 주석
 
