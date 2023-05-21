@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-21 12:28:37 +0900
+updated : 2023-05-21 23:44:45 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -997,7 +997,85 @@ More generally, we would argue that — whatever the language being used — the
 
 상태와 모듈성
 
-17쪽
+>
+It is sometimes argued (e.g. [vRH04, p315]) that state is important because it permits a particular kind of modularity.
+This is certainly true.
+Working within a stateful framework it is possible to add state to any component without adjusting the components which invoke it.
+Working within a functional framework the same effect can only be achieved by adjusting every single component that invokes it to carry the additional information around (as with the `getNextCounter` function above).
+
+상태는 특정 유형의 모듈성을 허용하기 때문에 중요하다는 주장이 있습니다.
+그 주장은 확실한 사실입니다.
+
+상태 기반 프레임워크 내에서 작업을 하면, 상태를 호출하는 컴포넌트를 조정하지 않고도 모든 컴포넌트에 상태를 추가할 수 있습니다.
+그러나 함수형 프레임워크 내에서 작업할 때는 위의 `getNextCounter` 함수처럼, 추가 정보를 전달하기 위해 호출하는 모든 컴포넌트를 조정해야만 동일한 효과를 얻을 수 있습니다.
+
+>
+There is a fundamental trade off between the two approaches.
+In the functional approach (when trying to achieve state-like results) you are forced to make changes to every part of the program that could be affected (adding the relevant extra parameter), in the stateful you are not.
+
+두 접근 방식 사이에는 근본적인 트레이드 오프가 있습니다.
+함수형 접근방식에서는 (state기반 방식과 유사한 결과를 얻으려 한다면) 영향을 받을 수 있는 프로그램의 모든 부분을 변경(관련된 부가적인 매개변수를 추가)해야 하지만, 상태 기반(stateful) 방식에서는 그렇지 않습니다.
+
+>
+But what this means is that in a functional program you can always tell exactly what will control the outcome of a procedure (i.e. function) simply by looking at the arguments supplied where it is invoked.
+In a stateful program this property (again a consequence of referential transparency) is completely destroyed, you can never tell what will control the outcome, and potentially have to look at every single piece of code in the entire system to determine this information.
+
+하지만 함수형 접근방식의 의미는, 함수형 프로그램에서는 프로시저(함수) 호출시에 제공되는 인자를 살펴보면 어떤 것이 프로시저의 결과를 제어하는지에 대해 항상 정확히 알 수 있다는 것에 있습니다.
+
+상태 기반 프로그램에서는 이러한 속성(참조 투명성의 결과)이 완전히 파괴됩니다.
+따라서 무엇이 결과를 제어하는지 알기 어려우며, 이 정보를 파악하기 위해 전체 시스템의 모든 코드를 살펴봐야 할 수도 있습니다.
+
+>
+The trade-off is between complexity (with the ability to take a shortcut when making some specific types of change) and simplicity (with huge improvements in both testing and reasoning).
+
+이 트레이드 오프는 복잡성(특정 유형의 변경을 수행할 때 지름길을 선택할 수 있는 능력)과 단순성(테스트와 추론이 모두 크게 향상됨) 사이에 있습니다.
+
+As with the discipline of (static) typing, it is trading a one-off up-front cost for continuing future gains and safety (“one-off” because each piece of code is written once but is read, reasoned about and tested on a continuing basis).
+
+(정적) 타이핑의 규칙과 마찬가지로, 일회성의 초기 비용을 미래의 지속적인 이득과 안전성을 위해 교환하는 것입니다.
+("일회성"이라 표현한 것은 각 코드 조각이 한 번만 작성되지만 지속적으로 읽히고, 추론의 대상이 되고, 테스트되기 때문입니다.)
+
+>
+A further problem with the modularity argument is that some examples — such as the use of procedure (function) invocation counts for debugging / performance-tuning purposes — seem to be better addressed within the supporting infrastructure / language, rather than within the system itself (we prefer to advocate a clear separation between such administrative/diagnostic information and the core logic of the system).
+
+(상태가 특정 유형의 모듈성을 가능하게 한다는 내용의) '모듈화 주장'의 또 다른 문제점은 디버깅/성능 튜닝을 위한 프로시저(함수) 호출 횟수를 사용하는 것 같은 일부 사례는, 시스템 자체보다는 지원하는 인프라/언어 내에서 더 잘 해결될 수 있다는 것입니다(우리는 이런 관리/진단 정보와 시스템의 핵심 로직을 명확하게 분리하는 것을 선호합니다).
+
+>
+Still, the fact remains that such arguments have been insufficient to result in widespread adoption of functional programming.
+We must therefore conclude that the main weakness of functional programming is the flip side of its main strength — namely that problems arise when (as is often the case) the system to be built must maintain state of some kind.
+
+그러나, 함수형 프로그래밍이 널리 받아들여지지 않았다는 사실은 여전히 변하지 않습니다.
+이런 점에서 우리는 함수형 프로그래밍의 가장 큰 장점이 동시에 가장 큰 단점이라는 결론을 내릴 수밖에 없습니다.
+바로 시스템이 (자주 그렇듯이) 어떤 형태의 상태를 유지해야 한다면 함수형 프로그래밍의 개념에서는 문제가 발생한다는 것입니다.
+
+>
+The question inevitably arises of whether we can find some way to “have our cake and eat it”.
+One potential approach is the elegant system of monads used by Haskell [Wad95].
+This does basically allow you to avoid the problem described above, but it can very easily be abused to create a stateful, side-effecting sub-language (and hence re-introduce all the problems we are seeking to avoid) inside Haskell — albeit one that is marked by its type.
+Again, despite their huge strengths, monads have as yet been insucient to give rise to widespread adoption of functional techniques.
+
+그렇다면 "두 마리 토끼를 잡을 수 있는" 방법이 있는지에 대한 질문이 불가피하게 제기됩니다.
+
+한 가지 잠재성 있는 접근 방식은 Haskell에서 사용하는 우아한 monad 시스템입니다.
+monad 시스템은 기본적으로 위에서 설명한 문제를 피할 수 있습니다.
+그러나 Haskell 에서는 이 기법을 악용해 타입을 통해 표시되는, 상태 기반의 부작용이 있는 서브 언어(stateful, side-effecting sub-language)를 쉽게 만들어 낼 수 있으며, 우리가 피하려고 하는 모든 문제를 다시 도입할 수도 있습니다.
+다시 말하지만, monad 시스템 같은 엄청난 장점이 있는데도 불구하고 아직까지 함수형 기법은 널리 받아들여지게 하는 데에는 부족함이 있습니다.
+
+##### 5.2.5 Summary - Functional Programming
+
+요약 - 함수형 프로그래밍
+
+>
+Functional programming goes a long way towards avoiding the problems of state-derived complexity.
+This has very significant benefits for testing (avoiding what is normally one of testing’s biggest weaknesses) as well as for reasoning.
+
+함수형 프로그래밍은 상태 기반 복잡성의 문제를 피하는 데에 큰 도움이 됩니다.
+
+이는 테스트에 대해 매우 중요한 장점을 가져다 주며(테스팅의 가장 큰 약점 중 하나를 피하는 데에 도움이 됩니다), 추론에도 도움이 됩니다.
+
+#### 5.3 Logic Programming
+
+19쪽
 
 ## 주석
 
