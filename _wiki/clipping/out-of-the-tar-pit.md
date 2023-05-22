@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-22 21:36:34 +0900
+updated : 2023-05-22 21:55:03 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1097,14 +1097,14 @@ All solutions are formal logical consequences of the axioms supplied, and “run
 
 >
 The seminal “logic programming” language was Prolog.
-Prolog is best seen as a pure logical core (pure Prolog) with various extra-logical extensions.
+Prolog is best seen as a pure logical core (pure Prolog) with various extra-logical extensions.[^orig-05]
 Pure Prolog is close to the ideals of logic programming, but there are important differences.
 Every pure Prolog program can be “read” in two ways — either as a pure set of logical axioms (i.e. assertions about the problem domain — this is the pure logic programming reading), or operationally — as a sequence of commands which are applied (in a particular order) to determine whether a goal can be deduced (from the axioms).
 This second reading corresponds to the actual way that pure Prolog will make use of the axioms when it tries to prove goals.
 It is worth noting that a single Prolog program can be both correct when read in the first way, and incorrect (for example due to non-termination) when read in the second.
 
 "논리 프로그래밍"의 기원은 Prolog입니다.
-Prolog는 순수한 논리적 핵심(pure logical core)에 다양한 추가적인 논외의 확장이 결합된 형태로 이해하는 것이 가장 바람직합니다.
+Prolog는 순수한 논리적 핵심(pure logical core)에 다양한 추가적인 논리 확장[^orig-05]이 결합된 형태로 이해하는 것이 가장 바람직합니다.
 순수한 Prolog는 논리 프로그래밍의 이상에 가깝지만, 중요한 차이점이 있습니다.
 
 모든 순수한 Prolog 프로그램은 두 가지 방법으로 해석할 수 있습니다.
@@ -1130,7 +1130,34 @@ Prolog가 논리 프로그래밍의 이상적인 지점에 도달하지 못하�
 
 상태
 
-19쪽
+>
+Pure logic programming makes no use of mutable state, and for this reason profits from the same advantages in understandability that accrue to pure functional programming.
+Many languages based on the paradigm do however provide some stateful mechanisms.
+In the extra-logical part of Prolog for example there are facilities for adjusting the program itself by adding new axioms for example.
+Other languages such as Oz (which has its roots in logic programming but has been extended to become “multi-paradigm”) provide mutable state in a traditional way — similar to the way it is provided by impure functional languages.
+
+순수한 논리 프로그래밍은 변경 가능한 상태(mutable state)를 전혀 사용하지 않으므로, 순수한 함수형 프로그래밍과 같이 '이해'하기 용이하다는 장점을 누리게 됩니다.
+
+그러나 논리 패러다임에 기반한 많은 언어들은 상태 기반 메커니즘도 제공합니다.
+예를 들어 Prolog의 논리 확장 부분에서는 새로운 공리를 추가하여 프로그램 자체를 조정할 수 있는 기능이 있습니다.
+(논리 프로그래밍에 뿌리를 두고 있지만 "다중 패러다임"으로 확장된) Oz 프로그래밍 언어와 같은 다른 언어들은, 순수하지 않은 함수형 언어에서 제공하는 방식과 유사하게 '변경 가능한 상태'를 제공합니다.
+
+>
+All of these approaches to state sacrifice referential transparency and hence potentially suffer from the same drawbacks as imperative languages in this regard.
+The one advantage that all these impure non-von-Neumann derived languages can claim is that — whilst state is permitted its use is generally discouraged (which is in stark contrast to the stateful von-Neumann world).
+Still, without purity there are no guarantees and all the same state-related problems can sometimes occur.
+
+
+이런 종류의 상태 관리 접근법은 참조 투명성을 희생하므로, 이 관점에서 명령형 언어와 같은 단점을 갖게 됩니다.
+이런 식의 순수하지 않은 'non-폰 노이만' 파생 언어들이 주장하는 것은, 상태의 사용을 허용하긴 하지만 권장은 하지 않는다는 것입니다.
+(이는 상태 중심으로 돌아가는 폰 노이만 세계와는 대조적인 점입니다.)
+그러나 순수성이 없기 때문에 어떤 것도 보장할 수 없으며 때때로 상태 관련 문제가 발생할 수 있습니다.
+
+##### 5.3.2 Control
+
+제어
+
+20쪽
 
 ## 주석
 
@@ -1143,3 +1170,5 @@ Prolog가 논리 프로그래밍의 이상적인 지점에 도달하지 못하�
 [^orig-04]: 원주: this particular problem doesn’t really apply to object-oriented languages (such as CLOS) which are based upon generic functions — but they don’t have the same concept of encapsulation. <br/> 번역: 이 문제는 generic 함수를 기반으로 하는 OOP 언어(예: CLOS)에는 해당되지 않습니다. 캡슐화 개념이 다르기 때문입니다.
 
 [^fold-map]: 역주: fold와 map은 함수형 언어에서 흔히 사용하는 함수 유형이다. fold는 reduce라고도 부르며, 리스트의 원소를 하나씩 꺼내서 함수를 적용하고, 그 결과를 누적시킨 결과를 리턴한다. map은 리스트의 원소를 하나씩 꺼내서 함수를 적용하고, 그 결과 리스트를 리턴한다.
+
+[^orig-05]: 원주: We are using the term here to cover everything apart from the pure core of Prolog — for example we include what are sometimes referred to as the meta-logical features <br/> 번역: 여기에서는 Prolog의 순수한 핵심 외의 '모든 것'을 표현하는 용어로 '논리 확장'을 사용하고 있습니다. '논리 확장'의 예로는 meta-logical 기능들이 있습니다.
