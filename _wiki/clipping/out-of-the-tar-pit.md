@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-21 23:44:45 +0900
+updated : 2023-05-22 21:36:34 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1074,6 +1074,61 @@ This has very significant benefits for testing (avoiding what is normally one of
 이는 테스트에 대해 매우 중요한 장점을 가져다 주며(테스팅의 가장 큰 약점 중 하나를 피하는 데에 도움이 됩니다), 추론에도 도움이 됩니다.
 
 #### 5.3 Logic Programming
+
+>
+Together with functional programming, logic programming is considered to be a declarative style of programming because the emphasis is on specifying what needs to be done rather than exactly how to do it.
+Also as with functional programming — and in contrast with OOP — its principles and the way of thinking encouraged do not derive from the stateful von-Neumann architecture.
+
+함수형 프로그래밍과 논리 프로그래밍은 선언형 프로그래밍 스타일로 간주할 수 있습니다.
+왜냐하면 이 둘은 '정확한 수행 방법'이 아니라 '수행하고 싶은 작업'을 명시하는 데에 중점을 두기 때문입니다.
+
+또한 함수형 프로그래밍과 마찬가지로(OOP와는 달리) 논리 프로그래밍의 원칙과 권장되는 사고 방식은 '상태 기반의 von-Neumann 아키텍처'에서 유래한 것이 아니라는 특징이 있습니다.
+
+>
+Pure logic programming is the approach of doing nothing more than making statements about the problem (and desired solutions).
+This is done by stating a set of axioms which describe the problem and the attributes required of something for it to be considered a solution.
+The ideal of logic programming is that there should be an infrastructure which can take the raw axioms and use them to find or check solutions.
+All solutions are formal logical consequences of the axioms supplied, and “running” the system is equivalent to the construction of a formal proof of each solution.
+
+순수한 논리 프로그래밍은 문제와 원하는 해답에 대한 명제만을 작성하는 접근 방식입니다.
+이는 문제를 설명하고 해답을 얻기 위해 요구되는 속성들을 명시하는 일련의 공리(axiom)를 세우는 것으로 이루어집니다. 
+논리 프로그래밍의 이상적인 모델은 이러한 기본이 되는 공리들을 적용해 해결책을 찾거나 검증할 수 있는 인프라를 갖춰야 한다는 것입니다.
+모든 해답은 제공된 공리들을 통한 형식적 논리의 결과이며, 시스템을 '실행'한다는 것은 각 해답에 대한 형식적인 증명을 구성하는 것과 동일합니다.
+
+>
+The seminal “logic programming” language was Prolog.
+Prolog is best seen as a pure logical core (pure Prolog) with various extra-logical extensions.
+Pure Prolog is close to the ideals of logic programming, but there are important differences.
+Every pure Prolog program can be “read” in two ways — either as a pure set of logical axioms (i.e. assertions about the problem domain — this is the pure logic programming reading), or operationally — as a sequence of commands which are applied (in a particular order) to determine whether a goal can be deduced (from the axioms).
+This second reading corresponds to the actual way that pure Prolog will make use of the axioms when it tries to prove goals.
+It is worth noting that a single Prolog program can be both correct when read in the first way, and incorrect (for example due to non-termination) when read in the second.
+
+"논리 프로그래밍"의 기원은 Prolog입니다.
+Prolog는 순수한 논리적 핵심(pure logical core)에 다양한 추가적인 논외의 확장이 결합된 형태로 이해하는 것이 가장 바람직합니다.
+순수한 Prolog는 논리 프로그래밍의 이상에 가깝지만, 중요한 차이점이 있습니다.
+
+모든 순수한 Prolog 프로그램은 두 가지 방법으로 해석할 수 있습니다.
+
+1. 순수한 논리적 공리들의 집합(즉, 문제 도메인에 대한 주장(assertions))
+    - 순수한 논리 프로그래밍으로 Prolog 프로그램을 해석하는 방식.
+2. 공리로부터 목표를 추론할 수 있는지를 결정하기 위해 (특정한 순서로) 적용하는 명령어들의 시퀀스.
+    - 작동방식을 기준으로 Prolog 프로그램을 해석하는 방식.
+
+두 번째 해석 방식은 순수한 Prolog가 공리들을 활용하여 목표를 입증하려고 시도할 때의 실제 작동 방식에 해당합니다.
+
+하나의 Prolog 프로그램은 첫 번째 해석 방식으로 보면 논리적으로 모순이 없을 수 있지만,
+두 번째 해석 방식으로 볼 때에는 (예를 들어 무한 루프 등으로 인해) 잘못된 프로그램일 수 있다는 점을 주목해야 합니다.
+
+>
+It is for this reason that Prolog falls short of the ideals of logic programming.
+Specifically it is necessary to be concerned with the operational interpretation of the program whilst writing the axioms.
+
+Prolog가 논리 프로그래밍의 이상적인 지점에 도달하지 못하는 이유가 바로 여기에 있습니다.
+공리를 작성하는 동안에도 프로그램의 작동 방식에 주의를 기울여야 한다는 점이 문제입니다.
+
+##### 5.3.1 State
+
+상태
 
 19쪽
 
