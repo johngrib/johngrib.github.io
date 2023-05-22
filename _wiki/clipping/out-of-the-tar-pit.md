@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-22 21:55:03 +0900
+updated : 2023-05-22 22:34:03 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -442,7 +442,7 @@ In addition to causing problems for understanding a system from the outside, sta
 
 >
 The mental processes which are used to do this informal reasoning often revolve around a case-by-case mental simulation of behaviour: “if this variable is in this state, then this will happen — which is correct — otherwise that will happen — which is also correct”.
-As the number of states — and hence the number of possible scenarios that must be considered — grows, the e↵ectiveness of this mental approach buckles almost as quickly as testing (it does achieve some advantage through abstraction over sets of similar values which can be seen to be treated identically).
+As the number of states — and hence the number of possible scenarios that must be considered — grows, the effectiveness of this mental approach buckles almost as quickly as testing (it does achieve some advantage through abstraction over sets of similar values which can be seen to be treated identically).
 
 이러한 비형식적 추론에 동원되는 정신적 프로세스는 종종 동작 사례에 대한 정신적인 시뮬레이션을 중심으로 이루어집니다.
 "만약에 이 변수가 이런 상태에 있다면, 이런 일이 일어나겠지. 음 이건 맞고, 그렇지 않으면 저런 일이 일어나겠지. 음 이것도 맞고." 이런 식으로 말이죠.
@@ -635,10 +635,10 @@ This non-linearity in turn means that it’s vital to reduce the amount of code 
 >
 We also want to draw attention to one of Dijkstra’s [Dij72, EWD340] thoughts on this subject:
 > >
-“It has been suggested that there is some kind of law of nature telling us that the amount of intellectual e↵ort needed grows with the square of program length.
+“It has been suggested that there is some kind of law of nature telling us that the amount of intellectual effort needed grows with the square of program length.
 But, thank goodness, no one has been able to prove this law.
 And this is because it need not be true.
-... I tend to the assumption — up till now not disproved by experience — that by suitable application of our powers of abstraction, the intellectual e↵ort needed to conceive or to understand a program need not grow more than proportional to program length.”
+... I tend to the assumption — up till now not disproved by experience — that by suitable application of our powers of abstraction, the intellectual effort needed to conceive or to understand a program need not grow more than proportional to program length.”
 
 우리는 또한 이 주제에 대한 Dijkstra의 생각 중 하나에 주목하고 싶습니다.
 
@@ -1157,7 +1157,59 @@ Still, without purity there are no guarantees and all the same state-related pro
 
 제어
 
-20쪽
+>
+In the case of pure Prolog the language specifies both an implicit ordering for the processing of sub-goals (left to right), and also an implicit ordering of clause application (top down) — these basically correspond to an operational commitment to process the program in the same order as it is read textually (in a depth first manner).
+This means that some particular ways of writing down the program can lead to non-termination, and — when combined with the fact that some extra-logical features of the language permit side-effects — leads inevitably to the standard diculty for informal reasoning caused by control flow.
+(Note that these reasoning diculties do not arise in ideal world of logic programming where there simply is no specified control — as distinct from in pure Prolog programming where there is).
+
+순수한 Prolog의 경우, 프로그래밍 언어는 하위 목표(sub-goal)의 처리 순서(왼쪽에서 오른쪽으로)와 절(clause) 적용에 대한 순서(위에서 아래로)를 모두 암묵적으로 지정합니다.
+
+이는 기본적으로 프로그램이 텍스트로 읽힐 때와 같은 순서로(깊이 우선 방식) 처리하도록 약속하는 방식과 같습니다.
+이것은, 특정한 방식으로 프로그램을 작성하면 비종료(non-termination)를 유발할 수 있다는 것으로 연결됩니다.
+이 사실은 언어의 일부 비논리적 특징이 '부작용(side-effect)'을 허용한다는 사실과 결합되어,
+결국 '제어 흐름' 때문에 '비형식적 추론'이 어려워지는 문제를 피할 수 없게 됩니다.
+
+(이렇게 추론이 어려워지는 문제는 제어를 전혀 지정하지 않는 이상적인 논리 프로그래밍의 세계에서는 발생하지 않습니다.
+이는 순수한 Prolog 프로그래밍과는 달리, 그 외의 언어들에서는 제어 흐름을 지정하기 때문입니다.)
+
+>
+As for Prolog’s other extra-logical features, some of them further widen the gap between the language and logic programming in its ideal form.
+One example of this is the provision of “cuts” which offer explicit restriction of control flow.
+These explicit restrictions are intertwined with the pure logic component of the system and inevitably have an adverse affect on attempts to reason about the program (misunderstandings of the effects of cuts are recognised to be a major source of bugs in Prolog programs [SS94, p190]).
+
+Prolog의 다른 논리 확장 기능들은, 프로그래밍 언어와 이상적인 형태의 논리 프로그래밍 사이의 격차를 더욱 넓히는데 일조합니다.
+
+한 가지 예를 들자면, 제어 흐름을 명시적으로 제한하는 "cuts" 기능을 들 수 있습니다.
+이러한 명시적인 제한은 시스템의 순수한 논리적 컴포넌트와 얽혀 있어, 프로그램에 대한 추론을 시도할 때 불리한 영향을 미칩니다.
+(cut의 효과에 대한 오해는 Prolog 프로그램의 주요 버그 원인으로 인식되고 있습니다.)
+
+>
+It is worth noting that some more modern languages of the logic programming family offer more flexibility over control than the implicit depth-first search used by Prolog.
+One example would be Oz which offers the ability to program specific control strategies which can then be applied to different problems as desired.
+This is a very useful feature because it allows significant explicit control flexibility to be specified separately from the main program (i.e. without contaminating it through the addition of control complexity).
+
+논리 프로그래밍 계열의 최신 언어들 중 어떤 것들은 Prolog에서 사용하는 '암시적 깊이 우선' 탐색보다 더 유연한 제어를 제공한다는 점에 주목할 필요가 있습니다.
+
+한 가지 예로, Oz가 있습니다.
+Oz는 특정한 제어 전략을 프로그래밍할 수 있도록 하여, 원하는 대로 다른 문제에 적용할 수 있습니다.
+이는 메인 프로그램과 별도로 (즉, 제어 복잡성을 추가하여 프로그램을 오염시키지 않고) 상당히 명시적인 제어 유연성을 지정할 수 있기 때문에 매우 유용한 기능입니다.
+
+##### 5.3.3 Summary — Logic Programming
+
+요약 - 논리 프로그래밍
+
+>
+One of the most interesting things about logic programming is that (despite the limitations of some actual logic-based languages) it offers the tantalising promise of the ability to escape from the complexity problems caused by control.
+
+논리 프로그래밍의 가장 흥미로운 점 하나는 (몇몇 로직 기반 언어들의 한계에도 불구하고) 제어로 인한 복잡성 문제에서 벗어날 수 있다는 매력적인 가능성을 제공한다는 것입니다.
+
+### 6 Accidents and Essence
+
+우연성과 본질성
+
+21쪽
+
+↵
 
 ## 주석
 
