@@ -3,7 +3,7 @@ layout  : wiki
 title   : 브룩스의 법칙
 summary : 늦어진 소프트웨어 프로젝트에 인력을 추가로 투입하면 더 늦어지게 된다
 date    : 2018-02-20 22:59:38 +0900
-updated : 2023-02-07 22:55:12 +0900
+updated : 2023-05-22 23:56:17 +0900
 tag     : law Fred-Brooks
 resource: C7/4F029A-DA93-47AE-9E99-4337358E5623
 toc     : true
@@ -90,9 +90,38 @@ $$n$$ 명이 수행중인 프로젝트 막바지에 새로 $$m$$ 명의 인력�
 이렇게 해서 우리는 맨먼스에 관련된 미신을 걷어낼 수 있다.
 프로젝트에 소요되는 기간은 순서대로 처리해야 하는 내부 요소에 좌우되며, 필요한 최대 인원수는 독립된 하위 작업의 개수에 좌우된다.
 
+## 함께 읽기
+
+### From: 해커 영어사전
+
+>
+“Adding manpower to a late software project makes it later” — a result of the fact that the expected advantage from splitting development work among N programmers is O(N) (that is, proportional to N), but the complexity and communications cost associated with coordinating and then merging their work is O(N^2) (that is, proportional to the square of N).
+The quote is from Fred Brooks, a manager of IBM's OS/360 project and author of The Mythical Man-Month (Addison-Wesley, 1975, ISBN 0-201-00650-2), an excellent early book on software engineering.
+The myth in question has been most tersely expressed as “Programmer time is fungible” and Brooks established conclusively that it is not.
+Hackers have never forgotten his advice (though it's not the whole story; see bazaar); too often, management still does. See also creationism, second-system effect, optimism.
+
+"늦어지는 소프트웨어 프로젝트에 인력을 추가하면 프로젝트가 늦어진다"는 말은,
+프로그래머 N명이 개발 작업을 분할할 때 예상하는 이점은 $$O(N)$$ (즉, N에 비례)이지만,
+이들의 작업을 조율하고 통합하는 데 드는 복잡성과 커뮤니케이션 비용은 $$O(N^2)$$(즉, N의 제곱에 비례)라는 사실에서 유래합니다.
+
+이 인용문은 IBM의 OS/360 프로젝트 매니저이자 소프트웨어 엔지니어링에 관한 훌륭한 초기 저작인 '맨먼스 미신'의 저자인 프레드 브룩스(Fred Brooks)의 것입니다.
+문제의 미신은 "프로그래머의 시간은 대체 가능하다"는 말로 굉장히 간단하게 표현되어 왔지만, 브룩스는 그것이 사실이 아니라는 것을 확실하게 입증했습니다.
+해커들은 그의 조언을 결코 잊은 적이 없습니다. 그러나 경영진은 여전히 너무 자주 잊어버립니다.
+[^dict-149]
+
 
 ## Links
 
 * [[/book/mythical-man-month]]
 * [Brooks's law(wikipedia)](https://en.wikipedia.org/wiki/Brooks%27s_law#cite_note-BROOKS-1)
 * [1999년 튜링상 수상](https://amturing.acm.org/award_winners/brooks_1002187.cfm).
+
+## 참고문헌
+
+- 해커 영어사전 제3판 / ERIC S.RAYMOND 편 / 기전연구사 / 1998년 12월 25일 제1판 제1발행 / 원제: The New Hacker's Dictionary
+    - [Brooks's Law (catb.org)]( http://www.catb.org/jargon/html/B/Brookss-Law.html )
+
+## 주석
+
+[^dict-149]: 원문을 토대로 내가 다시 번역한 것이다. 국내 출간된 번역판 해커 영어사전에서는 149쪽.
+
