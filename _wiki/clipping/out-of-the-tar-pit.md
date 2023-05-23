@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-22 22:34:03 +0900
+updated : 2023-05-23 23:11:41 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -136,7 +136,7 @@ In his 1990 lecture Corbato said [Cor91]:
 
 > >
 "The general problem with ambitious systems is complexity.",
-"...it is important to emphasize the value of simplicity and elegance, for complexity has a way of compounding diculties"
+"...it is important to emphasize the value of simplicity and elegance, for complexity has a way of compounding difficulties"
 
 시스템에 대해 생각하고, 특히 그 시스템에 변화가 생길 경우 그 영향에 대해 추론할 수 있는 능력은 매우 중요합니다.
 복잡성이 얼마나 위험하고 단순함이 얼마나 중요한지는 ACM Turing award 강연에서도 인기 있는 주제였습니다.
@@ -1160,7 +1160,7 @@ Still, without purity there are no guarantees and all the same state-related pro
 >
 In the case of pure Prolog the language specifies both an implicit ordering for the processing of sub-goals (left to right), and also an implicit ordering of clause application (top down) — these basically correspond to an operational commitment to process the program in the same order as it is read textually (in a depth first manner).
 This means that some particular ways of writing down the program can lead to non-termination, and — when combined with the fact that some extra-logical features of the language permit side-effects — leads inevitably to the standard diculty for informal reasoning caused by control flow.
-(Note that these reasoning diculties do not arise in ideal world of logic programming where there simply is no specified control — as distinct from in pure Prolog programming where there is).
+(Note that these reasoning difficulties do not arise in ideal world of logic programming where there simply is no specified control — as distinct from in pure Prolog programming where there is).
 
 순수한 Prolog의 경우, 프로그래밍 언어는 하위 목표(sub-goal)의 처리 순서(왼쪽에서 오른쪽으로)와 절(clause) 적용에 대한 순서(위에서 아래로)를 모두 암묵적으로 지정합니다.
 
@@ -1205,9 +1205,131 @@ One of the most interesting things about logic programming is that (despite the 
 
 ### 6 Accidents and Essence
 
-우연성과 본질성
+우발적 복잡성과 본질적 복잡성
 
-21쪽
+>
+Brooks defined difficulties of “essence” as those inherent in the nature of software and classified the rest as “accidents”.
+>
+We shall basically use the terms in the same sense — but prefer to start by considering the complexity of the problem itself before software has even entered the picture.
+Hence we define the following two types of complexity:
+
+Brooks는 소프트웨어의 본질에 내재된 어려움을 "본질적" 어려움으로 정의하고, 나머지를 "우발적" 어려움으로 분류했습니다.
+
+우리는 기본적으로 그와 같은 의미의 용어를 사용할 것입니다.
+그러나 소프트웨어라는 틀에 대해 논의하기 전에 문제 자체의 복잡성을 고려하는 것으로 시작하고자 합니다.
+따라서 우리는 다음 두 가지 유형의 복잡성을 정의합니다.
+
+>
+**Essential Complexity** is inherent in, and the essence of, the problem (as seen by the users).
+>
+**Accidental Complexity** is all the rest — complexity with which the development team would not have to deal in the ideal world (e.g. complexity arising from performance issues and from suboptimal language and infrastructure).
+
+- 본질적 복잡성
+    - 문제의 본질에 내재되어 있으며, 사용자 관점에서 중요한 복잡성.
+
+- 우발적 복잡성
+    - 본질적 복잡성이 아닌 모든 복잡성.
+    - 이상적인 세계에서는 개발팀이 처리할 필요가 없는 복잡성
+    - (예: 성능 문제와 최적화되지 않은 언어와 인프라에서 발생하는 복잡성)을 의미.
+
+>
+Note that the definition of essential is deliberately more strict than common usage.
+Specifically when we use the term essential we will mean strictly essential to the users’ problem (as opposed to — perhaps — essential to some specific, implemented, system, or even — essential to software in general).
+For example — according to the terminology we shall use in this paper — bits, bytes, transistors, electricity and computers themselves are not in any way essential (because they have nothing to do with the users’ problem).
+
+'본질적'이라는 용어를 의도적으로 일반적인 사용법보다 더 엄격하게 정의했다는 점에 주목해야 합니다.
+특히 '본질적'이라는 용어를 사용할 때는 엄격하게 '사용자의 문제에 본질적'이라는 의미로 사용할 것입니다. 구현된 특정 시스템에 본질적이거나, 심지어 소프트웨어 전반에 본질적이라는 의미가 아닙니다.
+예를 들어 이 논문에서 사용하는 용법을 적용하면 비트, 바이트, 트랜지스터, 전기, 컴퓨터 자체는 사용자의 문제와 관련이 없으므로 어떤 방식으로도 '본질적'이지 않습니다.
+
+>
+Also, the term “accident” is more commonly used with the connotation of “mishap”.
+Here (as with Brooks) we use it in the more general sense of “something non-essential which is present”.
+
+또한, "우발적"이라는 용어는 "실수"라는 의미로 사용되는 경우가 더 흔합니다.
+여기에서는 Brooks와 마찬가지로 "이미 존재하는 비본질적인 무언가"이라는 다소 일반적인 의미로 사용합니다.
+
+>
+In order to justify these two definitions we start by considering the role of a software development team — namely to produce (using some given language and infrastructure) and maintain a software system which serves the purposes of its users.
+The complexity in which we are interested is the complexity involved in this task, and it is this which we seek to classify as accidental or essential.
+We hence see essential complexity as “the complexity with which the team will have to be concerned, even in the ideal world”.
+
+우리의 이 두 가지 용어 정의를 정당화하기 위해 소프트웨어 개발팀의 역할을 고려해 본다면,
+'소프트웨어 개발팀'의 역할은 주어진 언어와 인프라를 사용하여 사용자의 목적을 달성하는 소프트웨어 시스템을 생성(생산)하고 유지하는 것이라 할 수 있습니다.
+
+우리가 관심을 갖는 종류의 복잡성은 바로 이러한 작업에 포함된 복잡성이며,
+이런 복잡성을 '우발적 복잡성'과 '본질적 복잡성'으로 분류하고자 합니다.
+그리고 우리는 본질적인 복잡성을 "이상적인 세계에서도 팀이 신경써야 할 복잡성"으로 정의합니다.
+
+>
+Note that the “have to” part of this observation is critical — if there is any possible way that the team could produce a system that the users will consider correct without having to be concerned with a given type of complexity then that complexity is not essential.
+
+여기에서 "신경써야 할" 부분이 매우 중요합니다.
+팀이 특정한 유형의 복잡성에 신경을 쓰지 않고도 '사용자가 올바르다고 인정할 수 있는 시스템'을 만들 수 있다면, 그 복잡성은 본질적인 것이라 할 수 없습니다.
+
+>
+Given that in the real world not all possible ways are practical, the implication is that any real development will need to contend with some accidental complexity.
+The definition does not seek to deny this — merely to identify its secondary nature.
+
+실제 세계에서 실제로 가능한 방법이라 해서 모두 실용적인 방법인 것이 아니라는 점을 감안하면,
+어떠한 실제적인 개발 활동에서도 어느 정도의 우발적 복잡성을 다루어야 할 것입니다.
+'우발적 복잡성'의 정의는 이런 사실을 부정하려는 것이 아니라, 그것이 부차적인 성격을 갖고 있다는 점을 드러내려는 것입니다.
+
+>
+Ultimately (as we shall see below in section 7) our definition is equivalent to saying that what is essential to the team is what the users have to be concerned with.
+This is because in the ideal world we would be using language and infrastructure which would let us express the users’ problem directly without having to express anything else — and this is how we arrive at the definitions given above.
+
+(7장에서 살펴보겠지만) 우리의 용어 정의는 결국 '팀에게 본질적인 것'이란 곧 '사용자의 관심사'라고 말하는 것과 마찬가지입니다.
+이상적인 세계에서는 사용자의 문제를 직접 표현할 수 있는 언어와 인프라를 사용할 수 있을 것이므로, 앞에서 제시한 정의에 자연스럽게 도달하게 될 것입니다.
+
+>
+The argument might be presented that in the ideal world we could just find infrastructure which already solves the users’ problem completely.
+Whilst it is possible to imagine that someone has done the work already, it is not particularly enlightening — it may be best to consider an implicit restriction that the hypothetical language and infrastructure be general purpose and domain-neutral.
+
+이상적인 세계에서는 이미 '사용자의 문제를 완전히 해결하는 인프라'가 존재한다는 주장이 있을 수 있습니다.
+
+누군가가 이런 작업을 이미 수행했다고 상상할 수는 있습니다.
+하지만 별로 도움이 되는 상상은 아닙니다.
+이상적인 언어와 인프라가 범용적이고 도메인 중립적이어야 한다는 암묵적인 제약을 갖는다는 가정을 고려하는 것이 좋을 것입니다.
+
+>
+One implication of this definition is that if the user doesn’t even know what something is (e.g. a thread pool or a loop counter — to pick two arbitrary examples) then it cannot possibly be essential by our definition (we are assuming of course — alas possibly with some optimism — that the users do in fact know and understand the problem that they want solved).
+
+이 정의의 한 가지 의의는 '사용자가 뭔지 전혀 모르고 있는 대상'이 있다면(예를 들어 스레드 풀이나 루프 카운터와 같은 것들), 우리의 정의에 따라서 그것은 본질적인 것이 아니게 된다는 것입니다.
+(물론 우리는 사용자가 해결하고자 하는 문제를 알고 잘 이해하고 있다고 - 가능한 한 긍정적으로 - 가정하고 있습니다.)
+
+
+>
+Brooks asserts [Bro86] (and others such as Booch agree [Boo91]) that “The complexity of software is an essential property, not an accidental one”.
+This would suggest that the majority (at least) of the complexity that we find in contemporary large systems is of the essential type.
+
+Brooks는 "소프트웨어의 복잡성은 우발적인 것이 아니라 본질적인 것이다"라고 주장합니다.
+(그리고 Booch와 같은 다른 사람들도 이에 동의합니다.)
+Brooks의 주장은 현대적인 대규모 시스템에서 발견되는 복잡성의 대부분이 본질적인 복잡성이라는 것을 시사합니다.
+
+>
+We disagree.
+Complexity itself is not an inherent (or essential) property of software (it is perfectly possible to write software which is simple and yet is still software), and further, much complexity that we do see in existing software is not essential (to the problem).
+When it comes to accidental and essential complexity we firmly believe that the former exists and that the goal of software engineering must be both to eliminate as much of it as possible, and to assist with the latter.
+
+그러나 우리는 Brooks의 주장에 동의하지 않습니다.
+복잡성 자체는 소프트웨어의 고유한(본질적인) 속성이 아닙니다. (단순한 소프트웨어를 작성하는 것 자체는 완벽하게 가능합니다.)
+또한, 기존 소프트웨어에서 발견되는 복잡성의 대부분은 (문제에 대해) 본질적인 것이 아닙니다.
+
+우리는 우발적 복잡성이 존재한다는 것을 인정하고, 본질적 복잡성을 다루는 일에 도움을 주며,
+가능한 한 많은 우발적 복잡성을 제거하는 것이 소프트웨어 공학의 목표가 되어야 한다고 확신합니다.
+
+>
+Because of this it is vital that we carefully scrutinize accidental complexity.
+We now attempt to classify occurrences of complexity as either accidental or essential.
+
+따라서 우발적인 복잡성을 주의 깊게 조사하는 것이 매우 중요합니다.
+이제 우리는 우발적인 복잡성과 본질적인 복잡성으로 복잡성의 발생 사례를 분류하고자 합니다.
+
+### 7 Recommended General Approach
+
+권장하는 일반적인 접근 방법
+
+23쪽
 
 ↵
 
