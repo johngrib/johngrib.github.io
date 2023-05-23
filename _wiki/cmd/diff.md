@@ -3,7 +3,7 @@ layout  : wiki
 title   : diff
 summary : compare files line by line
 date    : 2019-01-11 11:27:49 +0900
-updated : 2023-05-23 23:35:14 +0900
+updated : 2023-05-23 23:37:06 +0900
 tag     : bash command
 resource: 87/6AB1CF-ED23-4EED-AF62-5DEE3218040C
 toc     : true
@@ -57,4 +57,5 @@ $ diff DIR_A DIR_B -rq
 ## 함께 읽기
 
 - [[/jargon/unified-format]]
+- [Comparing and Merging Files (gnu.org)]( https://www.gnu.org/software/diffutils/manual/html_node/ )
 
