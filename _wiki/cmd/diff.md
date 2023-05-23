@@ -3,7 +3,7 @@ layout  : wiki
 title   : diff
 summary : compare files line by line
 date    : 2019-01-11 11:27:49 +0900
-updated : 2021-07-21 23:15:32 +0900
+updated : 2023-05-23 23:26:31 +0900
 tag     : bash command
 resource: 87/6AB1CF-ED23-4EED-AF62-5DEE3218040C
 toc     : true
@@ -19,6 +19,13 @@ latex   : false
 ```sh
 $ diff FILE_A FILE_B
 ```
+
+### unified 포맷으로 두 파일의 차이점 출력
+
+```sh
+$ diff -u FILE_A FILE_B
+```
+
 
 ### 대소문자 무시
 ```sh
