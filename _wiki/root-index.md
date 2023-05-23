@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-20 20:39:07 +0900
+updated : 2023-05-23 23:21:56 +0900
 regenerate: true
 ---
 * TOC
@@ -630,6 +630,7 @@ regenerate: true
 * [[/cmd/curl]]
 * [[/cmd/date]]
 * [[/cmd/dc]]
+* [[/cmd/diff]]
 * [[/cmd/ditto]]
 * [[/cmd/du]]
 * [[/cmd/fc]]
@@ -678,7 +679,6 @@ regenerate: true
 * [[/ctags]]
 * [[/cut]]
 * [[/df]]
-* [[/diff]]
 * [[/fish-shell]]
 * [[/glow-cmd]]
 * [[/google-java-format]]
