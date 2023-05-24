@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-23 23:11:41 +0900
+updated : 2023-05-24 20:36:29 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1328,6 +1328,21 @@ We now attempt to classify occurrences of complexity as either accidental or ess
 ### 7 Recommended General Approach
 
 권장하는 일반적인 접근 방법
+
+>
+Given that our main recommendations revolve around trying to avoid as much accidental complexity as possible, we now need to look at which bits of the complexity must be considered accidental and which essential.
+
+우리의 주요 권장 사항은 우발적인 복잡성을 가능한 한 많이 피하려는 방향을 중심으로 하고 있습니다.
+따라서 이제 복잡성의 어떤 부분이 우발적이고, 어떤 부분이 본질적인 것으로 파악해야 하는지 살펴보아야 합니다.
+
+>
+We shall answer this by considering exactly what complexity could not possibly be avoided even in the ideal world (this is basically how we define essential).
+We then follow this up with a look at just how realistic this ideal world really is before finally giving some recommendations.
+
+우리는 이상적인 환경에서도 피할 수 없는 복잡성(본질적인 복잡성)이 무엇인지를 정확히 살펴보는 것으로 이 질문에 대해 답하려 합니다.
+그런 다음 이상적인 환경이 현실과 얼마나 다른지 살펴보고, 마지막으로 몇 가지 권장 사항을 제시하겠습니다.
+
+#### 7.1 Ideal World
 
 23쪽
 
