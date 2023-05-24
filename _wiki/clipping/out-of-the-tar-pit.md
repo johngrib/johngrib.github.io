@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-24 20:36:29 +0900
+updated : 2023-05-24 22:28:52 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1339,12 +1339,87 @@ Given that our main recommendations revolve around trying to avoid as much accid
 We shall answer this by considering exactly what complexity could not possibly be avoided even in the ideal world (this is basically how we define essential).
 We then follow this up with a look at just how realistic this ideal world really is before finally giving some recommendations.
 
-우리는 이상적인 환경에서도 피할 수 없는 복잡성(본질적인 복잡성)이 무엇인지를 정확히 살펴보는 것으로 이 질문에 대해 답하려 합니다.
+우리는 이상적인 세계에서도 피할 수 없는 복잡성(본질적인 복잡성)이 무엇인지를 정확히 살펴보는 것으로 이 질문에 대해 답하려 합니다.
 그런 다음 이상적인 환경이 현실과 얼마나 다른지 살펴보고, 마지막으로 몇 가지 권장 사항을 제시하겠습니다.
 
 #### 7.1 Ideal World
 
-23쪽
+이상적인 세계
+
+>
+In the ideal world we are not concerned with performance, and our language and infrastructure provide all the general support we desire.
+It is against this background that we are going to examine state and control.
+Specifically, we are going to identify state as accidental state if we can omit it in this ideal world, and the same applies to control.
+
+이상적인 세계에서는 성능에 대해 걱정할 필요가 없으며, 프로그래밍 언어와 인프라는 우리가 원하는 모든 것을 제공한다고 합시다.
+우리는 이러한 세계를 전제하고 상태와 제어에 대해 살펴볼 것입니다.
+
+특히, 이상적인 세계에서 생략할 수 있는 상태를 '우발적인 상태'로 분류하고, 제어에 대해서도 동일한 원칙을 적용할 것입니다.
+
+>
+Even in the ideal world we need to start somewhere, and it seems reasonable to assume that we need to start with a set of informal requirements from the prospective users.
+
+이상적인 세계에서도 우리는 여전히 어딘가에서부터 시작해야 합니다.
+그렇다면 잠재적인 사용자의 비공식적인 요구 사항부터 시작하는 것이 합리적일 것입니다.
+
+>
+Our next observation is that because we ultimately need something to happen — i.e. we are going to need to have our system processed mechanically (on a computer) — we are going to need formality.
+
+We are going to need to derive formal requirements from the informal ones.
+
+다음으로 우리가 원하는 것은 결국 무언가가 일어나는 것이며,
+이는 달리 말해 시스템이 컴퓨터를 통해 기계적으로 처리되어야 한다는 뜻입니다.
+때문에 우리에게는 '형식적인 것'이 필요합니다.
+
+>
+So, taken together, this means that even in the ideal world we have:
+
+>
+Informal requirements → Formal requirements
+{:style="text-align:center;"}
+
+따라서 이 모든 것을 종합해보면 이상적인 세계에서도 다음과 같은 과정이 필요합니다.
+
+비공식적인 요구 사항 → 형식적인 요구 사항
+{:style="text-align:center;"}
+
+>
+Note that given that we’re aiming for simplicity, it is crucial that the formalisation be done without adding any accidental aspects at all.
+Specifically this means that in the ideal world, formalisation must be done with no view to execution whatsoever.
+The sole concern when producing the formal requirements must be to ensure that there is no relevant[^orig-06] ambiguity in the informal requirements (i.e. that it has no omissions).
+
+우리는 단순함을 목표로 삼고 있기 때문에 형식화 과정에서 우발적인 측면을 전혀 추가하지 않는 것이 매우 중요합니다.
+즉, 이상적인 세계에서의 형식화 과정은 '실행'에 대한 고려 없이 이루어져야 합니다.
+형식적인 요구 사항을 작성할 때 유일하게 고려해야 할 사항이 있다면, 비공식적인 요구 사항에 관련된[^orig-06] 모호함이 없는지(즉, 누락된 것이 없는지) 확인하는 것 뿐입니다.
+
+>
+So, having produced the formalised requirements, what should the next step be?
+Given that we are considering the ideal world, it is not unreasonable to assume that the next step is simply to execute these formal requirements directly on our underlying general purpose infrastructure.[^orig-07]
+
+이제 형식화된 요구 사항을 만들었습니다. 다음 단계는 무엇이어야 할까요?
+우리가 가정하고 있는 이상적인 세계를 고려한다면,
+다음 단계는 이렇게 형식화한 요구사항을 우리의 기반 인프라에서 직접 실행해보는 것이 합리적일 것입니다.[^orig-07]
+
+>
+This state of affairs is absolute simplicity — it does not seem conceivable that we can do any better than this even in an ideal world.
+>
+It is interesting to note that effectively what we have just described is in fact the very essence of declarative programming — i.e. that you need only specify what you require, not how it must be achieved.
+>
+We now consider the implications of this “ideal” approach for the causes of complexity discussed above.
+
+이러한 상태는 절대적으로 단순합니다. 이상적인 세계에서도 이보다 더 나은 방법은 없을 것 같습니다.
+
+방금 설명한 내용은 사실 선언적 프로그래밍의 본질이라는 점에 주목할 만합니다.
+즉, '내가 원하는 것만 명시하면' 되며, '어떻게 수행해야 하는지'는 명시할 필요가 없다는 것입니다.
+
+이제 이러한 "이상적인" 세계를 가정한 접근 방식이 앞에서 설명한 복잡성의 원인에 대해 어떤 의미가 있는지를 생각해 봅시다.
+
+##### 7.1.1 State in the ideal world
+
+이상적인 세계에서의 상태
+
+
+24쪽
 
 ↵
 
@@ -1361,3 +1436,7 @@ We then follow this up with a look at just how realistic this ideal world really
 [^fold-map]: 역주: fold와 map은 함수형 언어에서 흔히 사용하는 함수 유형이다. fold는 reduce라고도 부르며, 리스트의 원소를 하나씩 꺼내서 함수를 적용하고, 그 결과를 누적시킨 결과를 리턴한다. map은 리스트의 원소를 하나씩 꺼내서 함수를 적용하고, 그 결과 리스트를 리턴한다.
 
 [^orig-05]: 원주: We are using the term here to cover everything apart from the pure core of Prolog — for example we include what are sometimes referred to as the meta-logical features <br/> 번역: 여기에서는 Prolog의 순수한 핵심 외의 '모든 것'을 표현하는 용어로 '논리 확장'을 사용하고 있습니다. '논리 확장'의 예로는 meta-logical 기능들이 있습니다.
+
+[^orig-06]: 원주: We include the word “relevant” here because in many cases there may be many possible acceptable solutions — and in such cases the requirements can be ambiguous in that regard, however that is not considered to be a “relevant” ambiguity, i.e. it does not correspond to an erroneous omission from the requirements. <br/> 번역: "관련된"이라는 단어를 포함시킨 이유는, 경우에 따라 여러 가지 선택 가능한 해결책이 있을 수 있으며, 그런 경우에는 요구사항이 모호할 수는 있어도 "관련된" 모호함으로 볼 수는 없기 때문입니다. 즉, 이러한 모호함은 요구사항에서의 잘못된 누락에 해당되지 않습니다.
+
+[^orig-07]: 원주: In the presence of irrelevant ambiguities this will mean that the infrastructure must choose one of the possibilities, or perhaps even provide all possible solutions <br/> 번역: 관련이 없는 모호함이 있는 경우라면, 인프라는 가능성 중 하나를 선택하거나 가능한 모든 솔루션을 제공해야 합니다.
