@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-25 23:37:44 +0900
+updated : 2023-05-25 23:41:28 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1655,7 +1655,23 @@ In an ideal world we can assume that finite (stateless) computations take zero t
 
 요약
 
-27쪽
+>
+In the ideal world we have been able to avoid large amounts of complexity — both state and control.
+As a result, it is clear that a lot of complexity is accidental.
+This gives us hope that it may be possible to significantly reduce the complexity of real large systems.
+The question is — how close is it possible to get to the ideal world in the real one?
+
+이상적인 세계에서는 상태와 제어 양쪽에서 많은 양의 복잡성을 피할 수 있었습니다.
+결과적으로 많은 복잡성이 우발적이라는 것이 분명해 졌습니다.
+이는 실제 대규모 시스템의 복잡성을 상당히 줄일 수 있을 것이라는 희망을 줍니다.
+
+문제는 현실이 이상적인 세계에 얼마나 근접할 수 있는지입니다.
+
+#### 7.2 Theoretical and Practical Limitations
+
+이론과 실제의 한계
+
+28쪽
 
 ↵
 
