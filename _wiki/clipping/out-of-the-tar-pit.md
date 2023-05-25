@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-25 21:48:58 +0900
+updated : 2023-05-25 23:37:44 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1608,6 +1608,52 @@ One effect of this is that all the state in the system is visible to the user of
 
 ##### 7.1.2 Control in the ideal world
 
+이상적인 세계에서의 제어
+
+>
+Whereas we have seen that some state is essential, control generally can be completely omitted from the ideal world and as such is considered entirely accidental.
+It typically won’t be mentioned in the informal requirements and hence should not appear in the formal requirements (because these are derived with no view to execution).
+
+우리는 어떤 상태는 본질적이라는 것을 살펴보았습니다.
+그러나 제어는 일반적으로 이상적인 세계에서 완전히 생략될 수 있는 것입니다.
+따라서 '제어'는 완전히 우발적이라고 간주됩니다.
+
+일반적으로 비형식적 요구사항에는 제어가 언급되지 않으므로 형식적 요구사항에는 나타나지 않아야 합니다(실행을 고려하지 않고 파생되기 때문입니다).
+
+>
+What do we mean by this?
+Clearly if the program is ever to run, some control will be needed somewhere because things will have to happen in some order — but this should no more be our concern than the fact that the chances are some electricity will be needed somewhere.
+The important thing is that we (as developers of the system) should not have to worry about the control flow in the system.
+Specifically the results of the system should be independent of the actual control mechanism which is finally used.
+
+이것이 의미하는 바는 무엇일까요?
+
+프로그램이 실행되려면 분명히 어떤 순서대로 일이 진행되어야 하므로, 어딘가에서는 제어가 필요할 것입니다.
+그러나 이것은 우리가 어딘가에 전기가 필요하다는 사실이나 다를 바 없으며 우리의 관심사가 되어서는 안 됩니다.
+
+중요한 것은 시스템 개발자인 우리가 시스템의 제어 흐름에 대해 걱정할 필요가 없어야 한다는 것입니다.
+특히 시스템의 결과는 최종적으로 사용되는 실제 제어 메커니즘과는 독립적이어야 합니다.
+
+>
+These are precisely the lessons which logic programming teaches us, and because of this we would like to take the lead for our ideal approach to control from logic programming which shows that control can be separated completely.
+
+이것이 바로 논리 프로그래밍에서 배울 수 있는 교훈이며,
+이 때문에 우리는 이상적인 제어 접근 방식에 대한 지침을 논리 프로그래밍에서 얻고자 합니다.
+논리 프로그래밍은 제어를 완전히 분리할 수 있음을 보여줍니다.
+
+>
+It is worth noting that because typically the informal requirements will not mention concurrency, that too is normally of an accidental nature.
+In an ideal world we can assume that finite (stateless) computations take zero time[^orig-08] and as such it is immaterial to a user whether they happen in sequence or in parallel.
+
+일반적으로 비형식적인 요구사항에서는 동시성을 언급하지 않습니다.
+따라서 동시성 또한 일반적으로 우발적인 성격을 띱니다.
+
+'이상적인 세계'에서는 유한한(상태가 없는) 연산에 0초의 시간이 걸리며,[^orig-08]
+이로 인해 연산이 순차적으로 일어나건 병렬적으로 일어나건 사용자에게는 전혀 중요하지 않다고 가정할 수 있을 것입니다.
+
+##### 7.1.3 Summary
+
+요약
 
 27쪽
 
@@ -1630,3 +1676,6 @@ One effect of this is that all the state in the system is visible to the user of
 [^orig-06]: 원주: We include the word “relevant” here because in many cases there may be many possible acceptable solutions — and in such cases the requirements can be ambiguous in that regard, however that is not considered to be a “relevant” ambiguity, i.e. it does not correspond to an erroneous omission from the requirements. <br/> 번역: "관련된"이라는 단어를 포함시킨 이유는, 경우에 따라 여러 가지 선택 가능한 해결책이 있을 수 있으며, 그런 경우에는 요구사항이 모호할 수는 있어도 "관련된" 모호함으로 볼 수는 없기 때문입니다. 즉, 이러한 모호함은 요구사항에서의 잘못된 누락에 해당되지 않습니다.
 
 [^orig-07]: 원주: In the presence of irrelevant ambiguities this will mean that the infrastructure must choose one of the possibilities, or perhaps even provide all possible solutions <br/> 번역: 관련이 없는 모호함이 있는 경우라면, 인프라는 가능성 중 하나를 선택하거나 가능한 모든 솔루션을 제공해야 합니다.
+
+[^orig-08]: 원주: this assumption is generally known as the “synchrony hypothesis” <br/> 번역: 이 가정은 일반적으로 "동기화 가설"이라 알려져 있습니다.
+
