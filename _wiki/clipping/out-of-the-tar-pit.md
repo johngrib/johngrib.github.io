@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-24 22:28:52 +0900
+updated : 2023-05-25 21:48:58 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1418,8 +1418,198 @@ We now consider the implications of this “ideal” approach for the causes of 
 
 이상적인 세계에서의 상태
 
+>
+Our main aim for state in the ideal world is to get rid of it — i.e. we are hoping that most state will turn out to be accidental state.
+>
+We start from the perspective of the users’ informal requirements.
+These will mention data of various kinds — some of which can give rise to state — and it is these kinds which we now classify.
 
-24쪽
+이상적인 세계에서 우리의 주요 목표는 상태를 제거하는 것입니다.
+즉, 우리는 대부분의 상태가 우발적으로 발생한 것이라고 기대하고 있습니다.
+
+우리는 사용자의 비형식적인 요구 사항의 관점에서 시작합니다.
+이 요구 사항은 여러 종류의 데이터를 언급하는데, 이들 중 일부는 상태를 유발할 수도 있습니다.
+우리는 바로 이런 종류의 데이터를 분류하려 합니다.
+
+>
+All data will either be provided directly to the system (input) or derived.
+Additionally, derived data is either immutable (if the data is intended only for display) or mutable (if explicit reference is made within the requirements to the ability of users to update that data).
+
+모든 데이터는 시스템에 직접 '제공'(입력)되거나 '파생'됩니다.
+그리고 '파생'된 데이터는 불변(immutable)이거나(데이터가 표시용으로만 사용되는 경우), 변경 가능(mutable)합니다(요구 사항에서 사용자가 해당 데이터를 업데이트할 수 있는 능력을 명시적으로 언급하는 경우).
+
+>
+All data mentioned in the users’ informal requirements is of concern to the users, and is as such essential.
+The fact that all such data is essential does not however mean that it will all unavoidably correspond to essential state.
+It may well be possible to avoid storing some such data, instead dealing with it in some other essential aspect of the system (such as the logic) — this is the case with derived data, as we shall see.
+In cases where this is possible the data corresponds to accidental state.
+
+사용자의 비형식적 요구 사항에서 언급하는 모든 데이터는 사용자의 관심사이므로 필수적인 데이터입니다.
+
+그러나 이러한 모든 데이터가 필수적이라고 해서, 그런 데이터들이 모두 본질적인 상태에 해당한다는 것을 의미하지는 않습니다.
+
+이러한 데이터 중 어떤 것들은 저장하지 않고, 대신 시스템의 다른 본질적인 부분(예: 로직)에서 처리할 수도 있습니다.
+파생된 데이터의 경우가 이에 해당되며, 이에 대해서는 뒤에서 살펴볼 것입니다.
+이런 방식이 가능한 경우라면 데이터는 '우발적인 상태'에 해당합니다.
+
+###### Input Data
+
+입력 데이터
+
+>
+Data which is provided directly (input) will have to have been included in the informal requirements and as such is deemed essential.
+There are basically two cases:
+>
+- There is (according to the requirements) a possibility that the system may be required to refer to the data in the future.
+- There is no such possibility.
+
+>
+In the first case, even in the ideal world, the system must retain the data and as such it corresponds to essential state.
+>
+In the second case (which will most often happen when the input is designed simply to cause some side-effect) the data need not be maintained at all.
+
+(입력을 통해) 직접 제공된 데이터는 비형식적 요구 사항에 포함되어 있어야 하며, 따라서 필수적인 데이터로 간주됩니다.
+기본적으로 두 가지 경우가 있습니다.
+
+- (요구사항에 따라) 시스템이 나중에 데이터를 참조해야 할 가능성이 있는 경우.
+- 그런 가능성이 없는 경우.
+
+첫 번째 경우에는 이상적인 세계에서도 시스템이 데이터를 유지해야 하므로, 필수적인 상태에 해당합니다.
+두 번째 경우(입력이 단순히 부수 효과를 일으키기 위해 설계된 경우가 대부분)에는 데이터를 전혀 유지할 필요가 없습니다.
+
+###### Essential Derived Data — Immutable
+
+본질적인 파생 데이터 - 불변
+
+>
+Data of this kind can always be re-derived (from the input data — i.e. from the essential state) whenever required.
+As a result we do not need to store it in the ideal world (we just re-derive it when it is required) and it is clearly accidental state.
+
+이런 종류의 데이터는 필요할 때마다 (입력데이터, 즉 필수 상태로부터) 언제든지 다시 파생할 수 있습니다.
+따라서 이상적인 세계에서는 이런 데이터를 저장할 필요가 없으며(필요할 때마다 다시 파생하면 됨) 우발적인 상태임이 분명합니다.
+
+###### Essential Derived Data — Mutable
+
+본질적인 파생 데이터 - 변경 가능
+
+>
+As with immutable essential derived data, this can be excluded (and the data re-derived on demand) and hence corresponds to accidental state.
+>
+Mutability of derived data makes sense only where the function (logic) used to derive the data has an inverse (otherwise — given its mutability — the data cannot be considered derived on an ongoing basis, and it is effectively input).
+An inverse often exists where the derived data represents simple restructurings of the input data.
+In this situation modifications to the data can simply be treated identically to the corresponding modifications to the existing essential state.
+
+본질에서 파생된 불변 데이터와 마찬가지로, 이 데이터는 저장하지 않아도 되므로(필요할 때마다 데이터를 다시 파생시킴) 우발적인 상태에 해당합니다.
+파생된 데이터의 '변경 가능성'은 데이터를 파생시키는 데 사용되는 함수(로직)에 역함수가 있는 경우에만 의미가 있습니다.
+(그렇지 않으면 - 변경 가능성 때문에 - 데이터는 파생되는 것으로 간주할 수 없으며, 이는 사실상 입력이 됩니다).
+파생된 데이터가 입력 데이터의 구조를 단순하게 재구축한 경우에는 역함수가 존재하는 경우가 흔합니다.
+이런 경우, 데이터에 대한 수정은 기존의 본질적인 상태에 대한 수정과 동일하게 처리할 수 있습니다.
+
+
+###### Accidental Derived Data
+
+우발적인 파생 데이터
+
+>
+State which is derived but not in the users’ requirements is also accidental state.
+Consider the following imperative pseudo-code:
+
+파생되었지만 사용자의 요구사항에는 없는 상태도 우발적인 상태입니다.
+다음의 명령형 의사 코드를 살펴봅시다.
+
+>
+```
+procedure int doCalculation(int y)
+  // 'subsidaryCalcCache' is declared and initialized
+  // elsewhere in the code
+  if (subsidaryCalcCache.contains(y) == false) {
+    subsidaryCalcCache.y := slowSubsidaryCalculation(y)
+  }
+return 3 * (4 + subsidaryCalcCache.y)
+```
+
+>
+The above use of state in the `doCalculation` procedure seems to be unnecessary (in the ideal world), and hence of the accidental variety.
+We cannot actually be sure without knowing whether and how the `subsidaryCalcCache` is used elsewhere in the program, but for this example we shall assume that there are no other uses aside from initialization.
+The above procedure is thus equivalent to:
+
+위의 `doCalculation` 프로시저와 같이 상태를 사용하는 것은 (이상적인 세계에서는) 불필요한 것처럼 보입니다.
+따라서 우발적인 상태입니다.
+
+실제로 프로그램의 다른 곳에서 `subsidaryCalcCache`가 사용되는지 여부와 그 방법을 알지 못하므로 확실하지는 않지만, 이 예제에서는 초기화 이외에 다른 사용이 없다고 가정하겠습니다.
+
+```
+procedure int doCalculation(int y)
+  return 3 * (4 + slowSubsidaryCalculation(y))
+```
+
+>
+It is almost certain that this use of state would not have been part of the users’ informal requirements.
+It is also derived. Hence, it is quite clear that we can eliminate it completely from our ideal world, and that hence it is accidental.
+
+이런 방식으로 상태를 사용하는 것은 사용자의 비형식적 요구 사항의 일부가 아니었을 것입니다.
+또한, 이 상태는 파생된 것이기도 합니다.
+그러므로 이런 상태를 이상적인 세계에서 완전히 제거할 수 있으며, 따라서 이는 우발적인 상태임이 분명합니다.
+
+###### Summary — State in the ideal world
+
+요약 - 이상적인 세계에서의 상태
+
+>
+For our ideal approach to state, we largely follow the example of functional programming which shows how mutable state can be avoided.
+We need to remember though that:
+
+상태에 대한 이상적인 세계를 전제한 접근 방식은 주로 함수형 프로그래밍의 예를 따르며, 이는 변경 가능한 상태를 피하는 방법을 보여줍니다.
+하지만 기억해둬야 할 것들이 있습니다.
+
+>
+1. even in the ideal world we are going to have some essential state — as we have just established
+2. pure functional programs can effectively simulate accidental state in the same way that they can simulate essential state (using techniques such as the one discussed above in section 5.2.3) — we obviously want to avoid this in the ideal world.
+
+1. 이상적인 세계에서도 우리는 방금 본 것처럼 몇 가지 본질적인 상태를 갖게 될 것입니다.
+2. 순수 함수형 프로그램은 본질적인 상태를 시뮬레이션할 수 있는 것처럼, 우발적인 상태도 효과적으로 시뮬레이션할 수 있습니다(5.2.3절에서 논의하는 방법과 같은 기술을 사용함) - 이상적인 세계에서라면 우리는 이런 상태를 피하고 싶습니다.
+
+>
+The data type classifications are summarized in Table 1.
+Wherever the table shows data as corresponding to accidental state it means that it can be excluded from the ideal world (by re-deriving the data as required).
+
+데이터 유형 분류는 Table 1에 요약해 두었습니다.
+이 표에서 데이터가 우발적인 상태에 해당한다고 표시되는 경우, 이는 필요에 따라 데이터를 다시 파생시켜 이상적인 세계에서는 제외해도 된다는 것을 의미합니다.
+
+>
+| Data Essentiality | Data Type | Data Mutability | Classification   |
+|-------------------|-----------|-----------------|------------------|
+| Essential         | Input     | -               | Essential State  |
+| Essential         | Derived   | Immutable       | Accidental State |
+| Essential         | Derived   | Mutable         | Accidental State |
+| Accidental        | Derived   | -               | Accidental State |
+
+| 데이터 본질성 | 데이터 유형 | 변경 가능성 | 구분         |
+|---------------|-------------|-------------|--------------|
+| 본질적        | 입력        | -           | 본질적 상태  |
+| 본질적        | 파생        | 변경 불가   | 우발적 상태  |
+| 본질적        | 파생        | 변경 가능   | 우발적 상태  |
+| 우발적        | 파생        | -           | 우발적 상태  |
+
+>
+The obvious implication of the above is that there are large amounts of accidental state in typical systems.
+In fact, it is our belief that the vast majority of state (as encountered in typical contemporary systems) simply isn’t needed (in this ideal world).
+Because of this, and the huge complexity which state can cause, the ideal world removes all non-essential state.
+There is no other state at all.
+No caches, no stores of derived calculations of any kind.
+One effect of this is that all the state in the system is visible to the user of (or person testing) the system (because inputs can reasonably be expected to be visible in ways which internal cached state normally is not).
+
+위의 내용이 시사하는 바는 일반적인 시스템에는 많은 양의 우발적인 상태가 있다는 것입니다.
+사실, 우리는 (일반적으로 현대적인 시스템에서 볼 수 있는) 대부분의 상태는 (이상적인 세계에서는) 필요하지 않다고 믿습니다.
+이러한 이유로, 그리고 상태가 일으킬 수 있는 엄청난 복잡성 때문에 이상적인 세계에서는 모든 비본질적인 상태를 제거합니다.
+그 외의 다른 상태는 전혀 존재하지 않는 것입니다.
+캐시도 없고, 어떤 종류의 파생 계산 결과도 저장하지 않습니다.
+이것의 한 가지 효과는 시스템의 사용자 또는 테스트하는 사람에게 시스템의 모든 상태가 보이게 된다는 것입니다(입력은 일반적으로 내부 캐시 상태와 다르게 보여 구별이 잘 될 것으로 합리적으로 예상할 수 있기 때문입니다).
+
+##### 7.1.2 Control in the ideal world
+
+
+27쪽
 
 ↵
 
