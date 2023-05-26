@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 00:05:50 +0900
+updated : 2023-05-27 00:31:14 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1874,12 +1874,77 @@ This is a very serious concern, and is one that we address in our recommendation
 
 #### 7.3 Recommendations
 
-31쪽
+>
+We believe that — despite the existence of required accidental complexity — it is possible to retain most of the simplicity of the ideal world (section 7.1) in the real one.
+We now look at how this might be achievable.
+
+우리는 우발적인 복잡성이 존재하더라도 이상적인 세계의 단순성(7.1절)을 실제 세계에서도 대부분 유지할 수 있다고 믿습니다.
+이제 이것이 어떻게 가능할지 살펴보겠습니다.
+
+>
+Our recommendations for dealing with complexity (as exemplified by both state and control) can be summed up as:
+>
+- Avoid
+- Separate
+
+(상태와 제어를 통해 살펴본 바와 같이) 복잡성을 처리하기 위한 권장 사항은 다음과 같습니다.
+
+- 복잡성 피하기
+- 복잡성 분리하기
+
+>
+Specifically the overriding aim must be to avoid state and control where they are not absolutely and truly essential.
+
+특히 가장 중요한 목표는, 절대적으로 본질적인 경우가 아니고 진짜로 필요한 곳이 아닌 곳에서는 '상태'와 '제어'를 피하는 것입니다.
+
+>
+The recommendation of avoidance is however tempered by the acknowledgement that there will sometimes be complexity that either is truly essential (section 7.1.1) or, whilst not truly essential, is useful from a practical point of view (section 7.2.3).
+Such complexity must be separated out from the rest of the system — and this gives us our second recommendation.
+
+그러나 이렇게 회피하는 것을 '권장'하는 것은, 때때로 복잡성이 정말로 본질적이거나(7.1.1절) 진짜로 본질적이지는 않지만 실제적인 관점에서 유용한 경우(7.2.3절)가 있음을 인정하고 있기 때문입니다.
+이러한 복잡성은 시스템의 나머지 부분으로부터 '분리'되어야 합니다.
+따라서 우리는 두 번째 권장사항을 제시합니다.
+
+>
+There is nothing particularly profound in these recommendations, but they are worth stating because they are emphatically not the way most software is developed today.
+It is the fact that current established practice does not use these as central overriding principles for software development that leads directly to the complexity that we see everywhere, and as already argued, it is that complexity which leads to the software crisis[^orig-12].
+
+이 권장 사항들은 대단히 심오한 것들은 아닙니다.
+그러나 현재 대부분의 소프트웨어 개발이 이런 방식으로 이루어지지 않기 때문에, 이런 권장 사항을 명확히 언급하는 것이 중요합니다.
+
+현재의 관행은 이런 원칙들을 소프트웨어 개발의 가장 중요한 원칙으로 사용하고 있지 않습니다.
+따라서 어디에서나 흔하게 '복잡성'이 나타나게 되고, 이미 논의한 바와 같이 이러한 복잡성이 소프트웨어의 위기로 이어지게 되는 것입니다.[^orig-12]
+
+>
+In addition to not being profound, the principles behind these recommendations are not really new.
+In fact, in a classic 1979 paper Kowalski(co-inventor of Prolog) argued in exactly this direction [Kow79].
+The title of his paper was the equation:
+
+>
+“Algorithm = Logic + Control”
+{:style="text-align:center;"}
+
+>
+...and this separation that he advocated is close to the heart of what we’re recommending.
+
+이러한 권장 사항들은 심오한 것이 아니라는 점 외에도, 이 권장 사항들의 근본적인 원칙들은 사실 그닥 새로운 것은 아닙니다.
+Kowalski(Prolog의 공동 발명자)는 1979년 논문에서 정확히 이와 같은 방향의 주장을 한 바 있습니다.
+그의 논문 제목은 바로 이 방정식이었습니다.
+
+"알고리즘 = 논리 + 제어"
+{:style="text-align:center;"}
+
+...그리고 그가 주장한 이러한 '분리'는 우리가 권장하는 것의 핵심에 가깝습니다.
+
+##### 7.3.1 Required Accidental Complexity
+
+필수적인 우발적 복잡성
+
+32쪽
 
 
 ↵
 
-[^orig-11]: 원주: We are implicitly considering time as an additional input. <br/> 번역: 여기에서는 암묵적으로 '시간'을 추가 입력으로 보고 있습니다.
 
 ## 주석
 
@@ -1904,3 +1969,7 @@ This is a very serious concern, and is one that we address in our recommendation
 [^orig-09]: 원주: Care must be taken that the resulting reduction rules are confluent and terminating. <br/> 번역: 결과적으로 도출되는 축소 규칙이 '합류성(confluence)'과 '정지성(termination)'을 만족하도록 주의를 기울여야 합니다. <br/> 역주: '합류성'을 갖는 시스템은 동일한 결과를 산출해내는 가능한 구현이 여럿이어서, 여러 재작성이 가능하다. 이에 대해 추가로 위키백과의 [Confluence (abstract rewriting)](https://en.wikipedia.org/wiki/Confluence_(abstract_rewriting) )와 [합류성](https://ko.wikipedia.org/wiki/%ED%95%A9%EB%A5%98%EC%84%B1 )도 참고할 것. '정지성'은 연산 과정이 결국엔 종료되는 성질을 말한다.
 
 [^orig-10]: 원주: because it can make the logic easier to express — as we shall see in section 7.3.2 <br/> 번역: 왜냐하면 로직을 표현하기 더 쉽게 만들 수 있기 때문입니다. 이에 대해서는 7.3.2 절에서 살펴보도록 하겠습니다.
+
+[^orig-11]: 원주: We are implicitly considering time as an additional input. <br/> 번역: 여기에서는 암묵적으로 '시간'을 추가 입력으로 보고 있습니다.
+
+[^orig-12]: 원주: There is some limited similarity between our goal of “Separate” and the goal of separation of concerns as promoted by proponents of Aspect Oriented Programming — but as we shall see in section 7.3.2, exactly what is meant by separation is critical. <br/> 번역: 우리의 목표인 "분리"와 '관점지향 프로그래밍'에서 말하는 '관심사의 분리' 사이에는 다소 유사성이 있긴 하지만, '분리'가 어떤 것을 의미하는지를 정확하게 파악하는 것이 중요합니다. 이에 대해서는 7.3.2 절에서 살펴보도록 하겠습니다.
