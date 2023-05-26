@@ -3,13 +3,13 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-26 17:03:02 +0900
+updated : 2023-05-26 21:14:31 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
 public  : true
 parent  : [[/clipping]]
-latex   : false
+latex   : true
 ---
 * TOC
 {:toc}
@@ -1704,7 +1704,114 @@ These observations give some indication of where we can expect to encounter diff
 
 형식적 명세 언어
 
-28쪽
+>
+First of all, we want to consider two problems (one of a theoretical kind, the other practical) that arise in connection with the ideal-world formal requirements.
+
+일단 이상적인 세계의 형식적 요구사항과 관련하여 발생하는 두 가지 문제, 즉 이론적인 문제와 실용적인 문제 두 가지를 고려해 보고자 합니다.
+
+>
+In that section we discussed the need for formal requirements derived directly from the informal requirements.
+We observed that in the ideal world we would like to be able to execute the formal requirements without first having to translate them into some other language.
+
+우리는 앞에서 비형식적 요구 사항에서 직접 파생된 형식적 요구 사항이 필요하다고 논의했습니다.
+그리고 이상적인 세계에서는 형식적 요구 사항을 다른 언어로 번역하지 않고도 실행할 수 있으면 좋겠다고 생각했습니다.
+
+>
+The phrase “formal requirements” is basically synonymous with “formal specification”, so what effectively we’re saying would be ideal are executable specifications.
+Indeed both the declarative programming paradigms discussed above (functional programming and logic programming) have been proposed as approaches for executable specifications.
+
+"형식적 요구사항"이라는 용어는 기본적으로 "형식적 명세"와 동의어이므로, 우리가 말하고자 하는 것은 '실행 가능한 명세'가 이상적이라는 것입니다.
+실제로, 위에서 설명한 두 가지 선언적 프로그래밍 패러다임(함수형 프로그래밍과 논리 프로그래밍)은 모두 '실행 가능한 명세'로서의 접근 방식으로 제안되었습니다.
+
+>
+Before we consider the problems with executing them, we want to comment that the way in which the ideal world formal specifications were derived — directly from the users’ informal requirements — was critical.
+Formal specifications can be derived in various other ways (some of which risk the introduction of accidental complexity), and can be of various different kinds.
+
+우리는 이러한 명세를 실행하는 경우의 문제점을 고려하기 전에, 사용자의 비형식적인 요구 사항으로부터 직접 이상적인 형식적 명세를 도출하는 방식이 중요하다는 점을 언급하고 싶습니다.
+
+형식적 명세의 도출은 여러 가지 다른 방식으로도 가능하며(그 중 몇 가지는 우발적인 복잡성을 도입할 위험이 있습니다), 명세 자체도 다양한 종류가 가능합니다.
+
+>
+Traditionally formal specification has been categorized into two main camps:
+
+통념상 형식적 명세는 크게 두 가지 주요 유형으로 분류됩니다.
+
+>
+**Property-based**
+approaches focus (in a declarative manner) on what is required rather than how the requirements should be achieved.
+These approaches include the algebraic (equational axiomatic semantics) approaches such as Larch and OBJ.
+>
+**Model-based (or State-based)**
+approaches construct a potential model for the system (often a stateful model) and specify how that model must behave.
+These approaches (which include Z and VDM) can hence be used to specify how a stateful, imperative language solution must behave to satisfy the requirements.
+(We discussed the weaknesses of stateful imperative languages in section 5).
+
+**속성 기반** 접근 방식은 요구 사항을 어떻게 달성해야 하는가보다는 무엇이 요구되는지에 (선언적 방식으로) 초점을 맞춥니다.
+이 접근 방식은 (Larch와 OBJ와 같은) 대수적(방정식 공리적 의미론) 접근 방식을 포함합니다.
+
+**모델 기반 (또는 상태 기반)** 접근 방식은 시스템에 대한 잠재적 모델(대체로 상태 저장 모델)을 구성하고 그 모델이 어떻게 동작해야 하는지를 명시합니다.
+따라서 이런 접근 방식(Z, VDM 포함)은 '상태기반 명령형 언어 솔루션'이 요구 사항을 충족시키기 위해 '어떻게 동작해야 하는지를 명시'하는 데 사용할 수 있습니다.
+(5장에서 상태 기반 명령형 언어의 약점을 논의했습니다.)
+
+>
+The first problem that we want to discuss in this section is the more theoretical one.
+Arguments (which focus more on the model-based approaches) have been put forward against the concept of executable specifications [HJ89].
+The main objection is that requiring a specification language to be executable can directly restrict its expressiveness (for example when specifying requirements for a variable x it may be desirable to assert something like `¬∃y|f(y,x)` which clearly has no direct operational interpretation).
+
+이 섹션에서 논의하고자 하는 첫 번째 문제는 좀 더 이론적인 문제입니다.
+실행 가능한 명세의 개념에 대한 (모델 기반 접근 방식에 중점을 둔) 반론이 제기된 바 있습니다.
+
+반론의 주요 논거는 명세 언어가 '실행 가능해야 한다'는 조건이 그 언어의 표현력을 직접적으로 제한할 수 있다는 것입니다(예를 들어 변수 x에 대한 요구 사항을 명시할 때, $$ \lnot \exists y \vert f(y,x) $$ 와 같이 분명히 직접적인 연산적 해석이 없는 것을 단언하는 것이 바람직할 수 있습니다).
+
+>
+In response to this objection, we would say firstly that in our experience a requirement for this kind of expressivity does not seem to be common in many problem domains.
+Secondly it would seem sensible that where such specifications do occur they should be maintained in their natural form but supplemented with a separate operational component.
+Indeed in this situation it would not seem too unreasonable to consider the required operational component to be accidental in nature (of course the reality is that in cases like this the boundary between what is accidental and essential, what is reasonable to hope for in an “ideal” world, becomes less clear).
+Some specification languages address this issue by having an executable subset.
+
+이 반론에 대한 답변은 다음과 같습니다.
+
+- 첫째, 우리의 경험상 이런 종류의 표현력에 대한 요구는 많은 문제 영역에서 흔하지 않습니다.
+- 둘째, 이런 명세가 필요한 경우에는, 가능한 한 자연스러운 형태로 유지하면서도 별도의 실행 가능한 컴포넌트로 보완하는 것이 합리적일 것입니다.
+
+실제로 이러한 상황에서는 필요한 연산 구성 요소를 우발적인 것으로 간주하는 것이 그렇게 불합리해 보이지는 않습니다(물론 이런 경우에는 우발적인 것과 본질적인 것의 경계가, 즉 , "이상적인" 세상에서 바랄 수 있는 것과 현실적인 것 사이의 경계가 불분명해집니다).
+
+몇몇 명세 언어는 실행 가능한 하위 집합을 통해 이 문제를 해결합니다.
+
+>
+Finally, it is the property-based approaches that seem to have the greatest similarity to what we have in mind when we talk about executable specifications in the ideal world.
+It certainly is possible to execute algebraic specifications — deriving an operational semantics by choosing a direction for each of the equational axioms.[^orig-09]
+
+마지막으로, 우리가 이상적인 세계를 배경으로 논의했던 '실행 가능한 명세'와 가장 유사해 보이는 것은 '속성기반 접근방식'입니다.
+각 방정식 공리에 대한 해석의 '방향을 선택'하여 연산적 의미를 유도함으로써 '대수적 명세'를 실행할 수 있습니다.[^orig-09]
+
+>
+In summary, the first problem is that consideration of specification languages highlights the (theoretically) fuzzy boundary between what is essential and what is accidental — specifically it challenges the validity of our definition of essential (which we identified closely with requirements from the users) by observing that it is possible to specify things which are not directly executable.
+
+For the reasons given above (and in section 6) we think that — from the practical point of view — our definition is still viable, import and justified.
+
+요약하자면, 첫 번째 문제는 명세 언어에 대한 고려가 본질적인 것과 우발적인 것 사이의 경계가 (이론적으로) 모호하다는 점을 부각시킨다는 것입니다.
+특히, 이것은 사용자의 요구사항과 밀접하게 연결된 '본질적인 것'이라는 정의의 유효성에 의문을 제기합니다.
+왜냐하면, 직접 실행할 수 없는 것들을 명시하는 것이 가능하다는 것을 우리는 알게 되었기 때문입니다.
+
+위에서 밝힌 이유들(그리고 6장의 내용)에 따라, 우리는 실용적인 관점에서 우리의 정의가 여전히 타당하며, 중요하고, 정당하다고 생각합니다.
+
+>
+The second problem is of a more practical nature — namely that even when specifications are directly executable, this can be impractical for efficiency reasons.
+Our response to this is that whilst it is undoubtedly true, we believe that it is very important (for understanding and hence for avoiding complexity) not to lose the distinction we have defined between what is accidental and essential.
+As a result, this means that we will require some accidental components as we shall see in section 7.2.3.
+
+두 번째 문제는 보다 실용적인 성격의 문제로, 명세를 직접 실행하는 것이 가능한 경우에도 '효율'의 측면에서 적합하지 않을 수 있다는 것입니다.
+이에 대한 우리의 답변은 같습니다.
+(사람의 이해를 돕고 복잡성을 피하기 위해) 우발적인 것과 본질적인 것을 구분해 정의한 것을 잃지 않는 것이 매우 중요하다고 생각한다는 것입니다.
+
+즉, 이것은 우리가 필요로 하는 어떤 우발적인 컴포넌트가 필요하다는 것입니다. 이에 대해서는 7.2.3 절에서 살펴보도록 하겠습니다.
+
+##### 7.2.2 Ease of Expression
+
+표현의 용이성
+
+30쪽
 
 ↵
 
@@ -1728,3 +1835,4 @@ These observations give some indication of where we can expect to encounter diff
 
 [^orig-08]: 원주: this assumption is generally known as the “synchrony hypothesis” <br/> 번역: 이 가정은 일반적으로 "동기화 가설"이라 알려져 있습니다.
 
+[^orig-09]: 원주: Care must be taken that the resulting reduction rules are confluent and terminating. <br/> 번역: 결과적으로 도출되는 축소 규칙이 '합류성(confluence)'과 '정지성(termination)'을 만족하도록 주의를 기울여야 합니다. <br/> 역주: '합류성'을 갖는 시스템은 동일한 결과를 산출해내는 가능한 구현이 여럿이어서, 여러 재작성이 가능하다. 이에 대해 추가로 위키백과의 [Confluence (abstract rewriting)](https://en.wikipedia.org/wiki/Confluence_(abstract_rewriting) )와 [합류성](https://ko.wikipedia.org/wiki/%ED%95%A9%EB%A5%98%EC%84%B1 )도 참고할 것. '정지성'은 연산 과정이 결국엔 종료되는 성질을 말한다.
