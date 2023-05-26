@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-25 23:41:28 +0900
+updated : 2023-05-26 17:03:02 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -28,8 +28,8 @@ latex   : false
 초록
 
 >
-Complexity is the single major diculty in the successful development of large-scale software systems.
-Following Brooks we distinguish accidental from essential diculty, but disagree with his premise that most complexity remaining in contemporary systems is essential.
+Complexity is the single major difficulty in the successful development of large-scale software systems.
+Following Brooks we distinguish accidental from essential difficulty, but disagree with his premise that most complexity remaining in contemporary systems is essential.
 We identify common causes of complexity and discuss general approaches which can be taken to eliminate them where they are accidental in nature.
 To make things more concrete we then give an outline for a potential complexity-minimizing approach based on functional programming and Codd’s relational model of data.
 
@@ -1159,7 +1159,7 @@ Still, without purity there are no guarantees and all the same state-related pro
 
 >
 In the case of pure Prolog the language specifies both an implicit ordering for the processing of sub-goals (left to right), and also an implicit ordering of clause application (top down) — these basically correspond to an operational commitment to process the program in the same order as it is read textually (in a depth first manner).
-This means that some particular ways of writing down the program can lead to non-termination, and — when combined with the fact that some extra-logical features of the language permit side-effects — leads inevitably to the standard diculty for informal reasoning caused by control flow.
+This means that some particular ways of writing down the program can lead to non-termination, and — when combined with the fact that some extra-logical features of the language permit side-effects — leads inevitably to the standard difficulty for informal reasoning caused by control flow.
 (Note that these reasoning difficulties do not arise in ideal world of logic programming where there simply is no specified control — as distinct from in pure Prolog programming where there is).
 
 순수한 Prolog의 경우, 프로그래밍 언어는 하위 목표(sub-goal)의 처리 순서(왼쪽에서 오른쪽으로)와 절(clause) 적용에 대한 순서(위에서 아래로)를 모두 암묵적으로 지정합니다.
@@ -1670,6 +1670,39 @@ The question is — how close is it possible to get to the ideal world in the re
 #### 7.2 Theoretical and Practical Limitations
 
 이론과 실제의 한계
+
+>
+The real world is not of course ideal.
+In this section we examine a few of the assumptions made in the section 7.1 and see where they break down.
+>
+As already noted, our vision of an ideal world is similar in many ways to the vision of declarative programming that lies behind functional and logic programming.
+
+물론 현실세계는 이상적이지 않습니다.
+이 섹션에서는 7.1절에서 제시한 몇 가지 가정을 검토하고 어디에 문제가 있는지를 살펴보겠습니다.
+
+이미 언급한 바 있듯이 이상적인 세게에 대한 우리의 비전은 함수형 프로그래밍과 논리 프로그래밍의 기반이 되는 선언적 프로그래밍의 비전과 많은 면에서 유사합니다.
+
+>
+Unfortunately we have seen that functional and logic programming ultimately had to confront both state and control.
+We should note that the reasons for having to confront each are slightly different.
+State is required simply because most systems do have some state as part of their true essence.
+Control generally is accidental (the users normally are not concerned about it at all) but the ability to restrict and influence it is often required from a practical point of view.
+Additionally practical (e.g. efficiency) concerns will often dictate the use of some accidental state.
+
+불행히도 우리는 함수형 프로그래밍과 논리 프로그래밍이라 하더라도 결국에는 상태와 제어를 모두 다뤄야 한다는 것을 알게 되었습니다.
+상태와 제어를 다뤄야 하는 이유가 조금씩 다르다는 점에 유의할 필요가 있습니다.
+상태는 일단 대부분의 시스템이 자신의 본질적인 부분으로서 어느 정도의 상태를 가지고 있기 때문에 필요합니다.
+제어는 일반적으로 우발적이지만(제어는 사용자의 관심 사항이 아님), 실용적인 관점에서 제어를 제한하고 제어에 영향을 미칠 수 있는 능력은 필요한 경우가 종종 있습니다.
+또한, 실용적인 문제(예: 효율성)로 인해 우발적인 상태를 사용해야 할 때도 좀 있습니다.
+
+>
+These observations give some indication of where we can expect to encounter difficulties.
+
+이러한 면들을 통해 어떤 부분에서 어려움을 겪을 수 있는지에 대해 어느 정도 짐작할 수 있습니다.
+
+##### 7.2.1 Formal Specification Languages
+
+형식적 명세 언어
 
 28쪽
 
