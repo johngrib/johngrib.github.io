@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-26 23:50:21 +0900
+updated : 2023-05-27 00:05:50 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1842,7 +1842,40 @@ An example of this would be the derived data representing the position state of 
 
 필수적인 우발적 복잡성
 
-30쪽
+>
+We have seen two possible reasons why in practice — even with optimal language and infrastructure — we may require complexity which strictly is accidental. These reasons are:
+
+실제 상황에서는 최적화된 언어와 인프라스트럭처가 구비되어 있더라도, 엄밀히 말해 '우발적인 복잡성'을 필요로 하는 두 가지 이유가 있을 수 있습니다.
+그 이유는 다음과 같습니다.
+
+>
+**Performance** making use of accidental state and control can be required for efficiency — as we saw in the second problem of section 7.2.1.
+>
+**Ease of Expression** making use of accidental state can be the most natural way to express logic in some cases — as we saw in section 7.2.2.
+
+**성능** - 7.2.1 절의 두 번째 문제에서 살펴본 것처럼, 효율을 위해 우발적인 상태와 제어 기법을 동원해서 성능을 끌어내는 것이 필요할 수 있습니다.
+
+**표현의 용이성** - 7.2.2 절에서 살펴본 것처럼 우발적 상태를 활용하는 표현의 용이성은 경우에 따라 논리를 표현하는 가장 자연스러운 방법이 될 수 있습니다.
+
+>
+Of the two, we believe that performance will be the most common.
+>
+It is of course vital to be aware that as soon as we re-introduce this accidental complexity, we are again becoming exposed to the dangers discussed in sections 4.1 and 4.2.
+Specifically we can see that if we add in accidental state which has to be managed explicitly by the logic of the system, then we become at risk of the possibility of the system entering an inconsistent state (or “bad state”) due to errors in that explicit logic.
+This is a very serious concern, and is one that we address in our recommendations below.
+
+이 두가지 중에서는 '성능'이 가장 일반적인 경우라고 생각합니다.
+
+물론, 우발적인 복잡성을 다시 도입하게 되면, 4.1절과 4.2절에서 논의한 '위험'에 다시 노출된다는 점을 염두에 두는 것이 중요합니다.
+
+특히 시스템 논리에 의해 명시적으로 관리되어야 하는 우발적인 상태를 추가하면, 명시적 논리의 오류로 인해 시스템이 일관되지 않은 상태(나쁜 상태)로 빠지게 되는 위험에 노출된다는 것을 알 수 있습니다.
+
+이는 매우 심각한 문제이며, 아래 권장 사항에서 다루도록 하겠습니다.
+
+#### 7.3 Recommendations
+
+31쪽
+
 
 ↵
 
