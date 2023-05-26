@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-26 21:14:31 +0900
+updated : 2023-05-26 23:50:21 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1811,9 +1811,42 @@ As a result, this means that we will require some accidental components as we sh
 
 표현의 용이성
 
+>
+There is one final practical problem that we want to consider — even though we believe it is fairly rare in most application domains.
+In section 7.1.1 we argued that immutable, derived data would correspond to accidental state and could be omitted (because the logic of the system could always be used to derive the data on-demand).
+
+대부분의 애플리케이션 영역에서는 매우 드물 것 같긴 하지만, 마지막으로 고려해봐야 할 실질적인 문제가 하나 있습니다.
+
+7.1.1 절에서 우리는 '불변성을 갖는 파생 데이터'는 우발적 상태에 해당하므로 생략할 수 있다고 주장했습니다.
+(시스템의 논리를 사용하여 요청에 따라 언제든지 해당 데이터를 파생시킬 수 있기 때문)
+
+>
+Whilst this is true, there are occasionally situations where the ideal world approach (of having no accidental state, and using on-demand derivation) does not give rise to the most natural modelling of the problem.
+
+이것은 사실이긴 합니다.
+그러나 이상적인 세계의 접근 방식(우발적인 상태가 존재하지 않고, 요청에 따라 파생시키는 방식)이 문제를 가장 자연스럽게 모델링하지 못하는 경우가 가끔 있습니다.
+
+>
+One possible situation of this kind is for derived data which is dependent upon both a whole series of user inputs over time, and its own previous values. In such cases it can be advantageous[^orig-10] to maintain the accidental state even in the ideal world.
+
+그런 상황이 발생할 수 있는 한 가지 경우는, 시간이 지남에 따라 이어지는 사용자의 입력과 그 자체의 이전 값에 모두 의존하는 파생 데이터입니다.
+이런 경우에는 이상적인 세계에서도 우발적인 상태를 유지하는 것이 유리[^orig-10]할 수 있습니다.
+
+>
+An example of this would be the derived data representing the position state of a computer-controlled opponent in an interactive game — it is at all times derivable by a function of both all prior user movements and the initial starting positions,[^orig-11] but this is not the way it is most naturally expressed.
+
+예를 들어 인터랙티브 게임에서 컴퓨터가 제어하는 상대방의 위치 상태를 나타내는 파생 데이터가 있다고 합시다.
+이러한 파생 데이터는 이전의 모든 사용자의 움직임과 초기 시작 위치의 함수를 통해서[^orig-11] 언제든지 파생시킬 수 있지만, 이런 것은 가장 자연스러운 표현 방식은 아닙니다.
+
+##### 7.2.3 Required Accidental Complexity
+
+필수적인 우발적 복잡성
+
 30쪽
 
 ↵
+
+[^orig-11]: 원주: We are implicitly considering time as an additional input. <br/> 번역: 여기에서는 암묵적으로 '시간'을 추가 입력으로 보고 있습니다.
 
 ## 주석
 
@@ -1836,3 +1869,5 @@ As a result, this means that we will require some accidental components as we sh
 [^orig-08]: 원주: this assumption is generally known as the “synchrony hypothesis” <br/> 번역: 이 가정은 일반적으로 "동기화 가설"이라 알려져 있습니다.
 
 [^orig-09]: 원주: Care must be taken that the resulting reduction rules are confluent and terminating. <br/> 번역: 결과적으로 도출되는 축소 규칙이 '합류성(confluence)'과 '정지성(termination)'을 만족하도록 주의를 기울여야 합니다. <br/> 역주: '합류성'을 갖는 시스템은 동일한 결과를 산출해내는 가능한 구현이 여럿이어서, 여러 재작성이 가능하다. 이에 대해 추가로 위키백과의 [Confluence (abstract rewriting)](https://en.wikipedia.org/wiki/Confluence_(abstract_rewriting) )와 [합류성](https://ko.wikipedia.org/wiki/%ED%95%A9%EB%A5%98%EC%84%B1 )도 참고할 것. '정지성'은 연산 과정이 결국엔 종료되는 성질을 말한다.
+
+[^orig-10]: 원주: because it can make the logic easier to express — as we shall see in section 7.3.2 <br/> 번역: 왜냐하면 로직을 표현하기 더 쉽게 만들 수 있기 때문입니다. 이에 대해서는 7.3.2 절에서 살펴보도록 하겠습니다.
