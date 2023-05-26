@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 00:31:14 +0900
+updated : 2023-05-27 08:43:13 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -1940,7 +1940,80 @@ Kowalski(Prolog의 공동 발명자)는 1979년 논문에서 정확히 이와 �
 
 필수적인 우발적 복잡성
 
-32쪽
+>
+In section 7.2.3 we noted two possible reasons for requiring accidental complexity (even in the presence of optimal language and infrastructure).
+We now consider the most appropriate way of handling each.
+
+7.2.3 절에서 (최적의 언어와 인프라가 존재하는 상황에서도) 우발적 복잡성을 필요로 하는 두 가지 이유를 살펴보았습니다.
+이제 각각을 처리하는 가장 적절한 방법을 고려해 보겠습니다.
+
+###### Performance
+
+성능
+
+>
+We have seen that there are many serious risks which arise from accidental complexity — particularly when introduced in an undisciplined manner.
+To mitigate these risks we take two defensive measures.
+
+우리는 우발적인 복잡성으로 인해 발생하는 많은 심각한 위험들을 보았습니다.
+이런 것들은 특히 훈련되지 않은 방식으로 도입될 때 더 위험해집니다.
+이러한 위험을 완화하기 위해 두 가지 방어적인 조치를 취할 수 있습니다.
+
+>
+The first is with regard to the risks of explicit management of accidental state (which we have argued is actually the majority of state).
+The recommendation here is that we completely avoid explicit management of the accidental state — instead we should restrict ourselves to simply declaring what accidental state should be used, and leave it to a completely separate infrastructure (on which our system will eventually run) to maintain.
+This is reasonable because the infrastructure can make use of the (separate) system logic which specifies how accidental data must be derived.
+
+첫 번째는 우발적인 상태를 명시적으로 관리하는 것의 위험과 관련된 것입니다(우리는 실제로 이런 종류의 상태가 '상태'의 대부분이라고 주장했습니다).
+여기에서는 우발적인 상태를 명시적으로 관리하는 대신, 어떤 종류의 우발적인 상태를 사용해야 하는지 선언하고, 유지 관리는 완전히 별도의 인프라(시스템이 최종적으로 실행될 인프라)에 맡기는 것을 권장합니다.
+인프라는 우발적인 데이터를 어떻게 도출해야 하는지 지정하는 (별도의) 시스템 로직을 사용할 수 있기 있으므로, 이런 방식은 합리적입니다.
+
+>
+By doing this we eliminate any risk of state inconsistency (bugs in the infrastructure aside of course).
+Indeed, as we shall see (in section 7.3.2), from the point of view of the logic of the system, we can effectively forget that the accidental state even exists.
+More specific examples of this approach are given in the second half of this paper.
+
+이렇게 하면 상태 불일치의 위험(물론 인프라의 버그는 제외)을 제거할 수 있습니다.
+실제로 7.3.2절에서 살펴보게 되겠지만,
+시스템 논리의 관점에서는 우발적인 상태가 존재한다는 사실도 효과적으로 잊을 수 있습니다.
+이러한 접근 방식에 대한 보다 구체적인 예는 이 글의 후반부에 제시됩니다.
+
+>
+The other defensive action we take is “Separate”.
+We examine separation after first looking at the other possible reason for requiring accidental complexity.
+
+그리고 또다른 방어 조치는 "분리"입니다.
+우발적인 복잡성을 필요로 하는 또 다른 이유를 먼저 살펴본 후, '분리'에 대해서 살펴보겠습니다.
+
+###### Ease of Expression
+
+표현의 용이성
+
+>
+This problem (see section 7.2.2) fundamentally arises when derived (i.e. accidental) state offers the most natural way to express parts of the logic of the system.
+
+이 문제(섹션 7.2.2 참고)는 근본적으로 파생된 상태(즉, 우발적인 상태)가 시스템의 논리의 일부를 표현하는 가장 자연스러운 방법을 제공할 때 발생합니다.
+
+>
+The diculty then arises that this requirement (to use the accidental state in a fairly direct manner inside the system logic) clashes with the goal of separation that we have just discussed.
+This very separation is critical when it comes to avoiding complexity, so we do not want to sacrifice it for this (probably fairly rare) situation.
+
+문제는 이러한 요구 사항(시스템 논리 내에서 상당히 직접적인 방식으로 우발적인 상태를 사용하는 것)이 방금 논의한 '분리'라는 목표와 충돌한다는 것입니다.
+'분리'는 복잡성을 피하는 데 있어 매우 중요하므로, 이런 드문 상황 때문에 분리를 포기하고 싶지는 않습니다.
+
+>
+Instead what we recommend is that, in cases where it really is the only natural thing to do, we should pretend that the accidental state is really essential state for the purposes of the separation discussed below.
+One straightforward way to do this is to make use of an external component which observes the derived data in question and creates the illusion of the user typing that same (derived, accidental) data back in as input data (we touch on this issue again in section 9.1.4).
+
+따라서 우리가 권장하는 것은, 그것이 정말 자연스러운 유일한 방법이라면 아래에서 논의할 '분리'의 목적에 맞추어 우발적인 상태를 마치 본질적인 상태인 것처럼 다루는 것입니다.
+
+이를 위한 간단한 방법 중 하나는 해당 파생 데이터를 관찰하고 사용자가 동일한(파생된, 우발적인) 데이터를 다시 입력 데이터로 입력하는 것처럼 보이도록 하는 외부 컴포넌트를 사용하는 것입니다(이 문제에 대해서는 9.1.4절에서 다시 다루겠습니다).
+
+##### 7.3.2 Separation and the relationship between the components
+
+7.3.2 분리와 컴포넌트 간의 관계
+
+33쪽
 
 
 ↵
