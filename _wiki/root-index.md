@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-23 23:27:11 +0900
+updated : 2023-05-27 11:04:46 +0900
 regenerate: true
 ---
 * TOC
@@ -478,6 +478,7 @@ regenerate: true
 * [[/jargon/moore-s-law]]
 * [[/jargon/no-problem-syndrome]]
 * [[/jargon/postel-s-law]]
+* [[/jargon/risc]]
 * [[/jargon/solid]]
 * [[/jargon/telescope-rule]]
 * [[/jargon/two-pizza-team]]
