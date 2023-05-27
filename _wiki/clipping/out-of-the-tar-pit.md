@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 13:38:16 +0900
+updated : 2023-05-27 13:53:52 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2202,11 +2202,68 @@ Together the goals of avoid and separate give us reason to hope that we may well
 
 #### 7.4 Summary
 
----- 
+>
+This first part of the paper has done two main things.
+It has given arguments for the overriding danger of complexity, and it has given some hope that much of the complexity may be avoided or controlled.
 
-36쪽
+이 논문의 첫 번째 부분에서는 두 가지 중요한 작업을 이야기했습니다.
+복잡성의 가장 중요한 위험성에 대한 논거를 제시했으며,
+복잡성의 상당 부분을 피하거나 제어할 수 있을 것이라는 희망을 제시했습니다.
+
+>
+The key difference between what we are advocating and existing approaches (as embodied by the various styles of programming language) is a high level separation into three components — each specified in a different language[^orig-14].
+It is this separation which allows us to restrict the power of each individual component, and it is this use of restricted languages which is vital in making the overall system easier to comprehend (as we argued in section 4.4 — power corrupts).
+
+우리가 제안하는 접근방식과 기존의 접근방식(다양한 프로그래밍 언어의 스타일로 구현됨[^orig-14]) 사이의 주요한 차이점은 세 가지 컴포넌트로의 고수준 분리라 할 수 있습니다.
+
+이러한 분리를 통해 각각의 컴포넌트의 힘을 제한할 수 있으며,
+이렇게 제한된 언어의 사용은 전체 시스템을 이해하기 쉽게 만드는 데 매우 중요합니다.
+(4.4절에서 주장한 바와 같이 절대 권력은 부패합니다.)
+
+
+>
+Doing this separation when building a system may not be easy, but we believe that for any large system it will be significantly less difficult than dealing with the complexity that arises otherwise.
+
+시스템을 구축할 때 이러한 분리를 수행하는 것은 쉽지 않을 수 있습니다.
+그러나 대규모 시스템의 경우 이런 분리가 없을 때 발생하게 될 복잡성을 다루는 것보다는, 분리를 하는 것이 훨씬 쉬울 것이라고 믿습니다.
+
+>
+It is hard to overstate the dangers of complexity.
+If it is not controlled it spreads.
+The only way to escape this risk is to place the goals of avoid and separate at the top of the design objectives for a system.
+It is not sucient simply to pay heed to these two objectives — it is crucial that they be the overriding consideration.
+This is because complexity breeds complexity and one or two early “compromises” can spell complexity disaster in the long run.
+
+복잡성의 위험은 아무리 강조해도 지나치지 않습니다.
+복잡성을 제어하지 않는다면 결국 퍼져나가게 됩니다.
+이러한 위험에서 벗어날 수 있는 유일한 방법은 시스템의 설계 목표의 최상단에 회피와 분리라는 목표를 두는 것입니다.
+이 두 가지 목표에 단순하게 주의를 기울이는 정도로는 충분하지 않습니다.
+이 두 가지 목표를 최우선으로 고려하는 것이 중요합니다.
+복잡성은 복잡성을 낳기 때문에, 초기의 한두 가지 "타협"은 장기적으로 복잡성의 재앙을 불러올 수 있습니다.
+
+>
+It is worth noting in particular the risks of “designing for performance”.
+The dangers of “premature optimisation” are as real as ever — there can be no comparison between the diculty of improving the performance of a slow system designed for simplicity and that of removing complexity from a complex system which was designed to be fast (and quite possibly isn’t even that because of myriad ineciencies hiding within its complexity).
+>
+In the second half of this paper we shall consider a possible approach based on these recommendations.
+
+특히 '성능을 위한 설계'의 위험성에 주목할 필요가 있습니다.
+'조기 최적화'의 위험은 여전히 실존합니다.
+단순성을 위해 설계한 느린 시스템의 성능을 개선하는 것과,
+빠른 성능을 위해 설계한 복잡한 시스템에서 복잡성을 제거하는 것의 어려움은 비교할 수 없는 것입니다.
+(심지어 복잡성 속에 숨어있는 무수한 비효율 때문에 해당 시스템의 속도가 빠르지 않을 수도 있습니다.)
+
+이 글의 후반부에서는 이러한 권고사항을 기반으로 한 접근 방식을 고려해 보겠습니다.
+
+### 8 The Relation Model
+
+관계형 모델
+
+
+37쪽
 
 ↵
+dicult
 
 
 ## 주석
@@ -2238,3 +2295,5 @@ Together the goals of avoid and separate give us reason to hope that we may well
 [^orig-12]: 원주: There is some limited similarity between our goal of “Separate” and the goal of separation of concerns as promoted by proponents of Aspect Oriented Programming — but as we shall see in section 7.3.2, exactly what is meant by separation is critical. <br/> 번역: 우리의 목표인 "분리"와 '관점지향 프로그래밍'에서 말하는 '관심사의 분리' 사이에는 다소 유사성이 있긴 하지만, '분리'가 어떤 것을 의미하는지를 정확하게 파악하는 것이 중요합니다. 이에 대해서는 7.3.2 절에서 살펴보도록 하겠습니다.
 
 [^orig-13]: 원주: indeed it should be perfectly possible for different users of the same essential system to employ different accidental components — each designed for their particular needs <br/> 번역: 실제로, 같은 본질적 시스템을 사용하는 서로 다른 사용자들이 자신의 특정한 요구에 맞게 설계된 다양한 우발적인 컴포넌트를 사용하는 것이 완벽하게 가능해야 합니다.
+
+[^orig-14]: 원주: or different subsets of the same language, provided it is possible to forcibly restrict each component to the relevant subset. <br/> 번역: 또는 동일한 언어의 다른 하위 집합으로, 각 컴포넌트를 관련된 하위 집합으로 강제로 제한할 수 있는 경우입니다.
