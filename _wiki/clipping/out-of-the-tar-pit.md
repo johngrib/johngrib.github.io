@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 00:29:09 +0900
+updated : 2023-05-28 08:54:07 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2615,6 +2615,26 @@ Speaking somewhat loosely, the first two components can be seen as corresponding
 
 본질적 상태("상태")
 
+>
+This component consists solely of a specification of the essential state for the system in terms of base relvars[^orig-20] (in FRP all state is stored solely in terms of relations — there are no exceptions to this).
+Specifically it is the names and types of the base relvars that are specified here, not their actual contents.
+The contents of the relvars (i.e. the relations themselves) will of course be crucial when the system is used, but here we are discussing only the static structure of the system.
+>
+In accordance with section 7.1.1, FRP strongly encourages that data be treated as essential state only[^orig-21] when it has been input directly by a user.[^orig-22]
+
+이 컴포넌트는 base relvar[^orig-20]의 관점에서 시스템의 본질적 상태에 대한 명세로만 구성됩니다(FRP에서 모든 상태는 관계의 형태로만 저장되며, 예외는 없습니다).
+
+특히 여기에서 명시되는 것은 실제 내용이 아니라 base relvar의 이름과 유형입니다.
+relvar의 내용(즉, 관계 자체)은 시스템이 사용될 때 물론 중요할 것입니다.
+하지만 여기서는 시스템의 정적 구조에 대해서만 논의하고 있습니다.
+
+7.1.1절에 따라 FRP는 사용자가 직접 입력한 경우에만 해당 데이터를 본질적 상태로만[^orig-21] 취급할 것을 강력하게 권장합니다.
+[^orig-22]
+
+##### 9.1.2 Essential Logic ("Behaviour")
+
+본질적 논리("동작")
+
 44쪽
 
 ↵
@@ -2666,3 +2686,9 @@ dicult
 [^orig-18]: 원주: By user-defined we mean specific to this particular FRP system (as opposed to pre- provided by an underlying infrastructure). <br/> 번역: '사용자 정의'란 기본 인프라에서 미리 제공한 것이 아니라, 여기에서 언급하는 특정한 FRP 시스템과 관련된 것을 의미합니다.
 
 [^orig-19]: 원주: Equally, traditional OOP pays little attention to the accidental / essential split which was also discussed in section 7.3.2. <br/> 번역: 이와 마찬가지로, 전통적인 OOP는 7.3.2 절에서 논의한 우발적/본질적 분할에 대해서는 거의 관심을 기울이지 않습니다.
+
+[^orig-20]: 원주: see section 8.1.1 for a definition of this term. <br/> 번역: 이 용어의 정의는 8.1.1절을 참고할 것.
+
+[^orig-21]: 원주: aside from the ease of expression issue discussed in section 9.1.4. <br/> 번역: 9.1.4절에서 설명할 표현의 용이성 문제를 제외하면 말이죠.
+
+[^orig-22]: 원주: Other systems connected electronically are considered equivalent to users inputting data for these purposes. <br/> 번역: 전기적으로 연결된 다른 시스템은 이런 목적으로 데이터를 입력하는 것과 동등하게 간주합니다.
