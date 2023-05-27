@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 08:43:13 +0900
+updated : 2023-05-27 13:03:54 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -20,6 +20,7 @@ latex   : true
 - 원문
     - [Out of the Tar Pit (PDF)]( https://curtclifton.net/papers/MoseleyMarks06a.pdf )
     - [Out of the Tar Pit (papers-we-love)]( https://github.com/papers-we-love/papers-we-love/blob/main/design/out-of-the-tar-pit.pdf )
+    - Ben Moseley 와 Peter Marks의 2006년 2월 6일 논문.
 
 ## 번역
 
@@ -1584,12 +1585,19 @@ Wherever the table shows data as corresponding to accidental state it means that
 | Essential         | Derived   | Mutable         | Accidental State |
 | Accidental        | Derived   | -               | Accidental State |
 
+>
+Table 1: Data and State
+{:style="text-align:center;"}
+
 | 데이터 본질성 | 데이터 유형 | 변경 가능성 | 구분         |
 |---------------|-------------|-------------|--------------|
 | 본질적        | 입력        | -           | 본질적 상태  |
 | 본질적        | 파생        | 변경 불가   | 우발적 상태  |
 | 본질적        | 파생        | 변경 가능   | 우발적 상태  |
 | 우발적        | 파생        | -           | 우발적 상태  |
+
+Table 1: 데이터와 상태
+{:style="text-align:center;"}
 
 >
 The obvious implication of the above is that there are large amounts of accidental state in typical systems.
@@ -1995,7 +2003,7 @@ This problem (see section 7.2.2) fundamentally arises when derived (i.e. acciden
 이 문제(섹션 7.2.2 참고)는 근본적으로 파생된 상태(즉, 우발적인 상태)가 시스템의 논리의 일부를 표현하는 가장 자연스러운 방법을 제공할 때 발생합니다.
 
 >
-The diculty then arises that this requirement (to use the accidental state in a fairly direct manner inside the system logic) clashes with the goal of separation that we have just discussed.
+The difficulty then arises that this requirement (to use the accidental state in a fairly direct manner inside the system logic) clashes with the goal of separation that we have just discussed.
 This very separation is critical when it comes to avoiding complexity, so we do not want to sacrifice it for this (probably fairly rare) situation.
 
 문제는 이러한 요구 사항(시스템 논리 내에서 상당히 직접적인 방식으로 우발적인 상태를 사용하는 것)이 방금 논의한 '분리'라는 목표와 충돌한다는 것입니다.
@@ -2013,8 +2021,190 @@ One straightforward way to do this is to make use of an external component which
 
 7.3.2 분리와 컴포넌트 간의 관계
 
-33쪽
+>
+In the above we deliberately glossed over exactly what we meant by our second recommendation: “Separate”. This is because it actually encompasses two things.
 
+위에서는 두 번째 권장 사항인 '분리'의 정확한 의미를 의도적으로 생략했습니다.
+이것은 사실 두 가지를 포괄하기 때문입니다.
+
+>
+The first thing that we’re doing is to advocate separating out all complexity of any kind from the pure logic of the system (which — having nothing to do with either state or control — we’re not really considering part of the complexity).
+This could be referred to as the logic / state split (although of course state is just one aspect of complexity — albeit the main one).
+
+우리가 하는 첫 번째 일은 시스템의 순수한 논리에서 모든 복잡성을 분리하는 것을 주장하는 것입니다(이런 순수한 논리는 상태나 제어와는 관련이 없으므로, 우리는 이것을 복잡성의 일부로 보지 않습니다).
+이것을 논리/상태 분할이라고 할 수 있습니다(물론 복잡성의 한 측면에 불과하긴 하지만 '상태'는 중요한 측면입니다).
+
+>
+The second is that we’re further dividing the complexity which we do retain into accidental and essential.
+This could be referred to as the accidental / essential split.
+These two splits can more clearly be seen by considering the Table 2. (N.B. We do not consider there to be any essential control).
+
+두 번째는 우리가 보유하고 있는 복잡성을 우발적인 것과 본질적인 것으로 세분화하는 것입니다.
+이것을 우발적/본질적 분할이라고 할 수 있습니다.
+이 두 가지 분할은 Table 2를 통해 더욱 명확하게 알 수 있습니다.(참고: 우리는 본질적이어야 하는 종류의 제어는 고려하지 않습니다)
+
+<style>
+#table-2,#table-2-k tr:nth-child(4) {
+    background-color: #C0C0C0;
+}
+</style>
+
+> | Complexity                    | Type            | Recommendation |
+> |-------------------------------|-----------------|----------------|
+> | Essential Logic               |                 | Separate       |
+> | Essential Complexity          | State           | Separate       |
+> | Accidental Useful Complexity  | State / Control | Separate       |
+> | Accidental Useless Complexity | State / Control | Avoid          |
+> {: #table-2 .table-style}
+>
+> Table 2: Types of complexity within a system
+
+
+| 복잡성                 | 유형        | 권장 |
+|------------------------|-------------|------|
+| 본질적 논리            |             | 분리 |
+| 본질적 복잡성          | 상태        | 분리 |
+| 유용한 우발적 복잡성   | 상태 / 제어 | 분리 |
+| 쓸모없는 우발적 복잡성 | 상태 / 제어 | 회피 |
+{: #table-2-k .table-style}
+
+Table 2: 시스템 내의 복잡성의 유형
+
+>
+The essential bits correspond to the requirements in the ideal world of section 7.1 — i.e. we are recommending that the formal requirements adopt the logic / state split.
+
+'본질적' 부분들은 7.1절에서 언급한 이상적인 세계에서의 요구사항에 해당합니다.
+즉, 우리는 형식적인 요구사항이 논리와 상태의 분할을 채택하도록 권장하고 있습니다.
+
+>
+The top three rows of the table correspond to components which we expect to exist in most practical systems (some systems may not actually require any essential state, but we include it here for generality). i.e. These are the three things which will need to be specified (in terms of a given underlying language and infrastructure) by the development team.
+
+표의 위에 있는 세 줄은 대부분의 실제 시스템에 존재할 것으로 예상되는 컴포넌트에 해당합니다(일부 시스템은 실제로 본질적인 상태가 필요하지 않을 수도 있지만, 일반성을 위해 여기에 포함시켰습니다).
+즉, 개발 팀에서 (주어진 기반 언어와 인프라에 대해) 지정해야 하는 세 가지 요소입니다.
+
+>
+“Separate” is basically advocating clean distinction between all three of these components.
+It is additionally advocating a split between the state and control components of the “Useful” Accidental Complexity — but this distinction is less important than the others.
+
+"분리"는 기본적으로 이 세 가지 컴포넌트들 간의 명확한 구분을 강조합니다.
+또한 "유용한" 우발적 복잡성의 상태 컴포넌트와 제어 컴포넌트 사이의 분리도 이야기하고 있지만, 이 구분은 다른 것보다는 상대적으로 덜 중요합니다.
+
+>
+One implication of this overall structure is that the system (essential + accidental but useful) should still function completely correctly if the “accidental but useful” bits are removed (leaving only the two essential components) — albeit possibly unacceptably slowly.
+As Kowalski (who — writing in a Prolog-context — was not really considering any essential state) says:
+
+>
+“The logic component determines the meaning ...whereas the control component only affects its eciency”.
+{:style="text-align:center;"}
+
+이러한 전체 구조의 한 가지 함축된 의미는 '우발적이지만 유용한' 부분을 제거한다 하더라도(즉, 두 가지 필수적인 컴포넌트만 남겨둠으로써) 시스템(본질적 + 우발적이지만 유용한)이 완전히 정확하게 작동해야 한다는 것입니다. (단, 이렇게 하면 시스템이 불편할 정도로 느리게 작동할 수도 있습니다.)
+
+Prolog 기준으로 글을 썼기 때문에 본질적인 상태를 고려하지 않았던 Kowalski는 다음과 같이 말한 바 있습니다.
+
+"논리 컴포넌트는 의미를 결정하는 반면... 제어 컴포넌트는 효율성에만 영향을 미칩니다."
+{:style="text-align:center;"}
+
+>
+A consequence of separation is that the separately specified components will each be of a very different nature, and as a result it may be ideal to use different languages for each.
+These languages would each be oriented (i.e. restricted) to their specific goal — there is no sense in having control specification primitives in a language for specifying state.
+This notion of restricting the power of the individual languages is an important one — the weaker the language, the more simple it is to reason about.
+This has something in common with the ideas behind “Domain Specific Languages” — one exception being that the domains in question are of a fairly abstract nature and combine to form a general-purpose platform.
+
+분리의 결과로, 개별적으로 지정된 컴포넌트들은 각자 매우 다른 성격을 갖게 됩니다.
+결과적으로 각 컴포넌트에 대해 다른 언어를 사용하는 것이 이상적일 수 있습니다.
+이러한 언어는 각각 특정한 목표를 지향(즉, 제한)하게 될 것이며, 상태를 지정하기 위한 언어에 제어 명세 원시(primitive)가 있는 것은 의미가 없습니다.
+개별 언어의 능력을 제한하는 이러한 개념은 중요합니다.
+언어의 능력이 약할수록 추론이 더 간단해지기 때문입니다.
+
+이는 "Domain Specific Languages"라는 아이디어의 배경과 몇 가지 공통점이 있습니다.
+단, 여기에서는 문제 대상 도메인이 상당히 추상적이며, 이들이 결합해 일반적인 목적의 플랫폼을 형성하는 것이 예외적인 경우입니다.
+
+>
+The vital importance of separation comes simply from the fact that it is separation that allows us to “restrict the power” of each of the components independently.
+The restricted power of the respective languages with which each component is expressed facilitates reasoning about them individually.
+The very fact that the three are separated from each other facilitates reasoning about them as a whole (e.g. you do not have to think about accidental state at all when you are working on the essential logic of your system[^orig-13]).
+
+분리의 중요성은 분리를 통해서만 각 컴포넌트의 능력을 독립적으로 "제한"할 수 있다는 사실에서 비롯됩니다.
+각 컴포넌트를 표현하는 각 언어의 능력에 제한이 있으면, 각각에 대해 추론하기가 쉬워집니다.
+
+이 세 가지가 서로 분리되어 있다는 사실 자체가, 전체적으로 컴포넌트들에 대한 추론을 쉽게 해줍니다(예: 시스템의 본질적인 논리에 대해 작업할 때는 우발적인 상태에 대해 생각할 필요가 전혀 없습니다[^orig-13]).
+
+>
+Figure 1 shows the same three expected components of a system in a different way (compare with Table 2).
+Each box in the diagram corresponds to some aspect of the system which will need to be specified by the development team.
+Specifically, it will be necessary to specify what the essential state can be, what must always be logically true, and finally what accidental use can be made of state and control (typically for performance reasons).
+>
+The differing nature of what is specified by each of the components leads naturally to certain relationships between them, to restrictions on the ways in which they can or cannot refer to each other.
+These restrictions are absolute, and because of this provide a huge aid to understanding the different components of the system independently.
+
+Figure 1은 동일한 세 가지 시스템 컴포넌트를 다른 방식으로 보여줍니다(Table 2와 비교해볼 것).
+이 다이어 그램의 각 상자들은 개발팀에서 지정해야 하는 시스템의 어떤 측면을 나타냅니다.
+구체적으로는, 본질적인 상태가 무엇인지, 항상 논리적으로 참이어야 하는 것이 무엇인지, 마지막으로 상태와 제어에 대해 우발적으로 사용할 수 있는 것이 무엇인지(일반적으로 성능상의 이유로)를 지정해야 합니다.
+
+각 컴포넌트에 의해 지정된 것의 특성이 다르면 자연스럽게 컴포넌트들 간의 특정한 관계, 즉 서로 참조할 수 있거나 참조할 수 없는 방식에 대한 제한이 생깁니다.
+이러한 제한은 절대적이기 때문에 시스템의 각 컴포넌트를 독립적으로 이해하는 데 큰 도움이 됩니다.
+
+>
+![Figure 1](https://github.com/johngrib/johngrib.github.io/assets/1855714/93270e30-75fe-4f40-8b6f-d940148fefb9 )
+>
+Figure 1: Recommended Architecture (arrows show static references)
+{:style="text-align:center;"}
+
+>
+**Essential State**
+This can be seen as the foundation of the system.
+The specification of the required state is completely self-contained — it can make no reference to either of the other parts which must be specified.
+One implication of this is that changes to the essential state specification itself may require changes in both the other specifications, but changes in either of the other specifications may never require changes to the specification of essential state.
+
+**본질적인 상태**
+
+이것은 시스템의 기초라 할 수 있습니다.
+본질적 상태의 명세는 완전히 독립적이며, 이 컴포넌트는 다른 컴포넌트들을 참조할 수 없습니다.
+이것은 본질적 상태 명세의 변경이 다른 두 명세의 변경을 요구할 수 있지만, 다른 명세의 변경은 본질적 상태 명세의 변경을 요구하지 않는다는 것을 의미합니다.
+
+>
+**Essential Logic**
+This is in some ways the “heart” of the system — it expresses what is sometimes termed the “business” logic.
+This logic expresses — in terms of the state — what must be true.
+It does not say anything about how, when, or why the state might change dynamically — indeed it wouldn’t make sense for the logic to be able to change the state in any way.
+>
+Changes to the essential state specification may require changes to the logic specification, and changes to the logic specification may require changes to the specification for accidental state and control.
+The logic specification will make no reference to any part of the accidental specification.
+Changes in the accidental specification can hence never require any change to the essential logic.
+
+**본질적 논리**
+
+이것은 어떤 면에서 시스템의 "심장"이라 할 수 있으며, "비즈니스 로직"이라 부르는 것을 표현합니다.
+이 논리는 상태의 관점에서 무엇이 참이어야 하는지를 표현합니다.
+이 논리는 상태가 언제, 어떻게, 왜 동적으로 변경될 수 있는지에 대해서는 아무것도 말하지 않습니다.
+실제로 논리가 어떤 방식으로든 '상태를 변경'하는 것은 의미가 없습니다.
+
+본질적인 상태 명세를 변경하면 논리 명세 또한 변경해야 할 수 있으며,
+논리 명세를 변경하려면 우발적인 상태와 제어에 대한 명세도 변경해야 할 수 있습니다.
+논리 명세는 우발적인 명세의 어떤 부분도 참조하지 않습니다.
+따라서 우발적인 명세의 변경은 본질적인 논리에 대한 어떤 변경도 요구하지 않습니다.
+
+>
+**Accidental State and Control**
+This (by virtue of its accidental nature) is conceptually the least important part of the system.
+Changes to it can never affect the other specifications (because neither of them make any reference to any part of it), but changes to either of the others may require changes here.
+
+**우발적인 상태와 제어**
+
+이것은 (우발적인 특성으로 인해) 개념상 시스템에서 가장 중요하지 않은 부분입니다.
+이 부분을 변경해도 다른 명세에는 영향을 미치지 않지만(다른 명세는 이 부분을 참조하지 않기 때문),
+다른 명세를 변경하면 이 부분도 변경해야 할 수 있습니다.
+
+>
+Together the goals of avoid and separate give us reason to hope that we may well be able to retain much of the simplicity of the ideal world in the real one.
+
+회피와 분리라는 목표는 우리가 실제 세계에서도 이상적인 세계의 단순함을 유지할 수 있을 것이라는 희망을 가질 수 있도록 해줍니다.
+
+#### 7.4 Summary
+
+---- 
+
+36쪽
 
 ↵
 
@@ -2046,3 +2236,5 @@ One straightforward way to do this is to make use of an external component which
 [^orig-11]: 원주: We are implicitly considering time as an additional input. <br/> 번역: 여기에서는 암묵적으로 '시간'을 추가 입력으로 보고 있습니다.
 
 [^orig-12]: 원주: There is some limited similarity between our goal of “Separate” and the goal of separation of concerns as promoted by proponents of Aspect Oriented Programming — but as we shall see in section 7.3.2, exactly what is meant by separation is critical. <br/> 번역: 우리의 목표인 "분리"와 '관점지향 프로그래밍'에서 말하는 '관심사의 분리' 사이에는 다소 유사성이 있긴 하지만, '분리'가 어떤 것을 의미하는지를 정확하게 파악하는 것이 중요합니다. 이에 대해서는 7.3.2 절에서 살펴보도록 하겠습니다.
+
+[^orig-13]: 원주: indeed it should be perfectly possible for different users of the same essential system to employ different accidental components — each designed for their particular needs <br/> 번역: 실제로, 같은 본질적 시스템을 사용하는 서로 다른 사용자들이 자신의 특정한 요구에 맞게 설계된 다양한 우발적인 컴포넌트를 사용하는 것이 완벽하게 가능해야 합니다.
