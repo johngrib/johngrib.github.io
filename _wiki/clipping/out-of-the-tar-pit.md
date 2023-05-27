@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 23:56:52 +0900
+updated : 2023-05-28 00:01:00 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2509,6 +2509,21 @@ Finally, many commercially available DBMSs provide imperative mechanisms such as
 #### 8.4 Data Independence
 
 데이터 독립성
+
+>
+Data independence is the principle of separating the logical model from the physical storage representation, and was one of the original motivations for the relational model.
+>
+It is interesting to note that the data independence principle is in fact a very close parallel to the accidental / essential split recommended above (section 7.3.2).
+This is one of several reasons that motivate the adoption of the relational model in Functional Relational Programming (see section 9 below).
+
+데이터 독립성은 논리적 모델과 물리적 저장소 표현을 분리하는 원칙으로, 관계형 모델 본래의 동기 중 하나였습니다.
+
+데이터 독립성 원칙은 사실 앞에서 권장한 우발적/본질적 분할(7.3.2절)과 매우 유사하다는 점이 흥미롭습니다.
+이는 함수형 관계형 프로그래밍에서 관계형 모델을 채택하게 된  여러 가지 이유 중 하나입니다(아래 9장 참조).
+
+#### 8.5 Extensions
+
+확장
 
 41쪽
 
