@@ -3,7 +3,7 @@ layout  : wiki
 title   : 좀 큰 수
 summary : 
 date    : 2019-07-19 14:42:52 +0900
-updated : 2022-12-11 17:16:35 +0900
+updated : 2023-05-27 11:17:34 +0900
 tag     : 
 resource: 43/F581FC-7003-413B-9BDC-7A8468546F39
 toc     : true
@@ -85,6 +85,15 @@ $$ 45 C 6 = 8,145,060 $$
 |------------|--------------------------------|---------|----------------------|
 | 2022-02-07 | 약 `1,448,167,730,623` barrels | 13 자리 | `15,102` 일(41.3 년) |
 | 2020-04-12 | 약 `1,511,989,370,363` barrels | 13 자리 | `15,768` 일(43.2 년) |
+
+## 20 자리 - $$2^{64}$$
+
+- [$$ 2^{64} $$ = 18446744073709551616]( https://www.wolframalpha.com/input?i=2%5E64 )
+
+>
+64비트 주소 공간은 상상하기 어려울 정도로 엄청나게 크다.
+비유가 도움이 될 것이다.
+32비트 주소 공간을 테니스 코드라고 생각하면 64비트 주소 공간은 유럽만하다(!).[^easy-195]
 
 ## 31 자리 - $$2^{100}$$
 
@@ -195,10 +204,11 @@ $$2^{82,589,933}-1$$
 
 - <https://www.worldometers.info/ >
 - 기계 학습을 다시 묻다 / 레슬리 밸리언트 저/이광근 역 / 인사이트(insight) / 초판 1쇄 발행 2021년 11월 01일 / 원제: Probably Approximately Correct
+- 운영체제 아주 쉬운 세 가지 이야기 [제2판] / Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-dusseau 공저 / 원유집, 박민규, 이성진 공역 / 홍릉 / 제2판 발행: 2020년 09월 10일 / 원제: Operating Systems: Three Easy Pieces
 
 ## 주석
 
 [^jlab]: [How many atoms are there in the world?](https://education.jlab.org/qa/mathatom_05.html )
 [^boyslife]: [How Many Atoms Are There In The World?]( https://headsup.boyslife.org/many-atoms-world/ )
 [^leslie-100]: 기계학습을 다시 묻다. 5장. 100쪽.
-
+[^easy-195]: 운영체제 아주 쉬운 세 가지 이야기. 18장. 195쪽.
