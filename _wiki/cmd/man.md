@@ -3,7 +3,7 @@ layout  : wiki
 title   : man 명령어
 summary : 유닉스 메뉴얼 페이지를 찾아보는 명령
 date    : 2020-09-30 09:38:35 +0900
-updated : 2023-04-16 17:48:57 +0900
+updated : 2023-05-27 19:35:29 +0900
 tag     : bash command c
 resource: 3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA
 toc     : true
@@ -91,6 +91,18 @@ man -K string
 - `y`: 문서 열기
 - `n`: 다음 문서
 - `q`: 검색 종료
+
+### 한번쯤 읽어두면 좋은 man 들
+
+- `man ascii`
+    - ASCII 문자표를 볼 수 있다. octal, hexademical, decimal 테이블 등이 있다.
+- `man hier`
+    - layout of filesystems
+    - 시스템 디렉토리 구조에 대한 설명서.
+- `man bash`
+    - bash 설명서.
+- `man ip`
+    - Internet Protocol
 
 ## BUILTIN 명령에 대한 설명을 찾는 요령 {#find-builtin-man}
 
