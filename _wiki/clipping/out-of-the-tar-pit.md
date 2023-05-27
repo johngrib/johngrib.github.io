@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 17:42:27 +0900
+updated : 2023-05-27 22:59:21 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2359,9 +2359,90 @@ Date는 이러한 변수를 관계 변수 또는 relvar라고 부르며, 기본(
 
 관계의 구조화 이점 - 접근 경로 독립성
 
+>
+The idea of structuring data using relations is appealing because no subjective, up-front decisions need to be made about the access paths that will later be used to query and process the data.
 
+데이터를 관계를 사용하여 구조화하는 아이디어는 매력적인데,
+그 이유는 데이터를 쿼리하고 처리하기 위해 이후에 사용할 접근 경로에 대해 미리 주관적인 결정을 내릴 필요가 없기 때문입니다.
 
-38쪽
+---- 
+
+>
+To understand what is meant by access path, let us consider a simple example.
+Suppose we are trying to represent information about employees and the departments in which they work.
+A system in which choosing the structure for the data involves setting up “routes” between data instances(such as from a particular employee to a particular department) is access path dependent.
+
+'접근 경로'가 무엇을 의미하는지 이해를 돕기 위해 간단한 예를 들어 보겠습니다.
+직원들과 그들이 근무하는 부서에 대한 정보를 표현하려 한다고 생각해 봅시다.
+데이터 구조를 결정하는 과정에서 데이터 인스턴스간의 '경로'(예: 특정 직원에서 특정 부서로의 연결)를 설정하는 시스템은 접근 경로에 의존적이라 할 수 있습니다.
+
+>
+The two main data structuring approaches which preceded the relational model (the network and hierarchical models) were both access path dependent in this way.
+For example, in the hierarchical model a subjective choice would be forced early on as to whether departments would form the top level (with each department “containing” its employees) or the other way round (with employees “containing” their departments).
+The choice made would impact all future use of the data.
+If the first alternative was selected, then users of the data would find it easy to retrieve all employees within a given department (following the access path), but they would find it harder to retrieve the department of a given employee (and would have to use some other technique corresponding to a search of all departments).
+If the second alternative was selected then the problem was simply reversed.
+
+관계형 모델이 등장하기 전의 두 가지 주요 데이터 구조화 방식(네트워크 모델과 계층형 모델)은 모두 접근 경로에 의존적이었습니다.
+예를 들어, 계층형 모델에서는 부서를 최상위 레벨로 둘지(각 부서가 직원을 '포함'하는 방식), 아니면 그 반대(직원이 부서를 '포함')로 둘 지에 대한 주관적인 선택을 초기에 결정해야만 합니다.
+
+이런 선택은 이후의 모든 데이터 사용에 큰 영향을 미칩니다.
+
+첫 번째 방법을 선택하면 데이터의 사용자는 엑세스 경로를 따라 특정 부서 내의 모든 직원을 쉽게 검색할 수 있습니다.
+그러나 특정 직원이 소속된 부서를 검색하는 것은 더 어려워지게 됩니다.
+이걸 위해서는 모든 부서를 검색하는 방법을 사용해야 합니다.
+그리고 두 번째 방법을 선택하게 되면 문제는 단순히 반대 방향으로 뒤집힐 뿐입니다.
+
+>
+The network model alleviated the problem to some degree by allowing multiple access paths between data instances (so the choice could be made to provide both an access path from department to employee and an access path from employee to department).
+The problem of course is that it is impossible to predict in advance what all the future required access paths will be, and because of this there will always be a disparity between:
+>
+**Primary retrieval requirements** which were foreseen, and can be satisfied simply by following the provided access paths
+>
+**Secondary retrieval requirements** which were either unforeseen, or at least not specially supported, and hence can only be satisfied by some alternative mechanism such as search
+
+네트워크 모델은 데이터 인스턴스 간에 여러 엑세스 경로를 허용하는 방식으로 이런 문제를 어느 정도 완화했습니다(즉, 부서에서 직원으로 가는 엑세스 경로와 직원에서 부서로 가는 엑세스 경로를 모두 제공할 수 있도록 선택할 수 있습니다).
+물론 문제는 미래에 필요한 모든 엑세스 경로가 무엇인지 미리 예측하는 것이 불가능하다는 것이며, 이로 인해 항상 다음과 같은 두 가지 불균형이 발생하게 됩니다.
+
+- **기본 검색 요구사항** - 미리 예측한 요구사항으로, 제공하는 접근 경로를 따라가기만 하면 요구사항을 충족시킬 수 있습니다.
+- **부수적 검색 요구사항** - 예상하지 못한 요구사항이거나, 적어도 특별히 지원되지 않은 요구사항이므로, 검색과 같은 대체적인 메커니즘을 사용해야만 요구사항을 충족시킬 수 있습니다.
+
+>
+The ability of the relational model to avoid access paths completely was one of the primary reasons for its success over the network and hierarchical models.
+
+관계형 모델이 네트워크 및 계층형 모델에 비해 성공할 수 있었던 주요한 이유 중 하나는 이런 '접근 경로'를 완전히 피할 수 있었기 때문입니다.
+
+>
+It is also interesting to consider briefly what is involved when taking an object-oriented (OOP) approach to our example. We can choose between the following options:
+>
+- Give Employee objects a reference to their Department
+- Give Department objects a set (or array) of references to their Employees
+- Both of the above
+
+이 사례에 대해 객체지향(OOP) 접근 방식을 적용할 때 어떤 것들이 포함되는지 간단히 살펴보는 것도 흥미로운 것입니다.
+다음의 옵션들 중에서 선택할 수 있습니다.
+
+- `Employee` 객체에 `Department`에 대한 참조를 추가합니다.
+- `Department` 객체에 `Employee`에 대한 참조 집합(또는 배열)을 추가합니다.
+- 위의 두 가지 방법을 모두 적용합니다.
+
+>
+If we choose the third option, then we at best expose ourselves to extra work in maintaining the redundant references, and at worst expose ourselves to bugs.
+There are disturbing similarities between the data structuring approaches of OOP and XML on the one hand and the network and hierarchical models on the other.
+A final advantage of using relations for the structure — in contrast with approaches such as Chen’s ER-modelling [Che76] — is that no distinction is made between entities and relationships.
+(Using such a distinction can be problematic because whether something is an entity or a relationship can be a very subjective question).
+
+세 번째 옵션을 선택하면 최소한 중복 참조를 유지관리하는 추가적인 작업에 시달리게 되고, 최악의 경우에는 버그에 노출될 수 있습니다.
+
+한편으로는 OOP와 XML의 데이터 구조화 접근 방식과, 그리고 네트워크 모델과 계층형 모델의 접근 방식 사이에는 불안하게 느껴지는 유사점이 있습니다.[^oop-xml-network-layer-model]
+
+구조화를 위해 관계를 사용하는 것의 마지막 장점은 - Chen의 ER 모델링과 같은 접근 방식과는 대조적으로 - 엔티티와 관계 사이에 구분을 두지 않는다는 것입니다. (이런 구분을 사용하는 것은 문제가 될 수 있습니다. 무엇이 엔티티이고 무엇이 관계인지는 매우 주관적인 문제가 될 수 있기 때문입니다).
+
+#### 8.2 Manipulation
+
+조작
+
+39쪽
 
 ↵
 dicult
@@ -2402,3 +2483,5 @@ dicult
 [^orig-15]: 원주: Unfortunately most contemporary DBMSs are somewhat limited in the degree of flexibility permitted by the physical/logical mapping. This has the unhappy result that physical performance concerns can invade the logical design even though avoiding exactly this was one of Codd’s most important original goals. <br/> 번역: 안타깝게도 대부분의 최신 DBMS는 물리적/논리적 매핑을 허용하는 유연성의 정도가 다소 제한되어 있습니다. 이런 문제를 정확히 회피하는 것이 Codd의 가장 중요한 본래의 목표 중 하나였는데도 불구하고, 물리적인 성능 문제가 논리적 설계를 침범할 수 있다는 불행한 결과를 초래합니다.
 
 [^c-j-date-name]: 역주: C. J. Date. "An Introduction to Database Systems"의 저자.
+
+[^oop-xml-network-layer-model]: 역주: 'OOP, XML의 데이터 구조화 접근 방식'은 네트워크 모델 그리고 계층형 모델의 접근 방식과 닮은 점이 있다. 이 넷은 모두 데이터를 구조화하고 관계를 설정하는 데 있어 명시적인 '접근 경로'를 필요로 한다. 이 절에서 저자는 '접근 경로'에 의존하게 되면 특정한 요구사항을 충족시키기 어려우며, 관계형 모델의 접근법이 더 유연하다는 주장을 하고 있다.
