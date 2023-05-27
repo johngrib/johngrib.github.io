@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 17:14:58 +0900
+updated : 2023-05-27 17:42:27 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2310,6 +2310,55 @@ As a final comment, it is widely recognised that SQL (of any version) — despit
 
 구조
 
+##### 8.1.1 Relations
+
+관계
+
+>
+As mentioned above, relations provide the sole means for structuring data in the relational model.
+A relation is best seen as a homogeneous set of records, each record itself consisting of a heterogeneous set of uniquely named attributes (this is slightly different from the general mathematical definition of a relation as a set of tuples whose components are identified by position rather than name).
+
+앞에서 언급했듯이, 관계는 관계형 모델에서 데이터를 구조화하는 유일한 수단을 제공합니다.
+
+관계는 동질적인 레코드의 집합으로 보는 것이 가장 좋으며, 각 레코드 자체는 고유하게 명명된 속성들의 이질적인 집합으로 구성됩니다(이는 컴포넌트가 이름이 아닌 '위치'로 식별되는 '튜플 집합'이라는 관계의 일반적인 수학적 정의와는 약간 다릅니다).
+
+>
+Implications of this definition include the fact that — by virtue of being a set — a relation can contain no duplicates, and it has no ordering.
+Both of these restrictions are in contrast with the common usage of the word table which can obviously contain duplicate rows (and column names), and — by virtue of being a visual entity on a page — inevitably has both an ordering of its rows and of its columns.
+
+이 정의의 함의는 다음과 같습니다.
+관계 또한 집합이기 때문에 중복이 없으며, 순서 또한 없습니다.
+
+이 두 가지 제약 사항은 '테이블'이라는 단어의 일반적인 의미와 대조적입니다.
+테이블은 중복된 행(및 열의 이름)을 포함할 수 있고, 페이지의 시각적 엔티티이기 때문에 필연적으로 행과 열의 순서가 있습니다.
+
+>
+Relations can be of the following kinds:
+>
+**Base Relations** are those which are stored directly
+>
+**Derived Relations** (also known as Views) are those which are defined in terms of other relations (base or derived) — see section 8.2
+
+관계는 다음과 같은 종류가 있습니다.
+
+- **기본 관계** - 직접 저장되는 관계.
+- **파생 관계** - (view 라고도 부름)는 다른 관계(기본 또는 파생)의 관점에서 정의되는 관계. 자세한 내용은 8.2절 참고.
+
+>
+Following Date [Dat04] it is useful to think of a relation as being a single (albeit compound) value, and to consider any mutable state not as a “mutable relation” but rather as a variable which at any time can contain a particular relation value.
+Date calls these variables relation variables or relvars, leading to the terms base relvar and derived relvar, and we shall use this terminology later.
+(Note however that our definition of relation is slightly different from his in that — following standard static typing practice — we do not consider the type to be part of the value).
+
+Date[^c-j-date-name]에 따르면, 관계는 단일(복합이긴 하지만) 값으로 생각하고, 변경 가능한 상태를 "변경 가능한 관계"가 아니라 언제든지 특정한 관계 값을 포함할 수 있는 변수로 여기는 것이 유용합니다.
+
+Date는 이러한 변수를 관계 변수 또는 relvar라고 부르며, 기본(base) relvar 와 파생(derived) relvar라는 용어를 사용합니다.
+우리도 이러한 용어를 이후에도 사용할 것입니다(단, 표준 정적 타이핑 관행에 따라 타입을 값의 일부로 간주하지 않기 때문에, 이 정의는 Date의 정의와 약간 다릅니다).
+
+
+##### 8.1.2 Structuring benefits of Relations — Access path independence
+
+관계의 구조화 이점 - 접근 경로 독립성
+
 
 
 38쪽
@@ -2351,3 +2400,5 @@ dicult
 [^orig-14]: 원주: or different subsets of the same language, provided it is possible to forcibly restrict each component to the relevant subset. <br/> 번역: 또는 동일한 언어의 다른 하위 집합으로, 각 컴포넌트를 관련된 하위 집합으로 강제로 제한할 수 있는 경우입니다.
 
 [^orig-15]: 원주: Unfortunately most contemporary DBMSs are somewhat limited in the degree of flexibility permitted by the physical/logical mapping. This has the unhappy result that physical performance concerns can invade the logical design even though avoiding exactly this was one of Codd’s most important original goals. <br/> 번역: 안타깝게도 대부분의 최신 DBMS는 물리적/논리적 매핑을 허용하는 유연성의 정도가 다소 제한되어 있습니다. 이런 문제를 정확히 회피하는 것이 Codd의 가장 중요한 본래의 목표 중 하나였는데도 불구하고, 물리적인 성능 문제가 논리적 설계를 침범할 수 있다는 불행한 결과를 초래합니다.
+
+[^c-j-date-name]: 역주: C. J. Date. "An Introduction to Database Systems"의 저자.
