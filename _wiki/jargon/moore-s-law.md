@@ -3,7 +3,7 @@ layout  : wiki
 title   : 무어의 법칙 (Moore's Law)
 summary : 
 date    : 2022-01-01 12:24:07 +0900
-updated : 2023-03-25 15:01:04 +0900
+updated : 2023-05-27 18:25:25 +0900
 tag     : 
 resource: 42/ACF750-AAF1-4F5E-A651-7F19100A0FD0
 toc     : true
@@ -49,14 +49,31 @@ Regardless, the idea of chip technology growing at an exponential rate, continua
 어쨌든 기하급수적으로 성장하는 칩 기술을 통해 전자 제품을 더 빠르고, 더 작고, 더 저렴하게 만들겠다는 아이디어는 반도체 산업의 원동력이 되었고,
 수백만 개의 일상 제품에 칩이 유비쿼터스하게 사용되는 길을 열었습니다.
 
+## From: 컴퓨터 구조 및 설계
+
+데이비드 페터슨과 존 헤네시는 '컴퓨터 구조 및 설계' 앞부분에서 다음과 같이 이야기한다.
+
+>
+**Moor의 법칙을 고려한 설계**
+>
+컴퓨터 설계자에게 한 가지 변하지 않는 상수가 있다면 Moore의 법칙(Moore's Law)을 따르는 빠른 변화 속도이다.
+18~24개월마다 칩에 집적되는 소자의 수가 2배가 된다는 Moore의 법칙은 Intel 창립자 중 한 명인 Gordon Moore의 1965년 예측에서 유래한다.
+컴퓨터를 설계하는 데에는 수년이 소요되기 때문에 프로젝트를 시작해서 끝나는 기간 동안 칩에 집적되는 소자가 2배 내지 4배 증가할 것이다.
+스키트 사격 선수와 같이 컴퓨터 설계자는 프로젝트의 시작 시점보다 종료 시점의 기술을 예상해야 한다.
+우리는 '우상향'으로 증가하는 Moore 법칙 그래프를 빠른 변화를 고려한 설계를 나타내는 데 사용할 것이다.
+[^petterson-11]
+
 ## 함께 읽기
 
 ## 참고문헌
 
 - [Cramming more components onto integrated circuits By Gordon E. Moore]( https://newsroom.intel.com/wp-content/uploads/sites/11/2018/05/moores-law-electronics.pdf ) - 1965-04-19, 고든 무어의 글.
 - 1일 1로그 100일 완성 IT 지식 / 브라이언 W. 커니핸 저/하성창 역 / 인사이트(insight) / 2021년 12월 31일 / 원제: Understanding the Digital World (2nd edition)
+- 컴퓨터 구조 및 설계 [5판] / David A. Patterson, John L. Hennessy 저/장훈, 하순회, 김병기 외 1명 역 / 한티미디어 / 2015년 01월 19일
 
 
 ## 주석
 
 [^brian-1]: 1일 1로그 100일 완성 IT 지식
+[^petterson-11]: 컴퓨터 구조 및 설계. 1장. 11쪽.
+
