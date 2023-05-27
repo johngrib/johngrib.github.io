@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 13:53:52 +0900
+updated : 2023-05-27 17:14:58 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2259,8 +2259,60 @@ In the second half of this paper we shall consider a possible approach based on 
 
 관계형 모델
 
+>
+The relational model [Cod70] has — despite its origins — nothing intrinsically to do with databases.
+Rather it is an elegant approach to structuring data, a means for manipulating such data, and a mechanism for maintaining integrity and consistency of state.
+These features are applicable to state and data in any context.
 
-37쪽
+관계형 모델은 그 기원과 달리, 본질적으로는 데이터베이스와 아무런 관련이 없습니다.
+오히려 데이터를 구조화하는 우아한 접근 방식이자 데이터를 조작하는 수단이며, 상태의 무결성과 일관성을 유지하기 위한 메커니즘이라 할 수 있습니다.
+이러한 기능은 모든 컨텍스트의 상태와 데이터에 적용할 수 있습니다.
+
+>
+In addition to these three broad areas [Cod79, section 2.1], [Dat04, p109], a fourth strength of the relational model is its insistence on a clear separation between the logical and physical layers of the system.
+This means that the concerns of designing a logical model (minimizing the complexity) are addressed separately from the concerns of designing an ecient physical storage model and mapping between that and the logical model[^orig-15].
+This principle is called data independence and is a crucial part of the relational model [Cod70, section 1.1].
+
+이 세가지의 광범위한 영역 외에도 관계형 모델의 네 번째 강점은 논리적 계층과 물리적 계층을 명확하게 분리한다는 점입니다.
+즉, (복잡성을 최소화하는) 논리적 모델을 설계하는 문제와 효율적인 물리적 스토리지 모델을 설계하고, 이런 물리적 모델과 논리적 모델의 매핑을 하는 문제는 별개로 다루어집니다.[^orig-15]
+이 원칙을 데이터 독립성이라 하며 관계형 모델의 중요한 부분입니다.
+
+>
+We see the relational model as having the following four aspects:
+>
+**Structure** the use of relations as the means for representing all data
+>
+**Manipulation** a means to specify derived data
+>
+**Integrity** a means to specify certain inviolable restrictions on the data
+>
+**Data Independence** a clear separation is enforced between the logical data and its physical representation
+
+관계형 모델에는 다음과 같은 네 가지 측면이 있습니다.
+
+- **구조** 모든 데이터를 표현하는 수단으로서의 관계의 사용.
+- **조작** 파생 데이터를 지정하는 수단.
+- **무결성** 데이터에 대한 특정한 불변 제약을 지정하는 수단.
+- **데이터 독립성** 논리적 데이터와 물리적 표현 사이에 명확한 분리가 강제됨.
+
+>
+We will look briefly at each of these aspects.
+[Dat04] provides a more thorough overview of the relational model.
+>
+As a final comment, it is widely recognised that SQL (of any version) — despite its widespread use — is not an accurate reflection of the relational model [Cod90, p371, Serious flaws in SQL], [Dat04, p xxiv] so the reader is warned against equating the two.
+
+이러한 각각의 측면을 간략하게 살펴보도록 합시다.
+관계형 모델에 대해서는 [Dat04]에서 더 자세한 내용을 확인할 수 있습니다.
+
+마지막으로, (어떤 버전이건) SQL이 널리 사용되고 있음에도 불구하고 관계형 모델을 정확하게 반영하지 못한다는 것은 널리 알려져 있으므로, 여러분은 이 두 가지를 동일시하지 않도록 주의하기 바랍니다.
+
+#### 8.1 Structure
+
+구조
+
+
+
+38쪽
 
 ↵
 dicult
@@ -2297,3 +2349,5 @@ dicult
 [^orig-13]: 원주: indeed it should be perfectly possible for different users of the same essential system to employ different accidental components — each designed for their particular needs <br/> 번역: 실제로, 같은 본질적 시스템을 사용하는 서로 다른 사용자들이 자신의 특정한 요구에 맞게 설계된 다양한 우발적인 컴포넌트를 사용하는 것이 완벽하게 가능해야 합니다.
 
 [^orig-14]: 원주: or different subsets of the same language, provided it is possible to forcibly restrict each component to the relevant subset. <br/> 번역: 또는 동일한 언어의 다른 하위 집합으로, 각 컴포넌트를 관련된 하위 집합으로 강제로 제한할 수 있는 경우입니다.
+
+[^orig-15]: 원주: Unfortunately most contemporary DBMSs are somewhat limited in the degree of flexibility permitted by the physical/logical mapping. This has the unhappy result that physical performance concerns can invade the logical design even though avoiding exactly this was one of Codd’s most important original goals. <br/> 번역: 안타깝게도 대부분의 최신 DBMS는 물리적/논리적 매핑을 허용하는 유연성의 정도가 다소 제한되어 있습니다. 이런 문제를 정확히 회피하는 것이 Codd의 가장 중요한 본래의 목표 중 하나였는데도 불구하고, 물리적인 성능 문제가 논리적 설계를 침범할 수 있다는 불행한 결과를 초래합니다.
