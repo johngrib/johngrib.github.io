@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 00:12:45 +0900
+updated : 2023-05-28 00:29:09 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2560,11 +2560,62 @@ Figure 2: The components of an FRP system (infrastructure not shown, arrows show
 
 Figure 2: FRP 시스템의 컴포넌트들(인프라는 표시하지 않음, 화살표는 동적 데이터 흐름을 보여줌)
 
+>
+FRP is currently a purely hypothetical[^orig-17] approach to system architecture that has not in any way been proven in practice.
+It is however based firmly on principles from other areas (the relational model, functional and logic programming) which have been widely proven.
+>
+In FRP all essential state takes the form of relations, and the essential logic is expressed using relational algebra extended with (pure) user-defined[^orig-18] functions.
+>
+The primary, overriding goal behind the FRP architecture (and indeed this whole paper) is of course elimination of complexity.
+
+FRP는 현재 시스템 아키텍처에 대한 순전히 가상의 접근 방식으로,[^orig-17] 실제로는 어떤 방식으로도 입증된 적은 없습니다.
+하지만 널리 입증된 다른 분야(관계형 모델, 함수형, 논리 프로그래밍)의 원칙에 확고하게 기반을 두고 있습니다.
+
+FRP에서 모든 본질적인 상태는 관계의 형태를 취하며, 본질적인 논리는 (순수한) 사용자 정의[^orig-18] 함수로 확장된 관계 대수를 사용하여 표현됩니다.
+
+FRP 아키텍처(그리고 이 논문 전체)의 가장 중요한 목표는 물론 복잡성을 제거하는 것입니다.
+
+
 #### 9.1 Architecture
 
 아키텍처
 
-43쪽
+>
+We describe the architecture of an FRP system by first looking at what must be specified for each of the components when constructing a system in this manner.
+Then we look at what infrastructure needs to be available in order to be able to construct systems in this fashion.
+
+먼저 이러한 방식으로 시스템을 구축할 때 각 컴포넌트에 대해 지정해야 하는 사항을 살펴보는 방식으로 FRP 시스템의 아키텍처를 설명하겠습니다.
+그런 다음 이러한 방식으로 시스템을 구축하기 위해 어떤 인프라를 사용할 수 있어야 하는지 살펴봅니다.
+
+>
+In accordance with the first half of this paper, FRP recommends that the system be constructed from separate specifications for each of the following components:
+>
+**Essential State** A Relational definition of the stateful components of the system
+>
+**Essential Logic** Derived-relation definitions, integrity constraints and (pure) functions
+>
+**Accidental State and Control** A declarative specification of a set of performance optimizations for the system
+>
+**Other** A specification of the required interfaces to the outside world (user and system interfaces)
+
+이 논문의 전반부에서 이야기했던 것들에 따라, FRP는 시스템을 다음과 같은 각 컴포넌트에 대한 별도의 명세로 구성하도록 권장합니다.
+
+- **본질적 상태** - 시스템의 상태를 나타내는 관계 정의
+- **본질적 논리** - 파생된 관계 정의, 무결성 제약 조건 및 (순수) 함수
+- **우발적 상태 및 제어** - 시스템의 성능 최적화를 위한 선언적 명세
+- **기타** - 외부 세계(사용자 및 시스템 인터페이스)와의 인터페이스 명세
+
+>
+Speaking somewhat loosely, the first two components can be seen as corresponding to “State” and “Behaviour” respectively, whilst the third concentrates on “Performance”. In contrast with the object-oriented approach, FRP emphasises a clear separation of state and behaviour.[^orig-19]
+
+약간 느슨하게 말하자면, 첫 번째 두 컴포넌트는 각각 "상태"와 "동작"에 해당한다고 볼 수 있으며, 세 번째는 "성능"에 집중합니다.
+객체 지향 접근 방식과는 달리 FRP는 상태와 동작을 명확하게 분리하는 것을 강조합니다.[^orig-19]
+
+##### 9.1.1 Essential State ("State")
+
+본질적 상태("상태")
+
+44쪽
 
 ↵
 dicult
@@ -2609,3 +2660,9 @@ dicult
 [^oop-xml-network-layer-model]: 역주: 'OOP, XML의 데이터 구조화 접근 방식'은 네트워크 모델 그리고 계층형 모델의 접근 방식과 닮은 점이 있다. 이 넷은 모두 데이터를 구조화하고 관계를 설정하는 데 있어 명시적인 '접근 경로'를 필요로 한다. 이 절에서 저자는 '접근 경로'에 의존하게 되면 특정한 요구사항을 충족시키기 어려우며, 관계형 모델의 접근법이 더 유연하다는 주장을 하고 있다.
 
 [^orig-16]: 원주: Not to be confused with functional reactive programming [EH97] which does in fact have some similarities to this approach, but has no intrinsic focus on relations or the relational model <br/> 번역: '함수형 반응형 프로그래밍'과 혼동하지 않아야 합니다. 접근 방식 측면에서 일부 유사성이 있긴 하지만 함수형 반응형 프로그래밍은 관계 또는 관계형 모델에 초점을 맞추지 않습니다.
+
+[^orig-17]: 원주: Aside from token experimental implementations of FRP infrastructures created by the authors. <br/> 번역: 이 논문의 저자들이 만든 FRP 인프라의 토큰 실험적 구현을 제외하면 말이죠.
+
+[^orig-18]: 원주: By user-defined we mean specific to this particular FRP system (as opposed to pre- provided by an underlying infrastructure). <br/> 번역: '사용자 정의'란 기본 인프라에서 미리 제공한 것이 아니라, 여기에서 언급하는 특정한 FRP 시스템과 관련된 것을 의미합니다.
+
+[^orig-19]: 원주: Equally, traditional OOP pays little attention to the accidental / essential split which was also discussed in section 7.3.2. <br/> 번역: 이와 마찬가지로, 전통적인 OOP는 7.3.2 절에서 논의한 우발적/본질적 분할에 대해서는 거의 관심을 기울이지 않습니다.
