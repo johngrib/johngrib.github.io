@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-05-27 11:04:46 +0900
+updated : 2023-05-27 18:50:05 +0900
 regenerate: true
 ---
 * TOC
@@ -466,6 +466,7 @@ regenerate: true
 * [[/jargon/convoy-effect]]
 * [[/jargon/dry-principle]]
 * [[/jargon/edsel-edict]]
+* [[/jargon/endian]]
 * [[/jargon/graceful-degradation]]
 * [[/jargon/hofstadter-s-law]]
 * [[/jargon/imitation-game]]
