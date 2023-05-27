@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 23:19:46 +0900
+updated : 2023-05-27 23:56:52 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2487,6 +2487,28 @@ One significant benefit of this manipulation language (aside from its simplicity
 #### 8.3 Integrity
 
 무결성
+
+>
+Integrity in the relational model is maintained simply by specifying — in a purely declarative way — a set of constraints which must hold at all times.
+>
+Any infrastructure implementing the relational model must ensure that these constraints always hold — specifically attempts to modify the state which would result in violation of the constraints must be either rejected outright or restricted to operate within the bounds of the constraints.
+
+관계형 모델의 무결성은 항상 유지되어야 하는 제약 조건 집합을 순전히 선언적인 방식으로 지정하는 것만으로 유지 가능합니다.
+
+관계형 모델을 구현하는 모든 인프라는 이러한 제약 조건이 항상 유지되도록 해야 하며, 특히 제약 조건 위반으로 이어질 수 있는 '상태 수정 시도'는 완전히 거부되거나 제약 조건 범위 내에서만 작동하도록 제한해야 합니다.
+
+>
+The most common types of constraint are those identifying candidate or primary keys and foreign keys. Constraints may in fact be arbitrarily complex, involve multiple relations, and be constructed from either the relational calculus or the relational algebra.
+Finally, many commercially available DBMSs provide imperative mechanisms such as triggers for maintaining integrity — such mechanisms suffer from control-flow concerns (see section 4.2) and are not considered to be part of the relational model.
+
+가장 일반적인 제약 조건 유형은 후보 키 또는 기본 키와 외래 키를 식별하는 제약 조건입니다.
+사실 제약 조건은 임의로 복잡하게 구성할 수 있으며, 여러 관계를 포함하고 관계 대수 또는 관계 해석으로 구성될 수 있습니다.
+마지막으로, 많은 상용 DBMS는 무결성을 유지하기 위한 트리거와 같은 명령형 메커니즘을 제공합니다.
+이러한 메커니즘은 제어 흐름 문제(4.2절 참조)가 있으며 관계형 모델의 일부로 간주되지 않습니다.
+
+#### 8.4 Data Independence
+
+데이터 독립성
 
 41쪽
 
