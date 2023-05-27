@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 22:59:21 +0900
+updated : 2023-05-27 23:19:46 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2442,7 +2442,53 @@ A final advantage of using relations for the structure — in contrast with appr
 
 조작
 
-39쪽
+>
+Codd introduced two different mechanisms for expressing the manipulation aspects of the relational model — the relational calculus and the relational algebra.
+They are formally equivalent (in that expressions in each can be converted into equivalent expressions in the other), and we shall only consider the algebra.
+
+Codd는 관계형 모델의 조작 측면을 표현하기 위해 관계 해석(relational calculus)과 관계 대수(relational algebra)라는 두 가지 메커니즘을 도입했습니다.
+이 두 가지 메커니즘은 (각각의 표현식을 다른 표현식으로 변환할 수 있어) 형식적으로 동등하며, 여기에서는 관계 대수만 살펴보도록 하겠습니다.
+
+>
+The relational algebra (which is now normally considered in a slightly different form from the one used originally by Codd) consists of the following eight operations:
+>
+**Restrict** is a unary operation which allows the selection of a subset of the records in a relation according to some desired criteria
+>
+**Project** is a unary operation which creates a new relation corresponding to the old relation with various attributes removed from the records
+>
+**Product** is a binary operation corresponding to the cartesian product of mathematics
+>
+**Union** is a binary operation which creates a relation consisting of all records in either argument relation
+>
+**Intersection** is a binary operation which creates a relation consisting of all records in both argument relations
+>
+**Difference** is a binary operation which creates a relation consisting of all records in the first but not the second argument relation
+>
+**Join** is a binary operation which constructs all possible records that result from matching identical attributes of the records of the argument relations
+>
+**Divide** is a ternary operation which returns all records of the first argument which occur in the second argument associated with each record of the third argument
+
+관계 대수(현재는 Codd가 처음에 사용한 것과는 좀 다른 형태를 사용합니다)는 다음의 여덟 가지 연산으로 구성됩니다.
+
+- **Restrict**는 단항 연산으로, 원하는 기준에 따라 관계의 레코드의 부분 집합을 선택할 수 있습니다.
+- **Project**는 단항 연산으로, 레코드에서 여러 속성을 제거하여 이전 관계에 해당하는 새로운 관계를 생성합니다.
+- **Product**는 수학의 데카르트 곱에 해당하는 이항 연산입니다.
+- **Union**은 이항 연산으로, 두 인수 관계의 모든 레코드로 구성된 관계를 생성합니다.
+- **Intersection**은 이항 연산으로, 두 인수 관계의 모든 공통되는 레코드로 구성된 관계를 생성합니다.
+- **Difference**는 이항 연산으로, 첫 번째 인수 관계의 모든 레코드 중 두 번째 인수 관계에는 없는 레코드로 구성된 관계를 생성합니다.
+- **Join**은 이항 연산으로, 인수 관계의 레코드의 동일한 속성을 일치시켜서 생성할 수 있는 모든 레코드를 구성합니다.
+- **Divide**는 삼항 연산으로, 세 번째 인수의 각 레코드와 연관된 두 번째 인수에서 발생하는 첫 번째 인수의 모든 레코드를 반환합니다.
+
+>
+One significant benefit of this manipulation language (aside from its simplicity) is that it has the property of closure — that all operands and results are of the same kind (relations) — hence the operations can be nested in arbitrary ways (indeed this property is inherent in any single-sorted algebra).
+
+이 조작 언어의 중요한 장점 중 하나는 (단순성 외에도) 모든 피연산자와 결과가 같은 종류(관계)라는 폐쇄성을 갖고 있으므로, 연산을 임의의 방식으로 중첩할 수 있다는 것입니다(실제로 이런 속성은 모든 단일 종류의 대수에도 포함되어 있는 것입니다).
+
+#### 8.3 Integrity
+
+무결성
+
+41쪽
 
 ↵
 dicult
