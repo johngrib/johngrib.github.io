@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 00:01:00 +0900
+updated : 2023-05-28 00:05:23 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2525,7 +2525,30 @@ This is one of several reasons that motivate the adoption of the relational mode
 
 확장
 
-41쪽
+>
+The relational algebra — whilst flexible — is a restrictive language in computational terms (it is not Turing-complete) and is normally augmented in various ways when used in practice. Common extensions include:
+>
+**General computation capabilities** for example simple arithmetical operations, possibly along with user-defined computations.
+>
+**Aggregate operators** such as `MAX`, `MIN`, `COUNT`, `SUM`, etc.
+>
+**Grouping and Summarization capabilities** to allow for easy application of aggregate operations to relations
+>
+**Renaming capabilities** the ability to generate derived relations by changing attribute names
+
+관계 대수는 유연하긴 하지만 계산의 측면에서는 제한이 있는 언어이며(튜링 완전하지 않음), 실제로 사용할 때는 일반적으로 다양한 방식으로 확장이 됩니다.
+일반적인 확장은 다음과 같습니다.
+
+- **일반 연산 가능** - 예를 들어 간단한 산술 연산 같은 사용자 정의 연산과 함께 사용 가능.
+- **집계 연산자** - `MAX`, `MIN`, `COUNT`, `SUM` 등.
+- **그룹화 및 요약 기능** - 집계 연산을 관계에 쉽게 적용할 수 있도록 함.
+- **이름 변경 기능** - 속성 이름을 변경하여 파생된 관계를 생성할 수 있음.
+
+### 9 Functional Relational Programming
+
+함수형 관계형 프로그래밍
+
+42쪽
 
 ↵
 dicult
