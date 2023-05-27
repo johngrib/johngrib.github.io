@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 00:05:23 +0900
+updated : 2023-05-28 00:12:45 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2548,7 +2548,23 @@ The relational algebra — whilst flexible — is a restrictive language in comp
 
 함수형 관계형 프로그래밍
 
-42쪽
+>
+The approach of functional relational programming (FRP[^orig-16]) derives its name from the fact that the essential components of the system (the logic and the essential state) are based upon functional programming and the relational model (see Figure 2).
+
+함수형 관계형 프로그래밍(FRP[^orig-16])은 접근 방식이 시스템의 본질적인 컴포넌트(논리와 본질적인 상태)가 함수형 프로그래밍과 관계형 모델을 기반으로 한다는 점에서 유래된 이름을 갖고 있습니다(Figure 2 참고).
+
+>
+![Figure 2]( /resource/22/453745-5C75-4EB3-BC75-3A5297F1FDC5/figure-2.png )
+>
+Figure 2: The components of an FRP system (infrastructure not shown, arrows show dynamic data flow)
+
+Figure 2: FRP 시스템의 컴포넌트들(인프라는 표시하지 않음, 화살표는 동적 데이터 흐름을 보여줌)
+
+#### 9.1 Architecture
+
+아키텍처
+
+43쪽
 
 ↵
 dicult
@@ -2591,3 +2607,5 @@ dicult
 [^c-j-date-name]: 역주: C. J. Date. "An Introduction to Database Systems"의 저자.
 
 [^oop-xml-network-layer-model]: 역주: 'OOP, XML의 데이터 구조화 접근 방식'은 네트워크 모델 그리고 계층형 모델의 접근 방식과 닮은 점이 있다. 이 넷은 모두 데이터를 구조화하고 관계를 설정하는 데 있어 명시적인 '접근 경로'를 필요로 한다. 이 절에서 저자는 '접근 경로'에 의존하게 되면 특정한 요구사항을 충족시키기 어려우며, 관계형 모델의 접근법이 더 유연하다는 주장을 하고 있다.
+
+[^orig-16]: 원주: Not to be confused with functional reactive programming [EH97] which does in fact have some similarities to this approach, but has no intrinsic focus on relations or the relational model <br/> 번역: '함수형 반응형 프로그래밍'과 혼동하지 않아야 합니다. 접근 방식 측면에서 일부 유사성이 있긴 하지만 함수형 반응형 프로그래밍은 관계 또는 관계형 모델에 초점을 맞추지 않습니다.
