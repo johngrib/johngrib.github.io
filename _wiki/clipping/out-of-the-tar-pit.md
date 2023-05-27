@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-27 13:03:54 +0900
+updated : 2023-05-27 13:38:16 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2145,7 +2145,7 @@ Figure 1은 동일한 세 가지 시스템 컴포넌트를 다른 방식으로 �
 이러한 제한은 절대적이기 때문에 시스템의 각 컴포넌트를 독립적으로 이해하는 데 큰 도움이 됩니다.
 
 >
-![Figure 1](https://github.com/johngrib/johngrib.github.io/assets/1855714/93270e30-75fe-4f40-8b6f-d940148fefb9 )
+![Figure 1]( /resource/22/453745-5C75-4EB3-BC75-3A5297F1FDC5/figure-1.png )
 >
 Figure 1: Recommended Architecture (arrows show static references)
 {:style="text-align:center;"}
