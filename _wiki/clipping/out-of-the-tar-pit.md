@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 14:33:08 +0900
+updated : 2023-05-28 14:46:38 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3069,7 +3069,68 @@ FRP는 두 가지 방식으로 이 문제를 해결합니다.
 
 데이터 추상화 측면의 이점
 
-52쪽
+>
+Data Abstraction is something which we have only mentioned in passing (in section 4.4) so far.
+By data abstraction we basically mean the creation of compound data types and the use of the corresponding compound values (whose internal contents are hidden).
+
+데이터 추상화는 지금까지는 간단히 언급만 했습니다(4.4절 참조).
+데이터 추상화란 기본적으로 복합 데이터 타입을 생성하고, (내부 내용이 숨겨진) 해당 복합 값을 사용하는 것을 의미합니다.
+
+>
+We believe that in many cases, un-needed data abstraction actually represents another common (and serious) cause of complexity.
+This is for two reasons:
+
+많은 경우, 불필요한 데이터 추상화가 실제로는 복잡성의 또 다른 일반적(그리고 심각한) 원인이라고 믿습니다.
+
+그 이유는 두 가지입니다.
+
+>
+**Subjectivity**
+Firstly the grouping of data items together into larger compound data abstractions is an inherently subjective business (Ungar and Smith discuss this problem in the context of Self in [SU96]).
+Groupings which make sense for one purpose will inevitably differ from those most natural for other uses, yet the presence of pre-existing data abstractions all too easily leads to inappropriate reuse.
+
+**주관성**
+
+첫째, 데이터 항목을 더 큰 복합 데이터 추상화로 묶는 것은 본질적으로 '주관적인' 작업입니다(Ungar와 Smith는 Self의 문맥에서 이 문제에 대해 논의합니다).
+한 가지 용도에 적합한 그룹화는 다른 용도에 가장 자연스러운 그룹화와 필연적으로 다를 수 밖에 없습니다. 그러나 기존의 추상화된 데이터는 너무 쉽게 부적절한 재사용으로 이어지게 됩니다.
+
+>
+**Data Hiding**
+Secondly, large and heavily structured data abstractions can seriously erode the benefits of referential transparency (section 5.2.1) in exactly the manner of the extreme example discussed in section 5.2.3.
+This problem occurs both because data abstractions will often cause un-needed, irrelevant data to be supplied to a function, and because the data which does get used (and hence influences the result of a function) is hidden at the function call site.
+This hidden and excessive data leads to problems for testing as well as informal reasoning in ways very similar to state (see section 4.1).
+
+**데이터 숨기기**
+
+둘째, 크기가 크고 고도로 구조화된 데이터 추상화는 5.2.3절에서 논의한 극단적인 예와 정확히 같은 방식으로 참조 투명성의 이점을 심각하게 훼손할 수 있습니다(5.2.1절 참조).
+이 문제는 데이터 추상화로 인해 '함수에 불필요하고 관련 없는 데이터가 제공되는 경우'와, 실제로 '사용된 데이터(따라서 함수의 결과에 영향을 미치는)가 함수 호출 사이트에서 숨겨지는 경우'에 모두 발생합니다.
+
+이렇게 숨겨지고 과도한 데이터는 상태(4.1절 참조)와 매우 유사한 방식으로 테스팅과 비형식적 추론에 문제를 일으킵니다.
+
+>
+One of the primary strengths of the relational model (inherited by FRP) is that it involves only minimal commitment to any subjective groupings (basically just the structure chosen for the base relations), and this commitment has only minimal impact on the rest of the system.
+Derived relvars offer a straightforward way for different (application-specific) groupings to be used alongside the base groupings.
+The benefits in terms of subjectivity are closely related to the benefits of access path independence (section 8.1.2).
+
+관계형 모델의 주요한 강점 중 하나는 (FRP가 계승한) 주관적 그룹화 (기본 관계에 대해 선택한 구조)에 대한 최소한의 헌신적인 작업만 필요하며, 이러한 작업은 시스템의 나머지 부분에 최소한의 영향만 미친다는 점입니다.
+
+파생된 relvars는 기본 그룹화와 함께 다른 (애플리케이션별) 그룹화를 사용하는 간단한 방법을 제공합니다.
+
+주관성 측면의 이점은 접근 경로 독립성(8.1.2절 참조)의 이점과 밀접한 관련이 있습니다.
+
+>
+FRP also offers benefits in the area of data hiding, simply by discouraging it.
+Specifically, FRP offers no support for nested relations or for creating product types (as we shall see in section 9.3).
+
+FRP는 데이터를 숨기는 영역에서도 이점을 제공합니다.
+특히 FRP는 중첩 관계나 제품 유형을 생성하는 데 대한 지원을 제공하지 않습니다(9.3절에서 살펴볼 것입니다).
+
+##### 9.2.5 Other Benefits
+
+그 외의 이점들
+
+
+53쪽
 
 ↵
 dicult
