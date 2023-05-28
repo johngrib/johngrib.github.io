@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 14:53:31 +0900
+updated : 2023-05-28 15:01:37 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3163,6 +3163,42 @@ Interesting work in this area has been carried out in the Machiavelli system [OB
 ### 10 Example of an FRP system
 
 FRP 시스템의 예
+
+>
+We now examine a simple example FRP system.
+The system is designed to support an estate agency (real estate) business.
+It will keep track of properties which are being sold, offers which are made on the properties, decisions made on the offers by the owners, and commission fees earnt by the individual agency employees from their successful sales.
+The example should serve to highlight the declarative nature of the components of an FRP system.
+
+이제 간단한 FRP 시스템의 예를 살펴보겠습니다.
+이 시스템은 부동산 중개 사업을 지원하기 위해 설계되었습니다.
+이 시스템은 판매중인 부동산, 해당 부동산에 대한 거래 제안, 부동산 소유자가 내린 제안에 대한 결정, 거래 성사를 통해 중개사 직원이 받은 거래 수수료를 추적 관리합니다.
+
+이 예는 FRP 시스템 컴포넌트의 선언적 성격을 강조하는 데 도움이 될 것입니다.
+
+>
+To keep things simple, this system operates under some restrictions:
+>
+1. Sales only — no rentals / lettings
+2. People only have one home, and the owners reside at the property they are selling
+3. Rooms are perfectly rectangular
+4. Offer acceptance is binding (ie an accepted offer constitutes a sale)
+
+>
+The example will use syntax from a hypothetical FRP infrastructure (which supports not only the relational algebra but also some of the common extensions from section 8.5) — typewriter font is used for this.
+
+이 시스템은 다음과 같은 제한 사항 하에서 동작합니다.
+
+1. 판매 전용 - 대여/임대 금지
+2. 사람들은 집 한 채만 가지고 있으며, 집주인은 판매하는 부동산에 거주합니다.
+3. 방은 완벽한 직사각형입니다.
+4. 거래 제안 수락은 구속력이 있습니다(즉, 수락된 거래 제안은 판매로 간주합니다).
+
+이 예제는 가상의 FRP 인프라(관계 대수뿐만 아니라 8.5절의 일부 공통 확장 기능도 지원하는)의 문법을 사용합니다. 이 문법을 표시하기 위해 타자기 폰트를 사용합니다.
+
+#### 10.1 User-defined Types
+
+사용자 정의 타입
 
 53쪽
 
