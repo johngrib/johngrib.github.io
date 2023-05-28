@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 10:58:55 +0900
+updated : 2023-05-28 14:02:00 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2956,7 +2956,82 @@ FRP는 7장에서 권장하는 회피와 분리 지침을 따르므로, 이로�
 
 상태 측면의 이점
 
-50쪽
+>
+The architecture is explicitly designed to avoid useless accidental state, and to avoid even the possibility of an FRP system ever getting into a “bad state”.
+
+이 아키텍처는 불필요한 우발적 상태를 회피하고, FRP 시스템이 "나쁜 상태"에 빠지는 가능성까지도 방지하도록 명시적으로 설계되었습니다.
+
+>
+Specifically derived state is not normally stored (is not treated as essential state).
+In normal circumstances[^orig-26] hybrid feeders/observers never feed back in the exact same data which they observed — they only ever feed in some externally generated input or response.
+So long as this principle is observed errors in the logic of the system can never cause it to get into a “bad state” — the only thing required to fix such errors[^orig-27] is to correct the logic, there is no need to perform an exhaustive search through and correction of the essential state.
+This also means that (aside from errors in the infrastructure) the system can never require “restarting” / “rebooting” etc.
+
+특별히 파생된 상태는 일반적으로 저장되지 않습니다(본질적 상태로 취급되지 않습니다).
+정상적인 상황에서[^orig-26] 하이브리드 피더/옵저버는 관찰한 데이터와 정확히 같은 데이터를 다시 피드백하지 않으며, 오직 외부에서 생성된 입력 또는 응답을 피드백합니다.
+
+이러한 원칙이 지켜지는 한, 시스템 논리의 에러로 인해 시스템이 "나쁜 상태"에 빠지는 일은 결코 발생하지 않습니다.
+이러한 에러를[^orig-27] 해결하는 데 필요한 것은 논리를 수정하는 것뿐이므로, 에러를 고치기 위해 본질적 상태를 꼼꼼히 검색하고 수정할 필요가 없습니다.
+
+이는 또한 (인프라에서의 에러를 제외하고) 시스템이 "재시작" / "재부팅" 등을 필요로 하지 않는다는 것을 의미합니다.
+
+>
+When it comes to separation, the architecture clearly exhibits both the logic / state split and the accidental / essential split recommended in section 7.
+An example of what this means is that you do not have to think about any accidental state when concentrating on the logic of your system.
+In fact, you do not really have to think about the essential state as being state either — from the point of view of the logic, the essential state is seen as constant.
+
+분리와 관련해서는, 이 아키텍처는 7장에서 권장하는 논리/상태 분리와 우발적/본질적 분리를 명확하게 보여줍니다.
+이것이 무슨 의미인지 예를 들어 설명하면, 시스템의 논리에 집중할 때는 어떤 우발적 상태에 대해서도 생각할 필요가 없다는 것입니다.
+사실, '본질적 상태'를 상태로 생각할 필요도 없습니다.
+논리적인 관점에서 본질적 상태는 상수로 간주됩니다.
+
+>
+Furthermore, the functional component (of the logic) has no access to any state at all (even the essential state) — it is totally referentially transparent, can only access what is supplied in the function arguments, and hence offers hugely better prospects for testing (as mentioned earlier in section 4.1.1).
+
+또한 함수 컴포넌트(로직의 일부)는 어떤 상태에도 접근할 수 없습니다(본질적 상태도 포함).
+이는 완전한 참조 투명성을 보장하며, 함수의 인수로 제공된 것만 접근할 수 있으므로 테스트에 대해서도 더 나은 가능성을 제공합니다(4.1.1절에서 언급한 바와 같음).
+
+>
+Additionally, there are major advantages gained from adopting a relational representation of data — specifically, there is no introduction of subjective bias into the data, no concern with data access paths.
+This is in contrast with approaches such as OOP or XML (as we saw in section 8.1.2).
+
+그리고, 데이터의 관계형 표현을 채택함으로써 큰 장점들을 얻을 수 있습니다.
+특히 데이터에 주관적인 편견이 개입되지 않고 데이터 접근 경로에 대한 고려가 필요하지 않게 됩니다.
+이는 8.1.2절에서 살펴본 바와 같이, OOP나 XML 같은 접근 방식과는 대조적입니다.
+
+>
+Finally, integrity constraints provide big benefits for maintaining consistency of state in a declarative manner:
+> >
+The fact that we can impose the integrity constraints of our system in a purely declarative manner (without requiring triggers or worse, methods / procedures) is one of the key benefits of the FRP approach.
+It means that the addition of new constraints increases the complexity of the system only linearly because the constraints do not — indeed cannot — interact in any way at all.
+(Constraints can make use of user-defined functions — but they have no way of referring to other constraints).
+This is in stark contrast with more imperative approaches such as object oriented programming where interaction between methods causes the complexity to grow at a far greater rate.
+
+
+마지막으로, 무결성 제약 조건은 상태의 일관성을 선언적인 방식으로 유지하는 데 큰 장점을 제공합니다.
+
+시스템의 무결성 제약을 트리거나 메소드/절차 없이 '순전히 선언적인 방법으로' 부여할 수 있다는 사실은 FRP 접근 방법의 핵심 장점 중 하나입니다.
+즉, 새로운 제약 조건을 추가해도 제약 조건들이 전혀 상호작용하지 않기 때문에 시스템의 복잡성이 선형적으로만 증가한다는 것을 의미합니다(제약 조건은 사용자 정의 함수를 사용할 수 있지만, 다른 제약 조건을 참조할 수 있는 방법은 없습니다).
+
+이는 메소드 간의 상호 작용으로 인해 복잡성이 훨씬 더 빠른 속도로 증가하는 객체지향 프로그래밍과 같은 명령형 접근 방식과는 완전히 대조된다고 할 수 있습니다.
+
+>
+Furthermore, the declarative nature of the integrity constraints opens the door to the possibility of a suitably sophisticated infrastructure making use of them for performance reasons (to give a trivial example, there is no need to compute the relational intersection of two relvars at all if it can be established that their integrity constraints are mutually exclusive — because then the result is guaranteed to be empty).
+This type of optimisation is just not possible if the integrity is maintained in an imperative way.
+
+또한, 무결성 제약 조건의 선언적 특성은 적절히 복잡한 인프라가 성능을 달성하기 위해 활용할 가능성을 열어줍니다(간단한 예를 들어보자면, 두 relvar의 무결성 제약 조건이 서로 배타적임을 알고 있다면 두 relvar의 관계적 교집합을 계산할 필요가 없습니다. 결과가 항상 공집합일 것이기 때문입니다).
+
+이런 종류의 최적화는 무결성이 명령형 방식으로 유지하는 경우에는 불가능합니다.
+
+##### 9.2.2 Benefits for Control
+
+제어 측면의 이점
+
+
+
+
+
+51쪽
 
 ↵
 dicult
@@ -3021,3 +3096,8 @@ dicult
 [^orig-24]: 원주: Some systems — for example the Kleisli system used in bio-informatics [Won00] — seek to avoid this conversion by providing support for more complex structures such as nested relations. We believe that the simplicity gained from having flat relations throughout the system is worth the effort sometimes involved at the system edges (section 9.2.4 describes some of the rationale behind this). <br/> 번역: 일부 시스템에서는(예: 생물 정보학에서 사용하는 Kleisli 시스템) 중첩 관계와 같은 더 복잡한 구조를 지원하는 방식으로 이런 변환을 피하려 합니다. 우리는 시스템 전체에 걸쳐 플랫 관계(flat relations)를 사용함으로써 얻을 수 있는 단순성이 때때로 시스템 경계에서 가치가 있다고 생각합니다.
 
 [^orig-25]: 원주: A prototype implementation of the essential state and essential logic infrastructure — the most significant parts — was developed in a mere 1500 lines of Scheme. In fact this prototype supported not only the relational algebra but also some temporal extensions. The effort involved in this is insignificant when compared to the hundreds of man-years often involved in large systems. <br/> 번역: 가장 중요한 부분인 본질적 상태와 본질적 논리 인프라의 프로토타입 구현은 단 1500줄의 Scheme 코드로 개발됐습니다. 이 프로토타입은 실제로 관계 대수 뿐만 아니라 일부 시간적 확장도 지원했습니다. 대규모 시스템을 만들 때 종종 수백 man/year 가 소요되는 것과 비교하면 이 작업에 필요했던 노력은 미미한 수준입니다.
+
+[^orig-26]: 원주: The exception might be in the kind of highly interactive scenario considered in sections 7.2.2 and 7.3.1 <br/> 번역: 예외적으로 7.2.2, 7.3.1절에서 고려한 고도의 인터랙티브 시나리오가 있을 수 있습니다.
+
+[^orig-27]: 원주: We’re talking here solely about fixing the system itself — of course FRP can’t guarantee that errors in the logic won’t escape and affect the real world via observers! <br/> 번역: 물론 FRP는 논리상의 오류가 있을 때에는 옵저버를 통해 실제 세계에 영향을 미치지 않는다고 보장하지 않습니다!
+
