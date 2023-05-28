@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 10:30:21 +0900
+updated : 2023-05-28 10:36:02 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2877,8 +2877,24 @@ FRP 시스템의 다양한 컴포넌트들은 인프라에 대한 다양한 요�
 
 우발적 상태와 제어를 위한 인프라
 
+>
+1. a means to specify which derived relvars should actually be stored, along with the ability to store such relvars and ensure that the stored values are accurately up-to-date at all times
+2. a flexible means to specify physical storage mechanisms to be used by a relvar.
+This is a vital part of the infrastructure — without it the infrastructure must store relvars in a way which closely mirrors their logical (essential) definitions, and that inevitably leads to accidental (performance) concerns corrupting the essential parts of the system.
+Specifically, procedures such as normalization or “de-normalization” at the logical (essential) level should have no intrinsic performance implications because of the presence of this mechanism.
 
-48쪽
+1. 실제로 저장해야 하는 파생 relvar를 지정하는 수단, 그리고 이런 relvar를 저장하고 저장된 값이 항상 정확하게 최신 상태인지 보장하는 수단.
+2. relvar에서 사용할 물리적 저장 메커니즘을 유연하게 지정하는 수단.
+이것은 인프라의 중요한 부분입니다.
+이 기능이 없으면 인프라는 논리적(본질적) 정의와 밀접하게 유사한 방식으로 relvar를 저장해야 합니다.
+이는 결국 시스템의 본질적인 부분을 손상시키게 되는 우발적(성능) 문제로 이어질 수 있습니다.
+구체적으로는, 이 메커니즘의 존재로 인해 논리적(본질적) 수준에서의 정규화 또는 "비정규화"와 같은 절차가 내재적인 성능에 영향을 미치지 않아야 합니다.
+
+###### Infrastructure for Feeders and Observers
+
+피더와 옵저버를 위한 인프라
+
+49쪽
 
 ↵
 dicult
