@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 09:53:16 +0900
+updated : 2023-05-28 09:58:15 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2873,4 +2873,4 @@ dicult
 
 [^orig-22]: 원주: Other systems connected electronically are considered equivalent to users inputting data for these purposes. <br/> 번역: 전기적으로 연결된 다른 시스템은 이런 목적으로 데이터를 입력하는 것과 동등하게 간주합니다.
 
-[^orig-23]: 원주: In fact one implication of this is that it is in fact necessary for the assignment command to support multiple simultaneous assignment of several distinct relation values to several <br/> 번역: 할당 명령이 여러 개의 서로 다른 관계 값을 여러 개의 relvar에 동시에 할당하는 것을 지원해야 한다는 것을 의미.
+[^orig-23]: 원주: In fact one implication of this is that it is in fact necessary for the assignment command to support multiple simultaneous assignment of several distinct relation values to several distinct relvars — this is to avoid temporary inconsistencies which could otherwise occur with integrity constraints that involved multiple relvars. <br/> 번역: 할당 명령이 여러 개의 서로 다른 관계 값을 여러 개의 relvar에 동시에 할당하는 것을 지원해야 한다는 것은, 여러 개의 관계와 관련된 무결성 제약 조건에서 발생할 수 있는 일시적인 불일치를 피하기 위한 것입니다.
