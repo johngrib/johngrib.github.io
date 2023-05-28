@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2023-03-25 15:03:42 +0900
+updated : 2023-05-28 21:11:32 +0900
 tag     : 
 resource: 85/85BD50-3D0B-4A77-BAD1-FC9918F4B956
 toc     : true
@@ -43,7 +43,7 @@ latex   : false
 * 1945 - 폰 노이만, 프로그램 내장 방식 제안
 * 1945 - Vannevar Bush가 Memex에 대한 아이디어를 소개하다.
 * 1937 - 디지털 논리 회로
-* 1936 - 앨런 튜링, 튜링 머신 개념 창안
+* 1936-12 - 앨런 튜링, [ON COMPUTABLE NUMBERS, WITH AN APPLICATION TO THE ENTSCHEIDUNGSPROBLEM (PDF)]( https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf )
 * 1911-06-16 - [IBM 창립]( https://en.wikipedia.org/wiki/IBM )
 * 1885 - 오트마 메르겐탈러<sub>Ottmar mergenthaler</sub>, 조판 기계를 위한 자동주조 식자기(키보드)를 고안하다.
 * 1863-01-10 - [런던 지하철 개통]( https://en.wikipedia.org/wiki/London_Underground )
