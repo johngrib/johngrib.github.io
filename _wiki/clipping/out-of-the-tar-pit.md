@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 18:29:58 +0900
+updated : 2023-05-28 18:44:43 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3792,10 +3792,38 @@ FRP는 [DD00]의 아이디어에서 영향을 받았습니다.
 
 ### 12 Conclusions
 
-63쪽
+결론
 
-↵
-dicult
+>
+We have argued that complexity causes more problems in large software systems than anything else.
+We have also argued that it can be tamed — but only through a concerted effort to avoid it where possible, and to separate it where not.
+Specifically we have argued that a system can usefully be separated into three main parts: the essential state, the essential logic, and the accidental state and control.
+
+우리는 대규모 소프트웨어 시스템에서 복잡성이 다른 것보다 더 많은 문제를 일으킨다고 주장했습니다.
+또한 복잡성은 가능한 한 회피하고, 피할 수 없는 경우 분리하여 통제할 수 있다고 주장했습니다.
+특히 우리는 시스템을 본질적인 상태, 본질적인 논리, 우발적인 상태와 제어라는 세 가지 주요 부분으로 유용하게 분리할 수 있다고 주장했습니다.
+
+>
+We believe that taking these principles and applying them to the top level of a system design — effectively using different specialised languages for the different components — can offer more in terms simplicity than can the unstructured adoption of any single general language (be it imperative, logic or functional).
+In making this argument we briefly surveyed each of the common programming paradigms, paying some attention to the weaknesses of object-orientation as a particular example of an imperative approach.
+
+이러한 원칙을 시스템 설계의 최상위 레벨에 적용하여 다양한 컴포넌트에 대해 서로 다른 전문적인 언어를 효과적으로 사용하면 명령형, 논리형, 함수형 등의 서로 다른 일반적인 프로그래밍 언어를 단순히 채택하는 것보다 단순성의 측면에서 더 많은 것을 제공할 수 있다고 믿습니다.
+
+이런 주장을 뒷받침하기 위해 우리는 각각의 일반적인 프로그래밍 패러다임을 간단히 살펴보았고, 명령형 접근 방식의 구체적인 사례인 객체 지향의 약점에 대해서도 알아보았습니다.
+
+>
+In cases (such as existing large systems) where this separation cannot be directly applied we believe the focus should be on avoiding state, avoiding explicit control where possible, and striving at all costs to get rid of code.
+>
+So, what is the way out of the tar pit? What is the silver bullet?
+...it may not be FRP, but we believe there can be no doubt that it is simplicity.
+
+이러한 분리를 직접 적용할 수 없는 경우(기존의 대규모 시스템이라던가)에는 상태를 피하고, 가능한 한 명시적인 제어를 사용하지 않고, 코드를 제거하기 위해 최대한 노력하는 데 초점을 맞춰야 한다고 생각합니다.
+
+그렇다면 타르 구덩이에서 벗어날 수 있는 방법은 무엇일까요?
+은총알은 과연 무엇일까요?
+...FRP가 아닐 수도 있겠지만, 우리는 '단순성'이 그것이라는 데에는 의심의 여지가 없다고 믿습니다.
+
+### References
 
 
 
