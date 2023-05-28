@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 15:29:02 +0900
+updated : 2023-05-28 16:00:01 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3248,8 +3248,6 @@ The price is the desired sale price, the agent is the agency employee responsibl
 10.3.3절에서 설명했던 것처럼, 부동산은 주소를 통해 고유하게 식별됩니다.
 `price`는 판매 희망 가격이고, `agent`는 부동산을 판매하는 데 책임이 있는 직원 중개인이며, `dateRegistered`는 부동산이 판매 등록된 날짜입니다.
 
----- 
-
 >
 The Offer relation records the history of all offers ever made.
 The address represents the Property on which the Offer is being made (by the bidderName who lives at bidderAddress).
@@ -3348,7 +3346,183 @@ In reality these types would be derived (or checked) by an infrastructure-provid
 
 내부
 
-56쪽
+>
+The ten internal derived relations exist mainly to help with the later definition of the three external ones.
+
+10개의 내부 파생 관계는 주로 나중에 정의할 3개의 외부 파생 관계를 정의할 때 도움을 주기 위해 존재합니다.
+
+>
+```frp
+/* RoomInfo :: {address:address roomName:string width:double
+                breadth:double type:roomType roomSize:double} */
+RoomInfo = extend(Room, (roomSize = width*breadth))
+```
+
+>
+The `RoomInfo` derived relation simply extends the `Room` base relation with an extra attribute `roomSize` which gives the area of each room.
+
+`RoomInfo` 파생 관계는 각 방의 면적을 나타내는 추가 속성 `roomSize`를 사용해서 `Room` 기본 관계를 확장합니다.
+
+>
+```frp
+/* Acceptance :: {address:address offerDate:date bidderName:name
+                  bidderAddress:address decisionDate:date} */
+Acceptance = project_away(restrict(Decision | accepted == true), accepted)
+```
+
+>
+The `Acceptance` derived relation simply selects the positive entries from the `Decision` base relation, and then strips away the `accepted` attribute (the `project_away` operation is the dual of the `project` operation — it removes the listed attributes rather than keeping them).
+
+`Acceptance` 파생 관계는 `Decision` 기본 관계에서 긍정적인(`accepted == true`) 결정을 선택한 다음 `accepted` 속성을 제거합니다(`project_away` 연산은 `project` 연산의 이중 연산입니다. 목록에 나열된 속성을 유지하는 대신 제거합니다).
+
+>
+```frp
+/* Rejection :: {address:address offerDate:date bidderName:name
+                  bidderAddress:address decisionDate:date} */
+Rejection = project_away(restrict(Decision | accepted == false), accepted)
+```
+
+>
+The `Rejection` derived relation simply selects the negative decisions and removes the `accepted` attribute.
+
+`Rejection` 파생 관계는 부정적인(`accepted == false`) 결정을 선택하고 `accepted` 속성을 제거합니다.
+
+>
+```frp
+/* PropertyInfo :: {address:address price:price photo:filename
+                    agent:agent dateRegistered:date
+                    priceBand:priceBand areaCode:areaCode
+                    numberOfRooms:int squareFeet:double} */
+PropertyInfo =
+extend(Property,
+       (priceBand = priceBandForPrice(price)),
+       (areaCode = areaCodeForAddress(address)),
+       (numberOfRooms = count(restrict(RoomInfo |
+                                       address == address))),
+       (squareFeet = sum(roomSize, restrict(RoomInfo |
+                                            address == address))))
+```
+
+>
+The `PropertyInfo` derived relation extends the `Property` base relation with four new attributes.
+The first — called `priceBand` — indicates which of the estate agency’s price bands the property is in.
+The price band of the final sale price will affect the commission derived by the agent for selling the property.
+The `areaCode` attribute indicates the area code, which also affects the commission an agent may earn.
+The `numberOfRooms` is calculated by counting the number of rooms (actually the number of entries in the `RoomInfo` derived relation at the corresponding address), and the `squareFeet` is computed by summing up the relevant `roomSizes`.
+
+`PropertyInfo` 파생 관계는 `Property` 기본 관계를 4개의 새로운 속성으로 확장합니다.
+첫 번째인 `priceBand`는 부동산 회사의 가격대 중 어느 것에 속하는지를 나타냅니다.
+최종 판매된 가격의 가격대는 부동산을 판매하는 대리인이 얻는 수수료에 영향을 미칩니다.
+`areaCode` 속성은 중개인이 벌 수 있는 수수료에도 영향을 줄 수 있는 지역 코드를 나타냅니다.
+`numberOfRooms`는 방의 수(실제로는 해당 주소의 `RoomInfo` 파생 관계의 항목 수)를 세어서 계산하고, `squareFeet`는 관련 `roomSizes`를 합산해서 계산합니다.
+
+>
+```frp
+/* CurrentOffer :: {address:address offerPrice:price
+                    offerDate:date bidderName:name
+                    bidderAddress:address} */
+CurrentOffer =
+summarize(Offer,
+          project(Offer, address bidderName bidderAddress),
+          quota(offerDate,1))
+```
+
+>
+The purpose of the `CurrentOffer` derived relation is to filter out old offers which have been superceded by newer ones (e.g. if the bidder has submitted a revised — higher or lower — offer, then we are no longer interested in older offers they may have made on the same property).
+
+`CurrentOffer` 파생 관계의 목적은 새로운 것으로 대체된 오래된 제안을 필터링하는 것입니다(예를 들어 입찰자가 수정된(더 높거나 낮은) 제안을 제출했다면, 같은 부동산 매물에 대해 이전에 제출했던 제안에는 더 이상 관심이 없습니다).
+
+>
+The definition summarizes the `Offer` base relation, taking the most recent (ie the single greatest `offerDate`) offer made by each bidder on a property (ie per unique `address`, `bidderName`, `bidderAddress` combination).
+Because both `bidderName` and `bidderAddress` are included, the system supports the (admittedly unusual) possibility of different people living in the same place (`bidderAddress`) submitting different offers on the same property (`address`).
+
+이 정의는 부동산에 대한 각 입찰자의 가장 최근(즉, 가장 큰 `offerDate`) 제안을 가져옵니다(즉, 고유한 `address`, `bidderName`, `bidderAddress` 조합).
+`bidderName`과 `bidderAddress`가 모두 포함되어 있기 때문에 시스템은 같은 주소(`bidderAddress`)에 사는 다른 사람들이 같은 부동산 주소(`address`)에 대해 다른 제안을 제출하는(드문 경우지만) 것을 지원합니다.
+
+>
+```frp
+/* RawSales :: {address:address offerPrice:price
+                decisionDate:date agent:agent
+                dateRegistered:date} */
+RawSales =
+project_away(join(Acceptance,
+                  join(CurrentOffer,
+                       project(Property, address agent
+                                         dateRegistered))),
+             offerDate bidderName bidderAddress)
+```
+
+>
+For the purposes of this example, sales are seen as corresponding directly to accepted offers.
+As a result the definition of the `RawSales` relation is in terms of the `Acceptance` relation.
+These accepted offers are augmented (joined) with the `CurrentOffer` information (which includes the agreed `offerPrice`) and with information (`agent`, `dateRegistered`) from the `Property` relation.
+
+이 예제에서는 판매가 수락된 제안과 일대일 대응한다고 간주합니다.
+따라서 `RawSales` 관계의 정의는 `Acceptance` 관계를 기반으로 합니다.
+이 수락된 제안은 `CurrentOffer` 정보(합의된 `offerPrice`를 포함)와 `Property` 관계의 정보(`agent`, `dateRegistered`)와 결합됩니다.
+
+>
+```frp
+/* SoldProperty :: {address:address} */
+SoldProperty = project(RawSales, address)
+```
+
+>
+The `SoldProperty` relation simply contains the `address` of all Properties on which a sale has been agreed (ie the properties in the `RawSales` relation).
+
+`SoldProperty` 관계는 판매가 합의된 모든 `Property`의 `address`(즉, `RawSales` 관계의 속성)를 단순히 포함합니다.
+
+>
+```frp
+/* UnsoldProperty :: {address:address} */
+UnsoldProperty = minus(project(Property, address), SoldProperty)
+```
+
+>
+The `UnsoldProperty` is obviously just the `Property` which is not `SoldProperty` (i.e. all `Property` addresses minus the `SoldProperty` addresses).
+
+`UnsoldProperty`는 분명히 `SoldProperty`가 아닌 `Property`입니다(즉, 모든 `Property` 주소에서 `SoldProperty` 주소를 제외한 것).
+
+>
+```frp
+/* SalesInfo :: {address:address agent:agent areaCode:areaCode
+                 saleSpeed:speedBand priceBand:priceBand} */
+SalesInfo =
+project(extend(RawSales,
+               (areaCode = areaCodeForAddress(address)),
+               (saleSpeed = datesToSpeedBand(dateRegistered,
+                                             decisionDate)),
+               (priceBand = priceBandForPrice(offerPrice))),
+             address agent areaCode saleSpeed priceBand)
+```
+
+>
+The `SalesInfo` relation is based on the `RawSales` relation, but extends it with `areaCode`, `saleSpeed` and `priceBand` information by calling the three relevant functions.
+
+`SalesInfo` 관계는 `RawSales` 관계를 기반으로 하지만, 세 가지 관련 함수를 호출하여 `areaCode`, `saleSpeed` 및 `priceBand` 정보를 추가합니다.
+
+
+>
+```frp
+/* SalesCommissions :: {address:address agent:agent
+                        commission:double} */
+SalesCommissions =
+project(join(SalesInfo, Commission),
+        address agent commission)
+```
+
+>
+The `SalesCommissions` which are due to the agents are derived simply by joining together the `SalesInfo` with the `Commission` base relation.
+This gives the amount of `commission` due to each `agent` on each `Property` (represented by `address`).
+
+`SalesCommissions`는 `SalesInfo`와 `Commission` 기본 관계를 단순히 결합하여 `agent`에게 지급되는 수수료를 결정합니다.
+이렇게 해서 각 `Property`(`address`로 표시)에 대해 각 `agent`에게 지급되는 `commission` 금액이 결정할 수 있게 됩니다.
+
+###### External
+
+외부
+
+59쪽
 
 ↵
 dicult
