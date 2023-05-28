@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 09:10:37 +0900
+updated : 2023-05-28 09:29:47 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2690,8 +2690,59 @@ This is absolutely not the case (it is only the accidental state and control com
 
 우발적 상태와 제어("성능")
 
+>
+This component fundamentally consists of a series of isolated (in the sense that they cannot refer to each other in any way) performance “hints”.
+These hints — which should be declarative in nature — are intended to provide guidance to the infrastructure responsible for running the FRP system.
 
-45쪽
+이 컴포넌트는 기본적으로 (서로를 어떤 방식으로든 참조할 수 없는 고립의 의미에서) 분리된 성능 "힌트"들의 시리즈로 구성됩니다.
+이러한 "힌트"는 선언적이어야 하며, FRP 시스템 실행을 담당하는 인프라에 지침을 제공하는 것이 목적입니다.
+
+>
+On the state side, this component is concerned with both accidental state itself and accidental aspects of state.
+Firstly, it provides a means to specify what state (of the accidental variety) should exist.
+Secondly it provides (if desired) a means to specify what physical storage mechanisms should be used for storing state (of both kinds) — i.e. the accidental aspects of storage.
+This second aspect is the flexible mapping providing physical / logical data independence as required by the relational model (section 8).
+
+상태의 관점에서, 이 컴포넌트는 우발적 상태 자체와 우발적 상태의 측면 모두에 관련이 있습니다.
+
+- 첫째, 어떤 (우발적)상태가 존재해야 하는지 지정하는 수단을 제공합니다.
+- 둘째, (두 가지 종류의) 상태를 저장하기 위해 어떤 물리적 저장 메커니즘을 사용해야 하는지, 즉 저장의 우발적 측면을 지정하는 수단을 제공합니다.
+
+이 두번째 측면은 관계형 모델에서 요구하는 대로 물리적/논리적 데이터 독립성을 제공하는 유연한 매핑입니다(8절 참고).
+
+>
+An example of the first kind of state-related hint might be a simple directive that a particular derived-relvar should actually be stored (rather than continually recalculated), so that it is always quickly available.
+
+첫 번째 상태 관련 힌트의 예로는, 특정 파생 relvar를 계속 다시 계산하지 않고, 실제로 저장해서 항상 빠르게 사용할 수 있게 해야 한다는 간단한 지시문이 있을 수 있습니다.
+
+>
+An example of the second kind of state-related hint might be that an infrequently used subset of the attributes of a particular relvar (either derived or base) should be stored separately for performance reasons.
+The use of indices or other custom storage strategies would also be examples of this second kind of state-related hint.
+The exact types of hint available here will depend entirely on what is provided by the underlying infrastructure.
+
+두 번째 상태 관련 힌트의 예로는, 특정 relvar(파생 또는 기본)의 속성 중 자주 사용되지 않는 부분을 성능상의 이유로 별도로 저장해야 한다고 알려주는 것이 있을 수 있습니다.
+인덱스나 커스텀 저장 전략을 사용하는 것도 두 번째 유형의 힌트의 예라 할 수 있습니다.
+
+여기에서 사용 가능한 힌트의 정확한 유형은 기반이 되는 인프라가 제공하는 것에 따라 달라집니다.
+
+>
+On the control side, recommendations for parallel evaluation of derived-relvars might be given.
+Also, declarative hints could be given about whether the derived relvars should be computed eagerly (as soon as the essential state changes), lazily (when the infrastructure is forced to provide them), or some combination of different policies for different relvars.
+
+제어 측면에서는 파생된 relvar의 병렬 평가에 대한 추천을 할 수도 있습니다.
+또한 파생된 relvar를 즉시(eagerly) 계산해야 하는지(본질적 상태가 변경되자마자), 게으르게(lazily) 계산해야 하는지(인프라가 제공해야만 하는 경우), 또는 relvar마다 다른 정책의 조합을 사용해야 하는지에 대한 선언적 힌트를 제공할 수 있습니다.
+
+>
+All hints are incapable of referring to each other, but do refer to the relevant (essential, base and derived) relvars by name.
+
+모든 힌트는 서로를 참조할 수는 없지만, 이름을 통해 (본질적, 기본, 파생) 관련된 relvar을 참조할 수 있습니다.
+
+##### 9.1.4 Other (Interfacing)
+
+기타 (인터페이싱)
+
+
+46쪽
 
 ↵
 dicult
