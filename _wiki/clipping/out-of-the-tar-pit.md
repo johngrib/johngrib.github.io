@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 15:21:04 +0900
+updated : 2023-05-28 15:25:15 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3296,6 +3296,37 @@ The commission fees are assigned on the basis of sale prices divided into differ
 #### 10.3 Essential Logic
 
 본질적 논리
+
+>
+This is the heart of the system (see section 9.1.2) and corresponds to the “business logic”.
+
+이것은 시스템의 핵심이며(9.1.2절 참조), "비즈니스 로직"에 해당합니다.
+
+##### 10.3.1 Functions
+
+함수
+
+>
+We do not give the actual function definitions here, we just describe their operation informally.
+In reality we would supply the function definitions in terms of some language provided by the infrastructure.
+>
+`priceBandForPrice`
+Converts a price into a `priceBand` (which will be used in the commission calculations)
+>
+`areaCodeForAddress` Converts an address into an `areaCode`
+>
+`datesToSpeedBand` Converts a pair of dates into a `speedBand` (reflecting the speed of sale after taking into account the time of year)
+
+여기에서는 실제 함수 정의를 제공하지 않고, 비형식적으로 작동 방식을 설명하도록 하겠습니다.
+실제로는 인프라에서 제공하는 언어로 함수 정의를 제공할 것입니다.
+
+- `priceBandForPrice` 가격을 `priceBand`로 변환합니다(수수료 계산에 사용됩니다).
+- `areaCodeForAddress` 주소를 `areaCode`로 변환합니다.
+- `datesToSpeedBand` 두 날짜를 `speedBand`로 변환합니다(연도의 시간을 고려한 판매 속도를 반영합니다).
+
+##### 10.3.2 Derived Relations
+
+파생된 관계
 
 56쪽
 
