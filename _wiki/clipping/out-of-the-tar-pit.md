@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 18:20:17 +0900
+updated : 2023-05-28 18:24:23 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3759,7 +3759,25 @@ Larger systems would probably also include accidental control specifications for
 
 그 외
 
-62쪽
+>
+The feeders and observers for this system would be fairly simple — feeding user input into `Decisions`, `Offers` etc., and directly observing and displaying the various derived relations as output (e.g. `OpenOffers`, `PropertyForWebSite` and `CommisionDue`).
+>
+Because of this it is reasonable to expect that the feeders and observers would require no custom coding at all, but could instead be specified in a completely declarative fashion.
+>
+One extension which might require a custom observer would be a requirement to connect `CommissionDue` into an external payroll system.
+
+이 시스템의 피더와 옵저버는 매우 간단합니다.
+사용자 입력을 `Decisions`, `Offers` 등에 입력하고, `OpenOffers`, `PropertyForWebSite` 및 `CommisionDue`와 같은 다양한 파생 관계를 직접 관찰하고 출력으로 표시하는 것입니다.
+
+따라서 피더와 옵저버는 사용자 정의 코딩이 전혀 필요하지 않고, 완전히 선언적인 방식으로 지정할 수 있다고 예상하는 것이 합리적입니다.
+
+커스텀 옵저버가 필요할만한 확장 한 가지가 있다면 `CommissionDue`를 외부 급여 체계에 연결해야 하는 요구 사항입니다.
+
+### 11 Related Work
+
+관련 작업
+
+63쪽
 
 ↵
 dicult
