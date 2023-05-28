@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 10:36:02 +0900
+updated : 2023-05-28 10:44:33 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2893,6 +2893,33 @@ Specifically, procedures such as normalization or “de-normalization” at the 
 ###### Infrastructure for Feeders and Observers
 
 피더와 옵저버를 위한 인프라
+
+>
+The minimum requirement on the infrastructure (specifically on the state manipulation language) from feeders is for it to be able to process relational assignment commands (containing complete new relation values) and reject them if necessary.
+Practical extensions that could be useful include the ability to accept commands which specify new relvar values in terms of their previous values — typically in the form of INSERT / UPDATE / DELETE commands.
+
+피더의 인프라(특히 상태 조작 언어)에 대한 최소 요구 사항은 (완전히 새로운 관계 값을 포함하는) '관계 할당 명령을 처리'하고 '필요한 경우에는 거부할 수 있어야 한다'는 것입니다.
+유용한 실용적인 확장 기능으로는 이전 값에 따라 새로운 relvar 값을 지정하는 명령을 수용할 수 있는 기능이 있습니다(일반적으로 INSERT /UPDATE / DELETE 명령 형태).
+
+>
+The minimum requirement on the infrastructure from observers is for it to be able to supply the new value of a relvar whenever it changes.
+Practical extensions that could be useful are the ability to provide deltas, throttling and coalescing capabilities (if the observers are viewed as live query-handlers, then these extensions represent potential query meta-data).
+
+옵저버가 인프라에 요구하는 최소한의 요구사항은 relvar의 새로운 값이 변경될 때마다 해당 값을 제공할 수 있어야 한다는 것입니다.
+유용한 실용적 확장 기능으로는 델타, 쓰로틀링 및 통합 기능이 있습니다(옵저버를 라이브 쿼리 핸들러로 간주하는 경우, 이러한 확장 기능은 잠재적인 쿼리 메타 데이터를 나타냅니다).
+
+>
+Another possible extension is the ability to observe general relational expressions rather than just relvars from the essential logic (this is not a significant extension as it is basically equivalent to a short-term addition to the essential logic’s set of derived relvars — the only difference being that the expression in question would be anonymous).
+>
+Finally, the ability to access arbitrary historical relvar values would obviously be a useful extension in some scenarios.
+
+또 다른 가능한 확장은 본질적 논리에서 나온 relvar가 아닌 일반적인 관계 표현식을 관찰하는 기능입니다(이는 기본적으로는 본질적 논리의 파생 relvar 집합에 잠시 추가하는 것과 똑같기 때문에 대단한 확장은 아닙니다. 해당 표현식이 익명이라는 점만 다릅니다).
+
+마지막으로, 임의의 과거 relvar 값에 엑세스할 수 있는 기능은 몇 가지 시나리오에서 분명히 유용한 확장 기능이 될 것입니다.
+
+###### Summary
+
+요약
 
 49쪽
 
