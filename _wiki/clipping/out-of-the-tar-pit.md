@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 17:56:41 +0900
+updated : 2023-05-28 18:13:11 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3582,7 +3582,133 @@ Finally, the total `commission` due to each `agent` is calculated by simply summ
 
 무결성
 
-60쪽
+>
+Integrity constraints are given in the form of relational algebra or relational calculus expressions.
+As already noted, our hypothetical FRP infrastructure provides common relational algebra extensions (see section 8.5).
+It also provides special syntax for candidate and foreign key constraints.
+(This syntax is effectively just a shorthand for the underlying algebra or calculus expression).
+
+무결성 제약 조건은 관계 대수 또는 관계 해석 표현식으로 제공됩니다.
+이미 언급했듯이, 가상의 FRP 인프라는 공통 관계 대수 확장을 제공합니다(8.5절 참조).
+또한 후보 키 및 외래 키 제약 조건에 대한 특별한 구문을 제공합니다.
+(이 구문은 사실 기본 관계 대수 또는 관계 해석 표현식의 약어에 불과합니다.).
+
+>
+We consider the standard (key) constraints first:
+
+먼저 표준(키) 제약 조건을 살펴보겠습니다:
+
+>
+```frp
+candidate key Property = (address)
+candidate key Offer = (address, offerDate,
+                       bidderName, bidderAddress)
+candidate key Decision = (address, offerDate,
+                          bidderName, bidderAddress)
+candidate key Room = (address, roomName)
+candidate key Floor = (address, roomName)
+candidate key Commision = (priceBand, areaCode, saleSpeed)
+foreign key Offer (address) in Property
+foreign key Decision (address, offerDate,
+                      bidderName, bidderAddress) in Offer
+foreign key Room (address) in Property
+foreign key Floor (address) in Property
+```
+
+>
+There are also some slightly more interesting, domain-specific constraints.
+The first insists that all properties must have at least one room:
+
+좀 더 흥미로운 도메인별 특정 제약 조건도 있습니다.
+첫 번째 제약 조건은 모든 부동산은 적어도 하나의 방을 가져야 한다고 요구합니다:
+
+>
+```frp
+count(restrict(PropertyInfo | numberOfRooms < 1)) == 0
+```
+
+>
+The next ensures that people cannot submit bids on their own property (owners are assumed to be residing at the property they are selling):
+
+다음은 사람들이 자기 소유의 부동산에 입찰할 수 없도록 보장합니다(집주인은 자신이 판매하는 부동산에 거주하고 있다고 가정합니다):
+
+>
+```frp
+count(restrict(Offer | bidderAddress == address)) == 0
+```
+
+>
+This constraint prohibits the submission of any `Offers` on a property (`address`) after a sale has happened (i.e. after an `Acceptance` has occurred for the `address`):
+
+이 제약 조건은 판매가 발생한 후(즉, `address`에 대한 거래 `Acceptance`가 발생한 후)에는 부동산(`address`)에 대한 어떤 `Offer`도 제출할 수 없게 합니다:
+
+>
+```frp
+count(restrict(join(Offer,
+                    project(Acceptance, address decisionDate))
+               | offerDate > decisionDate)) == 0
+```
+
+>
+The next constraint ensures that there are never more than 50 properties advertised on the website in the `PREMIUM` price band:
+
+다음 제약 조건은 웹사이트에 광고된 부동산 중 `PREMIUM` 가격대의 부동산이 50개를 넘지 않도록 보장합니다:
+
+>
+```frp
+count(restrict(extend(PropertyForWebSite,
+                      (priceBand = priceBandForPrice(price)))
+               | priceBand == PREMIUM)) < 50
+```
+
+>
+This is an interesting constraint because it depends (directly as it happens) on a user-defined function (`priceBandForPrice`).
+One implication of this is that changes to function definitions (as well as changes to essential state) could — if unchecked — cause the system to violate its constraints.
+No FRP infrastructure can allow this.
+
+이 제약 조건은 흥미로운데, 사용자 정의 함수인 `priceBandForPrice`에 직접적으로 의존하기 때문입니다.
+이 함수의 한 가지 의미는 함수 정의의 변경(본질적인 상태의 변경과 마찬가지로)이 시스템이 제약 조건을 위반하도록 만들 수 있다는 것입니다.
+FRP 인프라는 이런 것을 허용하면 안됩니다.
+
+>
+Fortunately there are two straightforward approaches to solving this.
+The first is that the infrastructure could treat function definitions as data (essential state) and apply the same kind of modification checks.
+The alternative is that it could refuse to run a system with a new function version which causes existing data to be considered invalid.
+In this latter case manual state changes would be required to restore integrity and to allow the system became operational again.
+
+다행히도 이 문제를 해결하는 두 가지 간단한 방법이 있습니다.
+
+- 첫 번째는 인프라가 함수 정의를 데이터(본질적인 상태)로 취급하고 동일한 종류의 수정 검사를 적용할 수 있다는 것입니다.
+- 두 번째 방법은 기존 데이터를 잘못된 것으로 간주하는 새로운 함수의 버전으로는 시스템을 실행하지 않도록 거부하도록 하는 것입니다.
+
+후자의 경우 시스템이 다시 운영될 수 있도록 하려면 무결성을 복원하고 수동으로 상태를 변경해야 합니다.
+
+>
+Finally, no single bidder can submit more than 10 offers (over time) on a single `Property`.
+This constraint works by first computing the number of offers made by each bidder (`bidderName`, `bidderAddress`) on each `Property` (`address`), and ensuring that this is never more than 10:
+
+마지막으로, 단일 입찰자는 하나의 부동산(`Property`)에 대해 10개를 초과하는 `Offer`를 제출할 수 없습니다.
+이 제약 조건은 먼저 각 `Property`(`address`)에 대해 각 입찰자(`bidderName`, `bidderAddress`)가 제출한 `Offer`의 수를 계산하고, 이 수가 10개를 초과하지 않도록 보장함으로써 작동합니다:
+
+>
+```frp
+count(restrict(summarize(Offer,
+                         project(Offer, address bidderName
+                                        bidderAddress),
+                         numberOfOffers = count())
+               | numberOfOffers > 10)) == 0
+```
+
+>
+Once the system is deployed, the FRP infrastructure will reject any state modification attempts which would violate any of these integrity constraints.
+
+시스템이 배포되면, FRP 인프라는 이러한 무결성 제약 조건을 위반하는 모든 상태의 변경 시도를 거부합니다.
+
+#### 10.4 Accidental State and Control
+
+우발적인 상태와 제어
+
+62쪽
 
 ↵
 dicult
