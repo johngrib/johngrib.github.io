@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 16:00:01 +0900
+updated : 2023-05-28 17:56:41 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3522,7 +3522,67 @@ This gives the amount of `commission` due to each `agent` on each `Property` (re
 
 외부
 
-59쪽
+>
+Having now defined all the internal derived relations, we are now in a position to define the external derived relations — these are the ones which will be of most direct interest to the users of the system.
+
+모든 내부적인 파생 관계를 정의했으므로, 이제 시스템 사용자가 가장 직접적으로 관심을 가질 외부적인 파생 관계를 정의할 수 있게 됐습니다.
+
+>
+```frp
+/* OpenOffers :: {address:address offerPrice:price
+                  offerDate:date bidderName:name
+                  bidderAddress:address} */
+OpenOffers =
+join(CurrentOffer,
+     minus(project_away(CurrentOffer, offerPrice),
+           project_away(Decision, accepted decisionDate)))
+```
+
+>
+The `OpenOffers` relation gives details of the `CurrentOffers` on which the owner has not yet made a `Decision`.
+This is calculated by joining the `CurrentOffer` information (which includes `offerPrice`) with those `CurrentOffers` (excluding the price information) that do not have corresponding `Decisions`.
+`project_away` is used here because minus requires its arguments to be of the same type.
+
+`OpenOffers` 관계는 소유자가 아직 `Decision`을 내리지 않은 `CurrentOffers`의 세부 정보를 제공합니다.
+이는 `CurrentOffer` 정보(`offerPrice`를 포함)를 `Decision`이 없는 `CurrentOffers`(가격 정보를 제외)와 `join`하여 계산됩니다.
+
+>
+```frp
+/* PropertyForWebSite :: {address:address price:price
+                          photo:filename numberOfRooms:int
+                          squareFeet:double} */
+PropertyForWebSite = project( join(UnsoldProperty, PropertyInfo),
+                              address price photo
+                              numberOfRooms squareFeet )
+```
+
+>
+The business wants to display the information from `PropertyInfo` on their external website.
+However, they only want to show unsold property (this is achieved simply by a `join`), and they only want to show a subset of the attributes (this is achieved with a `project`).
+
+사업부서는 외부 웹사이트에서 `PropertyInfo`의 정보를 표시하길 원합니다.
+그러나, 그들은 오직 판매되지 않은 `Property`만을 보여주길 원합니다(단순하게 `join`을 써서 할 수 있습니다), 그리고 그들은 속성의 하위 집합만을 보여주길 원합니다(`project`로 할 수 있습니다).
+
+>
+```frp
+/* CommissionDue :: {agent:agent totalCommission:double} */
+CommissionDue =
+project(summarize(SalesCommissions,
+                  project(SalesCommissions, agent),
+                  totalCommission = sum(commission)),
+        agent totalCommission)
+```
+
+>
+Finally, the total `commission` due to each `agent` is calculated by simply summing up the `commission` attribute of the `SalesCommissions` relation on a per `agent` basis to give the `totalCommission` attribute.
+
+마지막으로, 각 `agent`에게 지급되는 총 `commission`은 `agent`별로 `SalesCommissions` 관계의 `commission` 속성을 단순히 합산하여 `totalCommission` 속성을 얻는 것으로 계산됩니다.
+
+##### 10.3.3 Integrity
+
+무결성
+
+60쪽
 
 ↵
 dicult
