@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 09:29:47 +0900
+updated : 2023-05-28 09:34:40 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2740,6 +2740,34 @@ All hints are incapable of referring to each other, but do refer to the relevant
 ##### 9.1.4 Other (Interfacing)
 
 기타 (인터페이싱)
+
+>
+The primary consideration not addressed by the above is that of interfacing with the outside world.
+>
+Specifically, all input must be converted into relational assignments (which replace the old relvar values in the essential state with new ones), and all output (and side-effects) must be driven from changes to the values of relvars (primarily derived relvars).
+
+앞에서 다루지 않은 주요 고려 사항은 외부와의 인터페이싱에 대한 것입니다.
+
+구체적으로, 모든 입력은 관계형 할당으로 변환되어야 합니다(본질적 상태의 relvar 값을 새로운 값으로 대체합니다), 그리고 모든 출력(및 부작용)은 relvar 값의 변경으로부터 발생해야 합니다(주로 파생된 relvar).
+
+>
+The exact nature of this task is likely to be highly application-dependent, but we can say that there will probably be a requirement for a series of feeder (or input) and observer (or output) components.
+These may well be defined, at least partially, in a traditional, imperative way if custom interfacing is required.
+There will be cases when it is necessary for a given interfacing component to act in both capacities (if for example a message must be observed and sent to another system, then a response received, recorded and fed back in).
+>
+The expectation is that all of these components will be of a minimal nature — performing only the necessary translations to and from relations.
+
+이 작업의 정확한 성격은 애플리케이션에 따라 크게 달라질 수 있지만, 피더(또는 입력)와 옵저버(또는 출력) 컴포넌트에 대한 요구 사항들이 있을 것으로 예상할 수 있습니다.
+커스텀 인터페이스가 필요한 경우라면, 이러한 컴포넌트들은 부분적으로라도 전통적인 명령형 방식으로 정의될 수도 있습니다.
+
+특정 인터페이스 컴포넌트가 두 가지 역할을 모두 수행해야 하는 경우도 있습니다(예를 들어 메시지를 관찰하고 다른 시스템에 보내야 하는 경우, 응답을 받아 기록하고 피드백을 제공해야 하는 경우).
+
+이런 모든 컴포넌트들은 각각의 관계 사이에 필요한 번역만 수행할 것으로 예상됩니다.
+
+###### Feeders
+
+피더
+
 
 
 46쪽
