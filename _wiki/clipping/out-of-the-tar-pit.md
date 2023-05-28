@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 10:56:35 +0900
+updated : 2023-05-28 10:58:55 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2945,7 +2945,18 @@ Finally, it is of course perfectly possible to develop an FRP infrastructure in 
 
 이러한 접근 방식의 장점
 
-49쪽
+>
+FRP follows the guidelines of avoid and separate as recommended in section 7 and hence gains all the benefits which derive from that.
+We now examine how FRP helps to avoid complexity from the common causes.
+
+FRP는 7장에서 권장하는 회피와 분리 지침을 따르므로, 이로부터 유도되는 모든 이점을 얻을 수 있습니다.
+이제 FRP가 어떻게 공통 원인으로부터 발생하는 복잡성을 회피하는 데 도움이 되는지 살펴보겠습니다.
+
+##### 9.2.1 Benefits for State
+
+상태 측면의 이점
+
+50쪽
 
 ↵
 dicult
