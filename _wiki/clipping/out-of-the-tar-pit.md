@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 09:40:55 +0900
+updated : 2023-05-28 09:53:16 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2790,6 +2790,30 @@ The infrastructure which eventually runs the FRP system will ensure that the com
 ###### Observers
 
 옵저버
+
+>
+Observers are components which generate output in response to changes which they observe in the values of the (derived) relvars.
+At a minimum, observers will only need to specify the name of the relvar which they wish to observe.
+The infrastructure which runs the system will ensure that the observer is invoked (with the new relation value) whenever it changes.
+In this way observers act both as what are sometimes called live-queries and also as triggers.
+
+옵저버는 (파생된) relvar 값의 변화를 관찰하고 이에 반응해 출력을 생성하는 컴포넌트입니다.
+옵저버는 관찰하고자 하는 relvar의 이름만 지정하면 충분합니다
+시스템을 운영하는 인프라는 relvar 값이 변경될 때마다 옵저버가 (새로운 관계 값과 함께) 호출되도록 보장할 것입니다.
+이런 방식으로 옵저버는 라이브 쿼리라고 불리는 역할과 트리거 역할을 동시에 수행합니다.
+
+>
+Despite this the intention is not for observers to be used as a substitute for true integrity constraints.
+Specifically, hybrid feeders / observers should not act as triggers which directly update the essential state (this would by definition be creating derived and hence accidental state).
+The only (occasional) exceptions to this should be of the ease of expression kind discussed in sections 7.2.2 and 7.3.1.
+
+그럼에도 불구하고, 옵저버를 진정한 무결성 제약 조건의 대체 수단으로 사용하려는 의도는 아닙니다.
+특히, 하이브리드 피더/옵저버는 본질적 상태를 직접 업데이트하는 트리거 역할을 수행해서는 안 됩니다(정의상 파생 상태를 생성하므로 우발적 상태를 만들게 됩니다).
+이에 대한 유일한 예외는 드물게 발생하며, 7.2.2절과 7.3.1절에서 논의된 바와 같이 표현의 용이성에 관련된 경우들이 그러합니다.
+
+###### Summary
+
+요약
 
 47쪽
 
