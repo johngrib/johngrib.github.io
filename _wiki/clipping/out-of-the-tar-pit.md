@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 09:58:15 +0900
+updated : 2023-05-28 10:05:03 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2815,10 +2815,25 @@ The only (occasional) exceptions to this should be of the ease of expression kin
 
 요약
 
+>
+The most complicated scenario when interfacing the core relational system with the outside world is likely to come when the interfacing requires highly structured input or output (this is most likely to occur when interfacing with other systems rather than with people).
+>
+In this situation, the feeders or observers are forced to convert between structured data and flat relations.[^orig-24]
+
+핵심 관계형 시스템과 외부 세계를 연결할 때의 가장 복잡한 시나리오는, 고도로 구조화된 입력 또는 출력이 필요할 때 발생할 가능성이 높습니다(이는 사람이 아닌 다른 시스템과 인터페이싱할 때 가장 자주 발생할 것입니다).
+
+이런 상황에서는 피더 또는 옵저버가 구조화된 데이터와 플랫 관계(flat relations) 사이를 변환해야 합니다.[^orig-24]
+
+##### 9.1.5 Infrastructure
+
+인프라
+
 47쪽
 
 ↵
 dicult
+
+
 
 
 ## 주석
@@ -2874,3 +2889,5 @@ dicult
 [^orig-22]: 원주: Other systems connected electronically are considered equivalent to users inputting data for these purposes. <br/> 번역: 전기적으로 연결된 다른 시스템은 이런 목적으로 데이터를 입력하는 것과 동등하게 간주합니다.
 
 [^orig-23]: 원주: In fact one implication of this is that it is in fact necessary for the assignment command to support multiple simultaneous assignment of several distinct relation values to several distinct relvars — this is to avoid temporary inconsistencies which could otherwise occur with integrity constraints that involved multiple relvars. <br/> 번역: 할당 명령이 여러 개의 서로 다른 관계 값을 여러 개의 relvar에 동시에 할당하는 것을 지원해야 한다는 것은, 여러 개의 관계와 관련된 무결성 제약 조건에서 발생할 수 있는 일시적인 불일치를 피하기 위한 것입니다.
+
+[^orig-24]: 원주: Some systems — for example the Kleisli system used in bio-informatics [Won00] — seek to avoid this conversion by providing support for more complex structures such as nested relations. We believe that the simplicity gained from having flat relations throughout the system is worth the effort sometimes involved at the system edges (section 9.2.4 describes some of the rationale behind this). <br/> 번역: 일부 시스템에서는(예: 생물 정보학에서 사용하는 Kleisli 시스템) 중첩 관계와 같은 더 복잡한 구조를 지원하는 방식으로 이런 변환을 피하려 합니다. 우리는 시스템 전체에 걸쳐 플랫 관계(flat relations)를 사용함으로써 얻을 수 있는 단순성이 때때로 시스템 경계에서 가치가 있다고 생각합니다.
