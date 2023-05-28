@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 14:30:21 +0900
+updated : 2023-05-28 14:33:08 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3054,6 +3054,20 @@ A final advantage (which isn’t particularly related to control) is that the un
 
 코드의 양 측면의 이점
 
+>
+FRP addresses this in two ways.
+The first is that a sharp focus on true essentials and avoiding useless accidental complexity inevitably leads to less code.
+>
+The second way is that the FRP approach reduces the harm that large volumes of code cause through its use of separation (see section 4.3).
+
+FRP는 두 가지 방식으로 이 문제를 해결합니다.
+첫 번째는 정말로 본질적인 것에만 집중하고 쓸모없는 우발적 복잡성을 피하는 것을 통해, 필연적으로 코드의 양이 줄어들게 됩니다.
+
+두 번째는 FRP 접근 방식이 분리를 사용함으로써 코드의 양이 많을 때 발생하는 피해를 줄인다는 것입니다(4.3절 참조).
+
+##### 9.2.4 Benefits for Data Abstraction
+
+데이터 추상화 측면의 이점
 
 52쪽
 
