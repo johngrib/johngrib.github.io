@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 14:02:00 +0900
+updated : 2023-05-28 14:30:21 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3027,11 +3027,35 @@ This type of optimisation is just not possible if the integrity is maintained in
 
 제어 측면의 이점
 
+>
+Control is avoided completely in the relational component which constitutes the top level of the essential logic.
+In FRP this logic consists simply of a set of equations (equating derived relvars with the relations calculated by their expressions) which have no intrinsic ordering or control flow at all.
+
+본질적 논리의 최상위 레벨을 구성하는 관계형 컴포넌트에서는 제어가 완전히 제거됩니다.
+FRP에서 이 논리는 단순히 일련의 (파생된 relvar들이 표현식에 의해 계산된 관계와 동일함을 나타내는) 방정식들로만 구성되며, 이 방정식들은 내재된 순서나 제어 흐름이 전혀 없습니다.
+
+>
+FRP also avoids any explicit parallelism in the essential components but provides for the possibility of separated accidental control should that be required.
+
+FRP는 또한 본질적인 컴포넌트에서 병렬 처리를 명시적으로 하지 않지만, 필요한 경우에는 별도의 우발적 제어 가능성을 제공합니다.
+
+>
+An infrastructure which supports FRP may well make use of implicit parallelism to improve its performance — but this shouldn’t be the concern of anyone other than the implementor of the infrastructure — certainly it is not the concern of someone developing an FRP system.
+
+FRP를 지원하는 인프라는 성능을 개선하기 위해 암묵적으로 병렬 처리를 사용할 수 있습니다.
+하지만 이는 인프라 구현자 이외의 사람들, 특히 FRP 시스템을 개발하는 사람이 고려해야 할 문제가 아닙니다.
+
+>
+A final advantage (which isn’t particularly related to control) is that the uniform nature of the representation of data as relations makes it much easier to create distributed implementations of an FRP infrastructure should that be required (e.g. there are no pointers or other access paths to maintain).
+
+(제어와는 특히 관련이 없는) 마지막 장점은 데이터를 관계로 표현하는 일관된 특성으로 인해 필요한 경우 FRP 인프라의 분산 구현을 훨씬 쉽게 만들 수 있다는 것입니다(예를 들자면, 포인터나 다른 접근 경로를 유지하고 관리할 필요가 없습니다).
+
+##### 9.2.3 Benefits for Code Volume
+
+코드의 양 측면의 이점
 
 
-
-
-51쪽
+52쪽
 
 ↵
 dicult
