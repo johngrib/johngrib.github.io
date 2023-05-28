@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 15:03:40 +0900
+updated : 2023-05-28 15:21:04 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2365,8 +2365,6 @@ The idea of structuring data using relations is appealing because no subjective,
 데이터를 관계를 사용하여 구조화하는 아이디어는 매력적인데,
 그 이유는 데이터를 쿼리하고 처리하기 위해 이후에 사용할 접근 경로에 대해 미리 주관적인 결정을 내릴 필요가 없기 때문입니다.
 
----- 
-
 >
 To understand what is meant by access path, let us consider a simple example.
 Suppose we are trying to represent information about employees and the departments in which they work.
@@ -3207,7 +3205,7 @@ The example system makes use of a small number of custom types (see section 9.3)
 이 중 일부는 인프라에서 제공하는 타입의 별칭일 뿐입니다.
 
 >
-```
+```frp
 def alias address : string
 def alias agent : string
 def alias name : string
@@ -3222,7 +3220,84 @@ def enum speedBand : VERY_FAST | FAST | MEDIUM | SLOW | VERY_SLOW
 
 본질적 상태
 
-53쪽
+>
+The essential state (see section 9.1.1) consists of the definitions of the types of the base relvars (the types of the attributes are shown in italics).
+
+본질적 상태(9.1.1절 참고)는 기본 relvar의 타입 정의로 구성됩니다(속성의 타입은 이탤릭체로 표시됩니다).
+
+```frp
+def relvar Property :: {address:address price:price photo:filename agent:agent dateRegistered:date}
+def relvar Offer :: {address:address offerPrice:price offerDate:date bidderName:name bidderAddress:address}
+def relvar Decision :: {address:address offerDate:date bidderName:name bidderAddress:address decisionDate:date accepted:bool }
+def relvar Room :: {address:address roomName:string width:double breadth:double type:roomType}
+def relvar Floor :: {address:address roomName:string floor:int }
+def relvar Commission :: {priceBand:priceBand areaCode:areaCode saleSpeed:speedBand commission:double}
+```
+
+>
+The example makes use of six base relations, most of which are self explanatory.
+
+이 예제에서는 6개의 기본 관계를 사용합니다. 이 중 대부분은 자기설명적이어서 설명이 필요 없습니다.
+
+>
+The Property relation stores all properties sold or for-sale.
+As will be seen in section 10.3.3, properties are uniquely identified by their address.
+The price is the desired sale price, the agent is the agency employee responsible for selling the Property, and the dateRegistered is the date that the Property was registred for sale with the agency.
+
+`Property` 관계는 판매되었거나 판매중인 모든 부동산이 저장됩니다.
+10.3.3절에서 설명했던 것처럼, 부동산은 주소를 통해 고유하게 식별됩니다.
+`price`는 판매 희망 가격이고, `agent`는 부동산을 판매하는 데 책임이 있는 직원 중개인이며, `dateRegistered`는 부동산이 판매 등록된 날짜입니다.
+
+---- 
+
+>
+The Offer relation records the history of all offers ever made.
+The address represents the Property on which the Offer is being made (by the bidderName who lives at bidderAddress).
+The offerDate attribute records the date when the offer was made, and the offerPrice records the price offered.
+Offers are uniquely identified by an (address, offerDate, bidderName, bidderAddress) combination.
+
+`Offer` 관계는 지금까지 이루어진 모든 거래의 이력을 기록합니다.
+`address`는 주로 거래가 이루어진 부동산을 나타냅니다(거래 제안자는 `bidderName`이고, `bidderAddress`에 거주합니다).
+`offerDate` 속성은 거래 제안이 이루어진 날짜를 기록하고, `offerPrice`는 제안된 가격을 기록합니다.
+`Offer`는 `(address, offerDate, bidderName, bidderAddress)` 조합으로 고유하게 식별됩니다.
+
+>
+The Decision relation records the decisions made by the owner on the Offers that have been made.
+The Offer in question is identified by the (address, offerDate, bidderName, bidderAddress) attributes, and the date and outcome of the decision are recorded by (decisionDate and accepted).
+
+`Decision` 관계는 완료된 `Offer`에 대한 집주인의 결정을 기록합니다.
+해당 `Offer`는 `(address, offerDate, bidderName, bidderAddress)` 속성으로 식별되며, 결정의 날짜와 결과는 `(decisionDate, accepted)`로 기록됩니다.
+
+>
+The Room relation records information (width, breadth, type) about the rooms that exist at each Property.
+The Property is of course represented by the address.
+One point worthy of note (because it’s slightly artificial) is that an assumption is made that every Room in each Property has a unique (within the scope of that Property) roomName.
+This is necessary because many properties may have more than one room of a given type (and size).
+
+`Room` 관계는 각 부동산에 존재하는 방에 대한 정보(`width`, `breadth`, `type`)를 기록합니다.
+`Property`(부동산)는 `address`로 표현됩니다.
+한 가지 주목할 점은 (좀 인위적이기 때문) 각 `Property`의 모든 `Room`에는 고유한 `roomName`이 있다는 가정을 한다는 것입니다.
+이는 많은 부동산이 특정 타입(그리고 사이즈)의 방이 하나 이상 있을 수 있기 때문에 필요합니다.
+
+>
+The Floor relation records which floor each Room (roomName, address) is on.
+
+`Floor` 관계는 각 `Room (roomName, address)`이 어느 층에 있는지를 기록합니다.
+
+>
+Finally, the Commission relation stores commission fees that can be earned by the agency employees.
+The commission fees are assigned on the basis of sale prices divided into different priceBands, Property addresses categorized into areaCodes and ratings of the saleSpeed.
+(The decision has been made to represent commission rates as a base relation — rather than as a function — so that the commission fees can be queried and easily adjusted).
+
+마지막으로, `Commission` 관계에는 중개 직원이 받을 수 있는 수수료가 저장됩니다.
+`commission`은 여러 가격대로 나누어진 판매 가격, `areaCode`로 분류된 `Property` 주소, 판매 속도에 따른 `saleSpeed`의 등급에 따라 할당됩니다.
+(수수료율을 함수가 아닌 기본 관계로 표현하고, 쿼리하고 쉽게 조정할 수 있도록 하기 위해 이런 결정을 내렸습니다).
+
+#### 10.3 Essential Logic
+
+본질적 논리
+
+56쪽
 
 ↵
 dicult
