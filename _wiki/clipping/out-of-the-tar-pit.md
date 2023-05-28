@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 10:44:33 +0900
+updated : 2023-05-28 10:52:23 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2920,6 +2920,30 @@ Finally, the ability to access arbitrary historical relvar values would obviousl
 ###### Summary
 
 요약
+
+>
+If a system is to be based upon the FRP architecture it will be necessary either to obtain an FRP infrastructure from a third party, or to develop one with existing tools and techniques.
+
+만약 FRP 아키텍처를 기반으로 한 시스템을 구축하려면, FRP 인프라를 서드 파티로부터 얻거나 기존의 도구와 기술을 사용하여 개발해야 합니다.
+
+>
+Currently of course no real FRP infrastructures exist and so at present the choice is clear.
+However, even in the presence of third party infrastructures there may in fact be compelling reasons for large systems to adopt the custom route.
+Firstly, the effort involved in doing so need not be huge, and secondly the custom approach leads to the ability to tailor the hints available (for use in the accidental state and control component) to the exact requirements of the application domain.
+>
+Finally, it is of course perfectly possible to develop an FRP infrastructure in any general purpose language — be it object-oriented, functional or logic.
+
+물론 현재 실존하는 FRP 인프라는 존재하지 않으므로 선택은 명확합니다.
+그러나 서드 파티 인프라가 존재하는 경우에도 대규모 시스템이 커스텁 경로를 채택해야 하는 강력한 이유가 실제로 있을 수 있습니다.
+
+첫째, 커스텀 접근 방식을 사용하면 많은 노력이 필요하지 않습니다.
+둘째, 커스텀 접근 방식은 애플리케이션 도메인의 정확한 요구 사항에 따라 (우발적인 상태와 제어 컴포넌트에 사용될 수 있는) 힌트를 맞춤 설정하는 능력을 제공합니다.
+
+마지막으로, 객체지향, 함수형, 논리 등 모든 범용 프로그래밍 언어로 FRP 인프라를 개발하는 것도 완벽하게 가능합니다.
+
+#### 9.2 Benefits of this approach
+
+이러한 접근 방식의 장점
 
 49쪽
 
