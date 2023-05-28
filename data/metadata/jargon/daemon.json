@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "daemon",
+ "summary": "뭔가 유용한 작업을 하는 백그라운드 스레드/프로세스",
+ "parent": "jargon",
+ "url": "/wiki/jargon/daemon",
+ "updated": "2023-05-28 19:55:20 +0900",
+ "resource": "29/BC90A3-7CD5-40DD-9809-633E41575E85",
+ "children": []
+}
