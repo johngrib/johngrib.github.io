@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 10:26:22 +0900
+updated : 2023-05-28 10:30:21 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2851,7 +2851,7 @@ FRP 시스템의 다양한 컴포넌트들은 인프라에 대한 다양한 요�
 3. optionally (depending on the exact range of FRP systems which the infrastructure is intended to support) secondary (e.g. disk-based) storage in addition to the primary (in memory) storage
 4. a base set of generally useful types (typically integer, boolean, string, date etc)
 
-1. 이름이 붙은 relvar에 할당된 관계 형태의 데이터를 저장하고 검색하는 방법.
+1. 이름이 붙은 relvar에 할당된 관계 형태의 데이터를 저장하고 검색하는 수단.
 2. 저장된 relvar를 업데이트할 수 있는 상태 조작 언어(무결성 제약 조건의 범위 내에서).
 3. 선택적으로(인프라가 지원하는 FRP 시스템의 정확한 범위에 따라) 주 저장소(인메모리) 외에 보조 저장소(예: 디스크 기반).
 4. 일반적으로 유용한 타입의 기본 세트(보통 정수, 불리언, 문자열, 날짜 등)
@@ -2859,6 +2859,24 @@ FRP 시스템의 다양한 컴포넌트들은 인프라에 대한 다양한 요�
 ###### Infrastructure for Essential Logic
 
 본질적 논리를 위한 인프라
+
+>
+1. a means to evaluate relational expressions
+2. a base set of generally useful functions (for things such as basic arithmetic etc)
+3. a language to allow specification (and evaluation) of the user-defined functions in the FRP system. (It does not have to be a functional language, but the infrastructure must only allow it to be used in a functional way)
+4. optionally a means of type inference (this will also require a mechanism for declaring the types of the user-defined functions in the FRP system)
+5. a means to express and enforce integrity constraints
+
+1. 관계형 표현식을 평가하는 수단.
+2. 일반적으로 유용한 함수의 기본 세트(기본 산술 등과 같은 기능을 위한).
+3. FRP 시스템에서 사용자 정의 함수를 지정(및 평가)할 수 있는 언어(함수형 언어가 아니어도 되지만, 인프라는 함수형 방식으로만 사용할 수 있도록 해야 함).
+4. 선택적으로 타입 추론 수단(이는 FRP 시스템에서 사용자 정의 함수의 타입을 선언하는 메커니즘도 필요로 함).
+5. 무결성 제약 조건을 표현하고 강제하는 수단.
+
+###### Infrastructure for Accidental State and Control
+
+우발적 상태와 제어를 위한 인프라
+
 
 48쪽
 
