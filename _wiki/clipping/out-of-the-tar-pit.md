@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 18:24:23 +0900
+updated : 2023-05-28 18:29:58 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3776,6 +3776,21 @@ One extension which might require a custom observer would be a requirement to co
 ### 11 Related Work
 
 관련 작업
+
+>
+FRP draws some influence from the ideas of [DD00].
+In contrast with this work however, FRP is aimed at general purpose, large-scale application programming.
+Additionally FRP focuses on a separate, functional, sub-language and has different ideas about the use of types.
+Finally the accidental component of FRP has a broader range than the physical / logical mapping of traditional DBMSs.
+There are also some similarities to Backus’ Applicative State Transition systems [Bac78], and to the Aldat project at McGill [Mer85] which investigated general purpose applications of relational algebra.
+
+FRP는 [DD00]의 아이디어에서 영향을 받았습니다.
+그러나 이 작업과는 달리 FRP는 일반 목적의 대규모 응용 프로그램 프로그래밍을 목표로 하고 있습니다.
+또한 FRP는 별도의 함수형 하위 언어에 초점을 맞추고 있으며, 타입의 사용에 대해서도 다른 관점을 가지고 있습니다.
+마지막으로 FRP의 우발적인 컴포넌트는 전통적인 DBMS의 물리적/논리적 매핑보다 더 넓은 범위를 다룹니다.
+또한 Backus의 Applicative State Transition 시스템과 관계 대수의 일반적인 응용 분야를 연구한 McGill 대학의 Aldat 프로젝트에도 몇 가지 유사한 점이 있습니다.
+
+### 12 Conclusions
 
 63쪽
 
