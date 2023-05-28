@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 14:46:38 +0900
+updated : 2023-05-28 14:50:02 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3127,8 +3127,20 @@ FRP는 데이터를 숨기는 영역에서도 이점을 제공합니다.
 
 ##### 9.2.5 Other Benefits
 
-그 외의 이점들
+그 외의 장점들
 
+>
+The previous sections considered the benefits offered by FRP for minimizing complexity.
+
+이전 절에서는 FRP가 복잡성을 최소화하는 데 제공하는 이점을 고려했습니다.
+
+Other potential benefits include performance (as mentioned briefly under section 9.2.1) and the possibility that development teams themselves could be organised around the different components — for example one team could focus on the accidental aspects of the system, one on the essential aspects, one on the interfacing, and another on providing the infrastructure.
+
+다른 종류의 잠재적인 장점들로는 성능(9.2.1절에서 간단히 언급했음)과, 개발팀을 여러 컴포넌트 중심으로 구성할 수 있는 가능성을 들 수 있습니다(예: 각 팀이 각각 시스템의 우발적 측면, 본질적인 측면, 인터페이스, 인프라 제공에 집중할 수 있음).
+
+#### 9.3 Types
+
+타입
 
 53쪽
 
