@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 09:34:40 +0900
+updated : 2023-05-28 09:40:55 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2768,9 +2768,30 @@ The expectation is that all of these components will be of a minimal nature — 
 
 피더
 
+>
+Feeders are components which convert input into relational assignments — i.e. cause changes to the essential state.
+In order to be able to cause these state changes, feeders will need to specify them in some form of state manipulation language provided by the infrastructure.
+At a minimum, this language can consist of just a relational assignment command which assigns to a relvar a whole new relation value in its entirety:
 
+피더는 입력을 관계형 할당으로 변환하는, 즉 본질적 상태를 변경하는 컴포넌트입니다.
+이러한 상태 변경을 일으키려면 인프라에서 제공하는 상태 조작 언어의 형태로 피더를 지정해야 합니다.
+최소한 이 언어는 relvar에 전체적으로 새로운 관계 값을 할당하는 관계형 할당 명령어로 구성될 수 있습니다.
 
-46쪽
+>
+```
+relvar := newRelationValue
+```
+
+>
+The infrastructure which eventually runs the FRP system will ensure that the command respects the integrity constraints[^orig-23] — either by rejecting non-conformant commands, or possibly in some cases by modifying them to ensure conformance.
+
+결국 FRP 시스템을 실행하는 인프라는 비준수 명령을 거부하거나, 일치하도록 수정함으로써 명령이 무결성 제약 조건을[^orig-23] 준수하도록 보장합니다.
+
+###### Observers
+
+옵저버
+
+47쪽
 
 ↵
 dicult
@@ -2827,3 +2848,5 @@ dicult
 [^orig-21]: 원주: aside from the ease of expression issue discussed in section 9.1.4. <br/> 번역: 9.1.4절에서 설명할 표현의 용이성 문제를 제외하면 말이죠.
 
 [^orig-22]: 원주: Other systems connected electronically are considered equivalent to users inputting data for these purposes. <br/> 번역: 전기적으로 연결된 다른 시스템은 이런 목적으로 데이터를 입력하는 것과 동등하게 간주합니다.
+
+[^orig-23]: 원주: In fact one implication of this is that it is in fact necessary for the assignment command to support multiple simultaneous assignment of several distinct relation values to several <br/> 번역: 할당 명령이 여러 개의 서로 다른 관계 값을 여러 개의 relvar에 동시에 할당하는 것을 지원해야 한다는 것을 의미.
