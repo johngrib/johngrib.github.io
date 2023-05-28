@@ -3,7 +3,7 @@ layout  : wiki
 title   : daemon
 summary : 뭔가 유용한 작업을 하는 백그라운드 스레드/프로세스
 date    : 2023-05-28 19:30:59 +0900
-updated : 2023-05-28 19:55:20 +0900
+updated : 2023-05-28 20:01:52 +0900
 tag     : 
 resource: 29/BC90A3-7CD5-40DD-9809-633E41575E85
 toc     : true
@@ -23,7 +23,7 @@ latex   : false
 
 ## 기원은 맥스웰의 악마
 
-Fernando Corbato[^corbato]에 의하면 컴퓨팅에서 사용하는 daemon이라는 용어의 영감은 맥스웰의 악마[^maxwell]에서 얻은 것이라 한다.
+Fernando Corbato[^corbato]에 의하면 컴퓨팅에서 사용하는 daemon이라는 용어의 영감은 맥스웰의 악마에서 얻은 것이라 한다.
 
 [원문 (takeourword.com)]( https://www.takeourword.com/TOW146/page4.html )
 
