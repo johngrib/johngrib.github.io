@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 18:51:23 +0900
+updated : 2023-05-28 19:07:08 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3865,7 +3865,7 @@ Proceedings of the ACM SIGPLAN International Conference on Functional Programmin
 >
 [Mer85] T. H. Merrett. Persistence and Aldat. In Data Types and Persistence (Appin), pages 173–188, 1985.
 >
-[NR69] P.NaurandB.Randell.Softwareengineeringreportofaconference sponsored by the NATO science committee Garmisch Germany 7th-11th October 1968, January 01 1969.
+[NR69] P.NaurandB.Randell.Software engineering report of a conference sponsored by the NATO science committee Garmisch Germany 7th-11th October 1968, January 01 1969.
 >
 [OB88] A. Ohori and P. Buneman. Type inference in a database programming language. In Proceedings of the 1988 ACM Conference on LISP and Functional Programming, Snowbird, UT, pages 174–183, New York, NY, 1988. ACM.
 >
