@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 15:01:37 +0900
+updated : 2023-05-28 15:03:40 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3199,6 +3199,28 @@ The example will use syntax from a hypothetical FRP infrastructure (which suppor
 #### 10.1 User-defined Types
 
 사용자 정의 타입
+
+>
+The example system makes use of a small number of custom types (see section 9.3), some of which are just aliases for types provided by the infrastructure:
+
+예제 시스템에서는 몇 가지 커스텀 타입(9.3절 참고)을 사용합니다.
+이 중 일부는 인프라에서 제공하는 타입의 별칭일 뿐입니다.
+
+>
+```
+def alias address : string
+def alias agent : string
+def alias name : string
+def alias price : double
+def enum roomType : KITCHEN | BATHROOM | LIVING_ROOM
+def enum priceBand : LOW | MED | HIGH | PREMIUM
+def enum areaCode : CITY | SUBURBAN | RURAL
+def enum speedBand : VERY_FAST | FAST | MEDIUM | SLOW | VERY_SLOW
+```
+
+#### 10.2 Essential State
+
+본질적 상태
 
 53쪽
 
