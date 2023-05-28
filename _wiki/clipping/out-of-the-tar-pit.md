@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 10:05:03 +0900
+updated : 2023-05-28 10:22:12 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2828,7 +2828,25 @@ In this situation, the feeders or observers are forced to convert between struct
 
 인프라
 
-47쪽
+>
+In several places above we have referred to the “infrastructure which runs the FRP system”.
+The FRP system is the specification — comprising of the four components above, the infrastructure is what is needed to execute this specification (by interpretation, compilation or some mixture).
+
+앞에서 여러 차례 "FRP 시스템을 실행하는 인프라"를 언급했습니다.
+FRP 시스템은 앞에서 이야기한 네 가지 컴포넌트로 이루어진 명세입니다.
+인프라는 이 명세를 실행하기 위해 필요한 것입니다(인터프리터, 컴파일 또는 이 둘의 혼합).
+
+>
+The different components of an FRP system lead to different requirements on the infrastructure which is going to support them.
+
+FRP 시스템의 다양한 컴포넌트들은 인프라에 대한 다양한 요구 사항을 제시합니다.
+
+###### Infrastructure for Essential State
+
+본질적 상태를 위한 인프라
+
+
+48쪽
 
 ↵
 dicult
