@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 18:44:43 +0900
+updated : 2023-05-28 18:51:05 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3824,6 +3824,66 @@ So, what is the way out of the tar pit? What is the silver bullet?
 ...FRP가 아닐 수도 있겠지만, 우리는 '단순성'이 그것이라는 데에는 의심의 여지가 없다고 믿습니다.
 
 ### References
+
+>
+[Bac78] John W. Backus. Can programming be liberated from the von Neumann style? a functional style and its algebra of programs. Commun. ACM, 21(8):613–641, 1978.
+>
+[Bak93] Henry G. Baker. Equal rights for functional objects or, the more things change, the more they are the same. Journal of Object-Oriented Programming, 4(4):2–27, October 1993.
+>
+[Boo91] G. Booch. Object Oriented Design with Applications. Benjamin/Cummings, 1991.
+>
+[Bro86] Frederick P. Brooks, Jr. No silver bullet: Essence and accidents of software engineering. Information Processing 1986, Proceedings of the Tenth World Computing Conference, H.-J. Kugler, ed.: 1069– 76. Reprinted in IEEE Computer, 20(4):10-19, April 1987, and in Brooks, The Mythical Man-Month: Essays on Software Engineering, Anniversary Edition, Chapter 16, Addison-Wesley, 1995.
+>
+[Che76] P. P. Chen. “The Entity-Relationship Model”. ACM Trans. on Database Systems (TODS), 1:9–36, 1976.
+>
+[Cod70] E. F. Codd. A relational model of data for large shared data banks. Comm. ACM, 13(6):377–387, June 1970.
+>
+[Cod79] E. F. Codd. Extending the database relational model to capture more meaning. ACM Trans. on Database Sys., 4(4):397, December 1979.
+>
+[Cod90] E. F. Codd. The Relational Model for Database Management, Ver- sion 2. Addison-Wesley, 1990.
+>
+[Cor91] Fernando J. Corbat ́o. On building systems that will fail. Commun. ACM, 34(9):72–81, 1991.
+>
+[Dat04] C. J. Date. An Introduction to Database Systems. Addison Wesley, 8th edition, 2004.
+>
+[DD00] Hugh Darwen and C. J. Date. Foundation for Future Database Systems: The Third Manifesto. Addison-Wesley, 2nd edition, 2000.
+>
+[Dij71] Edsger W. Dijkstra. On the reliability of programs. circulated privately, 1971.
+>
+[Dij72] Edsger W. Dijkstra. The humble programmer. Commun. ACM, 15(10):859–866, 1972.
+>
+[Dij97] Dijkstra. The tide, not the waves. In Peter J. Denning and Robert M. Metcalfe, editors, Beyond Calculation: The Next Fifty Years of Computing, Copernicus, 1997. 1997.
+>
+[Eco04] Managing complexity. The Economist, 373(8403):89–91, 2004.
+>
+[EH97] Conal Elliott and Paul Hudak. Functional reactive animation. In
+Proceedings of the ACM SIGPLAN International Conference on Functional Programming (ICFP-97), volume 32,8 of ACM SIGPLAN Notices, pages 263–273, New York, June 9–11 1997. ACM Press.
+>
+[HJ89] I. Hayes and C. Jones. Specifications are not (necessarily) executable. IEE Software Engineering Journal, 4(6):330–338, November 1989.
+>
+[Hoa81] C. A. R. Hoare. The emperor’s old clothes. Commun. ACM, 24(2):75–83, 1981.
+>
+[Kow79] Robert A. Kowalski. Algorithm = logic + control. Commun. ACM, 22(7):424–436, 1979.
+>
+[Mer85] T. H. Merrett. Persistence and Aldat. In Data Types and Persistence (Appin), pages 173–188, 1985.
+>
+[NR69] P.NaurandB.Randell.Softwareengineeringreportofaconference sponsored by the NATO science committee Garmisch Germany 7th-11th October 1968, January 01 1969.
+>
+[OB88] A. Ohori and P. Buneman. Type inference in a database programming language. In Proceedings of the 1988 ACM Conference on LISP and Functional Programming, Snowbird, UT, pages 174–183, New York, NY, 1988. ACM.
+>
+[O’K90] Richard A. O’Keefe. The Craft of Prolog. The MIT Press, Cambridge, 1990.
+>
+[PJ+03] Simon Peyton Jones et al., editors. Haskell 98 Language and Libraries, the Revised Report. CUP, April 2003.
+>
+[SS94] Leon Sterling and Ehud Y. Shapiro. The Art of Prolog - Advanced Programming Techniques, 2nd Ed. MIT Press, 1994.
+>
+[SU96] Randall B. Smith and David Ungar. A simple and unifying approach to subjective objects. TAPOS, 2(3):161–178, 1996.
+>
+[vRH04] Peter van Roy and Seif Haridi. Concepts, Techniques, and Models of Computer Programming. MIT Press, 2004.
+>
+[Wad95] Philip Wadler. Monads for functional programming. In Advanced Functional Programming, pages 24–52, 1995.
+>
+[Won00] Limsoon Wong. Kleisli, a functional query system. J. Funct. Program, 10(1):19–56, 2000.
 
 
 
