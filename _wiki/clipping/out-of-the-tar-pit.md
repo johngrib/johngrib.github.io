@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 08:54:07 +0900
+updated : 2023-05-28 09:10:37 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2635,7 +2635,63 @@ relvar의 내용(즉, 관계 자체)은 시스템이 사용될 때 물론 중요
 
 본질적 논리("동작")
 
-44쪽
+>
+The essential logic comprises both functional and algebraic (relational) parts.
+The main (in the sense that it provides the overall structure for the component) part is the relational one, and consists of derived-relvar names and definitions.
+These definitions consist of applications of the relational algebra operators to other relvars (both derived relvars and the base relvars which make up the essential state).
+
+본질적인 논리는 함수적 부분과 (관계) 대수적 부분으로 구성됩니다.
+(컴포넌트의 전체 구조를 제공하는) 주요 부분은 관계형 부분이며, 파생된 relvar 이름과 정의로 구성됩니다.
+이러한 정의는 다른 relvar(파생된 relvar 및 본질적 상태를 구성하는 base relvar)에 관계 대수 연산자를 적용한 것으로 구성됩니다.
+
+>
+In addition to the relational algebra, the definitions can make use of an arbitrary set of pure user-defined functions which make up the functional part of the essential logic.
+
+관계 대수 외에도, 정의는 본질적 논리의 함수적 부분을 구성하는 임의의 순수 사용자 정의 함수 집합을 사용할 수 있습니다.
+
+>
+Finally (in accordance with the standard relational model) the logic specifies a set of integrity constraints — boolean expressions which must hold at all times.
+(These can include everything from simple foreign key constraints to complicated multiple-relvar requirements making use of user-defined functions).
+Any attempt to modify the essential state (see section 9.1.4) will always be subject to these integrity constraints.
+
+마지막으로 (표준 관계형 모델에 따라) 논리는 항상 유지되어야 하는 boolean 표현식인 무결성 제약 조건 집합을 지정합니다.
+(여기에는 간단한 외래 키 제약 조건부터 사용자 정의 함수를 사용하는 복잡한 multiple-relvar 요구 사항까지 모든 것이 포함될 수 있습니다.)
+
+본질적 상태를 수정하려는 모든 시도(9.1.4절 참고)는 항상 이러한 무결성 제약 조건의 적용을 받습니다.
+
+>
+Much of the standard theory of relational database design can obviously be used as a guide for the relational parts of these two essential components.
+For example, normalization of the relvars will allow consistent updates (see section 9.1.4) to the state to be more easily expressed.
+Note that — assuming no integrity constraints have been accidentally omitted — normalization does not in any way help to preserve the integrity of our relvars — that is after all what the constraints do, and if the constraints are not violated (and the infrastructure must always ensure this) then the relvars have integrity by definition.
+What is true is that more normalized designs do impose implicit restrictions, and this can reduce the number of (explicit) integrity constraints that must be specified.
+
+관계형 데이터베이스 설계에 대한 표준 이론의 대부분은, 이 두 가지 본질적 컴포넌트의 관계형 부분에 대한 가이드로 사용될 수 있습니다.
+예를 들어, relvar들을 정규화하면 상태에 대한 일관된 업데이트(9.1.4절 참고)를 보다 쉽게 표현할 수 있습니다.
+
+무결성 제약 조건을 실수로 누락하지 않았다고 가정할 때, 정규화는 어떤 식으로든 relvar의 무결성을 보존하는 데 도움이 되지 않습니다.
+이것은 원래 제약 조건이 하는 일이기 때문에 제약 조건을 위반하지 않는다면(그리고 인프라가 항상 이를 보장한다면) relvar는 정의상 무결성을 갖습니다.
+사실 정규화된 설계는 암시적 제한을 부과하기 때문에, 지정해야 하는 (명시적) 무결성 제약 조건의 수를 줄일 수 있습니다.
+
+>
+Having raised the issue of design, it is vital to note that absolutely NO consideration is paid to performance issues of any kind here.
+
+Concepts such as “denormalization for performance” make absolutely no sense in this context because they contain the implicit assumption that the physical storage used will closely mirror the relational structure which is being specified here.
+
+This is absolutely not the case (it is only the accidental state and control component — see below — which is concerned with eciency of storage structures).
+
+설계상의 문제를 제기한 이상, 여기에서는 어떤 종류의 성능 문제도 고려하지 않는다는 사실을 꼭 기억해야 합니다.
+
+"성능을 위한 비정규화" 같은 개념은 여기에서 전혀 의미가 없습니다.
+왜냐하면 이러한 개념에는 여기에서 명시하는 관계형 구조와 물리적 저장소가 밀접하게 일치한다는 암묵적 가정이 포함되어 있기 때문입니다.
+
+그것은 우리가 현재 취급하는 대상이 아닙니다(저장 구조의 효율성에 대한 고려는 오직 우연한 상태와 제어 컴포넌트에만 해당됩니다. 아래 참고).
+
+##### 9.1.3 Accidental State and Control ("Performance")
+
+우발적 상태와 제어("성능")
+
+
+45쪽
 
 ↵
 dicult
