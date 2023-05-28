@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 15:25:15 +0900
+updated : 2023-05-28 15:29:02 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3326,7 +3326,27 @@ Converts a price into a `priceBand` (which will be used in the commission calcul
 
 ##### 10.3.2 Derived Relations
 
-파생된 관계
+파생 관계
+
+>
+There are thirteen derived relations in the system.
+These can be very loosely classified as internal or external according to whether their main purpose is simply to facilitate the definition of other derived relations (and constraints) or to provide information to the users.
+We consider the definition and purpose of each in turn.
+>
+As an aid to understanding, the types of the derived relations are shown in comments (delimited by `/*` and `*/`).
+In reality these types would be derived (or checked) by an infrastructure-provided type inference mechanism.
+
+이 시스템에는 13개의 파생 관계가 있습니다.
+이들은 주로 다른 파생 관계(및 제약 조건)의 정의를 용이하게 하기 위한 것인지, 사용자에게 정보를 제공하기 위한 것인지에 따라 내부 또는 외부로 매우 느슨하게 분류될 수 있습니다.
+
+각각의 정의와 목적을 살펴보겠습니다.
+
+이해를 돕기 위해 파생 관계의 타입은 주석으로 표시됩니다(`/*`와 `*/`로 구분됨).
+실제로 이러한 타입은 인프라에서 제공하는 타입 추론 메커니즘에 의해 파생(또는 확인)됩니다.
+
+###### Internal
+
+내부
 
 56쪽
 
