@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 14:50:02 +0900
+updated : 2023-05-28 14:53:31 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3141,6 +3141,28 @@ Other potential benefits include performance (as mentioned briefly under section
 #### 9.3 Types
 
 타입
+
+>
+A final comment is that — in addition to a fairly typical set of standard types — FRP provides a limited ability to define new user types for use in the essential state and essential logic components.
+
+마지막으로 한 마디 더 하자면, FRP는 상당히 일반적인 표준 타입 집합 외에도, 본질적 상태와 본질적 논리 컴포넌트에서 사용할 수 있는 새로운 사용자 타입을 정의할 수 있는 기능이 제한되어 있습니다.
+
+>
+Specifically it permits the creation of disjoint union types (sometimes known as “enumeration” types) but does not permit the creation of new product types (types with multiple subsidiary components).
+This is because (as mentioned above) we have a strong desire to avoid any unnecessary data abstraction.
+
+구체적으로는 분리된 합집합 타입(때로는 "열거" 타입이라고도 함)을 생성할 수 있지만, 새로운 제품 타입(여러 하위 구성 요소를 가진 유형)을 생성할 수는 없습니다.
+
+>
+Finally, it probably makes sense for infrastructures to provide type inference for the essential logic.
+Interesting work in this area has been carried out in the Machiavelli system [OB88].
+
+마지막으로, 인프라가 필수 논리에 대한 타입 추론을 제공하는 것이 합리적일 것입니다.
+이 분야에서 흥미로운 작업이 Machiavelli 시스템에서 수행된 바 있습니다.
+
+### 10 Example of an FRP system
+
+FRP 시스템의 예
 
 53쪽
 
