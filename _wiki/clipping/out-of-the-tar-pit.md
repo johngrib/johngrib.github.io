@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 18:13:11 +0900
+updated : 2023-05-28 18:20:17 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -3707,6 +3707,57 @@ Once the system is deployed, the FRP infrastructure will reject any state modifi
 #### 10.4 Accidental State and Control
 
 우발적인 상태와 제어
+
+>
+The accidental state and control component of an FRP system consists solely of a set of declarations which represent performance hints for the infrastructure (see section 9.1.3).
+In this example the accidental state and control is a set of three hint declarations.
+
+FRP 시스템의 우발적인 상태와 제어 컴포넌트는 인프라에 대한 성능 힌트를 나타내는 선언 집합으로만 구성됩니다(9.1.3절 참조).
+
+이 예제에서 우발적인 상태와 제어는 세 가지 힌트 선언의 집합입니다.
+
+>
+```frp
+declare store PropertyInfo
+```
+
+>
+This declaration is simply a hint to the infrastructure to request that the `PropertyInfo` derived relation is actually stored (ie cached) rather than continually recalculated.
+
+이 선언은 단순히 `PropertyInfo` 파생 관계가 계속 다시 계산되는 것이 아니라 실제로 저장(캐시)되도록 인프라에 요청하는 힌트입니다.
+
+>
+```frp
+declare store shared Room Floor
+```
+
+>
+This hint instructs the infrastructure to denormalize the `Room` and `Floor` relations into a single shared storage structure.
+(Note that because we are able to express this as part of the accidental state and control we have not been forced to compromise the essential parts of our system which still treat `Room` and `Floor` separately).
+
+이 힌트는 인프라가 `Room`과 `Floor` 관계를 하나의 공유된 스토리지 구조로 비정규화하도록 지시합니다.
+(이것을 우발적인 상태와 제어의 일부로 표현할 수 있기 때문에 여전히 `Room`과 `Floor`를 별도로 처리하는 시스템의 본질적인 부분은 손상되지 않았습니다).
+
+>
+```frp
+declare store separate Property (photo)
+```
+
+>
+This hint instructs the infrastructure to store the `photo` attribute of the `Property` relation separately from its other attributes (because it is not frequently used).
+>
+These three hints have all focused on state (`PropertyInfo` is accidental state, and the other two declarations are concerned with accidental aspects of state).
+Larger systems would probably also include accidental control specifications for performance reasons.
+
+이 힌트는 인프라에 `Property` 관계의 `photo` 속성을 다른 속성과 별도로 저장하도록 지시합니다(자주 사용되지 않기 때문).
+
+이 세 가지 힌트는 모두 상태에 초점을 맞추고 있습니다.
+( `PropertyInfo`는 우발적인 상태이고, 다른 두 선언은 상태의 우발적인 측면과 관련이 있습니다).
+대형 시스템은 성능상의 이유로 우발적인 제어 사양도 포함할 수 있습니다.
+
+#### 10.5 Other
+
+그 외
 
 62쪽
 
