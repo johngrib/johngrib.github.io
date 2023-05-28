@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 18:51:05 +0900
+updated : 2023-05-28 18:51:23 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -14,8 +14,6 @@ latex   : true
 * TOC
 {:toc}
 
-> 번역 중인 문서.
-{:style="background-color: #ecf1e8;"}
 
 - 원문
     - [Out of the Tar Pit (PDF)]( https://curtclifton.net/papers/MoseleyMarks06a.pdf )
