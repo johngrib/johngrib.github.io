@@ -3,7 +3,7 @@ layout  : wiki
 title   : Out of the Tar Pit
 summary : 타르 구덩이에서 탈출하기
 date    : 2023-05-16 19:07:40 +0900
-updated : 2023-05-28 10:22:12 +0900
+updated : 2023-05-28 10:26:22 +0900
 tag     : 
 resource: 22/453745-5C75-4EB3-BC75-3A5297F1FDC5
 toc     : true
@@ -2845,6 +2845,20 @@ FRP 시스템의 다양한 컴포넌트들은 인프라에 대한 다양한 요�
 
 본질적 상태를 위한 인프라
 
+>
+1. some means of storing and retrieving data in the form of relations assigned to named relvars
+2. a state manipulation language which allows the stored relvars to be updated (within the bounds of the integrity constraints)
+3. optionally (depending on the exact range of FRP systems which the infrastructure is intended to support) secondary (e.g. disk-based) storage in addition to the primary (in memory) storage
+4. a base set of generally useful types (typically integer, boolean, string, date etc)
+
+1. 이름이 붙은 relvar에 할당된 관계 형태의 데이터를 저장하고 검색하는 방법.
+2. 저장된 relvar를 업데이트할 수 있는 상태 조작 언어(무결성 제약 조건의 범위 내에서).
+3. 선택적으로(인프라가 지원하는 FRP 시스템의 정확한 범위에 따라) 주 저장소(인메모리) 외에 보조 저장소(예: 디스크 기반).
+4. 일반적으로 유용한 타입의 기본 세트(보통 정수, 불리언, 문자열, 날짜 등)
+
+###### Infrastructure for Essential Logic
+
+본질적 논리를 위한 인프라
 
 48쪽
 
