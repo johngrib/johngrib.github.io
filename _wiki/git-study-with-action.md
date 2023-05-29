@@ -3,18 +3,18 @@ layout  : wiki
 title   : 실험하며 공부하는 GIT
 summary : 아직 작성중인 글입니다
 date    : 2020-04-19 22:27:20 +0900
-updated : 2021-10-07 21:37:43 +0900
+updated : 2023-05-29 11:09:04 +0900
 tag     : 
 resource: 82/7A8D95-910C-4E22-951E-5BFAA3AAAC67
 toc     : true
 public  : true
-parent  : [[git]]
+parent  : [[/git]]
 latex   : false
 ---
 * TOC
 {:toc}
 
-참고: 이 문서는 [[git-tutorial]]이 너무 튜토리얼 같지 않다는 피드백을 받고 작성하기 시작한 것이다.
+참고: 이 문서는 [[/git-tutorial]]이 너무 튜토리얼 같지 않다는 피드백을 받고 작성하기 시작한 것이다.
 
 ## 학습 준비
 ### alias
