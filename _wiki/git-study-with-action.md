@@ -3,7 +3,7 @@ layout  : wiki
 title   : 실험하며 공부하는 GIT
 summary : 아직 작성중인 글입니다
 date    : 2020-04-19 22:27:20 +0900
-updated : 2023-05-29 11:09:04 +0900
+updated : 2023-05-29 11:16:22 +0900
 tag     : 
 resource: 82/7A8D95-910C-4E22-951E-5BFAA3AAAC67
 toc     : true
@@ -47,11 +47,11 @@ git config --global alias.l \
 
 ### 연습용 프로젝트 생성
 
-다음과 같이 `git-study` 라는 이름의 디렉토리를 만들고, `git init`을 실행해주자.
+다음과 같이 `git-education` 이라는 이름의 디렉토리를 만들고, `git init`을 실행해주자.
 
 ```sh
-mkdir git-study
-cd git-study
+mkdir git-education
+cd git-education
 git init
 ```
 
