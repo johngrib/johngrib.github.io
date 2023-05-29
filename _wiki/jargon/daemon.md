@@ -3,7 +3,7 @@ layout  : wiki
 title   : daemon
 summary : 뭔가 유용한 작업을 하는 백그라운드 스레드/프로세스
 date    : 2023-05-28 19:30:59 +0900
-updated : 2023-05-28 20:03:43 +0900
+updated : 2023-05-29 15:51:24 +0900
 tag     : 
 resource: 29/BC90A3-7CD5-40DD-9809-633E41575E85
 toc     : true
@@ -62,7 +62,7 @@ Maxwell's daemon was an imaginary agent which helped sort molecules of different
 We fancifully began to use the word daemon to describe background processes which worked tirelessly to perform system chores.
 I found a very good explanation of all this online at:
 >
-<http://www.takeourword.com/TOW129/page2.html >  
+> <http://www.takeourword.com/TOW129/page2.html >  
 (Search on "Maxwell" to locate the pertinent paragraph.)
 
 페르난도 J. 코바토:
