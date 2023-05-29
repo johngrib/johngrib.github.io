@@ -3,7 +3,7 @@ layout  : wiki
 title   : 실험하며 공부하는 GIT
 summary : 아직 작성중인 글입니다
 date    : 2020-04-19 22:27:20 +0900
-updated : 2023-05-29 11:16:22 +0900
+updated : 2023-05-29 11:20:43 +0900
 tag     : 
 resource: 82/7A8D95-910C-4E22-951E-5BFAA3AAAC67
 toc     : true
@@ -115,6 +115,13 @@ Changes to be committed:
 읽어보면 `git rm --cached a.txt` 명령을 실행하면 `unstage` 할 수 있다는 것을 알 수 있다.
 
 즉, `a.txt` 파일이 `stage`되었다는 것을 알 수 있다.
+
+이 때 `git ls-files` 명령을 입력하면 다음과 같이 `a.txt` 파일을 볼 수 있다.
+
+```sh
+$ git ls-files
+a.txt
+```
 
 ### add 의 결과 .git 디렉토리에 새로 생성된 파일들
 
