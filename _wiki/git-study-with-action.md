@@ -3,7 +3,7 @@ layout  : wiki
 title   : 실험하며 공부하는 GIT
 summary : 아직 작성중인 글입니다
 date    : 2020-04-19 22:27:20 +0900
-updated : 2023-05-29 11:20:43 +0900
+updated : 2023-05-29 12:49:10 +0900
 tag     : 
 resource: 82/7A8D95-910C-4E22-951E-5BFAA3AAAC67
 toc     : true
@@ -326,7 +326,7 @@ $ tree .git -I hooks
 
 ```sh
 $ git commit
-[master (root-commit) 8bfd73c] Initial commit
+[master (root-commit) b1e3da0] Initial commit
  3 files changed, 3 insertions(+)
  create mode 100644 a.txt
  create mode 100644 b.txt
@@ -335,43 +335,46 @@ $ git commit
 
 `git log` 명령을 사용해 보면 이 커밋의 대략적인 정보를 볼 수 있다.
 
-```sh
+```
 $ git log
-commit 8bfd73cf22f502c6977ce5ffb315301533f33391 (HEAD -> master)
-Author: John Grib <johngrib82@gmail.com>
-Date:   Mon Apr 20 00:19:55 2020 +0900
+commit b1e3da05289980f2eb11521683257305b1620a3f (HEAD -> master)
+Author: JohnGrib <johngrib82@gmail.com>
+Date:   Mon May 29 11:36:43 2023 +0900
 
     Initial commit
 ```
 
 정보가 너무 많아서 복잡하니 처음에 설정했던 `git l` 알리아스를 사용해서 보도록 하자.
 
-![]( /resource/82/7A8D95-910C-4E22-951E-5BFAA3AAAC67/git-l.png )
+```
+$ git l
+* b1e3da0 (HEAD -> main) Initial commit (29 seconds ago) JohnGrib
+```
 
-commit 해시값 `8bfd73cf22f502c6977ce5ffb315301533f33391`가 `8bfd73c`로 축약되어 출력되는 것을 볼 수 있다.
+commit 해시값 `b1e3da05289980f2eb11521683257305b1620a3f`가 `b1e3da0`로 축약되어 출력되는 것을 볼 수 있다.
 
 이제 이 commit 에 어떤 정보가 담겼는지 확인해 보자.  `git cat-file -p` 명령을 사용하면 된다.
 
 ```sh
-$ git cat-file -p 8bfd73c
+$ git cat-file -p b1e3da0
 tree c8f8b7e0ad11143d1e3a7724def5b2744b9b9668
-author John Grib <johngrib82@gmail.com> 1587309595 +0900
-committer John Grib <johngrib82@gmail.com> 1587309595 +0900
+author JohnGrib <johngrib82@gmail.com> 1685327803 +0900
+committer JohnGrib <johngrib82@gmail.com> 1685327803 +0900
 gpgsig -----BEGIN PGP SIGNATURE-----
- 
- iQIzBAABCAAdFiEEeF5LeMXGx4vEae6QIYMbVLyA2ZAFAl6cbCUACgkQIYMbVLyA
- 2ZBaKg//fxqzLubH7PJi9FlMy1FL5aH0VxoJbdweC3qONIcyGtT3GMIjbcwGsnYE
- gorVADDe9FdzJnVvq25j0Rsd4aqhwEKB3KVyC2eGlDWHGPm0OGhXffjAF6i6zbjB
- sWdmprJOYDOkZkl5PqMb8pAmystVZ9y8QpAneZWpoZMgLXSY6v7QYiVEv0izSgim
- g4uWTE7hGy0uVFmQwpAliH6Vv3UgTdDpCZBHOEIdEDmVfWIF4BmxCTxZ5IkLJmTA
- 7PRI7NRP6wNlFn45Hv/RgHgChRTd586UGrHopP9QoFIwbqa/f7dELTX7AIciJmvl
- D21EdKjYAk80knrwYX9nuwF+ZKTPxB0t88kL9p0kWvNybhLRBp/cYnCMqx7e7mfg
- iPzmY3p7idFBI7Hc+Zgfd1PLHxQloyWh/+gxQpMiT0/fuXQlaIeWdtWm5D8QgEcd
- NFjMls+UsTY8c+k6mBmR8XT3/SrwUnsfSiAfr/YpqrTaieqXU5bxjtbSzNHIdyH7
- 5mfdBRxDXdJQbrm+8bQUYXuEwOVoZdanoxbiKPjtrh/Um/YhSDdcZOBRZhPY9K7L
- HTgXVhfF8reNC2xFoH+VGChD7+1GXxrynyDnJQuz/TQc3XKyBrV0XvI208/eQuZw
- b7yDqoZzciw4CBRE7P/7vwRiuao/kaCJg82xUUbhJiQ1JsbDlcc=
- =a78L
+
+ iQIzBAABCAAdFiEEPrNLtUbPL1hEV/CL1bjZX7J58s8FAmR0D8IACgkQ1bjZX7J5
+ 8s/snQ/+JYdKvwOAGwSFrVvaBlowuagweK81nZaTYhsSZ2ruHzJoq8OpI2qPp8h9
+ knsMZRzGi9LXfxXJ/8DAqT/BuC74C8+Fg2baHdDVPDkLu4g29RTL6eXm+FHJsG1P
+ 9GbvsqyWrfs0hUkRuQXAgVAjUlo8oD7+rWojswwoRx+5yk4U62zG6tMF//aJMVm2
+ jyPyoKcUriHjO9sDQGM6QkjV/ONiFRk19bdBs/lhvI0LZAY2lHJsMEJuNH0UpLB4
+ 4UO2rJDQc1VabCPRqHoOiuR+zDYC2OUnJnLPXP4fJ1yqcQQz6nLnjv9qjrkOIQqE
+ ClhxRrAAVGry58IaoIT358ulxfq6hfZtgctOKdVs6OXgwwmtuK1FDcKCYh3vsX8Y
+ mmjA7i1T4na3HIGuVxAMHdf938KgkYXKt/TXTEhToxRE8n8Of9BgS4EJQpiQhIbC
+ R5knpv2qVks0jBUSCepBsKK6WGMOQikO2imz01sNg3tKGt4Q/Xpalhh/b2nLkJIA
+ 5bOlOPqvGfz8XvsU9fGXCnBW/7lOAnqN1GtHX213Ic1bv2WS5ca2+csN878ZcpqI
+ MA3siCnLZnm70Ul8156SQCCSrLfjUYgJK361sO0HD12pMIi8T2pDxNTmvcXTRBkQ
+ lrXlFiCV/G/+ZHEv3vpZm9RY95aLbzRr2f5n7O1aNuGIhJa1BSU=
+ =VgGp
  -----END PGP SIGNATURE-----
 
 Initial commit
@@ -383,9 +386,11 @@ commit 의 내용을 보면 순서대로 다음의 정보들이 나열되어 있
 - author
 - committer
 - gpg signature
-    - 내가 커밋에 서명을 하기 때문에 커밋에 포함되어 있다.
+    - `gpgsig -----BEGIN PGP SIGNATURE-----` 부터 `-----END PGP SIGNATURE-----` 까지.
+    - 내가 커밋에 [[/gpg]]{gpg}로 서명을 하기 때문에 포함되어 있다.
     - 만약 이 글을 읽는 여러분이 커밋에 서명을 하고 있지 않다면 이 부분이 없을 것이다.
 - commit message
+    - 내가 작성한 `Initial commit` 이라는 커밋 메시지.
 
 여기에서 `tree`에 주목해 보자.
 
@@ -403,6 +408,239 @@ $ git cat-file -p c8f8b7e0ad11143d1e3a7724def5b2744b9b9668
 ```
 
 `tree c8f8b7e0...`의 내용은 3개의 해시값과 3개의 파일이라는 것을 확인할 수 있다.
+
+## 해시값을 계산해 보자
+
+key로 사용하는 해시값이 많이 등장하기 때문에 해시값을 어떻게 생성하는지 궁금할 것이다.
+
+이번에는 해시값을 생성해 보자.
+
+다음 포맷의 문자열을 만든 다음, SHA1 로 해싱하면 된다.
+
+```
+타입 길이\0내용
+```
+
+- 타입: blob, tree, commit 세 가지가 있다.
+- 길이: 내용의 길이를 바이트 단위로 표현한 것. wc로 세면 쉽다.
+- 내용: 파일의 내용이나, 트리의 내용, 커밋의 내용.
+- `\0`: 널 문자. ASCII 코드로 0.
+
+### a.txt 해시값 계산
+
+워낙 짧아서 아직 잊지는 않았겠지만, `a.txt` 파일의 내용을 다시 한번 확인해 보자.
+
+```sh
+$ cat a.txt
+aa
+```
+
+byte 길이를 재보면 `3`이 나온다.
+
+```sh
+$ wc -c < a.txt
+       3
+```
+
+앗 `aa`는 2글자인데 왜 3이 나왔을까? 파일 마지막에 LF(`\n`, `0A`)가 있기 때문이다.
+
+`xxd`로 파일을 읽어보면...
+
+```sh
+$ xxd -p a.txt
+61610a
+```
+
+`a`를 의미하는 ASCII 값 `61`이 두 번 나오고, LF를 의미하는 ASCII 값 `0A`가 마지막에 한 번 나온다는 것을 확인할 수 있다.
+
+아무튼 이제 `a.txt`의 길이를 알게 됐으니 다음과 같이 포맷을 맞출 수 있다. 파일의 내용은 `blob`이니 `blob`으로 시작하면 된다.
+
+```
+blob 3\0aa\n
+```
+
+이 값을 SHA1 로 해싱해보면 그동안 보아왔던 `e61ef7b9`가 나온다.
+
+```sh
+$ printf "blob 3\0aa\n" | openssl sha1
+e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9
+```
+
+물론 `openssl`이 아니라 다른 해싱 명령어를 사용해도 똑같은 결과가 나온다.
+
+```sh
+$ printf "blob 3\0aa\n" | shasum
+e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9  -
+
+$ printf "blob 3\0aa\n" | sha1sum
+e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9  -
+```
+
+당연히 같은 방법으로 `b.txt`의 내용도 해시값을 출력해볼 수 있다.
+
+```sh
+$ printf "blob 3\0bb\n" | sha1sum
+e0b3f1b09bd1819ed1f7ce2e75fc7400809f5350  -
+```
+
+이제 `ls-files`의 결과를 보면서 해시값을 확인해보자.
+
+```sh
+$ git ls-files -s
+100644 e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9 0	a.txt
+100644 e0b3f1b09bd1819ed1f7ce2e75fc7400809f5350 0	b.txt
+100644 e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9 0	c-a.txt
+```
+
+### tree 해시값 계산
+
+이번에는 저 세 파일을 포함하고 있는 tree의 해시값을 계산해 보자.
+
+먼저 앞에서 살펴봤던 첫 커밋의 내용을 다시 조회해 보자.
+
+```sh
+$ git cat-file -p b1e3da0
+tree c8f8b7e0ad11143d1e3a7724def5b2744b9b9668
+author JohnGrib <johngrib82@gmail.com> 1685327803 +0900
+committer JohnGrib <johngrib82@gmail.com> 1685327803 +0900
+gpgsig -----BEGIN PGP SIGNATURE-----
+
+ iQIzBAABCAAdFiEEPrNLtUbPL1hEV/CL1bjZX7J58s8FAmR0D8IACgkQ1bjZX7J5
+ 8s/snQ/+JYdKvwOAGwSFrVvaBlowuagweK81nZaTYhsSZ2ruHzJoq8OpI2qPp8h9
+ knsMZRzGi9LXfxXJ/8DAqT/BuC74C8+Fg2baHdDVPDkLu4g29RTL6eXm+FHJsG1P
+ 9GbvsqyWrfs0hUkRuQXAgVAjUlo8oD7+rWojswwoRx+5yk4U62zG6tMF//aJMVm2
+ jyPyoKcUriHjO9sDQGM6QkjV/ONiFRk19bdBs/lhvI0LZAY2lHJsMEJuNH0UpLB4
+ 4UO2rJDQc1VabCPRqHoOiuR+zDYC2OUnJnLPXP4fJ1yqcQQz6nLnjv9qjrkOIQqE
+ ClhxRrAAVGry58IaoIT358ulxfq6hfZtgctOKdVs6OXgwwmtuK1FDcKCYh3vsX8Y
+ mmjA7i1T4na3HIGuVxAMHdf938KgkYXKt/TXTEhToxRE8n8Of9BgS4EJQpiQhIbC
+ R5knpv2qVks0jBUSCepBsKK6WGMOQikO2imz01sNg3tKGt4Q/Xpalhh/b2nLkJIA
+ 5bOlOPqvGfz8XvsU9fGXCnBW/7lOAnqN1GtHX213Ic1bv2WS5ca2+csN878ZcpqI
+ MA3siCnLZnm70Ul8156SQCCSrLfjUYgJK361sO0HD12pMIi8T2pDxNTmvcXTRBkQ
+ lrXlFiCV/G/+ZHEv3vpZm9RY95aLbzRr2f5n7O1aNuGIhJa1BSU=
+ =VgGp
+ -----END PGP SIGNATURE-----
+
+Initial commit
+```
+
+출력 결과의 첫 번째 줄에 `tree`가 있다.
+이것이 바로 첫 커밋의 tree의 해시값이다.
+
+```
+tree c8f8b7e0ad11143d1e3a7724def5b2744b9b9668
+```
+
+이 tree의 해시값 첫 네 글자인 `c8f8`로 조회해보면 tree의 내용은 파일 3개로 이루어져 있다.
+
+```sh
+$ git cat-file -p c8f8
+100644 blob e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9	a.txt
+100644 blob e0b3f1b09bd1819ed1f7ce2e75fc7400809f5350	b.txt
+100644 blob e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9	c-a.txt
+```
+
+하지만 이것은 사람이 읽기 쉽게 출력한 것이고 실제로 `c8f8`의 내용은 다음과 같다.
+
+```sh
+$ git cat-file tree c8f8
+100644 a.txt???e?|b?#??_
+?	Xn?100644 b.txt??с????.u?t??SP100644 c-a.txt???e?|b?#??_
+?	Xn?
+```
+
+해시값이 바이트값으로 출력이 됐기 때문에 사람이 읽기 쉽지 않은데, 이 출력값을 적절히 개행해보면 해시값만 알아보기 어렵다는 것을 알 수 있다. 즉 이상한 값으로 변형된 것이 아니라 표현 방법만 다른 것이다.
+
+```sh
+$ git cat-file tree c8f8 | LC_ALL=C tr '\n' ' ' | LC_ALL=C sed 's/10064/\n10064/g'
+
+100644 a.txt???e?|b?#??_ ?	Xn?
+100644 b.txt??с????.u?t??SP
+100644 c-a.txt???e?|b?#??_ ?	Xn?
+```
+
+실제로 `xxd`를 사용해 출력해보면 `e61ef...`, `e01b3f...`가 다 들어가 있음을 알 수 있다.
+
+```sh
+$ git cat-file tree c8f8 | xxd -p
+31303036343420612e74787400e61ef7b965e17c62ca23b6ff5f0aaf0958
+6e10e931303036343420622e74787400e0b3f1b09bd1819ed1f7ce2e75fc
+7400809f535031303036343420632d612e74787400e61ef7b965e17c62ca
+23b6ff5f0aaf09586e10e9
+```
+
+다음은 위의 `xxd` 출력 결과를 알아보기 쉽게 내가 손으로 정돈해 본 것이다.
+
+```sh
+313030363434 20 612e74787400     e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9
+313030363434 20 622e74787400     e0b3f1b09bd1819ed1f7ce2e75fc7400809f5350
+313030363434 20 632d612e74787400 e61ef7b965e17c62ca23b6ff5f0aaf09586e10e9
+```
+
+- `0x313030363434`: `100644`
+- `0x20`: SP (스페이스)
+- `0x612e74787400`: `a.txt`
+    - <div id="a-txt-hex"></div>
+- `0x622e74787400`: `b.txt`
+- `0x632d612e74787400`: `c-a.txt`
+
+| 61 | 2e | 74 | 78 | 74 | 00   |
+|----|----|----|----|----|------|
+| a  | .  | t  | x  | t  | NULL |
+{:class="dynamic-insert" data-target-selector="#a-txt-hex"}
+
+
+아무튼 포맷에 맞추기 위해 길이를 재보자.
+
+```sh
+$ git cat-file tree c8f8 | wc -c
+     101
+```
+
+이제 다음과 같이 입력하면 `c8f8...` 을 얻을 수 있다.
+
+```sh
+$ (printf "tree 101\0"; git cat-file tree c8f8) | openssl sha1
+c8f8b7e0ad11143d1e3a7724def5b2744b9b9668
+```
+
+### commit 해시값 계산
+
+이제 commit의 해시값도 출력해보자.
+
+```sh
+$ git cat-file commit b1e3
+tree c8f8b7e0ad11143d1e3a7724def5b2744b9b9668
+author JohnGrib <johngrib82@gmail.com> 1685327803 +0900
+committer JohnGrib <johngrib82@gmail.com> 1685327803 +0900
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ iQIzBAABCAAdFiEEPrNLtUbPL1hEV/CL1bjZX7J58s8FAmR0D8IACgkQ1bjZX7J5
+ 8s/snQ/+JYdKvwOAGwSFrVvaBlowuagweK81nZaTYhsSZ2ruHzJoq8OpI2qPp8h9
+ knsMZRzGi9LXfxXJ/8DAqT/BuC74C8+Fg2baHdDVPDkLu4g29RTL6eXm+FHJsG1P
+ 9GbvsqyWrfs0hUkRuQXAgVAjUlo8oD7+rWojswwoRx+5yk4U62zG6tMF//aJMVm2
+ jyPyoKcUriHjO9sDQGM6QkjV/ONiFRk19bdBs/lhvI0LZAY2lHJsMEJuNH0UpLB4
+ 4UO2rJDQc1VabCPRqHoOiuR+zDYC2OUnJnLPXP4fJ1yqcQQz6nLnjv9qjrkOIQqE
+ ClhxRrAAVGry58IaoIT358ulxfq6hfZtgctOKdVs6OXgwwmtuK1FDcKCYh3vsX8Y
+ mmjA7i1T4na3HIGuVxAMHdf938KgkYXKt/TXTEhToxRE8n8Of9BgS4EJQpiQhIbC
+ R5knpv2qVks0jBUSCepBsKK6WGMOQikO2imz01sNg3tKGt4Q/Xpalhh/b2nLkJIA
+ 5bOlOPqvGfz8XvsU9fGXCnBW/7lOAnqN1GtHX213Ic1bv2WS5ca2+csN878ZcpqI
+ MA3siCnLZnm70Ul8156SQCCSrLfjUYgJK361sO0HD12pMIi8T2pDxNTmvcXTRBkQ
+ lrXlFiCV/G/+ZHEv3vpZm9RY95aLbzRr2f5n7O1aNuGIhJa1BSU=
+ =VgGp
+ -----END PGP SIGNATURE-----
+```
+
+```sh
+$ git cat-file commit b1e3 | wc -c
+    1032
+```
+
+```sh
+$ (printf "commit 1032\0"; git cat-file commit b1e3) | openssl sha1
+b1e3da05289980f2eb11521683257305b1620a3f
+```
+
+잘 출력된다.
 
 ## 주석
 
