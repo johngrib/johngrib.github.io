@@ -44,6 +44,7 @@
   "cmd/openssl",
   "cmd/pass",
   "cmd/ping",
+  "cmd/pipe",
   "cmd/pwgen",
   "cmd/rans",
   "cmd/rbenv",
