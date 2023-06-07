@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-07 22:53:12 +0900
+updated : 2023-06-07 22:55:39 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -14,7 +14,16 @@ latex   : false
 * TOC
 {:toc}
 
+- Jeff Dean과 Sanjay Ghemawat의 2004년 논문.
+
 ## 번역
+
+>
+Jeffrey Dean and Sanjay Ghemawat
+>
+jeff@google.com, sanjay@google.com
+>
+Google, Inc.
 
 ### Abstract
 
