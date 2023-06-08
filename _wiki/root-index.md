@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-06-10 20:14:38 +0900
+updated : 2023-06-11 21:30:23 +0900
 regenerate: true
 ---
 * TOC
@@ -99,6 +99,7 @@ regenerate: true
 * [[/clipping/james-hamilton/on-designing-and-deploying-internet-scale-services]]
 * [[/clipping/kafka-a-distributed-messaging-system-for-log-processing]]
 * [[/clipping/leslie-lamport/paxos-made-simple]]
+* [[/clipping/mapreduce]]
 * [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]
 * [[/clipping/out-of-the-tar-pit]]
 * [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
