@@ -24,7 +24,11 @@ body, th, td, div, p, li {
     word-break: keep-all;
 }
 
-a {
+h1 a {
+    word-break: keep-all;
+}
+
+.post-content a {
     word-break: break-all;
 }
 
