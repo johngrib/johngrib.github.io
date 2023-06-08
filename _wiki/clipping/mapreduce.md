@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-08 22:16:05 +0900
+updated : 2023-06-08 22:33:05 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -106,3 +106,34 @@ Section 7 discusses related and future work.
 ### 2 Programming Model
 
 프로그래밍 모델
+
+>
+The computation takes a set of input key/value pairs, and produces a set of output key/value pairs.
+The user of the MapReduce library expresses the computation as two functions: Map and Reduce.
+
+계산은 입력 키/값 쌍의 집합을 가져와서, 출력 키/값 쌍의 집합을 생성합니다.
+MapReduce 라이브러리의 사용자는 Map과 Reduce라는 두 개의 함수로 계산을 표현합니다.
+
+>
+Map, written by the user, takes an input pair and produces a set of intermediate key/value pairs.
+The MapReduce library groups together all intermediate values associated with the same intermediate key I and passes them to the Reduce function.
+
+사용자가 작성한 Map은 입력 쌍을 받아서 중간 키/값 쌍의 집합을 생성합니다.
+MapReduce 라이브러리는 같은 중간 키 I와 연관된 모든 중간 값들을 묶어서 Reduce 함수에 전달합니다.
+
+>
+The Reduce function, also written by the user, accepts an intermediate key I and a set of values for that key.
+It merges together these values to form a possibly smaller set of values.
+Typically just zero or one output value is produced per Reduce invocation.
+The intermediate values are supplied to the user’s reduce function via an iterator.
+This allows us to handle lists of values that are too large to fit in memory.
+
+사용자가 작성한 Reduce 함수는 중간 키 I와 그 키에 대한 값들의 집합을 받습니다.
+이 함수는 이런 값들을 병합하여 더 작은 값들의 집합을 형성합니다.
+Reduce 호출은 일반적으로 0개 또는 1개의 출력 값을 생성합니다.
+중간 값은 반복자(iterator)를 통해 사용자의 reduce 함수에 제공됩니다.
+이 방법을 통해 메모리에 저장하기에 너무 큰 값들의 목록을 처리할 수 있습니다.
+
+#### 2.1 Example
+
+예제
