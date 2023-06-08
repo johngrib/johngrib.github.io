@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-08 22:33:05 +0900
+updated : 2023-06-08 22:49:19 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -137,3 +137,49 @@ Reduce 호출은 일반적으로 0개 또는 1개의 출력 값을 생성합니�
 #### 2.1 Example
 
 예제
+
+>
+Consider the problem of counting the number of occurrences of each word in a large collection of documents.
+The user would write code similar to the following pseudo-code:
+
+대량의 문서 컬렉션에서 각 단어의 수를 세는 문제를 생각해 보세요.
+사용자는 다음과 유사한 의사 코드를 작성할 것입니다.
+
+```
+map(String key, String value):
+  // key: document name
+  // value: document contents
+  for each word w in value:
+    EmitIntermediate(w, "1");
+
+reduce(String key, Iterator values):
+  // key: a word
+  // values: a list of counts
+  int result = 0;
+  for each v in values:
+    result += ParseInt(v);
+  Emit(AsString(result));
+```
+
+>
+The `map` function emits each word plus an associated count of occurrences (just ‘1’ in this simple example).
+The `reduce` function sums together all counts emitted for a particular word.
+
+`map` 함수는 각 단어에 대해 발생 횟수(여기에서는 그냥 1)를 출력합니다.
+`reduce` 함수는 특정 단어의 발생 횟수를 모두 더합니다.
+
+>
+In addition, the user writes code to fill in a mapreduce specification object with the names of the input and output files, and optional tuning parameters.
+The user then invokes the MapReduce function, passing it the specification object.
+The user’s code is linked together with the MapReduce library (implemented in C++).
+Appendix A contains the full program text for this example.
+
+또한, 사용자는 입출력 파일의 이름과 선택적인 튜닝 파라미터를 mapreduce 스펙 객체에 설정하는 코드를 작성합니다.
+그리고 나서 사용자는 MapReduce 함수에 스펙 객체를 전달하고 호출합니다.
+사용자의 코드는 (C++로 구현된) MapReduce 라이브러리와 함께 링크됩니다.
+부록 A에는 이 예제의 전체 프로그램 텍스트가 포함되어 있습니다.
+
+#### 2.2 Types
+
+타입
+
