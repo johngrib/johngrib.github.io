@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2022-12-14 00:05:46 +0900
+updated : 2023-06-09 22:12:28 +0900
 tag     : bash vim ctags golang command clojure vim-syntax-color
 resource: 4D/8CF153-8D49-406F-875F-8385D1599361
 toc     : true
@@ -60,6 +60,12 @@ $ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 ```
 
 * 참고: `brew install ctags`로 설치하면 Exuberant Ctags가 설치되므로 주의할 것.
+
+### Ubuntu
+
+```sh
+$ apt install universal-ctags
+```
 
 ## tags 파일 생성하기
 
