@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "tty",
+ "summary": "return user's terminal name",
+ "parent": "cmd",
+ "url": "/wiki/cmd/tty",
+ "updated": "2023-06-10 17:43:14 +0900",
+ "resource": "E4/878436-9ABD-43C8-A536-16BA769E3972",
+ "children": []
+}

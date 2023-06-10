@@ -60,6 +60,7 @@
   "cmd/touch",
   "cmd/tr",
   "cmd/tree",
+  "cmd/tty",
   "cmd/uname",
   "cmd/xxd",
   "cmd/yes",
