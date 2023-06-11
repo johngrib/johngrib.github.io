@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-11 22:36:23 +0900
+updated : 2023-06-11 22:46:53 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -281,3 +281,36 @@ reduce 함수는 모든 쌍을 변경하지 않고 출력합니다.
 ### 3 Implementation
 
 구현
+
+>
+Many different implementations of the MapReduce interface are possible.
+The right choice depends on the environment.
+For example, one implementation may be suitable for a small shared-memory machine, another for a large NUMA multi-processor, and yet another for an even larger collection of networked machines.
+
+MapReduce 인터페이스는 다양한 구현이 가능합니다.
+환경에 따라 올바른 선택이 달라질 수 있습니다.
+예를 들어, 어떤 구현은 소규모의 공유 메모리를 갖는 머신에 적합할 수 있고, 어떤 구현은 대규모의 NUMA 멀티 프로세서에 적합할 수도 있고, 어떤 구현은 훨씬 더 큰 네트워크 머신 집합에 적합할 수 있습니다.
+
+>
+This section describes an implementation targeted to the computing environment in wide use at Google: large clusters of commodity PCs connected together with switched Ethernet [4].
+In our environment:
+>
+- (1) Machines are typically dual-processor x86 processors running Linux, with 2-4 GB of memory per machine.
+- (2) Commodity networking hardware is used – typically either 100 megabits/second or 1 gigabit/second at the machine level, but averaging considerably less in overall bisection bandwidth.
+- (3) A cluster consists of hundreds or thousands of machines, and therefore machine failures are common.
+- (4) Storage is provided by inexpensive IDE disks attached directly to individual machines. A distributed file system [8] developed in-house is used to manage the data stored on these disks. The file system uses replication to provide availability and reliability on top of unreliable hardware.
+- (5) Users submit jobs to a scheduling system. Each job consists of a set of tasks, and is mapped by the scheduler to a set of available machines within a cluster.
+
+이 섹션에서는 Google에서 널리 사용되는 컴퓨팅 환경, 즉 스위치 이더넷[4]으로 연결된 표준형 PC로 이루어진 대규모 클러스터를 대상으로 하는 구현에 대해 설명합니다.
+우리의 환경에서는,
+
+- (1) 머신은 일반적으로 Linux를 실행하는 듀얼 프로세서 x86 프로세서이며 머신당 2~4GB의 메모리가 있습니다.
+- (2) 표준 네트워킹 하드웨어가 사용됩니다. 일반적으로 머신 수준에서 100 megabits/sec 또는 1 gigabit/sec 이지만 평균적으로 전체 구간 대역폭은 이보다 훨씬 낮습니다.
+- (3) 클러스터는 수백~수천대의 머신으로 구성되므로 머신 장애가 자주 발생합니다.
+- (4) 스토리지는 개별 머신에 직접 연결된 저렴한 IDE 디스크로 제공됩니다. 내부에서 개발된 분산 파일 시스템[8]은 이러한 디스크에 저장된 데이터를 관리하는 데 사용됩니다. 파일 시스템은 불안정한 하드웨어 위에 가용성과 신뢰성을 제공하기 위해 복제(replication)를 사용합니다.
+- (5) 사용자는 스케줄링 시스템에 작업을 제출합니다. 각 작업은 일련의 태스크로 구성되며, 스케줄러에 의해 클러스터 내의 사용 가능한 머신 집합으로 매핑됩니다.
+
+#### 3.1 Excution Overview
+
+실행 개요
+
