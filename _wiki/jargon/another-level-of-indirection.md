@@ -3,7 +3,7 @@ layout  : wiki
 title   : 또 다른 수준의 간접층
 summary : Another level of indirection
 date    : 2022-09-09 17:43:57 +0900
-updated : 2022-09-09 18:22:48 +0900
+updated : 2023-06-11 11:17:24 +0900
 tag     : 
 resource: F5/915B72-C537-4B0E-9807-592DA839EB00
 toc     : true
@@ -56,6 +56,23 @@ All problems in Computer Science can be solved by another level of indirection.
 >
 -- 17장. 385쪽.
 
+## From: 운영체제 아주 쉬운 세 가지 이야기
+
+>
+사람들은 컴퓨터 과학에서 모든 문제의 해법은 간접 계층(level of indirection)의 활용이라고 한다.
+분명한 것은 이것은 사실이 아니다.
+대부분 문제들의 해법일 뿐이다(그렇다. 이 문장은 여전히 강한 주장이다. 하지만 어떤 의미인지는 이해했을 것이다).
+우리가 다뤘던 모든 종류의 가상화를 생각해 볼 수 있을 것이다.
+예를 들어 가상 메모리나 파일이라는 개념을 단순히 간접 계층을 사용한다고 할 수 있을 것이다.
+LFS의 아이노드 맵도 분명히 아이노드 번호들의 가상화이다.
+이와 같은 예제들에서 모든 참조들을 변경하지 않고도 자유롭게 자료 구조들(VM에서 페이지, 또는 LFS에서 아이노드)을 이동할 수 있게 하는 간접 참조의 능력을 볼 수 있기를 바란다.
+물론, 간접 참조는 오버헤드를 추가한다는 단점도 갖고 있다.
+다음에 문제를 만나면 간접 참조를 이용하여 해결해 보도록 하자.
+하지만, 그 전에 사용할 때 발생하는 성능 오버헤드도 먼저 생각해 보자.
+Wheeler 가 남긴 유명한 말이 있다 "너무 많은 간접 계층이라는 문제를 제외하면, 컴퓨터 과학에 모든 문제들은 간접 계층을 더함으로서 해결할 수 있다."
+>
+-- 43.5장. 600쪽.
+
 ## From: Prefactoring
 
 >
@@ -82,4 +99,5 @@ All problems in Computer Science can be solved by another level of indirection.
 
 - Beautiful Code / 찰스 페졸드 외 37 저 / 류광 옮김 / 한빛미디어 / 초판발행 2007년 12월 17일
 - [Beautiful Code - Chapter 17. Another Level of Indirection]( https://www2.dmst.aueb.gr/dds/pubs/inbook/beautiful_code/html/Spi07g.html )
+- 운영체제 아주 쉬운 세 가지 이야기 [제2판] / Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-dusseau 공저 / 원유집, 박민규, 이성진 공역 / 홍릉 / 제2판 발행: 2020년 09월 10일 / 원제: Operating Systems: Three Easy Pieces
 - 프리팩토링 / 켄 푸 저 / 서우석 역 / 한빛미디어 / 초판 발행 2006년 10월 20일
