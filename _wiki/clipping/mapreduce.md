@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-08 22:49:19 +0900
+updated : 2023-06-11 22:20:02 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -183,3 +183,26 @@ Appendix A contains the full program text for this example.
 
 타입
 
+>
+Even though the previous pseudo-code is written in terms of string inputs and outputs, conceptually the map and reduce functions supplied by the user have associated types:
+>
+> ```
+> map    (k1,v1)       → list(k2,v2)
+> reduce (k2,list(v2)) → list(v2)
+> ```
+>
+I.e., the input keys and values are drawn from a different domain than the output keys and values.
+Furthermore, the intermediate keys and values are from the same domain as the output keys and values.
+>
+Our C++ implementation passes strings to and from the user-defined functions and leaves it to the user code to convert between strings and appropriate types.
+
+이전의 의사 코드는 문자열 입력과 출력에 대한 것이었지만, 사용자가 제공하는 map과 reduce 함수는 개념적으로 다음과 같은 타입을 가지고 있습니다.
+
+다시 말해, 입력 키/값은 출력 키/값과 다른 도메인에서 추출됩니다.
+또한, 중간 키/값은 출력 키/값과 같은 도메인에서 가져옵니다.
+
+우리의 C++ 구현은 문자열을 사용자 정의 함수에 전달하고, 문자열과 적절한 타입 사이의 변환은 사용자 코드에 맡깁니다.
+
+#### 2.3 More Examples
+
+더 많은 예제
