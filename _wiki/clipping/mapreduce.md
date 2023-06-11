@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-11 22:20:02 +0900
+updated : 2023-06-11 22:36:23 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -21,7 +21,7 @@ latex   : false
 >
 Jeffrey Dean and Sanjay Ghemawat
 >
-jeff@google.com, sanjay@google.com
+jeff @ google.com, sanjay @ google.com
 >
 Google, Inc.
 
@@ -206,3 +206,78 @@ Our C++ implementation passes strings to and from the user-defined functions and
 #### 2.3 More Examples
 
 더 많은 예제
+
+>
+Here are a few simple examples of interesting programs that can be easily expressed as MapReduce computations.
+
+다음은 MapReduce 계산으로 쉽게 표현할 수 있는 몇 가지 흥미로운 프로그램들의 간단한 예제입니다.
+
+>
+**Distributed Grep:**
+The map function emits a line if it matches a supplied pattern.
+The reduce function is an identity function that just copies the supplied intermediate data to the output.
+
+**분산 Grep:**
+map 함수는 주어진 패턴과 일치하는 경우에만 행을 출력합니다.
+reduce 함수는 입력된 중간 데이터를 출력으로 복사하는 것만 하는 identity 함수입니다.
+
+>
+**Count of URL Access Frequency:**
+The map function processes logs of web page requests and outputs ⟨URL, 1⟩.
+The reduce function adds together all values for the same URL and emits a ⟨URL, total count⟩ pair.
+
+**URL 엑세스 빈도 카운트:**
+map 함수는 웹 페이지 요청 로그를 처리하고 `⟨URL, 1⟩`을 출력합니다.
+reduce 함수는 동일한 URL에 대한 모든 값을 더하고 `⟨URL, 총 카운트⟩` 쌍을 출력합니다.
+
+
+>
+**Reverse Web-Link Graph:**
+The map function outputs ⟨target, source⟩ pairs for each link to a target URL found in a page named source.
+The reduce function concatenates the list of all source URLs associated with a given target URL and emits the pair:
+⟨target, list(source)⟩
+
+**역방향 Web-Link 그래프:**
+map 함수는 source라는 이름의 페이지에서 찾은 target URL에 대한 각 링크에 대해 `⟨target, source⟩` 쌍을 출력합니다.
+reduce 함수는 지정된 대상 URL과 연결된 모든 소스 URL 목록을 연결하고 해당 쌍 `⟨target, list(source)⟩`를 출력합니다.
+
+>
+**Term-Vector per Host:**
+A term vector summarizes the most important words that occur in a document or a set of documents as a list of ⟨word, f requency⟩ pairs.
+The map function emits a ⟨hostname, term vector⟩ pair for each input document (where the hostname is extracted from the URL of the document).
+The reduce function is passed all per-document term vectors for a given host.
+It adds these term vectors together, throwing away infrequent terms, and then emits a final ⟨hostname, term vector⟩ pair.
+
+**호스트별 Term-Vector:**
+Term-Vector는 문서나 문서 집합에서 가장 중요한 단어를 `⟨word, f requency⟩` 쌍의 리스트로 요약합니다.
+map 함수는 각 입력 문서에 대해 `⟨hostname, term vector⟩` 쌍을 출력합니다(호스트 이름은 문서의 URL에서 추출됩니다).
+reduce 함수는 주어진 호스트에 대한 모든 문서별 term vector를 전달받습니다.
+이 term vector를 모두 더하고, 빈번하지 않은 단어를 버린 다음 최종 `⟨hostname, term vector⟩` 쌍을 출력합니다.
+
+>
+**Inverted Index:**
+The map function parses each document, and emits a sequence of ⟨word, document ID⟩ pairs.
+The reduce function accepts all pairs for a given word, sorts the corresponding document IDs and emits a ⟨word,list(document ID)⟩pair.
+The set of all output pairs forms a simple inverted index.
+It is easy to augment this computation to keep track of word positions.
+
+**역순 인덱스:**
+map 함수는 각 문서를 구문 분석하고 `⟨word, document ID⟩` 쌍의 시퀀스를 출력합니다.
+reduce 함수는 주어진 단어에 대한 모든 쌍을 받아서 해당 문서 ID를 정렬하고 `⟨word,list(document ID)⟩` 쌍을 출력합니다.
+모든 출력 쌍의 집합은 간단한 역순 인덱스를 형성합니다.
+이 계산을 단어 위치를 추적하는 것으로 쉽게 확장할 수 있습니다.
+
+>
+**Distributed Sort:**
+The map function extracts the key from each record, and emits a ⟨key, record⟩ pair.
+The reduce function emits all pairs unchanged.
+This computation depends on the partitioning facilities described in Section 4.1 and the ordering properties described in Section 4.2.
+
+**분산 정렬:**
+map 함수는 각 레코드에서 키를 추출하고 `⟨key, record⟩` 쌍을 출력합니다.
+reduce 함수는 모든 쌍을 변경하지 않고 출력합니다.
+이 계산은 4.1절에서 설명하는 파티션 기능과 4.2절에서 설명하는 정렬 속성에 따라 달라집니다.
+
+### 3 Implementation
+
+구현
