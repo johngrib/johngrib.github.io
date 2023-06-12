@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-11 22:46:53 +0900
+updated : 2023-06-12 21:30:11 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -313,4 +313,55 @@ In our environment:
 #### 3.1 Excution Overview
 
 실행 개요
+
+>
+The Map invocations are distributed across multiple machines by automatically partitioning the input data into a set of M splits.
+The input splits can be processed in parallel by different machines.
+Reduce invocations are distributed by partitioning the intermediate key space into R pieces using a partitioning function (e.g., hash(key) mod R).
+The number of partitions (R) and the partitioning function are specified by the user.
+
+Map 호출은 입력 데이터를 M개의 조각으로 자동으로 나누어 여러 머신에 분산됩니다.
+입력 조각은 여러 개의 다른 머신들에서 병렬로 처리할 수 있습니다.
+Reduce 호출은 파티셔닝 함수(예: `hash(key) mod R`)를 사용하여 중간 키 공간을 R개의 파티션으로 나눔으로써 분산됩니다.
+파티션 수(R)와 파티셔닝 함수는 사용자가 지정합니다.
+
+![figure 1]( /resource/CA/CDB27E-8CD8-4A10-A135-9B772E2B2752/figure1.png )
+
+>
+Figure 1 shows the overall flow of a MapReduce operation in our implementation.
+When the user program calls the MapReduce function, the following sequence of actions occurs (the numbered labels in Figure 1 correspond to the numbers in the list below):
+
+Figure 1은 우리의 구현체에서의 MapReduce 작업의 전체 흐름을 보여줍니다.
+사용자 프로그램이 MapReduce 함수를 호출하면 다음과 같은 순서로 작업이 이루어집니다(Figure 1의 번호 라벨은 아래 목록의 번호에 해당합니다).
+
+>
+1. The MapReduce library in the user program first splits the input files into M pieces of typically 16 megabytes to 64 megabytes (MB) per piece (controllable by the user via an optional parameter). It then starts up many copies of the program on a cluster of machines.
+2. One of the copies of the program is special – the master. The rest are workers that are assigned work by the master. There are M map tasks and R reduce tasks to assign. The master picks idle workers and assigns each one a map task or a reduce task.
+3. A worker who is assigned a map task reads the contents of the corresponding input split. It parses key/value pairs out of the input data and passes each pair to the user-defined Map function. The intermediate key/value pairs produced by the Map function are buffered in memory.
+4. Periodically, the buffered pairs are written to local disk, partitioned into R regions by the partitioning function. The locations of these buffered pairs on the local disk are passed back to the master, who is responsible for forwarding these locations to the reduce workers.
+5. When a reduce worker is notified by the master about these locations, it uses remote procedure calls to read the buffered data from the local disks of the map workers. When a reduce worker has read all intermediate data, it sorts it by the intermediate keys so that all occurrences of the same key are grouped together. The sorting is needed because typically many different keys map to the same reduce task. If the amount of intermediate data is too large to fit in memory, an external sort is used.
+6. The reduce worker iterates over the sorted intermediate data and for each unique intermediate key encountered, it passes the key and the corresponding set of intermediate values to the user’s Reduce function. The output of the Reduce function is appended to a final output file for this reduce partition.
+7. When all map tasks and reduce tasks have been completed, the master wakes up the user program. At this point, the `MapReduce` call in the user program returns back to the user code.
+
+1. 사용자 프로그램의 MapReduce 라이브러리는 먼저 입력 파일을 일반적으로 16MB ~ 64MB 크기를 갖는 M 개의 조각으로 나눕니다(크기는 사용자가 선택적 매개변수를 통해 제어 가능). 그런 다음 머신 클러스터에서 프로그램의 여러 복사본들을 실행하기 시작합니다.
+2. 프로그램 사본들 중 하나는 좀 특별한데, master 역할을 합니다. master가 아닌 나머지들은 master에 의해 작업을 할당받는 worker들입니다. 할당할 작업들로는 M개의 map 작업과 R개의 reduce 작업이 있습니다. master는 idle worker들을 선택하고 각각에게 map 작업 또는 reduce 작업을 할당합니다.
+3. map 작업을 할당받은 worker는 해당하는 조각된 입력의 내용을 읽습니다. 그리고 입력 데이터에서 key/value 쌍을 파싱하고 각 쌍을 사용자 정의 Map 함수에 전달합니다. Map 함수에 의해 생성된 중간 key/value 쌍들은 메모리에 버퍼링됩니다.
+4. 주기적으로 버퍼링된 쌍이 로컬 디스크에 기록되고, 파티셔닝 함수에 의해 R개의 영역으로 나누어집니다. 로컬 디스크에 있는 이러한 버퍼링된 쌍들의 위치는 master에게 다시 전달되고, master는 이러한 위치들을 reduce worker들에게 전달하는 책임을 갖고 있습니다.
+5. reduce worker가 master로부터 이러한 위치들에 대한 알림을 받게 되면, 원격 프로시저 호출을 사용하여 map worker의 로컬 디스크에 버퍼링된 데이터를 읽습니다. reduce worker가 모든 중간 데이터를 읽으면, 중간 key에 따라 데이터를 정렬하여 동일한 key의 모든 항목을 그루핑합니다. 이 때 정렬이 필요한데 일반적으로 서로 다른 많은 키들이 동일한 reduce 작업에 매핑되기 때문입니다. 중간 데이터의 양이 너무 커서 메모리에 들어갈 수 없는 경우라면 외부 정렬을 사용합니다.
+6. reduce worker는 정렬된 중간 데이터를 순회하면서, 유니크한 중간 key가 발견될 때마다 해당 key와 해당 중간 value 집합을 사용자의 reduce 함수에 전달합니다. Reduce 함수의 출력은 이 reduce 파티션의 최종 출력 파일에 추가됩니다.
+7. 모든 map 작업과 reduce 작업이 완료되면, master는 사용자 프로그램을 깨웁니다. 이 시점에서 사용자 프로그램의 `MapReduce` 호출은 사용자 코드로 돌아갑니다.
+
+>
+After successful completion, the output of the mapreduce execution is available in the R output files (one per reduce task, with file names as specified by the user).
+Typically, users do not need to combine these R output files into one file – they often pass these files as input to another MapReduce call, or use them from another distributed application that is able to deal with input that is partitioned into multiple files.
+
+모든 작업이 성공적으로 완료되면 mapreduce 실행의 출력 결과를 R개의 출력 파일(하나의 reduce 작업당 하나의 파일, 파일 이름은 사용자가 지정)을 통해 사용할 수 있게 됩니다.
+일반적으로 사용자는 이러한 R 출력 파일을 하나의 파일로 결합할 필요가 없습니다.
+보통은 이 파일들을 다른 `MapReduce` 호출의 입력으로 전달하거나, 여러 파일로 분할된 입력을 처리할 수 있는 다른 분산 애플리케이션에서 사용합니다.
+
+#### 3.2 Master Data Structures
+
+Master 데이터 구조
+
+4쪽.
 
