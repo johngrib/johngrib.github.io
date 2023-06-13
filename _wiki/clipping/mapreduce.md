@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-13 22:01:47 +0900
+updated : 2023-06-13 22:06:46 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -430,6 +430,22 @@ MapReduce master는 연결할 수 없게 된 worker 머신에서 수행하던 �
 
 master 장애
 
-4쪽.
+>
+It is easy to make the master write periodic checkpoints of the master data structures described above.
+If the master task dies, a new copy can be started from the last checkpointed state.
+However, given that there is only a single master, its failure is unlikely; therefore our current implementation aborts the MapReduce computation if the master fails.
+Clients can check for this condition and retry the MapReduce operation if they desire.
+
+master가 앞에서 설명한 master 데이터 구조에 대해 주기적인 체크포인트를 작성하게 하는 것은 쉽습니다.
+master 작업이 죽으면 마지막으로 체크포인트된 상태부터 새로운 복사본을 시작할 수 있습니다.
+하지만 master가 단 하나뿐이기 때문에, master의 장애는 드뭅니다.
+따라서 현재의 구현은 master가 실패하면 MapReduce 계산을 중단합니다.
+클라이언트는 이런 상황을 인지하고, MapReduce 작업을 다시 시도할 수 있습니다.
+
+##### Semantics in the Presence of Failures
+
+장애가 발생했을 때의 의미론
+
+5쪽.
 
 
