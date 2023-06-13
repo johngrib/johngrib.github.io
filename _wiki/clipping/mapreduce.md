@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-13 21:50:06 +0900
+updated : 2023-06-13 21:52:38 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -383,6 +383,15 @@ map 작업이 완료될 때 이 위치와 크기 정보의 업데이트가 진�
 #### 3.3 Fault Tolernace
 
 장애 허용성
+
+>
+Since the MapReduce library is designed to help process very large amounts of data using hundreds or thousands of machines, the library must tolerate machine failures gracefully.
+
+MapReduce 라이브러리는 수백에서 수천 대의 머신을 사용하여 대규모의 데이터를 처리할 수 있도록 설계되었기 때문에, 머신의 장애를 우아하게 허용할 수 있어야 합니다.
+
+##### Worker Failure
+
+worker 장애
 
 4쪽.
 
