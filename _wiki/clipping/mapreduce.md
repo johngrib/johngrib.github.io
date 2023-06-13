@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-12 21:30:11 +0900
+updated : 2023-06-13 21:50:06 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -363,5 +363,27 @@ Typically, users do not need to combine these R output files into one file – t
 
 Master 데이터 구조
 
+>
+The master keeps several data structures.
+For each map task and reduce task, it stores the state (idle, in-progress, or completed), and the identity of the worker machine (for non-idle tasks).
+>
+The master is the conduit through which the location of intermediate file regions is propagated from map tasks to reduce tasks.
+Therefore, for each completed map task, the master stores the locations and sizes of the R intermediate file regions produced by the map task.
+Updates to this location and size information are received as map tasks are completed.
+The information is pushed incrementally to workers that have in-progress reduce tasks.
+
+master는 여러 데이터 구조를 유지합니다.
+각 map 작업과 reduce 작업에 대해, 상태(idle, in-progress, completed)와 worker 머신의 식별자(idle 상태가 아닌 작업에 대해서)를 저장합니다.
+
+master는 map 작업에서 reduce 작업으로 중간 파일 영역의 위치가 전달되는 통로이기도 합니다.
+따라서 각 완료된 map 작업에 대해, master는 map 작업에 의해 생성된 R개의 중간 파일 영역의 위치와 크기를 저장합니다.
+map 작업이 완료될 때 이 위치와 크기 정보의 업데이트가 진행됩니다.
+이 정보는 in-progress 상태인 reduce 작업을 갖고 있는 worker들에게 점진적으로 푸시됩니다.
+
+#### 3.3 Fault Tolernace
+
+장애 허용성
+
 4쪽.
+
 
