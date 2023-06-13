@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-13 21:52:38 +0900
+updated : 2023-06-13 22:01:47 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -392,6 +392,43 @@ MapReduce 라이브러리는 수백에서 수천 대의 머신을 사용하여 �
 ##### Worker Failure
 
 worker 장애
+
+>
+The master pings every worker periodically.
+If no response is received from a worker in a certain amount of time, the master marks the worker as failed.
+Any map tasks completed by the worker are reset back to their initial idle state, and therefore become eligible for scheduling on other workers.
+Similarly, any map task or reduce task in progress on a failed worker is also reset to idle and becomes eligible for rescheduling.
+
+master는 주기적으로 모든 worker에게 ping을 보냅니다.
+만약 특정 시간 내에 응답하지 못하는 worker가 있다면, master는 해당 worker를 실패한 것으로 표시합니다.
+해당 worker가 완료한 모든 map 작업은 initial idle 상태로 재설정되므로, 다른 worker를 통해 스케줄링할 수 있게 됩니다.
+
+>
+Completed map tasks are re-executed on a failure because their output is stored on the local disk(s) of the failed machine and is therefore inaccessible.
+Completed reduce tasks do not need to be re-executed since their output is stored in a global file system.
+
+실패한 워커가 완료시켜둔 map 작업은 해당 작업의 결과가 실패한 머신의 로컬 디스크에 저장되어 있어서 접근할 수 없기 때문에, 재실행됩니다.
+완료된 reduce 작업은 전역 파일 시스템에 저장되어 있기 때문에 재실행할 필요가 없습니다.
+
+>
+When a map task is executed first by worker A and then later executed by worker B (because A failed), all workers executing reduce tasks are notified of the re-execution.
+Any reduce task that has not already read the data from worker A will read the data from worker B.
+
+map 작업이 worker A에 의해 먼저 실행됐지만, (A가 실패했기 때문에) 나중에 worker B에 의해 실행되는 경우 reduce 작업을 실행하는 모든 worker들에게 작업 재실행 알림이 전송됩니다.
+worker A로부터의 데이터를 아직 읽지 않은 모든 reduce 작업은 worker B로부터의 데이터를 읽게 됩니다.
+
+>
+MapReduce is resilient to large-scale worker failures.
+For example, during one MapReduce operation, network maintenance on a running cluster was causing groups of 80 machines at a time to become unreachable for several minutes.
+The MapReduce master simply re-executed the work done by the unreachable worker machines, and continued to make forward progress, eventually completing the MapReduce operation.
+
+MapReduce는 대규모의 worker 장애에 탄력적으로 대응할 수 있습니다.
+예를 들어, 하나의 MapReduce 작업이 진행되는 동안, 실행 중인 클러스터에서 네트워크 유지보수가 수행되어 각 80대로 이루어진 여러 그룹의 머신들이 몇 분 동안 접근할 수 없게 된 적이 있었습니다.
+MapReduce master는 연결할 수 없게 된 worker 머신에서 수행하던 작업을 재실행하고 계속 진행해서 결국 MapReduce 작업을 완료했습니다.
+
+##### Master Failure
+
+master 장애
 
 4쪽.
 
