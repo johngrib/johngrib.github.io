@@ -38,6 +38,7 @@
   "jargon/law-of-demeter",
   "jargon/metcalfe-s-law",
   "jargon/moore-s-law",
+  "jargon/mutex",
   "jargon/no-problem-syndrome",
   "jargon/postel-s-law",
   "jargon/risc",
