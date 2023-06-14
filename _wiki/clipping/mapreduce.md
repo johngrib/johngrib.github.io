@@ -3,13 +3,13 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-13 22:06:46 +0900
+updated : 2023-06-14 22:15:21 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
 public  : true
 parent  : [[/clipping]]
-latex   : false
+latex   : true
 ---
 * TOC
 {:toc}
@@ -445,6 +445,61 @@ master 작업이 죽으면 마지막으로 체크포인트된 상태부터 새�
 ##### Semantics in the Presence of Failures
 
 장애가 발생했을 때의 의미론
+
+>
+When the user-supplied map and reduce operators are deterministic functions of their input values, our distributed implementation produces the same output as would have been produced by a non-faulting sequential execution of the entire program.
+
+사용자가 제공한 map과 reduce 연산이 입력 값에 대한 결정론적인 함수라면, 우리의 분산 구현은 전체 프로그램을 오류 없이 순차적으로 실행했을 때와 동일한 출력을 생성합니다.
+
+>
+We rely on atomic commits of map and reduce task outputs to achieve this property.
+Each in-progress task writes its output to private temporary files.
+A reduce task produces one such file, and a map task produces R such files (one per reduce task).
+When a map task completes, the worker sends a message to the master and includes the names of the R temporary files in the message.
+If the master receives a completion message for an already completed map task, it ignores the message.
+Otherwise, it records the names of R files in a master data structure.
+
+이러한 특성을 달성하기 위해 우리는 map과 reduce 작업의 출력을 원자적으로 커밋하도록 구현했습니다.
+진행중인 각 작업들은 출력을 비공개 임시 파일에 기록합니다.
+
+reduce 작업은 이런 파일을 하나 생성하고, map 작업은 R개의 파일을 생성합니다(reduce가 처리할 작업당 하나씩).
+map 작업이 완료되면 worker는 master에게 R 임시파일의 이름을 포함하고 있는 메시지를 보냅니다.
+master가 이미 완료된 map 작업에 대한 완료 메시지를 받으면, master는 메시지를 무시합니다.
+그렇지 않으면, master는 R개의 파일의 이름을 master 데이터 구조에 기록합니다.
+
+>
+When a reduce task completes, the reduce worker atomically renames its temporary output file to the final output file.
+If the same reduce task is executed on multiple machines, multiple rename calls will be executed for the same final output file.
+We rely on the atomic rename operation provided by the underlying file system to guarantee that the final file system state contains just the data produced by one execution of the reduce task.
+
+reduce 작업이 완료되면, reduce worker는 임시 출력 파일의 이름을 최종 출력 파일로 '원자적으로' 변경합니다.
+만약 여러 머신에서 동일한 reduce 작업이 실행되면, 동일한 최종 출력 파일에 대해 여러 개의 rename 호출이 실행되게 됩니다.
+우리는 최종 파일 시스템이 reduce 작업을 한 번 실행해 생성한 데이터만을 갖도록 하기 위해, 기반이 되는 파일 시스템이 제공하는 원자적인 rename 연산에 의존합니다.
+
+>
+The vast majority of our map and reduce operators are deterministic, and the fact that our semantics are equivalent to a sequential execution in this case makes it very easy for programmers to reason about their program’s behavior.
+When the map and/or reduce operators are non-deterministic, we provide weaker but still reasonable semantics.
+In the presence of non-deterministic operators, the output of a particular reduce task $$R_1$$ is equivalent to the output for $$R_1$$ produced by a sequential execution of the non-deterministic program.
+However, the output for a different reduce task $$R_2$$ may correspond to the output for $$R_2$$ produced by a different sequential execution of the non-deterministic program.
+
+대부분의 map 과 reduce 연산은 결정론적이며, 그러한 경우 우리의 구현체의 의미론은 순차적 실행과 동일하기 때문에 프로그래머가 프로그램의 동작에 대해 추론하기 쉽습니다.
+map 또는 reduce 연산이 비결정론적인 경우에는 그보다는 약하지만 여전히 합리적인 의미론을 제공합니다.
+비결정론적 연산이 있는 경우, 특정한 reduce 작업 $$R_1$$의 출력은 비결정론적 프로그램의 순차적 실행에 의해 생성된 $$R_1$$의 출력과 동일합니다.
+그러나 다른 reduce 작업 $$R_2$$의 출력은 비결정론적 프로그램의 다른 순차적 실행에 의해 생성된 $$R_2$$의 출력과 일치하지 않을 수 있습니다.
+
+>
+Consider map task M and reduce tasks $$R_1$$ and $$R_2$$.
+Let $$e(R_i)$$ be the execution of $$R_i$$ that committed (there is exactly one such execution).
+The weaker semantics arise because $$e(R_1)$$ may have read the output produced by one execution of M and $$e(R_2)$$ may have read the output produced by a different execution of M.
+
+예를 들어 map 작업 M과, reduce 작업 $$R_1$$, $$R_2$$가 있다고 생각해 봅시다.
+작업 $$R_i$$가 실행되어 이미 커밋된 것을 $$e(R_i)$$라고 합시다(이렇게 커밋된 실행은 단 하나만 있을 수 있습니다).
+앞에서 언급한 '약한 의미론'은, $$e(R_1)$$이 M의 실행 결과 중 하나를 읽었지만, $$e(R_2)$$가 M의 다른 실행 결과를 읽을 수 있기 때문에 발생합니다.
+
+#### 3.4 Locality
+
+지역성
+
 
 5쪽.
 
