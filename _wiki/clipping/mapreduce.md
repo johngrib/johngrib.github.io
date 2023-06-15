@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-15 21:38:01 +0900
+updated : 2023-06-15 23:13:53 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -519,6 +519,36 @@ MapReduce master는 입력 파일의 위치 정보를 고려하여, 해당 입�
 
 작업의 단위
 
-5쪽.
+>
+We subdivide the map phase into M pieces and the reduce phase into R pieces, as described above.
+Ideally, M and R should be much larger than the number of worker machines.
+Having each worker perform many different tasks improves dynamic load balancing, and also speeds up recovery when a worker fails: the many map tasks it has completed can be spread out across all the other worker machines.
+
+앞에서 설명한 바와 같이 map 단계는 M개의 작업으로, reduce 단계는 R개의 작업으로 나누게 됩니다.
+이상적으로는, M과 R은 worker 머신의 수보다 훨씬 큰 값이어야 합니다.
+각 worker가 여러 작업을 수행하게 하면 동적 로드 밸런싱이 향상되며, worker에 장애가 발생했을 경우에도 복구 속도가 빨라집니다.
+worker가 완료한 많은 map 작업을 다른 모든 worker 머신에 분산시킬 수 있기 때문입니다.
+
+>
+There are practical bounds on how large M and R can be in our implementation, since the master must make $$O(M + R)$$ scheduling decisions and keeps $$O(M ∗ R)$$ state in memory as described above.
+(The constant factors for memory usage are small however: the $$O(M ∗ R)$$ piece of the state consists of approximately one byte of data per map task/reduce task pair.)
+
+앞에서 설명한 바와 같이 master는 $$O(M + R)$$ 스케쥴링 결정을 내리고, $$O(M ∗ R)$$ 상태를 메모리에 유지해야 하므로, M과 R이 얼마나 커질 수 있는지에 대해서는 실제 구현에서는 한계가 있습니다.
+(그러나 메모리 사용량에 대해서 상수 조건은 작은 편입니다. $$O(M ∗ R)$$ 상태의 일부는 map 작업/reduce 작업 쌍 당 약 1바이트의 데이터로 구성됩니다.)
+
+>
+Furthermore, R is often constrained by users because the output of each reduce task ends up in a separate output file.
+In practice, we tend to choose M so that each individual task is roughly 16 MB to 64 MB of input data (so that the locality optimization described above is most effective), and we make R a small multiple of the number of worker machines we expect to use.
+We often perform MapReduce computations with M = 200, 000 and R = 5, 000, using 2,000 worker machines.
+
+또한, 각 reduce 작업의 출력은 별도의 출력 파일에 저장되기 때문에, R은 종종 사용자에 의한 제약을 받곤 합니다.
+실제로는 위에서 이야기한 지역 최적화가 가장 효과를 발휘할 수 있도록, 각 개별 작업의 입력 데이터가 대략적으로 16MB ~ 64MB가 되드록 M을 선택하고, 사용할 worker 머신 수의 크지 않은 배수로 R을 설정하는 경향이 있습니다.
+우리는 종종 2000대의 worker 머신을 사용하여 M = 200,000, R = 5,000으로 MapReduce 계산을 수행합니다.
+
+#### 3.6 Backup Tasks
+
+백업 작업
+
+6쪽.
 
 
