@@ -41,6 +41,7 @@
   "jargon/mutex",
   "jargon/no-problem-syndrome",
   "jargon/postel-s-law",
+  "jargon/reader-writer-lock",
   "jargon/risc",
   "jargon/solid",
   "jargon/telescope-rule",

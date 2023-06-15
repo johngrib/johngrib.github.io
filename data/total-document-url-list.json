@@ -430,6 +430,7 @@
  "/wiki/jargon/mutex",
  "/wiki/jargon/no-problem-syndrome",
  "/wiki/jargon/postel-s-law",
+ "/wiki/jargon/reader-writer-lock",
  "/wiki/jargon/risc",
  "/wiki/jargon/solid",
  "/wiki/jargon/telescope-rule",
