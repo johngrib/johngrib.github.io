@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-14 22:15:21 +0900
+updated : 2023-06-15 21:38:01 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -500,6 +500,24 @@ The weaker semantics arise because $$e(R_1)$$ may have read the output produced 
 
 지역성
 
+>
+Network bandwidth is a relatively scarce resource in our computing environment.
+We conserve network bandwidth by taking advantage of the fact that the input data (managed by GFS [8]) is stored on the local disks of the machines that make up our cluster.
+GFS divides each file into 64 MB blocks, and stores several copies of each block (typically 3 copies) on different machines.
+The MapReduce master takes the location information of the input files into account and attempts to schedule a map task on a machine that contains a replica of the corresponding input data.
+Failing that, it attempts to schedule a map task near a replica of that task’s input data (e.g., on a worker machine that is on the same network switch as the machine containing the data).
+When running large MapReduce operations on a significant fraction of the workers in a cluster, most input data is read locally and consumes no network bandwidth.
+
+네트워크 대역폭은 우리의 컴퓨팅 환경에서 상대적으로 부족한 자원입니다.
+우리는 클러스터를 구성하는 머신의 로컬 디스크에 입력 데이터(GFS [8]로 관리함)가 저장된다는 사실을 활용하여 네트워크 대역폭을 절약합니다.
+GFS는 각각의 파일들을 64MB 짜리 블록으로 나눠서, 각 블록의 복사본들(보통 3개)을 서로 다른 컴퓨터에 저장합니다.
+MapReduce master는 입력 파일의 위치 정보를 고려하여, 해당 입력 데이터의 복사본을 포함하고 있는 머신에 대해 map 작업을 예약하려 시도합니다.
+이 예약이 실패하면 해당 작업의 입력 데이터 복제본 근처(예: 데이터를 갖고 있는 머신과 동일한 네트워크 스위치에 있는 다른 worker 머신)에서 map 작업의 예약을 시도합니다.
+클러스터를 이루는 상당수의 worker들에 대해 대규모 MapReduce 작업을 실행하게 되면, 대부분의 입력 데이터는 로컬로 읽혀지므로 네트워크 대역폭을 소비하지 않습니다.
+
+#### 3.5 Task Granularity
+
+작업의 단위
 
 5쪽.
 
