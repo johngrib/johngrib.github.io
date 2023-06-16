@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-16 22:40:33 +0900
+updated : 2023-06-16 22:57:55 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -579,7 +579,41 @@ MapReduce 작업이 거의 완료됐을 때, master는 진행중 상태인 나�
 
 ### 4 Refinements
 
-개선 사항들
+확장 기능들
+
+>
+Although the basic functionality provided by simply writing Map and Reduce functions is sufficient for most needs, we have found a few extensions useful.
+These are described in this section.
+
+Map과 Reduce 함수를 작성하는 것만으로도 대부분의 요구사항을 충분히 만족시킬 수 있지만, 우리는 몇 가지 확장 기능들이 유용하다는 것을 발견했습니다.
+
+#### 4.1 Partitioning Function
+
+파티셔닝 함수
+
+>
+The users of MapReduce specify the number of reduce tasks/output files that they desire (R).
+Data gets partitioned across these tasks using a partitioning function on the intermediate key.
+A default partitioning function is provided that uses hashing (e.g. “hash(key) mod R”).
+This tends to result in fairly well-balanced partitions.
+In some cases, however, it is useful to partition data by some other function of the key.
+For example, sometimes the output keys are URLs, and we want all entries for a single host to end up in the same output file.
+To support situations like this, the user of the MapReduce library can provide a special partitioning function.
+For example, using “hash(Hostname(urlkey)) mod R” as the partitioning function causes all URLs from the same host to end up in the same output file.
+
+MapReduce의 사용자가 reduce 작업/출력 파일의 수(R)를 자신이 원하는 값으로 지정하면,
+데이터는 중간 key의 파티셔닝 함수를 통해서 그러한 작업들에 분할됩니다.
+이 때 기본으로 제공되는 파티셔닝 함수는 해싱을 사용합니다(예: "hash(key) mod R").
+이 함수를 사용하면 꽤 균형 잡힌 파티션이 만들어집니다.
+그러나 경우에 따라서는 데이터를 파티셔닝할 때 용도에 따라 다른 함수를 key에 사용하는 것이 유용할 때도 있습니다.
+예를 들어, 출력 key가 URL인 경우가 있습니다.
+이때는 같은 호스트에 대한 모든 항목이 동일한 출력 파일에 저장되도록 하고 싶을 수 있습니다.
+이러한 상황을 지원하려면, MapReduce 라이브러리의 사용자는 특별한 파티셔닝 함수를 제공하면 됩니다.
+예를 들어, 파티셔닝 함수로 "hash(Hostname(urlkey)) mod R"을 사용하면 동일한 호스트의 모든 URL이 동일한 출력 파일에 저장되는 것입니다.
+
+#### 4.2 Ordering Guarantees
+
+순서 보장
 
 6쪽.
 
