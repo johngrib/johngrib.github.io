@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-15 23:13:53 +0900
+updated : 2023-06-16 22:40:33 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -548,6 +548,38 @@ We often perform MapReduce computations with M = 200, 000 and R = 5, 000, using 
 #### 3.6 Backup Tasks
 
 백업 작업
+
+>
+One of the common causes that lengthens the total time taken for a MapReduce operation is a “straggler”: a machine that takes an unusually long time to complete one of the last few map or reduce tasks in the computation.
+Stragglers can arise for a whole host of reasons.
+For example, a machine with a bad disk may experience frequent correctable errors that slow its read performance from 30 MB/s to 1 MB/s.
+The cluster scheduling system may have scheduled other tasks on the machine, causing it to execute the MapReduce code more slowly due to competition for CPU, memory, local disk, or network bandwidth.
+A recent problem we experienced was a bug in machine initialization code that caused processor caches to be disabled: computations on affected machines slowed down by over a factor of one hundred.
+
+MapReduce 작업에 소요되는 전체 시간을 늘리는 일반적인 원인 중 하나는 "straggler"(지연자)입니다.
+지연자란 계산의 마지막 몇 개의 map 또는 reduce 작업 중 하나를 완료하는 데에 비정상적으로 오랜 시간이 걸리는 머신을 말합니다.
+지연자가 발생하는 이유는 다양합니다.
+예를 들어, 불량한 디스크를 갖고 있는 머신은 오류가 자주 발생해서 읽기 성능이 30MB/s 내지 1MB/s 정도로 느려지기도 합니다.
+클러스터 스케쥴링 시스템이 특정한 머신에 다른 작업을 예약한다던가 해서 CPU, 메모리, 로컬 디스크 또는 네트워크 대역폭에 대한 경쟁이 발생해 MapReduce 코드를 더 느리게 실행하게 될 수도 있습니다.
+우리가 최근에 경험한 문제 하나는 머신 초기화 코드에 버그가 있어서 프로세서 캐시가 비활성화되는 것이었는데, 이 문제의 영향을 받은 머신에서의 계산은 100배 이상 느려졌습니다.
+
+>
+We have a general mechanism to alleviate the problem of stragglers.
+When a MapReduce operation is close to completion, the master schedules backup executions of the remaining in-progress tasks.
+The task is marked as completed whenever either the primary or the backup execution completes.
+We have tuned this mechanism so that it typically increases the computational resources used by the operation by no more than a few percent.
+We have found that this significantly reduces the time to complete large MapReduce operations.
+As an example, the sort program described in Section 5.3 takes 44% longer to complete when the backup task mechanism is disabled.
+
+우리에게는 지연자 발생 문제를 완화하기 위한 일반적인 메커니즘이 있습니다.
+MapReduce 작업이 거의 완료됐을 때, master는 진행중 상태인 나머지 작업들의 백업 실행을 예약합니다.
+기본적인 실행이나 백업 실행이 완료될 때마다 작업은 완료된 것으로 표시됩니다.
+이 메커니즘을 통해 일반적으로 작업에 사용되는 컴퓨팅 리소스는 몇 퍼센트 이상 증가시키지 않도록 조정됐습니다.
+예를 들어, 5.3절에서 설명하는 정렬 프로그램에서 백업 작업 메커니즘을 비활성화하면 완료하기까지 44% 더 많은 시간이 걸리게 됩니다.
+
+### 4 Refinements
+
+개선 사항들
 
 6쪽.
 
