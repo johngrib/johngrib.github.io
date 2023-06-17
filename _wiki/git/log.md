@@ -3,7 +3,7 @@ layout  : wiki
 title   : git log
 summary : 로그를 잘 읽어야 한다
 date    : 2019-12-01 08:14:22 +0900
-updated : 2023-04-23 21:42:39 +0900
+updated : 2023-06-17 17:32:19 +0900
 tag     : git
 resource: 1A/6E0987-315D-4ECC-B38E-2937C808EB7C
 toc     : true
@@ -37,6 +37,17 @@ l = "log \
 
 ```sh
 lh = "!git l | head -25"
+```
+
+### git lf {#alias-lf}
+
+`git --log --follow`를 사용해 특정 파일 하나의 히스토리만 보고 싶을 때 쓴다. `fzf`를 통해 파일을 선택할 수 있다.
+
+```
+lf = "!# 주어진 file의 history를 출력합니다.;\n\
+    fzf --preview=\"bat {}\" | xargs git l --follow"
+lfp = "!# 주어진 file의 history를 자세히 출력합니다.;\n\
+    fzf --preview=\"bat {}\" | xargs git l --follow -p"
 ```
 
 ## Commit Ranges
@@ -94,3 +105,4 @@ git log master developt --not hotfix    # 위와 같다
 ## 주석
 
 [^pro-git-210]: Pro Git, 7.1장, 210쪽.
+
