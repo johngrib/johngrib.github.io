@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-16 22:57:55 +0900
+updated : 2023-06-17 10:08:33 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -614,6 +614,19 @@ MapReduce의 사용자가 reduce 작업/출력 파일의 수(R)를 자신이 원
 #### 4.2 Ordering Guarantees
 
 순서 보장
+
+>
+We guarantee that within a given partition, the intermediate key/value pairs are processed in increasing key order.
+This ordering guarantee makes it easy to generate a sorted output file per partition, which is useful when the output file format needs to support efficient random access lookups by key, or users of the output find it convenient to have the data sorted.
+
+우리는 주어진 파티션 내에서 중간 key/value 쌍에 대해 처리되는 key가 오름차순으로 처리된다는 것을 보장합니다.
+
+이러한 순서 보장을 통해 파티션별로 정렬된 출력 파일을 쉽게 생성할 수 있습니다.
+이런 특징은 key에 대한 효율적인 랜덤 액세스 조회가 필요한 출력 결과가 필요하거나 출력 결과의 사용자에게 데이터가 정렬되어 있는 것이 편리한 경우에 유용합니다.
+
+#### 4.3 Combiner Function
+
+조합 함수
 
 6쪽.
 
