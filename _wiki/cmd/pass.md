@@ -3,7 +3,7 @@ layout  : wiki
 title   : pass
 summary : gpg로 작동하는 패스워드 관리 도구
 date    : 2023-03-28 23:24:21 +0900
-updated : 2023-06-18 09:47:17 +0900
+updated : 2023-06-18 09:49:45 +0900
 tag     : 
 resource: 31/3E64C6-3BC9-4D30-8679-320FAD6F5848
 toc     : true
@@ -60,6 +60,20 @@ Comment: 네이버 로그인
     - `Comment`: `네이버 로그인`
 
 추가정보는 자율형식이니 원하는대로 입력하면 된다.
+
+## 브라우저 확장
+
+### Chrome
+
+[browserpass / browserpass-extension](https://github.com/browserpass/browserpass-extension )
+
+#### 단축키
+
+browserpass의 기본 단축키는 `Command + Shift + L`이다.
+
+[BitWarden]( https://bitwarden.com/ ) 크롬 브라우저 플러그인과 단축키가 겹치므로 둘 다 사용하려면 둘 중 하나의 단축키를 변경해야 한다. (BitWarden의 사용성이 더 편리하긴 하다)
+
+단축키는 [chrome://extensions/shortcuts]( chrome://extensions/shortcuts )에서 설정할 수 있다.
 
 ## 튜토리얼
 
@@ -205,20 +219,6 @@ URL: nid.naver.com/*
 이제 아이폰 `설정` 앱에서 `암호` - `암호 옵션` - `다음에서 자동 완성 허용`으로 들어간 다음, Pass 앱을 선택하면 다른 패스워드 관리자 앱처럼 Pass를 사용할 수 있다.
 
 Pass 앱은 아이폰에 저장된 git repository나 다름없으므로, 휴대폰에서 패스워드를 수정하는 것도 가능하다.
-
-## 브라우저 확장
-
-### Chrome plugin: browserpass
-
-[browserpass / browserpass-extension](https://github.com/browserpass/browserpass-extension )
-
-#### 단축키
-
-browserpass의 기본 단축키는 `Command + Shift + L`이다.
-
-BitWarden 크롬 브라우저 플러그인과 단축키가 겹치므로 둘 다 사용하려면 둘 중 하나의 단축키를 변경해야 한다. (BitWarden의 사용성이 더 편리하긴 하다)
-
-단축키는 [chrome://extensions/shortcuts]( chrome://extensions/shortcuts )에서 설정할 수 있다.
 
 ## 주석
 
