@@ -3,7 +3,7 @@ layout  : wiki
 title   : pass
 summary : gpg로 작동하는 패스워드 관리 도구
 date    : 2023-03-28 23:24:21 +0900
-updated : 2023-06-17 18:00:15 +0900
+updated : 2023-06-18 09:47:17 +0900
 tag     : 
 resource: 31/3E64C6-3BC9-4D30-8679-320FAD6F5848
 toc     : true
@@ -19,10 +19,47 @@ latex   : false
 
 ## Examples
 
+### CLI
+
 ```bash
  # install
 brew install pass
+
+ # man 페이지
+man pass
+
+ # 내용 보기(아이디, 패스워드, URL 등)
+pass show login/nid.naver.com
+
+ # grep (아이디, URL 등을 검색)
+pass grep johngrib
 ```
+
+#### 새로운 패스워드 추가
+
+`pass insert` 명령을 사용한다. `-m` 옵션을 주면 패스워드 뿐 아니라 추가정보를 `key: value` 형태로 여러 줄로 입력할 수 있다.
+
+다음 예제에서는 `login/nid.naver.com`에 대한 로그인 정보로 다음과 같이 작성한다.
+모두 작성한 다음 `Ctrl+D`[^eof]를 누르면 입력을 마치고 저장된다.
+
+```bash
+$ pass insert -m login/nid.naver.com
+Enter contents of nid.naver.com and press Ctrl+D when finished:
+
+123456
+Username: myid
+URL: nid.naver.com/*
+Comment: 네이버 로그인
+```
+
+- pass 식별자: `login/nid.naver.com`
+- 패스워드: `123456`
+- 추가정보
+    - `Username`: `myid`
+    - `URL`: `nid.naver.com/*`
+    - `Comment`: `네이버 로그인`
+
+추가정보는 자율형식이니 원하는대로 입력하면 된다.
 
 ## 튜토리얼
 
@@ -186,4 +223,4 @@ BitWarden 크롬 브라우저 플러그인과 단축키가 겹치므로 둘 다 
 ## 주석
 
 [^fake-gpg-id]: 당연히 이 아이디는 가짜 값이다.
-
+[^eof]: Ctrl + D 키는 EOF 문자를 생산한다.
