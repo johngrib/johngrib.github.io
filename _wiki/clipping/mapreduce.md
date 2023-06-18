@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-17 10:08:33 +0900
+updated : 2023-06-18 12:39:33 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -628,6 +628,41 @@ This ordering guarantee makes it easy to generate a sorted output file per parti
 
 조합 함수
 
+>
+In some cases, there is significant repetition in the intermediate keys produced by each map task, and the userspecified Reduce function is commutative and associative.
+A good example of this is the word counting example in Section 2.1.
+Since word frequencies tend to follow a Zipf distribution, each map task will produce hundreds or thousands of records of the form `<the, 1>`.
+All of these counts will be sent over the network to a single reduce task and then added together by the Reduce function to produce one number.
+We allow the user to specify an optional Combiner function that does partial merging of this data before it is sent over the network.
+>
+The Combiner function is executed on each machine that performs a map task.
+Typically the same code is used to implement both the combiner and the reduce functions.
+The only difference between a reduce function and a combiner function is how the MapReduce library handles the output of the function.
+The output of a reduce function is written to the final output file.
+The output of a combiner function is written to an intermediate file that will be sent to a reduce task.
+>
+Partial combining significantly speeds up certain classes of MapReduce operations.
+Appendix A contains an example that uses a combiner.
+
+어떤 경우에는, 각각의 map 작업에서 생성되는 중간 key들에 중복이 많이 발생하면서 사용자가 교환법칙과 결합법칙을 만족하는 Reduce 함수를 지정하는 상황이 있습니다.
+2.1절의 단어 카운팅 예제가 이에 해당하는 사례라 할 수 있습니다.
+단어 빈도는 일반적으로 [[/jargon/zipf-s-law]]{Zipf 분포}를 따르므로 각 map 작업은 `<the, 1>` 형태의 수백, 수천 개의 레코드를 생성합니다.
+이러한 모든 카운트는 네트워크를 통해 하나의 reduce 작업으로 전송되며, Reduce 함수를 통해 합산되어 하나의 숫자가 됩니다.
+이런 경우, 네트워크를 통해 전송되기 전의 데이터를 부분적으로 병합하는 선택적인 combiner 함수를 사용자가 지정할 수 있습니다.
+
+combiner 함수는 map 작업을 수행하는 각 머신에서 실행됩니다.
+일반적으로 combiner 함수와 reduce 함수의 구현에는 똑같은 코드가 사용됩니다.
+reduce 함수와 combiner 함수의 차이점은 MapReduce 라이브러리가 함수의 출력을 어떻게 처리하는지 뿐입니다.
+reduce 함수의 출력은 최종 출력 파일에 쓰여지는 반면, combiner 함수의 출력은 reduce 작업으로 전송될 중간 파일에 쓰여지는 것입니다.
+
+부분적인 조합은 MapReduce 작업의 특정 유형을 매우 빠르게 만들어 줄 수 있습니다.
+부록 A에 combiner를 사용하는 예제가 포함되어 있습니다.
+
+#### 4.4 Input and Output Types
+
+입력과 출력의 유형
+
 6쪽.
+
 
 
