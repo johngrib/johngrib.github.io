@@ -3,7 +3,7 @@ layout  : wiki
 title   : 최대공약수와 최소공배수
 summary : Greatest Common Divisor, Least Common Multiple
 date    : 2018-10-26 11:33:33 +0900
-updated : 2019-12-07 08:02:22 +0900
+updated : 2023-06-19 23:12:18 +0900
 tag     : math
 resource: 35/2A6CEB-C165-4FFF-BC09-60F89F659BFA
 toc     : true
@@ -83,7 +83,7 @@ $$d \vert a$$ 이고, $$ d \vert b $$라고 가정하자.
 
 그러므로 $$ gcd(a,b) = gcd(b,r) $$.
 
-## 유클리드 알고리즘
+## 유클리드 알고리즘 {#euclidean-algorithm}
 
 **The Euclidean Algorithm**
 
@@ -156,7 +156,7 @@ function wolfram() {
 </script>
 {% endraw %}
 
-## 베주의 정리와 베주의 항등식
+## 베주의 정리와 베주의 항등식 {#bezout}
 
 **Bézout's theorem**
 

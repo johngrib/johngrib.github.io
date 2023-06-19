@@ -3,7 +3,7 @@ layout  : wiki
 title   : 선형합동
 summary : Linear Congruences
 date    : 2019-02-24 00:13:22 +0900
-updated : 2023-05-06 23:28:30 +0900
+updated : 2023-06-19 23:13:02 +0900
 tag     : math
 resource: 50/811BD2-C81F-4A3E-8059-9426A6399845
 toc     : true
@@ -53,7 +53,7 @@ that is an inverse of $$a$$ modulo $$m$$ and every other inverse of $$a$$ modulo
 
 #### 예제 1
 
-> [베주의 계수](/wiki/gcd/#베주의-정리와-베주의-항등식)를 찾는 방법으로, 3 modulo 7 의 역을 찾아라.
+> [[/math/gcd#bezout]]{베주의 계수}를 찾는 방법으로, 3 modulo 7 의 역을 찾아라.
 
 $$ \bar{a} \times \color{blue}{3} = 1 \ (\bmod 7) $$
 
@@ -70,7 +70,7 @@ $$ \bar{a} \times \color{blue}{3} = 1 \ (\bmod 7) $$
 
 $$ \bar{a} \times 101 = 1 \ (\bmod 4620)$$
 
-먼저 [유클리드 호제법](/wiki/gcd/#유클리드-알고리즘)을 사용해 $$ gcd(101, 4620) $$을 찾자.
+먼저 [[/math/gcd#euclidean-algorithm]]{유클리드 호제법}을 사용해 $$ gcd(101, 4620) $$을 찾자.
 
 $$
 \begin{align}
@@ -698,6 +698,6 @@ $$ \{ \color{red}3,7,8,6,1,2,0,4,5, \color{red}3, 7,8,6,... \} $$
 
 ## 함께 읽기
 
-* [[/study/rosen-discrete-math-7/modular]]{모듈러 연산(나머지 연산)}
-* [[/gcd]]{최대공약수와 최소공배수}
+* [[/study/rosen-discrete-math-7/modular]]
+* [[/math/gcd]]
 

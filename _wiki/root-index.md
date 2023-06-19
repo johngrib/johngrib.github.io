@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-06-15 21:56:34 +0900
+updated : 2023-06-19 23:08:35 +0900
 regenerate: true
 ---
 * TOC
@@ -166,6 +166,7 @@ regenerate: true
 ## [[/math]]
 
 * [[/math/binomial-theorem]]
+* [[/math/gcd]]
 * [[/math/two-n-base-converting]]
 
 * [[/Bayes-theorem]]
@@ -173,7 +174,6 @@ regenerate: true
 * [[/Cromwell-s-rule]]
 * [[/Fermat-s-little-theorem]]
 * [[/fibonacci]]
-* [[/gcd]]
 * [[/graph]]
 * [[/halting-problem]]
 * [[/log]]
