@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-18 12:39:33 +0900
+updated : 2023-06-19 21:41:50 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -662,7 +662,37 @@ reduce 함수의 출력은 최종 출력 파일에 쓰여지는 반면, combiner
 
 입력과 출력의 유형
 
-6쪽.
+The MapReduce library provides support for reading input data in several different formats.
+For example, “text” mode input treats each line as a key/value pair: the key is the offset in the file and the value is the contents of the line.
+Another common supported format stores a sequence of key/value pairs sorted by key.
+Each input type implementation knows how to split itself into meaningful ranges for processing as separate map tasks (e.g. text mode’s range splitting ensures that range splits occur only at line boundaries).
+Users can add support for a new input type by providing an implementation of a simple reader interface, though most users just use one of a small number of predefined input types.
+
+MapReduce 라이브러리는 여러가지 다양한 포맷의 입력 데이터를 읽을 수 있습니다.
+예를 들어, "text"모드 입력은 각 라인을 key/value 쌍으로 취급합니다.
+이렇게 읽는 경우 key는 파일의 offset이 되고, value는 각 라인의 내용이 됩니다.
+MapReduce 라이브러리가 지원하는 또다른 일반적인 포맷은 key를 기준으로 정렬된 key/value 쌍의 시퀀스를 저장하는 포맷입니다.
+각각의 입력 타입 구현에는 별도의 map 작업으로 처리할 수 있도록 의미있는 범위로 나누는 방법이 포함되어 있습니다.
+(예: text 모드의 범위 쪼개기는 범위 분할이 라인 경계에서만 발생하도록 보장합니다.)
+사용자는 간단한 reader 인터페이스 구현을 제공하는 방식으로 새로운 입력 타입에 대한 지원을 추가할 수 있지만, 대부분의 사용자들은 미리 정의된 몇 개의 입력 타입들 중 하나를 사용하곤 합니다.
+
+>
+A reader does not necessarily need to provide data read from a file.
+For example, it is easy to define a reader that reads records from a database, or from data structures mapped in memory.
+>
+In a similar fashion, we support a set of output types for producing data in different formats and it is easy for user code to add support for new output types.
+
+reader가 꼭 파일을 통해서만 데이터를 읽어야 하는 것은 아닙니다.
+예를 들어, 데이터베이스나 인메모리에 매핑된 자료구조에서 레코드를 읽는 reader를 정의하는 것은 쉬운 일입니다.
+
+이와 비슷한 방식으로, 다양한 포맷의 데이터를 생성하기 위한 출력 타입 집합을 지원합니다.
+그리고 사용자 코드를 통해 새로운 출력 타입을 추가하는 것도 쉽습니다.
+
+#### 4.5 Side-effects
+
+부작용
+
+7쪽.
 
 
 
