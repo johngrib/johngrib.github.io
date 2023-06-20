@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-19 21:41:50 +0900
+updated : 2023-06-20 22:12:24 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -690,7 +690,28 @@ reader가 꼭 파일을 통해서만 데이터를 읽어야 하는 것은 아닙
 
 #### 4.5 Side-effects
 
-부작용
+부수 효과
+
+>
+In some cases, users of MapReduce have found it convenient to produce auxiliary files as additional outputs from their map and/or reduce operators.
+We rely on the application writer to make such side-effects atomic and idempotent.
+Typically the application writes to a temporary file and atomically renames this file once it has been fully generated.
+>
+We do not provide support for atomic two-phase commits of multiple output files produced by a single task.
+Therefore, tasks that produce multiple output files with cross-file consistency requirements should be deterministic.
+This restriction has never been an issue in practice.
+
+MapReduce의 사용자들 중 몇몇은 경우에 따라 map이나 reduce 연산의 추가적인 출력을 통해 부가적인 파일을 생성하는 것이 편리하다는 것을 알게 됐습니다.
+우리는 이러한 부수 효과가 원자성과 멱등성을 갖도록 하는 것은 애플리케이션 작성자에게 의존하기로 했습니다.
+일반적으로 애플리케이션은 기록을 임시 파일에 하고, 임시 파일이 완전히 생성되면 파일 이름을 원자적으로 변경합니다.
+
+단일 작업을 통해 생성된 여러 출력 파일에 대해서는 원자적인 2단계 커밋을 지원하지 않습니다.
+따라서, 여러 출력 파일에 걸친 일관성 요구 사항을 가진 작업은 결정론적인 특징을 갖고 있어야 합니다.
+이런 제약 사항은 실제 활용 상황에서는 문제가 된 적이 없습니다.
+
+#### 4.6 Skipping Bad Records
+
+나쁜 레코드 건너뛰기
 
 7쪽.
 
