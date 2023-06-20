@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-20 22:12:24 +0900
+updated : 2023-06-20 23:31:49 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -662,6 +662,7 @@ reduce 함수의 출력은 최종 출력 파일에 쓰여지는 반면, combiner
 
 입력과 출력의 유형
 
+>
 The MapReduce library provides support for reading input data in several different formats.
 For example, “text” mode input treats each line as a key/value pair: the key is the offset in the file and the value is the contents of the line.
 Another common supported format stores a sequence of key/value pairs sorted by key.
