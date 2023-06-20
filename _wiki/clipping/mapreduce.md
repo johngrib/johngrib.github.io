@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-20 23:31:49 +0900
+updated : 2023-06-20 23:47:51 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -713,6 +713,34 @@ MapReduce의 사용자들 중 몇몇은 경우에 따라 map이나 reduce 연산
 #### 4.6 Skipping Bad Records
 
 나쁜 레코드 건너뛰기
+
+>
+Sometimes there are bugs in user code that cause the Map or Reduce functions to crash deterministically on certain records.
+Such bugs prevent a MapReduce operation from completing.
+The usual course of action is to fix the bug, but sometimes this is not feasible; perhaps the bug is in a third-party library for which source code is unavailable.
+Also, sometimes it is acceptable to ignore a few records, for example when doing statistical analysis on a large data set.
+We provide an optional mode of execution where the MapReduce library detects which records cause deterministic crashes and skips these records in order to make forward progress.
+
+사용자 코드로 제공된 Map이나 Reduce 함수에 버그가 있어서 특정 레코드에 대해 결정론적으로 작업이 실패하는 경우가 있습니다.
+이런 버그 때문에 MapReduce 작업이 완료되지 못할 수 있습니다.
+이 문제에 대한 일반적인 조치는 버그를 수정하는 것이지만, 소스코드가 제공되지 않는 서드 파티 라이브러리에 버그가 있는 경우라면 이런 조치를 취할 수 없습니다.
+또한, 대용량 데이터셋에 대한 통계 분석을 수행하는 경우와 같이 몇몇 레코드를 무시하는 것이 필요한 경우도 있습니다.
+우리는 MapReduce 라이브러리가 어떤 레코드가 결정론적인 실패를 유발하는지 감지하고, 이런 레코드를 건너뛰어서 전진할 수 있도록 선택적 실행 모드를 제공합니다.
+
+>
+Each worker process installs a signal handler that catches segmentation violations and bus errors.
+Before invoking a user Map or Reduce operation, the MapReduce library stores the sequence number of the argument in a global variable.
+If the user code generates a signal, the signal handler sends a “last gasp” UDP packet that contains the sequence number to the MapReduce master.
+When the master has seen more than one failure on a particular record, it indicates that the record should be skipped when it issues the next re-execution of the corresponding Map or Reduce task.
+
+각각의 worker 프로세스는 세그멘테이션 위반과 버스 에러를 잡아내는 시그널 핸들러를 설치합니다.
+사용자 Map이나 Reduce 연산을 호출하기 전에, MapReduce 라이브러리는 인자의 시퀀스 번호를 전역 변수에 저장합니다.
+만약 사용자 코드가 시그널을 생성한다면, 시그널 핸들러는 시퀀스 번호를 포함하는 "마지막 호흡" UDP 패킷을 MapReduce 마스터에게 전송합니다.
+만약 마스터가 특정 레코드에 대해 하나 이상의 실패를 발견했다면, 이는 해당 레코드가 다음 Map이나 Reduce 작업을 재실행할 때 건너뛰어져야 한다는 것을 의미합니다.
+
+#### 4.7 Local Execution
+
+로컬 실행
 
 7쪽.
 
