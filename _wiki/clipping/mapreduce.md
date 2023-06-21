@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-20 23:47:51 +0900
+updated : 2023-06-21 21:43:14 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -741,6 +741,22 @@ When the master has seen more than one failure on a particular record, it indica
 #### 4.7 Local Execution
 
 로컬 실행
+
+>
+Debugging problems in Map or Reduce functions can be tricky, since the actual computation happens in a distributed system, often on several thousand machines, with work assignment decisions made dynamically by the master.
+To help facilitate debugging, profiling, and small-scale testing, we have developed an alternative implementation of the MapReduce library that sequentially executes all of the work for a MapReduce operation on the local machine.
+Controls are provided to the user so that the computation can be limited to particular map tasks.
+Users invoke their program with a special flag and can then easily use any debugging or testing tools they find useful (e.g. gdb).
+
+Map이나 Reduce 함수를 디버깅하는 것은 까다로운 일입니다.
+실제 계산이 수천대의 머신으로 분산된 시스템에서 이루어지는 상황에서, 마스터가 동적으로 작업 할당을 하기 때문입니다.
+디버깅, 프로파일링, 소규모의 테스팅을 용이하게 하기 위해, 우리는 로컬 머신에서 모든 작업을 순차적으로 실행하는 방식의 MapReduce 대체 구현체를 개발했습니다.
+특정 map 작업에 대해서만 계산을 제한할 수 있도록 사용자에게 컨트롤이 제공되는 것이 특징입니다.
+사용자는 특수한 플래그를 사용하여 프로그램을 호출하고, 그 후에는 디버깅이나 테스팅에 적합한 도구를 간편하게 사용할 수 있습니다. (예: gdb)
+
+#### 4.8 Status Information
+
+상태 정보
 
 7쪽.
 
