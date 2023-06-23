@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-22 22:09:55 +0900
+updated : 2023-06-23 18:30:49 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -781,7 +781,62 @@ master는 내부적으로 HTTP 서버를 가동하며, 사람이 알아볼 수 �
 
 카운터
 
-7쪽.
+>
+The MapReduce library provides a counter facility to count occurrences of various events.
+For example, user code may want to count total number of words processed or the number of German documents indexed, etc.
+
+MapReduce 라이브러리는 다양한 이벤트의 발생 횟수를 세는 카운터 기능을 제공합니다.
+예를 들어 사용자 코드는 처리된 단어의 총 개수라던가, 인덱싱된 독일어 문서의 개수 등을 세는 것이 필요할 수도 있습니다.
+
+>
+To use this facility, user code creates a named counter object and then increments the counter appropriately in the Map and/or Reduce function.
+For example:
+
+이 기능을 사용하려면 사용자 코드는 카운터 객체를 생성한 다음, Map이나 Reduce 함수에서 적절하게 카운터를 증가시키면 됩니다.
+예를 들자면 다음과 같습니다.
+
+```
+Counter* uppercase;
+uppercase = GetCounter("uppercase");
+
+map(String name, String contents):
+  for each word w in contents:
+    if (IsCapitalized(w)):
+      uppercase->Increment();
+    EmitIntermediate(w, "1");
+```
+
+>
+The counter values from individual worker machines are periodically propagated to the master (piggybacked on the ping response).
+The master aggregates the counter values from successful map and reduce tasks and returns them to the user code when the MapReduce operation is completed.
+The current counter values are also displayed on the master status page so that a human can watch the progress of the live computation.
+When aggregating counter values, the master eliminates the effects of duplicate executions of the same map or reduce task to avoid double counting.
+(Duplicate executions can arise from our use of backup tasks and from re-execution of tasks due to failures.)
+
+각 worker 머신에서 집계한 카운터 값은 주기적으로 master로 전달됩니다(ping 응답에 함께 전달).
+master는 성공한 map과 reduce 작업의 카운터 값을 집계하고, MapReduce 작업이 완료되면 집계한 값을 사용자 코드로 리턴합니다.
+이 대, 현재의 카운터 값은 master 상태 페이지에서도 표시되므로, 사람이 실시간으로 계산의 진행 상황을 확인할 수 있습니다.
+카운터 값을 집계할 때, master는 동일한 map이나 reduce 작업의 중복 실행 효과를 제거하여 중복 계산을 방지합니다.
+(백업 작업이나, 실패로 인한 재실행 때문에 중복 실행이 발생할 수 있습니다.)
+
+>
+Some counter values are automatically maintained by the MapReduce library, such as the number of input key/value pairs processed and the number of output key/value pairs produced.
+
+MapReduce 라이브러리에 의해 자동으로 관리되는 카운터 종류도 몇 가지 있습니다.
+예를 들어 처리된 입력 키/값 쌍의 개수나, 생성된 출력 키/값 쌍의 개수 등이 이에 해당합니다.
+
+>
+Users have found the counter facility useful for sanity checking the behavior of MapReduce operations.
+For example, in some MapReduce operations, the user code may want to ensure that the number of output pairs produced exactly equals the number of input pairs processed, or that the fraction of German documents processed is within some tolerable fraction of the total number of documents processed.
+
+사용자들은 MapReduce 작업의 동작을 검증하는 용도로도 카운터 기능이 유용하다고 생각하게 됐습니다.
+예를 들어, 어떤 MapReduce 작업에서는 사용자 코드가 생성된 출력 쌍의 개수가 정확히 입력 쌍의 개수와 같은지를 확인하거나, 처리된 독일어 문서의 비율이 처리된 전체 문서의 비율로 보면 어느 정도인지를 확인하고 싶을 수 있습니다.
+
+### 5 Performance
+
+성능
+
+8쪽.
 
 
 
