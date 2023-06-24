@@ -3,7 +3,7 @@ layout  : wiki
 title   : 회문
 summary : Palindrome
 date    : 2023-06-24 19:46:56 +0900
-updated : 2023-06-24 20:04:32 +0900
+updated : 2023-06-24 23:06:59 +0900
 tag     : 
 resource: A5/850662-962A-4711-9FE9-B249C8806AB5
 toc     : true
@@ -18,7 +18,23 @@ latex   : false
 {:style="max-width:450px"}
 [^brain-meme]
 
-## bash
+## Examples
+
+### Clojure
+
+```clojure
+(defn palindrome? [s]
+  (= (seq s) (reverse s)))
+
+(comment
+  (palindrome? "raceca")
+  (palindrome? "madam")
+  (palindrome? "소주만병만주소")
+  ;;
+  )
+```
+
+### bash
 
 ```
 $ read -p "Enter a string: " str; reversedStr=$(echo "$str" | rev); [ "$str" == "$reversedStr" ] && echo "Palindrome" || echo "Not Palindrome"
@@ -27,7 +43,7 @@ Enter a string: 111
 Palindrome
 ```
 
-## perl one-line
+### perl one-line
 
 ```
 $ perl -ne 'chomp; $rev = reverse $_; print($_ eq $rev ? "Palindrome" : "Not Palindrome"); print("\n");'
