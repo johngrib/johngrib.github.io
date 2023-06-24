@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-23 18:30:49 +0900
+updated : 2023-06-24 12:31:39 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -835,6 +835,25 @@ For example, in some MapReduce operations, the user code may want to ensure that
 ### 5 Performance
 
 성능
+
+>
+In this section we measure the performance of MapReduce on two computations running on a large cluster of machines.
+One computation searches through approximately one terabyte of data looking for a particular pattern.
+The other computation sorts approximately one terabyte of data.
+
+이번 섹션에서 우리는 대규모 머신 클러스터에서 실행되는 두 가지 계산에 대한 MapReduce의 성능을 측정합니다.
+첫 번째 계산은 약 1TB의 데이터에서 특정 패턴을 검색해 찾는 것이고, 두 번째 계산은 약 1TB의 데이터를 정렬하는 것입니다.
+
+>
+These two programs are representative of a large subset of the real programs written by users of MapReduce – one class of programs shuffles data from one representation to another, and another class extracts a small amount of interesting data from a large data set.
+
+이 두 계산 프로그램은 MapReduce 사용자들이 실제로 작성하는 프로그램들의 대부분을 대표한다고 볼 수 있습니다.
+하나는 데이터의 표현 방식을 다른 표현으로 바꾸는 작업을 하고,
+다른 하나는 대용량 데이터 세트에서 흥미로운 데이터를 추출하는 것입니다.
+
+#### 5.1 Cluster Configuration
+
+클러스터 구성
 
 8쪽.
 
