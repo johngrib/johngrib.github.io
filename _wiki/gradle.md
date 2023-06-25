@@ -3,7 +3,7 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2023-06-25 18:32:23 +0900
+updated : 2023-06-25 18:33:33 +0900
 tag     : gradle tool
 resource: 09/DC229C-F689-45B3-ABD1-23A4C247C76A
 toc     : true
@@ -120,6 +120,12 @@ SpringBoot를 사용한다면 다음과 같이 액티브 프로파일을 설정�
 ```
 $ SPRING_PROFILES_ACTIVE=local2 gradle bootrun
 $ SPRING_PROFILES_ACTIVE=local2 ./gradlew bootrun     # gradlew 사용
+```
+
+물론 커맨드라인으로도 가능하다.
+
+```bash
+./gradlew bootRun -Dspring.profiles.active=local2
 ```
 
 ## 팁 모음
