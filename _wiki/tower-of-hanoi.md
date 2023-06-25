@@ -3,12 +3,12 @@ layout  : wiki
 title   : 하노이의 탑 (The Tower of Hanoi)
 summary : 
 date    : 2019-12-16 21:24:41 +0900
-updated : 2023-02-02 22:27:58 +0900
+updated : 2023-06-25 21:51:29 +0900
 tag     : math
 resource: 3E/82CF77-2097-4A3F-84CA-9ED0B5136607
 toc     : true
 public  : true
-parent  : [[algorithm]]
+parent  : [[/algorithm]]
 latex   : true
 ---
 * TOC
@@ -39,6 +39,8 @@ n 개의 원반을 옮기는 방법은 다음과 같이 생각하면 심플하�
 
 이 방법은 재귀를 사용하면 1~4 번 과정을 말로 설명한 것과 유사한 형태의 코드를 작성할 수 있다.
 
+### Golang
+
 ```go
 func hanoi(source, destination, temp string, n int) {
     if n <= 0 {
@@ -52,6 +54,35 @@ func hanoi(source, destination, temp string, n int) {
     hanoi(temp, destination, source, n-1)
 }
 ```
+
+### Clojure
+
+```clojure
+(defn hanoi
+  [source, destination, temp, n]
+  (when (> n 0)
+    (hanoi source temp destination (dec n))
+    (println n " 원반을 " source "에서 " destination " 로 옮깁니다.")
+    (hanoi temp destination source (dec n))))
+
+(comment
+  ;; A의 모든 원반3개를 B로 옮긴다. 옮길 때 C를 보조 기둥으로 사용한다.
+  (hanoi "A" "B" "C" 3)
+
+  ;; 출력 결과
+  "
+  1  원반을  A 에서  B  로 옮깁니다.
+  2  원반을  A 에서  C  로 옮깁니다.
+  1  원반을  B 에서  C  로 옮깁니다.
+  3  원반을  A 에서  B  로 옮깁니다.
+  1  원반을  C 에서  A  로 옮깁니다.
+  2  원반을  C 에서  B  로 옮깁니다.
+  1  원반을  A 에서  B  로 옮깁니다."
+  ;;
+  )
+```
+
+### Gray Code
 
 [[/algorithm/gray-code]]는 하노이의 탑 솔루션이기도 하다.
 
@@ -105,6 +136,22 @@ def T(n):
     if n == 0:
         return 0
     return 2*T(n-1) + 1
+```
+
+clojure로는 다음과 같다.
+
+```clojure
+(defn T [n]
+  (if (zero? n)
+    0
+    (-> (dec n) T (* 2) inc)))
+
+(comment
+  (T 0) ;; => 0
+  (T 1) ;; => 1
+  (T 6) ;; => 63
+  ;;
+  )
 ```
 
 ### 점화식의 해를 구하자
