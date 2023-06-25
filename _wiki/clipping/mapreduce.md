@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-25 15:50:37 +0900
+updated : 2023-06-25 16:05:17 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -877,6 +877,33 @@ The programs were executed on a weekend afternoon, when the CPUs, disks, and net
 
 grep
 
+>
+The grep program scans through 10<sup>10</sup> 100-byte records, searching for a relatively rare three-character pattern (the pattern occurs in 92,337 records).
+The input is split into approximately 64MB pieces (M = 15000), and the entire output is placed in one file (R = 1).
+>
+Figure 2 shows the progress of the computation over time.
+The Y-axis shows the rate at which the input data is scanned.
+The rate gradually picks up as more machines are assigned to this MapReduce computation, and peaks at over 30 GB/s when 1764 workers have been assigned.
+As the map tasks finish, the rate starts dropping and hits zero about 80 seconds into the computation.
+The entire computation takes approximately 150 seconds from start to finish.
+This includes about a minute of startup overhead.
+The overhead is due to the propagation of the program to all worker machines, and delays interacting with GFS to open the set of 1000 input files and to get the information needed for the locality optimization.
+>
+![figure 2]( /resource/CA/CDB27E-8CD8-4A10-A135-9B772E2B2752/figure2.png )
+
+grep 프로그램은 100byte로 이루어진 레코드 10<sup>10</sup>개를 스캔하여, 드물게 나타나는 세 글자로 이루어진 패턴을 찾습니다(총 92,337개의 레코드에서 이 패턴을 찾아야 합니다).
+입력은 약 64MB 크기의 조각으로 쪼개지며(M = 15000), 전체 출력은 하나의 파일로 저장됩니다(R = 1).
+
+Figure 2는 시간에 따른 계산 진행 상황을 보여줍니다.
+Y축은 입력 데이터의 스캔 속도를 보여줍니다.
+입력 데이터의 스캔 속도는 더 많은 머신이 MapReduce 계산에 할당되면서 점차 늘어나고, 1764개의 worker가 할당되었을 때 30GB/s 이상이 되어 최고치를 찍습니다.
+map 작업이 끝나면 속도는 다시 떨어지며, 계산이 시작된 후 80초가 지났을 때 0이 됩니다.
+전체 계산은 시작부터 끝까지 약 150초가 소요되며, 여기에는 약 1분 정도의 시작 오버헤드가 포함됩니다.
+오버헤드는 프로그램이 모든 worker 머신에 전파되는 데 필요한 시간과, 1000개의 입력 파일을 열고 로컬리티 최적화를 위해 필요한 정보를 GFS로부터 가져오는 데 필요한 시간 때문에 발생합니다.
+
+#### 5.3 Sort
+
+sort
 
 8쪽.
 
