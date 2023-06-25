@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-24 12:31:39 +0900
+updated : 2023-06-25 15:50:37 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -854,6 +854,29 @@ These two programs are representative of a large subset of the real programs wri
 #### 5.1 Cluster Configuration
 
 클러스터 구성
+
+>
+All of the programs were executed on a cluster that consisted of approximately 1800 machines.
+Each machine had two 2GHz Intel Xeon processors with Hyper-Threading enabled, 4GB of memory, two 160GB IDE disks, and a gigabit Ethernet link.
+The machines were arranged in a two-level tree-shaped switched network with approximately 100-200 Gbps of aggregate band-width available at the root.
+All of the machines were in the same hosting facility and therefore the round-trip time between any pair of machines was less than a millisecond.
+
+모든 프로그램은 약 1800대의 머신으로 구성된 클러스터에서 실행되었습니다.
+각 머신은 2GHz Intel Xeon 프로세서 2개를 장착하고 있으며, Hyper-Threading이 활성화되어 있고, 4GB의 메모리, 160GB의 IDE 디스크 2개, 그리고 기가비트 이더넷 링크를 가지고 있습니다.
+머신들은 2레벨 트리 구조의 스위치 네트워크에 배치되었으며, 해당 네트워크는 루트 기준으로 약 100-200Gbps의 대역폭을 갖추고 있습니다.
+모든 머신은 동일한 호스팅 시설에 있었기 때문에, 모든 두 머신 간의 왕복 시간은 1ms 미만이었습니다.
+
+>
+Out of the 4GB of memory, approximately 1-1.5GB was reserved by other tasks running on the cluster.
+The programs were executed on a weekend afternoon, when the CPUs, disks, and network were mostly idle.
+
+4GB의 메모리 중 약 1-1.5GB는 클러스터에서 실행되는 다른 작업들을 위해 예약되어 있습니다.
+프로그램들은 CPU, 디스크, 네트워크가 대부분 유휴 상태인 주말 오후에 실행되었습니다.
+
+#### 5.2 Grep
+
+grep
+
 
 8쪽.
 
