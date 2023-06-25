@@ -3,12 +3,12 @@ layout  : wiki
 title   : Gradle
 summary : Gradle Build Tool
 date    : 2017-12-03 10:40:55 +0900
-updated : 2022-12-31 14:56:27 +0900
+updated : 2023-06-25 18:32:23 +0900
 tag     : gradle tool
 resource: 09/DC229C-F689-45B3-ABD1-23A4C247C76A
 toc     : true
 public  : true
-parent  : [[tools]]
+parent  : [[/tools]]
 latex   : false
 ---
 * TOC
@@ -26,32 +26,6 @@ latex   : false
 따라서 조건 분기나 반복 기능을 구현하려면 앤트와 메이븐에서 구조를 바꿔서 직접 해당 기능을 만들어야 한다.
 반면 그레이들의 DSL은 그루비로 구축되어 있어서 그루비가 제공하는 언어 기능을 그대로 이용할 수 있다.
 게다가 그루비는 자바 클래스를 직접 호출할 수 있으므로 빌드 스크립트에서 자바 유틸리티도 쉽게 사용할 수 있다.[^desc]
-
-## 사용 방법/팁 모음
-
-### 호환되는 언어 버전을 알고 싶다면
-
-다음 문서를 보면 된다.
-
-<https://docs.gradle.org/current/userguide/compatibility.html >
-
-### 의존 라이브러리 단축 표기법
-
-다음과 같이 `dependencies`가 정의되어 있다고 하자. 잘 보면 세미콜론(`:`)이 구분자로 사용되고 있는데, 이는 단축 표기법을 사용해 생략한 것이다.
-
-```groovy
-dependencies {
-  compile 'org.slf4j:slf4j-api:1.7.5'
-}
-```
-
-단축 표기법을 사용하기 싫다면 다음과 같이 하면 된다.
-
-```groovy
-dependencies {
-  compile group:'org.slf4j', name:'slf4j-api', version: '1.7.5'
-}
-```
 
 ## 명령
 
@@ -146,6 +120,32 @@ SpringBoot를 사용한다면 다음과 같이 액티브 프로파일을 설정�
 ```
 $ SPRING_PROFILES_ACTIVE=local2 gradle bootrun
 $ SPRING_PROFILES_ACTIVE=local2 ./gradlew bootrun     # gradlew 사용
+```
+
+## 팁 모음
+
+### 호환되는 언어 버전을 알고 싶다면
+
+다음 문서를 보면 된다.
+
+<https://docs.gradle.org/current/userguide/compatibility.html >
+
+### 의존 라이브러리 단축 표기법
+
+다음과 같이 `dependencies`가 정의되어 있다고 하자. 잘 보면 세미콜론(`:`)이 구분자로 사용되고 있는데, 이는 단축 표기법을 사용해 생략한 것이다.
+
+```groovy
+dependencies {
+  compile 'org.slf4j:slf4j-api:1.7.5'
+}
+```
+
+단축 표기법을 사용하기 싫다면 다음과 같이 하면 된다.
+
+```groovy
+dependencies {
+  compile group:'org.slf4j', name:'slf4j-api', version: '1.7.5'
+}
 ```
 
 ## 문제 해결 경험
