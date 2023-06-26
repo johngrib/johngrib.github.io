@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-25 16:05:17 +0900
+updated : 2023-06-26 21:52:12 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -905,7 +905,106 @@ map 작업이 끝나면 속도는 다시 떨어지며, 계산이 시작된 후 8
 
 sort
 
-8쪽.
+>
+The sort program sorts 10<sup>10</sup> 100-byte records (approximately 1 terabyte of data).
+This program is modeled after the TeraSort benchmark [10].
+
+sort 프로그램은 100byte로 이루어진 레코드 10<sup>10</sup>개(약 1TB의 데이터)를 정렬합니다.
+이 프로그램은 TeraSort 벤치마크[10]를 참고해 만든 것입니다.
+
+>
+The sorting program consists of less than 50 lines of user code.
+A three-line Map function extracts a 10-byte sorting key from a text line and emits the key and the original text line as the intermediate key/value pair.
+We used a built-in Identity function as the Reduce operator.
+This functions passes the intermediate key/value pair unchanged as the output key/value pair.
+The final sorted output is written to a set of 2-way replicated GFS files (i.e., 2 terabytes are written as the output of the program).
+
+이 sort 프로그램은 50줄 미만의 사용자 코드로 이루어져 있습니다.
+3줄짜리 Map 함수가 텍스트 한 줄에서 10byte의 정렬 키를 추출하고, 추출한 키와 해당 텍스트 라인을 중간 키/값 쌍으로 출력하는 방식입니다.
+우리는 Reduce 연산자로 빌트인 Identity 함수를 선택해 사용했습니다.
+Identity 함수는 넘겨받은 중간 키/값 쌍을 변경 없이 그대로 출력 키/값 쌍으로 전달하는 것입니다.
+최종 정렬된 결과는 2-way로 복제된 GFS 파일들에 쓰여집니다(즉, 2TB가 프로그램의 출력 기록으로 사용됩니다).
+
+>
+As before, the input data is split into 64MB pieces (M = 15000).
+We partition the sorted output into 4000 files (R = 4000).
+The partitioning function uses the initial bytes of the key to segregate it into one of R pieces.
+
+이전과 마찬가지로 입력 데이터는 64MB 크기의 조각으로 나눠집니다(M = 15000).
+그리고 정렬된 출력 결과는 4000개의 파일로 분할됩니다(R = 4000).
+파티셔닝 함수는 key의 초기 바이트를 기준으로 해당 키를 R개의 조각 중 하나로 분배합니다.
+
+>
+Our partitioning function for this benchmark has built-in knowledge of the distribution of keys.
+In a general sorting program, we would add a pre-pass MapReduce operation that would collect a sample of the keys and use the distribution of the sampled keys to compute split-points for the final sorting pass.
+
+이 벤치마크에 사용된 우리의 파티셔닝 함수는 key의 분포에 대한 정보를 내장하고 있습니다.
+일반적인 정렬 프로그램에서는, 키 샘플을 수집하는 사전 패스 MapReduce 작업을 추가합니다.
+이는 샘플 키의 분포를 참고하여 최종 정렬 단계의 분할 지점을 계산하기 위해서입니다.
+
+>
+Figure 3 (a) shows the progress of a normal execution of the sort program.
+The top-left graph shows the rate at which input is read.
+The rate peaks at about 13 GB/s and dies off fairly quickly since all map tasks finish before 200 seconds have elapsed.
+Note that the input rate is less than for grep.
+This is because the sort map tasks spend about half their time and I/O bandwidth writing intermediate output to their local disks.
+The corresponding intermediate output for grep had negligible size.
+
+Figure 3 (a)는 sort 프로그램이 정상적으로 실행되는 과정을 보여줍니다.
+왼쪽 열 상단의 그래프는 입력이 읽히는 속도를 보여줍니다.
+이 속도는 약 13GB/s에서 최고치를 찍고나서 200초 이내에 모든 Map 작업이 완료되기 때문에 상당히 빠르게 감소합니다.
+grep과 비교했을 때 입력 속도가 더 낮다는 점에 주목해야 합니다.
+이는 sort Map 작업이 절반 정도의 시간과 I/O 대역폭을 사용하여 중간 결과를 로컬 디스크에 기록하기 때문입니다.
+반면, grep의 경우 중간 출력의 크기가 무시할 만큼 작았습니다.
+
+![figure 3]( /resource/CA/CDB27E-8CD8-4A10-A135-9B772E2B2752/figure3.png )
+
+>
+The middle-left graph shows the rate at which data is sent over the network from the map tasks to the reduce tasks.
+This shuffling starts as soon as the first map task completes.
+The first hump in the graph is for the first batch of approximately 1700 reduce tasks (the entire MapReduce was assigned about 1700 machines, and each machine executes at most one reduce task at a time).
+Roughly 300 seconds into the computation, some of these first batch of reduce tasks finish and we start shuffling data for the remaining reduce tasks.
+All of the shuffling is done about 600 seconds into the computation.
+
+왼쪽 열 중간에 있는 그래프는 Map 작업에서 Reduce 작업으로 데이터가 네트워크를 통해 전송되는 속도를 보여줍니다.
+이 셔플링은 첫 번째 Map 작업이 완료되자마자 시작됩니다.
+그래프에서 처음 나타나는 봉우리 모양은 약 1700개의 Reduce 작업의 첫 번째 배치를 나타냅니다(전체 MapReduce는 약 1700대의 머신에 할당되었고, 각 머신은 한 번에 최대 하나의 Reduce 작업을 실행합니다).
+계산이 시작된 지 약 300초가 지났을 때, 이 첫 번째 배치의 Reduce 작업 중 일부가 완료되고, 그 다음에 남은 Reduce 작업에 대한 데이터 셔플링이 시작됩니다.
+모든 셔플링은 계산 시작으로부터 약 600초 후에 완료됩니다.
+
+>
+The bottom-left graph shows the rate at which sorted data is written to the final output files by the reduce tasks.
+There is a delay between the end of the first shuffling period and the start of the writing period because the machines are busy sorting the intermediate data.
+The writes continue at a rate of about 2-4 GB/s for a while.
+All of the writes finish about 850 seconds into the computation.
+Including startup overhead, the entire computation takes 891 seconds.
+This is similar to the current best reported result of 1057 seconds for the TeraSort benchmark [18].
+
+왼쪽 열 아래의 그래프는 reduce 작업으로 정렬된 데이터가 최종 출력 파일에 기록되는 속도를 보여줍니다.
+머신들이 중간 데이터를 정렬하느라 바쁘기 때문에, 첫 번째 셔플링 기간이 끝나고 나서 쓰기가 시작될 때까지 지연 시간이 좀 발생하게 됩니다.
+쓰기는 약 2-4GB/s의 속도로 계속되다가, 계산 시작으로부터 약 850초가 지난 후에 모든 쓰기가 완료됩니다.
+시작 오버헤드를 포함하면 전체 계산은 891초가 걸립니다.
+이는 TeraSort 벤치마크의 현재 최고 기록인 1057초와 비슷한 결과입니다.
+
+>
+A few things to note: the input rate is higher than the shuffle rate and the output rate because of our locality optimization – most data is read from a local disk and bypasses our relatively bandwidth constrained network.
+The shuffle rate is higher than the output rate because the output phase writes two copies of the sorted data (we make two replicas of the output for reliability and availability reasons).
+We write two replicas because that is the mechanism for reliability and availability provided by our underlying file system.
+Network bandwidth requirements for writing data would be reduced if the underlying file system used erasure coding [14] rather than replication.
+
+다음의 몇 가지 사항에 유의해야 합니다:
+
+로컬 최적화로 인해 입력 속도가 셔플 속도와 출력 속도보다 높습니다.
+대부분의 데이터를 로컬 디스크에서 읽기 때문에 상대적으로 대역폭이 제한되는 네트워크를 우회하게 됩니다.
+셔플 속도가 출력 속도보다 높은 이유는 출력 단계에서 정렬된 데이터를 두 개의 복사본으로 기록하기 때문입니다(우리는 신뢰성과 가용성을 위해 출력에 대해 두 개의 사본을 만듭니다).
+두 개의 사본을 만드는 이유는 이 방법이 우리의 기본 파일 시스템이 신뢰성과 가용성을 제공하는 메커니즘이기 때문입니다.
+기본 파일 시스템이 복제가 아니라 삭제 코딩[14]을 사용한다면 데이터를 기록하기 위한 네트워크 대역폭 요구 사항이 줄어들 것입니다.
+
+#### 5.4 Effect of Backup Tasks
+
+백업 작업의 영향
+
+10쪽.
 
 
 
