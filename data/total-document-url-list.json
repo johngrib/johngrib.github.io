@@ -182,6 +182,7 @@
  "/wiki/cmd/bind",
  "/wiki/cmd/brew",
  "/wiki/cmd/cal",
+ "/wiki/cmd/chmod",
  "/wiki/cmd/chsh",
  "/wiki/cmd/column",
  "/wiki/cmd/curl",

@@ -13,6 +13,7 @@
   "cmd/bind",
   "cmd/brew",
   "cmd/cal",
+  "cmd/chmod",
   "cmd/chsh",
   "cmd/column",
   "cmd/curl",
