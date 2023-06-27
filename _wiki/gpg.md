@@ -3,7 +3,7 @@ layout  : wiki
 title   : GPG
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2023-06-27 22:53:20 +0900
+updated : 2023-06-27 23:25:30 +0900
 tag     : crypto gnu pgp
 resource: 66/BFEA1D-BCE2-445A-A6AD-64909525CDE2
 toc     : true
@@ -917,9 +917,10 @@ $ killall gpg-agent
 
 ## 함께 읽기
 
+- [INTERNET HALL of FAME - 2012 Inductee Philip Zimmermann]( https://www.internethalloffame.org/inductee/philip-zimmermann/ )
 - [[/clipping/openpgp/history]]
 - [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
-- [INTERNET HALL of FAME - 2012 Inductee Philip Zimmermann]( https://www.internethalloffame.org/inductee/philip-zimmermann/ )
+- [[/crypto/rsa]]
 
 ### 대략적인 역사
 
