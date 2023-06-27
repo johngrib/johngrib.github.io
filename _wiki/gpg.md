@@ -3,7 +3,7 @@ layout  : wiki
 title   : GPG
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2023-06-27 22:43:07 +0900
+updated : 2023-06-27 22:53:20 +0900
 tag     : crypto gnu pgp
 resource: 66/BFEA1D-BCE2-445A-A6AD-64909525CDE2
 toc     : true
@@ -49,6 +49,17 @@ GnuPG : GNU Privacy Guard. GPG 라고도 한다.
 * 비밀 키를 타인에게 복사해주지 마세요.
     * 가족이나 연인에게도 복사해주지 마세요.
 * export한 비밀 키를 모니터로 볼 때, 주위를 살펴 cctv나 비밀 카메라 또는 창문이 없는지 확인하세요.
+
+![xkcd 538]( /resource/66/BFEA1D-BCE2-445A-A6AD-64909525CDE2/security.png )
+[^xkcd-538]
+
+- 암호학 덕후의 상상
+    - 노트북이 암호화되어 있네. 이걸 깨려면 백만달러짜리 클러스터를 돌리는 수 밖에 없겠어.
+    - 으윽! 이건 4096비트 RSA 잖아!
+    - 젠장! 우리의 사악한 계획이 수포로 돌아갔다!
+- 현실
+    - 노트북이 암호화되어 있네. 노트북 주인놈에게 약을 먹이고, 암호를 불 때까지 이 5달러짜리 렌치로 두들겨 패자.
+    - 그러면 되겠네.
 
 ## help
 
@@ -975,4 +986,5 @@ $ killall gpg-agent
 ## 주석
 
 [^sto-1]: <https://stackoverflow.com/a/40066889 >
+[^xkcd-538]: [xkcd.com/538]( https://xkcd.com/538/ )
 
