@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-06-26 23:14:54 +0900
+updated : 2023-06-27 21:43:57 +0900
 regenerate: true
 ---
 * TOC
@@ -106,6 +106,7 @@ regenerate: true
 * [[/clipping/predicting-the-future]]
 * [[/clipping/roy-fielding/rest-paper]]
 * [[/clipping/the-unix-time-sharing-system]]
+* [[/clipping/openpgp/history]]
 
 * [[/Software-Engineering-Code-of-Ethics]]
 * [[/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
