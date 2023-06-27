@@ -4,7 +4,6 @@
  "cmd/pwgen",
  "crypto",
  "crypto/rsa",
- "gpg",
  "jargon/kerckhoffs-principle",
  "sha256sum"
 ]

@@ -3,8 +3,8 @@ layout  : wiki
 title   : Why Do You Need PGP? by Phil Zimmermann
 summary : PGP가 필요한 이유 - 필 짐머만
 date    : 2023-03-09 22:06:47 +0900
-updated : 2023-03-09 23:51:06 +0900
-tag     : 
+updated : 2023-06-27 22:04:25 +0900
+tag     : pgp
 resource: BF/3FF85D-D7C5-4256-AE86-CEC02C0AED02
 toc     : true
 public  : true

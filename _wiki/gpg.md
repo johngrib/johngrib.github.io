@@ -3,8 +3,8 @@ layout  : wiki
 title   : GPG
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2023-06-27 21:37:53 +0900
-tag     : bash encryption gnu command
+updated : 2023-06-27 22:43:07 +0900
+tag     : crypto gnu pgp
 resource: 66/BFEA1D-BCE2-445A-A6AD-64909525CDE2
 toc     : true
 public  : true
@@ -906,7 +906,28 @@ $ killall gpg-agent
 
 ## 함께 읽기
 
+- [[/clipping/openpgp/history]]
 - [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
+- [INTERNET HALL of FAME - 2012 Inductee Philip Zimmermann]( https://www.internethalloffame.org/inductee/philip-zimmermann/ )
+
+### 대략적인 역사
+
+- 1991 - [Phil Zimmermann]( https://www.philzimmermann.com/EN/background/index.html ), PGP(Pretty Good Privacy) 프리웨어 소프트웨어 개발
+- 1993 - 미국 정부, Phil Zimmermann 기소.
+- 1994-08 - [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
+- 1995-06-09 - [PGP: Source Code and Internals (Hardcover)]( https://www.amazon.com/PGP-Internals-Philip-R-Zimmermann/dp/0262240394 ) 책 발간
+- 1996 - [미국 정부, 사건조사 종료. 무혐의.]( https://www.philzimmermann.com/EN/news/PRZ_case_dropped.html )
+- 1997 - Phil Zimmermann, IETF(Internet Engineering Task Force)에 OpenPGP 표준 제안
+    - [RFC 1991 - PGP Message Exchange Formats]( https://datatracker.ietf.org/doc/html/rfc1991 )
+    - [RFC 4880 - OpenPGP Message Format]( https://datatracker.ietf.org/doc/html/rfc4880 ) (2007년)
+- 1997 - Werner Koch, GnuPG(GNU Privacy Guard) 프리웨어 소프트웨어 개발
+- 1999-05 - [미국 법무장관 Janet Reno, 독일 정부에 GPG 같은 오픈소스 암호화 소프트웨어의 수출 제한 요청]( https://archive.nytimes.com/www.nytimes.com/library/tech/99/11/cyber/articles/19encrypt.html )
+- 1999 - [독일 정부, GPG 프로젝트에 보조금 기부]( https://archive.nytimes.com/www.nytimes.com/library/tech/99/11/cyber/articles/19encrypt.html ), GPG4Win 개발.
+- 2015-02-05 - [The World's Email Encryption Software Relies on One Guy, Who is Going Broke](https://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke )
+    - GPG를 혼자 개발하고 유지보수한 Wener Koch의 자금 부족을 알리는 기사
+    - 이 기사가 공개되기 일주일 전 Werner Koch는 [Linux Foundation의 Core Infrastructure Initiative](https://www.coreinfrastructure.org/ )로부터 60,000 달러의 기부금을 받았다.
+    - 기사가 공개된 이후에 다양한 곳으로부터 기부를 받았음.
+
 
 ## Links
 

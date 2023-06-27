@@ -73,7 +73,7 @@
  },
  {
   "name": "bash",
-  "size": 68
+  "size": 67
  },
  {
   "name": "bayes",
@@ -169,7 +169,7 @@
  },
  {
   "name": "command",
-  "size": 73
+  "size": 72
  },
  {
   "name": "command-line",
@@ -201,6 +201,10 @@
  },
  {
   "name": "cpp",
+  "size": 1
+ },
+ {
+  "name": "crypto",
   "size": 1
  },
  {
@@ -273,7 +277,7 @@
  },
  {
   "name": "encryption",
-  "size": 8
+  "size": 7
  },
  {
   "name": "ethics",
@@ -658,6 +662,10 @@
  {
   "name": "perl",
   "size": 1
+ },
+ {
+  "name": "pgp",
+  "size": 2
  },
  {
   "name": "php",
