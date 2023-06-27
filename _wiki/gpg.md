@@ -3,7 +3,7 @@ layout  : wiki
 title   : GPG
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2023-06-27 23:25:30 +0900
+updated : 2023-06-27 23:58:43 +0900
 tag     : crypto gnu pgp
 resource: 66/BFEA1D-BCE2-445A-A6AD-64909525CDE2
 toc     : true
@@ -925,7 +925,7 @@ $ killall gpg-agent
 ### 대략적인 역사
 
 - 1991 - [Phil Zimmermann]( https://www.philzimmermann.com/EN/background/index.html ), PGP(Pretty Good Privacy) 프리웨어 소프트웨어 개발
-- 1993 - 미국 정부, Phil Zimmermann 기소.
+- 1993 - 미국 정부, Phil Zimmermann 기소. (당시 일정 길이 이상의 암호화 도구는 군사 무기로 분류되었기 때문)
 - 1994-08 - [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
 - 1995-06-09 - [PGP: Source Code and Internals (Hardcover)]( https://www.amazon.com/PGP-Internals-Philip-R-Zimmermann/dp/0262240394 ) 책 발간
 - 1996 - [미국 정부, 사건조사 종료. 무혐의.]( https://www.philzimmermann.com/EN/news/PRZ_case_dropped.html )
@@ -940,6 +940,16 @@ $ killall gpg-agent
     - 이 기사가 공개되기 일주일 전 Werner Koch는 [Linux Foundation의 Core Infrastructure Initiative](https://www.coreinfrastructure.org/ )로부터 60,000 달러의 기부금을 받았다.
     - 기사가 공개된 이후에 다양한 곳으로부터 기부를 받았음.
 
+![xkcd 504]( /resource/66/BFEA1D-BCE2-445A-A6AD-64909525CDE2/legal_hacks.png )
+[^xkcd-504]
+
+- ISP가 필터링하는 내용이 또 있군.
+- 신이시여 암호화를 내려주셔서 감사합니다.
+- 얼마 전까지만 해도 RSA를 국외로 반출하는 것은 불법이었습니다. 무기로 분류되었기 때문이죠.
+- 그 당시의 암호화 커뮤니티는 방향을 잘못 잡았던 거 같아요. 암호화를 무기로 계속 분류하도록 로비를 했어야 했습니다.
+- 왜요?
+- 정부가 안일해지면 수정헌법 2조[^second-amendment]를 발동할 수 있게 되잖아요.
+- ...으어
 
 ## Links
 
@@ -988,4 +998,6 @@ $ killall gpg-agent
 
 [^sto-1]: <https://stackoverflow.com/a/40066889 >
 [^xkcd-538]: [xkcd.com/538]( https://xkcd.com/538/ )
+[^xkcd-504]: [xkcd.com/504]( https://xkcd.com/504/ )
+[^second-amendment]: [미국 헌법 제2조(Second Amendment)]( https://en.wikipedia.org/wiki/Second_Amendment_to_the_United_States_Constitution#Text ). 1791년 미국 헌법에 첨부된 개정안으로, 미국 시민의 무기 소지 권리를 보장한다. "A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed." 번역하면, "잘 조직된 민병대는 자유로운 주의 안전을 위해 필요하며, 사람들이 무기를 소지하고 사용할 권리는 침해받지 않아야 한다."
 
