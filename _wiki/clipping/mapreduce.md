@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-26 21:52:12 +0900
+updated : 2023-06-28 21:28:25 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -1003,6 +1003,23 @@ Network bandwidth requirements for writing data would be reduced if the underlyi
 #### 5.4 Effect of Backup Tasks
 
 백업 작업의 영향
+
+>
+In Figure 3 (b), we show an execution of the sort program with backup tasks disabled.
+The execution flow is similar to that shown in Figure 3 (a), except that there is a very long tail where hardly any write activity occurs.
+After 960 seconds, all except 5 of the reduce tasks are completed.
+However these last few stragglers don’t finish until 300 seconds later.
+The entire computation takes 1283 seconds, an increase of 44% in elapsed time.
+
+Figure 3 (b)는 백업 작업이 비활성화된 상태에서 sort 프로그램이 실행되는 과정을 보여줍니다.
+실행 흐름은 Figure 3 (a)에 나타난 것과 거의 비슷하나, 꽤 긴 시간동안 쓰기 활동이 거의 없는 상황이 발생한다는 차이점이 있습니다.
+960초가 지나면 reduce 작업 중 5개를 제외한 모든 작업이 완료됩니다.
+하지만 그 이후 이 마지막 몇 개의 작업은 300초가 지난 후에야 완료됩니다.
+전체 계산에 1283초가 소요되며, 이는 경과 시간이 44% 증가한 것을 의미합니다.
+
+#### 5.5 Machine Failures
+
+머신 실패
 
 10쪽.
 
