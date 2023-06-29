@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-06-27 21:43:57 +0900
+updated : 2023-06-29 22:32:09 +0900
 regenerate: true
 ---
 * TOC
@@ -252,6 +252,7 @@ regenerate: true
 
 * [[/architecture/rest]]
 * [[/architecture/rest/richardson-maturity-model]]
+* [[/architecture/hexagonal]]
 
 * [[/conceptual-integrity]]
 * [[/keeping-options-open]]
