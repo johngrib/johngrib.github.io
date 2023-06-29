@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-28 21:28:25 +0900
+updated : 2023-06-29 21:23:42 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -1020,6 +1020,25 @@ Figure 3 (b)는 백업 작업이 비활성화된 상태에서 sort 프로그램�
 #### 5.5 Machine Failures
 
 머신 실패
+
+>
+In Figure 3 (c), we show an execution of the sort program where we intentionally killed 200 out of 1746 worker processes several minutes into the computation.
+The underlying cluster scheduler immediately restarted new worker processes on these machines (since only the processes were killed, the machines were still functioning properly).
+
+Figure 3 (c)는 sort 프로그램의 실행을 보여줍니다.
+이 실행에서는 계산이 시작된 지 몇 분 후에 1746개의 worker 프로세스 중 200개를 의도적으로 종료시켰습니다.
+기본 클러스터 스케줄러는 이 머신들에 대해 즉시 새로운 worker 프로세스를 재시작합니다(프로세스만 종료되었기 때문에 머신은 여전히 정상적으로 작동하고 있었습니다).
+
+>
+The worker deaths show up as a negative input rate since some previously completed map work disappears (since the corresponding map workers were killed) and needs to be redone.
+The re-execution of this map work happens relatively quickly.
+The entire computation finishes in 933 seconds including startup overhead (just an increase of 5% over the normal execution time).
+
+worker 프로세스의 종료로 인해 이전에 완료된 일부 map 작업이 유실되어(map worker들이 kill됐기 때문) 다시 수행되어야 하기 때문에, 입력 속도가 마이너스로 표시됩니다.
+이 map 작업의 재실행은 비교적 빠르게 이루어집니다.
+시작 오버헤드를 포함하면 전체 계산은 933초만에 완료되며, 이는 일반적인 실행 시간보다 5%만 증가한 것입니다.
+
+### 6 Experience
 
 10쪽.
 
