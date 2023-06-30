@@ -65,6 +65,7 @@
   "cmd/uname",
   "cmd/xxd",
   "cmd/yes",
+  "cmd/zip",
   "csplit",
   "ctags",
   "cut",
