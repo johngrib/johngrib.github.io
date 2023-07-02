@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-06-29 21:23:42 +0900
+updated : 2023-07-02 11:32:27 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -1040,7 +1040,51 @@ worker 프로세스의 종료로 인해 이전에 완료된 일부 map 작업이
 
 ### 6 Experience
 
+>
+We wrote the first version of the MapReduce library in February of 2003, and made significant enhancements to it in August of 2003, including the locality optimization, dynamic load balancing of task execution across worker machines, etc.
+Since that time, we have been pleasantly surprised at how broadly applicable the MapReduce library has been for the kinds of problems we work on.
+It has been used across a wide range of domains within Google, including:
+
+우리는 2003년 2월에 MapReduce 라이브러리의 첫 번째 버전을 작성했습니다.
+그리고 2003년 8월에는 로컬 최적화, worker 머신들 간 작업 실행의 동적 로드 밸런싱 등 라이브러리를 크게 개선했습니다.
+그 후, 우리는 MapReduce 라이브러리가 우리가 다루는 문제들에 대해 얼마나 광범위하게 적용될 수 있는지에 대해 놀라움을 느끼게 됐습니다.
+이 라이브러리는 Google의 다양한 도메인에서 활용되었습니다.
+
+>
+- large-scale machine learning problems,
+- clustering problems for the Google News and Froogle products,
+- extraction of data used to produce reports of popular queries (e.g. Google Zeitgeist),
+- extraction of properties of web pages for new experiments and products (e.g. extraction of geographical locations from a large corpus of web pages for localized search), and
+- large-scale graph computations.
+
+- 대규모의 머신 러닝 문제,
+- Google 뉴스와 Froogle 제품의 클러스터링 문제,
+- 인기 검색어에 대한 보고서를 생성하기 위해 사용되는 데이터 추출하기(예: Google Zeitgeist),
+- 새로운 실험과 제품을 위한 웹 페이지의 속성 추출하기(예: 지역화된 검색을 위한 대량의 웹 페이지 코퍼스에서 지리적 위치 추출),
+- 대규모의 그래프 계산
+
+>
+Figure 4 shows the significant growth in the number of separate MapReduce programs checked into our primary source code management system over time, from 0 in early 2003 to almost 900 separate instances as of late September 2004.
+MapReduce has been so successful because it makes it possible to write a simple program and run it efficiently on a thousand machines in the course of half an hour, greatly speeding up the development and prototyping cycle.
+Furthermore, it allows programmers who have no experience with distributed and/or parallel systems to exploit large amounts of resources easily.
+
+Figure 4는 주요 소스 코드 관리 시스템에 체크인된 별도의 MapReduce 프로그램의 수의 변화를 보여줍니다.
+MapReduce 프로그램은 2003년 초에는 0개였지만 시간이 지남에 따라 크게 증가하여 2004년 9월 말에는 거의 900개에 달하게 되었습니다.
+MapReduce는 꽤나 성공적이었는데, 간단한 프로그램을 작성하면 30분 동안 1000개의 머신에서 효율적으로 실행할 수 있어, 개발 및 프로토타이핑 주기를 크게 단축시킬 수 있었기 때문입니다.
+또한 분산 및 병렬 시스템에 대한 경험이 없는 프로그래머들이 쉽게 많은 리소스를 활용할 수 있도록 해주었습니다.
+
+![figure 4]( /resource/CA/CDB27E-8CD8-4A10-A135-9B772E2B2752/figure4.png )
+
+>
+At the end of each job, the MapReduce library logs statistics about the computational resources used by the job.
+In Table 1, we show some statistics for a subset of MapReduce jobs run at Google in August 2004.
+
+각 작업이 끝날 때마다 MapReduce 라이브러리는 작업에서 사용한 계산 리소스에 대한 통계를 기록합니다.
+Table 1은 2004년 8월에 Google에서 실행된 MapReduce 작업에 대한 통계를 보여줍니다.
+
+![table 1]( /resource/CA/CDB27E-8CD8-4A10-A135-9B772E2B2752/table1.png )
+
+#### 6.1 Large-Scale Indexing
+
 10쪽.
-
-
 
