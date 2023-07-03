@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-07-02 11:32:27 +0900
+updated : 2023-07-03 23:12:22 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -1086,5 +1086,35 @@ Table 1은 2004년 8월에 Google에서 실행된 MapReduce 작업에 대한 통
 
 #### 6.1 Large-Scale Indexing
 
-10쪽.
+대규모 인덱싱
+
+>
+One of our most significant uses of MapReduce to date has been a complete rewrite of the production indexing system that produces the data structures used for the Google web search service.
+The indexing system takes as input a large set of documents that have been retrieved by our crawling system, stored as a set of GFS files.
+The raw contents for these documents are more than 20 terabytes of data.
+The indexing process runs as a sequence of five to ten MapReduce operations.
+Using MapReduce (instead of the ad-hoc distributed passes in the prior version of the indexing system) has provided several benefits:
+
+Google 웹 검색 서비스에 사용되는 데이터 구조를 생성하는 프로덕션 인덱싱 시스템을 완전히 재개발하는 것은 지금까지 MapReduce를 사용한 사례들 중 가장 중요한 것이라 할 수 있습니다.
+인덱싱 시스템은 크롤링 시스템에 의해 검색된 대량의 문서들을 입력으로 받아 GFS 파일의 집합으로 저장합니다.
+이러한 문서들의 원시 컨텐츠의 용량은 20TB 이상의 데이터에 달합니다.
+인덱싱 프로세스는 5개에서 10개의 MapReduce 작업으로 구성됩니다.
+인덱싱 시스템의 이전 버전에서 사용된 ad-hoc 분산 패스 대신 MapReduce를 사용하면 다음과 같은 이점이 있습니다.
+
+>
+- The indexing code is simpler, smaller, and easier to understand, because the code that deals with fault tolerance, distribution and parallelization is hidden within the MapReduce library. For example, the size of one phase of the computation dropped from approximately 3800 lines of C++ code to approximately 700 lines when expressed using MapReduce.
+>
+- The performance of the MapReduce library is good enough that we can keep conceptually unrelated computations separate, instead of mixing them together to avoid extra passes over the data. This makes it easy to change the indexing process. For example, one change that took a few months to make in our old indexing system took only a few days to implement in the new system.
+>
+- The indexing process has become much easier to operate, because most of the problems caused by machine failures, slow machines, and networking hiccups are dealt with automatically by the MapReduce library without operator intervention. Furthermore, it is easy to improve the performance of the indexing process by adding new machines to the indexing cluster.
+
+- 내결함성을 보장하고 분산처리 및 병렬화를 처리하는 코드가 MapReduce 라이브러리 내부에 숨겨져 있기 때문에, 인덱싱 코드가 더 간단하고 작아서 이해하기 쉽습니다. 예를 들어, 특정 단계의 계산에서 3800줄의 C++ 코드가 MapReduce를 사용하여 표현하면 약 700줄로 줄어들었습니다.
+- MapReduce 라이브러리의 성능이 충분히 좋기 때문에, 데이터를 여러 번 읽는 것을 피하게 하려고 개념적으로 관련이 없는 계산을 잡다하게 섞어서 사용하는 것을 하지 않아도 됩니다. 이로 인해 인덱싱 프로세스를 쉽게 변경할 수 있습니다. 예를 들어, 이전 인덱싱 시스템에서 몇 달이 걸렸던 변경 작업이 새 시스템에서는 며칠 만에 구현할 수 있었습니다.
+- 머신 장애, 느린 머신, 네트워킹 딸꾹질(간헐적 장애)로 인해 발생하는 대부분의 문제가 운영자가 개입하지 않아도 MapReduce 라이브러리가 알아서 자동으로 처리하기 때문에 인덱싱 프로세스를 훨씬 더 쉽게 운영할 수 있게 됐습니다. 또한, 인덱싱 클러스터에 새로운 머신을 추가해서 인덱싱 프로세스의 성능을 쉽게 개선할 수 있습니다.
+
+### 7 Related Work
+
+관련된 작업
+
+11쪽.
 
