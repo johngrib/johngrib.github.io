@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : 다리 통증에 대한 기록
+title   : 2022년 6월부터 시작된 다리 통증에 대한 기록
 summary : 
 date    : 2023-07-02 15:44:10 +0900
-updated : 2023-07-02 18:00:31 +0900
+updated : 2023-07-04 20:48:39 +0900
 tag     : health
 resource: 7D/D5BCC9-F2E2-4A55-8DBC-361AE6B25155
 toc     : true
