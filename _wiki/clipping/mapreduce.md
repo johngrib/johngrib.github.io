@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-07-03 23:12:22 +0900
+updated : 2023-07-04 22:30:19 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -1116,5 +1116,105 @@ Google 웹 검색 서비스에 사용되는 데이터 구조를 생성하는 프
 
 관련된 작업
 
-11쪽.
+>
+Many systems have provided restricted programming models and used the restrictions to parallelize the computation automatically.
+For example, an associative function can be computed over all prefixes of an N element array in log N time on N processors using parallel prefix computations [6, 9, 13].
+MapReduce can be considered a simplification and distillation of some of these models based on our experience with large real-world computations.
+More significantly, we provide a fault-tolerant implementation that scales to thousands of processors.
+In contrast, most of the parallel processing systems have only been implemented on smaller scales and leave the details of handling machine failures to the programmer.
 
+많은 시스템들이 제한된 프로그래밍 모델을 제공하고, 이러한 제한을 사용하여 계산을 자동으로 병렬화하곤 합니다.
+예를 들어, 결합성을 갖는 함수는 N개의 프로세서를 사용하여 N개의 원소를 갖는 배열의 모든 접두사를 log N 시간에 계산할 수 있습니다 [6, 9, 13].
+MapReduce는 대규모의 실제 계산에 대한 경험을 바탕으로 이러한 모델 중 일부를 단순화하고 정리한 것으로 볼 수 있습니다.
+더 중요한 것은 수천 개의 프로세서로 확장 가능한 내결함성 구현을 제공한다는 것입니다.
+
+반면에 대부분의 병렬 처리 시스템은 작은 규모에서만 구현되며, 머신 장애를 처리하는 세부 사항은 프로그래머에게 맡겨두는 경우가 대부분입니다.
+
+>
+Bulk Synchronous Programming [17] and some MPI primitives [11] provide higher-level abstractions that make it easier for programmers to write parallel programs.
+A key difference between these systems and MapReduce is that MapReduce exploits a restricted programming model to parallelize the user program automatically and to provide transparent fault-tolerance.
+
+대량의 동기식 프로그래밍[17]과 몇몇 MPI 프리미티브[11][^what-mpi]는 더 높은 수준의 추상화를 제공하여 프로그래머가 병렬 프로그램을 더 쉽게 작성할 수 있도록 해줍니다.
+이러한 시스템들과 MapReduce의 주요한 차이점을 꼽아 본다면, MapReduce는 제한된 프로그래밍 모델을 활용하여 사용자 프로그램을 자동으로 병렬화하고 투명한 내결함성을 제공한다는 것입니다.
+
+>
+Our locality optimization draws its inspiration from techniques such as active disks [12, 15], where compu- tation is pushed into processing elements that are close to local disks, to reduce the amount of data sent across I/O subsystems or the network.
+We run on commodity processors to which a small number of disks are directly connected instead of running directly on disk controller processors, but the general approach is similar.
+
+우리의 지역 최적화는 active disks[12, 15]와 같은 기술에서 영감을 얻었습니다.
+active disks는 계산을 로컬 디스크에 가까운 처리 요소로 밀어넣어 I/O 서브시스템이나 네트워크를 통해 전송되는 데이터의 양을 줄이는 기술입니다.
+우리는 디스크 컨트롤러 프로세서에서 직접 실행하는 대신, 직접적으로 소수의 디스크들이 연결된 상용 프로세서에서 실행하지만, 일반적인 접근 방식은 유사합니다.
+
+>
+Our backup task mechanism is similar to the eager scheduling mechanism employed in the Charlotte System [3].
+One of the shortcomings of simple eager scheduling is that if a given task causes repeated failures, the entire computation fails to complete.
+We fix some instances of this problem with our mechanism for skipping bad records.
+
+우리의 백업 작업 메커니즘은 Charlotte 시스템[3]에서 사용하는 이른바 eager 스케쥴링 메커니즘과 유사합니다.
+단순한 eager 스케쥴링의 단점 중 하나는 특정한 작업이 계속해서 실패하면 전체 계산이 완료되지 않는다는 것입니다.
+우리는 불량한 레코드를 건너뛰는 메커니즘을 통해 이런 문제를 일부 해결했습니다.
+
+>
+The MapReduce implementation relies on an in-house cluster management system that is responsible for distributing and running user tasks on a large collection of shared machines.
+Though not the focus of this paper, the cluster management system is similar in spirit to other systems such as Condor [16].
+
+MapReduce의 구현은 대규모의 공유된 머신들에서 사용자 작업을 분배하고 실행하는 것을 책임지는 내부 클러스터 관리 시스템에 의존합니다.
+클러스터 관리 시스템은 이 논문의 주제와 거리가 있긴 하지만, Condor[16] 같은 다른 시스템과 정신적으로 유사하다고 할 수 있습니다.
+
+>
+The sorting facility that is a part of the MapReduce library is similar in operation to NOW-Sort [1].
+Source machines (map workers) partition the data to be sorted and send it to one of R reduce workers.
+Each reduce worker sorts its data locally (in memory if possible).
+Of course NOW-Sort does not have the user-definable Map and Reduce functions that make our library widely applicable.
+
+MapReduce 라이브러리의 일부인 정렬 기능은 작동 방식이 NOW-Sort[1]와 유사합니다.
+소스 머신(map worker들)은 정렬할 데이터를 분할해서 R개의 reduce worker 중 하나에게 보냅니다.
+각 reduce worker는 자신의 데이터를 로컬에서(가능하다면 메모리에서) 정렬합니다.
+물론 NOW-Sort에는 MapReduce 라이브러리가 폭넓게 사용되게끔 해주는 사용자 정의 Map과 Reduce 함수가 없습니다.
+
+>
+River [2] provides a programming model where processes communicate with each other by sending data over distributed queues.
+Like MapReduce, the River system tries to provide good average case performance even in the presence of non-uniformities introduced by heterogeneous hardware or system perturbations.
+River achieves this by careful scheduling of disk and network transfers to achieve balanced completion times.
+MapReduce has a different approach.
+By restricting the programming model, the MapReduce framework is able to partition the problem into a large number of fine-grained tasks.
+These tasks are dynamically scheduled on available workers so that faster workers process more tasks.
+The restricted programming model also allows us to schedule redundant executions of tasks near the end of the job which greatly reduces completion time in the presence of non-uniformities (such as slow or stuck workers).
+
+River[2]는 프로세스들이 분산된 큐를 통해 데이터를 전송하는 방식으로 서로 통신하는 프로그래밍 모델을 제공합니다.
+MapReduce와 같이, River 시스템도 이질적인 하드웨어나 시스템의 불안정성으로 발생하는 불균일성이 존재할 때에도 평균적으로 좋은 성능을 제공하려고 합니다.
+River는 디스크와 네트워크 전송을 섬세하게 스케쥴링하여 균형잡힌 완료 시간을 달성해냅니다.
+
+반면 MapReduce는 다른 접근 방식을 사용합니다.
+MapReduce 프레임워크는 프로그래밍 모델을 제한함으로써 문제를 많은 수의 미세한 작업으로 분할할 수 있게 됩니다.
+이러한 작업들은 사용 가능한 worker에 따라 동적으로 스케쥴링되어 더 빠른 worker가 더 많은 작업을 처리하게 합니다.
+또한 제한된 프로그래밍 모델 덕분에 작업 스케쥴링의 마지막 부분에 중복 실행을 예약할 수 있으므로, 불균일성이 존재할 때(느린 worker나 멈춘 worker 등)에도 완료 시간을 크게 단축할 수 있습니다.
+
+>
+BAD-FS [5] has a very different programming model from MapReduce, and unlike MapReduce, is targeted to the execution of jobs across a wide-area network.
+However, there are two fundamental similarities.
+(1) Both systems use redundant execution to recover from data loss caused by failures.
+(2) Both use locality-aware scheduling to reduce the amount of data sent across congested network links.
+
+BAD-FS는 MapReduce와는 매우 다른 프로그래밍 모델을 갖고 있는데, MapReduce와 달리 광대역 네트워크 전반에서 작업을 실행하는 것을 목표로 합니다.
+하지만 두 시스템은 두 가지 근본적인 유사점이 있습니다.
+
+- (1) 두 시스템 모두 장애로 인해 발생한 데이터 손실을 복구하기 위해 중복 실행을 사용합니다.
+- (2) 두 시스템 모두 혼잡한 네트워크 링크를 통해 전송되는 데이터의 양을 줄이기 위해 위치를 고려한 스케쥴링을 사용합니다.
+
+>
+TACC [7] is a system designed to simplify construction of highly-available networked services.
+Like MapReduce, it relies on re-execution as a mechanism for implementing fault-tolerance.
+
+TACC는 고가용성 네트워크 서비스 구축을 단순화하기 위해 설계된 시스템입니다.
+MapReduce와 마찬가지로 재실행을 장애 처리 메커니즘으로 사용합니다.
+
+### 8 Conclusions
+
+결론
+
+12쪽.
+
+## 주석
+
+[^what-mpi]: MPI는 Message-Passing Interface를 의미하며, MPI primitives는 MPI에서 정의하는 기본적인 함수나 연산들을 말한다.
