@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-07-04 22:30:19 +0900
+updated : 2023-07-05 22:16:47 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -1212,6 +1212,44 @@ MapReduce와 마찬가지로 재실행을 장애 처리 메커니즘으로 사�
 ### 8 Conclusions
 
 결론
+
+>
+The MapReduce programming model has been successfully used at Google for many different purposes.
+We attribute this success to several reasons.
+First, the model is easy to use, even for programmers without experience with parallel and distributed systems, since it hides the details of parallelization, fault-tolerance, locality optimization, and load balancing.
+Second, a large variety of problems are easily expressible as MapReduce computations.
+For example, MapReduce is used for the generation of data for Google’s production web search service, for sorting, for data mining, for machine learning, and many other systems.
+Third, we have developed an implementation of MapReduce that scales to large clusters of machines comprising thousands of machines.
+The implementation makes efficient use of these machine resources and therefore is suitable for use on many of the large computational problems encountered at Google.
+
+Google에서는 MapReduce 프로그래밍 모델을 다양한 목적으로 성공적으로 사용하고 있습니다.
+이러한 성공에는 몇 가지 이유가 있습니다.
+
+- 첫째, 사용하기 쉽습니다.
+    - 병렬화, 장애 처리, 로컬 최적화, 부하 분산 등의 세부 사항을 숨기기 때문에 병렬 및 분산 시스템에 대한 경험이 없는 프로그래머도 쉽게 사용할 수 있는 모델입니다.
+- 둘째, 다양한 문제를 MapReduce 계산으로 쉽게 표현할 수 있습니다.
+    - 예를 들어 MapReduce는 Google의 제품 웹 검색 서비스의 데이터 생성, 정렬, 데이터 마이닝, 기계 학습 등에 사용됩니다.
+- 셋째, 우리는 수천 대의 머신으로 구성된 대규모 머신 클러스터로 확장할 수 있는 MapReduce 구현을 개발해냈습니다.
+    - 이 구현은 이러한 머신 리소스를 효율적으로 사용하므로 Google에서 직면하는 많은 대규모 계산 문제에 사용하기에 적합합니다.
+
+>
+We have learned several things from this work.
+First, restricting the programming model makes it easy to parallelize and distribute computations and to make such computations fault-tolerant.
+Second, network bandwidth is a scarce resource.
+A number of optimizations in our system are therefore targeted at reducing the amount of data sent across the network: the locality optimization allows us to read data from local disks, and writing a single copy of the intermediate data to local disk saves network bandwidth.
+Third, redundant execution can be used to reduce the impact of slow machines, and to handle machine failures and data loss.
+
+우리는 MapReduce 작업을 통해 몇 가지 배운 것들이 있습니다.
+
+- 첫째, 프로그래밍 모델을 제한하면 계산을 병렬화하고 분산화하는 등의 계산을 쉽게 만들 수 있고, 이러한 계산이 내결함성을 갖도록 만들 수 있습니다.
+- 둘째, 네트워크 대역폭은 희소한 자원입니다.
+    - 따라서 우리 시스템의 최적화는 네트워크를 통해 전송되는 데이터의 양을 줄이는 데 초점을 맞추고 있습니다. 로컬 최적화를 통해 로컬 디스크에서 데이터를 읽을 수 있고, 중간 데이터의 단일 복사본을 디스크에 쓰는 방식으로 네트워크 대역폭을 절약할 수 있습니다.
+- 셋째, 중복 실행을 활용하면 느린 머신으로 인한 영향을 줄일 수 있으며, 머신 장애나 데이터 손실과 같은 문제도 처리할 수 있습니다.
+
+### Acknowledgments
+
+감사의 말
+
 
 12쪽.
 
