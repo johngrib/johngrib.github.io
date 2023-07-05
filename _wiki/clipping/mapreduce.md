@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-07-05 22:16:47 +0900
+updated : 2023-07-05 22:29:03 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -1250,8 +1250,56 @@ Third, redundant execution can be used to reduce the impact of slow machines, an
 
 감사의 말
 
+>
+Josh Levenberg has been instrumental in revising and extending the user-level MapReduce API with a number of new features based on his experience with using MapReduce and other people’s suggestions for enhancements.
+MapReduce reads its input from and writes its output to the Google File System [8].
+We would like to thank Mohit Aron, Howard Gobioff, Markus Gutschke, David Kramer, Shun-Tak Leung, and Josh Redstone for their work in developing GFS.
+We would also like to thank Percy Liang and Olcan Sercinoglu for their work in developing the cluster management system used by MapReduce.
+Mike Burrows, Wilson Hsieh, Josh Levenberg, Sharon Perl, Rob Pike, and Debby Wallach provided helpful comments on earlier drafts of this paper.
+The anonymous OSDI reviewers, and our shepherd, Eric Brewer, provided many useful suggestions of areas where the paper could be improved. Finally, we thank all the users of MapReduce within Google’s engineering organization for providing helpful feedback, suggestions, and bug reports.
 
-12쪽.
+Josh Levenberg는 MapReduce 사용 경험과 다른 사람들의 개선 제안을 바탕으로 여러 가지 새로운 기능으로 사용자 수준의 MapReduce API를 수정하고 확장하는 데 중요한 역할을 해왔습니다.
+MapReduce는 Google File System[8]에서 입력을 읽고 출력을 씁니다.
+GFS를 개발해 주신 Mohit Aron, Howard Gobioff, Markus Gutschke, David Kramer, Shun-Tak Leung, Josh Redstone에게 감사의 말씀을 전합니다.
+또한 MapReduce에서 사용하는 클러스터 관리 시스템을 개발해 주신 Percy Liang과 Olcan Sercinoglu에게도 감사의 말씀을 전합니다.
+Mike Burrows, Wilson Hsieh, Josh Levenberg, Sharon Perl, Rob Pike, Debby Wallach이 이 논문의 초기 초안에 대해 유용한 의견을 제공해 주셨습니다.
+익명의 OSDI 검토자들과 우리의 양치기인 Eric Brewer는 논문을 개선할 수 있는 유용한 제안을 많이 해주셨습니다.
+마지막으로, 유용한 피드백, 제안, 버그 리포트를 제공해 주신 Google 엔지니어링 조직 내의 모든 MapReduce 사용자에게 감사드립니다.
+
+### References
+
+참고문헌
+
+- [1] Andrea C. Arpaci-Dusseau, Remzi H. Arpaci-Dusseau, David E. Culler, Joseph M. Hellerstein, and David A. Patterson. High-performance sorting on networks of workstations. In Proceedings of the 1997 ACM SIGMOD International Conference on Management of Data, Tucson, Arizona, May 1997.
+- [2] Remzi H. Arpaci-Dusseau, Eric Anderson, Noah Treuhaft, David E. Culler, Joseph M. Hellerstein, David Patterson, and Kathy Yelick. Cluster I/O with River: Making the fast case common. In Proceedings of the Sixth Workshop on Input/Output in Parallel and Distributed Systems (IOPADS ’99), pages 10–22, Atlanta, Georgia, May 1999.
+- [3] Arash Baratloo, Mehmet Karaul, Zvi Kedem, and Peter Wyckoff. Charlotte: Metacomputing on the web. In Proceedings of the 9th International Conference on Parallel and Distributed Computing Systems, 1996.
+- [4] Luiz A. Barroso, Jeffrey Dean, and Urs Hölzle. Web search for a planet: The Google cluster architecture. IEEE Micro, 23(2):22–28, April 2003.
+- [5] John Bent, Douglas Thain, Andrea C.Arpaci-Dusseau, Remzi H. Arpaci-Dusseau, and Miron Livny. Explicit control in a batch-aware distributed file system. In Proceedings of the 1st USENIX Symposium on Networked Systems Design and Implementation NSDI, March 2004.
+- [6] Guy E. Blelloch. Scans as primitive parallel operations. IEEE Transactions on Computers, C-38(11), November 1989.
+- [7] Armando Fox, Steven D. Gribble, Yatin Chawathe, Eric A. Brewer, and Paul Gauthier. Cluster-based scalable network services. In Proceedings of the 16th ACM Symposium on Operating System Principles, pages 78– 91, Saint-Malo, France, 1997.
+- [8] Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung. The Google file system. In 19th Symposium on Operating Systems Principles, pages 29–43, Lake George, New York, 2003.
+- [9] S. Gorlatch. Systematic efficient parallelization of scan and other list homomorphisms. In L. Bouge, P. Fraigniaud, A. Mignotte, and Y. Robert, editors, Euro-Par’96. Parallel Processing, Lecture Notes in Computer Science 1124, pages 401–408. Springer-Verlag, 1996.
+- [10] Jim Gray. Sort benchmark home page. http://research.microsoft.com/barc/SortBenchmark/.
+- [11] William Gropp, Ewing Lusk, and Anthony Skjellum. Using MPI: Portable Parallel Programming with the Message-Passing Interface. MIT Press, Cambridge, MA, 1999.
+- [12] L. Huston, R. Sukthankar, R. Wickremesinghe, M. Satyanarayanan, G. R. Ganger, E. Riedel, and A. Ailamaki. Diamond: A storage architecture for early discard in interactive search. In Proceedings of the 2004 USENIX File and Storage Technologies FAST Conference, April 2004.
+- [13] Richard E. Ladner and Michael J. Fischer. Parallel prefix computation. Journal of the ACM, 27(4):831–838, 1980.
+- [14] Michael O. Rabin. Efficient dispersal of information for security, load balancing and fault tolerance. Journal of the ACM, 36(2):335–348, 1989.
+- [15] Erik Riedel, Christos Faloutsos, Garth A. Gibson, and David Nagle. Active disks for large-scale data processing. IEEE Computer, pages 68–74, June 2001.
+- [16] Douglas Thain, Todd Tannenbaum, and Miron Livny. Distributed computing in practice: The Condor experience. Concurrency and Computation: Practice and Experience, 2004.
+- [17] L. G. Valiant. A bridging model for parallel computation. Communications of the ACM, 33(8):103–111, 1997.
+- [18] Jim Wyllie. Spsort: How to sort a terabyte quickly. http://alme1.almaden.ibm.com/cs/spsort.pdf.
+
+### A Word Frequency
+
+단어 빈도 구하기
+
+>
+This section contains a program that counts the number of occurrences of each unique word in a set of input files specified on the command line.
+
+이 섹션에는 커맨드 라인으로 지정된 입력 파일 집합에서 각 고유한 단어의 발생 횟수를 세는 프로그램이 포함되어 있습니다.
+
+소스 코드 생략.
+
 
 ## 주석
 
