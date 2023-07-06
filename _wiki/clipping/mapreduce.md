@@ -3,7 +3,7 @@ layout  : wiki
 title   : MapReduce - Simplified Data Processing on Large Clusters
 summary : 
 date    : 2023-06-07 22:35:44 +0900
-updated : 2023-07-05 22:29:03 +0900
+updated : 2023-07-06 23:20:14 +0900
 tag     : 
 resource: CA/CDB27E-8CD8-4A10-A135-9B772E2B2752
 toc     : true
@@ -1263,7 +1263,7 @@ MapReduce는 Google File System[8]에서 입력을 읽고 출력을 씁니다.
 GFS를 개발해 주신 Mohit Aron, Howard Gobioff, Markus Gutschke, David Kramer, Shun-Tak Leung, Josh Redstone에게 감사의 말씀을 전합니다.
 또한 MapReduce에서 사용하는 클러스터 관리 시스템을 개발해 주신 Percy Liang과 Olcan Sercinoglu에게도 감사의 말씀을 전합니다.
 Mike Burrows, Wilson Hsieh, Josh Levenberg, Sharon Perl, Rob Pike, Debby Wallach이 이 논문의 초기 초안에 대해 유용한 의견을 제공해 주셨습니다.
-익명의 OSDI 검토자들과 우리의 양치기인 Eric Brewer는 논문을 개선할 수 있는 유용한 제안을 많이 해주셨습니다.
+익명의 OSDI 검토자들과 우리의 논문 지도자(shepherd)인 Eric Brewer는 논문을 개선할 수 있는 유용한 제안을 많이 해주셨습니다.
 마지막으로, 유용한 피드백, 제안, 버그 리포트를 제공해 주신 Google 엔지니어링 조직 내의 모든 MapReduce 사용자에게 감사드립니다.
 
 ### References
