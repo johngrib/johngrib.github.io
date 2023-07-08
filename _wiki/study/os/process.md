@@ -3,7 +3,7 @@ layout  : wiki
 title   : process
 summary : 
 date    : 2023-07-08 23:04:05 +0900
-updated : 2023-07-08 23:36:15 +0900
+updated : 2023-07-09 00:21:54 +0900
 tag     : 
 resource: A2/AED112-D4E0-4FB4-8F37-FFF4950CD9EC
 toc     : true
@@ -19,6 +19,10 @@ latex   : false
 >
 운영체제는 **실행 중인 프로그램**의 개념을 제공하는데, 이를 **프로세스(process)**라 한다.
 [^three-28]
+>
+현재 실행되고 있는 프로그램의 한 인스턴스를 프로세스(process)라고 부른다.
+[^unix-14]
+
 
 <span/>
 
@@ -42,6 +46,14 @@ latex   : false
 - **슈퍼사용자**는 모든 프로세스들을 제어할 수 있다(그 외에도 많은 일들을 할 수 있다). 이 역할은 간헐적으로 맡아야 하며, 보안상의 이유로 조심스럽게 대처해야 한다.
 [^three-49]
 
+## 프로세스 ID, PID {#pid}
+
+>
+UNIX 시스템은 모든 프로세스에 각자 고유한 수치 식별자가 있음을 보장한다.
+그런 식별자를 프로세스 ID라고 부른다.
+프로세스 ID는 항상 음이 아닌 정수이다.
+[^unix-14]
+
 ## 프로세스 생성
 
 - 프로그램 실행을 위해 OS가 하는 작업들
@@ -59,6 +71,7 @@ latex   : false
 
 ## 참고문헌
 
+- UNIX 고급 프로그래밍 [제3판] / 리처드 스티븐스, 스티븐 레이고 공저 / 류광 역 / 퍼스트북 / 인쇄일: 2014년 08월 28일 / 원제: Advanced Programming in the UNIX Environment
 - 운영체제 아주 쉬운 세 가지 이야기 [제2판] / Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-dusseau 공저 / 원유집, 박민규, 이성진 공역 / 홍릉 / 제2판 발행: 2020년 09월 10일 / 원제: Operating Systems: Three Easy Pieces
 
 ## 주석
@@ -67,4 +80,5 @@ latex   : false
 [^three-31]: 운영체제 아주 쉬운 세 가지 이야기. 4.3장. 31쪽.
 [^three-35]: 운영체제 아주 쉬운 세 가지 이야기. 4.5장. 35쪽.
 [^three-49]: 운영체제 아주 쉬운 세 가지 이야기. 5.7장. 49쪽.
+[^unix-14]: UNIX 고급 프로그래밍. 1.6장. 14쪽.
 
