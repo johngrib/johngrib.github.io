@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-07-04 20:49:20 +0900
+updated : 2023-07-08 23:34:53 +0900
 regenerate: true
 ---
 * TOC
@@ -593,7 +593,12 @@ regenerate: true
 * [[/Monty-Hall-problem]]
 * [[/Oliver-s-blood]]
 
+### [[/study/os]]
+
+- [[/study/os/process]]
+
 ### [[/study/three-easy-pieces]]
+
 - [[/study/three-easy-pieces/02-introduction-to-os]]
 
 ## [[/tools]]

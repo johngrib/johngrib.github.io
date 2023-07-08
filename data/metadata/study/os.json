@@ -1,0 +1,12 @@
+{
+ "type": "wiki",
+ "title": "OS",
+ "summary": "",
+ "parent": "study",
+ "url": "/wiki/study/os",
+ "updated": "2023-07-08 23:34:47 +0900",
+ "resource": "21/83F66F-207E-4EA7-AC36-B11A0F2CC5C7",
+ "children": [
+  "study/os/process"
+ ]
+}
