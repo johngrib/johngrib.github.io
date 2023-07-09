@@ -3,8 +3,8 @@ layout  : wiki
 title   : Hints for Computer System Design By Butler W. Lampson
 summary : 컴퓨터 시스템 설계를 위한 힌트
 date    : 2023-04-15 22:56:16 +0900
-updated : 2023-04-22 12:51:20 +0900
-tag     : 
+updated : 2023-07-09 14:37:17 +0900
+tag     : people.butler-lampson
 resource: 9B/E5E527-1F17-40DA-8334-9E5A7D674B75
 toc     : true
 public  : true
@@ -16,7 +16,7 @@ latex   : true
 
 ## 소개
 
-버틀러 램슨의 1983년 7월 논문.
+[[/people/butler-w-lampson]]의 1983년 7월 논문.
 
 '운영체제 아주 쉬운 세 가지 이야기'에서는 램슨의 이 논문에 대해 다음과 같이 소개한다.
 

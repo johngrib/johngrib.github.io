@@ -3,8 +3,8 @@ layout  : wiki
 title   : Butler W. Lampson
 summary : 
 date    : 2023-04-15 23:53:06 +0900
-updated : 2023-04-25 23:40:36 +0900
-tag     : 
+updated : 2023-07-09 14:36:15 +0900
+tag     : people.butler-lampson
 resource: 95/76F6AB-0DCB-4B4E-A89B-C9D4CD3273BF
 toc     : true
 public  : true

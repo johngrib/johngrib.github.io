@@ -3,8 +3,8 @@ layout  : wiki
 title   : 램슨의 법칙 (Lampson's Law)
 summary : 추상화도 단순함도 올바른 선택을 대체할 수 없다
 date    : 2023-04-16 00:05:20 +0900
-updated : 2023-04-16 00:19:19 +0900
-tag     : 
+updated : 2023-07-09 14:37:59 +0900
+tag     : people.butler-lampson
 resource: 0C/BF6B32-CA82-4389-9291-6FA52204F93C
 toc     : true
 public  : true

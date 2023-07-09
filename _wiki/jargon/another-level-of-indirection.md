@@ -3,7 +3,7 @@ layout  : wiki
 title   : 또 다른 수준의 간접층
 summary : Another level of indirection
 date    : 2022-09-09 17:43:57 +0900
-updated : 2023-07-09 14:29:54 +0900
+updated : 2023-07-09 14:32:58 +0900
 tag     : people.butler-lampson
 resource: F5/915B72-C537-4B0E-9807-592DA839EB00
 toc     : true
@@ -19,7 +19,7 @@ All problems in Computer Science can be solved by another level of indirection.
 >
 전산학의 모든 문제는 또 다른 수준의 간접층으로 해결할 수 있다.
 
-- 버틀러 램슨이 했다고 알려져 있지만, 사실은 데이비드 휠러가 한 말이다.
+- [[#people.butler-lampson#]]{버틀러 램슨}이 했다고 알려져 있지만, 사실은 데이비드 휠러가 한 말이다.
 
 ## From: Beautiful Code
 
