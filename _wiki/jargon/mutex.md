@@ -3,7 +3,7 @@ layout  : wiki
 title   : mutex
 summary : 
 date    : 2023-06-14 22:24:19 +0900
-updated : 2023-07-09 19:18:06 +0900
+updated : 2023-07-09 19:31:28 +0900
 tag     : 
 resource: BF/65A2CF-F24A-44CC-AEE3-EAE2D3425CDD
 toc     : true
@@ -13,6 +13,22 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## From: 운영체제 아주 쉬운 세 가지 이야기
+
+>
+쓰레드 간에 상호 배제(mutual exclusion) 기능을 제공하기 때문에 POSIX 라이브러리는 락을 mutex라고 부른다.
+상호 배제는 한 쓰레드가 임계 영역 내에 있다면 이 쓰레드의 동작이 끝날 때까지 다른 쓰레드가 임계 영역에 들어올 수 없도록 제한한다고 해서 얻은 이름이다.
+다음과 같은 POSIX 쓰레드 코드를 만나면 앞에서 언급한 것과 같은 동작을 한다고 이해하면 된다(래퍼를 사용하여 락과 언락 시에 에러를 확인하도록 하였다.)
+>
+> ```c
+> pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+> Pthread_mutex_lock(&lock); // 래퍼. 실패시 exit
+> balance = balance + 1;
+> Pthread_mutex_unlock(&lock);
+> ```
+[^easy-334]
+
 
 ## From: UNIX 고급 프로그래밍
 
@@ -41,8 +57,10 @@ latex   : false
 ## 참고문헌
 
 - UNIX 고급 프로그래밍 [제3판] / 리처드 스티븐스, 스티븐 레이고 공저 / 류광 역 / 퍼스트북 / 인쇄일: 2014년 08월 28일 / 원제: Advanced Programming in the UNIX Environment
+- 운영체제 아주 쉬운 세 가지 이야기 [제2판] / Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-dusseau 공저 / 원유집, 박민규, 이성진 공역 / 홍릉 / 제2판 발행: 2020년 09월 10일 / 원제: Operating Systems: Three Easy Pieces
 
 ## 주석
 
 [^rich-491]: UNIX 고급 프로그래밍. 11.6.1장. 491쪽.
+[^easy-334]: 운영체제 아주 쉬운 세 가지 이야기. 28.2장. 334쪽.
 
