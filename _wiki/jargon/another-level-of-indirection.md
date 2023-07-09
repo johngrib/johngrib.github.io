@@ -3,12 +3,12 @@ layout  : wiki
 title   : 또 다른 수준의 간접층
 summary : Another level of indirection
 date    : 2022-09-09 17:43:57 +0900
-updated : 2023-06-11 11:17:24 +0900
-tag     : 
+updated : 2023-07-09 14:29:54 +0900
+tag     : people.butler-lampson
 resource: F5/915B72-C537-4B0E-9807-592DA839EB00
 toc     : true
 public  : true
-parent  : 
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
