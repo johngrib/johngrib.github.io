@@ -3,7 +3,7 @@ layout  : wiki
 title   : mutex
 summary : 
 date    : 2023-06-14 22:24:19 +0900
-updated : 2023-06-14 22:35:45 +0900
+updated : 2023-07-09 19:18:06 +0900
 tag     : 
 resource: BF/65A2CF-F24A-44CC-AEE3-EAE2D3425CDD
 toc     : true
@@ -30,7 +30,7 @@ latex   : false
 만일 스레드 하나가 자물쇠를 획득하지도 않고 공유 자원에 접근할 수 있게 하면, 다른 모든 스레드가 자물쇠를 획득한 후 공유 자원에 접근한다는 규칙을 지켜도 비일관성이 발생할 수 있다.
 >
 `pthreads` 인터페이스에서 뮤텍스는 `pthread_mutex_t` 형식의 변수로 표현된다.
-뮤텍스 변수를 사용하려면 먼저 그것을 상수 `PTHREAD_MUTEX_INITIALIZER`로 설정하거나(정적으로 할당된 뮤 텍스의 경우에만) `pthread_mutex_init` 함수를 호출해서 초기화해 주어야 한다.
+뮤텍스 변수를 사용하려면 먼저 그것을 상수 `PTHREAD_MUTEX_INITIALIZER`로 설정하거나(정적으로 할당된 뮤텍스의 경우에만) `pthread_mutex_init` 함수를 호출해서 초기화해 주어야 한다.
 뮤텍스를 동적으로 할당하는 경우(이를테면 `malloc`을 호출해서), 메모리를 해제하기 전에 반드시 `pthread_mutex_destory` 함수를 호출해야 한다.
 [^rich-491]
 
