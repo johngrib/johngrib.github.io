@@ -3,12 +3,12 @@ layout  : wiki
 title   : Concurrency 와 Parallel
 summary : 병행과 병렬
 date    : 2021-02-21 23:11:54 +0900
-updated : 2022-06-06 00:49:40 +0900
+updated : 2023-07-09 13:45:58 +0900
 tag     : 
 resource: 67/9C5BE0-0EB7-487C-AFB8-0A10E30FF8EC
 toc     : true
 public  : true
-parent  : [[what]]
+parent  : [[/study/os]]
 latex   : false
 ---
 * TOC

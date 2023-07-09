@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-07-08 23:47:46 +0900
+updated : 2023-07-09 13:45:11 +0900
 regenerate: true
 ---
 * TOC
@@ -597,6 +597,7 @@ regenerate: true
 
 - [[/study/os/process]]
 - [[/study/os/thread]]
+- [[/study/os/concurrency-and-parallel]]
 
 ### [[/study/three-easy-pieces]]
 
@@ -808,7 +809,6 @@ regenerate: true
 * [[/bandwidth]]
 * [[/braille-pattern-chars]]
 * [[/Caesar-cipher]]
-* [[/concurrency-and-parallel]]
 * [[/enterprise-application]]
 * [[/ethereum-white-paper]]
 * [[/fan-out]]
