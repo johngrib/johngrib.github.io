@@ -3,7 +3,7 @@ layout  : wiki
 title   : MariaDB Connector/J
 summary : 
 date    : 2021-06-26 17:43:22 +0900
-updated : 2021-06-26 21:12:28 +0900
+updated : 2023-07-10 22:10:08 +0900
 tag     : mysql
 resource: 1C/CC8411-E647-4CD1-825A-68EEAF2676B1
 toc     : true
@@ -514,11 +514,20 @@ Default: false. Since 2.2.0
 - 사용 가능한 master가 없다면, default connection은 slave가 되고, `Connection.isReadOnly()` 는 `true`를 리턴합니다.
 - 기본값: `false`
 
+## 주의!
+
+### AuroraDB 클러스터에 대한 지원 중단 {#aurora-support-discontinued}
+
+- MariaDB Connector/J 유틸리티 버전 3.0.3부터 <mark>Aurora DB 클러스터</mark>에 대한 지원이 중단된다.
+- [AWS 문서 'Amazon Aurora DB 클러스터에 연결']( https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/Aurora.Connecting.html#Aurora.Connecting.AuroraMySQL.Utilities )에서는 [MySQL용 AWS JDBC 드라이버](https://github.com/mysql/mysql-connector-j )로 이동할 것을 권장하고 있다.
 
 ## 참고문헌
 
 - [About MariaDB Connector/J (mariadb.com)][about-connector]
 - [mariadb-connector-j(github.com)]( https://github.com/mariadb-corporation/mariadb-connector-j )
+- [Amazon Aurora DB 클러스터에 연결 (docs.aws.amazon.com)]( https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/Aurora.Connecting.html#Aurora.Connecting.AuroraMySQL.Utilities )
+    - [English]( https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Connecting.html#Aurora.Connecting.AuroraMySQL.Utilities )
+- [MySQL용 AWS JDBC 드라이버 (github.com)](https://github.com/mysql/mysql-connector-j )
 
 [about-connector]: https://mariadb.com/kb/en/about-mariadb-connector-j/
 [connection-string-regexper]: https://regexper.com/#jdbc%3A%28%3F%3Amysql%7Cmariadb%29%3A%28%3F%3Areplication%3A%7Cloadbalance%3A%7Csequential%3A%7Caurora%3A%29%5C%2F%5C%2F%3ChostDescription%3E%28%3F%3A%2C%3ChostDescription%3E%5C.%5C.%5C.%29%3F%5C%2F%28%3F%3Adatabase%29%28%3F%3A%5C%3F%3Ckey1%3E%3D%3Cvalue1%3E%28%3F%3A%26%3Ckey2%3E%3D%3Cvalue2%3E%29%3F%29%3F
