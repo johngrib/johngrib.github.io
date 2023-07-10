@@ -249,7 +249,7 @@
  },
  {
   "name": "diary",
-  "size": 5
+  "size": 3
  },
  {
   "name": "dijkstra",
@@ -660,6 +660,10 @@
   "size": 4
  },
  {
+  "name": "people.roy-fielding",
+  "size": 5
+ },
+ {
   "name": "performance",
   "size": 4
  },
@@ -965,10 +969,6 @@
  },
  {
   "name": "vrc",
-  "size": 1
- },
- {
-  "name": "web",
   "size": 1
  },
  {

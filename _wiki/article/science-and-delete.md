@@ -3,8 +3,8 @@ layout  : wiki
 title   : 과학적 프로그래밍에 대한 메모
 summary : 2022년 8월 12일 ~ 8월 13일 트위터에 쓴 생각 정리
 date    : 2022-08-13 16:31:23 +0900
-updated : 2023-04-03 22:45:12 +0900
-tag     : 
+updated : 2023-07-10 22:15:06 +0900
+tag     : people.roy-fielding
 resource: 0D/D25C0F-E795-45EE-88C1-2A60773704F9
 toc     : true
 public  : true
@@ -186,7 +186,7 @@ cpan에서 maven을 거쳐 npm까지 이르며 오픈소스 라이브러리를 �
 하지만 파일 하나에 로직 하나가 있다면 그냥 파일을 지우면 된다.
 
 그렇다면 남는 문제는 "지울 파일을 어떻게 찾을 것인가"인데 이건 계층 구조로 파일을 잘 배치해야 하는 문제라고 생각한다.
-이건 처음에 감으로만 느끼고 있었다가 [[/clipping/roy-fielding/rest-paper]]{로이 필딩의 논문을 읽고 구체화하게 됐다}.
+이건 처음에 감으로만 느끼고 있었다가 [[#people.roy-fielding#]]{로이 필딩}의 [[/clipping/roy-fielding/rest-paper]]{논문을 읽고} 구체화하게 됐다.
 그래서 나는 REST가 내게 좋은 영향을 준 스타일이라 생각한다.
 
 정리하자면 다음과 같다.
