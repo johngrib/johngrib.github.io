@@ -3,12 +3,12 @@ layout  : wiki
 title   : make 명령어
 summary : GNU make utility to maintain groups of programs
 date    : 2020-03-29 23:15:11 +0900
-updated : 2021-02-20 16:43:14 +0900
+updated : 2023-07-14 23:24:03 +0900
 tag     : bash command c
 resource: D7/42003E-C34F-49A2-9BA4-10C98F83584D
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
@@ -101,9 +101,9 @@ clean:
 
 ## 참고문헌
 
-- [KER] 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
+- 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
 
 ## 주석
 
-[^KER-5]: [KER] 5장.
+[^KER-5]: 유닉스의 탄생. 5장.
 

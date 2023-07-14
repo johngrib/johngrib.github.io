@@ -709,7 +709,7 @@ regenerate: true
 * [[/gpg]]
 * [[/how-to-escape-cli]]
 * [[/ioreg-cmd]]
-* [[/make-cmd]]
+* [[/cmd/make]]
 * [[/my-bash-cheatsheet]]
 * [[/perl-one-liner]]
 * [[/phpbrew]]

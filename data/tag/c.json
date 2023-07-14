@@ -1,8 +1,8 @@
 [
  "cmd/lldb",
+ "cmd/make",
  "cmd/man",
  "duff-s-device",
  "java/volatile",
- "make-cmd",
  "people/brian-w-kernighan"
 ]
