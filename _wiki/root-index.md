@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-07-09 13:45:11 +0900
+updated : 2023-07-17 22:12:12 +0900
 regenerate: true
 ---
 * TOC
@@ -494,6 +494,7 @@ regenerate: true
 * [[/jargon/telescope-rule]]
 * [[/jargon/two-pizza-team]]
 * [[/jargon/unified-format]]
+* [[/jargon/yagni]]
 * [[/jargon/zero-overhead-principle]]
 * [[/jargon/zipf-s-law]]
 
