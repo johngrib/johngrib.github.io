@@ -3,7 +3,7 @@ layout  : wiki
 title   : man 명령어
 summary : 유닉스 메뉴얼 페이지를 찾아보는 명령
 date    : 2020-09-30 09:38:35 +0900
-updated : 2023-05-27 19:35:29 +0900
+updated : 2023-07-18 22:16:45 +0900
 tag     : bash command c
 resource: 3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA
 toc     : true
@@ -16,16 +16,21 @@ latex   : false
 
 ## Sections
 
-8개의 섹션이 있으며, 명령에 섹션을 옵션으로 줄 수 있다.
+여러 섹션이 있으며, 명령에 섹션을 옵션으로 줄 수 있다.
 
-1. User Commands
-2. System Calls
-3. C Library Functions
-4. Devices and Special Files
-5. File Formats and Conventions
-6. Games et. Al.
-7. Miscellanea(기타)
-8. System Administration tools and Deamons
+다음은 MacOS 터미널에서 `man man`을 입력하면 볼 수 있는 목록이다.
+
+>
+1. General Commands Manual
+2. System Calls Manual
+3. Library Functions Manual
+4. Kernel Interfaces Manual
+5. File Formats Manual
+6. Games Manual
+7. Miscellaneous Information Manual
+8. System Manager's Manual
+9. Kernel Developer's Manual
+
 
 ## Examples
 ### 기본적인 사용법
