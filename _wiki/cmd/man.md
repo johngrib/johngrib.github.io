@@ -3,7 +3,7 @@ layout  : wiki
 title   : man 명령어
 summary : 유닉스 메뉴얼 페이지를 찾아보는 명령
 date    : 2020-09-30 09:38:35 +0900
-updated : 2023-07-18 22:23:01 +0900
+updated : 2023-07-18 22:25:23 +0900
 tag     : bash command c
 resource: 3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA
 toc     : true
@@ -96,6 +96,10 @@ man -K string
 - `y`: 문서 열기
 - `n`: 다음 문서
 - `q`: 검색 종료
+
+### manpath 명령
+
+`manpath` 명령을 사용해 `man` 명령이 검색하는 경로를 출력할 수 있다.
 
 ## man 이것저것
 ### 한번쯤 읽어두면 좋은 man 들
