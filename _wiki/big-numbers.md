@@ -3,7 +3,7 @@ layout  : wiki
 title   : 좀 큰 수
 summary : 
 date    : 2019-07-19 14:42:52 +0900
-updated : 2023-05-27 11:45:22 +0900
+updated : 2023-07-22 18:24:29 +0900
 tag     : 
 resource: 43/F581FC-7003-413B-9BDC-7A8468546F39
 toc     : true
@@ -98,6 +98,12 @@ $$ 45 C 6 = 8,145,060 $$
 64비트 주소 공간은 상상하기 어려울 정도로 엄청나게 크다.
 비유가 도움이 될 것이다.
 32비트 주소 공간을 테니스 코드라고 생각하면 64비트 주소 공간은 유럽만하다(!).[^easy-195]
+
+## 24 자리 - 아보가드로 수
+
+$$ 6.02214076 \times 10^{23} $$
+
+- [Avogadro's number]( https://www.wolframalpha.com/input?i=Avogadro%27s+number+ )
 
 ## 31 자리 - $$2^{100}$$
 
@@ -216,3 +222,4 @@ $$2^{82,589,933}-1$$
 [^boyslife]: [How Many Atoms Are There In The World?]( https://headsup.boyslife.org/many-atoms-world/ )
 [^leslie-100]: 기계학습을 다시 묻다. 5장. 100쪽.
 [^easy-195]: 운영체제 아주 쉬운 세 가지 이야기. 18장. 195쪽.
+
