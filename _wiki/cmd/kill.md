@@ -3,7 +3,7 @@ layout  : wiki
 title   : kill
 summary : terminate or signal a process
 date    : 2023-05-07 00:00:38 +0900
-updated : 2023-06-10 20:12:23 +0900
+updated : 2023-07-24 22:44:46 +0900
 tag     : 
 resource: 90/72958A-66BE-4D3B-87B5-27B03E66207F
 toc     : true
@@ -44,6 +44,28 @@ kill 142
 
 ```bash
 kill -s TERM 142 157
+```
+
+### signal 목록 확인
+
+kill을 섬세하게 사용하려면 [[/study/os/signal]]에 대해 잘 알아둬야 한다.
+
+```bash
+man signal
+```
+
+또는 다음과 같이 `kill` 명령에 `-l` 옵션을 사용하면 된다.
+
+```bash
+$ kill -l
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL
+ 5) SIGTRAP	 6) SIGABRT	 7) SIGEMT	 8) SIGFPE
+ 9) SIGKILL	10) SIGBUS	11) SIGSEGV	12) SIGSYS
+13) SIGPIPE	14) SIGALRM	15) SIGTERM	16) SIGURG
+17) SIGSTOP	18) SIGTSTP	19) SIGCONT	20) SIGCHLD
+21) SIGTTIN	22) SIGTTOU	23) SIGIO	24) SIGXCPU
+25) SIGXFSZ	26) SIGVTALRM	27) SIGPROF	28) SIGWINCH
+29) SIGINFO	30) SIGUSR1	31) SIGUSR2
 ```
 
 ### signal 숫자 값 사용
@@ -119,6 +141,10 @@ lsof -i tcp:3000 | xargs kill
 예를 들어 UNIX 시스템의 일부 가상 메모리 구현들에서 프로세스 ID `2`는 `pagedaemon`이다.
 이 프로세스는 가상 메모리 시스템의 페이징을 지원하는 역할을 담당한다.
 [^richard-282]
+
+## 함께 읽기
+
+- [[/study/os/signal]]
 
 ## 참고문헌
 

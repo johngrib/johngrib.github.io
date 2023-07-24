@@ -3,7 +3,7 @@ layout  : wiki
 title   : signal
 summary : 
 date    : 2023-07-24 22:38:20 +0900
-updated : 2023-07-24 22:39:23 +0900
+updated : 2023-07-24 22:45:00 +0900
 tag     : 
 resource: 15/637D6E-5785-4AC4-8ABB-33D1530B330D
 toc     : true
@@ -34,6 +34,22 @@ latex   : false
 다른 프로세스에게 신호를 보내려면, 해당 사용자가 다른 프로세스(신호를 받는)의 소유자(또는 슈퍼사용자)이어야 한다.
 [^unix-23]
 
+## 시그널 목록
+
+```bash
+man signal
+```
+
+[[/cmd/kill]] 명령을 통해서도 시그널 목록을 확인할 수 있다.
+
+```bash
+kill -l
+```
+
+## 함께 읽기
+
+- [[/cmd/kill]]
+
 ## 참고문헌
 
 - UNIX 고급 프로그래밍 [제3판] / 리처드 스티븐스, 스티븐 레이고 공저 / 류광 역 / 퍼스트북 / 인쇄일: 2014년 08월 28일 / 원제: Advanced Programming in the UNIX Environment
@@ -41,3 +57,4 @@ latex   : false
 ## 주석
 
 [^unix-23]: UNIX 고급 프로그래밍. 1.9장. 23쪽.
+
