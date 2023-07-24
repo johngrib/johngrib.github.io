@@ -3,7 +3,7 @@ layout  : wiki
 title   : kill
 summary : terminate or signal a process
 date    : 2023-05-07 00:00:38 +0900
-updated : 2023-07-24 22:44:46 +0900
+updated : 2023-07-24 23:07:41 +0900
 tag     : 
 resource: 90/72958A-66BE-4D3B-87B5-27B03E66207F
 toc     : true
@@ -120,6 +120,22 @@ $ kill -s TERM 70341
 lsof -i tcp:3000 | xargs kill
 ```
 
+### kill -9 에 대하여 {#kill-9}
+
+>
+시그널 번호가 생략되면 `TERM` 시그널은 캐치, 차단, 무시될 수 있기 때문에 타깃 프로세스가 죽는 것이 보장되지 않는다.
+다음 명령을 사용하면 시그널 9(`KILL`)는 캐치할 수 없기 때문에 프로세스의 죽음이 보장된다.
+>
+> ```bash
+> $ kill -9 pid
+> ```
+>
+정중한 요청이 실패할 경우에만 `kill -9`를 사용하는 게 좋다.
+가끔 프로세스가 꼼짝하지 않는 상태가 돼 `KILL` 조차도 영향력을 행사할 수 없는 경우가 생기기 때문에 '보장'이라는 말에 인용부호를 썼다.
+보통 이런 상황은 사라진 볼륨을 기다리는 것과 같은 일종의 퇴행적인 I/O 베이퍼록<sup>vaporlock</sup> 때문에 발생한다.
+보통 이런 경우 프로세스들을 제거하는 유일한 방법은 재부팅뿐이다.
+[^handbook-191]
+
 ## PID 0, 1
 
 >
@@ -149,8 +165,10 @@ lsof -i tcp:3000 | xargs kill
 ## 참고문헌
 
 - UNIX 고급 프로그래밍 [제3판] / 리처드 스티븐스, 스티븐 레이고 공저 / 류광 역 / 퍼스트북 / 인쇄일: 2014년 08월 28일 / 원제: Advanced Programming in the UNIX Environment
+- 유닉스·리눅스 시스템 관리 핸드북 5/e / 에비 네메스, 가스 스나이더, 트렌트 헤인, 벤 웨일리, 댄 맥킨 저 외 2명 / 에이콘출판사 / 발행: 2022년 01월 03일 / 원제: UNIX and Linux System Administration Handbook, 5th Edition
 
 ## 주석
 
 [^richard-282]: UNIX 고급 프로그래밍. 8.2장. 282쪽.
+[^handbook-191]: 유닉스·리눅스 시스템 관리 핸드북 5/e. 4장. 191쪽.
 
