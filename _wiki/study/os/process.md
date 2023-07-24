@@ -3,7 +3,7 @@ layout  : wiki
 title   : process
 summary : 
 date    : 2023-07-08 23:04:05 +0900
-updated : 2023-07-09 00:30:02 +0900
+updated : 2023-07-24 22:34:58 +0900
 tag     : 
 resource: A2/AED112-D4E0-4FB4-8F37-FFF4950CD9EC
 toc     : true
@@ -51,11 +51,21 @@ latex   : false
 - 각 프로세스는 이름이 있다. 대부분의 시스템에서 이름은 **프로세스 ID(PID)**라는 번호이다.
 [^three-49]
 
+<span/>
+
 >
 UNIX 시스템은 모든 프로세스에 각자 고유한 수치 식별자가 있음을 보장한다.
 그런 식별자를 프로세스 ID라고 부른다.
 프로세스 ID는 항상 음이 아닌 정수이다.
 [^unix-14]
+
+<span/>
+
+>
+커널은 각 프로세스에 하나의 고유한 ID 번호를 배정한다.
+프로세스를 다루는 대부분 명령과 시스템 콜은 작업의 대상을 특정하기 위한 PID를 지정할 것을 요구한다.
+PID는 프로세스가 생성되는 순서대로 배정된다.
+[^handbook-183]
 
 ## 시그널 {#signal}
 
@@ -96,6 +106,7 @@ UNIX 시스템은 모든 프로세스에 각자 고유한 수치 식별자가 �
 
 - UNIX 고급 프로그래밍 [제3판] / 리처드 스티븐스, 스티븐 레이고 공저 / 류광 역 / 퍼스트북 / 인쇄일: 2014년 08월 28일 / 원제: Advanced Programming in the UNIX Environment
 - 운영체제 아주 쉬운 세 가지 이야기 [제2판] / Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-dusseau 공저 / 원유집, 박민규, 이성진 공역 / 홍릉 / 제2판 발행: 2020년 09월 10일 / 원제: Operating Systems: Three Easy Pieces
+- 유닉스·리눅스 시스템 관리 핸드북 5/e / 에비 네메스, 가스 스나이더, 트렌트 헤인, 벤 웨일리, 댄 맥킨 저 외 2명 / 에이콘출판사 / 발행: 2022년 01월 03일 / 원제: UNIX and Linux System Administration Handbook, 5th Edition
 
 ## 주석
 
@@ -105,4 +116,5 @@ UNIX 시스템은 모든 프로세스에 각자 고유한 수치 식별자가 �
 [^three-49]: 운영체제 아주 쉬운 세 가지 이야기. 5.7장. 49쪽.
 [^unix-14]: UNIX 고급 프로그래밍. 1.6장. 14쪽.
 [^unix-23]: UNIX 고급 프로그래밍. 1.9장. 23쪽.
+[^handbook-183]: 유닉스·리눅스 시스템 관리 핸드북. 4장. 183쪽.
 
