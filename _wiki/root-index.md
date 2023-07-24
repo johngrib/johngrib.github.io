@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-07-24 22:38:18 +0900
+updated : 2023-07-24 23:09:05 +0900
 regenerate: true
 ---
 * TOC
@@ -670,6 +670,7 @@ regenerate: true
 * [[/cmd/java_home]]
 * [[/cmd/jq]]
 * [[/cmd/kill]]
+* [[/cmd/killall]]
 * [[/cmd/less]]
 * [[/cmd/lldb]]
 * [[/cmd/lsof]]

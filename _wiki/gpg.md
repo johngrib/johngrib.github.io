@@ -3,7 +3,7 @@ layout  : wiki
 title   : GPG
 summary : GnuPG, the GNU Privacy Guard
 date    : 2018-09-10 14:24:06 +0900
-updated : 2023-06-27 23:58:43 +0900
+updated : 2023-07-24 23:15:46 +0900
 tag     : crypto gnu pgp
 resource: 66/BFEA1D-BCE2-445A-A6AD-64909525CDE2
 toc     : true
@@ -889,7 +889,7 @@ commit에 서명을 하기 시작했다면 github에도 공개키를 등록하�
 
 * `gnupg`를 업데이트 한다.
 * pinentry-mac 을 설치한다.
-* gpg-agent를 kill.
+* gpg-agent를 kill. (아래에서는 [[/cmd/killall]] 사용)
 
 ```sh
 $ brew upgrade gnupg

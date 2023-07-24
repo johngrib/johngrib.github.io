@@ -36,6 +36,7 @@
   "cmd/java_home",
   "cmd/jq",
   "cmd/kill",
+  "cmd/killall",
   "cmd/less",
   "cmd/lldb",
   "cmd/lsof",

@@ -3,7 +3,7 @@ layout  : wiki
 title   : kill
 summary : terminate or signal a process
 date    : 2023-05-07 00:00:38 +0900
-updated : 2023-07-24 23:07:41 +0900
+updated : 2023-07-24 23:14:58 +0900
 tag     : 
 resource: 90/72958A-66BE-4D3B-87B5-27B03E66207F
 toc     : true
@@ -161,6 +161,7 @@ lsof -i tcp:3000 | xargs kill
 ## 함께 읽기
 
 - [[/study/os/signal]]
+- [[/cmd/killall]]
 
 ## 참고문헌
 
