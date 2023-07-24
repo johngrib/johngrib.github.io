@@ -9,6 +9,7 @@
  "children": [
   "study/os/concurrency-and-parallel",
   "study/os/process",
+  "study/os/signal",
   "study/os/thread"
  ]
 }
