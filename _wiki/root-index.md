@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-07-24 23:09:05 +0900
+updated : 2023-07-25 23:58:14 +0900
 regenerate: true
 ---
 * TOC
@@ -334,6 +334,7 @@ regenerate: true
 * [[/java/object-hashcode]]
 * [[/java/object-tostring]]
 * [[/java/optional]]
+* [[/java/remainder-operator]]
 * [[/java/run-time-constant-pool]]
 * [[/java/scripting]]
 * [[/java/stream]]
@@ -352,7 +353,6 @@ regenerate: true
 * [[/java-lambda]]
 * [[/java-modifier-order-with-jls-suggestion]]
 * [[/java-random]]
-* [[/java-remainder-operator]]
 * [[/java10-var]]
 * [[/java8-why-permgen-removed]]
 * [[/jdk13]]

@@ -3,8 +3,8 @@
  "title": "Java 나머지 연산자 % 주의점",
  "summary": "(a / b) * b + ( a % b ) == a",
  "parent": "java",
- "url": "/wiki/java-remainder-operator",
- "updated": "2020-01-12 11:41:32 +0900",
+ "url": "/wiki/java/remainder-operator",
+ "updated": "2023-07-25 23:59:06 +0900",
  "resource": "27/3BBD09-0FB3-4C76-A341-774B29AEFA7C",
  "children": []
 }
