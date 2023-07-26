@@ -3,7 +3,7 @@ layout  : wiki
 title   : zip
 summary : zip은 압축, unzip은 압축 해제
 date    : 2023-06-30 23:42:16 +0900
-updated : 2023-07-26 22:38:51 +0900
+updated : 2023-07-26 23:08:44 +0900
 tag     : 
 resource: A7/A80395-1328-4A7A-AE86-CD7270C17BCF
 toc     : true
@@ -37,6 +37,57 @@ zip test.zip test0.png test1.png test2.png
 ```bash
  # directory를 압축한 directory.zip 파일을 만든다.
 zip -r directory.zip directory
+```
+
+### 압축 풀기
+
+```bash
+ # 현재 경로에 압축 풀기 (각 파일의 경로 보존)
+unzip files.zip
+
+ # 특정 경로에 압축 풀기
+unzip files.zip -d ./directory
+```
+
+`-j`는 압축 파일 내의 파일들을 모두 같은 경로에 풀어준다.
+경로를 보존하지 않고 모든 파일을 한 경로에 풀어주므로 같은 이름의 파일이 있다면 대화형으로 덮어쓸지 물어보게 된다.
+
+자주 쓰는 옵션은 아니지만, 압축된 파일 내의 디렉토리 구조가 불필요하다면 매우 유용한 옵션.
+
+```bash
+ # 현재 경로에 압축 풀기 (각 파일의 경로 보존하지 않음)
+unzip -j files.zip
+
+ # result 디렉토리를 생성하고, result에 압축 풀기 (각 파일의 경로 보존하지 않음)
+unzip -j files.zip -d result
+
+ # 이렇게 해도 똑같다.
+unzip -j files.zip -d ./result
+```
+
+### 압축파일에 포함된 파일 목록 보기
+
+```bash
+unzip -l files.zip
+```
+
+### 압축파일에 포함된 파일들 중 특정 파일만 압축 풀기
+
+```bash
+ # files.zip에 포함된 directory/file.txt 파일만 압축 풀기
+unzip files.zip directory/file.txt
+
+ # files.zip에 포함된 모든 *.c, *.h 파일만 압축 풀기
+unzip files.zip "*.[ch]"
+
+ # files.zip에 포함된 파일들 중 이름이 s 로 끝나는 모든 xml 파일만 압축 풀기
+unzip files.zip '*s.xml'
+```
+
+## 압축파일 에러 검사
+
+```
+unzip -tq files.zip
 ```
 
 ## 튜토리얼
@@ -115,6 +166,31 @@ Archive:  xml-files.zip
      1554  03-19-2023 21:45   src/main/resources/META-INF/plugin.xml
 ---------                     -------
     27154                     14 files
+```
+
+압축률(Cmpr), CRC-32 등의 자세한 정보가 보고 싶다면 `-v` 옵션을 사용한다.
+
+```bash
+$ unzip -v xml-files.zip 
+Archive:  xml-files.zip
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+    1258  Defl:N      578  54% 03-19-2023 18:05 ddded280  build/resources/main/META-INF/plugin.xml
+    1258  Defl:N      578  54% 03-19-2023 18:05 ddded280  build/patchedPluginXmlFiles/plugin.xml
+     139  Defl:N      105  25% 03-19-2023 18:06 65c95126  build/idea-sandbox/config/options/updates.xml
+     296  Defl:N      168  43% 03-15-2023 15:25 3c5dcd9f  .idea/markdown.xml
+    8792  Defl:N      866  90% 03-15-2023 18:33 141428a5  .idea/uiDesigner.xml
+     839  Defl:N      279  67% 03-15-2023 15:16 490578a4  .idea/jarRepositories.xml
+    2558  Defl:N      645  75% 03-15-2023 15:25 aeac7c1b  .idea/codeStyles/Project.xml
+     142  Defl:N      118  17% 03-15-2023 15:25 f3f6b5c2  .idea/codeStyles/codeStyleConfig.xml
+     663  Defl:N      287  57% 03-15-2023 20:47 0b3f2185  .idea/gradle.xml
+     167  Defl:N      126  25% 03-15-2023 15:15 a4ab74a1  .idea/vcs.xml
+    8734  Defl:N     2273  74% 03-24-2023 23:42 5cfb222a  .idea/workspace.xml
+     585  Defl:N      304  48% 03-15-2023 15:15 3eed493b  .idea/misc.xml
+     169  Defl:N      131  23% 03-15-2023 15:16 628df4ab  .idea/compiler.xml
+    1554  Defl:N      560  64% 03-19-2023 21:45 9affd208  src/main/resources/META-INF/plugin.xml
+--------          -------  ---                            -------
+   27154             7018  74%                            14 files
 ```
 
 압축이 잘 풀렸는지 [[/cmd/find]]로 확인해 보자.
