@@ -3,7 +3,7 @@ layout  : wiki
 title   : zip
 summary : zip은 압축, unzip은 압축 해제
 date    : 2023-06-30 23:42:16 +0900
-updated : 2023-07-26 22:35:12 +0900
+updated : 2023-07-26 22:38:51 +0900
 tag     : 
 resource: A7/A80395-1328-4A7A-AE86-CD7270C17BCF
 toc     : true
@@ -39,9 +39,9 @@ zip test.zip test0.png test1.png test2.png
 zip -r directory.zip directory
 ```
 
-### 튜토리얼
+## 튜토리얼
 
-#### 하위 경로의 모든 xml 파일만 선택해 압축하고, 압축 풀기 {#select-and-zip-xml-files}
+### 하위 경로의 모든 xml 파일만 선택해 압축하고, 압축 풀기 {#select-and-zip-xml-files}
 
 다음 명령은 현재 디렉토리 하위의 모든 xml 파일을 xml-files.zip 파일로 압축한다.
 
