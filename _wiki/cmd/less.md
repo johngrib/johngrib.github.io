@@ -3,7 +3,7 @@ layout  : wiki
 title   : less 명령어
 summary : less is more
 date    : 2020-01-19 22:06:24 +0900
-updated : 2022-04-17 11:31:59 +0900
+updated : 2023-07-27 22:55:52 +0900
 tag     : bash command
 resource: 77/4C3318-288A-4C7A-B3B2-3EE94A79FA4D
 toc     : true
@@ -30,6 +30,23 @@ less -N test.txt
 
  # less가 종료되어도 화면이 clear되지 않게 한다
 less -X test.txt
+
+ # less 내에서 / 로 검색을 할 때 대소문자를 구분하지 않는다
+less -I test.txt
+
+ # less 내에서 현재 보고 있는 페이지가 전체 페이지의 몇 %인지 보여준다
+less -M test.txt
+```
+
+### man과 함께 사용 {#man}
+
+나는 [[/cmd/man]]를 사용할 때 다음과 같은 셸 스크립트나 함수를 사용한다.
+
+```bash
+function mann() {
+    # 라인 넘버 출력, 현재 페이지 위치 출력, 검색시 대소문자 구분 안함, ANSI 컬러 표현 지원
+    (export LESS='-NMIR'; man $1 $2;)
+}
 ```
 
 ## less의 단축키
