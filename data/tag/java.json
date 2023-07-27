@@ -1,10 +1,10 @@
 [
  "clojure/study/hashmap",
  "clojure/study/vector",
+ "cmd/google-java-format",
  "cmd/java",
  "cmd/java_home",
  "defensive-copy",
- "google-java-format",
  "groupId-artifactId",
  "intellij/tips",
  "java",
