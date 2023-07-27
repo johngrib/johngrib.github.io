@@ -3,12 +3,12 @@ layout  : wiki
 title   : google-java-format 사용법
 summary : google에서 만든 Java 소스코드 포매터
 date    : 2020-06-17 20:29:36 +0900
-updated : 2020-07-21 22:10:51 +0900
+updated : 2023-07-27 23:02:38 +0900
 tag     : java command
 resource: 78/894997-786C-494C-8D21-56FA28BC36B6
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
