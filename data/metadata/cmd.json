@@ -69,6 +69,7 @@
   "cmd/xxd",
   "cmd/yes",
   "cmd/zip",
+  "cmd/zsh",
   "csplit",
   "ctags",
   "cut",
