@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : zsh
-summary : 나는 zsh 안 쓰고 bash를 쓴다
+summary : zsh 안 쓰지만 가끔 쓸 일이 있으니까
 date    : 2023-07-27 23:06:40 +0900
-updated : 2023-07-27 23:30:06 +0900
+updated : 2023-07-28 16:43:38 +0900
 tag     : 
 resource: E8/3E6470-E1DD-4311-9519-F20C2D1BB666
 toc     : true
