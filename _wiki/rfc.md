@@ -3,7 +3,7 @@ layout  : category
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2023-05-03 21:36:22 +0900
+updated : 2023-07-28 20:20:06 +0900
 tag     : rfc
 resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
@@ -150,6 +150,10 @@ By 1977, the Arpanet employed several informal standards for the text messages (
 <br>
 1977 년 Arpanet은 호스트 컴퓨터간에 전송된 텍스트 메시지(**메일**)에 대해 여러 가지 비공식 표준을 사용했습니다. 이러한 관습을 문서화하고 임박한 기능을 제공하는 것이 필요하다고 느꼈습니다. 
 
+### RFC 1855
+
+- Netiquette Guidelines
+- 네티켓 지침
 
 ### RFC 2045
 
@@ -284,6 +288,10 @@ http://example.com/search{?q,lang}
 
 <div id="sub-document-list"></div>
 
+{% comment %}
+    아래 목록은 vim 에서 :'<,'>sort n 으로 정렬했다.
+{% endcomment %}
+
 [RFC-7540]: https://tools.ietf.org/html/rfc7540
 [RFC-6410]: https://tools.ietf.org/html/rfc6410
 [RFC-3023]: https://tools.ietf.org/html/rfc3023
@@ -297,6 +305,7 @@ http://example.com/search{?q,lang}
 [RFC-2026]: https://tools.ietf.org/html/rfc2026
 [RFC-1945]: https://tools.ietf.org/html/rfc1945
 [RFC-1866]: https://tools.ietf.org/html/rfc1866
+[RFC-1855]: https://tools.ietf.org/html/rfc1855
 [RFC-1808]: https://tools.ietf.org/html/rfc1808
 [RFC-1796]: https://tools.ietf.org/html/rfc1796
 [RFC-1738]: https://tools.ietf.org/html/rfc1738
