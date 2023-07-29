@@ -3,7 +3,7 @@ layout  : wiki
 title   : date 명령어
 summary : 날짜나 시간을 출력하거나 설정한다
 date    : 2018-08-03 05:19:22 +0900
-updated : 2022-03-09 22:26:39 +0900
+updated : 2023-07-29 17:24:01 +0900
 tag     : bash command
 resource: 48/DDC995-1C3B-477A-A0F6-A07FCA93164C
 toc     : true
@@ -15,7 +15,7 @@ latex   : false
 {:toc}
 
 ## Examples
-### BSD(macOS)
+### MacOS
 
 ```sh
  # 현재 날짜, 시간
