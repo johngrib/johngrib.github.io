@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2023-04-11 20:07:43 +0900
+updated : 2023-07-29 12:10:04 +0900
 tag     : special-chars
 resource: 72/469FCC-A10B-46DC-A4DB-B7A9242EDF6D
 toc     : true
@@ -256,7 +256,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [Newline(wikipedia)](https://en.wikipedia.org/wiki/Newline )
 * [새줄 문자(wikipedia)](https://ko.wikipedia.org/wiki/%EC%83%88%EC%A4%84_%EB%AC%B8%EC%9E%90 )
 
-### Carriage Return
+### Carriage Return {#cr}
 
 * 옛날 키보드엔 `Enter`가 없고 `Return` 키가 있는 모델이 흔했는데, 그 `Return`이란 단어가 여기에서 온 것이다.
 * 엔터 키에 새겨진 &#x21b5; 기호가 CR을 뜻한다.
