@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-07-30 13:38:36 +0900
+updated : 2023-07-30 23:24:17 +0900
 regenerate: true
 ---
 * TOC
@@ -621,7 +621,6 @@ regenerate: true
 * [[/google-home]]
 * [[/gradle]]
 * [[/h2database]]
-* [[/iterm]]
 
 ### [[/useful-site]]
 
@@ -754,6 +753,7 @@ regenerate: true
 
 ## [[/mac]]
 
+* [[/mac/iterm]]
 * [[/mac/keyboard-shortcuts]]
 * [[/mac/screenshot-png-to-jpg]]
 * [[/mac/setting]]

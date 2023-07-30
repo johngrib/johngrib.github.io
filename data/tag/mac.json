@@ -2,7 +2,7 @@
  "cmd/brew",
  "cmd/java_home",
  "ioreg-cmd",
- "iterm",
+ "mac/iterm",
  "mac/keyboard-shortcuts",
  "mac/screenshot-png-to-jpg",
  "mac/setting"

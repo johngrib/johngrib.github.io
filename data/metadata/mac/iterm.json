@@ -2,9 +2,9 @@
  "type": "wiki",
  "title": "iTerm2",
  "summary": "문제 해결 및 설정 경험을 모아본다",
- "parent": "tools",
- "url": "/wiki/iterm",
- "updated": "2022-03-12 12:54:17 +0900",
+ "parent": "mac",
+ "url": "/wiki/mac/iterm",
+ "updated": "2023-07-30 23:24:26 +0900",
  "resource": "01/5EE992-8715-460E-A336-239AE4A4EA4D",
  "children": []
 }

@@ -3,12 +3,12 @@ layout  : wiki
 title   : iTerm2
 summary : 문제 해결 및 설정 경험을 모아본다
 date    : 2020-03-23 11:35:51 +0900
-updated : 2022-03-12 12:54:17 +0900
+updated : 2023-07-30 23:24:26 +0900
 tag     : mac
 resource: 01/5EE992-8715-460E-A336-239AE4A4EA4D
 toc     : true
 public  : true
-parent  : [[tools]]
+parent  : [[/mac]]
 latex   : false
 ---
 * TOC
