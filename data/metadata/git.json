@@ -8,7 +8,6 @@
  "resource": "6D/77D0FA-D4AB-4779-9420-E5703DEAB7CA",
  "children": [
   "git-alias",
-  "git-prompt",
   "git-study-with-action",
   "git-tutorial",
   "git/cherry-pick",
@@ -17,6 +16,7 @@
   "git/index",
   "git/log",
   "git/merge",
+  "git/prompt",
   "git/rebase",
   "git/revert"
  ]

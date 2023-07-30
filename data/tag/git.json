@@ -2,7 +2,6 @@
  "commit-go-mod-go-sum",
  "git",
  "git-alias",
- "git-prompt",
  "git-tutorial",
  "git/cherry-pick",
  "git/examples",
@@ -10,5 +9,6 @@
  "git/index",
  "git/log",
  "git/merge",
+ "git/prompt",
  "git/rebase"
 ]
