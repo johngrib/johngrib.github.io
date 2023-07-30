@@ -3,7 +3,7 @@ layout  : wiki
 title   : TOCTTOU
 summary : Time Of Check To Time Of Use 오류
 date    : 2023-06-10 20:14:42 +0900
-updated : 2023-06-10 20:34:41 +0900
+updated : 2023-07-30 13:33:59 +0900
 tag     : 
 resource: 83/2DE29A-6CFC-4858-AD37-D947DC492BBB
 toc     : true
@@ -13,6 +13,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+- TOCTOU 라고도 부른다.
 
 ## From: 운영체제 아주 쉬운 세 가지 이야기
 
