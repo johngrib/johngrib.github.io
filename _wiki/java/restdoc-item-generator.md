@@ -3,12 +3,12 @@ layout  : wiki
 title   : 짜증나는 Restdoc 템플릿을 조금 더 편하게 작성하자
 summary : 
 date    : 2020-03-13 23:35:38 +0900
-updated : 2023-01-12 21:48:49 +0900
+updated : 2023-07-30 12:17:58 +0900
 tag     : java
 resource: E1/8E456B-310F-4946-B48C-F1DD258A85F0
 toc     : true
 public  : true
-parent  : [[index]]
+parent  : [[/java]]
 latex   : false
 ---
 * TOC

@@ -30,6 +30,7 @@
   "java/object-tostring",
   "java/optional",
   "java/remainder-operator",
+  "java/restdoc-item-generator",
   "java/run-time-constant-pool",
   "java/scripting",
   "java/stream",

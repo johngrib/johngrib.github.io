@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-07-28 20:20:24 +0900
+updated : 2023-07-30 12:16:50 +0900
 regenerate: true
 ---
 * TOC
@@ -335,6 +335,7 @@ regenerate: true
 * [[/java/object-tostring]]
 * [[/java/optional]]
 * [[/java/remainder-operator]]
+* [[/java/restdoc-item-generator]]
 * [[/java/run-time-constant-pool]]
 * [[/java/scripting]]
 * [[/java/stream]]
@@ -1015,7 +1016,6 @@ regenerate: true
 * [[/mac-tex]]
 * [[/oop-quotes]]
 * [[/responsibility-driven-design]]
-* [[/restdoc-item-generator]]
 * [[/saga]]
 * [[/semantic-versioning]]
 * [[/three-dots-in-menu]]
