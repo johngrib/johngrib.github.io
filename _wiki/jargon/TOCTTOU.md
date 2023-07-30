@@ -3,7 +3,7 @@ layout  : wiki
 title   : TOCTTOU
 summary : Time Of Check To Time Of Use 오류
 date    : 2023-06-10 20:14:42 +0900
-updated : 2023-07-30 13:33:59 +0900
+updated : 2023-07-30 13:43:44 +0900
 tag     : 
 resource: 83/2DE29A-6CFC-4858-AD37-D947DC492BBB
 toc     : true
@@ -53,6 +53,11 @@ TOCTTOU 오류는 응용 프로그램이 파일 기반 함수를 두 번 호출�
 파일 시스템 이름공간(namespace) 안에서 TOCTTOU 오류는 주로 특권을 가진 프로그램을 속여서 파일 시스템 권한들을 변조하려는(그럼으로써 특권을 가진 파일에 대한 권한이 줄어들게 하거나 특권을 가진 파일을 수정해서 보안 구멍을 만들기 위해) 목적으로 악용된다.
 [Wei, Pu 2005][^wei]에 UNIX 파일 시스템 인터페이스의 TOCTTOU 취약점이 논의되어 있다.
 [^rich-82]
+
+## 함께 읽기
+
+- [[/pattern/defensive-copy]]
+    - 방어적 복사 기법을 통해 TOCTTOU 문제를 우회하는 방법.
 
 ## 참고문헌
 

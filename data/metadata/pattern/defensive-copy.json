@@ -4,7 +4,7 @@
  "summary": "검사시점/사용시점 취약점을 방어하자",
  "parent": "pattern",
  "url": "/wiki/pattern/defensive-copy",
- "updated": "2023-07-30 13:40:37 +0900",
+ "updated": "2023-07-30 13:41:53 +0900",
  "resource": "A3/51A03E-7BDA-4DB0-B9F4-D5688156F225",
  "children": []
 }
