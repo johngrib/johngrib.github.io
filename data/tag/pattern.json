@@ -1,9 +1,9 @@
 [
- "defensive-copy",
  "GoF-Design-Pattern",
  "pattern",
  "pattern/adapter",
  "pattern/builder",
+ "pattern/defensive-copy",
  "pattern/factory-method",
  "pattern/null-object",
  "pattern/static-factory-method",

@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-07-30 12:20:49 +0900
+updated : 2023-07-30 13:38:36 +0900
 regenerate: true
 ---
 * TOC
@@ -220,6 +220,8 @@ regenerate: true
 
 ## [[/pattern]]
 
+* [[/pattern/quotes]]
+
 * [[/pattern/abstract-factory]]
 * [[/pattern/adapter]]
 * [[/pattern/builder]]
@@ -227,6 +229,7 @@ regenerate: true
 * [[/pattern/composite]]
 * [[/pattern/controller]]
 * [[/pattern/decorator]]
+* [[/pattern/defensive-copy]]
 * [[/pattern/entity]]
 * [[/pattern/factory-method]]
 * [[/pattern/factory]]
@@ -238,7 +241,6 @@ regenerate: true
 * [[/pattern/observer]]
 * [[/pattern/pipeline]]
 * [[/pattern/proxy]]
-* [[/pattern/quotes]]
 * [[/pattern/repository]]
 * [[/pattern/service]]
 * [[/pattern/state]]
@@ -1007,7 +1009,6 @@ regenerate: true
 * [[/big-numbers]]
 * [[/coding-font]]
 * [[/color-model]]
-* [[/defensive-copy]]
 * [[/gnu-project]]
 * [[/integer]]
 * [[/junit5-nested]]

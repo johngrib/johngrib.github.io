@@ -3,16 +3,19 @@ layout  : wiki
 title   : 방어적 복사 (defensive copy)
 summary : 검사시점/사용시점 취약점을 방어하자
 date    : 2020-01-12 22:39:36 +0900
-updated : 2021-07-12 00:07:03 +0900
+updated : 2023-07-30 13:40:37 +0900
 tag     : java pattern
 resource: A3/51A03E-7BDA-4DB0-B9F4-D5688156F225
 toc     : true
 public  : true
-parent  : [[index]]
+parent  : [[/pattern]]
 latex   : false
 ---
 * TOC
 {:toc}
+
+- 방어적 복사 기법은 일종의 [[/pattern/quotes#idiom]]{이디엄}이다.
+    - 불변값/불변객체 패러다임을 기반으로 삼는 프로그래밍 언어에서는 이 패턴이 필요한 경우가 거의 없다.
 
 ## 예: 취약점이 있는 클래스
 
