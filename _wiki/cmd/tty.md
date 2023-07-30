@@ -3,7 +3,7 @@ layout  : wiki
 title   : tty
 summary : return user's terminal name
 date    : 2023-06-10 14:41:50 +0900
-updated : 2023-06-10 17:43:14 +0900
+updated : 2023-07-30 23:30:30 +0900
 tag     : 
 resource: E4/878436-9ABD-43C8-A536-16BA769E3972
 toc     : true
@@ -23,7 +23,7 @@ The tty utility writes the name of the terminal attached to standard input to st
 The name that is written is the string returned by ttyname(3).
 If the standard input is not a terminal, the message “not a tty” is written.
 The options are as follows:
-
+>
 `-s` Do not write the terminal name;
 only the exit status is affected when this option is specified.
 The `-s` option is deprecated in favor of the “test -t 0” command.
