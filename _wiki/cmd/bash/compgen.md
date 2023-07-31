@@ -3,7 +3,7 @@ layout  : wiki
 title   : compgen
 summary : 
 date    : 2023-07-31 22:25:01 +0900
-updated : 2023-07-31 22:38:12 +0900
+updated : 2023-07-31 23:16:36 +0900
 tag     : 
 resource: A0/6E25F3-64EB-4A7C-A624-180E0305B37F
 toc     : true
@@ -13,6 +13,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+`compgen`을 통해 bash 셸에서의 자동 완성 가능한 목록을 출력할 수 있다.
 
 ## 도움말 보기
 
@@ -35,5 +37,8 @@ compgen: compgen [-abcdefgjksuv] [-o option] [-A action] [-G globpat] [-W wordli
 ```bash
  # 현재 bash 셸의 모든 변수를 출력한다.
 compgen -A variable
+
+ # 모든 자동완성 대상 alias를 출력한다.
+compgen -a
 ```
 
