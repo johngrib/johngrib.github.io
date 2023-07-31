@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-07-30 23:24:17 +0900
+updated : 2023-07-31 21:03:49 +0900
 regenerate: true
 ---
 * TOC
@@ -216,6 +216,7 @@ regenerate: true
 
 ## [[/crypto]]
 
+- [[/crypto/caesar]]
 - [[/crypto/rsa]]
 
 ## [[/pattern]]
@@ -816,7 +817,6 @@ regenerate: true
 * [[/availability]]
 * [[/bandwidth]]
 * [[/braille-pattern-chars]]
-* [[/Caesar-cipher]]
 * [[/enterprise-application]]
 * [[/ethereum-white-paper]]
 * [[/fan-out]]

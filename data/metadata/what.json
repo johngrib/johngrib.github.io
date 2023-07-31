@@ -9,7 +9,7 @@
   "availability",
   "bandwidth",
   "braille-pattern-chars",
-  "Caesar-cipher",
+  "crypto/caesar",
   "enterprise-application",
   "ethereum-white-paper",
   "fan-out",
