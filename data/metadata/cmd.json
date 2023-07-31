@@ -9,6 +9,7 @@
  "children": [
   "cmd/ag",
   "cmd/basename",
+  "cmd/bash",
   "cmd/bat",
   "cmd/bind",
   "cmd/brew",
