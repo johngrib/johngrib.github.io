@@ -3,7 +3,7 @@ layout  : wiki
 title   : compgen
 summary : 
 date    : 2023-07-31 22:25:01 +0900
-updated : 2023-07-31 23:43:53 +0900
+updated : 2023-07-31 23:57:45 +0900
 tag     : 
 resource: A0/6E25F3-64EB-4A7C-A624-180E0305B37F
 toc     : true
@@ -59,4 +59,8 @@ compgen -u
  # 모든 자동완성 대상 변수 목록을 출력한다.
 compgen -v
 ```
+
+## 참고문헌
+
+- [GNU Bash Reference Manual - 8.7 Programmable Completion Builtins]( https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html )
 
