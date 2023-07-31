@@ -3,7 +3,7 @@ layout  : wiki
 title   : 카이사르 암호(Caesar cipher)
 summary : 자리이동식 암호법
 date    : 2019-03-09 18:06:30 +0900
-updated : 2023-07-31 21:04:42 +0900
+updated : 2023-07-31 21:10:32 +0900
 tag     : encryption
 resource: 0A/017DC0-0D2C-46A4-8259-069ADA7F10A1
 toc     : true
@@ -116,7 +116,7 @@ caesar(enc, decrypt);
 // "MEET YOU IN THE PARK"
 ```
 
-## ROT13
+## ROT13 {#rot13}
 
 >
 각 문자를 13자리씩 밀어내 치환하고 끝에 도달하면 앞으로 돌아가는 방식도 있다.
@@ -131,6 +131,10 @@ caesar(enc, decrypt);
 
 Vim의 `g?`를 사용하면 간편하게 ROT13 방식의 암호화를 할 수 있다.
 
+예를 들어 `abcd`를 visual 모드로 선택한 다음, `g?`를 입력하면 `nopq`로 암호화된다.
+
+`Hello World`는 `Uryyb Jbeyq`가 된다.
+
 다음은 `:help g?`를 인용한 것이다.
 
 ```
@@ -143,6 +147,19 @@ g?{motion}		Rot13 encode {motion} text.
 
 g?g?							*g?g?* *g??*
 g??			Rot13 encode current line.
+```
+
+### tr 명령어를 사용하기
+
+[[/cmd/tr##character-1-1-replace]]{tr 명령의 1:1 문자 교체 기능}을 사용하면 간단하게 ROT13 방식의 암호화를 할 수 있다.
+
+```bash
+$ echo abcd | tr 'a-z' 'n-za-m'
+
+nopq
+
+$ echo 'Hello World' | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+Uryyb Jbeyq
 ```
 
 ## 아핀 암호

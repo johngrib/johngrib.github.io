@@ -3,7 +3,7 @@ layout  : wiki
 title   : tr 명령어
 summary : translate characters
 date    : 2019-11-18 13:52:25 +0900
-updated : 2022-02-06 00:28:08 +0900
+updated : 2023-07-31 21:08:01 +0900
 tag     : bash command
 resource: 89/84AC90-2C84-4506-AB5A-CB5D964C06EE
 toc     : true
@@ -118,7 +118,7 @@ Hello,
 World!
 ```
 
-### character 1:1 replace
+### character 1:1 replace {#character-1-1-replace}
 
 ```sh
 # 모음 a i u e o 를 1 2 3 4 5로 변환한다.
