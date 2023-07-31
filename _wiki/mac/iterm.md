@@ -3,7 +3,7 @@ layout  : wiki
 title   : iTerm2
 summary : 문제 해결 및 설정 경험을 모아본다
 date    : 2020-03-23 11:35:51 +0900
-updated : 2023-07-30 23:24:26 +0900
+updated : 2023-07-31 20:26:16 +0900
 tag     : mac
 resource: 01/5EE992-8715-460E-A336-239AE4A4EA4D
 toc     : true
@@ -67,7 +67,7 @@ brew cask install iterm2
 
 ### 커스텀 컬러 스킴 사용하기
 
-1. [나의 아이텀 컬러 스킴]( https://raw.githubusercontent.com/johngrib/dotfiles/master/johngrib.itermcolors )을 다운받는다.
+1. [나의 아이텀 컬러 스킴]( https://github.com/johngrib/dotfiles/blob/master/color-scheme/johngrib.itermcolors )을 다운받는다.
 2.  `Preferences` - `Profiles` - `Colors` 에서 `Color Presets` 선택기를 클릭한다.
 3. `Import`를 클릭하고 다운받은 파일을 선택한다.
 4. 다시 `Color Presets` 선택기를 클릭하고, 컬러 스킴 이름인 `johngrib`을 선택한다.
