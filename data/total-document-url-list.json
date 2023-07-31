@@ -180,6 +180,7 @@
  "/wiki/cmd/ag",
  "/wiki/cmd/basename",
  "/wiki/cmd/bash",
+ "/wiki/cmd/bash/compgen",
  "/wiki/cmd/bat",
  "/wiki/cmd/bind",
  "/wiki/cmd/brew",
