@@ -3,7 +3,7 @@ layout  : wiki
 title   : tr 명령어
 summary : translate characters
 date    : 2019-11-18 13:52:25 +0900
-updated : 2023-07-31 21:08:01 +0900
+updated : 2023-07-31 21:13:03 +0900
 tag     : bash command
 resource: 89/84AC90-2C84-4506-AB5A-CB5D964C06EE
 toc     : true
@@ -132,6 +132,8 @@ Th4 q32ck br5wn f5x j3mps 5v4r th4 l1zy d5g.
     - `u` → `3`
     - `e` → `4`
     - `o` → `5`
+
+참고로 이 기능을 통해 [[/crypto/caesar#rot13]]를 쉽게 사용할 수 있다.
 
 ### 프롬프트 입력을 통한 변환
 
