@@ -17,6 +17,7 @@
   "cmd/chmod",
   "cmd/chsh",
   "cmd/column",
+  "cmd/compgen",
   "cmd/curl",
   "cmd/date",
   "cmd/dc",

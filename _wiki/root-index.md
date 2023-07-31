@@ -645,7 +645,7 @@ regenerate: true
 ### [[/cmd]]
 
 * [[/cmd/bash]]
-* [[/cmd/bash/compgen]]
+* [[/cmd/compgen]]
 
 * [[/cmd/ag]]
 * [[/cmd/basename]]

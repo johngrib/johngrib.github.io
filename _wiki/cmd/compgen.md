@@ -3,12 +3,12 @@ layout  : wiki
 title   : compgen
 summary : 
 date    : 2023-07-31 22:25:01 +0900
-updated : 2023-07-31 23:35:27 +0900
+updated : 2023-07-31 23:43:53 +0900
 tag     : 
 resource: A0/6E25F3-64EB-4A7C-A624-180E0305B37F
 toc     : true
 public  : true
-parent  : [[/cmd/bash]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
