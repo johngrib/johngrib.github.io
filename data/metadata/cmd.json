@@ -42,6 +42,7 @@
   "cmd/killall",
   "cmd/less",
   "cmd/lldb",
+  "cmd/ln",
   "cmd/ls",
   "cmd/lsof",
   "cmd/make",

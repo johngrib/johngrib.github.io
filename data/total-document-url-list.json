@@ -212,6 +212,7 @@
  "/wiki/cmd/killall",
  "/wiki/cmd/less",
  "/wiki/cmd/lldb",
+ "/wiki/cmd/ln",
  "/wiki/cmd/ls",
  "/wiki/cmd/lsof",
  "/wiki/cmd/make",
