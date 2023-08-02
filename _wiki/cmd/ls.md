@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : ls 명령어
-summary : 
+summary : 디렉토리의 내용을 출력한다
 date    : 2023-08-01 22:38:15 +0900
-updated : 2023-08-01 22:50:14 +0900
+updated : 2023-08-02 21:48:15 +0900
 tag     : 
 resource: 11/37B4FA-48D2-4D33-B630-23CA30753E4A
 toc     : true
@@ -14,7 +14,57 @@ latex   : false
 * TOC
 {:toc}
 
+- 옛날 MS-DOS의 `dir` 같은 명령이다.
+
+## 일러두기
+
+나는 macOS의 builtin `ls`가 아니라 [GNU Coreutils]( https://www.gnu.org/software/coreutils/ )의 `ls`를 사용한다.[^coreutils]
+
+```bash
+ # coreutils 설치
+brew install coreutils
+```
+
+macOS builtin `ls`와 큰 차이가 있는 것은 아니지만 출력 결과의 날짜 포맷을 지정하는 기능이 있기 때문이다.
+
+## 나의 alias
+
+나는 `.bashrc`에 다음과 같이 `ls`와 관련된 alias를 설정해두었다.
+
+```bash
+ # alias ls='ls -G'; #osx
+alias ls='gls --color=tty --time-style="+%Y-%m-%d %a %H:%M:%S"';
+alias ll='gls -alh --color'
+alias l.='ls -dG .*'
+
+alias lsa='exa --time-style="long-iso"';
+alias lla='exa --time-style="long-iso" -alh'
+```
+
 ## Examples
+
+### -l : 파일의 상세 정보 출력 {#option-l}
+
+`-l` 옵션을 사용하면 파일의 상세 정보를 출력한다.
+
+```bash
+$ ls -l
+total 7.9M
+drwxr-xr-x   47 johngrib staff 1.5K 2023-08-02 Wed 21:20:55 .
+drwxr-x---+  76 johngrib staff 2.4K 2023-08-02 Wed 21:09:34 ..
+-rw-r--r--    1 johngrib staff  11K 2023-07-17 Mon 22:16:00 .DS_Store
+drwxr-xr-x   15 johngrib staff  480 2023-08-02 Wed 21:24:50 .git
+-rw-r--r--    1 johngrib staff  165 2023-03-17 Fri 23:31:10 .gitignore
+drwxr-xr-x    3 johngrib staff   96 2023-03-17 Fri 23:49:37 .jekyll-cache
+-rw-r--r--    1 johngrib staff 472K 2023-08-02 Wed 21:21:00 .jekyll-metadata
+-rw-r--r--    1 johngrib staff  11K 2023-07-31 Mon 21:04:13 404.html
+-rw-r--r--    1 johngrib staff 1.3K 2023-03-18 Sat 00:11:56 Gemfile
+-rw-r--r--    1 johngrib staff 2.3K 2023-07-31 Mon 20:41:38 Gemfile.lock
+-rw-r--r--    1 johngrib staff 1.1K 2023-03-17 Fri 23:31:10 LICENSE
+-rw-r--r--    1 johngrib staff  734 2023-03-17 Fri 23:31:10 README.md
+-rw-r--r--    1 johngrib staff 1.6K 2023-04-23 Sun 11:58:26 _config.yml
+-rw-r--r--    1 johngrib staff  763 2023-03-17 Fri 23:31:10 _config.yml.sample
+```
 
 ### -i : 파일의 inode 번호 출력 {#option-i}
 
@@ -37,4 +87,8 @@ $ ls -l  /bin/[  /bin/test
 -rwxr-xr-x 2 root wheel 134224 2023-06-15 Thu 19:08:29 '/bin/['
 -rwxr-xr-x 2 root wheel 134224 2023-06-15 Thu 19:08:29  /bin/test
 ```
+
+## 주석
+
+[^coreutils]: <https://formulae.brew.sh/formula/coreutils >
 
