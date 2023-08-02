@@ -3,7 +3,7 @@ layout  : wiki
 title   : ls 명령어
 summary : 디렉토리의 내용을 출력한다
 date    : 2023-08-01 22:38:15 +0900
-updated : 2023-08-02 21:48:15 +0900
+updated : 2023-08-02 21:58:37 +0900
 tag     : 
 resource: 11/37B4FA-48D2-4D33-B630-23CA30753E4A
 toc     : true
@@ -42,6 +42,32 @@ alias lla='exa --time-style="long-iso" -alh'
 ```
 
 ## Examples
+
+### 여러 디렉토리 나열
+
+```bash
+$ # css, js 디렉토리의 내용을 나열한다.
+$ ls css js
+css:
+main.scss
+
+js:
+category.js  create-link.js  parent.js  shortcut.js  toc-highlight.js
+
+$ # -l 옵션을 줘도 작동한다.
+$ ls -l css js
+css:
+total 4
+-rwxr-xr-x 1 johngrib staff 546 2023-03-17 Fri 23:31:10 main.scss
+
+js:
+total 24
+-rw-r--r-- 1 johngrib staff 2719 2023-04-01 Sat 14:05:49 category.js
+-rw-r--r-- 1 johngrib staff 6769 2023-03-17 Fri 23:31:10 create-link.js
+-rw-r--r-- 1 johngrib staff 1852 2023-03-17 Fri 23:31:10 parent.js
+-rw-r--r-- 1 johngrib staff 3071 2023-03-17 Fri 23:31:10 shortcut.js
+-rw-r--r-- 1 johngrib staff 2007 2023-03-17 Fri 23:31:10 toc-highlight.js
+```
 
 ### -l : 파일의 상세 정보 출력 {#option-l}
 
