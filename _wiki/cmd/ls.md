@@ -3,7 +3,7 @@ layout  : wiki
 title   : ls 명령어
 summary : 디렉토리의 내용을 출력한다
 date    : 2023-08-01 22:38:15 +0900
-updated : 2023-08-02 22:04:14 +0900
+updated : 2023-08-02 22:06:41 +0900
 tag     : 
 resource: 11/37B4FA-48D2-4D33-B630-23CA30753E4A
 toc     : true
@@ -117,6 +117,16 @@ ls -alh
 ```bash
 ls -R
 ```
+
+### -r : 역순으로 나열 {#option-reverse}
+
+`-r` 옵션을 사용하면 역순으로 출력한다.
+
+```bash
+ls -r
+```
+
+이 옵션을 사용하면 `ls | sort -r` 과 비슷한 결과를 얻을 수 있다.
 
 ### -i : 파일의 inode 번호 출력 {#option-i}
 
