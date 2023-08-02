@@ -3,7 +3,7 @@ layout  : wiki
 title   : ls 명령어
 summary : 디렉토리의 내용을 출력한다
 date    : 2023-08-01 22:38:15 +0900
-updated : 2023-08-02 22:10:24 +0900
+updated : 2023-08-02 22:32:35 +0900
 tag     : 
 resource: 11/37B4FA-48D2-4D33-B630-23CA30753E4A
 toc     : true
@@ -78,19 +78,56 @@ $ ls -l
 total 7.9M
 drwxr-xr-x   47 johngrib staff 1.5K 2023-08-02 Wed 21:20:55 .
 drwxr-x---+  76 johngrib staff 2.4K 2023-08-02 Wed 21:09:34 ..
--rw-r--r--    1 johngrib staff  11K 2023-07-17 Mon 22:16:00 .DS_Store
 drwxr-xr-x   15 johngrib staff  480 2023-08-02 Wed 21:24:50 .git
 -rw-r--r--    1 johngrib staff  165 2023-03-17 Fri 23:31:10 .gitignore
-drwxr-xr-x    3 johngrib staff   96 2023-03-17 Fri 23:49:37 .jekyll-cache
--rw-r--r--    1 johngrib staff 472K 2023-08-02 Wed 21:21:00 .jekyll-metadata
 -rw-r--r--    1 johngrib staff  11K 2023-07-31 Mon 21:04:13 404.html
--rw-r--r--    1 johngrib staff 1.3K 2023-03-18 Sat 00:11:56 Gemfile
--rw-r--r--    1 johngrib staff 2.3K 2023-07-31 Mon 20:41:38 Gemfile.lock
 -rw-r--r--    1 johngrib staff 1.1K 2023-03-17 Fri 23:31:10 LICENSE
 -rw-r--r--    1 johngrib staff  734 2023-03-17 Fri 23:31:10 README.md
--rw-r--r--    1 johngrib staff 1.6K 2023-04-23 Sun 11:58:26 _config.yml
--rw-r--r--    1 johngrib staff  763 2023-03-17 Fri 23:31:10 _config.yml.sample
 ```
+
+출력 결과는 컬럼별로 다음과 같은 의미를 갖는다.
+
+1. 파일의 접근 권한 정보.
+    - 첫 글자: "file type" 이라 부른다.
+        - `-`: 파일
+        - `d`: 디렉토리
+        - `l`: 심볼릭 링크
+    - 첫 글자 이후 9개 글자: "file mode"라 부른다.
+        - `_rwx______`: 파일 소유자(Owner) 퍼미션.
+        - `____rwx___`: 파일 소유 그룹(Group) 퍼미션.
+        - `_______rwx`: 기타 사용자(World) 퍼미션.
+2. 하드 링크의 수.
+3. 파일 소유자의 이름.
+4. 파일을 소유한 그룹의 이름.
+5. 파일 크기(byte)
+6. 파일 최종 수정 날짜.
+7. 파일 최종 수정 요일.
+8. 파일 최종 수정 시간.
+9. 파일 이름.
+
+#### file mode
+
+> <div id="file_mode_table"></div>
+[^command-line-book-92]
+
+- th
+    - 속성
+    - 파일
+    - 디렉토리
+- td
+    - `r`
+    - 파일 열기와 읽기를 허용한다.
+    - 실행 속성이 설정되어 있으면 디렉토리의 내용물을 나열할 수 있게끔 허용한다.
+- td
+    - `w`
+    - 이 속성은 파일 쓰기 또는 잘라내기는 허용하지만, 이름 변경이나 파일 삭제는 허용하지 않는다. 파일 삭제나 파일 이름 변경은 디렉토리 속성에 의해 결정된다.
+    - 실행 속성이 설정되어 있으면 디렉토리 내의 파일들을 생성, 삭제, 이름 변경이 가능하도록 허용한다.
+- td
+    - `x`
+    - 파일이 프로그램으로 처리되고 파일이 실행되도록 허용한다. 스크립트 언어에서 작성된 프로그램 파일들은 읽기 기능으로 설정되어 있어야만 실행 가능하다.
+    - 디렉토리에 들어올 수 있도록 허용한다(예를 들어 `cd directory`와 같이).
+{:class="table-generate" data-target-id="file_mode_table"}
+
 
 ### -a : 모든 파일 보기 {#option-a}
 
@@ -158,7 +195,12 @@ $ ls -l  /bin/[  /bin/test
 -rwxr-xr-x 2 root wheel 134224 2023-06-15 Thu 19:08:29  /bin/test
 ```
 
+## 참고문헌
+
+- 리눅스 커맨드라인 완벽 입문서 / 윌리엄 E. 샤츠 주니어 저 / 이종우, 정영신 공역 / 비제이퍼블릭(BJ퍼블릭) / 초판 1쇄 발행: 2013년 01월 11일 / 원제: The Linux Command Line
+
 ## 주석
 
 [^coreutils]: <https://formulae.brew.sh/formula/coreutils >
+[^command-line-book-92]: 리눅스 커맨드라인 완벽 입문서. 9장. 92쪽.
 
