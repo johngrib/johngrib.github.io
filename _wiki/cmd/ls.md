@@ -3,7 +3,7 @@ layout  : wiki
 title   : ls 명령어
 summary : 디렉토리의 내용을 출력한다
 date    : 2023-08-01 22:38:15 +0900
-updated : 2023-08-02 21:58:37 +0900
+updated : 2023-08-02 22:00:23 +0900
 tag     : 
 resource: 11/37B4FA-48D2-4D33-B630-23CA30753E4A
 toc     : true
@@ -90,6 +90,14 @@ drwxr-xr-x    3 johngrib staff   96 2023-03-17 Fri 23:49:37 .jekyll-cache
 -rw-r--r--    1 johngrib staff  734 2023-03-17 Fri 23:31:10 README.md
 -rw-r--r--    1 johngrib staff 1.6K 2023-04-23 Sun 11:58:26 _config.yml
 -rw-r--r--    1 johngrib staff  763 2023-03-17 Fri 23:31:10 _config.yml.sample
+```
+
+### -R : 하위 디렉토리를 재귀적으로 탐색 {#option-R}
+
+`-R` 옵션을 사용하면 하위 디렉토리를 재귀적으로 탐색한다.
+
+```bash
+$ ls -R
 ```
 
 ### -i : 파일의 inode 번호 출력 {#option-i}
