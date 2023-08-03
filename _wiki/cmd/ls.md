@@ -3,7 +3,7 @@ layout  : wiki
 title   : ls 명령어
 summary : 디렉토리의 내용을 출력한다
 date    : 2023-08-01 22:38:15 +0900
-updated : 2023-08-03 23:10:03 +0900
+updated : 2023-08-03 23:28:16 +0900
 tag     : 
 resource: 11/37B4FA-48D2-4D33-B630-23CA30753E4A
 toc     : true
@@ -173,6 +173,9 @@ ls -r
 
 ```bash
 ls -t
+
+ # 수정시간 역순으로 나열
+ls -tr
 ```
 
 ### -i : 파일의 inode 번호 출력 {#option-i}
