@@ -3,7 +3,7 @@ layout  : wiki
 title   : tty
 summary : return user's terminal name
 date    : 2023-06-10 14:41:50 +0900
-updated : 2023-07-30 23:30:30 +0900
+updated : 2023-08-03 23:11:26 +0900
 tag     : 
 resource: E4/878436-9ABD-43C8-A536-16BA769E3972
 toc     : true
@@ -71,7 +71,7 @@ $ ps
 
 열어둔 터미널의 이름을 조사하고 싶다면 `tty` 명령을 사용해 터미널의 이름을 출력하면 된다.
 
-```
+```bash
 $ # macOS
 $ tty
 /dev/ttys003
@@ -80,4 +80,14 @@ $ # ubuntu
 $ tty
 /dev/pts/0
 ```
+
+`/dev/ttys003`은 장치 파일이므로 `ls -l` 명령으로 자세한 정보를 확인할 수 있다.
+
+```bash
+$ ls -l /dev/ttys003
+crw--w---- 1 johngrib tty 16, 3 2023-08-03 Thu 23:01:57 /dev/ttys003
+```
+
+file type(퍼미션의 첫 글자)이 `c`라는 점에 주목.
+`c`에 대해서는 [[/cmd/ls#option-l]] 문서 참고.
 
