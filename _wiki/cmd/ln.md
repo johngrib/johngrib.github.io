@@ -3,7 +3,7 @@ layout  : wiki
 title   : ln 명령어
 summary : 
 date    : 2023-08-01 22:51:29 +0900
-updated : 2023-08-03 22:44:29 +0900
+updated : 2023-08-03 22:57:21 +0900
 tag     : 
 resource: BC/EEDF24-80D5-4A1D-BAEF-0BF7FF94F5B3
 toc     : true
@@ -72,6 +72,13 @@ ln  /usr/local/bin/fooprog-1.0  /usr/local/bin/fooprog
 파일의 내용만이 아니라 소유권이나 사용 권한 같은 내부 속성 까지도 공유된다.
 [^unix-handbook-235]
 
+<span/>
+
+>
+모든 디렉터리는 최소한 두 개의 하드 링크를 갖는다.
+하나는 부모 디렉터리로부터의 링크이고, 다른 하나는 디렉터리 자신의 내부에 있는 '.'이라 불리는 특별한 파일로부터의 링크다.
+[^unix-handbook-244]
+
 ## 참고문헌
 
 - 유닉스·리눅스 시스템 관리 핸드북 5/e / 에비 네메스, 가스 스나이더, 트렌트 헤인, 벤 웨일리, 댄 맥킨 저 외 2명 / 에이콘출판사 / 발행: 2022년 01월 03일 / 원제: UNIX and Linux System Administration Handbook, 5th Edition
@@ -80,4 +87,5 @@ ln  /usr/local/bin/fooprog-1.0  /usr/local/bin/fooprog
 
 [^unix-handbook-235]: 유닉스·리눅스 시스템 관리 핸드북 5/e. 5장. 235쪽.
 [^unix-handbook-240]: 유닉스·리눅스 시스템 관리 핸드북 5/e. 5장. 240쪽.
+[^unix-handbook-244]: 유닉스·리눅스 시스템 관리 핸드북 5/e. 5장. 244쪽.
 
