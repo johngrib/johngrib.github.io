@@ -3,7 +3,7 @@ layout  : wiki
 title   : ln 명령어
 summary : 
 date    : 2023-08-01 22:51:29 +0900
-updated : 2023-08-01 23:06:47 +0900
+updated : 2023-08-03 22:44:29 +0900
 tag     : 
 resource: BC/EEDF24-80D5-4A1D-BAEF-0BF7FF94F5B3
 toc     : true
@@ -25,6 +25,13 @@ latex   : false
 ```bash
 ln -s /usr/src /home/src
 ```
+
+#### 주의할 점
+
+>
+흔히 발생하는 실수 중 하나는 `ln -s` 명령의 첫 번째 인수가 현재 작업 디렉터리에 상대적이라고 해석하는 것이다.
+하지만 실제로 `ln`은 첫 번째 인수를 파일명으로 해독하지 않으며 심볼릭 링크의 타깃이 되는 하나의 문자열로 인식할 뿐이다.
+[^unix-handbook-240]
 
 ### 옵션 없이 사용 : hard link 생성 {#option-none}
 
@@ -72,4 +79,5 @@ ln  /usr/local/bin/fooprog-1.0  /usr/local/bin/fooprog
 ## 주석
 
 [^unix-handbook-235]: 유닉스·리눅스 시스템 관리 핸드북 5/e. 5장. 235쪽.
+[^unix-handbook-240]: 유닉스·리눅스 시스템 관리 핸드북 5/e. 5장. 240쪽.
 
