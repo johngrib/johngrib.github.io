@@ -3,7 +3,7 @@ layout  : wiki
 title   : man 명령어
 summary : 유닉스 메뉴얼 페이지를 찾아보는 명령
 date    : 2020-09-30 09:38:35 +0900
-updated : 2023-07-18 22:25:23 +0900
+updated : 2023-08-03 22:34:26 +0900
 tag     : bash command c
 resource: 3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA
 toc     : true
@@ -113,6 +113,10 @@ man -K string
     - bash 설명서.
 - `man ip`
     - Internet Protocol
+- `man 4 null`
+    - null device(`/dev/null`)에 대한 설명서.
+- `man 4 random`
+    - random device(`/dev/random`, `/dev/urandom`)에 대한 설명서.
 
 ### man 페이지 파일이 저장된 위치
 
