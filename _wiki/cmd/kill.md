@@ -3,7 +3,7 @@ layout  : wiki
 title   : kill
 summary : terminate or signal a process
 date    : 2023-05-07 00:00:38 +0900
-updated : 2023-07-24 23:14:58 +0900
+updated : 2023-08-05 22:42:44 +0900
 tag     : 
 resource: 90/72958A-66BE-4D3B-87B5-27B03E66207F
 toc     : true
@@ -25,26 +25,7 @@ kill -signal_name pid ...
 kill -signal_number pid ...
 ```
 
-## Examples
-
-### 기본
-
-- `-s` 옵션을 생략하면 시그널 기본값으로 `SIGTERM`(15)을 보낸다.
-- `SIGTERM`(15)은 프로세스에게 종료 요청을 보내는 시그널이며, 프로세스가 이를 받아들이면 정상 종료를 한다.
-
-```bash
- # PID가 142, 157인 프로세스에 SIGTERM 시그널을 보낸다(종료 요청)
-kill 142 157
-
- # PID가 142인 프로세스에 SIGTERM 시그널을 보낸다(종료 요청)
-kill 142
-```
-
-위의 명령은 다음과 똑같다.
-
-```bash
-kill -s TERM 142 157
-```
+## 시그널
 
 ### signal 목록 확인
 
@@ -66,6 +47,87 @@ $ kill -l
 21) SIGTTIN	22) SIGTTOU	23) SIGIO	24) SIGXCPU
 25) SIGXFSZ	26) SIGVTALRM	27) SIGPROF	28) SIGWINCH
 29) SIGINFO	30) SIGUSR1	31) SIGUSR2
+```
+
+### 주요 시그널에 대해
+
+> <div id="signal_table"></div>
+[^command-line-book-117]
+
+- th
+    - 번호
+    - 이름
+    - 의미
+- td
+    - `1`
+    - `HUP`
+    - Hang up. 이는 전화선과 모뎀으로 원격 컴퓨터에 연결하는 터미널을 사용하던 그리운 옛날의 흔적이다. 이 시그널은 제어 터미널과 "연결이 끊어진" 프로그램을 가리키는 데 사용된다. 이 시그널은 터미널 세션 종료에 의해 나타난다. 터미널에서 실행 중인 포그라운드 프로그램은 이 시그널을 받으면 종료될 것이다.<br/> 또한 재초기화를 위해 많은 데몬 프로그램에서 사용된다. 이는 데몬이 이 시그널을 받으면 재시작하고 환경설정 파일을 다시 읽어 들이게 된다는 것을 의미한다. Apache 웹 서버가 HUP 시그널을 이 방식으로 사용하는 데몬의 한 예다.
+- td
+    - `2`
+    - `INT`
+    - Interrupt. 터미널에서 CTRL-C 키를 보낸 것과 동일한 기능을 한다. 프로그램을 항상 종료할 것이다.
+- td
+    - `9`
+    - `KILL`
+    - Kill. 이 시그널은 조금 특별하다. 프로그램은 자신에게 보내진 시그널들을 모두 무시하거나 다른 방식으로 조작하는 것을 선택할지 모른다. KILL  시그널은 실제로 해당 프로그램에 보내지지 않는다. 오히려 커널이 즉시 프로세스를 종료한다. 이런 식으로 프로세스가 강제 종료되면 스스로 정리하거나 진행 중인 작업을 저장할 기회가 없다. 이런 이유로 KILL 시그널은 다른 종료 시그널이 실패한 경우에 마지막 수단으로 사용되어야 한다.
+- td
+    - `15`
+    - `TERM`
+    - Terminate. 이것은 kill 명령어가 보내는 기본 신호다. 이 신호를 보냈을 때 만약 프로그램이 여전히 시그널을 받을 수 있을 정도로 "살아있다면" 프로그램은 종료될 것이다.
+- td
+    - `18`
+    - `CONT`
+    - Continue. STOP 시그널로 정지된 프로세스를 복원한다.
+- td
+    - `19`
+    - `STOP`
+    - Stop. 이 시그널은 프로세스를 종료 없이 일시 정지시킨다. KILL 시그널과 같이 해당 프로세스에 직접 보내지 않는다. 따라서 이 시그널을 무시할 수는 없다.
+{:class="table-generate" data-target-id="signal_table"}
+
+> <div id="signal_table2"></div>
+[^command-line-book-118]
+
+- th
+    - 번호
+    - 이름
+    - 의미
+- td
+    - `3`
+    - `QUIT`
+    - Quit. (*역자주: 사용자가 종료 키(CTRL+\\)를 입력하면 커널이 프로세스에 SIGQUIT 시그널을 보낸다.)
+- td
+    - `11`
+    - `SEGV`
+    - Segmentation violation. 이 시그널은 프로그램이 잘못된 메모리 사용이 이뤄질 때 보내진다. 즉 허용하지 않은 영역에 쓰기를 시도했다는 것이다.
+- td
+    - `20`
+    - `TSTP`
+    - Terminal Stop. 이 시그널은 CTRL-Z 를 눌렀을 때 터미널에 의해 보내진다. STOP 시그널과 달리, TSTP 시그널은 프로그램에 의해 받게 된다. 하지만 프로그램은 이를 무시하도록 지정되어 있을 수도 있다.
+- td
+    - `28`
+    - `WINCH`
+    - Window change. 이 시그널은 윈도우 크기가 변경된 경우에 시스템에 의해 보내진다. top과 less와 같은 프로그램들은 이 시그널을 받으면 새로운 윈도우 크기에 맞게 다시 그려질 것이다.
+{:class="table-generate" data-target-id="signal_table2"}
+
+## Examples
+
+### 기본
+
+- `-s` 옵션을 생략하면 시그널 기본값으로 `SIGTERM`(15)을 보낸다.
+- `SIGTERM`(15)은 프로세스에게 종료 요청을 보내는 시그널이며, 프로세스가 이를 받아들이면 정상 종료를 한다.
+
+```bash
+ # PID가 142, 157인 프로세스에 SIGTERM 시그널을 보낸다(종료 요청)
+kill 142 157
+
+ # PID가 142인 프로세스에 SIGTERM 시그널을 보낸다(종료 요청)
+kill 142
+```
+
+위의 명령은 다음과 똑같다.
+
+```bash
+kill -s TERM 142 157
 ```
 
 ### signal 숫자 값 사용
@@ -166,10 +228,12 @@ lsof -i tcp:3000 | xargs kill
 ## 참고문헌
 
 - UNIX 고급 프로그래밍 [제3판] / 리처드 스티븐스, 스티븐 레이고 공저 / 류광 역 / 퍼스트북 / 인쇄일: 2014년 08월 28일 / 원제: Advanced Programming in the UNIX Environment
+- 리눅스 커맨드라인 완벽 입문서 / 윌리엄 E. 샤츠 주니어 저 / 이종우, 정영신 공역 / 비제이퍼블릭(BJ퍼블릭) / 초판 1쇄 발행: 2013년 01월 11일 / 원제: The Linux Command Line
 - 유닉스·리눅스 시스템 관리 핸드북 5/e / 에비 네메스, 가스 스나이더, 트렌트 헤인, 벤 웨일리, 댄 맥킨 저 외 2명 / 에이콘출판사 / 발행: 2022년 01월 03일 / 원제: UNIX and Linux System Administration Handbook, 5th Edition
 
 ## 주석
 
 [^richard-282]: UNIX 고급 프로그래밍. 8.2장. 282쪽.
 [^handbook-191]: 유닉스·리눅스 시스템 관리 핸드북 5/e. 4장. 191쪽.
-
+[^command-line-book-117]: 리눅스 커맨드라인 완벽 입문서. 10장. 117쪽.
+[^command-line-book-118]: 리눅스 커맨드라인 완벽 입문서. 10장. 118쪽.
