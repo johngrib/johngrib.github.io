@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash Parameters
 summary : 
 date    : 2023-08-04 21:01:10 +0900
-updated : 2023-08-04 23:12:18 +0900
+updated : 2023-08-05 15:31:43 +0900
 tag     : 
 resource: 12/723FD0-7E4D-4050-B84C-114CB1FF5283
 toc     : true
@@ -140,13 +140,14 @@ $ (echo $BASH_SUBSHELL; (echo $BASH_SUBSHELL))
 2
 ```
 
-## 프롬프트 관련
+## 프롬프트 관련 {#prompt}
 
 - `$PS1`: 프롬프트 문자열.
 - `$PS2`: 프롬프트 문자열이 두 줄 이상일 때의 문자열.
     - default 값은 `> `.
 - `$PS3`: `select` 명령에서 사용하는 프롬프트 문자열.
 - `$PS4`: `set -x` 명령에서 사용하는 프롬프트 문자열.
+- `$PROMPT_COMMAND`: 프롬프트가 출력되기 전에 실행되는 명령을 지정할 수 있다.
 
 ## 현재 작업 셸 관련
 
