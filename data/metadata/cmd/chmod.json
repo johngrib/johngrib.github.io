@@ -1,10 +1,10 @@
 {
  "type": "wiki",
- "title": "chmod",
+ "title": "chmod 명령어",
  "summary": "change file modes or Access Control Lists",
  "parent": "cmd",
  "url": "/wiki/cmd/chmod",
- "updated": "2023-06-26 23:33:57 +0900",
+ "updated": "2023-08-05 19:01:25 +0900",
  "resource": "FD/094CB3-958D-42A5-99FB-7C5C1E7DEECE",
  "children": []
 }
