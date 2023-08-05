@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash Parameters
 summary : 
 date    : 2023-08-04 21:01:10 +0900
-updated : 2023-08-05 15:31:43 +0900
+updated : 2023-08-05 23:00:22 +0900
 tag     : 
 resource: 12/723FD0-7E4D-4050-B84C-114CB1FF5283
 toc     : true
@@ -124,6 +124,7 @@ $ echo $_
 
 ## BASH 관련
 
+- `$SHELL`: 현재 실행중인 셸의 경로.
 - `$BASH`: 현재 실행중인 bash의 경로.
 - `$BASH_VERSION`: 현재 실행중인 bash의 버전.
 - `$BASH_SUBSHELL`: 0부터 시작하는 서브셸 깊이 카운터.
@@ -155,6 +156,8 @@ $ (echo $BASH_SUBSHELL; (echo $BASH_SUBSHELL))
 - `$HOME`: 현재 사용자의 홈 디렉토리.
 - `$PWD`: 현재 작업 디렉토리.
     - `cd` 명령을 사용하면 변경된다.
+- `$OLDPWD`: 이전 작업 디렉토리.
+    - `$OLD_PWD`를 쓰는 경우도 있다. 사용하는 컴퓨터에서 `man bash`로 확인할 것.
 - `$PATH`: 명령을 찾는 경로.
     - `:`을 구분자로 사용한다.
 
@@ -167,6 +170,8 @@ $ (echo $BASH_SUBSHELL; (echo $BASH_SUBSHELL))
 
 ## 그 외
 
+- `$LANG`: 화면에 표시할 언어 문자셋과 형식.
+    - 나는 `LANG="en_US.UTF-8"` 으로 설정해서 사용하고 있다.
 - `$RANDOM`: `0` ~ `32767` 사이의 랜덤한 정수.
 - `$IFS`: 내부 필드 구분자.
     - 확장 후에 단어들을 분리하거나, 빌트인 명령어인 `read`로 읽어들인 명령행을 단어로 분리할 때 사용된다.
@@ -182,4 +187,15 @@ $ echo "$IFS" | xxd
 - `20`: Space
 - `09`: TAB
 - `0a`: LF
+
+### 환경 변수
+
+위에서 언급한 변수들은 bash에 의해 지정되는 셸 변수들이고, 환경 변수는 그 외의 다른 변수들을 말한다.
+
+셸 스크립트를 작성할 때에는 같이 혼용하는 경우가 많아서 잘 알아두면 도움이 된다.
+
+- `$EDITOR`: 편집기. 보통은 `vi`.
+- `$TERM`: 사용자의 터미널 타입.
+    - 나는 `export TERM=xterm-256color` 으로 설정하고 사용한다.
+- `$USER`: 사용자의 이름.
 
