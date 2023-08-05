@@ -44,6 +44,7 @@
  "cmd/sort",
  "cmd/strfile",
  "cmd/sw_vers",
+ "cmd/top",
  "cmd/touch",
  "cmd/tr",
  "cmd/tree",
@@ -63,7 +64,6 @@
  "ripgrep",
  "sha256sum",
  "tail",
- "top",
  "uptime",
  "ykman"
 ]
