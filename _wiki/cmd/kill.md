@@ -3,7 +3,7 @@ layout  : wiki
 title   : kill
 summary : terminate or signal a process
 date    : 2023-05-07 00:00:38 +0900
-updated : 2023-08-05 22:43:53 +0900
+updated : 2023-08-05 22:46:50 +0900
 tag     : 
 resource: 90/72958A-66BE-4D3B-87B5-27B03E66207F
 toc     : true
@@ -106,7 +106,7 @@ $ kill -l
 - td
     - `28`
     - `WINCH`
-    - Window change. 이 시그널은 윈도우 크기가 변경된 경우에 시스템에 의해 보내진다. top과 [[/cmd/less]]{less}와 같은 프로그램들은 이 시그널을 받으면 새로운 윈도우 크기에 맞게 다시 그려질 것이다.
+    - Window change. 이 시그널은 윈도우 크기가 변경된 경우에 시스템에 의해 보내진다. [[/cmd/top]]{top}과 [[/cmd/less]]{less}와 같은 프로그램들은 이 시그널을 받으면 새로운 윈도우 크기에 맞게 다시 그려질 것이다.
 {:class="table-generate" data-target-id="signal_table2"}
 
 ## Examples
