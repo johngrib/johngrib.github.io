@@ -32,7 +32,6 @@
   "cmd/fortune",
   "cmd/google-java-format",
   "cmd/grep",
-  "cmd/history",
   "cmd/httpie",
   "cmd/iostat",
   "cmd/java",

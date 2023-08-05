@@ -2,9 +2,9 @@
  "type": "wiki",
  "title": "bash history 다루기",
  "summary": "사용법 및 잡다한 팁 요약",
- "parent": "cmd",
- "url": "/wiki/cmd/history",
- "updated": "2023-04-23 22:57:48 +0900",
+ "parent": "cmd/bash",
+ "url": "/wiki/cmd/bash/history",
+ "updated": "2023-08-05 15:25:05 +0900",
  "resource": "8E/4F8CFB-31D4-4678-975B-D5947D152564",
  "children": []
 }
