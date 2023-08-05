@@ -3,7 +3,7 @@ layout  : wiki
 title   : ls 명령어
 summary : 디렉토리의 내용을 출력한다
 date    : 2023-08-01 22:38:15 +0900
-updated : 2023-08-03 23:28:16 +0900
+updated : 2023-08-05 19:04:25 +0900
 tag     : 
 resource: 11/37B4FA-48D2-4D33-B630-23CA30753E4A
 toc     : true
@@ -94,7 +94,7 @@ drwxr-xr-x   15 johngrib staff  480 2023-08-02 Wed 21:24:50 .git
         - `l`: 심볼릭 링크
         - `c`: 문자 특수 파일. 터미널이나 모뎀같이 바이트의 열로 데이터를 처리하는 디바이스.
         - `b`: 블록 특수 파일. 하드 디스크나 CD-ROM 같이 블록 단위의 데이터를 처리하는 디바이스.
-    - 첫 글자 이후 9개 글자: "file mode"라 부른다.
+    - 첫 글자 이후 9개 글자: [[/cmd/chmod#file-mode]]{"file mode"}라 부른다.
         - `_rwx______`: 파일 소유자(Owner) 퍼미션.
         - `____rwx___`: 파일 소유 그룹(Group) 퍼미션.
         - `_______rwx`: 기타 사용자(World) 퍼미션.
@@ -106,30 +106,6 @@ drwxr-xr-x   15 johngrib staff  480 2023-08-02 Wed 21:24:50 .git
 7. 파일 최종 수정 요일.
 8. 파일 최종 수정 시간.
 9. 파일 이름.
-
-#### file mode
-
-> <div id="file_mode_table"></div>
-[^command-line-book-92]
-
-- th
-    - 속성
-    - 파일
-    - 디렉토리
-- td
-    - `r`
-    - 파일 열기와 읽기를 허용한다.
-    - 실행 속성이 설정되어 있으면 디렉토리의 내용물을 나열할 수 있게끔 허용한다.
-- td
-    - `w`
-    - 이 속성은 파일 쓰기 또는 잘라내기는 허용하지만, 이름 변경이나 파일 삭제는 허용하지 않는다. 파일 삭제나 파일 이름 변경은 디렉토리 속성에 의해 결정된다.
-    - 실행 속성이 설정되어 있으면 디렉토리 내의 파일들을 생성, 삭제, 이름 변경이 가능하도록 허용한다.
-- td
-    - `x`
-    - 파일이 프로그램으로 처리되고 파일이 실행되도록 허용한다. 스크립트 언어에서 작성된 프로그램 파일들은 읽기 기능으로 설정되어 있어야만 실행 가능하다.
-    - 디렉토리에 들어올 수 있도록 허용한다(예를 들어 `cd directory`와 같이).
-{:class="table-generate" data-target-id="file_mode_table"}
-
 
 ### -a : 모든 파일 보기 {#option-a}
 
@@ -200,6 +176,10 @@ $ ls -l  /bin/[  /bin/test
 -rwxr-xr-x 2 root wheel 134224 2023-06-15 Thu 19:08:29  /bin/test
 ```
 
+## 함께 읽기
+
+- [[/cmd/chmod#file-mode]]
+
 ## 참고문헌
 
 - 리눅스 커맨드라인 완벽 입문서 / 윌리엄 E. 샤츠 주니어 저 / 이종우, 정영신 공역 / 비제이퍼블릭(BJ퍼블릭) / 초판 1쇄 발행: 2013년 01월 11일 / 원제: The Linux Command Line
@@ -207,5 +187,4 @@ $ ls -l  /bin/[  /bin/test
 ## 주석
 
 [^coreutils]: <https://formulae.brew.sh/formula/coreutils >
-[^command-line-book-92]: 리눅스 커맨드라인 완벽 입문서. 9장. 92쪽.
 

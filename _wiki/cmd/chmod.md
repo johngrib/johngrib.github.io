@@ -3,7 +3,7 @@ layout  : wiki
 title   : chmod 명령어
 summary : change file modes or Access Control Lists
 date    : 2023-06-26 23:14:55 +0900
-updated : 2023-08-05 19:01:25 +0900
+updated : 2023-08-05 19:02:49 +0900
 tag     : 
 resource: FD/094CB3-958D-42A5-99FB-7C5C1E7DEECE
 toc     : true
@@ -14,7 +14,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 파일 모드
+## 파일 모드 {#file-mode}
 
 - 4: read. 읽기 권한. `100`. `r`.
 - 2: write. 쓰기 권한. `010`. `w`.
