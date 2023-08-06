@@ -3,7 +3,7 @@ layout  : wiki
 title   : chmod 명령어
 summary : 파일의 사용 권한을 변경한다
 date    : 2023-06-26 23:14:55 +0900
-updated : 2023-08-06 09:31:53 +0900
+updated : 2023-08-06 13:16:38 +0900
 tag     : 
 resource: FD/094CB3-958D-42A5-99FB-7C5C1E7DEECE
 toc     : true
@@ -51,7 +51,7 @@ latex   : false
     - 디렉토리에 들어올 수 있도록 허용한다(예를 들어 `cd directory`와 같이).
 {:class="table-generate" data-target-id="file_mode_table"}
 
-## 니모닉 구문 사용
+## 니모닉 구문 사용 {#mnemonic-syntax}
 
 니모닉(mnemonic) 구문을 사용하면 퍼미션 비트를 모두 지정하는 게 아니라 일부만 수정할 수 있다.
 
@@ -62,7 +62,7 @@ latex   : false
 일반적으로 시스템 관리자에게는 8진수 구문이 더 편리하지만 사용 권한 비트를 절댓값으로 지정할 때만 사용될 수 있다.
 니모닉 구문은 비트의 일부만 수정하고 나머지는 그대로 둘 수 있다.[^handbook-245]
 
-## 소유자 표기
+### 소유자 표기
 
 - `u`: user. 파일, 디렉토리의 소유자.
 - `g`: group. 그룹 소유자.
@@ -70,7 +70,7 @@ latex   : false
 - `a`: all. `u`, `g`, `o` 모두.
     - 소유자 표기를 생략할 경우 `a`로 간주한다.
 
-## 변경 기호
+### 변경 기호
 
 - `+`: 권한 추가.
 - `-`: 권한 제거.
