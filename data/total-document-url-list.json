@@ -196,6 +196,7 @@
  "/wiki/cmd/diff",
  "/wiki/cmd/ditto",
  "/wiki/cmd/du",
+ "/wiki/cmd/echo",
  "/wiki/cmd/fc",
  "/wiki/cmd/fd",
  "/wiki/cmd/file",

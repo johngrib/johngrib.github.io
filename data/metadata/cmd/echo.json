@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "echo 명령어",
+ "summary": "텍스트를 출력한다",
+ "parent": "cmd",
+ "url": "/wiki/cmd/echo",
+ "updated": "2023-08-06 19:41:52 +0900",
+ "resource": "15/C5E42C-4282-4B96-8807-143148C1A330",
+ "children": []
+}

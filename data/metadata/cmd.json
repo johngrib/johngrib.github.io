@@ -24,6 +24,7 @@
   "cmd/diff",
   "cmd/ditto",
   "cmd/du",
+  "cmd/echo",
   "cmd/fc",
   "cmd/fd",
   "cmd/file",
