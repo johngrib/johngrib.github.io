@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "GNU core utilities",
+ "summary": "GNU 운영체제의 기본 유틸리티 모음",
+ "parent": "cmd",
+ "url": "/wiki/cmd/gnu-coreutils",
+ "updated": "2023-08-07 22:39:54 +0900",
+ "resource": "79/1AC502-8496-4DC1-B88D-DE20B7F6427D",
+ "children": []
+}

@@ -203,6 +203,7 @@
  "/wiki/cmd/find",
  "/wiki/cmd/for",
  "/wiki/cmd/fortune",
+ "/wiki/cmd/gnu-coreutils",
  "/wiki/cmd/google-java-format",
  "/wiki/cmd/grep",
  "/wiki/cmd/httpie",

@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-08-06 19:23:42 +0900
+updated : 2023-08-07 21:59:13 +0900
 regenerate: true
 ---
 * TOC
@@ -647,6 +647,8 @@ regenerate: true
 * [[/cmd/bash]]
     * [[/cmd/bash/history]]
     * [[/cmd/bash/parameters]]
+
+* [[/cmd/gnu-coreutils]]
 
 * [[/cmd/ag]]
 * [[/cmd/basename]]
