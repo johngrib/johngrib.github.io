@@ -3,7 +3,7 @@ layout  : wiki
 title   : pipe
 summary : "|"
 date    : 2023-06-01 21:38:20 +0900
-updated : 2023-06-01 22:41:28 +0900
+updated : 2023-08-08 21:30:18 +0900
 tag     : 
 resource: EA/2B5097-C073-4307-BB60-255F5A34BC01
 toc     : true
@@ -13,6 +13,32 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 기원
+
+[M. Douglas McIlroy]( https://www.cs.dartmouth.edu/~doug/ ) 는 [1964년 10월 11일에 다음과 같은 메모를 작성했다]( http://doc.cat-v.org/unix/pipes/ ).
+
+>
+Summary--what's most important.  
+To put my strongest concerns into a nutshell:  
+>
+1. We should have some ways of coupling programs like garden hose--screw in another segment when it becomes when it becomes necessary to massage data in another way. This is the way of IO also.
+2. Our loader should be able to do link-loading and controlled establishment.
+3. Our library filing scheme should allow for rather general indexing, responsibility, generations, data path switching.
+4. It should be possible to get private system components (all routines are system components) for buggering around with.
+>
+M. D. McIlroy  
+October 11, 1964
+
+요약: 가장 중요한 것.
+
+나의 가장 큰 관심사를 한마디로 요약하자면 이렇습니다:
+
+1. <mark>정원 호스처럼 여러 프로그램들을 연결하는 방법이 있어야 합니다.</mark> 데이터를 다른 방식으로 처리할 필요가 생겼을 때, 다른 세그먼트에 호스를 끼워 넣듯이 할 수 있어야 합니다. IO란 이래야 합니다.
+2. 우리가 만드는 로더는 링크 로딩과 제어 설정이 가능해야 합니다.
+3. 라이브러리 파일링 체계는 일반적인 인덱싱, 책임, 생성, 데이터 경로 전환을 허용해야 합니다.
+4. 문제를 처리하기 위해 비공개 시스템 컴포넌트(모든 루틴은 시스템 컴포넌트)에도 접근할 수 있어야 합니다.
+
 
 ## man
 
@@ -141,8 +167,11 @@ UNIX 쉘은 출력 결과를 표준출력 디바이스로 전송하지 않고 UN
 
 ## 참고문헌
 
-- 운영체제 아주 쉬운 세 가지 이야기 [제2판] / Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-dusseau 공저 / 원유집, 박민규, 이성진 공역 / 홍릉 / 제2판 발행: 2020년 09월 10일 / 원제: Operating Systems: Three Easy Pieces
+- [Douglas McIlroy (en.wikipedia.org)]( https://en.wikipedia.org/wiki/Douglas_McIlroy )
+- [M. Douglas McIlroy, Adjunct Professor]( https://www.cs.dartmouth.edu/~doug/ ) - Douglas McIlroy의 홈페이지
+- [The Origin of Unix Pipes (doc.cat-v.org)]( http://doc.cat-v.org/unix/pipes/ )
 - 리눅스 커맨드라인 쉘 스크립트 바이블 [3판] / 리처드 블룸, 크리스틴 브레스 공저 / 트랜지스터팩토리 역 / 스포트라잇북 / 초판 1쇄 발행: 2016년 09월 26일
+- 운영체제 아주 쉬운 세 가지 이야기 [제2판] / Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-dusseau 공저 / 원유집, 박민규, 이성진 공역 / 홍릉 / 제2판 발행: 2020년 09월 10일 / 원제: Operating Systems: Three Easy Pieces
 
 ## 주석
 

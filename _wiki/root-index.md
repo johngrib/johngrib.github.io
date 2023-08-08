@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-08-08 20:58:12 +0900
+updated : 2023-08-08 21:17:09 +0900
 regenerate: true
 ---
 * TOC
@@ -649,6 +649,7 @@ regenerate: true
     * [[/cmd/bash/parameters]]
 
 * [[/cmd/gnu-coreutils]]
+* [[/cmd/pipe]]
 
 * [[/cmd/ag]]
 * [[/cmd/arch]]
@@ -694,7 +695,6 @@ regenerate: true
 * [[/cmd/openssl]]
 * [[/cmd/pass]]
 * [[/cmd/ping]]
-* [[/cmd/pipe]]
 * [[/cmd/pwgen]]
 * [[/cmd/rans]]
 * [[/cmd/rbenv]]
