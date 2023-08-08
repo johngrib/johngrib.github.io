@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2023-05-28 21:11:32 +0900
+updated : 2023-08-08 20:54:16 +0900
 tag     : 
 resource: 85/85BD50-3D0B-4A77-BAD1-FC9918F4B956
 toc     : true
@@ -14,6 +14,7 @@ latex   : false
 * TOC
 {:toc}
 
+* 2023-08-03 - [Vim 개발자 Bram Moolenaar 별세]( https://groups.google.com/g/vim_announce/c/tWahca9zkt4 )
 * 2023-03-24 - [인텔 공동 창립자 고든 무어, 94세 나이로 별세]( https://www.intc.com/news-events/press-releases/detail/1611/gordon-moore-intel-co-founder-dies-at-94 )
 * 2015-05 [HTTP/2](https://tools.ietf.org/html/rfc7540 )
 * 1999-02-26 - 펜티엄III 프로세서 출시
