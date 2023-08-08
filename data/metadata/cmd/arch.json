@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "arch 명령어",
+ "summary": "CPU 아키텍처 이름을 출력한다",
+ "parent": "cmd",
+ "url": "/wiki/cmd/arch",
+ "updated": "2023-08-08 21:04:44 +0900",
+ "resource": "EC/7BC7E1-6EE7-468B-8438-FB1254474954",
+ "children": []
+}

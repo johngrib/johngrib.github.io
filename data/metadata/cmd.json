@@ -8,6 +8,7 @@
  "resource": "26/2B1583-6BC0-4D96-926B-51728A24F463",
  "children": [
   "cmd/ag",
+  "cmd/arch",
   "cmd/basename",
   "cmd/bash",
   "cmd/bat",
