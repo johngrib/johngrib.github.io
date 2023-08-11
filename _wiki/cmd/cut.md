@@ -3,7 +3,7 @@ layout  : wiki
 title   : cut 명령어
 summary : cut out selected portions of each line of a file
 date    : 2019-01-15 17:09:24 +0900
-updated : 2023-08-12 08:48:12 +0900
+updated : 2023-08-12 08:56:26 +0900
 tag     : bash command
 resource: 3D/795B19-8944-4EA9-9C91-67222814313B
 toc     : true
@@ -29,6 +29,18 @@ $ echo 'hello world' | cut -c 3-    # 결과는 llo world
 ### 공백을 기준으로 2 번째 필드(f) 를 출력한다
 ```sh
 $ echo 'hello world' | cut -d' ' -f2
+```
+
+`-d`를 명시하지 않는다면 기본값으로 탭을 사용한다.
+
+```bash
+$ printf 'foo\tbar\tbaz\n' | cut -f2
+bar
+
+$ printf 'foo\nbar\nbaz\n' | cut -f2
+foo
+bar
+baz
 ```
 
 ### 필드 범위 출력
