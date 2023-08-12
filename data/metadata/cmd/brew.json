@@ -4,7 +4,7 @@
  "summary": "macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 brew.",
  "parent": "cmd",
  "url": "/wiki/cmd/brew",
- "updated": "2022-10-28 22:09:30 +0900",
+ "updated": "2023-08-12 21:20:58 +0900",
  "resource": "F4/81FF40-317B-45FF-BF0C-90DB22CB9915",
  "children": []
 }

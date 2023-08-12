@@ -3,7 +3,7 @@ layout  : wiki
 title   : grep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2022-03-08 00:07:17 +0900
+updated : 2023-08-12 21:26:07 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 resource: E6/02C9DC-B4FA-4FD4-B205-D2D93AD4BBAF
 toc     : true
@@ -37,7 +37,7 @@ latex   : false
 정규식은 패턴 매칭<sup>pattern matching</sup>에서 중추적 역할을 한다.
 [^joh-328]
 
-### egrep
+### egrep {#egrep}
 
 > 앨프리드 에이호는 `grep`을 확장해서 더 표현력이 풍부한 정규 표현식을 사용하게 하는 프로그램을 만들어 초기 유닉스에 기여했다.
 예를 들면 `this|that` 같은 선택적 항목을 검색하는 기능을 지원했다.

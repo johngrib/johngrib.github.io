@@ -3,7 +3,7 @@ layout  : wiki
 title   : Homebrew
 summary : macOS 용 패키지 관리자. 이름은 Homebrew지만, 명령어는 brew.
 date    : 2018-02-12 10:03:46 +0900
-updated : 2022-10-28 22:09:30 +0900
+updated : 2023-08-12 21:20:58 +0900
 tag     : bash mac command
 resource: F4/81FF40-317B-45FF-BF0C-90DB22CB9915
 toc     : true
@@ -68,7 +68,7 @@ cd /usr/local         # /usr/local 하위에 있는 bin, sbin 등에 설치한 �
 brew leaves
 ```
 
-## Brewfile
+## Brewfile {#brewfile}
 
 ```sh
  # Brewfile 을 자동으로 생성한다

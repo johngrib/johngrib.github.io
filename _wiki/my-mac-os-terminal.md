@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2023-08-12 21:19:49 +0900
+updated : 2023-08-12 21:34:47 +0900
 tag     : terminal study vim
 resource: FB/032717-48AB-406E-9732-3208E3B9AA95
 toc     : true
@@ -26,9 +26,9 @@ latex   : false
 
 단축키로 터미널을 언제든지 부를 수 있어야 편하다.
 
-나는 Hammerspoon으로 `F17` + `space`를 누르면 터미널이 화면에 나타나도록 설정해 두었다.
+나는 [[/hammerspoon]]으로 `F17` + `space`를 누르면 터미널이 화면에 나타나도록 설정해 두었다.
 
-iTerm의 경우 Preferences - Keys - Hotkey 로 들어가면 설정할 수 있다.
+[[/mac/iterm]]의 경우 Preferences - Keys - Hotkey 로 들어가면 설정할 수 있다.
 
 ## prompt를 꾸며본다
 
@@ -92,7 +92,7 @@ ${COLOR_END}\
 
 ## brew 사용법을 익힌다
 
-macOS용 패키지 관리자인 [Homebrew](https://brew.sh/index_ko ) 사용법을 익혀두면 다양한 프로그램을 쉽게 설치하고 관리할 수 있다.
+macOS용 패키지 관리자인 [[/cmd/brew]] 사용법을 익혀두면 다양한 프로그램을 쉽게 설치하고 관리할 수 있다.
 
 `install`, `uninstall`, `list`, `doctor`, `cask`, `tap` 등의 사용법을 익힌다.
 
@@ -100,13 +100,17 @@ macOS용 패키지 관리자인 [Homebrew](https://brew.sh/index_ko ) 사용법�
 
 짬이 나면 `brew cask`에 대해서도 알아본다.
 
-`Brefile`과 `bundle` 명령어를 사용할 수 있다면 스크립트를 사용해 여러 프로그램을 하나의 명령으로 설치할 수도 있다.
+[[/cmd/brew#brewfile]]{`Brefile`과 `bundle` 명령어}를 사용할 수 있다면 스크립트를 사용해 여러 프로그램을 하나의 명령으로 설치할 수도 있다.
+
+### brew의 대안이 있는지도 조사한다
+
+`brew`의 사용에 익숙해지면 다른 패키지 관리자들도 조사하고 사용해 보도록 한다.
 
 ## 명령어 사용법을 검색하는 방법을 익힌다
 
 ### man을 읽는다
 
-`man`은 공식 매뉴얼을 가장 쉽게 읽을 수 있는 방법이다. 읽는 버릇을 들이면 좋다.
+[[/cmd/man]]는 공식 매뉴얼을 가장 쉽게 읽을 수 있는 방법이다. 읽는 버릇을 들이면 좋다.
 
 ```sh
 man echo
@@ -183,7 +187,7 @@ $ tldr find     # find 사용법을 간결하게 알아본다
 
 ## 파이프 사용법을 익힌다
 
-파이핑을 익히면 여러 명령을 조합해 내가 원하는 형태로 결과를 가공할 수 있다.
+[[/cmd/pipe]]{파이핑}을 익히면 여러 명령을 조합해 내가 원하는 형태로 결과를 가공할 수 있다.
 
 예를 들어 다음 명령어 조합은 실행할 때마다 `가위`, `바위`, `보` 중 하나를 랜덤으로 출력한다.
 
@@ -204,7 +208,7 @@ $ echo -e "가위\n바위\n보" | sort -R | head -1
 
 [3.6 Redirections]( https://www.gnu.org/software/bash/manual/html_node/Redirections.html )
 
-시간이 날 때 다른 사람들이 작성한 셸 스크립트를 찾아보고 `/dev/null`에 대해서도 알아본다.
+시간이 날 때 다른 사람들이 작성한 셸 스크립트를 찾아보고 `/dev/null`이나 [[/cmd/tty#dev-tty]]{/dev/tty}에 대해서도 알아본다.
 
 줄줄이 딸려오는 다양한 문서들을 즐겁게 따라가며 읽는다.
 
@@ -219,13 +223,13 @@ macOS의 경우 `pbcopy`, `pbpaste`를 사용할 수 있다.
 
 ## 터미널이 인식하는 키에 대해 이해한다
 
-* [[special-chars]] 문서를 읽는 것도 약간은 도움이 될 수 있다.
+* [[/special-chars]] 문서를 읽는 것도 약간은 도움이 될 수 있다.
 * `^c`, `^h`, `^m`, `^j`, `^n`, `^p`, `^b`, `^f`, `^u`, `^e`, `^w` 등에 대해 조사한다.
     * 터미널에서 이런 키 조합을 하면 어떤 결과가 나온다는 것을 알게 된 데에서 정지하지 않도록 한다.
 
 ## 검색 명령에 익숙해진다
 
-[[/cmd/grep]]{grep}, `egrep`, `find`, `ag` 등의 명령을 파이프와 함께 사용해보고 다양한 옵션을 실험해본다.
+[[/cmd/grep]], [[/cmd/grep#egrep]]{egrep}, [[/cmd/find]], [[/cmd/ag]] 등의 명령을 [[/cmd/pipe]]{파이프}와 함께 사용해보고 다양한 옵션을 실험해본다.
 
 ## 변수 설정, if, for의 사용법을 익힌다
 
@@ -261,7 +265,7 @@ $ man cowsay    # 자세히 알고 싶은 경우 반드시 읽는다
 
 vim을 그냥 익히지만 말고, vim 안에서 다양한 다른 터미널 명령어들을 활용하는 방법에 대해 고민하도록 한다.
 
-이에 대해서는 [[two-views-of-vim#vim-에디터는-터미널-도구]] 문서를 읽어보면 도움이 될 수 있다.
+이에 대해서는 [[/two-views-of-vim#vim-is-terminal-tool]] 문서를 읽어보면 도움이 될 수 있다.
 
 ## fzf 사용법을 익힌다
 
@@ -276,7 +280,7 @@ fzf에 익숙해지면 fzf를 사용해 이런저런 선택기를 만들어 본�
 
 ## fc 명령어를 사용한다
 
-fc 명령어를 사용하면 전에 입력한 명령을 vim에서 편집할 수 있다.
+[[/cmd/fc]]를 사용하면 전에 입력한 명령을 vim에서 편집할 수 있다.
 
 편집을 마친 후, 저장하고 종료하면 실행된다. 매우 긴 명령이나 위험한 명령을 사용할 때 요긴하다.
 
@@ -309,5 +313,20 @@ fc 명령어에 익숙해지면 `control-x, control-e`도 사용해 보고, `exp
 
 ## 함께 읽기
 
+- [[/cmd/ag]]
+- [[/cmd/brew]]
+- [[/cmd/cut]]
+- [[/cmd/fc]]
+- [[/cmd/find]]
 - [[/cmd/grep]]
+- [[/cmd/man]]
+- [[/cmd/pipe]]
+- [[/cmd/tee]]
+- [[/cmd/tty]]
+- [[/git-alias]]
+- [[/git/prompt]]
+- [[/hammerspoon]]
+- [[/mac/iterm]]
+- [[/special-chars]]
+- [[/two-views-of-vim]]
 

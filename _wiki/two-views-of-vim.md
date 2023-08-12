@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim, 두 가지 관점
 summary : 그리고 나의 vim 사용 습관
 date    : 2019-05-19 22:31:27 +0900
-updated : 2020-07-19 13:32:18 +0900
+updated : 2023-08-12 21:27:39 +0900
 tag     : vim
 resource: 0A/9F8112-BFA2-4FB6-93DF-3518C2B4B7AA
 toc     : true
@@ -438,7 +438,7 @@ Plug 'mhinz/vim-startify'
 Startify는 Most Recently Used Files도 제공하고 있어 편리하다.
 
 
-### vim 에디터는 터미널 도구
+### vim 에디터는 터미널 도구 {#vim-is-terminal-tool}
 
 * vim 외의 다른 도구들을 함께 조화롭게 사용하는 방향을 생각해볼 수 있다.
 * vim 안에서 모든 것을 해결하려 집착할 필요는 없다.
