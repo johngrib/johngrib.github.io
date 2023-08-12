@@ -3,7 +3,7 @@ layout  : wiki
 title   : du 명령어
 summary : disk usage. 디스크 사용 현황을 본다.
 date    : 2018-02-08 22:58:36 +0900
-updated : 2023-04-27 23:33:49 +0900
+updated : 2023-08-12 14:08:41 +0900
 tag     : bash command
 resource: 09/8F1884-750F-489C-8361-FAE1EC8D8510
 toc     : true
@@ -51,6 +51,29 @@ $ du -hs
 
 ```
 $ du -ckx | sort -n -r | head
+```
+
+### sort와 함께 사용하기 {#with-sort}
+
+[[/cmd/sort]]
+
+```bash
+$ # sort -h 를 사용한 경우
+$ ls -d */ | xargs du -sh | sort -h
+4.0K	blog/
+4.0K	css/
+8.0K	_data/
+ 24K	js/
+ 32K	tool/
+ 36K	_layouts/
+ 40K	_includes/
+ 44K	_sass/
+128K	_posts/
+1.3M	node_modules/
+4.5M	data/
+ 41M	_wiki/
+249M	resource/
+318M	_site/
 ```
 
 ## Links

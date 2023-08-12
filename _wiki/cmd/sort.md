@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : sort
+title   : sort 명령어
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
-updated : 2023-08-12 14:00:30 +0900
+updated : 2023-08-12 14:08:44 +0900
 tag     : bash sort command
 resource: 0F/C08091-20AE-4A88-83AD-0735D902E917
 toc     : true
@@ -266,5 +266,7 @@ $ ls -d */ | xargs du -sh | sort -h
 
 ## 함께 읽기
 
+- [[/cmd/du]]
 - [[/cmd/grep]]
+- [[/cmd/ls]]
 
