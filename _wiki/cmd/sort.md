@@ -3,7 +3,7 @@ layout  : wiki
 title   : sort
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
-updated : 2023-08-12 13:45:26 +0900
+updated : 2023-08-12 13:49:47 +0900
 tag     : bash sort command
 resource: 0F/C08091-20AE-4A88-83AD-0735D902E917
 toc     : true
@@ -194,6 +194,32 @@ Ignore leading blank characters when comparing lines.
 * [[jekyll-category-tag]]
 * [[/my-wiki]]
     * [[my-wiki/123]]
+```
+
+### -V : 버전포맷 인식 정렬 {#option-V}
+
+```bash
+$ # 원본 파일의 내용: 랜덤하게 섞여 있다.
+$ cat version.txt
+sort-1.024.003.
+sort-1.23.1.tgz
+sort-1.024.tgz
+sort-1.024.003.tgz
+sort-1.022.tgz
+sort-1.024.009.tgz
+sort-1.024.07.tgz
+sort-1.23.tgz
+
+$ # 버전정렬 결과
+$ sort -V version.txt
+sort-1.022.tgz
+sort-1.23.tgz
+sort-1.23.1.tgz
+sort-1.024.tgz
+sort-1.024.003.
+sort-1.024.003.tgz
+sort-1.024.07.tgz
+sort-1.024.009.tgz
 ```
 
 ## 함께 읽기
