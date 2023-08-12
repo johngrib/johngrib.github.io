@@ -3,7 +3,7 @@ layout  : wiki
 title   : git prompt 설정
 summary : 
 date    : 2020-01-06 19:58:34 +0900
-updated : 2023-07-30 12:22:49 +0900
+updated : 2023-08-12 21:19:04 +0900
 tag     : git
 resource: 19/D18D8A-C819-4507-AE60-26E361BF638F
 toc     : true
@@ -36,7 +36,7 @@ latex   : false
 - `1M` - modified file이 1개.
 - `≡2` - stash에 2개가 쌓여 있음.
 
-### gbr 함수의 코드
+### gbr 함수의 코드 {#gbr-code}
 
 코드는 다음과 같다.
 

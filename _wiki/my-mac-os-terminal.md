@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2023-08-12 21:18:20 +0900
+updated : 2023-08-12 21:19:49 +0900
 tag     : terminal study vim
 resource: FB/032717-48AB-406E-9732-3208E3B9AA95
 toc     : true
@@ -81,7 +81,7 @@ ${COLOR_END}\
 \$(gbr)\n\$ "
 ```
 
-`gbr` 함수는 `git branch`와 `git status --short` 결과를 간단하게 보여준다.
+[[/git/prompt#gbr-code]]{gbr 함수}는 `git branch`와 `git status --short` 결과를 간단하게 보여준다.
 
 ![prompt]( /resource/FB/032717-48AB-406E-9732-3208E3B9AA95/68994193-93d3d600-08c3-11ea-9525-43d22171a358.png )
 
