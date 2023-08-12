@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2023-08-12 21:45:27 +0900
+updated : 2023-08-12 22:55:42 +0900
 tag     : terminal study vim
 resource: FB/032717-48AB-406E-9732-3208E3B9AA95
 toc     : true
@@ -190,6 +190,8 @@ $ bro find      # find 사용법에 대해 형에게 물어본다
 $ tldr find     # find 사용법을 간결하게 알아본다
 ```
 
+한편, `bro`가 잘 작동하지 않는 경우가 있어, 나는 내가 작성한 [bro 셸 스크립트]( https://github.com/johngrib/dotfiles/blob/master/bin/bro )를 사용하고 있다.
+
 ## 파이프 사용법을 익힌다
 
 [[/cmd/pipe]]{파이핑}을 익히면 여러 명령을 조합해 내가 원하는 형태로 결과를 가공할 수 있다.
@@ -308,7 +310,7 @@ fc 명령어에 익숙해지면 `control-x, control-e`도 사용해 보고, `exp
 
 * [contribute](https://github.com/johngrib/dotfiles/blob/master/bin/contribute )
 
-![contribute]( /resource/FB/032717-48AB-406E-9732-3208E3B9AA95/68949124-b949dc80-07fc-11ea-962b-c3bbef16dbf5.png )
+![contribute]( /resource/FB/032717-48AB-406E-9732-3208E3B9AA95/contribute.png )
 
 이 셸 스크립트는 엉망이지만 그럭저럭 돌아갔고, 이후 github이 메인화면을 개편하면서 이상하게 돌아가게 되었는데 오늘 고쳤더니 예전처럼 잘 돌아간다.
 
