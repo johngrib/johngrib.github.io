@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2023-08-12 21:36:54 +0900
+updated : 2023-08-12 21:44:33 +0900
 tag     : terminal study vim
 resource: FB/032717-48AB-406E-9732-3208E3B9AA95
 toc     : true
@@ -129,6 +129,11 @@ man echo
 ```sh
 #!/usr/bin/env bash
 
+if [ "$1" = "--introduce" ]; then
+    echo "$0 는 로컬에 설치된 johngrib.github.io 디렉토리에서 CLI 명령과 관련된 문서를 검색해 미리보기를 제공해 줍니다."
+    exit 0
+fi
+
 wiki=`stat -f "%N" ~/johngrib.github.io/_wiki`
 
 if [ "$wiki" = "" ]; then
@@ -136,7 +141,7 @@ if [ "$wiki" = "" ]; then
     return 0
 fi
 
-name=`egrep 'tag\s*:.*command( |$)' $wiki/* -l 2> /dev/null \
+name=`find $wiki/cmd -name '*.md' 2> /dev/null \
     | xargs egrep 'summary|title' \
     | awk -F':' 'NR%2==1 { name=$1; title=$3 } NR%2==0 { print name, ":", title, ":", $3 }' \
     | sed "s,"$wiki"/,," \
