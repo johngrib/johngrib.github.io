@@ -3,7 +3,7 @@ layout  : wiki
 title   : tty
 summary : return user's terminal name
 date    : 2023-06-10 14:41:50 +0900
-updated : 2023-08-12 18:23:53 +0900
+updated : 2023-08-12 18:52:20 +0900
 tag     : 
 resource: E4/878436-9ABD-43C8-A536-16BA769E3972
 toc     : true
@@ -212,5 +212,69 @@ $ find . -name '*cmd*' | tee /dev/tty | wc -l > result.txt
 $ # result.txt 에는 wc 결과만 들어있다.
 $ cat result.txt
       21
+```
+
+#### 비표준 출력 트릭 {#non-standard-output-trick}
+
+`/dev/tty`로 출력을 틀어주면 파이프라인에서 벗어난 내용을 터미널로 보낼 수 있다는 특징을 활용한 꼼수.
+
+표준 출력, 표준 에러와 다른 별도의 출력이 필요하다면 이런 꼼수를 쓰는 것도 생각할 수 있다.
+(하지만 어지간해선 표준 에러를 쓰는 것이 더 좋다.)
+
+다음과 같은 셸 스크립트를 만들고 `tt`라는 이름으로 저장한다.
+
+```bash
+#!/usr/bin/env bash
+
+echo "Hello"
+echo "Send to dev tty" > /dev/tty
+echo "World"
+echo "Send to 2 (STDERR)" >&2
+```
+
+이 `tt` 파일을 실행하면 `echo` 출력문이 모두 잘 출력된 것처럼 보인다.
+
+```bash
+$ ./tt
+Hello
+Send to dev tty
+World
+Send to 2 (STDERR)
+```
+
+하지만 `>`로 리다이렉트하면 `Send ...`는 `/dev/tty`와 2로 출력되어 `result.txt`에는 `Hello World`만 있다.
+
+```bash
+$ ./tt > result.txt
+Send to dev tty
+Send to 2 (STDERR)
+
+$ cat result.txt
+Hello
+World
+```
+
+당연히 `2>`에 대해서도 똑같이 작동한다.
+
+```bash
+$ ./tt 2> error.txt
+Hello
+Send to dev tty
+World
+
+$ cat error.txt
+Send to 2 (STDERR)
+```
+
+1, 2를 모두 파일로 리다이렉트하면 `/dev/tty`로 출력된 `Send to dev tty`만 `result.txt`에 없다.
+
+```bash
+$ ./tt > result.txt 2>&1
+Send to dev tty
+
+$ cat result.txt
+Hello
+World
+Send to 2 (STDERR)
 ```
 
