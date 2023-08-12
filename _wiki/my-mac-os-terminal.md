@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2023-08-12 19:42:12 +0900
+updated : 2023-08-12 21:18:20 +0900
 tag     : terminal study vim
 resource: FB/032717-48AB-406E-9732-3208E3B9AA95
 toc     : true
@@ -56,7 +56,7 @@ function gbr {
     if [ "$?" -ne "0" ]; then
         return 1
     else
-        branch="`git branch | grep '^\*' | cut -c 3-`"
+        branch="`git branch --show-current`"
         branch_str="\033[1;031m$branch\033[0m"
 
         stat=`git s \
