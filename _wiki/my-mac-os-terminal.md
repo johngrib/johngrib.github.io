@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2023-08-12 21:34:47 +0900
+updated : 2023-08-12 21:36:54 +0900
 tag     : terminal study vim
 resource: FB/032717-48AB-406E-9732-3208E3B9AA95
 toc     : true
@@ -226,6 +226,7 @@ macOS의 경우 `pbcopy`, `pbpaste`를 사용할 수 있다.
 * [[/special-chars]] 문서를 읽는 것도 약간은 도움이 될 수 있다.
 * `^c`, `^h`, `^m`, `^j`, `^n`, `^p`, `^b`, `^f`, `^u`, `^e`, `^w` 등에 대해 조사한다.
     * 터미널에서 이런 키 조합을 하면 어떤 결과가 나온다는 것을 알게 된 데에서 정지하지 않도록 한다.
+    * [[/article/vim-night/20220404-control-key]]에 컨트롤 키와 관련된 이야기를 적어 두었다.
 
 ## 검색 명령에 익숙해진다
 
