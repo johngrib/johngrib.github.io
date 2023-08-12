@@ -3,7 +3,7 @@ layout  : wiki
 title   : sort
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
-updated : 2023-04-01 23:37:32 +0900
+updated : 2023-08-12 13:36:24 +0900
 tag     : bash sort command
 resource: 0F/C08091-20AE-4A88-83AD-0735D902E917
 toc     : true
@@ -16,7 +16,7 @@ latex   : false
 
 ## 사용법
 
-### 기본적인 사용법
+### 기본적인 사용법 {#basic}
 
 * 파일의 내용을 라인 단위로 정렬해 출력한다.
 
@@ -104,7 +104,7 @@ $ echo -e "가위\n바위\n보" | sort -R | head -1
 ```
 
 
-### 필드 기준 정렬
+### -k : 필드 기준 정렬 {#option-k}
 
 다음과 같은 파일이 있다고 할 때
 
@@ -149,13 +149,12 @@ generateData.js:1
 test.md:0
 ```
 
-### prefix 공백 무시
+### -b : prefix 공백 무시 {#option-b}
 
 >
 `-b`, `--ignore-leading-blanks`
 >
 Ignore leading blank characters when comparing lines.
-
 
 
 다음과 같은 텍스트가 있을 때 `-b` 옵션을 사용하면 prefix 공백을 무시하고 정렬할 수 있다. Vim에서 `:'<,'>!sort -b` 와 같이 사용하기에도 좋다.
