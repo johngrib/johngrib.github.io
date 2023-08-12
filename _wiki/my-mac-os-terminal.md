@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2021-10-17 18:48:07 +0900
+updated : 2023-08-12 19:42:12 +0900
 tag     : terminal study vim
 resource: FB/032717-48AB-406E-9732-3208E3B9AA95
 toc     : true
@@ -191,7 +191,7 @@ $ tldr find     # find 사용법을 간결하게 알아본다
 $ echo -e "가위\n바위\n보" | sort -R | head -1
 ```
 
-익숙해지면 자연히 `sed`, `awk`, `tee`의 사용법도 익히게 될 것이다.
+익숙해지면 자연히 `sed`, `awk`, [[/cmd/tee]]의 사용법도 익히게 될 것이다.
 
 
 ## 리다이렉션을 익힌다

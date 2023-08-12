@@ -3,7 +3,7 @@ layout  : wiki
 title   : top 명령어
 summary : 시스템 프로세스 및 메모리 사용 상태를 확인한다
 date    : 2018-02-07 07:00:35 +0900
-updated : 2023-08-05 22:44:25 +0900
+updated : 2023-08-12 19:41:16 +0900
 tag     : bash command
 resource: 01/2703BA-155A-4635-869E-8F3AD8BD384D
 toc     : true
@@ -53,6 +53,7 @@ $ top -b -n 1 | tee top_report.txt
 ```
 
 * 위와 같이 실행하면 화면으로도 출력하고, 파일로도 출력한다.
+    * 참고: [[/cmd/tee]]
 
 ## 사용 방법 - Mac
 

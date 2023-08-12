@@ -3,7 +3,7 @@ layout  : wiki
 title   : tty
 summary : return user's terminal name
 date    : 2023-06-10 14:41:50 +0900
-updated : 2023-08-12 19:10:22 +0900
+updated : 2023-08-12 19:40:50 +0900
 tag     : 
 resource: E4/878436-9ABD-43C8-A536-16BA769E3972
 toc     : true
@@ -143,7 +143,7 @@ When an interactive user logs in, the system prepares the line to behave in a ce
 
 `/dev/tty`는 현재 터미널 장치의 파일 디스크립터를 가리킨다.
 
-따라서 `tee`와 함께 사용하면 파이프 흐름에서 벗어난 출력을 현재 터미널로 보낼 수 있다.
+따라서 [[/cmd/tee]]와 함께 사용하면 파이프 흐름에서 벗어난 출력을 현재 터미널로 보낼 수 있다.
 
 [[/cmd/find]]{find}와 `wc`를 조합해 사용하는 상황을 생각해보자.
 
@@ -330,3 +330,6 @@ Hello, John!
 
 `Hello, Mike!`가 아니라 `Hello, John!`이 출력되었다.
 
+## 함께 읽기
+
+- [[/cmd/tee]]
