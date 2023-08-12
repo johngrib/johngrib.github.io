@@ -240,6 +240,7 @@
  "/wiki/cmd/sort",
  "/wiki/cmd/strfile",
  "/wiki/cmd/sw_vers",
+ "/wiki/cmd/tee",
  "/wiki/cmd/top",
  "/wiki/cmd/touch",
  "/wiki/cmd/tr",
