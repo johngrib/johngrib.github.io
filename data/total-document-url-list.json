@@ -246,6 +246,7 @@
  "/wiki/cmd/tree",
  "/wiki/cmd/tty",
  "/wiki/cmd/uname",
+ "/wiki/cmd/uniq",
  "/wiki/cmd/xxd",
  "/wiki/cmd/yes",
  "/wiki/cmd/zip",

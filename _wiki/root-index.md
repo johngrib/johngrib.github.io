@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-08-12 08:48:02 +0900
+updated : 2023-08-12 15:15:09 +0900
 regenerate: true
 ---
 * TOC
@@ -714,6 +714,7 @@ regenerate: true
 * [[/cmd/tree]]
 * [[/cmd/tty]]
 * [[/cmd/uname]]
+* [[/cmd/uniq]]
 * [[/cmd/xxd]]
 * [[/cmd/yes]]
 * [[/cmd/zip]]
