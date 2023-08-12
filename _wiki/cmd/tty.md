@@ -3,7 +3,7 @@ layout  : wiki
 title   : tty
 summary : return user's terminal name
 date    : 2023-06-10 14:41:50 +0900
-updated : 2023-08-12 18:52:20 +0900
+updated : 2023-08-12 19:10:22 +0900
 tag     : 
 resource: E4/878436-9ABD-43C8-A536-16BA769E3972
 toc     : true
@@ -277,4 +277,56 @@ Hello
 World
 Send to 2 (STDERR)
 ```
+
+#### 사용자의 터미널 입력을 강제하는 트릭 {#forcing-user-input-trick}
+
+`/dev/tty`를 사용해 사용자의 터미널 입력을 강제하는 꼼수.
+
+보통 `read` 명령으로 사용자 입력을 받을 때에는 다음과 같이 셸 스크립트를 작성한다.
+
+```bash
+#!/usr/bin/env bash
+
+read -p "Enter your name: " name
+echo "Hello, $name!"
+```
+
+이렇게 작성한 파일을 실행하면 다음과 같이 사용자가 입력을 해줘야 한다.
+
+다음은 내가 `John Grib` 이라고 입력을 해 준 것이다.
+
+```bash
+$ ./name.sh
+Enter your name: John Grib
+Hello, John Grib!
+```
+
+이렇게 입력하는 것이 귀찮다면 파이핑을 하면 된다.
+파일이나 `echo` 같은 출력 명령을 통해 미리 입력을 넣어줄 수 있다.
+
+```bash
+$ echo "Mike" | ./name.sh
+Hello, Mike!
+```
+
+만약 이렇게 파이핑을 통해 `read`에 연결하는 것을 방지하고 사용자 입력을 강제하고 싶다면 `/dev/tty`를 사용할 수 있다.
+
+```bash
+#!/usr/bin/env bash
+
+read -p "Enter your name: " name < /dev/tty
+echo "Hello, $name!"
+```
+
+이렇게 하면 출력문을 연결해도 사용자 입력을 받는 프롬프트가 뜬다.
+
+다음은 내가 `John` 이라고 입력을 해 준 것이다.
+
+```bash
+$ echo "Mike" | ./name2.sh
+Enter your name: John
+Hello, John!
+```
+
+`Hello, Mike!`가 아니라 `Hello, John!`이 출력되었다.
 
