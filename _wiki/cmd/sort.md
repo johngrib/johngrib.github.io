@@ -3,7 +3,7 @@ layout  : wiki
 title   : sort
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
-updated : 2023-08-12 13:36:24 +0900
+updated : 2023-08-12 13:45:26 +0900
 tag     : bash sort command
 resource: 0F/C08091-20AE-4A88-83AD-0735D902E917
 toc     : true
@@ -16,19 +16,21 @@ latex   : false
 
 ## 사용법
 
-### 기본적인 사용법 {#basic}
-
 * 파일의 내용을 라인 단위로 정렬해 출력한다.
 
 ```sh
 $ sort filename
 ```
 
-* `-r`, `--reverse`: 파일의 내용을 역순으로 정렬해 출력한다.
+### -r : 역순 정렬 {#option-r}
+
+- `-r`, `--reverse`: 파일의 내용을 역순으로 정렬해 출력한다.
 
 ```sh
 $ sort -r filename
 ```
+
+### -n : 숫자로 정렬 {#option-n}
 
 * `-n`, `--numeric-sort`: 숫자로 정렬한다.
 
@@ -48,6 +50,8 @@ $ sort -n test
 522
 ```
 
+### -u : 중복 제거 {#option-u}
+
 * `-u`, `--unique`
 
 ```sh
@@ -62,6 +66,8 @@ $ sort -u sorted
 35
 522
 ```
+
+### -c : 정렬 체크 {#option-c}
 
 * `-c`, `--check`: 정렬되었는지 체크한다.
     * `-u` 옵션과 섞어서 쓰면 중복된 값이 있어도 보고를 출력한다.
@@ -96,13 +102,14 @@ $ # 옵션을 이렇게 따로 줘도 상관없다
 $ sort -c -n sorted
 ```
 
+### -R : 랜덤 정렬 {#option-R}
+
 * `-R`, `--random-sort`
 
 ```sh
 $ # 이것으로 터미널에서 가위바위보를 할 수 있다!
 $ echo -e "가위\n바위\n보" | sort -R | head -1
 ```
-
 
 ### -k : 필드 기준 정렬 {#option-k}
 
