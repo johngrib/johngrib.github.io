@@ -3,7 +3,7 @@ layout  : wiki
 title   : sort
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
-updated : 2023-08-12 13:49:47 +0900
+updated : 2023-08-12 14:00:30 +0900
 tag     : bash sort command
 resource: 0F/C08091-20AE-4A88-83AD-0735D902E917
 toc     : true
@@ -220,6 +220,48 @@ sort-1.024.003.
 sort-1.024.003.tgz
 sort-1.024.07.tgz
 sort-1.024.009.tgz
+```
+
+### -h : 사람이 읽기 쉬운 포맷 인식 정렬 {#option-h}
+
+- `-h`, `--human-numeric-sort`: 사람이 읽기 좋게 SI 단위를 사용하는 숫자를 정렬한다.
+
+```bash
+$ # sort -h 를 사용하지 않은 경우: 파일 용량 기준으로 보면 정렬이 되지 않았다.
+$ ls -d */ | xargs du -sh
+8.0K	_data/
+ 40K	_includes/
+ 36K	_layouts/
+128K	_posts/
+ 44K	_sass/
+318M	_site/
+ 41M	_wiki/
+4.0K	blog/
+4.0K	css/
+4.5M	data/
+ 24K	js/
+1.3M	node_modules/
+249M	resource/
+ 32K	tool/
+```
+
+```bash
+$ # sort -h 를 사용한 경우
+$ ls -d */ | xargs du -sh | sort -h
+4.0K	blog/
+4.0K	css/
+8.0K	_data/
+ 24K	js/
+ 32K	tool/
+ 36K	_layouts/
+ 40K	_includes/
+ 44K	_sass/
+128K	_posts/
+1.3M	node_modules/
+4.5M	data/
+ 41M	_wiki/
+249M	resource/
+318M	_site/
 ```
 
 ## 함께 읽기
