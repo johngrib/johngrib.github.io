@@ -3,7 +3,7 @@ layout  : category
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2023-08-12 16:11:34 +0900
+updated : 2023-08-12 16:12:51 +0900
 tag     : rfc
 resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
@@ -202,6 +202,11 @@ By 1977, the Arpanet employed several informal standards for the text messages (
 * Etymology of "Foo"
 * "Foo"의 어원
 * [https://www.ietf.org/rfc/rfc3092.txt](https://www.ietf.org/rfc/rfc3092.txt)
+
+### RFC 3629
+
+- UTF-8, a transformation format of ISO 10646
+- [RFC 3629]( https://datatracker.ietf.org/doc/html/rfc3629 )
 
 ### RFC 4122
 
