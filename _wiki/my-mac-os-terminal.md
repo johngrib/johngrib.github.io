@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초심자를 위한 터미널 공부 가이드
 summary : 편안하고 즐거운 터미널 생활
 date    : 2019-11-13 22:39:11 +0900
-updated : 2023-08-12 21:44:33 +0900
+updated : 2023-08-12 21:45:27 +0900
 tag     : terminal study vim
 resource: FB/032717-48AB-406E-9732-3208E3B9AA95
 toc     : true
@@ -122,7 +122,7 @@ man echo
 
 이렇게 하면 터미널 명령에 익숙해지는 것은 시간 문제이다.
 
-내가 사용하고 있는 명령 검색용 명령은 직접 작성한 `exam`이라는 이름의 스크립트로, 내용은 다음과 같다.
+내가 사용하고 있는 명령 검색용 명령은 직접 작성한 [exam이라는 이름의 스크립트]( https://github.com/johngrib/dotfiles/blob/master/bin/exam )로, 내용은 다음과 같다.
 
 개선할 점이 많이 있긴 하지만 그럭저럭 잘 작동한다.
 
