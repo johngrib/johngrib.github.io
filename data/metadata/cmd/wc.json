@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "wc 명령어",
+ "summary": "line, word, byte를 카운트한다",
+ "parent": "cmd",
+ "url": "/wiki/cmd/wc",
+ "updated": "2023-08-13 15:26:19 +0900",
+ "resource": "C5/D649E5-61C6-409F-B5A1-AA40375F9CA1",
+ "children": []
+}

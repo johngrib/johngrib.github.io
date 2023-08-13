@@ -76,6 +76,7 @@
   "cmd/tty",
   "cmd/uname",
   "cmd/uniq",
+  "cmd/wc",
   "cmd/xxd",
   "cmd/yes",
   "cmd/zip",
