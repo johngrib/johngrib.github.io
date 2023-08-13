@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : mv 명령어
-summary : 파일을 옮긴다
+summary : 파일을 옮기거나 이름을 바꾼다
 date    : 2020-04-18 23:08:16 +0900
-updated : 2022-01-13 22:53:06 +0900
+updated : 2023-08-13 15:59:17 +0900
 tag     : bash command
 resource: 80/3C0DB7-6376-448D-94B9-C4C8452D1E9F
 toc     : true
@@ -87,3 +87,42 @@ $ mv -n a.txt b.txt
 $ mv -v c.txt f.txt
 c.txt -> f.txt
 ```
+
+### 응용: 많은 수의 파일 이름을 한 번에 변경하기 {#bulk-mv}
+
+[[/cmd/pipe]]를 활용해 [[/cmd/bash]]에 넘기는 식으로 여러 파일의 이름 변경을 한 번에 할 수 있다.
+
+예를 들어보자.
+
+다음은 [[/cmd/find]]와 [[/cmd/sed]]를 사용해 현재 디렉토리에 있는 파일들 중, 이름이 `t`로 시작하는 것들만 골라서 이름 마지막에 `_`를 붙이는 `mv` 명령 텍스트를 출력한다.
+
+```bash
+$ find . -name 't*' | sed -E 's/(.*)/mv \1 \1_/'
+mv ./tt2.sh ./tt2.sh_
+mv ./test.sh ./test.sh_
+mv ./test-.sh ./test-.sh_
+mv ./tt.sh ./tt.sh_
+```
+
+이 때 이 출력 결과를 클립보드로 복사하고, 붙여넣어서 실행하는 방법도 있겠지만 다음과 같이 [[/cmd/bash]]에 넘기는 방법도 있다.
+
+```bash
+$ find . -name 't*' | sed -E 's/(.*)/mv \1 \1_/' | bash -x
++ mv ./tt2.sh ./tt2.sh_
++ mv ./test.sh ./test.sh_
++ mv ./test-.sh ./test-.sh_
++ mv ./tt.sh ./tt.sh_
+```
+
+[[/cmd/bash]]에 준 `-x` 옵션은 실행되는 명령을 출력해준다.
+
+만약 출력문을 보고 싶지 않다면 `-x`를 빼면 된다.
+
+```bash
+$ find . -name 't*' | sed -E 's/(.*)/mv \1 \1_/' | bash
+```
+
+마지막의 `bash`가 입력으로 받은 문자열을 명령어 구문으로 인식해 실행하기 때문에 이런 작업이 가능하다.
+
+`bash`로 연결하지 않고 파일로 리다이렉션하거나 위와 같이 스크린에 출력해서 4개의 파일에 대한 이름 변경 작업을 미리 확인할 수도 있다.
+
