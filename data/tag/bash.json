@@ -45,6 +45,7 @@
  "cmd/sort",
  "cmd/strfile",
  "cmd/sw_vers",
+ "cmd/tail",
  "cmd/top",
  "cmd/touch",
  "cmd/tr",
@@ -63,7 +64,6 @@
  "perl-one-liner",
  "ripgrep",
  "sha256sum",
- "tail",
  "uptime",
  "ykman"
 ]

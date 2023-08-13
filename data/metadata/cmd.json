@@ -68,6 +68,7 @@
   "cmd/sort",
   "cmd/strfile",
   "cmd/sw_vers",
+  "cmd/tail",
   "cmd/tee",
   "cmd/top",
   "cmd/touch",
@@ -95,7 +96,6 @@
   "phpbrew",
   "ripgrep",
   "sha256sum",
-  "tail",
   "uptime",
   "ykman"
  ]

@@ -3,8 +3,8 @@
  "title": "tail 명령어",
  "summary": "display the last part of a file",
  "parent": "cmd",
- "url": "/wiki/tail",
- "updated": "2020-01-19 21:54:13 +0900",
+ "url": "/wiki/cmd/tail",
+ "updated": "2023-08-13 15:30:43 +0900",
  "resource": "37/4DEAA6-AC99-4BF7-80B8-03BAB23F1129",
  "children": []
 }

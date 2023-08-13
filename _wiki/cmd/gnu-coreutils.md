@@ -33,7 +33,7 @@ latex   : false
 - pwd, readlink, realpath, rm, rmdir
 - runcon, [[/cmd/seq]], shred, shuf, sleep
 - [[/cmd/sort]], split, stat, stdbuf, stty
-- sum, tac, [[/tail]], [[/cmd/tee]], test
+- sum, tac, [[/cmd/tail]], [[/cmd/tee]], test
 - timeout, touch, [[/cmd/tr]], true, truncate
 - tsort, [[/cmd/tty]], [[/cmd/uname]], unexpand, [[/cmd/uniq]]
 - unlink, [[/uptime]], users, vdir, [[/cmd/wc]]

@@ -3,12 +3,12 @@ layout  : wiki
 title   : tail 명령어
 summary : display the last part of a file
 date    : 2019-01-06 23:17:41 +0900
-updated : 2020-01-19 21:54:13 +0900
+updated : 2023-08-13 15:30:43 +0900
 tag     : bash command
 resource: 37/4DEAA6-AC99-4BF7-80B8-03BAB23F1129
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
