@@ -78,6 +78,7 @@
   "cmd/uname",
   "cmd/uniq",
   "cmd/wc",
+  "cmd/xargs",
   "cmd/xxd",
   "cmd/yes",
   "cmd/zip",

@@ -250,6 +250,7 @@
  "/wiki/cmd/uname",
  "/wiki/cmd/uniq",
  "/wiki/cmd/wc",
+ "/wiki/cmd/xargs",
  "/wiki/cmd/xxd",
  "/wiki/cmd/yes",
  "/wiki/cmd/zip",
