@@ -27,6 +27,7 @@
   "cmd/ditto",
   "cmd/du",
   "cmd/echo",
+  "cmd/factor",
   "cmd/fc",
   "cmd/fd",
   "cmd/file",
