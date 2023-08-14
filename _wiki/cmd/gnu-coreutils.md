@@ -3,7 +3,7 @@ layout  : wiki
 title   : GNU core utilities
 summary : GNU 운영체제의 기본 유틸리티 모음
 date    : 2023-08-07 21:59:15 +0900
-updated : 2023-08-13 15:29:00 +0900
+updated : 2023-08-14 22:02:09 +0900
 tag     : 
 resource: 79/1AC502-8496-4DC1-B88D-DE20B7F6427D
 toc     : true
@@ -20,7 +20,7 @@ latex   : false
 
 - [[/cmd/arch]], [[/base64]]{base64}, [[/cmd/basename]], cat, chcon
 - chgrp, [[/cmd/chmod]], chown, chroot, cksum
-- comm, cp, [[/csplit]], [[/cmd/cut]], date
+- comm, cp, [[/csplit]], [[/cmd/cut]], [[/cmd/date]]
 - dd, [[/df]], dir, dircolors, dirname
 - [[/cmd/du]], [[/cmd/echo]], env, expand, expr
 - factor, false, fmt, fold, groups
