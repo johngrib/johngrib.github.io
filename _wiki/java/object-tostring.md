@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.lang.Object.toString 메소드
 summary :
 date    : 2018-03-10 23:04:50 +0900
-updated : 2022-06-21 22:20:20 +0900
+updated : 2023-08-15 20:09:01 +0900
 tag     : java 번역
 resource: 84/CB0481-D3EB-44B3-B3E7-95BA0D072C67
 toc     : true
@@ -88,29 +88,30 @@ Lombok의 `@ToString`를 사용하면 `equals`와 `hashCode` 메소드를 자동
 다음은 롬복 홈페이지에서 복사해 온 코드이다.
 
 ```java
+
 import lombok.ToString;
 
-@ToString(exclude="id")
+@ToString
 public class ToStringExample {
-    private static final int STATIC_VAR = 10;
-    private String name;
-    private Shape shape = new Square(5, 10);
-    private String[] tags;
-    private int id;
+  private static final int STATIC_VAR = 10;
+  private String name;
+  private Shape shape = new Square(5, 10);
+  private String[] tags;
+  @ToString.Exclude private int id;
 
-    public String getName() {
-        return this.getName();
+  public String getName() {
+    return this.name;
+  }
+
+  @ToString(callSuper=true, includeFieldNames=true)
+  public static class Square extends Shape {
+    private final int width, height;
+
+    public Square(int width, int height) {
+      this.width = width;
+      this.height = height;
     }
-
-    @ToString(callSuper=true, includeFieldNames=true)
-    public static class Square extends Shape {
-        private final int width, height;
-
-        public Square(int width, int height) {
-            this.width = width;
-            this.height = height;
-        }
-    }
+  }
 }
 ```
 
