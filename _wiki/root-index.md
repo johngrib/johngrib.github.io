@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-08-14 21:57:00 +0900
+updated : 2023-08-15 08:08:00 +0900
 regenerate: true
 ---
 * TOC
@@ -645,6 +645,7 @@ regenerate: true
 ### [[/cmd]]
 
 * [[/cmd/bash]]
+    * [[/cmd/bash/flow-control]]
     * [[/cmd/bash/history]]
     * [[/cmd/bash/parameters]]
 
