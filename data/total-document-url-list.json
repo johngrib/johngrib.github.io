@@ -189,6 +189,7 @@
  "/wiki/cmd/bind",
  "/wiki/cmd/brew",
  "/wiki/cmd/cal",
+ "/wiki/cmd/chardetect",
  "/wiki/cmd/chmod",
  "/wiki/cmd/chsh",
  "/wiki/cmd/column",

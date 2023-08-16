@@ -1,3 +1,4 @@
 [
- "base64"
+ "base64",
+ "cmd/chardetect"
 ]

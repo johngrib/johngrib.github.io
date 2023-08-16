@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-08-16 20:32:12 +0900
+updated : 2023-08-16 21:17:16 +0900
 regenerate: true
 ---
 * TOC
@@ -660,6 +660,7 @@ regenerate: true
 * [[/cmd/bind]]
 * [[/cmd/brew]]
 * [[/cmd/cal]]
+* [[/cmd/chardetect]]
 * [[/cmd/chmod]]
 * [[/cmd/chsh]]
 * [[/cmd/column]]
