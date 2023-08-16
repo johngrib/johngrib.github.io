@@ -3,7 +3,7 @@ layout  : wiki
 title   : iconv 명령어
 summary : 문자열 인코딩을 변환한다
 date    : 2023-08-16 20:32:14 +0900
-updated : 2023-08-16 21:11:43 +0900
+updated : 2023-08-16 21:27:42 +0900
 tag     : 
 resource: CD/E12858-1C0E-4A7C-BFCF-7C168F1B8A69
 toc     : true
@@ -82,8 +82,7 @@ output-euc-kr.txt: ISO-8859 text
 
 [[/cmd/file]]가 EUC-KR을 인식하지 못하기 때문이다.
 
-EUC-KR 도 인식해주는 도구를 사용할 필요가 있다.
-[chardet]( https://github.com/chardet/chardet )이 적절하다.
+EUC-KR 도 인식해주는 도구를 사용할 필요가 있고, [[/cmd/chardetect]]가 이 목적에 적합할 수 있다고 생각한다.
 
 ```bash
 pip install chardet
@@ -92,7 +91,7 @@ pip install chardet
 pip3 install chardet
 ```
 
-설치가 완료된 이후 `chardetect` 명령으로 확인해보니 다음과 같았다.
+설치가 완료된 이후 [[/cmd/chardetect]]로 확인해보니 다음과 같았다.
 
 ```bash
 $ chardetect input-utf-8.txt output-euc-kr.txt 

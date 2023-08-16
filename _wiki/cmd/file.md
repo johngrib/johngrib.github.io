@@ -3,7 +3,7 @@ layout  : wiki
 title   : file 명령어
 summary : 파일 타입을 조사한다
 date    : 2020-09-03 18:38:21 +0900
-updated : 2023-07-31 21:57:15 +0900
+updated : 2023-08-16 21:28:36 +0900
 tag     : bash command
 resource: B7/996220-E8A4-40A7-ACA2-3F8B880DC616
 toc     : true
@@ -43,4 +43,9 @@ test.csv: ISO-8859 text, with CRLF line terminators
 $ file -I test.txt
 test.csv: text/plain; charset=iso-8859-1
 ```
+
+## 함께 읽기
+
+- [[/cmd/chardetect]]
+- [[/cmd/iconv]]
 

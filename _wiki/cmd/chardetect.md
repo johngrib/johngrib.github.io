@@ -3,7 +3,7 @@ layout  : wiki
 title   : chardetect 명령어
 summary : 문자열 인코딩을 추측한다
 date    : 2023-08-16 21:17:18 +0900
-updated : 2023-08-16 21:26:21 +0900
+updated : 2023-08-16 21:28:07 +0900
 tag     : encoding
 resource: 7D/82A493-4DC5-45B1-AFA4-CFA87FCF30EE
 toc     : true
@@ -46,6 +46,11 @@ euc-kr.txt: EUC-KR with confidence 0.99
 $ file euc-kr.txt
 euc-kr.txt: ISO-8859 text
 ```
+
+## 함께 읽기
+
+- [[/cmd/file]]
+- [[/cmd/iconv]]
 
 ## Links
 
