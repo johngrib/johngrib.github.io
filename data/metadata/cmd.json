@@ -38,6 +38,7 @@
   "cmd/google-java-format",
   "cmd/grep",
   "cmd/httpie",
+  "cmd/iconv",
   "cmd/iostat",
   "cmd/java",
   "cmd/java_home",

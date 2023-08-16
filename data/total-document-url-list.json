@@ -212,6 +212,7 @@
  "/wiki/cmd/google-java-format",
  "/wiki/cmd/grep",
  "/wiki/cmd/httpie",
+ "/wiki/cmd/iconv",
  "/wiki/cmd/iostat",
  "/wiki/cmd/java",
  "/wiki/cmd/java_home",
