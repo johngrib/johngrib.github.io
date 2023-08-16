@@ -30,6 +30,7 @@
   "vim/set-empty-chars",
   "vim/ultisnips",
   "vim/window",
+  "vim/xxd-hex-edit",
   "vim/ycm-python3",
   "vimwiki"
  ]

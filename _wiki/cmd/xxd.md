@@ -3,7 +3,7 @@ layout  : wiki
 title   : xxd 명령어
 summary : make a hexdump or do the reverse
 date    : 2021-09-24 21:39:48 +0900
-updated : 2023-08-12 11:19:17 +0900
+updated : 2023-08-16 22:37:26 +0900
 tag     : bash command
 resource: BF/918E84-1974-41F0-82D0-7E37B4C945F7
 toc     : true
@@ -78,3 +78,8 @@ $ echo -n '가' | xxd
 $ echo -n '힣' | xxd
 00000000: ed9e a3                                  ...
 ```
+
+## 함께 읽기
+
+- [[/vim/xxd-hex-edit]]
+
