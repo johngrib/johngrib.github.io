@@ -3,7 +3,7 @@ layout  : wiki
 title   : xxd 명령어
 summary : make a hexdump or do the reverse
 date    : 2021-09-24 21:39:48 +0900
-updated : 2023-08-16 22:37:26 +0900
+updated : 2023-08-17 20:44:36 +0900
 tag     : bash command
 resource: BF/918E84-1974-41F0-82D0-7E37B4C945F7
 toc     : true
@@ -52,9 +52,12 @@ $ echo -n k | xxd -b
 
 ### 한글의 바이트 확인
 
-한 글자가 3바이트라는 것을 확인할 수 있다.
+UTF-8 이라면 한 글자가 3바이트라는 것을 확인할 수 있다.
 
 ```bash
+$ echo $LANG
+en_US.UTF-8
+
 $ echo -n '안' | xxd
 00000000: ec95 88                                  ...
 
