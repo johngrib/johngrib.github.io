@@ -181,6 +181,7 @@
  "/wiki/cmd/arch",
  "/wiki/cmd/basename",
  "/wiki/cmd/bash",
+ "/wiki/cmd/bash/bashrc",
  "/wiki/cmd/bash/expansion",
  "/wiki/cmd/bash/flow-control",
  "/wiki/cmd/bash/history",
