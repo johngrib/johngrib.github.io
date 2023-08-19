@@ -3,7 +3,7 @@ layout  : wiki
 title   : /dev/fd
 summary : file descriptor file들이 있는 디렉토리
 date    : 2023-05-31 21:30:30 +0900
-updated : 2023-06-10 12:44:24 +0900
+updated : 2023-08-19 12:27:27 +0900
 tag     : 
 resource: 98/FB8CCC-3FFD-481E-8BF9-AC07A50CB93B
 toc     : true
@@ -32,6 +32,14 @@ cat /dev/fd/0
 echo "hello" > /dev/fd/1
 ```
 
+한편, `/dev/stdin`, `/dev/stdout`, `/dev/stderr`는 각각 `/dev/fd/0`, `/dev/fd/1`, `/dev/fd/2`에 대한 심볼릭 링크이다.
+
+```bash
+$ ls -al /dev/std*
+lr-xr-xr-x 1 root wheel 0 2023-08-17 Thu 22:59:57 /dev/stderr -> fd/2
+lr-xr-xr-x 1 root wheel 0 2023-08-17 Thu 22:59:57 /dev/stdin -> fd/0
+lr-xr-xr-x 1 root wheel 0 2023-08-17 Thu 22:59:57 /dev/stdout -> fd/1
+```
 
 ## man
 
