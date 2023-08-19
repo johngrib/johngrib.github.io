@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-08-19 12:25:17 +0900
+updated : 2023-08-19 12:28:09 +0900
 regenerate: true
 ---
 * TOC
@@ -651,7 +651,8 @@ regenerate: true
 
 * [[/cmd/gnu-coreutils]]
 * [[/cmd/pipe]]
-* [[/jargon/dev/fd]]
+
+* [[/cmd/dev/fd]]
 
 * [[/cmd/ag]]
 * [[/cmd/arch]]
