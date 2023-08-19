@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash 구문 확장
 summary : 
 date    : 2023-08-15 18:27:35 +0900
-updated : 2023-08-19 22:47:35 +0900
+updated : 2023-08-19 22:53:28 +0900
 tag     : 
 resource: 39/80DE57-7F00-4588-AB78-C96EBACB4BF0
 toc     : true
@@ -22,7 +22,7 @@ latex   : false
 이러한 프로세스를 확장이라고 하는데, 이 기능으로 인해 무엇이든 입력하면 쉘이 그것을 처리하기 전에 다른 무언가로 확장된다.
 [^tlcl-69]
 
-## 기본: *, ?, [] {#basics}
+## 기본: *, ?, [ ] {#basics}
 
 - `*` : 모든 문자
 
