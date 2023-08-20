@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : iTerm2
-summary : 문제 해결 및 설정 경험을 모아본다
+title   : iTerm
+summary : iTerm2 문제 해결 및 설정 경험을 모아본다
 date    : 2020-03-23 11:35:51 +0900
-updated : 2023-07-31 20:26:16 +0900
+updated : 2023-08-20 19:27:48 +0900
 tag     : mac
 resource: 01/5EE992-8715-460E-A336-239AE4A4EA4D
 toc     : true
