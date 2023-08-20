@@ -3,7 +3,7 @@ layout  : wiki
 title   : bind 명령어
 summary : 
 date    : 2022-01-29 12:36:51 +0900
-updated : 2022-01-29 15:39:39 +0900
+updated : 2023-08-20 19:19:29 +0900
 tag     : bash command
 resource: A5/DC6546-73C7-41A3-B083-096AD890BF84
 toc     : true
@@ -84,4 +84,5 @@ bind '"\ev": "fav\C-m"'
 
 ![]( ./mac-terminal-meta.jpg ){:style="max-width:550px"}
 
-- Iterm은 Option과 Meta 연결을 설정해주어도 잘 안 되어서 엄청 짜증나는데(그래서 나는 Iterm을 안 쓴다), 그래서 보통은 그냥 `Esc` 누르고 이후의 조합을 누른다.
+- [[/mac/iterm]]은 Option과 Meta 연결을 설정해주어도 잘 안 되어서 엄청 짜증나는데(그래서 나는 [[/mac/iterm]] 안 쓴다), 그래서 보통은 그냥 `Esc` 누르고 이후의 조합을 누른다.
+
