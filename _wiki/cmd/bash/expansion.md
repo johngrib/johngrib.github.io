@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash 구문 확장
 summary : 
 date    : 2023-08-15 18:27:35 +0900
-updated : 2023-08-19 22:53:28 +0900
+updated : 2023-08-20 19:04:30 +0900
 tag     : 
 resource: 39/80DE57-7F00-4588-AB78-C96EBACB4BF0
 toc     : true
@@ -69,6 +69,10 @@ echo F[0-59]
  # 홈 디렉토리
 cat ~/.bashrc
 ```
+
+## 홈 경로 확장
+
+- `~`: `$HOME`과 똑같은 값으로 확장된다.
 
 ## 산술 확장 {#arithmetic}
 
