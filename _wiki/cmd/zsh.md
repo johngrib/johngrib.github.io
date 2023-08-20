@@ -3,7 +3,7 @@ layout  : wiki
 title   : zsh
 summary : zsh 안 쓰지만 가끔 쓸 일이 있으니까
 date    : 2023-07-27 23:06:40 +0900
-updated : 2023-07-28 19:48:23 +0900
+updated : 2023-08-20 19:12:51 +0900
 tag     : 
 resource: E8/3E6470-E1DD-4311-9519-F20C2D1BB666
 toc     : true
@@ -53,17 +53,22 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 ## bindkey 사용하기 {#bindkey}
 
-나는 `meta + v`로 [fav]( https://github.com/johngrib/fav-dir ) 명령을 호출하도록 bash에서 `bind` 명령을 사용해 설정한다.
+나는 `meta + v`로 [fav]( https://github.com/johngrib/fav-dir ) 명령을 호출하도록 bash에서 [[/cmd/bind]]를 사용해 설정한다.
 
 ```bash
  # meta + v 를 입력하면 ctrl+u , fav , ctrl+m 을 연속으로 입력한다.
 bind '"\ev": "\C-ufav\C-m"'
 ```
 
-그런데 zsh에서는 `bind` 명령이 없으므로 대신 `bindkey` 명령을 사용하고 있다.
+그런데 zsh에서는 [[/cmd/bind]]가 없으므로 대신 `bindkey` 명령을 사용하고 있다.
 
 ```zsh
  # meta + v 를 입력하면 ctrl+e , ctrl+u , fav , ctrl+r 을 연속으로 입력한다.
 bindkey -s '\ev' '^e^ufav^r'
 ```
+
+## 함께 읽기
+
+- [[/cmd/bind]]
+- [[/cmd/chsh]]
 
