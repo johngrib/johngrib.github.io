@@ -3,7 +3,7 @@ layout  : wiki
 title   : xargs 명령어
 summary : args 리스트를 구성해 명령어를 실행해준다
 date    : 2023-08-13 21:10:36 +0900
-updated : 2023-08-13 21:41:14 +0900
+updated : 2023-08-20 23:36:20 +0900
 tag     : 
 resource: 2F/4F39CD-03C6-43B0-8A9F-B83C0E42F6AB
 toc     : true
@@ -72,4 +72,15 @@ find . -type f -mtime +30 | xargs -P 3 -I {} cp {} {}.backup
 ```
 
 `-P 0` 으로 지정해주면 가용 가능한 최대 프로세스 수를 사용한다.
+
+### -n : 한 번에 실행할 인자의 개수를 지정한다 {#option-n}
+
+`-n` 옵션을 사용하면 한 번에 실행할 인자의 개수를 지정할 수 있다.
+
+```bash
+$ seq 8 | xargs -n3
+1 2 3
+4 5 6
+7 8
+```
 
