@@ -11,6 +11,7 @@
   "cmd/bash/expansion",
   "cmd/bash/flow-control",
   "cmd/bash/history",
+  "cmd/bash/key",
   "cmd/bash/parameters"
  ]
 }
