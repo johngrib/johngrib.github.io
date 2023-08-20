@@ -3,7 +3,7 @@ layout  : wiki
 title   : bind 명령어
 summary : 
 date    : 2022-01-29 12:36:51 +0900
-updated : 2023-08-20 19:20:01 +0900
+updated : 2023-08-20 19:20:28 +0900
 tag     : bash command
 resource: A5/DC6546-73C7-41A3-B083-096AD890BF84
 toc     : true
@@ -45,7 +45,7 @@ backward-word can be found on "\eb".
     - `\eb`: `meta + b` 또는 `Esc` 누르고 나서 `b`
     - `\e\C-g`: `meta + control + g` 또는 `Esc` 누르고 나서 `control + g`
 
-혼란스럽다면 grep을 사용해 필터링해서 보도록 하자.
+혼란스럽다면 [[/cmd/grep]]를 사용해 필터링해서 보도록 하자.
 
 ```sh
 $ bind -P | grep 'C-[ahlu]'
