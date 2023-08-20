@@ -3,7 +3,7 @@ layout  : wiki
 title   : bind 명령어
 summary : 
 date    : 2022-01-29 12:36:51 +0900
-updated : 2023-08-20 19:19:29 +0900
+updated : 2023-08-20 19:20:01 +0900
 tag     : bash command
 resource: A5/DC6546-73C7-41A3-B083-096AD890BF84
 toc     : true
@@ -14,7 +14,7 @@ latex   : false
 * TOC
 {:toc}
 
-- `bind`는 bash의 빌트인 명령 중 하나이며, 키의 조합에 대해 bash가 응답하는 방법을 지정할 수 있다.
+- `bind`는 [[/cmd/bash]]의 빌트인 명령 중 하나이며, 키의 조합에 대해 bash가 응답하는 방법을 지정할 수 있다.
 - 쉽게 표현하자면 bash에서 사용할 단축키를 만들 수 있다.
 
 ## bind 목록 보기
