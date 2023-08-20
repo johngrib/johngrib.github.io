@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2022-01-16 16:24:59 +0900
+updated : 2023-08-20 23:04:08 +0900
 tag     : bash command grep ed
 resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
@@ -29,10 +29,34 @@ Sed는 요즘도 셸 스크립트에서 흔히 사용되는데, 데이터 스트
 >
 -- 유닉스의 탄생 5장
 
+## 문법
+
+`sed`는 복잡한 문법을 갖고 있지만, 실제로 가장 흔하게 사용하는 것은 `s` 명령어다.
+
+`s` 명령은 다음과 같이 사용한다.
+
+```bash
+s/regular-expression/replacement/flags
+```
+
+이 때 구분자인 `/`는 다양한 다른 기호들로 대체해서 사용할 수 있지만 몇 가지 주의할 점이 있다.
+
+`/`는 디렉토리 경로 구분자이기 때문에 파일 경로를 `sed`로 작업할 때 `/`를 쓰면 잘 안 되거나 실수하기 좋다.
+
+- 내가 자주 사용하는 대체 기호
+    - | `|` | `,` | `#` |
+- 주의할 필요가 있어서 잘 안 쓰는 대체 기호
+    - `:` : `PATH` 값을 작업할 때 주의해야 한다.
+    - `;` : `sed`에서 `;`는 각 명령어를 구분하는 기호이기 때문에 주의해야 한다.
+    - `~` : `HOME`이 생각나서 쓰기가 좀 그렇다.
+    - | `^` | `*` | `+` |
+        - `sed`와 함께 많이 사용하는 정규식을 헷갈리게 한다. 안 쓰는 게 낫다.
+    - `!` : 부정 의미와 헷갈린다.
+    - `@` : 이메일 처리할 때 주의할 필요가 있다.
 
 ## Examples
 
-### BSD(macOS)
+### macOS
 ```sh
  # 여러 파일에서 foo를 bar로 replace하고, orig라는 원본 파일을 남겨둔다
 sed -i.orig s/foo/bar/g file1.txt file2.txt
@@ -68,6 +92,36 @@ find . -name '*.java' | xargs ag '\t' -l | xargs sed -E -i.orig "s/[[:cntrl:]]/ 
 ```sh
  # 모든 package 단어 위에 공백 1줄을 추가한다
 ag '\S\npackage' -l | xargs sed -i '' 's,package,\'$'\npackage,'
+```
+
+#### & 의 사용 {#ampersand}
+
+>
+An ampersand (“&”) appearing in the replacement is replaced by the string matching the RE.
+The special meaning of “&” in this context can be suppressed by preceding it by a backslash.
+The string “\#”, where “#” is a digit, is replaced by the text matched by the corresponding backreference expression (see re_format(7)).
+
+`&`는 정규식과 매치된 문자열을 의미한다. 따라서 replace 구문에서 다음과 같이 활용할 수 있다.
+
+```bash
+$ echo 'hello world' | sed 's/o/&&&/g'
+hellooo wooorld
+
+$ echo 'hello world' | sed 's/o/<&>/g'
+hell<o> w<o>rld
+
+$ echo 'hello world' | sed 's/l[od]/-&-/g'
+hel-lo- wor-ld-
+```
+
+만약 `&`를 그대로 사용하고 싶다면 `\&`로 escape하면 된다.
+
+```bash
+$ echo 'hello world' | sed 's/o/&\&/g'
+hello& wo&rld
+
+$ echo 'hello world' | sed 's/o/\&/g'
+hell& w&rld
 ```
 
 #### 실제 활용한 명령어들
