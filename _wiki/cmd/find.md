@@ -3,7 +3,7 @@ layout  : wiki
 title   : find
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2023-08-22 21:39:34 +0900
+updated : 2023-08-22 21:48:29 +0900
 tag     : bash command
 resource: 4F/D2AFEF-7A65-4637-82FF-86AEAE03D596
 toc     : true
@@ -15,11 +15,14 @@ latex   : true
 {:toc}
 
 ## Examples
-### 찾기
+### 자주 쓰는 찾기 패턴 {#basics}
 
 ```sh
  # 현재 디렉토리와 그 하위 디렉토리 전체에서 이름이 "README.md"인 파일을 찾는다.
 find . -name 'README.md'
+
+ # -iname 은 대소문자를 구분하지 않는다.
+find . -iname 'readme.md'
 
  # 현재 디렉토리와 그 하위 디렉토리 전체에서 이름에 "test"가 들어가는 파일을 찾는다.
 find . -name '*test*'
@@ -48,17 +51,9 @@ find . -type f \( -name "*.png" -o -name "*.jpg" \)
 find . -type f ! -name "*.md"
 ```
 
-### -delete : 찾은 파일을 삭제한다 {#option-delete}
-
-```sh
- # 하위 경로의 빈 디렉토리를 모두 찾아 삭제한다.
-find . -type d -empty -delete
-
- # 하위 경로의 빈 파일을 모두 찾아 삭제한다.
-find . -type f -empty -delete
-```
-
 ### -exec : 각 파일에 대해 실행할 명령을 지정한다 {#option-exec}
+
+`-exec`야말로 `find`의 핵심 기능이라 할 수 있다.
 
 ```sh
  # 하위 경로의 CRLF 를 사용하는 모든 파일을 찾는다.
@@ -69,6 +64,27 @@ find . -name '*.temp' -exec rm -rf {} \;
 
  # 모든 java 파일에서 중괄호가 없는 if 문이 있는 파일 목록을 출력한다
 find . -name "*.java" -exec ag "^\s*if[^{]*$" -l {} \;
+```
+
+### -delete : 찾은 파일을 삭제한다 {#option-delete}
+
+`-delete`는 `-exec rm {} \;`과 같아서 굳이 몰라도 된다. `-exec`만 알아도 된다.
+
+```sh
+ # 하위 경로의 빈 디렉토리를 모두 찾아 삭제한다.
+find . -type d -empty -delete
+
+ # -exec 로는 이렇게
+find . -type d -empty -exec rmdir {} \;
+
+ # 하위 경로의 빈 파일을 모두 찾아 삭제한다.
+find . -type f -empty -delete
+
+ # -exec 로는 이렇게
+find . -type f -empty -exec rm {} \;
+
+ # 이렇게 해도 된다
+find . -type f -empty -exec rm {} +
 ```
 
 ### -mtime, -mmin : 파일 업데이트 시간을 기준으로 찾는다 {#option-mtime}
