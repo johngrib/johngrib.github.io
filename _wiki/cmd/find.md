@@ -3,7 +3,7 @@ layout  : wiki
 title   : find
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2023-01-08 15:12:38 +0900
+updated : 2023-08-22 21:36:57 +0900
 tag     : bash command
 resource: 4F/D2AFEF-7A65-4637-82FF-86AEAE03D596
 toc     : true
@@ -57,7 +57,7 @@ find . -type d -empty -delete
 find . -type f -empty -delete
 ```
 
-### exec 활용
+### -exec 활용
 ```sh
  # 하위 경로의 CRLF 를 사용하는 모든 파일을 찾는다.
 find . -not -type d -exec file '{}' ';' | grep CRLF
