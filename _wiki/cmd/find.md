@@ -3,7 +3,7 @@ layout  : wiki
 title   : find
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2023-08-22 21:36:57 +0900
+updated : 2023-08-22 21:39:34 +0900
 tag     : bash command
 resource: 4F/D2AFEF-7A65-4637-82FF-86AEAE03D596
 toc     : true
@@ -48,7 +48,8 @@ find . -type f \( -name "*.png" -o -name "*.jpg" \)
 find . -type f ! -name "*.md"
 ```
 
-### 삭제
+### -delete : 찾은 파일을 삭제한다 {#option-delete}
+
 ```sh
  # 하위 경로의 빈 디렉토리를 모두 찾아 삭제한다.
 find . -type d -empty -delete
@@ -57,7 +58,8 @@ find . -type d -empty -delete
 find . -type f -empty -delete
 ```
 
-### -exec 활용
+### -exec : 각 파일에 대해 실행할 명령을 지정한다 {#option-exec}
+
 ```sh
  # 하위 경로의 CRLF 를 사용하는 모든 파일을 찾는다.
 find . -not -type d -exec file '{}' ';' | grep CRLF
@@ -69,7 +71,7 @@ find . -name '*.temp' -exec rm -rf {} \;
 find . -name "*.java" -exec ag "^\s*if[^{]*$" -l {} \;
 ```
 
-### -mtime, -mmin 활용
+### -mtime, -mmin : 파일 업데이트 시간을 기준으로 찾는다 {#option-mtime}
 
 ```sh
  # 24시간 전부터 지금까지 업데이트된 경로 내의 파일을 찾는다.
