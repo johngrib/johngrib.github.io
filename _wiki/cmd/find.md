@@ -3,7 +3,7 @@ layout  : wiki
 title   : find
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2023-08-22 21:48:29 +0900
+updated : 2023-08-22 22:02:51 +0900
 tag     : bash command
 resource: 4F/D2AFEF-7A65-4637-82FF-86AEAE03D596
 toc     : true
@@ -46,24 +46,57 @@ find . -type d -empty
 find . -type f \( -name "*.png" -o -name "*.jpg" \)
 ```
 
+- `-o`는 "OR"를 의미한다.
+- `\(`와 `\)`는 우선순위를 지정하거나 그룹을 지정할 때 쓴다. 그러나 쓰기 귀찮아서 생략하는 경우가 많다.
+
 ```sh
  # 하위 경로에서 md 파일이 아닌 다른 모든 파일을 찾는다
 find . -type f ! -name "*.md"
 ```
 
+- `!`는 "NOT"을 의미한다.
+
 ### -exec : 각 파일에 대해 실행할 명령을 지정한다 {#option-exec}
 
-`-exec`야말로 `find`의 핵심 기능이라 할 수 있다.
+`find`의 핵심 기능으로, 찾은 파일에 대해 실행할 명령을 지정할 수 있다.
+
+`-exec`를 사용할 때 기억해 둘 것은 다음의 세 가지이다.
+
+- `{}`: 찾은 각각의 파일 이름이 들어가는 placeholder.
+- `\;`: 각 파일에 대해 실행할 명령의 끝.
+    - `;`은 bash에서 명령의 끝을 의미하므로 `\;`로 escape 해줘야 한다.
+    - `';'`와 같이 따옴표로 감싸도 된다.
+- `+`: `\;` 대신 `+`를 사용하면, `xargs`를 사용한 것처럼 작동한다. 즉, 찾은 파일 목록 전체를 지정한 명령에 args로 넘겨준다. 명령 실행 횟수를 최소화할 수 있으므로 파이프라인이 빨라지는 경우가 많다.
+
 
 ```sh
  # 하위 경로의 CRLF 를 사용하는 모든 파일을 찾는다.
 find . -not -type d -exec file '{}' ';' | grep CRLF
+
+ # 이렇게 해도 된다.
+find . -not -type d -exec file '{}' + | grep CRLF
 
  # 이름이 *.temp 인 디렉토리, 파일을 찾아 모두 삭제한다.
 find . -name '*.temp' -exec rm -rf {} \;
 
  # 모든 java 파일에서 중괄호가 없는 if 문이 있는 파일 목록을 출력한다
 find . -name "*.java" -exec ag "^\s*if[^{]*$" -l {} \;
+```
+
+다음은 바로 위의 예제의 성능을 간단하게 비교해 본 것이다. 오래 걸리는 명령이라면 `-exec`를 사용할 때 `+`를 사용할 수 있는지를 항상 고려해볼 것.
+
+```bash
+$ time find . -not -type d -exec file '{}' ';' > /dev/null
+
+real	0m16.812s
+user	0m6.458s
+sys	0m8.654s
+
+$ time find . -not -type d -exec file '{}' + > /dev/null
+
+real	0m4.726s
+user	0m4.274s
+sys	0m0.450s
 ```
 
 ### -delete : 찾은 파일을 삭제한다 {#option-delete}
