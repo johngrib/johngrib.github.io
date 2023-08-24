@@ -387,7 +387,7 @@ commit 의 내용을 보면 순서대로 다음의 정보들이 나열되어 있
 - committer
 - gpg signature
     - `gpgsig -----BEGIN PGP SIGNATURE-----` 부터 `-----END PGP SIGNATURE-----` 까지.
-    - 내가 커밋에 [[/gpg]]{gpg}로 서명을 하기 때문에 포함되어 있다.
+    - 내가 커밋에 [[/cmd/gpg]]{gpg}로 서명을 하기 때문에 포함되어 있다.
     - 만약 이 글을 읽는 여러분이 커밋에 서명을 하고 있지 않다면 이 부분이 없을 것이다.
 - commit message
     - 내가 작성한 `Initial commit` 이라는 커밋 메시지.

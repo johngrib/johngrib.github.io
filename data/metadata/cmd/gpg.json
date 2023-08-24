@@ -3,7 +3,7 @@
  "title": "GPG",
  "summary": "GnuPG, the GNU Privacy Guard",
  "parent": "cmd",
- "url": "/wiki/gpg",
+ "url": "/wiki/cmd/gpg",
  "updated": "2023-07-24 23:15:46 +0900",
  "resource": "66/BFEA1D-BCE2-445A-A6AD-64909525CDE2",
  "children": []

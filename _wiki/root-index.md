@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-08-20 16:23:56 +0900
+updated : 2023-08-24 20:28:10 +0900
 regenerate: true
 ---
 * TOC
@@ -684,6 +684,7 @@ regenerate: true
 * [[/cmd/for]]
 * [[/cmd/fortune]]
 * [[/cmd/google-java-format]]
+* [[/cmd/gpg]]
 * [[/cmd/grep]]
 * [[/cmd/httpie]]
 * [[/cmd/iconv]]
@@ -737,7 +738,6 @@ regenerate: true
 * [[/df]]
 * [[/fish-shell]]
 * [[/glow-cmd]]
-* [[/gpg]]
 * [[/how-to-escape-cli]]
 * [[/ioreg-cmd]]
 * [[/cmd/make]]

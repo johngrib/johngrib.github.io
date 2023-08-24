@@ -25,7 +25,7 @@ latex   : false
 
 ## Links
 
-* [[/gpg]]{gpg 사용법}
+* [[/cmd/gpg]]{gpg 사용법}
 * [블록 암호 운용 방식(wikipedia)](https://ko.wikipedia.org/wiki/%EB%B8%94%EB%A1%9D_%EC%95%94%ED%98%B8_%EC%9A%B4%EC%9A%A9_%EB%B0%A9%EC%8B%9D )
 * [Names of large numbers (wikipedia)](https://en.wikipedia.org/wiki/Names_of_large_numbers )
 * [[/jargon/kerckhoffs-principle]]

@@ -197,7 +197,7 @@ brew install --cask google-chrome
 gpg --full-generate-key
 ```
 
-[[/gpg]] 참고.
+[[/cmd/gpg]] 참고.
 
 생성했다면 ~/.gitconfig 에 다음과 같이 서명할 키 아이디를 추가해 준다.
 
