@@ -37,6 +37,7 @@
  "cmd/ping",
  "cmd/pwgen",
  "cmd/rbenv",
+ "cmd/rg",
  "cmd/rig",
  "cmd/sdkman",
  "cmd/sed",
@@ -62,7 +63,6 @@
  "how-to-escape-cli",
  "my-bash-cheatsheet",
  "perl-one-liner",
- "ripgrep",
  "sha256sum",
  "uptime",
  "ykman"

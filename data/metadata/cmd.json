@@ -63,6 +63,7 @@
   "cmd/pwgen",
   "cmd/rans",
   "cmd/rbenv",
+  "cmd/rg",
   "cmd/rig",
   "cmd/say",
   "cmd/sdkman",
@@ -98,7 +99,6 @@
   "my-bash-cheatsheet",
   "perl-one-liner",
   "phpbrew",
-  "ripgrep",
   "sha256sum",
   "uptime",
   "ykman"

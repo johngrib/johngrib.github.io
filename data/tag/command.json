@@ -38,6 +38,7 @@
  "cmd/ping",
  "cmd/pwgen",
  "cmd/rbenv",
+ "cmd/rg",
  "cmd/rig",
  "cmd/say",
  "cmd/sdkman",
@@ -67,7 +68,6 @@
  "perl-one-liner",
  "php/composer",
  "phpbrew",
- "ripgrep",
  "sha256sum",
  "uptime",
  "ykman"

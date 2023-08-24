@@ -3,8 +3,8 @@
  "title": "ripgrep, rg",
  "summary": "recursively search current directory for lines matching a pattern",
  "parent": "cmd",
- "url": "/wiki/ripgrep",
- "updated": "2019-11-11 22:42:25 +0900",
+ "url": "/wiki/cmd/rg",
+ "updated": "2023-08-24 20:37:54 +0900",
  "resource": "05/A20F24-9271-4D5A-ACCA-63159FCBFEE5",
  "children": []
 }
