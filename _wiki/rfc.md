@@ -3,7 +3,7 @@ layout  : category
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2023-08-26 17:32:27 +0900
+updated : 2023-08-26 17:42:28 +0900
 tag     : rfc
 resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
@@ -64,6 +64,34 @@ Category: Informational                                        J. Postel
     * 최신 사양으로 대체되었거나 그 외의 다른 이유로 사용되지 않는 사양.
 
 ## 인용
+
+### From: 유닉스·리눅스 시스템 관리 핸드북
+
+>
+인터넷 커뮤니티의 기술적인 활동들은 RFC<sup>Requests for Comments</sup>라는 문서에 요약돼 있다.
+프로토콜 표준, 수정 제안, 정보 게시판 등은 결국 모두 RFC의 형태로 종결된다.
+RFC는 인터넷 드래프트<sup>Internet Dreafts</sup>로 시작돼 수많은 이메일 논쟁과 IETF 미팅을 거친 후에 최종적으로 폐기되든지 RFC 시리즈로 승격되든지 한다.
+그래프트나 제안된 RFC에 대해 언급할 것이 있는 사람은 누구나 회신을 보낼 수 있다.
+RFC 메커니즘은 인터넷 프로토콜의 표준화뿐 아니라 때로는 현행 실무에 관한 여러 측면들을 문서화하거나 설명하기도 한다.
+>
+RFC에는 순차적으로 번호가 매겨진다.
+현재 약 8,200개의 번호가 사용됐다.
+RFC에는 그 내용을 나타내는 제목(예, 네트워크 시간 동기화를 위한 알고리듬)이 있긴 하지만 그 모호성을 방지하고자 보통은 숫자로 언급된다.
+RFC 내용은 일단 배포된 후에는 결코 수정되지 않는다.
+업데이트는 다른 참조 번호를 갖는 새로운 RFC로 배포된다.
+업데이트는 기존 RFC를 확장해 명확하게 만들기도 하고 완전히 대체하기도 한다.
+>
+RFC는 수많은 출처에서 구할 수 있지만 [rfc-editor.org]( https://www.rfc-editor.org/ )가 배포 중심지이며 가장 업데이트된 정보를 갖고 있다.
+문서를 읽는 데 시간을 투자하기 전에 [rfc-editor.org]( https://www.rfc-editor.org/ ) 에서 RFC 상태를 먼저 확인하기 바란다.
+읽고 있는 문서가 그 주제에 관한 가장 최신 버전이 아닐 수 있기 때문이다.
+>
+인터넷 표준 프로세스 자체는 [RFC2026][RFC-2026]에 자세히 설명돼 있다. 또 다른 유용한 메 타RFC는 RFC 시스템의 문화와 기술적 맥락을 설명하고 있는 RFC5540, RFC의 40년이다.
+>
+RFC에 담겨 있는 많은 기술적 세부 사항에 겁먹을 필요는 없다.
+기술적 세부 사항이 필요 없는 경우일지라도 대부분의 내용은 시스템 관리자들에게 유용한 서론, 개요, 이론들이다.
+일부 RFC는 전반적인 개요나 일반적인 정보를 위해 특별히 작성된다.
+RFC는 어떤 특정 주제를 배우기 위한 가장 쉬운 방법은 아닐 수 있지만 RFC는 공인된 권위가 있으며 매우 구체적인 데다가 무료다.
+[^sysadmin-handbook-587]
 
 ### From: TCP/IP 완벽 가이드
 
@@ -289,8 +317,9 @@ http://example.com/search{?q,lang}
 
 ## 참고문헌
 
-* 리얼월드 HTTP / 시부카와 요시키 저/김성훈 역 / 한빛미디어 / 2019년 04월 19일
-* TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
+- TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
+- 리얼월드 HTTP / 시부카와 요시키 저/김성훈 역 / 한빛미디어 / 2019년 04월 19일
+- 유닉스·리눅스 시스템 관리 핸드북 5/e / 에비 네메스, 가스 스나이더, 트렌트 헤인, 벤 웨일리, 댄 맥킨 저 외 2명 / 에이콘출판사 / 발행: 2022년 01월 03일 / 원제: UNIX and Linux System Administration Handbook, 5th Edition
 
 ## 하위 문서
 
@@ -300,6 +329,7 @@ http://example.com/search{?q,lang}
 
 [^tcp-ip-guide-58]: TCP/IP 완벽 가이드. 3장. 네트워크 표준과 기구. 58쪽.
 [^real-world-http-35]: 리얼월드 HTTP. 1장. 35쪽.
+[^sysadmin-handbook-587]: 유닉스·리눅스 시스템 관리 핸드북. 13.1장. 587쪽.
 
 {% comment %}
     아래 목록은 vim 에서 :'<,'>sort n 으로 정렬했다.
