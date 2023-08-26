@@ -3,7 +3,7 @@ layout  : category
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2023-08-26 17:42:28 +0900
+updated : 2023-08-26 17:47:14 +0900
 tag     : rfc
 resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
@@ -181,6 +181,12 @@ By 1977, the Arpanet employed several informal standards for the text messages (
 ### RFC 1855 - Netiquette Guidelines
 
 - [[/rfc/1855]]
+
+### RFC 1925 - The Twelve Networking Truths
+
+네트워킹에 관한 12가지 진실.
+
+- [[/rfc/1925]]
 
 ### RFC 1950 - ZLIB Compressed Data Format Specification version 3.3
 
