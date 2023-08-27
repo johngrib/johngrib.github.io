@@ -3,7 +3,7 @@ layout  : wiki
 title   : tee 명령어
 summary : duplicate standard input
 date    : 2023-08-12 19:25:15 +0900
-updated : 2023-08-12 19:39:24 +0900
+updated : 2023-08-27 23:32:28 +0900
 tag     : 
 resource: 6A/31019D-87F2-416E-B905-5E06A33747D2
 toc     : true
@@ -55,3 +55,7 @@ $ find . -name '*cmd*' | head | tee result.txt
 
 `-a` 옵션을 주면 파일을 새로 작성하지 않고, 파일의 마지막에 이어붙인다.
 
+
+## 함께 읽기
+
+- [[/pattern/pipeline#tee]]
