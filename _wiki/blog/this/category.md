@@ -3,7 +3,7 @@ layout  : wiki
 title   : 카테고리 기능
 summary : 
 date    : 2023-04-01 14:16:07 +0900
-updated : 2023-04-01 14:56:19 +0900
+updated : 2023-08-28 21:52:30 +0900
 tag     : 
 resource: D2/FFB5C1-C55D-4DDB-97B9-6E91D473D2C3
 toc     : true
@@ -37,7 +37,7 @@ summary :
 - `layout`을 `wiki`로 설정하면 된다.
 - 부모로 지정할 문서의 링크를 `parent`에 지정해 주면 된다.
 
-다음은 [[/blog/this]] (`\\[[/blog/this]]`)문서를 부모로 삼는 서브 문서의 예이다.
+다음은 [[/blog/this]] (`\[[/blog/this]]`)문서를 부모로 삼는 서브 문서의 예이다.
 
 ```markdown
 ---
