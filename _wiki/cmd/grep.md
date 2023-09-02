@@ -3,7 +3,7 @@ layout  : wiki
 title   : grep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2023-09-01 22:52:30 +0900
+updated : 2023-09-02 10:23:29 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 resource: E6/02C9DC-B4FA-4FD4-B205-D2D93AD4BBAF
 toc     : true
@@ -99,6 +99,8 @@ grep -r -l vim _wiki
 이 명령어는 `re`부분의 정규 표현식 패턴과 일치하는 모든 행을 출력한다.
 이 내용은 옥스퍼드 영어 사전의 grep 표제어에도 정확히 나와 있다(옥스퍼드 영어 사전은 grep의 가치를 인정하고 정식 영어 단어로 등록했다).
 [^KER-4]
+
+- [옥스퍼드 영어 사전의 grep]( https://www.oxfordreference.com/display/10.1093/acref/9780195392883.001.0001/m_en_us1252313 )
 
 ### 정규식과 grep
 
