@@ -3,7 +3,7 @@ layout  : wiki
 title   : grep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2023-09-02 10:23:29 +0900
+updated : 2023-09-03 18:39:03 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 resource: E6/02C9DC-B4FA-4FD4-B205-D2D93AD4BBAF
 toc     : true
@@ -87,6 +87,94 @@ grep -r vim
 
  # _wiki 의 모든 하위 디렉토리에서 vim 문자열을 포함하고 있는 파일 이름을 출력한다
 grep -r -l vim _wiki
+```
+
+## GNU grep 과 macOS의 BSD grep 비교
+
+### GNU grep이 압도적으로 빠르다
+
+이 wiki 리포지토리 전체에 대해 [[/cmd/find]]를 실행해 라인을 카운트하니 8956개의 파일이 있었다.
+
+```bash
+$ find . -type f | wc -l
+8956
+```
+
+모든 파일에서 `test`라는 문자열을 macOS BSD `grep`으로 찾아 결과 라인을 [[/cmd/wc]]로 카운트했더니 10초가 넘게 걸렸다.
+
+```bash
+$ time grep -R test 2>/dev/null | wc -l
+6502
+
+real    0m10.762s
+user    0m10.512s
+sys     0m0.254s
+```
+
+GNU `grep`으로 동일한 작업을 하니 0.5초도 안 걸렸다.
+
+```bash
+$ time ggrep -R test 2>/dev/null | wc -l
+6463
+
+real    0m0.456s
+user    0m0.270s
+sys     0m0.190s
+```
+
+물론 GNU grep이 빠르다 해도, [[/cmd/ag]]나 [[/cmd/rg]] 같은 것들이 대부분의 경우에 2배 이상 빠르다.
+
+### -E 로 lazy 수량자를 사용할 때 결과가 다르다
+
+```bash
+$ echo "thisis" | grep -Eo '.+?is'  # macOS BSD
+this
+
+$ echo "thisis" | ggrep -Eo '.+?is' # GNU
+thisis
+```
+
+```bash
+$ echo "thisis" | grep -Eo '.*?is'  # macOS BSD
+this
+is
+
+$ echo "thisis" | ggrep -Eo '.*?is' # GNU
+thisis
+```
+
+```bash
+$ echo "thisis" | ggrep -Po '.+?is' # GNU, -P 사용
+this
+
+$ # macOS BSD grep 에는 -P 옵션이 없음
+```
+
+### -P : PCREs 사용
+
+GNU `grep`에는 Perl 호환 정규식(PCREs)를 사용할 수 있는 `-P` 옵션이 있다.
+
+- `-P`, `--perl-regexp`
+
+
+### GNU egrep은 GNU grep -E 로 대체되었다
+
+GNU `egrep`을 실행하면 다음과 같이 `grep -E`를 권장한다.
+
+```bash
+$ gegrep -V
+gegrep: warning: gegrep is obsolescent; using ggrep -E
+ggrep (GNU grep) 3.11
+Packaged by Homebrew
+Copyright (C) 2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Mike Haertel and others; see
+<https://git.savannah.gnu.org/cgit/grep.git/tree/AUTHORS>.
+
+grep -P uses PCRE2 10.42 2022-12-11
 ```
 
 ## 역사
