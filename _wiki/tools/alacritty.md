@@ -3,7 +3,7 @@ layout  : wiki
 title   : alacritty
 summary : rust로 개발된 단순하고 빠른 터미널 에뮬레이터
 date    : 2023-09-02 19:26:31 +0900
-updated : 2023-09-02 19:47:59 +0900
+updated : 2023-09-03 14:56:27 +0900
 tag     : 
 resource: 6B/2F3606-DFE4-4DD2-A078-42F134CB7EA7
 toc     : true
@@ -62,9 +62,26 @@ key_bindings:
   - { key: Key8, mods: Command, chars: "\x11\x37" }
   - { key: Key9, mods: Command, chars: "\x11\x39" }
 
+  # tmux 옆 윈도우로 이동
+  # control + pgdn, control + pgup        C-q p , C-q n
+  - { key: PageUp, mods: Control, chars: "\x11p" }
+  - { key: PageDown, mods: Control, chars: "\x11n" }
+  # tmux 윈도우 목록 보기(선택)
+  # command + e                      C-q w
+  - { key: E, mods: Command, chars: "\x11w" }
+
+  # tmux 윈도우 사이즈 조정
+  # cmd + 화살표,                        C-q H, C-q J, C-q K, C-q L
+  - { key: Left,  mods: Command, chars: "\x11H" }
+  - { key: Down,  mods: Command, chars: "\x11J" }
+  - { key: Up,    mods: Command, chars: "\x11K" }
+  - { key: Right, mods: Command, chars: "\x11L" }
+
   # command + [                             C-q [
   - { key: LBracket, mods: Command, chars: "\x11[" } # tmux 스크롤/복사 모드 전환
 ```
+
+내 최근 설정은 [github.com/johngrib/dotfiles]( https://github.com/johngrib/dotfiles/blob/master/alacritty/alacritty.yml ) 에서 볼 수 있다.
 
 ## Links
 
