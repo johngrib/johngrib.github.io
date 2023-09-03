@@ -3,7 +3,7 @@ layout  : wiki
 title   : PCRE
 summary : Perl-compatible regular expressions
 date    : 2023-09-03 18:50:44 +0900
-updated : 2023-09-03 22:24:57 +0900
+updated : 2023-09-03 22:28:38 +0900
 tag     : 
 resource: 61/C13454-6DB3-46AC-A1E1-8B17C4B19E97
 toc     : true
@@ -25,6 +25,14 @@ man 3 pcresyntax
 | `\Q...\E` | `\Q`와 `\E` 사이의 문자열을 메타문자로 해석하지 않음 |
 
 특수문자가 많이 포함된 문자열을 검색하고자 할 때 유용하다.
+
+[[/cmd/grep]]{GNU grep}에서 `-P` 옵션으로 사용할 수 있다. (BSD grep에서는 지원하지 않음)
+
+```bash
+ # 대괄호를 이스케이핑하지 않아도 되므로 편리하다
+grep -P '\Q[[/cmd]]\E' -R
+```
+
 
 ## CHARACTERS
 
