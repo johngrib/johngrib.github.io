@@ -20,6 +20,7 @@
   "cmd/chsh",
   "cmd/column",
   "cmd/compgen",
+  "cmd/convmv",
   "cmd/curl",
   "cmd/cut",
   "cmd/date",

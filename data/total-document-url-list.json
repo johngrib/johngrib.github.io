@@ -197,6 +197,7 @@
  "/wiki/cmd/chsh",
  "/wiki/cmd/column",
  "/wiki/cmd/compgen",
+ "/wiki/cmd/convmv",
  "/wiki/cmd/curl",
  "/wiki/cmd/cut",
  "/wiki/cmd/date",
