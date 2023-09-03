@@ -3,7 +3,7 @@ layout  : wiki
 title   : PCRE
 summary : Perl-compatible regular expressions
 date    : 2023-09-03 18:50:44 +0900
-updated : 2023-09-03 22:28:38 +0900
+updated : 2023-09-03 22:44:48 +0900
 tag     : 
 resource: 61/C13454-6DB3-46AC-A1E1-8B17C4B19E97
 toc     : true
@@ -50,6 +50,7 @@ grep -P '\Q[[/cmd]]\E' -R
 | `\x{hhh..}` | 16진수 표기 문자                 |
 
 ```sql
+-- sqlite
 select 'a' REGEXP '\x{61}';
 --> 1
 ```
@@ -105,27 +106,47 @@ select 'a' REGEXP '\x{61}';
 | `Pi` | Initial punctuation   |                    |
 | `Po` | Other punctuation     |                    |
 | `S`  | Symbol                |                    |
-| `Sc` | Currency symbol       | `$` `€` `£` 등     |
 | `Sk` | Modifier symbol       |                    |
-| `Sm` | Mathematical symbol   | `+` `=` `<` `>` 등 |
 | `So` | Other symbol          |                    |
 | `Z`  | Separator             |                    |
 | `Zl` | Line separator        |                    |
 | `Zp` | Paragraph separator   |                    |
 | `Zs` | Space separator       |                    |
 
-| `N`  | Number                | `1` `¼` `①`        |
+| `Sm` | Mathematical symbol | `+` `=` `<` `>` 등 수학 기호 (키보드의 `-` 제외) |
 
 ```sql
+-- sqlite
+select '×±+−÷√∑∫∴¬∵~=≠≈≅⇔↔<>∀∃∪∩' REGEXP '\p{Sm}+';
+--> 1
+```
+
+
+| `Sc` | Currency symbol | `$` `€` `£` 등 모든 화폐 기호 |
+
+```sql
+-- sqlite
+select '$₩£€¥₽₹' REGEXP '\p{Sc}+';
+--> 1
+```
+
+| `N` | Number | `1` `¼` `①` 등 모든 숫자 기호 |
+
+```sql
+-- sqlite
 SELECT '1¼①' REGEXP '^\p{N}+$';
 --> 1
 ```
 
-| `Ps` | Open punctuation      | `(` `[` `{`        |
-| `Pe` | Close punctuation     | `)` `]` `}`        |
+| `Ps` | Open punctuation  | `(` `[` `{` 등 여는 괄호 (`<`는 제외) |
+| `Pe` | Close punctuation | `)` `]` `}` 등 닫는 괄호 (`>`는 제외) |
 
 ```sql
+-- sqlite
 select '([{' REGEXP '\p{Ps}+';
+--> 1
+
+select '[a' REGEXP '\p{Ps}a';
 --> 1
 ```
 
