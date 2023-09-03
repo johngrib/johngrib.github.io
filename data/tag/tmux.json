@@ -1,4 +1,4 @@
 [
- "tmux-c-dash",
+ "cmd/tmux/c-dash",
  "vim-tmux-t-ut"
 ]

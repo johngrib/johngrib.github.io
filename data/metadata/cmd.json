@@ -76,6 +76,7 @@
   "cmd/sw_vers",
   "cmd/tail",
   "cmd/tee",
+  "cmd/tmux",
   "cmd/top",
   "cmd/touch",
   "cmd/tr",

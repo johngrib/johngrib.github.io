@@ -7,7 +7,6 @@
  "resource": "F1/56A791-34C6-4739-B9C8-0C5323EE278B",
  "children": [
   "letter-case",
-  "sql-char-comparison",
-  "tmux-c-dash"
+  "sql-char-comparison"
  ]
 }

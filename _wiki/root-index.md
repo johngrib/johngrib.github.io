@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-09-03 12:57:37 +0900
+updated : 2023-09-03 13:31:56 +0900
 regenerate: true
 ---
 * TOC
@@ -722,6 +722,8 @@ regenerate: true
 * [[/cmd/sw_vers]]
 * [[/cmd/tail]]
 * [[/cmd/tee]]
+* [[/cmd/tmux]]
+    * [[/cmd/tmux/c-dash]]
 * [[/cmd/top]]
 * [[/cmd/touch]]
 * [[/cmd/tr]]
@@ -863,7 +865,6 @@ regenerate: true
 ## [[/why]]
 * [[/letter-case]]
 * [[/sql-char-comparison]]
-* [[/tmux-c-dash]]
 
 ## [[/spring]]
 

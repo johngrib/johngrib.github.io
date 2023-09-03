@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "tmux 키 조합에서 C--가 불가능한 이유.",
+ "summary": "ascii 코드값 때문",
+ "parent": "cmd/tmux",
+ "url": "/wiki/cmd/tmux/c-dash",
+ "updated": "2023-09-03 13:32:19 +0900",
+ "resource": "DE/1169D8-D9D1-4049-864A-DF0157D6F8CF",
+ "children": []
+}

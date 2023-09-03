@@ -3,12 +3,12 @@ layout  : wiki
 title   : tmux 키 조합에서 C--가 불가능한 이유.
 summary : ascii 코드값 때문
 date    : 2017-03-27 22:57:52 +0900
-updated : 2019-11-03 22:41:45 +0900
+updated : 2023-09-03 13:32:19 +0900
 tag     : tmux terminal
 resource: DE/1169D8-D9D1-4049-864A-DF0157D6F8CF
 toc     : true
 public  : true
-parent  : [[why]]
+parent  : [[/cmd/tmux]]
 latex   : false
 ---
 * TOC
