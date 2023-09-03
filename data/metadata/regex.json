@@ -8,7 +8,9 @@
  "resource": "9F/48A729-3592-4582-8291-A303A587ED85",
  "children": [
   "regex/basic",
+  "regex/bre",
   "regex/email-validation",
+  "regex/pcre",
   "regex/prime-number"
  ]
 }

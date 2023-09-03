@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-09-03 13:34:25 +0900
+updated : 2023-09-03 18:50:44 +0900
 regenerate: true
 ---
 * TOC
@@ -1024,6 +1024,9 @@ regenerate: true
 ## [[/oauth]]
 
 ## [[/regex]]
+
+* [[/regex/bre]]
+* [[/regex/pcre]]
 
 * [[/regex/basic]]
 * [[/regex/email-validation]]
