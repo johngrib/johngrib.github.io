@@ -3,7 +3,7 @@ layout  : wiki
 title   : alacritty
 summary : rust로 개발된 단순하고 빠른 터미널 에뮬레이터
 date    : 2023-09-02 19:26:31 +0900
-updated : 2023-09-03 14:56:27 +0900
+updated : 2023-09-04 22:52:53 +0900
 tag     : 
 resource: 6B/2F3606-DFE4-4DD2-A078-42F134CB7EA7
 toc     : true
@@ -21,6 +21,14 @@ macOS에서는 [[/cmd/brew]]로 간단하게 설치할 수 있다.
 ```bash
 brew install --cask alacritty
 ```
+
+## man
+
+```bash
+man 5 alacritty
+```
+
+[alacritty/extra/man/alacritty.5.scd]( https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd )
 
 ## 특징
 
@@ -82,6 +90,10 @@ key_bindings:
 ```
 
 내 최근 설정은 [github.com/johngrib/dotfiles]( https://github.com/johngrib/dotfiles/blob/master/alacritty/alacritty.yml ) 에서 볼 수 있다.
+
+## 나의 설정: macOS + alacritty + tmux {#macos-alacritty-tmux}
+
+작성중
 
 ## Links
 
