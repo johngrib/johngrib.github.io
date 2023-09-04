@@ -3,8 +3,8 @@
  "title": "csplit 명령어",
  "summary": "주어진 조건에 따라 파일을 분할한다",
  "parent": "cmd",
- "url": "/wiki/csplit",
- "updated": "2021-10-17 18:45:43 +0900",
+ "url": "/wiki/cmd/csplit",
+ "updated": "2023-09-04 22:28:58 +0900",
  "resource": "CC/0B5280-A730-4700-BBC9-DDE3CCFD9453",
  "children": []
 }

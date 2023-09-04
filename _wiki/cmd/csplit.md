@@ -3,12 +3,12 @@ layout  : wiki
 title   : csplit 명령어
 summary : 주어진 조건에 따라 파일을 분할한다
 date    : 2018-09-28 08:07:39 +0900
-updated : 2021-10-17 18:45:43 +0900
+updated : 2023-09-04 22:28:58 +0900
 tag     : bash command
 resource: CC/0B5280-A730-4700-BBC9-DDE3CCFD9453
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

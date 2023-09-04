@@ -20,7 +20,7 @@ latex   : false
 
 - [[/cmd/arch]], [[/base64]]{base64}, [[/cmd/basename]], cat, chcon
 - chgrp, [[/cmd/chmod]], chown, chroot, cksum
-- comm, cp, [[/csplit]], [[/cmd/cut]], [[/cmd/date]]
+- comm, cp, [[/cmd/csplit]], [[/cmd/cut]], [[/cmd/date]]
 - dd, [[/df]], dir, dircolors, dirname
 - [[/cmd/du]], [[/cmd/echo]], env, expand, expr
 - factor, false, fmt, fold, groups
