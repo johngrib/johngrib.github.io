@@ -21,8 +21,8 @@ elif [[ $1 = "null" ]]; then
 
     bundle exec jekyll serve --incremental --trace >> /dev/null 2>&1 &
     echo "Server started. But Logs are in /dev/null"
-
-    pgrep 'jekyll serve' > .localhost.pid
+    # pgrep 'jekyll serve' > .localhost.pid
+    echo $! > .localhost.pid
     echo "PID is saved in .localhost.pid"
 
 elif [[ $1 = "back" ]]; then
@@ -36,7 +36,8 @@ elif [[ $1 = "back" ]]; then
     bundle exec jekyll serve --incremental --trace >> .localhost.log 2>&1 &
     echo "Server started. Logs are in .localhost.log"
 
-    pgrep 'jekyll serve' > .localhost.pid
+    # pgrep 'jekyll serve' > .localhost.pid
+    echo $! > .localhost.pid
     echo "PID is saved in .localhost.pid"
 
 elif [[ $1 = "kill" && -f .localhost.pid ]]; then
