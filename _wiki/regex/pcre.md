@@ -3,7 +3,7 @@ layout  : wiki
 title   : PCRE
 summary : Perl-compatible regular expressions
 date    : 2023-09-03 18:50:44 +0900
-updated : 2023-09-03 22:44:48 +0900
+updated : 2023-09-04 22:08:42 +0900
 tag     : 
 resource: 61/C13454-6DB3-46AC-A1E1-8B17C4B19E97
 toc     : true
@@ -13,6 +13,18 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 일러두기
+
+이 문서에서는 PCRE 실제 사례 예제를 위해 다음을 사용한다.
+
+- [[/cmd/grep]]{GNU grep}의 `-P` 옵션
+- [[/database/sqlite]]의 `REGEXP`
+
+SQLite의 `REGEXP`는 다른 DB에서는 다른 문법으로 지원한다.
+
+예를 들어 [MariaDB에서는 `RLIKE`를 사용한다]( https://mariadb.com/kb/en/pcre/ ).
+
 
 ## man
 
@@ -33,6 +45,9 @@ man 3 pcresyntax
 grep -P '\Q[[/cmd]]\E' -R
 ```
 
+```sql
+select '[[/cmd]]' REGEXP '\Q[[/cmd]]\E';
+```
 
 ## CHARACTERS
 
@@ -49,10 +64,12 @@ grep -P '\Q[[/cmd]]\E' -R
 | `\xhh`      | 16진수 표기 문자                 |
 | `\x{hhh..}` | 16진수 표기 문자                 |
 
+```bash
+echo 'a' | ggrep -Po '\x{61}'
+```
+
 ```sql
--- sqlite
 select 'a' REGEXP '\x{61}';
---> 1
 ```
 
 ## CHARACTER TYPES
@@ -160,6 +177,45 @@ select '[a' REGEXP '\p{Ps}a';
 | `Xuc` | Universally-named character: one that can be represented by a Universal Character Name |
 | `Xwd` | Perl word: property Xan or underscore                                                  |
 
+### SCRIPT NAMES
+
+국가/언어별 문자셋으로, `\p`와 `\P`에서 사용한다.
+
+다음 언어들을 지원한다.
+
+>
+Arabic, Armenian, Avestan, Balinese, Bamum, Bassa_Vah, Batak, Bengali, Bopomofo, Brahmi, Braille, Buginese,
+Buhid, Canadian_Aboriginal, Carian, Caucasian_Albanian, Chakma, Cham, Cherokee, Common, Coptic, Cuneiform,
+Cypriot, Cyrillic, Deseret, Devanagari, Duployan, Egyptian_Hieroglyphs, Elbasan, Ethiopic, Georgian, Glagolitic,
+Gothic, Grantha, Greek, Gujarati, Gurmukhi, Han, Hangul, Hanunoo, Hebrew, Hiragana, Imperial_Aramaic, Inherited,
+Inscriptional_Pahlavi, Inscriptional_Parthian, Javanese, Kaithi, Kannada, Katakana, Kayah_Li, Kharoshthi, Khmer,
+Khojki, Khudawadi, Lao, Latin, Lepcha, Limbu, Linear_A, Linear_B, Lisu, Lycian, Lydian, Mahajani, Malayalam,
+Mandaic, Manichaean, Meetei_Mayek, Mende_Kikakui, Meroitic_Cursive, Meroitic_Hieroglyphs, Miao, Modi, Mongolian,
+Mro, Myanmar, Nabataean, New_Tai_Lue, Nko, Ogham, Ol_Chiki, Old_Italic, Old_North_Arabian, Old_Permic,
+Old_Persian, Old_South_Arabian, Old_Turkic, Oriya, Osmanya, Pahawh_Hmong, Palmyrene, Pau_Cin_Hau, Phags_Pa,
+Phoenician, Psalter_Pahlavi, Rejang, Runic, Samaritan, Saurashtra, Sharada, Shavian, Siddham, Sinhala,
+Sora_Sompeng, Sundanese, Syloti_Nagri, Syriac, Tagalog, Tagbanwa, Tai_Le, Tai_Tham, Tai_Viet, Takri, Tamil,
+Telugu, Thaana, Thai, Tibetan, Tifinagh, Tirhuta, Ugaritic, Vai, Warang_Citi, Yi.
+
+```bash
+$ echo 'ΣΦΩ' | ggrep -P '^\p{Greek}+$';
+ΣΦΩ
+
+$ echo '가나다' | ggrep -P '^\p{Hangul}+$';
+가나다
+
+$ echo '語' | ggrep -P '^\p{Han}+$';
+語
+
+$ echo 'ア' | ggrep -P '^\p{Katakana}+$';
+ア
+
+$ echo 'あお' | ggrep -P '^\p{Hiragana}+$';
+あお
+```
+
+- script names는 sqlite에서는 지원하지 않는다.
+
 ### CHARACTER CLASSES
 
 | `[...]`       | positive character class               |
@@ -191,33 +247,108 @@ POSIX named set은 다음과 같다.
 
 수량자.
 
-| `?`      | 0 or 1, greedy                         |
-| `?+`     | 0 or 1, possessive                     |
-| `??`     | 0 or 1, lazy                           |
-| `*`      | 0 or more, greedy                      |
-| `*+`     | 0 or more, possessive                  |
-| `*?`     | 0 or more, lazy                        |
-| `+`      | 1 or more, greedy                      |
-| `++`     | 1 or more, possessive                  |
-| `+?`     | 1 or more, lazy                        |
-| `{n}`    | exactly n                              |
-| `{n,m}`  | at least n, no more than m, greedy     |
-| `{n,m}+` | at least n, no more than m, possessive |
-| `{n,m}?` | at least n, no more than m, lazy       |
-| `{n,}`   | n or more, greedy                      |
-| `{n,}+`  | n or more, possessive                  |
-| `{n,}?`  | n or more, lazy                        |
+| `?`      | 0 ~ 1, greedy      |
+| `?+`     | 0 ~ 1, possessive  |
+| `??`     | 0 ~ 1, lazy        |
+| `*`      | 0 이상, greedy     |
+| `*+`     | 0 이상, possessive |
+| `*?`     | 0 이상, lazy       |
+| `+`      | 1 이상, greedy     |
+| `++`     | 1 이상, possessive |
+| `+?`     | 1 이상, lazy       |
+| `{n}`    | n 번               |
+| `{n,m}`  | n ~ m, greedy      |
+| `{n,m}+` | n ~ m, possessive  |
+| `{n,m}?` | n ~ m, lazy        |
+| `{n,}`   | n 이상, greedy     |
+| `{n,}+`  | n 이상, possessive |
+| `{n,}?`  | n 이상, lazy       |
+
+### Greedy
+
+- greedy는 가능한 한 많이 매칭한다.
+- `?` `*` `+`를 그대로 쓰면 greedy이다.
+
+```bash
+$ # greedy
+$ echo abcabcabc | ggrep -P 'a.*c'
+abcabcabc
+```
+
+### Possessive
+
+- possessive는 가능한 한 많이 매칭하되, backtracking을 하지 않는다.
+- `?+` `*+` `++`처럼 뒤에 `+`를 붙이면 possessive이다.
+
+possessive는 이해하기 꽤 어려울 수 있다.
+
+```bash
+$ # possessive
+$ echo XXXXZ | ggrep -P 'X++[A-Z]+'
+XXXXZ
+```
+
+- 매치 성공!
+    - `XXXX`를 `X++`와 모두 매치시키고 나서,
+    - 마지막 `Z`가 `[A-Z]+`와 매치 성공.
+
+```bash
+$ # possessive
+$ echo XXXXX | ggrep -P 'X++[A-Z]+'
+
+```
+
+- 매치 실패
+    - `XXXXX` 를 `X++`와 모두 매치시키고 나서,
+    - `[A-Z]+`를 매치시킬 문자가 남아있지 않음.
+
+백트래킹이 되는 greedy와 비교해보자.
+
+```bash
+$ # greedy
+$ echo XXXXX | ggrep -P 'X+[A-Z]+'
+XXXXX
+```
+
+- 매치 성공!
+    - `XXXXX` 를 `X+`와 모두 매치시키고 나서,
+    - 마지막 `[A-Z]+` 와 매치시키기 위해 백트랙(한 글자 왼쪽으로 돌아감),
+    - 마지막 `X`가 `[A-Z]+`와 매치 성공.
+
+#### grep의 오작동
+
+GNU grep을 쓰면 다음과 같은 케이스에서 오작동한다.
+
+```bash
+$ echo YYXXratsXX | ggrep -Po '([XY]++)rats\1'
+XXratsXX
+```
+
+`[XY]++`가 `YYXX`와 매치되기 때문에 `\1`에 `XXYY`가 있어야 전체가 매치되는데, 결과를 보면 `XXratsXX`가 매치되어 있다.
+
+### Lazy
+
+- lazy는 가능한 한 적게 매칭한다.
+    - `??` `*?` `+?` `??`처럼 뒤에 `?`를 붙이면 lazy이다.
+
+```bash
+$ echo "abcabc" | ggrep -Po '^a.*?c'
+abc
+```
+
+- 왼쪽의 `abc`가 매치되고, 오른쪽의 `abc`는 매치되지 않았다.
+
 
 ## ANCHORS AND SIMPLE ASSERTIONS
 
-| `\b` | word boundary                                                                                                 |
-| `\B` | not a word boundary                                                                                           |
-| `^`  | start of subject also after internal newline in multiline mode                                                |
-| `\A` | start of subject                                                                                              |
-| `$`  | end of subject<br/> also before newline at end of subject<br/> also before internal newline in multiline mode |
-| `\Z` | end of subject<br/> also before newline at end of subject                                                     |
-| `\z` | end of subject                                                                                                |
-| `\G` | first matching position in subject                                                                            |
+| `\b` | word 경계                                                          |
+| `\B` | `\b`와 반대                                                        |
+| `^`  | 문자열의 시작지점. multiline 모드에서는 각 행의 시작.              |
+| `\A` | 문자열의 (절대적) 시작지점.                                        |
+| `$`  | 문자열의 종료지점. multiline 모드에서는 각 행의 마지막.            |
+| `\Z` | 문자열의 (절대적) 종료지점. 또는 절대적 종료지점 개행문자 바로 앞. |
+| `\z` | 문자열의 (절대적) 종료지점.                                        |
+| `\G` | first matching position in subject                                 |
 
 ## MATCH POINT RESET
 
@@ -285,6 +416,8 @@ POSIX named set은 다음과 같다.
 
 ## 참고문헌
 
-- `man 3 pcresyntax` - PCRE 8.35, 2014-01-08 버전.
+- [List of Possessive Quantifiers (chortle.ccsu.edu)]( https://chortle.ccsu.edu/finiteautomata/Section09/sect09_22.html ) - grep의 오작동 관련.
 - [Perl Compatible Regular Expressions (PCRE) Documentation (mariadb.com)]( https://mariadb.com/kb/en/pcre/ )
+- [Possessive Quantifiers (chortle.ccsu.edu)]( https://chortle.ccsu.edu/finiteautomata/Section09/sect09_21.html ) - possessive 예제 참고.
+- `man 3 pcresyntax` - PCRE 8.35, 2014-01-08 버전.
 
