@@ -3,7 +3,7 @@ layout  : wiki
 title   : grep 명령어
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2023-09-03 18:39:03 +0900
+updated : 2023-09-04 22:24:29 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 resource: E6/02C9DC-B4FA-4FD4-B205-D2D93AD4BBAF
 toc     : true
@@ -150,9 +150,9 @@ this
 $ # macOS BSD grep 에는 -P 옵션이 없음
 ```
 
-### -P : PCREs 사용
+### -P : PCRE 사용
 
-GNU `grep`에는 Perl 호환 정규식(PCREs)를 사용할 수 있는 `-P` 옵션이 있다.
+GNU `grep`에는 [[/regex/pcre]]{Perl 호환 정규식(PCRE)}를 사용할 수 있는 `-P` 옵션이 있다.
 
 - `-P`, `--perl-regexp`
 
