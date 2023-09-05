@@ -3,7 +3,7 @@ layout  : wiki
 title   : alacritty
 summary : rust로 개발된 단순하고 빠른 터미널 에뮬레이터
 date    : 2023-09-02 19:26:31 +0900
-updated : 2023-09-05 22:10:34 +0900
+updated : 2023-09-05 22:15:26 +0900
 tag     : 
 resource: 6B/2F3606-DFE4-4DD2-A078-42F134CB7EA7
 toc     : true
@@ -35,63 +35,9 @@ man 5 alacritty
 - 매우 빠르고 쾌적하다.
 - 탭 기능을 제공하지 않는다.
 
-### key_bindings 설정과 tmux 조합이 꽤 괜찮다
-
-- 탭 기능을 제공하지 않으므로 탭이나 윈도우 분할을 원한다면 tmux 등을 사용해야 한다.
-- 그러나 `key_bindings` 설정이 강력해서 command 키 조합 등으로 복잡한 tmux 키 입력을 쉽게 할 수 있다.
-    - [Alacritty integration with Tmux]( https://arslan.io/2018/02/05/gpu-accelerated-terminal-alacritty/ )라는 글의 도움을 많이 받았다.
-
-나는 다음과 같이 설정했다.
-
-```yaml
-key_bindings:
-  #   cmd + shift + d                      C-q "
-  - { key: D, mods: Command|Shift, chars: "\x11\x22" } # tmux 윈도우 좌우 split
-  # command + shift + d              C-q %
-  - { key: D, mods: Command, chars: "\x11\x25" } # tmux 윈도우 상하 split
-  # command + t                      C-q c
-  - { key: T, mods: Command, chars: "\x11\x63" } # tmux 새로운 window 생성
-  # command + w                      C-q x
-  - { key: W, mods: Command, chars: "\x11\x78" } # tmux 현재 pane 닫기
-  # command + o                      C-q o
-  - { key: O, mods: Command, chars: "\x11\x6f" } # tmux pane 순차 이동
-  # command + O                      C-q C-o
-  - { key: O, mods: Command|Shift, chars: "\x11\x0f" } # tmux pane 서로 바꾸기
-
-  # tmux 1 ~ 9번 윈도우로 이동
-  # command + 1                         C-q 1
-  - { key: Key1, mods: Command, chars: "\x11\x31" }
-  - { key: Key2, mods: Command, chars: "\x11\x32" }
-  - { key: Key3, mods: Command, chars: "\x11\x33" }
-  - { key: Key4, mods: Command, chars: "\x11\x34" }
-  - { key: Key5, mods: Command, chars: "\x11\x35" }
-  - { key: Key6, mods: Command, chars: "\x11\x36" }
-  - { key: Key7, mods: Command, chars: "\x11\x36" }
-  - { key: Key8, mods: Command, chars: "\x11\x37" }
-  - { key: Key9, mods: Command, chars: "\x11\x39" }
-
-  # tmux 옆 윈도우로 이동
-  # control + pgdn, control + pgup        C-q p , C-q n
-  - { key: PageUp, mods: Control, chars: "\x11p" }
-  - { key: PageDown, mods: Control, chars: "\x11n" }
-  # tmux 윈도우 목록 보기(선택)
-  # command + e                      C-q w
-  - { key: E, mods: Command, chars: "\x11w" }
-
-  # tmux 윈도우 사이즈 조정
-  # cmd + 화살표,                        C-q H, C-q J, C-q K, C-q L
-  - { key: Left,  mods: Command, chars: "\x11H" }
-  - { key: Down,  mods: Command, chars: "\x11J" }
-  - { key: Up,    mods: Command, chars: "\x11K" }
-  - { key: Right, mods: Command, chars: "\x11L" }
-
-  # command + [                             C-q [
-  - { key: LBracket, mods: Command, chars: "\x11[" } # tmux 스크롤/복사 모드 전환
-```
+## 나의 설정: macOS + alacritty + tmux {#macos-alacritty-tmux}
 
 내 최근 설정은 [github.com/johngrib/dotfiles]( https://github.com/johngrib/dotfiles/blob/master/alacritty/alacritty.yml ) 에서 볼 수 있다.
-
-## 나의 설정: macOS + alacritty + tmux {#macos-alacritty-tmux}
 
 ### 요약: 탭 기능이 없는 문제는 key_bindings와 tmux로 해결 {#summary-key-bindings-tmux}
 
@@ -103,6 +49,8 @@ key_bindings:
     - alacritty에서도 탭 기능을 쓸 수 있으면 좋겠다고 생각.
         - 따라서 [[/cmd/tmux]]를 사용해 유사 탭을 쓰면 된다고 생각했다.
 - [alacritty의 key_bindings 설정](https://github.com/alacritty/alacritty/wiki/Keyboard-mappings )은 지정한 단축키를 입력했을 때 특정한 키 시퀀스를 전달하도록 할 수 있다.
+    - `key_bindings` 설정이 강력해서 command 키 조합 등으로 복잡한 tmux 키 입력을 쉽게 할 수 있다.
+        - [Alacritty integration with Tmux]( https://arslan.io/2018/02/05/gpu-accelerated-terminal-alacritty/ )라는 글의 도움을 많이 받았다.
     - 예를 들어 `command + T`를 눌렀을 때 `C-q c`를 전달하도록 설정할 수 있다.
         - 이렇게 하면 `iTerm`의 탭 기능과 동작이 다를 뿐, 사용하는 사람 입장에선 똑같은 탭 기능이 된다.
     - 다음과 같은 기능들을 모두 가능할 것으로 생각했고 설정해보니 잘 돌아갔다. (tmux의 윈도우를 탭으로 생각하고 사용)
@@ -175,13 +123,20 @@ key_bindings:
   - { key: W, mods: Command, chars: "\x11X" } # tmux 현재 pane 닫기
 ```
 
-tmux에서는 `C-q X`입력을 받으면 `kill-pane`을 실행하도록 설정했다.
+tmux에서는 다음과 같이 설정했다.
 
 ```conf
+set-option -g renumber-windows on
+
 bind-key X kill-pane
 ```
 
-`kill-pane`은 pane을 닫기 전에 `y/n`을 물어보지 않고 그냥 닫아버린다.
+- `renumber-windows`를 `on`으로 설정하지 않으면 탭을 닫아도 탭 번호가 그냥 남아있어서, 탭 번호 사이에 빈 공간이 생길 수 있게 된다.
+    - `renumber-windows`를 `on`으로 설정하면 탭을 닫을 때마다 모든 탭의 번호가 1번부터 순서대로 매겨진다.
+- `C-q X`입력을 받으면 `kill-pane`을 실행한다.
+    - `kill-pane`은 pane을 닫기 전에 `y/n`을 물어보지 않고 그냥 닫아버린다.
+
+
 
 다음은 `command + T`로 새로운 탭을 생성하고 `command + W`로 탭을 닫는 모습이다. (탭 목록이 화면 아래쪽에 표시되므로 아래쪽을 잘 봐야 한다)
 
