@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS의 기본 스크린샷 기능
 summary : 
 date    : 2020-06-01 21:49:38 +0900
-updated : 2023-09-06 20:51:28 +0900
+updated : 2023-09-06 20:58:21 +0900
 tag     : mac
 resource: AF/775D83-E350-4540-B27A-FFE12B134AD4
 toc     : true
@@ -79,6 +79,16 @@ killall SystemUIServer
 defaults write com.apple.screencapture include-date -bool true
 killall SystemUIServer
 ```
+
+## 스크린 동영상 기록 파일 이름 포맷을 변경하는 방법
+
+이것도 스크린샷과 방법이 똑같다.
+
+```bash
+defaults write com.apple.screenrecording name "recording"
+killall SystemUIServer
+```
+
 
 ## Links
 
