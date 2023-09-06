@@ -151,9 +151,9 @@ bind-key X kill-pane
 
 ```yml
 key_bindings:
-  #   cmd + shift + d                      C-q "
+  # command + shift + d                    C-q "
   - { key: D, mods: Command|Shift, chars: "\x11\x22" } # tmux 윈도우 좌우 split
-  # command + shift + d              C-q %
+  # command + d                      C-q %
   - { key: D, mods: Command, chars: "\x11\x25" } # tmux 윈도우 상하 split
 ```
 
