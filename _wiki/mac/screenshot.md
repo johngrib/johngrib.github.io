@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : macOS의 기본 스크린샷 저장 포맷을 png에서 jpg로 바꾸는 방법
+title   : macOS의 기본 스크린샷 기능
 summary : 
 date    : 2020-06-01 21:49:38 +0900
-updated : 2022-02-26 23:30:38 +0900
+updated : 2023-09-06 20:36:04 +0900
 tag     : mac
 resource: AF/775D83-E350-4540-B27A-FFE12B134AD4
 toc     : true
@@ -13,6 +13,8 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 스크린샷 파일 확장자를 png에서 jpg로 바꾸는 방법
 
 터미널에서 다음 명령을 입력하면 된다.
 

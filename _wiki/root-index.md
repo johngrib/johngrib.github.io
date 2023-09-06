@@ -783,7 +783,7 @@ regenerate: true
 
 * [[/mac/iterm]]
 * [[/mac/keyboard-shortcuts]]
-* [[/mac/screenshot-png-to-jpg]]
+* [[/mac/screenshot]]
 * [[/mac/setting]]
 * [[/hammerspoon]]
     * [[/hammerspoon-inputsource-aurora]]
