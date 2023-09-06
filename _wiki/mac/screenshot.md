@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS의 기본 스크린샷 기능
 summary : 
 date    : 2020-06-01 21:49:38 +0900
-updated : 2023-09-06 20:45:10 +0900
+updated : 2023-09-06 20:51:28 +0900
 tag     : mac
 resource: AF/775D83-E350-4540-B27A-FFE12B134AD4
 toc     : true
@@ -59,6 +59,26 @@ killall SystemUIServer
 이후에 생성하는 스크린샷 파일부터는 다음과 같이 `오후`가 사라진다.
 
 > `screenshot 2023-09-06 23.07.22.png`
+
+만약 파일 이름에 시간 정보를 넣고 싶지 않다면 다음과 같이 한다.
+
+```bash
+defaults write com.apple.screencapture include-date -bool false
+killall SystemUIServer
+```
+
+이후부터 생성하는 스크린샷 파일 이름은 다음과 같이 된다.
+
+> `screenshot.png`  
+`screenshot 1.png`  
+`screenshot 2.png`
+
+파일 이름에 다시 시간 정보를 넣고 싶다면 `include-date`를 `true`로 바꿔주면 된다.
+
+```bash
+defaults write com.apple.screencapture include-date -bool true
+killall SystemUIServer
+```
 
 ## Links
 
