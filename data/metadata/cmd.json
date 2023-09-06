@@ -33,6 +33,7 @@
   "cmd/factor",
   "cmd/fc",
   "cmd/fd",
+  "cmd/ffmpeg",
   "cmd/file",
   "cmd/find",
   "cmd/for",
