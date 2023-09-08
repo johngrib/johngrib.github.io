@@ -22,6 +22,7 @@
   "vim/ideavim",
   "vim/match",
   "vim/numbered-register-shift",
+  "vim/perldo",
   "vim/persistent-undo",
   "vim/plug",
   "vim/quickfix",
