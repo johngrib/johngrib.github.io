@@ -3,7 +3,7 @@ layout  : wiki
 title   : nethack
 summary : 
 date    : 2023-09-09 22:52:08 +0900
-updated : 2023-09-09 23:00:21 +0900
+updated : 2023-09-10 11:59:14 +0900
 tag     : 
 resource: AF/A13C50-676B-490C-8C82-B8586476A1F7
 toc     : true
@@ -41,4 +41,6 @@ brew install nethack
 - `d` 아이템 드롭
 - `s` 조사. 벽이 막혀있다던가 할 때 여러 번 눌러보자. 숨겨진 길이 나오기도 한다.
 - `q` 분수에서 물 마시기
+- `^d` 발로 차기
+    - 문 같은 것들을 발로 차서 열 수도 있다.
 
