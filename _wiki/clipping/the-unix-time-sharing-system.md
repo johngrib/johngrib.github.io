@@ -3,7 +3,7 @@ layout  : wiki
 title   : The UNIX Time-Sharing System
 summary : 
 date    : 2023-05-20 20:39:11 +0900
-updated : 2023-09-11 22:32:46 +0900
+updated : 2023-09-11 22:38:58 +0900
 tag     : 
 resource: 6D/5062DC-B812-495F-A01B-A6FB0FF09FA9
 toc     : true
@@ -72,9 +72,6 @@ UNIX의 가장 중요한 성과는, 장비/인력 등에 많은 비용을 들이
 - 서식 문자 생성기
 - 매크로 프로세서 (M6) [5]
 - 순열 색인 프로그램
-
->
-There is also a host of maintenance, utility, recreation, and novelty programs. All of these programs were written locally. It is worth noting that the system is totally self-supporting. All UNIX software is maintained under UNIX; likewise, UNIX documents are generated and formatted by the UNIX editor and text formatting program.
 
 그 외에도 유지보수, 유틸리티, 레크리에이션, 재미 용도의 프로그램들이 있다.
 
