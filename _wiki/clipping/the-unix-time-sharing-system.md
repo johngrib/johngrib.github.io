@@ -3,7 +3,7 @@ layout  : wiki
 title   : The UNIX Time-Sharing System
 summary : 
 date    : 2023-05-20 20:39:11 +0900
-updated : 2023-09-11 21:55:54 +0900
+updated : 2023-09-11 22:05:41 +0900
 tag     : 
 resource: 6D/5062DC-B812-495F-A01B-A6FB0FF09FA9
 toc     : true
@@ -83,3 +83,49 @@ There is also a host of maintenance, utility, recreation, and novelty programs. 
     - 모든 UNIX 소프트웨어는 UNIX에서 유지보수된다.
     - UNIX 문서도 UNIX 편집기와 텍스트 포매팅 프로그램에 의해 생성되고 서식이 지정된다.
 
+### 2. Hardware and Software Environment
+
+하드웨어 및 소프트웨어 환경
+
+- 우리의 UNIX 설치가 구현된 PDP-11/45는 16비트 워드(8비트 바이트) 컴퓨터이며, 144K 바이트의 코어 메모리를 가지고 있다.
+    - UNIX는 42K 바이트를 차지한다.
+    - 하지만 이 시스템은 매우 많은 장치 드라이버를 포함하고 있다.
+    - 또한 I/O 버퍼와 시스템 테이블에 대한 공간이 넉넉하게 할당되어 있다.
+- 위에서 언급한 소프트웨어를 실행할 수 있는 최소 시스템은 총 50K 바이트의 코어만 있어도 된다.
+
+PDP-11 의 스펙
+
+- 1M 바이트의 고정 헤드 디스크
+    - 파일 시스템 저장 및 스왑에 사용된다.
+- 2.5M 바이트의 이동식 디스크 카트리지를 제공하는 4개의 이동 헤드 디스크 드라이브
+- 40M 바이트의 이동식 디스크 팩을 사용하는 단일 이동 헤드 디스크 드라이브
+- 고속 종이 테이프 리더-펀치
+- 9트랙 자기 테이프
+- D-테이프
+    - (개별 레코드를 주소 지정하고 재작성할 수 있는 일종의 자기 테이프 장치)
+- 콘솔 타자기
+- 14개의 가변 속도 통신 인터페이스
+    - 100 시리즈 데이터셋에 연결
+- 201 데이터셋 인터페이스
+    - 주로 공동 라인 프린터에 출력을 스풀링하는 데 사용
+- Picturephone® 인터페이스
+- 음성 응답 장치
+- 음성 합성기
+- 포토 타입 세터
+- 디지털 스위칭 네트워크
+- Tektronix 611 저장관 디스플레이에 벡터, 곡선 및 문자를 생성하는 위성 PDP-11/20
+
+The greater part of UNIX software is written in the above-mentioned C language [6]. Early versions of the operating system were written in assembly language, but during the summer of 1973, it was rewritten in C. The size of the new system is about one third greater than the old. Since the new system is not only much easier to understand and to modify but also includes many functional improvements, including multiprogramming and the ability to share reentrant code among several user programs, we considered this increase in size quite acceptable.
+
+대부분의 UNIX 소프트웨어는 위에서 언급한 'C 언어'로 작성되었다.
+
+- 초기 버전의 운영체제는 어셈블리어로 작성되었다.
+    - 하지만 1973년 여름에 C로 다시 작성되었다.
+    - 새로운 시스템의 크기는 이전 시스템보다 약 1/3 정도 더 크다.
+- 새로운 시스템은 이전 시스템보다 이해하고 수정하기가 훨씬 쉽다.
+    - 또한 다중 프로그래밍과 여러 사용자 프로그램 간에 재진입 코드를 공유할 수 있는 기능을 포함하여 많은 기능적 개선 사항이 포함되어 있다.
+    - 따라서 우리는 이 크기의 증가를 꽤 허용할만하다고 생각했다.
+
+### 3. The File System
+
+파일 시스템
