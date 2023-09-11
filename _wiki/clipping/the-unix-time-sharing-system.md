@@ -3,7 +3,7 @@ layout  : wiki
 title   : The UNIX Time-Sharing System
 summary : 
 date    : 2023-05-20 20:39:11 +0900
-updated : 2023-09-11 22:05:41 +0900
+updated : 2023-09-11 22:14:21 +0900
 tag     : 
 resource: 6D/5062DC-B812-495F-A01B-A6FB0FF09FA9
 toc     : true
@@ -115,8 +115,6 @@ PDP-11 의 스펙
 - 디지털 스위칭 네트워크
 - Tektronix 611 저장관 디스플레이에 벡터, 곡선 및 문자를 생성하는 위성 PDP-11/20
 
-The greater part of UNIX software is written in the above-mentioned C language [6]. Early versions of the operating system were written in assembly language, but during the summer of 1973, it was rewritten in C. The size of the new system is about one third greater than the old. Since the new system is not only much easier to understand and to modify but also includes many functional improvements, including multiprogramming and the ability to share reentrant code among several user programs, we considered this increase in size quite acceptable.
-
 대부분의 UNIX 소프트웨어는 위에서 언급한 'C 언어'로 작성되었다.
 
 - 초기 버전의 운영체제는 어셈블리어로 작성되었다.
@@ -129,3 +127,24 @@ The greater part of UNIX software is written in the above-mentioned C language [
 ### 3. The File System
 
 파일 시스템
+
+UNIX의 가장 중요한 역할은 파일 시스템을 제공하는 것이다.
+
+- 사용자의 관점에서 보면 세 가지 종류의 파일이 있다.
+    - 일반 디스크 파일
+    - 디렉토리
+    - 특수 파일
+
+#### 3.1 Ordinary Files
+
+- 파일에는 사용자가 저장한 모든 정보가 포함된다.
+    - 예를 들어, 심볼릭 또는 바이너리(오브젝트) 프로그램이 있다.
+- 시스템은 특정한 구조를 미리 요구하지 않는다.
+- 텍스트 파일은 단순히 문자열로 구성되어 있으며, 줄은 줄바꿈 문자로 구별한다.
+- 바이너리 프로그램은 프로그램이 실행을 시작할 때 코어 메모리에 나타나는 단어의 시퀀스이다.
+- 일부 사용자 프로그램은 더 많은 구조를 가진 파일을 조작한다.
+    - 어셈블러는 특정 형식의 오브젝트 파일을 생성하고 로더는 특정 형식의 오브젝트 파일을 기대한다.
+- 그러나 파일의 구조는 사용하는 프로그램에 의해 제어되며, 시스템에 의해 제어되지 않는다.
+
+#### 3.2 Directories
+
