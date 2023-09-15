@@ -3,7 +3,7 @@ layout  : wiki
 title   : nethack
 summary : 
 date    : 2023-09-09 22:52:08 +0900
-updated : 2023-09-12 22:58:32 +0900
+updated : 2023-09-15 17:16:48 +0900
 tag     : 
 resource: AF/A13C50-676B-490C-8C82-B8586476A1F7
 toc     : true
@@ -36,6 +36,7 @@ brew install nethack
 
 ### 명령
 
+- `S` 게임 세이브
 - `:` 현재 칸을 주인공의 눈으로 보기
 - `i`, `I` 인벤토리 보기 (`i`와 `I`가 좀 다르다)
 - `.` 한 턴을 쉰다.
