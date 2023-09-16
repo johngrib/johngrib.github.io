@@ -25,6 +25,7 @@
   "pattern/null-object",
   "pattern/observer",
   "pattern/pipeline",
+  "pattern/prototype",
   "pattern/proxy",
   "pattern/quotes",
   "pattern/repository",

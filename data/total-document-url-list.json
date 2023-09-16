@@ -623,6 +623,7 @@
  "/wiki/pattern/null-object",
  "/wiki/pattern/observer",
  "/wiki/pattern/pipeline",
+ "/wiki/pattern/prototype",
  "/wiki/pattern/proxy",
  "/wiki/pattern/quotes",
  "/wiki/pattern/repository",
