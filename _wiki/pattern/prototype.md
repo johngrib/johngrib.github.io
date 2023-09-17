@@ -3,7 +3,7 @@ layout  : wiki
 title   : 프로토타입 패턴 (Prototype Pattern)
 summary : 
 date    : 2023-09-16 21:07:06 +0900
-updated : 2023-09-17 11:03:29 +0900
+updated : 2023-09-17 11:33:31 +0900
 tag     : 
 resource: A5/05D983-3E2E-4D0C-8ABE-C309FEB96F75
 toc     : true
@@ -162,9 +162,6 @@ class GraphicFactory {
 코틸린에서 모든 데이터 클래스는 `copy()` 메서드를 가진다.
 이 메서드는 다른 데이터 클래스의 인스턴스를 받아 복제본을 생성하며, 원한다면 그 과정에서 속성을 변경할 수도 있다.
 [^kotlin-pattern]
-
-
-## 용도
 
 
 ## 참고문헌
