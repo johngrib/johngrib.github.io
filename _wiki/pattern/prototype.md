@@ -3,7 +3,7 @@ layout  : wiki
 title   : 프로토타입 패턴 (Prototype Pattern)
 summary : 
 date    : 2023-09-16 21:07:06 +0900
-updated : 2023-09-16 23:12:46 +0900
+updated : 2023-09-17 11:03:29 +0900
 tag     : 
 resource: A5/05D983-3E2E-4D0C-8ABE-C309FEB96F75
 toc     : true
@@ -43,6 +43,8 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.
         - deep copy 코딩 실수로 복제한 여러 인스턴스의 일부 상태가 공유될 수 있다는 점에 주의.
 - 객체 복사가 쉽거나 기본적으로 지원되는 프로그래밍 언어에서는 이 패턴이 필요없을 수 있다.
     - GoF에 의하면 C++ 에서는 유용하지만, Smalltalk나 Objective-C에서는 중요하지 않은 패턴이라고 한다.[^gof-174]
+    - Kotlin의 경우 모든 데이터 클래스는 `copy()`를 기본적으로 갖고 있다.
+        - `copy()`를 그대로 사용해 인스턴스 복제본을 생성할 수도 있고, named parameter를 사용해서 일부 프로퍼티만 변경한 복제본을 생성할 수도 있다.
 
 ## 사례
 
@@ -57,8 +59,6 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.
     - 이 모든 도형들은 모두 `Prototype` 인터페이스를 구현하게 된다.
         - 사용자가 별 모양을 그리기 위해 별 모양 아이콘을 클릭하면, 별 모양의 `Prototype`을 복제하여 새로운 별 모양 객체를 생성한다.
 
-![]( /resource/A5/05D983-3E2E-4D0C-8ABE-C309FEB96F75/example-drawing.svg )
-
 다음은 그림 그리기 도구 [draw.io](https://app.diagrams.net/ )를 사용하는 장면의 스크린샷이다.
 
 ![]( /resource/A5/05D983-3E2E-4D0C-8ABE-C309FEB96F75/example-draw-tool.jpg )
@@ -67,6 +67,45 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.
 사람 모양 도형을 클릭하면 까만색 막대, 흰색 배경의 사람 모양이 그려지며 바로 아래에는 `Actor`라는 이름이 붙어 있다.
 
 [draw.io](https://app.diagrams.net/ )에서 실제로 이 패턴을 사용하는지는 모르겠지만, 내가 그림 그리기 도구를 만들어야 한다면 나는 이 패턴을 사용할 것 같다.
+
+다양한 기본 도형 하나하나를 xml이나 json 파일로 정의해 뒀다고 하자.
+
+- 그렇다면 사용자가 도형을 그릴 때마다 파일을 읽어서 객체를 생성하는 것은 비효율적이다.
+- 애플리케이션을 실행할 때 한 번에 모두 읽어서 프로토타입으로 만들어두는 것이 낫다.
+    - 사용자가 도형을 그릴 때마다 프로토타입을 복제하여 새로운 객체를 생성해 리턴해주면 된다.
+    - 물론 도형 정의 파일이 너무 많다면 모두 읽는 게 아니라 lazy하게 필요할 때 읽어서 프로토타입으로 만들 수도 있다.
+
+![]( /resource/A5/05D983-3E2E-4D0C-8ABE-C309FEB96F75/example-drawing.svg )
+
+```java
+class GraphicFactory {
+    // 설정 파일에서 읽은 다양한 도형의 프로토타입을 미리 갖고 있다.
+    private final Map<String, Graphic> prototypeMap;
+
+    public GraphicFactory(String configFileName) {
+        this.prototypeMap = readConfigFilesAndCreateMap(configFileName);
+    }
+
+    // 새로운 모양을 생성해주는 팩토리 같지만 실제로는 프로토타입을 복사해서 나눠주는 일을 하는 메소드.
+    public Graphic newGraphic(String graphicName) {
+        Graphic prototypeGraphic = prototypeMap.get(graphicName);
+        if (prototypeGraphic == null) {
+            throw new IllegalArgumentException(
+                "찾을 수 없는 graphicName 이므로 복제할 수 없습니다.");
+        }
+        return prototypeGraphic.clone();
+    }
+
+    Map<String, Graphic> readConfigFilesAndCreateMap(String fileName) {
+        Map<String, Graphic> map = new HashMap<>();
+
+        // 파일을 읽어 for loop 을 돌면서 각 도형 인스턴스를 생성해 map 에 등록한다.
+        // 설정 파일에 지정한 도형의 기본 타입을 읽고 concrete class 인스턴스를 생성한다.
+
+        return map;
+    }
+}
+```
 
 ## 인용
 ### From: 실용주의 디자인 패턴
@@ -100,13 +139,29 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.
 >
 - 명시적으로 `clone()` 메소드를 구현해야 하는데, 이 작업이 매우 어려울 수도 있다. 또한 깊은 복사(deep copy)와 얕은 복사(shallow copy) 문제를 생각해 보라. 레퍼런스만 복사하면 되는가, 아니면 참조된 객체까지 복사해야 하는가?
 
+### From: 코틀린 디자인 패턴
 
-- 다뤄야 하는 객체들의 종류가 너무 많아서 일일이 클래스로 정리할 수 없을 때 사용한다.
-- 모형이나 표준이 될만한 객체를 몇 개 만들어 놓고, 이를 복제해서 객체를 생성하는 방법이다.
-    - 특정한 상태를 갖는 여러 객체를 미리 만들어둔다고 생각할 수 있다.
-    - 복제할 때 해당 객체가 어떤 타입인지 알 필요가 없는 것이 장점.
+'코틀린 디자인 패턴'에서는 이 패턴에 대해 짧게 설명하면서 Kotlin, Java, JavaScript를 언급한다.
 
+>
+프로토타입의 핵심 아이디어는 객체를 쉽게 복사할 수 있도록 하는 것이다.
+적어도 다음의 두 가지 경우에 프로토타입 패턴이 필요하다.
+>
+> - 객체 생성에 많은 비용이 드는 경우(예를 들어 객체 생성 시 데이터베이스에서 자료를 조회해야 하는 경우)
+> - 비슷하지만 조금씩 다른 객체를 생성하느라 비슷한 코드를 매번 반복하고 싶지 않은 경우
 
+> **중요**  
+> <div id="table1"></div>
+
+- td
+    - 더 깊이 들어가면 프로토타입 패턴이 필요한 다른 이유도 있다. 가령 자바스크립트에서는 클래스 없이 객체와 비슷한 동작을 구현하기 위해 프로토타입을 사용한다.
+{:class="table-generate" data-target-id="table1"}
+
+>
+자바의 엉터리 같은 `clone()` 메서드가 다행히도 코틀린에서는 고쳐졌다.
+코틸린에서 모든 데이터 클래스는 `copy()` 메서드를 가진다.
+이 메서드는 다른 데이터 클래스의 인스턴스를 받아 복제본을 생성하며, 원한다면 그 과정에서 속성을 변경할 수도 있다.
+[^kotlin-pattern]
 
 
 ## 용도
@@ -116,6 +171,7 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.
 
 - GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
 - 실전 코드로 배우는 실용주의 디자인 패턴 / Allen Holub 저 / 송치형 편역 / 사이텍미디어 / 발행 2006년 07월 19일 / 원제 : Holub on Patterns : Learning Design Patterns by Looking at Code
+- 코틀린 디자인 패턴 2/e / 알렉세이 소신 저/이대근 역 / 에이콘출판사 / 2판 발행: 2023년 08월 31일 / 원제: Kotlin Design Patterns and Best Practices: Build scalable applications using traditional, reactive, and concurrent design patterns in Kotlin, 2nd Edition by Alexey Soshin and Anton Arhipov
 
 ## 주석
 
@@ -124,3 +180,5 @@ GoF 책에서는 다음과 같이 패턴의 의도를 밝힌다.
 [^drawio]: draw.io를 예제로 들긴 했지만 실제로 이 패턴을 사용하는지는 모른다.
 [^allen-450]: 실용주의 디자인 패턴. 450쪽.
 [^gof-174]: GoF의 디자인 패턴(개정판). 174쪽.
+[^kotlin-pattern]: 코틀린 디자인 패턴. 102쪽.
+
