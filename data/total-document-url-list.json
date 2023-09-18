@@ -614,6 +614,7 @@
  "/wiki/pattern/decorator",
  "/wiki/pattern/defensive-copy",
  "/wiki/pattern/entity",
+ "/wiki/pattern/facade",
  "/wiki/pattern/factory",
  "/wiki/pattern/factory-method",
  "/wiki/pattern/interpreter",

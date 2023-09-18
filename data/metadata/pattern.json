@@ -16,6 +16,7 @@
   "pattern/decorator",
   "pattern/defensive-copy",
   "pattern/entity",
+  "pattern/facade",
   "pattern/factory",
   "pattern/factory-method",
   "pattern/interpreter",
