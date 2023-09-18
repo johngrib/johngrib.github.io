@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : 프로토타입 패턴 (Prototype Pattern)
-summary : 
+summary : 프로토타입(원형)을 복제해서 새로운 객체를 생성한다
 date    : 2023-09-16 21:07:06 +0900
-updated : 2023-09-18 21:42:00 +0900
+updated : 2023-09-18 22:51:50 +0900
 tag     : 
 resource: A5/05D983-3E2E-4D0C-8ABE-C309FEB96F75
 toc     : true
