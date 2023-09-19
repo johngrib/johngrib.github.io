@@ -1,10 +1,10 @@
 {
  "type": "wiki",
  "title": "퍼사드 패턴 (Facade Pattern)",
- "summary": "작성중인 문서",
+ "summary": "복잡한 서브 시스템에 대해 간단한 인터페이스를 제공한다",
  "parent": "pattern",
  "url": "/wiki/pattern/facade",
- "updated": "2023-09-18 23:14:31 +0900",
+ "updated": "2023-09-19 22:23:53 +0900",
  "resource": "BB/AB59E3-453F-4563-9AFC-235AABCF978C",
  "children": []
 }
