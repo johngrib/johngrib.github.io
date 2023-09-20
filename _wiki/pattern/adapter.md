@@ -3,12 +3,12 @@ layout  : wiki
 title   : 어댑터 패턴 (Adapter Pattern)
 summary : 서로 일치하지 않는 인터페이스를 가진 클래스를 함께 동작시킨다
 date    : 2019-10-29 14:53:41 +0900
-updated : 2021-10-10 14:13:55 +0900
+updated : 2023-09-20 17:02:26 +0900
 tag     : pattern
 resource: F1/22F75B-0A13-4845-A03D-0865E1EDEDFB
 toc     : true
 public  : true
-parent  : [[pattern]]
+parent  : [[/pattern]]
 latex   : false
 ---
 * TOC
@@ -296,6 +296,10 @@ class ObjectIterator extends ObjectInputStream implements Iterator {
 }
 
 ```
+
+## 함께 읽기
+
+- [[/pattern/facade#compare-with-adapter-pattern]]
 
 ## 참고문헌
 
