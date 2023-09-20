@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "책임연쇄 패턴 (Chain of Responsibility Pattern)",
+ "summary": "요청을 처리할 객체가 나타날 때까지 객체 연결을 따라간다",
+ "parent": "pattern",
+ "url": "/wiki/pattern/chain-of-responsibility",
+ "updated": "2023-09-20 20:14:56 +0900",
+ "resource": "E7/72F156-8273-4CA8-A3A7-13EB09B5699A",
+ "children": []
+}

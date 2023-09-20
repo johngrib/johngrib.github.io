@@ -10,6 +10,7 @@
   "pattern/abstract-factory",
   "pattern/adapter",
   "pattern/builder",
+  "pattern/chain-of-responsibility",
   "pattern/command",
   "pattern/composite",
   "pattern/controller",

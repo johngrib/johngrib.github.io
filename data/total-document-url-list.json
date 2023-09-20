@@ -608,6 +608,7 @@
  "/wiki/pattern/abstract-factory",
  "/wiki/pattern/adapter",
  "/wiki/pattern/builder",
+ "/wiki/pattern/chain-of-responsibility",
  "/wiki/pattern/command",
  "/wiki/pattern/composite",
  "/wiki/pattern/controller",
