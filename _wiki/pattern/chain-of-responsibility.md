@@ -3,7 +3,7 @@ layout  : wiki
 title   : 책임연쇄 패턴 (Chain of Responsibility Pattern)
 summary : 요청을 처리할 객체가 나타날 때까지 객체 연결을 따라간다
 date    : 2023-09-20 17:04:29 +0900
-updated : 2023-09-20 20:14:56 +0900
+updated : 2023-09-21 20:54:39 +0900
 tag     : 
 resource: E7/72F156-8273-4CA8-A3A7-13EB09B5699A
 toc     : true
@@ -23,6 +23,16 @@ GoF 책에서는 다음과 같이 의도를 설명한다.
 하나의 요청에 대한 처리가 반드시 한 객체에서만 되지 않고, 여러 객체에게 그 처리 기회를 주려는 것입니다.
 [^gof-298]
 
+유키 히로시의 'Java 언어로 배우는 디자인 패턴 입문'에서는 이 패턴을 이해하기 쉽게 비유로 설명해 준다.
+
+>
+어떤 사람에게 요구를 합니다.
+그 사람이 그것을 처리할 수 있으면 처리하고,
+처리할 수 없으면 그 요구를 '다음 사람'에게 넘깁니다.
+다음 사람이 그 요구를 처리할 수 있으면 처리하고, 처리할 수 없으면 '또 다음 사람'에게 책임을 넘깁니다.
+이것이 Chain of Responsibility 패턴입니다.
+[^yuki-254]
+
 ## 구조
 
 ![]( /resource/E7/72F156-8273-4CA8-A3A7-13EB09B5699A/structure.svg ) [^gof-301]
@@ -32,6 +42,36 @@ GoF 책에서는 다음과 같이 의도를 설명한다.
 - ConcreteHandler(PrintButton, PrintDialog): 책임져야 할 행동이 있다면 스스로 요청을 처리하여 후속 처리자에 접근할 수 있습니다. 즉, 자신이 처리할 행동이 있으면 처리하고, 그렇지 않으면 후속 처리자에 다시 처리를 요청합니다.
 - Client: ConcreteHandler 객체에게 필요한 요청을 보냅니다.
 [^gof-302]
+
+## 예제
+### From: Java 언어로 배우는 디자인 패턴 입문
+
+다음은 'Java 언어로 배우는 디자인 패턴 입문'에서 소개하는 코드 예제의 일부이다.
+
+```java
+Support alice = new NoSupport("Alice");
+Support bob = new LimitSupport("Bob", 100);
+Support charlie = new SpecialSupport("Charlie", 429);
+Support diana = new LimitSupport("Diana", 200);
+Support elmo = new OddSupport("Elmo");
+Support fred = new LimitSupport("Fred", 300);
+
+// 사슬의 형성
+alice.setNext(bob).setNext(charlie).setNext(diana).setNext(elmo).setNext(fred);
+
+// 다양한 트러블 발생
+for (int i = 0; i < 500; i += 33) {
+    alice.support(new Trouble(i));
+}
+```
+[^yuki-260]
+
+위의 코드만 읽어도 충분히 이 패턴에 대한 설명이 되므로 다른 구현체는 모두 생략한다.
+
+단, 이 예제가 이 패턴의 전형이라고 받아들이지 말 것.
+책임연쇄 패턴을 구현하는 방법은 매우 다양하다.
+
+내가 이 예제를 구현한다면 `setNext`처럼 메소드 체인을 사용하지 않고, 간단한 함수 리스트로 작업할 것이다.
 
 ## 사례
 
@@ -115,6 +155,7 @@ public class TagBuilderTest...
 ## 참고문헌
 
 - GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
+- Java 언어로 배우는 디자인 패턴 입문 [개정판] / Yuki Hiroshi 저 / 이규흥 역 / 영진닷컴 / 1판 9쇄 2017년 3월 5일
 - 실전 코드로 배우는 실용주의 디자인 패턴 / Allen Holub 저 / 송치형 편역 / 사이텍미디어 / 발행 2006년 07월 19일 / 원제 : Holub on Patterns : Learning Design Patterns by Looking at Code
 - 패턴을 활용한 리팩터링 / 조슈아 케리에브스키 저 / 윤성준, 조상민 공역 / 인사이트(insight) / 신판 1쇄 발행 2011년 02월 09일 / 원제 : REFACTORING TO PATTERNS
 
@@ -125,3 +166,6 @@ public class TagBuilderTest...
 [^gof-302]: GoF의 디자인 패턴(개정판). 5장. 302쪽.
 [^joshua-156]: 패턴을 활용한 리팩터링. 6장. 156쪽.
 [^holub-472]: 실용주의 디자인 패턴. 472쪽.
+[^yuki-254]: Java 언어로 배우는 디자인 패턴 입문. 14장. 254쪽.
+[^yuki-260]: Java 언어로 배우는 디자인 패턴 입문. 14장. 260쪽.
+
