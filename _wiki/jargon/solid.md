@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : SOLID 원칙
-summary : 객체지향 5대 원칙
+summary : 
 date    : 2019-09-05 18:06:38 +0900
-updated : 2023-03-25 17:12:39 +0900
+updated : 2023-09-22 22:40:38 +0900
 tag     : oop
 resource: 25/7E91F9-CC32-4DA7-95BE-21A2203E2058
 toc     : true
