@@ -3,7 +3,7 @@ layout  : wiki
 title   : nethack
 summary : 
 date    : 2023-09-09 22:52:08 +0900
-updated : 2023-09-22 14:58:53 +0900
+updated : 2023-09-22 16:32:25 +0900
 tag     : 
 resource: AF/A13C50-676B-490C-8C82-B8586476A1F7
 toc     : true
@@ -169,4 +169,8 @@ b j n
 4. key를 적용할 방향을 물어보면 현재 위치 `.`를 입력한다.
 5. 상자가 열리면 `#loot`를 입력해서 상자를 조사한다.
 6. 이제 상자 안의 물건을 꺼내거나 상자에 물건을 넣을 수 있다.
+
+## Links
+
+- <https://nethackwiki.com/wiki/Armor >
 
