@@ -3,7 +3,7 @@ layout  : wiki
 title   : nethack
 summary : 
 date    : 2023-09-09 22:52:08 +0900
-updated : 2023-09-17 19:27:10 +0900
+updated : 2023-09-22 14:58:53 +0900
 tag     : 
 resource: AF/A13C50-676B-490C-8C82-B8586476A1F7
 toc     : true
@@ -18,6 +18,12 @@ latex   : false
 
 ```bash
 brew install nethack
+```
+
+## 도움말 보기
+
+```bash
+man nethack
 ```
 
 ## map symbols
