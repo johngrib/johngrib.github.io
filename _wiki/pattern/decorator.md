@@ -3,7 +3,7 @@ layout  : wiki
 title   : 데코레이터 패턴 (Decorator Pattern)
 summary : 객체에 동적으로 새로운 책임을 추가한다
 date    : 2019-10-05 10:42:26 +0900
-updated : 2021-10-11 13:55:53 +0900
+updated : 2023-09-24 22:43:20 +0900
 tag     : GoF-design-pattern
 resource: 2A/CF0F9F-65A0-4F88-BA10-330E4AB1DBDF
 toc     : true
@@ -287,12 +287,19 @@ Reader reader = new LineNumberReader(
 즉, 객체에 꾸밈을 가하기 위해 객체 조합 기법을 이용하는 것이 썩 내키지 않는다면, 아직 Decorator 패턴을 사용할 준비가 안 된 것이다.
 [^josh-210]
 
+- 성능상 좋지 않을 수 있다.
+
+>
+데코레이터 패턴은 디자인의 관점에서 보았을 때는 좋으나 별도의 간접 참조에 많은 비용이 들 수 있다.
+데코레이터는 그것을 추가할 수 있는 것과 마찬가지로 제거도 할 수 있음을 기억하자.
+[^bea-276]
 
 ## 참고문헌
 
 - GoF의 디자인 패턴(개정판) / 에릭 감마, 리처드 헬름, 랄프 존슨, 존 블라시디스 공저 / 김정아 역 / 프로텍미디어 / 발행 2015년 03월 26일
 - Head First Design Patterns / 에릭 프리먼 등저 / 서환수 역 / 한빛미디어 / 초판 16쇄 2017년 5월 10일
 - Java 언어로 배우는 디자인 패턴 입문 [개정판] / Yuki Hiroshi 저 / 이규흥 역 / 영진닷컴 / 1판 9쇄 2017년 3월 5일
+- 뷰티풀 아키텍처 / 디오미디스 스피넬리스 저 / 지오지아스 고시아스 편 / 지앤선(志&嬋) / 발행 2010년 03월 08일 / 원제: Beautiful Architecture: Leading Thinkers Reveal the Hidden Beauty in Software Design
 - 패턴을 활용한 리팩터링 / 조슈아 케리에브스키 저 / 윤성준, 조상민 공역 / 인사이트(insight) / 신판 1쇄 발행 2011년 02월 09일 / 원제 : REFACTORING TO PATTERNS
 
 ## 주석
@@ -304,3 +311,5 @@ Reader reader = new LineNumberReader(
 [^josh-207]: 패턴을 활용한 리팩터링. 7장. 207쪽.
 [^josh-208]: 패턴을 활용한 리팩터링. 7장. 208쪽.
 [^josh-210]: 패턴을 활용한 리팩터링. 7장. 210쪽.
+[^bea-276]: 뷰티풀 아키텍처. 276쪽.
+
