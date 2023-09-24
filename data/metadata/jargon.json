@@ -44,6 +44,7 @@
   "jargon/postel-s-law",
   "jargon/reader-writer-lock",
   "jargon/risc",
+  "jargon/rules-of-optimization",
   "jargon/solid",
   "jargon/telescope-rule",
   "jargon/TOCTTOU",

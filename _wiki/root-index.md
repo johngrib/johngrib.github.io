@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-09-20 17:04:27 +0900
+updated : 2023-09-24 22:34:04 +0900
 regenerate: true
 ---
 * TOC
@@ -496,6 +496,7 @@ regenerate: true
 * [[/jargon/postel-s-law]]
 * [[/jargon/reader-writer-lock]]
 * [[/jargon/risc]]
+* [[/jargon/rules-of-optimization]]
 * [[/jargon/solid]]
 * [[/jargon/telescope-rule]]
 * [[/jargon/two-pizza-team]]
