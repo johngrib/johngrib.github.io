@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-09-24 22:34:04 +0900
+updated : 2023-09-25 22:33:58 +0900
 regenerate: true
 ---
 * TOC
@@ -593,13 +593,14 @@ regenerate: true
 * [[/f-l-a-03-02]]
 
 ### [[/study-think-bayes]]
+
+* [[/Monty-Hall-problem]]
+* [[/Oliver-s-blood]]
 * [[/cookie-problem]]
 * [[/dice-problem]]
 * [[/euro-problem]]
 * [[/locomotive-problem]]
-* [[/MnM-problem]]
-* [[/Monty-Hall-problem]]
-* [[/Oliver-s-blood]]
+* [[/study-think-bayes/m-n-m-problem]]
 
 ### [[/study/os]]
 

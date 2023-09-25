@@ -3,12 +3,12 @@ layout  : wiki
 title   : M&M 문제
 summary :
 date    : 2018-04-09 22:31:42 +0900
-updated : 2023-09-25 22:31:31 +0900
+updated : 2023-09-25 22:34:52 +0900
 tag     : Think-Bayes bayes
 resource: 30/20D7CF-98CB-40B7-AFC0-BBD4385FF60D
 toc     : true
 public  : true
-parent  : [[study-think-bayes]]
+parent  : [[/study-think-bayes]]
 latex   : true
 ---
 * TOC
@@ -52,7 +52,7 @@ latex   : true
 * 데이터 D : 봉지1에서 노랑 초콜렛이 나왔고, 봉지2에서 녹색 초콜렛이 나왔다.
 * $$p(H_a \mid D)$$의 값을 구하여라.
 
-[[Bayes-theorem]]에 의해 다음과 같이 식을 꾸밀 수 있다.
+[[/Bayes-theorem]]에 의해 다음과 같이 식을 꾸밀 수 있다.
 
 $$ p(H_a \mid D) = {p(H_a) \space p(D \mid H_a) \over p(D)} $$
 
@@ -114,7 +114,7 @@ $$
 
 ### 직접 코딩해 풀기
 
-다음은 [[Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
+다음은 [[/Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
 
 * [m_and_m.js](https://github.com/johngrib/think-bayes-study/blob/master/code/m_and_m.js )
 
@@ -212,5 +212,5 @@ $$\frac{20}{27} \approx 0.740740...$$ 이므로 손으로 계산한 값과 같�
 
 ## Links
 
-* [[Think-Bayes]]
+* [[/Think-Bayes]]
 
