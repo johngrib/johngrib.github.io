@@ -3,7 +3,7 @@ layout  : wiki
 title   : git prompt 설정
 summary : 
 date    : 2020-01-06 19:58:34 +0900
-updated : 2023-08-12 21:19:04 +0900
+updated : 2023-09-25 22:38:08 +0900
 tag     : git
 resource: 19/D18D8A-C819-4507-AE60-26E361BF638F
 toc     : true
@@ -40,7 +40,7 @@ latex   : false
 
 코드는 다음과 같다.
 
-그냥 `git`, [[/cmd/grep]]{grep}, `cut`, `awk`, `sort`, `uniq`, `tr`, `sed` 같은 기본 도구들을 사용해 간단히 만들었다.
+그냥 [[/git]]{git}, [[/cmd/grep]]{grep}, [[/cmd/cut]]{cut}, [[/language/awk]]{awk}, [[/cmd/sort]]{sort}, [[/cmd/uniq]]{uniq}, [[/cmd/tr]]{tr}, [[/cmd/sed]]{sed} 같은 기본 도구들을 사용해 간단히 만들었다.
 
 ```sh
 function gbr {
