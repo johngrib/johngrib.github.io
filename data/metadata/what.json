@@ -16,7 +16,7 @@
   "groupId-artifactId",
   "indent-style",
   "latency",
-  "osi-model",
+  "network/osi-model",
   "port",
   "rouge-supported-languages",
   "router",

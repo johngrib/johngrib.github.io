@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-09-30 11:34:14 +0900
+updated : 2023-09-30 11:36:33 +0900
 regenerate: true
 ---
 * TOC
@@ -850,6 +850,7 @@ regenerate: true
 
 * [[/network/ip]]
 * [[/network/mac-address]]
+* [[/network/osi-model]]
 
 ## [[/what]]
 
@@ -863,7 +864,6 @@ regenerate: true
 * [[/groupId-artifactId]]
 * [[/indent-style]]
 * [[/latency]]
-* [[/osi-model]]
 * [[/port]]
 * [[/rouge-supported-languages]]
 * [[/router]]

@@ -4,6 +4,6 @@
  "latency",
  "network/ip",
  "network/mac-address",
- "osi-model",
+ "network/osi-model",
  "port"
 ]
