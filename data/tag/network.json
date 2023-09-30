@@ -1,9 +1,9 @@
 [
  "bandwidth",
  "global-variables-and-marriage-architecture",
- "IP",
  "latency",
  "mac-address",
+ "network/ip",
  "osi-model",
  "port"
 ]
