@@ -7,6 +7,7 @@
  "updated": "2023-09-30 11:21:16 +0900",
  "resource": "0E/A71E7F-47B5-4A2F-97D2-DDAA422BD371",
  "children": [
-  "network/ip"
+  "network/ip",
+  "network/mac-address"
  ]
 }
