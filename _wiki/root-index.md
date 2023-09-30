@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-09-25 22:33:58 +0900
+updated : 2023-09-30 11:19:49 +0900
 regenerate: true
 ---
 * TOC
@@ -845,6 +845,8 @@ regenerate: true
 
 * [[/rfc/1855]] - Netiquette Guidelines
 * [[/rfc/1950]] - ZLIB Compressed Data Format Specification version 3.3
+
+## [[/network]]
 
 ## [[/what]]
 
