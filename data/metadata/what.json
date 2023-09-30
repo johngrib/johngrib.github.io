@@ -16,7 +16,7 @@
   "groupId-artifactId",
   "indent-style",
   "latency",
-  "port",
+  "network/port",
   "rouge-supported-languages",
   "special-chars",
   "transistor",

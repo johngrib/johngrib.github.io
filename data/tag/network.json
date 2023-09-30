@@ -5,5 +5,5 @@
  "network/ip",
  "network/mac-address",
  "network/osi-model",
- "port"
+ "network/port"
 ]
