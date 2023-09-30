@@ -8,6 +8,8 @@
  "resource": "0E/A71E7F-47B5-4A2F-97D2-DDAA422BD371",
  "children": [
   "network/ip",
-  "network/mac-address"
+  "network/mac-address",
+  "network/osi-model",
+  "network/router"
  ]
 }

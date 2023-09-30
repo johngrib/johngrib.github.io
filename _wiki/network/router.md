@@ -3,12 +3,12 @@ layout  : wiki
 title   : Router(라우터)
 summary : 
 date    : 2019-07-22 23:30:06 +0900
-updated : 2019-11-26 22:16:23 +0900
+updated : 2023-09-30 11:40:16 +0900
 tag     : 
 resource: 59/4E6168-C1CF-4146-8A8A-438804E1022E
 toc     : true
 public  : true
-parent  : [[what]]
+parent  : [[/network]]
 latex   : false
 ---
 * TOC
