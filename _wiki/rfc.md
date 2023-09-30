@@ -3,7 +3,7 @@ layout  : category
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2023-08-27 16:59:46 +0900
+updated : 2023-09-30 13:06:34 +0900
 tag     : rfc
 resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
@@ -163,6 +163,26 @@ RFC에 문제가 있을 때는 새로운 버전의 RFC로 갱신되기도 하고
 
 
 ## 몇몇 RFC 소개
+### RFC 768 - User Datagram Protocol
+
+- 1980-08-28 [RFC 768 - User Datagram Protocol](https://www.rfc-editor.org/info/rfc768 )
+    - 사용자 데이터그램 프로토콜.
+
+### RFC 791 - INTERNET PROTOCOL
+
+- 1981-09 [RFC 791 - Internet Protocol](https://www.rfc-editor.org/info/rfc791 )
+    - 인터넷 프로토콜.
+
+### RFC 792 - INTERNET CONTROL MESSAGE PROTOCOL
+
+- 1981-09 [RFC 792 - Internet Control Message Protocol](https://www.rfc-editor.org/info/rfc792 )
+    - 인터넷 제어 메시지 프로토콜.
+
+### RFC 793 - TRANSMISSION CONTROL PROTOCOL
+
+- 1981-09 [RFC 793 - Transmission Control Protocol](https://www.rfc-editor.org/info/rfc793 )
+    - 전송 제어 프로토콜.
+
 ### RFC 822
 
 * 1982-08-13 [STANDARD FOR THE FORMAT OF ARPA INTERNET TEXT MESSAGES](https://tools.ietf.org/html/rfc822 )
@@ -178,6 +198,11 @@ RFC에 문제가 있을 때는 새로운 버전의 RFC로 갱신되기도 하고
 By 1977, the Arpanet employed several informal standards for the text messages (mail) sent among its host computers. It was felt necessary to codify these practices and provide for those features that seemed imminent.  
 <br>
 1977 년 Arpanet은 호스트 컴퓨터간에 전송된 텍스트 메시지(**메일**)에 대해 여러 가지 비공식 표준을 사용했습니다. 이러한 관습을 문서화하고 임박한 기능을 제공하는 것이 필요하다고 느꼈습니다. 
+
+### RFC 826 - An Ethernet Address Resolution Protocol
+
+- 1982-11 [RFC 826 - An Ethernet Address Resolution Protocol](https://www.rfc-editor.org/info/rfc826 )
+    - 이더넷 주소 해결 프로토콜.
 
 ### RFC 1855 - Netiquette Guidelines
 
