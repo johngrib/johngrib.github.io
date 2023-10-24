@@ -10,6 +10,7 @@
   "network/ip",
   "network/mac-address",
   "network/osi-model",
+  "network/packet",
   "network/port",
   "network/router"
  ]
