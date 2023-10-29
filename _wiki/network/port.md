@@ -3,7 +3,7 @@ layout  : wiki
 title   : 포트(port)
 summary : 
 date    : 2019-07-26 20:08:40 +0900
-updated : 2023-09-30 11:42:18 +0900
+updated : 2023-10-29 22:32:47 +0900
 tag     : network
 resource: 16/F2303D-2D85-42CB-B2E9-2FA2281EB945
 toc     : true
@@ -110,17 +110,33 @@ $$2^{16} = 65,536$$이기 때문이다.
 | Registered (User) Port Numbers | 1024 ~ 49151  | 새로운 (비표준)애플리케이션을 위해 요청할 수 있는 포트 넘버들. 요청이 승인되면 IANA는 해당 포트 넘버를 해당 애플리케이션에 할당한다. |
 | Private/Dynamic Port Numbers   | 49152 ~ 65535 | 누구나 등록 없이 사용할 수 있다.                                                                                                     |
 
-한편 잘 알려진 포트 넘버 목록을 알고 싶다면 다음 문서를 보면 된다.
+## 잘 알려진 포트 번호
+
+### IANA
+
+잘 알려진 포트 넘버 목록을 알고 싶다면 다음 문서를 보면 된다.
 
 * [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml ) - xhtml
 * [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt ) - txt
 
+### /etc/services
+
+>
+SMTP, SSH, HTTP와 같은 표준 서비스들은 `/etc/services` 파일에 정의돼 있는 '잘 알려진<sup>well known</sup>' 포트와 결합된다.  
+(중략)  
+services 파일은 인프라의 일부다.
+따라서 비표준 서비스를 추가하려고 할 때 이 파일을 수정할 수 있음에도 결코 수정해서는 안 되며 그럴 필요도 없다.
+[^handbook-600]
+
 ## 참고문헌
 
-* TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
+- TCP/IP 완벽 가이드 / 찰스 M. 코지에록 저/강유, 김진혁, 민병호, 박선재 역 / 에이콘출판사 / 2007년 01월 25일 / 원제 : The TCP/IP Guide: A Comprehensive, Illustrated Internet Protocols Reference
+- 유닉스·리눅스 시스템 관리 핸드북 5/e / 에비 네메스, 가스 스나이더, 트렌트 헤인, 벤 웨일리, 댄 맥킨 저 외 2명 / 에이콘출판사 / 발행: 2022년 01월 03일 / 원제: UNIX and Linux System Administration Handbook, 5th Edition
 
 ## 주석
 
 [^udp-datagram]: https://tools.ietf.org/html/rfc768 RFC 768. 1쪽
 [^tcp-datagram]: https://tools.ietf.org/html/rfc793 RFC 793. 3.1. Header Format. 15쪽
 [^ip-datagram]: https://tools.ietf.org/html/rfc791 RFC 791. 3.1. Internet Header Format. 11쪽.
+[^handbook-600]: 유닉스·리눅스 시스템 관리 핸드북 5/e. 13장. 600쪽.
+
