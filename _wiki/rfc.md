@@ -3,7 +3,7 @@ layout  : category
 title   : RFC(Requests For Comments)
 summary : 일련번호가 매겨진 인터넷 표준 문서
 date    : 2017-12-10 12:42:46 +0900
-updated : 2023-09-30 13:06:34 +0900
+updated : 2023-10-31 21:32:26 +0900
 tag     : rfc
 resource: 6F/286146-5C56-4DAA-96DE-6C7B24F6FC2D
 toc     : true
@@ -325,6 +325,23 @@ interface LoggerInterface
 }
 ```
 
+### RFC 5952
+
+- A Recommendation for IPv6 Address Text Representation
+- <https://datatracker.ietf.org/doc/html/rfc5952 >
+
+>
+[RFC5952][RFC5952]는 표기 단순화를 필수적인 의무 사항으로 만들고자 [RFC4921][RFC4921]을 업데이트한 것이다.
+또한 모든 주소가 오직 하나의 텍스트 표현을 갖는다는 것을 보장하고자 다음과 같은 몇 가지 규칙을 추가했다.
+>
+> - 16진수 `a`-`f`는 반드시 소문자로 표현해야 한다.
+> - `::` 항목은 한 개의 16비트 그룹을 대체할 수 없다(단일 16비트 그룹의 표현은 `:0:`을 사용한다).
+> - `::` 으로 대체할 그룹을 선택할 수 있는 상황이라면 `::`은 가장 길이가 긴 `0` 시퀀스를 대체해야 한다.
+>
+현실 세계에서는 여전히 [RFC5952][RFC5952]에 따르지 않는 주소들을 보게 될 것이며 거의 모든 네트워킹 소프트웨어도 그것을 받아들인다.
+하지만 여러분의 환경설정, 기록 관리, 소프트웨어에서는 [RFC5952][RFC5952]에 따를 것을 강력히 권장한다.
+[^sysadmin-handbook-613]
+
 ### RFC 6570
 
 * URI Template
@@ -361,7 +378,8 @@ http://example.com/search{?q,lang}
 
 [^tcp-ip-guide-58]: TCP/IP 완벽 가이드. 3장. 네트워크 표준과 기구. 58쪽.
 [^real-world-http-35]: 리얼월드 HTTP. 1장. 35쪽.
-[^sysadmin-handbook-587]: 유닉스·리눅스 시스템 관리 핸드북. 13.1장. 587쪽.
+[^sysadmin-handbook-587]: 유닉스·리눅스 시스템 관리 핸드북 5/e. 13.1장. 587쪽.
+[^sysadmin-handbook-613]: 유닉스·리눅스 시스템 관리 핸드북 5/e. 13.4장. 613쪽.
 
 {% comment %}
     아래 목록은 vim 에서 :'<,'>sort n 으로 정렬했다.
@@ -391,3 +409,6 @@ http://example.com/search{?q,lang}
 [RFC-850]: https://tools.ietf.org/html/rfc850
 [RFC-822]: https://tools.ietf.org/html/rfc822
 [RFC-733]: https://tools.ietf.org/html/rfc733
+[RFC5952]: https://datatracker.ietf.org/doc/html/rfc5952
+[RFC4291]: https://www.rfc-editor.org/rfc/rfc4291.html
+
