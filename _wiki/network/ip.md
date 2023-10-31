@@ -3,7 +3,7 @@ layout  : wiki
 title   : IP
 summary : Internet Protocol
 date    : 2019-07-14 23:10:36 +0900
-updated : 2023-10-31 21:15:12 +0900
+updated : 2023-10-31 21:22:15 +0900
 tag     : network
 resource: F1/0A089F-47D1-4B30-BF00-98D6BD79FF3F
 toc     : true
@@ -305,25 +305,25 @@ IPv4처럼 십진수로 IP 주소를 표현하기에 IPv6는 너무 길다는 �
 이를 16자리씩 쪼갠 다음 각자 16진수로 변환하고 `:`으로 이어주면 된다.
 
 $$
-\underbrace{1000 \ 0000 \ 0101 \ 1011}_{805B} \ \underbrace{0010 \ 1101 \ 1001 \ 1101}_{2D9D} \\
-\underbrace{1101 \ 1100 \ 0010 \ 1000}_{DC28} \ \underbrace{0000 \ 0000 \ 0000 \ 0000}_{0000} \\
-\underbrace{0000 \ 0000 \ 0000 \ 0000}_{0000} \ \underbrace{1111 \ 1100 \ 0101 \ 0111}_{FC57} \\
-\underbrace{1101 \ 0100 \ 1100 \ 1000}_{D4C8} \ \underbrace{0001 \ 1111 \ 1111 \ 1111}_{1FFF} \\
+\underbrace{1000 \ 0000 \ 0101 \ 1011}_{805b} \ \underbrace{0010 \ 1101 \ 1001 \ 1101}_{2d9d} \\
+\underbrace{1101 \ 1100 \ 0010 \ 1000}_{dc28} \ \underbrace{0000 \ 0000 \ 0000 \ 0000}_{0000} \\
+\underbrace{0000 \ 0000 \ 0000 \ 0000}_{0000} \ \underbrace{1111 \ 1100 \ 0101 \ 0111}_{fc57} \\
+\underbrace{1101 \ 0100 \ 1100 \ 1000}_{d4c8} \ \underbrace{0001 \ 1111 \ 1111 \ 1111}_{1fff} \\
 $$
 
-즉 `805B:2D9D:DC28:0000:0000:FC57:D4C8:1FFF`가 된다.
+즉 `805b:2d9d:dc28:0000:0000:fc57:d4c8:1fff`가 된다.
 
 그리고 이를 짧게 표현하기 위해 `0000`을 `0`으로 줄여 표현하기도 한다.
 
-<code class="highlighter-rouge">805B:2D9D:DC28:<font color="red">0:0</font>:FC57:D4C8:1FFF</code>
+<code class="highlighter-rouge">805b:2d9d:dc28:<font color="red">0:0</font>:fc57:d4c8:1fff</code>
 
 그래도 꽤 길기 때문에 `:0:0:`과 같이 `0`이 연속되는 것을 그냥 `::`으로 줄이기도 한다.
 
-<code class="highlighter-rouge">805B:2D9D:DC28<font color="red">::</font>FC57:D4C8:1FFF</code>
+<code class="highlighter-rouge">805b:2d9d:dc28<font color="red">::</font>fc57:d4c8:1fff</code>
 
 이 방식은 "0 압축(Zero Compression)"이라 부르는데, `:0:0:`을 `::`으로 줄이는 것이 아니라 연속된 `:0:0...`을 `::`로 만드는 방법이다.
 
-예를 들어 `FF00:4501:0:0:0:0:0:32`를 0 압축하면 <code class="highlighter-rouge">FF00:4501<font color="red">::</font>32</code>가 된다.
+예를 들어 `ff00:4501:0:0:0:0:0:32`를 0 압축하면 <code class="highlighter-rouge">ff00:4501<font color="red">::</font>32</code>가 된다.
 
 `0:0:0:0:0:0:0:1`은? `::1` 이 된다.
 
@@ -337,11 +337,11 @@ $$
 
 가령 다음의 IPv6 주소를
 
-<code class="highlighter-rouge">805B:2D9D:DC28::FC57:<font color="red">D4C8:1FFF</font></code>
+<code class="highlighter-rouge">805b:2d9d:dc28::fc57:<font color="red">d4c8:1fff</font></code>
 
 다음과 같이 표현할 수 있는 것이다.
 
-<code class="highlighter-rouge">805B:2D9D:DC28::FC57:<font color="red">212.200.31.255</font></code>
+<code class="highlighter-rouge">805b:2d9d:dc28::fc57:<font color="red">212.200.31.255</font></code>
 
 이 방법을 쓰면 `0:0:0:0:0:0:192.168.0.1` 같이 앞쪽에 0이 이어진 IPv6 주소를 `::192.168.0.1`처럼 IPv4와 비슷한 모양으로 표현할 수 있다.
 
@@ -355,7 +355,7 @@ IPv6에도 IPv4처럼 네트워크 ID와 호스트 ID가 있다.
 
 예를 들면 다음과 같다.
 
-`805B:2D9D:DC28:0000:0000:FC57:D4C8:1FFF/48`
+`805b:2d9d:dc28:0000:0000:fc57:d4c8:1fff/48`
 
 #### IPv6 특별한 주소 패턴
 
@@ -395,7 +395,7 @@ IPv4 주소 내장은 두 가지로 나뉜다.
 
 * 80개의 0이 이어지고, 16개의 1이 이어진 다음, 그 뒤는 32비트의 IPv4 주소.
 
-예: `0:0:0:0:FFFF:127.0.0.1`, `::FFFF:127.0.0.1`
+예: `0:0:0:0:ffff:127.0.0.1`, `::ffff:127.0.0.1`
 
 
 ### IP 주소의 중복 방지는 어떻게?
