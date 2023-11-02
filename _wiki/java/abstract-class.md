@@ -3,12 +3,12 @@ layout  : wiki
 title   : Java Abstract Class
 summary : 자바 추상 클래스
 date    : 2019-08-09 23:25:24 +0900
-updated : 2021-05-28 15:59:17 +0900
+updated : 2023-11-02 23:23:16 +0900
 tag     : java
 resource: 68/B40C70-38C3-428C-A7B1-0781EE1A9168
 toc     : true
 public  : true
-parent  : [[java]]
+parent  : [[/java]]
 latex   : false
 ---
 * TOC
@@ -108,7 +108,7 @@ It is a compile-time error if an enum declaration has the modifier abstract or f
 
 ## 함께 읽기
 
-- [[java-abstract-method]]
+- [[/java-abstract-method]]
 
 ## 참고문헌 및 Links
 

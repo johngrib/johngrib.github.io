@@ -6,7 +6,6 @@
  "updated": "2022-01-19 09:53:46 +0900",
  "resource": "5D/4141B5-A73D-4171-9551-9EAB008155BA",
  "children": [
-  "java-abstract-class",
   "java-abstract-method",
   "java-interface",
   "java-jigsaw-quick-start",
@@ -14,6 +13,7 @@
   "java-modifier-order-with-jls-suggestion",
   "java-random",
   "java/8",
+  "java/abstract-class",
   "java/arraylist",
   "java/enhancements",
   "java/enum",
