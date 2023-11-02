@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-10-24 23:25:30 +0900
+updated : 2023-11-02 23:05:09 +0900
 regenerate: true
 ---
 * TOC
@@ -711,6 +711,7 @@ regenerate: true
 * [[/cmd/man]]
 * [[/cmd/mv]]
 * [[/cmd/mysqldump]]
+* [[/cmd/netstat]]
 * [[/cmd/openssl]]
 * [[/cmd/pass]]
 * [[/cmd/ping]]

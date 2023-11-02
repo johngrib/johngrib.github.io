@@ -59,6 +59,7 @@
   "cmd/man",
   "cmd/mv",
   "cmd/mysqldump",
+  "cmd/netstat",
   "cmd/openssl",
   "cmd/pass",
   "cmd/ping",

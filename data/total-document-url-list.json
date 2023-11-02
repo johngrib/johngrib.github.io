@@ -237,6 +237,7 @@
  "/wiki/cmd/man",
  "/wiki/cmd/mv",
  "/wiki/cmd/mysqldump",
+ "/wiki/cmd/netstat",
  "/wiki/cmd/openssl",
  "/wiki/cmd/pass",
  "/wiki/cmd/ping",
