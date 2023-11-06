@@ -21,6 +21,7 @@
   "cmd/column",
   "cmd/compgen",
   "cmd/convmv",
+  "cmd/crontab",
   "cmd/csplit",
   "cmd/curl",
   "cmd/cut",

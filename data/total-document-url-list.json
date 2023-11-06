@@ -198,6 +198,7 @@
  "/wiki/cmd/column",
  "/wiki/cmd/compgen",
  "/wiki/cmd/convmv",
+ "/wiki/cmd/crontab",
  "/wiki/cmd/csplit",
  "/wiki/cmd/curl",
  "/wiki/cmd/cut",
