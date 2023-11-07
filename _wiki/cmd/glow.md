@@ -3,12 +3,12 @@ layout  : wiki
 title   : glow 명령어
 summary : 터미널에서 마크다운 화면을 렌더링해 보여준다
 date    : 2020-01-19 21:37:02 +0900
-updated : 2020-01-19 21:41:46 +0900
+updated : 2023-11-07 22:34:49 +0900
 tag     : bash command
 resource: FD/CFDE91-8C93-41E0-8132-F1253EFFCEB0
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "glow 명령어",
+ "summary": "터미널에서 마크다운 화면을 렌더링해 보여준다",
+ "parent": "cmd",
+ "url": "/wiki/cmd/glow",
+ "updated": "2023-11-07 22:34:49 +0900",
+ "resource": "FD/CFDE91-8C93-41E0-8132-F1253EFFCEB0",
+ "children": []
+}
