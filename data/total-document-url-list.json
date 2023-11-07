@@ -209,6 +209,7 @@
  "/wiki/cmd/ditto",
  "/wiki/cmd/du",
  "/wiki/cmd/echo",
+ "/wiki/cmd/etc/hosts",
  "/wiki/cmd/factor",
  "/wiki/cmd/fc",
  "/wiki/cmd/fd",
