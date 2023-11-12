@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-11-07 22:37:17 +0900
+updated : 2023-11-12 17:51:10 +0900
 regenerate: true
 ---
 * TOC
@@ -353,6 +353,7 @@ regenerate: true
 * [[/java/temporal-adjusters]]
 * [[/java/thread/state]]
 * [[/java/time/instant]]
+* [[/java/var]]
 * [[/java/volatile]]
 
 * [[/java-abstract-method]]
@@ -360,7 +361,6 @@ regenerate: true
 * [[/java-jigsaw-quick-start]]
 * [[/java-lambda]]
 * [[/java-random]]
-* [[/java10-var]]
 * [[/java8-why-permgen-removed]]
 * [[/jdk13]]
 * [[/private-constructor]]
