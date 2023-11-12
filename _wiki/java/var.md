@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 var
 summary : 
 date    : 2019-09-12 21:13:19 +0900
-updated : 2023-11-12 17:52:52 +0900
+updated : 2023-11-12 17:53:22 +0900
 tag     : java
 resource: 02/76470F-F819-4653-8CF2-4B2A0E9517F7
 toc     : true
@@ -47,6 +47,7 @@ var g = null;             // Illegal: null type
 
 ## 참고문헌
 
-* [Java 10 spec][local-var]
+- [Java 10 spec][local-var]
+- [JEP 286: Local-Variable Type Inference]( https://openjdk.org/jeps/286 )
 
 [local-var]: https://docs.oracle.com/javase/specs/jls/se10/html/jls-14.html#jls-14.4
