@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java의 var
 summary : 
 date    : 2019-09-12 21:13:19 +0900
-updated : 2023-11-12 18:01:05 +0900
+updated : 2023-11-12 18:23:04 +0900
 tag     : java
 resource: 02/76470F-F819-4653-8CF2-4B2A0E9517F7
 toc     : true
@@ -14,8 +14,17 @@ latex   : false
 * TOC
 {:toc}
 
+## 요약 및 메모
 
-Java 10부터 var 키워드를 통해 변수를 선언할 수 있게 됐다.
+- Java 10부터 `var` 식별자를 통해 '로컬 변수'를 선언할 수 있게 됐다.
+    - 메소드 리턴 타입으로는 사용할 수 없다.
+    - 필드 선언에도 사용할 수 없다.
+    - `catch` 블록에서도 사용할 수 없다.
+- 이 기능은 `var`라고도 부르고 `LVTI`(Local-Variable Type Inference) 라고도 부른다.
+- `var` 식별자는 키워드가 아니다. 예약된 타입명이다.
+- 익숙하지 않다면 `var`의 타입 추론이 예상과 다를 수 있으니 주의할 것.
+    - primitive 타입이나 상속 구조를 사용할 때 주의할 것.
+
 
 ## From: JEP 286
 
@@ -44,7 +53,7 @@ This means that code that uses var as a variable, method, or package name will n
 
 ## Examples
 
-* 올바른 사용과 잘못된 사용
+### 올바른 사용과 잘못된 사용
 
 ```java
 // 문제 없음
@@ -58,7 +67,7 @@ var f = { 6 };        // Illegal: array initializer
 var g = (g = 7);      // Illegal: self reference in initializer
 ```
 
-* 타입
+### 타입
 
 ```java
 // 문제 없음
@@ -72,6 +81,19 @@ var e = (CharSequence & Comparable<String>) "x";
 // 잘못된 사용
 var f = () -> "hello";    // Illegal: lambda not in an assignment context
 var g = null;             // Illegal: null type
+```
+
+### 저지르기 쉬운 실수들
+
+```java
+// long을 의도했지만 int로 추론됨
+var longValue = 10;
+
+// List<String>을 의도했지만 ArrayList<String>으로 추론됨
+var stringList = new ArrayList<String>();
+
+// List<Object>가 아니라 ArrayList<Object>로 추론됨
+var objectList = new ArrayList<>();
 ```
 
 ## 참고문헌
