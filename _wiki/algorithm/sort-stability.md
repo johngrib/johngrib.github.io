@@ -3,12 +3,12 @@ layout  : wiki
 title   : 정렬 안정성 (Stability)
 summary : 정렬 후에도 같은 키들의 상대적인 순서가 정렬 이전과 같게 유지되는 정렬 방법
 date    : 2020-10-04 22:39:45 +0900
-updated : 2020-10-04 23:37:50 +0900
+updated : 2023-11-13 23:43:41 +0900
 tag     : algorithm sort
 resource: 3B/256007-7DF1-4BCB-98E1-6D5E155C469D
 toc     : true
 public  : true
-parent  : [[algorithm]]
+parent  : [[/algorithm]]
 latex   : true
 ---
 * TOC
@@ -76,17 +76,17 @@ latex   : true
 
 ## 다양한 정렬 알고리즘 비교
 
-- [[insertion-sort]]와 [[/algorithm/merge-sort]]가 안정 정렬에 해당한다.
+- [[/insertion-sort]]와 [[/algorithm/merge-sort]]가 안정 정렬에 해당한다.
 
-| algorithm                     | stable? | in place? | 실행 시간                   | 추가 공간 | 비고                                    |
-|-------------------------------|---------|-----------|-----------------------------|-----------|-----------------------------------------|
+| algorithm                                | stable? | in place? | 실행 시간                   | 추가 공간 | 비고                                    |
+|------------------------------------------|---------|-----------|-----------------------------|-----------|-----------------------------------------|
 | [[/algorithm/selection-sort]]{선택 정렬} | no      | yes       | $$N^2$$                     | 1         |                                         |
-| [[insertion-sort]]{삽입 정렬} | **yes** | yes       | $$N$$ 에서 $$N^2$$ 사이     | 1         | 사전 정렬된 정도에 영향을 받음          |
+| [[/insertion-sort]]{삽입 정렬}           | **yes** | yes       | $$N$$ 에서 $$N^2$$ 사이     | 1         | 사전 정렬된 정도에 영향을 받음          |
 | [[/algorithm/shell-sort]]{셸 정렬}       | no      | yes       | $$N \log N? \\ N^{6/5}?$$   | 1         |                                         |
 | [[/algorithm/quick-sort]]{퀵 정렬}       | no      | yes       | $$N \log N$$                | $$\lg N$$ | 확률적으로 보증됨                       |
 | [[/algorithm/quick-sort]]{3중 퀵 정렬}   | no      | yes       | $$N$$에서 $$N \log N$$ 사이 | $$\lg N$$ | 확률적이면서, 입력 키들에 영향을 받는다 |
 | [[/algorithm/merge-sort]]{병합 정렬}     | **yes** | no        | $$N \log N$$                | $$N$$     |                                         |
-| [[heap-sort]]{힙 정렬}        | no      | yes       | $$N \log N$$                | 1         |                                         |
+| [[/heap-sort]]{힙 정렬}                  | no      | yes       | $$N \log N$$                | 1         |                                         |
 
 출처[^SED-2-5]
 
