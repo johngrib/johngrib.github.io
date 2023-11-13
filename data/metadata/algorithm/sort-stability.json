@@ -3,7 +3,7 @@
  "title": "정렬 안정성 (Stability)",
  "summary": "정렬 후에도 같은 키들의 상대적인 순서가 정렬 이전과 같게 유지되는 정렬 방법",
  "parent": "algorithm",
- "url": "/wiki/sort-stability",
+ "url": "/wiki/algorithm/sort-stability",
  "updated": "2020-10-04 23:37:50 +0900",
  "resource": "3B/256007-7DF1-4BCB-98E1-6D5E155C469D",
  "children": []

@@ -4,6 +4,7 @@
  "algorithm/gray-code",
  "algorithm/merge-sort",
  "algorithm/selection-sort",
+ "algorithm/sort-stability",
  "big-O-notation",
  "counting-sort",
  "dijkstra-2-stack-for-exp-eval",
@@ -11,6 +12,5 @@
  "heap-sort",
  "insertion-sort",
  "java/arraylist",
- "sort-stability",
  "tilde-approximations"
 ]
