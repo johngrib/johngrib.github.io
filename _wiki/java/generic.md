@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Generic
 summary : 작성중
 date    : 2023-11-13 23:15:12 +0900
-updated : 2023-11-13 23:40:53 +0900
+updated : 2023-11-14 23:45:54 +0900
 tag     : 
 resource: 02/76BD62-057B-4A44-A8B3-B9BC3EC7011C
 toc     : true
@@ -18,8 +18,17 @@ latex   : false
 
 >
 A generic type is a generic class or interface that is parameterized over types.
+[^tutorial-generic-types]
 
 제네릭 타입은 타입을 매개변수화한 제네릭 클래스나 인터페이스다.
+
+### Generic Class
+
+제네릭 클래스는 다음과 같은 형식으로 정의할 수 있다.
+
+```java
+class name<T1, T2, ..., Tn> { /* ... */ }
+```
 
 ## Type Parameter 네이밍 컨벤션 {#type-parameter-naming-convention}
 
@@ -50,9 +59,13 @@ A generic type is a generic class or interface that is parameterized over types.
 ## 참고문헌
 
 - [The Java™ Tutorials - Lesson: Generics (Updated)](https://docs.oracle.com/javase/tutorial/java/generics/index.html )
+- [The Java™ Tutorials - Lesson: Generics by Gilad Bracha](https://docs.oracle.com/javase/tutorial/extra/generics/index.html )
 
 ## 주석
 
-[^tutorial-types]: [The Java™ Tutorials - Lesson: Generics (Updated) - Generic Types]( https://docs.oracle.com/javase/tutorial/java/generics/types.html )의 Type Parameter Naming Conventions.
+[tutorial]: https://docs.oracle.com/javase/tutorial/java/generics/types.html
+
+[^tutorial-generic-types]: [The Java™ Tutorials - Lesson: Generics (Updated) - Generic Types][tutorial]
+[^tutorial-types]: [The Java™ Tutorials - Lesson: Generics (Updated) - Generic Types][tutorial]의 Type Parameter Naming Conventions.
 
 
