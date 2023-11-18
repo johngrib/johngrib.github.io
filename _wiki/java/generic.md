@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Generic
 summary : 작성중
 date    : 2023-11-13 23:15:12 +0900
-updated : 2023-11-14 23:45:54 +0900
+updated : 2023-11-18 17:21:47 +0900
 tag     : 
 resource: 02/76BD62-057B-4A44-A8B3-B9BC3EC7011C
 toc     : true
@@ -28,6 +28,27 @@ A generic type is a generic class or interface that is parameterized over types.
 
 ```java
 class name<T1, T2, ..., Tn> { /* ... */ }
+```
+
+### Generic Method
+
+다음은 2개의 타입 파라미터를 사용하는 제네릭 메소드의 예이다.
+
+```java
+public class Util {
+  public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2) {
+    return p1.getKey().equals(p2.getKey()) &&
+      p1.getValue().equals(p2.getValue());
+  }
+}
+```
+
+위의 메소드는 아래와 같이 사용할 수 있다.
+
+```java
+Pair<Integer, String> p1 = new Pair<>(1, "apple");
+Pair<Integer, String> p2 = new Pair<>(2, "pear");
+boolean same = Util.<Integer, String>compare(p1, p2);
 ```
 
 ## Type Parameter 네이밍 컨벤션 {#type-parameter-naming-convention}
