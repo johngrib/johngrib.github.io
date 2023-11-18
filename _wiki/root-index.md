@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-11-13 23:42:17 +0900
+updated : 2023-11-18 19:20:08 +0900
 regenerate: true
 ---
 * TOC
@@ -140,6 +140,7 @@ regenerate: true
 
 ### [[/people]]
 
+* [[/people/alexander-stepanov]]
 * [[/people/bill-atkinson]]
 * [[/people/bill-joy]]
 * [[/people/brian-w-kernighan]]
@@ -276,10 +277,11 @@ regenerate: true
 
 ## [[/programming]]
 
-* [[/programming/comment]]
-* [[/programming/destructuring]]
 * [[/inversion-of-control]]
 * [[/n-version-programming]]
+* [[/programming/comment]]
+* [[/programming/destructuring]]
+* [[/programming/generic]]
 
 ## [[/language]]
 
