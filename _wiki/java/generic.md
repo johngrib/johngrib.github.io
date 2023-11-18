@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Generic
 summary : 작성중
 date    : 2023-11-13 23:15:12 +0900
-updated : 2023-11-18 23:02:07 +0900
+updated : 2023-11-18 23:15:07 +0900
 tag     : 
 resource: 02/76BD62-057B-4A44-A8B3-B9BC3EC7011C
 toc     : true
@@ -93,6 +93,28 @@ Class<? extends Fruit> fruitClass = Apple.class;
 List<? extends Fruit> fruits = new ArrayList<Apple>();
 ```
 
+## Invariance (불변) {#invariance}
+
+>
+두 번째 가변성은 제네릭 타입이 타입 인자의 서브타입 관계를 무시하는 것이다.
+`List2`가 이 경우다.
+`B`가 `A`의 서브타입이더라도 `List2<B>`와 `List2<A>` 사이에는 아무런 관계가 없다.
+`List2<B>`와 `List2<A>`가 그냥 다른 타입인 것이다.
+다시 말해 타입 인자가 `A`에서 서브타입인 `B`로 변할 때 `List2<A>`는 그냥 다른 타입인 `List2<B>`가 될 뿐이지, `List2<A>`의 서브타입으로 변하는 것은 아니다.
+따라서 타입 인자가 서브타입으로 변해도 제네릭 타입은 서브타입으로 '안 변한다'는 뜻으로서, 이런 가변성을 불변(invariance)이라 부른다.
+[^hong-270]
+
+Java의 제네릭에서도 이러한 불변을 따르기 때문에 `List<Object>`는 `List<String>`의 상위 타입이 아니다.
+(물론 하위 타입도 아니다.)
+
+```java
+List<Apple> apples = new ArrayList<>();
+apples.add(new Apple());
+apples.add(new Apple());
+
+List<Fruit> fruits = apples;  // 컴파일 에러
+```
+
 ## 참고문헌
 
 - [The Java™ Tutorials - Lesson: Generics (Updated)](https://docs.oracle.com/javase/tutorial/java/generics/index.html )
@@ -107,4 +129,4 @@ List<? extends Fruit> fruits = new ArrayList<Apple>();
 [^tutorial-types]: [The Java™ Tutorials - Lesson: Generics (Updated) - Generic Types][tutorial]의 Type Parameter Naming Conventions.
 
 [^hong-269]: 타입으로 견고하게 다형성으로 유연하게. 4.3장. 269쪽.
-
+[^hong-270]: 타입으로 견고하게 다형성으로 유연하게. 4.3장. 270쪽.
