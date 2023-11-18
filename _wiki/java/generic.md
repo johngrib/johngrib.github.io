@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Generic
 summary : 작성중
 date    : 2023-11-13 23:15:12 +0900
-updated : 2023-11-18 17:21:47 +0900
+updated : 2023-11-18 23:02:07 +0900
 tag     : 
 resource: 02/76BD62-057B-4A44-A8B3-B9BC3EC7011C
 toc     : true
@@ -76,11 +76,28 @@ boolean same = Util.<Integer, String>compare(p1, p2);
 - `V` - Value
 - `S`, `U`, `V` - 2번째, 3번째, 4번째 타입이 필요한 경우
 
+## Covariance (공변) {#covariance}
+
+>
+첫 번째 가변성은 제네릭 타입이 타입 인자의 서브타입 관계를 보존하는 것이다.
+`List1`이 여기에 해당한다.
+`B`가 `A`의 서브타입일 때 `List1<B>`가 `List1<A>`의 서브타입이다.
+약간 달리 표현하면, 타입 인자가 `A`에서 서브타입인 `B`로 변할 때 `List1<A>` 역시 서브타입인 `List1<B>`로 변한다고 말할 수 있다.
+그래서 제네릭 타입이 타입 인자와 '함께 변한다'는 뜻을 담아, 이런 가변성을 공변(covariance)이라고 부른다.
+[^hong-269]
+
+Java에서는 `I<? extends T>`로 같이 공변을 표현할 수 있다. `T`로 상한선을 정의하는 방식.
+
+```java
+Class<? extends Fruit> fruitClass = Apple.class;
+List<? extends Fruit> fruits = new ArrayList<Apple>();
+```
 
 ## 참고문헌
 
 - [The Java™ Tutorials - Lesson: Generics (Updated)](https://docs.oracle.com/javase/tutorial/java/generics/index.html )
 - [The Java™ Tutorials - Lesson: Generics by Gilad Bracha](https://docs.oracle.com/javase/tutorial/extra/generics/index.html )
+- 타입으로 견고하게 다형성으로 유연하게 / 홍재민 저 / 인사이트(insight) / 초판 1쇄 발행: 2023년 10월 19일
 
 ## 주석
 
@@ -89,4 +106,5 @@ boolean same = Util.<Integer, String>compare(p1, p2);
 [^tutorial-generic-types]: [The Java™ Tutorials - Lesson: Generics (Updated) - Generic Types][tutorial]
 [^tutorial-types]: [The Java™ Tutorials - Lesson: Generics (Updated) - Generic Types][tutorial]의 Type Parameter Naming Conventions.
 
+[^hong-269]: 타입으로 견고하게 다형성으로 유연하게. 4.3장. 269쪽.
 
