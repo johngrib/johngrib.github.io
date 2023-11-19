@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Generic
 summary : 작성중
 date    : 2023-11-13 23:15:12 +0900
-updated : 2023-11-18 23:15:07 +0900
+updated : 2023-11-19 11:56:30 +0900
 tag     : 
 resource: 02/76BD62-057B-4A44-A8B3-B9BC3EC7011C
 toc     : true
@@ -115,6 +115,30 @@ apples.add(new Apple());
 List<Fruit> fruits = apples;  // 컴파일 에러
 ```
 
+## Contravariance (반변) {#contravariance}
+
+>
+세 번째 가변성은 제네릭 타입이 타입 인자의 서브타입 관계를 뒤집는 것이다.
+보다시피 함수 타입의 매개변수 타입이 이렇다.
+결과 타입을 `C`로 고정할 때 `B`가 `A`의 서브타입이면 `B => C`는 `A => C`의 슈퍼타입이다.
+타입 인자가 `A`에서 서브타입인 `B`로 변할 때 `A => C`는 타입 인자와는 반대 방향으로 움직여 슈퍼타입인 `B => C`로 변한다고도 할 수 있다.
+그러므로 제네릭 타입이 타입 인자와 '반대로 변한다'는 의미를 담아, 이런 가변성을 반변(contravariance)이라고 부른다.
+[^hong-271]
+
+```java
+class Fruit { }
+class Apple extends Fruit { }
+class MacintoshApple extends Apple { }
+```
+
+```java
+List<? super Apple> fruits = new ArrayList<Fruit>();
+List<? super Apple> fruits2 = new ArrayList<Apple>();
+// ↓ 컴파일 에러
+List<? super Apple> fruits3 = new ArrayList<MacintoshApple>();
+```
+
+
 ## 참고문헌
 
 - [The Java™ Tutorials - Lesson: Generics (Updated)](https://docs.oracle.com/javase/tutorial/java/generics/index.html )
@@ -130,3 +154,4 @@ List<Fruit> fruits = apples;  // 컴파일 에러
 
 [^hong-269]: 타입으로 견고하게 다형성으로 유연하게. 4.3장. 269쪽.
 [^hong-270]: 타입으로 견고하게 다형성으로 유연하게. 4.3장. 270쪽.
+[^hong-271]: 타입으로 견고하게 다형성으로 유연하게. 4.3장. 271쪽.
