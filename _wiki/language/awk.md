@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2023-03-25 23:00:08 +0900
+updated : 2023-12-02 23:43:26 +0900
 tag     : command 언어 brian-kernighan awk
 resource: 97/3C865D-C4E1-43B2-B80E-F96DA7AC7703
 toc     : true
@@ -144,6 +144,12 @@ Perl을 좀 무시하는 개발자들도 있는 것 같은데, 사실 Perl은 �
 - Beautiful Code / 찰스 페졸드 외 37 저 / 한빛미디어 / 초판발행 2007년 12월 17일
 - [How To Use awk In Bash Scripting](https://www.cyberciti.biz/faq/bash-scripting-using-awk/ )
 - 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
+
+## Links
+
+- [The AWK Programming Language, Second Edition by Alfred Aho, Brian Kernighan, Peter Weinberger](https://awk.dev/ )
+    - 1판은 1988년에 나온 바 있다. 2판은 2023년 9월에 나온 것.
+    - [GeekNews](https://news.hada.io/topic?id=9547 )에 소개된 글도 읽어볼만 하다.
 
 ## 주석
 
