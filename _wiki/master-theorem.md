@@ -3,12 +3,12 @@ layout  : wiki
 title   : 마스터 정리 (Master Theorem)
 summary : 
 date    : 2020-06-28 19:18:22 +0900
-updated : 2020-06-28 20:29:21 +0900
+updated : 2023-12-03 21:44:49 +0900
 tag     : 
 resource: 30/A7CBA8-BA48-48CB-8F7F-E0B8895A671A
 toc     : true
 public  : true
-parent  : [[algorithm]]
+parent  : [[/algorithm]]
 latex   : true
 ---
 * TOC
@@ -109,7 +109,7 @@ $$
 
 ## 함께 읽기
 
-- [[big-O-notation]]
+- [[/big-O-notation]]
 
 ## 참고문헌
 
