@@ -9,6 +9,7 @@
  "children": [
   "problem/collatz-conjecture",
   "problem/is-number-string",
+  "problem/maximum-subarray",
   "problem/miss-all-prizes-probability",
   "problem/palindrome",
   "problem/roman-number",

@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-11-18 19:20:08 +0900
+updated : 2023-12-03 13:24:58 +0900
 regenerate: true
 ---
 * TOC
@@ -269,6 +269,7 @@ regenerate: true
 
 * [[/problem/collatz-conjecture]]
 * [[/problem/is-number-string]]
+* [[/problem/maximum-subarray]]
 * [[/problem/miss-all-prizes-probability]]
 * [[/problem/palindrome]]
 * [[/problem/roman-number]]
