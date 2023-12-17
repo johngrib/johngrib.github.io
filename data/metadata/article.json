@@ -22,6 +22,7 @@
   "article/vim-night/20220406-escape",
   "article/vim-night/20220407-cheatsheet",
   "article/vim-night/20220408-ctags",
-  "article/vim-night/20220409-session"
+  "article/vim-night/20220409-session",
+  "article/vimwiki-lsp"
  ]
 }

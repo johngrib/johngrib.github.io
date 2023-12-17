@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-12-03 13:24:58 +0900
+updated : 2023-12-17 20:09:05 +0900
 regenerate: true
 ---
 * TOC
@@ -46,10 +46,12 @@ regenerate: true
 ## [[/article]]
 
 - [[/article/coupon-service-and-code-data]]
+- [[/article/extend-vim-gx]]
 - [[/article/hierarchical-controller-package-structure]]
 - [[/article/incremental-way]]
 - [[/article/science-and-delete]]
 - [[/article/test-code-and-falsifiability]]
+- [[/article/vimwiki-lsp]]
 
 - [[/article/vim-night/20220409-session]]
 - [[/article/vim-night/20220408-ctags]]
@@ -61,7 +63,7 @@ regenerate: true
 - [[/article/vim-night/20220401-insert-mode]]
 - [[/article/vim-night/20220327-ultisnips]]
 - [[/article/vim-night/20220331-insert-mode]]
-- [[/article/extend-vim-gx]]
+
 
 ## [[/algorithm]]
 
