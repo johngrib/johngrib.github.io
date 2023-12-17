@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki에서 사용하기 위한 나만의 LSP를 만들자
 summary : 작성중인 문서
 date    : 2023-12-17 20:09:06 +0900
-updated : 2023-12-17 22:41:27 +0900
+updated : 2023-12-17 22:43:38 +0900
 tag     : vim
 resource: CE/26FDCD-4282-4257-A2AE-F17EF0A47884
 toc     : true
@@ -13,6 +13,10 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 일러두기
+
+이 글은 내가 [VimEnter 2023 모임](https://event-us.kr/vim/event/74978 )에서 발표할 자료이다.
 
 ## 나의 위키
 
