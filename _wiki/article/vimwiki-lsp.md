@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vimwiki에서 사용하기 위한 나만의 LSP를 만들자
 summary : 아직 발표 안 한 발표자료. 발표 예정일은 2023-12-23.
 date    : 2023-12-17 20:09:06 +0900
-updated : 2023-12-17 22:44:16 +0900
+updated : 2023-12-22 23:28:20 +0900
 tag     : vim
 resource: CE/26FDCD-4282-4257-A2AE-F17EF0A47884
 toc     : true
@@ -40,7 +40,31 @@ latex   : false
 
 이 문서는 '로컬 컴퓨터에서의 편집을 위해 선택한 기술'들 중 가장 최근의 결정인 Vimwiki용 LSP에 대한 내용을 다룬다.
 
-## 왜 LSP를 만들기로 결정했나?
+## 왜 Vimwiki용 LSP를 만들기로 결정했나?
+
+### 요약
+
+Vimwiki 문서 링크 기능을 개선하고 싶다.
+
+- 플러그인을 만들 때 Vimscript 와 Lua 둘 다 쓰기 싫다
+- Vimscript는 내가 10년 가까이 사용해 온 언어이지만, 정이 들었을 뿐 좋은 언어라고 부르기는 어렵다.
+    - 작은 기능은 이미 Vimscript로 충분히 잘 만들어서 쓰고 있다.
+        - 그러나 이걸 잘 해봐야 귀찮은 일만 더 생기는 것 같다.
+    - [Bram Moolenaar가 올해 8월 3일에 돌아가셨는데](https://www.theregister.com/2023/08/07/bram_moolenaar_obituary/ ), 이 뉴스를 접한 충격과 함께 Vimscript의 미래도 불투명해졌다고 생각했다.
+- 그렇다고 Lua를 쓰기도 싫다.
+    - Lua는 [[/hammerspoon]] 때문에 예전에는 활발히 사용했지만 여전히 익숙하지 않다.
+    - 뭔가 조금씩 헷갈리고 공부하기 귀찮아 시간을 투자하고 싶지 않다.
+- LSP 구현체를 만든다?
+    - 2023년 3월, 다들 ChatGPT로 뭔가 만드는 데 빠져 있었다. 나도 뭔가 만들고 싶었다.
+    - [kotlin-lsp](https://github.com/fwcd/kotlin-language-server )에 대한 아쉬움이 있던 차에 작은 LSP 구현 애플리케이션을 대충으로라도 만들어봐야겠다는 생각이 들었다.
+    - LSP는 프로그래밍과 관련된 중요한 기능 대부분을 정의하고 있다.
+    - LSP 구현체는 프로토콜만 지키면 되므로 어느 언어로도 만들 수 있다는 점이 바람직하다.
+        - Vimscript와 Lua 중에서 고민하지 않아도 된다.
+        - 그리고 이미 Microsoft가 vscode를 위해 만들어둔 좋은 라이브러리가 있다.
+        - 이 일의 가장 어렵고 짜증나는 부분은 [coc.nvim](https://github.com/neoclide/coc.nvim )가 다 해결해 줄 것 같다.
+    - LSP 구현체를 만들어두면 장기적으로도 유용하게 쓸 수 있을 것 같다.
+        - 심지어 Vim이 아니라 다른 환경으로 건너가도 사용할 수 있을 것이다.
+
 
 ### Wiki 편집에서 가장 중요한 기능은 다른 문서 링크
 
@@ -60,7 +84,7 @@ Vimwiki에서 문서를 편집할 때 '다른 문서'를 링크하는 것은 간
 
 문서가 위치하는 경로와 PWD, 목표하는 문서 사이의 경로가 조금씩 다르기 때문에 처리가 꽤나 귀찮다.
 
-### 해결책: fzf.vim 과 셸 스크립트를 사용한 문서 파일명 완성
+#### 해결책: fzf.vim 과 셸 스크립트를 사용한 문서 파일명 완성
 
 [fzf.vim](https://github.com/junegunn/fzf.vim )이나 [telescope.nvim]( https://github.com/nvim-telescope/telescope.nvim )을 사용하면 문서를 편리하고 빠르게 찾을 수 있다.
 이 두 플러그인을 잘 응용하면 자동완성 기능으로도 사용할 수 있다.
@@ -99,7 +123,7 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete("wiki-docs")
 그러나 내가 정말로 바라는 것은 더 seamless한 경험이었다.
 나는 그냥 `/`를 입력하면 관련 문서들에 대한 추천 목록이 나타나길 바랐다.
 
-### Vimwiki용 LSP를 만들어 보자
+#### 해결책: Vimwiki용 LSP를 만들어 보자
 
 사실 처음부터 Vimwiki용 LSP를 만들려고 한 것은 아니다.
 
@@ -186,6 +210,22 @@ UUID를 살짝 변형한 각 문서의 고유 ID를 이름으로 갖는 디렉�
 
 <video controls autoplay loop><source src=" /resource/CE/26FDCD-4282-4257-A2AE-F17EF0A47884/show-usage.mp4 " type="video/mp4"></video>
 
+## 간단 회고
+
+- [johngrib-wiki-lsp](https://github.com/johngrib/johngrib-wiki-lsp )를 만들고 벌써 9개월이 넘게 거의 매일같이 사용하고 있다.
+    - 이제는 이게 없으면 불편하다.
+    - 새로운 종류의 Vim fork를 쓴다 하더라도 Vimscript 마이그레이션을 안해도 된다는 점이 가장 만족스럽다.
+- 나는 코딩하는 것보다 가만히 생각하는 시간을 갖는 걸 더 좋아하는데, 이 프로젝트는 그런 나에게 딱 맞는 프로젝트였다.
+    - 사실 Vim을 10년 전에 시작했던 이유도 손가락 통증 때문이었다.
+- 미래에는 LSP처럼 특정 플랫폼에 구애받지 않는 기술이 많이 나오면 좋겠다.
+
+## Links
+
+- [What is the Language Server Protocol? (microsoft.github.io)](https://microsoft.github.io/language-server-protocol/overviews/lsp/overview/ )
+- [Language Server Protocol Tutorial: From VSCode to Vim (topal.com)](https://www.toptal.com/javascript/language-server-protocol-tutorial )
+    - ChatGPT와 대화를 나누기 전에 먼저 읽고 따라해본 튜토리얼이다.
+- [johngrib-wiki-lsp를 만들 때 ChatGPT와 대화한 로그 (chat.openai.com)](https://chat.openai.com/share/c7a4dc61-d4c3-4033-a8b2-b147b528ec5c )
+    - 대부분 2023년 3월 7일부터 4월 11일까지의 대화이며, 최근 12월 15일에 몇 번 더 대화를 나누었다.
 
 ## 주석
 
