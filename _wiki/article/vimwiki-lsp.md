@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : Vimwiki에서 사용하기 위한 나만의 LSP를 만들자
-summary : 아직 발표 안 한 발표자료. 발표 예정일은 2023-12-23.
+summary : VimEnter 2023 발표자료
 date    : 2023-12-17 20:09:06 +0900
-updated : 2023-12-22 23:28:20 +0900
+updated : 2023-12-23 23:54:26 +0900
 tag     : vim
 resource: CE/26FDCD-4282-4257-A2AE-F17EF0A47884
 toc     : true
@@ -16,7 +16,7 @@ latex   : false
 
 ## 일러두기
 
-이 글은 내가 [VimEnter 2023 모임](https://event-us.kr/vim/event/74978 )에서 발표할 자료이다.
+이 글은 2023-12-23에 내가 [VimEnter 2023 모임](https://event-us.kr/vim/event/74978 )에서 발표에 사용한 자료이다.
 
 ## 나의 위키
 
