@@ -3,7 +3,7 @@ layout  : wiki
 title   : (백업) 아름다운 Vㅏㅁ 2022년 4월 1일
 summary : INSERT MODE 자동완성 이야기
 date    : 2022-11-16 22:46:50 +0900
-updated : 2022-11-16 23:27:38 +0900
+updated : 2023-12-24 12:41:37 +0900
 tag     : 
 resource: 42/427FC2-3485-4ABD-89AC-FABF27939D50
 toc     : true
@@ -118,7 +118,7 @@ c-r 누르고 a 누르면 a 레지스터의 값들을 붙여넣고, b 누르면 
 
 <video controls muted autoplay loop><source src=" /resource/42/427FC2-3485-4ABD-89AC-FABF27939D50/bMjG-9exkJNUPKBK.mp4 " type="video/mp4"></video>
 
-## 매크로에 대한 잡담
+## 매크로에 대한 잡담 {#macro}
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="ko" dir="ltr">Vim 오래 써왔지만, 요즘 올려주시는 글에서 새롭게 배우는거 많아요. 저는 비쥬얼 블록 선택하고 `:&#39;&lt;,&#39;&gt;norm i#` 랑 `:&#39;&lt;,&#39;&gt;norm x` 요세트 정도!</p>&mdash; asbubam (@asbubam) <a href="https://twitter.com/asbubam/status/1509883489138601985?ref_src=twsrc%5Etfw">April 1, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
