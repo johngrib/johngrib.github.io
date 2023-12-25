@@ -21,7 +21,7 @@
  "golang-mod",
  "golang-subtests",
  "golang-the-laws-of-reflection",
- "java-jigsaw-quick-start",
+ "java/jigsaw-quick-start",
  "java/object-equals",
  "java/object-hashcode",
  "java/object-tostring",
