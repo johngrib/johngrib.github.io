@@ -4,7 +4,7 @@
  "summary": "Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자",
  "parent": "vim",
  "url": "/wiki/vim/conceallevel",
- "updated": "2022-08-02 23:49:18 +0900",
+ "updated": "2023-12-29 09:51:23 +0900",
  "resource": "FE/0B7ED0-3244-49B7-A460-C0F53E31C64F",
  "children": []
 }

@@ -3,7 +3,7 @@ layout  : wiki
 title   : conceallevel
 summary : Vim에서 글자나 기호가 사라진다면 conceallevel을 확인해보자
 date    : 2017-11-29 17:47:59 +0900
-updated : 2022-08-02 23:49:18 +0900
+updated : 2023-12-29 09:51:23 +0900
 tag     : vim trouble-shooting
 resource: FE/0B7ED0-3244-49B7-A460-C0F53E31C64F
 toc     : true
@@ -23,7 +23,7 @@ latex   : false
 예를 들어
 
 * 특정 문법에서 따옴표나 인용 부호 등을 숨길 수 있다.
-* Vimwiki에서는 기본값으로 `[[ ]]` 와 같은 이중 대괄호를 숨긴다.
+* Vimwiki에서는 기본값으로 `\[[ ]]` 와 같은 이중 대괄호를 숨긴다.
 
 ## 설정값
 
