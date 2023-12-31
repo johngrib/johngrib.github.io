@@ -3,7 +3,7 @@ layout  : wiki
 title   : 점자 패턴 문자(Braille pattern)
 summary :
 date    : 2018-01-10 21:14:09 +0900
-updated : 2023-12-31 23:26:53 +0900
+updated : 2023-12-31 23:38:56 +0900
 tag     : special-chars
 resource: 27/0D5881-3F46-4E69-B9A5-A5A9DBC03C6F
 toc     : true
@@ -66,10 +66,37 @@ latex   : true
 
 ![https://github.com/bartmalanczuk/vim-trex-runner ](https://camo.githubusercontent.com/93effca175a4d59b159182baeb179fb55c84a21b/687474703a2f2f626172746d616c616e637a756b2e6769746875622e696f2f646f776e6c6f6164732f76696d2d747265782d72756e6e65722f64656d6f2e676966)
 
+## 루이 브라유에 대하여
+
+루이 브라유(Louis Braille)는 1809년 프랑스의 꾸브레(Coupvray)에서 태어난 인물이다.
+그는 3살에 한쪽 눈을 다친 뒤, 감염이 다른 쪽 눈으로도 전이되어 완전히 실명하게 되었다.
+
+루이 브라유의 어린 시절에도 이미 촉각으로 읽을 수 있는 초기의 점자 체계가 있긴 했지만 너무 어려워서 극소수의 책만이 점자로 출판되었다.
+
+프랑스 육군 대화 샤를 바르비에(Charles Barbier)는 1819년에 군대에서 야간에 사용할 목적으로 '야간 기록(night writing)'이라는 점자 체계를 개발했는데,
+루이 브라유는 12살에 이 점자 체계에 익숙해졌고, 15살에는 이를 개량하여 현재의 점자 체계의 기반이 되는 자신만의 부호를 만들었다고 한다.
+
+>
+루이 브라유는 12살 때 이미 바르비에의 기록 체계에 익숙해졌습니다.
+볼록 튀어나온 점 형태의 기록 체계는 손가락으로 읽어내는 데 편할 뿐만 아니라 기록하기에도 간편했기 때문에, 그는 이런 방식이 마음에 들었습니다.
+왕립맹아학교의 학생들은 종이와 철필만 있다면 실제로 쓰고 그걸 다시 읽을 수 있게 되었습니다.
+브라유는 이 기록 체계를 개선하기 위하여 고민하였고, 3년 후 그의 나이 15살 때 현재까지도 사용되는 기록 체계의 기반이 되는 자신만의 부호를 만들었습니다.
+이 부호 체계는 몇 년간 왕립맹아학교 내에서만 사용되었으나, 점차 세계로 퍼져 나가게 되었습니다.
+1835년 루이 브라유는 결핵에 감염되었으며, 1852년 그의 43번째 생일 직후 결국 세상을 떠났습니다.
+[^code-20]
+
 ## Links
 
 * [Louis Braille(wikipedia)](https://en.wikipedia.org/wiki/Louis_Braille)
 * [https://unicode-table.com/en/blocks/braille-patterns ](https://unicode-table.com/en/blocks/braille-patterns/ )
 * [https://github.com/asciimoo/drawille ](https://github.com/asciimoo/drawille )
 * [https://github.com/bartmalanczuk/vim-trex-runner ](https://github.com/bartmalanczuk/vim-trex-runner )
+
+## 참고문헌
+
+- CODE [2판] / 찰스 펫졸드 저/김현규 역 / 인사이트(insight) / 초판 1쇄 발행: 2023년 12월 22일 / 원제: Code: The Hidden Language of Computer Hardware and Software 2/E
+
+## 주석
+
+[^code-20]: CODE. Chapter 3. 20쪽.
 
