@@ -3,12 +3,12 @@ layout  : wiki
 title   : 점자 패턴 문자(Braille pattern)
 summary :
 date    : 2018-01-10 21:14:09 +0900
-updated : 2018-04-04 09:05:19 +0900
+updated : 2023-12-31 23:26:53 +0900
 tag     : special-chars
 resource: 27/0D5881-3F46-4E69-B9A5-A5A9DBC03C6F
 toc     : true
 public  : true
-parent  : [[what]]
+parent  : [[/jargon]]
 latex   : true
 ---
 * TOC

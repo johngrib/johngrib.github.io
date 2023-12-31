@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2023-12-25 21:52:24 +0900
+updated : 2023-12-31 23:25:57 +0900
 regenerate: true
 ---
 * TOC
@@ -478,6 +478,7 @@ regenerate: true
 * [[/jargon/biondi-s-law]]
 * [[/jargon/bootstrapping]]
 * [[/jargon/boy-scout-rule]]
+* [[/jargon/braille-pattern-chars]]
 * [[/jargon/brooks-s-law]]
 * [[/jargon/burndown-chart]]
 * [[/jargon/byzantine-failure]]
@@ -868,7 +869,6 @@ regenerate: true
 
 * [[/availability]]
 * [[/bandwidth]]
-* [[/braille-pattern-chars]]
 * [[/enterprise-application]]
 * [[/ethereum-white-paper]]
 * [[/fan-out]]
