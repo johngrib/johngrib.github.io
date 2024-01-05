@@ -3,7 +3,7 @@ layout  : wiki
 title   : VisiCalc
 summary : 최초의 스프레드시트 프로그램
 date    : 2023-02-13 23:10:40 +0900
-updated : 2023-02-15 15:49:33 +0900
+updated : 2024-01-05 21:27:10 +0900
 tag     : 
 resource: D3/BBDB9B-E150-43B5-8E6F-B9C1DD4E09F9
 toc     : true
@@ -18,7 +18,8 @@ latex   : false
 
 <div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/lang/ko/dan_bricklin_meet_the_inventor_of_the_electronic_spreadsheet" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
 
-## 1979년 10월, VisiCalc 출시
+## From: 소프트웨어는 어떻게 밥벌이가 되었나
+### 1979년 10월, VisiCalc 출시
 
 >
 개인용 컴퓨터 역사에서 두 번째[^what-first]로 유명한 사건은 아마도 1979년 가을의 비지칼크 출시일 것이다.
@@ -32,7 +33,7 @@ latex   : false
 이 회사 중에서 기존의 소프트웨어 산업과 직접적인 관계를 가지고 있던 곳은 단 한 곳도 없었다.
 [^martin-321]
 
-## 킬러앱으로서의 VisiCalc
+### 킬러앱으로서의 VisiCalc
 
 >
 비지칼크 발명은 개인용 컴퓨터 역사에서 영웅적인 에피소드로 손꼽힌다.
@@ -44,7 +45,7 @@ latex   : false
 하지만 비지칼크 이후 컴퓨터는 아주 중요한 도구로 인식되었다.
 [^martin-335]
 
-## VisiCalc 이전의 스프레드시트
+### VisiCalc 이전의 스프레드시트
 
 >
 개인용 컴퓨터용 전자 스프레드시트는 댄 브릭클린에 의해 발명되었다.
@@ -60,10 +61,26 @@ latex   : false
 스프레드시트 유형의 응용 프로그램들이 이미 메인프레임과 시분할 컴퓨터(일반적으로 재무 보델링 패키지의 형태로)에 있었지만 상호작용을 할 수 없어서 유용성이 떨어졌다.
 [^martin-336]
 
+## From: CODE
+
+>
+가정용 컴퓨터가 기존에 있던 크고 훨씬 비싼 사촌들과 큰 차별점을 가질 수 있다는 것을 보여 준 첫 번째 조짐은 아마도 비지칼크<sub>VisiCalc</sub>라는 응용프로그램일 것입니다.
+1979년에 Apple II 컴퓨터용으로 출시된 비지칼크는 댄 브리클린<sub>Dan Bricklin(1951년생)</sub>과 밥 프랑크스톤<sub>Bob Frankston(1949년생)</sub>이 설계하고 프로그래밍한 상용 프로그램으로,
+스프레드시트<sub>spreadsheet</sub>의 2차원 보기를 사용자에게 제공하기 위해서 화면을 사용했습니다.
+비지칼크 이전에 스프레드시트는 연속된 계산을 처리하는 데 사용하는 행과 열이 표시된 넓은 종이를 의미했습니다.
+비지칼크는 화면으로 종이를 대체하기 위해서 사용자가 스프레드시트 안을 돌아다니면서 숫자와 수식을 입력하면, 변경 직후에 모든 것이 다시 계산되도록 만들었습니다.
+>
+비지칼크에서 놀라운 점은 이 프로그램이 중대형 컴퓨터에서는 불가능한 작업을 처리할 수 있었다는 점입니다.
+비지칼크 같은 프로그램은 화면을 빠르게 갱신해야 하기 때문에,
+Apple II의 비디오 메모리로 사용되는 RAM에 직접 데이터를 적는 방식을 사용했습니다.
+마이크로프로세서에서는 이러한 비디오 메모리 영역도 직접 접근 가능한 메모리 영역의 일부였지만,
+이보다 큰 컴퓨터들은 이런 방식을 지원할 수 있도록 설계되거나 운영되지 않았습니다.
+[^code-537]
+
 ## 참고문헌
 
+- CODE [2판] / 찰스 펫졸드 저/김현규 역 / 인사이트(insight) / 2023년 12월 22일 / 원제: Code: The Hidden Language of Computer Hardware and Software 2/E
 - 소프트웨어는 어떻게 밥벌이가 되었나 / 마틴 캠벨-켈리 저/이재범 역 / 지식함지 / 초판 1쇄 2021년 06월 22일 / 원제: From Airline Reservations to Sonic the Hedgehog: A History of the Software Industry by Martin Campbell-Kelly
-
 
 ## 주석
 
@@ -71,4 +88,5 @@ latex   : false
 [^martin-321]: 소프트웨어는 어떻게 밥벌이가 되었나. 7장. 321쪽.
 [^martin-335]: 소프트웨어는 어떻게 밥벌이가 되었나. 7장. 335쪽.
 [^martin-336]: 소프트웨어는 어떻게 밥벌이가 되었나. 7장. 336쪽.
+[^code-537]: CODE 2판. Chapter 26. 537쪽.
 
