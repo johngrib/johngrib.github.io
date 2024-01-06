@@ -3,7 +3,7 @@ layout  : wiki
 title   : pass
 summary : gpg로 작동하는 패스워드 관리 도구
 date    : 2023-03-28 23:24:21 +0900
-updated : 2023-08-24 20:24:51 +0900
+updated : 2024-01-06 15:20:32 +0900
 tag     : 
 resource: 31/3E64C6-3BC9-4D30-8679-320FAD6F5848
 toc     : true
@@ -66,6 +66,15 @@ Comment: 네이버 로그인
 ### Chrome
 
 [browserpass / browserpass-extension](https://github.com/browserpass/browserpass-extension )
+
+```bash
+ # 설치
+brew tap amar1729/formulae
+brew install browserpass
+
+ # 버전 업그레이드
+brew upgrade browserpass
+```
 
 #### 단축키
 
