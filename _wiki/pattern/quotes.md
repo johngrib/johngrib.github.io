@@ -3,7 +3,7 @@ layout  : wiki
 title   : 디자인 패턴 인용문 모음
 summary : 
 date    : 2019-11-20 21:30:04 +0900
-updated : 2023-12-25 22:06:01 +0900
+updated : 2024-01-07 23:13:55 +0900
 tag     : anti-pattern
 resource: E4/8EE43B-93D0-48F1-A072-C977CFA86650
 toc     : true
@@ -115,14 +115,24 @@ Closure 패턴은 불필요했다.
 >
 -- 패턴 지향 소프트웨어 아키텍처 1. 1장. 15쪽.
 
+<span/>
+
+>
+4인방(the Gang of Four)의 책 『Design Patterns(Addison-Wesley, 1994)』에 나와 있는 것 같은 디자인 패턴이 실제로는 존재하지 않는다는 논쟁은 일리가 있죠.
+4인방 책의 23번, 26번 패턴이 있다고요?
+대부분은 C++의 한계 때문에 생긴 것들입니다.
+>
+-- 세상을 뒤흔든 프로그래머들의 비밀. 인터뷰 11, 앤디 헌트.
+
 ## 참고문헌
 
 - 뷰티풀 아키텍처 / 디오미디스 스피넬리스, 지오지아스 고시아스 엮음 / 황재선 옮김 / 지앤선(志&嬋) / 발행: 2010년 03월 8일
+- 세상을 뒤흔든 프로그래머들의 비밀 / 에드 번즈 저 / 김도균 역 / 정보문화사 / 초판 1쇄 발행: 2010년 02월 19일 / 원제: Secrets of the Rock Star Programmers: Riding the IT Crest
 - 소프트웨어 아키텍트가 알아야 할 97가지 / Richard Monson-Haefel 저 / Eva Study 역 / 지앤선(志&嬋) / 2011년 04월 14일 / 원제 : 97 Things Every Software Architect Should Know
 - 실전 코드로 배우는 실용주의 디자인 패턴 / Allen Holub 저 / 송치형 편역 / 지앤선(志&嬋) / 2006년 07월 19일 발행 / 원제 : Holub on Patterns : Learning Design Patterns by Looking at Code
+- 임백준의 소프트웨어 산책 / 임백준 저 / 한빛미디어 / 초판발행: 2005년 05월 30일
 - 패턴 지향 소프트웨어 아키텍처 1 / Frank Buschmann 외 / 김지선 역 / 지앤선(志&嬋) / 발행 2008년 01월 18일
 - 패턴을 활용한 리팩터링 / 조슈아 케리에브스키 저 / 윤성준, 조상민 공역 / 인사이트(insight) / 신판 1쇄 발행 2011년 02월 09일 / 원제 : REFACTORING TO PATTERNS
-- 임백준의 소프트웨어 산책 / 임백준 저 / 한빛미디어 / 초판발행: 2005년 05월 30일
 
 ## 주석
 
