@@ -9,7 +9,6 @@
  "children": [
   "claude-elwood-shannon",
   "Donald-Ervin-Knuth",
-  "James-Gosling-super-programmer",
   "John-von-Neumann",
   "people/alexander-stepanov",
   "people/bill-atkinson",
@@ -19,6 +18,7 @@
   "people/fred-brooks",
   "people/gerald-weinberg",
   "people/grady-booch",
+  "people/james-gosling",
   "people/jeff-bezos",
   "people/john-w-backus",
   "people/larry-ellison",
