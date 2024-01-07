@@ -3,7 +3,7 @@ layout  : wiki
 title   : 무협지 주인공 제임스 고슬링(James Gosling)
 summary : 중학생 때 전산학과에 침입해 독학으로 프로그래밍을 터득
 date    : 2018-02-08 12:06:18 +0900
-updated : 2024-01-07 16:06:50 +0900
+updated : 2024-01-07 17:54:30 +0900
 tag     : story james-gosling 인물 gnu emacs
 resource: E7/46DD4B-8AB0-4CFC-BD41-F4156B282929
 toc     : true
@@ -128,7 +128,30 @@ PUP VSP를 찾아보면 이들은 TCP/IP(Transmission Control Protocol/Internet 
 그러나 당신이 그런 사람이 아니라면......
 집단은 동적이어서 거기서 각자 어떤 부분을 맡고 있고 당신은 그 부분이 서로 어울리게 하는 것이 중요하죠.
 거의 모든 뛰어난 프로젝트들은 더 많은 사람들이 어울려 작업합니다.
-[^ed-burns-214]
+[^ed-burns-7]
+
+## 제임스 고슬링이 영향을 받은 책들
+
+>
+빌 울프(Bill Wulf)가 지은 『"The Design of an Optimizing Compiler(Elsevier, 1980)』라는 책이 있었죠.
+제가 수강했던 한 과정은 기본적으로 "그 책을 읽고 그 책에 관해 많은 대화"를 하는 것이었습니다.
+신선한 경험이었죠.
+>
+**에드** 그럼, 당신의 경력에서 유용성을 발견한 다른 책은 어떤 것이 있습니까?
+많은 사람들이 헤롤드 아벨슨(Harold Abelson)과 제럴드 제이 서스먼(Gerald Jay Sussman)이 집필한 『컴퓨터 프로그램의 구조와 해석(Structure and Interpretation of Computer Programs (SICP), MIT Press, 1996)』을 컴퓨터 과학 교과서의 표준으로 참조합니다.
+>
+**제임스** 저의 경우는 다릅니다. 저에게 큰 영향을 끼쳤던 책은 윌리엄 알렌 울프(William Allan Wulf)가 집필한 『The Design of an Optimizing Compiler (Elsevier, 1980)』였습니다.
+그 하나가 가장 큰 영향을 끼쳤죠.
+브라이언 커닝햄(Brian Kernighan)과 데니스 리치(Dennis Ritchie)가 집필한 『C 언어 프로그래밍(The C Programming Language, Prentice Hall, 1988)』도 그 하나입니다.
+Simula 67 매뉴얼은 저에게 대단한 물건이었습니다.
+도날드 크누스(Donald E. Knuth) 시리즈도 빼놓을 수 없습니다.
+>
+**에드** 『The Art of Computer Programming』 말씀이시죠?
+>
+**제임스** 도날드 크누스가 집필한 『The Art of Computer Programm-ing(Addison-Wesley Professional, 1998)』은 정말 대단한 책입니다.
+저는 PP8 및 CDC6000 시리즈 같은 장비에 대한 아키텍처 매뉴얼로부터 대단히 많은 것을 얻었습니다.
+저는 이들 모두를 거의 100번 가까이 읽었습니다.
+[^ed-burns-7]
 
 ## 참고문헌
 
