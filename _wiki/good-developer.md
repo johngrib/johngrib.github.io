@@ -3,12 +3,12 @@ layout  : wiki
 title   : 뛰어난 개발자
 summary : 
 date    : 2021-01-10 23:21:42 +0900
-updated : 2021-01-10 23:31:18 +0900
+updated : 2024-01-07 23:15:40 +0900
 tag     : 개발자
 resource: BC/7913C6-1B4B-4085-86E8-D9D340D31158
 toc     : true
 public  : true
-parent  : [[better-work]]
+parent  : [[/better-work]]
 latex   : true
 ---
 * TOC
