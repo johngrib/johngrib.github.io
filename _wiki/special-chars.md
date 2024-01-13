@@ -3,7 +3,7 @@ layout  : wiki
 title   : 특수문자 모음
 summary : 특수문자 검색하다 빡쳐서 작성한 문서
 date    : 2017-12-13 21:24:30 +0900
-updated : 2023-07-29 12:10:04 +0900
+updated : 2024-01-13 23:34:17 +0900
 tag     : special-chars
 resource: 72/469FCC-A10B-46DC-A4DB-B7A9242EDF6D
 toc     : true
@@ -182,7 +182,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * INSERT 모드에서 백그라운드로 돌아가는 플러그인 사용시 주의.
 
 
-### Backspace
+### Backspace {#backspace}
 
 * 눈에 보이지 않는 문자.
 * 왼쪽 화살표키 처럼 생긴, 왼쪽 글자를 지우는 키
@@ -201,7 +201,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [fileformat.info/info/unicode/char/08](http://www.fileformat.info/info/unicode/char/08 )
 * [Backspace(wikipedia)](https://en.wikipedia.org/wiki/Backspace )
 
-### Tab
+### Tab {#tab}
 
 * 보통 캡스락 키 위에 있는 키.
 * 타자기에서 표를 작성/정렬을 편하게 하기 위해 발명됐다. 입력할 때마다 캐리지가 다음 탭 스탑으로 이동하는 방식.
@@ -236,7 +236,7 @@ Vim에서 `^C`는 터미널처럼 현재 실행중인 작업을 중지하는 데
 * [탭 vs 스페이스(google)](https://www.google.co.kr/search?q=탭+vs+스페이스 )
 * [Github Top Starred repositories를 분석해서 탭과 스페이스 사용률을 정리한 곳](https://ukupat.github.io/tabs-or-spaces/)
 
-### Line Feed
+### Line Feed {#lf}
 
 * 다음 줄을 말한다.
 * 터미널에선 `^J`로 엔터 키 처럼 쓸 수도 있다. 이걸 쓰다 보면 엔터 키가 멀게 느껴진다.

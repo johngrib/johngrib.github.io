@@ -3,7 +3,7 @@ layout  : wiki
 title   : macOS 초보를 위한 터미널 사용 가이드
 summary : 작성중인 문서
 date    : 2024-01-13 21:57:43 +0900
-updated : 2024-01-13 22:39:56 +0900
+updated : 2024-01-13 23:36:40 +0900
 tag     : 
 resource: C8/1CAC71-AAD6-4C15-9117-ED00C49D26CF
 toc     : true
@@ -62,4 +62,39 @@ GUI가 더 편리한 작업에서는 GUI를 쓰면 됩니다.
     - 많은 수의 파일 이름을 한꺼번에 바꾸고 싶을 때
     - ...
 
+## 터미널? {#terminal}
+
+macOS에서 사용하는 '터미널' 애플리케이션은 터미널 에뮬레이터입니다.
+터미널 에뮬레이터는 터미널을 흉내내는 애플리케이션 프로그램을 말합니다.
+
+다음은 1976년 무렵에 [[/people/bill-joy]]가 사용했다는 모델인 ADM-3A computer terminal의 사진입니다.
+
+![]( /resource/C8/1CAC71-AAD6-4C15-9117-ED00C49D26CF/440px-Adm3aimage.jpg )[^pic-adm3a]
+
+데스크탑 컴퓨터처럼 생겼지만, 터미널은 컴퓨터가 아니고 컴퓨터에 연결되어 입출력을 주고받는 단말 장치입니다.
+이해하기 쉽게 설명하자면 키보드와 모니터를 한 제품으로 만든 것이라고도 할 수 있습니다.
+
+![]( /resource/C8/1CAC71-AAD6-4C15-9117-ED00C49D26CF/adm-3a-keyboard.webp )[^pic-adm3a-keyboard]
+
+위의 사진은 ADM-3A의 키보드입니다.
+2024년 기준의 최신 키보드들과는 다른 점들이 눈에 띕니다.
+
+- 방향키가 따로 없고, HJKL 위에 방향키가 오버되어 있습니다.
+- 몇 가지 중요한 키가 안 보입니다.
+    - 한 글자를 지우는 키, 백 스페이스가 없습니다. [[/special-chars#backspace]]{대신 ctrl + h 를 사용했습니다.}
+    - 탭 키가 없습니다. [[/special-chars#tab]]{대신 ctrl + i 를 사용했습니다.}
+    - Enter가 없고 [[/special-chars#cr-lf]]{Return과 Line Feed가 있습니다.}
+    - Caps Lock이 없습니다. 옛날엔 대문자만 썼습니다...
+    - alt / option 키가 없습니다.
+    - ...
+- Shift와 조합하는 몇몇 특수문자들의 위치가 다릅니다.
+    - `"`, `"`, `~`, `+`, `^`, `:` 등등
+
+## 준비물
+
 작성중.
+
+## 주석
+
+[^pic-adm3a]: 사진 출처는 [wikipedia의 ADM-3A 문서](https://en.wikipedia.org/wiki/ADM-3A ).
+[^pic-adm3a-keyboard]: 사진 출처는 [reddit r/vim의 게시글: All these Vim keyboards and nobody’s gonna post THE ORIGINAL Vim keyboard?? (Lear-Siegler ADM-3A)](https://www.reddit.com/r/vim/comments/alwsdq/all_these_vim_keyboards_and_nobodys_gonna_post/ )
