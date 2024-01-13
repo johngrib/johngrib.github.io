@@ -11,6 +11,7 @@
   "mac/iterm",
   "mac/keyboard-shortcuts",
   "mac/screenshot",
-  "mac/setting"
+  "mac/setting",
+  "mac/terminal-guide"
  ]
 }

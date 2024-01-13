@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-01-08 23:05:35 +0900
+updated : 2024-01-13 21:57:38 +0900
 regenerate: true
 ---
 * TOC
@@ -802,6 +802,7 @@ regenerate: true
 * [[/mac/keyboard-shortcuts]]
 * [[/mac/screenshot]]
 * [[/mac/setting]]
+* [[/mac/terminal-guide]]
 * [[/hammerspoon]]
     * [[/hammerspoon-inputsource-aurora]]
     * [[/hammerspoon-luarocks]]
