@@ -3,7 +3,7 @@ layout  : wiki
 title   : sort 명령어
 summary : 정렬한다
 date    : 2018-08-31 09:14:52 +0900
-updated : 2023-08-12 14:08:44 +0900
+updated : 2024-01-14 21:30:02 +0900
 tag     : bash sort command
 resource: 0F/C08091-20AE-4A88-83AD-0735D902E917
 toc     : true
@@ -102,7 +102,7 @@ $ # 옵션을 이렇게 따로 줘도 상관없다
 $ sort -c -n sorted
 ```
 
-### -R : 랜덤 정렬 {#option-R}
+### -R : 랜덤 정렬 {#option-random}
 
 * `-R`, `--random-sort`
 
