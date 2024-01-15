@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-01-14 21:57:23 +0900
+updated : 2024-01-15 23:39:15 +0900
 regenerate: true
 ---
 * TOC
@@ -805,6 +805,7 @@ regenerate: true
 * [[/mac/terminal-guide]]
     * [[/mac/terminal-guide/00]]
     * [[/mac/terminal-guide/01]]
+    * [[/mac/terminal-guide/02]]
 * [[/hammerspoon]]
     * [[/hammerspoon-inputsource-aurora]]
     * [[/hammerspoon-luarocks]]
