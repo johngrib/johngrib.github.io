@@ -3,7 +3,7 @@ layout  : wiki
 title   : 계수 정렬 (Counting Sort)
 summary : 
 date    : 2020-10-05 18:42:40 +0900
-updated : 2020-10-05 20:46:58 +0900
+updated : 2024-01-18 23:29:46 +0900
 tag     : algorithm sort
 resource: 84/609C23-D394-40E9-9ED8-BF5D153B1480
 toc     : true
@@ -29,7 +29,7 @@ $$ k = O(n) $$일 때 계수 정렬은 $$ \Theta(n) $$ 시간에 수행된다.
 
 ## 알고리즘과 성능 특성
 
-{% highlight js linenos %}
+```javascript
 // C[0..k]를 새로운 배열로 한다.
 for i = 0 to k
   C[i] = 0
@@ -42,7 +42,8 @@ for i = 1 to k
 for j = A.length downto 1
   B[C[A[j]]] = A[j]
   C[A[j]] = C[A[j]] - 1
-{% endhighlight %}
+```
+
 > 계수 정렬은 시간이 얼마나 걸릴까? 2-3 행의 for 루프는 $$ \Theta(k) $$ 시간,
 4-5 행의 for 루프는 $$\Theta(n)$$ 시간, 7-8 행의 루프는 $$\Theta(k) $$ 시간,
 10-12 행의 for 루프는 $$\Theta(n)$$ 시간이 걸린다.
