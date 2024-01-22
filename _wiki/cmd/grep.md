@@ -1,9 +1,9 @@
 ---
 layout  : wiki
-title   : grep 명령어
+title   : grep
 summary : file pattern searcher
 date    : 2018-08-31 13:01:17 +0900
-updated : 2023-09-04 22:24:29 +0900
+updated : 2024-01-22 23:19:50 +0900
 tag     : bash command grep ken-tompson alfred-aho brian-kernighan
 resource: E6/02C9DC-B4FA-4FD4-B205-D2D93AD4BBAF
 toc     : true
