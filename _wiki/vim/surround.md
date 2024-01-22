@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim-surround
 summary : 
 date    : 2024-01-22 22:36:04 +0900
-updated : 2024-01-22 22:47:47 +0900
+updated : 2024-01-22 22:48:37 +0900
 tag     : 
 resource: 3C/042FD2-6EC5-4C47-8DE8-B106CC915C03
 toc     : true
@@ -20,7 +20,7 @@ latex   : false
 
 ## 응용
 
-### visual mode Si, Sa
+### visual mode Si, Sa {#visual-mode-si-sa}
 
 surround에는 `t`를 제외하고 여러 문자를 한꺼번에 감싸는 기능이 없다.
 
