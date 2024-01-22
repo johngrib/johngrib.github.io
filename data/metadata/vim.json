@@ -28,6 +28,7 @@
   "vim/quickfix",
   "vim/rest-console",
   "vim/set-empty-chars",
+  "vim/surround",
   "vim/tmux-t-ut",
   "vim/ultisnips",
   "vim/window",
