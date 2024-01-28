@@ -58,15 +58,12 @@
     }
 
     let activeHeadingId = null;
-    document.body.onscroll = function() {
-        const currentHeading = findCurrentHeading(headings);
 
-        if (currentHeading.id == activeHeadingId) {
-            return;
-        }
-        // console.log(currentHeading)
+    setTimeout(function refreshTocHighlight() {
+        const currentHeading = findCurrentHeading(headings);
         deActivate();
         activate(tocMap[currentHeading.id]);
-        activeHeadingId = currentHeading.id;
-    }
+
+        setTimeout(refreshTocHighlight, 1000);
+    }, 1000);
 })();
