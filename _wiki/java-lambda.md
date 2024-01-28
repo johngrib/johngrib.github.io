@@ -3,12 +3,12 @@ layout  : wiki
 title   : Java lambda의 사용
 summary : 
 date    : 2020-01-25 15:29:20 +0900
-updated : 2020-01-25 15:54:28 +0900
+updated : 2024-01-28 22:55:45 +0900
 tag     : java
 resource: FF/0050C0-206D-4A9A-AD5C-340B50E6E69E
 toc     : true
 public  : true
-parent  : [[java]]
+parent  : [[/java]]
 latex   : false
 ---
 * TOC
