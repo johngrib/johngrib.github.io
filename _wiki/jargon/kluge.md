@@ -3,7 +3,7 @@ layout  : wiki
 title   : kluge
 summary : 클루지
 date    : 2022-09-12 11:22:36 +0900
-updated : 2022-09-12 13:13:16 +0900
+updated : 2024-01-28 23:09:10 +0900
 tag     : 
 resource: 9C/553E6D-0927-487F-8915-6AC769AC328C
 toc     : true
@@ -118,6 +118,16 @@ The building of a Kludge, however, is not work for amateurs. There is a certain,
 생물의 세계에는 절묘한 측면들과 아무리 좋게 보아도 날림으로 된 측면들이 함께 존재한다.
 [^marcus-0]
 
+## From: 아이디어맨
+
+Microsoft 공동창업자인 Paul Allen의 자서전인 '아이디어맨'의 중고등학생 시절 이야기에서 '클루지'가 등장한다.
+다만 'kluge'가 아니라 'kludge'로 사용하는 점이 좀 다르다.
+
+>
+우리는 그들의 전문용어를 종종 따라 사용하기도 했다.
+예를 들어 클루지<sup>kludge</sup>는 철선과 고무풀로 땜방한 코드 해결책, 즉 임시방편의 조잡한 해결책을 뜻했다.
+[^ideaman-63]
+
 
 ## 함께 읽기
 
@@ -125,6 +135,7 @@ The building of a Kludge, however, is not work for amateurs. There is a certain,
 
 ## 참고문헌
 
+- 아이디어맨 / 폴 앨런 저/안진환 역 / 자음과모음(이룸) / 초판 1쇄 발행: 2011년 08월 15일 / 원제: Idea Man
 - 클루지 / 개리 마커스 저/최호영 역 / 갤리온 / 2008년 11월 24일 / 원제 : Kluge - the haphazard construction of the human mind
 - 해커 영어사전 제3판 / ERIC S.RAYMOND 편 / 기전연구사 / 1998년 12월 25일 제1판 제1발행.
     - [kluge (catb.org)](http://catb.org/jargon/html/K/kluge.html )
@@ -139,3 +150,5 @@ The building of a Kludge, however, is not work for amateurs. There is a certain,
 [^kluge-396]: 해커 영어사전. 396쪽쪽을 참고해 내가 다시 번역하였다.
 
 [^marcus-0]: 클루지. 프롤로그.
+[^ideaman-63]: 아이디어맨. 3장. 63쪽.
+
