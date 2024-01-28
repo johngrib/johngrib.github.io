@@ -3,12 +3,12 @@ layout  : wiki
 title   : Golang reflect 사용법
 summary : 라이브러리 만들 때에만 쓰고 남용하지 말자
 date    : 2018-12-29 18:38:23 +0900
-updated : 2019-06-06 16:38:10 +0900
+updated : 2024-01-28 17:38:18 +0900
 tag     : golang reflect
 resource: 59/A4E6DC-0D40-4EEA-929B-40A0F0E76C70
 toc     : true
 public  : true
-parent  : [[go]]
+parent  : [[/go]]
 latex   : false
 ---
 * TOC
