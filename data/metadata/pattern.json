@@ -20,6 +20,7 @@
   "pattern/facade",
   "pattern/factory",
   "pattern/factory-method",
+  "pattern/fan-out",
   "pattern/interpreter",
   "pattern/layered-architecture",
   "pattern/marker-interface",

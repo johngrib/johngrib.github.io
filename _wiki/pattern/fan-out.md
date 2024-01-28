@@ -3,12 +3,12 @@ layout  : wiki
 title   : fan in, fan out
 summary : 
 date    : 2022-05-10 22:45:43 +0900
-updated : 2022-05-17 23:56:51 +0900
+updated : 2024-01-28 23:42:55 +0900
 tag     : 논리회로
 resource: 4D/5A7D76-8E7B-4676-A289-F5A5DC407354
 toc     : true
 public  : true
-parent  : [[/what]]
+parent  : [[/pattern]]
 latex   : false
 ---
 * TOC
