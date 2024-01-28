@@ -8,7 +8,6 @@
  "children": [
   "java-abstract-method",
   "java-interface",
-  "java-lambda",
   "java-random",
   "java/8",
   "java/abstract-class",
@@ -23,6 +22,7 @@
   "java/inner-class-may-be-static",
   "java/javadoc",
   "java/jigsaw-quick-start",
+  "java/lambda",
   "java/mockito",
   "java/modifier-order-with-jls-suggestion",
   "java/object-clone",

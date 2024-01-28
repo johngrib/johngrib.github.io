@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-01-28 17:37:14 +0900
+updated : 2024-01-28 22:56:37 +0900
 regenerate: true
 ---
 * TOC
@@ -344,6 +344,7 @@ regenerate: true
 * [[/java/inner-class-may-be-static]]
 * [[/java/javadoc]]
 * [[/java/jigsaw-quick-start]]
+* [[/java/lambda]]
 * [[/java/mockito]]
 * [[/java/modifier-order-with-jls-suggestion]]
 * [[/java/object-clone]]
@@ -367,7 +368,6 @@ regenerate: true
 
 * [[/java-abstract-method]]
 * [[/java-interface]]
-* [[/java-lambda]]
 * [[/java-random]]
 * [[/java8-why-permgen-removed]]
 * [[/jdk13]]
