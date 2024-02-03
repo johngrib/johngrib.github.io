@@ -3,7 +3,7 @@ layout  : wiki
 title   : 터미널에서 색깔 사용하기
 summary : 
 date    : 2024-02-03 16:29:48 +0900
-updated : 2024-02-03 16:49:37 +0900
+updated : 2024-02-03 18:14:30 +0900
 tag     : 
 resource: C8/5E4A5B-AAE7-4548-9ABA-A818529181AB
 toc     : true
@@ -64,3 +64,8 @@ fi
 위의 스크립트를 실행하면 다음과 같이 출력된다.
 
 ![]( /resource/C8/5E4A5B-AAE7-4548-9ABA-A818529181AB/print-result.jpg )
+
+## 함께 읽기
+
+- [[/git/prompt]]
+

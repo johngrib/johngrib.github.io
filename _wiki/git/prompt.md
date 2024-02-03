@@ -3,7 +3,7 @@ layout  : wiki
 title   : git prompt 설정
 summary : 
 date    : 2020-01-06 19:58:34 +0900
-updated : 2023-09-25 22:38:08 +0900
+updated : 2024-02-03 18:14:01 +0900
 tag     : git
 resource: 19/D18D8A-C819-4507-AE60-26E361BF638F
 toc     : true
@@ -88,4 +88,8 @@ ${B_BLUE}\w \
 ${COLOR_END}\
 \$(gbr)\n\$ "
 ```
+
+## 함께 읽기
+
+- [[/cmd/bash/term-colors]]
 
