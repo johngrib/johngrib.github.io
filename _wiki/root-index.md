@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-01-28 23:43:15 +0900
+updated : 2024-02-03 16:11:13 +0900
 regenerate: true
 ---
 * TOC
@@ -666,6 +666,7 @@ regenerate: true
     * [[/cmd/bash/history]]
     * [[/cmd/bash/key]]
     * [[/cmd/bash/parameters]]
+    * [[/cmd/bash/term-colors]]
 
 * [[/cmd/gnu-coreutils]]
 * [[/cmd/pipe]]

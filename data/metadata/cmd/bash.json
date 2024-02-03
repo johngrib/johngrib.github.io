@@ -12,6 +12,7 @@
   "cmd/bash/flow-control",
   "cmd/bash/history",
   "cmd/bash/key",
-  "cmd/bash/parameters"
+  "cmd/bash/parameters",
+  "cmd/bash/term-colors"
  ]
 }
