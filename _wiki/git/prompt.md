@@ -3,7 +3,7 @@ layout  : wiki
 title   : git prompt 설정
 summary : 
 date    : 2020-01-06 19:58:34 +0900
-updated : 2024-02-03 18:14:01 +0900
+updated : 2024-02-03 21:44:05 +0900
 tag     : git
 resource: 19/D18D8A-C819-4507-AE60-26E361BF638F
 toc     : true
@@ -40,26 +40,23 @@ latex   : false
 
 코드는 다음과 같다.
 
-그냥 [[/git]]{git}, [[/cmd/grep]]{grep}, [[/cmd/cut]]{cut}, [[/language/awk]]{awk}, [[/cmd/sort]]{sort}, [[/cmd/uniq]]{uniq}, [[/cmd/tr]]{tr}, [[/cmd/sed]]{sed} 같은 기본 도구들을 사용해 간단히 만들었다.
+그냥 [[/git]]{git}, [[/cmd/cut]]{cut}, [[/cmd/sort]]{sort}, [[/cmd/uniq]]{uniq}, [[/cmd/tr]]{tr} 같은 기본 도구들을 사용해 간단히 만들었다.
 
 ```sh
 function gbr {
-    git status --short 2> /dev/null 1> /dev/null
-    if [ "$?" -ne "0" ]; then
-        return 1
-    else
-        branch="`git branch --show-current`"
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+        branch="$(git branch --show-current)"
         branch_str="\033[1;031m$branch\033[0m"
 
-        stat=`git status --short \
-            | awk '{print $1}' \
+        stat=$(git status --short \
+            | cut -c 1-3 \
             | sort | uniq -c \
-            | tr '\n' ' ' \
-            | sed -E 's/([0-9]+) /\1/g; s/  */ /g; s/ *$//'`
+            | tr -d ' ' \
+            | xargs)
 
-        stash_size=`git stash list | wc -l | sed 's/ //g'`
+        stash_size=$(git stash list | wc -l | sed 's/ //g')
         stash_icon=" \e[0;92m≡\033[0m"
-        printf "[$branch_str]$stat$stash_icon$stash_size"
+        printf "[$branch_str] $stat$stash_icon$stash_size"
         return 0
     fi
 }
