@@ -3,7 +3,7 @@ layout  : wiki
 title   : man 명령어
 summary : 유닉스 메뉴얼 페이지를 찾아보는 명령
 date    : 2020-09-30 09:38:35 +0900
-updated : 2023-08-03 22:34:26 +0900
+updated : 2024-02-05 23:49:01 +0900
 tag     : bash command c
 resource: 3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA
 toc     : true
@@ -162,6 +162,30 @@ man bash
 다음은 `man bash`에서 `/cd \[`로 검색해서 한 번에 `cd`의 설명을 찾은 결과이다.
 
 ![image]( /resource/3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA/231450452-957c90cb-a406-4fb0-b657-3aa7b6e8ca78.png )
+
+### 내가 사용하는 mann 스크립트
+
+나는 `mann` 이라는 이름의 스크립트 파일을 만들어 사용하고 있다.
+
+[github.com/johngrib/dotfiles/mann](https://github.com/johngrib/dotfiles/blob/80c2e4e94527915545e39be9c75387d58734cca4/bin/mann )
+
+```bash
+#!/usr/bin/env bash
+
+export LESS='-MIR'; man $1 $2;
+```
+
+현재 페이지가 전체의 몇 %인지를 표시해주는 `-M` 옵션은, 막상 [[/cmd/less]]{less}가 열리면 작동하지 않는 것처럼 보이는데,
+`G`를 입력해서 마지막 페이지로 한번 이동한 다음부터는 잘 작동한다.
+
+
+![]( /resource/3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA/mann-less-open.jpg )
+
+- [[/cmd/less]]{less}가 열린 직후. 왼쪽 아래를 보면 몇 %인지 표시가 없다.
+
+![]( /resource/3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA/mann-less-g.jpg )
+
+- `G`를 눌러서 마지막 페이지로 이동한 이후부터는 몇 %인지가 표시된다. 위의 스크린샷은 `G`를 입력한 다음 다시 `g`를 입력해 처음 페이지로 돌아온 직후의 모습이다.
 
 ## 함께 읽기
 
