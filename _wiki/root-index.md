@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-02-03 16:11:13 +0900
+updated : 2024-02-05 23:31:58 +0900
 regenerate: true
 ---
 * TOC
@@ -373,7 +373,8 @@ regenerate: true
 * [[/java8-why-permgen-removed]]
 * [[/jdk13]]
 * [[/private-constructor]]
-* [[/ternary-operator-and-null-pointer-exception]]
+
+* [[/java/ternary-operator-and-null-pointer-exception]]
 * [[/use-java-primitive-type-for-performance]]
 
 #### [[/jvm]]

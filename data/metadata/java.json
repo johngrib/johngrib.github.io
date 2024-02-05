@@ -39,6 +39,7 @@
   "java/switch",
   "java/synchronized",
   "java/temporal-adjusters",
+  "java/ternary-operator-and-null-pointer-exception",
   "java/thread/state",
   "java/time/instant",
   "java/var",
@@ -47,7 +48,6 @@
   "jdk13",
   "jvm",
   "private-constructor",
-  "ternary-operator-and-null-pointer-exception",
   "use-java-primitive-type-for-performance"
  ]
 }

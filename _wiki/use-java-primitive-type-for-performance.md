@@ -129,7 +129,7 @@ but they do not eliminate it.
 
 ## 함께 읽기
 
-* [[ternary-operator-and-null-pointer-exception]]{Java의 삼항 연산자와 Null Pointer Exception}
+* [[/java/ternary-operator-and-null-pointer-exception]]{Java의 삼항 연산자와 Null Pointer Exception}
 
 ## Links
 

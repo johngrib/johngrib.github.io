@@ -42,6 +42,7 @@
  "java/switch",
  "java/synchronized",
  "java/temporal-adjusters",
+ "java/ternary-operator-and-null-pointer-exception",
  "java/thread/state",
  "java/time/instant",
  "java/var",
@@ -77,6 +78,5 @@
  "spring/document/core/02-resources",
  "spring/versions",
  "summary-The-Pauseless-GC-Algorithm",
- "ternary-operator-and-null-pointer-exception",
  "use-java-primitive-type-for-performance"
 ]
