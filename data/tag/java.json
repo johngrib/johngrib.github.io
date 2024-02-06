@@ -45,6 +45,7 @@
  "java/ternary-operator-and-null-pointer-exception",
  "java/thread/state",
  "java/time/instant",
+ "java/use-java-primitive-type-for-performance",
  "java/var",
  "java/volatile",
  "java8-why-permgen-removed",
@@ -77,6 +78,5 @@
  "spring/document/core/01-16-bean-factory",
  "spring/document/core/02-resources",
  "spring/versions",
- "summary-The-Pauseless-GC-Algorithm",
- "use-java-primitive-type-for-performance"
+ "summary-The-Pauseless-GC-Algorithm"
 ]

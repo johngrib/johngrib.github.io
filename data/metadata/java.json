@@ -42,12 +42,12 @@
   "java/ternary-operator-and-null-pointer-exception",
   "java/thread/state",
   "java/time/instant",
+  "java/use-java-primitive-type-for-performance",
   "java/var",
   "java/volatile",
   "java8-why-permgen-removed",
   "jdk13",
   "jvm",
-  "private-constructor",
-  "use-java-primitive-type-for-performance"
+  "private-constructor"
  ]
 }

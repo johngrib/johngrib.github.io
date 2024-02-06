@@ -375,7 +375,7 @@ regenerate: true
 * [[/private-constructor]]
 
 * [[/java/ternary-operator-and-null-pointer-exception]]
-* [[/use-java-primitive-type-for-performance]]
+* [[/java/use-java-primitive-type-for-performance]]
 
 #### [[/jvm]]
 

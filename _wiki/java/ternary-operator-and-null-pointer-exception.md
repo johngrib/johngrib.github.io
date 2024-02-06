@@ -344,7 +344,7 @@ double > float > long > int
 
 ## 함께 읽기
 
-* [[/use-java-primitive-type-for-performance]]{Java Autoboxing 자동 변환 주의점}
+* [[/java/use-java-primitive-type-for-performance]]{Java Autoboxing 자동 변환 주의점}
 
 
 [java-7-15-25]: https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.25

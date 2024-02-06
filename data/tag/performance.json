@@ -1,6 +1,6 @@
 [
  "bandwidth",
  "jargon/amdahl-s-law",
- "latency",
- "use-java-primitive-type-for-performance"
+ "java/use-java-primitive-type-for-performance",
+ "latency"
 ]
