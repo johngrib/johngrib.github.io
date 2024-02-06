@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java Autoboxing 자동 변환 주의점
 summary : Long, Integer보다 primitive 타입을 쓰는 쪽이 훨씬 빠르다
 date    : 2018-03-04 13:47:40 +0900
-updated : 2021-04-22 09:39:22 +0900
+updated : 2024-02-06 23:23:41 +0900
 tag     : java performance auto-boxing
 resource: 17/E8794B-A083-4FD9-90C7-1D6C7E504CBF
 toc     : true
@@ -129,7 +129,7 @@ but they do not eliminate it.
 
 ## 함께 읽기
 
-* [[/java/ternary-operator-and-null-pointer-exception]]{Java의 삼항 연산자와 Null Pointer Exception}
+* [[/java/ternary-operator-and-null-pointer-exception]]
 
 ## Links
 
