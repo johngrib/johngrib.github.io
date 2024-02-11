@@ -3,7 +3,7 @@ layout  : wiki
 title   : 관심가는 wiki blogroll
 summary : 
 date    : 2022-12-24 13:14:04 +0900
-updated : 2024-02-05 21:43:46 +0900
+updated : 2024-02-11 15:58:27 +0900
 tag     : blog
 resource: FB/A44090-EF39-49E1-8F83-5E6617A16D36
 toc     : true
@@ -40,4 +40,5 @@ latex   : false
 - <https://www.padosum.dev/#-based-on > - Padosum Wiki
 - <https://daniel00.github.io/wiki/index/ > - Daniel Wiki 다니엘의 위키
 - <https://r0k.wiki/ > - r0k wiki
+- <https://jxmen.dev/ > - 박주영의 위키
 
