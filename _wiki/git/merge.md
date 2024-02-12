@@ -3,7 +3,7 @@ layout  : wiki
 title   : git merge
 summary : 
 date    : 2022-04-09 17:09:07 +0900
-updated : 2022-04-10 11:30:55 +0900
+updated : 2024-02-12 11:28:07 +0900
 tag     : git
 resource: D0/79C444-0D52-4A33-9B05-9AAD4AB9B61C
 toc     : true
@@ -436,7 +436,15 @@ merge 메커니즘(`git merge`와 `git pull` 명령)을 사용할 때 `-s` 옵�
 종류에 따라 어떤 전략은 자신만 옵션을 갖고 있기도 합니다.
 이런 옵션들은 `git merge`와 `git pull` 명령에 `-X<option>` 인자를 주는 방식으로 지정할 수 있습니다.
 
-#### ort
+#### ort {#ort}
+
+>
+참고
+>
+- [2021년 11월에 릴리즈된 git 2.34 버전부터 ort는 기본 merge 전략이 되었다.](https://github.blog/2021-11-15-highlights-from-git-2-34/#a-new-default-merge-strategy )
+{:style="background-color: #ecf1e8;"}
+
+<span/>
 
 >
 This is the default merge strategy when pulling or merging one branch.
