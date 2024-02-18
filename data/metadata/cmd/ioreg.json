@@ -4,7 +4,7 @@
  "summary": "show I/O Kit registry (BSD)",
  "parent": "cmd",
  "url": "/wiki/cmd/ioreg",
- "updated": "2024-02-18 23:10:15 +0900",
+ "updated": "2024-02-18 23:14:15 +0900",
  "resource": "C0/608FA2-EA76-4F9B-B351-A42CD4926B81",
  "children": []
 }
