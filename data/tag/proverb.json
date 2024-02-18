@@ -1,8 +1,8 @@
 [
- "constantine-s-law",
  "Conway-s-law",
  "information-hiding",
  "jargon/amdahl-s-law",
+ "jargon/constantine-s-law",
  "jargon/edsel-edict",
  "jargon/postel-s-law",
  "kees-koster-good-programming-language",

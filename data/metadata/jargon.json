@@ -7,7 +7,6 @@
  "resource": "9D/FF1ECF-CBDF-4760-8509-7C81543F7F07",
  "children": [
   "cmd/dev/fd",
-  "constantine-s-law",
   "Conway-s-law",
   "Copernican-Principle",
   "hollywood-principle",
@@ -25,6 +24,7 @@
   "jargon/burndown-chart",
   "jargon/byzantine-failure",
   "jargon/cap-theorem",
+  "jargon/constantine-s-law",
   "jargon/convoy-effect",
   "jargon/daemon",
   "jargon/dry-principle",

@@ -40,7 +40,7 @@ latex   : false
 ## 함께 읽기
 
 - [[OOP-to-me-Alan-Kay]]{앨런 케이의 심플한 OOP 정의}
-- [[constantine-s-law]]{콘스탄틴의 법칙}
+- [[/jargon/constantine-s-law]]{콘스탄틴의 법칙}
 - [[oop-quotes]]{객체지향 인용문 모음}
 
 ## 참고문헌

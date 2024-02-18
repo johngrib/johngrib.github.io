@@ -3,12 +3,12 @@ layout  : wiki
 title   : 콘스탄틴의 법칙(Constantine's law)
 summary : 구조는 응집력이 높고 결합도가 낮을 때 안정적이다
 date    : 2021-04-30 21:59:21 +0900
-updated : 2021-05-01 21:00:05 +0900
+updated : 2024-02-18 23:05:24 +0900
 tag     : proverb law conway-s-law
 resource: AA/B5DC0D-9CC2-4898-9F1F-F82870104E43
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
@@ -38,7 +38,7 @@ A structure is stable if cohesion is strong and coupling is low.
 
 ## 함께 읽기
 
-- [[Conway-s-law]]{콘웨이의 법칙}
+- [[/Conway-s-law]]{콘웨이의 법칙}
 
 ## 참고문헌
 

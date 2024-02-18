@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-02-05 23:31:58 +0900
+updated : 2024-02-18 23:05:00 +0900
 regenerate: true
 ---
 * TOC
@@ -487,6 +487,7 @@ regenerate: true
 * [[/jargon/burndown-chart]]
 * [[/jargon/byzantine-failure]]
 * [[/jargon/cap-theorem]]
+* [[/jargon/constantine-s-law]]
 * [[/jargon/convoy-effect]]
 * [[/jargon/daemon]]
 * [[/jargon/dry-principle]]
@@ -516,7 +517,6 @@ regenerate: true
 * [[/jargon/zero-overhead-principle]]
 * [[/jargon/zipf-s-law]]
 
-* [[/constantine-s-law]]
 * [[/Conway-s-law]]
 * [[/Copernican-Principle]]
 * [[/hollywood-principle]]
