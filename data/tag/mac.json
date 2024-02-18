@@ -1,7 +1,7 @@
 [
  "cmd/brew",
+ "cmd/ioreg",
  "cmd/java_home",
- "ioreg-cmd",
  "mac/iterm",
  "mac/keyboard-shortcuts",
  "mac/screenshot",

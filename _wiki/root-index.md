@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-02-18 23:05:00 +0900
+updated : 2024-02-18 23:11:04 +0900
 regenerate: true
 ---
 * TOC
@@ -712,6 +712,7 @@ regenerate: true
 * [[/cmd/grep]]
 * [[/cmd/httpie]]
 * [[/cmd/iconv]]
+* [[/cmd/ioreg]]
 * [[/cmd/iostat]]
 * [[/cmd/java]]
 * [[/cmd/java_home]]
@@ -765,7 +766,6 @@ regenerate: true
 * [[/df]]
 * [[/fish-shell]]
 * [[/how-to-escape-cli]]
-* [[/ioreg-cmd]]
 * [[/cmd/make]]
 * [[/my-bash-cheatsheet]]
 * [[/perl-one-liner]]
