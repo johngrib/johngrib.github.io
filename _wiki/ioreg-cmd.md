@@ -3,12 +3,12 @@ layout  : wiki
 title   : ioreg 명령어
 summary : show I/O Kit registry (BSD)
 date    : 2021-02-28 11:17:46 +0900
-updated : 2021-10-17 18:44:15 +0900
+updated : 2024-02-18 23:10:15 +0900
 tag     : command bsd mac
 resource: C0/608FA2-EA76-4F9B-B351-A42CD4926B81
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
