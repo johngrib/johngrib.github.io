@@ -3,7 +3,7 @@ layout  : wiki
 title   : 점자 패턴 문자(Braille pattern)
 summary :
 date    : 2018-01-10 21:14:09 +0900
-updated : 2023-12-31 23:38:56 +0900
+updated : 2024-02-19 21:57:15 +0900
 tag     : special-chars
 resource: 27/0D5881-3F46-4E69-B9A5-A5A9DBC03C6F
 toc     : true
@@ -63,8 +63,6 @@ latex   : true
 ![https://github.com/asciimoo/drawille ](https://github.com/asciimoo/drawille/raw/master/docs/images/drawille_01.png )
 
 * [https://github.com/bartmalanczuk/vim-trex-runner ](https://github.com/bartmalanczuk/vim-trex-runner ): Vim에서 돌아가는 Trex 러너(구글 크롬 게임에서 영향을 받은듯 하다).
-
-![https://github.com/bartmalanczuk/vim-trex-runner ](https://camo.githubusercontent.com/93effca175a4d59b159182baeb179fb55c84a21b/687474703a2f2f626172746d616c616e637a756b2e6769746875622e696f2f646f776e6c6f6164732f76696d2d747265782d72756e6e65722f64656d6f2e676966)
 
 ## 루이 브라유에 대하여
 
