@@ -3,7 +3,7 @@ layout  : wiki
 title   : Timeline
 summary : 
 date    : 2019-04-28 00:06:37 +0900
-updated : 2023-08-08 20:54:16 +0900
+updated : 2024-02-19 22:03:40 +0900
 tag     : 
 resource: 85/85BD50-3D0B-4A77-BAD1-FC9918F4B956
 toc     : true
@@ -47,6 +47,7 @@ latex   : false
 * 1936-12 - 앨런 튜링, [ON COMPUTABLE NUMBERS, WITH AN APPLICATION TO THE ENTSCHEIDUNGSPROBLEM (PDF)]( https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf )
 * 1911-06-16 - [IBM 창립]( https://en.wikipedia.org/wiki/IBM )
 * 1885 - 오트마 메르겐탈러<sub>Ottmar mergenthaler</sub>, 조판 기계를 위한 자동주조 식자기(키보드)를 고안하다.
+* 1876-02-14 - 알렉산더 그레이엄 벨, 전화기 특허 신청
 * 1863-01-10 - [런던 지하철 개통]( https://en.wikipedia.org/wiki/London_Underground )
 * 1854 - 부울 대수
 * 1847 - [윌리엄 지멘스, 라인강을 가로지르는 최초의 수중 케이블 설치]( https://en.wikipedia.org/wiki/Submarine_communications_cable )
