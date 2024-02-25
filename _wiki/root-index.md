@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-02-18 23:11:04 +0900
+updated : 2024-02-25 11:24:23 +0900
 regenerate: true
 ---
 * TOC
@@ -985,6 +985,7 @@ regenerate: true
 * [[/software-engineering/ADR]]
 * [[/software-engineering/code-review]]
 * [[/software-engineering/continuous-delivery]]
+* [[/software-engineering/devops]]
 * [[/software-engineering/kanban]]
 * [[/software-engineering/logging]]
 * [[/software-engineering/naming]]
@@ -994,7 +995,6 @@ regenerate: true
 * [[/continuous-integration]]
 * [[/ddd-quotes]]
 * [[/dev-schedule-quotes]]
-* [[/devops]]
 * [[/persona]]
 * [[/polite-software]]
 * [[/Software-Engineering-Code-of-Ethics]]
