@@ -3,12 +3,12 @@ layout  : wiki
 title   : 도널드 커누스 (Donald Ervin Knuth)
 summary : 
 date    : 2020-08-09 11:15:09 +0900
-updated : 2020-08-09 11:25:52 +0900
+updated : 2024-02-28 22:13:51 +0900
 tag     : 
 resource: 04/08EE04-1205-48F5-9044-2FEB31BE0390
 toc     : true
 public  : true
-parent  : [[people]]
+parent  : [[/people]]
 latex   : false
 ---
 * TOC
