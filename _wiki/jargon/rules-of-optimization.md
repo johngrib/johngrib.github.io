@@ -31,7 +31,7 @@ Rule 2 (for experts only): Don't do it yet.
 
 ## Donald E. Knuth
 
-[[/Donald-Ervin-Knuth]] 교수는 1974년에 쓴 'Structured Programming With Go To Statements' 에서 다음과 같이 쓴 바 있다.[^knuth-go-pdf]
+[[/people/donald-ervin-knuth]] 교수는 1974년에 쓴 'Structured Programming With Go To Statements' 에서 다음과 같이 쓴 바 있다.[^knuth-go-pdf]
 
 >
 There is no doubt that the grail of efficiency leads to abuse.
