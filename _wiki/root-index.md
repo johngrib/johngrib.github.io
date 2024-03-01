@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-03-01 23:11:20 +0900
+updated : 2024-03-01 23:12:06 +0900
 regenerate: true
 ---
 * TOC
@@ -501,6 +501,7 @@ regenerate: true
 * [[/jargon/kluge]]
 * [[/jargon/lampson-s-law]]
 * [[/jargon/law-of-demeter]]
+* [[/jargon/lubarsky-s-law-of-cybernetic-entomology]]
 * [[/jargon/metcalfe-s-law]]
 * [[/jargon/moore-s-law]]
 * [[/jargon/mutex]]
@@ -516,7 +517,6 @@ regenerate: true
 * [[/jargon/yagni]]
 * [[/jargon/zero-overhead-principle]]
 * [[/jargon/zipf-s-law]]
-* [[/Lubarsky-s-Law-of-Cybernetic-Entomology]]
 
 * [[/Conway-s-law]]
 * [[/Copernican-Principle]]
