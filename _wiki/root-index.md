@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-02-28 22:13:14 +0900
+updated : 2024-03-01 23:11:20 +0900
 regenerate: true
 ---
 * TOC
@@ -516,6 +516,7 @@ regenerate: true
 * [[/jargon/yagni]]
 * [[/jargon/zero-overhead-principle]]
 * [[/jargon/zipf-s-law]]
+* [[/Lubarsky-s-Law-of-Cybernetic-Entomology]]
 
 * [[/Conway-s-law]]
 * [[/Copernican-Principle]]
@@ -523,7 +524,6 @@ regenerate: true
 * [[/information-hiding]]
 * [[/kees-koster-good-programming-language]]
 * [[/linus-s-law]]
-* [[/Lubarsky-s-Law-of-Cybernetic-Entomology]]
 * [[/No-Silver-Bullet]]
 * [[/OOP-to-me-Alan-Kay]]
 * [[/orange-juice-test]]
