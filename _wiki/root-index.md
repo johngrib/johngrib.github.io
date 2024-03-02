@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-03-01 23:12:06 +0900
+updated : 2024-03-02 17:51:12 +0900
 regenerate: true
 ---
 * TOC
@@ -106,12 +106,13 @@ regenerate: true
 * [[/clipping/leslie-lamport/paxos-made-simple]]
 * [[/clipping/mapreduce]]
 * [[/clipping/marvin-minsky/why-programming-is-a-good-medium]]
+* [[/clipping/openpgp/history]]
 * [[/clipping/out-of-the-tar-pit]]
 * [[/clipping/phil-zimmermann/why-do-you-need-pgp]]
 * [[/clipping/predicting-the-future]]
 * [[/clipping/roy-fielding/rest-paper]]
 * [[/clipping/the-unix-time-sharing-system]]
-* [[/clipping/openpgp/history]]
+* [[/clipping/whitehouse/future-software-should-be-memory-safe]]
 
 * [[/Software-Engineering-Code-of-Ethics]]
 * [[/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
