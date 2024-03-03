@@ -3,7 +3,7 @@ layout  : wiki
 title   : kill
 summary : terminate or signal a process
 date    : 2023-05-07 00:00:38 +0900
-updated : 2023-08-05 22:46:50 +0900
+updated : 2024-03-03 13:07:05 +0900
 tag     : 
 resource: 90/72958A-66BE-4D3B-87B5-27B03E66207F
 toc     : true
@@ -27,7 +27,7 @@ kill -signal_number pid ...
 
 ## 시그널
 
-### signal 목록 확인
+### signal 목록 확인 {#signal-list}
 
 kill을 섬세하게 사용하려면 [[/study/os/signal]]에 대해 잘 알아둬야 한다.
 
@@ -49,7 +49,7 @@ $ kill -l
 29) SIGINFO	30) SIGUSR1	31) SIGUSR2
 ```
 
-### 주요 시그널에 대해
+### 주요 시그널에 대해 {#signal-table}
 
 > <div id="signal_table"></div>
 [^command-line-book-117]
