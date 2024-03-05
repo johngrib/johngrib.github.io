@@ -6,7 +6,6 @@
  "updated": "2022-01-01 12:40:18 +0900",
  "resource": "9D/FF1ECF-CBDF-4760-8509-7C81543F7F07",
  "children": [
-  "andon-cord",
   "cmd/dev/fd",
   "Conway-s-law",
   "Copernican-Principle",
@@ -15,6 +14,7 @@
   "jargon/20-percent-project",
   "jargon/airplane-rule",
   "jargon/amdahl-s-law",
+  "jargon/andon-cord",
   "jargon/another-level-of-indirection",
   "jargon/backus-naur-form",
   "jargon/biondi-s-law",

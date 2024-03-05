@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-03-02 17:51:12 +0900
+updated : 2024-03-05 23:46:05 +0900
 regenerate: true
 ---
 * TOC
@@ -478,6 +478,7 @@ regenerate: true
 * [[/jargon/TOCTTOU]]
 * [[/jargon/airplane-rule]]
 * [[/jargon/amdahl-s-law]]
+* [[/jargon/andon-cord]]
 * [[/jargon/another-level-of-indirection]]
 * [[/jargon/backus-naur-form]]
 * [[/jargon/biondi-s-law]]
@@ -992,7 +993,6 @@ regenerate: true
 * [[/software-engineering/naming]]
 * [[/software-engineering/scrum]]
 
-* [[/andon-cord]]
 * [[/continuous-integration]]
 * [[/ddd-quotes]]
 * [[/dev-schedule-quotes]]
