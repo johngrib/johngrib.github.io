@@ -8,7 +8,7 @@ tag     :
 resource: 29/4A9F29-0C6F-4C1D-8600-34457BE41700
 toc     : true
 public  : true
-parent  : [[tools]]
+parent  : [[/tool]]
 latex   : false
 ---
 * TOC

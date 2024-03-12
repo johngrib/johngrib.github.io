@@ -8,7 +8,7 @@ tag     : aws
 resource: 34/D8B0AF-EBCB-41AD-86F6-8E1B96A4B085
 toc     : true
 public  : true
-parent  : [[tools]]
+parent  : [[/tool]]
 latex   : false
 ---
 * TOC

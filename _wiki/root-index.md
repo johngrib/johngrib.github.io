@@ -626,14 +626,14 @@ regenerate: true
 
 - [[/study/three-easy-pieces/02-introduction-to-os]]
 
-## [[/tools]]
+## [[/tool]]
 
 * [[/intellij]]
     * [[/intellij/tips]]
     * [[/intellij/sdk-code-samples]]
 
-* [[/tools/alacritty]]
-* [[/tools/maccy]]
+* [[/tool/alacritty]]
+* [[/tool/maccy]]
 
 * [[/dbeaver]]
 * [[/dumang-dk6-keyboard]]

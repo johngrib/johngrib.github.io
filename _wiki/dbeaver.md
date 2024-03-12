@@ -8,7 +8,7 @@ tag     : db
 resource: D0/55602B-814E-435F-ADF7-E091C86BE9DA
 toc     : true
 public  : true
-parent  : [[tools]]
+parent  : [[/tool]]
 latex   : false
 ---
 * TOC

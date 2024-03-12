@@ -8,7 +8,7 @@ tag     : keyboard
 resource: 36/D39A0B-43B7-48D9-AE6B-C809080BF84A
 toc     : true
 public  : true
-parent  : [[tools]]
+parent  : [[/tool]]
 latex   : false
 ---
 * TOC

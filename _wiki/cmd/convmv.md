@@ -32,7 +32,7 @@ alias convmv-nfc='convmv -f utf-8 -t utf-8 --nfc --notest'
 
 ## Examples
 
-나는 주로 macOS의 [[/tools/alacritty]] 터미널에서 한글 파일명의 자소가 분리된 것을 교정할 때 사용한다.
+나는 주로 macOS의 [[/tool/alacritty]] 터미널에서 한글 파일명의 자소가 분리된 것을 교정할 때 사용한다.
 
 ```bash
 convmv -f utf-8 -t utf-8 --nfc --notest filename

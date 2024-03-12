@@ -8,7 +8,7 @@ tag     : google
 resource: 44/067FBF-0330-45E9-8EB8-1896B06F3362
 toc     : true
 public  : true
-parent  : [[tools]]
+parent  : [[/tool]]
 latex   : false
 ---
 * TOC

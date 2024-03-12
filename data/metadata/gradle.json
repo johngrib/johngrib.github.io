@@ -2,7 +2,7 @@
  "type": "wiki",
  "title": "Gradle",
  "summary": "Gradle Build Tool",
- "parent": "tools",
+ "parent": "tool",
  "url": "/wiki/gradle",
  "updated": "2023-06-25 18:33:33 +0900",
  "resource": "09/DC229C-F689-45B3-ABD1-23A4C247C76A",

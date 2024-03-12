@@ -8,7 +8,7 @@ tag     : gradle tool
 resource: 09/DC229C-F689-45B3-ABD1-23A4C247C76A
 toc     : true
 public  : true
-parent  : [[/tools]]
+parent  : [[/tool]]
 latex   : false
 ---
 * TOC

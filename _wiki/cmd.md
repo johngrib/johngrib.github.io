@@ -8,7 +8,7 @@ tag     : linux command-line
 resource: 26/2B1583-6BC0-4D96-926B-51728A24F463
 toc     : true
 public  : true
-parent  : [[/tools]]
+parent  : [[/tool]]
 latex   : false
 comment : false
 ---

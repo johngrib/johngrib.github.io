@@ -2,8 +2,8 @@
  "type": "wiki",
  "title": "alacritty",
  "summary": "rust로 개발된 단순하고 빠른 터미널 에뮬레이터",
- "parent": "tools",
- "url": "/wiki/tools/alacritty",
+ "parent": "tool",
+ "url": "/wiki/tool/alacritty",
  "updated": "2023-09-05 22:15:26 +0900",
  "resource": "6B/2F3606-DFE4-4DD2-A078-42F134CB7EA7",
  "children": []
