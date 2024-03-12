@@ -3,7 +3,7 @@ layout  : wiki
 title   : 유명 사이트 장애 모니터링
 summary : 
 date    : 2020-12-14 21:29:15 +0900
-updated : 2021-06-08 22:19:40 +0900
+updated : 2024-03-12 21:15:03 +0900
 tag     : 장애
 resource: B4/E58FDE-B0A0-4BB7-BBB1-B42395FD6757
 toc     : true
@@ -17,6 +17,10 @@ latex   : false
 ## downdetector.com
 
 - [downdetector.com][downdetector]
+
+## Slack Status
+
+<https://slack-status.com/ >
 
 ## Google Workspace 상태 대시보드
 
