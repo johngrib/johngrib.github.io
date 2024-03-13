@@ -53,7 +53,7 @@ XP는 관점이 비슷한 다른 유명한 애자일 프로세스와 함께 뭉�
 
 ## 함께 읽기
 
-- [[continuous-integration]]
+- [[/software-engineering/continuous-integration]]
 - [CONTINUOUS DELIVERY][cdcom]
 
 ## 주석

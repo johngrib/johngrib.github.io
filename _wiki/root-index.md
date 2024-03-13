@@ -987,7 +987,7 @@ regenerate: true
 * [[/software-engineering/ADR]]
 * [[/software-engineering/code-review]]
 * [[/software-engineering/continuous-delivery]]
-* [[/continuous-integration]]
+* [[/software-engineering/continuous-integration]]
 * [[/software-engineering/devops]]
 * [[/software-engineering/kanban]]
 * [[/software-engineering/logging]]
