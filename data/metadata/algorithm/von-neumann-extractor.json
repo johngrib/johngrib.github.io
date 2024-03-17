@@ -3,7 +3,7 @@
  "title": "폰 노이만식 난수 생성법(Basic von Neumann extractor)",
  "summary": "0과 1이 발생할 확률이 다른 경우 사용하자",
  "parent": "algorithm",
- "url": "/wiki/von-neumann-extractor",
+ "url": "/wiki/algorithm/von-neumann-extractor",
  "updated": "2024-03-17 12:53:10 +0900",
  "resource": "72/312C77-D975-4D0E-B40D-9AEA4C7AE0DE",
  "children": []

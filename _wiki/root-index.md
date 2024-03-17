@@ -81,7 +81,7 @@ regenerate: true
 * [[/algorithm/selection-sort]]
 * [[/algorithm/shell-sort]]
 * [[/algorithm/sort-stability]]
-* [[/von-neumann-extractor]]
+* [[/algorithm/von-neumann-extractor]]
 
 * [[/base64]]
 * [[/big-O-notation]]
