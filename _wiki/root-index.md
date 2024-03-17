@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-03-13 21:43:58 +0900
+updated : 2024-03-17 12:53:04 +0900
 regenerate: true
 ---
 * TOC
@@ -81,6 +81,7 @@ regenerate: true
 * [[/algorithm/selection-sort]]
 * [[/algorithm/shell-sort]]
 * [[/algorithm/sort-stability]]
+* [[/von-neumann-extractor]]
 
 * [[/base64]]
 * [[/big-O-notation]]
@@ -92,7 +93,6 @@ regenerate: true
 * [[/p-np]]
 * [[/tilde-approximations]]
 * [[/tower-of-hanoi]]
-* [[/von-neumann-extractor]]
 
 ## [[/clipping]]
 
