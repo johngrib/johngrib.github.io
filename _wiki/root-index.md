@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-03-17 15:56:12 +0900
+updated : 2024-03-20 22:15:57 +0900
 regenerate: true
 ---
 * TOC
@@ -519,6 +519,7 @@ regenerate: true
 * [[/jargon/yagni]]
 * [[/jargon/zero-overhead-principle]]
 * [[/jargon/zipf-s-law]]
+* [[/oregon-swing]]
 
 * [[/Conway-s-law]]
 * [[/Copernican-Principle]]
@@ -529,7 +530,6 @@ regenerate: true
 * [[/No-Silver-Bullet]]
 * [[/OOP-to-me-Alan-Kay]]
 * [[/orange-juice-test]]
-* [[/oregon-swing]]
 * [[/power-distance-index]]
 * [[/rule-of-3-and-10]]
 * [[/Schopenhauer-s-Law-Of-Entropy]]

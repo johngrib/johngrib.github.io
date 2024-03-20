@@ -3,12 +3,12 @@ layout  : wiki
 title   : 그네의 비유
 summary : 고객이 정말로 원했던 것은 나무에 타이어를 매단 것
 date    : 2020-02-05 22:25:45 +0900
-updated : 2020-02-05 22:49:31 +0900
+updated : 2024-03-20 22:16:02 +0900
 tag     : 
 resource: EB/5FB7E8-7FBA-4DC0-9475-43BC4818DF67
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
