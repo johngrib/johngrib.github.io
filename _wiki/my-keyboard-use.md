@@ -3,12 +3,12 @@ layout  : wiki
 title   : 나의 HHKB-JP 개조 키보드
 summary : HHKB-JP + Hammerspoon으로 행복한 컴퓨터 생활
 date    : 2020-06-03 23:01:19 +0900
-updated : 2021-07-25 22:11:23 +0900
+updated : 2024-03-20 22:22:48 +0900
 tag     : keyboard hhkb hammerspoon
 resource: BA/296738-2330-47DC-80EE-25CB579CEC27
 toc     : true
 public  : true
-parent  : [[/hack]]
+parent  : [[/tool/keyboard]]
 latex   : false
 ---
 * TOC

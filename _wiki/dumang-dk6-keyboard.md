@@ -3,12 +3,12 @@ layout  : wiki
 title   : Dumang DK6 Mini NKRO 키보드
 summary : 자석으로 키를 붙였다 떼었다 할 수 있는 키보드
 date    : 2020-03-24 23:07:57 +0900
-updated : 2020-03-24 23:38:23 +0900
+updated : 2024-03-20 22:23:17 +0900
 tag     : keyboard
 resource: 36/D39A0B-43B7-48D9-AE6B-C809080BF84A
 toc     : true
 public  : true
-parent  : [[/tool]]
+parent  : [[/tool/keyboard]]
 latex   : false
 ---
 * TOC

@@ -3,12 +3,12 @@ layout  : wiki
 title   : 나의 키보드 히스토리
 summary : 역사를 정리해 보자
 date    : 2018-11-22 10:57:14 +0900
-updated : 2023-02-08 21:00:02 +0900
+updated : 2024-03-20 22:22:17 +0900
 tag     : keyboard
 resource: A7/45914B-2D52-4DD2-8E1B-CF4A47BD70E7
 toc     : true
 public  : true
-parent  : [[/hack]]
+parent  : [[/tool/keyboard]]
 latex   : false
 ---
 * TOC
