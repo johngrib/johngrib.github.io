@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-03-20 22:25:40 +0900
+updated : 2024-03-20 22:27:06 +0900
 regenerate: true
 ---
 * TOC
@@ -629,9 +629,10 @@ regenerate: true
 ## [[/tool]]
 
 * [[/tool/keyboard]]
-    * [[/tool/keyboard/dumang-dk6-keyboard]]
     * [[/tool/keyboard/my-keyboard-history]]
     * [[/tool/keyboard/my-keyboard-use]]
+    * [[/tool/keyboard/dumang-dk6-keyboard]]
+    * [[/tool/keyboard/mokibo]]
 
 * [[/intellij]]
     * [[/intellij/tips]]
