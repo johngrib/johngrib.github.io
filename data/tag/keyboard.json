@@ -1,6 +1,6 @@
 [
- "dumang-dk6-keyboard",
  "hhkb-jp-tmk",
- "my-keyboard",
- "my-keyboard-use"
+ "tool/keyboard/dumang-dk6-keyboard",
+ "tool/keyboard/my-keyboard-history",
+ "tool/keyboard/my-keyboard-use"
 ]

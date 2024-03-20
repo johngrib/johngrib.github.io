@@ -210,7 +210,7 @@ Capisco Puls를 잘 쓰고 있다가 헤드레스트 측면에서 아쉬움이 �
 
 ## 키보드
 
-* [[my-keyboard]]{나의 키보드 히스토리} 문서 참조.
+* [[/tool/keyboard/my-keyboard-history]]{나의 키보드 히스토리} 문서 참조.
 
 ## 모니터
 

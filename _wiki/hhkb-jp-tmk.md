@@ -229,7 +229,7 @@ tmk 보드를 쓰면 7개의 `fn` 키와 7개의 레이어를 사용할 수 있�
 
 ## 함께 읽기
 
-- [[my-keyboard]]{나의 키보드 히스토리}
+- [[/tool/keyboard/my-keyboard-history]]{나의 키보드 히스토리}
 
 ## Links
 
