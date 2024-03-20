@@ -44,6 +44,7 @@
   "jargon/moore-s-law",
   "jargon/mutex",
   "jargon/no-problem-syndrome",
+  "jargon/oregon-swing",
   "jargon/postel-s-law",
   "jargon/reader-writer-lock",
   "jargon/risc",
@@ -61,7 +62,6 @@
   "No-Silver-Bullet",
   "OOP-to-me-Alan-Kay",
   "orange-juice-test",
-  "oregon-swing",
   "power-distance-index",
   "rule-of-3-and-10",
   "Schopenhauer-s-Law-Of-Entropy"
