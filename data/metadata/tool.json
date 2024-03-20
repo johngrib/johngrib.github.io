@@ -16,6 +16,7 @@
   "gradle",
   "intellij",
   "tool/alacritty",
+  "tool/keyboard",
   "tool/maccy",
   "useful-site"
  ]
