@@ -648,6 +648,7 @@
  "/wiki/pattern/quotes",
  "/wiki/pattern/repository",
  "/wiki/pattern/service",
+ "/wiki/pattern/sidecar",
  "/wiki/pattern/state",
  "/wiki/pattern/static-factory-method",
  "/wiki/pattern/strangler",

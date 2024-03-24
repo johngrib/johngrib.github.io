@@ -33,6 +33,7 @@
   "pattern/quotes",
   "pattern/repository",
   "pattern/service",
+  "pattern/sidecar",
   "pattern/state",
   "pattern/static-factory-method",
   "pattern/strangler",
