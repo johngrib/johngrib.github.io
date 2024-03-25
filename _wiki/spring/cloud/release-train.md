@@ -3,7 +3,7 @@ layout  : wiki
 title   : 릴리즈 트레인 (Release Train)
 summary : 
 date    : 2023-01-01 23:17:53 +0900
-updated : 2023-01-02 00:25:20 +0900
+updated : 2024-03-25 23:38:48 +0900
 tag     : spring
 resource: 73/7C3D6C-A47A-43A8-80E5-24A680B9E208
 toc     : true
@@ -41,12 +41,16 @@ latex   : false
     - Last Version
     - Boot Version
 - tr
+    - [2023.0.x (Leyton)](https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2023.0-Release-Notes )
+    - ...
+    - 3.2.x
+- tr
     - [2022.0.x (Kilburn)]( https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2022.0-Release-Notes )
-    - 2022.0.0 (2022-12-16)
+    - [2022.0.6-SNAPSHOT (2024-02-23)](https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2022.0-Release-Notes#202206-snapshot )
     - 3.0.x
 - tr
     - [2021.0.x (Jubilee)]( https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2021.0-Release-Notes )
-    - 2021.0.5 (2022-11-03)
+    - [2021.0.8 (2023-06-29)](https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2021.0-Release-Notes#202108 )
     - 2.6.x, 2.7.x
 - tr
     - [2020.0.x (Ilford)]( https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2020.0-Release-Notes )
