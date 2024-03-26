@@ -7,6 +7,7 @@
  "updated": "2023-04-14 19:52:08 +0900",
  "resource": "26/2B1583-6BC0-4D96-926B-51728A24F463",
  "children": [
+  "bc",
   "cmd/ag",
   "cmd/arch",
   "cmd/basename",
