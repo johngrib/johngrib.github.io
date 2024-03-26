@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-03-24 16:09:31 +0900
+updated : 2024-03-26 22:30:20 +0900
 regenerate: true
 ---
 * TOC
@@ -302,7 +302,6 @@ regenerate: true
 
 * [[/Groovy]]
 * [[/YAML]]
-* [[/bc]]
 * [[/html]]
 
 ### 아희
@@ -687,6 +686,7 @@ regenerate: true
 * [[/cmd/arch]]
 * [[/cmd/basename]]
 * [[/cmd/bat]]
+* [[/cmd/bc]]
 * [[/cmd/bind]]
 * [[/cmd/brew]]
 * [[/cmd/cal]]

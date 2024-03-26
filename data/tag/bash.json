@@ -1,10 +1,10 @@
 [
- "bc",
  "better-work/random-lunch",
  "cmd/ag",
  "cmd/basename",
  "cmd/bash/history",
  "cmd/bat",
+ "cmd/bc",
  "cmd/bind",
  "cmd/brew",
  "cmd/cal",
