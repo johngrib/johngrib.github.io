@@ -39,7 +39,7 @@ The major difference between an object-oriented framework and a class library is
 >
 객체지향 프레임워크와 클래스 라이브러리의 큰 차이점은 프레임워크가 애플리케이션 코드를 호출한다는 것입니다. 일반적으로는 애플리케이션 코드가 클래스 라이브러리를 호출합니다. 이러한 제어의 역전(inversion of control)은 때때로 헐리우드 원칙이라고도 합니다. "우리에게 전화(call)하지 마세요. 우리가 당신을 부를(call) 것입니다".
 
-* 참고: [[hollywood-principle]]{헐리우드 원칙}
+* 참고: [[/jargon/hollywood-principle]]{헐리우드 원칙}
 
 
 ### PicoContainer 문서를 통해 보는 IoC의 역사
@@ -355,7 +355,7 @@ DI는 오브젝트 레퍼런스를 외부로부터 제공(주입)받고 이를 �
 
 ## 함께 읽기
 
-* [[hollywood-principle]]{헐리우드 원칙}
+* [[/jargon/hollywood-principle]]{헐리우드 원칙}
 * [[/spring/document/core]]
 * [[/pattern/template-method]]
 

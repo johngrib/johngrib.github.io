@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-03-26 22:30:20 +0900
+updated : 2024-04-01 23:18:48 +0900
 regenerate: true
 ---
 * TOC
@@ -497,6 +497,7 @@ regenerate: true
 * [[/jargon/endian]]
 * [[/jargon/graceful-degradation]]
 * [[/jargon/hofstadter-s-law]]
+* [[/jargon/hollywood-principle]]
 * [[/jargon/imitation-game]]
 * [[/jargon/kerckhoffs-principle]]
 * [[/jargon/kiss-principle]]
@@ -523,7 +524,6 @@ regenerate: true
 
 * [[/Conway-s-law]]
 * [[/Copernican-Principle]]
-* [[/hollywood-principle]]
 * [[/information-hiding]]
 * [[/kees-koster-good-programming-language]]
 * [[/linus-s-law]]

@@ -3,12 +3,12 @@ layout  : wiki
 title   : 헐리우드 원칙(Hollywood Principle)
 summary : "Do not call us, we call You."
 date    : 2019-08-31 13:30:16 +0900
-updated : 2021-09-21 22:39:25 +0900
+updated : 2024-04-01 23:20:18 +0900
 tag     : 
 resource: D3/E444B2-7868-4AC8-9A3F-CE06D738781D
 toc     : true
 public  : true
-parent  : [[jargon]]
+parent  : [[/jargon]]
 latex   : false
 ---
 * TOC
@@ -75,7 +75,7 @@ The major difference between an object-oriented framework and a class library is
 
 ## 함께 읽기
 
-* [[inversion-of-control]]{Inversion of Control}
+* [[/inversion-of-control]]{Inversion of Control}
 * [[/pattern/template-method]]
 
 ## 참고문헌
