@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ 이것저것
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2023-05-08 22:44:40 +0900
+updated : 2024-04-07 16:51:30 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -45,6 +45,7 @@ defaults write com.jetbrains.datagrip ApplePressAndHoldEnabled -bool false
 위의 명령을 제품에 맞춰 터미널에서 입력하고, IntelliJ를 재실행하면 된다.
 
 - 최근 사용 이력
+    - 2024-04-07
     - 2023-05-08
     - 2023-03-18
 
