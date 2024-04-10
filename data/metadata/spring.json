@@ -15,6 +15,7 @@
   "spring-bean-config-xml",
   "spring/boot",
   "spring/cloud",
+  "spring/data",
   "spring/document",
   "spring/versions"
  ]

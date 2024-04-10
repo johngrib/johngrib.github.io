@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-04-10 12:13:18 +0900
+updated : 2024-04-10 18:41:32 +0900
 regenerate: true
 ---
 * TOC
@@ -925,6 +925,9 @@ regenerate: true
 
 * [[/spring/cloud]]
 * [[/spring/cloud/release-train]]
+
+* [[/spring/data]]
+    * [[/spring/data/jpa]]
 
 ### [[/spring/document]]
 

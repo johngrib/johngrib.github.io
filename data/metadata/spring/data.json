@@ -1,0 +1,12 @@
+{
+ "type": "wiki",
+ "title": "Spring Data",
+ "summary": "",
+ "parent": "spring",
+ "url": "/wiki/spring/data",
+ "updated": "2024-04-10 18:41:38 +0900",
+ "resource": "30/6197D8-9CC3-415B-97DF-06742FB8AE72",
+ "children": [
+  "spring/data/jpa"
+ ]
+}
