@@ -12,6 +12,7 @@
   "database/isolation-level",
   "database/mysql",
   "database/processlist",
+  "database/redis",
   "database/sharding",
   "database/sqlite",
   "database/tips",

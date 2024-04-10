@@ -302,6 +302,7 @@
  "/wiki/database/isolation-level",
  "/wiki/database/mysql",
  "/wiki/database/processlist",
+ "/wiki/database/redis",
  "/wiki/database/sharding",
  "/wiki/database/sqlite",
  "/wiki/database/tips",
