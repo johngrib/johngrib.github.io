@@ -2,9 +2,9 @@
  "type": "wiki",
  "title": "정지 문제",
  "summary": "The Halting Problem",
- "parent": "math",
- "url": "/wiki/halting-problem",
- "updated": "2020-01-10 20:52:11 +0900",
+ "parent": "problem",
+ "url": "/wiki/problem/halting-problem",
+ "updated": "2024-04-11 23:43:21 +0900",
  "resource": "15/7FF532-F47A-4166-8597-D6CA737285DA",
  "children": []
 }
