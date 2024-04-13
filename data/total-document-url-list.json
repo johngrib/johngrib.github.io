@@ -530,6 +530,7 @@
  "/wiki/jvm-memory",
  "/wiki/jvm-stack",
  "/wiki/kafka",
+ "/wiki/kafka/producer-acks",
  "/wiki/kafka/writes-to-disk",
  "/wiki/keeping-options-open",
  "/wiki/kees-koster-good-programming-language",
