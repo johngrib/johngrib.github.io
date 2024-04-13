@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-04-11 23:42:28 +0900
+updated : 2024-04-13 16:27:14 +0900
 regenerate: true
 ---
 * TOC
@@ -968,6 +968,8 @@ regenerate: true
 * [[/mariadb-connector-j]]
 
 ## [[/kafka]]
+
+* [[/kafka/writes-to-disk]]
 
 ## [[/hack]]
 
