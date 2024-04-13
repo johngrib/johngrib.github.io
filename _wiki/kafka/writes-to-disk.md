@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kafka는 파일 시스템에 저장한다
 summary : 
 date    : 2024-04-13 16:27:20 +0900
-updated : 2024-04-13 16:34:52 +0900
+updated : 2024-04-13 16:51:21 +0900
 tag     : 
 resource: 88/5211BA-BE81-4F6F-B984-EFF527748C45
 toc     : true
@@ -140,13 +140,30 @@ JVM 위에서 동작하는 카프카 브로커가 페이지 캐시를 사용하�
 이러한 특징 때문에 카프카 브로커를 실행하는데 힙 메모리 사이즈를 크게 설정할 필요가 없다.
 [^kafka-app-programming-java-66]
 
+## From: 카프카 핵심 가이드
+
+>
+**1.3.3 디스크 기반 보존**
+>
+카프카는 다중 컨슈머를 처리할 수 있을 뿐만 아니라 메시지를 지속성 있게 저장할 수도 있다.
+이는 컨슈머들이 항상 실시간으로 데이터를 읽어올 필요는 없다는 의미이기도 하다.
+메시지는 디스크에 쓰여진 뒤 설정된 보유 규칙과 함께 저장된다.
+이 옵션들은 토픽별로 설정이 가능하기 때문에 서로 다른 메시지 스트림이 컨슈머의 필요에 따라 서로 다른 기간 동안 보존될 수 있다.
+따라서 만약 컨슈머가 느린 처리 속도 혹은 트래픽 폭주로 인해 뒤처질 경우에도 데이터 유실의 위험은 없다.
+프로듀서 쪽에서 메시지를 백업해야 하거나 메시지가 유실될 걱정 없이 잠시 애플리케이션을 내리고 컨슈머를 유지보수 할 수 있는 것이다.
+컨슈머를 정지하더라도 메시지는 카프카 안에 남아있게 된다.
+그리고 컨슈머가 다시 시작되면 작업을 멈춘 지점에서부터 유실 없이 데이터를 처리할 수 있다.
+[^kafka-definitive-guide-11]
+
+
 ## 참고문헌
 
 - [[/clipping/kafka-a-distributed-messaging-system-for-log-processing]] - Kafka를 소개한 LinkedIn의 2011년 논문.
 - 아파치 카프카 애플리케이션 프로그래밍 with 자바 / 최원영 저 / 비제이퍼블릭(BJ퍼블릭) / 초판 1쇄 발행: 2021년 04월 14일
+- 카프카 핵심 가이드 [개정증보판] / 그웬 샤피라(Gwen Shapira), 토드 팔리노(Todd Palino), 라지니 시바람(Rajini Sivaram), 크리트 페티(Krit Petty) 저 / 이동진 역 / 제이펍 / 1쇄 발행: 2023-04-14 / 원제: Kafka: The Definitive Guide, 2nd Edition
 
 ## 주석
 
 [^kafka-2011-paper-choice-file-system-page-cache]: [[/clipping/kafka-a-distributed-messaging-system-for-log-processing#choice-file-system-page-cache]]. Kafka를 소개한 2011년 논문. 3쪽. Efficient transfer. 
 [^kafka-app-programming-java-66]: 아파치 카프카 애플리케이션 프로그래밍 with 자바. 3장. 65쪽.
-
+[^kafka-definitive-guide-11]: 카프카 핵심 가이드. 1.3.3장. 11쪽.
