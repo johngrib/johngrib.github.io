@@ -4,7 +4,7 @@
  "summary": "",
  "parent": "index",
  "url": "/wiki/kafka",
- "updated": "2024-04-13 16:28:11 +0900",
+ "updated": "2024-04-13 22:46:29 +0900",
  "resource": "89/BA2F48-41B3-410F-A771-F5F63028152F",
  "children": [
   "kafka/writes-to-disk"
