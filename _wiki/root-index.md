@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-04-13 22:58:17 +0900
+updated : 2024-04-15 22:40:32 +0900
 regenerate: true
 ---
 * TOC
@@ -102,6 +102,7 @@ regenerate: true
 * [[/clipping/donn-seely/how-not-to-write-fortran-in-any-language]]
 * [[/clipping/eric-brewer/cap-twelve-years-later]]
 * [[/clipping/james-hamilton/on-designing-and-deploying-internet-scale-services]]
+* [[/clipping/jay-kreps/the-log-what-every-software-engineer-should-know]]
 * [[/clipping/kafka-a-distributed-messaging-system-for-log-processing]]
 * [[/clipping/leslie-lamport/paxos-made-simple]]
 * [[/clipping/mapreduce]]
