@@ -3,7 +3,7 @@ layout  : wiki
 title   : fan in, fan out
 summary : 
 date    : 2022-05-10 22:45:43 +0900
-updated : 2024-01-28 23:42:55 +0900
+updated : 2024-04-20 18:16:13 +0900
 tag     : 논리회로
 resource: 4D/5A7D76-8E7B-4676-A289-F5A5DC407354
 toc     : true
@@ -25,7 +25,7 @@ fan out은 소프트웨어 아키텍처에서도 비유적으로 사용되는 �
 
 다음은 [rabbitmq.com]( https://www.rabbitmq.com/ )의 [AMQP 0-9-1 Model Explained]( https://www.rabbitmq.com/tutorials/amqp-concepts.html )에 수록된 이미지이다.
 
-![fan out]( ./exchange-fanout.png )
+![fan out]( /resource/4D/5A7D76-8E7B-4676-A289-F5A5DC407354/exchange-fanout.png )
 
 ## 인용
 
