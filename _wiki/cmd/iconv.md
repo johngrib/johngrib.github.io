@@ -3,7 +3,7 @@ layout  : wiki
 title   : iconv 명령어
 summary : 문자열 인코딩을 변환한다
 date    : 2023-08-16 20:32:14 +0900
-updated : 2023-08-16 21:27:42 +0900
+updated : 2024-04-22 21:20:35 +0900
 tag     : 
 resource: CD/E12858-1C0E-4A7C-BFCF-7C168F1B8A69
 toc     : true
@@ -25,6 +25,17 @@ iconv -f EUC-KR -t UTF-8 input-file > output-file
 
  # 사용 가능한 인코딩 목록을 출력한다
 iconv -l
+```
+
+```bash
+$ echo "안녕하세요 이 텍스트는 UTF-8 이지만 EUC-KR로 변환합니다." \
+    | iconv -f UTF-8 -t EUC-KR
+ȳ  Ʈ UTF-8  EUC-KR ȯϴ.
+
+$ echo "안녕하세요 이 텍스트는 UTF-8 이지만 EUC-KR로 변환합니다." \
+    | iconv -f UTF-8 -t EUC-KR \
+    | iconv -f EUC-KR -t UTF-8
+안녕하세요 이 텍스트는 UTF-8 이지만 EUC-KR로 변환합니다.
 ```
 
 ## 튜토리얼
@@ -98,4 +109,5 @@ $ chardetect input-utf-8.txt output-euc-kr.txt
 input-utf-8.txt: utf-8 with confidence 0.99
 output-euc-kr.txt: EUC-KR with confidence 0.99
 ```
+
 
