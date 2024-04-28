@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-04-28 15:13:16 +0900
+updated : 2024-04-28 23:32:02 +0900
 regenerate: true
 ---
 * TOC
@@ -198,6 +198,7 @@ regenerate: true
 - [[/book/linchpin]]
 - [[/book/lyubishev]]
 - [[/book/mythical-man-month]]
+- [[/book/secret-of-consulting]]
 - [[/book/team-topologies]]
 - [[/book/the-jargon-file]]
 
@@ -219,7 +220,6 @@ regenerate: true
 - [[/Take-the-Bully-by-the-Horns]]
 - [[/Think-Bayes]]
 - [[/grow-together]]
-- [[/secret-of-consulting]]
 
 ## [[/crypto]]
 

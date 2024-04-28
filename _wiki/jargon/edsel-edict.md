@@ -45,7 +45,7 @@ If you must have something new, take one, not two.
 
 ### 출처
 
-* [[/people/gerald-weinberg]]의 "[[/secret-of-consulting]]{컨설팅의 비밀}" 챕터9. 안전한 변화 제조법.
+* [[/people/gerald-weinberg]]의 "[[/book/secret-of-consulting]]{컨설팅의 비밀}" 챕터9. 안전한 변화 제조법.
     * 원제는 "The Secrets of Consulting by Gerald M. Weinberg"
 
 ## 함께 읽기
