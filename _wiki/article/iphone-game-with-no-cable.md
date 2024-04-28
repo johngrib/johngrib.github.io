@@ -3,7 +3,7 @@ layout  : wiki
 title   : iPhone AirPlay + Xbox Controller + Netflix Games로 Apple 디바이스 환경에서 저렴하고 괜찮은 게임기 구성 만들기
 summary : 
 date    : 2024-04-28 15:13:44 +0900
-updated : 2024-04-28 17:26:02 +0900
+updated : 2024-04-28 17:33:32 +0900
 tag     : 
 resource: E7/5E68AC-1C0A-4A79-9B22-4992760B0119
 toc     : true
@@ -87,13 +87,16 @@ Hades, GTA ...? 오히려 인기있고 Steam에서도 좋은 평가를 받고 �
 
 ## 쾌적한 게임환경 만들기
 
-나는 두 종류의 환경으로 게임을 해 보았다. 각 항목들은 모두 무선으로 연결했다.
+나는 다음과 같은 환경으로 게임을 해 보았다. 각 항목들은 모두 무선으로 연결했다.
 
-- 거실
-    - Apple TV (거실용 LG TV) - iPhone 13 mini 와 AirPlay로 연결
-    - Xbox 컨트롤러 - iPhone 13 mini 와 Bluetooth로 연결
+- 서재 (컨트롤러 없이)
+    - Mac Mini + 32인치 모니터 - iPhone 13 mini 와 AirPlay로 연결
+    - 아이폰 스크린 터치를 컨트롤러로 사용
 - 서재
     - Mac Mini + 32인치 모니터 - iPhone 13 mini 와 AirPlay로 연결
+    - Xbox 컨트롤러 - iPhone 13 mini 와 Bluetooth로 연결
+- 거실
+    - Apple TV (거실용 LG TV) - iPhone 13 mini 와 AirPlay로 연결
     - Xbox 컨트롤러 - iPhone 13 mini 와 Bluetooth로 연결
 
 둘 다 만족스러웠다.
