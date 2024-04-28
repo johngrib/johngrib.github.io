@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-04-15 22:40:32 +0900
+updated : 2024-04-28 15:13:16 +0900
 regenerate: true
 ---
 * TOC
@@ -54,6 +54,7 @@ regenerate: true
 - [[/article/science-and-delete]]
 - [[/article/test-code-and-falsifiability]]
 - [[/article/vimwiki-lsp]]
+- [[/article/iphone-game-with-no-cable]]
 
 - [[/article/vim-night/20220409-session]]
 - [[/article/vim-night/20220408-ctags]]
