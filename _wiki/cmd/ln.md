@@ -1,9 +1,9 @@
 ---
 layout  : wiki
 title   : ln 명령어
-summary : 
+summary : 파일을 링크한다
 date    : 2023-08-01 22:51:29 +0900
-updated : 2023-08-03 22:57:21 +0900
+updated : 2024-04-29 22:18:32 +0900
 tag     : 
 resource: BC/EEDF24-80D5-4A1D-BAEF-0BF7FF94F5B3
 toc     : true
