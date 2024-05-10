@@ -80,6 +80,7 @@
   "cmd/seq",
   "cmd/shellcheck",
   "cmd/sort",
+  "cmd/split",
   "cmd/strfile",
   "cmd/sw_vers",
   "cmd/tail",
