@@ -3,7 +3,7 @@ layout  : wiki
 title   : 거실의 낡은 맥북에서 서재의 맥미니로 ssh로 접속하기
 summary : 낡은 맥북을 최신 컴퓨터의 단말기로 사용하자
 date    : 2024-05-11 20:56:46 +0900
-updated : 2024-05-11 22:43:31 +0900
+updated : 2024-05-11 22:45:06 +0900
 tag     : 
 resource: 0F/B2DCF3-268F-4DEA-B338-053252146B63
 toc     : true
@@ -63,7 +63,7 @@ latex   : false
 
 ssh를 써먹기 위해서 다음과 같이 원격 로그인을 활성화한다.
 
-`시스템 환경설정 - 공유 - 원격 로그인`
+`시스템 환경설정 - 일반 - 공유 - 원격 로그인`
 
 ![]( /resource/0F/B2DCF3-268F-4DEA-B338-053252146B63/macmini-share-login.jpg )
 
