@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-05-12 21:16:11 +0900
+updated : 2024-05-12 21:45:29 +0900
 regenerate: true
 ---
 * TOC
@@ -523,7 +523,6 @@ regenerate: true
 * [[/jargon/solid]]
 * [[/jargon/telescope-rule]]
 * [[/jargon/two-pizza-team]]
-* [[/jargon/unified-format]]
 * [[/jargon/yagni]]
 * [[/jargon/zero-overhead-principle]]
 * [[/jargon/zipf-s-law]]
@@ -708,6 +707,7 @@ regenerate: true
 * [[/cmd/date]]
 * [[/cmd/dc]]
 * [[/cmd/diff]]
+    * [[/cmd/diff/unified-format]]
 * [[/cmd/ditto]]
 * [[/cmd/du]]
 * [[/cmd/echo]]

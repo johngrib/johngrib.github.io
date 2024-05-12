@@ -4,7 +4,9 @@
  "summary": "compare files line by line",
  "parent": "cmd",
  "url": "/wiki/cmd/diff",
- "updated": "2023-05-23 23:37:06 +0900",
+ "updated": "2024-05-12 21:46:59 +0900",
  "resource": "87/6AB1CF-ED23-4EED-AF62-5DEE3218040C",
- "children": []
+ "children": [
+  "cmd/diff/unified-format"
+ ]
 }

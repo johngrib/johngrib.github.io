@@ -2,9 +2,9 @@
  "type": "wiki",
  "title": "unified format",
  "summary": "",
- "parent": "jargon",
- "url": "/wiki/jargon/unified-format",
- "updated": "2023-05-23 23:34:57 +0900",
+ "parent": "cmd/diff",
+ "url": "/wiki/cmd/diff/unified-format",
+ "updated": "2024-05-12 21:47:10 +0900",
  "resource": "E7/55BB07-E081-4F79-BB35-11119B8F61C1",
  "children": []
 }

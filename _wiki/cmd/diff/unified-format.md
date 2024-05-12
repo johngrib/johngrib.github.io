@@ -3,12 +3,12 @@ layout  : wiki
 title   : unified format
 summary : 
 date    : 2023-05-23 23:27:14 +0900
-updated : 2023-05-23 23:34:57 +0900
+updated : 2024-05-12 21:47:10 +0900
 tag     : 
 resource: E7/55BB07-E081-4F79-BB35-11119B8F61C1
 toc     : true
 public  : true
-parent  : [[/jargon]]
+parent  : [[/cmd/diff]]
 latex   : false
 ---
 * TOC
@@ -64,10 +64,7 @@ patch가 제대로 작동하려면 최소 3개의 context 라인이 필요합니
 +The door of all subtleties!
 ```
 
-## 함께 읽기
-
-- [[/cmd/diff]]
-
 ## 참고문헌
 
 - [Unified Format (gnu.org)]( https://www.gnu.org/software/diffutils/manual/html_node/Unified-Format.html )
+

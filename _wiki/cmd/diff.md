@@ -1,14 +1,14 @@
 ---
-layout  : wiki
+layout  : category
 title   : diff
 summary : compare files line by line
 date    : 2019-01-11 11:27:49 +0900
-updated : 2023-05-23 23:37:06 +0900
+updated : 2024-05-12 21:46:59 +0900
 tag     : bash command
 resource: 87/6AB1CF-ED23-4EED-AF62-5DEE3218040C
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC
@@ -26,7 +26,7 @@ $ diff FILE_A FILE_B
 $ diff -u FILE_A FILE_B
 ```
 
-[[/jargon/unified-format]]은 널리 사용되는 포맷이므로 이 옵션이 필요할 때가 종종 있다.
+[[/cmd/diff/unified-format]]은 널리 사용되는 포맷이므로 이 옵션이 필요할 때가 종종 있다.
 
 
 ### 대소문자 무시
@@ -56,6 +56,9 @@ $ diff DIR_A DIR_B -rq
 
 ## 함께 읽기
 
-- [[/jargon/unified-format]]
 - [Comparing and Merging Files (gnu.org)]( https://www.gnu.org/software/diffutils/manual/html_node/ )
+
+## 하위 문서
+
+<div id="sub-document-list"></div>
 
