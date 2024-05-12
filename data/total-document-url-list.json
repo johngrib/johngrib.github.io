@@ -267,6 +267,7 @@
  "/wiki/cmd/shellcheck",
  "/wiki/cmd/sort",
  "/wiki/cmd/split",
+ "/wiki/cmd/ssh",
  "/wiki/cmd/strfile",
  "/wiki/cmd/sw_vers",
  "/wiki/cmd/tail",

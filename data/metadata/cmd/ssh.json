@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "ssh 명령어",
+ "summary": "OpenSSH remote login client",
+ "parent": "cmd",
+ "url": "/wiki/cmd/ssh",
+ "updated": "2024-05-12 17:16:40 +0900",
+ "resource": "FC/B02A19-9ADD-4CF4-8920-33040E4471E4",
+ "children": []
+}

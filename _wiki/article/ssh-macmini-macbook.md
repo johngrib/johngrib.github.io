@@ -3,7 +3,7 @@ layout  : wiki
 title   : 거실의 낡은 맥북에서 서재의 맥미니로 ssh로 접속하기
 summary : 낡은 맥북을 최신 컴퓨터의 단말기로 사용하자
 date    : 2024-05-11 20:56:46 +0900
-updated : 2024-05-12 10:41:21 +0900
+updated : 2024-05-12 17:16:52 +0900
 tag     : 
 resource: 0F/B2DCF3-268F-4DEA-B338-053252146B63
 toc     : true
@@ -132,4 +132,8 @@ ssh -L 4000:localhost:4000 john@192.168.123.123
 ```
 
 위 명령을 실행하고 나면 맥북의 웹브라우저에서 `http://localhost:4000`으로 접속해 맥미니의 localhost:4000 Jekyll 서버를 확인할 수 있다.
+
+## 함께 읽기
+
+- [[/cmd/ssh]]
 

@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-05-11 20:57:46 +0900
+updated : 2024-05-12 10:51:57 +0900
 regenerate: true
 ---
 * TOC
@@ -754,6 +754,7 @@ regenerate: true
 * [[/cmd/shellcheck]]
 * [[/cmd/sort]]
 * [[/cmd/split]]
+* [[/cmd/ssh]]
 * [[/cmd/strfile]]
 * [[/cmd/sw_vers]]
 * [[/cmd/tail]]
