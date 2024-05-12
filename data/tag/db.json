@@ -1,5 +1,6 @@
 [
  "algorithm/b-tree",
+ "article/sql-char-comparison",
  "database/acid",
  "database/isolation-level",
  "database/processlist",
@@ -10,6 +11,5 @@
  "dbeaver",
  "h2database",
  "locking",
- "sql-char-comparison",
  "study/ddia/02-data-models-and-query-languages"
 ]

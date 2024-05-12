@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-05-12 10:51:57 +0900
+updated : 2024-05-12 17:24:30 +0900
 regenerate: true
 ---
 * TOC
@@ -46,6 +46,8 @@ regenerate: true
 * [[/news/2021]]
 
 ## [[/article]]
+
+-  2018-02-26 - [[/article/sql-char-comparison]]
 
 - [[/article/coupon-service-and-code-data]]
 - [[/article/extend-vim-gx]]
@@ -912,7 +914,6 @@ regenerate: true
 
 ## [[/why]]
 * [[/letter-case]]
-* [[/sql-char-comparison]]
 
 ## [[/spring]]
 

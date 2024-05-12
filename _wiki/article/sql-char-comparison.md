@@ -3,18 +3,18 @@ layout  : wiki
 title   : MySQL에서 'a' = 'a '가 true로 평가된다?
 summary : DB알못의 어떤 리서치
 date    : 2018-02-26 21:09:03 +0900
-updated : 2020-07-19 13:44:52 +0900
+updated : 2024-05-12 17:23:01 +0900
 tag     : db
 resource: 66/CAE9B4-5039-4EBB-90FB-BDD633570826
 toc     : true
 public  : true
-parent  : [[why]]
+parent  : [[/article]]
 latex   : false
 ---
 * TOC
 {:toc}
 
-이 글은 본인이 [회사 기술 블로그](https://woowabros.github.io/study/2018/02/26/mysql-char-comparison.html)에 작성한 포스트를 백업한 것입니다.
+이 글은 본인이 [2018년 2월 26일에 회사 기술 블로그](https://woowabros.github.io/study/2018/02/26/mysql-char-comparison.html )에 작성한 포스트를 백업한 것입니다.
 
 ## 개요
 
