@@ -3,7 +3,7 @@ layout  : wiki
 title   : touch
 summary : change file access and modification times
 date    : 2019-01-13 18:10:46 +0900
-updated : 2024-04-01 23:29:04 +0900
+updated : 2024-05-12 17:25:49 +0900
 tag     : bash command
 resource: F0/546F35-303B-466A-83CF-9FB012A9EE68
 toc     : true
@@ -22,6 +22,7 @@ latex   : false
 
 ```sh
 touch test
+```
 
 ### test 파일이 존재하는 경우에만 touch 명령어 실행
 
