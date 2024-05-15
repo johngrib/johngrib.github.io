@@ -3,7 +3,7 @@ layout  : wiki
 title   : fan in, fan out
 summary : 
 date    : 2022-05-10 22:45:43 +0900
-updated : 2024-04-20 18:16:13 +0900
+updated : 2024-05-15 12:12:32 +0900
 tag     : 논리회로
 resource: 4D/5A7D76-8E7B-4676-A289-F5A5DC407354
 toc     : true
@@ -72,7 +72,7 @@ When doing so, it is important to understand that, in AMQP 0-9-1, messages are l
 >
 A direct exchange can be represented graphically as follows:
 >
-![exchange-direct]( ./exchange-direct.png )
+![exchange-direct]( /resource/4D/5A7D76-8E7B-4676-A289-F5A5DC407354/exchange-direct.png )
 
 **Direct exchange(직접 교환기)**
 
@@ -102,7 +102,7 @@ Because a fanout exchange delivers a copy of a message to every queue bound to i
 >
 A fanout exchange can be represented graphically as follows:
 >
-![fan out]( ./exchange-fanout.png )
+![fan out]( /resource/4D/5A7D76-8E7B-4676-A289-F5A5DC407354/exchange-fanout.png )
 
 팬아웃 교환기는 바인딩된 모든 큐에 메시지를 라우팅합니다. 라우팅 키는 무시합니다.
 만약 N개의 큐가 팬아웃 교환기에 바인딩되었을 때, 새로운 메시지가 교환기에 발행되었다면 해당 메시지의 복사본이 N개의 큐 모두에게 전달됩니다.
@@ -199,7 +199,7 @@ Sends on a closed channel panic, so it’s important to ensure all sends are don
 >
 2\. 각 수신 사용자용 트윗 우편함처럼 개별 사용자의 홈 타임라인 캐시를 유지한다.(그림 1-3 참고). 사용자가 트윗을 작성하면 해당 사용자를 팔로우하는 사람을 모두 찾고 팔로워 각자의 홈 타임라인 캐시에 새로운 트윗을 삽입한다. 그러면 홈 타임라인의 읽기 요청은 요청 결과를 미리 계산했기 때문에 비용이 저렴하다.
 >
-![tweeter]( ./tweeter.jpg )
+![twitter]( /resource/4D/5A7D76-8E7B-4676-A289-F5A5DC407354/twitter.jpg )
 >
 트위터의 첫 번째 버전은 접근 방식 1을 사용했는데, 시스템이 홈 타임라인 질의의 부하를 유지하기 위해 고군분투해야 했고, 그 결과 접근 방식 2로 전환했다.
 게시된 트윗의 평균 속도가 홈 타임라인 읽기 속도보다 100배 정도 낮기 때문에 접근 방식 2가 더 잘 동작한다.
