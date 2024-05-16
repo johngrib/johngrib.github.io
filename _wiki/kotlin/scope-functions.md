@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kotlin Scope Functions
 summary : 
 date    : 2024-05-15 22:41:47 +0900
-updated : 2024-05-15 23:45:46 +0900
+updated : 2024-05-16 23:04:26 +0900
 tag     : 
 resource: 90/041F07-C88C-43EA-99A3-4F25B477E67F
 toc     : true
@@ -139,6 +139,44 @@ person.apply {
 
 println(person) // Person(name=Bob, age=30)
 ```
+
+### 사례: JPA 엔티티 업데이트
+
+`apply`는 JPA 엔티티를 복잡하게 업데이트하는 경우에도 `if`문을 제거할 수 있어 유용하다.
+
+```kotlin
+@Transactional
+fun updateEntity(req: UpdateEntityRequest): Long {
+    val entity = entityRepository.findById(req.id)
+        ?: throw IllegalArgumentException("${req.id}에 해당하는 엔티티를 찾을 수 없습니다.")
+
+    entity.apply {
+        name = req.name ?: name // req.name이 null이 아니면 req.name으로 업데이트
+        age = req.age ?: age    // req.age가 null이 아니면 req.age로 업데이트
+    }
+    return entity.id
+}
+```
+
+만약 `apply`를 사용할 수 없었다면 다음과 같이 작업했을 것이다.
+
+```kotlin
+@Transactional
+fun updateEntity(req: UpdateEntityRequest): Long {
+    val entity = entityRepository.findById(req.id)
+        ?: throw IllegalArgumentException("${req.id}에 해당하는 엔티티를 찾을 수 없습니다.")
+
+    // apply 를 사용하지 않고 if문을 사용
+    if (req.name != null) {
+        entity.name = req.name // req.name이 null이 아니면 업데이트
+    }
+    if (req.age != null) {
+        entity.age = req.age // req.age가 null이 아니면 업데이트
+    }
+    return entity.id
+}
+```
+
 
 ## also
 
