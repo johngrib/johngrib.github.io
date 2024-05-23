@@ -3,7 +3,7 @@ layout  : wiki
 title   : 격리 수준 (isolation level)
 summary : 
 date    : 2022-12-15 23:23:05 +0900
-updated : 2022-12-17 13:20:37 +0900
+updated : 2024-05-23 23:33:38 +0900
 tag     : sql-92 db
 toc     : true
 public  : true
@@ -38,6 +38,22 @@ The isolation level specifies the kind of phenomena that can occur during the ex
 The four isolation levels guarantee that each SQL-transaction will be executed completely or not at all, and that no updates will be lost. The isolation levels are different with respect to phenomena P1, P2, and P3. Table 9, "SQL-transaction isolation levels and the three phenomena" specifies the phenomena that are possible and not possible for a given isolation level.
 >
 -- Database Language SQL July 1992 (SQL-92). 4.28 SQL-transactions. 68쪽.
+
+격리 수준(isolation level)은 여러 SQL 트랜잭션이 동시에 실행될 때 발생할 수 있는 현상의 종류를 명시한다.
+
+- P1 ("Dirty read", 더티 읽기)
+    1. 트랜잭션 T1이 row를 하나 수정한다.
+    2. 트랜잭션 T2는 해당 row를 T1이 COMMIT하기 전에 읽는다.
+    3. 만약 이런 상황에서 T1이 ROLLBACK을 하면, T2는 COMMIT되지 않은 row를 읽은 셈이 된다. 즉 존재하지 않은 데이터를 읽은 것이 된다.
+- P2 ("Non-repeatable read", 반복 불가능한 읽기)
+    1. 트랜잭션 T1이 row를 읽는다.
+    2. 트랜잭션 T2는 해당 row를 수정하거나 삭제하고 COMMIT한다.
+    3. T1이 다시 해당 row를 읽으려고 하면, 수정된 값을 획득하거나 삭제됐다는 사실을 알게 된다.
+- P3 ("Phantom", 팬텀 읽기)
+    1. 트랜잭션 T1이 어떤 검색 조건을 만족하는 row들의 집합 N을 읽는다.
+    2. 트랜잭션 T2는 T1이 검색한 조건을 만족하는 row들을 생성하는 SQL 문을 실행한다.
+    3. T1이 동일한 검색 조건으로 다시 읽기를 반복하면, 다른 row 집합을 얻게 된다.
+
 
 ## 인용: 데이터베이스 시스템
 
