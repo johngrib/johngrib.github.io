@@ -3,7 +3,7 @@ layout  : wiki
 title   : B-Tree
 summary : 보편적인 색인 구조
 date    : 2019-10-11 11:02:35 +0900
-updated : 2023-03-28 22:37:32 +0900
+updated : 2024-05-23 23:15:06 +0900
 tag     : db
 resource: F9/75C315-BA79-4CA6-AEF2-821DCBF2255F
 toc     : true
@@ -212,6 +212,12 @@ $$ ln 2 $$는 약 0.6931 이므로, $$M = 100$$인 경우를 생각해 보면 �
 
 ## B+ Tree {#b-plus-tree}
 
+다음은 "데이터베이스 인터널스"에서 인용한 것이다.
+
+>
+B<sup>+</sup>-트리는 리프 노드에 값을 저장하기 때문에 모든 작업(삽입, 업데이트, 삭제, 검색)은 리프 노드에만 영향을 미치며 상위 레벨의 노드는 노드 분할 혹은 병합이 일어날 때에만 영향을 받는다.
+[^db-internals-70]
+
 다음은 "트랜잭션 처리의 원리"에서 인용한 것이다.
 
 >
@@ -297,6 +303,7 @@ $$ { \text{페이지 크기} \over \text{키 크기} } = { 8 \times 1024 \over 8
     * 관계형 데이터베이스 실전 입문 / 오쿠노 미키야 저 / 성창규 역 / 위키북스 / 초판 2016년 07월 20일 / 원서 : 理論から學ぶデ-タベ-ス實踐入門 リレ-ショナルモデルによる效率的なSQL/奧野幹也
     * 데이터 중심 애플리케이션 설계 / 마틴 클레프만 저/정재부, 김영준, 이도경 역 / 위키북스 / 초판발행 2018년 04월 12일
     * The Art of Computer Programming 3 정렬과 검색(개정2판) [양장] / 도널드 커누스 저 / 한빛미디어 / 초판 2쇄 2013년 02월 10일
+    * 데이터베이스 인터널스 / 알렉스 페트로프 저/이우현 역/이태휘 감수 / 에이콘출판사 / 발행: 2021년 01월 29일 / 원제: Database Internals: A Deep Dive into How Distributed Data Systems Work
 
 ## 주석
 
@@ -314,6 +321,7 @@ $$ { \text{페이지 크기} \over \text{키 크기} } = { 8 \times 1024 \over 8
 [^kleppmann-insertion]: 데이터 중심 애플리케이션 설계. 03장. 84쪽.
 [^taocp-origin]: TAOCP 6.2.4. 552쪽.
 [^original-graph]: [ORGANIZATION AND MAINTENANCE OF LARGE ORDERED INDICES by R. Bayer and E. McCreight 1970][original-pdf]. 115쪽(PDF 파일 9쪽).
+[^db-internals-70]: 데이터베이스 인터널스. 2장. 70쪽.
 
 [original-pdf]: https://infolab.usc.edu/csci585/Spring2010/den_ar/indexing.pdf
 
