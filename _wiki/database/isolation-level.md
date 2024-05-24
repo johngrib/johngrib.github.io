@@ -3,7 +3,7 @@ layout  : wiki
 title   : 격리 수준 (isolation level)
 summary : 
 date    : 2022-12-15 23:23:05 +0900
-updated : 2024-05-24 00:04:05 +0900
+updated : 2024-05-24 21:54:49 +0900
 tag     : sql-92 db
 toc     : true
 public  : true
@@ -28,41 +28,41 @@ resource: ED/C7080C-15D6-4CEB-8A4B-DCB285381536
 <div id="table1"></div>
 - th
     - 
-    - 더티 읽기<br/>(dirty read)
-    - 반복 불가능 읽기<br/>(non-repeatable read)
-    - 팬텀 읽기<br/>(phantom read)
+    - 더티 읽기
+    - 반복 불가능 읽기
+    - 팬텀 읽기
 - td
-    - 커밋 이전 읽기 (read uncommitted) 
+    - 커밋 이전 읽기
     - 허용
     - 허용
     - 허용
 - td
-    - 커밋 이후 읽기 (read committed)
+    - 커밋 이후 읽기
     - -
     - 허용
     - 허용
 - td
-    - 반복 가능 읽기 (repeatable read)
+    - 반복 가능 읽기
     - -
     - -
     - 허용
 - td
-    - 직렬화 가능 (serializable)
+    - 직렬화 가능
     - -
     - -
     - -
 {:class="table-generate" data-target-id="table1"}
 
 - 3가지 이상 현상이 있다.
-    - dirty read: 아직 커밋되지 않은 다른 트랜잭션의 작업을 읽을 수 있다.
-    - non-repeatable read: 같은 트랜잭션 내에서 하나의 row를 두 번 쿼리했을 때 다른 데이터가 나올 수 있다.
-    - phantom read: 같은 쿼리로 여러 row를 두 번 쿼리했을 때, 결과 집합이 다를 수 있다.
+    - 더티 읽기(dirty read): 아직 커밋되지 않은 다른 트랜잭션의 작업을 읽을 수 있다.
+    - 반복 불가능 읽기(non-repeatable read): 같은 트랜잭션 내에서 하나의 row를 두 번 쿼리했을 때 다른 데이터가 나올 수 있다.
+    - 팬턴 읽기(phantom read): 같은 쿼리로 여러 row를 두 번 쿼리했을 때, 결과 집합이 다를 수 있다.
 - 가장 낮은 격리 수준은 'read uncommitted', 가장 높은 격리 수준은 'serializable'이다.
     - 격리 수준이 높을수록 발생 가능한 이상 현상의 종류가 줄어든다.
-    - read uncommitted: 아직 커밋되지 않은 다른 트랜잭션의 작업을 읽을 수 있다.
-    - read committed: 트랜잭션이 커밋된 데이터만 읽을 수 있다.
-    - repeatable read: 같은 트랜잭션 내에서 하나의 row를 두 번 쿼리했을 때 항상 같은 데이터를 반환한다.
-    - serializable: 트랜잭션들이 순차적으로 (실행되는 것처럼) 작동한다.
+    - 커밋 이전 읽기(read uncommitted): 아직 커밋되지 않은 다른 트랜잭션의 작업을 읽을 수 있다.
+    - 커밋 이후 읽기(read committed): 트랜잭션이 커밋된 데이터만 읽을 수 있다.
+    - 반복 가능 읽기(repeatable read): 같은 트랜잭션 내에서 하나의 row를 두 번 쿼리했을 때 항상 같은 데이터를 반환한다.
+    - 직렬화 가능(serializable): 트랜잭션들이 순차적으로 (실행되는 것처럼) 작동한다.
 
 ## 인용: SQL-92
 
@@ -150,5 +150,5 @@ SQL 표준에 명시된 **고립성 수준**(isolation level)은 다음과 같�
 ## 주석
 
 [^johngrib-28527]: JohnGrib: Read uncommitted
-[^db-internals-140]: '데이터베이스 인터널스' 5장 140쪽의 표를 참고해 영문 표기를 추가한 것이다.
+[^db-internals-140]: 데이터베이스 인터널스 5장 140쪽의 표.
 
