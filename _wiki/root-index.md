@@ -322,10 +322,10 @@ regenerate: true
 * [[/go/vim-setting]]
 
 * [[/go/blog]]
-    * [[/golang-debugging-what-you-deploy]]
-    * [[/golang-mod]]
-    * [[/golang-subtests]]
-    * [[/golang-the-laws-of-reflection]]
+    * [[/go/blog/debugging-what-you-deploy]]
+    * [[/go/blog/mod]]
+    * [[/go/blog/subtests]]
+    * [[/go/blog/the-laws-of-reflection]]
 
 * [[/commit-go-mod-go-sum]]
 * [[/golang-cheatsheet]]

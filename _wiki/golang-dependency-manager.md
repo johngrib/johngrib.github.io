@@ -19,7 +19,7 @@ latex   : false
 > Go의 공식 디펜던시 관리자인 Go Modules 기능이 Go 1.11 (2018-08-24)부터 추가되면서 다른 디펜던시 매니저를 쓸 이유가 희박해졌다.  
 **즉, 이 문서는 굳이 볼 필요 없습니다.**
 
-* Go의 공식 디펜던시 매니징 기능인 Go Modules 사용법을 찾는다면 [[golang-mod]]{(번역) Go Modules 사용하기}를 읽을 것.
+* Go의 공식 디펜던시 매니징 기능인 Go Modules 사용법을 찾는다면 [[/go/blog/mod]]{(번역) Go Modules 사용하기}를 읽을 것.
 * 이 문서는 필요에 따라 Go Modules 외의 다른 디펜던시 관리자를 찾아 조사한 것이다.
 
 ## Github status comparison

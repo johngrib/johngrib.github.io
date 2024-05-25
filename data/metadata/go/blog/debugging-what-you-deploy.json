@@ -3,7 +3,7 @@
  "title": "(번역) Go 1.12에서 배포한 것을 디버깅하기",
  "summary": "Debugging what you deploy in Go 1.12",
  "parent": "go/blog",
- "url": "/wiki/golang-debugging-what-you-deploy",
+ "url": "/wiki/go/blog/debugging-what-you-deploy",
  "updated": "2020-01-25 21:00:23 +0900",
  "resource": "88/755B32-6BFE-4315-93C9-5A3534C8F4A6",
  "children": []
