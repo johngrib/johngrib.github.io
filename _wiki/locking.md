@@ -3,7 +3,7 @@ layout  : wiki
 title   : 잠금(Locking)
 summary :
 date    : 2019-10-10 11:48:51 +0900
-updated : 2024-05-26 00:00:57 +0900
+updated : 2024-05-26 00:07:16 +0900
 tag     : transaction db
 resource: B7/548648-23AC-418D-8996-576FE1BF4995
 toc     : true
@@ -35,6 +35,8 @@ latex   : true
 * 동시에 실행 중인 트랜잭션이 많을수록 지연이 발생할 확률이 높다.
 
 ## 2단계 잠금 (two-phase locking) {#two-phase-locking}
+
+2단계 잠금을 줄여서 2PL 이라고 부르기도 한다.
 
 >
 모든 경우에 직렬 실행을 보장하는 잠금 규칙을 2단계 잠금(two-phase locking)이라고 한다. 이것은 트랜잭션이 잠금을 해제하기 전에 목적을 완료해야 한다는 것이다. 트랜잭션은 이 규칙을 따를 때 2단계 잠금, 즉 트랜잭션이 잠금을 얻는 단계와 트랜잭션이 잠금을 해제하는 단계를 거친다.  
@@ -148,6 +150,13 @@ Unlock(transaction-id)
     * 단점일 수도 있고 단점이 아닐 수도 있다.
 * 일찍 발생한 데드락을 타임아웃 시간이 되기 전까지는 발견하지 못하는 문제가 있다.
 
+>
+교착 상태를 해결하는 가장 간단한 방법은 타임아웃을 설정해 오랫동안 끝나지 않는 트랜잭션은 교착 상태가 발생한 것으로 간주하고 중단하는 것이다.
+보수적 2PL의 경우 시작 전에 모든 잠금을 획득하지 못한 트랜잭션은 중단된다.
+하지만 이와 같은 방식은 시스템의 동시성을 크게 저하시키기 때문에 대부분의 데이터베이스는 트랜잭션 매니저를 통해 교착 상태를 감지 및 방지(예방)한다.
+>
+교착 상태는 일반적으로 동시 수행 중인 트랜잭션 간의 대기 상태를 그래프로 표현하는 대기 그래프<sup>wait-for-graph</sup>를 사용해 감지한다.
+[^db-internals-144]
 
 #### 그래프 기반 탐지
 
@@ -334,9 +343,10 @@ Tx2 => (A 상품 차감, B 상품 차감)
 ## 참고문헌
 
 - UNIX 고급 프로그래밍 [제3판] / 리처드 스티븐스, 스티븐 레이고 공저 / 류광 역 / 퍼스트북 / 인쇄일: 2014년 08월 28일 / 원제: Advanced Programming in the UNIX Environment
+- 데이터베이스 인터널스 / 알렉스 페트로프 저/이우현 역/이태휘 감수 / 에이콘출판사 / 2021년 01월 29일 / 원제: Database Internals: A Deep Dive into How Distributed Data Systems Work
 - 운영체제 아주 쉬운 세 가지 이야기 [제2판] / Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-dusseau 공저 / 원유집, 박민규, 이성진 공역 / 홍릉 / 제2판 발행: 2020년 09월 10일 / 원제: Operating Systems: Three Easy Pieces
 - 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
-- 한 권으로 읽는 컴퓨터 구조와 프로그래밍 / 조너선 스타인하트 저/오현석 역 / 책만 / 2021년 04월 08일 초판 1쇄 / 원서 : The Secret Life of Programs: Understand Computers -- Craft Better Code
+- 한 권으로 읽는 컴퓨터 구조와 프로그래밍 / 조너선 스타인하트 저/오현석 역 / 책만 / 2021년 04월 08일 초판 1쇄 / 원제: The Secret Life of Programs: Understand Computers -- Craft Better Code
 
 ## 주석
 
@@ -345,4 +355,5 @@ Tx2 => (A 상품 차감, B 상품 차감)
 [^bernstein-deadlock]: 트랜잭션 처리의 원리. 6.3 데드락. 197쪽.
 [^bernstein-victim]: 트랜잭션 처리의 원리. 6.3 데드락. 200쪽.
 [^bernstein-6-3]: 트랜잭션 처리의 원리. 6.3장.
+[^db-internals-144]: 데이터베이스 인터널스. 5장. 144쪽.
 
