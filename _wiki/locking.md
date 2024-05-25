@@ -3,7 +3,7 @@ layout  : wiki
 title   : 잠금(Locking)
 summary :
 date    : 2019-10-10 11:48:51 +0900
-updated : 2024-05-25 23:58:39 +0900
+updated : 2024-05-26 00:00:57 +0900
 tag     : transaction db
 resource: B7/548648-23AC-418D-8996-576FE1BF4995
 toc     : true
@@ -34,7 +34,7 @@ latex   : true
 * 잠금은 트랜잭션과 트랜잭션 사이의 간섭을 방지한다.
 * 동시에 실행 중인 트랜잭션이 많을수록 지연이 발생할 확률이 높다.
 
-## 2단계 잠금 (two-phase locking)
+## 2단계 잠금 (two-phase locking) {#two-phase-locking}
 
 >
 모든 경우에 직렬 실행을 보장하는 잠금 규칙을 2단계 잠금(two-phase locking)이라고 한다. 이것은 트랜잭션이 잠금을 해제하기 전에 목적을 완료해야 한다는 것이다. 트랜잭션은 이 규칙을 따를 때 2단계 잠금, 즉 트랜잭션이 잠금을 얻는 단계와 트랜잭션이 잠금을 해제하는 단계를 거친다.  
@@ -43,7 +43,9 @@ latex   : true
 2단계 잠금은 이름대로 두 단계로 이루어진다.
 
 1. Expanding phase: 트랜잭션이 잠금을 얻는 단계
+    - 확장 단계. growing phase라고도 한다.
 2. Shrinking phase: 트랜잭션이 잠금을 해제하는 단계
+    - 축소 단계.
 
 2단계 잠금 이론은 다음을 가정한다.
 
