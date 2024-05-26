@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-05-25 16:40:49 +0900
+updated : 2024-05-26 23:35:14 +0900
 regenerate: true
 ---
 * TOC
@@ -679,6 +679,8 @@ regenerate: true
     * [[/cmd/bash/key]]
     * [[/cmd/bash/parameters]]
     * [[/cmd/bash/term-colors]]
+* [[/cmd/fish-shell]]
+* [[/cmd/zsh]]
 
 * [[/cmd/gnu-coreutils]]
 * [[/cmd/pipe]]
@@ -775,11 +777,9 @@ regenerate: true
 * [[/cmd/xxd]]
 * [[/cmd/yes]]
 * [[/cmd/zip]]
-* [[/cmd/zsh]]
 
 * [[/ctags]]
 * [[/df]]
-* [[/fish-shell]]
 * [[/how-to-escape-cli]]
 * [[/cmd/make]]
 * [[/my-bash-cheatsheet]]

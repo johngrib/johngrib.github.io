@@ -1,5 +1,5 @@
 [
+ "cmd/fish-shell",
  "cmd/tmux/c-dash",
- "fish-shell",
  "my-mac-os-terminal"
 ]
