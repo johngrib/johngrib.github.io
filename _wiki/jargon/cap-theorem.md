@@ -3,7 +3,7 @@ layout  : wiki
 title   : CAP 정리
 summary :
 date    : 2019-10-27 22:43:59 +0900
-updated : 2023-05-01 16:00:50 +0900
+updated : 2024-05-26 23:55:52 +0900
 tag     : 
 resource: C9/5A81A4-E2D5-4861-B1BB-7BCF0A4CBA5B
 toc     : true
@@ -162,11 +162,24 @@ CAP 정리는 그림 6-1에서와 같이 이들 가운데 어떤 두 가지를 �
 >
 -- 가상 면접 사례로 배우는 대규모 시스템 설계 기초. 6장. 100쪽.
 
+## 주의
+
+### CAP 정리의 일관성과 ACID의 일관성은 의미가 다르다
+
+>
+CAP 이론의 일관성과 [[/database/acid]]{ACID}의 일관성은 의미가 상당히 다르다.
+[[/database/acid]]{ACID}의 일관성은 트랜잭션의 일관성을 의미한다.
+트랜잭션은 데이터베이스의 제약 조건(고유성 제약 조건, 참조 무결성 등)을 위반하지 않고 상태를 유효한 상태에서 또 다른 유효한 상태로 변경한다.
+그에 반해 CAP 이론의 일관성은 연산의 원자성(작업 전체가 성공하거나 실패한다)과 일관성(어떤 작업도 데이터를 일관되지 않은 상태로 방치하지 않는다)을 의미한다.
+>
+-- 데이터베이스 인터널스. 11장. 277쪽.
+
 ## 참고문헌
 
 - 도서
     - 가상 면접 사례로 배우는 대규모 시스템 설계 기초 / 알렉스 쉬 저/이병준 역 / 인사이트(insight) / 2021년 07월 28일 / 원서 : System Design Interview
     - 데이터 중심 애플리케이션 설계 / 마틴 클레프만 저/정재부, 김영준, 이도경 역 / 위키북스 / 초판발행 2018년 04월 12일
+    - 데이터베이스 인터널스 / 알렉스 페트로프 저/이우현 역/이태휘 감수 / 에이콘출판사 / 2021년 01월 29일 / 원제: Database Internals: A Deep Dive into How Distributed Data Systems Work
     - 사이트 신뢰성 엔지니어링 / 벳시 베이어, 크리스 존스, 제니퍼 펫오프, 니얼 리처드 머피 저/장현희 역 / 제이펍 / 초판 1쇄 2018년 01월 18일 / 원서 : Site Reliability Engineering: How Google Runs Production Systems
     - 트랜잭션 처리의 원리 / 필립 A. 번스타인, 에릭 뉴코머 공저 / 한창래 역 / KICC(한국정보통신) / 1판 1쇄 2011년 12월 19일
 - 웹 문서
@@ -176,6 +189,8 @@ CAP 정리는 그림 6-1에서와 같이 이들 가운데 어떤 두 가지를 �
 
 - [[/availability]]
 - [[/clipping/eric-brewer/cap-twelve-years-later]]
+- [[/database/acid]]
+- [Please stop calling databases CP or AP (martin.kleppmann.com)](https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html ) - DDIA의 저자 Martin Kleppmann의 글.
 
 ## 주석
 
