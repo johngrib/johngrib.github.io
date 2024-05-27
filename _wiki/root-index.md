@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-05-26 23:35:14 +0900
+updated : 2024-05-27 22:43:59 +0900
 regenerate: true
 ---
 * TOC
@@ -118,6 +118,7 @@ regenerate: true
 * [[/clipping/roy-fielding/rest-paper]]
 * [[/clipping/the-unix-time-sharing-system]]
 * [[/clipping/whitehouse/future-software-should-be-memory-safe]]
+* [[/clipping/ethereum-white-paper]]
 
 * [[/Software-Engineering-Code-of-Ethics]]
 * [[/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
@@ -900,7 +901,6 @@ regenerate: true
 * [[/availability]]
 * [[/bandwidth]]
 * [[/enterprise-application]]
-* [[/ethereum-white-paper]]
 * [[/floating-point]]
 * [[/groupId-artifactId]]
 * [[/indent-style]]
