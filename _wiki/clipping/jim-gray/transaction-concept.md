@@ -3,12 +3,12 @@ layout  : wiki
 title   : (요약) The Transaction Concept - Virtues and Limitations by Jim Gray, June 1981
 summary : 짐 그레이의 트랜잭션 컨셉 요약
 date    : 2021-04-25 14:44:36 +0900
-updated : 2021-06-01 23:26:14 +0900
+updated : 2024-05-27 23:23:37 +0900
 tag     : jim-gray transaction 번역
 resource: A7/B7947C-DF61-46E6-8DAC-0FF37C109A26
 toc     : true
 public  : true
-parent  : [[summary]]
+parent  : [[/clipping]]
 latex   : true
 ---
 * TOC

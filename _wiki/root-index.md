@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-05-27 22:43:59 +0900
+updated : 2024-05-27 23:22:40 +0900
 regenerate: true
 ---
 * TOC
@@ -105,8 +105,10 @@ regenerate: true
 * [[/clipping/butler-w-lampson/hints-for-computer-system-design]]
 * [[/clipping/donn-seely/how-not-to-write-fortran-in-any-language]]
 * [[/clipping/eric-brewer/cap-twelve-years-later]]
+* [[/clipping/ethereum-white-paper]]
 * [[/clipping/james-hamilton/on-designing-and-deploying-internet-scale-services]]
 * [[/clipping/jay-kreps/the-log-what-every-software-engineer-should-know]]
+* [[/clipping/jim-gray/transaction-concept]]
 * [[/clipping/kafka-a-distributed-messaging-system-for-log-processing]]
 * [[/clipping/leslie-lamport/paxos-made-simple]]
 * [[/clipping/mapreduce]]
@@ -118,7 +120,6 @@ regenerate: true
 * [[/clipping/roy-fielding/rest-paper]]
 * [[/clipping/the-unix-time-sharing-system]]
 * [[/clipping/whitehouse/future-software-should-be-memory-safe]]
-* [[/clipping/ethereum-white-paper]]
 
 * [[/Software-Engineering-Code-of-Ethics]]
 * [[/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
@@ -1001,7 +1002,6 @@ regenerate: true
 * [[/summary-ldh-get-partnership]]
 * [[/summary-the-mind-behind-linux]]
 * [[/summary-The-Pauseless-GC-Algorithm]]
-* [[/summary-the-transaction-concept]]
 
 ## [[/software-engineering]]
 

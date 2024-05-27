@@ -315,7 +315,7 @@ ACID는 유감스럽게도 거의 마케팅 용어가 돼버렸다.
 
 ## 함께 읽기
 
-- [[/summary-the-transaction-concept]]
+- [[/clipping/jim-gray/transaction-concept]]
 
 ## 참고문헌
 
