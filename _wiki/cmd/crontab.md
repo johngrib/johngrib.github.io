@@ -3,7 +3,7 @@ layout  : wiki
 title   : crontab
 summary : maintain crontab files for individual users
 date    : 2023-11-06 22:54:23 +0900
-updated : 2023-11-06 23:04:47 +0900
+updated : 2024-05-28 23:05:02 +0900
 tag     : 
 resource: 80/D05BAB-5081-48B9-87D4-BA339B73E70C
 toc     : true
@@ -63,4 +63,14 @@ crontab -l
 ## 추천하는 사이트
 
 - [crontab.guru]( https://crontab.guru/ )
+
+## 문제 해결
+
+### .bash_profile 실행이 필요한 경우
+
+`.bash_profile`, `PATH` 등을 사용 환경과 일치시키려면 다음 방법을 사용할 수 있다.
+
+```
+* * * * * bash -c 'source ~/.bash_profile && ~/script.sh'
+```
 
