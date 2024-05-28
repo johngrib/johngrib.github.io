@@ -10,13 +10,13 @@
   "database/acid",
   "database/cardinality",
   "database/isolation-level",
+  "database/mariadb-connector-j",
   "database/mysql",
   "database/processlist",
   "database/redis",
   "database/sharding",
   "database/sqlite",
   "database/tips",
-  "db-index",
-  "mariadb-connector-j"
+  "db-index"
  ]
 }

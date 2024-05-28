@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-05-27 23:22:40 +0900
+updated : 2024-05-28 22:43:27 +0900
 regenerate: true
 ---
 * TOC
@@ -963,6 +963,7 @@ regenerate: true
 * [[/database/acid]]
 * [[/database/cardinality]]
 * [[/database/isolation-level]]
+* [[/database/mariadb-connector-j]]
 * [[/database/processlist]]
 * [[/database/sharding]]
 * [[/database/sqlite]]
@@ -972,7 +973,6 @@ regenerate: true
 * [[/database/redis]]
 
 * [[/db-index]]
-* [[/mariadb-connector-j]]
 
 ## [[/kafka]]
 
