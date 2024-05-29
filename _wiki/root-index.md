@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-05-28 22:43:27 +0900
+updated : 2024-05-29 23:42:24 +0900
 regenerate: true
 ---
 * TOC
@@ -157,6 +157,7 @@ regenerate: true
 * [[/people/bill-joy]]
 * [[/people/brian-w-kernighan]]
 * [[/people/butler-w-lampson]]
+* [[/people/claude-elwood-shannon]]
 * [[/people/donald-ervin-knuth]]
 * [[/people/fred-brooks]]
 * [[/people/gerald-weinberg]]
@@ -169,7 +170,6 @@ regenerate: true
 * [[/people/ronald-wayne]]
 
 * [[/John-von-Neumann]]
-* [[/claude-elwood-shannon]]
 
 ## [[/how-to]]
 
