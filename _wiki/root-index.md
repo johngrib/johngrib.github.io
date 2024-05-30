@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-05-30 21:49:32 +0900
+updated : 2024-05-30 21:50:55 +0900
 regenerate: true
 ---
 * TOC
@@ -50,14 +50,15 @@ regenerate: true
 -  2018-02-26 - [[/article/sql-char-comparison]]
 
 - [[/article/coupon-service-and-code-data]]
+- [[/article/excel-snake-game]]
 - [[/article/extend-vim-gx]]
 - [[/article/hierarchical-controller-package-structure]]
 - [[/article/incremental-way]]
+- [[/article/iphone-game-with-no-cable]]
 - [[/article/science-and-delete]]
+- [[/article/ssh-macmini-macbook]]
 - [[/article/test-code-and-falsifiability]]
 - [[/article/vimwiki-lsp]]
-- [[/article/iphone-game-with-no-cable]]
-- [[/article/ssh-macmini-macbook]]
 
 - [[/article/vim-night/20220409-session]]
 - [[/article/vim-night/20220408-ctags]]
@@ -795,7 +796,6 @@ regenerate: true
 
 * [[/excel-hot-keys]]
 * [[/excel-remove-circular-reference]]
-* [[/excel-snake-game]]
 * [[/excel-sumifs]]
 * [[/excel-transpos]]
 * [[/excel-vba-setting]]

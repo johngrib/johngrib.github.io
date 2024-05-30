@@ -8,6 +8,7 @@
  "resource": "15/F5576D-A085-418B-B7C1-B1B4A945323A",
  "children": [
   "article/coupon-service-and-code-data",
+  "article/excel-snake-game",
   "article/extend-vim-gx",
   "article/hierarchical-controller-package-structure",
   "article/incremental-way",

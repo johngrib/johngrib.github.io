@@ -3,12 +3,12 @@ layout  : wiki
 title   : 엑셀로 만든 snake 게임
 summary : 언젠간 DOOM을 엑셀에서 돌리고 싶다
 date    : 2020-02-23 21:57:16 +0900
-updated : 2020-02-23 23:28:57 +0900
-tag     : game
+updated : 2024-05-30 21:51:50 +0900
+tag     : game excel
 resource: D4/9EFC9B-CDD3-4B80-BFAD-619C6072AD05
 toc     : true
 public  : true
-parent  : [[Excel]]
+parent  : [[/article]]
 latex   : false
 ---
 * TOC
