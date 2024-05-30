@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-05-29 23:42:24 +0900
+updated : 2024-05-30 21:49:32 +0900
 regenerate: true
 ---
 * TOC
@@ -206,6 +206,7 @@ regenerate: true
 - [[/book/secret-of-consulting]]
 - [[/book/team-topologies]]
 - [[/book/the-jargon-file]]
+- [[/book/grow-together]]
 
 - [[/17-EQUATIONS-THAT-CHANGED-THE-WORLD]]
 - [[/Algorithms-to-Live-By]]
@@ -224,7 +225,6 @@ regenerate: true
 - [[/TETRIS-EFFECT]]
 - [[/Take-the-Bully-by-the-Horns]]
 - [[/Think-Bayes]]
-- [[/grow-together]]
 
 ## [[/crypto]]
 
