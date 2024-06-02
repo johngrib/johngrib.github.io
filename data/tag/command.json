@@ -58,6 +58,7 @@
  "cmd/tree",
  "cmd/xxd",
  "cmd/yes",
+ "cmd/ykman",
  "ctags",
  "dc-cmd",
  "df",
@@ -69,6 +70,5 @@
  "php/composer",
  "phpbrew",
  "sha256sum",
- "uptime",
- "ykman"
+ "uptime"
 ]

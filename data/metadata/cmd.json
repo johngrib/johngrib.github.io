@@ -99,6 +99,7 @@
   "cmd/xargs",
   "cmd/xxd",
   "cmd/yes",
+  "cmd/ykman",
   "cmd/zip",
   "cmd/zsh",
   "ctags",
@@ -109,7 +110,6 @@
   "perl-one-liner",
   "phpbrew",
   "sha256sum",
-  "uptime",
-  "ykman"
+  "uptime"
  ]
 }

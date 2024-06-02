@@ -55,6 +55,7 @@
  "cmd/tree",
  "cmd/xxd",
  "cmd/yes",
+ "cmd/ykman",
  "ctags",
  "dc-cmd",
  "df",
@@ -64,6 +65,5 @@
  "my-bash-cheatsheet",
  "perl-one-liner",
  "sha256sum",
- "uptime",
- "ykman"
+ "uptime"
 ]

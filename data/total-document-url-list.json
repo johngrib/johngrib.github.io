@@ -291,6 +291,7 @@
  "/wiki/cmd/xargs",
  "/wiki/cmd/xxd",
  "/wiki/cmd/yes",
+ "/wiki/cmd/ykman",
  "/wiki/cmd/zip",
  "/wiki/cmd/zsh",
  "/wiki/Code-Complete-2",
@@ -935,6 +936,5 @@
  "/wiki/why-http-80-https-443",
  "/wiki/working-together",
  "/wiki/YAML",
- "/wiki/ykman",
  "/wiki/You-and-Your-Research"
 ]

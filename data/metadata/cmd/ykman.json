@@ -3,7 +3,7 @@
  "title": "ykman 명령어",
  "summary": "yubikey를 관리한다",
  "parent": "cmd",
- "url": "/wiki/ykman",
+ "url": "/wiki/cmd/ykman",
  "updated": "2019-12-15 18:22:57 +0900",
  "resource": "0F/2CE4E4-4FE3-444E-A21C-23E9016B3EAC",
  "children": []
