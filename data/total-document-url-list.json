@@ -222,6 +222,7 @@
  "/wiki/cmd/diff/unified-format",
  "/wiki/cmd/ditto",
  "/wiki/cmd/du",
+ "/wiki/cmd/duckdb",
  "/wiki/cmd/echo",
  "/wiki/cmd/etc/hosts",
  "/wiki/cmd/factor",

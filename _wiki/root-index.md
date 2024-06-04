@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-06-02 18:24:03 +0900
+updated : 2024-06-04 21:46:26 +0900
 regenerate: true
 ---
 * TOC
@@ -715,6 +715,7 @@ regenerate: true
     * [[/cmd/diff/unified-format]]
 * [[/cmd/ditto]]
 * [[/cmd/du]]
+* [[/cmd/duckdb]]
 * [[/cmd/echo]]
 * [[/cmd/factor]]
 * [[/cmd/fc]]
