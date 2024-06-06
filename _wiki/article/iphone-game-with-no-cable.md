@@ -3,7 +3,7 @@ layout  : wiki
 title   : iPhone AirPlay + Xbox Controller + Netflix Games로 Apple 디바이스 환경에서 저렴하고 괜찮은 게임기 구성 만들기
 summary : 
 date    : 2024-04-28 15:13:44 +0900
-updated : 2024-05-01 21:59:56 +0900
+updated : 2024-06-06 22:19:28 +0900
 tag     : 
 resource: E7/5E68AC-1C0A-4A79-9B22-4992760B0119
 toc     : true
@@ -241,6 +241,15 @@ Dust & Neon의 경우 지하철이나 카페 등에서 아이폰으로 플레이
 
 물론 인터넷이 좀 빨라야겠지만...
 
+## 재미있게 플레이한 게임들
+
+- Dust & Neon
+    - 듀얼 스틱을 사용하는 재미가 상당했다.
+    - 게임 엔딩을 1회 보기까지는 아주 좋았다. 그러나 미션이 반복적이어서 2회차 플레이까지는 좀.
+- Katana Zero
+    - Hotline Miami가 생각나는 대단히 재미있는 게임.
+    - 액션이 매우 스타일리쉬하고, 게임 시스템과 스토리와 액션이 잘 어우러져 있다.
+    - 몇 번이고 플레이하고 싶은 게임.
 
 ## Links
 
@@ -249,3 +258,4 @@ Dust & Neon의 경우 지하철이나 카페 등에서 아이폰으로 플레이
 - [Apple 기기에 무선 게임 컨트롤러 연결하기 (support.apple.com)](https://support.apple.com/ko-kr/111099 )
 - [Xbox Cloud Gaming](https://www.xbox.com/ko-KR/cloud-gaming )
 - [Xbox 클라우드 게임용 호환 장치 (support.xbox.com)](https://support.xbox.com/ko-KR/help/games-apps/cloud-gaming/verified-devices-for-xbox-cloud-gaming )
+
