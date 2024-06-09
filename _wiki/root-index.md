@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-06-09 17:00:52 +0900
+updated : 2024-06-09 23:17:54 +0900
 regenerate: true
 ---
 * TOC
@@ -225,7 +225,6 @@ regenerate: true
 - [[/Software-Craftsman]]
 - [[/TETRIS-EFFECT]]
 - [[/Take-the-Bully-by-the-Horns]]
-- [[/Think-Bayes]]
 
 ## [[/crypto]]
 
@@ -614,7 +613,9 @@ regenerate: true
 * [[/f-l-a-03-01]]
 * [[/f-l-a-03-02]]
 
-### [[/study-think-bayes]]
+### [[/study/think-bayes]]
+
+- [[/study/think-bayes]]
 
 * [[/Monty-Hall-problem]]
 * [[/Oliver-s-blood]]

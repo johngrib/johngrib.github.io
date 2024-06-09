@@ -8,7 +8,7 @@ tag     : bayes
 resource: 48/3AB391-818F-4F2F-AD9F-8A0E4066637E
 toc     : true
 public  : true
-parent  : [[study-think-bayes]]
+parent  : [[/study/think-bayes]]
 latex   : true
 ---
 * TOC
@@ -16,7 +16,7 @@ latex   : true
 
 ## 개요
 
-* 이 문서는 [[Think-Bayes]] 책 67~69쪽을 공부한 내용이다.
+* 이 문서는 [[/study/think-bayes]] 책 67~69쪽을 공부한 내용이다.
 * [David J. C. MacKay][mackay]의 [Information Theory, Inference, and Learning Algorithms][mackay-book]에서 소개된 것이다.
 
 >
@@ -116,7 +116,7 @@ $$
 
 ## Links
 
-* [[Think-Bayes]]
+* [[/study/think-bayes]]
 * [[Bayes-theorem]]
 * [Information Theory, Inference, and Learning Algorithms(PDF)](http://www.inference.org.uk/itprnn/book.pdf )
     * [David J. C. MacKay](https://en.wikipedia.org/wiki/David_J._C._MacKay )

@@ -77,7 +77,7 @@
  },
  {
   "name": "bayes",
-  "size": 12
+  "size": 11
  },
  {
   "name": "bell-labs",
@@ -853,7 +853,7 @@
  },
  {
   "name": "Think-Bayes",
-  "size": 7
+  "size": 6
  },
  {
   "name": "thread",

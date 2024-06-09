@@ -8,7 +8,7 @@ tag     : Think-Bayes bayes
 resource: 21/127EA6-C484-49C8-9351-A786C2952690
 toc     : true
 public  : true
-parent  : [[study-think-bayes]]
+parent  : [[/study/think-bayes]]
 latex   : true
 ---
 * TOC
@@ -155,7 +155,7 @@ $$
 ### 직접 코딩해 풀기
 
 
-다음은 [[Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
+다음은 [[/study/think-bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
 
 * [dice.js](https://github.com/johngrib/think-bayes-study/blob/master/code/dice.js )
 
@@ -226,4 +226,4 @@ $ node dice.js
 
 ## Links
 
-* [[Think-Bayes]]
+* [[/study/think-bayes]]

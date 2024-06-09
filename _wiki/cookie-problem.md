@@ -8,7 +8,7 @@ tag     : Think-Bayes bayes
 resource: 2B/9DE452-3231-4722-86E2-DA9A58DC6E32
 toc     : true
 public  : true
-parent  : [[study-think-bayes]]
+parent  : [[/study/think-bayes]]
 latex   : true
 ---
 * TOC
@@ -139,7 +139,7 @@ $ python cookie.py
 ### 직접 코딩해 풀기
 
 
-[[Think-Bayes]] 저자가 제공하는 라이브러리를 사용하는 것은 편리한 일이지만,
+[[/study/think-bayes]] 저자가 제공하는 라이브러리를 사용하는 것은 편리한 일이지만,
 파이썬2에서만 돌아가고 상속구조가 있어 한 눈에 보기 불편하다는 단점이 있다.
 
 그래서 책의 소스코드를 보고 다음과 같이 자바스크립트로 문제를 풀어 보았다.
@@ -237,6 +237,6 @@ $$
 
 ## Links
 
-* [[Think-Bayes]]
+* [[/study/think-bayes]]
     * [cookie.py](https://github.com/AllenDowney/ThinkBayes/blob/master/code/cookie.py )
 * <https://allendowney.blogspot.kr/2011/10/all-your-bayes-are-belong-to-us.html >

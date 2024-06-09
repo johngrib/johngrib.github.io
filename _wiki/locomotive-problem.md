@@ -8,7 +8,7 @@ tag     : Think-Bayes bayes
 resource: FD/26EE21-9A4D-4E11-8F65-37433C535446
 toc     : true
 public  : true
-parent  : [[study-think-bayes]]
+parent  : [[/study/think-bayes]]
 latex   : true
 ---
 * TOC
@@ -16,7 +16,7 @@ latex   : true
 
 ## 개요
 
-* 이 문서는 [[Think-Bayes]] 책 43~49쪽을 공부한 내용이다.
+* 이 문서는 [[/study/think-bayes]] 책 43~49쪽을 공부한 내용이다.
 * 프레드릭 모스텔러(Frederick Mosteller)의 "모스텔러의 확률 고급 문제 50선과 해답"을 보면 기관차 문제가 있다.
 
 >
@@ -166,7 +166,7 @@ $$
 
 #### 코드를 짜서 사후확률을 계산해 보자
 
-다음은 [[Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
+다음은 [[/study/think-bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
 
 * [train.js](https://github.com/johngrib/think-bayes-study/blob/master/code/train.js )
 
@@ -506,7 +506,7 @@ main(2000); // { '5%': '91', '95%': '243' }
 ## 함께 읽기
 
 * [[Bayes-theorem]]
-* [[Think-Bayes]]
+* [[/study/think-bayes]]
 * [[/jargon/zipf-s-law]]
 * [[Copernican-Principle]]
 

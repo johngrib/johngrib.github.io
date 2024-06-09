@@ -8,7 +8,7 @@ tag     : Think-Bayes bayes
 resource: 30/20D7CF-98CB-40B7-AFC0-BBD4385FF60D
 toc     : true
 public  : true
-parent  : [[/study-think-bayes]]
+parent  : [[/study/think-bayes]]
 latex   : true
 ---
 * TOC
@@ -114,7 +114,7 @@ $$
 
 ### 직접 코딩해 풀기
 
-다음은 [[/Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
+다음은 [[/study/think-bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
 
 * [m_and_m.js](https://github.com/johngrib/think-bayes-study/blob/master/code/m_and_m.js )
 
@@ -212,5 +212,5 @@ $$\frac{20}{27} \approx 0.740740...$$ 이므로 손으로 계산한 값과 같�
 
 ## Links
 
-* [[/Think-Bayes]]
+* [[/study/think-bayes]]
 

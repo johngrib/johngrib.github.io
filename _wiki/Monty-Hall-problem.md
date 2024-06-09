@@ -8,7 +8,7 @@ tag     : Think-Bayes bayes
 resource: F3/715430-698F-4182-B8FB-2D32CB48E326
 toc     : true
 public  : true
-parent  : [[study-think-bayes]]
+parent  : [[/study/think-bayes]]
 latex   : true
 ---
 * TOC
@@ -110,7 +110,7 @@ $$
 
 ### 직접 코딩해 풀기
 
-다음은 [[Think-Bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
+다음은 [[/study/think-bayes]]의 코드를 참고하여 자바스크립트로 풀어본 것이다.
 
 * [monty.js](https://github.com/johngrib/think-bayes-study/blob/master/code/monty.js )
 
@@ -183,7 +183,7 @@ $ node monty.js
 
 ## Links
 
-* [[Think-Bayes]]
+* [[/study/think-bayes]]
 * [Monty Hall problem(wikiepdia)](https://en.wikipedia.org/wiki/Monty_Hall_problem ) - [한국어](https://ko.wikipedia.org/wiki/%EB%AA%AC%ED%8B%B0_%ED%99%80_%EB%AC%B8%EC%A0%9C )
     * [Monty Hall(wikipedia)](https://en.wikipedia.org/wiki/Monty_Hall )
 * [몬티 홀 문제(나무위키)](https://namu.wiki/w/%EB%AA%AC%ED%8B%B0%20%ED%99%80%20%EB%AC%B8%EC%A0%9C )
