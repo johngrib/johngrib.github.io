@@ -8,6 +8,7 @@
  "resource": "89/BA2F48-41B3-410F-A771-F5F63028152F",
  "children": [
   "kafka/producer-acks",
+  "kafka/study-with-images",
   "kafka/writes-to-disk"
  ]
 }
