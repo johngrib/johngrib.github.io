@@ -3,7 +3,7 @@ layout  : wiki
 title   : 카프카 설명용 그림
 summary : 카프카 관련 설명할 일이 있을 때마다 쓰려고 그려둔 그림들
 date    : 2024-06-09 17:00:52 +0900
-updated : 2024-06-09 23:00:18 +0900
+updated : 2024-06-10 22:51:50 +0900
 tag     : 
 resource: 8E/2BC882-483A-4878-8B45-23C239057272
 toc     : true
@@ -55,7 +55,7 @@ latex   : false
 ### 컨슈머를 또 추가해보자 {#consumer3}
 
 - 컨슈머를 하나 더 추가해보자.
-    - 컨슈머 rebalance가 일어난다.
+    - [[/kafka/consumer-rebalance]]{컨슈머 rebalance}가 일어난다.
     - 즉, 컨슈머들끼리 파티션 소유권을 나누게 된다.
 
 ![]( /resource/8E/2BC882-483A-4878-8B45-23C239057272/partition3-consumer3.svg )
@@ -66,29 +66,6 @@ latex   : false
     - 이번에도 컨슈머 rebalance가 일어난다.
 
 ![]( /resource/8E/2BC882-483A-4878-8B45-23C239057272/partition3-consumer2-disabled1.svg )
-
-## 컨슈머 리밸런스 {#consumer-rebalance}
-
-> TODO: 별도 문서로 분리해야 할 듯.
-
-컨슈머 rebalance는 두 가지 전략 중 하나를 선택할 수 있다.
-
-- eager rebalance
-- cooperative reblance
-    - [3.1 버전부터 cooperative rebalance가 기본값이다](https://www.confluent.io/ko-kr/blog/apache-kafka-3-1-version-features-and-updates/#eager-rebalance-protocol ).
-
-### eager rebalance {#eager-rebalance}
-
-조급한 리밸런스(eager rebalance)는 모든 컨슈머의 작업을 중지시켜 놓고 다시 할당받는 전략이다.
-
-1. 각 컨슈머는 작업을 멈춘다.
-2. 각 컨슈머는 할당되었던 파티션에 대한 소유권을 포기한다.
-3. 각 컨슈머는 컨슈머 그룹에 다시 join 하여, 파티션을 다시 할당받는다.
-
-
-### cooperative rebalance {#cooperative-rebalance}
-
-협력적 리밸런스(cooperative rebalance)는 'stop the world' 없이 점진적으로 리밸런스를 수행하는 전략이다.
 
 
 ## 참고문헌

@@ -541,6 +541,7 @@
  "/wiki/jvm-memory",
  "/wiki/jvm-stack",
  "/wiki/kafka",
+ "/wiki/kafka/consumer-rebalance",
  "/wiki/kafka/producer-acks",
  "/wiki/kafka/study-with-images",
  "/wiki/kafka/writes-to-disk",
