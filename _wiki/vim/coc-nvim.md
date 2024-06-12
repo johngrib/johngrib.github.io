@@ -3,7 +3,7 @@ layout  : wiki
 title   : coc.nvim
 summary : vim을 vscode처럼 사용할 수 있게 도와주는 자동완성 플러그인
 date    : 2019-05-16 22:19:50 +0900
-updated : 2022-06-19 00:47:07 +0900
+updated : 2024-06-12 23:28:34 +0900
 tag     : vim
 resource: 4F/DD09BC-1FAF-411D-B5BF-23146748331C
 toc     : true
@@ -68,7 +68,7 @@ coc의 랭귀지 서버 설치는 쉽다.
 
 설정에 따라 다음 스크린샷과 같이 자동완성 추천이 여러번 중복으로 나오는 경우가 있다.
 
-![중복된 추천 목록]( ./duplicated-suggestions.jpg )
+![중복된 추천 목록]( /resource/4F/DD09BC-1FAF-411D-B5BF-23146748331C/duplicated-suggestions.jpg )
 
 (`mapcat`, `map-entry?`, `map-indexed` 등이 전부 2번씩 나오고 있다)
 
@@ -86,7 +86,7 @@ coc.nvim에도 이슈가 등록되어 있으므로 읽어보도록 하자.
 
 서비스 목록을 보니 `languageserver.clojure-lsp`와 `clojure` 이렇게 두 서비스를 확인할 수 있다.
 
-![서비스 목록이 출력된 모습]( ./coc-services-list.jpg )
+![서비스 목록이 출력된 모습]( /resource/4F/DD09BC-1FAF-411D-B5BF-23146748331C/coc-services-list.jpg )
 
 - `languageserver.clojure-lsp`: `coc-settings.json`에 정의해둔 [[/clojure/clojure-lsp]] 연동 설정.
 - `clojure`: `:CocInstall coc-clojure`로 설치한 [coc-clojure]( https://github.com/NoahTheDuke/coc-clojure ) 플러그인으로 추정.
@@ -124,7 +124,7 @@ coc.nvim에도 이슈가 등록되어 있으므로 읽어보도록 하자.
 
 이제 중복 없이 추천 목록이 나오는 것을 확인할 수 있다.
 
-![중복 없는 추천 목록]( ./normal-suggestions.jpg )
+![중복 없는 추천 목록]( /resource/4F/DD09BC-1FAF-411D-B5BF-23146748331C/normal-suggestions.jpg )
 
 
 ## 함께 읽기
