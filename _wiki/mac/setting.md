@@ -3,7 +3,7 @@ layout  : wiki
 title   : 맥북 설정하기
 summary : 새 맥북 셋팅하면서 작성하는 문서
 date    : 2020-05-06 15:39:42 +0900
-updated : 2024-06-12 23:07:58 +0900
+updated : 2024-06-12 23:19:11 +0900
 tag     : mac
 resource: 56/A48CC2-67A4-4C57-951C-7902E53A7719
 toc     : true
@@ -363,9 +363,9 @@ finder `설정` - `고급` - `모든 파일 확장자 보기`를 체크한다.
 다음 명령을 실행하고 컴퓨터를 재부팅하면 스크린 최상단 메뉴바 아이콘들의 간격이 지정한 픽셀만큼 좁혀준다.
 
 ```bash
- # 간격을 7 픽셀 줄인다
-defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 7
-defaults -currentHost write -globalDomain NSStatusItemSpacing -int 7
+ # 간격을 5 픽셀로 줄인다
+defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 5
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 5
 ```
 
 - before
