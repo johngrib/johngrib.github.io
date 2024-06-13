@@ -56,6 +56,7 @@ latex: true
 
 ## 인터뷰, 발표
 
+* 2023-12-23 [au VimEnter * call Bye2023()]( https://au-vimenter.github.io/post/2023-12-23-au-vimenter/ ) - [[/article/vimwiki-lsp]]
 * 2022-12-23 [au VimEnter * call Bye2022()]( https://au-vimenter.github.io/post/2022-12-23-au-vimenter/ ) - [Vim의 gx 확장하기]( /wiki/article/extend-vim-gx/ )
 * 2022-07-23 [Vim 교정학원 (VIMRC 2022)]( https://youtu.be/yWkVn4SSHn0 ) - [Vim 숫자 레지스터 쉬프터 만들기]( /wiki/vim/numbered-register-shift/ )
 * 2022-06-10 [송파 Clojure 밋업 1회]( https://youtu.be/BdSoNmWksuk ) - [Clojure에 빠진 사람 Vim푸라기라도 잡는다]( https://youtu.be/oQh-fJZccjo )
@@ -67,6 +68,8 @@ latex: true
 ## Job Experience
 
 - (주)카카오페이손해보험 - _2023-03-27 ~_
+    - 고객서비스개발팀
+    - Kotlin, Java 백엔드 개발자
 
 - (주)그린랩스 - _2021-12-13 ~ 2023-02-28_
     - 주문결제팀 Engineering Manager
@@ -74,7 +77,7 @@ latex: true
 
 - (주)컬리 - _2019-11-04 ~ 2021-12-10_
     - 마켓컬리의 가상재고, 전시제어, 이벤트 서비스 등 개발
-        - Java 백엔드 개발
+    - Java 백엔드 개발
 
 - (주)아티프렌즈 - _2018-08-22 ~ 2019-06-26_
     - Go 블록체인 엔진 개발
@@ -82,8 +85,8 @@ latex: true
 
 - (주)우아한형제들 - _2016-04-04 ~ 2018-08-21_
     - 푸드 커머스 "배민찬" 개발
-        - Java 백엔드 개발
-        - PHP 프론트엔드 개발
+    - Java 백엔드 개발
+    - PHP 프론트엔드 개발
 
 - (주)휘스코앤드비즈파크 - _2012-10-08 ~ 2016-03-07_
     - Java 웹 개발
@@ -149,4 +152,6 @@ vLK538OHCWH+Iec=
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
+
+{% include createLink.html %}
 
