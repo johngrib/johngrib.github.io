@@ -3,7 +3,7 @@ layout  : wiki
 title   : 카프카 설명용 그림
 summary : 카프카 관련 설명할 일이 있을 때마다 쓰려고 그려둔 그림들
 date    : 2024-06-09 17:00:52 +0900
-updated : 2024-06-10 22:51:50 +0900
+updated : 2024-06-15 18:02:43 +0900
 tag     : 
 resource: 8E/2BC882-483A-4878-8B45-23C239057272
 toc     : true
@@ -28,6 +28,21 @@ latex   : false
     - 가장 먼저 그룹에 참여한 컨슈머가 그룹 리더가 된다.
 
 ![]( /resource/8E/2BC882-483A-4878-8B45-23C239057272/partition1-consumer1.svg )
+
+#### 파티션은 어떻게 컨슈머에게 할당되는가?
+
+>
+컨슈머가 그룹에 참여하고 싶을 때는 그룹 코디네이터에게 `JoinGroup` 요청을 보낸다.
+가장 먼저 그룹에 참여한 컨슈머가 그룹 리더가 된다.
+리더는 그룹 코디네이터로부터 해당 그룹 안에 있는 모든 컨슈머의 목록(여기에는 최근 하트비트를 보냈기 때문에 살아 있는 것으로 간주되는 모든 컨슈머가 포함된다)을 받아서 각 컨슈머에게 파티션의 일부를 할당해 준다.
+어느 파티션이 어느 컨슈머에게 할당되어야 하는지를 결정하기 위해서는 `PartitionAssignor` 인터페이스의 구현체가 사용된다.
+>
+카프카에는 몇 개의 파티션 할당 정책이 기본적으로 내장되어 있다(여기에 대해서는 설정에 대해서 설명할 때 자세히 논의할 것이다).
+파티션 할당이 결정되면 컨슈머 그룹 리더는 할당 내역을 `GroupCoordinator`에게 전달하고 그룹 코디네이터는 다시 이 정보를 모든 컨슈머에게 전파한다.
+각 컨슈머 입장에서는 자기에게 할당된 내역만 보인다.
+즉, 리더만 클라이언트 프로세스 중에서 유일하게 그룹 내 컨슈머와 할당 내역 전부를 볼 수 있는 것이다. 이 과정은 리밸런스가 발생할 때마다 반복적으로 수행된다.
+>
+-- 카프카 핵심 가이드. 4.1.2장. 89쪽.
 
 ### 컨슈머 하나가 더 참여한다 {#join-one-more-consumer}
 
@@ -72,4 +87,5 @@ latex   : false
 
 - [From Eager to Smarter in Apache Kafka Consumer Rebalances (confluent.io)](https://www.confluent.io/blog/cooperative-rebalancing-in-kafka-streams-consumer-ksqldb/ )
 - [KAFKA-13439: The eager rebalance protocol is deprecated (confluent.io)](https://www.confluent.io/ko-kr/blog/apache-kafka-3-1-version-features-and-updates/#eager-rebalance-protocol )
+- 카프카 핵심 가이드 [개정증보판] / 그웬 샤피라(Gwen Shapira), 토드 팔리노(Todd Palino), 라지니 시바람(Rajini Sivaram), 크리트 페티(Krit Petty) 저 / 이동진 역 / 제이펍 / 1쇄 발행: 2023-04-14 / 원제: Kafka: The Definitive Guide, 2nd Edition
 
