@@ -245,6 +245,7 @@
  "/wiki/cmd/iostat",
  "/wiki/cmd/java",
  "/wiki/cmd/java_home",
+ "/wiki/cmd/join",
  "/wiki/cmd/jq",
  "/wiki/cmd/kill",
  "/wiki/cmd/killall",
