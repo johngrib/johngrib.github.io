@@ -3,7 +3,7 @@ layout  : wiki
 title   : pass
 summary : gpg로 작동하는 패스워드 관리 도구
 date    : 2023-03-28 23:24:21 +0900
-updated : 2024-01-06 15:20:32 +0900
+updated : 2024-06-19 22:14:13 +0900
 tag     : 
 resource: 31/3E64C6-3BC9-4D30-8679-320FAD6F5848
 toc     : true
@@ -60,6 +60,17 @@ Comment: 네이버 로그인
     - `Comment`: `네이버 로그인`
 
 추가정보는 자율형식이니 원하는대로 입력하면 된다.
+
+#### 패스워드 편집
+
+`pass edit` 명령을 사용한다.
+
+```bash
+$ pass edit login/nid.naver.com
+```
+
+실행하면 vim이 열리고, 패스워드와 추가정보 등을 수정할 수 있다.
+저장하고 종료하면 수정한 내용이 반영된다.
 
 ## 브라우저 확장
 
