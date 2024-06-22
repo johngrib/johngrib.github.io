@@ -3,7 +3,7 @@ layout  : wiki
 title   : openssl 명령어
 summary : cryptography toolkit
 date    : 2018-09-14 22:54:57 +0900
-updated : 2022-02-09 14:57:37 +0900
+updated : 2024-06-22 17:57:01 +0900
 tag     : bash encryption command
 resource: 83/0E9814-D091-458F-9586-48A0687FDCC9
 toc     : true
@@ -74,7 +74,7 @@ $ openssl prime -generate -bits 16  # 랜덤으로 16 비트 소수 생성
 [KG 이니시스 개발가이드 - INIAPI(취소포함)]( https://manual.inicis.com/iniapi/api-info.php#enc )
 
 
-![]( ./kg-iniapi-aes-enc.jpg )
+![]( /resource/83/0E9814-D091-458F-9586-48A0687FDCC9/kg-iniapi-aes-enc.jpg )
 
 주어진 PlainText `01011112222`를 `aes-cbc-128`을 사용해 암호화해보자. 암호화된 결과는 `5l8uENBFbTe50/9F3/7o0g==` 여야 한다.
 
