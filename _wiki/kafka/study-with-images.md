@@ -3,7 +3,7 @@ layout  : wiki
 title   : 카프카 설명용 그림
 summary : 카프카 관련 설명할 일이 있을 때마다 쓰려고 그려둔 그림들
 date    : 2024-06-09 17:00:52 +0900
-updated : 2024-06-17 23:04:04 +0900
+updated : 2024-06-22 17:50:53 +0900
 tag     : 
 resource: 8E/2BC882-483A-4878-8B45-23C239057272
 toc     : true
@@ -14,7 +14,7 @@ latex   : false
 * TOC
 {:toc}
 
-## 예제 시나리오 {#example-scenario}
+## 파티션과 컨슈머 {#partitions-and-consumers}
 
 - 브로커 A - 토픽 A에 파티션이 1개 있다.
 
