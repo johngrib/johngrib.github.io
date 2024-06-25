@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-06-19 22:15:13 +0900
+updated : 2024-06-25 22:43:05 +0900
 regenerate: true
 ---
 * TOC
@@ -141,6 +141,7 @@ regenerate: true
 
 ### [[/legend]]
 
+* [[/legend/pentium-fdiv-bug]]
 * [[/legend/visicalc]]
 * [[/legend/wordstar]]
 
@@ -148,7 +149,6 @@ regenerate: true
 * [[/beginning-of-slack]]
 * [[/Las-chicas-del-cable]]
 * [[/netflix-architecture-and-culture]]
-* [[/pentium-fdiv-bug]]
 * [[/Turbo-Pascal-the-first-IDE]]
 
 ### [[/people]]
