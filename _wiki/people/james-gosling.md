@@ -3,7 +3,7 @@ layout  : wiki
 title   : 무협지 주인공 제임스 고슬링(James Gosling)
 summary : 중학생 때 전산학과에 침입해 독학으로 프로그래밍을 터득
 date    : 2018-02-08 12:06:18 +0900
-updated : 2024-01-07 17:54:30 +0900
+updated : 2024-07-02 21:59:05 +0900
 tag     : story james-gosling 인물 gnu emacs
 resource: E7/46DD4B-8AB0-4CFC-BD41-F4156B282929
 toc     : true
@@ -152,6 +152,21 @@ Simula 67 매뉴얼은 저에게 대단한 물건이었습니다.
 저는 PP8 및 CDC6000 시리즈 같은 장비에 대한 아키텍처 매뉴얼로부터 대단히 많은 것을 얻었습니다.
 저는 이들 모두를 거의 100번 가까이 읽었습니다.
 [^ed-burns-7]
+
+## 은퇴 선언
+
+[2024-07-02, 제임스 고슬링은 LinkedIn에 다음 글을 올렸다](https://www.linkedin.com/posts/jamesgosling_ive-finally-retired-after-a-crazy-number-activity-7213740307538956289-26YU/ ).
+
+>
+I've finally retired.
+After a crazy number of years as a software engineer, it's time for me to just have fun.
+The last 7 years at Amazon have been great, despite COVID-19 and industrial craziness.
+I've got a long list of side projects to plough through. It'll be fun.
+
+드디어 은퇴했습니다.
+수많은 세월 동안 소프트웨어 엔지니어로 지냈고, 이제는 그냥 즐길 시간이 되었네요.
+COVID-19와 혼란스러운 업계 상황에도 불구하고 아마존에서의 마지막 7년은 멋진 나날이었습니다.
+처리해야 할 사이드 프로젝트 목록이 아직 길게 남아있습니다. 재미있겠어요.
 
 ## 참고문헌
 
