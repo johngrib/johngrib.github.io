@@ -31,7 +31,7 @@
 
     (function iterate_node(node) {
 
-        if (/^(?:p|ul|h\d|table)$/i.test(node.tagName)) {
+        if (/^(?:p|ol|ul|h\d|table)$/i.test(node.tagName)) {
 
             node.innerHTML = link(node.innerHTML);
 
