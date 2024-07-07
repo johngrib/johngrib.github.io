@@ -118,7 +118,7 @@ latex   : false
 
 ## 함께 읽기
 
-- [[how-i-use-web-browser]]{내가 웹 브라우저를 사용하는 방법}
+- [[/tool/web-browser]]{내가 웹 브라우저를 사용하는 방법}
 
 
 [tridactylrc]: https://github.com/tridactyl/tridactyl/wiki/Exemplar-.tridactylrc-files

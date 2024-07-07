@@ -1,14 +1,14 @@
 ---
 layout  : category
-title   : 내가 웹 브라우저를 사용하는 방법
+title   : 웹 브라우저 이것저것
 summary : 적절한 익스텐션을 사용한다
 date    : 2018-03-04 00:38:22 +0900
-updated : 2022-04-24 23:28:46 +0900
+updated : 2024-07-07 22:32:19 +0900
 tag     : chrome
 resource: C3/F7D543-D04C-4FAF-8BB6-867E95298624
 toc     : true
 public  : true
-parent  : [[/hack]]
+parent  : [[/tool]]
 latex   : false
 ---
 * TOC
