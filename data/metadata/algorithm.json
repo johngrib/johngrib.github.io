@@ -8,6 +8,7 @@
  "children": [
   "algorithm/average-complexity",
   "algorithm/b-tree",
+  "algorithm/base64",
   "algorithm/binary-search",
   "algorithm/counting-sort",
   "algorithm/egyptian-multiplication",
@@ -19,7 +20,6 @@
   "algorithm/shell-sort",
   "algorithm/sort-stability",
   "algorithm/von-neumann-extractor",
-  "base64",
   "big-O-notation",
   "dijkstra-2-stack-for-exp-eval",
   "duff-s-device",

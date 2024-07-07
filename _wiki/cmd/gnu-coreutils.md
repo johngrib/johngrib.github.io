@@ -18,7 +18,7 @@ latex   : false
 
 [Decoded: GNU coreutils](https://www.maizure.org/projects/decoded-gnu-coreutils/ ) 문서에 의하면 GNU core utilities에는 다음 명령들이 포함되어 있다.
 
-- [[/cmd/arch]], [[/base64]]{base64}, [[/cmd/basename]], cat, chcon
+- [[/cmd/arch]], [[/algorithm/base64]]{base64}, [[/cmd/basename]], cat, chcon
 - chgrp, [[/cmd/chmod]], chown, chroot, cksum
 - comm, cp, [[/cmd/csplit]], [[/cmd/cut]], [[/cmd/date]]
 - dd, [[/df]], dir, dircolors, dirname
