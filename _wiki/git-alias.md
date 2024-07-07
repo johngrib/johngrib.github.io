@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2024-07-07 10:50:39 +0900
+updated : 2024-07-07 10:51:18 +0900
 tag     : fzf git bash
 resource: 1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3
 toc     : true
@@ -74,7 +74,7 @@ $ git test
 Hello World
 ```
 
-이것으로 다양한 기능을 `git` 명령어에 덕지덕지 갖다 붙일 수 있다.
+이런 식으로 다양한 기능을 `git` 명령어에 덕지덕지 갖다 붙일 수 있다.
 
 
 ### 현재 브랜치 이름 출력하기
