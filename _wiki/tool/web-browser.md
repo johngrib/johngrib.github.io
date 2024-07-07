@@ -3,7 +3,7 @@ layout  : category
 title   : 웹 브라우저 이것저것
 summary : 적절한 익스텐션을 사용한다
 date    : 2018-03-04 00:38:22 +0900
-updated : 2024-07-07 22:32:19 +0900
+updated : 2024-07-07 22:36:59 +0900
 tag     : chrome
 resource: C3/F7D543-D04C-4FAF-8BB6-867E95298624
 toc     : true
@@ -13,6 +13,14 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## Trancy
+
+[Download Trancy Extension](https://www.trancy.org/download )
+
+외국어 공부를 위한 AI 번역기 익스텐션.
+
+웹 페이지에 번역된 문장을 침투시키는 방식이어서 원문과 대조해 읽기 좋다.
 
 ## Vimium
 
