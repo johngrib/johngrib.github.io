@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2022-09-10 00:42:31 +0900
+updated : 2024-07-07 10:50:39 +0900
 tag     : fzf git bash
 resource: 1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3
 toc     : true
@@ -21,9 +21,9 @@ latex   : false
 * alias를 사용하면 귀찮은 명령들을 쉽고 재미있게 축약하여 사용할 수 있다.
 
 
-## 일반적으로 널리 쓰이는 git alias
+## git alias 예제
 
-다음은 보통 널리 쓰이는 git alias를 설정한 .gitconfig 파일의 `[alias]` 섹션이다.
+다음은 git alias를 설정한 .gitconfig 파일의 `[alias]` 섹션의 예제이다.
 
 ```perl
 [alias]
@@ -50,6 +50,7 @@ latex   : false
 l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 ```
 
+git log 에 대한 alias에 대한 더 자세한 내용은 [[/git/log]] 문서 참고.
 
 ## git alias에서 셸 명령어 사용하기
 
@@ -523,6 +524,7 @@ alias = "!# Prints all aliases.;\n\
 ## 함께 읽기
 
 - [[/cmd/grep]]
+- [[/git/log]]
 
 ## Links
 
@@ -533,4 +535,5 @@ alias = "!# Prints all aliases.;\n\
 * 도구
     * <https://github.com/junegunn/fzf >
     * <http://pygments.org/ >
+
 
