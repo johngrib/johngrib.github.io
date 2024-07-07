@@ -3,7 +3,7 @@ layout  : wiki
 title   : 편리한 git alias 설정하기
 summary : 나만의 git alias를 만들어 보자
 date    : 2018-12-02 10:26:37 +0900
-updated : 2024-07-07 10:51:18 +0900
+updated : 2024-07-07 11:01:01 +0900
 tag     : fzf git bash
 resource: 1D/1D2B53-866B-431C-97C0-1E5C5D09DDA3
 toc     : true
@@ -93,13 +93,41 @@ Hello World
     * `*`로 시작하는 행을 찾는다.
     * 2번째 단어를 출력한다.
 
+`git` 자체 옵션을 사용하는 방법도 있다. (옵션을 모르겠으면 위와 같이 만들어 쓰면 된다.)
+
+```perl
+[alias]
+    b0 = "!git branch --show-current"
+```
+
+`git` 버전이 너무 낮아서 `branch --show-current`가 없다면 `symbolic-ref`를 사용하는 것도 고려할 수 있다.
+
+```perl
+[alias]
+    b0 = "!git symbolic-ref --short HEAD"
+```
+
+### 이전 브랜치 이름 출력하기
+
+가끔은 `git switch -`를 쓰지 않고 이전 브랜치 이름을 보고 싶을 때도 있다.
+
+`git rev-parse --abbrev-ref @{-1}`을 사용하면 된다. 명령어가 길고 복잡하니 alias로 만들어 쓰는 것이 좋겠다.
+
+```perl
+[alias]
+    b0 = "!git branch --show-current"
+    b1 = "!git rev-parse --abbrev-ref @{-1}"
+```
+
+이제 `git b0`을 실행하면 현재 브랜치 이름을, `git b1`을 실행하면 이전 브랜치 이름을 볼 수 있다.
+
 ### 현재 브랜치를 백업하는 브랜치 만들기
 
 이번에는 현재 브랜치를 백업하는 브랜치를 만드는 alias를 만들어 보자.
 
 ```perl
 [alias]
-    b0 = "!git branch | awk '/^\\*/{print $2}'"
+    b0 = "!git branch --show-current"
     back = "!git branch backup-`git b0`"
 ```
 
@@ -188,7 +216,7 @@ git alias 안에서 복잡한 셸 명령어나 스크립트를 실행하는 데�
 
 ```perl
 [alias]
-    b0 = "!git branch | awk '/^\\*/{print $2}'"
+    b0 = "!git branch --show-current"
     sync = "!f() { git fetch $1 && git reset --hard $1/$(git b0); }; f"
 ```
 
@@ -467,7 +495,7 @@ alias.s=status -s
 alias.co=checkout
 alias.ci=commit
 alias.bb=! # Branch tools. Type 'git bb help' ; 
-alias.b0=!git branch | awk '/^\*/{print $2}'
+alias.b0=!git branch --show-current
 alias.back=!git branch backup-`git b0`
 alias.assume=update-index --assume-unchanged
 alias.unassume=update-index --no-assume-unchanged
