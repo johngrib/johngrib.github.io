@@ -3,7 +3,7 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2022-02-17 22:13:12 +0900
+updated : 2024-07-15 21:44:40 +0900
 tag     : bash command
 resource: B6/81C877-1018-4D8C-832C-D96244F87479
 toc     : true
@@ -103,10 +103,15 @@ curl -d '{"name":"john"}' \
 curl -d @test.json \
   -H "Content-Type: application/json" \
   https://httpbin.org/anything
+
+ # stdin 사용하기
+echo '{"name":"johngrib"}' \
+  | curl -H "Content-Type: application/json" https://httpbin.org/anything -d @-
 ```
 
 * `-d`, `--data` 옵션을 쓰면 body를 지정할 수 있다.
 * `-d @FILE_NAME`: 텍스트 파일의 내용을 보낼 수 있다.
+    * `-d @-`: stdin을 body로 지정할 수 있다.
 * `--data-urlencode`: URL encode를 사용한다.
 * `--data-binary`: 바이너리 데이터를 전송할 때 사용한다.
 
