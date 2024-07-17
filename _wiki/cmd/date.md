@@ -3,7 +3,7 @@ layout  : wiki
 title   : date 명령어
 summary : 날짜나 시간을 출력하거나 설정한다
 date    : 2018-08-03 05:19:22 +0900
-updated : 2023-07-29 17:24:01 +0900
+updated : 2024-07-17 22:54:14 +0900
 tag     : bash command
 resource: 48/DDC995-1C3B-477A-A0F6-A07FCA93164C
 toc     : true
@@ -105,6 +105,19 @@ $ gdate -d @1640995200 +"%F %T %z" --utc
 | `%V`      | week 숫자            | `date +%V`  | `31`                     |
 | `%Z`      | 타임존               | `date +%Z`  | `KST`                    |
 
+## 나노초 출력
+
+macOS의 빌트인 `date` 명령어는 나노초를 지원하지 않는다. GNU coreutils의 `date`(`gdate`)를 사용하면 나노초를 출력할 수 있다.
+
+```sh
+$ date +'%Y-%m-%d %H:%M:%S.%N'
+2024-07-17 22:51:51.N
+```
+
+```sh
+$ gdate +'%Y-%m-%d %H:%M:%S.%N'
+2024-07-17 22:51:53.317486000
+``````
 
 ## 참고문헌
 
