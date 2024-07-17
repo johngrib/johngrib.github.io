@@ -3,7 +3,7 @@ layout  : wiki
 title   : echo 명령어
 summary : 텍스트를 출력한다
 date    : 2023-08-06 19:23:44 +0900
-updated : 2023-08-06 19:41:52 +0900
+updated : 2024-07-17 20:23:39 +0900
 tag     : 
 resource: 15/C5E42C-4282-4B96-8807-143148C1A330
 toc     : true
@@ -42,7 +42,7 @@ latex   : false
 
 `man echo`를 해봐도 `-e` 옵션은 소개하지 않고 `-n` 옵션만 소개를 하는데, 실제로 사용해보면 `-e`도 잘 작동한다.
 
-찝찝하다면 GNU coreutils 를 설치해서 사용할 것.
+찝찝하다면 [[/cmd/gnu-coreutils]]를 설치해서 사용하는 것도 방법이다.
 
 ## Examples
 
