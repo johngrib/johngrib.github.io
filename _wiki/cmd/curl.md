@@ -3,7 +3,7 @@ layout  : wiki
 title   : curl 명령어
 summary : transfer a URL
 date    : 2019-06-12 22:26:35 +0900
-updated : 2024-07-15 21:44:40 +0900
+updated : 2024-07-17 21:16:50 +0900
 tag     : bash command
 resource: B6/81C877-1018-4D8C-832C-D96244F87479
 toc     : true
@@ -55,7 +55,27 @@ curl -X POST --data "name=John&age=29" http://httpbin.org/anything
 curl -F csv=@$PWD/sample.csv http://localhost:8088/submit-csv
 ```
 
-### header 지정
+### 다운로드
+```sh
+ # 나의 ip 정보를 담은 json 문자열을 받아 파일로 저장한다
+curl -o my_ip.json http://httpbin.org/ip
+```
+
+### 재미있는 사용법
+```sh
+curl wttr.in          # 날씨를 본다
+curl v2.wttr.in
+curl v2.wttr.in/Seoul
+
+curl ifconfig.me  # ip주소를 본다
+```
+
+## Options
+
+### -H : header {#option-h}
+
+`-H`로 헤더를 지정할 수 있다.
+
 ```sh
 curl \
   -H 'Content-Type: text/html; charset=UTF=8' \
@@ -63,7 +83,7 @@ curl \
   http://httpbin.org/ip
 ```
 
-위와 같이 명령을 입력하면 다음과 같은 Http Request가 전송된다.
+위와 같이 명령을 입력하면 아래와 같은 Http Request가 전송된다.
 
 ```text
 GET /ip HTTP/1.1
@@ -74,7 +94,7 @@ Content-Type: text/html; charset=UTF=8
 Location: http://xxx...
 ```
 
-User-Agent를 지정하는 두 가지 방법
+#### User-Agent를 지정하는 두 가지 방법 {#option-user-agent}
 
 ```sh
 curl \
@@ -86,61 +106,126 @@ curl -A \
   http://localhost:8080
 ```
 
-### body 지정
+### -o {#option-o}
+
+`-o` 옵션을 사용하면 다운로드한 내용을 파일로 저장할 수 있다.
+
+다음은 curl의 [[/cmd/man]]{man page}에서 소개하는 예제이다.
+
+```sh
+curl -o file https://example.com
+curl "http://{one,two}.example.com" -o "file_#1.txt"
+curl "http://{site,host}.host[1-5].example" -o "#1_#2"
+curl -o file https://example.com -o file2 https://example.net
+```
+
+### \--data {#option-data}
+
+`-d`, `--data` 옵션을 쓰면 body를 지정할 수 있다.
+
+아래와 같이 `-d`를 여러번 사용할 수 있다.
+
 ```sh
  # form 보내기
 curl \
   -d name="John Grib" \
   -d hobby="coding" \
   https://httpbin.org/anything
+```
 
+물론 json을 직접 입력하는 방법이 가장 흔한 방법 중 하나일 것이다.
+
+```sh
  # json 보내기
 curl -d '{"name":"john"}' \
   -H "Content-Type: application/json" \
   https://httpbin.org/anything
+```
 
+body에 입력할 내용이 길어서 번거롭다면 파일로 저장해서 파일 이름을 지정하는 것이 편하다.
+
+```sh
  # json 파일 이름을 지정하여 파일 내용 보내기
-curl -d @test.json \
+curl -d @filename \
   -H "Content-Type: application/json" \
   https://httpbin.org/anything
+```
 
+- `-d @FILE_NAME`: 텍스트 파일의 내용을 보낼 수 있다.
+    - `{"name":"john"}`을 내용으로 갖는 파일이 있다면 위와 같이 사용할 수 있다.
+
+아래와 같이 `@-`를 사용하면 stdin을 body로 지정할 수 있다.
+
+```sh
  # stdin 사용하기
 echo '{"name":"johngrib"}' \
   | curl -H "Content-Type: application/json" https://httpbin.org/anything -d @-
 ```
 
-* `-d`, `--data` 옵션을 쓰면 body를 지정할 수 있다.
-* `-d @FILE_NAME`: 텍스트 파일의 내용을 보낼 수 있다.
-    * `-d @-`: stdin을 body로 지정할 수 있다.
-* `--data-urlencode`: URL encode를 사용한다.
-* `--data-binary`: 바이너리 데이터를 전송할 때 사용한다.
+### \--json {#option-json}
+
+[CURL DASH-DASH-JSON]( https://daniel.haxx.se/blog/2022/02/02/curl-dash-dash-json/ )
+
+curl에 `--json` 옵션이 추가되었다.
+
+아래의 두 명령은 똑같이 작동한다.
+
+```sh
+curl -d '{"name":"john"}' \
+  -H "Content-Type: application/json" \
+  https://httpbin.org/anything
+```
+
+```sh
+curl --json '{"name":"john"}' \
+  -H "Content-Type: application/json" \
+  https://httpbin.org/anything
+```
+
+물론 아래와 같이 해도 된다.
+
+```sh
+curl --json @filename \
+  -H "Content-Type: application/json" \
+  https://httpbin.org/anything
+```
+
+아래와 같이 `@-`도 쓸 수 있다.
+
+```sh
+echo '{"name":"john"}' | curl --json @- \
+  -H "Content-Type: application/json" \
+  https://httpbin.org/anything
+```
+
+### -i : response header 출력
+
+`-i` 옵션을 사용하면 response header를 출력한다.
 
 
 ### http 버전 지정
+
 ```sh
 curl --http1.0 http://httpbin.org/ip
 ```
 
-### 다운로드
-```sh
- # 나의 ip 정보를 담은 json 문자열을 받아 파일로 저장한다
-curl -o my_ip.json http://httpbin.org/ip
-```
+지정 가능한 옵션은 다음과 같다.
 
-### --json 옵션의 사용
+- `--http0.9`
+- `--http1.0` 또는 `-0`
+- `--http1.1`
+- `--http2-prior-knowledge`
+- `--http2`
+- `--http3-only`
+- `--http3`
 
-[CURL DASH-DASH-JSON]( https://daniel.haxx.se/blog/2022/02/02/curl-dash-dash-json/ )
 
-- curl에 `--json` 옵션이 추가되었다.
+### 그 외 기타 옵션들
 
-### 재미있는 사용법
-```sh
-curl wttr.in          # 날씨를 본다
-curl v2.wttr.in
-curl v2.wttr.in/Seoul
+- `--data-urlencode`: URL encode를 사용한다.
+- `--data-binary`: 바이너리 데이터를 전송할 때 사용한다.
 
-curl ifconfig.me  # ip주소를 본다
-```
+
 
 ## 참고문헌
 
