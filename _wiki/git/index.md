@@ -3,7 +3,7 @@ layout  : wiki
 title   : git index
 summary : 
 date    : 2020-04-06 23:05:14 +0900
-updated : 2022-01-18 23:08:26 +0900
+updated : 2024-07-23 21:37:46 +0900
 tag     : git
 resource: 57/48DA2E-53FE-4D5F-B579-80BFEA738FB5
 toc     : true
@@ -109,8 +109,7 @@ OUTPUT
 > [<tag> ]<mode> <object> <stage> <file>
 > ```
 
-- `mode`
-    - 타입과 권한을 의미
+- `mode` : 타입과 권한을 의미
     - `100644`: 일반 파일
     - `100755`: 실행 가능한 일반 파일
 - `object` : SHA-1 값
