@@ -3,7 +3,7 @@ layout  : wiki
 title   : 코페르니쿠스 원리 (Copernican Principle)
 summary : 아무런 정보가 없을 때 종말을 추정하는 방법
 date    : 2018-04-15 16:38:17 +0900
-updated : 2019-12-07 08:12:29 +0900
+updated : 2024-07-23 22:03:04 +0900
 tag     : 추정 bayes
 resource: 21/22ED77-5AC0-4C76-AD85-582BE25F4244
 toc     : true
@@ -44,7 +44,7 @@ latex   : false
 
 * 내가 꼬깔콘을 더 이상 좋아하지 않을 시기
     * 내가 꼬깔콘을 5년간 좋아했으므로,
-    * 앞으로 5년 후까지는 꼬깔콘을 좋아할 것으로 추정한다.
+    * 앞으로 5년 후까지는 꼬깔콘을 좋아할 것으로 추정한다.[^comment-2024]
 
 
 ### 평가
@@ -81,3 +81,8 @@ latex   : false
 * [[Algorithms-to-Live-By]]
 * [Copernican Principle(wikipedia)](https://en.wikipedia.org/wiki/Copernican_principle )
 * [J. Richard Gott(wikipedia)](https://en.wikipedia.org/wiki/J._Richard_Gott )
+
+## 주석
+
+[^comment-2024]: 꼬깔콘 사례를 작성한(2018년 4월 15일) 후 6년이 지난 오늘(2024년 7월 23일), 다시 이 글을 읽은 나는 상당한 재미를 느끼고 있다. 나는 지난 1년간 꼬깔콘을 전혀 먹지 않았다. 완전히 잊고 살았다. 요즘은 먹고 싶다는 생각도 들지 않는다.
+
