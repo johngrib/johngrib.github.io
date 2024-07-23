@@ -375,6 +375,7 @@
  "/wiki/git/fetch",
  "/wiki/git/index",
  "/wiki/git/log",
+ "/wiki/git/ls-files",
  "/wiki/git/merge",
  "/wiki/git/prompt",
  "/wiki/git/rebase",

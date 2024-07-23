@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-07-07 22:31:09 +0900
+updated : 2024-07-23 21:06:42 +0900
 regenerate: true
 ---
 * TOC
@@ -811,10 +811,11 @@ regenerate: true
 * [[/git/fetch]]
 * [[/git/index]]
 * [[/git/log]]
+* [[/git/ls-files]]
 * [[/git/merge]]
+* [[/git/prompt]]
 * [[/git/rebase]]
 * [[/git/revert]]
-* [[/git/prompt]]
 
 * [[/git-alias]]
 * [[/git-study-with-action]]
