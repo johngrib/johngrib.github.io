@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-07-23 21:06:42 +0900
+updated : 2024-07-23 21:58:06 +0900
 regenerate: true
 ---
 * TOC
@@ -500,6 +500,7 @@ regenerate: true
 * [[/jargon/cap-theorem]]
 * [[/jargon/constantine-s-law]]
 * [[/jargon/convoy-effect]]
+* [[/jargon/copernican-principle]]
 * [[/jargon/daemon]]
 * [[/jargon/dry-principle]]
 * [[/jargon/edsel-edict]]
@@ -532,7 +533,6 @@ regenerate: true
 * [[/jargon/zipf-s-law]]
 
 * [[/Conway-s-law]]
-* [[/Copernican-Principle]]
 * [[/information-hiding]]
 * [[/linus-s-law]]
 * [[/No-Silver-Bullet]]
