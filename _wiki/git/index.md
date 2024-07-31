@@ -3,7 +3,7 @@ layout  : wiki
 title   : git index
 summary : 
 date    : 2020-04-06 23:05:14 +0900
-updated : 2024-07-23 21:37:46 +0900
+updated : 2024-07-31 22:14:16 +0900
 tag     : git
 resource: 57/48DA2E-53FE-4D5F-B579-80BFEA738FB5
 toc     : true
@@ -177,4 +177,4 @@ type      permission
 [user-manual-3370]: https://github.com/git/git/blob/9fadedd637b312089337d73c3ed8447e9f0aa775/Documentation/user-manual.txt#L3370
 
 [^pro-git-238]: Pro Git 2/E. 7.7장. 238쪽.
-ㅏ
+
