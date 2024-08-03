@@ -3,7 +3,7 @@ layout  : wiki
 title   : java.util. HashMap
 summary : HashMap의 구조를 정리한다
 date    : 2019-10-27 11:54:24 +0900
-updated : 2022-12-17 19:59:37 +0900
+updated : 2024-08-03 19:32:28 +0900
 tag     : java
 resource: AD/0DA9BB-65E8-490B-BFF7-77004E50553D
 toc     : true
@@ -16,7 +16,7 @@ latex   : true
 
 ## Java 8 HashMap 퍼포먼스 향상에 대하여
 
-요약하자면 균형 트리를 도입해 $$O(n)$$ 에서 $$O(log n)$$으로 향상됐다.
+요약하자면 균형 트리를 도입해 $$O(n)$$ 에서 $$O(\log n)$$으로 향상됐다.
 
 * Java 8 부터 `HashMap`, `LinkedHashMap`, `ConcurrentHashMap`의 퍼포먼스가 향상된다.
 * 기존에는 키 충돌이 많은 아이템들을 linked list로 관리했는데, 이후로는 balanced tree로 관리하게 된다.
