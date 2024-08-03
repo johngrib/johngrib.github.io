@@ -19,6 +19,7 @@
   "java/functional-interface",
   "java/generic",
   "java/hashmap",
+  "java/hashset",
   "java/inner-class-may-be-static",
   "java/javadoc",
   "java/jigsaw-quick-start",

@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-07-23 21:58:06 +0900
+updated : 2024-08-03 19:50:19 +0900
 regenerate: true
 ---
 * TOC
@@ -350,6 +350,7 @@ regenerate: true
 * [[/java/functional-interface]]
 * [[/java/generic]]
 * [[/java/hashmap]]
+* [[/java/hashset]]
 * [[/java/inner-class-may-be-static]]
 * [[/java/javadoc]]
 * [[/java/jigsaw-quick-start]]
