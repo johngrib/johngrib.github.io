@@ -3,7 +3,7 @@ layout  : wiki
 title   : ZGC, The Z Garbage Collector
 summary : scalable low-latency garbage collector
 date    : 2019-10-04 11:05:50 +0900
-updated : 2022-05-11 00:03:28 +0900
+updated : 2024-08-04 19:42:42 +0900
 tag     : java gc
 resource: 60/53F63E-420B-40C3-9423-8034F797515A
 toc     : true
@@ -91,7 +91,9 @@ ZGC 튜닝에서 두 번째로 중요한 것은 동시에 가동하는 GC 스레
 * 일시 정지 시간도 압도적으로 짧았다.
 
 
-## HotSpot Virtual Machine Garbage Collection Tuning Guide (Java 17) The Z Garbage Collector 번역
+## Tuning Guide 번역
+
+HotSpot Virtual Machine Garbage Collection Tuning Guide (Java 17) The Z Garbage Collector 번역
 
 >
 The Z Garbage Collector (ZGC) is a scalable low latency garbage collector.
