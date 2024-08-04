@@ -3,7 +3,7 @@ layout  : wiki
 title   : GNU core utilities
 summary : GNU 운영체제의 기본 유틸리티 모음
 date    : 2023-08-07 21:59:15 +0900
-updated : 2023-08-14 22:02:09 +0900
+updated : 2024-08-04 17:12:24 +0900
 tag     : 
 resource: 79/1AC502-8496-4DC1-B88D-DE20B7F6427D
 toc     : true
@@ -18,7 +18,7 @@ latex   : false
 
 [Decoded: GNU coreutils](https://www.maizure.org/projects/decoded-gnu-coreutils/ ) 문서에 의하면 GNU core utilities에는 다음 명령들이 포함되어 있다.
 
-- [[/cmd/arch]], [[/algorithm/base64]]{base64}, [[/cmd/basename]], cat, chcon
+- [[/cmd/arch]], [[/algorithm/base64]]{base64}, [[/cmd/basename]], [[/cmd/cat]]{cat}, chcon
 - chgrp, [[/cmd/chmod]], chown, chroot, cksum
 - comm, cp, [[/cmd/csplit]], [[/cmd/cut]], [[/cmd/date]]
 - dd, [[/df]], dir, dircolors, dirname

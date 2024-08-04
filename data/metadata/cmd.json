@@ -16,6 +16,7 @@
   "cmd/bind",
   "cmd/brew",
   "cmd/cal",
+  "cmd/cat",
   "cmd/chardetect",
   "cmd/chmod",
   "cmd/chsh",
