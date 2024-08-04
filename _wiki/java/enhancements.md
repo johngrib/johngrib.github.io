@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2022년 11월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2024-08-04 12:04:06 +0900
+updated : 2024-08-04 12:11:09 +0900
 tag     : java
 resource: F7/24638D-3BAC-44BD-875C-F401971F22C3
 toc     : true
@@ -262,6 +262,17 @@ TODO
     - [Thread Priority Changes]( https://docs.oracle.com/javase/1.5.0/docs/guide/vm/thread-priorities.html )
 - 성능 향상
 
+>
+2004년 9월 30일: 코드명 타이거(Tiger: 호랑이)인 JDK 5가 출시된다.
+이 버전부터 썬은 'JDK 1.x' 방식의 이름을 버리고 'JDK x' 형태로 부르기로 한다.[^jvm-jjm-9-original]
+JDK 1.2 이후로 자바 문법은 크게 변하지 않다가 JDK 5에 와서 코딩 편의성을 개선하는 큰 폭의 변화가 있었다.
+예를 들어 오토박싱, 제네릭스, 동적 애너테이션, 열거형, 가변 길이 매개 변수, foreach 순환문 등의 문법 변화가 모두 JDK 5 때 등장했다.
+가상 머신과 API 수준에서는 자바 메모리 모델, `java.util.concurrent` 패키지가 도입되었다.
+한편 JDK 5는 윈도우 9x 운영 체제를 공식 지원하는 마지막 JDK다.[^jvm-jjm-9]
+
+[^jvm-jjm-9-original]: 원주: "이때부터 자바 공식 문서는 물론 공개 자료에서 'JDK 1.5' 식의 이름은 더는 쓰이지 않는다. 개발자가 사용하는 개발 버전만 이 형식을 유지했다('java -version' 실행 시 출력되는 버전). 개발 버전 1.5, 1.6, 1.7의 공개 버전(제품 버전)이 JDK 5.0, JDK 6, JDK 7로 바뀐 것이다. 또한 JDK 5.0에만 '0'이 붙어 있고 JDK 6 부터는 소수점을 떼어 버렸다. 버전 번호를 일관되게 쓰기 위해 이 책에서는 JDK 5.0을 JDK 5로 지칭하겠다."
+
+
 ## JDK 1.4
 
 [2002-02-06 릴리즈](https://web.archive.org/web/20070815095726/http://www.sun.com/smi/Press/sunflash/2002-02/sunflash.20020206.5.xml )
@@ -333,4 +344,5 @@ JDK 1.0의 자바 가상 머신(썬 클래식 VM)은 순수한 인터프리트(�
 
 [^why-link]: 1.4 기능이지만 이 링크는 Java SE 6 documentation으로 연결되어 있는데, [Java Programming Language Enhancements][java6-enhance] 문서의 Enhancements in JDK v1.4 항목에 연결된 링크를 그대로 옮겼기 때문이다.
 [^jvm-jjm-7]:  JVM 밑바닥까지 파헤치기(3판). 1장. 7쪽.
+[^jvm-jjm-9]:  JVM 밑바닥까지 파헤치기(3판). 1장. 9쪽.
 
