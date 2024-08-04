@@ -217,6 +217,7 @@
  "/wiki/cmd/curl",
  "/wiki/cmd/cut",
  "/wiki/cmd/date",
+ "/wiki/cmd/dateutils",
  "/wiki/cmd/dc",
  "/wiki/cmd/dev/fd",
  "/wiki/cmd/diff",

@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-08-04 17:06:25 +0900
+updated : 2024-08-04 18:37:33 +0900
 regenerate: true
 ---
 * TOC
@@ -715,6 +715,7 @@ regenerate: true
 * [[/cmd/curl]]
 * [[/cmd/cut]]
 * [[/cmd/date]]
+* [[/cmd/dateutils]]
 * [[/cmd/dc]]
 * [[/cmd/diff]]
     * [[/cmd/diff/unified-format]]

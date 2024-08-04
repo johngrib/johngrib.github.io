@@ -28,6 +28,7 @@
   "cmd/curl",
   "cmd/cut",
   "cmd/date",
+  "cmd/dateutils",
   "cmd/dc",
   "cmd/diff",
   "cmd/ditto",
