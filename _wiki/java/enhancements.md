@@ -3,7 +3,7 @@ layout  : wiki
 title   : Java 버전별 변경점
 summary : 1996년 1.0 부터 2022년 11월까지
 date    : 2019-09-11 21:14:23 +0900
-updated : 2022-12-11 23:18:32 +0900
+updated : 2024-08-04 12:04:06 +0900
 tag     : java
 resource: F7/24638D-3BAC-44BD-875C-F401971F22C3
 toc     : true
@@ -310,6 +310,11 @@ TODO
 
 [1996-01-23 릴리즈](https://web.archive.org/web/20070310235103/http://www.sun.com/smi/Press/sunflash/1996-01/sunflash.960123.10561.xml )
 
+>
+1996년 1월 23일: JDK 1.0이 출시되면서 자바 언어는 첫 번째 정식 런타임 환경을 갖추게 된다.
+JDK 1.0의 자바 가상 머신(썬 클래식 VM)은 순수한 인터프리트(해석) 방식이었다.
+1.0 버전의 대표 기술은 자바 가상 머신, 애플릿, AWT 등이었다.[^jvm-jjm-7]
+
 ## 참고문헌
 
 - 웹 문서
@@ -317,6 +322,7 @@ TODO
     - [Java Programming Language Enhancements (JAVA SE 6)][java6-enhance]
     - [Java version history (wikipedia)][wiki]
 - 도서
+    - JVM 밑바닥까지 파헤치기(3판) / 저우즈밍(周志明) 저/개앞맵시 역 / 인사이트(insight) / 초판 1쇄 발행: 2024년 04월 30일 / 원제: 深入理解Java虛擬机
     - Practical 모던 자바 / 장윤기 저 / 인사이트(insight) / 초판 1쇄 2020년 09월 21일
 
 ## 주석
@@ -326,3 +332,5 @@ TODO
 [wiki]: https://en.wikipedia.org/wiki/Java_version_history
 
 [^why-link]: 1.4 기능이지만 이 링크는 Java SE 6 documentation으로 연결되어 있는데, [Java Programming Language Enhancements][java6-enhance] 문서의 Enhancements in JDK v1.4 항목에 연결된 링크를 그대로 옮겼기 때문이다.
+[^jvm-jjm-7]:  JVM 밑바닥까지 파헤치기(3판). 1장. 7쪽.
+

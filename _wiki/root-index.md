@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-08-03 19:50:19 +0900
+updated : 2024-08-04 12:00:11 +0900
 regenerate: true
 ---
 * TOC
@@ -340,10 +340,11 @@ regenerate: true
 
 ### [[/java]]
 
+* [[/java/enhancements]]
+
 * [[/java/8]]
 * [[/java/abstract-class]]
 * [[/java/arraylist]]
-* [[/java/enhancements]]
 * [[/java/enum]]
 * [[/java/exception-handling]]
 * [[/java/feel-of-java]]
