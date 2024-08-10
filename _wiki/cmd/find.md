@@ -3,7 +3,7 @@ layout  : wiki
 title   : find
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2023-08-23 21:36:21 +0900
+updated : 2024-08-10 14:08:05 +0900
 tag     : bash command
 resource: 4F/D2AFEF-7A65-4637-82FF-86AEAE03D596
 toc     : true
@@ -167,6 +167,16 @@ find . -name '*.md' -mtime +1
 find . -name '*.md' -mmin -100
 ```
 
+### -maxdepth, -mindepth : 탐색 깊이를 제한한다 {#option-depth}
+
+```sh
+ # 현재 디렉토리에서 2단계 아래까지만 탐색한다.
+find . -maxdepth 2 -name '*.md'
+
+ # 현재 디렉토리에서 2단계 아래부터 탐색한다.
+find . -mindepth 2 -name '*.md'
+```
+
 ## 함께 읽기
 
 - [[/cmd/grep]]
@@ -293,4 +303,5 @@ Dennis
 ## 참고문헌
 
 - [The History of the Design of Unix’s Find Command (doc.cat-v.org)]( http://doc.cat-v.org/unix/find-history )
+
 
