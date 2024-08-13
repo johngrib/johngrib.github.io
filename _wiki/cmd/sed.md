@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2024-08-13 23:16:16 +0900
+updated : 2024-08-13 23:21:32 +0900
 tag     : bash command grep ed
 resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
@@ -130,6 +130,51 @@ hello& wo&rld
 $ echo 'hello world' | sed 's/o/\&/g'
 hell& w&rld
 ```
+
+### d : 삭제 명령
+
+```
+$ seq 5  | sed 1d
+2
+3
+4
+5
+```
+
+- `sed 1d` : 첫 번째 줄을 삭제한다.
+
+```
+$ seq 5  | sed 2d
+1
+3
+4
+5
+```
+
+- `sed 2d` : 두 번째 줄을 삭제한다.
+
+```
+$ seq 6  | sed 2,5d
+1
+6
+```
+
+- `sed 2,5d` : 두 번째 줄부터 다섯 번째 줄까지 삭제한다.
+
+```
+$ seq 15 30 | sed '/2/d'
+15
+16
+17
+18
+19
+30
+```
+
+- `sed '/2/d'` : 2가 포함된 줄을 삭제한다.
+    - `sed '/pattern/d'` : pattern이 포함된 줄을 삭제.
+    - `sed '/pattern/Id'` : 대소문자 구분하지 않음.
+
 
 ## 실제 활용한 명령어들
 ```sh
