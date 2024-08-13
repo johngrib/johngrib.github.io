@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2023-08-20 23:04:08 +0900
+updated : 2024-08-13 23:16:16 +0900
 tag     : bash command grep ed
 resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
@@ -28,6 +28,14 @@ Sed는 요즘도 셸 스크립트에서 흔히 사용되는데, 데이터 스트
 문자를 교체하거나, 공백을 추가하거나, 원하지 않는 공백을 제거하거나, 불필요한 뭔가를 지우는 등의 용도로 쓰인다.
 >
 -- 유닉스의 탄생 5장
+
+## GNU sed 사용하기 {#gnu-sed}
+
+MacOS라면 [[/cmd/brew]]{brew}를 이용해 macOS에 설치할 수 있고, 이후 gsed로 사용하면 된다
+
+```sh
+brew install gnu-sed
+```
 
 ## 문법
 
@@ -56,7 +64,6 @@ s/regular-expression/replacement/flags
 
 ## Examples
 
-### macOS
 ```sh
  # 여러 파일에서 foo를 bar로 replace하고, orig라는 원본 파일을 남겨둔다
 sed -i.orig s/foo/bar/g file1.txt file2.txt
@@ -71,7 +78,7 @@ echo -e '1\n2\n3' | sed -E '/2/ s/./999/'
 echo -e '1\n2\n3' | sed -E '/2/! s/./999/'
 ```
 
-#### 공백 문자 replace
+### 공백 문자 replace
 
 - space 교체
 
@@ -94,7 +101,7 @@ find . -name '*.java' | xargs ag '\t' -l | xargs sed -E -i.orig "s/[[:cntrl:]]/ 
 ag '\S\npackage' -l | xargs sed -i '' 's,package,\'$'\npackage,'
 ```
 
-#### & 의 사용 {#ampersand}
+### & 의 사용 {#ampersand}
 
 >
 An ampersand (“&”) appearing in the replacement is replaced by the string matching the RE.
@@ -124,7 +131,7 @@ $ echo 'hello world' | sed 's/o/\&/g'
 hell& w&rld
 ```
 
-#### 실제 활용한 명령어들
+## 실제 활용한 명령어들
 ```sh
  # ){ 를 모두 찾아 ) { 로 고쳐라
 ag '\)\{' -l | xargs sed -i.orig 's/){/) {/'
@@ -158,7 +165,7 @@ find . -name '*.java' | xargs ag '([^\s+i]\+|\+[^\s+)])' \
     | xargs sed -E -i '' "/Pattern|Matcher/! s/([^ ])\+([^ ])/\1 + \2/g"
 ```
 
-##### 문제 해결
+### 문제 해결
 
 ```sh
  # 모든 {} 을 찾아 사이에 개행 문자를 추가하라.
@@ -181,13 +188,8 @@ ag '\{\}$' -l | xargs sed -E -i '' 's/^( *)(p.+){}/\1\2{\
 ```
 
 
-### GNU SED
-```sh
- # brew를 이용해 macOS에 설치할 수 있고, 이후 gsed로 사용하면 된다
-brew install gnu-sed
-```
-
 ## 참고문헌
 
 - 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
+
 
