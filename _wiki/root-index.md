@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-08-13 23:01:29 +0900
+updated : 2024-08-15 10:51:21 +0900
 regenerate: true
 ---
 * TOC
@@ -649,6 +649,7 @@ regenerate: true
 * [[/tool/jetbrains]]
     * [[/tool/jetbrains/intellij/tips]]
     * [[/tool/jetbrains/intellij/sdk-code-samples]]
+    * [[/tool/jetbrains/datagrip]]
 
 * [[/tool/alacritty]]
 * [[/tool/maccy]]

@@ -7,6 +7,7 @@
  "updated": "2024-08-15 10:49:39 +0900",
  "resource": "91/94D125-6324-4EFF-BB5C-F4637CD18E8D",
  "children": [
+  "tool/jetbrains/datagrip",
   "tool/jetbrains/intellij/sdk-code-samples",
   "tool/jetbrains/intellij/tips"
  ]
