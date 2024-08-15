@@ -646,9 +646,9 @@ regenerate: true
     * [[/tool/keyboard/dumang-dk6-keyboard]]
     * [[/tool/keyboard/mokibo]]
 
-* [[/intellij]]
-    * [[/intellij/tips]]
-    * [[/intellij/sdk-code-samples]]
+* [[/tool/jetbrains]]
+    * [[/tool/jetbrains/intellij/tips]]
+    * [[/tool/jetbrains/intellij/sdk-code-samples]]
 
 * [[/tool/alacritty]]
 * [[/tool/maccy]]

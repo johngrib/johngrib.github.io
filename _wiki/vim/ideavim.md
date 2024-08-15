@@ -180,7 +180,7 @@ git pull --rebase upstrem master
 
 ## 함께 읽기
 
-- [[/intellij]]
+- [[/tool/jetbrains]]
 
 ## Link
 

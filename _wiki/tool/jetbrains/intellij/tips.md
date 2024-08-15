@@ -8,7 +8,7 @@ tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
 public  : true
-parent  : [[/intellij]]
+parent  : [[/tool/jetbrains]]
 latex   : false
 ---
 * TOC

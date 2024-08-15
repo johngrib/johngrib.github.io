@@ -8,7 +8,7 @@ tag     :
 resource: A9/2354FB-CB0E-479E-9742-FC7CD75C1414
 toc     : true
 public  : true
-parent  : [[/intellij]]
+parent  : [[/tool/jetbrains]]
 latex   : false
 ---
 * TOC

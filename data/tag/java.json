@@ -5,7 +5,6 @@
  "cmd/java",
  "cmd/java_home",
  "groupId-artifactId",
- "intellij/tips",
  "java",
  "java-abstract-method",
  "java-interface",
@@ -78,5 +77,6 @@
  "spring/document/core/01-16-bean-factory",
  "spring/document/core/02-resources",
  "spring/versions",
- "summary-The-Pauseless-GC-Algorithm"
+ "summary-The-Pauseless-GC-Algorithm",
+ "tool/jetbrains/intellij/tips"
 ]
