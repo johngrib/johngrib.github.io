@@ -3,7 +3,7 @@ layout  : wiki
 title   : Clojure vector
 summary : Clojure Vector의 내부 구조를 알아보고 Java의 ArrayList와 비교한다
 date    : 2022-01-22 16:30:48 +0900
-updated : 2023-04-14 20:06:09 +0900
+updated : 2024-08-18 12:18:27 +0900
 tag     : clojure java
 resource: 9D/B58B14-9880-4A8D-BA6E-450E6FE88394
 toc     : true
@@ -119,7 +119,7 @@ $$
 
 `IPersistentVector`의 구현체 중 하나인 `clojure.lang.PersistentVector`.
 
-### TransientVector: 인적 없는 숲에서 쓰러진 나무
+### TransientVector: 인적 없는 숲에서 쓰러진 나무 {#transient-vector}
 
 `PersistentVector`의 정적 팩토리 메소드를 보면 `TransientVector`라는 타입을 볼 수 있다.
 `TransientVector`는 `PersistentVector`의 내부 클래스이며, `PersistentVector`의 생성에 사용되는 특수한 구현이다.
@@ -176,7 +176,7 @@ If a pure function mutates some local data in order to produce an immutable retu
 >
 만약 어떤 순수 함수가 변경 불가능한 리턴값을 생산하기 위해 로컬 데이터를 변경했다면, 올바른 일일까?
 
-### 생성과 구조
+### 생성과 구조 {#creation-and-structure}
 
 `PersistentVector` 클래스를 열어보면 다음과 같은 멤버 필드들을 볼 수 있다.
 
@@ -317,7 +317,7 @@ $$ 32 \times 32 + 32 = 1056 $$
 ![]( /resource/9D/B58B14-9880-4A8D-BA6E-450E6FE88394/bplus-example.png )
 [^bernstein-b-tree-example]
 
-### 트리의 높이
+### 트리의 높이 {#tree-height}
 
 vector의 root부터 시작해서 리프에 있는 아이템에 도달하기까지의 `array`의 수를 트리의 높이라고 정의하자.
 (공식 정의는 아니고 이 문서 안에서 편하게 이야기하기 위한 local 정의이다.)
@@ -410,7 +410,7 @@ function calcHeight() {
 </script>
 {% endraw %}
 
-### nth를 통한 랜덤 엑세스
+### nth를 통한 랜덤 엑세스 {#nth}
 
 아이템의 수가 65 이상일 때 트리의 높이가 $$\floor{ \log_{32} (n-33) } + 1 $$ 이므로
 tail에 없는 아이템에 대한 랜덤 엑세스 퍼포먼스는 $$O( \log_{32} n )$$ 이라는 것을 알 수 있다.
@@ -455,7 +455,7 @@ private Object[] arrayFor(int i){
 - 인덱스 `i`가 `tailoff()` 이상이면 `tail`을 리턴한다.
 - 그렇지 않다면 `root` 노드의 깊이를 타고 내려가서 (이 과정에서 `for` 루프가 사용된다) 해당 인덱스가 포함된 노드를 리턴한다.
 
-### 불변성을 활용한 노드의 공유
+### 불변성을 활용한 노드의 공유 {#node-sharing}
 
 `PersistentVector`는 불변성을 보장하는 자료구조이기 때문에, 벡터를 이루는 각 아이템 값의 업데이트를 지원하지 않는다.
 
@@ -531,7 +531,7 @@ git의 DB와 JVM의 heap을 blob 저장소라는 개념으로 본다면 이런 �
 
 ![벡터와 heap]( /resource/9D/B58B14-9880-4A8D-BA6E-450E6FE88394/vector-heap.svg )
 
-### java.util.ArrayList와의 비교
+### java.util.ArrayList와의 비교 {#arraylist-comparison}
 
 반면 [[/java/arraylist]]는 mutable하기 때문에 두 ArrayList가 아이템을 공유하면 다양한 문제가 발생할 수 있다.
 
@@ -626,7 +626,7 @@ tail은 32개가 될 때마다 꽉 차며 33번째 아이템이 추가되려 할
 약 1025 회에 가깝다.
 ArrayList에 32801개의 아이템을 집어넣을 때 아이템 복사가 14만회 이상 수행된다는 추정을 떠올려보자.
 
-### APersistentVector의 subvec을 통한 순서 있는 부분집합의 생성
+### APersistentVector의 subvec을 통한 순서 있는 부분집합의 생성 {#subvec}
 
 `PersistentVector`는 `APersistentVector`에서 상속받은 `subList`를 통해 순서가 유지되는 부분집합을 제공하는데,
 `subList`는 `RT`의 `subvec`을 호출하고, `RT`의 `subvec`은 `APersistentVector`의 `SubVector`를 생성하게 된다.
@@ -666,7 +666,7 @@ public Object nth(int i){
 }
 ```
 
-### Cons와 ChunkedSeq
+### Cons와 ChunkedSeq {#cons-chunkedseq}
 
 `cons`를 벡터에 사용하면 `Cons` 타입의 인스턴스가 리턴된다.
 
@@ -757,7 +757,7 @@ public int count(){
 
 
 
-### Clojure 컴파일러의 벡터 생성
+### Clojure 컴파일러의 벡터 생성 {#compiler-vector}
 
 `Compiler::compile` 메소드의 시그니처는 다음과 같다.
 
