@@ -3,7 +3,7 @@ layout  : wiki
 title   : git log
 summary : 로그를 잘 읽어야 한다
 date    : 2019-12-01 08:14:22 +0900
-updated : 2023-06-17 17:32:19 +0900
+updated : 2024-08-18 13:59:22 +0900
 tag     : git
 resource: 1A/6E0987-315D-4ECC-B38E-2937C808EB7C
 toc     : true
@@ -54,17 +54,41 @@ lfp = "!# 주어진 file의 history를 자세히 출력합니다.;\n\
 
 두 hash값의 차이를 다음과 같이 확인할 수 있다.
 
-```bash
-git log master..develop
+```
+git log b ^a
 ```
 
-Pro Git에서는 위에서 사용한 `..` 표기법(Double Dot)을 "master에는 없지만.. develop 에는 있는 커밋들"[^pro-git-210]이라 설명한다.
+- 주어진 커밋 `b`에서 링크를 추적할 수 있는 커밋들을 보여준다.
+- `^`가 붙은 커밋 `a`에서 추적할 수 있는 커밋들은 보여주기 대상에서 제외한다.
 
-이 설명대로 생각하면 간단하게 응용할 수 있다.
-위의 예제를 뒤집어서 "develop에는 있지만.. master에는 없는 커밋들"을 보고 싶다면 다음과 같이 하면 된다.
+이 표기법은 좀 헷갈리므로, 같은 기능을 하는 `..` 표기법을 사용하는 것이 좀 더 편하다.
 
 ```bash
-git log develop..master
+git log a..b
+```
+
+다음과 같은 git 그래프가 있다고 가정하자.
+
+![]( /resource/1A/6E0987-315D-4ECC-B38E-2937C808EB7C/git-log-b-to-a.svg )
+
+다음 명령을 입력하면...
+
+```bash
+git log a..b
+```
+
+커밋 `c2`, `c3`, `c4`가 출력된다.
+
+
+Pro Git의 표현을 빌리자면 `..` 표기법(Double Dot)을 <mark>"a에는 없지만.. b 에는 있는 커밋"</mark>[^pro-git-210]이라 설명할 수 있다.
+
+나는 그냥 <mark>a 다음부터 b까지의 커밋을 보여준다</mark>고 생각하고 작업한다.
+
+이 설명대로 생각하면 간단하게 응용할 수 있다.
+예를 들어 <mark>"master 이후 develop에 추가된 커밋들"</mark>을 보고 싶다면 다음과 같이 하면 된다.
+
+```bash
+git log master..develop
 ```
 
 branch 이름은 단순한 레퍼런스이므로 다음과 같이 사용할 수도 있다.
@@ -104,5 +128,6 @@ git log master developt --not hotfix    # 위와 같다
 
 ## 주석
 
-[^pro-git-210]: Pro Git, 7.1장, 210쪽.
+[^pro-git-210]: Pro Git, 7.1장, 210쪽. '이 표현은 "master에는 없지만, experiment에는 있는 커밋"을 의미한다.'
+
 
