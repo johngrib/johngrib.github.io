@@ -3,7 +3,7 @@ layout  : wiki
 title   : git log
 summary : 로그를 잘 읽어야 한다
 date    : 2019-12-01 08:14:22 +0900
-updated : 2024-08-18 13:59:22 +0900
+updated : 2024-08-21 21:57:52 +0900
 tag     : git
 resource: 1A/6E0987-315D-4ECC-B38E-2937C808EB7C
 toc     : true
@@ -119,6 +119,42 @@ git log master develop ^hotfix          # 위와 같다
 git log master developt --not hotfix    # 위와 같다
 ```
 
+## \--pretty {#option-pretty}
+
+### \--pretty=format {#pretty-format}
+
+>
+이 섹션에서는 `--pretty=format` 뒤에 붙여주는 포맷을 몇 가지 설명한다.
+더 자세한 내용은 `man git-log`에서 `PRETTY FORMATS` 섹션을 참고할 것.
+{:style="background-color: #ecf1e8;"}
+
+```
+git log --pretty=format:'%Cred%h %Creset-%C(yellow)%d %Creset%s %Cgreen(%cr)%C(bold blue)<%an>'
+```
+
+위와 같이 입력하면 아래와 같이 출력된다.
+
+![]( /resource/1A/6E0987-315D-4ECC-B38E-2937C808EB7C/69907636-866a3000-141b-11ea-8b50-732c038279a3.png )
+
+- 문자 하나
+    - `%n`: 개행문자
+    - `%%`: `%` 문자
+    - `%x00`: 16진수 문자
+- 포매팅에 사용
+    - `%Cred`: 빨간색 (이후 문자들이 빨간색으로 출력된다)
+    - `%Cgreen`: 초록색
+    - `%Cblue`: 파란색
+    - `%Creset`: 컬러 리셋 (리셋 이후부터 문자들의 색상이 기본색으로 출력된다)
+- 커밋에 대한 정보
+    - `%H`: 커밋 해시값
+    - `%h`: 커밋 해시값(짧은 버전)
+    - `%T`: 트리 해시값
+    - `%t`: 트리 해시값(짧은 버전)
+    - `%an`: 저자 이름 (author name)
+    - `%ae`: 저자 이메일 (author email)
+    - `%d`: 레퍼런스 이름(태그, 브랜치 이름 등)
+    - `%s`: 커밋 메시지 제목
+    - `%cr`: 커밋 날짜(상대적 날짜)
 
 ## 참고문헌
 
