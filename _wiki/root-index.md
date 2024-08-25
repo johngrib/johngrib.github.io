@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-08-20 22:41:49 +0900
+updated : 2024-08-25 18:22:54 +0900
 regenerate: true
 ---
 * TOC
@@ -703,6 +703,7 @@ regenerate: true
     * [[/cmd/du]]
     * [[/cmd/echo]]
     * [[/cmd/factor]]
+    * [[/cmd/join]]
     * [[/cmd/kill]]
     * [[/cmd/ln]]
     * [[/cmd/ls]]
@@ -760,7 +761,6 @@ regenerate: true
 * [[/cmd/iostat]]
 * [[/cmd/java]]
 * [[/cmd/java_home]]
-* [[/cmd/join]]
 * [[/cmd/jq]]
 * [[/cmd/killall]]
 * [[/cmd/less]]
@@ -784,6 +784,7 @@ regenerate: true
 * [[/cmd/ssh]]
 * [[/cmd/strfile]]
 * [[/cmd/sw_vers]]
+* [[/cmd/time]]
 * [[/cmd/tmux]]
     * [[/cmd/tmux/c-dash]]
 * [[/cmd/top]]

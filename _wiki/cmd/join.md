@@ -3,12 +3,12 @@ layout  : wiki
 title   : join 명령어
 summary : csv 파일을 join할 때 사용하기 좋다
 date    : 2024-06-19 22:15:15 +0900
-updated : 2024-06-19 23:02:50 +0900
+updated : 2024-08-25 18:23:01 +0900
 tag     : 
 resource: 83/972190-0005-4528-8323-1C31AD8317A5
 toc     : true
 public  : true
-parent  : 
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

@@ -282,6 +282,7 @@
  "/wiki/cmd/sw_vers",
  "/wiki/cmd/tail",
  "/wiki/cmd/tee",
+ "/wiki/cmd/time",
  "/wiki/cmd/tmux",
  "/wiki/cmd/tmux/c-dash",
  "/wiki/cmd/top",
