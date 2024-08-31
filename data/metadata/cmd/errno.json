@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "errno 명령어",
+ "summary": "UNIX 시스템의 error 번호와 설명을 출력한다",
+ "parent": "cmd",
+ "url": "/wiki/cmd/errno",
+ "updated": "2024-08-31 16:46:43 +0900",
+ "resource": "65/70F2E6-40CF-4198-AA65-77F5DA0D85DE",
+ "children": []
+}

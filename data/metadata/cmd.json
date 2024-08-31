@@ -35,6 +35,7 @@
   "cmd/du",
   "cmd/duckdb",
   "cmd/echo",
+  "cmd/errno",
   "cmd/etc/hosts",
   "cmd/factor",
   "cmd/fc",
