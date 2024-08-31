@@ -3,7 +3,7 @@ layout  : wiki
 title   : 무협지 주인공 제임스 고슬링(James Gosling)
 summary : 중학생 때 전산학과에 침입해 독학으로 프로그래밍을 터득
 date    : 2018-02-08 12:06:18 +0900
-updated : 2024-07-02 21:59:05 +0900
+updated : 2024-08-31 20:50:12 +0900
 tag     : story james-gosling 인물 gnu emacs
 resource: E7/46DD4B-8AB0-4CFC-BD41-F4156B282929
 toc     : true
@@ -13,6 +13,10 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## Links
+
+- [제임스 고슬링의 트위터](https://x.com/errcraft )
 
 ## 제임스 고슬링 인터뷰 중에서
 
