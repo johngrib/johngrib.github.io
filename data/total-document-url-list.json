@@ -293,6 +293,7 @@
  "/wiki/cmd/tty",
  "/wiki/cmd/uname",
  "/wiki/cmd/uniq",
+ "/wiki/cmd/vidir",
  "/wiki/cmd/wc",
  "/wiki/cmd/xargs",
  "/wiki/cmd/xxd",

@@ -100,6 +100,7 @@
   "cmd/tty",
   "cmd/uname",
   "cmd/uniq",
+  "cmd/vidir",
   "cmd/wc",
   "cmd/xargs",
   "cmd/xxd",
