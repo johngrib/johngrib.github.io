@@ -103,6 +103,7 @@
   "cmd/uname",
   "cmd/uniq",
   "cmd/vidir",
+  "cmd/vipe",
   "cmd/wc",
   "cmd/xargs",
   "cmd/xxd",
