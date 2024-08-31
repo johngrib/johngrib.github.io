@@ -258,6 +258,7 @@
  "/wiki/cmd/lsof",
  "/wiki/cmd/make",
  "/wiki/cmd/man",
+ "/wiki/cmd/moreutils",
  "/wiki/cmd/mv",
  "/wiki/cmd/mysqldump",
  "/wiki/cmd/netstat",
