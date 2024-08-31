@@ -73,6 +73,7 @@
   "cmd/netstat",
   "cmd/openssl",
   "cmd/pass",
+  "cmd/pee",
   "cmd/ping",
   "cmd/pipe",
   "cmd/pwgen",
