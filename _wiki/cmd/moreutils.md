@@ -3,7 +3,7 @@ layout  : wiki
 title   : moreutils
 summary : 
 date    : 2024-08-31 14:17:41 +0900
-updated : 2024-08-31 17:09:50 +0900
+updated : 2024-09-01 11:35:12 +0900
 tag     : 
 resource: 3A/779DEB-1DA5-4D22-970D-6112C559CCDD
 toc     : true
@@ -33,7 +33,7 @@ brew install moreutils
 - parallel: run multiple jobs at once
 - [[/cmd/pee]]{pee}: tee standard input to pipes
 - sponge: soak up standard input and write to a file
-- ts: timestamp standard input
+- [[/cmd/ts]]{ts}: timestamp standard input
 - [[/cmd/vidir]]{vidir}: edit a directory in your text editor
 - [[/cmd/vipe]]: insert a text editor into a pipe
 - zrun: automatically uncompress arguments to command

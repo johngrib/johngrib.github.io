@@ -99,6 +99,7 @@
   "cmd/touch",
   "cmd/tr",
   "cmd/tree",
+  "cmd/ts",
   "cmd/tty",
   "cmd/uname",
   "cmd/uniq",

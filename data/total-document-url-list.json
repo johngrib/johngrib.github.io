@@ -292,6 +292,7 @@
  "/wiki/cmd/touch",
  "/wiki/cmd/tr",
  "/wiki/cmd/tree",
+ "/wiki/cmd/ts",
  "/wiki/cmd/tty",
  "/wiki/cmd/uname",
  "/wiki/cmd/uniq",
