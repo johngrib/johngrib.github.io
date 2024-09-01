@@ -3,7 +3,7 @@ layout  : wiki
 title   : sponge 명령어
 summary : 
 date    : 2024-09-01 15:24:31 +0900
-updated : 2024-09-01 16:44:39 +0900
+updated : 2024-09-01 21:43:30 +0900
 tag     : 
 resource: 17/FF1E03-8061-4FF2-B3DC-42D68F933B5F
 toc     : true
@@ -37,7 +37,7 @@ sort file.txt | uniq > file.txt
 
 `sponge`는 이런 경우에 논리적인 순서로 파일이 읽히고 업데이트되도록 해준다.
 
-`sponge`의 실제 동작은 임시 파일을 만들고, 작업이 끝나면 rename을 해주는 방식이다.
+`sponge`의 실제 동작은 임시 파일을 만들고, 작업이 끝나면 rename을 해주는 방식이다.[^sponge-code]
 
 ## Examples
 
@@ -55,4 +55,8 @@ cat file.txt | sort -R | sponge file.txt
 ```
 
 - `sponge`를 `>` 대신 사용하면 의도한대로 `file.txt` 파일 내용이 랜덤으로 뒤섞이게 된다.
+
+## 주석
+
+[^sponge-code]: [sponge의 소스코드 참고](https://github.com/pgdr/moreutils/blob/c8086c5f8803cef57b3e6bad30f25d6544b618c2/sponge.c#L380 )
 
