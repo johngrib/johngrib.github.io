@@ -3,7 +3,7 @@ layout  : wiki
 title   : moreutils
 summary : 
 date    : 2024-08-31 14:17:41 +0900
-updated : 2024-09-01 16:47:25 +0900
+updated : 2024-09-02 21:00:19 +0900
 tag     : 
 resource: 3A/779DEB-1DA5-4D22-970D-6112C559CCDD
 toc     : true
@@ -41,4 +41,5 @@ brew install moreutils
 ## Links
 
 - [moreutils](https://joeyh.name/code/moreutils/ )
+- [pgdr/moreutils (github.com)](https://github.com/pgdr/moreutils )
 
