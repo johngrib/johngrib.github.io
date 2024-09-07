@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-09-01 15:24:30 +0900
+updated : 2024-09-07 17:33:00 +0900
 regenerate: true
 ---
 * TOC
@@ -865,6 +865,8 @@ regenerate: true
 * [[/vagrant-docker-get-start]]
 
 ## [[/vim]]
+
+* [[/vim/cli-options]]
 
 * [[/vim/auto-completion]]
 * [[/vim/client-server]]

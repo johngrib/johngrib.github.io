@@ -12,6 +12,7 @@
   "vim-f-hangul",
   "vim-tagbar-with-markdown",
   "vim-update-book-progress",
+  "vim/cli-options",
   "vim/client-server",
   "vim/coc-nvim",
   "vim/comrade",
