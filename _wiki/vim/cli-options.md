@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim 의 CLI 옵션들
 summary : 작성 중인 문서
 date    : 2024-09-07 17:33:16 +0900
-updated : 2024-09-07 17:48:19 +0900
+updated : 2024-09-07 17:48:49 +0900
 tag     : 
 resource: 86/9983A2-4FB6-4BFB-8A79-FEDDE89F50AD
 toc     : true
@@ -22,7 +22,7 @@ latex   : false
 ls | vim -
 ```
 
-### +number {#plus-number}
+## +number {#plus-number}
 
 지정한 행번호로 커서가 이동된 상태로 vim이 시작된다.
 
@@ -39,7 +39,7 @@ vim +514 file.txt
 - file.txt 파일의 514번 행으로 커서가 이동된 상태로 vim이 시작된다.
 
 
-### +/pattern {#plus-pattern}
+## +/pattern {#plus-pattern}
 
 지정한 패턴을 검색해 매칭된 첫 번째 결과로 커서가 이동된 상태로 vim이 시작된다.
 
@@ -49,7 +49,7 @@ seq 1 100000 | vim - +/999
 
 - 1 ~ 100000 을 출력한 결과에서 999를 검색해 매칭된 첫 번째 결과로 커서가 이동된 상태로 vim이 시작된다.
 
-#### very magic 도 사용 가능하다 {#plus-pattern-very-magic}
+### very magic 도 사용 가능하다 {#plus-pattern-very-magic}
 
 ```bash
  seq 1 100000 | vim - +'/\v9{2,3}1{2,}'
