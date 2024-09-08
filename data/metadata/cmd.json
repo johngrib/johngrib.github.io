@@ -51,6 +51,7 @@
   "cmd/google-java-format",
   "cmd/gpg",
   "cmd/grep",
+  "cmd/gron",
   "cmd/httpie",
   "cmd/iconv",
   "cmd/ioreg",
