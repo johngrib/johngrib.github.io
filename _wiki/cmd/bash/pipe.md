@@ -3,12 +3,12 @@ layout  : wiki
 title   : pipe
 summary : "|"
 date    : 2023-06-01 21:38:20 +0900
-updated : 2023-08-08 21:30:18 +0900
+updated : 2024-09-08 18:03:13 +0900
 tag     : 
 resource: EA/2B5097-C073-4307-BB60-255F5A34BC01
 toc     : true
 public  : true
-parent  : [[/cmd]]
+parent  : [[/cmd/bash]]
 latex   : false
 ---
 * TOC

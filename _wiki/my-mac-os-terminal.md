@@ -194,7 +194,7 @@ $ tldr find     # find 사용법을 간결하게 알아본다
 
 ## 파이프 사용법을 익힌다
 
-[[/cmd/pipe]]{파이핑}을 익히면 여러 명령을 조합해 내가 원하는 형태로 결과를 가공할 수 있다.
+[[/cmd/bash/pipe]]{파이핑}을 익히면 여러 명령을 조합해 내가 원하는 형태로 결과를 가공할 수 있다.
 
 예를 들어 다음 명령어 조합은 실행할 때마다 `가위`, `바위`, `보` 중 하나를 랜덤으로 출력한다.
 
@@ -237,7 +237,7 @@ macOS의 경우 `pbcopy`, `pbpaste`를 사용할 수 있다.
 
 ## 검색 명령에 익숙해진다
 
-[[/cmd/grep]], [[/cmd/grep#egrep]]{egrep}, [[/cmd/find]], [[/cmd/ag]] 등의 명령을 [[/cmd/pipe]]{파이프}와 함께 사용해보고 다양한 옵션을 실험해본다.
+[[/cmd/grep]], [[/cmd/grep#egrep]]{egrep}, [[/cmd/find]], [[/cmd/ag]] 등의 명령을 [[/cmd/bash/pipe]]{파이프}와 함께 사용해보고 다양한 옵션을 실험해본다.
 
 ## 변수 설정, if, for의 사용법을 익힌다
 
@@ -328,7 +328,7 @@ fc 명령어에 익숙해지면 `control-x, control-e`도 사용해 보고, `exp
 - [[/cmd/find]]
 - [[/cmd/grep]]
 - [[/cmd/man]]
-- [[/cmd/pipe]]
+- [[/cmd/bash/pipe]]
 - [[/cmd/tee]]
 - [[/cmd/tty]]
 - [[/git-alias]]

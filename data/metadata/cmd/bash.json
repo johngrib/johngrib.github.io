@@ -13,6 +13,7 @@
   "cmd/bash/history",
   "cmd/bash/key",
   "cmd/bash/parameters",
+  "cmd/bash/pipe",
   "cmd/bash/term-colors"
  ]
 }

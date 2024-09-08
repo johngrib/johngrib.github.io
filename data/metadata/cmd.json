@@ -75,7 +75,6 @@
   "cmd/pass",
   "cmd/pee",
   "cmd/ping",
-  "cmd/pipe",
   "cmd/pwgen",
   "cmd/rans",
   "cmd/rbenv",
