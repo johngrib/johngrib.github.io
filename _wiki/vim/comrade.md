@@ -3,7 +3,7 @@ layout  : wiki
 title   : Comrade
 summary : IntelliJ를 NeoVim 플러그인으로 사용하기
 date    : 2023-03-22 21:15:25 +0900
-updated : 2023-03-23 09:49:54 +0900
+updated : 2024-09-08 12:47:23 +0900
 tag     : 
 resource: AB/9B1B40-C711-400A-8638-91C9B5ADECDC
 toc     : true
@@ -38,7 +38,7 @@ IntelliJ와 NeoVim을 연동해서 파일 변경사항을 동기화하고, 자�
 
 ## 문제 해결
 
-### Apple Silicon에서 작동하지 않는 문제 해결
+### Apple Silicon에서 작동하지 않는 문제 해결 {#fix-apple-silicon}
 
 Intel 맥에서는 문제없이 잘 작동했으나 내 M2 프로세서 Apple Silicon이 장착된 Mac Mini에서는 작동하지 않는 문제가 있었다.
 
@@ -156,4 +156,12 @@ private fun createRPCConnection(address: String): NeovimConnection {
     return SocketConnection(socket)
 }
 ```
+
+### IntelliJ, Java 버전업 {#upgrade-intellij-java}
+
+최신 버전의 IntelliJ 기준으로 빌드가 되지 않는 문제를 해결했다.
+
+아무도 merge 해주지 않는다는 걸 알지만.. 일단 PR은 올려뒀다.
+
+<https://github.com/beeender/ComradeNeovim/pull/4 >
 
