@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-09-08 18:03:06 +0900
+updated : 2024-09-08 18:04:23 +0900
 regenerate: true
 ---
 * TOC
@@ -689,6 +689,7 @@ regenerate: true
     * [[/cmd/bash/key]]
     * [[/cmd/bash/parameters]]
     * [[/cmd/bash/pipe]]
+    * [[/cmd/bash/redirection]]
     * [[/cmd/bash/term-colors]]
 * [[/cmd/fish-shell]]
 * [[/cmd/zsh]]

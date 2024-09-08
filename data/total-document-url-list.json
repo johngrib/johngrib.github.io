@@ -200,6 +200,7 @@
  "/wiki/cmd/bash/key",
  "/wiki/cmd/bash/parameters",
  "/wiki/cmd/bash/pipe",
+ "/wiki/cmd/bash/redirection",
  "/wiki/cmd/bash/term-colors",
  "/wiki/cmd/bat",
  "/wiki/cmd/bc",

@@ -14,6 +14,7 @@
   "cmd/bash/key",
   "cmd/bash/parameters",
   "cmd/bash/pipe",
+  "cmd/bash/redirection",
   "cmd/bash/term-colors"
  ]
 }
