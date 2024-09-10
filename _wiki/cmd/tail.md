@@ -3,7 +3,7 @@ layout  : wiki
 title   : tail 명령어
 summary : display the last part of a file
 date    : 2019-01-06 23:17:41 +0900
-updated : 2024-09-10 21:54:43 +0900
+updated : 2024-09-10 22:08:12 +0900
 tag     : bash command
 resource: 37/4DEAA6-AC99-4BF7-80B8-03BAB23F1129
 toc     : true
@@ -39,4 +39,23 @@ tail -r log.txt
 ```
 
 * `-r` 옵션은 `-F`, `-f` 옵션과 함께 사용할 수 없다.
+
+### ts 명령과의 조합
+
+[[/cmd/moreutils]]의 [[/cmd/ts]]와 함께 사용하면 `tail -F` 출력 결과에 타임스탬프를 prefix로 붙일 수 있다.
+
+```bash
+tail -F /var/log/apache2/access.log | ts '[%Y-%m-%d %H:%M:%S]'
+```
+
+시간 포맷은 strftime 포맷을 따르므로, `%Y-%m-%d %H:%M:%S`는 `%F %T`와 똑같다.
+
+```bash
+tail -F /var/log/apache2/access.log | ts '[%F %T]'
+```
+
+
+## 함께 읽기
+
+- [[/cmd/ts]]
 

@@ -3,7 +3,7 @@ layout  : wiki
 title   : ts 명령어
 summary : 표준 입력에 타임스탬프를 붙여 출력해준다
 date    : 2024-09-01 11:35:14 +0900
-updated : 2024-09-01 11:40:07 +0900
+updated : 2024-09-10 22:05:51 +0900
 tag     : 
 resource: AE/027F26-CE0A-4869-85D3-B12F54D8244D
 toc     : true
@@ -50,4 +50,17 @@ $ echo hello | ts '[%Y-%m-%d %H:%M:%S]'
 
 - 위와 같이 strftime 포맷을 사용해 날짜시간 형식을 지정할 수 있다.
     - `man strftime`
+
+```bash
+$ tail -F log.txt | ts '[%F %T %Z]'
+[2024-09-10 22:04:24 KST] 456
+```
+
+- `%F`는 `%Y-%m-%d`와 같다.
+- `%T`는 `%H:%M:%S`와 같다.
+- `%Z`는 타임존을 출력한다.
+
+## 함께 읽기
+
+- [[/cmd/tail]]
 
