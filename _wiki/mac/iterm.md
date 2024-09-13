@@ -3,7 +3,7 @@ layout  : wiki
 title   : iTerm
 summary : iTerm2 문제 해결 및 설정 경험을 모아본다
 date    : 2020-03-23 11:35:51 +0900
-updated : 2023-08-20 19:27:48 +0900
+updated : 2024-09-13 18:14:58 +0900
 tag     : mac
 resource: 01/5EE992-8715-460E-A336-239AE4A4EA4D
 toc     : true
@@ -76,13 +76,25 @@ brew cask install iterm2
 
 `Preferences` - `Profiles` - `Keys` 에서 `Left Option Key` 항목을 `Esc+`로 체크해 준다. 이걸 체크하지 않으면 `option` 키는 그냥 특수 문자를 생성하는 키 조합일 뿐이다.
 
+### 탭 {#tab}
 
-### 새로운 탭/윈도우가 워킹 디렉토리를 유지하게 하기
+#### 탭 위치
+
+`Preferences` - `Appearance` - `General` 에서 다음과 같이 설정한다.
+
+- Theme: `Compact`
+- Tab bar location: `Bottom`
+
+#### 탭 색상
+
+`Preferences` - `Profiles` - `Colors` 에서 `Tab color`를 Black, 10% Gray로 설정한다.
+
+#### 새로운 탭/윈도우가 워킹 디렉토리를 유지하게 하기
 
 `Preferences` - `Profiles` - `General` - `Working Directory`에서 `Reuse previous session's directory`를 체크한다.
 
 
-### 새로운 탭을 열 때, 현재 탭의 바로 오른쪽에 열어주게 하기
+#### 새로운 탭을 열 때, 현재 탭의 바로 오른쪽에 열어주게 하기
 
 - `Preferences` - `Advanced` - `Tabs` 에서 다음을 `No`로 변경한다.
     - `Add new tabs at the end of the tab bar, not next to current tab`
@@ -90,5 +102,4 @@ brew cask install iterm2
 - `Preferences` - `Advanced` 에서 `new tabs`로 검색해도 찾을 수 있다.
 
 이 옵션이 `Yes`이면 새로운 탭을 열 때마다 가장 오른쪽에 생겨난다. 탭을 많이 열고 사용하는 나는 이 옵션을 반드시 `No`로 설정한다.
-
 
