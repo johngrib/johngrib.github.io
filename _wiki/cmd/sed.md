@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2024-09-15 23:04:10 +0900
+updated : 2024-09-15 23:08:03 +0900
 tag     : bash command grep ed
 resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
@@ -64,6 +64,8 @@ s/regular-expression/replacement/flags
 
 ## Examples
 
+### s : 문자열 치환 {#command-s}
+
 ```sh
  # 여러 파일에서 foo를 bar로 replace하고, orig라는 원본 파일을 남겨둔다
 sed -i.orig s/foo/bar/g file1.txt file2.txt
@@ -78,7 +80,7 @@ echo -e '1\n2\n3' | sed -E '/2/ s/./999/'
 echo -e '1\n2\n3' | sed -E '/2/! s/./999/'
 ```
 
-### 공백 문자 replace
+#### 공백 문자 replace
 
 - space 교체
 
@@ -101,7 +103,7 @@ find . -name '*.java' | xargs ag '\t' -l | xargs sed -E -i.orig "s/[[:cntrl:]]/ 
 ag '\S\npackage' -l | xargs sed -i '' 's,package,\'$'\npackage,'
 ```
 
-### & 의 사용 {#ampersand}
+#### & 의 사용 {#ampersand}
 
 >
 An ampersand (“&”) appearing in the replacement is replaced by the string matching the RE.
