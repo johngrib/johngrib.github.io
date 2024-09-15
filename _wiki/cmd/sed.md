@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2024-08-13 23:21:32 +0900
+updated : 2024-09-15 23:04:10 +0900
 tag     : bash command grep ed
 resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
@@ -175,6 +175,34 @@ $ seq 15 30 | sed '/2/d'
     - `sed '/pattern/d'` : pattern이 포함된 줄을 삭제.
     - `sed '/pattern/Id'` : 대소문자 구분하지 않음.
 
+### GNU sed에서만 지원하는 명령어
+
+MacOS 빌트인 sed 에서는 지원하지 않고 GNU sed 에서는 지원하는 명령들.
+
+#### i : 매칭된 라인의 윗줄에 텍스트를 추가한다 {#command-i}
+
+- `gsed '/pattern/i text'` : pattern이 포함된 라인의 윗줄에 text를 추가한다.
+
+```bash
+$ seq 28 32 | gsed '/30/itest'
+28
+29
+test
+30
+31
+32
+```
+
+```bash
+$ seq 28 32 | gsed '/3[02]/itest'
+28
+29
+test
+30
+31
+test
+32
+```
 
 ## 실제 활용한 명령어들
 ```sh
