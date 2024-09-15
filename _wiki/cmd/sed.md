@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2024-09-15 23:29:47 +0900
+updated : 2024-09-15 23:34:18 +0900
 tag     : bash command grep ed
 resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
@@ -133,6 +133,12 @@ $ seq 3 8 | sed -E '4 s/./999/'
 
 - `4` : `4`번째 라인을 선택.
 
+## 라인 지정
+
+- `n` : n번째 라인을 지정한다.
+- `n,m` : n번째 라인부터 m번째 라인까지 지정한다.
+- `$` : 마지막 라인을 지정한다.
+
 ## s : 문자열 치환 {#command-s}
 
 다음과 같은 단순한 치환은 첫번째 매칭된 문자열만 치환한다.
@@ -260,6 +266,8 @@ test
 32
 ```
 
+- `gsed '/30/itest'` : 텍스트에 30을 포함하고 있는 문자열의 윗줄에 test를 추가한다.
+
 ```bash
 $ seq 28 32 | gsed '/3[02]/itest'
 28
@@ -271,6 +279,37 @@ test
 32
 ```
 
+- `gsed -E '/3[02]/itest'` : 텍스트에 30 또는 31 을 포함하고 있는 문자열의 윗줄에 test를 추가한다.
+
+
+### a : 매칭된 라인의 아랫줄에 텍스트를 추가한다 {#command-a}
+
+- `gsed '/pattern/a text'` : pattern이 포함된 라인의 아랫줄에 text를 추가한다.
+
+```bash
+$ seq 28 32 | gsed -E '/29|31/atest'
+28
+29
+test
+30
+31
+test
+32
+```
+
+- `gsed -E '/29|31/atest'` : 텍스트에 29 또는 31 을 포함하고 있는 문자열의 아랫줄에 test를 추가한다.
+
+```bash
+$ seq 28 32 | gsed -E '4 atest'
+28
+29
+30
+31
+test
+32
+```
+
+- `gsed -E '4 atest'` : 4번째 라인의 아랫줄에 test를 추가한다.
 
 ## 실제 활용한 명령어들
 
