@@ -3,7 +3,7 @@ layout  : wiki
 title   : tr 명령어
 summary : translate characters
 date    : 2019-11-18 13:52:25 +0900
-updated : 2023-07-31 21:13:03 +0900
+updated : 2024-09-15 21:11:42 +0900
 tag     : bash command
 resource: 89/84AC90-2C84-4506-AB5A-CB5D964C06EE
 toc     : true
@@ -92,6 +92,13 @@ euioouoeeaoeoo
 echo 'ASDF' | tr '[:upper:]' '[:lower:]'    # asdf
 echo 'ASDF' | tr A-Z a-z    # asdf
 echo 'ASDF' | tr AD ad      # aSdF
+```
+
+나는 다음과 같은 alias를 지정해 놓고 사용한다.
+
+```bash
+alias tr-lower='tr "[:upper:]" "[:lower:]"'
+alias tr-upper='tr "[:lower:]" "[:upper:]"'
 ```
 
 ### 공백 문자 변환
@@ -184,4 +191,5 @@ $ tr a-z A-Z
 hello world
 HELLO WORLD
 ```
+
 
