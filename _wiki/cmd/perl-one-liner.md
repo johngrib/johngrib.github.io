@@ -3,7 +3,7 @@ layout  : wiki
 title   : Perl 한 줄 사용
 summary : 
 date    : 2020-06-29 23:33:40 +0900
-updated : 2024-09-17 08:43:54 +0900
+updated : 2024-09-17 08:58:36 +0900
 tag     : bash command
 resource: 53/93E136-7E69-41D7-8A7E-1A9D866F9EEA
 toc     : true
@@ -22,26 +22,37 @@ latex   : false
 
 ## Examples
 
-### sed 처럼 사용하기
+### `-pe` 옵션으로 sed 처럼 사용하기 {#pe-sed}
 ```sh
 echo 'John Grib' | perl -pe 's/(\w+)\s+(\w+)/$2 $1/'    # 출력은 Grib John
 ```
 
-- `-e`: execute. 다음에 주어진 문자열을 perl 코드로 실행하는 옵션.
 - `-p`: print. 실행 결과를 출력한다. 즉 `-p`가 없으면 위의 명령을 실행한 결과는 출력되지 않는다.
+- `-e`: execute. 다음에 주어진 문자열을 perl 코드로 실행하는 옵션.
+    - `-pe`는 `-p`와 `-e`를 합쳐서 표현한 것이다. 따로 쓰기 귀찮으니 주로 `-pe`를 사용한다.
+- 주의: [[/cmd/sed]]와 다른 점
+    - 위의 예제에서는 역참조로 `$2`, `$1`을 사용했지만 [[/cmd/sed]]에서는 `\2`, `\1`와 같이 `\`를 사용한다.
+
+#### `-i` 옵션: 파일 업데이트 {#option-i}
+
+`-i`: in-place edit. 출력 결과를 파일에 쓴다.
 
 ```sh
- # test.txt 파일의 모든 foo를 bar로 치환하고, 파일에 덮어쓴다.
 perl -pi -e 's/foo/bar/g' test.txt
 ```
 
-- `-i`: in-place edit. 출력 결과를 파일에 쓴다.
+- `-i`: 치환한 결과를 `test.txt` 파일에 덮어쓴다.
+- `s/foo/bar/g`: 모든 `foo`를 `bar`로 치환한다.
 
 ```sh
- # test.txt 파일을 test.txt.backup 파일로 백업해두고,
- # 모든 foo를 bar로 치환하고, test.txt 파일에 덮어쓴다.
 perl -pi.backup -e 's/foo/bar/g' test.txt
 ```
+
+- `-i`: 치환한 결과를 `test.txt` 파일에 덮어쓴다.
+    - `-i.backup`: 원본파일 `test.txt`를 `test.txt.backup` 파일로 복사해 백업해둔다.
+- `s/foo/bar/g`: 모든 `foo`를 `bar`로 치환한다.
+
+#### if, unless 사용하기 {#if-unless}
 
 ```sh
  # sample 패턴에 매치되는 라인에 대해서만 foo를 bar로 치환한다.
@@ -51,6 +62,17 @@ perl -pi.back -e 's/foo/bar/g if /sample/' test.txt
 ```sh
  # sample 패턴에 매치되지 않는 라인에 대해서만 foo를 bar로 치환한다.
 perl -pi.back -e 's/foo/bar/g unless /sample/' test.txt
+```
+
+#### PCRE 사용하기 {#sed-pcre}
+
+[[/cmd/sed]]{sed}에서는 지원하지 않는 전후방 탐색 등을 사용할 수 있다.
+(당연한 일이다. PCRE의 P는 Perl에서 따온 것이다.)
+
+```bash
+$ # 오른쪽에 22가 있는 11만 replacement로 치환한다.
+$ echo 2211223311 | perl -pe 's/11(?=22)/replacement/g'
+22replacement223311
 ```
 
 ### 멀티 라인 replace
