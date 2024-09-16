@@ -3,7 +3,7 @@ layout  : wiki
 title   : Perl 한 줄 사용
 summary : 
 date    : 2020-06-29 23:33:40 +0900
-updated : 2024-09-17 08:40:32 +0900
+updated : 2024-09-17 08:43:54 +0900
 tag     : bash command
 resource: 53/93E136-7E69-41D7-8A7E-1A9D866F9EEA
 toc     : true
@@ -13,6 +13,12 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## 개요
+
+- perl은 하나의 완전한 프로그래밍 언어이다.
+- 하지만 나는 bash 커맨드라인에서 주로 명령어 파이프를 구성할 때 사용한다.
+    - 주로 [[/cmd/sed]]{sed}를 쓰다가 [[/regex/pcre]]가 필요한 경우에 perl을 선택한다.
 
 ## Examples
 
