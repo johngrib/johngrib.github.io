@@ -3,12 +3,12 @@ layout  : wiki
 title   : Perl 한 줄 사용
 summary : 
 date    : 2020-06-29 23:33:40 +0900
-updated : 2023-01-04 16:37:35 +0900
+updated : 2024-09-17 08:40:32 +0900
 tag     : bash command
 resource: 53/93E136-7E69-41D7-8A7E-1A9D866F9EEA
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

@@ -75,6 +75,7 @@
   "cmd/openssl",
   "cmd/pass",
   "cmd/pee",
+  "cmd/perl-one-liner",
   "cmd/ping",
   "cmd/pwgen",
   "cmd/rans",
@@ -118,7 +119,6 @@
   "df",
   "how-to-escape-cli",
   "my-bash-cheatsheet",
-  "perl-one-liner",
   "phpbrew",
   "sha256sum",
   "uptime"

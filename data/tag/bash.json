@@ -36,6 +36,7 @@
  "cmd/man",
  "cmd/mv",
  "cmd/openssl",
+ "cmd/perl-one-liner",
  "cmd/ping",
  "cmd/pwgen",
  "cmd/rbenv",
@@ -63,7 +64,6 @@
  "git-alias",
  "how-to-escape-cli",
  "my-bash-cheatsheet",
- "perl-one-liner",
  "sha256sum",
  "uptime"
 ]
