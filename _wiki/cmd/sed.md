@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2024-09-17 08:24:59 +0900
+updated : 2024-09-17 08:35:46 +0900
 tag     : bash command grep
 resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
@@ -14,7 +14,12 @@ latex   : false
 * TOC
 {:toc}
 
-리 맥마흔(Lee E. McMahon)이 개발한 스트림 에디터.
+## 개요
+
+- 리 맥마흔(Lee E. McMahon)이 개발한 스트림 에디터.
+- 나는 bash에서 주로 파이프 연결을 통해 문자열 replace 하는 도구로 사용한다.
+- `-E` 옵션으로 ERE를 사용할 수 있다.
+    - 그러나 PCRE는 사용할 수 없다. PCRE가 필요하면 `perl -pe`를 사용한다.
 
 ## 역사
 
