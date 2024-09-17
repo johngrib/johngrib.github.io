@@ -3,7 +3,7 @@ layout  : wiki
 title   : bc
 summary : An arbitrary precision calculator language
 date    : 2018-10-07 18:12:19 +0900
-updated : 2024-09-17 22:11:20 +0900
+updated : 2024-09-18 08:53:28 +0900
 tag     : bash command
 resource: 2D/9A7DF4-5801-4163-BAAF-8BBC5D36B3AB
 toc     : true
@@ -290,14 +290,9 @@ exit 0
 
 `bcscript`는 `-p 10` 처럼 옵션을 주는 방식으로 소수점 아래 몇 자리까지 출력할지 지정할 수 있다.
 
-나는 이 스크립트를 참고해 살짝 수정해 사용하고 있다.
+나는 이 스크립트를 참고해 살짝 수정해 사용하고 있다. 파일명은 `,bc`.
 
 <https://github.com/johngrib/dotfiles/blob/master/bin/%2Cbc >
-
-아래는 나의 스크립트 `,bc`이다.
-
-- `bcscript`처럼 `-p` 옵션으로 소수점 자릿수를 지정할 수 있다.
-- `.bcrc` 파일을 기본으로 읽어들인다.
 
 ```bash
 #!/usr/bin/env bash
@@ -309,13 +304,21 @@ if [ "$1" = "-p" ]; then
     # args에서 $1, $2를 지운다. (즉 -p 와 $2 를 지운다)
     shift 2
 else
-    # -p 를 지정하지 않는 경우, 실수 연산은 소숫점 아래 2자리까지 출력한다.
     precision=2
+fi
+
+if [ -t 0 ]; then
+    # ,bc '2+3' 처럼 사용하는 경우
+    stdin_input=""
+else
+    # echo '2+3' + ,bc 처럼 사용하는 경우
+    stdin_input="$(cat -)"
 fi
 
 bc -q -l ~/dotfiles/.bcrc << EOF
     scale=$precision
     $*
+    $stdin_input
     quit
 EOF
 # -q : bc의 welcome 문구를 출력하지 않는다.
@@ -323,6 +326,11 @@ EOF
 
 exit 0
 ```
+
+- `bcscript`처럼 `-p` 옵션으로 소수점 자릿수를 지정할 수 있다.
+- `.bcrc` 파일을 기본으로 읽어들인다.
+- stdin으로 입력을 받는 것도 가능하다.
+    - 명령행 옵션에도 계산식이 있고 stdin으로도 계산식이 들어오면, 명령행 옵션을 먼저 실행하고 그 다음에 stdin으로 들어온 계산식을 실행한다.
 
 다음과 같이 사용한다.
 
@@ -338,6 +346,15 @@ $ ,bc -p 8 997/991
 ```
 
 - 각각 소수점 아래로 6, 7, 8자리까지 출력되는 것을 확인할 수 있다.
+
+```bash
+$ ,bc -p 6 <<< 997/991
+
+$ echo 997/991 | ,bc -p 7
+1.0060544
+```
+
+- 위와 같이 stdin으로 입력을 받는 것도 가능하다.
 
 ## 함께 읽기
 
