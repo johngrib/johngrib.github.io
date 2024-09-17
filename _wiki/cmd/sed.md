@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2024-09-17 08:35:46 +0900
+updated : 2024-09-17 13:27:28 +0900
 tag     : bash command grep
 resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
@@ -41,6 +41,19 @@ MacOS라면 [[/cmd/brew]]{brew}를 이용해 macOS에 설치할 수 있고, 이�
 ```sh
 brew install gnu-sed
 ```
+
+## 명령줄 옵션 {#option}
+
+- `-i` : 파일을 업데이트한다.
+    - 백업 파일을 생성하지 않으려면 `-i ''` 처럼 백업 파일 확장자로 빈 문자열을 지정한다.
+- `-E` : ERE를 사용한다.
+
+이외에 아래와 같은 다른 옵션들도 있긴 하지만 나는 잘 사용하지 않는다.
+
+- `-e` : 여러 command 를 지정할 수 있다.
+- `-f` : command file을 지정한다.
+    - 파일명으로 `-`를 지정하면 표준 입력을 명령으로 사용한다.
+- 그 외 다수
 
 ## 명령 구분자 {#command-delimiter}
 
