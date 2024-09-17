@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash Parameters
 summary : 
 date    : 2023-08-04 21:01:10 +0900
-updated : 2023-08-05 23:00:22 +0900
+updated : 2024-09-17 22:39:28 +0900
 tag     : 
 resource: 12/723FD0-7E4D-4050-B84C-114CB1FF5283
 toc     : true
@@ -152,6 +152,7 @@ $ (echo $BASH_SUBSHELL; (echo $BASH_SUBSHELL))
 
 ## 현재 작업 셸 관련
 
+- `$$`: 현재 셸의 프로세스 ID.
 - `$PPID`: 현재 셸의 부모 프로세스 ID.
 - `$HOME`: 현재 사용자의 홈 디렉토리.
 - `$PWD`: 현재 작업 디렉토리.
