@@ -3,7 +3,7 @@ layout  : wiki
 title   : Perl 한 줄 사용
 summary : 
 date    : 2020-06-29 23:33:40 +0900
-updated : 2024-09-17 08:58:36 +0900
+updated : 2024-09-17 12:35:50 +0900
 tag     : bash command
 resource: 53/93E136-7E69-41D7-8A7E-1A9D866F9EEA
 toc     : true
@@ -74,6 +74,15 @@ $ # 오른쪽에 22가 있는 11만 replacement로 치환한다.
 $ echo 2211223311 | perl -pe 's/11(?=22)/replacement/g'
 22replacement223311
 ```
+
+- `11(?=22)`: 오른쪽에 `22`가 있는 `11`을 표현하는 look ahead 정규식.
+
+```bash
+$ echo "test123test" | perl -pe 's/(?<=\d)test/replacement/'
+test123replacement
+```
+
+- `(?<=\d)test`: 왼쪽에 숫자가 있는 `test`를 표현하는 look behind 정규식.
 
 ### 멀티 라인 replace
 
