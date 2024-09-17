@@ -3,7 +3,7 @@ layout  : wiki
 title   : bc
 summary : An arbitrary precision calculator language
 date    : 2018-10-07 18:12:19 +0900
-updated : 2024-03-26 22:29:55 +0900
+updated : 2024-09-17 21:14:36 +0900
 tag     : bash command
 resource: 2D/9A7DF4-5801-4163-BAAF-8BBC5D36B3AB
 toc     : true
@@ -130,7 +130,8 @@ $ bc example.bc -q
 3
 ```
 
-## 기본 함수 목록
+## 함수
+### 기본 함수 목록
 
 * `s(x)` - The sine of x, x is in radians.
 * `c(x)` - The cosine of x, x is in radians.
@@ -139,7 +140,7 @@ $ bc example.bc -q
 * `e(x)` - The exponential function of raising e to the value x.
 * `j(n,x)` - The bessel function of integer order n of x.
 
-## 유용한 함수
+### 유용한 커스텀 함수
 
 * 정수 변환
 
@@ -203,4 +204,5 @@ $ echo "scale=100; 4*a(1)" | bc -l
 ## 주석
 
 [^KER-5-195]: [KER] 5장. 195쪽.
+
 
