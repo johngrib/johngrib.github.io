@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2024-09-17 13:27:28 +0900
+updated : 2024-09-17 13:28:09 +0900
 tag     : bash command grep
 resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
@@ -157,7 +157,9 @@ $ seq 3 8 | sed -E '4 s/./999/'
 - `n,m` : n번째 라인부터 m번째 라인까지 지정한다.
 - `$` : 마지막 라인을 지정한다.
 
-## s : 문자열 치환 {#command-s}
+## 명령어 {#command}
+
+### s : 문자열 치환 {#command-s}
 
 다음과 같은 단순한 치환은 첫번째 매칭된 문자열만 치환한다.
 
@@ -192,7 +194,7 @@ sed -i.orig s/foo/bar/g file1.txt file2.txt
 sed -i.orig -E 's/(if|for)\(/\1 (/' file1 file2
 ```
 
-### & 의 사용 {#ampersand}
+#### & 의 사용 {#ampersand}
 
 >
 An ampersand (“&”) appearing in the replacement is replaced by the string matching the RE.
@@ -222,7 +224,7 @@ $ echo 'hello world' | sed 's/o/\&/g'
 hell& w&rld
 ```
 
-## d : 삭제 명령
+### d : 삭제 명령
 
 ```
 $ seq 5  | sed 1d
