@@ -3,7 +3,7 @@ layout  : wiki
 title   : man 명령어
 summary : 유닉스 메뉴얼 페이지를 찾아보는 명령
 date    : 2020-09-30 09:38:35 +0900
-updated : 2024-09-18 18:07:17 +0900
+updated : 2024-09-18 18:14:25 +0900
 tag     : bash command c
 resource: 3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA
 toc     : true
@@ -15,6 +15,8 @@ latex   : false
 {:toc}
 
 ## Sections
+
+`man`은 사용법에 앞서 섹션에 대해 알아야 한다.
 
 여러 섹션이 있으며, 명령에 섹션을 옵션으로 줄 수 있다.
 
@@ -31,6 +33,15 @@ latex   : false
 8. System Manager's Manual
 9. Kernel Developer's Manual
 
+각 섹션에 대해서는 `man 섹션넘버 intro`를 입력하면 설명서를 볼 수 있다.
+
+```
+man 1 intro
+man 2 intro
+man 3 intro
+```
+
+- `man 4 intro`, `man 6 intro`는 설명서가 없을 수도 있다.
 
 ## 기본 사용법
 
