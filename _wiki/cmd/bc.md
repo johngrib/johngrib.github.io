@@ -3,7 +3,7 @@ layout  : wiki
 title   : bc
 summary : An arbitrary precision calculator language
 date    : 2018-10-07 18:12:19 +0900
-updated : 2024-09-18 08:53:28 +0900
+updated : 2024-09-18 09:04:52 +0900
 tag     : bash command
 resource: 2D/9A7DF4-5801-4163-BAAF-8BBC5D36B3AB
 toc     : true
@@ -371,12 +371,12 @@ $ echo 997/991 | ,bc -p 7
 
 ## 참고문헌
 
-- 셸 스크립트 / Dave Taylor 저 / 여인춘 역 / 에이콘출판사 / 발행: 2005년 09월 26일 / 원제: Wicked Cool Shell Scripts
+- 셸 스크립트 - 101가지 예제로 정복하는 / Dave Taylor 저 / 여인춘 역 / 에이콘출판사 / 발행: 2005년 09월 26일 / 원제: Wicked Cool Shell Scripts
 - 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원제: UNIX: A History and a Memoir
 
 ## 주석
 
 [^KER-5-195]: 유닉스의 탄생. 5장. 195쪽.
-[^wicked-30]: 셸 스크립트. 1장. 30쪽.
+[^wicked-30]: 셸 스크립트 - 101가지 예제로 정복하는. 1장. 30쪽.
 
 
