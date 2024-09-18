@@ -239,6 +239,7 @@
  "/wiki/cmd/fish-shell",
  "/wiki/cmd/for",
  "/wiki/cmd/fortune",
+ "/wiki/cmd/getopts",
  "/wiki/cmd/glow",
  "/wiki/cmd/gnu-coreutils",
  "/wiki/cmd/google-java-format",

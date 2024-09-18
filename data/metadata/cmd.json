@@ -46,6 +46,7 @@
   "cmd/fish-shell",
   "cmd/for",
   "cmd/fortune",
+  "cmd/getopts",
   "cmd/glow",
   "cmd/gnu-coreutils",
   "cmd/google-java-format",
