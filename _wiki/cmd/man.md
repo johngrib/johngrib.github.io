@@ -3,7 +3,7 @@ layout  : wiki
 title   : man 명령어
 summary : 유닉스 메뉴얼 페이지를 찾아보는 명령
 date    : 2020-09-30 09:38:35 +0900
-updated : 2024-02-05 23:49:01 +0900
+updated : 2024-09-18 18:07:17 +0900
 tag     : bash command c
 resource: 3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA
 toc     : true
@@ -32,18 +32,22 @@ latex   : false
 9. Kernel Developer's Manual
 
 
-## Examples
-### 기본적인 사용법
+## 기본 사용법
+
+```bash
+man sed
+```
+
+- sed 명령 설명서를 본다
+
+### 섹션 지정
 
 ```sh
- # sed 명령 설명서를 본다
-man sed
- # 1 섹션의 sed 명령 설명서를 본다
- # (sed는 1 섹션에 있으므로 위의 명령과 같다)
 man 1 sed
 ```
 
-`man`은 뷰어를 따로 설정하지 않으면 [[/cmd/less]]를 사용해 설명서를 보여준다. 따라서 [[/cmd/less]] 사용법과 설정 등을 알아 두도록 한다.
+- 1 섹션의 [[/cmd/sed]] 설명서를 본다
+    - `sed`는 1 섹션에 있으므로 위의 `man sed` 명령과 같다
 
 각 설명서는 섹션이 나뉘어 있다. `sed` 설명서를 보면 최상단에 `SED(1)`이라고 되어 있는데 이는 1번 섹션 설명서를 의미한다.
 
@@ -69,7 +73,9 @@ man 3 printf
 
 ![]( /resource/3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA/printf-3.jpg )
 
-### 검색
+## 옵션
+
+### -k : whatis 데이터베이스에서 검색
 
 ```sh
  # perl-compatible 문자열을 apropos로 보여준다
@@ -81,6 +87,8 @@ man -k perl-compatible
 `-` 왼쪽이 설명서 이름과 섹션, `-` 오른쪽이 검색된 라인이다.
 
 ![]( /resource/3B/C635C4-EF04-473E-BB03-A4BDD7D9BDAA/find-apropos.jpg )
+
+### -K : 모든 설명서에서 검색
 
 모든 설명서를 대상으로 검색하고 싶다면 `-K` 옵션을 쓴다.
 
@@ -97,9 +105,16 @@ man -K string
 - `n`: 다음 문서
 - `q`: 검색 종료
 
-### manpath 명령
+## 함께 알아둘 명령
+### manpath
 
 `manpath` 명령을 사용해 `man` 명령이 검색하는 경로를 출력할 수 있다.
+
+### less
+
+`man`은 뷰어를 따로 설정하지 않으면 [[/cmd/less]]를 사용해 설명서를 보여준다.
+따라서 [[/cmd/less]] 사용법과 설정 등을 알아 두도록 한다.
+
 
 ## man 이것저것
 ### 한번쯤 읽어두면 좋은 man 들
