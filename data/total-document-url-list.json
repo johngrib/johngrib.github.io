@@ -296,6 +296,7 @@
  "/wiki/cmd/top",
  "/wiki/cmd/touch",
  "/wiki/cmd/tr",
+ "/wiki/cmd/trap",
  "/wiki/cmd/tree",
  "/wiki/cmd/ts",
  "/wiki/cmd/tty",

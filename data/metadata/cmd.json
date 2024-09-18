@@ -101,6 +101,7 @@
   "cmd/top",
   "cmd/touch",
   "cmd/tr",
+  "cmd/trap",
   "cmd/tree",
   "cmd/ts",
   "cmd/tty",
