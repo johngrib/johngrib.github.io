@@ -3,7 +3,7 @@ layout  : wiki
 title   : date 명령어
 summary : 날짜나 시간을 출력하거나 설정한다
 date    : 2018-08-03 05:19:22 +0900
-updated : 2024-07-17 22:54:14 +0900
+updated : 2024-09-19 22:48:49 +0900
 tag     : bash command
 resource: 48/DDC995-1C3B-477A-A0F6-A07FCA93164C
 toc     : true
@@ -49,6 +49,8 @@ echo $(((from_time - to_time) / 86400))         # 결과는 2
 ```
 
 ### GNU
+
+GNU date는 MacOS의 date보다 더 많은 기능을 제공한다.
 
 mac에서 GNU `date`를 사용하려면 `coreutils`를 설치하면 된다.
 
@@ -119,8 +121,38 @@ $ gdate +'%Y-%m-%d %H:%M:%S.%N'
 2024-07-17 22:51:53.317486000
 ``````
 
+## 타임존
+
+### 현재 타임존 확인
+
+`/etc/localtime`가 어느 파일에 대한 심볼릭 링크인지 확인하면 현재 타임존을 알 수 있다.
+
+```bash
+$ readlink /etc/localtime
+/var/db/timezone/zoneinfo/Asia/Seoul
+```
+
+물론 [[/cmd/ls]]{ls -l} 로도 확인할 수 있다.
+
+```bash
+$ ls -l /etc/localtime
+lrwxr-xr-x 1 root wheel 36 2024-08-17 Sat 11:11:03 /etc/localtime -> /var/db/timezone/zoneinfo/Asia/Seoul
+```
+
+### 타임존에 따른 날짜시간 출력
+
+`TZ` 환경변수에 타임존을 입력하는 방식으로 특정 타임존의 날짜시간을 출력할 수 있다.
+
+```sh
+$ TZ="Asia/Seoul" date ; TZ="Asia/Singapore" date ; TZ="Asia/Tokyo" date
+Thu Sep 19 22:39:24 KST 2024
+Thu Sep 19 21:39:24 +08 2024
+Thu Sep 19 22:39:24 JST 2024
+```
+
+`TZ`에 입력할 수 있는 타임존 이름은 `/usr/share/zoneinfo/zone.tab` 파일에서 확인하면 된다.
+
 ## 참고문헌
 
 - [21.1.7 Examples of date (gnu.org)]( https://www.gnu.org/software/coreutils/manual/html_node/Examples-of-date.html )
-
 
