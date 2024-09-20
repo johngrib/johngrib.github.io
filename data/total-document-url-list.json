@@ -210,6 +210,7 @@
  "/wiki/cmd/cat",
  "/wiki/cmd/chardetect",
  "/wiki/cmd/chmod",
+ "/wiki/cmd/chronic",
  "/wiki/cmd/chsh",
  "/wiki/cmd/column",
  "/wiki/cmd/compgen",

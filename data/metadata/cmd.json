@@ -19,6 +19,7 @@
   "cmd/cat",
   "cmd/chardetect",
   "cmd/chmod",
+  "cmd/chronic",
   "cmd/chsh",
   "cmd/column",
   "cmd/compgen",

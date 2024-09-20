@@ -3,7 +3,7 @@ layout  : wiki
 title   : crontab
 summary : maintain crontab files for individual users
 date    : 2023-11-06 22:54:23 +0900
-updated : 2024-09-20 16:48:35 +0900
+updated : 2024-09-20 17:21:04 +0900
 tag     : 
 resource: 80/D05BAB-5081-48B9-87D4-BA339B73E70C
 toc     : true
@@ -83,6 +83,18 @@ PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 ```
 
 - `SHELL`을 `/bin/bash`로 지정하기 때문에 `~/.bash_profile`을 알아서 `source`한다.
+
+### mail을 끄고 싶은 경우
+
+crontab은 실행될 때마다 `/var/mail`로 메일을 보내는데, 가벼운 작업이라면 성가시다.
+
+[[/cmd/chronic]]{chronic}과 명령을 조합하면 실패했을 경우에만 출력이 되므로, 명령이 실패한 경우에만 메일이 발송되도록 할 수 있다.
+
+다음과 같이 실행하려는 명령 앞에 [[/cmd/chronic]]{chronic}을 붙여주면 된다.
+
+```
+* * * * * chronic ~/script.sh
+```
 
 
 

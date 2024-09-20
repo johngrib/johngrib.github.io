@@ -3,7 +3,7 @@ layout  : wiki
 title   : moreutils
 summary : 
 date    : 2024-08-31 14:17:41 +0900
-updated : 2024-09-02 21:00:19 +0900
+updated : 2024-09-20 17:21:43 +0900
 tag     : 
 resource: 3A/779DEB-1DA5-4D22-970D-6112C559CCDD
 toc     : true
@@ -22,7 +22,7 @@ brew install moreutils
 
 ## 포함된 명령어들
 
-- chronic: runs a command quietly unless it fails
+- [[/cmd/chronic]]{chronic}: runs a command quietly unless it fails
 - combine: combine the lines in two files using boolean operations
 - [[/cmd/errno]]{errno}: look up errno names and descriptions
 - ifdata: get network interface info without parsing ifconfig output
