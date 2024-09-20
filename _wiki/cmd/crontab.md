@@ -3,7 +3,7 @@ layout  : wiki
 title   : crontab
 summary : maintain crontab files for individual users
 date    : 2023-11-06 22:54:23 +0900
-updated : 2024-05-28 23:05:02 +0900
+updated : 2024-09-20 16:48:35 +0900
 tag     : 
 resource: 80/D05BAB-5081-48B9-87D4-BA339B73E70C
 toc     : true
@@ -66,11 +66,23 @@ crontab -l
 
 ## 문제 해결
 
-### .bash_profile 실행이 필요한 경우
+### .bash_profile 실행이 필요한 경우 {#bash-profile}
 
 `.bash_profile`, `PATH` 등을 사용 환경과 일치시키려면 다음 방법을 사용할 수 있다.
 
 ```
 * * * * * bash -c 'source ~/.bash_profile && ~/script.sh'
 ```
+
+하지만 위의 방법이 썩 마음에 들지 않는다면 `SHELL`과 `PATH`를 지정하도록 한다.
+
+```
+SHELL=/bin/bash
+PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+* * * * * ~/script.sh
+```
+
+- `SHELL`을 `/bin/bash`로 지정하기 때문에 `~/.bash_profile`을 알아서 `source`한다.
+
+
 
