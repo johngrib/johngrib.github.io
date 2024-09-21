@@ -3,7 +3,7 @@ layout  : wiki
 title   : find
 summary : walk a file hierarchy
 date    : 2019-01-13 17:52:34 +0900
-updated : 2024-08-10 14:08:05 +0900
+updated : 2024-09-21 23:12:31 +0900
 tag     : bash command
 resource: 4F/D2AFEF-7A65-4637-82FF-86AEAE03D596
 toc     : true
@@ -14,8 +14,7 @@ latex   : true
 * TOC
 {:toc}
 
-## Examples
-### 자주 쓰는 찾기 패턴 {#basics}
+## 자주 쓰는 찾기 패턴 {#basics}
 
 ```sh
  # 현재 디렉토리와 그 하위 디렉토리 전체에서 이름이 "README.md"인 파일을 찾는다.
@@ -56,6 +55,7 @@ find . -type f ! -name "*.md"
 
 - `!`는 "NOT"을 의미한다.
 
+## 옵션 {#options}
 ### -exec : 각 파일에 대해 실행할 명령을 지정한다 {#option-exec}
 
 `find`의 핵심 기능으로, 찾은 파일에 대해 실행할 명령을 지정할 수 있다.
@@ -176,6 +176,15 @@ find . -maxdepth 2 -name '*.md'
  # 현재 디렉토리에서 2단계 아래부터 탐색한다.
 find . -mindepth 2 -name '*.md'
 ```
+
+### -xdev : 시스템 영역 등을 탐색에서 제외한다 {#option-xdev}
+
+>
+find 명령의 인수 `-xdev`는 find가 시스템 영역, 소스 디렉토리와 삭제 가능한 디바이스들,
+(리눅스에서) 실행 중인 프로세스들의 `/proc` 디렉토리,
+그리고 그와 유사한 영역들을 검사하지 않도록 해서,
+파일 시스템 전체를 검사하는 일이 없게 한다.
+[^wicked-113]
 
 ## 함께 읽기
 
@@ -303,5 +312,9 @@ Dennis
 ## 참고문헌
 
 - [The History of the Design of Unix’s Find Command (doc.cat-v.org)]( http://doc.cat-v.org/unix/find-history )
+- 셸 스크립트 - 101가지 예제로 정복하는 / Dave Taylor 저 / 여인춘 역 / 에이콘출판사 / 발행: 2005년 09월 26일 / 원제: Wicked Cool Shell Scripts
 
+## 주석
+
+[^wicked-113]: 셸 스크립트 - 101가지 예제로 정복하는. 5장. 113쪽.
 
