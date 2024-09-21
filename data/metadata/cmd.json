@@ -94,6 +94,7 @@
   "cmd/sponge",
   "cmd/ssh",
   "cmd/strfile",
+  "cmd/sudo",
   "cmd/sw_vers",
   "cmd/tail",
   "cmd/tee",

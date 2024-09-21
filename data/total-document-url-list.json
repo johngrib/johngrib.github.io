@@ -288,6 +288,7 @@
  "/wiki/cmd/sponge",
  "/wiki/cmd/ssh",
  "/wiki/cmd/strfile",
+ "/wiki/cmd/sudo",
  "/wiki/cmd/sw_vers",
  "/wiki/cmd/tail",
  "/wiki/cmd/tee",
