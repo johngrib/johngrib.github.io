@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2023-12-02 23:43:26 +0900
+updated : 2024-09-21 22:41:17 +0900
 tag     : command 언어 brian-kernighan awk
 resource: 97/3C865D-C4E1-43B2-B80E-F96DA7AC7703
 toc     : true
@@ -82,9 +82,16 @@ $ echo 'asdf' | awk '{print toupper($0)}'
 ```
 
 ### 행 번호의 사용
-#### 각 행에 행 번호를 붙여주기
+#### 각 행에 행 번호를 붙여주기 {#append-line-number}
+
 ```sh
 awk '{print NR, $0}' test.txt
+```
+
+다음과 같이 해도 똑같은 결과를 얻을 수 있다.
+
+```bash
+awk '{ print NR " " $0}' < test.txt
 ```
 
 #### 홀짝 라인을 조인하기
@@ -154,4 +161,5 @@ Perl을 좀 무시하는 개발자들도 있는 것 같은데, 사실 Perl은 �
 ## 주석
 
 [^KER-5-209]: 유닉스의 탄생. 5장. 209쪽.
+
 
