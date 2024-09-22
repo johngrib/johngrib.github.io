@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash Arrays
 summary : 
 date    : 2024-09-22 21:35:23 +0900
-updated : 2024-09-22 21:55:39 +0900
+updated : 2024-09-22 22:40:30 +0900
 tag     : 
 resource: BB/48FC83-C6D5-46B3-AE75-768F9F647709
 toc     : true
@@ -92,6 +92,13 @@ $ numbers+=("five" "six")
 
 $ echo ${numbers[@]}
 one two three four five six
+```
+
+#### 길이
+
+```bash
+$ echo ${#numbers[@]}
+6
 ```
 
 ### 아이템 추가
