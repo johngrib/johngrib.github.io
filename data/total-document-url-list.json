@@ -262,6 +262,8 @@
  "/wiki/cmd/ln",
  "/wiki/cmd/ls",
  "/wiki/cmd/lsof",
+ "/wiki/cmd/macos",
+ "/wiki/cmd/macos/screencapture",
  "/wiki/cmd/make",
  "/wiki/cmd/man",
  "/wiki/cmd/moreutils",

@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-09-21 23:15:42 +0900
+updated : 2024-09-22 12:12:06 +0900
 regenerate: true
 ---
 * TOC
@@ -730,6 +730,9 @@ regenerate: true
     * [[/cmd/sponge]]
     * [[/cmd/ts]]
     * [[/cmd/vidir]]
+
+* [[/cmd/macos]]
+    * [[/cmd/macos/screencapture]]
 
 * [[/cmd/dev/fd]]
 * [[/cmd/etc/hosts]]

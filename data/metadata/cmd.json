@@ -69,6 +69,7 @@
   "cmd/ln",
   "cmd/ls",
   "cmd/lsof",
+  "cmd/macos",
   "cmd/make",
   "cmd/man",
   "cmd/mv",
