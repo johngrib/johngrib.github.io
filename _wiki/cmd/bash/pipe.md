@@ -3,7 +3,7 @@ layout  : wiki
 title   : pipe
 summary : "|"
 date    : 2023-06-01 21:38:20 +0900
-updated : 2024-09-25 21:39:42 +0900
+updated : 2024-09-25 21:45:11 +0900
 tag     : 
 resource: EA/2B5097-C073-4307-BB60-255F5A34BC01
 toc     : true
@@ -158,10 +158,41 @@ UNIX 쉘은 출력 결과를 표준출력 디바이스로 전송하지 않고 UN
 [^richard-315]
 
 
-## `|&` 는 `2>&1 |` 의 축약 표현
+## `|&` 는 `2>&1 |` 의 축약 표현 {#pipe-ampersand}
 
 위의 [Pipelines]( #pipelines ) 섹션에서도 설명하듯, `|&`은 `2>&1 |`의 축약 표현이다.
 다만 bash 4 이후부터 사용할 수 있으므로 주의할 것.
+
+## PIPESTATUS {#pipestatus}
+
+`PIPESTATUS`는 파이프라인의 각 명령어의 종료 상태를 저장하는 [[/cmd/bash/arrays]]다.
+
+다음은 3개의 명령어를 파이프로 연결한 후 `PIPESTATUS`를 출력하는 예제이다.
+
+```bash
+$ echo 'hello world' | wc -c | xargs
+12
+
+$ echo ${PIPESTATUS[@]}
+0 0 0
+```
+
+- `0 0 0`은 각 명령의 종료 상태를 순서대로 나타낸다.
+- `echo 'hello world'`는 성공적으로 종료되었으므로 `0`이다.
+- `wc -c`도 성공하여 `0`.
+- `xargs`도 성공하여 `0`.
+
+```bash
+$ echo 'hello world' | grep -o rr | wc -l
+0
+
+$ echo ${PIPESTATUS[@]}
+0 1 0
+```
+
+- `echo 'hello world'`는 성공적으로 종료되었으므로 `0`이다.
+- `grep -o rr`은 실패하여 `1`.
+- `wc -l`은 성공하여 `0`.
 
 
 ## 참고문헌

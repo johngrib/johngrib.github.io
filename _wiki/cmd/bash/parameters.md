@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash Parameters
 summary : 
 date    : 2023-08-04 21:01:10 +0900
-updated : 2024-09-17 22:39:28 +0900
+updated : 2024-09-25 21:49:51 +0900
 tag     : 
 resource: 12/723FD0-7E4D-4050-B84C-114CB1FF5283
 toc     : true
@@ -159,6 +159,12 @@ $ (echo $BASH_SUBSHELL; (echo $BASH_SUBSHELL))
     - `cd` 명령을 사용하면 변경된다.
 - `$OLDPWD`: 이전 작업 디렉토리.
     - `$OLD_PWD`를 쓰는 경우도 있다. 사용하는 컴퓨터에서 `man bash`로 확인할 것.
+- `$PIPESTATUS`: 파이프라인 명령의 종료 상태(exit status)를 [[/cmd/bash/arrays]]{배열}로 저장한다.
+    - `${PIPESTATUS[0]}`: 첫 번째 명령의 종료 상태
+    - `${PIPESTATUS[1]}`: 두 번째 명령의 종료 상태
+    - ...
+    - `${PIPESTATUS[@]}`: 모든 명령의 종료 상태
+    - 자세한 예제는 [[/cmd/bash/pipe#pipestatus]] 문서를 참고할 것.
 - `$PATH`: 명령을 찾는 경로.
     - `:`을 구분자로 사용한다.
 
