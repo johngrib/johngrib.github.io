@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash Arrays
 summary : 
 date    : 2024-09-22 21:35:23 +0900
-updated : 2024-09-29 22:45:24 +0900
+updated : 2024-09-29 22:49:01 +0900
 tag     : 
 resource: BB/48FC83-C6D5-46B3-AE75-768F9F647709
 toc     : true
@@ -183,3 +183,31 @@ four five
 - `=( ... )`를 사용해 슬라이스한 배열을 새로운 배열로 선언할 수 있다.
 
 ### 삭제
+
+```bash
+unset numbers
+```
+
+- `unset`을 사용해 배열을 삭제할 수 있다.
+
+```bash
+unset numbers[2]
+```
+
+- `unset`으로 배열의 특정 인덱스를 삭제하는 것도 가능하다.
+
+```bash
+$ numbers=(one two three four)
+
+$ # 주의: 출력할 때처럼 하면 인덱스는 삭제되지 않는다
+$ unset ${numbers[2]}
+
+$ echo ${numbers[@]}    # 삭제되지 않았음을 확인
+one two three four
+
+$ # 이렇게 해야 삭제된다
+$ unset numbers[2]
+
+$ echo ${numbers[@]}    # 삭제되었음을 확인
+one two four
+```
