@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash Arrays
 summary : 
 date    : 2024-09-22 21:35:23 +0900
-updated : 2024-09-22 22:40:30 +0900
+updated : 2024-09-29 22:45:24 +0900
 tag     : 
 resource: BB/48FC83-C6D5-46B3-AE75-768F9F647709
 toc     : true
@@ -20,6 +20,12 @@ latex   : false
 
 ```bash
 numbers=("one" "two" "three" "four")
+```
+
+또는 다음과 같이 해도 된다.
+
+```bash
+numbers=(one two three four)
 ```
 
 - 이 형식으로 배열을 선언할 수 있다.
@@ -176,3 +182,4 @@ four five
 
 - `=( ... )`를 사용해 슬라이스한 배열을 새로운 배열로 선언할 수 있다.
 
+### 삭제
