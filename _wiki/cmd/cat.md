@@ -3,7 +3,7 @@ layout  : wiki
 title   : cat 명령어
 summary : concatenate and print files
 date    : 2024-08-04 17:06:27 +0900
-updated : 2024-08-04 17:21:24 +0900
+updated : 2024-09-29 20:22:07 +0900
 tag     : 
 resource: 42/1BFBE9-2F7D-499C-9819-37A010AFFB32
 toc     : true
@@ -22,6 +22,7 @@ latex   : false
 ```bash
  # 파일 내용을 출력한다
 cat file
+cat < file  # 이렇게 해도 된다
 
  # 여러 파일을 출력한다
 cat file1 file2 file3
@@ -35,6 +36,15 @@ echo hello | cat
  # - 로 stdin 을 파일로 명시할 수 있다.
 echo hello | cat - file
 ```
+
+## 키보드 입력을 파일로 저장하기
+
+```bash
+cat > file
+```
+
+- 위의 명령을 입력하면 키보드 입력을 `file`에 저장할 수 있다.
+- 입력을 다 했다면 `Ctrl + D`를 눌러 입력을 종료한다.
 
 ## Options
 
