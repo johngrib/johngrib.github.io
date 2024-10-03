@@ -80,6 +80,7 @@
   "cmd/pee",
   "cmd/perl-one-liner",
   "cmd/ping",
+  "cmd/ps",
   "cmd/pwgen",
   "cmd/rans",
   "cmd/rbenv",
