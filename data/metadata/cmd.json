@@ -81,6 +81,7 @@
   "cmd/perl-one-liner",
   "cmd/ping",
   "cmd/ps",
+  "cmd/pstree",
   "cmd/pwgen",
   "cmd/rans",
   "cmd/rbenv",

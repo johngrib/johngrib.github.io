@@ -278,6 +278,7 @@
  "/wiki/cmd/perl-one-liner",
  "/wiki/cmd/ping",
  "/wiki/cmd/ps",
+ "/wiki/cmd/pstree",
  "/wiki/cmd/pwgen",
  "/wiki/cmd/rans",
  "/wiki/cmd/rbenv",
