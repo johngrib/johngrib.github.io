@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-09-29 16:29:15 +0900
+updated : 2024-10-03 22:48:01 +0900
 regenerate: true
 ---
 * TOC
@@ -735,11 +735,20 @@ regenerate: true
 * [[/cmd/macos]]
     * [[/cmd/macos/man-hier]]
     * [[/cmd/macos/screencapture]]
+    * [[/cmd/say]]
 
 * [[/cmd/dev/fd]]
 * [[/cmd/etc/hosts]]
 
-* [[/cmd/ag]]
+* process 관리
+    * [[/cmd/kill]]
+    * [[/cmd/killall]]
+
+* 검색 도구
+    * [[/cmd/ag]]
+    * [[/cmd/find]]
+    * [[/cmd/grep]]
+
 * [[/cmd/bat]]
 * [[/cmd/bc]]
 * [[/cmd/bind]]
@@ -762,23 +771,21 @@ regenerate: true
 * [[/cmd/fd]]
 * [[/cmd/ffmpeg]]
 * [[/cmd/file]]
-* [[/cmd/find]]
 * [[/cmd/for]]
 * [[/cmd/fortune]]
 * [[/cmd/getopts]]
 * [[/cmd/glow]]
-* [[/cmd/google-java-format]]
 * [[/cmd/gpg]]
-* [[/cmd/grep]]
 * [[/cmd/httpie]]
 * [[/cmd/iconv]]
 * [[/cmd/ioreg]]
 * [[/cmd/iostat]]
 * [[/cmd/java]]
-* [[/cmd/java_home]]
+    * [[/cmd/sdkman]]
+    * [[/cmd/java_home]]
+    * [[/cmd/google-java-format]]
 * [[/cmd/jq]]
     * [[/cmd/gron]]
-* [[/cmd/killall]]
 * [[/cmd/less]]
 * [[/cmd/lldb]]
 * [[/cmd/lsof]]
@@ -794,8 +801,6 @@ regenerate: true
 * [[/cmd/rbenv]]
 * [[/cmd/rg]]
 * [[/cmd/rig]]
-* [[/cmd/say]]
-* [[/cmd/sdkman]]
 * [[/cmd/sed]]
 * [[/cmd/shellcheck]]
 * [[/cmd/ssh]]
