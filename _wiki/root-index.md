@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-10-04 14:54:51 +0900
+updated : 2024-10-04 15:29:46 +0900
 regenerate: true
 ---
 * TOC
@@ -681,18 +681,23 @@ regenerate: true
 
 ### [[/cmd]]
 
+* [[/cmd/man]]
 * [[/cmd/bash]]
     * [[/cmd/bash/arrays]]
     * [[/cmd/bash/bashrc]]
     * [[/cmd/bash/builtin]]
+        * [[/cmd/bind]]
+        * [[/cmd/fc]]
     * [[/cmd/bash/expansion]]
     * [[/cmd/bash/flow-control]]
+        * [[/cmd/for]]
     * [[/cmd/bash/history]]
     * [[/cmd/bash/key]]
     * [[/cmd/bash/parameters]]
     * [[/cmd/bash/pipe]]
     * [[/cmd/bash/redirection]]
     * [[/cmd/bash/term-colors]]
+
 * [[/cmd/fish-shell]]
 * [[/cmd/zsh]]
 
@@ -751,10 +756,14 @@ regenerate: true
     * [[/cmd/ag]]
     * [[/cmd/find]]
     * [[/cmd/grep]]
+    * [[/cmd/rg]]
 
-* [[/cmd/bat]]
+* 텍스트 뷰어
+    * [[/cmd/bat]]
+    * [[/cmd/glow]]
+    * [[/cmd/less]]
+
 * [[/cmd/bc]]
-* [[/cmd/bind]]
 * [[/cmd/brew]]
 * [[/cmd/cal]]
 * [[/cmd/chardetect]]
@@ -770,14 +779,11 @@ regenerate: true
     * [[/cmd/diff/unified-format]]
 * [[/cmd/ditto]]
 * [[/cmd/duckdb]]
-* [[/cmd/fc]]
 * [[/cmd/fd]]
 * [[/cmd/ffmpeg]]
 * [[/cmd/file]]
-* [[/cmd/for]]
 * [[/cmd/fortune]]
 * [[/cmd/getopts]]
-* [[/cmd/glow]]
 * [[/cmd/gpg]]
 * [[/cmd/httpie]]
 * [[/cmd/iconv]]
@@ -789,10 +795,8 @@ regenerate: true
     * [[/cmd/google-java-format]]
 * [[/cmd/jq]]
     * [[/cmd/gron]]
-* [[/cmd/less]]
 * [[/cmd/lldb]]
 * [[/cmd/lsof]]
-* [[/cmd/man]]
 * [[/cmd/mysqldump]]
 * [[/cmd/netstat]]
 * [[/cmd/openssl]]
@@ -802,7 +806,6 @@ regenerate: true
 * [[/cmd/pwgen]]
 * [[/cmd/rans]]
 * [[/cmd/rbenv]]
-* [[/cmd/rg]]
 * [[/cmd/rig]]
 * [[/cmd/sed]]
 * [[/cmd/shellcheck]]
