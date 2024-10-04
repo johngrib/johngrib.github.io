@@ -85,6 +85,7 @@
   "cmd/pwgen",
   "cmd/rans",
   "cmd/rbenv",
+  "cmd/rev",
   "cmd/rg",
   "cmd/rig",
   "cmd/say",

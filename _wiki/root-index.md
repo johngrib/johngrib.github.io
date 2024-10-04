@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-10-04 15:29:46 +0900
+updated : 2024-10-04 15:31:12 +0900
 regenerate: true
 ---
 * TOC
@@ -806,6 +806,7 @@ regenerate: true
 * [[/cmd/pwgen]]
 * [[/cmd/rans]]
 * [[/cmd/rbenv]]
+* [[/cmd/rev]]
 * [[/cmd/rig]]
 * [[/cmd/sed]]
 * [[/cmd/shellcheck]]
