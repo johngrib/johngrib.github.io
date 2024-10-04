@@ -3,7 +3,7 @@ layout  : wiki
 title   : seq
 summary : print sequences of numbers
 date    : 2023-01-08 10:30:31 +0900
-updated : 2024-10-04 14:28:20 +0900
+updated : 2024-10-04 14:30:09 +0900
 tag     : bash command
 resource: 25/48E43D-8A13-4DB5-9C32-D60CBD581175
 toc     : true
@@ -15,6 +15,8 @@ latex   : false
 {:toc}
 
 ## Examples
+
+### 범위 지정
 
 ```sh
 $ seq 1 3
@@ -36,6 +38,17 @@ $ seq 3 1
 
 - `3 1` : 3부터 1까지 출력한다
 
+```sh
+$ seq inf
+```
+
+- `inf` : 1 부터 무한대까지 출력한다
+
+```sh
+$ seq 5 inf
+```
+
+- `5 inf` : 5 부터 무한대까지 출력한다
 
 ### -w : 간격 옵션
 
