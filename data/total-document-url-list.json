@@ -195,6 +195,7 @@
  "/wiki/cmd/bash",
  "/wiki/cmd/bash/arrays",
  "/wiki/cmd/bash/bashrc",
+ "/wiki/cmd/bash/builtin",
  "/wiki/cmd/bash/expansion",
  "/wiki/cmd/bash/flow-control",
  "/wiki/cmd/bash/history",

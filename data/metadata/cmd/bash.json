@@ -9,6 +9,7 @@
  "children": [
   "cmd/bash/arrays",
   "cmd/bash/bashrc",
+  "cmd/bash/builtin",
   "cmd/bash/expansion",
   "cmd/bash/flow-control",
   "cmd/bash/history",
