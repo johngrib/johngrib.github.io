@@ -41,7 +41,7 @@
   "java/synchronized",
   "java/temporal-adjusters",
   "java/ternary-operator-and-null-pointer-exception",
-  "java/thread/state",
+  "java/thread",
   "java/time/instant",
   "java/use-java-primitive-type-for-performance",
   "java/var",

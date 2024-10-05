@@ -2,9 +2,9 @@
  "type": "wiki",
  "title": "Thread.State",
  "summary": "java.lang.Thread.State enum",
- "parent": "java",
+ "parent": "java/thread",
  "url": "/wiki/java/thread/state",
- "updated": "2022-11-06 23:00:43 +0900",
+ "updated": "2024-10-05 22:25:48 +0900",
  "resource": "4C/D08810-AD42-47FF-9A9C-35A7378762F3",
  "children": []
 }
