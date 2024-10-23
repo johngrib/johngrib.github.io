@@ -3,7 +3,7 @@ layout  : wiki
 title   : 관심가는 wiki blogroll
 summary : 
 date    : 2022-12-24 13:14:04 +0900
-updated : 2024-08-23 21:27:21 +0900
+updated : 2024-10-23 22:10:57 +0900
 tag     : blog
 resource: FB/A44090-EF39-49E1-8F83-5E6617A16D36
 toc     : true
@@ -43,4 +43,5 @@ latex   : false
 - <https://jxmen.dev/ > - 박주영의 위키
 - <https://currenjin.github.io/ > - currenjin, 기록, 생각, ...
 - <https://wiki.code-toolbox.com/ > - 기억보조용 위키
+- <https://smallzoodev.netlify.app/_wiki/home/ > - SmallzooDevWiki
 
