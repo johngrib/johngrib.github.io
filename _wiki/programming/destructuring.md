@@ -3,7 +3,7 @@ layout  : wiki
 title   : Destructuring
 summary : 작성중인 문서
 date    : 2022-03-11 23:16:09 +0900
-updated : 2022-03-12 23:39:52 +0900
+updated : 2024-11-03 22:46:21 +0900
 tag     : clojure
 resource: 80/84CC1A-8D40-478C-8E60-E05E0E57FD06
 toc     : true
@@ -406,6 +406,16 @@ map 에서도 사용할 수 있다.
 ```
 
 ### Kotlin
+
+```kotlin
+val (one, two) = Pair(1, 2)
+```
+
+사용하지 않는 값은 `_`에 할당해 무시할 수 있다.
+
+```kotlin
+val (_, two) = Pair(1, 2)
+```
 
 ## 함께 읽기
 
