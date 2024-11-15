@@ -3,7 +3,7 @@ layout  : wiki
 title   : crontab
 summary : maintain crontab files for individual users
 date    : 2023-11-06 22:54:23 +0900
-updated : 2024-09-20 17:21:04 +0900
+updated : 2024-11-15 18:21:19 +0900
 tag     : 
 resource: 80/D05BAB-5081-48B9-87D4-BA339B73E70C
 toc     : true
@@ -84,7 +84,7 @@ PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 - `SHELL`을 `/bin/bash`로 지정하기 때문에 `~/.bash_profile`을 알아서 `source`한다.
 
-### mail을 끄고 싶은 경우
+### mail을 끄고 싶은 경우 {#off-mail}
 
 crontab은 실행될 때마다 `/var/mail`로 메일을 보내는데, 가벼운 작업이라면 성가시다.
 
@@ -95,6 +95,4 @@ crontab은 실행될 때마다 `/var/mail`로 메일을 보내는데, 가벼운 
 ```
 * * * * * chronic ~/script.sh
 ```
-
-
 
