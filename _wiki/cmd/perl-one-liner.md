@@ -3,7 +3,7 @@ layout  : wiki
 title   : Perl 한 줄 사용
 summary : 
 date    : 2020-06-29 23:33:40 +0900
-updated : 2024-09-17 12:35:50 +0900
+updated : 2024-11-28 23:04:40 +0900
 tag     : bash command
 resource: 53/93E136-7E69-41D7-8A7E-1A9D866F9EEA
 toc     : true
@@ -125,3 +125,21 @@ find . -name '*.java' \
 ```bash
 ag giscus -l | grep .md$ | xargs perl -i -pe 'BEGIN{undef $/;} s,giscus *: *auto\s*---,---,smg'
 ```
+
+### 터미널에 눈 내리게 하기
+
+```bash
+perl -e '$|=1;while(1){print"\e[H",map{$s=" "x80;substr($s,int(rand(80)),1)="*"for 1..3;$s."\n"}0..24;select(undef,undef,undef,0.1)}'
+```
+
+- `$|=1`: 출력 버퍼링을 끈다. (즉, 즉시 출력한다.)
+- `while(1)`: 무한 루프
+- `print"\e[H"`: ANSI escape code. 이 코드를 출력하면 커서를 화면의 맨 위로 이동시킨다.
+- `map{  }0..24`: 0부터 24까지 loop.
+- `$s=" "x80`: 80개의 공백 문자열을 만든다.
+- `substr($s,int(rand(80)),1)="*"` : 주어진 문자열 `$s`의 랜덤 정수 위치에 `*` 삽입
+    - `int(rand(80))`: 0부터 79 사이의 무작위 정수 생성
+- `for 1..3` : 각 라인마다 3회 반복 (즉, 라인마다 3개의 `*`를 삽입)
+- `$s."\n"`: 각 라인마다 개행 문자를 붙인다.
+- `select(undef,undef,undef,0.1)` : 0.1초 동안 일시 정지
+
