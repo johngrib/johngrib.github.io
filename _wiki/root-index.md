@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-11-09 22:41:56 +0900
+updated : 2024-12-01 20:41:00 +0900
 regenerate: true
 ---
 * TOC
@@ -528,6 +528,7 @@ regenerate: true
 * [[/jargon/oregon-swing]]
 * [[/jargon/postel-s-law]]
 * [[/jargon/reader-writer-lock]]
+* [[/jargon/referential-transparency]]
 * [[/jargon/risc]]
 * [[/jargon/rules-of-optimization]]
 * [[/jargon/solid]]
