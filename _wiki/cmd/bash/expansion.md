@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash 구문 확장
 summary : 
 date    : 2023-08-15 18:27:35 +0900
-updated : 2024-09-29 17:19:56 +0900
+updated : 2024-12-01 16:46:21 +0900
 tag     : 
 resource: 39/80DE57-7F00-4588-AB78-C96EBACB4BF0
 toc     : true
@@ -188,13 +188,115 @@ echo [^[:lower:]]
 echo [[:digit:][:lower:]]*
 ```
 
+## 파라미터 확장 {#parameter-expansion}
+
+### : 으로 디폴트값 설정하기 {#default-value}
+
+`${parameter:-word}` : parameter가 세팅되어 있지 않다면 word를 대신 사용한다.
+
+```bash
+$ echo $test
+
+$ echo ${test:-hello}
+hello
+```
+
+`${parameter:=word}` : parameter가 세팅되어 있지 않다면 word를 대신 사용하고, parameter에 word를 할당한다.
+
+```bash
+$ echo $test
+
+$ echo ${test:=hello}
+hello
+
+$ echo $test
+hello
+```
+
+`${parameter:?word}` : 만약 parameter가 세팅되어 있지 않다면, word를 출력하고 parameter에 word를 할당하고 스크립트를 exit한다.
+
+```bash
+$ echo ${test2:?hello}
+-bash: test2: hello
+
+$ echo test2
+test2
+```
+
+`${parameter:+word}` : parameter가 세팅되어 있다면 word를 대신 사용한다.
+(parameter에는 할당하지 않는다)
+
+```bash
+$ echo ${test5:?nothing}
+-bash: test5: nothing
+$ echo $test5
+```
+
+### :offset:length 로 substring 하기 {#substring}
+
+`${parameter:offset}` : parameter 문자열에서 offset부터 끝까지를 출력한다.
+
+`${parameter:offset:length}` : parameter 문자열에서 offset부터 length만큼 출력한다.
+
+```bash
+$ text=John-Grib-Wiki
+
+$ echo ${text}
+John-Grib-Wiki
+
+$ echo ${text:0}
+John-Grib-Wiki
+
+$ echo ${text:1}
+ohn-Grib-Wiki
+
+$ echo ${text:5:0}
+
+$ echo ${text:5}
+Grib-Wiki
+
+$ echo ${text:5:2}
+Gr
+
+$ echo ${text:5:3}
+Gri
+
+$ echo ${text:5:-1}
+Grib-Wik
+
+$ echo ${text:5:-2}
+Grib-Wi
+
+$ # 사이즈를 지정하는 방법도 가능하다
+$ size=3
+$ echo ${text:4:size}
+-Gr
+```
+
+`set --`을 사용해 표준출력 1로 설정해 사용하는 방법도 있다.
+
+```bash
+$ set -- hello-world
+
+$ echo ${1}
+hello-world
+
+$ echo ${1:5}
+-world
+
+$ echo ${1:5:4}
+-wor
+```
+
 ## 참고문헌
 
 - 리눅스 커맨드라인 완벽 입문서 / 윌리엄 E. 샤츠 주니어 저 / 이종우, 정영신 공역 / 비제이퍼블릭(BJ퍼블릭) / 초판 1쇄 발행: 2013년 01월 11일 / 원제: The Linux Command Line
 - [3.4 Using Bracket Expressions (gawk manual)](https://www.gnu.org/software/gawk/manual/html_node/Bracket-Expressions.html )
     - POSIX 문자 클래스 참고 자료
+- [3.5.3 Shell Parameter Expansion (gnu bash manual)](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html )
 
 ## 주석
 
 [^tlcl-69]: 리눅스 커맨드라인 완벽 입문서. 7장. 69쪽.
+
 
