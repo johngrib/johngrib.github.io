@@ -3,7 +3,7 @@ layout  : wiki
 title   : Vim의 바깥에서
 summary : Vim을 자유롭게, 소모품처럼 사용하기
 date    : 2024-12-15 13:48:06 +0900
-updated : 2024-12-15 18:12:53 +0900
+updated : 2024-12-15 18:18:03 +0900
 tag     : vim-enter-발표자료
 resource: C8/64ABF5-40F9-488B-B5E2-FC75D327D5E1
 toc     : true
@@ -61,6 +61,7 @@ Vim 플러그인을 제작하는 패러다임이 바뀌었기 때문이다.
 - Vim 내에서 수행 가능한 무언가를 계속 추가한다면 복잡도는 그에 따라 계속해서 증가하게 된다.
 
 ![]( /resource/C8/64ABF5-40F9-488B-B5E2-FC75D327D5E1/the-generalized-uncertainty-principle.jpg )
+[^gen-uncertainty]
 
 ### 내가 Vim에 바라는 것들
 
@@ -165,4 +166,12 @@ $ vim -es '+%normal A hello' '+%print' ./test.txt
 여기에는 자주 사용하고 있는 [[/cmd/moreutils]]에 있는 [[/cmd/vipe]], [[/cmd/vidir]]가 좋은 영감을 줬다.
 
 이 글을 읽고 Vim을 소모품처럼 사용하는 데에 관심을 갖게 된 분들이 있다면 [[/cmd/moreutils]]의 두 명령도 함께 살펴보시는 것을 권한다.
+
+## 주석
+
+[^gen-uncertainty]: 머피의 법칙 지혜의 패러독스. 시스테맨틱스 챕터. 136쪽.
+
+## 참고문헌
+
+-  머피의 법칙 지혜의 패러독스 / 아더 블로크 / 이인식 옮김 / 도서출판 까치 / 초판 5쇄 발행일 1994-12-10
 
