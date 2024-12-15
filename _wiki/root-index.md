@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-12-01 20:41:00 +0900
+updated : 2024-12-15 13:45:50 +0900
 regenerate: true
 ---
 * TOC
@@ -52,14 +52,12 @@ regenerate: true
 
 - [[/article/coupon-service-and-code-data]]
 - [[/article/excel-snake-game]]
-- [[/article/extend-vim-gx]]
 - [[/article/hierarchical-controller-package-structure]]
 - [[/article/incremental-way]]
 - [[/article/iphone-game-with-no-cable]]
 - [[/article/science-and-delete]]
 - [[/article/ssh-macmini-macbook]]
 - [[/article/test-code-and-falsifiability]]
-- [[/article/vimwiki-lsp]]
 
 - [[/article/vim-night/20220409-session]]
 - [[/article/vim-night/20220408-ctags]]
@@ -72,6 +70,9 @@ regenerate: true
 - [[/article/vim-night/20220327-ultisnips]]
 - [[/article/vim-night/20220331-insert-mode]]
 
+- VimEnter 발표자료
+    - [[/article/extend-vim-gx]]
+    - [[/article/vimwiki-lsp]]
 
 ## [[/algorithm]]
 

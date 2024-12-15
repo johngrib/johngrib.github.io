@@ -3,8 +3,8 @@ layout  : wiki
 title   : Vim의 gx 확장하기
 summary : gx를 확장해서 다양한 용도로 사용하자
 date    : 2022-12-23 14:53:36 +0900
-updated : 2022-12-23 18:27:13 +0900
-tag     : vim
+updated : 2024-12-15 13:46:13 +0900
+tag     : vim vim-enter-발표자료
 resource: 10/9A63EA-F82B-4583-BAE6-33BAFB4B0449
 toc     : true
 public  : true

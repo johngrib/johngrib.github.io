@@ -3,8 +3,8 @@ layout  : wiki
 title   : Vimwiki에서 사용하기 위한 나만의 LSP를 만들자
 summary : VimEnter 2023 발표자료
 date    : 2023-12-17 20:09:06 +0900
-updated : 2023-12-23 23:54:26 +0900
-tag     : vim
+updated : 2024-12-15 13:46:20 +0900
+tag     : vim vim-enter-발표자료
 resource: CE/26FDCD-4282-4257-A2AE-F17EF0A47884
 toc     : true
 public  : true
