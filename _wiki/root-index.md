@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2024-12-15 13:45:50 +0900
+updated : 2024-12-15 18:07:08 +0900
 regenerate: true
 ---
 * TOC
@@ -73,6 +73,7 @@ regenerate: true
 - VimEnter 발표자료
     - [[/article/extend-vim-gx]]
     - [[/article/vimwiki-lsp]]
+    - [[/article/out-of-the-vim]]
 
 ## [[/algorithm]]
 
