@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2024-10-20 21:45:47 +0900
+updated : 2024-12-23 22:29:56 +0900
 tag     : command 언어 brian-kernighan awk
 resource: 97/3C865D-C4E1-43B2-B80E-F96DA7AC7703
 toc     : true
@@ -41,6 +41,13 @@ Awk 언어 자체에 관해 설명한 문서에서도 이야기했지만, 개발
 동작은 C 문법을 변형한 형태로 작성된다.
 패턴이 생략되면 입력의 모든 행과 일치하게 되고, 동작이 생략되면 패턴과 일치하는 행을 출력한다.
 [^KER-5-209]
+
+## 외따옴표? 쌍따옴표?
+
+>
+명령줄에서 Awk 프로그램은 항상 작은따옴표로 감싼다.
+그래야 프로그램 안에 `$` 같은 문자가 있어도 셸이 해석하지 않고 프로그램이 여러 라인에 걸쳐 있어도 문제가 없을 것이다.
+[^awk-2e-5]
 
 ## Examples
 
@@ -150,7 +157,8 @@ Perl을 좀 무시하는 개발자들도 있는 것 같은데, 사실 Perl은 �
 
 - Beautiful Code / 찰스 페졸드 외 37 저 / 한빛미디어 / 초판발행 2007년 12월 17일
 - [How To Use awk In Bash Scripting](https://www.cyberciti.biz/faq/bash-scripting-using-awk/ )
-- 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원서 : UNIX: A History and a Memoir
+- 유닉스의 탄생 / 브라이언 커니핸 저/하성창 역 / 한빛미디어 / 2020년 08월 03일 / 원제: UNIX: A History and a Memoir
+- AWK 프로그래밍 언어 2판 / 앨프리드 에이호, 브라이언 W. 커니핸, 피터 와인버거 저 / 인사이트(insight) / 2024년 12월 10일 / 원제: The AWK Programming Language, Second Edition
 
 ## Links
 
@@ -161,5 +169,7 @@ Perl을 좀 무시하는 개발자들도 있는 것 같은데, 사실 Perl은 �
 ## 주석
 
 [^KER-5-209]: 유닉스의 탄생. 5장. 209쪽.
+[^awk-2e-5]: AWK 프로그래밍 언어 2판. 5쪽.
+
 
 
