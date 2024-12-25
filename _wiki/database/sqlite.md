@@ -3,7 +3,7 @@ layout  : wiki
 title   : SQLite
 summary : 
 date    : 2021-07-31 12:41:48 +0900
-updated : 2024-08-15 10:47:19 +0900
+updated : 2024-12-25 16:37:55 +0900
 tag     : db
 resource: 0E/C610B8-F99D-4CEB-96E2-BC113900DE3E
 toc     : true
@@ -63,9 +63,13 @@ DataGrip에서는 버튼만 클릭하면 SQLite 드라이버를 다운로드해�
 
 ## 함께 읽기
 
-- [SQLite의 알려지지 않은 이야기 (news.hada.io)]( https://news.hada.io/topic?id=4558 )
+- [The Untold Story of SQLite With Richard Hipp (corecursive.com)](https://corecursive.com/066-sqlite-with-richard-hipp/ )
+    - [SQLite의 알려지지 않은 이야기 (news.hada.io)]( https://news.hada.io/topic?id=4558 )
+- [How bloom filters made SQLite 10x faster - 2024-12-22](https://avi.im/blag/2024/sqlite-past-present-future/ )
+    - [Bloom 필터로 10배 빨라진 SQLite](https://news.hada.io/topic?id=18399 )
 
 ## 참고문헌
 
 - [SQLite (sqlite.org)]( https://www.sqlite.org/index.html )
+
 
