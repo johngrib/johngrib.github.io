@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2024-12-24 22:03:04 +0900
+updated : 2024-12-25 15:55:16 +0900
 tag     : command 언어 brian-kernighan awk
 resource: 97/3C865D-C4E1-43B2-B80E-F96DA7AC7703
 toc     : true
@@ -80,6 +80,20 @@ NR=4 10 11 12
 NR=5 13 14 15
 NR=6 16 17 18
 NR=7 19 20
+```
+
+## BEGIN, END {#begin-end}
+
+- BEGIN은 입력의 첫 번째 라인을 읽기 전에만 매치되는 패턴이다.
+- END는 입력의 마지막 라인을 읽고 처리한 이후에만 매치되는 패턴이다.
+
+```bash
+$ seq 3 | awk 'BEGIN { print "start" }; /[0-9]/ { print $1 }; END { print "end" }'
+start
+1
+2
+3
+end
 ```
 
 ## Examples
