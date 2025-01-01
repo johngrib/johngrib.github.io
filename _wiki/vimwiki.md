@@ -295,7 +295,7 @@ MacBook-사용-노하우
 * 미세먼지에-대하여 문서 작성하기
 ```
 
-* 2 . 이 때 커서를 `청소기 먼지통 비우기`에 놓고 `Ctrl + Space`를 입력해보면 다음과 같이 왼쪽에 체크박스가 나타난다. (Mac 사용시 한영 변환 단축키를 먼저 제거한다.)
+* 2 . 이 때 커서를 `청소기 먼지통 비우기`에 놓고 `Ctrl + Space`를 입력해보면 다음과 같이 왼쪽에 체크박스가 나타난다.[^macos-ctrl-space]
 
 ```md
 * [ ] 청소기 먼지통 비우기
@@ -575,4 +575,4 @@ hi def link markdown_list Identifier
 ## 주석
 
 [^vimwiki-global-ext]: 출처는 [vimwiki.github.io]( https://vimwiki.github.io/vimwikiwiki/Tips%20and%20Snips.html#Vimwiki%20considers%20every%20markdown-file%20as%20a%20wiki%20file )
-
+[^macos-ctrl-space]: 만약 이 기능이 작동하지 않는다면 MacOS의 기본 단축키로 Ctrl + Space 가 등록되어 있을 수 있으므로 MacOS의 키보드 단축키 설정을 확인해볼 것.
