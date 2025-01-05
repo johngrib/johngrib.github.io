@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2025-01-01 23:24:05 +0900
+updated : 2025-01-05 23:42:18 +0900
 regenerate: true
 ---
 * TOC
@@ -24,6 +24,7 @@ regenerate: true
         * [[/memo/2022-06-leg-pain]]
     * [[/memo/2023]]
     * [[/memo/2024]]
+    * [[/memo/2025]]
 
 * [[/links]]
     * [[/links/2018]]
