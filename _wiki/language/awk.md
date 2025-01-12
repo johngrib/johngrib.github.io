@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2024-12-25 15:55:16 +0900
+updated : 2025-01-12 13:41:27 +0900
 tag     : command 언어 brian-kernighan awk
 resource: 97/3C865D-C4E1-43B2-B80E-F96DA7AC7703
 toc     : true
@@ -81,6 +81,11 @@ NR=5 13 14 15
 NR=6 16 17 18
 NR=7 19 20
 ```
+
+#### ARGV: 명령줄 인수 배열
+
+TODO
+
 
 ## BEGIN, END {#begin-end}
 
