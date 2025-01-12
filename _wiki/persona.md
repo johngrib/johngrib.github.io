@@ -3,7 +3,7 @@ layout  : wiki
 title   : 페르소나(persona)
 summary : 페르소나 디자인 방법론
 date    : 2019-07-08 15:25:27 +0900
-updated : 2019-07-08 16:07:45 +0900
+updated : 2025-01-12 20:01:12 +0900
 tag     : 방법론
 resource: 78/66DF7F-12B4-47D1-A9AC-728062342920
 toc     : true
@@ -16,7 +16,7 @@ latex   : false
 
 ## 개요
 
-* 1988년 앨런 쿠퍼가 "정신병원에서 뛰쳐나온 디자인(Inmates Are Running the Asylum)"에서 최초로 소개한 개념.
+* 1988년 앨런 쿠퍼가 "정신병원에서 뛰쳐나온 디자인(The Inmates Are Running the Asylum)"에서 최초로 소개한 개념.
 
 페르소나의 개념을 이해하려면 이 책을 읽어보는 것이 좋다.
 
@@ -140,4 +140,5 @@ latex   : false
 
 ## 참고문헌
 
-* 정신병원에서 뛰쳐나온 디자인 / 앨런 쿠퍼 저 / 이구형 역 / 안그라픽스 / 초판 2004년 08월 25일
+- 정신병원에서 뛰쳐나온 디자인 / 앨런 쿠퍼 저 / 이구형 역 / 안그라픽스 / 초판 2004년 08월 25일 / 원제: The Inmates Are Running the Asylum
+
