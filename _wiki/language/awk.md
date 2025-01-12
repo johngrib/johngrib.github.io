@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2025-01-12 13:41:27 +0900
+updated : 2025-01-12 13:47:26 +0900
 tag     : command 언어 brian-kernighan awk
 resource: 97/3C865D-C4E1-43B2-B80E-F96DA7AC7703
 toc     : true
@@ -182,6 +182,56 @@ awk 'NR%2==0 {print p","$0;} NR%2 {p=$0;}' test.txt
  # 파일을 읽고 각 단어가 나타나는 횟수를 세고, 전체 단어와 각각의 횟수를 출력한다
 awk '{ for (i=1; i <= NF; i++) wd[$i]++ } END { for (w in wd) print w, wd[w] }' test.txt
 ```
+
+### head 와 똑같은 기능
+
+```
+awk '{ print }; NR == 10 { exit }'
+```
+
+- `{ print }` 모든 라인을 출력한다.
+- `NR == 10 { exit }` 10번째 라인에서 프로그램을 종료한다.
+
+
+```
+$ seq 1 100 | awk '{ print }; NR == 10 { exit }'
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+### tail과 똑같은 기능
+
+```
+awk '{ line[NR] = $0 }
+END { for (i = NR - 9; i <= NR; i++) print line[i] }'
+```
+
+- `{ line[NR] = $0 }` 각 라인을 배열에 저장한다.
+- `NR - 10` 마지막 라인 넘버에서 9를 뺀 값.
+
+```
+$ seq 1 100 | awk '{ line[NR] = $0 }
+> END { for (i = NR - 9; i <= NR; i++) print line[i] }'
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+```
+
 
 ## 함께 읽기
 
