@@ -6,10 +6,10 @@
  "updated": "2018-02-08 12:16:58 +0900",
  "resource": "47/0A6A26-F87A-40DB-9B6F-D886F58A2DEE",
  "children": [
-  "begining-of-apache-webserver",
   "beginning-of-slack",
   "Grote-Reber-home-made-radio-astronomy",
   "Las-chicas-del-cable",
+  "legend/begining-of-apache-webserver",
   "legend/pentium-fdiv-bug",
   "legend/visicalc",
   "legend/wordstar",
