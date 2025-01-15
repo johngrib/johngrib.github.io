@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ 이것저것
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2025-01-15 20:19:28 +0900
+updated : 2025-01-15 20:23:52 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -13,13 +13,6 @@ latex   : false
 ---
 * TOC
 {:toc}
-
-## method separators 설정
-
-`Preferences` - `Editor` - `General` - `Appearance` - `Show method separators`를 체크하면 메소드와 메소드 사이에 구분선이 생긴다.
-
-- 최근 사용 이력
-    - 2025-01-15
 
 ## 로그 보기
 
@@ -200,13 +193,22 @@ vim의 `:set list`에 해당하는 설정.
 
 vim 의 `textwidth`, `colorcolumn`에 해당하는 기능이다.
 
-visual guideline을 설정하면 에디터 오른쪽에 가이드 라인이 표시된다.
+visual guideline을 설정하면 에디터 오른쪽에 가이드 라인(세로선)으로 표시된다.
 
 ![]( /resource/F6/C37D5D-0E30-44D2-B873-E374D0E2CA90/visual-guideline.jpg )
 
 `Preferences` - `Editor` - `Code Style` - `General` 에서 `Hard wrap`과 `Visual guides` 값을 바꿔주면 된다.
 
 설정 화면 위쪽에 있는 `Scheme`에서 이 설정을 특정 프로젝트에서만 사용할 것인지, IDE 전체에 적용할지를 지정해 줄 수 있다.
+
+### 비주얼 가이드라인 - method separators 설정
+
+한편, 메소드와 메소드 사이에 구분선(가로선)을 표시하고 싶다면..
+
+`Preferences` - `Editor` - `General` - `Appearance` - `Show method separators`를 체크하면 된다.
+
+- 최근 사용 이력
+    - 2025-01-15
 
 ## Java 코드에서 import 문이 자동으로 정렬되는 것이 싫다면
 
