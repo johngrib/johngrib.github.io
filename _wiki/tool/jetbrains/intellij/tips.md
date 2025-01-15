@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ 이것저것
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2025-01-15 20:23:52 +0900
+updated : 2025-01-15 20:31:48 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -259,11 +259,29 @@ macOS의 경우 `~/Library/Preferences`에 있다.
 
 ## 단축키를 빠르게 학습하고 싶다
 
-[Presentation Assistant]( https://plugins.jetbrains.com/plugin/7345-presentation-assistant/ ) 플러그인을 설치한다.
+- IntelliJ 2023.2 이하 버전이라면
+    - [Presentation Assistant]( https://plugins.jetbrains.com/plugin/7345-presentation-assistant/ ) 플러그인을 설치한다.
+- IntelliJ 2023.3 이상 버전이라면
+    - `Preferences` - `Appearance & Behavior` - `Presentation Assistant`에서 `Show action names and shortcuts in popup`을 체크한다.
 
 무언가 작업을 할 때마다 해당 작업을 수행하는 단축키를 툴팁으로 보여준다.
-
 일단 자꾸 보면 알게 된다.
+
+이 기능은 단축키로 켜고 끌 수 있다.
+
+`Preferences` - `Keymap` - `Main Menu` - `View` - `Appearance` - `Presentation Assistant`에서 설정하면 된다.
+
+이 명령은 Ideavim의 `:action`으로도 켜고 끌 수 있다. 다음과 같이 하면 된다.
+
+```
+:action TogglePresentationAssistantAction
+```
+
+나는 일일이 입력하는 것이 귀찮아서 다음과 같이 매핑해서 사용하고 있다.
+
+```
+nmap spp :action TogglePresentationAssistantAction
+```
 
 ## IDE 런타임 선택하기
 
