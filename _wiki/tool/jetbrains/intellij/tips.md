@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ 이것저것
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2025-01-18 15:12:47 +0900
+updated : 2025-01-18 15:19:49 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -42,19 +42,6 @@ Vim에서 하는 것만큼은 아니지만 비슷하게 할 수 있다.
 #### 짜증나는 one line method fold 옵션 끄기
 
 `Preferences` - `Editor` - `General` - `Code Folding` - `Java` - `One-line methods` 체크박스를 해제한다.
-
-#### 파일 탭 닫기 버튼(x) 왼쪽으로 옮기기
-
-`Preferences` - `Editor` - `General` - `Editor Tabs`에서 `Close button position`을 `Right`에서 `Left`로 바꿔준다.
-
-탭 닫기 버튼이 오른쪽에 있으면 여러 탭을 마우스로 클릭해서 연속으로 닫을 때 굉장히 짜증난다.
-
-탭 닫기 버튼이 왼쪽에 있으면 모든 탭의 탭 닫기 버튼의 위치가 똑같다. 그래서 여러 탭을 클릭클릭해서 닫을 때 편하다.
-
-![image]( /resource/F6/C37D5D-0E30-44D2-B873-E374D0E2CA90/107315651-7b5c6680-6ada-11eb-9820-fec90bdeb3fa.png )
-
-- 최근 사용 이력
-    - 2021-08-15
 
 #### 짜증나는 Reader mode 해제하기
 
@@ -141,6 +128,34 @@ visual guideline을 설정하면 에디터 오른쪽에 가이드 라인(세로�
 
 `Preferences` - `Editor` - `General` - `Appearance`로 들어간 다음, `Show parameter name hints`를 해제하면 된다.
 
+### 탭 관련
+
+#### 파일 탭 닫기 버튼(x) 왼쪽으로 옮기기
+
+`Preferences` - `Editor` - `General` - `Editor Tabs`에서 `Close button position`을 `Right`에서 `Left`로 바꿔준다.
+
+탭 닫기 버튼이 오른쪽에 있으면 여러 탭을 마우스로 클릭해서 연속으로 닫을 때 굉장히 짜증난다.
+
+탭 닫기 버튼이 왼쪽에 있으면 모든 탭의 탭 닫기 버튼의 위치가 똑같다. 그래서 여러 탭을 클릭클릭해서 닫을 때 편하다.
+
+![image]( /resource/F6/C37D5D-0E30-44D2-B873-E374D0E2CA90/107315651-7b5c6680-6ada-11eb-9820-fec90bdeb3fa.png )
+
+- 최근 사용 이력
+    - 2021-08-15
+
+#### 탭 위치를 옮기기
+
+`Preferences` - `Editor` - `General` - `Editor Tabs`에서 `Tab placement`를 설정할 수 있다.
+
+옵션은 다섯가지가 있다.
+
+- `Top`
+- `Left`: 탭을 왼쪽에 수직으로 배치한다.
+    - 많은 탭을 열어놓고 쓴다면 편리하긴 한데.. 화면을 분할하지 않고 쓸 때만 편리하다. 화면을 분할하면 분할된 화면마다 수직 탭도 여러개가 생겨서 매우 불편하다.
+    - 가끔 필요해서 분할한 상태에서 이 옵션을 사용한다면 탭 너비를 최소한으로 줄여놓고 사용하는 편.
+- `Bottom`
+- `Right`: `Left`와 똑같고 위치만 다르다.
+- `None`: 탭을 사용하지 않겠다는 설정이다.
 
 ### 키 관련
 
