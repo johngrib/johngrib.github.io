@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ 이것저것
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2025-01-18 15:10:48 +0900
+updated : 2025-01-18 15:12:47 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -284,6 +284,14 @@ Gradle을 사용하고 있다면 Gradle JVM이 잘못 설정되어서 그럴 수
 <https://plugins.jetbrains.com/plugin/10080-rainbow-brackets >
 
 rainbow.vim 처럼 괄호를 무지개색으로 표시해준다.
+
+### Tab Number Indicator
+
+<https://plugins.jetbrains.com/plugin/9962-tabnumberindicator >
+
+`option + 숫자`키로 탭을 전환할 수 있다(웹 브라우저 탭처럼).
+
+각 탭에 번호를 매겨주는 기능도 있는데, 버그가 있는지 IntelliJ 최신 버전과 잘 안 맞는건지 될 때가 있고 안 될 때가 있다.
 
 ## IntelliJ 자체에 대한 것들
 ### configuration directory는 어디인가?
