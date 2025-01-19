@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ 이것저것
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2025-01-18 15:19:49 +0900
+updated : 2025-01-19 16:51:24 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -127,6 +127,26 @@ visual guideline을 설정하면 에디터 오른쪽에 가이드 라인(세로�
 #### 짜증나는 parameter hint 옵션 해제하기
 
 `Preferences` - `Editor` - `General` - `Appearance`로 들어간 다음, `Show parameter name hints`를 해제하면 된다.
+
+#### 열려있는 파일에 색 표시하기
+
+`Preferences` - `Appearance & Behavior` - `File Colors`로 들어가서 `Open Files`를 추가해주고 원하는 색깔을 지정해주면 된다.
+
+- `Project`의 파일 트리에 파일명 배경색으로 표시되며,
+- 탭의 파일명 배경색으로도 표시된다.
+
+나는 `Open Files`에 `000000`(검은색)을 지정해주었다.
+
+아래의 스크린샷은 `ExCommand.kt`, `CommandBean.kt`, `ExCommandProcessor.kt` 파일을 열어둔 모습이다.
+
+![]( /resource/F6/C37D5D-0E30-44D2-B873-E374D0E2CA90/file-color-open-files.jpg )
+
+>
+`Open Files`를 추가할 때, 목록에 `All Changed Files`도 보이기 때문에 같이 설정하고 싶은 생각이 들 수 있다.
+그런데 이건 별로 필요가 없다.
+IntelliJ 기본 설정을 통해 이미 변경된 파일의 이름이 파란색으로 표시되기 때문이다.
+파일명이 아주 잘 보이기 때문에 굳이 배경색을 바꿀 필요가 없다.
+{:style="background-color: #ecf1e8;"}
 
 ### 탭 관련
 
