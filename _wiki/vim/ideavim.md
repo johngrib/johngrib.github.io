@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 사용하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2023-03-14 23:58:18 +0900
+updated : 2025-01-25 21:52:14 +0900
 tag     : vim ideavim intellij
 resource: 44/580326-0E29-46DE-81F7-50A7AD8B4F60
 toc     : true
@@ -74,39 +74,43 @@ ideavim은 유명한 vim 플러그인의 에뮬레이션을 제공한다.
 
 물론 vim 플러그인을 그대로 쓸 수 있는 것은 아니고, ideavim에서 사용할 수 있도록 만들어진 것이다.
 
-2020년 3월 28일 기준으로 [ideavim]( https://github.com/JetBrains/ideavim )에서 지원되는 유명 플러그인은 다음과 같다.
->
-Emulated Vim plugins:
-- vim-easymotion
-- vim-surround
-- vim-multiple-cursors
-- vim-commentary
+2025-01-25일 기준으로 [ideavim에서도 사용할 수 있는 유명한 Vim 플러그인 구현 목록](https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins )은 다음과 같다.
 
-### vim-surround
+- easymotion
+- sneak
+- NERDTree
+- surround
+- multiple-cursors
+- commentary
+- ReplaceWithRegister
+- argtextobj
+- exchange
+- textobj-entire
+- highlightedyank
+- vim-paragraph-motion
+- vim-indent-object
+- matchit.vim
+- IdeaVim-Quickscope
+- Which-Key
+- Vim Peekaboo
+- FunctionTextObj
+- Switch
 
-vim-surround 는 vim의 vim-surround와 똑같은 느낌으로 사용할 수 있었다.
-
-vim-surround를 사용하려면 `.ideavimrc`에 다음과 같이 추가해주면 된다.
-
-```viml
-set surround
-```
-
-### vim-easymotion
+### easymotion
 
 이제 ideavim에도 easymotion이 들어와서 easymotion 스타일로 커서를 이동시킬 수 있게 되었다.
 
 그런데 ideavim 만으로는 작동이 안 된다는 문제가 있다. easymotion을 사용하려면 다음 절차를 거쳐야 한다.
 
-- IntelliJ에서 AceJump 플러그인을 설치한다.
-- IntelliJ에서 IdeaVim-EasyMotion 플러그인을 설치한다.
+- IntelliJ에서 [AceJump 플러그인](https://plugins.jetbrains.com/plugin/7086-acejump )과 [IdeaVim-EasyMotion 플러그인](https://plugins.jetbrains.com/plugin/13360-ideavim-easymotion )을 설치한다.
+    - 둘 다 설치해야 easymotion을 쓸 수 있다.
 - `.ideavimrc`에 다음 내용을 추가한다.
 
 ```viml
-set easymotion
+Plug 'easymotion/vim-easymotion'
 ```
 
-키 매핑은 다음과 같이 할 수 있다. 나는 `space`를 `mapleader`로 쓰기 때문에 다음과 같이 설정했다.
+만약 `space`를 `mapleader`로 사용한다면 다음과 같이 키를 매핑할 수 있다.
 
 ```viml
 let mapleader=" "
@@ -115,6 +119,17 @@ nmap <Leader>j <Plug>(easymotion-j)
 nmap <Leader>k <Plug>(easymotion-k)
 nmap <Leader>h <Plug>(easymotion-linebackward)
 nmap <Leader>a <Plug>(easymotion-jumptoanywhere)
+```
+
+나는 다음과 같이 사용하고 있다.
+
+```viml
+map <C-s>l <Plug>(easymotion-lineforward)
+map <C-s>j <Plug>(easymotion-j)
+map <C-s>k <Plug>(easymotion-k)
+map <C-s>h <Plug>(easymotion-linebackward)
+map <C-s><C-s> <Plug>(easymotion-jumptoanywhere)
+map <C-s>f <Plug>(easymotion-f)
 ```
 
 ### NERDTree
@@ -139,14 +154,51 @@ Plug 'preservim/nerdtree'
 - `p` - 현재 커서가 위치한 노드의 직계 부모 노드로 이동.
 - `P` - 최상위 노드로 이동. 즉 프로젝트 루트 디렉토리로 이동.
 
-제공하는 명령은 여러가지가 있지만 굳이 다 알 거 없고 `:NERDTreeFind` 하나면 알아도 충분한 것 같다.
+제공하는 명령은 여러가지가 있지만 굳이 다 알 거 없고 `NERDTreeFind` 하나면 알아도 충분한 것 같다.
 
 Project Explorer를 활성화 시키면서 현재 편집중인 파일을 하이라이트시켜준다.
 IntelliJ의 기본 키 제어로는 `option - F1, 1`을 써야 했는데, 이제는 이렇게 설정해서 쓴다.
 
 ```viml
-nmap \f :NERDTreeFind<CR>
+nmap sff :NERDTreeFind<CR>
 ```
+
+그런데 시간이 흐르며 `NERDTreeFind`와 똑같은 기능을 하는 `:action`이 생겼다. `SelectInProjectView`.
+
+그래서 요즘은 다음과 같이 사용하고 있다.
+
+```viml
+map sff <Action>(SelectInProjectView)
+```
+
+
+### surround
+
+surround 는 vim의 vim-surround와 똑같은 느낌으로 사용할 수 있었다.
+
+surround를 사용하려면 `.ideavimrc`에 다음과 같이 추가해주면 된다.
+
+```viml
+Plug 'tpope/vim-surround'
+```
+
+### Vim Peekaboo
+
+레지스터 미리보기 기능을 제공한다.
+이걸 설치해 두면 귀찮게 `:reg`를 입력하지 않아도 된다.
+
+Vim에서는 내 사용방식과 잘 맞지 않아서 쓰지 않았는데, 묘하게 IntelliJ에서는 더 편리한 느낌이 있다.
+
+다음과 같이 사용하면 된다.
+
+- IntelliJ에서 [Vim Peekaboo 플러그인](https://plugins.jetbrains.com/plugin/25776-vim-peekaboo )을 설치한다.
+- `.ideavimrc`에 다음과 같이 추가한다.
+
+```viml
+set peekaboo
+```
+
+이후 NORMAL 모드에서 `"`를 입력하거나, INSERT 모드에서 `<c-r>`을 입력하면 IntelliJ 화면 왼쪽 아래쪽에 레지스터 미리보기가 나타난다.
 
 ## 경험
 
