@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 사용하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2025-01-25 21:52:14 +0900
+updated : 2025-01-26 09:52:55 +0900
 tag     : vim ideavim intellij
 resource: 44/580326-0E29-46DE-81F7-50A7AD8B4F60
 toc     : true
@@ -21,7 +21,6 @@ latex   : false
 ## action 명령
 
 `:action`은 IntelliJ의 내장 기능을 실행해주는 편리한 명령이며, IntelliJ의 대부분의 기능은 `:action`으로 호출할 수 있는 아이디를 갖고 있다.
-
 (IntelliJ 전용이기 때문에 당연히 vim 에서는 쓸 수 없다.)
 
 모든 action은 `:actionlist`로 볼 수 있다. 3000개가 넘으므로 `command + a`로 복사해서 다른 곳에 붙여넣고 쓸만한 것이 있는지 찾아보면 된다.
@@ -57,6 +56,26 @@ nnoremap \t :action ActivateStructureToolWindow<CR>
 " startify와 비슷한 느낌으로 최근 프로젝트 이동을 할 수 있다
 nnoremap \s :action ManageRecentProjects<CR>
 ```
+
+다만 Ideavim 개발자들은 `:action Command`의 형태보다 `<Action>(Command)`방식을 권장하고 있다.
+단 `<Action>(Command)` 형식은 `noremap`과 호환되지 않으므로 그냥 `map`을 써야 한다.
+
+Ideavim 개발자들은 아예 매핑에 `:action`을 사용하지 말라고 한다.
+
+> Please don't use `:action` in mappings. Use `<Action>` instead.
+>
+> -- [Ideavim README.md Executing actions 섹션](https://github.com/JetBrains/ideavim/blob/e358dc9cee42632c7ff42ad8901c830dfe45cde7/README.md#executing-actions )
+
+따라서 위의 설정은 다음과 같이 바꿔 쓰도록 한다.
+
+```viml
+" tabbar와 비슷한 느낌으로 사용할 수 있다
+map \t <Action>(ActivateStructureToolWindow)
+
+" startify와 비슷한 느낌으로 최근 프로젝트 이동을 할 수 있다
+map \s <Action>(ManageRecentProjects)
+```
+
 
 ### set trackactionids 을 통해 특정 기능의 action 아이디 알아내기
 
