@@ -207,7 +207,8 @@ video {
 }
 
 // 팝업 주석
-sup[role=doc-noteref] {
+// sup[role=doc-noteref] {
+sup {
     position: relative;
 
     a.footnote {

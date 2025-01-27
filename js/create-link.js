@@ -135,7 +135,8 @@
 
 ;(function footnoteToolTip() {
     // 주석에 툴팁을 붙인다
-    const supList = document.querySelectorAll('sup[role="doc-noteref"]');
+    //const supList = document.querySelectorAll('sup[role="doc-noteref"]');
+    const supList = document.querySelectorAll('sup');
     for (let i = 0; i < supList.length; i++) {
         const sup = supList[i];
 

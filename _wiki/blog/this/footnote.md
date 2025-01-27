@@ -3,7 +3,7 @@ layout  : wiki
 title   : footnote 팝업 기능
 summary : 주석 기능
 date    : 2022-12-02 15:09:21 +0900
-updated : 2022-12-03 13:56:44 +0900
+updated : 2025-01-27 23:24:00 +0900
 tag     : 
 resource: 28/9B73E9-6A44-4742-AD40-1F55993DA83F
 toc     : true
@@ -103,11 +103,14 @@ sup[role=doc-noteref] {
 ```javascript
 ;(function footnoteToolTip() {
     // 주석에 툴팁을 붙인다
-    const supList = document.querySelectorAll('sup[role="doc-noteref"]');
+    const supList = document.querySelectorAll('sup');
     for (let i = 0; i < supList.length; i++) {
         const sup = supList[i];
 
         const note = sup.querySelector('.footnote');
+        if (note == undefined) {
+            continue;
+        }
         const id = note.getAttribute('href').replace(/^#/, "");
         const text = document.getElementById(id).innerHTML;
         sup.innerHTML += `<span class="tooltiptext" id="tooltip-${i}">${text}</span>`
