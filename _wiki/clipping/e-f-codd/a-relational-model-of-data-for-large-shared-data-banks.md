@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-27 21:32:45 +0900
+updated : 2025-01-27 23:16:53 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -32,7 +32,8 @@ E. F. Codd는 이 논문에서 집합론과 관계 이론을 토대로 새로운
 ## 번역
 
 >
-참고: 번역은 claude가 90% 정도 진행했고, 나는 조금씩만 수정했다.
+참고: 초벌 번역은 claude가 90% 정도 진행했고, 나는 조금씩만 수정했다.
+이후로는 반복적으로 읽으며 표현을 조금씩 수정하고 있다.
 {:style="background-color: #ecf1e8;"}
 
 <span/>
@@ -47,10 +48,10 @@ A prompting service which supplies such information is not a satisfactory soluti
 Activities of users at terminals and most application programs should remain unaffected when the internal representation of data is changed and even when some aspects of the external representation are changed.
 Changes in data representation will often be needed as a result of changes in query, update, and report traffic and natural growth in the types of stored information.
 
-대형 데이터 뱅크의 미래 사용자들은 데이터가 기계 내부에서 어떻게 구성되어 있는지(내부 표현)를 알아야 할 필요로부터 보호받아야 합니다.
-이러한 정보를 제공해주는 프롬프트 서비스는 만족스러운 해결책이라 할 수 없습니다.
-데이터의 내부 표현이 변경되거나 외부 표현의 일부가 변경된다 하더라도, 끝단에서의 사용자 활동과 대부분의 응용 프로그램은 영향을 받지 않아야 합니다.
-쿼리, 업데이트, 보고 트래픽의 변화와 저장된 정보 유형의 자연스러운 증가로 인해 데이터 표현의 변경은 종종 필요할 수 밖에 없습니다.
+미래의 대형 데이터 뱅크 사용자들은 기계 내부에서 데이터가 어떻게 구성되어 있는지(내부 표현)를 알아야 할 필요로부터 보호받아야 합니다.
+이러한 정보를 제공해주는 프롬프트 서비스는 그다지 좋은 해결책이라 할 수 없습니다.
+데이터의 내부 표현이나 외부 표현의 일부가 변경되더라도, 대부분의 응용 프로그램이나 끝단 사용자 활동은 그러한 변경의 영향을 받지 않아야 합니다.
+쿼리, 업데이트, 보고서 트래픽의 변화와 저장되는 정보 유형의 자연스러운 증가로 인해 데이터 표현의 변경은 종종 필요하게 될 것입니다.
 
 >
 Existing noninferential, formatted data systems provide users with tree-structured files or slightly more general network models of the data.
