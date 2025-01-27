@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-27 12:27:04 +0900
+updated : 2025-01-27 16:30:11 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -400,3 +400,166 @@ The terms attribute and repeating group in present data base terminology are rou
 현재 데이터베이스 용어에서 속성(attribute)과 반복 그룹(repeating group)은 각각 단순 도메인과 비단순 도메인에 대략적으로 대응됩니다. 현재 용어의 많은 혼란은 유형과 인스턴스를 구분하지 못하는 것("레코드"의 경우처럼)과, 데이터에 대한 사용자 모델의 구성 요소들과 이에 대응되는 기계적 표현을 구분하지 못하는 것(다시 한 번 "레코드"를 예로 들 수 있음)에서 비롯됩니다.
 
 #### 1.4. NORMAL FORM
+
+1.4. 정규형
+
+>
+A relation whose domains are all simple can be represented in storage by a two-dimensional column-homogeneous array of the kind discussed above. Some more complicated data structure is necessary for a relation with one or more nonsimple domains. For this reason (and others to be cited below) the possibility of eliminating nonsimple domains appears worth investigating. <sup>4</sup> There is, in fact, a very simple elimination procedure, which we shall call normalization.
+>
+<sup>4</sup> M. E. Sanko of IBM, San Jose, independently recognized the desirability of eliminating nonsimple domains.
+
+단순한 관계를 갖는 모든 도메인은 앞서 논의한 것과 같은 열-동질적인 2차원 배열로 저장소에 표현될 수 있습니다. 그러나 하나 이상의 비단순 도메인을 가진 관계의 경우에는 더 복잡한 데이터 구조가 필요합니다. 이러한 이유로(그리고 이후에 설명할 다른 이유들로 인해) 비단순 도메인을 제거할 수 있는 가능성을 조사해볼 가치가 있습니다.<sup>4</sup> 실제로 정규화라고 부를 매우 간단한 제거 절차가 있습니다.
+
+<sup>4</sup> IBM 산호세의 M. E. Sanko도 독립적으로 비단순 도메인을 제거하는 것이 바람직하다는 점을 인식한 바 있다.
+
+>
+Consider, for example, the collection of relations exhibited in Figure 3 (a). Job history and children are nonsimple domains of the relation employee. Salary history is a nonsimple domain of the relation job history. The tree in Figure 3 (a) shows just these interrelationships of the nonsimple domains.
+
+예를 들어, 그림 3 (a)에 제시된 관계들의 집합을 살펴봅시다. 직무 이력(job history)과 자녀(children)는 employee 관계의 비단순 도메인입니다. 급여 이력(salary history)은 직무 이력 관계의 비단순 도메인입니다. 그림 3 (a)의 트리는 이러한 비단순 도메인들의 상호 관계만을 보여줍니다.
+
+>
+> ```
+>               employee
+>    ┌─────────────┴───────────┐
+> jobhistory               children
+>    │
+> salaryhistory
+> ```
+>
+> employee (_man#_, name, birthdate, jobhistory, children)  
+> jobhistory (_jobdate_, title, salaryhistory)  
+> salaryhistory (_salarydate_, salary)  
+> children (_childname_, birthyear)  
+>
+> FIG. 3(a). Unnormalized set
+>
+>
+> employee' (_man#_, name, birthdate)  
+> jobhistory' (_man#_, _jobdate_, title)  
+> salaryhistory' (_man#_, _jobdate_, _salarydate_, salary)  
+> children' (_man#_, _childname_, birthyear)  
+>
+> FIG. 3(b). Normalized set
+
+<span/>
+
+>
+Normalization proceeds as follows. Starting with the relation at the top of the tree, take its primary key and expand each of the immediately subordinate relations by inserting this primary key domain or domain combination. The primary key of each expanded relation consists of the primary key before expansion augmented by the primary key copied down from the parent relation. Now, strike out from the parent relation all nonsimple domains, remove the top node of the tree, and repeat the same sequence of operations on each remaining subtree.
+
+정규화는 다음과 같이 진행됩니다. 트리의 최상위 관계에서 시작하여, 그것의 기본 키를 가져와서 직접 종속된 각 관계들을 이 기본 키 도메인 또는 도메인 조합을 삽입하여 확장합니다. 확장된 각 관계의 기본 키는 확장 전의 기본 키에 상위 관계에서 복사해 온 기본 키를 추가한 것으로 구성됩니다. 이제 상위 관계에서 모든 비단순 도메인을 제거하고, 트리의 최상위 노드를 제거한 다음, 남아있는 각 서브트리에 대해 동일한 연산 순서를 반복합니다.
+
+>
+The result of normalizing the collection of relations in Figure 3 (a) is the collection in Figure 3 (b). The primary key of each relation is italicized to show how such keys are expanded by the normalization.
+
+그림 3 (a)의 관계 집합을 정규화한 결과가 그림 3 (b)의 집합입니다. 각 관계의 기본 키는 정규화에 의해 키가 어떻게 확장되는지 보여주기 위해 이탤릭체로 표시되어 있습니다.
+
+>
+If normalization as described above is to be applicable, the unnormalized collection of relations must satisfy the following conditions :
+>
+- (1) The graph of interrelationships of the nonsimple domains is a collection of trees.
+- (2) No primary key has a component domain which is nonsimple.
+
+위에서 설명한 정규화가 적용되기 위해서는, 비정규화된 관계들의 집합이 다음 조건들을 만족해야 합니다:
+
+- (1) 비단순 도메인들의 상호 관계를 나타내는 그래프가 트리들의 집합이어야 합니다.
+- (2) 어떤 기본 키도 비단순 도메인을 구성 요소로 가지면 안 됩니다.
+
+>
+The writer knows of no application which would require any relaxation of these conditions. Further operations of a normalizing kind are possible. These are not discussed in this paper.
+
+본 저자는 이러한 조건들의 완화가 필요한 어떤 응용 사례도 알지 못합니다. 정규화와 관련된 추가적인 연산들이 가능합니다. 이것들은 이 논문에서는 다루지 않습니다.
+
+>
+The simplicity of the array representation which becomes feasible when all relations are cast in normal form is not only an advantage for storage purposes but also for communication of bulk data between systems which use widely different representations of the data. The communication form would be a suitably compressed version of the array representation and would have the following advantages:
+- (1) It would be devoid of pointers (address-valued or displacement-valued ).
+- (2) It would avoid all dependence on hash addressing schemes.
+- (3) It would contain no indices or ordering lists.
+
+모든 관계가 정규형으로 변환되었을 때 가능해지는 배열 표현의 단순성은 저장 목적에서뿐만 아니라, 매우 다른 데이터 표현 방식을 사용하는 시스템들 간의 대량 데이터 통신에서도 장점이 됩니다. 통신 형식은 배열 표현을 적절히 압축한 버전이 될 것이며 다음과 같은 장점들을 가질 것입니다.
+
+(1) 포인터(주소값 또는 변위값)가 없을 것입니다.
+(2) 해시 주소 지정 방식에 대한 모든 의존성을 피할 수 있을 것입니다.
+(3) 인덱스나 정렬 리스트를 포함하지 않을 것입니다.
+
+>
+If the user’s relational model is set up in normal form, names of items of data in the data bank can take a simpler form than would otherwise be the case. A general name would take a form such as
+>
+$$ R(g).r.d $$
+>
+where R is a relational name; g is a generation identifier (optional); r is a role name (optional); d is a domain name. Since g is needed only when several generations of a given relation exist, or are anticipated to exist, and r is needed only when the relation R has two or more domains named
+d, the simple form R.d will often be adequate.
+
+사용자의 관계형 모델이 정규형으로 설정되면, 데이터 뱅크의 데이터 항목들의 이름이 그렇지 않은 경우보다 더 단순한 형태를 가질 수 있습니다. 일반적인 이름은 다음과 같은 형태를 가질 것입니다.
+
+$$ R(g).r.d $$
+
+여기서 R은 관계 이름이고, g는 세대 식별자(선택사항)이며, r은 역할 이름(선택사항)이고, d는 도메인 이름입니다. g는 주어진 관계의 여러 세대가 존재하거나 존재할 것으로 예상될 때만 필요하고, r은 관계 R이 이름이 d인 도메인을 두 개 이상 가질 때만 필요하므로, 단순한 형태인 $$R.d$$가 종종 충분할 것입니다.
+
+#### 1.5. SOME LINGUISTIC ASPECTS
+
+1.5. 언어적 측면
+
+>
+The adoption of a relational model of data, as described above, permits the development of a universal data sub-language based on an applied predicate calculus. A first-order predicate calculus suffices if the collection of relations is in normal form. Such a language would provide a yardstick of linguistic power for all other proposed data languages, and would itself be a strong candidate for embedding (with appropriate syntactic modification) in a variety of host Ianguages (programming, command- or problem-oriented). While it is not the purpose of this paper to describe such a language in detail, its salient features would be as follows.
+
+위에서 설명한 관계형 데이터 모델의 채택은 술어 논리학을 응용한 보편적 데이터 하위 언어의 개발을 가능하게 합니다. 관계들의 집합이 정규형이라면 일차 술어 논리학으로 충분합니다. 이러한 언어는 다른 모든 제안된 데이터 언어들의 언어적 능력을 측정하는 기준이 될 것이며, 그 자체로 다양한 호스트 언어들(프로그래밍, 명령어 또는 문제 지향적)에 (적절한 구문 수정과 함께) 내장되기 위한 유력한 후보가 될 것입니다. 이 논문의 목적이 그러한 언어를 상세히 설명하는 것은 아니지만, 그것의 두드러진 특징들은 다음과 같을 것입니다.
+
+>
+Let us denote the data sublanguage by R and the host language by H. R permits the declaration of relations and their domains. Each declaration of a relation identifies the primary key for that relation. Declared relations are added to the system catalog for use by any members of the user community who have appropriate authorization. H permits supporting declarations which indicate, perhaps less permanently, how these relations are represented in storage. R permits the specification for retrieval of any subset of data from the data bank. Action on such a retrieval request is subject to security constraints.
+
+데이터 하위 언어를 R로, 호스트 언어를 H로 표기하겠습니다. R은 관계들과 그들의 도메인을 선언하는 것을 허용합니다. 각 관계의 선언은 해당 관계의 기본 키를 식별합니다. 선언된 관계들은 적절한 권한을 가진 사용자 커뮤니티의 모든 구성원들이 사용할 수 있도록 시스템 카탈로그에 추가됩니다. H는 이러한 관계들이 저장소에서 어떻게 표현되는지를 나타내는, 아마도 덜 영구적인, 지원 선언들을 허용합니다. R은 데이터 뱅크로부터 어떤 데이터의 부분집합이라도 검색하도록 명세하는 것을 허용합니다. 이러한 검색 요청에 대한 동작은 보안 제약조건들의 적용을 받습니다.
+
+>
+The universality of the data sublanguage lies in its descriptive ability (not its computing ability). In a large data bank each subset of the data has a very large number of possible (and sensible) descriptions, even when we assume (as we do) that there is only a finite set of function subroutines to which the system has access for use in qualifying data for retrieval. Thus, the class of qualification expressions which can be used in a set specification must have the descriptive power of the class of well-formed formulas of an applied predicate calculus. It is well known that to preserve this descriptive power it is unnecessary to express (in whatever syntax is chosen) every formula of the selected predicate calculus. For example, just those in prenex normal form are adequate [9].
+
+데이터 하위 언어의 보편성은 그것의 (계산적 능력이 아니라) 기술(descriptive) 능력에 있습니다. 대규모 데이터 뱅크에서 데이터의 각 부분집합은 매우 많은 수의 가능한(그리고 의미 있는) 기술 방식들을 가지고 있습니다. 이는 검색을 위한 데이터 한정에 사용할 수 있도록 시스템이 접근 가능한 함수 서브루틴들의 집합이 유한하다고 가정하더라도(우리가 그렇게 하는 것처럼) 그렇습니다. 따라서, 집합 명세에 사용될 수 있는 한정 표현식들의 부류는 응용 술어 논리학의 잘 구성된 공식들의 부류가 가진 기술적 능력을 가져야 합니다. 이러한 기술적 능력을 보존하기 위해서는 선택된 술어 논리학의 모든 공식을 (어떤 구문이 선택되든) 표현할 필요가 없다는 것은 잘 알려져 있습니다. 예를 들어, 전치 정규형(prenex normal form)에 있는 것들만으로도 충분합니다[9].
+
+>
+Arithmetic functions may be needed in the qualification or other parts of retrieval statements. Such functions can be defined in H and invoked in R.
+
+산술 함수들은 검색문의 한정 부분이나 다른 부분들에서 필요할 수 있습니다. 이러한 함수들은 H에서 정의되고 R에서 호출될 수 있습니다.
+
+>
+A set so specified may be fetched for query purposes only, or it may be held for possible changes. Insertions take the form of adding new elements to declared relations without regard to any ordering that may be present in their machine representation. Deletions which are effective for the community (as opposed to the individual user or sub-communities) take the form of removing elements from declared relations. Some deletions and updates may be triggered by others, if deletion and update dependencies between specified relations are declared in R.
+
+이렇게 명세된 집합은 질의 목적으로만 가져올 수도 있고, 또는 가능한 변경을 위해 보유될 수도 있습니다. 삽입은 기계 표현에 존재할 수 있는 어떤 순서와도 무관하게 선언된 관계들에 새로운 원소들을 추가하는 형태를 취합니다. (개별 사용자나 하위 커뮤니티가 아닌) 전체 커뮤니티에 대해 유효한 삭제는 선언된 관계들로부터 원소들을 제거하는 형태를 취합니다. 일부 삭제와 갱신은 다른 것들에 의해 촉발될 수 있는데, 이는 지정된 관계들 간의 삭제 및 갱신 의존성이 R에서 선언된 경우입니다.
+
+>
+One important effect that the view adopted toward data has on the language used to retrieve it is in the naming of data elements and sets. Some aspects of this have been discussed in the previous section. With the usual network view, users will often be burdened with coining and using more relation names than are absolutely necessary, since names are associated with paths (or path types) rather than with relations.
+
+데이터를 바라보는 관점이 데이터를 검색하는 데 사용되는 언어에 미치는 한 가지 중요한 영향은 데이터 원소들과 집합들의 명명에 있습니다. 이러한 측면들의 일부는 이전 절에서 논의되었습니다. 통상적인 네트워크 관점에서는, 이름들이 관계가 아닌 경로들(또는 경로 유형들)과 연관되어 있기 때문에, 사용자들은 종종 절대적으로 필요한 것보다 더 많은 관계 이름들을 만들고 사용해야 하는 부담을 지게 될 것입니다.
+
+>
+Once a user is aware that a certain relation is stored, he will expect to be able to exploit<sup>5</sup> it using any combination of its arguments as “knowns” and the remaining arguments as “unknowns,” because the information (like Everest) is there. This is a system feature (missing from many current informat.ion systems) which we shall call (logically) symmetric expZoitation of relations. Naturally, symmetry in performance is not to be expected.
+>
+<sup>5</sup> Exploiting a relation includes query, update, and delete.
+
+일단 사용자가 특정 관계가 저장되어 있다는 것을 알게 되면, 그는 그 관계의 인자들의 어떤 조합이든 "알려진 것들"로, 그리고 나머지 인자들을 "알려지지 않은 것들"로 사용하여 그것을 활용<sup>5</sup>할 수 있기를 기대할 것입니다. 왜냐하면 그 정보는 (에베레스트 산처럼) 거기에 있기 때문입니다. 이것은 (많은 현재의 정보 시스템들에서 누락된) 시스템 특징으로, 우리는 이것을 관계들의 (논리적으로) 대칭적 활용이라고 부를 것입니다. 당연히, 성능에서의 대칭성은 기대할 수 없습니다.
+
+<sup>5</sup> 관계의 활용에는 질의, 갱신, 삭제가 포함됩니다.
+
+>
+To support symmetric exploitation of a single binary relation, two directed paths are needed. For a relation of degree n, the number of paths to be named and controlled is n factorial.
+
+단일 이항 관계의 대칭적 활용을 지원하기 위해서는 두 개의 방향성 있는 경로들이 필요합니다. 차수가 n인 관계의 경우, 이름을 지정하고 제어해야 하는 경로들의 수는 n 팩토리얼입니다.
+
+>
+Again, if a relational view is adopted in which every n-ary relation ($$ n > 2 $$) has to be expressed by the user as a nested expression involving only binary relations (see Feldman’s LEAP System [10], for example) then $$ 2n - 1 $$ names have to be coined instead of only $$ n + 1 $$ with direct n-ary notation as described in Section 1.2. For example, the 4-ary relation supply of Figure 1, which entails 5 names in n-ary notation, would be represented in the form
+>
+$$ P (supplier, Q (part, R (project, quantity))) $$
+>
+in nested binary notation and, thus, employ 7 names.
+
+다시 말해서, 모든 n항 관계($$ n > 2 $$)를 사용자가 오직 이항 관계들만을 포함하는 중첩된 표현으로 나타내야 하는 관계적 관점이 채택된다면(예를 들어, Feldman의 LEAP 시스템 [10] 참조), 1.2절에서 설명된 것처럼 직접적인 n항 표기법으로는 단지 $$ n+1 $$ 개만 필요한 것에 비해 $$ 2n−1 $$ 개의 이름들을 만들어야 합니다. 예를 들어, 그림 1의 4항 관계인 supply는 n항 표기법에서는 5개의 이름들이 수반되지만, 중첩된 이항 표기법에서는 다음과 같은 형태로 표현되며...
+
+$$ P (supplier, Q (part, R(project, quantity))) $$
+
+따라서 7개의 이름들을 사용하게 됩니다.
+
+>
+A further disadvantage of this kind of expression is its asymmetry. Although this asymmetry does not prohibit symmetric exploitation, it certainly makes some bases of interrogation very awkward for the user to express (consider, for example, a query for those parts and quantities related to certain given projects via Q and R).
+
+이러한 종류의 표현의 또 다른 단점은 그것의 비대칭성입니다. 이 비대칭성이 대칭적 활용을 금지하지는 않지만, 확실히 일부 질의 기반들을 사용자가 표현하기에 매우 불편하게 만듭니다 (예를 들어, Q와 R을 통해 주어진 특정 프로젝트들과 관련된 부품들과 수량들을 찾는 질의를 상상해보세요).
+
+#### 1.6. EXPRESSIBLE, NAMED, AND STORED RELATIONS
+
