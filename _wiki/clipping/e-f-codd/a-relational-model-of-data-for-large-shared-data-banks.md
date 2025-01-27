@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-27 18:48:32 +0900
+updated : 2025-01-27 20:26:22 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -976,5 +976,127 @@ $$
 
 ##### 2.1.5. Restriction.
 
+2.1.5. 제한
+
+>
 A subset of a relation is a relation. One way in which a relation S may act on a relation R to generate a subset of R is through the operation restriction of R by S. This operation is a generalization of the restriction of a function to a subset of its domain, and is defined as follows.
+
+관계의 부분집합은 관계입니다. 관계 S가 관계 R에 작용하여 R의 부분집합을 생성할 수 있는 한 방법은 S에 의한 R의 제한 연산을 통해서입니다. 이 연산은 함수를 그 정의역의 부분집합으로 제한하는 것을 일반화한 것이며, 다음과 같이 정의됩니다.
+
+>
+Let L, M be equal-length lists of indices such that $$ L = i_1 , i_2, ... , i_k, M = j_1, j_2, ... , j_k $$ where k ≤ degree of R and k ≤ degree of S. Then the L, M restriction of R by S denoted $$ R_L \vert _M S $$ is the maximal subset R’ of R such that
+>
+$$ π_L(R’) = π_M(S). $$
+>
+The operation is defined only if equality is applicable between elements of $$ π_{i_h}(R) $$ on the one hand and $$ π_{j_h} (S)$$ on the other for all $$ h = 1, 2, ... , k $$.
+
+L, M이 같은 길이를 가진 인덱스 목록이라고 하고 $$ L = i_1 , i_2, ... , i_k, M = j_1, j_2, ... , j_k $$ 이며, 여기서 k 는 R의 차수 이하이고 S의 차수 이하라고 합시다. 그러면 $$ R_L \vert _M S $$ 로 표기되는 S에 의한 R의 L, M 제한은 다음을 만족하는 R 의 최대 부분집합 R’입니다:
+
+$$ π_L(R’) = π_M(S). $$
+
+이 연산은 모든 $$ h = 1, 2, ... , k $$에 대해 한쪽의 $$ π_{i_h}(R) $$ 원소들과 다른 쪽의 $$ π_{j_h} (S)$$ 원소들 사이에 등호가 적용 가능할 때만 정의됩니다.
+
+>
+The three relations R, S, R’ of Figure 13 satisfy the equation $$ R' = R_{(2,3)} \vert_{(1,2)} S $$.
+>
+$$
+\begin{array}{rrr}
+R & (s & p & j) & S & (p & j) & R' & (s & p & j) \\
+  &  1 & a & A  &   &  a & A  &    &  1 & a & A  \\
+  &  2 & a & A  &   &  c & B  &    &  1 & a & A  \\
+  &  2 & a & B  &   &  b & B  &    &  2 & b & B  \\
+  &  2 & b & A  &   &    &    &    &    &   &    \\
+  &  2 & b & B  &   &    &    &    &    &   &    \\
+\end{array}
+$$
+>
+> FIG. 13. Example of restriction
+
+그림 13의 세 관계 R, S, R'은 $$ R' = R_{(2,3)} \vert_{(1,2)} S $$ 식을 만족합니다.
+
+>
+We are now in a position to consider various applications of these operations on relations.
+
+이제 우리는 이러한 관계들에 대한 연산의 다양한 응용을 살펴볼 수 있게 되었습니다.
+
+#### 2.2. REDUNDANCY
+
+2.2. 중복성
+
+>
+Redundancy in the named set of relations must be distinguished from redundancy in the stored set of representations. We are primarily concerned here with the former. To begin with, we need a precise notion of derivability for relations.
+
+명명된 관계들의 집합에서의 중복성은 저장된 표현들의 집합에서의 중복성과 구별되어야 합니다. 여기서 우리는 주로 전자에 관심이 있습니다. 먼저, 우리는 관계들의 도출 가능성에 대한 정확한 개념이 필요합니다.
+
+>
+Suppose Θ is a collection of operations on relations and each operation has the property that from its operands it yields a unique relation (thus natural join is eligible, but join is not). A relation R is Θ-derivable from a set S of relations if there exists a sequence of operations from the collection Θ which, for all time, yields R from members of S. The phrase “for all time” is present, because we are dealing with time-varying relations, and our interest is in derivability which holds over a significant period of time. For the named set of relationships in noninferential systems, it appears that an adequate collection $$Θ_1$$ contains the following operations: projection, natural join, tie, and restriction. Permutation is irrelevant and natural composition need not be included, because it is obtainable by taking a natural join and then a projection. For the stored set of representations, an adequate collection $$Θ_2$$ of operations would include permutation and additional operations concerned with sub-setting and merging relations, and ordering and connecting their elements.
+
+Θ가 관계들에 대한 연산들의 집합이고 각 연산이 피연산자들로부터 유일한 관계를 산출하는 속성을 가진다고 가정해봅시다(따라서 자연 조인은 적격이지만, 조인은 그렇지 않습니다). 관계 R이 관계들의 집합 S로부터 Θ-도출 가능하다는 것은, Θ 집합으로부터의 연산들의 순서가 존재하여 이 연산들이 모든 시점에서 S의 원소들로부터 R을 산출한다는 의미입니다. "모든 시점에서"라는 구절이 있는 이유는, 우리가 시간에 따라 변하는 관계들을 다루고 있으며, 우리의 관심사는 상당한 시간 동안 유지되는 도출 가능성이기 때문입니다. 비추론 시스템에서 명명된 관계들의 집합에 대해, 적절한 연산들의 집합 $$ Θ_1 $$
+ 은 다음 연산들을 포함하는 것으로 보입니다: 투영, 자연 조인, 묶음, 그리고 제한. 순열은 무관하며 자연 합성은 포함될 필요가 없습니다. 왜냐하면 자연 합성은 자연 조인을 취한 후 투영을 함으로써 얻을 수 있기 때문입니다. 저장된 표현들의 집합에 대해서는, 적절한 연산들의 집합 $$ Θ_2 $$는 순열과 관계들의 부분집합화 및 병합, 그리고 그들의 원소들의 정렬과 연결에 관련된 추가적인 연산들을 포함할 것입니다.
+
+##### 2.2.1. Strong Redundancy.
+
+2.2.1. 강한 중복성
+
+>
+A set of relations is strongly redundant if it contains at least one relation that possesses a projection which is derivable from other projections of relations in the set. The following two examples are intended to explain why strong redundancy is defined this way, and to demonstrate its practical use. In the first example the collection of relations consists of just the following relation :
+>
+$$ employee \ (serial \ #, name, manager#, managername) $$
+>
+with $$ serial# $$ as the primary key and $$ manager# $$ as a foreign key. Let us denote the active domain by $$Δ_t$$, and suppose that
+>
+$$ Δ_t, (manager#) \subset Δ_t (serial#) $$
+>
+and
+>
+$$ Δ_t, (managername) \subset Δ_t (name) $$
+>
+for all time t. In this case the redundancy is obvious: the domain managername is unnecessary. To see that it is a strong redundancy as defined above, we observe that
+>
+$$ π_{34} (employee) = π_{12} (empZoyee)_1 \vert_1 π_3 (employee) $$.
+>
+In the second example the collection of relations includes a relation S describing suppliers with primary key s#, a relation D describing departments with primary key d#, a relation J describing projects with primary key j#, and the following relations:
+>
+$$ P(s#, d#, ...), \ \ Q(s#, j#, ...), \ \ R(d#, j#, ...), $$
+>
+where in each case ... denotes domains other than s#, d#, j#. Let us suppose the following condition C is known to hold independent of time: supplier s supplies department d (relation P) if and only if supplier s supplies some project j (relation Q) to which d is assigned (relation R). Then, we can write the equation
+>
+$$ π_{12} (P) = π_{12} (Q) \cdot π_{21} (R) $$
+>
+and thereby exhibit a strong redundancy.
+
+관계들의 집합은 만약 그 집합이 그 집합 내 다른 관계들의 투영들로부터 도출 가능한 투영을 가진 관계를 하나 이상 포함하고 있다면 강한 중복성을 가집니다. 다음의 두 예제는 강한 중복성이 이런 방식으로 정의되는 이유를 설명하고, 그것의 실제적 활용을 보여주기 위한 것입니다. 첫 번째 예제에서 관계들의 집합은 다음의 관계만으로 구성됩니다:
+
+$$ employee \ (serial \ #, name, manager#, managername) $$
+
+여기에서 serial# 은 기본 키이고 manager# 은 외래 키입니다.
+활성 도메인을 $$Δ_t$$로 표시하고, 모든 시점 t에 대해 다음이 성립한다고 가정합시다:
+
+$$ Δ_t, (manager#) \subset Δ_t (serial#) $$
+
+그리고
+
+$$ Δ_t, (managername) \subset Δ_t (name) $$
+
+이 경우 중복성은 명백합니다: managername 도메인은 불필요합니다. 이것이 위에서 정의한 대로 강한 중복성이라는 것을 다음 식을 통해 확인할 수 있습니다.
+
+$$ π_{12} (P) = π_{12} (Q) \cdot π_{21} (R) $$
+
+두 번째 예제에서 관계들의 집합은 기본 키 s#를 가진 공급자들을 설명하는 관계 S, 기본 키 d#를 가진 부서들을 설명하는 관계 D, 기본 키 j#를 가진 프로젝트들을 설명하는 관계 J, 그리고 다음의 관계들을 포함합니다:
+
+$$ P(s#, d#, ...), \ \ Q(s#, j#, ...), \ \ R(d#, j#, ...), $$
+
+여기서 각각의 경우 ...는 s#, d#, j# 이외의 도메인들을 나타냅니다. 다음 조건 C가 시간과 무관하게 성립한다고 가정합시다: 공급자 s가 부서 d에 공급한다면(관계 P) 그리고 오직 그 경우에만 공급자 s가 d가 배정된(관계 R) 어떤 프로젝트 j에 공급한다(관계 Q). 그러면, 우리는 다음 방정식을 쓸 수 있고
+
+$$ π_{12} (P) = π_{12} (Q) \cdot π_{21} (R) $$
+
+이를 통해 강한 중복성을 보여줄 수 있습니다.
+
+>
+An important reason for the existence of strong redundancies in the named set of relationships is user convenience. A particular case of this is the retention of semi-obsolete relationships in the named set so that old programs that refer to them by name can continue to run correctly. Knowledge of the existence of strong redundancies in the named set enables a system or data base administrator greater freedom in the selection of stored representations to cope more efficiently with current traffic. If the strong redundancies in the named set are directly reflected in strong redundancies in the stored set (or if other strong redundancies are introduced into the stored set), then, generally speaking, extra storage space and update time are consumed with a potential drop in query time for some queries and in load on the central processing units.
+
+명명된 관계들의 집합에 강한 중복성이 존재하는 중요한 이유 중 하나는 사용자 편의성입니다. 이러한 특별한 경우는 이전 프로그램들이 이름으로 참조하는 반쯤 폐기된 관계들을 명명된 집합에 유지하여 그 프로그램들이 계속해서 올바르게 실행될 수 있도록 하는 것입니다. 명명된 집합에 강한 중복성이 존재한다는 것을 아는 것은 시스템이나 데이터베이스 관리자가 현재의 트래픽을 더 효율적으로 처리하기 위한 저장 표현들을 선택하는 데 있어 더 큰 자유도를 갖게 합니다. 만약 명명된 집합의 강한 중복성이 저장된 집합의 강한 중복성으로 직접 반영되거나(또는 다른 강한 중복성이 저장된 집합에 도입된다면), 일반적으로 말해서 추가적인 저장 공간과 갱신 시간이 소비되며, 일부 질의에 대한 질의 시간과 중앙 처리 장치의 부하가 잠재적으로 감소할 수 있습니다.
+
+##### 2.2.2. Weak Redundancy.
+
 
