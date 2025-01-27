@@ -141,6 +141,9 @@
         const sup = supList[i];
 
         const note = sup.querySelector('.footnote');
+        if (note == null) {
+            continue;
+        }
         const id = note.getAttribute('href').replace(/^#/, "");
         const text = document.getElementById(id).innerHTML;
         sup.innerHTML += `<span class="tooltiptext" id="tooltip-${i}">${text}</span>`
