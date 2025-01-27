@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-27 23:16:53 +0900
+updated : 2025-01-27 23:33:24 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -48,10 +48,12 @@ A prompting service which supplies such information is not a satisfactory soluti
 Activities of users at terminals and most application programs should remain unaffected when the internal representation of data is changed and even when some aspects of the external representation are changed.
 Changes in data representation will often be needed as a result of changes in query, update, and report traffic and natural growth in the types of stored information.
 
-미래의 대형 데이터 뱅크 사용자들은 기계 내부에서 데이터가 어떻게 구성되어 있는지(내부 표현)를 알아야 할 필요로부터 보호받아야 합니다.
+미래의 대형 데이터 뱅크[^data-bank] 사용자들은 기계 내부에서 데이터가 어떻게 구성되어 있는지(내부 표현)를 알아야 할 필요로부터 보호받아야 합니다.
 이러한 정보를 제공해주는 프롬프트 서비스는 그다지 좋은 해결책이라 할 수 없습니다.
 데이터의 내부 표현이나 외부 표현의 일부가 변경되더라도, 대부분의 응용 프로그램이나 끝단 사용자 활동은 그러한 변경의 영향을 받지 않아야 합니다.
 쿼리, 업데이트, 보고서 트래픽의 변화와 저장되는 정보 유형의 자연스러운 증가로 인해 데이터 표현의 변경은 종종 필요하게 될 것입니다.
+
+[^data-bank]: 데이터 뱅크라는 용어는 오늘날 기준 '데이터베이스'라고 이해해도 무방할 것으로 보인다.
 
 >
 Existing noninferential, formatted data systems provide users with tree-structured files or slightly more general network models of the data.
@@ -1239,3 +1241,4 @@ RECEIVED SEPTEMBER, 1969; REVISED FEBRUARY, 1970
 9. CHURCH, A. An Introduction to Mathematical Logic I. Princeton U. Press, Princeton, N.J., 1956.
 10. FELDMAN, J. A., AND ROVNER, P. D. An Algol-based associative language. Stanford Artificial Intelligence Rep. AI-66, Aug. 1, 1968.
 
+## 주석
