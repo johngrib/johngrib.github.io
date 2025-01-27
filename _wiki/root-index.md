@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2025-01-12 19:53:04 +0900
+updated : 2025-01-26 20:29:39 +0900
 regenerate: true
 ---
 * TOC
@@ -110,6 +110,7 @@ regenerate: true
 * [[/clipping/bill-gates/letter-to-hobbyists]]
 * [[/clipping/butler-w-lampson/hints-for-computer-system-design]]
 * [[/clipping/donn-seely/how-not-to-write-fortran-in-any-language]]
+* [[/clipping/e-f-codd/a-relational-model-of-data-for-large-shared-data-banks]]
 * [[/clipping/eric-brewer/cap-twelve-years-later]]
 * [[/clipping/ethereum-white-paper]]
 * [[/clipping/james-hamilton/on-designing-and-deploying-internet-scale-services]]
