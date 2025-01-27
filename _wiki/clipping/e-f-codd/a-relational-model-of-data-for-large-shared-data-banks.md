@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-27 17:05:21 +0900
+updated : 2025-01-27 18:34:04 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -636,3 +636,270 @@ Since the user’s relational model consists of a collection of relationships (d
 ##### 2.1.2. Projection.
 
 2.1.2. 투영
+
+>
+Suppose now we select certain columns of a relation (striking out the others) and then remove from the resulting array any duplication in the rows. The final array represents a relation which is said to be a projection of the given relation.
+
+관계의 특정 열들을 선택하고(다른 열들은 제거하고) 그 결과로 나온 배열에서 행들의 중복을 제거한다고 가정해봅시다. 최종 배열은 주어진 관계의 투영이라고 하는 관계를 나타냅니다.
+
+>
+A selection operator π is used to obtain any desired permutation, projection, or combination of the two operations. Thus, if L is a list of k indices <sup>7</sup> $$ L = i_1, i_2, ..., i_k $$ and R is an n-ary relation (n ≥ k), then $$ π_L $$ (R) is the k-ary relation whose jth column is column $$ i_i $$ of $$ R(j = 1, 2, ..., k) $$ except that duplication in resulting rows is removed. Consider the relation supply of Figure 1. A permuted projection of this relation is exhibited in Figure 4. Note that, in this particular case, the projection has fewer n-tuples than the relation from which it is derived.
+>
+<sup>7</sup> When dealing with relationships, we use domain names (role-qualified whenever necessary) instead of domain positions.
+
+원하는 순열, 투영, 또는 이 두 연산의 조합을 얻기 위해 선택 연산자 π가 사용됩니다. 따라서, L이 k개의 인덱스들로 이루어진 리스트<sup>7</sup> $$ L = i_1, i_2, ..., i_k $$ 이고 R이 n항 관계(n ≥ 2 k)일 때, $$ π_L $$ (R)은 그 j번째 열이 R의 $$i_j$$열인$$(j = 1, 2, ..., k)$$ k항 관계입니다. 단, 결과로 나오는 행들의 중복은 제거됩니다. 그림 1의 supply 관계를 살펴봅시다. 이 관계의 순열 투영이 그림 4에 나와 있습니다. 이 특정한 경우에서, 투영은 원래의 관계보다 더 적은 수의 n-튜플을 가지고 있다는 점에 주목하십시오.
+
+<sup>7</sup> 관계성들을 다룰 때는 도메인 위치 대신 도메인 이름들(필요할 때마다 역할이 한정된)을 사용합니다.
+
+##### 2.1.3. Join.
+
+2.1.3. 조인
+
+>
+Suppose we are given two binary relations, which have some domain in common. Under what circumstances can we combine these relations to form a ternary relation which preserves all of the information in the given relations?
+
+공통된 도메인을 가진 두 개의 이진 관계가 주어졌다고 가정해봅시다. 어떤 상황에서 우리는 주어진 관계들의 모든 정보를 보존하는 삼진 관계를 형성하기 위해 이 관계들을 결합할 수 있을까요?
+
+>
+The example in Figure 5 shows two relations R, S, which are joinable without loss of information, while Figure 6 shows a join of R with S. A binary relation R is joinable with a binary relation S if there exists a ternary relation U such that $$ π_{12}(U) = R $$ and $$ π_{23}(U) = S $$. Any such ternary relation is called a join of R with S. If R, S are binary relations such that $$ π_2 (R) = π_1 (S) $$, then R is joinable with S.
+One join that always exists in such a case is the natural join of R with S defined by
+>
+$$ R*S = \{ (a, b, c):R(a, b) \land S(b, c) \} $$
+>
+where $$ R(a, b) $$ has the value true if $$(a, b)$$ is a member of R
+and similarly for $$S(b, c)$$. It is immediate that
+>
+$$ π_{12}(R*S) = R $$
+>
+and
+>
+$$ π_{23}(R*S) = S. $$
+
+그림 5는 정보의 손실 없이 조인 가능한 두 관계 R, S 를 보여주고, 그림 6은 R 과 S의 조인을 보여줍니다.
+이진 관계 R 은 $$ π_{12}(U) = R $$ 이고 $$ π_{23}(U) = S $$인 삼진 관계 U가 존재할 때 이진 관계 S와 조인 가능합니다.
+이러한 삼진 관계를 R과 S의 조인이라 합니다.
+R, S 가 이진 관계이고 $$ π_2 (R) = π_1 (S) $$ 일 때, R 은 S와 조인 가능합니다.
+이러한 경우에 항상 존재하는 하나의 조인은 다음과 같이 정의되는 R과 S의 자연 조인입니다.
+
+$$ R*S = \{ (a, b, c):R(a, b) \land S(b, c) \} $$
+
+여기에서 $$ R(a, b) $$는 $$(a, b)$$가 R의 멤버일 때 참 값을 가지며, $$S(b, c)$$에 대해서도 마찬가지입니다. 따라서 다음의 둘이 성립함을 알 수 있습니다.
+
+$$ π_{12}(R*S) = R $$
+
+그리고
+
+$$ π_{23}(R*S) = S. $$
+
+>
+Note that the join shown in Figure 6 is the natural join of R with S from Figure 5. Another join is shown in Figure 7.
+
+그림 6에 나타난 조인은 그림 5의 R과 S의 자연 조인임을 주목하십시오. 또 다른 조인이 그림 7에 나와 있습니다.
+
+>
+$$
+\begin{array}{ccc}
+\Pi_{31}(supply) & (project & supplier) \\
+                 &     5    &    1      \\
+                 &     5    &    2      \\
+                 &     1    &    4      \\
+                 &     7    &    2      \\
+\end{array}
+$$
+>
+> FIG. 4. A permuted projection of the relation in Figure 1
+
+그림 4. 그림 1의 관계의 순열 투영
+
+>
+$$
+\begin{array}{ccc}
+R \ (supplier & part) & S \ (part & project) \\
+        1     &   1   &        1  &    1     \\
+        2     &   1   &        1  &    2     \\
+        2     &   2   &        2  &    1     \\
+\end{array}
+$$
+>
+> FIG. 5. Two joinable relations
+
+그림 5. 조인 가능한 두 관계
+
+>
+$$
+\begin{array}{ccc}
+R*S & (supplier & part & project) \\
+    &     1     &   1  &    1     \\
+    &     1     &   1  &    2     \\
+    &     2     &   1  &    1     \\
+    &     2     &   1  &    2     \\
+    &     2     &   2  &    1     \\
+\end{array}
+$$
+>
+> FIG. 6. The natural join of R with S (from Figure 5)
+
+그림 6. R과 S의 자연 조인 (그림 5로부터)
+
+>
+$$
+\begin{array}{ccc}
+U & (supplier & part & project) \\
+  &     1     &   1  &    2     \\
+  &     2     &   1  &    1     \\
+  &     2     &   2  &    1     \\
+\end{array}
+$$
+>
+> FIG. 7. Another join of R with S (from Figure 5)
+
+그림 7. R과 S의 다른 조인 (그림 5로부터)
+
+>
+Inspection of these relations reveals an element (element 1) of the domain part (the domain on which the join is to be made) with the property that it possesses more than one relative under R and also under S. It is this element which gives rise to the plurality of joins. Such an element in the joining domain is called a point of ambiguity with respect to the joining of R with S.
+
+이 관계들을 살펴보면 조인 도메인(조인이 이루어지는 도메인)의 한 원소(원소 1)가 R과 S 모두에서 하나 이상의 관련 원소를 가지는 특성이 있음을 알 수 있습니다. 바로 이 원소로 인해 다수의 조인이 발생하게 됩니다. 조인 도메인에서 이러한 원소를 R과 S의 조인에 대한 모호점이라고 합니다.
+
+>
+If either $$π_1 (R)$$ or S is a function <sup>8</sup> no point of ambiguity can occur in joining R with S. In such a case, the natural join of R with S is the only join of R with S. Note that the reiterated qualification “of R with S” is necessary, because S might be joinable with R (as well as R with S), and this join would be an entirely separate consideration. In Figure 5, none of the relations $$R, π_{21}(R), S, π_{21}(S)$$ is a function.
+>
+<sup>8</sup> A function is a binary relation, which is one-one or many-one, but not one-many.
+
+$$π_1 (R)$$ 또는 S가 함수<sup>8</sup>일 경우, R과 S의 조인에서 모호점이 발생할 수 없습니다. 이러한 경우, R과 S의 자연 조인이 R과 S의 유일한 조인이 됩니다. "R과 S의"라는 반복되는 한정어구가 필요한데, 이는 S가 R과 조인 가능할 수 있고(R이 S와 조인 가능한 것과 마찬가지로), 이 조인은 완전히 별개의 고려 사항이 되기 때문입니다. 그림 5에서, $$R, π_{21}(R), S, π_{21}(S)$$ 중 어느 것도 함수가 아닙니다.
+
+<sup>8</sup> 함수는 일대일 또는 다대일이지만 일대다가 아닌 이진 관계입니다.
+
+>
+Ambiguity in the joining of R with S can sometimes be resolved by means of other relations. Suppose we are given, or can derive from sources independent of R and S, a relation T on the domains project and supplier with the following properties :
+>
+> - (1) $$ π_1 (T) = π_2 (S) $$,
+> - (2) $$ π_2 (T) = π_1 (R) $$,
+> - (3) $$ T(j, s) \rightarrow \exists p (R (S, P) \land S(p, j)) $$,
+> - (4) $$ R(s, p) \rightarrow \exists j (S (p, j) \land T(j, s)) $$,
+> - (4) $$ S(p, j) \rightarrow \exists s (T (j, s) \land R(s, p)) $$,
+>
+then we may form a three-way join of R, S, T; that is, a ternary relation such that
+>
+$$ π_{12} (U) = R, π_{23} (U) = S, π_{31} (U) = T. $$
+
+R과 S의 조인에서의 모호성은 때때로 다른 관계들을 통해 해결될 수 있습니다. R과 S와는 독립적인 출처로부터 주어지거나 도출할 수 있는, 프로젝트와 공급자 도메인에 대한 관계 T가 다음과 같은 속성을 가진다고 가정해봅시다:
+
+- (1) $$ π_1 (T) = π_2 (S) $$,
+- (2) $$ π_2 (T) = π_1 (R) $$,
+- (3) $$ T(j, s) \rightarrow \exists p (R (S, P) \land S(p, j)) $$,
+- (4) $$ R(s, p) \rightarrow \exists j (S (p, j) \land T(j, s)) $$,
+- (4) $$ S(p, j) \rightarrow \exists s (T (j, s) \land R(s, p)) $$,
+
+그러면 R, S, T의 삼중 조인을 형성할 수 있습니다. 즉, 다음을 만족하는 삼진 관계를 만들 수 있습니다:
+
+$$ π_{12} (U) = R, π_{23} (U) = S, π_{31} (U) = T. $$
+
+>
+Such a join will be called a cyclic 3-join to distinguish it from a linear S-join which would be a quaternary relation V such that
+>
+$$ π_{12} (U) = R, π_{23} (U) = S, π_{31} (U) = T. $$
+
+이러한 조인은 순환 3-조인이라고 부르며, 이는 다음과 같은 사원 관계 V로 표현되는 선형 3-조인과 구별하기 위함입니다:
+
+$$ π_{12} (U) = R, π_{23} (U) = S, π_{31} (U) = T. $$
+
+>
+While it is possible for more than one cyclic 3-join to exist (see Figures 8,9, for an example), the circumstances under which this can occur entail much more severe constraints
+>
+$$
+\begin{array}{rrlrrlrrl}
+R & (s  & p) & \ S & (p & j) & \ T & (j & s) \\
+  &  1  & a  &     &  a & d  &     &  d & 1  \\
+  &  2  & a  &     &  a & e  &     &  d & 2  \\
+  &  1  & b  &     &  b & d  &     &  e & 2  \\
+  &     &    &     &  b & e  &     &  e & 2  \\
+\end{array}
+$$
+>
+> FIG. 8. Binary relations with a plurality of cyclic 3-joins
+>
+$$
+\begin{array}{rrclrrcl}
+U & (s & p & j) & \ \ U' & (s & p & i) \\
+  &  1 & a & d  &        &  1 & a & d  \\
+  &  2 & a & e  &        &  2 & a & d  \\
+  &  2 & b & d  &        &  2 & a & e  \\
+  &  2 & b & e  &        &  2 & b & d  \\
+  &    &   &    &        &  2 & b & e  \\
+\end{array}
+$$
+>
+> FIG. 9. Two cyclic 3-joins of the relations in Figure 8
+>
+than those for a plurality of 2-joins. To be specific, the relations R, S, T must possess points of ambiguity with respect to joining R with S (say point x), S with T (say y), and T with R (say a), and, furthermore, y must be a relative of x under S, z a relative of y under T, and x a relative of z under R. Note that in Figure 8 the points $$ x = a ; y = d ; z = 2 $$ have this property.
+
+하나 이상의 순환 3-조인이 존재할 수 있지만(예시는 그림 8, 9 참조), 이것이 발생할 수 있는 상황은 2-조인의 복수 존재보다 훨씬 더 엄격한 제약을 수반합니다.
+
+$$
+\begin{array}{rrlrrlrrl}
+R & (s  & p) & \ S & (p & j) & \ T & (j & s) \\
+  &  1  & a  &     &  a & d  &     &  d & 1  \\
+  &  2  & a  &     &  a & e  &     &  d & 2  \\
+  &  1  & b  &     &  b & d  &     &  e & 2  \\
+  &     &    &     &  b & e  &     &  e & 2  \\
+\end{array}
+$$
+
+그림 8. 복수의 순환 3-조인을 가진 이진 관계들
+
+$$
+\begin{array}{rrclrrcl}
+U & (s & p & j) & \ \ U' & (s & p & i) \\
+  &  1 & a & d  &        &  1 & a & d  \\
+  &  2 & a & e  &        &  2 & a & d  \\
+  &  2 & b & d  &        &  2 & a & e  \\
+  &  2 & b & e  &        &  2 & b & d  \\
+  &    &   &    &        &  2 & b & e  \\
+\end{array}
+$$
+
+그림 9. 그림 8의 관계들의 두 가지 순환 3-조인
+
+구체적으로, 관계 R, S, T는 R과 S의 조인(예를 들어 점 x), S와 T의 조인(예를 들어 y), 그리고 T와 R의 조인(예를 들어 z)에 대해 모호점들을 가져야 하며, 더 나아가 y는 S 하에서 x의 관련 원소여야 하고, z는 T 하에서 y의 관련 원소여야 하며, x는 R 하에서 z의 관련 원소여야 합니다. 그림 8에서 점 $$ x = a ; y = d ; z = 2 $$가 이러한 속성을 가지고 있음을 주목하십시오.
+
+>
+The natural linear 3-join of three binary relations R, S, T is given by
+>
+$$ R*S*T = { (a, b, c, d):R (a, b) \land S (b, c) \land T (c, d)} $$
+>
+where parentheses are not needed on the left-hand side because the natural 2-join (*) is associative. To obtain the cyclic counterpart, we introduce the operator y which produces a relation of degree n - 1 from a relation of degree n by tying its ends together. Thus, if R is an n-ary relation
+(n ≥ 2), the tie of R is defined by the equation
+>
+$$ \gamma(R) = \{(a_1, a_2, ... , a_{n-1}):R(a_1, a_2, ..., a_{n-1}, a_n) \land a_1 = a_n \}. $$
+>
+We may now represent the natural cyclic S-join of R, S, T by the expression
+>
+$$ \gamma (R*S*T). $$
+
+세 개의 이진 관계 R, S, T의 자연 선형 3-조인은 다음과 같이 주어집니다:
+
+$$ R*S*T = { (a, b, c, d):R (a, b) \land S (b, c) \land T (c, d)} $$
+
+여기서 자연 2-조인(*)이 결합법칙을 만족하기 때문에 좌변에는 괄호가 필요하지 않습니다. 순환 대응물을 얻기 위해, 우리는 연산자 γ를 도입합니다. 이 연산자는 양 끝을 함께 묶음으로써 차수 n인 관계로부터 차수 n-1인 관계를 만들어냅니다. 따라서 R이 n항 관계일 때(n ≥ 2), R의 묶음은 다음 방정식으로 정의됩니다:
+
+$$ \gamma(R) = \{(a_1, a_2, ... , a_{n-1}):R(a_1, a_2, ..., a_{n-1}, a_n) \land a_1 = a_n \}. $$
+
+이제 R, S, T의 자연 순환 3-조인을 다음 표현식으로 나타낼 수 있습니다:
+
+$$ \gamma (R*S*T). $$
+
+>
+Extension of the notions of linear and cyclic S-join and their natural counterparts to the joining of n binary relations (where n ≥ 3) is obvious. A few words may be appropriate, however, regarding the joining of relations which are not necessarily binary. Consider the case of two relations R (degree r), S (degree s) which are to be joined on p of their domains $$(p < r, p < s)$$. For simplicity, suppose these p domains are the last p of the r domains of R, and the first p of the s domains of S. If this were not so, we could always apply appropriate permutations to make it
+so. Now, take the Cartesian product of the first r-p domains of R, and call this new domain A. Take the Cartesian product of the last p domains of R, and call this B. Take the Cartesian product of the last s-p domains of S and call this C.
+
+선형 및 순환 3-조인의 개념과 그들의 자연적 대응물을 n개의 이진 관계들의 조인으로 확장하는 것(여기서 n ≥ 3)은 명백합니다. 하지만 반드시 이진일 필요가 없는 관계들의 조인에 대해서는 몇 마디 설명이 필요할 수 있습니다. 차수가 r인 관계 R과 차수가 s인 관계 S가 p개의 도메인에서 조인되는 경우를 고려해봅시다$$(p<r,p<s)$$. 단순화를 위해, 이 p개의 도메인들이 R의 r개 도메인 중 마지막 p개이고, S의 s개 도메인 중 처음 p개라고 가정합시다. 만약 그렇지 않다면, 우리는 항상 적절한 순열을 적용하여 그렇게 만들 수 있습니다. 이제 R의 처음 r-p개 도메인들의 카테시안 곱을 취하고, 이 새로운 도메인을 A라고 부릅시다. R의 마지막 p개 도메인들의 카테시안 곱을 취하고, 이를 B라고 부릅시다. S의 마지막 s-p개 도메인들의 카테시안 곱을 취하고 이를 C라고 부릅시다.
+
+>
+We can treat R as if it were a binary relation on the domains A, B. Similarly, we can treat S as if it were a binary relation on the domains B, C. The notions of linear and cyclic 3-join are now directly applicable. A similar approach can be taken with the linear and cyclic n-joins of n relations of assorted degrees.
+
+우리는 R을 마치 도메인 A와 B 상의 이진 관계인 것처럼 다룰 수 있습니다. 유사하게, S를 도메인 B와 C 상의 이진 관계인 것처럼 다룰 수 있습니다. 이제 선형 및 순환 3-조인의 개념을 직접 적용할 수 있습니다. 이와 같은 접근 방식은 다양한 차수를 가진 n개 관계들의 선형 및 순환 n-조인에도 적용될 수 있습니다.
+
+##### 2.1.4. Composition.
+
+The reader is probably familiar with the notion of composition applied to functions. We shall discuss a generalization of that concept and apply it first to binary relations. Our definitions of composition and composability are based very directly on the definitions of join and joinability given above.
+
