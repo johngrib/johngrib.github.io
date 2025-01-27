@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-27 10:51:24 +0900
+updated : 2025-01-27 12:27:04 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -338,11 +338,65 @@ In many commercial, governmental, and scientific data banks, however, some of th
 <sup>2</sup>수학적 용어로, 관계성은 도메인들의 순열 하에서 서로 동등한 관계들의 동치류입니다(2.1.1절 참조).
 
 >
-To sum up, it is proposed that most users should interact with a relational model of the data consisting of a collection of time-varying relationships (rather than relations). Each user need not know more about any relationship than its name together with the names of its domains (role qualified whenever necessary): Even this information might be offered in menu style by the system (subject to security and privacy constraints) upon request by the user.
+To sum up, it is proposed that most users should interact with a relational model of the data consisting of a collection of time-varying relationships (rather than relations). Each user need not know more about any relationship than its name together with the names of its domains (role qualified whenever necessary).<sup>3</sup> Even this information might be offered in menu style by the system (subject to security and privacy constraints) upon request by the user.
+>
+<sup>3</sup> Naturally, as with any data put into and retrieved from a computer system, the user will normally make far more effective use of the data if he is aware of its meaning.
 
 즉, 대부분의 사용자들은 시간에 따라 변화하는 관계들의 집합이 아닌 관계성들의 집합으로 구성된 데이터의 관계형 모델과 상호작용해야 한다고 제안합니다. 각 사용자는 관계성에 대해 그것의 이름과 도메인들의 이름(필요한 경우 역할로 한정된)만 알면 됩니다. 심지어 이러한 정보조차도 사용자의 요청에 따라 시스템이 메뉴 형식으로 제공할 수 있습니다(보안 및 개인정보 보호 제약사항에 따라).
+
+<sup>3</sup> 당연한 말이지만, 컴퓨터 시스템에 입력되고 검색되는 다른 모든 데이터와 마찬가지로 사용자가 데이터의 의미를 알고 있을 때 그 데이터를 훨씬 더 효과적으로 사용할 수 있을 것입니다.
 
 >
 There are usually many alternative ways in which a relational model may be established for a data bank. In order to discuss a preferred way (or normal form), we must first introduce a few additional concepts (active domain, primary key, foreign key, nonsimple domain) and establish some links with terminology currently in use in information systems programming. In the remainder of this paper, we shall not bother to distinguish between relations and relationships except where it appears advantageous to be explicit.
 
 데이터 뱅크에 대한 관계형 모델을 수립하는 방법에는 보통 여러 가지 대안이 있습니다. 선호되는 방식(또는 정규형)을 논의하기 위해서는 먼저 몇 가지 추가 개념(활성 도메인, 기본 키, 외래 키, 비단순 도메인)을 소개하고 현재 정보 시스템 프로그래밍에서 사용되는 용어와의 연관성을 확립해야 합니다. 이 논문의 나머지 부분에서는 명시적으로 구분할 필요가 있는 경우를 제외하고는 관계와 관계성을 구분하지 않겠습니다.
+
+>
+Consider an example of a data bank which includes relations concerning parts, projects, and suppliers. One relation called part is defined on the following domains:
+>
+> - (1) part number
+> - (2) part name
+> - (3) part color
+> - (4) part weight
+> - (5) quantity on hand
+> - (6) quantity on order
+>
+and possibly other domains as well. Each of these domains is, in effect, a pool of values, some or all of which may be represented in the data bank at any instant. While it is conceivable that, at some instant, all part colors are present, it is unlikely that all possible part weights, part names, and part numbers are. We shall call the set of values represented at some instant the active domain at that instant.
+
+부품, 프로젝트, 공급업체에 관한 관계들을 포함하는 데이터 뱅크의 예시를 살펴보겠습니다. part라고 하는 한 관계는 다음과 같은 도메인들에 대해 정의됩니다.
+
+- (1) 부품 번호
+- (2) 부품 이름
+- (3) 부품 색상
+- (4) 부품 무게
+- (5) 재고 수량
+- (6) 주문 수량
+
+그리고 다른 도메인들도 있을 수 있습니다. 이러한 각 도메인은 사실상 값들의 집합이며, 이 값들 중 일부 또는 전부가 특정 시점의 데이터 뱅크에 표현될 수 있습니다. 어떤 시점에 모든 부품들의 색상이 존재할 수 있다고 생각할 수 있지만, 가능한 모든 부품 무게, 부품 이름, 부품 번호가 존재할 가능성은 낮습니다. 특정 시점에 표현된 값들의 집합을 그 시점의 활성 도메인이라고 부르도록 하겠습니다.
+
+>
+Normally, one domain (or combination of domains) of a given relation has values which uniquely identify each element (n-tuple) of that relation. Such a domain (or combination) is called a primary key. In the example above, part number would be a primary key, while part color would not be. A primary key is nonredundant if it is either a simple domain (not a combination) or a combination such that none of the participating simple domains is superfluous in uniquely identifying each element. A relation may possess more than one nonredundant primary key. This would be the case in the example if different parts were always given distinct names. Whenever a relation has two or more nonredundant primary keys, one of them is arbitrarily selected and called the primary key of that relation.
+
+일반적으로 주어진 관계의 한 도메인(또는 도메인들의 조합)은 해당 관계의 각 원소(n-튜플)를 고유하게 식별하는 값들을 가집니다. 이러한 도메인(또는 조합)을 기본 키(primary key)라고 합니다. 위의 예시에서 부품 번호는 기본 키가 될 수 있지만, 부품 색상은 그렇지 않습니다. 기본 키가 단순 도메인(조합이 아닌)이거나 각 원소를 고유하게 식별하는 데 참여하는 단순 도메인 중 어느 것도 불필요하지 않은 조합일 경우, 이를 비중복 기본 키라고 합니다(nonredundant primary key). 하나의 관계는 둘 이상의 비중복 기본 키를 가질 수 있습니다. 서로 다른 부품들이 항상 서로 다른 이름을 가진다면 위의 예시가 이러한 경우에 해당합니다. 관계가 둘 이상의 비중복 기본 키를 가질 때마다, 그중 하나를 임의로 선택하여 해당 관계의 기본 키라고 부릅니다.
+
+>
+A common requirement is for elements of a relation to cross-reference other elements of the same relation or elements of a different relation. Keys provide a user-oriented means (but not the only means) of expressing such cross-references. We shall call a domain (or domain combmation) of relation R a foreign key if it is not the primary key of R but its elements are values of the primary key of some relation S (the possibility that S and R are identical is not excluded). In the relation supply of Figure 1, the combination of supplier, part, project is the primary key, while each of these three domains taken separately is a foreign key.
+
+흔한 요구사항 중 하나는 한 관계의 원소들이 같은 관계의 다른 원소들이나 다른 관계의 원소들을 상호 참조하는 것입니다. 키는 이러한 상호 참조를 표현하기 위한 사용자 지향적인 수단을 제공합니다(단, 유일한 수단은 아닙니다). 관계 R의 도메인(또는 도메인 조합)이 R의 기본 키가 아니면서 그 원소들이 어떤 관계 S의 기본 키 값들인 경우, 이를 외래 키(foreign key)라고 부르도록 하겠습니다(여기서 S와 R이 동일할 수 있다는 가능성도 배제하지 않습니다). 그림 1의 supply 관계에서 공급업체, 부품, 프로젝트의 조합이 기본 키이며, 이 세 도메인 각각은 개별적으로 외래 키입니다.
+
+>
+In previous work there has been a strong tendency to treat the data in a data bank as consisting of two parts, one part consisting of entity descriptions (for example, descriptions of suppliers) and the other part consisting of relations between the various entities or types of entities (for example, the supply relation). This distinction is difficult to maintain when one may have foreign keys in any relation whatsoever. In the user’s relational model there appears to be no advantage to making such a distinction (there may be some advantage, however, when one applies relational concepts to machine representations of the user’s set of relationships).
+
+이전 연구들에서는 데이터 뱅크의 데이터를 두 부분으로 나누어 다루는 경향이 강했습니다. 한 부분은 개체 설명(예: 공급업체에 대한 설명)으로 구성되고, 다른 부분은 다양한 개체들 또는 개체 유형들 간의 관계(예: supply 관계)로 구성됩니다. 그러나 어떤 관계에서든 외래 키가 존재할 수 있다는 점에서 이러한 구분을 유지하기는 어렵습니다. 사용자의 관계형 모델에서는 이러한 구분을 두는 것이 특별히 유리해 보이지 않습니다(다만 사용자의 관계 집합에 대한 기계적 표현에 관계형 개념을 적용할 때는 어느 정도 이점이 있을 수 있습니다).
+
+>
+So far, we have discussed examples of relations which are defined on simple domains-domains whose elements are atomic (nondecomposable) values. Nonatomic values can be discussed within the relational framework. Thus, some domains may have relations as elements. These relations may, in turn, be defined on nonsimple domains, and so on. For example, one of the domains on which the relation employee is defined might be salary history. An element of the salary history domain is a binary relation defined on the domain date and the domain salary. The salary history domain is the set of all such binary relations. At any instant of time there are as many instances of the salary history relation in the data bank as there are employees. In contrast, there is only one instance of the employee relation.
+
+지금까지 우리는 단순 도메인(원소가 원자적(분해 불가능한) 값인 도메인)에 정의된 관계의 예시들을 논의했습니다. 관계형 프레임워크 내에서 비원자적 값도 논의될 수 있습니다. 따라서 일부 도메인은 관계를 원소로 가질 수 있습니다. 이러한 관계들은 다시 비단순 도메인에 정의될 수 있으며, 이는 계속 이어질 수 있습니다. 예를 들어, employee 관계가 정의된 도메인 중 하나가 급여 이력일 수 있습니다. 급여 이력 도메인의 원소는 날짜 도메인과 급여 도메인에 정의된 이진 관계입니다. 급여 이력 도메인은 이러한 모든 이진 관계의 집합입니다. 어느 시점에서든 데이터 뱅크에는 직원 수만큼의 급여 이력 관계 인스턴스가 존재합니다. 반면에 employee 관계의 인스턴스는 단 하나만 존재합니다.
+
+>
+The terms attribute and repeating group in present data base terminology are roughly analogous to simple domain and nonsimple domain, respectively. Much of the confusion in present terminology is due to failure to distinguish between type and instance (as in “record”) and between components of a user model of the data on the one hand and their machine representation counterparts on the other hand (again, we cite “record” as an example).
+
+현재 데이터베이스 용어에서 속성(attribute)과 반복 그룹(repeating group)은 각각 단순 도메인과 비단순 도메인에 대략적으로 대응됩니다. 현재 용어의 많은 혼란은 유형과 인스턴스를 구분하지 못하는 것("레코드"의 경우처럼)과, 데이터에 대한 사용자 모델의 구성 요소들과 이에 대응되는 기계적 표현을 구분하지 못하는 것(다시 한 번 "레코드"를 예로 들 수 있음)에서 비롯됩니다.
+
+#### 1.4. NORMAL FORM
