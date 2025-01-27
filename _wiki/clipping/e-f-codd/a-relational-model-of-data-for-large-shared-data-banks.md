@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-27 18:34:04 +0900
+updated : 2025-01-27 18:48:32 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -901,5 +901,80 @@ We can treat R as if it were a binary relation on the domains A, B. Similarly, w
 
 ##### 2.1.4. Composition.
 
+2.1.4. 합성
+
+>
 The reader is probably familiar with the notion of composition applied to functions. We shall discuss a generalization of that concept and apply it first to binary relations. Our definitions of composition and composability are based very directly on the definitions of join and joinability given above.
+
+이 논문의 독자들은 아마도 함수에 적용되는 합성의 개념에 익숙할 것입니다. 우리는 그 개념의 일반화에 대해 논의하고 이를 먼저 이진 관계에 적용할 것입니다. 우리의 합성과 합성 가능성에 대한 정의는 앞서 제시한 조인과 조인 가능성의 정의에 매우 직접적으로 기반합니다.
+
+>
+Suppose we are given two relations R, S. T is a camposition of R with S if there exists a join U of R with S such that $$ T = π_{13} (U) $$. Thus, two relations are composable if and only if they are joinable. However, the existence of more than one join of R with S does not imply the existence of more than one composition of R with S.
+
+두 관계 R, S가 주어졌다고 가정합시다. R과 S의 조인 U가 존재하여 $$ T = π_{13} (U) $$ 를 만족할 때, T는 R과 S의 합성이라고 합니다. 따라서, 두 관계는 조인 가능할 때만, 그리고 그때에만 합성 가능합니다. 하지만, R과 S의 조인이 하나 이상 존재한다고 해서 반드시 R과 S의 합성이 하나 이상 존재한다는 것을 의미하지는 않습니다.
+
+>
+Corresponding to the natural join of R with S is the natural composition <sup>9</sup> of R with S defined by
+>
+$$ R \cdot S = π_{13} (R*S). $$
+>
+Taking the relations R, S from Figure 5, their natural composition is exhibited in Figure 10 and another composition is exhibited in Figure 11 (derived from the join exhibited in Figure 7).
+>
+$$
+\begin{array}{ccc}
+R \cdot S & (project  & supplier) \\
+          &     1     &     1     \\
+          &     1     &     2     \\
+          &     2     &     1     \\
+          &     2     &     2     \\
+\end{array}
+$$
+>
+> FIG. 10. The natural composition of R with S (from Figure 5)
+>
+$$
+\begin{array}{ccc}
+T & (project  & supplier) \\
+  &     1     &     2     \\
+  &     2     &     1     \\
+\end{array}
+$$
+>
+> FIG. 11. Another composition of R with S (from Figure 5)
+>
+<sup>9</sup> Other writers tend to ignore compositions other than the natural one, and accordingly refer to this particular composition as the composition-see, for example, Kelley’s “General Topology.”
+
+R과 S의 자연 조인에 대응하여, R과 S의 자연 합성<sup>9</sup>은 다음과 같이 정의됩니다:
+
+$$ R \cdot S = π_{13} (R*S). $$
+
+그림 5의 관계 R, S를 가져와서, 이들의 자연 합성은 그림 10에서 보여지며, 또 다른 합성은 그림 11에서 보여집니다(그림 7에서 보여진 조인으로부터 도출됨).
+
+$$
+\begin{array}{ccc}
+R \cdot S & (project  & supplier) \\
+          &     1     &     1     \\
+          &     1     &     2     \\
+          &     2     &     1     \\
+          &     2     &     2     \\
+\end{array}
+$$
+
+그림 10. R과 S의 자연 합성(그림 5로부터)
+
+$$
+\begin{array}{ccc}
+T & (project  & supplier) \\
+  &     1     &     2     \\
+  &     2     &     1     \\
+\end{array}
+$$
+
+그림 11. R과 S의 또 다른 합성(그림 5로부터)
+
+<sup>9</sup> 다른 저자들은 자연 합성 이외의 합성들을 무시하는 경향이 있으며, 따라서 이 특정한 합성을 그냥 합성이라고 부릅니다 - 예를 들어, Kelley의 "일반 위상수학"을 참고하세요.
+
+##### 2.1.5. Restriction.
+
+A subset of a relation is a relation. One way in which a relation S may act on a relation R to generate a subset of R is through the operation restriction of R by S. This operation is a generalization of the restriction of a function to a subset of its domain, and is defined as follows.
 
