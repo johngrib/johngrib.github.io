@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 사용하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2025-01-26 09:52:55 +0900
+updated : 2025-01-28 22:17:27 +0900
 tag     : vim ideavim intellij
 resource: 44/580326-0E29-46DE-81F7-50A7AD8B4F60
 toc     : true
@@ -265,5 +265,4 @@ git pull --rebase upstrem master
 
 [repo]: https://github.com/JetBrains/ideavim
 [my]: https://github.com/johngrib/dotfiles/blob/master/.ideavimrc
-[set-commands]: https://github.com/JetBrains/ideavim/wiki/%22set%22-commands
-
+[set-commands]: https://github.com/JetBrains/ideavim/wiki/set-commands
