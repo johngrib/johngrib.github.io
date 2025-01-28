@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-27 23:33:24 +0900
+updated : 2025-01-28 16:11:02 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -16,12 +16,12 @@ latex   : true
 
 ## 개요
 
-- 원문: [A Relational Model of Data for Large Shared Data Banks (University of Pennsylvania)](https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf )
+원문: [A Relational Model of Data for Large Shared Data Banks (University of Pennsylvania)](https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf )
 
-**관계형 데이터베이스의 이론적인 기초를 제시한 전설적인 논문이다.**
-(컴퓨터 과학 역사상 가장 중요한 논문을 꼽으면 10위 이내에 꼽히곤 하는 논문이기도 하다.)
+- E. F. Codd의 이 1970년 논문을 통해 RDB 개념이 창안되었다.
+    - **관계형 데이터베이스의 이론적인 기초를 제시한 전설적인 논문이다.**
+    - 컴퓨터 과학 역사상 가장 중요한 논문을 꼽으면 10위 이내에 꼽히곤 하는 논문이기도 하다.
 
-즉, E. F. Codd의 이 1970년 논문을 통해 RDB 개념이 창안되었다.
 E. F. Codd는 이 논문에서 집합론과 관계 이론을 토대로 새로운 종류의 데이터 모델을 제안하는데, 이 모델은 데이터의 논리적 구조와 물리적 구조를 분리하여 데이터를 독립시킨다는 혁신을 가져왔다고 할 수 있다.
 
 이 논문에서 소개하는 RDB 개념이 등장하기 이전의 데이터베이스는 주로 계층형이나 네트워크형 모델을 사용하고 있었고, 이런 모델들은 데이터 구조가 복잡하고 데이터의 사용이나 수정이 물리적인 저장 방식에 강하게 의존하는 문제가 있었다.
