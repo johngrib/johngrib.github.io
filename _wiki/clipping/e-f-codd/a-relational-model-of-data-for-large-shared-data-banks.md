@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-28 16:11:02 +0900
+updated : 2025-01-28 16:38:06 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -84,27 +84,27 @@ CR CATEGORIES: 3.70, 3.73,
 >
 This paper is concerned with the application of elementary relation theory to systems which provide shared access to large banks of formatted data. Except for a paper by Childs [1], the principal application of relations to data systems has been to deductive question-answering systems. Levin and Maron [2] provide numerous references to work in this area.
 
-본 논문은 대규모 형식 데이터 뱅크에 대한 공유 접근을 제공하는 시스템에 기초적인 관계 이론을 적용하는 것입니다. Childs[1]의 논문을 제외하면, 데이터 시스템에 대한 관계의 주된 적용은 연역적 질의응답 시스템에 국한되어 왔습니다. Levin과 Maron[2]은 이 분야의 연구에 대한 다수의 참고문헌을 제공합니다.
+대규모의 형식화된 데이터 뱅크에 대한 공유 접근을 제공하는 시스템들에 기본 관계 이론을 적용하는 것이 이 논문의 주제입니다. Childs[1]의 논문을 제외하고, 지금까지는 데이터 시스템에서 관계 이론은 주로 연역적 질의응답 시스템에 한정되어 적용되어 왔습니다. Levin과 Maron[2]이 이 분야의 연구들에 대한 풍부한 참고문헌을 제공하고 있습니다.
 
 >
 In contrast, the problems treated here are those of data independence - the independence of application programs and terminal activities from growth in data types and changes in data representation - and certain kinds of data inconsistency which are expected to become troublesome even in nondeductive systems.
 
-반면에, 여기서 다루는 문제들은 데이터 독립성 - 데이터 타입의 증가와 데이터 표현의 변화로부터의 응용 프로그램과 끝단 사용의 독립성 - 그리고 비연역적 시스템에서조차 문제가 될 것으로 예상되는 특정 유형의 데이터 불일치에 관한 것입니다.
+반면 이 논문에서 다루는 문제들은 데이터 독립성과 관련된 것입니다. (여기서 데이터 독립성이란 응용 프로그램과 끝단 작업이 데이터 타입이 증가하거나 데이터 표현 방식이 변경되어도 영향을 받지 않는 것을 의미합니다.) 그리고 비연역적 시스템에서도 문제가 될 것으로 예상되는 특정 유형의 데이터 불일치 문제도 다룹니다.
 
 >
 The relational view (or model) of data described in Section 1 appears to be superior in several respects to the graph or network model [3,4] presently in vogue for noninferential systems. It provides a means of describing data with its natural structure only-that is, without superimposing any additional structure for machine representation purposes. Accordingly, it provides a basis for a high level data language which will yield maximal independence between programs on the one hand and machine representation and organization of data on the other.
 
-1장에서 설명하는 데이터의 관계적 관점(또는 모델)은 비추론적 시스템에서 현재 유행하는 그래프 또는 네트워크 모델[3,4]보다 여러 면에서 우수한 것으로 보입니다. 이는 기계적 표현을 위한 어떠한 추가 구조도 덧씌우지 않고 오직 자연스러운 구조로만 데이터를 기술하는 수단을 제공합니다. 따라서 한편으로는 프로그램과 데이터의 기계적 표현 및 구성 사이에서 최대한의 독립성을 제공하는 고수준 데이터 언어의 기반을 제공합니다.
+1장에서 설명하는 **데이터의 관계적 관점**(또는 모델)은 기계 표현을 위한 어떠한 추가 구조도 덧붙이지 않고, 데이터의 자연스러운 구조만을 기술할 수 있는 방법을 제공하며, 프로그램과 데이터의 기계적 표현 및 구성 사이에서 최대한의 독립성을 보장하는 고수준 데이터 언어를 위한 기반을 제공합니다. **관계적 관점**은 현재 비추론적 시스템에서 주류를 이루고 있는 그래프 모델이나 네트워크 모델[3,4]보다 여러 면에서 우수할 것이라 생각합니다.
 
 >
 A further advantage of the relational view is that it forms a sound basis for treating derivability, redundancy, and consistency of relations-these are discussed in Section 2. The network model, on the other hand, has spawned a number of confusions, not the least of which is mistaking the derivation of connections for the derivation of relations (see remarks in Section 2 on the “connection trap”).
 
-관계적 관점의 또 다른 장점은 관계의 도출 가능성, 중복성, 일관성을 다루기 위한 합리적인 기반을 형성한다는 것입니다 - 이에 대해서는 2장에서 논의합니다. 반면에 네트워크 모델은 여러 가지 혼란을 야기했는데, 그중 가장 작지 않은 것이 연결의 도출을 관계의 도출로 오해하는 것입니다("연결 함정"에 대해서는 2장의 설명 참조).
+관계의 도출 가능성, 중복성, 일관성을 다루기 위한 탄탄한 이론적 기반을 제공한다는 점이 관계적 관점의 또다른 장점이라 할 수 있습니다(이는 2장에서 상세히 다룹니다). 반면 네트워크 모델은 여러 혼란의 원인이 되었는데, 그 중에서도 특히 심각한 문제는 연결의 도출을 관계의 도출로 잘못 이해하게 만든다는 것입니다(이른바 '연결 함정'에 대해서는 2장을 참조하시기 바랍니다).
 
 >
 Finally, the relational view permits a clearer evaluation of the scope and logical limitations of present formatted data systems, and also the relative merits (from a logical standpoint) of competing representations of data within a single system. Examples of this clearer perspective are cited in various parts of this paper. Implementations of systems to support the relational model are not discussed.
 
-마지막으로, 관계적 관점은 현재의 형식화된 데이터 시스템의 범위와 논리적 한계를 더 명료하게 평가할 수 있게 해주며, 단일 시스템 내에서 경쟁하는 데이터 표현들의 상대적 장점도 (논리적 관점에서) 더 확실하게 평가할 수 있게 해줍니다. 이러한 더 명확한 관점의 예시들은 본 논문의 여러 부분에서 소개할 것입니다. 그러나 관계 모델을 지원하는 시스템의 구현에 대해서는 논의하지 않습니다.
+관계적 관점을 사용하면 현재의 형식화된 데이터 시스템이 가진 범위와 논리적 한계를 더 명확하게 평가할 수 있습니다. 그리고 단일 시스템 내에서 서로 경쟁하는 데이터 표현 방식들의 상대적 장점도 논리적 관점에서 더 분명하게 파악할 수 있습니다. 이렇게 명확한 관점을 보여주는 예시들은 본 논문 전반에 걸쳐 제시됩니다. 단, 관계 모델을 지원하는 시스템의 구현 방식은 본 논문의 논의 대상이 아님을 밝힙니다.
 
 #### 1.2. DATA DEPENDENCIES IN PRESENT SYSTEMS
 
