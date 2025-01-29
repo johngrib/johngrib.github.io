@@ -8,6 +8,7 @@
  "resource": "B9/EC026F-2DB4-46A5-BAC7-46F9D0A37E9E",
  "children": [
   "hammerspoon",
+  "mac/appcleaner",
   "mac/iterm",
   "mac/keyboard-shortcuts",
   "mac/screenshot",
