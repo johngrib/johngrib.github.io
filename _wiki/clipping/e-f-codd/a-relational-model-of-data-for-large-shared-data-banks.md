@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-29 15:16:58 +0900
+updated : 2025-01-29 15:24:13 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -127,8 +127,9 @@ The provision of data description tables in recently developed information syste
 >
 Elements of data in a data bank may be stored in a variety of ways, some involving no concern for ordering, some permitting each element to participate in one ordering only, others permitting each element to participate in several orderings. Let us consider those existing systems which either require or permit data elements to be stored in at least one total ordering which is closely associated with the hardware-determined ordering of addresses. For example, the records of a file concerning parts might be stored in ascending order by part serial number. Such systems normally permit application programs to assume that the order of presentation of records from such a file is identical to (or is a subordering of) the stored ordering. Those application programs which take advantage of the stored ordering of a file are likely to fail to operate correctly if for some reason it becomes necessary to replace that ordering by a different one. Similar remarks hold for a stored ordering implemented by means of pointers.
 
-데이터 뱅크의 데이터 요소들은 다양한 방식으로 저장될 수 있습니다. 어떤 방식은 순서를 전혀 고려하지 않고, 어떤 방식은 각 요소가 하나의 순서에만 참여하도록 허용하며, 또 다른 방식은 각 요소가 여러 순서에 참여할 수 있도록 허용합니다. 하드웨어가 결정하는 주소의 순서와 밀접하게 연관된 적어도 하나의 전체 순서로 데이터 요소들을 저장하도록 요구하거나 허용하는 기존 시스템들을 살펴보겠습니다.
-예를 들어, 부품에 관한 파일의 레코드들은 부품 일련번호의 오름차순으로 저장될 수 있습니다. 이러한 시스템들은 일반적으로 응용 프로그램이 이런 파일로부터 레코드를 제시받는 순서가 저장된 순서와 동일하다고(또는 저장된 순서의 부분 순서라고) 가정하는 것을 허용합니다. 파일의 저장 순서를 활용하는 응용 프로그램들은 어떤 이유로든 그 순서를 다른 것으로 교체해야 할 필요가 생기면 제대로 작동하지 않을 가능성이 높습니다. 포인터를 통해 구현된 저장 순서에 대해서도 비슷한 설명이 적용됩니다.
+데이터 뱅크의 데이터 요소들은 다양한 방식으로 저장될 수 있는데, 순서를 전혀 고려하지 않는 방식도 있고, 각 요소가 하나의 순서에만 참여하도록 하는 방식도 있으며, 각 요소가 여러 순서에 참여할 수 있게 하는 방식도 있습니다. 이제 기존 시스템들 중 일부를 살펴보겠습니다. 이 시스템들은 데이터 요소들을 저장할 때 하드웨어 주소의 물리적 순서와 밀접하게 연관된 최소한 하나의 전체 순서를 요구하거나 허용합니다.
+
+예를 들어, 부품에 관한 파일의 레코드들은 부품 일련번호의 오름차순으로 저장될 수 있습니다. 이러한 시스템들은 일반적으로 응용 프로그램이 이런 파일로부터 레코드를 전달받는 순서가 저장된 순서와 동일하다고(또는 저장된 순서의 부분 순서라고) 가정하는 것을 허용합니다. 그런데 파일의 저장 순서를 활용하는 응용 프로그램들은 어떤 이유로든 그 순서를 다른 것으로 교체해야 할 필요가 생기면 제대로 작동하지 않게 될 가능성이 높습니다. 저장하는 순서를 포인터를 통해 구현한 경우에 대해서도 비슷한 설명이 적용됩니다.
 
 >
 It is unnecessary to single out any system as an example, because all the well-known information systems that are marketed today fail to make a clear distinction between order of presentation on the one hand and stored ordering on the other. Significant implementation problems must be solved to provide this kind of independence.
