@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-28 16:38:06 +0900
+updated : 2025-01-29 15:16:58 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -53,7 +53,7 @@ Changes in data representation will often be needed as a result of changes in qu
 데이터의 내부 표현이나 외부 표현의 일부가 변경되더라도, 대부분의 응용 프로그램이나 끝단 사용자 활동은 그러한 변경의 영향을 받지 않아야 합니다.
 쿼리, 업데이트, 보고서 트래픽의 변화와 저장되는 정보 유형의 자연스러운 증가로 인해 데이터 표현의 변경은 종종 필요하게 될 것입니다.
 
-[^data-bank]: 데이터 뱅크라는 용어는 오늘날 기준 '데이터베이스'라고 이해해도 무방할 것으로 보인다.
+[^data-bank]: 역주: 데이터 뱅크라는 용어는 오늘날 기준 '데이터베이스'라고 이해해도 무방할 것으로 보인다.
 
 >
 Existing noninferential, formatted data systems provide users with tree-structured files or slightly more general network models of the data.
@@ -108,11 +108,17 @@ Finally, the relational view permits a clearer evaluation of the scope and logic
 
 #### 1.2. DATA DEPENDENCIES IN PRESENT SYSTEMS
 
+1.2. 현 세대 시스템에서의 데이터 종속성[^title-1-2]
+
+[^title-1-2]: 역주: 여기에서 말하는 현 세대는 1970년이 기준.
+
 >
 The provision of data description tables in recently developed information systems represents a major advance toward the goal of data independence [5,6,7]. Such tables facilitate changing certain characteristics of the data representation stored in a data bank. However, the variety of data representation characteristics which can be changed without logically impairing some application programs is still quite limited. Further, the model of data with which users interact is still cluttered with representational properties, particularly in regard to the representation of collections of data (as opposed to individual items). Three of the principal kinds of data dependencies which still need to be removed are: ordering dependence, indexing dependence, and access path dependence. In some systems these dependencies are not clearly separable from one another.
 
-최근 개발된 정보 시스템에서 데이터 설명 테이블을 제공하는 것은 데이터 독립성이라는 목표 측면에서의 주요한 발전이라 할 수 있습니다[5,6,7]. 이러한 테이블 덕분에 데이터 뱅크에 저장된 데이터 표현의 특정한 특성들을 편리하게 변경할 수 있게 되었습니다.
-하지만 응용 프로그램들을 논리적으로 손상시키지 않고 변경할 수 있게끔 해주는 데이터 표현 특성들의 다양성은 아직도 매우 제한적입니다. 게다가, 사용자와 상호작용하는 데이터 모델은 여전히 표현적 속성들이 불필요하게 혼재되어 있는데, 특히 개별 항목이 아닌 데이터 집합의 표현 측면에서 그러합니다. 아직도 제거하지 못한 중요한 데이터 종속성 세 가지는 순서 종속성, 인덱싱 종속성, 접근 경로 종속성이라 할 수 있습니다. 그리고 몇몇 시스템에서는 이러한 종속성들이 서로 명확히 구분되지 않습니다.
+최근에 개발된 정보 시스템들에서 데이터 설명 테이블을 제공하는 것은 데이터 독립성이라는 목표를 향한 큰 진전이라 할 수 있습니다[5,6,7]. 이러한 테이블들로 인해 데이터 뱅크에 저장된 데이터 표현의 특정 특성들을 변경하는 작업이 용이해지기 때문입니다. 하지만 응용 프로그램들의 논리적 손상 없이 변경할 수 있는 데이터 표현 특성들의 범위는 아직도 매우 제한적입니다.[^change-type-1-2]
+더욱이 사용자가 다루는 데이터 모델에는, 특히 개별 항목이 아닌 데이터 집합을 다룰 때, 여전히 데이터 표현 방식에 관한 불필요한 세부사항들이 뒤섞여 있습니다.
+
+[^change-type-1-2]: 역주: 데이터 타입을 바꾸면 응용 프로그램의 로직이 깨지는 것은 2025년 현재에도 여전히 어려운 문제로 남아있다.
 
 ##### 1.2.1. Ordering Dependence.
 
