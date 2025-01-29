@@ -3,7 +3,7 @@ layout  : wiki
 title   : IdeaVim 사용하기
 summary : 이거라도 쓰는 수 밖에 없다
 date    : 2019-11-11 13:36:26 +0900
-updated : 2025-01-28 22:17:27 +0900
+updated : 2025-01-29 17:49:22 +0900
 tag     : vim ideavim intellij
 resource: 44/580326-0E29-46DE-81F7-50A7AD8B4F60
 toc     : true
@@ -218,6 +218,17 @@ set peekaboo
 ```
 
 이후 NORMAL 모드에서 `"`를 입력하거나, INSERT 모드에서 `<c-r>`을 입력하면 IntelliJ 화면 왼쪽 아래쪽에 레지스터 미리보기가 나타난다.
+
+## 소스코드
+
+### CommandOrMotion 찾기
+
+프로젝트 루트에서 다음과 같이 `@CommandOrMotion`을 검색할 것.
+
+```bash
+grep -R @CommandOrMotion
+rg @CommandOrMotion     # rg를 쓰는 편이 더 낫다
+```
 
 ## 경험
 
