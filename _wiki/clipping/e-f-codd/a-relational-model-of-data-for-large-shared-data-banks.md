@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-29 21:33:33 +0900
+updated : 2025-01-29 21:34:57 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -84,7 +84,7 @@ CR CATEGORIES: 3.70, 3.73,
 >
 This paper is concerned with the application of elementary relation theory to systems which provide shared access to large banks of formatted data. Except for a paper by Childs [1], the principal application of relations to data systems has been to deductive question-answering systems. Levin and Maron [2] provide numerous references to work in this area.
 
-대규모의 형식화된 데이터 뱅크에 대한 공유 접근을 제공하는 시스템들에 기본 관계 이론을 적용하는 것이 이 논문의 주제입니다. Childs[1]의 논문을 제외하고, 지금까지는 데이터 시스템에서 관계 이론은 주로 연역적 질의응답 시스템에 한정되어 적용되어 왔습니다. Levin과 Maron[2]이 이 분야의 연구들에 대한 풍부한 참고문헌을 제공하고 있습니다.
+대규모의 구조화된 데이터 뱅크에 대한 공유 접근을 제공하는 시스템들에 기본 관계 이론을 적용하는 것이 이 논문의 주제입니다. Childs[1]의 논문을 제외하고, 지금까지는 데이터 시스템에서 관계 이론은 주로 연역적 질의응답 시스템에 한정되어 적용되어 왔습니다. Levin과 Maron[2]이 이 분야의 연구들에 대한 풍부한 참고문헌을 제공하고 있습니다.
 
 >
 In contrast, the problems treated here are those of data independence - the independence of application programs and terminal activities from growth in data types and changes in data representation - and certain kinds of data inconsistency which are expected to become troublesome even in nondeductive systems.
@@ -104,7 +104,7 @@ A further advantage of the relational view is that it forms a sound basis for tr
 >
 Finally, the relational view permits a clearer evaluation of the scope and logical limitations of present formatted data systems, and also the relative merits (from a logical standpoint) of competing representations of data within a single system. Examples of this clearer perspective are cited in various parts of this paper. Implementations of systems to support the relational model are not discussed.
 
-관계적 관점을 사용하면 현재의 형식화된 데이터 시스템이 가진 범위와 논리적 한계를 더 명확하게 평가할 수 있습니다. 그리고 단일 시스템 내에서 서로 경쟁하는 데이터 표현 방식들의 상대적 장점도 논리적 관점에서 더 분명하게 파악할 수 있습니다. 이렇게 명확한 관점을 보여주는 예시들은 본 논문 전반에 걸쳐 제시됩니다. 단, 관계 모델을 지원하는 시스템의 구현 방식은 본 논문의 논의 대상이 아님을 밝힙니다.
+관계적 관점을 사용하면 현재의 구조화된 데이터 시스템이 가진 범위와 논리적 한계를 더 명확하게 평가할 수 있습니다. 그리고 단일 시스템 내에서 서로 경쟁하는 데이터 표현 방식들의 상대적 장점도 논리적 관점에서 더 분명하게 파악할 수 있습니다. 이렇게 명확한 관점을 보여주는 예시들은 본 논문 전반에 걸쳐 제시됩니다. 단, 관계 모델을 지원하는 시스템의 구현 방식은 본 논문의 논의 대상이 아님을 밝힙니다.
 
 #### 1.2. DATA DEPENDENCIES IN PRESENT SYSTEMS
 
@@ -159,7 +159,7 @@ Present formatted data systems take widely different approaches to indexing. TDM
 >
  Many of the existing formatted data systems provide users with tree-structured files or slightly more general network models of the data. Application programs developed to work with these systems tend to be logically impaired if the trees or networks are changed in structure. A simple example follows.
 
-현존하는 형식화된 데이터 시스템들의 상당수는 사용자들에게 트리 구조의 파일들이나 약간 더 일반화된 형태의 데이터 네트워크 모델을 제공합니다. 이러한 시스템들에서 작동하도록 개발된 응용 프로그램들은 트리나 네트워크의 구조가 변경되면 논리적으로 손상되는 경향이 있습니다. 간단한 예시를 들어보겠습니다.
+현존하는 구조화된 데이터 시스템들의 상당수는 사용자들에게 트리 구조의 파일들이나 약간 더 일반화된 형태의 데이터 네트워크 모델을 제공합니다. 이러한 시스템들에서 작동하도록 개발된 응용 프로그램들은 트리나 네트워크의 구조가 변경되면 논리적으로 손상되는 경향이 있습니다. 간단한 예시를 들어보겠습니다.
 
 >
 Suppose the data bank contains information about parts and projects. For each part, the part number, part name, part description, quantity-on-hand, and quantity-on-order are recorded. For each project, the project number, project name, project description are recorded. Whenever a project makes use of a certain part, the quantity of that part committed to the given project is also recorded. Suppose that the system requires the user or file designer to declare or define the data in terms of tree structures. Then, any one of the hierarchical structures may be adopted for the information mentioned above (see Structures 1-5).
@@ -1214,7 +1214,7 @@ Naturally, such checking will slow these operations down. If an inconsistency ha
 In Section 1 a relational model of data is proposed as a basis for protecting users of formatted data systems from the potentially disruptive changes in data representation caused by growth in the data bank and changes in traffic.
 A normal form for the time-varying collection of relationships is introduced.
 
-1절에서는 데이터 뱅크의 성장과 트래픽의 변화로 인해 발생하는 데이터 표현의 잠재적인 파괴적 변화로부터 형식화된 데이터 시스템의 사용자들을 보호하기 위한 기반으로서 관계형 데이터 모델이 제안되었습니다.
+1절에서는 데이터 뱅크의 성장과 트래픽의 변화로 인해 발생하는 데이터 표현의 잠재적인 파괴적 변화로부터 구조화된 데이터 시스템의 사용자들을 보호하기 위한 기반으로서 관계형 데이터 모델이 제안되었습니다.
 시간에 따라 변하는 관계들의 집합에 대한 정규형이 도입되었습니다.
 
 >
@@ -1225,7 +1225,7 @@ In Section 2 operations on relations and two types of redundancy are defined and
 >
 Many questions are raised and left unanswered. For example, only a few of the more important properties of the data sublanguage in Section 1.4 are mentioned. Neither the purely linguistic details of such a language nor the implementation problems are discussed. Nevertheless, the material presented should be adequate for experienced systems programmers to visualize several approaches. It is also hoped that this paper can contribute to greater precision in work on formatted data systems.
 
-많은 질문들이 제기되었지만 답변되지 않은 채로 남아있습니다. 예를 들어, 1.4절의 데이터 서브언어의 중요한 특성들 중 일부만이 언급되었습니다. 그러한 언어의 순수하게 언어학적인 세부사항이나 구현 문제들은 논의되지 않았습니다. 그럼에도 불구하고, 제시된 자료는 경험 있는 시스템 프로그래머들이 여러 가지 접근 방식을 구상하기에 충분할 것입니다. 또한 이 논문이 형식화된 데이터 시스템에 관한 연구에서 더 큰 정확성을 확보하는 데 기여할 수 있기를 바랍니다.
+많은 질문들이 제기되었지만 답변되지 않은 채로 남아있습니다. 예를 들어, 1.4절의 데이터 서브언어의 중요한 특성들 중 일부만이 언급되었습니다. 그러한 언어의 순수하게 언어학적인 세부사항이나 구현 문제들은 논의되지 않았습니다. 그럼에도 불구하고, 제시된 자료는 경험 있는 시스템 프로그래머들이 여러 가지 접근 방식을 구상하기에 충분할 것입니다. 또한 이 논문이 구조화된 데이터 시스템에 관한 연구에서 더 큰 정확성을 확보하는 데 기여할 수 있기를 바랍니다.
 
 ### Acknowledgment.
 
