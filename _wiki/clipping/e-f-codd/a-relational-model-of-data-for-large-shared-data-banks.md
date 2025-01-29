@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-29 21:18:20 +0900
+updated : 2025-01-29 21:33:33 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -144,14 +144,17 @@ It is unnecessary to single out any system as an example, because all the well-k
 >
 In the context of formatted data, an index is usually thought of as a purely performance-oriented component of the data representation. It tends to improve response to queries and updates and, at the same time, slow down response to insertions and deletions. From an informational standpoint, an index is a redundant component of the data representation. If a system uses indices at all and if it is to perform well in an environment with changing patterns of activity on the data bank, an ability to create and destroy indices from time to time will probably be necessary. The question then arises: Can application programs and terminal activities remain invariant as indices come and go?
 
-형식화된 데이터의 맥락에서 인덱스는 일반적으로 데이터 표현에 있어 순수하게 성능 지향적인 구성요소로 여겨집니다. 인덱스는 조회와 갱신에 대한 응답 속도를 향상시키는 경향이 있지만, 동시에 삽입과 삭제에 대한 응답은 늦추게 됩니다. 정보의 관점에서 볼 때, 인덱스는 데이터 표현의 중복된 구성요소입니다. 만약 시스템이 인덱스를 사용하고 데이터 뱅크에 대한 활동 패턴이 변화하는 환경에서 좋은 성능을 보여야 한다면, 때때로 인덱스를 생성하고 제거할 수 있는 능력이 필요할 것입니다. 그러면 이런 의문이 생깁니다: 인덱스가 생성되고 제거되는 동안에도 응용 프로그램들과 끝단 활동들이 변함없이 유지될 수 있을까요?
+구조화된 데이터의 관점에서, 인덱스는 일반적으로 데이터 표현에 있어 완전히 성능만을 위한 구성요소로 여겨지곤 합니다. 인덱스는 조회와 갱신에 대한 응답 속도를 향상시키지만, 삽입과 삭제에 대한 응답은 늦추는 경향이 있습니다. 정보적 측면에서 보면 인덱스는 데이터 표현의 중복된 구성요소입니다. 만약 시스템이 인덱스를 사용하고 데이터뱅크에 대한 사용 패턴이 변화하는 환경에서도 좋은 성능을 발휘해야 한다면, 상황에 따라 때때로 인덱스를 생성하고 제거할 수도 있는 능력이 필요할 것입니다. 그렇다면 이런 의문이 생길 수 있습니다: 인덱스가 생성되고 제거되는 동안에도 응용 프로그램과 단말 작업이 이전과 같이 작동할 수 있을까요?
 
 >
 Present formatted data systems take widely different approaches to indexing. TDMS [7] unconditionally provides indexing on all attributes. The presently released version of IMS [5] provides the user with a choice for each file: a choice between no indexing at all (the hierarchic sequential organization) or indexing on the primary key only (the hierarchic indexed sequent,ial organization). In neither case is the user’s application logic dependent on the existence of the unconditionally provided indices. IDS [8], however, permits the fle designers to select attributes to be indexed and to incorporate indices into the file structure by means of additional chains. Application programs taking advantage of the performance benefit of these indexing chains must refer to those chains by name. Such programs do not operate correctly if these chains are later removed.
 
-현재의 형식화된 데이터 시스템들은 인덱싱에 대해 매우 다른 접근 방식을 취하고 있습니다. TDMS[7]는 모든 속성에 대해 무조건적으로 인덱싱을 제공합니다. 현재 출시된 버전의 IMS[5]는 각 파일에 대해 사용자에게 선택권을 제공합니다: 전혀 인덱싱을 하지 않는 방식(계층적 순차 구성)과 주요 키에 대해서만 인덱싱하는 방식(계층적 인덱스 순차 구성) 중에서 선택할 수 있습니다. 두 경우 모두 사용자의 응용 로직은 무조건적으로 제공되는 인덱스의 존재 여부에 종속되지 않습니다. 반면 IDS[8]는 파일 설계자가 인덱싱할 속성들을 선택하고 추가적인 체인들을 통해 인덱스를 파일 구조에 통합할 수 있도록 허용합니다. 이러한 인덱싱 체인들의 성능상 이점을 활용하는 응용 프로그램들은 반드시 그 체인들을 이름으로 참조해야 합니다. 이러한 프로그램들은 이 체인들이 나중에 제거되면 올바르게 작동하지 않습니다.
+현존하는 구조화된 데이터 시스템들은 인덱싱에 대해서 각자 매우 다른 접근 방식을 취하고 있습니다. 예를 들어 TDMS[7]는 모든 속성에 대해 무조건 인덱싱을 제공합니다. 그리고 최신 버전의 IMS[5]는 각 파일에 대해 사용자에게 선택권을 제공하며, 전혀 인덱싱을 하지 않는 방식(계층적 순차 구성)과 기본 키에 대해서만 인덱싱하는 방식(계층적 인덱스 순차 구성) 중에서 선택할 수 있도록 되어 있습니다.
+두 경우 모두 사용자의 응용 로직은 무조건적으로 제공되는 인덱스의 존재 여부에 종속되지 않습니다. 반면 IDS[8]는 파일 설계자가 인덱싱할 속성들을 선택하고 추가적인 체인들을 통해 인덱스를 파일 구조에 통합할 수 있도록 허용합니다. 이러한 인덱싱 체인들의 성능상 이점을 활용하는 응용 프로그램들은 해당 체인들의 이름을 직접 참조해야 합니다. 이러한 프로그램들은 이 체인들이 나중에 제거되면 올바르게 작동하지 않는 문제가 있습니다.
 
 ##### 1.2.3. Access Path Dependence.
+
+1.2.3. 접근 경로 종속성
 
 >
  Many of the existing formatted data systems provide users with tree-structured files or slightly more general network models of the data. Application programs developed to work with these systems tend to be logically impaired if the trees or networks are changed in structure. A simple example follows.
