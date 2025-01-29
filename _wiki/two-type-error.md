@@ -3,7 +3,7 @@ layout  : wiki
 title   : false positive와 false negative
 summary : 
 date    : 2020-01-11 15:19:59 +0900
-updated : 2020-01-18 19:16:31 +0900
+updated : 2025-01-29 20:23:57 +0900
 tag     : test statistics
 resource: 73/ACC90F-57B0-4104-A5E2-32664B72FADE
 toc     : true
@@ -24,9 +24,8 @@ latex   : true
     * 귀무 가설이 거짓인데도 귀무 가설을 채택하는 오류.
 
 
-![]( /resource/73/ACC90F-57B0-4104-A5E2-32664B72FADE/error-table.jpg )
-
-_이미지 출처는 공학 학교에서 배운 101가지_ [^engineering-47]
+![]( /resource/73/ACC90F-57B0-4104-A5E2-32664B72FADE/error-table.svg )
+[^engineering-47]
 
 **긍정** 오류(Type 1 error)
 * False positive, 거짓 양성, 긍정 오류.
@@ -112,7 +111,7 @@ _이미지 출처는 Quora._ [^pregnant]
 
 ## 주석
 
-[^engineering-47]: 공학 학교에서 배운 101가지. 47.
+[^engineering-47]: 공학 학교에서 배운 101가지. 47의 표를 참고해서 svg로 그린 표.
 [^pregnant]: [What is a type I error?][pregnant]
 [^william_schmarzo]: [Understanding Type I and Type II Errors(DELL Technologies)][william_schmarzo]
 [^devops-handbook-271]: 데브옵스 핸드북. 15장. 271쪽.
