@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-01-29 21:34:57 +0900
+updated : 2025-02-01 22:18:38 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -50,7 +50,7 @@ Changes in data representation will often be needed as a result of changes in qu
 
 미래의 대형 데이터 뱅크[^data-bank] 사용자들은 기계 내부에서 데이터가 어떻게 구성되어 있는지(내부 표현)를 알아야 할 필요로부터 보호받아야 합니다.
 이러한 정보를 제공해주는 프롬프트 서비스는 그다지 좋은 해결책이라 할 수 없습니다.
-데이터의 내부 표현이나 외부 표현의 일부가 변경되더라도, 대부분의 응용 프로그램이나 끝단 사용자 활동은 그러한 변경의 영향을 받지 않아야 합니다.
+데이터의 내부 표현이나 외부 표현의 일부가 변경되더라도, 대부분의 응용 프로그램이나 단말 사용자 활동은 그러한 변경의 영향을 받지 않아야 합니다.
 쿼리, 업데이트, 보고서 트래픽의 변화와 저장되는 정보 유형의 자연스러운 증가로 인해 데이터 표현의 변경은 종종 필요하게 될 것입니다.
 
 [^data-bank]: 역주: 데이터 뱅크라는 용어는 오늘날 기준 '데이터베이스'라고 이해해도 무방할 것으로 보인다.
@@ -89,7 +89,7 @@ This paper is concerned with the application of elementary relation theory to sy
 >
 In contrast, the problems treated here are those of data independence - the independence of application programs and terminal activities from growth in data types and changes in data representation - and certain kinds of data inconsistency which are expected to become troublesome even in nondeductive systems.
 
-반면 이 논문에서 다루는 문제들은 데이터 독립성과 관련된 것입니다. (여기서 데이터 독립성이란 응용 프로그램과 끝단 작업이 데이터 타입이 증가하거나 데이터 표현 방식이 변경되어도 영향을 받지 않는 것을 의미합니다.) 그리고 비연역적 시스템에서도 문제가 될 것으로 예상되는 특정 유형의 데이터 불일치 문제도 다룹니다.
+반면 이 논문에서 다루는 문제들은 데이터 독립성과 관련된 것입니다. (여기서 데이터 독립성이란 응용 프로그램과 단말 작업이 데이터 타입이 증가하거나 데이터 표현 방식이 변경되어도 영향을 받지 않는 것을 의미합니다.) 그리고 비연역적 시스템에서도 문제가 될 것으로 예상되는 특정 유형의 데이터 불일치 문제도 다룹니다.
 
 >
 The relational view (or model) of data described in Section 1 appears to be superior in several respects to the graph or network model [3,4] presently in vogue for noninferential systems. It provides a means of describing data with its natural structure only-that is, without superimposing any additional structure for machine representation purposes. Accordingly, it provides a basis for a high level data language which will yield maximal independence between programs on the one hand and machine representation and organization of data on the other.
@@ -152,19 +152,24 @@ Present formatted data systems take widely different approaches to indexing. TDM
 현존하는 구조화된 데이터 시스템들은 인덱싱에 대해서 각자 매우 다른 접근 방식을 취하고 있습니다. 예를 들어 TDMS[7]는 모든 속성에 대해 무조건 인덱싱을 제공합니다. 그리고 최신 버전의 IMS[5]는 각 파일에 대해 사용자에게 선택권을 제공하며, 전혀 인덱싱을 하지 않는 방식(계층적 순차 구성)과 기본 키에 대해서만 인덱싱하는 방식(계층적 인덱스 순차 구성) 중에서 선택할 수 있도록 되어 있습니다.
 두 경우 모두 사용자의 응용 로직은 무조건적으로 제공되는 인덱스의 존재 여부에 종속되지 않습니다. 반면 IDS[8]는 파일 설계자가 인덱싱할 속성들을 선택하고 추가적인 체인들을 통해 인덱스를 파일 구조에 통합할 수 있도록 허용합니다. 이러한 인덱싱 체인들의 성능상 이점을 활용하는 응용 프로그램들은 해당 체인들의 이름을 직접 참조해야 합니다. 이러한 프로그램들은 이 체인들이 나중에 제거되면 올바르게 작동하지 않는 문제가 있습니다.
 
-##### 1.2.3. Access Path Dependence.
+##### 1.2.3. Access Path Dependence. {#section-1-2-3}
 
 1.2.3. 접근 경로 종속성
+
+<span id="section-1-2-3-1"/>
 
 >
  Many of the existing formatted data systems provide users with tree-structured files or slightly more general network models of the data. Application programs developed to work with these systems tend to be logically impaired if the trees or networks are changed in structure. A simple example follows.
 
-현존하는 구조화된 데이터 시스템들의 상당수는 사용자들에게 트리 구조의 파일들이나 약간 더 일반화된 형태의 데이터 네트워크 모델을 제공합니다. 이러한 시스템들에서 작동하도록 개발된 응용 프로그램들은 트리나 네트워크의 구조가 변경되면 논리적으로 손상되는 경향이 있습니다. 간단한 예시를 들어보겠습니다.
+기존의 구조화된 데이터 시스템들 상당수는 사용자들에게 트리 구조의 파일들을 제공하거나 그보다 좀 더 일반화된 형태의 데이터 네트워크 모델을 제공합니다. 그런데 이러한 시스템에서 작동되도록 개발된 응용 프로그램들은 기반을 이루는 트리나 네트워크의 구조가 변경되면 논리적 오류도 발생하게 됩니다. 간단한 예시를 들어보겠습니다.
+
+<span id="section-1-2-3-2"/>
 
 >
 Suppose the data bank contains information about parts and projects. For each part, the part number, part name, part description, quantity-on-hand, and quantity-on-order are recorded. For each project, the project number, project name, project description are recorded. Whenever a project makes use of a certain part, the quantity of that part committed to the given project is also recorded. Suppose that the system requires the user or file designer to declare or define the data in terms of tree structures. Then, any one of the hierarchical structures may be adopted for the information mentioned above (see Structures 1-5).
 
-데이터 뱅크가 부품과 프로젝트에 대한 정보를 담고 있다고 가정해봅시다. 각 부품에 대해서는 부품 번호(part number), 부품 이름(part name), 부품 설명(part description), 재고 수량(quantity-on-hand), 주문 수량(quantity-on-order)이 기록됩니다. 각 프로젝트에 대해서는 프로젝트 번호(project number), 프로젝트 이름(project name), 프로젝트 설명(project description)이 기록됩니다. 프로젝트가 특정 부품을 사용할 때마다, 해당 프로젝트에 할당된 그 부품의 수량도 함께 기록됩니다. 시스템이 사용자나 파일 설계자에게 트리 구조로 데이터를 선언하거나 정의하도록 요구한다고 가정해봅시다. 그러면 위에서 언급한 정보에 대해 다음과 같은 계층 구조들 중 어느 것이든 채택될 수 있습니다(구조 1-5 참조).
+데이터 뱅크가 부품과 프로젝트에 대한 정보를 담고 있다고 가정해봅시다. 각 부품마다 부품 번호(part number), 부품 이름(part name), 부품 설명(part description), 재고 수량(quantity-on-hand), 주문 수량(quantity-on-order)이 기록됩니다. 그리고 각 프로젝트마다 프로젝트 번호(project number), 프로젝트 이름(project name), 프로젝트 설명(project description)이 기록됩니다. 또한 프로젝트에서 특정 부품을 사용할 때마다 해당 프로젝트에 할당된 부품의 수량도 함께 기록됩니다. 이때 시스템이 사용자나 파일 설계자에게 데이터를 트리 구조로 선언하거나 정의하도록 요구한다고 가정해봅시다. 그러면 앞서 언급한 정보들은 다음과 같은 계층 구조들(구조 1-5) 중 어느 것으로도 구성될 수 있습니다.
+
 
 >
 Structure 1. Projects Subordinate to Parts
@@ -262,26 +267,36 @@ Commitment Relationship as Peers
 
 예제 구조 5. 부품, 프로젝트, 할당 관계가 모두 동등함.
 
+<span id="section-1-2-3-3"/>
+
 >
 Now, consider the problem of printing out the part number, part name, and quantity committed for every part used in the project whose project name is “alpha.” The following observations may be made regardless of which available tree-oriented information system is selected to tackle this problem. If a program P is developed for this problem assuming one of the five structures above-that is, P makes no test to determine which structure is in effect-then P will fail on at least three of the remaining structures. More specifically, if P succeeds with structure 5, it will fail with all the others; if P succeeds with structure 3 or 4, it will fail with at least 1,2, and 5; if P succeeds with 1 or 2, it will fail with at least 3, 4, and 5. The reason is simple in each case. In the absence of a test to determine which structure is in effect, P fails because an attempt is made to exceute a reference to a nonexistent file (available systems treat this as an error) or no attempt is made to execute a reference to a file containing needed information. The reader who is not convinced should develop sample programs for this simple problem.
 
-이제 "alpha"라는 이름의 가상 프로젝트에서 사용하는 모든 부품의 부품 번호, 부품명, 그리고 할당량을 출력하는 상황을 생각해 보도록 합시다. 이 문제를 해결하기 위해 어떤 트리 기반 정보 시스템을 선택하든 다음과 같은 관찰이 가능합니다. 위의 다섯 가지 구조 중 하나를 가정하여 프로그램 P를 개발한다면 - 즉, P가 어떤 구조가 적용되는지 검사하지 않는다면 - P는 나머지 구조들 중 최소 세 가지에서 실패할 것입니다.
-더 구체적으로, P가 구조 5에서 성공한다면 다른 모든 구조에서 실패할 것이고, P가 구조 3이나 4에서 성공한다면 최소한 1, 2, 5에서 실패할 것이며, P가 1이나 2에서 성공한다면 최소한 3, 4, 5에서 실패할 것입니다. 각각의 경우에 그 이유는 간단합니다. 어떤 구조가 적용되는지 검사하지 않으면, P는 존재하지 않는 파일을 참조하려 시도하거나(시중의 시스템들은 이를 오류로 처리함), 필요한 정보가 들어있는 파일을 참조하려는 시도를 하지 않기 때문에 실패합니다. 이 점을 확신하지 못하는 독자는 이 간단한 문제에 대한 샘플 프로그램을 직접 개발해보기 바랍니다.
+이제 "alpha"라는 이름의 프로젝트에서 사용하는 모든 부품의 부품 번호, 부품명, 그리고 할당량을 출력하는 문제가 있다고 생각해 봅시다. 이 문제를 해결하기 위해 어떤 트리 기반 정보 시스템을 선택하든 다음과 같은 관찰이 가능합니다. 위의 다섯 가지 구조 중 하나를 가정하여 프로그램 P를 개발한다면 - 즉, P가 어떤 구조가 적용되는지 검사하지 않는다면 - P는 나머지 구조들 중 최소 세 가지에서 실패할 것입니다.
+
+더 구체적으로, P가 구조 5에서 성공한다면 다른 모든 구조에서 실패할 것이고, P가 구조 3이나 4에서 성공한다면 최소한 1, 2, 5에서 실패할 것이며, P가 1이나 2에서 성공한다면 최소한 3, 4, 5에서 실패할 것입니다. 각각의 경우에 그 이유는 간단합니다. 어떤 구조가 적용되는지 검사하지 않으면, P는 존재하지 않는 파일을 참조하려 시도하거나(기존 시스템들은 이를 오류로 처리함), 필요한 정보가 들어있는 파일을 참조하려는 시도를 하지 않기 때문에 실패합니다. 이 점을 확신하지 못하는 독자는 이 간단한 문제에 대한 샘플 프로그램을 직접 개발해보기 바랍니다.
+
+<span id="section-1-2-3-4"/>
 
 >
 Since, in general, it is not practical to develop application programs which test for all tree structurings permitted by the system, these programs fail when a change in sructure becomes necessary.
 
-일반적으로 시스템상 허용되는 모든 트리 구조를 검사하도록 응용 프로그램을 개발하는 것은 현실적이지 않은 일입니다. 따라서 이러한 일반적인 프로그램들은 구조 변경이 필요할 때마다 실패하게 됩니다.
+일반적으로 시스템상 허용되는 모든 트리 구조를 검사하도록 응용 프로그램을 개발하는 것은 비현실적입니다.
+따라서 이런 방식의 프로그램들은 구조를 변경해야 할 때 실패하게 됩니다.
+
+<span id="section-1-2-3-5"/>
 
 >
 Systems which provide users with a network model of the data run into similar difficulties. In both the tree and network cases, the user (or his program) is required to exploit a collection of user access paths to the data. It does not matter whether these paths are in close correspondence with pointer-defined paths in the stored representation-in IDS the correspondence is extremely simple, in TDMS it is just the opposite. The consequence, regardless of the stored representation, is that terminal activities and programs become dependent on the continued existence of the user access paths.
 
-사용자에게 네트워크 형태의 데이터 모델을 제공하는 시스템들도 비슷한 어려움을 겪습니다. 트리와 네트워크 모두의 경우, 사용자(또는 그의 프로그램)는 데이터에 접근하기 위한 일련의 사용자 접근 경로들을 활용해야 합니다. 이러한 경로들이 저장된 표현 방식에서 포인터로 정의된 경로들과 얼마나 밀접하게 대응되는지는 중요하지 않습니다. IDS에서는 이 대응 관계가 매우 단순하고, TDMS에서는 정반대입니다. 저장 표현 방식과 무관하게, 그 결과로 끝단 작업과 프로그램들은 이러한 사용자 접근 경로가 계속 존재하는지 여부에 의존하게 됩니다.
+사용자에게 네트워크 형태의 데이터 모델을 제공하는 시스템들도 비슷한 어려움을 겪습니다. 트리를 사용하는 경우와 네트워크를 사용하는 경우 모두 사용자(또는 그의 프로그램)는 데이터에 접근하기 위한 일련의 사용자 접근 경로들을 활용해야 합니다. 이러한 경로들이 저장된 표현 방식에서 포인터로 정의된 경로들과 얼마나 밀접하게 대응되는지는 중요하지 않습니다. IDS에서는 이 대응 관계가 매우 단순하고, TDMS에서는 정반대입니다. 저장 표현 방식과 무관하게, 단말 작업과 프로그램들은 이러한 사용자 접근 경로가 계속 존재하는지에 의존하게 됩니다.
+
+<span id="section-1-2-3-6"/>
 
 >
 One solution to this is to adopt the policy that once a user access path is defined it will not be made obsolete until all application programs using that path have become obsolete. Such a policy is not practical, because the number of access paths in the total model for the community of users of a data bank would eventually become excessively large.
 
-이에 대한 한 가지 해결책은 사용자 접근 경로를 한번 정의하면 그 경로를 사용하는 모든 응용 프로그램이 쓸모없어질 때까지 그 경로를 폐기하지 않는다는 정책을 채택하는 것입니다. 하지만 이러한 정책은 현실적이지 않습니다. 데이터뱅크를 사용하는 전체 사용자 집단을 위한 전체 모델에서 접근 경로의 수가 결국에는 과도하게 커질 것이기 때문입니다.
+이에 대한 한 가지 해결책은 사용자 접근 경로를 한번 정의하면 그 경로를 사용하는 모든 응용 프로그램이 더 이상 사용되지 않을 때까지 그 경로를 폐기하지 않는다는 정책을 채택하는 것입니다. 하지만 이런 정책은 비현실적입니다. 데이터뱅크 사용자 전체를 위한 모델에서 접근 경로의 수가 결국엔 과도하게 많아질 수 밖에 없기 때문입니다.
 
 #### 1.3. A RELATIONAL VIEW OF DATA
 
