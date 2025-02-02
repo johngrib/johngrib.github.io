@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-02 17:09:10 +0900
+updated : 2025-02-02 17:27:01 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -21,12 +21,21 @@ latex   : true
 - E. F. Codd의 이 1970년 논문을 통해 RDB 개념이 창안되었다.
     - **관계형 데이터베이스의 이론적인 기초를 제시한 전설적인 논문이다.**
     - 컴퓨터 과학 역사상 가장 중요한 논문을 꼽으면 10위 이내에 꼽히곤 하는 논문이기도 하다.
+    - Codd는 1981년 튜링상을 수상하였다.
 
 E. F. Codd는 이 논문에서 집합론과 관계 이론을 토대로 새로운 종류의 데이터 모델을 제안하는데, 이 모델은 데이터의 논리적 구조와 물리적 구조를 분리하여 데이터를 독립시킨다는 혁신을 가져왔다고 할 수 있다.
 
 이 논문에서 소개하는 RDB 개념이 등장하기 이전의 데이터베이스는 주로 계층형이나 네트워크형 모델을 사용하고 있었고, 이런 모델들은 데이터 구조가 복잡하고 데이터의 사용이나 수정이 물리적인 저장 방식에 강하게 의존하는 문제가 있었다.
 
-이러한 계층형/네트워크/관계 문제에 대해서는 [[/clipping/out-of-the-tar-pit]]에서도 중요하게 다루는 주제이므로, 이 논문과 함께 읽어보는 것도 좋을 것이다.
+
+## 함께 읽기
+
+- [[/clipping/out-of-the-tar-pit]]
+    - 계층형/네트워크/관계 문제에 대해서는 [[/clipping/out-of-the-tar-pit]]에서도 중요하게 다루는 주제이므로, 이 논문과 함께 읽어보는 것도 좋을 것이다.
+- [[/people/fred-brooks#ted-codd]]
+    - 프레드 브룩스는 IBM 재직중일 때 장래가 촉망되는 직원, Ted Codd(Edgar Frank "Ted" Codd)를 미시간 대학에 보내 박사 학위를 취득할 수 있게 해 주었다고 한다. 그 이후 Codd는 관계형 데이터베이스 개념을 창안하게 되었으므로, 프레드 브룩스는 자신이 IBM에서 했던 일 중 가장 생산적인 일이 Codd를 대학에 보낸 것이었다고 한 바 있다.
+- [Edgar F. ("Ted") Codd - United States - 1981 (amturing.acm.org)](https://amturing.acm.org/award_winners/codd_1000892.cfm )
+    - 1981년 튜링상 수상자 Ted Codd를 소개하는 글.
 
 
 ## 번역

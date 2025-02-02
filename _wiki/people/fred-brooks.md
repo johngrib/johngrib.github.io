@@ -3,7 +3,7 @@ layout  : wiki
 title   : 프레드 브룩스
 summary : Frederick P. Brooks, Jr.
 date    : 2022-09-16 22:47:43 +0900
-updated : 2023-05-11 21:19:36 +0900
+updated : 2025-02-02 17:14:22 +0900
 tag     : 
 resource: 0F/A675E4-A82C-45D4-A38A-099F4593CACC
 toc     : true
@@ -52,7 +52,7 @@ OS/360 프로젝트가 지연되면서 프로젝트 관리자인 프레더릭 �
 [^design-413]
 
 
-## Ted Codd 와의 관계
+## Ted Codd 와의 관계 {#ted-codd}
 
 >
 IBM의 관리자로서 내가 했던 가장 생산적인 행동은 제품 개발과는 아무런 상황이 없는 것이었다.
