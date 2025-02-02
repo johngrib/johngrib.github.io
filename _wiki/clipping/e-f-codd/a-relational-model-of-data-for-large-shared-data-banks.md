@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-01 22:18:38 +0900
+updated : 2025-02-02 17:09:10 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -300,16 +300,24 @@ One solution to this is to adopt the policy that once a user access path is defi
 
 #### 1.3. A RELATIONAL VIEW OF DATA
 
+1.3. 데이터에 대한 관계형 관점
+
+<span id="section-1-3-1"/>
+
 >
 The term relation is used here in its accepted mathematical sense. Given sets $$ S_1, S_2, ... , S_n $$ (not necessarily distinct), $$R$$ is a relation on these n sets if it is a set of n-tuples each of which has its first element from $$S_1$$, its second element from $$S_2$$, and so on.<sup>1</sup> We shall refer to $$S_j$$ as the jth domain of $$R$$.
 As defined above, $$R$$ is said to have degree n. Relations of degree 1 are often called unary, degree 2 binary, degree 3 ternary, and degree n n-ary.
 >
 <sup>1</sup> More concisely, $$R$$ is a subset of the Cartesian products $$S_1 \times S_2 \times ... \times S_n$$.
 
-여기서 관계라는 용어는 수학적으로 통용되는 의미로 사용됩니다. 집합 $$ S_1, S_2, ... , S_n $$이 주어졌을 때(반드시 서로 달라야 할 필요는 없음), R은 이 n개 집합들에 대한 관계가 됩니다. 이때 R은 n-튜플들의 집합이며, 각 n-튜플의 첫 번째 원소는 $$S_1$$에서, 두 번째 원소는 $$S_2$$에서, 이런 식으로 구성됩니다.<sup>1</sup> 우리는 $$S_j$$를 R의 j번째 도메인이라고 부를 것입니다.
+여기서 관계라는 용어는 수학적으로 통용되는 의미로 사용됩니다. 집합 $$ S_1, S_2, ... , S_n $$이 주어졌을 때(반드시 서로 달라야 할 필요는 없음), R은 이 n개 집합들에 대한 관계가 됩니다.
+이때 R은 n-튜플들의 집합이며, 각 n-튜플의 첫 번째 원소는 $$S_1$$에서, 두 번째 원소는 $$S_2$$에서, 이런 식으로 구성됩니다.<sup>1</sup>
+우리는 $$S_j$$를 R의 j번째 도메인이라고 부를 것입니다.
 위에서 정의한 대로, R은 차수가 n이라고 합니다. 차수가 1인 관계는 단항 관계, 차수가 2인 관계는 이항 관계, 차수가 3인 관계는 삼항 관계, 차수가 n인 관계는 n항 관계라고 흔히 부릅니다.
 
-<sup>1</sup> 더 간단히 말하면, R은 카테시안 곱 $$S_1 \times S_2 \times ... \times S_n$$의 부분집합입니다.
+<sup>1</sup> 더 간단히 말하자면, R은 카테시안 곱 $$S_1 \times S_2 \times ... \times S_n$$의 부분집합입니다.
+
+<span id="section-1-3-2"/>
 
 >
 For expository reasons, we shall frequently make use of an array representation of relations, but it must be remembered that this particular representation is not an essential part of the relational view being expounded. An array which represents an n-ary relation R has the following properties:
@@ -320,13 +328,15 @@ For expository reasons, we shall frequently make use of an array representation 
 > - (4) The ordering of columns is significant-it corresponds to the ordering $$S_1, S_2, ... , S_n$$ of the domains on which R is defined (see, however, remarks below on domain-ordered and domain-unordered relations).
 > (5) The significance of each column is partially conveyed by labeling it with the name of the corresponding domain.
 
-이 논문에서는 설명의 편의를 위해 관계를 표현할 때 배열 표현을 자주 사용할 것입니다. 그러나 이러한 표현 방식이 여기서 설명하고자 하는 관계형 관점의 필수적인 부분은 아니라는 점은 염두에 두어야 합니다. n항 관계 R을 표현하는 배열은 다음과 같은 특성을 가집니다:
+이 논문에서는 설명을 위해 관계를 표현할 때 배열 표현을 자주 사용할 것입니다. 그러나 이런 표현 방식이 여기서 설명하고자 하는 관계형 관점의 필수적인 부분은 아니라는 점은 염두에 두어야 합니다. n항 관계 R을 표현하는 배열은 다음과 같은 특성을 가집니다:
 
 - (1) 각 행은 R의 n-튜플을 나타냅니다.
 - (2) 행의 순서는 중요하지 않습니다.
 - (3) 모든 행은 서로 다릅니다.
 - (4) 열의 순서는 중요합니다. 이는 R이 정의된 도메인들의 순서 $$S_1, S_2, ..., S_n$$에 대응됩니다(단, 도메인 순서가 있는 관계와 도메인 순서가 없는 관계에 대한 아래 설명 참조).
-- (5) 각 열의 의미는 해당 도메인의 이름으로 열에 라벨을 붙임으로써 부분적으로 전달됩니다.
+- (5) 각 열의 의미는 해당 도메인의 이름을 붙임으로써 부분적으로 전달됩니다.
+
+<span id="section-1-3-3"/>
 
 >
 The example in Figure 1 illustrates a relation of degree 4, called supply, which reflects the shipments-in-progress of parts from specified suppliers to specified projects in specified quantities.
@@ -346,8 +356,10 @@ FIG. 1. A relation of degree 4
 
 그림 1. 4항 관계의 예
 
+<span id="section-1-3-4"/>
+
 >
-One might ask: If the columns are labeled by the name of corresponding domains, why should the ordering of columns matter? As the example in Figure 2 shows, two columns may have identical headings (indicating identical domains) but possess distinct meanings with respect to the relation. The relation depicted is called component. It is a ternary relation, whose first two domains are called part and third domain is called quantity. The meaning of component (2, y, z) is that part x is an immediate component (or subassembly) of part y, and z units of part 5 are needed to assemble one unit of part y. It is a relation which plays a critical role in the parts explosion problem.
+One might ask: If the columns are labeled by the name of corresponding domains, why should the ordering of columns matter? As the example in Figure 2 shows, two columns may have identical headings (indicating identical domains) but possess distinct meanings with respect to the relation. The relation depicted is called component. It is a ternary relation, whose first two domains are called part and third domain is called quantity. The meaning of component (x, y, z) is that part x is an immediate component (or subassembly) of part y, and z units of part x are needed to assemble one unit of part y. It is a relation which plays a critical role in the parts explosion problem.
 >
 > ```
 > component (part part quantity)
@@ -366,24 +378,32 @@ FIG. 2. A relation with-two identical domains
 
 그림 2. 동일한 도메인을 두 개 가진 관계의 예
 
+<span id="section-1-3-5"/>
+
 >
 It is a remarkable fact that several existing information systems (chiefly those based on tree-structured files) fail to provide data representations for relations which have two or more identical domains. The present version of IMS/360 [5] is an example of such a system.
 
-주목할 만한 사실은, 현존하는 여러 정보 시스템들(주로 트리 구조의 파일을 기반으로 하는 시스템들)이 두 개 이상의 동일한 도메인을 가진 관계를 표현하지 못한다는 점입니다. IMS/360[5]의 현재 버전이 이러한 시스템의 한 예시입니다.
+주목할 만한 사실은, 현존하는 여러 정보 시스템들(주로 트리 구조의 파일을 기반으로 하는 시스템들)이 두 개 이상의 동일한 도메인을 가진 관계를 표현하지 못한다는 점입니다. IMS/360[5]의 현재 버전은 이러한 시스템의 한 예시입니다.
+
+<span id="section-1-3-6"/>
 
 >
 The totality of data in a data bank may be viewed as a collection of time-varying relations. These relations are of assorted degrees. As time progresses, each n-ary relation may be subject to insertion of additional n-tuples, deletion of existing ones, and alteration of components of any of its existing n-tuples.
 
 데이터 뱅크의 모든 데이터는 시간에 따라 변화하는 관계들의 집합으로 볼 수 있습니다. 이러한 관계들은 다양한 항수를 가집니다. 시간이 흐름에 따라, 각각의 n항 관계에는 새로운 n-튜플이 삽입되거나, 기존 n-튜플이 삭제되거나, 기존 n-튜플의 구성요소가 변경될 수 있습니다.
 
+<span id="section-1-3-7"/>
+
 >
 In many commercial, governmental, and scientific data banks, however, some of the relations are of quite high degree (a degree of 30 is not at all uncommon). Users should not normally be burdened with remembering the domain ordering of any relation (for example, the ordering supplier, then part, then project, then quantity in the relation supply). Accordingly, we propose that users deal, not with relations which are domain-ordered, but with relationships which are their domain-unordered counterparts.2 To accomplish this, domains must be uniquely identifiable at least within any given relation, without using position. Thus, where there are two or more identical domains, we require in each case that the domain name be qualified by a distinctive role name, which serves to identify the role played by that domain in the given relation. For example, in the relation component of Figure 2, the first domain part might be qualified by the role name sub, and the second by super, so that users could deal with the relationship component and its domains-sub.part super.part, quantity-without regard to any ordering between these domains.
 >
 <sup>2</sup> In mathematical terms, a relationship is an equivalence class of those relations that are equivalent under permutation of domains (see Section 2.1.1).
 
-하지만 많은 상업용, 정부용, 과학용 데이터 뱅크에서는 상당히 높은 차수의 관계들이 존재합니다(30항짜리가 나오는 경우도 있음). 사용자들이 각 관계의 도메인 순서를 기억해야 하는 부담을 지는 것은 바람직하지 않습니다(supply 관계를 예로 들면 공급자, 부품, 프로젝트, 수량이라는 순서가 있음). 따라서 우리는 사용자들이 도메인 순서가 정해진 관계가 아니라, 도메인 순서가 정해지지 않은 대응물인 관계성(relationship)을 다루도록 제안합니다.<sup>2</sup> 이를 위해서는 도메인들이 위치에 의존하지 않고도 적어도 주어진 관계 내에서는 고유하게 식별 가능해야 합니다. 따라서 두 개 이상의 동일한 도메인이 있는 경우, 각각의 도메인 이름은 해당 관계에서 그 도메인이 수행하는 역할을 식별하는 고유한 역할 이름으로 한정되어야 합니다. 예를 들어, 그림 2의 component 관계에서 첫 번째 part 도메인은 sub라는 역할 이름으로, 두 번째는 super라는 역할 이름으로 한정할 수 있습니다. 이렇게 하면 사용자들은 이들 도메인 간의 순서와 관계없이 component라는 관계성과 그 도메인들(sub.part, super.part, quantity)을 다룰 수 있게 됩니다.
+하지만 많은 상업용, 정부용, 과학용 데이터 뱅크에서는 상당히 높은 차수의 관계들이 존재합니다(30항짜리가 나오는 경우도 있음). 사용자들이 각 관계의 도메인 순서를 기억해야 하는 부담을 지는 것은 바람직하지 않습니다(supply 관계를 예로 들면 공급자, 부품, 프로젝트, 수량이라는 순서가 있음). 따라서 우리는 사용자들이 도메인 순서가 정해진 관계가 아니라, 도메인 순서가 정해지지 않은 대응물인 관계성(relationship)을 다루도록 제안합니다.<sup>2</sup> 이를 위해서는 도메인들의 위치에 의존하지 않고도 적어도 주어진 관계 내에서는 도메인을 고유하게 식별 가능해야 합니다. 따라서 두 개 이상의 동일한 도메인이 있는 경우, 각각의 도메인 이름은 해당 관계에서 그 도메인이 수행하는 역할을 식별하는 고유한 역할 이름으로 한정되어야 합니다. 예를 들어, 그림 2의 component 관계에서 첫 번째 part 도메인은 sub라는 역할 이름으로, 두 번째는 super라는 역할 이름으로 한정할 수 있습니다. 이렇게 하면 사용자들은 이들 도메인 간의 순서와 관계없이 component라는 관계성과 그 도메인들(sub.part, super.part, quantity)을 다룰 수 있게 됩니다.
 
 <sup>2</sup>수학적 용어로, 관계성은 도메인들의 순열 하에서 서로 동등한 관계들의 동치류입니다(2.1.1절 참조).
+
+<span id="section-1-3-8"/>
 
 >
 To sum up, it is proposed that most users should interact with a relational model of the data consisting of a collection of time-varying relationships (rather than relations). Each user need not know more about any relationship than its name together with the names of its domains (role qualified whenever necessary).<sup>3</sup> Even this information might be offered in menu style by the system (subject to security and privacy constraints) upon request by the user.
@@ -394,10 +414,14 @@ To sum up, it is proposed that most users should interact with a relational mode
 
 <sup>3</sup> 당연한 말이지만, 컴퓨터 시스템에 입력되고 검색되는 다른 모든 데이터와 마찬가지로 사용자가 데이터의 의미를 알고 있을 때 그 데이터를 훨씬 더 효과적으로 사용할 수 있을 것입니다.
 
+<span id="section-1-3-9"/>
+
 >
 There are usually many alternative ways in which a relational model may be established for a data bank. In order to discuss a preferred way (or normal form), we must first introduce a few additional concepts (active domain, primary key, foreign key, nonsimple domain) and establish some links with terminology currently in use in information systems programming. In the remainder of this paper, we shall not bother to distinguish between relations and relationships except where it appears advantageous to be explicit.
 
 데이터 뱅크에 대한 관계형 모델을 수립하는 방법에는 보통 여러 가지 대안이 있습니다. 선호되는 방식(또는 정규형)을 논의하기 위해서는 먼저 몇 가지 추가 개념(활성 도메인, 기본 키, 외래 키, 비단순 도메인)을 소개하고 현재 정보 시스템 프로그래밍에서 사용되는 용어와의 연관성을 확립해야 합니다. 이 논문의 나머지 부분에서는 명시적으로 구분할 필요가 있는 경우를 제외하고는 관계와 관계성을 구분하지 않겠습니다.
+
+<span id="section-1-3-10"/>
 
 >
 Consider an example of a data bank which includes relations concerning parts, projects, and suppliers. One relation called part is defined on the following domains:
@@ -422,25 +446,35 @@ and possibly other domains as well. Each of these domains is, in effect, a pool 
 
 그리고 다른 도메인들도 있을 수 있습니다. 이러한 각 도메인은 사실상 값들의 집합이며, 이 값들 중 일부 또는 전부가 특정 시점의 데이터 뱅크에 표현될 수 있습니다. 어떤 시점에 모든 부품들의 색상이 존재할 수 있다고 생각할 수 있지만, 가능한 모든 부품 무게, 부품 이름, 부품 번호가 존재할 가능성은 낮습니다. 특정 시점에 표현된 값들의 집합을 그 시점의 활성 도메인이라고 부르도록 하겠습니다.
 
+<span id="section-1-3-11"/>
+
 >
 Normally, one domain (or combination of domains) of a given relation has values which uniquely identify each element (n-tuple) of that relation. Such a domain (or combination) is called a primary key. In the example above, part number would be a primary key, while part color would not be. A primary key is nonredundant if it is either a simple domain (not a combination) or a combination such that none of the participating simple domains is superfluous in uniquely identifying each element. A relation may possess more than one nonredundant primary key. This would be the case in the example if different parts were always given distinct names. Whenever a relation has two or more nonredundant primary keys, one of them is arbitrarily selected and called the primary key of that relation.
 
 일반적으로 주어진 관계의 한 도메인(또는 도메인들의 조합)은 해당 관계의 각 원소(n-튜플)를 고유하게 식별하는 값들을 가집니다. 이러한 도메인(또는 조합)을 기본 키(primary key)라고 합니다. 위의 예시에서 부품 번호는 기본 키가 될 수 있지만, 부품 색상은 그렇지 않습니다. 기본 키가 단순 도메인(조합이 아닌)이거나 각 원소를 고유하게 식별하는 데 참여하는 단순 도메인 중 어느 것도 불필요하지 않은 조합일 경우, 이를 비중복 기본 키라고 합니다(nonredundant primary key). 하나의 관계는 둘 이상의 비중복 기본 키를 가질 수 있습니다. 서로 다른 부품들이 항상 서로 다른 이름을 가진다면 위의 예시가 이러한 경우에 해당합니다. 관계가 둘 이상의 비중복 기본 키를 가질 때마다, 그중 하나를 임의로 선택하여 해당 관계의 기본 키라고 부릅니다.
 
+<span id="section-1-3-12"/>
+
 >
 A common requirement is for elements of a relation to cross-reference other elements of the same relation or elements of a different relation. Keys provide a user-oriented means (but not the only means) of expressing such cross-references. We shall call a domain (or domain combmation) of relation R a foreign key if it is not the primary key of R but its elements are values of the primary key of some relation S (the possibility that S and R are identical is not excluded). In the relation supply of Figure 1, the combination of supplier, part, project is the primary key, while each of these three domains taken separately is a foreign key.
 
-흔한 요구사항 중 하나는 한 관계의 원소들이 같은 관계의 다른 원소들이나 다른 관계의 원소들을 상호 참조하는 것입니다. 키는 이러한 상호 참조를 표현하기 위한 사용자 지향적인 수단을 제공합니다(단, 유일한 수단은 아닙니다). 관계 R의 도메인(또는 도메인 조합)이 R의 기본 키가 아니면서 그 원소들이 어떤 관계 S의 기본 키 값들인 경우, 이를 외래 키(foreign key)라고 부르도록 하겠습니다(여기서 S와 R이 동일할 수 있다는 가능성도 배제하지 않습니다). 그림 1의 supply 관계에서 공급업체, 부품, 프로젝트의 조합이 기본 키이며, 이 세 도메인 각각은 개별적으로 외래 키입니다.
+흔한 요구사항 중 하나는 한 관계의 원소들이 같은 관계의 다른 원소들이나 다른 관계의 원소들을 상호 참조하는 것입니다. 키는 이러한 상호 참조를 표현하기 위한 사용자 친화적인 수단을 제공합니다(단, 유일한 수단은 아닙니다). 관계 R의 도메인(또는 도메인 조합)이 R의 기본 키가 아니면서 그 원소들이 어떤 관계 S의 기본 키 값들인 경우, 이를 외래 키(foreign key)라고 부르도록 하겠습니다(여기서 S와 R이 동일할 수 있다는 가능성도 배제하지 않습니다). 그림 1의 supply 관계에서 공급업체, 부품, 프로젝트의 조합이 기본 키이며, 이 세 도메인 각각은 개별적으로 외래 키입니다.
+
+<span id="section-1-3-13"/>
 
 >
 In previous work there has been a strong tendency to treat the data in a data bank as consisting of two parts, one part consisting of entity descriptions (for example, descriptions of suppliers) and the other part consisting of relations between the various entities or types of entities (for example, the supply relation). This distinction is difficult to maintain when one may have foreign keys in any relation whatsoever. In the user’s relational model there appears to be no advantage to making such a distinction (there may be some advantage, however, when one applies relational concepts to machine representations of the user’s set of relationships).
 
 이전 연구들에서는 데이터 뱅크의 데이터를 두 부분으로 나누어 다루는 경향이 강했습니다. 한 부분은 개체 설명(예: 공급업체에 대한 설명)으로 구성되고, 다른 부분은 다양한 개체들 또는 개체 유형들 간의 관계(예: supply 관계)로 구성됩니다. 그러나 어떤 관계에서든 외래 키가 존재할 수 있다는 점에서 이러한 구분을 유지하기는 어렵습니다. 사용자의 관계형 모델에서는 이러한 구분을 두는 것이 특별히 유리해 보이지 않습니다(다만 사용자의 관계 집합에 대한 기계적 표현에 관계형 개념을 적용할 때는 어느 정도 이점이 있을 수 있습니다).
 
+<span id="section-1-3-14"/>
+
 >
 So far, we have discussed examples of relations which are defined on simple domains-domains whose elements are atomic (nondecomposable) values. Nonatomic values can be discussed within the relational framework. Thus, some domains may have relations as elements. These relations may, in turn, be defined on nonsimple domains, and so on. For example, one of the domains on which the relation employee is defined might be salary history. An element of the salary history domain is a binary relation defined on the domain date and the domain salary. The salary history domain is the set of all such binary relations. At any instant of time there are as many instances of the salary history relation in the data bank as there are employees. In contrast, there is only one instance of the employee relation.
 
 지금까지 우리는 단순 도메인(원소가 원자적(분해 불가능한) 값인 도메인)에 정의된 관계의 예시들을 논의했습니다. 관계형 프레임워크 내에서 비원자적 값도 논의될 수 있습니다. 따라서 일부 도메인은 관계를 원소로 가질 수 있습니다. 이러한 관계들은 다시 비단순 도메인에 정의될 수 있으며, 이는 계속 이어질 수 있습니다. 예를 들어, employee 관계가 정의된 도메인 중 하나가 급여 이력일 수 있습니다. 급여 이력 도메인의 원소는 날짜 도메인과 급여 도메인에 정의된 이진 관계입니다. 급여 이력 도메인은 이러한 모든 이진 관계의 집합입니다. 어느 시점에서든 데이터 뱅크에는 직원 수만큼의 급여 이력 관계 인스턴스가 존재합니다. 반면에 employee 관계의 인스턴스는 단 하나만 존재합니다.
+
+<span id="section-1-3-15"/>
 
 >
 The terms attribute and repeating group in present data base terminology are roughly analogous to simple domain and nonsimple domain, respectively. Much of the confusion in present terminology is due to failure to distinguish between type and instance (as in “record”) and between components of a user model of the data on the one hand and their machine representation counterparts on the other hand (again, we cite “record” as an example).
