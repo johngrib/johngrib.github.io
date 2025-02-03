@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-03 21:44:05 +0900
+updated : 2025-02-03 22:02:27 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -619,7 +619,7 @@ Let us denote the data sublanguage by R and the host language by H. R permits th
 
 데이터 하위 언어를 R[^data-sublanguage]로, 호스트 언어를 H로 표기하겠습니다. R은 관계들과 그들의 도메인을 선언하는 것을 허용합니다. 각 관계의 선언은 해당 관계의 기본 키를 식별합니다. 선언된 관계들은 적절한 권한을 가진 사용자 커뮤니티의 모든 구성원들이 사용할 수 있도록 시스템 카탈로그에 추가됩니다. H는 이러한 관계들이 저장소에서 어떻게 표현되는지를 나타내는, 아마도 덜 영구적인, 지원 선언들을 허용합니다. R은 데이터 뱅크로부터 어떤 데이터의 부분집합이라도 검색하도록 명세하는 것을 허용합니다. 이러한 검색 요청에 대한 동작은 보안 제약조건들의 적용을 받습니다.
 
-[^data-sublanguage]: 훗날 데이터 하위 언어를 구현한 사례가 바로 SQL이다. [SQL이 처음으로 구현된 IBM System R 프로젝트에 대한 글](https://en.wikipedia.org/wiki/IBM_System_R )도 함께 읽어볼 만하다.
+[^data-sublanguage]: 역주: 훗날 데이터 하위 언어를 구현한 사례가 바로 SQL이다. [SQL이 처음으로 구현된 IBM System R 프로젝트에 대한 글](https://en.wikipedia.org/wiki/IBM_System_R )도 함께 읽어볼 만하다.
 
 <span id="section-1-5-3"/>
 
@@ -714,11 +714,14 @@ A further disadvantage of this kind of expression is its asymmetry. Although thi
 
 1.6. 표현 가능한, 명명된, 그리고 저장된 관계
 
+<span id="section-1-6-1"/>
 
 >
 Associated with a data bank are two collections of relations: the named set and the expressible set. The named set is the collection of all those relations that the community of users can identify by means of a simple name (or identifier). A relation R acquires membership in the named set when a suitably authorized user declares R; it loses membership when a suitably authorized user cancels the declaration of R.
 
 데이터 뱅크와 관련하여 두 가지 관계 집합이 있습니다. 명명된 집합과 표현 가능한 집합입니다. 명명된 집합은 사용자 커뮤니티가 간단한 이름(또는 식별자)으로 식별할 수 있는 모든 관계들의 집합입니다. 관계 R은 적절한 권한을 가진 사용자가 R을 선언할 때 명명된 집합의 구성원이 되고, 적절한 권한을 가진 사용자가 R의 선언을 취소할 때 구성원 자격을 잃게 됩니다.
+
+<span id="section-1-6-2"/>
 
 >
 The expressible set is the total collection of relations that can be designated by expressions in the data language. Such expressions are constructed from simple names of relations in the named set; names of generations, roles and domains; logical connectives; the quantifiers of the predicate calculations;<sup>6</sup> and certain constant relation symbols such as `=`, `>`.
@@ -730,15 +733,23 @@ The named set is a subset of the expressible set-usually a very small subset.
 
 <sup>6</sup> 실용적인 데이터 뱅크에서 각 관계는 모든 시점에서 유한 집합이기 때문에, 존재 한정자와 전칭 한정자는 임의의 유한 집합의 원소 개수를 세는 함수로 표현될 수 있습니다.
 
+<span id="section-1-6-3"/>
+
 >
 Since some relations in the named set may be time-independent combinations of others in that set, it is useful to consider associating with the named set a collection of statements that define these time-independent constraints. We shall postpone further discussion of this until we have introduced several operations on relations (see Section 2).
 
-명명된 집합의 일부 관계들이 해당 집합의 다른 관계들의 시간 독립적인(시간과 무관한) 조합일 수 있기 때문에, 명명된 집합과 이러한 시간 독립적인 제약조건들을 정의하는 진술문들의 집합을 연관시키는 것이 유용합니다. 이에 대한 추가 논의는 관계들에 대한 여러 연산들을 소개한 후로 미루도록 하겠습니다(2장 참조).
+명명된 집합의 일부 관계들이 해당 집합의 다른 관계들의 시간 독립적인(시간과 무관한) 조합일 수 있기 때문에, 명명된 집합과 이러한 시간 독립적인 제약조건들을 정의하는 진술문들의 집합을 연관시키는 것이 유용합니다.[^constraints] 이에 대한 추가 논의는 관계들에 대한 여러 연산들을 소개한 후로 미루도록 하겠습니다(2장 참조).
+
+[^constraints]: 역주: 현대적인 RDBMS에서는 Foreign Key(참조 무결성), Unique Key(고유성), Not Null(필수 값) 등의 제약 조건으로 구현된다. 이들은 시간과 관계없이 데이터의 일관성을 보장하는 역할을 한다.
+
+<span id="section-1-6-4"/>
 
 >
 One of the major problems confronting the designer of a data system which is to support a relational model for its users is that of determining the class of stored representations to be supported. Ideally, the variety of permitted data representations should be just adequate to cover the spectrum of performance requirements of the total collection of installations. Too great a variety leads to unnecessary overhead in storage and continual reinterpretation of descriptions for the structures currently in effect.
 
 사용자들을 위한 관계형 모델을 지원하는 데이터 시스템 설계자가 직면하는 주요 문제 중 하나는 지원해야 할 저장 표현들의 유형을 결정하는 것입니다. 이상적으로는, 허용되는 데이터 표현들의 다양성이 전체 설치 환경들의 성능 요구사항 범위를 충족시키기에 딱 적절해야 합니다. 너무 큰 다양성은 저장소의 불필요한 오버헤드와 현재 적용 중인 구조들에 대한 설명을 지속적으로 재해석해야 하는 결과를 초래합니다.
+
+<span id="section-1-6-5"/>
 
 >
 For any selected class of stored representations the data system must provide a means of translating user requests expressed in the data language of the relational model into corresponding-and efficient-actions on the current stored representation. For a high level data language this presents a challenging design problem. Nevertheless, it is a problem which must be solved-as more users obtain concurrent access to a large data bank, responsibility for providing efficient response and throughput shifts from the individual user to the data system.
