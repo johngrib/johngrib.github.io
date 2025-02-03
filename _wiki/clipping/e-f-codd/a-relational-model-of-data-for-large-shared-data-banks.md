@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-02 21:46:18 +0900
+updated : 2025-02-03 21:44:05 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -36,7 +36,8 @@ E. F. Codd는 이 논문에서 집합론과 관계 이론을 토대로 새로운
     - 프레드 브룩스는 IBM 재직중일 때 장래가 촉망되는 직원, Ted Codd(Edgar Frank "Ted" Codd)를 미시간 대학에 보내 박사 학위를 취득할 수 있게 해 주었다고 한다. 그 이후 Codd는 관계형 데이터베이스 개념을 창안하게 되었으므로, 프레드 브룩스는 자신이 IBM에서 했던 일 중 가장 생산적인 일이 Codd를 대학에 보낸 것이었다고 한 바 있다.
 - [Edgar F. ("Ted") Codd - United States - 1981 (amturing.acm.org)](https://amturing.acm.org/award_winners/codd_1000892.cfm )
     - 1981년 튜링상 수상자 Ted Codd를 소개하는 글.
-
+- [IBM System R](https://en.wikipedia.org/wiki/IBM_System_R )
+    - SQL이 처음으로 구현된 시스템.
 
 ## 번역
 
@@ -604,35 +605,51 @@ $$ R(g).r.d $$
 
 1.5. 언어적 측면
 
+<span id="section-1-5-1"/>
+
 >
 The adoption of a relational model of data, as described above, permits the development of a universal data sub-language based on an applied predicate calculus. A first-order predicate calculus suffices if the collection of relations is in normal form. Such a language would provide a yardstick of linguistic power for all other proposed data languages, and would itself be a strong candidate for embedding (with appropriate syntactic modification) in a variety of host Ianguages (programming, command- or problem-oriented). While it is not the purpose of this paper to describe such a language in detail, its salient features would be as follows.
 
 위에서 설명한 관계형 데이터 모델의 채택은 술어 논리학을 응용한 보편적 데이터 하위 언어의 개발을 가능하게 합니다. 관계들의 집합이 정규형이라면 일차 술어 논리학으로 충분합니다. 이러한 언어는 다른 모든 제안된 데이터 언어들의 언어적 능력을 측정하는 기준이 될 것이며, 그 자체로 다양한 호스트 언어들(프로그래밍, 명령어 또는 문제 지향적)에 (적절한 구문 수정과 함께) 내장되기 위한 유력한 후보가 될 것입니다. 이 논문의 목적이 그러한 언어를 상세히 설명하는 것은 아니지만, 그것의 두드러진 특징들은 다음과 같을 것입니다.
 
+<span id="section-1-5-2"/>
+
 >
 Let us denote the data sublanguage by R and the host language by H. R permits the declaration of relations and their domains. Each declaration of a relation identifies the primary key for that relation. Declared relations are added to the system catalog for use by any members of the user community who have appropriate authorization. H permits supporting declarations which indicate, perhaps less permanently, how these relations are represented in storage. R permits the specification for retrieval of any subset of data from the data bank. Action on such a retrieval request is subject to security constraints.
 
-데이터 하위 언어를 R로, 호스트 언어를 H로 표기하겠습니다. R은 관계들과 그들의 도메인을 선언하는 것을 허용합니다. 각 관계의 선언은 해당 관계의 기본 키를 식별합니다. 선언된 관계들은 적절한 권한을 가진 사용자 커뮤니티의 모든 구성원들이 사용할 수 있도록 시스템 카탈로그에 추가됩니다. H는 이러한 관계들이 저장소에서 어떻게 표현되는지를 나타내는, 아마도 덜 영구적인, 지원 선언들을 허용합니다. R은 데이터 뱅크로부터 어떤 데이터의 부분집합이라도 검색하도록 명세하는 것을 허용합니다. 이러한 검색 요청에 대한 동작은 보안 제약조건들의 적용을 받습니다.
+데이터 하위 언어를 R[^data-sublanguage]로, 호스트 언어를 H로 표기하겠습니다. R은 관계들과 그들의 도메인을 선언하는 것을 허용합니다. 각 관계의 선언은 해당 관계의 기본 키를 식별합니다. 선언된 관계들은 적절한 권한을 가진 사용자 커뮤니티의 모든 구성원들이 사용할 수 있도록 시스템 카탈로그에 추가됩니다. H는 이러한 관계들이 저장소에서 어떻게 표현되는지를 나타내는, 아마도 덜 영구적인, 지원 선언들을 허용합니다. R은 데이터 뱅크로부터 어떤 데이터의 부분집합이라도 검색하도록 명세하는 것을 허용합니다. 이러한 검색 요청에 대한 동작은 보안 제약조건들의 적용을 받습니다.
+
+[^data-sublanguage]: 훗날 데이터 하위 언어를 구현한 사례가 바로 SQL이다. [SQL이 처음으로 구현된 IBM System R 프로젝트에 대한 글](https://en.wikipedia.org/wiki/IBM_System_R )도 함께 읽어볼 만하다.
+
+<span id="section-1-5-3"/>
 
 >
 The universality of the data sublanguage lies in its descriptive ability (not its computing ability). In a large data bank each subset of the data has a very large number of possible (and sensible) descriptions, even when we assume (as we do) that there is only a finite set of function subroutines to which the system has access for use in qualifying data for retrieval. Thus, the class of qualification expressions which can be used in a set specification must have the descriptive power of the class of well-formed formulas of an applied predicate calculus. It is well known that to preserve this descriptive power it is unnecessary to express (in whatever syntax is chosen) every formula of the selected predicate calculus. For example, just those in prenex normal form are adequate [9].
 
-데이터 하위 언어의 보편성은 그것의 (계산적 능력이 아니라) 기술(descriptive) 능력에 있습니다. 대규모 데이터 뱅크에서 데이터의 각 부분집합은 매우 많은 수의 가능한(그리고 의미 있는) 기술 방식들을 가지고 있습니다. 이는 검색을 위한 데이터 한정에 사용할 수 있도록 시스템이 접근 가능한 함수 서브루틴들의 집합이 유한하다고 가정하더라도(우리가 그렇게 하는 것처럼) 그렇습니다. 따라서, 집합 명세에 사용될 수 있는 한정 표현식들의 부류는 응용 술어 논리학의 잘 구성된 공식들의 부류가 가진 기술적 능력을 가져야 합니다. 이러한 기술적 능력을 보존하기 위해서는 선택된 술어 논리학의 모든 공식을 (어떤 구문이 선택되든) 표현할 필요가 없다는 것은 잘 알려져 있습니다. 예를 들어, 전치 정규형(prenex normal form)에 있는 것들만으로도 충분합니다[9].
+데이터 하위 언어의 보편성은 그것의 (계산적 능력이 아니라) 기술(descriptive) 능력에 있습니다. 대규모 데이터 뱅크에서 데이터의 각 부분집합은 매우 많은 수의 가능한(그리고 의미 있는) 기술 방식들을 가지고 있습니다. 이는 검색을 위한 데이터 조건에 사용할 수 있도록 시스템이 접근 가능한 함수 서브루틴들의 집합이 유한하다고 가정하더라도(우리가 그렇게 하는 것처럼) 그렇습니다. 따라서, 집합 명세에 사용될 수 있는 조건 표현식들의 부류는 응용 술어 논리학의 잘 구성된 공식들의 부류가 가진 기술적 능력을 가져야 합니다. 이러한 기술적 능력을 보존하기 위해서는 선택된 술어 논리학의 모든 공식을 (어떤 구문이 선택되든) 표현할 필요가 없다는 것은 잘 알려져 있습니다. 예를 들어, 전치 정규형(prenex normal form)에 있는 것들만으로도 충분합니다[9].
+
+<span id="section-1-5-4"/>
 
 >
 Arithmetic functions may be needed in the qualification or other parts of retrieval statements. Such functions can be defined in H and invoked in R.
 
-산술 함수들은 검색문의 한정 부분이나 다른 부분들에서 필요할 수 있습니다. 이러한 함수들은 H에서 정의되고 R에서 호출될 수 있습니다.
+산술 함수들은 검색문의 조건 부분이나 다른 부분들에서 필요할 수 있습니다. 이러한 함수들은 H에서 정의되고 R에서 호출될 수 있습니다.
+
+<span id="section-1-5-5"/>
 
 >
 A set so specified may be fetched for query purposes only, or it may be held for possible changes. Insertions take the form of adding new elements to declared relations without regard to any ordering that may be present in their machine representation. Deletions which are effective for the community (as opposed to the individual user or sub-communities) take the form of removing elements from declared relations. Some deletions and updates may be triggered by others, if deletion and update dependencies between specified relations are declared in R.
 
-이렇게 명세된 집합은 질의 목적으로만 가져올 수도 있고, 또는 가능한 변경을 위해 보유될 수도 있습니다. 삽입은 기계 표현에 존재할 수 있는 어떤 순서와도 무관하게 선언된 관계들에 새로운 원소들을 추가하는 형태를 취합니다. (개별 사용자나 하위 커뮤니티가 아닌) 전체 커뮤니티에 대해 유효한 삭제는 선언된 관계들로부터 원소들을 제거하는 형태를 취합니다. 일부 삭제와 갱신은 다른 것들에 의해 촉발될 수 있는데, 이는 지정된 관계들 간의 삭제 및 갱신 의존성이 R에서 선언된 경우입니다.
+이렇게 명세된 집합은 질의 목적으로만 가져올 수도 있고, 또는 가능한 변경을 위해 보유될 수도 있습니다. 삽입은 기계 표현에 존재할 수 있는 어떤 순서와도 무관하게 선언된 관계들에 새로운 원소들을 추가하는 형태를 취합니다. (개별 사용자나 하위 커뮤니티가 아닌) 전체 커뮤니티에 대해 유효한 삭제는 선언된 관계들로부터 원소들을 제거하는 형태를 취합니다. 일부 삭제와 갱신은 다른 것들에 의해 트리거될 수 있는데, 이는 지정된 관계들 간의 삭제 및 갱신 의존성이 R에서 선언된 경우입니다.
+
+<span id="section-1-5-6"/>
 
 >
 One important effect that the view adopted toward data has on the language used to retrieve it is in the naming of data elements and sets. Some aspects of this have been discussed in the previous section. With the usual network view, users will often be burdened with coining and using more relation names than are absolutely necessary, since names are associated with paths (or path types) rather than with relations.
 
 데이터를 바라보는 관점이 데이터를 검색하는 데 사용되는 언어에 미치는 한 가지 중요한 영향은 데이터 원소들과 집합들의 명명에 있습니다. 이러한 측면들의 일부는 이전 절에서 논의되었습니다. 통상적인 네트워크 관점에서는, 이름들이 관계가 아닌 경로들(또는 경로 유형들)과 연관되어 있기 때문에, 사용자들은 종종 절대적으로 필요한 것보다 더 많은 관계 이름들을 만들고 사용해야 하는 부담을 지게 될 것입니다.
+
+<span id="section-1-5-7"/>
 
 >
 Once a user is aware that a certain relation is stored, he will expect to be able to exploit<sup>5</sup> it using any combination of its arguments as “knowns” and the remaining arguments as “unknowns,” because the information (like Everest) is there. This is a system feature (missing from many current informat.ion systems) which we shall call (logically) symmetric expZoitation of relations. Naturally, symmetry in performance is not to be expected.
@@ -643,10 +660,36 @@ Once a user is aware that a certain relation is stored, he will expect to be abl
 
 <sup>5</sup> 관계의 활용에는 질의, 갱신, 삭제가 포함됩니다.
 
+<span id="section-1-5-8"/>
+
 >
 To support symmetric exploitation of a single binary relation, two directed paths are needed. For a relation of degree n, the number of paths to be named and controlled is n factorial.
 
 단일 이항 관계의 대칭적 활용을 지원하기 위해서는 두 개의 방향성 있는 경로들이 필요합니다. 차수가 n인 관계의 경우, 이름을 지정하고 제어해야 하는 경로들의 수는 n 팩토리얼입니다.
+
+>
+**역주**
+>
+네트워크 모델에서 이항 관계의 대칭적 활용은 다음과 같이 예시를 들 수 있다.
+>
+> - 직원 → 부서
+> - 부서 → 직원
+>
+> 그런데 이항 관계는 2! 이므로 2개 밖에 안되지만, 3항 관계인 경우에는 3!로 수가 훨씬 늘어나는 문제점이 있다.
+>
+> - 직원 → 부서 → 프로젝트
+> - 직원 → 프로젝트 → 부서
+> - 부서 → 직원 → 프로젝트
+> - 부서 → 프로젝트 → 직원
+> - 프로젝트 → 직원 → 부서
+> - 프로젝트 → 부서 → 직원
+>
+> 하지만 모든 경로를 미리 만들어둘 수는 없으므로(10항 관계라면 `10! = 3,628,800`), 몇 가지 경로만 선택적으로 만들어두게 되며, 상황에 따라 필요한 것보다 더 많은 새로운 경로를 시스템에 추가하는 방향으로 발전되어 간다.  
+> 그러나 관계형 모델을 사용하는 현대적인 SQL을 사용하면 이런 문제가 매우 단순해진다. `FROM`과 `JOIN`으로 `부서`, `직원`, `프로젝트` 테이블을 연결해주면 되기 때문이다.
+{:style="background-color: #ecf1e8;"}
+
+
+<span id="section-1-5-9"/>
 
 >
 Again, if a relational view is adopted in which every n-ary relation ($$ n > 2 $$) has to be expressed by the user as a nested expression involving only binary relations (see Feldman’s LEAP System [10], for example) then $$ 2n - 1 $$ names have to be coined instead of only $$ n + 1 $$ with direct n-ary notation as described in Section 1.2. For example, the 4-ary relation supply of Figure 1, which entails 5 names in n-ary notation, would be represented in the form
@@ -670,6 +713,7 @@ A further disadvantage of this kind of expression is its asymmetry. Although thi
 #### 1.6. EXPRESSIBLE, NAMED, AND STORED RELATIONS
 
 1.6. 표현 가능한, 명명된, 그리고 저장된 관계
+
 
 >
 Associated with a data bank are two collections of relations: the named set and the expressible set. The named set is the collection of all those relations that the community of users can identify by means of a simple name (or identifier). A relation R acquires membership in the named set when a suitably authorized user declares R; it loses membership when a suitably authorized user cancels the declaration of R.
