@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-03 22:02:27 +0900
+updated : 2025-02-03 22:13:49 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -764,15 +764,21 @@ For any selected class of stored representations the data system must provide a 
 
 2.1. 관계들에 대한 연산
 
+<span id="section-2-1-1"/>
+
 >
 Since relations are sets, all of the usual set operations are applicable to them. Nevertheless, the result may not be a relation; for example, the union of a binary relation and a ternary relation is not a relation.
 
 관계들은 집합이므로, 모든 일반적인 집합 연산들을 관계들에 적용할 수 있습니다. 그러나 그 결과가 반드시 관계가 되는 것은 아닙니다. 예를 들어, 이항 관계와 삼항 관계의 합집합은 관계가 아닙니다.
 
+<span id="section-2-1-2"/>
+
 >
 The operations discussed below are specifically for relations. These operations are introduced because of their key role in deriving relations from other relations. Their principal application is in noninferential information systems-systems which do not provide logical inference services-although their applicability is not necessarily destroyed when such services are added.
 
 아래에서 논의되는 연산들은 특별히 관계들을 위한 것입니다. 이러한 연산들은 다른 관계들로부터 관계를 도출하는 데 있어 핵심적인 역할을 하기 때문에 도입되었습니다. 이 연산들의 주된 적용은 논리적 추론 서비스를 제공하지 않는 비추론적 정보 시스템들에서 이루어지지만, 그러한 서비스들이 추가된다고 해서 반드시 적용 가능성이 사라지는 것은 아닙니다.
+
+<span id="section-2-1-3"/>
 
 >
 Most users would not be directly concerned with these operations. Information systems designers and people concerned with data bank control should, however, be thoroughly familiar with them.
@@ -783,15 +789,21 @@ Most users would not be directly concerned with these operations. Information sy
 
 2.1.1. 순열
 
+<span id="section-2-1-1-1"/>
+
 >
 A binary relation has an array representation with two columns. Interchanging these columns yields the converse relation. More generally, if a permutation is applied to the columns of an n-ary relation, the resulting relation is said to be a permutation of the given relation. There are, for example, `4! = 24` permutations of the relation supply in Figure 1, if we include the identity permutation which leaves the ordering of columns unchanged.
 
-이항 관계는 두 개의 열을 가진 배열 표현을 갖습니다. 이 열들을 서로 교환하면 역관계가 됩니다. 더 일반적으로, n항 관계의 열들에 순열을 적용하면, 그 결과로 나오는 관계를 주어진 관계의 순열이라고 합니다. 예를 들어, 그림 1의 supply 관계에는 열의 순서를 변경하지 않는 항등 순열을 포함하여 `4! = 24`개의 순열이 있습니다.
+이항 관계는 두 개의 열(column)을 가진 배열 표현을 갖습니다. 이 열들을 서로 교환하면 역관계가 됩니다. 더 일반적으로, n항 관계의 열들에 순열을 적용하면, 그 결과로 나오는 관계를 주어진 관계의 순열이라고 합니다. 예를 들어, 그림 1의 supply 관계에는 열의 순서를 변경하지 않는 항등 순열을 포함하여 `4! = 24`개의 순열이 있습니다.
+
+<span id="section-2-1-1-2"/>
 
 >
 Since the user’s relational model consists of a collection of relationships (domain-unordered relations), permutation is not relevant to such a model considered in isolation. It is, however, relevant to the consideration of stored representations of the model. In a system which provides symmetric exploitation of relations, the set of queries answerable by a stored relation is identical to the set answerable by any permutation of that relation. Although it is logically unnecessary to store both a relation and some permutation of it, performance considerations could make it advisable.
 
-사용자의 관계형 모델은 관계성들(도메인-비순서화된 관계들)의 집합으로 구성되어 있으므로, 순열은 독립적으로 고려된 그러한 모델과는 관련이 없습니다. 하지만 모델의 저장 표현들을 고려할 때는 관련이 있습니다. 관계들의 대칭적 활용을 제공하는 시스템에서는, 저장된 관계로 답변 가능한 질의들의 집합이 그 관계의 임의의 순열로 답변 가능한 집합과 동일합니다. 관계와 그것의 어떤 순열을 모두 저장하는 것이 논리적으로는 불필요하지만, 성능 고려사항으로 인해 이를 권장할 수 있습니다.
+사용자의 관계형 모델은 관계성들(도메인-비순서화된 관계들)의 집합으로 구성되어 있으므로, 순열은 독립적으로 고려된 그러한 모델과는 관련이 없습니다. 하지만 모델의 저장 표현들을 고려할 때는 관련이 있습니다. 관계들의 대칭적 활용을 제공하는 시스템에서는, 저장된 관계로 답변 가능한 질의들의 집합이 그 관계의 임의의 순열로 답변 가능한 집합과 동일합니다. 관계와 그것의 어떤 순열을 모두 저장하는 것이 논리적으로는 불필요하지만, 성능 고려사항으로 인해 이를 권장할 수 있습니다.[^performance-considerations]
+
+[^performance-considerations]: 역주: 현대적인 RDMBS에서의 인덱스를 설명하는 부분이라 할 수 있다.
 
 ##### 2.1.2. Projection.
 
