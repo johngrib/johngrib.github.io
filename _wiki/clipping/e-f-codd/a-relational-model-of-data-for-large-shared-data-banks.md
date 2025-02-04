@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-03 22:13:49 +0900
+updated : 2025-02-04 21:13:09 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -809,17 +809,21 @@ Since the user’s relational model consists of a collection of relationships (d
 
 2.1.2. 투영
 
+<span id="section-2-1-2-1"/>
+
 >
 Suppose now we select certain columns of a relation (striking out the others) and then remove from the resulting array any duplication in the rows. The final array represents a relation which is said to be a projection of the given relation.
 
 관계의 특정 열들을 선택하고(다른 열들은 제거하고) 그 결과로 나온 배열에서 행들의 중복을 제거한다고 가정해봅시다. 최종 배열은 주어진 관계의 투영이라고 하는 관계를 나타냅니다.
+
+<span id="section-2-1-2-2"/>
 
 >
 A selection operator π is used to obtain any desired permutation, projection, or combination of the two operations. Thus, if L is a list of k indices <sup>7</sup> $$ L = i_1, i_2, ..., i_k $$ and R is an n-ary relation (n ≥ k), then $$ π_L $$ (R) is the k-ary relation whose jth column is column $$ i_i $$ of $$ R(j = 1, 2, ..., k) $$ except that duplication in resulting rows is removed. Consider the relation supply of Figure 1. A permuted projection of this relation is exhibited in Figure 4. Note that, in this particular case, the projection has fewer n-tuples than the relation from which it is derived.
 >
 <sup>7</sup> When dealing with relationships, we use domain names (role-qualified whenever necessary) instead of domain positions.
 
-원하는 순열, 투영, 또는 이 두 연산의 조합을 얻기 위해 선택 연산자 π가 사용됩니다. 따라서, L이 k개의 인덱스들로 이루어진 리스트<sup>7</sup> $$ L = i_1, i_2, ..., i_k $$ 이고 R이 n항 관계(n ≥ 2 k)일 때, $$ π_L $$ (R)은 그 j번째 열이 R의 $$i_j$$열인$$(j = 1, 2, ..., k)$$ k항 관계입니다. 단, 결과로 나오는 행들의 중복은 제거됩니다. 그림 1의 supply 관계를 살펴봅시다. 이 관계의 순열 투영이 그림 4에 나와 있습니다. 이 특정한 경우에서, 투영은 원래의 관계보다 더 적은 수의 n-튜플을 가지고 있다는 점에 주목하십시오.
+원하는 순열, 투영, 또는 이 두 연산의 조합을 얻기 위해 선택 연산자 π가 사용됩니다. 따라서, L이 k개의 인덱스들로 이루어진 리스트<sup>7</sup> $$ L = i_1, i_2, ..., i_k $$ 이고 R이 n항 관계($$ n ≥ k $$)일 때, $$ π_L $$ (R)은 그 j번째 열이 R의 $$i_j$$열인$$(j = 1, 2, ..., k)$$ k항 관계입니다. 단, 결과로 나오는 행들의 중복은 제거됩니다. 그림 1의 supply 관계를 살펴봅시다. 이 관계의 순열 투영이 그림 4에 나와 있습니다. 이 특정한 경우에서, 투영은 원래의 관계보다 더 적은 수의 n-튜플을 가지고 있다는 점에 주목하십시오.
 
 <sup>7</sup> 관계성들을 다룰 때는 도메인 위치 대신 도메인 이름들(필요할 때마다 역할이 한정된)을 사용합니다.
 
