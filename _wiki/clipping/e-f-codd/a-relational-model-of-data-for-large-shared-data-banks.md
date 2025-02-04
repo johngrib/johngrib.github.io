@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-04 21:13:09 +0900
+updated : 2025-02-04 22:50:09 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -831,10 +831,16 @@ A selection operator π is used to obtain any desired permutation, projection, o
 
 2.1.3. 조인
 
+<span id="section-2-1-3-1"/>
+
 >
 Suppose we are given two binary relations, which have some domain in common. Under what circumstances can we combine these relations to form a ternary relation which preserves all of the information in the given relations?
 
-공통된 도메인을 가진 두 개의 이진 관계가 주어졌다고 가정해봅시다. 어떤 상황에서 우리는 주어진 관계들의 모든 정보를 보존하는 삼진 관계를 형성하기 위해 이 관계들을 결합할 수 있을까요?
+공통된 도메인을 가진 두 개의 이진 관계가 주어졌다고 가정해봅시다. 어떤 상황에서 우리는 주어진 관계들의 모든 정보를 보존하는 삼진 관계를 형성하기 위해 이 관계들을 결합할 수 있을까요?[^join]
+
+[^join]: 역주: SQL에서의 JOIN을 떠올리면 이해하기 쉽다.
+
+<span id="section-2-1-3-2"/>
 
 >
 The example in Figure 5 shows two relations R, S, which are joinable without loss of information, while Figure 6 shows a join of R with S. A binary relation R is joinable with a binary relation S if there exists a ternary relation U such that $$ π_{12}(U) = R $$ and $$ π_{23}(U) = S $$. Any such ternary relation is called a join of R with S. If R, S are binary relations such that $$ π_2 (R) = π_1 (S) $$, then R is joinable with S.
@@ -852,7 +858,7 @@ and
 $$ π_{23}(R*S) = S. $$
 
 그림 5는 정보의 손실 없이 조인 가능한 두 관계 R, S 를 보여주고, 그림 6은 R 과 S의 조인을 보여줍니다.
-이진 관계 R 은 $$ π_{12}(U) = R $$ 이고 $$ π_{23}(U) = S $$인 삼진 관계 U가 존재할 때 이진 관계 S와 조인 가능합니다.
+$$ π_{12}(U) = R $$ 이고 $$ π_{23}(U) = S $$인 삼진 관계 U가 존재할 때 이진 관계 R 은 이진 관계 S와 조인 가능합니다.
 이러한 삼진 관계를 R과 S의 조인이라 합니다.
 R, S 가 이진 관계이고 $$ π_2 (R) = π_1 (S) $$ 일 때, R 은 S와 조인 가능합니다.
 이러한 경우에 항상 존재하는 하나의 조인은 다음과 같이 정의되는 R과 S의 자연 조인입니다.
@@ -866,6 +872,51 @@ $$ π_{12}(R*S) = R $$
 그리고
 
 $$ π_{23}(R*S) = S. $$
+
+>
+**역주**: 어려운 문장 같지만 현대적인 SQL에 대한 지식이 있다면 이해하기 쉽다.
+{:style="background-color: #ecf1e8;"}
+> $$ π_{12}(U) = R $$ 이고 $$ π_{23}(U) = S $$인 삼진 관계 U가 존재할 때 이진 관계 R 은 이진 관계 S와 조인 가능합니다.
+이러한 삼진 관계를 R과 S의 조인이라 합니다.
+{:style="background-color: #dddddd;"}
+>
+> - $$ π_{12}(U) $$는 U의 1번 컬럼과 2번 컬럼을 중복 없이 선택하는 것을 의미한다.
+> - $$ π_{23}(U) $$은 U의 2번 컬럼과 3번 컬럼을 중복 없이 선택하는 것을 의미한다.
+> - $$ π_{12}(U) $$ 와 $$ π_{23}(U) $$는 둘 다 U의 2번 컬럼을 갖고 있으므로 서로 조인이 가능하다는 의미이다.
+>
+> 수식이 있어 어려워 보이지만 공통 컬럼이 있는 두 개의 이진관계가 있다면 서로 조인이 가능하다는 간단한(그러나 중요한) 의미이다.
+{:style="background-color: #ecf1e8;"}
+
+<span/>
+
+>
+**역주**: 여기에서는 JOIN 을 정의한다.
+{:style="background-color: #ecf1e8;"}
+> $$ R*S = \{ (a, b, c):R(a, b) \land S(b, c) \} $$
+{:style="background-color: #dddddd;"}
+> - $$ R(a,b) $$: R이라는 관계에서 a, b 라는 컬럼 2개가 있고,
+> - $$ S(b,c) $$: S라는 관계에서 b, c 라는 컬럼 2개가 있다고 할 때,
+> - $$\{ (a, b, c): R(a,b) \land S(b,c) \}$$: (a, b, c) 3개의 컬럼으로 도출되는 R(a,b)와 S(b,c)의 논리곱을...
+> - $$ R * S $$: R 과 S의 JOIN 이라 정의한다.
+>
+{:style="background-color: #ecf1e8;"}
+
+<span/>
+
+>
+**역주**: 여기에서는 JOIN 을 역으로 풀어 원래의 관계로 돌아갈 수 있음을 설명한다.
+{:style="background-color: #ecf1e8;"}
+> 다음의 둘이 성립함을 알 수 있습니다. $$ π_{12}(R*S) = R $$ 그리고 $$ π_{23}(R*S) = S. $$
+{:style="background-color: #dddddd;"}
+> - $$ R $$ = U의 1번 컬럼과 2번 컬럼을 선택한 것. (a, b)
+> - $$ S $$ = U의 2번 컬럼과 3번 컬럼을 선택한 것. (b, c)
+> - $$ R * S $$ = R과 S의 JOIN. (a, b, c)
+> - $$ π_{12}(R*S) = R $$: R과 S의 JOIN 에서 1번 컬럼과 2번 컬럼을 중복 없이 선택하면 R이 된다. (a, b)
+> - $$ π_{23}(R*S) = S $$: R과 S의 JOIN 에서 2번 컬럼과 3번 컬럼을 중복 없이 선택하면 S가 된다. (b, c)
+>
+{:style="background-color: #ecf1e8;"}
+
+<span id="section-2-1-3-3"/>
 
 >
 Note that the join shown in Figure 6 is the natural join of R with S from Figure 5. Another join is shown in Figure 7.
@@ -931,26 +982,34 @@ $$
 
 그림 7. R과 S의 다른 조인 (그림 5로부터)
 
+<span id="section-2-1-3-4"/>
+
 >
 Inspection of these relations reveals an element (element 1) of the domain part (the domain on which the join is to be made) with the property that it possesses more than one relative under R and also under S. It is this element which gives rise to the plurality of joins. Such an element in the joining domain is called a point of ambiguity with respect to the joining of R with S.
 
-이 관계들을 살펴보면 조인 도메인(조인이 이루어지는 도메인)의 한 원소(원소 1)가 R과 S 모두에서 하나 이상의 관련 원소를 가지는 특성이 있음을 알 수 있습니다. 바로 이 원소로 인해 다수의 조인이 발생하게 됩니다. 조인 도메인에서 이러한 원소를 R과 S의 조인에 대한 모호점이라고 합니다.
+이 관계들을 살펴보면 조인 도메인(조인이 이루어지는 도메인)의 한 원소(원소 1)가 R과 S 모두에서 하나 이상의 관련 원소를 가지는 특성이 있음을 알 수 있습니다. 바로 이 원소로 인해 다수의 조인이 발생하게 됩니다. 조인 도메인에서 이러한 원소를 R과 S의 조인에 대한 모호점이라고 합니다.[^point-of-ambiguity]
+
+[^point-of-ambiguity]: 역주: 현대적인 SQL에서는 이러한 모호한 JOIN 중복 결과를 방지하기 위해 `DISTINCT`나 `GROUP BY` 같은 것들을 사용한다.
+
+<span id="section-2-1-3-5"/>
 
 >
 If either $$π_1 (R)$$ or S is a function <sup>8</sup> no point of ambiguity can occur in joining R with S. In such a case, the natural join of R with S is the only join of R with S. Note that the reiterated qualification “of R with S” is necessary, because S might be joinable with R (as well as R with S), and this join would be an entirely separate consideration. In Figure 5, none of the relations $$R, π_{21}(R), S, π_{21}(S)$$ is a function.
 >
 <sup>8</sup> A function is a binary relation, which is one-one or many-one, but not one-many.
 
-$$π_1 (R)$$ 또는 S가 함수<sup>8</sup>일 경우, R과 S의 조인에서 모호점이 발생할 수 없습니다. 이러한 경우, R과 S의 자연 조인이 R과 S의 유일한 조인이 됩니다. "R과 S의"라는 반복되는 한정어구가 필요한데, 이는 S가 R과 조인 가능할 수 있고(R이 S와 조인 가능한 것과 마찬가지로), 이 조인은 완전히 별개의 고려 사항이 되기 때문입니다. 그림 5에서, $$R, π_{21}(R), S, π_{21}(S)$$ 중 어느 것도 함수가 아닙니다.
+$$π_1 (R)$$ 또는 S가 함수<sup>8</sup>일 경우, R과 S의 조인에서 모호점이 발생할 수 없습니다. 이런 경우라면 R과 S의 자연 조인이 R과 S의 유일한 조인이 됩니다. "R과 S의"라는 반복되는 한정어구가 필요한데, 이는 S가 R과 조인 가능할 수 있고(R이 S와 조인 가능한 것과 마찬가지로), 이 조인은 완전히 별개의 고려 사항이 되기 때문입니다. 그림 5에서, $$R, π_{21}(R), S, π_{21}(S)$$ 중 어느 것도 함수가 아닙니다.
 
-<sup>8</sup> 함수는 일대일 또는 다대일이지만 일대다가 아닌 이진 관계입니다.
+<sup>8</sup> 함수는 일대일 또는 다대일이지만 일대다가 아닌 이진 관계이기 때문.
+
+<span id="section-2-1-3-6"/>
 
 >
 Ambiguity in the joining of R with S can sometimes be resolved by means of other relations. Suppose we are given, or can derive from sources independent of R and S, a relation T on the domains project and supplier with the following properties :
 >
 > - (1) $$ π_1 (T) = π_2 (S) $$,
 > - (2) $$ π_2 (T) = π_1 (R) $$,
-> - (3) $$ T(j, s) \rightarrow \exists p (R (S, P) \land S(p, j)) $$,
+> - (3) $$ T(j, s) \rightarrow \exists p (R (S, p) \land S(p, j)) $$,
 > - (4) $$ R(s, p) \rightarrow \exists j (S (p, j) \land T(j, s)) $$,
 > - (4) $$ S(p, j) \rightarrow \exists s (T (j, s) \land R(s, p)) $$,
 >
@@ -962,13 +1021,14 @@ R과 S의 조인에서의 모호성은 때때로 다른 관계들을 통해 해�
 
 - (1) $$ π_1 (T) = π_2 (S) $$,
 - (2) $$ π_2 (T) = π_1 (R) $$,
-- (3) $$ T(j, s) \rightarrow \exists p (R (S, P) \land S(p, j)) $$,
+- (3) $$ T(j, s) \rightarrow \exists p (R (S, p) \land S(p, j)) $$,
 - (4) $$ R(s, p) \rightarrow \exists j (S (p, j) \land T(j, s)) $$,
 - (4) $$ S(p, j) \rightarrow \exists s (T (j, s) \land R(s, p)) $$,
 
 그러면 R, S, T의 삼중 조인을 형성할 수 있습니다. 즉, 다음을 만족하는 삼진 관계를 만들 수 있습니다:
 
 $$ π_{12} (U) = R, π_{23} (U) = S, π_{31} (U) = T. $$
+
 
 >
 Such a join will be called a cyclic 3-join to distinguish it from a linear S-join which would be a quaternary relation V such that
