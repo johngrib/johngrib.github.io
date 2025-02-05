@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-04 22:50:09 +0900
+updated : 2025-02-05 21:37:47 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -1025,19 +1025,25 @@ R과 S의 조인에서의 모호성은 때때로 다른 관계들을 통해 해�
 - (4) $$ R(s, p) \rightarrow \exists j (S (p, j) \land T(j, s)) $$,
 - (4) $$ S(p, j) \rightarrow \exists s (T (j, s) \land R(s, p)) $$,
 
-그러면 R, S, T의 삼중 조인을 형성할 수 있습니다. 즉, 다음을 만족하는 삼진 관계를 만들 수 있습니다:
+그러면 R, S, T의 삼중 조인을 형성할 수 있습니다. 즉, 다음을 만족하는 삼진 관계를 만들 수 있습니다:[^trs-join]
 
 $$ π_{12} (U) = R, π_{23} (U) = S, π_{31} (U) = T. $$
 
+
+[^trs-join]: 역주: T와 S가 공유하는 컬럼이 하나 있고, T와 R이 공유하는 컬럼이 하나 있으며, 이를 통해 R과 S를 조인할 수 있다는 의미이다.
+
+<span id="section-2-1-3-7"/>
 
 >
 Such a join will be called a cyclic 3-join to distinguish it from a linear S-join which would be a quaternary relation V such that
 >
-$$ π_{12} (U) = R, π_{23} (U) = S, π_{31} (U) = T. $$
+$$ π_{12} (V) = R, π_{23} (V) = S, π_{34} (V) = T. $$
 
 이러한 조인은 순환 3-조인이라고 부르며, 이는 다음과 같은 사원 관계 V로 표현되는 선형 3-조인과 구별하기 위함입니다:
 
-$$ π_{12} (U) = R, π_{23} (U) = S, π_{31} (U) = T. $$
+$$ π_{12} (V) = R, π_{23} (V) = S, π_{34} (V) = T. $$
+
+<span id="section-2-1-3-8"/>
 
 >
 While it is possible for more than one cyclic 3-join to exist (see Figures 8,9, for an example), the circumstances under which this can occur entail much more severe constraints
@@ -1069,7 +1075,7 @@ $$
 >
 than those for a plurality of 2-joins. To be specific, the relations R, S, T must possess points of ambiguity with respect to joining R with S (say point x), S with T (say y), and T with R (say a), and, furthermore, y must be a relative of x under S, z a relative of y under T, and x a relative of z under R. Note that in Figure 8 the points $$ x = a ; y = d ; z = 2 $$ have this property.
 
-하나 이상의 순환 3-조인이 존재할 수 있지만(예시는 그림 8, 9 참조), 이것이 발생할 수 있는 상황은 2-조인의 복수 존재보다 훨씬 더 엄격한 제약을 수반합니다.
+하나 이상의 순환 3-조인이 존재할 수 있지만(예시는 그림 8, 9 참조), 이는 여러 개의 2-조인이 존재하는 경우보다 훨씬 더 엄격한 제약 조건을 필요로 합니다.
 
 $$
 \begin{array}{rrlrrlrrl}
@@ -1081,7 +1087,7 @@ R & (s  & p) & \ S & (p & j) & \ T & (j & s) \\
 \end{array}
 $$
 
-그림 8. 복수의 순환 3-조인을 가진 이진 관계들
+그림 8. 여러 개의 순환 3-조인을 가진 이진 관계들
 
 $$
 \begin{array}{rrclrrcl}
@@ -1096,7 +1102,9 @@ $$
 
 그림 9. 그림 8의 관계들의 두 가지 순환 3-조인
 
-구체적으로, 관계 R, S, T는 R과 S의 조인(예를 들어 점 x), S와 T의 조인(예를 들어 y), 그리고 T와 R의 조인(예를 들어 z)에 대해 모호점들을 가져야 하며, 더 나아가 y는 S 하에서 x의 관련 원소여야 하고, z는 T 하에서 y의 관련 원소여야 하며, x는 R 하에서 z의 관련 원소여야 합니다. 그림 8에서 점 $$ x = a ; y = d ; z = 2 $$가 이러한 속성을 가지고 있음을 주목하십시오.
+구체적으로, 관계 R, S, T는 R과 S의 조인(예를 들어 점 x), S와 T의 조인(예를 들어 y), 그리고 T와 R의 조인(예를 들어 z)에 대해 모호성이 있는 지점들을 가져야 하며, 더 나아가 y는 S 하에서 x의 관련 원소여야 하고, z는 T 하에서 y의 관련 원소여야 하며, x는 R 하에서 z의 관련 원소여야 합니다. 그림 8에서 점 $$ x = a ; y = d ; z = 2 $$가 이러한 속성을 가지고 있음을 확인할 수 있습니다.
+
+<span id="section-2-1-3-9"/>
 
 >
 The natural linear 3-join of three binary relations R, S, T is given by
