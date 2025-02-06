@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-05 21:37:47 +0900
+updated : 2025-02-06 21:10:45 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -1124,7 +1124,7 @@ $$ \gamma (R*S*T). $$
 
 $$ R*S*T = { (a, b, c, d):R (a, b) \land S (b, c) \land T (c, d)} $$
 
-여기서 자연 2-조인(*)이 결합법칙을 만족하기 때문에 좌변에는 괄호가 필요하지 않습니다. 순환 대응물을 얻기 위해, 우리는 연산자 γ를 도입합니다. 이 연산자는 양 끝을 함께 묶음으로써 차수 n인 관계로부터 차수 n-1인 관계를 만들어냅니다. 따라서 R이 n항 관계일 때(n ≥ 2), R의 묶음은 다음 방정식으로 정의됩니다:
+여기서 자연 2-조인(*)이 결합법칙을 만족하기 때문에 좌변에는 괄호가 필요하지 않습니다. 순환 대응물을 얻기 위해, 우리는 연산자 γ[^call-gamma]를 도입합니다. 이 연산자는 양 끝을 함께 묶음으로써 차수 n인 관계로부터 차수 n-1인 관계를 만들어냅니다. 따라서 R이 n항 관계일 때(n ≥ 2), R의 묶음은 다음 방정식으로 정의됩니다:
 
 $$ \gamma(R) = \{(a_1, a_2, ... , a_{n-1}):R(a_1, a_2, ..., a_{n-1}, a_n) \land a_1 = a_n \}. $$
 
@@ -1132,11 +1132,17 @@ $$ \gamma(R) = \{(a_1, a_2, ... , a_{n-1}):R(a_1, a_2, ..., a_{n-1}, a_n) \land 
 
 $$ \gamma (R*S*T). $$
 
+[^call-gamma]: 역주: γ는 그리스 문자로 감마(gamma).
+
+<span id="section-2-1-3-10"/>
+
 >
 Extension of the notions of linear and cyclic S-join and their natural counterparts to the joining of n binary relations (where n ≥ 3) is obvious. A few words may be appropriate, however, regarding the joining of relations which are not necessarily binary. Consider the case of two relations R (degree r), S (degree s) which are to be joined on p of their domains $$(p < r, p < s)$$. For simplicity, suppose these p domains are the last p of the r domains of R, and the first p of the s domains of S. If this were not so, we could always apply appropriate permutations to make it
 so. Now, take the Cartesian product of the first r-p domains of R, and call this new domain A. Take the Cartesian product of the last p domains of R, and call this B. Take the Cartesian product of the last s-p domains of S and call this C.
 
-선형 및 순환 3-조인의 개념과 그들의 자연적 대응물을 n개의 이진 관계들의 조인으로 확장하는 것(여기서 n ≥ 3)은 명백합니다. 하지만 반드시 이진일 필요가 없는 관계들의 조인에 대해서는 몇 마디 설명이 필요할 수 있습니다. 차수가 r인 관계 R과 차수가 s인 관계 S가 p개의 도메인에서 조인되는 경우를 고려해봅시다$$(p<r,p<s)$$. 단순화를 위해, 이 p개의 도메인들이 R의 r개 도메인 중 마지막 p개이고, S의 s개 도메인 중 처음 p개라고 가정합시다. 만약 그렇지 않다면, 우리는 항상 적절한 순열을 적용하여 그렇게 만들 수 있습니다. 이제 R의 처음 r-p개 도메인들의 카테시안 곱을 취하고, 이 새로운 도메인을 A라고 부릅시다. R의 마지막 p개 도메인들의 카테시안 곱을 취하고, 이를 B라고 부릅시다. S의 마지막 s-p개 도메인들의 카테시안 곱을 취하고 이를 C라고 부릅시다.
+선형 및 순환 3-조인의 개념과 그들의 자연적 대응물을 n개의 이진 관계들의 조인으로 확장하는 것(여기서 n ≥ 3)은 명백합니다. 하지만 반드시 이진일 필요가 없는 관계들의 조인에 대해서는 몇 마디 설명이 필요할 수 있습니다. 차수가 r인 관계 R과 차수가 s인 관계 S가 p개의 도메인에서 조인되는 경우를 고려해봅시다$$(p<r,p<s)$$. 설명을 단순화하기 위해, 이 p개의 도메인들이 R의 r개 도메인 중 마지막 p개와 일치하고, S의 s개 도메인 중 처음 p개와 일치한다고 가정합시다. 만약 그렇지 않다면, 우리는 항상 적절한 순열을 적용하여 그렇게 만들 수 있습니다. 이제 R의 처음 r-p개 도메인들의 카테시안 곱을 취하고, 이 새로운 도메인을 A라고 부릅시다. R의 마지막 p개 도메인들의 카테시안 곱을 취하고, 이를 B라고 부릅시다. S의 마지막 s-p개 도메인들의 카테시안 곱을 취하고 이를 C라고 부릅시다.
+
+
 
 >
 We can treat R as if it were a binary relation on the domains A, B. Similarly, we can treat S as if it were a binary relation on the domains B, C. The notions of linear and cyclic 3-join are now directly applicable. A similar approach can be taken with the linear and cyclic n-joins of n relations of assorted degrees.
