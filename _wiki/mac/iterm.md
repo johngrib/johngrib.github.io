@@ -3,7 +3,7 @@ layout  : wiki
 title   : iTerm
 summary : iTerm2 문제 해결 및 설정 경험을 모아본다
 date    : 2020-03-23 11:35:51 +0900
-updated : 2024-09-13 18:14:58 +0900
+updated : 2025-02-07 23:12:53 +0900
 tag     : mac
 resource: 01/5EE992-8715-460E-A336-239AE4A4EA4D
 toc     : true
@@ -102,4 +102,34 @@ brew cask install iterm2
 - `Preferences` - `Advanced` 에서 `new tabs`로 검색해도 찾을 수 있다.
 
 이 옵션이 `Yes`이면 새로운 탭을 열 때마다 가장 오른쪽에 생겨난다. 탭을 많이 열고 사용하는 나는 이 옵션을 반드시 `No`로 설정한다.
+
+## tmux 통합 {#tmux}
+
+- iTerm의 [[/cmd/tmux]] 통합 기능을 사용하면
+    - iTerm을 껐다 켜도 터미널 세션이 유지되므로 편리하다.
+    - tmux의 화면 분할이 마치 네이티브 앱처럼 동작해서 나름의 시각적 즐거움이 있다.
+
+다음과 같이 `-CC` 옵션을 사용하면 iTerm의 tmux 통합 기능을 사용할 수 있다.
+
+```bash
+tmux -CC
+```
+
+나는 다음과 같이 설정해서 사용하는 편이다.
+
+`Preferences` - `Profiles` - `General` - `Command` 에서 `Command`를 선택하고 오른쪽 입력칸에 다음과 같이 작성한다.
+
+```bash
+/usr/local/bin/tmux -CC new -A -s main
+```
+
+- `-CC`는 iTerm2와 tmux를 통합하는 옵션이다.
+- `-A`는 tmux 세션을 붙이는 옵션이다.
+- `-s main`은 세션 이름을 `main`으로 지정하는 옵션이다.
+
+## Links
+
+- tmux 통합 기능
+    - [tmux Integration (iterm2.com)](https://iterm2.com/documentation-tmux-integration.html )
+    - [tmux Integration Best Practices (gitlab.com/gnachman/iterm2)](https://gitlab.com/gnachman/iterm2/-/wikis/tmux-Integration-Best-Practices )
 
