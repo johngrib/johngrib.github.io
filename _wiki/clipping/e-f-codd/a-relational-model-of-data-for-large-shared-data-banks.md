@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-06 21:10:45 +0900
+updated : 2025-02-08 23:40:41 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -1142,7 +1142,7 @@ so. Now, take the Cartesian product of the first r-p domains of R, and call this
 
 선형 및 순환 3-조인의 개념과 그들의 자연적 대응물을 n개의 이진 관계들의 조인으로 확장하는 것(여기서 n ≥ 3)은 명백합니다. 하지만 반드시 이진일 필요가 없는 관계들의 조인에 대해서는 몇 마디 설명이 필요할 수 있습니다. 차수가 r인 관계 R과 차수가 s인 관계 S가 p개의 도메인에서 조인되는 경우를 고려해봅시다$$(p<r,p<s)$$. 설명을 단순화하기 위해, 이 p개의 도메인들이 R의 r개 도메인 중 마지막 p개와 일치하고, S의 s개 도메인 중 처음 p개와 일치한다고 가정합시다. 만약 그렇지 않다면, 우리는 항상 적절한 순열을 적용하여 그렇게 만들 수 있습니다. 이제 R의 처음 r-p개 도메인들의 카테시안 곱을 취하고, 이 새로운 도메인을 A라고 부릅시다. R의 마지막 p개 도메인들의 카테시안 곱을 취하고, 이를 B라고 부릅시다. S의 마지막 s-p개 도메인들의 카테시안 곱을 취하고 이를 C라고 부릅시다.
 
-
+<span id="section-2-1-3-11"/>
 
 >
 We can treat R as if it were a binary relation on the domains A, B. Similarly, we can treat S as if it were a binary relation on the domains B, C. The notions of linear and cyclic 3-join are now directly applicable. A similar approach can be taken with the linear and cyclic n-joins of n relations of assorted degrees.
@@ -1153,15 +1153,21 @@ We can treat R as if it were a binary relation on the domains A, B. Similarly, w
 
 2.1.4. 합성
 
+<span id="section-2-1-4-1"/>
+
 >
 The reader is probably familiar with the notion of composition applied to functions. We shall discuss a generalization of that concept and apply it first to binary relations. Our definitions of composition and composability are based very directly on the definitions of join and joinability given above.
 
 이 논문의 독자들은 아마도 함수에 적용되는 합성의 개념에 익숙할 것입니다. 우리는 그 개념의 일반화에 대해 논의하고 이를 먼저 이진 관계에 적용할 것입니다. 우리의 합성과 합성 가능성에 대한 정의는 앞서 제시한 조인과 조인 가능성의 정의에 매우 직접적으로 기반합니다.
 
+<span id="section-2-1-4-2"/>
+
 >
 Suppose we are given two relations R, S. T is a camposition of R with S if there exists a join U of R with S such that $$ T = π_{13} (U) $$. Thus, two relations are composable if and only if they are joinable. However, the existence of more than one join of R with S does not imply the existence of more than one composition of R with S.
 
 두 관계 R, S가 주어졌다고 가정합시다. R과 S의 조인 U가 존재하여 $$ T = π_{13} (U) $$ 를 만족할 때, T는 R과 S의 합성이라고 합니다. 따라서, 두 관계는 조인 가능할 때만, 그리고 그때에만 합성 가능합니다. 하지만, R과 S의 조인이 하나 이상 존재한다고 해서 반드시 R과 S의 합성이 하나 이상 존재한다는 것을 의미하지는 않습니다.
+
+<span id="section-2-1-4-3"/>
 
 >
 Corresponding to the natural join of R with S is the natural composition <sup>9</sup> of R with S defined by
@@ -1223,6 +1229,58 @@ $$
 그림 11. R과 S의 또 다른 합성(그림 5로부터)
 
 <sup>9</sup> 다른 저자들은 자연 합성 이외의 합성들을 무시하는 경향이 있으며, 따라서 이 특정한 합성을 그냥 합성이라고 부릅니다 - 예를 들어, Kelley의 "일반 위상수학"을 참고하세요.
+
+<span id="section-2-1-4-4"/>
+
+>
+When two or more joins exist, the number of distinct compositions may be as few as one or as many as the number of distinct joins. Figure 12 shows an example of two relations which have several joins but only one composition. Note that the ambiguity of point c is lost in composing R with S, because of unambiguous associations made via the points a, b, d, e.
+>
+$$
+\begin{array}{ccc}
+R & (supplier & part) & \quad S & (part & project) \\
+  &     1     &   a   &         &   a   &    g     \\
+  &     1     &   b   &         &   b   &    f     \\
+  &     1     &   c   &         &   c   &    f     \\
+  &     2     &   c   &         &   c   &    g     \\
+  &     2     &   d   &         &   d   &    g     \\
+  &     2     &   e   &         &   e   &    f     \\
+\end{array}
+$$
+>
+FIG 12. Many joins, only one composition
+
+두 개 이상의 조인이 존재할 때, 서로 다른 합성의 수는 최소 하나에서 최대 서로 다른 조인의 수만큼일 수 있습니다. 그림 12는 여러 조인을 가지지만 오직 하나의 합성만을 가지는 두 관계의 예를 보여줍니다. 점 a, b, d, e를 통한 명확한 연관성으로 인해, R과 S를 합성할 때 점 c의 모호성이 사라진다는 점에 주목하세요.
+
+$$
+\begin{array}{ccc}
+R & (supplier & part) & \quad S & (part & project) \\
+  &     1     &   a   &         &   a   &    g     \\
+  &     1     &   b   &         &   b   &    f     \\
+  &     1     &   c   &         &   c   &    f     \\
+  &     2     &   c   &         &   c   &    g     \\
+  &     2     &   d   &         &   d   &    g     \\
+  &     2     &   e   &         &   e   &    f     \\
+\end{array}
+$$
+
+그림 12. 여러 조인이 가능하나 오직 하나의 합성만을 가지는 예
+
+<span id="section-2-1-4-5"/>
+
+>
+Extension of composition to pairs of relations which are not necessarily binary (and which may be of different degrees) follows the same pattern as extension of pairwise joining to such relations.
+
+반드시 이항 관계일 필요가 없는(그리고 차수가 다를 수 있는[^diff-degree]) 관계 쌍들에 대한 합성의 확장은, 그러한 관계들에 대한 쌍별 조인의 확장과 같은 패턴을 따릅니다.
+
+[^diff-degree]: 역주: 차수가 다를 수 있다는 것은 속성의 개수가 서로 다를 수 있다는 뜻.
+
+<span id="section-2-1-4-6"/>
+
+>
+A lack of understanding of relational composition has led several systems designers into what may be called the connection trap. This trap may be described in terms of the following example. Suppose each supplier description is linked by pointers to the descriptions of each part supplied by that supplier, and each part description is similarly linked to the descriptions of each project which uses that part. A conclusion is now drawn which is, in general, erroneous: namely that, if all possible paths are followed from a given supplier via the parts he supplies to the projects using those parts, one will obtain a valid set of all projects supplied by that supplier. Such a conclusion is correct only in the very special case that the target relation between projects and suppliers is, in fact, the natural composition of the other two relations-and we must normally add the phrase “for all time,” because this is usually implied in claims concerning path-following techniques.
+
+관계적 합성에 대한 이해 부족으로 인해 여러 시스템 설계자들이 이른바 '연결 함정(connection trap)'에 빠지게 되었습니다. 이 함정은 다음 예시를 통해 설명될 수 있습니다. 각 공급자 설명이 그 공급자가 공급하는 각 부품의 설명들과 포인터로 연결되어 있고, 각 부품 설명이 비슷한 방식으로 그 부품을 사용하는 각 프로젝트의 설명들과 연결되어 있다고 가정해 봅시다. 이제 일반적으로 잘못된 결론이 도출됩니다: 즉, 주어진 공급자로부터 그가 공급하는 부품들을 거쳐 그 부품들을 사용하는 프로젝트들까지 가능한 모든 경로를 따라가면, 그 공급자가 공급하는 모든 프로젝트들의 유효한 집합을 얻을 수 있다는 것입니다. 이러한 결론은 잘못된 것이며 프로젝트와 공급자 사이의 대상 관계가 실제로 다른 두 관계의 자연 합성인 매우 특별한 경우에만 옳습니다 - 그리고 보통 우리는 "모든 시점에서"라는 구절을 추가해야 합니다. 왜냐하면 이는 일반적으로 경로 추적 기법에 대한 주장에서 암시되기 때문입니다.
+
 
 ##### 2.1.5. Restriction.
 
