@@ -3,7 +3,7 @@ layout  : wiki
 title   : 비서 문제(Secretary problem)
 summary : 37% 법칙
 date    : 2018-03-31 18:03:21 +0900
-updated : 2023-04-13 21:44:56 +0900
+updated : 2025-02-08 21:52:14 +0900
 tag     : math
 resource: 47/A89431-8C3E-4503-AE2E-54CA29A383EF
 toc     : true
@@ -311,9 +311,10 @@ r 전략의 성공 확률 =
 
 $$
 \begin{align}
-P(r) & = \sum_{i = r}^{n}P(\text{A가 i 번째 순서} \cap \text{i 번째 지원자를 합격시킴}) \\
+P(r) & = \sum_{i = r}^{n}P(\text{A가 i 번째 순서 } \cap \text{ i 번째 지원자를 합격시킴}) \\
     & = \sum_{i = r}^{n}P(\text{A가 i 번째 순서}) \times P(\text{i 번째 지원자를 합격시킴}) \\
-    & = \sum_{i = r}^{n}P(\text{A가 i 번째 순서}) \times P(\text{i보다 먼저 면접을 보는 지원자들 중 최고 점수를 가진 지원자가} \beta \text{에 있음}) \\
+    & = \sum_{i = r}^{n}P(\text{A가 i 번째 순서}) \\
+    & \qquad \times P(\text{i보다 먼저 면접을 보는 지원자들 중 최고 점수를 가진 지원자가} \beta \text{에 있음}) \\
     & = \sum_{i = r}^{n}\frac{1}{n} \times \frac{r - 1}{i - 1} \\
     & = \frac{r - 1}{n}\sum_{i = r}^{n}\frac{1}{i - 1}
 \end{align}
