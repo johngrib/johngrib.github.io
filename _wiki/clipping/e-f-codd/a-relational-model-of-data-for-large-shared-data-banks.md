@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-09 16:37:48 +0900
+updated : 2025-02-09 19:32:27 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -1449,10 +1449,15 @@ An important reason for the existence of strong redundancies in the named set of
 
 2.2.2. 약한 중복성
 
+<span id="section-2-2-2-1"/>
+
 >
 A second type of redundancy may exist. In contrast to strong redundancy it is not characterized by an equation. A colIection of relations is weakly redundant if it contains a relation that has a projection which is not derivable from other members but is at all times a projection of some join of other projections of relations in the collection.
 
-두 번째 유형의 중복성도 있습니다. 강한 중복성과는 대조적으로 이는 방정식으로 특징지어지지 않습니다. 관계들의 집합은 만약 그 집합이 다른 멤버들로부터는 도출될 수 없지만 항상 그 집합 내 다른 관계들의 투영들의 어떤 조인의 투영인 투영을 가진 관계를 포함하고 있다면 약한 중복성을 가집니다.
+두 번째 유형의 중복성도 있습니다. 이는 강한 중복성과는 달리 방정식으로 표현되지 않는 특징이 있습니다.
+관계들의 집합에서, 어떤 관계가 가진 투영이 다른 멤버들로부터 직접 도출되지는 않지만 항상 그 집합 내 다른 관계들의 투영들을 조인한 결과의 투영이 될 수 있다면, 이를 약한 중복성이라고 합니다.
+
+<span id="section-2-2-2-2"/>
 
 >
 We can exhibit a weak redundancy by taking the second example (cited above) for a strong redundancy, and assuming now that condition C does not hold at all times.
@@ -1461,15 +1466,23 @@ by the statement: for all time, $$ π_{12} (P) $$ is some composition of $$ π_{
 >
 <sup>10</sup> A binary relation is complex if neither it nor its converse is a function.
 
-우리는 강한 중복성에 대한 두 번째 예제(위에서 인용한)를 가져와서 이제는 조건 C가 항상 성립하지는 않는다고 가정함으로써 약한 중복성을 보여줄 수 있습니다.
-관계들 $$ π_{12} (P), π_{12} (Q), π_{12} (R) $$은 복잡한<sup>10</sup> 관계들로, 임의의 두 관계의 잠재적 조인에서 모호성이 수시로 발생할 수 있습니다. 이러한 상황에서는 이들 중 어느 것도 다른 두 관계로부터 도출될 수 없습니다. 하지만 이들 간에는 제약이 존재하는데, 각각이 이 세 관계의 어떤 순환적 조인의 투영이기 때문입니다. 약한 중복성 중 하나는 다음 진술로 특징지어질 수 있습니다: 모든 시점에서 $$ π_{12} (P) $$는 $$ π_{12} (Q) $$와 $$ π_{21} (R) $$의 임의의 합성입니다. 여기서 언급된 합성은 어떤 순간에는 자연스러운 것일 수 있고 다른 순간에는 자연스럽지 않은 것일 수 있습니다.
+앞서 살펴본 강한 중복성의 두 번째 예제에서 조건 C가 항상 성립하지는 않는다고 가정하면 약한 중복성의 예시를 볼 수 있습니다.
+$$ π_{12} (P), π_{12} (Q), π_{12} (R) $$은 복잡한<sup>10</sup> 관계들입니다.
+이때 임의의 두 관계를 조인하면 모호한 지점들이 때때로 발생할 수 있습니다.
+이러한 상황에서는 세 관계 중 어느 하나도 나머지 두 관계로부터 도출할 수 없습니다.
+그러나 각 관계가 이 세 관계의 순환적 조인을 투영한 결과이므로, 이들 사이에는 제약 조건이 존재합니다. 약한 중복성의 한 예는 다음과 같이 표현할 수 있습니다:
+$$ π_{12} (P) $$는 언제나 $$ π_{12} (Q) $$와 $$ π_{21} (R) $$의 임의의 합성으로 표현됩니다.
+이때 합성 방식은 특정 시점에서는 자연스러울(natural) 수 있고, 다른 시점에서는 자연스럽지 않을 수 있습니다.
 
-<sup>10</sup> 이항 관계는 만약 그 관계나 그것의 역관계 중 어느 것도 함수가 아닐 경우 '복잡하다'고 표현합니다.
+<sup>10</sup> 이항 관계는 그 자체와 역관계가 둘 다 함수가 아닐 때 '복잡하다'고 표현합니다.
+
+<span id="section-2-2-2-3"/>
 
 >
 Generally speaking, weak redundancies are inherent in the logical needs of the community of users. They are not removable by the system or data base administrator. If they appear at all, they appear in both the named set and the stored set of representations.
 
-일반적으로 말해서, 약한 중복성은 사용자 커뮤니티의 논리적 요구사항에 내재되어 있습니다. 이는 시스템이나 데이터베이스 관리자가 제거할 수 없습니다. 만약 이것이 나타난다면, 명명된 집합과 저장된 표현들의 집합 모두에서 나타납니다.
+일반적으로 약한 중복성은 사용자들의 논리적 요구사항에서 비롯됩니다.
+이러한 중복성은 시스템이나 데이터베이스 관리자가 제거할 수 없으며, 일단 발생하면 명명된 집합과 저장된 표현들의 집합 모두에서 나타나게 됩니다.
 
 #### 2.3. CONSISTENCY
 
