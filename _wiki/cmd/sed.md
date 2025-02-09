@@ -3,7 +3,7 @@ layout  : wiki
 title   : sed
 summary : stream editor
 date    : 2019-11-19 10:20:19 +0900
-updated : 2024-09-29 22:38:39 +0900
+updated : 2025-02-09 20:40:35 +0900
 tag     : bash command grep
 resource: 68/662004-9C4E-4E3F-BC9F-E2C2C0D50D33
 toc     : true
@@ -460,6 +460,34 @@ test
 ```
 
 - `gsed -E '4 atest'` : 4번째 라인의 아랫줄에 test를 추가한다.
+
+## 플래그 {#flag}
+
+### g : 전역 치환 {#flag-g}
+
+가장 많이 사용하는 플래그 중 하나.
+
+```
+$ echo 'aaaaa' | sed 's/a/-/g'
+-----
+```
+
+### i : 대소문자 구분하지 않음 {#flag-i}
+
+```
+$ echo 'aaAAA' | sed 's/a/-/gi'
+-----
+```
+
+### 숫자 : n번째 매칭된 문자열만 치환 {#flag-number}
+
+```
+$ echo 'aaaaa' | sed 's/a/-/2'
+a-aaa
+
+$ echo 'aaaaa' | sed 's/a/-/4'
+aaa-a
+```
 
 ## 실제 활용한 명령어들
 
