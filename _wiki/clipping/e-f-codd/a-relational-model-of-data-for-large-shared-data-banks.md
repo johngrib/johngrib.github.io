@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-08 23:40:41 +0900
+updated : 2025-02-09 16:22:40 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -1286,10 +1286,16 @@ A lack of understanding of relational composition has led several systems design
 
 2.1.5. 제한
 
+<span id="section-2-1-5-1"/>
+
 >
 A subset of a relation is a relation. One way in which a relation S may act on a relation R to generate a subset of R is through the operation restriction of R by S. This operation is a generalization of the restriction of a function to a subset of its domain, and is defined as follows.
 
-관계의 부분집합은 관계입니다. 관계 S가 관계 R에 작용하여 R의 부분집합을 생성할 수 있는 한 방법은 S에 의한 R의 제한 연산을 통해서입니다. 이 연산은 함수를 그 정의역의 부분집합으로 제한하는 것을 일반화한 것이며, 다음과 같이 정의됩니다.
+'관계'의 부분집합 또한 '관계'입니다.[^subset-of-a-relation] 그러므로 관계 S에 의한 R의 제한 연산은, 관계 S가 관계 R에 작용하여 R의 부분집합을 생성하는 방법들 중 하나입니다. 이 연산은 함수를 그 정의역의 부분집합으로 제한하는 것을 일반화한 것이며, 다음과 같이 정의됩니다.
+
+[^subset-of-a-relation]: 역주: '관계'의 부분집합도 '관계'. 이 문장을 번역하면서 `SELECT * FROM (SELECT * FROM R WHERE ...) AS subset` 같은 SQL 쿼리가 떠올랐다.
+
+<span id="section-2-1-5-2"/>
 
 >
 Let L, M be equal-length lists of indices such that $$ L = i_1 , i_2, ... , i_k, M = j_1, j_2, ... , j_k $$ where k ≤ degree of R and k ≤ degree of S. Then the L, M restriction of R by S denoted $$ R_L \vert _M S $$ is the maximal subset R’ of R such that
@@ -1298,11 +1304,15 @@ $$ π_L(R’) = π_M(S). $$
 >
 The operation is defined only if equality is applicable between elements of $$ π_{i_h}(R) $$ on the one hand and $$ π_{j_h} (S)$$ on the other for all $$ h = 1, 2, ... , k $$.
 
-L, M이 같은 길이를 가진 인덱스 목록이라고 하고 $$ L = i_1 , i_2, ... , i_k, M = j_1, j_2, ... , j_k $$ 이며, 여기서 k 는 R의 차수 이하이고 S의 차수 이하라고 합시다. 그러면 $$ R_L \vert _M S $$ 로 표기되는 S에 의한 R의 L, M 제한은 다음을 만족하는 R 의 최대 부분집합 R’입니다:
+L, M이 같은 길이를 가진 인덱스 목록이라고 하고 $$ L = i_1 , i_2, ... , i_k, M = j_1, j_2, ... , j_k $$ 이며, 여기서 k 는 R의 차수 이하이고 S의 차수 이하라고 합시다. 그러면 $$ R_L \vert _M S $$ 로 표기되는 S에 의한 R의 L, M의 제한은 다음을 만족하는 R 의 최대 부분집합 R’입니다:
 
 $$ π_L(R’) = π_M(S). $$
 
-이 연산은 모든 $$ h = 1, 2, ... , k $$에 대해 한쪽의 $$ π_{i_h}(R) $$ 원소들과 다른 쪽의 $$ π_{j_h} (S)$$ 원소들 사이에 등호가 적용 가능할 때만 정의됩니다.
+이 연산은 모든 $$ h = 1, 2, ... , k $$에 대해 $$ π_{i_h}(R) $$ 원소들과 $$ π_{j_h} (S)$$ 원소들 사이에 등호 연산이 적용 가능할 때만 정의됩니다.[^maximal-subset]
+
+[^maximal-subset]: 역주: 최대 부분집합이라는 표현이 좀 헷갈리긴 하지만, `SELECT * FROM (SELECT * FROM R WHERE ...) AS subset` 같은 SQL 쿼리를 생각하면 이해할 수 있다. `SELECT * FROM ( ... ) AS subset` 은 `SELECT * FROM R WHERE ...`의 부분집합일 수 밖에 없다. 즉, $$ π_L(R’) = π_M(S) $$은 원본 테이블의 컬럼들로 데이터 선택이 제한된다는 의미이기도 하다.
+
+<span id="section-2-1-5-3"/>
 
 >
 The three relations R, S, R’ of Figure 13 satisfy the equation $$ R' = R_{(2,3)} \vert_{(1,2)} S $$.
@@ -1321,6 +1331,8 @@ $$
 > FIG. 13. Example of restriction
 
 그림 13의 세 관계 R, S, R'은 $$ R' = R_{(2,3)} \vert_{(1,2)} S $$ 식을 만족합니다.
+
+<span id="section-2-1-5-4"/>
 
 >
 We are now in a position to consider various applications of these operations on relations.
