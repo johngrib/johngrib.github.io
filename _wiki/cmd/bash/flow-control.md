@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash 셸 스크립트 흐름 제어
 summary : 
 date    : 2023-08-15 08:08:03 +0900
-updated : 2025-02-09 21:05:40 +0900
+updated : 2025-02-09 21:26:46 +0900
 tag     : 
 resource: 0E/75B348-932C-40BE-B3D8-2A55B9044435
 toc     : true
@@ -247,19 +247,55 @@ esac
 ```
 
 ## 루프 {#loop}
-### for
+
+- 아래의 모든 루프 형식에서 `break`와 `continue`를 사용하는 것이 가능하다.
+
+### for .. in .. do .. done {#for-in-do-done}
 
 ```bash
-for color in red blue white; do
-    echo "이번 색깔은 $color 입니다"
+for fileName in ~/Downloads/*; do
+    echo $fileName
+done
+```
+
+아래와 같이 `do`를 아랫줄로 내려도 된다.
+
+```bash
+for fileName in ~/Downloads/*
+do
+    echo $fileName
 done
 ```
 
 확장 규칙을 사용해 이렇게 할 수도 있다.
 
 ```bash
-for color in {1..3}; do
-    echo "이번 숫자는 $color 입니다"
+for number in {1..30}; do
+    echo "이번 숫자는 $number 입니다"
+done
+```
+
+건너뛰기가 필요하다면 뒤에 `..숫자`를 붙여주면 된다.
+
+```bash
+$ for number in {1..30..3}; do echo "이번 숫자는 $number 입니다"; done
+이번 숫자는 1 입니다
+이번 숫자는 4 입니다
+이번 숫자는 7 입니다
+이번 숫자는 10 입니다
+이번 숫자는 13 입니다
+이번 숫자는 16 입니다
+이번 숫자는 19 입니다
+이번 숫자는 22 입니다
+이번 숫자는 25 입니다
+이번 숫자는 28 입니다
+```
+
+아래와 같이 리스트 항목을 일일이 지정하는 것도 가능하다.
+
+```bash
+for color in red blue white; do
+    echo "이번 색깔은 $color 입니다"
 done
 ```
 
@@ -272,6 +308,8 @@ for color in "${colors[@]}"; do
 done
 ```
 
+### for ((i = 0; i < N; i++)); do .. done {#for-i}
+
 C 계열 프로그래밍 언어에서 사용하는 for 문과 비슷하게 사용할 수도 있다.
 
 ```bash
@@ -280,7 +318,17 @@ for ((i=0; i<4; i++)); do
 done
 ```
 
-### while
+`i`를 건너뛰며 증가시킬 필요가 있다면 `+=`를 쓰면 된다.
+
+```bash
+for ((i=0; i<40; i+=10)); do echo "인덱스: $i"; done
+인덱스: 0
+인덱스: 10
+인덱스: 20
+인덱스: 30
+```
+
+### while .. do .. done {#while-do-done}
 
 ```bash
 i=0
@@ -298,4 +346,81 @@ done
 ```bash
 i=0; while [ $i -lt 10 ]; do echo "인덱스: $i"; i=$((i+1)); sleep 1; done
 ```
+
+다음과 같이 `++`을 사용하는 것도 가능하다.
+
+```bash
+i=0
+while \[[ $i -lt 10 ]]; do
+    echo "인덱스: $i"
+    ((i++))
+    sleep 1
+done
+```
+
+물론 `--`도 사용할 수 있다.
+
+```bash
+i=10
+while \[[ $i -gt 0 ]]; do
+    echo "인덱스: $i"
+    ((i--))
+    sleep 1
+done
+```
+
+### while true; do .. done {#while-true}
+
+무한 루프를 돌리고 싶다면 일반적인 프로그래밍 언어들과 비슷하게 `while true`를 사용하면 된다.
+
+```bash
+while true; do
+    echo "무한 루프"
+    sleep 1
+done
+```
+
+다음과 같이 `true` 대신 `:`를 사용할 수도 있다.[^why-colon]
+
+```bash
+while :; do
+    echo "무한 루프"
+    sleep 1
+done
+```
+
+### while read line; do .. done {#while-read}
+
+`read` 명령을 사용하면 입력을 한 줄씩 읽어들일 수 있다.
+
+```bash
+cat /etc/passwd | while read line; do
+    echo $line
+done
+```
+
+`|`를 쓰지 않고 `<`로 입력을 제공해도 된다.
+
+```bash
+while read line; do
+    echo $line
+done < /etc/passwd
+```
+
+### until .. do .. done {#until-do-done}
+
+`while`과 비슷하지만 조건이 반대이다. 나는 헷갈려서 안 쓰고 그냥 `while`을 쓴다.
+
+```bash
+i=0
+until [ $i -eq 10 ]; do
+    echo "인덱스: $i"
+    i=$((i+1))
+    sleep 1
+done
+```
+
+## 주석
+
+[^why-colon]: `:`는 항상 성공으로 끝나는(항상 true) no operation 이다.
 
