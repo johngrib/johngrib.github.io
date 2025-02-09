@@ -3,7 +3,7 @@ layout  : wiki
 title   : kill
 summary : terminate or signal a process
 date    : 2023-05-07 00:00:38 +0900
-updated : 2024-03-03 13:07:05 +0900
+updated : 2025-02-09 15:53:06 +0900
 tag     : 
 resource: 90/72958A-66BE-4D3B-87B5-27B03E66207F
 toc     : true
@@ -197,6 +197,29 @@ lsof -i tcp:3000 | xargs kill
 보통 이런 상황은 사라진 볼륨을 기다리는 것과 같은 일종의 퇴행적인 I/O 베이퍼록<sup>vaporlock</sup> 때문에 발생한다.
 보통 이런 경우 프로세스들을 제거하는 유일한 방법은 재부팅뿐이다.
 [^handbook-191]
+
+### 이름으로 찾아 죽이기 {#kill-by-name}
+
+`pkill`: 프로세스 이름과 부분 일치하는 프로세스를 찾아서 종료.
+
+```bash
+pkill -f "Finder"   # Finder라는 이름과 매칭되는 프로세스를 종료
+pkill -i "finder"   # i 옵션을 주면 대소문자를 구분하지 않는다.
+pkill -9 -f "Finder"
+```
+
+`killall`: 프로세스 이름과 정확히 일치하는 프로세스를 찾아서 종료.
+
+```bash
+killall "Finder"
+killall -9 "Finder"
+```
+
+이름의 일부만 알고 있다면 일단 `ps`로 찾아보고 `kill`로 종료하는 방법도 있다.
+
+```bash
+ps aux | grep "Finder"  # PID 확인하고, 확인한 PID로 kill 명령어 사용
+```
 
 ## PID 0, 1
 
