@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash 셸 스크립트 흐름 제어
 summary : 
 date    : 2023-08-15 08:08:03 +0900
-updated : 2024-10-02 22:40:27 +0900
+updated : 2025-02-09 21:05:40 +0900
 tag     : 
 resource: 0E/75B348-932C-40BE-B3D8-2A55B9044435
 toc     : true
@@ -246,7 +246,8 @@ case $answer in
 esac
 ```
 
-## for
+## 루프 {#loop}
+### for
 
 ```bash
 for color in red blue white; do
@@ -279,7 +280,7 @@ for ((i=0; i<4; i++)); do
 done
 ```
 
-## while
+### while
 
 ```bash
 i=0
