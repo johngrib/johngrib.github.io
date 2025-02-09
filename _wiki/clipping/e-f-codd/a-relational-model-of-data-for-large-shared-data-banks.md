@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-09 16:22:40 +0900
+updated : 2025-02-09 16:37:48 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -1343,10 +1343,14 @@ We are now in a position to consider various applications of these operations on
 
 2.2. 중복성
 
+<span id="section-2-2-1"/>
+
 >
 Redundancy in the named set of relations must be distinguished from redundancy in the stored set of representations. We are primarily concerned here with the former. To begin with, we need a precise notion of derivability for relations.
 
 명명된 관계들의 집합에서의 중복성은 저장된 표현들의 집합에서의 중복성과 구별되어야 합니다. 여기서 우리는 주로 전자에 관심이 있습니다. 먼저, 우리는 관계들의 도출 가능성에 대한 정확한 개념이 필요합니다.
+
+<span id="section-2-2-1-1"/>
 
 >
 Suppose Θ is a collection of operations on relations and each operation has the property that from its operands it yields a unique relation (thus natural join is eligible, but join is not). A relation R is Θ-derivable from a set S of relations if there exists a sequence of operations from the collection Θ which, for all time, yields R from members of S. The phrase “for all time” is present, because we are dealing with time-varying relations, and our interest is in derivability which holds over a significant period of time. For the named set of relationships in noninferential systems, it appears that an adequate collection $$Θ_1$$ contains the following operations: projection, natural join, tie, and restriction. Permutation is irrelevant and natural composition need not be included, because it is obtainable by taking a natural join and then a projection. For the stored set of representations, an adequate collection $$Θ_2$$ of operations would include permutation and additional operations concerned with sub-setting and merging relations, and ordering and connecting their elements.
@@ -1354,9 +1358,29 @@ Suppose Θ is a collection of operations on relations and each operation has the
 Θ가 관계들에 대한 연산들의 집합이고 각 연산이 피연산자들로부터 유일한 관계를 산출하는 속성을 가진다고 가정해봅시다(따라서 자연 조인은 적격이지만, 조인은 그렇지 않습니다). 관계 R이 관계들의 집합 S로부터 Θ-도출 가능하다는 것은, Θ 집합으로부터의 연산들의 순서가 존재하여 이 연산들이 모든 시점에서 S의 원소들로부터 R을 산출한다는 의미입니다. "모든 시점에서"라는 구절이 있는 이유는, 우리가 시간에 따라 변하는 관계들을 다루고 있으며, 우리의 관심사는 상당한 시간 동안 유지되는 도출 가능성이기 때문입니다. 비추론 시스템에서 명명된 관계들의 집합에 대해, 적절한 연산들의 집합 $$ Θ_1 $$
  은 다음 연산들을 포함하는 것으로 보입니다: 투영, 자연 조인, 묶음, 그리고 제한. 순열은 무관하며 자연 합성은 포함될 필요가 없습니다. 왜냐하면 자연 합성은 자연 조인을 취한 후 투영을 함으로써 얻을 수 있기 때문입니다. 저장된 표현들의 집합에 대해서는, 적절한 연산들의 집합 $$ Θ_2 $$는 순열과 관계들의 부분집합화 및 병합, 그리고 그들의 원소들의 정렬과 연결에 관련된 추가적인 연산들을 포함할 것입니다.
 
+> **역주**: 복잡하니 간단하게 정리.
+>
+> - Θ 도출 가능성의 조건
+>     - 연산은 유일한 결과를 산출해야 한다.
+>     - 시간의 흐름과 관계 없이 동일한 결과를 산출해야 한다.
+> - $$ Θ_1 $$: 논리적 연산
+>     - 투영(projection)
+>     - 자연 조인(natural join)
+>     - 묶음(tie)
+>     - 제한(restriction)
+> - $$ Θ_2 $$: 물리적 연산
+>     - 순열(permutation)
+>     - 부분집합화(sub-setting)
+>     - 병합(merging)
+>     - 정렬(ordering)
+>     - 연결(connecting)
+{:style="background-color: #ecf1e8;"}
+
 ##### 2.2.1. Strong Redundancy.
 
 2.2.1. 강한 중복성
+
+<span id="section-2-2-1-1"/>
 
 >
 A set of relations is strongly redundant if it contains at least one relation that possesses a projection which is derivable from other projections of relations in the set. The following two examples are intended to explain why strong redundancy is defined this way, and to demonstrate its practical use. In the first example the collection of relations consists of just the following relation :
@@ -1398,7 +1422,7 @@ $$ Δ_t, (manager\#) \subset Δ_t (serial\#) $$
 
 $$ Δ_t, (managername) \subset Δ_t (name) $$
 
-이 경우 중복성은 명백합니다: managername 도메인은 불필요합니다. 이것이 위에서 정의한 대로 강한 중복성이라는 것을 다음 식을 통해 확인할 수 있습니다.
+이 경우 중복성은 명백합니다: managername 도메인은 불필요합니다.[^explain-managername-domain] 이것이 위에서 정의한 대로 강한 중복성이라는 것을 다음 식을 통해 확인할 수 있습니다.
 
 $$ π_{12} (P) = π_{12} (Q) \cdot π_{21} (R) $$
 
@@ -1411,6 +1435,10 @@ $$ P(s\#, d\#, ...), \ \ Q(s\#, j\#, ...), \ \ R(d\#, j\#, ...), $$
 $$ π_{12} (P) = π_{12} (Q) \cdot π_{21} (R) $$
 
 이를 통해 강한 중복성을 보여줄 수 있습니다.
+
+[^explain-managername-domain]: 역주: foreign key가 있으므로 굳이 managername을 양쪽 테이블에 중복으로 저장할 필요가 없다는 의미.
+
+<span id="section-2-2-1-2"/>
 
 >
 An important reason for the existence of strong redundancies in the named set of relationships is user convenience. A particular case of this is the retention of semi-obsolete relationships in the named set so that old programs that refer to them by name can continue to run correctly. Knowledge of the existence of strong redundancies in the named set enables a system or data base administrator greater freedom in the selection of stored representations to cope more efficiently with current traffic. If the strong redundancies in the named set are directly reflected in strong redundancies in the stored set (or if other strong redundancies are introduced into the stored set), then, generally speaking, extra storage space and update time are consumed with a potential drop in query time for some queries and in load on the central processing units.
