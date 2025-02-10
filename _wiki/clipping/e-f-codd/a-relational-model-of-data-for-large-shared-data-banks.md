@@ -3,7 +3,7 @@ layout  : wiki
 title   : A Relational Model of Data for Large Shared Data Banks - E. F. Codd (1970)
 summary : 대형 공유 데이터 뱅크를 위한 데이터의 관계적 모델
 date    : 2025-01-26 20:29:48 +0900
-updated : 2025-02-09 19:32:27 +0900
+updated : 2025-02-10 22:04:39 +0900
 tag     : 
 resource: 20/96218C-79EC-4A15-91F6-DE682155FBDB
 toc     : true
@@ -1488,10 +1488,14 @@ Generally speaking, weak redundancies are inherent in the logical needs of the c
 
 2.3. 일관성
 
+<span id="section-2-3-1"/>
+
 >
 Whenever the named set of relations is redundant in either sense, we shall associate with that set a collection of statements which define all of the redundancies which hold independent of time between the member relations. If the information system lacks-and it most probably will-detailed semantic information about each named relation, it cannot deduce the redundancies applicable to the named set. It might, over a period of time, make attempts to induce the redundancies, but such attempts would be fallible.
 
-명명된 관계들의 집합이 어느 의미에서든 중복성을 가질 때마다, 우리는 그 집합에 멤버 관계들 간에 시간과 무관하게 성립하는 모든 중복성을 정의하는 진술들의 집합을 연관시킬 것입니다. 만약 정보 시스템이 각 명명된 관계에 대한 상세한 의미론적 정보를 가지고 있지 않다면(그리고 아마도 대부분 그럴 것입니다), 명명된 집합에 적용 가능한 중복성을 추론할 수 없습니다. 시간이 지나면서 중복성을 귀납적으로 찾으려 시도할 수는 있지만, 그러한 시도는 오류를 범할 수 있습니다.
+명명된 관계들의 집합이 어떤 형태로든 중복성을 가질 때, 우리는 그 집합에 특정한 진술들의 집합을 연관시킬 것입니다. 이 진술들은 해당 멤버 관계들 사이에서 시간에 관계없이 성립하는 모든 중복성을 정의합니다. 정보 시스템이 각각의 명명된 관계에 대한 상세한 의미론적 정보를 갖고 있지 않다면(실제로 대부분의 경우가 그렇습니다), 명명된 집합에 적용할 수 있는 중복성을 추론하는 것이 불가능합니다. 시스템이 시간이 지나면서 중복성을 귀납적으로 발견하려 시도할 수는 있으나, 이러한 시도는 오류를 범할 수 있습니다.
+
+<span id="section-2-3-2"/>
 
 >
 Given a collection C of time-varying relations, an associated set Z of constraint statements and an instantaneous value V for C, we shall call the state (C, Z, V) consistent or inconsistent according as V does or does not satisfy Z.
@@ -1503,59 +1507,76 @@ For example, given stored relations R, S, T together with the constraint stateme
 >
 There are practical problems (which we shall not discuss here) in taking an instantaneous snapshot of a collection of relations, some of which may be very large and highly variable.
 
-시간에 따라 변하는 관계들의 집합 C, 그와 연관된 제약 진술들의 집합 Z, 그리고 C의 순간적인 값 V가 주어졌을 때, 상태 (C, Z, V)는 V가 Z를 만족하는지 여부에 따라 일관적이거나 비일관적이라고 부를 것입니다.
+시간에 따라 변하는 관계들의 집합 C, 그와 연관된 제약 진술들의 집합 Z, 그리고 C의 순간적인 값 V가 주어졌을 때, 상태 (C, Z, V)는 V가 Z를 만족하는지 여부에 따라 일관적이거나 비일관적이라고 정의합니다.
 
-예를 들어, 저장된 관계 R,S,T가 "$$ π_{12}(T) $$ 는 $$ π_{12}(R) 과 $$ π_{12}(S) $$ 의 합성이다"라는 제약 진술과 함께 주어졌을 때, 우리는 때때로 R, S, T에 대해 저장된 값들이 이 제약을 만족하는지 확인할 수 있습니다. 이 확인을 수행하는 알고리즘은 R, S, T의 처음 두 열을 (시스템에서 어떤 방식으로 표현되든) 검사하여 다음을 판단할 것입니다:
+예를 들어, "$$ π_{12}(T) $$ 는 $$ π_{12}(R) 과 $$ π_{12}(S) $$ 의 합성이다"라는 제약 진술이 저장된 관계 R,S,T와 함께 주어졌다고 가정해 봅시다. 이 경우 우리는 주기적으로 R, S, T에 대해 저장된 값들이 이 제약을 만족하는지 확인할 수 있습니다. 이 확인을 수행하는 알고리즘은 R, S, T의 처음 두 열을 검사하여 (시스템 내부 표현 방식과 무관하게) 다음 조건들을 확인하게 됩니다:
 
 - (1) $$ π_{1}(T) = π_{1}(R) $$,
 - (2) $$ π_{2}(T) = π_{2}(S) $$,
-- (3) 관계 $$ π_{12}(T) $$ 의 모든 원소 쌍 (a, c)에 대해 $$ π_{12}(R) $$에 (a, b)가 있고 $$ π_{12}(S) $$에 (b, c)가 있는 어느 원소 b가 존재한다.
+- (3) 관계 $$ π_{12}(T) $$ 의 모든 원소 쌍 (a, c)에 대해 $$ π_{12}(R) $$에 (a, b)가 있고 $$ π_{12}(S) $$에 (b, c)가 있는 원소 b가 존재한다.
 
-매우 크고 가변성이 높은 관계들을 포함할 수 있는 관계들의 집합의 순간적인 스냅샷을 얻는 데는 실질적인 문제들이 있습니다(여기서는 논의하지 않을 것입니다).
+관계들의 집합에 대한 순간적인 스냅샷을 얻는 것은 실제로 여러 가지 문제를 수반합니다. 특히 일부 관계가 매우 크고 자주 변경되는 경우에는 더욱 그렇습니다(이에 대한 논의는 여기서는 하지 않겠습니다).
+
+<span id="section-2-3-3"/>
 
 >
 It is important to note that consistency as defined above is a property of the instantaneous state of a data bank, and is independent of how that state came about. Thus, in particular, there is no distinction made on the basis of whether a user generated an inconsistency due to an act of omission or an act of commission. Examination of a simple example will show the reasonableness of this (possibly unconventional) approach to consistency.
 
-위에서 정의된 일관성은 데이터 뱅크의 순간적인 상태의 속성이며, 그 상태가 어떻게 발생했는지와는 무관하다는 점에 주목하는 것이 중요합니다. 따라서 특히, 사용자가 부작위 행위로 인해 비일관성을 발생시켰는지 작위 행위로 인해 발생시켰는지에 따른 구분은 없습니다. 간단한 예제를 살펴보면 이러한 (아마도 비전통적인) 일관성에 대한 접근 방식의 합리성을 보여줄 수 있습니다.
+여기서 주목할 점은 위에서 정의한 일관성이 데이터 뱅크의 순간 상태가 갖는 속성이며, 그 상태가 어떻게 만들어졌는지와는 무관하다는 것입니다. 특히, 사용자가 어떤 행위를 하지 않아서 비일관성이 발생했는지, 아니면 어떤 행위를 해서 발생했는지는 구분하지 않습니다. 간단한 예제를 통해 이러한 일관성에 대한 접근 방식이 (다소 비전통적일 수 있으나) 왜 합리적인지 알 수 있습니다.
+
+<span id="section-2-3-4"/>
 
 >
 Suppose the named set C includes the relations S, J, D, P, Q, R of the example in Section 2.2 and that P, Q, R possess either the strong or weak redundancies described therein (in the particular case now under consideration, it does not matter which kind of redundancy occurs). Further, suppose that at some time t the data bank state is consistent and contains no project j such that supplier 2 supplies project j and j is assigned to department 5. Accordingly, there is no element (2,5) in $$ π_{12}(P) $$. Now, a user introduces the element (2, 5) into $$ π_{12}(P) $$ by inserting some appropriate element into P. The data bank state is now inconsistent.
 The inconsistency could have arisen from an act of omission, if the input (2, 5) is correct, and there does exist a project j such that supplier 2 supplies j and j is assigned to department 5. In this case, it is very likely that the user intends in the near future to insert elements into Q and R which will have the effect of introducing (2, j) into $$ π_{12}(Q) $$ and (5, j) in $$ π_{12}(R) $$. On the other hand, the input (2, 5) might have been faulty. It could be the case that the user intended to insert some other element into P-an element whose insertion would transform a consistent state into a consistent state. The point is that the system will normally have no way of resolving this question without interrogating its environment (perhaps the user who created the inconsistency).
 
-2.2절의 예제에서 명명된 집합 C가 관계 S, J, D, P, Q, R을 포함하고, P, Q, R이 거기서 설명된 강한 중복성이나 약한 중복성을 가진다고 가정해봅시다(현재 고려 중인 특정 사례에서는 어떤 종류의 중복성이 발생하는지는 중요하지 않습니다). 또한, 어떤 시점 t에서 데이터 뱅크 상태가 일관적이고 공급자 2가 공급하고 부서 5에 할당된 프로젝트 j가 없다고 가정해봅시다. 따라서 $$ π_{12}(P) $$에는 원소 (2,5)가 없습니다. 이제 사용자가 P에 적절한 원소를 삽입함으로써 $$ π_{12}(P) $$에 원소 (2,5)를 도입합니다. 이제 데이터 뱅크 상태는 비일관적이 됩니다.
+2.2절의 예제에서와 같이 명명된 집합 C가 관계 S, J, D, P, Q, R을 포함하고, P, Q, R이 앞에서 설명한 강하거나 약한 중복성을 갖는다고 가정해봅시다(현재 사례에서는 어떤 종류의 중복성인지는 중요하지 않습니다).
+또한, 어떤 시점 t에서 데이터 뱅크 상태가 일관적인 상태이며, 공급자 2가 공급하면서 그와 동시에 부서 5에 할당된 프로젝트 j가 없다고 가정해봅시다. 그렇다면 $$ π_{12}(P) $$에는 원소 (2,5)가 존재하지 않습니다.
+이 때 사용자가 P에 특정한 원소를 삽입하여 $$ π_{12}(P) $$에 원소 (2,5)를 추가하면, 이제 데이터 뱅크 상태는 비일관적 상태가 됩니다.
 
-이러한 비일관성은 만약 입력 (2,5)가 올바르고, 공급자 2가 공급하고 부서 5에 할당된 프로젝트 j가 실제로 존재한다면 부작위 행위로 인해 발생했을 수 있습니다. 이 경우, 사용자는 가까운 미래에 Q와 R에 원소들을 삽입하여 
-$$ π_{12}(Q) $$에 (2,j)를, $$ π_{12}(R) $$에 (5,j)를 도입하려는 의도를 가지고 있을 가능성이 매우 높습니다. 반면에, 입력 (2,5)가 잘못되었을 수도 있습니다. 사용자가 P에 다른 원소를 삽입하려 했을 수 있는데, 그 원소의 삽입은 일관적인 상태를 일관적인 상태로 변환했을 것입니다. 핵심은 시스템이 일반적으로 환경(아마도 비일관성을 만든 사용자)에 질의하지 않고는 이 문제를 해결할 방법이 없다는 것입니다.
+이러한 비일관성은 두 가지 경우에 발생할 수 있습니다.
+첫째, 만약 입력된 (2,5)가 실제로 올바르고, 공급자 2가 공급하면서 부서 5에 할당된 프로젝트 j가 실제로 존재하는데도 이를 입력하지 않아 비일관성이 발생했을 수 있습니다. 이러한 경우, 사용자는 가까운 미래에 Q와 R에 추가 원소들을 입력하여 $$ π_{12}(Q) $$에 (2,j)를, $$ π_{12}(R) $$에 (5,j)를 추가하려는 의도를 가지고 있을 가능성이 매우 높습니다.
+둘째, 입력된 (2,5)가 잘못된 것일 수 있습니다. 사용자가 P에 다른 원소를 입력하려 했을 수 있으며, 그랬다면 데이터 뱅크는 일관적인 상태를 유지했을 것입니다. 중요한 점은 시스템이 외부(아마도 비일관성을 만든 사용자)에 확인하지 않고는 이 문제를 해결할 방법이 없다는 것입니다.
+
+<span id="section-2-3-5"/>
 
 >
 There are, of course, several possible ways in which a system can detect inconsistencies and respond to them. In one approach the system checks for possible inconsistency whenever an insertion, deletion, or key update occurs.
 Naturally, such checking will slow these operations down. If an inconsistency has been generated, details are logged internally, and if it is not remedied within some reasonable time interval, either the user or someone responsible for the security and integrity of the data is notified. Another approach is to conduct consistency checking as a batch operation once a day or less frequently. Inputs causing the inconsistencies which remain in the data bank state at checking time can be tracked down if the system maintains a journal of all state-changing transactions. This latter approach would certainly be superior if few non-transitory inconsistencies occurred.
 
-물론 시스템이 비일관성을 감지하고 대응하는 방법에는 여러 가지가 있습니다. 한 가지 접근법은 삽입, 삭제 또는 키 갱신이 발생할 때마다 시스템이 가능한 비일관성을 검사하는 것입니다.
-당연히 이러한 검사는 이들 연산의 속도를 늦출 것입니다. 만약 비일관성이 발생했다면, 세부사항이 내부적으로 기록되고, 적절한 시간 간격 내에 해결되지 않으면 사용자나 데이터의 보안과 무결성을 책임지는 담당자에게 통보됩니다. 또 다른 접근법은 하루에 한 번 또는 그보다 덜 빈번하게 일괄 처리 작업으로 일관성 검사를 수행하는 것입니다. 시스템이 상태를 변경하는 모든 트랜잭션의 기록을 유지한다면, 검사 시점에 데이터 뱅크 상태에 남아있는 비일관성을 일으킨 입력들을 추적할 수 있습니다. 이 후자의 접근법은 일시적이지 않은 비일관성이 거의 발생하지 않는 경우에 분명히 더 우수할 것입니다.
+물론 시스템이 비일관성을 감지하고 대응하는 방법에는 여러 가지가 있습니다. 한 가지 접근법은 삽입, 삭제 또는 키 갱신이 발생할 때마다 시스템이 비일관성 발생 가능성을 검사하는 것입니다.
+당연히 이러한 검사는 해당 연산들의 속도를 늦출 것입니다. 만약 비일관성이 발생했다면, 세부사항이 내부적으로 기록되고, 적절한 시간 내에 해결되지 않으면 사용자나 데이터의 보안과 무결성을 책임지는 담당자에게 통보됩니다. 또 다른 접근법으로는 하루에 한 번 또는 그보다 덜 빈번하게 일괄 처리 작업으로 일관성 검사를 수행하는 것이 있습니다. 시스템이 상태를 변경하는 모든 트랜잭션을 기록으로 남긴다면, 검사 시점에 데이터 뱅크에 남아있는 비일관성의 원인이 된 입력들을 추적할 수 있게 됩니다. 이러한 접근법은 지속적인 비일관성이 거의 발생하지 않는 경우에 분명히 더 나은 선택이 될 것입니다.
 
 #### 2.4. SUMMARY
 
 2.4. 요약
 
+<span id="section-2-4-1"/>
+
 >
 In Section 1 a relational model of data is proposed as a basis for protecting users of formatted data systems from the potentially disruptive changes in data representation caused by growth in the data bank and changes in traffic.
 A normal form for the time-varying collection of relationships is introduced.
 
-1절에서는 데이터 뱅크의 성장과 트래픽의 변화로 인해 발생하는 데이터 표현의 잠재적인 파괴적 변화로부터 구조화된 데이터 시스템의 사용자들을 보호하기 위한 기반으로서 관계형 데이터 모델이 제안되었습니다.
-시간에 따라 변하는 관계들의 집합에 대한 정규형이 도입되었습니다.
+1절에서는 데이터 뱅크의 성장과 트래픽 변화로 인해 발생하는 데이터 표현의 잠재적 혼란을 방지하고 구조화된 데이터 시스템의 사용자를 보호하기 위한 기반으로서 관계형 데이터 모델을 제안했습니다.
+또한 시간에 따라 변화하는 관계들의 집합에 대한 정규형을 도입했습니다.
+
+<span id="section-2-4-2"/>
 
 >
 In Section 2 operations on relations and two types of redundancy are defined and applied to the problem of maintaining the data in a consistent state. This is bound to become a serious practical problem as more and more different types of data are integrated together into common data banks.
 
-2절에서는 관계에 대한 연산들과 두 가지 유형의 중복성이 정의되었고, 이를 데이터를 일관된 상태로 유지하는 문제에 적용했습니다. 이는 점점 더 많은 서로 다른 유형의 데이터가 공통 데이터 뱅크로 통합됨에 따라 중요한 실제적 문제가 될 것이 분명합니다.
+2절에서는 관계에 대한 연산들과 두 가지 유형의 중복성을 정의하고, 이를 데이터를 일관성 유지 문제에 적용했습니다. 이는 점점 더 많은 다양한 유형의 데이터가 공통 데이터 뱅크로 통합되어감에 따라 중요한 실제적 문제가 될 것이 분명합니다.
+
+<span id="section-2-4-3"/>
 
 >
 Many questions are raised and left unanswered. For example, only a few of the more important properties of the data sublanguage in Section 1.4 are mentioned. Neither the purely linguistic details of such a language nor the implementation problems are discussed. Nevertheless, the material presented should be adequate for experienced systems programmers to visualize several approaches. It is also hoped that this paper can contribute to greater precision in work on formatted data systems.
 
-많은 질문들이 제기되었지만 답변되지 않은 채로 남아있습니다. 예를 들어, 1.4절의 데이터 서브언어의 중요한 특성들 중 일부만이 언급되었습니다. 그러한 언어의 순수하게 언어학적인 세부사항이나 구현 문제들은 논의되지 않았습니다. 그럼에도 불구하고, 제시된 자료는 경험 있는 시스템 프로그래머들이 여러 가지 접근 방식을 구상하기에 충분할 것입니다. 또한 이 논문이 구조화된 데이터 시스템에 관한 연구에서 더 큰 정확성을 확보하는 데 기여할 수 있기를 바랍니다.
+많은 질문들이 제기되었지만 아직 해답을 찾지 못한 채로 남아있습니다. 예를 들어, 1.4절에서는 데이터 서브언어의 중요한 특성들 중 일부만을 다루었습니다. 또한 그러한 언어의 순수한 언어학적 세부사항이나 구현 문제는 논의하지 않았습니다. 그럼에도 불구하고, 제시된 내용은 경험 많은 시스템 프로그래머들이 여러 가지 접근 방식을 구상하기에 충분할 것입니다. 또한 이 논문이 구조화된 데이터 시스템에 관한 연구 분야의 정확성 향상에 기여할 수 있기를 바랍니다.
 
 ### Acknowledgment.
+
+감사의 말
 
 >
 It was C. T. Davies of IBM Poughkeepsie who convinced the author of the need for data independence in future information systems. The author wishes to thank him and also F. P. Palermo, C. P. Wang, E. B. Altman, and M. E. Senko of the IBM San Jose Research Laboratory for helpful discussions.
@@ -1569,6 +1590,7 @@ RECEIVED SEPTEMBER, 1969; REVISED FEBRUARY, 1970
 
 ### REFERENCES
 
+>
 1. CHILDS, D. L. Feasibility of a set-theoretical data structure - a general structure based on a reconstituted definition of relation. Proc. IFIP Cong., 1968, North Holland Pub. Co., Amsterdam, p. 162-172.
 2. LEVEIN, R. E., AND MARON, M. E. A computer system for inference execution and data retrieval. Comm. ACM 10, 11 (Nov. 1967), 715-721.
 3. BACHMAN, C. W. Software for random access processing. Datumation (Apr. 1965), 36-41.
