@@ -3,7 +3,7 @@ layout  : wiki
 title   : crontab
 summary : maintain crontab files for individual users
 date    : 2023-11-06 22:54:23 +0900
-updated : 2024-11-15 18:21:19 +0900
+updated : 2025-02-16 15:33:38 +0900
 tag     : 
 resource: 80/D05BAB-5081-48B9-87D4-BA339B73E70C
 toc     : true
@@ -95,4 +95,16 @@ crontab은 실행될 때마다 `/var/mail`로 메일을 보내는데, 가벼운 
 ```
 * * * * * chronic ~/script.sh
 ```
+
+### MacOS에서 cron에 권한 부여가 필요한 경우 {#macos-cron-permission}
+
+MacOS에서 실행할 경우, 다음과 같이 `Operation not permitted` 에러가 발생한다면 `cron`에 권한을 부여해야 한다.
+
+```bash
+find: /Users/johngrib/book: Operation not permitted
+```
+
+`시스템 설정` - `개인정보 보호 및 보안` - `전체 디스크 접근 권한`에서 `cron`을 추가해주면 된다.
+
+(`cron`이 어디에 있는지 모르겠다면 `which cron`으로 경로를 확인할 수 있다.)
 
