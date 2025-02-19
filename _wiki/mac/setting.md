@@ -3,7 +3,7 @@ layout  : wiki
 title   : 맥북 설정하기
 summary : 새 맥북 셋팅하면서 작성하는 문서
 date    : 2020-05-06 15:39:42 +0900
-updated : 2024-09-24 21:29:53 +0900
+updated : 2025-02-19 22:31:14 +0900
 tag     : mac
 resource: 56/A48CC2-67A4-4C57-951C-7902E53A7719
 toc     : true
@@ -176,6 +176,8 @@ git clone https://github.com/johngrib/hammerspoon-config.git .hammerspoon
 이후 입력할 비밀번호가 많으므로, 패스워드 관리자를 실행해 로그인한다.
 
 내 경우에는 BitWarden.
+
+BitWarden 사용이 곤란한 환경이라면 [[/cmd/pass]].
 
 #### 웹 브라우저 실행
 
