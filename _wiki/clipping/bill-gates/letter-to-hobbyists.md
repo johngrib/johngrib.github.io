@@ -3,7 +3,7 @@ layout  : wiki
 title   : AN OPEN LETTER TO HOBBYISTS By William Henry Gates III
 summary : 컴퓨터 애호가들에게 보내는 편지 by 빌 게이츠
 date    : 2022-08-14 22:07:13 +0900
-updated : 2022-08-14 23:22:34 +0900
+updated : 2025-02-22 12:12:26 +0900
 tag     : 번역 bill-gates
 resource: 07/8378E5-5655-4611-B718-C5D486E038DC
 toc     : true
@@ -35,7 +35,7 @@ By William Henry Gates III
 To me, the most critical thing in the hobby market right now is the lack of good software courses, books and software itself.
 Without good software and an owner who understands programming, a hobby computer is wasted. Will quality software be written for the hobby market?
 
-내 관점에서, 현재 취미로 하는 컴퓨터 업계에서 가장 심각한 문제는 괜찮은 소프트웨어 교육 코스와 책, 그리고 좋은 소프트웨어가 부족하다는 것입니다.
+내 관점에서, 현재 취미용 컴퓨터 시장에서 가장 심각한 문제는 괜찮은 소프트웨어 교육 과정, 책, 그리고 좋은 소프트웨어가 부족하다는 것입니다. 좋은 소프트웨어가 없고 프로그래밍을 이해하는 사용자가 없다면 취미용 컴퓨터는 제대로 활용되지 못할 것입니다. 과연 이런 상황에서 취미용 시장을 위한 좋은 소프트웨어가 개발될 수 있을까요?
 
 >
 Almost a year ago, Paul Allen and myself, expecting the hobby market to expand, hired Monte Davidoff and developed Altair BASIC.
@@ -43,30 +43,30 @@ Though the initial work took only two months, the three of us have spent most of
 Now we have 4K, 8K, EXTENDED, ROM and DISK BASIC.
 The value of the computer time we have used exceeds $40,000.
 
-약 1년 전에, 폴 앨런과 나는 취미로 하는 컴퓨터 업계가 커질 것이라고 생각했습니다.
-그래서 Monte Davidoff를 고용하고 알테어 BASIC도 개발했죠.
-첫 작업은 두 달 정도만 걸렸지만, 우리 세 사람은 지난 1년 간 문서를 작성하고, BASIC을 개선하고 기능을 추가하는데 대부분의 시간을 쏟아야 했습니다.
-이제 우리에게는 4K, 8K, EXTENDED, ROM 과 DISCK BASIC이 있습니다.
-우리가 소비한 컴퓨터 시간의 비용은 40,000 달러를 넘어갑니다.
+약 1년 전에, 폴 앨런과 나는 취미용 컴퓨터 시장이 성장할 것이라고 예상했습니다.
+그래서 몬테 다비도프(Monte Davidoff)를 고용하고 함께 Altair BASIC을 개발했죠.
+첫 작업은 두 달 정도만 걸렸지만, 우리 세 사람은 지난 1년 동안 문서를 작성하고, BASIC을 개선하고 기능을 추가하는 데 대부분의 시간을 쏟아야 했습니다.
+이제 우리는 4K, 8K, EXTENDED, ROM과 DISK BASIC을 갖추고 있습니다.
+우리가 사용한 컴퓨터 시간의 가치는 4만 달러를 넘어갑니다.
 
 >
 The feedback we have gotten from the hundreds of people who say they are using BASIC has all been positive.
 Two surprising things are apparent, however, 1) Most of these "users" never bought BASIC (less than 10% of all Altair owners have bought BASIC), and 2) The amount of royalties we have received from sales to hobbyists makes the time spent on Altair BASIC worth less than $2 an hour.
 
-수백명의 BASIC 사용자들에게 우리가 받은 피드백은 다 좋은 내용들이었습니다.
-그런데 충격적인 사실 두 가지가 있습니다.
+수 백명의 BASIC 사용자들에게 받은 피드백은 모두 긍정적인 내용들이었습니다.
+그런데 놀라운 사실 두 가지가 있습니다.
 
-1. "사용자들" 대부분이 BASIC을 구매한 적이 없습니다. (구매한 사람은 알테어 소유자 중 10% 미만 밖에 안 됨)
-2. BASIC을 팔고 받은 로열티가 우리가 알테어 BASIC을 만든 시간으로 따지면 시급 2달러도 안됩니다.
+1. "사용자들" 대부분이 BASIC을 구매한 적이 없습니다. (BASIC을 구매한 사람은 Altair 소유자 중 10%도 되지 않습니다)
+2. BASIC 판매로 받은 로열티를 우리가 Altair BASIC을 개발한 시간으로 나눠보면 시급이 2달러도 되지 않습니다.
 
 >
 Why is this? As the majority of hobbyists must be aware, most of you steal your software.
 Hardware must be paid for, but software is something to share.
 Who cares if the people who worked on it get paid?
 
-이게 말이 되나요? 애호가 대부분이 이러고 있다면, 이 글을 읽는 여러분 대다수도 소프트웨어를 훔친 것입니다.
-하드웨어는 꼭 돈을 주고 사고 있지만, 소프트웨어는 무료로 나눠 쓰는 상황입니다.
-만드는 사람이 돈을 받고는 있는지 생각하는 사람이 있긴 한가요?
+왜 이런 일이 벌어지는 걸까요? 대부분의 애호가들이 알고 있다시피 대다수가 소프트웨어를 훔쳐서 쓰고 있기 때문입니다.
+하드웨어는 꼭 돈을 주고 사고 있지만, 소프트웨어는 무료로 공유해 쓰고 있는 상황입니다.
+소프트웨어를 만드는 사람이 돈을 받고는 있는지 생각하는 사람이 있긴 한가요?
 
 >
 Is this fair? One thing you don't do by stealing software is get back at MITS for some problem you may have had.
@@ -80,12 +80,12 @@ We have written 6800 BASIC, and are writing 8080 APL and 6800 APL, but there is 
 Most directly, the thing you do is theft.
 
 이게 정당한 상황일까요?
-여러분이 소프트웨어를 훔쳐서 쓰고 있으니, 이전처럼 MIT에서 만든 소프트웨어 때문에 생긴 문제로 MIT에 항의하는 일은 이제 일어나지 않겠네요.
-MIT는 유료 소프트웨어를 팔고 있지 않으니까요.
+여러분이 소프트웨어를 훔쳐서 쓰고 있으니, 이전처럼 MITS에서 만든 소프트웨어 때문에 생긴 문제로 MITS에 항의하는 일은 이제 일어나지 않겠네요.
+MITS는 유료 소프트웨어를 팔고 있지 않으니까요.
 설명서, 테이프, 간접비 때문에 우리가 받고 있는 로열티로는 손익분기점에 미치지 못합니다.
 여러분은 좋은 소프트웨어가 세상에 나오는 일을 차단하고 있는 거에요.
 세상에 어떤 사람이 이득 없이 전문적인 일을 하나요?
-세 사람이 1년이나 프로그래밍하고, 모든 버그를 찾고, 제품 설명서를 썼습니다.
+어떤 애호가가 3man/year을 들여 프로그래밍하고, 모든 버그를 찾고, 제품 설명서를 쓰나요?
 어떤 애호가가 이렇게 일한 걸 배포까지 무료로 하나요?
 실제로 우리 외에는 아무도 이렇게 많은 돈을 취미용 소프트웨어에 투자한 적이 없습니다.
 우리는 6800 BASIC을 작성했고 8080 APL 과 6800 APL을 작성중이긴 한데, 이 소프트웨어들을 애호가 여러분들에게 배포할 의욕이 생기지가 않습니다.
