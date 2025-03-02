@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2025-03-02 20:07:52 +0900
+updated : 2025-03-02 20:09:43 +0900
 tag     : command 언어 brian-kernighan awk
 resource: 97/3C865D-C4E1-43B2-B80E-F96DA7AC7703
 toc     : true
@@ -240,6 +240,14 @@ $ seq 1 100 | awk '{ line[NR] = $0 }
 $ echo 1,2,3 | awk --csv '{print $2}'
 2
 ```
+
+`--csv` 옵션이 지원되지 않는다면 다음과 같이 `-F`(Field Separator) 옵션을 사용할 수 있다.
+
+```
+$ echo 1,2,3 | awk -F, '{print $2}'
+2
+```
+
 
 ## 함께 읽기
 
