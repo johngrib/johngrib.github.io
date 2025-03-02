@@ -3,7 +3,7 @@ layout  : wiki
 title   : awk
 summary : pattern-directed scanning and processing language
 date    : 2019-01-23 11:18:43 +0900
-updated : 2025-01-12 13:47:26 +0900
+updated : 2025-03-02 20:07:52 +0900
 tag     : command 언어 brian-kernighan awk
 resource: 97/3C865D-C4E1-43B2-B80E-F96DA7AC7703
 toc     : true
@@ -232,6 +232,14 @@ $ seq 1 100 | awk '{ line[NR] = $0 }
 100
 ```
 
+### `--csv` 옵션 {#option-csv}
+
+2023년 이후 버전부터는 `--csv` 옵션을 사용할 수 있다.
+
+```
+$ echo 1,2,3 | awk --csv '{print $2}'
+2
+```
 
 ## 함께 읽기
 
