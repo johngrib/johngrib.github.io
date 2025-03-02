@@ -21,7 +21,7 @@ latex   : false
 - [[/cmd/arch]], [[/algorithm/base64]]{base64}, [[/cmd/basename]], [[/cmd/cat]]{cat}, chcon
 - chgrp, [[/cmd/chmod]], chown, chroot, cksum
 - comm, cp, [[/cmd/csplit]], [[/cmd/cut]], [[/cmd/date]]
-- dd, [[/df]], dir, dircolors, dirname
+- dd, [[/cmd/df]], dir, dircolors, dirname
 - [[/cmd/du]], [[/cmd/echo]], env, expand, expr
 - [[/cmd/factor]]{factor}, false, fmt, fold, groups
 - head, hostid, hostname, id, install

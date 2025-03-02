@@ -3,12 +3,12 @@ layout  : wiki
 title   : df 명령어
 summary : 파일 시스템의 남은 용량을 알려준다
 date    : 2018-02-08 22:50:31 +0900
-updated : 2018-02-08 22:58:06 +0900
+updated : 2025-03-02 16:46:37 +0900
 tag     : bash command
 resource: 66/73C914-23CC-4446-ADF6-E33981EDD984
 toc     : true
 public  : true
-parent  : [[cmd]]
+parent  : [[/cmd]]
 latex   : false
 ---
 * TOC

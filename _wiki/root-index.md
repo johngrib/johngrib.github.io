@@ -718,7 +718,7 @@ regenerate: true
     * [[/cmd/csplit]]
     * [[/cmd/cut]]
     * [[/cmd/date]]
-    * [[/df]]
+    * [[/cmd/df]]
     * [[/cmd/du]]
     * [[/cmd/echo]]
     * [[/cmd/factor]]
