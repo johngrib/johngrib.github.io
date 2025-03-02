@@ -31,6 +31,7 @@
   "cmd/date",
   "cmd/dateutils",
   "cmd/dc",
+  "cmd/delta",
   "cmd/df",
   "cmd/diff",
   "cmd/ditto",

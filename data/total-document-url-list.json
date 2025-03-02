@@ -225,6 +225,7 @@
  "/wiki/cmd/date",
  "/wiki/cmd/dateutils",
  "/wiki/cmd/dc",
+ "/wiki/cmd/delta",
  "/wiki/cmd/dev/fd",
  "/wiki/cmd/df",
  "/wiki/cmd/diff",
