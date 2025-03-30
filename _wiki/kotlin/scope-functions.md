@@ -3,7 +3,7 @@ layout  : wiki
 title   : Kotlin Scope Functions
 summary : 
 date    : 2024-05-15 22:41:47 +0900
-updated : 2024-05-16 23:04:26 +0900
+updated : 2025-03-30 18:11:44 +0900
 tag     : 
 resource: 90/041F07-C88C-43EA-99A3-4F25B477E67F
 toc     : true
@@ -188,6 +188,20 @@ val person = Person("Alice", 25).also {
 }
 
 println(person) // Person(name=Alice, age=25)
+```
+
+`also`는 부수효과가 필요할 때 유용하다.
+
+```kotlin
+fun findPerson(people: List<Person>, name: String): Person {
+    people.forEach {
+        if (it.name == name) {
+            return it.also { println("${it.name} 찾았습니다!") }
+        }
+    }
+
+    return Person.NO_NAME.also { println("적합한 사람을 찾지 못했음. 익명을 리턴합니다.") }
+}
 ```
 
 
