@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2025-03-02 21:30:12 +0900
+updated : 2025-05-12 20:56:49 +0900
 regenerate: true
 ---
 * TOC
@@ -864,6 +864,7 @@ regenerate: true
 * [[/git/merge]]
 * [[/git/prompt]]
 * [[/git/rebase]]
+* [[/git/rerere]]
 * [[/git/revert]]
 
 * [[/git-alias]]

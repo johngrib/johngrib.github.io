@@ -1,0 +1,10 @@
+{
+ "type": "wiki",
+ "title": "git rerere",
+ "summary": "Reuse recorded resolution of conflicted merges",
+ "parent": "git",
+ "url": "/wiki/git/rerere",
+ "updated": "2025-05-12 21:59:10 +0900",
+ "resource": "B5/4B0EC8-C7B8-44EB-9DD9-DE2D0B754127",
+ "children": []
+}
