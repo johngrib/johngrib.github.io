@@ -3,7 +3,7 @@ layout  : category
 title   : 웹 브라우저 이것저것
 summary : 적절한 익스텐션을 사용한다
 date    : 2018-03-04 00:38:22 +0900
-updated : 2024-07-07 22:36:59 +0900
+updated : 2025-08-16 21:35:27 +0900
 tag     : chrome
 resource: C3/F7D543-D04C-4FAF-8BB6-867E95298624
 toc     : true
@@ -13,6 +13,16 @@ latex   : false
 ---
 * TOC
 {:toc}
+
+## MacOS Google Chrome 커스텀 단축키 등록 {#chrome-custom-shortcut}
+
+![chrome custom shortcut]( /resource/C3/F7D543-D04C-4FAF-8BB6-867E95298624/chrome-custom-shortcut.jpg )
+
+- Chrome의 `탭 검색...`은 편리한 기능이지만 기본 단축키가 `command + shift + A` 이기 때문에 불편하다.
+`command + M`으로 할당해두면 누르기가 더 쉽다.
+    - `command + M`은 MacOS에서는 모든 앱에 대해 Minimize하는 공통 단축키이지만, 나는 Minimize를 절대 사용하지 않으므로 각 앱에 대해 무언가를 열어둔 것을 네비게이션하는 용도의 기능에 매핑하곤 한다. (예를 들어 나는 IntelliJ 에서는 `Show Bookmarks`에 `command + M`을 할당한다.)
+- `탭->탭 복사` - 현재 보고 있는 탭을 옆에 복사해주는 좋은 기능인데, Chrome에서는 단축키 할당이 안 되어 있다. 하나 할당해주면 좋다.
+- `탭->오른쪽에 새 탭 열기` - Chrome에서 새 탭을 열면 항상 오른쪽 끝에 열리는데, 이 기능으로 열만 현재 탭 바로 오른쪽에 하나를 열어준다. 쓸 일이 많다.
 
 ## Trancy
 
