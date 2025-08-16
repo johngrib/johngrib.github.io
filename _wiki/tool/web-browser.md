@@ -3,7 +3,7 @@ layout  : category
 title   : 웹 브라우저 이것저것
 summary : 적절한 익스텐션을 사용한다
 date    : 2018-03-04 00:38:22 +0900
-updated : 2025-08-16 21:35:27 +0900
+updated : 2025-08-16 21:51:39 +0900
 tag     : chrome
 resource: C3/F7D543-D04C-4FAF-8BB6-867E95298624
 toc     : true
@@ -23,6 +23,56 @@ latex   : false
     - `command + M`은 MacOS에서는 모든 앱에 대해 Minimize하는 공통 단축키이지만, 나는 Minimize를 절대 사용하지 않으므로 각 앱에 대해 무언가를 열어둔 것을 네비게이션하는 용도의 기능에 매핑하곤 한다. (예를 들어 나는 IntelliJ 에서는 `Show Bookmarks`에 `command + M`을 할당한다.)
 - `탭->탭 복사` - 현재 보고 있는 탭을 옆에 복사해주는 좋은 기능인데, Chrome에서는 단축키 할당이 안 되어 있다. 하나 할당해주면 좋다.
 - `탭->오른쪽에 새 탭 열기` - Chrome에서 새 탭을 열면 항상 오른쪽 끝에 열리는데, 이 기능으로 열만 현재 탭 바로 오른쪽에 하나를 열어준다. 쓸 일이 많다.
+
+## MacOS Google Chrome에서 보고 있는 페이지를 Safari에서 열고 읽기 도구 보기 {#chrome-safari-read-mode}
+
+Google Chrome에도 reader mode가 있긴 있다. `Chrome 오른쪽 상단 점 3개 > 도구 더보기 > 읽기 모드`를 클릭하면 된다.
+하지만 크롬의 reader mode는 쓸만하지 않다. 뉴스 기사 같은 것에 사용해보면 뉴스의 제목만 나오는 경우가 대부분이다.
+
+반면 Safari의 읽기 도구는 대부분의 웹페이지에서 잘 된다... 그런데 내 메인 웹 브라우저는 Chrome 이다.
+
+그래서 Chrome 에서 특정한 단축키를 누르면 Safari에서 해당 페이지를 열고 Safari의 읽기 도구를 실행해주는 도구를 만들어 보았다.
+
+다음과 같이 만들면 된다.
+
+1. `Automator.app`을 실행한다.
+2. `새로운 문서`를 선택하고 `빠른 동작`을 선택한다.
+3. `작업흐름 수신`에서 `입력 없음`을 선택한다.
+4. `선택항목 위치`에서 `Google Chrome.app`을 선택한다.
+5. 왼쪽의 동작 목록에서 `AppleScript 실행`을 찾는다(검색).
+6. `AppleScript 실행`을 찾았다면 오른쪽 워크플로 화면으로 드래그한다.
+7. 아래의 스크립트를 입력하고, 저장한다. 저장할 때 이름을 `Open in Safari Reader`로 지정한다.
+
+```
+on run {input, parameters}
+    tell application "Google Chrome"
+    set theURL to URL of active tab of front window
+end tell
+
+tell application "Safari"
+    open location theURL
+    activate
+end tell
+
+delay 0.5 -- 페이지가 로드될 시간. 타이밍이 안 맞으면 적절히 수정하면 됨.
+
+tell application "System Events"
+    tell process "Safari"
+        keystroke "r" using {command down, shift down}
+    end tell
+end tell
+
+    return input
+end run
+```
+
+![]( /resource/C3/F7D543-D04C-4FAF-8BB6-867E95298624/open-in-safari.jpg )
+
+이후 `시스템 설정 > 키보드 > 키보드 단축키... > 서비스 > 일반` 에 가보면 앞에서 저장한 `Open in Safari Reader`가 보인다.
+
+여기에 단축키를 등록해주면 된다.
+
+이후부터는 Chrome 에서 특정 페이지를 읽다가 단축키를 입력하면 Safari에서 해당 페이지를 읽기 모드로 열어준다.
 
 ## Trancy
 
