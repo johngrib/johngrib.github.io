@@ -3,7 +3,7 @@ layout  : wiki
 title   : vim quickfix
 summary : 
 date    : 2022-04-15 22:20:55 +0900
-updated : 2023-03-19 15:32:49 +0900
+updated : 2025-08-24 10:28:55 +0900
 tag     : vim quickfix clojure
 resource: 28/70E648-FF7A-4193-8A66-83767057E8D6
 toc     : true
@@ -115,7 +115,7 @@ let g:fzf_action = {
 
 fzf에서 tab 으로 quickfix로 보낼 항목을 선택한 다음 `<c-q>`를 입력하면 된다.
 
-### vim-enmasse 로 편리하게 편지하기
+### vim-enmasse 로 편리하게 편집하기
 
 [Olical/vim-enmasse](https://github.com/Olical/vim-enmasse )
 
