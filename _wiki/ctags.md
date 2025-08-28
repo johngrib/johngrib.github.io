@@ -3,7 +3,7 @@ layout  : wiki
 title   : ctags 명령어
 summary : 소스코드를 분석해 인덱싱 파일을 만든다
 date    : 2018-10-03 12:23:12 +0900
-updated : 2023-06-09 22:12:28 +0900
+updated : 2025-08-28 22:21:04 +0900
 tag     : bash vim ctags golang command clojure vim-syntax-color
 resource: 4D/8CF153-8D49-406F-875F-8385D1599361
 toc     : true
@@ -504,7 +504,7 @@ let g:tagbar_type_clojure = {
 
 이렇게 작성하면 굳이 앞에 `-`, `+`를 넣어주지 않아도 작동한다.
 
-### TODO, FIXME, XXX 보여주기
+#### TODO, FIXME, XXX 보여주기
 
 Clojure 코딩을 할 때 `TODO`, `FIXME`, `XXX`도 보이도록 하면 편할 것 같아서 다음 두 줄을 clojure.ctags 파일에 추가해 주었다.
 
