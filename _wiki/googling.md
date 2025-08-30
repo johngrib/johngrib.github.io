@@ -3,7 +3,7 @@ layout  : wiki
 title   : 구글링하는 방법
 summary : 구글 및 여러 검색 서비스 사용법
 date    : 2017-12-23 18:23:50 +0900
-updated : 2020-07-19 18:29:23 +0900
+updated : 2025-08-30 12:23:27 +0900
 tag     : google twitter facebook
 resource: 1D/717663-7D10-49F2-BC0E-CC52049DD385
 toc     : true
@@ -66,9 +66,15 @@ has:attachment larger:2MB
 
 트위터 검색하는 방법.
 
+### 날짜범위 검색
+
+```
+from:@유저아이디 since:2025-04-10 until:2025-04-15
+```
+
 ### 고급 검색
 
-* <https://twitter.com/search-advanced > - 여기서 검색하면 된다.
+* <https://x.com/search-advanced > - 여기서 검색하면 된다.
 
 ### min_retweets
 
