@@ -3,7 +3,7 @@ layout  : wiki
 title   : IntelliJ 이것저것
 summary : 문제 해결한 경험을 모아본다
 date    : 2019-11-09 22:56:16 +0900
-updated : 2025-01-19 16:51:24 +0900
+updated : 2025-09-11 21:17:18 +0900
 tag     : java
 resource: F6/C37D5D-0E30-44D2-B873-E374D0E2CA90
 toc     : true
@@ -15,6 +15,42 @@ latex   : false
 {:toc}
 
 ## 설정
+
+### 단축키 설정
+
+내가 평소에 쓰고 있는 단축키 설정들.
+
+(다른 기능의 기본 단축키와 겹치는 경우 해당 기능의 단축키는 해제하거나 다른 걸로 바꾼다)
+
+#### Show Bookmarks...
+
+나는 북마크 기능을 하루에도 수십번씩 사용한다. 특히 `Show Bookmarks...`는 북마크 이동을 위해 매우 자주 사용하는 기능.
+
+- Main Menu - Edit - Bookmarks - Show Bookmarks... : `command + m` 으로 할당해준다.
+
+#### Editor Close Actions
+
+- Main Menu - Window - Editor Tabs - Editor Close Actions : `command + option + w`로 할당해준다.
+
+기능에 대해 단축키를 설정해주는 것이 아니라 '기능 묶음' 디렉토리에 단축키를 설정해 준다는 것이 중요하다.
+
+작업을 하다가 `command + option + w` 단축키를 입력하면 아래와 같이 에디터를 닫는 명령 선택기가 나온다.
+
+![]( /resource/F6/C37D5D-0E30-44D2-B873-E374D0E2CA90/editor-close-actions.jpg )
+
+나는 `Close Other Tabs` 나 `Close Tabs to the Right` 같은 기능들을 자주 사용하는 편인데 해당 기능들에 일일이 단축키를 붙여주는 것보다 이렇게 쓰는 것이 더 편리하다는 것을 깨달은 이후로는 계속 이렇게 쓰고 있다.
+
+#### Find Usages
+
+- Main Menu - Edit - Find Usages : `option + F7`로 할당해준다.
+
+원래 `option + F7`은 "Main Menu - Edit - Find Usages - Find Usages"의 단축키지만 이걸 해제하고 위와 같이 기능 묶음 디렉토리에 할당해주는 것이 좀 더 편리하다.
+
+코드 편집을 하다가 `option + F7`을 입력하면 아래와 같이 usage 탐색 기능들을 선택할 수 있게 되기 때문이다. 보통은 단축키를 못 외워서 안 쓰는 기능들이다.
+
+![]( /resource/F6/C37D5D-0E30-44D2-B873-E374D0E2CA90/show-usages.jpg )
+
+스크린샷에는 "Find Usages Settings...", "Show Usages" 등에 단축키가 할당되어 있지만 나는 일반적으로 "Find Usages" 하위의 기능들 대부분은 단축키를 할당 해제해 둔다. `option + F7` 한 개만 알면 된다.
 
 ### 눈에 보이는 것과 관련된 것들
 
@@ -386,7 +422,6 @@ macOS의 경우 `~/Library/Preferences`에 있다.
 
 - 최근 사용 이력
     - 2023-03-19
-
 
 ## 함께 읽기
 
