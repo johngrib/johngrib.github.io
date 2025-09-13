@@ -3,7 +3,7 @@ layout  : wiki
 title   : MacOS Automator를 사용해 터미널에 기능 붙이기
 summary : 궁여지책
 date    : 2025-09-12 20:03:44 +0900
-updated : 2025-09-12 20:26:18 +0900
+updated : 2025-09-13 17:39:49 +0900
 tag     : 
 resource: 41/831002-AA3A-46CA-9B67-F5731EDFB4FE
 toc     : true
@@ -68,6 +68,12 @@ osascript -e "display notification \"No pattern matched: $selected_text\" with t
 
 해당 서비스에 단축키를 등록해주면 된다.
 
+또는 위의 내용을 셸 스크립트 파일로 저장하고, Automator에서 다음과 같이 스크립트를 지정해줘도 된다.
+
+```bash
+{파일까지의 전체 경로}/셸-스크립트-파일명 "$1"
+```
+
 ### 사용법
 
 #### 터미널에서 드래그 선택 후 우클릭
@@ -79,4 +85,8 @@ osascript -e "display notification \"No pattern matched: $selected_text\" with t
 #### 단축키 사용
 
 터미널에서 관련된 문자열이 출력되었을 때, 마우스로 드래그하고 키보드 설정에서 지정해둔 단축키를 입력하면 된다.
+
+## 참고
+
+저장한 서비스는 `~/Library/Services` 경로에서 찾을 수 있다.
 
