@@ -3,7 +3,7 @@ layout  : wiki
 title   : fan in, fan out
 summary : 
 date    : 2022-05-10 22:45:43 +0900
-updated : 2024-05-15 12:12:32 +0900
+updated : 2025-10-08 15:39:29 +0900
 tag     : 논리회로
 resource: 4D/5A7D76-8E7B-4676-A289-F5A5DC407354
 toc     : true
@@ -47,6 +47,28 @@ fan out은 소프트웨어 아키텍처에서도 비유적으로 사용되는 �
 팬 아웃이 크다는 말은 하나의 출력이 많은 논리게이트의 입력으로 사용된다는 뜻이다.
 팬 아웃이 너무 크면 무리가 많이 가거나 신호가 제대로 전달되지 않을 수 있기 때문에 중간에 버퍼나 NOT 게이트 두 개를 연결하여 해결하기도 한다.
 [^ko-wikipedia]
+
+### From: 파인만의 컴퓨터 강의 2판
+
+>
+우리는 앞서 증명 없이도 AND와 NOT 회로를 조합하면 어떤 스위칭 함수도 만들 수 있다는 것을 살펴보았다.
+>
+![]( /resource/4D/5A7D76-8E7B-4676-A289-F5A5DC407354/feynman-and-not.svg )
+>
+그런데 별다른 언급 없이 추가로 사용한 기본 요소가 2개 더 있다.
+파로 FANOUT과 EXCHANGE 연산이다(그림 2-18).
+>
+![]( /resource/4D/5A7D76-8E7B-4676-A289-F5A5DC407354/feynman-fanout.svg )
+>
+1과 0 신호가 흐르는 전선이라면 이런 게이트가 당연히 존재할 수밖에 없다.
+<mark>FANOUT은 하나의 전선을 2개 이상의 전선으로 갈라주는 게이트에 불과하고</mark>,
+EXCHANGE는 한 쌍의 연결을 맞바꿔주기만 하면 되기 때문이다.
+하지만 정보가 돌멩이를 통해서 전달된다면 FANOUT 게이트는 돌멩이 1개가 2개가 되어야 하는, 부자연스러운 연산이 되고 만다.
+마찬가지로 정보가 서로 다른 곳에 있는 두 상자에 저장되어 있었다면 EXCHANGE도 그리 자연스럽지 못하다.
+지금 이 부자연스러워서 보이는 두 연산을 포함시켜야 할 필요성을 강조하는 이유는 가역성에 대해 논할 때 이 두 연산이 꼭 필요하기 때문이다.
+또한 0과 1이 무한히 공급된다는 가정도 필요하다.
+[^feynman-86]
+
 
 ### From: AMQP 0-9-1 Model Explained
 
@@ -231,6 +253,7 @@ Sends on a closed channel panic, so it’s important to ensure all sends are don
 - [Go Concurrency Patterns: Pipelines and cancellation]( https://go.dev/blog/pipelines )
 - 데이터 중심 애플리케이션 설계 / 마틴 클레프만 저/정재부, 김영준, 이도경 역 / 위키북스 / 초판발행 2018년 04월 12일
 - 디지털논리회로 / 김형근, 손진곤 공저 / 한국방송통신대학교출판문화원 / 3개정판 4쇄 발행 2021년 01월 25일
+- 파인만의 컴퓨터 강의(2판) / 리처드 파인만 저/토니 헤이 편/서환수 역 / 한빛미디어 / 2025년 06월 25일 / 원제: Feynman Lectures on Computation, 2nd edition
 
 ## 주석
 
@@ -238,3 +261,4 @@ Sends on a closed channel panic, so it’s important to ensure all sends are don
 [^ko-wikipedia]: <https://ko.wikipedia.org/wiki/팬_아웃 >
 [^en-wikipedia]: <https://en.wikipedia.org/wiki/Fan_out >
 [^ddia-11]: 데이터 중심 애플리케이션 셜계. 1장. 11쪽.
+[^feynman-86]: 파인만의 컴퓨터 강의(2판). 2장. 86쪽. 게이트 그림은 책을 참고해서 내가 svg로 그린 것이다.
