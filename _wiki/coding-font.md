@@ -3,7 +3,7 @@ layout  : wiki
 title   : 코딩 폰트
 summary : 내가 선호하는 코딩 폰트를 기록한다
 date    : 2017-12-01 06:02:30 +0900
-updated : 2020-02-27 18:28:34 +0900
+updated : 2025-12-11 21:49:45 +0900
 tag     : font config
 resource: BE/126176-417D-4228-AA6D-2AE727DC42B7
 toc     : true
@@ -143,7 +143,50 @@ $ find nerd-fonts/patched-fonts/Meslo -name '*.ttf' | wc -l
         * `!=`를 &#8800; 처럼, `=>`를 &#8658; 처럼 표기하는 방식을 말한다.
         * **나는 ligature 옵션을 싫어해서 항상 꺼둔다**. column이 중요한 Vim에선 묘하게 헷갈리기 때문.
 
+## Sarasa Gothic Mono
 
+- <https://picaq.github.io/sarasa/ >
+- <https://github.com/be5invis/Sarasa-Gothic >
+
+### 특징
+
+- 다국어를 사용하는 프로그래머를 위해 만들어진 폰트.
+    - CJK, 즉 중국어/일본어/한국어 문자를 포함해 165개 언어를 지원한다고 한다.
+- 여러 폰트가 합쳐진 것이 특징
+    - 영문/숫자는 [Iosevka](https://github.com/be5invis/Iosevka ) 폰트를 사용한다.
+    - 한글/한자/일본어는 [Source Han Sans](https://github.com/adobe-fonts/source-han-sans )를 사용한다.
+- 영문 2자와 한글 1자의 너비가 정확히 1:2로 매칭된다는 장점이 있다.
+    - 즉, 이 폰트를 쓰면 터미널이나 코드 에디터에서 사용할 때 라인 끝부분이 들쭉날쭉한 문제가 해결된다.
+- 꾸준한 업데이트도 장점.
+
+### 설치
+
+- [github repository의 Releases](https://github.com/be5invis/Sarasa-Gothic/releases )에서 다운로드 받아 설치한다.
+- Mac 이라면 간단하게 [[/cmd/brew]]{brew}로 설치할 수 있다.
+
+```bash
+brew install --cask font-sarasa-gothic
+```
+
+### 선택하는 방법
+
+- 스타일(Family) 옵션
+    - Mono: 고정폭. Iosevka 기반이라 폭이 좁은 편이다.
+        - Mono Slab: 세리프(Serif)가 있는 고정폭 스타일.
+    - Term: 터미널용으로, 특수문자 너비 등이 조정된 버전.
+    - Fixed: Term 버전에서 ligature 기능이 제거된 버전.
+    - UI: 가변폭(Proportional) 폰트.
+        - 코딩용으로는 적합하지 않다. IDE 메뉴 등 UI 요소에 쓰는 용도.
+- 언어 옵션
+    - CL: 클래식 한자
+    - SC: 중국어 간체 한자
+    - TC: 중국어 번체 한자
+    - HC: 홍콩식 한자
+    - J: 일본어
+    - K: 한국어
+
+터미널에서 fallback font로 `Sarasa Mono K`를 사용한다.
+ligature를 좋아하지 않고, 한글을 사용하기 때문.
 
 [meslo-font]: https://github.com/andreberg/Meslo-Font
 [nerd-fonts]: https://github.com/ryanoasis/nerd-fonts
@@ -151,3 +194,4 @@ $ find nerd-fonts/patched-fonts/Meslo -name '*.ttf' | wc -l
 [lgl]: /resource/BE/126176-417D-4228-AA6D-2AE727DC42B7/lgl.png
 [lgm]: /resource/BE/126176-417D-4228-AA6D-2AE727DC42B7/lgm.png
 [lgs]: /resource/BE/126176-417D-4228-AA6D-2AE727DC42B7/lgs.png
+
