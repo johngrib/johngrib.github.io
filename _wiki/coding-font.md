@@ -3,7 +3,7 @@ layout  : wiki
 title   : 코딩 폰트
 summary : 내가 선호하는 코딩 폰트를 기록한다
 date    : 2017-12-01 06:02:30 +0900
-updated : 2025-12-11 21:49:45 +0900
+updated : 2025-12-13 17:11:32 +0900
 tag     : font config
 resource: BE/126176-417D-4228-AA6D-2AE727DC42B7
 toc     : true
@@ -158,6 +158,9 @@ $ find nerd-fonts/patched-fonts/Meslo -name '*.ttf' | wc -l
 - 영문 2자와 한글 1자의 너비가 정확히 1:2로 매칭된다는 장점이 있다.
     - 즉, 이 폰트를 쓰면 터미널이나 코드 에디터에서 사용할 때 라인 끝부분이 들쭉날쭉한 문제가 해결된다.
 - 꾸준한 업데이트도 장점.
+- 단점은 무겁다는 것. 특정 터미널 에뮬레이터에서는 확대/축소 작업이 버벅거린다.
+    - `Apple_Terminal`에서는 `Sarasa Term K` 사용시 확대/축소를 해도 속도 저하가 전혀 느껴지지 않는다.
+    - `WezTerm`에서는 `Sarasa Term K` 사용시 확대/축소를 할 때 상당히 느리다.
 
 ### 설치
 
