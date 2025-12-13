@@ -3,7 +3,7 @@ layout  : wiki
 title   : Bash Parameters
 summary : 
 date    : 2023-08-04 21:01:10 +0900
-updated : 2025-06-29 14:55:37 +0900
+updated : 2025-12-13 17:51:51 +0900
 tag     : 
 resource: 12/723FD0-7E4D-4050-B84C-114CB1FF5283
 toc     : true
@@ -224,4 +224,9 @@ $ echo "$IFS" | xxd
 - `$TERM`: 사용자의 터미널 타입.
     - 나는 `export TERM=xterm-256color` 으로 설정하고 사용한다.
 - `$USER`: 사용자의 이름.
+- `$TERM_PROGRAM`: 터미널 에뮬레이터 프로그램의 이름을 볼 수 있다.
+    - `Apple_Terminal`: 애플 기본 터미널
+    - `WezTerm`: WezTerm, [Wez's Terminal Emulator](https://wezterm.org/index.html )
+    - `ghostty`: [Ghostty](https://ghostty.org/ )
+    - `iTerm.app`: [[/mac/iterm]]
 
