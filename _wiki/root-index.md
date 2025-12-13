@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2025-09-12 20:03:40 +0900
+updated : 2025-12-13 18:20:17 +0900
 regenerate: true
 ---
 * TOC
@@ -539,6 +539,7 @@ regenerate: true
 * [[/jargon/rules-of-optimization]]
 * [[/jargon/solid]]
 * [[/jargon/telescope-rule]]
+* [[/jargon/texas-sharpshooter-fallacy]]
 * [[/jargon/two-pizza-team]]
 * [[/jargon/yagni]]
 * [[/jargon/zero-overhead-principle]]
