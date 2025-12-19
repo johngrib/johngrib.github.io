@@ -20,6 +20,7 @@
   "vim/configure-split",
   "vim/help",
   "vim/highlight",
+  "vim/i_ctrl-b",
   "vim/ideavim",
   "vim/match",
   "vim/numbered-register-shift",

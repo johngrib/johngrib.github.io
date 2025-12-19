@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2025-12-13 18:20:17 +0900
+updated : 2025-12-19 22:50:36 +0900
 regenerate: true
 ---
 * TOC
@@ -912,6 +912,7 @@ regenerate: true
 * [[/vim/comrade]]
 * [[/vim/conceallevel]]
 * [[/vim/configure-split]]
+* [[/vim/i_ctrl-b]]
 * [[/vim/help]]
 * [[/vim/highlight]]
 * [[/vim/ideavim]]
