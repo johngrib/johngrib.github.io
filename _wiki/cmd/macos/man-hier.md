@@ -3,12 +3,12 @@ layout  : wiki
 title   : macOS man hier
 summary : macOS 파일 시스템의 레이아웃에 대한 설명서
 date    : 2024-09-29 16:29:16 +0900
-updated : 2024-09-29 16:48:42 +0900
+updated : 2025-12-20 22:12:40 +0900
 tag     : 
 resource: 3E/3BD07E-C18B-416E-A500-69147884EEAC
 toc     : true
 public  : true
-parent  : 
+parent  : [[/cmd/macos]]
 latex   : false
 ---
 * TOC
