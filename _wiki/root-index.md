@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2025-12-26 21:33:00 +0900
+updated : 2026-01-01 14:47:20 +0900
 regenerate: true
 ---
 * TOC
@@ -43,6 +43,7 @@ regenerate: true
     * [[/review/2023]]
     * [[/review/2024]]
     * [[/review/2025]]
+    * [[/review/2026]]
 
 ## [[/news]]
 
