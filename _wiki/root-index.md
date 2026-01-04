@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2026-01-01 14:47:20 +0900
+updated : 2026-01-04 16:03:08 +0900
 regenerate: true
 ---
 * TOC
@@ -128,6 +128,7 @@ regenerate: true
 * [[/clipping/roy-fielding/rest-paper]]
 * [[/clipping/the-unix-time-sharing-system]]
 * [[/clipping/whitehouse/future-software-should-be-memory-safe]]
+* [[/clipping/agentic-misalignment-how-llms-could-be-insider-threats]]
 
 * [[/Software-Engineering-Code-of-Ethics]]
 * [[/THE-NEXT-BIG-BLUE-COLLAR-JOB-IS-CODING]]
