@@ -9,6 +9,7 @@
  "children": [
   "hammerspoon-inputsource-aurora",
   "hammerspoon-luarocks",
+  "hammerspoon-pasteboard-image",
   "hammerspoon-tutorial-00",
   "hammerspoon-tutorial-01",
   "hammerspoon-tutorial-02",
