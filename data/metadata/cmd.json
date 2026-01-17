@@ -82,6 +82,7 @@
   "cmd/pee",
   "cmd/perl-one-liner",
   "cmd/ping",
+  "cmd/pngpaste",
   "cmd/ps",
   "cmd/pstree",
   "cmd/pwgen",
