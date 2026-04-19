@@ -5,7 +5,7 @@ toc     : true
 public  : true
 comment : false
 resource: 06/227923-8E1A-42ED-BD8B-7B8C4E1E70EE
-updated : 2026-04-04 18:52:29 +0900
+updated : 2026-04-19 16:41:13 +0900
 regenerate: true
 ---
 * TOC
@@ -518,6 +518,7 @@ regenerate: true
 * [[/jargon/dry-principle]]
 * [[/jargon/edsel-edict]]
 * [[/jargon/endian]]
+* [[/jargon/form-follows-function]]
 * [[/jargon/graceful-degradation]]
 * [[/jargon/hofstadter-s-law]]
 * [[/jargon/hollywood-principle]]
